@@ -69,7 +69,7 @@ struct SideClass {
     unsigned int u32_A5;
     unsigned int u32_A8;
 // --- flat members (END) ---
-    int FindByName();
+    int FindByName(void *a1 = 0);
     int GetCountry(int * a2);
     int LoadAllFromINI(CCINIClass * aP0);
     int SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1);
@@ -77,8 +77,8 @@ struct SideClass {
     int StubReturn180();
     int StubReturn28();
     int ddtor(int a1, unsigned int * a2);
-    unsigned int * Construct(CCINIClass * aP1);
-    void * Init(char a2);
+    unsigned int * Construct(CCINIClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void * Init(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
     wchar_t * GetName();
 };
 

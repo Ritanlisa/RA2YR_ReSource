@@ -1,5 +1,5 @@
 #include "misc_ext.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace gamemd
 {
@@ -9,7 +9,7 @@ void AITriggerTypeClass::GetClassIdentifier(void * a1, void * a2)
 {
   if ( !a2 ) /*0x41e506*/
     return -2147467261; /*0x41e508*/
-  *a2 = -1173801692; /*0x41e516*/
+  *(unsigned int *)(a2) = -1173801692; /*0x41e516*/
   a2[1] = 298994932; /*0x41e51e*/
   a2[2] = 268445372; /*0x41e527*/
   a2[3] = unk_7E996C; /*0x41e530*/
@@ -111,13 +111,13 @@ void AITriggerTypeClass::EnemyHouseOwns(void * a1, void * a2, void * a3)
     switch ( (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) ) /*0x41eb38*/
     {
       case 3: /*0x41eb38*/
-        v6 = DynamicVector::GetOrGrow(a3 + 5475, v5); /*0x41eb91*/
+        v6 = DynamicVector::GetOrGrow((unsigned int)(a3)+ 5475, v5); /*0x41eb91*/
         goto LABEL_8; /*0x41eb91*/
       case 7: /*0x41eb38*/
-        v7 = DynamicVector::GetOrGrow(a3 + 5460, v5); /*0x41eb4a*/
+        v7 = DynamicVector::GetOrGrow((unsigned int)(a3)+ 5460, v5); /*0x41eb4a*/
         break; /*0x41eb53*/
       case 16: /*0x41eb38*/
-        v7 = DynamicVector::GetOrGrow(a3 + 5470, v5); /*0x41eb76*/
+        v7 = DynamicVector::GetOrGrow((unsigned int)(a3)+ 5470, v5); /*0x41eb76*/
         break; /*0x41eb7f*/
       case 40: /*0x41eb38*/
         v7 = DynamicVector::GetOrGrow(a3 + 5465, v5); /*0x41eb60*/

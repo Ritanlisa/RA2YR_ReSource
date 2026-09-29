@@ -44,7 +44,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
     if ( v1 ) /*0x465481*/
     {
       if ( dword_89DDC0 ) /*0x46548b*/
-        (**(void (__thiscall ***)(int, int))dword_89DDC0)(dword_89DDC0, 1); /*0x465491*/
+        (**(void (***)(int, int))dword_89DDC0)(dword_89DDC0, 1); /*0x465491*/
       v3 = operator new(0x20u); /*0x46549a*/
       if ( v3 ) /*0x4654a1*/
       {
@@ -179,7 +179,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   if ( dword_A83C90 < dword_A83C88 /*0x46bd65*/
     || (byte_A83C8D || !dword_A83C88)
     && dword_A83C94 > 0
-    && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A83C80 + 8))(
+    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A83C80 + 8))(
          &dword_A83C80,
          dword_A83C88 + dword_A83C94,
          0) )
@@ -190,7 +190,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x46bdb8*/
     || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
          &g_BuildingLoadQueue_Array.LightVisibility,
          g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
          0) )
@@ -251,17 +251,17 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
   *(unsigned int *)(v4 + 752) = INIClass::ReadInt_Overwrite( /*0x46bf21*/
                             this->ObjectTypeClass,
                             (uint8_t *)(v4 + 36),
-                            (uint8_t *)&stru_81AF8C.?[143],
+                            (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 143),
                             *(unsigned int *)(v4 + 752));
   *(unsigned int *)(v4 + 732) = INIClass::ReadInt_Overwrite( /*0x46bf3b*/
                             this->ObjectTypeClass,
                             (uint8_t *)(v4 + 36),
-                            (uint8_t *)&stru_81AF8C.?[139],
+                            (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 139),
                             *(unsigned int *)(v4 + 732));
   *(unsigned int *)(v4 + 736) = INIClass::ReadInt_Overwrite( /*0x46bf55*/
                             this->ObjectTypeClass,
                             (uint8_t *)(v4 + 36),
-                            (uint8_t *)&stru_81AF8C.?[119],
+                            (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 119),
                             *(unsigned int *)(v4 + 736));
   INIClass::ReadDouble_Overwrite( /*0x46bf71*/
     (double *)this->ObjectTypeClass,
@@ -273,42 +273,42 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
   *(unsigned int *)(v4 + 720) = INIClass::ReadInt_Overwrite( /*0x46bf90*/
                             this->ObjectTypeClass,
                             (uint8_t *)(v4 + 36),
-                            (uint8_t *)&stru_81AF8C.?[103],
+                            (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 103),
                             *(unsigned int *)(v4 + 720));
   *(unsigned int *)(v4 + 724) = BuildingTypeClass::FindAnimByName( /*0x46bfaa*/
                             (BuildingTypeClass *)this,
                             (uint8_t *)(v4 + 36),
-                            (uint8_t *)&stru_81AF8C.?[95],
+                            (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 95),
                             *(unsigned int *)(v4 + 724));
   *(unsigned char *)(v4 + 667) = INIClass::ReadBool_Overwrite( /*0x46bfc4*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[87],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 87),
                            *(unsigned char *)(v4 + 667));
   *(unsigned char *)(v4 + 661) = INIClass::ReadBool_Overwrite( /*0x46bfde*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[79],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 79),
                            *(unsigned char *)(v4 + 661));
   *(unsigned char *)(v4 + 662) = INIClass::ReadBool_Overwrite( /*0x46bff8*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[63],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 63),
                            *(unsigned char *)(v4 + 662));
   *(unsigned char *)(v4 + 663) = INIClass::ReadBool_Overwrite( /*0x46c012*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[43],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 43),
                            *(unsigned char *)(v4 + 663));
   *(unsigned char *)(v4 + 664) = INIClass::ReadBool_Overwrite( /*0x46c02c*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[27],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 27),
                            *(unsigned char *)(v4 + 664));
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x46c041*/
                      (int *)this,
                      (uint8_t *)(v4 + 36),
-                     (uint8_t *)&stru_81AF8C.?[15],
+                     (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 15),
                      *(unsigned char *)(v4 + 665));
   v7 = *(unsigned char *)(v4 + 666); /*0x46c046*/
   *(unsigned char *)(v4 + 665) = Bool_Overwrite; /*0x46c04c*/
@@ -318,88 +318,88 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
   *(unsigned char *)(v4 + 668) = INIClass::ReadBool_Overwrite( /*0x46c07a*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[3],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 3),
                            v32);
   v9 = INIClass::ReadBool_Overwrite( /*0x46c08f*/
          (int *)this,
          (uint8_t *)(v4 + 36),
-         (uint8_t *)&stru_81AF8C.?[17],
+         (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 17),
          *(unsigned char *)(v4 + 669));
   v10 = *(unsigned char *)(v4 + 670); /*0x46c094*/
   *(unsigned char *)(v4 + 669) = v9; /*0x46c09a*/
   v11 = INIClass::ReadBool_Overwrite( /*0x46c0a9*/
           (int *)this,
           (uint8_t *)(v4 + 36),
-          (uint8_t *)&stru_81AF8C.?[15],
+          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 15),
           v10);
   v33 = *(unsigned char *)(v4 + 671); /*0x46c0b6*/
   *(unsigned char *)(v4 + 670) = v11; /*0x46c0bd*/
   *(unsigned char *)(v4 + 671) = INIClass::ReadBool_Overwrite( /*0x46c0c8*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[12],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 12),
                            v33);
   v12 = INIClass::ReadBool_Overwrite( /*0x46c0dd*/
           (int *)this,
           (uint8_t *)(v4 + 36),
-          (uint8_t *)&stru_81AF8C.?[10],
+          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 10),
           *(unsigned char *)(v4 + 672));
   v13 = *(unsigned char *)(v4 + 674); /*0x46c0e2*/
   *(unsigned char *)(v4 + 672) = v12; /*0x46c0e8*/
   v14 = INIClass::ReadBool_Overwrite( /*0x46c0f7*/
           (int *)this,
           (uint8_t *)(v4 + 36),
-          (uint8_t *)&stru_81AF8C.?[7],
+          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 7),
           v13);
   v34 = *(unsigned char *)(v4 + 675); /*0x46c104*/
   *(unsigned char *)(v4 + 674) = v14; /*0x46c10b*/
   *(unsigned char *)(v4 + 675) = INIClass::ReadBool_Overwrite( /*0x46c116*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[4],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 4),
                            v34);
   v15 = INIClass::ReadBool_Overwrite( /*0x46c12b*/
           (int *)this,
           (uint8_t *)(v4 + 36),
-          (uint8_t *)&stru_81AF8C.?[3],
+          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 3),
           *(unsigned char *)(v4 + 676));
   v16 = *(unsigned char *)(v4 + 677); /*0x46c130*/
   *(unsigned char *)(v4 + 676) = v15; /*0x46c136*/
   v17 = INIClass::ReadBool_Overwrite( /*0x46c145*/
           (int *)this,
           (uint8_t *)(v4 + 36),
-          (uint8_t *)&stru_81AF8C.?[2],
+          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 2),
           v16);
   v18 = *(unsigned char *)(v4 + 678); /*0x46c14a*/
   *(unsigned char *)(v4 + 677) = v17; /*0x46c150*/
   *(unsigned char *)(v4 + 678) = INIClass::ReadBool_Overwrite( /*0x46c164*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[17],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 17),
                            v18);
   v19 = INIClass::ReadBool_Overwrite( /*0x46c179*/
           (int *)this,
           (uint8_t *)(v4 + 36),
-          (uint8_t *)&stru_81AF8C.?[15],
+          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 15),
           *(unsigned char *)(v4 + 679));
   v20 = *(unsigned char *)(v4 + 660); /*0x46c17e*/
   *(unsigned char *)(v4 + 679) = v19; /*0x46c184*/
   v21 = INIClass::ReadBool_Overwrite( /*0x46c193*/
           (int *)this,
           (uint8_t *)(v4 + 36),
-          (uint8_t *)&stru_81AF8C.?[12],
+          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 12),
           v20);
   v35 = *(unsigned int *)(v4 + 684); /*0x46c1a0*/
   *(unsigned char *)(v4 + 660) = v21; /*0x46c1a7*/
   *(unsigned int *)(v4 + 684) = INIClass::ReadInt_Overwrite( /*0x46c1b2*/
                             this->ObjectTypeClass,
                             (uint8_t *)(v4 + 36),
-                            (uint8_t *)&stru_81AF8C.?[10],
+                            (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 10),
                             v35);
   *(unsigned char *)(v4 + 748) = INIClass::ReadBool_Overwrite( /*0x46c1e2*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[7],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 7),
                            *(unsigned char *)(v4 + 748));
   if ( INIClass::GetString( /*0x46c1ef*/
          (INIClass *)this,
@@ -433,7 +433,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
     v23 = INIClass::ReadBool_Overwrite( /*0x46c26b*/
             (int *)&DSurface_ViewBounds.__pad_FC[228],
             (uint8_t *)(v4 + 504),
-            (uint8_t *)&stru_81AF8C.?[5],
+            (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 5),
             *(unsigned char *)(v4 + 673) == 0);
     v36 = *(unsigned char *)(v4 + 759); /*0x46c27d*/
     *(unsigned char *)(v4 + 673) = v23 == 0; /*0x46c287*/
@@ -447,7 +447,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
   if ( INIClass::GetString( /*0x46c2b9*/
          (INIClass *)this,
          (uint8_t *)(v4 + 36),
-         (uint8_t *)&stru_81AF8C.?[1],
+         (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 1),
          &g_INI_DefaultBuffer,
          Destination,
          128) )
@@ -484,43 +484,43 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x46c33f*/
                     this->ObjectTypeClass,
                     (uint8_t *)(v4 + 36),
-                    (uint8_t *)&stru_81AF8C.?[40],
+                    (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 40),
                     *(unsigned int *)(v4 + 700));
   v27 = *(unsigned char *)(v4 + 704); /*0x46c344*/
   *(unsigned int *)(v4 + 700) = Int_Overwrite; /*0x46c34a*/
   v28 = INIClass::ReadBool_Overwrite( /*0x46c359*/
           (int *)this,
           (uint8_t *)(v4 + 36),
-          (uint8_t *)&stru_81AF8C.?[28],
+          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 28),
           v27);
   v38 = *(unsigned char *)(v4 + 681); /*0x46c366*/
   *(unsigned char *)(v4 + 704) = v28; /*0x46c36d*/
   *(unsigned char *)(v4 + 681) = INIClass::ReadBool_Overwrite( /*0x46c378*/
                            (int *)this,
                            (uint8_t *)(v4 + 36),
-                           (uint8_t *)&stru_81AF8C.?[12],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 12),
                            v38);
   *(unsigned char *)(v4 + 756) = INIClass::ReadInt_Overwrite( /*0x46c399*/
                            (bool *)&DSurface_ViewBounds.__pad_FC[228],
                            (uint8_t *)(v4 + 504),
-                           (uint8_t *)&stru_81AF8C.?[4],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 4),
                            *(uint8_t *)(v4 + 756));
   v29 = INIClass::ReadInt_Overwrite( /*0x46c3b1*/
           (bool *)&DSurface_ViewBounds.__pad_FC[228],
           (uint8_t *)(v4 + 504),
-          (uint8_t *)&stru_81AF8C.?[31],
+          (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 31),
           *(uint8_t *)(v4 + 757));
   v30 = *(uint8_t *)(v4 + 758); /*0x46c3bd*/
   *(unsigned char *)(v4 + 757) = v29; /*0x46c3c3*/
   *(unsigned char *)(v4 + 758) = INIClass::ReadInt_Overwrite( /*0x46c3d5*/
                            (bool *)&DSurface_ViewBounds.__pad_FC[228],
                            (uint8_t *)(v4 + 504),
-                           (uint8_t *)&stru_81AF8C.?[19],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 19),
                            v30);
   *(unsigned char *)(v4 + 680) = INIClass::ReadBool_Overwrite( /*0x46c3f2*/
                            (int *)&DSurface_ViewBounds.__pad_FC[228],
                            (uint8_t *)(v4 + 504),
-                           (uint8_t *)&stru_81AF8C.?[7],
+                           (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 7),
                            *(unsigned char *)(v4 + 680));
   if ( !*(unsigned char *)(v4 + 670) ) /*0x46c3f8*/
     ObjectTypeClass::Load2DArt((char *)v4); /*0x46c406*/
@@ -603,7 +603,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
   *(unsigned int *)&this->ObjectTypeClass[12] = (void*)&BulletTypeClass_vftable; /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x46c8b1*/
   v6 = this; /*0x46c8c6*/
-  v3 = (*(int (__thiscall **)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
+  v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v6);
   if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x46c8da*/
@@ -618,7 +618,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
     }
   }
   v6 = this; /*0x46c90f*/
-  v4 = (*(int (__thiscall **)(unsigned int *, BulletTypeClass **))(dword_A83C80 + 16))(&dword_A83C80, &v6); /*0x46c913*/
+  v4 = (*(int (**)(unsigned int *, BulletTypeClass **))(dword_A83C80 + 16))(&dword_A83C80, &v6); /*0x46c913*/
   if ( v4 != -1 && v4 < dword_A83C90 && v4 < --dword_A83C90 ) /*0x46c92e*/
   {
     do /*0x46c946*/
@@ -665,7 +665,7 @@ int BulletTypeClass::ProcessImpact(int a1)
 
   v1 = a1; /*0x69fc16*/
   v2 = (char *)a1 - 4; /*0x69fc28*/
-  v3 = *(uint8_t *)((*((int (__thiscall **)(FootClass *))a1->?->TechnoClass + 111))(a1->?) + 284); /*0x69fc31*/
+  v3 = *(uint8_t *)((*((int (**)(FootClass *))a1->?->TechnoClass + 111))(a1->?) + 284); /*0x69fc31*/
   v4 = *((unsigned int *)v2 + 7); /*0x69fc33*/
   if ( v3 != v4 ) /*0x69fc38*/
   {
@@ -681,10 +681,10 @@ int BulletTypeClass::ProcessImpact(int a1)
   {
     movementDestination = v1->?->movementDestination; /*0x69fd16*/
     if ( movementDestination /*0x69fd54*/
-      && (*((int (__thiscall **)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
+      && (*((int (**)(AbstractClass *))movementDestination->vtable0 + 11))(movementDestination) == 11
       && (v6 = v1->?,
           v7 = v6->movementDestination + 1,
-          v8 = (unsigned short *)(*((int (__thiscall **)(FootClass *, ShipLocomotionClass **))v6->TechnoClass + 110))(v6, &a1),
+          v8 = (unsigned short *)(*((int (**)(FootClass *, ShipLocomotionClass **))v6->TechnoClass + 110))(v6, &a1),
           *v8 == IDA_LOWORD(v7->vtable0))
       && v8[1] == IDA_HIWORD(v7->vtable0) )
     {
@@ -710,14 +710,14 @@ int BulletTypeClass::ProcessImpact(int a1)
         if ( IDA_BYTE2(v1->TrackIndex) ) /*0x69ff5d*/
         {
           IDA_BYTE2(v1->TrackIndex) = 0; /*0x69ff62*/
-          (*((void (__thiscall **)(FootClass *, unsigned int))v1->?->TechnoClass + 99))(v1->?, 0); /*0x69ff6b*/
+          (*((void (**)(FootClass *, unsigned int))v1->?->TechnoClass + 99))(v1->?, 0); /*0x69ff6b*/
           v16 = v1->u32_8; /*0x69ff71*/
           if ( !*(unsigned int *)&v16->isFallingDown || *(unsigned int *)&v16->isFallingDown || *(unsigned int *)&v16->isFallingDown ) /*0x69ff84*/
             return 0; /*0x69ff95*/
         }
-        if ( (*((int (__thiscall **)(FootClass *))v1->?->TechnoClass + 97))(v1->?) == 5 /*0x69ffc4*/
+        if ( (*((int (**)(FootClass *))v1->?->TechnoClass + 97))(v1->?) == 5 /*0x69ffc4*/
           && !(*(uint8_t (__stdcall **)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
-          || (*((int (__thiscall **)(FootClass *))v1->?->TechnoClass + 97))(v1->?) == 16 )
+          || (*((int (**)(FootClass *))v1->?->TechnoClass + 97))(v1->?) == 16 )
         {
           goto LABEL_32; /*0x69ffc4*/
         }
@@ -742,7 +742,7 @@ int BulletTypeClass::ProcessImpact(int a1)
               v18 = v17->movementDestination; /*0x6a0037*/
               if ( v18 ) /*0x6a003f*/
               {
-                v19 = (unsigned int *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v18->vtable0 + 19))( /*0x6a004d*/
+                v19 = (unsigned int *)(*((int (**)(AbstractClass *, int *, FootClass *))v18->vtable0 + 19))( /*0x6a004d*/
                                   v18,
                                   &v23,
                                   *(unsigned short *)&v1->SpeedAccum);
@@ -759,9 +759,9 @@ int BulletTypeClass::ProcessImpact(int a1)
         }
         v20 = v1->u32_8; /*0x6a0074*/
         if ( *(unsigned short *)&v20->lastTarget /*0x6a00ab*/
-          && (*((int (__thiscall **)(FootClass *))v20->TechnoClass + 97))(v20) != 7
+          && (*((int (**)(FootClass *))v20->TechnoClass + 97))(v20) != 7
           && (*(uint8_t (__stdcall **)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
-          && !(*((uint8_t (__thiscall **)(FootClass *, int *))v1->?->TechnoClass + 179))(
+          && !(*((uint8_t (**)(FootClass *, int *))v1->?->TechnoClass + 179))(
                 v1->?,
                 &v1->SlopeTimer[3]) )
         {
@@ -775,7 +775,7 @@ int BulletTypeClass::ProcessImpact(int a1)
           if ( *(unsigned int *)(v21 + 1432) ) /*0x6a00f5*/
           {
             FootClass::ClearPathIndex((FootClass *)v21); /*0x6a010d*/
-            if ( (*(uint8_t (__thiscall **)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))( /*0x6a011a*/
+            if ( (*(uint8_t (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))( /*0x6a011a*/
                    *((unsigned int *)v2 + 3),
                    0,
                    1) )
@@ -785,7 +785,7 @@ int BulletTypeClass::ProcessImpact(int a1)
           }
           else
           {
-            (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)v21 + 1152))(v21, 0, 1); /*0x6a0102*/
+            (*(void (**)(int, unsigned int, int))(*(unsigned int *)v21 + 1152))(v21, 0, 1); /*0x6a0102*/
           }
           goto LABEL_32; /*0x6a0108*/
         }
@@ -802,12 +802,12 @@ int BulletTypeClass::ProcessImpact(int a1)
       if ( !*(unsigned int *)&v9->__pad_58C[12] ) /*0x69fde7*/
       {
   LABEL_20:
-        (*((void (__thiscall **)(FootClass *, unsigned int, int))v9->TechnoClass + 288))(v9, 0, 1); /*0x69fd65*/
+        (*((void (**)(FootClass *, unsigned int, int))v9->TechnoClass + 288))(v9, 0, 1); /*0x69fd65*/
         return 0; /*0x69fd79*/
       }
     }
     FootClass::ClearPathIndex(v9); /*0x69fe00*/
-    (*(void (__thiscall **)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))(*((unsigned int *)v2 + 3), 0, 1); /*0x69fe0d*/
+    (*(void (**)(unsigned int, unsigned int, int))(**((unsigned int **)v2 + 3) + 1156))(*((unsigned int *)v2 + 3), 0, 1); /*0x69fe0d*/
     return 0; /*0x69fe1c*/
   }
   if ( WalkLocomotion::ProcessCollision((int)&v1[-1].Piggybackee, 0) || !v1->?->? ) /*0x69fc96*/
@@ -815,7 +815,7 @@ int BulletTypeClass::ProcessImpact(int a1)
   if ( v1->MovementSpeed[1] != -1 /*0x69fcd4*/
     || !(*(uint8_t (__stdcall **)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
     && v1->?->pathDirections[0] == -1
-    || (*((int (__thiscall **)(FootClass *))v1->?->TechnoClass + 11))(v1->?) == 1 && IDA_BYTE1(v1->?[1].?) )
+    || (*((int (**)(FootClass *))v1->?->TechnoClass + 11))(v1->?) == 1 && IDA_BYTE1(v1->?[1].?) )
   {
     goto LABEL_32; /*0x69fcda*/
   }
@@ -831,11 +831,11 @@ int BulletTypeClass::ProcessImpact(int a1)
   LABEL_32:
   if ( (*(uint8_t (__stdcall **)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))(v1) ) /*0x69fe3c*/
   {
-    if ( !(*(unsigned int *)&stru_A8EB00.?[416] % 8) /*0x69fe6e*/
-      && !*(unsigned char *)((*((int (__thiscall **)(FootClass *))v1->?->TechnoClass + 33))(v1->?) + 3433) )
+    if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 8) /*0x69fe6e*/
+      && !*(unsigned char *)((*((int (**)(FootClass *))v1->?->TechnoClass + 33))(v1->?) + 3433) )
     {
       v12 = v1->u32_8; /*0x69fe76*/
-      if ( !*(unsigned short *)&v12->animation && *(unsigned int *)((*((int (__thiscall **)(FootClass *))v12->TechnoClass + 111))(v12) + 236) == 2 ) /*0x69fe90*/
+      if ( !*(unsigned short *)&v12->animation && *(unsigned int *)((*((int (**)(FootClass *))v12->TechnoClass + 111))(v12) + 236) == 2 ) /*0x69fe90*/
       {
         if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 148) ) /*0x69fe97*/
         {
@@ -867,7 +867,7 @@ int BulletTypeClass::ProcessImpact(int a1)
   {
     v15 = v1->u32_8; /*0x69ff25*/
     if ( v15->pathDirections[0] == -1 && *(double *)v15->currentSpeed_percentage > 0.0 ) /*0x69ff41*/
-      (*((void (__thiscall **)(FootClass *, unsigned int, unsigned int))v15->TechnoClass + 337))(v15, 0, 0); /*0x69ff47*/
+      (*((void (**)(FootClass *, unsigned int, unsigned int))v15->TechnoClass + 337))(v15, 0, 0); /*0x69ff47*/
   }
   return (*(char (__stdcall **)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1); /*0x69fd72*/
 }

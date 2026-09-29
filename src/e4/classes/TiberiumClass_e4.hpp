@@ -61,7 +61,7 @@ struct TiberiumClass {
     unsigned char alignmentPadding69;  // 0x69
     bool wasFallingDown;  // 0x6A
     bool isBomb;  // 0x6B
-    char health[4];  // 0x6C
+    unsigned int health;  // 0x6C
     unsigned char alignmentPadding91_3;  // 0x6D
     char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74
@@ -126,7 +126,7 @@ struct TiberiumClass {
     char q110[4];  // 0x110
     unsigned int q111;  // 0x111
     char q114[4];  // 0x114
-    char TiberiumClass_field_118[4];  // 0x118
+    unsigned int TiberiumClass_field_118;  // 0x118
     char q11C[12];  // 0x11C
     unsigned int q120;  // 0x120
     unsigned int q124;  // 0x124

@@ -182,7 +182,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e3f2*/
+    (*(void (**)(_VectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e3f2*/
     return 1; /*0x63e3f8*/
   }
 }
@@ -274,7 +274,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e51e*/
+    (*(void (**)(_DynamicVectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e51e*/
   }
   v7 = this->q008; /*0x63e521*/
   if ( v7 < this->q010 ) /*0x63e529*/
@@ -375,7 +375,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e732*/
+    (*(void (**)(_VectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e732*/
     return 1; /*0x63e738*/
   }
 }
@@ -467,7 +467,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e85e*/
+    (*(void (**)(_DynamicVectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63e85e*/
   }
   v7 = this->q008; /*0x63e861*/
   if ( v7 < this->q010 ) /*0x63e869*/
@@ -534,7 +534,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVPlanningTokenClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63eb5e*/
+    (*(void (**)(_DynamicVectorClass_PAVPlanningTokenClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x63eb5e*/
   }
   v7 = this->q008; /*0x63eb61*/
   if ( v7 < this->q010 ) /*0x63eb69*/
@@ -570,14 +570,14 @@ VectorClass_flat * BlowPipe_23::Destructor(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ed96*/
   if ( v3 && this->IsAllocated ) /*0x63eda0*/
   {
     RA2_OPDEL(v3); /*0x63eda8*/
     *(unsigned int *)&this->q004 = 0; /*0x63edb0*/
   }
-  this->IsAllocated = 0; /*0x63edbb*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x63edc1*/
   if ( (a2 & 1) != 0 ) /*0x63edc8*/
     RA2_OPDEL(); /*0x63edcb*/
@@ -591,14 +591,14 @@ DynamicVector * BlowPipe_31::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ede6*/
   if ( v3 && this->IsAllocated ) /*0x63edf0*/
   {
     RA2_OPDEL(v3); /*0x63edf8*/
     *(unsigned int *)&this->q004 = 0; /*0x63ee00*/
   }
-  this->IsAllocated = 0; /*0x63ee0b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x63ee11*/
   if ( (a2 & 1) != 0 ) /*0x63ee18*/
     RA2_OPDEL(); /*0x63ee1b*/
@@ -612,14 +612,14 @@ VectorClass_flat * BlowPipe_23::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_EventClass___vftable; /*0x63ee36*/
   if ( v3 && this->IsAllocated ) /*0x63ee40*/
   {
     RA2_OPDEL(v3); /*0x63ee48*/
     *(unsigned int *)&this->q004 = 0; /*0x63ee50*/
   }
-  this->IsAllocated = 0; /*0x63ee5b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x63ee61*/
   if ( (a2 & 1) != 0 ) /*0x63ee68*/
     RA2_OPDEL(); /*0x63ee6b*/
@@ -633,14 +633,14 @@ DynamicVector * BlowPipe_23::Destructor_0(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_EventClass___vftable; /*0x63ee86*/
   if ( v3 && this->IsAllocated ) /*0x63ee90*/
   {
     RA2_OPDEL(v3); /*0x63ee98*/
     *(unsigned int *)&this->q004 = 0; /*0x63eea0*/
   }
-  this->IsAllocated = 0; /*0x63eeab*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x63eeb1*/
   if ( (a2 & 1) != 0 ) /*0x63eeb8*/
     RA2_OPDEL(); /*0x63eebb*/
@@ -654,14 +654,14 @@ DynamicVector * BlowPipe_23::Destructor_1(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_PlanningTokenClass___vftable; /*0x63ef26*/
   if ( v3 && this->IsAllocated ) /*0x63ef30*/
   {
     RA2_OPDEL(v3); /*0x63ef38*/
     *(unsigned int *)&this->q004 = 0; /*0x63ef40*/
   }
-  this->IsAllocated = 0; /*0x63ef4b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x63ef51*/
   if ( (a2 & 1) != 0 ) /*0x63ef58*/
     RA2_OPDEL(); /*0x63ef5b*/

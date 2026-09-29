@@ -117,7 +117,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7e62*/
+    (*(void (**)(_VectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7e62*/
     return 1; /*0x4a7e68*/
   }
 }
@@ -209,7 +209,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7f8e*/
+    (*(void (**)(_DynamicVectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a7f8e*/
   }
   v7 = this->q008; /*0x4a7f91*/
   if ( v7 < this->q010 ) /*0x4a7f99*/
@@ -244,14 +244,14 @@ VectorClass_flat * Dial8Class_48::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8036*/
   if ( v3 && this->IsAllocated ) /*0x4a8040*/
   {
     RA2_OPDEL(v3); /*0x4a8048*/
     *(unsigned int *)&this->q004 = 0; /*0x4a8050*/
   }
-  this->IsAllocated = 0; /*0x4a805b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x4a8061*/
   if ( (a2 & 1) != 0 ) /*0x4a8068*/
     RA2_OPDEL(); /*0x4a806b*/
@@ -265,14 +265,14 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(char a2
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8086*/
   if ( v3 && this->IsAllocated ) /*0x4a8090*/
   {
     RA2_OPDEL(v3); /*0x4a8098*/
     *(unsigned int *)&this->q004 = 0; /*0x4a80a0*/
   }
-  this->IsAllocated = 0; /*0x4a80ab*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x4a80b1*/
   if ( (a2 & 1) != 0 ) /*0x4a80b8*/
     RA2_OPDEL(); /*0x4a80bb*/

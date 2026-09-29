@@ -3,11 +3,43 @@
 
 #include "e4/classes/_fwd_e4.hpp"
 
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
 namespace gamemd {
 
 struct Main {
 // --- flat members (BEGIN) ---
     char Main_field_00[4];  // 0x0
+    unsigned int Debug;
+    unsigned int PumpMessages;
 // --- flat members (END) ---
     void CreateDialog();
 };

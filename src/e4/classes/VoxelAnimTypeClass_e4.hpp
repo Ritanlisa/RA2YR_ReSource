@@ -255,7 +255,7 @@ struct VoxelAnimTypeClass {
     AnimTypeClass* ExpireAnim;  // 0x2E8
     AnimTypeClass* TrailerAnim;  // 0x2EC
     unsigned int Damage;  // 0x2F0
-    char DamageRadius[4];  // 0x2F4
+    unsigned int DamageRadius;  // 0x2F4
     WarheadTypeClass* Warhead;  // 0x2F8
     ParticleSystemTypeClass* AttachedSystem;  // 0x2FC
     bool IsTiberium;  // 0x300
@@ -271,7 +271,7 @@ struct VoxelAnimTypeClass {
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
     int StubReturnFalse(int a1);
     long long GetData(ObjectTypeClass * aP1, int a3);
-    unsigned int * Constructor(ObjectClass * aP1);
+    unsigned int * Constructor(ObjectClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
 };
 
 } // namespace gamemd

@@ -21,6 +21,15 @@
 namespace gamemd {
 int ComStreamClass::Write(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
   HWND v5; // esi
   HWND DlgItem; // ebx
   HWND v7; // ebx
@@ -40,7 +49,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3, void * a4, void * a5)
   ObjectClass v22[59]; // [esp+Ch] [ebp-2818h] BYREF
   char *v23; // [esp+2838h] [ebp+14h]
 
-  Debug::Log(); /*0x7a3da1*/
+  this->Debug::Log(); /*0x7a3da1*/
   dword_B77DF0 = (int)a3; /*0x7a3dba*/
   if ( a3 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/
@@ -53,12 +62,12 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3, void * a4, void * a5)
   ReadRegistryOptionsWOL((ObjectClass *)&v22[0].uniqueId); /*0x7a3dfe*/
   if ( (uint8_t)Flag::IsNot2((Flag *)&v22[0].uniqueId) ) /*0x7a3e07*/
   {
-    v22[0].vtable0 = FindChannelWOL(a5, (int)v23, 1u, *(unsigned int *)(v22[0].vtable2 + 16)); /*0x7a3e2d*/
+    v22[0].vtable0 = FindChannelWOL(a5, (int)v23, 1u, *(unsigned int *)(v22[(unsigned int)(0].vtable2)+ 16)); /*0x7a3e2d*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x7a3e31*/
   }
-  v21 = 1; /*0x7a3e3b*/
-  v20 = 0; /*0x7a3e40*/
-  v5 = (HWND)Dialog::FindByHandle((Dialog *)0x10F); /*0x7a3e4a*/
+  v21 = (unsigned int)(1);
+  v20 = (unsigned int)(0);
+  v5 = (unsigned int)((HWND)Dialog::FindByHandle((Dialog *)0x10F));
   if ( v5 /*0x7a3e7a*/
     || (v5 = (HWND)Dialog::FindByHandle((Dialog *)0x11D), v20 = v5 != 0, v5)
     || (v21 = 0, (v5 = (HWND)Dialog::FindByHandle((Dialog *)0x114)) != 0) )
@@ -129,7 +138,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3, void * a4, void * a5)
     if ( !dword_B77DC8 ) /*0x7a403c*/
       CloseDialog(v16, 0); /*0x7a4042*/
   }
-  Current = (HWND)Dialog::GetCurrent(); /*0x7a4047*/
+  Current = (HWND)this->Dialog::GetCurrent(); /*0x7a4047*/
   v18 = GetDlgItem(Current, 1344); /*0x7a4052*/
   if ( v18 ) /*0x7a4058*/
     SetFocus(v18); /*0x7a405b*/
@@ -159,6 +168,15 @@ int ComStreamClass::Release()
 namespace gamemd {
 int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
 {
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
   char ***v3; // esi
   int result; // eax
   char **v5; // eax
@@ -172,9 +190,9 @@ int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
   if ( !v10 ) /*0x7ac87f*/
     return -2147467261; /*0x7ac88a*/
   *v10 = 0; /*0x7ac891*/
-  if ( !*a3 && !a3[1] && a3[2] == (char *)192 && a3[3] == (char *)1174405120 ) /*0x7ac8b3*/
+  if ( !*((unsigned int)(void)*)(a3) && !a3[1] && a3[2] == (char *)192 && a3[3] == (char *)1174405120 ) /*0x7ac8b3*/
   {
-    (*(void (__stdcall **)(unsigned int *))(*a2 + 4))(a2); /*0x7ac8c6*/
+    (*(void (__stdcall **)(unsigned int *))(*(void *)(((unsigned int)(void)*))(a2) + 4))(a2); /*0x7ac8c6*/
     *v10 = a2; /*0x7ac8c9*/
     return 0; /*0x7ac8d1*/
   }
@@ -182,7 +200,7 @@ int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
   {
     v5 = *v3; /*0x7ac8dd*/
     v6 = *v3 == 0; /*0x7ac8e6*/
-    if ( !*v3 || *v5 == *a3 && v5[1] == a3[1] && v5[2] == a3[2] && v5[3] == a3[3] ) /*0x7ac910*/
+    if ( !*v3 || *(char *)(v5) == *(unsigned int *)(a3) && v5[(unsigned int)(1])== a3[(unsigned int)(1])&& v5[2] == a3[2] && v5[3] == a3[3] ) /*0x7ac910*/
       break; /*0x7ac910*/
   LABEL_17:
     v8 = v3[5]; /*0x7ac933*/
@@ -286,11 +304,11 @@ void ComStreamClass::flushStream()
   {
     v3 = (int *)((unsigned int)(*(int **)this->__pad_0));
     ComStreamClass_field_0x0C = (unsigned int)(this->ComStreamClass_field_0x0C);
-    v13 = (unsigned int)(*(int **)this->__pad_0);
-    this->ComStreamClass_field_0x08 = ComStreamClass_field_0x08 >> 1; /*0x7aef7c*/
-    this->ComStreamClass_field_0x0C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
-    v5 = (void *)RA2_OPNEW(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
-    v6 = 4 * this->ComStreamClass_field_0x08; /*0x7aef94*/
+    v13 = (int *)((unsigned int)(*(int **)this->__pad_0));
+    this->ComStreamClass_field_0x08 = (unsigned int)(ComStreamClass_field_0x08 >> 1);
+    this->ComStreamClass_field_0x0C = (unsigned int)(ComStreamClass_field_0x0C - 1);
+    v5 = (void *)((unsigned int)((void *)RA2_OPNEW(4 * (ComStreamClass_field_0x08 >> 1))));
+    v6 = (unsigned int)(4 * this->ComStreamClass_field_0x08);
     *(unsigned int *)this->__pad_0 = v5; /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
     if ( (int)ComStreamClass_field_0x08 > 0 ) /*0x7aefab*/
@@ -336,7 +354,7 @@ unsigned int * ComStreamClass::seekToPosition()
   ComPtr::Set((ComPtr *)&stru_B77EB0.lineTrailer, this->ComStreamClass_field_0x04); /*0x7b022f*/
   _76BE90 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WindowManager.__pad_EC[684], (int)_76BE90); /*0x7b0249*/
-  ComPtr::Set(&stru_B77F68, v3[1]); /*0x7b0257*/
+  ((ComPtr *)(&stru_B77F68))->Set(v3[1]); /*0x7b0257*/
   *(unsigned int *)v5 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b0260*/
   ComPtr::Release((ComPtr *)v5); /*0x7b0268*/
   *(unsigned int *)v6 = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b0271*/
@@ -398,7 +416,7 @@ int ComStreamClass::ddtor(void * a1, void * a2, void * a3)
 {
   if ( g_NetworkLobby_Init && *(unsigned int *)dword_B77780 ) /*0x7a4100*/
   {
-    if ( !a2 && a3 < 0x3E8 ) /*0x7a4114*/
+    if ( !a2 && a3 < (void *)(0x3E8) ) /*0x7a4114*/
     {
       ++*(unsigned int *)dword_B77CE0; /*0x7a4123*/
       return 0; /*0x7a412a*/

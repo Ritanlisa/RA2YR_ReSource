@@ -26,9 +26,9 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
     if ( *(int *)(v3 + 976) > 0 ) /*0x7718ba*/
     {
       StopThemeClass(1); /*0x7718be*/
-      (*(void (__thiscall **)(int))(*(unsigned int *)(v3 + 960) + 12))(v3 + 960); /*0x7718cf*/
+      (*(void (**)(int))(*(unsigned int *)(v3 + 960) + 12))(v3 + 960); /*0x7718cf*/
     }
-    Ticks = Timer::GetTicks(); /*0x7718d6*/
+    Ticks = this->Timer::GetTicks(); /*0x7718d6*/
     v4 = (int *)(v3 + 940); /*0x7718e1*/
     *v4 = Ticks; /*0x7718e7*/
     v4[1] = v6; /*0x7718e9*/
@@ -48,7 +48,7 @@ signed int Territory_WorldDominationTour_8::Release()
   if ( result != -1 ) /*0x771909*/
   {
     v3 = this->field_18; /*0x77190c*/
-    result = Timer::GetTicks() - *(unsigned int *)&this->Ticks; /*0x77191c*/
+    result = this->Timer::GetTicks() - *(unsigned int *)&this->Ticks; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
       this->field_18 = 0; /*0x771934*/
@@ -67,8 +67,8 @@ signed int Territory_WorldDominationTour_8::Release()
 namespace gamemd {
 void Territory_WorldDominationTour_8::ddtor()
 {
-  if ( *(unsigned int *)&this->__pad_C[4] == -1 ) /*0x771957*/
-    *(unsigned int *)&this->__pad_C[4] = Timer::GetTicks(); /*0x771961*/
+  if ( *(unsigned int *)&this-((unsigned int *)(>__pad_C))[4] == -1 ) /*0x771957*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_C))[4] = Timer::GetTicks(); /*0x771961*/
 }
 } // namespace gamemd
 
@@ -126,6 +126,6 @@ unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1)
 namespace gamemd {
 BOOL Territory_WorldDominationTour_8::Open()
 {
-  return (uint8_t)Audio::IsPlaying() == 0; /*0x7719ca*/
+  return (uint8_t)this->Audio::IsPlaying() == 0; /*0x7719ca*/
 }
 } // namespace gamemd

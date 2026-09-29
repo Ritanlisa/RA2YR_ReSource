@@ -66,6 +66,9 @@ struct Rules {
     unsigned int RadarCombatFlashTime;
     unsigned int SpySatActivationSound;
     unsigned int SpySatDeactivationSound;
+    unsigned int UpgradeVeteranSound;
+    unsigned int UpgradeEliteSound;
+    unsigned int VoiceIFVRepair;
 // --- flat members (END) ---
     int ReadMiscINI();  // 0x6691E0
     int ReadCombatINI();  // 0x66BBB0

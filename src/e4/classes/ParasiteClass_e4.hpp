@@ -50,14 +50,22 @@ struct ParasiteClass {
     unsigned int ParasiteClass_field_3C;
     unsigned int ParasiteClass_field_40;
     unsigned int u32_38;
+    unsigned int q110;
+    unsigned int q120;
+    unsigned int q130;
+    unsigned int q140;
+    unsigned int q0E0;
+    unsigned int q0F0;
+    unsigned int q100;
+    unsigned int q090;
 // --- flat members (END) ---
     AbstractClass * * TryInfect(unsigned int * a2);
-    Coord * * Update();
+    Coord * * Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     ParasiteClass(TechnoClass * aP1);
     bool CanInfect(unsigned int * a2);
     int Attach(int * a2);
     int CanExistOnVictimCell();
-    int Constructor();
+    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     int LoadParasite(int * a0, AbstractClass * aP1);
     int SaveParasite(TechnoTypeClass * aP0, int * a1, int aP2);
     int ddtor(int a1, unsigned int * a2);

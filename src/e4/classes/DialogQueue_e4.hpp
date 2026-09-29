@@ -10,8 +10,8 @@ struct DialogQueue {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
 // --- flat members (END) ---
-    int PushEntry();
-    int RemoveEntry();
+    int PushEntry(void *a1 = 0);
+    int RemoveEntry(void *a1 = 0);
 };
 
 } // namespace gamemd

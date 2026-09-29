@@ -27,7 +27,7 @@ struct WaypointPathClass {
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned char q034;  // 0x34
-    unsigned int u32_35;  // 0x35
+    void* ;  // 0x35
     unsigned int q038;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
@@ -42,17 +42,18 @@ struct WaypointPathClass {
     unsigned int AbstractClass;
     unsigned int waypoints;
     unsigned int u32_28;
+    unsigned int u32_35;
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
-    int Construct(WaypointClass * aP1);
-    int Init();
+    int Construct(WaypointClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
     int LoadState(unsigned int * a1, int a2);
     int PowerDrainUpdate(int a2);
     int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);
     int StubReturn51();
     int StubReturn64();
     int ddtor(int a1, unsigned int * a2);
-    unsigned int * computePath(int a2, unsigned int * a3);
+    unsigned int * computePath(int a2, unsigned int * a3, void *a1 = 0);
 };
 
 } // namespace gamemd

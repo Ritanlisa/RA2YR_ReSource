@@ -21,6 +21,8 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/InfantryClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x5236A0
 namespace gamemd {
@@ -60,8 +62,8 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
   this->qEB0 = (unsigned int)(0);
   this->qEB4 = (unsigned int)(0);
   this->qEB5 = (unsigned int)(0);
-  this->HarvestRate = 1; /*0x523778*/
-  this->qEBC = 0; /*0x523782*/
+  this->HarvestRate = (unsigned int)(1);
+  this->qEBC = (unsigned int)(0);
   this->qEBD = 1; /*0x523788*/
   this->qEBE = 0; /*0x52378f*/
   this->qEBF = 0; /*0x523795*/
@@ -72,11 +74,11 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
   this->qEC4 = 0; /*0x5237b6*/
   this->qEC5 = 0; /*0x5237bc*/
   this->qEC6 = 0; /*0x5237c3*/
-  this->qEC7 = 0; /*0x5237c9*/
-  this->qEC8 = 0; /*0x5237cf*/
-  this->qEC9 = 1; /*0x5237d5*/
-  this->qECA = 0; /*0x5237dc*/
-  this->qECB = 0; /*0x5237e2*/
+  this->qEC7 = (unsigned int)(0);
+  this->qEC8 = (unsigned int)(0);
+  this->qEC9 = (unsigned int)(1);
+  this->qECA = (unsigned int)(0);
+  this->qECB = (unsigned int)(0);
   *(unsigned int *)this = (void*)&InfantryTypeClass_vftable; /*0x5237e8*/
   this->vtable2 = (void*)&InfantryTypeClass_vftable; /*0x5237ee*/
   this->vtable3 = (void*)&InfantryTypeClass_vftable; /*0x5237f4*/
@@ -86,7 +88,7 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
   if ( dword_A8E358 < dword_A8E350 /*0x523845*/
     || (byte_A8E355 || !dword_A8E350)
     && dword_A8E35C > 0
-    && (v4 = (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A8E348 + 8))(
+    && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A8E348 + 8))(
                &dword_A8E348,
                dword_A8E350 + dword_A8E35C,
                0) == 0,
@@ -106,7 +108,7 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
   else
   {
     dword_A8E34C = dword_A8E34C; /*0x523862*/
-    while ( *dword_A8E34C != this ) /*0x52386a*/
+    while ( *(unsigned int *)(dword_A8E34C) != (unsigned int)(this) ) /*0x52386a*/
     {
       ++v5; /*0x52386c*/
       ++dword_A8E34C; /*0x52386d*/
@@ -115,13 +117,13 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
     }
   }
   this->ArrayIndex = (unsigned int)((void *)(v5));
-  this->u32_E08 = 0; /*0x523886*/
-  this->qE04 = 0; /*0x523890*/
-  this->u32_E0C = 0; /*0x523896*/
-  this->u32_E14 = 0; /*0x523899*/
-  this->u32_E18 = 0; /*0x52389f*/
-  this->u8_E1C = 0; /*0x5238a5*/
-  this->qE10 = (unsigned int)(0);
+  this->u32_E08 = (unsigned int)((void *)(0));
+  this->qE04 = (unsigned int)((void *)(0));
+  this->u32_E0C = (unsigned int)((void *)(0));
+  this->u32_E14 = (unsigned int)((void *)(0));
+  this->u32_E18 = (unsigned int)((void *)(0));
+  this->u8_E1C = (unsigned char)((void *)(0));
+  this->qE10 = (void *)((unsigned int)(0));
   this->EliteOccupyWeapon = 0; /*0x5238b4*/
   this->qE30 = 0; /*0x5238ba*/
   this->u32_E24 = 0; /*0x5238c0*/
@@ -142,13 +144,13 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
   this->DisableVoxelCache = 0; /*0x523918*/
   this->u8_D2E = 0; /*0x52391e*/
   this->qE3C = RA2_OPNEW(0x5E8u); /*0x52392c*/
-  for ( i = 0; i < 1512; *(unsigned int *)(i + this->qE3C - 20) = 0 ) /*0x523932*/
+  for ( i = 0; i < 1512; *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 20) = 0 ) /*0x523932*/
   {
     i += 36; /*0x52393a*/
-    *(unsigned int *)(i + this->qE3C - 36) = 0; /*0x523942*/
-    *(unsigned int *)(i + this->qE3C - 32) = 0; /*0x52394c*/
-    *(unsigned int *)(i + this->qE3C - 28) = 0; /*0x523956*/
-    *(unsigned int *)(i + this->qE3C - 24) = -1; /*0x523960*/
+    *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 36) = 0; /*0x523942*/
+    *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 32) = 0; /*0x52394c*/
+    *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 28) = 0; /*0x523956*/
+    *(unsigned int *)((unsigned int)(i)+ (unsigned int)(this->qE3C)- 24) = -1; /*0x523960*/
   }
   return (gamemd::InfantryTypeClass **)(this);
 }
@@ -157,10 +159,10 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
 namespace gamemd {
 unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 {
-  TechnoTypeClass::Construct(aP1); /*0x523988*/
+  ((TechnoTypeClass *)(aP1))->Construct(); /*0x523988*/
   *(unsigned int *)&this->qE50 = (int)&TypeList_AnimTypeClass_const___vftable; /*0x523992*/
-  this->DeathAnims[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x523998*/
-  this->VoiceComment[0] = (int)&TypeList_int_vftable; /*0x52399e*/
+  this-((unsigned int *)(>DeathAnims))[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x523998*/
+  this-((unsigned int *)(>VoiceComment))[0] = (int)&TypeList_int_vftable; /*0x52399e*/
   this->TechnoTypeClass = (void*)&InfantryTypeClass_vftable; /*0x5239a8*/
   *(void **)&this->vtable2 = (void*)&InfantryTypeClass_vftable; /*0x5239ae*/
   *(void **)&this->vtable3 = (void*)&InfantryTypeClass_vftable; /*0x5239b5*/
@@ -172,6 +174,15 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 namespace gamemd {
 int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
   int v3; // edi
   void * v5;
   int v6; // esi
@@ -187,27 +198,27 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   v5 = (void *)((int)(RA2_OPNEW(0x6F0u)));
   if ( v5 ) /*0x523b55*/
   {
-    v6 = InfantryClass::Construct(v5, v3, (int)this, ppv); /*0x523b68*/
+    v6 = ((InfantryClass *)(v5))->Construct(v3, (int)this, ppv); /*0x523b68*/
     if ( v6 ) /*0x523b6c*/
     {
       v7 = (int *)(a2[1] << 8);
       v13[0] = (unsigned int)((gamemd::CellClass *)((*a2 << 8) + 128));
-      v13[1] = (gamemd::CellClass *)(v7 + 128);
-      v13[2] = 0; /*0x523bb1*/
-      v8 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13); /*0x523bb9*/
+      v13[1] = (unsigned int)((gamemd::CellClass *)((unsigned int)((gamemd::CellClass *)(v7 + 128))));
+      v13[2] = (unsigned int)((gamemd::CellClass *)(0));
+      v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13));
       v9 = ObjectPlacement::CalcPosition((ObjectPlacement *)v8, v15, v13, 0, 0, 0); /*0x523bc0*/
       v14[0] = *v9; /*0x523bcf*/
       v10 = v9[1]; /*0x523bd5*/
       v14[1] = v10; /*0x523bd9*/
       v11 = v9[2]; /*0x523bdd*/
       v14[2] = v11; /*0x523be0*/
-      if ( v14[0] != *(unsigned int *)&stru_A8EB00.?[1692] /*0x523bf4*/
-        || v10 != *(unsigned int *)&stru_A8EB00.?[1696]
-        || v11 != *(unsigned int *)&stru_A8EB00.?[1700] )
+      if ( v14[0] != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1692) /*0x523bf4*/
+        || v10 != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1696)
+        || v11 != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1700) )
       {
-        return (*(char (__thiscall **)(int, unsigned int *, int))(v6->u32_D8)(v6, v14, 64); /*0x523c0b*/
+        return (*(char (**)(int, unsigned int *, int))(v6->u32_D8)(v6, v14, 64); /*0x523c0b*/
       }
-      (*(void (__thiscall **)(int, int))(v6->needsSave)(v6, 1); /*0x523c14*/
+      (*(void (**)(int, int))(v6->needsSave)(v6, 1); /*0x523c14*/
     }
   }
   return 0; /*0x523c07*/
@@ -217,6 +228,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 namespace gamemd {
 int InfantryTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
 {
+    unsigned int v44 = 0;  /* G37 hoist */
   int v3; // ecx
   int v4; // esi
   int PipIdx; // eax
@@ -284,11 +296,11 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   v44.CapacityIncrement = (int)String; /*0x524111*/
   v44.Count = (int)&g_INI_DefaultBuffer; /*0x524112*/
   v44.? = (int)aOccupyweapon; /*0x524117*/
-  *(unsigned int *)&v44.?[3] = v4 + 36; /*0x52411c*/
+  *(unsigned int *)&(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52411c*/
   *(unsigned int *)(v4 + 3584) = PipIdx; /*0x52411f*/
   if ( INIClass::GetString( /*0x524125*/
          (INIClass *)a2,
-         *(uint8_t **)&v44.?[3],
+         *(uint8_t **)&(unsigned int *)((char *)&v44 + 3),
          (uint8_t *)v44.?,
          (char *)v44.Count,
          (char *)v44.CapacityIncrement,
@@ -327,8 +339,8 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
                                             inited,
                                             (uint8_t *)aVoicecomment,
                                             *(void ***)v44.VectorClass,
-                                            *(void **)&v44.?[3],
-                                            *(int *)&v44.?[3],
+                                            *(void **)&(unsigned int *)((char *)&v44 + 3),
+                                            *(int *)&(unsigned int *)((char *)&v44 + 3),
                                             v44.?,
                                             v44.Count,
                                             v44.CapacityIncrement,
@@ -437,11 +449,11 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   v44.CapacityIncrement = (int)String; /*0x524433*/
   v44.Count = (int)&g_INI_DefaultBuffer; /*0x524434*/
   v44.? = (int)aLeavewatersoun; /*0x524439*/
-  *(unsigned int *)&v44.?[3] = v4 + 36; /*0x52443e*/
+  *(unsigned int *)&(unsigned int *)((char *)&v44 + 3) = v4 + 36; /*0x52443e*/
   *(unsigned int *)(v4 + 3748) = Index; /*0x524441*/
   if ( !INIClass::GetString( /*0x52445c*/
           (INIClass *)a2,
-          *(uint8_t **)&v44.?[3],
+          *(uint8_t **)&(unsigned int *)((char *)&v44 + 3),
           (uint8_t *)v44.?,
           (char *)v44.Count,
           (char *)v44.CapacityIncrement,
@@ -731,7 +743,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
   *(void **)&this->vtable4 = (void*)&InfantryTypeClass_vftable; /*0x524d8a*/
   AbstractClass::AnnounceExpiredPointer(&this->TechnoTypeClass, 1); /*0x524d91*/
   v8 = this; /*0x524da6*/
-  v3 = (*(int (__thiscall **)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))(&dword_A8E348, &v8); /*0x524daa*/
+  v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))(&dword_A8E348, &v8); /*0x524daa*/
   if ( v3 != -1 && v3 < dword_A8E358 && v3 < --dword_A8E358 ) /*0x524dc5*/
   {
     do /*0x524ddd*/
@@ -785,7 +797,7 @@ unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
 
   if ( this == (InfantryTypeClass *)aP1 ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
-  (*((void (__thiscall **)(InfantryTypeClass *))this->TechnoTypeClass + 3))(this); /*0x524f2e*/
+  (*((void (**)(InfantryTypeClass *))this->TechnoTypeClass + 3))(this); /*0x524f2e*/
   v3 = (void *)aP1[2]; /*0x524f31*/
   *(void **)&this->vtable3 = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
@@ -855,21 +867,21 @@ InfantryClass * InfantryTypeClass::ConstructInfantry(AbstractClass * ppv)
 // 0x523C20
 int * InfantryTypeClass::GetDimensions(int a1)
 {
-  if ( (stru_A8EB00.?[1764] & 1) == 0 ) /*0x523c2b*/
+  if ( (*((unsigned int *)((char *)&stru_A8EB00 + 1764)) & 1) == 0 ) /*0x523c2b*/
   {
-    stru_A8EB00.?[1764] |= 1u; /*0x523c46*/
-    *(unsigned int *)&stru_A8EB00.?[1704] = 0; /*0x523c4c*/
-    *(unsigned int *)&stru_A8EB00.?[1708] = 2147450879; /*0x523c64*/
+    *((unsigned int *)((char *)&stru_A8EB00 + 1764)) |= 1u; /*0x523c46*/
+    *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1704) = 0; /*0x523c4c*/
+    *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1708) = 2147450879; /*0x523c64*/
     atexit(nullsub_147); /*0x523c6a*/
   }
-  return (int *)&stru_A8EB00.?[1704]; /*0x523c78*/
+  return (int *)&(unsigned int *)((char *)&stru_A8EB00 + 1704); /*0x523c78*/
 }
 // 0x524760
 unsigned int * InfantryTypeClass::GetDefaultDimensions(unsigned int * a1)
 {
   void *v1; // esi
 
-  v1 = (void *)(2 * *(unsigned int *)&stru_A8EB00.?[1768]); /*0x52476c*/
+  v1 = (void *)(2 * *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1768)); /*0x52476c*/
   a1->TechnoTypeClass = (void *)85; /*0x524777*/
   a1->vtable2 = (void *)85; /*0x524779*/
   *(void **)&a1->vtable3 = v1; /*0x52477c*/

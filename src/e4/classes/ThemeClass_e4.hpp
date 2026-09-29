@@ -28,11 +28,12 @@ struct ThemeClass {
     unsigned int u32_CC2;
     unsigned char u8_288;
     unsigned char u8_289;
+    unsigned int Audio;
 // --- flat members (END) ---
     int ClearQueues();
-    int ReadThemeEntry(unsigned char *** a2);
-    int RequestBuffer();
-    long long GetValue();
+    int ReadThemeEntry(unsigned char *** a2, void *a1 = 0);
+    int RequestBuffer(void *a1 = 0);
+    long long GetValue(void *a1 = 0);
     void * InitializeThemes(char * a2);
     void GetField(int a1);
 };

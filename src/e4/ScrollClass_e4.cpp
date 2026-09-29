@@ -12,6 +12,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/ScriptTypeClass_e4.hpp"
 
 // 0x6922E0
 namespace gamemd {

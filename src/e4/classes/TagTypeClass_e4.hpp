@@ -35,10 +35,10 @@ struct TagTypeClass {
     unsigned int vtable46;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers();
-    AbstractTypeClass * * Construct(ObjectClass * aP1);
-    AbstractTypeClass * * FindOrCreate();
+    AbstractTypeClass * * Construct(ObjectClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    AbstractTypeClass * * FindOrCreate(void *a1 = 0);
     TagTypeClass * ddtor(char a2);
-    TriggerTypeClass * * FindOrCreateTriggerType();
+    TriggerTypeClass * * FindOrCreateTriggerType(void *a1 = 0);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetEvent(int a2, int a3);

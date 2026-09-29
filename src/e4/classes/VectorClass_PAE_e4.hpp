@@ -14,9 +14,9 @@ struct VectorClass_PAE {
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
     int Count(int a2);  // 0x7B4310
-    char Get(int a2);  // 0x7B4320
+    char Get(int a2, void *a1 = 0);  // 0x7B4320
     char Release(int a2,  unsigned int * a3);    // 0x7B4360
-    void Set();  // 0x7B4410
+    void Set(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x7B4410
     int GetSize(unsigned int * a2);  // 0x7B4440
     unsigned int GetCapacity(int a2);  // 0x7B4480
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x7B4580

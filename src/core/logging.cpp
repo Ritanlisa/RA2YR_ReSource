@@ -14,7 +14,7 @@ void LogSetLevel(LogLevel level)
 
 void LogWrite(LogLevel level, const char* fmt, ...)
 {
-    if (level < g_level) return;
+    if (level < (gamemd::LogLevel)(g_level)) return;
 
     va_list args;
     va_start(args, fmt);

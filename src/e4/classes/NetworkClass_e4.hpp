@@ -11,9 +11,11 @@ struct NetworkClass {
     void* q6034;  // 0x6034
     unsigned int u32_64D4;  // 0x64D4
     unsigned int u32_64D8;  // 0x64D8
+    unsigned int u32_64D49;
+    unsigned int u32_64D80;
 // --- flat members (END) ---
-    int ExecutePlanningModeCmd();  // 0x639FD0
+    int ExecutePlanningModeCmd(void *a1 = 0);  // 0x639FD0
     int RecordEvent();  // 0x6FFE00
-    SOCKET UnregisterAsync();  // 0x7B1C50
+    unsigned int UnregisterAsync();  // 0x7B1C50
 };
 } // namespace gamemd

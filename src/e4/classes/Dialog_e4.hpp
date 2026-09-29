@@ -71,48 +71,52 @@ struct Dialog {
     void* q6B4;  // 0x6B4
     unsigned char q6B8;  // 0x6B8
     void* q6C4;  // 0x6C4
+    unsigned int Dialog_field_0xC;
+    unsigned int __pad_0;
+    unsigned int __pad_10;
+    unsigned int Debug;
 // --- flat members (END) ---
-    void MapDialogResource();  // 0x49F740
+    void MapDialogResource(void *a1 = 0);  // 0x49F740
     int InitializeGameSettings();  // 0x5B5BC0
     int ShowMessageBox(int lParam,  unsigned short * a2,  Movie * aP2,  IUnknown * aP3,  IUnknown * aP4,  int a6);    // 0x5D3490
     int GetModeNeg2();  // 0x5D5DC0
     int GetMode3();  // 0x5D5DD0
-    HWND RefreshDialogsGame();  // 0x5EE350
+    HWND RefreshDialogsGame(void *a1 = 0);  // 0x5EE350
     int RunModemDialing(ObjectClass * aP1,  int a3,  char a4);    // 0x5F2950
     BOOL MapControlToAction(HWND hWnd,  LPARAM a2);    // 0x606800
-    char StopBink();  // 0x607FD0
-    char IdleProcess();  // 0x608070
+    char StopBink(void *a1 = 0);  // 0x607FD0
+    char IdleProcess(void *a1 = 0);  // 0x608070
     BOOL HandleTabKey(HWND hWnd,  LPARAM a2);    // 0x60A330
     BOOL DispatchEvent(HWND hWnd,  LPARAM a2);    // 0x60A5B0
     AbstractClass * * InitWindow(SkirmishDialog * aP0, LPARAM a2);    // 0x60F760
     AbstractClass * * InitializeControls(HWND hWnd, LPARAM a2);    // 0x60F9A0
     int DestroyDialogSystem();  // 0x610360
-    LONG Resize();  // 0x6213A0
-    void DrawBackground();  // 0x621E90
-    HWND Destroy();  // 0x622720
+    LONG Resize(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x6213A0
+    void DrawBackground(void *a1 = 0);  // 0x621E90
+    HWND Destroy(void *a1 = 0);  // 0x622720
     void CleanupTree();  // 0x6233A0
     char UpdateControlState(unsigned int * a2,  unsigned int * a3);    // 0x624930
     void GrowBuffer();  // 0x624BE0
     char BindGadgetData(void* aP1,  void* aP2);    // 0x624CA0
     int ReadMultiplayerDialogSettings();  // 0x671EA0
-    int FindByHandle();  // 0x775940
+    int FindByHandle(void *a1 = 0);  // 0x775940
     HWND GetCurrent();  // 0x775B10
     int GetCurrentType();  // 0x775B20
-    BOOL GetField();  // 0x775BA0
-    int SideIDToIndex();  // 0x4E4EC0
+    BOOL GetField(void *a1 = 0);  // 0x775BA0
+    int SideIDToIndex(void *a1 = 0);  // 0x4E4EC0
     int OptionIDToIndex();  // 0x4E59A0
     int FindGameUI();  // 0x5E26C0
     HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);    // 0x5E2700
     HWND ShowStatusText(SessionClass * aP0,  void* aP1,  void* aP2);    // 0x5E2790
-    LRESULT ShowPlayerName();  // 0x5E2F60
+    LRESULT ShowPlayerName(void *a1 = 0);  // 0x5E2F60
     int MapPlayerIDToIndex();  // 0x5E9950
     unsigned int CheckButtonState();  // 0x5F3450
-    BOOL IsSpecialTemplate();  // 0x602AE0
+    BOOL IsSpecialTemplate(void *a1 = 0);  // 0x602AE0
     BOOL EnumAndCleanup();  // 0x60AAA0
     BOOL SubclassEditControl(HWND hWnd,  LPARAM a2);    // 0x60F320
-    HWND Show();  // 0x622800
-    char PumpMessages();  // 0x623120
-    int FindByPtr();  // 0x7759B0
+    HWND Show(void *a1 = 0);  // 0x622800
+    char PumpMessages(void *a1 = 0);  // 0x623120
+    int FindByPtr(void *a1 = 0);  // 0x7759B0
     HWND RestoreParent();  // 0x777060
     char UpdateGameUI();  // 0x77D820
     HWND CloseAll();  // 0x799D10

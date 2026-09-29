@@ -15,8 +15,9 @@
 namespace gamemd {
 AudioController * * CCFileClass::Close()
 {
+    unsigned int v3 = 0;  /* G37 hoist */
   char result; // al
-  FileClass v3; // eax
+  AudioController ** v3;
 
   if ( !IDA_BYTE1(this->BufferSize) ) /*0x4325c3*/
     return FileClass::CloseHandle(); /*0x432607*/
@@ -26,9 +27,9 @@ AudioController * * CCFileClass::Close()
   {
     if ( this->MixFileIndex ) /*0x4325d6*/
     {
-      v3 = (gamemd::AudioController **)(this->FileClass);
+      v3 = (unsigned int)((gamemd::AudioController **)(this->FileClass));
       IDA_BYTE1(this->BufferSize) = 0; /*0x4325e1*/
-      result = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)&v3 + 52))(this); /*0x4325e5*/
+      result = (*(int (**)(CCFileClass *))(*(unsigned int *)&v3 + 52))(this); /*0x4325e5*/
       IDA_BYTE1(this->BufferSize) = 1; /*0x4325e8*/
       IDA_BYTE2(this->BufferOffset) = 0; /*0x4325ec*/
       IDA_BYTE1(this->BufferOffset) = 0; /*0x4325f0*/
@@ -66,7 +67,7 @@ int CCFileClass::GetFileSize()
   result = (int)this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(uint8_t (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d0e0*/
+    if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d0e0*/
     {
       FileSize = GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
@@ -74,16 +75,16 @@ int CCFileClass::GetFileSize()
         v4 = *(unsigned int *)this->FileClass; /*0x65d0fd*/
         v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
-        (*(void (__thiscall **)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
+        (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
         result = -1 - (unsigned int)this->Handle; /*0x65d113*/
         this->FileName = (void *)result; /*0x65d116*/
         return result; /*0x65d11b*/
       }
     }
-    else if ( (*(int (__thiscall **)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1) ) /*0x65d122*/
+    else if ( (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1) ) /*0x65d122*/
     {
-      FileSize = (*(int (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
-      (*(void (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/
+      FileSize = (*(int (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
+      (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/
     }
     result = FileSize - (unsigned int)this->Handle; /*0x65d13e*/
     this->FileName = (void *)result; /*0x65d140*/

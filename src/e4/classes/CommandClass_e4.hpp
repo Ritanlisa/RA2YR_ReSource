@@ -20,6 +20,7 @@ struct CommandClass {
     unsigned int u32_8D0;
     unsigned int u32_E88;
     unsigned char u8_241;
+    unsigned int __tail_0;
 // --- flat members (END) ---
     int AddAction(ToolTipManager * aP1);
     int BuildBar();

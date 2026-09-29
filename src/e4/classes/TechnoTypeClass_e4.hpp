@@ -308,7 +308,7 @@ struct TechnoTypeClass {
     unsigned char q340;  // 0x340
     unsigned int q344;  // 0x344
     unsigned int q348;  // 0x348
-    char Locomotor[16];  // 0x34C
+    unsigned int Locomotor;  // 0x34C
     unsigned int u32_350;  // 0x350
     unsigned int q354;  // 0x354
     unsigned char q358;  // 0x358
@@ -361,7 +361,7 @@ struct TechnoTypeClass {
     unsigned int q400;  // 0x400
     unsigned int DeploysInto;  // 0x404
     unsigned int UndeploysInto;  // 0x408
-    char PowersUnit[4];  // 0x40C
+    unsigned int PowersUnit;  // 0x40C
     bool PoweredUnit;  // 0x410
     unsigned char q411;  // 0x411
     unsigned char VoiceSelect;  // 0x414
@@ -525,11 +525,11 @@ struct TechnoTypeClass {
     AbstractClass* q65C;  // 0x65C
     int WalkRate;  // 0x660
     int IdleRate;  // 0x664
-    char VeteranAbilities[4];  // 0x668
+    unsigned int VeteranAbilities;  // 0x668
     int ThreatPosed;  // 0x670
     int Points;  // 0x674
     int Speed;  // 0x678
-    char SpeedType[4];  // 0x67C
+    unsigned int SpeedType;  // 0x67C
     int InitialAmmo;  // 0x680
     int Ammo;  // 0x684
     int IFVMode;  // 0x688
@@ -608,8 +608,8 @@ struct TechnoTypeClass {
     TechnoTypeClass * ptr_758;  // 0x758
     void* q75C;  // 0x75C
     int q760;  // 0x760
-    char NaturalParticleSystem[4];  // 0x764
-    char NaturalParticleSystemLocation[12];  // 0x768
+    unsigned int NaturalParticleSystem;  // 0x764
+    unsigned int NaturalParticleSystemLocation;  // 0x768
     unsigned int u32_76C;  // 0x76C
     TechnoTypeClass * ptr_770;  // 0x770
     char RefinerySmokeParticleSystem[4];  // 0x774
@@ -627,23 +627,23 @@ struct TechnoTypeClass {
     unsigned int q7A4;  // 0x7A4
     void* q7A8;  // 0x7A8
     unsigned char q7AC;  // 0x7AC
-    char DamageSmokeOffset[12];  // 0x7B0
+    unsigned int DamageSmokeOffset;  // 0x7B0
     unsigned int u32_7B4;  // 0x7B4
     unsigned int u32_7B8;  // 0x7B8
     bool DamSmkOffScrnRel;  // 0x7BC
     unsigned char q7BD;  // 0x7BD
-    char DestroySmokeOffset[12];  // 0x7C0
+    unsigned int DestroySmokeOffset;  // 0x7C0
     unsigned int q7C4;  // 0x7C4
     unsigned int u32_7C8;  // 0x7C8
-    char RefinerySmokeOffsetOne[12];  // 0x7CC
+    unsigned int RefinerySmokeOffsetOne;  // 0x7CC
     unsigned int u32_7D0;  // 0x7D0
     unsigned int u32_7D4;  // 0x7D4
-    char RefinerySmokeOffsetTwo[12];  // 0x7D8
+    unsigned int RefinerySmokeOffsetTwo;  // 0x7D8
     unsigned int u32_7DC;  // 0x7DC
-    char RefinerySmokeOffsetThree[12];  // 0x7E4
+    unsigned int RefinerySmokeOffsetThree;  // 0x7E4
     unsigned int u32_7E8;  // 0x7E8
     unsigned int u32_7EC;  // 0x7EC
-    char RefinerySmokeOffsetFour[12];  // 0x7F0
+    unsigned int RefinerySmokeOffsetFour;  // 0x7F0
     unsigned int u32_7F4;  // 0x7F4
     unsigned int u32_7F8;  // 0x7F8
     int ShadowIndex;  // 0x7FC
@@ -803,13 +803,13 @@ struct TechnoTypeClass {
     bool Turret;  // 0xCA1
     bool TurretRecoil;  // 0xCA2
     unsigned char qCA3;  // 0xCA3
-    char TurretAnimData[16];  // 0xCA4
+    unsigned int TurretAnimData;  // 0xCA4
     unsigned int u32_CA8;  // 0xCA8
     unsigned int u32_CAC;  // 0xCAC
     unsigned int u32_CB0;  // 0xCB0
     bool unknown_bool_CB4;  // 0xCB4
     unsigned char qCB5;  // 0xCB5
-    char BarrelAnimData[16];  // 0xCB8
+    unsigned int BarrelAnimData;  // 0xCB8
     unsigned int u32_CBC;  // 0xCBC
     unsigned int u32_CC0;  // 0xCC0
     unsigned int u32_CC4;  // 0xCC4
@@ -892,7 +892,7 @@ struct TechnoTypeClass {
     unsigned int qD9D;  // 0xD9D
     int ZFudgeBridge;  // 0xDA0
     char PaletteFile;  // 0xDA4
-    unsigned int u32_DA8;  // 0xDA8
+    void* ;  // 0xDA8
     unsigned int qDAC;  // 0xDAC
     WeaponTypeClass* qDB0;  // 0xDB0
     unsigned int u32_DB4;  // 0xDB4
@@ -966,25 +966,135 @@ struct TechnoTypeClass {
     unsigned int weapon23;
     unsigned int weapon24;
     unsigned int weapon25;
+    unsigned int IntList_A_Capacity4;
+    unsigned int IntList_A_Items2;
+    unsigned int IntList_A_Items3;
+    unsigned int IntList_A_Items4;
+    unsigned int IntList_C_Capacity4;
+    unsigned int VoxelAnimList_Items0;
+    unsigned int cost8;
+    unsigned int cost9;
+    unsigned int pipScale0;
+    unsigned int pipScale1;
+    unsigned int q5042;
+    unsigned int q5043;
+    unsigned int q5044;
+    unsigned int q5045;
+    unsigned int q5046;
+    unsigned int q5047;
+    unsigned int q5048;
+    unsigned int q5049;
+    unsigned int q5080;
+    unsigned int q5081;
+    unsigned int speedType5;
+    unsigned int strength0;
+    unsigned int techLevel4;
+    unsigned int threatAvoidValue8;
+    unsigned int threatPosed2;
+    unsigned int q5082;
+    unsigned int q5083;
+    unsigned int q5084;
+    unsigned int q5085;
+    unsigned int q5086;
+    unsigned int q5087;
+    unsigned int q5088;
+    unsigned int q5089;
+    unsigned int q50C0;
+    unsigned int q50C1;
+    unsigned int q50C2;
+    unsigned int q50C3;
+    unsigned int q50C4;
+    unsigned int q5142;
+    unsigned int q51C2;
+    unsigned int q51C6;
+    unsigned int CrashingSound0;
+    unsigned int CrashingSound1;
+    unsigned int CrashingSound2;
+    unsigned int CrashingSound3;
+    unsigned int CrashingSound5;
+    unsigned int DamageSound8;
+    unsigned int DamageSound9;
+    unsigned int ImpactLandSound0;
+    unsigned int ImpactLandSound1;
+    unsigned int ImpactLandSound2;
+    unsigned int ImpactLandSound3;
+    unsigned int ImpactLandSound4;
+    unsigned int ImpactLandSound5;
+    unsigned int ImpactLandSound6;
+    unsigned int ImpactLandSound7;
+    unsigned int ImpactLandSound8;
+    unsigned int ImpactLandSound9;
+    unsigned int q51C7;
+    unsigned int q51C8;
+    unsigned int q51C9;
+    unsigned int q5200;
+    unsigned int q5201;
+    unsigned int q5202;
+    unsigned int q5203;
+    unsigned int q5204;
+    unsigned int q5205;
+    unsigned int ChronoOutSound0;
+    unsigned int CrashingSound6;
+    unsigned int CrashingSound7;
+    unsigned int CrashingSound8;
+    unsigned int CrashingSound9;
+    unsigned int DeploySound6;
+    unsigned int DeploySound7;
+    unsigned int LeaveTransportSound8;
+    unsigned int SinkingSound0;
+    unsigned int SinkingSound3;
+    unsigned int SinkingSound5;
+    unsigned int SinkingSound6;
+    unsigned int SinkingSound8;
+    unsigned int SinkingSound9;
+    unsigned int UndeploySound0;
+    unsigned int UndeploySound1;
+    unsigned int UndeploySound2;
+    unsigned int UndeploySound3;
+    unsigned int UndeploySound4;
+    unsigned int UndeploySound5;
+    unsigned int VoiceCapture2;
+    unsigned int VoiceCapture3;
+    unsigned int VoiceCapture4;
+    unsigned int VoiceFalling0;
+    unsigned int VoiceHarvest6;
+    unsigned int VoiceSinking2;
+    unsigned int VoiceHarvest7;
+    unsigned int VoiceHarvest8;
+    unsigned int VoiceHarvest9;
+    unsigned int VoicePrimaryEliteWeaponAttack6;
+    unsigned int q0E04;
+    unsigned int q1446;
+    unsigned int u32_1388;
+    unsigned int u32_1900;
+    unsigned int u32_1A04;
+    unsigned int u32_1AC2;
+    unsigned int u32_24C6;
+    unsigned int u32_1B80;
+    unsigned int u32_1C08;
+    unsigned int u32_1CC6;
+    unsigned int u32_DA8;
+    unsigned int u32_1D84;
+    unsigned int u32_1E42;
 // --- flat members (END) ---
-    AbstractClass * * Construct(ObjectTypeClass * aP1);
+    AbstractClass * * Construct(ObjectTypeClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);
     DynamicVectorClass_flat * * SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
     TechnoTypeClass * ddtor(char a2);
     VectorClass_flat * Constructor_1(ObjectTypeClass * aP1);
     bool CanAttackMove_IgnoreWeapon();
-    char RemoveItem(int a2);
+    char RemoveItem(int a2, void *a1 = 0);
     char vt_entry_A0();
     double ComputeBuildTime();
     int ComputeValue(void * a2, float a3);
     int ComputeValueSimple(float * a2);
-    int DTOR();
-    int Dispatch(TechnoTypeClass * aP1);
+    int DTOR(void *a1 = 0);
+    int Dispatch(TechnoTypeClass * aP1, void *a2 = 0);
     int GetThreatMultiplier(TechnoTypeClass * aP1);
     int SaveLoadDataArray(TechnoTypeClass * aP1);
     int SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3);
-    unsigned int * Constructor();
-    unsigned int * Constructor_0(ObjectTypeClass * aP1);
+    unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    unsigned int * Constructor_0(ObjectTypeClass * aP1, void *a2 = 0, void *a1 = 0);
     unsigned int * LoadBase(ObjectClass * aP1);
     void * ReadINI(char * Source, int a3);
     void* CanAttackMove_IgnoreWeapon_0();

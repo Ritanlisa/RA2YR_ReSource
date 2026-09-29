@@ -20,11 +20,14 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x610950
 namespace gamemd {
 char TriggerClass::FindByEventType(char a1)
 {
+    unsigned int v8 = 0;  /* G37 hoist */
   unsigned int *v2; // esi
   int v3; // eax
   int v4; // ecx
@@ -40,18 +43,18 @@ char TriggerClass::FindByEventType(char a1)
   if ( a1 ) /*0x61096a*/
   {
     if ( dword_AC1CC8 ) /*0x610978*/
-      (**(void (__thiscall ***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x61097e*/
+      (**(void (***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x61097e*/
     dword_AC1CC8 = 0; /*0x610982*/
     v2 = RA2_OPNEW(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
       v4 = (unsigned int)(IDA_HIDWORD(dword_AC1CB8));
-      v3 = DWORD2(dword_AC1CB8); /*0x61099b*/
-      v2[1] = DWORD2(dword_AC1CB8); /*0x6109a1*/
-      v2[2] = v4; /*0x6109a9*/
-      v2[3] = 0; /*0x6109b1*/
-      *v2 = &XSurface_Vtable; /*0x6109b4*/
-      v2[4] = 2; /*0x6109ba*/
+      v3 = (unsigned int)(DWORD2(dword_AC1CB8));
+      v2[1] = (unsigned int)(DWORD2(dword_AC1CB8));
+      v2[2] = (unsigned int)(v4);
+      v2[3] = (unsigned int)(0);
+      *v2 = (unsigned int)(&XSurface_Vtable);
+      v2[4] = (unsigned int)(2);
       Buffer::Init(v2 + 5, 0, 2 * v4 * v3); /*0x6109c1*/
       *v2 = &BSurface_Vtable; /*0x6109c6*/
       v5 = (int)v2; /*0x6109cc*/
@@ -64,7 +67,7 @@ char TriggerClass::FindByEventType(char a1)
     v9[0] = 0; /*0x6109f5*/
     v9[1] = 0; /*0x6109f9*/
     v10 = *((unsigned long long *)&dword_AC1CB8 + 1); /*0x6109fd*/
-    (*(void (__thiscall **)(int, unsigned int *, int, __int128 *, unsigned int, int))(*(unsigned int *)v5 + 8))( /*0x610a08*/
+    (*(void (**)(int, unsigned int *, int, __int128 *, unsigned int, int))(*(unsigned int *)v5 + 8))( /*0x610a08*/
       v5,
       v9,
       g_DSurface_Primary,
@@ -80,9 +83,9 @@ char TriggerClass::FindByEventType(char a1)
     v6 = ((int)(uint8_t)dword_AC48B0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x610a8d*/
        | (IDA_BYTE1(dword_AC48B0) >> g_BitMask_Blue << g_BitMask_Green)
        | (IDA_BYTE2(dword_AC48B0) >> g_BitMask_Red << g_BitShift_Blue);
-  (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
-  (*(void (__thiscall **)(int, __int128 *, int))(*(unsigned int *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
-  (*(void (__thiscall **)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
+  (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
+  (*(void (**)(int, __int128 *, int))(*(unsigned int *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
+  (*(void (**)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
   Team_Find((int *)&v8, g_DSurface_Primary, 8, 4); /*0x610aca*/
   v7 = wcslen(word_AC1CCC); /*0x610ae0*/
   DrawTextRendererTextAligned(dword_AC18A4, 0, (int *)&v8, word_AC1CCC, v7, 1, 1, g_DSurface_Primary, 0); /*0x610afb*/
@@ -136,7 +139,7 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
     {
       v12 = 0; /*0x726549*/
     }
-    v8 = *(unsigned int *)&v8->nextTrigger; /*0x726585*/
+    v8 = (gamemd::TriggerClass *)(*(unsigned int *)&v8->nextTrigger);
     ++v7; /*0x726588*/
   }
   while ( v8 ); /*0x72658b*/

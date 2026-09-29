@@ -27,22 +27,22 @@ int LocomotionClass::Initialize()
   LocomotionClass::Init(); /*0x4af543*/
   this->u32_1C = 0; /*0x4af54d*/
   this->u32_8 = 0; /*0x4af550*/
-  v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4af553*/
+  v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4af553*/
   this->u32_2C = 0; /*0x4af559*/
   this->u32_24 = (unsigned int)(v2);
   *(unsigned int *)&this->LinkedTo = 0; /*0x4af55f*/
   this->u32_34 = (unsigned int)(g_DDraw_ClipRect);
   this->u32_38 = (unsigned int)(qword_8A0794);
   this->u32_10 = (unsigned int)(g_DDraw_ClipRect);
-  this->Dirty = qword_8A0794; /*0x4af58e*/
-  v3 = IDA_HIDWORD(qword_8A0794); /*0x4af591*/
-  this->u8_14 = 0; /*0x4af597*/
-  this->u32_4C = 0; /*0x4af59a*/
-  this->u32_48 = v3; /*0x4af59d*/
-  this->__pad_015 = 0; /*0x4af5a3*/
-  this->u32_58 = -1; /*0x4af5a6*/
-  this->u32_5C = -1; /*0x4af5a9*/
-  this->u32_60 = 0; /*0x4af5ac*/
+  this->Dirty = (unsigned int)(qword_8A0794);
+  v3 = (unsigned int)(IDA_HIDWORD(qword_8A0794));
+  this->u8_14 = (unsigned int)(0);
+  this->u32_4C = (unsigned int)(0);
+  this->u32_48 = (unsigned int)(v3);
+  this->__pad_015 = (unsigned int)(0);
+  this->u32_58 = (unsigned int)(-1);
+  this->u32_5C = (unsigned int)(-1);
+  this->u32_60 = (unsigned int)(0);
   this->u32_61 = 0; /*0x4af5af*/
   this->u32_62 = 0; /*0x4af5b2*/
   this->u32_63 = 0; /*0x4af5b5*/
@@ -50,7 +50,7 @@ int LocomotionClass::Initialize()
   this->u32_65 = 1; /*0x4af5bb*/
   this->u32_68 = 0; /*0x4af5bf*/
   *(unsigned int *)this->ILocomotion = (void*)&DriveLocomotionClass_vftable; /*0x4af5c2*/
-  *(unsigned int *)&this->ILocomotion[4] = (void*)&DriveLocomotionClass_vftable; /*0x4af5c8*/
+  *(unsigned int *)&this-((unsigned int *)(>ILocomotion))[4] = (void*)&DriveLocomotionClass_vftable; /*0x4af5c8*/
   this->u32_18 = &off_7E7E8C; /*0x4af5cf*/
   return (int)this->ILocomotion; /*0x4af5d8*/
 }
@@ -67,11 +67,11 @@ void * LocomotionClass::UpdateAll()
   for ( i = dword_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
     v3 = (unsigned int *)*((unsigned int *)dword_8A3874 + i); /*0x4c54b3*/
-    result = *(wchar_t **)&stru_A8EB00.?[416]; /*0x4c54be*/
-    if ( *(int *)&stru_A8EB00.?[416] >= v3[11] + v3[12] ) /*0x4c54c5*/
+    result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c54be*/
+    if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) >= v3[11] + v3[12] ) /*0x4c54c5*/
     {
       if ( v3 ) /*0x4c54c9*/
-        result = (wchar_t *)(*(int (__thiscall **)(unsigned int *, int))(*v3 + 32))(v3, 1); /*0x4c54cf*/
+        result = (wchar_t *)(*(int (**)(unsigned int *, int))(*v3 + 32))(v3, 1); /*0x4c54cf*/
     }
   }
   return result; /*0x4c54d5*/
@@ -86,18 +86,18 @@ int LocomotionClass::CheckBridgeBlock()
   Cell *v4; // eax
   unsigned int *v5; // eax
 
-  if ( (*((int (__thiscall **)(FootClass *))this->LinkedTo->TechnoClass + 97))(this->LinkedTo) == 7 /*0x4cfa8e*/
+  if ( (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 97))(this->LinkedTo) == 7 /*0x4cfa8e*/
     || (IDA_LOBYTE(vtable1) = BuildingClass::GetType_Thunk(&this->LinkedTo->TechnoClass), !(unsigned char)vtable1) )
   {
-    vtable1 = (*((int (__thiscall **)(FootClass *))this->LinkedTo->TechnoClass + 11))(this->LinkedTo); /*0x4cfa95*/
+    vtable1 = (*((int (**)(FootClass *))this->LinkedTo->TechnoClass + 11))(this->LinkedTo); /*0x4cfa95*/
     if ( vtable1 == 2 /*0x4cfacc*/
       && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1].?, *(unsigned char *)(vtable1 + 3597))
-      && (v4 = (Cell *)(*((int (__thiscall **)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
+      && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
           v5 = Cell::IsBridge(v4),
           IDA_LOBYTE(vtable1) = Array::Contains((Array *)this->LinkedTo, (int)v5),
           !(unsigned char)vtable1) )
     {
-      IDA_LOBYTE(vtable1) = (*((char (__thiscall **)(FootClass *, unsigned int, int))LinkedTo->TechnoClass + 289))(LinkedTo, 0, 1); /*0x4cfad6*/
+      IDA_LOBYTE(vtable1) = (*((char (**)(FootClass *, unsigned int, int))LinkedTo->TechnoClass + 289))(LinkedTo, 0, 1); /*0x4cfad6*/
     }
     else
     {
@@ -127,12 +127,12 @@ namespace gamemd {
 int LocomotionClass::ProcessData()
 {
   LocomotionClass::Init(); /*0x513c24*/
-  this->u32_18 = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x513c34*/
-  this->u32_1C = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x513c3d*/
-  this->u32_8 = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x513c49*/
-  this->u32_24 = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x513c51*/
-  this->u32_28 = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x513c59*/
-  this->u32_2C = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x513c64*/
+  this->u32_18 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1436); /*0x513c34*/
+  this->u32_1C = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1440); /*0x513c3d*/
+  this->u32_8 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x513c49*/
+  this->u32_24 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1436); /*0x513c51*/
+  this->u32_28 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1440); /*0x513c59*/
+  this->u32_2C = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1444); /*0x513c64*/
   FrameSnapshot::InitMax((FrameSnapshot *)this + 6, 0); /*0x513c67*/
   this->u32_48 = 0; /*0x513c6c*/
   this->u8_14 = 0; /*0x513c6f*/
@@ -146,7 +146,7 @@ int LocomotionClass::ProcessData()
   this->u32_6C = 0; /*0x513c8b*/
   this->u32_70 = 0; /*0x513c8e*/
   *(unsigned int *)this->ILocomotion = (void*)&HoverLocomotionClass_vftable; /*0x513c91*/
-  *(unsigned int *)&this->ILocomotion[4] = (void*)&HoverLocomotionClass_vftable; /*0x513c97*/
+  *(unsigned int *)&this-((unsigned int *)(>ILocomotion))[4] = (void*)&HoverLocomotionClass_vftable; /*0x513c97*/
   return (int)this->ILocomotion; /*0x513ca0*/
 }
 } // namespace gamemd
@@ -158,32 +158,32 @@ int LocomotionClass::Update()
   int v4; // [esp+Ch] [ebp-4h] BYREF
 
   LocomotionClass::Init(); /*0x54ac46*/
-  this->DestinationCoords[0] = dword_ABC5A8; /*0x54ac59*/
-  this->DestinationCoords[1] = dword_ABC5AC; /*0x54ac61*/
+  this-((unsigned int *)(>DestinationCoords))[0] = dword_ABC5A8; /*0x54ac59*/
+  this-((unsigned int *)(>DestinationCoords))[1] = dword_ABC5AC; /*0x54ac61*/
   v2 = dword_ABC5B0; /*0x54ac64*/
   this->IsMoving = 0; /*0x54ac6a*/
   *(unsigned int *)this->__pad_50 = 0; /*0x54ac6d*/
-  this->DestinationCoords[2] = v2; /*0x54ac70*/
+  this-((unsigned int *)(>DestinationCoords))[2] = v2; /*0x54ac70*/
   FrameSnapshot::InitMax( /*0x54ac82*/
-    (FrameSnapshot *)&this->__pad_50[4],
+    (FrameSnapshot *)&this-((unsigned int *)(>__pad_50))[4],
     *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
   this->CurrentHeight = 0; /*0x54ac87*/
-  *(unsigned int *)&this->__pad_74[4] = 0; /*0x54ac8a*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_74))[4] = 0; /*0x54ac8a*/
   this->DestinationReached = (unsigned int)(0); /*0x54ac8d*/
   *(unsigned int *)this->__pad_74 = 0; /*0x54ac93*/
-  *(unsigned int *)&this->__pad_74[8] = 0; /*0x54ac96*/
-  *(unsigned int *)&this->__pad_74[12] = 0; /*0x54ac99*/
-  *(unsigned int *)&this->__pad_89[3] = 0; /*0x54ac9f*/
-  this->__pad_89[7] = 0; /*0x54aca5*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_74))[8] = 0; /*0x54ac96*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_74))[12] = 0; /*0x54ac99*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_89))[3] = 0; /*0x54ac9f*/
+  this-((unsigned int *)(>__pad_89))[7] = 0; /*0x54aca5*/
   this->unknown_91 = 0; /*0x54acab*/
   this->Piggybackee = 0; /*0x54acb5*/
   this->LocomotionClass[0] = (int)&JumpjetLocomotionClass_vftable; /*0x54acc3*/
   this->LocomotionClass[1] = (int)&JumpjetLocomotionClass_vftable; /*0x54acc9*/
   this->TurnRate = (int)&JumpjetLocomotionClass_vftable; /*0x54acd0*/
   IDA_LOWORD(v4) = 0x4000; /*0x54acd7*/
-  FacingClass::Update(&this->__pad_50[4], &v4); /*0x54acdc*/
+  FacingClass::Update(&this-((unsigned int *)(>__pad_50))[4], &v4); /*0x54acdc*/
   IDA_LOWORD(v4) = 0x4000; /*0x54ace8*/
-  FacingClass::Set_SyncLog(&this->__pad_50[4], &v4); /*0x54aced*/
+  FacingClass::Set_SyncLog(&this-((unsigned int *)(>__pad_50))[4], &v4); /*0x54aced*/
   return (int)this->LocomotionClass; /*0x54acf4*/
 }
 } // namespace gamemd
@@ -191,13 +191,13 @@ int LocomotionClass::Update()
 namespace gamemd {
 unsigned int * LocomotionClass::Init()
 {
-  this->Owner = (gamemd::FootClass *)((unsigned int *)(0));
-  this->LinkedTo = (unsigned int *)(0);
+  this->Owner = (unsigned int)((gamemd::FootClass *)((unsigned int *)(0)));
+  this->LinkedTo = (gamemd::FootClass *)((unsigned int *)(0));
   this->Powered = (unsigned int *)(1);
-  this->Dirty = 1; /*0x55a6cf*/
-  this->RefCount = 0; /*0x55a6d2*/
+  this->Dirty = (unsigned int *)(1);
+  this->RefCount = (unsigned int *)(0);
   *(unsigned int *)this->ILocomotion = (void*)&LocomotionClass_vftable; /*0x55a6d5*/
-  *(unsigned int *)&this->ILocomotion[4] = (void*)&LocomotionClass_vftable; /*0x55a6db*/
+  *(unsigned int *)&this-((unsigned int *)(>ILocomotion))[4] = (void*)&LocomotionClass_vftable; /*0x55a6db*/
   return this->ILocomotion; /*0x55a6e2*/
 }
 } // namespace gamemd
@@ -206,7 +206,7 @@ namespace gamemd {
 void LocomotionClass::Construct()
 {
   *(unsigned int *)this->ILocomotion = (void*)&LocomotionClass_vftable; /*0x55a6f0*/
-  *(unsigned int *)&this->ILocomotion[4] = (void*)&LocomotionClass_vftable; /*0x55a6f6*/
+  *(unsigned int *)&this-((unsigned int *)(>ILocomotion))[4] = (void*)&LocomotionClass_vftable; /*0x55a6f6*/
   *(unsigned int *)&this->LinkedTo = 0; /*0x55a6fd*/
 }
 } // namespace gamemd

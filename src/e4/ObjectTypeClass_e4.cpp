@@ -129,7 +129,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
 
-  AbstractTypeClass::Constructor(aP1); /*0x5f709c*/
+  ((AbstractTypeClass *)(aP1))->Constructor(); /*0x5f709c*/
   v3 = &this->u32_C8; /*0x5f70a3*/
   *(unsigned int *)&this->q098 = 0; /*0x5f70a9*/
   this->q264 = 0; /*0x5f70af*/
@@ -175,14 +175,14 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   this->q22E = 1; /*0x5f715c*/
   this->q230 = 1; /*0x5f7162*/
   this->q231 = (unsigned int)(1);
-  this->q235 = 1; /*0x5f716e*/
-  this->q22C = 0; /*0x5f7176*/
-  this->q22D = 0; /*0x5f717c*/
-  this->q22F = 0; /*0x5f7182*/
-  this->q232 = 0; /*0x5f7188*/
-  this->q233 = 0; /*0x5f718e*/
-  this->q234 = 0; /*0x5f7194*/
-  this->q236 = 0; /*0x5f719a*/
+  this->q235 = (unsigned int)(1);
+  this->q22C = (unsigned int)(0);
+  this->q22D = (unsigned int)(0);
+  this->q22F = (unsigned int)(0);
+  this->q232 = (unsigned int)(0);
+  this->q233 = (unsigned int)(0);
+  this->q234 = (unsigned int)(0);
+  this->q236 = (unsigned int)(0);
   this->q237 = 0; /*0x5f71a0*/
   this->q238 = 0; /*0x5f71a6*/
   this->q239 = 0; /*0x5f71ac*/
@@ -234,13 +234,13 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   if ( dword_AC1428 < dword_AC1420 /*0x5f72ee*/
     || (byte_AC1425 || !dword_AC1420)
     && dword_AC142C > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_AC1418 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_AC1418 + 8))(
          &dword_AC1418,
          dword_AC142C + dword_AC1420,
          0) )
   {
     v7 = (gamemd::ObjectTypeClass *)((unsigned int)(dword_AC1428++));
-    *((unsigned int *)dword_AC141C + v7) = this; /*0x5f730a*/
+    *((unsigned int *)(unsigned int)(dword_AC141C)+ v7) = this; /*0x5f730a*/
   }
   return (int)this; /*0x5f730f*/
 }
@@ -276,26 +276,26 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
     --v6; /*0x5f735e*/
   }
   while ( v6 ); /*0x5f735f*/
-  this->VoxelCaches[0] = 0; /*0x5f7361*/
-  this->VoxelCaches[1] = 0; /*0x5f7367*/
-  this->VoxelCaches[2] = 0; /*0x5f736d*/
+  this-((unsigned int *)(>VoxelCaches))[0] = 0; /*0x5f7361*/
+  this-((unsigned int *)(>VoxelCaches))[1] = 0; /*0x5f7367*/
+  this-((unsigned int *)(>VoxelCaches))[2] = 0; /*0x5f736d*/
   IDA_LOBYTE(this->VoxelCaches[3]) = 0; /*0x5f7373*/
-  this->VoxelCaches[4] = 0; /*0x5f7379*/
-  this->VoxelCaches[5] = 0; /*0x5f737f*/
-  this->VoxelCaches[6] = 0; /*0x5f7385*/
-  this->VoxelCaches[7] = 0; /*0x5f738b*/
+  this-((unsigned int *)(>VoxelCaches))[4] = 0; /*0x5f7379*/
+  this-((unsigned int *)(>VoxelCaches))[5] = 0; /*0x5f737f*/
+  this-((unsigned int *)(>VoxelCaches))[6] = 0; /*0x5f7385*/
+  this-((unsigned int *)(>VoxelCaches))[7] = 0; /*0x5f738b*/
   IDA_LOBYTE(this->VoxelCaches[8]) = 0; /*0x5f7391*/
-  this->VoxelCaches[9] = 0; /*0x5f7397*/
-  this->VoxelCaches[10] = 0; /*0x5f739d*/
-  this->VoxelCaches[11] = 0; /*0x5f73a3*/
-  this->VoxelCaches[12] = 0; /*0x5f73a9*/
+  this-((unsigned int *)(>VoxelCaches))[9] = 0; /*0x5f7397*/
+  this-((unsigned int *)(>VoxelCaches))[10] = 0; /*0x5f739d*/
+  this-((unsigned int *)(>VoxelCaches))[11] = 0; /*0x5f73a3*/
+  this-((unsigned int *)(>VoxelCaches))[12] = 0; /*0x5f73a9*/
   IDA_LOBYTE(this->VoxelCaches[13]) = 0; /*0x5f73af*/
-  this->VoxelCaches[14] = 0; /*0x5f73b5*/
-  this->VoxelCaches[15] = 0; /*0x5f73bb*/
-  this->VoxelCaches[16] = 0; /*0x5f73c1*/
-  this->VoxelCaches[17] = 0; /*0x5f73c7*/
+  this-((unsigned int *)(>VoxelCaches))[14] = 0; /*0x5f73b5*/
+  this-((unsigned int *)(>VoxelCaches))[15] = 0; /*0x5f73bb*/
+  this-((unsigned int *)(>VoxelCaches))[16] = 0; /*0x5f73c1*/
+  this-((unsigned int *)(>VoxelCaches))[17] = 0; /*0x5f73c7*/
   IDA_LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
-  this->VoxelCaches[19] = 0; /*0x5f73d3*/
+  this-((unsigned int *)(>VoxelCaches))[19] = 0; /*0x5f73d3*/
   this->AbstractTypeClass = (void*)&ObjectTypeClass_vftable; /*0x5f73d9*/
   *(void **)&this->vtable2 = (void*)&ObjectTypeClass_vftable; /*0x5f73df*/
   *(void **)&this->vtable3 = (void*)&ObjectTypeClass_vftable; /*0x5f73e6*/
@@ -317,7 +317,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   this->vtable2 = (void*)&ObjectTypeClass_vftable; /*0x5f7411*/
   this->vtable3 = (void*)&ObjectTypeClass_vftable; /*0x5f7418*/
   this->vtable4 = (void*)&ObjectTypeClass_vftable; /*0x5f741f*/
-  v2 = (*(int (__thiscall **)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &this); /*0x5f7435*/
+  v2 = (*(int (**)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &this); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/
   {
     do /*0x5f7468*/
@@ -379,7 +379,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)(&this->u32_4C2)); /*0x5f757d*/
   ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)(&this->u32_484)); /*0x5f7588*/
   ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)(&this->u32_446)); /*0x5f7593*/
-  return AbstractTypeClass::Dtor(); /*0x5f759f*/
+  return this->AbstractTypeClass::Dtor(); /*0x5f759f*/
 }
 } // namespace gamemd
 // 0x5F77F0
@@ -518,7 +518,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   char v4; // al
   char v5; // dl
   int v6; // edx
-  int v7; // eax
+  AbstractClass ** v7;
   char v8; // dl
   int v9; // eax
   int result; // eax
@@ -581,10 +581,10 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   v6 = *(unsigned int *)this; /*0x5f91fe*/
   *(unsigned int *)&this->q0A4 = 0; /*0x5f9203*/
   *(&this->q0408) = 0; /*0x5f920d*/
-  if ( (*(int (__thiscall **)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
-    || (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) == 5 )
+  if ( (*(int (**)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
+    || (*(int (**)(char *))(((unsigned int)(this->uniqueId4))))(this) == 5 )
   {
-    v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
+    v9 = (int)(SearchMIXFile(&Source, 1));
     *(unsigned int *)&this->q0A4 = v9; /*0x5f926e*/
     if ( v9 ) /*0x5f9274*/
       goto LABEL_41; /*0x5f9274*/
@@ -592,15 +592,15 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
     v8 = 1; /*0x5f927b*/
     goto LABEL_40; /*0x5f927b*/
   }
-  if ( (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) != 30 /*0x5f9241*/
-    && (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) != 37 )
+  if ( (*(int (**)(char *))(((unsigned int)(this->uniqueId4))))(this) != 30 /*0x5f9241*/
+    && (*(int (**)(char *))(((unsigned int)(this->uniqueId4))))(this) != 37 )
   {
-    v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
+    v7 = (gamemd::AbstractClass **)((int)(SearchMIXFile(&Source, 0)));
     *(unsigned int *)&this->q0A4 = v7; /*0x5f9250*/
     if ( !v7 ) /*0x5f9256*/
     {
-      v15 = 71; /*0x5f9258*/
-      v8 = 0; /*0x5f925d*/
+      v15 = (unsigned int)(71);
+      v8 = (unsigned int)(0);
   LABEL_40:
       *(unsigned int *)&this->q0A4 = SearchMIXFile(&Source, v8); /*0x5f927d*/
     }
@@ -619,7 +619,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
       result = 8; /*0x5f92b0*/
     this->MaxDimension = result; /*0x5f92b5*/
   }
-  return result; /*0x5f92bb*/
+  return (gamemd::AbstractClass **)(result);
 }
 } // namespace gamemd
 // 0x5F92D0
@@ -707,7 +707,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)*(unsigned int *)&this->q22E, aBombable, Bombable); /*0x5f9431*/
   v9 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aNospawnalt, this->__pad_14D[155]); /*0x5f9446*/
   AlternateArcticArt = this->AlternateArcticArt; /*0x5f944b*/
-  this->__pad_14D[155] = v9; /*0x5f9451*/
+  this-((unsigned int *)(>__pad_14D))[155] = v9; /*0x5f9451*/
   v11 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aAlternatearcti, AlternateArcticArt); /*0x5f9460*/
   RadarInvisible = this->RadarInvisible; /*0x5f946d*/
   this->AlternateArcticArt = v11; /*0x5f9474*/
@@ -790,7 +790,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
           aVoxel,
           this->Voxel);
   this->Voxel = v25; /*0x5f9634*/
-  if ( !v25 && (*((int (__thiscall **)(ObjectTypeClass *))this->AbstractTypeClass + 11))(this) != 5 ) /*0x5f9649*/
+  if ( !v25 && (*((int (**)(ObjectTypeClass *))this->AbstractTypeClass + 11))(this) != 5 ) /*0x5f9649*/
     ObjectTypeClass::Load2DArt(); /*0x5f964d*/
   if ( this->AlphaImageFile[0] ) /*0x5f9652*/
   {
@@ -955,7 +955,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
     return *(unsigned int *)&this->?[1548]; /*0x7120bf*/
   if ( dword_A83D4C[1].__pad_C[19] ) /*0x71204c*/
   {
-    if ( (*(int (__thiscall **)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) == 16 ) /*0x712060*/
+    if ( (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) == 16 ) /*0x712060*/
     {
       result = *(unsigned int *)&this->?[1580]; /*0x712062*/
       if ( result ) /*0x71206a*/
@@ -968,8 +968,8 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
   }
   if ( !v1 /*0x7120a1*/
     || !v1[1].__pad_C[20]
-    || (*(int (__thiscall **)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 40
-    && ((*(int (__thiscall **)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 7
+    || (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 40
+    && ((*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 44))(this) != 7
      || !*(unsigned int *)&this->?[804]) )
   {
     return *(unsigned int *)&this->?[1548]; /*0x7120a1*/
@@ -4360,7 +4360,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
     *(unsigned int *)(v4 + 164) = 0;
     *(unsigned char *)(v4 + 168) = 0;
   }
-  if ( (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) != 7 )
+  if ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) != 7 )
   {
     IDA_LOBYTE(v340) = 0;
     *(unsigned int *)(v4 + 164) = SearchMIXFile(aP4[32], v340);
@@ -4921,7 +4921,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 
   if ( this == (ObjectTypeClass *)a2 ) /*0x717c0a*/
     return &this->AbstractTypeClass; /*0x717c0a*/
-  (*((void (__thiscall **)(ObjectTypeClass *))this->AbstractTypeClass + 3))(this); /*0x717c0e*/
+  (*((void (**)(ObjectTypeClass *))this->AbstractTypeClass + 3))(this); /*0x717c0e*/
   v3 = (void *)a2[2]; /*0x717c11*/
   *(void **)&this->vtable3 = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/
@@ -5202,7 +5202,7 @@ namespace gamemd {
 int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
 {
   if ( *(unsigned int *)&this->zero_3C ) /*0x5f1c30*/
-    return (*(int (__thiscall **)(unsigned int, int, int))(**(unsigned int **)&this->?[8] + 16))(*(unsigned int *)&this->?[8], aP1, aP2); /*0x5f1c4b*/
+    return (*(int (**)(unsigned int, int, int))(**(unsigned int **)&this->?[8] + 16))(*(unsigned int *)&this->?[8], aP1, aP2); /*0x5f1c4b*/
   else
     return 0; /*0x5f1c37*/
 }
@@ -5458,7 +5458,7 @@ int ObjectTypeClass::ReadDestroyAnim()
     {
       if ( *(unsigned char *)(v4 + 144) ) /*0x71cbcb*/
       {
-        v5 = *(unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v4 + 440))(v4, v6); /*0x71cbe6*/
+        v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v4 + 440))(v4, v6); /*0x71cbe6*/
         sprintf(Buffer, "%d", (int16_t)v5 + 1000 * IDA_SHIWORD(v5)); /*0x71cc09*/
         INIClass::SetString((uint8_t *)aTerrain, Buffer, (char *)(*(unsigned int *)(v4 + 200) + 36)); /*0x71cc29*/
       }

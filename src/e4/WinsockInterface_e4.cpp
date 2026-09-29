@@ -21,6 +21,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/VectorClass_Wstring_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/WonlineStringDialogControl_28_e4.hpp"
 
 // 0x770270
 namespace gamemd {
@@ -57,7 +59,7 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v7; /*0x7702e1*/
   }
   while ( v7 ); /*0x7702e2*/
-  *(unsigned int *)&this->u32_3AC = Timer::GetTicks(); /*0x7702f6*/
+  *(unsigned int *)&this->u32_3AC = this->Timer::GetTicks(); /*0x7702f6*/
   *(unsigned int *)&this->u32_3B4 = 0; /*0x7702fc*/
   *(unsigned int *)&this->u32_EE0 = 1; /*0x770305*/
   this->u32_3BC = 0; /*0x77030c*/
@@ -65,7 +67,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   this->u32_3D4 = 10; /*0x77031d*/
   this->u32_3D0 = 0; /*0x770324*/
   *(unsigned int *)&this->u32_3D8 = 0; /*0x770327*/
-  Audio::GetEnabled(); /*0x77032d*/
+  this->Audio::GetEnabled(); /*0x77032d*/
   String::Assign((char **)&a2, aOldcycle); /*0x77033b*/
   String::Reassign((char **)this->ptr_4, (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/

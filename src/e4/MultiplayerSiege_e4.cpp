@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x5CA680
 namespace gamemd {
@@ -25,7 +26,7 @@ int MultiplayerSiege::Read()
   char result; // al
   int v1; // ecx
 
-  result = PlayerClass::AssignPlayerIndex(); /*0x5ca680*/
+  result = this->PlayerClass::AssignPlayerIndex(); /*0x5ca680*/
   if ( result ) /*0x5ca687*/
   {
     result = 1; /*0x5ca690*/
@@ -157,16 +158,16 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   }
   if ( v3 >= dword_A8DA84 ) /*0x5ca84c*/
   {
-    v5 = (void *)((unsigned int)(Block));
+    v5 = (unsigned int)((void *)((unsigned int)(Block)));
     *(unsigned int *)v14 = (void*)&VectorClass_Cell_vftable; /*0x5ca852*/
     if ( !Block || !v16 ) /*0x5ca868*/
       return 0; /*0x5ca868*/
     goto LABEL_26; /*0x5ca868*/
   }
-  v6 = *(unsigned int *)(dword_A8DA78[v3] + 111); /*0x5ca876*/
+  v6 = *(unsigned int *)(((unsigned int *)(dword_A8DA78))[v3] + 111); /*0x5ca876*/
   if ( v6 < 0 || v6 >= stru_A80220.? ) /*0x5ca887*/
   {
-    v5 = (void *)((unsigned int)(Block));
+    v5 = (unsigned int)((void *)((unsigned int)(Block)));
     *(unsigned int *)v14 = (void*)&VectorClass_Cell_vftable; /*0x5ca984*/
     if ( !Block || !v16 ) /*0x5ca996*/
       return 0; /*0x5ca996*/
@@ -177,13 +178,13 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   v7 = (HouseClass *)*((unsigned int *)stru_A80220.? + v6); /*0x5ca893*/
   if ( *(unsigned char *)(v7->relatedTagsCapacity + 422) ) /*0x5ca899*/
   {
-    v5 = (void *)((unsigned int)(Block));
+    v5 = (unsigned int)((void *)((unsigned int)(Block)));
     *(unsigned int *)v14 = (void*)&VectorClass_Cell_vftable; /*0x5ca8a7*/
     if ( !Block || !v16 ) /*0x5ca8bd*/
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
   }
-  Debug::Log(); /*0x5ca8d2*/
+  this->Debug::Log(); /*0x5ca8d2*/
   v8 = *(unsigned int *)Block; /*0x5ca8e0*/
   IDA_LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
   HouseClass::SetMapSeed(v7, v8); /*0x5ca8e8*/
@@ -192,8 +193,8 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
     v10 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x5ca8fe*/
     if ( !*(unsigned char *)(v10->relatedTagsCapacity + 422) && v10 != v7 ) /*0x5ca910*/
     {
-      Debug::Log(); /*0x5ca91c*/
-      v11 = (int *)(*(int (__thiscall **)(MultiplayerSiege *, char *, int, Multiplayer *, unsigned int *))(this->MultiplayerSiege_field_00 + 196))( /*0x5ca939*/
+      this->Debug::Log(); /*0x5ca91c*/
+      v11 = (int *)(*(int (**)(MultiplayerSiege *, char *, int, Multiplayer *, unsigned int *))(this->MultiplayerSiege_field_00 + 196))( /*0x5ca939*/
                      this,
                      &a2,
                      i,
@@ -246,7 +247,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   if ( a1->MultiplayerSiege_field_10 < MultiplayerSiege_field_08 /*0x5ca9f6*/
     || (IDA_BYTE1(a1->MultiplayerSiege_field_0C) || !MultiplayerSiege_field_08)
     && (v4 = *((unsigned int *)a1 + 5), v4 > 0)
-    && (*(uint8_t (__thiscall **)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
+    && (*(uint8_t (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
          a1,
          MultiplayerSiege_field_08 + v4,
          0) )
@@ -265,7 +266,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   if ( a1->MultiplayerSiege_field_10 < v9 /*0x5caa4c*/
     || (IDA_BYTE1(a1->MultiplayerSiege_field_0C) || !v9)
     && (v10 = *((unsigned int *)a1 + 5), v10 > 0)
-    && (*(uint8_t (__thiscall **)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
+    && (*(uint8_t (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
          a1,
          v9 + v10,
          0) )
@@ -284,7 +285,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   if ( a1->MultiplayerSiege_field_10 < v15 /*0x5caaa7*/
     || ((IDA_LOBYTE(v16) = IDA_BYTE1(a1->MultiplayerSiege_field_0C), (unsigned char)v16) || !v15)
     && (v16 = *((unsigned int *)a1 + 5), v16 > 0)
-    && (IDA_LOBYTE(v16) = (*(int (__thiscall **)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
+    && (IDA_LOBYTE(v16) = (*(int (**)(MultiplayerSiege *, int, unsigned int))(a1->MultiplayerSiege_field_00 + 8))(
                         a1,
                         v15 + v16,
                         0),
@@ -349,7 +350,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   CurrentOption = (int16_t *)HouseClass::GetCurrentOption(ppv, &a2); /*0x5cab91*/
   if ( FindInfantryDeployPosition(v7, CurrentOption, 1) ) /*0x5cab9a*/
     return 1; /*0x5cabbb*/
-  (*(void (__thiscall **)(int *, int))(*v7 + 32))(v7, 1); /*0x5caba9*/
+  (*(void (**)(int *, int))(*v7 + 32))(v7, 1); /*0x5caba9*/
   return 0; /*0x5cab08*/
 }
 } // namespace gamemd

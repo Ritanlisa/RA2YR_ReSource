@@ -10,6 +10,7 @@
 #include "e4/classes/BinkMovie_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x433880
 namespace gamemd {
@@ -17,8 +18,7 @@ int BitTextClass::ParseFontData(char * Source)
 {
   void * v3;
   unsigned int *Font; // eax
-
-  v3 = (unsigned int)((tagRECT *)((unsigned int)((struct tagRECT *)(&this->m_CharWidth8))));
+v3 = (void *)((unsigned int)((tagRECT *)((unsigned int)((struct tagRECT *)(&this->m_CharWidth8)))));
   *(unsigned int *)this = (void*)&BitFont_vftable; /*0x433895*/
   this->m_CharWidth = 0; /*0x43389b*/
   this->u32_24 = 0x7FFF; /*0x43389e*/

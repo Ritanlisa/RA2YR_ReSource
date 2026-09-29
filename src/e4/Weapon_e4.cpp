@@ -78,7 +78,7 @@ void Weapon_Update(void * a1, void * a2)
         IDA_LOWORD(a2) = (uint8_t)(*(unsigned char *)(v3 + 194) >> g_BitMask_Red); /*0x659d13*/
         IDA_LOWORD(updated) = (uint8_t)(*(unsigned char *)(v3 + 193) >> g_BitMask_Blue); /*0x659d28*/
         IDA_LODWORD(updated) = (unsigned int)updated << g_BitMask_Green; /*0x659d30*/
-        v6 = updated | (a2 << g_BitShift_Blue); /*0x659d40*/
+        v6 = updated | ((unsigned int)(a2)<< g_BitShift_Blue); /*0x659d40*/
         IDA_LOWORD(updated) = (uint8_t)(*(unsigned char *)(v3 + 192) >> g_BitShift_Green_0); /*0x659d45*/
         a2 = ((unsigned int)updated << g_BitShift_Red) | v6; /*0x659d55*/
         Coord::To_Screen((Coord *)g_TacticalClass_Instance, (unsigned int *)(v3 + 156), v15); /*0x659d57*/
@@ -91,7 +91,7 @@ void Weapon_Update(void * a1, void * a2)
         {
           v7 = *(unsigned int *)(v3 + 12) - ZCoordToScreenY(*(unsigned int *)(v3 + 164)) - 2; /*0x659db9*/
           v8 = ZCoordToScreenY(*(unsigned int *)(v3 + 176)); /*0x659dbc*/
-          (*(void (__thiscall **)(AudioStream *, CellStruct *, int *, int *, unsigned int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 52))( /*0x659de7*/
+          (*(void (**)(AudioStream *, CellStruct *, int *, int *, unsigned int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 52))( /*0x659de7*/
             g_DSurface_Hidden_2,
             &DSurface_ViewBounds,
             v15,
@@ -162,7 +162,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   float v68; // [esp+A8h] [ebp-34h] BYREF
   Color v74[3]; // [esp+D0h] [ebp-Ch] BYREF
 
-  v5 = (int *)(*(int (__thiscall **)(int *, float *))(*aP3 + 72))(aP3, &v68); /*0x70c6b2*/
+  v5 = (int *)(*(int (**)(int *, float *))(*aP3 + 72))(aP3, &v68); /*0x70c6b2*/
   v55 = *v5; /*0x70c6ba*/
   v56 = v5[1]; /*0x70c6c4*/
   _ECX = aP2; /*0x70c6c8*/
@@ -235,7 +235,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
       IDA_HIWORD(v8) = v50 / 256; /*0x70c802*/
       *(unsigned int *)v48 = v8; /*0x70c811*/
       v13 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v48); /*0x70c815*/
-      if ( (v13[80] & 0x100) != 0 && v51 >= g_BuildingLoadQueue_Array.?[1] * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
+      if ( (v13[80] & 0x100) != 0 && v51 >= *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
         v14 = v13[58]; /*0x70c83e*/
       else
         v14 = v13[57]; /*0x70c846*/
@@ -250,7 +250,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
           goto LABEL_31; /*0x70c878*/
         v15 = *(unsigned int *)v14; /*0x70c87e*/
         v52 = 0; /*0x70c882*/
-        if ( (*(int (__thiscall **)(int))(v15 + 44))(v14) == 6 ) /*0x70c890*/
+        if ( (*(int (**)(int))(v15 + 44))(v14) == 6 ) /*0x70c890*/
         {
           __asm { fld [esp+0C0h+var_74] } /*0x70c9d3*/
         }
@@ -370,7 +370,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
         {
           if ( !IDA_BYTE1(v43.ObjectVector_field_0x0C) && v43.ObjectVector_field_0x08 /*0x70ca40*/
             || v43.ObjectVector_field_0x14 <= 0
-            || !(*(uint8_t (__thiscall **)(ObjectVector *, int, unsigned int))(*(unsigned int *)v43.__pad_0 + 8))(
+            || !(*(uint8_t (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v43.__pad_0 + 8))(
                   &v43,
                   v43.ObjectVector_field_0x14 + v43.ObjectVector_field_0x08,
                   0) )
@@ -413,7 +413,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
           goto LABEL_54; /*0x70cb70*/
         if ( (IDA_BYTE1(v43.ObjectVector_field_0x0C) || !v43.ObjectVector_field_0x08) && v43.ObjectVector_field_0x14 > 0 ) /*0x70cb84*/
         {
-          if ( (*(uint8_t (__thiscall **)(ObjectVector *, int, unsigned int))(*(unsigned int *)v43.__pad_0 + 8))( /*0x70cb93*/
+          if ( (*(uint8_t (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v43.__pad_0 + 8))( /*0x70cb93*/
                  &v43,
                  v43.ObjectVector_field_0x14 + v43.ObjectVector_field_0x08,
                  0) )
@@ -433,7 +433,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
         do /*0x70cbf5*/
         {
           v52 = aP4->u8_98; /*0x70cbc3*/
-          (*(void (__thiscall **)(unsigned int, int *, unsigned int, unsigned int, Weapon *, unsigned int, unsigned int, unsigned int))(**(unsigned int **)(v43.ObjectVector_field_0x04 + 4 * v33) /*0x70cbe8*/
+          (*(void (**)(unsigned int, int *, unsigned int, unsigned int, Weapon *, unsigned int, unsigned int, unsigned int))(**(unsigned int **)(v43.ObjectVector_field_0x04 + 4 * v33) /*0x70cbe8*/
                                                                                                   + 364))(
             *(unsigned int *)(v43.ObjectVector_field_0x04 + 4 * v33),
             &v52,
@@ -447,7 +447,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
         }
         while ( v33 < v43.ObjectVector_field_0x10 ); /*0x70cbf5*/
       }
-      if ( (*(int (__thiscall **)(int *))(*aP3 + 44))(aP3) == 11 ) /*0x70cc01*/
+      if ( (*(int (**)(int *))(*aP3 + 44))(aP3) == 11 ) /*0x70cc01*/
       {
         if ( (uint8_t)CellClass::IsActiveOrNext((CellClass *)aP3) ) /*0x70cc05*/
         {

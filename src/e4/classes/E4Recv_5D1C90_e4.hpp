@@ -15,6 +15,6 @@ struct E4Recv_5D1C90 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int sub_5D1C90(int (__thiscall ***a2)(unsigned int,  int),  int (__thiscall ***a3)(unsigned int_2,  int));    // 0x5D1C90
+    int sub_5D1C90();
 };
 } // namespace gamemd

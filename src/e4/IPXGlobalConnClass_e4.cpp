@@ -35,34 +35,34 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   int v10; // ecx
   unsigned int *v11; // edx
 
-  Debug::Log(); /*0x540132*/
+  this->Debug::Log(); /*0x540132*/
   IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x540137*/
   for ( i = 0; i < (int)IPXGlobalConnClass_field_0x04->Terrain_field_0x38; ++i ) /*0x540144*/
   {
     TileType = Terrain::GetTileType(IPXGlobalConnClass_field_0x04, i); /*0x540158*/
-    Debug::Log(); /*0x54015a*/
+    this->Debug::Log(); /*0x54015a*/
     if ( TileType ) /*0x540164*/
     {
-      Debug::Log(); /*0x540170*/
+      this->Debug::Log(); /*0x540170*/
       v6 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x540175*/
       v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x540186*/
       if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x540188*/
       {
-        Ticks = Timer::GetTicks(); /*0x54019a*/
+        Ticks = this->Timer::GetTicks(); /*0x54019a*/
         v6 = *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x54019c*/
         v7 += Ticks - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x5401a3*/
       }
       if ( a2 + *(unsigned int *)(TileType + 4) >= v7 ) /*0x5401b0*/
       {
         if ( v6 != -1 ) /*0x54023d*/
-          Timer::GetTicks(); /*0x540244*/
-        Debug::Log(); /*0x54026f*/
+          this->Timer::GetTicks(); /*0x540244*/
+        this->Debug::Log(); /*0x54026f*/
       }
       else
       {
         if ( v6 != -1 ) /*0x5401b9*/
-          Timer::GetTicks(); /*0x5401c0*/
-        Debug::Log(); /*0x5401eb*/
+          this->Timer::GetTicks(); /*0x5401c0*/
+        this->Debug::Log(); /*0x5401eb*/
         v9 = 0; /*0x5401fa*/
         v10 = this->u32_D4; /*0x5401ff*/
         if ( v10 > 0 ) /*0x540207*/
@@ -83,7 +83,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
     }
     IPXGlobalConnClass_field_0x04 = (Terrain *)this->IPXGlobalConnClass_field_0x04; /*0x54027b*/
   }
-  Debug::Log(); /*0x540296*/
+  this->Debug::Log(); /*0x540296*/
 }
 } // namespace gamemd
 // 0x5403F0
@@ -117,7 +117,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
     v15 = *aP4; /*0x540442*/
     NetworkID::Assign(&v18, &v15, (int)v17, 0); /*0x54044c*/
   }
-  if ( g_GameMode_Current[0] == 4 && !(unsigned char)a6 && g_Network_IsHosting && v7->q320 ) /*0x540477*/
+  if ( ((unsigned int *)(g_GameMode_Current))[0] == 4 && !(unsigned char)a6 && g_Network_IsHosting && v7->q320 ) /*0x540477*/
   {
     v8 = a2; /*0x540485*/
     if ( !*(unsigned char *)(a2 + 3) ) /*0x540489*/
@@ -174,7 +174,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   if ( g_NetworkInterface ) /*0x5405cf*/
   {
     IDA_LOBYTE(v13) = v7->q320 == 0; /*0x5405da*/
-    (*(void (__thiscall **)(int, int, int, int *, int, int, int, int))(*(unsigned int *)g_NetworkInterface + 12))( /*0x5405f2*/
+    (*(void (**)(int, int, int, int *, int, int, int, int))(*(unsigned int *)g_NetworkInterface + 12))( /*0x5405f2*/
       g_NetworkInterface,
       v8,
       arg4,
@@ -236,7 +236,7 @@ int IPXGlobalConnClass::Send()
         Waypoint::InitInvalid(&v10); /*0x5402fd*/
         v6 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x54030e*/
         v8 = 12; /*0x54031c*/
-        PacketQueue::ExtractEntry(v6, &v10.__pad_0[12], &v9, v3--, &v10, &v8, 0); /*0x540324*/
+        PacketQueue::ExtractEntry(v6, &((unsigned int *)(v10.__pad_0))[12], &v9, v3--, &v10, &v8, 0); /*0x540324*/
         ++v2; /*0x54032a*/
       }
       IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x54032b*/
@@ -278,7 +278,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
       Waypoint::InitInvalid(&v13); /*0x540398*/
       v9 = (PacketQueue *)this->IPXGlobalConnClass_field_0x04; /*0x5403b3*/
       v11 = 12; /*0x5403b7*/
-      PacketQueue::ExtractEntry(v9, &v13.__pad_0[12], &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
+      PacketQueue::ExtractEntry(v9, &((unsigned int *)(v13.__pad_0))[12], &v12, v6--, &v13, &v11, 0); /*0x5403bf*/
       ++v5; /*0x5403c5*/
     }
     IPXGlobalConnClass_field_0x04 = this->IPXGlobalConnClass_field_0x04; /*0x5403c6*/

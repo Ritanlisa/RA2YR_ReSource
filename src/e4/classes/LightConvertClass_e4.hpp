@@ -703,7 +703,7 @@ struct LightConvertClass {
     unsigned int q0908;
 // --- flat members (END) ---
     int SelectRLEBlitter(void* aP1);
-    static double Constructor(...);  // C2597 interim stub
+     double Constructor(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

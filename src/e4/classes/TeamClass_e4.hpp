@@ -85,11 +85,12 @@ struct TeamClass {
     unsigned int u32_691;
     unsigned int u32_A8;
     unsigned int u32_B0;
+    unsigned int Debug;
 // --- flat members (END) ---
     AbstractClass * * DestroyAllMembers(TechnoClass * aP1);
     AbstractClass * * FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2);
     AbstractClass * * UpdateMembers();
-    BOOL Check();
+    BOOL Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     CampaignClass * * Cleanup(BuildingClass * aP1);
     TeamClass * * ProcessScriptActions(unsigned int * a2, int a3);
     TeamTypeClass * * RecruitMember(int a2);
@@ -106,7 +107,7 @@ struct TeamClass {
     int ExecuteAction(int a2, char a3);
     int FindByMemberType(int a2);
     int GetLeaderIndex();
-    int GetMember();
+    int GetMember(void *a1 = 0);
     int HasAnyMemberFlagged();
     int LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractClass * aP3);
     int PowerDrainUpdate(int * a2);
@@ -122,10 +123,10 @@ struct TeamClass {
     int ddtor(int a1, unsigned int * a2);
     unsigned int * FindScriptAction(unsigned int * a2);
     unsigned int * GetNextScriptAction(unsigned int * a2);
-    void * FindOrCreate();
+    void * FindOrCreate(void *a1 = 0);
     void Destructor(AbstractClass * a2);
     void MoveTeamToWaypoint(ScriptClass * aP1, TeamClass * aP2);
-    void Update(TechnoClass * aP0, unsigned int * a1, int j);
+    void Update(TechnoClass * aP0, unsigned int * a1, int j, void *a2 = 0);
     void* AttackCoordinator();
     static double AddToBuildQueue(...);  // C2597 interim stub
     static double CreateOneOf(...);  // C2597 interim stub

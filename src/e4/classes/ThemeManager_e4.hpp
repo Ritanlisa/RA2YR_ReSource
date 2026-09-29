@@ -21,9 +21,11 @@ struct ThemeManager {
     unsigned int q068;  // 0x68
     unsigned int q104;  // 0x104
     unsigned int u32_104;
+    unsigned int Audio;
+    unsigned int Event;
 // --- flat members (END) ---
-    int ProcessCallback();
-    void Cleanup();
+    int ProcessCallback(void *a1 = 0);
+    void Cleanup(void *a1 = 0);
 };
 
 } // namespace gamemd

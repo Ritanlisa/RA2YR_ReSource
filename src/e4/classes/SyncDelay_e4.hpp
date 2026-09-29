@@ -9,9 +9,12 @@ struct SyncDelay {
 // --- flat members (BEGIN) ---
     void* q010;  // 0x10
     void* q034;  // 0x34
+    unsigned int DDraw;
+    unsigned int Timer;
+    unsigned int Event;
 // --- flat members (END) ---
-    int Check(unsigned int * a2);
-    signed int Start();
+    int Check(unsigned int * a2, void *a3 = 0, void *a1 = 0);
+    signed int Start(void *a1 = 0);
 };
 
 } // namespace gamemd

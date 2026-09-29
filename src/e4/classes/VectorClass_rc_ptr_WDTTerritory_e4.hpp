@@ -17,7 +17,7 @@ struct VectorClass_rc_ptr_WDTTerritory {
     unsigned int * loc_76B6C0(char a2);  // 0x76B6C0
     unsigned int * Clear(unsigned int * a2,  int a3);    // 0x76B760
     char AddRef(int a2);  // 0x76B870
-    int ddtor();  // 0x76B9E0
+    int ddtor(void *a1 = 0);  // 0x76B9E0
     int GetSize(int a2);  // 0x76BA10
     unsigned int GetCapacity(int a2);  // 0x76BA50
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x76BBC0

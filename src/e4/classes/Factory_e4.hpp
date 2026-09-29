@@ -23,9 +23,11 @@ struct Factory {
     void* q5520;  // 0x5520
     unsigned int field_10;
     unsigned int field_4;
+    unsigned int __pad_0;
+    unsigned int field_8;
 // --- flat members (END) ---
     int GetLinkedIndex(DynamicVector * aP1);  // 0x663D60
-    int FindExitCellByName();  // 0x523C90
+    int FindExitCellByName(void *a1 = 0);  // 0x523C90
     int IdleHandler();  // 0x731CD0
 };
 } // namespace gamemd

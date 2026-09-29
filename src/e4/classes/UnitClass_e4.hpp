@@ -50,7 +50,7 @@ struct UnitClass {
     char customSound[4];  // 0x64
     bool bombVisible;  // 0x68
     unsigned int q06A;  // 0x6A
-    char health[4];  // 0x6C
+    unsigned int health;  // 0x6C
     char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74
     unsigned int q075;  // 0x75
@@ -756,7 +756,6 @@ struct UnitClass {
     unsigned int q0405;
     unsigned int q0406;
     unsigned int q0407;
-    unsigned int Construct;
 // --- flat members (END) ---
     void ProcessIdleOrders();
 };

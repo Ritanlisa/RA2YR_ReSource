@@ -14,12 +14,12 @@ struct VectorClass_ptr_RadSiteClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy();  // 0x65BEF0
+    void Destroy(void *a1 = 0);  // 0x65BEF0
     unsigned int GetItemIndex(int a2);  // 0x65BF20
-    int Get(int a2);  // 0x65BF40
+    int Get(int a2, void *a1 = 0);  // 0x65BF40
     char Add(int a2);  // 0x65BF50
     char Release(int a2,  unsigned int * a3);    // 0x65BF90
-    void Remove();  // 0x65C040
+    void Remove(void *a1 = 0);  // 0x65C040
     int GetSize(unsigned int * a2);  // 0x65C070
     unsigned int GetCapacity(int a2);  // 0x65C0B0
     char SetCapacity(int a2,  unsigned int * a3);    // 0x65C0D0

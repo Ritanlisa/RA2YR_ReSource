@@ -14,6 +14,8 @@
 #include "e4/classes/WinsockInterface_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
 
 // 0x7B1AB0
 WinsockInterfaceClass::WinsockInterfaceClass()
@@ -28,7 +30,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   if ( v2 ) /*0x7b1ac4*/
   {
     NetworkClass::UnregisterAsync(); /*0x7b1ac6*/
-    (*(void (__thiscall **)(int))(this->u32_4)(this); /*0x7b1ad0*/
+    (*(void (**)(int))(this->u32_4)(this); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
     this->u32_3F068 = 0; /*0x7b1ad8*/
   }
@@ -93,7 +95,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   if ( v3 ) /*0x7b2794*/
   {
     NetworkClass::UnregisterAsync(); /*0x7b2796*/
-    (*(void (__thiscall **)(WinsockInterfaceClass *))(this->Socket + 4))(this); /*0x7b27a0*/
+    (*(void (**)(WinsockInterfaceClass *))(this->Socket + 4))(this); /*0x7b27a0*/
     WSACleanup(); /*0x7b27a3*/
     this->u32_3F068 = 0; /*0x7b27a8*/
   }

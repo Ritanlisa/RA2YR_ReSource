@@ -17,6 +17,9 @@
 #include "e4/classes/HouseTypeClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/ThemeManager_e4.hpp"
 
 // 0x4A60D0
 namespace gamemd {
@@ -54,28 +57,28 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   unsigned int v34[4]; // [esp+30h] [ebp-1Ch] BYREF
   char v35[12]; // [esp+40h] [ebp-Ch] BYREF
 
-  TextRenderer::GetInstance(); /*0x4b96c5*/
+  this->TextRenderer::GetInstance(); /*0x4b96c5*/
   swprintf(&word_8A0870, (const size_t)&aSD, Format, a2); /*0x4b96dc*/
   swprintf(&word_8A08C0, (const size_t)&aSD, Format, a1); /*0x4b96ed*/
   if ( a6 ) /*0x4b96f7*/
   {
-    v11 = *a4 - Text::MeasureWidth((int)&word_8A0870, 0) / 2; /*0x4b971b*/
-    v12 = *a4 - Text::MeasureWidth((int)&word_8A08C0, 0) / 2; /*0x4b972b*/
+    v11 = *(unsigned int *)(a4) - Text::MeasureWidth((int)&word_8A0870, 0) / 2; /*0x4b971b*/
+    v12 = *(unsigned int *)(a4) - Text::MeasureWidth((int)&word_8A08C0, 0) / 2; /*0x4b972b*/
   }
   else
   {
-    v11 = *a4; /*0x4b9733*/
-    v12 = *a4; /*0x4b9735*/
+    v11 = (void *)(*(unsigned int *)(a4));
+    v12 = (void *)(*(unsigned int *)(a4));
   }
   v13 = (int)(a4[1]);
   v14 = 110; /*0x4b9740*/
   if ( v11 > v12 ) /*0x4b974a*/
   {
-    v14 = v11 - v12 + 110; /*0x4b9750*/
-    v11 = v12; /*0x4b9752*/
+    v14 = (unsigned int)(v11)- v12 + 110; /*0x4b9750*/
+    v11 = v12; /*(unsigned int)(0x4b9752)*/
   }
-  if ( v14 + v11 < v12 + 110 ) /*0x4b9766*/
-    v14 = v12 - v11 + 111; /*0x4b976d*/
+  if ( (unsigned int)(v14)+ v11 < (void *)((unsigned int))(v12)+ 110 ) /*0x4b9766*/
+    v14 = (unsigned int)(v12)- v11 + 111; /*0x4b976d*/
   v33 = v11; /*0x4b9784*/
   v29 = v11; /*0x4b9788*/
   v34[1] = v14; /*0x4b9790*/
@@ -85,17 +88,17 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   v30 = v13; /*0x4b979e*/
   v34[2] = 15; /*0x4b97a4*/
   v32 = 15; /*0x4b97a8*/
-  v16 = (*(int (__thiscall **)(int *))(v15 + 124))(a3); /*0x4b97b5*/
-  v17 = (*(int (__thiscall **)(int))(*(unsigned int *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x4b97b9*/
+  v16 = (*(int (**)(int *))(v15 + 124))(a3); /*0x4b97b5*/
+  v17 = (*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x4b97b9*/
   v18 = *a3; /*0x4b97c5*/
   v30 += (v17 - v16) / -2; /*0x4b97cd*/
-  v19 = (*(int (__thiscall **)(int *))(v18 + 128))(a3); /*0x4b97df*/
-  v31 += ((*(int (__thiscall **)(int))(*(unsigned int *)g_DSurface_Hidden + 128))(g_DSurface_Hidden) - v19) / -2; /*0x4b97fc*/
+  v19 = (*(int (**)(int *))(v18 + 128))(a3); /*0x4b97df*/
+  v31 += ((*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 128))(g_DSurface_Hidden) - v19) / -2; /*0x4b97fc*/
   v28 = 0; /*0x4b982a*/
   v29 = 0; /*0x4b982e*/
   BlitterDrawSHP((int *)g_DSurface_Hidden, a8, a3, &v30, &v28, v34, 0, a9, 0, 0, 1000, 0, 0); /*0x4b9832*/
   v20 = FindBuildingAnimByName(aYellow, 1); /*0x4b9847*/
-  v21 = (unsigned int *)(*(int (__thiscall **)(int, char *, wchar_t *, int, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden + 120))( /*0x4b985f*/
+  v21 = (unsigned int *)(*(int (**)(int, char *, wchar_t *, int, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden + 120))( /*0x4b985f*/
                     g_DSurface_Hidden,
                     v35,
                     Format,
@@ -128,7 +131,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   int v23; // [esp+44h] [ebp+4h]
 
   result = a2; /*0x642c80*/
-  if ( a2 == -1 && aP2 == -1 ) /*0x642c9a*/
+  if ( a2 == -1 && aP2 == (gamemd::ProgressScreenClass *)(-1) ) /*0x642c9a*/
   {
     v19 = this->u32_61; /*0x642cb1*/
     FoundationSize = Building::GetFoundationSize(v21, 0); /*0x642cb5*/
@@ -141,8 +144,8 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
       Default = BuildingType::FindDefault(0); /*0x642ceb*/
       if ( Default ) /*0x642cef*/
       {
-        v9 = (*(int (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x642cfc*/
-        Default = (*(int (__thiscall **)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
+        v9 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642cfc*/
+        Default = (*(int (**)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
     Instance = TextRenderer::GetInstance(); /*0x642d10*/
@@ -159,8 +162,8 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
     v12 = Text::MeasureWidth((int)v21, 0); /*0x642d53*/
     if ( v18 > Default ) /*0x642d6b*/
       Default = v18; /*0x642d6d*/
-    if ( Default <= *(unsigned int *)(Instance + 28) ) /*0x642d71*/
-      Default = *(unsigned int *)(Instance + 28); /*0x642d73*/
+    if ( Default <= *(unsigned int *)((unsigned int)(Instance)+ 28) ) /*0x642d71*/
+      Default = *(unsigned int *)((unsigned int)(Instance)+ 28); /*0x642d73*/
     v13 = v9 + v12 + v20 + 36; /*0x642d79*/
     v14 = Default + 4; /*0x642d7c*/
     if ( v19 > 1 ) /*0x642d82*/
@@ -204,7 +207,7 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
   int16_t v18; // [esp+42h] [ebp-2h]
   int v19; // [esp+54h] [ebp+10h]
 
-  FoundationSize = Building::GetFoundationSize(v17, 0); /*0x642f01*/
+  FoundationSize = ((Building *)(v17))->GetFoundationSize(0); /*0x642f01*/
   v5 = 0; /*0x642f08*/
   v6 = 0; /*0x642f0e*/
   v16 = FoundationSize[2]; /*0x642f1a*/
@@ -215,35 +218,35 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
     v8 = Default; /*0x642f37*/
     if ( Default ) /*0x642f3b*/
     {
-      v5 = (*(int (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x642f44*/
-      v6 = (*(int (__thiscall **)(int))(*(unsigned int *)v8 + 128))(v8); /*0x642f50*/
+      v5 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642f44*/
+      v6 = (*(int (**)(int))(*(unsigned int *)v8 + 128))(v8); /*0x642f50*/
     }
   }
-  Instance = (unsigned int)(TextRenderer::GetInstance());
-  v10 = v17; /*0x642f5e*/
+  Instance = (unsigned int)(this->TextRenderer::GetInstance());
+  v10 = (unsigned int)(v17);
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
-    *v10++ = *(unsigned short *)CharToWideString(g_Str_W); /*0x642f7b*/
+    *(unsigned int *)(v10)++ = *(unsigned short *)CharToWideString(g_Str_W); /*0x642f7b*/
     --v19; /*0x642f82*/
   }
   while ( v19 ); /*0x642f86*/
   v18 = 0; /*0x642f91*/
   v11 = Text::MeasureWidth((int)v17, 0); /*0x642f98*/
   v12 = *(unsigned int *)(Instance + 28); /*0x642fa1*/
-  *a1 = v5 + v11 + v16 + 26; /*0x642fb4*/
+  *(unsigned int *)(a1) = v5 + v11 + v16 + 26; /*0x642fb4*/
   if ( v15 > v6 ) /*0x642fb6*/
     v6 = v15; /*0x642fb8*/
   result = a2; /*0x642fba*/
-  *a2 = v6; /*0x642fc0*/
+  *(unsigned int *)(a2) = v6; /*0x642fc0*/
   if ( v6 <= v12 ) /*0x642fc2*/
     v6 = v12; /*0x642fc4*/
-  *a2 = v6; /*0x642fc6*/
-  *a1 += 10; /*0x642fd1*/
-  v14 = *a2 + 4; /*0x642fd5*/
-  *a2 = v14; /*0x642fdb*/
-  if ( a3 > 1 ) /*0x642fe3*/
-    *a2 = a3 * v14; /*0x642fe8*/
+  *(unsigned int *)(a2) = v6; /*0x642fc6*/
+  *(void *)(((unsigned int)(void)*))(a1) += 10; /*0x642fd1*/
+  v14 = *(void *)(((unsigned int)(void)*))(a2) + 4; /*0x642fd5*/
+  *(unsigned int *)(a2) = v14; /*0x642fdb*/
+  if ( a3 > (void *)(1) ) /*0x642fe3*/
+    *((unsigned int)(void)*)(a2) = a3 * v14; /*0x642fe8*/
   return result; /*0x642fdf*/
 }
 }

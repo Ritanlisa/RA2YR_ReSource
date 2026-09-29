@@ -16,12 +16,12 @@ struct CampaignProperties_WorldDominationTour_22 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    int Seek(int a2);  // 0x5D2770
-    int Read(unsigned int * a2);  // 0x5D2900
+    int Seek(int a2, void *a1 = 0);  // 0x5D2770
+    int Read(unsigned int * a2, void *a1 = 0);  // 0x5D2900
     VectorClass_flat * QueryInterface(char a2);  // 0x5D2CA0
-    BOOL AddRef();  // 0x76F0F0
-    unsigned int * Release();  // 0x76F1A0
-    unsigned int * ddtor();  // 0x76F1B0
+    BOOL AddRef(void *a1 = 0);  // 0x76F0F0
+    unsigned int * Release(void *a1 = 0);  // 0x76F1A0
+    unsigned int * ddtor(void *a1 = 0);  // 0x76F1B0
     unsigned int Write(int a2);  // 0x5D2940
 };
 } // namespace gamemd

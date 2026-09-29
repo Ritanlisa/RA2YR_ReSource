@@ -28,7 +28,7 @@ void AudioSettings::SetFlag70(char a2)
 {
   this->u32_46 = a2; /*0x5fa444*/
   a2 = a2; /*0x5fa447*/
-  Debug::Log(); /*0x5fa463*/
+  this->Debug::Log(); /*0x5fa463*/
 }
 } // namespace gamemd
 // 0x5FA470
@@ -37,7 +37,7 @@ void AudioSettings::SetFlag68(char a2)
 {
   this->u32_44 = a2; /*0x5fa474*/
   a2 = a2; /*0x5fa477*/
-  Debug::Log(); /*0x5fa493*/
+  this->Debug::Log(); /*0x5fa493*/
 }
 } // namespace gamemd
 // 0x6B6300
@@ -121,7 +121,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     else if ( a2 == 1175 ) /*0x6b6354*/
     {
       byte_B0B800 = 0; /*0x6b635a*/
-      IsSoundEnabled = Audio::IsSoundEnabled(); /*0x6b6364*/
+      IsSoundEnabled = this->Audio::IsSoundEnabled(); /*0x6b6364*/
       bEnable = IsSoundEnabled; /*0x6b636c*/
       DlgItem = GetDlgItem(hDlg, 1327); /*0x6b6370*/
       v7 = DlgItem; /*0x6b637c*/

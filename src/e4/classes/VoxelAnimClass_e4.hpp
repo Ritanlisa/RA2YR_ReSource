@@ -682,14 +682,16 @@ struct VoxelAnimClass {
     unsigned int __pad_C;
     unsigned int VoxelAnimClass_field_0x140;
     unsigned int __pad_110;
+    unsigned int Dtor;
+    unsigned int Undeploy;
 // --- flat members (END) ---
     AbstractClass * * GetFrameCount(int * a2);
     Coord * * ProcessAnim(int * a2, unsigned int * a3);
     VoxelAnimClass * DrawVoxel(char a2);
     char UpdateMatrix();
-    float * QuaternionToMatrix(float * a2);
+    float * QuaternionToMatrix(float * a2, void *a1 = 0);
     int CleanupMembers();
-    int Constructor();
+    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     int DrawVoxelFrame(int a2, int a3, int a4);
     int LoadFrame();
     int Reset();

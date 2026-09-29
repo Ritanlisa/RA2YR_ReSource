@@ -18,7 +18,7 @@ struct TypeList_flat {
 CCINIClass * BuildingTypeConstructor();
 CCINIClass * ConstructSmudge();
 CCINIClass * VoxelAnimConstructor();
-DynamicVector * Construct();
+DynamicVector * Construct(void *a1 = 0, void *a2 = 0);
 TypeList_flat * QueryInterface(char a2);
 char AddRef(int a2);
 char PushBack(VectorClass_flat * aP1);

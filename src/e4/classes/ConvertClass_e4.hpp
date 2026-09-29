@@ -112,7 +112,7 @@ struct ConvertClass {
 // --- flat members (END) ---
     int ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8);
     unsigned int * Construct(ConvertClass * aP1, int a3, ConvertClass * aP3, ObjectClass * aP4, ConvertClass * aP5);
-    static double InitTables(...);  // C2597 interim stub
+     double InitTables(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

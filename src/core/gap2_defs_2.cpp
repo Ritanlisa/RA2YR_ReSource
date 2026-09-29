@@ -13,7 +13,7 @@
 #include "core/load_options.hpp"
 #include "core/math.hpp"
 #include "core/utility_ext.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x48BAA0
 namespace gamemd { 
@@ -59,6 +59,15 @@ void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int
 // 0x4A0F20
 namespace gamemd { 
 void EnumConnectionPointsClass::ClearBuffer() {
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x4a0f26*/
@@ -118,7 +127,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a144e*/
+    (*(void (**)(_DynamicVectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a144e*/
   }
   v7 = this->m_8; /*0x4a1451*/
   if ( v7 < this->m_10 ) /*0x4a1459*/
@@ -166,9 +175,9 @@ int COMObject::FindInList(int a2) {
   v2 = (gamemd::GadgetClass *)(this);
   if ( !a2 || !this ) /*0x4e192e*/
     return 0; /*0x4e1948*/
-  while ( (*(int (__thiscall **)(GadgetClass *))(*(unsigned int *)v2->__pad_0 + 68))(v2) != a2 ) /*0x4e1939*/
+  while ( (*(int (**)(GadgetClass *))(*(unsigned int *)v2->__pad_0 + 68))(v2) != a2 ) /*0x4e1939*/
   {
-    v2 = (GadgetClass *)(*(int (__thiscall **)(GadgetClass *))(*(unsigned int *)v2->__pad_0 + 4))(v2); /*0x4e1942*/
+    v2 = (GadgetClass *)(*(int (**)(GadgetClass *))(*(unsigned int *)v2->__pad_0 + 4))(v2); /*0x4e1942*/
     if ( !v2 ) /*0x4e1946*/
       return 0; /*0x4e1946*/
   }
@@ -201,8 +210,8 @@ int COMObject::ActivateGlobal() {
 
   if ( dword_8B3E90 ) /*0x4e19ab*/
   {
-    (*(void (__thiscall **)(int))(*(unsigned int *)dword_8B3E90 + 72))(dword_8B3E90); /*0x4e19af*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)dword_8B3E90 + 84))(dword_8B3E90); /*0x4e19ba*/
+    (*(void (**)(int))(*(unsigned int *)dword_8B3E90 + 72))(dword_8B3E90); /*0x4e19af*/
+    (*(void (**)(int))(*(unsigned int *)dword_8B3E90 + 84))(dword_8B3E90); /*0x4e19ba*/
   }
   v2 = *(unsigned int *)this->Hovered; /*0x4e19bd*/
   IDA_BYTE1(v2) |= 1u; /*0x4e19c0*/
@@ -238,7 +247,7 @@ int COMObject::Check(int a1) {
   if ( a1 < 0 || a1 >= *(unsigned int *)&this->m_2D[3] ) /*0x4e2afb*/
     return 0; /*0x4e2b0d*/
   *(unsigned int *)&this->__pad_31[11] = a1; /*0x4e2afd*/
-  (*(void (__thiscall **)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b02*/
+  (*(void (**)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b02*/
   return 1; /*0x4e2b0a*/
 }
 }
@@ -248,7 +257,7 @@ int COMObject::SetField(int a1) {
   if ( a1 < 0 || a1 >= *(unsigned int *)&this->m_2D[3] ) /*0x4e2b2b*/
     return 0; /*0x4e2b3d*/
   *(unsigned int *)&this->__pad_31[15] = a1; /*0x4e2b2d*/
-  (*(void (__thiscall **)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b32*/
+  (*(void (**)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b32*/
   return 1; /*0x4e2b3a*/
 }
 }
@@ -264,8 +273,8 @@ void* COMObject::ScalarDtor(int a2) {
 // 0x4F42B0
 namespace gamemd { 
 int COMObject::DtorSequence(int a1) {
-  (*(void (__thiscall **)(GScreenClass *))(this->vfptr[0] + 28))(this); /*0x4f42b5*/
-  return (*(int (__thiscall **)(GScreenClass *))(this->vfptr[0] + 32))(this); /*0x4f42bf*/
+  (*(void (**)(GScreenClass *))(this->vfptr[0] + 28))(this); /*0x4f42b5*/
+  return (*(int (**)(GScreenClass *))(this->vfptr[0] + 32))(this); /*0x4f42bf*/
 }
 }
 // 0x5233A0
@@ -448,7 +457,7 @@ int unknown::Release(int a1, void* a2) {
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_UZoneConnectionClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x589658*/
+    (*(void (**)(_DynamicVectorClass_UZoneConnectionClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x589658*/
   }
   v13 = this->m_8; /*0x58965b*/
   if ( v13 < this->m_10 ) /*0x589663*/
@@ -482,7 +491,7 @@ int ComPtr::Set(int a2) {
     if ( ComPtr_field_0x04 ) /*0x65d499*/
     {
       this->ComPtr_field_0x04 = 0; /*0x65d49b*/
-      result = (*(int (__thiscall **)(int))(*(unsigned int *)ComPtr_field_0x04 + 8))(ComPtr_field_0x04); /*0x65d4a4*/
+      result = (*(int (**)(int))(*(unsigned int *)ComPtr_field_0x04 + 8))(ComPtr_field_0x04); /*0x65d4a4*/
     }
     this->ComPtr_field_0x04 = a2; /*0x65d4a7*/
   }
@@ -546,7 +555,7 @@ void Player::RandomAssign() {
         v3->q04F = -1; /*0x69b90d*/
         v5 = this->q004; /*0x69b910*/
         if ( v5 ) /*0x69b915*/
-          v3->q12C = (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 108))(v5); /*0x69b91c*/
+          v3->q12C = (*(int (**)(int))(*(unsigned int *)v5 + 108))(v5); /*0x69b91c*/
         else
           v3->q12C = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 9); /*0x69b935*/
       }
@@ -573,7 +582,7 @@ void Player::RandomAssign() {
     {
       v8 = this->q004; /*0x69b9ea*/
       if ( v8 ) /*0x69b9ef*/
-        v9 = (*(int (__thiscall **)(int))(*(unsigned int *)v8 + 112))(v8); /*0x69b9f3*/
+        v9 = (*(int (**)(int))(*(unsigned int *)v8 + 112))(v8); /*0x69b9f3*/
       else
         v9 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 9); /*0x69ba07*/
       *(unsigned int *)v7 = v9; /*0x69ba0c*/
@@ -774,12 +783,12 @@ int PlayerClass::UpdateAIUnits() {
     {
       v2 = 0; /*0x732644*/
     }
-    v4 = *(unsigned int *)&stru_A8EB00.?[164]; /*0x732647*/
-    if ( *(int *)&stru_A8EB00.?[164] > 0 ) /*0x73264f*/
+    v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164); /*0x732647*/
+    if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) > 0 ) /*0x73264f*/
     {
       do /*0x7326a6*/
       {
-        v5 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[152] + 4 * v3); /*0x73265a*/
+        v5 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * v3); /*0x73265a*/
         IDA_LOBYTE(HeightMap) = StepTechnoClassCleanupIfHuman(v5, this); /*0x73265f*/
         if ( (unsigned char)HeightMap ) /*0x732666*/
         {
@@ -787,7 +796,7 @@ int PlayerClass::UpdateAIUnits() {
           if ( *(unsigned int *)v2->__pad_10 < (int)EventClass_field_0x8 /*0x732692*/
             || ((IDA_LOBYTE(HeightMap) = IDA_BYTE1(v2->EventClass_field_0xC), (unsigned char)HeightMap) || !EventClass_field_0x8)
             && (HeightMap = *(unsigned int *)&v2->__pad_10[4], HeightMap > 0)
-            && (IDA_LOBYTE(HeightMap) = (*(int (__thiscall **)(EventClass *, int, unsigned int))(v2->EventClass_field_0x0 + 8))(
+            && (IDA_LOBYTE(HeightMap) = (*(int (**)(EventClass *, int, unsigned int))(v2->EventClass_field_0x0 + 8))(
                                       v2,
                                       (int)EventClass_field_0x8 + HeightMap,
                                       0),
@@ -840,10 +849,10 @@ int PlayerClass::UpdateAIUnits() {
   for ( j = 0; j < v11; ++j ) /*0x732739*/
   {
     v13 = *((unsigned int *)v2->EventClass_field_0x4 + j); /*0x73273e*/
-    IDA_LOBYTE(HeightMap) = (*(int (__thiscall **)(int))(*(unsigned int *)v13 + 336))(v13); /*0x732743*/
+    IDA_LOBYTE(HeightMap) = (*(int (**)(int))(*(unsigned int *)v13 + 336))(v13); /*0x732743*/
   }
   if ( v2 ) /*0x732750*/
-    IDA_LOBYTE(HeightMap) = (*(char (__thiscall **)(EventClass *, int))v2->EventClass_field_0x0)(v2, 1); /*0x732758*/
+    IDA_LOBYTE(HeightMap) = (*(char (**)(EventClass *, int))v2->EventClass_field_0x0)(v2, 1); /*0x732758*/
   return HeightMap; /*0x73275a*/
 }
 }
@@ -877,7 +886,7 @@ int COMClass::registerObject(int a1, void* a2) {
   ComPtr *v8; // esi
   int v9; // ebx
   int i; // esi
-  void (__thiscall ***v11)(unsigned int, int); // ecx
+  void (***v11)(unsigned int, int); // ecx
   int v12; // eax
   int v14; // [esp+10h] [ebp-4h]
 
@@ -940,7 +949,7 @@ int COMClass::registerObject(int a1, void* a2) {
         ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x765aa6*/
       if ( IDA_BYTE1(this->m_C) ) /*0x765ab0*/
       {
-        v11 = *(void (__thiscall ****)(unsigned int, int))&this->m_1[3]; /*0x765ab7*/
+        v11 = *(void (****)(unsigned int, int))&this->m_1[3]; /*0x765ab7*/
         if ( v11 ) /*0x765abc*/
           (**v11)(v11, 3); /*0x765ac2*/
         *(unsigned int *)&this->m_1[3] = 0; /*0x765ac4*/
@@ -953,7 +962,7 @@ int COMClass::registerObject(int a1, void* a2) {
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x765ae9*/
+    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x765ae9*/
   }
   v12 = this->m_8; /*0x765aec*/
   if ( v12 < this->m_10 ) /*0x765af4*/

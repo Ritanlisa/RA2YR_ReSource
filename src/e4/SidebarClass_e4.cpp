@@ -38,6 +38,7 @@
 #include "e4/classes/SlaveManagerClass_e4.hpp"
 #include "e4/classes/SmudgeTypeClass_e4.hpp"
 #include "e4/classes/MissionClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4C9C50
 namespace gamemd {
@@ -57,7 +58,7 @@ int SidebarClass::draw2()
 namespace gamemd {
 int SidebarClass::InitPositions()
 {
-  if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a5095*/
+  if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6a5095*/
   {
     dword_B0B4E0 = g_DSurface_SidebarBounds + 7; /*0x6a50f4*/
     dword_B0B4EC = g_DSurface_SidebarBounds + 39; /*0x6a50fc*/
@@ -188,7 +189,7 @@ void * SidebarClass::LoadAssets()
   qmemcpy(v14, UI_Load_72F4A0(), sizeof(v14)); /*0x6a5863*/
   if ( *(unsigned int *)&stru_87F5F0.__pad_58[132] ) /*0x6a586d*/
   {
-    (***(void (__thiscall ****)(unsigned int, int))&stru_87F5F0.__pad_58[132])(*(unsigned int *)&stru_87F5F0.__pad_58[132], 1); /*0x6a5873*/
+    (***(void (****)(unsigned int, int))&stru_87F5F0.__pad_58[132])(*(unsigned int *)&stru_87F5F0.__pad_58[132], 1); /*0x6a5873*/
     *(unsigned int *)&stru_87F5F0.__pad_58[132] = 0; /*0x6a5875*/
   }
   v2 = (ConvertClass *)RA2_OPNEW(0x188u); /*0x6a5880*/
@@ -240,7 +241,7 @@ void * SidebarClass::LoadAssets()
   qmemcpy(v15, UI_Load_72F4E0(), sizeof(v15)); /*0x6a5a5b*/
   if ( *(unsigned int *)&stru_87F5F0.__pad_58[136] ) /*0x6a5a65*/
   {
-    (***(void (__thiscall ****)(unsigned int, int))&stru_87F5F0.__pad_58[136])(*(unsigned int *)&stru_87F5F0.__pad_58[136], 1); /*0x6a5a6b*/
+    (***(void (****)(unsigned int, int))&stru_87F5F0.__pad_58[136])(*(unsigned int *)&stru_87F5F0.__pad_58[136], 1); /*0x6a5a6b*/
     *(unsigned int *)&stru_87F5F0.__pad_58[136] = 0; /*0x6a5a6d*/
   }
   v10 = (ConvertClass *)RA2_OPNEW(0x188u); /*0x6a5a78*/
@@ -304,8 +305,8 @@ int SidebarClass::Redraw(char a2)
   dword_B07DD4 = dword_B07DD4; /*0x6a6c6f*/
   g_DSurface_Hidden_2 = DSurface_Sidebar; /*0x6a6c74*/
   v17 = 0; /*0x6a6c82*/
-  v3 = (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 128))(DSurface_Sidebar); /*0x6a6c92*/
-  v22[2] = (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x6a6c99*/
+  v3 = (*(int (**)(int))(*(unsigned int *)DSurface_Sidebar + 128))(DSurface_Sidebar); /*0x6a6c92*/
+  v22[2] = (*(int (**)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x6a6c99*/
   v22[0] = 0; /*0x6a6ca3*/
   v22[1] = 0; /*0x6a6ca7*/
   v22[3] = v3; /*0x6a6cab*/
@@ -511,11 +512,11 @@ int SidebarClass::Redraw(char a2)
   }
   if ( g_TacticalRender ) /*0x6a7087*/
   {
-    (*(void (__thiscall **)(int, int))(*(unsigned int *)g_TacticalRender + 12))(g_TacticalRender, 1); /*0x6a708d*/
+    (*(void (**)(int, int))(*(unsigned int *)g_TacticalRender + 12))(g_TacticalRender, 1); /*0x6a708d*/
     v10 = g_TooltipActive; /*0x6a7090*/
   }
   v12 = v10 || v2->q53A7; /*0x6a70a6*/
-  Sidebar::FlushSidebarTooltip(v12); /*0x6a70ae*/
+  ((Sidebar *)(v12))->FlushSidebarTooltip(); /*0x6a70ae*/
   v2->q53A6 = 0; /*0x6a70b7*/
   v2->q53A7 = 0; /*0x6a70bd*/
   g_DSurface_Hidden_2 = g_DSurface_Hidden_2; /*0x6a70c5*/
@@ -538,8 +539,8 @@ int SidebarClass::SwitchTab(int a2)
   {
     GadgetClass::Hide((GadgetClass *)(&stru_B07C48 + 8 * result)); /*0x6a75b4*/
     v4 = 0; /*0x6a75c6*/
-    v5 = &this->u32_F94 * this->u32_539C + 5444; /*0x6a75ce*/
-    *(unsigned char *)(&this->u32_F94 * this->u32_539C + 5472) = 0; /*0x6a75d5*/
+    v5 = &(unsigned int)(this->u32_F94)* (unsigned int)(this->u32_539C)+ 5444; /*0x6a75ce*/
+    *(unsigned char *)(&(unsigned int)(this->u32_F94)* this->u32_539C + 5472) = 0; /*0x6a75d5*/
     do /*0x6a7600*/
     {
       Tactical::SelectObject( /*0x6a75f7*/
@@ -550,10 +551,10 @@ int SidebarClass::SwitchTab(int a2)
     while ( v4 < 60 ); /*0x6a7600*/
     this->u32_539C = a2; /*0x6a7605*/
     GadgetClass::Show((GadgetClass *)(&stru_B07C48 + 8 * a2)); /*0x6a7614*/
-    v6 = &this->u32_F94 * this->u32_539C + 5444; /*0x6a762c*/
-    *(unsigned char *)(&this->u32_F94 * this->u32_539C + 5472) = 1; /*0x6a7633*/
+    v6 = &(unsigned int)(this->u32_F94)* (unsigned int)(this->u32_539C)+ 5444; /*0x6a762c*/
+    *(unsigned char *)(&(unsigned int)(this->u32_F94)* this->u32_539C + 5472) = 1; /*0x6a7633*/
     v7 = 26; /*0x6a7645*/
-    if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a763d*/
+    if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6a763d*/
       v7 = 18; /*0x6a764c*/
     v8 = 0; /*0x6a765f*/
     v9 = 2 * ((g_DSurface_ViewBounds - g_SidebarBounds - v7 + g_DSurface_SidebarBounds - 7) / 50); /*0x6a767f*/
@@ -630,8 +631,8 @@ GadgetClass * * SidebarClass::LoadResources()
     Rect_Point::Set(&stru_B07E58, DSurface_ViewBounds.field_0 + *(unsigned int *)DSurface_ViewBounds.__pad_8, v23); /*0x6abdce*/
   else
     Rect_Point::Set(&stru_B07E58, 0, v23); /*0x6abdd7*/
-  v24 = (*((int (__thiscall **)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar) - v2; /*0x6abdf2*/
-  v3 = (*((int (__thiscall **)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 31))(DSurface_Sidebar); /*0x6abdf5*/
+  v24 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar) - v2; /*0x6abdf2*/
+  v3 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 31))(DSurface_Sidebar); /*0x6abdf5*/
   ObjectClass::SetPositionXY(&stru_B07E58, v3, v24); /*0x6abdfe*/
   Rect_Point::Set((GadgetClass *)&stru_B0B3A0, dword_B0B4DC, dword_B0B4E0); /*0x6abe15*/
   VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)&stru_B0B3A0); /*0x6abe1f*/
@@ -672,11 +673,11 @@ GadgetClass * * SidebarClass::LoadResources()
       {
         for ( i = 0; i < 2; ++i ) /*0x6abf6c*/
         {
-          (*(void (__thiscall **)(LinkClass *, int, int))(*(unsigned int *)v7->__pad_0 + 100))( /*0x6abf96*/
+          (*(void (**)(LinkClass *, int, int))(*(unsigned int *)v7->__pad_0 + 100))( /*0x6abf96*/
             v7,
             dword_B0B4F4 + i * dword_B0B4FC,
             v9 * dword_B0B500 + g_SidebarBounds + 1);
-          (*(void (__thiscall **)(LinkClass *))(*(unsigned int *)v7->__pad_0 + 72))(v7); /*0x6abf9d*/
+          (*(void (**)(LinkClass *))(*(unsigned int *)v7->__pad_0 + 72))(v7); /*0x6abf9d*/
           v7 = (LinkClass *)((char *)v7 + 56); /*0x6abfa1*/
         }
         ++v9; /*0x6abfa9*/

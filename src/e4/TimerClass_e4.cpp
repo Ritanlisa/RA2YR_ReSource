@@ -20,9 +20,9 @@ int TimerClass::Active()
   v2 = this->q010; /*0x4c948a*/
   if ( v1 != -1 ) /*0x4c9490*/
   {
-    if ( (int)dword_A8ED84 - v1 >= v2 ) /*0x4c949c*/
+    if ( (int)dword_A8ED84 - v1 >= (int)(v2) ) /*0x4c949c*/
       return 0; /*0x4c949c*/
-    v2 -= (int)dword_A8ED84 - v1; /*0x4c949e*/
+    (unsigned int)(v2)-= (int)dword_A8ED84 - v1; /*0x4c949e*/
   }
   return v2 != 0; /*0x4c94a9*/
 }
@@ -82,13 +82,13 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   if ( g_TimerPool < dword_ABC880 /*0x54ff85*/
     || (byte_ABC885 || !dword_ABC880)
     && dword_ABC88C > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_ABC878 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_ABC878 + 8))(
          &dword_ABC878,
          dword_ABC880 + dword_ABC88C,
          0) )
   {
     v20 = (gamemd::TimerClass *)(g_TimerPool++);
-    *((unsigned int *)dword_ABC87C + v20) = this; /*0x54ffa1*/
+    *((unsigned int *)(unsigned int)(dword_ABC87C)+ v20) = this; /*0x54ffa1*/
   }
   return this; /*0x54ffa6*/
 }
@@ -104,7 +104,7 @@ signed int TimerClass::GetRemaining()
   if ( result != -1 ) /*0x5cead9*/
   {
     v3 = this->u32_18; /*0x5ceadc*/
-    result = Timer::GetTicks() - this->q004; /*0x5ceaec*/
+    result = this->Timer::GetTicks() - this->q004; /*0x5ceaec*/
     if ( result >= v3 ) /*0x5ceaf1*/
     {
       this->u32_18 = 0; /*0x5ceb04*/
@@ -124,6 +124,6 @@ namespace gamemd {
 void TimerClass::StartIfIdle()
 {
   if ( this->q010 == -1 ) /*0x5ceb27*/
-    this->q010 = Timer::GetTicks(); /*0x5ceb31*/
+    this->q010 = this->Timer::GetTicks(); /*0x5ceb31*/
 }
 }

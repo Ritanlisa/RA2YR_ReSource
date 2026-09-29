@@ -16,14 +16,14 @@ struct VectorClass_ptr_BuildingLightClass {
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_BuildingLightClass___(char a2);  // 0x4EF7B0
     DynamicVector * Constructor_VectorClass_ParticleSystemClass___(char a2);  // 0x4EFBC0
-    void Destroy();  // 0x4E8410
+    void Destroy(void *a1 = 0);  // 0x4E8410
     unsigned int GetItemIndex(int a2);  // 0x4E8440
-    int Get(int a2);  // 0x4E8460
+    int Get(int a2, void *a1 = 0);  // 0x4E8460
     void Destroy_0();  // 0x4E8660
     unsigned int GetItemIndex_0(int a2);  // 0x4E8690
     char Add(int a2);  // 0x4E9B80
     char Release(int a2,  unsigned int * a3);    // 0x4E9BC0
-    void Remove();  // 0x4E9C70
+    void Remove(void *a1 = 0);  // 0x4E9C70
     int GetSize(unsigned int * a2);  // 0x4E9CA0
     unsigned int GetCapacity(int a2);  // 0x4E9CE0
     char SetCapacity(int a2,  unsigned int * a3);    // 0x4E9D00

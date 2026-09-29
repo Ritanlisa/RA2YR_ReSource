@@ -33,13 +33,17 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/ToolTipManager_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/Tiberium_e4.hpp"
+#include "e4/classes/TemporalClass_e4.hpp"
 
 // 0x5447C0
 namespace gamemd {
 unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6)
 {
   int v7; // eax
-  int v8; // eax
+  TerrainTypeClass * v8;
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
 
@@ -83,7 +87,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
          &g_BuildingLoadQueue_Array.LightVisibility,
          g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
          0) )
@@ -92,16 +96,16 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x544933*/
   }
   if ( !a6 /*0x544970*/
-    && (*(int *)&stru_A8EB00.?[340] < *(int *)&stru_A8EB00.?[332]
-     || (stru_A8EB00.?[337] || !*(unsigned int *)&stru_A8EB00.?[332])
-     && *(int *)&stru_A8EB00.?[344] > 0
-     && (*(uint8_t (__thiscall **)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.?[324] + 8))(
-          &stru_A8EB00.?[324],
-          *(unsigned int *)&stru_A8EB00.?[332] + *(unsigned int *)&stru_A8EB00.?[344],
+    && (*(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 332)
+     || (*((unsigned int *)((char *)&stru_A8EB00 + 337)) || !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 332))
+     && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 344) > 0
+     && (*(uint8_t (**)(unsigned char *, int, unsigned int))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 324) + 8))(
+          &(unsigned int *)((char *)&stru_A8EB00 + 324),
+          *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 332) + *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 344),
           0)) )
   {
-    v8 = (*(unsigned int *)&stru_A8EB00.?[340])++; /*0x54497d*/
-    *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v8) = this; /*0x54498c*/
+    v8 = (gamemd::TerrainTypeClass *)((*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 340))++);
+    *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v8) = this; /*0x54498c*/
   }
   if ( aP4 ) /*0x544991*/
   {
@@ -165,7 +169,7 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   if ( dword_A8E328 < dword_A8E320 /*0x71db74*/
     || (byte_A8E325 || !dword_A8E320)
     && dword_A8E32C > 0
-    && (v4 = (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8E318 + 8))(
+    && (v4 = (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A8E318 + 8))(
                &dword_A8E318,
                dword_A8E320 + dword_A8E32C,
                0) == 0,
@@ -251,7 +255,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
     _makepath(Buffer, 0, 0, (const char *)(&this->u32_C84), Ext); /*0x71dfad*/
     *(unsigned int *)&this->Image = SearchMIXFile(Buffer, 0); /*0x71dfc0*/
   }
-  v9 = (char **)(*(int (__thiscall **)(int))(((unsigned int)(this->zero_3C6))))(this); /*0x71dfca*/
+  v9 = (char **)(*(int (**)(int))(((unsigned int)(this->zero_3C6))))(this); /*0x71dfca*/
   if ( v9 ) /*0x71dfd2*/
   {
     PixelData = MixFileClass::GetPixelData(v9, (int)v22, 0); /*0x71dfdd*/
@@ -325,7 +329,7 @@ TerrainTypeClass * TerrainTypeClass::ddtor(AbstractClass *a2, char a3)
   }
   AbstractClass::AnnounceExpiredPointer(&a3->ObjectTypeClass, 1); /*0x71e3a0*/
   v6 = a3; /*0x71e3b5*/
-  v4 = (*(int (__thiscall **)(unsigned int *, TerrainTypeClass **))(dword_A8E318 + 16))(&dword_A8E318, &v6); /*0x71e3b9*/
+  v4 = (*(int (**)(unsigned int *, TerrainTypeClass **))(dword_A8E318 + 16))(&dword_A8E318, &v6); /*0x71e3b9*/
   if ( v4 != -1 && v4 < dword_A8E328 && v4 < --dword_A8E328 ) /*0x71e3d4*/
   {
     do /*0x71e3ec*/

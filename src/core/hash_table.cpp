@@ -1,6 +1,6 @@
 #include "core/hash_table.hpp"
 #include <cstring>
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace gamemd {
 
@@ -243,9 +243,9 @@ void SHA1::Transform(void * a1, void * a2)
   while ( v21 );
   v22 = (void *)(v12 + a2[1]);
   v23 = (void *)(a2[3]);
-  v24 = (void *)(v20 + *a2);
-  v25 = a2[4]; /*0x69dc9a*/
-  *a2 = v24; /*0x69dc9d*/
+  v24 = (unsigned int)((void *)(v20 + *a2));
+  v25 = (void *)(a2[4]);
+  *a2 = (void *)(v24);
   v26 = v13 + a2[2]; /*0x69dca4*/
   a2[3] = v14 + v23; /*0x69dca6*/
   v27 = v32[4]; /*0x69dca9*/

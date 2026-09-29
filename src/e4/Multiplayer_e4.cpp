@@ -25,15 +25,21 @@
 #include "e4/classes/Screen_e4.hpp"
 #include "e4/classes/MultiplayerSiege_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/NetworkClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x688380
 namespace gamemd {
 void * Multiplayer::FindStartPositions()
 {
+    unsigned int v25 = 0;  /* G37 hoist */
   AbstractClass * v1;
-  unsigned int v2;
-  unsigned int v3;
-  int v4; // ebx
+  Multiplayer * v2;
+  AbstractClass * v3;
+  unsigned int v4;
   int v5; // eax
   unsigned int *v6; // ecx
   int v7; // ebp
@@ -58,8 +64,8 @@ void * Multiplayer::FindStartPositions()
   int v27; // [esp+3Ch] [ebp-4h]
 
   v1 = (gamemd::gamemd::AbstractClass *)((int)((gamemd::gamemd::AbstractClass *)(0)));
-  v2 = (gamemd::gamemd::AbstractClass *)(this);
-  v21 = this; /*0x688391*/
+  v2 = (gamemd::Multiplayer *)((unsigned int)((gamemd::gamemd::AbstractClass *)(this)));
+  v21 = (gamemd::Multiplayer *)(this);
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
   v3 = dword_A8B230; /*0x68839a*/
   v4 = 10; /*0x6883a0*/
@@ -67,7 +73,7 @@ void * Multiplayer::FindStartPositions()
   v27 = 10; /*0x6883ad*/
   v26 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
-  v6 = (void **)((char *)&dword_A8B230[44].vtable0 + 2); /*0x6883b7*/
+  v6 = (void **)((char *)&((unsigned int *)(dword_A8B230))[44].vtable0 + 2); /*0x6883b7*/
   do /*0x6883e9*/
   {
     if ( v5 < 0 ) /*0x6883c6*/
@@ -97,47 +103,46 @@ void * Multiplayer::FindStartPositions()
   }
   if ( v1 <= *(unsigned int *)&stru_A8B250.__pad_0[36] + dword_A8DA84 - v7 ) /*0x688421*/
   {
-    v20 = *(unsigned int *)&stru_A8B250.__pad_0[36] + dword_A8DA84 - v7; /*0x68842b*/
+    v20 = (gamemd::AbstractClass *)(*(unsigned int *)&stru_A8B250.__pad_0[36] + dword_A8DA84 - v7);
     v10 = v20; /*0x68842f*/
   }
   else
   {
-    v10 = (int)(v1);
+    v10 = (gamemd::AbstractClass *)((int)(v1));
     v20 = v1; /*0x688425*/
   }
-  for ( i = 0; (int)i < v10; ++i ) /*0x688435*/
+  for ( i = 0; (int)i < (int)(v10); ++i ) /*0x688435*/
   {
-    if ( i > 0x2BD || *(void **)((char *)&v3[44].vtable0 + 4 * i + 2) == (void *)dword_B05458 ) /*0x68845d*/
+    if ( i > 0x2BD || *(void **)((char *)&((unsigned int *)(v3))[44].vtable0 + 4 * i + 2) == (void *)dword_B05458 ) /*0x68845d*/
       continue; /*0x68845d*/
-    v12 = *(int *)((char *)&v3[44].vtable0 + 4 * i + 2); /*0x688478*/
+    v12 = *(int *)((char *)&((unsigned int *)(v3))[44].vtable0 + 4 * i + 2); /*0x688478*/
     if ( v26 < v25.Capacity ) /*0x688481*/
       goto LABEL_22; /*0x688481*/
     if ( !v25.IsAllocated && v25.Capacity || v4 <= 0 ) /*0x688491*/
       goto LABEL_24; /*0x688491*/
-    if ( (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(&v25, v4 + v25.Capacity, 0) ) /*0x6884a0*/
+    if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(&v25, v4 + v25.Capacity, 0) ) /*0x6884a0*/
     {
-  LABEL_22:
-      v13 = v26++; /*0x6884ab*/
+  LABEL_22: v13 = (unsigned int)(v26++);
       *((unsigned int *)v25.Items + v13) = v12; /*0x6884b6*/
     }
-    v3 = (gamemd::gamemd::AbstractClass *)((unsigned int)((gamemd::gamemd::AbstractClass *)(dword_A8B230)));
-  LABEL_24: v23 = (gamemd::gamemd::AbstractClass *)(*(int *)((char *)&v3[44].vtable0 + 4 * i + 2));
-    Debug::Log(); /*0x6884d9*/
+    v3 = (unsigned int)((gamemd::AbstractClass *)((unsigned int)((gamemd::AbstractClass *)((unsigned int)((gamemd::AbstractClass *)((unsigned int)((gamemd::gamemd::AbstractClass *)((unsigned int)((gamemd::gamemd::AbstractClass *)(dword_A8B230))))))))));
+  LABEL_24: v23 = (gamemd::gamemd::AbstractClass *)(*(int *)((char *)&((unsigned int *)(v3))[44].vtable0 + 4 * i + 2));
+    this->Debug::Log(); /*0x6884d9*/
     v4 = v27; /*0x6884de*/
     v3 = dword_A8B230; /*0x6884e2*/
     v2 = v21; /*0x6884e8*/
   }
   if ( v10 - v26 > 0 ) /*0x688502*/
   {
-    Debug::Log(); /*0x68850d*/
-    if ( v26 < v10 ) /*0x68851b*/
+    this->Debug::Log(); /*0x68850d*/
+    if ( v26 < (int)(v10) ) /*0x68851b*/
     {
       do /*0x688643*/
       {
-        v14 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, *(unsigned int *)&stru_87F5F0.__pad_58[720] - 10); /*0x688551*/
-        IDA_LOWORD(v22) = *(unsigned short *)&stru_87F5F0.__pad_58[708] /*0x688573*/
+        v14 = Random::Range((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink, 0, *(unsigned int *)&stru_87F5F0.__pad_58[720] - 10); /*0x688551*/
+        IDA_LOWORD(v22) = *(unsigned short *)&((unsigned int *)(stru_87F5F0.__pad_58))[708] /*0x688573*/
                     + Random::Range(
-                        (Random *)&dword_A8B230[14].NeedsSaveOrLink,
+                        (Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink,
                         10,
                         *(unsigned int *)&stru_87F5F0.__pad_58[716] - 10);
         IDA_HIWORD(v22) = v14 + *(unsigned short *)&stru_87F5F0.__pad_58[712] + 10; /*0x688588*/
@@ -166,7 +171,7 @@ void * Multiplayer::FindStartPositions()
           if ( v26 < v25.Capacity /*0x688603*/
             || (v25.IsAllocated || !v25.Capacity)
             && v27 > 0
-            && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(
+            && (*((uint8_t (**)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(
                  &v25,
                  v27 + v25.Capacity,
                  0) )
@@ -174,25 +179,25 @@ void * Multiplayer::FindStartPositions()
             v15 = v26++; /*0x688612*/
             *((unsigned int *)v25.Items + v15) = v19; /*0x68861d*/
           }
-          Debug::Log(); /*0x688631*/
+          this->Debug::Log(); /*0x688631*/
         }
       }
-      while ( v26 < v20 ); /*0x688643*/
+      while ( v26 < (int)(v20) ); /*0x688643*/
       v2 = v21; /*0x688649*/
     }
   }
-  *(unsigned int *)&v2[4] = 0; /*0x688651*/
-  *(unsigned int *)&v2[8] = 0; /*0x688654*/
-  v2[13] = 0; /*0x688657*/
-  v2[12] = (Multiplayer)1; /*0x68865f*/
+  *(unsigned int *)&((unsigned int *)(v2))[4] = 0; /*0x688651*/
+  *(unsigned int *)&((unsigned int *)(v2))[8] = 0; /*0x688654*/
+  ((unsigned int *)(v2))[13] = 0; /*0x688657*/
+  ((unsigned int *)(v2))[12] = (Multiplayer)1; /*0x68865f*/
   *(unsigned int *)v2 = (void*)&VectorClass_Cell_vftable; /*0x688663*/
   Multiplayer::CopyDataArray(v2, &v25); /*0x688669*/
   *(unsigned int *)v2 = (void*)&DynamicVectorClass_Cell_vftable; /*0x68866e*/
   v25.vtable0 = (void*)&VectorClass_Cell_vftable; /*0x688674*/
   Items = v25.Items; /*0x68867c*/
   v17 = v27; /*0x688684*/
-  *(unsigned int *)&v2[16] = v26; /*0x688688*/
-  *(unsigned int *)&v2[20] = v17; /*0x68868d*/
+  *(unsigned int *)&((unsigned int *)(v2))[16] = v26; /*0x688688*/
+  *(unsigned int *)&((unsigned int *)(v2))[20] = v17; /*0x68868d*/
   if ( Items && v25.IsAllocated ) /*0x688698*/
     RA2_OPDEL(Items); /*0x68869b*/
   return v2; /*0x6886a5*/
@@ -209,14 +214,14 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 
   if ( this == (Multiplayer *)aP1 ) /*0x68c2bb*/
     return this; /*0x68c2bb*/
-  (*(void (__thiscall **)(Multiplayer *))(((unsigned int)(this->u32_42))))(this); /*0x68c2bf*/
+  (*(void (**)(Multiplayer *))(((unsigned int)(this->u32_42))))(this); /*0x68c2bf*/
   v3 = aP1[2]; /*0x68c2c2*/
   this->u32_8 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
-    this->u32_4 = 0; /*0x68c319*/
-    this->u8_D = 0; /*0x68c320*/
-    return this; /*0x68c324*/
+    this->u32_4 = (unsigned int *)(0);
+    this->u8_D = (unsigned int *)(0);
+    return (unsigned int *)(this);
   }
   v4 = (void *)((int)(RA2_OPNEW(4 * v3)));
   if ( !v4 ) /*0x68c2de*/
@@ -258,7 +263,7 @@ void Multiplayer::ShowProgress(int a2)
   int16_t v17; // [esp+1E0h] [ebp-4h]
   char v18; // [esp+1E2h] [ebp-2h]
 
-  IDA_LOBYTE(result) = stru_A8EB00.?[391]; /*0x69ae90*/
+  IDA_LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 391)); /*0x69ae90*/
   if ( !stru_A8EB00.?[391] ) /*0x69aea1*/
   {
     v14 = a2; /*0x69aeb4*/
@@ -277,7 +282,7 @@ void Multiplayer::ShowProgress(int a2)
       result = Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, v15, NAN); /*0x69af0a*/
     if ( this->u32_284C != 1 ) /*0x69af16*/
     {
-      Ticks = Timer::GetTicks(); /*0x69af26*/
+      Ticks = this->Timer::GetTicks(); /*0x69af26*/
       switch ( *(unsigned int *)this ) /*0x69af3e*/
       {
         case 1: /*0x69af3e*/
@@ -296,9 +301,9 @@ void Multiplayer::ShowProgress(int a2)
             v11 = 240; /*0x69b101*/
             if ( Ticks != -1 ) /*0x69b107*/
             {
-              v12 = Timer::GetTicks() - Ticks; /*0x69b112*/
+              v12 = this->Timer::GetTicks() - Ticks; /*0x69b112*/
               if ( v12 >= 240 ) /*0x69b118*/
-                return Event::Dispatch(); /*0x69b118*/
+                return this->Event::Dispatch(); /*0x69b118*/
               v11 = 240 - v12; /*0x69b11a*/
             }
             if ( v11 <= 0 ) /*0x69b11e*/
@@ -318,7 +323,7 @@ void Multiplayer::ShowProgress(int a2)
           __asm { fmul ds:dbl_7E2AC0 } /*0x69af69*/
           IDA_LOWORD(v5) = Math::RoundToInt(v3); /*0x69af6f*/
           *(int *)((char *)&v16[11] + 3) = v5; /*0x69af7a*/
-          strcpy((char *)&v16[1], ToWideStringChar((char *)*dword_A8DA78)); /*0x69af9e*/
+          strcpy((char *)&v16[1], ToWideStringChar((char *)*(unsigned int *)(dword_A8DA78))); /*0x69af9e*/
           __asm /*0x69afa7*/
           {
             fild [esp+1E8h+var_199]
@@ -333,32 +338,32 @@ void Multiplayer::ShowProgress(int a2)
           {
             for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
             {
-              Debug::Log(); /*0x69afe6*/
-              Network::SendToPlayer((int)&unk_A8E9C0, (int)v16, 51, 1, (wchar_t *)dword_A8DA78[i]); /*0x69b006*/
+              this->Debug::Log(); /*0x69afe6*/
+              Network::SendToPlayer((int)&unk_A8E9C0, (int)v16, 51, 1, (wchar_t *)((unsigned int *)(dword_A8DA78))[i]); /*0x69b006*/
             }
           }
-          Event::Dispatch(); /*0x69b015*/
+          this->Event::Dispatch(); /*0x69b015*/
           while ( Network::GetQueueCount(&unk_A8E9C0) > 5 ) /*0x69b027*/
           {
             v8 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/
             {
-              v9 = Timer::GetTicks() - Ticks; /*0x69b048*/
+              v9 = this->Timer::GetTicks() - Ticks; /*0x69b048*/
               if ( v9 >= 240 ) /*0x69b04e*/
-                return Event::Dispatch(); /*0x69b04e*/
+                return this->Event::Dispatch(); /*0x69b04e*/
               v8 = 240 - v9; /*0x69b054*/
             }
             if ( v8 <= 0 ) /*0x69b058*/
               break; /*0x69b058*/
             Sleep(0x14u); /*0x69b060*/
             MessageLoop(); /*0x69b062*/
-            Event::Dispatch(); /*0x69b067*/
+            this->Event::Dispatch(); /*0x69b067*/
           }
           break; /*0x69b079*/
         default:
-          return Event::Dispatch();
+          return this->Event::Dispatch();
       }
-      return Event::Dispatch(); /*0x69b148*/
+      return this->Event::Dispatch(); /*0x69b148*/
     }
   }
   return result; /*0x69b081*/

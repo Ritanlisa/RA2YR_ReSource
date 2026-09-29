@@ -16,7 +16,7 @@
 #include "object/radio.hpp"
 #include "object/radbeam.hpp"
 #include "object/techno.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x410540
 namespace ra2 { namespace game { 

@@ -38,10 +38,10 @@ struct BufferIOFileClass {
     unsigned int TotalBytesWritten;  // 0x48
     unsigned int RawFileClass;
 // --- flat members (END) ---
-    int Destruct();
+    int Destruct(void *a1 = 0);
     void StubReturnFalse(int a1, int a2, int a3);
-    static double Constructor(...);  // C2597 interim stub
-    static void Dtor(void * self);  // 0x478F43 destructor thunk (G34 supply)
+     double Constructor(...);  // C2597 interim stub
+     void Dtor(void * self);  // 0x478F43 destructor thunk (G34 supply)
 };
 
 } // namespace gamemd

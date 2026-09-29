@@ -25,9 +25,10 @@ struct AsyncIO {
     unsigned int q0242;
     unsigned int u32_180;
     unsigned int u32_1C6;
+    unsigned int Timer;
 // --- flat members (END) ---
-    AbstractClass * * Shutdown();
-    int Read();
+    AbstractClass * * Shutdown(void *a1 = 0);
+    int Read(void *a1 = 0, void *a2 = 0);
     int WaitCompletion();
 };
 

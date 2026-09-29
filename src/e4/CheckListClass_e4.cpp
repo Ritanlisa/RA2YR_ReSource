@@ -44,7 +44,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
       v22[1] = (int)(32);
       swprintf(&v22[2], v17, a2); /*0x488585*/
       ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
-      Type = BuildingAnim::GetType(); /*0x48859c*/
+      Type = this->BuildingAnim::GetType(); /*0x48859c*/
       if ( a6 ) /*0x4885a7*/
       {
         ListClass_field_0x0C |= 0x2000u; /*0x4885b4*/
@@ -57,7 +57,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
         v19[3] = v8[2].ListClass_field_0x0C; /*0x4885fb*/
         v19[1] = a4; /*0x488606*/
         v19[2] = a5; /*0x48860a*/
-        (*(void (__thiscall **)(AudioStream *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488615*/
+        (*(void (**)(AudioStream *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488615*/
           g_DSurface_Hidden_2,
           v19,
           v13);
@@ -69,9 +69,9 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
       ListClass_field_0x10 = (unsigned int)(v8[1].ListClass_field_0x10);
       v20[0] = (unsigned int)(a3);
       v18 = (unsigned int)(ListClass_field_0x10);
-      v20[1] = a4; /*0x488644*/
+      v20[1] = (unsigned int)(a4);
       v16 = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * Type); /*0x488659*/
-      v15 = (*(int (__thiscall **)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488662*/
+      v15 = (*(int (**)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488662*/
               g_DSurface_Hidden_2,
               v21);
             return FillRectangle((IUnknown *)(/*0x488675*/                v19),                (int)v22,                (int)g_DSurface_Hidden_2,                v15,                (int)v20,                v16,                0,                ListClass_field_0x0C,                a5,                v18);
@@ -90,9 +90,9 @@ int CheckListClass::ddtor(int a2)
 {
   if ( this->IsReadOnly ) /*0x557e18*/
   {
-    (*(void (__thiscall **)(int, int))(this->q118 + 12))(&this->q118, a2); /*0x557e2c*/
-    (*(void (__thiscall **)(int, int))(this->subList2 + 12))(&this->u32_2E0, a2); /*0x557e3c*/
-    (*(void (__thiscall **)(int, int))(this->subList1 + 12))(&this->subList1, a2); /*0x557e46*/
+    (*(void (**)(int, int))(this->q118 + 12))(&this->q118, a2); /*0x557e2c*/
+    (*(void (**)(int, int))(this->subList2 + 12))(&this->u32_2E0, a2); /*0x557e3c*/
+    (*(void (**)(int, int))(this->subList1 + 12))(&this->subList1, a2); /*0x557e46*/
   }
   return LinkedList::InsertAfter(a2); /*0x557e51*/
 }

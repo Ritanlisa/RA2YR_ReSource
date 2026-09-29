@@ -11,7 +11,7 @@ struct Stream {
     char Stream_field_04[4];  // 0x4
     char Stream_field_08[4];  // 0x8
     bool q00A;  // 0xA
-    char Stream_field_0C[4];  // 0xC
+    unsigned int Stream_field_0C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int Stream_178;
     unsigned int Stream_field_10;
@@ -46,8 +46,6 @@ struct Stream {
     unsigned int u32_544;
     unsigned int u32_548;
     unsigned int u32_54C;
-    unsigned int ReadPacket;
-    unsigned int WriteBlock;
 // --- flat members (END) ---
     int FlushAndReset();
     int GetChecked();

@@ -15,12 +15,12 @@ struct VectorClass_ptr_CaptureManagerClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_CaptureManagerClass___(char a2);  // 0x4730F0
-    void Destroy();  // 0x472AE0
+    void Destroy(void *a1 = 0);  // 0x472AE0
     unsigned int GetItemIndex(int a2);  // 0x472B10
-    int Get(int a2);  // 0x472B30
+    int Get(int a2, void *a1 = 0);  // 0x472B30
     char Add(int a2);  // 0x472DA0
     char Release(int a2,  unsigned int * a3);    // 0x472DE0
-    void Remove();  // 0x472E90
+    void Remove(void *a1 = 0);  // 0x472E90
     int GetSize(unsigned int * a2);  // 0x472EC0
     unsigned int GetCapacity(int a2);  // 0x472F00
     char SetCapacity(int a2,  unsigned int * a3);    // 0x472F20

@@ -18,14 +18,16 @@ struct AudioMixer {
     unsigned int u32_18;
     unsigned int u32_1C;
     unsigned int u32_4C;
+    unsigned int Audio;
+    unsigned int AudioStream;
 // --- flat members (END) ---
-    int Init();
+    int Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
     int PlayBuffer(unsigned int * a1, unsigned int a2);
-    int PlaySample();
+    int PlaySample(void *a1 = 0);
     int Pump();
     int RequestOrEndBuffer(int a1, unsigned int a2);
-    int SetVolume();
-    int Shutdown();
+    int SetVolume(void *a1 = 0);
+    int Shutdown(void *a1 = 0);
 };
 
 } // namespace gamemd

@@ -17,16 +17,16 @@ struct VectorClass_ptr_HouseTypeClass {
     DynamicVector * Constructor_VectorClass_HouseTypeClass___(char a2);  // 0x4F0340
     DynamicVector * Constructor_VectorClass_TaskForceClass___(char a2);  // 0x4F03E0
     DynamicVector * Constructor_VectorClass_TeamTypeClass___(char a2);  // 0x4F0480
-    void Destroy();  // 0x4E8AE0
+    void Destroy(void *a1 = 0);  // 0x4E8AE0
     unsigned int GetItemIndex(int a2);  // 0x4E8B10
-    int Get(int a2);  // 0x4E8B30
+    int Get(int a2, void *a1 = 0);  // 0x4E8B30
     void Destroy_0();  // 0x4E8B40
     unsigned int GetItemIndex_0(int a2);  // 0x4E8B70
     void Destroy_1();  // 0x4E8BA0
     unsigned int GetItemIndex_1(int a2);  // 0x4E8BD0
     char Add(int a2);  // 0x4EC7C0
     char Release(int a2,  unsigned int * a3);    // 0x4EC800
-    void Remove();  // 0x4EC8B0
+    void Remove(void *a1 = 0);  // 0x4EC8B0
     int GetSize(unsigned int * a2);  // 0x4EC8E0
     unsigned int LoadTypeData(int a2);  // 0x4EC920
     char SetCapacity(int a2,  unsigned int * a3);    // 0x4EC940

@@ -15,14 +15,14 @@ struct VectorClass_ptr_CampaignClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_CampaignClass___(char a2);  // 0x4F0200
-    void Destroy();  // 0x4E8A20
+    void Destroy(void *a1 = 0);  // 0x4E8A20
     unsigned int GetItemIndex(int a2);  // 0x4E8A50
-    int Get(int a2);  // 0x4E8A70
+    int Get(int a2, void *a1 = 0);  // 0x4E8A70
     void Destroy_0();  // 0x4E8A80
     unsigned int GetItemIndex_0(int a2);  // 0x4E8AB0
     char Add(int a2);  // 0x4EC300
     char Release(int a2,  unsigned int * a3);    // 0x4EC340
-    void Remove();  // 0x4EC3F0
+    void Remove(void *a1 = 0);  // 0x4EC3F0
     int GetSize(unsigned int * a2);  // 0x4EC420
     unsigned int GetCapacity(int a2);  // 0x4EC460
     char SetCapacity(int a2,  unsigned int * a3);    // 0x4EC480

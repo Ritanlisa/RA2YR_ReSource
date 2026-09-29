@@ -15,6 +15,7 @@
 #include "e4/classes/BinkMovie_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/MultiplayerManBattle_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x5D89F0
 namespace gamemd {
@@ -42,20 +43,20 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
 namespace gamemd {
 MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
 {
-  int v3; // edi
-  void (__thiscall ***v4)(unsigned int, int); // ecx
-  void (__thiscall ***v5)(unsigned int, int); // ecx
+  void * v3;
+  void (***v4)(unsigned int, int); // ecx
+  void (***v5)(unsigned int, int); // ecx
   void *MultiplayerGameMode_field_0x0C; // eax
 
-  v3 = (unsigned int)(0);
-  for ( *(unsigned int *)this->__pad_0 = (void*)&MultiplayerGameMode_vftable; v3 < this->MultiplayerGameMode_field_0x18; ++v3 ) /*0x5d7f31*/
+  v3 = (void *)((unsigned int)(0));
+  for ( *(unsigned int *)this->__pad_0 = (void*)&MultiplayerGameMode_vftable; v3 < (void *)(this->MultiplayerGameMode_field_0x18); ++v3 ) /*0x5d7f31*/
   {
-    v4 = *(void (__thiscall ****)(unsigned int, int))(this->MultiplayerGameMode_field_0x0C + 4 * v3); /*0x5d7f36*/
+    v4 = *(void (****)(unsigned int, int))(this->MultiplayerGameMode_field_0x0C + 4 * v3); /*0x5d7f36*/
     if ( v4 ) /*0x5d7f3b*/
       (**v4)(v4, 1); /*0x5d7f41*/
   }
-  (*(void (__thiscall **)(int *))(this->MultiplayerGameMode_field_0x08 + 12))(&this->MultiplayerGameMode_field_0x08); /*0x5d7f53*/
-  v5 = (void (__thiscall ***)(unsigned int, int))this->u32_38; /*0x5d7f56*/
+  (*(void (**)(int *))(this->MultiplayerGameMode_field_0x08 + 12))(&this->MultiplayerGameMode_field_0x08); /*0x5d7f53*/
+  v5 = (void (***)(unsigned int, int))this->u32_38; /*0x5d7f56*/
   if ( v5 ) /*0x5d7f5b*/
     (**v5)(v5, 1); /*0x5d7f61*/
   DeleteAndZero((ObjectClass *)((char *)&this->q0108)); /*0x5d7f66*/

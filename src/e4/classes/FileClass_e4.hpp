@@ -16,11 +16,12 @@ struct FileClass {
     unsigned int Handle;
     unsigned int Open2;
     unsigned int u32_58;
+    unsigned int OpenWithCDSearch;
 // --- flat members (END) ---
     char Stub(int a1);
-    int Close();
-    int GetState();
-    int Open(int a2);
+    int Close(void *a1 = 0);
+    int GetState(void *a1 = 0);
+    int Open(int a2, void *a3 = 0, void *a1 = 0);
     int Read(BufferIOFileClass * aP1, AbstractClass * aP2);
     int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);
     int SetFileName(void* aP1);
@@ -28,7 +29,7 @@ struct FileClass {
     int StubReturnFalse();
     int Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite);
     unsigned int * loc_401950(char a2);
-    static double Load(...);  // C2597 interim stub
+     double Load(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

@@ -70,14 +70,14 @@ struct ScriptAction {
     int FindBuildingMatch(AbstractClass * aP1);  // 0x634CC0
     int PlaceObject(AbstractClass * aP1);  // 0x634E10
     int DecrementRefCount(int a2);  // 0x6351E0
-    AbstractClass * Constructor(AbstractClass * aP1);  // 0x635F20
-    BOOL Check();  // 0x636570
+    AbstractClass * Constructor(AbstractClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x635F20
+    BOOL Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x636570
     int ClearBuildingState();  // 0x636CE0
     char DispatchBuilding();  // 0x637E00
     char IsBuildingTypeMatch();  // 0x638C70
     int ExecutePlacement(int a1,  int a2,  int a3,  long long a4,  int a5,  int a6,  int a7,  int a8,  int a9,  int a10,  int a11,  int a12,  int a13,  int a14,  int a15,  int a16,  int a17,  int a18,  int a19,  int a20,  int a21,  int a22,  int a23,  int a24,  int a25,  int a26,  int a27,  int a28,  int a29);    // 0x639A50
     char HitTest(MouseClass * aP0,  int a2);    // 0x63A8E0
-    char ProcessIdleAction();  // 0x63B550
+    char ProcessIdleAction(void *a1 = 0);  // 0x63B550
     int DrawPlacementMarker();  // 0x63CE40
     int Serialize(char * Buffer);  // 0x6DD300
     const char * ParseScriptActionParams();  // 0x6DD5B0

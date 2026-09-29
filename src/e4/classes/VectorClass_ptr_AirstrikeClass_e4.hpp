@@ -15,12 +15,12 @@ struct VectorClass_ptr_AirstrikeClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_AirstrikeClass___(char a2);  // 0x41E0F0
-    void Destroy();  // 0x41DDE0
+    void Destroy(void *a1 = 0);  // 0x41DDE0
     unsigned int GetItemIndex(int a2);  // 0x41DE10
-    int Get(int a2);  // 0x41DE30
+    int Get(int a2, void *a1 = 0);  // 0x41DE30
     char Add(int a2);  // 0x41DE40
     char Release(int a2,  unsigned int * a3);    // 0x41DE80
-    void Remove();  // 0x41DF30
+    void Remove(void *a1 = 0);  // 0x41DF30
     int GetSize(unsigned int * a2);  // 0x41DF60
     unsigned int GetCapacity(int a2);  // 0x41DFA0
     char SetCapacity(int a2,  unsigned int * a3);    // 0x41DFC0

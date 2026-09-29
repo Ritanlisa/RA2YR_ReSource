@@ -41,7 +41,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
   IDA_LOBYTE(this->vtable2) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
                       a2,
                       (uint8_t *)v4,
-                      (uint8_t *)&stru_82BA00.?[8],
+                      (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 8),
                       (char)this->vtable2);
   if ( this->ObjectClass == (void *)-1 ) /*0x5b37c7*/
     v5 = g_Str__none_; /*0x5b37c9*/
@@ -50,7 +50,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
   IDA_BYTE1(this->vtable2) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
                      a2,
                      (uint8_t *)v5,
-                     (uint8_t *)&stru_82BA00.?[6],
+                     (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 6),
                      IDA_BYTE1(this->vtable2));
   if ( this->ObjectClass == (void *)-1 ) /*0x5b37f0*/
     v6 = g_Str__none_; /*0x5b37f2*/
@@ -59,7 +59,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
   IDA_BYTE2(this->vtable2) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
                      a2,
                      (uint8_t *)v6,
-                     (uint8_t *)&stru_82BA00.?[3],
+                     (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 3),
                      IDA_BYTE2(this->vtable2));
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3819*/
     v7 = g_Str__none_; /*0x5b381b*/
@@ -77,7 +77,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
   IDA_LOBYTE(this->vtable3) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                       a2,
                       (uint8_t *)v8,
-                      (uint8_t *)&stru_82BA00.?[30],
+                      (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 30),
                       (char)this->vtable3);
   if ( this->ObjectClass == (void *)-1 ) /*0x5b386b*/
     v9 = g_Str__none_; /*0x5b386d*/
@@ -86,7 +86,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
   IDA_BYTE1(this->vtable3) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
                      a2,
                      (uint8_t *)v9,
-                     (uint8_t *)&stru_82BA00.?[28],
+                     (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 28),
                      IDA_BYTE1(this->vtable3));
   if ( this->ObjectClass == (void *)-1 ) /*0x5b3894*/
     v10 = g_Str__none_; /*0x5b3896*/
@@ -104,7 +104,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v13 = g_Str__none_; /*0x5b38c3*/
   else
     v13 = off_816CAC[(unsigned int)vtable0]; /*0x5b38ca*/
-  INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)v13, (uint8_t *)&stru_82BA00.?[26], 0.0); /*0x5b38dd*/
+  INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)v13, (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 26), 0.0); /*0x5b38dd*/
   __asm { fst qword ptr [esi+18h] } /*0x5b38e2*/
   *(double *)&this->nextArrayIndex = _RT1; /*0x5b38e2*/
   __asm /*0x5b38e5*/
@@ -249,6 +249,6 @@ int MissionClass::Return450N()
 namespace gamemd {
 int MissionClass::HasValidTarget()
 {
-  return this->suspendedMission != -1; /*0x5b3a1e*/
+  return this->suspendedMission != (char [4])(-1); /*0x5b3a1e*/
 }
 } // namespace gamemd

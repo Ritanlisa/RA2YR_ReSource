@@ -13,8 +13,9 @@ struct SpawnManagerClass_25 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
+    unsigned int Capacity;
 // --- flat members (END) ---
-    void ddtor();  // 0x6B8160
+    void ddtor(void *a1 = 0);  // 0x6B8160
     int SaveState(int a2);  // 0x6B81B0
     char AddRef(int a2);  // 0x6B8220
     char Release(int a2,  unsigned int * a3);    // 0x6B8400

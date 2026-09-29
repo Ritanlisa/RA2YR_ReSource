@@ -219,7 +219,7 @@ struct CampaignClass {
     int StubReturn928();
     int Write(AbstractTypeClass * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
-    static double LoadFromINI(...);  // C2597 interim stub
+     double LoadFromINI(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

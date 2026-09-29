@@ -15,7 +15,7 @@ struct VectorClass_UtagCONNECTDATA {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_tagCONNECTDATA_(unsigned int * Block,  char a2);    // 0x4A0E10
-    void Destroy();  // 0x4A0EB0
+    void Destroy(void *a1 = 0);  // 0x4A0EB0
     unsigned int GetItemIndex(int a2);  // 0x4A0EE0
     unsigned int * Clear(unsigned int * a2,  int a3);    // 0x4A0F00
     char AddRef(int a2);  // 0x4A0F80

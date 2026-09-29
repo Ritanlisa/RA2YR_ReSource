@@ -36,9 +36,9 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
   int v12; // [esp+8h] [ebp-4h]
 
   if ( !byte_89F578 ) /*0x49cafc*/
-    CampaignClass::LoadFromINI(&g_DDrawSurfaceManager); /*0x49cb03*/
+    ((CampaignClass *)(&g_DDrawSurfaceManager))->LoadFromINI(); /*0x49cb03*/
   v3 = aP1; /*0x49cb08*/
-  if ( aP1 < 0 || aP1 >= dword_89F574 ) /*0x49cb1c*/
+  if ( aP1 < 0 || aP1 >= (gamemd::CCINIClass *)(dword_89F574) ) /*0x49cb1c*/
     return 0; /*0x49cc46*/
   dword_89F570 = dword_89F570; /*0x49cb29*/
   this->q06C = 1; /*0x49cb2f*/
@@ -68,7 +68,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
     }
     this->q03C = (unsigned char)(0);
     this->q040 = (unsigned char)(0);
-    this->q03C = RA2_OPNEW(4 * *(char *)(v5 + 8)); /*0x49cbae*/
+    this->q03C = (unsigned char)(RA2_OPNEW(4 * *(char *)(v5 + 8)));
     v9 = 0; /*0x49cbb7*/
     if ( *(char *)(v5 + 8) > 0 ) /*0x49cbbb*/
     {
@@ -79,13 +79,13 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
         *(unsigned int *)(this->q03C + 4 * v9) = RA2_OPNEW(0x104u); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
           *(char **)(this->q03C + 4 * v9++),
-          (const char *)(*(unsigned int *)(v5 + 12) + 260 * (v12 + v10)),
+          (const char *)(*(unsigned int *)(v5 + 12) + 260 * ((unsigned int)(v12)+ v10)),
           0x103u);
         v12 += 3; /*0x49cc22*/
       }
       while ( v9 < *(char *)(v5 + 8) ); /*0x49cc26*/
     }
-    v3 = (int)(aP1);
+    v3 = (gamemd::CCINIClass *)((int)(aP1));
     this->q040 = *(char *)(v5 + 8); /*0x49cc32*/
     this->q038 = 0; /*0x49cc35*/
   }
@@ -98,8 +98,8 @@ namespace gamemd {
 CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
   if ( !this->q060 ) /*0x49e3b3*/
-    CampaignClass::LoadFromINI(); /*0x49e3ba*/
-  if ( aP1 < 0 || aP1 >= this->q05C ) /*0x49e3ca*/
+    this->CampaignClass::LoadFromINI(); /*0x49e3ba*/
+  if ( aP1 < 0 || aP1 >= (gamemd::CCINIClass *)(this->q05C) ) /*0x49e3ca*/
   {
     *(unsigned int *)aP2 = 0; /*0x49e3e9*/
     return 0; /*0x49e3ef*/
@@ -163,21 +163,21 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
                 v13[13] = 0; /*0x5bf008*/
                 v13[16] = v16; /*0x5bf00b*/
                 v13[14] = (MovieContext)((*(unsigned int *)&DSurface_ViewBounds.__pad_8[20] - *(unsigned int *)&v16) / 2); /*0x5bf01d*/
-                Debug::Log(); /*0x5bf02b*/
+                this->Debug::Log(); /*0x5bf02b*/
               }
             }
           }
-          (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5bf03b*/
+          (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5bf03b*/
           if ( a7 ) /*0x5bf045*/
           {
-            (*((void (__thiscall **)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5bf050*/
+            (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5bf050*/
             Frame::Present((int)g_DSurface_Hidden, 0, v10, v9, 0, (int)v17, v20, v21); /*0x5bf05c*/
           }
           if ( !IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bf067*/
           {
             AudioFrame::CounterInc(); /*0x5bf069*/
-            AudioQueue::IncrementPriority(); /*0x5bf06e*/
-            AudioQueue::ReleaseBuffers(); /*0x5bf073*/
+            this->AudioQueue::IncrementPriority(); /*0x5bf06e*/
+            this->AudioQueue::ReleaseBuffers(); /*0x5bf073*/
             RequestBufferMixer((unsigned int *)g_MixerState, 0x2000); /*0x5bf083*/
             RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000); /*0x5bf093*/
             IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) = 1; /*0x5bf098*/
@@ -202,10 +202,10 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
           RA2_OPDEL(v13); /*0x5bf11f*/
           if ( a5 == 1 ) /*0x5bf130*/
           {
-            (*((void (__thiscall **)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5bf13b*/
+            (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5bf13b*/
             Frame::Present((int)g_DSurface_Hidden, 0, v10, v9, 0, v19, v20, v21); /*0x5bf147*/
           }
-          (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5bf154*/
+          (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5bf154*/
           MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5bf15e*/
           Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x5bf169*/
         }
@@ -219,21 +219,21 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
     }
     else
     {
-      Debug::Log(); /*0x5bedad*/
-      (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5bedbd*/
+      this->Debug::Log(); /*0x5bedad*/
+      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x5bedbd*/
       if ( a7 ) /*0x5bedc7*/
       {
-        (*((void (__thiscall **)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5bedd2*/
+        (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5bedd2*/
         Frame::Present((int)g_DSurface_Hidden, 0, a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
       }
       BinkMovie::Close(&v23, Str); /*0x5bedec*/
-      if ( a8 == 1 ) /*0x5bedf9*/
-        v23.__pad_0[0] = 1; /*0x5bedfb*/
+      if ( a8 == (void *)(1) ) /*0x5bedf9*/
+        ((unsigned int *)(v23.__pad_0))[0] = 1; /*0x5bedfb*/
       if ( !IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bee06*/
       {
         AudioFrame::CounterInc(); /*0x5bee08*/
-        AudioQueue::IncrementPriority(); /*0x5bee0d*/
-        AudioQueue::ReleaseBuffers(); /*0x5bee12*/
+        this->AudioQueue::IncrementPriority(); /*0x5bee0d*/
+        this->AudioQueue::ReleaseBuffers(); /*0x5bee12*/
         RequestBufferMixer((unsigned int *)g_MixerState, 0x2000); /*0x5bee22*/
         RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x2000); /*0x5bee32*/
         IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) = 1; /*0x5bee37*/
@@ -255,11 +255,11 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
       }
       if ( a5 == 1 ) /*0x5beeb1*/
       {
-        (*((void (__thiscall **)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5beebc*/
+        (*((void (**)(ObjectClass *, unsigned int))g_DSurface_Hidden->AbstractClass + 6))(g_DSurface_Hidden, 0); /*0x5beebc*/
         Frame::Present((int)g_DSurface_Hidden, 0, a2, a3, 0, v18, v20, v21); /*0x5beec8*/
       }
       Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x5beed3*/
-      (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5beee0*/
+      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x5beee0*/
       MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x5beeea*/
       BinkMovie::Stop(&v23); /*0x5beef3*/
     }
@@ -272,7 +272,7 @@ void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, vo
 {
   char v6; // bl
 
-  if ( a1 >= 0 && a1 < dword_ABF3A0 ) /*0x5bf26a*/
+  if ( a1 >= 0 && a1 < (void *)(dword_ABF3A0) ) /*0x5bf26a*/
   {
     v6 = byte_A8E378; /*0x5bf275*/
     byte_A8E378 = 0; /*0x5bf289*/
@@ -288,14 +288,14 @@ AbstractClass * * Movie::Update()
   void *IsSoundEnabled; // eax
   AudioSample *v3; // ecx
 
-  IsSoundEnabled = (void *)Audio::IsSoundEnabled(); /*0x7209d3*/
+  IsSoundEnabled = (void *)this->Audio::IsSoundEnabled(); /*0x7209d3*/
   if ( IsSoundEnabled ) /*0x7209da*/
   {
-    IDA_LOBYTE(IsSoundEnabled) = stru_A8EB00.?[384]; /*0x7209e0*/
+    IDA_LOBYTE(IsSoundEnabled) = *((unsigned int *)((char *)&stru_A8EB00 + 384)); /*0x7209e0*/
     if ( !stru_A8EB00.?[384] ) /*0x7209e7*/
     {
-      IDA_LOBYTE(IsSoundEnabled) = stru_A8EB00.?[144]; /*0x7209ed*/
-      if ( stru_A8EB00.?[144] ) /*0x7209f4*/
+      IDA_LOBYTE(IsSoundEnabled) = *((unsigned int *)((char *)&stru_A8EB00 + 144)); /*0x7209ed*/
+      if ( *((unsigned int *)((char *)&stru_A8EB00 + 144)) ) /*0x7209f4*/
       {
         IsSoundEnabled = (void *)(this->Movie_field_0xC);
         if ( (int)IsSoundEnabled > 0 ) /*0x7209ff*/
@@ -304,8 +304,8 @@ AbstractClass * * Movie::Update()
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
           if ( *(unsigned int *)&this->q02C && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
-            Audio::Release(*(Audio **)&this->__pad_28[4]); /*0x720a1b*/
-          IDA_LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(Audio **)&this->__pad_28[4]) != 0; /*0x720a2a*/
+            Audio::Release(*(Audio **)&this-((unsigned int *)(>__pad_28))[4]); /*0x720a1b*/
+          IDA_LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(Audio **)&this-((unsigned int *)(>__pad_28))[4]) != 0; /*0x720a2a*/
           if ( !(unsigned char)IsSoundEnabled ) /*0x720a2f*/
           {
   LABEL_10:
@@ -315,7 +315,7 @@ AbstractClass * * Movie::Update()
               if ( IsSoundEnabled == (void *)-2 ) /*0x720a4b*/
               {
                 this->Movie_field_0x8 = Movie::SelectNextBuildableType((int)this, (int)this->Movie_field_0x4); /*0x720a5e*/
-                Debug::Log(); /*0x720a61*/
+                this->Debug::Log(); /*0x720a61*/
               }
               IDA_LOBYTE(this->Movie_field_0x8); /*0x720a6f*/
               this->Movie_field_0x8 = -2; /*0x720a74*/
@@ -332,14 +332,14 @@ AbstractClass * * Movie::Update()
 namespace gamemd {
 unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
 {
-  unsigned int v2; // ebp
+  AnimClass * v2;
   int v4; // edi
   unsigned int v5; // eax
   bool v7; // zf
   int v9; // edi
 
-  v2 = aP1; /*0x720a81*/
-  if ( (aP1 <= -1 || *(unsigned char *)(*(unsigned int *)(this->q018 + 4 * aP1) + 649) || this->q010) && aP1 >= 0 ) /*0x720aa7*/
+  v2 = (gamemd::AnimClass *)((unsigned int)(aP1));
+  if ( (aP1 <= (gamemd::AnimClass *)(-1) || *(unsigned char *)(*(unsigned int *)(this->q018 + 4 * aP1) + 649) || this->q010) && aP1 >= 0 ) /*0x720aa7*/
     return v2; /*0x720b18*/
   if ( this->q048 == 1 ) /*0x720aad*/
   {

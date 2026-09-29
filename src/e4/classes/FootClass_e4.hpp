@@ -55,7 +55,7 @@ struct FootClass {
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
     void * health;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    unsigned int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int q077;  // 0x77
@@ -197,7 +197,7 @@ struct FootClass {
     unsigned int u32_1A4;  // 0x1A4
     unsigned int q1A5;  // 0x1A5
     unsigned int q1A7;  // 0x1A7
-    char ironTintStage[4];  // 0x1A8
+    unsigned int ironTintStage;  // 0x1A8
     unsigned char airstrikeTimer;  // 0x1AC
     unsigned int q1AE;  // 0x1AE
     char q1B0[4];  // 0x1B0
@@ -362,7 +362,7 @@ struct FootClass {
     char barrelFacing[24];  // 0x370
     char q374[4];  // 0x374
     unsigned char q378;  // 0x378
-    char currentBurstIndex[4];  // 0x37C
+    unsigned int currentBurstIndex;  // 0x37C
     char q380[4];  // 0x380
     char q384[4];  // 0x384
     char primaryFacing[24];  // 0x388
@@ -661,16 +661,19 @@ struct FootClass {
     unsigned int parasiteImUsing;
     unsigned int team;
     unsigned int unknownAbstractArray588;
+    unsigned int Capacity;
+    unsigned int FindAITarget;
 // --- flat members (END) ---
-    AbstractClass * * Destruct();
+    AbstractClass * * Destruct(void *a1 = 0);
     int updateThreat();
     unsigned int checkTurning();
     void Destroyed(int a2);
     void FootClass_ImbueLocomotor(int * a1, int a2, int a3, unsigned int * ppv, IID rclsid, int a6);
     void Stub(int a1);
-    static double GetField(...);  // C2597 interim stub
+     double GetField(...);  // C2597 interim stub
     static double SetField(...);  // C2597 interim stub
     static double ProcessDeploy(...);  // C2597 interim stub
+    static double AssignDestination(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

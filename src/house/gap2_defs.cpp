@@ -11,7 +11,7 @@
 #include "object/abstract.hpp"
 #include "house/base.hpp"
 #include "house/house.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x42E6F0
 namespace gamemd { 

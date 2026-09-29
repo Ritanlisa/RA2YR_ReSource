@@ -19,7 +19,7 @@ struct XSurface {
     unsigned int vt_slot_116;
 // --- flat members (END) ---
     XSurface * * Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8);
-    XSurface * * BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6);
+    XSurface * * BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6, void *a1 = 0);
     XSurface * * FillRectEx(XSurface * aP1, int * a2, XSurface * aP3);
     XSurface * ScalarDtor(char a2);
     char DrawRectEx(int a2, unsigned int * a3, int a4);
@@ -37,7 +37,7 @@ struct XSurface {
     int entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6);
     int vt_entry_40(int a1);
     int vt_entry_68();
-    void* WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__thiscall *a5)(int *));
+    void* WalkLine();
     static double Fill(...);  // C2597 interim stub
     static double GetPixel(...);  // C2597 interim stub
     static double SetPixel(...);  // C2597 interim stub

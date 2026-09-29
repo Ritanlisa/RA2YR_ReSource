@@ -19,7 +19,7 @@ int MovementAI::IsPathMovementAllowed()
   v2 = (unsigned int *)this->u32_E4; /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
     return this->u32_100 != 0; /*0x487e15*/
-  while ( (*(int (__thiscall **)(unsigned int *))(*v2 + 44))(v2) != 6 ) /*0x487e21*/
+  while ( (*(int (**)(unsigned int *))(*v2 + 44))(v2) != 6 ) /*0x487e21*/
   {
     v2 = (unsigned int *)v2[12]; /*0x487e23*/
     if ( !v2 ) /*0x487e28*/
@@ -49,10 +49,10 @@ int MovementAI::IsProgressAtEnd()
   MovementAI_field_10 = this->MovementAI_field_10; /*0x4a5169*/
   if ( v2 != -1 ) /*0x4a516f*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v2 >= MovementAI_field_10 ) /*0x4a517b*/
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v2 >= MovementAI_field_10 ) /*0x4a517b*/
       MovementAI_field_10 = 0; /*0x4a5181*/
     else
-      MovementAI_field_10 -= *(unsigned int *)&stru_A8EB00.?[416] - v2; /*0x4a517d*/
+      MovementAI_field_10 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v2; /*0x4a517d*/
   }
   return (double)(MovementAI_field_14 - MovementAI_field_10) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
 }

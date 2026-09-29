@@ -14,16 +14,16 @@ struct VectorClass_ptr_TubeClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy();  // 0x4E8600
+    void Destroy(void *a1 = 0);  // 0x4E8600
     unsigned int GetItemIndex(int a2);  // 0x4E8630
-    int Get(int a2);  // 0x4E8650
+    int Get(int a2, void *a1 = 0);  // 0x4E8650
     void Destroy_0();  // 0x4E86C0
     unsigned int GetItemIndex_0(int a2);  // 0x4E86F0
     void Destroy_1();  // 0x4E8720
     unsigned int GetItemIndex_1(int a2);  // 0x4E8750
     char Add(int a2);  // 0x4EA8E0
     char Release(int a2,  unsigned int * a3);    // 0x4EA920
-    void Remove();  // 0x4EA9D0
+    void Remove(void *a1 = 0);  // 0x4EA9D0
     int GetSize(unsigned int * a2);  // 0x4EAA00
     unsigned int GetCapacity(int a2);  // 0x4EAA40
     char SetCapacity(int a2,  unsigned int * a3);    // 0x4EAA60

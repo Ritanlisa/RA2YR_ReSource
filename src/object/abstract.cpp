@@ -121,8 +121,8 @@ CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
   v1 = (gamemd::CoordStruct *)((int *)(*((int (__thiscall **)(AbstractClass *, unsigned char *))out->vtable0 + 18))(out, v3));
   out->X = (T)((gamemd::CoordStruct *)(*v1));
   out->Y = (T)((gamemd::CoordStruct *)(v1[1]));
-  out->Z = (gamemd::CoordStruct *)(v1[2]);
-  return (int)out; /*0x410560*/
+  out->Z = (T)((gamemd::CoordStruct *)(v1[2]));
+  return (gamemd::CoordStruct *)((int)out);
 }
 // src-model helper kept for the existing callers (techno.cpp): the pointer
 // flavor simply forwards to the virtual GetCoords above.

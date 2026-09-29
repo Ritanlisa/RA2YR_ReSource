@@ -62,11 +62,11 @@ void unknown_libname_27()
 namespace gamemd {
 void * E4Recv_645B60::sub_645B60()
 {
-  int v2; // edi
+  char ** v2;
   char **v3; // esi
 
-  v2 = (char **)(0);
-  v3 = off_7F0248; /*0x645b67*/
+  v2 = (char **)((int)((char **)(0)));
+  v3 = (char **)(off_7F0248);
   while ( _strcmpi((char *)this, *v3) ) /*0x645b7a*/
   {
     ++v3; /*0x645b7c*/
@@ -328,14 +328,14 @@ AbstractClass * * ProcessNetworkEvents()
     }
     else if ( (dword_A8D5F8 & 4) != 0 /*0x6472eb*/
            && (int)dword_A8ED84 > 0
-           && (dword_AC50F8 != (*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))(dword_887640)
-            || dword_AC5200 != (*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640)) )
+           && (dword_AC50F8 != (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))(dword_887640)
+            || dword_AC5200 != (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640)) )
     {
       byte_A8E9A0 = 0; /*0x6472f0*/
       return; /*0x6472fb*/
     }
-    dword_AC50F8 = (*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))(dword_887640); /*0x64730d*/
-    dword_AC5200 = (*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640); /*0x647317*/
+    dword_AC50F8 = (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))(dword_887640); /*0x64730d*/
+    dword_AC5200 = (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640); /*0x647317*/
     ComputeNetworkFrameCRC(v6); /*0x64731c*/
     v1 = (int)dword_A8ED84; /*0x647321*/
     dword_B04474[(uint8_t)dword_A8ED84] = *(unsigned int *)dword_AC51FC; /*0x647334*/
@@ -387,7 +387,7 @@ AbstractClass * * ProcessNetworkEvents()
       goto LABEL_30; /*0x6473fd*/
     }
   LABEL_29:
-    if ( !Network::ProcessEventList(0, 0, 0) ) /*0x6474a0*/
+    if ( !((Network *)(0))->ProcessEventList(0, 0) ) /*0x6474a0*/
     {
   LABEL_30:
       byte_A8E9A0 = 0; /*0x6474a9*/
@@ -422,7 +422,7 @@ AbstractClass * * ProcessNetworkEvents()
         }
         if ( (dword_A8D5F8 & 1) != 0 ) /*0x64758d*/
           Network_Process_64D9E0(v6); /*0x64758f*/
-        if ( Network::ProcessEventList(0, 0, 0) ) /*0x6475ae*/
+        if ( ((Network *)(0))->ProcessEventList(0, 0) ) /*0x6475ae*/
           goto LABEL_31; /*0x6475b5*/
         byte_A8E9A0 = 0; /*0x6475be*/
         break; /*0x6475c7*/
@@ -442,7 +442,7 @@ AbstractClass * * ProcessNetworkEvents()
 namespace gamemd {
 void RunNetworkGameLoop()
 {
-  int v1; // eax
+  IPXManagerClass * v1;
   void *v2; // ebx
   IPXManagerClass *v3; // esi
   int v4; // edi
@@ -477,28 +477,28 @@ void RunNetworkGameLoop()
   int v33; // [esp+68h] [ebp-8h]
   int v34; // [esp+6Ch] [ebp-4h]
 
-  Debug::Log(); /*0x64835c*/
+  this->Debug::Log(); /*0x64835c*/
   if ( *(int *)&dword_A8B238 < 3 || *(int *)&dword_A8B238 > 4 ) /*0x648371*/
   {
-    v13 = (void *)dword_A8EA74; /*0x648393*/
-    v3 = (IPXManagerClass *)&unk_A8EA70; /*0x648397*/
-    v2 = (void *)dword_A8EA74; /*0x64839c*/
-    v1 = dword_A8EA78 - 14; /*0x6483a0*/
+    v13 = (gamemd::IPXManagerClass *)((void *)dword_A8EA74);
+    v3 = (gamemd::IPXManagerClass *)((IPXManagerClass *)&unk_A8EA70);
+    v2 = (gamemd::IPXManagerClass *)((void *)dword_A8EA74);
+    v1 = (gamemd::IPXManagerClass *)(dword_A8EA78 - 14);
   }
   else
   {
-    v1 = (gamemd::IPXManagerClass *)(dword_A8DA40);
-    v2 = &unk_A8D812; /*0x648378*/
-    v13 = &unk_A8D812; /*0x64837d*/
-    v3 = &unk_A8E9C0; /*0x648381*/
+    v1 = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(dword_A8DA40)));
+    v2 = (gamemd::IPXManagerClass *)(&unk_A8D812);
+    v13 = (gamemd::IPXManagerClass *)(&unk_A8D812);
+    v3 = (gamemd::IPXManagerClass *)(&unk_A8E9C0);
   }
   IDA_LOWORD(dword_AFA400) = BuildNetworkEventPacket((int)v3, (int)v2, v1, (int)dword_A8B550, dword_AFA400) + dword_AFA400; /*0x6483c1*/
-  Ticks = Timer::GetTicks(); /*0x6483d5*/
+  Ticks = this->Timer::GetTicks(); /*0x6483d5*/
   v22 = 15; /*0x6483d9*/
-  v23 = Timer::GetTicks(); /*0x6483ea*/
+  v23 = this->Timer::GetTicks(); /*0x6483ea*/
   v25 = 600; /*0x6483ee*/
-  v19 = Timer::GetTicks(); /*0x6483fb*/
-  Debug::Log(); /*0x648404*/
+  v19 = this->Timer::GetTicks(); /*0x6483fb*/
+  this->Debug::Log(); /*0x648404*/
   while ( 2 ) /*0x64840c*/
   {
     EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x64840c*/
@@ -510,30 +510,30 @@ void RunNetworkGameLoop()
         goto LABEL_11; /*0x64843b*/
       goto LABEL_10; /*0x64843b*/
     }
-    v5 = Timer::GetTicks() - Ticks; /*0x64842f*/
+    v5 = this->Timer::GetTicks() - Ticks; /*0x64842f*/
     if ( v5 < v4 ) /*0x648435*/
     {
       v4 -= v5; /*0x648437*/
       goto LABEL_9; /*0x648437*/
     }
   LABEL_10:
-    v26 = Timer::GetTicks(); /*0x64843d*/
+    v26 = this->Timer::GetTicks(); /*0x64843d*/
     v28 = 15; /*0x648458*/
     Ticks = v26; /*0x64845c*/
     v21 = v27; /*0x648460*/
     v22 = 15; /*0x648464*/
-    Debug::Log(); /*0x648468*/
+    this->Debug::Log(); /*0x648468*/
     SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64847e*/
   LABEL_11:
-    (*(void (__thiscall **)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648483*/
+    (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648483*/
     v6 = v25; /*0x64848e*/
     if ( v23 != -1 ) /*0x648494*/
     {
-      v7 = Timer::GetTicks() - v23; /*0x64849f*/
+      v7 = this->Timer::GetTicks() - v23; /*0x64849f*/
       if ( v7 >= v6 ) /*0x6484a5*/
       {
   LABEL_33:
-        Debug::Log(); /*0x648664*/
+        this->Debug::Log(); /*0x648664*/
         return; /*0x648678*/
       }
       v6 -= v7; /*0x6484ab*/
@@ -543,7 +543,7 @@ void RunNetworkGameLoop()
     v8 = 1; /*0x6484b5*/
     do /*0x64858f*/
     {
-      if ( !(*(int (__thiscall **)(IPXManagerClass *, void *, unsigned int *, int *))(v3->Socket + 12))( /*0x6484c9*/
+      if ( !(*(int (**)(IPXManagerClass *, void *, unsigned int *, int *))(v3->Socket + 12))( /*0x6484c9*/
               v3,
               v2,
               &v14,
@@ -557,13 +557,13 @@ void RunNetworkGameLoop()
           case 0: /*0x648528*/
             goto LABEL_23;
           case 4: /*0x648528*/
-            (*(void (__thiscall **)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648533*/
-            v29 = Timer::GetTicks(); /*0x648544*/
+            (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648533*/
+            v29 = this->Timer::GetTicks(); /*0x648544*/
             Ticks = v29; /*0x648548*/
             v31 = 15; /*0x648550*/
             v22 = 15; /*0x648554*/
             v21 = v30; /*0x64855c*/
-            v32 = Timer::GetTicks(); /*0x64856e*/
+            v32 = this->Timer::GetTicks(); /*0x64856e*/
             v34 = 600; /*0x648572*/
             v23 = v32; /*0x648576*/
             v24 = v33; /*0x64857a*/
@@ -577,23 +577,23 @@ void RunNetworkGameLoop()
       if ( ProcessNetworkFrameSync((int)v3, (int)v2, v15, v14, (int)&dword_AFA358, &v19) == 3 ) /*0x64850e*/
         goto LABEL_33; /*0x64850e*/
   LABEL_23:
-      (*(void (__thiscall **)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648586*/
+      (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648586*/
       v9 = v8++; /*0x648589*/
     }
     while ( v9 < 64 ); /*0x64858f*/
-    Event::Dispatch(); /*0x648595*/
-    if ( !*(unsigned int *)&stru_A8EB00.?[444] ) /*0x6485a1*/
+    this->Event::Dispatch(); /*0x648595*/
+    if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) ) /*0x6485a1*/
     {
       InputManager_ProcessEvents::Vtable((GScreenClass *)&stru_87F5F0.__pad_58[416], &v16, &v18, &v17); /*0x6485b7*/
       SyncDelayClass::ProcessNetworkSync(&v16); /*0x6485c0*/
-      (*(void (__thiscall **)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x6485cd*/
+      (*(void (**)(LPPERSISTSTREAM))(*(unsigned int *)g_TacticalClass_Instance + 92))(g_TacticalClass_Instance); /*0x6485cd*/
       TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x6485d5*/
     }
-    v10 = *(unsigned int *)&stru_A8EB00.?[416] + 1000; /*0x6485e7*/
+    v10 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) + 1000; /*0x6485e7*/
     v11 = 0; /*0x6485ed*/
-    if ( (*(int (__thiscall **)(IPXManagerClass *))(v3->Socket + 16))(v3) > 0 ) /*0x6485f4*/
+    if ( (*(int (**)(IPXManagerClass *))(v3->Socket + 16))(v3) > 0 ) /*0x6485f4*/
     {
-      v12 = &dword_AFA358; /*0x6485f6*/
+      v12 = (int *)(&dword_AFA358);
       do /*0x648615*/
       {
         if ( *v12 < v10 ) /*0x648600*/
@@ -601,18 +601,18 @@ void RunNetworkGameLoop()
         ++v11; /*0x64860c*/
         v12 += 6; /*0x64860d*/
       }
-      while ( v11 < (*(int (__thiscall **)(IPXManagerClass *))(v3->Socket + 16))(v3) ); /*0x648615*/
+      while ( v11 < (*(int (**)(IPXManagerClass *))(v3->Socket + 16))(v3) ); /*0x648615*/
     }
-    if ( v10 + dword_A8B554 < *(int *)&stru_A8EB00.?[416] ) /*0x64862a*/
+    if ( v10 + dword_A8B554 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x64862a*/
     {
-      Debug::Log(); /*0x64863e*/
+      this->Debug::Log(); /*0x64863e*/
       v2 = v13; /*0x648643*/
       continue; /*0x64864a*/
     }
     break;
   }
-  Debug::Log(); /*0x64867f*/
-  Debug::Log(); /*0x648689*/
+  this->Debug::Log(); /*0x64867f*/
+  this->Debug::Log(); /*0x648689*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64869f*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486b2*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486c5*/
@@ -764,7 +764,7 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, in
   int v122 = 300;
   int v118 = 0;
   Time = (ObjectClass *)timeGetTime();
-  if ( (*(int (__thiscall **)(int *))(*v8 + 16))(v8) > 0 )
+  if ( (*(int (**)(int *))(*v8 + 16))(v8) > 0 )
   {
     int * v12 = a7 + 5;
     do
@@ -773,7 +773,7 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, in
       v9 = (MSVQAnim *)((char *)v9 + 1);
       v12 += 6;
     }
-    while ( (int)v9 < (*(int (__thiscall **)(int *))(*v8 + 16))(v8) );
+    while ( (int)v9 < (*(int (**)(int *))(*v8 + 16))(v8) );
 LABEL_4:
     v10 = (ObjectClass *)arg4;
   }
@@ -899,7 +899,7 @@ LABEL_27:
     v111 = (ObjectClass *)180;
   }
 LABEL_34:
-  (*(void (__thiscall **)(int *))(*v8 + 4))(v8);
+  (*(void (**)(int *))(*v8 + 4))(v8);
   v25 = v108;
   if ( v106 != -1 )
   {
@@ -947,10 +947,10 @@ LABEL_38:
     SetupDialog(*(&g_MatrixTransformState + 7698), 234);
     ShowWindow((HWND)*(&g_MatrixTransformState + 7698), 1);
     SendMessageA((HWND)*(&g_MatrixTransformState + 7698), 0x4A9u, 0, 1);
-    byte_B04470 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 28))(*(unsigned int *)&stru_87C374[45772]);
+    byte_B04470 = (*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 28))(*(unsigned int *)&stru_87C374[45772]);
     if ( byte_B04470 )
-      (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 20))(*(unsigned int *)&stru_87C374[45772]);
-    (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
+      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 20))(*(unsigned int *)&stru_87C374[45772]);
+    (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
   }
   Indirect = (SkirmishDialog *)*(&g_MatrixTransformState + 7698);
 LABEL_50:
@@ -958,7 +958,7 @@ LABEL_50:
   {
     CloseDialog((HWND)Indirect, 0);
     if ( byte_B04470 )
-      (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
     HouseClass_Player[42540] = byte_B04894;
     MapClass::MarkForRedraw(&stru_87C374[13428], 2);
     if ( v94 )
@@ -967,7 +967,7 @@ LABEL_50:
       if ( v76 )
       {
         if ( byte_B04470 )
-          (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+          (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
         CloseDialog((HWND)v76, 0);
         HouseClass_Player[42540] = byte_B04894;
         MapClass::MarkForRedraw(&stru_87C374[13428], 2);
@@ -1138,7 +1138,7 @@ LABEL_75:
         for ( j = 1; j < *(int *)&HouseClass_Player[40248]; ++j )
         {
   int v57; // eax
-          v57 = (*(int (__thiscall **)(int *, unsigned int))(*v8 + 24))(
+          v57 = (*(int (**)(int *, unsigned int))(*v8 + 24))(
                   v8,
                   *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * j) + 111));
           KickNetworkPlayerNow((int)v8, v57, (int)a7, 0);
@@ -1146,7 +1146,7 @@ LABEL_75:
         break;
       }
   int v55; // eax
-      v55 = (*(int (__thiscall **)(int *, unsigned int))(*v8 + 24))(
+      v55 = (*(int (**)(int *, unsigned int))(*v8 + 24))(
               v8,
               *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40236] + 4 * i) + 111));
       KickNetworkPlayerNow((int)v8, v55, (int)a7, 1u);
@@ -1171,7 +1171,7 @@ LABEL_100:
       v96 = (ObjectClass *)1;
       while ( 1 )
       {
-        if ( !(*(int (__thiscall **)(int *, int, unsigned int *, ObjectClass **))(*v8 + 12))(v8, a6, &var684, &v130) )
+        if ( !(*(int (**)(int *, int, unsigned int *, ObjectClass **))(*v8 + 12))(v8, a6, &var684, &v130) )
           goto LABEL_120;
         EventQueue::Process(*(unsigned int **)&stru_87C374[13308]);
         if ( *(unsigned int *)&HouseClass_Player[29932] == 1 || *(unsigned int *)&HouseClass_Player[29932] == 2 )
@@ -1182,7 +1182,7 @@ LABEL_100:
   int v125; // [esp+92h] [ebp-6A4h]
   int v124; // [esp+8Eh] [ebp-6A8h]
             case 4:
-              (*(void (__thiscall **)(int *))(*v8 + 4))(v8);
+              (*(void (**)(int *))(*v8 + 4))(v8);
               v158 = (ObjectClass *)Timer::GetTicks();
               Ticks = v158;
               v13 = v13;
@@ -1204,10 +1204,10 @@ LABEL_100:
                 v107 = (ObjectClass *)((char *)v107 + 1);
 LABEL_120:
               if ( v94 )
-                (*(void (__thiscall **)(int *))(*v8 + 16))(v8);
+                (*(void (**)(int *))(*v8 + 16))(v8);
               if ( aP0 )
               {
-                int v66 = (*(int (__thiscall **)(int *))(*v8 + 16))(v8);
+                int v66 = (*(int (**)(int *))(*v8 + 16))(v8);
                 if ( (int)v107 < v66 )
                 {
 LABEL_162:
@@ -1222,7 +1222,7 @@ LABEL_162:
   int a3; // [esp+16Ah] [ebp-5CCh] BYREF
                       &a3);
                     SyncDelayClass::ProcessNetworkSync(v134);
-                    (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[44976] + 92))(*(unsigned int *)&stru_87C374[44976]);
+                    (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[44976] + 92))(*(unsigned int *)&stru_87C374[44976]);
                     TacticalMap::Redraw(&stru_87C374[13428]);
                   }
                   ++v118;
@@ -1235,14 +1235,14 @@ LABEL_223:
                   if ( esi224 )
                   {
                     if ( byte_B04470 )
-                      (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+                      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
                     CloseDialog(esi224, 0);
                     HouseClass_Player[42540] = byte_B04894;
                     MapClass::MarkForRedraw(&stru_87C374[13428], 2);
                     if ( HouseClass_Player[42540] )
                       TacticalMap::Redraw(&stru_87C374[13428]);
                   }
-                  if ( (*(int (__thiscall **)(int *))(*a1 + 16))(a1) > 0 )
+                  if ( (*(int (**)(int *))(*a1 + 16))(a1) > 0 )
                   {
                     dword_B77780 = 0;
                     dword_B77CE0 = 0;
@@ -1271,7 +1271,7 @@ LABEL_223:
               int * v68 = a1;
               int v69 = 0;
               int v70 = *(unsigned int *)&HouseClass_Player[45112] + 1000;
-              if ( (*(int (__thiscall **)(int *))(*a1 + 16))(a1) > 0 )
+              if ( (*(int (**)(int *))(*a1 + 16))(a1) > 0 )
               {
                 int * a7 = a7;
                 do
@@ -1284,11 +1284,11 @@ LABEL_223:
                   ++v69;
                   a7 += 6;
                 }
-                while ( v69 < (*(int (__thiscall **)(int *))(*a1 + 16))(a1) );
+                while ( v69 < (*(int (**)(int *))(*a1 + 16))(a1) );
                 v68 = a1;
               }
               int v72 = 0;
-              if ( (*(int (__thiscall **)(int *))(*v68 + 16))(v68) <= 0 )
+              if ( (*(int (**)(int *))(*v68 + 16))(v68) <= 0 )
               {
 LABEL_136:
                 if ( *(int *)&HouseClass_Player[45112] < (int)&v97->__pad_0[v70] )
@@ -1302,7 +1302,7 @@ LABEL_136:
                 {
                   ++v72;
                   edi133 += 6;
-                  if ( v72 >= (*(int (__thiscall **)(int *))(*a1 + 16))(a1) )
+                  if ( v72 >= (*(int (**)(int *))(*a1 + 16))(a1) )
                     goto LABEL_136;
                 }
               }
@@ -1356,7 +1356,7 @@ LABEL_148:
                     v125 = 40;
                     var6A0 = 3;
                     v121 = (IPXManagerClass *)(100 * v72 + 140);
-                    (*(void (__thiscall **)(ObjectClass *, IPXManagerClass **, int))(edx158 + 20))(
+                    (*(void (**)(ObjectClass *, IPXManagerClass **, int))(edx158 + 20))(
                       v73,
                       &v121,
                       (255 >> stru_89E138[11420] << stru_89E138[11416])
@@ -1378,7 +1378,7 @@ LABEL_148:
                   if ( v81 )
                   {
                     if ( byte_B04470 )
-                      (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+                      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
                     CloseDialog(v81, 0);
                     HouseClass_Player[42540] = byte_B04894;
                     MapClass::MarkForRedraw(&stru_87C374[13428], 2);
@@ -1428,7 +1428,7 @@ LABEL_148:
               if ( v82 )
               {
                 if ( byte_B04470 )
-                  (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+                  (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
                 CloseDialog(v82, 0);
                 HouseClass_Player[42540] = byte_B04894;
                 MapClass::MarkForRedraw(&stru_87C374[13428], 2);
@@ -1446,7 +1446,7 @@ LABEL_148:
               if ( v83 )
               {
                 if ( byte_B04470 )
-                  (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+                  (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
                 CloseDialog(v83, 0);
                 HouseClass_Player[42540] = byte_B04894;
                 MapClass::MarkForRedraw(&stru_87C374[13428], 2);
@@ -1459,7 +1459,7 @@ LABEL_148:
             Network::SendUnreachable();
             return 3;
         }
-        (*(void (__thiscall **)(int *))(*v8 + 4))(v8);
+        (*(void (**)(int *))(*v8 + 4))(v8);
 LABEL_116:
         bool v65 = (int)v96 < 64;
         v96 = (ObjectClass *)((char *)v96 + 1);
@@ -1476,7 +1476,7 @@ LABEL_116:
       if ( esi181 )
       {
         if ( byte_B04470 )
-          (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+          (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
         CloseDialog(esi181, 0);
         HouseClass_Player[42540] = byte_B04894;
         MapClass::MarkForRedraw(&stru_87C374[13428], 2);
@@ -1515,7 +1515,7 @@ LABEL_116:
       if ( v79 )
       {
         if ( byte_B04470 )
-          (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
+          (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
         CloseDialog((HWND)v79, 0);
         HouseClass_Player[42540] = byte_B04894;
         MapClass::MarkForRedraw(&stru_87C374[13428], 2);
@@ -1652,9 +1652,9 @@ AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short 
       Debug::Log(); /*0x649f84*/
       v24 = 1; /*0x649f8c*/
     }
-    (*(void (__thiscall **)(int, int, int, int, int))(*(unsigned int *)a1 + 8))(a1, a2, v9, v24, -1); /*0x649fa1*/
+    (*(void (**)(int, int, int, int, int))(*(unsigned int *)a1 + 8))(a1, a2, v9, v24, -1); /*0x649fa1*/
     ++dword_B0487C; /*0x649fab*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x649fb5*/
+    (*(void (**)(int))(*(unsigned int *)a1 + 4))(a1); /*0x649fb5*/
     v6 = dword_A802C8; /*0x649fb8*/
     if ( !dword_A802C8 || dword_A802C8 > dword_A802C8 ) /*0x649fc6*/
       break; /*0x649fc6*/
@@ -1695,7 +1695,7 @@ void Network_SendFrameSync(int * a1, short a2)
   v4 = *a1; /*0x64a07e*/
   v6[13] = (unsigned char)dword_A8B550; /*0x64a084*/
   *(unsigned short *)&v6[11] = a2; /*0x64a08b*/
-  (*(void (__thiscall **)(int *, unsigned char *, int, unsigned int, int))(v4 + 8))(a1, v6, 14, 0, -1); /*0x64a090*/
+  (*(void (**)(int *, unsigned char *, int, unsigned int, int))(v4 + 8))(a1, v6, 14, 0, -1); /*0x64a090*/
   ((void (*)(const char *, ...))Debug::Log)(aSentFramesyncO); /*0x64a098*/
   return ++dword_B0487C; /*0x64a0a6*/
 }
@@ -1769,7 +1769,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
         {
           if ( *(unsigned char *)v6 == 37 ) /*0x64a151*/
           {
-            v14 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a1 + 24))(a1, *(char *)(v13 + 11)); /*0x64a162*/
+            v14 = (*(int (**)(int, unsigned int))(*(unsigned int *)a1 + 24))(a1, *(char *)(v13 + 11)); /*0x64a162*/
             if ( v14 != -1 ) /*0x64a168*/
             {
               v15 = *(unsigned int *)v13 - *(uint8_t *)(v13 + 10); /*0x64a17d*/
@@ -1811,7 +1811,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
           }
           else
           {
-            v20 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a1 + 24))(a1, *v12); /*0x64a29d*/
+            v20 = (*(int (**)(int, unsigned int))(*(unsigned int *)a1 + 24))(a1, *v12); /*0x64a29d*/
             if ( v20 != -1 ) /*0x64a2a3*/
             {
               v21 = *(unsigned int *)(v12 + 2); /*0x64a2b0*/
@@ -2104,7 +2104,7 @@ AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4
 
   v13 = time(0) - dword_B0489C < 60; /*0x64b270*/
   dword_B0489C = time(0); /*0x64b27e*/
-  v6 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a1 + 20))(a1, a2); /*0x64b292*/
+  v6 = (*(int (**)(int, int))(*(unsigned int *)a1 + 20))(a1, a2); /*0x64b292*/
   Debug::Log(); /*0x64b29f*/
   if ( v6 == -1 ) /*0x64b2aa*/
   {
@@ -2130,7 +2130,7 @@ AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4
     if ( Network::CountDisconnectedHouses(*((unsigned int *)dword_A8022C + v6)) > 1 && !v13 ) /*0x64b369*/
       *(unsigned char *)(*((unsigned int *)dword_A8022C + v6) + 583) = 1; /*0x64b374*/
     v14 = a2; /*0x64b37f*/
-    if ( a2 < (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 16))(a1) - 1 ) /*0x64b389*/
+    if ( a2 < (*(int (**)(int))(*(unsigned int *)a1 + 16))(a1) - 1 ) /*0x64b389*/
     {
       v9 = 4 * a2 + 11057984; /*0x64b394*/
       v10 = &dword_A8BB60[8 * a2]; /*0x64b39e*/
@@ -2145,7 +2145,7 @@ AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4
         v16 = v12; /*0x64b3d9*/
         ++v14; /*0x64b3df*/
         v10 += 8; /*0x64b3e3*/
-        if ( v14 >= (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 16))(a1) - 1 ) /*0x64b3ec*/
+        if ( v14 >= (*(int (**)(int))(*(unsigned int *)a1 + 16))(a1) - 1 ) /*0x64b3ec*/
           break; /*0x64b3ec*/
         v9 = (int)v16; /*0x64b3a9*/
       }
@@ -2947,7 +2947,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                 v13 = v76[39]; /*0x64cf67*/
                 v14 = v76[40]; /*0x64cf6b*/
                 v15 = v76[41]; /*0x64cf6e*/
-                v16 = (unsigned int *)(*(int (__thiscall **)(unsigned int, float *))(**((unsigned int **)Block + v10) + 72))( /*0x64cf79*/
+                v16 = (unsigned int *)(*(int (**)(unsigned int, float *))(**((unsigned int **)Block + v10) + 72))( /*0x64cf79*/
                                   *((unsigned int *)Block + v10),
                                   &v112);
                 v17 = (float *)Coord::Subtract(&v115, *v16 - v13, v16[1] - v14, v16[2] - v15); /*0x64cf94*/
@@ -3027,7 +3027,7 @@ void Network_ProcessMapEvent(int a1, int a2)
               v23 = NumOfElements; /*0x64d1de*/
             }
             v28 = 0; /*0x64d1fc*/
-            v120 = *(unsigned int *)(*(int (__thiscall **)(int, int *))(v12->u32_1B8)(v12, &TileIndex); /*0x64d202*/
+            v120 = *(unsigned int *)(*(int (**)(int, int *))(v12->u32_1B8)(v12, &TileIndex); /*0x64d202*/
             v119 = 0; /*0x64d20b*/
             if ( v81 > 0 ) /*0x64d212*/
             {
@@ -3055,10 +3055,10 @@ void Network_ProcessMapEvent(int a1, int a2)
                   {
                     if ( !*((unsigned char *)v95 + v28) ) /*0x64d780*/
                     {
-                      v61 = (unsigned short *)(*(int (__thiscall **)(unsigned int, char *))(**((unsigned int **)Block + v28) + 440))( /*0x64d7a4*/
+                      v61 = (unsigned short *)(*(int (**)(unsigned int, char *))(**((unsigned int **)Block + v28) + 440))( /*0x64d7a4*/
                                        *((unsigned int *)Block + v28),
                                        v131);
-                      v62 = (unsigned short *)(*(int (__thiscall **)(unsigned int *, char *))(*v29 + 440))(v29, v132); /*0x64d7b0*/
+                      v62 = (unsigned short *)(*(int (**)(unsigned int *, char *))(*v29 + 440))(v29, v132); /*0x64d7b0*/
                       if ( *v62 == *v61 && v62[1] == v61[1] ) /*0x64d7ca*/
                       {
                         v63 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v76); /*0x64d7da*/
@@ -3095,7 +3095,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                   goto LABEL_99; /*0x64d89c*/
               }
               v122 = v73; /*0x64d26b*/
-              v32 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *, unsigned int))(*v29 + 76))(v29, v135, 0); /*0x64d27a*/
+              v32 = (unsigned int *)(*(int (**)(unsigned int *, char *, unsigned int))(*v29 + 76))(v29, v135, 0); /*0x64d27a*/
               v33 = *v32 / 256; /*0x64d2a4*/
               v34 = v32[1] / 256; /*0x64d2a7*/
               v35 = (*((unsigned int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v73) + 80) >> 8) & 1; /*0x64d2c2*/
@@ -3135,7 +3135,7 @@ void Network_ProcessMapEvent(int a1, int a2)
               v85 = v38; /*0x64d3f6*/
               v74 = 0; /*0x64d3fa*/
               v72 = 0; /*0x64d402*/
-              v127 = (*(int (__thiscall **)(unsigned int *))(v41 + 132))(v29); /*0x64d40d*/
+              v127 = (*(int (**)(unsigned int *))(v41 + 132))(v29); /*0x64d40d*/
               TileIndex = MapClass::GetTileIndex(&MapClass_Instance, (int16_t *)&v73, *(unsigned int *)(v127 + 1460), 1); /*0x64d42c*/
               while ( 1 ) /*0x64d43e*/
               {
@@ -3156,7 +3156,7 @@ void Network_ProcessMapEvent(int a1, int a2)
                         (int16_t *)&v121,
                         *(unsigned int *)(v127 + 1460),
                         IDA_BYTE1(v42[80]) & 1);
-                v44 = (*(int (__thiscall **)(unsigned int *, unsigned int *, int, int, unsigned int, int))(*v29 + 428))( /*0x64d535*/
+                v44 = (*(int (**)(unsigned int *, unsigned int *, int, int, unsigned int, int))(*v29 + 428))( /*0x64d535*/
                         v29,
                         v42,
                         -1,
@@ -3395,14 +3395,14 @@ void ComputeNetworkFrameCRC()
       do /*0x64dd83*/
       {
         v21 = *(unsigned int **)(*(v18 - 3) + 4 * v19); /*0x64dcfd*/
-        if ( (*(int (__thiscall **)(unsigned int *))(*v21 + 44))(v21) != 4 /*0x64dd19*/
+        if ( (*(int (**)(unsigned int *))(*v21 + 44))(v21) != 4 /*0x64dd19*/
           || (*(int (__stdcall **)(unsigned int *))(v21[1] + 16))(v21 + 1) != -2 )
         {
           v22 = v21[39]; /*0x64dd23*/
           v23 = v21[40]; /*0x64dd25*/
           v24 = *v21; /*0x64dd2b*/
           v35 = v21[41]; /*0x64dd2d*/
-          v25 = v22 / 10 + ((v23 / 10) << 16) + (*(int (__thiscall **)(unsigned int *))(v24 + 44))(v21); /*0x64dd5d*/
+          v25 = v22 / 10 + ((v23 / 10) << 16) + (*(int (**)(unsigned int *))(v24 + 44))(v21); /*0x64dd5d*/
           v19 = v32; /*0x64dd67*/
           *(unsigned int *)dword_AC51FC = v25 + (*(unsigned int *)dword_AC51FC >> 31) + 2 * *(unsigned int *)dword_AC51FC; /*0x64dd73*/
         }
@@ -3417,7 +3417,7 @@ void ComputeNetworkFrameCRC()
   for ( k = 0; k < dword_87F788; ++k ) /*0x64dda1*/
   {
     v27 = (unsigned int *)*((unsigned int *)dword_87F77C + k); /*0x64ddad*/
-    if ( (*(int (__thiscall **)(unsigned int *))(*v27 + 44))(v27) != 4 /*0x64ddc9*/
+    if ( (*(int (**)(unsigned int *))(*v27 + 44))(v27) != 4 /*0x64ddc9*/
       || (*(int (__stdcall **)(unsigned int *))(v27[1] + 16))(v27 + 1) != -2 )
     {
       v28 = v27[39]; /*0x64ddd3*/
@@ -3426,7 +3426,7 @@ void ComputeNetworkFrameCRC()
       v35 = v27[41]; /*0x64dddd*/
       *(unsigned int *)dword_AC51FC = v28 / 10 /*0x64de1f*/
                               + ((v29 / 10) << 16)
-                              + (*(int (__thiscall **)(unsigned int *))(v30 + 44))(v27)
+                              + (*(int (**)(unsigned int *))(v30 + 44))(v27)
                               + (*(unsigned int *)dword_AC51FC >> 31)
                               + 2 * *(unsigned int *)dword_AC51FC;
     }
@@ -3783,8 +3783,8 @@ int sub_642FF0(int a1, int a2, char a3)
     v5 = Default; /*0x643034*/
     if ( Default ) /*0x643038*/
     {
-      (*(void (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x64303e*/
-      v3 = (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 128))(v5); /*0x64304b*/
+      (*(void (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x64303e*/
+      v3 = (*(int (**)(int))(*(unsigned int *)v5 + 128))(v5); /*0x64304b*/
     }
   }
   Instance = TextRenderer::GetInstance(); /*0x643058*/
@@ -3831,8 +3831,8 @@ int sub_6430C0(char a1)
     v3 = Default; /*0x643108*/
     if ( Default ) /*0x64310c*/
     {
-      (*(void (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x643112*/
-      v1 = (*(int (__thiscall **)(int))(*(unsigned int *)v3 + 128))(v3); /*0x64311f*/
+      (*(void (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x643112*/
+      v1 = (*(int (**)(int))(*(unsigned int *)v3 + 128))(v3); /*0x64311f*/
     }
   }
   Instance = TextRenderer::GetInstance(); /*0x64312c*/
@@ -3881,8 +3881,8 @@ int sub_6431C0(char a1)
     v3 = Default; /*0x643203*/
     if ( Default ) /*0x643207*/
     {
-      (*(void (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x64320d*/
-      v1 = (*(int (__thiscall **)(int))(*(unsigned int *)v3 + 128))(v3); /*0x64321a*/
+      (*(void (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x64320d*/
+      v1 = (*(int (**)(int))(*(unsigned int *)v3 + 128))(v3); /*0x64321a*/
     }
   }
   Instance = TextRenderer::GetInstance(); /*0x643228*/
@@ -3905,8 +3905,8 @@ int sub_6431C0(char a1)
   v9 = BuildingType::FindDefault(0); /*0x64327b*/
   if ( !v9 ) /*0x643281*/
     return v8 / 2; /*0x64328e*/
-  (*(void (__thiscall **)(int))(*(unsigned int *)v9 + 124))(v9); /*0x64329a*/
-  return (v8 - (*(int (__thiscall **)(int))(*(unsigned int *)v9 + 128))(v9)) / 2; /*0x643289*/
+  (*(void (**)(int))(*(unsigned int *)v9 + 124))(v9); /*0x64329a*/
+  return (v8 - (*(int (**)(int))(*(unsigned int *)v9 + 128))(v9)) / 2; /*0x643289*/
 }
 } // namespace gamemd
 
@@ -3936,8 +3936,8 @@ int sub_6432C0(char a1)
     v3 = Default; /*0x643305*/
     if ( Default ) /*0x643309*/
     {
-      (*(void (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x64330f*/
-      v1 = (*(int (__thiscall **)(int))(*(unsigned int *)v3 + 128))(v3); /*0x64331c*/
+      (*(void (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x64330f*/
+      v1 = (*(int (**)(int))(*(unsigned int *)v3 + 128))(v3); /*0x64331c*/
     }
   }
   Instance = TextRenderer::GetInstance(); /*0x643328*/
@@ -3988,8 +3988,8 @@ char sub_6435B0(int a1, int a2, int a3)
   v4 = Default; /*0x6435bc*/
   if ( Default ) /*0x6435c0*/
   {
-    v5 = (*(int (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x6435d1*/
-    Default = (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 128))(v4); /*0x6435d3*/
+    v5 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x6435d1*/
+    Default = (*(int (**)(int))(*(unsigned int *)v4 + 128))(v4); /*0x6435d3*/
   }
   else
   {

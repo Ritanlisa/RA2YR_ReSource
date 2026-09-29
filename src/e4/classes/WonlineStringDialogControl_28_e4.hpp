@@ -5,6 +5,7 @@
 
 namespace gamemd {
 struct WonlineStringDialogControl_28 {
+    unsigned int Dialog;
     void* vfptr;  // minimal E2 declaration
     int QueryInterface(char * a1,  unsigned int * a2,  char ** a3);    // 0x7AD690
     int ddtor(int a1);  // 0x7AD440

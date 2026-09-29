@@ -3,12 +3,12 @@
 
 #include <cstring>
 #include "core/globals_core.hpp"
-#include "e4/e4_globals.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
+#include "e4/e4_globals_decls.hpp"
 #include "core/globals_core.hpp"
 #include "core/globals_core.hpp"
-#include "e4/e4_globals.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
+#include "e4/e4_globals_decls.hpp"
 #include "system/globals_system.hpp"
 
 namespace gamemd
@@ -322,7 +322,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
   double v46; // [esp+40h] [ebp-8h]
 
   v4 = (int)(*end);
-  v5 = *start; /*0x5880b4*/
+  v5 = (int)(*start);
   if ( *start != *end || start[1] != end[1] || start[2] != end[2] )
   {
     IDA_LODWORD(v34) = v5 / 256; /*0x5880f3*/
@@ -354,7 +354,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
             v12 = v11[135]; /*0x5881af*/
             if ( *(unsigned char *)(v12 + 506) ) /*0x5881b5*/
             {
-              if ( v12 != house ) /*0x5881c2*/
+              if ( v12 != (int)(house) ) /*0x5881c2*/
               {
                 v13 = (int16_t)v34; /*0x5881d0*/
                 goto LABEL_31; /*0x5881d3*/
@@ -369,7 +369,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
     else
     {
       v14 = (int)(start[1]);
-      v15 = end[1]; /*0x5881ec*/
+      v15 = (int)(end[1]);
       v16 = v15 / 256; /*0x588202*/
       v41 = v15 / 256; /*0x588208*/
       if ( (uint16_t)(v14 / 256) == (uint16_t)(v15 / 256) )
@@ -397,7 +397,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
               v23 = v22[135]; /*0x58829c*/
               if ( *(unsigned char *)(v23 + 506) ) /*0x5882a2*/
               {
-                if ( v23 != house ) /*0x5882af*/
+                if ( v23 != (int)(house) ) /*0x5882af*/
                 {
                   v13 = (int16_t)i; /*0x5882bf*/
   LABEL_31:
@@ -453,7 +453,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
               v33 = v32[135]; /*0x5884b4*/
               if ( *(unsigned char *)(v33 + 506) ) /*0x5884ba*/
               {
-                if ( v33 != house ) /*0x5884c7*/
+                if ( v33 != (int)(house) ) /*0x5884c7*/
                 {
                   *out = v27; /*0x588528*/
                   out[1] = v35; /*0x58852a*/
@@ -535,9 +535,9 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   int v57; // [esp+60h] [ebp+10h]
 
   v49 = (int)(coords[2] / g_MissionQueueFrame.briefing[272]);
-  v10 = *coords; /*0x5678ff*/
-  v11 = coords[1]; /*0x567901*/
-  v12 = coords[2]; /*0x567904*/
+  v10 = (int)(*coords);
+  v11 = (int)(coords[1]);
+  v12 = (int)(coords[2]);
   v13 = ZCoordToScreenY(v12); /*0x567909*/
   v14 = ((((unsigned int)(((uint64_t)(2004318071LL * v13) >> 32) - v13) >> 31) /*0x567928*/
         + ((int)(((uint64_t)(2004318071LL * v13) >> 32) - v13) >> 4)) << 8)
@@ -598,21 +598,21 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   result = (int)dword_A83D4C; /*0x567ab4*/
   if ( !dword_A83D4C ) /*0x567abb*/
     goto LABEL_27; /*0x567abb*/
-  if ( owner != dword_A83D4C ) /*0x567abf*/
+  if ( owner != (gamemd::HouseClass *)(dword_A83D4C) ) /*0x567abf*/
   {
     if ( ((1 << *((unsigned int *)dword_A83D4C->Object_field_0x34 + 46)) & *((unsigned int *)owner + 5433)) != 0 ) /*0x567ad7*/
     {
       v25 = (gamemd::HouseClass *)((void *)dword_A83D4C);
-      owner = dword_A83D4C; /*0x567adb*/
+      owner = (gamemd::HouseClass *)(dword_A83D4C);
     }
     if ( v25 != (void *)dword_A83D4C ) /*0x567ae1*/
     {
       if ( (uint8_t)HouseClass::IsAlliedWith(v25, (void *)dword_A83D4C) /*0x567af4*/
         && *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6119) )
       {
-        result = (gamemd::HouseClass *)((int)dword_A83D4C);
-        v25 = (void *)dword_A83D4C; /*0x567b03*/
-        owner = dword_A83D4C; /*0x567b05*/
+        result = (int)((gamemd::HouseClass *)((int)dword_A83D4C));
+        v25 = (gamemd::HouseClass *)((void *)dword_A83D4C);
+        owner = (gamemd::HouseClass *)(dword_A83D4C);
         goto LABEL_27; /*0x567b09*/
       }
   LABEL_26:
@@ -754,9 +754,9 @@ void MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, u
   int v29; // [esp+10h] [ebp+Ch]
 
   v5 = (int)(a4);
-  if ( a4 <= 11 ) /*0x567dac*/
+  if ( a4 <= (void *)(11) ) /*0x567dac*/
   {
-    if ( a4 < 3 ) /*0x567db8*/
+    if ( a4 < (void *)(3) ) /*0x567db8*/
       v5 = 3; /*0x567dba*/
   }
   else
@@ -766,29 +766,29 @@ void MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, u
   v6 = (int)(a3);
   if ( a3 < 0 ) /*0x567dc5*/
   {
-    v7 = dword_7ED3D0[v5]; /*0x567dc7*/
+    v7 = ((unsigned int *)(dword_7ED3D0))[v5]; /*0x567dc7*/
     a3 = 0; /*0x567dce*/
     goto LABEL_10; /*0x567dd6*/
   }
-  if ( a3 > 8 ) /*0x567ddb*/
+  if ( a3 > (void *)(8) ) /*0x567ddb*/
   {
     a3 = (void *)(8);
     v6 = 8; /*0x567de9*/
   LABEL_9:
-    v7 = dword_7ED3D0[v5] - dword_7ED3CC[v6]; /*0x567ded*/
+    v7 = ((unsigned int *)(dword_7ED3D0))[v5] - ((unsigned int *)(dword_7ED3CC))[v6]; /*0x567ded*/
     goto LABEL_10; /*0x567dfb*/
   }
   if ( a3 ) /*0x567efd*/
     goto LABEL_9; /*0x567efd*/
-  v7 = dword_7ED3D0[v5]; /*0x567f03*/
+  v7 = ((unsigned int *)(dword_7ED3D0))[v5]; /*0x567f03*/
   LABEL_10:
   v29 = v7; /*0x567dfd*/
   result = a5; /*0x567e01*/
   if ( !a5 ) /*0x567e0b*/
   {
-    v9 = (int)(*a2);
-    v10 = a2[1]; /*0x567e17*/
-    v11 = a2[2]; /*0x567e1a*/
+    v9 = (int)(*(unsigned int *)(a2));
+    v10 = (int)(a2[1]);
+    v11 = (int)(a2[2]);
     v12 = ZCoordToScreenY(v11); /*0x567e1f*/
     v13 = ((((unsigned int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567e3e*/
           + ((int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
@@ -803,7 +803,7 @@ void MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, u
       v16 = (char *)(4 * dword_7ED3CC[a3] + 11261072); /*0x567e93*/
     for ( result = v29 - 1; v29; --v29 ) /*0x567ea3*/
     {
-      v20 = (void *)(v16);
+      v20 = (char *)((void *)(v16));
       v16 += 4; /*0x567eb0*/
       IDA_HIWORD(v28) = v19 + *((unsigned short *)v20 + 1); /*0x567ec0*/
       IDA_LOWORD(v28) = v18 + *(unsigned short *)v20; /*0x567ec5*/

@@ -85,17 +85,17 @@ int Struct::ClearAllMemberFlags()
 namespace gamemd {
 int Struct::ZeroInitAndSetup()
 {
-  this->PhoneNumber[7] = 0; /*0x48bf12*/
-  this->PhoneNumber[8] = 0; /*0x48bf15*/
-  this->PhoneNumber[9] = 0; /*0x48bf18*/
-  this->PhoneNumber[10] = 0; /*0x48bf1b*/
+  this-((unsigned int *)(>PhoneNumber))[7] = 0; /*0x48bf12*/
+  this-((unsigned int *)(>PhoneNumber))[8] = 0; /*0x48bf15*/
+  this-((unsigned int *)(>PhoneNumber))[9] = 0; /*0x48bf18*/
+  this-((unsigned int *)(>PhoneNumber))[10] = 0; /*0x48bf1b*/
   *(unsigned int *)this->Active = 0; /*0x48bf1e*/
   this->LastPacketTime = 0; /*0x48bf21*/
   this->PacketsSent = 0; /*0x48bf24*/
   this->PacketsReceived = 0; /*0x48bf27*/
-  this->PhoneNumber[0] = 0; /*0x48bf2a*/
-  this->PhoneNumber[11] = -1; /*0x48bf30*/
-  this->PhoneNumber[12] = -1; /*0x48bf33*/
+  this-((unsigned int *)(>PhoneNumber))[0] = 0; /*0x48bf2a*/
+  this-((unsigned int *)(>PhoneNumber))[11] = -1; /*0x48bf30*/
+  this-((unsigned int *)(>PhoneNumber))[12] = -1; /*0x48bf33*/
   return Struct::ClearAllMemberFlags((Struct *)this->PlayerIndex);
 }
 } // namespace gamemd

@@ -15,7 +15,7 @@
 namespace gamemd {
 int ParticleSystemClass::Draw()
 {
-  return this->__pad_E5[19] && !this->Owner; /*0x62fe79*/
+  return this-((unsigned int *)(>__pad_E5))[19] && !this->Owner; /*0x62fe79*/
 }
 }
 // 0x630230
@@ -226,7 +226,7 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVBuildingClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e966e*/
+    (*(void (**)(_DynamicVectorClass_PAVBuildingClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e966e*/
   }
   v7 = this->q008; /*0x4e9671*/
   if ( v7 < this->q010 ) /*0x4e9679*/
@@ -327,7 +327,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVSmudgeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb342*/
+    (*(void (**)(_VectorClass_PAVSmudgeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb342*/
     return 1; /*0x4eb348*/
   }
 }
@@ -453,7 +453,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVTerrainClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb5a2*/
+    (*(void (**)(_VectorClass_PAVTerrainClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb5a2*/
     return 1; /*0x4eb5a8*/
   }
 }
@@ -545,7 +545,7 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVTerrainClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb6ce*/
+    (*(void (**)(_DynamicVectorClass_PAVTerrainClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb6ce*/
   }
   v7 = this->q008; /*0x4eb6d1*/
   if ( v7 < this->q010 ) /*0x4eb6d9*/
@@ -612,10 +612,10 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVAircraftClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb92e*/
+    (*(void (**)(_DynamicVectorClass_PAVAircraftClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4eb92e*/
   }
   v7 = this->Capacity; /*0x4eb931*/
-  if ( v7 < this->q010 ) /*0x4eb939*/
+  if ( v7 < (int)(this->q010) ) /*0x4eb939*/
     *(unsigned int *)&this->q010 = v7; /*0x4eb93b*/
   return 1; /*0x4eb93e*/
 }
@@ -648,14 +648,14 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_BuildingClass___vftable; /*0x4ef5d6*/
   if ( v3 && this->IsAllocated ) /*0x4ef5e0*/
   {
     RA2_OPDEL(v3); /*0x4ef5e8*/
     *(unsigned int *)&this->q004 = 0; /*0x4ef5f0*/
   }
-  this->IsAllocated = 0; /*0x4ef5fb*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x4ef601*/
   if ( (a2 & 1) != 0 ) /*0x4ef608*/
     RA2_OPDEL(); /*0x4ef60b*/
@@ -669,14 +669,14 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_SmudgeClass___vftable; /*0x4efd56*/
   if ( v3 && this->IsAllocated ) /*0x4efd60*/
   {
     RA2_OPDEL(v3); /*0x4efd68*/
     *(unsigned int *)&this->q004 = 0; /*0x4efd70*/
   }
-  this->IsAllocated = 0; /*0x4efd7b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x4efd81*/
   if ( (a2 & 1) != 0 ) /*0x4efd88*/
     RA2_OPDEL(); /*0x4efd8b*/
@@ -690,14 +690,14 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TerrainClass___vftable; /*0x4efdf6*/
   if ( v3 && this->IsAllocated ) /*0x4efe00*/
   {
     RA2_OPDEL(v3); /*0x4efe08*/
     *(unsigned int *)&this->q004 = 0; /*0x4efe10*/
   }
-  this->IsAllocated = 0; /*0x4efe1b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x4efe21*/
   if ( (a2 & 1) != 0 ) /*0x4efe28*/
     RA2_OPDEL(); /*0x4efe2b*/
@@ -711,14 +711,14 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TerrainClass___vftable; /*0x4efe46*/
   if ( v3 && this->IsAllocated ) /*0x4efe50*/
   {
     RA2_OPDEL(v3); /*0x4efe58*/
     *(unsigned int *)&this->q004 = 0; /*0x4efe60*/
   }
-  this->IsAllocated = 0; /*0x4efe6b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x4efe71*/
   if ( (a2 & 1) != 0 ) /*0x4efe78*/
     RA2_OPDEL(); /*0x4efe7b*/
@@ -732,14 +732,14 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AircraftClass___vftable; /*0x4efee6*/
   if ( v3 && this->IsAllocated ) /*0x4efef0*/
   {
     RA2_OPDEL(v3); /*0x4efef8*/
     *(unsigned int *)&this->q004 = 0; /*0x4eff00*/
   }
-  this->IsAllocated = 0; /*0x4eff0b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x4eff11*/
   if ( (a2 & 1) != 0 ) /*0x4eff18*/
     RA2_OPDEL(); /*0x4eff1b*/

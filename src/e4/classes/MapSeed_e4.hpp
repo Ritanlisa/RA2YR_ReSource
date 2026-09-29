@@ -20,7 +20,7 @@ struct MapSeed {
     unsigned int q00C0;
 // --- flat members (END) ---
     AbstractClass * * InsertName();
-    int CheckName();
+    int CheckName(void *a1 = 0);
     int IsCellInBounds();
     int ValidateName(int a2);
 };

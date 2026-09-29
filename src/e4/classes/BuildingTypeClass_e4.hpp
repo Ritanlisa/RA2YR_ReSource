@@ -69,7 +69,7 @@ struct BuildingTypeClass {
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
     SHPStruct* AlphaImage;  // 0xAC
-    char MainVoxel[4];  // 0xB0
+    unsigned int MainVoxel;  // 0xB0
     char TurretVoxel[4];  // 0xB4
     char q0B8[4];  // 0xB8
     unsigned char q0B9;  // 0xB9
@@ -203,7 +203,7 @@ struct BuildingTypeClass {
     bool q238;  // 0x238
     bool q239;  // 0x239
     bool q23A;  // 0x23A
-    char q23B[3];  // 0x23B
+    unsigned int q23B;  // 0x23B
     unsigned char q23E;  // 0x23E
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches[80];  // 0x244
@@ -235,7 +235,7 @@ struct BuildingTypeClass {
     unsigned char u8_2A5;  // 0x2A5
     unsigned int eliteWeapon2;  // 0x2A8
     unsigned int ammo;  // 0x2AC
-    char EliteAbilities[4];  // 0x2AE
+    unsigned int EliteAbilities;  // 0x2AE
     unsigned int guardRange;  // 0x2B0
     unsigned int sight;  // 0x2B4
     unsigned int cost;  // 0x2B8
@@ -526,7 +526,7 @@ struct BuildingTypeClass {
     AbstractClass* q65C;  // 0x65C
     int WalkRate;  // 0x660
     int IdleRate;  // 0x664
-    char VeteranAbilities[4];  // 0x668
+    unsigned int VeteranAbilities;  // 0x668
     unsigned char q66C;  // 0x66C
     int q670;  // 0x670
     int q674;  // 0x674
@@ -554,7 +554,7 @@ struct BuildingTypeClass {
     bool q6B1;  // 0x6B1
     int q6B4;  // 0x6B4
     char q6B8[4];  // 0x6B8
-    char DeployingAnim[4];  // 0x6BC
+    unsigned int DeployingAnim;  // 0x6BC
     bool q6C0;  // 0x6C0
     bool q6C1;  // 0x6C1
     int q6C4;  // 0x6C4
@@ -846,7 +846,7 @@ struct BuildingTypeClass {
     char qCA4[4];  // 0xCA4
     unsigned char qCA8;  // 0xCA8
     bool TechnoTypeClass_field_bool_CB4;  // 0xCB4
-    char BarrelAnimData[4];  // 0xCB8
+    unsigned int BarrelAnimData;  // 0xCB8
     unsigned char qCBC;  // 0xCBC
     bool TechnoTypeClass_field_bool_CC8;  // 0xCC8
     unsigned int qCC9;  // 0xCC9
@@ -1543,22 +1543,41 @@ struct BuildingTypeClass {
     unsigned int LightGreenTint;
     unsigned int u32_E1C;
     unsigned int u32_E20;
+    unsigned int ExitCoord;
+    unsigned int q14FC;
+    unsigned int q1500;
+    unsigned int q16B7;
+    unsigned int q16F6;
+    unsigned int q16F8;
+    unsigned int q1761;
+    unsigned int q8588;
+    unsigned int q85C2;
+    unsigned int q8642;
+    unsigned int q8646;
+    unsigned int qF04;
+    unsigned int u32_C84;
+    unsigned int q150C;
+    unsigned int q85C6;
+    unsigned int q8600;
+    unsigned char u8_14F0;
+    unsigned int q8604;
+    unsigned int q8608;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
     AbstractClass * * FindOrCreateAlt();
     AbstractClass * * LoadRepairAnimations();
     AbstractClass * * SaveLoad_Prefix();
-    BuildingTypeClass * * FindOrCreate();
+    BuildingTypeClass * * FindOrCreate(void *a1 = 0);
     OverlayTypeClass * * FindOrCreate2();
     ParticleSystemTypeClass * * LoadOrGet();
-    ParticleTypeClass * * FindOrCreateEx();
+    ParticleTypeClass * * FindOrCreateEx(void *a1 = 0);
     bool CanPlacePath(unsigned short *a2, int a3);
-    char Enqueue(int a2);
+    char Enqueue(int a2, void *a1 = 0);
     int CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2);
     int ConstructFull(char * Source);
     int FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3);
-    int FindIndex();
-    int FindIndexByName();
+    int FindIndex(void *a1 = 0);
+    int FindIndexByName(void *a1 = 0);
     int GetAuxField();
     int GetClassIdentifier();
     int GetMaxPips();
@@ -1569,9 +1588,9 @@ struct BuildingTypeClass {
     int ProcessData(unsigned int * a2, short * a3);
     int SaveLoad_Prefix_0();
     int UpdatePower();
-    int ddtor();
+    int ddtor(void *a1 = 0);
     size_t Dequeue(BuildingClass * aP1);
-    unsigned int * Construct(AbstractClass * aP1);
+    unsigned int * Construct(AbstractClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int * GetSizeInLeptons(unsigned int * a2);
     unsigned int * GetUpgradeOffset(unsigned int * a2);
     unsigned int * loadBuildingProperty_b_545E520(ObjectTypeClass * aP1);
@@ -1579,7 +1598,7 @@ struct BuildingTypeClass {
     void IsPowered();
     void LoadVoxel();
     void* LoadAnimations(ObjectTypeClass * aP1);
-    void* ProcessPower(AbstractClass * aP1);
+    void* ProcessPower(AbstractClass * aP1, void *a1 = 0);
 };
 
 } // namespace gamemd

@@ -25,14 +25,16 @@ struct ConnectionClass {
     unsigned int u32_34;
     unsigned int u32_38;
     unsigned int u32_3C;
+    unsigned int Debug;
+    unsigned int Timer;
 // --- flat members (END) ---
     AbstractClass * * sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4);
     int StubReturnFalse();
-    int allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5);
+    int allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5, void *a1 = 0);
     int processTileUpdate(void * a2, signed int * a3);
     int receivePacket(int a2, int a3);
     int serviceSendQueue();
-    unsigned int initQueue(unsigned int a2);
+    unsigned int initQueue(unsigned int a2, void *a1 = 0);
     void dtor();
 };
 

@@ -47,7 +47,7 @@ namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
   *(unsigned int *)this->LocomotionClass = (void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
+  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
   LocomotionClass::Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     RA2_OPDEL(); /*0x5b1b6d*/

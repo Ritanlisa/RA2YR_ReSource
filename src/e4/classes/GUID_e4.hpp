@@ -14,7 +14,7 @@ struct GUID {
     unsigned int u32_10;
     unsigned int u32_C;
 // --- flat members (END) ---
-    bool Compare(int a2);
+    bool Compare(int a2, void *a1 = 0);
 };
 
 } // namespace gamemd

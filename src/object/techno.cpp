@@ -5,7 +5,7 @@
 #include "type/building_type.hpp"
 
 #include <cstring>
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace ra2 {
 namespace game {
@@ -352,6 +352,8 @@ void TechnoClass::Uncloak(bool play_sound)
 // 0x6f3330
 AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
 {
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
   HouseClass *v2; // eax
   int result; // eax
   int v4; // edi
@@ -379,19 +381,19 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
     return 0; /*0x6f33d3*/
   if ( target->? && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 3408) != -1 ) /*0x6f33f4*/
     return *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 3408); /*0x6f340d*/
-  v6 = (v11[5] & 1) != 0 ? (unsigned char *)v11 : 0;
+  v6 = (((unsigned int *)(v11))[5] & 1) != 0 ? (unsigned char *)v11 : 0;
   if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 3285) )
   {
     if ( *(unsigned char *)(*(unsigned int *)(v4 + 172) + 364) )
     {
-      if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6
-        && *(unsigned char *)(*((*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6 ? v11 + 328 : (unsigned int *)1312) + 5495) )
+      if ( (*(int (__thiscall **)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11) == 6
+        && *(unsigned char *)(*((*(int (__thiscall **)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11) == 6 ? v11 + 328 : (unsigned int *)1312) + 5495) )
       {
-        v8 = (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11); /*0x6f34c9*/
-        if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*(v8 == 6 ? v11 : 0) + 132))(v8 == 6 ? v11 : 0) + 1517) )
+        v8 = (*(int (__thiscall **)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11); /*0x6f34c9*/
+        if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*(unsigned int *)((v8 == 6 ? v11 : 0)) + 132))(v8 == 6 ? v11 : 0) + 1517) )
         {
-          v9 = (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11); /*0x6f34f3*/
-          return !*(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*(v9 == 6 ? v11 : 0) + 132))(v9 == 6 ? v11 : 0) + 1516);
+          v9 = (*(int (__thiscall **)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11); /*0x6f34f3*/
+          return !*(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*(unsigned int *)((v9 == 6 ? v11 : 0)) + 132))(v9 == 6 ? v11 : 0) + 1516);
         }
         return 1; /*0x6f380a*/
       }
@@ -416,7 +418,7 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
         return 1; /*0x6f35d1*/
       if ( (*((int (__thiscall **)(TechnoClass *))target->RadioClass + 11))(target) == 6 && *((unsigned char *)target + 1633) ) /*0x6f35e0*/
         return 1; /*0x6f35f6*/
-      if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6 /*0x6f362f*/
+      if ( (*(int (__thiscall **)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11) == 6 /*0x6f362f*/
         && (uint8_t)Object::IsAlliedWithObjectSimpleHouse((Object *)target->owner, v11)
         && *(unsigned char *)(*(unsigned int *)(v4 + 172) + 344)
         && *(unsigned char *)(v11[328] + 5493) )
@@ -425,11 +427,11 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
       }
       if ( (*((int (__thiscall **)(TechnoClass *))target->RadioClass + 11))(target) == 2 && *((unsigned char *)target + 1738) ) /*0x6f3658*/
         return 1; /*0x6f366e*/
-      if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 11 /*0x6f36ca*/
-        && (v11[59] != 2 && (*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 80))(v11)
-         || (v11[80] & 0x100) != 0
+      if ( (*(int (__thiscall **)(unsigned int *))(*(unsigned int *)(v11) + 44))(v11) == 11 /*0x6f36ca*/
+        && (((unsigned int *)(v11))[59] != 2 && (*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 80))(v11)
+         || (((unsigned int *)(v11))[80] & 0x100) != 0
          && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 3278))
-        && !(*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 84))(v11)
+        && !(*(uint8_t (__thiscall **)(unsigned int *))(*(unsigned int *)(v11) + 84))(v11)
         && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 1540) == 2 )
       {
         return 1; /*0x6f36d8*/

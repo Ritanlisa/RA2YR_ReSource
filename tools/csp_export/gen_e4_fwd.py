@@ -123,7 +123,11 @@ lines = ['// GENERATED fwd declarations for the e4 universe (gen_e4_fwd.py).',
          '#pragma once', '', '#include <windows.h>', '#include <mmsystem.h>',
          '#include <dsound.h>', '#include <ddraw.h>', '#include <unknwn.h>',
          '#include <ios>', '#include <string>', '#include <cstdint>', '',
-         'namespace gamemd {', '']
+         'namespace gamemd {', '',
+         '// winsock/BSD shorthand the raw corpus references; identical',
+         '// typedef redeclaration is legal C++ if <winsock.h> defines them',
+         'typedef unsigned short u_short;',
+         'typedef unsigned long u_long;', '']
 lines += ['struct %s;' % n for n in sorted(names)]
 lines += ['', '} // namespace gamemd', '']
 

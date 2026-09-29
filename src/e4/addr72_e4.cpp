@@ -171,7 +171,7 @@ AbstractClass * * sub_725C70()
     {
       while ( 1 ) /*0x725caa*/
       {
-        v3 = (*(int (__thiscall **)(int *, unsigned int **))(g_BuildingLoadQueue_Array.ToTile + 16))( /*0x725caa*/
+        v3 = (*(int (**)(int *, unsigned int **))(g_BuildingLoadQueue_Array.ToTile + 16))( /*0x725caa*/
                &g_BuildingLoadQueue_Array.ToTile,
                &v8);
         if ( v3 == -1 || v3 >= *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] ) /*0x725cba*/
@@ -198,7 +198,7 @@ AbstractClass * * sub_725C70()
           *((unsigned char *)v8 + 144) = 1; /*0x725d67*/
         }
         if ( v8 ) /*0x725d74*/
-          result = (*(int (__thiscall **)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x725d7a*/
+          result = (*(int (**)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x725d7a*/
       }
     }
     else
@@ -231,7 +231,7 @@ void sub_728200()
     else
     {
       if ( v2 ) /*0x72823e*/
-        (*(void (__thiscall **)(int16_t *, int))(v2->q080)(v2, 1); /*0x728246*/
+        (*(void (**)(int16_t *, int))(v2->q080)(v2, 1); /*0x728246*/
       --dword_8B4148; /*0x728249*/
       v3[139] = -1; /*0x72824a*/
       --v1; /*0x728253*/
@@ -365,7 +365,7 @@ void CleanupEVASystem()
   }
   if ( dword_B0FCB4 ) /*0x72dd13*/
   {
-    (**(void (__thiscall ***)(int, int))dword_B0FCB4)(dword_B0FCB4, 1); /*0x72dd19*/
+    (**(void (***)(int, int))dword_B0FCB4)(dword_B0FCB4, 1); /*0x72dd19*/
     dword_B0FCB4 = 0; /*0x72dd1b*/
   }
   if ( dword_B0FCB8 ) /*0x72dd28*/
@@ -375,7 +375,7 @@ void CleanupEVASystem()
   }
   if ( dword_B0FCBC ) /*0x72dd41*/
   {
-    (**(void (__thiscall ***)(int, int))dword_B0FCBC)(dword_B0FCBC, 1); /*0x72dd47*/
+    (**(void (***)(int, int))dword_B0FCBC)(dword_B0FCBC, 1); /*0x72dd47*/
     dword_B0FCBC = 0; /*0x72dd49*/
   }
   if ( dword_B0FCC0 ) /*0x72dd56*/
@@ -385,7 +385,7 @@ void CleanupEVASystem()
   }
   if ( dword_B0FCC4 ) /*0x72dd6f*/
   {
-    (**(void (__thiscall ***)(int, int))dword_B0FCC4)(dword_B0FCC4, 1); /*0x72dd75*/
+    (**(void (***)(int, int))dword_B0FCC4)(dword_B0FCC4, 1); /*0x72dd75*/
     dword_B0FCC4 = 0; /*0x72dd77*/
   }
   if ( dword_B0FBBC ) /*0x72dd84*/
@@ -395,7 +395,7 @@ void CleanupEVASystem()
   }
   if ( dword_B0FBC0 ) /*0x72dd9d*/
   {
-    (**(void (__thiscall ***)(int, int))dword_B0FBC0)(dword_B0FBC0, 1); /*0x72dda3*/
+    (**(void (***)(int, int))dword_B0FBC0)(dword_B0FBC0, 1); /*0x72dda3*/
     dword_B0FBC0 = 0; /*0x72dda5*/
   }
 }
@@ -516,49 +516,49 @@ void DrawScoreScreenStats(ConvertClass * aP0, int a2)
     v18 = 0; /*0x72e321*/
     v19 = v5; /*0x72e32e*/
     v20 = v6; /*0x72e332*/
-    (*(void (__thiscall **)(int *, int *, int, unsigned int))(v7 + 16))(aP0, &v17, a2, 0); /*0x72e336*/
+    (*(void (**)(int *, int *, int, unsigned int))(v7 + 16))(aP0, &v17, a2, 0); /*0x72e336*/
     v8 = *aP0; /*0x72e339*/
     v18 = 0; /*0x72e342*/
     v19 = 800; /*0x72e34b*/
     v17 = v5; /*0x72e353*/
     v20 = v6; /*0x72e357*/
-    (*(void (__thiscall **)(int *, int *, int, unsigned int))(v8 + 16))(aP0, &v17, a2, 0); /*0x72e35b*/
+    (*(void (**)(int *, int *, int, unsigned int))(v8 + 16))(aP0, &v17, a2, 0); /*0x72e35b*/
     v9 = *aP0; /*0x72e35e*/
     v18 = 0; /*0x72e366*/
     v17 = v15; /*0x72e36f*/
     v19 = v5; /*0x72e377*/
     v20 = v6; /*0x72e37b*/
-    (*(void (__thiscall **)(int *, int *, int, unsigned int))(v9 + 16))(aP0, &v17, a2, 0); /*0x72e37f*/
+    (*(void (**)(int *, int *, int, unsigned int))(v9 + 16))(aP0, &v17, a2, 0); /*0x72e37f*/
     v10 = *aP0; /*0x72e382*/
     v20 = 600; /*0x72e38d*/
     v17 = v15; /*0x72e397*/
     v18 = v6; /*0x72e39f*/
     v19 = v5; /*0x72e3a3*/
-    (*(void (__thiscall **)(int *, int *, int, unsigned int))(v10 + 16))(aP0, &v17, a2, 0); /*0x72e3a7*/
+    (*(void (**)(int *, int *, int, unsigned int))(v10 + 16))(aP0, &v17, a2, 0); /*0x72e3a7*/
     v19 = v5; /*0x72e3af*/
     v17 = v15; /*0x72e3bb*/
     v20 = 600; /*0x72e3c5*/
     v11 = *aP0; /*0x72e3c9*/
     v18 = v16; /*0x72e3cf*/
-    (*(void (__thiscall **)(int *, int *, int, unsigned int))(v11 + 16))(aP0, &v17, a2, 0); /*0x72e3d3*/
+    (*(void (**)(int *, int *, int, unsigned int))(v11 + 16))(aP0, &v17, a2, 0); /*0x72e3d3*/
     v19 = 800; /*0x72e3e5*/
     v12 = *aP0; /*0x72e3e9*/
     v17 = v5; /*0x72e3ef*/
     v18 = v16; /*0x72e3f3*/
     v20 = v6; /*0x72e3f7*/
-    (*(void (__thiscall **)(int *, int *, int, unsigned int))(v12 + 16))(aP0, &v17, a2, 0); /*0x72e3fb*/
+    (*(void (**)(int *, int *, int, unsigned int))(v12 + 16))(aP0, &v17, a2, 0); /*0x72e3fb*/
     v17 = 0; /*0x72e40a*/
     v13 = *aP0; /*0x72e40e*/
     v18 = v16; /*0x72e414*/
     v19 = v5; /*0x72e418*/
     v20 = v6; /*0x72e41c*/
-    (*(void (__thiscall **)(int *, int *, int, unsigned int))(v13 + 16))(aP0, &v17, a2, 0); /*0x72e420*/
+    (*(void (**)(int *, int *, int, unsigned int))(v13 + 16))(aP0, &v17, a2, 0); /*0x72e420*/
     v14 = *aP0; /*0x72e423*/
     v17 = 0; /*0x72e42c*/
     v20 = 600; /*0x72e435*/
     v18 = v6; /*0x72e43d*/
     v19 = v5; /*0x72e441*/
-    return (*(int (__thiscall **)(int *, int *, int, unsigned int))(v14 + 16))(aP0, &v17, a2, 0); /*0x72e445*/
+    return (*(int (**)(int *, int *, int, unsigned int))(v14 + 16))(aP0, &v17, a2, 0); /*0x72e445*/
   }
   return result; /*0x72e44a*/
 }
@@ -973,7 +973,7 @@ AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
     SetupScreenBuffers(dword_A8EB84, dword_A8EB88); /*0x72f56a*/
     byte_B0FC0C = 1; /*0x72f56f*/
   }
-  (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)a1 + 24))(a1, 0); /*0x72f57d*/
+  (*(void (**)(int, unsigned int))(*(unsigned int *)a1 + 24))(a1, 0); /*0x72f57d*/
   v8 = 0; /*0x72f585*/
   i = 0; /*0x72f589*/
   v8 = *(unsigned int *)dword_B0FC30; /*0x72f58f*/
@@ -3204,19 +3204,19 @@ int E4Recv_7294E0::sub_7294E0()
   v7 = v2[41]; /*0x729508*/
   if ( v7 <= -256 ) /*0x72950c*/
   {
-    result = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v2 + 292))(v2, 0); /*0x729569*/
+    result = (*(int (**)(unsigned int *, unsigned int))(*v2 + 292))(v2, 0); /*0x729569*/
     this->nextArrayIndex = 4; /*0x72956f*/
   }
   else
   {
-    v5 = (*(int (__thiscall **)(unsigned int *))(*v2 + 1336))(v2); /*0x72951c*/
+    v5 = (*(int (**)(unsigned int *))(*v2 + 1336))(v2); /*0x72951c*/
     v3 = Math::RoundToInt((double)v5 * *(double *)&g_RulesClass_Instance->TunnelSpeed); /*0x729527*/
     if ( v3 <= 5 ) /*0x72952f*/
       v3 = 5; /*0x729531*/
     v7 -= v3; /*0x729542*/
     if ( v7 < -256 ) /*0x729546*/
       v7 = -256; /*0x729548*/
-    return (*(int (__thiscall **)(unsigned int, unsigned int *))(*(unsigned int *)this->vtable4 + 436))(this->vtable4, v6); /*0x72955a*/
+    return (*(int (**)(unsigned int, unsigned int *))(*(unsigned int *)this->vtable4 + 436))(this->vtable4, v6); /*0x72955a*/
   }
   return result; /*0x729560*/
 }
@@ -3924,7 +3924,7 @@ void FileTree_Cleanup()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1328] ) /*0x72cfec*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1328])( /*0x72cff2*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1328])( /*0x72cff2*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1328],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1328] = 0; /*0x72cff4*/

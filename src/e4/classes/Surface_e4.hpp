@@ -27,7 +27,7 @@ struct Surface {
     int PixelToIndex(unsigned int * a2);
     int RenderRadar();
     int TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5);
-    unsigned int * Construct(ObjectClass * aP1, IUnknown * aP2);
+    unsigned int * Construct(ObjectClass * aP1, IUnknown * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int * CopyRect(ObjectClass * aP1);
     unsigned int * GetRect(unsigned int * a2);
     void RenderToSurfaceVoxel(unsigned int * a2, int * a3);

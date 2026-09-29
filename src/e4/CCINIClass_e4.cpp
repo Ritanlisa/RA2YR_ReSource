@@ -66,7 +66,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
-            (*(void (__thiscall **)(unsigned int *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
+            (*(void (**)(unsigned int *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
             v7[39] = a2; /*0x41f3a3*/
           }
           goto LABEL_13; /*0x41f3a3*/
@@ -79,7 +79,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
       v7 = 0; /*0x41f32b*/
     }
   LABEL_13: v2 = (gamemd::CCINIClass *)((int)(a2));
-    if ( a2 == 1 ) /*0x41f3b0*/
+    if ( a2 == (gamemd::CCINIClass *)(1) ) /*0x41f3b0*/
       *((unsigned char *)v7 + 164) = 1; /*0x41f3b2*/
     result = v14; /*0x41f3b9*/
     ++v5; /*0x41f3bd*/
@@ -106,7 +106,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
                                                      (uint8_t *)aAitriggertypes_0,
                                                      (uint8_t *)v11,
                                                      0)
-                               || dword_A8B238[0];
+                               || ((unsigned int *)(dword_A8B238))[0];
       }
   LABEL_28:
       result = i; /*0x41f473*/
@@ -119,7 +119,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 namespace gamemd {
 int CCINIClass::GetDB()
 {
-  return this->q004; /*0x473453*/
+  return (int)(this->q004);
 }
 }
 // 0x4741F0
@@ -263,7 +263,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   {
     v9 = (unsigned int *)*((unsigned int *)dword_A8B204 + j); /*0x41f50a*/
     if ( v9[39] == a2 ) /*0x41f513*/
-      (*(void (__thiscall **)(unsigned int *, INIClass *))(*v9 + 104))(v9, a1); /*0x41f518*/
+      (*(void (**)(unsigned int *, INIClass *))(*v9 + 104))(v9, a1); /*0x41f518*/
     result = dword_A8B210; /*0x41f51b*/
   }
   if ( !a2 ) /*0x41f527*/

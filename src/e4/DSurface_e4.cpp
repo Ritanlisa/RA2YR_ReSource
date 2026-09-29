@@ -27,6 +27,8 @@
 #include "core/ddraw_init.hpp"
 #include "core/ddraw_init.hpp"
 #include "core/ddraw_init.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/DamageArea_e4.hpp"
 
 // 0x480180
 namespace gamemd {
@@ -57,11 +59,20 @@ AbstractClass * * DSurface::Process(IUnknown * aP1, int * a2)
 namespace gamemd {
 AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5)
 {
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
   unsigned int *v6; // ebp
   void *v7; // edi
   void * v8;
 
-  v6 = &this->u32_70; /*0x4ba5b0*/
+  v6 = (unsigned int)(&this->u32_70);
   *(unsigned int *)&this->q004 = aP1; /*0x4ba5b5*/
   *(unsigned int *)&this->q008 = aP2; /*0x4ba5b8*/
   *(unsigned int *)&this->q00C = 0; /*0x4ba5bb*/
@@ -81,7 +92,7 @@ AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClas
     *(unsigned int *)(this->q020 + 4) = 7; /*0x4ba604*/
     *(unsigned int *)(this->q020 + 12) = aP1; /*0x4ba60e*/
     *(unsigned int *)(this->q020 + 8) = aP2; /*0x4ba618*/
-    if ( aP3 == 1 ) /*0x4ba621*/
+    if ( aP3 == (gamemd::ObjectClass *)(1) ) /*0x4ba621*/
       *(unsigned int *)(this->q020 + 104) = 2048; /*0x4ba626*/
     if ( g_DDraw_Force3D && a5 ) /*0x4ba639*/
       *(unsigned int *)(this->q020 + 104) = 8256; /*0x4ba63e*/
@@ -115,7 +126,7 @@ int DSurface::Destroy()
   this->DSurface_field_0x0 = (unsigned int)(&DSurface_Vtable);
   if ( DSurface_field_0x18 ) /*0x4ba6c1*/
   {
-    v3 = this->DSurface_field_0x1C[0]; /*0x4ba6c3*/
+    v3 = this-((unsigned int *)(>DSurface_field_0x1C))[0]; /*0x4ba6c3*/
     if ( v3 ) /*0x4ba6c8*/
     {
       if ( g_DDraw_Clipper ) /*0x4ba6d0*/
@@ -127,11 +138,11 @@ int DSurface::Destroy()
     }
   }
   RA2_OPDEL(this->DSurface_field_0x20); /*0x4ba6ee*/
-  result = this->DSurface_field_0x1C[0]; /*0x4ba6f3*/
+  result = this-((unsigned int *)(>DSurface_field_0x1C))[0]; /*0x4ba6f3*/
   this->DSurface_field_0x20 = 0; /*0x4ba6fb*/
   if ( result ) /*0x4ba6fe*/
     result = (*(int (__stdcall **)(int))(*(unsigned int *)result + 8))(result); /*0x4ba703*/
-  this->DSurface_field_0x1C[0] = 0; /*0x4ba706*/
+  this-((unsigned int *)(>DSurface_field_0x1C))[0] = 0; /*0x4ba706*/
   this->DSurface_field_0x0 = &Surface_Vtable; /*0x4ba709*/
   return result; /*0x4ba70f*/
 }
@@ -165,25 +176,25 @@ unsigned int * DSurface::CreatePrimary()
   int v28; // [esp+20h] [ebp-8h] BYREF
   int v29; // [esp+24h] [ebp-4h] BYREF
 
-  Debug::Log(); /*0x4ba780*/
-  v1 = DDraw::CheckCapabilities(); /*0x4ba78d*/
+  this->Debug::Log(); /*0x4ba780*/
+  v1 = this->DDraw::CheckCapabilities(); /*0x4ba78d*/
   g_DDraw_AllowStretchBlits = (v1 & 0x40) != 0; /*0x4ba79b*/
-  Debug::Log(); /*0x4ba7b4*/
+  this->Debug::Log(); /*0x4ba7b4*/
   if ( (v1 & 0x10) == 0 ) /*0x4ba7bf*/
     IDA_LOBYTE(stru_820320.Start) = 0; /*0x4ba7c1*/
-  Debug::Log(); /*0x4ba7e3*/
+  this->Debug::Log(); /*0x4ba7e3*/
   v2 = RA2_OPNEW(0x24u); /*0x4ba7ea*/
   v3 = (unsigned int *)v2; /*0x4ba7ef*/
   if ( v2 ) /*0x4ba7f8*/
   {
-    *(unsigned int *)(v2 + 4) = 0; /*0x4ba7fc*/
-    *(unsigned int *)(v2 + 8) = 0; /*0x4ba7ff*/
-    *(unsigned int *)(v2 + 12) = 0; /*0x4ba802*/
-    *(unsigned int *)(v2 + 16) = 0; /*0x4ba805*/
-    *(unsigned int *)(v2 + 20) = 0; /*0x4ba808*/
-    *(unsigned char *)(v2 + 24) = 0; /*0x4ba80b*/
-    *(unsigned char *)(v2 + 25) = 0; /*0x4ba80e*/
-    *(unsigned int *)(v2 + 28) = 0; /*0x4ba811*/
+    *(unsigned int *)((unsigned int)(v2)+ 4) = 0; /*0x4ba7fc*/
+    *(unsigned int *)((unsigned int)(v2)+ 8) = 0; /*0x4ba7ff*/
+    *(unsigned int *)((unsigned int)(v2)+ 12) = 0; /*0x4ba802*/
+    *(unsigned int *)((unsigned int)(v2)+ 16) = 0; /*0x4ba805*/
+    *(unsigned int *)((unsigned int)(v2)+ 20) = 0; /*0x4ba808*/
+    *(unsigned char *)((unsigned int)(v2)+ 24) = 0; /*0x4ba80b*/
+    *(unsigned char *)((unsigned int)(v2)+ 25) = 0; /*0x4ba80e*/
+    *(unsigned int *)((unsigned int)(v2)+ 28) = 0; /*0x4ba811*/
     *(unsigned int *)v2 = &DSurface_Vtable; /*0x4ba814*/
     v4 = (void *)RA2_OPNEW(0x6Cu); /*0x4ba822*/
     v3[8] = v4; /*0x4ba82b*/
@@ -203,7 +214,7 @@ unsigned int * DSurface::CreatePrimary()
     *(unsigned int *)(v5[8] + 4) |= 0x20u; /*0x4ba879*/
     *(unsigned int *)(v5[8] + 20) = this != 0; /*0x4ba87f*/
   }
-  Debug::Log(); /*0x4ba887*/
+  this->Debug::Log(); /*0x4ba887*/
   v6 = v5 + 7; /*0x4ba897*/
   v7 = g_lpDirectDraw7->lpVtbl->CreateSurface( /*0x4ba8a1*/
          g_lpDirectDraw7,
@@ -212,7 +223,7 @@ unsigned int * DSurface::CreatePrimary()
          0);
   if ( !v7 ) /*0x4ba8a8*/
   {
-    Debug::Log(); /*0x4ba8b3*/
+    this->Debug::Log(); /*0x4ba8b3*/
     if ( this ) /*0x4ba8bd*/
     {
       v8 = *v6; /*0x4ba8bf*/
@@ -230,7 +241,7 @@ unsigned int * DSurface::CreatePrimary()
     memset((void *)v5[8], 0, 0x6Cu); /*0x4ba90b*/
     *(unsigned int *)v5[8] = 108; /*0x4ba910*/
     if ( (*(int (__stdcall **)(int, unsigned int))(*(unsigned int *)*v6 + 88))(*v6, v5[8]) ) /*0x4ba91f*/
-      Debug::Log(); /*0x4ba92b*/
+      this->Debug::Log(); /*0x4ba92b*/
     v11 = (unsigned int *)v5[8]; /*0x4ba933*/
     v5[4] = (unsigned int)(v11[21] + 7) >> 3; /*0x4ba948*/
     v12 = (v11[26] & 0x4000) != 0; /*0x4ba951*/
@@ -249,7 +260,7 @@ unsigned int * DSurface::CreatePrimary()
         (*(void (__stdcall **)(int, int))(*(unsigned int *)*v6 + 112))(*v6, g_DDraw_Clipper); /*0x4ba9a7*/
     }
     qmemcpy(&g_DDraw_PixelFormatDesc, (const void *)(v5[8] + 72), 0x20u); /*0x4ba9ba*/
-    if ( (*(int (__thiscall **)(unsigned int *))(*v5 + 112))(v5) != 2 ) /*0x4ba9c7*/
+    if ( (*(int (**)(unsigned int *))(*v5 + 112))(v5) != 2 ) /*0x4ba9c7*/
       goto LABEL_60; /*0x4ba9c7*/
     g_DDraw_RedMask = g_DDraw_RedMask; /*0x4ba9cd*/
     v18 = 0; /*0x4ba9d2*/
@@ -339,7 +350,7 @@ unsigned int * DSurface::CreatePrimary()
         if ( v22 == 2 && g_BitShift_Red == 11 && g_BitShift_Green_0 == 3 ) /*0x4babd2*/
         {
           stru_820320.Rate = 2; /*0x4babd9*/
-          Debug::Log(); /*0x4babdf*/
+          this->Debug::Log(); /*0x4babdf*/
           return v5; /*0x4babf0*/
         }
         goto LABEL_60; /*0x4babd2*/
@@ -349,7 +360,7 @@ unsigned int * DSurface::CreatePrimary()
         if ( g_BitShift_Green_0 == 3 ) /*0x4bab72*/
         {
           stru_820320.Rate = 0; /*0x4bab7d*/
-          Debug::Log(); /*0x4bab87*/
+          this->Debug::Log(); /*0x4bab87*/
           return v5; /*0x4bab98*/
         }
         goto LABEL_60; /*0x4bab72*/
@@ -357,7 +368,7 @@ unsigned int * DSurface::CreatePrimary()
       if ( g_BitShift_Red != 11 || g_BitShift_Green_0 != 2 ) /*0x4bac05*/
       {
   LABEL_60:
-        Debug::Log(); /*0x4bac11*/
+        this->Debug::Log(); /*0x4bac11*/
         return v5; /*0x4bac27*/
       }
     }
@@ -371,7 +382,7 @@ unsigned int * DSurface::CreatePrimary()
   DDraw::LogError(v7, 1); /*0x4bac2f*/
   Debug::Log(); /*0x4bac3a*/
   if ( v5 ) /*0x4bac44*/
-    (*(void (__thiscall **)(unsigned int *, int))*v5)(v5, 1); /*0x4bac4d*/
+    (*(void (**)(unsigned int *, int))*v5)(v5, 1); /*0x4bac4d*/
   return 0; /*0x4bab91*/
 }
 } // namespace gamemd
@@ -429,11 +440,11 @@ int DSurface::RestoreIfLost()
 
   if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bb014*/
     return 0; /*0x4bb014*/
-  v3 = this->DSurface_field_0x1C[0]; /*0x4bb01b*/
-  if ( v3 && (*(int (__stdcall **)(int))(*(unsigned int *)v3 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb02d*/
+  v3 = this-((unsigned int *)(>DSurface_field_0x1C))[0]; /*0x4bb01b*/
+  if ( v3 && (*(int (__stdcall **)(int))(*(unsigned int *)v3 + 96))(this-((unsigned int *)(>DSurface_field_0x1C))[0]) == -2005532222 ) /*0x4bb02d*/
   {
-    if ( (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4bb042*/
-      || (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
+    if ( (*(int (__stdcall **)(int))(*(unsigned int *)this-((unsigned int *)(>DSurface_field_0x1C))[0] + 108))(this-((unsigned int *)(>DSurface_field_0x1C))[0]) /*0x4bb042*/
+      || (*(int (__stdcall **)(int))(*(unsigned int *)this-((unsigned int *)(>DSurface_field_0x1C))[0] + 96))(this-((unsigned int *)(>DSurface_field_0x1C))[0]) )
     {
       return 0; /*0x4bb01a*/
     }
@@ -442,9 +453,9 @@ int DSurface::RestoreIfLost()
     {
       DSurface_field_0x0 = (void *)((unsigned int)(this->DSurface_field_0x0));
       this->DSurface_field_0xC = (unsigned int)(0);
-      (*((void (__thiscall **)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb05b*/
+      (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb05b*/
       ++this->DSurface_field_0xC; /*0x4bb064*/
-      (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb069*/
+      (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb069*/
       this->DSurface_field_0xC = DSurface_field_0xC; /*0x4bb06c*/
     }
   }
@@ -469,7 +480,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   int v21; // eax
   int v22; // edx
   int v23; // ecx
-  int (__thiscall **v24)(void **, unsigned int *); // edx
+  int (**v24)(void **, unsigned int *); // edx
   Rect *v25; // eax
   int Y; // ecx
   int Width; // edx
@@ -478,7 +489,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   bool v30; // cc
   int Height; // ebx
   int X; // eax
-  int (__thiscall **v33)(DSurface *, int *); // edx
+  int (**v33)(DSurface *, int *); // edx
   int *v34; // edi
   int v35; // eax
   int v36; // ebx
@@ -521,11 +532,11 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     return 0; /*0x4bb14e*/
   v10 = (void **)a3; /*0x4bb154*/
   v42 = 0; /*0x4bb15b*/
-  if ( !(*(uint8_t (__thiscall **)(unsigned int *))(*a3 + 132))(a3) /*0x4bb19d*/
-    || (*(uint8_t (__thiscall **)(unsigned int *))(*a3 + 108))(a3) == 1
+  if ( !(*(uint8_t (**)(unsigned int *))(*a3 + 132))(a3) /*0x4bb19d*/
+    || (*(uint8_t (**)(unsigned int *))(*a3 + 108))(a3) == 1
     || (unsigned char)a7 == 1
-    || (v11 = (*(int (__thiscall **)(unsigned int *))(*a3 + 112))(a3),
-        v12 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this) == v11,
+    || (v11 = (*(int (**)(unsigned int *))(*a3 + 112))(a3),
+        v12 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 28))(this) == v11,
         v10 = (void **)a3,
         !v12) )
   {
@@ -538,7 +549,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   if ( !v42 /*0x4bb1f8*/
     && v13 == 1
     && (!IDA_BYTE1(this->DSurface_field_0x18)
-     || (*((uint8_t (__thiscall **)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
+     || (*((uint8_t (**)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
     && aP5[2] == a2[2]
     && aP5[3] == a2[3] )
   {
@@ -546,22 +557,22 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   }
   if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bb20f*/
     return 0; /*0x4bb20f*/
-  v14 = this->DSurface_field_0x1C[0]; /*0x4bb215*/
-  if ( v14 && (*(int (__stdcall **)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb227*/
+  v14 = this-((unsigned int *)(>DSurface_field_0x1C))[0]; /*0x4bb215*/
+  if ( v14 && (*(int (__stdcall **)(int))(*(unsigned int *)v14 + 96))(this-((unsigned int *)(>DSurface_field_0x1C))[0]) == -2005532222 ) /*0x4bb227*/
   {
-    if ( (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4bb240*/
+    if ( (*(int (__stdcall **)(int))(*(unsigned int *)this-((unsigned int *)(>DSurface_field_0x1C))[0] + 108))(this-((unsigned int *)(>DSurface_field_0x1C))[0]) /*0x4bb240*/
       || (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
     {
-      return 0; /*0x4bb245*/
+      return (void *)(0);
     }
-    DSurface_field_0xC = this->DSurface_field_0xC; /*0x4bb250*/
+    DSurface_field_0xC = (void *)(this->DSurface_field_0xC);
     if ( (int)DSurface_field_0xC > 0 ) /*0x4bb254*/
     {
-      DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb256*/
+      DSurface_field_0x0 = (unsigned int)(this->DSurface_field_0x0);
       this->DSurface_field_0xC = 0; /*0x4bb25d*/
-      (*((void (__thiscall **)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb264*/
+      (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb264*/
       ++this->DSurface_field_0xC; /*0x4bb26d*/
-      (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb273*/
+      (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb273*/
       this->DSurface_field_0xC = DSurface_field_0xC; /*0x4bb27a*/
     }
   }
@@ -581,7 +592,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   v23 = aP5[3]; /*0x4bb2cc*/
   v58 = v21; /*0x4bb2cf*/
   v57 = v22; /*0x4bb2d3*/
-  v24 = (int (__thiscall **)(void **, unsigned int *))*v10; /*0x4bb2d7*/
+  v24 = (int (**)(void **, unsigned int *))*v10; /*0x4bb2d7*/
   v59 = v23; /*0x4bb2dd*/
   v25 = (Rect *)v24[30](v10, v53); /*0x4bb2e4*/
   Y = 0; /*0x4bb2eb*/
@@ -634,7 +645,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   v61 = Y; /*0x4bb40c*/
   v60 = X; /*0x4bb414*/
   v62 = Width; /*0x4bb418*/
-  v33 = (int (__thiscall **)(DSurface *, int *))v48->DSurface_field_0x0; /*0x4bb41c*/
+  v33 = (int (**)(DSurface *, int *))v48->DSurface_field_0x0; /*0x4bb41c*/
   v63 = v28; /*0x4bb426*/
   v34 = (int *)v33[30](v48, v68); /*0x4bb439*/
   Rect::Set(&v43, 0, 0, 0, 0); /*0x4bb43b*/
@@ -740,14 +751,14 @@ void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   if ( this->DSurface_field_0x1C[0] && *(int *)(a2 + 8) > 0 && *(int *)(a2 + 12) > 0 ) /*0x4bb64d*/
   {
     if ( !IDA_LOBYTE(stru_820320.Start) /*0x4bb675*/
-      || (*((uint8_t (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 27))(this)
+      || (*((uint8_t (**)(DSurface *))this->DSurface_field_0x0 + 27))(this)
       || (*(int (__stdcall **)(int, int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 52))(
            this->DSurface_field_0x1C[0],
            1) )
     {
       return XSurface::FillRectEx((unsigned int *)aP1, (int *)a2, aP3); /*0x4bb81d*/
     }
-    if ( g_DDraw_Initialized || stru_A8EB00.?[412] ) /*0x4bb690*/
+    if ( g_DDraw_Initialized || *((unsigned int *)((char *)&stru_A8EB00 + 412)) ) /*0x4bb690*/
     {
       v5 = this->DSurface_field_0x1C[0]; /*0x4bb696*/
       if ( !v5 || (*(int (__stdcall **)(int))(*(unsigned int *)v5 + 96))(this->DSurface_field_0x1C[0]) != -2005532222 ) /*0x4bb6a8*/
@@ -760,13 +771,13 @@ void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
         {
           DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb6d3*/
           this->DSurface_field_0xC = 0; /*0x4bb6db*/
-          (*((void (__thiscall **)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb6de*/
+          (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb6de*/
           ++this->DSurface_field_0xC; /*0x4bb6e7*/
-          (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb6ec*/
+          (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb6ec*/
           this->DSurface_field_0xC = DSurface_field_0xC; /*0x4bb6ef*/
         }
   LABEL_15:
-        v8 = (int *)(*((int (__thiscall **)(DSurface *, char *))this->DSurface_field_0x0 + 30))(this, v32); /*0x4bb6f2*/
+        v8 = (int *)(*((int (**)(DSurface *, char *))this->DSurface_field_0x0 + 30))(this, v32); /*0x4bb6f2*/
         v9 = ClipRectIntersection(v31, (int *)aP1, v8, 0, 0); /*0x4bb710*/
         v30[0] = *v9; /*0x4bb719*/
         v30[1] = v9[1]; /*0x4bb722*/
@@ -868,7 +879,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0)
     return 0; /*0x4bb847*/
   if ( (int)aP0->DSurface_field_0x8 <= 0 || (int)aP0->DSurface_field_0xC <= 0 ) /*0x4bb863*/
     return 0; /*0x4bb865*/
-  v8 = (int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v6 + 120))(v6, v38); /*0x4bb87a*/
+  v8 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v6 + 120))(v6, v38); /*0x4bb87a*/
   v9 = ClipRectIntersection(v42, v8, (int *)aP0, 0, 0); /*0x4bb888*/
   v39[0] = *v9; /*0x4bb891*/
   v39[1] = v9[1]; /*0x4bb898*/
@@ -883,7 +894,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0)
   v30 = v12; /*0x4bb908*/
   v34 = 0xFFu >> g_BitMask_Red << g_BitShift_Blue; /*0x4bb917*/
   v13 = CellStruct::Copy((CellStruct *)v39, v38); /*0x4bb91b*/
-  v35 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v6 + 92))(v6, *v13, v13[1]); /*0x4bb938*/
+  v35 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v6 + 92))(v6, *v13, v13[1]); /*0x4bb938*/
   if ( !v35 ) /*0x4bb93c*/
     return 0; /*0x4bb93e*/
   v14 = (int)a4; /*0x4bb94a*/
@@ -903,7 +914,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0)
   for ( i = v19; (int)thisa < v41; thisa = (DSurface *)((char *)thisa + 1) ) /*0x4bb9da*/
   {
     v29 = 0; /*0x4bb9ed*/
-    v20 = (unsigned int)thisa * ((*(int (__thiscall **)(int))(*(unsigned int *)v32 + 116))(v32) / 2); /*0x4bb9fa*/
+    v20 = (unsigned int)thisa * ((*(int (**)(int))(*(unsigned int *)v32 + 116))(v32) / 2); /*0x4bb9fa*/
     if ( v40 > 0 ) /*0x4bba01*/
     {
       v11 = (uint16_t)v11; /*0x4bba0f*/
@@ -931,7 +942,7 @@ void DSurface_FillRectWithFlags(DSurface *aP0)
       v16 = v45; /*0x4bbac9*/
     }
   }
-  (*(void (__thiscall **)(int))(*(unsigned int *)v32 + 96))(v32); /*0x4bbae8*/
+  (*(void (**)(int))(*(unsigned int *)v32 + 96))(v32); /*0x4bbae8*/
   return 1; /*0x4bb849*/
 }
 }
@@ -1218,8 +1229,8 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
           v110 = v18 - v32; /*0x4bbeff*/
       }
       v33 = v95[0]; /*0x4bbf11*/
-      (*(void (__thiscall **)(unsigned int))(*(unsigned int *)v95[0] + 112))(v95[0]); /*0x4bbf19*/
-      v34 = (*(int (__thiscall **)(int, int, int))(*(unsigned int *)v33 + 92))(v33, v96, v97); /*0x4bbf33*/
+      (*(void (**)(unsigned int))(*(unsigned int *)v95[0] + 112))(v95[0]); /*0x4bbf19*/
+      v34 = (*(int (**)(int, int, int))(*(unsigned int *)v33 + 92))(v33, v96, v97); /*0x4bbf33*/
       v104 = v34; /*0x4bbf37*/
       if ( g_ZBufferDescriptor ) /*0x4bbf3b*/
       {
@@ -1237,7 +1248,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
           v39 = v98[0] - v96; /*0x4bbfba*/
           v89 = v98[0] - v96; /*0x4bbfc0*/
           v40 = (int)v106 - v37; /*0x4bbfc4*/
-          v41 = (*(int (__thiscall **)(int))(*(unsigned int *)v33 + 116))(v33); /*0x4bbfc6*/
+          v41 = (*(int (**)(int))(*(unsigned int *)v33 + 116))(v33); /*0x4bbfc6*/
           v87 = v41; /*0x4bbfcb*/
           if ( v38 < 0 ) /*0x4bbfcf*/
           {
@@ -1419,7 +1430,7 @@ Coord * * DSurface::DrawLineModulated(int * a1, int a2, int a3, unsigned int * a
           if ( v39 <= 0 ) /*0x4bc2ba*/
           {
   LABEL_50:
-            (*(void (__thiscall **)(unsigned int))(*(unsigned int *)v95[0] + 96))(v95[0]); /*0x4bc284*/
+            (*(void (**)(unsigned int))(*(unsigned int *)v95[0] + 96))(v95[0]); /*0x4bc284*/
             return 1; /*0x4bc296*/
           }
           v60 = g_ZBufferDescriptor; /*0x4bc2c0*/
@@ -2426,7 +2437,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   v89 = v15; /*0x4bdf7f*/
   if ( v12 < 8 && v14 < 8 && v15 < 8 ) /*0x4bdf8d*/
     return 0; /*0x4bdf8d*/
-  v16 = (int *)(*((int (__thiscall **)(DSurface *, unsigned int *))this->DSurface_field_0x0 + 30))(this, &v94[1]); /*0x4bdf9c*/
+  v16 = (int *)(*((int (**)(DSurface *, unsigned int *))this->DSurface_field_0x0 + 30))(this, &v94[1]); /*0x4bdf9c*/
   v17 = ClipRectIntersection(&v93[4], (int *)a2, v16, 0, 0); /*0x4bdfaf*/
   v18 = *v17; /*0x4bdfb6*/
   v98 = *v17; /*0x4bdfb8*/
@@ -2576,8 +2587,8 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
     else
       v109 = v27 - v37; /*0x4be235*/
   }
-  (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this); /*0x4be24f*/
-  v38 = (*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v95, v96); /*0x4be269*/
+  (*((void (**)(DSurface *))this->DSurface_field_0x0 + 28))(this); /*0x4be24f*/
+  v38 = (*((int (**)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v95, v96); /*0x4be269*/
   v108 = (uint8_t *)v38; /*0x4be26d*/
   if ( !g_ZBufferDescriptor ) /*0x4be274*/
     return 0; /*0x4be274*/
@@ -2596,7 +2607,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   v86 = v97[0] - v95; /*0x4be305*/
   v43 = v97[1] - v96; /*0x4be310*/
   v44 = a7 - v109; /*0x4be31a*/
-  v45 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4be31c*/
+  v45 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4be31c*/
   v80 = v45; /*0x4be321*/
   if ( v43 < 0 ) /*0x4be325*/
   {
@@ -2842,7 +2853,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
       while ( !v56 ); /*0x4be58d*/
     }
   }
-  (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4be599*/
+  (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4be599*/
   return 1; /*0x4be59c*/
 }
 // 0x4BF750
@@ -2912,7 +2923,7 @@ void* DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int
   int v75; // [esp+64h] [ebp+Ch]
 
   v8 = this; /*0x4bf755*/
-  v9 = (int *)(*((int (__thiscall **)(DSurface *, unsigned char *))this->DSurface_field_0x0 + 30))(this, v68); /*0x4bf766*/
+  v9 = (int *)(*((int (**)(DSurface *, unsigned char *))this->DSurface_field_0x0 + 30))(this, v68); /*0x4bf766*/
   v10 = ClipRectIntersection(v69, (int *)aP1, v9, 0, 0); /*0x4bf776*/
   v64 = *v10; /*0x4bf77d*/
   v65 = v10[1]; /*0x4bf784*/
@@ -2935,9 +2946,9 @@ void* DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int
       v61 = v63; /*0x4bf7f6*/
       v63 = v14; /*0x4bf7fa*/
     }
-    if ( (*((int (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 28))(v8) == 2 ) /*0x4bf809*/
+    if ( (*((int (**)(DSurface *))v8->DSurface_field_0x0 + 28))(v8) == 2 ) /*0x4bf809*/
     {
-      v15 = (unsigned short *)(*((int (__thiscall **)(DSurface *, int, int))v8->DSurface_field_0x0 + 23))(v8, v60, v61); /*0x4bf821*/
+      v15 = (unsigned short *)(*((int (**)(DSurface *, int, int))v8->DSurface_field_0x0 + 23))(v8, v60, v61); /*0x4bf821*/
       v70 = v15; /*0x4bf825*/
       if ( v15 ) /*0x4bf829*/
       {
@@ -2977,15 +2988,15 @@ void* DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int
             while ( v71 <= v62 - v60 ); /*0x4bf874*/
           }
   LABEL_17:
-          (*((void (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 24))(v8); /*0x4bf942*/
+          (*((void (**)(DSurface *))v8->DSurface_field_0x0 + 24))(v8); /*0x4bf942*/
           return 1; /*0x4bf953*/
         }
         if ( v60 == v62 ) /*0x4bf960*/
         {
           if ( v61 <= v63 ) /*0x4bf968*/
-            v24 = (*((int (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bf97b*/
+            v24 = (*((int (**)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bf97b*/
           else
-            v24 = -(*((int (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bf972*/
+            v24 = -(*((int (**)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bf972*/
           v72 = (unsigned int *)v24; /*0x4bf982*/
           v25 = abs32(v63 - v61); /*0x4bf98f*/
           if ( v25 < 0 ) /*0x4bf991*/
@@ -3026,7 +3037,7 @@ void* DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int
         v34 = v63 - v61; /*0x4bfaa1*/
         v35 = v62 - v60; /*0x4bfaa6*/
         v58 = v62 - v60; /*0x4bfaaa*/
-        v36 = (*((int (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bfaae*/
+        v36 = (*((int (**)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bfaae*/
         v73 = v36; /*0x4bfab3*/
         if ( v34 < 0 ) /*0x4bfab7*/
           v73 = -v36; /*0x4bfabb*/
@@ -3076,7 +3087,7 @@ void* DSurface::DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int
             v39 += v75; /*0x4bfbd7*/
             if ( ++v38 > v58 ) /*0x4bfbdc*/
             {
-              (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bfbeb*/
+              (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bfbeb*/
               return 1; /*0x4bfbf7*/
             }
           }
@@ -3393,8 +3404,8 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
   v34 = v23 - v33; /*0x4bffcb*/
   LABEL_17:
   v35 = v88[0]; /*0x4bffdf*/
-  (*(void (__thiscall **)(unsigned int))(*(unsigned int *)v88[0] + 112))(v88[0]); /*0x4bffe7*/
-  result = (*(int (__thiscall **)(int, int, int))(*(unsigned int *)v35 + 92))(v35, v89, v90); /*0x4bfff8*/
+  (*(void (**)(unsigned int))(*(unsigned int *)v88[0] + 112))(v88[0]); /*0x4bffe7*/
+  result = (*(int (**)(int, int, int))(*(unsigned int *)v35 + 92))(v35, v89, v90); /*0x4bfff8*/
   v36 = result; /*0x4c0001*/
   v105 = result; /*0x4c0005*/
   if ( !g_ZBufferDescriptor ) /*0x4c000c*/
@@ -3425,7 +3436,7 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
   IDA_LODWORD(v87) = IDA_BYTE2(v88[1]); /*0x4c00fd*/
   v99 = v91[0] - v89; /*0x4c010b*/
   v43 = (int)v97 - v34; /*0x4c011a*/
-  v44 = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)v88[0] + 116))(v88[0]); /*0x4c011c*/
+  v44 = (*(int (**)(unsigned int))(*(unsigned int *)v88[0] + 116))(v88[0]); /*0x4c011c*/
   v81 = v44; /*0x4c0121*/
   if ( v42 < 0 ) /*0x4c0125*/
   {
@@ -3677,7 +3688,7 @@ int DSurface::DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned i
       while ( v88[1] ); /*0x4c0358*/
     }
   }
-  result = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)v88[0] + 96))(v88[0]); /*0x4c0364*/
+  result = (*(int (**)(unsigned int))(*(unsigned int *)v88[0] + 96))(v88[0]); /*0x4c0364*/
   IDA_LOBYTE(result) = 1; /*0x4c036a*/
   return result; /*0x4c0367*/
 }
@@ -3776,7 +3787,7 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
   v76 = 1; /*0x4c0768*/
   v9 = *a2; /*0x4c0770*/
   v10 = a2[1]; /*0x4c0772*/
-  if ( (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this) != 2 ) /*0x4c077d*/
+  if ( (*((int (**)(DSurface *))this->DSurface_field_0x0 + 28))(this) != 2 ) /*0x4c077d*/
     return 0; /*0x4c0788*/
   if ( v7 > v9 ) /*0x4c078d*/
   {
@@ -3801,7 +3812,7 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
   v87 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x4c0801*/
   if ( v8 > v10 ) /*0x4c0805*/
     v87 = -*(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x4c080b*/
-  v88 = (int *)(*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v7, v8); /*0x4c081c*/
+  v88 = (int *)(*((int (**)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v7, v8); /*0x4c081c*/
   if ( v88 )
   {
     if ( aP6 )
@@ -3847,9 +3858,9 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
       if ( v7 == v9 )
       {
         if ( v8 <= v10 ) /*0x4c08cb*/
-          v24 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c08dd*/
+          v24 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c08dd*/
         else
-          v24 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c08d4*/
+          v24 = -(*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c08d4*/
         v25 = abs32(v10 - v8); /*0x4c08e6*/
         if ( v25 >= 0 )
         {
@@ -3889,7 +3900,7 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
       }
       v31 = v9 - v7; /*0x4c096f*/
       v32 = v10 - v8; /*0x4c0971*/
-      v33 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0975*/
+      v33 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0975*/
       v79 = v33; /*0x4c097a*/
       if ( v32 < 0 ) /*0x4c097e*/
         v79 = -v33; /*0x4c0982*/
@@ -4034,9 +4045,9 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
       if ( v7 == v9 )
       {
         if ( v8 <= v10 ) /*0x4c0bbe*/
-          v54 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0bd0*/
+          v54 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0bd0*/
         else
-          v54 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0bc7*/
+          v54 = -(*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0bc7*/
         v55 = abs32(v10 - v8); /*0x4c0bd9*/
         if ( v55 >= 0 )
         {
@@ -4076,7 +4087,7 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
       }
       v61 = v9 - v7; /*0x4c0c62*/
       v62 = v10 - v8; /*0x4c0c64*/
-      v63 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0c68*/
+      v63 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0c68*/
       v80 = v63; /*0x4c0c6d*/
       if ( v62 < 0 ) /*0x4c0c71*/
         v80 = -v63; /*0x4c0c75*/
@@ -4178,7 +4189,7 @@ int DSurface::DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6
       }
     }
   LABEL_155:
-    (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4c0e17*/
+    (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4c0e17*/
   }
   return a6; /*0x4c077f*/
 }
@@ -4253,9 +4264,9 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
   int v73; // [esp+58h] [ebp+10h]
   int v74; // [esp+58h] [ebp+10h]
 
-  if ( (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this) != 2 ) /*0x4c0e45*/
+  if ( (*((int (**)(DSurface *))this->DSurface_field_0x0 + 28))(this) != 2 ) /*0x4c0e45*/
     return 0; /*0x4c0e45*/
-  v6 = (int *)(*((int (__thiscall **)(DSurface *, unsigned int *))this->DSurface_field_0x0 + 30))(this, v62); /*0x4c0e55*/
+  v6 = (int *)(*((int (**)(DSurface *, unsigned int *))this->DSurface_field_0x0 + 30))(this, v62); /*0x4c0e55*/
   v67 = *v6; /*0x4c0e5a*/
   v68 = v6[1]; /*0x4c0e61*/
   v69 = v6[2]; /*0x4c0e68*/
@@ -4292,7 +4303,7 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
   v71 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x4c0f10*/
   if ( v64 > v66 ) /*0x4c0f14*/
     v71 = -*(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x4c0f18*/
-  v72 = (int16_t *)(*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v63, v64); /*0x4c0f2c*/
+  v72 = (int16_t *)(*((int (**)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v63, v64); /*0x4c0f2c*/
   if ( !v72 ) /*0x4c0f30*/
     return 0; /*0x4c1428*/
   if ( aP4 ) /*0x4c0f45*/
@@ -4329,9 +4340,9 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
     else if ( v63 == v65 ) /*0x4c0fcf*/
     {
       if ( v64 <= v66 ) /*0x4c0fd7*/
-        v17 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fef*/
+        v17 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fef*/
       else
-        v17 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fe3*/
+        v17 = -(*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fe3*/
       v18 = abs32(v66 - v64); /*0x4c0ffe*/
       if ( v18 >= 0 ) /*0x4c1000*/
       {
@@ -4365,7 +4376,7 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
     {
       v22 = v65 - v63; /*0x4c1063*/
       v23 = v66 - v64; /*0x4c1067*/
-      v24 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1069*/
+      v24 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1069*/
       v73 = v24; /*0x4c106e*/
       if ( v23 < 0 ) /*0x4c1072*/
         v73 = -v24; /*0x4c1076*/
@@ -4487,9 +4498,9 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
   else if ( v63 == v65 ) /*0x4c123e*/
   {
     if ( v64 <= v66 ) /*0x4c1246*/
-      v38 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c125e*/
+      v38 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c125e*/
     else
-      v38 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1252*/
+      v38 = -(*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1252*/
     v39 = abs32(v66 - v64); /*0x4c126d*/
     if ( v39 >= 0 ) /*0x4c126f*/
     {
@@ -4523,7 +4534,7 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
   {
     v43 = v65 - v63; /*0x4c12cf*/
     v44 = v66 - v64; /*0x4c12d5*/
-    v45 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c12d9*/
+    v45 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c12d9*/
     v46 = v45; /*0x4c12dc*/
     v59 = v45; /*0x4c12e0*/
     if ( v44 < 0 ) /*0x4c12e4*/
@@ -4613,7 +4624,7 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a1, unsigned int * a2, 
       }
     }
   }
-  (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4c1386*/
+  (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4c1386*/
   return 1; /*0x4c0fba*/
 }
 // 0x4C1AC0
@@ -4664,7 +4675,7 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
   int result; // eax
   int j; // ebp
   int v16; // ecx
-  void (__thiscall ***v17)(unsigned int, int); // ecx
+  void (***v17)(unsigned int, int); // ecx
   int DSurface_field_0x28; // eax
   int v19; // ecx
   int v20; // eax
@@ -4677,8 +4688,8 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
   if ( g_LoadScreenFlag == 1 ) /*0x5d1e83*/
   {
     g_LoadScreenFlag = 0; /*0x5d1e89*/
-    (*(void (__thiscall **)(int *, unsigned int))(*aP1 + 24))(aP1, 0); /*0x5d1e96*/
-    v3 = (int *)(*(int (__thiscall **)(DSurface *, unsigned char *))(DSurface_Alternate->DSurface_field_0x0 + 120))( /*0x5d1ea6*/
+    (*(void (**)(int *, unsigned int))(*aP1 + 24))(aP1, 0); /*0x5d1e96*/
+    v3 = (int *)(*(int (**)(DSurface *, unsigned char *))(DSurface_Alternate->DSurface_field_0x0 + 120))( /*0x5d1ea6*/
                   DSurface_Alternate,
                   v25);
     v21 = *v3; /*0x5d1eab*/
@@ -4687,10 +4698,10 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
     v4 = v3[3]; /*0x5d1ebf*/
     v5 = *aP1; /*0x5d1ec2*/
     v24 = v4; /*0x5d1ec4*/
-    v6 = (*(int (__thiscall **)(int *))(v5 + 124))(aP1); /*0x5d1ec8*/
+    v6 = (*(int (**)(int *))(v5 + 124))(aP1); /*0x5d1ec8*/
     v7 = *aP1; /*0x5d1ed6*/
     v21 = (v6 - v23) / 2; /*0x5d1eda*/
-    v8 = (*(int (__thiscall **)(int *))(v7 + 128))(aP1); /*0x5d1ede*/
+    v8 = (*(int (**)(int *))(v7 + 128))(aP1); /*0x5d1ede*/
     v9 = *aP1; /*0x5d1ee8*/
     v22 = (v8 - v24) / 2; /*0x5d1ef9*/
     v10 = (*(int (__stdcall **)(unsigned char *, DSurface *, int *, unsigned int, int))(DSurface_Alternate->DSurface_field_0x0 + 120))( /*0x5d1f0c*/
@@ -4699,24 +4710,24 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
             &v21,
             0,
             1);
-    (*(void (__thiscall **)(int *, int))(v9 + 8))(aP1, v10); /*0x5d1f12*/
+    (*(void (**)(int *, int))(v9 + 8))(aP1, v10); /*0x5d1f12*/
     for ( i = 0; i < this->DSurface_field_0x28; ++i ) /*0x5d1f1c*/
     {
       v12 = *(unsigned int *)(this->DSurface_field_0x1C + 4 * i); /*0x5d1f24*/
-      (*(void (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)v12 + 20))(v12, aP1, 0); /*0x5d1f29*/
+      (*(void (**)(int, int *, unsigned int))(*(unsigned int *)v12 + 20))(v12, aP1, 0); /*0x5d1f29*/
     }
     this->DSurface_field_0x4 = 0; /*0x5d1f38*/
-    v13 = (int *)(*(int (__thiscall **)(int *, unsigned char *))(*aP1 + 120))(aP1, v25); /*0x5d1f44*/
+    v13 = (int *)(*(int (**)(int *, unsigned char *))(*aP1 + 120))(aP1, v25); /*0x5d1f44*/
     Surface::CopyRect(v13); /*0x5d1f4a*/
-    (*(void (__thiscall **)(DSurface *, int *))(this->DSurface_field_0x0 + 4))(this, aP1); /*0x5d1f54*/
+    (*(void (**)(DSurface *, int *))(this->DSurface_field_0x0 + 4))(this, aP1); /*0x5d1f54*/
   }
   result = this->DSurface_field_0x28; /*0x5d1f57*/
   for ( j = 0; j < result; ++j ) /*0x5d1f5e*/
   {
     v16 = *(unsigned int *)(this->DSurface_field_0x1C + 4 * j); /*0x5d1f63*/
-    if ( (*(uint8_t (__thiscall **)(int, int *, int *))(*(unsigned int *)v16 + 16))(v16, aP1, &v21) == 1 ) /*0x5d1f73*/
+    if ( (*(uint8_t (**)(int, int *, int *))(*(unsigned int *)v16 + 16))(v16, aP1, &v21) == 1 ) /*0x5d1f73*/
     {
-      v17 = *(void (__thiscall ****)(unsigned int, int))(this->DSurface_field_0x1C + 4 * j); /*0x5d1f78*/
+      v17 = *(void (****)(unsigned int, int))(this->DSurface_field_0x1C + 4 * j); /*0x5d1f78*/
       if ( v17 ) /*0x5d1f7d*/
         (**v17)(v17, 1); /*0x5d1f83*/
       DSurface_field_0x28 = this->DSurface_field_0x28; /*0x5d1f85*/
@@ -4765,11 +4776,11 @@ int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned 
 
   v4 = a0; /*0x621b85*/
   v5 = aP1; /*0x621b87*/
-  result = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x621b9c*/
+  result = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x621b9c*/
   v25 = result; /*0x621ba1*/
   if ( result ) /*0x621ba5*/
   {
-    v7 = (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 116))(v5); /*0x621bb2*/
+    v7 = (*(int (**)(int))(*(unsigned int *)v5 + 116))(v5); /*0x621bb2*/
     v8 = v4[1]; /*0x621bb5*/
     v23 = v8; /*0x621bc2*/
     v9 = v7 / 2; /*0x621bc6*/
@@ -4825,7 +4836,7 @@ int DSurface::FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned 
       }
       while ( v8 < v4[3] + v4[1] ); /*0x621d11*/
     }
-    return (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 96))(v5); /*0x621d1c*/
+    return (*(int (**)(int))(*(unsigned int *)v5 + 96))(v5); /*0x621d1c*/
   }
   return result; /*0x621d21*/
 }
@@ -5193,15 +5204,15 @@ long long DSurface::ConstructFromHandle()
 // 0x4BB080
 int DSurface::BlitPart(int a2, int a3, int a4, int a5, int a6)
 {
-  int (__thiscall **DSurface_field_0x0)(DSurface *, int); // ebx
+  int (**DSurface_field_0x0)(DSurface *, int); // ebx
   int v8; // eax
   int v9; // eax
   unsigned char v11[28]; // [esp+Ch] [ebp-20h] BYREF
   unsigned char v12[4]; // [esp+28h] [ebp-4h] BYREF
 
-  DSurface_field_0x0 = (int (__thiscall **)(DSurface *, int))this->DSurface_field_0x0; /*0x4bb098*/
-  v8 = (*(int (__thiscall **)(int, unsigned char *, int, int, int))(*(unsigned int *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
-  v9 = (*((int (__thiscall **)(DSurface *, unsigned char *, int, int, int))this->DSurface_field_0x0 + 30))( /*0x4bb0b9*/
+  DSurface_field_0x0 = (int (**)(DSurface *, int))this->DSurface_field_0x0; /*0x4bb098*/
+  v8 = (*(int (**)(int, unsigned char *, int, int, int))(*(unsigned int *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
+  v9 = (*((int (**)(DSurface *, unsigned char *, int, int, int))this->DSurface_field_0x0 + 30))( /*0x4bb0b9*/
          this,
          v12,
          a5,
@@ -5238,7 +5249,7 @@ int DSurface::DrawMarker(AbstractClass * aP1, ObjectClass * aP2)
   v7[0] = aP1 - 3; /*0x63d446*/
   v7[1] = aP2 - 3; /*0x63d458*/
   v7[3] = 6; /*0x63d45c*/
-  return (*(int (__thiscall **)(AudioStream *, unsigned int *, unsigned int *, DSurface *))(*(unsigned int *)DSurface_Composite->__pad_0 /*0x63d46a*/
+  return (*(int (**)(AudioStream *, unsigned int *, unsigned int *, DSurface *))(*(unsigned int *)DSurface_Composite->__pad_0 /*0x63d46a*/
                                                                               + 84))(
            DSurface_Composite,
            v8,

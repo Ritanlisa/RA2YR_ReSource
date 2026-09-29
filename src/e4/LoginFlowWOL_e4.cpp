@@ -14,6 +14,9 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/AbstractType_e4.hpp"
+#include "e4/classes/MPBattleClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x786EF0
 namespace gamemd {
@@ -114,7 +117,7 @@ void sub_72BCF0()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1436] ) /*0x72bd4c*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1436])( /*0x72bd52*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1436])( /*0x72bd52*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1436],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1436] = 0; /*0x72bd54*/
@@ -168,7 +171,7 @@ void sub_72C650()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1376] ) /*0x72c6ac*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1376])( /*0x72c6b2*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1376])( /*0x72c6b2*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1376],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1376] = 0; /*0x72c6b4*/
@@ -193,8 +196,8 @@ int sub_786390(void * a1)
     return 1; /*0x78639f*/
   byte_B77E75 = 1; /*0x7863ad*/
   LoadNetworkShareStrings(); /*0x7863b4*/
-  Game::ResetFlags(); /*0x7863b9*/
-  Network::InitPlayerSlots(); /*0x7863be*/
+  this->Game::ResetFlags(); /*0x7863b9*/
+  this->Network::InitPlayerSlots(); /*0x7863be*/
   *(unsigned int *)Data = 0; /*0x7863c8*/
   if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x7863d2*/
   {

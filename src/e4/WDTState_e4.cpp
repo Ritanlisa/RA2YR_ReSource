@@ -19,7 +19,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   ComPtr *v8; // esi
   int v9; // ebx
   int i; // esi
-  void (__thiscall ***v11)(unsigned int, int); // ecx
+  void (***v11)(unsigned int, int); // ecx
   int v12; // eax
   int v14; // [esp+10h] [ebp-4h]
 
@@ -59,7 +59,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
           v14 = a2; /*0x76bab2*/
           do /*0x76bac9*/
           {
-            WDTState_4::Constructor(v7++); /*0x76bab8*/
+            WDTState_4::Constructor((unsigned int)(v7)++); /*0x76bab8*/
             --v14; /*0x76bac5*/
           }
           while ( v14 ); /*0x76bac9*/
@@ -78,10 +78,10 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
       if ( a2 >= this->Capacity ) /*0x76bb11*/
         m_8 = this->Capacity; /*0x76bb13*/
       for ( i = 0; i < m_8; ++i ) /*0x76bb19*/
-        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->q004 + 8 * i + 4)); /*0x76bb26*/
+        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->q004 + 8 * i + 4)); /*0x76bb26*/
       if ( this->IsAllocated ) /*0x76bb30*/
       {
-        v11 = *(void (__thiscall ****)(unsigned int, int))&this->q004; /*0x76bb37*/
+        v11 = *(void (****)(unsigned int, int))&this->q004; /*0x76bb37*/
         if ( v11 ) /*0x76bb3c*/
           (**v11)(v11, 3); /*0x76bb42*/
         *(unsigned int *)&this->q004 = 0; /*0x76bb44*/
@@ -94,7 +94,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76bb69*/
+    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76bb69*/
   }
   v12 = this->Capacity; /*0x76bb6c*/
   if ( v12 < this->q010 ) /*0x76bb74*/
@@ -106,10 +106,10 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 namespace gamemd {
 int WDTState_4::ddtor()
 {
-  int (__thiscall ***v2)(unsigned int, int); // ecx
+  int (***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (__thiscall ****)(unsigned int, int))&this->q004; /*0x76b716*/
+  v2 = *(int (****)(unsigned int, int))&this->q004; /*0x76b716*/
   this->q010 = 0; /*0x76b719*/
   if ( v2 && this->IsAllocated ) /*0x76b720*/
   {
@@ -157,16 +157,16 @@ int WDTState_4::Read(int a2)
 namespace gamemd {
 DynamicVector * WDTState_4::QueryInterface(char a2)
 {
-  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (***v3)(unsigned int, int); // ecx
 
-  v3 = (unsigned int)(*(void (__thiscall ****)(unsigned int, int))&this->m_1[3]);
+  v3 = (unsigned int)(*(void (****)(unsigned int, int))&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bc16*/
   if ( v3 && this->IsAllocated ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
     *(unsigned int *)&this->q004 = 0; /*0x76bc31*/
   }
-  this->IsAllocated = 0; /*0x76bc3c*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->Capacity = 0; /*0x76bc42*/
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
     RA2_OPDEL(); /*0x76bc4c*/

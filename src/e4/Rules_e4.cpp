@@ -26,11 +26,15 @@
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
 
 // 0x6691E0
 namespace gamemd {
 int Rules::ReadMiscINI()
 {
+    unsigned int v21 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
   int result; // eax
   int Int_Overwrite; // eax
   int FlashFrameTime; // ebx
@@ -134,33 +138,33 @@ int Rules::ReadMiscINI()
   void **v267; // [esp+B8h] [ebp-1Ch] BYREF
   uint8_t ***v273; // [esp+D8h] [ebp+4h]
 
-  result = (int)(INIClass::BinarySearchSection((int)v273, (INIClass *)&stru_830620[39048]));
+  result = (int)(INIClass::BinarySearchSection((int)v273, (INIClass *)&((unsigned int *)(stru_830620))[39048]));
   if ( result )
   {
     this->DetailMinFrameRateNormal = INIClass::ReadInt_Overwrite(
                                        (int)v273,
-                                       (uint8_t *)&stru_830620[39048],
-                                       (CCINIClass *)&stru_830620[42448],
+                                       (uint8_t *)&((unsigned int *)(stru_830620))[39048],
+                                       (CCINIClass *)&((unsigned int *)(stru_830620))[42448],
                                        (INIClass *)this->DetailMinFrameRateNormal);
     this->DetailMinFrameRateMovie = INIClass::ReadInt_Overwrite(
                                       (int)v273,
-                                      (uint8_t *)&stru_830620[39048],
-                                      (CCINIClass *)&stru_830620[42424],
+                                      (uint8_t *)&((unsigned int *)(stru_830620))[39048],
+                                      (CCINIClass *)&((unsigned int *)(stru_830620))[42424],
                                       (INIClass *)this->DetailMinFrameRateMovie);
     this->DetailBufferZoneWidth = INIClass::ReadInt_Overwrite(
                                     (int)v273,
-                                    (uint8_t *)&stru_830620[39048],
-                                    (CCINIClass *)&stru_830620[42400],
+                                    (uint8_t *)&((unsigned int *)(stru_830620))[39048],
+                                    (CCINIClass *)&((unsigned int *)(stru_830620))[42400],
                                     (INIClass *)this->DetailBufferZoneWidth);
     this->PoseDir = INIClass::ReadInt_Overwrite(
                       (int)v273,
-                      (uint8_t *)&stru_830620[39048],
-                      (CCINIClass *)&stru_830620[42392],
+                      (uint8_t *)&((unsigned int *)(stru_830620))[39048],
+                      (CCINIClass *)&((unsigned int *)(stru_830620))[42392],
                       (INIClass *)this->PoseDir);
     Int_Overwrite = INIClass::ReadInt_Overwrite(
                       (int)v273,
-                      (uint8_t *)&stru_830620[39048],
-                      (CCINIClass *)&stru_830620[42380],
+                      (uint8_t *)&((unsigned int *)(stru_830620))[39048],
+                      (CCINIClass *)&((unsigned int *)(stru_830620))[42380],
                       (INIClass *)(this->DeployDir >> 5));
   unsigned char v260[12]; // [esp-4h] [ebp-D8h]
     *(unsigned int *)&v260[8] = 128;
@@ -168,9 +172,9 @@ int Rules::ReadMiscINI()
     FlashFrameTime = this->FlashFrameTime;
     if ( INIClass::GetString(
            v273,
-           (INIClass *)&stru_830620[39048],
-           (uint8_t *)&stru_830620[42368],
-           (INIClass *)&stru_87C374[56304],
+           (INIClass *)&((unsigned int *)(stru_830620))[39048],
+           (uint8_t *)&((unsigned int *)(stru_830620))[42368],
+           (INIClass *)&((unsigned int *)(stru_87C374))[56304],
            (INIClass *)aP1.headNode,
            *(int *)&v260[8]) )
     {
@@ -183,15 +187,15 @@ int Rules::ReadMiscINI()
     this->FlashFrameTime = (int)v5;
     this->RadarCombatFlashTime = INIClass::ReadInt_Overwrite(
                                    (int)v273,
-                                   (uint8_t *)&stru_830620[39048],
-                                   (CCINIClass *)&stru_830620[42344],
+                                   (uint8_t *)&((unsigned int *)(stru_830620))[39048],
+                                   (CCINIClass *)&((unsigned int *)(stru_830620))[42344],
                                    (INIClass *)this->RadarCombatFlashTime);
     CreateInfantrySound = this->CreateInfantrySound;
     if ( INIClass::GetString(
            v273,
-           (INIClass *)&stru_830620[39048],
-           (uint8_t *)&stru_830620[42332],
-           (INIClass *)&stru_87C374[56304],
+           (INIClass *)&((unsigned int *)(stru_830620))[39048],
+           (uint8_t *)&((unsigned int *)(stru_830620))[42332],
+           (INIClass *)&((unsigned int *)(stru_87C374))[56304],
            (INIClass *)aP1.headNode,
            128) )
     {
@@ -206,13 +210,22 @@ int Rules::ReadMiscINI()
     ImpactLandSound = this->ImpactLandSound;
     if ( !INIClass::GetString(
             v273,
-            (INIClass *)&stru_830620[39048],
-            (uint8_t *)&stru_830620[42320],
-            (INIClass *)&stru_87C374[56304],
+            (INIClass *)&((unsigned int *)(stru_830620))[39048],
+            (uint8_t *)&((unsigned int *)(stru_830620))[42320],
+            (INIClass *)&((unsigned int *)(stru_87C374))[56304],
             (INIClass *)aP1.headNode,
             *(int *)&v260[8])
       || (Index = VocClass::FindIndex(aP1.headNode), Index == -1) )
     {
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
       Index = ImpactLandSound;
     }
     *(unsigned int *)&v260[8] = 128;
@@ -220,23 +233,32 @@ int Rules::ReadMiscINI()
     ChronoInSound = this->ChronoInSound;
     if ( !INIClass::GetString(
             v273,
-            (INIClass *)&stru_830620[39048],
-            (uint8_t *)&stru_830620[42300],
-            (INIClass *)&stru_87C374[56304],
+            (INIClass *)&((unsigned int *)(stru_830620))[39048],
+            (uint8_t *)&((unsigned int *)(stru_830620))[42300],
+            (INIClass *)&((unsigned int *)(stru_87C374))[56304],
             (INIClass *)aP1.headNode,
             *(int *)&v260[8])
   int v11; // eax
       || (v11 = VocClass::FindIndex(aP1.headNode), v11 == -1) )
     {
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
       v11 = ChronoInSound;
     }
     this->ChronoInSound = v11;
     ChronoOutSound = this->ChronoOutSound;
     if ( !INIClass::GetString(
             v273,
-            (INIClass *)&stru_830620[39048],
-            (uint8_t *)&stru_830620[42284],
-            (INIClass *)&stru_87C374[56304],
+            (INIClass *)&((unsigned int *)(stru_830620))[39048],
+            (uint8_t *)&((unsigned int *)(stru_830620))[42284],
+            (INIClass *)&((unsigned int *)(stru_87C374))[56304],
             (INIClass *)aP1.headNode,
             128)
   int v13; // eax
@@ -249,14 +271,23 @@ int Rules::ReadMiscINI()
     SpySatActivationSound = this->SpySatActivationSound;
     if ( !INIClass::GetString(
             v273,
-            (INIClass *)&stru_830620[39048],
-            (uint8_t *)&stru_830620[42272],
-            (INIClass *)&stru_87C374[56304],
+            (INIClass *)&((unsigned int *)(stru_830620))[39048],
+            (uint8_t *)&((unsigned int *)(stru_830620))[42272],
+            (INIClass *)&((unsigned int *)(stru_87C374))[56304],
             (INIClass *)aP1.headNode,
             *(int *)&v260[8])
   int v15; // eax
       || (v15 = VocClass::FindIndex(aP1.headNode), v15 == -1) )
     {
+    unsigned int v17 = 0;  /* G37 hoist */
+    unsigned int v17 = 0;  /* G37 hoist */
+    unsigned int v17 = 0;  /* G37 hoist */
+    unsigned int v17 = 0;  /* G37 hoist */
+    unsigned int v17 = 0;  /* G37 hoist */
+    unsigned int v17 = 0;  /* G37 hoist */
+    unsigned int v17 = 0;  /* G37 hoist */
+    unsigned int v17 = 0;  /* G37 hoist */
+    unsigned int v17 = 0;  /* G37 hoist */
       v15 = SpySatActivationSound;
     }
     *(unsigned int *)&v260[8] = 128;
@@ -264,23 +295,28 @@ int Rules::ReadMiscINI()
     SpySatDeactivationSound = this->SpySatDeactivationSound;
     if ( !INIClass::GetString(
             v273,
-            (INIClass *)&stru_830620[39048],
-            (uint8_t *)&stru_830620[42256],
-            (INIClass *)&stru_87C374[56304],
+            (INIClass *)&((unsigned int *)(stru_830620))[39048],
+            (uint8_t *)&((unsigned int *)(stru_830620))[42256],
+            (INIClass *)&((unsigned int *)(stru_87C374))[56304],
             (INIClass *)aP1.headNode,
             *(int *)&v260[8])
   int v17; // eax
       || (v17 = VocClass::FindIndex(aP1.headNode), v17 == -1) )
     {
+    unsigned int v19 = 0;  /* G37 hoist */
+    unsigned int v19 = 0;  /* G37 hoist */
+    unsigned int v19 = 0;  /* G37 hoist */
+    unsigned int v19 = 0;  /* G37 hoist */
+    unsigned int v19 = 0;  /* G37 hoist */
       v17 = SpySatDeactivationSound;
     }
     this->SpySatDeactivationSound = v17;
     UpgradeVeteranSound = this->UpgradeVeteranSound;
     if ( !INIClass::GetString(
             v273,
-            (INIClass *)&stru_830620[39048],
-            (uint8_t *)&stru_830620[42240],
-            (INIClass *)&stru_87C374[56304],
+            (INIClass *)&((unsigned int *)(stru_830620))[39048],
+            (uint8_t *)&((unsigned int *)(stru_830620))[42240],
+            (INIClass *)&((unsigned int *)(stru_87C374))[56304],
             (INIClass *)aP1.headNode,
             128)
   int v19; // eax
@@ -293,8 +329,8 @@ int Rules::ReadMiscINI()
     UpgradeEliteSound = this->UpgradeEliteSound;
     if ( !INIClass::GetString(
             v273,
-            (INIClass *)&stru_830620[39048],
-            (uint8_t *)&stru_830620[42224],
+            (INIClass *)&((unsigned int *)(stru_830620))[39048],
+            (uint8_t *)&((unsigned int *)(stru_830620))[42224],
             (INIClass *)&stru_87C374[56304],
             (INIClass *)aP1.headNode,
             *(int *)&v260[8])
@@ -2060,7 +2096,7 @@ int Rules::ReadMiscINI()
                                    (uint8_t *)&stru_830620[39048],
                                    (CCINIClass *)&stru_830620[40084],
                                    (INIClass *)this->IceSolidifyFrameTime);
-    (*(void (__thiscall **)(int *))(this->VeteranROF[0] + 12))(this->VeteranROF);
+    (*(void (**)(int *))(this->VeteranROF[0] + 12))(this->VeteranROF);
     DynamicVectorClass_flat::Copy(&v256, (DynamicVector *)this->VeteranROF);
     ebp360 = GetINIClassIntList(
                (int)&v264,
@@ -3313,7 +3349,7 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
 
   if ( this == (Rules *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
-  (*(void (__thiscall **)(Rules *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67a57e*/
+  (*(void (**)(Rules *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67a57e*/
   v3 = aP1[2]; /*0x67a581*/
   *(unsigned int *)&this->u32_8 = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/

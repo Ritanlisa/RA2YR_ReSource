@@ -138,7 +138,7 @@ struct WarheadTypeClass {
     bool Parasite;  // 0x159
     bool Temporal;  // 0x15A
     bool IsLocomotor;  // 0x15B
-    char Locomotor[4];  // 0x15C
+    unsigned int Locomotor;  // 0x15C
     unsigned char q160;  // 0x160
     unsigned int q162;  // 0x162
     unsigned int q164;  // 0x164
@@ -179,10 +179,10 @@ struct WarheadTypeClass {
     unsigned int q1B0;  // 0x1B0
     unsigned int q1B1;  // 0x1B1
     unsigned char u8_1B4;  // 0x1B4
-    unsigned int q1B5;  // 0x1B5
+    void* ;  // 0x1B5
     unsigned int u32_1B8;  // 0x1B8
     unsigned char q1B9;  // 0x1B9
-    unsigned int q1BC;  // 0x1BC
+    void* ;  // 0x1BC
     unsigned char q1C0;  // 0x1C0
     unsigned int q1C4;  // 0x1C4
     unsigned int q1C8;  // 0x1C8
@@ -210,6 +210,18 @@ struct WarheadTypeClass {
     unsigned int q0FC;
     unsigned int q104;
     unsigned int u32_1A8;
+    unsigned int WarheadTypeClass_field_0x100;
+    unsigned int WarheadTypeClass_field_0x114;
+    unsigned int WarheadTypeClass_field_0x120;
+    unsigned int WarheadTypeClass_field_0x17C;
+    unsigned int WarheadTypeClass_field_0x180;
+    unsigned int WarheadTypeClass_field_0x184;
+    unsigned int WarheadTypeClass_field_0x188;
+    unsigned int WarheadTypeClass_field_0xF8;
+    unsigned int __pad_1A0;
+    unsigned int __pad_44;
+    unsigned int __pad_FC;
+    unsigned int __pad_104;
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, unsigned int * a3);
     AbstractClass * * parseVerses();
@@ -220,12 +232,12 @@ struct WarheadTypeClass {
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);
     char AddRef(int a2);
-    int Construct(ObjectClass * aP1);
-    int FindOrCreate();
+    int Construct(ObjectClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int FindOrCreate(void *a1 = 0);
     int GetDamage(int a2, int a3);
     int GetObjectSize();
     int GetTypeIdentifier();
-    int Init(unsigned int * a2);
+    int Init(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
     int LoadType();
     int SaveLoad_Prefix(unsigned int * a1, int a2);
     int SaveToINI(int a2);
@@ -234,7 +246,7 @@ struct WarheadTypeClass {
     void * loadWarheadINI(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3);
     void * parseModifiers(char a2);
     void GetClassIdentifier();
-    void* ProcessPower(int * a2);
+    void* ProcessPower(int * a2, void *a1 = 0);
 };
 
 } // namespace gamemd

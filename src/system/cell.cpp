@@ -14,7 +14,7 @@
 #include <cmath>
 #include <cstring>
 #include <limits>
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace gamemd
 {
@@ -204,16 +204,16 @@ int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds, vo
     if ( v5 ) /*0x48e5b6*/
     {
       IDA_BYTE1(v5) |= 0x80u; /*0x48e5b8*/
-      *a3 = v5; /*0x48e5be*/
-      if ( (a2 & 0x40) != 0 && (this->vtable3 & 0x10) != 0 ) /*0x48e5c6*/
+      *(unsigned int *)(a3) = v5; /*0x48e5be*/
+      if ( ((unsigned int)(a2)& 0x40) != 0 && (this->vtable3 & 0x10) != 0 ) /*0x48e5c6*/
       {
         IDA_BYTE1(v5) |= 0x40u; /*0x48e5c8*/
-        *a3 = v5; /*0x48e5cb*/
+        *(unsigned int *)(a3) = v5; /*0x48e5cb*/
       }
     }
     else
     {
-      *a3 = 0; /*0x48e5cf*/
+      *(unsigned int *)(a3) = 0; /*0x48e5cf*/
     }
   }
   v6 = this->attached1; /*0x48e5d5*/
@@ -344,7 +344,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v16 = (IDA_SHIWORD(v19) << 8) + 128,
           v17 = v8,
           !Game::Stub3((int)&v15))
-      || dword_A8B238[0] )
+      || ((unsigned int *)(dword_A8B238))[0] )
     {
       (*(void (__thiscall **)(unsigned int *, void *))(*content + 408))(content, dword_A83D4C); /*0x47e9dc*/
     }
@@ -366,9 +366,9 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
         else
         {
           v15 = (int)(content[39]);
-          v11 = *content; /*0x47ea62*/
-          v16 = content[40]; /*0x47ea68*/
-          v17 = content[41]; /*0x47ea74*/
+          v11 = (int)(*content);
+          v16 = (int)(content[40]);
+          v17 = (int)(content[41]);
         }
         IDA_LOBYTE(v3) = (*(int (__thiscall **)(unsigned int *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
       }
@@ -394,7 +394,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     v4 = *(unsigned int **)(this + 232); /*0x47eaab*/
   else
     v4 = *(unsigned int **)(this + 228); /*0x47eab3*/
-  if ( v4 == content ) /*0x47eabb*/
+  if ( v4 == (unsigned int *)(content) ) /*0x47eabb*/
   {
     if ( on_bridge ) /*0x47eabf*/
       *(unsigned int *)(this + 232) = content[12]; /*0x47eac4*/
@@ -409,7 +409,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     while ( 1 ) /*0x47eadb*/
     {
       v5 = (unsigned int *)v4[12]; /*0x47eadb*/
-      if ( v5 == content ) /*0x47eae0*/
+      if ( v5 == (unsigned int *)(content) ) /*0x47eae0*/
         break; /*0x47eae0*/
       v4 = (unsigned int *)v4[12]; /*0x47eae2*/
       if ( !v5 ) /*0x47eae6*/
@@ -434,9 +434,9 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     else
     {
       v9 = (int)(content[39]);
-      v8 = *content; /*0x47eb72*/
-      v10 = content[40]; /*0x47eb77*/
-      v11 = content[41]; /*0x47eb85*/
+      v8 = (int)(*content);
+      v10 = (int)(content[40]);
+      v11 = (int)(content[41]);
     }
     (*(void (__thiscall **)(unsigned int *, int *))(v8 + 244))(content, &v9); /*0x47eb54*/
   }
@@ -509,7 +509,7 @@ void CellClass::SetWallOwner(void * a1)
   int v5; // esi
   int v6; // eax
 
-  result = *(unsigned int *)(a1 + 68); /*0x47d211*/
+  result = *(unsigned int *)((unsigned int)(a1)+ 68); /*0x47d211*/
   a1 = a1; /*0x47d214*/
   if ( result != -1 ) /*0x47d21b*/
   {
@@ -534,7 +534,7 @@ void CellClass::SetWallOwner(void * a1)
         result = g_BuildingProductionState; /*0x47d28f*/
         a1 = a1; /*0x47d294*/
       }
-      *(unsigned int *)(a1 + 80) = v2; /*0x47d29e*/
+      *(unsigned int *)((unsigned int)(a1)+ 80) = v2; /*0x47d29e*/
     }
   }
   return result; /*0x47d2a5*/

@@ -37,7 +37,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5547fd*/
     || (IDA_BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
          &g_MissionQueueFrame.random[129],
          g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
          0) )
@@ -73,7 +73,7 @@ int LightSourceClass::Constructor()
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5548b6*/
     || (IDA_BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
          &g_MissionQueueFrame.random[129],
          g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
          0) )
@@ -165,7 +165,7 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   *(void **)&this->vtable4 = (void*)&LightSourceClass_vftable; /*0x55516a*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x555171*/
   v5 = this; /*0x555186*/
-  v3 = (*(int (__thiscall **)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
+  v3 = (*(int (**)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
          &g_MissionQueueFrame.random[129],
          &v5);
   if ( v3 != -1 && v3 < g_MissionQueueFrame.random[133] ) /*0x55519a*/
@@ -184,7 +184,7 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
     this->Activated = 0; /*0x5551ca*/
     TacticalClass::ScrollView(0); /*0x5551ce*/
   }
-  AbstractClass::DTOR(); /*0x5551d5*/
+  this->AbstractClass::DTOR(); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/
     RA2_OPDEL(); /*0x5551e2*/
   return &this->AbstractClass; /*0x5551ec*/

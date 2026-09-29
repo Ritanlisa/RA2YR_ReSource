@@ -22,13 +22,13 @@ AbstractClass * * AsyncIO::Shutdown()
 {
   unsigned int * v1;
   unsigned int i;
-  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (***v3)(unsigned int, int); // ecx
   char result; // al
 
   v1 = (int)((unsigned int *)(0));
-  for ( i = AsyncIO_Instance; v1 < g_AsyncIOState; ++v1 ) /*0x5bf462*/
+  for ( i = AsyncIO_Instance; v1 < (unsigned int *)(g_AsyncIOState); ++v1 ) /*0x5bf462*/
   {
-    v3 = (void (__thiscall ***)(unsigned int, int))i[v1]; /*0x5bf464*/
+    v3 = (void (***)(unsigned int, int))i[v1]; /*0x5bf464*/
     if ( v3 ) /*0x5bf469*/
     {
       (**v3)(v3, 1); /*0x5bf473*/
@@ -68,12 +68,12 @@ int AsyncIO::WaitCompletion()
   int v9; // [esp+10h] [ebp-10h]
   int v10; // [esp+18h] [ebp-8h]
 
-  Ticks = Timer::GetTicks(); /*0x774bcf*/
+  Ticks = this->Timer::GetTicks(); /*0x774bcf*/
   v2 = this->u8_51; /*0x774bd3*/
   v9 = 0; /*0x774bd8*/
   if ( v2 ) /*0x774be0*/
   {
-    Ticks = Timer::GetTicks(); /*0x774bf4*/
+    Ticks = this->Timer::GetTicks(); /*0x774bf4*/
     v10 = v10; /*0x774c01*/
     v9 = 300; /*0x774c05*/
     do /*0x774c4d*/
@@ -86,7 +86,7 @@ int AsyncIO::WaitCompletion()
       v9 = v9; /*0x774c2f*/
       if ( Ticks != -1 ) /*0x774c36*/
       {
-        v4 = Timer::GetTicks() - Ticks; /*0x774c41*/
+        v4 = this->Timer::GetTicks() - Ticks; /*0x774c41*/
         if ( v4 >= v9 ) /*0x774c47*/
           break; /*0x774c47*/
         v9 -= v4; /*0x774c49*/
@@ -106,7 +106,7 @@ int AsyncIO::Read()
 
   result = g_AsyncIOState; /*0x5bf500*/
   if ( g_AsyncIOState > 0 ) /*0x5bf507*/
-    return (*(int (__thiscall **)(unsigned int, AsyncIO *))(**(unsigned int **)AsyncIO_Instance + 12))( /*0x5bf515*/
+    return (*(int (**)(unsigned int, AsyncIO *))(**(unsigned int **)AsyncIO_Instance + 12))( /*0x5bf515*/
              *(unsigned int *)AsyncIO_Instance,
              this);
   return result; /*0x5bf518*/

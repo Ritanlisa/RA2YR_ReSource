@@ -328,7 +328,7 @@ int DSurface::BlitWhole(class Surface* src, bool option1, bool option2, void * a
 {
   XSurface *v3; // ecx
 
-  return XSurface::BlitWhole(v3, (int *)this, a2, a3); /*0x4c1aa4*/
+  return ((XSurface *)(v3))->BlitWhole((int *)this, a2, a3); /*0x4c1aa4*/
 }
 // 0x4bb080
 bool DSurface::BlitPart(

@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/DialogControl_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
 
 // 0x5D6350
 namespace gamemd {
@@ -80,10 +81,10 @@ ATOM DialogClass::RegisterWinClasses()
   {
     dword_AC48CC = (unsigned int)((LPCSTR)(1));
     WndClass.hInstance = (HINSTANCE)((LPCSTR)(g_hInstance));
-    WndClass.style = (LPCSTR)(3);
-    WndClass.lpfnWndProc = (WNDPROC)GameScreen::DlgProc; /*0x60d49e*/
-    WndClass.cbClsExtra = 0; /*0x60d4a6*/
-    WndClass.cbWndExtra = 0; /*0x60d4aa*/
+    WndClass.style = (UINT)((LPCSTR)(3));
+    WndClass.lpfnWndProc = (LPCSTR)((WNDPROC)GameScreen::DlgProc);
+    WndClass.cbClsExtra = (int)((LPCSTR)(0));
+    WndClass.cbWndExtra = (int)((LPCSTR)(0));
     memset(&WndClass.hIcon, 0, 12); /*0x60d4ae*/
     WndClass.lpszMenuName = aCombodropwin; /*0x60d4ba*/
     WndClass.lpszClassName = aCombodropwin; /*0x60d4be*/

@@ -960,14 +960,14 @@ int E4Recv_6C4250::CreateTClassFactory_HoverLocomotionClass(void * a1, void * a2
     *v4 = a2; /*0x6c4296*/
   if ( !*v4 ) /*0x6c4298*/
     return -2147467262; /*0x6c42a0*/
-  (*(void (__stdcall **)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c42ac*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c42ac*/
   return 0; /*0x6c425e*/
 }
 } // namespace gamemd
 
 // 0x6C43D0
 namespace gamemd {
-int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass()
+int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass(void * a1, void * a2, void * a3)
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -978,14 +978,14 @@ int E4Recv_6C43D0::CreateTClassFactory_RocketLocomotionClass()
     *v4 = a2; /*0x6c4416*/
   if ( !*v4 ) /*0x6c4418*/
     return -2147467262; /*0x6c4420*/
-  (*(void (__stdcall **)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c442c*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c442c*/
   return 0; /*0x6c43de*/
 }
 } // namespace gamemd
 
 // 0x6C4550
 namespace gamemd {
-int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass()
+int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass(void * a1, void * a2, void * a3)
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -996,14 +996,14 @@ int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass()
     *v4 = a2; /*0x6c4596*/
   if ( !*v4 ) /*0x6c4598*/
     return -2147467262; /*0x6c45a0*/
-  (*(void (__stdcall **)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c45ac*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c45ac*/
   return 0; /*0x6c455e*/
 }
 } // namespace gamemd
 
 // 0x6C46D0
 namespace gamemd {
-int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass()
+int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass(void * a1, void * a2, void * a3)
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 
@@ -1014,14 +1014,14 @@ int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass()
     *v4 = a2; /*0x6c4716*/
   if ( !*v4 ) /*0x6c4718*/
     return -2147467262; /*0x6c4720*/
-  (*(void (__stdcall **)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c472c*/
+  (*(void (__stdcall **, unsigned int a3)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c472c*/
   return 0; /*0x6c46de*/
 }
 } // namespace gamemd
 
 // 0x6C4850
 namespace gamemd {
-int E4Recv_6C4850::CreateTClassFactory_DropPodLocomotionClass()
+int E4Recv_6C4850::CreateTClassFactory_DropPodLocomotionClass(void * a1, void * a2, void * a3)
 {
   const void **v4; // [esp+10h] [ebp+Ch]
 

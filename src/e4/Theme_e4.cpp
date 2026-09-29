@@ -15,6 +15,8 @@
 #include "e4/classes/TriggerTypeClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "app/cmdline.hpp"
+#include "e4/classes/ThemeManager_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
 
 // 0x720B20
 namespace gamemd {
@@ -25,7 +27,7 @@ int Theme::QueueSong(IUnknown * aP1)
   IDA_LOBYTE(IsSoundEnabled) = byte_A8EC74; /*0x720b20*/
   if ( byte_A8EC74 ) /*0x720b2a*/
   {
-    IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720b2c*/
+    IsSoundEnabled = this->Audio::IsSoundEnabled(); /*0x720b2c*/
     if ( IsSoundEnabled ) /*0x720b33*/
     {
       IDA_LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720b35*/
@@ -33,7 +35,7 @@ int Theme::QueueSong(IUnknown * aP1)
       {
         IDA_LOBYTE(IsSoundEnabled) = aP1; /*0x720b3e*/
         this->u32_8 = aP1; /*0x720b45*/
-        if ( aP1 != -1 && aP1 != -2 && aP1 != this->ptr_4 ) /*0x720b52*/
+        if ( aP1 != (IUnknown *)(-1) && aP1 != (IUnknown *)(-2) && aP1 != this->ptr_4 ) /*0x720b52*/
         {
           IDA_LOBYTE(IsSoundEnabled) = Debug::Log("Theme::QueueSong(%d)\n", aP1); /*0x720b5a*/
           if ( this->audioSample ) /*0x720b5f*/
@@ -44,7 +46,7 @@ int Theme::QueueSong(IUnknown * aP1)
             if ( (unsigned char)IsSoundEnabled == 1 ) /*0x720b90*/
             {
               if ( this->audioSample ) /*0x720b92*/
-                IDA_LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720b99*/
+                IDA_LOBYTE(IsSoundEnabled) = this->ThemeClass::RequestBuffer(); /*0x720b99*/
               this->u8_11 = 1; /*0x720b9e*/
             }
           }
@@ -65,7 +67,7 @@ int Theme::Stop(ObjectClass * aP1)
   IDA_LOBYTE(IsSoundEnabled) = g_ThemeMIXLoaded; /*0x720ea0*/
   if ( g_ThemeMIXLoaded ) /*0x720eaa*/
   {
-    IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720eb0*/
+    IsSoundEnabled = this->Audio::IsSoundEnabled(); /*0x720eb0*/
     if ( IsSoundEnabled ) /*0x720eb7*/
     {
       IDA_LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720ebd*/
@@ -79,7 +81,7 @@ int Theme::Stop(ObjectClass * aP1)
         {
           IDA_LOBYTE(IsSoundEnabled) = Debug::Log("Theme::Stop(%d) - Fading\n", this->ptr_4); /*0x720f14*/
           if ( *(&this->ptr_41) ) /*0x720f19*/
-            IDA_LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720f23*/
+            IDA_LOBYTE(IsSoundEnabled) = this->ThemeClass::RequestBuffer(); /*0x720f23*/
           this->u8_11 = 1; /*0x720f28*/
         }
         else

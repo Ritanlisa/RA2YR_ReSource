@@ -5,7 +5,7 @@
 #include "core/globals_core.hpp"
 #include "core/globals_core.hpp"
 #include "core/globals_core.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace gamemd
 {

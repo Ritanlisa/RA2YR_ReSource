@@ -41,7 +41,7 @@ struct Voice {
     unsigned int q2148;  // 0x2148
 // --- flat members (END) ---
     int DetachChannel();
-    int Stop(__thiscall *__thiscall Voice_Stop(int this))( int);
+    int Stop(void *a1 = 0);
 };
 
 } // namespace gamemd

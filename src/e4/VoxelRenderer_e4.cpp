@@ -69,47 +69,47 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
     case 2: /*0x759fc6*/
       goto LABEL_13;
     case 3: /*0x759fc6*/
-      v6 = (*(int (__thiscall **)(int, unsigned int *, int))(this->q004 + 32))(&this->u32_10, a3, 1) != 0; /*0x759fdf*/
+      v6 = (*(int (**)(int, unsigned int *, int))(this->q004 + 32))(&this->u32_10, a3, 1) != 0; /*0x759fdf*/
       this->q070 = v6; /*0x759fe4*/
       result = !v6; /*0x759fec*/
       break; /*0x759fef*/
     case 4: /*0x759fc6*/
-      (*(void (__thiscall **)(int))(this->q004 + 52))&this->u32_10; /*0x75a0cf*/
+      (*(void (**)(int))(this->q004 + 52))&this->u32_10; /*0x75a0cf*/
       this->q070 = 0; /*0x75a0d4*/
       result = 0; /*0x75a0d2*/
       break; /*0x75a0d2*/
     case 5: /*0x759fc6*/
       a4 = a4; /*0x759ffc*/
-      result = (*(int (__thiscall **)(int, unsigned int *, int))(this->q004 + 36))(&this->u32_10, a3, a4) != a4; /*0x75a00c*/
+      result = (*(int (**)(int, unsigned int *, int))(this->q004 + 36))(&this->u32_10, a3, a4) != a4; /*0x75a00c*/
       break; /*0x75a00f*/
     case 6: /*0x759fc6*/
       result = 1; /*0x75a012*/
       break; /*0x75a018*/
     case 7: /*0x759fc6*/
-      result = (*(int (__thiscall **)(int, int, unsigned int *))(this->q004 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a033*/
+      result = (*(int (**)(int, int, unsigned int *))(this->q004 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a033*/
       break; /*0x75a034*/
     case 8: /*0x759fc6*/
       if ( a4 <= 0 ) /*0x75a03d*/
       {
         v9 = &this->u32_10; /*0x75a078*/
-        result = (*(int (__thiscall **)(int, int, unsigned int *))(this->q004 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a086*/
+        result = (*(int (**)(int, int, unsigned int *))(this->q004 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a086*/
         if ( !result ) /*0x75a087*/
         {
-          result = (*(int (__thiscall **)(int, int *, int))(this->q028)(v9, &a4, 1) != 1; /*0x75a09c*/
+          result = (*(int (**)(int, int *, int))(this->q028)(v9, &a4, 1) != 1; /*0x75a09c*/
           if ( !result ) /*0x75a09e*/
-            result = (*(int (__thiscall **)(int, int, int))(this->q02C)(v9, -1, 1) == 0; /*0x75a0b0*/
+            result = (*(int (**)(int, int, int))(this->q02C)(v9, -1, 1) == 0; /*0x75a0b0*/
         }
       }
       else
       {
         v8 = &this->u32_10; /*0x75a046*/
-        result = (*(int (__thiscall **)(int, int, unsigned int *))(this->q004 + 40))(&this->u32_10, a4 - 1, a3) == 0; /*0x75a055*/
+        result = (*(int (**)(int, int, unsigned int *))(this->q004 + 40))(&this->u32_10, a4 - 1, a3) == 0; /*0x75a055*/
         if ( !result ) /*0x75a056*/
-          result = (*(int (__thiscall **)(int, int *, int))(this->q028)(v8, &a4, 1) != 1; /*0x75a06c*/
+          result = (*(int (**)(int, int *, int))(this->q028)(v8, &a4, 1) != 1; /*0x75a06c*/
       }
       break; /*0x75a06e*/
     case 9: /*0x759fc6*/
-      *a3 = (*(int (__thiscall **)(int))(this->q004 + 44))&this->u32_10; /*0x75a0c1*/
+      *a3 = (*(int (**)(int))(this->q004 + 44))&this->u32_10; /*0x75a0c1*/
   LABEL_13:
       result = 0; /*0x75a0c3*/
       break; /*0x75a0c3*/

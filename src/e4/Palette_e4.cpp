@@ -16,6 +16,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Options_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x4355B0
 namespace gamemd {
@@ -64,7 +65,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   int v36; // ecx
   int v37; // eax
   size_t v38; // ebx
-  int *v39; // ebp
+  void * v39;
   int v40; // eax
   char v41; // [esp-8h] [ebp-80h]
   int v42; // [esp+8h] [ebp-70h]
@@ -92,15 +93,15 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
     return 0; /*0x642146*/
   v41 = v4; /*0x64214a*/
   v7 = *(unsigned int *)a1->m_Colors; /*0x64214b*/
-  v8 = (*(int (__thiscall **)(int))(*(unsigned int *)v7 + 128))(v7); /*0x642153*/
-  v9 = (*(int (__thiscall **)(int, int))(*(unsigned int *)v7 + 124))(v7, v8 / 2); /*0x642163*/
+  v8 = (*(int (**)(int))(*(unsigned int *)v7 + 128))(v7); /*0x642153*/
+  v9 = (*(int (**)(int, int))(*(unsigned int *)v7 + 124))(v7, v8 / 2); /*0x642163*/
   DSurface::Construct((char *)&v61.Width, v9 / 2, 0, 0, v41); /*0x642170*/
   v59 = 0; /*0x642181*/
   v10 = *(unsigned int *)a1->m_Colors; /*0x642185*/
   Height = v61.Height; /*0x642187*/
   v58 = 0; /*0x64218b*/
   *(unsigned int *)v61.__pad_0 = v61.LockCount; /*0x64218f*/
-  v11 = (*(int (__thiscall **)(int))(*(unsigned int *)v10 + 120))(v10); /*0x64219c*/
+  v11 = (*(int (**)(int))(*(unsigned int *)v10 + 120))(v10); /*0x64219c*/
   DSurface::BlitPart((DSurface *)&v61, (int)&v57, *(unsigned int *)a1->m_Colors, v11, (int)v56, 0); /*0x6421ac*/
   v12 = (void *)RA2_OPNEW(0x4000u); /*0x6421bb*/
   memset(v12, 0, 0x4000u); /*0x6421c6*/
@@ -140,12 +141,12 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
           v49[v19] = v20 + 1; /*0x6422d5*/
           Width = v61.Width; /*0x6422d8*/
         }
-        while ( v14 < v61.Width ); /*0x6422de*/
+        while ( v14 < (int)(v61.Width) ); /*0x6422de*/
         v12 = v49; /*0x6422e4*/
       }
       ++v42; /*0x6422f3*/
     }
-    while ( v42 < v61.Height ); /*0x6422f7*/
+    while ( v42 < (int)(v61.Height) ); /*0x6422f7*/
   }
   DSurface::Unlock((DSurface *)&v61); /*0x642301*/
   v21 = a2; /*0x642306*/
@@ -179,9 +180,9 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
       ++v45; /*0x642368*/
       ++v43; /*0x64236c*/
     }
-    while ( v45 < a2 ); /*0x642370*/
+    while ( v45 < (int)(a2) ); /*0x642370*/
   }
-  v53 = (unsigned char *)RA2_OPNEW(v61.Height * v61.Width); /*0x642384*/
+  v53 = (unsigned (unsigned int)(char)*)RA2_OPNEW(v61.Height * v61.Width); /*0x642384*/
   v51 = v53; /*0x642388*/
   DSurface::Lock((DSurface *)&v61, 0, 0); /*0x642396*/
   v44 = 0; /*0x64239f*/
@@ -195,7 +196,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
       if ( v27 > 0 ) /*0x6423bb*/
         break; /*0x6423bb*/
   LABEL_37:
-      if ( ++v44 >= v61.Height ) /*0x642529*/
+      if ( ++v44 >= (int)(v61.Height) ) /*0x642529*/
         goto LABEL_38; /*0x642529*/
     }
     while ( 1 ) /*0x6423c1*/
@@ -229,7 +230,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
           }
           ++v30; /*0x6424c2*/
           ++v31; /*0x6424c3*/
-          if ( v30 >= a2 ) /*0x6424c8*/
+          if ( v30 >= (int)(a2) ) /*0x6424c8*/
           {
             v37 = v46; /*0x6424ca*/
             goto LABEL_31; /*0x6424ce*/
@@ -251,26 +252,26 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
       v27 = v61.Width; /*0x642500*/
       ++v51; /*0x642505*/
       v28 = ++v52; /*0x64250d*/
-      if ( v52 >= v61.Width ) /*0x642514*/
+      if ( v52 >= (int)(v61.Width) ) /*0x642514*/
         goto LABEL_37; /*0x642514*/
     }
   }
   LABEL_38:
   DSurface::Unlock((DSurface *)&v61); /*0x64252f*/
-  v38 = 2 * v21 + 12 + v61.Height * v61.Width; /*0x642545*/
+  v38 = 2 * v21 + 12 + (unsigned int)(v61.Height)* v61.Width; /*0x642545*/
   v54[0] = 2 * v21 + 12; /*0x642547*/
   v39 = (int *)RA2_OPNEW(v38); /*0x642551*/
-  *v39 = v61.Width; /*0x64255b*/
+  *(unsigned int *)(v39) = v61.Width; /*0x64255b*/
   v39[1] = v61.Height; /*0x642562*/
   v39[2] = v21; /*0x64256a*/
   v40 = v54[0]; /*0x642570*/
-  qmemcpy(v39 + 3, Blocka, 2 * v21); /*0x642577*/
-  qmemcpy((char *)v39 + v40, v53, v61.Height * v61.Width); /*0x642595*/
+  qmemcpy((unsigned int)(v39)+ 3, Blocka, 2 * v21); /*0x642577*/
+  qmemcpy((char *)v39 + v40, v53, (unsigned int)(v61.Height)* v61.Width); /*0x642595*/
   RA2_OPDEL(Blocka); /*0x6425a3*/
   RA2_OPDEL(v53); /*0x6425ad*/
   RA2_OPDEL(v49); /*0x6425b7*/
   *(unsigned int *)a3 = v38; /*0x6425c9*/
-  Debug::Log(); /*0x6425cb*/
+  this->Debug::Log(); /*0x6425cb*/
   DSurface::Destroy((DSurface *)&v61); /*0x6425d7*/
   return (int)v39; /*0x64213f*/
 }
@@ -338,7 +339,7 @@ unsigned char * Palette::ConvertIndices(int a2)
   do /*0x632c23*/
   {
     IDA_LOWORD(v4) = *v5; /*0x632c07*/
-    *v6 = ShiftBigIntAndScan(&stru_A8EB00.?[1], a2, (int)v4, 64); /*0x632c19*/
+    *v6 = ShiftBigIntAndScan(&(unsigned int *)((char *)&stru_A8EB00 + 1), a2, (int)v4, 64); /*0x632c19*/
     ++v5; /*0x632c1c*/
     ++v6; /*0x632c1f*/
     --v3; /*0x632c22*/
@@ -351,7 +352,7 @@ int Palette::LoadFile()
 {
   if ( dword_B0FBA0 ) /*0x72b82b*/
   {
-    (**(void (__thiscall ***)(int, int))dword_B0FBA0)(dword_B0FBA0, 1); /*0x72b831*/
+    (**(void (***)(int, int))dword_B0FBA0)(dword_B0FBA0, 1); /*0x72b831*/
     dword_B0FBA0 = 0; /*0x72b833*/
   }
   if ( dword_B0FB9C ) /*0x72b844*/

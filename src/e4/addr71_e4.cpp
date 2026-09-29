@@ -24,6 +24,9 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Rect_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
 
 // 0x710860
 namespace gamemd {
@@ -60,10 +63,10 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
 
   for ( i = (unsigned int *)Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->firstObject; i; i = (unsigned int *)i[12] ) /*0x7187bf*/
   {
-    if ( (*(uint8_t (__thiscall **)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
+    if ( (*(uint8_t (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
     {
-      *(unsigned int *)v23 = *(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 160); /*0x7187e7*/
-      (*(void (__thiscall **)(int, int16_t *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)this->vtable3 /*0x718804*/
+      *(unsigned int *)v23 = *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 160); /*0x7187e7*/
+      (*(void (**)(int, int16_t *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)this->vtable3 /*0x718804*/
                                                                                           + 364))(
         this->vtable3,
         v23,
@@ -76,19 +79,19 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     }
   }
   v22 = 0; /*0x718814*/
-  if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278) /*0x71885d*/
+  if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278) /*0x71885d*/
     && ((Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->flags & 0x100) != 0
      || Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->landType == 1) )
   {
     v22 = 1; /*0x71885f*/
   }
   v6 = 0; /*0x718867*/
-  if ( *(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 1660) == 3 ) /*0x718878*/
+  if ( *(unsigned int *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 1660) == 3 ) /*0x718878*/
   {
     v6 = 1; /*0x71887d*/
-    if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 1040) ) /*0x718887*/
+    if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 1040) ) /*0x718887*/
     {
-      v7 = (*(int (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718896*/
+      v7 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718896*/
       v6 = HouseClass::GainedPoweredCenter(*(HouseClass **)(this->vtable3 + 540), v7); /*0x7188af*/
     }
   }
@@ -96,8 +99,8 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   v23[1] = a3 / 256; /*0x7188da*/
   if ( *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23) + 59) != 2 /*0x718962*/
     || v6
-    || *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278)
-    || (*(int (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15
+    || *(unsigned char *)((*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3) + 3278)
+    || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15
     || (Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->flags & 0x100) != 0
     || Coord::To_Cell((Coord *)&dword_87F7E8, &a2)->landType == 1 )
   {
@@ -113,12 +116,12 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
       v23[1] = a3 / 256; /*0x718a95*/
       v16 = (Cell *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v23); /*0x718aa2*/
       if ( !(uint8_t)Cell::IsGroundTypeRange(v16) /*0x718abd*/
-        || (*(int (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15 )
+        || (*(int (**)(int))(*(unsigned int *)this->vtable3 + 44))(this->vtable3) == 15 )
       {
-        v19 = (*(int (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718b23*/
+        v19 = (*(int (**)(int))(*(unsigned int *)this->vtable3 + 132))(this->vtable3); /*0x718b23*/
         v20 = this->vtable3; /*0x718b2f*/
         *(unsigned int *)v23 = *(unsigned int *)(v19 + 160); /*0x718b32*/
-        IDA_LOBYTE(v12) = (*(char (__thiscall **)(int, int16_t *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(v20->q16C)( /*0x718b53*/
+        IDA_LOBYTE(v12) = (*(char (**)(int, int16_t *, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int))(v20->q16C)( /*0x718b53*/
                         v20,
                         v23,
                         0,
@@ -131,7 +134,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
       else
       {
         *(unsigned char *)(this->vtable3 + 973) = 1; /*0x718ac2*/
-        (*(void (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718ace*/
+        (*(void (**)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718ace*/
         v12 = (unsigned int *)this->vtable3; /*0x718ad4*/
         v17 = (TechnoClass *)v12[182]; /*0x718ad7*/
         if ( v17 ) /*0x718adf*/
@@ -139,7 +142,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
           TechnoClass::MutateAll(v17, v12[266], v12[267]); /*0x718aef*/
           v18 = *(unsigned int *)(this->vtable3 + 728); /*0x718af7*/
           if ( v18 ) /*0x718aff*/
-            (*(void (__thiscall **)(int, int))(*(unsigned int *)v18 + 32))(v18, 1); /*0x718b05*/
+            (*(void (**)(int, int))(*(unsigned int *)v18 + 32))(v18, 1); /*0x718b05*/
           v12 = (unsigned int *)this->vtable3; /*0x718b08*/
           v12[182] = 0; /*0x718b0e*/
         }
@@ -149,7 +152,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   else
   {
     *(unsigned char *)(this->vtable3 + 973) = 1; /*0x71896b*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718977*/
+    (*(void (**)(int))(*(unsigned int *)this->vtable3 + 928))(this->vtable3); /*0x718977*/
     v8 = (unsigned int *)this->vtable3; /*0x71897d*/
     v9 = (TechnoClass *)v8[182]; /*0x718980*/
     if ( v9 ) /*0x718988*/
@@ -157,19 +160,19 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
       TechnoClass::MutateAll(v9, v8[266], v8[267]); /*0x718998*/
       v10 = *(unsigned int *)(this->vtable3 + 728); /*0x7189a0*/
       if ( v10 ) /*0x7189a8*/
-        (*(void (__thiscall **)(int, int))(*(unsigned int *)v10 + 32))(v10, 1); /*0x7189ae*/
+        (*(void (**)(int, int))(*(unsigned int *)v10 + 32))(v10, 1); /*0x7189ae*/
       *(unsigned int *)(this->vtable3 + 728) = 0; /*0x7189b4*/
     }
     v11 = (unsigned int *)this->vtable3; /*0x7189be*/
     if ( v11[266] ) /*0x7189c1*/
     {
-      IDA_LOBYTE(v12) = (*(char (__thiscall **)(unsigned int *, unsigned int))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
+      IDA_LOBYTE(v12) = (*(char (**)(unsigned int *, unsigned int))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
     }
     else
     {
       v12 = (unsigned int *)v11[267]; /*0x7189dd*/
       if ( v12 ) /*0x7189e5*/
-        IDA_LOBYTE(v12) = (*(char (__thiscall **)(unsigned int *, unsigned int))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
+        IDA_LOBYTE(v12) = (*(char (**)(unsigned int *, unsigned int))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
     }
   }
   return (char)v12; /*0x7189d4*/
@@ -356,7 +359,7 @@ long long sub_7109B0()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_B0EB40 - dbl_B0EB68); /*0x7109c2*/
+  v0 = ((Math *)(dbl_B0EB40 - dbl_B0EB68))->Sin(); /*0x7109c2*/
   result = Math::RoundToInt(v0 * dbl_B0EB60 * 0.5); /*0x7109d6*/
   dword_B0EBB8 = result; /*0x7109db*/
   return result; /*0x7109e0*/
@@ -367,7 +370,7 @@ long long sub_7109B0()
 namespace gamemd {
 void sub_7109F0()
 {
-  dbl_B0EB70 = Math::ArcTan((double)dword_B0EBB8 * 0.00390625); /*0x710a07*/
+  dbl_B0EB70 = ((Math *)((double)dword_B0EBB8 * 0.00390625))->ArcTan(); /*0x710a07*/
 }
 } // namespace gamemd
 
@@ -375,7 +378,7 @@ void sub_7109F0()
 namespace gamemd {
 void sub_710A20()
 {
-  dbl_B0EB88 = Math::ArcTan((double)(2 * dword_B0EBB8) / dbl_B0EB60); /*0x710a42*/
+  dbl_B0EB88 = ((Math *)((double)(2 * dword_B0EBB8) / dbl_B0EB60))->ArcTan(); /*0x710a42*/
 }
 } // namespace gamemd
 
@@ -509,7 +512,7 @@ long long sub_717EC0()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_B0EBC0 - dbl_B0EBE8); /*0x717ed2*/
+  v0 = ((Math *)(dbl_B0EBC0 - dbl_B0EBE8))->Sin(); /*0x717ed2*/
   result = Math::RoundToInt(v0 * dbl_B0EBE0 * 0.5); /*0x717ee6*/
   dword_B0EC38 = result; /*0x717eeb*/
   return result; /*0x717ef0*/
@@ -520,7 +523,7 @@ long long sub_717EC0()
 namespace gamemd {
 void sub_717F00()
 {
-  dbl_B0EBF0 = Math::ArcTan((double)dword_B0EC38 * 0.00390625); /*0x717f17*/
+  dbl_B0EBF0 = ((Math *)((double)dword_B0EC38 * 0.00390625))->ArcTan(); /*0x717f17*/
 }
 } // namespace gamemd
 
@@ -528,7 +531,7 @@ void sub_717F00()
 namespace gamemd {
 void sub_717F30()
 {
-  dbl_B0EC08 = Math::ArcTan((double)(2 * dword_B0EC38) / dbl_B0EBE0); /*0x717f52*/
+  dbl_B0EC08 = ((Math *)((double)(2 * dword_B0EC38) / dbl_B0EBE0))->ArcTan(); /*0x717f52*/
 }
 } // namespace gamemd
 
@@ -645,7 +648,7 @@ long long sub_71A290()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_B0EC40 - dbl_B0EC80); /*0x71a2a2*/
+  v0 = ((Math *)(dbl_B0EC40 - dbl_B0EC80))->Sin(); /*0x71a2a2*/
   result = Math::RoundToInt(v0 * dbl_B0EC78 * 0.5); /*0x71a2b6*/
   dword_B0ECD0 = result; /*0x71a2bb*/
   return result; /*0x71a2c0*/
@@ -656,7 +659,7 @@ long long sub_71A290()
 namespace gamemd {
 void sub_71A2D0()
 {
-  dbl_B0EC88 = Math::ArcTan((double)dword_B0ECD0 * 0.00390625); /*0x71a2e7*/
+  dbl_B0EC88 = ((Math *)((double)dword_B0ECD0 * 0.00390625))->ArcTan(); /*0x71a2e7*/
 }
 } // namespace gamemd
 
@@ -664,7 +667,7 @@ void sub_71A2D0()
 namespace gamemd {
 void sub_71A300()
 {
-  dbl_B0ECA0 = Math::ArcTan((double)(2 * dword_B0ECD0) / dbl_B0EC78); /*0x71a322*/
+  dbl_B0ECA0 = ((Math *)((double)(2 * dword_B0ECD0) / dbl_B0EC78))->ArcTan(); /*0x71a322*/
 }
 } // namespace gamemd
 
@@ -820,7 +823,7 @@ long long sub_71B670()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_B0ECD8 - dbl_B0ED00); /*0x71b682*/
+  v0 = ((Math *)(dbl_B0ECD8 - dbl_B0ED00))->Sin(); /*0x71b682*/
   result = Math::RoundToInt(v0 * dbl_B0ECF8 * 0.5); /*0x71b696*/
   dword_B0ED50 = result; /*0x71b69b*/
   return result; /*0x71b6a0*/
@@ -831,7 +834,7 @@ long long sub_71B670()
 namespace gamemd {
 void sub_71B6B0()
 {
-  dbl_B0ED08 = Math::ArcTan((double)dword_B0ED50 * 0.00390625); /*0x71b6c7*/
+  dbl_B0ED08 = ((Math *)((double)dword_B0ED50 * 0.00390625))->ArcTan(); /*0x71b6c7*/
 }
 } // namespace gamemd
 
@@ -839,7 +842,7 @@ void sub_71B6B0()
 namespace gamemd {
 void sub_71B6E0()
 {
-  dbl_B0ED20 = Math::ArcTan((double)(2 * dword_B0ED50) / dbl_B0ECF8); /*0x71b702*/
+  dbl_B0ED20 = ((Math *)((double)(2 * dword_B0ED50) / dbl_B0ECF8))->ArcTan(); /*0x71b702*/
 }
 } // namespace gamemd
 
@@ -910,7 +913,7 @@ char E4Recv_71C8E0::sub_71C8E0()
   if ( !result ) /*0x71c8eb*/
   {
     this->M205 = 1; /*0x71c8ee*/
-    this->M180 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71c905*/
+    this->M180 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71c905*/
     this->M192 = 2; /*0x71c90b*/
     this->M184 = v2; /*0x71c911*/
     this->M188 = 2; /*0x71c914*/
@@ -991,7 +994,7 @@ long long sub_71D460()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_B0ED58 - dbl_B0ED88); /*0x71d472*/
+  v0 = ((Math *)(dbl_B0ED58 - dbl_B0ED88))->Sin(); /*0x71d472*/
   result = Math::RoundToInt(v0 * dbl_B0ED80 * 0.5); /*0x71d486*/
   dword_B0F148 = result; /*0x71d48b*/
   return result; /*0x71d490*/
@@ -1002,7 +1005,7 @@ long long sub_71D460()
 namespace gamemd {
 void sub_71D4A0()
 {
-  dbl_B0ED90 = Math::ArcTan((double)dword_B0F148 * 0.00390625); /*0x71d4b7*/
+  dbl_B0ED90 = ((Math *)((double)dword_B0F148 * 0.00390625))->ArcTan(); /*0x71d4b7*/
 }
 } // namespace gamemd
 
@@ -1010,7 +1013,7 @@ void sub_71D4A0()
 namespace gamemd {
 void sub_71D4D0()
 {
-  dbl_B0EDA8 = Math::ArcTan((double)(2 * dword_B0F148) / dbl_B0ED80); /*0x71d4f2*/
+  dbl_B0EDA8 = ((Math *)((double)(2 * dword_B0F148) / dbl_B0ED80))->ArcTan(); /*0x71d4f2*/
 }
 } // namespace gamemd
 
@@ -1124,7 +1127,7 @@ long long sub_71E4E0()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_B0F150 - dbl_B0F178); /*0x71e4f2*/
+  v0 = ((Math *)(dbl_B0F150 - dbl_B0F178))->Sin(); /*0x71e4f2*/
   result = Math::RoundToInt(v0 * dbl_B0F170 * 0.5); /*0x71e506*/
   dword_B0F1E0 = result; /*0x71e50b*/
   return result; /*0x71e510*/
@@ -1135,7 +1138,7 @@ long long sub_71E4E0()
 namespace gamemd {
 void sub_71E520()
 {
-  dbl_B0F180 = Math::ArcTan((double)dword_B0F1E0 * 0.00390625); /*0x71e537*/
+  dbl_B0F180 = ((Math *)((double)dword_B0F1E0 * 0.00390625))->ArcTan(); /*0x71e537*/
 }
 } // namespace gamemd
 
@@ -1143,7 +1146,7 @@ void sub_71E520()
 namespace gamemd {
 void sub_71E550()
 {
-  dbl_B0F198 = Math::ArcTan((double)(2 * dword_B0F1E0) / dbl_B0F170); /*0x71e572*/
+  dbl_B0F198 = ((Math *)((double)(2 * dword_B0F1E0) / dbl_B0F170))->ArcTan(); /*0x71e572*/
 }
 } // namespace gamemd
 

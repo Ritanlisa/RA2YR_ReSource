@@ -14,10 +14,12 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Campaign_WorldDominationTour_24_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/CampaignProperties_WorldDominationTour_22_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x470D30
 namespace gamemd {
-void CampaignScreen_Init()
+void CampaignScreen_Init(void * a1, void * a2, void * a3, void * a4)
 {
   const wchar_t *v5; // ebp
   int result; // eax
@@ -60,7 +62,7 @@ void CampaignScreen_Init()
   HWND v43; // eax
   HWND DlgItem; // eax
   int v45; // [esp-Ch] [ebp-174h]
-  const wchar_t *v46; // [esp-8h] [ebp-170h]
+  const unsigned int v46;
   wchar_t *v47; // [esp-8h] [ebp-170h]
   wchar_t *v48; // [esp-8h] [ebp-170h]
   wchar_t *v49; // [esp-8h] [ebp-170h]
@@ -111,8 +113,8 @@ void CampaignScreen_Init()
     }
     if ( hWnd == (HWND)15 ) /*0x470d84*/
     {
-      Dialog::DrawBackground(); /*0x471343*/
-      Dialog::StopBink(); /*0x47134a*/
+      this->Dialog::DrawBackground(); /*0x471343*/
+      this->Dialog::StopBink(); /*0x47134a*/
       return 0; /*0x47135b*/
     }
     if ( hWnd != (HWND)272 ) /*0x470d90*/
@@ -124,8 +126,8 @@ void CampaignScreen_Init()
       }
       return 0; /*0x470d9e*/
     }
-    Buffer[0] = 0; /*0x470dc5*/
-    v8 = GetDlgItem((HWND)this, 1843); /*0x470dcc*/
+    Buffer[0] = (wchar_t *)(0);
+    v8 = (wchar_t *)(GetDlgItem((HWND)this, 1843));
     SendMessageA(v8, 0x4B2u, 0, (LPARAM)&word_89E0A4); /*0x470de1*/
     v46 = dword_89DFC0; /*0x470deb*/
     StringCSF = GetStringCSF(aGuiCampaignlab, 0, g_Str_File_CampScor_cpp, 1792); /*0x470dfb*/
@@ -136,26 +138,26 @@ void CampaignScreen_Init()
     {
       if ( dword_89E008 == 1 ) /*0x470e71*/
       {
-        v48 = GetStringCSF(aTxtDifficultyM, 0, g_Str_File_CampScor_cpp, 1798); /*0x470e89*/
-        v12 = GetStringCSF(g_Str_GUI_DifficultyString, 0, g_Str_File_CampScor_cpp, 1798); /*0x470e9b*/
+        v48 = (wchar_t *)(GetStringCSF(aTxtDifficultyM, 0, g_Str_File_CampScor_cpp, 1798));
+        v12 = (wchar_t *)(GetStringCSF(g_Str_GUI_DifficultyString, 0, g_Str_File_CampScor_cpp, 1798));
         swprintf(Buffer, (const size_t)v12, v48); /*0x470ea6*/
       }
       else if ( dword_89E008 == 2 ) /*0x470eb3*/
       {
-        v49 = GetStringCSF(aTxtDifficultyB, 0, g_Str_File_CampScor_cpp, 1800); /*0x470ecb*/
-        v13 = GetStringCSF(g_Str_GUI_DifficultyString, 0, g_Str_File_CampScor_cpp, 1800); /*0x470edd*/
+        v49 = (wchar_t *)(GetStringCSF(aTxtDifficultyB, 0, g_Str_File_CampScor_cpp, 1800));
+        v13 = (wchar_t *)(GetStringCSF(g_Str_GUI_DifficultyString, 0, g_Str_File_CampScor_cpp, 1800));
         swprintf(Buffer, (const size_t)v13, v49); /*0x470ee8*/
       }
       else
       {
-        v14 = GetStringCSF(aGuiBlank, 0, g_Str_File_CampScor_cpp, 1802); /*0x470f03*/
+        v14 = (wchar_t *)(GetStringCSF(aGuiBlank, 0, g_Str_File_CampScor_cpp, 1802));
         swprintf(Buffer, (const size_t)v14, v51); /*0x470f0e*/
       }
     }
     else
     {
-      v47 = GetStringCSF(aTxtDifficultyE, 0, g_Str_File_CampScor_cpp, 1796); /*0x470e44*/
-      v11 = GetStringCSF(g_Str_GUI_DifficultyString, 0, g_Str_File_CampScor_cpp, 1796); /*0x470e56*/
+      v47 = (wchar_t *)(GetStringCSF(aTxtDifficultyE, 0, g_Str_File_CampScor_cpp, 1796));
+      v11 = (wchar_t *)(GetStringCSF(g_Str_GUI_DifficultyString, 0, g_Str_File_CampScor_cpp, 1796));
       swprintf(Buffer, (const size_t)v11, v47); /*0x470e61*/
     }
     v15 = GetDlgItem((HWND)this, 1842); /*0x470f1c*/
@@ -180,11 +182,11 @@ void CampaignScreen_Init()
     while ( 1 ) /*0x47102c*/
     {
       v21 = Color::ConvertToRGB( /*0x47102c*/
-              (Color *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)(dword_89DFE0[v53] + 40)) + 776),
+              (Color *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)(((unsigned int *)(dword_89DFE0))[v53] + 40)) + 776),
               (int)v57);
       IDA_LOWORD(v56) = *(unsigned short *)v21; /*0x471034*/
       IDA_BYTE2(v56) = *(unsigned char *)(v21 + 2); /*0x47103c*/
-      v22 = dword_89DFE0[v53]; /*0x471067*/
+      v22 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x471067*/
       v55 = 24 * v53; /*0x471071*/
       v23 = (uint8_t)v56 | (*(uint16_t *)((char *)&v56 + 1) << 8); /*0x471081*/
       nIDDlgItem = stru_81AF8C.?[6 * v53 + 7]; /*0x471085*/
@@ -193,7 +195,7 @@ void CampaignScreen_Init()
       SendMessageA(v24, 0x4B2u, 0, lParam); /*0x47109c*/
       v25 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4710a4*/
       SendMessageA(v25, 0x498u, 0, v23); /*0x4710af*/
-      v26 = dword_89DFE0[v53]; /*0x4710bf*/
+      v26 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x4710bf*/
       nIDDlgItem = stru_81AF8C.?[v55 / 4 + 8]; /*0x4710c6*/
       swprintf(v59, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v26 + 64)); /*0x4710d8*/
       v27 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4710e6*/
@@ -201,19 +203,19 @@ void CampaignScreen_Init()
       v28 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4710fd*/
       SendMessageA(v28, 0x498u, 0, v23); /*0x471108*/
       nIDDlgItem = stru_81AF8C.?[v55 / 4 + 9]; /*0x471118*/
-      swprintf(v61, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(dword_89DFE0[v53] + 48)); /*0x471134*/
+      swprintf(v61, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(((unsigned int *)(dword_89DFE0))[v53] + 48)); /*0x471134*/
       v29 = GetDlgItem((HWND)this, nIDDlgItem); /*0x471142*/
       SendMessageA(v29, 0x4B2u, 0, (LPARAM)v61); /*0x471154*/
       v30 = GetDlgItem((HWND)this, nIDDlgItem); /*0x47115c*/
       SendMessageA(v30, 0x498u, 0, v23); /*0x471167*/
-      v31 = dword_89DFE0[v53]; /*0x471177*/
+      v31 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x471177*/
       nIDDlgItem = stru_81AF8C.?[v55 / 4 + 10]; /*0x47117e*/
       swprintf(v60, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v31 + 80)); /*0x471193*/
       v32 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4711a1*/
       SendMessageA(v32, 0x4B2u, 0, (LPARAM)v60); /*0x4711b3*/
       v33 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4711bb*/
       SendMessageA(v33, 0x498u, 0, v23); /*0x4711c6*/
-      v34 = dword_89DFE0[v53]; /*0x4711d6*/
+      v34 = ((unsigned int *)(dword_89DFE0))[v53]; /*0x4711d6*/
       nIDDlgItem = stru_81AF8C.?[v55 / 4 + 11]; /*0x4711dd*/
       swprintf(v62, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v34 + 96)); /*0x4711f2*/
       v35 = GetDlgItem((HWND)this, nIDDlgItem); /*0x471200*/
@@ -239,12 +241,12 @@ void CampaignScreen_Init()
       if ( ++v53 >= (int)dword_89E020 ) /*0x47132c*/
         return 0; /*0x47133e*/
     }
-    lParam = dword_89DFE0[0]; /*0x47123b*/
+    lParam = ((unsigned int *)(dword_89DFE0))[0]; /*0x47123b*/
     v37 = GetDlgItem((HWND)this, 1850); /*0x47123f*/
     SendMessageA(v37, 0x4B2u, 0, lParam); /*0x47124e*/
     v38 = GetDlgItem((HWND)this, 1850); /*0x471256*/
     SendMessageA(v38, 0x498u, 0, v23); /*0x471261*/
-    swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(dword_89DFE0[0] + 96)); /*0x471276*/
+    swprintf(Buffer, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(((unsigned int *)(dword_89DFE0))[0] + 96)); /*0x471276*/
     v39 = GetDlgItem((HWND)this, 1851); /*0x471284*/
     SendMessageA(v39, 0x4B2u, 0, (LPARAM)Buffer); /*0x471293*/
     v40 = GetDlgItem((HWND)this, 1851); /*0x47129a*/

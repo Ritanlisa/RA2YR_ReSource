@@ -48,7 +48,7 @@ signed int SyncDelay::Start()
   v1 = dwMilliseconds; /*0x55e171*/
   if ( dword_887348 != -1 ) /*0x55e179*/
   {
-    Ticks = Timer::GetTicks(); /*0x55e180*/
+    Ticks = this->Timer::GetTicks(); /*0x55e180*/
     v0 = dword_887348; /*0x55e185*/
     v3 = Ticks - dword_887348; /*0x55e18b*/
     if ( v3 >= v1 ) /*0x55e18f*/
@@ -57,12 +57,12 @@ signed int SyncDelay::Start()
       v1 -= v3; /*0x55e191*/
   }
   dword_A8E314 += v1; /*0x55e1a7*/
-  if ( g_GameMode_Current[0] && g_GameMode_Current[0] != 5 ) /*0x55e1b6*/
+  if ( ((unsigned int *)(g_GameMode_Current))[0] && ((unsigned int *)(g_GameMode_Current))[0] != 5 ) /*0x55e1b6*/
   {
     while ( 1 ) /*0x55e1c7*/
     {
       v4 = dword_887330; /*0x55e1c7*/
-      if ( g_TacticalState != -1 ) /*0x55e1cf*/
+      if ( g_TacticalState != (void *)(-1) ) /*0x55e1cf*/
       {
         v5 = timeGetTime() - g_TacticalState; /*0x55e1db*/
         if ( v5 >= v4 ) /*0x55e1e3*/
@@ -71,7 +71,7 @@ signed int SyncDelay::Start()
       }
       if ( !v4 ) /*0x55e1ed*/
         goto LABEL_38; /*0x55e1ed*/
-      Event::Dispatch(); /*0x55e1f3*/
+      this->Event::Dispatch(); /*0x55e1f3*/
       if ( !g_MainGameState && g_DDraw_Active == 1 ) /*0x55e20b*/
         break; /*0x55e20b*/
   LABEL_23:
@@ -79,7 +79,7 @@ signed int SyncDelay::Start()
     }
     v6 = dword_887330; /*0x55e216*/
     v22 = 0; /*0x55e21e*/
-    if ( g_TacticalState != -1 ) /*0x55e222*/
+    if ( g_TacticalState != (void *)(-1) ) /*0x55e222*/
     {
       v7 = timeGetTime() - g_TacticalState; /*0x55e22e*/
       if ( v7 >= v6 ) /*0x55e236*/
@@ -98,7 +98,7 @@ signed int SyncDelay::Start()
     Sleep(0); /*0x55e278*/
   LABEL_19:
     v8 = dword_887330; /*0x55e27b*/
-    if ( g_TacticalState != -1 ) /*0x55e288*/
+    if ( g_TacticalState != (void *)(-1) ) /*0x55e288*/
     {
       v9 = timeGetTime() - g_TacticalState; /*0x55e294*/
       if ( v9 >= v8 ) /*0x55e29c*/
@@ -112,14 +112,14 @@ signed int SyncDelay::Start()
   v10 = dwMilliseconds; /*0x55e2b4*/
   if ( v0 != -1 ) /*0x55e2bc*/
   {
-    v11 = Timer::GetTicks() - dword_887348; /*0x55e2c8*/
+    v11 = this->Timer::GetTicks() - dword_887348; /*0x55e2c8*/
     if ( v11 >= v10 ) /*0x55e2d0*/
       goto LABEL_38; /*0x55e2d0*/
     v10 -= v11; /*0x55e2d2*/
   }
   if ( v10 ) /*0x55e2d6*/
   {
-    DDraw::WaitForIdle(); /*0x55e2d8*/
+    this->DDraw::WaitForIdle(); /*0x55e2d8*/
     while ( 1 ) /*0x55e317*/
     {
       while ( 1 ) /*0x55e2e3*/
@@ -128,7 +128,7 @@ signed int SyncDelay::Start()
         v13 = dwMilliseconds; /*0x55e2e9*/
         if ( dword_887348 != -1 ) /*0x55e2f1*/
         {
-          v14 = Timer::GetTicks(); /*0x55e2f8*/
+          v14 = this->Timer::GetTicks(); /*0x55e2f8*/
           v12 = dword_887348; /*0x55e2fd*/
           v15 = v14 - dword_887348; /*0x55e303*/
           if ( v15 >= v13 ) /*0x55e307*/
@@ -143,7 +143,7 @@ signed int SyncDelay::Start()
   LABEL_37:
         Sleep(v16); /*0x55e336*/
       }
-      v17 = Timer::GetTicks() - dword_887348; /*0x55e323*/
+      v17 = this->Timer::GetTicks() - dword_887348; /*0x55e323*/
       if ( v17 >= v16 ) /*0x55e32b*/
       {
         v16 = 0; /*0x55e334*/
@@ -156,7 +156,7 @@ signed int SyncDelay::Start()
   if ( (byte_ABCD94 & 1) == 0 ) /*0x55e343*/
   {
     byte_ABCD94 |= 1u; /*0x55e34f*/
-    dword_ABCD88 = Timer::GetTicks(); /*0x55e35a*/
+    dword_ABCD88 = this->Timer::GetTicks(); /*0x55e35a*/
     dword_ABCD90 = 0; /*0x55e35f*/
     atexit(nullsub_23); /*0x55e36a*/
   }
@@ -169,7 +169,7 @@ signed int SyncDelay::Start()
       return result; /*0x55e399*/
     goto LABEL_44; /*0x55e399*/
   }
-  result = Timer::GetTicks() - dword_ABCD88; /*0x55e38b*/
+  result = this->Timer::GetTicks() - dword_ABCD88; /*0x55e38b*/
   if ( result < v19 ) /*0x55e393*/
   {
     v19 -= result; /*0x55e395*/
@@ -186,7 +186,7 @@ signed int SyncDelay::Start()
     g_FrameCounter_Total = 0; /*0x55e3ce*/
     g_FrameCounter_Samples = 0; /*0x55e3d4*/
   }
-  result = Timer::GetTicks(); /*0x55e3de*/
+  result = this->Timer::GetTicks(); /*0x55e3de*/
   dword_ABCD88 = result; /*0x55e3ec*/
   dword_ABCD8C = v24[2]; /*0x55e3f1*/
   dword_ABCD90 = 60; /*0x55e3f7*/

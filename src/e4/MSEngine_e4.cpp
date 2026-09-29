@@ -85,7 +85,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5ace05*/
+    (*(void (**)(_VectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5ace05*/
     return 1; /*0x5ace0b*/
   }
 }
@@ -159,10 +159,10 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5acf97*/
+    (*(void (**)(_DynamicVectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5acf97*/
   }
   v12 = *(unsigned int *)&this->q008; /*0x5acf9a*/
-  if ( v12 < this->q010 ) /*0x5acfa2*/
+  if ( v12 < (int)(this->q010) ) /*0x5acfa2*/
     *(unsigned int *)&this->q010 = v12; /*0x5acfa4*/
   return 1; /*0x5acfa7*/
 }
@@ -175,7 +175,7 @@ CampaignClass * * MSEngine::Destructor()
   void *v3; // eax
   void *MSEngine_field_0x4; // eax
 
-  SessionClass::Destruct(); /*0x5cee64*/
+  this->SessionClass::Destruct(); /*0x5cee64*/
   v2 = (void *)this->u32_48; /*0x5cee69*/
   this->u32_44 = (void*)&VectorClass_MSSfxEntry___vftable; /*0x5cee70*/
   if ( v2 && this->u32_51 ) /*0x5cee79*/
@@ -211,7 +211,7 @@ namespace gamemd {
 unsigned int * MSEngine::Construct()
 {
   void **p_MSEngine_field_0x8; // ecx
-  void (__thiscall **v3)(void **, int, unsigned int); // edx
+  void (**v3)(void **, int, unsigned int); // edx
 
   p_MSEngine_field_0x8 = (void **)((unsigned int)(&this->MSEngine_field_0x8));
   p_MSEngine_field_0x8[1] = (void *)((unsigned int)(0));
@@ -222,10 +222,10 @@ unsigned int * MSEngine::Construct()
   this->u32_1C = (unsigned int *)(0);
   this->q008 = (unsigned int *)(0);
   this->u32_24 = (unsigned int *)(1);
-  this->u32_25 = 0; /*0x5d1acd*/
-  this->u32_18 = (void*)&DynamicVectorClass_MSAnim___vftable; /*0x5d1ad0*/
-  this->q00B = 10; /*0x5d1ad6*/
-  this->q00A = 0; /*0x5d1add*/
+  this->u32_25 = (unsigned int *)(0);
+  this->u32_18 = (unsigned int *)((void*)&DynamicVectorClass_MSAnim___vftable);
+  this->q00B = (unsigned int *)(10);
+  this->q00A = (unsigned int *)(0);
   *(unsigned int *)&this->IsAllocated = 0; /*0x5d1ae0*/
   this->q00E = 0; /*0x5d1ae3*/
   this->u32_3C = 1; /*0x5d1ae6*/
@@ -233,12 +233,12 @@ unsigned int * MSEngine::Construct()
   this->u32_C = (void*)&DynamicVectorClass_MSSfx___vftable; /*0x5d1aec*/
   this->u32_44 = 10; /*0x5d1af2*/
   *(unsigned int *)&this->q010 = 0; /*0x5d1af9*/
-  v3 = (void (__thiscall **)(void **, int, unsigned int))*p_MSEngine_field_0x8; /*0x5d1afc*/
+  v3 = (void (**)(void **, int, unsigned int))*p_MSEngine_field_0x8; /*0x5d1afc*/
   *(unsigned int *)this->__pad_0 = (void*)&MSEngine_vftable; /*0x5d1b01*/
   this->MSEngine_field_0x4 = 0; /*0x5d1b07*/
   v3[2](p_MSEngine_field_0x8, 20, 0); /*0x5d1b0a*/
-  (*(void (__thiscall **)(char *))(this->u32_18 + 12))((char *)&this->q0084); /*0x5d1b11*/
-  (*(void (__thiscall **)(char *))(this->u32_C + 12))((char *)&this->q0108); /*0x5d1b18*/
+  (*(void (**)(char *))(this->u32_18 + 12))((char *)&this->q0084); /*0x5d1b11*/
+  (*(void (**)(char *))(this->u32_C + 12))((char *)&this->q0108); /*0x5d1b18*/
   return this; /*0x5d1b1b*/
 }
 }
@@ -251,7 +251,7 @@ void MSEngine::Destruct()
   void *v4; // edi
   unsigned int *v5; // ebp
   int i; // edi
-  void (__thiscall ***v7)(unsigned int, int); // ecx
+  void (***v7)(unsigned int, int); // ecx
   unsigned int *v8; // edi
   void * v9;
   unsigned int *v10; // esi
@@ -271,18 +271,18 @@ void MSEngine::Destruct()
     }
   }
   v5 = &this->u32_30; /*0x5d1b6c*/
-  (*(void (__thiscall **)(unsigned int *))(*(&this->q0042) + 12))(&this->q0042); /*0x5d1b71*/
+  (*(void (**)(unsigned int *))(*(&this->q0042) + 12))(&this->q0042); /*0x5d1b71*/
   for ( i = 0; i < *(&this->q0040); ++i ) /*0x5d1b7b*/
   {
-    v7 = *(void (__thiscall ****)(unsigned int, int))(this->u32_1C + 4 * i); /*0x5d1b80*/
+    v7 = *(void (****)(unsigned int, int))(this->u32_1C + 4 * i); /*0x5d1b80*/
     if ( v7 ) /*0x5d1b85*/
       (**v7)(v7, 1); /*0x5d1b8b*/
   }
   v8 = (unsigned int *)((void *)(&this->u32_18));
-  (*(void (__thiscall **)(unsigned int *))(this->u32_18 + 12))&this->q018; /*0x5d1b9d*/
+  (*(void (**)(unsigned int *))(this->u32_18 + 12))&this->q018; /*0x5d1b9d*/
   v9 = *(unsigned int *)&this->q008; /*0x5d1ba0*/
   v10 = &this->q008; /*0x5d1ba3*/
-  (*(void (__thiscall **)(unsigned int *))(v9 + 12))(v10); /*0x5d1ba8*/
+  (*(void (**)(unsigned int *))((unsigned int)(v9)+ 12))(v10); /*0x5d1ba8*/
   v11 = (void *)v5[1]; /*0x5d1bab*/
   if ( v11 && *((unsigned char *)v5 + 13) ) /*0x5d1bb9*/
   {
@@ -316,18 +316,18 @@ int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
   int result; // eax
   int v6; // ecx
 
-  Timer::GetTicks(); /*0x5d1dfc*/
+  this->Timer::GetTicks(); /*0x5d1dfc*/
   a3 = a3; /*0x5d1e01*/
   while ( 1 ) /*0x5d1e19*/
   {
-    result = (*(int (__thiscall **)(unsigned int *, char *))(this->u32_18 + 16))(&this->u32_18, &aP1); /*0x5d1e19*/
+    result = (*(int (**)(unsigned int *, char *))(this->u32_18 + 16))(&this->u32_18, &aP1); /*0x5d1e19*/
     if ( result == -1 ) /*0x5d1e1f*/
       break; /*0x5d1e1f*/
     v6 = *(unsigned int *)(this->u32_1C + 4 * result); /*0x5d1e24*/
-    result = (*(int (__thiscall **)(int))(*(unsigned int *)v6 + 28))(v6); /*0x5d1e29*/
+    result = (*(int (**)(int))(*(unsigned int *)v6 + 28))(v6); /*0x5d1e29*/
     if ( (unsigned char)result || !a3 ) /*0x5d1e32*/
       break; /*0x5d1e32*/
-    GameClass::FrameLoop(1); /*0x5d1e38*/
+    ((GameClass *)(1))->FrameLoop(); /*0x5d1e38*/
   }
   return result; /*0x5d1e3f*/
 }
@@ -484,7 +484,7 @@ VectorClass_flat * MSEngine::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TRect_int_vftable; /*0x5ad4d6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5ad4e0*/
   {
@@ -505,7 +505,7 @@ DynamicVector * MSEngine::Constructor(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TRect_int_vftable; /*0x5ad526*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5ad530*/
   {

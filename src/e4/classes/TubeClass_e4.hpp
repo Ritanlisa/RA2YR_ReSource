@@ -89,7 +89,7 @@ struct TubeClass {
     int StubReturn452();
     int StubReturn53();
     int ddtor(int a1, unsigned int * a2);
-    static double Construct(...);  // C2597 interim stub
+     double Construct(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

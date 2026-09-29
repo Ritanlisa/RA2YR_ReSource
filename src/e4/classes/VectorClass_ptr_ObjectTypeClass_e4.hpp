@@ -15,12 +15,12 @@ struct VectorClass_ptr_ObjectTypeClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_ObjectTypeClass___(char a2);  // 0x5F9E30
-    void Destroy();  // 0x5F9B00
+    void Destroy(void *a1 = 0);  // 0x5F9B00
     unsigned int GetItemIndex(int a2);  // 0x5F9B30
-    int Get(int a2);  // 0x5F9B50
+    int Get(int a2, void *a1 = 0);  // 0x5F9B50
     char Add(int a2);  // 0x5F9B80
     char Release(int a2,  unsigned int * a3);    // 0x5F9BC0
-    void Remove();  // 0x5F9C70
+    void Remove(void *a1 = 0);  // 0x5F9C70
     int GetSize(unsigned int * a2);  // 0x5F9CA0
     unsigned int LoadTypeData(int a2);  // 0x5F9CE0
     char SetCapacity(int a2,  unsigned int * a3);    // 0x5F9D00

@@ -12,6 +12,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Voxel_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x758A30
 namespace gamemd {
@@ -25,9 +27,9 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   unsigned int v9[4]; // [esp+Ch] [ebp-10h] BYREF
 
   v3 = 0; /*0x758a42*/
-  if ( !(*(int (__thiscall **)(int, int))(*(unsigned int *)a2 + 28))(a2, 1) ) /*0x758a44*/
+  if ( !(*(int (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1) ) /*0x758a44*/
     goto LABEL_5; /*0x758a44*/
-  if ( (*(int (__thiscall **)(int, unsigned int *, int))(a2->q024)(a2, v9, 16) != 16 ) /*0x758a5c*/
+  if ( (*(int (**)(int, unsigned int *, int))(a2->q024)(a2, v9, 16) != 16 ) /*0x758a5c*/
     goto LABEL_5; /*0x758a5c*/
   v4 = v9[2]; /*0x758a62*/
   v5 = v9[1]; /*0x758a66*/
@@ -37,8 +39,8 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   v7 = this->u32_10; /*0x758a73*/
   this->u32_4 = v5; /*0x758a76*/
   this->u32_C = v6; /*0x758a79*/
-  if ( (*(int (__thiscall **)(int, int, int))(a2->q024)(a2, v7, 768) != 768 /*0x758aaa*/
-    || (*(int (__thiscall **)(int, unsigned int, unsigned int))(a2->q024)(
+  if ( (*(int (**)(int, int, int))(a2->q024)(a2, v7, 768) != 768 /*0x758aaa*/
+    || (*(int (**)(int, unsigned int, unsigned int))(a2->q024)(
          a2,
          this->u32_14,
          this->q020 << 8) != this->q020 << 8 )
@@ -46,7 +48,7 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   LABEL_5:
     v3 = 1; /*0x758aac*/
   }
-  (*(void (__thiscall **)(int))(a2->q034)(a2); /*0x758ab5*/
+  (*(void (**)(int))(a2->q034)(a2); /*0x758ab5*/
   return v3; /*0x758ab8*/
 }
 } // namespace gamemd

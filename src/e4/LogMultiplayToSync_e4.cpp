@@ -23,7 +23,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
   char *v9; // eax
-  char *v10; // eax
+  unsigned int v10;
   char *Name; // eax
   unsigned int v12; // eax
   int i; // edi
@@ -45,7 +45,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   int v30; // eax
   int v31; // ebp
   int v32; // edi
-  int v33; // edi
+  int * v33;
   int *v34; // ebx
   int v35; // ebp
   const char *v36; // edi
@@ -66,23 +66,23 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   char *v52; // [esp-8h] [ebp-3B8h]
   const char *v54; // [esp+Ch] [ebp-3A4h] BYREF
   int v55; // [esp+10h] [ebp-3A0h]
-  int v56; // [esp+14h] [ebp-39Ch]
+  unsigned int v56;
   int v57; // [esp+18h] [ebp-398h] BYREF
   int v58; // [esp+1Ch] [ebp-394h] BYREF
   unsigned int *v59; // [esp+24h] [ebp-38Ch]
-  int v60; // [esp+28h] [ebp-388h] BYREF
+  char * v60;
   char v62[128]; // [esp+30h] [ebp-380h] BYREF
   char Destination[128]; // [esp+B0h] [ebp-300h] BYREF
   char v64[128]; // [esp+130h] [ebp-280h] BYREF
   char Buffer[512]; // [esp+1B0h] [ebp-200h] BYREF
 
-  a2 = a2; /*0x651701*/
+  a2 = (unsigned char *)((int)(a2));
   v3 = *((unsigned int *)HouseClass_Player + 12); /*0x651709*/
   v56 = a1; /*0x65170c*/
   v4 = 828 * a1 + 11298400; /*0x65171e*/
   v59 = (unsigned int *)v4; /*0x65172d*/
   sprintf(Buffer, "SYNC%01d_%03d.TXT", v3, a1); /*0x651731*/
-  Debug::Log(); /*0x651743*/
+  this->Debug::Log(); /*0x651743*/
   v5 = fopen(Buffer, Mode); /*0x651755*/
   v5 = v5; /*0x65175a*/
   if ( v5 )
@@ -97,7 +97,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     v52 = String::CopyConstant(Destination); /*0x6517f2*/
     v9 = String::FormatDword(v64); /*0x6517f3*/
     fprintf(v5, "Release Build: %s by %s - %s\r\n", v9, v52, v62);
-    v60 = 5; /*0x65180f*/
+    v60 = (char *)((int)((char *)(5)));
     IDA_HIBYTE(v57) = 0; /*0x65181b*/
     GetVersionString(&v60, (unsigned char *)&v57 + 3, 0, 0); /*0x651820*/
     v10 = (char *)&off_821F08; /*0x65182b*/
@@ -120,9 +120,9 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     fprintf(v5, "Slot: %d\n", a1);
     if ( g_NetworkInterface )
     {
-      for ( i = 0; i < (*(int (__thiscall **)(int))(*(unsigned int *)g_NetworkInterface + 72))(g_NetworkInterface); ++i )
+      for ( i = 0; i < (*(int (**)(int))(*(unsigned int *)g_NetworkInterface + 72))(g_NetworkInterface); ++i )
       {
-        v14 = (const char **)(*(int (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 76))( /*0x65190c*/
+        v14 = (const char **)(*(int (**)(int, int))(*(unsigned int *)g_NetworkInterface + 76))( /*0x65190c*/
                                g_NetworkInterface,
                                i);
         if ( v14 )
@@ -161,10 +161,10 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     dword_B04474 = dword_B04474; /*0x651a36*/
     do /*0x651a68*/
     {
-      if ( v16 == v56 ) /*0x651a3f*/
-        fprintf(v5, "CRC[%d]=%x  *****\n", v16, *dword_B04474); /*0x651a4a*/
+      if ( v16 == (int)(v56) ) /*0x651a3f*/
+        fprintf(v5, "CRC[%d]=%x  *****\n", v16, *(unsigned int *)(dword_B04474)); /*0x651a4a*/
       else
-        fprintf(v5, "CRC[%d]=%x\n", v16, *dword_B04474); /*0x651a56*/
+        fprintf(v5, "CRC[%d]=%x\n", v16, *(unsigned int *)(dword_B04474)); /*0x651a56*/
       ++dword_B04474; /*0x651a5e*/
       ++v16; /*0x651a61*/
     }
@@ -177,7 +177,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
       v20 = *(unsigned int *)v18; /*0x651a7a*/
       if ( *(unsigned int *)v18 != -1 )
       {
-        v56 = *(unsigned int *)v18; /*0x651a84*/
+        v56 = (unsigned int)((gamemd::CellStruct *)(*(unsigned int *)v18));
         fprintf(
           v5,
           "%s: IsHuman:%d  Color:%s  ID:%d  HouseType:%s\n",
@@ -227,7 +227,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
             while ( v21 < v4->qBC0 ); /*0x651b4f*/
           }
         }
-        v23 = ++v55 < v56; /*0x651b61*/
+        v23 = ++v55 < (int)(v56); /*0x651b61*/
         v54 += 92; /*0x651b67*/
       }
       while ( v23 ); /*0x651b6b*/
@@ -273,7 +273,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
             while ( v25 < v4->q0BD ); /*0x651c34*/
           }
         }
-        v23 = ++v55 < v56; /*0x651c46*/
+        v23 = ++v55 < (int)(v56); /*0x651c46*/
         v54 += 92; /*0x651c4c*/
       }
       while ( v23 ); /*0x651c50*/
@@ -314,7 +314,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
             while ( v28 < *(unsigned int *)(v4 + 760) ); /*0x651d01*/
           }
         }
-        v23 = ++v55 < v56; /*0x651d13*/
+        v23 = ++v55 < (int)(v56); /*0x651d13*/
         v54 += 92; /*0x651d19*/
       }
       while ( v23 ); /*0x651d1d*/
@@ -353,14 +353,14 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
             while ( v31 < v4->qBF0 ); /*0x651dc6*/
           }
         }
-        v23 = ++v55 < v56; /*0x651dd8*/
+        v23 = ++v55 < (int)(v56); /*0x651dd8*/
         v54 += 92; /*0x651dde*/
       }
       while ( v23 ); /*0x651de2*/
     }
-    v33 = 0; /*0x651dec*/
-    v56 = 0; /*0x651dee*/
-    v34 = v59 + 193; /*0x651df2*/
+    v33 = (int *)(0);
+    v56 = (unsigned int)((int *)(0));
+    v34 = (int *)(v59 + 193);
     do
     {
       fprintf(v5, ">>>> MAP LAYER %d <<<<\n", v33); /*0x651dff*/
@@ -393,13 +393,13 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
           v54 += 40; /*0x651ec1*/
         }
         while ( v23 );
-        v33 = v56; /*0x651ecb*/
+        v33 = (int)(v56);
       }
       ++v33; /*0x651ecf*/
       ++v34; /*0x651ed0*/
       v56 = v33; /*0x651ed6*/
     }
-    while ( v33 < 5 );
+    while ( v33 < (int *)(5) );
     fprintf(v5, ">>>> LOGIC LAYER <<<<\n"); /*0x651ee6*/
     v41 = 0; /*0x651eef*/
     if ( (int)v59[203] > 0 )
@@ -450,7 +450,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   else
   {
     GetLastError(); /*0x651764*/
-    Debug::Log(); /*0x651770*/
+    this->Debug::Log(); /*0x651770*/
   }
 }
 }

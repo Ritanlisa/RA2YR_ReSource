@@ -59,8 +59,10 @@ struct WinsockInterface {
     unsigned int vt_slot_24;
     void* ptr_4;
     unsigned char u8_3F068;
+    unsigned int Audio;
+    unsigned int Timer;
 // --- flat members (END) ---
     char * ProcessPacket(int a2);  // 0x770270
-    char Init();  // 0x7B1DE0
+    char Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);  // 0x7B1DE0
 };
 } // namespace gamemd

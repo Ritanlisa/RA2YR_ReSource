@@ -16,7 +16,7 @@ struct TacticalMap {
     float m_TintFactor;  // 0x18
     unsigned char u8_19;  // 0x19
     char TacticalMap_field_1C[4];  // 0x1C
-    char TacticalMap_field_20[4];  // 0x20
+    unsigned int TacticalMap_field_20;  // 0x20
     unsigned int Render;
     unsigned int TacticalMap_field_040;
     unsigned int Tactical_field_0xA8;
@@ -44,12 +44,20 @@ struct TacticalMap {
     unsigned int __pad_10;
     unsigned int __pad_34;
     unsigned int __pad_DA8;
+    unsigned int u32_DE4;
+    unsigned int u32_DE8;
+    unsigned int u32_DEC;
+    unsigned int u32_DF0;
+    unsigned int u32_DF4;
+    unsigned int u32_DF8;
+    unsigned int u32_DFC;
+    unsigned int u32_E00;
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
-    int Construct();
-    int DrawCursor();
+    int Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int DrawCursor(void *a1 = 0);
     int DrawOccupiedRegion();
-    int Redraw();
+    int Redraw(void *a1 = 0);
     int RenderAllObjects(int a2);
     unsigned int FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5);
     void MultiplyByScalar(ObjectClass * aP1);

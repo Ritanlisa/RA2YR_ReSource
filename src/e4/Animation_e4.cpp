@@ -19,6 +19,9 @@
 #include "e4/classes/ArrayClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/CheckListClass_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x4549B0
 namespace gamemd {
@@ -48,7 +51,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   int v27; // ebp
   int j; // edi
 
-  v2 = (*(uint8_t (__thiscall **)(Animation *))(((unsigned int)(this->q0548))))(this) == 0; /*0x4549bd*/
+  v2 = (*(uint8_t (**)(Animation *))(((unsigned int)(this->q0548))))(this) == 0; /*0x4549bd*/
   v3 = this->u32_520; /*0x4549bf*/
   v4 = *(unsigned int *)(v3 + 1036); /*0x4549c5*/
   if ( !v2 ) /*0x4549cb*/
@@ -74,7 +77,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
       }
     }
     if ( v5[3281] && !this->u8_269 ) /*0x454a4b*/
-      (*(void (__thiscall **)(Animation *))(((unsigned int)(this->u32_1A04))))(this); /*0x454a59*/
+      (*(void (**)(Animation *))(((unsigned int)(this->u32_1A04))))(this); /*0x454a59*/
     v7 = this->u32_520; /*0x454a5f*/
     if ( *(unsigned char *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
       BuildingClass::ProcessAnimationStates(); /*0x454a7b*/
@@ -136,7 +139,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   {
     if ( this->u8_269 ) /*0x454b9b*/
     {
-      (*(void (__thiscall **)(Animation *))(((unsigned int)(this->u32_1A08))))(this); /*0x454ba9*/
+      (*(void (**)(Animation *))(((unsigned int)(this->u32_1A08))))(this); /*0x454ba9*/
       if ( this->u8_268 ) /*0x454baf*/
       {
         v17 = this->u32_21C; /*0x454bb9*/
@@ -145,7 +148,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
         *(unsigned char *)(v17 + 22392) = 1; /*0x454bcd*/
         v18 = *(unsigned int *)this; /*0x454bda*/
         this->u32_26C = *(char *)(this->u32_520 + 3282); /*0x454be5*/
-        (*(void (__thiscall **)(Animation *))(v18 + 1044))(this); /*0x454beb*/
+        (*(void (**)(Animation *))(v18 + 1044))(this); /*0x454beb*/
       }
     }
   }
@@ -159,9 +162,9 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
     v22 = *(unsigned int *)(v20 + 684); /*0x454c32*/
     if ( v21 != -1 ) /*0x454c3b*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.?[416] - v21 >= v22 ) /*0x454c47*/
+      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v21 >= v22 ) /*0x454c47*/
         goto LABEL_51; /*0x454c47*/
-      v22 -= *(unsigned int *)&stru_A8EB00.?[416] - v21; /*0x454c49*/
+      v22 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v21; /*0x454c49*/
     }
     if ( v22 ) /*0x454c4d*/
     {
@@ -214,13 +217,13 @@ int Animation::GetProgress()
     if ( this->q014 ) /*0x4a52fb*/
     {
       v2 = (void *)((int)(this->q008));
-      result = *(unsigned int *)&this->q010; /*0x4a5314*/
-      if ( v2 != -1 ) /*0x4a531a*/
+      result = (void *)(*(unsigned int *)&this->q010);
+      if ( v2 != (void *)(-1) ) /*0x4a531a*/
       {
-        if ( *(unsigned int *)&stru_A8EB00.?[416] - v2 >= result ) /*0x4a5326*/
+        if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v2 >= result ) /*0x4a5326*/
           return 0; /*0x4a533d*/
         else
-          result -= *(unsigned int *)&stru_A8EB00.?[416] - v2; /*0x4a5328*/
+          result -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v2; /*0x4a5328*/
       }
     }
   }
@@ -231,11 +234,13 @@ int Animation::GetProgress()
 namespace gamemd {
 ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2)
 {
+    unsigned int v24 = 0;  /* G37 hoist */
+    unsigned int v24 = 0;  /* G37 hoist */
   char **v3; // ebx
   char **v5; // edi
   void *v6; // esi
   char **v7; // eax
-  int i; // edi
+  void * i;
   void *v9; // ecx
   int v10; // eax
   int v11; // eax
@@ -279,14 +284,12 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   String::Assign((char **)&aP2, &g_INI_DefaultBuffer); /*0x77063e*/
   INIClass::ReadString(a1, v3, (char **)&v24, (char **)&aP2, (int)&a1); /*0x770655*/
   DeleteAndZero((void **)&aP2); /*0x77065e*/
-  (*((void (__thiscall **)(void **))this->u32_37C + 3))&this->u32_37C; /*0x770671*/
+  (*((void (**)(void **))this->u32_37C + 3))&this->u32_37C; /*0x770671*/
   unknown_libname_73(&aP2); /*0x770678*/
   for ( i = String::Tokenize((const char **)&a1, 0, Delimiter, (void **)&aP2); /*0x770697*/
-        i != -1;
-        i = String::Tokenize((const char **)&a1, i, Delimiter, (void **)&aP2) )
-  {
-    __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2); /*0x77069d*/
-    v9 = this->u32_384; /*0x7706a2*/
+        i != (void *)(-1);
+        i = (void *)((int)((void *)(String::Tokenize((const char **)&a1, i, Delimiter, (void **)&aP2) ) { __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2))));
+    v9 = (void *)(this->u32_384);
     v10 = v10; /*0x7706a5*/
     if ( (int)this->u32_38C >= (int)v9 ) /*0x7706ac*/
     {
@@ -294,7 +297,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7706b7*/
       v11 = (int)this->u32_390; /*0x7706b9*/
       if ( v11 <= 0 /*0x7706c9*/
-        || !(*((uint8_t (__thiscall **)(void **, int, unsigned int))this->u32_37C + 2))(&this->u32_37C, (int)v9 + v11, 0) )
+        || !(*((uint8_t (**, void * a1)(void **, int, unsigned int))this->u32_37C + 2))(&this->u32_37C, (int)v9 + v11, 0) )
       {
         continue; /*0x7706c9*/
       }
@@ -302,7 +305,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     v12 = (void *)((unsigned int)(this->u32_38C));
     v13 = (char *)((unsigned int)(this->u32_380));
     this->u32_38C = (unsigned int)((char *)v12 + 1);
-    v13[(unsigned int)v12] = v10; /*0x7706e0*/
+    v13[(unsigned int, unsigned int a1)v12] = v10; /*0x7706e0*/
   }
   DeleteAndZero((void **)&aP2); /*0x770702*/
   DeleteAndZero((void **)&a1); /*0x77070b*/
@@ -315,13 +318,11 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   String::Assign((char **)&aP2, &g_INI_DefaultBuffer); /*0x77075d*/
   INIClass::ReadString(a1, v3, (char **)&v24, (char **)&aP2, (int)&a1); /*0x770774*/
   DeleteAndZero((void **)&aP2); /*0x77077d*/
-  (*((void (__thiscall **)(void **))this->u32_394 + 3))&this->u32_394; /*0x770790*/
+  (*((void (**)(void **))this->u32_394 + 3))&this->u32_394; /*0x770790*/
   unknown_libname_73(&aP2); /*0x770797*/
   for ( j = String::Tokenize((const char **)&a1, 0, Delimiter, (void **)&aP2); /*0x7707b6*/
         j != -1;
-        j = String::Tokenize((const char **)&a1, j, Delimiter, (void **)&aP2) )
-  {
-    __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2); /*0x7707bc*/
+        j = (void *)(String::Tokenize((const char **)&a1, j, Delimiter, (void **)&aP2) ) { __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2));
     v16 = this->u32_39C; /*0x7707c1*/
     v17 = v17; /*0x7707c4*/
     if ( (int)this->u32_3A4 >= (int)v16 ) /*0x7707c9*/
@@ -330,7 +331,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7707d4*/
       v19 = (int)this->u32_3A8; /*0x7707d6*/
       if ( v19 <= 0 /*0x7707e6*/
-        || !(*((uint8_t (__thiscall **)(void **, int, unsigned int))this->u32_394 + 2))(&this->u32_394, (int)v16 + v19, 0) )
+        || !(*((uint8_t (**)(void **, int, unsigned int))this->u32_394 + 2))(&this->u32_394, (int)v16 + v19, 0) )
       {
         continue; /*0x7707e6*/
       }

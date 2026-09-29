@@ -13,6 +13,12 @@
 #include "e4/classes/E4Recv_6C0AD0_e4.hpp"
 #include "e4/classes/E4Recv_6C0650_e4.hpp"
 #include "e4/classes/E4Recv_6C0C50_e4.hpp"
+#include "e4/classes/E4Recv_6C3C50_e4.hpp"
+#include "e4/classes/E4Recv_6C3DD0_e4.hpp"
+#include "e4/classes/E4Recv_6C3650_e4.hpp"
+#include "e4/classes/E4Recv_6C1250_e4.hpp"
+#include "e4/classes/E4Recv_6C16D0_e4.hpp"
+#include "e4/classes/E4Recv_6C19D0_e4.hpp"
 
 // 0x531A00
 namespace gamemd {
@@ -25,7 +31,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
   const char *v10; // eax
-  const const char * v11;
+  const unsigned int v11;
   const char *v12; // [esp-8h] [ebp-29Ch]
   char v13; // [esp+Fh] [ebp-285h] BYREF
   int v14; // [esp+10h] [ebp-284h] BYREF

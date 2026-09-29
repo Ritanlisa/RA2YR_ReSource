@@ -256,9 +256,10 @@ struct TerrainTypeClass {
     unsigned int u32_305;
     unsigned int u32_306;
     unsigned int u32_308;
+    unsigned int __pad_0;
 // --- flat members (END) ---
-    TerrainClass * GetTileIndex(int a2);
-    TerrainTypeClass * * FindOrCreate();
+    TerrainClass * GetTileIndex(int a2, void *a1 = 0, void *a3 = 0);
+    TerrainTypeClass * * FindOrCreate(void *a1 = 0);
     TerrainTypeClass * ddtor(AbstractClass *a2, char a3);
     bool GetHeight(TerrainClass * aP2, int a3);
     int GetAuxField();

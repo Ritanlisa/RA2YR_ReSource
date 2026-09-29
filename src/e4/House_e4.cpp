@@ -26,6 +26,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/InfantryTypeClass_e4.hpp"
 
 // 0x47D2B0
 namespace gamemd {
@@ -109,10 +110,8 @@ void House::AnnounceUpgrade(IUnknown * aP1)
     if ( v9 == 4 || v9 == 9 || *(unsigned char *)(v8 + 684) ) /*0x47d325*/
     {
       v10 = this->q038; /*0x47d333*/
-      if ( v10 != 0xFFFF && v10 < *(int *)&stru_A8EB00.?[340] ) /*0x47d343*/
-        this->u8_11C = HouseClass::GetCameoTypeIndex( /*0x47d35e*/
-                                   *(HouseClass **)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v10),
-                                   *(uint8_t *)(&this->u32_702));
+      if ( v10 != 0xFFFF && v10 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x47d343*/
+                this->u8_11C = ((HouseClass *)((int)(/*0x47d35e*/                                    *(HouseClass **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v10))))->GetCameoTypeIndex(*(uint8_t *)(&this->u32_702));
       if ( this->u8_11C && *(unsigned char *)(v8 + 681) ) /*0x47d36e*/
       {
         *(unsigned int *)&this->ptr_44 = -1; /*0x47d378*/
@@ -181,12 +180,12 @@ void House::AnnounceUpgrade(IUnknown * aP1)
       return result; /*0x47d578*/
     }
   }
-  if ( this->q038 >= *(int *)&stru_A8EB00.?[340] ) /*0x47d58b*/
+  if ( this->q038 >= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x47d58b*/
     this->q038 = 0xFFFF; /*0x47d58d*/
   v18 = this->q038; /*0x47d590*/
   if ( v18 != 0xFFFF ) /*0x47d595*/
   {
-    v19 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v18); /*0x47d5ab*/
+    v19 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v18); /*0x47d5ab*/
     v54 = *(uint8_t *)(&this->u32_702); /*0x47d5ae*/
     *(unsigned int *)v55 = v19; /*0x47d5b1*/
     MapFileData = House::LoadMapFileData((House *)v19, v54, 0); /*0x47d5b5*/
@@ -195,12 +194,12 @@ void House::AnnounceUpgrade(IUnknown * aP1)
       if ( MapFileData ) /*0x47d5c6*/
       {
   LABEL_40:
-        this->u8_11C = HouseClass::GetCameoTypeIndex((HouseClass *)v19, *(uint8_t *)(&this->u32_702)); /*0x47d7fb*/
+        this->u8_11C = ((HouseClass *)((int)((HouseClass *)v19)))->GetCameoTypeIndex(*(uint8_t *)(&this->u32_702)); /*0x47d7fb*/
         CellClass::DetermineTileType(); /*0x47d813*/
         v27 = *(unsigned int *)&this->ptr_44; /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
           goto LABEL_47; /*0x47d81e*/
-        if ( FindBuildingByTiberiumType(v27) != -1 ) /*0x47d828*/
+        if ( FindBuildingByTiberiumType((IUnknown *)(v27)) != -1 ) /*0x47d828*/
         {
           if ( this->u8_11C <= 4u ) /*0x47d831*/
           {
@@ -209,7 +208,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
           }
           else
           {
-            this->u32_EC = House::LookupObject((House *)v19, *(uint8_t *)(&this->u32_702)); /*0x47d843*/
+            this->u32_EC = ((House *)((int)((House *)v19)))->LookupObject(*(uint8_t *)(&this->u32_702)); /*0x47d843*/
             *(unsigned int *)&this->ptr_44 = -1; /*0x47d849*/
             this->u8_11E = 0; /*0x47d850*/
           }
@@ -217,12 +216,12 @@ void House::AnnounceUpgrade(IUnknown * aP1)
         }
         if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * this->ptr_44) + 684) ) /*0x47d885*/
   LABEL_47:
-          this->u32_EC = House::LookupObject((House *)v19, *(uint8_t *)(&this->u32_702)); /*0x47d8aa*/
+          this->u32_EC = ((House *)((int)((House *)v19)))->LookupObject(*(uint8_t *)(&this->u32_702)); /*0x47d8aa*/
   LABEL_48:
         if ( this->u32_EC == 10 ) /*0x47d8b7*/
         {
           v28 = this->u32_116; /*0x47d8bd*/
-          if ( v28 < 0 || v28 >= FootClass_Array.?[0] ) /*0x47d8d2*/
+          if ( v28 < 0 || v28 >= *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x47d8d2*/
           {
             if ( (v29 = this->q038, v30 = dword_AA1054, v29 >= dword_AA1054) && v29 <= dword_AA1054 + 3 /*0x47d919*/
               || (v30 = dword_ABB108, v29 >= dword_ABB108) && v29 <= dword_ABB108 + 3
@@ -234,12 +233,12 @@ void House::AnnounceUpgrade(IUnknown * aP1)
               {
                 v32 = (TubeClass *)RA2_OPNEW(0x1C4u); /*0x47d929*/
                 if ( v32 ) /*0x47d933*/
-                  TubeClass::Construct(v32, (int16_t *)(&this->u32_C6), dword_81CC20[v31]); /*0x47d940*/
+                  ((TubeClass *)(v32))->Construct((int16_t *)(&this->u32_C6), ((unsigned int *)(dword_81CC20))[v31]); /*0x47d940*/
               }
             }
           }
         }
-        if ( aP1 != -1 ) /*0x47d94c*/
+        if ( aP1 != (IUnknown *)(-1) ) /*0x47d94c*/
           this->u32_11B = aP1; /*0x47d94e*/
         TechnoClass::GetTileAnimationData((TechnoClass *)v19, *(uint8_t *)(&this->u32_702), v59, &v58); /*0x47d969*/
         v33 = this->q140; /*0x47d988*/
@@ -262,7 +261,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
           if ( v40 ) /*0x47da35*/
             v41 = AnimClass::ctor( /*0x47da5f*/
                     v40,
-                    *(void **)(FootClass_Array.?[3] + 4 * *(unsigned int *)(*(unsigned int *)v55 + 712)),
+                    *(void **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * *(unsigned int *)(*(unsigned int *)v55 + 712)),
                     v60,
                     0,
                     -1,
@@ -296,7 +295,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
         }
         goto LABEL_82; /*0x47dacf*/
       }
-      MapFileData = House::LoadMapFileData((House *)v19, *(uint8_t *)(&this->u32_702), 1); /*0x47d5d9*/
+      MapFileData = House::LoadMapFileData((int)((House *)v19), *(uint8_t *)(&this->u32_702), 1); /*0x47d5d9*/
     }
     if ( !MapFileData ) /*0x47d5e0*/
     {
@@ -478,7 +477,7 @@ unsigned int * House::GetStartCoords(IUnknown * aP1)
     BuildingByTiberiumType = FindBuildingByTiberiumType(v3); /*0x47fbce*/
     if ( BuildingByTiberiumType == -1 ) /*0x47fbd6*/
       goto LABEL_12; /*0x47fbd6*/
-    v6 = *(unsigned int **)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType); /*0x47fbe2*/
+    v6 = *(unsigned int **)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * BuildingByTiberiumType); /*0x47fbe2*/
     if ( this->__pad_7C[160] ) /*0x47fbe5*/
     {
       v7 = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 /*0x47fc36*/
@@ -487,19 +486,19 @@ unsigned int * House::GetStartCoords(IUnknown * aP1)
                       + *(unsigned int *)(v6[56] + 660)
                       + v6[59] / 4 * ((uint8_t)this->__pad_7C[160] - 1)
                       + *(int16_t *)&this->__pad_C[24] * *(int16_t *)&this->__pad_C[26] % (v6[59] / 4)));
-      v23 = (House *)(*(int (__thiscall **)(int))(*(unsigned int *)v7 + 156))(v7); /*0x47fc41*/
+      v23 = (House *)(*(int (**)(int))(*(unsigned int *)v7 + 156))(v7); /*0x47fc41*/
       goto LABEL_12; /*0x47fc47*/
     }
     v8 = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 /*0x47fc6f*/
                    + 4
                    * (*(unsigned int *)(v6[56] + 660)
                     + *(int16_t *)&this->__pad_C[24] * *(int16_t *)&this->__pad_C[26] % v6[58]));
-    v9 = (House *)(*(int (__thiscall **)(int))(*(unsigned int *)v8 + 156))(v8); /*0x47fc74*/
+    v9 = (House *)(*(int (**)(int))(*(unsigned int *)v8 + 156))(v8); /*0x47fc74*/
     goto LABEL_11; /*0x47fc7a*/
   }
   if ( !v4[692] ) /*0x47fc84*/
   {
-    v9 = (House *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v4 + 156))(v4); /*0x47fca7*/
+    v9 = (House *)(*(int (**)(unsigned char *))(*(unsigned int *)v4 + 156))(v4); /*0x47fca7*/
   LABEL_11:
     v23 = v9; /*0x47fcad*/
     goto LABEL_12; /*0x47fcad*/
@@ -613,7 +612,7 @@ int House::UpdateHouseAI()
     if ( !CellStruct::Equals(&v34, &g_ControlGroupState) )
     {
       v6 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v34); /*0x4fd5a6*/
-      IDA_LODWORD(v8) = (*(int (__thiscall **)(void *, unsigned int *))(*(unsigned int *)v6 + 72))(v6, v39); /*0x4fd5b4*/
+      IDA_LODWORD(v8) = (*(int (**)(void *, unsigned int *))(*(unsigned int *)v6 + 72))(v6, v39); /*0x4fd5b4*/
       v36 = *(unsigned int *)v8; /*0x4fd5c3*/
       v7 = *(unsigned int *)(v8 + 4); /*0x4fd5c7*/
       v7 = v7; /*0x4fd5ca*/
@@ -647,7 +646,7 @@ int House::UpdateHouseAI()
                 else
                 {
                   v15 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)v35); /*0x4fd68a*/
-                  v16 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v15 + 72))(v15, v40); /*0x4fd69b*/
+                  v16 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v15 + 72))(v15, v40); /*0x4fd69b*/
                   v12 = *v16; /*0x4fd69d*/
                   v13 = v16[1]; /*0x4fd69f*/
                   v14 = v16[2]; /*0x4fd6a2*/
@@ -818,12 +817,12 @@ void sub_501A20()
       {
         v2 = *((unsigned int *)dword_A8ECBC + v1); /*0x501a38*/
         if ( v2 /*0x501a81*/
-          && (*(int (__thiscall **)(unsigned int))(*(unsigned int *)v2 + 44))(*((unsigned int *)dword_A8ECBC + v1)) == 6
+          && (*(int (**)(unsigned int))(*(unsigned int *)v2 + 44))(*((unsigned int *)dword_A8ECBC + v1)) == 6
           && !*(unsigned char *)(v2 + 1050)
           && *(int *)(*(unsigned int *)(v2 + 1312) + 3808) > 0
           && ((1 << *(unsigned int *)(*((unsigned int *)dword_A83D4C + 13) + 184)) & *(unsigned int *)(v2 + 528)) != 0 )
         {
-          (*(void (__thiscall **)(int, int))(*(unsigned int *)v2 + 292))(v2, 2); /*0x501a89*/
+          (*(void (**)(int, int))(*(unsigned int *)v2 + 292))(v2, 2); /*0x501a89*/
         }
         ++v1; /*0x501a8f*/
       }
@@ -897,13 +896,13 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   int v42; // [esp+40h] [ebp-4h]
   int v43; // [esp+48h] [ebp+4h]
 
-  v3 = *(unsigned int *)&stru_A8EB00.?[1052]; /*0x50db03*/
-  v4 = *(unsigned int *)&stru_A8EB00.?[1048]; /*0x50db0a*/
-  v6 = *(unsigned int *)&stru_A8EB00.?[1044]; /*0x50db19*/
-  v40 = *(unsigned int *)&stru_A8EB00.?[1044]; /*0x50db25*/
-  v41 = *(unsigned int *)&stru_A8EB00.?[1048]; /*0x50db29*/
-  v42 = *(unsigned int *)&stru_A8EB00.?[1052]; /*0x50db2d*/
-  v7 = *(unsigned int *)&stru_A8EB00.?[1052]; /*0x50db31*/
+  v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1052); /*0x50db03*/
+  v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1048); /*0x50db0a*/
+  v6 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1044); /*0x50db19*/
+  v40 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1044); /*0x50db25*/
+  v41 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1048); /*0x50db29*/
+  v42 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1052); /*0x50db2d*/
+  v7 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1052); /*0x50db31*/
   if ( aP1 && *(unsigned char *)(aP1 + 979) && *(unsigned int *)(*(unsigned int *)(aP1 + 1312) + 3768) == 7 ) /*0x50db4c*/
   {
     v8 = (int *)(*(int (__stdcall **)(unsigned int *))(*(unsigned int *)aP1 + 72))(v39); /*0x50db58*/
@@ -929,9 +928,9 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
       goto LABEL_18; /*0x50dbb0*/
     if ( *(unsigned char *)(*(unsigned int *)(v11 + 1312) + 5817) ) /*0x50dbb8*/
       break; /*0x50dbb8*/
-    if ( v6 == *(unsigned int *)&stru_A8EB00.?[1044] && v4 == *(unsigned int *)&stru_A8EB00.?[1048] && v7 == v3 ) /*0x50dc06*/
+    if ( v6 == *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1044) && v4 == *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1048) && v7 == v3 ) /*0x50dc06*/
     {
-      v13 = (int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)v11 + 72))(v11, &v37); /*0x50dc11*/
+      v13 = (int *)(*(int (**)(int, int *))(*(unsigned int *)v11 + 72))(v11, &v37); /*0x50dc11*/
       v6 = *v13; /*0x50dc14*/
       v4 = v13[1]; /*0x50dc16*/
       v7 = v13[2]; /*0x50dc19*/
@@ -944,9 +943,9 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
       v9 = v40; /*0x50dc34*/
       goto LABEL_20; /*0x50dc38*/
     }
-    v3 = *(unsigned int *)&stru_A8EB00.?[1052]; /*0x50db98*/
+    v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1052); /*0x50db98*/
   }
-  v12 = (int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v11 + 72))(v11, v39); /*0x50dbce*/
+  v12 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v11 + 72))(v11, v39); /*0x50dbce*/
   v9 = *v12; /*0x50dbd0*/
   v40 = *v12; /*0x50dbd2*/
   v41 = v12[1]; /*0x50dbd9*/
@@ -954,13 +953,13 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   if ( !*(unsigned char *)(v11 + 979) ) /*0x50dbe4*/
     goto LABEL_18; /*0x50dbec*/
   LABEL_20:
-  if ( v9 == *(unsigned int *)&stru_A8EB00.?[1044] ) /*0x50dc40*/
+  if ( v9 == *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1044) ) /*0x50dc40*/
   {
-    v3 = *(unsigned int *)&stru_A8EB00.?[1052]; /*0x50dc4e*/
-    if ( v41 == *(unsigned int *)&stru_A8EB00.?[1048] && v42 == *(unsigned int *)&stru_A8EB00.?[1052] ) /*0x50dc5a*/
+    v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1052); /*0x50dc4e*/
+    if ( v41 == *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1048) && v42 == *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1052) ) /*0x50dc5a*/
       goto LABEL_23; /*0x50dc5a*/
   LABEL_24:
-    if ( v9 == *(unsigned int *)&stru_A8EB00.?[1044] && v41 == *(unsigned int *)&stru_A8EB00.?[1048] && v42 == v3 ) /*0x50dc84*/
+    if ( v9 == *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1044) && v41 == *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1048) && v42 == v3 ) /*0x50dc84*/
     {
       result = *(unsigned int *)&this->ptr_44.__pad_C[12]; /*0x50dc86*/
       if ( result >= 0 ) /*0x50dc8e*/
@@ -1093,7 +1092,7 @@ int House::LookupObject(int a2)
   unsigned int *v2; // eax
   int v3; // ecx
 
-  v2 = (unsigned int *)(*(int (__thiscall **)(House *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x544be2*/
+  v2 = (unsigned int *)(*(int (**)(House *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x544be2*/
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x544c03*/
     return dword_8288E4[*(char *)(v3 + 41)]; /*0x544c09*/
   else
@@ -1108,7 +1107,7 @@ int House::LoadMapFileData(int a2, char a3)
 
   if ( a3 && !*(unsigned int *)&this->__pad_7C[40] && this->__pad_2B0[68] ) /*0x544c35*/
     MapClass::LoadFileData(); /*0x544c3f*/
-  v4 = (unsigned int *)(*(int (__thiscall **)(House *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x544c48*/
+  v4 = (unsigned int *)(*(int (**)(House *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x544c48*/
   return v4 && a2 < *v4 * v4[1] && v4[a2 + 4]; /*0x544c50*/
 }
 }
@@ -1184,10 +1183,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v4 = this->idleActionTimer[2]; /*0x70c2be*/
   if ( v3 != -1 ) /*0x70c2c7*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v3 >= v4 ) /*0x70c2d3*/
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v3 >= v4 ) /*0x70c2d3*/
       v4 = 0; /*0x70c2d9*/
     else
-      v4 -= *(unsigned int *)&stru_A8EB00.?[416] - v3; /*0x70c2d5*/
+      v4 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v3; /*0x70c2d5*/
   }
   Power::TimerProcess(v4); /*0x70c2de*/
   Power::TimerProcess(this->displayProductionTo[0]); /*0x70c2ec*/
@@ -1196,10 +1195,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v6 = this->cloakDelayTimer[2]; /*0x70c305*/
   if ( v5 != -1 ) /*0x70c30e*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v5 >= v6 ) /*0x70c31a*/
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v5 >= v6 ) /*0x70c31a*/
       v6 = 0; /*0x70c320*/
     else
-      v6 -= *(unsigned int *)&stru_A8EB00.?[416] - v5; /*0x70c31c*/
+      v6 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v5; /*0x70c31c*/
   }
   Power::TimerProcess(v6); /*0x70c325*/
   Checksummer::Add_float((Checksummer *)aP1, IDA_LODWORD(this->warpFactor)); /*0x70c333*/
@@ -1211,10 +1210,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v9 = this->diskLaserTimer[2]; /*0x70c368*/
   if ( v8 != -1 ) /*0x70c371*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v8 >= v9 ) /*0x70c37d*/
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v8 >= v9 ) /*0x70c37d*/
       v9 = 0; /*0x70c383*/
     else
-      v9 -= *(unsigned int *)&stru_A8EB00.?[416] - v8; /*0x70c37f*/
+      v9 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v8; /*0x70c37f*/
   }
   Power::TimerProcess(v9); /*0x70c388*/
   Power::TimerProcess(this->ammo); /*0x70c396*/
@@ -1222,10 +1221,10 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   v11 = this->reloadTimer[2]; /*0x70c3a1*/
   if ( v10 != -1 ) /*0x70c3aa*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - v10 >= v11 ) /*0x70c3b6*/
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v10 >= v11 ) /*0x70c3b6*/
       v11 = 0; /*0x70c3bc*/
     else
-      v11 -= *(unsigned int *)&stru_A8EB00.?[416] - v10; /*0x70c3b8*/
+      v11 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v10; /*0x70c3b8*/
   }
   Power::TimerProcess(v11); /*0x70c3c1*/
   Power::TimerProcess(this->unitValue); /*0x70c3cf*/
@@ -1343,11 +1342,11 @@ void House_Play_6D1660()
     v5 = &stru_B0C1C0; /*0x6d1675*/
     do /*0x6d168b*/
     {
-      (*(void (__thiscall **)(unsigned char *, ShapeButtonClass *))(*(unsigned int *)v3 + 52))(v3, v5); /*0x6d167f*/
+      (*(void (**)(unsigned char *, ShapeButtonClass *))(*(unsigned int *)v3 + 52))(v3, v5); /*0x6d167f*/
       v5 += 8; /*0x6d1682*/
     }
     while ( (int)v5 < (int)&dword_B0CB20 ); /*0x6d168b*/
-    (*(void (__thiscall **)(unsigned char *, GadgetClass *, int))(*(unsigned int *)v3 + 52))(v3, &stru_B0CCB0, a2); /*0x6d1696*/
+    (*(void (**)(unsigned char *, GadgetClass *, int))(*(unsigned int *)v3 + 52))(v3, &stru_B0CCB0, a2); /*0x6d1696*/
     v6 = g_ObjectTrackingPool; /*0x6d1699*/
     do /*0x6d16d0*/
     {
@@ -1364,7 +1363,7 @@ void House_Play_6D1660()
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 240); /*0x6d16dd*/
     v9 = *(unsigned int *)v3; /*0x6d16e2*/
     v3[21828] = 0; /*0x6d16eb*/
-    (*(void (__thiscall **)(unsigned char *, GadgetClass *))(v9 + 48))(v3, &stru_B0CC40); /*0x6d16f2*/
+    (*(void (**)(unsigned char *, GadgetClass *))(v9 + 48))(v3, &stru_B0CC40); /*0x6d16f2*/
     if ( &stru_B0CC40 ) /*0x6d16fd*/
     {
       v12[1] = stru_B0CC40.Width; /*0x6d1710*/
@@ -1379,7 +1378,7 @@ void House_Play_6D1660()
     }
     v10 = *(unsigned int *)v3; /*0x6d1759*/
     v3[21829] = 1; /*0x6d175f*/
-    return (*(char (__thiscall **)(unsigned char *, unsigned int))(v10 + 56))(v3, 0); /*0x6d1766*/
+    return (*(char (**)(unsigned char *, unsigned int))(v10 + 56))(v3, 0); /*0x6d1766*/
   }
   return result; /*0x6d1769*/
 }
@@ -1436,7 +1435,7 @@ char sub_637A10()
     byte_AC4CF4 = 0; /*0x637a64*/
     result = PlayVocClass(dword_8871E0->EnterBioReactorSound, 0x2000, 1.0, 0); /*0x637a7b*/
     if ( dword_AC4B80 ) /*0x637a88*/
-      return (**(int (__thiscall ***)(int, int, unsigned int))dword_AC4B80)(dword_AC4B80, 4552, 0); /*0x637a92*/
+      return (**(int (***)(int, int, unsigned int))dword_AC4B80)(dword_AC4B80, 4552, 0); /*0x637a92*/
   }
   return result; /*0x637a94*/
 }

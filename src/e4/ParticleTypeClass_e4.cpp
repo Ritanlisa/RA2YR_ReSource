@@ -15,6 +15,13 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/PsyDom_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/InfantryClass_e4.hpp"
+#include "e4/classes/PlayerClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
 
 // 0x477900
 namespace gamemd {
@@ -79,7 +86,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x478525*/
         {
-          v7 = (unsigned char *)(v6 + 2); /*0x478527*/
+          v7 = (unsigned char *)((unsigned int)(v6)+ 2); /*0x478527*/
           v8 = a2; /*0x47852a*/
           do /*0x478537*/
           {
@@ -133,7 +140,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_VRGBClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4785c6*/
+    (*(void (**)(_DynamicVectorClass_VRGBClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4785c6*/
   }
   v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned short *)&this->vtable4)));
   if ( v15 < this->q010 ) /*0x4785d1*/
@@ -145,10 +152,10 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 namespace gamemd {
 unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
 {
-  int v3; // edi
+  void * v3;
   char *v4; // eax
-  unsigned char *v5; // ecx
-  int v6; // edx
+  void * v5;
+  void * v6;
   void *BehavesLike; // eax
   int v8; // ecx
   int v9; // eax
@@ -157,7 +164,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
 
   if ( this == (ParticleTypeClass *)a2 ) /*0x4788ec*/
     return &this->ArrayIndex; /*0x4788ec*/
-  (*((void (__thiscall **)(ParticleTypeClass *))this->ArrayIndex + 3))(this); /*0x4788f4*/
+  (*((void (**)(ParticleTypeClass *))this->ArrayIndex + 3))(this); /*0x4788f4*/
   v3 = a2[2]; /*0x4788f7*/
   this->BehavesLike = (void *)v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/
@@ -169,16 +176,16 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   v4 = (char *)RA2_OPNEW(3 * v3); /*0x478907*/
   if ( v4 ) /*0x478911*/
   {
-    if ( v3 - 1 >= 0 ) /*0x478918*/
+    if ( (unsigned int)(v3)- 1 >= 0 ) /*0x478918*/
     {
-      v5 = (unsigned char *)(v4 + 2);
-      v6 = v3; /*0x47891d*/
+      v5 = (void *)((int)((unsigned char *)(v4 + 2)));
+      v6 = (void *)((int)(v3));
       do /*0x47892a*/
       {
-        *(v5 - 2) = 0; /*0x47891e*/
-        *(v5 - 1) = 0; /*0x478921*/
-        *v5 = 0; /*0x478924*/
-        v5 += 3; /*0x478926*/
+        *(unsigned int *)(((unsigned int)(v5)- 2)) = 0; /*0x47891e*/
+        *(unsigned int *)(((unsigned int)(v5)- 1)) = 0; /*0x478921*/
+        *(unsigned int *)(v5) = 0; /*0x478924*/
+        (unsigned int)(v5)+= 3; /*0x478926*/
         --v6; /*0x478929*/
       }
       while ( v6 ); /*0x47892a*/
@@ -186,7 +193,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   }
   else
   {
-    v4 = 0; /*0x47892e*/
+    v4 = (char *)((void *)(0));
   }
   this->ParticleTypeClass_field_28C = (unsigned int)((void *)(v4));
   if ( !v4 ) /*0x478935*/
@@ -245,7 +252,7 @@ void ParticleTypeClass_LoadFromINI(void * a1, void * a2)
   int *Coord2; // eax
   int Coord; // eax
   int v33; // eax
-  int16_t v34; // dx
+  uint8_t * v34;
   char v35; // al
   int v36; // ebp
   BuildingTypeClass *v37; // eax
@@ -257,9 +264,9 @@ void ParticleTypeClass_LoadFromINI(void * a1, void * a2)
   void **v44[2]; // [esp-14h] [ebp-F8h] BYREF
   uint8_t *v45; // [esp-Ch] [ebp-F0h]
   unsigned int v46;
-  uint8_t *p_ParticleTypeClass_field_0x24; // [esp-4h] [ebp-E8h]
+  int * p_ParticleTypeClass_field_0x24;
   uint8_t *v48; // [esp+0h] [ebp-E4h]
-  int ParticleTypeClass_field_0x2F8; // [esp+4h] [ebp-E0h]
+  uint8_t * ParticleTypeClass_field_0x2F8;
   int v50; // [esp+18h] [ebp-CCh] BYREF
   char Source[32]; // [esp+1Ch] [ebp-C8h] BYREF
   int v52[7]; // [esp+3Ch] [ebp-A8h] BYREF
@@ -304,14 +311,10 @@ void ParticleTypeClass_LoadFromINI(void * a1, void * a2)
                                              p_ParticleTypeClass_field_0x24,
                                              v48,
                                              ParticleTypeClass_field_0x2F8);
-  v9 = INIClass::ReadInt_Overwrite( /*0x645029*/
-         (bool *)a2,
-         (uint8_t *)&a1->ParticleTypeClass_field_0x24,
-         g_INI_Key_Damage,
-         a1->ParticleTypeClass_field_0x2E8[0]);
-  ParticleTypeClass_field_0x2E4 = (unsigned char *)(a1->ParticleTypeClass_field_0x2E4);
-  ParticleTypeClass_field_0x2F8 = (uint8_t *)(128);
-  v48 = (uint8_t *)Destination; /*0x64503d*/
+  v9 = (int)(INIClass::ReadInt_Overwrite( /*0x645029*/ (bool *)a2, (uint8_t *)&a1->ParticleTypeClass_field_0x24, g_INI_Key_Damage, a1->ParticleTypeClass_field_0x2E8[0]));
+  ParticleTypeClass_field_0x2E4 = (uint8_t *)((unsigned char *)(a1->ParticleTypeClass_field_0x2E4));
+  ParticleTypeClass_field_0x2F8 = (uint8_t *)((unsigned int)((uint8_t *)(128)));
+  v48 = (int *)((uint8_t *)Destination);
   p_ParticleTypeClass_field_0x24 = (uint8_t *)&g_INI_DefaultBuffer; /*0x64503e*/
   v46 = g_INI_Key_Warhead; /*0x645043*/
   v45 = (uint8_t *)&a1->ParticleTypeClass_field_0x24; /*0x645048*/
@@ -444,7 +447,7 @@ void ParticleTypeClass_LoadFromINI(void * a1, void * a2)
           (uint8_t *)&a1->ParticleTypeClass_field_0x24,
           aMinzvelocity,
           a1->ParticleTypeClass_field_0x2A8[0]);
-  v29 = a1->ParticleTypeClass_field_0x2AC[0]; /*0x645253*/
+  v29 = (unsigned int)(a1->ParticleTypeClass_field_0x2AC[0]);
   a1->ParticleTypeClass_field_0x2A8[0] = v28; /*0x645259*/
   v30 = INIClass::ReadInt_Overwrite( /*0x645268*/
           (bool *)a2,
@@ -452,16 +455,11 @@ void ParticleTypeClass_LoadFromINI(void * a1, void * a2)
           aZvelocityrange,
           v29);
   ParticleTypeClass_field_0x2F8 = (unsigned int)((int)&a1->__pad_248[76]);
-  v48 = aNextparticleof; /*0x645278*/
-  p_ParticleTypeClass_field_0x24 = (uint8_t *)&a1->ParticleTypeClass_field_0x24; /*0x64527d*/
-  v46 = (uint8_t *)v53; /*0x64527e*/
-  a1->ParticleTypeClass_field_0x2AC[0] = v30; /*0x645281*/
-  Coord2 = INIClass::GetCoord2( /*0x645287*/
-             (INIClass *)a2,
-             (int *)v46,
-             p_ParticleTypeClass_field_0x24,
-             v48,
-             (int *)ParticleTypeClass_field_0x2F8);
+  v48 = (int *)(aNextparticleof);
+  p_ParticleTypeClass_field_0x24 = (unsigned int)((uint8_t *)((int *)((uint8_t *)&a1->ParticleTypeClass_field_0x24)));
+  v46 = (int *)((unsigned int)((int *)((uint8_t *)v53)));
+  a1->ParticleTypeClass_field_0x2AC[0] = (int *)(v30);
+  Coord2 = (int *)(INIClass::GetCoord2( /*0x645287*/ (INIClass *)a2, (int *)v46, p_ParticleTypeClass_field_0x24, v48, (int *)ParticleTypeClass_field_0x2F8));
   *(unsigned int *)&a1->__pad_248[76] = *Coord2; /*0x64528e*/
   *(unsigned int *)&a1->__pad_248[80] = Coord2[1]; /*0x645298*/
   *(unsigned int *)&a1->__pad_248[84] = Coord2[2]; /*0x64529e*/
@@ -479,8 +477,8 @@ void ParticleTypeClass_LoadFromINI(void * a1, void * a2)
           (uint8_t *)&a1->ParticleTypeClass_field_0x24,
           aStartcolor2,
           (uint8_t *)&a1->ParticleTypeClass_field_0x2D4 + 3);
-  v34 = *(unsigned short *)v33; /*0x6452e3*/
-  ParticleTypeClass_field_0x2F8 = a1->__pad_308[1]; /*0x6452e6*/
+  v34 = (uint8_t *)((int16_t)((uint8_t *)(*(unsigned short *)v33)));
+  ParticleTypeClass_field_0x2F8 = (uint8_t *)(a1->__pad_308[1]);
   *(unsigned short *)((char *)&a1->ParticleTypeClass_field_0x2D4 + 3) = v34; /*0x6452e7*/
   v48 = aFinaldamagesta; /*0x6452eb*/
   IDA_LOBYTE(v33) = *(unsigned char *)(v33 + 2); /*0x6452f0*/
@@ -544,9 +542,9 @@ void ParticleTypeClass_LoadFromINI(void * a1, void * a2)
     {
       v36 = -1; /*0x6453b1*/
     }
-    a1->ParticleTypeClass_field_0x310 = v36; /*0x6453b4*/
+    a1->ParticleTypeClass_field_0x310 = (char)(v36);
   }
-  Source[0] = 0; /*0x6453cb*/
+  Source[0] = (char **)(0);
   INIClass::GetString( /*0x6453d0*/
     (INIClass *)a2,
     (uint8_t *)&a1->ParticleTypeClass_field_0x24,
@@ -554,7 +552,7 @@ void ParticleTypeClass_LoadFromINI(void * a1, void * a2)
     0,
     Source,
     32);
-  v41 = 0; /*0x6453d5*/
+  v41 = (char **)((int)((char **)(0)));
   v42 = off_8370BC; /*0x6453d7*/
   while ( _strcmpi(Source, *v42) ) /*0x6453ee*/
   {
@@ -721,7 +719,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2)
   this->ParticleTypeClass_field_0xC = (void*)&ParticleTypeClass_vftable; /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&this->ArrayIndex, 1); /*0x645971*/
   v7 = this; /*0x645986*/
-  v3 = (*(int (__thiscall **)(int *, ParticleTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x64598a*/
+  v3 = (*(int (**)(int *, ParticleTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x64598a*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v7);
   if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x64599a*/
@@ -736,7 +734,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(char a2)
     }
   }
   v7 = this; /*0x6459cf*/
-  v4 = (*(int (__thiscall **)(char *, ParticleTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_3C[12] + 16))( /*0x6459d3*/
+  v4 = (*(int (**)(char *, ParticleTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_3C[12] + 16))( /*0x6459d3*/
          &stru_A83D50.__pad_3C[12],
          &v7);
   if ( v4 != -1 && v4 < *(int *)&stru_A83D50.__pad_3C[28] ) /*0x6459e3*/

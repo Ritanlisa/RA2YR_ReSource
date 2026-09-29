@@ -18,6 +18,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/FileSystem_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6C0260
 namespace gamemd {
@@ -81,12 +82,12 @@ int TClassFactory_CampaignClass::GetSize(void * a1, void * a2)
   int v3; // ecx
   int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a2 + 4); /*0x6c031a*/
+  v2 = *(unsigned int *)((unsigned int)(a2)+ 4); /*0x6c031a*/
   if ( v5 ) /*0x6c031d*/
     v3 = v2 + 1; /*0x6c031f*/
   else
     v3 = v2 - 1; /*0x6c0328*/
-  *(unsigned int *)(a2 + 4) = v3; /*0x6c0320*/
+  *(unsigned int *)((unsigned int)(a2)+ 4) = v3; /*0x6c0320*/
   return 0; /*0x6c0325*/
 }
 } // namespace gamemd
@@ -135,12 +136,12 @@ int TClassFactory_MechLocomotionClass::GetSize(void * a1, void * a2)
   int v3; // ecx
   int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a2 + 4); /*0x6c4e1a*/
+  v2 = *(unsigned int *)((unsigned int)(a2)+ 4); /*0x6c4e1a*/
   if ( v5 ) /*0x6c4e1d*/
     v3 = v2 + 1; /*0x6c4e1f*/
   else
     v3 = v2 - 1; /*0x6c4e28*/
-  *(unsigned int *)(a2 + 4) = v3; /*0x6c4e20*/
+  *(unsigned int *)((unsigned int)(a2)+ 4) = v3; /*0x6c4e20*/
   return 0; /*0x6c4e25*/
 }
 } // namespace gamemd

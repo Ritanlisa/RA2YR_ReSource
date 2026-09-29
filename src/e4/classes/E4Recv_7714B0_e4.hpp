@@ -57,6 +57,7 @@ struct E4Recv_7714B0 {
     unsigned int targetLaserTimer;
     unsigned int unknown_short_3C8;
     unsigned int vtable0;
+    unsigned int Audio;
 // --- flat members (END) ---
     void sub_7714B0(int a2,  char a3,  int a4);    // 0x7714B0
 };

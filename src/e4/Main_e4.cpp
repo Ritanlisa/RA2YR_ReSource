@@ -7,6 +7,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
 
 // 0x4E1D00
 namespace gamemd {
@@ -20,7 +22,7 @@ void Main::CreateDialog()
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x4e1d1d*/
-  Debug::Log(); /*0x4e1d25*/
+  this->Debug::Log(); /*0x4e1d25*/
   v2 = 3003; /*0x4e1d3b*/
   if ( byte_A8E9A0 != 1 ) /*0x4e1d40*/
     v2 = 245; /*0x4e1d42*/
@@ -32,7 +34,7 @@ void Main::CreateDialog()
     Dialog::Show((Dialog *)this->Main_field_00); /*0x4e1d62*/
     for ( i = dwNewLong; dwNewLong == -1; i = dwNewLong ) /*0x4e1d6e*/
     {
-      if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x4e1d77*/
+      if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x4e1d77*/
         dwNewLong = 2; /*0x4e1d79*/
       if ( !byte_A8E9A0 ) /*0x4e1d88*/
       {
@@ -47,6 +49,6 @@ void Main::CreateDialog()
     }
     Dialog::Destroy((Dialog *)this->Main_field_00); /*0x4e1db2*/
   }
-  Debug::Log(); /*0x4e1dd0*/
+  this->Debug::Log(); /*0x4e1dd0*/
 }
 } // namespace gamemd

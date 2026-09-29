@@ -13,8 +13,8 @@ unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
   this->Items = (unsigned int)(0);
   this->Capacity = (unsigned int)(a2);
   this->IsInitialized = (unsigned int)(1);
-  this->IsAllocated = 0; /*0x69d885*/
-  this->vtable0 = (void*)&VectorClass_HouseClass___vftable; /*0x69d888*/
+  this->IsAllocated = (unsigned int)(0);
+  this->vtable0 = (unsigned int)((void*)&VectorClass_HouseClass___vftable);
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/

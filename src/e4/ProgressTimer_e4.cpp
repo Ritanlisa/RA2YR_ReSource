@@ -28,9 +28,9 @@ unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
   ProgressTimer_field_0x10 = (char *)this->ProgressTimer_field_0x10; /*0x4c93e0*/
   if ( ProgressTimer_field_0x8 != (void *)-1 ) /*0x4c93ec*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - (int)ProgressTimer_field_0x8 >= (int)ProgressTimer_field_0x10 ) /*0x4c93f4*/
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)ProgressTimer_field_0x8 >= (int)ProgressTimer_field_0x10 ) /*0x4c93f4*/
       goto LABEL_14; /*0x4c93f4*/
-    ProgressTimer_field_0x10 -= *(unsigned int *)&stru_A8EB00.?[416] - (unsigned int)ProgressTimer_field_0x8; /*0x4c93f6*/
+    ProgressTimer_field_0x10 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)ProgressTimer_field_0x8; /*0x4c93f6*/
   }
   if ( ProgressTimer_field_0x10 ) /*0x4c93fa*/
   {
@@ -48,12 +48,12 @@ unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
     v9 = this->ProgressTimer_field_0x8; /*0x4c9421*/
     if ( v9 != (void *)-1 ) /*0x4c9427*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.?[416] - (int)v9 >= (int)v8 ) /*0x4c942f*/
+      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)v9 >= (int)v8 ) /*0x4c942f*/
       {
         v10 = 0; /*0x4c9456*/
         goto LABEL_11; /*0x4c9458*/
       }
-      IDA_LOWORD(v8) = (unsigned short)v8 - (*(unsigned short *)&stru_A8EB00.?[416] - (unsigned short)v9); /*0x4c9431*/
+      IDA_LOWORD(v8) = (unsigned short)v8 - (*(unsigned short *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned short)v9); /*0x4c9431*/
     }
     v10 = (int16_t)v8; /*0x4c9433*/
   LABEL_11:

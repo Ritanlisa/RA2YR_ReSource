@@ -20,6 +20,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x5FE250
 OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
@@ -65,7 +66,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   if ( *(int *)&stru_A83D50.__pad_3C[4] < (int)stru_A83D50.SuperClass_field_0x38 /*0x5fe368*/
     || (stru_A83D50.__pad_3C[1] || !stru_A83D50.SuperClass_field_0x38)
     && *(int *)&stru_A83D50.__pad_3C[8] > 0
-    && (v4 = (*((uint8_t (__thiscall **)(void **, char *, unsigned int))stru_A83D50.SuperClass_field_0x30 + 2))(
+    && (v4 = (*((uint8_t (**)(void **, char *, unsigned int))stru_A83D50.SuperClass_field_0x30 + 2))(
                &stru_A83D50.SuperClass_field_0x30,
                (char *)stru_A83D50.SuperClass_field_0x38 + *(unsigned int *)&stru_A83D50.__pad_3C[8],
                0) == 0,
@@ -348,7 +349,7 @@ unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
   if ( (int)stru_A83D50.SuperClass_field_0x28 < *(int *)&stru_A83D50.__pad_14[12] /*0x6441ef*/
     || (IDA_BYTE1(stru_A83D50.SuperClass_field_0x24) || !*(unsigned int *)&stru_A83D50.__pad_14[12])
     && (int)stru_A83D50.SuperClass_field_0x2C > 0
-    && (*(uint8_t (__thiscall **)(char *, char *, unsigned int))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 8))(
+    && (*(uint8_t (**)(char *, char *, unsigned int))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 8))(
          &stru_A83D50.__pad_14[4],
          (char *)stru_A83D50.SuperClass_field_0x2C + *(unsigned int *)&stru_A83D50.__pad_14[12],
          0) )
@@ -431,7 +432,7 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
   v4 = (char *)DSurface_ViewBounds.field_4 + a2[1] + 15; /*0x5fe5c1*/
   v6[0] = DSurface_ViewBounds.field_0 + *a2 + 30; /*0x5fe5c4*/
   v6[1] = (int)v4; /*0x5fe5c8*/
-  v5 = (*((int (__thiscall **)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fe5f3*/
+  v5 = (*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fe5f3*/
   DrawToSurfaceSHP( /*0x5fe606*/
     (int)g_DSurface_Hidden_2,
     *(int *)&stru_87F5F0.__pad_58[112],
@@ -515,10 +516,10 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   int PixelData; // ecx
   int16_t v11; // [esp+4h] [ebp-4h]
 
-  v4 = (MixFileClass *)(*((int (__thiscall **)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fed06*/
+  v4 = (MixFileClass *)(*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this); /*0x5fed06*/
   if ( v4 /*0x5fed28*/
     || (DamageLevels = this->DamageLevels) != 0
-    && (v4 = (MixFileClass *)(*(int (__thiscall **)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels)) != 0 )
+    && (v4 = (MixFileClass *)(*(int (**)(int))(*(unsigned int *)DamageLevels + 156))(DamageLevels)) != 0 )
   {
     v6 = this->LandType[0]; /*0x5fed2e*/
     if ( (v6 < 127 || v6 > 138) && (v6 < 147 || v6 > 158) ) /*0x5fed4f*/
@@ -574,7 +575,7 @@ OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
   *(void **)&this->vtable4 = (void*)&OverlayTypeClass_vftable; /*0x5fef4a*/
   AbstractClass::AnnounceExpiredPointer(&this->ObjectTypeClass, 1); /*0x5fef51*/
   v5 = this; /*0x5fef66*/
-  v3 = (*((int (__thiscall **)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/
+  v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/
          &stru_A83D50.SuperClass_field_0x30,
          &v5);
   if ( v3 != -1 && v3 < *(int *)&stru_A83D50.__pad_3C[4] ) /*0x5fef7a*/

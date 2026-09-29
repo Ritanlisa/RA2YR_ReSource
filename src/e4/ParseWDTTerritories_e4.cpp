@@ -11,8 +11,8 @@
 namespace gamemd {
 unsigned int * E4Recv_76AAF0::sub_76AAF0()
 {
-  this->M4 = 0; /*0x76aaf7*/
-  this->AbstractClass = &off_7F7220; /*0x76aafa*/
+  this->M4 = (unsigned int)(0);
+  this->AbstractClass = (unsigned int)(&off_7F7220);
   this->M8 = 0; /*0x76ab00*/
   IDA_BYTE2(this->M12) = 10; /*0x76ab03*/
   IDA_HIBYTE(this->M14) = 10; /*0x76ab06*/
@@ -49,7 +49,7 @@ unsigned int * E4Recv_76AAF0::sub_76AAF0()
   IDA_HIBYTE(this->nextObject) = 50; /*0x76ab73*/
   IDA_BYTE2(this->attachedTag) = 50; /*0x76ab76*/
   this->attachedBomb = (BombClass *)-1; /*0x76ab79*/
-  this->ambientSoundController[0] = -1; /*0x76ab7c*/
+  this-((unsigned int *)(>ambientSoundController))[0] = -1; /*0x76ab7c*/
   return &this->AbstractClass; /*0x76ab7f*/
 }
 } // namespace gamemd

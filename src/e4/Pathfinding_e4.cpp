@@ -15,6 +15,9 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ParticleTypeClass_e4.hpp"
 
 // 0x5A5360
 namespace gamemd {
@@ -119,9 +122,9 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   if ( v5 ) /*0x5a53a5*/
   {
     v5[3] = (int)(0);
-    v5[4] = -1; /*0x5a53b2*/
-    *v5 = 0; /*0x5a53b9*/
-    v5[1] = v2; /*0x5a53bb*/
+    v5[4] = (int)(-1);
+    *v5 = (int)(0);
+    v5[1] = (int)(v2);
     v7 = RA2_OPNEW(4 * v2 + 4); /*0x5a53be*/
     v8 = v6[1]; /*0x5a53c3*/
     v6[2] = (int)v7; /*0x5a53c6*/
@@ -172,7 +175,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   {
     for ( ; v15 > 1; v16 >>= 1 ) /*0x5a5499*/
     {
-      v17 = v6[2]; /*0x5a549b*/
+      v17 = (unsigned int)(v6[2]);
       v18 = *(unsigned int *)(v17 + 4 * v16); /*0x5a549e*/
       if ( *(float *)(v18 + 4) <= (double)*(float *)&v80 ) /*0x5a54ad*/
         break; /*0x5a54ad*/
@@ -198,7 +201,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   else
   {
-    v20 = 0; /*0x5a54e0*/
+    v20 = (unsigned short *)(0);
   }
   v74 = (unsigned int *)(v20);
   v23 = (unsigned int *)(RA2_OPNEW(0x18u));
@@ -212,7 +215,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   else
   {
-    v24 = 0; /*0x5a5541*/
+    v24 = (unsigned int)(0);
   }
   IDA_LODWORD(v78) = v24; /*0x5a5547*/
   v25 = a2 <= 0; /*0x5a554b*/
@@ -226,7 +229,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       if ( v24[4] < v26 /*0x5a55a2*/
         || (*((unsigned char *)v24 + 13) || !v26)
         && (v27 = v24[5], v27 > 0)
-        && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(*v24 + 8))(v24, v26 + v27, 0) )
+        && (*(uint8_t (**)(unsigned int *, int, unsigned int))(*v24 + 8))(v24, v26 + v27, 0) )
       {
         v28 = v24[4]; /*0x5a55a9*/
         v29 = v24[1]; /*0x5a55ac*/
@@ -237,7 +240,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       IDA_LODWORD(v30) = &v4[2 * v76]; /*0x5a55c7*/
       do /*0x5a5789*/
       {
-        v80 = (int)(*CellStruct::Add(v74, &v82, (unsigned short *)(4 * (v77 & 7) + 9041544)));
+        v80 = (int)(*(void *)(CellStruct)::Add(v74, &v82, (unsigned short *)(4 * (v77 & 7) + 9041544)));
         v73 = v80; /*0x5a55f3*/
         v31 = IDA_SHIWORD(v80) + (int16_t)v80; /*0x5a55ff*/
         if ( v31 > dword_ABED04 /*0x5a5626*/
@@ -344,7 +347,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     for ( j = v24[4] - 1; j >= 0; v72[14] = 0xFFFF ) /*0x5a5aa3*/
       v72 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)(v24[1] + 4 * j--)); /*0x5a5ab6*/
     if ( v24 ) /*0x5a5ac3*/
-      (*(void (__thiscall **)(unsigned int *, int))*v24)(v24, 1); /*0x5a5acb*/
+      (*(void (**)(unsigned int *, int))*v24)(v24, 1); /*0x5a5acb*/
     return 0; /*0x5a5ad0*/
   }
   else
@@ -360,7 +363,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         a1 = *(int16_t **)(v57 + 4 * v55); /*0x5a5872*/
         do /*0x5a5910*/
         {
-          IDA_LODWORD(v81[0]) = *CellStruct::Add(&a1, &v82, (unsigned short *)(4 * (v56 & 7) + 9041544)); /*0x5a5897*/
+          IDA_LODWORD(v81[0]) = *(void *)(CellStruct)::Add(&a1, &v82, (unsigned short *)(4 * (v56 & 7) + 9041544)); /*0x5a5897*/
           v80 = IDA_SLODWORD(v81[0]); /*0x5a589b*/
           v58 = IDA_SWORD1(v81[0]) + SLOWORD(v81[0]); /*0x5a58a7*/
           if ( v58 > dword_ABED04 /*0x5a58dd*/

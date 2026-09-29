@@ -16,7 +16,7 @@ struct VectorClass_USubzoneTrackingStruct {
     int Clear(int a2,  int a3);    // 0x588E10
     char AddRef(int a2);  // 0x5896F0
     char Release(int a2,  int * a3);    // 0x589740
-    void ddtor();  // 0x589960
+    void ddtor(void *a1 = 0);  // 0x589960
     int GetSize(int a2);  // 0x5899E0
     unsigned int GetCapacity(int a2);  // 0x589A30
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x58A470

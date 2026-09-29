@@ -47,6 +47,7 @@ struct E4Recv_517110 {
     unsigned int ambientSoundController;
     unsigned int occupant;
     unsigned int owningHouseIndex;
+    unsigned int fallRate;
 // --- flat members (END) ---
     int sub_517110();  // 0x517110
 };

@@ -63,6 +63,7 @@ struct E4Recv_7B9530 {
     unsigned int customSound_controller;
     unsigned int fallRate;
     unsigned int nextObject;
+    unsigned int Debug;
 // --- flat members (END) ---
     BOOL sub_7B9530();  // 0x7B9530
 };

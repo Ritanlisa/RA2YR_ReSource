@@ -39,7 +39,7 @@ int BombClass::AbstractClass()
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (byte_89C675 || !dword_89C670)
     && dword_89C67C > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_89C668 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_89C668 + 8))(
          &dword_89C668,
          dword_89C670 + dword_89C67C,
          0) )
@@ -73,8 +73,8 @@ void * BombClass::GetCurrentFrame()
 namespace gamemd {
 int BombClass::TimeToExplode()
 {
-  return !this->audioController[0] /*0x438a8c*/
-      && *(int *)&stru_A8EB00.?[416] > this->audioController[2]
+  return !this-((unsigned int *)(>audioController))[0] /*0x438a8c*/
+      && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > this->audioController[2]
       && !this->BombClass_field_58;
 }
 } // namespace ra2
@@ -134,7 +134,7 @@ int BombClass::InitPool()
 namespace gamemd {
 int BombClass::IsDeathBomb()
 {
-  return this->audioController[0]; /*0x4389f3*/
+  return this-((unsigned int *)(>audioController))[0]; /*0x4389f3*/
 }
 } // namespace gamemd
 
@@ -198,9 +198,9 @@ BombClass * BombClass::CopyTo(char a2)
   *(void **)&this->vtable2 = (void*)&BombClass_vftable; /*0x4393fd*/
   *(void **)&this->vtable3 = (void*)&BombClass_vftable; /*0x439404*/
   *(void **)&this->vtable4 = (void*)&BombClass_vftable; /*0x43940b*/
-  AudioFileClass::Release((AudioFileClass *)&this->audioController[3]); /*0x439412*/
+  AudioFileClass::Release((AudioFileClass *)&this-((unsigned int *)(>audioController))[3]); /*0x439412*/
   v5 = this; /*0x439427*/
-  v3 = (*(int (__thiscall **)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
+  v3 = (*(int (**)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {
     do /*0x43945e*/
@@ -210,7 +210,7 @@ BombClass * BombClass::CopyTo(char a2)
     }
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
-  AbstractClass::DTOR(); /*0x439462*/
+  this->AbstractClass::DTOR(); /*0x439462*/
   if ( (a2 & 1) != 0 ) /*0x43946c*/
     RA2_OPDEL(); /*0x43946f*/
   return &this->AbstractClass; /*0x439479*/

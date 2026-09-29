@@ -455,13 +455,14 @@ struct DisplayClass {
     unsigned int __pad_11AC;
     unsigned int __pad_11B4;
     unsigned int __pad_41E;
+    unsigned int MapClass;
 // --- flat members (END) ---
-    DisplayClass * Read(char a2);
-    HWND Render();
+    DisplayClass * Read(char a2, void *a1 = 0);
+    HWND Render(void *a1 = 0);
     Tactical * * UpdateCellPassability(short * a1, void* aP2);
     VectorClass_flat * * ProcessCellReveal(MouseClass * aP1, void* aP2);
     bool SetCoordVisible(void* aP0, MouseClass * aP1, char a3);
-    char ddtor();
+    char ddtor(void *a1 = 0);
     int * processDisplayMode(char a2);
     int AdvanceFrameCounter();
     int ExitMode();
@@ -482,7 +483,7 @@ struct DisplayClass {
     unsigned int * loc_4AEB50(char a2);
     unsigned int * updateRenderState(char a2);
     void * Draw(int a2);
-    void Update(PowerClass * aP1, int a3);
+    void Update(PowerClass * aP1, int a3, void *a2 = 0, void *a1 = 0);
 };
 
 } // namespace gamemd

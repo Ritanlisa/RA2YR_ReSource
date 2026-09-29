@@ -28,6 +28,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/LoadOptions_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x47C3D0
 namespace gamemd {
@@ -62,7 +63,7 @@ int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3
   {
     if ( (v8[20] & 1) != 0 && v8 != (unsigned char *)aP3 ) /*0x47c435*/
     {
-      v9 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, unsigned char *))(*(unsigned int *)v8 + 72))(v8, v16); /*0x47c440*/
+      v9 = (unsigned int *)(*(int (**)(unsigned char *, unsigned char *))(*(unsigned int *)v8 + 72))(v8, v16); /*0x47c440*/
       v14 = (uint8_t)*v9 - v5; /*0x47c45a*/
       v15 = (uint8_t)v9[1] - v6; /*0x47c463*/
       v17 = v9[2]; /*0x47c467*/
@@ -92,7 +93,7 @@ int Object::FindObjectCell(TechnoClass * aP1, char aP2)
     Object_field_0xE4 = (unsigned int *)(this->Object_field_0xE4);
     if ( Object_field_0xE4 ) /*0x47c5b5*/
     {
-      while ( (*(int (__thiscall **)(unsigned int *))(*Object_field_0xE4 + 44))(Object_field_0xE4) != 2 ) /*0x47c5c1*/
+      while ( (*(int (**)(unsigned int *))(*Object_field_0xE4 + 44))(Object_field_0xE4) != 2 ) /*0x47c5c1*/
       {
         Object_field_0xE4 = (unsigned int *)Object_field_0xE4[12]; /*0x47c5c3*/
         if ( !Object_field_0xE4 ) /*0x47c5c8*/
@@ -110,7 +111,7 @@ int Object::FindObjectCell(TechnoClass * aP1, char aP2)
       Object_field_0xE4 = (unsigned int *)(this->Object_field_0xE4);
       if ( Object_field_0xE4 ) /*0x47c5f2*/
       {
-        while ( (*(int (__thiscall **)(unsigned int *))(*Object_field_0xE4 + 44))(Object_field_0xE4) != 36 ) /*0x47c5fe*/
+        while ( (*(int (**)(unsigned int *))(*Object_field_0xE4 + 44))(Object_field_0xE4) != 36 ) /*0x47c5fe*/
         {
           Object_field_0xE4 = (unsigned int *)Object_field_0xE4[12]; /*0x47c600*/
           if ( !Object_field_0xE4 ) /*0x47c605*/
@@ -132,7 +133,7 @@ int Object::IsAlliedWithObjectHouse(IUnknown * aP1)
 
   if ( !aP1 ) /*0x4f9a99*/
     goto LABEL_9; /*0x4f9a99*/
-  result = (*(int (__thiscall **)(int))(aP1->u32_3C)(aP1); /*0x4f9a9d*/
+  result = (*(int (**)(int))(aP1->u32_3C)(aP1); /*0x4f9a9d*/
   if ( !result ) /*0x4f9aa2*/
     goto LABEL_9; /*0x4f9aa2*/
   if ( (Object *)result == this ) /*0x4f9aa6*/
@@ -179,7 +180,7 @@ int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
     return result; /*0x4f9b11*/
   }
   result = *(unsigned int *)(result + 48); /*0x4f9b14*/
-  if ( (void *)result == this->Object_field_0x30 ) /*0x4f9b1c*/
+  if ( (void *)result == (void *)(this->Object_field_0x30) ) /*0x4f9b1c*/
   {
     IDA_LOBYTE(result) = 1; /*0x4f9b1e*/
     return result; /*0x4f9b21*/
@@ -259,11 +260,11 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     v7 = v4 + *((unsigned short *)v5 + 1); /*0x56c351*/
     IDA_LOWORD(v23) = v3 + v6; /*0x56c354*/
     v8 = (int16_t)(v3 + v6); /*0x56c359*/
-    v9 = *(unsigned int *)&this->__pad_EC[8]; /*0x56c35c*/
+    v9 = *(unsigned int *)&this-((unsigned int *)(>__pad_EC))[8]; /*0x56c35c*/
     IDA_HIWORD(v23) = v7; /*0x56c362*/
     v10 = v7; /*0x56c367*/
     v11 = v8 + v7; /*0x56c36a*/
-    if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *(unsigned int *)&this->__pad_EC[12] ) /*0x56c39c*/
+    if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *(unsigned int *)&this-((unsigned int *)(>__pad_EC))[12] ) /*0x56c39c*/
     {
       v12 = v8 + (v10 << 9); /*0x56c3a7*/
       if ( v12 >= 0x40000 || (v13 = (int *)*((unsigned int *)this->Object_field_0x13C + v12)) == 0 ) /*0x56c3c1*/
@@ -275,9 +276,9 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
       {
         if ( (i[5] & 1) == 0 || *((unsigned char *)i + 1050) || i[136] != 2 ) /*0x56c3f6*/
         {
-          if ( (*(int (__thiscall **)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
+          if ( (*(int (**)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
           {
-            v17 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*i + 72))(i, v28); /*0x56c457*/
+            v17 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*i + 72))(i, v28); /*0x56c457*/
             v18 = Coord::Subtract((Coord *)v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18[1]; /*0x56c485*/
@@ -423,7 +424,7 @@ void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * a
   if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
     || (byte_A8EC5D || !dword_A8EC58)
     && dword_A8EC64 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A8EC50 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_A8EC50 + 8))(
          &dword_A8EC50,
          dword_A8EC58 + dword_A8EC64,
          0) )
@@ -439,7 +440,7 @@ void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * a
     IDA_HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
     v8 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP1); /*0x5fc497*/
     if ( !CellClass::FindInfantry(v8, 0) ) /*0x5fc4a0*/
-      ObjectClass::Deploy(); /*0x5fc4b1*/
+      this->ObjectClass::Deploy(); /*0x5fc4b1*/
     dword_8333BC = -1; /*0x5fc4b6*/
   }
   return this; /*0x5fc4c2*/
@@ -482,7 +483,7 @@ void* Object::HandleAction(int * a2, int * a3)
   unsigned int * v34;
 
   v4 = (int *)((unsigned int *)((int *)(&this->q03C6)));
-  v5 = (int)((unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->q0442) + 156))(this->Type)));
+  v5 = (int)((unsigned int *)((*(int (**)(unsigned int))(**(unsigned int **)(&this->q0442) + 156))(this->Type)));
   v32 = (unsigned int *)(*v4);
   v33 = (unsigned int *)(this->q0A0);
   v34 = (unsigned int *)(this->q0A4);
@@ -539,12 +540,12 @@ void* Object::HandleAction(int * a2, int * a3)
     v15 = *(unsigned int *)&BuildingClass_InstanceArray->gap0[4 * FindBuildingByTiberiumType(v13)]; /*0x5fda8b*/
     v16 = *((unsigned int *)BuildingTypeClass_AnimTable + *(unsigned int *)(v15 + 192)); /*0x5fda93*/
     v17 = *(unsigned int *)&g_BuildingTypeClass_Array->gap0[4 * *(unsigned int *)(*(unsigned int *)(v15 + 224) + 660)]; /*0x5fdaa8*/
-    v18 = (*(int (__thiscall **)(int))(*(unsigned int *)v17 + 156))(v17); /*0x5fdaad*/
+    v18 = (*(int (**)(int))(*(unsigned int *)v17 + 156))(v17); /*0x5fdaad*/
     if ( !v18 ) /*0x5fdab5*/
     {
       v19 = this->Type->q29C; /*0x5fdabd*/
       if ( v19 ) /*0x5fdac5*/
-        v18 = (*(int (__thiscall **)(int))(*(unsigned int *)v19 + 156))(v19); /*0x5fdac9*/
+        v18 = (*(int (**)(int))(*(unsigned int *)v19 + 156))(v19); /*0x5fdac9*/
     }
     DrawToSurfaceSHP( /*0x5fdb03*/
       g_DSurface_Hidden_2,
@@ -596,8 +597,8 @@ void* Object::HandleAction(int * a2, int * a3)
     v21 = (int)((unsigned int *)(*v4));
     v22 = (int)((unsigned int *)(this->q0A0));
     v34 = (unsigned int *)(this->q0A4);
-    IDA_LOWORD(a2) = v21 / 256; /*0x5fdbb9*/
-    IDA_HIWORD(a2) = v22 / 256; /*0x5fdbd1*/
+    IDA_LOWORD(a2) = (unsigned int)(v21)/ 256; /*0x5fdbb9*/
+    IDA_HIWORD(a2) = (unsigned int)(v22)/ 256; /*0x5fdbd1*/
     if ( LayerClass::CoordinatesLegal(&MapClass_Instance, (int16_t *)&a2) ) /*0x5fdbe3*/
     {
       v23 = (int)((unsigned int *)(this->q0A4));
@@ -656,19 +657,19 @@ void * Object::DrawObject(char a2)
   int v3; // eax
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->ObjectClass = (void*)&OverlayClass_vftable; /*0x5fdf76*/
+  this->ObjectClass = (gamemd::OverlayClass *)((void*)&OverlayClass_vftable);
   *(void **)&this->q004 = (void*)&OverlayClass_vftable; /*0x5fdf7c*/
   *(void **)&this->q008 = (void*)&OverlayClass_vftable; /*0x5fdf83*/
   *(unsigned short *)&this->q00C = (void*)&OverlayClass_vftable; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&this->ObjectClass, 1); /*0x5fdf91*/
   v5 = this; /*0x5fdfa6*/
-  v3 = (*(int (__thiscall **)(unsigned char *, OverlayClass **))(*(unsigned int *)&stru_A8EB00.?[108] + 16))(&stru_A8EB00.?[108], &v5); /*0x5fdfaa*/
-  if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[124] ) /*0x5fdfba*/
+  v3 = (*(int (**)(unsigned char *, OverlayClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 108) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 108), &v5); /*0x5fdfaa*/
+  if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 124) ) /*0x5fdfba*/
   {
-    --*(unsigned int *)&stru_A8EB00.?[124]; /*0x5fdfbf*/
+    --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 124); /*0x5fdfbf*/
     for ( ; /*0x5fdfc5*/
-          v3 < *(int *)&stru_A8EB00.?[124];
-          *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[112] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[112] + 4 * v3) )
+          v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 124);
+          *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 112) + 4 * v3) )
     {
       ++v3; /*0x5fdfcd*/
     }
@@ -730,18 +731,18 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
     v12 = ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)(*(unsigned int *)&this->__pad_C[28] + 904), &v26) >> 12) /*0x62ad3a*/
                         + 1) >> 1)
         & 7;
-    v13 = (Cell *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)&this->__pad_C[28] + 444))(*(unsigned int *)&this->__pad_C[28]); /*0x62ad43*/
+    v13 = (Cell *)(*(int (**)(unsigned int))(**(unsigned int **)&this->__pad_C[28] + 444))(*(unsigned int *)&this->__pad_C[28]); /*0x62ad43*/
     NeighbourContent = (ObjectPlacement *)Cell::GetNeighbourContent(v13, v12); /*0x62ad50*/
-    if ( !*(unsigned char *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)&this->__pad_C[24] + 132))(*(unsigned int *)&this->__pad_C[24]) /*0x62ad5a*/
+    if ( !*(unsigned char *)((*(int (**)(unsigned int))(**(unsigned int **)&this->__pad_C[24] + 132))(*(unsigned int *)&this->__pad_C[24]) /*0x62ad5a*/
                    + 3278) )
     {
       ObjectPlacement_field_0x04 = NeighbourContent[29].ObjectPlacement_field_0x04; /*0x62ad64*/
       if ( ObjectPlacement_field_0x04 == 2 || ObjectPlacement_field_0x04 == 6 || ObjectPlacement_field_0x04 == 3 ) /*0x62ad77*/
       {
-        v16 = (*(unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)&this->__pad_C[28] + 444))(*(unsigned int *)&this->__pad_C[28]) /*0x62ad90*/
+        v16 = (*(unsigned int *)((*(int (**)(unsigned int))(**(unsigned int **)&this->__pad_C[28] + 444))(*(unsigned int *)&this->__pad_C[28]) /*0x62ad90*/
                          + 320)
              & 0x100) == 0;
-        v17 = *(unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)&this->__pad_C[28] + 444))(*(unsigned int *)&this->__pad_C[28]) /*0x62ad9d*/
+        v17 = *(unsigned int *)((*(int (**)(unsigned int))(**(unsigned int **)&this->__pad_C[28] + 444))(*(unsigned int *)&this->__pad_C[28]) /*0x62ad9d*/
                         + 68);
         if ( v17 >= 74 && v17 <= 99 ) /*0x62ada8*/
           v16 = 0; /*0x62adaa*/
@@ -754,7 +755,7 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
         }
       }
     }
-    v18 = (unsigned int *)(*(int (__thiscall **)(ObjectPlacement *, unsigned char *))(*(unsigned int *)NeighbourContent->__pad_0 + 72))( /*0x62adde*/
+    v18 = (unsigned int *)(*(int (**)(ObjectPlacement *, unsigned char *))(*(unsigned int *)NeighbourContent->__pad_0 + 72))( /*0x62adde*/
                       NeighbourContent,
                       v30);
     v19 = ObjectPlacement::CalcPosition(NeighbourContent, v31, v18, 0, 0, 0); /*0x62ade9*/
@@ -762,10 +763,10 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
     v20 = *(unsigned int *)&this->__pad_C[24]; /*0x62adf4*/
     v28 = v19[1]; /*0x62adfa*/
     v29 = v19[2]; /*0x62ae03*/
-    if ( v20 && (*(int (__thiscall **)(int))(*(unsigned int *)v20 + 44))(v20) == 1 ) /*0x62ae11*/
+    if ( v20 && (*(int (**)(int))(*(unsigned int *)v20 + 44))(v20) == 1 ) /*0x62ae11*/
     {
       v21 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27); /*0x62ae1d*/
-      v22 = (int *)(*(int (__thiscall **)(CellClass *, int *))(v21->mapCoords[0] + 72))(v21, v31); /*0x62ae2b*/
+      v22 = (int *)(*(int (**)(CellClass *, int *))(v21->mapCoords[0] + 72))(v21, v31); /*0x62ae2b*/
       v27 = *v22; /*0x62ae30*/
       v28 = v22[1]; /*0x62ae37*/
       v29 = v22[2]; /*0x62ae3e*/
@@ -782,7 +783,7 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
     }
     if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27)->flags[0] & 0x100) != 0 ) /*0x62aea9*/
     {
-      v23 = (*(int (__thiscall **)(Cell *, int *))(v13->Cell_field_0x0 + 72))(v13, v31); /*0x62aeb5*/
+      v23 = (*(int (**)(Cell *, int *))(v13->Cell_field_0x0 + 72))(v13, v31); /*0x62aeb5*/
       if ( v29 >= *(unsigned int *)(v23 + 8) ) /*0x62aec1*/
       {
   LABEL_29:
@@ -818,10 +819,10 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
   v29 = v6[2]; /*0x62ac7d*/
   if ( v7 ) /*0x62ac81*/
   {
-    if ( (*(int (__thiscall **)(int))(*(unsigned int *)v7 + 44))(v7) == 1 ) /*0x62ac8b*/
+    if ( (*(int (**)(int))(*(unsigned int *)v7 + 44))(v7) == 1 ) /*0x62ac8b*/
     {
       v8 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27); /*0x62ac97*/
-      v9 = (int *)(*(int (__thiscall **)(CellClass *, unsigned char *))(v8->mapCoords[0] + 72))(v8, v30); /*0x62aca5*/
+      v9 = (int *)(*(int (**)(CellClass *, unsigned char *))(v8->mapCoords[0] + 72))(v8, v30); /*0x62aca5*/
       v27 = *v9; /*0x62acaa*/
       v10 = *(unsigned int *)&this->__pad_C[28]; /*0x62acae*/
       v28 = v9[1]; /*0x62acb4*/
@@ -1541,7 +1542,7 @@ void sub_5A7E90(int a1, unsigned short * a2)
 
   v2 = (unsigned int *)*((unsigned int *)dword_A8ED2C + a1); /*0x5a7e9e*/
   v10 = v2; /*0x5a7ea3*/
-  result = (*(int (__thiscall **)(unsigned int *))(*v2 + 156))(v2); /*0x5a7ea9*/
+  result = (*(int (**)(unsigned int *))(*v2 + 156))(v2); /*0x5a7ea9*/
   v13 = result; /*0x5a7eb1*/
   if ( result ) /*0x5a7eb5*/
   {
@@ -1823,8 +1824,8 @@ bool sub_733C60(int a1, const char * a2)
 {
   const char *v4; // eax
 
-  v4 = (const char *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 136))(a1) + 36); /*0x733c6e*/
-  return a2 && !strcmp(v4, a2) && (*(uint8_t (__thiscall **)(int))(*(unsigned int *)a1 + 316))(a1); /*0x733cb6*/
+  v4 = (const char *)((*(int (**)(int))(*(unsigned int *)a1 + 136))(a1) + 36); /*0x733c6e*/
+  return a2 && !strcmp(v4, a2) && (*(uint8_t (**)(int))(*(unsigned int *)a1 + 316))(a1); /*0x733cb6*/
 }
 } // namespace gamemd
 

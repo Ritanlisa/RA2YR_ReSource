@@ -11,6 +11,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/MixFile_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/MissionClass_e4.hpp"
 
 // 0x53EC40
 namespace gamemd {
@@ -20,7 +22,7 @@ int sub_53EC40(unsigned char a1, char a2)
 
   result = dword_AA0444; /*0x53ec40*/
   if ( dword_AA0444 )
-    word_AA0168[a1] = a2 != 0 ? 0 : 0x8000;
+    ((unsigned int *)(word_AA0168))[a1] = a2 != 0 ? 0 : 0x8000;
   return result; /*0x53ec67*/
 }
 }
@@ -131,7 +133,7 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
   v9 = Math::Sqrt((double)(v8 * v8 + v10 * v10)); /*0x58c735*/
   if ( v8 ) /*0x58c73e*/
   {
-    v3 = Math::ArcTan(-((double)v10 / (double)v8)); /*0x58c754*/
+    v3 = ((Math *)(-((double)v10 / (double)v8)))->ArcTan(); /*0x58c754*/
     if ( v8 < 0 ) /*0x58c75e*/
       v3 = v3 + 3.141592653589793; /*0x58c760*/
   }

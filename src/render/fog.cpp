@@ -86,13 +86,13 @@ static int g_count = 0;
 
 void FoggedObjectDrawList_Add(void* obj, int dx, int dy, int dz, int flags)
 {
-    if (g_count < kMax) { g_list[g_count++] = {obj, dx, dy, dz, flags}; }
+    if (g_count < (void *)(kMax)) { g_list[(unsigned int)(g_count)++] = {obj, dx, dy, dz, flags}; }
 }
 void FoggedObjectDrawList_Clear() { g_count = 0; std::memset(g_list, 0, sizeof(g_list)); }
 int FoggedObjectDrawList_GetCount() { return g_count; }
 const FoggedDrawEntry* FoggedObjectDrawList_Get(int i)
 {
-    return (i >= 0 && i < g_count) ? &g_list[i] : nullptr;
+    return (i >= 0 && (int)(i) < (int)(g_count)) ? &g_list[i] : nullptr;
 }
 
 } // namespace gamemd

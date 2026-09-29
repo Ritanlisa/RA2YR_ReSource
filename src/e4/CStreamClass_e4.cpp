@@ -75,7 +75,7 @@ ModemGame * * CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int
   }
   while ( 1 ) /*0x4a2db1*/
   {
-    result = IStream::Read(v4, (void *)0x10000, v10); /*0x4a2db1*/
+    result = ((IStream *)(v4))->Read((void *)0x10000, v10); /*0x4a2db1*/
     if ( result < 0 ) /*0x4a2db8*/
       return result; /*0x4a2ce2*/
     v6 -= 0x10000; /*0x4a2dba*/
@@ -110,7 +110,7 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
       && !CStreamClass::IsEmpty((CStreamClass *)(v3 + 8), 0)
       && *(int *)(v4 + 20) > 0 )
     {
-      IStream::Read(*(IStream **)(v4 + 24), *(void **)(v4 + 20), a2); /*0x4a3154*/
+      ((IStream *)(*(IStream **)(v4 + 24)))->Read(*(void **)(v4 + 20), a2); /*0x4a3154*/
     }
     if ( *(unsigned int *)(v4 + 8) /*0x4a317b*/
       && (*(int (__stdcall **)(unsigned int, unsigned int))(**(unsigned int **)(v4 + 8) + 32))(*(unsigned int *)(v4 + 8), 0) >= 0 )
@@ -333,7 +333,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAU_DDSURFACEDESC *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4c12*/
+    (*(void (**)(_VectorClass_PAU_DDSURFACEDESC *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4c12*/
     return 1; /*0x4a4c18*/
   }
 }
@@ -393,14 +393,14 @@ VectorClass_flat * CStreamClass_16::QueryInterface(char a2)
 {
   void ** v3;
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4d96*/
   if ( v3 && this->IsAllocated ) /*0x4a4da0*/
   {
     RA2_OPDEL(v3); /*0x4a4da8*/
     *(unsigned int *)&this->q004 = 0; /*0x4a4db0*/
   }
-  this->IsAllocated = 0; /*0x4a4dbb*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x4a4dc1*/
   if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
     RA2_OPDEL(); /*0x4a4dcb*/

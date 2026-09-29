@@ -61,7 +61,7 @@ int Lobby::InvalidatePlayerSlots()
       v3 = 1901; /*0x4e5d6a*/
     }
     if ( (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) /*0x4e5df2*/
-      && ((v4 = dword_A8DA90[i], v4 == g_Lobby_MaxPlayers) || *(unsigned int *)(v4 + 107) == -1) )
+      && ((v4 = ((unsigned int *)(dword_A8DA90))[i], v4 == g_Lobby_MaxPlayers) || *(unsigned int *)(v4 + 107) == -1) )
     {
       result = InitComboBoxNone((HWND)this, v3); /*0x4e5dff*/
     }
@@ -102,7 +102,7 @@ void Lobby::UpdatePlayerLabels()
   wchar_t *v23; // eax
   LRESULT v24; // eax
   wchar_t *v25; // eax
-  LRESULT v26; // eax
+  wchar_t * v26;
   wchar_t *v27; // eax
   LRESULT v28; // eax
   wchar_t *v29; // eax
@@ -118,14 +118,14 @@ void Lobby::UpdatePlayerLabels()
 
   IDA_HIDWORD(v38) = this; /*0x5eb063*/
   if ( dword_A8B23C /*0x5eb07a*/
-    && !(*((uint8_t (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C)
-    || (v33 = 1, Network::IsMultiplayerActive()) )
+    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C)
+    || (v33 = 1, this->Network::IsMultiplayerActive()) )
   {
     v33 = 0; /*0x5eb088*/
   }
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb09d*/
   {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5eb0a8*/
+    if ( !this->Network::IsMultiplayerActive() || this->Network::IsLobbyFeature() ) /*0x5eb0a8*/
       v1 = 6; /*0x5eb0b8*/
     else
       v1 = 2; /*0x5eb0b1*/
@@ -141,7 +141,7 @@ void Lobby::UpdatePlayerLabels()
     goto LABEL_25; /*0x5eb0d7*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb0df*/
   {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5eb0ea*/
+    if ( !this->Network::IsMultiplayerActive() || this->Network::IsLobbyFeature() ) /*0x5eb0ea*/
       v2 = 6; /*0x5eb0fa*/
     else
       v2 = 2; /*0x5eb0f3*/
@@ -168,7 +168,7 @@ void Lobby::UpdatePlayerLabels()
   do
   {
     v34 = 0; /*0x5eb13d*/
-    if ( v36 == g_MPCooperativeState ) /*0x5eb142*/
+    if ( v36 == (gamemd::ObjectClass *)(g_MPCooperativeState) ) /*0x5eb142*/
     {
       if ( *(unsigned int *)&stru_A8B250.__pad_0[4] == -1 ) /*0x5eb151*/
       {
@@ -179,17 +179,17 @@ void Lobby::UpdatePlayerLabels()
         PlayerCountMap = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb165*/
         if ( dword_A8B23C ) /*0x5eb169*/
         {
-          v4 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5eb16d*/
+          v4 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5eb16d*/
           if ( v4 != -1 && v4 < PlayerCountMap ) /*0x5eb17a*/
             PlayerCountMap = v4; /*0x5eb17c*/
         }
         if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb185*/
         {
-          if ( Network::IsLobbyFeature() ) /*0x5eb187*/
+          if ( this->Network::IsLobbyFeature() ) /*0x5eb187*/
           {
             PlayerCountMap &= ~1u; /*0x5eb190*/
           }
-          else if ( Network::IsMultiplayerActive() ) /*0x5eb195*/
+          else if ( this->Network::IsMultiplayerActive() ) /*0x5eb195*/
           {
             PlayerCountMap = 2; /*0x5eb19e*/
           }
@@ -204,8 +204,8 @@ void Lobby::UpdatePlayerLabels()
           v34 = 1; /*0x5eb1d4*/
         }
       }
-      if ( v36 == g_MPCooperativeState && dword_A8B23C ) /*0x5eb1e9*/
-        (*((void (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C); /*0x5eb1ed*/
+      if ( v36 == (gamemd::ObjectClass *)(g_MPCooperativeState) && dword_A8B23C ) /*0x5eb1e9*/
+        (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 47))(dword_A8B23C); /*0x5eb1ed*/
     }
     if ( v36 )
     {
@@ -268,7 +268,7 @@ void Lobby::UpdatePlayerLabels()
     {
       StringCSF = (wchar_t *)(GetStringCSF(g_Str_GUI_AIHard, 0, g_Str_File_netshare_cpp, 5444));
     }
-    else if ( v9 == g_Lobby_PlayerReady ) /*0x5eb329*/
+    else if ( v9 == (wchar_t *)(g_Lobby_PlayerReady) ) /*0x5eb329*/
     {
       StringCSF = GetStringCSF(aGuiWaiting, 0, g_Str_File_netshare_cpp, 5446); /*0x5eb33c*/
     }
@@ -295,7 +295,7 @@ void Lobby::UpdatePlayerLabels()
       if ( v9 /*0x5eb3fe*/
         && v9 != (wchar_t *)g_HouseClass_ObserverFlags
         && v9 != (wchar_t *)g_Lobby_PlayerCount
-        && v9 != g_Lobby_PlayerReady
+        && v9 != (wchar_t *)(g_Lobby_PlayerReady)
         && v9 != (wchar_t *)g_Lobby_MaxPlayers
         && v9 != (wchar_t *)g_Lobby_PlayerTeam
         && v9 != (wchar_t *)g_Lobby_PlayerSide
@@ -311,7 +311,7 @@ void Lobby::UpdatePlayerLabels()
       {
         if ( (int)v36 < v37 ) /*0x5eb439*/
         {
-          if ( !v34 || v36 != g_MPCooperativeState ) /*0x5eb44d*/
+          if ( !v34 || v36 != (gamemd::ObjectClass *)(g_MPCooperativeState) ) /*0x5eb44d*/
             goto LABEL_111; /*0x5eb44d*/
           if ( *(unsigned int *)&stru_A8B250.__pad_0[4] == -1 ) /*0x5eb458*/
           {
@@ -322,17 +322,17 @@ void Lobby::UpdatePlayerLabels()
             v17 = ReadPlayerCountMap(*(int *)&stru_A8B250.__pad_0[4]); /*0x5eb46c*/
             if ( dword_A8B23C ) /*0x5eb470*/
             {
-              v18 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5eb474*/
+              v18 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 38))(dword_A8B23C); /*0x5eb474*/
               if ( v18 != -1 && v18 < v17 ) /*0x5eb481*/
                 v17 = v18; /*0x5eb483*/
             }
             if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5eb48c*/
             {
-              if ( Network::IsLobbyFeature() ) /*0x5eb48e*/
+              if ( this->Network::IsLobbyFeature() ) /*0x5eb48e*/
               {
                 v17 &= ~1u; /*0x5eb497*/
               }
-              else if ( Network::IsMultiplayerActive() ) /*0x5eb49c*/
+              else if ( this->Network::IsMultiplayerActive() ) /*0x5eb49c*/
               {
                 v17 = 2; /*0x5eb4a5*/
               }
@@ -345,7 +345,7 @@ void Lobby::UpdatePlayerLabels()
             SendMessageA(DlgItem, 0x151u, v20, g_HouseClass_ObserverFlags); /*0x5eb4dd*/
           }
         }
-        if ( v36 == g_MPCooperativeState ) /*0x5eb4e5*/
+        if ( v36 == (gamemd::ObjectClass *)(g_MPCooperativeState) ) /*0x5eb4e5*/
         {
           v21 = (wchar_t *)(GetStringCSF(g_Str_GUI_OpenObserver, 0, g_Str_File_netshare_cpp, 5489));
           v22 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v21); /*0x5eb506*/
@@ -356,8 +356,8 @@ void Lobby::UpdatePlayerLabels()
         SendMessageA(DlgItem, 0x151u, v24, g_Lobby_PlayerCount); /*0x5eb547*/
         if ( v33 && !v34 ) /*0x5eb55b*/
         {
-          v25 = (LRESULT)((wchar_t *)(GetStringCSF(g_Str_GUI_AIEasy, 0, g_Str_File_netshare_cpp, 5504)));
-          v26 = (wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25));
+          v25 = (wchar_t *)((LRESULT)((wchar_t *)(GetStringCSF(g_Str_GUI_AIEasy, 0, g_Str_File_netshare_cpp, 5504))));
+          v26 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25))));
           SendMessageA(DlgItem, 0x151u, v26, g_Lobby_PlayerTeam); /*0x5eb590*/
           v27 = GetStringCSF(g_Str_GUI_AINormal, 0, g_Str_File_netshare_cpp, 5510); /*0x5eb5a3*/
           v28 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v27); /*0x5eb5b1*/
@@ -474,7 +474,7 @@ void Lobby::SetupPlayerWidgets()
          || v6
          && v6 != g_HouseClass_ObserverFlags
          && v6 != g_Lobby_PlayerCount
-         && (wchar_t *)v6 != g_Lobby_PlayerReady
+         && (wchar_t *)v6 != (wchar_t *)(g_Lobby_PlayerReady)
          && *(unsigned int *)(v6 + 107) == -1;
       DlgItem = GetDlgItem((HWND)this, v3); /*0x5ebb33*/
       v8 = GetDlgItem((HWND)this, v4); /*0x5ebb39*/
@@ -496,7 +496,7 @@ void Lobby::SetupPlayerWidgets()
       {
         ShowWindow(v13, 5); /*0x5ebb9f*/
         ShowWindow(nIDDlgItema, 5); /*0x5ebba8*/
-        if ( *(unsigned int *)&dword_A8B238 != 4 || !Network::IsLobbyFeature() ) /*0x5ebbb3*/
+        if ( *(unsigned int *)&dword_A8B238 != 4 || !this->Network::IsLobbyFeature() ) /*0x5ebbb3*/
         {
           ShowWindow(v9, 5); /*0x5ebbbf*/
           return ShowWindow(v17, 5); /*0x5ebbcf*/

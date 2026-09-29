@@ -60,9 +60,9 @@ struct SlaveManagerClass {
     AbstractClass * * LoadManager(unsigned int * a1, int a2);
     SlaveManagerClass * ProcessOrders(char a2);
     int AssignTask(AbstractClass * aP1);
-    int Check();
+    int Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     int CheckIsOne();
-    int Constructor();
+    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     int IsMasterHarvester();
     int LostSlave(ObjectClass * aP1);
     int SaveManager(TechnoTypeClass * aP0, int * a1, int aP2);

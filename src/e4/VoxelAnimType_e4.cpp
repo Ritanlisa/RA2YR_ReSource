@@ -21,6 +21,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/VoxelAnimTypeClass_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x5F7A90
 namespace gamemd {
@@ -52,15 +53,15 @@ AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
   else
     sprintf(Buffer, "%sTUR", a2); /*0x5f7abe*/
   _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f7afd*/
-  CCFileClass::Construct(&v17, Source); /*0x5f7b11*/
+  ((CCFileClass *)(&v17))->Construct(Source); /*0x5f7b11*/
   if ( (uint8_t)CCFileClass::Open(&v17, 0) ) /*0x5f7b1b*/
   {
-    v4 = (void *)*((unsigned int *)&this->u32_8 * a3 + 50); /*0x5f7b46*/
+    v4 = (void *)*((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 50); /*0x5f7b46*/
     if ( v4 ) /*0x5f7b4f*/
     {
-      WaveClass::Destroy(*((WaveClass **)&this->u32_8 * a3 + 50)); /*0x5f7b53*/
+      WaveClass::Destroy(*((WaveClass **)&(unsigned int)(this->u32_8)* a3 + 50)); /*0x5f7b53*/
       RA2_OPDEL(v4); /*0x5f7b59*/
-      *((unsigned int *)&this->u32_8 * a3 + 50) = 0; /*0x5f7b61*/
+      *((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 50) = 0; /*0x5f7b61*/
     }
     v16 = 0; /*0x5f7b6a*/
     v5 = (File *)RA2_OPNEW(0x1Cu); /*0x5f7b6e*/
@@ -68,7 +69,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
       FileVXL = File::LoadFileVXL(v5, (int)&v17, 0); /*0x5f7b82*/
     else
       FileVXL = 0; /*0x5f7b89*/
-    *((unsigned int *)&this->u32_8 * a3 + 50) = FileVXL; /*0x5f7b8d*/
+    *((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 50) = FileVXL; /*0x5f7b8d*/
     if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f7b96*/
       v16 = 1; /*0x5f7b9a*/
     if ( a3 ) /*0x5f7ba1*/
@@ -76,26 +77,26 @@ AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
     else
       sprintf(Buffer, "%sTUR", a2); /*0x5f7bb8*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7bf7*/
-    CCFileClass::Construct(&v20, Source); /*0x5f7c0e*/
-    v7 = (void *)*((unsigned int *)&this->u32_8 * a3 + 51); /*0x5f7c13*/
+    ((CCFileClass *)(&v20))->Construct(Source); /*0x5f7c0e*/
+    v7 = (void *)*((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 51); /*0x5f7c13*/
     if ( v7 ) /*0x5f7c1c*/
     {
-      String::Release(*((String **)&this->u32_8 * a3 + 51)); /*0x5f7c20*/
+      String::Release(*((String **)&(unsigned int)(this->u32_8)* a3 + 51)); /*0x5f7c20*/
       RA2_OPDEL(v7); /*0x5f7c26*/
-      *((unsigned int *)&this->u32_8 * a3 + 51) = 0; /*0x5f7c2e*/
+      *((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 51) = 0; /*0x5f7c2e*/
     }
     v8 = (File *)RA2_OPNEW(0x10u); /*0x5f7c3b*/
     if ( v8 ) /*0x5f7c45*/
       FileHVA = File::LoadFileHVA(v8, (int)&v20); /*0x5f7c51*/
     else
       FileHVA = 0; /*0x5f7c58*/
-    *((unsigned int *)&this->u32_8 * a3 + 51) = FileHVA; /*0x5f7c5c*/
+    *((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 51) = FileHVA; /*0x5f7c5c*/
     if ( !FileHVA || (v10 = *(unsigned char *)FileHVA, v11 = 1, v10) ) /*0x5f7c6b*/
       v11 = 0; /*0x5f7c6d*/
     if ( v16 && v11 ) /*0x5f7c7d*/
     {
-      Info = (unsigned int)(VoxelSection::GetInfo(*((VoxelSection **)&this->u32_8 * a3 + 50), 0, 0));
-      Matrix::Scale(*((Matrix **)&this->u32_8 * a3 + 51), *(float *)(Info + 12)); /*0x5f7c9c*/
+      Info = (unsigned int)(VoxelSection::GetInfo(*((VoxelSection **)&(unsigned int)(this->u32_8)* a3 + 50), 0, 0));
+      Matrix::Scale(*((Matrix **)&(unsigned int)(this->u32_8)* a3 + 51), *(float *)(Info + 12)); /*0x5f7c9c*/
       *(unsigned int *)v20.CDFileClass = (void*)&CCFileClass_vftable; /*0x5f7cad*/
       v22 = 0; /*0x5f7cb4*/
       Vector::Clear((int)v21); /*0x5f7cbb*/
@@ -108,19 +109,19 @@ AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7cf1*/
       return 1; /*0x5f7d02*/
     }
-    v14 = (void *)*((unsigned int *)&this->u32_8 * a3 + 50); /*0x5f7d05*/
+    v14 = (void *)*((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 50); /*0x5f7d05*/
     if ( v14 ) /*0x5f7d0e*/
     {
-      WaveClass::Destroy(*((WaveClass **)&this->u32_8 * a3 + 50)); /*0x5f7d12*/
+      WaveClass::Destroy(*((WaveClass **)&(unsigned int)(this->u32_8)* a3 + 50)); /*0x5f7d12*/
       RA2_OPDEL(v14); /*0x5f7d18*/
-      *((unsigned int *)&this->u32_8 * a3 + 50) = 0; /*0x5f7d20*/
+      *((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 50) = 0; /*0x5f7d20*/
     }
-    v15 = (void *)*((unsigned int *)&this->u32_8 * a3 + 51); /*0x5f7d27*/
+    v15 = (void *)*((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 51); /*0x5f7d27*/
     if ( v15 ) /*0x5f7d30*/
     {
-      String::Release(*((String **)&this->u32_8 * a3 + 51)); /*0x5f7d34*/
+      String::Release(*((String **)&(unsigned int)(this->u32_8)* a3 + 51)); /*0x5f7d34*/
       RA2_OPDEL(v15); /*0x5f7d3a*/
-      *((unsigned int *)&this->u32_8 * a3 + 51) = 0; /*0x5f7d42*/
+      *((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 51) = 0; /*0x5f7d42*/
     }
     *(unsigned int *)v20.CDFileClass = (void*)&CCFileClass_vftable; /*0x5f7d55*/
     v22 = 0; /*0x5f7d5c*/
@@ -170,7 +171,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
   else
     sprintf(Buffer, "%sBARL", a2); /*0x5f7dde*/
   _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f7e1d*/
-  CCFileClass::Construct(&v14, Source); /*0x5f7e31*/
+  ((CCFileClass *)(&v14))->Construct(Source); /*0x5f7e31*/
   if ( (uint8_t)CCFileClass::Open(&v14, 0) ) /*0x5f7e3b*/
   {
     v13 = 0; /*0x5f7e7b*/
@@ -179,7 +180,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
       FileVXL = File::LoadFileVXL(v5, (int)&v14, 0); /*0x5f7e94*/
     else
       FileVXL = 0; /*0x5f7e9b*/
-    *((unsigned int *)&this->u32_8 * a3 + 86) = FileVXL; /*0x5f7e9f*/
+    *((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 86) = FileVXL; /*0x5f7e9f*/
     if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f7ea8*/
       v13 = 1; /*0x5f7ead*/
     if ( a3 ) /*0x5f7eb4*/
@@ -187,20 +188,20 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
     else
       sprintf(Buffer, "%sBARL", a2); /*0x5f7ec4*/
     _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f7efc*/
-    CCFileClass::Construct(&v17, Source); /*0x5f7f13*/
+    ((CCFileClass *)(&v17))->Construct(Source); /*0x5f7f13*/
     v7 = 0; /*0x5f7f1a*/
     v8 = (File *)RA2_OPNEW(0x10u); /*0x5f7f1c*/
     if ( v8 ) /*0x5f7f26*/
       FileHVA = File::LoadFileHVA(v8, (int)&v17); /*0x5f7f32*/
     else
       FileHVA = 0; /*0x5f7f39*/
-    *((unsigned int *)&this->u32_8 * a3 + 87) = FileHVA; /*0x5f7f3d*/
+    *((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 87) = FileHVA; /*0x5f7f3d*/
     if ( FileHVA && !*(unsigned char *)FileHVA ) /*0x5f7f46*/
       v7 = 1; /*0x5f7f4b*/
     if ( v13 && v7 ) /*0x5f7f5b*/
     {
-      Info = (unsigned int)(VoxelSection::GetInfo(*((VoxelSection **)&this->u32_8 * a3 + 86), 0, 0));
-      Matrix::Scale(*((Matrix **)&this->u32_8 * a3 + 87), *(float *)(Info + 12)); /*0x5f7f7a*/
+      Info = (unsigned int)(VoxelSection::GetInfo(*((VoxelSection **)&(unsigned int)(this->u32_8)* a3 + 86), 0, 0));
+      Matrix::Scale(*((Matrix **)&(unsigned int)(this->u32_8)* a3 + 87), *(float *)(Info + 12)); /*0x5f7f7a*/
       *(unsigned int *)v17.CDFileClass = (void*)&CCFileClass_vftable; /*0x5f7f8b*/
       v19 = 0; /*0x5f7f92*/
       Vector::Clear((int)v18); /*0x5f7f99*/
@@ -215,13 +216,13 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
     }
     else
     {
-      v11 = (void *)*((unsigned int *)&this->u32_8 * a3 + 86); /*0x5f7fe3*/
+      v11 = (void *)*((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 86); /*0x5f7fe3*/
       if ( v11 ) /*0x5f7fee*/
       {
-        WaveClass::Destroy(*((WaveClass **)&this->u32_8 * a3 + 86)); /*0x5f7ff2*/
+        WaveClass::Destroy(*((WaveClass **)&(unsigned int)(this->u32_8)* a3 + 86)); /*0x5f7ff2*/
         RA2_OPDEL(v11); /*0x5f7ff8*/
       }
-      v12 = (String *)*((unsigned int *)&this->u32_8 * a3 + 87); /*0x5f8000*/
+      v12 = (String *)*((unsigned int *)&(unsigned int)(this->u32_8)* a3 + 87); /*0x5f8000*/
       if ( v12 ) /*0x5f8009*/
       {
         String::Release(v12); /*0x5f800d*/
@@ -327,7 +328,7 @@ int VoxelAnimType::LoadAnim()
       WaveClass::Destroy(*((WaveClass **)&this->u32_104)); /*0x5f8175*/
       RA2_OPDEL(v3); /*0x5f817b*/
     }
-    v4 = (unsigned int)((File *)RA2_OPNEW(0x1Cu));
+    v4 = (gamemd::File *)((unsigned int)((File *)RA2_OPNEW(0x1Cu)));
     if ( v4 ) /*0x5f818f*/
       FileVXL = File::LoadFileVXL(v4, (int)&v58, 0); /*0x5f819c*/
     else
@@ -343,7 +344,7 @@ int VoxelAnimType::LoadAnim()
       String::Release(*((String **)&this->u32_105)); /*0x5f81ed*/
       RA2_OPDEL(v6); /*0x5f81f3*/
     }
-    v7 = (unsigned int)((File *)RA2_OPNEW(0x10u));
+    v7 = (gamemd::File *)((unsigned int)((File *)RA2_OPNEW(0x10u)));
     if ( v7 ) /*0x5f8207*/
       FileHVA = File::LoadFileHVA(v7, (int)&v51); /*0x5f8210*/
     else
@@ -355,7 +356,7 @@ int VoxelAnimType::LoadAnim()
     }
     else
     {
-      Info = VoxelSection::GetInfo(*((VoxelSection **)&this->u32_104), 0, 0); /*0x5f822f*/
+      Info = (unsigned int)(VoxelSection::GetInfo(*((VoxelSection **)&this->u32_104), 0, 0));
       Matrix::Scale(*((Matrix **)&this->u32_105), *(float *)(Info + 12)); /*0x5f823e*/
     }
     *(unsigned int *)v51.CDFileClass = (void*)&CCFileClass_vftable; /*0x5f824e*/
@@ -368,9 +369,9 @@ int VoxelAnimType::LoadAnim()
   {
     v50 = 1; /*0x5f8272*/
   }
-  if ( (*(int (__thiscall **)(char *))(((unsigned int)(this->u32_104))))(this) != 40 || *(&this->u32_50C3) ) /*0x5f8287*/
+  if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) != 40 || *(&this->u32_50C3) ) /*0x5f8287*/
   {
-    if ( (*(int (__thiscall **)(char *))(((unsigned int)(this->u32_104))))(this) != 40 /*0x5f8657*/
+    if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) != 40 /*0x5f8657*/
       || !(uint8_t)HouseClass::HasPower((HouseClass *)this)
       || *(&this->u32_5205) )
     {
@@ -556,9 +557,9 @@ int VoxelAnimType::LoadAnim()
     }
   }
   LABEL_93:
-  if ( (*(int (__thiscall **)(char *))(((unsigned int)(this->u32_104))))(this) != 40 || *(&this->u32_50C3) ) /*0x5f8850*/
+  if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) != 40 || *(&this->u32_50C3) ) /*0x5f8850*/
   {
-    if ( (*(int (__thiscall **)(char *))(((unsigned int)(this->u32_104))))(this) == 40 /*0x5f8873*/
+    if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) == 40 /*0x5f8873*/
       && (uint8_t)HouseClass::HasPower((HouseClass *)this)
       && !*(&this->u32_5205) )
     {
@@ -650,7 +651,7 @@ int VoxelAnimType::LoadAnim()
       RA2_OPDEL(v43); /*0x5f8a9c*/
       this->u32_B4 = 0; /*0x5f8aa4*/
     }
-    if ( (*(int (__thiscall **)(char *))(((unsigned int)(this->u32_104))))(this) == 40 /*0x5f8ac1*/
+    if ( (*(int (**)(char *))(((unsigned int)(this->u32_104))))(this) == 40 /*0x5f8ac1*/
       && (uint8_t)HouseClass::HasPower((HouseClass *)this)
       && !*(&this->u32_5205) )
     {

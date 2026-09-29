@@ -106,12 +106,17 @@ struct Sidebar {
     unsigned int Sidebar_field_0x10;
     unsigned int Sidebar_field_0xC;
     unsigned int field_150C;
+    unsigned int __pad_1510;
+    unsigned int __pad_152C;
+    unsigned int __pad_1534;
+    unsigned int field_1530;
+    unsigned int Debug;
 // --- flat members (END) ---
     int StartSidebarProduction(void * a1,  BuildingTypeClass * aP2,  HouseClass * aP3,  char a5);    // 0x4FA350
     int Dispatch(IUnknown * aP1,  char a3,  int a4,  char a5);    // 0x5007A0
     int ScrollSidebarSkipGame();  // 0x533F50
     void CancelSidebarProductionQueue();  // 0x636310
-    char RemoveItem(int a2);  // 0x63F040
+    char RemoveItem(int a2, void *a1 = 0);  // 0x63F040
     int Render(char a2);  // 0x63FB20
     int ActivateTab(IUnknown * aP1);  // 0x6A60A0
     void FlushSidebarTooltip(char a2);  // 0x6A70E0

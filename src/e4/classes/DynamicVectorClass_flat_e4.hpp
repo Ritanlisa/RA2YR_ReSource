@@ -37,8 +37,8 @@ unsigned int * AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2);
 unsigned int * BuildingTypeConstructor(int a2, int a3);
 unsigned int * Construct(int a2, int a3);
 unsigned int * Copy(DynamicVector * aP1);
-void Destroy();
+void Destroy(void *a1 = 0);
 void Destroy_Alt();
 };
 
-} // namespace gamemd
+} // namespace gamvoid Destroy();

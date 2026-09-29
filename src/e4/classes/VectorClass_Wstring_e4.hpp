@@ -16,7 +16,7 @@ struct VectorClass_Wstring {
     char ** Clear(char ** a2,  int a3);    // 0x69C580
     char AddRef(int a2);  // 0x69C970
     char Release(int a2,  unsigned int * a3);    // 0x69C9C0
-    void ddtor();  // 0x69CB00
+    void ddtor(void *a1 = 0);  // 0x69CB00
     int GetSize(const char ** a2);  // 0x69CB50
     unsigned int GetCapacity(int a2);  // 0x69CBA0
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x69D4B0

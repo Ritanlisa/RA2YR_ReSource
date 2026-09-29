@@ -17,16 +17,16 @@ struct VectorClass_ptr_SmudgeTypeClass {
     DynamicVector * Constructor_VectorClass_SmudgeTypeClass___(char a2);  // 0x4F0660
     DynamicVector * Constructor_VectorClass_TerrainTypeClass___(char a2);  // 0x4F0700
     DynamicVector * Constructor_VectorClass_BuildingTypeClass___(char a2);  // 0x4F07A0
-    void Destroy();  // 0x4E8CC0
+    void Destroy(void *a1 = 0);  // 0x4E8CC0
     unsigned int GetItemIndex(int a2);  // 0x4E8CF0
-    int Get(int a2);  // 0x4E8D10
+    int Get(int a2, void *a1 = 0);  // 0x4E8D10
     void Destroy_0();  // 0x4E8D20
     unsigned int GetItemIndex_0(int a2);  // 0x4E8D50
     void Destroy_1();  // 0x4E8D80
     unsigned int GetItemIndex_1(int a2);  // 0x4E8DB0
     char Add(int a2);  // 0x4ED3A0
     char Release(int a2,  unsigned int * a3);    // 0x4ED3E0
-    void Remove();  // 0x4ED490
+    void Remove(void *a1 = 0);  // 0x4ED490
     int GetSize(unsigned int * a2);  // 0x4ED4C0
     unsigned int LoadTypeData(int a2);  // 0x4ED500
     char SetCapacity(int a2,  unsigned int * a3);    // 0x4ED520

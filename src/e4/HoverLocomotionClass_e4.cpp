@@ -12,6 +12,7 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/HouseTypeClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x517070
 namespace gamemd {
@@ -56,7 +57,7 @@ namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 {
   *(unsigned int *)this->LocomotionClass = (void*)&HoverLocomotionClass_vftable; /*0x5172c3*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&HoverLocomotionClass_vftable; /*0x5172c9*/
+  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&HoverLocomotionClass_vftable; /*0x5172c9*/
   LocomotionClass::Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     RA2_OPDEL(); /*0x5172dd*/

@@ -172,12 +172,12 @@ struct House {
     void AnnounceUpgrade(void* aP1);  // 0x47D2B0
     unsigned int * GetStartCoords(void* aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500
-    int IsHumanPlayer();  // 0x50B6F0
-    int IsCurrentPlayer();  // 0x50B730
+    int IsHumanPlayer(void *a1 = 0);  // 0x50B6F0
+    int IsCurrentPlayer(void *a1 = 0);  // 0x50B730
     int ChooseHouseEnemy(BuildingClass * aP1);  // 0x50DB00
     int LookupObject(int a2);  // 0x544BE0
-    int LoadMapFileData(int a2, char a3);    // 0x544C20
-    void Constructor();  // 0x69E090
+    int LoadMapFileData(int a2, char a3, void *a1 = 0);    // 0x544C20
+    void Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x69E090
     int PowerBeginUpdate(AbstractClass * aP1);  // 0x70C270
 };
 } // namespace gamemd

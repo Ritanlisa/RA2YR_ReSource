@@ -12,6 +12,10 @@
 #include "e4/classes/SpawnManagerClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/E4Recv_728A00_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Scenario_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x52B620
 namespace gamemd {
@@ -116,7 +120,7 @@ namespace gamemd {
 ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
 {
   size_t v3; // eax
-  int v4; // edi
+  unsigned int * v4;
   unsigned int *v5; // ebp
   int v6; // edx
   char *v7; // ecx
@@ -137,18 +141,18 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     this->q010 = 0; /*0x5388ca*/
     this->q00C = 1; /*0x5388d1*/
   }
-  v4 = (int)(this->q004);
+  v4 = (int)((unsigned int *)((int)(this->q004)));
   v5 = (int)(*(unsigned int **)this);
   v15 = (int)(*aP1);
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
   while ( 1 ) /*0x5388f1*/
   {
-    v6 = v5[2 * (v4 / 2)]; /*0x5388f1*/
-    v7 = (char *)&v5[2 * (v4 / 2)]; /*0x5388f5*/
+    v6 = v5[2 * ((unsigned int)(v4)/ 2)]; /*0x5388f1*/
+    v7 = (char *)&v5[2 * ((unsigned int)(v4)/ 2)]; /*0x5388f5*/
     if ( v15 >= v6 ) /*0x5388fd*/
       break; /*0x5388fd*/
-    v4 /= 2; /*0x5388ff*/
+    (unsigned int)(v4)/= 2; /*0x5388ff*/
   LABEL_9:
     if ( v4 <= 0 ) /*0x538915*/
       return 0; /*0x538915*/
@@ -156,7 +160,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   if ( v6 != v15 ) /*0x538907*/
   {
     v5 = (unsigned int *)(v7 + 8);
-    v4 += -1 - v4 / 2; /*0x538911*/
+    v4 += -1 - (unsigned int)(v4)/ 2; /*0x538911*/
     goto LABEL_9; /*0x538911*/
   }
   if ( !v7 ) /*0x538927*/
@@ -171,9 +175,9 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
   v13 = (unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this));
-  v14 = (int)((gamemd::ObjectClass **)(this->q004 - 1));
-  this->q004 = (gamemd::ObjectClass **)(v14);
-  v13[2 * v14] = 0; /*0x53895f*/
+  v14 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(this->q004 - 1)));
+  this->q004 = (unsigned char)((gamemd::ObjectClass **)(v14));
+  v13[2 * v14] = (unsigned int)((gamemd::ObjectClass **)(0));
   v13[2 * v14 + 1] = 0; /*0x538962*/
   this->q010 = 0; /*0x538966*/
   return 1; /*0x538917*/

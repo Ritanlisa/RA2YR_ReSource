@@ -34,7 +34,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   ComPtr *v8; // esi
   int v9; // ebx
   int i; // esi
-  void (__thiscall ***v11)(unsigned int, int); // ecx
+  void (***v11)(unsigned int, int); // ecx
   int v12; // eax
   int v14; // [esp+10h] [ebp-4h]
 
@@ -91,13 +91,13 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
       return 0; /*0x76a0f6*/
     if ( *(unsigned int *)&this->q004 ) /*0x76a075*/
     {
-      if ( a2 >= this->q008 ) /*0x76a081*/
+      if ( a2 >= (int)(this->q008) ) /*0x76a081*/
         m_8 = *(unsigned int *)&this->q008; /*0x76a083*/
       for ( i = 0; i < m_8; ++i ) /*0x76a089*/
-        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->q004 + 8 * i + 4)); /*0x76a096*/
+        ((ComPtr *)((ComPtr *)((char *)v6 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->q004 + 8 * i + 4)); /*0x76a096*/
       if ( this->IsAllocated ) /*0x76a0a0*/
       {
-        v11 = *(void (__thiscall ****)(unsigned int, int))&this->q004; /*0x76a0a7*/
+        v11 = *(void (****)(unsigned int, int))&this->q004; /*0x76a0a7*/
         if ( v11 ) /*0x76a0ac*/
           (**v11)(v11, 3); /*0x76a0b2*/
         *(unsigned int *)&this->q004 = 0; /*0x76a0b4*/
@@ -110,10 +110,10 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76a0d9*/
+    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76a0d9*/
   }
   v12 = *(unsigned int *)&this->q008; /*0x76a0dc*/
-  if ( v12 < this->q010 ) /*0x76a0e4*/
+  if ( v12 < (int)(this->q010) ) /*0x76a0e4*/
     *(unsigned int *)&this->q010 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/
 }
@@ -144,8 +144,8 @@ void MSFrameAnim::Draw(int a1, int * a2)
 
   if ( byte_8487BD ) /*0x767efc*/
   {
-    v2 = (*(int (__thiscall **)(MSFrameAnim *))(*(unsigned int *)a1->__pad_0 + 124))(a1); /*0x767f0d*/
-    v3 = (*(int (__thiscall **)(MSFrameAnim *))(*(unsigned int *)a1->__pad_0 + 128))(a1); /*0x767f0f*/
+    v2 = (*(int (**)(MSFrameAnim *))(*(unsigned int *)a1->__pad_0 + 124))(a1); /*0x767f0d*/
+    v3 = (*(int (**)(MSFrameAnim *))(*(unsigned int *)a1->__pad_0 + 128))(a1); /*0x767f0f*/
     if ( a2 ) /*0x767f1b*/
     {
       v4 = a2[1]; /*0x767f1f*/
@@ -184,10 +184,10 @@ unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
 namespace gamemd {
 int MSFrameAnim::initAnimation()
 {
-  int (__thiscall ***v2)(unsigned int, int); // ecx
+  int (***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (__thiscall ****)(unsigned int, int))&this->q004; /*0x769c56*/
+  v2 = *(int (****)(unsigned int, int))&this->q004; /*0x769c56*/
   *(unsigned int *)&this->q010 = 0; /*0x769c59*/
   if ( v2 && this->IsAllocated ) /*0x769c60*/
   {
@@ -310,11 +310,11 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 /*0x76a33e*/
+    (*(void (**)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 /*0x76a33e*/
                                                                                               + 12))(this);
   }
   v7 = *(unsigned int *)&this->q008; /*0x76a341*/
-  if ( v7 < this->q010 ) /*0x76a349*/
+  if ( v7 < (int)(this->q010) ) /*0x76a349*/
     *(unsigned int *)&this->q010 = v7; /*0x76a34b*/
   return 1; /*0x76a34e*/
 }
@@ -344,16 +344,16 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
 namespace gamemd {
 DynamicVector * MSFrameAnim::setPosition(char a2)
 {
-  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (***v3)(unsigned int, int); // ecx
 
-  v3 = (unsigned int)(*(void (__thiscall ****)(unsigned int, int))&this->m_1[3]);
+  v3 = (unsigned int)(*(void (****)(unsigned int, int))&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a686*/
   if ( v3 && this->IsAllocated ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
     *(unsigned int *)&this->q004 = 0; /*0x76a6a1*/
   }
-  this->IsAllocated = 0; /*0x76a6ac*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned int *)&this->q008 = 0; /*0x76a6b2*/
   if ( (a2 & 1) != 0 ) /*0x76a6b9*/
     RA2_OPDEL(); /*0x76a6bc*/
@@ -367,14 +367,14 @@ DynamicVector * MSFrameAnim::setScale(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a726*/
   if ( v3 && this->IsAllocated ) /*0x76a730*/
   {
     RA2_OPDEL(v3); /*0x76a738*/
     *(unsigned int *)&this->q004 = 0; /*0x76a740*/
   }
-  this->IsAllocated = 0; /*0x76a74b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned int *)&this->q008 = 0; /*0x76a751*/
   if ( (a2 & 1) != 0 ) /*0x76a758*/
     RA2_OPDEL(); /*0x76a75b*/

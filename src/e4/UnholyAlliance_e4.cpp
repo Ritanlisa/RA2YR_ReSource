@@ -59,13 +59,13 @@ AbstractClass * * UnholyAlliance_GetResult()
                 v16[0] = (v9 << 8) + 128,
                 v16[1] = (v11 << 8) + 128,
                 v16[2] = 0,
-                !(*(uint8_t (__thiscall **)(int *, unsigned int *, unsigned int))(v12 + 216))(v7, v16, 0)) )
+                !(*(uint8_t (**)(int *, unsigned int *, unsigned int))(v12 + 216))(v7, v16, 0)) )
           {
             v13 = (int16_t *)HouseClass::GetCurrentOption(v4, &v15); /*0x5cb4fd*/
             if ( !FindInfantryDeployPosition(v7, v13, 3) ) /*0x5cb506*/
             {
               v2 = 1; /*0x5cb515*/
-              (*(void (__thiscall **)(int *, int))(*v7 + 32))(v7, 1); /*0x5cb517*/
+              (*(void (**)(int *, int))(*v7 + 32))(v7, 1); /*0x5cb517*/
             }
           }
         }

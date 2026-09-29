@@ -40,12 +40,12 @@ void AI_CreateMCV()
       {
         v8 = (int)((unsigned int *)(*v6));
         StartCoords = (unsigned int *)(HouseClass::GetStartCoords(v3, v11));
-        if ( (*(uint8_t (__thiscall **)(int *, unsigned int *, unsigned int))(v8 + 216))(v7, StartCoords, 0) ) /*0x5d7098*/
+        if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v8 + 216))(v7, StartCoords, 0) ) /*0x5d7098*/
           return 1; /*0x5d70aa*/
         CurrentOption = (int16_t *)HouseClass::GetCurrentOption(v3, &this); /*0x5d70b6*/
         if ( FindInfantryDeployPosition(v7, CurrentOption, 1) ) /*0x5d70bf*/
           return 1; /*0x5d70cf*/
-        (*(void (__thiscall **)(int *, int))(*v7 + 32))(v7, 1); /*0x5d70d8*/
+        (*(void (**)(int *, int))(*v7 + 32))(v7, 1); /*0x5d70d8*/
       }
     }
   }

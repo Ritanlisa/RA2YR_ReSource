@@ -10,7 +10,7 @@
 #include "core/math.hpp"
 #include "object/object.hpp"
 #include "type/building_type.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace gamemd {
 

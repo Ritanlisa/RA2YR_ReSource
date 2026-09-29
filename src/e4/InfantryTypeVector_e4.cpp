@@ -27,7 +27,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1)
       return 0; /*0x512f36*/
     InfantryTypeVector_field_0x14 = this->InfantryTypeVector_field_0x14; /*0x512f38*/
     if ( InfantryTypeVector_field_0x14 <= 0 /*0x512f48*/
-      || !(*(uint8_t (__thiscall **)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+      || !(*(uint8_t (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
             this,
             InfantryTypeVector_field_0x08 + InfantryTypeVector_field_0x14,
             0) )

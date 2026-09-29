@@ -22,6 +22,12 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/VectorCursor_uint_DynamicVectorClass_uint____13_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Diplomacy_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
 
 // 0x4A7A30
 DiskLaserClass::DiskLaserClass()
@@ -43,7 +49,7 @@ DiskLaserClass::DiskLaserClass()
   if ( dword_8A0218 < dword_8A0210 /*0x4a7a9e*/
     || (byte_8A0215 || !dword_8A0210)
     && dword_8A021C > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_8A0208 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_8A0208 + 8))(
          &dword_8A0208,
          dword_8A0210 + dword_8A021C,
          0) )
@@ -56,15 +62,16 @@ DiskLaserClass::DiskLaserClass()
 // 0x4A7C90
 void * DiskLaserClass::CopyTo(char a2)
 {
+    unsigned int v5 = 0;  /* G37 hoist */
   int v3; // eax
-  DiskLaserClass *v5; // [esp+4h] [ebp-4h] BYREF
+  (unsigned int)(DiskLaserClass)*v5; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)this->__pad_0 = (void*)&DiskLaserClass_vftable; /*0x4a7c9d*/
   this->DiskLaserClass_field_0x04 = (int)&DiskLaserClass_vftable; /*0x4a7ca3*/
   this->DiskLaserClass_field_0x08 = (int)&DiskLaserClass_vftable; /*0x4a7caa*/
   this->DiskLaserClass_field_0x0C = (int)&DiskLaserClass_vftable; /*0x4a7cb1*/
   v5 = this; /*0x4a7cbf*/
-  v3 = (*(int (__thiscall **)(int *, DiskLaserClass **))(dword_8A0208 + 16))(&dword_8A0208, &v5); /*0x4a7cc3*/
+  v3 = (*(int (**)(int *, DiskLaserClass **))(dword_8A0208 + 16))(&dword_8A0208, &v5); /*0x4a7cc3*/
   if ( v3 != -1 && v3 < dword_8A0218 && v3 < --dword_8A0218 ) /*0x4a7cde*/
   {
     do /*0x4a7cf6*/

@@ -8,6 +8,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/MSPCXAnim_26_e4.hpp"
 #include "e4/classes/MSPCXAnim_42_e4.hpp"
+#include "e4/classes/MainMenu_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x5CD290
 namespace gamemd {
@@ -47,11 +49,11 @@ int MSVQAnim::Stub()
 namespace gamemd {
 MSVQAnim * MSVQAnim::QueryInterface(char a2)
 {
-  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (***v3)(unsigned int, int); // ecx
   MovieContext *MSVQAnim_field_0x1C; // ecx
   void *v5; // edi
 
-  v3 = (unsigned int)((void (__thiscall ***)(unsigned int, int))this->u32_28);
+  v3 = (unsigned int)((void (***)(unsigned int, int))this->u32_28);
   *(unsigned int *)this->__pad_0 = (void*)&MSVQAnim_vftable; /*0x5cecb6*/
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/

@@ -19,7 +19,7 @@
 #include "ui/tab.hpp"
 #include "ui/tool_tip.hpp"
 #include "ui/ui_ext.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x40D280
 namespace gamemd {

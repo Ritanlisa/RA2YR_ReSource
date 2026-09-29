@@ -45,7 +45,7 @@ struct BulletClass {
     unsigned int u32_68;  // 0x68
     unsigned int q06A;  // 0x6A
     unsigned int u32_6C;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    unsigned int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int u32_78;  // 0x78
@@ -393,7 +393,7 @@ struct BulletClass {
     unsigned int __pad_C;
 // --- flat members (END) ---
     BulletClass();
-    BulletClass * * Dtor();
+    BulletClass * * Dtor(void *a1 = 0);
     LONG CheckTargetValidity(int a1);
     LONG ValidateTarget(volatile LONG * a1);
     int * CalculateSpreadAngle(int a1);

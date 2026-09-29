@@ -14,12 +14,12 @@ struct VectorClass_ptr_MovieHandle {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy();  // 0x75A430
+    void Destroy(void *a1 = 0);  // 0x75A430
     unsigned int GetItemIndex(int a2);  // 0x75A460
-    int Get(int a2);  // 0x75A480
+    int Get(int a2, void *a1 = 0);  // 0x75A480
     char Add(int a2);  // 0x75A490
     char Release(int a2,  unsigned int * a3);    // 0x75A4D0
-    void Remove();  // 0x75A580
+    void Remove(void *a1 = 0);  // 0x75A580
     int GetSize(unsigned int * a2);  // 0x75A5B0
     unsigned int GetCapacity(int a2);  // 0x75A5F0
     char SetCapacity(int a2,  unsigned int * a3);    // 0x75A610

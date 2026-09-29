@@ -22,11 +22,22 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Mission_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x610570
 namespace gamemd {
 AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
   void *v2; // eax
   void *v3; // eax
   unsigned int *v4; // ecx
@@ -102,7 +113,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
     {
       if ( *v8 == hWnd ) /*0x6106c7*/
       {
-        v9 = (unsigned int)(v8[2]);
+        v9 = (HWND)((unsigned int)(v8[2]));
         RA2_OPDEL(*((void **)g_DialogPool + v7)); /*0x6106cd*/
         v10 = *(float *)&v14; /*0x6106db*/
         *((unsigned int *)g_DialogPool + v7) = v9; /*0x6106df*/
@@ -111,17 +122,17 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
           goto LABEL_31; /*0x6106f8*/
         goto LABEL_30; /*0x6106f8*/
       }
-      v11 = (HWND *)v8[2]; /*0x6106fc*/
+      v11 = (unsigned int)((HWND *)v8[2]);
       if ( v11 ) /*0x610701*/
       {
-        while ( *v11 != hWnd ) /*0x610705*/
+        while ( *(unsigned int)((unsigned int *))(v11) != hWnd ) /*0x610705*/
         {
-          v8 = v11; /*0x610707*/
-          v11 = (HWND *)v11[2]; /*0x610709*/
+          v8 = (HWND *)((unsigned int)((HWND *)(v11)));
+          v11 = (unsigned int)((HWND *)((unsigned int *)(v11))[2]);
           if ( !v11 ) /*0x61070e*/
             goto LABEL_29; /*0x61070e*/
         }
-        v8[2] = v11[2]; /*0x610716*/
+        v8[2] = (HWND)(((unsigned int *)(v11))[2]);
         --unk_AC18C4; /*0x610720*/
         RA2_OPDEL(v11); /*0x610726*/
       }
@@ -166,7 +177,7 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
       v9[0] = 0; /*0x610879*/
       v9[1] = 0; /*0x61087d*/
       v10 = *((unsigned long long *)&dword_AC1CB8 + 1); /*0x610881*/
-      (*(void (__thiscall **)(int, __int128 *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x61088c*/
+      (*(void (**)(int, __int128 *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x61088c*/
         g_DSurface_Primary,
         &v11,
         dword_AC1CC8,
@@ -176,11 +187,11 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
       dword_AC1DD0 = 1; /*0x610894*/
     }
     if ( dword_AC1CC8 ) /*0x6108a2*/
-      (**(void (__thiscall ***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x6108a7*/
+      (**(void (***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x6108a7*/
     goto LABEL_7; /*0x6108a7*/
   }
   LABEL_8: dword_AC48D8 = (unsigned int)(time(0));
-  StringCSF = GetStringCSF(aGuiTooltip, 0, g_Str_File_ownrdraw_cpp, 7457); /*0x6108da*/
+  StringCSF = (unsigned int)(GetStringCSF(aGuiTooltip, 0, g_Str_File_ownrdraw_cpp, 7457));
   swprintf(word_AC1CCC, (const size_t)StringCSF, v8); /*0x6108e5*/
   if ( a2 ) /*0x6108ef*/
     wcscpy(word_AC1CCC, a2); /*0x6108f7*/
@@ -212,7 +223,7 @@ void sub_610B50()
   v4[0] = *(unsigned long long *)&g_DialogPool.__pad_208[496]; /*0x610bab*/
   v4[1] = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610bc4*/
   v3 = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610bc8*/
-  (*((void (__thiscall **)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610bd3*/
+  (*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610bd3*/
    + 2))(
     g_DSurface_Primary,
     v4,
@@ -243,7 +254,7 @@ AbstractClass * * sub_610BF0()
     v2[0] = 0; /*0x610c53*/
     v2[1] = 0; /*0x610c57*/
     v3 = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610c5b*/
-    (*((void (__thiscall **)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610c66*/
+    (*((void (**)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610c66*/
      + 2))(
       g_DSurface_Primary,
       v4,
@@ -254,7 +265,7 @@ AbstractClass * * sub_610BF0()
     *(unsigned int *)&g_DialogPool.__pad_208[776] = 1; /*0x610c69*/
   LABEL_6:
     if ( *(unsigned int *)&g_DialogPool.__pad_208[512] ) /*0x610c7c*/
-      (***(void (__thiscall ****)(unsigned int, int))&g_DialogPool.__pad_208[512])(*(unsigned int *)&g_DialogPool.__pad_208[512], 1); /*0x610c82*/
+      (***(void (****)(unsigned int, int))&g_DialogPool.__pad_208[512])(*(unsigned int *)&g_DialogPool.__pad_208[512], 1); /*0x610c82*/
   }
   *(unsigned int *)&g_DialogPool.__pad_208[512] = 0; /*0x610c84*/
   *(unsigned int *)&g_DialogPool.__pad_208[772] = 0; /*0x610c8a*/
@@ -403,7 +414,7 @@ namespace gamemd {
 AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   HWND v4; // ebp
-  int result; // eax
+  AbstractClass ** result;
   unsigned int *v6; // esi
   unsigned int v7; // eax
   int v8; // eax
@@ -428,12 +439,12 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
     return 0; /*0x61d719*/
   while ( *(HWND *)result != hWnd ) /*0x61d725*/
   {
-    result = (gamemd::AbstractClass **)(*(unsigned int *)(result + 516));
+    result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)(result + 516))));
     if ( !result ) /*0x61d72f*/
       return result; /*0x61d72f*/
   }
   v6 = (unsigned int *)(result + 4); /*0x61d741*/
-  if ( result == -4 ) /*0x61d746*/
+  if ( result == (gamemd::AbstractClass **)(-4) ) /*0x61d746*/
     return 0; /*0x61d746*/
   if ( a2 > 0x402 ) /*0x61d755*/
   {
@@ -468,8 +479,8 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
         if ( v9 ) /*0x61d7ee*/
         {
           v10 = (unsigned int)(Rect.bottom - Rect.top + 1);
-          v11 = Rect.right - Rect.left; /*0x61d803*/
-          v9[2] = v10; /*0x61d805*/
+          v11 = (unsigned int)(Rect.right - Rect.left);
+          v9[2] = (unsigned int)(v10);
           ++v11; /*0x61d808*/
           v9[3] = 0; /*0x61d809*/
           v9[1] = v11; /*0x61d810*/
@@ -485,7 +496,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
         }
         v6[4] = (unsigned int)(v12);
         ++g_GameScreenState; /*0x61d847*/
-        (*(void (__thiscall **)(unsigned int *, unsigned int *, int, unsigned int *, unsigned int, int))(*v12 + 8))( /*0x61d860*/
+        (*(void (**)(unsigned int *, unsigned int *, int, unsigned int *, unsigned int, int))(*v12 + 8))( /*0x61d860*/
           v12,
           v16,
           DSurface_Alternate,
@@ -493,7 +504,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
           0,
           1);
       }
-      (*(void (__thiscall **)(int, unsigned int *, unsigned int, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x61d87d*/
+      (*(void (**)(int, unsigned int *, unsigned int, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x61d87d*/
         DSurface_Alternate,
         v15,
         v6[4],
@@ -519,11 +530,11 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
 {
   UINT v4; // edi
   LRESULT (__stdcall *v5)(HWND, UINT, WPARAM, LPARAM); // esi
-  int v6; // eax
+  AbstractClass ** v6;
   HWND v7; // ecx
   LRESULT (__stdcall **v8)(HWND, UINT, WPARAM, LPARAM); // eax
-  int result; // eax
-  int v10; // edi
+  AbstractClass ** result;
+  AbstractClass ** v10;
   unsigned int *v11; // esi
   int v12; // eax
   int v13; // ecx
@@ -559,12 +570,12 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
         {
           while ( *(HWND *)result != v18 ) /*0x61edf4*/
           {
-            result = (gamemd::AbstractClass **)(*(unsigned int *)(result + 516));
+            result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)(result + 516))));
             if ( !result ) /*0x61edfe*/
               return result; /*0x61edfe*/
           }
-          v10 = result + 4; /*0x61ee13*/
-          if ( result != -4 ) /*0x61ee18*/
+          v10 = (gamemd::AbstractClass **)((int)(result + 4));
+          if ( result != (gamemd::AbstractClass **)(-4) ) /*0x61ee18*/
           {
             if ( !*(unsigned int *)(result + 20) ) /*0x61ee1e*/
             {
@@ -572,23 +583,23 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
               if ( v11 ) /*0x61ee33*/
               {
                 v12 = (unsigned int)(v21);
-                v13 = v20; /*0x61ee39*/
-                v11[2] = v21; /*0x61ee3d*/
-                v11[1] = v13; /*0x61ee45*/
-                v11[3] = 0; /*0x61ee4e*/
-                *v11 = &XSurface_Vtable; /*0x61ee55*/
-                v11[4] = 2; /*0x61ee5b*/
+                v13 = (unsigned int)(v20);
+                v11[2] = (unsigned int)(v21);
+                v11[1] = (unsigned int)(v13);
+                v11[3] = (unsigned int)(0);
+                *v11 = (unsigned int)(&XSurface_Vtable);
+                v11[4] = (unsigned int)(2);
                 Buffer::Init(v11 + 5, 0, 2 * v13 * v12); /*0x61ee62*/
                 *v11 = &BSurface_Vtable; /*0x61ee67*/
                 v14 = v11; /*0x61ee6d*/
               }
               else
               {
-                v14 = 0; /*0x61ee71*/
+                v14 = (unsigned int)(0);
               }
               *(unsigned int *)(v10 + 16) = v14; /*0x61ee73*/
               ++g_GameScreenState; /*0x61ee7e*/
-              (*(void (__thiscall **)(unsigned int *, unsigned int *, int, int *, unsigned int, int))(*v14 + 8))( /*0x61ee97*/
+              (*(void (**)(unsigned int *, unsigned int *, int, int *, unsigned int, int))(*v14 + 8))( /*0x61ee97*/
                 v14,
                 v22,
                 DSurface_Alternate,
@@ -600,7 +611,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
             FormatHotkeyDisplayString(v15, String); /*0x61eeb7*/
             v16 = *(unsigned int *)(v10 + 16); /*0x61eebc*/
             if ( v16 ) /*0x61eec1*/
-              (*(void (__thiscall **)(int, int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x61eeda*/
+              (*(void (**)(int, int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x61eeda*/
                 DSurface_Alternate,
                 v19,
                 v16,
@@ -632,7 +643,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
     v7 = hWnd; /*0x61ed00*/
     while ( *(HWND *)v6 != hWnd ) /*0x61ed09*/
     {
-      v6 = (gamemd::AbstractClass **)(*(unsigned int *)(v6 + 8));
+      v6 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)(v6 + 8))));
       if ( !v6 ) /*0x61ed10*/
         return CallWindowProcA(v5, v7, v4, wParam, lParam); /*0x61ed10*/
     }
@@ -663,10 +674,10 @@ void FormatHotkeyDisplayString(void * a1, void * a2)
   result = IDA_HIBYTE(a1); /*0x61ef7c*/
   v3 = a1; /*0x61ef84*/
   IDA_LOBYTE(Format[0]) = 0; /*0x61ef88*/
-  *a2 = 0; /*0x61ef8d*/
-  if ( (a1 & 0x800) == 0 ) /*0x61ef92*/
+  *(unsigned int *)(a2) = 0; /*0x61ef8d*/
+  if ( ((unsigned int)(a1)& 0x800) == 0 ) /*0x61ef92*/
   {
-    if ( (a1 & 0x400) != 0 ) /*0x61efaa*/
+    if ( ((unsigned int)(a1)& 0x400) != 0 ) /*0x61efaa*/
     {
       v4 = (unsigned char)(MapVirtualKeyA(0x12u, 0));
       GetKeyNameTextA((v4 << 16) | 0x2000001, String, 32); /*0x61efc2*/
@@ -692,8 +703,8 @@ void FormatHotkeyDisplayString(void * a1, void * a2)
       strcat((char *)Format, asc_835A34); /*0x61f10e*/
       IDA_LOBYTE(a1) = v3; /*0x61f117*/
     }
-    v7 = MapVirtualKeyA((uint8_t)a1, 0); /*0x61f124*/
-    GetKeyNameTextA((v7 << 16) | 0x2000001, String, 32); /*0x61f136*/
+    v7 = (void *)(MapVirtualKeyA((uint8_t)a1, 0));
+    GetKeyNameTextA(((unsigned int)(v7)<< 16) | 0x2000001, String, 32); /*0x61f136*/
     strcat((char *)Format, String); /*0x61f15c*/
     return swprintf(a2, (const size_t)g_Str_Trace__hs, Format); /*0x61f174*/
   }

@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Multiplayer {
 // --- flat members (BEGIN) ---
-    unsigned int u32_4;  // 0x4
+    void* ;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char u8_C;  // 0xC
     unsigned char u8_D;  // 0xD
@@ -19,9 +19,13 @@ struct Multiplayer {
     unsigned int u32_284C;  // 0x284C
     unsigned int Screen;
     unsigned int u32_42;
+    unsigned int u32_4;
+    unsigned int Debug;
+    unsigned int Timer;
+    unsigned int Event;
 // --- flat members (END) ---
     unsigned int * CopyDataArray(ObjectClass * aP1);
-    void * FindStartPositions();
+    void * FindStartPositions(void *a1 = 0);
     void ShowProgress(int a2);
 };
 

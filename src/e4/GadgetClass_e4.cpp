@@ -31,7 +31,7 @@ void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass 
   *(unsigned int *)this->Hovered = aP5; /*0x4e132a*/
   *(unsigned int *)this->__pad_0 = (void*)&GadgetClass_vftable; /*0x4e132d*/
   if ( aP6 ) /*0x4e1334*/
-    *(unsigned int *)this->Hovered = aP5 | 5; /*0x4e1339*/
+    *(unsigned int *)this->Hovered = (unsigned int)(aP5)| 5; /*0x4e1339*/
   return result; /*0x4e1333*/
 }
 }
@@ -44,7 +44,7 @@ GadgetClass * * GadgetClass::Dtor()
 
   *(unsigned int *)this->__pad_0 = (void*)&GadgetClass_vftable; /*0x4e1390*/
   v1 = (ShpButtonClass *)dword_8B3E90; /*0x4e1396*/
-  if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e139f*/
+  if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E90 ) /*0x4e139f*/
   {
     v2 = *(unsigned int *)this->Hovered; /*0x4e13a1*/
     IDA_BYTE1(v2) &= ~1u; /*0x4e13a4*/
@@ -52,13 +52,13 @@ GadgetClass * * GadgetClass::Dtor()
     v1 = 0; /*0x4e13aa*/
     dword_8B3E90 = 0; /*0x4e13ac*/
   }
-  if ( this == (ShpButtonClass *)dword_8B3E88 ) /*0x4e13ba*/
+  if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E88 ) /*0x4e13ba*/
     dword_8B3E88 = 0; /*0x4e13bc*/
-  if ( this == (ShpButtonClass *)dword_8B3E8C ) /*0x4e13cb*/
+  if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E8C ) /*0x4e13cb*/
     dword_8B3E8C = 0; /*0x4e13cd*/
-  if ( this == v1 ) /*0x4e13d5*/
+  if ( this == (gamemd::GadgetClass *)(v1) ) /*0x4e13d5*/
     dword_8B3E90 = 0; /*0x4e13d7*/
-  return LinkClass::Destruct();
+  return this->LinkClass::Destruct();
 }
 }
 // 0x557920
@@ -74,7 +74,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 
   if ( !GadgetClass::ClearState((GadgetClass *)this, aP1) ) /*0x55792e*/
     return 0; /*0x557a0b*/
-  (*(void (__thiscall **)(void *, int, int, int, int))(*(unsigned int *)stru_887598.lineTrailer + 32))( /*0x557965*/
+  (*(void (**)(void *, int, int, int, int))(*(unsigned int *)stru_887598.lineTrailer + 32))( /*0x557965*/
     stru_887598.lineTrailer,
     this->ListClass_field_0x0C,
     this->ListClass_field_0x10,
@@ -94,7 +94,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     {
       v7 = i + this->u32_170; /*0x5579ad*/
       if ( this->u32_44 > v7 ) /*0x5579b1*/
-        (*(void (__thiscall **)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->__pad_0 + 200))( /*0x5579e0*/
+        (*(void (**)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->__pad_0 + 200))( /*0x5579e0*/
           this,
           v7,
           this->ListClass_field_0x0C + 1,
@@ -103,7 +103,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
           v7 == this->u32_16C);
     }
   }
-  (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x5579f6*/
+  (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x5579f6*/
   return 1; /*0x5579fe*/
 }
 }

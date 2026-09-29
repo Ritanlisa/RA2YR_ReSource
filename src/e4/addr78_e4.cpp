@@ -38,11 +38,35 @@
 #include "e4/classes/E4Recv_776320_e4.hpp"
 #include "e4/classes/ScoreScreen_e4.hpp"
 #include "e4/classes/VocClass_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
 
 // 0x780110
 namespace gamemd {
 void WOL_ResetSystem()
 {
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v18 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v18 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v18 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v18 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v18 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
   unsigned int *AccountInfoWOL; // eax
   int v2; // esi
   unsigned int v3; // eax
@@ -70,7 +94,7 @@ void WOL_ResetSystem()
   unsigned int v25[2]; // [esp+10h] [ebp-8h] BYREF
 
   AccountInfoWOL = (unsigned int)(LoadAccountInfoWOL((ObjectClass *)v25));
-  ComPtr::Set(&stru_B75E48, AccountInfoWOL[1]); /*0x780129*/
+  ((ComPtr *)(&stru_B75E48))->Set(AccountInfoWOL[1]); /*0x780129*/
   v25[0] = (void*)&rc_ptr_PlayerProfile_vftable; /*0x780132*/
   ComPtr::Release((ComPtr *)v25); /*0x78013a*/
   v2 = 0; /*0x780146*/
@@ -3407,7 +3431,7 @@ void WOL_FindLobbyID(char a1)
     BulkCharToWide(String2, (uint8_t *)v31, -1); /*0x78834d*/
     dword_B75E50 = (int)_wcsdup(String2); /*0x788364*/
     if ( v4 ) /*0x788369*/
-      (*(void (__thiscall **)(unsigned int *, int))*v4)(v4, 1); /*0x788372*/
+      (*(void (**)(unsigned int *, int))*v4)(v4, 1); /*0x788372*/
     v28[0] = (void*)&CCFileClass_vftable; /*0x78837b*/
     v30 = 0; /*0x788386*/
     Vector::Clear((int)v29); /*0x78838d*/
@@ -4496,7 +4520,7 @@ void CreateGameWOL()
   }
   dword_A8B23C = (ObjectClass *)MultiplayerGameMode::GetFirst(); /*0x789e77*/
   *(unsigned int *)stru_A8B250.__pad_0 = dword_A8B23C->owningHouseIndex; /*0x789e7f*/
-  (*((void (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 8))(dword_A8B23C); /*0x789e89*/
+  (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 8))(dword_A8B23C); /*0x789e89*/
   LoadScenarioClassByIndex(0); /*0x789e8e*/
   PtrVector::Destroy(&stru_A8DA74); /*0x789e98*/
   Game::ResetFlags(); /*0x789e9d*/
@@ -4557,7 +4581,7 @@ void CreateGameWOL()
   if ( dword_A8DA84 < dword_A8DA7C /*0x78a079*/
     || (byte_A8DA81 || !dword_A8DA7C)
     && dword_A8DA88 > 0
-    && (*(uint8_t (__thiscall **)(PtrVector *, int, unsigned int))(*(unsigned int *)&stru_A8DA74 + 8))(
+    && (*(uint8_t (**)(PtrVector *, int, unsigned int))(*(unsigned int *)&stru_A8DA74 + 8))(
          &stru_A8DA74,
          dword_A8DA7C + dword_A8DA88,
          0) )
@@ -4685,10 +4709,10 @@ void CreateGameWOL()
     Screen::Capture(1, 0, (uint8_t)v30, (int)v37); /*0x78a3ad*/
     LoadingScreen::Init(); /*0x78a3b2*/
     Dialog = (HWND)CreateDialog(0xC2u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WOLobby::SetupDlgProc, 0); /*0x78a3ce*/
-    (*((void (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 39))(dword_A8B23C); /*0x78a3d2*/
-    (*((void (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 8))(dword_A8B23C); /*0x78a3e0*/
-    (*((void (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 6))(dword_A8B23C); /*0x78a3eb*/
-    (*((void (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 31))(dword_A8B23C); /*0x78a3f6*/
+    (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 39))(dword_A8B23C); /*0x78a3d2*/
+    (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 8))(dword_A8B23C); /*0x78a3e0*/
+    (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 6))(dword_A8B23C); /*0x78a3eb*/
+    (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 31))(dword_A8B23C); /*0x78a3f6*/
     ShowWindow(Dialog, 1); /*0x78a402*/
     if ( v41 ) /*0x78a406*/
       ShowWindow(v41, 0); /*0x78a40b*/

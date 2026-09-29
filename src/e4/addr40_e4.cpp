@@ -70,6 +70,7 @@
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x4011C0
 namespace gamemd {
@@ -85,24 +86,24 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   int v10; // edi
   int v11; // esi
   HANDLE FirstFileA; // esi
-  void (__thiscall ***v14)(unsigned int, int); // ecx
-  void (__thiscall ***v15)(unsigned int, int); // ecx
+  void (***v14)(unsigned int, int); // ecx
+  void (***v15)(unsigned int, int); // ecx
   unsigned int Buffer[2]; // [esp+14h] [ebp-2BCh] BYREF
   int v18; // [esp+1Ch] [ebp-2B4h]
   int v19[22]; // [esp+20h] [ebp-2B0h] BYREF
   unsigned char v20[12]; // [esp+78h] [ebp-258h] BYREF
-  int v21; // [esp+84h] [ebp-24Ch]
+  AbstractClass ** v21;
   char Str[260]; // [esp+8Ch] [ebp-244h] BYREF
   struct _WIN32_FIND_DATAA FindFileData; // [esp+190h] [ebp-140h] BYREF
 
-  v3 = (unsigned int)((char *)RA2_OPNEW(0x124u));
+  v3 = (char *)((unsigned int)((char *)RA2_OPNEW(0x124u)));
   memset(v3, 0, 0x124u); /*0x4011e5*/
   strcpy(Str, a1); /*0x401204*/
   v4 = strrchr(Str, 46); /*0x401215*/
   if ( v4 ) /*0x401221*/
     *v4 = 0; /*0x401223*/
   strcat(Str, aIdx); /*0x40124d*/
-  CCFileClass::Construct(v19, Str); /*0x401262*/
+  ((CCFileClass *)(v19))->Construct(Str); /*0x401262*/
   if ( !CCFileClass::Open(v19, 0) ) /*0x40126c*/
     goto LABEL_30; /*0x40126c*/
   v5 = strrchr(Str, 46); /*0x401283*/
@@ -110,12 +111,12 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
     *v5 = 0; /*0x40128f*/
   strcat(Str, aBag); /*0x4012bc*/
   v6 = RA2_OPNEW(0x6Cu); /*0x4012c5*/
-  v7 = v6 ? CCFileClass::Construct(v6, Str) : 0;
+  v7 = v6 ? ((CCFileClass *)(v6))->Construct(Str) : 0;
   *((unsigned int *)v3 + 67) = v7; /*0x4012e4*/
-  if ( !(*(uint8_t (__thiscall **)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0) ) /*0x4012ef*/
+  if ( !(*(uint8_t (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0) ) /*0x4012ef*/
     goto LABEL_30; /*0x4012ef*/
   FileClass::Load(v19, 1); /*0x401300*/
-  (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)v3 + 67) + 28))(*((unsigned int *)v3 + 67), 1); /*0x40130f*/
+  (*(void (**)(unsigned int, int))(**((unsigned int **)v3 + 67) + 28))(*((unsigned int *)v3 + 67), 1); /*0x40130f*/
   if ( CCFileClass::Read(v19, Buffer, 12) != 12 ) /*0x401325*/
     goto LABEL_30; /*0x401325*/
   *((unsigned int *)v3 + 1) = v18; /*0x40132f*/
@@ -132,10 +133,10 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   LABEL_30:
     if ( v3 ) /*0x401508*/
     {
-      v14 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)v3 + 67); /*0x40150a*/
+      v14 = (void (***)(unsigned int, int))*((unsigned int *)v3 + 67); /*0x40150a*/
       if ( v14 ) /*0x401512*/
         (**v14)(v14, 1); /*0x401518*/
-      v15 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)v3 + 68); /*0x40151a*/
+      v15 = (void (***)(unsigned int, int))*((unsigned int *)v3 + 68); /*0x40151a*/
       if ( v15 ) /*0x401522*/
         (**v15)(v15, 1); /*0x401528*/
       if ( *(unsigned int *)v3 ) /*0x40152a*/
@@ -192,8 +193,8 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
     if ( v3[strlen(v3 + 8) + 8] != 92 ) /*0x40147a*/
       strcat(v3 + 8, asc_815E74); /*0x40149d*/
   }
-  v19[0] = (gamemd::AbstractClass **)((int)&CCFileClass_vftable);
-  v21 = 0; /*0x4014b4*/
+  v19[0] = (int)((gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)((int)&CCFileClass_vftable))));
+  v21 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(0)));
   Vector::Clear((int)v20); /*0x4014bb*/
   v19[0] = (int)&off_7E1668; /*0x4014c4*/
   BufferIOFileClass::Dtor(v19); /*0x4014cc*/
@@ -404,7 +405,7 @@ ObjectClass * * sub_402990()
         while ( v5 ); /*0x402a35*/
         Next = (AudioQueue *)NextAlt; /*0x402a37*/
       }
-      (*(void (__thiscall **)(AudioQueue *))(*(unsigned int *)(*(unsigned int *)i[1].__pad_0 + 12) + 32))(i); /*0x402a43*/
+      (*(void (**)(AudioQueue *))(*(unsigned int *)(*(unsigned int *)i[1].__pad_0 + 12) + 32))(i); /*0x402a43*/
       *(unsigned int *)(*(unsigned int *)i[1].__pad_0 + 4 * *(unsigned int *)&i[1].__pad_0[4] + 28) = 0; /*0x402a4c*/
       v6 = *(unsigned int *)i[1].__pad_0; /*0x402a50*/
       v7 = *(unsigned int *)(v6 + 16) - 1; /*0x402a56*/
@@ -422,7 +423,7 @@ ObjectClass * * sub_402990()
     {
       v9 = (AudioQueue *)AudioQueue::GetNextAlt(v9); /*0x402ab1*/
       LinkedList::Init(j); /*0x402ab5*/
-      (*(void (__thiscall **)(LinkedList *))(*(unsigned int *)j[1].__pad_0 + 24))(j); /*0x402abf*/
+      (*(void (**)(LinkedList *))(*(unsigned int *)j[1].__pad_0 + 24))(j); /*0x402abf*/
       *(unsigned int *)(*(unsigned int *)j[1].__pad_0 + 12) &= ~1u; /*0x402ac6*/
       RA2_OPDEL(j); /*0x402ac9*/
       dword_87DE28 = 0; /*0x402ad3*/
@@ -523,7 +524,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     Struct::ZeroInit32(v8 + 9); /*0x402e52*/
     if ( a2 ) /*0x402e5d*/
       qmemcpy(v8 + 17, a2, 0x20u); /*0x402e64*/
-    if ( (*(int (__thiscall **)(int *))(v12 + 28))(v8) ) /*0x402e6c*/
+    if ( (*(int (**)(int *))(v12 + 28))(v8) ) /*0x402e6c*/
     {
       if ( v8 ) /*0x402e75*/
       {
@@ -581,7 +582,7 @@ ObjectClass * * sub_403210()
         v4 = (AudioQueue *)AudioQueue::GetNextAlt(v4); /*0x40329f*/
         AudioStream::Destructor(i); /*0x4032a1*/
       }
-      (*(void (__thiscall **)(AudioQueue *))(*(unsigned int *)(*(unsigned int *)v2[1].__pad_0 + 12) + 32))(v2); /*0x4032b4*/
+      (*(void (**)(AudioQueue *))(*(unsigned int *)(*(unsigned int *)v2[1].__pad_0 + 12) + 32))(v2); /*0x4032b4*/
       *(unsigned int *)(*(unsigned int *)v2[1].__pad_0 + 4 * *(unsigned int *)&v2[1].__pad_0[4] + 28) = 0; /*0x4032bd*/
       v6 = *(unsigned int *)v2[1].__pad_0; /*0x4032c1*/
       v7 = *(unsigned int *)(v6 + 16) - 1; /*0x4032c7*/
@@ -1351,7 +1352,7 @@ int E4Recv_406B10::InitializeAudioSubsystem()
     }
     g_MixerChannel_SFX = (ObjectClass *)&g_Audio_Enabled->__pad_5C[12]; /*0x406c4c*/
     v3 = CCFileClass::Construct(&v14, aAudiomdMix); /*0x406c51*/
-    v4 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v3 + 20))(v3, 0); /*0x406c65*/
+    v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))(v3, 0); /*0x406c65*/
     *(unsigned int *)v14.CDFileClass = (void*)&CCFileClass_vftable; /*0x406c67*/
     v16 = 0; /*0x406c6f*/
     Vector::Clear((int)v15); /*0x406c76*/
@@ -1510,10 +1511,10 @@ int sub_407040(int a1)
 namespace gamemd {
 RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int a3)
 {
-  void (__thiscall ***v5)(unsigned int, int); // ecx
+  void (***v5)(unsigned int, int); // ecx
   BufferIOFileClass *v6; // eax
   unsigned int *v7; // eax
-  void (__thiscall ***v8)(unsigned int, int); // ecx
+  void (***v8)(unsigned int, int); // ecx
   CCFileClass *v9; // eax
   unsigned int *v10; // eax
   int v11; // ecx
@@ -1547,7 +1548,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   Count *v39; // ecx
   int v41; // eax
   int v42; // edx
-  void (__thiscall ***v43)(unsigned int, int); // ecx
+  void (***v43)(unsigned int, int); // ecx
   Voice *v44; // [esp+8h] [ebp-10h]
 
   if ( a1[34] ) /*0x407b6a*/
@@ -1558,7 +1559,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
     Voice::Stop(v44); /*0x407b8b*/
     LeaveCriticalSection(&unk_87E7F8); /*0x407b95*/
   }
-  v5 = (void (__thiscall ***)(unsigned int, int))a1[31]; /*0x407b9b*/
+  v5 = (void (***)(unsigned int, int))a1[31]; /*0x407b9b*/
   if ( v5 ) /*0x407ba0*/
   {
     (**v5)(v5, 1); /*0x407ba6*/
@@ -1571,9 +1572,9 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
     a1[31] = v7; /*0x407bcd*/
     if ( v7 ) /*0x407bd0*/
     {
-      if ( !(*(uint8_t (__thiscall **)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0) ) /*0x407bd7*/
+      if ( !(*(uint8_t (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0) ) /*0x407bd7*/
       {
-        v8 = (void (__thiscall ***)(unsigned int, int))a1[31]; /*0x407bde*/
+        v8 = (void (***)(unsigned int, int))a1[31]; /*0x407bde*/
         if ( v8 ) /*0x407be3*/
           (**v8)(v8, 1); /*0x407be9*/
         a1[31] = 0; /*0x407beb*/
@@ -1592,10 +1593,10 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   v11 = a1[31]; /*0x407c10*/
   if ( !v11 ) /*0x407c15*/
     goto LABEL_51; /*0x407c15*/
-  if ( !(*(uint8_t (__thiscall **)(int, unsigned int))(*(unsigned int *)v11 + 20))(v11, 0) /*0x407c30*/
-    || !(*(int (__thiscall **)(unsigned int, int))(*(unsigned int *)a1[31] + 28))(a1[31], 1) )
+  if ( !(*(uint8_t (**)(int, unsigned int))(*(unsigned int *)v11 + 20))(v11, 0) /*0x407c30*/
+    || !(*(int (**)(unsigned int, int))(*(unsigned int *)a1[31] + 28))(a1[31], 1) )
   {
-    v43 = (void (__thiscall ***)(unsigned int, int))a1[31]; /*0x407f23*/
+    v43 = (void (***)(unsigned int, int))a1[31]; /*0x407f23*/
     if ( v43 ) /*0x407f28*/
       (**v43)(v43, 1); /*0x407f2e*/
     a1[31] = 0; /*0x407f30*/
@@ -1606,7 +1607,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
     goto LABEL_51; /*0x407c51*/
   v12 = a1[31]; /*0x407c60*/
   a1[39] = a1[37]; /*0x407c63*/
-  v13 = (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)v12 + 40))(v12, 0, 1); /*0x407c6e*/
+  v13 = (*(int (**)(int, unsigned int, int))(*(unsigned int *)v12 + 40))(v12, 0, 1); /*0x407c6e*/
   v14 = (Count *)a1[13]; /*0x407c71*/
   a1[38] = v13; /*0x407c74*/
   if ( v14 ) /*0x407c7c*/
@@ -1748,13 +1749,13 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
     *a3 = 0; /*0x40862b*/
   if ( a1 ) /*0x40862f*/
   {
-    (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)a1 + 40))(a1, 0, 0); /*0x40863e*/
-    if ( (*(int (__thiscall **)(int, unsigned int *, int))(*(unsigned int *)a1 + 36))(a1, v16, 12) == 12 /*0x40867a*/
+    (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)a1 + 40))(a1, 0, 0); /*0x40863e*/
+    if ( (*(int (**)(int, unsigned int *, int))(*(unsigned int *)a1 + 36))(a1, v16, 12) == 12 /*0x40867a*/
       && v16[0] == 1179011410
       && v16[2] == 1163280727
-      && (*(uint8_t (__thiscall **)(int))(*(unsigned int *)a1 + 24))(a1) )
+      && (*(uint8_t (**)(int))(*(unsigned int *)a1 + 24))(a1) )
     {
-      while ( (*(int (__thiscall **)(int, int *, int))(*(unsigned int *)a1 + 36))(a1, &v14, 8) == 8 ) /*0x408697*/
+      while ( (*(int (**)(int, int *, int))(*(unsigned int *)a1 + 36))(a1, &v14, 8) == 8 ) /*0x408697*/
       {
         if ( v14 == 544501094 ) /*0x4086a6*/
         {
@@ -1773,7 +1774,7 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
             *((unsigned int *)v3 + 3) = 0; /*0x4086e5*/
             v3[8] = 0; /*0x4086e8*/
           }
-          (*(void (__thiscall **)(int, uint16_t *, size_t))(*(unsigned int *)a1 + 36))(a1, v3, Size); /*0x40871e*/
+          (*(void (**)(int, uint16_t *, size_t))(*(unsigned int *)a1 + 36))(a1, v3, Size); /*0x40871e*/
           v3[8] = Size; /*0x408726*/
         }
         else
@@ -1812,9 +1813,9 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
             v4 = 1; /*0x4087ce*/
             break; /*0x4087ce*/
           }
-          (*(void (__thiscall **)(int, size_t, int))(*(unsigned int *)a1 + 40))(a1, Size, 1); /*0x4086bf*/
+          (*(void (**)(int, size_t, int))(*(unsigned int *)a1 + 40))(a1, Size, 1); /*0x4086bf*/
         }
-        if ( !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)a1 + 24))(a1) ) /*0x40872f*/
+        if ( !(*(uint8_t (**)(int))(*(unsigned int *)a1 + 24))(a1) ) /*0x40872f*/
           break; /*0x408734*/
       }
       if ( v3 ) /*0x4087d4*/
@@ -2023,14 +2024,14 @@ void sub_408F80(AudioStream * a1, int * a2, int a3, char * a4)
     v12 = a1[1]; /*0x408fc6*/
     if ( a1[5] ) /*0x408fbb*/
     {
-      v9 = (*(int (__thiscall **)(int *, int, int))(v8 + 48))(a2, v12, v7); /*0x408fce*/
+      v9 = (*(int (**)(int *, int, int))(v8 + 48))(a2, v12, v7); /*0x408fce*/
       v10 = v9 == 0; /*0x408fd0*/
       if ( v9 < 0 ) /*0x408fd2*/
         goto LABEL_11; /*0x408fd2*/
     }
     else
     {
-      v9 = (*(int (__thiscall **)(int *, int, int))(v8 + 36))(a2, v12, v7); /*0x408fd9*/
+      v9 = (*(int (**)(int *, int, int))(v8 + 36))(a2, v12, v7); /*0x408fd9*/
       v10 = v9 == 0; /*0x408fdb*/
       if ( v9 < 0 ) /*0x408fdd*/
       {
@@ -2385,7 +2386,7 @@ void AudioStreamThreadProc(unsigned int * lpThreadParameter)
               v17 = *(unsigned int *)(*(unsigned int *)(i + 344) + 100); /*0x409736*/
               if ( v17 ) /*0x40973b*/
                 (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v17 + 72))(*(unsigned int *)(*(unsigned int *)(i + 344) + 100)); /*0x409740*/
-              v18 = *(void (__thiscall **)(int))(i + 356); /*0x409743*/
+              v18 = *(void (**)(int))(i + 356); /*0x409743*/
               if ( v18 ) /*0x40974b*/
                 v18(i); /*0x40974f*/
             }
@@ -3038,13 +3039,13 @@ int sub_4011B0(unsigned int * a1, int a2)
 namespace gamemd {
 void sub_401580(void ** Block)
 {
-  void (__thiscall ***v2)(unsigned int, int); // ecx
-  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (***v2)(unsigned int, int); // ecx
+  void (***v3)(unsigned int, int); // ecx
 
-  v2 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)Block + 67); /*0x401583*/
+  v2 = (void (***)(unsigned int, int))*((unsigned int *)Block + 67); /*0x401583*/
   if ( v2 ) /*0x40158b*/
     (**v2)(v2, 1); /*0x401591*/
-  v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)Block + 68); /*0x401593*/
+  v3 = (void (***)(unsigned int, int))*((unsigned int *)Block + 68); /*0x401593*/
   if ( v3 ) /*0x40159b*/
     (**v3)(v3, 1); /*0x4015a1*/
   if ( Block->AbstractClass ) /*0x4015a3*/
@@ -3081,7 +3082,7 @@ int sub_4018C0(int a1, int a2, int a3)
   v6 = a3; /*0x4018d3*/
   if ( a3 > *(unsigned int *)(a1 + 284) ) /*0x4018e0*/
     v6 = *(unsigned int *)(a1 + 284); /*0x4018e2*/
-  if ( v6 <= 0 || (result = (*(int (__thiscall **)(int, int, int))(*(unsigned int *)v4 + 36))(v4, a2, v6), result < 0) ) /*0x4018f1*/
+  if ( v6 <= 0 || (result = (*(int (**)(int, int, int))(*(unsigned int *)v4 + 36))(v4, a2, v6), result < 0) ) /*0x4018f1*/
     result = 0; /*0x4018f3*/
   *(unsigned int *)(a1 + 284) -= result; /*0x4018fe*/
   return result; /*0x4018cf*/
@@ -3240,8 +3241,8 @@ void * sub_402440(int a1, int a2)
   *(unsigned int *)(v2 + 12) = v1; /*0x402449*/
   (*(void (**)(void))(v4 + 40))(); /*0x40244c*/
   if ( (*(unsigned char *)(v2 + 164) & 5) != 0 ) /*0x402456*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)(v2 + 212) + 16))(v2); /*0x402460*/
-  (*(void (__thiscall **)(int))(*(unsigned int *)(v2 + 212) + 44))(v2); /*0x40246b*/
+    (*(void (**)(int))(*(unsigned int *)(v2 + 212) + 16))(v2); /*0x402460*/
+  (*(void (**)(int))(*(unsigned int *)(v2 + 212) + 44))(v2); /*0x40246b*/
   result = *(unsigned int *)(v2 + 188); /*0x40246e*/
   if ( result ) /*0x402476*/
     result = result(v2); /*0x40247a*/
@@ -3334,7 +3335,7 @@ void E4Recv_402EF0::sub_402EF0()
     Next = (AudioQueue *)AudioQueue::GetNextAlt(Next); /*0x402f11*/
     AudioStream::Destructor(i); /*0x402f13*/
   }
-  (*(void (__thiscall **)(ObjectClass *))(*(unsigned int *)(this->? + 12) + 32))(this); /*0x402f26*/
+  (*(void (**)(ObjectClass *))(*(unsigned int *)(this->? + 12) + 32))(this); /*0x402f26*/
   *(unsigned int *)(*(unsigned short *)&this->M28 + 4 * *(unsigned short *)&this->M28 + 28) = 0; /*0x402f2f*/
   nextArrayIndex = this->M24; /*0x402f37*/
   v5 = nextArrayIndex->uniqueId - 1; /*0x402f3d*/

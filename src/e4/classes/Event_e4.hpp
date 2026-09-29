@@ -5,8 +5,9 @@
 
 namespace gamemd {
 struct Event {
+    unsigned int Network;
     void* vfptr;  // minimal E2 declaration
-    static char Dispatch();  // 0x48D080
-    bool IsValidActionType();  // 0x601360
+     char Dispatch(void *a1 = 0, void *a2 = 0);  // 0x48D080
+    bool IsValidActionType(void *a1 = 0);  // 0x601360
 };
 } // namespace gamemd

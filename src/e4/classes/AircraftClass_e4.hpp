@@ -50,12 +50,12 @@ struct AircraftClass {
     unsigned int q05A;  // 0x5A
     unsigned int u32_5C;  // 0x5C
     unsigned int u32_60;  // 0x60
-    char customSound[4];  // 0x64
+    unsigned int customSound;  // 0x64
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
     unsigned int health;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    unsigned int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int q077;  // 0x77
@@ -199,7 +199,7 @@ struct AircraftClass {
     unsigned int u32_1A4;  // 0x1A4
     unsigned int q1A5;  // 0x1A5
     unsigned int q1A7;  // 0x1A7
-    char ironTintStage[4];  // 0x1A8
+    unsigned int ironTintStage;  // 0x1A8
     unsigned char airstrikeTimer;  // 0x1AC
     unsigned int q1AE;  // 0x1AE
     char q1B0[4];  // 0x1B0
@@ -666,9 +666,10 @@ struct AircraftClass {
     unsigned int SelectVocOrSfx;
     unsigned int q029;
     unsigned int q169;
+    unsigned int vtable0;
 // --- flat members (END) ---
     AircraftClass * CheckActionStatus(char a2);
-    AircraftTypeClass * * GetCursorOverObject(void* aP1, void* a3);
+    AircraftTypeClass * * GetCursorOverObject(void* aP1, void* a3, void *a1 = 0);
     HRESULT CheckPassengerCount(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2);
     char * CheckLandingClearance(int a2, int a3, int a4);
     char CheckDockState();
@@ -691,9 +692,9 @@ struct AircraftClass {
     int RevealSight(int a2, int a3);
     int UpdateDocking(int a2);
     int ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5, int a6);
-    unsigned int * Update();
+    unsigned int * Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
     void* LoadFromStream(unsigned int * a0, FootClass * aP1);
-    static double Construct(...);  // C2597 interim stub
+     double Construct(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

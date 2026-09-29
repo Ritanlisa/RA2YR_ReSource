@@ -8,6 +8,10 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/GameLoop_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/MSEngine_e4.hpp"
 
 // 0x5CED10
 namespace gamemd {

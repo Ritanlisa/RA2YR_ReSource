@@ -12,6 +12,8 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/GameOption_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Mission_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
 
 // 0x798340
 namespace gamemd {
@@ -71,7 +73,7 @@ void sub_72C0B0()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1412] ) /*0x72c10c*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1412])( /*0x72c112*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1412])( /*0x72c112*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1412],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1412] = 0; /*0x72c114*/

@@ -19,11 +19,24 @@
 #include "e4/classes/NetworkGameSetup_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x639FD0
 namespace gamemd {
 int NetworkClass::ExecutePlanningModeCmd()
 {
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
   char v1; // al
   wchar_t *StringCSF; // eax
   wchar_t *v3; // eax
@@ -45,7 +58,7 @@ int NetworkClass::ExecutePlanningModeCmd()
     if ( !byte_AC4C08 ) /*0x63a008*/
     {
       byte_AC4C08 = (unsigned char)((wchar_t *)(1));
-      v3 = (wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233));
+      v3 = (unsigned int)((wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233)));
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
       PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }

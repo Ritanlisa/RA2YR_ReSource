@@ -9,6 +9,8 @@ struct BulkData {
 // --- flat members (BEGIN) ---
     bool q051;  // 0x51
     AbstractClass * ptr_144;  // 0x144
+    unsigned int Debug;
+    unsigned int SessionClass;
 // --- flat members (END) ---
     void InitMissionHashing();
 };

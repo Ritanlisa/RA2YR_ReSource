@@ -24,9 +24,9 @@ struct EventQueue {
     unsigned int CheckPosition;
     unsigned int u32_4;
 // --- flat members (END) ---
-    int Check();
-    int Process();
-    int Read();
+    int Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    int Process(void *a1 = 0);
+    int Read(void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

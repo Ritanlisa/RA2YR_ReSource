@@ -389,7 +389,7 @@ struct RulesClass {
     char BuildingDamageSound[4];  // 0x6C8
     char HealCrateSound[4];  // 0x6CC
     char ChuteSound[4];  // 0x6D0
-    char StopSound[4];  // 0x6D4
+    unsigned int StopSound;  // 0x6D4
     char GuardSound[4];  // 0x6D8
     char ScatterSound[4];  // 0x6DC
     char DeploySound[4];  // 0x6E0
@@ -1105,7 +1105,7 @@ struct RulesClass {
     INIClass * * readDifficulty();
     RulesClass();
     double GetFiringDistance();
-    int DTOR();
+    int DTOR(void *a1 = 0);
     int ReadColorAdd();
     int ReadColors();
     int ReadSidesList();

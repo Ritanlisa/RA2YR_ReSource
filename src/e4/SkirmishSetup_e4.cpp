@@ -29,6 +29,10 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Struct_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/VectorClass_ptr_ConvertClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Render_e4.hpp"
 
 // 0x5D6130
 namespace gamemd {
@@ -43,7 +47,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
   int i; // [esp+14h] [ebp-8h]
 
   SendMessageA(hWnd, 0x184u, 0, 0); /*0x5d614d*/
-  v8 = dword_A8B238[0] == 5; /*0x5d6156*/
+  v8 = ((unsigned int *)(dword_A8B238))[0] == 5; /*0x5d6156*/
   v3 = 0; /*0x5d615b*/
   for ( i = 0; ; v3 = i ) /*0x5d615d*/
   {
@@ -68,13 +72,13 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
       dword_ABFDB0 = 0; /*0x5d61ed*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/
     }
-    v5 = (wchar_t *)((LPARAM)((wchar_t *)(*((unsigned int *)dword_ABFDA4 + v3))));
-    if ( (*(unsigned char *)(v5 + 61) || dword_A8B238[0] != 4 || !Network::IsMultiplayerActive()) /*0x5d6267*/
-      && (*(unsigned char *)(v5 + 62) || dword_A8B238[0] != 4 || !Network::IsLobbyFeature())
+    v5 = (wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)(*((unsigned int *)dword_ABFDA4 + v3))))))))));
+    if ( (*(unsigned char *)(v5 + 61) || ((unsigned int *)(dword_A8B238))[0] != 4 || !this->Network::IsMultiplayerActive()) /*0x5d6267*/
+      && (*(unsigned char *)(v5 + 62) || ((unsigned int *)(dword_A8B238))[0] != 4 || !this->Network::IsLobbyFeature())
       && (g_MPCooperativeState
        || *(unsigned int *)(dword_A8DA90 + 107) != -1
-       || (*(uint8_t (__thiscall **)(LPARAM))(*(unsigned int *)v5 + 188))(v5))
-      && (!v8 || (*(uint8_t (__thiscall **)(LPARAM))(*(unsigned int *)v5 + 64))(v5)) )
+       || (*(uint8_t (**)(LPARAM))(*(unsigned int *)v5 + 188))(v5))
+      && (!v8 || (*(uint8_t (**)(LPARAM))(*(unsigned int *)v5 + 64))(v5)) )
     {
       v6 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(v5 + 32)));
       v7 = SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)v6); /*0x5d6280*/
@@ -198,7 +202,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
                   SkirmishVector::PushBack(&v47, &this); /*0x5e6ab2*/
               }
               DlgItem = GetDlgItem((HWND)v9, 1363); /*0x5e6ac2*/
-              (*(void (__thiscall **)(char *, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)v12 + 76))( /*0x5e6ad4*/
+              (*(void (**)(char *, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)v12 + 76))( /*0x5e6ad4*/
                 v12,
                 DlgItem,
                 &v47,
@@ -246,9 +250,9 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
           if ( v19 ) /*0x5e6bfc*/
           {
             unknown_libname_74(); /*0x5e6c06*/
-            if ( (*(uint8_t (__thiscall **)(char *, SkirmishSetup **))(*(unsigned int *)v19 + 12))(v19, &this) ) /*0x5e6c14*/
+            if ( (*(uint8_t (**)(char *, SkirmishSetup **))(*(unsigned int *)v19 + 12))(v19, &this) ) /*0x5e6c14*/
             {
-              (*(void (__thiscall **)(char *))(*(unsigned int *)v19 + 16))(v19); /*0x5e6c23*/
+              (*(void (**)(char *))(*(unsigned int *)v19 + 16))(v19); /*0x5e6c23*/
               MultiMissionVector::Constructor((MultiMissionVector *)&v47, 0, 0); /*0x5e6c2c*/
               v47 = (SkirmishVector)(void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6c36*/
               v49 = 10; /*0x5e6c40*/
@@ -266,10 +270,10 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
                 while ( v16 < (int)hWnd ); /*0x5e6c7f*/
               }
               v20 = GetDlgItem((HWND)v15, 1363); /*0x5e6c8d*/
-              (*(void (__thiscall **)(char *, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)v19 + 76))(v19, v20, &v47, 0); /*0x5e6c9b*/
+              (*(void (**)(char *, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)v19 + 76))(v19, v20, &v47, 0); /*0x5e6c9b*/
               v47 = (SkirmishVector)(void*)&VectorClass_MultiMission_const___vftable; /*0x5e6ca2*/
               VectorClass::Cleanup3((int)&v47); /*0x5e6caa*/
-              IDA_LOBYTE(a5) = (*(int (__thiscall **)(char *))(*(unsigned int *)v19 + 60))(v19); /*0x5e6cbc*/
+              IDA_LOBYTE(a5) = (*(int (**)(char *))(*(unsigned int *)v19 + 60))(v19); /*0x5e6cbc*/
               v21 = GetDlgItem((HWND)v15, 1411); /*0x5e6cc0*/
               EnableWindow(v21, (uint8_t)a5); /*0x5e6cce*/
               if ( &word_AC0EC8 ) /*0x5e6cdb*/
@@ -355,11 +359,11 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
         while ( v36 < (int)a5 ); /*0x5e6f45*/
       }
       v39 = GetDlgItem((HWND)v37, 1363); /*0x5e6f4d*/
-      (*(void (__thiscall **)(int, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)First + 76))(First, v39, &v47, 0); /*0x5e6f5b*/
+      (*(void (**)(int, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)First + 76))(First, v39, &v47, 0); /*0x5e6f5b*/
       v47 = (SkirmishVector)(void*)&VectorClass_MultiMission_const___vftable; /*0x5e6f62*/
       VectorClass::Cleanup3((int)&v47); /*0x5e6f6a*/
     }
-    IDA_LOBYTE(this) = (*(int (__thiscall **)(int))(*(unsigned int *)First + 60))(First); /*0x5e6f7c*/
+    IDA_LOBYTE(this) = (*(int (**)(int))(*(unsigned int *)First + 60))(First); /*0x5e6f7c*/
     v40 = GetDlgItem((HWND)v37, 1411); /*0x5e6f80*/
     EnableWindow(v40, (uint8_t)this); /*0x5e6f8e*/
     v41 = *(unsigned int *)&stru_A8B250.__pad_0[4]; /*0x5e6f94*/
@@ -479,6 +483,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
 
   if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x5e8598*/
   {
+    unsigned int loc_5DAF20 = 0;  /* G37 hoist */
     v1 = (CCFileClass *)loc_5DAF20; /*0x5e859a*/
   }
   else if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5e85a4*/
@@ -488,6 +493,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   else if ( *(unsigned int *)&dword_A8B238 == 1 /*0x5e85ba*/
          || (v1 = (CCFileClass *)Event_Dispatch::Return0, *(unsigned int *)&dword_A8B238 == 2) )
   {
+    unsigned int loc_5BB260 = (unsigned int)((gamemd::AbstractClass **)(0));
     v1 = (CCFileClass *)&loc_5BB260; /*0x5e85bc*/
   }
   if ( CCFileClass::Load(v1) != 1 ) /*0x5e85c9*/
@@ -520,7 +526,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     if ( dword_A8B8D8 < dword_A8B8D0 /*0x5e86c5*/
       || (byte_A8B8D5 || !dword_A8B8D0)
       && dword_A8B8DC > 0
-      && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8B8C8 + 8))(
+      && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A8B8C8 + 8))(
            &dword_A8B8C8,
            dword_A8B8D0 + dword_A8B8DC,
            0) )

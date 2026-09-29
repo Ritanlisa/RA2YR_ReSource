@@ -124,11 +124,11 @@ unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
   unsigned int result; // eax
 
   v3 = IDA_BYTE1(this->Color_field_00); /*0x6612f2*/
-  IDA_LOBYTE(this->Color_field_00) += aP1 * (*a2 - IDA_LOBYTE(this->Color_field_00)) / 256; /*0x6612f5*/
-  v4 = v3 + aP1 * (a2[1] - v3) / 256; /*0x661315*/
+  IDA_LOBYTE(this->Color_field_00) += (unsigned int)(aP1)* (*a2 - IDA_LOBYTE(this->Color_field_00)) / 256; /*0x6612f5*/
+  v4 = v3 + (unsigned int)(aP1)* (a2[1] - v3) / 256; /*0x661315*/
   v5 = IDA_BYTE2(this->Color_field_00); /*0x661317*/
   IDA_BYTE1(this->Color_field_00) = v4; /*0x66131a*/
-  result = aP1 * (a2[2] - v5) / 256; /*0x66133a*/
+  result = (unsigned int)(aP1)* (a2[2] - v5) / 256; /*0x66133a*/
   IDA_LOBYTE(result) = v5 + result; /*0x66133d*/
   IDA_BYTE2(this->Color_field_00) = result; /*0x661340*/
   return result; /*0x66132a*/

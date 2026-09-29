@@ -19,7 +19,7 @@
 #include "system/cell.hpp"
 #include "system/scenario.hpp"
 #include <cstring>
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 extern gamemd::SuperWeaponTypeClass* g_SuperWeaponTypeItems[];
 

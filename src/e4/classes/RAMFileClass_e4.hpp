@@ -17,6 +17,8 @@ struct RAMFileClass {
     unsigned int RAMFileClass_field_0x8;
     unsigned int u32_14;
     unsigned int u32_1C;
+    unsigned int RAMFileClass_field_0xC;
+    unsigned int u32_1D;
 // --- flat members (END) ---
     int nullsub_0_1();  // 0x65C300
     int nullsub_0_2(int a2);  // 0x65C350

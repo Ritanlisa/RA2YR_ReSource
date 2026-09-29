@@ -77,7 +77,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     v56 = v50; /*0x7bcf17*/
     Buffer_field_14 = this->Buffer_field_14; /*0x7bcf1b*/
     v55 = v5; /*0x7bcf24*/
-    result = (char *)(*(int (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)Buffer_field_14 + 20))( /*0x7bcf2f*/
+    result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)Buffer_field_14 + 20))( /*0x7bcf2f*/
                        Buffer_field_14,
                        &v53,
                        a4);
@@ -114,7 +114,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
         v54 = 0; /*0x7bcc79*/
         v19 = this->Buffer_field_14; /*0x7bcc7d*/
         v56 = v18; /*0x7bcc82*/
-        (*(void (__thiscall **)(int, int *, unsigned int))(this->u32_28)(v19, &v53, a4); /*0x7bcc94*/
+        (*(void (**)(int, int *, unsigned int))(this->u32_28)(v19, &v53, a4); /*0x7bcc94*/
         v20 = v8 - this->u32_28; /*0x7bcc9e*/
         v21 = this->u32_2C; /*0x7bcca0*/
         v54 = 0; /*0x7bcca3*/
@@ -123,7 +123,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
         v55 = v20; /*0x7bccae*/
         v56 = v21; /*0x7bccb2*/
       }
-      result = (char *)(*(int (__thiscall **)(int, int *, unsigned int))(this->u32_28)(v22, &v53, a4); /*0x7bccbe*/
+      result = (char *)(*(int (**)(int, int *, unsigned int))(this->u32_28)(v22, &v53, a4); /*0x7bccbe*/
     }
     else if ( v8 >= 0 ) /*0x7bcbcf*/
     {
@@ -131,7 +131,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       v54 = 0; /*0x7bcc37*/
       v56 = this->u32_2C; /*0x7bcc3e*/
       v55 = -a2; /*0x7bcc46*/
-      result = (char *)(*(int (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)this->Buffer_field_14 + 20))( /*0x7bcc5a*/
+      result = (char *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)this->Buffer_field_14 + 20))( /*0x7bcc5a*/
                          this->Buffer_field_14,
                          &v53,
                          a4);
@@ -144,7 +144,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       v54 = 0; /*0x7bcbe4*/
       v13 = this->Buffer_field_14; /*0x7bcbe8*/
       v56 = v12; /*0x7bcbed*/
-      (*(void (__thiscall **)(int, int *, unsigned int))(this->u32_28)(v13, &v53, a4); /*0x7bcbff*/
+      (*(void (**)(int, int *, unsigned int))(this->u32_28)(v13, &v53, a4); /*0x7bcbff*/
       v14 = this->u32_28; /*0x7bcc02*/
       v15 = this->u32_2C; /*0x7bcc05*/
       v16 = v14 + v8; /*0x7bcc08*/
@@ -153,7 +153,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       v55 = v14 - v16; /*0x7bcc15*/
       v53 = v16; /*0x7bcc19*/
       v56 = v15; /*0x7bcc1d*/
-      result = (char *)(*(int (__thiscall **)(int, int *, unsigned int))(this->u32_28)(v17, &v53, a4); /*0x7bcc29*/
+      result = (char *)(*(int (**)(int, int *, unsigned int))(this->u32_28)(v17, &v53, a4); /*0x7bcc29*/
     }
   }
   if ( aP2 ) /*0x7bccf8*/
@@ -176,7 +176,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     if ( aP2 >= 0 ) /*0x7bcd46*/
     {
       v44 = this->u32_2C; /*0x7bce1d*/
-      if ( v27 >= v44 ) /*0x7bce26*/
+      if ( v27 >= (gamemd::MouseClass *)(v44) ) /*0x7bce26*/
       {
         v45 = 2 * this->u32_28 * v44 - Buffer_field_10; /*0x7bce34*/
         IDA_LODWORD(v45) = v45 - IDA_HIDWORD(v45); /*0x7bce35*/
@@ -470,7 +470,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   unsigned char *v16; // [esp+28h] [ebp+8h]
 
   Buffer_field_08 = (int *)(this->Buffer_field_08);
-  if ( Buffer_field_08 + 12 > (unsigned int)(this->Buffer_field_04 + this->Buffer_field_00) ) /*0x6c89f9*/
+  if ( Buffer_field_08 + 12 > (int *)((unsigned int))(this->Buffer_field_04 + this->Buffer_field_00) ) /*0x6c89f9*/
     return 0; /*0x6c89f9*/
   v15 = this->Buffer_field_08; /*0x6c89fd*/
   this->Buffer_field_08 = Buffer_field_08 + 12; /*0x6c8a01*/
@@ -483,7 +483,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   *(unsigned int *)(Buffer_field_08 + 8) = this->Buffer_field_08; /*0x6c8a3f*/
   v7 = CellStruct::Copy((CellStruct *)(a3 + 8), &v14); /*0x6c8a42*/
   v8 = aP1; /*0x6c8a49*/
-  v16 = (unsigned char *)(*(int (__thiscall **)(int *, unsigned int, unsigned int))(*aP1 + 92))(aP1, *v7, v7[1]); /*0x6c8a61*/
+  v16 = (unsigned char *)(*(int (**)(int *, unsigned int, unsigned int))(*aP1 + 92))(aP1, *v7, v7[1]); /*0x6c8a61*/
   v9 = *(unsigned int *)(a3 + 20); /*0x6c8a65*/
   v14 = 0; /*0x6c8a6a*/
   if ( v9 > 0 ) /*0x6c8a72*/
@@ -495,13 +495,13 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
       if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + this->Buffer_field_00 /*0x6c8aa4*/
         || (this->Buffer_field_08 = (int)&v11[v10], !v11) )
       {
-        (*(void (__thiscall **)(int *))(*v8 + 96))(v8); /*0x6c8ae6*/
+        (*(void (**)(int *))(*v8 + 96))(v8); /*0x6c8ae6*/
         return 0; /*0x6c8af2*/
       }
       qmemcpy(v11, &g_SidebarButtonState.needsRedraw, v10); /*0x6c8ab0*/
       v13 = *aP1; /*0x6c8ac2*/
       v12 = ++v14; /*0x6c8ac1*/
-      v16 += (*(int (__thiscall **)(int *))(v13 + 116))(aP1); /*0x6c8ad6*/
+      v16 += (*(int (**)(int *))(v13 + 116))(aP1); /*0x6c8ad6*/
       if ( v12 >= *(unsigned int *)(a3 + 20) ) /*0x6c8ada*/
         break; /*0x6c8ada*/
       v8 = aP1; /*0x6c8adc*/
@@ -509,7 +509,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
     Buffer_field_08 = (int *)(v15);
     v8 = (int *)(aP1);
   }
-  (*(void (__thiscall **)(int *))(*v8 + 96))(v8); /*0x6c8b01*/
+  (*(void (**)(int *))(*v8 + 96))(v8); /*0x6c8b01*/
   return Buffer_field_08; /*0x6c8a08*/
 }
 } // namespace gamemd

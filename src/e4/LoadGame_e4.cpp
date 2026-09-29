@@ -25,6 +25,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/LinkClass_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x660840
 namespace gamemd {
@@ -53,7 +54,7 @@ int LoadGame::LoadTriggerEvents()
       if ( v5 ) /*0x660863*/
       {
         v12 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v2); /*0x660875*/
-        v6 = (*(int (__thiscall **)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v12); /*0x660879*/
+        v6 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v12); /*0x660879*/
         if ( v6 != -1 ) /*0x66087f*/
           LoadGame::RemoveItem(&stru_B04DA8, v6); /*0x660887*/
         RA2_OPDEL(v5); /*0x66088d*/
@@ -218,7 +219,7 @@ LABEL_10:
     LayerClass::Load(&g_GameConfigManager, this);
     if ( g_TacticalClass_Instance )
     {
-      (*(void (__thiscall **)(LPPERSISTSTREAM, int))(*(unsigned int *)g_TacticalClass_Instance + 32))(g_TacticalClass_Instance, 1);
+      (*(void (**)(LPPERSISTSTREAM, int))(*(unsigned int *)g_TacticalClass_Instance + 32))(g_TacticalClass_Instance, 1);
       g_TacticalClass_Instance = 0;
     }
     if ( OleLoadFromStream(this, &IID_IUnknown, &v66) < 0 )
@@ -816,7 +817,7 @@ LABEL_192:
         if ( DataGlobal_A83D60 < DataGlobal_A83D58
           || (DataGlobal_A83D5D || !DataGlobal_A83D58)
           && DataGlobal_A83D64 > 0
-          && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(SuperClass_ShowTimers + 8))(
+          && (*(uint8_t (**)(int *, int, unsigned int))(SuperClass_ShowTimers + 8))(
                &SuperClass_ShowTimers,
                DataGlobal_A83D64 + DataGlobal_A83D58,
                0) )
@@ -861,7 +862,7 @@ LABEL_205:
         if ( unk_8B41F0 < unk_8B41E8
           || (unk_8B41ED || !unk_8B41E8)
           && unk_8B41F4 > 0
-          && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_8B41E0 + 8))(
+          && (*(uint8_t (**)(int *, int, unsigned int))(dword_8B41E0 + 8))(
                &dword_8B41E0,
                unk_8B41F4 + unk_8B41E8,
                0) )
@@ -1157,7 +1158,7 @@ int LoadGame::LoadPointArray(int a2)
           continue; /*0x54e83e*/
         LoadGame_field_0x20 = v12->LoadGame_field_0x20; /*0x54e840*/
         if ( LoadGame_field_0x20 <= 0 /*0x54e850*/
-          || !(*(uint8_t (__thiscall **)(int *, int, unsigned int))(*p_LoadGame_field_0x0C + 8))(
+          || !(*(uint8_t (**)(int *, int, unsigned int))(*p_LoadGame_field_0x0C + 8))(
                 &v12->LoadGame_field_0x0C,
                 LoadGame_field_0x14 + LoadGame_field_0x20,
                 0) )

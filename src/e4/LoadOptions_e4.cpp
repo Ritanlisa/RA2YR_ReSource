@@ -26,20 +26,20 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   char Saved; // bl
   const CHAR *lpMultiByteStr; // [esp+10h] [ebp+4h]
 
-  v1 = (wchar_t *)((*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640));
-  StringCSF = GetStringCSF(aTxtLoading, 0, g_Str_File_LoadDlg_CPP, 1052); /*0x559d83*/
+  v1 = (wchar_t *)((*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640));
+  StringCSF = (wchar_t *)(GetStringCSF(aTxtLoading, 0, g_Str_File_LoadDlg_CPP, 1052));
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
-  (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559d9b*/
+  (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559d9b*/
   if ( MessageBox ) /*0x559da0*/
     Dialog::Show(MessageBox); /*0x559da4*/
   byte_A8ED5C = 0; /*0x559dae*/
   byte_A8E378 = 0; /*0x559db5*/
   WTFMode::Shutdown(&dword_A8B238); /*0x559dbc*/
   Saved = Game::LoadSaved(lpMultiByteStr); /*0x559dd0*/
-  while ( (*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640) < v1 ) /*0x559dd9*/
-    (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))(dword_887640); /*0x559de3*/
-  while ( (*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640) > v1 ) /*0x559e02*/
-    (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e0c*/
+  while ( (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640) < v1 ) /*0x559dd9*/
+    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))(dword_887640); /*0x559de3*/
+  while ( (*(int (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640) > v1 ) /*0x559e02*/
+    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e0c*/
   if ( MessageBox ) /*0x559e20*/
     Dialog::Destroy(MessageBox); /*0x559e24*/
   return Saved; /*0x559e29*/
@@ -57,11 +57,11 @@ char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
 
   StringCSF = (wchar_t *)(GetStringCSF(aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107));
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559e69*/
-  (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e6d*/
+  (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e6d*/
   if ( MessageBox ) /*0x559e72*/
     Dialog::Show(MessageBox); /*0x559e76*/
   v4 = SaveScenarioClassGame_AdjustMPSaveFileName((LPCCH)Source, Sourcea, 0); /*0x559e90*/
-  (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))(dword_887640); /*0x559e94*/
+  (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 16))(dword_887640); /*0x559e94*/
   if ( MessageBox ) /*0x559e99*/
     Dialog::Destroy(MessageBox); /*0x559e9d*/
   return v4; /*0x559ea4*/
@@ -195,7 +195,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
   v3 = (unsigned char)(0);
   for ( this->vtable1 = (int)&LoadOptionsClass_vftable; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
     RA2_OPDEL(*(void **)(this->q024 + 4 * v3)); /*0x55a0ea*/
-  (*(void (__thiscall **)(LoadOptionsClass *))(this->is_active + 12))(this + 2); /*0x55a102*/
+  (*(void (**)(LoadOptionsClass *))(this->is_active + 12))(this + 2); /*0x55a102*/
   v4 = (void *)this->q024; /*0x55a105*/
   *(void **)&this->is_active = (void*)&VectorClass_FileEntryClass___vftable; /*0x55a108*/
   if ( v4 && this->u32_2D ) /*0x55a112*/
@@ -203,8 +203,8 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
     RA2_OPDEL(v4); /*0x55a11a*/
     this->q024 = 0; /*0x55a122*/
   }
-  this->u32_2D = (gamemd::LoadOptions *)(0);
-  this->q028 = (gamemd::LoadOptions *)(0);
+  this->u32_2D = (unsigned int)((gamemd::LoadOptions *)(0));
+  this->q028 = (int)((gamemd::LoadOptions *)(0));
   if ( (a2 & 1) != 0 ) /*0x55a13a*/
     RA2_OPDEL(); /*0x55a13d*/
   return (char *)this; /*0x55a147*/
@@ -297,7 +297,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVFileEntryClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x55a3be*/
+    (*(void (**)(_DynamicVectorClass_PAVFileEntryClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x55a3be*/
   }
   v7 = *(unsigned int *)&this->Capacity; /*0x55a3c1*/
   if ( v7 < this->max_entries ) /*0x55a3c9*/
@@ -332,7 +332,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FileEntryClass___vftable; /*0x55a416*/
   if ( v3 && IDA_BYTE1(this->q00C) ) /*0x55a420*/
   {
@@ -353,7 +353,7 @@ DynamicVector * LoadOptions::vt00(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FileEntryClass___vftable; /*0x55a466*/
   if ( v3 && IDA_BYTE1(this->q00C) ) /*0x55a470*/
   {

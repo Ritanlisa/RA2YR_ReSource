@@ -654,21 +654,21 @@ struct SessionClass {
     TypeList_flat * QueryInterface(char a2);
     VectorClass_flat * validateGame(char a2);
     char AddRef(int a2);
-    char GetGameSpeed();
+    char GetGameSpeed(void *a1 = 0);
     char Release(int a2, unsigned int * a3);
     char addPlayer(int a2, unsigned int * a3);
     int AssignColor(int a2, MPCooperative * aP2);
     int AssignSide(int a2, MPCooperative * aP2);
     int CreateConnections();
-    int Destruct();
-    int GetOption();
-    int GetOption2();
-    int GetPlayerColor();
-    int GetPlayerSide();
+    int Destruct(void *a1 = 0);
+    int GetOption(void *a1 = 0);
+    int GetOption2(void *a1 = 0);
+    int GetPlayerColor(void *a1 = 0);
+    int GetPlayerSide(void *a1 = 0);
     int IsValidHouse(void * a2);
     int LoadGameSession(ObjectClass * aP1, void* aP2);
-    int Read(unsigned int * a2);
-    int Seek(int a2);
+    int Read(unsigned int * a2, void *a1 = 0);
+    int Seek(int a2, void *a1 = 0);
     int SetField();
     int SetOption(SessionClass * aP1);
     int SetOption2(SessionClass * aP1);
@@ -678,7 +678,7 @@ struct SessionClass {
     int initInternet();
     int initLAN(int a2, wchar_t * Source, unsigned int * a4);
     unsigned int * GetEntry(IUnknown * aP1);
-    unsigned int * Load();
+    unsigned int * Load(void *a1 = 0);
     unsigned int * saveSettings();
     unsigned int GetPlayerColorScheme(ObjectClass * aP0);
     unsigned int Write(int a2);
@@ -687,7 +687,7 @@ struct SessionClass {
     void ** ResetSystemWOL_Reset(char a2);
     void SetInstance();
     void SetupNetwork();
-    void ddtor();
+    void ddtor(void *a1 = 0);
     void removePlayer();
 };
 

@@ -47,6 +47,10 @@
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_MapRegionClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/E4Recv_5D25D0_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x5A1350
 namespace gamemd {
@@ -256,15 +260,15 @@ int ProcessRandomMapCellAdjacency()
   result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a19f3*/
   for ( i = result; result; i = result )
   {
-    NeighbourContent = (int)(Cell::GetNeighbourContent((unsigned int *)i, 5u));
-    v14 = Cell::GetNeighbourContent((unsigned int *)i, 1u); /*0x5a1a1f*/
-    v2 = Cell::GetNeighbourContent((unsigned int *)i, 3u); /*0x5a1a2c*/
+    NeighbourContent = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 5u)));
+    v14 = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 1u)));
+    v2 = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 3u)));
     v3 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x5a1a37*/
     v4 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 6u); /*0x5a1a44*/
     AdjacencyFlags = Cell::GetAdjacencyFlags(i); /*0x5a1a46*/
     if ( AdjacencyFlags == 131 )
     {
-      if ( Cell::GetAdjacencyFlags((int)v2) != 131 || !Cell::IsEmpty(v3) ) /*0x5a1a6e*/
+      if ( Cell::GetAdjacencyFlags((int)v2) != (_T)(131) || !Cell::IsEmpty(v3) ) /*0x5a1a6e*/
         goto LABEL_32; /*0x5a1a6e*/
       do /*0x5a1aa3*/
       {
@@ -286,7 +290,7 @@ int ProcessRandomMapCellAdjacency()
     }
     else if ( AdjacencyFlags == 56 )
     {
-      if ( Cell::GetAdjacencyFlags((int)v2) != 56 || !Cell::IsEmpty(v4) ) /*0x5a1b1f*/
+      if ( Cell::GetAdjacencyFlags((int)v2) != (_T)(56) || !Cell::IsEmpty(v4) ) /*0x5a1b1f*/
         goto LABEL_32; /*0x5a1b1f*/
       do /*0x5a1b54*/
       {
@@ -309,8 +313,8 @@ int ProcessRandomMapCellAdjacency()
     else
     {
       if ( AdjacencyFlags != 224 /*0x5a1bea*/
-        || Cell::GetAdjacencyFlags((int)NeighbourContent) != 224
-        || Cell::GetAdjacencyFlags((int)v14) != 224
+        || Cell::GetAdjacencyFlags((int)NeighbourContent) != (_T)(224)
+        || Cell::GetAdjacencyFlags((int)v14) != (_T)(224)
         || !Cell::IsEmpty((unsigned int *)i) )
       {
         goto LABEL_32; /*0x5a1bea*/
@@ -403,7 +407,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     v9 = *(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * j); /*0x5a1d67*/
     if ( v9->q014 ) /*0x5a1d6a*/
     {
-      v10 = this->ambientSoundController[0]; /*0x5a1d75*/
+      v10 = this-((unsigned int *)(>ambientSoundController))[0]; /*0x5a1d75*/
       v11 = v10 == 3 || v10 == 4; /*0x5a1d86*/
       RandomMap::CollectTerrainCells( /*0x5a1da3*/
         *(RandomMap **)(g_MissionQueueFrame.briefing[339] + 4 * j),
@@ -443,10 +447,10 @@ void GenerateTerrainHeightMapInternal()
 {
   int result; // eax
   int *i; // edi
-  int v2; // esi
-  int v3; // ebx
-  int v4; // ecx
-  int16_t v5; // ax
+  unsigned int * v2;
+  unsigned int v3;
+  unsigned int * v4;
+  unsigned int * v5;
   int v6; // ecx
   unsigned int *v7; // eax
   int v8; // edx
@@ -467,13 +471,13 @@ void GenerateTerrainHeightMapInternal()
   {
     if ( CellClass::IsTerrainType(i) ) /*0x5a3417*/
     {
-      v2 = dword_ABED04; /*0x5a3424*/
+      v2 = (int)((unsigned int *)(dword_ABED04));
       v3 = 0; /*0x5a342a*/
       while ( 1 ) /*0x5a3431*/
       {
-        v4 = v3 & 7; /*0x5a3431*/
-        v16 = i[9]; /*0x5a3434*/
-        v5 = IDA_LOWORD(dword_89F688[v4]) + v16; /*0x5a3438*/
+        v4 = (int)((unsigned int *)(v3 & 7));
+        v16 = (unsigned short)(i[9]);
+        v5 = (unsigned short)(IDA_LOWORD(((unsigned int *)(dword_89F688))[v4]) + v16);
         IDA_LOWORD(v4) = IDA_HIWORD(dword_89F688[v4]); /*0x5a3447*/
         IDA_LOWORD(v17) = v5; /*0x5a344b*/
         IDA_HIWORD(v17) = IDA_HIWORD(v16) + v4; /*0x5a3455*/
@@ -481,7 +485,7 @@ void GenerateTerrainHeightMapInternal()
         v6 = IDA_SHIWORD(v17) + v5; /*0x5a3468*/
         if ( v6 > v2 && v5 - IDA_SHIWORD(v17) < v2 && IDA_SHIWORD(v17) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/
         {
-          v7 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v16); /*0x5a348f*/
+          v7 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v16));
           if ( Cell::IsEmpty(v7) ) /*0x5a3496*/
           {
             v8 = 80 * ((int16_t)v16 + g_MapCellWidth * IDA_SHIWORD(v16)); /*0x5a34cb*/
@@ -1152,7 +1156,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
         }
         while ( v18 > v17 ); /*0x5a6745*/
         v19 = *(unsigned int *)(*(unsigned int *)(v1 + 4) + 4 * v18); /*0x5a674c*/
-        v20 = (unsigned short *)(*(int (__thiscall **)(unsigned int, int))(**(unsigned int **)(v16 + 1312) + 144))( /*0x5a6761*/
+        v20 = (unsigned short *)(*(int (**)(unsigned int, int))(**(unsigned int **)(v16 + 1312) + 144))( /*0x5a6761*/
                          *(unsigned int *)(v16 + 1312),
                          1);
         v26 = 1; /*0x5a6763*/
@@ -1177,13 +1181,13 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
         v39[2] = 0; /*0x5a681d*/
         v39[0] = ((int16_t)v19 << 8) + 128; /*0x5a6828*/
         v39[1] = (IDA_SHIWORD(v19) << 8) + 128; /*0x5a6836*/
-        if ( (*(uint8_t (__thiscall **)(int, unsigned int *, unsigned int))(v22 + 216))(v16, v39, 0) ) /*0x5a683d*/
+        if ( (*(uint8_t (**)(int, unsigned int *, unsigned int))(v22 + 216))(v16, v39, 0) ) /*0x5a683d*/
         {
           v23 = *(unsigned int *)v16; /*0x5a684d*/
           v24 = *(unsigned int *)(*(unsigned int *)(v16 + 1312) + 160); /*0x5a6852*/
           *(unsigned int *)(v16 + 108) = v24; /*0x5a685a*/
           *(unsigned int *)(v16 + 112) = v24; /*0x5a685d*/
-          (*(void (__thiscall **)(int, int))(v23 + 292))(v16, 2); /*0x5a6860*/
+          (*(void (**)(int, int))(v23 + 292))(v16, 2); /*0x5a6860*/
           v25 = v32; /*0x5a686a*/
           v27 = 1; /*0x5a6872*/
           ++v30; /*0x5a6877*/
@@ -1207,7 +1211,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
         v1 = a1; /*0x5a66f3*/
       }
       if ( v16 ) /*0x5a68cc*/
-        (*(void (__thiscall **)(int, int))(*(unsigned int *)v16 + 32))(v16, 1); /*0x5a68d5*/
+        (*(void (**)(int, int))(*(unsigned int *)v16 + 32))(v16, 1); /*0x5a68d5*/
   LABEL_48:
       ++v29; /*0x5a68e1*/
       if ( v30 >= v33 ) /*0x5a68eb*/
@@ -1330,12 +1334,12 @@ void PlaceRandomNeutralUnits(int a1)
           v15 = *v8; /*0x5a6b10*/
           v28[1] = (IDA_SHIWORD(v18) << 8) + 128; /*0x5a6b16*/
           v28[2] = 0; /*0x5a6b1d*/
-          if ( (*(uint8_t (__thiscall **)(unsigned int *, unsigned int *, unsigned int))(v15 + 216))(v8, v28, 32 * v14) ) /*0x5a6b21*/
+          if ( (*(uint8_t (**)(unsigned int *, unsigned int *, unsigned int))(v15 + 216))(v8, v28, 32 * v14) ) /*0x5a6b21*/
           {
-            v16 = *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v8 + 132))(v8) + 160); /*0x5a6b35*/
+            v16 = *(unsigned int *)((*(int (**)(unsigned int *))(*v8 + 132))(v8) + 160); /*0x5a6b35*/
             v8[27] = v16; /*0x5a6b3d*/
             v8[28] = v16; /*0x5a6b40*/
-            (*(void (__thiscall **)(unsigned int *, int))(*v8 + 292))(v8, 2); /*0x5a6b47*/
+            (*(void (**)(unsigned int *, int))(*v8 + 292))(v8, 2); /*0x5a6b47*/
             v17 = 1; /*0x5a6b51*/
             IDA_LODWORD(v21) = v21 + 1; /*0x5a6b57*/
           }
@@ -1345,7 +1349,7 @@ void PlaceRandomNeutralUnits(int a1)
           goto LABEL_27; /*0x5a6b62*/
       }
       if ( v8 ) /*0x5a6b72*/
-        (*(void (__thiscall **)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x5a6b7a*/
+        (*(void (**)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x5a6b7a*/
   LABEL_27:
       result = v20; /*0x5a6b7d*/
       ++v19; /*0x5a6b8c*/
@@ -1429,7 +1433,7 @@ void PlaceMapSeedClassBuildings(ObjectClass * aP0, ObjectClass * aP1, int a3, in
 
   v19 = aP1; /*0x5a6c1a*/
   v4 = (unsigned int *)*((unsigned int *)dword_A8ED2C + aP0); /*0x5a6c1e*/
-  result = (*(int (__thiscall **)(unsigned int *))(*v4 + 156))(v4); /*0x5a6c26*/
+  result = (*(int (**)(unsigned int *))(*v4 + 156))(v4); /*0x5a6c26*/
   v20 = result; /*0x5a6c2e*/
   if ( result ) /*0x5a6c32*/
   {
@@ -2079,7 +2083,7 @@ void IsoTile_Draw(int a1, unsigned short * a2, char a3)
   v3 = a2; /*0x5a7faa*/
   v4 = (unsigned int *)*((unsigned int *)dword_A8ED2C + a1); /*0x5a7fac*/
   v14 = v4; /*0x5a7fb5*/
-  result = (*(int (__thiscall **)(unsigned int *))(*v4 + 156))(v4); /*0x5a7fbb*/
+  result = (*(int (**)(unsigned int *))(*v4 + 156))(v4); /*0x5a7fbb*/
   v16 = result; /*0x5a7fc3*/
   if ( result ) /*0x5a7fc7*/
   {
@@ -2250,12 +2254,12 @@ void PlaceNeutralCreeps(unsigned short * a1)
           v18 = *v8; /*0x5a8935*/
           v31[0] = ((int16_t)v21 << 8) + 128; /*0x5a893b*/
           v31[2] = 0; /*0x5a8942*/
-          if ( (*(uint8_t (__thiscall **)(unsigned int *, unsigned int *, unsigned int))(v18 + 216))(v8, v31, 32 * v17) ) /*0x5a8946*/
+          if ( (*(uint8_t (**)(unsigned int *, unsigned int *, unsigned int))(v18 + 216))(v8, v31, 32 * v17) ) /*0x5a8946*/
           {
-            v19 = *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v8 + 132))(v8) + 160); /*0x5a895a*/
+            v19 = *(unsigned int *)((*(int (**)(unsigned int *))(*v8 + 132))(v8) + 160); /*0x5a895a*/
             v8[27] = v19; /*0x5a8962*/
             v8[28] = v19; /*0x5a8965*/
-            (*(void (__thiscall **)(unsigned int *, int))(*v8 + 292))(v8, 2); /*0x5a896c*/
+            (*(void (**)(unsigned int *, int))(*v8 + 292))(v8, 2); /*0x5a896c*/
             v20 = 1; /*0x5a8976*/
             ++v24; /*0x5a897c*/
           }
@@ -2265,7 +2269,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
           goto LABEL_27; /*0x5a8987*/
       }
       if ( v8 ) /*0x5a8997*/
-        (*(void (__thiscall **)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x5a899f*/
+        (*(void (**)(unsigned int *, int))(*v8 + 32))(v8, 1); /*0x5a899f*/
   LABEL_27:
       result = v23; /*0x5a89a2*/
       ++v22; /*0x5a89b1*/

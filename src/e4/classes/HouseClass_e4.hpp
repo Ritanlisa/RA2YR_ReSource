@@ -1822,13 +1822,15 @@ struct HouseClass {
     unsigned int q6900;  // 0x6900
     unsigned int q7724;  // 0x7724
     unsigned int u32_54E4;
-    unsigned int AIBuildBase;
+    unsigned int HouseClass_field_160B4;
+    unsigned int CheckWinCondition;
+    unsigned int FindOwner;
 // --- flat members (END) ---
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
-    AbstractClass * * FindStartPositions();
+    AbstractClass * * FindStartPositions(void *a1 = 0);
     AbstractClass * * SaveLoad_Prefix(int a1, LPSTREAM pStm);
-    BOOL GainedPoweredCenter(int a2);
+    BOOL GainedPoweredCenter(int a2, void *a1 = 0);
     void* * UpdateAITryFireSW();
     VectorClass_flat * vt_00_(char a2);
     VectorCursor * vt_placeholder_07(char a2);
@@ -1836,7 +1838,7 @@ struct HouseClass {
     char IonSensitivesShouldBeOffline();
     char PickedUpFlag(ObjectClass * aP1, char a3);
     char ReshroudMap();
-    char Set();
+    char Set(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     char UpdateAllSilos(int a2, int a3);
     double GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2);
     int COMStub_Ret1_1(int a1);
@@ -1879,12 +1881,12 @@ struct HouseClass {
     void * CanTogglePower();
     void ** PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3);
     void AcquiredThreatNode();
-    void Construct(CCINIClass * aP1);
+    void Construct(CCINIClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     void LostPoweredCenter(int a2);
     void ResetObjectOrders(char a1, int a2);
     void vt_03_();
     static double CalcProductionSpeed(...);  // C2597 interim stub
-    static double FindByName(...);  // C2597 interim stub
+     double FindByName(...);  // C2597 interim stub
     static double FindType15(...);  // C2597 interim stub
     static double FirstBuildableFromArray(...);  // C2597 interim stub
     static double GetCurrentOption(...);  // C2597 interim stub

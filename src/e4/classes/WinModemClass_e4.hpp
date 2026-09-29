@@ -43,13 +43,16 @@ struct WinModemClass {
     unsigned int q0085;
     unsigned int q0086;
     unsigned int q05C;
+    unsigned int AsyncIO;
+    unsigned int Debug;
+    unsigned int Timer;
 // --- flat members (END) ---
     AbstractClass * * Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8);
     WinModemClass * * LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4);
     WinModemClass * QueryInterface(char a2);
     int HangUp(int a2);
     int LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5);
-    int ReadBytes(void (**this)(), WinModemClass * aP1, WinModemClass * aP2);
+    int ReadBytes(void (**thisthisArg)(), WinModemClass * aP1, WinModemClass * aP2);
     int ReadSerial();
     int SaveToINI(const char * NumberOfBytesWritten);
     int WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2);

@@ -12,7 +12,7 @@
 
 #include <cstring>
 #include <cmath>
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace gamemd
 {
@@ -205,7 +205,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
   int v41[4]; // [esp+88h] [ebp-20h] BYREF
   int v42[4]; // [esp+98h] [ebp-10h] BYREF
 
-  v3 = (int)(*viewRect);
+  v3 = (int)(*(const gamemd::RectangleStruct *)(viewRect));
   v24 = 0; /*0x6d7581*/
   v5 = this->visibleArea + v3; /*0x6d7595*/
   v6 = viewRect[1] + this->q0B4; /*0x6d759c*/
@@ -252,7 +252,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
         if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], v28) ) /*0x6d76e0*/
         {
           v17 = (int *)((CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v28));
-          ScreenRect = CellClass::GetScreenRect(v17, v41); /*0x6d7708*/
+          ScreenRect = (int *)(CellClass::GetScreenRect(v17, v41));
           v34[0] = *ScreenRect; /*0x6d7711*/
           v34[1] = ScreenRect[1]; /*0x6d771a*/
           v35 = ScreenRect[2]; /*0x6d7721*/
@@ -328,7 +328,7 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
   ++dword_A83ECC; /*0x480403*/
   v9 = this->u32_11B; /*0x480416*/
   v10 = screen_pos[1]; /*0x48041d*/
-  v16[0] = *screen_pos; /*0x480420*/
+  v16[0] = *(const gamemd::Point2D *)(screen_pos); /*0x480420*/
   v11 = v10 - 15 * v9; /*0x48042e*/
   v4 = (*(int (__thiscall **)(int *))(*v7 + 156))(v7); /*0x480430*/
   if ( v4 ) /*0x48043c*/
@@ -338,10 +338,10 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
                    g_DSurface_Hidden_2,
                    v16[0],
                    v11 + g_Map_VisibleRect,
-                   *flags,
-                   flags[1],
-                   flags[2],
-                   flags[3],
+                   *(int *)(flags),
+                   ((unsigned int *)(flags))[1],
+                   ((unsigned int *)(flags))[2],
+                   ((unsigned int *)(flags))[3],
                    this->u32_11B,
                    *(int16_t *)(&this->q0688),
                    1,
@@ -352,8 +352,8 @@ int TacticalClass::CheckCellVisibility(const Point2D& screen_pos, int flags, boo
                    0);
   if ( this->q048 != -1 ) /*0x4804a2*/
   {
-    v12 = flags[1]; /*0x4804b1*/
-    v16[0] = v16[0] + 30 - *flags; /*0x4804bd*/
+    v12 = ((unsigned int *)(flags))[1]; /*0x4804b1*/
+    v16[0] = v16[0] + 30 - *(int *)(flags); /*0x4804bd*/
     v13 = this->q048; /*0x4804c1*/
     v16[1] = v11 + g_Map_VisibleRect - v12; /*0x4804c4*/
     IDA_LOBYTE(v4) = (*(int (__thiscall **)(unsigned int, unsigned int *, unsigned int *, unsigned int, int, int))(**((unsigned int **)FactoryClass_Array /*0x4804f5*/
@@ -410,13 +410,13 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
   result = PingPongBuffer::GetWriteOffset(); /*0x6d7847*/
   if ( (unsigned int)dword_ABCD44 >= result ) /*0x6d7852*/
   {
-    result = (*(int (__thiscall **)(int *))(*g_DSurface_Hidden_2 + 112))(g_DSurface_Hidden_2); /*0x6d7860*/
+    result = (*(int (__thiscall **)(int *))(*(int *)(g_DSurface_Hidden_2) + 112))(g_DSurface_Hidden_2); /*0x6d7860*/
     if ( result == 2 ) /*0x6d7866*/
     {
       result = dword_A8EB78; /*0x6d786c*/
       if ( dword_A8EB78 ) /*0x6d7873*/
       {
-        result = (*(int (__thiscall **)(int *, unsigned int, unsigned int))(*g_DSurface_Hidden_2 + 92))(g_DSurface_Hidden_2, 0, 0); /*0x6d7887*/
+        result = (*(int (__thiscall **)(int *, unsigned int, unsigned int))(*(int *)(g_DSurface_Hidden_2) + 92))(g_DSurface_Hidden_2, 0, 0); /*0x6d7887*/
         result = result; /*0x6d788c*/
         if ( result ) /*0x6d7890*/
         {
@@ -426,11 +426,11 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           v32 = v6; /*0x6d78b1*/
           if ( v6 > 0x3E8 ) /*0x6d78b5*/
             v32 = 1000; /*0x6d78b7*/
-          v7 = (*(int (__thiscall **)(int *))(*g_DSurface_Hidden_2 + 116))(g_DSurface_Hidden_2); /*0x6d78c9*/
+          v7 = (*(int (__thiscall **)(int *))(*(int *)(g_DSurface_Hidden_2) + 116))(g_DSurface_Hidden_2); /*0x6d78c9*/
           v8 = this->q0B0; /*0x6d78d0*/
           v7 = v7; /*0x6d78dc*/
           v9 = this->q02D; /*0x6d78e2*/
-          v10 = v8 + *viewRect; /*0x6d78ee*/
+          v10 = v8 + *(const gamemd::RectangleStruct *)(viewRect); /*0x6d78ee*/
           v11 = viewRect[1]; /*0x6d78f0*/
           v42 = v10 - DSurface_ViewBounds; /*0x6d78f5*/
           v43 = v11 + v9 - dword_886FA4; /*0x6d7905*/
@@ -455,7 +455,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           v20 = v20; /*0x6d79c5*/
           while ( v19 < IDA_SLODWORD(v18) ) /*0x6d79c9*/
           {
-            v21 = v19 / 2; /*0x6d79d4*/
+            v21 = (unsigned int)(v19 / 2);
             ++v19; /*0x6d79d6*/
             IDA_LOWORD(v39) = v21; /*0x6d79d7*/
             v19 = v19; /*0x6d79de*/
@@ -487,11 +487,11 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
                     }
                     else
                     {
-                      v26 = RA2_OPNEW(0x3Cu); /*0x6d7aaf*/
+                      v26 = (unsigned int *)(RA2_OPNEW(0x3Cu));
                       if ( v26 ) /*0x6d7ab9*/
                       {
-                        v24 = TacticalClass::saveConfig(v26, v25); /*0x6d7ac3*/
-                        v22[63] = v24; /*0x6d7ac5*/
+                        v24 = (unsigned int)(TacticalClass::saveConfig(v26, v25));
+                        v22[63] = (unsigned int)(v24);
                       }
                       else
                       {
@@ -503,12 +503,12 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
                     {
                       if ( (uint8_t)TacticalClass::DecrementCounter(v24, v32) ) /*0x6d7af7*/
                       {
-                        ScreenRect = CellClass::GetScreenRect((int)v22, v44); /*0x6d7b0b*/
+                        ScreenRect = (int *)(CellClass::GetScreenRect((int)v22, v44));
                         v28 = v24[12] + *ScreenRect + ScreenRect[2] / 2; /*0x6d7b3b*/
                         v29 = v24[13] + ScreenRect[1] + ScreenRect[3] / 2; /*0x6d7b3f*/
                         if ( v28 >= *bounds && v28 < *bounds + bounds[2] ) /*0x6d7b4c*/
                         {
-                          v30 = bounds[1]; /*0x6d7b4e*/
+                          v30 = (int)(bounds[1]);
                           if ( v29 >= v30 && v29 < v30 + bounds[3] ) /*0x6d7b5c*/
                           {
                             TacticalClass::InterpolateColor(v24, v32); /*0x6d7b65*/

@@ -29,6 +29,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x486790
 namespace gamemd {
@@ -36,7 +37,7 @@ int RandomMap::Check()
 {
   int v1; // eax
 
-  v1 = this->RandomMap_field_0x38[0]; /*0x486790*/
+  v1 = this-((unsigned int *)(>RandomMap_field_0x38))[0]; /*0x486790*/
   return v1 >= dword_AA0E24 && v1 < dword_AA0E24 + 16; /*0x4867a6*/
 }
 }
@@ -50,7 +51,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
   int v6; // eax
 
   *(unsigned int *)this->__pad_0 = 0; /*0x58bf7a*/
-  *(unsigned int *)&this->RandomMap_field_0x2[2] = 0; /*0x58bf7c*/
+  *(unsigned int *)&this-((unsigned int *)(>RandomMap_field_0x2))[2] = 0; /*0x58bf7c*/
   this->RandomMap_field_0x8 = (void *)g_MissionQueueFrame.localVariables[164]; /*0x58bf8a*/
   this->RandomMap_field_0xC = 0; /*0x58bf8d*/
   this->RandomMap_field_0x10 = (void *)*((char *)CellCoord::To_CellObj( /*0x58bfa6*/
@@ -67,23 +68,23 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
   this->RandomMap_field_0x1C = 0; /*0x58bfc7*/
   this->RandomMap_field_0x20 = 0; /*0x58bfca*/
   IDA_LOBYTE(this->RandomMap_field_0x24[0]) = 0; /*0x58bfcd*/
-  this->RandomMap_field_0x2C[0] = 0; /*0x58bfd0*/
+  this-((unsigned int *)(>RandomMap_field_0x2C))[0] = 0; /*0x58bfd0*/
   this->RandomMap_field_0x30 = 0; /*0x58bfd3*/
   IDA_LOBYTE(this->RandomMap_field_0x34[0]) = 1; /*0x58bfd6*/
   IDA_BYTE1(this->RandomMap_field_0x34[0]) = 0; /*0x58bfd9*/
-  this->RandomMap_field_0x28[0] = (int)&DynamicVectorClass_Cell_vftable; /*0x58bfdc*/
-  this->RandomMap_field_0x3C[0] = 10; /*0x58bfe3*/
-  this->RandomMap_field_0x38[0] = 0; /*0x58bfea*/
-  this->RandomMap_field_0x40[0] = 0; /*0x58bfed*/
+  this-((unsigned int *)(>RandomMap_field_0x28))[0] = (int)&DynamicVectorClass_Cell_vftable; /*0x58bfdc*/
+  this-((unsigned int *)(>RandomMap_field_0x3C))[0] = 10; /*0x58bfe3*/
+  this-((unsigned int *)(>RandomMap_field_0x38))[0] = 0; /*0x58bfea*/
+  this-((unsigned int *)(>RandomMap_field_0x40))[0] = 0; /*0x58bfed*/
   *(unsigned int *)this->__pad_44 = 0; /*0x58bff0*/
   this->RandomMap_field_0x48 = 0; /*0x58bff3*/
   *(unsigned int *)this->__pad_4C = 0; /*0x58bff6*/
-  this->RandomMap_field_0x3C[0] = 100000; /*0x58bff9*/
+  this-((unsigned int *)(>RandomMap_field_0x3C))[0] = 100000; /*0x58bff9*/
   ++g_MissionQueueFrame.localVariables[164]; /*0x58c014*/
   if ( g_MissionQueueFrame.briefing[342] < g_MissionQueueFrame.briefing[340] /*0x58c041*/
     || (IDA_BYTE1(g_MissionQueueFrame.briefing[341]) || !g_MissionQueueFrame.briefing[340])
     && g_MissionQueueFrame.briefing[343] > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_MissionQueueFrame.briefing[338] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_MissionQueueFrame.briefing[338] + 8))(
          &g_MissionQueueFrame.briefing[338],
          g_MissionQueueFrame.briefing[340] + g_MissionQueueFrame.briefing[343],
          0) )
@@ -98,6 +99,7 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
 namespace gamemd {
 int RandomMap::GenerateTerrain()
 {
+    unsigned int v10 = 0;  /* G37 hoist */
   int v2; // esi
   int v3; // eax
   int v4; // edx
@@ -109,10 +111,10 @@ int RandomMap::GenerateTerrain()
   int *v11; // eax
   int *v12; // eax
   int v13; // eax
-  int v14; // eax
+  unsigned int * v14;
   int v15; // ecx
   char v16; // bl
-  unsigned int * v17;
+  int v17;
   unsigned int v18; // esi
   unsigned int v19; // eax
   int v20; // edi
@@ -179,7 +181,7 @@ int RandomMap::GenerateTerrain()
         *((unsigned int *)g_MapTileArray + 20 * (int16_t)v44 + 20 * g_MapCellWidth * IDA_SHIWORD(v44) + 14) = v46; /*0x58c92d*/
       for ( i = 0; i < 8; ++i ) /*0x58c931*/
       {
-        IDA_LODWORD(v51) = *CellStruct::Add(&v44, &v52, (unsigned short *)(4 * (i & 7) + 9041544)); /*0x58c956*/
+        IDA_LODWORD(v51) = *(void *)(CellStruct)::Add(&v44, &v52, (unsigned short *)(4 * (i & 7) + 9041544)); /*0x58c956*/
         v45 = IDA_LODWORD(v51); /*0x58c95a*/
         v7 = g_MapCellHeight_Value; /*0x58c968*/
         v8 = (char *)g_MapTileArray + 80 * SLOWORD(v51) + 80 * g_MapCellWidth * IDA_SWORD1(v51); /*0x58c97d*/
@@ -193,7 +195,7 @@ int RandomMap::GenerateTerrain()
         {
           *((unsigned int *)v8 + 15) = v46; /*0x58c9c5*/
           v10 = (char *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v45); /*0x58c9d2*/
-          if ( v10[283] == v50 ) /*0x58c9e2*/
+          if ( ((unsigned int *)(v10))[283] == v50 ) /*0x58c9e2*/
           {
             v11 = (int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v45); /*0x58c9f2*/
             v13 = 1; /*0x58ca20*/
@@ -296,7 +298,7 @@ int RandomMap::GenerateTerrain()
     v46 = *(unsigned int *)(v17->Items + 4 * v19); /*0x58cb2a*/
     while ( 1 ) /*0x58cb51*/
     {
-      IDA_LODWORD(v51) = *CellStruct::Add(&v46, &v52, (unsigned short *)(4 * (v20 & 7) + 9041544)); /*0x58cb51*/
+      IDA_LODWORD(v51) = *(void *)(CellStruct)::Add(&v46, &v52, (unsigned short *)(4 * (v20 & 7) + 9041544)); /*0x58cb51*/
       v48 = IDA_LODWORD(v51); /*0x58cb55*/
       v21 = IDA_SWORD1(v51) + SLOWORD(v51); /*0x58cb61*/
       if ( v21 > g_MapCellHeight_Value ) /*0x58cb66*/
@@ -335,7 +337,7 @@ int RandomMap::GenerateTerrain()
               v16 = 1; /*0x58cc6e*/
   LABEL_60:
               if ( v17 ) /*0x58cc72*/
-                (**(void (__thiscall ***)(int, int))v17)(v17, 1); /*0x58cc7b*/
+                (**(void (***)(int, int))v17)(v17, 1); /*0x58cc7b*/
               if ( v16 ) /*0x58cc7f*/
               {
   LABEL_63:
@@ -346,7 +348,7 @@ int RandomMap::GenerateTerrain()
             }
           }
         }
-        v17 = (unsigned int *)((int)(v45));
+        v17 = (int)((unsigned int *)((int)(v45)));
       }
       if ( ++v20 >= 8 ) /*0x58cbd0*/
         goto LABEL_60; /*0x58cbd0*/
@@ -491,7 +493,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
                     if ( (int)v12[1].vtable0 < Capacity /*0x58d35b*/
                       || (v12->IsAllocated || !Capacity)
                       && (v21 = (int)v12[1].Items, v21 > 0)
-                      && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v12->vtable0 + 2))(
+                      && (*((uint8_t (**)(VectorClass *, int, unsigned int))v12->vtable0 + 2))(
                            v12,
                            Capacity + v21,
                            0) )
@@ -515,7 +517,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
           v7 = v26; /*0x58d3a3*/
         }
         if ( v5 ) /*0x58d3a9*/
-          result = (**(int (__thiscall ***)(int, int))v5)(v5, 1); /*0x58d3b2*/
+          result = (**(int (***)(int, int))v5)(v5, 1); /*0x58d3b2*/
         v25 = (int)v12; /*0x58d3b4*/
         v5 = (int)v12; /*0x58d3b8*/
         v4 = a2; /*0x58d3ba*/
@@ -525,7 +527,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
     while ( v7 < v4 ); /*0x58d3c5*/
   }
   if ( v5 ) /*0x58d3cf*/
-    result = (**(int (__thiscall ***)(int, int))v5)(v5, 1); /*0x58d3d8*/
+    result = (**(int (***)(int, int))v5)(v5, 1); /*0x58d3d8*/
   if ( v4 > 1 ) /*0x58d3df*/
   {
     v24 = g_MapCellWidth * g_MapCellWidth; /*0x58d3e7*/
@@ -623,7 +625,7 @@ unsigned int * RandomMap::TerrainAlloc()
         if ( (int)v3[1].vtable0 < Capacity /*0x58d55d*/
           || (v3->IsAllocated || !Capacity)
           && (v12 = (int)v3[1].Items, v12 > 0)
-          && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v3->vtable0 + 2))(v3, Capacity + v12, 0) )
+          && (*((uint8_t (**)(VectorClass *, int, unsigned int))v3->vtable0 + 2))(v3, Capacity + v12, 0) )
         {
           vtable0 = v3[1].vtable0; /*0x58d564*/
           Items = *(unsigned int *)&v3->Items; /*0x58d567*/
@@ -726,7 +728,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
                 if ( (int)v4[1].vtable0 < Capacity /*0x58e8d8*/
                   || (v4->IsAllocated || !Capacity)
                   && (v18 = (int)v4[1].Items, v18 > 0)
-                  && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v4->vtable0 + 2))(
+                  && (*((uint8_t (**)(VectorClass *, int, unsigned int))v4->vtable0 + 2))(
                        v4,
                        Capacity + v18,
                        0) )
@@ -743,9 +745,9 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
               else if ( v14 != v26->RandomMap_field_0x8 ) /*0x58e91d*/
               {
                 if ( p_vtable0 ) /*0x58e98c*/
-                  (*(void (__thiscall **)(unsigned int *, int))*p_vtable0)(p_vtable0, 1); /*0x58e992*/
+                  (*(void (**)(unsigned int *, int))*p_vtable0)(p_vtable0, 1); /*0x58e992*/
                 if ( v4 ) /*0x58e996*/
-                  (*(void (__thiscall **)(VectorClass *, int))v4->vtable0)(v4, 1); /*0x58e99f*/
+                  (*(void (**)(VectorClass *, int))v4->vtable0)(v4, 1); /*0x58e99f*/
                 return 0; /*0x58e9a4*/
               }
             }
@@ -763,11 +765,11 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
       }
     }
     if ( v5 ) /*0x58e94b*/
-      (*(void (__thiscall **)(unsigned int *, int))*v5)(v5, 1); /*0x58e951*/
+      (*(void (**)(unsigned int *, int))*v5)(v5, 1); /*0x58e951*/
     p_vtable0 = &v4->vtable0; /*0x58e95c*/
   }
   if ( p_vtable0 ) /*0x58e972*/
-    (*(void (__thiscall **)(unsigned int *, int))*p_vtable0)(p_vtable0, 1); /*0x58e978*/
+    (*(void (**)(unsigned int *, int))*p_vtable0)(p_vtable0, 1); /*0x58e978*/
   return 1; /*0x58e97a*/
 }
 }
@@ -817,7 +819,7 @@ AbstractClass * * RandomMap::PlaceRandomMapTerrain()
         goto LABEL_12; /*0x58ea4a*/
       v2 = v21; /*0x58e9f6*/
     }
-    if ( (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v19.vtable0 + 2))(&v19, v2 + Capacity, 0) ) /*0x58ea25*/
+    if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v19.vtable0 + 2))(&v19, v2 + Capacity, 0) ) /*0x58ea25*/
     {
   LABEL_9:
       v6 = j++; /*0x58ea2c*/
@@ -828,7 +830,7 @@ AbstractClass * * RandomMap::PlaceRandomMapTerrain()
   }
   LABEL_12:
   if ( v1 ) /*0x58ea4e*/
-    (*(void (__thiscall **)(unsigned int *, int))*v1)(v1, 1); /*0x58ea56*/
+    (*(void (**)(unsigned int *, int))*v1)(v1, 1); /*0x58ea56*/
   v7 = j; /*0x58ea58*/
   for ( i = j; j > 0; i = j ) /*0x58ea60*/
   {
@@ -859,7 +861,7 @@ AbstractClass * * RandomMap::PlaceRandomMapTerrain()
             if ( j < v19.Capacity /*0x58eb57*/
               || (v19.IsAllocated || !v19.Capacity)
               && v21 > 0
-              && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v19.vtable0 + 2))(
+              && (*((uint8_t (**)(VectorClass *, int, unsigned int))v19.vtable0 + 2))(
                    &v19,
                    v21 + v19.Capacity,
                    0) )
@@ -981,7 +983,7 @@ void* RandomMap::CollectBorderCells()
       if ( *(unsigned int *)(v18 + 16) < v19 /*0x58f23a*/
         || (*(unsigned char *)(v18 + 13) || !v19)
         && (v20 = *(unsigned int *)(v18 + 20), v20 > 0)
-        && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v18 + 8))(v18, v19 + v20, 0) )
+        && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v18 + 8))(v18, v19 + v20, 0) )
       {
         v21 = *(unsigned int *)(v18 + 16); /*0x58f241*/
         v22 = *(unsigned int *)(v18 + 4); /*0x58f244*/
@@ -1010,7 +1012,7 @@ void* RandomMap::CollectBorderCells()
     while ( v24 ); /*0x58f29b*/
   }
   if ( v6 ) /*0x58f29f*/
-    (*(void (__thiscall **)(unsigned int *, int))*v6)(v6, 1); /*0x58f2a8*/
+    (*(void (**)(unsigned int *, int))*v6)(v6, 1); /*0x58f2a8*/
   RA2_OPDEL(Block); /*0x58f2af*/
 }
 }
@@ -1884,7 +1886,7 @@ int RandomMap::AllocateArea()
   LABEL_66:
             IDA_HIBYTE(this->RandomMap_field_0x18) = 0; /*0x590925*/
           if ( v32 ) /*0x59092b*/
-            (*(void (__thiscall **)(unsigned int *, int))*v32)(v32, 1); /*0x590933*/
+            (*(void (**)(unsigned int *, int))*v32)(v32, 1); /*0x590933*/
           v18 = g_MissionQueueFrame.briefing[342]; /*0x590935*/
           v17 = 0; /*0x59093f*/
         }
@@ -2560,7 +2562,7 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
           while ( 1 ) /*0x5928c4*/
           {
             v45 = 0; /*0x5928c4*/
-            v46 = &stru_82ADA8.?[1]; /*0x5928c6*/
+            v46 = &(unsigned int *)((char *)&stru_82ADA8 + 1); /*0x5928c6*/
             v47 = 20 * v44 + 8564740; /*0x5928cb*/
             while ( 1 ) /*0x5928d8*/
             {
@@ -2590,7 +2592,7 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
               ++v45; /*0x592992*/
               v52[282] = 0; /*0x592999*/
               *((unsigned int *)v52 + 14) = v54 + v55 - 1; /*0x5929a4*/
-              if ( (int)v46 >= (int)&stru_82ADA8.?[6] ) /*0x5929a7*/
+              if ( (int)v46 >= (int)&(unsigned int *)((char *)&stru_82ADA8 + 6) ) /*0x5929a7*/
                 break; /*0x5929a7*/
               v44 = v66.MapSeed_field_0x08; /*0x5928d4*/
             }
@@ -2659,7 +2661,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   int v3; // eax
   int i; // ebp
   void *v5; // edi
-  void (__thiscall ***v6)(unsigned int, int); // ecx
+  void (***v6)(unsigned int, int); // ecx
   void *v7; // edi
   void *v8; // eax
   void *v9; // eax
@@ -2702,7 +2704,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
     RA2_OPDEL((void *)g_MissionQueueFrame.localVariables[163]); /*0x59595a*/
     g_MissionQueueFrame.localVariables[163] = 0; /*0x595962*/
   }
-  v6 = *(void (__thiscall ****)(unsigned int, int))&this->ptr_178; /*0x595968*/
+  v6 = *(void (****)(unsigned int, int))&this->ptr_178; /*0x595968*/
   if ( v6 ) /*0x595970*/
   {
     (**v6)(v6, 1); /*0x595976*/
@@ -2860,7 +2862,7 @@ int RandomMap::SetupDialog(HWND hDlg)
   p_LoopStart = &stru_82ADA8.LoopStart; /*0x596ea4*/
   do /*0x596edb*/
   {
-    StringCSF = GetStringCSF((wchar_t *)*p_LoopStart, 0, &stru_82BA00.?[11], 4883); /*0x596eb7*/
+    StringCSF = GetStringCSF((wchar_t *)*p_LoopStart, 0, &(unsigned int *)((char *)&stru_82BA00 + 11), 4883); /*0x596eb7*/
     v6 = SendMessageA(i, 0x4C2u, 0, (LPARAM)StringCSF); /*0x596ec5*/
     SendMessageA(i, 0x151u, v6, v3); /*0x596ecf*/
     ++p_LoopStart; /*0x596ed1*/
@@ -2870,7 +2872,7 @@ int RandomMap::SetupDialog(HWND hDlg)
   v7 = GetStringCSF( /*0x596ef7*/
          *((wchar_t **)&stru_82ADA8.LoopStart + (int)this->RandomMap_field_0x48),
          0,
-         &stru_82BA00.?[11],
+         &(unsigned int *)((char *)&stru_82BA00 + 11),
          4887);
   v8 = SendMessageA(i, 0x4BEu, 0, (LPARAM)v7); /*0x596f05*/
   SendMessageA(i, 0x14Eu, v8, 0); /*0x596f10*/
@@ -2880,30 +2882,30 @@ int RandomMap::SetupDialog(HWND hDlg)
   p_Next = (wchar_t **)&stru_82ADA8.Next; /*0x596f52*/
   do /*0x596f89*/
   {
-    v12 = GetStringCSF(*p_Next, 0, &stru_82BA00.?[11], 4898); /*0x596f65*/
+    v12 = GetStringCSF(*p_Next, 0, &(unsigned int *)((char *)&stru_82BA00 + 11), 4898); /*0x596f65*/
     v13 = SendMessageA(j, 0x4C2u, 0, (LPARAM)v12); /*0x596f73*/
     SendMessageA(j, 0x151u, v13, v10); /*0x596f7d*/
     ++p_Next; /*0x596f7f*/
     ++v10; /*0x596f82*/
   }
   while ( (int)p_Next < (int)&stru_82ADA8.TranslucencyDetailLevel ); /*0x596f89*/
-  v14 = GetStringCSF(*((wchar_t **)&stru_82ADA8.Next + *(unsigned int *)&this->__pad_4C[24]), 0, &stru_82BA00.?[11], 4902); /*0x596fa5*/
+  v14 = GetStringCSF(*((wchar_t **)&stru_82ADA8.Next + *(unsigned int *)&this->__pad_4C[24]), 0, &(unsigned int *)((char *)&stru_82BA00 + 11), 4902); /*0x596fa5*/
   v15 = SendMessageA(j, 0x4BEu, 0, (LPARAM)v14); /*0x596fb3*/
   SendMessageA(j, 0x14Eu, v15, 0); /*0x596fbe*/
   for ( k = GetDlgItem(hDlg, 1029); SendMessageA(k, 0x146u, 0, 0) > 0; SendMessageA(k, 0x144u, 0, 0) ) /*0x596fd2*/
     ; /*0x596fec*/
   v17 = 1; /*0x596ffe*/
-  v18 = (wchar_t **)&stru_82ADA8.?[19]; /*0x597003*/
+  v18 = (wchar_t **)&(unsigned int *)((char *)&stru_82ADA8 + 19); /*0x597003*/
   do /*0x59703a*/
   {
-    v19 = GetStringCSF(*v18, 0, &stru_82BA00.?[11], 4914); /*0x597016*/
+    v19 = GetStringCSF(*v18, 0, &(unsigned int *)((char *)&stru_82BA00 + 11), 4914); /*0x597016*/
     v20 = SendMessageA(k, 0x4C2u, 0, (LPARAM)v19); /*0x597024*/
     SendMessageA(k, 0x151u, v20, v17); /*0x59702e*/
     ++v18; /*0x597030*/
     ++v17; /*0x597033*/
   }
   while ( (int)v18 < (int)stru_82ADA8.__pad_2A0 ); /*0x59703a*/
-  v21 = GetStringCSF((wchar_t *)stru_82ADA8.?[this->RandomMap_field_0x3C[0] + 18], 0, &stru_82BA00.?[11], 4918); /*0x597056*/
+  v21 = GetStringCSF((wchar_t *)stru_82ADA8.?[this->RandomMap_field_0x3C[0] + 18], 0, &(unsigned int *)((char *)&stru_82BA00 + 11), 4918); /*0x597056*/
   v22 = SendMessageA(k, 0x4BEu, 0, (LPARAM)v21); /*0x597064*/
   SendMessageA(k, 0x14Eu, v22, 0); /*0x59706f*/
   for ( m = GetDlgItem(hDlg, 1031); SendMessageA(m, 0x146u, 0, 0) > 0; SendMessageA(m, 0x144u, 0, 0) ) /*0x597083*/
@@ -2912,7 +2914,7 @@ int RandomMap::SetupDialog(HWND hDlg)
   v25 = (wchar_t *)"Name:Temperate"; /*0x5970b1*/
   do /*0x5970e8*/
   {
-    v26 = GetStringCSF(v25, 0, &stru_82BA00.?[11], 4930); /*0x5970c4*/
+    v26 = GetStringCSF(v25, 0, &(unsigned int *)((char *)&stru_82BA00 + 11), 4930); /*0x5970c4*/
     v27 = SendMessageA(m, 0x4C2u, 0, (LPARAM)v26); /*0x5970d2*/
     SendMessageA(m, 0x151u, v27, v24); /*0x5970dc*/
     v25 += 56; /*0x5970de*/
@@ -2920,7 +2922,7 @@ int RandomMap::SetupDialog(HWND hDlg)
   }
   while ( (int)v25 < (int)"Name:Urban" ); /*0x5970e8*/
   v28 = this; /*0x5970ea*/
-  v29 = GetStringCSF((wchar_t *)&aNameTemperate[56 * this->RandomMap_field_0x38[0]], 0, &stru_82BA00.?[11], 4934); /*0x59710f*/
+  v29 = GetStringCSF((wchar_t *)&aNameTemperate[56 * this->RandomMap_field_0x38[0]], 0, &(unsigned int *)((char *)&stru_82BA00 + 11), 4934); /*0x59710f*/
   v30 = SendMessageA(m, 0x4BEu, 0, (LPARAM)v29); /*0x59711d*/
   SendMessageA(m, 0x14Eu, v30, 0); /*0x597128*/
   for ( n = GetDlgItem(hDlg, 1032); SendMessageA(n, 0x146u, 0, 0) > 0; SendMessageA(n, 0x144u, 0, 0) ) /*0x59713c*/
@@ -2929,14 +2931,14 @@ int RandomMap::SetupDialog(HWND hDlg)
   pad_2A0 = stru_82ADA8.__pad_2A0; /*0x597170*/
   do /*0x5971b3*/
   {
-    v33 = GetStringCSF(*(wchar_t **)pad_2A0, 0, &stru_82BA00.?[11], 4945); /*0x597183*/
+    v33 = GetStringCSF(*(wchar_t **)pad_2A0, 0, &(unsigned int *)((char *)&stru_82BA00 + 11), 4945); /*0x597183*/
     v34 = SendMessageA(n, 0x4C2u, 0, (LPARAM)v33); /*0x597191*/
     SendMessageA(n, 0x151u, v34, lParama); /*0x59719f*/
     pad_2A0 += 4; /*0x5971a5*/
     ++lParama; /*0x5971af*/
   }
   while ( (int)pad_2A0 < (int)&stru_82ADA8.Rate ); /*0x5971b3*/
-  v35 = GetStringCSF(*(wchar_t **)&stru_82ADA8.__pad_2A0[4 * v28->RandomMap_field_0x40[0]], 0, &stru_82BA00.?[11], 4949); /*0x5971cb*/
+  v35 = GetStringCSF(*(wchar_t **)&stru_82ADA8.__pad_2A0[4 * v28->RandomMap_field_0x40[0]], 0, &(unsigned int *)((char *)&stru_82BA00 + 11), 4949); /*0x5971cb*/
   v36 = SendMessageA(n, 0x4BEu, 0, (LPARAM)v35); /*0x5971d9*/
   SendMessageA(n, 0x14Eu, v36, 0); /*0x5971e4*/
   DlgItem = GetDlgItem(hDlg, 1019); /*0x5971f9*/
@@ -2967,7 +2969,7 @@ AbstractClass * * RandomMap::LoadInfo(wchar_t * Destination, int a2)
   if ( !a2 ) /*0x597d83*/
     return 0; /*0x597d83*/
   v2 = (char *)(a2 + 44); /*0x597d89*/
-  if ( !_strcmpi((char *)(a2 + 44), &stru_82BA00.?) || !_strcmpi(v2, &stru_82BA00.?[17]) ) /*0x597da8*/
+  if ( !_strcmpi((char *)(a2 + 44), &stru_82BA00.?) || !_strcmpi(v2, &(unsigned int *)((char *)&stru_82BA00 + 17)) ) /*0x597da8*/
     return 0; /*0x597db2*/
   CCFileClass::Construct(&v5, v2); /*0x597dbd*/
   v4.headNode[0] = 0; /*0x597dc6*/
@@ -2992,8 +2994,8 @@ AbstractClass * * RandomMap::LoadInfo(wchar_t * Destination, int a2)
   }
   if ( INIClass::ParseValue_Wide( /*0x597e58*/
          &v4,
-         (uint8_t *)&stru_82BA00.?[8],
-         (uint8_t *)&stru_81AF8C.?[5],
+         (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 8),
+         (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 5),
          &g_TypeClass_DefaultString,
          Source,
          0x80u) <= 0 )
@@ -3057,7 +3059,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   CCFileClass v29; // [esp+54h] [ebp-ECh] BYREF
   char String[128]; // [esp+C0h] [ebp-80h] BYREF
 
-  CCFileClass::Construct(&v29, (char *)&stru_82BA00.?[1]); /*0x598205*/
+  CCFileClass::Construct(&v29, (char *)&(unsigned int *)((char *)&stru_82BA00 + 1)); /*0x598205*/
   v2 = (INIClass *)RA2_OPNEW(0x58u); /*0x59820c*/
   v3 = v2; /*0x598211*/
   if ( v2 ) /*0x598218*/
@@ -3072,17 +3074,17 @@ WeaponStruct * * RandomMap::LoadConfig()
   }
   INIClass::ResetSection(v3); /*0x598231*/
   CCINIClass::Load((CCINIClass *)v3, (int)&v29, 0, 0); /*0x598241*/
-  (*(void (__thiscall **)(char *))(*(unsigned int *)&this->__pad_4C[316] + 12))(&this->__pad_4C[316]); /*0x598254*/
-  (*(void (__thiscall **)(char *))(this->u32_284 + 12))((char *)&this->q1004); /*0x598265*/
-  (*(void (__thiscall **)(char *))(this->u32_2A0 + 12))((char *)&this->u32_10C2); /*0x598274*/
+  (*(void (**)(char *))(*(unsigned int *)&this->__pad_4C[316] + 12))(&this->__pad_4C[316]); /*0x598254*/
+  (*(void (**)(char *))(this->u32_284 + 12))((char *)&this->q1004); /*0x598265*/
+  (*(void (**)(char *))(this->u32_2A0 + 12))((char *)&this->u32_10C2); /*0x598274*/
   v4 = this->u32_2C4; /*0x598277*/
   *(unsigned int *)v27.__pad_20 = (char *)this + 708; /*0x598283*/
   (*(void (**)(void))(v4 + 12))(); /*0x598287*/
   v5 = this->u32_B8; /*0x59828a*/
   v27.DynamicVector_field_0x1C = (AbstractClass *)((char *)&this->u32_1246); /*0x598296*/
   (*(void (**)(void))(v5 + 12))(); /*0x59829a*/
-  (*(void (__thiscall **)(char *))(*(unsigned int *)&this->__pad_4C[344] + 12))(&this->__pad_4C[344]); /*0x5982a9*/
-  (*(void (__thiscall **)(char *))(*(unsigned int *)&this->__pad_4C[372] + 12))(&this->__pad_4C[372]); /*0x5982b8*/
+  (*(void (**)(char *))(*(unsigned int *)&this->__pad_4C[344] + 12))(&this->__pad_4C[344]); /*0x5982a9*/
+  (*(void (**)(char *))(*(unsigned int *)&this->__pad_4C[372] + 12))(&this->__pad_4C[372]); /*0x5982b8*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5982d0*/
                     (bool *)v3->__pad_0,
                     off_82B134,
@@ -3093,7 +3095,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_2C0 = INIClass::ReadInt_Overwrite( /*0x5982f7*/
                               (bool *)v3->__pad_0,
                               off_82B134,
-                              (uint8_t *)&stru_82BA00.?[1],
+                              (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 1),
                               v7);
   IntList = &v24; /*0x598300*/
   DynamicVectorClass::Copy(&v24, &this->__pad_4C[316]); /*0x598304*/
@@ -3102,10 +3104,10 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (uint8_t *)&stru_82BA00.?[1],
+                                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 1),
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3124,10 +3126,10 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (uint8_t *)&stru_82BA00.?[1],
+                                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 1),
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3148,8 +3150,8 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     off_82B134,
                                     (uint8_t *)stru_82BA00.?,
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3168,10 +3170,10 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (uint8_t *)&stru_82BA00.?[5],
+                                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 5),
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3192,8 +3194,8 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     off_82B134,
                                     (uint8_t *)stru_82BA00.?,
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3212,10 +3214,10 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (uint8_t *)&stru_82BA00.?[2],
+                                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 2),
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3234,10 +3236,10 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (uint8_t *)&stru_82BA00.?[1],
+                                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 1),
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3256,10 +3258,10 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (uint8_t *)&stru_82BA00.?[1],
+                                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 1),
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3278,10 +3280,10 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (uint8_t *)&stru_82BA00.?[1],
+                                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 1),
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3302,8 +3304,8 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     off_82B134,
                                     (uint8_t *)stru_82BA00.?,
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3323,10 +3325,10 @@ WeaponStruct * * RandomMap::LoadConfig()
                                     v3,
                                     (int)&v27,
                                     off_82B134,
-                                    (uint8_t *)&stru_82BA00.?[10],
+                                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 10),
                                     *(void ***)v24.VectorClass,
-                                    *(void **)&v24.?[3],
-                                    *(int *)&v24.?[3],
+                                    *(void **)&(unsigned int *)((char *)&v24 + 3),
+                                    *(int *)&(unsigned int *)((char *)&v24 + 3),
                                     v24.?,
                                     v24.Count,
                                     v24.CapacityIncrement,
@@ -3341,7 +3343,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   this->u32_2FC = INIClass::ReadInt_Overwrite( /*0x59877f*/
                               (bool *)v3->__pad_0,
                               off_82B134,
-                              (uint8_t *)&stru_82BA00.?[16],
+                              (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 16),
                               this->u32_2FC);
   if ( INIClass::GetString(v3, off_82B134, (uint8_t *)&stru_82BA00.?, &g_INI_DefaultBuffer, String, 128) ) /*0x5987a5*/
   {
@@ -3368,7 +3370,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   *(unsigned int *)(v20 + 24) = v28; /*0x59884d*/
   *(unsigned int *)&v27.__pad_20[4] = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x598850*/
   DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27.__pad_20[4]); /*0x598854*/
-  if ( INIClass::GetString(v3, off_82B134, (uint8_t *)&stru_82BA00.?[15], &g_INI_DefaultBuffer, String, 128) ) /*0x598879*/
+  if ( INIClass::GetString(v3, off_82B134, (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 15), &g_INI_DefaultBuffer, String, 128) ) /*0x598879*/
   {
     TypeList::BuildingTypeConstructor((TypeList *)&v27); /*0x598886*/
     for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x5988a2*/
@@ -3394,7 +3396,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   DynamicVector_field_0x1C->v28 = v28; /*0x59891c*/
   DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)&v27.__pad_20[4]); /*0x598923*/
   if ( v3 ) /*0x59892a*/
-    (**(void (__thiscall ***)(INIClass *, int))v3->__pad_0)(v3, 1); /*0x598932*/
+    (**(void (***)(INIClass *, int))v3->__pad_0)(v3, 1); /*0x598932*/
   CCFileClass::Reset(&v29); /*0x598938*/
   return CCFileClass::Destruct(&v29); /*0x598946*/
 }
@@ -3637,11 +3639,11 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
     {
       if ( *v20 ) /*0x598f56*/
       {
-        (**(void (__thiscall ***)(unsigned int, int))*v20)(*v20, 1); /*0x598f60*/
+        (**(void (***)(unsigned int, int))*v20)(*v20, 1); /*0x598f60*/
         *v20 = 0; /*0x598f62*/
       }
       v36 = v20; /*0x598f74*/
-      v21 = (*(int (__thiscall **)(int *, unsigned int **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v36); /*0x598f78*/
+      v21 = (*(int (**)(int *, unsigned int **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v36); /*0x598f78*/
       if ( v21 != -1 ) /*0x598f7e*/
         Vector4::EraseAt(v21); /*0x598f86*/
       v22 = (void *)v20[11]; /*0x598f8b*/
@@ -3779,11 +3781,11 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
     {
       if ( *v31 ) /*0x5993f0*/
       {
-        (**(void (__thiscall ***)(unsigned int, int))*v31)(*v31, 1); /*0x5993fa*/
+        (**(void (***)(unsigned int, int))*v31)(*v31, 1); /*0x5993fa*/
         *v31 = 0; /*0x5993fc*/
       }
       v36 = v31; /*0x59940e*/
-      v32 = (*(int (__thiscall **)(int *, unsigned int **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v36); /*0x599412*/
+      v32 = (*(int (**)(int *, unsigned int **))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, &v36); /*0x599412*/
       if ( v32 != -1 ) /*0x599418*/
         Vector4::EraseAt(v32); /*0x599420*/
       Buffer::Cleanup((int)(v31 + 10)); /*0x59942e*/
@@ -4053,7 +4055,7 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
           goto LABEL_57;
         if ( !DataGlobal_A8E975 && v25 || DataGlobal_A8E97C <= 0 )
           goto LABEL_59;
-        if ( (*(uint8_t (__thiscall **)(int *, int, unsigned int))(DataGlobal_A8E968 + 8))(
+        if ( (*(uint8_t (**)(int *, int, unsigned int))(DataGlobal_A8E968 + 8))(
                &DataGlobal_A8E968,
                DataGlobal_A8E97C + v25,
                0) )
@@ -4081,7 +4083,7 @@ LABEL_59:
     CellClass::DrawWrapper(&DataGlobal_87F7E8.field_0, v78, 1, 0, 1);
     Shroud::ProcessCellVisibility(&DataGlobal_87F7E8, (int)v75);
     if ( v29 )
-      (*(void (__thiscall **)(LPPERSISTSTREAM, int))(v29->u32_20)(v29, 1);
+      (*(void (**)(LPPERSISTSTREAM, int))(v29->u32_20)(v29, 1);
     void * v28 = operator new(0xE18u);
     if ( v28 )
       v29 = (IPersistStream *)TacticalMap::Construct((int)v28);
@@ -4097,25 +4099,25 @@ LABEL_59:
   {
     int v31 = *((unsigned int *)g_UnitClassPool + i - 1);
     if ( v31 )
-      (*(void (__thiscall **)(int, int))(*(unsigned int *)v31 + 32))(v31, 1);
+      (*(void (**)(int, int))(*(unsigned int *)v31 + 32))(v31, 1);
   }
   for ( j = (ObjectClass *)g_BuildingClass_Count; g_BuildingClass_Count > 0; j = (ObjectClass *)g_BuildingClass_Count )
   {
     int v33 = *((unsigned int *)g_InfantryClassLimit + (unsigned int)j - 1);
     if ( v33 )
-      (*(void (__thiscall **)(int, int))(*(unsigned int *)v33 + 32))(v33, 1);
+      (*(void (**)(int, int))(*(unsigned int *)v33 + 32))(v33, 1);
   }
   for ( k = g_BuildingProductionState; g_BuildingProductionState > 0; k = g_BuildingProductionState )
   {
     int v35 = *((unsigned int *)g_BuildingClass_InstanceCount + k - 1);
     if ( v35 )
-      (*(void (__thiscall **)(int, int))(*(unsigned int *)v35 + 32))(v35, 1);
+      (*(void (**)(int, int))(*(unsigned int *)v35 + 32))(v35, 1);
   }
   for ( m = DataGlobal_A8E998; DataGlobal_A8E998 > 0; m = DataGlobal_A8E998 )
   {
     int v37 = *((unsigned int *)DataGlobal_A8E98C + m - 1);
     if ( v37 )
-      (*(void (__thiscall **)(int, int))(*(unsigned int *)v37 + 32))(v37, 1);
+      (*(void (**)(int, int))(*(unsigned int *)v37 + 32))(v37, 1);
   }
   if ( off_82AF14 )
     off_82AF14();
@@ -4321,11 +4323,11 @@ LABEL_153:
     {
       if ( *v57 )
       {
-        (**(void (__thiscall ***)(unsigned int, int))*v57)(*v57, 1);
+        (**(void (***)(unsigned int, int))*v57)(*v57, 1);
         *v57 = 0;
       }
       IDA_LODWORD(v73[0]) = v57;
-      int v58 = (*(int (__thiscall **)(int *, double *))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, v73);
+      int v58 = (*(int (**)(int *, double *))(g_RandomMap_BuildObject + 16))(&g_RandomMap_BuildObject, v73);
       if ( v58 != -1 )
         Vector4::EraseAt(&g_RandomMap_BuildObject, v58);
       void * v59 = (void *)v57[11];
@@ -4472,11 +4474,11 @@ int RandomMap::FinalizeMapData()
     {
       if ( *v12 ) /*0x59a7ea*/
       {
-        (**(void (__thiscall ***)(unsigned int, int))*v12)(*v12, 1); /*0x59a7f4*/
+        (**(void (***)(unsigned int, int))*v12)(*v12, 1); /*0x59a7f4*/
         *v12 = 0; /*0x59a7f6*/
       }
       v19 = v12; /*0x59a808*/
-      v13 = (*(int (__thiscall **)(int *, unsigned int **))(g_MissionQueueFrame.briefing[338] + 16))( /*0x59a80c*/
+      v13 = (*(int (**)(int *, unsigned int **))(g_MissionQueueFrame.briefing[338] + 16))( /*0x59a80c*/
               &g_MissionQueueFrame.briefing[338],
               &v19);
       if ( v13 != -1 && v13 < g_MissionQueueFrame.briefing[342] ) /*0x59a81c*/
@@ -5642,7 +5644,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
       Items = (int)v23[1].Items; /*0x5a086e*/
       if ( Items > 0 ) /*0x5a0873*/
       {
-        if ( (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v23->vtable0 + 2))( /*0x5a087e*/
+        if ( (*((uint8_t (**)(VectorClass *, int, unsigned int))v23->vtable0 + 2))( /*0x5a087e*/
                v23,
                Capacity + Items,
                0) )
@@ -5984,7 +5986,7 @@ int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, sh
   }
   LABEL_51:
   if ( v18 ) /*0x5a0c36*/
-    (*(void (__thiscall **)(unsigned int *, int))*v18)(v18, 1); /*0x5a0c3e*/
+    (*(void (**)(unsigned int *, int))*v18)(v18, 1); /*0x5a0c3e*/
   __asm /*0x5a0c40*/
   {
     fldln2
@@ -7361,7 +7363,7 @@ AbstractClass * * RandomMap::RegenerateRandomMapPreview()
       if ( dword_A8B8D8 < dword_A8B8D0 /*0x5b9dcb*/
         || (byte_A8B8D5 || !dword_A8B8D0)
         && dword_A8B8DC > 0
-        && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8B8C8 + 8))(
+        && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A8B8C8 + 8))(
              &dword_A8B8C8,
              dword_A8B8D0 + dword_A8B8DC,
              0) )
@@ -7378,7 +7380,7 @@ AbstractClass * * RandomMap::RegenerateRandomMapPreview()
       strcpy(byte_A8B8E0, &stru_82BA00.?); /*0x5b9e51*/
       strcpy((char *)&v11[130].abstractFlags, byte_A8B8E0); /*0x5b9e79*/
       v12 = CCFileClass::Construct(&v17, byte_A8B8E0); /*0x5b9e86*/
-      v13 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v12 + 20))(v12, 0); /*0x5b9e98*/
+      v13 = (*(int (**)(unsigned int *, unsigned int))(*v12 + 20))(v12, 0); /*0x5b9e98*/
       *(unsigned int *)v17.CDFileClass = (void*)&CCFileClass_vftable; /*0x5b9e9a*/
       v19 = 0; /*0x5b9ea2*/
       Vector::Clear((int)v18); /*0x5b9eaa*/
@@ -7656,7 +7658,7 @@ int RandomMap::RemoveMatching(IUnknown * aP1)
             if ( result < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 220) ) /*0x74f1c8*/
             {
               *(unsigned int *)(*(unsigned int *)&v4->__pad_4C[104] + 8 * result) = *(unsigned int *)(aP1 + 36); /*0x74f1d6*/
-              *(float *)(*(unsigned int *)&v4->__pad_4C[104] + 8 * *(unsigned int *)&v4->__pad_4C[96] + 4) = (float)(int)(*(unsigned int *)&stru_A8EB00.?[416] / 50 + abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 50) + 1); /*0x74f22a*/
+              *(float *)(*(unsigned int *)&v4->__pad_4C[104] + 8 * *(unsigned int *)&v4->__pad_4C[96] + 4) = (float)(int)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) / 50 + abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 50) + 1); /*0x74f22a*/
               v28 = *(unsigned int *)&v4->__pad_4C[96]; /*0x74f22e*/
               v29 = *(unsigned int **)&v4->__pad_4C[100]; /*0x74f23a*/
               v30 = *(unsigned int *)&v4->__pad_4C[104] + 8 * v28; /*0x74f240*/
@@ -7858,19 +7860,19 @@ int RandomMap::GenerateTerrainForAllCells()
 namespace gamemd {
 unsigned int * RandomMap::Constructor_VectorClass_Cell_(char a2)
 {
-  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (***v3)(unsigned int, int); // ecx
   int v4; // eax
   void *v5; // eax
   RandomMap *v7; // [esp+4h] [ebp-4h] BYREF
 
-  v3 = *(void (__thiscall ****)(unsigned int, int))this->__pad_0; /*0x5ac294*/
+  v3 = *(void (****)(unsigned int, int))this->__pad_0; /*0x5ac294*/
   if ( v3 ) /*0x5ac298*/
   {
     (**v3)(v3, 1); /*0x5ac29e*/
     *(unsigned int *)this->__pad_0 = 0; /*0x5ac2a0*/
   }
   v7 = this; /*0x5ac2b6*/
-  v4 = (*(int (__thiscall **)(int *, RandomMap **))(g_MissionQueueFrame.briefing[338] + 16))( /*0x5ac2ba*/
+  v4 = (*(int (**)(int *, RandomMap **))(g_MissionQueueFrame.briefing[338] + 16))( /*0x5ac2ba*/
          &g_MissionQueueFrame.briefing[338],
          &v7);
   if ( v4 != -1 && v4 < g_MissionQueueFrame.briefing[342] ) /*0x5ac2ca*/

@@ -7,6 +7,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/IPXInterfaceClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x4A3020
 namespace gamemd {

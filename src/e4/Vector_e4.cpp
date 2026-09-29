@@ -100,7 +100,7 @@ unsigned short * Vector::ToFacingMath(unsigned short * a2)
   double v3; // st7
   double v5; // [esp+Ch] [ebp-8h]
 
-  v5 = Math::Sqrt(*this * *this + this->q004 * this->q004); /*0x41c307*/
+  v5 = Math::Sqrt(*this * *this + (unsigned int)(this->q004)* this->q004); /*0x41c307*/
   v3 = Math::CalcAngle(this->q008, v5); /*0x41c31a*/
   *a2 = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427); /*0x41c338*/
   return a2; /*0x41c337*/
@@ -133,22 +133,22 @@ char Vector::RemoveAt(AbstractClass * aP1)
 
   Vector_field_0x10 = (char *)this->Vector_field_0x10; /*0x45ae10*/
   result = aP1; /*0x45ae13*/
-  if ( aP1 >= (int)Vector_field_0x10 ) /*0x45ae19*/
+  if ( aP1 >= (gamemd::AbstractClass *)((int))Vector_field_0x10 ) /*0x45ae19*/
   {
     IDA_LOBYTE(result) = 0; /*0x45ae3c*/
   }
   else
   {
-    v4 = (unsigned int)(Vector_field_0x10 - 1);
-    this->Vector_field_0x10 = v4; /*0x45ae1e*/
-    if ( aP1 < (int)v4 ) /*0x45ae21*/
+    v4 = (char *)((unsigned int)(Vector_field_0x10 - 1));
+    this->Vector_field_0x10 = (unsigned int)(v4);
+    if ( aP1 < (gamemd::AbstractClass *)((int))v4 ) /*0x45ae21*/
     {
       do /*0x45ae34*/
       {
         ++result; /*0x45ae27*/
-        *((unsigned int *)this->Vector_field_0x4 + result - 1) = *((unsigned int *)this->Vector_field_0x4 + result); /*0x45ae2b*/
+        *((unsigned int *)(unsigned int)(this->Vector_field_0x4)+ result - 1) = *((unsigned int *)(unsigned int)(this-)>Vector_field_0x4 + result); /*0x45ae2b*/
       }
-      while ( result < (int)this->Vector_field_0x10 ); /*0x45ae34*/
+      while ( result < (gamemd::AbstractClass *)((int))this->Vector_field_0x10 ); /*0x45ae34*/
     }
     IDA_LOBYTE(result) = 1; /*0x45ae37*/
   }
@@ -194,13 +194,13 @@ int Vector::Find(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = *(unsigned int *)&this->q010; /*0x4e0550*/
+  v2 = (void *)(*(unsigned int *)&this->q010);
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
   for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x4e055e*/
   {
-    if ( ++result >= v2 ) /*0x4e056d*/
+    if ( ++result >= (int)(v2) ) /*0x4e056d*/
       return -1; /*0x4e056d*/
   }
   return result; /*0x4e0572*/

@@ -47,7 +47,7 @@ struct SuperClass {
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
     unsigned int q60;  // 0x60
-    unsigned int ChronoMapCoords;  // 0x62
+    void* ;  // 0x62
     bool q064;  // 0x64
     void* q068;  // 0x68
     void* q06C;  // 0x6C
@@ -56,7 +56,7 @@ struct SuperClass {
     void* IsCharged;  // 0x6F
     void* q070;  // 0x70
     unsigned int q74;  // 0x74
-    int q078;  // 0x78
+    void* ;  // 0x78
     unsigned int q7C;  // 0x7C
     int q080;  // 0x80
     char q084[4];  // 0x84
@@ -673,6 +673,10 @@ struct SuperClass {
     unsigned int unknown_6C;
     unsigned int unknown_6F;
     unsigned int AdvanceCountdown;
+    unsigned int u32_A0;
+    unsigned int u32_C0;
+    unsigned int q078;
+    unsigned int ChronoMapCoords;
 // --- flat members (END) ---
     AbstractClass * * Reset();
     AbstractClass * * StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);
@@ -685,8 +689,8 @@ struct SuperClass {
     char SetReadiness(char a2);
     int AnnounceReady(DynamicVector * aP1);
     int ClickFire(int a2, short * a3);
-    int Construct(int a2, CCINIClass * aP2);
-    int Constructor();
+    int Construct(int a2, CCINIClass * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     int LoadFromStream(AbstractClass * aP0, int aP1);
     int Lose();
     int PowerDrainUpdate(int * a2);

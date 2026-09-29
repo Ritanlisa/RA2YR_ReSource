@@ -189,17 +189,28 @@ struct MPCooperative {
     unsigned int q014;
     unsigned int q038;
     unsigned int q044;
+    unsigned int MPCooperative_field_0x38;
+    unsigned int MPCooperative_field_0x40;
+    unsigned int MPCooperative_field_0x48;
+    unsigned int MPCooperative_field_0x4C;
+    unsigned int MPCooperative_field_0x50;
+    unsigned int MPCooperative_field_0x54;
+    unsigned int MPCooperative_field_0x58;
+    unsigned int MPCooperative_field_0x5C;
+    unsigned int MPCooperative_field_0x60;
+    unsigned int MPCooperative_field_0x64;
+    unsigned int MPCooperative_field_0x68;
 // --- flat members (END) ---
     int processTurn(char * a2,  char * a3);    // 0x49B660
     char BuildScoreEntries(int a2,  CCINIClass * aP2);    // 0x49BCE0
     char WriteCoopSaveINI();  // 0x49BE40
     bool ReadCoopSaveINI();  // 0x49D120
     unsigned int * ctor(MultiplayerGameMode * aP1,  MPCooperative * aP2,  MultiplayerGameMode * aP3,  MPCooperative * aP4,  MultiplayerGameMode * aP5,  MPCooperative * aP6);    // 0x5C1470
-    char Read();  // 0x5C18A0
+    char Read(void *a1 = 0, void *a2 = 0);  // 0x5C18A0
     HWND CopyTo();  // 0x5C1A10
     void COMStub();  // 0x5C1CB0
     int InitSession();  // 0x5C1CC0
-    char Seek();  // 0x5C1DC0
+    char Seek(void *a1 = 0, void *a2 = 0);  // 0x5C1DC0
     int Revert();  // 0x5C1FA0
     char StartGame(int a2,  void ** a3,  void * Block,  int a5,  short a6,  int a7,  int a8,  char * a9,  char * a10);    // 0x5C2040
     char EndGame(int a2,  int a3,  int a4);    // 0x5C2100
@@ -232,7 +243,7 @@ struct MPCooperative {
     void processPlayerInput();  // 0x5C50D0
     char AddRef(int a2);  // 0x5C5130
     char Release(int a2,  unsigned int * a3);    // 0x5C5170
-    void ddtor();  // 0x5C5220
+    void ddtor(void *a1 = 0);  // 0x5C5220
     int checkTimeout(unsigned int * a2);  // 0x5C5250
     char migrateHost(int a2,  unsigned int * a3);    // 0x5C52B0
     int validatePlayerAction(unsigned int * a2);  // 0x5C5360
@@ -249,7 +260,7 @@ struct MPCooperative {
     void Clone(HWND hDlg);  // 0x5C2640
     char ValidateSettings();  // 0x5C2CB0
     int SaveSettings(HWND hWnd,  int a3);    // 0x5C2CE0
-    int Cleanup();  // 0x5C3F30
+    int Cleanup(void *a1 = 0);  // 0x5C3F30
     unsigned int syncPlayers(int a2);  // 0x5C5040
     unsigned int updateGameClock(int a2);  // 0x5C5100
     unsigned int handleDisconnect(int a2);  // 0x5C5290

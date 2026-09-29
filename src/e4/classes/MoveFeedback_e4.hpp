@@ -30,7 +30,7 @@ struct MoveFeedback {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    DynamicVector * Constructor(char a2);
+    DynamicVector * Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     DynamicVector * QueryInterface(char a2);
     char AddRef(int a2);
     char SetCapacity(int a2, unsigned int * a3);
@@ -38,7 +38,7 @@ struct MoveFeedback {
     int FindMoveItem(unsigned int * a2);
     int ProcessCommand();
     unsigned int GetIndex2(int a2);
-    void Destroy();
+    void Destroy(void *a1 = 0);
 };
 
 } // namespace gamemd

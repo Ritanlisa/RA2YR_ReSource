@@ -38,7 +38,7 @@ LONG COM::ReleaseRef(volatile LONG * a1)
   --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x55a980*/
   v1 = InterlockedDecrement(&a1->RefCount); /*0x55a98d*/
   if ( !v1 && a1 ) /*0x55a995*/
-    (*(void (__thiscall **)(LocomotionClass *, int))(*(unsigned int *)a1->ILocomotion + 32))(a1, 1); /*0x55a99d*/
+    (*(void (**)(LocomotionClass *, int))(*(unsigned int *)a1->ILocomotion + 32))(a1, 1); /*0x55a99d*/
   return v1; /*0x55a9a2*/
 }
 } // namespace gamemd

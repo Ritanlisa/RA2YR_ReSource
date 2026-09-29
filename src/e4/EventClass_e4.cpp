@@ -21,6 +21,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/File_e4.hpp"
 
 // 0x48B390
 namespace gamemd {
@@ -63,9 +64,9 @@ int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
 {
   this->EventClass_field_0x44 = (unsigned int)((void *)a2);
   this->EventClass_field_0x48 = (unsigned int)((void *)a3);
-  this->EventClass_field_0x4C[0] = (unsigned int)(a4);
-  this->EventClass_field_0x50 = (void *)a5; /*0x48baed*/
-  this->EventClass_field_0x54 = (void *)a6; /*0x48baf0*/
+  this-((unsigned int *)(>EventClass_field_0x4C))[0] = (unsigned int)(a4);
+  this->EventClass_field_0x50 = (unsigned int)((void *)a5);
+  this->EventClass_field_0x54 = (unsigned int)((void *)a6);
   return a6; /*0x48baf3*/
 }
 }
@@ -163,7 +164,7 @@ void * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigne
 namespace gamemd {
 void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsigned short * a6)
 {
-  Debug::Log(); /*0x4c6afc*/
+  this->Debug::Log(); /*0x4c6afc*/
   if ( aP1 < 0 ) /*0x4c6b0a*/
   {
     *(unsigned int *)&this->q008 = -1; /*0x4c6b49*/
@@ -189,6 +190,7 @@ void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsi
 namespace gamemd {
 AbstractClass * * EventClass::ProcessEvent()
 {
+    unsigned int v5 = 0;  /* G37 hoist */
   unsigned int v3;
   BuildingClass *Building; // esi
   BuildingClass *v7; // esi
@@ -289,6 +291,7 @@ AbstractClass * * EventClass::ProcessEvent()
         {
           if ( (int)v26[27] > 0 && !*((unsigned char *)v26 + 129) )
           {
+    unsigned int v28 = 0;  /* G37 hoist */
             int v27 = 0;
             if ( !this->q048
   int v28; // eax
@@ -299,13 +302,14 @@ AbstractClass * * EventClass::ProcessEvent()
                 || (Object = BuildingLoadQueue::FindObject((unsigned char *)(&this->q0049)), (v27 = Object) == 0)
                 || *(unsigned char *)(Object + 144) && *(unsigned int *)(Object + 108) && !*(unsigned char *)(Object + 129) )
               {
+    unsigned int v30 = 0;  /* G37 hoist */
                 if ( (unsigned char)this->EventClass_field_0xC != 7
                   || v26[43] != 7
                   || (v26[5] & 4) == 0
-  void *v30; // eax
+  void *(unsigned int *)(v30); // eax
   void *v31; // ebp
                   || (v30 = BuildingLoadQueue::GetNext((unsigned char *)(&this->q0049)), (v31 = v30) == 0)
-                  || (*(int (__thiscall **)(void *))(*(unsigned int *)v30 + 44))(v30) != 6
+                  || (*(int (**)(void *))(*(unsigned int *)v30 + 44))(v30) != 6
                   || (void *)Team::GetMember(v26, 0) != v31 )
                 {
   unsigned int *v36; // ebp
@@ -315,16 +319,16 @@ AbstractClass * * EventClass::ProcessEvent()
                     unsigned char * v33 = Member;
                     if ( Member
                       && Member[144]
-                      && (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)Member + 44))(Member) == 6
+                      && (*(int (**)(unsigned char *))(*(unsigned int *)Member + 44))(Member) == 6
                       && *(unsigned char *)(*((unsigned int *)v33 + 328) + 5811) )
                     {
-                      (*(void (__thiscall **)(unsigned int *, int))(*v26 + 628))(v26, 3);
+                      (*(void (**)(unsigned int *, int))(*v26 + 628))(v26, 3);
                       *((unsigned char *)v26 + 1048) = 0;
                     }
                   }
                   else
                   {
-                    (*(void (__thiscall **)(unsigned int *, int))(*v26 + 628))(v26, 3);
+                    (*(void (**)(unsigned int *, int))(*v26 + 628))(v26, 3);
                   }
                   if ( v26[320] )
                     v26[320] = 0;
@@ -338,9 +342,9 @@ AbstractClass * * EventClass::ProcessEvent()
                     }
                   }
                   if ( v27 && Object::IsAlliedWithObjectHouse(HouseClass_Player.field_0, (IUnknown *)v26) )
-                    (*(void (__thiscall **)(int, int))(*(unsigned int *)v27 + 328))(v27, 7);
-                  v34 = (IUnknown *)(*(int (__thiscall **)(unsigned int *, int))(*v26 + 1188))(v26, this);
-                  (*(void (__thiscall **)(unsigned int *, IUnknown *, unsigned int))(*v26 + 488))(v26, v34, 0);
+                    (*(void (**)(int, int))(*(unsigned int *)v27 + 328))(v27, 7);
+                  v34 = (IUnknown *)(*(int (**)(unsigned int *, int))(*v26 + 1188))(v26, this);
+                  (*(void (**)(unsigned int *, IUnknown *, unsigned int))(*v26 + 488))(v26, v34, 0);
                   if ( (v26[5] & 4) != 0 )
                   {
                     v36 = v26;
@@ -356,11 +360,11 @@ AbstractClass * * EventClass::ProcessEvent()
                     FactoryClass::ResetProductionTimers(v37);
                   if ( (unsigned char)this->EventClass_field_0xC == 11 && (v26[5] & 4) != 0 )
                   {
-                    (*(void (__thiscall **)(unsigned int *, unsigned int))(*v26 + 968))(v26, 0);
+                    (*(void (**)(unsigned int *, unsigned int))(*v26 + 968))(v26, 0);
                     int v38 = *v26;
                     unsigned char * v39 = (unsigned char *)(&this->q0044);
                     Next = BuildingLoadQueue::GetNext(v39);
-                    (*(void (__thiscall **)(unsigned int *, void *, int))(v38 + 1152))(v26, Next, 1);
+                    (*(void (**)(unsigned int *, void *, int))(v38 + 1152))(v26, Next, 1);
                     eax99a = (IUnknown *)BuildingLoadQueue::GetNext(v39);
                     TechnoClass::SetFocus(v26, eax99a);
                   }
@@ -372,17 +376,17 @@ AbstractClass * * EventClass::ProcessEvent()
                       FootClass::ClearSomeVector(v36);
                     }
                     v41 = (IUnknown *)BuildingLoadQueue::GetNext((unsigned char *)(&this->q0044));
-                    (*(void (__thiscall **)(unsigned int *, IUnknown *))(*v26 + 968))(v26, v41);
+                    (*(void (**)(unsigned int *, IUnknown *))(*v26 + 968))(v26, v41);
                     int v43 = *v26;
                     void * v44 = BuildingLoadQueue::GetNext((unsigned char *)(&this->q0049));
-                    (*(void (__thiscall **)(unsigned int *, void *, int))(v43 + 1152))(v26, v44, 1);
-                    if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*v26 + 132))(v26) + 1508) && v41 )
+                    (*(void (**)(unsigned int *, void *, int))(v43 + 1152))(v26, v44, 1);
+                    if ( *(unsigned char *)((*(int (**)(unsigned int *))(*v26 + 132))(v26) + 1508) && v41 )
                       CCINIClass::IterateNodes(v26, v41);
                     if ( this->q007 )
                     {
                       int v45 = *v26;
                       eax107 = BuildingLoadQueue::GetNext((unsigned char *)(&this->q0084));
-                      (*(void (__thiscall **)(unsigned int *, void *))(v45 + 1148))(v26, eax107);
+                      (*(void (**)(unsigned int *, void *))(v45 + 1148))(v26, eax107);
                     }
                   }
                 }
@@ -409,11 +413,11 @@ AbstractClass * * EventClass::ProcessEvent()
                     v98.abstractFlags = v46->location[1],
                     v98.nextArrayIndex = v46->location[2],
                     *((unsigned char *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)&v98.uniqueId) + 284))
-                || !(*(uint8_t (__thiscall **)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 688))(v46) )
+                || !(*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 688))(v46) )
               {
                 if ( (v46->abstractFlags & 4) != 0 )
                 {
-                  (*(void (__thiscall **)(char *))(*(unsigned int *)&v46[1].onBridge + 12))(&v46[1].onBridge);
+                  (*(void (**)(char *))(*(unsigned int *)&v46[1].onBridge + 12))(&v46[1].onBridge);
                   FootClass::ClearSomeVector(v46);
                   a1 = 0;
                   *(unsigned int *)v46[1].__pad_0 = -1;
@@ -421,28 +425,28 @@ AbstractClass * * EventClass::ProcessEvent()
                   *(unsigned int *)&v46[1].__pad_0[4] = 0;
                   *(unsigned int *)&v46[1].__pad_0[8] = 0;
                 }
-                (*(void (__thiscall **)(TechnoClass *, int))(*(unsigned int *)v46->__pad_0 + 640))(v46, 3);
-                (*(void (__thiscall **)(TechnoClass *, unsigned int, int))(*(unsigned int *)v46->__pad_0 + 1152))(v46, 0, 1);
-                (*(void (__thiscall **)(TechnoClass *, unsigned int))(*(unsigned int *)v46->__pad_0 + 968))(v46, 0);
-                if ( *(unsigned char *)((*(int (__thiscall **)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 132))(v46) + 3434) )
+                (*(void (**)(TechnoClass *, int))(*(unsigned int *)v46->__pad_0 + 640))(v46, 3);
+                (*(void (**)(TechnoClass *, unsigned int, int))(*(unsigned int *)v46->__pad_0 + 1152))(v46, 0, 1);
+                (*(void (**)(TechnoClass *, unsigned int))(*(unsigned int *)v46->__pad_0 + 968))(v46, 0);
+                if ( *(unsigned char *)((*(int (**)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 132))(v46) + 3434) )
                 {
-                  (*(void (__thiscall **)(TechnoClass *, unsigned int, int))(*(unsigned int *)v46->__pad_0 + 1152))(v46, 0, 1);
-                  (*(void (__thiscall **)(TechnoClass *, unsigned int))(*(unsigned int *)v46->__pad_0 + 968))(v46, 0);
+                  (*(void (**)(TechnoClass *, unsigned int, int))(*(unsigned int *)v46->__pad_0 + 1152))(v46, 0, 1);
+                  (*(void (**)(TechnoClass *, unsigned int))(*(unsigned int *)v46->__pad_0 + 968))(v46, 0);
                 }
                 captureManager = v46->captureManager;
                 if ( captureManager )
                   UnitClass::ProcessIdleOrders(captureManager);
-                if ( *(unsigned char *)((*(int (__thiscall **)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 132))(v46) + 1508) )
+                if ( *(unsigned char *)((*(int (**)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 132))(v46) + 1508) )
                   CCINIClass::IterateNodes(v46, 0);
-                if ( (*(int (__thiscall **)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 44))(v46) == 1 )
+                if ( (*(int (**)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 44))(v46) == 1 )
                 {
                   if ( *(unsigned char *)(v46[1].ironTintTimer[2] + 3598) )
                   {
                     int v50 = v46->currentMission;
                     if ( v50 == 10 || v50 == 12 )
                     {
-                      (*(void (__thiscall **)(TechnoClass *, int, unsigned int))(*(unsigned int *)v46->__pad_0 + 488))(v46, 5, 0);
-                      (*(void (__thiscall **)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 492))(v46);
+                      (*(void (**)(TechnoClass *, int, unsigned int))(*(unsigned int *)v46->__pad_0 + 488))(v46, 5, 0);
+                      (*(void (**)(TechnoClass *))(*(unsigned int *)v46->__pad_0 + 492))(v46);
                     }
                   }
                   esi130 = *(unsigned int **)&v46->mindControlledBy_a_unit;
@@ -486,23 +490,23 @@ AbstractClass * * EventClass::ProcessEvent()
                   v100[1] = *(unsigned int *)&v51->__pad_34[108],
                   v100[2] = *(unsigned int *)&v51->__pad_34[112],
                   *((unsigned char *)Coord::To_Cell(&stru_87C374[13428], (IUnknown *)v100) + 284))
-              || !(*(uint8_t (__thiscall **)(CellStruct *))(v51->field_0 + 688))(v51) )
+              || !(*(uint8_t (**)(CellStruct *))(v51->field_0 + 688))(v51) )
             {
               int v53 = *(unsigned int *)&v51->__pad_34[120];
-              if ( v53 != 18 && v53 != 19 && (*(int (__thiscall **)(CellStruct *))(v51->field_0 + 44))(v51) != 2 )
+              if ( v53 != 18 && v53 != 19 && (*(int (**)(CellStruct *))(v51->field_0 + 44))(v51) != 2 )
               {
   char v101[4]; // [esp+62h] [ebp-320h] BYREF
-                a1 = *(unsigned int *)(*(int (__thiscall **)(CellStruct *, char *))(v51->field_0 + 440))(v51, v101);
+                a1 = *(unsigned int *)(*(int (**)(CellStruct *, char *))(v51->field_0 + 440))(v51, v101);
                 if ( a1 == *(unsigned int *)&stru_89E138[22624]
   unsigned int *v54; // eax
                   || (v54 = CellCoord::To_CellObj(&stru_87C374[13428], (int16_t *)&a1),
                       (eax144 = Cell::IsBridge(v54)) == 0)
                   || !*(unsigned char *)(eax144[328] + 5821) )
                 {
-                  (*(void (__thiscall **)(CellStruct *, int))(v51->field_0 + 628))(v51, 3);
-                  (*(void (__thiscall **)(CellStruct *, unsigned int, int))(v51->field_0 + 1152))(v51, 0, 1);
-                  (*(void (__thiscall **)(CellStruct *, unsigned int))(v51->field_0 + 968))(v51, 0);
-                  (*(void (__thiscall **)(CellStruct *, int, unsigned int))(v51->field_0 + 488))(v51, 16, 0);
+                  (*(void (**)(CellStruct *, int))(v51->field_0 + 628))(v51, 3);
+                  (*(void (**)(CellStruct *, unsigned int, int))(v51->field_0 + 1152))(v51, 0, 1);
+                  (*(void (**)(CellStruct *, unsigned int))(v51->field_0 + 968))(v51, 0);
+                  (*(void (**)(CellStruct *, int, unsigned int))(v51->field_0 + 488))(v51, 16, 0);
                 }
               }
             }
@@ -572,7 +576,7 @@ AbstractClass * * EventClass::ProcessEvent()
       int v25 = BuildingLoadQueue::FindBuilding(&this->q007);
       ClearFactoryClassProduction((unsigned int *)v25, 0);
       if ( v25 && *(unsigned char *)(v25 + 144) )
-        (*(void (__thiscall **)(int))(*(unsigned int *)v25 + 1264))(v25);
+        (*(void (**)(int))(*(unsigned int *)v25 + 1264))(v25);
       return;
     case 0x12:
       cx156 = this->IsAllocated;
@@ -638,23 +642,23 @@ AbstractClass * * EventClass::ProcessEvent()
       unsigned char * v11 = BuildingLoadQueue::Find(&this->q007);
       ClearFactoryClassProduction(v11, 0);
       if ( v11 && v11[144] )
-        (*(void (__thiscall **)(unsigned char *, int))(*(unsigned int *)v11 + 412))(v11, -1);
+        (*(void (**)(unsigned char *, int))(*(unsigned int *)v11 + 412))(v11, -1);
       return;
     case 0x16:
       v12 = (CellStruct *)BuildingLoadQueue::Find(&this->q007);
       ClearFactoryClassProduction(v12, 0);
       if ( v12 && v12->__pad_34[92] && *(unsigned int *)(*(unsigned int *)&v12->__pad_170[172] + 48) == this->q008 )
       {
-        if ( (*(int (__thiscall **)(CellStruct *))(v12->field_0 + 44))(v12) == 6
-          || ((*(int (__thiscall **)(CellStruct *))(v12->field_0 + 44))(v12) == 1
-           || (*(int (__thiscall **)(CellStruct *))(v12->field_0 + 44))(v12) == 2)
+        if ( (*(int (**)(CellStruct *))(v12->field_0 + 44))(v12) == 6
+          || ((*(int (**)(CellStruct *))(v12->field_0 + 44))(v12) == 1
+           || (*(int (**)(CellStruct *))(v12->field_0 + 44))(v12) == 2)
   char v102[12]; // [esp+66h] [ebp-31Ch] BYREF
-          && (v13 = (IUnknown *)(*(int (__thiscall **)(CellStruct *, char *))(v12->field_0 + 72))(v12, v102),
+          && (v13 = (IUnknown *)(*(int (**)(CellStruct *, char *))(v12->field_0 + 72))(v12, v102),
   unsigned int *v14; // eax
               v14 = Coord::To_Cell(&stru_87C374[13428], v13),
               Cell::IsBridge(v14)) )
         {
-          (*(void (__thiscall **)(CellStruct *, int))(v12->field_0 + 416))(v12, -1);
+          (*(void (**)(CellStruct *, int))(v12->field_0 + 416))(v12, -1);
         }
       }
       return;
@@ -714,7 +718,7 @@ AbstractClass * * EventClass::ProcessEvent()
           if ( (int)v67 <= 0 )
           {
 LABEL_173:
-            (*(void (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)&stru_87C374[44952] + 24))(
+            (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)&stru_87C374[44952] + 24))(
               *(unsigned int *)&stru_87C374[44952],
               0);
             MapClass::MarkForRedraw(&stru_87C374[13428], 2);
@@ -986,7 +990,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
   int result; // eax
   unsigned int *v5; // edx
 
-  result = (*(int (__thiscall **)(EventClass *, int))(this->EventClass_field_0x0 + 24))(this, a2); /*0x54228c*/
+  result = (*(int (**)(EventClass *, int))(this->EventClass_field_0x0 + 24))(this, a2); /*0x54228c*/
   if ( result != -1 && result < (int)this->EventClass_field_0x44 ) /*0x542297*/
   {
     v5 = (unsigned int *)(*((unsigned int *)&this->EventClass_field_0x28 + result) + 76); /*0x5422a1*/
@@ -1010,7 +1014,7 @@ int EventClass::Enqueue(unsigned short a2, char a3)
   if ( (unsigned char)result ) /*0x54f20c*/
     goto LABEL_19; /*0x54f20c*/
   v5 = a2; /*0x54f217*/
-  if ( stru_A8EB00.?[440] ) /*0x54f21d*/
+  if ( *((unsigned int *)((char *)&stru_A8EB00 + 440)) ) /*0x54f21d*/
   {
     if ( a2 != 27 ) /*0x54f223*/
       goto LABEL_19; /*0x54f223*/
@@ -1200,7 +1204,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b7e2*/
+    (*(void (**)(_VectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b7e2*/
     return 1; /*0x40b7e8*/
   }
 }
@@ -1244,7 +1248,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b90e*/
+    (*(void (**)(_DynamicVectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40b90e*/
   }
   v7 = *(unsigned int *)&this->q008; /*0x40b911*/
   if ( v7 < this->Count ) /*0x40b919*/
@@ -1296,7 +1300,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40ba42*/
+    (*(void (**)(_VectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40ba42*/
     return 1; /*0x40ba48*/
   }
 }
@@ -1340,7 +1344,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40bb6e*/
+    (*(void (**)(_DynamicVectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40bb6e*/
   }
   v7 = *(unsigned int *)&this->q008; /*0x40bb71*/
   if ( v7 < this->Count ) /*0x40bb79*/
@@ -1478,7 +1482,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVLightConvertClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c49e*/
+    (*(void (**)(_DynamicVectorClass_PAVLightConvertClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c49e*/
   }
   v7 = *(unsigned int *)&this->q008; /*0x40c4a1*/
   if ( v7 < this->Count ) /*0x40c4a9*/

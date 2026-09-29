@@ -22,6 +22,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x600750
 namespace gamemd {
@@ -1597,17 +1599,17 @@ wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
   char *v4; // eax
   wchar_t *StringCSF; // eax
 
-  v4 = DlgSkirmishMenuProc(a2, a3); /*0x60406b*/
+  v4 = (char *)(DlgSkirmishMenuProc(a2, a3));
   if ( v4 ) /*0x604072*/
   {
-    StringCSF = GetStringCSF((wchar_t *)v4, 0, g_Str_File_ownrdraw_cpp, 1957); /*0x604082*/
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)v4, 0, g_Str_File_ownrdraw_cpp, 1957));
     WideString::Assign((WideString *)aP0, StringCSF); /*0x60408a*/
   }
   else
   {
     WideString::Assign((WideString *)aP0, &g_TypeClass_DefaultString); /*0x60409c*/
   }
-  return aP0; /*0x604091*/
+  return (wchar_t **)(aP0);
 }
 }
 // 0x6040B0
@@ -1692,6 +1694,13 @@ AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
   a1 = v62;
   while ( (HWND)*v4 != v62 )
   {
+    unsigned int v63 = 0;  /* G37 hoist */
+    unsigned int v63 = 0;  /* G37 hoist */
+    unsigned int v63 = 0;  /* G37 hoist */
+    unsigned int v63 = 0;  /* G37 hoist */
+    unsigned int v63 = 0;  /* G37 hoist */
+    unsigned int v63 = 0;  /* G37 hoist */
+    unsigned int v63 = 0;  /* G37 hoist */
     v4 = (unsigned int *)v4[129];
     if ( !v4 )
       goto LABEL_6;
@@ -1713,6 +1722,9 @@ LABEL_6:
   a1 = v62;
   while ( (HWND)*v6 != v62 )
   {
+    unsigned int v60 = 0;  /* G37 hoist */
+    unsigned int v60 = 0;  /* G37 hoist */
+    unsigned int v60 = 0;  /* G37 hoist */
     v6 = (unsigned int *)v6[129];
     if ( !v6 )
       goto LABEL_17;
@@ -1734,6 +1746,8 @@ LABEL_17:
   a1 = v62;
   while ( (HWND)*v10 != v62 )
   {
+    unsigned int v61 = 0;  /* G37 hoist */
+    unsigned int v61 = 0;  /* G37 hoist */
     v10 = (unsigned int *)v10[129];
     if ( !v10 )
       goto LABEL_23;
@@ -1752,13 +1766,13 @@ LABEL_23:
   void * v73 = DataGlobal_B0F9DC;
   void * v105 = DataGlobal_B0FAC0;
   int v11 = VtableStub_72D450();
-  int v12 = DataGlobal_B0FA20;
+  int v12 = (int)(DataGlobal_B0FA20);
   void * v80 = DataGlobal_B0FB00;
   v62 = (HWND)v11;
   int v13 = *(unsigned int *)DSurface_Alternate;
-  int v70 = DataGlobal_B0FA20;
+  int v70 = (int)(DataGlobal_B0FA20);
   int v82; // [esp+9Ch] [ebp-128h] BYREF
-  int * v14 = (int *)(*(int (__thiscall **)(int, int *))(v13 + 120))(DSurface_Alternate, &v82);
+  int * v14 = (int *)(*(int (**)(int, int *))(v13 + 120))(DSurface_Alternate, &v82);
   int v72[4]; // [esp+68h] [ebp-15Ch] BYREF
   v72[0] = *v14;
   v72[1] = v14[1];
@@ -2141,9 +2155,9 @@ LABEL_106:
         0,
         0);
 LABEL_116:
-      (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0);
-      (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)DSurface_Alternate + 92))(DSurface_Alternate, 0, 0);
-      (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))(
+      (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0);
+      (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)DSurface_Alternate + 92))(DSurface_Alternate, 0, 0);
+      (*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))(
         g_DSurface_Primary,
         v106,
         DSurface_Alternate,
@@ -2151,15 +2165,15 @@ LABEL_116:
         0,
         1);
       if ( v54 )
-        (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))(
+        (*(void (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))(
           g_DSurface_Primary,
           v108,
           DSurface_Alternate,
           v111,
           0,
           1);
-      (*(void (__thiscall **)(int))(*(unsigned int *)DSurface_Alternate + 96))(DSurface_Alternate);
-      (*(void (__thiscall **)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary);
+      (*(void (**)(int))(*(unsigned int *)DSurface_Alternate + 96))(DSurface_Alternate);
+      (*(void (**)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary);
       UpdateAudioVideo();
       Sleep(0x1Eu);
       if ( ++v64 >= v104 )
@@ -2171,8 +2185,8 @@ LABEL_116:
   if ( !a2 )
     return SendMessageA(hWnd, 0x4EDu, 0, 0);
   PlayVocClass(*((unsigned int *)g_RulesClass_Instance + 468), 0x2000, 1.0, 0);
-  while ( (*(int (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) )
-    (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
+  while ( (*(int (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) )
+    (*(void (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
   return SendMessageA(hWnd, 0x4ECu, 0, 0);
 }
 } // namespace gamemd

@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_6BEC50 {
     void* vfptr;  // minimal E2 declaration
-    void  __noreturn ExitProgram();  // 0x6BEC50
+    void ExitProgram();  // 0x6BEC50
 };
 } // namespace gamemd

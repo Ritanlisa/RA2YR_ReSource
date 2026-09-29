@@ -29,6 +29,8 @@
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/WalkLocomotion_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {
@@ -36,11 +38,11 @@ int Warhead::GetWarheadSound(int a2)
 {
   Warhead * v3;
 
-  if ( (uint8_t)Audio::IsLoud((int *)(this->q130 + 336)) ) /*0x41d7ec*/
+  if ( (uint8_t)Audio::IsLoud((int *)((unsigned int)(this->q130)+ 336)) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/
   else
     v3 = *(unsigned int *)&this->q044; /*0x41d7fa*/
-  return !this->u8_3C && v3 + this->q040 <= (int)dword_A8ED84 || a2 != this->u32_14; /*0x41d814*/
+  return !this->u8_3C && (unsigned int)(v3)+ this->q040 <= (void *)((int))dword_A8ED84 || a2 != this->u32_14; /*0x41d814*/
 }
 } // namespace gamemd
 // 0x452820
@@ -56,7 +58,7 @@ int Warhead::RemoveFromDamageList(int a2)
   int v8; // edx
 
   v2 = (gamemd::Warhead *)(&this->u32_66C);
-  v3 = (*(int (__thiscall **)(Warhead *, int *))(this->u32_66C + 16))(&this->u32_66C, &a2); /*0x452834*/
+  v3 = (*(int (**)(Warhead *, int *))(this->u32_66C + 16))(&this->u32_66C, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
     v4 = *(unsigned int *)&v2[16]; /*0x45283c*/
@@ -75,7 +77,7 @@ int Warhead::RemoveFromDamageList(int a2)
   if ( *(unsigned int *)&v2[16] < v6 /*0x452887*/
     || ((IDA_LOBYTE(v7) = v2[13], (unsigned char)v7) || !v6)
     && (v7 = *(unsigned int *)&v2[20], v7 > 0)
-    && (IDA_LOBYTE(v7) = (*(int (__thiscall **)(Warhead *, int, unsigned int))(this->u32_1A3)(v2, v6 + v7, 0), (unsigned char)v7) )
+    && (IDA_LOBYTE(v7) = (*(int (**)(Warhead *, int, unsigned int))(this->u32_1A3)(v2, v6 + v7, 0), (unsigned char)v7) )
   {
     v7 = *(unsigned int *)&v2[16]; /*0x452889*/
     v8 = *(unsigned int *)&v2[4]; /*0x45288c*/
@@ -258,12 +260,12 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
     int v21 = this->u32_10C;
     if ( v21 )
     {
-      if ( (*(int (__thiscall **)(int))(*(unsigned int *)v21 + 44))(v21) == 6 )
+      if ( (*(int (**)(int))(*(unsigned int *)v21 + 44))(v21) == 6 )
       {
         v22 = (TechnoClass *)this->u32_B0;
         if ( v22 )
         {
-          if ( (*(int (__thiscall **)(TechnoClass *))(*(unsigned int *)v22->__pad_0 + 44))(v22) == 15 )
+          if ( (*(int (**)(TechnoClass *))(*(unsigned int *)v22->__pad_0 + 44))(v22) == 15 )
             Warhead::RemoveFromDamageList(*((unsigned int **)&this->u32_187), this->u32_B0);
         }
       }
@@ -291,17 +293,17 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
         if ( (*(unsigned char *)(v25 + 20) & 4) == 0
   int v26; // ecx
           || (v26 = (*(unsigned char *)(v25 + 20) & 4) != 0 ? v25 : 0,
-              (*(int (__thiscall **)(int))(*(unsigned int *)v26 + 120))(v26) == 2) )
+              (*(int (**)(int))(*(unsigned int *)v26 + 120))(v26) == 2) )
         {
           unsigned int * v27 = (unsigned int *)this->u32_10C;
           if ( v27 )
           {
             if ( (v27[5] & 1) != 0 )
             {
-              if ( v27[185] && (*(int (__thiscall **)(unsigned int))(*v27 + 44))(this->u32_10C) == 1 )
+              if ( v27[185] && (*(int (**)(unsigned int))(*v27 + 44))(this->u32_10C) == 1 )
               {
                 v27 = (unsigned int *)v27[185];
-                (*(void (__thiscall **)(unsigned int, unsigned int *))(**((unsigned int **)&this->u32_104) + 968))(this->u32_B0, v27);
+                (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)&this->u32_104) + 968))(this->u32_B0, v27);
               }
             }
             else
@@ -326,24 +328,24 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
          || !*((v28->abstractFlags & 4) != 0 ? (char *)&v28[1].targetingTimer[2] + 1 : (unsigned char *)1709)) )
       {
         char v143 = 0;
-        if ( v29 && (*(int (__thiscall **)(int))(*(unsigned int *)v29 + 44))(v29) == 1 )
+        if ( v29 && (*(int (**)(int))(*(unsigned int *)v29 + 44))(v29) == 1 )
         {
           int v30 = this->u32_10C;
   unsigned int *v31; // eax
           v31 = v30
-              ? ((*(int (__thiscall **)(unsigned int))(*(unsigned int *)v30 + 44))(this->u32_10C) == 1
+              ? ((*(int (**)(unsigned int))(*(unsigned int *)v30 + 44))(this->u32_10C) == 1
                ? (unsigned int *)v30
                : 0)
               : 0;
           Member = (ObjectClass *)Team::GetMember(v31, 0);
           if ( Member
-            && (*(int (__thiscall **)(ObjectClass *))(*(unsigned int *)Member->__pad_0 + 44))(Member) == 6
+            && (*(int (**)(ObjectClass *))(*(unsigned int *)Member->__pad_0 + 44))(Member) == 6
             && *(unsigned char *)(Member[7].health + 5821) )
           {
             int v33 = this->u32_10C;
   int v34; // eax
             v34 = v33
-                ? ((*(int (__thiscall **)(unsigned int))(*(unsigned int *)v33 + 44))(this->u32_10C) == 1
+                ? ((*(int (**)(unsigned int))(*(unsigned int *)v33 + 44))(this->u32_10C) == 1
                  ? v33
                  : 0)
                 : 0;
@@ -366,18 +368,18 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
             if ( (*(unsigned char *)(v38 + 20) & 4) == 0
   int v39; // ecx
               || (v39 = (*(unsigned char *)(v38 + 20) & 4) != 0 ? v38 : 0,
-                  (*(int (__thiscall **)(int))(*(unsigned int *)v39 + 120))(v39) == 2) )
+                  (*(int (**)(int))(*(unsigned int *)v39 + 120))(v39) == 2) )
             {
               int v40 = this->u32_10C;
               if ( v40
                 && (*(unsigned char *)(v40 + 20) & 4) != 0
-                && !(*(uint8_t (__thiscall **)(unsigned int))(*(unsigned int *)v40 + 352))(this->u32_10C)
+                && !(*(uint8_t (**)(unsigned int))(*(unsigned int *)v40 + 352))(this->u32_10C)
   int v41; // ecx
-                && ((v41 = this->u32_10C) != 0 && (*(int (__thiscall **)(int))(*(unsigned int *)v41 + 44))(v41) == 1
+                && ((v41 = this->u32_10C) != 0 && (*(int (**)(int))(*(unsigned int *)v41 + 44))(v41) == 1
   int v42; // ecx
-                 || (v42 = this->u32_10C) != 0 && (*(int (__thiscall **)(int))(*(unsigned int *)v42 + 44))(v42) == 2)
+                 || (v42 = this->u32_10C) != 0 && (*(int (**)(int))(*(unsigned int *)v42 + 44))(v42) == 2)
                 && !*(unsigned char *)(v40 + 1709)
-                && (double)this->q01B > *(double *)((*(int (__thiscall **)(int))(*(unsigned int *)v40 + 132))(v40)
+                && (double)this->q01B > *(double *)((*(int (**)(int))(*(unsigned int *)v40 + 132))(v40)
                                                            + 896) )
               {
                 FootClass::FootClass_ImbueLocomotor(
@@ -422,14 +424,14 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   else if ( v13[335]
   int v47; // ecx
          && (v47 = this->u32_10C) != 0
-         && (*(int (__thiscall **)(int))(*(unsigned int *)v47 + 44))(v47) == 1 )
+         && (*(int (**)(int))(*(unsigned int *)v47 + 44))(v47) == 1 )
   {
     int v48 = this->u32_10C;
     if ( v48 )
       int * v49 = (*(unsigned char *)(v48 + 20) & 1) != 0 ? (int *)v48 : 0;
     else
       v49 = 0;
-    if ( this->u32_B0 && v49 && !(*(uint8_t (__thiscall **)(int *))(*v49 + 352))(v49) )
+    if ( this->u32_B0 && v49 && !(*(uint8_t (**)(int *))(*v49 + 352))(v49) )
     {
   float v55; // edx
       v140 = (this->q01B * this->u32_150) >> 8;
@@ -477,7 +479,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
       int v58 = *v49;
       v149 += v57;
       float v127 = v131;
-      (*(void (__thiscall **)(int *, TechnoClass **, unsigned int, int))(v58 + 984))(v49, aP4, IDA_LODWORD(v127), 1);
+      (*(void (**)(int *, TechnoClass **, unsigned int, int))(v58 + 984))(v49, aP4, IDA_LODWORD(v127), 1);
       v49[170] = this->u32_B0;
       *(unsigned int *)(this->u32_B0 + 680) = v49;
     }
@@ -502,7 +504,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
     {
       v62 = (TechnoClass *)this->u32_B0;
       if ( v62 )
-        (*(void (__thiscall **)(TechnoClass *, unsigned int))(*(unsigned int *)v62->__pad_0 + 1132))(v62, this->u32_10C);
+        (*(void (**)(TechnoClass *, unsigned int))(*(unsigned int *)v62->__pad_0 + 1132))(v62, this->u32_10C);
     }
     else if ( v59[374] )
     {
@@ -540,7 +542,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   if ( IDA_BYTE2(v69[6].abstractFlags) )
     aP2 = *(CoordStruct *)RandomCoordScatter((int *)&v141, &aP2.X, 32, 0);
   int v70 = -1;
-  if ( (*(int (__thiscall **)(char *))(this->q1C8)(this) < 2 * unk_89DE70 )
+  if ( (*(int (**)(char *))(this->q1C8)(this) < 2 * unk_89DE70 )
   {
     v141 = *(double *)(&this->u8_3C6);
     IDA_LODWORD(v142) = this->u32_A4;
@@ -555,7 +557,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
       unsigned int * v73 = (unsigned int *)*((unsigned int *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&v141) + 57);
       if ( v73 )
       {
-        if ( (*(int (__thiscall **)(unsigned int *))(*v73 + 44))(v73) == 1 )
+        if ( (*(int (**)(unsigned int *))(*v73 + 44))(v73) == 1 )
         {
           int v74 = v73[433];
           if ( *(unsigned char *)(v74 + 3278) )
@@ -657,7 +659,7 @@ LABEL_158:
               if ( v91 )
               {
                 edi173 = (int *)(4 * (unsigned int)v139 + *(unsigned int *)(this->u32_128 + 400));
-                int * v92 = (int *)(*(int (__thiscall **)(char *, double *))(this->q012)(this, &v141);
+                int * v92 = (int *)(*(int (**)(char *, double *))(this->q012)(this, &v141);
                 DamageAnimClass::Constructor((void *)v91, *edi173, v92, 0);
               }
               --v144;
@@ -683,7 +685,7 @@ LABEL_158:
           v94 = (AnimClass *)new AnimClass;
           if ( v94 )
           {
-            eax181 = (unsigned int *)(*(int (__thiscall **)(char *, double *))(this->q012)(this, &var2C);
+            eax181 = (unsigned int *)(*(int (**)(char *, double *))(this->q012)(this, &var2C);
             unsigned int v95 = *eax181;
             unsigned int v96 = eax181[1];
             unsigned int v97 = eax181[2];
@@ -719,7 +721,7 @@ LABEL_158:
       int v100 = *(unsigned int *)this;
       unsigned int v101 = 0;
       v153 = *(InfantryClass **)(v99 + 160);
-      v139 = (TechnoClass *)(*(int (__thiscall **)(char *))(v100 + 444))(this);
+      v139 = (TechnoClass *)(*(int (**)(char *))(v100 + 444))(this);
       v144 = 8;
       do
       {
@@ -767,7 +769,7 @@ LABEL_158:
             IDA_HIDWORD(v141) = v109;
             int v111 = *(unsigned int *)v105->vtable0;
             IDA_LODWORD(v142) = v110;
-            (*(void (__thiscall **)(TechnoTypeClass *, double *, double *))(v111 + 496))(v105, &v141, &v156);
+            (*(void (**)(TechnoTypeClass *, double *, double *))(v111 + 496))(v105, &v141, &v156);
           }
           v101 = (unsigned int)v152;
         }
@@ -816,7 +818,7 @@ LABEL_158:
           IDA_HIDWORD(v141) = v120;
           v158 = v119 * *(double *)aP3;
           IDA_LODWORD(v142) = v121;
-          IDA_LOBYTE(Instance) = (*(char (__thiscall **)(TechnoTypeClass *, double *, double *))(v122 + 496))(
+          IDA_LOBYTE(Instance) = (*(char (**)(TechnoTypeClass *, double *, double *))(v122 + 496))(
                                v114,
                                &v141,
                                &v156);
@@ -941,7 +943,7 @@ int Warhead::ApplyPostDamageEffects()
   double v88; // [esp+90h] [ebp-50h] BYREF
   int v89; // [esp+9Ch] [ebp-44h]
   int * v90;
-  unsigned int v91;
+  int * v91;
   int * v92;
   int v93; // [esp+ACh] [ebp-34h] BYREF
   int v94; // [esp+B0h] [ebp-30h]
@@ -987,7 +989,7 @@ int Warhead::ApplyPostDamageEffects()
   if ( result->q0E4 ) /*0x46a3e0*/
   {
     v11 = this->vt_slot_444(); /*0x46a3f2*/
-    result = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(v11 + 228) + 44))(*(unsigned int *)(v11 + 228)); /*0x46a400*/
+    result = (*(int (**)(unsigned int))(**(unsigned int **)(v11 + 228) + 44))(*(unsigned int *)(v11 + 228)); /*0x46a400*/
     if ( result != 6 ) /*0x46a406*/
     {
       v12 = (int)(*this);
@@ -1051,7 +1053,7 @@ int Warhead::ApplyPostDamageEffects()
                       v94 = *(&this->u32_100); /*0x46a5f8*/
                       v31 = *(unsigned int *)v23; /*0x46a5ff*/
                       v95 = *(&this->u32_101); /*0x46a605*/
-                      v32 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, unsigned char *))(v31 + 72))(v23, v103); /*0x46a614*/
+                      v32 = (unsigned int *)(*(int (**)(unsigned char *, unsigned char *))(v31 + 72))(v23, v103); /*0x46a614*/
                       IDA_LODWORD(v77) = *v32; /*0x46a61c*/
                       v33 = Math::CalcAngle((double)v94 - (double)(int)v32[1], (double)IDA_SLODWORD(v77) - (double)v93); /*0x46a63f*/
                       v34 = Math::RoundToInt((v33 - 1.570796326794897) * -10430.06004058427); /*0x46a653*/
@@ -1105,7 +1107,7 @@ int Warhead::ApplyPostDamageEffects()
                       v73 = v40 * v73; /*0x46a859*/
                       v74 = v74 * v40; /*0x46a863*/
                       v75 = v75 * v40; /*0x46a86d*/
-                      (*(void (__thiscall **)(LPVOID, int *, double *))(*(unsigned int *)v82 + 496))(v82, &v90, &v73); /*0x46a875*/
+                      (*(void (**)(LPVOID, int *, double *))(*(unsigned int *)v82 + 496))(v82, &v90, &v73); /*0x46a875*/
                       v41 = *(&this->u32_100); /*0x46a87d*/
                       v42 = *(&this->u32_101); /*0x46a880*/
                       v84 = *v29; /*0x46a883*/
@@ -1182,7 +1184,7 @@ int Warhead::ApplyPostDamageEffects()
               v85 = *(&this->u32_100); /*0x46aa77*/
               v55 = *v53; /*0x46aa7b*/
               v86 = *(&this->u32_101); /*0x46aa80*/
-              v56 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned char *))(v55 + 72))(v53, v103); /*0x46aa8e*/
+              v56 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v55 + 72))(v53, v103); /*0x46aa8e*/
               IDA_LODWORD(v78) = *v56; /*0x46aa96*/
               v57 = Math::CalcAngle((double)v85 - (double)(int)v56[1], (double)IDA_SLODWORD(v78) - (double)v84); /*0x46aab3*/
               v58 = Math::RoundToInt((v57 - 1.570796326794897) * -10430.06004058427); /*0x46aad6*/
@@ -1221,9 +1223,9 @@ int Warhead::ApplyPostDamageEffects()
               v66 = (int *)(*(&this->u32_100));
               v75 = (int *)(v65 * v87);
               v67 = (int *)(*(&this->u32_101));
-              v91 = (unsigned int)((int *)(v66));
-              v92 = (unsigned int)(v67);
-              (*(void (__thiscall **)(int, int *, double *))(*(unsigned int *)v80 + 496))(v80, &v90, &v73); /*0x46ad29*/
+              v91 = (int *)((unsigned int)((int *)((unsigned int)((int *)(v66)))));
+              v92 = (int *)((unsigned int)(v67));
+              (*(void (**)(int, int *, double *))(*(unsigned int *)v80 + 496))(v80, &v90, &v73); /*0x46ad29*/
               v68 = *(&this->u32_100); /*0x46ad31*/
               v69 = *(&this->u32_101); /*0x46ad34*/
               v93 = *v54; /*0x46ad37*/
@@ -1291,17 +1293,17 @@ int Warhead::ProcessDamageArea()
 
   v28 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6160); /*0x65b5a3*/
   v29 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6164); /*0x65b5a7*/
-  this->u32_A0 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b5ab*/
+  this->u32_A0 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b5ab*/
   this->u32_2C = v32; /*0x65b5b3*/
   this->u32_30 = v28; /*0x65b5b9*/
-  *(unsigned int *)&this->q034 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b5c2*/
+  *(unsigned int *)&this->q034 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b5c2*/
   this->u32_38 = v32; /*0x65b5c8*/
   this->u8_3C = v29; /*0x65b5cb*/
   v2 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x65b5ce*/
   v3 = *(uint8_t *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6194); /*0x65b5e2*/
   v4 = *(uint8_t *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6193); /*0x65b5e8*/
   v5 = *(uint8_t *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6192); /*0x65b5f5*/
-  if ( dword_A8B230[130].uniqueId == 1 ) /*0x65b5fb*/
+  if ( ((unsigned int *)(dword_A8B230))[130].uniqueId == 1 ) /*0x65b5fb*/
   {
     v3 = -128; /*0x65b5fd*/
     v5 = -128; /*0x65b602*/
@@ -1339,7 +1341,7 @@ int Warhead::ProcessDamageArea()
   this->u32_64 = v18; /*0x65b741*/
   this->u32_68 = v7 / v18; /*0x65b749*/
   v19 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&this->u32_C2); /*0x65b750*/
-  v20 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v35); /*0x65b75e*/
+  v20 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v35); /*0x65b75e*/
   v31 = *v20; /*0x65b763*/
   v33 = v20[1]; /*0x65b76a*/
   v21 = this->u32_24; /*0x65b76e*/

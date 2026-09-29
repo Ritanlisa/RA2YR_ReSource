@@ -12,6 +12,9 @@
 #include "e4/classes/WWMouseClass_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x6A0310
 namespace gamemd {
@@ -21,7 +24,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   char *v5; // esi
   int *v6; // edi
   int v7; // ecx
-  int64_t v8; // kr08_8
+  CellClass * v8;
   CellClass *v9; // eax
   int v11; // [esp-4h] [ebp-20h]
   unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
@@ -48,9 +51,9 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( IDA___PAIR64__(a4, a3) != IDA___PAIR64__(qword_B077FC, v4) /*0x6a03be*/
       || (IDA_LOBYTE(v4) = IDA_BYTE4(qword_B077FC), IDA_HIDWORD(a4) != IDA_HIDWORD(qword_B077FC)) )
     {
-      v8 = (gamemd::CellClass *)(v13);
-      v5[99] = 1; /*0x6a03ca*/
-      *v6 = a3; /*0x6a03ce*/
+      v8 = (gamemd::CellClass *)((char)((gamemd::CellClass *)(v13)));
+      v5[99] = (int)((gamemd::CellClass *)(1));
+      *v6 = (int)((gamemd::CellClass *)(a3));
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
       v11 = *((unsigned int *)v5 + 3); /*0x6a03dd*/
       v9 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12); /*0x6a03e4*/
@@ -92,8 +95,8 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   int v10; // eax
   int v11; // eax
   int v12; // ecx
-  int v13; // eax
-  int v14; // edx
+  ShipLocomotionClass * v13;
+  int * v14;
   int *v15; // eax
   int v16; // ebx
   int v17; // ebp
@@ -124,17 +127,17 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
       if ( v10 ) /*0x6a3fbb*/
       {
         v11 = 4 * v10; /*0x6a3fc1*/
-        v12 = dword_7F296C[v11]; /*0x6a3fc4*/
+        v12 = ((unsigned int *)(dword_7F296C))[v11]; /*0x6a3fc4*/
         if ( v12 > -1 ) /*0x6a3fd3*/
         {
-          v13 = (int)(dword_7F2960[v11] + 12 * v12);
-          a1 = *(ShipLocomotionClass **)(v13 + 8); /*0x6a3fe2*/
+          v13 = (gamemd::ShipLocomotionClass *)((int)(((unsigned int *)(dword_7F2960))[v11] + (unsigned int)(12)* v12));
+          a1 = (int)(*(ShipLocomotionClass **)((unsigned int)(v13)+ 8));
           if ( v4->TrackNumber < v12 ) /*0x6a3feb*/
           {
-            v14 = (int *)(*(unsigned int *)(v13 + 4));
-            v20[0] = *(unsigned int *)v13; /*0x6a3ff6*/
-            v20[1] = v14; /*0x6a3fff*/
-            v15 = WalkLocomotion::TransformCoords((WalkLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1); /*0x6a4011*/
+            v14 = (int *)(*(unsigned int *)((unsigned int)(v13)+ 4));
+            v20[0] = (int *)(*(unsigned int *)v13);
+            v20[1] = (int *)(v14);
+            v15 = (int *)(WalkLocomotion::TransformCoords((WalkLocomotion *)&((unsigned int *)(v4))[-1].Piggybackee, v21, v20, (int *)&a1));
             v16 = *v15; /*0x6a4016*/
             v17 = v15[1]; /*0x6a4018*/
             location = v4->?->?; /*0x6a401e*/
@@ -178,7 +181,7 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
   LPVOID *p_Piggybackee; // esi
 
   v2 = (int)(pStm);
-  v3 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, pStm); /*0x75c692*/
+  v3 = (int)(SwizzleManager::SaveLoad((int *)a1->LocomotionClass, pStm));
   if ( v3 < 0 ) /*0x75c696*/
     return v3; /*0x75c696*/
   if ( a1 ) /*0x75c69a*/
@@ -206,28 +209,27 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   IStream *v3; // esi
   WalkLocomotionClass *v4; // edi
   int IPersistStream; // ebx
-  int v6; // ecx
+  ILocomotion * v6;
   ILocomotion *Piggybackee; // eax
   int v8; // edi
   int *v9; // ebx
   HRESULT v10; // esi
   int v12; // edx
-
-  v3 = (gamemd::WalkLocomotionClass *)((IStream *)pPStm);
-  v4 = a1; /*0x75c70b*/
+v3 = (gamemd::IStream *)((gamemd::WalkLocomotionClass *)((gamemd::IStream *)((gamemd::WalkLocomotionClass *)((IStream *)pPStm))));
+  v4 = (gamemd::WalkLocomotionClass *)(a1);
   IPersistStream = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x75c717*/
   if ( IPersistStream < 0 ) /*0x75c71b*/
     return IPersistStream; /*0x75c71b*/
   if ( !v4->Piggybackee ) /*0x75c726*/
   {
-    v12 = *(unsigned int *)v3->__pad_0; /*0x75c7c3*/
+    v12 = (int)(*(unsigned int *)v3->__pad_0);
     IDA_LOBYTE(a3) = 0; /*0x75c7cf*/
     (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x75c7d4*/
     return IPersistStream; /*0x75c7d8*/
   }
   v6 = (gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0);
   IDA_LOBYTE(a3) = 1; /*0x75c738*/
-  (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x75c73d*/
+  (*(void (__stdcall **)(IStream *, int *, int, unsigned int))((unsigned int)(v6)+ 16))(v3, &a3, 1, 0); /*0x75c73d*/
   Piggybackee = v4->Piggybackee; /*0x75c740*/
   pPStm = 0; /*0x75c743*/
   if ( Piggybackee ) /*0x75c74d*/
@@ -271,7 +273,7 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
   ILocomotion *Piggybackee; // eax
 
   *(unsigned int *)this->LocomotionClass = (void*)&WalkLocomotionClass_vftable; /*0x75cbe3*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&WalkLocomotionClass_vftable; /*0x75cbe9*/
+  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&WalkLocomotionClass_vftable; /*0x75cbe9*/
   *(unsigned int *)this->__pad_18 = (void*)&WalkLocomotionClass_vftable; /*0x75cbf0*/
   Piggybackee = this->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/

@@ -12,14 +12,14 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c0b6*/
   if ( v3 && this->IsAllocated ) /*0x67c0c0*/
   {
     RA2_OPDEL(v3); /*0x67c0c8*/
     *(unsigned int *)&this->q004 = 0; /*0x67c0d0*/
   }
-  this->IsAllocated = 0; /*0x67c0db*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x67c0e1*/
   if ( (a2 & 1) != 0 ) /*0x67c0e8*/
     RA2_OPDEL(); /*0x67c0eb*/

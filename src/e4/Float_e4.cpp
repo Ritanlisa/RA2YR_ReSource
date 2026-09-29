@@ -28,11 +28,11 @@ double Float::SubtractClamped(BuildingTypeClass * aP1, IUnknown * aP2)
   double v9; // st6
 
   v4 = *((float *)this + aP2); /*0x6c96b4*/
-  v5 = v4 < aP1; /*0x6c96b7*/
+  v5 = v4 < (double)(aP1); /*0x6c96b7*/
   v6 = 0; /*0x6c96b7*/
-  v7 = v4 == aP1; /*0x6c96b7*/
+  v7 = v4 == (double)(aP1); /*0x6c96b7*/
   IDA_LOWORD(result) = v3; /*0x6c96bb*/
-  if ( v4 >= aP1 ) /*0x6c96c0*/
+  if ( v4 >= (double)(aP1) ) /*0x6c96c0*/
     v9 = *((float *)this + aP2) - aP1; /*0x6c96d7*/
   else
     v9 = *((float *)this + aP2) - *((float *)this + aP2); /*0x6c96c8*/

@@ -18,6 +18,7 @@ struct E4Recv_7B2E50 {
     unsigned int u32_3F558;
     unsigned int u32_3F55D;
     unsigned int u32_3F560;
+    unsigned int UDPInterfaceClass;
 // --- flat members (END) ---
     void sub_7B2E50();  // 0x7B2E50
 };

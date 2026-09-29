@@ -15,6 +15,7 @@ struct Carryall {
     unsigned int q274;
     unsigned int q278;
     unsigned int q5A4;
+    unsigned int Debug;
 // --- flat members (END) ---
     FootClass * * MissionStateMachine();
 };

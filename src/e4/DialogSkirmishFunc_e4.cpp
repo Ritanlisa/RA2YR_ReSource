@@ -18,6 +18,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6ACEE0
 namespace gamemd {
@@ -124,34 +126,43 @@ LABEL_151:
           sub_4E3690((HWND)hWnd, v70);
           break;
         case 1450:
-          Formatc = *(VectorClass_flat **)&HouseClass_Player[29956];
-          v60 = *(CCINIClass **)&HouseClass_Player[29960];
-          strcpy((char *)Destination, &HouseClass_Player[31636]);
-          wcscpy(Destination, (const wchar_t *)&HouseClass_Player[30166]);
+          Formatc = *(VectorClass_flat **)&((unsigned int *)(HouseClass_Player))[29956];
+          v60 = *(CCINIClass **)&((unsigned int *)(HouseClass_Player))[29960];
+          strcpy((char *)Destination, &((unsigned int *)(HouseClass_Player))[31636]);
+          wcscpy(Destination, (const wchar_t *)&((unsigned int *)(HouseClass_Player))[30166]);
           Dialog::IdleProcess(hWnd);
           ShowWindow((HWND)hWnd, 0);
-          if ( SkirmishDialog::Show(g_hWnd, (int)v60, (int)hWnd) == (SkirmishDialog *)2 )
+          if ( SkirmishDialog::Show(g_hWnd, (int)v60, (int)hWnd) == (double)((SkirmishDialog *))2 )
           {
-            *(unsigned int *)&HouseClass_Player[29956] = Formatc;
-            *(unsigned int *)&HouseClass_Player[29960] = v60;
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = Formatc;
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = v60;
             LoadScenarioClassByIndex((int)v60);
             Session::PrepareGame((HWND)hWnd);
             ShowWindow((HWND)hWnd, 5);
             if ( IsRandMap::Sed(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[31616]
-                                          + 4 * *(unsigned int *)&HouseClass_Player[29960])) )
+                                          + 4 * *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960])) )
             {
               v61 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
               if ( *(&g_MatrixTransformState + 2257) )
               {
+    unsigned int v65 = 0;  /* G37 hoist */
+    unsigned int v65 = 0;  /* G37 hoist */
+    unsigned int v65 = 0;  /* G37 hoist */
+    unsigned int v65 = 0;  /* G37 hoist */
+    unsigned int v65 = 0;  /* G37 hoist */
+    unsigned int v65 = 0;  /* G37 hoist */
+    unsigned int v65 = 0;  /* G37 hoist */
+    unsigned int v65 = 0;  /* G37 hoist */
+    unsigned int v65 = 0;  /* G37 hoist */
                 ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
                 RA2_OPDEL(v61);
               }
               unsigned int * v62 = (unsigned int *)operator new(4u);
               if ( v62 )
                 v63 = (ObjectClass *)unknown_libname_27(v62);
-              ObjectClass *v63 = 0;
+              ObjectClass *v63 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
               *(&g_MatrixTransformState + 2257) = (CoordStruct *)v63;
-              Surface::LoadToSurfaceSHP((char **)v63, stru_829ABC[0]);
+              Surface::LoadToSurfaceSHP((char **)v63, ((unsigned int *)(stru_829ABC))[0]);
               if ( !(*(&g_MatrixTransformState + 2257))->X )
                 Session::PrepareGame((HWND)hWnd);
               InvalidateRect((HWND)hWnd, 0, 0);
@@ -165,8 +176,8 @@ LABEL_151:
           }
           else
           {
-            PlayerCountMap = ReadPlayerCountMap(*(int *)&HouseClass_Player[29960]);
-            if ( !(*(uint8_t (__thiscall **)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936] + 4))(*(unsigned int *)&HouseClass_Player[29936])
+            PlayerCountMap = ReadPlayerCountMap(*(int *)&((unsigned int *)(HouseClass_Player))[29960]);
+            if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)&((unsigned int *)(HouseClass_Player))[29936] + 4))(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29936])
   int v65; // ecx
               || (v65 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4580), v65 > PlayerCountMap) )
             {
@@ -175,16 +186,16 @@ LABEL_151:
             ResetLobbyFactionTable(v65);
             Lobby::InvalidateFactionCombos((HWND)hWnd);
             Lobby::InvalidatePlayerSlots((HWND)hWnd);
-            Skirmish_Setup_6ADDF0((HWND)hWnd, (int)v60, *(int *)&HouseClass_Player[29960]);
+            Skirmish_Setup_6ADDF0((HWND)hWnd, (int)v60, *(int *)&((unsigned int *)(HouseClass_Player))[29960]);
             ShowWindow((HWND)hWnd, 5);
-            if ( LoadScenarioClassByIndex(*(int *)&HouseClass_Player[29960]) )
+            if ( LoadScenarioClassByIndex(*(int *)&((unsigned int *)(HouseClass_Player))[29960]) )
             {
-              int v66 = MultiplayerGameMode::Find(*(void **)&HouseClass_Player[29956]);
+              int v66 = MultiplayerGameMode::Find(*(void **)&((unsigned int *)(HouseClass_Player))[29956]);
               SetDialogPlayerName((HWND)hWnd, v66);
               Dialog::ShowPlayerName((HWND)hWnd);
               Skirmish::EnableSpawnButtons(0);
               if ( IsRandMap::Sed(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[31616]
-                                            + 4 * *(unsigned int *)&HouseClass_Player[29960])) )
+                                            + 4 * *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960])) )
               {
                 v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 if ( *(&g_MatrixTransformState + 2257) )
@@ -194,9 +205,9 @@ LABEL_151:
                   unsigned int * v68 = (unsigned int *)operator new(4u);
                   if ( v68 )
                     v69 = (ObjectClass *)unknown_libname_27(v68);
-                  ObjectClass *v69 = 0;
+                  ObjectClass *v69 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)((int)(0))));
                   *(&g_MatrixTransformState + 2257) = (CoordStruct *)v69;
-                  Surface::LoadToSurfaceSHP((char **)v69, stru_829ABC[0]);
+                  Surface::LoadToSurfaceSHP((char **)v69, ((unsigned int *)(stru_829ABC))[0]);
                   v67 = (ObjectClass *)*(&g_MatrixTransformState + 2257);
                 }
                 if ( !*(unsigned int *)v67->__pad_0 )
@@ -210,8 +221,8 @@ LABEL_151:
             }
             else
             {
-              *(unsigned int *)&HouseClass_Player[29960] = v60;
-              *(unsigned int *)&HouseClass_Player[29956] = Formatc;
+              *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960] = v60;
+              *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956] = Formatc;
             }
           }
           break;
@@ -226,7 +237,7 @@ LABEL_151:
               DlgItem = GetDlgItem((HWND)hWnd, 1559);
               EnableWindow(DlgItem, 0);
             }
-            Format = (VectorClass_flat *)ReadPlayerCountMap(*(int *)&HouseClass_Player[29960]);
+            Format = (VectorClass_flat *)ReadPlayerCountMap(*(int *)&((unsigned int *)(HouseClass_Player))[29960]);
             v75 = 0;
             do
             {
@@ -265,16 +276,16 @@ LABEL_151:
               ++v6;
             }
             while ( v6 < 7 );
-            *(unsigned int *)&HouseClass_Player[29992] = v75;
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29992] = v75;
             v10 = (CampaignScore *)((char *)&v75->vtable0 + 1);
             if ( var244 == 1559 )
             {
               if ( (int)Format < (int)v10 )
               {
-                StringCSF = (wchar_t *)(GetStringCSF( g_Str_TXT_SCENARIO_TOO_SMALL, 0, (CampaignScore *)&stru_830620[63020], 1079));
+                StringCSF = (wchar_t *)(GetStringCSF( g_Str_TXT_SCENARIO_TOO_SMALL, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1079));
                 swprintf(Destination, (const size_t)StringCSF, (const wchar_t *const)Format, v72);
                 v86 = (gamemd::CampaignScore *)(&stru_82083C);
-                v12 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1080));
+                v12 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1080));
   int v73; // [esp+0h] [ebp-260h]
                 Dialog::ShowMessageBox((int)Destination, v12, 0, 0, 0, v73);
                 v13 = GetDlgItem((HWND)hWnd, 1559);
@@ -283,14 +294,10 @@ LABEL_151:
               }
               if ( (int)v10 <= 1 )
               {
-                v14 = GetStringCSF(
-                        (wchar_t *)&stru_830620[63048],
-                        0,
-                        (CampaignScore *)&stru_830620[63020],
-                        1087);
+                v14 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[63048], 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1087));
                 swprintf(Destination, (const size_t)v14, (const wchar_t *const)Format, v72);
                 v85 = (gamemd::CampaignScore *)(&stru_82083C);
-                v15 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1088));
+                v15 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1088));
   int v74; // [esp+0h] [ebp-260h]
                 Dialog::ShowMessageBox((int)Destination, v15, 0, 0, 0, v74);
                 v16 = GetDlgItem((HWND)hWnd, 1559);
@@ -338,14 +345,10 @@ LABEL_151:
                   }
                   if ( ++v17 >= 7 )
                   {
-                    v22 = GetStringCSF(
-                            (wchar_t *)&stru_830620[3632],
-                            0,
-                            (CampaignScore *)&stru_830620[63020],
-                            1111);
+                    v22 = (wchar_t *)(GetStringCSF( (wchar_t *)&((unsigned int *)(stru_830620))[3632], 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1111));
                     swprintf(Destination, (const size_t)v22, (const wchar_t *const)Format, v72);
                     v89 = (gamemd::CampaignScore *)(&stru_82083C);
-                    v23 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1112));
+                    v23 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1112));
                     Dialog::ShowMessageBox((int)Destination, v23, 0, 0, 0, _0c);
                     v24 = GetDlgItem((HWND)hWnd, 1559);
                     EnableWindow(v24, 1);
@@ -354,16 +357,16 @@ LABEL_151:
                 }
               }
             }
-            v25 = *(SkirmishDialog **)&HouseClass_Player[29936];
+            v25 = *(SkirmishDialog **)&((unsigned int *)(HouseClass_Player))[29936];
             unknown_libname_74(&v82);
-            if ( !(*(uint8_t (__thiscall **)(SkirmishDialog *, wchar_t **))(*(unsigned int *)v25->__pad_0 + 20))(
+            if ( !(*(uint8_t (**)(SkirmishDialog *, wchar_t **))(*(unsigned int *)v25->__pad_0 + 20))(
                     v25,
                     &v82) )
             {
               if ( var244 == 1559 )
               {
                 v83 = (VectorClass_flat *)&stru_82083C;
-                v71 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1129));
+                v71 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&((unsigned int *)(stru_830620))[63020], 1129));
                 v26 = WideString::GetOrEmpty(&v82);
                 Dialog::ShowMessageBox((int)v26, v71, 0, 0, 0, (int)v72);
                 v27 = GetDlgItem((HWND)hWnd, 1559);
@@ -373,13 +376,13 @@ LABEL_151:
               }
               MultiplayerGameMode::GetFirst();
             }
-            *(unsigned int *)&HouseClass_Player[30328] = *(unsigned int *)&HouseClass_Player[29956];
-            *(unsigned int *)&HouseClass_Player[30332] = *(unsigned int *)&HouseClass_Player[29960];
-            if ( *(int *)&HouseClass_Player[29960] >= *(int *)&HouseClass_Player[31628] )
-              *(unsigned int *)&HouseClass_Player[30332] = 0;
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30328] = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29956];
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30332] = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29960];
+            if ( *(int *)&((unsigned int *)(HouseClass_Player))[29960] >= *(int *)&((unsigned int *)(HouseClass_Player))[31628] )
+              *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30332] = 0;
             v28 = GetDlgItem((HWND)hWnd, 1696);
             SendMessageA(v28, 0x4B3u, 0x14u, (LPARAM)lParam);
-            CopyWideToChar(&HouseClass_Player[30260], lParam, -1);
+            CopyWideToChar(&((unsigned int *)(HouseClass_Player))[30260], lParam, -1);
             ComboBoxSelected = GetComboBoxSelected((ReferenceCounted *)hWnd, 1697, 0xFFFFFFFF);
             SessionClass::AssignSide(&HouseClass_Player[29932], ComboBoxSelected, (MPCooperative *)1);
             int v30 = 0;
@@ -423,25 +426,25 @@ LABEL_151:
               if ( (unsigned int)SendDlgItemMessageA((HWND)hWnd, v32, 0x150u, v34, 0) <= 2 )
               {
                 v35 = SendDlgItemMessageA((HWND)hWnd, v32, 0x147u, 0, 0);
-                *(unsigned int *)&HouseClass_Player[21864][4 * v31 + 8136] = SendDlgItemMessageA(
+                *(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8136] = SendDlgItemMessageA(
                                                                              (HWND)hWnd,
                                                                              v32,
                                                                              0x150u,
                                                                              v35,
                                                                              0);
-                *(unsigned int *)&HouseClass_Player[21864][4 * v31 + 8168] = GetComboBoxSelected(
+                *(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8168] = GetComboBoxSelected(
                                                                              (ReferenceCounted *)hWnd,
                                                                              ResourceID2CSF,
                                                                              0xFFFFFFFF);
-                *(unsigned int *)&HouseClass_Player[21864][4 * v31 + 8200] = GetComboBoxSelectedRaw(
+                *(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8200] = GetComboBoxSelectedRaw(
                                                                              (ReferenceCounted *)hWnd,
                                                                              (int)Formata,
                                                                              0xFFFFFFFF);
-                *(unsigned int *)&HouseClass_Player[21864][4 * v31 + 8232] = SetComboBoxSelection(
+                *(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8232] = SetComboBoxSelection(
                                                                              (HWND)hWnd,
                                                                              (int)ResourceID3,
                                                                              0xFFFFFFFF);
-                *(unsigned int *)&HouseClass_Player[21864][4 * v31 + 8264] = GetComboBoxSelectedRaw2(
+                *(unsigned int *)&HouseClass_Player[((unsigned int *)(21864]))[4 * v31 + 8264] = GetComboBoxSelectedRaw2(
                                                                              (HWND)hWnd,
                                                                              (int)nIDDlgItema,
                                                                              0xFFFFFFFF);
@@ -450,7 +453,7 @@ LABEL_151:
             }
             while ( v31 < 7 );
             char * v36 = 0;
-            Formatb = (VectorClass_flat *)&HouseClass_Player[30372];
+            Formatb = (VectorClass_flat *)&((unsigned int *)(HouseClass_Player))[30372];
             do
             {
   int v43; // edx
@@ -508,36 +511,35 @@ LABEL_151:
                 v43 = 4;
               }
               *(unsigned int *)&Formatb[-1].IsInitialized = v43;
-              Formatb->vtable0 = (void *)v41;
-              Formatb->Items = (void *)ComboBoxSelectedRaw;
+              Formatb->vtable0 = (unsigned int)((void *)v41);
+              Formatb->Items = (unsigned int)((void *)ComboBoxSelectedRaw);
               Formatb = (VectorClass_flat *)((char *)Formatb + 12);
             }
             while ( (int)(v36 + 1) < 8 );
             v44 = GetComboBoxSelectedRaw((ReferenceCounted *)hWnd, 1698, 0xFFFFFFFF);
             v45 = SetComboBoxSelection((HWND)hWnd, 1699, 0xFFFFFFFF);
             v46 = GetComboBoxSelectedRaw2((HWND)hWnd, 1901, 0xFFFFFFFF);
-            SessionClass::AssignColor(&HouseClass_Player[29932], v44, (MPCooperative *)1);
-            *(unsigned int *)&HouseClass_Player[30288] = v45;
-            *(unsigned int *)&HouseClass_Player[30296] = v46;
-            int v47 = operator new(0x85u);
+            SessionClass::AssignColor(&((unsigned int *)(HouseClass_Player))[29932], v44, (MPCooperative *)1);
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30288] = v45;
+            *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30296] = v46;
+            int v47 = (int)(operator new(0x85u));
             int v48 = v47;
             if ( v47 )
             {
               Waypoint::InitInvalid((unsigned char *)(v47 + 40));
-              char * v49 = CharToWideString(&HouseClass_Player[30260]);
-              wcscpy((wchar_t *)v48, (const wchar_t *)v49);
-              *(unsigned int *)(v48 + 75) = *(unsigned int *)&HouseClass_Player[30304];
-              *(unsigned int *)(v48 + 83) = *(unsigned int *)&HouseClass_Player[30280];
-              *(unsigned int *)(v48 + 91) = *(unsigned int *)&HouseClass_Player[30288];
-              *(unsigned int *)(v48 + 99) = *(unsigned int *)&HouseClass_Player[30296];
+              unsigned int v49 = (unsigned int)(wcscpy((wchar_t *)v48, (const wchar_t *)v49));
+              *(unsigned int *)(v48 + 75) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30304];
+              *(unsigned int *)(v48 + 83) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30280];
+              *(unsigned int *)(v48 + 91) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30288];
+              *(unsigned int *)(v48 + 99) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[30296];
               *(unsigned int *)(v48 + 115) = -1;
-              if ( *(int *)&HouseClass_Player[40248] < *(int *)&HouseClass_Player[40240]
-                || (HouseClass_Player[40245] || !*(unsigned int *)&HouseClass_Player[40240])
-                && *(int *)&HouseClass_Player[40252] > 0
-                && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player[40232]
+              if ( *(int *)&((unsigned int *)(HouseClass_Player))[40248] < *(int *)&((unsigned int *)(HouseClass_Player))[40240]
+                || (((unsigned int *)(HouseClass_Player))[40245] || !*(unsigned int *)&((unsigned int *)(HouseClass_Player))[40240])
+                && *(int *)&((unsigned int *)(HouseClass_Player))[40252] > 0
+                && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[40232]
                                                                           + 8))(
                      &HouseClass_Player[40232],
-                     *(unsigned int *)&HouseClass_Player[40240] + *(unsigned int *)&HouseClass_Player[40252],
+                     *(unsigned int *)&((unsigned int *)(HouseClass_Player))[40240] + *(unsigned int *)&HouseClass_Player[40252],
                      0) )
               {
                 v50 = (ObjectClass *)(*(unsigned int *)&HouseClass_Player[40248])++;

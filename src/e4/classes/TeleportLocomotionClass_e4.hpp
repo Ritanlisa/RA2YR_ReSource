@@ -30,7 +30,7 @@ struct TeleportLocomotionClass {
     bool TeleportLocomotionClass_field_bool_35;  // 0x35
     bool TeleportLocomotionClass_field_bool_36;  // 0x36
     bool q037;  // 0x37
-    char State[4];  // 0x38
+    unsigned int State;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
     char Timer[12];  // 0x3C

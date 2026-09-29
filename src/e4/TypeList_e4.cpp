@@ -19,6 +19,9 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/Matrix3x4_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x459F90
 namespace gamemd {
@@ -129,7 +132,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x45a262*/
+    (*(void (**)(_VectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x45a262*/
     return 1; /*0x45a268*/
   }
 }
@@ -207,10 +210,10 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x45a38e*/
+    (*(void (**)(_DynamicVectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x45a38e*/
   }
-  v7 = this->Capacity; /*0x45a391*/
-  if ( v7 < this->Count ) /*0x45a399*/
+  v7 = this-(int)((int))(>Capacity); /*0x45a391*/
+  if ( v7 < (int)(this->Count) ) /*0x45a399*/
     *(unsigned int *)&this->Count = v7; /*0x45a39b*/
   return 1; /*0x45a39e*/
 }
@@ -242,14 +245,14 @@ VectorClass_flat * TypeList_Particle::Add(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x45a9c6*/
   if ( v3 && this->IsAllocated ) /*0x45a9d0*/
   {
     RA2_OPDEL(v3); /*0x45a9d8*/
     *(unsigned int *)&this->Items = 0; /*0x45a9e0*/
   }
-  this->IsAllocated = 0; /*0x45a9eb*/
+  this->IsAllocated = (unsigned char)((gamemd::VectorClass_flat *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x45a9f1*/
   if ( (a2 & 1) != 0 ) /*0x45a9f8*/
     RA2_OPDEL(); /*0x45a9fb*/
@@ -396,7 +399,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4780a2*/
+    (*(void (**)(_VectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4780a2*/
     return 1; /*0x4780a8*/
   }
 }
@@ -456,14 +459,14 @@ VectorClass_flat * TypeList_TechnoType::Add(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x478686*/
   if ( v3 && this->IsAllocated ) /*0x478690*/
   {
     RA2_OPDEL(v3); /*0x478698*/
     *(unsigned int *)&this->Items = 0; /*0x4786a0*/
   }
-  this->IsAllocated = 0; /*0x4786ab*/
+  this->IsAllocated = (unsigned char)((gamemd::VectorClass_flat *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x4786b1*/
   if ( (a2 & 1) != 0 ) /*0x4786b8*/
     RA2_OPDEL(); /*0x4786bb*/
@@ -481,7 +484,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
 
   if ( this == (TypeList *)a2 ) /*0x47872a*/
     return &this->DynamicVectorClass; /*0x47872a*/
-  (*((void (__thiscall **)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x47872e*/
+  (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x47872e*/
   v3 = a2[2]; /*0x478731*/
   this->u32_8 = v3; /*0x478736*/
   if ( !v3 ) /*0x478739*/
@@ -569,15 +572,14 @@ namespace gamemd {
 TypeList_flat * TypeList_Infantry::Add(char a2)
 {
   void *v3; // eax
-
-  v3 = (void *)this->Items; /*0x5129f3*/
+v3 = (void *)((unsigned int)((void *)((unsigned int)((void *)this->Items))));
   *(unsigned int *)this = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x5129f6*/
   if ( v3 && this->IsAllocated ) /*0x512a00*/
   {
     RA2_OPDEL(v3); /*0x512a08*/
     *(unsigned int *)&this->Items = 0; /*0x512a10*/
   }
-  this->IsAllocated = 0; /*0x512a1b*/
+  this->IsAllocated = (unsigned char)((gamemd::TypeList_flat *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x512a21*/
   if ( (a2 & 1) != 0 ) /*0x512a28*/
     RA2_OPDEL(); /*0x512a2b*/
@@ -620,14 +622,14 @@ DynamicVector * TypeList_Infantry::Constructor(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->Items; /*0x512e23*/
+  v3 = (void *)((unsigned int)((void *)((unsigned int)(*(void **)&this->Items))));
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x512e26*/
   if ( v3 && this->IsAllocated ) /*0x512e30*/
   {
     RA2_OPDEL(v3); /*0x512e38*/
     *(unsigned int *)&this->Items = 0; /*0x512e40*/
   }
-  this->IsAllocated = 0; /*0x512e4b*/
+  this->IsAllocated = (unsigned char)((gamemd::DynamicVector *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x512e51*/
   if ( (a2 & 1) != 0 ) /*0x512e58*/
     RA2_OPDEL(); /*0x512e5b*/
@@ -673,10 +675,10 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x512efe*/
+    (*(void (**)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x512efe*/
   }
-  v7 = *(unsigned int *)&this->Capacity; /*0x512f01*/
-  if ( v7 < this->Count ) /*0x512f09*/
+  v7 = *(int)((unsigned int *))&this->Capacity; /*0x512f01*/
+  if ( v7 < (int)(this->Count) ) /*0x512f09*/
     *(unsigned int *)&this->Count = v7; /*0x512f0b*/
   return 1; /*0x512f0e*/
 }
@@ -709,14 +711,14 @@ DynamicVector * TypeList_Infantry::Constructor_0(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->Items; /*0x5131f3*/
+  v3 = (void *)((unsigned int)((void *)((unsigned int)(*(void **)&this->Items))));
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_UnitTypeClass_const___vftable; /*0x5131f6*/
   if ( v3 && this->IsAllocated ) /*0x513200*/
   {
     RA2_OPDEL(v3); /*0x513208*/
     *(unsigned int *)&this->Items = 0; /*0x513210*/
   }
-  this->IsAllocated = 0; /*0x51321b*/
+  this->IsAllocated = (unsigned char)((gamemd::DynamicVector *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x513221*/
   if ( (a2 & 1) != 0 ) /*0x513228*/
     RA2_OPDEL(); /*0x51322b*/
@@ -730,14 +732,14 @@ DynamicVector * TypeList_Infantry::Constructor_1(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->Items; /*0x5135c3*/
+  v3 = (void *)((unsigned int)((void *)((unsigned int)(*(void **)&this->Items))));
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AircraftTypeClass_const___vftable; /*0x5135c6*/
   if ( v3 && this->IsAllocated ) /*0x5135d0*/
   {
     RA2_OPDEL(v3); /*0x5135d8*/
     *(unsigned int *)&this->Items = 0; /*0x5135e0*/
   }
-  this->IsAllocated = 0; /*0x5135eb*/
+  this->IsAllocated = (unsigned char)((gamemd::DynamicVector *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x5135f1*/
   if ( (a2 & 1) != 0 ) /*0x5135f8*/
     RA2_OPDEL(); /*0x5135fb*/
@@ -950,7 +952,7 @@ int * TypeList_flat::CopyFull(VectorClass_flat * aP1)
 
   if ( this != (TypeList *)aP1 ) /*0x67a09a*/
   {
-    (*((void (__thiscall **)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a09e*/
+    (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a09e*/
     v3 = aP1[2]; /*0x67a0a1*/
     this->u32_8 = v3; /*0x67a0a6*/
     if ( v3 ) /*0x67a0a9*/
@@ -994,7 +996,7 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
 
   if ( this != (TypeList *)aP1 ) /*0x67a11a*/
   {
-    (*((void (__thiscall **)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a11e*/
+    (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a11e*/
     v3 = aP1[2]; /*0x67a121*/
     this->u32_8 = v3; /*0x67a126*/
     if ( v3 ) /*0x67a129*/
@@ -1038,7 +1040,7 @@ int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
 
   if ( this != (TypeList *)aP1 ) /*0x67a29a*/
   {
-    (*((void (__thiscall **)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a29e*/
+    (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this); /*0x67a29e*/
     v3 = aP1[2]; /*0x67a2a1*/
     this->u32_8 = v3; /*0x67a2a6*/
     if ( v3 ) /*0x67a2a9*/
@@ -1363,7 +1365,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67abd2*/
+    (*(void (**)(_VectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67abd2*/
     return 1; /*0x67abd8*/
   }
 }
@@ -1441,7 +1443,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67ad5e*/
+    (*(void (**)(_DynamicVectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67ad5e*/
   }
   v7 = *(unsigned int *)&this->Capacity; /*0x67ad61*/
   if ( v7 < this->Count ) /*0x67ad69*/
@@ -1534,7 +1536,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVSmudgeTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67b0de*/
+    (*(void (**)(_DynamicVectorClass_PBVSmudgeTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67b0de*/
   }
   v7 = this->u32_8; /*0x67b0e1*/
   if ( v7 < this->u32_10 ) /*0x67b0e9*/
@@ -1634,7 +1636,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67b2d2*/
+    (*(void (**)(_VectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67b2d2*/
     return 1; /*0x67b2d8*/
   }
 }
@@ -1726,7 +1728,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67b45e*/
+    (*(void (**)(_DynamicVectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67b45e*/
   }
   v7 = *(unsigned int *)&this->Capacity; /*0x67b461*/
   if ( v7 < this->Count ) /*0x67b469*/
@@ -1950,7 +1952,7 @@ char TypeList_flat::PushBack(VectorClass_flat * aP1)
       return 0; /*0x717ce6*/
     CapacityIncrement = this->u32_14; /*0x717ce8*/
     if ( CapacityIncrement <= 0 /*0x717cf8*/
-      || !(*((uint8_t (__thiscall **)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))(
+      || !(*((uint8_t (**)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))(
             this,
             Capacity + CapacityIncrement,
             0) )

@@ -66,7 +66,7 @@ void PsyDom::Fire()
   if ( v0 ) /*0x53b097*/
   {
     v1 = (unsigned int *)(CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&PsyDom_Coords));
-    v2 = (int *)((unsigned int *)((int *)(*(int (__thiscall **)(void *, int *))(*(unsigned int *)v1 + 72))(v1, v33)));
+    v2 = (int *)((unsigned int *)((int *)(*(int (**)(void *, int *))(*(unsigned int *)v1 + 72))(v1, v33)));
     v3 = (unsigned int *)(ActionQueue::PushEntry(v0, *v2, v2[1], v2[2]));
   }
   else
@@ -76,7 +76,7 @@ void PsyDom::Fire()
   v3[4] = (unsigned int)((void **)(1));
   v4 = (void *)g_RulesClass_Instance->PrerequisitePower[1]; /*0x53b0e6*/
   v5 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&PsyDom_Coords); /*0x53b0f1*/
-  v6 = (int *)(*(int (__thiscall **)(void *, int *))(*(unsigned int *)v5 + 72))(v5, v33); /*0x53b0ff*/
+  v6 = (int *)(*(int (**)(void *, int *))(*(unsigned int *)v5 + 72))(v5, v33); /*0x53b0ff*/
   v32[0] = *v6; /*0x53b104*/
   v32[1] = v6[1]; /*0x53b110*/
   v32[2] = v6[2]; /*0x53b117*/
@@ -95,7 +95,7 @@ void PsyDom::Fire()
   v8 = g_RulesClass_Instance->PrerequisitePower[3]; /*0x53b176*/
   if ( v8 >= 10 ) /*0x53b17f*/
     v8 = 10; /*0x53b181*/
-  v9 = dword_7ED3D0[v8]; /*0x53b186*/
+  v9 = ((unsigned int *)(dword_7ED3D0))[v8]; /*0x53b186*/
   EventClass::resetEvent(&v35, 0, 0); /*0x53b193*/
   v40 = 10; /*0x53b1a2*/
   v39 = 0; /*0x53b1aa*/
@@ -105,8 +105,8 @@ void PsyDom::Fire()
     v29 = v9; /*0x53b1b9*/
     do
     {
-      v11 = *v10; /*0x53b1bd*/
-      IDA_HIWORD(v30) = IDA_HIWORD(*v10); /*0x53b1c6*/
+      v11 = *(unsigned int *)(v10); /*0x53b1bd*/
+      IDA_HIWORD(v30) = IDA_HIWORD(*(unsigned int *)(v10)); /*0x53b1c6*/
       IDA_HIWORD(v28) = IDA_HIWORD(PsyDom_Coords) + IDA_HIWORD(v30); /*0x53b1dd*/
       IDA_LOWORD(v28) = PsyDom_Coords + v11; /*0x53b1e2*/
       v30 = v28; /*0x53b1f7*/
@@ -115,20 +115,20 @@ void PsyDom::Fire()
       v12 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v30); /*0x53b203*/
       for ( i = Object::FindClosestObjectCell(v12, v31, 0, 0); i; i = (*(unsigned char *)(v24 + 20) & 1) != 0 ? v24 : 0 )
       {
-        if ( (*(int (__thiscall **)(int))(*(unsigned int *)i + 44))(i) != 6 /*0x53b26b*/
-          && !*(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)i + 132))(i) + 3381)
-          && !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)i + 352))(i)
-          && !*(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)i + 132))(i) + 3434)
-          && !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)i + 84))(i) )
+        if ( (*(int (**)(int))(*(unsigned int *)i + 44))(i) != 6 /*0x53b26b*/
+          && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)i + 132))(i) + 3381)
+          && !(*(uint8_t (**)(int))(*(unsigned int *)i + 352))(i)
+          && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)i + 132))(i) + 3434)
+          && !(*(uint8_t (**)(int))(*(unsigned int *)i + 84))(i) )
         {
           v14 = (void **)((int)((void **)(*(unsigned int *)(i + 704))));
           if ( v14 ) /*0x53b27e*/
             CaptureManagerClass::FreeUnit(*(unsigned int **)(v14 + 700), 0, (int)v10, (unsigned int *)i, v26, v27); /*0x53b287*/
-          (*(void (__thiscall **)(int, void *, int))(*(unsigned int *)i + 980))(i, PsyDom_Owner, 1); /*0x53b298*/
+          (*(void (**)(int, void *, int))(*(unsigned int *)i + 980))(i, PsyDom_Owner, 1); /*0x53b298*/
           v15 = *(unsigned int *)i; /*0x53b29e*/
           *(unsigned char *)(i + 708) = 1; /*0x53b2a2*/
-          v16 = *(unsigned int *)((*(int (__thiscall **)(int))(v15 + 132))(i) + 1548); /*0x53b2af*/
-          v17 = (int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)i + 72))(i, v34); /*0x53b2be*/
+          v16 = *(unsigned int *)((*(int (**)(int))(v15 + 132))(i) + 1548); /*0x53b2af*/
+          v17 = (int *)(*(int (**)(int, char *))(*(unsigned int *)i + 72))(i, v34); /*0x53b2be*/
           v18 = *v17; /*0x53b2c1*/
           v19 = v17[1]; /*0x53b2c3*/
           v20 = v17[2]; /*0x53b2c6*/
@@ -172,7 +172,7 @@ void PsyDom::Fire()
   if ( !(uint8_t)House::IsCurrentPlayer(PsyDom_Owner) ) /*0x53b39d*/
   {
     for ( j = v39 - 1; j >= 0; --j ) /*0x53b3af*/
-      (*(void (__thiscall **)(unsigned int, int, unsigned int))(**((unsigned int **)Block + j) + 488))(*((unsigned int *)Block + j), 15, 0); /*0x53b3bd*/
+      (*(void (**)(unsigned int, int, unsigned int))(**((unsigned int **)Block + j) + 488))(*((unsigned int *)Block + j), 15, 0); /*0x53b3bd*/
   }
   if ( Block ) /*0x53b3d4*/
   {

@@ -33,7 +33,7 @@ struct Struct {
     unsigned int u32_54;
     unsigned int u32_8;
 // --- flat members (END) ---
-    int ClearAllMemberFlags();
+    int ClearAllMemberFlags(void *a1 = 0);
     int ZeroInit32();
     int ZeroInitAndSetup();
     int ZeroInitAndSetup_0();

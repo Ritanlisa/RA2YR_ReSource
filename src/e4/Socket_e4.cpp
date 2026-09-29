@@ -18,18 +18,19 @@
 namespace gamemd {
 int Socket::ConfigureBuffers(AnimClass * aP1)
 {
-  SOCKET v2; // esi
+    unsigned int v2 = 0;  /* G37 hoist */
+  AnimClass * v2;
   int result; // eax
 
-  v2 = aP1; /*0x7b2631*/
-  if ( aP1 == -1 ) /*0x7b2638*/
+  v2 = (unsigned int)(aP1);
+  if ( aP1 == (gamemd::AnimClass *)(-1) ) /*0x7b2638*/
     v2 = this->u32_3F06C; /*0x7b263a*/
   if ( setsockopt(v2, 0xFFFF, 4098, optval, 4) == -1 ) /*0x7b265a*/
     WSAGetLastError(); /*0x7b265c*/
-  Debug::Log(); /*0x7b2667*/
+  this->Debug::Log(); /*0x7b2667*/
   if ( setsockopt(v2, 0xFFFF, 4097, byte_84DD9C, 4) == -1 ) /*0x7b2699*/
     WSAGetLastError(); /*0x7b269b*/
-  result = Debug::Log(); /*0x7b26a6*/
+  result = this->Debug::Log(); /*0x7b26a6*/
   IDA_LOBYTE(result) = 1; /*0x7b26ae*/
   return result; /*0x7b26b0*/
 }

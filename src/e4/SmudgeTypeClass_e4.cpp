@@ -37,10 +37,22 @@
 #include "e4/classes/SortedArray_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x6B5260
 SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
 {
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
   int v3; // eax
   bool v4; // zf
   int v5; // ecx
@@ -66,7 +78,7 @@ SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
   if ( dword_A8EC28 < dword_A8EC20 /*0x6b5322*/
     || (byte_A8EC25 || !dword_A8EC20)
     && dword_A8EC2C > 0
-    && (v4 = (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A8EC18 + 8))(
+    && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A8EC18 + 8))(
                &dword_A8EC18,
                dword_A8EC20 + dword_A8EC2C,
                0) == 0,
@@ -110,7 +122,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   int v13; // [esp+8h] [ebp-8h] BYREF
   int v14; // [esp+Ch] [ebp-4h]
 
-  v7 = (*((int (__thiscall **)(SmudgeTypeClass *))this->ObjectTypeClass + 39))(this); /*0x6b55ff*/
+  v7 = (*((int (**)(SmudgeTypeClass *))this->ObjectTypeClass + 39))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
     v8 = a2[1]; /*0x6b5614*/
@@ -150,7 +162,7 @@ int SmudgeTypeClass::GetSize(unsigned char *** aP1, void * a1, void * a2)
     this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
                     (bool *)a2,
                     (uint8_t *)this->Width,
-                    (uint8_t *)&stru_82BA00.?[151],
+                    (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 151),
                     Width);
     this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
                      (bool *)a2,
@@ -190,15 +202,15 @@ SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3, void * a1)
   }
   AbstractClass::AnnounceExpiredPointer(&this->ObjectTypeClass, 1); /*0x6b61a0*/
   v6 = this; /*0x6b61b5*/
-  v4 = (*(int (__thiscall **)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)&stru_A8EB00.?[52] + 16))( /*0x6b61b9*/
-         &stru_A8EB00.?[52],
+  v4 = (*(int (**)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 52) + 16))( /*0x6b61b9*/
+         &(unsigned int *)((char *)&stru_A8EB00 + 52),
          &v6);
-  if ( v4 != -1 && v4 < *(int *)&stru_A8EB00.?[68] ) /*0x6b61c9*/
+  if ( v4 != -1 && v4 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 68) ) /*0x6b61c9*/
   {
-    --*(unsigned int *)&stru_A8EB00.?[68]; /*0x6b61ce*/
+    --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 68); /*0x6b61ce*/
     for ( ; /*0x6b61d4*/
-          v4 < *(int *)&stru_A8EB00.?[68];
-          *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[56] + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[56] + 4 * v4) )
+          v4 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 68);
+          *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * v4) )
     {
       ++v4; /*0x6b61dc*/
     }

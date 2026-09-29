@@ -18,6 +18,10 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
 #include "e4/classes/DSurface_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/File_e4.hpp"
 
 // 0x7D038F
 namespace gamemd {
@@ -25,7 +29,7 @@ void __sbh_heap_check()
 {
   unsigned int *v2; // ebx
   unsigned int *v3; // esi
-  void *v4; // eax
+  int * v4;
   unsigned int *v5; // esi
   int v6; // ebx
   unsigned int *v7; // edx
@@ -46,7 +50,7 @@ void __sbh_heap_check()
   unsigned int *v23; // [esp+110h] [ebp-38h]
   int *v24; // [esp+114h] [ebp-34h]
   int v25; // [esp+118h] [ebp-30h]
-  int v26; // [esp+11Ch] [ebp-2Ch]
+  int * v26;
   int *v27; // [esp+120h] [ebp-28h]
   int v28; // [esp+124h] [ebp-24h]
   int v29; // [esp+128h] [ebp-20h]
@@ -71,9 +75,9 @@ void __sbh_heap_check()
     if ( !IsBadWritePtr(v3, 0x41C4u) ) /*0x7d03e6*/
     {
       v4 = (int *)((void *)v2[3]);
-      v26 = 0; /*0x7d03f7*/
-      lp = v4; /*0x7d03fa*/
-      v27 = v3 + 81; /*0x7d0403*/
+      v26 = (int *)(0);
+      lp = (int *)(v4);
+      v27 = (int *)(v3 + 81);
       v5 = v3 + 49; /*0x7d0409*/
       v32 = v2[2]; /*0x7d040f*/
       v31 = 0; /*0x7d0412*/
@@ -182,7 +186,7 @@ void __sbh_heap_check()
                 else
                 {
                   v28 |= 0x80000000 >> v35; /*0x7d05c8*/
-                  v26 |= 0x80000000 >> v35; /*0x7d05cb*/
+                  (unsigned int)(v26)|= 0x80000000 >> v35; /*0x7d05cb*/
                 }
               }
             }
@@ -209,7 +213,7 @@ void __sbh_heap_check()
         ++v25; /*0x7d0640*/
         v22 = ++v5; /*0x7d064a*/
       }
-      while ( v25 < 32 ); /*0x7d064d*/
+      while ( v25 < (int)((int *))(32) ); /*0x7d064d*/
       if ( v26 != *v2 || v31 != v2[1] ) /*0x7d0660*/
         return -17; /*0x7d06b9*/
       v2 += 5; /*0x7d0662*/
@@ -247,7 +251,7 @@ void _filbuf(MouseClass * aP0)
   unsigned char *v4; // edi
   int v5; // ecx
   char *ptr; // ecx
-  int result; // eax
+  char * result;
 
   flag = aP0->_flag; /*0x7d0708*/
   if ( (flag & 0x83) == 0 || (flag & 0x40) != 0 ) /*0x7d0715*/
@@ -288,10 +292,10 @@ void _filbuf(MouseClass * aP0)
     if ( (v5 & 8) != 0 && (v5 & 0x400) == 0 ) /*0x7d07b2*/
       aP0->_bufsiz = 4096; /*0x7d07b4*/
   }
-  ptr = (unsigned int)(aP0->_ptr);
-  aP0->_cnt = v2 - 1; /*0x7d07be*/
-  result = (uint8_t)*ptr; /*0x7d07c1*/
-  aP0->_ptr = ptr + 1; /*0x7d07c5*/
+  ptr = (char *)((unsigned int)(aP0->_ptr));
+  aP0->_cnt = (unsigned int)(v2 - 1);
+  result = (char *)((unsigned int)((uint8_t)*ptr));
+  aP0->_ptr = (unsigned int)(ptr + 1);
   return result; /*0x7d07c7*/
 }
 }
@@ -474,14 +478,14 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
 
   v3 = (char *)aP1; /*0x7d0a25*/
   v4 = (char *)a0; /*0x7d0a2b*/
-  if ( a0 > aP1 && a0 < (char *)aP1 + aP2 ) /*0x7d0a3a*/
+  if ( a0 > aP1 && a0 < ((unsigned int)(char)*)(unsigned int)(aP1)+ aP2 ) /*0x7d0a3a*/
   {
-    v7 = (char *)aP1 + aP2 - 4; /*0x7d0bb8*/
-    v8 = (char *)a0 + aP2 - 4; /*0x7d0bbc*/
+    v7 = (char *)(unsigned int)(aP1)+ aP2 - 4; /*0x7d0bb8*/
+    v8 = (char *)(unsigned int)(a0)+ aP2 - 4; /*0x7d0bbc*/
     if ( ((uint8_t)v8 & 3) == 0 ) /*0x7d0bc6*/
     {
-      v9 = aP2 >> 2; /*0x7d0bc8*/
-      if ( aP2 >> 2 >= 8 ) /*0x7d0bd1*/
+      v9 = (unsigned int)(aP2)>> 2; /*0x7d0bc8*/
+      if ( (unsigned int)(aP2)>> 2 >= 8 ) /*0x7d0bd1*/
       {
         while ( v9 ) /*0x7d0bd4*/
         {
@@ -490,7 +494,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
           v8 -= 4; /*0x7d0bd4*/
           --v9; /*0x7d0bd4*/
         }
-        switch ( aP2 & 3 ) /*0x7d0bd7*/
+        switch ( (unsigned int)(aP2)& 3 ) /*0x7d0bd7*/
         {
           case 0u: /*0x7d0bd7*/
             goto TrailDown0_0;
@@ -502,7 +506,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
             goto TrailDown3_0;
         }
       }
-      switch ( aP2 & 3 ) /*0x7d0cf7*/
+      switch ( (unsigned int)(aP2)& 3 ) /*0x7d0cf7*/
       {
         case 0u: /*0x7d0cf7*/
           goto TrailDown0_0;
@@ -518,7 +522,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
     {
       case 0u: /*0x7d0c04*/
   TrailDown0_0:
-        result = a0; /*0x7d0d10*/
+        result = (gamemd::exception **)(a0);
         break; /*0x7d0d16*/
       case 1u: /*0x7d0c04*/
   TrailDown1_0:
@@ -547,11 +551,11 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
   {
     if ( ((uint8_t)a0 & 3) != 0 ) /*0x7d0a46*/
     {
-      if ( aP2 >= 4 ) /*0x7d0a66*/
+      if ( aP2 >= (gamemd::AbstractClass *)(4) ) /*0x7d0a66*/
         __asm { jmp dword ptr ds:loc_7D0A7C+4[eax*4] } /*0x7d0a6d*/
       __asm { jmp dword ptr ds:TrailUp0_0[ecx*4]; jumptable 007D0A55 case 0 } /*0x7d0a74*/
     }
-    v5 = aP2 >> 2; /*0x7d0a48*/
+    v5 = (unsigned int)(aP2)>> 2; /*0x7d0a48*/
     switch ( v5 ) /*0x7d0a7c*/
     {
       case 0u: /*0x7d0a7c*/
@@ -585,7 +589,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
         v3 = (char *)aP1 + 4 * v5; /*0x7d0b5b*/
         v4 = (char *)a0 + 4 * v5; /*0x7d0b5d*/
   UnwindUp0_0:
-        switch ( aP2 & 3 ) /*0x7d0b5f*/
+        switch ( (unsigned int)(aP2)& 3 ) /*0x7d0b5f*/
         {
           case 0u: /*0x7d0b5f*/
             goto TrailUp0_0;
@@ -600,7 +604,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
         qmemcpy(a0, aP1, 4 * v5); /*0x7d0a53*/
         v3 = (char *)aP1 + 4 * v5; /*0x7d0a53*/
         v4 = (char *)a0 + 4 * v5; /*0x7d0a53*/
-        switch ( aP2 & 3 ) /*0x7d0a55*/
+        switch ( (unsigned int)(aP2)& 3 ) /*0x7d0a55*/
         {
           case 0u: /*0x7d0a55*/
   TrailUp0_0:
@@ -655,7 +659,7 @@ void _write_lk(int FileHandle, unsigned char * lpBuffer, DWORD nNumberOfBytesToW
     return 0; /*0x7d0dd1*/
   v4 = (unsigned int *)(4 * (FileHandle >> 5) + 12028544); /*0x7d0de0*/
   v5 = 36 * (FileHandle & 0x1F); /*0x7d0df2*/
-  if ( (*(unsigned char *)(dword_B78A80[FileHandle >> 5] + v5 + 4) & 0x20) != 0 ) /*0x7d0dfa*/
+  if ( (*(unsigned char *)(((unsigned int *)(dword_B78A80))[FileHandle >> 5] + v5 + 4) & 0x20) != 0 ) /*0x7d0dfa*/
     _lseek_lk(FileHandle, 0, 2u); /*0x7d0e02*/
   v6 = v5 + dword_B78A80[FileHandle >> 5]; /*0x7d0e0c*/
   if ( *(char *)(v6 + 4) >= 0 ) /*0x7d0e12*/
@@ -886,7 +890,7 @@ ControlClass * * __crtLCMapStringA(CampaignScore * aP0, DWORD dwMapFlags, Object
     if ( !v17 ) /*0x7d12d9*/
       return 0; /*0x7d12d9*/
   }
-  return v14; /*0x7d1255*/
+  return (gamemd::ControlClass **)(v14);
 }
 }
 // 0x7D1311

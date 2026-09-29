@@ -25,7 +25,7 @@ struct DialogClass {
     unsigned int q520;  // 0x520
 // --- flat members (END) ---
     ATOM RegisterWinClasses();
-    int GetFlag();
+    int GetFlag(void *a1 = 0);
     int Reposition(SkirmishDialog * aP0, LPARAM a2);
 };
 

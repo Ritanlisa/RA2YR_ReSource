@@ -10,6 +10,9 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Trigger_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x728C00
 namespace gamemd {
@@ -81,7 +84,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
       }
       if ( (IDA_BYTE1(_EAX) & 0x41) == 0 ) /*0x728c84*/
       {
-        *(unsigned int *)v10 = *(unsigned int *)(*((int (__thiscall **)(FootClass *, unsigned char *))a1->?->TechnoClass + 110))( /*0x728c9e*/
+        *(unsigned int *)v10 = *(unsigned int *)(*((int (**)(FootClass *, unsigned char *))a1->?->TechnoClass + 110))( /*0x728c9e*/
                                       a1->?,
                                       v13);
         v11[0] = 0; /*0x728cc4*/
@@ -187,7 +190,7 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
     {
       *(unsigned int *)a1->LocomotionClass = (void*)&LocomotionClass_vftable; /*0x72a16a*/
       *(unsigned int *)&a1->LocomotionClass[4] = (void*)&LocomotionClass_vftable; /*0x72a170*/
-      v3 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x72a177*/
+      v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x72a177*/
       a1->CurrentState[6] = 0; /*0x72a17d*/
       a1->CurrentState[4] = v3; /*0x72a180*/
       a1->CurrentState[7] = 0; /*0x72a183*/

@@ -24,12 +24,16 @@
 #include "e4/classes/MSBitPrintAnim_e4.hpp"
 #include "e4/classes/MSEngine_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/GameLoop_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x5C0DD0
 namespace gamemd {
 unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
-  MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
+  ((MultiplayerGameMode *)(a1))->Construct(aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
   *(unsigned int *)this->MPGameModeClass = (void*)&MultiplayerBattle_vftable; /*0x5c0df8*/
   return this->MPGameModeClass; /*0x5c0e00*/
 }
@@ -38,7 +42,7 @@ unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * 
 namespace gamemd {
 unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6)
 {
-  MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
+  ((MultiplayerGameMode *)(a1))->Construct(aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
   *(unsigned int *)this->MPGameModeClass = (void*)&FreeForAll_vftable; /*0x5c5d08*/
   return this->MPGameModeClass; /*0x5c5d10*/
 }
@@ -47,7 +51,7 @@ unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll 
 namespace gamemd {
 unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6)
 {
-  MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c6173*/
+  ((MultiplayerGameMode *)(a1))->Construct(aP2, a3, aP4, aP5, aP6); /*0x5c6173*/
   *(unsigned int *)this->MPGameModeClass = (void*)&MultiplayerManBattle_vftable; /*0x5c6178*/
   return this->MPGameModeClass; /*0x5c6180*/
 }
@@ -56,7 +60,7 @@ unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerM
 namespace gamemd {
 unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6)
 {
-  MultiplayerGameMode::Construct(a1, a2, a3, aP4, aP5, aP6); /*0x5c9403*/
+  ((MultiplayerGameMode *)(a1))->Construct(a2, a3, aP4, aP5, aP6); /*0x5c9403*/
   *(unsigned int *)this->MPGameModeClass = (void*)&Megawealth_vftable; /*0x5c9408*/
   return this->MPGameModeClass; /*0x5c9410*/
 }
@@ -65,7 +69,7 @@ unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar
 namespace gamemd {
 unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6)
 {
-  MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
+  ((MultiplayerGameMode *)(a1))->Construct(aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
   *(unsigned int *)this->MPGameModeClass = (void*)&MultiplayerSiege_vftable; /*0x5ca658*/
   return this->MPGameModeClass; /*0x5ca660*/
 }
@@ -74,7 +78,7 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
 namespace gamemd {
 int MPBattleClass::vt_entry_18()
 {
-  return ScenarioClass::createStartingForces();
+  return this->ScenarioClass::createStartingForces();
 }
 }
 // 0x5CACF0

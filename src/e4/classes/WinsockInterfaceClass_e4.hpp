@@ -12,7 +12,7 @@ struct WinsockInterfaceClass {
     unsigned short BoundPort;  // 0x6
     unsigned int u32_8;  // 0x8
 // --- flat members (END) ---
-    SOCKET * Destru_vt00(char a2);
+    unsigned int * Destru_vt00(char a2);
     WinsockInterfaceClass();
     char Destru_vt15(int a1);
     int Destru_vt13();

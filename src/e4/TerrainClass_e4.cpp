@@ -36,6 +36,8 @@
 #include "e4/classes/RandomMap_e4.hpp"
 #include "e4/classes/TiberiumClass_e4.hpp"
 #include "e4/classes/TemporalClass_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
 
 // 0x6DD8B0
 namespace gamemd {
@@ -64,7 +66,7 @@ AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, vo
   IUnknown *v52; // edi
   int i; // eax
   TerrainTypeClass *v54; // esi
-  int ecx134; // ecx
+  CellStruct * ecx134;
   ScenarioClass *v61; // eax
   AbstractClass *v67; // ebx
   CellStruct **v70; // eax
@@ -98,73 +100,74 @@ AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, vo
   int v10 = 0;
   if ( a4 && !*((unsigned char *)a4 + 144) )
     v9 = 0;
-  switch ( *(unsigned int *)(a1 + 44) )
+  switch ( *(unsigned int *)((unsigned int)(a1)+ 44) )
   {
+    unsigned int v45 = 0;  /* G37 hoist */
   char v134[4]; // [esp+30h] [ebp-220h] BYREF
     case 1:
       v22 = (IUnknown *)HouseClass_Player.field_0;
       char v122 = 0;
-      if ( *(unsigned int *)(a1 + 144) != *(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 52) + 184) )
+      if ( *(unsigned int *)((unsigned int)(a1)+ 144) != *(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 52) + 184) )
         goto LABEL_60;
       goto LABEL_162;
     case 2:
       v22 = (IUnknown *)HouseClass_Player.field_0;
       v122 = 0;
-      if ( *(unsigned int *)(a1 + 144) == *(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 52) + 184) )
+      if ( *(unsigned int *)((unsigned int)(a1)+ 144) == *(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 52) + 184) )
         goto LABEL_60;
 LABEL_162:
       HouseClass::CheckWinCondition((int)v22, 0);
       return 1;
     case 3:
-      Owner = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      Owner = ObjectClass::FindOwner(a5, *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !Owner )
         return 0;
       *(unsigned char *)(Owner + 494) = 1;
       return 1;
     case 4:
-      ++*(unsigned int *)&HouseClass_Player[43616];
-      int v76 = *(unsigned int *)(a1 + 48);
+      ++*(unsigned int *)&((unsigned int *)(HouseClass_Player))[43616];
+      int v76 = *(unsigned int *)((unsigned int)(a1)+ 48);
       if ( v76 )
         TeamClass::CreateOneOf(v76, 0);
-      --*(unsigned int *)&HouseClass_Player[43616];
+      --*(unsigned int *)&((unsigned int *)(HouseClass_Player))[43616];
       return 1;
     case 5:
-      void * v77 = *(void **)(a1 + 48);
+      void * v77 = *(void **)((unsigned int)(a1)+ 48);
       if ( !v77 )
         return 1;
       TeamTypeClass::DestroyAllInstances(v77);
       return 1;
     case 6:
-      int v81 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v81 = ObjectClass::FindOwner(a5, *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v81 )
         return 0;
       (*(void (__stdcall **)(int))(*(unsigned int *)(v81 + 36) + 56))(v81 + 36);
       return 1;
     case 7:
-      int v78 = *(unsigned int *)(a1 + 48);
+      int v78 = *(unsigned int *)((unsigned int)(a1)+ 48);
       if ( !v78 )
         return 0;
       return DeployScriptActionPlane(v78, -1);
     case 8:
       return TActionClass::executeRetreatAction((int *)a1, aP1, (int)v9, (int)a5, aP4);
     case 9:
-      int v74 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v74 = ObjectClass::FindOwner(a5, *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v74 )
         return 0;
       *(unsigned int *)(v74 + 592) = 4;
       return 1;
     case 0xA:
-      MouseClass::LoadCursors();
-      (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 20))(*(unsigned int *)&stru_87C374[45772]);
+      this->MouseClass::LoadCursors();
+      (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned int *)(stru_87C374))[45772] + 20))(*(unsigned int *)&((unsigned int *)(stru_87C374))[45772]);
       ToggleDisplayMode(0);
-      Movie::PlayWrapper(*(unsigned int *)(a1 + 144), 0, (int)a2, 1, 1, 1);
+      Movie::PlayWrapper(*(unsigned int *)((unsigned int)(a1)+ 144), 0, (int)a2, 1, 1, 1);
       ToggleDisplayMode(1);
-      (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 24))(*(unsigned int *)&stru_87C374[45772]);
-      LoadingScreen::FreeResources3();
+      (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned int *)(stru_87C374))[45772] + 24))(*(unsigned int *)&((unsigned int *)(stru_87C374))[45772]);
+      this->LoadingScreen::FreeResources3();
       return 1;
     case 0xB:
-      int v43 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 13496);
-      v44 = *(unsigned char *)(a1 + 109) != 0 ? (wchar_t *)(a1 + 109) : 0;
+      int v43 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 13496);
+      v44 = *(unsigned char *)((unsigned int)(a1)+ 109) != 0 ? (wchar_t *)((unsigned int)(a1)+ 109) : 0;
       if ( v43 )
         int v45 = v43 != 1 ? 5 : 1;
       else
@@ -172,10 +175,10 @@ LABEL_162:
       PlayerColorScheme = SessionClass::GetPlayerColorScheme((ObjectClass *)v45);
       if ( !v44 )
         return 1;
-      int v121 = Math::RoundToInt(*(double *)(*(unsigned int *)&stru_87C374[44652] + 5312) * 900.0);
-      StringCSF = (wchar_t *)(GetStringCSF(v44, 0, &stru_830620[75224], 1766));
+      int v121 = Math::RoundToInt(*(double *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 5312) * 900.0);
+      StringCSF = (wchar_t *)(GetStringCSF(v44, 0, &((unsigned int *)(stru_830620))[75224], 1766));
       MessageListClass::AddMessage(
-        &HouseClass_Player[32532],
+        &((unsigned int *)(HouseClass_Player))[32532],
         0,
         0,
         (CellStruct *)StringCSF,
@@ -185,22 +188,22 @@ LABEL_162:
         0);
       return 1;
     case 0xC:
-      if ( !*(unsigned int *)(a1 + 80) )
+      if ( !*(unsigned int *)((unsigned int)(a1)+ 80) )
         return 1;
-      int v87 = *(unsigned int *)&HouseClass_Player[44460] - 1;
-      if ( *(unsigned int *)&HouseClass_Player[44460] - 1 < 0 )
+      int v87 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[44460] - 1;
+      if ( *(unsigned int *)&((unsigned int *)(HouseClass_Player))[44460] - 1 < 0 )
         return 1;
       do
       {
-        int v88 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[44448] + 4 * v87);
-        if ( *(unsigned int *)(v88 + 36) == *(unsigned int *)(a1 + 80) )
+        int v88 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[44448] + 4 * v87);
+        if ( *(unsigned int *)(v88 + 36) == *(unsigned int *)((unsigned int)(a1)+ 80) )
           TeamClass::AddToBuildQueue((unsigned char *, unsigned int a1, unsigned int a5)v88);
         --v87;
       }
       while ( v87 >= 0 );
       return 1;
     case 0xD:
-      int v75 = ObjectClass::FindOwner(a5, *(AnimClass **)(a1 + 144));
+      int v75 = ObjectClass::FindOwner(a5, *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v75 )
         return 0;
       *(unsigned char *)(v75 + 495) = 1;
@@ -218,69 +221,69 @@ LABEL_162:
       {
         Conditions::CheckResult(i + 36, (IUnknown *, unsigned int a1, unsigned int a5)HouseClass_Player.field_0);
       }
-      MapClass::MarkForRedraw(&stru_87C374[13428], 1);
+      MapClass::MarkForRedraw(&((unsigned int *)(stru_87C374))[13428], 1);
       return 1;
     case 0x11:
       return TActionClass::RevealWaypointArea((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x12:
       return TActionClass::RevealTileTypeAtWaypoint((int *)a1, (int)aP1, (int)v9, (int)a5, (IUnknown *)aP4);
     case 0x13:
-      PlayVocClass(*(unsigned int *)(a1 + 144), 0x2000, 1.0, 0);
+      PlayVocClass(*(unsigned int *)((unsigned int)(a1)+ 144), 0x2000, 1.0, 0);
       return 1;
     case 0x14:
-      Theme::QueueSong((int)&g_BuildingTypeClass_Count, *(IUnknown **)(a1 + 144));
+      Theme::QueueSong((int)&g_BuildingTypeClass_Count, *(IUnknown **)((unsigned int)(a1)+ 144));
       return 1;
     case 0x15:
-      UpdateThemeManager(*(unsigned int *)(a1 + 144), 2, -1);
+      UpdateThemeManager(*(unsigned int *)((unsigned int)(a1)+ 144), 2, -1);
       return 1;
     case 0x16:
-      if ( !*(unsigned int *)(a1 + 80) )
+      if ( !*(unsigned int *)((unsigned int)(a1)+ 80) )
         return 1;
       int v93 = 0;
-      if ( *(int *)&HouseClass_Player[44460] <= 0 )
+      if ( *(int *)&((unsigned int *)(HouseClass_Player))[44460] <= 0 )
         return 1;
       do
       {
-        int v94 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[44448] + 4 * v93);
-        if ( *(unsigned int *)(v94 + 36) == *(unsigned int *)(a1 + 80) )
+        int v94 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[44448] + 4 * v93);
+        if ( *(unsigned int *)(v94 + 36) == *(unsigned int *)((unsigned int)(a1)+ 80) )
           BuildingClass::ExecuteTriggers(v94, 0, *(TriggerClass **)&stru_B05488[37368]);
         ++v93;
       }
-      while ( v93 < *(int *)&HouseClass_Player[44460] );
+      while ( v93 < *(int *)&((unsigned int *)(HouseClass_Player))[44460] );
       return 1;
     case 0x17:
-      if ( *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584) != -1 )
+      if ( *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) != -1 )
         return 1;
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584) = *(unsigned int *)&HouseClass_Player[45112];
-      ObjectClass::PreDraw(&stru_87C374[13428]);
+      *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112];
+      ObjectClass::PreDraw(&((unsigned int *)(stru_87C374))[13428]);
       return 1;
     case 0x18:
-      v54 = (TerrainTypeClass *)(*(unsigned int *)&HouseClass_Player[29924] + 4584);
-      if ( *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584) == -1 )
+      v54 = (TerrainTypeClass *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584);
+      if ( *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) == -1 )
         return 1;
-      *(unsigned int *)&v54->__pad_0[8] = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924]
+      *(unsigned int *)&v54-((unsigned int *)(>__pad_0))[8] = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924]
                                                                       + 4584));
       *(unsigned int *)v54->__pad_0 = -1;
-      ObjectClass::PreDraw(&stru_87C374[13428]);
+      ObjectClass::PreDraw(&((unsigned int *)(stru_87C374))[13428]);
       return 1;
     case 0x19:
       int v57 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
-      Timer::Start(&v131, (DynamicVector *)(15 * *(unsigned int *)(a1 + 144) + v57));
-      int v58 = *(unsigned int *)&HouseClass_Player[29924] + 4584;
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584) = v131;
+      Timer::Start(&v131, (DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144) + v57));
+      int v58 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
+      *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v131;
   int v132; // [esp+28h] [ebp-228h]
       *(unsigned int *)(v58 + 4) = v132;
   int v133; // [esp+2Ch] [ebp-224h]
       *(unsigned int *)(v58 + 8) = v133;
-      ObjectClass::PreDraw(&stru_87C374[13428]);
+      ObjectClass::PreDraw(&((unsigned int *)(stru_87C374))[13428]);
       return 1;
     case 0x1A:
-      if ( CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584)) > 15 * *(unsigned int *)(a1 + 144) )
+      if ( CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584)) > 15 * *(unsigned int *)((unsigned int)(a1)+ 144) )
       {
         int v60 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
-        Timer::Start(&v113, (DynamicVector *)(v60 - 15 * *(unsigned int *)(a1 + 144)));
-        ecx134 = *(unsigned int *)&HouseClass_Player[29924] + 4584;
-        *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584) = v113;
+        Timer::Start(&v113, (DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
+        ecx134 = (gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584);
+        *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v113;
         *(unsigned int *)(ecx134 + 4) = v128;
         *(unsigned int *)(ecx134 + 8) = GroundHeight;
         ObjectClass::PreDraw(&stru_87C374[13428]);
@@ -288,24 +291,24 @@ LABEL_162:
       else
       {
         Timer::Start(&v131, 0);
-        int v59 = *(unsigned int *)&HouseClass_Player[29924] + 4584;
-        *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584) = v131;
+        int v59 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
+        *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v131;
         *(unsigned int *)(v59 + 4) = v132;
         *(unsigned int *)(v59 + 8) = v133;
         ObjectClass::PreDraw(&stru_87C374[13428]);
       }
       return 1;
     case 0x1B:
-      Timer::Start(&v131, (DynamicVector *)(15 * *(unsigned int *)(a1 + 144)));
-      int v62 = *(unsigned int *)&HouseClass_Player[29924] + 4584;
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584) = v131;
+      Timer::Start(&v131, (DynamicVector *)(15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
+      int v62 = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584;
+      *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v131;
       *(unsigned int *)(v62 + 4) = v132;
       *(unsigned int *)(v62 + 8) = v133;
-      v61 = *(ScenarioClass **)&HouseClass_Player[29924];
-      if ( *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584) == -1 )
+      v61 = *(ScenarioClass **)&((unsigned int *)(HouseClass_Player))[29924];
+      if ( *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) == -1 )
       {
-        *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584) = *(unsigned int *)&HouseClass_Player[45112];
-        v61 = *(ScenarioClass **)&HouseClass_Player[29924];
+        *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = *(unsigned int *)&((unsigned int *)(HouseClass_Player))[45112];
+        v61 = *(ScenarioClass **)&((unsigned int *)(HouseClass_Player))[29924];
       }
       v61->missionTimer_text_csf = &stru_87C374[46016];
       ScriptAction::CopyStringField(Destination, &stru_87C374[56304]);
@@ -455,7 +458,7 @@ LABEL_157:
       *(unsigned int *)(*(unsigned int *)&stru_87C374[44976] + 196) = *(unsigned int *)(v83 + 4);
       HouseClass_Player[45136] = 1;
       Timer::PumpMessages(*(HWND **)&stru_87C374[13308]);
-      (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 12))(*(unsigned int *)&stru_87C374[45772]);
+      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 12))(*(unsigned int *)&stru_87C374[45772]);
       Mouse::ReleaseCapture(&stru_87C374[13428]);
       MapClass::MarkForRedraw(&stru_87C374[13428], 0);
       TacticalMap::Redraw(&stru_87C374[13428]);
@@ -466,7 +469,7 @@ LABEL_157:
       *(unsigned int *)(*(unsigned int *)&stru_87C374[44976] + 196) = 1072693248;
       Timer::PumpMessages(*(HWND **)&stru_87C374[13308]);
       HouseClass_Player[45136] = *(unsigned char *)(*(unsigned int *)&HouseClass_Player[29924] + 13730);
-      (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
+      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374[45772] + 16))(*(unsigned int *)&stru_87C374[45772]);
       MapClass::MarkForRedraw(&stru_87C374[13428], 0);
       TacticalMap::Redraw(&stru_87C374[13428]);
       return 1;
@@ -568,7 +571,7 @@ LABEL_157:
               {
                 if ( LinkedList_flat::Contains(v34, a5) )
                 {
-                  (*(void (__thiscall **)(int, int))(*(unsigned int *)v33 + 416))(v33, 1);
+                  (*(void (**)(int, int))(*(unsigned int *)v33 + 416))(v33, 1);
                   v31 = 1;
                 }
               }
@@ -671,7 +674,7 @@ LABEL_60:
           int v92 = *(unsigned int *)&v86->__pad_0[4 * v90];
           if ( v92 )
           {
-            (*(void (__thiscall **)(int, int))(*(unsigned int *)v92 + 32))(v92, 1);
+            (*(void (**)(int, int))(*(unsigned int *)v92 + 32))(v92, 1);
             v86 = *(CCINIClass **)&stru_B05488[37532];
           }
           --v90;
@@ -742,14 +745,14 @@ LABEL_60:
       do
       {
         int v19 = *(unsigned int *)(*(unsigned int *)&stru_89E138[89228] + 4 * v18);
-        if ( !(*(int (__thiscall **)(int))(*(unsigned int *)v19 + 388))(v19)
+        if ( !(*(int (**)(int))(*(unsigned int *)v19 + 388))(v19)
           && *(int *)(v19 + 108) > 0
           && *(unsigned char *)(v19 + 144)
           && *(unsigned char *)(v19 + 116)
           && !*(unsigned char *)(v19 + 129)
           && aP1 != *(AbstractClass **)(v19 + 540) )
         {
-          (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v19 + 488))(v19, 5, 0);
+          (*(void (**)(int, int, unsigned int))(*(unsigned int *)v19 + 488))(v19, 5, 0);
         }
         ++v18;
       }
@@ -762,14 +765,14 @@ LABEL_60:
       do
       {
         int v21 = *(unsigned int *)(*(unsigned int *)&stru_89E138[89228] + 4 * v20);
-        if ( (*(int (__thiscall **)(int))(*(unsigned int *)v21 + 388))(v21) == 23
+        if ( (*(int (**)(int))(*(unsigned int *)v21 + 388))(v21) == 23
           && *(int *)(v21 + 108) > 0
           && *(unsigned char *)(v21 + 144)
           && *(unsigned char *)(v21 + 116)
           && !*(unsigned char *)(v21 + 129)
           && *(AbstractClass **)(v21 + 540) == aP1 )
         {
-          (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v21 + 488))(v21, 5, 0);
+          (*(void (**)(int, int, unsigned int))(*(unsigned int *)v21 + 488))(v21, 5, 0);
         }
         ++v20;
       }
@@ -783,15 +786,15 @@ LABEL_60:
       {
         unsigned int * v23 = *(unsigned int **)(*(unsigned int *)&HouseClass_Player[44848] + 4 * ebx47);
         if ( v23[133] == *(unsigned int *)(a1 + 144)
-          && (!(*(int (__thiscall **)(unsigned int))(*v23 + 388))(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[44848]
+          && (!(*(int (**)(unsigned int))(*v23 + 388))(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[44848]
                                                                       + 4 * ebx47))
-           || (*(int (__thiscall **)(unsigned int *))(*v23 + 388))(v23) == 23)
+           || (*(int (**)(unsigned int *))(*v23 + 388))(v23) == 23)
           && (int)v23[27] > 0
           && *((unsigned char *)v23 + 144)
           && *((unsigned char *)v23 + 116)
           && !*((unsigned char *)v23 + 129) )
         {
-          (*(void (__thiscall **)(unsigned int *, int, unsigned int))(*v23 + 488))(v23, 5, 0);
+          (*(void (**)(unsigned int *, int, unsigned int))(*v23 + 488))(v23, 5, 0);
         }
         ++ebx47;
       }
@@ -843,9 +846,9 @@ LABEL_60:
         unsigned char * v104 = *(unsigned char **)&dword_A8020C->__pad_0[4 * v103];
         if ( v104[144] )
         {
-          unsigned short * v105 = (unsigned short *)(*(int (__thiscall **)(unsigned char *, char *))(*(unsigned int *)v104 + 440))(v104, v134);
+          unsigned short * v105 = (unsigned short *)(*(int (**)(unsigned char *, char *))(*(unsigned int *)v104 + 440))(v104, v134);
           if ( CellStruct::Equals(v105, &v112) )
-            (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)v104 + 248))(v104);
+            (*(void (**)(unsigned char *))(*(unsigned int *)v104 + 248))(v104);
         }
         ++v103;
       }
@@ -874,7 +877,7 @@ LABEL_60:
               {
                 if ( LinkedList_flat::Contains(v17, a5) )
                 {
-                  (*(void (__thiscall **)(int))(*(unsigned int *)v16 + 1300))(v16);
+                  (*(void (**)(int))(*(unsigned int *)v16 + 1300))(v16);
                   v14 = 1;
                 }
               }

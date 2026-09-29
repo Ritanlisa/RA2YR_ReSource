@@ -33,6 +33,9 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/SortedArray_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6F19B0
 namespace gamemd {
@@ -56,28 +59,27 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/
-    if ( *(int *)&stru_A8EB00.?[204] > 0 ) /*0x6f1a2e*/
+    if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 204) > 0 ) /*0x6f1a2e*/
     {
-      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[192] + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
+      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
       {
-        if ( ++v7 >= *(int *)&stru_A8EB00.?[204] ) /*0x6f1a56*/
+        if ( ++v7 >= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 204) ) /*0x6f1a56*/
           goto LABEL_7; /*0x6f1a56*/
       }
-      Base = *(unsigned int **)(*(unsigned int *)&stru_A8EB00.?[192] + 4 * v7); /*0x6f1a7f*/
+      Base = (unsigned int *)((gamemd::TeamTypeClass *)(*(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 192) + 4 * v7)));
       goto LABEL_11; /*0x6f1a82*/
     }
-  LABEL_7:
-    v8 = (TeamTypeClass *)RA2_OPNEW(0xF8u); /*0x6f1a5d*/
+  LABEL_7: v8 = (gamemd::TeamTypeClass **)((TeamTypeClass *)RA2_OPNEW(0xF8u));
     if ( v8 ) /*0x6f1a67*/
       Base = TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
     else
   LABEL_10:
       Base = 0; /*0x6f1a84*/
   LABEL_11:
-    result = (*(int (__thiscall **)(unsigned int *, INIClass *))(*Base + 100))(Base, a1); /*0x6f1a86*/
+    result = (*(int (**)(unsigned int *, INIClass *))(*Base + 100))(Base, a1); /*0x6f1a86*/
     ++i; /*0x6f1a8e*/
   }
-  return result; /*0x6f1aa2*/
+  return (gamemd::TeamTypeClass **)(result);
 }
 }
 // 0x40D1B0
@@ -179,17 +181,17 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 {
   int v2; // eax
 
-  LocomotionClass::Init(); /*0x5afef3*/
-  this->MovingDestination[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
-  this->MovingDestination[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff0a*/
-  this->MovingDestination[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
-  this->HeadToCoord[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff1e*/
-  this->HeadToCoord[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff26*/
+  this->LocomotionClass::Init(); /*0x5afef3*/
+  this-((unsigned int *)(>MovingDestination))[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
+  this-((unsigned int *)(>MovingDestination))[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff0a*/
+  this-((unsigned int *)(>MovingDestination))[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
+  this-((unsigned int *)(>HeadToCoord))[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff1e*/
+  this-((unsigned int *)(>HeadToCoord))[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff26*/
   v2 = g_MissionQueueFrame.localVariables[229]; /*0x5aff29*/
   this->IsMoving = 0; /*0x5aff2e*/
   *(unsigned int *)this->LocomotionClass = (void*)&MechLocomotionClass_vftable; /*0x5aff32*/
-  this->HeadToCoord[2] = v2; /*0x5aff38*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&MechLocomotionClass_vftable; /*0x5aff3b*/
+  this-((unsigned int *)(>HeadToCoord))[2] = v2; /*0x5aff38*/
+  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&MechLocomotionClass_vftable; /*0x5aff3b*/
   return (int)this->LocomotionClass; /*0x5aff44*/
 }
 } // namespace gamemd
@@ -288,17 +290,17 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
 namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
-  LocomotionClass::Init(); /*0x728a03*/
-  this->CurrentState[0] = 0; /*0x728a0d*/
-  this->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
-  this->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/
-  this->CurrentState[3] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728a27*/
-  this->CurrentState[4] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x728a30*/
-  this->CurrentState[6] = 0; /*0x728a33*/
-  this->CurrentState[7] = 0; /*0x728a36*/
+  this->LocomotionClass::Init(); /*0x728a03*/
+  this-((unsigned int *)(>CurrentState))[0] = 0; /*0x728a0d*/
+  this-((unsigned int *)(>CurrentState))[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
+  this-((unsigned int *)(>CurrentState))[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/
+  this-((unsigned int *)(>CurrentState))[3] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728a27*/
+  this-((unsigned int *)(>CurrentState))[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x728a30*/
+  this-((unsigned int *)(>CurrentState))[6] = 0; /*0x728a33*/
+  this-((unsigned int *)(>CurrentState))[7] = 0; /*0x728a36*/
   IDA_LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/
   *(unsigned int *)this->LocomotionClass = (void*)&TunnelLocomotionClass_vftable; /*0x728a3c*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&TunnelLocomotionClass_vftable; /*0x728a42*/
+  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&TunnelLocomotionClass_vftable; /*0x728a42*/
   return (int)this->LocomotionClass; /*0x728a4b*/
 }
 } // namespace gamemd

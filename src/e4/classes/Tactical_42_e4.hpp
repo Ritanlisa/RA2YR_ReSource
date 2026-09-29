@@ -16,11 +16,11 @@ struct Tactical_42 {
 // --- flat members (END) ---
     int FindItem(unsigned int * a2);  // 0x6E4A80
     unsigned int * loc_6E4B00(char a2);  // 0x6E4B00
-    void ClearBuffer();  // 0x6E47F0
+    void ClearBuffer(void *a1 = 0);  // 0x6E47F0
     int UpdateView(int a2);  // 0x6E4840
     char AddRef(int a2);  // 0x6E4850
     char Release(int a2,  unsigned int * a3);    // 0x6E4890
-    void ddtor();  // 0x6E4940
+    void ddtor(void *a1 = 0);  // 0x6E4940
     char SetCapacity(int a2,  unsigned int * a3);    // 0x6E49D0
     VectorClass_flat * QueryInterface(char a2);  // 0x6E4AB0
     unsigned int PointerToIndex(int a2);  // 0x6E4820

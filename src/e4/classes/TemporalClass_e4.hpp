@@ -27,7 +27,7 @@ struct TemporalClass {
     unsigned int TemporalClass_field_30;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
-    char TemporalClass_field_34[4];  // 0x34
+    unsigned int TemporalClass_field_34;  // 0x34
     unsigned int __pad_28;
     unsigned int u32_308;
     unsigned int u32_38;
@@ -37,8 +37,8 @@ struct TemporalClass {
     unsigned int u32_A6;
 // --- flat members (END) ---
     char CanWarpTarget(unsigned int * a1);
-    int Constructor();
-    int GetWarpPerStep(int a2);
+    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int GetWarpPerStep(int a2, void *a1 = 0);
     int LoadTemporal(AbstractClass * aP0, int aP1);
     int SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2);
     int SetTarget(AbstractClass * aP1);

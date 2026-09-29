@@ -27,6 +27,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/EMPulseClass_e4.hpp"
 
 // 0x525110
 namespace gamemd {
@@ -71,7 +72,7 @@ AbstractClass * * DynamicVectorClass_AnimType::Release(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5251b2*/
+    (*(void (**)(_VectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5251b2*/
     return 1; /*0x5251b8*/
   }
 }
@@ -124,8 +125,8 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
           do /*0x5891d6*/
           {
             *(unsigned int *)v7 = 0; /*0x5891cd*/
-            v7->vtable2 = 0; /*0x5891cf*/
-            v7 += 8; /*0x5891d2*/
+            (unsigned int)(v7)->vtable2 = 0; /*0x5891cf*/
+            (unsigned int)(v7)+= 8; /*0x5891d2*/
             --a2; /*0x5891d5*/
           }
           while ( a2 ); /*0x5891d6*/
@@ -165,14 +166,14 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
       }
     }
     *(void **)&this->Items = v5; /*0x589256*/
-    *(unsigned int *)&this->__pad_5[3] = v3; /*0x58925c*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_5))[3] = v3; /*0x58925c*/
     this->IsAllocated = a3 == 0; /*0x58925f*/
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_USubzoneConnectionStruct *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x589268*/
+    (*(void (**)(_DynamicVectorClass_USubzoneConnectionStruct *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x589268*/
   }
-  v15 = *(unsigned int *)&this->__pad_5[3]; /*0x58926b*/
+  v15 = *(unsigned int *)&this-((unsigned int *)(>__pad_5))[3]; /*0x58926b*/
   if ( v15 < *(unsigned int *)this->__tail_10 ) /*0x589273*/
     *(unsigned int *)this->__tail_10 = v15; /*0x589275*/
   return 1; /*0x589278*/
@@ -182,7 +183,7 @@ AbstractClass * * DynamicVectorClass_SubzoneConn::Release(int a2, char * a3)
 namespace gamemd {
 int DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::HashEntryCompare(unsigned char * a2)
 {
-  return this->__pad_0[0] != *a2 || this->__pad_0[1] != a2[1] || this->__pad_0[2] != a2[2]; /*0x5175bd*/
+  return this-((unsigned int *)(>__pad_0))[0] != *a2 || this->__pad_0[1] != ((unsigned int *)(a2))[1] || this->__pad_0[2] != a2[2]; /*0x5175bd*/
 }
 }
 // 0x6284A0
@@ -231,7 +232,7 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
       {
         if ( a2 - 1 >= 0 ) /*0x6284d5*/
         {
-          v7 = (unsigned char *)(v6 + 2); /*0x6284d7*/
+          v7 = (unsigned char *)((unsigned int)(v6)+ 2); /*0x6284d7*/
           v8 = a2; /*0x6284da*/
           do /*0x6284e7*/
           {
@@ -285,10 +286,10 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Set
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_VHSVClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x628576*/
+    (*(void (**)(_DynamicVectorClass_VHSVClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x628576*/
   }
-  v15 = this->Capacity; /*0x628579*/
-  if ( v15 < this->Count ) /*0x628581*/
+  v15 = this-(int)(>Capacity); /*0x628579*/
+  if ( v15 < (int)(this->Count) ) /*0x628581*/
     *(unsigned int *)&this->Count = v15; /*0x628583*/
   return 1; /*0x628586*/
 }
@@ -392,10 +393,10 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x628cdb*/
+    (*(void (**)(_DynamicVectorClass_U_HashObject_VHashString_PAVSchemeNode *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x628cdb*/
   }
-  v13 = this->Capacity; /*0x628cde*/
-  if ( v13 < this->Count ) /*0x628ce6*/
+  v13 = this-(int)(>Capacity); /*0x628cde*/
+  if ( v13 < (int)(this->Count) ) /*0x628ce6*/
     *(unsigned int *)&this->Count = v13; /*0x628ce8*/
   return 1; /*0x628ceb*/
 }
@@ -498,7 +499,7 @@ char DynamicVectorClass_uint::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_I *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x42d6e2*/
+    (*(void (**)(_VectorClass_I *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x42d6e2*/
     return 1; /*0x42d6e8*/
   }
 }
@@ -590,10 +591,10 @@ char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_I *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x42d80e*/
+    (*(void (**)(_DynamicVectorClass_I *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x42d80e*/
   }
-  v7 = *(unsigned int *)&this->Capacity; /*0x42d811*/
-  if ( v7 < this->Count ) /*0x42d819*/
+  v7 = *(int)((unsigned int *))&this->Capacity; /*0x42d811*/
+  if ( v7 < (int)(this->Count) ) /*0x42d819*/
     *(unsigned int *)&this->Count = v7; /*0x42d81b*/
   return 1; /*0x42d81e*/
 }
@@ -625,14 +626,14 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_unsigned_int_vftable; /*0x42db16*/
   if ( v3 && this->IsAllocated ) /*0x42db20*/
   {
     RA2_OPDEL(v3); /*0x42db28*/
     *(unsigned int *)&this->Items = 0; /*0x42db30*/
   }
-  this->IsAllocated = 0; /*0x42db3b*/
+  this->IsAllocated = (unsigned char)((gamemd::VectorClass_flat *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x42db41*/
   if ( (a2 & 1) != 0 ) /*0x42db48*/
     RA2_OPDEL(); /*0x42db4b*/
@@ -646,7 +647,7 @@ DynamicVectorClass_uint * DynamicVectorClass_uint::Add(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_unsigned_int_vftable; /*0x42db66*/
   if ( v3 && this->IsAllocated ) /*0x42db70*/
   {
@@ -876,10 +877,10 @@ char DynamicVectorClass_PAD::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49eafe*/
+    (*(void (**)(_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49eafe*/
   }
-  v7 = *(unsigned int *)&this->Capacity; /*0x49eb01*/
-  if ( v7 < this->Count ) /*0x49eb09*/
+  v7 = *(int)((unsigned int *))&this->Capacity; /*0x49eb01*/
+  if ( v7 < (int)(this->Count) ) /*0x49eb09*/
     *(unsigned int *)&this->Count = v7; /*0x49eb0b*/
   return 1; /*0x49eb0e*/
 }
@@ -977,7 +978,7 @@ char DynamicVectorClass_PAD_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49ec32*/
+    (*(void (**)(_VectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49ec32*/
     return 1; /*0x49ec38*/
   }
 }
@@ -1069,10 +1070,10 @@ char DynamicVectorClass_PAD::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49edbe*/
+    (*(void (**)(_DynamicVectorClass_PAV_DynamicVectorClass_PAD *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x49edbe*/
   }
-  v7 = *(unsigned int *)&this->Capacity; /*0x49edc1*/
-  if ( v7 < this->Count ) /*0x49edc9*/
+  v7 = *(int)((unsigned int *))&this->Capacity; /*0x49edc1*/
+  if ( v7 < (int)(this->Count) ) /*0x49edc9*/
     *(unsigned int *)&this->Count = v7; /*0x49edcb*/
   return 1; /*0x49edce*/
 }
@@ -1105,14 +1106,14 @@ DynamicVector * DynamicVectorClass_PAD::Add(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->Items; /*0x49ee13*/
+  v3 = (void *)((unsigned int)(*(void **)&this->Items));
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_char___vftable; /*0x49ee16*/
   if ( v3 && this->IsAllocated ) /*0x49ee20*/
   {
     RA2_OPDEL(v3); /*0x49ee28*/
     *(unsigned int *)&this->Items = 0; /*0x49ee30*/
   }
-  this->IsAllocated = 0; /*0x49ee3b*/
+  this->IsAllocated = (unsigned char)((gamemd::DynamicVector *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x49ee41*/
   if ( (a2 & 1) != 0 ) /*0x49ee48*/
     RA2_OPDEL(); /*0x49ee4b*/
@@ -1126,14 +1127,14 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->Items; /*0x49eff3*/
+  v3 = (void *)((unsigned int)(*(void **)&this->Items));
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49eff6*/
   if ( v3 && this->IsAllocated ) /*0x49f000*/
   {
     RA2_OPDEL(v3); /*0x49f008*/
     *(unsigned int *)&this->Items = 0; /*0x49f010*/
   }
-  this->IsAllocated = 0; /*0x49f01b*/
+  this->IsAllocated = (unsigned char)((gamemd::VectorClass_flat *)(0));
   *(unsigned short *)&this->Capacity = 0; /*0x49f021*/
   if ( (a2 & 1) != 0 ) /*0x49f028*/
     RA2_OPDEL(); /*0x49f02b*/
@@ -1147,14 +1148,14 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->Items; /*0x49f043*/
+  v3 = (void *)((unsigned int)(*(void **)&this->Items));
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49f046*/
   if ( v3 && this->IsAllocated ) /*0x49f050*/
   {
     RA2_OPDEL(v3); /*0x49f058*/
     *(unsigned int *)&this->Items = 0; /*0x49f060*/
   }
-  this->IsAllocated = 0; /*0x49f06b*/
+  this->IsAllocated = (unsigned char)((gamemd::DynamicVector *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x49f071*/
   if ( (a2 & 1) != 0 ) /*0x49f078*/
     RA2_OPDEL(); /*0x49f07b*/
@@ -1183,14 +1184,14 @@ VectorClass_flat * DynamicVectorClass_AnimType::Add(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->Items; /*0x525013*/
+  v3 = (void *)((unsigned int)(*(void **)&this->Items));
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x525016*/
   if ( v3 && this->IsAllocated ) /*0x525020*/
   {
     RA2_OPDEL(v3); /*0x525028*/
     *(unsigned int *)&this->Items = 0; /*0x525030*/
   }
-  this->IsAllocated = 0; /*0x52503b*/
+  this->IsAllocated = (unsigned char)((gamemd::VectorClass_flat *)(0));
   *(unsigned int *)&this->Capacity = 0; /*0x525041*/
   if ( (a2 & 1) != 0 ) /*0x525048*/
     RA2_OPDEL(); /*0x52504b*/
@@ -1475,7 +1476,7 @@ char DynamicVectorClass_ptr_NodeNameType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUNodeNameType *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5c559e*/
+    (*(void (**)(_DynamicVectorClass_PAUNodeNameType *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5c559e*/
   }
   v7 = *(unsigned int *)&this->Capacity; /*0x5c55a1*/
   if ( v7 < this->Count ) /*0x5c55a9*/
@@ -1657,7 +1658,7 @@ char DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::SetCapacity(int 
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVColorScheme *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x62801e*/
+    (*(void (**)(_DynamicVectorClass_PAVColorScheme *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x62801e*/
   }
   v7 = this->Capacity; /*0x628021*/
   if ( v7 < this->Count ) /*0x628029*/

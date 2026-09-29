@@ -16,10 +16,10 @@ struct unknown {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    int Read(unsigned short * a2);
+    int Read(unsigned short * a2, void *a1 = 0);
     int Seek(int a2, int a3);
     unsigned int Write(int a2);
-    void ddtor();
+    void ddtor(void *a1 = 0);
 };
 
 } // namespace gamemd

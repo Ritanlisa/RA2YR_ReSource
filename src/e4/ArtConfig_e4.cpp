@@ -16,6 +16,7 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x76FC50
 namespace gamemd {
@@ -38,11 +39,11 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   {
     v8 = (void *)((unsigned int)(RA2_OPNEW(0x4Cu)));
     if ( v8 ) /*0x76fc94*/
-      v9 = MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)(aP1 + 6), 1, 0, 0); /*0x76fcb6*/
+      v9 = MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)((unsigned int)(aP1)+ 6), 1, 0, 0); /*0x76fcb6*/
     else
       v9 = 0; /*0x76fcbd*/
     this->u32_28 = v9; /*0x76fcbf*/
-    (*(void (__thiscall **)(void *, unsigned int))(v9->q004)(v9, 0); /*0x76fcc8*/
+    (*(void (**)(void *, unsigned int))(v9->q004)(v9, 0); /*0x76fcc8*/
     PriorityQueue::Add(aP1, this->u32_28); /*0x76fcd6*/
   }
   v11[0] = (unsigned int)((void*)&CCFileClass_vftable);

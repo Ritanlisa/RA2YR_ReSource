@@ -53,7 +53,7 @@ struct RadioClass {
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
-    char health[4];  // 0x6C
+    unsigned int health;  // 0x6C
     char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
@@ -121,6 +121,7 @@ struct RadioClass {
     bool q0ED;  // 0xED
     unsigned int Constructor;
     unsigned int MissionClass;
+    unsigned int Undeploy;
 // --- flat members (END) ---
     int ExecuteAction(void* aP1, void* aP2);
     int FindLinkIndex(int a2);
@@ -129,7 +130,7 @@ struct RadioClass {
     int PowerDrainUpdate(AbstractClass * aP1);
     int ProcessCmd();
     int SaveState(int * a0, RadioClass * aP1, int aP2);
-    unsigned int * Release();
+    unsigned int * Release(void *a1 = 0);
     void SetLinkCount(int a2);
 };
 

@@ -37,6 +37,7 @@
 #include "e4/classes/RAMFileClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"
+#include "e4/classes/E4Recv_583AD0_e4.hpp"
 
 // 0x5904B0
 namespace gamemd {
@@ -54,8 +55,8 @@ void PlaceCabhutMap(FootClass * aP0)
   int v13; // edx
   unsigned int v14[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  aP0 = (int)(aP0);
-  v2 = aP0[1]; /*0x5904bb*/
+  aP0 = (gamemd::FootClass *)((int)(aP0));
+  v2 = (int)(aP0[1]);
   if ( v2 >= aP0[3] + v2 + 1 ) /*0x5904c7*/
     return 0; /*0x59052b*/
   while ( 1 ) /*0x5904c9*/
@@ -83,7 +84,7 @@ void PlaceCabhutMap(FootClass * aP0)
   IndexByName = BuildingTypeClass::FindIndexByName(stru_82BA00); /*0x590559*/
   v10 = RA2_OPNEW(0x720u); /*0x59055b*/
   if ( v10 ) /*0x590565*/
-    v11 = (int *)BuildingClass::Construct((int)v10, *((unsigned int *)dword_A83C6C + IndexByName), Owner); /*0x590574*/
+    v11 = (int *)((BuildingClass *)((int)v10))->Construct(*((unsigned int *)dword_A83C6C + IndexByName), Owner); /*0x590574*/
   else
     v11 = 0; /*0x59057b*/
   v12 = *((int16_t *)v4 + 18) << 8; /*0x590588*/
@@ -99,6 +100,15 @@ void PlaceCabhutMap(FootClass * aP0)
 namespace gamemd {
 void sub_594190(int * a1, int a2)
 {
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
   int *v2; // ebp
   int v3; // esi
   int result; // eax
@@ -130,8 +140,8 @@ void sub_594190(int * a1, int a2)
         v7 = (int16_t)v3; /*0x5941c9*/
         do /*0x5942c2*/
         {
-          v15[0] = v6; /*0x5941cf*/
-          v15[1] = v3; /*0x5941d4*/
+          ((unsigned int *)(v15))[0] = v6; /*0x5941cf*/
+          ((unsigned int *)(v15))[1] = v3; /*0x5941d4*/
           v8 = v7 + (int16_t)v6; /*0x5941d9*/
           if ( v8 > v5 ) /*0x5941de*/
           {
@@ -286,7 +296,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
       if ( v5[14] < v14 /*0x594578*/
         || (*((unsigned char *)v5 + 53) || !v14)
         && (v15 = v5[15], v15 > 0)
-        && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(v5[10] + 8))(v5 + 10, v14 + v15, 0) )
+        && (*(uint8_t (**)(unsigned int *, int, unsigned int))(v5[10] + 8))(v5 + 10, v14 + v15, 0) )
       {
         v16 = v5[14]; /*0x59457f*/
         v17 = v5[11]; /*0x594582*/
@@ -349,6 +359,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
 namespace gamemd {
 ObjectClass * * RandomMap_DistributeTerrain()
 {
+    unsigned int v45 = 0;  /* G37 hoist */
   double v1; // st7
   int v2; // eax
   int v3; // eax
@@ -487,7 +498,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     if ( *(int *)v45.__tail_10 < v45.m_8 /*0x594da7*/
       || (IDA_BYTE1(v45.m_C) || !v45.m_8)
       && v46 > 0
-      && (*(uint8_t (__thiscall **)(_VectorClass_PAVMapRegionClass *, int, unsigned int))(*(unsigned int *)v45.__pad_0 + 8))(
+      && (*(uint8_t (**)(_VectorClass_PAVMapRegionClass *, int, unsigned int))(*(unsigned int *)v45.__pad_0 + 8))(
            &v45,
            v46 + v45.m_8,
            0) )
@@ -587,13 +598,13 @@ AbstractTypeClass * * CleanupRandomMapCache()
   v17 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
   i = (struct _WIN32_FIND_DATAA *)RA2_OPNEW(0x140u); /*0x595d19*/
-  FirstFileA = FindFirstFileA((LPCSTR)&stru_82BA00.?[2], i); /*0x595d27*/
+  FirstFileA = FindFirstFileA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 2), i); /*0x595d27*/
   if ( FirstFileA != (HANDLE)-1 ) /*0x595d2c*/
   {
     if ( j < v15.Capacity /*0x595d5f*/
       || (v15.IsAllocated || !v15.Capacity)
       && v17 > 0
-      && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v15.vtable0 + 2))(&v15, v17 + v15.Capacity, 0) )
+      && (*((uint8_t (**)(VectorClass *, int, unsigned int))v15.vtable0 + 2))(&v15, v17 + v15.Capacity, 0) )
     {
       v3 = j++; /*0x595d6a*/
       *((unsigned int *)v15.Items + v3) = i; /*0x595d75*/
@@ -605,7 +616,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
       if ( j < v15.Capacity /*0x595dc2*/
         || (v15.IsAllocated || !v15.Capacity)
         && v17 > 0
-        && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v15.vtable0 + 2))(
+        && (*((uint8_t (**)(VectorClass *, int, unsigned int))v15.vtable0 + 2))(
              &v15,
              v17 + v15.Capacity,
              0) )
@@ -766,10 +777,10 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     g_MissionQueueFrame.briefing[376] = 4; /*0x596018*/
   v5 = GameConfig::ComputeCRC(); /*0x596023*/
   memset(Destination, 0, sizeof(Destination)); /*0x596033*/
-  strncpy(Destination, (const char *)&stru_82BA00.?[13], 0x80u); /*0x596047*/
+  strncpy(Destination, (const char *)&(unsigned int *)((char *)&stru_82BA00 + 13), 0x80u); /*0x596047*/
   strncat(Destination, v5, 0x80u); /*0x59605a*/
   RA2_OPDEL(v5); /*0x596060*/
-  strncat(Destination, (const char *)&stru_82BA00.?[11], 0x80u); /*0x596077*/
+  strncat(Destination, (const char *)&(unsigned int *)((char *)&stru_82BA00 + 11), 0x80u); /*0x596077*/
   CCFileClass::Construct(&v18, Destination); /*0x59608b*/
   if ( (uint8_t)CCFileClass::Open(&v18, 0) ) /*0x596097*/
   {
@@ -805,7 +816,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     }
     g_MissionQueueFrame.briefing[451] = 0; /*0x596149*/
   }
-  *(unsigned int *)&stru_82ADA8.?[31] = a2; /*0x596154*/
+  *(unsigned int *)&(unsigned int *)((char *)&stru_82ADA8 + 31) = a2; /*0x596154*/
   g_MissionQueueFrame.briefing[361] = (int)a2; /*0x59615d*/
   if ( g_MissionQueueFrame.briefing[385] == -1 ) /*0x596163*/
     g_MissionQueueFrame.briefing[385] = Random::Range(&Randomizer_Global, 0, 0xFFFF); /*0x596175*/
@@ -814,7 +825,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x5961a2*/
     MapPreview::Upload((MapPreview *)g_MissionQueueFrame.briefing[451]); /*0x5961aa*/
   if ( g_MissionQueueFrame.briefing[450] ) /*0x5961b7*/
-    (**(void (__thiscall ***)(int, int))g_MissionQueueFrame.briefing[450])(g_MissionQueueFrame.briefing[450], 1); /*0x5961bd*/
+    (**(void (***)(int, int))g_MissionQueueFrame.briefing[450])(g_MissionQueueFrame.briefing[450], 1); /*0x5961bd*/
   v10 = RA2_OPNEW(0x178u); /*0x5961c4*/
   if ( v10 ) /*0x5961ce*/
     v11 = (int *)MapSeedClass::Constructor(v10); /*0x5961d2*/
@@ -822,7 +833,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     v11 = 0; /*0x5961d9*/
   g_MissionQueueFrame.briefing[450] = (int)v11; /*0x5961e7*/
   qmemcpy(v11, &g_MissionQueueFrame.briefing[356], 0x178u); /*0x5961ec*/
-  ScenarioClass::SetFileName((char *)dword_A8B230, (char *)&stru_82BA00.?[8]); /*0x5961f9*/
+  ScenarioClass::SetFileName((char *)dword_A8B230, (char *)&(unsigned int *)((char *)&stru_82BA00 + 8)); /*0x5961f9*/
   IDA_LOBYTE(v12) = 0; /*0x5961fe*/
   ScreenSaver::Process(v12, v15); /*0x596200*/
   v13 = (ComPtr *)g_MissionQueueFrame.briefing[451]; /*0x596205*/
@@ -832,8 +843,8 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     {
       RawFileClass::Construct((RawFileClass *)&v17.ComPtr_field_0x10, (int)ExistingFileName); /*0x596222*/
       CompressScreenshot(&v17.ComPtr_field_0x10, *(int **)g_MissionQueueFrame.briefing[451], &FileSystem_TEMPERAT_PAL); /*0x596237*/
-      if ( FindFirstFileA((LPCSTR)&stru_82BA00.?[6], &FindFileData) == (HANDLE)-1 ) /*0x596252*/
-        CreateDirectoryA((LPCSTR)&stru_82BA00.?[6], 0); /*0x59625a*/
+      if ( FindFirstFileA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 6), &FindFileData) == (HANDLE)-1 ) /*0x596252*/
+        CreateDirectoryA((LPCSTR)&(unsigned int *)((char *)&stru_82BA00 + 6), 0); /*0x59625a*/
       CopyFileA(ExistingFileName, Destination, 0); /*0x59626e*/
       CleanupRandomMapCache(v16); /*0x596274*/
       RawFileClass::Dtor((RawFileClass *)&v17.ComPtr_field_0x10); /*0x59627d*/
@@ -848,7 +859,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   }
   if ( g_MissionQueueFrame.briefing[450] ) /*0x5962aa*/
   {
-    (**(void (__thiscall ***)(int, int))g_MissionQueueFrame.briefing[450])(g_MissionQueueFrame.briefing[450], 1); /*0x5962b0*/
+    (**(void (***)(int, int))g_MissionQueueFrame.briefing[450])(g_MissionQueueFrame.briefing[450], 1); /*0x5962b0*/
     g_MissionQueueFrame.briefing[450] = 0; /*0x5962b2*/
   }
   LABEL_39:
@@ -1039,7 +1050,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
         if ( *(unsigned int *)(a1 + 16) < v18 /*0x59ac02*/
           || (*(unsigned char *)(a1 + 13) || !v18)
           && (v19 = *(unsigned int *)(a1 + 20), v19 > 0)
-          && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)a1 + 8))(a1, v18 + v19, 0) )
+          && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)a1 + 8))(a1, v18 + v19, 0) )
         {
           v20 = *(unsigned int *)(a1 + 16); /*0x59ac09*/
           *(unsigned int *)(a1 + 16) = v20 + 1; /*0x59ac0f*/

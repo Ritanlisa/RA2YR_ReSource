@@ -14,10 +14,10 @@ struct Map_WorldDominationTour_43 {
 // --- flat members (END) ---
     char Release(int a2,  char * a3);    // 0x76A3F0
     char AddRef(int a2);  // 0x76A390
-    void ddtor();  // 0x76A4F0
+    void ddtor(void *a1 = 0);  // 0x76A4F0
     VectorClass_flat * QueryInterface(char a2);  // 0x76A770
-    unsigned int * Seek(unsigned int * a2,  int a3);    // 0x769D30
-    int Read(unsigned int * a2);  // 0x76A520
+    unsigned int * Seek(unsigned int * a2, int a3);    // 0x769D30
+    int Read(unsigned int * a2, void *a1 = 0);  // 0x76A520
     unsigned int Write(int a2);  // 0x76A570
 };
 } // namespace gamemd

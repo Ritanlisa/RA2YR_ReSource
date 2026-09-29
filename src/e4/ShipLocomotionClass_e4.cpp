@@ -10,6 +10,10 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/Session_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Skirmish_e4.hpp"
 
 // 0x69EE90
 namespace gamemd {
@@ -21,7 +25,7 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   LPVOID *p_Piggybackee; // esi
 
   v2 = (int)(pStm);
-  v3 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, pStm); /*0x69eea2*/
+  v3 = (int)(SwizzleManager::SaveLoad((int *)a1->LocomotionClass, pStm));
   if ( v3 < 0 ) /*0x69eea6*/
     return v3; /*0x69eea6*/
   if ( a1 ) /*0x69eeaa*/
@@ -70,7 +74,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   }
   v6 = (gamemd::ILocomotion *)((int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0)));
   IDA_LOBYTE(a3) = 1; /*0x69ef48*/
-  (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x69ef4d*/
+  (*(void (__stdcall **)(IStream *, int *, int, unsigned int))((unsigned int)(v6)+ 16))(v3, &a3, 1, 0); /*0x69ef4d*/
   Piggybackee = v4->Piggybackee; /*0x69ef50*/
   pPStm = 0; /*0x69ef53*/
   if ( Piggybackee ) /*0x69ef5d*/
@@ -125,7 +129,7 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
   ILocomotion *Piggybackee; // eax
 
   *(unsigned int *)this->LocomotionClass = (void*)&ShipLocomotionClass_vftable; /*0x6a42b3*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&ShipLocomotionClass_vftable; /*0x6a42b9*/
+  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&ShipLocomotionClass_vftable; /*0x6a42b9*/
   *(unsigned int *)this->__pad_18 = &off_7F2D68; /*0x6a42c0*/
   Piggybackee = this->Piggybackee; /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/

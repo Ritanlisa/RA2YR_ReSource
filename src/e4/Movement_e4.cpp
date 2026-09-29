@@ -15,12 +15,13 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x5B20F0
 namespace gamemd {
 long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9, void * a2, void * a4, void * a5, void * a6)
 {
-  bool v11; // zf
+  unsigned int * v11;
   unsigned int v13; // edi
   int Movement_field_00_low; // edx
   int v18; // eax
@@ -46,13 +47,13 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   int v40; // eax
   void *v41; // ecx
   void *v42; // edx
-  int v43; // eax
-  unsigned int Vector3_field_0x04; // ecx
+  void * v43;
+  void * Vector3_field_0x04;
   int *v45; // eax
   double v46; // st7
   unsigned int v47; // ecx
   unsigned int Vector3_field_0x08; // esi
-  unsigned int v49; // edx
+  void * v49;
   void *v50; // eax
   double *v51; // eax
   int v53; // edx
@@ -97,7 +98,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   double v94[3]; // [esp+90h] [ebp-18h] BYREF
 
   _ESI = (unsigned int)(a1);
-  v11 = (unsigned int)(*a4 == (void *)g_MissionQueueFrame.localVariables[291]);
+  v11 = (unsigned int)((unsigned int)(*(unsigned int *)(a4) == (void *)g_MissionQueueFrame.localVariables[291]));
   *(unsigned int *)v88.__pad_0 = a1; /*0x5b2110*/
   if ( v11 /*0x5b2134*/
     && a4[1] == (void *)g_MissionQueueFrame.localVariables[292]
@@ -254,7 +255,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   a2->Vector3_field_0x08 = v38; /*0x5b23c4*/
   v39 = Vector3::Subtract(a2, (int *)&v90, a4); /*0x5b23c7*/
   v40 = Coord::Length((Coord *)v39); /*0x5b23ce*/
-  v41 = *a4; /*0x5b23d3*/
+  v41 = *(unsigned int *)(a4); /*0x5b23d3*/
   v42 = a4[1]; /*0x5b23d5*/
   IDA_LODWORD(v89) = v40; /*0x5b23d8*/
   v43 = *(unsigned int *)a2->__pad_0; /*0x5b23dc*/
@@ -271,7 +272,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   v88.field_4 = v50; /*0x5b2414*/
   v51 = (double *)Coord::Subtract( /*0x5b242c*/
                     (Coord *)&v90,
-                    (int)*a4 - *(unsigned int *)a2->__pad_0,
+                    (int)*(unsigned int *)(a4) - *(unsigned int *)a2->__pad_0,
                     v49 - a2->Vector3_field_0x04,
                     v47 - Vector3_field_0x08);
   v92 = *v51; /*0x5b2433*/
@@ -319,11 +320,11 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   }
   else if ( *(int16_t *)Math::Sub16((Math *)v87, &v88, &v86) >= 0 ) /*0x5b2541*/
   {
-    IDA_LOWORD(v86) = *a5 + v86; /*0x5b2550*/
+    IDA_LOWORD(v86) = *(void *)(((unsigned int)(void)*))(a5) + v86; /*0x5b2550*/
   }
   else
   {
-    IDA_LOWORD(v86) = v86 - *a5; /*0x5b2546*/
+    IDA_LOWORD(v86) = v86 - *(unsigned int *)(a5); /*0x5b2546*/
   }
   Vector2::NormalizeNonZero((int *)_ESI); /*0x5b2557*/
   Function::41C430((double *)_ESI); /*0x5b255e*/

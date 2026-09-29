@@ -20,7 +20,7 @@ HWND BINK::Background_Setup()
   if ( result ) /*0x52b9c2*/
   {
     if ( (int)g_DisplayWidth > 800 ) /*0x52b9d2*/
-      v3 = (int)&g_DisplayWidth[-13].LoadingScreen_field_0x20 / 2; /*0x52b9e2*/
+      v3 = (int)&((unsigned int *)(g_DisplayWidth))[-13].LoadingScreen_field_0x20 / 2; /*0x52b9e2*/
     else
       v3 = 0; /*0x52b9d4*/
     if ( (int)*(&g_DisplayWidth + 1) > 600 ) /*0x52b9ee*/
@@ -29,7 +29,7 @@ HWND BINK::Background_Setup()
       v4 = 0; /*0x52b9f0*/
     SetWindowPos(v2, 0, v3, v4, -1, -1, 0xDu); /*0x52ba09*/
     SendMessageA(v2, 0x4E3u, 1u, 0); /*0x52ba1f*/
-    if ( g_DisplayWidth == (LoadingScreen *)640 ) /*0x52ba2b*/
+    if ( g_DisplayWidth == (int)((LoadingScreen *))640 ) /*0x52ba2b*/
       return SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsS); /*0x52ba3a*/
     else
       return SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x52ba4c*/

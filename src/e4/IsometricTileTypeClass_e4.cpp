@@ -58,13 +58,13 @@ namespace gamemd {
 AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 {
   int i; // esi
-  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (***v3)(unsigned int, int); // ecx
   int result; // eax
   int j; // eax
 
   for ( i = 0; i < *(int *)&stru_87F5F0.__pad_58[96]; *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[84] + 4 * i - 4) = 0 ) /*0x549c8a*/
   {
-    v3 = *(void (__thiscall ****)(unsigned int, int))(*(unsigned int *)&stru_87F5F0.__pad_58[84] + 4 * i); /*0x549c91*/
+    v3 = *(void (****)(unsigned int, int))(*(unsigned int *)&stru_87F5F0.__pad_58[84] + 4 * i); /*0x549c91*/
     if ( v3 ) /*0x549c96*/
       (**v3)(v3, 1); /*0x549c9c*/
     ++i; /*0x549ca3*/
@@ -102,7 +102,7 @@ int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
   if ( this->u32_2BC == a2 ) /*0x549ddc*/
     this->u32_2BC = 0; /*0x549dde*/
   result = this->u32_2C8; /*0x549de8*/
-  if ( result != -1 && *(unsigned int *)(FootClass_Array.?[3] + 4 * result) == a2 ) /*0x549e02*/
+  if ( result != -1 && *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * result) == a2 ) /*0x549e02*/
     this->u32_2C8 = -1; /*0x549e04*/
   return result; /*0x549e0e*/
 }
@@ -228,7 +228,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAG *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54a45e*/
+    (*(void (**)(_DynamicVectorClass_PAG *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54a45e*/
   }
   v7 = *(unsigned int *)&this->vtable3; /*0x54a461*/
   if ( v7 < *(unsigned int *)&this->q010 ) /*0x54a469*/
@@ -262,7 +262,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_unsigned_short___vftable; /*0x54a766*/
   if ( v3 && IDA_BYTE1(this->vtable4) ) /*0x54a770*/
   {

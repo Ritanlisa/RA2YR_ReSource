@@ -12,7 +12,7 @@ struct Palette {
     unsigned int u32_8;  // 0x8
     char Palette_field_400[4];  // 0x400
 // --- flat members (END) ---
-    int CalcColorDistance(unsigned char * a2);
+    int CalcColorDistance(unsigned char * a2, void *a1 = 0);
     int FindClosestColor(int a2);
     int LoadFile();
     unsigned char * ConvertIndices(int a2);

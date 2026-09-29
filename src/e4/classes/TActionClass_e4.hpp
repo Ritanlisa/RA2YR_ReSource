@@ -87,6 +87,7 @@ struct TActionClass {
     unsigned int u32_54F4;
     unsigned int u32_54FC;
     unsigned int TActionClass_field_44;
+    unsigned int Debug;
 // --- flat members (END) ---
     AbstractClass * * ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4);
     AbstractClass * * CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4);

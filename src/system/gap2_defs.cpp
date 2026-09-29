@@ -24,7 +24,7 @@
 #include "system/radar.hpp"
 #include "system/scenario.hpp"
 #include "system/tactical.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x0 (lnk)
 namespace gamemd { unsigned int Randomizer::Random() { return 0; } }

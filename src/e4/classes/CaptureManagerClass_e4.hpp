@@ -58,7 +58,7 @@ struct CaptureManagerClass {
     char AddRef(int a2);
     char Release(int a2, unsigned int * a3);
     char SetCapacity(int a2, unsigned int * a3);
-    int CanCapture(unsigned int * a2);
+    int CanCapture(unsigned int * a2, void *a1 = 0);
     int CannotControlAnyMore();
     int Capture(unsigned int * a2);
     int DrawLinks(int a1, ...);
@@ -74,7 +74,7 @@ struct CaptureManagerClass {
     unsigned int * Constructor_473140(int a2, int a3);
     unsigned int LoadTypeData(int a2);
     unsigned int PointerToIndex(int a2);
-    void Destroy();
+    void Destroy(void *a1 = 0);
     void* CaptureUnit(int a2);
 };
 

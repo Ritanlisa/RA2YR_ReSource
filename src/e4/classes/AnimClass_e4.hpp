@@ -47,7 +47,7 @@ struct AnimClass {
     unsigned int q068;  // 0x68
     unsigned int q06A;  // 0x6A
     void* q06C;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    unsigned int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     void* q078;  // 0x78
@@ -1178,8 +1178,10 @@ struct AnimClass {
     unsigned int __pad_194;
     unsigned int AnimClass_field_0xD4;
     unsigned int __pad_178;
+    unsigned int AnimClass_field_0xFC;
+    unsigned int ctor;
 // --- flat members (END) ---
-    BuildingTypeClass * * drawFrame();
+    BuildingTypeClass * * drawFrame(void *a1 = 0);
     char * sub_4C68E0(int a2, int a3, void* aP3, void* aP4, int a6, char a7, int a8, char a9, int a10, int a11);
     char ProcessAreaEffect(unsigned int * a1);
     char sub_773590(int a2, int a3);
@@ -1190,7 +1192,7 @@ struct AnimClass {
     int ProcessFrame();
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
     void Destruct(AbstractClass * a2);
-    void FreeRenderBuffer();
+    void FreeRenderBuffer(void *a1 = 0);
     void* Render(ConvertClass * a2, ConvertClass * aP5);
 };
 

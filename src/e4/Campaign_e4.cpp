@@ -13,11 +13,29 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/CaptureManagerClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/CampaignProperties_WorldDominationTour_22_e4.hpp"
+#include "e4/classes/Carryall_e4.hpp"
 
 // 0x765840
 namespace gamemd {
 int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 {
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
   int m_8; // ebp
   int *v5; // eax
   ComPtr *v6; // esi
@@ -25,13 +43,13 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   ComPtr *v8; // ebx
   int v9; // ebx
   int i; // esi
-  void (__thiscall ***v12)(unsigned int, int); // ecx
+  void (***v12)(unsigned int, int); // ecx
   ComPtr *v13; // [esp+10h] [ebp-4h]
 
   m_8 = a2; /*0x765843*/
   if ( !a2 ) /*0x76584d*/
   {
-    (*(void (__thiscall **)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76594d*/
+    (*(void (**)(_VectorClass_V_rc_ptr_VConflict_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76594d*/
     return 1; /*0x765953*/
   }
   IDA_LOBYTE(this->q00C) = 0; /*0x765857*/
@@ -41,7 +59,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
     v6 = (ComPtr *)(a3 + 1); /*0x7658a5*/
     if ( a2 - 1 >= 0 ) /*0x7658b1*/
     {
-      v9 = a2; /*0x7658b3*/
+      v9 = (unsigned int)(a2);
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
@@ -55,18 +73,18 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    v5 = (int *)RA2_OPNEW(8 * a2 + 4); /*0x765867*/
+    v5 = (unsigned int)((int *)RA2_OPNEW(8 * a2 + 4));
     if ( !v5 ) /*0x765871*/
     {
-      v8 = 0; /*0x76589f*/
+      v8 = 0; /*(unsigned int *)(0x76589f)*/
       goto LABEL_14; /*0x7658a1*/
     }
-    *v5 = a2; /*0x765873*/
+    *(unsigned int *)(v5) = a2; /*0x765873*/
     v6 = (ComPtr *)(v5 + 1); /*0x765875*/
     v13 = (ComPtr *)(v5 + 1); /*0x76587b*/
     if ( a2 - 1 >= 0 ) /*0x765881*/
     {
-      v7 = a2; /*0x765883*/
+      v7 = (unsigned int)(a2);
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
@@ -88,10 +106,10 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
     if ( a2 >= this->q008 ) /*0x7658ed*/
       m_8 = this->q008; /*0x7658ef*/
     for ( i = 0; i < m_8; ++i ) /*0x7658f5*/
-      ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->q004 + 8 * i + 4)); /*0x765902*/
+      ((ComPtr *)((ComPtr *)((char *)v8 + 8 * i)))->Set(*(unsigned int *)(*(unsigned int *)&this->q004 + 8 * i + 4)); /*0x765902*/
     if ( this->IsAllocated ) /*0x76590c*/
     {
-      v12 = *(void (__thiscall ****)(unsigned int, int))&this->q004; /*0x765913*/
+      v12 = *(void (****)(unsigned int, int))&this->q004; /*0x765913*/
       if ( v12 ) /*0x765918*/
         (**v12)(v12, 3); /*0x76591e*/
       *(unsigned int *)&this->q004 = 0; /*0x765920*/
@@ -176,8 +194,8 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3)
 
   v3 = *(unsigned int *)&this->q004 + 8 * a3; /*0x7656dd*/
   ComPtr::Constructor((ComPtr *)a2); /*0x7656e2*/
-  *a2 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7656e7*/
-  ComPtr::Set((ComPtr *)a2, v3->q010); /*0x7656f3*/
+  *(void **)a2 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7656e7*/
+  ((ComPtr *)((ComPtr *)a2))->Set(v3->q010); /*0x7656f3*/
   return a2; /*0x7656fa*/
 }
 } // namespace gamemd
@@ -249,10 +267,10 @@ char Campaign_WorldDominationTour_16::AddRef(int a2)
 namespace gamemd {
 int Campaign_WorldDominationTour_16::ddtor()
 {
-  int (__thiscall ***v2)(unsigned int, int); // ecx
+  int (***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (__thiscall ****)(unsigned int, int))&this->q004; /*0x765966*/
+  v2 = *(int (****)(unsigned int, int))&this->q004; /*0x765966*/
   if ( v2 && this->IsAllocated ) /*0x76596d*/
   {
     result = (**v2)(v2, 3); /*0x76597a*/
@@ -301,16 +319,16 @@ unsigned int Campaign_WorldDominationTour_16::Write(int a2)
 namespace gamemd {
 VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(char a2)
 {
-  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (***v3)(unsigned int, int); // ecx
 
-  v3 = *(void (__thiscall ****)(unsigned int, int))&this->q004; /*0x765b63*/
+  v3 = (unsigned int)(*(void (****)(unsigned int, int))&this->q004);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765b66*/
   if ( v3 && this->IsAllocated ) /*0x765b70*/
   {
     (**v3)(v3, 3); /*0x765b7f*/
     *(unsigned int *)&this->q004 = 0; /*0x765b81*/
   }
-  this->IsAllocated = 0; /*0x765b8c*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x765b92*/
   if ( (a2 & 1) != 0 ) /*0x765b99*/
     RA2_OPDEL(); /*0x765b9c*/

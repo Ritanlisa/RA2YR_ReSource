@@ -52,8 +52,8 @@ struct InfantryClass {
     char customSound[4];  // 0x64
     bool bombVisible;  // 0x68
     unsigned int q06A;  // 0x6A
-    char health[4];  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    unsigned int health;  // 0x6C
+    unsigned int estimatedHealth;  // 0x70
     void* isOnMap;  // 0x74
     unsigned int q075;  // 0x75
     unsigned int q077;  // 0x77
@@ -312,7 +312,7 @@ struct InfantryClass {
     unsigned int q30A;  // 0x30A
     void* q30C;  // 0x30C
     ParticleSystemClass* q310;  // 0x310
-    char currentWeaponSlot[4];  // 0x312
+    unsigned int currentWeaponSlot;  // 0x312
     ParticleSystemClass* isTurretLocked;  // 0x314
     unsigned int isBarrelLocked;  // 0x315
     unsigned int isHumanControlled;  // 0x316
@@ -671,7 +671,8 @@ struct InfantryClass {
     int ScanTarget(int * a1);
     void* Destruct(void* a1, AbstractClass * edx0);
     static double IsInBounds(...);  // C2597 interim stub
-    static double Construct(...);  // C2597 interim stub
+     double Construct(...);  // C2597 interim stub
+    static double GetType(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

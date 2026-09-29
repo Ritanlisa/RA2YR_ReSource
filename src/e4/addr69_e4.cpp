@@ -60,6 +60,9 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/E4Recv_6A6AF0_e4.hpp"
+#include "e4/classes/InfantryTypeClass_e4.hpp"
+#include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x690400
 namespace gamemd {
@@ -85,11 +88,11 @@ AbstractClass * * E4Recv_690400::sub_690400()
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
   if ( stru_887598.lineTrailer ) /*0x69046f*/
-    (*(void (__thiscall **)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x69047c*/
+    (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x69047c*/
       stru_887598.lineTrailer,
       g_DSurface_Hidden,
       0);
-  result = (*((int (__thiscall **)(DSurface *, unsigned int *, ObjectClass *, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x69049c*/
+  result = (*((int (**)(DSurface *, unsigned int *, ObjectClass *, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x69049c*/
             + 2))(
              g_DSurface_Primary,
              v6,
@@ -98,7 +101,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
              0,
              1);
   if ( stru_887598.lineTrailer ) /*0x6904a7*/
-    return (*(int (__thiscall **)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x6904b4*/
+    return (*(int (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x6904b4*/
              stru_887598.lineTrailer,
              g_DSurface_Hidden,
              0);
@@ -159,9 +162,9 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   v36 = 0; /*0x693b86*/
   Waypoint::InitInvalid(v39); /*0x693b8a*/
   Debug::Log(aGettingFileFro); /*0x693b94*/
-  Timer::GetTicks(); /*0x693ba0*/
+  this->Timer::GetTicks(); /*0x693ba0*/
   Debug::Log(aRequestingFile); /*0x693bb2*/
-  Ticks = Timer::GetTicks(); /*0x693bc3*/
+  Ticks = this->Timer::GetTicks(); /*0x693bc3*/
   if ( a2 == 1 || a2 == 2 ) /*0x693be4*/
   {
     memset(v41, 0, sizeof(v41)); /*0x693cd4*/
@@ -173,14 +176,14 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v8 = 3600; /*0x693d06*/
       if ( Ticks != -1 ) /*0x693d0d*/
       {
-        v9 = Timer::GetTicks() - Ticks; /*0x693d18*/
+        v9 = this->Timer::GetTicks() - Ticks; /*0x693d18*/
         if ( v9 >= 3600 ) /*0x693d1e*/
           break; /*0x693d1e*/
         v8 = 3600 - v9; /*0x693d20*/
       }
       if ( !v8 ) /*0x693d24*/
         break; /*0x693d24*/
-      Event::Dispatch(); /*0x693d26*/
+      this->Event::Dispatch(); /*0x693d26*/
     }
   }
   else
@@ -196,10 +199,10 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     }
     else
     {
-      Flagged = (char *)(GameSettings::FindFlagged());
+      Flagged = (char *)(this->GameSettings::FindFlagged());
       if ( Flagged ) /*0x693c50*/
       {
-        v5 = CharToWideString(Flagged + 36); /*0x693c55*/
+        v5 = (char *)(CharToWideString(Flagged + 36));
         Network::SendToPlayer((int)unk_A8E9C0, (int)v43, 455, 1, (wchar_t *)v5); /*0x693c6f*/
       }
     }
@@ -208,20 +211,20 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v6 = 3600; /*0x693c8a*/
       if ( Ticks != -1 ) /*0x693c91*/
       {
-        v7 = Timer::GetTicks() - Ticks; /*0x693c9c*/
+        v7 = this->Timer::GetTicks() - Ticks; /*0x693c9c*/
         if ( v7 >= 3600 ) /*0x693ca2*/
           break; /*0x693ca2*/
         v6 = 3600 - v7; /*0x693ca8*/
       }
       if ( !v6 ) /*0x693cac*/
         break; /*0x693cac*/
-      Event::Dispatch(); /*0x693cb2*/
+      this->Event::Dispatch(); /*0x693cb2*/
     }
   }
   v10 = 3600; /*0x693d39*/
   if ( Ticks != -1 ) /*0x693d44*/
   {
-    v11 = Timer::GetTicks() - Ticks; /*0x693d4f*/
+    v11 = this->Timer::GetTicks() - Ticks; /*0x693d4f*/
     if ( v11 >= 3600 ) /*0x693d55*/
     {
   LABEL_24:
@@ -232,18 +235,18 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   }
   if ( !v10 ) /*0x693d5b*/
     goto LABEL_24; /*0x693d5b*/
-  v33 = Timer::GetTicks(); /*0x693d8e*/
+  v33 = this->Timer::GetTicks(); /*0x693d8e*/
   if ( a2 == 1 || a2 == 2 ) /*0x693da8*/
   {
     while ( 1 ) /*0x693e97*/
     {
-      Event::Dispatch(); /*0x693e97*/
+      this->Event::Dispatch(); /*0x693e97*/
       if ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v46, (int)v40) > 0 && *(unsigned int *)v46 == 111 ) /*0x693ebe*/
         break; /*0x693ebe*/
       v18 = 3600; /*0x693ec4*/
       if ( v33 != -1 ) /*0x693ecb*/
       {
-        v19 = Timer::GetTicks() - v33; /*0x693ed6*/
+        v19 = this->Timer::GetTicks() - v33; /*0x693ed6*/
         if ( v19 >= 3600 ) /*0x693edc*/
           goto LABEL_50; /*0x693edc*/
         v18 = 3600 - v19; /*0x693ede*/
@@ -258,14 +261,14 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   {
     while ( 1 ) /*0x693db3*/
     {
-      Event::Dispatch(); /*0x693db3*/
+      this->Event::Dispatch(); /*0x693db3*/
       v37 = 455; /*0x693dd4*/
       if ( Network::Send((int)unk_A8E9C0, (int)&v48, (int)&v37, (int)v39, (int)v38) ) /*0x693ddc*/
       {
         v13 = NetworkID::Compare((int)v39, (int)&stru_A8BB1C); /*0x693dee*/
         if ( dword_A8B238 == 4 ) /*0x693df9*/
         {
-          v14 = GameSettings::FindFlagged(); /*0x693dfb*/
+          v14 = this->GameSettings::FindFlagged(); /*0x693dfb*/
           v13 = v14 && !_strcmpi(v14 + 36, v49); /*0x693e20*/
         }
         if ( v48 == 17 && v13 ) /*0x693e2d*/
@@ -274,7 +277,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v15 = 3600; /*0x693e33*/
       if ( v33 != -1 ) /*0x693e3a*/
       {
-        v16 = Timer::GetTicks() - v33; /*0x693e45*/
+        v16 = this->Timer::GetTicks() - v33; /*0x693e45*/
         if ( v16 >= 3600 ) /*0x693e4b*/
           goto LABEL_50; /*0x693e4b*/
         v15 = 3600 - v16; /*0x693e51*/
@@ -292,7 +295,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   v20 = 3600; /*0x693f33*/
   if ( v33 != -1 ) /*0x693f3e*/
   {
-    v21 = Timer::GetTicks() - v33; /*0x693f49*/
+    v21 = this->Timer::GetTicks() - v33; /*0x693f49*/
     if ( v21 >= 3600 ) /*0x693f4f*/
     {
   LABEL_54:
@@ -304,7 +307,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   if ( !v20 ) /*0x693f55*/
     goto LABEL_54; /*0x693f55*/
   Debug::Log(aSendingFileInf); /*0x693f78*/
-  v34 = Timer::GetTicks(); /*0x693f95*/
+  v34 = this->Timer::GetTicks(); /*0x693f95*/
   if ( a2 == 1 || a2 == 2 ) /*0x693faa*/
   {
     memset(v41, 0, sizeof(v41)); /*0x6940b8*/
@@ -316,14 +319,14 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v26 = 3600; /*0x6940ea*/
       if ( v34 != -1 ) /*0x6940f1*/
       {
-        v27 = Timer::GetTicks() - v34; /*0x6940fc*/
+        v27 = this->Timer::GetTicks() - v34; /*0x6940fc*/
         if ( v27 >= 3600 ) /*0x694102*/
           break; /*0x694102*/
         v26 = 3600 - v27; /*0x694104*/
       }
       if ( !v26 ) /*0x694108*/
         break; /*0x694108*/
-      Event::Dispatch(); /*0x69410a*/
+      this->Event::Dispatch(); /*0x69410a*/
     }
   }
   else
@@ -335,10 +338,10 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     strcpy((char *)&v43[1], ToWideStringChar(*(char **)dword_A8DA78)); /*0x693ff7*/
     if ( dword_A8B238 == 4 ) /*0x694007*/
     {
-      v22 = (char *)(GameSettings::FindFlagged());
+      v22 = (char *)(this->GameSettings::FindFlagged());
       if ( v22 ) /*0x694010*/
       {
-        v23 = CharToWideString(v22 + 36); /*0x694015*/
+        v23 = (char *)(CharToWideString(v22 + 36));
         Network::SendToPlayer((int)unk_A8E9C0, (int)v43, 455, 1, (wchar_t *)v23); /*0x69402f*/
       }
     }
@@ -351,20 +354,20 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v24 = 3600; /*0x69406e*/
       if ( v34 != -1 ) /*0x694075*/
       {
-        v25 = Timer::GetTicks() - v34; /*0x694080*/
+        v25 = this->Timer::GetTicks() - v34; /*0x694080*/
         if ( v25 >= 3600 ) /*0x694086*/
           break; /*0x694086*/
         v24 = 3600 - v25; /*0x69408c*/
       }
       if ( !v24 ) /*0x694090*/
         break; /*0x694090*/
-      Event::Dispatch(); /*0x694096*/
+      this->Event::Dispatch(); /*0x694096*/
     }
   }
   v28 = 3600; /*0x69411d*/
   if ( v34 != -1 ) /*0x694128*/
   {
-    v29 = Timer::GetTicks() - v34; /*0x694133*/
+    v29 = this->Timer::GetTicks() - v34; /*0x694133*/
     if ( v29 >= 3600 ) /*0x694139*/
     {
   LABEL_78:
@@ -426,13 +429,13 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   LPCSTR v43[9]; // [esp+74h] [ebp-24h] BYREF
 
   nNumberOfBytesToWrite = a2; /*0x6941ae*/
-  Ticks = Timer::GetTicks(); /*0x6941bb*/
+  Ticks = this->Timer::GetTicks(); /*0x6941bb*/
   v35 = 0; /*0x6941bf*/
   Waypoint::InitInvalid((Waypoint *)v42); /*0x6941c7*/
   v23 = 0; /*0x6941cc*/
   v6 = (char *)RA2_OPNEW(0x1E7u); /*0x6941e1*/
-  Debug::Log(); /*0x6941e3*/
-  RawFileClass::Construct((BufferIOFileClass *)v43, a1); /*0x6941f0*/
+  this->Debug::Log(); /*0x6941e3*/
+  ((RawFileClass *)((BufferIOFileClass *)v43))->Construct(a1); /*0x6941f0*/
   if ( (uint8_t)FileClass::Open((RawFileClass *)v43, 0) ) /*0x6941fb*/
     FileClass::Delete((RawFileClass *)v43); /*0x694208*/
   FileClass::Open2((RawFileClass *)v43, (const CHAR *)2); /*0x694213*/
@@ -457,7 +460,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   v9 = a3; /*0x694307*/
   if ( a3 == 3 || (v10 = 10800, a3 != 4) ) /*0x69431b*/
     v10 = 3600; /*0x69431d*/
-  Ticks = Timer::GetTicks(); /*0x69432b*/
+  Ticks = this->Timer::GetTicks(); /*0x69432b*/
   v34 = v40; /*0x694333*/
   v35 = v10; /*0x69433f*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694343*/
@@ -1578,10 +1581,10 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
     fallRate = this->fallRate; /*0x69f0e3*/
     if ( occupant != -1 ) /*0x69f0ef*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.?[416] - occupant >= fallRate ) /*0x69f0f7*/
+      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant >= fallRate ) /*0x69f0f7*/
         fallRate = 0; /*0x69f0fd*/
       else
-        fallRate -= *(unsigned int *)&stru_A8EB00.?[416] - occupant; /*0x69f0f9*/
+        fallRate -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant; /*0x69f0f9*/
     }
     if ( (double)((int)nextObject - fallRate) / (double)(int)this->nextObject < 1.0 ) /*0x69f118*/
     {
@@ -1592,10 +1595,10 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
         v9 = this->fallRate; /*0x69f130*/
         if ( v8 != -1 ) /*0x69f136*/
         {
-          if ( *(unsigned int *)&stru_A8EB00.?[416] - v8 >= v9 ) /*0x69f13e*/
+          if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v8 >= v9 ) /*0x69f13e*/
             v9 = 0; /*0x69f144*/
           else
-            v9 -= *(unsigned int *)&stru_A8EB00.?[416] - v8; /*0x69f140*/
+            v9 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v8; /*0x69f140*/
         }
         v7 = (double)((int)v6 - v9) / (double)(int)this->nextObject; /*0x69f150*/
       }
@@ -2724,8 +2727,8 @@ double E4Recv_69F1B0::sub_69F1B0()
   fallRate = this->fallRate; /*0x69f1cd*/
   if ( occupant != -1 ) /*0x69f1d3*/
   {
-    if ( *(unsigned int *)&stru_A8EB00.?[416] - occupant < fallRate ) /*0x69f1df*/
-      return (double)((int)nextObject - (fallRate - (*(unsigned int *)&stru_A8EB00.?[416] - occupant))) /*0x69f1f5*/
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant < fallRate ) /*0x69f1df*/
+      return (double)((int)nextObject - (fallRate - (*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant))) /*0x69f1f5*/
            / (double)(int)nextObject;
     fallRate = 0; /*0x69f1f6*/
   }
@@ -2775,10 +2778,10 @@ BOOL E4Recv_69F5E0::sub_69F5E0()
     occupant = this->occupant; /*0x69f5fb*/
     if ( occupant != -1 ) /*0x69f601*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.?[416] - occupant >= fallRate ) /*0x69f60d*/
+      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant >= fallRate ) /*0x69f60d*/
         fallRate = 0; /*0x69f613*/
       else
-        fallRate -= *(unsigned int *)&stru_A8EB00.?[416] - occupant; /*0x69f60f*/
+        fallRate -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - occupant; /*0x69f60f*/
     }
     v2 = (double)((int)nextObject - fallRate) / (double)(int)this->nextObject; /*0x69f620*/
   }

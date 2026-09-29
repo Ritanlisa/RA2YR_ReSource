@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/SpawnManagerClass_e4.hpp"
 
 // 0x6C6880
 namespace gamemd {
@@ -14,7 +15,7 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (gamemd::StaticButtonClass *)((void *)this->q00C);
+  v3 = (void *)((unsigned int)((gamemd::StaticButtonClass *)((void *)this->q00C)));
   *(unsigned int *)this->__pad_0 = (void*)&StaticButtonClass_vftable; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     RA2_OPDEL(v3); /*0x6c6891*/

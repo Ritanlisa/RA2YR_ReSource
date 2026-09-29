@@ -18,7 +18,7 @@ int COMObject::FindNextActive(unsigned char * a1)
     return 0; /*0x4e1a16*/
   while ( !IDA_LOBYTE(a1->Image) ) /*0x4e1a09*/
   {
-    a1 = (ShpButtonClass *)(*(int (__thiscall **)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))(a1); /*0x4e1a10*/
+    a1 = (ShpButtonClass *)(*(int (**)(ShpButtonClass *))(*(unsigned int *)a1->__pad_0 + 4))(a1); /*0x4e1a10*/
     if ( !a1 ) /*0x4e1a14*/
       return 0; /*0x4e1a14*/
   }
@@ -49,7 +49,7 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 namespace gamemd {
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
-  return *(unsigned int *)&stru_A8EB00.?[880] == (*(int (__thiscall **)(GScreenClass *))(aP0->vfptr[0] + 24))(aP0); /*0x4f4408*/
+  return *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 880) == (*(int (**)(GScreenClass *))(aP0->vfptr[0] + 24))(aP0); /*0x4f4408*/
 }
 } // namespace gamemd
 // 0x55AB40
@@ -58,7 +58,7 @@ int COMObject::GetStringValue(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x55ab47*/
     return -2147467261; /*0x55ab49*/
-  *a2 = (*(int (__thiscall **)(IUnknown *))(a1->field_0 + 36))(a1) + 4; /*0x55ab5e*/
+  *a2 = (*(int (**)(IUnknown *))(a1->field_0 + 36))(a1) + 4; /*0x55ab5e*/
   a2[1] = 0; /*0x55ab60*/
   return 0; /*0x55ab4e*/
 }
@@ -93,7 +93,7 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 namespace gamemd {
 int COMObject::GetSpecialValue(int a1)
 {
-  return (*(int (__thiscall **)(int))(*(unsigned int *)a1->field_8 + 1336))(a1->field_8); /*0x55ad1f*/
+  return (*(int (**)(int))(*(unsigned int *)a1->field_8 + 1336))(a1->field_8); /*0x55ad1f*/
 }
 } // namespace gamemd
 // 0x5F9970

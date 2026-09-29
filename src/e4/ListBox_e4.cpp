@@ -10,6 +10,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/LinkClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x614190
 namespace gamemd {

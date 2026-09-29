@@ -39,10 +39,10 @@ int E4Recv_636EB0::sub_636EB0()
 namespace gamemd {
 bool E4Recv_638C40::sub_638C40(int a2, char a3)
 {
-  if ( this != (ObjectClass *)1 && this != (ObjectClass *)11 ) /*0x638c48*/
+  if ( this != (gamemd::E4Recv_638C40 *)((ObjectClass *))1 && this != (ObjectClass *)11 ) /*0x638c48*/
     return 0; /*0x638c48*/
   if ( a3 == 11 ) /*0x638c50*/
     return 1; /*0x638c54*/
-  return this == (ObjectClass *)11 && !a3; /*0x638c60*/
+  return this == (gamemd::E4Recv_638C40 *)((ObjectClass *))11 && !a3; /*0x638c60*/
 }
 } // namespace gamemd

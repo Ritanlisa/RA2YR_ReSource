@@ -90,7 +90,7 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
           *a3 = v21; /*0x409fbc*/
         return 1;
       case 2: /*0x409e3e*/
-        if ( !(*(int (__thiscall **)(int))(a1 + 176))(a1) ) /*0x409f5c*/
+        if ( !(*(int (**)(int))(a1 + 176))(a1) ) /*0x409f5c*/
           return 0; /*0x409f5c*/
         v14 = *(unsigned int *)(a1 + 148); /*0x409f5e*/
         *(unsigned int *)(a1 + 116) = 1; /*0x409f64*/
@@ -139,7 +139,7 @@ void AudioController::GetVolume()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1316] ) /*0x72d1cc*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1316])( /*0x72d1d2*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1316])( /*0x72d1d2*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1316],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1316] = 0; /*0x72d1d4*/

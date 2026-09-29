@@ -63,20 +63,20 @@ static bool LoadMenuPalette()
     if (!pal_data) {
         OutputDebugStringA("[gamemd] Menu: no palette found in MIX files\n");
         for (int i = 0; i < 256; ++i) {
-            g_palette[i][0] = (uint8_t)(i);
-            g_palette[i][1] = (uint8_t)(i);
-            g_palette[i][2] = (uint8_t)(i);
-            g_palette[i][3] = 0;
+            g_palette[((unsigned int *)(i]))[0] = (uint8_t)(i);
+            g_palette[((unsigned int *)(i]))[1] = (uint8_t)(i);
+            g_palette[((unsigned int *)(i]))[2] = (uint8_t)(i);
+            g_palette[((unsigned int *)(i]))[3] = 0;
         }
         return false;
     }
 
     uint8_t* raw = (uint8_t*)(pal_data);
     for (int i = 0; i < 256; ++i) {
-        g_palette[i][0] = raw[i * 3 + 0] << 2;
-        g_palette[i][1] = raw[i * 3 + 1] << 2;
-        g_palette[i][2] = raw[i * 3 + 2] << 2;
-        g_palette[i][3] = 0;
+        g_palette[((unsigned int *)(i]))[0] = raw[i * 3 + 0] << 2;
+        g_palette[((unsigned int *)(i]))[1] = raw[i * 3 + 1] << 2;
+        g_palette[((unsigned int *)(i]))[2] = raw[i * 3 + 2] << 2;
+        g_palette[((unsigned int *)(i]))[3] = 0;
     }
     free(pal_data);
 

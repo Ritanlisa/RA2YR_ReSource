@@ -10,6 +10,11 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/ParasiteClass_e4.hpp"
 
 // 0x5F1950
 namespace gamemd {
@@ -39,7 +44,7 @@ int NullModemClass::Release(int a2, int a3, int a4, int a5)
 
   if ( !this->u32_3C ) /*0x5f3563*/
     return 0; /*0x5f356a*/
-  result = (*(int (__thiscall **)(unsigned int, int, int, int, unsigned int))(**((unsigned int **)&this->PlayerIndex4) + 8))( /*0x5f3586*/
+  result = (*(int (**)(unsigned int, int, int, int, unsigned int))(**((unsigned int **)&this->PlayerIndex4) + 8))( /*0x5f3586*/
              this->u32_38,
              a2,
              a3,
@@ -55,7 +60,7 @@ namespace gamemd {
 int NullModemClass::ddtor(int a2, int a3, int a4)
 {
   if ( this->u32_3C ) /*0x5f35a0*/
-    return (*(int (__thiscall **)(unsigned int, int, int))(**((unsigned int **)&this->PlayerIndex4) + 16))(this->u32_38, a2, a3); /*0x5f35bb*/
+    return (*(int (**)(unsigned int, int, int))(**((unsigned int **)&this->PlayerIndex4) + 16))(this->u32_38, a2, a3); /*0x5f35bb*/
   else
     return 0; /*0x5f35a7*/
 }
@@ -116,9 +121,8 @@ int NullModemClass::SetAddress(int a2)
 namespace gamemd {
 void * NullModemClass::QueryInterface(char a2)
 {
-  void **v3; // edi
-
-  v3 = (void **)((unsigned int)((void **)this->u32_34));
+  void * v3;
+v3 = (void *)((unsigned int)((void **)((unsigned int)((void **)this->u32_34))));
   *(unsigned int *)this->ConnectionClass = (void*)&NullModemClass_vftable; /*0x5f3657*/
   if ( v3 ) /*0x5f365f*/
   {
@@ -132,14 +136,14 @@ void * NullModemClass::QueryInterface(char a2)
       goto LABEL_10; /*0x5f368a*/
     SerialPort::Close((SerialPort *)g_ClipboardBuffer); /*0x5f368c*/
     if ( g_ClipboardBuffer ) /*0x5f3699*/
-      (**(void (__thiscall ***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
+      (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
     g_ClipboardBuffer = 0; /*0x5f36a1*/
     this->PacketsSent = -1; /*0x5f36ad*/
     ObjectClass::FreeResources(); /*0x5f36b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f36bd*/
   {
-    (**(void (__thiscall ***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f36c3*/
+    (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f36c3*/
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
   LABEL_10:
@@ -164,7 +168,7 @@ int NullModemClass::sendData()
   struct _COMSTAT Stat; // [esp+14h] [ebp-28h] BYREF
   struct _DCB DCB; // [esp+20h] [ebp-1Ch] BYREF
 
-  Debug::Log(); /*0x77467d*/
+  this->Debug::Log(); /*0x77467d*/
   PurgeComm(*((HANDLE *)&this->Active3), 0xFu); /*0x77468b*/
   ResetEvent(*((HANDLE *)&this->PlayerIndex4)); /*0x77469b*/
   ResetEvent(*((HANDLE *)&this->PlayerIndex9)); /*0x7746a1*/
@@ -181,25 +185,25 @@ int NullModemClass::sendData()
     *((unsigned int *)&DCB + 2) = *((unsigned int *)&DCB + 2) & 0xFFFF88C0 | 0x1011; /*0x7746ec*/
     if ( !SetCommState(v2, &DCB) ) /*0x7746f0*/
     {
-      Debug::Log(); /*0x774700*/
+      this->Debug::Log(); /*0x774700*/
       return 0; /*0x774710*/
     }
   }
   else
   {
-    Debug::Log(); /*0x774717*/
+    this->Debug::Log(); /*0x774717*/
   }
   GetCommMask(*((HANDLE *)&this->Active3), &EvtMask); /*0x774728*/
-  (*(void (__thiscall **)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774734*/
-  (*(void (__thiscall **)(NullModemClass *))(*(unsigned int *)this->ConnectionClass + 12))(this); /*0x77473b*/
+  (*(void (**)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774734*/
+  (*(void (**)(NullModemClass *))(*(unsigned int *)this->ConnectionClass + 12))(this); /*0x77473b*/
   if ( !EscapeCommFunction(*((HANDLE *)&this->Active3), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
-    Debug::Log(); /*0x77475b*/
+    this->Debug::Log(); /*0x77475b*/
   }
   if ( ClearCommError(*((HANDLE *)&this->Active3), &Errors, &Stat) ) /*0x774771*/
   {
-    v4 = (DWORD)((void *)(Errors));
+    v4 = (void *)((DWORD)((void *)(Errors)));
     cbInQue = Stat.cbInQue; /*0x77477f*/
     cbOutQue = Stat.cbOutQue; /*0x774783*/
     v7 = Errors == 0; /*0x774787*/
@@ -223,7 +227,7 @@ int NullModemClass::receiveData()
   DWORD Errors; // [esp+Ch] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+10h] [ebp-Ch] BYREF
 
-  Debug::Log(); /*0x7747cd*/
+  this->Debug::Log(); /*0x7747cd*/
   PurgeComm(*((HANDLE *)&this->Active3), 0xFu); /*0x7747db*/
   ResetEvent(*((HANDLE *)&this->PlayerIndex4)); /*0x7747eb*/
   ResetEvent(*((HANDLE *)&this->PlayerIndex9)); /*0x7747f1*/
@@ -231,15 +235,15 @@ int NullModemClass::receiveData()
   *(unsigned int *)&this->PacketsReceived = 0; /*0x774800*/
   this->u32_51 = 0; /*0x774803*/
   if ( !SetCommState(v7, (LPDCB)((char *)this + 8300)) ) /*0x774806*/
-    Debug::Log(); /*0x774816*/
+    this->Debug::Log(); /*0x774816*/
   if ( !EscapeCommFunction(*((HANDLE *)&this->Active3), 3u) ) /*0x774824*/
   {
     GetLastError(); /*0x77482f*/
-    Debug::Log(); /*0x77483b*/
+    this->Debug::Log(); /*0x77483b*/
   }
   if ( ClearCommError(*((HANDLE *)&this->Active3), &Errors, &Stat) ) /*0x774851*/
   {
-    v2 = (DWORD)((void *)(Errors));
+    v2 = (void *)((DWORD)((void *)(Errors)));
     cbInQue = Stat.cbInQue; /*0x77485f*/
     cbOutQue = Stat.cbOutQue; /*0x774863*/
     v5 = Errors == 0; /*0x774867*/
@@ -248,7 +252,7 @@ int NullModemClass::receiveData()
     if ( !v5 ) /*0x77486f*/
       WinModemClass::LogCommErrors(v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
-  return (*(int (__thiscall **)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774893*/
+  return (*(int (**)(NullModemClass *, int))(*(unsigned int *)this->ConnectionClass + 16))(this, 1); /*0x774893*/
 }
 } // namespace gamemd
 // 0x7754C0
@@ -276,7 +280,7 @@ int NullModemClass::Send(int a1)
 namespace gamemd {
 int NullModemClass::Disconnect(int a2, int a3, int a4)
 {
-  return (*(int (__thiscall **)(NullModemClass *, int, int, int, int))(*(unsigned int *)this->ConnectionClass + 52))( /*0x5f3556*/
+  return (*(int (**)(NullModemClass *, int, int, int, int))(*(unsigned int *)this->ConnectionClass + 52))( /*0x5f3556*/
            this,
            a2,
            a3,

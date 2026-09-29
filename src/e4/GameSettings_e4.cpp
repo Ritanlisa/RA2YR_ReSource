@@ -178,7 +178,7 @@ AbstractClass * * GameSettings::Read()
   Debug::Log("AllowHiRes is %s\n", v26); /*0x5fa96d*/
   byte_A8ED63 = INIClass::ReadBool_Overwrite(g_INI_Key_Video, aAllowmodetoggl, byte_A8ED63); /*0x5fa990*/
   v27 = (gamemd::Game *)(INIClass::ReadBool_Overwrite(g_INI_Key_Video, aAllowvramsideb, *(unsigned char *)&this->q036));
-  v28 = this->u32_38; /*0x5fa9ad*/
+  v28 = (gamemd::Game *)(this->u32_38);
   *(unsigned char *)&this->q036 = v27; /*0x5fa9b8*/
   INIClass::ReadDouble_Overwrite((int)g_INI_Key_Audio, (int)aSoundvolume, v28); /*0x5fa9c8*/
   if ( v28 >= 1.0 ) /*0x5fa9d8*/
@@ -199,12 +199,12 @@ AbstractClass * * GameSettings::Read()
   Debug::Log("VoiceVolume = %f\n", *((float *)this->u32_3C)); /*0x5faa80*/
   v33 = *(unsigned int *)&this->q040; /*0x5faa85*/
   INIClass::ReadDouble_Overwrite((int)g_INI_Key_Audio, (int)aScorevolume, v33); /*0x5faa9d*/
-  if ( v33 >= 1.0 ) /*0x5faaad*/
+  if ( v33 >= (gamemd::Game *)(1.0) ) /*0x5faaad*/
     v33 = 1.0; /*0x5faab1*/
   *(void **)&this->q040 = v33; /*0x5faab7*/
-  v34 = Math::RoundToInt(v33 * 16384.0); /*0x5faac0*/
+  v34 = Math::RoundToInt((unsigned int)(v33)* 16384.0); /*0x5faac0*/
   EndBufferMixer(g_MixerChannel_Theme, v34); /*0x5faacd*/
-  v35 = Math::RoundToInt(this->q040 * 255.0); /*0x5faadb*/
+  v35 = Math::RoundToInt((unsigned int)(this->q040)* 255.0); /*0x5faadb*/
   TechnoTypeClass::CheckFlag(v35); /*0x5faae6*/
   Debug::Log("ScoreVolume = %f\n", *((float *)this->q040)); /*0x5faaf9*/
   v36 = INIClass::ReadBool_Overwrite(g_INI_Key_Audio, aIsscorerepeat, this->u8_44); /*0x5fab14*/

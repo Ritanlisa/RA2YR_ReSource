@@ -259,8 +259,8 @@ struct ParticleSystemTypeClass {
     double u64_2F8;  // 0x2F8
     Color* q300;  // 0x300
     Color* q304;  // 0x304
-    unsigned int q308;  // 0x308
-    unsigned int q30A;  // 0x30A
+    void* ;  // 0x308
+    void* ;  // 0x30A
     unsigned char u8_30B;  // 0x30B
     unsigned int ParticleSystemTypeClass_field_0x0;
     unsigned int ParticleSystemTypeClass_field_0x294;
@@ -286,6 +286,8 @@ struct ParticleSystemTypeClass {
     unsigned int ParticleSystemTypeClass_field_0x4;
     unsigned int ParticleSystemTypeClass_field_0x8;
     unsigned int SpawnCount;
+    unsigned int q308;
+    unsigned int q30A;
 // --- flat members (END) ---
     ParticleSystemTypeClass * ddtor(char a2);
     char Stub(int a1, int a2);

@@ -56,10 +56,10 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
   char Buffer[256]; // [esp+14Ch] [ebp-204h] BYREF
   char Source[260]; // [esp+24Ch] [ebp-104h] BYREF
 
-  v2 = (*(int (__thiscall **)(void *))(((unsigned int)(this->u32_104))))(this); /*0x5f8cec*/
+  v2 = (*(int (**)(void *))(((unsigned int)(this->u32_104))))(this); /*0x5f8cec*/
   if ( v2 == 40 ) /*0x5f8cf2*/
   {
-    v2 = (*(int (__thiscall **)(void *))(((unsigned int)(this->q03C6))))(this); /*0x5f8cfc*/
+    v2 = (*(int (**)(void *))(((unsigned int)(this->q03C6))))(this); /*0x5f8cfc*/
     if ( v2 ) /*0x5f8d04*/
     {
       IDA_LOBYTE(v2) = this->u8_CA1; /*0x5f8d0a*/
@@ -101,7 +101,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v9 = (unsigned int *)this->u32_B8; /*0x5f8e4a*/
             this->u32_BC = v8; /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
-            Matrix::Scale(*((unsigned int **)&this->u32_107), *(float *)(Info + 12)); /*0x5f8e67*/
+            Matrix::Scale(*((unsigned int **)&this->u32_107), *(float *)((unsigned int)(Info)+ 12)); /*0x5f8e67*/
             v22 = 0; /*0x5f8e78*/
             Vector::Clear((int)v21); /*0x5f8e7c*/
             v20[0] = (unsigned int)&off_7E1668; /*0x5f8e85*/
@@ -144,7 +144,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             v17 = (unsigned int *)this->u32_C0; /*0x5f8fb4*/
             this->u32_C4 = v16; /*0x5f8fbc*/
             v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
-            Matrix::Scale(*((unsigned int **)&this->u32_109), *(float *)(v18 + 12)); /*0x5f8fd1*/
+            Matrix::Scale(*((unsigned int **)&this->u32_109), *(float *)((unsigned int)(v18)+ 12)); /*0x5f8fd1*/
             v22 = 0; /*0x5f8fe2*/
             Vector::Clear((int)v21); /*0x5f8fe6*/
             v20[0] = (unsigned int)&off_7E1668; /*0x5f8fef*/

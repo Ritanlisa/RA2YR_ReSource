@@ -18,6 +18,6 @@ struct E4Recv_403490 {
     unsigned int q1408;  // 0x1408
     unsigned int q5128;  // 0x5128
 // --- flat members (END) ---
-    struct Concurrency::ISchedulerProxy * _GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ();  // 0x403490
+    void* _GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ();  // 0x403490
 };
 } // namespace gamemd

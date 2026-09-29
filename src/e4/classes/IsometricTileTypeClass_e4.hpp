@@ -70,20 +70,20 @@ struct IsometricTileTypeClass {
     unsigned int u32_2F0;
 // --- flat members (END) ---
     AbstractClass * * LoadTypeData(int * a1, int a2);
-    DynamicVector * Constructor(char a2);
+    DynamicVector * Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     IsometricTileTypeClass * ddtor(char a2);
     char SetCapacity(int a2, unsigned int * a3);
     int FindItem(unsigned int * a2);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
-    int GetTileIndex(int a2, int a3);
+    int GetTileIndex(int a2, int a3, void *a1 = 0);
     int GetTypeIdentifier();
-    int ProcessPower(int * a2);
+    int ProcessPower(int * a2, void *a1 = 0);
     int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
-    unsigned int * Constructor_0(int a2, int a3);
+    unsigned int * Constructor_0(int a2, int a3, void *a1 = 0);
     unsigned int PointerToIndex(int a2);
-    void ClearBuffer();
+    void ClearBuffer(void *a1 = 0);
 };
 
 } // namespace gamemd

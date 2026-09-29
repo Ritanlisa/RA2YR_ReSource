@@ -27,6 +27,7 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/BulletClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x45DD90
 namespace gamemd {
@@ -47,7 +48,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   int v19; // ecx
   unsigned int *v20; // edi
 
-  TechnoTypeClass::ReadINI(Source, 0); /*0x45dda1*/
+  ((TechnoTypeClass *)(Source))->ReadINI(0); /*0x45dda1*/
   this->ArrayIndex = -1; /*0x45ddaf*/
   this->qDFC = 0; /*0x45ddb5*/
   this->qE00 = 0; /*0x45ddbb*/
@@ -66,10 +67,10 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->LightRedTint = 1000000; /*0x45de27*/
   this->LightGreenTint = (void *)(1000000);
   this->LightBlueTint = (unsigned int)(1000000);
-  this->PrimaryFirePixelOffset = 0xFFFF; /*0x45de40*/
-  this->u32_E48 = 0xFFFF; /*0x45de46*/
-  this->SecondaryFirePixelOffset = 0xFFFF; /*0x45de4c*/
-  this->qE50 = 0xFFFF; /*0x45de52*/
+  this->PrimaryFirePixelOffset = (unsigned int)(0xFFFF);
+  this->u32_E48 = (unsigned int)(0xFFFF);
+  this->SecondaryFirePixelOffset = (unsigned int)(0xFFFF);
+  this->qE50 = (unsigned int)(0xFFFF);
   *(unsigned int *)&this->ToOverlay = 0; /*0x45de58*/
   this->ToTile = 0; /*0x45de5e*/
   this->UnitEnterSound = -1; /*0x45de64*/
@@ -229,15 +230,15 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->PsychicDetectionRadius = (unsigned int)(0);
   this->BarrelStartPitch = (unsigned int)(64);
   this->DemandLoad = (unsigned int)(0);
-  this->DemandLoadBuildup = 0; /*0x45e24e*/
-  this->FreeBuildup = 0; /*0x45e254*/
-  this->IsThreatRatingNode = 0; /*0x45e25a*/
-  this->PrimaryFireDualOffset = 0; /*0x45e260*/
-  this->ProtectWithWall = 0; /*0x45e266*/
-  this->CanHideThings = 1; /*0x45e26c*/
-  this->CrateBeneath = 0; /*0x45e273*/
-  this->LeaveRubble = 0; /*0x45e279*/
-  this->CrateBeneathIsMoney = 0; /*0x45e284*/
+  this->DemandLoadBuildup = (unsigned int)(0);
+  this->FreeBuildup = (unsigned int)(0);
+  this->IsThreatRatingNode = (unsigned int)(0);
+  this->PrimaryFireDualOffset = (unsigned int)(0);
+  this->ProtectWithWall = (unsigned int)(0);
+  this->CanHideThings = (unsigned int)(1);
+  this->CrateBeneath = (unsigned int)(0);
+  this->LeaveRubble = (unsigned int)(0);
+  this->CrateBeneathIsMoney = (unsigned int)(0);
   this->NumberOfDocks = 1; /*0x45e28a*/
   this->PreventsPlacementOverlap = 0; /*0x45e292*/
   this->ProductionCompletionThreshold = 1; /*0x45e298*/
@@ -255,7 +256,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   if ( dword_A83C78 < dword_A83C70 /*0x45e32b*/
     || (byte_A83C75 || !dword_A83C70)
     && dword_A83C7C > 0
-    && (v5 = (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A83C68 + 8))(
+    && (v5 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A83C68 + 8))(
                &dword_A83C68,
                dword_A83C7C + dword_A83C70,
                0) == 0,
@@ -275,7 +276,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   else
   {
     dword_A83C6C = dword_A83C6C; /*0x45e348*/
-    while ( *dword_A83C6C != this ) /*0x45e350*/
+    while ( *(unsigned int *)(dword_A83C6C) != (unsigned int)(this) ) /*0x45e350*/
     {
       ++v6; /*0x45e352*/
       ++dword_A83C6C; /*0x45e353*/
@@ -391,13 +392,13 @@ int BuildingTypeClass::ConstructFull(char * Source)
 namespace gamemd {
 unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass * aP1)
 {
-  TechnoTypeClass::Construct(aP1); /*0x45e528*/
+  ((TechnoTypeClass *)(aP1))->Construct(); /*0x45e528*/
   this->Buildup[0] = 0; /*0x45e52f*/
-  *(unsigned int *)&this->__pad_1714[116] = 0; /*0x45e535*/
-  *(unsigned int *)&this->__pad_1714[120] = 0; /*0x45e53b*/
-  this->__pad_1714[124] = 1; /*0x45e541*/
-  this->__pad_1714[125] = 0; /*0x45e548*/
-  *(unsigned int *)&this->__pad_1714[112] = (void*)&VectorClass_TPoint3D_int_vftable; /*0x45e54e*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_1714))[116] = 0; /*0x45e535*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_1714))[120] = 0; /*0x45e53b*/
+  this-((unsigned int *)(>__pad_1714))[124] = 1; /*0x45e541*/
+  this-((unsigned int *)(>__pad_1714))[125] = 0; /*0x45e548*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_1714))[112] = (void*)&VectorClass_TPoint3D_int_vftable; /*0x45e54e*/
   this->TechnoTypeClass = (void*)&BuildingTypeClass_vftable; /*0x45e558*/
   *(void **)&this->vtable2 = (void*)&BuildingTypeClass_vftable; /*0x45e55e*/
   *(void **)&this->vtable3 = (void*)&BuildingTypeClass_vftable; /*0x45e565*/
@@ -429,41 +430,41 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   {
     RA2_OPDEL(*(void **)&this->__pad_F70[1448]); /*0x45e5de*/
     *(unsigned int *)&this->BibShape = 0; /*0x45e5e6*/
-    this->__pad_F70[1452] = 0; /*0x45e5ec*/
+    this-((unsigned int *)(>__pad_F70))[1452] = 0; /*0x45e5ec*/
   }
   if ( this->q14E4 && *(unsigned int *)&this->q14E4 ) /*0x45e5fa*/
   {
     RA2_OPDEL(*(void **)&this->__pad_F70[1396]); /*0x45e605*/
     *(unsigned int *)&this->q14E4 = 0; /*0x45e60d*/
-    this->__pad_F70[1400] = 0; /*0x45e613*/
+    this-((unsigned int *)(>__pad_F70))[1400] = 0; /*0x45e613*/
   }
   if ( this->q14EC && *(unsigned int *)&this->q14EC ) /*0x45e621*/
   {
     RA2_OPDEL(*(void **)&this->__pad_F70[1404]); /*0x45e62c*/
     *(unsigned int *)&this->q14EC = 0; /*0x45e634*/
-    this->__pad_F70[1408] = 0; /*0x45e63a*/
+    this-((unsigned int *)(>__pad_F70))[1408] = 0; /*0x45e63a*/
   }
   if ( this->q14F4 && *(unsigned int *)&this->q14F4 ) /*0x45e648*/
   {
     RA2_OPDEL(*(void **)&this->__pad_F70[1412]); /*0x45e653*/
     *(unsigned int *)&this->q14F4 = 0; /*0x45e65b*/
-    this->__pad_F70[1416] = 0; /*0x45e661*/
+    this-((unsigned int *)(>__pad_F70))[1416] = 0; /*0x45e661*/
   }
   if ( this->RoofDeployingAnim && *(unsigned int *)&this->RoofDeployingAnim ) /*0x45e66f*/
   {
     RA2_OPDEL(*(void **)&this->__pad_F70[1420]); /*0x45e67a*/
     *(unsigned int *)&this->RoofDeployingAnim = 0; /*0x45e682*/
-    this->__pad_F70[1424] = 0; /*0x45e688*/
+    this-((unsigned int *)(>__pad_F70))[1424] = 0; /*0x45e688*/
   }
   if ( this->UnderRoofDoorAnim && *(unsigned int *)&this->UnderRoofDoorAnim ) /*0x45e696*/
   {
     RA2_OPDEL(*(void **)&this->__pad_F70[1428]); /*0x45e6a1*/
     *(unsigned int *)&this->UnderRoofDoorAnim = 0; /*0x45e6a9*/
-    this->__pad_F70[1432] = 0; /*0x45e6af*/
+    this-((unsigned int *)(>__pad_F70))[1432] = 0; /*0x45e6af*/
   }
   AbstractClass::AnnounceExpiredPointer(&this->TechnoTypeClass, 1); /*0x45e6b9*/
   v6 = this; /*0x45e6ce*/
-  v3 = (*(int (__thiscall **)(unsigned int *, BuildingTypeClass **))(dword_A83C68 + 16))(&dword_A83C68, &v6); /*0x45e6d2*/
+  v3 = (*(int (**)(unsigned int *, BuildingTypeClass **))(dword_A83C68 + 16))(&dword_A83C68, &v6); /*0x45e6d2*/
   if ( v3 != -1 && v3 < dword_A83C78 && v3 < --dword_A83C78 ) /*0x45e6ed*/
   {
     do /*0x45e705*/
@@ -474,15 +475,15 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     while ( v3 < dword_A83C78 ); /*0x45e705*/
   }
   v4 = *(void **)&this->PreventsPlacementOverlap; /*0x45e707*/
-  *(unsigned int *)&this->__pad_1714[112] = (void*)&VectorClass_TPoint3D_int_vftable; /*0x45e70d*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_1714))[112] = (void*)&VectorClass_TPoint3D_int_vftable; /*0x45e70d*/
   if ( v4 && this->q1791_a ) /*0x45e71b*/
   {
     RA2_OPDEL(v4); /*0x45e724*/
     *(unsigned int *)&this->PreventsPlacementOverlap = 0; /*0x45e72c*/
   }
-  this->__pad_1714[125] = 0; /*0x45e734*/
-  *(unsigned int *)&this->__pad_1714[120] = 0; /*0x45e73a*/
-  return TechnoTypeClass::DTOR(); /*0x45e745*/
+  this-((unsigned int *)(>__pad_1714))[125] = 0; /*0x45e734*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_1714))[120] = 0; /*0x45e73a*/
+  return this->TechnoTypeClass::DTOR(); /*0x45e745*/
 }
 } // namespace gamemd
 // 0x45E970
@@ -577,7 +578,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
     if ( v9 ) /*0x45eb4c*/
     {
       if ( dword_89DDC0 ) /*0x45eb56*/
-        (**(void (__thiscall ***)(int, int))dword_89DDC0)(dword_89DDC0, 1); /*0x45eb5c*/
+        (**(void (***)(int, int))dword_89DDC0)(dword_89DDC0, 1); /*0x45eb5c*/
       v8 = operator new(0x20u); /*0x45eb65*/
       if ( v8 ) /*0x45eb6c*/
       {
@@ -1358,7 +1359,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
         v1[1].gapE4[1429] = 0; /*0x46517b*/
         *(unsigned int *)v4 = (void*)&VectorClass_TPoint3D_int_vftable; /*0x46517e*/
       }
-      (*(void (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)v4 + 8))(v4, v14, 0); /*0x46518c*/
+      (*(void (**)(char *, int, unsigned int))(*(unsigned int *)v4 + 8))(v4, v14, 0); /*0x46518c*/
       v5 = 0; /*0x46518f*/
       if ( v14 <= 0 ) /*0x465195*/
       {
@@ -1710,7 +1711,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   if ( *(int *)&stru_A83D50.__pad_3C[28] < *(int *)&stru_A83D50.__pad_3C[20] /*0x644d43*/
     || (stru_A83D50.__pad_3C[25] || !*(unsigned int *)&stru_A83D50.__pad_3C[20])
     && *(int *)&stru_A83D50.__pad_3C[32] > 0
-    && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)&stru_A83D50.__pad_3C[12] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_A83D50.__pad_3C[12] + 8))(
          &stru_A83D50.__pad_3C[12],
          *(unsigned int *)&stru_A83D50.__pad_3C[20] + *(unsigned int *)&stru_A83D50.__pad_3C[32],
          0) )
@@ -1721,7 +1722,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x644d96*/
     || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
          &g_BuildingLoadQueue_Array.LightVisibility,
          g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
          0) )

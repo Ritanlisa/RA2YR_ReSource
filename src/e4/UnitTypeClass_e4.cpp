@@ -16,12 +16,13 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Value_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x6B4DD0
 namespace gamemd {
 INIClass * * UnitTypeClass::ReadINIEntry()
 {
-  int v1; // ebp
+  char * v1;
   int i; // edi
   unsigned int *v3; // esi
   int v4; // eax
@@ -32,17 +33,17 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
-  v1 = (char *)(0);
-  v9 = this; /*0x6b4de3*/
+  v1 = (char *)((int)((char *)(0)));
+  v9 = (char *)(this);
   INIClass::ClearSection((int)unk_81732C, 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/
   {
     for ( i = 0; i < 512; ++i ) /*0x6b4df0*/
     {
-      v8[0] = (unsigned int *)(i);
-      v8[1] = v1; /*0x6b4e01*/
-      v3 = CellCoord::To_CellObj(&dword_87F7E8, v8); /*0x6b4e0b*/
+      v8[0] = (int16_t)((unsigned int *)(i));
+      v8[1] = (int16_t)((unsigned int *)(v1));
+      v3 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, v8));
       v4 = v3[18]; /*0x6b4e0d*/
       if ( v4 != -1 && !*((unsigned char *)v3 + 287) ) /*0x6b4e15*/
       {
@@ -55,7 +56,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     }
     ++v1; /*0x6b4e87*/
   }
-  while ( v1 < 512 ); /*0x6b4e8e*/
+  while ( v1 < (char *)(512) ); /*0x6b4e8e*/
   return v4; /*0x6b4e94*/
 }
 } // namespace gamemd
@@ -111,7 +112,7 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
   if ( dword_A83CF0 < dword_A83CE8 /*0x747226*/
     || (byte_A83CED || !dword_A83CE8)
     && dword_A83CF4 > 0
-    && (v4 = (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A83CE0 + 8))(
+    && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A83CE0 + 8))(
                &dword_A83CE0,
                dword_A83CE8 + dword_A83CF4,
                0) == 0,
@@ -169,22 +170,22 @@ void UnitTypeClass_CreateUnit(void * a1, void * a2)
   int v11; // edx
   unsigned int v13[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v4 = (char)((int *)RA2_OPNEW(0x8E8u));
+  v4 = (int *)((char)((int *)RA2_OPNEW(0x8E8u)));
   if ( !v4 ) /*0x7474c5*/
     return 0; /*0x7474c5*/
   v5 = (int *)UnitClass::Construct(v4, (int)this, a2); /*0x7474d8*/
   if ( !v5 ) /*0x7474dc*/
     return 0; /*0x747554*/
   IDA_LOWORD(a2) = 0; /*0x7474e4*/
-  v6 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x7474f1*/
+  v6 = Random::State((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink); /*0x7474f1*/
   v7 = (unsigned int)a2; /*0x7474f6*/
   IDA_LOBYTE(v8) = 0; /*0x7474fa*/
   IDA_HIBYTE(v8) = v6; /*0x7474fc*/
   IDA_BYTE1(v7) = 0; /*0x7474fe*/
   v13[2] = 0; /*0x747503*/
   v9 = v7 | v8; /*0x74750b*/
-  v10 = (a1[1] << 8) + 128; /*0x747527*/
-  v13[0] = (*a1 << 8) + 128; /*0x74752e*/
+  v10 = (a1[(unsigned int)(1])<< 8) + 128; /*0x747527*/
+  v13[0] = (*(void *)(((unsigned int)(void)*))(a1) << 8) + 128; /*0x74752e*/
   v11 = *v5; /*0x747532*/
   v13[1] = v10; /*0x747534*/
   return v5->COMStub_54(v13, (uint8_t)(((v9 >> 7) + 1) >> 1)); /*0x74754d*/
@@ -753,7 +754,7 @@ UnitTypeClass * UnitTypeClass::ddtor(char a2)
   v2->vtable3 = (void*)&UnitTypeClass_vftable; /*0x7481aa*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x7481b1*/
   v6 = v3; /*0x7481c6*/
-  v4 = (*(int (__thiscall **)(unsigned int *, UnitTypeClass **))(dword_A83CE0 + 16))(&dword_A83CE0, &v6); /*0x7481ca*/
+  v4 = (*(int (**)(unsigned int *, UnitTypeClass **))(dword_A83CE0 + 16))(&dword_A83CE0, &v6); /*0x7481ca*/
   if ( v4 != -1 && v4 < dword_A83CF0 && v4 < --dword_A83CF0 ) /*0x7481e5*/
   {
     do /*0x7481fd*/

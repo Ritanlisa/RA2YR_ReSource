@@ -35,8 +35,8 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   int v22; // ecx
   int v23; // edx
 
-  (*(void (__thiscall **)(int, int))(*(unsigned int *)aP1 + 760))(aP1, aP3); /*0x4138d4*/
-  if ( (aP2 & 0x8000u) == 0 ) /*0x4138e1*/
+  (*(void (**)(int, int))(*(unsigned int *)aP1 + 760))(aP1, aP3); /*0x4138d4*/
+  if ( ((unsigned int)(aP2)& 0x8000u) == 0 ) /*0x4138e1*/
     v4 = (int16_t)aP2; /*0x4138e7*/
   else
     v4 = 0; /*0x4138e3*/
@@ -52,7 +52,7 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   if ( v8 > 19 ) /*0x413946*/
     v8 = 19; /*0x413948*/
   v9 = v6 + 20 * v8; /*0x413957*/
-  if ( (aP3 & 0x8000u) == 0 ) /*0x41395a*/
+  if ( ((unsigned int)(aP3)& 0x8000u) == 0 ) /*0x41395a*/
     v10 = (int16_t)aP3; /*0x413960*/
   else
     v10 = 0; /*0x41395c*/
@@ -71,8 +71,8 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   v16 = v13 + 4 * result; /*0x413995*/
   if ( v9 != v16 ) /*0x41399a*/
   {
-    v17 = &this->u32_60 * v9; /*0x4139ae*/
-    v18 = (*(int (__thiscall **)(char *, int *))(this->q028)(v17, &aP1); /*0x4139b4*/
+    v17 = &(unsigned int)(this->u32_60)* v9; /*0x4139ae*/
+    v18 = (*(int (**)(char *, int *))(this->q028)(v17, &aP1); /*0x4139b4*/
     if ( v18 != -1 ) /*0x4139ba*/
     {
       v19 = *((unsigned int *)v17 + 4); /*0x4139bc*/
@@ -87,12 +87,12 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
         }
       }
     }
-    v21 = &this->u32_60 * v16; /*0x4139e4*/
+    v21 = &(unsigned int)(this->u32_60)* v16; /*0x4139e4*/
     result = *((unsigned int *)v21 + 2); /*0x4139e7*/
     if ( *((unsigned int *)v21 + 4) < result /*0x413a0f*/
       || (v21[13] || !result)
       && (v22 = *((unsigned int *)v21 + 5), v22 > 0)
-      && (result = (*(int (__thiscall **)(char *, int, unsigned int))(this->q020)(&this->u32_60 * v16, result + v22, 0),
+      && (result = (*(int (**)(char *, int, unsigned int))(this->q020)(&(unsigned int)(this->u32_60)* v16, result + v22, 0),
           (unsigned char)result) )
     {
       result = *((unsigned int *)v21 + 4); /*0x413a11*/
@@ -137,7 +137,7 @@ int Coord::Length()
   Coord_field_0x8 = (double)(int)this->Coord_field_0x8; /*0x41c380*/
   Math::Sqrt( /*0x41c3a4*/
     (double)*(int *)this->__pad_0 * (double)*(int *)this->__pad_0
-  + (double)*(int *)&this->Coord_field_0x2[2] * (double)*(int *)&this->Coord_field_0x2[2]
+  + (double)*(int *)&this-((unsigned int *)(>Coord_field_0x2))[2] * (double)*(int *)&this->Coord_field_0x2[2]
   + Coord_field_0x8 * Coord_field_0x8);
   v3 = Math::RoundToInt(Coord_field_0x8); /*0x41c3ac*/
   IDA_WORD2(result) = IDA_HIWORD(v3); /*0x41c3ac*/
@@ -156,9 +156,9 @@ unsigned int * Coord::GetCoords(int * outCoords)
   v3 = Math::RoundToInt(this->q018); /*0x4399b0*/
   v4 = Math::RoundToInt(this->q01C); /*0x4399ba*/
   v5 = Math::RoundToInt(this->q020); /*0x4399bc*/
-  *v3 = v3; /*0x4399c7*/
-  v3[1] = v4; /*0x4399cb*/
-  v3[2] = v5; /*0x4399cf*/
+  *(int *)(v3) = v3; /*0x4399c7*/
+  ((unsigned int *)(v3))[1] = v4; /*0x4399cb*/
+  ((unsigned int *)(v3))[2] = v5; /*0x4399cf*/
 }
 }
 // 0x43A0D0
@@ -231,8 +231,8 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
     if ( v9 >= v11 ) /*0x655876*/
       v9 = v11 - 1; /*0x655878*/
   }
-  *v8 = v8; /*0x655881*/
-  v8[1] = v9; /*0x655883*/
+  *(int *)(v8) = v8; /*0x655881*/
+  ((unsigned int *)(v8))[1] = v9; /*0x655883*/
 }
 }
 // 0x6D2140
@@ -246,14 +246,14 @@ AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
   int v8; // esi
   AbstractClass ** v10;
 
-  v10 = (int)((gamemd::AbstractClass **)(a1[1]));
+  v10 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(a1[1])));
   v4 = (gamemd::AbstractClass **)((-60 * v10 / 2 + 60 * *a1 / 2) / 256);
-  v5 = (30 * v10 / 2 + 30 * *a1 / 2) / 256; /*0x6d21cb*/
+  v5 = (gamemd::AbstractClass **)((30 * v10 / 2 + 30 * *a1 / 2) / 256);
   IDA_LOWORD(v6) = Math::RoundToInt((double)(int)a1[2] * dbl_B0CD48 + (double)(a1[2] >= 728) + 0.5); /*0x6d21f2*/
   *(unsigned int *)aP2 = v4; /*0x6d21fd*/
   aP2[1] = v5 - v6; /*0x6d21ff*/
-  v7 = *aP2 - *(unsigned int *)&this->__pad_C[164]; /*0x6d2213*/
-  v8 = aP2[1] - *(unsigned int *)&this->__pad_C[168]; /*0x6d2215*/
+  v7 = *aP2 - *(unsigned int *)&this-((unsigned int *)(>__pad_C))[164]; /*0x6d2213*/
+  v8 = aP2[1] - *(unsigned int *)&this-((unsigned int *)(>__pad_C))[168]; /*0x6d2215*/
   *(unsigned int *)aP2 = v7; /*0x6d2217*/
   aP2[1] = v8; /*0x6d221b*/
   if ( v7 < -360 ) /*0x6d222a*/
@@ -274,7 +274,7 @@ void * Coord::Divide(int * a2, int a3)
 
   if ( a3 ) /*0x710708*/
   {
-    v4 = *(unsigned int *)&this->Coord_field_0x2[2] / a3; /*0x71072f*/
+    v4 = *(unsigned int *)&this-((unsigned int *)(>Coord_field_0x2))[2] / a3; /*0x71072f*/
     v5 = (int)this->Coord_field_0x8 / a3; /*0x710735*/
     *a2 = *(unsigned int *)this->__pad_0 / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/

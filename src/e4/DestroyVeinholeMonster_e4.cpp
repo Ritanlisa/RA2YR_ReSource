@@ -29,11 +29,11 @@ char E4Recv_74F6F0::DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1)
 
   uniqueId = (int)(this->?);
   v3 = aP1; /*0x74f6f3*/
-  if ( aP1 >= uniqueId ) /*0x74f6f9*/
+  if ( aP1 >= (gamemd::DynamicVector *)(uniqueId) ) /*0x74f6f9*/
     return 0; /*0x74f71c*/
   v4 = uniqueId - 1; /*0x74f6fb*/
   this->M16 = v4; /*0x74f6fe*/
-  if ( aP1 < v4 ) /*0x74f701*/
+  if ( aP1 < (gamemd::DynamicVector *)(v4) ) /*0x74f701*/
   {
     do /*0x74f714*/
     {

@@ -18,7 +18,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   void ** v7;
 
   v6 = (char *)(&this->u32_60);
-  v7 = (int)((void **)(0));
+  v7 = (void **)((int)((void **)(0)));
   v5 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765397*/
   if ( Campaign_WorldDominationTour_24::AddRef(&v5) ) /*0x76539f*/
   {
@@ -30,9 +30,9 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
     }
     while ( ((uint8_t (__thiscall *)(void ***))v5[1])(&v5) ); /*0x7653db*/
   }
-  v7 = (unsigned int)(v7);
+  v7 = (void **)((unsigned int)(v7));
   a2[1] = (unsigned int)(v6);
-  a2[2] = v7; /*0x7653f2*/
+  a2[2] = (unsigned int)(v7);
   *(void **)a2 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7653f5*/
   return a2; /*0x7653ee*/
 }
@@ -44,7 +44,7 @@ int E4Recv_766060::sub_766060()
 {
   unsigned int *vtable3; // eax
 
-  vtable3 = this->M12; /*0x766060*/
+  vtable3 = (unsigned int *)(this->M12);
   if ( vtable3 ) /*0x766065*/
     return vtable3[2]; /*0x766067*/
   else

@@ -52,7 +52,7 @@ struct TeamTypeClass {
     unsigned int u32_60;  // 0x60
     unsigned int TeamTypeClass_field_64;  // 0x64
     unsigned int TeamTypeClass_field_68;  // 0x68
-    char TeamTypeClass_field_6C[4];  // 0x6C
+    unsigned int TeamTypeClass_field_6C;  // 0x6C
     unsigned char TeamTypeClass_field_70;  // 0x70
     unsigned char TeamTypeClass_field_71;  // 0x71
     unsigned char pad_72;  // 0x72
@@ -72,16 +72,24 @@ struct TeamTypeClass {
     unsigned char u8_A7;
     unsigned int q0AB;
     unsigned int q0B0;
+    unsigned int q0A8;
+    unsigned int q0AC;
+    unsigned int q0AF;
+    unsigned char u8_AD;
+    unsigned char u8_AE;
+    unsigned char u8_B1;
+    unsigned int q0B4;
+    unsigned char u8_B3;
 // --- flat members (END) ---
     AbstractClass * * FindOrCreateTaskForce();
     AbstractClass * * GetMaxCount(CCINIClass * aP1);
     AbstractClass * * LoadFromINI(unsigned char *** aP1);
     TeamTypeClass * ReadScriptData(char * a1, int a2);
     TeamTypeClass * ddtor(char a2);
-    int Check(int a2);
-    int Construct();
-    int DestroyAllInstances();
-    int FindByName();
+    int Check(int a2, void *a3 = 0, void *a1 = 0);
+    int Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int DestroyAllInstances(void *a1 = 0);
+    int FindByName(void *a1 = 0);
     int FindFirstInstance();
     int FlashAllInstances(AnimClass * aP1);
     int GetAuxField();
@@ -92,7 +100,7 @@ struct TeamTypeClass {
     int GetTypeIdentifier();
     int LoadTypeData(AbstractTypeClass * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
-    int ProcessTaskForce();
+    int ProcessTaskForce(void *a1 = 0);
     int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
     unsigned int * GetTransportWaypoint(unsigned int * a2);
     void * CreateScriptType();

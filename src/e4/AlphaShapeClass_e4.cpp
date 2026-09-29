@@ -14,6 +14,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/AircraftClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
 
 // 0x420DA0
 namespace gamemd {
@@ -59,7 +61,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
   this->AlphaShapeClass_field_0x08 = (int)&AlphaShapeClass_vftable; /*0x42174a*/
   this->AlphaShapeClass_field_0x0C = (int)&AlphaShapeClass_vftable; /*0x421751*/
   v6 = this; /*0x42175f*/
-  v3 = (*(int (__thiscall **)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
+  v3 = (*(int (**)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
     do /*0x421796*/
@@ -70,7 +72,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
     while ( v3 < g_AlphaShapeLimit ); /*0x421796*/
   }
   v6 = this; /*0x4217a8*/
-  v4 = (*(int (__thiscall **)(int *, AlphaShapeClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4217ac*/
+  v4 = (*(int (**)(int *, AlphaShapeClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4217ac*/
          &g_BuildingLoadQueue_Array.PowerBonus,
          &v6);
   if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.Foundation[0] ) /*0x4217bc*/
@@ -84,7 +86,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
       ++v4; /*0x4217cf*/
     }
   }
-  AbstractClass::DTOR(); /*0x4217e3*/
+  this->AbstractClass::DTOR(); /*0x4217e3*/
   if ( (a2 & 1) != 0 ) /*0x4217ed*/
     RA2_OPDEL(); /*0x4217f0*/
   return this; /*0x4217fa*/

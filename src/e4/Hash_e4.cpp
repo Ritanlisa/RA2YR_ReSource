@@ -61,8 +61,8 @@ char sub_5E9580()
       if ( v2 != g_HouseClass_ObserverFlags /*0x5e95c2*/
         && v2 != g_Lobby_PlayerCount
         && v2 != g_Lobby_MaxPlayers
-        && (wchar_t *)v2 != g_Lobby_PlayerReady
-        && v0 == g_MPCooperativeState
+        && (wchar_t *)v2 != (wchar_t *)(g_Lobby_PlayerReady)
+        && v0 == (LPARAM *)(g_MPCooperativeState)
         && *(unsigned int *)(v2 + 107) == -1 )
       {
         break; /*0x5e95c2*/

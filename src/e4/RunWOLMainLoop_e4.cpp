@@ -16,6 +16,12 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/SaveGame_e4.hpp"
+#include "e4/classes/Rules_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
 
 // 0x77E110
 namespace gamemd {
@@ -49,7 +55,7 @@ Coord * * sub_77E110()
   {
     IDA_LOBYTE(v1) = Theme::QueueSong((int)&unk_A83D10, -3); /*0x77e1c2*/
   }
-  return v1; /*0x77e17b*/
+  return (gamemd::Coord **)(v1);
 }
 }
 // 0x785EA0
@@ -60,7 +66,7 @@ void sub_785EA0()
   unsigned int i; // ebx
   ObjectClass *v3; // esi
   ObjectClass *v4; // edi
-  int result; // eax
+  HANDLE * result;
   HANDLE *v6; // esi
   TechnoTypeClass *v7; // ecx
   wchar_t *StringCSF; // eax
@@ -101,17 +107,17 @@ void sub_785EA0()
       while ( stru_B765EC.location[0] > (unsigned int)dword_B766B0 ); /*0x785f46*/
     }
   }
-  result = (int)ppv; /*0x785f48*/
+  result = (HANDLE *)((int)((HANDLE *)((int)ppv)));
   if ( ppv ) /*0x785f4f*/
   {
-    v6 = &Handles; /*0x785f5b*/
+    v6 = (HANDLE *)((wchar_t *)(&Handles));
     do /*0x785f6e*/
       ResetEvent(*v6++); /*0x785f63*/
     while ( (int)v6 < (int)g_WOL_RequestObject ); /*0x785f6e*/
     Game::ProcessIdle(v7); /*0x785f70*/
     if ( !(*(int (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 52))(ppv) ) /*0x785f7d*/
     {
-      StringCSF = GetStringCSF(aTxtWolLoggingO, 0, g_Str_File_wonline_cpp, 9527); /*0x785f9a*/
+      StringCSF = (wchar_t *)(GetStringCSF(aTxtWolLoggingO, 0, g_Str_File_wonline_cpp, 9527));
       WideString::Assign((wchar_t **)&v15, StringCSF); /*0x785fa4*/
       ShowUIMessage(32, (wchar_t **)&v15, 0); /*0x785fb4*/
       DeleteAndZero::Alt((DeleteAndZero *)&v15); /*0x785fbd*/
@@ -140,17 +146,17 @@ void sub_785EA0()
       if ( !stru_B77D80.HashTable_field_0x48 ) /*0x78604b*/
         CloseDialog(v13, 0); /*0x786051*/
     }
-    Current = (HWND)Dialog::GetCurrent(); /*0x786056*/
-    result = (int)GetDlgItem(Current, 1344); /*0x786061*/
+    Current = (HANDLE *)((HWND)this->Dialog::GetCurrent());
+    result = (HANDLE *)((int)GetDlgItem(Current, 1344));
     if ( result ) /*0x786069*/
-      return (int)SetFocus((HWND)result); /*0x78606c*/
+      return (int, unsigned int a2)SetFocus((HWND)result); /*0x78606c*/
   }
   return result; /*0x786072*/
 }
 }
 // 0x798DE0
 namespace gamemd {
-Coord * * RunWOLMainLoop_Read()
+Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
 {
   int v2; // ebx
   int v3; // esi
@@ -216,7 +222,7 @@ Coord * * RunWOLMainLoop_Read()
     v13 = (OwnerDrawControl)&off_7F7624; /*0x798f3d*/
     OwnerDrawControl::InitVtable(&v13); /*0x798f41*/
   }
-  return v7; /*0x798efa*/
+  return (gamemd::Coord **)(v7);
 }
 }
 // 0x72C7E0
@@ -225,7 +231,7 @@ char sub_72C7E0()
 {
   char result; // al
 
-  result = byte_B0FCFD; /*0x72c7e0*/
+  result = (unsigned int)(byte_B0FCFD);
   if ( !byte_B0FCFD ) /*0x72c7e7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c7f3*/
@@ -263,7 +269,7 @@ void sub_72C830()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1364] ) /*0x72c88c*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1364])( /*0x72c892*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1364])( /*0x72c892*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1364],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1364] = 0; /*0x72c894*/
@@ -306,10 +312,10 @@ int sub_799D30()
   int v12; // [esp+24h] [ebp-1Ch]
   DeleteAndZero v13; // [esp+30h] [ebp-10h] BYREF
 
-  result = LoginFlowWOL_Reset(v1); /*0x799d33*/
+  result = (wchar_t *)(LoginFlowWOL_Reset(v1));
   if ( result == 1 ) /*0x799d3b*/
   {
-    StringCSF = GetStringCSF(g_Str_TXT_FETCHING_SERVLIST, 0, g_Str_File_wonline_cpp, 24300); /*0x799d52*/
+    StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_FETCHING_SERVLIST, 0, g_Str_File_wonline_cpp, 24300));
     WideString::Assign((wchar_t **)&v13, StringCSF); /*0x799d5c*/
     ShowUIMessage(16, (wchar_t **)&v13, 0); /*0x799d6c*/
     DeleteAndZero::Alt(&v13); /*0x799d75*/

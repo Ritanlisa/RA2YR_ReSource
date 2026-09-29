@@ -43,9 +43,12 @@ struct Team {
     void* q4984;  // 0x4984
     unsigned int q5170;  // 0x5170
     unsigned int q5510;  // 0x5510
+    unsigned int __pad_0;
+    unsigned int field_E4;
+    unsigned int field_E8;
 // --- flat members (END) ---
     int ReleaseAll(ObjectClass * aP1);  // 0x5D26C0
     int GetMember(AbstractClass * aP1);  // 0x65AD30
-    char AllMembersValid();  // 0x65AE30
+    char AllMembersValid(void *a1 = 0);  // 0x65AE30
 };
 } // namespace gamemd

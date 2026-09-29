@@ -3,7 +3,7 @@
 
 #include <cstring>
 #include <cmath>
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace gamemd {
 
@@ -44,6 +44,18 @@ UnitClass::UnitClass() noexcept
 // Merged: Westwood combined harvest + unload into a single 5-case state machine.
 // Case 3 handles unloading logic (pop cargo, apply overlay, handle team members).
 {
+    unsigned int v32 = 0;  /* G37 hoist */
+    unsigned int v26 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v18 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v32 = 0;  /* G37 hoist */
+    unsigned int v26 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v18 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
   AbstractClass *movementDestination; // ecx
   int v3; // edi
   int v4; // ebp
@@ -434,6 +446,10 @@ retn    8
 // 0x7192f0
 void* UnitClass::Deploy(void * a1)
 {
+    unsigned int v54 = 0;  /* G37 hoist */
+    unsigned int v52 = 0;  /* G37 hoist */
+    unsigned int v38 = 0;  /* G37 hoist */
+    unsigned int v36 = 0;  /* G37 hoist */
   double v1; // st7
   TeleportLocomotionClass *v2; // esi
   FootClass *Owner; // ecx

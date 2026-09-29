@@ -108,7 +108,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_UAcceleratorTracker *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5678*/
+    (*(void (**)(_DynamicVectorClass_UAcceleratorTracker *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5678*/
   }
   v15 = this->q008; /*0x5d567b*/
   if ( v15 < this->q010 ) /*0x5d5683*/
@@ -262,7 +262,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5232*/
+    (*(void (**)(_VectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5232*/
     return 1; /*0x5d5238*/
   }
 }
@@ -354,7 +354,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d535e*/
+    (*(void (**)(_DynamicVectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d535e*/
   }
   v7 = this->q008; /*0x5d5361*/
   if ( v7 < this->q010 ) /*0x5d5369*/
@@ -409,14 +409,14 @@ VectorClass_flat * MSFont_18::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_HWND_____vftable; /*0x5d56e6*/
   if ( v3 && this->IsAllocated ) /*0x5d56f0*/
   {
     RA2_OPDEL(v3); /*0x5d56f8*/
     *(unsigned int *)&this->q004 = 0; /*0x5d5700*/
   }
-  this->IsAllocated = 0; /*0x5d570b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x5d5711*/
   if ( (a2 & 1) != 0 ) /*0x5d5718*/
     RA2_OPDEL(); /*0x5d571b*/
@@ -430,14 +430,14 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_HWND_____vftable; /*0x5d5736*/
   if ( v3 && this->IsAllocated ) /*0x5d5740*/
   {
     RA2_OPDEL(v3); /*0x5d5748*/
     *(unsigned int *)&this->q004 = 0; /*0x5d5750*/
   }
-  this->IsAllocated = 0; /*0x5d575b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x5d5761*/
   if ( (a2 & 1) != 0 ) /*0x5d5768*/
     RA2_OPDEL(); /*0x5d576b*/
@@ -451,14 +451,14 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d57d6*/
   if ( v3 && this->IsAllocated ) /*0x5d57e0*/
   {
     RA2_OPDEL(v3); /*0x5d57e8*/
     *(unsigned int *)&this->q004 = 0; /*0x5d57f0*/
   }
-  this->IsAllocated = 0; /*0x5d57fb*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x5d5801*/
   if ( (a2 & 1) != 0 ) /*0x5d5808*/
     RA2_OPDEL(); /*0x5d580b*/

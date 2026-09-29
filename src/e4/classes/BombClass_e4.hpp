@@ -47,6 +47,7 @@ struct BombClass {
     unsigned int __pad_24;
     unsigned int vtable22;
     unsigned int vtable23;
+    unsigned int DTOR;
 // --- flat members (END) ---
     BombClass * CopyTo(char a2);
     int InitPool();

@@ -14,7 +14,7 @@
 #include "misc/movement_ext.hpp"
 #include "misc/rules.hpp"
 #include "misc/super_weapon.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x405170
 namespace gamemd { 

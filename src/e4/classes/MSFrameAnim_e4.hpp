@@ -37,6 +37,6 @@ struct MSFrameAnim {
     unsigned int * UpdateFrame(unsigned int * a1);  // 0x767F80
     unsigned int startAnimation(int a2);  // 0x769C80
     unsigned int pauseAnimation(int a2);  // 0x769D00
-    unsigned int * drawFrame();  // 0x76A7C0
+    unsigned int * drawFrame(void *a1 = 0);  // 0x76A7C0
 };
 } // namespace gamemd

@@ -21,6 +21,7 @@ struct E4Recv_6D1E80 {
     unsigned int Tactical_field_0x8;
     unsigned int Tactical_field_0xC;
     unsigned int __pad_0;
+    unsigned int AbstractClass;
 // --- flat members (END) ---
     void sub_6D1E80();  // 0x6D1E80
 };

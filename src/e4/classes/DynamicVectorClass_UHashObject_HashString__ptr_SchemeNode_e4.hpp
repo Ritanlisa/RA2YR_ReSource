@@ -31,13 +31,13 @@ struct DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode {
     DynamicVector * Destructor_1(char a2);  // 0x628640
     char * Add(char a2);  // 0x628690
     DynamicVector * Destructor_2(char a2);  // 0x6287B0
-    void ddtor();  // 0x628800
+    void ddtor(void *a1 = 0);  // 0x628800
     unsigned int GetCount(int a2);  // 0x627D50
     unsigned int GetItemIndex(int a2);  // 0x627DB0
     int GetItem(int a2,  int a3);    // 0x627DE0
     char IsEqualTo(int a2);  // 0x6281F0
     int ProcessAll(int a2);  // 0x6285A0
-    unsigned int Get(int a2);  // 0x628830
+    unsigned int Get(int a2, void *a1 = 0);  // 0x628830
     int Clear(int a2,  int a3);    // 0x628860
     char AddRef(int a2);  // 0x6288A0
     int GetSize(int a2);  // 0x628D80

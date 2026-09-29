@@ -31,6 +31,7 @@
 #include "e4/classes/XSurface_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {
@@ -61,10 +62,10 @@ int sub_4116A0(unsigned int a1)
   v3 = 188 * v2 + 8943480; /*0x4116bd*/
   if ( (dword_8877A0[47 * v2] & 1) != 0 ) /*0x4116c4*/
   {
-    Debug::Log(); /*0x4116cf*/
+    this->Debug::Log(); /*0x4116cf*/
     return *(unsigned int *)(v3 + 32); /*0x4116df*/
   }
-  v5 = Time::GetElapsedMS() - *((unsigned int *)&unk_887794 + 47 * v2); /*0x4116f2*/
+  v5 = this->Time::GetElapsedMS() - *((unsigned int *)&unk_887794 + 47 * v2); /*0x4116f2*/
   v17 = *(unsigned int *)(v3 + 144); /*0x4116f4*/
   EnterCriticalSection((LPCRITICAL_SECTION)(v3 + 160)); /*0x4116ff*/
   v6 = *(unsigned int *)(v3 + 140); /*0x41170b*/
@@ -159,14 +160,14 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       result = sub_411B20((DWORD_PTR)dwUser, a3, a4); /*0x411862*/
       break; /*0x41186e*/
     case 3: /*0x411835*/
-      Debug::Log(); /*0x411874*/
+      this->Debug::Log(); /*0x411874*/
       LockCount = dwUser[2].LockCount; /*0x411880*/
       v6 = 188 * LockCount + 8943480; /*0x411894*/
       if ( byte_887778[188 * LockCount] == 1 ) /*0x41189b*/
       {
         if ( dword_887804[47 * LockCount] ) /*0x4118a1*/
         {
-          Debug::Log(); /*0x4118b2*/
+          this->Debug::Log(); /*0x4118b2*/
           v7 = 188 * dwUser[2].LockCount + 8943480; /*0x4118ce*/
           if ( dword_887804[47 * dwUser[2].LockCount] ) /*0x4118c5*/
           {
@@ -181,16 +182,16 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
             LeaveCriticalSection((LPCRITICAL_SECTION)(v7 + 160)); /*0x411913*/
           }
         }
-        Debug::Log(); /*0x41191e*/
+        this->Debug::Log(); /*0x41191e*/
         timeKillEvent(*(unsigned int *)(v6 + 96)); /*0x41192a*/
         *(unsigned int *)(v6 + 96) = 0; /*0x411935*/
-        Debug::Log(); /*0x411938*/
+        this->Debug::Log(); /*0x411938*/
         timeEndPeriod(0x10u); /*0x411942*/
         *(unsigned char *)v6 = 0; /*0x41194d*/
-        Debug::Log(); /*0x411950*/
+        this->Debug::Log(); /*0x411950*/
         DeleteCriticalSection((LPCRITICAL_SECTION)(v6 + 160)); /*0x41195f*/
       }
-      Debug::Log(); /*0x41196a*/
+      this->Debug::Log(); /*0x41196a*/
       result = -1; /*0x411972*/
       break; /*0x411979*/
     case 4: /*0x411835*/
@@ -247,8 +248,8 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
         }
         else
         {
-          *(unsigned int *)(v13 + 28) = Time::GetElapsedMS() - *(unsigned int *)(v13 + 24); /*0x411a52*/
-          Debug::Log(); /*0x411a55*/
+          *(unsigned int *)(v13 + 28) = this->Time::GetElapsedMS() - *(unsigned int *)(v13 + 24); /*0x411a52*/
+          this->Debug::Log(); /*0x411a55*/
           v14 = *(unsigned int *)(v13 + 40); /*0x411a5a*/
           IDA_LOBYTE(v14) = v14 & 0xFE; /*0x411a60*/
           *(unsigned int *)(v13 + 40) = v14; /*0x411a62*/
@@ -280,17 +281,17 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   LPDIRECTSOUND DirectSound; // [esp+8h] [ebp-64h]
   unsigned int v11[24]; // [esp+Ch] [ebp-60h] BYREF
 
-  DirectSound = (gamemd::AbstractClass **)(Audio::GetDirectSound());
-  Debug::Log(); /*0x411b33*/
+  DirectSound = (gamemd::AbstractClass **)(this->Audio::GetDirectSound());
+  this->Debug::Log(); /*0x411b33*/
   GetCurrentThreadId(); /*0x411b3b*/
-  Debug::Log(); /*0x411b47*/
-  if ( !Audio::IsSoundEnabled() ) /*0x411b4f*/
+  this->Debug::Log(); /*0x411b47*/
+  if ( !this->Audio::IsSoundEnabled() ) /*0x411b4f*/
     return -13; /*0x411b4f*/
   v3 = 0; /*0x411b5c*/
   v4 = byte_887778; /*0x411b5e*/
   do /*0x411b75*/
   {
-    if ( !*v4 ) /*0x411b63*/
+    if ( !*(unsigned int *)(v4) ) /*0x411b63*/
       break; /*0x411b66*/
     v4 += 188; /*0x411b68*/
     ++v3; /*0x411b6e*/
@@ -319,7 +320,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   v11[0] = 96; /*0x411c1c*/
   DirectSound->lpVtbl->GetCaps(DirectSound, (LPDSCAPS)v11); /*0x411c28*/
   if ( (v11[1] & 0x20) != 0 ) /*0x411c30*/
-    Debug::Log(); /*0x411c3e*/
+    this->Debug::Log(); /*0x411c3e*/
   else
     *(unsigned int *)(dwUser + 196) = 0; /*0x411c48*/
   v5[10] = *((unsigned char *)aP1 + 2); /*0x411c5a*/
@@ -327,12 +328,12 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   *((unsigned int *)v5 + 9) = *((unsigned int *)aP1 + 1); /*0x411c66*/
   dword_88776C = (int (__cdecl *)(unsigned int))*((unsigned int *)aP1 + 2); /*0x411c6c*/
   dword_887770 = (int (__cdecl *)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3); /*0x411c75*/
-  Debug::Log(); /*0x411c7b*/
+  this->Debug::Log(); /*0x411c7b*/
   if ( timeBeginPeriod(0x10u) == 97 ) /*0x411c90*/
     return -13; /*0x411cd5*/
-  Debug::Log(); /*0x411c97*/
+  this->Debug::Log(); /*0x411c97*/
   *((unsigned int *)v5 + 24) = timeSetEvent(0x10u, 1u, fptc, dwUser, 1u); /*0x411cb6*/
-  Debug::Log(); /*0x411cb9*/
+  this->Debug::Log(); /*0x411cb9*/
   return *((unsigned int *)v5 + 24) != 0 ? -1 : -13;
 }
 }
@@ -398,7 +399,7 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     *(unsigned int *)(v3 + 124) = v10; /*0x411f4a*/
     *(unsigned short *)(v3 + 122) = v9; /*0x411f4d*/
     *(unsigned int *)(v3 + 128) = v10 * v11; /*0x411f51*/
-    DirectSoundAudio = Audio::GetDirectSound(); /*0x411f57*/
+    DirectSoundAudio = this->Audio::GetDirectSound(); /*0x411f57*/
     DirectSoundAudio->lpVtbl->CreateSoundBuffer( /*0x411f63*/
       DirectSoundAudio,
       (LPCDSBUFFERDESC)(v3 + 100),
@@ -442,8 +443,8 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
   }
   else
   {
-    *(unsigned int *)(v3 + 28) = Time::GetElapsedMS() - *(unsigned int *)(v3 + 24); /*0x411e5d*/
-    Debug::Log(); /*0x411e60*/
+    *(unsigned int *)(v3 + 28) = this->Time::GetElapsedMS() - *(unsigned int *)(v3 + 24); /*0x411e5d*/
+    this->Debug::Log(); /*0x411e60*/
     v4 = *(unsigned int *)(v3 + 40); /*0x411e65*/
     IDA_LOBYTE(v4) = v4 & 0xFE; /*0x411e6b*/
     *(unsigned int *)(v3 + 40) = v4; /*0x411e6d*/
@@ -524,7 +525,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
     LeaveCriticalSection(lpCriticalSection); /*0x4120c1*/
     return -13; /*0x4120d3*/
   }
-  v12 = (unsigned int)(a3);
+  v12 = (char *)((unsigned int)((char *)((unsigned int)(a3))));
   *(unsigned int *)(v5 + 4 * v10 + 80) = v4; /*0x4120d8*/
   *(unsigned int *)(v5 + 4 * v10 + 88) = v12; /*0x4120dc*/
   *(unsigned int *)(v5 + 4 * v10 + 72) = 1; /*0x4120e0*/
@@ -693,7 +694,7 @@ bool sub_413CD0(int a1)
 
   if ( !a1 ) /*0x413cd5*/
     return 0; /*0x413cd7*/
-  v2 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 44))(a1) == 15 ? a1 : 0;
+  v2 = (*(int (**)(int))(*(unsigned int *)a1 + 44))(a1) == 15 ? a1 : 0;
   if ( !v2 ) /*0x413ced*/
     return 0; /*0x413cef*/
   if ( *(unsigned char *)(*(unsigned int *)(v2 + 1728) + 3777) ) /*0x413cf9*/
@@ -769,7 +770,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
           {
             v13 = strtok(0, Str); /*0x41b1ef*/
             atoi(v13); /*0x41b1f5*/
-            if ( *(int *)&stru_A8EB00.?[408] < 4 ) /*0x41b210*/
+            if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 408) < 4 ) /*0x41b210*/
             {
               v17 = strtok(0, Str); /*0x41b242*/
               v18 = atoi(v17); /*0x41b248*/
@@ -815,7 +816,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
             v30 = strtok(0, Str); /*0x41b371*/
             if ( v30 ) /*0x41b37b*/
               *(unsigned char *)(v12 + 1058) = atoi(v30) != 0; /*0x41b38b*/
-            if ( (*(uint8_t (__thiscall **)(int, unsigned int *, int, int))(*(unsigned int *)v12 + 216))(v12, v40, v20, a2) ) /*0x41b39b*/
+            if ( (*(uint8_t (**)(int, unsigned int *, int, int))(*(unsigned int *)v12 + 216))(v12, v40, v20, a2) ) /*0x41b39b*/
             {
               v31 = *(unsigned int *)(v12 + 1732); /*0x41b3a9*/
               IDA_LOWORD(v32) = Math::RoundToInt((double)v39 * (double)*(int *)(v31 + 160) * 0.00390625); /*0x41b3bb*/
@@ -828,13 +829,13 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
               v34 = *(unsigned int *)v12; /*0x41b3e4*/
               a2 = 0; /*0x41b3e6*/
               *(unsigned int *)(v12 + 112) = *(unsigned int *)(v12 + 108); /*0x41b3eb*/
-              (*(void (__thiscall **)(int, int))(v34 + 488))(v12, v22); /*0x41b3ee*/
-              (*(void (__thiscall **)(int))(*(unsigned int *)v12 + 492))(v12); /*0x41b3f8*/
+              (*(void (**)(int, int))(v34 + 488))(v12, v22); /*0x41b3ee*/
+              (*(void (**)(int))(*(unsigned int *)v12 + 492))(v12); /*0x41b3f8*/
             }
             else
             {
               a2 = 1; /*0x41b402*/
-              (*(void (__thiscall **)(int))(*(unsigned int *)v12 + 32))(v12); /*0x41b406*/
+              (*(void (**)(int))(*(unsigned int *)v12 + 32))(v12); /*0x41b406*/
             }
           }
         }
@@ -1068,9 +1069,9 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
   int16_t v14; // dx
   int v16; // [esp+14h] [ebp+4h]
 
-  v8 = (unsigned short *)(*(int (__thiscall **)(int, int, int))(*(unsigned int *)a2 + 92))(a2, a3, a4); /*0x410de2*/
+  v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)a2 + 92))(a2, a3, a4); /*0x410de2*/
   v9 = (int16_t *)(this->? + this->?); /*0x410de9*/
-  v10 = (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 116))(a2); /*0x410deb*/
+  v10 = (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x410deb*/
   v11 = a5; /*0x410df1*/
   v12 = v10 / 2 - a5; /*0x410df7*/
   if ( v8 && a6 > 0 ) /*0x410e03*/
@@ -1097,7 +1098,7 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
     }
     while ( v16 ); /*0x410e38*/
   }
-  return (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 96))(a2); /*0x410e42*/
+  return (*(int (**)(int))(*(unsigned int *)a2 + 96))(a2); /*0x410e42*/
 }
 } // namespace gamemd
 
@@ -1380,15 +1381,15 @@ void sub_4128F0()
   do /*0x412917*/
   {
     v2 = v0[2]; /*0x412902*/
-    (*(void (__thiscall **)(unsigned int *))(*v0 + 12))(v0); /*0x412907*/
-    (*(void (__thiscall **)(unsigned int *, int, unsigned int))(*v0 + 8))(v0, v2, 0); /*0x412910*/
+    (*(void (**)(unsigned int *))(*v0 + 12))(v0); /*0x412907*/
+    (*(void (**)(unsigned int *, int, unsigned int))(*v0 + 8))(v0, v2, 0); /*0x412910*/
     v0 += 6; /*0x412913*/
     --v1; /*0x412916*/
   }
   while ( v1 ); /*0x412917*/
   v3 = dword_889E10; /*0x41291e*/
-  (*(void (__thiscall **)(int *))(dword_889E08 + 12))(&dword_889E08); /*0x412929*/
-  (*(void (__thiscall **)(int *, int, unsigned int))(dword_889E08 + 8))(&dword_889E08, v3, 0); /*0x412939*/
+  (*(void (**)(int *))(dword_889E08 + 12))(&dword_889E08); /*0x412929*/
+  (*(void (**)(int *, int, unsigned int))(dword_889E08 + 8))(&dword_889E08, v3, 0); /*0x412939*/
   dword_889E08 = (int)&VectorClass_TechnoClass___vftable; /*0x412948*/
   if ( dword_889E0C && byte_889E15 ) /*0x412956*/
   {
@@ -1906,7 +1907,7 @@ void sub_41D2C0()
 namespace gamemd {
 char E4Recv_41DD10::sub_41DD10()
 {
-  this->ambientSoundController[1] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x41dd15*/
+  this->ambientSoundController[1] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x41dd15*/
   IDA_LOBYTE(this->ambientSoundController[0]) = 0; /*0x41dd1a*/
   IDA_BYTE1(this->ambientSoundController[0]) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/

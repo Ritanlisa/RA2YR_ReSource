@@ -9,7 +9,7 @@ struct Delegate {
 // --- flat members (BEGIN) ---
     void* m_items;  // 0x0
     void *q4;  // 0x4
-    char Delegate_field_08[4];  // 0x8
+    void* ;  // 0x8
     bool m_allocated;  // 0xC
     unsigned char q00D;  // 0xD
     char Delegate_field_10[4];  // 0x10
@@ -27,6 +27,8 @@ struct Delegate {
     unsigned int field_18;
     unsigned int field_1C;
     unsigned int field_C;
+    unsigned int m_count;
+    unsigned int Delegate_field_08;
 // --- flat members (END) ---
     GenericNode * Constructor_GenericNode(char a2);
     int * ClearVectorAndStraw(char a2);
@@ -36,9 +38,9 @@ struct Delegate {
     int ProcessBitmapAndDispatch();
     int ProcessBitmapStream(char * Src, int a3);
     int StreamToBuffer(char * a1, int a3);
-    unsigned int * GetField();
+    unsigned int * GetField(void *a1 = 0);
     void * Dispatch(void* aP1, void* aP2);
-    void Set(AbstractTypeClass * aP1);
+    void Set(AbstractTypeClass * aP1, void *a2 = 0, void *a1 = 0);
 };
 
 } // namespace gamemd

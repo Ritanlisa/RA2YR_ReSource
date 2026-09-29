@@ -38,12 +38,12 @@ int Event::Dispatch()
 
   UpdateAudioVideo(); /*0x48d08c*/
   if ( g_AsyncIOState > 0 && *(unsigned int *)AsyncIO_Instance ) /*0x48d09f*/
-    (*(void (__thiscall **)(unsigned int))(**(unsigned int **)AsyncIO_Instance + 8))(*(unsigned int *)AsyncIO_Instance); /*0x48d0a7*/
-  result = dword_A8B238[0]; /*0x48d0aa*/
-  if ( dword_A8B238[0] == 3 || dword_A8B238[0] == 4 ) /*0x48d0b7*/
+    (*(void (**)(unsigned int))(**(unsigned int **)AsyncIO_Instance + 8))(*(unsigned int *)AsyncIO_Instance); /*0x48d0a7*/
+  result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0aa*/
+  if ( ((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x48d0b7*/
   {
-    Network::Dispatch(); /*0x48d0b9*/
-    result = dword_A8B238[0]; /*0x48d0be*/
+    this->Network::Dispatch(); /*0x48d0b9*/
+    result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0be*/
   }
   if ( result == 1 ) /*0x48d0c6*/
   {
@@ -55,7 +55,7 @@ int Event::Dispatch()
   {
   LABEL_11:
     Stream::ReadPacket((int)&unk_A8EA70); /*0x48d0e0*/
-    if ( dword_A8B230[13720] && ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ) /*0x48d10f*/
+    if ( ((unsigned int *)(dword_A8B230))[13720] && ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ) /*0x48d10f*/
     {
       do /*0x48d15f*/
       {
@@ -64,7 +64,7 @@ int Event::Dispatch()
       }
       while ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ); /*0x48d15f*/
     }
-    result = dword_A8B238[0]; /*0x48d161*/
+    result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d161*/
   }
   if ( result == 4 ) /*0x48d169*/
   {
@@ -93,21 +93,21 @@ void sub_5E2FA0()
   int result; // eax
   HWND Current; // esi
 
-  result = Dialog::GetCurrentType(); /*0x5e2fa2*/
+  result = this->Dialog::GetCurrentType(); /*0x5e2fa2*/
   if ( result == 107 ) /*0x5e2faa*/
   {
-    Current = (HWND)Dialog::GetCurrent(); /*0x5e2fb7*/
+    Current = (HWND)this->Dialog::GetCurrent(); /*0x5e2fb7*/
     result = SendDlgItemMessageA(Current, 1771, 0x188u, 0, 0); /*0x5e2fc8*/
     if ( result != -1 ) /*0x5e2fcd*/
     {
       result = SendDlgItemMessageA(Current, 1771, 0x199u, result, 0); /*0x5e2fdd*/
       if ( result ) /*0x5e2fe1*/
-        return (*(int (__thiscall **)(int))(*(unsigned int *)result + 148))(result); /*0x5e2fe7*/
+        return (*(int (**)(int))(*(unsigned int *)result + 148))(result); /*0x5e2fe7*/
     }
   }
   else if ( dword_A8B23C ) /*0x5e2ff8*/
   {
-    return (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 37))(dword_A8B23C); /*0x5e2ffc*/
+    return (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 37))(dword_A8B23C); /*0x5e2ffc*/
   }
   return result; /*0x5e2fed*/
 }
@@ -135,7 +135,7 @@ void sub_5E95E0()
       if ( v2 != g_HouseClass_ObserverFlags /*0x5e9645*/
         && v2 != g_Lobby_PlayerCount
         && v2 != g_Lobby_MaxPlayers
-        && (wchar_t *)v2 != g_Lobby_PlayerReady
+        && (wchar_t *)v2 != (wchar_t *)(g_Lobby_PlayerReady)
         && v0 == g_MPCooperativeState
         && v2->q1AC == -1 )
       {
@@ -154,7 +154,7 @@ void sub_5E95E0()
   LABEL_13:
   if ( Game_PlayerCount - v4 <= v5 ) /*0x5e9671*/
     return 0; /*0x5e9694*/
-  Debug::Log(); /*0x5e967f*/
+  this->Debug::Log(); /*0x5e967f*/
   return 1; /*0x5e9689*/
 }
 }
@@ -193,7 +193,7 @@ void sub_796960()
     if ( ++v3 >= g_WOL_UserList.owningHouseIndex ) /*0x7969b8*/
       goto LABEL_10; /*0x7969b8*/
   }
-  if ( &g_WebBrowserConfig == (ObjectClass *)-36 /*0x7969df*/
+  if ( &g_WebBrowserConfig == (int *)((ObjectClass *))-36 /*0x7969df*/
     || (v4 = String::GetOrEmpty_Alt((String *)&g_WindowManager.__pad_EC[684]),
         (owningHouseIndex = _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v4)) != 0) )
   {
@@ -202,18 +202,18 @@ void sub_796960()
     if ( !g_NetworkLobbyState && stru_B76AC4.ambientSoundController[4] ) /*0x796a00*/
     {
       if ( owningHouseIndex > 0 ) /*0x796a0a*/
-        qmemcpy(&v9[0].__pad_0[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
-      *(unsigned int *)&v9[0].__pad_0[44] = 0; /*0x796a21*/
+        qmemcpy(&v9[((unsigned int *)(0].__pad_0))[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
+      *(unsigned int *)&v9[((unsigned int *)(0].__pad_0))[44] = 0; /*0x796a21*/
       Network::SyncPlayerList(v1); /*0x796a29*/
       Event::Dispatch(); /*0x796a2e*/
       Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x796a42*/
       Network::FormatAddress(&stru_A8BB1C, 0); /*0x796a4e*/
-      Debug::Log(); /*0x796a59*/
+      this->Debug::Log(); /*0x796a59*/
       memset(v10, 0, sizeof(v10)); /*0x796a6f*/
       v11 = 0; /*0x796a79*/
       v12 = 0; /*0x796a7b*/
       v10[0] = 13; /*0x796a7c*/
-      CopyWideToChar(&v10[1], (char *)*dword_A8DA78, -1); /*0x796a90*/
+      CopyWideToChar(&v10[1], (char *)*(unsigned int *)(dword_A8DA78), -1); /*0x796a90*/
       v5 = 0; /*0x796a9b*/
       if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x796a9f*/
       {
@@ -229,7 +229,7 @@ void sub_796960()
           if ( v5 >= g_WOL_UserList.owningHouseIndex ) /*0x796acb*/
             goto LABEL_24; /*0x796acb*/
         }
-        if ( &g_WebBrowserConfig != (ObjectClass *)-36 ) /*0x796ae4*/
+        if ( &g_WebBrowserConfig != (int *)((ObjectClass *))-36 ) /*0x796ae4*/
         {
           v7 = CharToWideString(&g_WebBrowserConfig.ambientSoundController[3]); /*0x796aeb*/
           Network::SendToPlayer((int)&unk_A8E9C0, (int)v10, 455, 1, (wchar_t *)v7); /*0x796b04*/
@@ -293,7 +293,7 @@ int sub_7A0F40()
       }
       while ( v1 < v10 ); /*0x7a102a*/
     }
-    Debug::Log(); /*0x7a103c*/
+    this->Debug::Log(); /*0x7a103c*/
     return Network::SendOptionsGame(Source); /*0x7a1048*/
   }
   return result; /*0x7a104e*/
@@ -328,7 +328,7 @@ void sub_786270()
     (*(void (__stdcall **)(LPVOID, unsigned int))(*(unsigned int *)ppv + 140))(ppv, *(unsigned int *)Data); /*0x786334*/
   if ( !g_UIPointerTable ) /*0x786341*/
     return 0; /*0x78637d*/
-  Debug::Log(); /*0x786353*/
+  this->Debug::Log(); /*0x786353*/
   (*(void (__stdcall **)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
     g_UIPointerTable,
     &g_WindowManager.__pad_70[28],
@@ -362,9 +362,9 @@ void sub_7C5F3D()
       _EAX = 0; /*0x7c5f7f*/
       __asm { cpuid } /*0x7c5f81*/
       *(unsigned int *)Source = _EBX; /*0x7c5f83*/
-      *(unsigned int *)&Source[4] = _EDX; /*0x7c5f89*/
-      *(unsigned int *)&Source[8] = _ECX; /*0x7c5f8f*/
-      *(unsigned int *)&Source[12] = 32; /*0x7c5f95*/
+      *(unsigned int *)&((unsigned int *)(Source))[4] = _EDX; /*0x7c5f89*/
+      *(unsigned int *)&((unsigned int *)(Source))[8] = _ECX; /*0x7c5f8f*/
+      *(unsigned int *)&((unsigned int *)(Source))[12] = 32; /*0x7c5f95*/
       if ( _EAX >= 1 ) /*0x7c5fa2*/
       {
         _EAX = 1; /*0x7c5fa6*/

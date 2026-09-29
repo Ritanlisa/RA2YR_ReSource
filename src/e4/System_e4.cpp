@@ -51,6 +51,24 @@
 namespace gamemd {
 unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int * a3, unsigned int * a4)
 {
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
   unsigned char *result; // eax
   uint8_t v5; // bl
   unsigned int v6; // esi
@@ -134,7 +152,7 @@ void System_Search(ObjectClass * aP0, int edx0, int * a2)
 namespace gamemd {
 void sub_6269A0()
 {
-  unsigned int v1;
+  FileSystem * v1;
   FileSystem *v2; // eax
   FileSystem *v3; // edi
   StringVector *v4; // eax
@@ -145,7 +163,7 @@ void sub_6269A0()
   int v9; // esi
   int v10; // edi
 
-  v1 = (gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)(g_FileExtensionState)));
+  v1 = (unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)((unsigned int)((gamemd::FileSystem *)(g_FileExtensionState))))))))))));
   if ( !g_FileExtensionState ) /*0x6269a9*/
   {
     v2 = (FileSystem *)RA2_OPNEW(0x10u); /*0x6269b1*/
@@ -195,7 +213,7 @@ void sub_6269A0()
     g_FileExtensionState = (int)(v1);
   }
   v9 = 0; /*0x626a6d*/
-  v10 = *(unsigned int *)(*(unsigned int *)&v1[4] + 16); /*0x626a6f*/
+  v10 = *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v1))[4] + 16); /*0x626a6f*/
   if ( v10 > 0 ) /*0x626a74*/
   {
     do /*0x626a90*/
@@ -206,8 +224,8 @@ void sub_6269A0()
     }
     while ( v9 < v10 ); /*0x626a90*/
   }
-  (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&v1[4] + 12))(*(unsigned int *)&v1[4]); /*0x626a99*/
-  return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&g_FileExtensionState[8] + 12))(*(unsigned int *)&g_FileExtensionState[8]); /*0x626aa9*/
+  (*(void (**)(unsigned int))(**(unsigned int **)&((unsigned int *)(v1))[4] + 12))(*(unsigned int *)&((unsigned int *)(v1))[4]); /*0x626a99*/
+  return (*(int (**)(unsigned int))(**(unsigned int **)&((unsigned int *)(g_FileExtensionState))[8] + 12))(*(unsigned int *)&((unsigned int *)(g_FileExtensionState))[8]); /*0x626aa9*/
 }
 }
 // 0x626AB0
@@ -289,7 +307,7 @@ void sub_626AB0(const char * a1, int a2)
   if ( *(unsigned int *)(v10 + 16) < v11 /*0x626bec*/
     || (*(unsigned char *)(v10 + 13) || !v11)
     && (v12 = *(unsigned int *)(v10 + 20), v12 > 0)
-    && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v10 + 8))(v10, v11 + v12, 0) )
+    && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v10 + 8))(v10, v11 + v12, 0) )
   {
     v13 = *(unsigned int *)(v10 + 16); /*0x626bf3*/
     v14 = *(unsigned int *)(v10 + 4); /*0x626bf6*/
@@ -301,7 +319,7 @@ void sub_626AB0(const char * a1, int a2)
   if ( *(unsigned int *)(v15 + 16) < v16 /*0x626c34*/
     || ((IDA_LOBYTE(v17) = *(unsigned char *)(v15 + 13), (unsigned char)v17) || !v16)
     && (v17 = *(unsigned int *)(v15 + 20), v17 > 0)
-    && (IDA_LOBYTE(v17) = (*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v15 + 8))(v15, v16 + v17, 0), (unsigned char)v17) )
+    && (IDA_LOBYTE(v17) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))(v15, v16 + v17, 0), (unsigned char)v17) )
   {
     v18 = *(unsigned int *)(v15 + 16); /*0x626c36*/
     v19 = v18 + 1; /*0x626c39*/
@@ -484,7 +502,7 @@ void sub_72CA10()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1352] ) /*0x72ca6c*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1352])( /*0x72ca72*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1352])( /*0x72ca72*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1352],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1352] = 0; /*0x72ca74*/

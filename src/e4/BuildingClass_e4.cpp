@@ -119,8 +119,8 @@ void* BuildingClass::LoadFromStream()
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->FirestormAnim); /*0x453f73*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->PsiWarnAnim); /*0x453f84*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->Spotlight); /*0x453f95*/
-    AudioController::Init((AudioController *)&v1->WasOnline); /*0x453fa0*/
-    AudioController::Init((AudioController *)v1->Audio8_2); /*0x453fab*/
+    ((AudioController *)((AudioController *)&v1->WasOnline))->Init(); /*0x453fa0*/
+    ((AudioController *)((AudioController *)v1->Audio8_2))->Init(); /*0x453fab*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->SecretProduction); /*0x453fbc*/
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v34, 4, 0); /*0x453fcd*/
     if ( result >= 0 ) /*0x453fd2*/
@@ -133,7 +133,7 @@ void* BuildingClass::LoadFromStream()
         if ( v13 > 0 ) /*0x454050*/
         {
           do /*0x45406b*/
-            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1->Occupants[0] + 4 * v18++)); /*0x454061*/
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1-((unsigned int *)(>Occupants))[0] + 4 * v18++)); /*0x454061*/
           while ( v18 < v34 ); /*0x45406b*/
         }
         result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v34, 4, 0); /*0x45407a*/
@@ -189,7 +189,7 @@ void* BuildingClass::LoadFromStream()
               if ( v1->Audio8[2] < v21 /*0x4540d8*/
                 || (IDA_BYTE1(v1->Audio8[1]) || !v21)
                 && (v22 = v1->Audio8[3], v22 > 0)
-                && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(v1->Audio7[3] + 8))(
+                && (*(uint8_t (**)(int *, int, unsigned int))(v1->Audio7[3] + 8))(
                      &v1->Audio7[3],
                      v21 + v22,
                      0) )
@@ -217,13 +217,13 @@ void* BuildingClass::LoadFromStream()
           if ( v1->Audio7[1] < FiringOccupantIndex /*0x454029*/
             || (IDA_BYTE1(v1->Audio7[0]) || !FiringOccupantIndex)
             && (v15 = v1->Audio7[2], v15 > 0)
-            && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(v1->Overpowerers[0] + 8))(
+            && (*(uint8_t (**)(int *, int, unsigned int))(v1-((unsigned int *)(>Overpowerers))[0] + 8))(
                  v1->Overpowerers,
                  FiringOccupantIndex + v15,
                  0) )
           {
             v16 = (unsigned int)(v1->Audio7[1]);
-            v17 = (unsigned int)(v1->Occupants[0]);
+            v17 = (unsigned int)(v1-((unsigned int *)(>Occupants))[0]);
             v1->Audio7[1] = (unsigned int)(v16 + 1);
             *(unsigned int *)(v17 + 4 * v16) = v33; /*0x454040*/
           }
@@ -247,7 +247,7 @@ int BuildingClass::AssignDestination_SyncLog()
 
   if ( this->? != 19 ) /*0x455d5a*/
   {
-    if ( (*((uint8_t (__thiscall **)(BuildingClass *))this->TechnoClass + 161))(this) /*0x455d73*/
+    if ( (*((uint8_t (**)(BuildingClass *))this->TechnoClass + 161))(this) /*0x455d73*/
       || this->Type->ConstructionYard )
     {
       TechnoClass::SetFocus((int)v3); /*0x455d80*/
@@ -285,8 +285,8 @@ int BuildingClass::FindClosestForRepair(unsigned int * a1)
   do
   {
     v4 = *(BuildingClass **)(a1->?->TechnoClass::firepowerMultiplier[1] + 4 * v3); /*0x4dfcf3*/
-    v5 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, char *))v4->TechnoClass + 18))(v4, v16); /*0x4dfcff*/
-    v6 = (unsigned int *)(*((int (__thiscall **)(FootClass *, char *))a1->TechnoClass + 18))(a1, v17); /*0x4dfd08*/
+    v5 = (unsigned int *)(*((int (**)(BuildingClass *, char *))v4->TechnoClass + 18))(v4, v16); /*0x4dfcff*/
+    v6 = (unsigned int *)(*((int (**)(FootClass *, char *))a1->TechnoClass + 18))(a1, v17); /*0x4dfd08*/
     v14 = v6[1] - v5[1]; /*0x4dfd28*/
     v15 = v6[2] - v5[2]; /*0x4dfd2c*/
     Math::Sqrt((double)(*v6 - *v5) * (double)(*v6 - *v5) + (double)v14 * (double)v14 + (double)v15 * (double)v15); /*0x4dfd55*/
@@ -295,7 +295,7 @@ int BuildingClass::FindClosestForRepair(unsigned int * a1)
     if ( v7 < v12 )
     {
       v9 = a1
-         ? ((*((int (__thiscall **)(FootClass *))a1->TechnoClass + 11))(a1) == 15
+         ? ((*((int (**)(FootClass *))a1->TechnoClass + 11))(a1) == 15
           ? (unsigned int)a1
           : 0)
          : 0;
@@ -314,8 +314,8 @@ int BuildingClass::FindClosestForRepair(unsigned int * a1)
     a1->shouldEnterOccupiable = 1; /*0x4dfdc0*/
     if ( movementDestination != v13 || *(unsigned short *)&a1->currentMission != 8 ) /*0x4dfdd2*/
     {
-      (*((void (__thiscall **)(FootClass *, AbstractClass *, int))a1->TechnoClass + 288))(a1, v13, 1); /*0x4dfddb*/
-      (*((void (__thiscall **)(FootClass *, int, int))a1->TechnoClass + 122))(a1, 8, 1); /*0x4dfde9*/
+      (*((void (**)(FootClass *, AbstractClass *, int))a1->TechnoClass + 288))(a1, v13, 1); /*0x4dfddb*/
+      (*((void (**)(FootClass *, int, int))a1->TechnoClass + 122))(a1, 8, 1); /*0x4dfde9*/
     }
     return 1; /*0x4dfdf0*/
   }
@@ -357,13 +357,13 @@ int BuildingClass::FindClosestForRepair2(int a1)
   {
     v5 = *(BuildingClass **)(stru_A8EB00.ObjectTypeClass[17] + 4 * v2); /*0x4dfe36*/
     if ( a1 )
-      v6 = (*((int (__thiscall **)(FootClass *))a1->TechnoClass + 11))(a1) == 15 ? a1 : 0;
+      v6 = (*((int (**)(FootClass *))a1->TechnoClass + 11))(a1) == 15 ? a1 : 0;
     else
       v6 = 0; /*0x4dfe3b*/
     if ( (uint8_t)BuildingClass::CanRepair(v5, (int)v6) ) /*0x4dfe54*/
     {
-      v7 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, char *))v5->TechnoClass + 18))(v5, v16); /*0x4dfe6b*/
-      v8 = (unsigned int *)(*((int (__thiscall **)(FootClass *, char *))a1->TechnoClass + 18))(a1, v17); /*0x4dfe74*/
+      v7 = (unsigned int *)(*((int (**)(BuildingClass *, char *))v5->TechnoClass + 18))(v5, v16); /*0x4dfe6b*/
+      v8 = (unsigned int *)(*((int (**)(FootClass *, char *))a1->TechnoClass + 18))(a1, v17); /*0x4dfe74*/
       v14 = v8[1] - v7[1]; /*0x4dfe92*/
       v15 = v8[2] - v7[2]; /*0x4dfe9c*/
       Math::Sqrt((double)(*v8 - *v7) * (double)(*v8 - *v7) + (double)v15 * (double)v15 + (double)v14 * (double)v14); /*0x4dfec1*/
@@ -383,8 +383,8 @@ int BuildingClass::FindClosestForRepair2(int a1)
     a1->shouldGarrisonStructure = 1; /*0x4dff06*/
     if ( movementDestination != v13 || a1->? != 8 ) /*0x4dff18*/
     {
-      (*((void (__thiscall **)(FootClass *, AbstractClass *, int))a1->TechnoClass + 288))(a1, v13, 1); /*0x4dff21*/
-      (*((void (__thiscall **)(FootClass *, int, int))a1->TechnoClass + 122))(a1, 8, 1); /*0x4dff2f*/
+      (*((void (**)(FootClass *, AbstractClass *, int))a1->TechnoClass + 288))(a1, v13, 1); /*0x4dff21*/
+      (*((void (**)(FootClass *, int, int))a1->TechnoClass + 122))(a1, 8, 1); /*0x4dff2f*/
     }
     return 1; /*0x4dff36*/
   }
@@ -441,7 +441,7 @@ int BuildingClass::AnimController()
     v10 = (unsigned int *)this->q044; /*0x629793*/
     if ( v10 ) /*0x629798*/
     {
-      v10[45] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6297af*/
+      v10[45] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6297af*/
       v11 = v12[2]; /*0x6297b2*/
       v10[48] = 128; /*0x6297b7*/
       v10[46] = v11; /*0x6297bf*/
@@ -457,13 +457,13 @@ namespace gamemd {
 int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
 {
   int result; // eax
-  int v3; // edi
+  BuildingClass * v3;
   int v4; // ebp
 
   result = RadioClass::LoadState(aP0, aP2); /*0x70bf5c*/
   if ( result >= 0 ) /*0x70bf65*/
   {
-    aP0->planningToken = (int)(0);
+    aP0->planningToken = (void *)((int)(0));
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 540); /*0x70bf7f*/
     v3 = aP0 + 772; /*0x70bf84*/
     v4 = 8; /*0x70bf8a*/

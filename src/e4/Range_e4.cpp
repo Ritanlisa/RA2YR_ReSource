@@ -26,7 +26,7 @@ long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
     v6 = (unsigned int)Random::State(&unk_ABE890); /*0x598068*/
     result = Math::RoundToInt((double)v6 * v3 * 2.328306437080797e-10 + v7); /*0x598082*/
   }
-  while ( (unsigned int)result > aP1 ); /*0x598089*/
+  while ( (unsigned int)result > (unsigned int)(aP1) ); /*0x598089*/
   return result; /*0x59808b*/
 }
 } // namespace gamemd

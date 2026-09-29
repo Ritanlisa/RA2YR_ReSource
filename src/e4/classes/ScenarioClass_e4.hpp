@@ -421,7 +421,7 @@ struct ScenarioClass {
     char allowableMaximumsCount[4];  // 0x34E0
     unsigned char u8_34E1;  // 0x34E1
     void* dropshipUnitCounts;  // 0x34E4
-    char dropshipCountsCount[4];  // 0x34E8
+    unsigned int dropshipCountsCount;  // 0x34E8
     char ambientOriginal[4];  // 0x34EC
     unsigned int ambientCurrent;  // 0x34F0
     char ambientTarget[4];  // 0x34F4
@@ -494,10 +494,11 @@ struct ScenarioClass {
     unsigned int __pad_0;
     unsigned int __pad_3566;
     unsigned int __pad_628;
+    unsigned int Timer;
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     ScenarioClass * * CopyStartPositions();
-    void* * Constructor();
+    void* * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     char ClearFlag();
     char MissionStubReturnZero2(MPCooperative * aP0);
     char MissionStubReturnZero4(int a1);
@@ -540,11 +541,12 @@ struct ScenarioClass {
     static double GetGlobalStateByID(...);  // C2597 interim stub
     static double GetLocalStateByID(...);  // C2597 interim stub
     static double Get_Waypoint_Location(...);  // C2597 interim stub
-    static double Load(...);  // C2597 interim stub
+     double Load(...);  // C2597 interim stub
     static double SaveLoad_Prefix(...);  // C2597 interim stub
     static double SaveLoad_Prefix_0(...);  // C2597 interim stub
     static double ShowMissionBriefing(...);  // C2597 interim stub
     static double UpdateLighting(...);  // C2597 interim stub
+    static double CheckExists(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

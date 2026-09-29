@@ -19,15 +19,15 @@ struct RocketLocomotionClass_17 {
     unsigned int m_C;
     unsigned int __pad_0;
 // --- flat members (END) ---
-    void ddtor();  // 0x6647B0
+    void ddtor(void *a1 = 0);  // 0x6647B0
     int UpdateMovement(int a2);  // 0x664800
     char AddRef(int a2);  // 0x664810
     char SetCapacity(int a2,  unsigned int * a3);    // 0x664850
-    void Destroy();  // 0x664900
+    void Destroy(void *a1 = 0);  // 0x664900
     int IndexOf(unsigned int * a2);  // 0x664930
     char Release(int a2,  unsigned int * a3);    // 0x664990
     int Launch(unsigned int * a2);  // 0x664A40
-    VectorClass_flat * Constructor(char a2);  // 0x664A70
+    VectorClass_flat * Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x664A70
     DynamicVector * QueryInterface(char a2);  // 0x664AC0
     unsigned int BeginMove(int a2);  // 0x6647E0
     unsigned int PointerToIndex(int a2);  // 0x664970

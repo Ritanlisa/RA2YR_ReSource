@@ -23,7 +23,7 @@ struct BitTextClass {
     unsigned int u32_41;
 // --- flat members (END) ---
     int ParseFontData(char * Source);
-    unsigned int * LoadFont();
+    unsigned int * LoadFont(void *a1 = 0);
 };
 
 } // namespace gamemd

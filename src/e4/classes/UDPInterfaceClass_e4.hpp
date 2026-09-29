@@ -32,7 +32,7 @@ struct UDPInterfaceClass {
     unsigned int u32_FC1E0;
 // --- flat members (END) ---
     AbstractClass * * Flush();
-    AbstractClass * * ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5);
+    AbstractClass * * ProcessSocketIO(int a2, unsigned int s, int a4, unsigned int a5);
     AbstractClass * * flush(int a2, unsigned int * a3);
     CampaignClass * * Destructor(char a2);
     DynamicVector * receivePacket(char a2);

@@ -23,6 +23,7 @@
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/HouseTypeClass_e4.hpp"
 
 // 0x6F2040
 namespace gamemd {
@@ -43,6 +44,7 @@ int sub_6F2040()
 // 0x4371D0
 char Helper::ProcessData(void ** a1, int a2, int * a3)
 {
+    unsigned int v11 = 0;  /* G37 hoist */
   int v6; // ebx
   int v7; // eax
   int v8; // edx
@@ -55,7 +57,7 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   if ( *(int *)(a2 + 8) <= 0 || *(int *)(a2 + 12) <= 0 ) /*0x4371e5*/
     return 0; /*0x4371e8*/
   v6 = *a3; /*0x4371fa*/
-  v7 = (*((int (__thiscall **)(void **))*a1 + 28))(a1); /*0x4371fc*/
+  v7 = (*((int (**)(void **))*a1 + 28))(a1); /*0x4371fc*/
   v8 = *(unsigned int *)(a2 + 12); /*0x437202*/
   v11.? = *(unsigned int *)(a2 + 8); /*0x437205*/
   v11.? = v8; /*0x437215*/

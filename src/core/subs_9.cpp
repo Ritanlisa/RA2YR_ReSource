@@ -4,7 +4,7 @@
 
 #include <cstdint>
 #include <cstddef>
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // IDA-named globals referenced (extern stubs)
 extern unsigned char byte_B0FBAC;

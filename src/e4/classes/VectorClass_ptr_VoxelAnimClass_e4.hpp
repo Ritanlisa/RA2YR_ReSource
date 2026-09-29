@@ -15,12 +15,12 @@ struct VectorClass_ptr_VoxelAnimClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_VoxelAnimClass___(char a2);  // 0x40F1D0
-    void Destroy();  // 0x40EEC0
+    void Destroy(void *a1 = 0);  // 0x40EEC0
     unsigned int GetItemIndex(int a2);  // 0x40EEF0
-    int Get(int a2);  // 0x40EF10
+    int Get(int a2, void *a1 = 0);  // 0x40EF10
     char Add(int a2);  // 0x40EF20
     char Release(int a2,  unsigned int * a3);    // 0x40EF60
-    void Remove();  // 0x40F010
+    void Remove(void *a1 = 0);  // 0x40F010
     int GetSize(unsigned int * a2);  // 0x40F040
     unsigned int GetCapacity(int a2);  // 0x40F080
     char SetCapacity(int a2,  unsigned int * a3);    // 0x40F0A0

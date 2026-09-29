@@ -84,7 +84,7 @@ struct MapClass {
     unsigned char q0C0;  // 0xC0
     unsigned int q0C3;  // 0xC3
     unsigned char q0C7;  // 0xC7
-    ObjectClass* q0D4;  // 0xD4
+    void* ;  // 0xD4
     void* q0D8;  // 0xD8
     MapClass* q0DC;  // 0xDC
     unsigned char q0E0;  // 0xE0
@@ -383,7 +383,7 @@ struct MapClass {
     unsigned int q1124;  // 0x1124
     AbstractTypeClass* q1128;  // 0x1128
     unsigned int q1158;  // 0x1158
-    ObjectClass* q115C;  // 0x115C
+    void* ;  // 0x115C
     void* q1160;  // 0x1160
     MapClass* q1164;  // 0x1164
     unsigned char q1168;  // 0x1168
@@ -480,6 +480,14 @@ struct MapClass {
     unsigned int __pad_F8;
     unsigned int q01C6;
     unsigned int q0086;
+    unsigned int q0088;
+    unsigned int q0308;
+    unsigned int q0585;
+    unsigned int q0805;
+    unsigned int u32_6F47;
+    unsigned int q0D4;
+    unsigned int q115C;
+    unsigned int RevealArea2;
 // --- flat members (END) ---
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
     BombClass * * DecompressCellData(MouseClass * aP1);
@@ -514,10 +522,10 @@ struct MapClass {
     int InitCellVe_vt06(int a2);
     int InitCellVector();
     int InitializeTileData(MapClass * aP1);
-    int IsAreaFree(int * a2, int a3);
+    int IsAreaFree(int * a2, int a3, void *a1 = 0);
     int IsCellPassable(int a1, int a2);
     int LoadTerrainData(MapClass * aP1);
-    int MarkForRedraw(int a2);
+    int MarkForRedraw(int a2, void *a1 = 0);
     int ProcessFogTransition();
     int ProcessRegion();
     int ProcessTile();
@@ -531,7 +539,7 @@ struct MapClass {
     int ToggleZoom(int a2);
     int TransitionCliff(MouseClass * aP0);
     int TriggerEVA(void* aP0);
-    int UnselectAll_ClearLimboLaunchers();
+    int UnselectAll_ClearLimboLaunchers(void *a1 = 0);
     int UpdateLightingPostProcess();
     int isCellShrouded(unsigned short a2);
     int isLocationShrouded(unsigned short a2);
@@ -541,7 +549,7 @@ struct MapClass {
     unsigned int * FastCellLookup(short * a2, int a3, char a4);
     unsigned int * FindPlacementCellsAlt(void* aP1, void* aP2);
     unsigned int * InitAllCells();
-    unsigned int * SpiralSearch();
+    unsigned int * SpiralSearch(void *a1 = 0);
     unsigned int * allocateMapBuffers();
     unsigned int InitCellVe_vt05(int a2);
     unsigned int TransformCoordToScreen(int a2, unsigned int * a3);
@@ -556,8 +564,8 @@ struct MapClass {
     void InitCellVe_vt03();
     void allocateCellArrays();
     void checkCellBounds();
-    void* ApplyTerrainDamage(void *a1, IUnknown aP1);
-    void* Destruct();
+    void* ApplyTerrainDamage(void *a1, void* aP1);
+    void* Destruct(void *a1 = 0);
     void* InitTileData(MouseClass * aP0, int aP3);
 };
 

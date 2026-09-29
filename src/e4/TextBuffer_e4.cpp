@@ -8,22 +8,25 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x5BCC90
 namespace gamemd {
 int TextBuffer::Init()
 {
-  int v1; // edi
+  TextBuffer * v1;
   TextBuffer *v2; // ebx
   TextBuffer *v3; // edx
   TextBuffer *v4; // eax
   int v5; // esi
 
-  v1 = (gamemd::TextBuffer *)(0);
-  v2 = &this->u32_1F40; /*0x5bcc95*/
+  v1 = (gamemd::TextBuffer *)((int)((gamemd::TextBuffer *)(0)));
+  v2 = (gamemd::TextBuffer *)(&this->u32_1F40);
   do /*0x5bccbe*/
   {
-    v3 = this + v1; /*0x5bcc9b*/
+    v3 = (unsigned int)(this)+ v1; /*0x5bcc9b*/
     v4 = v2; /*0x5bcc9e*/
     v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/
@@ -38,7 +41,7 @@ int TextBuffer::Init()
     ++v1; /*0x5bccb7*/
     v2 += 4; /*0x5bccb8*/
   }
-  while ( v1 < 25 ); /*0x5bccbe*/
+  while ( v1 < (gamemd::TextBuffer *)(25) ); /*0x5bccbe*/
   this->q2734 = 1; /*0x5bccc8*/
   return Text::DrawRepeated(0, 0, 80, 25); /*0x5bccd4*/
 }

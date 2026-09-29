@@ -16,6 +16,8 @@ struct AudioSettings {
     unsigned int ComputeTransform;
     unsigned int u32_44;
     unsigned int u32_46;
+    unsigned int Audio;
+    unsigned int Debug;
 // --- flat members (END) ---
     AbstractClass * * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd);
     void SetFlag68(char a2);

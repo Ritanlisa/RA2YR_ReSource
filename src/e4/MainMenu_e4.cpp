@@ -12,16 +12,20 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Main_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Menu_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x531CC0
 namespace gamemd {
-long MainMenu_Screen()
+long MainMenu_Screen(void * a1, void * a2)
 {
   HWND v2; // esi
   HWND DlgItem; // esi
   int v4; // ecx
   int v5; // eax
-  uint16_t v6; // ax
+  void * v6;
   int v7; // esi
   int v8; // esi
   const char **v9; // edi
@@ -46,7 +50,7 @@ long MainMenu_Screen()
         v4 = (g_DisplayWidth - 800) / 2; /*0x531d51*/
       else
         v4 = 0; /*0x531d43*/
-      if ( DataGlobal_8A00A8 > 600 ) /*0x531d5d*/
+      if ( DataGlobal_8A00A8 > (unsigned char [82112])(600) ) /*0x531d5d*/
         v5 = (DataGlobal_8A00A8 - 600) / 2; /*0x531d6b*/
       else
         v5 = 0; /*0x531d5f*/
@@ -55,48 +59,48 @@ long MainMenu_Screen()
       if ( g_DisplayWidth == 640 ) /*0x531d9a*/
         SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsS); /*0x531da1*/
       else
-        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x531db0*/
+        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM, unsigned int a1, unsigned int a2)aRa2tsL); /*0x531db0*/
     }
     do /*0x531f04*/
     {
-      if ( (uint8_t)Dialog::PumpMessages() ) /*0x531db2*/
+      if ( (uint8_t)this->Dialog::PumpMessages() ) /*0x531db2*/
         dwNewLong = 7; /*0x531dbb*/
       if ( g_LoadScreenFlag ) /*0x531dca*/
       {
         g_LoadScreenFlag = 0; /*0x531dd0*/
         Screen::Capture(1, 0, a1, a2); /*0x531dd7*/
-        Frame::Present(0); /*0x531de6*/
+        Frame::Present(0, unsigned int a1, unsigned int a2); /*0x531de6*/
       }
       if ( (uint16_t)EventQueue::Process(dword_87F770) ) /*0x531df1*/
       {
-        v6 = EventQueue::Read(dword_87F770); /*0x531e05*/
-        a1 = v6; /*0x531e0d*/
-        if ( (v6 & 0x800) == 0 ) /*0x531e16*/
+        v6 = (void *)((uint16_t)((void *)(EventQueue::Read(dword_87F770))));
+        a1 = (void *)(v6);
+        if ( ((unsigned int)(v6)& 0x800) == 0 ) /*0x531e16*/
         {
-          a2 = (char)v6; /*0x531e1c*/
+          a2 = (void *)((char)v6);
           if ( !isalnum((char)v6) || (unsigned char)a1 == 126 ) /*0x531e33*/
           {
-            memset(byte_A8F7B8, 0, sizeof(byte_A8F7B8)); /*0x531f3e*/
+            memset(byte_A8F7B8, 0, sizeof(byte_A8F7B8, unsigned int a1)); /*0x531f3e*/
           }
           else
           {
-            v11[0] = a1; /*0x531e3d*/
+            v11[0] = (unsigned char)(a1);
             v11[1] = 0; /*0x531e42*/
             Debug::Log_0(v11); /*0x531e47*/
             v7 = strlen(byte_A8F7B8); /*0x531e5e*/
             if ( v7 >= 31 ) /*0x531e63*/
             {
               v7 = 0; /*0x531e65*/
-              byte_A8F7B8[0] = 0; /*0x531e67*/
+              ((unsigned int *)(byte_A8F7B8))[0] = 0; /*0x531e67*/
             }
-            byte_A8F7B8[v7] = toupper((char)a1); /*0x531e77*/
+            ((unsigned int *)(byte_A8F7B8))[v7] = toupper((char)a1); /*0x531e77*/
             v8 = 0; /*0x531e7d*/
             v9 = (const char **)off_825C2C; /*0x531e7f*/
             while ( !strstr(byte_A8F7B8, *v9) ) /*0x531e96*/
             {
               v9 += 4; /*0x531e98*/
               ++v8; /*0x531e9b*/
-              if ( (int)v9 >= (int)off_825C6C ) /*0x531ea2*/
+              if ( (int, unsigned int a1, unsigned int a2)v9 >= (int)off_825C6C ) /*0x531ea2*/
                 goto LABEL_27; /*0x531ea2*/
             }
             *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) = *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) == 0; /*0x531ebf*/
@@ -104,7 +108,7 @@ long MainMenu_Screen()
             PlayVocClass(1.0, 0); /*0x531edb*/
             g_LoadScreenFlag = 0; /*0x531ee4*/
             Screen::Capture(1, 0, a1, a2); /*0x531eeb*/
-            Frame::Present(0); /*0x531efa*/
+            ((Frame *)(0))->Present(); /*0x531efa*/
           }
         }
       }

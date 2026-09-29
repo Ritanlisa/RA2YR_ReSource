@@ -34,10 +34,12 @@ struct INIClass {
     unsigned int q0146;
     unsigned int sectionHead0;
     unsigned int vtable0;
-    unsigned int SetIntFormat;
-    unsigned int GetCoord2;
     unsigned int ReadDifficultyModifiers;
     unsigned int unknown38;
+    unsigned int ReadInt_Overwrite;
+    unsigned int SetInt;
+    unsigned int SetString;
+    unsigned int WriteToString;
 // --- flat members (END) ---
     INIClass * ReadCoord(double aP1, int a2, INIClass * aP2, int a4);
     ObjectClass * * BinarySearchSection(INIClass * aP1);
@@ -67,6 +69,10 @@ struct INIClass {
     static double GetCoord(...);  // C2597 interim stub
     static double ReadPoint3D_Overwrite(...);  // C2597 interim stub
     static double SetHouseName(...);  // C2597 interim stub
+    static double GetCoord2(...);  // C2597 interim stub
+    static double SetIntFormat(...);  // C2597 interim stub
+    static double ReadTokenizedPair(...);  // C2597 interim stub
+    static double SaveToPipe(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

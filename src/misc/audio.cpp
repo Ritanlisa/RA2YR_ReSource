@@ -217,7 +217,7 @@ IDirectSound* Audio_GetDirectSound()  // IDA 0x40A7A0
 } // namespace gamemd
 
 #include "misc/audio.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 #include "core/globals_core.hpp"
 #include "core/globals_core.hpp"
 

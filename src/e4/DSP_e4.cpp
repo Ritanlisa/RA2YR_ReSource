@@ -10,13 +10,15 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
 
 // 0x7BF740
 namespace gamemd {
 int DSP_AudioMixBuffers(int a1, int a2)
 {
   DSurface *v11; // esi
-  int result; // eax
+  DSurface * result;
   uint16_t *v14; // edx
   int16_t v48; // cx
   int16_t v49; // ax
@@ -53,7 +55,7 @@ int DSP_AudioMixBuffers(int a1, int a2)
         int v9 = *(unsigned int *)(a1 + 296);
         if ( *(unsigned int *)(a1 + 384) == v9 )
         {
-          result = -1;
+          result = (gamemd::DSurface *)(-1);
           goto LABEL_34;
         }
         *(unsigned int *)(a1 + 384) = v9;
@@ -62,7 +64,7 @@ int DSP_AudioMixBuffers(int a1, int a2)
         a5 = 0;
         if ( (*(unsigned char *)(v10 + 20) & 1) != 0 )
         {
-          result = -9;
+          result = (gamemd::DSurface *)(-9);
 LABEL_32:
           int v17 = v117;
           unsigned int * v18 = v115;
@@ -70,13 +72,13 @@ LABEL_32:
           *(unsigned int *)(a1 + 304) = v7;
           *(unsigned int *)(a1 + 284) = v18;
           *(unsigned int *)(a1 + 384) = v17 + 1;
-          return result;
+          return (int)(result);
         }
         if ( (int)v11 >= *(unsigned int *)(a1 + 284)
           || !*(unsigned int *)(a1 + 1892)
           || (*(unsigned char *)(a1 + 132) & 1) != 0 && (*(unsigned char *)(a1 + 234) & 8) == 0 )
         {
-          result = -6;
+          result = (gamemd::DSurface *)(-6);
           goto LABEL_32;
         }
         if ( !*(unsigned char *)(a1 + 264) && v11 )
@@ -100,25 +102,24 @@ LABEL_32:
           }
           else
           {
-LABEL_23:
-            result = Audio_Process_7C0530(a1, (int)v11, 1);
-            if ( result != -1 )
+LABEL_23: result = (gamemd::DSurface *)(Audio_Process_7C0530(a1, (int)v11, 1));
+            if ( result != (gamemd::DSurface *)(-1) )
               goto LABEL_27;
           }
         }
-        result = (int)(ProcessAudioStreamPlayback(a1, v11, *(uint8_t *)(a1 + 245), 0, 0, &a5));
+        result = (unsigned int)((int)(ProcessAudioStreamPlayback(a1, v11, *(uint8_t *)(a1 + 245), 0, 0, &a5)));
 LABEL_27:
         *(unsigned int *)(a1 + 384) = v11;
-        if ( result != -1 )
+        if ( result != (gamemd::DSurface *)(-1) )
           goto LABEL_31;
         int v16 = 32;
         if ( a5 )
           v16 = 48;
         result = FillAudioStreamBuffer(a1, v16);
-        if ( result != -1 )
+        if ( result != (gamemd::DSurface *)(-1) )
         {
 LABEL_31:
-          if ( result != -11 )
+          if ( result != (gamemd::DSurface *)(-11) )
             goto LABEL_32;
         }
 LABEL_34:
@@ -146,7 +147,7 @@ LABEL_34:
           *(unsigned int *)(a1 + 308) = -1;
           *(unsigned int *)(a1 + 336) = v24;
         }
-        return result;
+        return (int)(result);
       }
     }
   }
@@ -696,7 +697,7 @@ LABEL_73:
               return -4;
             *(unsigned int *)(a1 + 372) = 0;
             v31[4] = 0;
-            v31[5] = v32;
+            v31[5] = (unsigned int)(v32);
             v31[3] = (unsigned int)(8);
             *(unsigned int *)(a1 + 360) = v31;
             *(unsigned int *)(a1 + 356) = v31[1];

@@ -39,63 +39,63 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   int *v20; // edi
 
   for ( i = 0; i < g_SuperWeaponTypeArray; ++i ) /*0x679a20*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_SuperWeaponTypeCount + i) + 100))( /*0x679a2d*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)g_SuperWeaponTypeCount + i) + 100))( /*0x679a2d*/
       *((unsigned int *)g_SuperWeaponTypeCount + i),
       aP0);
   for ( j = 0; j < g_HouseClassInitState; ++j ) /*0x679a43*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_SuperWeaponPool + j) + 100))( /*0x679a50*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)g_SuperWeaponPool + j) + 100))( /*0x679a50*/
       *((unsigned int *)g_SuperWeaponPool + j),
       aP0);
-  for ( k = 0; k < g_BuildingTypeCount2; ++k ) /*0x679a66*/
-    (*(void (__thiscall **)(unsigned int, int *))(**((unsigned int **)g_AnimTypeCount + k) + 100))( /*0x679a77*/
+  for ( k = 0; k < (int)(g_BuildingTypeCount2); ++k ) /*0x679a66*/
+    (*(void (**)(unsigned int, int *))(**((unsigned int **)g_AnimTypeCount + k) + 100))( /*0x679a77*/
       *((unsigned int *)g_AnimTypeCount + k),
       &CCINIClass_INI_Art);
   for ( m = 0; m < g_TriggerClassCount; ++m ) /*0x679a8d*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_TriggerTypeCount + m) + 100))( /*0x679a9a*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)g_TriggerTypeCount + m) + 100))( /*0x679a9a*/
       *((unsigned int *)g_TriggerTypeCount + m),
       aP0);
   for ( n = 0; n < g_TypeClass_FindCache; ++n ) /*0x679ab0*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_AircraftTypeCount + n) + 100))( /*0x679abd*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)g_AircraftTypeCount + n) + 100))( /*0x679abd*/
       *((unsigned int *)g_AircraftTypeCount + n),
       aP0);
   for ( ii = 0; ii < g_CrateCount; ++ii ) /*0x679ad3*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_UnitTypeCount2 + ii) + 100))( /*0x679ae0*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)g_UnitTypeCount2 + ii) + 100))( /*0x679ae0*/
       *((unsigned int *)g_UnitTypeCount2 + ii),
       aP0);
   for ( jj = 0; jj < g_LoadScreenProgress; ++jj ) /*0x679af6*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)Factory_ExitCellTable + jj) + 100))( /*0x679b03*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)Factory_ExitCellTable + jj) + 100))( /*0x679b03*/
       *((unsigned int *)Factory_ExitCellTable + jj),
       aP0);
   for ( kk = 0; kk < g_WeaponTypePool; ++kk ) /*0x679b19*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_WeaponTypeConfig + kk) + 100))( /*0x679b26*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)g_WeaponTypeConfig + kk) + 100))( /*0x679b26*/
       *((unsigned int *)g_WeaponTypeConfig + kk),
       aP0);
   for ( mm = 0; mm < g_BulletTypeInitState; ++mm ) /*0x679b3c*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_A83C84 + mm) + 100))(*((unsigned int *)dword_A83C84 + mm), aP0); /*0x679b49*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)dword_A83C84 + mm) + 100))(*((unsigned int *)dword_A83C84 + mm), aP0); /*0x679b49*/
   for ( nn = 0; nn < g_WarheadTypePool; ++nn ) /*0x679b5f*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_8874C4 + nn) + 100))(*((unsigned int *)dword_8874C4 + nn), aP0); /*0x679b6c*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)dword_8874C4 + nn) + 100))(*((unsigned int *)dword_8874C4 + nn), aP0); /*0x679b6c*/
   for ( i1 = 0; i1 < g_WeaponTypePool; ++i1 ) /*0x679b82*/
     WeaponTypeClass::CalculateSpeed(*((unsigned int *)g_WeaponTypeConfig + i1)); /*0x679b8c*/
   for ( i2 = 0; i2 < g_TriggerClassCount; ++i2 ) /*0x679ba4*/
     nullsub_7(*((unsigned int *)g_TriggerTypeCount + i2)); /*0x679baf*/
   for ( i3 = 0; i3 < g_RulesClassInitState; ++i3 ) /*0x679bc7*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_A8E31C + i3) + 100))(*((unsigned int *)dword_A8E31C + i3), aP0); /*0x679bd5*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)dword_A8E31C + i3) + 100))(*((unsigned int *)dword_A8E31C + i3), aP0); /*0x679bd5*/
   for ( i4 = 0; i4 < FactoryClass_Count; ++i4 ) /*0x679beb*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)FactoryClass_Array + i4) + 100))( /*0x679bf9*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)FactoryClass_Array + i4) + 100))( /*0x679bf9*/
       *((unsigned int *)FactoryClass_Array + i4),
       aP0);
   for ( i5 = 0; i5 < g_ObjectTypeConfig; ++i5 ) /*0x679c0f*/
-    (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)&g_BuildingTypeClass_Array->gap0[4 * i5] + 100))( /*0x679c1c*/
+    (*(void (**)(unsigned int, int))(**(unsigned int **)&g_BuildingTypeClass_Array->gap0[4 * i5] + 100))( /*0x679c1c*/
       *(unsigned int *)&g_BuildingTypeClass_Array->gap0[4 * i5],
       aP0);
   for ( i6 = 0; i6 < g_BuildingTypeInitState; ++i6 ) /*0x679c32*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_BuildingProductionQueue + i6) + 100))( /*0x679c3f*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)g_BuildingProductionQueue + i6) + 100))( /*0x679c3f*/
       *((unsigned int *)g_BuildingProductionQueue + i6),
       aP0);
   for ( i7 = 0; i7 < g_InfantryTypeInitState; ++i7 ) /*0x679c55*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_A83D6C + i7) + 100))(*((unsigned int *)dword_A83D6C + i7), aP0); /*0x679c62*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)dword_A83D6C + i7) + 100))(*((unsigned int *)dword_A83D6C + i7), aP0); /*0x679c62*/
   for ( i8 = 0; i8 < g_MultiplayerPool; ++i8 ) /*0x679c78*/
-    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_A8EB2C + i8) + 100))(*((unsigned int *)dword_A8EB2C + i8), aP0); /*0x679c85*/
+    (*(void (**)(unsigned int, int))(**((unsigned int **)dword_A8EB2C + i8) + 100))(*((unsigned int *)dword_A8EB2C + i8), aP0); /*0x679c85*/
   v19 = 0; /*0x679c92*/
   v20 = (int *)&unk_A8E3A8; /*0x679c94*/
   do /*0x679cad*/
@@ -128,16 +128,16 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
   *(void **)&this->vtable3 = (void*)&SideClass_vftable; /*0x6a45a3*/
   *(void **)&this->vtable4 = (void*)&SideClass_vftable; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x6a45b1*/
-  if ( FootClass_Array.?[0] < FootClass_Array.?[1] /*0x6a45ea*/
-    || (IDA_BYTE1(FootClass_Array.?[2]) || !FootClass_Array.?[1])
-    && FootClass_Array.?[1] > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(FootClass_Array.? + 8))(
+  if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 1)) /*0x6a45ea*/
+    || (IDA_BYTE1(*((unsigned int *)((char *)&FootClass_Array + 2))) || !FootClass_Array.?[1])
+    && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(FootClass_Array.? + 8))(
          &FootClass_Array.?,
-         FootClass_Array.?[1] + FootClass_Array.?[1],
+         *((unsigned int *)((char *)&FootClass_Array + 1)) + *((unsigned int *)((char *)&FootClass_Array + 1)),
          0) )
   {
-    v3 = FootClass_Array.?[0]++; /*0x6a45f7*/
-    *(unsigned int *)(FootClass_Array.?[0] + 4 * v3) = this; /*0x6a4606*/
+    v3 = *((unsigned int *)((char *)&FootClass_Array + 0))++; /*0x6a45f7*/
+    *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3) = this; /*0x6a4606*/
   }
   return &this->AbstractClass; /*0x6a460b*/
 }
@@ -194,7 +194,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *p_houseTypes = (void*)&TypeList_int_vftable; /*0x6a4819*/
     }
     (*(void (__stdcall **)(int, int *, int, unsigned int))(aP1->vtable4)(aP1, &aP1, 4, 0); /*0x6a482a*/
-    for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
+    for ( i = 0; i < (int)(aP1); ++i ) /*0x6a4833*/
     {
       (*(void (__stdcall **)(int, SideClass **, int, unsigned int))(aP1->vtable4)(aP1, &a0, 4, 0); /*0x6a4840*/
       v7 = p_houseTypes[2]; /*0x6a4843*/
@@ -204,7 +204,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
           continue; /*0x6a4854*/
         v8 = (int)p_houseTypes[5]; /*0x6a4856*/
         if ( v8 <= 0 /*0x6a4865*/
-          || !(*((uint8_t (__thiscall **)(void **, int, unsigned int))*p_houseTypes + 2))(
+          || !(*((uint8_t (**)(void **, int, unsigned int))*p_houseTypes + 2))(
                 p_houseTypes,
                 (int)v7 + v8,
                 0) )
@@ -214,7 +214,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       }
       v9 = (void *)((unsigned int)(p_houseTypes[4]));
       v10 = (unsigned int)(p_houseTypes[1]);
-      p_houseTypes[4] = (unsigned int)((char *)v9 + 1);
+      p_houseTypes[4] = (void *)((unsigned int)((char *)v9 + 1));
       v10[(unsigned int)v9] = a0; /*0x6a487c*/
     }
     return 0; /*0x6a4888*/
@@ -234,13 +234,13 @@ void * SideClass::Init(char a2)
   *(void **)&this->vtable3 = (void*)&SideClass_vftable; /*0x6a4943*/
   *(void **)&this->vtable4 = (void*)&SideClass_vftable; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6a4951*/
-  v3 = (*(int (__thiscall **)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &this); /*0x6a496a*/
-  if ( v3 != -1 && v3 < FootClass_Array.?[0] ) /*0x6a497a*/
+  v3 = (*(int (**)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &this); /*0x6a496a*/
+  if ( v3 != -1 && v3 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x6a497a*/
   {
     --FootClass_Array.?[0]; /*0x6a497f*/
     for ( ; /*0x6a4985*/
-          v3 < FootClass_Array.?[0];
-          *(unsigned int *)(FootClass_Array.?[0] + 4 * v3 - 4) = *(unsigned int *)(FootClass_Array.?[0] + 4 * v3) )
+          v3 < *((unsigned int *)((char *)&FootClass_Array + 0));
+          *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3) )
     {
       ++v3; /*0x6a498d*/
     }
@@ -254,7 +254,7 @@ void * SideClass::Init(char a2)
   }
   this->u32_A5 = 0; /*0x6a49d2*/
   this->q028 = 0; /*0x6a49d9*/
-  AbstractTypeClass::Dtor(); /*0x6a49e3*/
+  this->AbstractTypeClass::Dtor(); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     RA2_OPDEL(); /*0x6a49f0*/
   return &this->AbstractClass; /*0x6a49fa*/

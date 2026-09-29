@@ -19,6 +19,7 @@
 #include "e4/classes/Movement_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/MovementAI_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {
@@ -94,7 +95,7 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   {
     v5 = (gamemd::ObjectClass *)((char)(aP2));
   }
-  if ( byte_ABF2DD && (!dword_ABF294 || aP1 == this->u32_5560 && v5 == this->u32_555C) ) /*0x5bdcd6*/
+  if ( byte_ABF2DD && (!dword_ABF294 || aP1 == (gamemd::ObjectClass *)(this->u32_5560) && v5 == (gamemd::ObjectClass *)(this->u32_555C)) ) /*0x5bdcd6*/
   {
     IDA_LOBYTE(result) = 0; /*0x5bdcda*/
   }
@@ -102,13 +103,13 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   {
     byte_ABF2DD = 1; /*0x5bdce4*/
     v6 = dword_82D030[7 * aP1]; /*0x5bdceb*/
-    Ticks = Timer::GetTicks(); /*0x5bdcf2*/
+    Ticks = this->Timer::GetTicks(); /*0x5bdcf2*/
     v8 = 0; /*0x5bdcfb*/
     dword_ABF2A0 = Ticks; /*0x5bdcfd*/
     v8 = v8; /*0x5bdd02*/
     v6 = v6; /*0x5bdd08*/
     this->u32_5568 = 0; /*0x5bdd0e*/
-    if ( !v5 || (v9 = dword_82D034[7 * aP1], v9 == -1) ) /*0x5bdd1e*/
+    if ( !v5 || (v9 = ((unsigned int *)(dword_82D034))[7 * aP1], v9 == -1) ) /*0x5bdd1e*/
       v9 = dword_82D028[7 * aP1]; /*0x5bdd20*/
     v10 = dword_82D03C[7 * aP1]; /*0x5bdd22*/
     v11 = 0; /*0x5bdd25*/
@@ -123,7 +124,7 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
       v8 = *((int16_t *)dword_ABF294 + 2); /*0x5bdd74*/
     v8 = v8; /*0x5bdd7c*/
     v11 = v11; /*0x5bdd87*/
-    (*(void (__thiscall **)(int, int *, void *, int))(*(unsigned int *)dword_887640 + 4))( /*0x5bdd93*/
+    (*(void (**)(int, int *, void *, int))(*(unsigned int *)dword_887640 + 4))( /*0x5bdd93*/
       dword_887640,
       &v11,
       dword_ABF294,
@@ -142,10 +143,10 @@ int Mouse::ReleaseCapture()
 {
   int result; // eax
 
-  DisplayClass::ExitMode(); /*0x6938c3*/
+  this->DisplayClass::ExitMode(); /*0x6938c3*/
   this->u32_555A = 0; /*0x6938c8*/
   result = (int)GetCapture(); /*0x6938cf*/
-  if ( (HWND)result == g_hWnd ) /*0x6938de*/
+  if ( (HWND)result == (HWND)(g_hWnd) ) /*0x6938de*/
     return ReleaseCapture(); /*0x6938e0*/
   return result; /*0x6938db*/
 }
@@ -156,7 +157,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
 {
   MixFileClass *v5; // ecx
   int v6; // ebx
-  int v7; // ebp
+  WWMouseClass * v7;
   WWMouseClass * v8;
   int v9; // edi
   int SubFile; // eax
@@ -167,22 +168,22 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   int v15; // [esp+Ch] [ebp-40h] BYREF
   int v16; // [esp+10h] [ebp-3Ch]
   int v17; // [esp+14h] [ebp-38h]
-  int v18; // [esp+18h] [ebp-34h]
+  WWMouseClass * v18;
   unsigned char v19[16]; // [esp+1Ch] [ebp-30h] BYREF
   int v20[5]; // [esp+2Ch] [ebp-20h] BYREF
   int v21[3]; // [esp+40h] [ebp-Ch] BYREF
 
   v13 = (gamemd::WWMouseClass *)((int)this);
-  v5 = *(MixFileClass **)&this->m_1[3]; /*0x7b93f9*/
+  v5 = *(MixFileClass **)&this-((unsigned int *)(>m_1))[3]; /*0x7b93f9*/
   if ( v5 && aP1 && *(unsigned int *)&stru_87F5F0.__pad_58[128] ) /*0x7b9418*/
   {
     v6 = (int)(this->q050);
-    v7 = this->q054; /*0x7b9431*/
-    v8 = aP2 + this->q048; /*0x7b9438*/
-    v9 = a4 + this->q04C; /*0x7b943e*/
-    SubFile = MixFileClass::GetSubFile(v5, *(unsigned int *)&this->__pad_5[3]); /*0x7b9440*/
-    v20[1] = v6; /*0x7b9447*/
-    v20[2] = v7; /*0x7b9454*/
+    v7 = (gamemd::WWMouseClass *)((int)((gamemd::WWMouseClass *)(this->q054)));
+    v8 = (gamemd::WWMouseClass *)((unsigned int)(aP2)+ this->q048);
+    v9 = (int)(a4 + this->q04C);
+    SubFile = (int)(MixFileClass::GetSubFile(v5, *(unsigned int *)&this-((unsigned int *)(>__pad_5))[3]));
+    v20[1] = (int)(v6);
+    v20[2] = (int)(v7);
     v20[3] = 0; /*0x7b9458*/
     v20[4] = 1; /*0x7b9468*/
     Buffer::Init((Buffer *)v21, SubFile, v7 * v6); /*0x7b9470*/
@@ -190,8 +191,8 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     if ( aP1 == v13->Buffer_field_24 ) /*0x7b9488*/
     {
       v15 = (int)(0);
-      v16 = 0; /*0x7b949d*/
-      v12 = (unsigned int *)(v13 + 44); /*0x7b94a6*/
+      v16 = (int)(0);
+      v12 = (unsigned int *)((unsigned int)(v13)+ 44); /*0x7b94a6*/
       v13 = v8; /*0x7b94b8*/
       v14 = v9; /*0x7b94bc*/
       v17 = v6; /*0x7b94c0*/
@@ -202,11 +203,11 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
       v15 = (int)(0);
       v16 = (int)(0);
       v11 = (int)(*aP1);
-      v13 = v8; /*0x7b94e6*/
+      v13 = (gamemd::WWMouseClass *)((int)(v8));
       v14 = v9; /*0x7b94ea*/
       v17 = v6; /*0x7b94ee*/
       v18 = v7; /*0x7b94f2*/
-      v12 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
+      v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
     }
     BlitterDrawSHP(aP1, *(int *)&stru_87F5F0.__pad_58[128], v20, &v15, &v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
     Vector::Clear((int)v21); /*0x7b951f*/

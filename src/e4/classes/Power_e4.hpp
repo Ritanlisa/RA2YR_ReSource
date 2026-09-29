@@ -68,13 +68,14 @@ struct Power {
     unsigned int u32_355C;
     unsigned int q004;
     unsigned int q008;
+    unsigned int Timer;
 // --- flat members (END) ---
-    int Update(int * a2);  // 0x43A5D0
+    int Update(int * a2, void *a4 = 0, void *a3 = 0, void *a1 = 0);  // 0x43A5D0
     unsigned int * UpdateAll();  // 0x67C6E0
     void* ComputeHousePowerChecksum(unsigned int * a2);  // 0x68B940
     int FinalizeDrain(int a2);  // 0x4A1C10
-    int FlagProcess(int a2);  // 0x4A1CA0
-    int TimerProcess();  // 0x4A1D50
-    char ChangedHouse(char a2);  // 0x750090
+    int FlagProcess(int a2, void *a1 = 0);  // 0x4A1CA0
+    int TimerProcess(void *a1 = 0);  // 0x4A1D50
+    char ChangedHouse(char a2, void *a1 = 0);  // 0x750090
 };
 } // namespace gamemd

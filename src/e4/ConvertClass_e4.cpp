@@ -39,108 +39,108 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   int v30; // [esp+14h] [ebp-Ch]
   int v31; // [esp+1Ah] [ebp-6h]
 
-  *(unsigned int *)&this->ConvertClass_field_0x2[2] = (*(int (__thiscall **)(int))(aP3->q070)(aP3); /*0x48e753*/
-  *(unsigned int *)&this->__pad_6[2] = 0; /*0x48e756*/
-  *(unsigned int *)&this->__pad_6[6] = 0; /*0x48e759*/
-  *(unsigned int *)&this->__pad_6[10] = 0; /*0x48e75c*/
-  *(unsigned int *)&this->__pad_6[14] = 0; /*0x48e75f*/
-  *(unsigned int *)&this->__pad_6[18] = 0; /*0x48e762*/
-  *(unsigned int *)&this->__pad_6[22] = 0; /*0x48e765*/
-  *(unsigned int *)&this->__pad_6[26] = 0; /*0x48e768*/
-  *(unsigned int *)&this->__pad_6[30] = 0; /*0x48e76b*/
-  *(unsigned int *)&this->__pad_6[34] = 0; /*0x48e76e*/
-  *(unsigned int *)&this->__pad_6[38] = 0; /*0x48e771*/
-  *(unsigned int *)&this->__pad_6[42] = 0; /*0x48e774*/
-  *(unsigned int *)&this->__pad_6[46] = 0; /*0x48e777*/
-  *(unsigned int *)&this->__pad_6[50] = 0; /*0x48e77a*/
-  *(unsigned int *)&this->__pad_6[54] = 0; /*0x48e77d*/
-  *(unsigned int *)&this->__pad_6[58] = 0; /*0x48e780*/
-  *(unsigned int *)&this->__pad_6[62] = 0; /*0x48e783*/
-  *(unsigned int *)&this->__pad_6[66] = 0; /*0x48e786*/
-  *(unsigned int *)&this->__pad_6[70] = 0; /*0x48e789*/
-  *(unsigned int *)&this->__pad_6[74] = 0; /*0x48e78c*/
-  *(unsigned int *)&this->__pad_6[78] = 0; /*0x48e78f*/
-  *(unsigned int *)&this->__pad_6[82] = 0; /*0x48e792*/
-  *(unsigned int *)&this->__pad_6[86] = 0; /*0x48e795*/
-  *(unsigned int *)&this->__pad_6[90] = 0; /*0x48e798*/
-  *(unsigned int *)&this->__pad_6[94] = 0; /*0x48e79b*/
-  *(unsigned int *)&this->__pad_6[98] = 0; /*0x48e79e*/
-  *(unsigned int *)&this->__pad_6[102] = 0; /*0x48e7a1*/
-  *(unsigned int *)&this->__pad_6[106] = 0; /*0x48e7a4*/
-  *(unsigned int *)&this->__pad_6[110] = 0; /*0x48e7a7*/
-  *(unsigned int *)&this->__pad_6[114] = 0; /*0x48e7aa*/
-  *(unsigned int *)&this->__pad_6[118] = 0; /*0x48e7ad*/
-  *(unsigned int *)&this->__pad_6[122] = 0; /*0x48e7b0*/
-  *(unsigned int *)&this->__pad_6[126] = 0; /*0x48e7b6*/
-  *(unsigned int *)&this->__pad_6[130] = 0; /*0x48e7bc*/
-  *(unsigned int *)&this->__pad_6[134] = 0; /*0x48e7c2*/
-  *(unsigned int *)&this->__pad_6[138] = 0; /*0x48e7c8*/
-  *(unsigned int *)&this->__pad_6[142] = 0; /*0x48e7ce*/
-  *(unsigned int *)&this->__pad_6[146] = 0; /*0x48e7d4*/
-  *(unsigned int *)&this->__pad_6[150] = 0; /*0x48e7da*/
-  *(unsigned int *)&this->__pad_6[154] = 0; /*0x48e7e0*/
-  *(unsigned int *)&this->__pad_6[158] = 0; /*0x48e7e6*/
-  *(unsigned int *)&this->__pad_6[162] = 0; /*0x48e7ec*/
-  *(unsigned int *)&this->__pad_6[166] = 0; /*0x48e7f2*/
-  *(unsigned int *)&this->__pad_6[170] = 0; /*0x48e7f8*/
-  *(unsigned int *)&this->__pad_6[174] = 0; /*0x48e7fe*/
-  *(unsigned int *)&this->__pad_6[178] = 0; /*0x48e804*/
-  *(unsigned int *)&this->__pad_6[182] = 0; /*0x48e80a*/
-  *(unsigned int *)&this->__pad_6[186] = 0; /*0x48e810*/
-  *(unsigned int *)&this->__pad_6[190] = 0; /*0x48e816*/
-  *(unsigned int *)&this->__pad_6[194] = 0; /*0x48e81c*/
-  *(unsigned int *)&this->__pad_6[198] = 0; /*0x48e822*/
-  *(unsigned int *)&this->__pad_6[202] = 0; /*0x48e828*/
-  *(unsigned int *)&this->__pad_6[206] = 0; /*0x48e82e*/
-  *(unsigned int *)&this->__pad_6[210] = 0; /*0x48e834*/
-  *(unsigned int *)&this->__pad_6[214] = 0; /*0x48e83a*/
-  *(unsigned int *)&this->__pad_6[218] = 0; /*0x48e840*/
-  *(unsigned int *)&this->__pad_6[222] = 0; /*0x48e846*/
-  *(unsigned int *)&this->__pad_6[226] = 0; /*0x48e84c*/
-  *(unsigned int *)&this->__pad_6[230] = 0; /*0x48e852*/
-  *(unsigned int *)&this->__pad_6[234] = 0; /*0x48e858*/
-  *(unsigned int *)&this->__pad_6[238] = 0; /*0x48e85e*/
-  *(unsigned int *)&this->__pad_6[242] = 0; /*0x48e864*/
-  *(unsigned int *)&this->__pad_6[246] = 0; /*0x48e86a*/
-  *(unsigned int *)&this->__pad_6[250] = 0; /*0x48e870*/
-  *(unsigned int *)&this->__pad_6[254] = 0; /*0x48e876*/
-  *(unsigned int *)&this->__pad_6[258] = 0; /*0x48e87c*/
-  *(unsigned int *)&this->__pad_6[262] = 0; /*0x48e882*/
-  *(unsigned int *)&this->__pad_6[266] = 0; /*0x48e888*/
-  *(unsigned int *)&this->__pad_6[270] = 0; /*0x48e88e*/
-  *(unsigned int *)&this->__pad_6[274] = 0; /*0x48e894*/
-  *(unsigned int *)&this->__pad_6[278] = 0; /*0x48e89a*/
-  *(unsigned int *)&this->__pad_6[282] = 0; /*0x48e8a0*/
+  *(unsigned int *)&this-((unsigned int *)(>ConvertClass_field_0x2))[2] = (*(int (**)(int))(aP3->q070)(aP3); /*0x48e753*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[2] = 0; /*0x48e756*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[6] = 0; /*0x48e759*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[10] = 0; /*0x48e75c*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[14] = 0; /*0x48e75f*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[18] = 0; /*0x48e762*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[22] = 0; /*0x48e765*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[26] = 0; /*0x48e768*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[30] = 0; /*0x48e76b*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[34] = 0; /*0x48e76e*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[38] = 0; /*0x48e771*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[42] = 0; /*0x48e774*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[46] = 0; /*0x48e777*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[50] = 0; /*0x48e77a*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[54] = 0; /*0x48e77d*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[58] = 0; /*0x48e780*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[62] = 0; /*0x48e783*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[66] = 0; /*0x48e786*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[70] = 0; /*0x48e789*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[74] = 0; /*0x48e78c*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[78] = 0; /*0x48e78f*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[82] = 0; /*0x48e792*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[86] = 0; /*0x48e795*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[90] = 0; /*0x48e798*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[94] = 0; /*0x48e79b*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[98] = 0; /*0x48e79e*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[102] = 0; /*0x48e7a1*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[106] = 0; /*0x48e7a4*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[110] = 0; /*0x48e7a7*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[114] = 0; /*0x48e7aa*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[118] = 0; /*0x48e7ad*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[122] = 0; /*0x48e7b0*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[126] = 0; /*0x48e7b6*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[130] = 0; /*0x48e7bc*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[134] = 0; /*0x48e7c2*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[138] = 0; /*0x48e7c8*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[142] = 0; /*0x48e7ce*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[146] = 0; /*0x48e7d4*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[150] = 0; /*0x48e7da*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[154] = 0; /*0x48e7e0*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[158] = 0; /*0x48e7e6*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[162] = 0; /*0x48e7ec*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[166] = 0; /*0x48e7f2*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[170] = 0; /*0x48e7f8*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[174] = 0; /*0x48e7fe*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[178] = 0; /*0x48e804*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[182] = 0; /*0x48e80a*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[186] = 0; /*0x48e810*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[190] = 0; /*0x48e816*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[194] = 0; /*0x48e81c*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[198] = 0; /*0x48e822*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[202] = 0; /*0x48e828*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[206] = 0; /*0x48e82e*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[210] = 0; /*0x48e834*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[214] = 0; /*0x48e83a*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[218] = 0; /*0x48e840*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[222] = 0; /*0x48e846*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[226] = 0; /*0x48e84c*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[230] = 0; /*0x48e852*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[234] = 0; /*0x48e858*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[238] = 0; /*0x48e85e*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[242] = 0; /*0x48e864*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[246] = 0; /*0x48e86a*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[250] = 0; /*0x48e870*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[254] = 0; /*0x48e876*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[258] = 0; /*0x48e87c*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[262] = 0; /*0x48e882*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[266] = 0; /*0x48e888*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[270] = 0; /*0x48e88e*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[274] = 0; /*0x48e894*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[278] = 0; /*0x48e89a*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[282] = 0; /*0x48e8a0*/
   aP4 = aP4; /*0x48e8a6*/
   v8 = 1; /*0x48e8aa*/
-  v9 = aP4 < 1; /*0x48e8af*/
-  *(unsigned int *)&this->__pad_6[286] = 0; /*0x48e8b1*/
-  *(unsigned int *)&this->__pad_6[290] = 0; /*0x48e8b7*/
-  *(unsigned int *)&this->__pad_6[294] = 0; /*0x48e8bd*/
-  *(unsigned int *)&this->__pad_6[298] = 0; /*0x48e8c3*/
-  *(unsigned int *)&this->__pad_6[302] = 0; /*0x48e8c9*/
-  *(unsigned int *)&this->__pad_6[306] = 0; /*0x48e8cf*/
-  *(unsigned int *)&this->__pad_6[310] = 0; /*0x48e8d5*/
-  *(unsigned int *)&this->__pad_6[314] = 0; /*0x48e8db*/
-  *(unsigned int *)&this->__pad_6[318] = 0; /*0x48e8e1*/
-  *(unsigned int *)&this->__pad_6[322] = 0; /*0x48e8e7*/
-  *(unsigned int *)&this->__pad_6[326] = 0; /*0x48e8ed*/
-  *(unsigned int *)&this->__pad_6[330] = 0; /*0x48e8f3*/
-  *(unsigned int *)&this->__pad_6[334] = 0; /*0x48e8f9*/
-  *(unsigned int *)&this->__pad_6[338] = 0; /*0x48e8ff*/
-  *(unsigned int *)&this->__pad_6[342] = 0; /*0x48e905*/
-  *(unsigned int *)&this->__pad_6[346] = 0; /*0x48e90b*/
-  *(unsigned int *)&this->__pad_6[350] = 0; /*0x48e911*/
-  *(unsigned int *)&this->__pad_6[354] = 0; /*0x48e917*/
-  *(unsigned int *)&this->__pad_6[358] = aP4; /*0x48e91d*/
+  v9 = aP4 < (gamemd::ObjectClass *)(1); /*0x48e8af*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[286] = 0; /*0x48e8b1*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[290] = 0; /*0x48e8b7*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[294] = 0; /*0x48e8bd*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[298] = 0; /*0x48e8c3*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[302] = 0; /*0x48e8c9*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[306] = 0; /*0x48e8cf*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[310] = 0; /*0x48e8d5*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[314] = 0; /*0x48e8db*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[318] = 0; /*0x48e8e1*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[322] = 0; /*0x48e8e7*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[326] = 0; /*0x48e8ed*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[330] = 0; /*0x48e8f3*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[334] = 0; /*0x48e8f9*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[338] = 0; /*0x48e8ff*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[342] = 0; /*0x48e905*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[346] = 0; /*0x48e90b*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[350] = 0; /*0x48e911*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[354] = 0; /*0x48e917*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[358] = aP4; /*0x48e91d*/
   this->ConvertClass_field_0x170 = 0; /*0x48e923*/
   *(unsigned int *)this->__pad_174 = 0; /*0x48e929*/
   this->ConvertClass_field_0x178 = 0; /*0x48e92f*/
   this->u32_17C = 0; /*0x48e935*/
   *(unsigned int *)this->__pad_0 = (void*)&ConvertClass_vftable; /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
-    *(unsigned int *)&this->__pad_6[358] = 1; /*0x48e943*/
-  if ( *(unsigned int *)&this->ConvertClass_field_0x2[2] == 1 ) /*0x48e94f*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_6))[358] = 1; /*0x48e943*/
+  if ( *(unsigned int *)&this-((unsigned int *)(>ConvertClass_field_0x2))[2] == 1 ) /*0x48e94f*/
   {
     v10 = (gamemd::CampaignClass *)((unsigned int)((CampaignClass *)RA2_OPNEW(0x100u)));
     this->ConvertClass_field_0x178 = (unsigned int)(v10);
@@ -216,7 +216,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   if ( dword_89ED08 < dword_89ED00 /*0x48ebb7*/
     || (byte_89ED05 || !dword_89ED00)
     && dword_89ED0C > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_89ECF8 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_89ECF8 + 8))(
          &dword_89ECF8,
          dword_89ED0C + dword_89ED00,
          0) )
@@ -231,7 +231,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
 namespace gamemd {
 int ConvertClass::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(_BlitPlainXlat_E *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 /*0x49145a*/
+  return (*(int (**)(_BlitPlainXlat_E *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this->__pad_0 /*0x49145a*/
                                                                                               + 4))(
            this,
            a2,

@@ -35,6 +35,8 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
 #include "app/cmdline.hpp"
+#include "e4/classes/Techno_e4.hpp"
+#include "e4/classes/StreamClass_e4.hpp"
 
 // 0x472A80
 namespace gamemd {
@@ -86,75 +88,75 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       if ( !_strcmpi(i, aPower) ) /*0x47715b*/
       {
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x477194*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
                0) )
         {
           v14 = v21.DynamicVector_field_0x10++; /*0x47719f*/
-          *(unsigned int *)(*(unsigned int *)&v21.DynamicVector_field_0x1[3] + 4 * v14) = -1; /*0x4771aa*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v14) = -1; /*0x4771aa*/
         }
         v13 = 1; /*0x4771b1*/
       }
       if ( !_strcmpi(i, aFactory) ) /*0x4771b9*/
       {
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x4771f2*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
                0) )
         {
           v15 = v21.DynamicVector_field_0x10++; /*0x4771fd*/
-          *(unsigned int *)(*(unsigned int *)&v21.DynamicVector_field_0x1[3] + 4 * v15) = -2; /*0x477208*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v15) = -2; /*0x477208*/
         }
         v13 = 1; /*0x47720f*/
       }
       if ( !_strcmpi(i, aBarracks) ) /*0x477217*/
       {
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x477250*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
                0) )
         {
           v16 = v21.DynamicVector_field_0x10++; /*0x47725b*/
-          *(unsigned int *)(*(unsigned int *)&v21.DynamicVector_field_0x1[3] + 4 * v16) = -3; /*0x477266*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v16) = -3; /*0x477266*/
         }
         v13 = 1; /*0x47726d*/
       }
       if ( !_strcmpi(i, aRadar) ) /*0x477275*/
       {
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x4772ae*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
                0) )
         {
           v17 = v21.DynamicVector_field_0x10++; /*0x4772b9*/
-          *(unsigned int *)(*(unsigned int *)&v21.DynamicVector_field_0x1[3] + 4 * v17) = -4; /*0x4772c4*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v17) = -4; /*0x4772c4*/
         }
         v13 = 1; /*0x4772cb*/
       }
       if ( !_strcmpi(i, aTech) ) /*0x4772d3*/
       {
         if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47730c*/
-          || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
+          || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
           && *(int *)v21.__pad_14 > 0
-          && (*(uint8_t (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+          && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                &v21,
                v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
                0) )
         {
           v18 = v21.DynamicVector_field_0x10++; /*0x477317*/
-          *(unsigned int *)(*(unsigned int *)&v21.DynamicVector_field_0x1[3] + 4 * v18) = -5; /*0x477322*/
+          *(unsigned int *)(*(unsigned int *)&((unsigned int *)(v21.DynamicVector_field_0x1))[3] + 4 * v18) = -5; /*0x477322*/
         }
         v13 = 1; /*0x477329*/
       }
@@ -168,9 +170,9 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
         }
       }
       else if ( v21.DynamicVector_field_0x10 < v21.DynamicVector_field_0x8 /*0x47736a*/
-             || (v21.__pad_C[1] || !v21.DynamicVector_field_0x8)
+             || (((unsigned int *)(v21.__pad_C))[1] || !v21.DynamicVector_field_0x8)
              && *(int *)v21.__pad_14 > 0
-             && (*(uint8_t (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
+             && (*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)v21.__pad_0 + 8))(
                   &v21,
                   v21.DynamicVector_field_0x8 + *(unsigned int *)v21.__pad_14,
                   0) )
@@ -240,7 +242,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
     if ( v3 != 3 ) /*0x47978e*/
     {
   LABEL_5:
-      Debug::Log(); /*0x479790*/
+      this->Debug::Log(); /*0x479790*/
       return; /*0x4797a2*/
     }
     v4 = 0x80000000; /*0x4797a5*/
@@ -257,7 +259,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479822*/
   {
     GetLastError(); /*0x479824*/
-    Debug::Log(); /*0x47982c*/
+    this->Debug::Log(); /*0x47982c*/
     Sleep(0x1F4u); /*0x479839*/
     if ( ++v6 >= 20 ) /*0x479843*/
       goto LABEL_18; /*0x479843*/
@@ -267,7 +269,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
     || !DeviceIoControl(FileA, 0x2D4808u, 0, 0, 0, 0, &BytesReturned, 0) )
   {
     GetLastError(); /*0x4798d4*/
-    Debug::Log(); /*0x4798dc*/
+    this->Debug::Log(); /*0x4798dc*/
   }
   LABEL_18:
   CloseHandle(FileA); /*0x4798e4*/
@@ -295,7 +297,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
     if ( v2 != 3 ) /*0x479bd8*/
     {
   LABEL_3:
-      Debug::Log(); /*0x479bda*/
+      this->Debug::Log(); /*0x479bda*/
       return 0; /*0x479bee*/
     }
     v4 = 0x80000000; /*0x479bf1*/
@@ -312,7 +314,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479c70*/
   {
     GetLastError(); /*0x479c72*/
-    Debug::Log(); /*0x479c7e*/
+    this->Debug::Log(); /*0x479c7e*/
     Sleep(0x1F4u); /*0x479c8b*/
     if ( ++v6 >= 20 ) /*0x479c91*/
       goto LABEL_17; /*0x479c91*/
@@ -326,7 +328,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
   else
   {
     GetLastError(); /*0x479d2e*/
-    Debug::Log(); /*0x479d3a*/
+    this->Debug::Log(); /*0x479d3a*/
   }
   LABEL_17:
   CloseHandle(FileA); /*0x479d49*/
@@ -354,7 +356,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
     if ( v2 != 3 ) /*0x479d94*/
     {
   LABEL_3:
-      Debug::Log(); /*0x479d96*/
+      this->Debug::Log(); /*0x479d96*/
       return 0; /*0x479dab*/
     }
     v4 = 0x80000000; /*0x479dae*/
@@ -371,7 +373,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479e2f*/
   {
     GetLastError(); /*0x479e32*/
-    Debug::Log(); /*0x479e3a*/
+    this->Debug::Log(); /*0x479e3a*/
     Sleep(0x1F4u); /*0x479e47*/
     if ( ++v6 >= 20 ) /*0x479e4d*/
       goto LABEL_13; /*0x479e4d*/
@@ -380,7 +382,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
   if ( !DeviceIoControl(FileA, 0x2D4804u, &BytesReturned, 1u, 0, 0, Buffer, 0) ) /*0x479e6e*/
   {
     GetLastError(); /*0x479e7f*/
-    Debug::Log(); /*0x479e87*/
+    this->Debug::Log(); /*0x479e87*/
   }
   LABEL_13:
   for ( i = 0; i < 20; ++i ) /*0x479e8f*/
@@ -388,7 +390,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
     if ( DeviceIoControl(FileA, 0x9001Cu, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479ea6*/
       break; /*0x479eae*/
     GetLastError(); /*0x479eb1*/
-    Debug::Log(); /*0x479eb9*/
+    this->Debug::Log(); /*0x479eb9*/
     Sleep(0x1F4u); /*0x479ec6*/
   }
   CloseHandle(FileA); /*0x479ecf*/
@@ -416,7 +418,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
     if ( v2 != 3 ) /*0x479f24*/
     {
   LABEL_3:
-      Debug::Log(); /*0x479f26*/
+      this->Debug::Log(); /*0x479f26*/
       return 0; /*0x479f3b*/
     }
     v4 = 0x80000000; /*0x479f3e*/
@@ -433,7 +435,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
   while ( !DeviceIoControl(FileA, 0x90018u, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x479fbf*/
   {
     GetLastError(); /*0x479fc2*/
-    Debug::Log(); /*0x479fca*/
+    this->Debug::Log(); /*0x479fca*/
     Sleep(0x1F4u); /*0x479fd7*/
     if ( ++v6 >= 20 ) /*0x479fdd*/
       goto LABEL_13; /*0x479fdd*/
@@ -442,7 +444,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
   if ( !DeviceIoControl(FileA, 0x2D4804u, &BytesReturned, 1u, 0, 0, Buffer, 0) ) /*0x479ffe*/
   {
     GetLastError(); /*0x47a00f*/
-    Debug::Log(); /*0x47a017*/
+    this->Debug::Log(); /*0x47a017*/
   }
   LABEL_13:
   for ( i = 0; i < 20; ++i ) /*0x47a01f*/
@@ -450,7 +452,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
     if ( DeviceIoControl(FileA, 0x9001Cu, 0, 0, 0, 0, &BytesReturned, 0) ) /*0x47a036*/
       break; /*0x47a03e*/
     GetLastError(); /*0x47a041*/
-    Debug::Log(); /*0x47a049*/
+    this->Debug::Log(); /*0x47a049*/
     Sleep(0x1F4u); /*0x47a056*/
   }
   CloseHandle(FileA); /*0x47a05f*/
@@ -471,12 +473,12 @@ AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
   FileA = CreateFileA(g_Str_____vwin32, 0, 0, 0, 0, 0x4000000u, 0); /*0x47a0b3*/
   if ( !(uint8_t)CDROM::LockVolume((int)this, FileA, a2, 0, 0) ) /*0x47a0ba*/
   {
-    Debug::Log(); /*0x47a0cf*/
+    this->Debug::Log(); /*0x47a0cf*/
     return; /*0x47a0de*/
   }
   if ( !CDROM::DeviceIoControl(FileA, a2) ) /*0x47a0e5*/
   {
-    Debug::Log(); /*0x47a0fa*/
+    this->Debug::Log(); /*0x47a0fa*/
     DriveControlCD(FileA, a2); /*0x47a105*/
     return; /*0x47a111*/
   }
@@ -487,9 +489,9 @@ AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
   if ( !DeviceIoControl(FileA, 1u, InBuffer, 0x1Cu, InBuffer, 0x1Cu, &BytesReturned, 0) ) /*0x47a14f*/
   {
     GetLastError(); /*0x47a160*/
-    Debug::Log(); /*0x47a16c*/
+    this->Debug::Log(); /*0x47a16c*/
   LABEL_8:
-    Debug::Log(); /*0x47a17d*/
+    this->Debug::Log(); /*0x47a17d*/
     goto LABEL_9; /*0x47a186*/
   }
   if ( (InBuffer[6] & 1) != 0 ) /*0x47a17b*/
@@ -527,7 +529,7 @@ void DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
     if ( result ) /*0x47a98b*/
       break; /*0x47a98b*/
     GetLastError(); /*0x47a98f*/
-    result = Debug::Log(); /*0x47a99b*/
+    result = this->Debug::Log(); /*0x47a99b*/
   LABEL_5:
     IDA_LOBYTE(result) = 0; /*0x47a9ac*/
     if ( v4 == 8 ) /*0x47a9b1*/
@@ -1802,17 +1804,17 @@ unsigned int * E4Recv_473750::sub_473750(unsigned int * a2)
   *this = (CarryoverClass)(void*)&CarryoverClass_vftable; /*0x473777*/
   if ( v3 ) /*0x47377d*/
   {
-    v4 = (*(int (__thiscall **)(CarryoverClass *))(*(unsigned int *)v3 + 44))(v3); /*0x473783*/
+    v4 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 44))(v3); /*0x473783*/
     this->M12 = v4; /*0x473786*/
     v5 = v4 - 1; /*0x473789*/
     if ( !v5 || (v6 = v5 - 5) == 0 || v6 == 9 ) /*0x473794*/
     {
-      v7 = (*(int (__thiscall **)(CarryoverClass *))(*(unsigned int *)v3 + 132))(v3); /*0x4737a6*/
-      this->M16 = (*(int (__thiscall **)(int))(*(unsigned int *)v7 + 64))(v7); /*0x4737b3*/
+      v7 = (*(int (**)(CarryoverClass *))(*(unsigned int *)v3 + 132))(v3); /*0x4737a6*/
+      this->M16 = (*(int (**)(int))(*(unsigned int *)v7 + 64))(v7); /*0x4737b3*/
     }
     this->M28 = *(CarryoverClass *)(*(unsigned int *)(*(unsigned int *)&v3[135] + 52) + 184); /*0x4737c7*/
     this->q018 = v3[27]; /*0x4737cd*/
-    this->M20 = *(CarryoverClass *)(*(int (__thiscall **)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))(v3, &a2); /*0x4737df*/
+    this->M20 = *(CarryoverClass *)(*(int (**)(CarryoverClass *, unsigned int **))(*(unsigned int *)v3 + 440))(v3, &a2); /*0x4737df*/
   }
   return this; /*0x4737e4*/
 }

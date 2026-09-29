@@ -21,6 +21,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {
@@ -124,11 +125,11 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         v17 = 0; /*0x434d6e*/
         if ( aP5 > v10 ) /*0x434d72*/
         {
-          if ( (aP7 & 1) != 0 ) /*0x434d7b*/
+          if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x434d7b*/
           {
             v17 = (gamemd::AbstractClass *)((aP5 - v10) / 2);
           }
-          else if ( (aP7 & 2) != 0 ) /*0x434d8b*/
+          else if ( ((unsigned int)(aP7)& 2) != 0 ) /*0x434d8b*/
           {
             v17 = (gamemd::AbstractClass *)(aP5 - v10);
           }
@@ -147,7 +148,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           v21 = v14; /*0x434dd1*/
           if ( !v18 ) /*0x434dd3*/
             goto LABEL_18; /*0x434dd3*/
-          if ( v45 >= v18 ) /*0x434ddd*/
+          if ( v45 >= (int)(v18) ) /*0x434ddd*/
             goto LABEL_73; /*0x434ddd*/
           if ( v19 < aP9 ) /*0x434de7*/
           {
@@ -180,7 +181,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         v47 += v23; /*0x434ec7*/
         if ( aP6 ) /*0x434ed1*/
         {
-          if ( v47 >= aP6 ) /*0x434ed7*/
+          if ( v47 >= (int)(aP6) ) /*0x434ed7*/
             goto LABEL_73; /*0x434ed7*/
         }
         aP4 += v23; /*0x434edd*/
@@ -208,13 +209,13 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         v26 = v48; /*0x434f53*/
         if ( v48 ) /*0x434f59*/
         {
-          if ( v13 > 1 ) /*0x434f5e*/
+          if ( v13 > (gamemd::AbstractClass *)(1) ) /*0x434f5e*/
           {
             v10 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(v50)));
             aP2 = (gamemd::AbstractClass *)(v48);
           }
         }
-        else if ( v13 > 1 ) /*0x434f6d*/
+        else if ( v13 > (gamemd::AbstractClass *)(1) ) /*0x434f6d*/
         {
           v10 -= v25; /*0x434f6f*/
           --aP2; /*0x434f78*/
@@ -222,11 +223,11 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         v27 = 0; /*0x434f80*/
         if ( aP5 > v10 ) /*0x434f84*/
         {
-          if ( (aP7 & 1) != 0 ) /*0x434f8d*/
+          if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x434f8d*/
           {
             v27 = (gamemd::AbstractClass *)((aP5 - v10) / 2);
           }
-          else if ( (aP7 & 2) != 0 ) /*0x434f9d*/
+          else if ( ((unsigned int)(aP7)& 2) != 0 ) /*0x434f9d*/
           {
             v27 = (gamemd::AbstractClass *)(aP5 - v10);
           }
@@ -249,7 +250,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
       v33 = v14; /*0x434fe5*/
       if ( v28 ) /*0x434fe7*/
       {
-        if ( v32 >= v28 ) /*0x434fef*/
+        if ( v32 >= (int)(v28) ) /*0x434fef*/
           break; /*0x434fef*/
         if ( v30 < aP9 ) /*0x434ff9*/
         {
@@ -272,7 +273,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
       {
         v26 = (unsigned short *)(v48);
   LABEL_50:
-        if ( aP2 == v26 ) /*0x4350f9*/
+        if ( aP2 == (gamemd::AbstractClass *)(v26) ) /*0x4350f9*/
         {
           v48 = (unsigned short *)((gamemd::AbstractClass *)(0));
           ++aP2; /*0x435103*/
@@ -281,7 +282,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         v13 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(0)));
         v34 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(aP0->u32_1C)));
         v47 += v34; /*0x435117*/
-        if ( aP6 && v47 >= aP6 ) /*0x435127*/
+        if ( aP6 && v47 >= (int)(aP6) ) /*0x435127*/
           break; /*0x435127*/
         aP4 += v34; /*0x435129*/
   LABEL_55:
@@ -307,11 +308,11 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     v36 = 0; /*0x435167*/
     if ( aP5 > v10 ) /*0x43516f*/
     {
-      if ( (aP7 & 1) != 0 ) /*0x435178*/
+      if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x435178*/
       {
         v36 = (gamemd::AbstractClass *)((aP5 - v10) / 2);
       }
-      else if ( (aP7 & 2) != 0 ) /*0x435188*/
+      else if ( ((unsigned int)(aP7)& 2) != 0 ) /*0x435188*/
       {
         v36 = (gamemd::AbstractClass *)(aP5 - v10);
       }
@@ -331,7 +332,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         v41 = v14; /*0x4351c2*/
         if ( v37 ) /*0x4351c4*/
         {
-          if ( v40 >= v37 ) /*0x4351cc*/
+          if ( v40 >= (int)(v37) ) /*0x4351cc*/
             break; /*0x4351cc*/
           if ( v38 < aP9 ) /*0x4351d6*/
           {

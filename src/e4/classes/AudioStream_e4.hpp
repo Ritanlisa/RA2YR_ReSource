@@ -123,10 +123,11 @@ struct AudioStream {
     unsigned int q00C6;
     unsigned int u32_1E4;
     unsigned int __pad_5C;
+    unsigned int Audio;
 // --- flat members (END) ---
-    int ReleaseSubsystem();  // 0x401910
-    int Stop();  // 0x4026B0
-    int ReleaseChannel();  // 0x4026F0
+    int ReleaseSubsystem(void *a1 = 0);  // 0x401910
+    int Stop(void *a1 = 0);  // 0x4026B0
+    int ReleaseChannel(void *a1 = 0);  // 0x4026F0
     void DestroyAll();  // 0x4033C0
     int Reset();  // 0x403820
     int ResetChannel(int a2,  int a3);    // 0x4038A0
@@ -136,21 +137,21 @@ struct AudioStream {
     void CleanupChannels();  // 0x404E70
     int ReadStreamAndSyncPosition();  // 0x4079C0
     int SetPlaybackCallback();  // 0x407A30
-    int ProcessCallback();  // 0x407A60
-    void InitNodeFields();  // 0x4084E0
+    int ProcessCallback(void *a1 = 0);  // 0x407A60
+    void InitNodeFields(void *a1 = 0);  // 0x4084E0
     int GetChannel();  // 0x408D50
-    int ReadStreamAndReturn();  // 0x409310
-    int ReadSamples(const void * a2);  // 0x4A33A0
+    int ReadStreamAndReturn(void *a1 = 0);  // 0x409310
+    int ReadSamples(const void * a2, void *a1 = 0);  // 0x4A33A0
     char DrawWaveform(void* aP1,  void* aP2,  void* aP3,  void* aP4,  int a6,  int a7,  int a8);    // 0x4BEAC0
-    int SetFlag4C();  // 0x7BD270
-    int CalcReadPos();  // 0x7BD2D0
+    int SetFlag4C(void *a1 = 0);  // 0x7BD270
+    int CalcReadPos(void *a1 = 0);  // 0x7BD2D0
     int ProcessStream();  // 0x7BEA80
-    unsigned int GetPosition();  // 0x7C3960
-    void Destructor();  // 0x402550
+    unsigned int GetPosition(void *a1 = 0);  // 0x7C3960
+    void Destructor(void *a1 = 0);  // 0x402550
     int CheckFormatChanged(int a1,  const void * a2);    // 0x402800
     int InitListAndCounters();  // 0x4028B0
     int UpdateTimers();  // 0x404FD0
     int UpdateCountdowners();  // 0x405040
-    char * Constructor(unsigned long long a2);  // 0x407860
+    char * Constructor(unsigned long long a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x407860
 };
 } // namespace gamemd

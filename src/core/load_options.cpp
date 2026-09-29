@@ -457,7 +457,7 @@ int LoadOptions::FindItem(FileEntryClass* const* key) {
   result = 0; /*0x55a2e1*/
   if ( m_8 <= 0 ) /*0x55a2e5*/
     return -1; /*0x55a2fc*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *key; ++i ) /*0x55a2eb*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *(unsigned int *)((unsigned int))(i) != *key; ++i ) /*0x55a2eb*/
   {
     if ( ++result >= m_8 ) /*0x55a2fa*/
       return -1; /*0x55a2fa*/
@@ -664,7 +664,7 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
 
 
 #include "core/load_options.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace gamemd {
 

@@ -19,7 +19,7 @@
 #include "entity/tiberium.hpp"
 #include "entity/tube.hpp"
 #include "entity/wave.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x415EE0
 namespace gamemd { 

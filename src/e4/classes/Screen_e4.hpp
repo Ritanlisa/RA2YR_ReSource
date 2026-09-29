@@ -20,11 +20,11 @@ struct Screen {
     unsigned int q044;  // 0x44
     unsigned int q068;  // 0x68
     unsigned int q104;  // 0x104
+    unsigned int Capture;
 // --- flat members (END) ---
     int CleanupTransitionObjects();
     int TransitionLoop(int a2);
     int TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4);
-    case 1: Capture(1,  0,  v12,  (int)&rc_ptr_WorldDominationTour_Campaign_vftable);    // def-aligned
 };
 
 } // namespace gamemd

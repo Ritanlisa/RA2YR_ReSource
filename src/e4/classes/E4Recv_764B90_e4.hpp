@@ -7,7 +7,7 @@ namespace gamemd {
 struct E4Recv_764B90 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
-    unsigned int M4;  // 0x4
+    void* ;  // 0x4
     unsigned int u32_C;  // 0xC
     void *q18;  // 0x18
     unsigned int M28;  // 0x1C
@@ -63,6 +63,7 @@ struct E4Recv_764B90 {
     unsigned int q6408;  // 0x6408
     unsigned int u32_C7;
     unsigned int q018;
+    unsigned int M4;
 // --- flat members (END) ---
     char * WDT_Campaign_Constructor(const char ** a2,  int a3);    // 0x764B90
 };

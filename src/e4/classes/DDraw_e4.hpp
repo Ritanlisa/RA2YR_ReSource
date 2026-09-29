@@ -19,6 +19,7 @@ struct DDraw {
     unsigned int q628;  // 0x628
     unsigned int u32_2664;  // 0x2664
     unsigned int q18000;
+    unsigned int Debug;
 // --- flat members (END) ---
     char CheckCapabilities();
     int CapabilityCheck();
@@ -26,9 +27,9 @@ struct DDraw {
     int GetStatus();
     int HandleSuspend();
     int LogError();
-    int ReleaseSurfaces();
-    int WaitForIdle();
-    void Init();
+    int ReleaseSurfaces(void *a1 = 0);
+    int WaitForIdle(void *a1 = 0);
+    void Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
 };
 
 } // namespace gamemd

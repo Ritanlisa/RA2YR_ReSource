@@ -57,7 +57,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x658b46*/
         {
-          v7 = (unsigned int *)(v6 + 4); /*0x658b48*/
+          v7 = (unsigned int *)((unsigned int)(v6)+ 4); /*0x658b48*/
           v8 = a2; /*0x658b4b*/
           do /*0x658b58*/
           {
@@ -113,7 +113,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x658bf5*/
+    (*(void (**)(_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x658bf5*/
   }
   v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned short *)&this->q00C)));
   if ( v15 < *(unsigned int *)&this->q010 ) /*0x658c00*/
@@ -300,14 +300,14 @@ char * RadarHashVector::Destructor(char a2)
   }
   else
   {
-    v11 = (unsigned int)(*(void **)&this->q004);
+    v11 = (void *)((unsigned int)(*(void **)&this->q004));
     *(unsigned int *)this->__pad_0 = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658ccc*/
     if ( v11 && this->IsAllocated ) /*0x658cd4*/
     {
       RA2_OPDEL(v11); /*0x658cda*/
       *(unsigned int *)&this->q004 = 0; /*0x658ce2*/
     }
-    this->IsAllocated = 0; /*0x658ce9*/
+    this->IsAllocated = (char *)(0);
     *(unsigned int *)&this->q008 = 0; /*0x658cee*/
     if ( (a2 & 1) != 0 ) /*0x658cf1*/
       RA2_OPDEL(); /*0x658cf4*/
@@ -321,14 +321,14 @@ VectorClass_flat * RadarHashVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658d16*/
   if ( v3 && this->IsAllocated ) /*0x658d20*/
   {
     RA2_OPDEL(v3); /*0x658d28*/
     *(unsigned int *)&this->q004 = 0; /*0x658d30*/
   }
-  this->IsAllocated = 0; /*0x658d3b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x658d41*/
   if ( (a2 & 1) != 0 ) /*0x658d48*/
     RA2_OPDEL(); /*0x658d4b*/

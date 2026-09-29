@@ -14,12 +14,12 @@ struct VectorClass_ptr_TagTypeClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy();  // 0x6E64E0
+    void Destroy(void *a1 = 0);  // 0x6E64E0
     unsigned int GetItemIndex(int a2);  // 0x6E6510
-    int Get(int a2);  // 0x6E6530
+    int Get(int a2, void *a1 = 0);  // 0x6E6530
     char Add(int a2);  // 0x6E6540
     char Release(int a2,  unsigned int * a3);    // 0x6E6580
-    void Remove();  // 0x6E6630
+    void Remove(void *a1 = 0);  // 0x6E6630
     int GetSize(unsigned int * a2);  // 0x6E6660
     unsigned int LoadTypeData(int a2);  // 0x6E66A0
     char SetCapacity(int a2,  unsigned int * a3);    // 0x6E66C0

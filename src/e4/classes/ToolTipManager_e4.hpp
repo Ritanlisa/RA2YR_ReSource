@@ -35,6 +35,7 @@ struct ToolTipManager {
     int q130;  // 0x130
     unsigned int q138;  // 0x138
     unsigned int IsVisible;
+    unsigned int Debug;
 // --- flat members (END) ---
     char addRef(int a1);
     int ddtor(char a2);

@@ -15,9 +15,9 @@ int Voice::Stop(__thiscall *__thiscall Voice_Stop(int this))( int)
 
   (*(void (**)(void))(this->u32_D4 + 40))(); /*0x4025b9*/
   if ( (this->u8_A4 & 5) != 0 ) /*0x4025c3*/
-    (*(void (__thiscall **)(int))(this->u32_D4 + 16))(this); /*0x4025cd*/
-  (*(void (__thiscall **)(int))(this->u32_D4 + 44))(this); /*0x4025d8*/
-  result = *(int (__thiscall **)(int))(&this->u32_488); /*0x4025db*/
+    (*(void (**)(int))(this->u32_D4 + 16))(this); /*0x4025cd*/
+  (*(void (**)(int))(this->u32_D4 + 44))(this); /*0x4025d8*/
+  result = *(int (**)(int))(&this->u32_488); /*0x4025db*/
   if ( result ) /*0x4025e3*/
     result = (int (__thiscall *)(int))result(this); /*0x4025e7*/
   this->u32_168 = 0; /*0x4025e9*/

@@ -12,6 +12,8 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/TEventClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4A2350
 namespace gamemd {
@@ -78,7 +80,7 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
     {
       BuildingAnimByName = (Color *)*((unsigned int *)dword_B054D4 + *((unsigned int *)other + 22549)); /*0x6583cf*/
     }
-    v5 = Color::ConvertToRGB(BuildingAnimByName + 194, (int)&hWnd); /*0x6583dd*/
+    v5 = Color::ConvertToRGB((unsigned int)(BuildingAnimByName)+ 194, (int)&hWnd); /*0x6583dd*/
     v25 = *(unsigned short *)v5; /*0x6583e6*/
     v26 = *(unsigned char *)(v5 + 2); /*0x6583ee*/
     v6 = (uint8_t)v25 | ((IDA_HIBYTE(v25) | (v26 << 8)) << 8); /*0x65841f*/
@@ -97,7 +99,7 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
     {
       v12 = GetDlgItem((HWND)hDlg, *(&dword_83923C + (unsigned int)v29)); /*0x6584ae*/
       hWnd = v12; /*0x6584ba*/
-      if ( dword_A8B538[0] ) /*0x6584c0*/
+      if ( ((unsigned int *)(dword_A8B538))[0] ) /*0x6584c0*/
       {
         EnableWindow(v12, 0); /*0x6584c5*/
         v12 = hWnd; /*0x6584cb*/
@@ -108,10 +110,10 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
       }
       else
       {
-        IDA_LOBYTE(v25) = HouseClass::IsAlliedWith((HouseClass *)dword_A83D4C); /*0x6584f4*/
+        IDA_LOBYTE(v25) = ((HouseClass *)((HouseClass *)dword_A83D4C))->IsAlliedWith(); /*0x6584f4*/
         SendMessageA(hWnd, 0xF1u, (uint8_t)v25, 0); /*0x65850b*/
       }
-      IsAlliedWith = HouseClass::IsAlliedWith((HouseClass *)other); /*0x658515*/
+      IsAlliedWith = ((HouseClass *)((HouseClass *)other))->IsAlliedWith(); /*0x658515*/
       globalHelper_003DD0(hWnd, IsAlliedWith); /*0x658520*/
     }
     if ( *((unsigned char *)other + 584) ) /*0x658525*/
@@ -119,7 +121,7 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
       v14 = GetDlgItem((HWND)hDlg, *(&dword_83925C + (unsigned int)v29)); /*0x65853f*/
       ShowWindow(v14, 0); /*0x658548*/
     }
-    else if ( dword_A8B538[0] ) /*0x658557*/
+    else if ( ((unsigned int *)(dword_A8B538))[0] ) /*0x658557*/
     {
       v15 = GetDlgItem((HWND)hDlg, *(&dword_83925C + (unsigned int)v29)); /*0x658571*/
       SendMessageA(v15, 0xF1u, 1u, 0); /*0x65857b*/

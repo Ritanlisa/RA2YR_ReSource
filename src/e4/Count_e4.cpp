@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x408E70
 namespace gamemd {
@@ -60,7 +61,7 @@ int Count::SetupAllCountriesLobby()
       v5 = *v2; /*0x46f718*/
       v6 = -2; /*0x46f71c*/
       if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x46f730*/
-        v6 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 10))(dword_A8B23C); /*0x46f737*/
+        v6 = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 10))(dword_A8B23C); /*0x46f737*/
       if ( (uint8_t)Player::IsObserver((Player *)v5) ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
@@ -86,7 +87,7 @@ int Count::SetupAllCountriesLobby()
         PlayerSide = SessionClass::GetPlayerSide(v5); /*0x46f786*/
       }
       if ( dword_A8B23C /*0x46f795*/
-        && !(*((uint8_t (__thiscall **)(ObjectClass *, int))dword_A8B23C->AbstractClass + 7))(
+        && !(*((uint8_t (**)(ObjectClass *, int))dword_A8B23C->AbstractClass + 7))(
               dword_A8B23C,
               PlayerSide) )
       {

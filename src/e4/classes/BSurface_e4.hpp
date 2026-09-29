@@ -22,8 +22,8 @@ struct BSurface {
     unsigned int u32_24;
     unsigned int u32_4;
 // --- flat members (END) ---
-    unsigned int * Construct(int a2,  int a3,  int a4,  int a5);    // 0x410CE0
-    bool CreateTripleBuffer();  // 0x7B8C60
+    unsigned int * Construct(int a2, int a3, int a4, int a5, void *a1 = 0);    // 0x410CE0
+    bool CreateTripleBuffer(void *a1 = 0);  // 0x7B8C60
     unsigned int * ConstructEx(int a2,  int a3,  int a4,  int a5);    // 0x7BC970
     int GetBytesPerPixel();  // 0x411630
     int GetPitch();  // 0x411640

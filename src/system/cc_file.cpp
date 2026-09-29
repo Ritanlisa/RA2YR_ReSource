@@ -71,14 +71,16 @@ int CCFileClass::Open(const char* pFileName)
 // 0x4a3890
 void* CCFileClass::ReadEntireFile()
 {
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
   void *v2; // edi
   size_t v3; // ebx
 
   v2 = 0; /*0x4a3895*/
   if ( (*(uint8_t (__thiscall **)(CCFileClass *, unsigned int))(*(unsigned int *)this->CDFileClass + 20))(this, 0) ) /*0x4a389a*/
   {
-    v3 = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 44))(this); /*0x4a38a8*/
-    v2 = (void *)RA2_OPNEW(v3); /*0x4a38b0*/
+    v3 = (unsigned int)((*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 44))(this));
+    v2 = (unsigned int)((void *)RA2_OPNEW(v3));
     if ( v2 ) /*0x4a38b7*/
       (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(unsigned int *)this->CDFileClass + 36))(this, v2, v3); /*0x4a38bf*/
   }

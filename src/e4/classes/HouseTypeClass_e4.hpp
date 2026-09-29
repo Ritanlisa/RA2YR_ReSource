@@ -165,12 +165,12 @@ struct HouseTypeClass {
     unsigned int q1AC;  // 0x1AC
     unsigned int __pad_16D;
 // --- flat members (END) ---
-    AbstractClass * * Dtor();
-    AbstractClass * * ProcessPower(int * a2);
+    AbstractClass * * Dtor(void *a1 = 0);
+    AbstractClass * * ProcessPower(int * a2, void *a1 = 0);
     HouseTypeClass * Destructor(char a2);
     char readPowerPlants(TypeList_flat * aP1);
     int AddRef(int a1);
-    int Find();
+    int Find(void *a1 = 0);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
@@ -179,7 +179,7 @@ struct HouseTypeClass {
     int Release(int a1);
     int SaveLoad_Prefix(unsigned int * i, int a2);
     int StubReturnFalse(int a1);
-    int loadCountryData(unsigned char * a2, unsigned char * a3, int a4);
+    int loadCountryData(unsigned char * a2, unsigned char * a3, int a4, void *a1 = 0);
     int readAiBuildLists(int a1);
     int readBaseDefenses(int a1, const void * a2, unsigned int * a3);
     int readLoadoutData(int a1);

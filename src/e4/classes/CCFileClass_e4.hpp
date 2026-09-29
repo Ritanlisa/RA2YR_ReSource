@@ -40,18 +40,18 @@ struct CCFileClass {
     unsigned int FileClass;
     unsigned int u32_68;
 // --- flat members (END) ---
-    AudioController * * Close();
-    int Destruct();
-    int GetFileSize();
+    AudioController * * Close(void *a1 = 0);
+    int Destruct(void *a1 = 0);
+    int GetFileSize(void *a1 = 0);
     void ProcessStream(unsigned int a1);
     static double Construct3(...);  // C2597 interim stub
-    bool Open(int mode);  // open file with mode
-    static double Read(...);  // C2597 interim stub
+    bool Open(int mode, void *a2 = 0, void *a1 = 0);  // open file with mode
+     double Read(...);  // C2597 interim stub
     static double ReadEntireFile(...);  // C2597 interim stub
     static double Reset(...);  // C2597 interim stub
     static double GetSize(...);  // C2597 interim stub
     void Construct2(void* filename);  // init file object with name
-    static void Construct(void * self, void * aP2);  // 0x478EB1 ctor (data-member artifact removed G34)
+     void Construct(void * self, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x478EB1 ctor (data-member artifact removed G34)
 };
 
 } // namespace gamemd

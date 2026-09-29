@@ -231,7 +231,7 @@ struct InfantryTypeClass {
     SomeVoxelCache* q26C;  // 0x26C
     SomeVoxelCache* q270;  // 0x270
     SomeVoxelCache* q274;  // 0x274
-    char q278[4];  // 0x278
+    unsigned int q278;  // 0x278
     SomeVoxelCache* q27C;  // 0x27C
     unsigned int q280;  // 0x280
     unsigned int q284;  // 0x284
@@ -539,7 +539,7 @@ struct InfantryTypeClass {
     AbstractClass* q65C;  // 0x65C
     int WalkRate;  // 0x660
     int IdleRate;  // 0x664
-    char VeteranAbilities[4];  // 0x668
+    unsigned int VeteranAbilities;  // 0x668
     unsigned char q66C;  // 0x66C
     int q670;  // 0x670
     int q674;  // 0x674
@@ -839,7 +839,7 @@ struct InfantryTypeClass {
     char qCA4[4];  // 0xCA4
     unsigned char qCA8;  // 0xCA8
     bool TechnoTypeClass_field_bool_CB4;  // 0xCB4
-    char BarrelAnimData[4];  // 0xCB8
+    unsigned int BarrelAnimData;  // 0xCB8
     unsigned char qCBC;  // 0xCBC
     bool TechnoTypeClass_field_bool_CC8;  // 0xCC8
     unsigned int qCC9;  // 0xCC9
@@ -994,12 +994,12 @@ struct InfantryTypeClass {
     unsigned int qDF8;  // 0xDF8
     unsigned int qDFC;  // 0xDFC
     char qE00[4];  // 0xE00
-    unsigned int qE04;  // 0xE04
-    unsigned int u32_E08;  // 0xE08
-    unsigned int u32_E0C;  // 0xE0C
+    void* ;  // 0xE04
+    void* ;  // 0xE08
+    void* ;  // 0xE0C
     void* qE10;  // 0xE10
-    unsigned int u32_E14;  // 0xE14
-    unsigned int u32_E18;  // 0xE18
+    void* ;  // 0xE14
+    void* ;  // 0xE18
     unsigned char u8_E1C;  // 0xE1C
     unsigned int EliteOccupyWeapon;  // 0xE20
     unsigned int u32_E24;  // 0xE24
@@ -1067,11 +1067,16 @@ struct InfantryTypeClass {
     unsigned int q5C42;
     unsigned int u32_5D00;
     unsigned int ArrayIndex;
+    unsigned int qE04;
+    unsigned int u32_E08;
+    unsigned int u32_E0C;
+    unsigned int u32_E14;
+    unsigned int u32_E18;
 // --- flat members (END) ---
     InfantryClass * ConstructInfantry(AbstractClass * ppv);
-    InfantryTypeClass * * Constructor(ObjectClass * aP1);
+    InfantryTypeClass * * Constructor(ObjectClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     InfantryTypeClass * ddtor(char a2);
-    WeaponTypeClass * * Find();
+    WeaponTypeClass * * Find(void *a1 = 0);
     int * GetDimensions(int a1);
     int CreateInfantry(short * a2, AbstractClass * ppv);
     int GetAuxField();

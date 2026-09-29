@@ -604,9 +604,9 @@ struct SidebarClass {
     unsigned int u32_539C;
     unsigned int u32_53A6;
     unsigned int u32_53A7;
-    unsigned int UpdateStrips;
+    unsigned int InitButtons;
 // --- flat members (END) ---
-    GadgetClass * * LoadResources();
+    GadgetClass * * LoadResources(void *a1 = 0);
     int CalcBounds(char a1);
     int InitPositions();
     int Redraw(char a2);

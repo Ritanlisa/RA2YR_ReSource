@@ -14,7 +14,7 @@
 #include "team/team.hpp"
 #include "team/tevent.hpp"
 #include "team/trigger.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x71F950
 namespace gamemd { 

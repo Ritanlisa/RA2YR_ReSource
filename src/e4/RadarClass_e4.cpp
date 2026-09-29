@@ -17,6 +17,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Render_e4.hpp"
+#include "e4/classes/RadarHashVector_e4.hpp"
 
 // 0x652C00
 namespace gamemd {
@@ -56,7 +58,7 @@ CampaignClass * * RadarClass::Destruct()
     RA2_OPDEL(RadarClass_field_0x1260); /*0x652c72*/
     this->RadarClass_field_0x1260 = 0; /*0x652c7a*/
   }
-  this->__pad_1264[5] = (gamemd::CampaignClass *)(0);
+  this-((unsigned int *)(>__pad_1264))[5] = (gamemd::CampaignClass *)(0);
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
   RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
   this->RadarClass_field_0x1224 = (VectorClass *)(void*)&VectorClass_Cell_vftable; /*0x652c92*/
@@ -65,9 +67,9 @@ CampaignClass * * RadarClass::Destruct()
     RA2_OPDEL(RadarClass_field_0x1228); /*0x652ca9*/
     this->RadarClass_field_0x1228 = 0; /*0x652cb1*/
   }
-  this->__pad_122C[5] = (gamemd::CampaignClass **)(0);
+  this-((unsigned int *)(>__pad_122C))[5] = (gamemd::CampaignClass **)(0);
   *(unsigned int *)this->__pad_122C = 0; /*0x652cbf*/
-  MapClass::Destruct(); /*0x652cc5*/
+  this->MapClass::Destruct(); /*0x652cc5*/
   return result; /*0x652cca*/
 }
 }
@@ -77,16 +79,16 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
 {
   unsigned int *v2; // ecx
   float *v3; // esi
-  int result; // eax
+  int * result;
   int *v5; // edi
-  void (__thiscall ***v6)(unsigned int, int); // ecx
+  void (***v6)(unsigned int, int); // ecx
   int v7; // eax
   int v8; // ecx
   int v9; // eax
   int v10; // edx
   int v11; // ebx
   int v12; // edi
-  void (__thiscall ***v13)(unsigned int, int); // ecx
+  void (***v13)(unsigned int, int); // ecx
   char *v14; // ebx
   int v15; // edi
   int v16; // eax
@@ -96,10 +98,10 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
 
   v3 = (float *)((int *)((float *)v2));
   result = (int *)(v2[1321]);
-  v5 = v2 + 1319; /*0x654660*/
+  v5 = (int *)(v2 + 1319);
   if ( result > 0 && (int)v2[1322] > 0 ) /*0x654671*/
   {
-    v6 = (void (__thiscall ***)(unsigned int, int))v2[1160]; /*0x654677*/
+    v6 = (void (***)(unsigned int, int))v2[1160]; /*0x654677*/
     v3[1320] = 0.0; /*0x65467d*/
     *v5 = 0; /*0x654685*/
     if ( v6 ) /*0x654687*/
@@ -118,10 +120,10 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
       v3[1181] = 0.0; /*0x6546c1*/
     }
     GenerateImageThumbnail(v3, v19, v5, v5, 1); /*0x6546d3*/
-    v7 = (*(int (__thiscall **)(unsigned int, int))(**((unsigned int **)v3 + 1160) + 124))(*((unsigned int *)v3 + 1160), a2); /*0x6546e0*/
+    v7 = (*(int (**)(unsigned int, int))(**((unsigned int **)v3 + 1160) + 124))(*((unsigned int *)v3 + 1160), a2); /*0x6546e0*/
     v8 = *((unsigned int *)v3 + 1160); /*0x6546e3*/
     *((unsigned int *)v3 + 1321) = v7; /*0x6546e9*/
-    v9 = (*(int (__thiscall **)(int))(v8->q080)(v8); /*0x6546f1*/
+    v9 = (*(int (**)(int))(v8->q080)(v8); /*0x6546f1*/
     v10 = *((unsigned int *)v3 + 1321); /*0x6546f7*/
     v11 = *((unsigned int *)v3 + 1148); /*0x6546fd*/
     *((unsigned int *)v3 + 1322) = v9; /*0x65470b*/
@@ -132,7 +134,7 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
     *((unsigned int *)v3 + 1320) = v12; /*0x65472e*/
     if ( v9 < 108 ) /*0x654734*/
       *((unsigned int *)v3 + 1320) = v12 + (108 - v9) / 2; /*0x654744*/
-    v13 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)v3 + 1159); /*0x65474a*/
+    v13 = (void (***)(unsigned int, int))*((unsigned int *)v3 + 1159); /*0x65474a*/
     if ( v13 ) /*0x654752*/
     {
       (**v13)(v13, 1); /*0x654758*/
@@ -143,8 +145,8 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
     {
       v19[0] = (int)v3[1160]; /*0x65477d*/
       v15 = v19[0]; /*0x654777*/
-      v18 = (*(int (__thiscall **)(int))(*(unsigned int *)v19[0] + 128))(v19[0]); /*0x654789*/
-      v16 = (*(int (__thiscall **)(int))(v15->u32_7C)(v15); /*0x65478e*/
+      v18 = (*(int (**)(int))(*(unsigned int *)v19[0] + 128))(v19[0]); /*0x654789*/
+      v16 = (*(int (**)(int))(v15->u32_7C)(v15); /*0x65478e*/
       v17 = DSurface::Construct(v14, v16, v18, 1, 0); /*0x654794*/
     }
     else
@@ -152,7 +154,7 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
       v17 = (char *)((unsigned int)(0));
     }
     *((unsigned int *)v3 + 1159) = v17; /*0x65479d*/
-    (*(void (__thiscall **)(char *, unsigned int))(v17->nextArrayIndex)(v17, 0); /*0x6547a8*/
+    (*(void (**)(char *, unsigned int))(v17->nextArrayIndex)(v17, 0); /*0x6547a8*/
     IDA_LOBYTE(result) = RadarClass::UpdateFoundationShapesCustom(v3); /*0x6547ad*/
   }
   return result; /*0x6547b3*/
@@ -207,8 +209,8 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   {
     if ( v9 ) /*0x6a849f*/
     {
-      v10 = *((unsigned int *)dword_A8E334 + a2); /*0x6a84ab*/
-      v11 = *((unsigned int *)dword_A8E334 + aP3); /*0x6a84ae*/
+      v10 = *((unsigned int *)dword_A8E334 + a2); /*(unsigned int)(0x6a84ab)*/
+      v11 = *((unsigned int *)(unsigned int)(dword_A8E334)+ aP3); /*0x6a84ae*/
       v12 = *(unsigned int *)(v10 + 176); /*0x6a84b1*/
       v13 = *(unsigned int *)(v11 + 176); /*0x6a84b7*/
       if ( v12 < v13 ) /*0x6a84bf*/
@@ -341,8 +343,8 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
     return 1; /*0x6a869b*/
   if ( v28 > v29 ) /*0x6a869e*/
     return 0; /*0x6a86a9*/
-  v30 = (*(int (__thiscall **)(int, void *))(*(unsigned int *)v16 + 132))(v16, dword_A83D4C); /*0x6a86bf*/
-  v31 = (*(int (__thiscall **)(unsigned int *, void *))(*v25 + 132))(v25, dword_A83D4C); /*0x6a86c9*/
+  v30 = (*(int (**)(int, void *))(*(unsigned int *)v16 + 132))(v16, dword_A83D4C); /*0x6a86bf*/
+  v31 = (*(int (**)(unsigned int *, void *))(*v25 + 132))(v25, dword_A83D4C); /*0x6a86c9*/
   if ( v30 < v31 ) /*0x6a86d1*/
     return 1; /*0x6a86dc*/
   if ( v30 > v31 ) /*0x6a86df*/

@@ -1021,7 +1021,7 @@ struct UnitTypeClass {
     INIClass * * ReadINIEntry();
     UnitTypeClass(INIClass * aP1);
     UnitTypeClass * ddtor(char a2);
-    VoxelAnimTypeClass * * FindOrCreate();
+    VoxelAnimTypeClass * * FindOrCreate(void *a1 = 0);
     int * GetDimensions(int * a2);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);

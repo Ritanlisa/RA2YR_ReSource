@@ -18,6 +18,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/VoxelAnim_e4.hpp"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
 
 // 0x73C5F0
 namespace gamemd {
@@ -83,12 +84,12 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   unsigned short v72[12]; // [esp+19Ch] [ebp-48h] BYREF
   unsigned char v73[48]; // [esp+1B4h] [ebp-30h] BYREF
 
-  v13 = (void *)((int)((void *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)a1 + 108))(a1))));
+  v13 = (void *)((int)((void *)((*(int (**)(unsigned char *))(*(unsigned int *)a1 + 108))(a1))));
   v14 = (void *)((int)((void *)(*((unsigned int *)a1 + 433))));
   v15 = (void *)((unsigned int)(v13));
   v61 = v13; /*0x73c60a*/
   v52 = 1; /*0x73c60e*/
-  if ( *(unsigned int *)(v14 + 3644) != 8 || (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)a1 + 196))(a1) ) /*0x73c621*/
+  if ( *(unsigned int *)((unsigned int)(v14)+ 3644) != 8 || (*(uint8_t (**)(unsigned char *))(*(unsigned int *)a1 + 196))(a1) ) /*0x73c621*/
     v16 = 0; /*0x73c649*/
   else
     v16 = ((uint8_t)((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a1 + 452, &v60) >> 12) + 1) >> 1) + 1) /*0x73c644*/
@@ -134,11 +135,11 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   {
     v23 = (int)(a1[1060]);
     v63 = (void *)((unsigned int)((void *)((unsigned int)(a2))));
-    v64 = a3; /*0x73c74d*/
+    v64 = (void *)(a3);
     if ( v23 ) /*0x73c751*/
-      v64 = a3 - 14; /*0x73c756*/
+      v64 = (unsigned int)(a3)- 14; /*0x73c756*/
     v24 = v15->nextArrayIndex; /*0x73c762*/
-    v25 = (*(int (__thiscall **)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 748))(a1, 0); /*0x73c772*/
+    v25 = (*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 748))(a1, 0); /*0x73c772*/
     DrawToSurfaceSHP( /*0x73c7a7*/
       g_DSurface_Hidden_2,
       g_FileSystem_THEATER_PAL,
@@ -160,7 +161,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     g_DSurface_Hidden_2 = (int)((void *)(dword_B1D13C));
     v63 = (void *)(128);
     v62[1] = 128; /*0x73c7cd*/
-    v26 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)dword_B1D13C + 120))(dword_B1D13C, v69); /*0x73c7d8*/
+    v26 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)dword_B1D13C + 120))(dword_B1D13C, v69); /*0x73c7d8*/
     v65[0] = *v26; /*0x73c7dd*/
     v65[1] = v26[1]; /*0x73c7e4*/
     v65[2] = v26[2]; /*0x73c7eb*/
@@ -207,8 +208,8 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         v48 = -*((float *)a1 + 251); /*0x73c9d6*/
         Matrix3x4::Translate(v70, v48, unsigned int a1); /*0x73c9d9*/
       }
-      v53 = (float)(*(unsigned int *)((*(int (__thiscall **)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 12) / -8); /*0x73ca08*/
-      v56 = *(unsigned int *)((*(int (__thiscall **)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 4) / -8; /*0x73ca30*/
+      v53 = (float)(*(unsigned int *)((*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 12) / -8); /*0x73ca08*/
+      v56 = *(unsigned int *)((*(int (**)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 4) / -8; /*0x73ca30*/
       v67[2] = v53; /*0x73ca3c*/
       v67[1] = 0.0; /*0x73ca40*/
       IDA_HIDWORD(v58) = 0; /*0x73ca44*/
@@ -220,8 +221,8 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v55 = v59; /*0x73ca84*/
       Matrix3x3::Multiply(v71, (float *)&v54); /*0x73ca90*/
       v30 = *(unsigned int *)a1; /*0x73ca95*/
-      qmemcpy(v72, a1 + 880, sizeof(v72)); /*0x73caaa*/
-      if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (__thiscall **)(unsigned char *, unsigned int))(v30 + 1016))(a1, 0) + 160) + 670) ) /*0x73cabe*/
+      qmemcpy(v72, (unsigned int)(a1)+ 880, sizeof(v72)); /*0x73caaa*/
+      if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (**)(unsigned char *, unsigned int))(v30 + 1016))(a1, 0) + 160) + 670) ) /*0x73cabe*/
       {
         v31 = (uint8_t)((unsigned int)((*ProgressTimer::GetValue(v72, &v57) >> 7) + 1) >> 1); /*0x73cae1*/
         if ( v31 <= 64 || v31 > 128 ) /*0x73caf0*/
@@ -251,7 +252,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v15 = (void *)((unsigned int)((void *)((int)(v61))));
     }
     a8 = a8; /*0x73cc03*/
-    (*(void (__thiscall **)(unsigned char *, int, int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cc36*/
+    (*(void (**)(unsigned char *, int, int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cc36*/
       a1,
       v15,
       v16,
@@ -274,7 +275,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v34 = (float *)((int)((float *)(*(unsigned int *)a1)));
       inited = (float *)AudioConfig::InitDefault(v73); /*0x73cc75*/
       v36 = MultiplyMatrix3x4(v70, inited, v71); /*0x73cc83*/
-      (*(void (__thiscall **)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v34 + 1296))( /*0x73cca8*/
+      (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v34 + 1296))( /*0x73cca8*/
         a1,
         *((unsigned int *, unsigned int a1, unsigned int a8)a1 + 433) + 192,
         0,
@@ -288,7 +289,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         0);
     }
     Value = ProgressTimer::GetValue((unsigned short *)a1 + 464, &v57); /*0x73ccb9*/
-    (*(void (__thiscall **)(unsigned char *, int, unsigned int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cd08*/
+    (*(void (**)(unsigned char *, int, unsigned int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cd08*/
       a1,
       v15,
       (((((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F) + 4) & 0x1F) + 8 * *(char *)(*((unsigned int *)a1 + 433) + 3676),
@@ -313,7 +314,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
         v38 = (float *)((int)((float *)(*(unsigned int *)a1)));
         v39 = (float *)AudioConfig::InitDefault(v73); /*0x73cd47*/
         v40 = MultiplyMatrix3x4(v70, v39, v71); /*0x73cd55*/
-        (*(void (__thiscall **)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v38 + 1296))( /*0x73cd7a*/
+        (*(void (**)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v38 + 1296))( /*0x73cd7a*/
           a1,
           *((unsigned int *)a1 + 433) + 192,
           0,
@@ -327,9 +328,9 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
           0);
       }
     }
-    v41 = (*(int (__thiscall **)(unsigned char *, int))(*(unsigned int *)a1 + 1124))(a1, a8); /*0x73cd86*/
+    v41 = (*(int (**)(unsigned char *, int))(*(unsigned int *)a1 + 1124))(a1, a8); /*0x73cd86*/
     v60 = v60; /*0x73cd93*/
-    (*(void (__thiscall **)(unsigned char *, int, int, int, int, int, int, int, int, int))(*(unsigned int *)a1 + 1372))( /*0x73cddb*/
+    (*(void (**)(unsigned char *, int, int, int, int, int, int, int, int, int))(*(unsigned int *)a1 + 1372))( /*0x73cddb*/
       a1,
       v60,
       a2,
@@ -340,7 +341,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       a7,
       v41,
       a9);
-    result = (*(int (__thiscall **)(int, int *, unsigned int))(g_DSurface_Hidden_2->abstractFlags)( /*0x73cdf0*/
+    result = (*(int (**)(int, int *, unsigned int))(g_DSurface_Hidden_2->abstractFlags)( /*0x73cdf0*/
                g_DSurface_Hidden_2,
                &dword_B1CFA8,
                0);
@@ -349,7 +350,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   }
   else if ( *(unsigned char *)(v18 + 3606) && TechnoClass::CheckTargetCell(a1) && !TechnoClass::ScanNeighborCells(a1) ) /*0x73ce24*/
   {
-    return (*(int (__thiscall **, unsigned int a10, unsigned int a12)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
+    return (*(int (**, unsigned int a10, unsigned int a12)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
              a1,
              v15,
              v16,
@@ -371,7 +372,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   else
   {
     v44 = *(unsigned int *)a1; /*0x73ce75*/
-    v45 = (*(int (__thiscall **)(unsigned char *, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 752))( /*0x73ce89*/
+    v45 = (*(int (**)(unsigned char *, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 752))( /*0x73ce89*/
             a1,
             0,
             a8,
@@ -381,7 +382,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
             0,
             0,
             0);
-    return (*(int (__thiscall **)(unsigned char *, int, int, char *, char *, unsigned int, int, unsigned int, int))(v44 + 1292))( /*0x73cead*/
+    return (*(int (**)(unsigned char *, int, int, char *, char *, unsigned int, int, unsigned int, int))(v44 + 1292))( /*0x73cead*/
              a1,
              v15,
              v16,

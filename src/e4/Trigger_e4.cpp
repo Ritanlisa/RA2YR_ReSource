@@ -16,6 +16,9 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/TriggerClass_e4.hpp"
+#include "e4/classes/TriggerTypeClass_e4.hpp"
 
 // 0x554A60
 namespace gamemd {
@@ -41,23 +44,23 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
 
   *(unsigned int *)this->__pad_8 = a4; /*0x5cbd2c*/
   this->Trigger_field_0x4 = (MSAnim *)aP2; /*0x5cbd32*/
-  this->__pad_8[4] = 1; /*0x5cbd35*/
-  this->Trigger_field_0x10 = (void *)Timer::GetTicks(); /*0x5cbd48*/
+  this-((unsigned int *)(>__pad_8))[4] = 1; /*0x5cbd35*/
+  this->Trigger_field_0x10 = (void *)this->Timer::GetTicks(); /*0x5cbd48*/
   *(unsigned int *)this->__pad_18 = 0; /*0x5cbd4f*/
-  *(unsigned int *)&this->__pad_18[8] = a5; /*0x5cbd52*/
-  *(unsigned int *)&this->__pad_30[8] = a7; /*0x5cbd58*/
-  *(unsigned int *)&this->__pad_18[12] = a6; /*0x5cbd5f*/
-  *(unsigned int *)&this->__pad_18[16] = 0; /*0x5cbd62*/
-  this->__pad_30[4] = 0; /*0x5cbd65*/
-  this->__pad_30[12] = 0; /*0x5cbd68*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_18))[8] = a5; /*0x5cbd52*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_30))[8] = a7; /*0x5cbd58*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_18))[12] = a6; /*0x5cbd5f*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_18))[16] = 0; /*0x5cbd62*/
+  this-((unsigned int *)(>__pad_30))[4] = 0; /*0x5cbd65*/
+  this-((unsigned int *)(>__pad_30))[12] = 0; /*0x5cbd68*/
   *(unsigned int *)this->__pad_0 = (void*)&MSShapeAnim_vftable; /*0x5cbd6a*/
-  FileClassToBuffer = LoadFileClassToBuffer(aP1, (bool *)&this->__pad_30[12]); /*0x5cbd70*/
+  FileClassToBuffer = LoadFileClassToBuffer(aP1, (bool *)&this-((unsigned int *)(>__pad_30))[12]); /*0x5cbd70*/
   *(unsigned int *)&this->u32_1C = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
   v10 = *(int16_t *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
-  *(unsigned int *)&this->__pad_30[20] = aP7; /*0x5cbd84*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_30))[20] = aP7; /*0x5cbd84*/
   *(unsigned int *)this->__pad_30 = v10; /*0x5cbd87*/
-  *(unsigned int *)&this->__pad_30[16] = 0; /*0x5cbd8a*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_30))[16] = 0; /*0x5cbd8a*/
   *(unsigned int *)this->__pad_0 = (void*)&MSFadeAnim_vftable; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
 }
@@ -66,10 +69,13 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
 namespace gamemd {
 void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char a6)
 {
-  int v5; // ebx
+    unsigned int v5 = 0;  /* G37 hoist */
+    void *(__thiscall Trigger::* )(MSShapeAnim *,MSShapeAnim *,int,int,int,int,MSShapeAnim *) v5 = 0;
+    void *(__thiscall Trigger::* )(MSShapeAnim *,MSShapeAnim *,int,int,int,int,MSShapeAnim *) v5 = 0;
+  void *(__thiscall Trigger::* )(MSShapeAnim *,MSShapeAnim *,int,int,int,int,MSShapeAnim *) v5;
   int v6; // eax
   unsigned int *v7; // eax
-  int (__thiscall ***v8)(unsigned int, int); // eax
+  int (***v8)(unsigned int, int); // eax
   int v9; // ecx
   unsigned int v10; // edi
   int CellType; // ebp
@@ -80,8 +86,8 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   int v16; // ebp
   int v17; // eax
   unsigned int *v18; // edi
-  int v19; // eax
-  void (__thiscall ***v20)(unsigned int, int); // ecx
+  unsigned int * v19;
+  void (***v20)(unsigned int, int); // ecx
   void **v21; // [esp+10h] [ebp-13Ch] BYREF
   int v22; // [esp+14h] [ebp-138h]
   int v23; // [esp+18h] [ebp-134h]
@@ -120,7 +126,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   while ( ((uint8_t (__thiscall *)(void ***))v21[1])(&v21) ) /*0x76d4fd*/
   {
     v7 = (unsigned int *)FileClass::SetState(*(unsigned int *)(v22 + 4) + 8 * v23); /*0x76d512*/
-    v8 = (int (__thiscall ***)(unsigned int, int))WDTObject::GetAndClearFlag(v7); /*0x76d519*/
+    v8 = (int (***)(unsigned int, int))WDTObject::GetAndClearFlag(v7); /*0x76d519*/
     if ( v8 ) /*0x76d520*/
       Session::RemoveTeam(v8); /*0x76d525*/
     ((void (__thiscall *)(void ***))v21[2])(&v21); /*0x76d532*/
@@ -198,8 +204,8 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
           && v39 > 0
           && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v34[2])(&v34, v39 + v36, 0) )
         {
-          v19 = v38++; /*0x76d82c*/
-          *((unsigned int *)Block + v19) = v18; /*0x76d837*/
+          v19 = (unsigned int)((unsigned int)(v38)++);
+          *((unsigned int *)(unsigned int)(Block)+ v19) = v18; /*0x76d837*/
         }
       }
       v51 = 0; /*0x76d84c*/
@@ -226,7 +232,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
       {
         if ( this->q444 ) /*0x76d910*/
         {
-          v20 = (void (__thiscall ***)(unsigned int, int))v28[1][v29]; /*0x76d925*/
+          v20 = (void (***)(unsigned int, int))v28[1][v29]; /*0x76d925*/
           if ( v20 ) /*0x76d92a*/
             (**v20)(v20, 1); /*0x76d934*/
         }

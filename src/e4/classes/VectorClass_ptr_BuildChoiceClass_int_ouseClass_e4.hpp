@@ -111,8 +111,9 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned int q5684;  // 0x5684
     unsigned char q6408;  // 0x6408
     unsigned int __tail_18;
+    unsigned int __pad_0;
 // --- flat members (END) ---
-    unsigned int * Constructor(EnumConnectionPointsClass * aP1);  // 0x4A0C20
+    unsigned int * Constructor(EnumConnectionPointsClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x4A0C20
     int SetCapacity(int a1,  int a2);    // 0x4F6A20
     int SetCapacity_0(int a1,  int a2);    // 0x4F6A80
     int SetCapacity_1(int a1,  int a2);    // 0x4F6AE0
@@ -135,9 +136,9 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     int StubReturnNullPointer(int a1,  unsigned int * a2);    // 0x5024F0
     void Destroy_0();  // 0x50E640
     unsigned int GetItemIndex_1(int a2);  // 0x50E670
-    int Get(int a2);  // 0x50E690
+    int Get(int a2, void *a1 = 0);  // 0x50E690
     char Add(int a2);  // 0x50F4E0
-    void Remove();  // 0x50F5D0
+    void Remove(void *a1 = 0);  // 0x50F5D0
     int GetSize(unsigned int * a2);  // 0x50F600
     unsigned int GetCapacity(int a2);  // 0x50F640
     int FindItemIndex_1(unsigned int * a2);  // 0x50F710

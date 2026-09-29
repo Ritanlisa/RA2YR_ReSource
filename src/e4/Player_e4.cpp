@@ -9,6 +9,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x5E8DC0
 namespace gamemd {
@@ -29,7 +31,7 @@ void Player::BuildListString()
     if ( !v3 /*0x5e8e17*/
       || v3 == (wchar_t *)g_HouseClass_ObserverFlags
       || v3 == (wchar_t *)g_Lobby_PlayerCount
-      || v3 == g_Lobby_PlayerReady
+      || v3 == (wchar_t *)(g_Lobby_PlayerReady)
       || v3 == (wchar_t *)g_Lobby_MaxPlayers
       || v3 == (wchar_t *)g_Lobby_PlayerTeam
       || v3 == (wchar_t *)g_Lobby_PlayerSide
@@ -82,7 +84,7 @@ wchar_t * Player::FindByName()
     return 0; /*0x5e8ced*/
   while ( 1 ) /*0x5e8cd8*/
   {
-    v5 = (const wchar_t *)dword_A8DA78[v4]; /*0x5e8cd8*/
+    v5 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v4]; /*0x5e8cd8*/
     if ( !wcscmp(v5, (const wchar_t *)this) ) /*0x5e8cdc*/
       break; /*0x5e8cdc*/
     if ( ++v4 >= v3 ) /*0x5e8ceb*/

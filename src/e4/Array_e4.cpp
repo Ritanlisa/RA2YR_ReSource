@@ -15,18 +15,26 @@
 namespace gamemd {
 int Array::GetClamped(CheckListClass * aP1)
 {
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
   void * result;
-  unsigned int v3;
+  void * v3;
   void * v4;
 
   result = (void *)((int)(this->q044));
   if ( result ) /*0x557ac5*/
   {
-    v3 = (unsigned int)((gamemd::CheckListClass *)((int)(aP1)));
-    v4 = (gamemd::CheckListClass *)(result - 1);
+    v3 = (unsigned int)((void *)((unsigned int)((gamemd::CheckListClass *)((int)(aP1)))));
+    v4 = (gamemd::CheckListClass *)((unsigned int)(result)- 1);
     if ( aP1 >= v4 ) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
-    return *(unsigned int *)(this->q038 + 4 * v3); /*0x557ad8*/
+    return *(unsigned int *)((unsigned int)(this->q038)+ 4 * v3); /*0x557ad8*/
   }
   return (int)(result);
 }
@@ -45,7 +53,7 @@ int Array::FindValue(IUnknown * aP1)
   v4 = 0; /*0x634298*/
   if ( (int)Array_field_0x10 > 0 ) /*0x63429d*/
   {
-    for ( i = (unsigned int **)this->Array_field_0x4; **i != aP1; ++i ) /*0x63429f*/
+    for ( i = (unsigned int **)this->Array_field_0x4; **(unsigned int)(i) != (unsigned int)(aP1); ++i ) /*0x63429f*/
     {
       if ( ++v4 >= (int)Array_field_0x10 ) /*0x6342b2*/
         return result; /*0x6342b2*/
@@ -116,7 +124,7 @@ int Array::ContainsValue(IUnknown * aP1)
     while ( 1 ) /*0x65ae08*/
     {
       result = *Array_field_0xE4; /*0x65ae08*/
-      if ( !*Array_field_0xE4 || result == aP1 ) /*0x65ae10*/
+      if ( !*Array_field_0xE4 || result == (int)(aP1) ) /*0x65ae10*/
         break; /*0x65ae10*/
       ++v4; /*0x65ae12*/
       ++Array_field_0xE4; /*0x65ae13*/
@@ -227,7 +235,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
     v4 = v5; /*0x7ad7a4*/
   }
   Array_field_0x4 = (void *)(this->Array_field_0x4);
-  if ( v4 >= (int)Array_field_0x4 && v5 >= (int)Array_field_0x4 ) /*0x7ad7b4*/
+  if ( v4 >= (gamemd::ObjectClass *)((int))Array_field_0x4 && v5 >= (int)Array_field_0x4 ) /*0x7ad7b4*/
   {
     v7 = (unsigned int)(2 * v5);
     if ( 2 * v5 < 10 ) /*0x7ad7bc*/
@@ -279,8 +287,8 @@ int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall 
   void * result;
   void * v6;
 
-  result = (void *)((int)(a3 - 1));
-  if ( a3 - 1 >= 0 ) /*0x4068f5*/
+  result = (void *)((int)((unsigned int)(a3)- 1));
+  if ( (unsigned int)(a3)- 1 >= 0 ) /*0x4068f5*/
   {
     v6 = (void *)((int)(a3));
     do /*0x406911*/
@@ -327,12 +335,12 @@ void Array::Cleanup()
   int result; // eax
   int i; // edi
 
-  result = this->Array_field_0x3C[0]; /*0x49b723*/
+  result = this-((unsigned int *)(>Array_field_0x3C))[0]; /*0x49b723*/
   if ( result ) /*0x49b728*/
   {
     for ( i = 0; i < (int)this->Array_field_0x40; ++i ) /*0x49b732*/
     {
-      if ( *(unsigned int *)(this->Array_field_0x3C[0] + 4 * i) ) /*0x49b737*/
+      if ( *(unsigned int *)(this-((unsigned int *)(>Array_field_0x3C))[0] + 4 * i) ) /*0x49b737*/
         RA2_OPDEL(*(void **)(this->Array_field_0x3C[0] + 4 * i)); /*0x49b73f*/
     }
     RA2_OPDEL((void *)this->Array_field_0x3C[0]); /*0x49b753*/
@@ -370,40 +378,40 @@ char Array::GetElementAt(unsigned int * a2, int a3)
 namespace gamemd {
 void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 {
-  int v2; // ecx
+  unsigned int * v2;
   int v3; // edx
-  unsigned int v4;
+  unsigned int * v4;
   int v5; // eax
 
   if ( aP0 ) /*0x55b887*/
   {
-    if ( (*(int (__thiscall **)(int))(*(unsigned int *)aP0 + 44))(aP0) == 44 ) /*0x55b893*/
+    if ( (*(int (**)(int))(*(unsigned int *)aP0 + 44))(aP0) == 44 ) /*0x55b893*/
     {
-      v2 = dword_8B40D8; /*0x55b895*/
+      v2 = (unsigned int *)(dword_8B40D8);
       v3 = 0; /*0x55b89b*/
       if ( dword_8B40D8 > 0 ) /*0x55b89f*/
       {
         v4 = (unsigned int *)(dword_8B40CC);
         do /*0x55b8da*/
         {
-          if ( aP0 == v4[v3] ) /*0x55b8ab*/
+          if ( aP0 == (gamemd::AbstractClass *)(((unsigned int *)(v4)))[v3] ) /*0x55b8ab*/
           {
-            if ( v3 < v2 ) /*0x55b8af*/
+            if ( v3 < (int)(v2) ) /*0x55b8af*/
             {
               --v2; /*0x55b8b1*/
               v5 = v3; /*0x55b8b2*/
               for ( dword_8B40D8 = v2; v5 < dword_8B40D8; ++v5 ) /*0x55b8bc*/
               {
-                v4[v5] = (unsigned int *)(v4[v5 + 1]);
-                v2 = (unsigned int *)(dword_8B40D8);
-                v4 = dword_8B40CC; /*0x55b8cb*/
+                ((unsigned int *)(v4))[v5] = (unsigned int *)(v4[v5 + 1]);
+                v2 = (int)((unsigned int *)(dword_8B40D8));
+                v4 = (unsigned int *)(dword_8B40CC);
               }
             }
             --v3; /*0x55b8d6*/
           }
           ++v3; /*0x55b8d7*/
         }
-        while ( v3 < v2 ); /*0x55b8da*/
+        while ( v3 < (int)(v2) ); /*0x55b8da*/
       }
     }
   }

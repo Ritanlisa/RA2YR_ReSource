@@ -18,6 +18,10 @@
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x501750
 namespace gamemd {
@@ -113,7 +117,7 @@ void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   do /*0x504832*/
   {
     IDA_HIDWORD(v5) = *v9; /*0x5047e5*/
-    if ( v9[1] > v4 && !*(unsigned char *)(IDA_HIDWORD(v5) + 501) ) /*0x5047eb*/
+    if ( v9[1] > (unsigned int)(v4) && !*(unsigned char *)(IDA_HIDWORD(v5) + 501) ) /*0x5047eb*/
     {
       if ( !IDA_HIDWORD(v5) /*0x50481e*/
         || IDA_HIDWORD(v5) != (unsigned int)v5
@@ -144,7 +148,7 @@ int House_GetTechLevel(int a1, int a2)
 
   if ( a2 < 0 ) /*0x5004e5*/
     return 0; /*0x5004e7*/
-  v4 = TechnoTypeClass::GetByTypeAndIndex(a1, a2); /*0x5004ed*/
+  v4 = ((TechnoTypeClass *)(a1))->GetByTypeAndIndex(a2); /*0x5004ed*/
   if ( a1 == 6 || a1 == 7 ) /*0x5004fa*/
     return v4->qE08; /*0x500500*/
   else
@@ -199,7 +203,7 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4, void * a5)
   v8 = *(unsigned int *)(*(unsigned int *)(a1 + 90208) /*0x506002*/
                  + 4 * (v6 + *(unsigned int *)(a1 + 22364) * (v5 - *(unsigned int *)(a1 + 22360)) - *(unsigned int *)(a1 + 22356)));
   v9 = 0; /*0x506005*/
-  if ( a5 != -1 ) /*0x50600a*/
+  if ( a5 != (void *)(-1) ) /*0x50600a*/
   {
     v14 = v6 - *(int16_t *)(a1 + 22352); /*0x50601e*/
     __asm { fild [esp+1Ch+var_8] } /*0x506025*/
@@ -251,18 +255,18 @@ int HouseClass::sub_5092F0(int a2)
 
   a2 = a2; /*0x5092f0*/
   this->u32_54E4 |= 1 << *(unsigned int *)(*(unsigned int *)(a2 + 52) + 184); /*0x509313*/
-  if ( (Object *)a2 == dword_A83D4C ) /*0x509321*/
+  if ( (Object *)a2 == (gamemd::Object *)(dword_A83D4C) ) /*0x509321*/
   {
     for ( i = 0; i < dword_A8EC88; ++i ) /*0x509330*/
     {
       v5 = (int *)*((unsigned int *)dword_A8EC7C + i); /*0x509337*/
-      if ( v5 && !*((unsigned char *)v5 + 129) && (TechnoClass *)v5[135] == this ) /*0x50934e*/
+      if ( v5 && !*((unsigned char *)v5 + 129) && (TechnoClass *)v5[135] == (gamemd::TechnoClass *)(this) ) /*0x50934e*/
       {
         v8[0] = v5[39]; /*0x509360*/
         v8[1] = v5[40]; /*0x50936a*/
         v6 = *v5; /*0x50936e*/
         v8[2] = v5[41]; /*0x509373*/
-        v7 = (*(int (__thiscall **)(int *))(v6 + 132))(v5); /*0x509377*/
+        v7 = (*(int (**)(int *))(v6 + 132))(v5); /*0x509377*/
         MapClass::RevealArea0((MapClass *)&dword_87F7E8, v8, *(unsigned int *)(v7 + 1512), this, 0, 0, 0, 1, 1); /*0x50938e*/
       }
     }
@@ -356,7 +360,7 @@ void sub_50B920(int a1, int a2, int a3)
 namespace gamemd {
 double E4Recv_50C160::sub_50C160()
 {
-  return *(float *)this->attachedTag[5].defaultCoords; /*0x50c169*/
+  return *(float *)this-((unsigned int *)(>attachedTag))[5].defaultCoords; /*0x50c169*/
 }
 } // namespace gamemd
 

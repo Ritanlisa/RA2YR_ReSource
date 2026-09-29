@@ -117,6 +117,7 @@ struct BuildingLightClass {
     unsigned int vtable0;
     unsigned int vtable22;
     unsigned int vtable4;
+    unsigned int Dtor;
 // --- flat members (END) ---
     BuildingLightClass * SDDTOR(char a2);
     int SD_vt03(int a1, unsigned int * a2);

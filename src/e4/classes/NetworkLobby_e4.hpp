@@ -55,6 +55,10 @@ struct NetworkLobby {
     void* q6AC;  // 0x6AC
     void* q6B0;  // 0x6B0
     unsigned int MessageHandler;
+    unsigned int Debug;
+    unsigned int Dialog;
+    unsigned int Timer;
+    unsigned int Event;
 // --- flat members (END) ---
     int MessageList_Append(int a2,  int a3,  void* aP3,  char a5,  int a6);    // 0x5D4210
     char CreateGame();  // 0x5DC350
@@ -62,13 +66,13 @@ struct NetworkLobby {
     void SetupPlayers();  // 0x5E8EA0
     int AssignPlayerSlot();  // 0x5E9240
     int InitLobbyDropdowns();  // 0x5E9E00
-    HWND * Dispatch();  // 0x5EA2A0
+    HWND * Dispatch(void *a1 = 0, void *a2 = 0);  // 0x5EA2A0
     char SetupPlayerSlotControls();  // 0x5EB660
     char FillOptionCombo();  // 0x5EE3A0
     char CheckLobbyConditions();  // 0x5E9290
     wchar_t * DeleteAndZero();  // 0x5EDFC0
     int GetPlayerCount(char a1);  // 0x5DA080
-    char ValidateSerialNumber();  // 0x5DC170
+    char ValidateSerialNumber(void *a1 = 0);  // 0x5DC170
     BOOL IsValidPlayerName();  // 0x5E9470
     bool CheckMinPlayers();  // 0x5E9510
     char CheckPlayerNameValid();  // 0x5E96A0

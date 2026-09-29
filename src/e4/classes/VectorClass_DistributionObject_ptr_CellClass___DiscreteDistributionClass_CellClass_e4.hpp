@@ -19,11 +19,11 @@ struct VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_
     char AddRef(int a2);  // 0x4E07E0
     int FindItemIndex(unsigned int * a2);  // 0x4E0CA0
     VectorClass_flat * QueryInterface(char a2);  // 0x4E0D80
-    DynamicVector * Constructor(char a2);  // 0x4E0E20
+    DynamicVector * Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x4E0E20
     unsigned int * Clear(unsigned int * a2,  int a3);    // 0x4E0250
     unsigned int GetCapacity(int a2);  // 0x4E09E0
-    void Destroy();  // 0x4E0AB0
+    void Destroy(void *a1 = 0);  // 0x4E0AB0
     unsigned int GetItemIndex(int a2);  // 0x4E0AF0
-    void ddtor();  // 0x4E0950
+    void ddtor(void *a1 = 0);  // 0x4E0950
 };
 } // namespace gamemd

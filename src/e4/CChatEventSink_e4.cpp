@@ -20,6 +20,7 @@
 namespace gamemd {
 Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
+    unsigned int v25 = 0;  /* G37 hoist */
   int referenceCount; // eax
   int v4; // ebx
   int v5; // ebp
@@ -76,7 +77,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
       }
       if ( *(unsigned int *)&v33[8] ) /*0x7aa90e*/
       {
-        Debug::Log(); /*0x7aa91d*/
+        this->Debug::Log(); /*0x7aa91d*/
         memset(&v33[32], 0, 0x10Cu); /*0x7aa930*/
         referenceCount = stru_B76AC4.?; /*0x7aa932*/
         v4 = 0; /*0x7aa937*/
@@ -138,7 +139,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
                   if ( v9 >= stru_B76AC4.? ) /*0x7aaa40*/
                     goto LABEL_88; /*0x7aaa40*/
                 }
-                Debug::Log(); /*0x7aaa54*/
+                this->Debug::Log(); /*0x7aaa54*/
                 *(unsigned int *)(v8 + 40) = *((unsigned int *)a3 + 10); /*0x7aaa5f*/
               }
             }
@@ -166,7 +167,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
               }
               v6 = a3; /*0x7aaaec*/
               v15 = *(unsigned int *)&v33[72]; /*0x7aaaf3*/
-              Debug::Log(); /*0x7aab01*/
+              this->Debug::Log(); /*0x7aab01*/
               *((unsigned int *)a3 + 10) = v15; /*0x7aab09*/
             }
   LABEL_43:
@@ -364,7 +365,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     SetEvent(dword_B73690); /*0x7aaef2*/
     if ( dword_A8B244 == 3 || dword_A8B244 == 1 || dword_A8B244 == 2 ) /*0x7aaf0a*/
     {
-      Debug::Log(); /*0x7aaf18*/
+      this->Debug::Log(); /*0x7aaf18*/
     }
     else
     {
@@ -480,7 +481,7 @@ ObjectClass * CChatEventSink::DeleteAndZero(char a2)
 namespace gamemd {
 int CChatEventSink::ComputeBucketMask(int a2)
 {
-  return (*(int (__thiscall **)(int))(&this->u32_84))(a2) & ((1 << this->q00C) - 1); /*0x7aecc4*/
+  return (*(int (**)(int))(&this->u32_84))(a2) & ((1 << this->q00C) - 1); /*0x7aecc4*/
 }
 } // namespace gamemd
 // 0x7AEDD0
@@ -552,7 +553,7 @@ char CChatEventSink::EncodeString(char a2)
     return 0; /*0x7b5e52*/
   v5 = &v4[-*(unsigned int *)this->__pad_0]; /*0x7b5e5c*/
   v6 = (size_t)v5; /*0x7b5e5f*/
-  v7 = &g_INI_DefaultBuffer; /*0x7b5e63*/
+  v7 = (unsigned int)(&g_INI_DefaultBuffer);
   if ( *(unsigned int *)this->__pad_0 ) /*0x7b5e58*/
     v7 = *(const char **)this->__pad_0; /*0x7b5e6a*/
   v8 = (char *)RA2_OPNEW((size_t)(v5 + 1)); /*0x7b5e70*/

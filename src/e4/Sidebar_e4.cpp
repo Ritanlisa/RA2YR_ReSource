@@ -22,6 +22,10 @@
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
 
 // 0x4FA350
 namespace gamemd {
@@ -95,12 +99,12 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   Sidebar::Dispatch(v6, aP3, v7, 0); /*0x4fa41c*/
   v9 = TechnoTypeClass::GetByTypeAndIndex(v6, aP2); /*0x4fa42a*/
   v24 = 0; /*0x4fa440*/
-  if ( !(*(int (__thiscall **)(int, unsigned int, int, int, int))(*(unsigned int *)v9 + 148))(v9, 0, 1, 1, this) ) /*0x4fa438*/
+  if ( !(*(int (**)(int, unsigned int, int, int, int))(*(unsigned int *)v9 + 148))(v9, 0, 1, 1, this) ) /*0x4fa438*/
   {
-    if ( !a5 || !(*(int (__thiscall **)(int, int, unsigned int, int, int))(*(unsigned int *)v9 + 148))(v9, 1, 0, 1, this) ) /*0x4fa45b*/
+    if ( !a5 || !(*(int (**)(int, int, unsigned int, int, int))(*(unsigned int *)v9 + 148))(v9, 1, 0, 1, this) ) /*0x4fa45b*/
     {
   LABEL_40:
-      Debug::Log(); /*0x4fa533*/
+      this->Debug::Log(); /*0x4fa533*/
       return 3; /*0x4fa550*/
     }
     v24 = 1; /*0x4fa465*/
@@ -177,7 +181,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     v14 = *(unsigned int *)&v10->q058; /*0x4fa5b1*/
     if ( v14 ) /*0x4fa5b6*/
     {
-      if ( (*(int (__thiscall **)(int))(*(unsigned int *)v14 + 132))(v14) == v9 ) /*0x4fa5c2*/
+      if ( (*(int (**)(int))(*(unsigned int *)v14 + 132))(v14) == v9 ) /*0x4fa5c2*/
       {
         v13 = 1; /*0x4fa5c4*/
   LABEL_55:
@@ -185,17 +189,17 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
         {
           v16 = v10->isSuspended; /*0x4fa622*/
           ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
-          if ( !v16 && g_GameMode_Current[0] && this->u8_1EC ) /*0x4fa63a*/
+          if ( !v16 && ((unsigned int *)(g_GameMode_Current))[0] && this->u8_1EC ) /*0x4fa63a*/
           {
-            v17 = (*(int (__thiscall **)(unsigned int))(*v10->q058 + 132))(v10->q058); /*0x4fa649*/
+            v17 = (*(int (**)(unsigned int))(*v10->q058 + 132))(v10->q058); /*0x4fa649*/
             v18 = (int)(54 * ((int)dword_A8B558 * (int)g_ScenarioState / 0x3Cu)) /*0x4fa67b*/
-                / (*(int (__thiscall **)(int))(*(unsigned int *)v17 + 136))(v17);
+                / (*(int (**)(int))(*(unsigned int *)v17 + 136))(v17);
             if ( v18 >= 53 ) /*0x4fa680*/
               v18 = 53; /*0x4fa682*/
             if ( v21 ) /*0x4fa68d*/
               v10->production = v18; /*0x4fa68f*/
           }
-          if ( HouseClass_Player == (void *)this ) /*0x4fa698*/
+          if ( HouseClass_Player == (int)((void *))this ) /*0x4fa698*/
             Sidebar::FindProductionType(v10, a1, aP2); /*0x4fa6aa*/
           return 0; /*0x4fa6b2*/
         }
@@ -210,22 +214,22 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   }
   if ( (uint8_t)FactoryClass::DemandProduction(v9, (void *)this, a5) ) /*0x4fa5db*/
     goto LABEL_55; /*0x4fa5df*/
-  Debug::Log(); /*0x4fa6c4*/
+  this->Debug::Log(); /*0x4fa6c4*/
   if ( v10->u32_50 || v10->q058 ) /*0x4fa6d9*/
     return 3; /*0x4fa807*/
-  Debug::Log(); /*0x4fa6ec*/
-  Debug::Log(); /*0x4fa6fc*/
-  Debug::Log(); /*0x4fa70a*/
+  this->Debug::Log(); /*0x4fa6ec*/
+  this->Debug::Log(); /*0x4fa6fc*/
+  this->Debug::Log(); /*0x4fa70a*/
   v19 = *(unsigned int *)&v10->q058; /*0x4fa70f*/
   if ( v19 ) /*0x4fa717*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)v19 + 44))(v19); /*0x4fa71b*/
-  Debug::Log(); /*0x4fa729*/
+    (*(void (**)(int))(*(unsigned int *)v19 + 44))(v19); /*0x4fa71b*/
+  this->Debug::Log(); /*0x4fa729*/
   v20 = *(unsigned int *)&v10->q058; /*0x4fa72e*/
   if ( v20 ) /*0x4fa736*/
-    (*(void (__thiscall **)(int))(*(unsigned int *)v20 + 64))(v20); /*0x4fa73a*/
-  Debug::Log(); /*0x4fa748*/
-  Debug::Log(); /*0x4fa758*/
-  (*(void (__thiscall **)(int, int))(v10->NeedsSaveOrLink)(v10, 1); /*0x4fa76a*/
+    (*(void (**)(int))(*(unsigned int *)v20 + 64))(v20); /*0x4fa73a*/
+  this->Debug::Log(); /*0x4fa748*/
+  this->Debug::Log(); /*0x4fa758*/
+  (*(void (**)(int, int))(v10->NeedsSaveOrLink)(v10, 1); /*0x4fa76a*/
   switch ( v23 ) /*0x4fa782*/
   {
     case 0: /*0x4fa782*/
@@ -263,9 +267,9 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
 namespace gamemd {
 int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
 {
-  unsigned int result;
+  IUnknown * result;
 
-  result = (IUnknown *)((char)(aP1 - 1));
+  result = (unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((char)(aP1 - 1)))))))));
   switch ( aP1 ) /*0x5007b7*/
   {
     case 1: /*0x5007b7*/
@@ -283,8 +287,8 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
       }
       else
       {
-        this->u32_53D4 = (IUnknown *)(a5);
-        result = a5; /*0x5007f5*/
+        this->u32_53D4 = (unsigned int)((IUnknown *)(a5));
+        result = (unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(a5))))));
       }
       break; /*0x5007f2*/
     case 15: /*0x5007b7*/
@@ -315,14 +319,14 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
   if ( dword_87F668 > 0 ) /*0x533f5f*/
   {
     while ( strcmp( /*0x533f9f*/
-              (const char *)(*(int (__thiscall **)(unsigned int))(**((unsigned int **)dword_87F65C + v2) + 4))(*((unsigned int *)dword_87F65C + v2)),
+              (const char *)(*(int (**)(unsigned int))(**((unsigned int **)dword_87F65C + v2) + 4))(*((unsigned int *)dword_87F65C + v2)),
               this) )
     {
       result = dword_87F668; /*0x533fa1*/
       if ( ++v2 >= dword_87F668 ) /*0x533fa9*/
         return result; /*0x533fa9*/
     }
-    return (*(int (__thiscall **)(unsigned int, unsigned int))(**((unsigned int **)dword_87F65C + v2) + 32))( /*0x533fbc*/
+    return (*(int (**)(unsigned int, unsigned int))(**((unsigned int **)dword_87F65C + v2) + 32))( /*0x533fbc*/
              *((unsigned int *)dword_87F65C + v2),
              0);
   }
@@ -364,7 +368,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     {
       FactoryClass::FinishProduction((int *)v4->__pad_0, (int)v6); /*0x636353*/
       RA2_OPDEL(*((void **)Block + 1)); /*0x636360*/
-      v7 = (*(int (__thiscall **)(Array *, void **))(*(unsigned int *)v4->__pad_0 + 16))(v4, &Block); /*0x636371*/
+      v7 = (*(int (**)(Array *, void **))(*(unsigned int *)v4->__pad_0 + 16))(v4, &Block); /*0x636371*/
       if ( v7 != -1 ) /*0x636377*/
         Vector4::EraseAt_Copy((Vector4 *)v4, v7); /*0x63637c*/
       RA2_OPDEL(Block); /*0x636386*/
@@ -383,12 +387,12 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     VectorClass::EraseAt((VectorClass *)&stru_AC4B30.__pad_EC[36], (int)&Block); /*0x6363e4*/
   }
   Sidebar_field_0x4 = (int *)(this->Sidebar_field_0x4);
-  (*(void (__thiscall **)(int *))(this->Sidebar_field_0x4[0] + 12))(this->Sidebar_field_0x4); /*0x6363f1*/
+  (*(void (**)(int *))(this-((unsigned int *)(>Sidebar_field_0x4))[0] + 12))(this->Sidebar_field_0x4); /*0x6363f1*/
   this->u8_98 = 0; /*0x6363f7*/
-  *(unsigned int *)&this->__pad_70[28] = -1; /*0x636400*/
-  *(unsigned int *)&this->__pad_70[32] = -1; /*0x636406*/
-  *(unsigned int *)&this->__pad_70[36] = -1; /*0x63640c*/
-  this->__pad_70[41] = 0; /*0x636412*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_70))[28] = -1; /*0x636400*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_70))[32] = -1; /*0x636406*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_70))[36] = -1; /*0x63640c*/
+  this-((unsigned int *)(>__pad_70))[41] = 0; /*0x636412*/
   *(unsigned int *)this->__pad_0 = 0; /*0x636419*/
   if ( this ) /*0x63641f*/
   {
@@ -397,7 +401,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     Block = this; /*0x636437*/
     if ( !stru_AC4B30.__pad_EC[217] ) /*0x63643d*/
     {
-      v11 = (*(int (__thiscall **)(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/
+      v11 = (*(int (**)(char *, void **))(*(unsigned int *)&stru_AC4B30.__pad_EC[92] + 16))( /*0x63644f*/
               &stru_AC4B30.__pad_EC[92],
               &Block);
       if ( v11 != -1 ) /*0x636454*/
@@ -413,12 +417,12 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
       DecFactoryClassCounter(LeaderIndex); /*0x636499*/
       VectorClass::EraseAt((VectorClass *)&stru_AC4B30.__pad_EC[36], (int)&v17); /*0x6364a8*/
     }
-    (*(void (__thiscall **)(int *))(*Sidebar_field_0x4 + 12))(this->Sidebar_field_0x4); /*0x6364b1*/
+    (*(void (**)(int *))(*Sidebar_field_0x4 + 12))(this->Sidebar_field_0x4); /*0x6364b1*/
     this->u8_98 = 0; /*0x6364b7*/
-    *(unsigned int *)&this->__pad_70[28] = -1; /*0x6364be*/
-    *(unsigned int *)&this->__pad_70[32] = -1; /*0x6364c4*/
-    *(unsigned int *)&this->__pad_70[36] = -1; /*0x6364ca*/
-    this->__pad_70[41] = 0; /*0x6364d0*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_70))[28] = -1; /*0x6364be*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_70))[32] = -1; /*0x6364c4*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_70))[36] = -1; /*0x6364ca*/
+    this-((unsigned int *)(>__pad_70))[41] = 0; /*0x6364d0*/
     Sidebar_field_0x8 = this->Sidebar_field_0x8; /*0x6364d7*/
     *Sidebar_field_0x4 = (int)&VectorClass_PlanningNodeClass___vftable; /*0x6364de*/
     if ( Sidebar_field_0x8 ) /*0x6364e4*/
@@ -430,7 +434,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
       }
     }
     IDA_BYTE1(this->Sidebar_field_0x10) = 0; /*0x6364fa*/
-    this->Sidebar_field_0xC[0] = 0; /*0x6364fe*/
+    this-((unsigned int *)(>Sidebar_field_0xC))[0] = 0; /*0x6364fe*/
     RA2_OPDEL(); /*0x636501*/
   }
 }
@@ -443,8 +447,8 @@ int Sidebar::RemoveItem(int a2)
   int v3; // eax
   char *v4; // edx
 
-  Sidebar_field_0x10 = (char *)this->Sidebar_field_0x10; /*0x63f040*/
-  v3 = a2; /*0x63f043*/
+  Sidebar_field_0x10 = (char *)((unsigned int)((char *)this->Sidebar_field_0x10));
+  v3 = (unsigned int)(a2);
   if ( a2 >= (int)Sidebar_field_0x10 ) /*0x63f049*/
     return 0; /*0x63f06c*/
   v4 = Sidebar_field_0x10 - 1; /*0x63f04b*/
@@ -454,7 +458,7 @@ int Sidebar::RemoveItem(int a2)
     do /*0x63f064*/
     {
       ++v3; /*0x63f057*/
-      *(unsigned int *)(this->Sidebar_field_0x4[0] + 4 * v3 - 4) = *(unsigned int *)(this->Sidebar_field_0x4[0] + 4 * v3); /*0x63f05b*/
+      *(unsigned int *)(this-((unsigned int *)(>Sidebar_field_0x4))[0] + 4 * v3 - 4) = *(unsigned int *)(this-((unsigned int *)(>Sidebar_field_0x4))[0] + 4 * v3); /*0x63f05b*/
     }
     while ( v3 < (int)this->Sidebar_field_0x10 ); /*0x63f064*/
   }
@@ -486,13 +490,13 @@ ObjectClass * * Sidebar::Render(char a2)
   {
     IDA_LOBYTE(this->field_150C) = 0; /*0x63fb49*/
     g_TooltipActive = 1; /*0x63fb55*/
-    if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x63fb5d*/
+    if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x63fb5d*/
       v3 = 0; /*0x63fb70*/
     else
       v3 = 5; /*0x63fb69*/
-    NeedsSaveOrLink = (int)dword_A8B230[374].NeedsSaveOrLink; /*0x63fb78*/
+    NeedsSaveOrLink = (int)((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink; /*0x63fb78*/
     v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
-    v5 = (int *)(*((int (__thiscall **)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x63fb8c*/
+    v5 = (int *)(*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x63fb8c*/
                   DSurface_Sidebar,
                   &NeedsSaveOrLink);
     v6 = this->field_1530; /*0x63fb91*/
@@ -531,7 +535,7 @@ ObjectClass * * Sidebar::Render(char a2)
       }
       while ( v9 ); /*0x63fc24*/
     }
-    v10 = *(unsigned int *)&this->__pad_1510[12]; /*0x63fc26*/
+    v10 = *(unsigned int *)&this-((unsigned int *)(>__pad_1510))[12]; /*0x63fc26*/
     v11 = 0; /*0x63fc2c*/
     if ( v10 > 0 && (v10 & 1) == 0 ) /*0x63fc3e*/
     {
@@ -711,7 +715,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     || *(unsigned int *)&stru_87F5F0.__pad_E12[1534] != dword_B07DD4 )
   {
   LABEL_13:
-    (*(void (__thiscall **)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x6a7241*/
+    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x6a7241*/
       stru_887598.lineTrailer,
       DSurface_Sidebar,
       1);
@@ -731,7 +735,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
         v17 = 16; /*0x6a72ff*/
         v12 = dword_886F98; /*0x6a7303*/
         v13 = 16; /*0x6a7307*/
-        (*((void (__thiscall **)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a7312*/
+        (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a7312*/
          + 2))(
           g_DSurface_Primary,
           &v10,
@@ -748,12 +752,12 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       v15 = g_DSurface_SidebarBounds; /*0x6a7357*/
       v16 = dword_886F98; /*0x6a735b*/
       v5 = (IDA_LOBYTE(stru_A8EB00.ObjectTypeClass[31]) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0) + Point.x;
-      v6 = (*((int (__thiscall **)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar); /*0x6a7363*/
+      v6 = (*((int (**)(DSurface *))DSurface_Sidebar->DSurface_field_0x0 + 32))(DSurface_Sidebar); /*0x6a7363*/
       v10 = v5; /*0x6a7386*/
       y = v4; /*0x6a738a*/
       v12 = dword_886F98; /*0x6a738e*/
       v13 = v6 - g_DSurface_SidebarBounds; /*0x6a7392*/
-      (*((void (__thiscall **)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a739d*/
+      (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a739d*/
        + 2))(
         g_DSurface_Primary,
         &v10,
@@ -764,7 +768,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     }
     else if ( g_TooltipActive )
     {
-      v7 = (*((int (__thiscall **)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x6a73be*/
+      v7 = (*((int (**)(DSurface *, int *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x6a73be*/
              DSurface_Sidebar,
              &v10);
       v14 = 0; /*0x6a73dd*/
@@ -776,7 +780,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       v17 = v8; /*0x6a741b*/
       v12 = v16; /*0x6a741f*/
       v13 = v8; /*0x6a7423*/
-      (*((void (__thiscall **)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a742e*/
+      (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a742e*/
        + 2))(
         g_DSurface_Primary,
         &v10,
@@ -793,7 +797,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
           + (IDA_LOBYTE(stru_A8EB00.ObjectTypeClass[31]) != 0 ? *(unsigned int *)DSurface_ViewBounds.__pad_8 : 0);
       v16 = *(unsigned int *)&stru_87F5F0.__pad_E12[1530]; /*0x6a746f*/
       v17 = *(unsigned int *)&stru_87F5F0.__pad_E12[1534]; /*0x6a7473*/
-      (*((void (__thiscall **)(DSurface *, int *, DSurface *, char *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a747e*/
+      (*((void (**)(DSurface *, int *, DSurface *, char *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a747e*/
        + 2))(
         g_DSurface_Primary,
         &v14,
@@ -806,7 +810,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
   }
   if ( this->u32_53A8 )
   {
-    (*(void (__thiscall **)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x6a71c7*/
+    (*(void (**)(void *, DSurface *, int))(*(unsigned int *)stru_887598.lineTrailer + 60))( /*0x6a71c7*/
       stru_887598.lineTrailer,
       DSurface_Sidebar,
       1);
@@ -818,7 +822,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     v13 = 16; /*0x6a7219*/
     v16 = dword_886F98; /*0x6a721d*/
     v17 = 16; /*0x6a7221*/
-    (*((void (__thiscall **)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a722c*/
+    (*((void (**)(DSurface *, int *, DSurface *, int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x6a722c*/
      + 2))(
       g_DSurface_Primary,
       &v14,
@@ -892,8 +896,8 @@ void Sidebar_UpdateProductionDisplay()
       stru_B05488[24720] = 1;
       *(unsigned int *)aP3[0] = 0;
       *(unsigned int *)&aP3.field_2[2] = 0;
-      *(unsigned int *)&aP3[8] = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[44940] + 124))(*(unsigned int *)&stru_87C374[44940]);
-      int v5 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[44940] + 128))(*(unsigned int *)&stru_87C374[44940]);
+      *(unsigned int *)&aP3[8] = (*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374[44940] + 124))(*(unsigned int *)&stru_87C374[44940]);
+      int v5 = (*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374[44940] + 128))(*(unsigned int *)&stru_87C374[44940]);
       v6 = (IUnknown *)HouseClass_Player.field_0;
       v7 = (IUnknown *)*(&g_MatrixTransformState + 2274);
       *(unsigned int *)&aP3[12] = v5;
@@ -1000,8 +1004,8 @@ LABEL_13:
   int v27; // ecx
                     v80 = (int *)v23->field_60;
                     char v77 = 0;
-                    if ( (*(int (__thiscall **)(IUnknown *))(v23->field_0 + 44))(v23) == 7 && v79
-                      || !(*(int (__thiscall **)(IUnknown *, int, int, int, int))(v23->field_0 + 148))(
+                    if ( (*(int (**)(IUnknown *))(v23->field_0 + 44))(v23) == 7 && v79
+                      || !(*(int (**)(IUnknown *, int, int, int, int))(v23->field_0 + 148))(
                             v23,
                             1,
                             1,
@@ -1016,7 +1020,7 @@ LABEL_13:
                     {
                       v77 = 1;
                     }
-                    aP2 = (ConvertClass *)(*(int (__thiscall **)(IUnknown *))(v23->field_0 + 152))(v23);
+                    aP2 = (ConvertClass *)(*(int (**)(IUnknown *))(v23->field_0 + 152))(v23);
                     v86 = v87[25];
                     if ( !v86 )
                     {
@@ -1120,7 +1124,7 @@ LABEL_59:
                   IDA_BYTE2(v82) = stru_B05488[42390];
                   int v33 = **(unsigned int **)&stru_87C374[44940];
                   IDA_LOWORD(v82) = *(unsigned short *)&stru_B05488[42388];
-                  (*(void (__thiscall **)(unsigned int, char *, char *, int))(v33 + 84))(
+                  (*(void (**)(unsigned int, char *, char *, int))(v33 + 84))(
                     *(unsigned int *)&stru_87C374[44940],
                     &aP3[88],
                     &aP3[152],
@@ -1189,7 +1193,7 @@ LABEL_59:
                 {
                   IDA_LOBYTE(v34) = aP1->__pad_BC0[270];
                   v69 = v34;
-                  int v36 = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1);
+                  int v36 = (*(int (**)(IUnknown *))(aP1->field_0 + 44))(aP1);
                   BuildLimit = (int *)HouseClass::GetBuildLimit(HouseClass_Player.field_0, v36, v69, 0);
                   if ( BuildLimit )
                   {
@@ -1199,8 +1203,8 @@ LABEL_59:
                       || eax73 > 0
   int v39; // ecx
                       && ((v39 = BuildLimit[22]) == 0
-                       || (*(int (__thiscall **)(int))(*(unsigned int *)v39 + 132))(v39)
-                       && (IUnknown *)(*(int (__thiscall **)(int))(*(unsigned int *)BuildLimit[22] + 132))(BuildLimit[22]) != aP1) )
+                       || (*(int (**)(int))(*(unsigned int *)v39 + 132))(v39)
+                       && (IUnknown *)(*(int (**)(int))(*(unsigned int *)BuildLimit[22] + 132))(BuildLimit[22]) != aP1) )
                     {
                       swprintf((wchar_t *const)Buffer, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v37, v70);
                       *(unsigned int *)&aP3[116] = v17 + 1;

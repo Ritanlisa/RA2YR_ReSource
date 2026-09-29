@@ -25,12 +25,15 @@
 #include "e4/classes/Super_e4.hpp"
 #include "e4/classes/Rect_e4.hpp"
 #include "e4/classes/E4Recv_6E0850_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x6F0AB0
 namespace gamemd {
 void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
 {
-  int v3; // esi
+  void *** v3;
   int v5; // eax
   int v6; // ebx
   char *v7; // ecx
@@ -56,7 +59,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int v29; // esi
   int v30; // eax
   unsigned int *v31; // ebx
-  int v32; // esi
+  unsigned int * v32;
   char *v33; // edi
   int v34; // eax
   int v35; // ecx
@@ -87,9 +90,8 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int v65; // [esp+54h] [ebp-Ch]
   int v66; // [esp+58h] [ebp-8h]
   int v67; // [esp+5Ch] [ebp-4h]
-
-  v3 = (void ***)(0);
-  v55 = aP0; /*0x6f0ab9*/
+v3 = (int)((void ***)(0));
+  v55 = (void ***)(aP0);
   Team_Helper_6F2230(0, 0); /*0x6f0ac9*/
   v5 = *(unsigned int *)(a2 + 22016); /*0x6f0ace*/
   v56 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0ad4*/
@@ -119,7 +121,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     v9 = 4 * *(unsigned int *)(a2 + 388); /*0x6f0b5b*/
     WallPenetratorThreshold_high = IDA_HIDWORD(dword_8871E0->?); /*0x6f0b5e*/
     IDA_LOBYTE(v53[0]) = 0; /*0x6f0b64*/
-    if ( v6 < *(unsigned int *)(WallPenetratorThreshold_high + v9) || v3 < v6 / 2 ) /*0x6f0b77*/
+    if ( v6 < *(unsigned int *)(WallPenetratorThreshold_high + v9) || v3 < (void ***)(v6) / 2 ) /*0x6f0b77*/
     {
       if ( v3 > *(unsigned int *)(IDA_LODWORD(dword_8871E0->?) + v9) ) /*0x6f0bd4*/
         IDA_LOBYTE(v53[0]) = 1; /*0x6f0bd6*/
@@ -149,7 +151,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
           v16 = *v11; /*0x6f0bbc*/
           --v6; /*0x6f0bc0*/
           IDA_LOBYTE(v53[0]) = 1; /*0x6f0bc1*/
-          (*(void (__thiscall **)(int *, int))(v16 + 32))(v11, 1); /*0x6f0bc6*/
+          (*(void (**)(int *, int))(v16 + 32))(v11, 1); /*0x6f0bc6*/
         }
       }
     }
@@ -186,9 +188,8 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
           v67 = 0; /*0x6f0c8b*/
           ((void (__thiscall *)(void ***))v62[3])(&v62); /*0x6f0c93*/
         }
-  LABEL_33:
-        v53[0] = v19; /*0x6f0c9c*/
-        v53[1] = v20; /*0x6f0ca9*/
+  LABEL_33: v53[0] = (unsigned int)(v19);
+        v53[1] = (unsigned int)(v20);
         Team_Helper_6F25E0(v53); /*0x6f0cad*/
         v67 += v20; /*0x6f0cb2*/
         goto LABEL_34; /*0x6f0cb2*/
@@ -254,7 +255,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     }
   }
   v31 = (unsigned int *)(Block);
-  v32 = 0; /*0x6f0dee*/
+  v32 = (int)((unsigned int *)(0));
   if ( dword_8B40F8 <= 0 ) /*0x6f0df2*/
   {
   LABEL_71:
@@ -264,11 +265,11 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       *(unsigned char *)(v39 + 169) = 1; /*0x6f0e51*/
     }
     v40 = (unsigned int)((int)v55);
-    v41 = v55 == &v56; /*0x6f0e6e*/
-    v55[1] = 0; /*0x6f0e70*/
-    v40->vtable3 = 0; /*0x6f0e73*/
-    v40->vtable4 = 1; /*0x6f0e76*/
-    v40->attachedTag = 0; /*0x6f0e7a*/
+    v41 = (unsigned int)(v55 == &v56);
+    v55[1] = (void **)((unsigned int)(0));
+    v40->vtable3 = (unsigned int)(0);
+    v40->vtable4 = (unsigned int)(1);
+    v40->attachedTag = (unsigned int)(0);
     *(unsigned int *)v40 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0e7e*/
     if ( !v41 ) /*0x6f0e84*/
     {
@@ -304,8 +305,8 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       v31 = (unsigned int *)(Block);
     }
     v61 = (unsigned int)(v61);
-    v40->uniqueId = v60; /*0x6f0f85*/
-    v40->abstractFlags = v61; /*0x6f0f88*/
+    v40->uniqueId = (unsigned int)(v60);
+    v40->abstractFlags = (unsigned int)(v61);
     *(unsigned int *)v40 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f8b*/
     v56 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f91*/
     if ( v31 ) /*0x6f0f99*/
@@ -329,7 +330,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   LABEL_70:
       ++v32; /*0x6f0e36*/
       v33 += 4; /*0x6f0e3c*/
-      if ( v32 >= dword_8B40F8 ) /*0x6f0e41*/
+      if ( v32 >= (unsigned int *)(dword_8B40F8) ) /*0x6f0e41*/
         goto LABEL_71; /*0x6f0e41*/
     }
     v36 = *(unsigned int *)(v34 + 36); /*0x6f0e1d*/
@@ -348,11 +349,11 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       Block = 0; /*0x6f0efe*/
     }
     v40 = (unsigned int)((int)v55);
-    v46 = v55; /*0x6f0f0b*/
-    v59 = 0; /*0x6f0f0d*/
-    v58 = 0; /*0x6f0f12*/
-    v55[1] = 0; /*0x6f0f16*/
-    v46[2] = 0; /*0x6f0f19*/
+    v46 = (void ***)((unsigned int)(v55));
+    v59 = (unsigned int)(0);
+    v58 = (unsigned int)(0);
+    v55[1] = (void **)((unsigned int)(0));
+    v46[2] = (void **)((unsigned int)(0));
     *((unsigned char *)v46 + 12) = 1; /*0x6f0f1c*/
     *((unsigned char *)v46 + 13) = 0; /*0x6f0f20*/
     *(void **)v46 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f24*/
@@ -388,12 +389,12 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   unsigned int *v24; // [esp+0h] [ebp-10h]
   char v25; // [esp+1Ch] [ebp+Ch]
 
-  *a8 = 0; /*0x6f8972*/
-  *a9 = 0; /*0x6f8979*/
+  *(unsigned int *)(a8) = 0; /*0x6f8972*/
+  *(unsigned int *)a9) = 0; /*0x6f8979*/
   v11 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a6); /*0x6f898d*/
   if ( a10 != -1 ) /*0x6f8992*/
   {
-    v12 = (*((int (__thiscall **)(TechnoClass *))a1->RadioClass + 33))(a1); /*0x6f899a*/
+    v12 = (*((int (**)(TechnoClass *))a1->RadioClass + 33))(a1); /*0x6f899a*/
     if ( MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], a6, *(unsigned int *)(v12 + 1460), 1) != a10 ) /*0x6f89b4*/
       return 0; /*0x6f89bc*/
   }
@@ -406,7 +407,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   v25 = 0; /*0x6f89db*/
   if ( transporter ) /*0x6f89e0*/
   {
-    if ( *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))transporter->RadioClass + 33))(transporter) + 1508) ) /*0x6f89ea*/
+    if ( *(unsigned char *)((*((int (**)(TechnoClass *))transporter->RadioClass + 33))(transporter) + 1508) ) /*0x6f89ea*/
     {
       mindControlledBy = a1->transporter->mindControlledBy; /*0x6f89fa*/
       if ( mindControlledBy ) /*0x6f8a02*/
@@ -428,7 +429,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
       goto LABEL_33; /*0x6f8a25*/
     }
     v15 = v14; /*0x6f8a34*/
-    if ( TechnoClass::GetValue(a1, -1) >= 0 ) /*0x6f8a3d*/
+    if ( ((TechnoClass *)(a1))->GetValue(-1) >= 0 ) /*0x6f8a3d*/
       break; /*0x6f8a3d*/
     BuildingClass::GetHealthRatio((BuildingClass *)v14); /*0x6f8a41*/
     _ECX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x6f8a46*/
@@ -445,11 +446,11 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
       goto LABEL_34; /*0x6f8b43*/
   }
   if ( ((uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v14) || v25) /*0x6f8ac7*/
-    && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))a1->RadioClass + 33))(a1) + 1728)
+    && !*(unsigned char *)((*((int (**)(TechnoClass *))a1->RadioClass + 33))(a1) + 1728)
     && !a1->isBerserk
     && (!v25 || !owner || !(uint8_t)Object::IsAlliedWithObjectHouse(owner, v14)) )
   {
-    if ( (*((int (__thiscall **)(TechnoClass *))a1->RadioClass + 11))(a1) != 15 ) /*0x6f8ada*/
+    if ( (*((int (**)(TechnoClass *))a1->RadioClass + 11))(a1) != 15 ) /*0x6f8ada*/
       goto LABEL_33; /*0x6f8ada*/
     if ( !IDA_LOBYTE(a1[1].airstrikeTintTimer[0]) ) /*0x6f8adc*/
     {
@@ -465,8 +466,8 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
         fnstsw ax
       }
       if ( (_AX & 0x4100) == 0 /*0x6f8b3c*/
-        || (*(int (__thiscall **)(int))(*(unsigned int *)v14 + 44))(v14) != 6
-        || (*(int (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)(v14 + 1312) + 132))(
+        || (*(int (**)(int))(*(unsigned int *)v14 + 44))(v14) != 6
+        || (*(int (**)(unsigned int, unsigned int))(**(unsigned int **)(v14 + 1312) + 132))(
              *(unsigned int *)(v14 + 1312),
              *(unsigned int *)(v14 + 540)) <= 0 )
       {
@@ -476,19 +477,19 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   }
   LABEL_34:
   if ( !v15 ) /*0x6f8b4b*/
-    return 0; /*0x6f8b4b*/
+    return 0; /*(void *)(0x6f8b4b)*/
   v23 = 0; /*0x6f8b5b*/
-  *a8 = v15; /*0x6f8b5d*/
+  *(unsigned int *)(a8) = v15; /*0x6f8b5d*/
   if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v15)
-    || TechnoClass::GetValue(a1, -1) < 0
+    || ((TechnoClass *)(a1))->GetValue(-1) < 0
     || !(uint8_t)House::IsCurrentPlayer((House *)a1->owner)
     && a1
-    && (*((int (__thiscall **)(TechnoClass *))a1->RadioClass + 11))(a1) == 15
-    && *(unsigned char *)(*((*((int (__thiscall **)(TechnoClass *))a1->RadioClass + 11))(a1) == 15
+    && (*((int (**)(TechnoClass *))a1->RadioClass + 11))(a1) == 15
+    && *(unsigned char *)(*((*((int (**)(TechnoClass *))a1->RadioClass + 11))(a1) == 15
                   ? &a1[1].ironTintTimer[1]
                   : (int *)1728)
                 + 3779)
-    || *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))a1->RadioClass + 33))(a1) + 1728)
+    || *(unsigned char *)((*((int (**)(TechnoClass *))a1->RadioClass + 33))(a1) + 1728)
     || a1->isBerserk
     || v25 )
   {
@@ -500,7 +501,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
              v15,
              (int)a9,
              (int *)0xFFFFFFFF,
-             (int)&g_BuildingLoadQueue_Array.?[3],
+             (int)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
              v24);
   }
   return (gamemd::AbstractClass **)(v23);
@@ -512,10 +513,10 @@ char E4Recv_6F03F0::sub_6F03F0()
 {
   int *v1; // esi
 
-  v1 = (int *)this->customSound_controller[1]; /*0x6f03f2*/
+  v1 = (int *)this-((unsigned int *)(>customSound_controller))[1]; /*0x6f03f2*/
   if ( !v1 ) /*0x6f03f9*/
     return 0; /*0x6f0423*/
-  while ( *(int *)((*(int (__thiscall **)(int *))(*v1 + 132))(v1) + 1668) > 0 && v1[191] <= 0 ) /*0x6f0417*/
+  while ( *(int *)((*(int (**)(int *))(*v1 + 132))(v1) + 1668) > 0 && v1[191] <= 0 ) /*0x6f0417*/
   {
     v1 = (int *)v1[374]; /*0x6f0419*/
     if ( !v1 ) /*0x6f0421*/
@@ -583,7 +584,7 @@ long long sub_6F0540()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_B0E9B0 - dbl_B0E9D8); /*0x6f0552*/
+  v0 = ((Math *)(dbl_B0E9B0 - dbl_B0E9D8))->Sin(); /*0x6f0552*/
   result = Math::RoundToInt(v0 * dbl_B0E9D0 * 0.5); /*0x6f0566*/
   dword_B0EA28 = result; /*0x6f056b*/
   return result; /*0x6f0570*/
@@ -594,7 +595,7 @@ long long sub_6F0540()
 namespace gamemd {
 void sub_6F0580()
 {
-  dbl_B0E9E0 = Math::ArcTan((double)dword_B0EA28 * 0.00390625); /*0x6f0597*/
+  dbl_B0E9E0 = ((Math *)((double)dword_B0EA28 * 0.00390625))->ArcTan(); /*0x6f0597*/
 }
 } // namespace gamemd
 
@@ -602,7 +603,7 @@ void sub_6F0580()
 namespace gamemd {
 void sub_6F05B0()
 {
-  dbl_B0E9F8 = Math::ArcTan((double)(2 * dword_B0EA28) / dbl_B0E9D0); /*0x6f05d2*/
+  dbl_B0E9F8 = ((Math *)((double)(2 * dword_B0EA28) / dbl_B0E9D0))->ArcTan(); /*0x6f05d2*/
 }
 } // namespace gamemd
 
@@ -727,7 +728,7 @@ long long sub_6F2970()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_B0EA30 - dbl_B0EA60); /*0x6f2982*/
+  v0 = ((Math *)(dbl_B0EA30 - dbl_B0EA60))->Sin(); /*0x6f2982*/
   result = Math::RoundToInt(v0 * dbl_B0EA58 * 0.5); /*0x6f2996*/
   dword_B0EB34 = result; /*0x6f299b*/
   return result; /*0x6f29a0*/
@@ -738,7 +739,7 @@ long long sub_6F2970()
 namespace gamemd {
 void sub_6F29B0()
 {
-  dbl_B0EA68 = Math::ArcTan((double)dword_B0EB34 * 0.00390625); /*0x6f29c7*/
+  dbl_B0EA68 = ((Math *)((double)dword_B0EB34 * 0.00390625))->ArcTan(); /*0x6f29c7*/
 }
 } // namespace gamemd
 
@@ -746,7 +747,7 @@ void sub_6F29B0()
 namespace gamemd {
 void sub_6F29E0()
 {
-  dbl_B0EAA0 = Math::ArcTan((double)(2 * dword_B0EB34) / dbl_B0EA58); /*0x6f2a02*/
+  dbl_B0EAA0 = ((Math *)((double)(2 * dword_B0EB34) / dbl_B0EA58))->ArcTan(); /*0x6f2a02*/
 }
 } // namespace gamemd
 
@@ -828,7 +829,7 @@ void sub_6F2AD0()
 namespace gamemd {
 int sub_6F2AF0()
 {
-  dword_B0EA70 = Timer::GetTicks(); /*0x6f2aff*/
+  dword_B0EA70 = this->Timer::GetTicks(); /*0x6f2aff*/
   dword_B0EA78 = 0; /*0x6f2b04*/
   return atexit(sub_6F2B20); /*0x6f2b14*/
 }
@@ -848,11 +849,11 @@ namespace gamemd {
 int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
 {
   int *v5; // edx
-  int v6; // ebx
-  int v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // ecx
+  int * v6;
+  int * v7;
+  int * v8;
+  int * v9;
+  int * v10;
   int v11; // eax
   int *v12; // eax
   int v13; // ecx
@@ -863,21 +864,21 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   int v19; // [esp+0h] [ebp-34h]
   int v20; // [esp+4h] [ebp-30h]
   unsigned int v21[2]; // [esp+10h] [ebp-24h] BYREF
-  unsigned int v22;
+  int * v22;
   int v23; // [esp+1Ch] [ebp-18h]
   int v24; // [esp+20h] [ebp-14h]
   int v25; // [esp+24h] [ebp-10h] BYREF
   unsigned int v26[3]; // [esp+28h] [ebp-Ch] BYREF
 
   v5 = (int *)(Coord::Subtract(v26, (3 * *a1 + *a2) / 4, (3 * a1[1] + a2[1]) / 4, (3 * a1[2] + a2[2]) / 4));
-  v6 = a1[1]; /*0x6f5f47*/
-  v7 = *v5; /*0x6f5f4a*/
-  v8 = v5[1]; /*0x6f5f4c*/
-  v9 = v5[2]; /*0x6f5f4f*/
-  v21[1] = v8; /*0x6f5f52*/
-  v10 = a2[1]; /*0x6f5f56*/
-  v21[0] = v7; /*0x6f5f59*/
-  v11 = *a2; /*0x6f5f5d*/
+  v6 = (int *)(a1[1]);
+  v7 = (int *)(*v5);
+  v8 = (int *)(v5[1]);
+  v9 = (int *)(v5[2]);
+  v21[1] = (unsigned int)((int *)(v8));
+  v10 = (int *)(a2[1]);
+  v21[0] = (unsigned int)((int *)(v7));
+  v11 = (int *)(*a2);
   v22 = v9; /*0x6f5f5f*/
   v12 = Coord::Subtract(v26, (3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1[2]) / 4); /*0x6f5fa0*/
   v13 = v12[1]; /*0x6f5fa9*/
@@ -887,7 +888,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   v15 = a1[2]; /*0x6f5fb7*/
   v25 = v14; /*0x6f5fca*/
   lpVtbl = g_TacticalClass_Instance->__tail_0; /*0x6f5fd1*/
-  if ( v15 <= v22 ) /*0x6f5fd3*/
+  if ( v15 <= (int)(v22) ) /*0x6f5fd3*/
     ((void (__stdcall *)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(v21, a1, a3, 0, v19, v20); /*0x6f5fe3*/
   else
     ((void (__stdcall *)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(a1, v21, a3, 0, v19, v20); /*0x6f5fdb*/

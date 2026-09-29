@@ -24,7 +24,7 @@ int DialogControl::Show()
 {
   this->u32_1E = 1; /*0x4e1462*/
   this->u32_1C = 1; /*0x4e1465*/
-  return (*(int (__thiscall **)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this);
+  return (*(int (**)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this);
 }
 } // namespace gamemd
 // 0x4E1470

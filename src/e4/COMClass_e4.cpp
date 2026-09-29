@@ -12,6 +12,8 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/BuildingPlacement_e4.hpp"
 #include "e4/classes/CChatEventSink_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x767010
 namespace gamemd {
@@ -27,11 +29,11 @@ void * COMClass::lockServer(char a2)
   {
     v3 = *((unsigned int *)this - 1); /*0x76701d*/
     v4 = (char *)this - 4; /*0x767021*/
-    v5 = (ComPtr *)((char *)&this->q020 * v3); /*0x767024*/
+    v5 = (ComPtr *)((char *)&(unsigned int)(this->q020)* v3); /*0x767024*/
     v6 = v3 - 1; /*0x767027*/
     if ( v6 >= 0 ) /*0x767028*/
     {
-      v7 = v6 + 1; /*0x76702b*/
+      v7 = (unsigned int)(v6 + 1);
       do /*0x76703f*/
       {
         v5 = (gamemd::ComPtr *)((unsigned int)((ComPtr *)((char *)v5 - 8)));

@@ -25,14 +25,14 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
   if ( v3 && this->IsAllocated ) /*0x5c5950*/
   {
     RA2_OPDEL(v3); /*0x5c5958*/
     *(unsigned int *)&this->q004 = 0; /*0x5c5960*/
   }
-  this->IsAllocated = 0; /*0x5c596b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x5c5971*/
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
     RA2_OPDEL(); /*0x5c597b*/

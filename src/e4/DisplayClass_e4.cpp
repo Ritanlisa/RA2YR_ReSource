@@ -22,6 +22,8 @@
 #include "e4/classes/GadgetClass_e4.hpp"
 #include "e4/classes/E4Recv_696AE0_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x487630
 namespace gamemd {
@@ -31,7 +33,7 @@ int DisplayClass::UpdateDisplayTimer()
   int v2; // edx
   void *DisplayClass_field_0x12C; // eax
 
-  if ( this->DisplayClass_field_0x130 == (void *)1 ) /*0x487637*/
+  if ( this->DisplayClass_field_0x130 == (unsigned int)((void *))1 ) /*0x487637*/
     this->DisplayClass_field_0x130 = 0; /*0x487639*/
   v1 = (char *)this->DisplayClass_field_0x130 - 1; /*0x487649*/
   this->DisplayClass_field_0x130 = v1; /*0x48764a*/
@@ -64,7 +66,7 @@ int DisplayClass::AdvanceFrameCounter()
   void *DisplayClass_field_0x130; // esi
   char *v2; // eax
   int v3; // edx
-  int result; // eax
+  void * result;
 
   DisplayClass_field_0x130 = (void *)((unsigned int)(this->DisplayClass_field_0x130));
   if ( DisplayClass_field_0x130 == (void *)-1 ) /*0x48769a*/
@@ -94,11 +96,11 @@ int DisplayClass::LoadTypeData()
 {
   int *Viewport; // eax
   int v3; // edx
-  int (__thiscall **DisplayClass_field_0x0)(DisplayClass *, unsigned int *); // eax
+  int (**DisplayClass_field_0x0)(DisplayClass *, unsigned int *); // eax
   unsigned int v6[4]; // [esp+4h] [ebp-20h] BYREF
   int v7[4]; // [esp+14h] [ebp-10h] BYREF
 
-  MapClass::Destru_vt05(); /*0x4a8856*/
+  this->MapClass::Destru_vt05(); /*0x4a8856*/
   stru_8A0390.health = SearchMIXFile(aPlaceShp, 0); /*0x4a886e*/
   dword_8A072C = SearchMIXFile(aShadowShp, 0); /*0x4a887c*/
   Viewport = Display::GetViewport(v7); /*0x4a8881*/
@@ -106,7 +108,7 @@ int DisplayClass::LoadTypeData()
   v6[1] = Viewport[1]; /*0x4a888f*/
   v6[2] = Viewport[2]; /*0x4a8896*/
   v3 = Viewport[3]; /*0x4a889e*/
-  DisplayClass_field_0x0 = (int (__thiscall **)(DisplayClass *, unsigned int *))this->DisplayClass_field_0x0; /*0x4a88a1*/
+  DisplayClass_field_0x0 = (int (**)(DisplayClass *, unsigned int *))this->DisplayClass_field_0x0; /*0x4a88a1*/
   v6[3] = v3; /*0x4a88a6*/
   return DisplayClass_field_0x0[42](this, v6); /*0x4a88b0*/
 }
@@ -118,22 +120,22 @@ int DisplayClass::SetSize()
   LayerClass *v2; // esi
   int result; // eax
 
-  MapClass::Destru_vt07(); /*0x4a88c3*/
+  this->MapClass::Destru_vt07(); /*0x4a88c3*/
   *(unsigned int *)&this->q11A4 = 0; /*0x4a88cd*/
   this->DisplayClass_field_0x11A8 = 0; /*0x4a88d3*/
   *(unsigned int *)this->__pad_11AC = -1; /*0x4a88d9*/
-  *(unsigned int *)&this->__pad_41E[3422] = 0; /*0x4a88df*/
-  *(unsigned int *)&this->__pad_11B4[4] = -1; /*0x4a88e5*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_41E))[3422] = 0; /*0x4a88df*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_11B4))[4] = -1; /*0x4a88e5*/
   IDA_LOBYTE(this->DisplayClass_field_0x11B0) = 0; /*0x4a88eb*/
-  this->__pad_11B4[27] = 0; /*0x4a88f1*/
+  this-((unsigned int *)(>__pad_11B4))[27] = 0; /*0x4a88f1*/
   IDA_LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4a88f7*/
   IDA_BYTE1(this->DisplayClass_field_0x11B0) = 0; /*0x4a88fd*/
   IDA_BYTE2(this->DisplayClass_field_0x11B0) = 0; /*0x4a8903*/
   v2 = &stru_8A0360; /*0x4a8909*/
   do /*0x4a891e*/
   {
-    result = (*(int (__thiscall **)(LayerClass *))(v2->items[0] + 12))(v2); /*0x4a8912*/
-    v2 += 2; /*0x4a8915*/
+    result = (*(int (**)(LayerClass *))(v2->items[0] + 12))(v2); /*0x4a8912*/
+    (unsigned int)(v2)+= 2; /*0x4a8915*/
   }
   while ( (int)v2 < (int)&stru_8A0390.ambientSoundController[3] ); /*0x4a891e*/
   return result; /*0x4a8920*/
@@ -151,7 +153,7 @@ char DisplayClass::ddtor()
   if ( !byte_A8ED6B ) /*0x4a893f*/
   {
     Hash::Reset((LinkClass *)&stru_8A06F8); /*0x4a8946*/
-    return (*(char (__thiscall **)(DisplayClass *, GadgetClass *))(this->DisplayClass_field_0x0 + 48))( /*0x4a8954*/
+    return (*(char (**)(DisplayClass *, GadgetClass *))(this->DisplayClass_field_0x0 + 48))( /*0x4a8954*/
              this,
              &stru_8A06F8);
   }
@@ -281,7 +283,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
         if ( v15 != -2 && (v14[75] & 8) == 0 ) /*0x4a9ac6*/
         {
   LABEL_20:
-          (*((void (__thiscall **)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 36))(this, v32, aP2); /*0x4a9a0d*/
+          (*((void (**)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 36))(this, v32, aP2); /*0x4a9a0d*/
           goto LABEL_31; /*0x4a9a21*/
         }
         if ( v15 >= 0 && v15 != *((char *)v14 + 288) ) /*0x4a9aeb*/
@@ -327,7 +329,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
         if ( v22 != -2 && (v14[80] & 2) == 0 ) /*0x4a9c03*/
         {
   LABEL_36:
-          (*((void (__thiscall **)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 36))(this, v32, aP2); /*0x4a9b4a*/
+          (*((void (**)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 36))(this, v32, aP2); /*0x4a9b4a*/
           continue; /*0x4a9b5e*/
         }
         if ( v22 >= 0 && v22 != *((char *)v14 + 289) ) /*0x4a9c28*/
@@ -439,7 +441,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
         if ( v13 != -2 && (v12[80] & 2) == 0 ) /*0x4a9fac*/
         {
   LABEL_13:
-          (*((void (__thiscall **)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 38))(this, v22, aP2); /*0x4a9ef2*/
+          (*((void (**)(DisplayClass *, int16_t *, int))this->DisplayClass_field_0x0 + 38))(this, v22, aP2); /*0x4a9ef2*/
           continue; /*0x4a9f07*/
         }
         if ( v13 >= 0 && v13 != *((char *)v12 + 289) ) /*0x4a9fd2*/
@@ -622,13 +624,13 @@ void * DisplayClass::Draw(int a2)
 
   if ( a2 < 500 /*0x4ae513*/
     || a2 > 900
-    || (*((uint8_t (__thiscall **)(DisplayClass *))this->DisplayClass_field_0x0 + 26))(this) )
+    || (*((uint8_t (**)(DisplayClass *))this->DisplayClass_field_0x0 + 26))(this) )
   {
     return 0; /*0x4ae513*/
   }
   v3 = DSurface_ViewBounds.field_0; /*0x4ae524*/
   v4 = DSurface_ViewBounds.field_4; /*0x4ae531*/
-  v5 = (unsigned int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)stru_887598.lineTrailer + 52))( /*0x4ae538*/
+  v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)stru_887598.lineTrailer + 52))( /*0x4ae538*/
                    stru_887598.lineTrailer,
                    v18);
   v6 = v5[1]; /*0x4ae54a*/
@@ -658,7 +660,7 @@ void * DisplayClass::Draw(int a2)
         if ( !(uint8_t)Cell::IsPassableOffset((Cell *)v11, (int)Object_field_0x30) ) /*0x4ae64b*/
           return 0; /*0x4ae64b*/
       }
-      if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v9 + 132))(v9) + 3226) ) /*0x4ae65e*/
+      if ( *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v9 + 132))(v9) + 3226) ) /*0x4ae65e*/
         return 0; /*0x4ae666*/
       v8 = v15; /*0x4ae668*/
     }
@@ -669,7 +671,7 @@ void * DisplayClass::Draw(int a2)
   }
   if ( !v8 ) /*0x4ae66e*/
     return 0; /*0x4ae69b*/
-  result = (wchar_t *)(*(int (__thiscall **)(int))(*(unsigned int *)v8 + 144))(v8); /*0x4ae672*/
+  result = (wchar_t *)(*(int (**)(int))(*(unsigned int *)v8 + 144))(v8); /*0x4ae672*/
   if ( !v9 ) /*0x4ae67a*/
   {
     v12 = (CellClass *)CellCoord::To_CellObj((CellCoord *)this, v16); /*0x4ae683*/
@@ -686,8 +688,8 @@ int DisplayClass::ExitMode()
     TacticalClass::ResetScrollBounds((TacticalClass *)g_TacticalClass_Instance); /*0x4aeadd*/
   *(unsigned char *)&this->q11CF = 0; /*0x4aeae2*/
   IDA_LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4aeae9*/
-  stru_A8EB00.?[441] = 1; /*0x4aeaf0*/
-  return (*((int (__thiscall **)(DisplayClass *, unsigned int, unsigned int))this->DisplayClass_field_0x0 + 18))(this, 0, 0); /*0x4aeb02*/
+  *((unsigned int *)((char *)&stru_A8EB00 + 441)) = 1; /*0x4aeaf0*/
+  return (*((int (**)(DisplayClass *, unsigned int, unsigned int))this->DisplayClass_field_0x0 + 18))(this, 0, 0); /*0x4aeb02*/
 }
 } // namespace gamemd
 // 0x5519B0
@@ -707,7 +709,7 @@ int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
     if ( !this->IsAllocated && v5 ) /*0x5519e2*/
       return 0; /*0x5519e2*/
     v6 = this->CapacityIncrement; /*0x5519e4*/
-    if ( v6 <= 0 || !(*(uint8_t (__thiscall **)(int, int, unsigned int))(this->u32_8)(this, v5 + v6, 0) ) /*0x5519f4*/
+    if ( v6 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(this->u32_8)(this, v5 + v6, 0) ) /*0x5519f4*/
       return 0; /*0x551a04*/
   }
   v7 = this->Count; /*0x551a0a*/
@@ -733,7 +735,7 @@ int DisplayClass::InsertPriorityText(int a2)
       return 0; /*0x551aa6*/
     v4 = *(unsigned int *)&this->__pad_10[4]; /*0x551aa8*/
     if ( v4 <= 0 /*0x551ab8*/
-      || !(*((uint8_t (__thiscall **)(DisplayClass *, int, unsigned int))this->DisplayClass_field_0x0 + 2))(
+      || !(*((uint8_t (**)(DisplayClass *, int, unsigned int))this->DisplayClass_field_0x0 + 2))(
             this,
             v3 + v4,
             0) )
@@ -763,8 +765,8 @@ int DisplayClass::checkScreenBounds(int a2)
 {
   int v3; // edi
 
-  v3 = (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 184))(a2); /*0x5f6234*/
-  return (*((int (__thiscall **)(DisplayClass *))this->DisplayClass_field_0x0 + 46))(this) > v3; /*0x5f623e*/
+  v3 = (*(int (**)(int))(*(unsigned int *)a2 + 184))(a2); /*0x5f6234*/
+  return (*((int (**)(DisplayClass *))this->DisplayClass_field_0x0 + 46))(this) > v3; /*0x5f623e*/
 }
 } // namespace gamemd
 // 0x6D8530
@@ -959,9 +961,9 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   }
   else
   {
-    (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))(dword_887640); /*0x4aac52*/
-    (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640); /*0x4aac5d*/
-    v6 = (int *)(*(int (__thiscall **)(MouseClass *, unsigned int *))(dword_887640->MouseClass_field_0x0 + 52))( /*0x4aac6d*/
+    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))(dword_887640); /*0x4aac52*/
+    (*(void (**)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640); /*0x4aac5d*/
+    v6 = (int *)(*(int (**)(MouseClass *, unsigned int *))(dword_887640->MouseClass_field_0x0 + 52))( /*0x4aac6d*/
                   dword_887640,
                   v11);
     v12 = *v6; /*0x4aac72*/

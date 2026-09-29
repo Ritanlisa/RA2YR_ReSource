@@ -26,35 +26,37 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/ShipLocomotionClass_e4.hpp"
 
 // 0x5D1D80
 namespace gamemd {
 int Session::RemoveTeam(MSShapeAnim * aP1, void * a1, void * a2)
 {
+    unsigned int v3 = 0;  /* G37 hoist */
   int result; // eax
-  aP1 *v3; // esi
+  unsigned int * v3;
   int v4; // ecx
   int v5; // ecx
 
   result = (int)a2; /*0x5d1d80*/
   if ( a2 ) /*0x5d1d87*/
   {
-    v3 = &this->u32_18; /*0x5d1d8c*/
-    result = (*(int (__thiscall **)(aP1 *, aP1))(this->u32_18 + 16))(&this->u32_18, &a2); /*0x5d1d96*/
+    v3 = (unsigned int)(&this->u32_18);
+    result = (*(int (**)(void *, void *))(this->u32_18 + 16))(&this->u32_18, &a2); /*0x5d1d96*/
     if ( result != -1 ) /*0x5d1d9c*/
     {
-      result = (*(int (__thiscall **)(aP1 *, aP1))(this->u32_16)(v3, &a2); /*0x5d1da7*/
+      result = (*(int (**)(void *, void *))(this->u32_16)(v3, &a2); /*0x5d1da7*/
       if ( result != -1 ) /*0x5d1dad*/
       {
-        v4 = v3[4]; /*0x5d1daf*/
+        v4 = ((unsigned int *)(v3))[4]; /*0x5d1daf*/
         if ( result < v4 ) /*0x5d1db4*/
         {
           v5 = v4 - 1; /*0x5d1db6*/
-          for ( v3[4] = v5; result < v3[4]; *(aP1 *, unsigned int a2)(v3[1] + 4 * result - 4) = *(aP1 *)(v3[1] + 4 * result) ) /*0x5d1dbc*/
+          for ( ((unsigned int *)(v3))[4] = v5; result < ((unsigned int *)(v3))[4]; *(aP1 *, unsigned int a2)(v3[1] + 4 * result - 4) = *(aP1 *)(v3[1] + 4 * result) ) /*0x5d1dbc*/
             ++result; /*0x5d1dc1*/
         }
       }
-      if ( a2 ) /*0x5d1dd6*/
+      if ( a2 ) /*(unsigned int *)((unsigned int *))(0x5d1dd6)*/
         return (**a2)(a2, 1); /*0x5d1ddc*/
     }
   }
@@ -69,7 +71,7 @@ int Session::PrepareGame()
   int v3; // eax
   char *Flagged; // eax
   char *v5; // eax
-  void ** result;
+  Skirmish * result;
   char v7; // bl
   unsigned int v8;
   int v9; // esi
@@ -77,7 +79,7 @@ int Session::PrepareGame()
   int v11; // esi
   Skirmish *v12; // esi
   unsigned int *v13; // eax
-  char v14; // al
+  void * v14;
   void ** v15;
   ScenarioClass *v16; // [esp+0h] [ebp-208h]
   void ** v17;
@@ -101,15 +103,15 @@ int Session::PrepareGame()
         goto LABEL_42; /*0x5e7753*/
       memset(Str, 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
-      result = Timer::GetTicks(); /*0x5e7774*/
+      result = this->Timer::GetTicks(); /*0x5e7774*/
       v9 = 1800; /*0x5e7779*/
       v17 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
       {
-        if ( v17 != -1 ) /*0x5e7793*/
+        if ( v17 != (void **)(-1) ) /*0x5e7793*/
         {
-          result = (int)(Timer::GetTicks() - v17);
-          if ( result >= 1800 ) /*0x5e77a4*/
+          result = (int)(this->Timer::GetTicks() - v17);
+          if ( result >= (void **)(1800) ) /*0x5e77a4*/
             return result; /*0x5e77a4*/
           v9 = 1800 - result; /*0x5e77aa*/
         }
@@ -122,23 +124,23 @@ int Session::PrepareGame()
         {
           result = (void **)(v17);
           v11 = 1800; /*0x5e77de*/
-          if ( v17 != -1 ) /*0x5e77e4*/
+          if ( v17 != (void **)(-1) ) /*0x5e77e4*/
           {
-            result = Timer::GetTicks() - v17; /*0x5e77ef*/
-            if ( result >= 1800 ) /*0x5e77f5*/
+            result = this->Timer::GetTicks() - v17; /*0x5e77ef*/
+            if ( result >= (void **)(1800) ) /*0x5e77f5*/
               break; /*0x5e77f5*/
             v11 = 1800 - result; /*0x5e77f7*/
           }
           if ( !v11 ) /*0x5e77fb*/
             break; /*0x5e77fb*/
-          Event::Dispatch(); /*0x5e77fd*/
+          this->Event::Dispatch(); /*0x5e77fd*/
         }
         if ( v10 ) /*0x5e7812*/
           return result; /*0x5e7812*/
         v9 = 1800; /*0x5e778b*/
       }
     case 3: /*0x5e7521*/
-      if ( Dialog::GetCurrentType() != 189 /*0x5e7550*/
+      if ( this->Dialog::GetCurrentType() != 189 /*0x5e7550*/
         || FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) )
       {
         goto LABEL_42; /*0x5e7557*/
@@ -157,10 +159,10 @@ int Session::PrepareGame()
       {
         strcpy(Str, byte_A8B8E0); /*0x5e765a*/
         _strupr(Str); /*0x5e7668*/
-        Debug::Log(); /*0x5e7677*/
+        this->Debug::Log(); /*0x5e7677*/
         if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
-        RawFileClass::Construct(&v18, (int)byte_A8B8E0); /*0x5e76c1*/
+        ((RawFileClass *)(&v18))->Construct((int)byte_A8B8E0); /*0x5e76c1*/
         if ( (uint8_t)FileClass::Open(&v18, 0) ) /*0x5e76cc*/
           v7 = 1; /*0x5e76d5*/
         RawFileClass::Dtor(&v18); /*0x5e76db*/
@@ -188,7 +190,7 @@ int Session::PrepareGame()
     default:
   LABEL_44:
       v13 = CCFileClass::Construct((CCFileClass *)Str, byte_A8B8E0); /*0x5e7845*/
-      v14 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
+      v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
       *(unsigned int *)Str = (void*)&CCFileClass_vftable; /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
       *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
@@ -201,7 +203,7 @@ int Session::PrepareGame()
         if ( !result ) /*0x5e789c*/
         {
           g_UIControlState = (int)(0);
-          return result; /*0x5e78f4*/
+          return (int)(result);
         }
         result = (int)unknown_libname_27((ObjectClass *)result); /*0x5e78a0*/
         g_UIControlState = (Skirmish *)result; /*0x5e78a5*/
@@ -238,11 +240,11 @@ int Session::PrepareGame()
     if ( v3 ) /*0x5e75cb*/
     {
       for ( result = Network::GetQueueCount(&unk_A8E9C0); result; result = Network::GetQueueCount(&unk_A8E9C0) ) /*0x5e75e0*/
-        Event::Dispatch(); /*0x5e75e6*/
+        this->Event::Dispatch(); /*0x5e75e6*/
       return result; /*0x5e75f7*/
     }
   LABEL_12:
-    Event::Dispatch(); /*0x5e75cd*/
+    this->Event::Dispatch(); /*0x5e75cd*/
   }
 }
 }
@@ -253,7 +255,7 @@ int Session::GetPlayerOption()
   int result; // eax
 
   result = -2; /*0x69b706*/
-  if ( this->field_178 != (void *)-2 ) /*0x69b70d*/
+  if ( this->field_178 != (unsigned int)((void *))-2 ) /*0x69b70d*/
     return (int)this->field_174; /*0x69b70f*/
   return result; /*0x69b715*/
 }
@@ -265,7 +267,7 @@ int Session::GetPlayerColor()
   int result; // eax
 
   result = -2; /*0x69b726*/
-  if ( this->field_160 != (void *)-2 ) /*0x69b72d*/
+  if ( this->field_160 != (unsigned int)((void *))-2 ) /*0x69b72d*/
     return (int)this->field_15C; /*0x69b72f*/
   return result; /*0x69b735*/
 }
@@ -274,7 +276,7 @@ int Session::GetPlayerColor()
 namespace gamemd {
 int Session::StartGame()
 {
-  Skirmish *v2; // esi
+  unsigned int v2;
   ObjectClass *v3; // eax
   Skirmish *v4; // eax
 
@@ -286,7 +288,7 @@ int Session::StartGame()
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5ed397*/
     RA2_OPDEL(v2); /*0x5ed39d*/
   }
-  v3 = (int)((ObjectClass *)RA2_OPNEW(4u));
+  v3 = (gamemd::ObjectClass *)((int)((ObjectClass *)RA2_OPNEW(4u)));
   if ( v3 ) /*0x5ed3b2*/
     v4 = (Skirmish *)unknown_libname_27(v3); /*0x5ed3b6*/
   else

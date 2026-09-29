@@ -14,7 +14,7 @@ struct GadgetGrid {
     unsigned int u32_A;
 // --- flat members (END) ---
     int InsertItem(ObjectClass * aP1);
-    int RemoveItem(void* aP1);
+    int RemoveItem(void* aP1, void *a1 = 0);
 };
 
 } // namespace gamemd

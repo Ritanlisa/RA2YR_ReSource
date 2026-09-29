@@ -49,7 +49,7 @@ HWND E4Recv_696AE0::sub_696AE0()
           if ( dword_A8DB5C < dword_A8DB54 /*0x696bf1*/
             || (byte_A8DB59 || !dword_A8DB54)
             && dword_A8DB60 > 0
-            && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8DB4C + 8))(
+            && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A8DB4C + 8))(
                  &dword_A8DB4C,
                  dword_A8DB54 + dword_A8DB60,
                  0) )

@@ -7,6 +7,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/IPXInterfaceClass_e4.hpp"
+#include "e4/classes/InfantryClass_e4.hpp"
 
 // 0x7C8A10
 namespace gamemd {

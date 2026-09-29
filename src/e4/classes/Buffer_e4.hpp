@@ -31,12 +31,13 @@ struct Buffer {
     unsigned int u32_2E42;
     unsigned int u32_88;
     unsigned int Buffer_field_00;
+    unsigned int Buffer_field_04;
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_ObjectClass___(char a2);
     int * RotateBufferCrypto(int * a2, int a3);
     int AllocateCodecFrameBuffers();
     int AppendCellData(AbstractClass * aP1, int a3);
-    unsigned int * Init(int a2, AbstractClass * aP2);
+    unsigned int * Init(int a2, AbstractClass * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
     void * FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4);
 };
 

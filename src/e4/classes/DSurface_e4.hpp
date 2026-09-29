@@ -266,8 +266,9 @@ struct DSurface {
     unsigned int DSurface_field_0x1C;
     unsigned int DSurface_field_0x20;
     unsigned int DSurface_field_0xC;
+    unsigned int Unlock;
 // --- flat members (END) ---
-    AbstractClass * * Construct(void* aP1, DSurface * aP2, ObjectClass * aP3, char a5);
+    AbstractClass * * Construct(void* aP1, DSurface * aP2, ObjectClass * aP3, char a5, void *a1 = 0);
     AbstractClass * * Process(void* aP1, int * a2);
     Coord * * DrawLineFaded(int a2, unsigned int * a3, int * a4, unsigned char * a5, int a6, int a7, char a8, float a9, char a10, char a11, float a12);
     Coord * * DrawLineModulated(int * a1, int a2, int a3, unsigned int * a4, unsigned int * a5, int a6, int a7, int a8, char a9);
@@ -276,21 +277,21 @@ struct DSurface {
     ObjectClass * * RenderToSurface(ObjectClass * aP1);
     char FlipIfNeeded();
     char IsDSurface();
-    int BlitPart(int a2, int a3, int a4, int a5, int a6);
+    int BlitPart(int a2, int a3, int a4, int a5, int a6, void *a1 = 0);
     int CommitBuffers();
-    int Destroy();
+    int Destroy(void *a1 = 0);
     int DrawDashedLineStipple(int * a1, int * a2, short a4, int a5, int a6, DSurface * aP6);
     int DrawLineZBuf(int a1, int a2, int a3, unsigned int * a4, unsigned int * a5, unsigned short a6, int a7, int a8, char a9);
     int DrawMarker(AbstractClass * aP1, ObjectClass * aP2);
     int FillRectWithColor(int * a0, ObjectClass * aP1, short a3, unsigned char a4);
-    int Flip();
+    int Flip(void *a1 = 0);
     int Flip2();
     int GetBytesPerPixel();
     int LockAndPrepareRect();
-    int RestoreIfLost();
+    int RestoreIfLost(void *a1 = 0);
     long long ConstructFromHandle();
     unsigned int * CreateBackBuffer(int a2);
-    unsigned int * CreatePrimary();
+    unsigned int * CreatePrimary(void *a1 = 0);
     void * loc_4C1AC0(char a2);
     void BlitStretch(int a1, int a2, int a3);
     void* DrawGradientLine(int aP1, unsigned int * a2, DSurface * aP3, int a5, int arg10, float * a6, float * a7);

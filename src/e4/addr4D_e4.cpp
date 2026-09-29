@@ -24,6 +24,10 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/E4Recv_4E0A00_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4D1650
 namespace gamemd {
@@ -46,7 +50,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   int v17; // [esp+18h] [ebp-4h] BYREF
 
   *(unsigned int *)v16 = aP0; /*0x4d1684*/
-  v2 = (*(int (__thiscall **)(int *, int16_t *))(dword_8B3D10 + 16))(&dword_8B3D10, v16); /*0x4d1688*/
+  v2 = (*(int (**)(int *, int16_t *))(dword_8B3D10 + 16))(&dword_8B3D10, v16); /*0x4d1688*/
   if ( v2 != -1 && v2 < g_FootClassConfig && v2 < --g_FootClassConfig ) /*0x4d16a3*/
   {
     do /*0x4d16bb*/
@@ -57,8 +61,8 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
     while ( v2 < g_FootClassConfig ); /*0x4d16bb*/
   }
   v3 = (void *)(aP0->q038);
-  v16[0] = aP0->q034 / 256; /*0x4d16df*/
-  v16[1] = v3 / 256; /*0x4d16e4*/
+  v16[0] = (unsigned int)(aP0)->q034 / 256; /*0x4d16df*/
+  v16[1] = (unsigned int)(v3)/ 256; /*0x4d16e4*/
   v17 = *(unsigned int *)v16; /*0x4d16f3*/
   v4 = 74 * (v16[1] - ((v16[0] + v16[1]) << 9) - v16[0]) - aP0->q030 + 0x7FFFFFFF; /*0x4d1714*/
   if ( g_MissionState ) /*0x4d171c*/
@@ -111,8 +115,8 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
   }
   if ( g_TacticalClass_Instance ) /*0x4d1817*/
     Cell::CreateCrater( /*0x4d184b*/
-      aP0->q040 - (unsigned int)g_TacticalClass_Instance[44].lpVtbl,
-      aP0->q044 - (unsigned int)g_TacticalClass_Instance[45].lpVtbl,
+      aP0->q040 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[44].lpVtbl,
+      aP0->q044 - (unsigned int)((unsigned int *)(g_TacticalClass_Instance))[45].lpVtbl,
       aP0->q048,
       aP0->q04C,
       0);
@@ -137,7 +141,7 @@ int sub_4D2370()
   unsigned short *v4; // esi
   int v5; // edi
   unsigned int *v6; // eax
-  unsigned int *v7; // edi
+  CellClass * v7;
   CellClass *v8; // eax
   int v9; // [esp+8h] [ebp-1Ch]
   int i; // [esp+Ch] [ebp-18h]
@@ -151,15 +155,15 @@ int sub_4D2370()
   {
     v3 = *((unsigned int *)dword_8B3D14 + v2); /*0x4d2399*/
     if ( *(unsigned int *)(v3 + 48) == 6 /*0x4d23ae*/
-      && (*(int (__thiscall **)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))(**(unsigned int **)(v3 + 96), 0) )
+      && (*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))(**(unsigned int **)(v3 + 96), 0) )
     {
       if ( *(unsigned int *)(v3 + 48) == 6 ) /*0x4d23bf*/
-        v4 = (unsigned short *)(*(int (__thiscall **)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))( /*0x4d23d0*/
+        v4 = (unsigned short *)(*(int (**)(unsigned int, unsigned int))(***(unsigned int ***)(v3 + 96) + 144))( /*0x4d23d0*/
                         **(unsigned int **)(v3 + 96),
                         0);
       else
         v4 = 0; /*0x4d23d4*/
-      v5 = *(unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v3 + 96))(v3, v12); /*0x4d23e2*/
+      v5 = *(unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v3 + 96))(v3, v12); /*0x4d23e2*/
       v11 = v5; /*0x4d23e4*/
       while ( *v4 != 0x7FFF || v4[1] != 0x7FFF ) /*0x4d23f9*/
       {
@@ -174,11 +178,11 @@ int sub_4D2370()
     }
     else
     {
-      v7 = (gamemd::CellClass *)((unsigned int *)(v3 + 52));
-      v13[0] = *v7; /*0x4d2442*/
-      v13[1] = v7[1]; /*0x4d244e*/
-      v13[2] = v7[2]; /*0x4d2455*/
-      v8 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13); /*0x4d245e*/
+      v7 = (gamemd::CellClass *)((unsigned int)((gamemd::CellClass *)((unsigned int *)(v3 + 52))));
+      v13[0] = (gamemd::CellClass *)(*v7);
+      v13[1] = (gamemd::CellClass *)(v7[1]);
+      v13[2] = (gamemd::CellClass *)(v7[2]);
+      v8 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13));
       v8->flags[0] |= 0x400000u; /*0x4d2474*/
     }
     result = g_FootClassConfig; /*0x4d247c*/
@@ -358,7 +362,7 @@ long long sub_4D0630()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_8B3CD8 - dbl_8B3D00); /*0x4d0642*/
+  v0 = ((Math *)(dbl_8B3CD8 - dbl_8B3D00))->Sin(); /*0x4d0642*/
   result = Math::RoundToInt(v0 * dbl_8B3CF8 * 0.5); /*0x4d0656*/
   dword_8B3D68 = result; /*0x4d065b*/
   return result; /*0x4d0660*/
@@ -369,7 +373,7 @@ long long sub_4D0630()
 namespace gamemd {
 void sub_4D0670()
 {
-  dbl_8B3D08 = Math::ArcTan((double)dword_8B3D68 * 0.00390625); /*0x4d0687*/
+  dbl_8B3D08 = ((Math *)((double)dword_8B3D68 * 0.00390625))->ArcTan(); /*0x4d0687*/
 }
 } // namespace gamemd
 
@@ -377,7 +381,7 @@ void sub_4D0670()
 namespace gamemd {
 void sub_4D06A0()
 {
-  dbl_8B3D38 = Math::ArcTan((double)(2 * dword_8B3D68) / dbl_8B3CF8); /*0x4d06c2*/
+  dbl_8B3D38 = ((Math *)((double)(2 * dword_8B3D68) / dbl_8B3CF8))->ArcTan(); /*0x4d06c2*/
 }
 } // namespace gamemd
 
@@ -550,7 +554,7 @@ long long sub_4D3020()
   double v0; // st7
   int64_t result; // rax
 
-  v0 = Math::Sin(dbl_8B3D70 - dbl_8B3D98); /*0x4d3032*/
+  v0 = ((Math *)(dbl_8B3D70 - dbl_8B3D98))->Sin(); /*0x4d3032*/
   result = Math::RoundToInt(v0 * dbl_8B3D90 * 0.5); /*0x4d3046*/
   dword_8B3E00 = result; /*0x4d304b*/
   return result; /*0x4d3050*/
@@ -561,7 +565,7 @@ long long sub_4D3020()
 namespace gamemd {
 void sub_4D3060()
 {
-  dbl_8B3DA0 = Math::ArcTan((double)dword_8B3E00 * 0.00390625); /*0x4d3077*/
+  dbl_8B3DA0 = ((Math *)((double)dword_8B3E00 * 0.00390625))->ArcTan(); /*0x4d3077*/
 }
 } // namespace gamemd
 
@@ -569,7 +573,7 @@ void sub_4D3060()
 namespace gamemd {
 void sub_4D3090()
 {
-  dbl_8B3DB8 = Math::ArcTan((double)(2 * dword_8B3E00) / dbl_8B3D90); /*0x4d30b2*/
+  dbl_8B3DB8 = ((Math *)((double)(2 * dword_8B3E00) / dbl_8B3D90))->ArcTan(); /*0x4d30b2*/
 }
 } // namespace gamemd
 
@@ -675,7 +679,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
   v2 = 0; /*0x4d4fc9*/
   while ( 1 ) /*0x4d4fd4*/
   {
-    v3 = (unsigned short *)(*((int (__thiscall **)(ObjectClass *, char *))this->AbstractClass + 110))(this, v11); /*0x4d4fd4*/
+    v3 = (unsigned short *)(*((int (**)(ObjectClass *, char *))this->AbstractClass + 110))(this, v11); /*0x4d4fd4*/
     IDA_LOWORD(v9) = IDA_LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
     IDA_HIWORD(v9) = v3[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
     *(unsigned int *)v10 = v9; /*0x4d500c*/
@@ -686,8 +690,8 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
     {
       if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
       {
-        v7 = (*(int (__thiscall **)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
-        if ( v7 == (*((int (__thiscall **)(ObjectClass *))this->AbstractClass + 15))(this) ) /*0x4d5044*/
+        v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
+        if ( v7 == (*((int (**)(ObjectClass *))this->AbstractClass + 15))(this) ) /*0x4d5044*/
           break; /*0x4d5044*/
       }
     }
@@ -720,7 +724,7 @@ void E4Recv_4DF280::sub_4DF280()
   v2 = this->M1484; /*0x4df286*/
   if ( v2 ) /*0x4df28e*/
   {
-    v3 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v2 + 72))(v2, v6); /*0x4df297*/
+    v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v2 + 72))(v2, v6); /*0x4df297*/
     IDA_LOWORD(v4) = *v3 / 256; /*0x4df2aa*/
     IDA_HIWORD(v4) = v3[1] / 256; /*0x4df2c3*/
     *(unsigned int *)v4 = v4; /*0x4df2d1*/

@@ -17,12 +17,16 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x436BE0
 namespace gamemd {
 unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
 {
-  unsigned int *result; // eax
+  unsigned int * result;
   int v4; // edx
   ObjectClass * v5;
   int v6; // ebx
@@ -40,7 +44,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   int v18; // [esp+20h] [ebp-48h]
   void *v19; // [esp+24h] [ebp-44h]
   int v21; // [esp+2Ch] [ebp-3Ch]
-  unsigned int *v22; // [esp+30h] [ebp-38h]
+  unsigned int * v22;
   unsigned int *v24; // [esp+38h] [ebp-30h] BYREF
   int v26; // [esp+44h] [ebp-24h]
   int v28; // [esp+4Ch] [ebp-1Ch]
@@ -51,10 +55,10 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   *(&this->uniqueId4) = 0; /*0x436bfa*/
   *(&this->abstractFlags5) = aP1; /*0x436c00*/
   *(&this->uniqueId5) = 0; /*0x436c06*/
-  if ( aP1 == (unsigned int *)3 ) /*0x436c0c*/
+  if ( aP1 == (gamemd::CCINIClass *)((unsigned int *))3 ) /*0x436c0c*/
   {
-    v4 = *(unsigned int *)this->GetCellCoords_Alt(&v24); /*0x436c21*/
-    v5 = *(unsigned int *)&this->FollowingObject; /*0x436c23*/
+    v4 = (gamemd::ObjectClass *)(*(unsigned int *)this->GetCellCoords_Alt(&v24));
+    v5 = (gamemd::ObjectClass *)(*(unsigned int *)&this->FollowingObject);
     v4 = v4; /*0x436c29*/
     v19 = &unk_98967F; /*0x436c2d*/
     v22 = 0; /*0x436c3b*/
@@ -74,14 +78,14 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
         {
           while ( 1 ) /*0x436c98*/
           {
-            if ( ((*(int (__thiscall **)(unsigned int *))(*v7 + 44))(v7) == 15 /*0x436cb9*/
-               || (*(int (__thiscall **)(unsigned int *))(*v7 + 44))(v7) == 1)
+            if ( ((*(int (**)(unsigned int *))(*v7 + 44))(v7) == 15 /*0x436cb9*/
+               || (*(int (**)(unsigned int *))(*v7 + 44))(v7) == 1)
               && !Object::IsAlliedWithObjectHouse(v24, (int)v7) )
             {
               v8 = (int)((unsigned int *)(*v7));
               v9 = (unsigned int *)(&this->location);
-              v10 = this->location; /*0x436cd0*/
-              v11 = v9[1]; /*0x436cd2*/
+              v10 = (unsigned int)(this->location);
+              v11 = (unsigned int)(v9[1]);
               v29 = v9[2]; /*0x436cdf*/
               v12 = (unsigned int *)v7->GetInvalidCoord(v30); /*0x436ce3*/
               v13 = v12[1] - v11; /*0x436ced*/
@@ -93,7 +97,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
               v16 = (void *)Math::RoundToInt(v15); /*0x436d34*/
               if ( (int)v16 < (int)v19 ) /*0x436d3d*/
               {
-                v22 = v7; /*0x436d3f*/
+                v22 = (unsigned int)(v7);
                 v19 = v16; /*0x436d43*/
               }
             }
@@ -113,7 +117,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
     if ( v22 ) /*0x436d80*/
       *(void **)&this->BuildingLightClass_field_E0 = v22; /*0x436d82*/
   }
-  return result; /*0x436d88*/
+  return (unsigned int *)(result);
 }
 }
 // 0x4370C0
@@ -130,7 +134,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
   if ( (uint8_t)ObjectClass::Undeploy(this) ) /*0x4370df*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x4370ee*/
   v5 = this; /*0x437103*/
-  v3 = (*(int (__thiscall **)(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
+  v3 = (*(int (**)(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
   {
     do /*0x43713a*/
@@ -140,7 +144,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
     }
     while ( v3 < dword_8B41A0 ); /*0x43713a*/
   }
-  ObjectClass::Dtor(); /*0x43713e*/
+  this->ObjectClass::Dtor(); /*0x43713e*/
   if ( (a2 & 1) != 0 ) /*0x437148*/
     RA2_OPDEL(); /*0x43714b*/
   return this; /*0x437155*/
@@ -181,28 +185,28 @@ signed int BuildingLightClass::UpdateOscillation()
   void * v29;
   void * v30;
 
-  v24 = (void *)((int)((void *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 456))(this->vtable4))));
+  v24 = (void *)((int)((void *)((*(int (**)(unsigned int))(**(unsigned int **)(&this->vtable22) + 456))(this->vtable4))));
   v26 = (void *)((int)((void *)(v24)));
   v2 = (void *)(this->vtable4);
-  if ( *(unsigned int *)(v2 + 1504) != -1 ) /*0x513d4c*/
+  if ( *(unsigned int *)((unsigned int)(v2)+ 1504) != -1 ) /*0x513d4c*/
   {
-    v3 = (int *)((void *)((int *)(v2 + 156)));
+    v3 = (int *)((void *)((int *)((unsigned int)(v2)+ 156)));
     v28 = (void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((int)((void *)(*v3)))))))))))));
     v29 = (void *)((int)((void *)(v3[1])));
     v30 = (void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((int)((void *)(v3[2])))))))));
     GroundHeight = (void *)((int)((void *)(Cell::GetGroundHeight(&v28))));
     v5 = (void *)(this->vtable4);
-    v6 = (int *)((void *)((int *)(v5 + 156)));
-    v7 = (void *)((int)((void *)(*(unsigned int *)(v5 + 1504) & 7)));
+    v6 = (int *)((void *)((int *)((unsigned int)(v5)+ 156)));
+    v7 = (void *)((int)((void *)(*(unsigned int *)((unsigned int)(v5)+ 1504) & 7)));
     v8 = (void *)((int)((void *)(*v6)));
     v9 = (void *)((int)((void *)(v6[1])));
     v10 = (void *)((int)((void *)(v6[2])));
     v11 = (void *)(8 * v7 + 9041624);
     v12 = (unsigned int)(v8 + dword_89F6D8[2 * v7]);
-    v29 = (void *)(v9 + *(unsigned int *)(v11 + 4));
+    v29 = (void *)((unsigned int)(v9)+ *(unsigned int *)(v11 + 4));
     v28 = (void *)(v12);
     v30 = v10; /*0x513dbf*/
-    if ( Cell::GetGroundHeight(&v28) > GroundHeight ) /*0x513dca*/
+    if ( Cell::GetGroundHeight(&v28) > (_T)(GroundHeight) ) /*0x513dca*/
       v26 = v24 - IDA_HIDWORD(g_RulesClass_Instance->VeteranROF); /*0x513ddc*/
   }
   v25 = Math::RoundToInt((double)v24 + *(double *)(&this->objectTypeFlags6)); /*0x513dec*/
@@ -211,7 +215,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v14 = 1.0; /*0x513e00*/
   else
     v14 = 1.1; /*0x513e08*/
-  v15 = (int)&g_CurrentFrame[v13]; /*0x513e20*/
+  v15 = (int)&((unsigned int *)(g_CurrentFrame))[v13]; /*0x513e20*/
   v16 = v14 * *(double *)&g_RulesClass_Instance->VeteranCap * 900.0; /*0x513e23*/
   v27 = v15 % (int)Math::RoundToInt(v16); /*0x513e3a*/
   v17 = Math::SinCos((double)v27 * 6.283185307179586 / v16); /*0x513e4f*/
@@ -223,11 +227,11 @@ signed int BuildingLightClass::UpdateOscillation()
     v18 = 0; /*0x513e6e*/
   }
   v19 = (void *)(this->vtable4);
-  v20 = (void *)((char)((void *)(*(unsigned char *)(v19 + 116))));
-  *(unsigned char *)(v19 + 116) = 0; /*0x513e77*/
-  (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)(&this->vtable22) + 460))(this->vtable4, v18); /*0x513e7f*/
+  v20 = (void *)((char)((void *)(*(unsigned char *)((unsigned int)(v19)+ 116))));
+  *(unsigned char *)((unsigned int)(v19)+ 116) = 0; /*0x513e77*/
+  (*(void (**)(unsigned int, int))(**(unsigned int **)(&this->vtable22) + 460))(this->vtable4, v18); /*0x513e7f*/
   result = this->vtable4; /*0x513e85*/
-  *(unsigned char *)(result + 116) = v20; /*0x513e8c*/
+  *(unsigned char *)((unsigned int)(result)+ 116) = v20; /*0x513e8c*/
   v22 = g_RulesClass_Instance; /*0x513e8f*/
   if ( v26 < IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF) ) /*0x513e9b*/
   {
@@ -236,18 +240,18 @@ signed int BuildingLightClass::UpdateOscillation()
                               + (double)IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF)
                               - (double)v26)
                              / (double)IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF)
-                             * (double)g_RulesClass_Instance[1].WeatherConBoltExplosion
+                             * (double)((unsigned int *)(g_RulesClass_Instance))[1].WeatherConBoltExplosion
                              + *(double *)(&this->objectTypeFlags6);
     v22 = g_RulesClass_Instance; /*0x513ecd*/
     result = IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF) / 4; /*0x513edf*/
     if ( v26 < result ) /*0x513ee4*/
     {
-      result = (unsigned int)((uint64_t)(1431655766LL * g_RulesClass_Instance[1].WeatherConBoltExplosion) >> 32) >> 31; /*0x513ef5*/
-      *(double *)(&this->objectTypeFlags6) = (double)(g_RulesClass_Instance[1].WeatherConBoltExplosion / 3) + *(double *)(&this->objectTypeFlags6); /*0x513f05*/
+      result = (unsigned int)((uint64_t)(1431655766LL * ((unsigned int *)(g_RulesClass_Instance))[1].WeatherConBoltExplosion) >> 32) >> 31; /*0x513ef5*/
+      *(double *)(&this->objectTypeFlags6) = (double)(((unsigned int *)(g_RulesClass_Instance))[1].WeatherConBoltExplosion / 3) + *(double *)(&this->objectTypeFlags6); /*0x513f05*/
       v22 = g_RulesClass_Instance; /*0x513f08*/
     }
   }
-  v23 = (int)(*(double *)(&this->objectTypeFlags6) - (double)v22[1].WeatherConBoltExplosion);
+  v23 = (int)(*(double *)(&this->objectTypeFlags6) - (double)((unsigned int *)(v22))[1].WeatherConBoltExplosion);
   *(double *)(&this->objectTypeFlags6) = v23; /*0x513f18*/
   *(double *)(&this->objectTypeFlags6) = v23 * *(double *)&g_RulesClass_Instance->GameForming; /*0x513f27*/
   return result; /*0x513f2a*/

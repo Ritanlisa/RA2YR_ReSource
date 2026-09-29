@@ -17,6 +17,9 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SaveGame_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
 
 // 0x48ACF0
 namespace gamemd {
@@ -1891,7 +1894,7 @@ INIClass * * RulesClass::readDifficulty()
     INIClass::ReadDouble_Overwrite( /*0x674493*/
       (double *)v16,
       (uint8_t *)aJumpjetcontrol,
-      (uint8_t *)&stru_81AF8C.?[103],
+      (uint8_t *)&(unsigned int *)((char *)&stru_81AF8C + 103),
       COERCE_DOUBLE(IDA___PAIR64__(v8, v9)));
     v10 = *(unsigned int *)&this->__pad_240[500]; /*0x674498*/
     v11 = *(unsigned int *)&this->__pad_240[496]; /*0x67449e*/
@@ -1945,7 +1948,7 @@ INIClass * * RulesClass::ReadMovies()
           if ( g_MissionQueueFrame.localVariables[583] < g_MissionQueueFrame.localVariables[581] /*0x674614*/
             || (IDA_BYTE1(g_MissionQueueFrame.localVariables[582]) || !g_MissionQueueFrame.localVariables[581])
             && g_MissionQueueFrame.localVariables[584] > 0
-            && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_MissionQueueFrame.localVariables[579] + 8))(
+            && (result = (*(int (**)(int *, int, unsigned int))(g_MissionQueueFrame.localVariables[579] + 8))(
                            &g_MissionQueueFrame.localVariables[579],
                            g_MissionQueueFrame.localVariables[581] + g_MissionQueueFrame.localVariables[584],
                            0),
@@ -2035,7 +2038,7 @@ void * RulesClass::readAircraftTypes(int * a2)
 
   if ( this != (RulesClass *)a2 ) /*0x67a19a*/
   {
-    (*(void (__thiscall **)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a19e*/
+    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a19e*/
     v3 = a2[2]; /*0x67a1a1*/
     this->DetailBufferZoneWidth = v3; /*0x67a1a6*/
     if ( v3 ) /*0x67a1a9*/
@@ -2079,7 +2082,7 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
 
   if ( this != (RulesClass *)a2 ) /*0x67a21a*/
   {
-    (*(void (__thiscall **)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a21e*/
+    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a21e*/
     v3 = a2[2]; /*0x67a221*/
     this->DetailBufferZoneWidth = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
@@ -2123,7 +2126,7 @@ void * RulesClass::readBuildingTypes(int * a2)
 
   if ( this != (RulesClass *)a2 ) /*0x67a31a*/
   {
-    (*(void (__thiscall **)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a31e*/
+    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this); /*0x67a31e*/
     v3 = a2[2]; /*0x67a321*/
     this->DetailBufferZoneWidth = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
@@ -2181,7 +2184,7 @@ int RulesClass::readAI(unsigned int * a2)
   if ( result < DetailBufferZoneWidth /*0x67b4ad*/
     || (IDA_BYTE1(this->AmmoCrateDamage) || !DetailBufferZoneWidth)
     && (result = (int)this->SmallVisceroid, result > 0)
-    && (result = (*(int (__thiscall **)(RulesClass *, int, unsigned int))(this->DetailMinFrameRateNormal + 8))(
+    && (result = (*(int (**)(RulesClass *, int, unsigned int))(this->DetailMinFrameRateNormal + 8))(
                    this,
                    DetailBufferZoneWidth + result,
                    0),

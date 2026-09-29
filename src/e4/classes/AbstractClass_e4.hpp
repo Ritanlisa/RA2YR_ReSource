@@ -61,6 +61,20 @@ struct AbstractClass {
     unsigned int u32_2C;
     unsigned int vtable0;
     unsigned int vtable22;
+    unsigned int __pad_28;
+    unsigned int creationFrame;
+    unsigned int TEventClass_field_28;
+    unsigned int TEventClass_field_30;
+    unsigned int TEventClass_field_54;
+    unsigned int SpawnManagerClass_field_58;
+    unsigned int SpawnManagerClass_field_5C;
+    unsigned int spawns;
+    unsigned int __pad_48;
+    unsigned int spawnVectorCount;
+    unsigned int COMStub_AddRef;
+    unsigned int COMStub_Release;
+    unsigned int ProcessPower;
+    unsigned int QueryInterface;
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1,  TechnoClass * aP2);    // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0
@@ -71,7 +85,7 @@ struct AbstractClass {
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
     AbstractClass * * AnnounceExpiredPointer(AbstractClass * aP0,  AbstractClass * aP1);    // 0x7258D0
     int getMapCoords();  // 0x426A80
-    void DTOR();  // 0x4101F0
+    void DTOR(void *a1 = 0);  // 0x4101F0
     MissionClass * getWeaponRange(char a2);  // 0x5B3A60
     DynamicVector * resetScriptState(char a2);  // 0x4CABA0
     void getMissionState();  // 0x4D2930
@@ -89,7 +103,7 @@ struct AbstractClass {
     int COMStub_5(ObjectClass * aP1,  int aP1a);    // 0x543990
     int COMStub_54(int a2,  int a3);    // 0x543A10
     char COMStub_53();  // 0x543A40
-    IsometricTileClass * CreateInstance(char a2);  // 0x543B10
+    IsometricTileClass * CreateInstance(char a2, void *a1 = 0);  // 0x543B10
     void processStateTransition(AbstractClass * aP1);  // 0x54E590
     int COMStub_125(int a2,  int a3,  TechnoClass * aP3);    // 0x5B3650
     char COMStub_126();  // 0x5B36B0
@@ -153,7 +167,7 @@ struct AbstractClass {
     unsigned int updateSpecialTimer(int a2);  // 0x7642B0
     char AllocateCoordArray(int a2,  int * a3);    // 0x7642E0
     int processSpecialEffect(unsigned int * a2);  // 0x764420
-    int finalizeDestruction();  // 0x7C35C0
+    int finalizeDestruction(void *a1 = 0);  // 0x7C35C0
     ObjectClass * Render_Render_660730(ObjectClass ** a2);  // 0x660730
     Surface * getObjectValue(char a2);  // 0x4115D0
     void* getTileIndex(char a2);  // 0x499CC0
@@ -171,7 +185,7 @@ struct AbstractClass {
     int initVtableBase();  // 0x410100
     int GetVtable3(AbstractClass * aP0);  // 0x410220
     int GenerateUniqueID(int a1);  // 0x410230
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0, ObjectTypeClass * aP2);        // 0x410320
+    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0_2, ObjectTypeClass * aP2);        // 0x410320
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
     int COMStub_Return0_10();  // 0x410480
@@ -213,7 +227,7 @@ struct AbstractClass {
     unsigned int * applyRevealToCell(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  char a5,  int a6);    // 0x5D8270
     unsigned int * checkRevealCell(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  int a5,  int a6);    // 0x5D82B0
     int COMStub_Return0_37();  // 0x5F42B0
-    int COMStub_Return0_38();  // 0x5F42C0
+    int COMStub_Return0_38(void *a1 = 0);  // 0x5F42C0
     int COMStub_Return0_39();  // 0x5F42D0
     int COMStub_Return0_40();  // 0x5F42E0
     int COMStub_Return0_56();  // 0x5F42F0
@@ -270,7 +284,7 @@ struct AbstractClass {
     int computeDistanceSquared();  // 0x410490
     int COMStub_Return0_15();  // 0x4104A0
     int COMStub_Return0_16();  // 0x4104B0
-    static double Constructor(...);  // C2597 interim stub
+     double Constructor(...);  // C2597 interim stub
     static double InitVtables(...);  // C2597 interim stub
     static double IsTechnoType(...);  // C2597 interim stub
 };

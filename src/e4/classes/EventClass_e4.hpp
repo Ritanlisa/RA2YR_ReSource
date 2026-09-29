@@ -91,14 +91,16 @@ struct EventClass {
     unsigned int __pad_10;
     unsigned int q0041;
     unsigned int q007;
+    unsigned int EventClass_field_0xC;
+    unsigned int q0049;
 // --- flat members (END) ---
     int serializeEvent();  // 0x48B390
     int SetData(int a2,  int a3,  int a4,  int a5,  int a6);    // 0x48BAD0
     char * Add(AbstractClass * aP1,  unsigned char a3,  int a4,  char a5);    // 0x4C65E0
-    char * AddEvent(int a2,  unsigned char a3);    // 0x4C66C0
+    char * AddEvent(int a2, unsigned char a3, void *a1 = 0);    // 0x4C66C0
     char * Add2(AnimClass * aP1,  unsigned char a3,  void* aP3);    // 0x4C6720
     char * AddEventEx(SelectClass_StripClass_SidebarClass * aP1,  unsigned char a3,  void* aP3,  SelectClass_StripClass_SidebarClass * aP4,  SelectClass_StripClass_SidebarClass * aP5);    // 0x4C6970
-    char * Init(void* aP1,  char a3,  int a4,  int a5,  int arg10,  unsigned short * a6);    // 0x4C6AE0
+    char * Init(void* aP1,  char a3,  int a4,  int a5,  int arg10,  unsigned short * a6, void *a7 = 0);    // 0x4C6AE0
     void ProcessEvent();  // 0x4C6CB0
     int deserializeEvent(int a2,  void* aP2);    // 0x542280
     char Enqueue(unsigned short a2,  char a3);    // 0x54F200

@@ -11,6 +11,8 @@
 #include "e4/classes/Count_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/Session_e4.hpp"
 
 // 0x5EBEC0
 namespace gamemd {
@@ -27,9 +29,9 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
   v3 = (char *)((int)(a2));
   v4 = a2 + nIDDlgItem; /*0x5ebed0*/
   v11 = a2 + nIDDlgItem; /*0x5ebedd*/
-  if ( dword_A8B238[0] == 4 ) /*0x5ebee1*/
+  if ( ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x5ebee1*/
   {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5ebeec*/
+    if ( !this->Network::IsMultiplayerActive() || this->Network::IsLobbyFeature() ) /*0x5ebeec*/
       v10 = 6; /*0x5ebeff*/
     else
       v10 = 2; /*0x5ebef5*/
@@ -65,7 +67,7 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
             v6 = 1047; /*0x5ebf6c*/
             break;
           default:
-            v6 = v3 != 7 ? -1 : 1048;
+            v6 = v3 != (char *)(7) ? -1 : 1048;
             break;
         }
       }
@@ -79,12 +81,12 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
         || !v8
         || v8 == (wchar_t *)g_HouseClass_ObserverFlags
         || v8 == (wchar_t *)g_Lobby_PlayerCount
-        || v8 == (wchar_t *)g_Lobby_MaxPlayers
+        || v8 == (wchar_t *)((wchar_t *))g_Lobby_MaxPlayers
         || v8 == g_Lobby_PlayerReady )
       {
-        if ( v3 != g_MPCooperativeState ) /*0x5ebfd9*/
+        if ( v3 != (char *)(g_MPCooperativeState) ) /*0x5ebfd9*/
         {
-          if ( v3 >= v10 ) /*0x5ebfe3*/
+          if ( v3 >= (char *)(v10) ) /*0x5ebfe3*/
             PlayerSkirmishSlotHandler(hDlg, v6, g_Lobby_PlayerCount, 0); /*0x5ebfed*/
           else
             PlayerSkirmishSlotHandler(hDlg, v6, g_HouseClass_ObserverFlags, 0); /*0x5ebfe6*/

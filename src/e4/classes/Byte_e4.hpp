@@ -9,7 +9,7 @@ struct Byte {
 // --- flat members (BEGIN) ---
     char Byte_field_00[4];  // 0x0
 // --- flat members (END) ---
-    unsigned char * Zero();
+    unsigned char * Zero(void *a1 = 0);
 };
 
 } // namespace gamemd

@@ -11,6 +11,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/DropListClass_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
 
 // 0x4AF780
 namespace gamemd {
@@ -22,7 +23,7 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   LPVOID *p_Piggybackee; // esi
 
   v2 = (int)(pStm);
-  v3 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, pStm); /*0x4af792*/
+  v3 = (int)(SwizzleManager::SaveLoad((int *)a1->LocomotionClass, pStm));
   if ( v3 < 0 ) /*0x4af796*/
     return v3; /*0x4af796*/
   if ( a1 ) /*0x4af79a*/
@@ -55,23 +56,23 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   int v8; // edi
   int *v9; // ebx
   HRESULT v10; // esi
-  int v12; // edx
+  ILocomotion * v12;
 
   v3 = (gamemd::IStream *)((gamemd::DriveLocomotionClass *)((IStream *)pPStm));
   v4 = (gamemd::DriveLocomotionClass *)(a1);
-  IPersistStream = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x4af817*/
+  IPersistStream = (int)(LoadIPersistStream((LocomotionClass *)a1, pPStm, a3));
   if ( IPersistStream < 0 ) /*0x4af81b*/
     return IPersistStream; /*0x4af81b*/
   if ( !v4->Piggybackee ) /*0x4af826*/
   {
-    v12 = (gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0);
+    v12 = (gamemd::ILocomotion *)((int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0)));
     IDA_LOBYTE(a3) = 0; /*0x4af8cf*/
-    (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x4af8d4*/
+    (*(void (__stdcall **)(IStream *, int *, int, unsigned int))((unsigned int)(v12)+ 16))(v3, &a3, 1, 0); /*0x4af8d4*/
     return IPersistStream; /*0x4af8d8*/
   }
-  v6 = (int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0));
+  v6 = (gamemd::ILocomotion *)((int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0)));
   IDA_LOBYTE(a3) = 1; /*0x4af838*/
-  (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x4af83d*/
+  (*(void (__stdcall **)(IStream *, int *, int, unsigned int))((unsigned int)(v6)+ 16))(v3, &a3, 1, 0); /*0x4af83d*/
   Piggybackee = v4->Piggybackee; /*0x4af840*/
   pPStm = 0; /*0x4af843*/
   if ( Piggybackee ) /*0x4af84d*/
@@ -128,7 +129,7 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
   ILocomotion *Piggybackee; // eax
 
   *(unsigned int *)this->LocomotionClass = (void*)&DriveLocomotionClass_vftable; /*0x4b4d03*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
+  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
   *(unsigned int *)this->__pad_18 = &off_7E7E8C; /*0x4b4d10*/
   Piggybackee = this->Piggybackee; /*0x4b4d17*/
   if ( Piggybackee ) /*0x4b4d1c*/

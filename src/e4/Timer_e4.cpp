@@ -14,7 +14,7 @@
 namespace gamemd {
 void * Timer::Start(DynamicVector * aP1)
 {
-  *(unsigned int *)this->__pad_0 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x46b64c*/
+  *(unsigned int *)this->__pad_0 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x46b64c*/
   *(unsigned int *)&this->ptr_8 = aP1; /*0x46b64e*/
   return this; /*0x46b651*/
 }
@@ -32,12 +32,12 @@ int Timer::StartDouble(double a2)
     IDA_LOBYTE(this->q018) = 1; /*0x4a525e*/
     *(double *)this->__pad_0 = a2 * 900.0; /*0x4a5262*/
     IDA_LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
-    v4 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4a5269*/
+    v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4a5269*/
     IDA_BYTE1(this->q018) = 0; /*0x4a5272*/
-    *(unsigned int *)&this->__pad_6[2] = v4; /*0x4a5276*/
-    *(unsigned int *)&this->__pad_6[6] = v5; /*0x4a527c*/
-    *(unsigned int *)&this->__pad_6[10] = result; /*0x4a527f*/
-    *(unsigned int *)&this->__pad_6[14] = result; /*0x4a5282*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_6))[2] = v4; /*0x4a5276*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_6))[6] = v5; /*0x4a527c*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_6))[10] = result; /*0x4a527f*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_6))[14] = result; /*0x4a5282*/
   }
   return result; /*0x4a5285*/
 }
@@ -47,7 +47,7 @@ namespace gamemd {
 void * Timer::Init(DWORD a2)
 {
   *(unsigned int *)this->__pad_0 = Timer::GetTicks(); /*0x4f1b0b*/
-  *(unsigned int *)&this->__pad_6[2] = a2; /*0x4f1b11*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[2] = a2; /*0x4f1b11*/
   return (DWORD *)this; /*0x4f1b16*/
 }
 }
@@ -60,7 +60,7 @@ int Timer::GetRemainingMs()
 
   v1 = *(unsigned int *)&this->ptr_8; /*0x4f1b26*/
   if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x4f1b2c*/
-    return *(unsigned int *)&this->__pad_6[2]; /*0x4f1b4c*/
+    return *(unsigned int *)&this-((unsigned int *)(>__pad_6))[2]; /*0x4f1b4c*/
   v2 = Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/

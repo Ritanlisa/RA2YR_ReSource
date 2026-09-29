@@ -32,16 +32,27 @@
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/RAMFileClass_e4.hpp"
+#include "e4/classes/VeterancyStruct_e4.hpp"
 
 // 0x679CC0
 namespace gamemd {
 int sub_679CC0()
 {
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
   void *v1[3]; // [esp+4h] [ebp-C4h] BYREF
   unsigned int v2[10]; // [esp+10h] [ebp-B8h] BYREF
   char v3; // [esp+38h] [ebp-90h]
   int v4; // [esp+3Ch] [ebp-8Ch]
-  int v5; // [esp+40h] [ebp-88h]
+  unsigned int v5;
   char v6; // [esp+44h] [ebp-84h]
   unsigned int v7[22]; // [esp+5Ch] [ebp-6Ch] BYREF
   unsigned char v8[12]; // [esp+B4h] [ebp-14h] BYREF
@@ -49,11 +60,11 @@ int sub_679CC0()
 
   if ( !byte_B053B8 ) /*0x679cd0*/
   {
-    v1[1] = (unsigned int)(0);
-    v1[2] = 0; /*0x679cde*/
+    v1[1] = (void *)((unsigned int)(0));
+    v1[2] = (void *)((unsigned int)((void *)((unsigned int)(0))));
     GenericList::Constructor(v2); /*0x679ce2*/
-    v2[0] = (void*)&List_INIClass_INISection___vftable; /*0x679ceb*/
-    memset(&v2[7], 0, 12); /*0x679cf8*/
+    ((unsigned int *)(v2))[0] = (void*)&List_INIClass_INISection___vftable; /*0x679ceb*/
+    memset(&((unsigned int *)(v2))[7], 0, 12); /*0x679cf8*/
     v3 = 0; /*0x679d04*/
     v4 = 0; /*0x679d08*/
     v5 = 0; /*0x679d0c*/
@@ -77,6 +88,7 @@ int sub_679CC0()
 namespace gamemd {
 void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass_flat * aP2, unsigned char * a3, unsigned int * a4)
 {
+    unsigned int v17 = 0;  /* G37 hoist */
   char *i; // eax
   int v7; // edi
   int v8; // eax
@@ -107,7 +119,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
         && (v18 < v17.Capacity
          || (v17.IsAllocated || !v17.Capacity)
          && v19 > 0
-         && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v17.vtable0 + 2))(
+         && (*((uint8_t (**)(VectorClass *, int, unsigned int))v17.vtable0 + 2))(
               &v17,
               v19 + v17.Capacity,
               0)) )
@@ -117,10 +129,10 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
       }
     }
     aP0->Items = (unsigned int)(0);
-    aP0->Capacity = 0; /*0x67b630*/
-    aP0->IsInitialized = 1; /*0x67b633*/
-    aP0->IsAllocated = 0; /*0x67b637*/
-    aP0->vtable0 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b63a*/
+    aP0->Capacity = (unsigned int)(0);
+    aP0->IsInitialized = (unsigned int)(1);
+    aP0->IsAllocated = (unsigned int)(0);
+    aP0->vtable0 = (unsigned int)((void*)&VectorClass_BuildingTypeClass_const___vftable);
     VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
     aP0->vtable0 = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b645*/
     v17.vtable0 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b64b*/
@@ -138,19 +150,19 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   else
   {
     aP0->Items = (unsigned int)(0);
-    aP0->Capacity = 0; /*0x67b69c*/
-    aP0->IsInitialized = 1; /*0x67b69f*/
-    aP0->IsAllocated = 0; /*0x67b6a3*/
-    aP0->vtable0 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b6a6*/
-    if ( aP0 != a4 ) /*0x67b6ac*/
+    aP0->Capacity = (unsigned int)(0);
+    aP0->IsInitialized = (unsigned int)(1);
+    aP0->IsAllocated = (unsigned int)(0);
+    aP0->vtable0 = (unsigned int)((void*)&VectorClass_BuildingTypeClass_const___vftable);
+    if ( aP0 != (gamemd::INIClass *)(a4) ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)aP0); /*0x67b6b0*/
       Capacity = a4->Capacity; /*0x67b6b6*/
       aP0->Capacity = Capacity; /*0x67b6bb*/
       if ( Capacity ) /*0x67b6be*/
       {
-        v14 = (unsigned int)(RA2_OPNEW(4 * Capacity));
-        aP0->Items = (void *)v14; /*0x67b6d2*/
+        v14 = (void *)((unsigned int)(RA2_OPNEW(4 * Capacity)));
+        aP0->Items = (unsigned int)((void *)v14);
         if ( v14 ) /*0x67b6d5*/
         {
           v15 = aP0->Capacity; /*0x67b6d7*/
@@ -174,8 +186,8 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
       }
     }
     aP0[1].vtable0 = (unsigned int)(a4[1].vtable0);
-    aP0[1].Items = a4[1].Items; /*0x67b709*/
-    aP0->vtable0 = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b70c*/
+    aP0[1].Items = (unsigned int)(a4[1].Items);
+    aP0->vtable0 = (unsigned int)((void*)&TypeList_BuildingTypeClass_const___vftable);
   }
   return aP0; /*0x67b682*/
 }
@@ -217,7 +229,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
         && (v17.InfantryTypeVector_field_0x10 < v17.InfantryTypeVector_field_0x08
          || (IDA_BYTE1(v17.InfantryTypeVector_field_0x0C) || !v17.InfantryTypeVector_field_0x08)
          && v17.InfantryTypeVector_field_0x14 > 0
-         && (*(uint8_t (__thiscall **)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)v17.__pad_0 + 8))(
+         && (*(uint8_t (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)v17.__pad_0 + 8))(
               &v17,
               v17.InfantryTypeVector_field_0x14 + v17.InfantryTypeVector_field_0x08,
               0)) )
@@ -259,7 +271,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
       *(unsigned int *)(aP0 + 8) = v13; /*0x67bc7b*/
       if ( v13 ) /*0x67bc7e*/
       {
-        v14 = (unsigned int)(RA2_OPNEW(4 * v13));
+        v14 = (void *)((unsigned int)(RA2_OPNEW(4 * v13)));
         *(unsigned int *)(aP0 + 4) = v14; /*0x67bc92*/
         if ( v14 ) /*0x67bc95*/
         {
@@ -327,7 +339,7 @@ int ArtINI_Load()
   int v3; // [esp+64h] [ebp-8h]
 
   INIClass::ClearSection((int)&dword_887180, 0, 0); /*0x679eec*/
-  CCFileClass::Construct(v1, aArtmdIni); /*0x679efa*/
+  ((CCFileClass *)(v1))->Construct(aArtmdIni); /*0x679efa*/
   CCINIClass::Load(&dword_887180, (int)v1, 0, 0); /*0x679f0d*/
   v1[0] = (void*)&CCFileClass_vftable; /*0x679f16*/
   v3 = 0; /*0x679f1e*/

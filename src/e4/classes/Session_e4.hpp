@@ -85,11 +85,15 @@ struct Session {
     unsigned int field_160;
     unsigned int field_174;
     unsigned int field_178;
+    unsigned int Debug;
+    unsigned int Dialog;
+    unsigned int Timer;
+    unsigned int Event;
 // --- flat members (END) ---
-    int RemoveTeam(MSShapeAnim * aP1);  // 0x5D1D80
-    int PrepareGame();  // 0x5E74E0
+    int RemoveTeam(MSShapeAnim * aP1, void * a1, void * a2);  // 0x5D1D80
+    int PrepareGame(void *a1 = 0);  // 0x5E74E0
     int GetPlayerOption();  // 0x69B700
-    int GetPlayerColor();  // 0x69B720
+    int GetPlayerColor(void *a1 = 0);  // 0x69B720
     int StartGame();  // 0x5ED370
 };
 } // namespace gamemd

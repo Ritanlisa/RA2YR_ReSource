@@ -17,6 +17,7 @@ struct MSPCXAnim_42 {
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     char AllocCopyData_8B(int a2,  unsigned int * a3);    // 0x5D09C0
     void FreeData();  // 0x5D05A0
@@ -33,7 +34,7 @@ struct MSPCXAnim_42 {
     int FindIndex_0(unsigned int * a2);  // 0x5D0F70
     char AddRef(int a2);  // 0x5D1200
     char Release(int a2,  unsigned int * a3);    // 0x5D1240
-    void ddtor();  // 0x5D12F0
+    void ddtor(void *a1 = 0);  // 0x5D12F0
     int Load(unsigned int * a2);  // 0x5D1320
     unsigned int Draw(int a2);  // 0x5D1360
     DynamicVector * Constructor_VectorClass_Point2D_(char a2);  // 0x5D1710

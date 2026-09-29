@@ -23,6 +23,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/JumpjetLocomotionClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x533D20
 namespace gamemd {
@@ -53,7 +54,7 @@ int KeyboardConfig::LoadINI()
     *(unsigned int *)&stru_87F5F0.__pad_58[64] = 0; /*0x533d8b*/
     stru_87F5F0.__pad_58[68] = 0; /*0x533d91*/
     *(unsigned int *)&stru_87F5F0.__pad_58[72] = 0; /*0x533d97*/
-    for ( i = 0; i < INIClass::GetKeyCount(v9.INIClass, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
+    for ( i = 0; i < (int)(INIClass)::GetKeyCount(v9.INIClass, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
     {
       StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v9.INIClass, g_INI_Key_Hotkey, v1); /*0x533dbf*/
       v3 = 0; /*0x533dd1*/
@@ -61,7 +62,7 @@ int KeyboardConfig::LoadINI()
       if ( *(int *)&stru_87F5F0.__pad_58[32] > 0 ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/
-                  (const char *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_87F5F0.__pad_58[20]
+                  (const char *)(*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_87F5F0.__pad_58[20]
                                                                             + 4 * v3)
                                                               + 4))(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[20]
                                                                               + 4 * v3)),
@@ -101,7 +102,7 @@ int KeyboardConfig::LoadINI()
   }
   else
   {
-    Debug::Log(); /*0x533efe*/
+    this->Debug::Log(); /*0x533efe*/
     *(unsigned int *)v10.CDFileClass = (void*)&CCFileClass_vftable; /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/

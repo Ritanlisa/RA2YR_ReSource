@@ -14,6 +14,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/BitTextClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/File_e4.hpp"
 
 // 0x432AB0
 namespace gamemd {
@@ -37,7 +38,7 @@ int BinkMovieHandle::RenderFrameClipped(int a2, int v11)
 v3 = (int *)(this->tempPath);
   v4 = v3[1]; /*0x432ac3*/
   v5 = *v3; /*0x432ac7*/
-  v6 = (int *)(*(int (__thiscall **)(unsigned int, unsigned char *))(**(unsigned int **)(&this->tempPath2) + 120))(this->width, v19); /*0x432ad8*/
+  v6 = (int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)(&this->tempPath2) + 120))(this->width, v19); /*0x432ad8*/
   result = 0; /*0x432ade*/
   v8 = v6[2]; /*0x432ae0*/
   v9 = 0; /*0x432ae3*/
@@ -109,7 +110,7 @@ unsigned int * BinkMovieHandle::CopyFrameToSurface()
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
 
   width = (DSurface *)this->width; /*0x43306e*/
-  if ( width == g_DSurface_Primary ) /*0x433073*/
+  if ( width == (gamemd::DSurface *)(g_DSurface_Primary) ) /*0x433073*/
   {
     GetClientRect(g_hWnd, &Rect); /*0x433085*/
     ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x433096*/
@@ -117,14 +118,14 @@ unsigned int * BinkMovieHandle::CopyFrameToSurface()
     v4 = Rect.top + this->currentFrame; /*0x4330ae*/
     width = (DSurface *)this->width; /*0x4330b0*/
     BinkMovie::AdjustSurfaceFormat((int)width); /*0x4330b4*/
-    v12 = (*((int (__thiscall **)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x4330c8*/
+    v12 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x4330c8*/
     if ( v12 ) /*0x4330cc*/
     {
-      v10 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x4330dd*/
-      v5 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x4330e1*/
+      v10 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x4330dd*/
+      v5 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x4330e1*/
       BinkCopyToBuffer(this->tempPath, v12, v10, v5, v3, v4, (int)this->renderTarget | 0x80000000); /*0x4330fe*/
   LABEL_6:
-      (*((void (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 24))(width); /*0x43315b*/
+      (*((void (**)(DSurface *))width->DSurface_field_0x0 + 24))(width); /*0x43315b*/
     }
   }
   else
@@ -132,11 +133,11 @@ unsigned int * BinkMovieHandle::CopyFrameToSurface()
     currentFrame = this->currentFrame; /*0x433103*/
     height = this->height; /*0x433109*/
     BinkMovie::AdjustSurfaceFormat(this->width); /*0x43310d*/
-    v7 = (*((int (__thiscall **)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x43311f*/
+    v7 = (*((int (**)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x43311f*/
     if ( v7 ) /*0x433123*/
     {
-      v11 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x433130*/
-      v8 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x433134*/
+      v11 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x433130*/
+      v8 = (*((int (**)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x433134*/
       BinkCopyToBuffer(this->tempPath, v7, v11, v8, height, currentFrame, (int)this->renderTarget | 0x80000000); /*0x433155*/
       goto LABEL_6; /*0x433155*/
     }
@@ -235,9 +236,9 @@ unsigned int * BinkMovieHandle::Close()
 namespace gamemd {
 BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 {
-  BinkMovie *height; // edi
+  void * height;
 
-  height = (gamemd::BinkMovie *)((unsigned int)((BinkMovie *)this->height));
+  height = (void *)((unsigned int)((gamemd::BinkMovie *)((unsigned int)((BinkMovie *)this->height))));
   *(unsigned int *)this->MovieHandle = (void*)&BinkMovieHandle_vftable; /*0x5c0a37*/
   if ( height ) /*0x5c0a3f*/
   {

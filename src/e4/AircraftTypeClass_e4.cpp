@@ -26,6 +26,9 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x41C8B0
 AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
@@ -53,7 +56,7 @@ AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
   if ( dword_A8B228 < dword_A8B220 /*0x41c95d*/
     || (byte_A8B225 || !dword_A8B220)
     && dword_A8B22C > 0
-    && (v4 = (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A8B218 + 8))(
+    && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A8B218 + 8))(
                &dword_A8B218,
                dword_A8B220 + dword_A8B22C,
                0) == 0,
@@ -112,7 +115,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   char v14; // [esp-Ch] [ebp-98h]
   char v15; // [esp-Ch] [ebp-98h]
   char v16; // [esp-Ch] [ebp-98h]
-  int v17; // [esp-Ch] [ebp-98h]
+  AnimTypeClass ** v17;
   uint8_t ***v18; // [esp+0h] [ebp-8Ch]
   int v19; // [esp+8h] [ebp-84h]
   char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
@@ -162,7 +165,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   {
     v10 = v19; /*0x41cd2d*/
   }
-  v17 = *(unsigned int *)(v4 + 3588); /*0x41cd3c*/
+  v17 = (gamemd::AnimTypeClass **)((int)((gamemd::AnimTypeClass **)(*(unsigned int *)(v4 + 3588))));
   *(unsigned int *)(v4 + 3584) = v10; /*0x41cd43*/
   *(unsigned int *)(v4 + 3588) = INIClass::ReadInt_Overwrite( /*0x41cd4e*/
                              (bool *)&DSurface_ViewBounds.__pad_FC[228],
@@ -170,7 +173,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
                              aSpawndelay,
                              v17);
   v11 = (gamemd::AnimTypeClass **)(INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)(v4 + 36), aFlyby, *(unsigned char *)(v4 + 3595)));
-  v12 = (char)((gamemd::AnimTypeClass **)(*(unsigned char *)(v4 + 3596)));
+  v12 = (gamemd::AnimTypeClass **)((char)((gamemd::AnimTypeClass **)(*(unsigned char *)(v4 + 3596))));
   *(unsigned char *)(v4 + 3595) = v11; /*0x41cd6e*/
   *(unsigned char *)(v4 + 3596) = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)(v4 + 36), aFlyback, v12); /*0x41cd83*/
   return 1; /*0x41cd8a*/
@@ -188,7 +191,7 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
   *(unsigned int *)&this->TechnoTypeClass[12] = (void*)&AircraftTypeClass_vftable; /*0x41cffa*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x41d001*/
   v5 = this; /*0x41d016*/
-  v3 = (*(int (__thiscall **)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
+  v3 = (*(int (**)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
   if ( v3 != -1 && v3 < dword_A8B228 && v3 < --dword_A8B228 ) /*0x41d035*/
   {
     do /*0x41d04d*/

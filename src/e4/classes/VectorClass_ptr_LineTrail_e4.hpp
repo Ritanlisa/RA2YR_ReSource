@@ -13,10 +13,10 @@ struct VectorClass_ptr_LineTrail {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    int Get(int a2);  // 0x556F00
+    int Get(int a2, void *a1 = 0);  // 0x556F00
     char Add(int a2);  // 0x556F10
     char Release(int a2,  unsigned int * a3);    // 0x556F50
-    void Remove();  // 0x557000
+    void Remove(void *a1 = 0);  // 0x557000
     int GetSize(unsigned int * a2);  // 0x557030
     unsigned int GetCapacity(int a2);  // 0x557070
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x557170

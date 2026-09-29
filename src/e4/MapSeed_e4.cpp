@@ -42,7 +42,7 @@ int MapSeed::IsCellInBounds()
   int v3; // esi
 
   v1 = *(int16_t *)this->__pad_0; /*0x5ac230*/
-  result = *(int16_t *)&this->__pad_0[2]; /*0x5ac233*/
+  result = *(int16_t *)&this-((unsigned int *)(>__pad_0))[2]; /*0x5ac233*/
   v3 = result + v1; /*0x5ac23e*/
   IDA_LOBYTE(result) = result + v1 > g_MissionQueueFrame.localVariables[160] /*0x5ac261*/
                 && v1 - result < g_MissionQueueFrame.localVariables[160]

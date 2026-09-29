@@ -4,7 +4,7 @@
 #include "core/globals_core.hpp"
 #include "core/globals_core.hpp"
 #include "core/globals_core.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 #include "core/globals_core.hpp"
 #include "structure/globals_structure.hpp"
 
@@ -59,7 +59,7 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
           if ( !*(unsigned char *)(v6 + 129) && *(unsigned char *)(v6 + 144) ) /*0x50afbe*/
           {
             v20 = (*(int (__stdcall **)(int))(*(unsigned int *)(*(unsigned int *)(v6 + 540) + 4) + 16))(*(unsigned int *)(v6 + 540) + 4); /*0x50afe3*/
-            if ( v20 == (*(int (__stdcall **)(int))(ownerHouse->vtable2 + 16))(ownerHouse + 4) ) /*0x50aff0*/
+            if ( v20 == (*(int (__stdcall **)(int))(ownerHouse->vtable2 + 16))((unsigned int)(ownerHouse)+ 4) ) /*0x50aff0*/
             {
               v7 = (int *)(v6 + 1516); /*0x50aff2*/
               v8 = 3; /*0x50aff8*/
@@ -97,7 +97,7 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
       v12 = ownerHouse->powerDrain; /*0x50b0a6*/
       if ( v11 < v12 && v12 && (!v11 || (double)ownerHouse->powerOutput / (double)ownerHouse->powerDrain < 1.0) ) /*0x50b0d3*/
         v4 = 0; /*0x50b0d5*/
-      (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)v10 + 64))(v10); /*0x50b0d9*/
+      (*(void (**)(unsigned char *))(*(unsigned int *)v10 + 64))(v10); /*0x50b0d9*/
       Status = HouseClass::GetStatus((void *)0x39, 0); /*0x50b0ea*/
       if ( !v16 || ownerHouse->defeated ) /*0x50b0f4*/
       {

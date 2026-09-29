@@ -132,6 +132,8 @@ struct CellClass {
     unsigned int vtable28;
     unsigned int vtable46;
     unsigned int vtable48;
+    unsigned int estimatedHealth6;
+    unsigned int objectTypeFlags;
 // --- flat members (END) ---
     HouseClass * * UpdateTerrain(void* aP0, void* aP1);
     HouseClass * * UpdateTileVariant2(void* aP0, void* aP1);
@@ -156,7 +158,7 @@ struct CellClass {
     static double DetermineTileType(...);  // C2597 interim stub
     static double GetCoords(...);  // C2597 interim stub
     static double GetTerrainFlag(...);  // C2597 interim stub
-    static double IsBuildable(...);  // C2597 interim stub
+     double IsBuildable(...);  // C2597 interim stub
     static double IsTerrainType(...);  // C2597 interim stub
     static double SetTerrainType(...);  // C2597 interim stub
     static double ClearCellContents(...);  // C2597 interim stub

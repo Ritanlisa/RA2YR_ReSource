@@ -283,7 +283,7 @@ struct TacticalClass {
     unsigned int u32_58C6;
     unsigned int updateVisibility;
     unsigned int vtable46;
-    unsigned int ScrollView;
+    unsigned int SetObserverView;
 // --- flat members (END) ---
     char StubReturnFalse();
     char StubReturnFalse11();
@@ -322,7 +322,6 @@ struct TacticalClass {
     static double ProcessView(...);  // C2597 interim stub
     static double RenderCells(...);  // C2597 interim stub
     static double ResetView(...);  // C2597 interim stub
-    else SetObserverView(v13);  // def-aligned
     static double SetViewDimensions(...);  // C2597 interim stub
     static double BuildCommandBar(...);  // C2597 interim stub
     static double PixelToCellCheck(...);  // C2597 interim stub

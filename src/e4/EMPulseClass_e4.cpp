@@ -37,7 +37,7 @@ EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
     EMPulseClass::IterateCellsInRadius(a3); /*0x4c5ae8*/
   AbstractClass::AnnounceExpiredPointer((void **)a3, 1); /*0x4c5af1*/
   v5 = a3; /*0x4c5b06*/
-  v3 = (*(int (__thiscall **)(int *, EMPulseClass **))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
+  v3 = (*(int (**)(int *, EMPulseClass **))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
   if ( v3 != -1 && v3 < dword_8A3880 && v3 < --dword_8A3880 ) /*0x4c5b25*/
   {
     do /*0x4c5b3d*/

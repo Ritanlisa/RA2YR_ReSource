@@ -33,6 +33,11 @@ struct E4Recv_634B20 {
     unsigned int q2148;  // 0x2148
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
+    unsigned int attachedBomb;
+    unsigned int lineTrailer;
+    unsigned int nextObject;
+    unsigned int occupant;
+    unsigned int Debug;
 // --- flat members (END) ---
     void sub_634B20();  // 0x634B20
 };

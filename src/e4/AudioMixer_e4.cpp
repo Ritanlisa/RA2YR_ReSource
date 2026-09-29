@@ -60,7 +60,7 @@ int AudioMixer::PlaySample()
   }
   else
   {
-    v7 = Audio::Callback(); /*0x4071f2*/
+    v7 = this->Audio::Callback(); /*0x4071f2*/
     v8 = this->u32_18; /*0x4071f7*/
     v9 = this->u32_1C; /*0x4071fa*/
     v7 = v7; /*0x4071fd*/
@@ -173,7 +173,7 @@ int AudioMixer::Shutdown()
 {
   if ( g_Audio_Enabled ) /*0x406e88*/
     AudioQueue::StopAllVoices(g_Audio_Enabled, 1); /*0x406e8f*/
-  return AudioStream::CleanupChannels();
+  return this->AudioStream::CleanupChannels();
 }
 } // namespace gamemd
 // 0x753620

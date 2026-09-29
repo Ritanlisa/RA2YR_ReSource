@@ -13,6 +13,10 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x67CEF0
 namespace gamemd {
@@ -29,7 +33,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   WCHAR WideCharStr[64]; // [esp+6Ch] [ebp-474h] BYREF
   wchar_t v15[506]; // [esp+ECh] [ebp-3F4h] BYREF
 
-  Debug::Log(); /*0x67cf05*/
+  this->Debug::Log(); /*0x67cf05*/
   ppstgOpen = 0; /*0x67cf1b*/
   MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 64); /*0x67cf1f*/
   ComPtr::ReleaseSimple((int *)&ppstgOpen); /*0x67cf29*/
@@ -47,7 +51,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   Map_Save_681110(v15, *((unsigned int *)g_ScenarioClass_Instance + 3379)); /*0x67cfca*/
   Map_Save_681130(v15, *((unsigned int *)g_ScenarioClass_Instance + 1173)); /*0x67cfe2*/
   Map_Save_6811C0((char *)v15, aSunExe); /*0x67cff3*/
-  Map_Save_6812C0(v15, g_GameMode_Current[0]); /*0x67d006*/
+  Map_Save_6812C0(v15, ((unsigned int *)(g_GameMode_Current))[0]); /*0x67d006*/
   CoFileTimeNow(&FileTime); /*0x67d010*/
   Map_Save_681280(v15, &FileTime); /*0x67d022*/
   Map_Save_681200(v15, &FileTime); /*0x67d033*/
@@ -80,7 +84,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     WinAPI::Wrapper(-2147467261); /*0x67d120*/
   if ( (*(int (__stdcall **)(int, int))(*(unsigned int *)v9 + 12))(v9, v10) < 0 ) /*0x67d136*/
   {
-    Debug::Log(); /*0x67d13d*/
+    this->Debug::Log(); /*0x67d13d*/
     if ( v9 ) /*0x67d14b*/
       (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d150*/
     if ( v10 ) /*0x67d159*/
@@ -129,7 +133,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
       ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d298*/
     return 0; /*0x67d2a7*/
   }
-  Debug::Log(); /*0x67d2b1*/
+  this->Debug::Log(); /*0x67d2b1*/
   if ( pStm ) /*0x67d2bf*/
     pStm->lpVtbl->Release(pStm); /*0x67d2c4*/
   if ( v9 ) /*0x67d2cd*/

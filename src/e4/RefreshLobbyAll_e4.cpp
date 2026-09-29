@@ -14,6 +14,7 @@
 #include "e4/classes/Rect_e4.hpp"
 #include "e4/classes/E4Recv_7AE830_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x5E8D40
 namespace gamemd {
@@ -73,7 +74,7 @@ int sub_5EA9B0(int a1)
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5ea9f9*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
-    || v1 == g_Lobby_PlayerReady
+    || v1 == (wchar_t *)(g_Lobby_PlayerReady)
     || v1 == (wchar_t *)g_Lobby_MaxPlayers )
   {
     return -2; /*0x5eaa02*/
@@ -98,7 +99,7 @@ int sub_5EAA10(int a1)
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5eaa59*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
-    || v1 == g_Lobby_PlayerReady
+    || v1 == (wchar_t *)(g_Lobby_PlayerReady)
     || v1 == (wchar_t *)g_Lobby_MaxPlayers )
   {
     return -2; /*0x5eaa62*/
@@ -123,7 +124,7 @@ int sub_5EAA70(int a1)
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5eaab9*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
-    || v1 == g_Lobby_PlayerReady
+    || v1 == (wchar_t *)(g_Lobby_PlayerReady)
     || v1 == (wchar_t *)g_Lobby_MaxPlayers )
   {
     return -2; /*0x5eaac2*/
@@ -144,9 +145,9 @@ void sub_7A0E50()
   {
     v1 = *(wchar_t **)((char *)&dword_A8DA90 + i * 4); /*0x7a0e53*/
     if ( !v1 || !IsKnownPointer(v1) ) /*0x7a0e5d*/
-      dword_B76440[i] = -1; /*0x7a0e66*/
+      ((unsigned int *)(dword_B76440))[i] = -1; /*0x7a0e66*/
     v2 = ToWideStringChar(*(char **)((char *)&dword_A8DA90 + i * 4)); /*0x7a0e76*/
-    SetGameOptionsPing(v2, dword_B76440[i]); /*0x7a0e83*/
+    SetGameOptionsPing(v2, ((unsigned int *)(dword_B76440))[i]); /*0x7a0e83*/
   }
 }
 } // namespace gamemd

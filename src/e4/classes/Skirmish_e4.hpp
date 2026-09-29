@@ -59,7 +59,7 @@ struct Skirmish {
     CampaignClass * * SetupAllSpawnLocations();
     ReferenceCounted * * Setup_DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, int a4);
     TechnoTypeClass * * RandomizeSettings(ObjectClass * aP1);
-    int EnableSpawnButtons();
+    int EnableSpawnButtons(void *a1 = 0);
     int FillPlayerNames();
     int ReadSettings(HWND hDlg);
     int RenderPreview(SkirmishDialog * aP1);

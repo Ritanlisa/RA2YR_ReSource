@@ -126,8 +126,8 @@ void sub_622610()
   }
   if ( v2 && stru_887598.lineTrailer ) /*0x62262b*/
   {
-    if ( !(*(uint8_t (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 28))(stru_887598.lineTrailer) ) /*0x62262f*/
-      (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 24))(stru_887598.lineTrailer); /*0x62263e*/
+    if ( !(*(uint8_t (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 28))(stru_887598.lineTrailer) ) /*0x62262f*/
+      (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 24))(stru_887598.lineTrailer); /*0x62263e*/
     return dword_AC48EC; /*0x622641*/
   }
   return result; /*0x622646*/
@@ -218,7 +218,7 @@ void sub_6AC430()
   unsigned int v2; // eax
 
   v1 = 26; /*0x6ac43b*/
-  if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6ac435*/
+  if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6ac435*/
     v1 = 18; /*0x6ac444*/
   v2 = (int)((uint64_t)(1374389535LL /*0x6ac46c*/
                               * (g_DSurface_ViewBounds - g_SidebarBounds - v1 + g_DSurface_SidebarBounds - 7)) >> 32) >> 4;
@@ -249,10 +249,10 @@ wchar_t * * sub_730EA0()
       {
         if ( (v4[20] & 1) != 0 ) /*0x730ec7*/
         {
-          if ( (*(uint8_t (__thiscall **)(unsigned int))(*(unsigned int *)v4 + 160))(*((unsigned int *)dword_A8ECBC + v2)) /*0x730ee3*/
-            || (result = (wchar_t *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v4 + 156))(v4), (unsigned char)result) )
+          if ( (*(uint8_t (**)(unsigned int))(*(unsigned int *)v4 + 160))(*((unsigned int *)dword_A8ECBC + v2)) /*0x730ee3*/
+            || (result = (wchar_t *)(*(int (**)(unsigned char *))(*(unsigned int *)v4 + 156))(v4), (unsigned char)result) )
           {
-            result = (wchar_t *)(*(int (__thiscall **)(unsigned char *, int))(*(unsigned int *)v4 + 884))(v4, 6); /*0x730eeb*/
+            result = (wchar_t *)(*(int (**)(unsigned char *, int))(*(unsigned int *)v4 + 884))(v4, 6); /*0x730eeb*/
             v3 = (char)result; /*0x730ef1*/
             if ( !(unsigned char)result ) /*0x730ef5*/
               break; /*0x730ef5*/
@@ -278,11 +278,11 @@ void * sub_730F30()
   char *v2; // eax
   char v3[112]; // [esp+0h] [ebp-70h] BYREF
 
-  result = (wchar_t *)dword_A8B538[0]; /*0x730f30*/
-  if ( !dword_A8B538[0] ) /*0x730f3a*/
+  result = (wchar_t *)((unsigned int *)(dword_A8B538))[0]; /*0x730f30*/
+  if ( !((unsigned int *)(dword_A8B538))[0] ) /*0x730f3a*/
   {
-    result = *(wchar_t **)&stru_A8EB00.?[416]; /*0x730f51*/
-    if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1408) < *(int *)&stru_A8EB00.?[416] ) /*0x730f5a*/
+    result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730f51*/
+    if ( dword_84555C + *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1408) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x730f5a*/
     {
       v2 = EventClass::AddEvent(v3, (int)dword_A83D4C->Object_field_0x30, 0x2Du); /*0x730f6c*/
       if ( (int)stru_A80220.lineTrailer < 128 ) /*0x730f7b*/
@@ -292,8 +292,8 @@ void * sub_730F30()
         dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x730fc3*/
         ++stru_A80220.lineTrailer; /*0x730fc9*/
       }
-      dword_84555C = *(unsigned int *)&stru_A8EB00.?[416]; /*0x730fd3*/
-      return *(wchar_t **)&stru_A8EB00.?[416]; /*0x730fce*/
+      dword_84555C = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730fd3*/
+      return *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x730fce*/
     }
   }
   return result; /*0x730fd8*/
@@ -323,10 +323,10 @@ void * sub_730FE0()
       {
         if ( (v5[20] & 1) != 0 ) /*0x731007*/
         {
-          result = (wchar_t *)(*(int (__thiscall **)(unsigned int))(*(unsigned int *)v5 + 160))(*((unsigned int *)dword_A8ECBC + v3)); /*0x73100d*/
+          result = (wchar_t *)(*(int (**)(unsigned int))(*(unsigned int *)v5 + 160))(*((unsigned int *)dword_A8ECBC + v3)); /*0x73100d*/
           if ( (unsigned char)result ) /*0x731015*/
           {
-            result = (wchar_t *)(*(int (__thiscall **)(unsigned char *, int))(*(unsigned int *)v5 + 884))(v5, 7); /*0x73101d*/
+            result = (wchar_t *)(*(int (**)(unsigned char *, int))(*(unsigned int *)v5 + 884))(v5, 7); /*0x73101d*/
             v4 = (char)result; /*0x731023*/
             if ( !(unsigned char)result ) /*0x731027*/
               break; /*0x731027*/
@@ -351,19 +351,19 @@ AbstractClass * * sub_7318F0()
   char *result; // eax
   char v2[112]; // [esp+0h] [ebp-70h] BYREF
 
-  result = *(char **)&stru_A8EB00.?[228]; /*0x7318f0*/
-  if ( *(unsigned int *)&stru_A8EB00.?[228] ) /*0x7318fa*/
+  result = *(char **)&(unsigned int *)((char *)&stru_A8EB00 + 228); /*0x7318f0*/
+  if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 228) ) /*0x7318fa*/
   {
     result = (char *)dword_A83D4C; /*0x731900*/
     if ( !dword_A83D4C->__pad_140[181] ) /*0x731905*/
     {
-      result = (char *)(*(int (__thiscall **)(unsigned int))(***(unsigned int ***)&stru_A8EB00.?[216] + 60))(**(unsigned int **)&stru_A8EB00.?[216]); /*0x73191d*/
+      result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 60))(**(unsigned int **)&(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x73191d*/
       if ( result != (char *)dword_A83D4C ) /*0x731926*/
       {
-        result = (char *)(*(int (__thiscall **)(unsigned int))(***(unsigned int ***)&stru_A8EB00.?[216] + 60))(**(unsigned int **)&stru_A8EB00.?[216]); /*0x731935*/
+        result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 60))(**(unsigned int **)&(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x731935*/
         if ( result[492] ) /*0x731938*/
         {
-          result = (char *)(*(int (__thiscall **)(unsigned int))(***(unsigned int ***)&stru_A8EB00.?[216] + 56))(**(unsigned int **)&stru_A8EB00.?[216]); /*0x73194f*/
+          result = (char *)(*(int (**)(unsigned int))(***(unsigned int ***)&(unsigned int *)((char *)&stru_A8EB00 + 216) + 56))(**(unsigned int **)&(unsigned int *)((char *)&stru_A8EB00 + 216)); /*0x73194f*/
           if ( *(unsigned int *)&dword_A8B238 ) /*0x73195a*/
           {
             if ( ((int)dword_A8B230->vtable0 & 0x400) == 0 /*0x731981*/
@@ -400,7 +400,7 @@ void sub_6D0E60()
   v1 = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[856]; /*0x6d0e73*/
   v3[0] = 0; /*0x6d0e7b*/
   v3[1] = 0; /*0x6d0e7f*/
-  v2 = (int *)(*((int (__thiscall **)(DSurface *, unsigned char *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x6d0e91*/
+  v2 = (int *)(*((int (**)(DSurface *, unsigned char *))DSurface_Sidebar->DSurface_field_0x0 + 30))( /*0x6d0e91*/
                 DSurface_Sidebar,
                 v4);
   DrawToSurfaceSHP( /*0x6d0ea9*/
@@ -654,8 +654,8 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
   int16_t v13; // si
   unsigned int v14; // ebp
   int16_t v15; // di
-  int v16; // ecx
-  unsigned int v17; // eax
+  unsigned int * v16;
+  unsigned int * v17;
   bool v18; // zf
   int v19; // [esp+Ch] [ebp-24h]
   int v20; // [esp+10h] [ebp-20h]
@@ -677,7 +677,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
       v6 = 1; /*0x621813*/
       v20 = 1; /*0x621818*/
     }
-    v24 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(aP1->q05C)(aP1, 0, 0); /*0x62182c*/
+    v24 = (*(int (**)(int, unsigned int, unsigned int))(aP1->q05C)(aP1, 0, 0); /*0x62182c*/
     if ( v24 ) /*0x621830*/
     {
       v28 = 0; /*0x621839*/
@@ -686,7 +686,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
         v7 = a3; /*0x62184a*/
         do /*0x6219b1*/
         {
-          v8 = *v4 + (v28 + v4[1]) * ((*(int (__thiscall **)(int))(v5->isOnMap)(v5) / 2); /*0x62186b*/
+          v8 = *v4 + (v28 + v4[1]) * ((*(int (**)(int))(v5->isOnMap)(v5) / 2); /*0x62186b*/
           v9 = v4[3] / 4; /*0x621876*/
           if ( v28 == 3 * v9 ) /*0x621880*/
             v19 = 1; /*0x621882*/
@@ -714,14 +714,14 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
                 v15 = IDA_HIWORD(g_ScreenSaverState) /*0x621946*/
                     & ((g_GameScreenConfig * (uint16_t)(IDA_HIWORD(g_ScreenSaverState) & v13)
                       + v12 * (unsigned int)(uint16_t)(IDA_HIWORD(g_ScreenSaverState) & v7)) >> 8);
-                v16 = (unsigned int *)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState));
-                v4 = aP0; /*0x62195b*/
-                v6 = v20; /*0x62195f*/
+                v16 = (int)((unsigned int *)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState)));
+                v4 = (unsigned int *)(aP0);
+                v6 = (unsigned int)(v20);
                 v17 = v16 + v12 * (uint16_t)(v7 & g_CreditsScreenState); /*0x621963*/
                 v10 = v21; /*0x621965*/
                 IDA_LOWORD(v14) = v15 | v14; /*0x621969*/
                 v7 = a3; /*0x62196b*/
-                *v21 = (v17 >> 8) | v14; /*0x621974*/
+                *v21 = ((unsigned int)(v17)>> 8) | v14; /*0x621974*/
                 v5 = aP1; /*0x621977*/
               }
               else
@@ -741,7 +741,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
         }
         while ( v28 < v4[3] ); /*0x6219b1*/
       }
-      (*(void (__thiscall **)(int))(v5->q060)(v5); /*0x6219bd*/
+      (*(void (**)(int))(v5->q060)(v5); /*0x6219bd*/
     }
   }
 }
@@ -776,7 +776,7 @@ void sub_6D0FD0()
   v2 = *((unsigned int *)dword_B0FC64 + 2) + *(unsigned int *)dword_B0FC64; /*0x6d100b*/
   do /*0x6d10a6*/
   {
-    v3 = g_ObjectTrackingPool[v1]; /*0x6d1012*/
+    v3 = ((unsigned int *)(g_ObjectTrackingPool))[v1]; /*0x6d1012*/
     if ( v3 <= 0x18 ) /*0x6d101b*/
     {
       v4 = (char *)&stru_B0C1C0 + 96 * v3; /*0x6d102c*/
@@ -791,8 +791,8 @@ void sub_6D0FD0()
           v4[45] = 0; /*0x6d1078*/
           *((unsigned int *)v4 + 12) = 0; /*0x6d107b*/
           *((unsigned int *)v4 + 8) = 5; /*0x6d107e*/
-          (*(void (__thiscall **)(char *, int, int))(*(unsigned int *)v4 + 100))(v4, v5, v6); /*0x6d108b*/
-          (*(void (__thiscall **)(char *, int, unsigned int, unsigned int))(*(unsigned int *)v4 + 136))(v4, dword_B0C148[v1], 0, 0); /*0x6d109c*/
+          (*(void (**)(char *, int, int))(*(unsigned int *)v4 + 100))(v4, v5, v6); /*0x6d108b*/
+          (*(void (**)(char *, int, unsigned int, unsigned int))(*(unsigned int *)v4 + 136))(v4, ((unsigned int *)(dword_B0C148))[v1], 0, 0); /*0x6d109c*/
         }
       }
     }
@@ -849,11 +849,11 @@ int sub_639DA0()
     v2 = (unsigned char *)*((unsigned int *)dword_A8ECBC + v1); /*0x639db9*/
     if ( !v2 || (v2[20] & 1) == 0 ) /*0x639dca*/
       break; /*0x639dca*/
-    if ( !(*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v2 + 1212))(v2) ) /*0x639dd8*/
+    if ( !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)v2 + 1212))(v2) ) /*0x639dd8*/
     {
-      if ( (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v2 + 44))(v2) == 2 ) /*0x639def*/
+      if ( (*(int (**)(unsigned char *))(*(unsigned int *)v2 + 44))(v2) == 2 ) /*0x639def*/
         return 0; /*0x639df8*/
-      if ( (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v2 + 44))(v2) == 6 ) /*0x639e03*/
+      if ( (*(int (**)(unsigned char *))(*(unsigned int *)v2 + 44))(v2) == 6 ) /*0x639e03*/
         return 1; /*0x639e0f*/
       return 2; /*0x639e03*/
     }
@@ -872,7 +872,7 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
   int v8; // edx
 
   if ( dword_A8B23C
-    && !(*((uint8_t (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C)
+    && !(*((uint8_t (**)(ObjectClass *))dword_A8B23C->AbstractClass + 16))(dword_A8B23C)
     && !Network::IsMultiplayerActive() )
   {
     if ( *(unsigned int *)&dword_A8B238 == 4 )
@@ -882,7 +882,7 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
     if ( (int)a2 > v6 ) /*0x5ebe22*/
       a2 = (ObjectClass *)v6; /*0x5ebe24*/
   }
-  if ( a4 && !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)a4 + 64))(a4) || Network::IsMultiplayerActive() ) /*0x5ebe37*/
+  if ( a4 && !(*(uint8_t (**)(int))(*(unsigned int *)a4 + 64))(a4) || Network::IsMultiplayerActive() ) /*0x5ebe37*/
   {
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5ebe47*/
     {
@@ -951,7 +951,7 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
   v10 = 0; /*0x7939a5*/
   if ( dword_A8E04C > 0 ) /*0x7939a9*/
   {
-    result = &unk_A8DC50; /*0x7939ab*/
+    result = (unsigned int *)(&unk_A8DC50);
     while ( 1 ) /*0x7939b0*/
     {
       v11 = *(result - 1); /*0x7939b0*/
@@ -1121,7 +1121,7 @@ char sub_6379C0()
     byte_AC4CF4 = 1; /*0x6379ce*/
     result = PlayVocClass(g_RulesClass_Instance->BombTickingSound, 0x2000, 1.0, 0); /*0x6379e7*/
     if ( dword_AC4B80 ) /*0x6379f4*/
-      return (**(int (__thiscall ***)(int, int, unsigned int))dword_AC4B80)(dword_AC4B80, 4551, 0); /*0x6379ff*/
+      return (**(int (***)(int, int, unsigned int))dword_AC4B80)(dword_AC4B80, 4551, 0); /*0x6379ff*/
   }
   return result; /*0x637a01*/
 }
@@ -1253,8 +1253,8 @@ int E4Recv_642E40::UI_Render_642E40()
   v3 = Default; /*0x642e48*/
   if ( Default ) /*0x642e4c*/
   {
-    *a1 = (*(int (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x642e69*/
-    result = (*(int (__thiscall **)(int))(*(unsigned int *)v3 + 128))(v3); /*0x642e6f*/
+    *a1 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642e69*/
+    result = (*(int (**)(int))(*(unsigned int *)v3 + 128))(v3); /*0x642e6f*/
     *a2 = result; /*0x642e7a*/
   }
   else

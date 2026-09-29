@@ -25,7 +25,7 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * v10, int a3)
 
   v3 = 6; /*0x44f6ed*/
   v4 = 5; /*0x44f6f2*/
-  v5 = (unsigned int *)(*((int (__thiscall **)(ObjectClass *, unsigned char *))this->AbstractClass + 18))(this, v9); /*0x44f6f7*/
+  v5 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->AbstractClass + 18))(this, v9); /*0x44f6f7*/
   v6 = *v5 / 256; /*0x44f71b*/
   v7 = v5[1] / 256; /*0x44f71e*/
   if ( a3 ) /*0x44f72e*/

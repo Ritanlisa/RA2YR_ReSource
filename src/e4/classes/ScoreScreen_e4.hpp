@@ -38,8 +38,11 @@ struct ScoreScreen {
     unsigned int u32_3CD;
     unsigned int u32_3D0;
     unsigned int u32_3D4;
+    unsigned int Audio;
+    unsigned int Debug;
+    unsigned int Timer;
 // --- flat members (END) ---
-    unsigned int * Constructor(ScoreAnimClass * aP1, int a3, int a4);
+    unsigned int * Constructor(ScoreAnimClass * aP1, int a3, int a4, void *a1 = 0, void *a5 = 0);
     unsigned int * LoadCountryFlags(int a2);
     unsigned int * LoadScoreFont(void* aP1);
     void RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6);

@@ -29,9 +29,9 @@ struct LoadGame {
     int LoadMagicAndAudio();
     int LoadPointArray(int a2);
     int LoadTriggerEvents();
-    int RemoveItem(int a2);
+    int RemoveItem(int a2, void *a1 = 0);
     int RestoreAudioState();
-    int Start();
+    int Start(void *a1 = 0);
 };
 
 } // namespace gamemd

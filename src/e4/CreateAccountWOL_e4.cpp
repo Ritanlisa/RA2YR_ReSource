@@ -57,7 +57,7 @@ void sub_72C290()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1400] ) /*0x72c2ec*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1400])( /*0x72c2f2*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1400])( /*0x72c2f2*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1400],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1400] = 0; /*0x72c2f4*/
@@ -111,7 +111,7 @@ void sub_72C470()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1388] ) /*0x72c4cc*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1388])( /*0x72c4d2*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1388])( /*0x72c4d2*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1388],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1388] = 0; /*0x72c4d4*/

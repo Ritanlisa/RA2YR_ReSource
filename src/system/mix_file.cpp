@@ -10,7 +10,7 @@
 #include <cctype>
 #include <cstdlib>
 #include "core/reverse_marker.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 namespace gamemd
 {

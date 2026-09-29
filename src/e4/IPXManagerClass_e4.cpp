@@ -43,7 +43,7 @@ int IPXManagerClass::send(int a2)
   IPXManagerClass *i; // ecx
 
   v2 = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(this->u32_44)));
-  result = (int)((gamemd::IPXManagerClass *)(0));
+  result = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(0)));
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
   for ( i = &this->Active; *(unsigned int *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
@@ -51,7 +51,7 @@ int IPXManagerClass::send(int a2)
     if ( ++result >= v2 ) /*0x54105f*/
       return -1; /*0x54105f*/
   }
-  return result; /*0x541064*/
+  return (int)(result);
 }
 } // namespace gamemd
 // 0x541070
@@ -114,17 +114,17 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
   v5 = this->q044; /*0x541605*/
   if ( !v5 ) /*0x54160c*/
     return 0; /*0x54160c*/
-  if ( this->curConnIndex >= v5 ) /*0x541611*/
+  if ( this->curConnIndex >= (unsigned int)(v5) ) /*0x541611*/
     this->curConnIndex = 0; /*0x541613*/
   v13 = 0; /*0x541618*/
   if ( v5 <= 0 ) /*0x54161c*/
     return 0; /*0x541661*/
   while ( 1 ) /*0x54162b*/
   {
-    v6 = (int)((void *)(*(unsigned int *)(&this->q010 * this->curConnIndex + 40)));
-    v7 = (void *)((int)((void *)((*(int (__thiscall **)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3))));
+    v6 = (int)((void *)(*(unsigned int *)(&(unsigned int)(this->q010)* this->curConnIndex + 40)));
+    v7 = (void *)((int)((void *)((*(int (**)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3))));
     v8 = (int)((unsigned int *)(this->curConnIndex));
-    v9 = (void *)(*(unsigned int *)(&this->q010 * v8++ + 40));
+    v9 = (void *)(*(unsigned int *)(&(unsigned int)(this->q010)* v8++ + 40));
     v10 = (unsigned int *)((void *)(*(unsigned int *)(v9 + 100)));
     v11 = (void *)((unsigned int)(this->q044));
     this->curConnIndex = (unsigned int)(v8);
@@ -132,7 +132,7 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
       this->curConnIndex = 0; /*0x541649*/
     if ( v7 ) /*0x541652*/
       break; /*0x541652*/
-    if ( ++v13 >= v11 ) /*0x54165f*/
+    if ( ++v13 >= (int)(v11) ) /*0x54165f*/
       return 0; /*0x54165f*/
   }
   *v10 = (unsigned int)(v10);

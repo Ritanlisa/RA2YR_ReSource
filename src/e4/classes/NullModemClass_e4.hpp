@@ -28,17 +28,18 @@ struct NullModemClass {
     unsigned int u32_68;
     unsigned int Active;
     unsigned int PacketsSent;
+    unsigned int Debug;
 // --- flat members (END) ---
     int COMStub();
     int COMStub_Return0(int a1);
     int CheckStatus();
     int Disconnect(int a2, int a3, int a4);
     int Flush(int a2);
-    int GetAddress(int a2);
+    int GetAddress(int a2, void *a1 = 0, void *a3 = 0);
     int GetMember23();
     int Receive();
     int Release(int a2, int a3, int a4, int a5);
-    int Send(int a1);
+    int Send(int a1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     int SetAddress(int a2);
     int ddtor(int a2, int a3, int a4);
     int receiveData();

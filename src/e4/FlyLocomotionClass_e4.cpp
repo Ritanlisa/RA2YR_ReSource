@@ -13,6 +13,8 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/FoggedObject_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/FoggedObjectClass_e4.hpp"
 
 // 0x4CC9A0
 namespace gamemd {
@@ -51,6 +53,12 @@ int FlyLocomotionClass::LocomotionClass()
 namespace gamemd {
 void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
   HouseClass *owner; // ecx
   int i; // edi
   int v4; // esi
@@ -79,9 +87,9 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   {
     thisa = 0; /*0x4cfefd*/
   }
-  for ( i = *(unsigned int *)&stru_A8EB00.?[164] - 1; i >= 0; --i ) /*0x4cff0c*/
+  for ( i = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; i >= 0; --i ) /*0x4cff0c*/
   {
-    v4 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[152] + 4 * i); /*0x4cff17*/
+    v4 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x4cff17*/
     if ( thisa ) /*0x4cff20*/
     {
       if ( *(unsigned int *)(v4 + 540) != *((unsigned int *)stru_A80220.? + a1->?->?->enemyHouseIndex) ) /*0x4cff5e*/
@@ -94,24 +102,24 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
     if ( *(int *)(v4 + 108) > 0 /*0x4cffd0*/
       && !*(unsigned char *)(v4 + 129)
       && *(unsigned char *)(v4 + 144)
-      && !*(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v4 + 132))(v4) + 3226)
-      && *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v4 + 132))(v4) + 561)
+      && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 3226)
+      && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 561)
       && (((int)dword_A8B230->vtable0 & 0x800) == 0
-       || (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) != 1
+       || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) != 1
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3598)) )
     {
       if ( *(unsigned int *)&dword_A8B238 /*0x4d003d*/
         && (uint8_t)House::IsCurrentPlayer((House *)a1->?->?)
         && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(v4 + 540) + 52) + 422)
-        && ((*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 1
-         || (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 6
-         || (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 15
-         || (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 2) )
+        && ((*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 1
+         || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6
+         || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 15
+         || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 2) )
       {
         if ( v10.ObjectVector_field_0x10 >= v10.ObjectVector_field_0x08 /*0x4d0069*/
           && (!IDA_BYTE1(v10.ObjectVector_field_0x0C) && v10.ObjectVector_field_0x08
            || v10.ObjectVector_field_0x14 <= 0
-           || !(*(uint8_t (__thiscall **)(ObjectVector *, int, unsigned int))(*(unsigned int *)v10.__pad_0 + 8))(
+           || !(*(uint8_t (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v10.__pad_0 + 8))(
                  &v10,
                  v10.ObjectVector_field_0x14 + v10.ObjectVector_field_0x08,
                  0)) )
@@ -126,7 +134,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         if ( v11.ObjectVector_field_0x10 >= v11.ObjectVector_field_0x08 /*0x4d00ab*/
           && (!IDA_BYTE1(v11.ObjectVector_field_0x0C) && v11.ObjectVector_field_0x08
            || v11.ObjectVector_field_0x14 <= 0
-           || !(*(uint8_t (__thiscall **)(ObjectVector *, int, unsigned int))(*(unsigned int *)v11.__pad_0 + 8))(
+           || !(*(uint8_t (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v11.__pad_0 + 8))(
                  &v11,
                  v11.ObjectVector_field_0x14 + v11.ObjectVector_field_0x08,
                  0)) )
@@ -212,8 +220,8 @@ namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
   *(unsigned int *)this->LocomotionClass = (void*)&FlyLocomotionClass_vftable; /*0x4d03a3*/
-  *(unsigned int *)&this->LocomotionClass[4] = (void*)&FlyLocomotionClass_vftable; /*0x4d03a9*/
-  LocomotionClass::Construct(); /*0x4d03b0*/
+  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&FlyLocomotionClass_vftable; /*0x4d03a9*/
+  this->LocomotionClass::Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     RA2_OPDEL(); /*0x4d03bd*/
   return this->LocomotionClass; /*0x4d03c7*/

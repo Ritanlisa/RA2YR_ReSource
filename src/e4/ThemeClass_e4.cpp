@@ -20,19 +20,20 @@
 #include "e4/classes/Display_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x4080C0
 namespace gamemd {
 int ThemeClass::RequestBuffer()
 {
-  return RequestBufferMixer((unsigned int *)(this->m_Name[3] + 16), 0);
+  return RequestBufferMixer((unsigned int *)(this-((unsigned int *)(>m_Name))[3] + 16), 0);
 }
 } // namespace gamemd
 // 0x408140
 namespace gamemd {
 long long ThemeClass::GetValue()
 {
-  return *(unsigned long long *)&this->m_Name[6]; /*0x408146*/
+  return *(unsigned long long *)&this-((unsigned int *)(>m_Name))[6]; /*0x408146*/
 }
 } // namespace gamemd
 // 0x720480
@@ -115,8 +116,8 @@ void * ThemeClass::InitializeThemes(char * a2)
   int v18; // [esp+14h] [ebp-24h]
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
-  v2 = (int)(a2);
-  KeyCount = INIClass::GetKeyCount(a2, (uint8_t *)g_INI_Key_Themes); /*0x7205a9*/
+  v2 = (char *)((int)(a2));
+  KeyCount = (int)(INIClass::GetKeyCount(a2, (uint8_t *)g_INI_Key_Themes));
   v5 = 0; /*0x7205ab*/
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
@@ -139,7 +140,7 @@ void * ThemeClass::InitializeThemes(char * a2)
         goto LABEL_10; /*0x72060a*/
       while ( _strcmpi(*(const void **)(this->u32_18 + 4 * v7), Destination) ) /*0x720622*/
       {
-        if ( ++v7 >= this->q024 ) /*0x72062a*/
+        if ( ++(int)(v7) >= (int)(this->q024) ) /*0x72062a*/
           goto LABEL_10; /*0x72062a*/
       }
       if ( v7 == -1 ) /*0x720631*/
@@ -161,14 +162,14 @@ void * ThemeClass::InitializeThemes(char * a2)
         }
         strcpy(v9, Destination); /*0x7206a0*/
         v10 = this->u32_1C; /*0x7206a9*/
-        if ( this->q024 < v10 /*0x7206d1*/
+        if ( this->q024 < (void *)(v10) /*0x7206d1*/
           || (this->u8_21 || !v10)
           && (v11 = this->ThemeClass_field_28, v11 > 0)
-          && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q014 + 8))(&this->q014, v10 + v11, 0) )
+          && (*(uint8_t (**)(int, int, unsigned int))((unsigned int)(this->q014)+ 8))(&this->q014, v10 + v11, 0) )
         {
-          v12 = *(unsigned int *)&this->q024; /*0x7206d8*/
+          v12 = (void *)(*(unsigned int *)&this->q024);
           v13 = this->u32_18; /*0x7206db*/
-          *(unsigned int *)&this->q024 = v12 + 1; /*0x7206e1*/
+          *(unsigned int *)&this->q024 = (unsigned int)(v12)+ 1; /*0x7206e1*/
           *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7206e4*/
         }
       }
@@ -183,17 +184,17 @@ void * ThemeClass::InitializeThemes(char * a2)
     }
     ++v5; /*0x720707*/
   }
-  result = Audio::GetEnabled(); /*0x720714*/
+  result = this->Audio::GetEnabled(); /*0x720714*/
   if ( result ) /*0x72071b*/
   {
-    Enabled = Audio::GetEnabled(); /*0x720724*/
+    Enabled = this->Audio::GetEnabled(); /*0x720724*/
     result = AudioStream::Constructor(Enabled, 0x4E20u); /*0x72072b*/
     *(void **)&this->ThemeClass_field_2C = result; /*0x720732*/
     if ( result ) /*0x720735*/
     {
       SetAudioFileName((int)result, aMusicStream); /*0x72073e*/
-      AudioQueue::IsEmpty(this->ThemeClass_field_2C, g_MixerChannel_Theme); /*0x72074c*/
-      return (void *)AudioQueue::IsNotEmpty(this->ThemeClass_field_2C, g_MixerChannel_Stream); /*0x72075a*/
+      ((AudioQueue *)(this->ThemeClass_field_2C))->IsEmpty(g_MixerChannel_Theme); /*0x72074c*/
+      return (void *)((AudioQueue *)(this->ThemeClass_field_2C))->IsNotEmpty(g_MixerChannel_Stream); /*0x72075a*/
     }
   }
   return result; /*0x72075f*/

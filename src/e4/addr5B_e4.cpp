@@ -64,11 +64,24 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/E4Recv_645D60_e4.hpp"
 #include "e4/classes/E4Recv_5A1C70_e4.hpp"
+#include "e4/classes/E4Recv_5D2650_e4.hpp"
+#include "e4/classes/TagClass_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {
 void sub_5B3B10()
 {
+    unsigned int v1 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v1 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v1 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v1 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v1 = 0;  /* G37 hoist */
   int v0; // edx
   int v1; // edi
   int v2; // ecx
@@ -142,13 +155,13 @@ namespace gamemd {
 AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
 {
   int v3; // edi
-  unsigned int v4;
+  unsigned int * v4;
   int v5; // ecx
   bool v6; // cc
   unsigned int *v8; // eax
   unsigned int *v9; // esi
-  unsigned int v10;
-  void *SHPFile; // edi
+  char * v10;
+  AbstractClass ** SHPFile;
   ObjectClass *v12; // eax
   Checksummer v14; // [esp+14h] [ebp-17Ch] BYREF
   int v15[3]; // [esp+78h] [ebp-118h] BYREF
@@ -164,33 +177,33 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     goto LABEL_9; /*0x5b4130*/
   while ( 1 ) /*0x5b4132*/
   {
-    v5 = v4[2]; /*0x5b4132*/
-    v6 = v5 < v3; /*0x5b4135*/
+    v5 = (unsigned int)(((unsigned int *)(v4))[2]);
+    v6 = (unsigned int)(v5 < v3);
     if ( v5 == v3 ) /*0x5b4137*/
       break; /*0x5b4137*/
   LABEL_5:
     if ( v6 ) /*0x5b4140*/
-      v4 = (unsigned int *)v4[1]; /*0x5b4142*/
+      v4 = (unsigned int *)((unsigned int *)(v4))[1]; /*(unsigned int *)(0x5b4142)*/
     else
-      v4 = (unsigned int *)*v4; /*0x5b4147*/
+      v4 = (unsigned int *)*(unsigned int *)(v4); /*0x5b4147*/
     if ( !v4 ) /*0x5b414b*/
       goto LABEL_9; /*0x5b414b*/
   }
-  if ( !v4[3] ) /*0x5b4139*/
+  if ( !((unsigned int *)(v4))[3] ) /*0x5b4139*/
   {
     v6 = v5 < v3; /*0x5b413e*/
     goto LABEL_5; /*0x5b413e*/
   }
   if ( v4 ) /*0x5b419d*/
-    return (void *)v4[3]; /*0x5b41ac*/
+    return (void *)((unsigned int *)(v4))[3]; /*0x5b41ac*/
   LABEL_9:
-  CCFileClass::Construct((CCFileClass *)&v14.buffer, Source); /*0x5b414d*/
+  ((CCFileClass *)((CCFileClass *)&v14.buffer))->Construct(Source); /*0x5b414d*/
   if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v14.buffer, 0) ) /*0x5b415c*/
   {
-    v8 = (char *)((unsigned int *)RA2_OPNEW(0x10u));
-    v9 = v8; /*0x5b41b4*/
-    v8[2] = v3; /*0x5b41b9*/
-    v10 = dword_ABF00C; /*0x5b41bc*/
+    v8 = (unsigned int *)((char *)((unsigned int *)RA2_OPNEW(0x10u)));
+    v9 = (unsigned int)(v8);
+    v8[2] = (unsigned int)((char *)(v3));
+    v10 = (char *)(dword_ABF00C);
     if ( dword_ABF00C ) /*0x5b41c4*/
     {
       if ( *((unsigned int *)dword_ABF00C + 2) < v3 ) /*0x5b41d6*/
@@ -205,7 +218,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     }
     if ( aP1 || strstr(Str, Ext) ) /*0x5b41f5*/
     {
-      v12 = (void *)((ObjectClass *)RA2_OPNEW(0x24u));
+      v12 = (gamemd::ObjectClass *)((void *)((ObjectClass *)RA2_OPNEW(0x24u)));
       if ( v12 ) /*0x5b421a*/
         SHPFile = LoadSHPFile(v12, Source); /*0x5b4224*/
       else
@@ -213,10 +226,10 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     }
     else
     {
-      SHPFile = (void *)(CCFileClass::ReadEntireFile((CCFileClass *)&v14.buffer));
+      SHPFile = (unsigned int)((void *)(CCFileClass::ReadEntireFile((CCFileClass *)&v14.buffer)));
     }
-    v9[3] = (gamemd::AbstractClass **)(SHPFile);
-    v14.buffer = (int)&CCFileClass_vftable; /*0x5b4231*/
+    v9[3] = (unsigned int)((gamemd::AbstractClass **)(SHPFile));
+    v14.buffer = (unsigned char)((gamemd::AbstractClass **)((int)&CCFileClass_vftable));
     v16 = 0; /*0x5b4239*/
     Vector::Clear((int)v15); /*0x5b4240*/
     v14.buffer = (int)&off_7E1668; /*0x5b4249*/
@@ -494,7 +507,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
         && g_RulesInitConfig == aP0->q08A
         && *(unsigned int *)&stru_A8B250.__pad_0[12] == *(unsigned int *)(aP0 + 126)
         && *(unsigned int *)&stru_A8B250.__pad_0[32] == aP0->q08B
-        && *(unsigned int *)&stru_A8EB00.?[432] == *(unsigned int *)(aP0 + 146)
+        && *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 432) == *(unsigned int *)(aP0 + 146)
         && ApplyGameOptions_Helper((ObjectClass *)dword_A8E960, (unsigned int *)(aP0 + 150))
         && *(unsigned int *)&stru_A8B250.__pad_0[24] == aP0->u32_A2 )
       {
@@ -527,7 +540,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
   g_RulesInitConfig = aP0->q08A; /*0x5b6a96*/
   *(unsigned int *)&stru_A8B250.__pad_0[12] = *(unsigned int *)(aP0 + 126); /*0x5b6a9f*/
   *(unsigned int *)&stru_A8B250.__pad_0[32] = aP0->q08B; /*0x5b6aaa*/
-  *(unsigned int *)&stru_A8EB00.?[432] = *(unsigned int *)(aP0 + 146); /*0x5b6ab6*/
+  *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 432) = *(unsigned int *)(aP0 + 146); /*0x5b6ab6*/
   v6 = *(unsigned int *)(aP0 + 150); /*0x5b6abc*/
   dword_A8E960[0] = v6; /*0x5b6ac4*/
   IDA_LOBYTE(v6) = v6 | 0xC0; /*0x5b6acf*/
@@ -673,7 +686,7 @@ LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
     LZOPipe::Constructor((LZOPipe *)&v19, 0, 0x2000); /*0x5bb46f*/
     Pipe::SetDelegate(&v19, (int)&v15); /*0x5bb47d*/
     v7 = Compression::Read((int *)v19.__pad_0, v5, Buffer); /*0x5bb499*/
-    v8 = (*(int (__thiscall **)(Pipe *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) + v7; /*0x5bb49e*/
+    v8 = (*(int (**)(Pipe *))(*(unsigned int *)v19.__pad_0 + 4))(&v19) + v7; /*0x5bb49e*/
     Debug::Log(); /*0x5bb4a6*/
     RawFileClass::Construct((RawFileClass *)v18, (int)aPreviewBin); /*0x5bb4b7*/
     if ( (uint8_t)FileClass::Open((RawFileClass *)v18, 0) ) /*0x5bb4c1*/
@@ -1091,13 +1104,13 @@ void sub_5BF390(int a1, char a2)
       v5 = v4; /*0x5bf3ca*/
       if ( v4 ) /*0x5bf3ce*/
       {
-        (*(void (__thiscall **)(unsigned int *, int, int))(*v4 + 24))(v4, dword_8809D8 - 3, dword_8809DC - 1); /*0x5bf3e5*/
-        (*(void (__thiscall **)(unsigned char *, int (*)()))(*(unsigned int *)v5 + 32))(v5, sub_5BF360); /*0x5bf3f1*/
+        (*(void (**)(unsigned int *, int, int))(*v4 + 24))(v4, dword_8809D8 - 3, dword_8809DC - 1); /*0x5bf3e5*/
+        (*(void (**)(unsigned char *, int (*)()))(*(unsigned int *)v5 + 32))(v5, sub_5BF360); /*0x5bf3f1*/
         v5[4] = a2; /*0x5bf3f4*/
         if ( g_AsyncIOState < dword_B45B60 /*0x5bf42b*/
           || (byte_B45B65 || !dword_B45B60)
           && dword_B45B6C > 0
-          && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_B45B58 + 8))(
+          && (*(uint8_t (**)(int *, int, unsigned int))(dword_B45B58 + 8))(
                &dword_B45B58,
                dword_B45B60 + dword_B45B6C,
                0) )
@@ -1133,7 +1146,7 @@ ObjectClass * * sub_5BF8C0()
     v5[1] = v3; /*0x5bf91a*/
     v5[0] = Rect.left + v4; /*0x5bf924*/
     v5[3] = v2; /*0x5bf928*/
-    return (*((int (__thiscall **)(DSurface *, unsigned int *, unsigned int, int, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x5bf93d*/
+    return (*((int (**)(DSurface *, unsigned int *, unsigned int, int, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x5bf93d*/
             + 2))(
              g_DSurface_Primary,
              v5,
@@ -1168,7 +1181,7 @@ AbstractClass * * sub_5BF950()
   result = TestBitArray(15); /*0x5bf958*/
   if ( !result ) /*0x5bf95f*/
   {
-    (*((void (__thiscall **)(ObjectClass *, int, unsigned int, int, unsigned int, int, int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x5bf983*/
+    (*((void (**)(ObjectClass *, int, unsigned int, int, unsigned int, int, int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x5bf983*/
       g_DSurface_Hidden,
       g_MissionQueueFrame.localVariables[604] + 36,
       *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8),
@@ -1183,18 +1196,18 @@ AbstractClass * * sub_5BF950()
       if ( *v4 ) /*0x5bf997*/
       {
         v5 = v4[4]; /*0x5bf9a0*/
-        v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v5 + 120))(v5, v17); /*0x5bf9ac*/
+        v6 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v5 + 120))(v5, v17); /*0x5bf9ac*/
         v11[0] = *v6; /*0x5bf9b1*/
         v11[1] = v6[1]; /*0x5bf9b8*/
         v12 = v6[2]; /*0x5bf9bf*/
         v13 = v6[3]; /*0x5bf9cc*/
-        v14[0] = ((*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 31))(g_DSurface_Hidden) - v12) /*0x5bf9e6*/
+        v14[0] = ((*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 31))(g_DSurface_Hidden) - v12) /*0x5bf9e6*/
                / 2;
-        v7 = (*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 32))(g_DSurface_Hidden); /*0x5bf9ec*/
+        v7 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 32))(g_DSurface_Hidden); /*0x5bf9ec*/
         v14[2] = v12; /*0x5bf9fc*/
         v14[1] = v7 - v13; /*0x5bfa04*/
         v14[3] = v13; /*0x5bfa15*/
-        (*((void (__thiscall **)(ObjectClass *, unsigned int *, int, unsigned int *, int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x5bfa21*/
+        (*((void (**)(ObjectClass *, unsigned int *, int, unsigned int *, int, int))g_DSurface_Hidden->AbstractClass + 2))( /*0x5bfa21*/
           g_DSurface_Hidden,
           v14,
           v5,
@@ -1212,7 +1225,7 @@ AbstractClass * * sub_5BF950()
     v15[0] = Rect.left + v10; /*0x5bfa7c*/
     v15[2] = v9; /*0x5bfa80*/
     v15[3] = v8; /*0x5bfa84*/
-    return (*((int (__thiscall **)(DSurface *, unsigned int *, ObjectClass *))g_DSurface_Primary->DSurface_field_0x0 + 2))( /*0x5bfa8f*/
+    return (*((int (**)(DSurface *, unsigned int *, ObjectClass *))g_DSurface_Primary->DSurface_field_0x0 + 2))( /*0x5bfa8f*/
              g_DSurface_Primary,
              v15,
              g_DSurface_Hidden);
@@ -1289,7 +1302,7 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v15->u8_45 = 0; /*0x5bfb0e*/
   v15->q048 = 0; /*0x5bfb11*/
   v16 = CCFileClass::Construct(&v53, Source); /*0x5bfb14*/
-  v17 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v16 + 20))(v16, 0); /*0x5bfb1e*/
+  v17 = (*(int (**)(unsigned int *, unsigned int))(*v16 + 20))(v16, 0); /*0x5bfb1e*/
   *(unsigned int *)v53.CDFileClass = (void*)&CCFileClass_vftable; /*0x5bfb2a*/
   v45 = v17 == 0; /*0x5bfb32*/
   v55 = 0; /*0x5bfb37*/
@@ -1337,8 +1350,8 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   }
   if ( !a7 && !a8 && !a9 && !a10 ) /*0x5bfcb9*/
   {
-    v23 = (*(int (__thiscall **)(int *))(*a2 + 128))(a2) - Height; /*0x5bfcca*/
-    v24 = (*(int (__thiscall **)(int *))(*a2 + 124))(a2); /*0x5bfcd2*/
+    v23 = (*(int (**)(int *))(*a2 + 128))(a2) - Height; /*0x5bfcca*/
+    v24 = (*(int (**)(int *))(*a2 + 124))(a2); /*0x5bfcd2*/
     a8 = v23 / 2; /*0x5bfcd9*/
     a9 = Width; /*0x5bfce2*/
     a7 = (v24 - Width) / 2; /*0x5bfcee*/
@@ -1349,8 +1362,8 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
   v52[0] = 0; /*0x5bfd0e*/
   v52[1] = 0; /*0x5bfd12*/
   v52[3] = Height; /*0x5bfd16*/
-  v44 = (*(int (__thiscall **)(int *))(v25 + 128))(a2); /*0x5bfd20*/
-  v26 = (*(int (__thiscall **)(int *))(*a2 + 124))(a2); /*0x5bfd3d*/
+  v44 = (*(int (**)(int *))(v25 + 128))(a2); /*0x5bfd20*/
+  v26 = (*(int (**)(int *))(*a2 + 124))(a2); /*0x5bfd3d*/
   v27 = ClipRectIntersection(&v46, &a3, v52, 0, 0); /*0x5bfd3f*/
   v15->objectTypeFlags = *v27; /*0x5bfd46*/
   v15->owningHouseIndex = v27[1]; /*0x5bfd4c*/
@@ -1412,9 +1425,9 @@ void* * LoadVQMovie(char * Source, int * a2, int a3, int a4, IUnknown * a5, int 
     Render_Load_759F20(*(ObjectClass **)v15, Status); /*0x5bfe94*/
   }
   v15->vtable3 = a2; /*0x5bfe99*/
-  v40 = (*(int (__thiscall **)(int *))(*a2 + 128))(a2); /*0x5bfeac*/
-  v37 = (*(int (__thiscall **)(int *))(*a2 + 116))(a2); /*0x5bfeb6*/
-  v38 = (*(int (__thiscall **)(int *))(*a2 + 112))(a2); /*0x5bfeb8*/
+  v40 = (*(int (**)(int *))(*a2 + 128))(a2); /*0x5bfeac*/
+  v37 = (*(int (**)(int *))(*a2 + 116))(a2); /*0x5bfeb6*/
+  v38 = (*(int (**)(int *))(*a2 + 112))(a2); /*0x5bfeb8*/
   Render_Load_759EB0(*(ObjectClass **)v15, 0, v37 / v38, v40, 0, 0); /*0x5bfec7*/
   SurfaceTracker = BinkMovie::CreateSurfaceTracker(FullPath); /*0x5bfed0*/
   v15->q048 = SurfaceTracker; /*0x5bfed7*/
@@ -1460,7 +1473,7 @@ void Movie_RenderFrame(int a1, char a2, int a3, char a4)
       }
     }
     if ( a2 ) /*0x5bffe2*/
-      (*(void (__thiscall **)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x5bffec*/
+      (*(void (**)(int))(*(unsigned int *)dword_887640 + 12))(dword_887640); /*0x5bffec*/
     if ( a3 != -1 ) /*0x5bfff6*/
       Theme::QueueSong(a3); /*0x5bfffe*/
     do /*0x5c0049*/
@@ -1480,7 +1493,7 @@ void Movie_RenderFrame(int a1, char a2, int a3, char a4)
     while ( !v9 ); /*0x5c0049*/
     result = a2; /*0x5c004b*/
     if ( a2 ) /*0x5c0054*/
-      result = (*(int (__thiscall **)(int))(*(unsigned int *)dword_887640 + 16))(dword_887640); /*0x5c005e*/
+      result = (*(int (**)(int))(*(unsigned int *)dword_887640 + 16))(dword_887640); /*0x5c005e*/
     dword_ABF3F4 = 0; /*0x5c0061*/
   }
   return result; /*0x5c006b*/
@@ -3788,13 +3801,13 @@ int sub_5BF850()
   int v8; // [esp-8h] [ebp-18h]
 
   v0 = *(unsigned int *)(dword_ABF3F4 + 8); /*0x5bf858*/
-  v1 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)v0 + 92))(v0, 0); /*0x5bf869*/
+  v1 = (*(int (**)(int, unsigned int))(*(unsigned int *)v0 + 92))(v0, 0); /*0x5bf869*/
   v2 = *(int **)dword_ABF3F4; /*0x5bf873*/
   v8 = *(unsigned int *)(dword_ABF3F4 + 40); /*0x5bf87a*/
   v7 = *(unsigned int *)(dword_ABF3F4 + 36); /*0x5bf87b*/
-  v3 = (*(int (__thiscall **)(int))(*(unsigned int *)v0 + 128))(v0); /*0x5bf87e*/
-  v4 = (*(int (__thiscall **)(int, int))(*(unsigned int *)v0 + 116))(v0, v3); /*0x5bf88c*/
-  v5 = (*(int (__thiscall **)(int))(*(unsigned int *)v0 + 112))(v0); /*0x5bf892*/
+  v3 = (*(int (**)(int))(*(unsigned int *)v0 + 128))(v0); /*0x5bf87e*/
+  v4 = (*(int (**)(int, int))(*(unsigned int *)v0 + 116))(v0, v3); /*0x5bf88c*/
+  v5 = (*(int (**)(int))(*(unsigned int *)v0 + 112))(v0); /*0x5bf892*/
   Render_Load_759EB0(v2, 0, v4 / v5, v7, v8, 0); /*0x5bf8a1*/
   return v1; /*0x5bf8a8*/
 }
@@ -3804,7 +3817,7 @@ int sub_5BF850()
 namespace gamemd {
 int sub_5BF8B0()
 {
-  return (*(int (__thiscall **)(unsigned int, ObjectClass *))(**(unsigned int **)(g_MissionQueueFrame.localVariables[604] + 8) + 96))(
+  return (*(int (**)(unsigned int, ObjectClass *))(**(unsigned int **)(g_MissionQueueFrame.localVariables[604] + 8) + 96))(
            *(unsigned int *)(g_MissionQueueFrame.localVariables[604] + 8),
            this);
 }

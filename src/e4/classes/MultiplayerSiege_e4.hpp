@@ -13,13 +13,15 @@ struct MultiplayerSiege {
     char MultiplayerSiege_field_0C[4];  // 0xC
     char MultiplayerSiege_field_10[4];  // 0x10
     unsigned int MultiplayerSiege_field_00;
+    unsigned int Debug;
+    unsigned int PlayerClass;
 // --- flat members (END) ---
     AbstractClass * * ProcessTurn(char a2);
     MultiplayerSiege * QueryInterface(char a2);
     char CheckStatus(int a1);
     char GetResult(unsigned int * ppv, int a2);
     char StubReturnFalse();
-    int Read();
+    int Read(void *a1 = 0, void *a2 = 0);
     int Write(void ** a1);
 };
 

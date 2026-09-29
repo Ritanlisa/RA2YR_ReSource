@@ -17,7 +17,7 @@ struct VectorClass_UAngerStruct___16 {
     int Clear(int a2);  // 0x50E550
     char AddRef(int a2);  // 0x50EC20
     char Release(int a2,  unsigned int * a3);    // 0x50EC60
-    void ddtor();  // 0x50ED10
+    void ddtor(void *a1 = 0);  // 0x50ED10
     int GetSize(unsigned int * a2);  // 0x50ED40
     unsigned int GetCapacity(int a2);  // 0x50ED80
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x510090

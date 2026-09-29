@@ -35,8 +35,8 @@ int UDPInterfaceClass::connect()
   result = this->u32_3F068; /*0x7b1b53*/
   if ( result ) /*0x7b1b5b*/
   {
-    (*(void (__thiscall **)(UDPInterfaceClass *))(this->Socket + 32))(this); /*0x7b1b5f*/
-    (*(void (__thiscall **)(UDPInterfaceClass *))(this->Socket + 4))(this); /*0x7b1b66*/
+    (*(void (**)(UDPInterfaceClass *))(this->Socket + 32))(this); /*0x7b1b5f*/
+    (*(void (**)(UDPInterfaceClass *))(this->Socket + 4))(this); /*0x7b1b66*/
     result = WSACleanup(); /*0x7b1b69*/
     this->u32_3F068 = 0; /*0x7b1b6e*/
   }
@@ -47,6 +47,24 @@ int UDPInterfaceClass::connect()
 namespace gamemd {
 void UDPInterfaceClass::CheckStatus(short a2)
 {
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
   int v3; // ecx
   int v4; // edi
   UDPInterfaceClass *i; // eax
@@ -66,9 +84,9 @@ void UDPInterfaceClass::CheckStatus(short a2)
           return; /*0x7b3343*/
       }
       v6 = (SOCKET *)this + v4 + 64704; /*0x7b3352*/
-      Debug::Log(); /*0x7b335f*/
-      closesocket(*v6); /*0x7b336a*/
-      if ( *v6 == this->u32_3F334 ) /*0x7b3379*/
+      this->Debug::Log(); /*0x7b335f*/
+      closesocket(*(unsigned int *)(v6)); /*0x7b336a*/
+      if ( *(unsigned int *)(v6) == this->u32_3F334 ) /*0x7b3379*/
         this->u32_3F334 = -1; /*0x7b337b*/
       v4 = v4; /*0x7b338b*/
       if ( v4 < this->u32_3F330 - 1 ) /*0x7b3390*/
@@ -137,14 +155,14 @@ AbstractClass * * UDPInterfaceClass::Flush()
     v4 = &this->u32_3F300; /*0x7b3a31*/
     do /*0x7b3a6e*/
     {
-      Debug::Log(); /*0x7b3a3f*/
+      this->Debug::Log(); /*0x7b3a3f*/
       WSAAsyncSelect(*v4, g_hWnd, 0, 0); /*0x7b3a55*/
       closesocket(*v4); /*0x7b3a5d*/
       result = this->q3F330; /*0x7b3a62*/
       ++v2; /*0x7b3a68*/
       ++v4; /*0x7b3a69*/
     }
-    while (v2 < result, unsigned int a4); /*0x7b3a6e*/
+    while (v2 < (void *)(result), unsigned int a4); /*0x7b3a6e*/
     this->q3F330 = 0; /*0x7b3a70*/
     this->q3F334 = -1; /*0x7b3a7a*/
   }
@@ -155,6 +173,10 @@ AbstractClass * * UDPInterfaceClass::Flush()
 namespace gamemd {
 AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5, void * a1, void * a3)
 {
+    unsigned int v32 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
   SOCKET v6; // ebx
   int v7; // edx
   int v8; // eax
@@ -231,8 +253,8 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
     if ( IDA_HIWORD(a5) ) /*0x7b3ebb*/
     {
   LABEL_22:
-      Debug::Log(); /*0x7b3b8b*/
-      (*(void (__thiscall **)(char *, SOCKET))(((unsigned int)(this->q00C6))))(this, v6); /*0x7b3b99*/
+      this->Debug::Log(); /*0x7b3b8b*/
+      (*(void (**)(char *, SOCKET))(((unsigned int)(this->q00C6))))(this, v6); /*0x7b3b99*/
       return 0; /*0x7b3ba5*/
     }
     fromlen = 16; /*0x7b3ee4*/
@@ -240,7 +262,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
     v26 = v26; /*0x7b3ef1*/
     if ( v26 == -1 ) /*0x7b3ef6*/
     {
-      (*(void (__thiscall **)(char *, SOCKET))(((unsigned int)(this->q00C6))))(this, v6); /*0x7b3efe*/
+      (*(void (**)(char *, SOCKET))(((unsigned int)(this->q00C6))))(this, v6); /*0x7b3efe*/
       return 0; /*0x7b3f0a*/
     }
     if ( v26 ) /*0x7b3f0f*/
@@ -267,14 +289,14 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
       if ( v31 > 0 && Random::Range(Randomizer_Global, 0, 99) <= v31 ) /*0x7b3f6b*/
         return 0; /*0x7b3f76*/
       v13 = (unsigned int *)IPXInterfaceClass::processPacket(this); /*0x7b3f80*/
-      v13[4] = v26 - 4; /*0x7b3f8f*/
-      v13[7] = this->q3F074; /*0x7b3f98*/
+      ((unsigned int *)(v13))[4] = v26 - 4; /*0x7b3f8f*/
+      ((unsigned int *)(v13))[7] = this->q3F074; /*0x7b3f98*/
       *((unsigned char *)v13 + 23) = v39; /*0x7b3fa0*/
       *((unsigned char *)v13 + 24) = 0; /*0x7b3fa6*/
       qmemcpy(v13 + 8, &this->u32_FC1E0, v26 - 4); /*0x7b3fab*/
-      if ( !(*(uint8_t (__thiscall **)(char *, unsigned int *))(((unsigned int)(this->q0208))))(this, v13) ) /*0x7b3fb9*/
+      if ( !(*(uint8_t (**)(char *, unsigned int *))(((unsigned int)(this->q0208))))(this, v13) ) /*0x7b3fb9*/
       {
-        v13[1] = *(unsigned int *)&netshort.sa_data[2]; /*0x7b3fc4*/
+        ((unsigned int *)(v13))[1] = *(unsigned int *)&netshort.sa_data[2]; /*0x7b3fc4*/
         ntohs(*(u_short *)netshort.sa_data); /*0x7b3fd4*/
         Debug::Log(); /*0x7b4000*/
         if ( !byte_B78124 ) /*0x7b400f*/
@@ -289,22 +311,22 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
         --this->qFC18; /*0x7b3eaa*/
         return 0; /*0x7b3eb8*/
       }
-      *v13 = 0; /*0x7b4041*/
-      v13[1] = 0; /*0x7b4043*/
-      v13[2] = 0; /*0x7b4046*/
-      v13[3] = 0; /*0x7b4049*/
+      *(unsigned int *)(v13) = 0; /*0x7b4041*/
+      ((unsigned int *)(v13))[1] = 0; /*0x7b4043*/
+      ((unsigned int *)(v13))[2] = 0; /*0x7b4046*/
+      ((unsigned int *)(v13))[3] = 0; /*0x7b4049*/
       v32 = htonl(0x7F000001u); /*0x7b404c*/
       if ( *(unsigned int *)&netshort.sa_data[2] == v32 ) /*0x7b4055*/
       {
         *((unsigned short *)v13 + 13) = 0; /*0x7b4057*/
-        *v13 = dword_A8DBB0; /*0x7b4065*/
-        v13[1] = dword_A8DBB4; /*0x7b406c*/
-        v13[2] = dword_A8DBB8; /*0x7b4075*/
+        *(unsigned int *)(v13) = dword_A8DBB0; /*0x7b4065*/
+        ((unsigned int *)(v13))[1] = dword_A8DBB4; /*0x7b406c*/
+        ((unsigned int *)(v13))[2] = dword_A8DBB8; /*0x7b4075*/
       }
       else
       {
         *((unsigned short *)v13 + 13) = ntohs(*(u_short *)netshort.sa_data); /*0x7b4084*/
-        v13[1] = *(unsigned int *)&netshort.sa_data[2]; /*0x7b408c*/
+        ((unsigned int *)(v13))[1] = *(unsigned int *)&netshort.sa_data[2]; /*0x7b408c*/
       }
       v33 = (char *)(this->q010);
       v34 = (char *)(this->q018);
@@ -312,7 +334,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
       if ( v34 < v33 /*0x7b40b8*/
         || (v35[13] || !v33)
         && (v36 = *((unsigned int *)v35 + 5), v36 > 0)
-        && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(this->q010)(v35, v33 + v36, 0) )
+        && (*(uint8_t (**)(char *, int, unsigned int))(this->q010)(v35, (unsigned int)(v33)+ v36, 0) )
       {
         v37 = *((unsigned int *)v35 + 4); /*0x7b40bf*/
         v38 = *((unsigned int *)v35 + 1); /*0x7b40c2*/
@@ -401,7 +423,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
     {
       WSAGetLastError(); /*0x7b3d8b*/
       Debug::Log(); /*0x7b3d96*/
-      (*(void (__thiscall **)(char *, SOCKET))(((unsigned int)(this->q00C6))))(this, sa); /*0x7b3da4*/
+      (*(void (**)(char *, SOCKET))(((unsigned int)(this->q00C6))))(this, sa); /*0x7b3da4*/
       return 0; /*0x7b3db0*/
     }
   }
@@ -617,7 +639,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAE *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x7b452e*/
+    (*(void (**)(_DynamicVectorClass_PAE *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x7b452e*/
   }
   v7 = this->m_8; /*0x7b4531*/
   if ( v7 < this->m_10 ) /*0x7b4539*/
@@ -712,7 +734,7 @@ AbstractClass * * UDPInterfaceClass_Destru::Bind(int a2)
           continue; /*0x7b35ac*/
         v11 = this->q3F564; /*0x7b35ae*/
         if ( v11 <= 0 /*0x7b35be*/
-          || !(*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(this->qFD54 + 8))(
+          || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(this->qFD54 + 8))(
                 &this->qFD54,
                 v10 + v11,
                 0) )
@@ -762,7 +784,7 @@ namespace gamemd {
 short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8)
 {
   if ( a3 && Network::IsBroadcastAddr((Network *)a3) ) /*0x7b36ce*/
-    return (*(int16_t (__thiscall **)(UDPInterfaceClass *, const void *, unsigned int, int))(this->Socket + 16))( /*0x7b36ea*/
+    return (*(int16_t (**)(UDPInterfaceClass *, const void *, unsigned int, int))(this->Socket + 16))( /*0x7b36ea*/
              this,
              aP1,
              arg4,
@@ -813,14 +835,14 @@ void UDPInterfaceClass_Destru_Connect()
       *((unsigned int *)v9 + 3) = 0; /*0x7b378a*/
       *((unsigned int *)v9 + 1) = **(unsigned int **)(*(unsigned int *)(v7 + 258876) + 4 * v24); /*0x7b379c*/
       *((unsigned short *)v9 + 13) = *v23; /*0x7b37a2*/
-      (*(void (__thiscall **)(int, unsigned char *, int))(*(unsigned int *)v7 + 84))(v7, v9, a2); /*0x7b37aa*/
+      (*(void (**)(int, unsigned char *, int))(*(unsigned int *)v7 + 84))(v7, v9, a2); /*0x7b37aa*/
       if ( a5 ) /*0x7b37b3*/
       {
         v11 = *(unsigned int *)(v7 + 64); /*0x7b37b5*/
         if ( *(unsigned int *)(v7 + 72) < v11 /*0x7b37dd*/
           || (*(unsigned char *)(v7 + 69) || !v11)
           && (v12 = *(unsigned int *)(v7 + 76), v12 > 0)
-          && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)(v7 + 56) + 8))(v7 + 56, v11 + v12, 0) )
+          && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(v7 + 56) + 8))(v7 + 56, v11 + v12, 0) )
         {
           v13 = *(unsigned int *)(v7 + 72); /*0x7b37e4*/
           v14 = *(unsigned int *)(v7 + 60); /*0x7b37e7*/
@@ -835,7 +857,7 @@ void UDPInterfaceClass_Destru_Connect()
         if ( *(unsigned int *)(v7 + 48) < v16 /*0x7b3823*/
           || (*(unsigned char *)(v7 + 45) || !v16)
           && (v17 = *(unsigned int *)(v7 + 52), v17 > 0)
-          && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)(v7 + 32) + 8))(v7 + 32, v16 + v17, 0) )
+          && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(v7 + 32) + 8))(v7 + 32, v16 + v17, 0) )
         {
           v18 = *(unsigned int *)(v7 + 48); /*0x7b382a*/
           v19 = *(unsigned int *)(v7 + 36); /*0x7b382d*/
@@ -846,7 +868,7 @@ void UDPInterfaceClass_Destru_Connect()
       }
       a2 = 2; /*0x7b3841*/
       v21 = v15; /*0x7b3845*/
-      v20 = (*(int (__thiscall **)(int))(*(unsigned int *)v7 + 56))(v7); /*0x7b3848*/
+      v20 = (*(int (**)(int))(*(unsigned int *)v7 + 56))(v7); /*0x7b3848*/
       SendMessageA(g_hWnd, v20, v21, 0); /*0x7b3852*/
       MessageLoop(); /*0x7b3858*/
       result = *(unsigned int *)(v7 + 258888); /*0x7b3861*/
@@ -892,7 +914,7 @@ int UDPInterfaceClass_Destru::Receive()
 int UDPInterfaceClass_Destru::CheckStatus()
 {
   NetworkClass::UnregisterAsync((WinsockInterfaceClass *)this); /*0x7b3903*/
-  return (*(int (__thiscall **)(UDPInterfaceClass *))(this->Socket + 112))(this); /*0x7b390f*/
+  return (*(int (**)(UDPInterfaceClass *))(this->Socket + 112))(this); /*0x7b390f*/
 }
 // 0x7B3920
 void UDPInterfaceClass_Destru::Reset(unsigned int * a2, short a3)

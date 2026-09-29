@@ -21,7 +21,7 @@ int sub_7535D0()
   }
   if ( g_InfantryDrawState ) /*0x7535f2*/
     Audio::Release(g_InfantryDrawState); /*0x7535f4*/
-  result = ThemeClass::ClearQueues(); /*0x7535f9*/
+  result = this->ThemeClass::ClearQueues(); /*0x7535f9*/
   dword_B1D428 = 0; /*0x7535fe*/
   dword_B1D3D8 = 0; /*0x753608*/
   return result; /*0x753612*/

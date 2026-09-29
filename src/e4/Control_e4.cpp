@@ -20,7 +20,7 @@ int Control::DispatchClick(ControlClass * aP1)
 
   v3 = this->u32_28; /*0x48e623*/
   if ( v3 ) /*0x48e628*/
-    (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)v3 + 108))(v3, 0); /*0x48e62e*/
+    (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 108))(v3, 0); /*0x48e62e*/
   return GadgetClass::ClearState(aP1); /*0x48e63d*/
 }
 } // namespace gamemd
@@ -60,7 +60,7 @@ int Control::RepositionControlsDialog()
     goto LABEL_5; /*0x60b9b7*/
   v4 = *(unsigned int **)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60b9d8*/
                   + 4
-                  * ((*(int (__thiscall **)(HWND *))&g_DialogPool.__pad_208[80])(&v14)
+                  * ((*(int (**)(HWND *))&g_DialogPool.__pad_208[80])(&v14)
                    & ((1 << g_DialogPool.__pad_208[68]) - 1)));
   if ( !v4 ) /*0x60b9dd*/
     goto LABEL_5; /*0x60b9dd*/
@@ -342,7 +342,7 @@ int Control::CheckControlTypeDialog()
     goto LABEL_7; /*0x60c54d*/
   result = *(unsigned int *)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60c570*/
                      + 4
-                     * ((*(int (__thiscall **)(Control **))&g_DialogPool.__pad_208[80])(&v3)
+                     * ((*(int (**)(Control **))&g_DialogPool.__pad_208[80])(&v3)
                       & ((1 << g_DialogPool.__pad_208[68]) - 1)));
   if ( !result ) /*0x60c575*/
     goto LABEL_7; /*0x60c575*/

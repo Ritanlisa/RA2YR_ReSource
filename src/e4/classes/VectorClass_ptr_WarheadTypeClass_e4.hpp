@@ -15,12 +15,12 @@ struct VectorClass_ptr_WarheadTypeClass {
     void* Count;  // 0x10
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_WarheadTypeClass___(char a2);  // 0x40F8F0
-    void Destroy();  // 0x40F5E0
+    void Destroy(void *a1 = 0);  // 0x40F5E0
     unsigned int GetItemIndex(int a2);  // 0x40F610
-    int Get(int a2);  // 0x40F630
+    int Get(int a2, void *a1 = 0);  // 0x40F630
     char Add(int a2);  // 0x40F640
     char Release(int a2,  unsigned int * a3);    // 0x40F680
-    void Remove();  // 0x40F730
+    void Remove(void *a1 = 0);  // 0x40F730
     int GetSize(unsigned int * a2);  // 0x40F760
     unsigned int LoadTypeData(int a2);  // 0x40F7A0
     char SetCapacity(int a2,  unsigned int * a3);    // 0x40F7C0

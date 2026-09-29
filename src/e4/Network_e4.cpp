@@ -40,6 +40,7 @@
 #include "app/cmdline.hpp"
 #include "e4/classes/NeuronClass_e4.hpp"
 #include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
 
 // 0x4311C0
 namespace gamemd {
@@ -52,7 +53,7 @@ int Network::SendBeaconDelete(int a2, int a3)
   int v9; // esi
   unsigned int *v10; // eax
   int v11; // ebx
-  IUnknown * v12;
+  unsigned int v12;
   int * v14;
   IUnknown * v15;
   unsigned char v16[16]; // [esp+18h] [ebp-1D8h] BYREF
@@ -82,7 +83,7 @@ int Network::SendBeaconDelete(int a2, int a3)
         {
           ++v5; /*0x431212*/
           this += 3; /*0x431213*/
-          if ( v5 >= 8 ) /*0x431219*/
+          if ( v5 >= (int *)(8) ) /*0x431219*/
             return v4; /*0x431219*/
           goto LABEL_5; /*0x431219*/
         }
@@ -93,7 +94,7 @@ int Network::SendBeaconDelete(int a2, int a3)
     {
       v14 = (int)(0);
       v4 = (IUnknown *)((int)(a3 + 2 * a2 + a2));
-      v9 = (int)(*(this + v4));
+      v9 = (int)(*((unsigned int)(this)+ v4));
     }
     if ( v9 ) /*0x431231*/
     {
@@ -108,7 +109,7 @@ int Network::SendBeaconDelete(int a2, int a3)
                                 HouseClass_Player)
           && !*(unsigned char *)(*(unsigned int *)&HouseClass_Array->gap0[4 * v9->q110] + 501) )
         {
-          v10 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)dword_880A04 + 120))(dword_880A04, v16); /*0x4312bf*/
+          v10 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)dword_880A04 + 120))(dword_880A04, v16); /*0x4312bf*/
           ((void (__stdcall *)(int, char, unsigned int, unsigned int, unsigned int, int))BuildingPlacement::RenderBuildingPlacementShadow)( /*0x4312e6*/
             dword_880A04,
             *v10,
@@ -119,7 +120,7 @@ int Network::SendBeaconDelete(int a2, int a3)
         }
         RA2_OPDEL((void *)v9); /*0x4312ec*/
         v11 = 0; /*0x4312f8*/
-        v4 = (int)(&this->q00C * v15); /*0x4312fd*/
+        v4 = (int)(&(unsigned int)(this->q00C)* v15); /*0x4312fd*/
         while ( v9 != *(unsigned int *)v4 ) /*0x431303*/
         {
           ++v11; /*0x431305*/
@@ -127,12 +128,12 @@ int Network::SendBeaconDelete(int a2, int a3)
           if ( v11 >= 3 ) /*0x43130c*/
             return v4; /*0x43130c*/
         }
-        *(&this->q008 * v15 + v11 + v15) = 0; /*0x431322*/
+        *(&(unsigned int)(this->q008)* v15 + v11 + v15) = 0; /*0x431322*/
         --*(&this->q0084); /*0x43132e*/
-        IDA_LOBYTE(v4) = g_GameMode_Current[0]; /*0x431331*/
-        if ( g_GameMode_Current[0] ) /*0x431338*/
+        IDA_LOBYTE(v4) = ((unsigned int *)(g_GameMode_Current))[0]; /*0x431331*/
+        if ( ((unsigned int *)(g_GameMode_Current))[0] ) /*0x431338*/
         {
-          if ( g_GameMode_Current[0] != 5 ) /*0x431341*/
+          if ( ((unsigned int *)(g_GameMode_Current))[0] != 5 ) /*0x431341*/
           {
             IDA_LOBYTE(v4) = (unsigned char)HouseClass_Player; /*0x431347*/
             if ( v15 == *((unsigned int *)HouseClass_Player + 12) ) /*0x43134f*/
@@ -145,9 +146,9 @@ int Network::SendBeaconDelete(int a2, int a3)
                 IDA_LOBYTE(v4) = Game_PlayerCount; /*0x431394*/
                 v12 = 1; /*0x4313a2*/
                 v18[56] = v15; /*0x4313a9*/
-                for ( v18[55] = v11; v12 < Game_PlayerCount; ++v12 ) /*0x4313b1*/
+                for ( v18[55] = v11; v12 < (unsigned int)((IUnknown *))(Game_PlayerCount); ++v12 ) /*0x4313b1*/
                 {
-                  Debug::Log(); /*0x4313c2*/
+                  this->Debug::Log(); /*0x4313c2*/
                   Network::SendMessage( /*0x4313e9*/
                     (int)g_NetworkManager,
                     (int)&v17,
@@ -245,7 +246,7 @@ int Network::SendBeacon(CellStruct * aP1, int a3, int a4, char a5)
       if ( v17 && *(void **)(v10 + 272) == dword_A83D4C->Object_field_0x30 && a5 ) /*0x431533*/
       {
         v20 = 34; /*0x43153f*/
-        strcpy(v21, ToWideStringChar((char *)*dword_A8DA78)); /*0x431568*/
+        strcpy(v21, ToWideStringChar((char *)*(unsigned int *)(dword_A8DA78))); /*0x431568*/
         if ( aP1 ) /*0x431573*/
         {
           wcsncpy(Destination, aP1, 0x80u); /*0x431580*/
@@ -278,7 +279,7 @@ int Network::SendBeacon(CellStruct * aP1, int a3, int a4, char a5)
           for ( i = 1; i < dword_A8DA84; ++i ) /*0x4315f3*/
           {
             Debug::Log(); /*0x431608*/
-            Network::SendMessage(&unk_A8E9C0.Socket, (int)&v20, 455, 1, dword_A8DA78[i] + 40, 0, 0); /*0x431632*/
+            Network::SendMessage(&unk_A8E9C0.Socket, (int)&v20, 455, 1, ((unsigned int *)(dword_A8DA78))[i] + 40, 0, 0); /*0x431632*/
             result = dword_A8DA84; /*0x431637*/
           }
         }
@@ -372,7 +373,7 @@ int Network::Dispatch()
   {
     v1 = dword_81D4E4; /*0x48d1fe*/
     byte_89E950 |= 1u; /*0x48d20d*/
-    dword_89E920 = Timer::GetTicks(); /*0x48d218*/
+    dword_89E920 = this->Timer::GetTicks(); /*0x48d218*/
     dword_89E928 = v1; /*0x48d21d*/
     atexit(nullsub_8); /*0x48d228*/
   }
@@ -386,7 +387,7 @@ int Network::Dispatch()
     v3 = dword_89E928; /*0x48d263*/
     if ( dword_89E920 != -1 ) /*0x48d26c*/
     {
-      v4 = Timer::GetTicks() - dword_89E920; /*0x48d278*/
+      v4 = this->Timer::GetTicks() - dword_89E920; /*0x48d278*/
       if ( v4 >= v3 ) /*0x48d280*/
         goto LABEL_10; /*0x48d280*/
       v3 -= v4; /*0x48d282*/
@@ -404,9 +405,9 @@ int Network::Dispatch()
           v52 = 0; /*0x48d2ce*/
           v53 = 0; /*0x48d2d0*/
           v51[0] = 41; /*0x48d2d6*/
-          CopyWideToChar(&v51[1], (char *)*dword_A8DA78, -1); /*0x48d2e6*/
+          CopyWideToChar(&v51[1], (char *)*(unsigned int *)(dword_A8DA78), -1); /*0x48d2e6*/
           Network_Disconnect(); /*0x48d2eb*/
-          Debug::Log(); /*0x48d2f5*/
+          this->Debug::Log(); /*0x48d2f5*/
           IDA_HIWORD(v5) = IDA_HIWORD(dword_A8DA84); /*0x48d2fa*/
           v6 = 1; /*0x48d304*/
           if ( dword_A8DA84 > 1 ) /*0x48d306*/
@@ -419,16 +420,16 @@ int Network::Dispatch()
               v46 = v5; /*0x48d31e*/
               if ( !v7 ) /*0x48d322*/
               {
-                ToWideStringChar((char *)dword_A8DA78[v6]); /*0x48d331*/
-                Debug::Log(); /*0x48d33c*/
-                Network::SendMessage(&unk_A8E9C0.Socket, (int)v51, 91, 0, dword_A8DA78[v6] + 40, v46, 0); /*0x48d366*/
+                ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v6]); /*0x48d331*/
+                this->Debug::Log(); /*0x48d33c*/
+                Network::SendMessage(&unk_A8E9C0.Socket, (int)v51, 91, 0, ((unsigned int *)(dword_A8DA78))[v6] + 40, v46, 0); /*0x48d366*/
                 MessageLoop(); /*0x48d36b*/
                 Network::ReceiveLoop(&unk_A8E9C0); /*0x48d375*/
                 v42 = 0; /*0x48d37a*/
                 v8 = (char **)dword_A8DA90; /*0x48d382*/
                 while ( 1 ) /*0x48d38d*/
                 {
-                  v9 = (char *)dword_A8DA78[v6]; /*0x48d38d*/
+                  v9 = (char *)((unsigned int *)(dword_A8DA78))[v6]; /*0x48d38d*/
                   v10 = ToWideStringChar(*v8); /*0x48d399*/
                   v11 = ToWideStringChar(v9); /*0x48d39b*/
                   if ( !_strcmpi(v10, v11) ) /*0x48d3a2*/
@@ -440,18 +441,18 @@ int Network::Dispatch()
                 }
                 v12 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x48d3cc*/
                 if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x48d3d5*/
-                  v12 += Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x48d3e7*/
-                if ( v12 - dword_A8E284[v42] > 2400 ) /*0x48d3fa*/
+                  v12 += this->Timer::GetTicks() - *(unsigned int *)&stru_88732C.__pad_6[6]; /*0x48d3e7*/
+                if ( v12 - ((unsigned int *)(dword_A8E284))[v42] > 2400 ) /*0x48d3fa*/
                 {
-                  ToWideStringChar((char *)dword_A8DA78[v6]); /*0x48d404*/
-                  Debug::Log(); /*0x48d40f*/
-                  v13 = dword_A8DA78[v6]; /*0x48d41d*/
+                  ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v6]); /*0x48d404*/
+                  this->Debug::Log(); /*0x48d40f*/
+                  v13 = ((unsigned int *)(dword_A8DA78))[v6]; /*0x48d41d*/
                   v14 = *(unsigned short *)(v13 + 131); /*0x48d420*/
                   if ( v14 != (unsigned short)v46 && v14 >= 0x400u ) /*0x48d432*/
                   {
                     ToWideStringChar((char *)v13); /*0x48d434*/
-                    Debug::Log(); /*0x48d43f*/
-                    v15 = dword_A8DA78[v6]; /*0x48d44d*/
+                    this->Debug::Log(); /*0x48d43f*/
+                    v15 = ((unsigned int *)(dword_A8DA78))[v6]; /*0x48d44d*/
                     IDA_LOWORD(v16) = *(unsigned short *)(v15 + 131); /*0x48d456*/
                     Network::SendMessage(&unk_A8E9C0.Socket, (int)v51, 91, 0, v15 + 40, v16, 0); /*0x48d46c*/
                   }
@@ -464,14 +465,14 @@ int Network::Dispatch()
             }
             while ( v6 < dword_A8DA84 ); /*0x48d484*/
           }
-          Ticks = Timer::GetTicks(); /*0x48d49d*/
+          Ticks = this->Timer::GetTicks(); /*0x48d49d*/
           v48 = 120; /*0x48d4a1*/
           while ( Network::GetQueueCount(&unk_A8E9C0) > 0 ) /*0x48d4b0*/
           {
             v17 = v48; /*0x48d4b6*/
             if ( Ticks != -1 ) /*0x48d4bd*/
             {
-              v18 = Timer::GetTicks() - Ticks; /*0x48d4c8*/
+              v18 = this->Timer::GetTicks() - Ticks; /*0x48d4c8*/
               if ( v18 >= v48 ) /*0x48d4ce*/
                 break; /*0x48d4ce*/
               v17 = v48 - v18; /*0x48d4d0*/
@@ -482,7 +483,7 @@ int Network::Dispatch()
             Network::ReceiveLoop(&unk_A8E9C0); /*0x48d4e0*/
           }
           v19 = dword_81D4E4; /*0x48d4f3*/
-          dword_89E920 = Timer::GetTicks(); /*0x48d502*/
+          dword_89E920 = this->Timer::GetTicks(); /*0x48d502*/
           dword_89E924 = v50; /*0x48d510*/
           dword_89E928 = v19; /*0x48d515*/
           byte_A8E2A4 = 0; /*0x48d51b*/
@@ -528,7 +529,7 @@ int Network::Dispatch()
               && (!byte_A8DBA0
                || ((uint8_t)Factory::GetLinkedIndex(
                                       (Factory *)&stru_B052C0.__pad_0[16],
-                                      *(unsigned int *)(*dword_A8DA78 + 111))
+                                      *(unsigned int *)(*(unsigned int *)(dword_A8DA78) + 111))
                  & stru_A8D600.__pad_64[3]) != 0) )
             {
               v35 = CharToWideString(&stru_A8D600.__pad_34[8]); /*0x48d935*/
@@ -550,15 +551,15 @@ int Network::Dispatch()
             }
             break; /*0x48d9b8*/
           case 0xF: /*0x48d583*/
-            Debug::Log(); /*0x48da4a*/
+            this->Debug::Log(); /*0x48da4a*/
             v38 = 0; /*0x48da57*/
             if ( dword_A8DA84 > 0 ) /*0x48da5b*/
             {
               while ( 1 ) /*0x48da6e*/
               {
-                if ( (uint8_t)NetworkID::Compare((bool *)(dword_A8DA78[v38] + 40), (int)dword_A8D804) ) /*0x48da6e*/
+                if ( (uint8_t)NetworkID::Compare((bool *)(((unsigned int *)(dword_A8DA78))[v38] + 40), (int)dword_A8D804) ) /*0x48da6e*/
                 {
-                  v39 = ToWideStringChar((char *)dword_A8DA78[v38]); /*0x48da85*/
+                  v39 = ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v38]); /*0x48da85*/
                   if ( !_strcmpi(v39, &stru_A8D600.__pad_34[8]) ) /*0x48da8b*/
                     break; /*0x48da8b*/
                 }
@@ -584,7 +585,7 @@ int Network::Dispatch()
               && (!byte_A8DBA0
                || ((uint8_t)Factory::GetLinkedIndex(
                                       (Factory *)&stru_B052C0.__pad_0[16],
-                                      *(unsigned int *)(*dword_A8DA78 + 111))
+                                      *(unsigned int *)(*(unsigned int *)(dword_A8DA78) + 111))
                  & stru_A8D600.__pad_64[3]) != 0)
               && (dword_A8D110 && *(unsigned int *)&dword_A8B238 == 3 || MEMORY[0xA8D111] && *(unsigned int *)&dword_A8B238 == 4) )
             {
@@ -689,7 +690,7 @@ int Network::Dispatch()
             {
               v34 = Network::processAcknowledgment((Network *)&stru_B052C0.__pad_0[16], &stru_A8D600.__pad_34[8]); /*0x48d8a8*/
               Network::GetAddress((Network *)v34, v49, (int)&Ticks, &v46); /*0x48d8be*/
-              (*(void (__thiscall **)(unsigned int, int *, int))(**(unsigned int **)&stru_887598.isAliveFlag + 120))( /*0x48d8d5*/
+              (*(void (**)(unsigned int, int *, int))(**(unsigned int **)&stru_887598.isAliveFlag + 120))( /*0x48d8d5*/
                 *(unsigned int *)&stru_887598.isAliveFlag,
                 &Ticks,
                 v46);
@@ -751,7 +752,7 @@ int Network::SendOffer()
     else
     {
       this->Network_field_0x1F5[1] = 1; /*0x4fc9a2*/
-      this->u32_298 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4fc9b6*/
+      this->u32_298 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4fc9b6*/
       v2 = v2; /*0x4fc9b8*/
       this->u32_29C = v2; /*0x4fc9bc*/
       IDA_LOBYTE(v2) = this->Network_field_0x1F5[1]; /*0x4fc9bf*/
@@ -773,7 +774,7 @@ AbstractClass * * Network::Init()
   v0 = g_NetworkInterface; /*0x52f3f0*/
   if ( g_NetworkInterface ) /*0x52f3fe*/
   {
-    (**(void (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1); /*0x52f404*/
+    (**(void (***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1); /*0x52f404*/
     v0 = 0; /*0x52f406*/
     g_NetworkInterface = 0; /*0x52f408*/
   }
@@ -782,7 +783,7 @@ AbstractClass * * Network::Init()
   {
     do /*0x52f437*/
     {
-      (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_SuperWeaponTypeCount + v1) + 100))( /*0x52f42c*/
+      (*(void (**)(unsigned int, int))(**((unsigned int **)g_SuperWeaponTypeCount + v1) + 100))( /*0x52f42c*/
         *((unsigned int *)g_SuperWeaponTypeCount + v1),
         CCINIClass_INI_Rules);
       ++v1; /*0x52f434*/
@@ -800,11 +801,11 @@ AbstractClass * * Network::Init()
     g_NetworkInterface = v0; /*0x52f461*/
   }
   g_GameTypeFlags = 2; /*0x52f467*/
-  (*(void (__thiscall **)(int, unsigned int))(v0->u32_3C)(v0, 0); /*0x52f474*/
+  (*(void (**)(int, unsigned int))(v0->u32_3C)(v0, 0); /*0x52f474*/
   Network::SetConnectionParams(30, -1, 600, 1); /*0x52f489*/
   Debug::Log(aAboutToInitial); /*0x52f493*/
   v4 = Network_Init_5DA6C0(); /*0x52f4a6*/
-  (*(void (__thiscall **)(int))(g_NetworkInterface->u32_1C)(g_NetworkInterface); /*0x52f4ac*/
+  (*(void (**)(int))(g_NetworkInterface->u32_1C)(g_NetworkInterface); /*0x52f4ac*/
   Network_PlayerPorts = 0; /*0x52f4b3*/
   dword_A8E2B6 = 0; /*0x52f4be*/
   byte_A8E2B0 = 0; /*0x52f4c4*/
@@ -967,7 +968,7 @@ namespace gamemd {
 void sub_53F5B0()
 {
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x53f5b8*/
-    (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 32))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x53f5bc*/
+    (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 32))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x53f5bc*/
   dword_AA05AC = 0; /*0x53f5bf*/
   return 1; /*0x53f5ce*/
 }
@@ -976,7 +977,7 @@ void sub_53F5B0()
 namespace gamemd {
 int sub_53F830(int a1, int a2)
 {
-  (*(void (__thiscall **)(int, int, int, unsigned int))(*(unsigned int *)dword_887628 + 16))(dword_887628, a1, a2, 0); /*0x53f83f*/
+  (*(void (**)(int, int, int, unsigned int))(*(unsigned int *)dword_887628 + 16))(dword_887628, a1, a2, 0); /*0x53f83f*/
   return 1; /*0x53f847*/
 }
 }
@@ -995,7 +996,7 @@ AbstractClass * * Network::SetConnectionParams(IUnknown * aP1, int a3, int a4, C
   Debug::Log(); /*0x540c7e*/
   Debug::Log(); /*0x540c8e*/
   if ( aP4 ) /*0x540c9c*/
-    (*(void (__thiscall **)(IPXManagerClass *, unsigned int, unsigned int, unsigned int))(this->Socket + 56))( /*0x540cae*/
+    (*(void (**)(IPXManagerClass *, unsigned int, unsigned int, unsigned int))(this->Socket + 56))( /*0x540cae*/
       this,
       this->u32_58,
       this->u32_5C,
@@ -1033,7 +1034,7 @@ int Network::sendData(AnimClass * aP1)
   int v3; // ecx
   int v4; // esi
   int i; // eax
-  void (__thiscall ***v7)(unsigned int, int); // ecx
+  void (***v7)(unsigned int, int); // ecx
   int v8; // ecx
   unsigned int *v9; // eax
   int v10; // ecx
@@ -1052,7 +1053,7 @@ int Network::sendData(AnimClass * aP1)
     if ( ++v4 >= v3 ) /*0x540f2d*/
       return 0; /*0x540f2d*/
   }
-  v7 = *(void (__thiscall ****)(unsigned int, int))(&this->q004 * v4 + 40); /*0x540f37*/
+  v7 = *(void (****)(unsigned int, int))(&this->q004 * v4 + 40); /*0x540f37*/
   if ( v7 ) /*0x540f41*/
     (**v7)(v7, 1); /*0x540f47*/
   v8 = v4; /*0x540f4c*/
@@ -1145,7 +1146,7 @@ int Network::SendMessage(int a2, int a3, int a4, int a5, int a6, int a7)
   v8 = a4; /*0x541107*/
   if ( a4 && (!a5 || Network::IsBroadcastAddr(a5)) ) /*0x541115*/
     v8 = 0; /*0x54111e*/
-  v9 = (*(int (__thiscall **)(unsigned int, int, int, int, int, int, int))(**(unsigned int *)&this->__pad_120 + 44))( /*0x54113e*/
+  v9 = (*(int (**)(unsigned int, int, int, int, int, int, int))(**(unsigned int *)&this->__pad_120 + 44))( /*0x54113e*/
          *(unsigned int *)&this->__pad_120,
          a2,
          a3,
@@ -1197,7 +1198,7 @@ AbstractClass * * Network::SendToPlayer(int a2, int a3, int a4, wchar_t * String
     return 0; /*0x5412b9*/
   if ( a4 && (&v13 == (int *)-12 || Network::IsBroadcastAddr(v14)) ) /*0x54130e*/
     v8 = 0; /*0x541317*/
-  v11 = (*(int (__thiscall **)(unsigned int, int, int, unsigned int *, int, int, unsigned int))(**(unsigned int *)&this->__pad_120 + 44))( /*0x541334*/
+  v11 = (*(int (**)(unsigned int, int, int, unsigned int *, int, int, unsigned int))(**(unsigned int *)&this->__pad_120 + 44))( /*0x541334*/
           *(unsigned int *)&this->__pad_120,
           a2,
           a3,
@@ -1219,7 +1220,7 @@ namespace gamemd {
 int Network::Send(int a2, int a3, TechnoTypeClass * aP3, int a5)
 {
   if ( IDA_LOBYTE(this->Network_field_0x4) && IDA_BYTE1(this->Network_field_0x4) ) /*0x541377*/
-    return (*(int (__thiscall **)(int, int, int, int, int))(*(unsigned int *)this->Network_field_0x48 + 52))( /*0x541397*/
+    return (*(int (**)(int, int, int, int, int))(*(unsigned int *)this->Network_field_0x48 + 52))( /*0x541397*/
              this->Network_field_0x48,
              a2,
              a3,
@@ -1234,7 +1235,7 @@ namespace gamemd {
 int Network::SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7)
 {
   if ( *(unsigned char *)&this->q004 && *(unsigned char *)&this->q005 ) /*0x5413b7*/
-    return (*(int (__thiscall **)(unsigned int, int, int, int, int, int, int))(**(unsigned int *)&this->__pad_120 + 56))( /*0x5413e1*/
+    return (*(int (**)(unsigned int, int, int, int, int, int, int))(**(unsigned int *)&this->__pad_120 + 56))( /*0x5413e1*/
              *(unsigned int *)&this->__pad_120,
              a2,
              a3,
@@ -1257,7 +1258,7 @@ int Network::receiveData(int a2)
   {
     result = *(unsigned char *)&this->q005; /*0x5413f7*/
     if ( result ) /*0x5413fc*/
-      return (*(int (__thiscall **)(unsigned int, int))(**(unsigned int *)&this->__pad_120 + 60))(*(unsigned int *)&this->__pad_120, a2); /*0x541408*/
+      return (*(int (**)(unsigned int, int))(**(unsigned int *)&this->__pad_120 + 60))(*(unsigned int *)&this->__pad_120, a2); /*0x541408*/
   }
   return result; /*0x54140b*/
 }
@@ -1290,7 +1291,7 @@ namespace gamemd {
 int Network::SendPacketThunk2(int a2, int a3, int a4, int a5)
 {
   if ( IDA_LOBYTE(this->Network_field_0x4) && IDA_BYTE1(this->Network_field_0x4) ) /*0x541487*/
-    return (*(int (__thiscall **)(void *, int, int, int, int))(*(unsigned int *)this->Network_field_0x4C + 52))( /*0x5414a7*/
+    return (*(int (**)(void *, int, int, int, int))(*(unsigned int *)this->Network_field_0x4C + 52))( /*0x5414a7*/
              this->Network_field_0x4C,
              a2,
              a3,
@@ -1360,7 +1361,7 @@ void * Network::ReceiveLoop()
       *(unsigned int *)v47[0].__pad_14 = 1024; /*0x541864*/
       *(unsigned int *)&v47[0].__pad_14[4] = 128; /*0x54186c*/
       *(unsigned int *)v46 = 0; /*0x541874*/
-      Network_field_0xC = (void *)(*(int (__thiscall **)(unsigned int, char *, char *, char *, char *, int16_t *))(**(unsigned int **)&stru_887598.isAliveFlag + 8))( /*0x541889*/
+      Network_field_0xC = (void *)(*(int (**)(unsigned int, char *, char *, char *, char *, int16_t *))(**(unsigned int **)&stru_887598.isAliveFlag + 8))( /*0x541889*/
                                     *(unsigned int *)&stru_887598.isAliveFlag,
                                     &v47[0].__pad_87[45],
                                     v47[0].__pad_14,
@@ -1387,7 +1388,7 @@ void * Network::ReceiveLoop()
         {
           goto LABEL_87; /*0x5418f5*/
         }
-        if ( (*(int (__thiscall **)(unsigned int, char *, void *, Network *, unsigned int))(**((unsigned int **)&this->Initialized8) + 48))( /*0x541913*/
+        if ( (*(int (**)(unsigned int, char *, void *, Network *, unsigned int))(**((unsigned int **)&this->Initialized8) + 48))( /*0x541913*/
                this->u32_48,
                &v47[0].__pad_87[45],
                Network_field_0xC,
@@ -1441,13 +1442,13 @@ void * Network::ReceiveLoop()
                           (Network *)&stru_B052C0.__pad_0[16],
                           *(unsigned int *)(dword_A8DA78[v10] + 111),
                           v12);
-                        (*(void (__thiscall **)(unsigned int, Network *, int16_t))(**((unsigned int **)&this->Initialized8) + 64))( /*0x541abb*/
+                        (*(void (**)(unsigned int, Network *, int16_t))(**((unsigned int **)&this->Initialized8) + 64))( /*0x541abb*/
                           this->u32_48,
                           v47,
                           v13);
                         v14 = dword_A8DA78[v10]; /*0x541ac7*/
                         IDA_LOWORD(v14) = *(unsigned short *)(v14 + 40); /*0x541acc*/
-                        (*(void (__thiscall **)(unsigned int, Network *, int))(**((unsigned int **)&this->Initialized8) + 64))( /*0x541ad6*/
+                        (*(void (**)(unsigned int, Network *, int))(**((unsigned int **)&this->Initialized8) + 64))( /*0x541ad6*/
                           this->u32_48,
                           v47,
                           v14);
@@ -1552,7 +1553,7 @@ void * Network::ReceiveLoop()
       if ( *(unsigned short *)&v47[0].__pad_87[45] == v24[18] ) /*0x541d0b*/
       {
         if ( !byte_A8DBA0 /*0x541d2c*/
-          || (*(int (__thiscall **)(unsigned short *, char *, void *, Network *, unsigned int))(*(unsigned int *)v24 + 48))(
+          || (*(int (**)(unsigned short *, char *, void *, Network *, unsigned int))(*(unsigned int *)v24 + 48))(
                v24,
                &v47[0].__pad_87[45],
                Network_field_0xC,
@@ -1581,7 +1582,7 @@ void * Network::ReceiveLoop()
       {
         if ( v47[0].__pad_87[47] == 2 ) /*0x541d90*/
         {
-          (*(void (__thiscall **)(unsigned int, char *, void *))(**((unsigned int **)this + 20) + 12))( /*0x541da0*/
+          (*(void (**)(unsigned int, char *, void *))(**((unsigned int **)this + 20) + 12))( /*0x541da0*/
             this->u32_50,
             &v47[0].__pad_87[45],
             Network_field_0xC);
@@ -1590,7 +1591,7 @@ void * Network::ReceiveLoop()
         {
           Network::FormatAddress(v47, 0); /*0x541e46*/
           Debug::Log(); /*0x541e59*/
-          if ( !(*(int (__thiscall **)(unsigned int, char *, void *))(**((unsigned int **)&this->Initialized0) + 12))( /*0x541e6f*/
+          if ( !(*(int (**)(unsigned int, char *, void *))(**((unsigned int **)&this->Initialized0) + 12))( /*0x541e6f*/
                   this->u32_28,
                   &v47[0].__pad_87[45],
                   Network_field_0xC) )
@@ -1608,7 +1609,7 @@ void * Network::ReceiveLoop()
   LABEL_60:
         if ( *(unsigned int *)&dword_A8B238 == 4 /*0x541f4a*/
           && !dword_A8E7AC
-          && *(int *)&stru_A8EB00.?[416] > 8
+          && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > 8
           && !byte_A8DBA0
           && (unsigned int)Network_field_0xC > 0xF
           && v25 == 1
@@ -1631,10 +1632,10 @@ void * Network::ReceiveLoop()
             *v35 = v47[0].Network_field_0x0; /*0x542117*/
             v35[1] = (int)v47[0].Network_field_0x4; /*0x54211d*/
             v35[2] = (int)v47[0].Network_field_0x8; /*0x542124*/
-            if ( (*(int (__thiscall **)(IPXManagerClass *, int))(this->Socket + 24))(this, v44) != -1 ) /*0x542131*/
+            if ( (*(int (**)(IPXManagerClass *, int))(this->Socket + 24))(this, v44) != -1 ) /*0x542131*/
             {
               v36 = (int *)(*((unsigned int *)this /*0x542143*/
-                            + (*(int (__thiscall **)(IPXManagerClass *, int))(this->Socket + 24))(this, v30)
+                            + (*(int (**)(IPXManagerClass *, int))(this->Socket + 24))(this, v30)
                             + 10)
                           + 76);
               *v36 = v47[0].Network_field_0x0; /*0x542146*/
@@ -1665,7 +1666,7 @@ void * Network::ReceiveLoop()
       if ( !(uint8_t)GUID::Compare((char *)(v27->Socket + 76), (int)v47) ) /*0x541edd*/
         break; /*0x541edd*/
   LABEL_72:
-      if ( !(*(int (__thiscall **)(unsigned int, char *, void *))(**((unsigned int **)this + v26 + 10) + 12))( /*0x541f9b*/
+      if ( !(*(int (**)(unsigned int, char *, void *))(**((unsigned int **)this + v26 + 10) + 12))( /*0x541f9b*/
               *((unsigned int *)this + v26 + 10),
               &v47[0].__pad_87[45],
               Network_field_0xC) )
@@ -1724,9 +1725,9 @@ void * Network::ReceiveLoop()
   LABEL_92:
   v37 = this->u32_48; /*0x542197*/
   v38 = 0; /*0x54219a*/
-  if ( v37 && *(unsigned int *)&stru_887598.isAliveFlag && !(*(int (__thiscall **)(int))(*(unsigned int *)v37 + 20))(v37) ) /*0x5421aa*/
+  if ( v37 && *(unsigned int *)&stru_887598.isAliveFlag && !(*(int (**)(int))(*(unsigned int *)v37 + 20))(v37) ) /*0x5421aa*/
   {
-    (*(void (__thiscall **)(unsigned int))(**((unsigned int **)&this->Initialized8) + 24))(this->u32_48); /*0x5421b6*/
+    (*(void (**)(unsigned int))(**((unsigned int **)&this->Initialized8) + 24))(this->u32_48); /*0x5421b6*/
     v47[0].Network_field_0x10 = 0; /*0x5421b9*/
   }
   if ( byte_A8DBA0 ) /*0x5421c4*/
@@ -1734,9 +1735,9 @@ void * Network::ReceiveLoop()
     v39 = this->u32_4C; /*0x5421c6*/
     if ( v39 ) /*0x5421cb*/
     {
-      if ( !(*(int (__thiscall **)(int))(*(unsigned int *)v39 + 20))(v39) ) /*0x5421cf*/
+      if ( !(*(int (**)(int))(*(unsigned int *)v39 + 20))(v39) ) /*0x5421cf*/
       {
-        (*(void (__thiscall **)(unsigned int))(**((unsigned int **)&this->Initialized9) + 24))(this->u32_4C); /*0x5421db*/
+        (*(void (**)(unsigned int))(**((unsigned int **)&this->Initialized9) + 24))(this->u32_4C); /*0x5421db*/
         v47[0].Network_field_0x10 = 0; /*0x5421de*/
       }
       if ( !byte_A8E2D0 ) /*0x5421e9*/
@@ -1747,7 +1748,7 @@ void * Network::ReceiveLoop()
       v40 = this->u32_50; /*0x5421fe*/
       if ( v40 ) /*0x542203*/
       {
-        if ( !(*(int (__thiscall **)(int))(*(unsigned int *)v40 + 20))(v40) ) /*0x542207*/
+        if ( !(*(int (**)(int))(*(unsigned int *)v40 + 20))(v40) ) /*0x542207*/
         {
           Debug::Log(); /*0x542213*/
           v47[0].Network_field_0x10 = 0; /*0x54221b*/
@@ -1760,7 +1761,7 @@ void * Network::ReceiveLoop()
     v41 = &this->Active; /*0x54222c*/
     do /*0x542260*/
     {
-      if ( !(*(int (__thiscall **)(int))(*(unsigned int *)v41->Socket + 20))(v41->Socket) ) /*0x542233*/
+      if ( !(*(int (**)(int))(*(unsigned int *)v41->Socket + 20))(v41->Socket) ) /*0x542233*/
       {
         v47[0].Network_field_0x10 = 0; /*0x54223a*/
         this->u32_A8 = *(unsigned int *)(v41->Socket + 100); /*0x542249*/
@@ -1890,7 +1891,7 @@ AbstractClass * * Network::SetupRematch()
   wcscpy(word_A8E258, (const wchar_t *)v3[this->MPCooperative_field_0x54]); /*0x5c4767*/
   dword_A8E2AC = -1; /*0x5c4772*/
   dword_A8B3AC = *(unsigned int *)this->__pad_70; /*0x5c4782*/
-  (*(void (__thiscall **)(unsigned int *))(*dword_887628 + 48))(dword_887628); /*0x5c4789*/
+  (*(void (**)(unsigned int *))(*dword_887628 + 48))(dword_887628); /*0x5c4789*/
   strcpy(v18, "xxx.xxx.xxx.xxx"); /*0x5c47a3*/
   v19 = 0; /*0x5c47ac*/
   v20 = 0; /*0x5c47b9*/
@@ -1899,7 +1900,7 @@ AbstractClass * * Network::SetupRematch()
   for ( i = 0; v5 < dword_A8DA84; ++v5 ) /*0x5c47d0*/
   {
     Network::GetAddress((Network *)(dword_A8DA78[v5] + 40), &v16, (int)v17, &v15); /*0x5c47ed*/
-    (*(void (__thiscall **)(unsigned int *, char *, int))(*dword_887628 + 44))(dword_887628, v18, v15); /*0x5c4804*/
+    (*(void (**)(unsigned int *, char *, int))(*dword_887628 + 44))(dword_887628, v18, v15); /*0x5c4804*/
   }
   qmemcpy(&unk_A8DBCC, &this->MPCooperative_field_0xC4, 0x60u); /*0x5c4827*/
   qmemcpy(dword_A8DC2C, &this->__pad_C8[92], sizeof(dword_A8DC2C)); /*0x5c4839*/
@@ -2277,7 +2278,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
       break; /*0x5d96b0*/
     if ( (*(uint8_t (__stdcall **)(int))(*(unsigned int *)g_NetworkInterface + 104))(v66) ) /*0x5d96b5*/
     {
-      (*(void (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v66); /*0x5d96ce*/
+      (*(void (**)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v66); /*0x5d96ce*/
   LABEL_36:
       v21 = g_NetworkInterface; /*0x5d96d1*/
       break; /*0x5d96d1*/
@@ -2285,9 +2286,9 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
     if ( !v18-- ) /*0x5d96bc*/
       goto LABEL_36; /*0x5d96c1*/
   }
-  if ( !(*(uint8_t (__thiscall **)(int, int))(v21->q068)(v21, v66) ) /*0x5d96da*/
+  if ( !(*(uint8_t (**)(int, int))(v21->q068)(v21, v66) ) /*0x5d96da*/
     return 1; /*0x5d9d92*/
-  (*(void (__thiscall **)(int))(*(unsigned int *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x5d96ed*/
+  (*(void (**)(int))(*(unsigned int *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x5d96ed*/
   v69 = Timer::GetTicks(); /*0x5d96f9*/
   v23 = 360; /*0x5d9701*/
   for ( i = 0; ; i = Network::WaitForPacket(2130706432, 0) ) /*0x5d970e*/
@@ -2309,7 +2310,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
   if ( !i ) /*0x5d9760*/
   {
   LABEL_159:
-    (*(void (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v66); /*0x5d9d6d*/
+    (*(void (**)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v66); /*0x5d9d6d*/
     if ( i == (unsigned short)v66 ) /*0x5d9d7c*/
     {
       *(unsigned int *)&this->q008 = 0; /*0x5d9d85*/
@@ -2336,7 +2337,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
     Network::QueryAddress(v88, v75, 2130706433, 0); /*0x5d97c5*/
     v26 = 360; /*0x5d97d8*/
   }
-  (*(void (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v75); /*0x5d97e0*/
+  (*(void (**)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v75); /*0x5d97e0*/
   if ( !j || j == (unsigned short)v75 ) /*0x5d97fc*/
     return 1; /*0x5d97fc*/
   v78[0] = 0; /*0x5d9805*/
@@ -2366,7 +2367,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
           break; /*0x5d9871*/
         if ( (*(uint8_t (__stdcall **)(unsigned short *))(*(unsigned int *)g_NetworkInterface + 104))(v29) ) /*0x5d9876*/
         {
-          (*(void (__thiscall **)(int, unsigned short *))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v29); /*0x5d9897*/
+          (*(void (**)(int, unsigned short *))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v29); /*0x5d9897*/
   LABEL_69:
           v33 = g_NetworkInterface; /*0x5d989a*/
           break; /*0x5d989a*/
@@ -2375,7 +2376,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
           goto LABEL_69; /*0x5d988a*/
       }
       *((unsigned short *)v85 + k) = (unsigned short)v29; /*0x5d98a0*/
-      v35 = (*(int (__thiscall **)(int, unsigned short *))(v33->q068)(v33, v29); /*0x5d98a8*/
+      v35 = (*(int (**)(int, unsigned short *))(v33->q068)(v33, v29); /*0x5d98a8*/
       if ( !(unsigned char)v35 ) /*0x5d98ad*/
       {
         if ( k > 0 ) /*0x5d99e7*/
@@ -2386,7 +2387,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
             if ( *v85 ) /*0x5d99ed*/
             {
               IDA_LOWORD(v35) = *v85; /*0x5d99ed*/
-              v35 = (*(int (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v35); /*0x5d99fe*/
+              v35 = (*(int (**)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v35); /*0x5d99fe*/
             }
             ++v85; /*0x5d9a01*/
             --k; /*0x5d9a04*/
@@ -2396,7 +2397,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
         return v67; /*0x5d9a15*/
       }
     }
-    (*(void (__thiscall **)(int))(*(unsigned int *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x5d98c5*/
+    (*(void (**)(int))(*(unsigned int *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x5d98c5*/
     v36 = 0; /*0x5d98d3*/
     v77 += 10; /*0x5d98d5*/
     v38 = Timer::GetTicks(); /*0x5d98d9*/
@@ -2439,7 +2440,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
       if ( *v29 ) /*0x5d996d*/
       {
         IDA_LOWORD(v38) = *v29; /*0x5d996d*/
-        v38 = (*(int (__thiscall **)(int, signed int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v38); /*0x5d997e*/
+        v38 = (*(int (**)(int, signed int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v38); /*0x5d997e*/
       }
       ++v29; /*0x5d9981*/
       --k; /*0x5d9984*/
@@ -2493,7 +2494,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
               break; /*0x5d9ab5*/
             if ( (*(uint8_t (__stdcall **)(int))(*(unsigned int *)g_NetworkInterface + 104))(k) ) /*0x5d9aba*/
             {
-              (*(void (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, k); /*0x5d9ad3*/
+              (*(void (**)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, k); /*0x5d9ad3*/
   LABEL_118:
               v49 = g_NetworkInterface; /*0x5d9ad6*/
               break; /*0x5d9ad6*/
@@ -2501,7 +2502,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
             if ( !v47-- ) /*0x5d9ac1*/
               goto LABEL_118; /*0x5d9ac6*/
           }
-          if ( !(*(uint8_t (__thiscall **)(int, int))(v49->q068)(v49, k) ) /*0x5d9adf*/
+          if ( !(*(uint8_t (**)(int, int))(v49->q068)(v49, k) ) /*0x5d9adf*/
             return v43; /*0x5d9af2*/
           v51 = 255; /*0x5d9af5*/
           while ( 1 ) /*0x5d9afe*/
@@ -2518,7 +2519,7 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
               break; /*0x5d9b29*/
             if ( (*(uint8_t (__stdcall **)(int))(*(unsigned int *)g_NetworkInterface + 104))(v47) ) /*0x5d9b2e*/
             {
-              (*(void (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v47); /*0x5d9b47*/
+              (*(void (**)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v47); /*0x5d9b47*/
   LABEL_130:
               v53 = g_NetworkInterface; /*0x5d9b4a*/
               break; /*0x5d9b4a*/
@@ -2526,9 +2527,9 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
             if ( !v51-- ) /*0x5d9b35*/
               goto LABEL_130; /*0x5d9b3a*/
           }
-          if ( !(*(uint8_t (__thiscall **)(int, int))(v53->q068)(v53, v47) ) /*0x5d9b53*/
+          if ( !(*(uint8_t (**)(int, int))(v53->q068)(v53, v47) ) /*0x5d9b53*/
             return v67; /*0x5d9b68*/
-          (*(void (__thiscall **)(int))(*(unsigned int *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x5d9b73*/
+          (*(void (**)(int))(*(unsigned int *)g_NetworkInterface + 28))(g_NetworkInterface); /*0x5d9b73*/
           v72 = Timer::GetTicks(); /*0x5d9b7f*/
           v55 = 0; /*0x5d9b8f*/
           v56 = 240; /*0x5d9b91*/
@@ -2554,8 +2555,8 @@ IPXConnClass * * Network::ResolveAndConnect(unsigned char * a2)
           }
           if ( !v55 ) /*0x5d9bed*/
           {
-            (*(void (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, k); /*0x5d9bf8*/
-            (*(void (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v75); /*0x5d9c08*/
+            (*(void (**)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, k); /*0x5d9bf8*/
+            (*(void (**)(int, int))(*(unsigned int *)g_NetworkInterface + 108))(g_NetworkInterface, v75); /*0x5d9c08*/
             return v67; /*0x5d9c19*/
           }
   LABEL_142:
@@ -2700,7 +2701,7 @@ unsigned short Network::ResolveNetworkAddress(unsigned short a2)
         break; /*0x5da2a6*/
       if ( (*(uint8_t (__stdcall **)(int))(**(unsigned int **)&stru_887598.isAliveFlag + 104))(v6) ) /*0x5da2ab*/
       {
-        (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag + 108))( /*0x5da2c4*/
+        (*(void (**)(unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag + 108))( /*0x5da2c4*/
           *(unsigned int *)&stru_887598.isAliveFlag,
           v6);
   LABEL_19:
@@ -2711,13 +2712,13 @@ unsigned short Network::ResolveNetworkAddress(unsigned short a2)
         goto LABEL_19; /*0x5da2b7*/
     }
     v18 = v6; /*0x5da2cd*/
-    result = (*(int (__thiscall **)(int, int))(*(unsigned int *)v9 + 104))(v9, v6); /*0x5da2d4*/
+    result = (*(int (**)(int, int))(*(unsigned int *)v9 + 104))(v9, v6); /*0x5da2d4*/
     if ( !(unsigned char)result ) /*0x5da2d9*/
     {
       IDA_LOWORD(result) = a2; /*0x5da2db*/
       return result; /*0x5da2ed*/
     }
-    (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x5da2f8*/
+    (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x5da2f8*/
   }
   v21 = (uint16_t)v6; /*0x5da308*/
   Debug::Log(); /*0x5da30c*/
@@ -2742,7 +2743,7 @@ unsigned short Network::ResolveNetworkAddress(unsigned short a2)
   }
   ++dword_830CA8; /*0x5da39a*/
   if ( (unsigned short)v18 ) /*0x5da3ae*/
-    (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag + 108))( /*0x5da3b9*/
+    (*(void (**)(unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag + 108))( /*0x5da3b9*/
       *(unsigned int *)&stru_887598.isAliveFlag,
       v18);
   if ( v12 ) /*0x5da3bf*/
@@ -2959,7 +2960,7 @@ AbstractClass * * Network_ModemConnectionDialog()
   if ( !Dialog ) /*0x5ef50c*/
     return 0; /*0x5efed7*/
   SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5ef51a*/
-  v3 = (*((int (__thiscall **)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 32))(g_DSurface_Hidden); /*0x5ef528*/
+  v3 = (*((int (**)(ObjectClass *))g_DSurface_Hidden->AbstractClass + 32))(g_DSurface_Hidden); /*0x5ef528*/
   UI_Connect(Dialog, -1, (v3 - 400) / 2 + 147); /*0x5ef542*/
   Dialog::Show((Dialog *)Dialog); /*0x5ef549*/
   if ( !dword_A8DAC0 || dword_A8DAC4 == -1 || dword_A8DAC8 == -1 || Modem::OpenPort((Modem *)&unk_A8EA70, &dword_A8DAC0) ) /*0x5ef571*/
@@ -3009,7 +3010,7 @@ AbstractClass * * Network_ModemConnectionDialog()
         if ( !*(unsigned int *)v9->__pad_0 ) /*0x5ef613*/
           v9 = (Modem *)&dword_A8DAC0; /*0x5ef619*/
         if ( g_ClipboardBuffer ) /*0x5ef626*/
-          (**(void (__thiscall ***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5ef62c*/
+          (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5ef62c*/
         v10 = (WinModemClass *)RA2_OPNEW(0x2088u); /*0x5ef633*/
         if ( v10 ) /*0x5ef63d*/
           g_ClipboardBuffer = (HWND)WinModemClass::Construct(v10); /*0x5ef646*/
@@ -3066,7 +3067,7 @@ AbstractClass * * Network_ModemConnectionDialog()
         v6(Dialog, 0); /*0x5ef7b2*/
         v5(g_hWnd); /*0x5ef7ba*/
         if ( g_ClipboardBuffer ) /*0x5ef7c4*/
-          (**(void (__thiscall ***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5ef7ca*/
+          (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5ef7ca*/
         v19 = (WinModemClass *)RA2_OPNEW(0x2088u); /*0x5ef7d1*/
         if ( v19 ) /*0x5ef7db*/
           g_ClipboardBuffer = (HWND)WinModemClass::Construct(v19); /*0x5ef7e4*/
@@ -3387,7 +3388,7 @@ void Network_UpdateLatencyDisplay(Network *aP0)
   double v12; // st7
   double *v13; // eax
   int v14; // eax
-  void (__thiscall ***v15)(unsigned int, int, unsigned int *); // ecx
+  void (***v15)(unsigned int, int, unsigned int *); // ecx
   HWND v16; // eax
   unsigned int v17[2]; // [esp+8h] [ebp-8h] BYREF
 
@@ -3428,7 +3429,7 @@ void Network_UpdateLatencyDisplay(Network *aP0)
     }
     v17[0] = v8; /*0x643cf0*/
     v14 = Math::RoundToInt(v12); /*0x643cff*/
-    v15 = *(void (__thiscall ****)(unsigned int, int, unsigned int *))(aP0 + 4); /*0x643d04*/
+    v15 = *(void (****)(unsigned int, int, unsigned int *))(aP0 + 4); /*0x643d04*/
     v17[1] = v14; /*0x643d07*/
     if ( v15 && *(unsigned char *)(aP0 + 96) ) /*0x643d11*/
       (**v15)(v15, 4526, v17); /*0x643d24*/
@@ -3554,7 +3555,7 @@ AbstractClass * * Network::QueueProcessingLoop()
   {
     if ( ((uint8_t)v2 & 0x7F) == 0 )
     {
-      unsigned int v6 = (*(int (__thiscall **)(char *))(*(unsigned int *)v1 + 48))(v1);
+      unsigned int v6 = (*(int (**)(char *))(*(unsigned int *)v1 + 48))(v1);
       switch ( *(unsigned int *)&HouseClass_Player[40528] )
       {
         case 0:
@@ -3576,7 +3577,7 @@ LABEL_15:
       unsigned int v7 = 8 * v6 + 15;
       if ( v7 < 0x78 )
         v7 = 120;
-      (*(void (__thiscall **)(char *, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v1 + 52))(
+      (*(void (**)(char *, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v1 + 52))(
         v1,
         v6 + 10,
         -1,
@@ -3611,7 +3612,7 @@ LABEL_15:
       if ( *(unsigned int *)&HouseClass_Player[29932] == 4
         && (*(unsigned short *)&HouseClass_Player[45112] & 0x7FF) == 0 )
       {
-        (*(void (__thiscall **)(char *, unsigned int))(*(unsigned int *)v1 + 44))(v1, 0);
+        (*(void (**)(char *, unsigned int))(*(unsigned int *)v1 + 44))(v1, 0);
       }
     }
     goto LABEL_59;
@@ -3724,7 +3725,7 @@ LABEL_46:
     v20 += 6;
   }
   while ( (int)v20 < (int)&dword_AFA400 );
-  (*(void (__thiscall **)(char *, int))(*(unsigned int *)v1 + 44))(v1, 1);
+  (*(void (**)(char *, int))(*(unsigned int *)v1 + 44))(v1, 1);
   if ( *(unsigned int *)&HouseClass_Player[29952] == 2
     && *(unsigned int *)&HouseClass_Player[45112] != *(unsigned int *)&HouseClass_Player[30728]
                                                         * ((unsigned int)(*(unsigned int *)&HouseClass_Player[30728]
@@ -3807,7 +3808,7 @@ LABEL_76:
           updated = Network::updateLatency(v1);
           unsigned int v30 = 0;
           int v31 = 0;
-          if ( (*(int (__thiscall **)(char *))(*(unsigned int *)v1 + 16))(v1) > 0 )
+          if ( (*(int (**)(char *))(*(unsigned int *)v1 + 16))(v1) > 0 )
           {
             unsigned int * v32 = (unsigned int *)&unk_AFA368;
             do
@@ -3817,15 +3818,15 @@ LABEL_76:
               ++v31;
               v32 += 6;
             }
-            while ( v31 < (*(int (__thiscall **)(char *))(*(unsigned int *)v1 + 16))(v1) );
+            while ( v31 < (*(int (**)(char *))(*(unsigned int *)v1 + 16))(v1) );
           }
           v33 = v30 + updated;
         }
         else
         {
-          v33 = (*(int (__thiscall **)(char *))(*(unsigned int *)v1 + 48))(v1);
+          v33 = (*(int (**)(char *))(*(unsigned int *)v1 + 48))(v1);
         }
-        int v34 = (*(int (__thiscall **)(char *))(*(unsigned int *)v1 + 48))(v1);
+        int v34 = (*(int (**)(char *))(*(unsigned int *)v1 + 48))(v1);
         v68 = HouseClass_Player[30728];
         if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
           v68 = v65 <= 30 ? 5 : 10;
@@ -3892,7 +3893,7 @@ LABEL_99:
         int v43 = 8 * v34 + 15;
         if ( v43 < 120 )
           v43 = 120;
-        (*(void (__thiscall **)(char *, int, int, int, unsigned int))(*(unsigned int *)v1 + 52))(v1, v34 + 10, -1, v43, 0);
+        (*(void (**)(char *, int, int, int, unsigned int))(*(unsigned int *)v1 + 52))(v1, v34 + 10, -1, v43, 0);
         v1 = v1;
       }
       else
@@ -3945,10 +3946,10 @@ LABEL_99:
       goto LABEL_162;
     }
     int v46 = *(unsigned int *)&stru_830620[22428][16 * *(unsigned int *)&HouseClass_Player[29932] + 5516];
-    if ( 3 * (*(int (__thiscall **)(char *))(*(unsigned int *)v1 + 48))(v1) <= v46 )
+    if ( 3 * (*(int (**)(char *))(*(unsigned int *)v1 + 48))(v1) <= v46 )
       int v47 = v46;
     else
-      v47 = 3 * (*(int (__thiscall **)(char *))(*(unsigned int *)v1 + 48))(v1);
+      v47 = 3 * (*(int (**)(char *))(*(unsigned int *)v1 + 48))(v1);
     v48 = (IUnknown *)QueueNetworkProcessor(
                         0,
                         (int *)v1,
@@ -4101,7 +4102,7 @@ int Network::syncGameState()
   if ( *(int *)&stru_A8BB1C.__pad_14[8] < *(int *)stru_A8BB1C.__pad_14 /*0x64aceb*/
     || (stru_A8BB1C.__pad_14[5] || !*(unsigned int *)stru_A8BB1C.__pad_14)
     && *(int *)&stru_A8BB1C.__pad_14[12] > 0
-    && (result = (*((int (__thiscall **)(void **, int, unsigned int))stru_A8BB1C.Network_field_0xC + 2))(
+    && (result = (*((int (**)(void **, int, unsigned int))stru_A8BB1C.Network_field_0xC + 2))(
                    &stru_A8BB1C.Network_field_0xC,
                    *(unsigned int *)stru_A8BB1C.__pad_14 + *(unsigned int *)&stru_A8BB1C.__pad_14[12],
                    0),
@@ -4338,7 +4339,7 @@ AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
     Debug::Log(); /*0x64c602*/
     Debug::Log(); /*0x64c613*/
     Debug::Log(); /*0x64c623*/
-    (*(void (__thiscall **)(int))(v14->uniqueId)(v14); /*0x64c62f*/
+    (*(void (**)(int))(v14->uniqueId)(v14); /*0x64c62f*/
     v11 = v11; /*0x64c632*/
   LABEL_96:
     v49 = ++v13; /*0x64cade*/
@@ -4404,10 +4405,10 @@ AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
         {
           if ( a1 ) /*0x64c95c*/
           {
-            v29 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a1 + 24))(a1, v46); /*0x64c96c*/
+            v29 = (*(int (**)(int, int))(*(unsigned int *)a1 + 24))(a1, v46); /*0x64c96c*/
             if ( v29 != -1 ) /*0x64c971*/
             {
-              if ( v29 < (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 16))(a1) - 1 ) /*0x64c97d*/
+              if ( v29 < (*(int (**)(int))(*(unsigned int *)a1 + 16))(a1) - 1 ) /*0x64c97d*/
               {
                 v30 = a3 + 24 * v29; /*0x64c986*/
                 do /*0x64c9a5*/
@@ -4416,7 +4417,7 @@ AbstractClass * * Network::ProcessEventList(int a1, int * a2, int a3)
                   qmemcpy((void *)v30, (const void *)(v30 + 24), 0x18u); /*0x64c994*/
                   v30 += 24; /*0x64c99a*/
                 }
-                while ( v29 < (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 16))(a1) - 1 ); /*0x64c9a5*/
+                while ( v29 < (*(int (**)(int))(*(unsigned int *)a1 + 16))(a1) - 1 ); /*0x64c9a5*/
                 v13 = v49; /*0x64c9a7*/
               }
               HandleNetworkPlayerDisconnect(v46, 0); /*0x64c9b1*/
@@ -4729,8 +4730,8 @@ HashTable_flat * * Network::ProcessAddressChange()
   Waypoint v6; // [esp+10h] [ebp-8Ch] BYREF
 
   Waypoint::InitInvalid((Waypoint *)&v6.__pad_0[12]); /*0x6640ea*/
-  result = *(wchar_t **)&stru_A8EB00.?[416]; /*0x6640ef*/
-  if ( *(int *)&stru_A8EB00.?[416] > 0 ) /*0x6640f6*/
+  result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6640ef*/
+  if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > 0 ) /*0x6640f6*/
   {
     for ( result = (wchar_t *)Network::SendPacketThunk2( /*0x66411c*/
                                 (Network *)&unk_A8E9C0,
@@ -4918,12 +4919,12 @@ AbstractClass * * Network::SyncPlayerList()
     }
     while ( v2 < g_WOL_UserList.owningHouseIndex ); /*0x79301a*/
   }
-  (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 48))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x79302a*/
+  (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 48))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x79302a*/
   for ( i = 1; i < dword_A8DA84; ++i ) /*0x793039*/
   {
     Network::FormatAddress((Network *)(dword_A8DA78[i] + 40), 0); /*0x793048*/
     Debug::Log(); /*0x793053*/
-    (*(void (__thiscall **)(unsigned int, int, unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 44))( /*0x793071*/
+    (*(void (**)(unsigned int, int, unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 44))( /*0x793071*/
       *(unsigned int *)&stru_887598.isAliveFlag,
       dword_A8DA78[i] + 40,
       0);
@@ -5099,20 +5100,20 @@ AbstractClass * * sub_53F540()
   uint16_t v1; // si
 
   v1 = *(unsigned short *)&stru_AA0398.__pad_D8[248]; /*0x53f54d*/
-  (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag + 80))( /*0x53f556*/
+  (*(void (**)(unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag + 80))( /*0x53f556*/
     *(unsigned int *)&stru_887598.isAliveFlag,
     stru_A8EB00.ObjectTypeClass[45]);
-  dword_AA05A8 = (*(uint8_t (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 60))( /*0x53f570*/
+  dword_AA05A8 = (*(uint8_t (**)(unsigned int, unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 60))( /*0x53f570*/
                    *(unsigned int *)&stru_887598.isAliveFlag,
                    v1);
   if ( dword_AA05A8 ) /*0x53f576*/
   {
-    if ( (*(uint8_t (__thiscall **)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag) ) /*0x53f580*/
+    if ( (*(uint8_t (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 28))(*(unsigned int *)&stru_887598.isAliveFlag) ) /*0x53f580*/
     {
       dword_AA05AC = 1; /*0x53f58c*/
       return 1; /*0x53f591*/
     }
-    (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 4))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x53f59a*/
+    (*(void (**)(unsigned int))(**(unsigned int **)&stru_887598.isAliveFlag + 4))(*(unsigned int *)&stru_887598.isAliveFlag); /*0x53f59a*/
     dword_AA05A8 = 0; /*0x53f59d*/
   }
   return 0; /*0x53f575*/
@@ -5382,7 +5383,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
     Network::FormatAddress((uint16_t *)a4, 0); /*0x541704*/
     Debug::Log(); /*0x54170f*/
     IDA_LOWORD(v5) = dword_841F3C; /*0x541714*/
-    (*(void (__thiscall **)(int, int, int, void *, int, unsigned int, int, int))(*(unsigned int *)dword_887628 + 12))( /*0x54173c*/
+    (*(void (**)(int, int, int, void *, int, unsigned int, int, int))(*(unsigned int *)dword_887628 + 12))( /*0x54173c*/
       dword_887628,
       aP1,
       a3,
@@ -5413,7 +5414,7 @@ char Network_Recv(IPXManagerClass * aP0, IPXManagerClass * aP1, int a3, int a4, 
   *v7 = 0; /*0x5417d4*/
   Network::FormatAddress(v11, 0); /*0x5417da*/
   Debug::Log(); /*0x5417e5*/
-  (*(void (__thiscall **)(int, int, int, uint16_t *, int, unsigned int, int, int16_t))(*(unsigned int *)dword_887628 + 12))( /*0x54180b*/
+  (*(void (**)(int, int, int, uint16_t *, int, unsigned int, int, int16_t))(*(unsigned int *)dword_887628 + 12))( /*0x54180b*/
     dword_887628,
     aP1,
     a3,
@@ -5541,7 +5542,7 @@ char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
 
   v10 = 43; /*0x5d9103*/
   strcpy(v11, aWw); /*0x5d910e*/
-  (*(void (__thiscall **)(unsigned int *, int))(*dword_887628 + 116))(dword_887628, a2); /*0x5d9127*/
+  (*(void (**)(unsigned int *, int))(*dword_887628 + 116))(dword_887628, a2); /*0x5d9127*/
   v12 = a2; /*0x5d9139*/
   v13 = a4 == 1; /*0x5d9141*/
   QueueCount = Network::GetQueueCount((int)unk_A8E9C0); /*0x5d9155*/
@@ -5565,7 +5566,7 @@ char Network::QueryAddress(IPXManagerClass * aP0, int a2, int a3, char a4)
     Network::ReceiveLoop(unk_A8E9C0); /*0x5d91ea*/
     Event::Dispatch(); /*0x5d91ef*/
   }
-  result = (*(int (__thiscall **)(unsigned int *, unsigned int))(*dword_887628 + 116))(dword_887628, 0); /*0x5d91f6*/
+  result = (*(int (**)(unsigned int *, unsigned int))(*dword_887628 + 116))(dword_887628, 0); /*0x5d91f6*/
   IDA_LOBYTE(result) = 1; /*0x5d9205*/
   return result; /*0x5d9203*/
 }
@@ -5920,7 +5921,7 @@ int sub_64B410(int a1, int * a2)
   v2 = a2; /*0x64b419*/
   if ( *(unsigned int *)&dword_A8B238 == 1 || *(unsigned int *)&dword_A8B238 == 2 ) /*0x64b42a*/
   {
-    if ( (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 16))(a1) ) /*0x64b491*/
+    if ( (*(int (**)(int))(*(unsigned int *)a1 + 16))(a1) ) /*0x64b491*/
     {
       ++dword_A8DAB4; /*0x64b498*/
       if ( !Network_Process_5F0120(v7) ) /*0x64b49e*/
@@ -5937,7 +5938,7 @@ int sub_64B410(int a1, int * a2)
   v4 = 0; /*0x64b43e*/
   v5 = 0x7FFFFFFF; /*0x64b442*/
   v8 = 0; /*0x64b447*/
-  if ( (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 16))(a1) > 0 ) /*0x64b450*/
+  if ( (*(int (**)(int))(*(unsigned int *)a1 + 16))(a1) > 0 ) /*0x64b450*/
   {
     do /*0x64b46c*/
     {
@@ -5949,7 +5950,7 @@ int sub_64B410(int a1, int * a2)
       ++v4; /*0x64b463*/
       v2 += 6; /*0x64b464*/
     }
-    while ( v4 < (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 16))(a1) ); /*0x64b46c*/
+    while ( v4 < (*(int (**)(int))(*(unsigned int *)a1 + 16))(a1) ); /*0x64b46c*/
     v2 = a2; /*0x64b46e*/
   }
   KickNetworkPlayerNow(a1, v8, (int)v2, 1u); /*0x64b47b*/
@@ -5970,8 +5971,8 @@ void sub_64D990()
     grindingAnimHandle = FootClass_Array.?; /*0x64d9a1*/
     do /*0x64d9d5*/
     {
-      if ( (*((unsigned char *)&FootClass_Array.?[1] + 111 * grindingAnimHandle + 1) & 1) == 0 /*0x64d9bd*/
-        && *(int *)&stru_A8EB00.?[416] <= *(int *)((char *)&FootClass_Array.?[1] + 111 * grindingAnimHandle + 3) )
+      if ( (*((unsigned char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * grindingAnimHandle + 1) & 1) == 0 /*0x64d9bd*/
+        && *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) <= *(int *)((char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * grindingAnimHandle + 3) )
       {
         break; /*0x64d9bd*/
       }
@@ -5998,7 +5999,7 @@ int sub_64D9E0()
   int i; // esi
   int Buffer; // [esp+8h] [ebp-4h] BYREF
 
-  if ( *(unsigned int *)&stru_A8EB00.?[416] || (result = *(unsigned int *)&dword_A8B238) == 0 ) /*0x64d9f4*/
+  if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) || (result = *(unsigned int *)&dword_A8B238) == 0 ) /*0x64d9f4*/
   {
     v2 = 0; /*0x64da00*/
     Buffer = 0; /*0x64da06*/
@@ -6008,10 +6009,10 @@ int sub_64D9E0()
       v4 = *(unsigned int *)&FootClass_Array.?; /*0x64da13*/
       do /*0x64da37*/
       {
-        if ( *(unsigned int *)&stru_A8EB00.?[416] == *(int *)((char *)&FootClass_Array.?[1] /*0x64da32*/
+        if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) == *(int *)((char *)&(unsigned int *)((char *)&FootClass_Array + 1) /*0x64da32*/
                                                       + 111 * (grindingAnimHandle & 0x3FFF)
                                                       + 3)
-          && (*((unsigned char *)&FootClass_Array.?[1] + 111 * (grindingAnimHandle & 0x3FFF) + 1) & 1) == 0 )
+          && (*((unsigned char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * (grindingAnimHandle & 0x3FFF) + 1) & 1) == 0 )
         {
           ++v2; /*0x64da34*/
         }
@@ -6025,14 +6026,14 @@ int sub_64D9E0()
     result = *(unsigned int *)&FootClass_Array.?; /*0x64da4f*/
     for ( i = 0; i < *(int *)&FootClass_Array.?; ++i ) /*0x64da59*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.?[416] == *(int *)((char *)&FootClass_Array.?[1] /*0x64da85*/
+      if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) == *(int *)((char *)&(unsigned int *)((char *)&FootClass_Array + 1) /*0x64da85*/
                                                     + 111 * ((IDA_LOWORD(FootClass_Array.?) + (unsigned short)i) & 0x3FFF)
                                                     + 3)
-        && (*((unsigned char *)&FootClass_Array.?[1] + 111 * ((IDA_LOWORD(FootClass_Array.?) + (unsigned short)i) & 0x3FFF) + 1) & 1) == 0 )
+        && (*((unsigned char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * ((IDA_LOWORD(FootClass_Array.?) + (unsigned short)i) & 0x3FFF) + 1) & 1) == 0 )
       {
         FileClass::Write( /*0x64da96*/
           &dword_A8D58C,
-          (char *)&FootClass_Array.?[1] + 111 * ((IDA_LOWORD(FootClass_Array.?) + (unsigned short)i) & 0x3FFF),
+          (char *)&(unsigned int *)((char *)&FootClass_Array + 1) + 111 * ((IDA_LOWORD(FootClass_Array.?) + (unsigned short)i) & 0x3FFF),
           0x6Fu);
         --Buffer; /*0x64da9b*/
       }
@@ -6067,7 +6068,7 @@ char * sub_652110(int a1, int a2)
     {
       v7 = (unsigned int)IPXManagerClass::CheckStatus(&unk_A8E9C0, a2) >> 1; /*0x652192*/
     }
-    result = (char *)(*(unsigned int *)&stru_A8EB00.?[416] - v7 * *(unsigned int *)&g_MissionQueueFrame.waypoints[282] / 0x3C - v4); /*0x6521af*/
+    result = (char *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v7 * *(unsigned int *)&g_MissionQueueFrame.waypoints[282] / 0x3C - v4); /*0x6521af*/
     dword_A8DB7C[a2] = result; /*0x6521b2*/
   }
   else
@@ -6222,7 +6223,7 @@ void sub_72CDB0()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1340] ) /*0x72ce0c*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1340])( /*0x72ce12*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1340])( /*0x72ce12*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1340],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1340] = 0; /*0x72ce14*/
@@ -6326,7 +6327,7 @@ int sub_796FC0()
   if ( dword_A8DA84 < dword_A8DA7C /*0x79707a*/
     || (byte_A8DA81 || !dword_A8DA7C)
     && dword_A8DA88 > 0
-    && (*(uint8_t (__thiscall **)(PtrVector *, int, unsigned int))(*(unsigned int *)&stru_A8DA74 + 8))(
+    && (*(uint8_t (**)(PtrVector *, int, unsigned int))(*(unsigned int *)&stru_A8DA74 + 8))(
          &stru_A8DA74,
          dword_A8DA7C + dword_A8DA88,
          0) )

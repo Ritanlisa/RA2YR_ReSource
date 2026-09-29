@@ -20,8 +20,7 @@ struct GameConfig {
     bool enable_log;  // 0xD0
     unsigned int __pad_0;
 // --- flat members (END) ---
-    void * ptr_41;  // 0x41 (ctor-installed filename pointer, member_set evidence 0x5D67B0)
-    static void * Constructor(GameConfig * aP1);  // 0x5D67B0
+     void * Constructor(GameConfig * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x5D67B0
     static int BuildChecksum(void * aP1);  // 0x77E7A0
     char * ComputeCRC();
     int ComputeHash();

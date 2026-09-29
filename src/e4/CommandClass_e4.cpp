@@ -16,6 +16,7 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/ComStreamClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6D1200
 namespace gamemd {
@@ -65,12 +66,12 @@ int CommandClass::BuildBar()
   v2 = (int *)&unk_B0C1C0; /*0x6d1207*/
   do /*0x6d1224*/
   {
-    (*(void (__thiscall **)(int *))(*v2 + 32))(v2); /*0x6d1210*/
-    (*(void (__thiscall **)(void *, int *))(((unsigned int)(this->q0108))))(this, v2); /*0x6d1218*/
+    (*(void (**)(int *))(*v2 + 32))(v2); /*0x6d1210*/
+    (*(void (**)(void *, int *))(((unsigned int)(this->q0108))))(this, v2); /*0x6d1218*/
     v2 += 24; /*0x6d121b*/
   }
   while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d1224*/
-  (*(void (__thiscall **)(void *, unsigned int *))(((unsigned int)(this->q0108))))(this, dword_B0CCB0); /*0x6d122f*/
+  (*(void (**)(void *, unsigned int *))(((unsigned int)(this->q0108))))(this, dword_B0CCB0); /*0x6d122f*/
   v3 = g_ObjectTrackingPool[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
@@ -228,7 +229,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
     if ( this->q244 < v9 /*0x724641*/
       || (this->u8_241 || !v9)
       && (v10 = this->u32_248, v10 > 0)
-      && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->u32_234 + 8))(&this->u32_8D0, v9 + v10, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(this->u32_234 + 8))(&this->u32_8D0, v9 + v10, 0) )
     {
       v11 = (unsigned int)(this->q244);
       v12 = (unsigned int)(this->u32_238);

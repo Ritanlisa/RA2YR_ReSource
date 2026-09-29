@@ -18,6 +18,13 @@
 #include "e4/classes/TagClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x48DCD0
 namespace gamemd {
@@ -56,7 +63,7 @@ int TechnoTypeClass::Dispatch(TechnoTypeClass * aP1)
 {
   double result; // st7
 
-  switch ( (*(int (__thiscall **)(unsigned int *))(*aP1 + 44))(aP1) ) /*0x50be0f*/
+  switch ( (*(int (**)(unsigned int *))(*aP1 + 44))(aP1) ) /*0x50be0f*/
   {
     case 3: /*0x50be0f*/
       result = *(float *)(this->ObjectTypeClass[13] + 284); /*0x50be37*/
@@ -86,7 +93,7 @@ int TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
 {
   double result; // st7
 
-  switch ( (*(int (__thiscall **)(unsigned int *))(*aP1 + 44))(aP1) ) /*0x50becf*/
+  switch ( (*(int (**)(unsigned int *))(*aP1 + 44))(aP1) ) /*0x50becf*/
   {
     case 3: /*0x50becf*/
       result = *(&this->u32_85C0); /*0x50beec*/
@@ -114,7 +121,7 @@ int TechnoTypeClass::GetThreatMultiplier(TechnoTypeClass * aP1)
 namespace gamemd {
 unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
 {
-  int v3; // ecx
+  unsigned int v3;
   char v4; // al
   int v5; // eax
   void **v6; // edx
@@ -167,7 +174,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
   if ( g_MultiplayerLogState < dword_A8ECA8 /*0x6f0857*/
     || (byte_A8ECAD || !dword_A8ECA8)
     && dword_A8ECB4 > 0
-    && (v4 = (*(int (__thiscall **)(int *, int, unsigned int))(TeamTypeClass_Array + 8))(
+    && (v4 = (*(int (**)(int *, int, unsigned int))(TeamTypeClass_Array + 8))(
                &TeamTypeClass_Array,
                dword_A8ECA8 + dword_A8ECB4,
                0),
@@ -175,7 +182,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
         v4) )
   {
     g_MultiplayerLogState = (unsigned int)(v3 + 1);
-    *((unsigned int *)g_TeamTypePool + v3) = this; /*0x6f0868*/
+    *((unsigned int *)(unsigned int)(g_TeamTypePool)+ v3) = this; /*0x6f0868*/
     v3 = g_MultiplayerLogState; /*0x6f086b*/
   }
   v5 = 0; /*0x6f0871*/
@@ -191,7 +198,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
     {
       ++v5; /*0x6f0881*/
       ++v6; /*0x6f0882*/
-      if ( v5 >= v3 ) /*0x6f0887*/
+      if ( v5 >= (int)(v3) ) /*0x6f0887*/
         goto LABEL_11; /*0x6f0887*/
     }
   }
@@ -199,13 +206,13 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
   if ( g_AnimManager < g_AnimTypePool /*0x6f08c5*/
     || (g_AnimPoolLocked || !g_AnimTypePool)
     && g_AnimManagerConfig > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_AnimPoolManager + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_AnimPoolManager + 8))(
          &g_AnimPoolManager,
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
     v7 = (gamemd::TechnoTypeClass *)(g_AnimManager++);
-    *((unsigned int *)g_AnimPoolCount + v7) = this; /*0x6f08e1*/
+    *((unsigned int *)(unsigned int)(g_AnimPoolCount)+ v7) = this; /*0x6f08e1*/
   }
   return (unsigned int *)(this);
 }
@@ -225,8 +232,8 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   unsigned int *v12; // edi
   unsigned int *v13; // eax
   int v14; // ecx
-  int v15; // eax
-  int v16; // eax
+  TechnoTypeClass * v15;
+  TechnoTypeClass * v16;
 
   ObjectTypeClass::ConstructFull(Source); /*0x710afb*/
   this->armed = 1; /*0x710b02*/
@@ -648,7 +655,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   *(&this->UndeploySound5) = 0; /*0x71162d*/
   this->ZFudgeBridge = -1; /*0x711633*/
   this->PaletteFile = -1; /*0x711639*/
-  this->u32_DA8 = -1; /*0x71163f*/
+  this->u32_DA8 = (unsigned int *)(-1);
   *(&this->ChronoOutSound0) = 0; /*0x711645*/
   *(&this->VoiceHarvest6) = 0; /*0x71164b*/
   *(&this->VoiceHarvest7) = 1; /*0x711651*/
@@ -665,10 +672,10 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->vtable4 = (void*)&TechnoTypeClass_vftable; /*0x71169a*/
   *(&this->VoicePrimaryEliteWeaponAttack6) = 0; /*0x7116a7*/
   *(&this->q0E04) = 1; /*0x7116ad*/
-  (*(void (__thiscall **)(char *))(this->DebrisTypes + 12))(&this->u32_1388); /*0x7116b6*/
-  (*(void (__thiscall **)(char *))(this->DebrisAnims + 12))(&this->u32_24C6); /*0x7116c5*/
-  (*(void (__thiscall **)(char *))(this->DebrisMaximums + 12))(&this->q1446); /*0x7116d4*/
-  (*(void (__thiscall **)(char *))(this->Dock + 12))(&this->u32_1900); /*0x7116e3*/
+  (*(void (**)(char *))(this->DebrisTypes + 12))(&this->u32_1388); /*0x7116b6*/
+  (*(void (**)(char *))(this->DebrisAnims + 12))(&this->u32_24C6); /*0x7116c5*/
+  (*(void (**)(char *))(this->DebrisMaximums + 12))(&this->q1446); /*0x7116d4*/
+  (*(void (**)(char *))(this->Dock + 12))(&this->u32_1900); /*0x7116e3*/
   v4 = &this->q8A8; /*0x7116e6*/
   v5 = 18; /*0x7116ec*/
   do /*0x71170f*/
@@ -729,24 +736,24 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   if ( dword_B0F680 < dword_B0F678 /*0x7117c3*/
     || (byte_B0F67D || !dword_B0F678)
     && dword_B0F684 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_B0F670 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_B0F670 + 8))(
          &dword_B0F670,
          dword_B0F684 + dword_B0F678,
          0) )
   {
-    v15 = dword_B0F680++; /*0x7117d0*/
-    *((unsigned int *)dword_B0F674 + v15) = this; /*0x7117df*/
+    v15 = (gamemd::TechnoTypeClass *)((unsigned int)(dword_B0F680++));
+    *((unsigned int *)(unsigned int)(dword_B0F674)+ v15) = this; /*0x7117df*/
   }
   if ( dword_A8EB10 < dword_A8EB08 /*0x711816*/
     || (byte_A8EB0D || !dword_A8EB08)
     && dword_A8EB14 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(stru_A8EB00 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(stru_A8EB00 + 8))(
          &stru_A8EB00,
          dword_A8EB14 + dword_A8EB08,
          0) )
   {
-    v16 = dword_A8EB10++; /*0x711823*/
-    *((unsigned int *)dword_A8EB04 + v16) = this; /*0x711832*/
+    v16 = (gamemd::TechnoTypeClass *)((unsigned int)(dword_A8EB10++));
+    *((unsigned int *)(unsigned int)(dword_A8EB04)+ v16) = this; /*0x711832*/
   }
   return this; /*0x711837*/
 }
@@ -758,7 +765,7 @@ AbstractClass * * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
   int v3; // eax
   int v4; // ecx
 
-  ObjectTypeClass::Construct(aP1); /*0x71184b*/
+  ((ObjectTypeClass *)(aP1))->Construct(); /*0x71184b*/
   TechnoTypeClass::Constructor_0(aP1); /*0x711859*/
   *(void **)&this->DebrisTypes = (void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x71185e*/
   IntDynamicVector::Construct((unsigned int *)(&this->q1446), aP1); /*0x71186d*/
@@ -825,7 +832,7 @@ AbstractClass * * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
     {
       if ( !byte_A8EB0D && dword_A8EB08 /*0x711ab1*/
         || dword_A8EB14 <= 0
-        || !(*(uint8_t (__thiscall **)(int *, int, unsigned int))(stru_A8EB00 + 8))(
+        || !(*(uint8_t (**)(int *, int, unsigned int))(stru_A8EB00 + 8))(
               &stru_A8EB00,
               dword_A8EB14 + dword_A8EB08,
               0) )
@@ -885,10 +892,10 @@ int TechnoTypeClass::DTOR()
     this->AltCameo = 0; /*0x711b46*/
     this->AltCameoAllocated = 0; /*0x711b4c*/
   }
-  v3 = (*(int (__thiscall **)(int *, int *))(dword_B0F670 + 16))(&dword_B0F670, &this); /*0x711b66*/
+  v3 = (*(int (**)(int *, int *))(dword_B0F670 + 16))(&dword_B0F670, &this); /*0x711b66*/
   if ( v3 != -1 ) /*0x711b6c*/
     DynamicVector::RemoveItem(&dword_B0F670, v3); /*0x711b74*/
-  v4 = (*(int (__thiscall **)(int *, int *))(stru_A8EB00 + 16))(&stru_A8EB00, &this); /*0x711b8d*/
+  v4 = (*(int (**)(int *, int *))(stru_A8EB00 + 16))(&stru_A8EB00, &this); /*0x711b8d*/
   if ( v4 != -1 ) /*0x711b93*/
     TechnoTypeClass::RemoveItem(&stru_A8EB00, v4); /*0x711b9b*/
   *(void **)&this->DestroyParticleSystems = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x711ba7*/
@@ -1021,10 +1028,10 @@ int TechnoTypeClass::ComputeValueSimple(float * a2)
   TechnoTypeClass *v6; // [esp+14h] [ebp+4h]
 
   if ( !a2 ) /*0x711f0d*/
-    return (*(int (__thiscall **)(TechnoTypeClass *))(this->parent_gap[0] + 172))(this); /*0x711f52*/
+    return (*(int (**)(TechnoTypeClass *))(this->parent_gap[0] + 172))(this); /*0x711f52*/
   v5 = TechnoTypeClass::Dispatch((TechnoTypeClass *)a2, this); /*0x711f17*/
   ThreatMultiplier = TechnoTypeClass::GetThreatMultiplier((float *)a2, this); /*0x711f27*/
-  v6 = (TechnoTypeClass *)(*(int (__thiscall **)(TechnoTypeClass *))(this->parent_gap[0] + 172))(this); /*0x711f31*/
+  v6 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(this->parent_gap[0] + 172))(this); /*0x711f31*/
   IDA_LOWORD(result) = Math::RoundToInt((double)(int)v6 * ThreatMultiplier * v5); /*0x711f41*/
   return result; /*0x711f46*/
 }
@@ -1057,7 +1064,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
     }
     else
     {
-      v11 = (TechnoTypeClass *)(*(int (__thiscall **)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711fd7*/
+      v11 = (TechnoTypeClass *)(*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x711fd7*/
       IDA_LOWORD(v6) = Math::RoundToInt((double)(int)v11 * ThreatMultiplier * v12); /*0x711fe7*/
       v7 = v6; /*0x711fec*/
       v13 = v6; /*0x711ff0*/
@@ -1071,7 +1078,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
   }
   else
   {
-    v14 = (*(int (__thiscall **)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x712020*/
+    v14 = (*(int (**)(TechnoTypeClass *))(this->ObjectTypeClass[0] + 172))(this); /*0x712020*/
     IDA_LOWORD(result) = Math::RoundToInt((double)v14 * v9); /*0x71202c*/
   }
   return result; /*0x711fc5*/
@@ -1121,24 +1128,24 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
   char Buffer[260]; // [esp+38Ch] [ebp-104h] BYREF
 
   v3 = (TypeList *)&aP0->?[772]; /*0x716307*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71630f*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716320*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71632f*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71633e*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71634d*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71635c*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71636b*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71637a*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716389*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716398*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163a7*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163b6*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163c5*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163d4*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163e3*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163f2*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716401*/
-  (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716410*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71630f*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716320*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71632f*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71633e*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71634d*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71635c*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71636b*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x71637a*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716389*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716398*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163a7*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163b6*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163c5*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163d4*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163e3*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x7163f2*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716401*/
+  (*(void (**)(unsigned char *))(*(unsigned int *)&aP0->vtable4 + 12))(&aP0->vtable4); /*0x716410*/
   result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x71641c*/
   if ( result >= 0 ) /*0x716423*/
   {
@@ -1368,7 +1375,7 @@ DynamicVectorClass_flat * * TechnoTypeClass::SaveLoad_Prefix(ObjectTypeClass * a
     v35 = SearchMIXFile(Buffer, 0); /*0x716d04*/
     *(unsigned int *)&aP0->?[1548] = v35; /*0x716d0b*/
     if ( !v35 ) /*0x716d11*/
-      *(unsigned int *)&aP0->?[1548] = SearchMIXFile(&stru_820320.?[143], 0); /*0x716d1f*/
+      *(unsigned int *)&aP0->?[1548] = SearchMIXFile(&(unsigned int *)((char *)&stru_820320 + 143), 0); /*0x716d1f*/
     INIClass::GetString( /*0x716d3f*/
       (INIClass *)&DSurface_ViewBounds.__pad_FC[228],
       &aP0->?[276],

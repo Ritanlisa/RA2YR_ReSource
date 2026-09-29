@@ -12,13 +12,11 @@ double AircraftTypeVector::Constructor(...) { return 0; }
 double AllocCallback::Dispatch(...) { return 0; }
 double AnimTypeVector::Constructor(...) { return 0; }
 double AudioChannel::DeactivatePlay(...) { return 0; }
-double AudioChannel::IsActive(...) { return 0; }
 double AudioConfig::InitDefault(...) { return 0; }
 double AudioFile::GetCallback(...) { return 0; }
 double AudioFileClass::Release(...) { return 0; }
 double AudioPool::ProcessQueue(...) { return 0; }
 double AudioSample::Destructor(...) { return 0; }
-double AudioSample::InitLinkedList(...) { return 0; }
 double AudioSample::IsBuffering(...) { return 0; }
 double AudioSource::Get(...) { return 0; }
 double AudioTimer::DecrementAll(...) { return 0; }
@@ -26,6 +24,7 @@ double BTree::DeleteSubtree(...) { return 0; }
 double BaseNodeClass::Vector_Constructor(...) { return 0; }
 double BigInt::DecryptBlock(...) { return 0; }
 double BigInt::RSAOperation(...) { return 0; }
+double BitArray::TestBit(...) { return 0; }
 double BufferIO::Cleanup(...) { return 0; }
 double BufferIO::Flush(...) { return 0; }
 double BuildingLightQueue::RemoveEntry(...) { return 0; }
@@ -33,6 +32,7 @@ double BuildingLoadQueue::Find(...) { return 0; }
 double BuildingLoadQueue::FindBuilding(...) { return 0; }
 double BuildingLoadQueue::GetNext(...) { return 0; }
 double ButtonClass::SetState(...) { return 0; }
+double CDTimerClass::TimeRemaining(...) { return 0; }
 double CaptureManager::FreeAll(...) { return 0; }
 double Char::Swap(...) { return 0; }
 double ChatEvent::ProcessStrings(...) { return 0; }
@@ -42,10 +42,11 @@ double Checksummer::Add_double(...) { return 0; }
 double Checksummer::Add_float(...) { return 0; }
 double Cliff::ProcessTransitions(...) { return 0; }
 double Conditions::CheckResult(...) { return 0; }
-double Conditions::CheckResult3(...) { return 0; }
 double Conflict::GetOwnerHouse(...) { return 0; }
 double Coord2D::Add(...) { return 0; }
+double Coord2D::Coord2D_field_0x04(...) { return 0; }
 double Coord2D::Sub(...) { return 0; }
+double Coord2D::__pad_0(...) { return 0; }
 double CoordList::GetBounds(...) { return 0; }
 double CountryCombo::IDToIndex(...) { return 0; }
 double CrateClass::ProcessPickup(...) { return 0; }
@@ -57,7 +58,9 @@ double DeleteAndZero::Alt(...) { return 0; }
 double DeleteAndZero::Alt2(...) { return 0; }
 double DeleteAndZero::DeleteAndZero_field_0x04(...) { return 0; }
 double DeleteAndZero::DeleteAndZero_field_0x08(...) { return 0; }
+double DeleteAndZero::NeedsSaveOrLink(...) { return 0; }
 double DeleteAndZero::OrFree(...) { return 0; }
+double DeleteAndZero::occupant(...) { return 0; }
 double DiskSpace::CheckAvailable(...) { return 0; }
 double DynamicArray::Remove(...) { return 0; }
 double DynamicArray::Resize(...) { return 0; }
@@ -95,14 +98,18 @@ double GenericList::Constructor(...) { return 0; }
 double Hash::ComputeHashSHA1(...) { return 0; }
 double Hash::InsertOrdered(...) { return 0; }
 double Hash::Reset(...) { return 0; }
+double HashMap::Shrink(...) { return 0; }
 double HashTree::MarkEntry(...) { return 0; }
 double Heap::SiftDown(...) { return 0; }
 double INISectionList::Constructor(...) { return 0; }
 double InputManager_ProcessEvents::Vtable(...) { return 0; }
 double Int4::Set(...) { return 0; }
+double Int4::Set2(...) { return 0; }
 double Int4::__pad_0(...) { return 0; }
+double IntDynamicVector::Construct(...) { return 0; }
 double IsRandMap::Sed(...) { return 0; }
 double IsRandMap::Sed2(...) { return 0; }
+double KeyValuePair::Init(...) { return 0; }
 double KeywordType::FindOrCreate2(...) { return 0; }
 double Lightning::Draw(...) { return 0; }
 double ListClass::Destruct(...) { return 0; }
@@ -113,6 +120,9 @@ double Locomotor::GetSpeed(...) { return 0; }
 double MPCombatTeam::Constructor(...) { return 0; }
 double MPCombatTeam::Constructor2(...) { return 0; }
 double MPCombatTeam::MPTeam(...) { return 0; }
+double MSAnim::GetField(...) { return 0; }
+double MSAnim::SetField(...) { return 0; }
+double MSShapeAnim::Constructor(...) { return 0; }
 double MapResourceClass::__tail_0(...) { return 0; }
 double Matrix::Copy12Float(...) { return 0; }
 double Matrix::Scale(...) { return 0; }
@@ -131,6 +141,26 @@ double NetworkEventQueueClass::WaitForResponse(...) { return 0; }
 double NetworkID::Assign(...) { return 0; }
 double NetworkID::Compare(...) { return 0; }
 double NetworkSettings::DlgProc(...) { return 0; }
+double ObjectClass::AbstractClass(...) { return 0; }
+double ObjectClass::CalcTargetFacing(...) { return 0; }
+double ObjectClass::Cleanup(...) { return 0; }
+double ObjectClass::FreeResources(...) { return 0; }
+double ObjectClass::GetLandHeight(...) { return 0; }
+double ObjectClass::GetSizeMax(...) { return 0; }
+double ObjectClass::Init(...) { return 0; }
+double ObjectClass::PreDraw(...) { return 0; }
+double ObjectClass::SetReference(...) { return 0; }
+double ObjectClass::StepCleanup(...) { return 0; }
+double ObjectClass::__pad_0(...) { return 0; }
+double ObjectClass::ctor(...) { return 0; }
+double ObjectClass::q0E4(...) { return 0; }
+double ObjectClass::q0E8(...) { return 0; }
+double ObjectClass::q0EC(...) { return 0; }
+double ObjectClass::q0ED(...) { return 0; }
+double ObjectClass::q21C(...) { return 0; }
+double ObjectClass::q6E0(...) { return 0; }
+double ObjectClass::qD68(...) { return 0; }
+double ObjectClass::vtable0(...) { return 0; }
 double ObjectPlacement::CalcPosition(...) { return 0; }
 double ObjectPtr::RegisterForTracking(...) { return 0; }
 double OptionQueue::PushEntry(...) { return 0; }
@@ -146,6 +176,7 @@ double Pipe::Pipe_field_0x04(...) { return 0; }
 double Pipe::Pipe_field_0x08(...) { return 0; }
 double Pipe::Pipe_field_0x0C(...) { return 0; }
 double Pipe::__pad_0(...) { return 0; }
+double PlayerType::GetName(...) { return 0; }
 double PreviewClass::ReadPreview(...) { return 0; }
 double PriorityQueue::Add(...) { return 0; }
 double ProductionClass::StartTimer(...) { return 0; }
@@ -158,16 +189,22 @@ double Random::Range(...) { return 0; }
 double Random::State(...) { return 0; }
 double Rect_Point::Set(...) { return 0; }
 double ResultNode::CleanupList(...) { return 0; }
+double SafeDelete::Ptr(...) { return 0; }
 double SaveLoadDialog::DlgProc(...) { return 0; }
+double ScoreText::Show(...) { return 0; }
+double ScoreText::ShowAlt(...) { return 0; }
 double ScreenSaver::Process(...) { return 0; }
 double SettingsClass::ClampValues(...) { return 0; }
 double ShapeButton::SetShape(...) { return 0; }
 double ShapeButtonClass::ShapeButtonClass_field_0x08(...) { return 0; }
+double SimpleDialogControl::Constructor(...) { return 0; }
+double SkirmishMapGen::LookupDialogHash(...) { return 0; }
 double SlaveControlVector::Constructor(...) { return 0; }
 double SpawnControlVector::Constructor(...) { return 0; }
 double SquadClass::ProcessMove(...) { return 0; }
 double StaticString::Factory(...) { return 0; }
 double Straw::Dtor(...) { return 0; }
+double StringList::Find(...) { return 0; }
 double StringTable::Find(...) { return 0; }
 double StringVector::Construct(...) { return 0; }
 double StringVector::StringVector_field_0x10(...) { return 0; }
@@ -184,6 +221,7 @@ double Text::DrawRepeated(...) { return 0; }
 double Text::Layout(...) { return 0; }
 double Text::MeasureWidth(...) { return 0; }
 double TextGroup::SetRect(...) { return 0; }
+double TheatreClass::InitView(...) { return 0; }
 double TileData::Constructor(...) { return 0; }
 double TileNode::Cleanup(...) { return 0; }
 double TileSystem::Constructor(...) { return 0; }
@@ -194,6 +232,7 @@ double Tooltip::Enable(...) { return 0; }
 double Tree::Destructor(...) { return 0; }
 double TypeClass::FindByName(...) { return 0; }
 double VQAClass::AdvanceFrame(...) { return 0; }
+double Vector2::NormalizeNonZero(...) { return 0; }
 double Vector3::AddAssign(...) { return 0; }
 double Vector3::Magnitude(...) { return 0; }
 double Vector3::Subtract(...) { return 0; }
@@ -205,19 +244,7 @@ double VoxelSection::GetInfo(...) { return 0; }
 double WDTClass::GetCellType(...) { return 0; }
 double WDTObject::GetSize(...) { return 0; }
 double WinAPI::Wrapper(...) { return 0; }
+double WordVector::Constructor(...) { return 0; }
 double rc_ptr_base::__pad_0(...) { return 0; }
 
 } // namespace gamemd
-// GENERATED static-varargs stubs for C2597 no-def methods
-// (fix_member_static_calls.py). INTERIM: return 0 — same
-// fidelity as the tree-era return-0 stubs these replace.
-#include <cstdint>
-#include "e4/e4_globals.hpp"
-#include "e4/e4_protos.h"
-
-namespace gamemd {
-
-double FootClass::ProcessDeploy(...) { return 0; }
-
-} // namespace gamemd
-

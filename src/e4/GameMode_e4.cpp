@@ -21,6 +21,9 @@
 #include "e4/classes/Mission_e4.hpp"
 #include "e4/classes/VoxClass_e4.hpp"
 #include "e4/classes/AudioMixer_e4.hpp"
+#include "e4/classes/GameClass_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x5D5DE0
 namespace gamemd {
@@ -91,7 +94,7 @@ unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
   result = *(unsigned int *)this & 0xFFFBFFFF /*0x6b8da5*/
          | ((INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aVisceroids, (v13 & 0x40000) != 0) & 1) << 18);
   *(unsigned int *)this = result; /*0x6b8da7*/
-  if ( !*(unsigned int *)&dword_A8B238 || stru_A8EB00.?[391] ) /*0x6b8dbb*/
+  if ( !*(unsigned int *)&dword_A8B238 || *((unsigned int *)((char *)&stru_A8EB00 + 391)) ) /*0x6b8dbb*/
   {
     v15 = *(unsigned int *)this & 0xFFFFFFBF /*0x6b8de5*/
         | ((INIClass::ReadBool_Overwrite(

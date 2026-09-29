@@ -1132,12 +1132,13 @@ struct MouseClass {
     unsigned int _ptr;
     unsigned int field_0;
     unsigned int __pad_74;
+    unsigned int LoadGameAssets;
 // --- flat members (END) ---
     char LoadCursors();
     char ToggleContextGadget(int a1, int a2);
-    static double DrawCursor(...);  // C2597 interim stub
+     double DrawCursor(...);  // C2597 interim stub
     static double CalcConfiningRect(...);  // C2597 interim stub
-    static double Construct(...);  // C2597 interim stub
+     double Construct(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

@@ -14,15 +14,15 @@ struct VectorClass_ptr_SubTitle {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy();  // 0x6CA7C0
+    void Destroy(void *a1 = 0);  // 0x6CA7C0
     unsigned int GetItemIndex(int a2);  // 0x6CA7F0
-    int Get(int a2);  // 0x6CA810
+    int Get(int a2, void *a1 = 0);  // 0x6CA810
     char Add(int a2);  // 0x6CA820
     char SetCapacity(int a2,  unsigned int * a3);    // 0x6CA860
     int FindItemIndex(unsigned int * a2);  // 0x6CA910
     DynamicVector * Constructor_VectorClass_SubTitle___(unsigned int * Block,  char a2);    // 0x6CA9C0
     char Release(int a2,  unsigned int * a3);    // 0x6CAA10
-    void Remove();  // 0x6CAAC0
+    void Remove(void *a1 = 0);  // 0x6CAAC0
     int GetSize(unsigned int * a2);  // 0x6CAAF0
     unsigned int GetCapacity(int a2);  // 0x6CAB30
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x6CAB50

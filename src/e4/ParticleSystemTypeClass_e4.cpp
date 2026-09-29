@@ -23,6 +23,9 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/ParticleSystemClass_32__e4.hpp"
 #include "e4/classes/FilePipe_38_e4.hpp"
+#include "e4/classes/ParticleClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x6442D0
 namespace gamemd {
@@ -81,12 +84,8 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   v3 = (int)(BuildingTypeClass::FindOrCreateEx(Destination));
   v4 = (char)((void *)(this->q298));
   this->q294 = (void *)(v3);
-  Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x644332*/
-                     (int)aP1,
-                     (uint8_t *)(&this->vtable46),
-                     (uint8_t *)g_INI_Key_Spawns,
-                     v4);
-  v37 = *(unsigned int *)&this->q29C; /*0x64433f*/
+  Bool_Overwrite = (void *)(INIClass::ReadBool_Overwrite( /*0x644332*/ (int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)g_INI_Key_Spawns, v4));
+  v37 = (void *)(*(unsigned int *)&this->q29C);
   this->q298 = Bool_Overwrite; /*0x644346*/
   this->q29C = INIClass::ReadInt_Overwrite( /*0x644351*/
                               (int)aP1,
@@ -170,7 +169,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
           (uint8_t *)(&this->vtable46),
           (uint8_t *)aSpiralradius,
           COERCE_DOUBLE(IDA___PAIR64__(v18, v19)));
-  v21 = *(unsigned int *)&this->q2E4; /*0x6444f7*/
+  v21 = (void *)(*(unsigned int *)&this->q2E4);
   v22 = this->q2E0; /*0x6444fd*/
   *(double *)(&this->q1208) = v20; /*0x644503*/
   v23 = INIClass::ReadDouble_Overwrite( /*0x644513*/
@@ -196,17 +195,12 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                              (uint8_t *)(&this->vtable46),
                              (uint8_t *)aLaser,
                              v29);
-  Coord = INIClass::GetCoord( /*0x64458e*/
-            aP1,
-            (int)&v39,
-            (uint8_t *)(&this->vtable46),
-            (uint8_t *)aLasercolor,
-            (uint8_t *)(&this->q1346));
-  v31 = *(unsigned int *)&this->q300; /*0x644596*/
-  this->q308 = *(unsigned short *)Coord; /*0x64459c*/
-  this->q30A = *(unsigned char *)(Coord + 2); /*0x6445af*/
-  v32 = INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aSparkspawnfram, v31); /*0x6445b5*/
-  v38 = *(unsigned int *)&this->q304; /*0x6445c2*/
+  Coord = (gamemd::Color *)(INIClass::GetCoord( /*0x64458e*/ aP1, (int)&v39, (uint8_t *)(&this->vtable46), (uint8_t *)aLasercolor, (uint8_t *)(&this->q1346)));
+  v31 = (gamemd::Color *)(*(unsigned int *)&this->q300);
+  this->q308 = (unsigned int)((gamemd::Color *)(*(unsigned short *)Coord));
+  this->q30A = (unsigned int)((gamemd::Color *)(*(unsigned char *)(Coord + 2)));
+  v32 = (gamemd::Color *)(INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aSparkspawnfram, v31));
+  v38 = (gamemd::Color *)(*(unsigned int *)&this->q304);
   *(void **)&this->q300 = v32; /*0x6445c9*/
   this->q304 = INIClass::ReadInt_Overwrite( /*0x6445d4*/
                               (int)aP1,
@@ -258,10 +252,10 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
   this->ParticleSystemTypeClass_field_0x0 = (int)((void*)&ParticleSystemTypeClass_vftable);
   this->ParticleSystemTypeClass_field_0x4 = (unsigned int)((void*)&ParticleSystemTypeClass_vftable);
   this->ParticleSystemTypeClass_field_0x8 = (unsigned int)((void*)&ParticleSystemTypeClass_vftable);
-  this->SpawnCount = (void*)&ParticleSystemTypeClass_vftable; /*0x64497a*/
+  this->SpawnCount = (unsigned int)((void*)&ParticleSystemTypeClass_vftable);
   AbstractClass::AnnounceExpiredPointer(&this->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
   v5 = this; /*0x644996*/
-  v3 = (*(int (__thiscall **)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/
+  v3 = (*(int (**)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/
          &stru_A83D50.__pad_14[4],
          &v5);
   if ( v3 != -1 && v3 < (int)stru_A83D50.SuperClass_field_0x28 ) /*0x6449aa*/
@@ -275,7 +269,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
       ++v3; /*0x6449bd*/
     }
   }
-  ObjectTypeClass::Destruct(); /*0x6449d1*/
+  this->ObjectTypeClass::Destruct(); /*0x6449d1*/
   if ( (a2 & 1) != 0 ) /*0x6449db*/
     RA2_OPDEL(); /*0x6449de*/
   return &this->ParticleSystemTypeClass_field_0x0; /*0x6449e8*/

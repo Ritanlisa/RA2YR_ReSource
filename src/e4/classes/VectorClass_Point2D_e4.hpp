@@ -14,13 +14,13 @@ struct VectorClass_Point2D {
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
     unsigned int * Count(unsigned int * a2,  int a3);    // 0x5D05F0
-    char Get(int a2);  // 0x5D07F0
+    char Get(int a2, void *a1 = 0);  // 0x5D07F0
     char Release(int a2,  unsigned int * a3);    // 0x5D0850
-    void Set();  // 0x5D0920
+    void Set(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x5D0920
     int GetSize(unsigned int * a2);  // 0x5D0950
     unsigned int GetCapacity(int a2);  // 0x5D09A0
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x5D16C0
-    void Destroy();  // 0x5D2780
+    void Destroy(void *a1 = 0);  // 0x5D2780
     unsigned int GetItemIndex(int a2);  // 0x5D27B0
     char SetCapacity(int a2,  unsigned int * a3);    // 0x5D2BC0
     int FindItemIndex(unsigned int * a2);  // 0x5D2C70

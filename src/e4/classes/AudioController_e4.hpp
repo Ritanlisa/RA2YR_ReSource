@@ -16,7 +16,7 @@ struct AudioController {
 // --- flat members (END) ---
     int LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5);
     void GetVolume();
-    static double Init(...);  // C2597 interim stub
+     double Init(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

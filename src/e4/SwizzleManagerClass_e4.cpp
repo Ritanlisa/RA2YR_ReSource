@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6CF5A0
 namespace gamemd {
@@ -115,7 +116,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf684*/
+    (*(void (**)(_VectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf684*/
     return 1; /*0x6cf68a*/
   }
 }
@@ -216,7 +217,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf7f8*/
+    (*(void (**)(_DynamicVectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf7f8*/
   }
   v15 = this->q008; /*0x6cf7fb*/
   if ( v15 < this->q010 ) /*0x6cf803*/
@@ -397,14 +398,14 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf856*/
   if ( v3 && this->IsAllocated ) /*0x6cf860*/
   {
     RA2_OPDEL(v3); /*0x6cf868*/
     *(unsigned int *)&this->q004 = 0; /*0x6cf870*/
   }
-  this->IsAllocated = 0; /*0x6cf87b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
     RA2_OPDEL(); /*0x6cf88b*/
@@ -418,14 +419,14 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf8a6*/
   if ( v3 && this->IsAllocated ) /*0x6cf8b0*/
   {
     RA2_OPDEL(v3); /*0x6cf8b8*/
     *(unsigned int *)&this->q004 = 0; /*0x6cf8c0*/
   }
-  this->IsAllocated = 0; /*0x6cf8cb*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x6cf8d1*/
   if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
     RA2_OPDEL(); /*0x6cf8db*/

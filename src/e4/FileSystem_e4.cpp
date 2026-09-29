@@ -19,6 +19,7 @@
 #include "e4/classes/FilePipe_38_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x626DA0
 namespace gamemd {
@@ -74,7 +75,7 @@ int FileSystem::ProcessNextFileExtension()
       }
       else
       {
-        v4 = 0; /*0x626df8*/
+        v4 = (gamemd::StringVector *)((unsigned int)(0));
       }
       *(unsigned int *)&v1[4] = v4; /*0x626dfc*/
       v5 = (FileExtension *)RA2_OPNEW(0x18u); /*0x626dff*/
@@ -122,8 +123,8 @@ int FileSystem::ProcessNextFileExtension()
     }
     if ( v12 ) /*0x626ec0*/
     {
-      v15 = *(unsigned int *)&g_FileExtensionState[12]; /*0x626ece*/
-      v16 = *(unsigned int *)v15 + 24 * ((*(int (__thiscall **)(Flag *))(v15 + 4))(v12) % *(unsigned int *)(v15 + 8)); /*0x626ee1*/
+      v15 = *(unsigned int *)&((unsigned int *)(g_FileExtensionState))[12]; /*0x626ece*/
+      v16 = *(unsigned int *)v15 + 24 * ((*(int (**)(Flag *))(v15 + 4))(v12) % *(unsigned int *)(v15 + 8)); /*0x626ee1*/
       v17 = *(unsigned int *)(v16 + 16) - 1; /*0x626ee4*/
       v30 = v16; /*0x626ee5*/
       if ( v17 >= 0 ) /*0x626ee9*/
@@ -145,7 +146,7 @@ int FileSystem::ProcessNextFileExtension()
         {
           do /*0x626fd6*/
           {
-            v21 = *(unsigned int **)&g_FileExtensionState[12]; /*0x626f63*/
+            v21 = *(unsigned int **)&((unsigned int *)(g_FileExtensionState))[12]; /*0x626f63*/
             ++v29; /*0x626f66*/
             v31 = v21; /*0x626f6a*/
             if ( v32 >= v21[2] ) /*0x626f71*/
@@ -174,7 +175,7 @@ int FileSystem::ProcessNextFileExtension()
             }
             if ( !v25 ) /*0x626fc0*/
               break; /*0x626fc0*/
-            v26 = FileSystem::openFile(*(FileSystem **)&g_FileExtensionState[12], v25->__pad_0); /*0x626fcb*/
+            v26 = FileSystem::openFile(*(FileSystem **)&((unsigned int *)(g_FileExtensionState))[12], v25->__pad_0); /*0x626fcb*/
             if ( !v26 ) /*0x626fd2*/
               break; /*0x626fd2*/
           }
@@ -281,7 +282,7 @@ void FileSystem::CleanupTrees()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1016] ) /*0x72d415*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1016])( /*0x72d41b*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1016])( /*0x72d41b*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1016],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1016] = 0; /*0x72d41d*/

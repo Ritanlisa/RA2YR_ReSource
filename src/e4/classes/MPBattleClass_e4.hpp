@@ -18,6 +18,7 @@ struct MPBattleClass {
     unsigned char q015;  // 0x15
     bool q020;  // 0x20
     unsigned int MPGameModeClass;
+    unsigned int ScenarioClass;
 // --- flat members (END) ---
     int areTeamChangesAllowed();
     int drawTeamDropdown();

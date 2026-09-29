@@ -28,7 +28,7 @@ struct SortedArray {
     int BinarySearch(CCINIClass * aP1);
     int FindPair(int * a2);
     static double CheckCache(...);  // C2597 interim stub
-    static double FindValue(...);  // C2597 interim stub
+     double FindValue(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

@@ -13,7 +13,7 @@
 #include "core/load_options.hpp"
 #include "core/math.hpp"
 #include "core/stream_ext.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x41DB40
 namespace gamemd { 

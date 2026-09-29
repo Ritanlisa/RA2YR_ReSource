@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_6223C0 {
     void* vfptr;  // minimal E2 declaration
-    unsigned int * DestroyDialog();  // 0x6223C0
+    unsigned int * DestroyDialog(void *a1 = 0);  // 0x6223C0
 };
 } // namespace gamemd

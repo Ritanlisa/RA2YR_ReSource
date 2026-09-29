@@ -75,13 +75,13 @@ struct AbstractTypeClass {
     BOOL NameEquals(void * a2);
     char WriteINI(CCINIClass * aP1);
     int AddSampleVocClass();
-    int Constructor(AbstractClass * aP1);
-    int Dtor();
-    int GetData();
+    int Constructor(AbstractClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Dtor(void *a1 = 0);
+    int GetData(void *a1 = 0);
     int GetType(int a1);
-    int Init(AbstractTypeClass * aP1);
+    int Init(AbstractTypeClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
     int LoadFromINI(AbstractTypeClass * aP1);
-    int ProcessPower(AbstractClass * aP1);
+    int ProcessPower(AbstractClass * aP1, void *a1 = 0);
     int SetType();
     int StubReturnFalse();
     int Validate();

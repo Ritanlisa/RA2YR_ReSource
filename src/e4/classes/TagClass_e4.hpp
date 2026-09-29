@@ -11,8 +11,8 @@ struct TagClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    int uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
+    void* ;  // 0x10
+    void* ;  // 0x11
     bool IsAllocated;  // 0x13
     int abstractFlags;  // 0x14
     int nextArrayIndex;  // 0x18
@@ -35,12 +35,14 @@ struct TagClass {
     unsigned int vtable20;
     unsigned int vtable26;
     unsigned int vtable27;
+    unsigned int q011;
+    unsigned int uniqueId;
 // --- flat members (END) ---
-    Coord * * Unlink();
+    Coord * * Unlink(void *a1 = 0);
     TagClass * ProcessTrigger(char a2);
     TriggerClass * * Destructor(void ** a1, AbstractClass * a2);
     int CheckEvent(int a2, TagTypeClass * aP2);
-    int HasValidHouse();
+    int HasValidHouse(void *a1 = 0);
     int LoadTag(AbstractClass * aP0, int aP1);
     int ProcessTag(int * a2);
     int SaveTag(TechnoTypeClass * aP0, int * a1, int aP2);

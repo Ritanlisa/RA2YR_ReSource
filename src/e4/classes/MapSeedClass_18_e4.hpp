@@ -17,8 +17,9 @@ struct MapSeedClass_18 {
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
+    unsigned int __pad_0;
 // --- flat members (END) ---
-    void ClearBuffer();  // 0x5AC4C0
+    void ClearBuffer(void *a1 = 0);  // 0x5AC4C0
     int GetCell(int a2);  // 0x5AC510
     char AddRef(int a2);  // 0x5ACA60
     char Release(int a2,  unsigned int * a3);    // 0x5ACAA0

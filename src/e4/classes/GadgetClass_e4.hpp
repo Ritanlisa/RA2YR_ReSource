@@ -19,12 +19,14 @@ struct GadgetClass {
     unsigned int X0;
     unsigned int __pad_0;
     unsigned int u32_28;
+    unsigned int LinkClass;
+    unsigned int ClearState;
 // --- flat members (END) ---
     AbstractClass * * FindByWindow(HWND hWnd, LPARAM a2);
     AbstractClass * * SetTooltip(CCINIClass * aP1);
-    GadgetClass * * Dtor();
+    GadgetClass * * Dtor(void *a1 = 0);
     int DrawBuildingPlacement(void* aP1);
-    int Show();
+    int Show(void *a1 = 0);
     void * Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, void* aP4, GadgetClass * aP5, GadgetClass * aP6);
     static double Hide(...);  // C2597 interim stub
 };

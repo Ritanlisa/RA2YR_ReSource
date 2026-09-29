@@ -9,6 +9,9 @@
 #include "e4/classes/Delegate_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/DialogControl_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x537F90
 namespace gamemd {
@@ -152,7 +155,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x53c602*/
+    (*(void (**)(_VectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x53c602*/
     return 1; /*0x53c608*/
   }
 }
@@ -244,7 +247,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x53c72e*/
+    (*(void (**)(_DynamicVectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x53c72e*/
   }
   v7 = this->q008; /*0x53c731*/
   if ( v7 < this->q010 ) /*0x53c739*/
@@ -279,14 +282,14 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c786*/
   if ( v3 && this->IsAllocated ) /*0x53c790*/
   {
     RA2_OPDEL(v3); /*0x53c798*/
     *(unsigned int *)&this->q004 = 0; /*0x53c7a0*/
   }
-  this->IsAllocated = 0; /*0x53c7ab*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x53c7b1*/
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
     RA2_OPDEL(); /*0x53c7bb*/
@@ -300,14 +303,14 @@ DynamicVector * DeleteCommandClass_28::Constructor(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c7d6*/
   if ( v3 && this->IsAllocated ) /*0x53c7e0*/
   {
     RA2_OPDEL(v3); /*0x53c7e8*/
     *(unsigned int *)&this->q004 = 0; /*0x53c7f0*/
   }
-  this->IsAllocated = 0; /*0x53c7fb*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x53c801*/
   if ( (a2 & 1) != 0 ) /*0x53c808*/
     RA2_OPDEL(); /*0x53c80b*/

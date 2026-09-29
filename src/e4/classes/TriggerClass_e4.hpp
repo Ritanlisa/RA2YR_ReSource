@@ -41,7 +41,7 @@ struct TriggerClass {
     unsigned int u32_54;
 // --- flat members (END) ---
     char FindByEventType(char a1);
-    int GetValue();
+    int GetValue(void *a1 = 0);
     int LoadTrigger(AbstractClass * aP0, int aP1);
     int RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6);
     int SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2);

@@ -35,7 +35,7 @@ int RefCount::Increment(int a2)
     ++this->RefCount_field_04; /*0x49fa51*/
     return *(unsigned int *)(RefCount_field_04 + 4 * a2); /*0x49fa59*/
   }
-  if ( (*(uint8_t (__thiscall **)(RefCount *, int, unsigned int))(this->m_RefCount + 8))(this, a2 + 10, 0) ) /*0x49fa1a*/
+  if ( (*(uint8_t (**)(RefCount *, int, unsigned int))(this->m_RefCount + 8))(this, a2 + 10, 0) ) /*0x49fa1a*/
   {
     for ( v3 = v3; v3 < this->u32_8; *(unsigned int *)(this->RefCount_field_04 + 4 * v3 - 4) = 0 ) /*0x49fa28*/
       ++v3; /*0x49fa2d*/

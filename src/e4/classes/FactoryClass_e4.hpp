@@ -52,7 +52,7 @@ struct FactoryClass {
     unsigned int q05C;  // 0x5C
     unsigned char u8_5D;  // 0x5D
     unsigned char m_align_5E;  // 0x5E
-    unsigned int balance;  // 0x60
+    void* ;  // 0x60
     char originalBalance[4];  // 0x64
     char specialItem[4];  // 0x68
     unsigned int q6C;  // 0x6C
@@ -69,15 +69,17 @@ struct FactoryClass {
     unsigned int owner;
     unsigned int q02C;
     unsigned int queuedObjects;
+    unsigned int Debug;
+    unsigned int balance;
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
-    char GetFlag();
+    char GetFlag(void *a1 = 0);
     char RemoveOneFromQueue(char a2);
     int CountType(void* aP1);
     int DemandProduction(int a2, void * a3, char a4);
     int FinishProduction(int a2);
     int GetBuildTimeFrames();
-    int GetState();
+    int GetState(void *a1 = 0);
     int HasProgressChanged();
     int IsQueued(int a2);
     int LoadFromStream(int a1, int * a2);

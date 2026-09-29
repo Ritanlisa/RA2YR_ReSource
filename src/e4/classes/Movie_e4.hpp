@@ -66,11 +66,16 @@ struct Movie {
     unsigned int Movie_field_0x8;
     unsigned int q038;
     unsigned int q06C;
+    unsigned int q040;
+    unsigned int Audio;
+    unsigned int CampaignClass;
+    unsigned int Debug;
+    unsigned int PlayWrapper;
 // --- flat members (END) ---
     char SetupScreen(CCINIClass * aP1);  // 0x49CAF0
     char GetSection(CCINIClass * aP1,  CCINIClass * aP2);    // 0x49E3B0
     void Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7, void * a1, void * a3, void * a4);    // 0x5BED40
-    char Update();  // 0x7209D0
+    char Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);  // 0x7209D0
     unsigned int SelectNextBuildableType(AnimClass * aP1);  // 0x720A80
     char GetSectionID(unsigned int * a2);  // 0x49BC80
     char GetState(CCINIClass * aP1);  // 0x49BCC0

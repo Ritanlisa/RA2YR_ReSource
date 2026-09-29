@@ -120,32 +120,35 @@ struct Network {
     void* q1F8;  // 0x1F8
     unsigned int Network_field_0x0;
     unsigned int q0084;
+    unsigned int Debug;
+    unsigned int Timer;
+    unsigned int UpdateLatencyDisplay;
 // --- flat members (END) ---
     char SendBeaconDelete(int a2,  int a3);    // 0x4311C0
     char SendBeacon(void* aP1,  int a3,  int a4,  char a5);    // 0x431450
-    char Dispatch();  // 0x48D1E0
+    char Dispatch(void *a1 = 0, void *a2 = 0);  // 0x48D1E0
     char * initConnection(int a2,  unsigned int * a3,  char a4);    // 0x4C6C50
     char SendOffer();  // 0x4FC980
-    char Init();  // 0x52F3F0
+    char Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);  // 0x52F3F0
     short GetAddress(unsigned int * a1,  ObjectClass * aP2,  unsigned short * a3);    // 0x53ED60
-    char * CopyAddress(unsigned int * a2,  int a3);    // 0x53EDA0
-    int IsBroadcastAddr();  // 0x53EE00
+    char * CopyAddress(unsigned int * a2, int a3, void *a1 = 0);    // 0x53EDA0
+    int IsBroadcastAddr(void *a1 = 0);  // 0x53EE00
     bool processPacket(TechnoTypeClass * aP1);  // 0x53EF60
     int SetConnectionParams(void* aP1,  int a3,  int a4,  void* aP4);    // 0x540C60
     int sendData(AnimClass * aP1);  // 0x540F00
-    int GetSendCount();  // 0x540F90
+    int GetSendCount(void *a1 = 0);  // 0x540F90
     int GetConnectionSpeed(CellStruct * aP1);  // 0x540FA0
     int GetClass(int a2);  // 0x540FC0
     int FindPlayerByID(DynamicVector * aP1);  // 0x541000
     int SendMessage(int a2,  int a3,  int a4,  int a5,  int a6,  int a7);    // 0x5410F0
     AbstractClass * * SendToPlayer(int a2, int a3, int a4, wchar_t * String2);    // 0x541260
-    int Send(int a2,  int a3,  TechnoTypeClass * aP3,  int a5);    // 0x541370
+    int Send(int a2, int a3, TechnoTypeClass * aP3, int a5, void *a1 = 0);    // 0x541370
     int SendPacketThunk(int a2,  int a3,  int a4,  int a5,  int a6,  int a7);    // 0x5413B0
     char receiveData(int a2);  // 0x5413F0
     int SendPacket(int a2,  int a3,  unsigned char a4);    // 0x541410
     int SendPacketThunk2(int a2,  int a3,  int a4,  int a5);    // 0x541480
-    void * ReceiveLoop();  // 0x541820
-    int GetQueueCount();  // 0x5422D0
+    void * ReceiveLoop(void *a1 = 0);  // 0x541820
+    int GetQueueCount(void *a1 = 0);  // 0x5422D0
     int GetLobbyStatus();  // 0x5424C0
     int updateLatency();  // 0x542500
     unsigned int * SetPlayerCoords(IPXManagerClass * aP1);  // 0x543050
@@ -158,18 +161,18 @@ struct Network {
     int processQueue();  // 0x5E2BA0
     int CountDisconnectedHouses();  // 0x5E2BE0
     char AddFrameEvent();  // 0x6471A0
-    void QueueProcessingLoop();  // 0x6475F0
-    int syncGameState();  // 0x64AC90
+    void QueueProcessingLoop(void *a1 = 0);  // 0x6475F0
+    int syncGameState(void *a1 = 0);  // 0x64AC90
     int ProcessEventList(int a1,  int * a2,  int a3);    // 0x64C380
     char RecordEvent(long long a1,  int a2,  int a3,  int a4,  int a5,  int a6,  int a7,  int a8,  int a9,  int a10,  int a11,  int a12,  int a13,  int a14,  int a15,  int a16,  int a17,  int a18,  int a19,  int a20,  int a21,  int a22,  int a23,  int a24,  int a25,  int a26,  int a27);    // 0x6521C0
-    int SendUnreachable();  // 0x6523A0
+    int SendUnreachable(void *a1 = 0);  // 0x6523A0
     void validatePacket();  // 0x663910
     char SendMasterPlayerList();  // 0x6639D0
     wchar_t * ProcessAddressChange();  // 0x6640E0
     char * processAcknowledgment(void* aP1);  // 0x6642A0
     char * reconnect(DynamicVector * aP1,  short a3);    // 0x664400
-    unsigned int * processGameEvent();  // 0x69B540
-    void SyncPlayerList();  // 0x792F10
+    unsigned int * processGameEvent(void *a1 = 0);  // 0x69B540
+    void SyncPlayerList(void *a1 = 0);  // 0x792F10
     int finalizeSession();  // 0x7B2DB0
     char * FormatAddress(void* aP1);  // 0x53F0E0
     int CleanupOnDisconnect();  // 0x5F0040
@@ -180,14 +183,13 @@ struct Network {
     short WaitForPacket(int a1,  int a2);    // 0x5D9220
     bool sendGameEvent(Modem * aP0,  int _10,  unsigned int * a2);    // 0x6956D0
     int CopyAddress_Small(IPXManagerClass * aP1);  // 0x53EDC0
-    int SendOptionsGame();  // 0x5E3720
+    int SendOptionsGame(void *a1 = 0);  // 0x5E3720
     int InitPlayerSlots();  // 0x5E8B60
     HWND handleTimeout();  // 0x5EFF70
     short handleDisconnect(void* aP1);  // 0x664390
     int checkTimeout(int a2);  // 0x6643E0
     bool IsMultiplayerActive();  // 0x77D940
     char IsLobbyFeature();  // 0x77D970
-    else UpdateLatencyDisplay((int)g_UIManager,  0,  55.0_2,  NAN);    // def-aligned
     static double ShutdownInterface(...);  // C2597 interim stub
 };
 } // namespace gamemd

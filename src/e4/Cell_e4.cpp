@@ -19,6 +19,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/CenterTeamCommand_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/CaptureManagerClass_e4.hpp"
 
 // 0x419B00
 namespace gamemd {
@@ -46,7 +47,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
     if ( ClosestObjectCell ) /*0x419b62*/
     {
       if ( ClosestObjectCell[180] /*0x419b7c*/
-        || *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*ClosestObjectCell + 132))(ClosestObjectCell) + 3412) )
+        || *(unsigned char *)((*(int (**)(unsigned int *))(*ClosestObjectCell + 132))(ClosestObjectCell) + 3412) )
       {
         return 1; /*0x419b7c*/
       }
@@ -57,7 +58,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
     return 1; /*0x419b90*/
   if ( !*(unsigned char *)(v7 + 3580) /*0x419bbf*/
     || (v8 = this->u32_5A4) == 0
-    || (v16 = 1, (*(int (__thiscall **)(int))(*(unsigned int *)v8 + 44))(v8) != 1) )
+    || (v16 = 1, (*(int (**)(int))(*(unsigned int *)v8 + 44))(v8) != 1) )
   {
     v16 = 0; /*0x419bc1*/
   }
@@ -68,12 +69,12 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   while ( 1 ) /*0x419bea*/
   {
     v10 = (Cell *)*((unsigned int *)FootClass_Array.? + v9); /*0x419bea*/
-    if ( v10 && (!v16 || *((Cell **)&this->u32_901) != v10) && (a3 || v10 != this) && !v10->__pad_70[17] && v10->__pad_70[4] ) /*0x419c1d*/
+    if ( v10 && (!v16 || *((Cell **)&this->u32_901) != v10) && (a3 || v10 != this) && !v10-((unsigned int *)(>__pad_70))[17] && v10->__pad_70[4] ) /*0x419c1d*/
     {
-      v11 = (unsigned short *)(*(int (__thiscall **)(Cell *, unsigned int *))(v10->Cell_field_0x0 + 440))(v10, v15); /*0x419c2d*/
+      v11 = (unsigned short *)(*(int (**)(Cell *, unsigned int *))(v10->Cell_field_0x0 + 440))(v10, v15); /*0x419c2d*/
       if ( *v11 == *a2 && v11[1] == a2[1] ) /*0x419c44*/
         break; /*0x419c44*/
-      if ( *(void **)&v10[2].__pad_3C[40] == v14 ) /*0x419c52*/
+      if ( *(void **)&v10[((unsigned int *)(2].__pad_3C))[40] == v14 ) /*0x419c52*/
         break; /*0x419c52*/
     }
     if ( ++v9 >= FootClass_Array.? ) /*0x419c5c*/
@@ -120,14 +121,14 @@ int Cell::CanPlaceBuilding(unsigned int * a2)
   while ( 1 ) /*0x43b50e*/
   {
     v4 = *(unsigned int **)(*((unsigned int *)dword_A83D4C + 75) + 4 * v2); /*0x43b50e*/
-    if ( (*(uint8_t (__thiscall **)(unsigned int *))(*v4 + 848))(v4) ) /*0x43b516*/
+    if ( (*(uint8_t (**)(unsigned int *))(*v4 + 848))(v4) ) /*0x43b516*/
       break; /*0x43b516*/
   LABEL_6:
     v12 = ++v2; /*0x43b5b6*/
     if ( v2 >= v3 ) /*0x43b5ba*/
       return 0; /*0x43b5ba*/
   }
-  v5 = (int *)(*(int (__thiscall **)(unsigned int *, char *))(*v4 + 72))(v4, v15); /*0x43b52e*/
+  v5 = (int *)(*(int (**)(unsigned int *, char *))(*v4 + 72))(v4, v15); /*0x43b52e*/
   v6 = *v5; /*0x43b531*/
   v7 = v5[1]; /*0x43b53c*/
   v8 = v5[2]; /*0x43b53f*/
@@ -237,7 +238,7 @@ AbstractClass * * Cell::ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * a
         && (TechnoTypeClass::HasVoiceResponse(v13, 3)
          || *(unsigned int *)(*((unsigned int *)v13 + 135) + 588) >= *((unsigned int *)g_RulesClass_Instance + 1299)) )
       {
-        (*(void (__thiscall **)(unsigned int, int, int, int))(**((unsigned int **)Block + v9) + 372))( /*0x4817d3*/
+        (*(void (**)(unsigned int, int, int, int))(**((unsigned int **)Block + v9) + 372))( /*0x4817d3*/
           *((unsigned int *)Block + v9),
           aP1,
           a3,
@@ -265,7 +266,7 @@ void * Cell::GetNeighbourContent(unsigned int a2)
   result = this; /*0x481815*/
   if ( a2 < 8 ) /*0x48181a*/
   {
-    v4 = *(unsigned int *)&this->__pad_1C[8]; /*0x481822*/
+    v4 = *(unsigned int *)&this-((unsigned int *)(>__pad_1C))[8]; /*0x481822*/
     v3 = IDA_HIWORD(v4) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a2 & 7) + 82]); /*0x481839*/
     IDA_LOWORD(a2) = v4 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a2 & 7) + 82]); /*0x481841*/
     IDA_HIWORD(a2) = v3; /*0x48184a*/
@@ -292,7 +293,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, 
   result = (IUnknown *)(a2);
   if ( a2 == 4 ) /*0x4834ad*/
     goto LABEL_39; /*0x4834ad*/
-  if ( aP4 != -1 ) /*0x4834c2*/
+  if ( aP4 != (IUnknown *)(-1) ) /*0x4834c2*/
   {
     result = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (int16_t *)&this->q048, aP5, aP7); /*0x4834cf*/
     if ( aP4 != result ) /*0x4834d6*/
@@ -302,10 +303,10 @@ int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, 
     }
   }
   result = (IUnknown *)((int)(aP6));
-  if ( aP6 != -1 ) /*0x4834ed*/
+  if ( aP6 != (IUnknown *)(-1) ) /*0x4834ed*/
   {
     v10 = *(&this->u32_703); /*0x4834ef*/
-    if ( aP6 == v10 ) /*0x4834f8*/
+    if ( aP6 == (IUnknown *)(v10) ) /*0x4834f8*/
     {
       if ( (this->q140 & 0x100) != 0 && !aP7 ) /*0x48351c*/
       {
@@ -313,14 +314,14 @@ int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, 
         return result; /*0x483524*/
       }
     }
-    else if ( (this->q140 & 0x100) == 0 || aP6 != v10 + 4 ) /*0x483507*/
+    else if ( (this->q140 & 0x100) == 0 || aP6 != (IUnknown *)(v10) + 4 ) /*0x483507*/
     {
       IDA_LOBYTE(result) = 0; /*0x48350c*/
       return result; /*0x48350f*/
     }
   }
   v11 = 0; /*0x483527*/
-  if ( (aP6 == -1 || aP6 == *(&this->u32_703) + 4) && (this->q140 & 0x100) != 0 ) /*0x483542*/
+  if ( (aP6 == (IUnknown *)(-1) || aP6 == *(&this->u32_703) + 4) && (this->q140 & 0x100) != 0 ) /*0x483542*/
   {
     v11 = 1; /*0x483546*/
     result = *(&this->u32_746); /*0x483548*/
@@ -330,9 +331,9 @@ int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, 
     result = *(&this->u32_742); /*0x483552*/
   }
   if ( a3 ) /*0x48355e*/
-    result &= 0xE0u; /*0x483560*/
+    (unsigned int)(result)&= 0xE0u; /*0x483560*/
   if ( a4 ) /*0x48356b*/
-    result &= 0x5Fu; /*0x48356d*/
+    (unsigned int)(result)&= 0x5Fu; /*0x48356d*/
   if ( result ) /*0x483572*/
   {
     IDA_LOBYTE(result) = 0; /*0x483577*/
@@ -347,7 +348,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, 
     {
       if ( *(unsigned char *)(v13 + 680) ) /*0x483598*/
       {
-        if ( aP5 != 2 && aP5 != 3 && aP5 != 8 && (aP5 != 1 && aP5 != 4 || !*(unsigned char *)(v13 + 557)) && aP5 != 12 ) /*0x4835c8*/
+        if ( aP5 != (IUnknown *)(2) && (IUnknown *)(aP5) != (IUnknown *)((IUnknown *))(3) && aP5 != 8 && (aP5 != (IUnknown *)(1) && aP5 != 4 || !*(unsigned char *)(v13 + 557)) && aP5 != 12 ) /*0x4835c8*/
         {
           IDA_LOBYTE(result) = 0; /*0x4835cd*/
           return result; /*0x4835d0*/
@@ -446,7 +447,7 @@ void Cell::IsShore()
 namespace gamemd {
 int Cell::IsBuildableAdvanced()
 {
-  int result; // eax
+  unsigned int * result;
   unsigned int *i; // esi
   unsigned int *Cell_field_0xE4; // esi
 
@@ -458,12 +459,12 @@ int Cell::IsBuildableAdvanced()
   }
   result = this->Cell_field_0x38; /*0x48700a*/
   if ( result >= 0 /*0x487022*/
-    && result < *(int *)&stru_A8EB00.?[340]
-    && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * result) + 773) )
+    && result < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340)
+    && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * result) + 773) )
   {
     goto LABEL_21; /*0x487022*/
   }
-  if ( this->Cell_field_0x11B[1] ) /*0x48702c*/
+  if ( this-((unsigned int *)(>Cell_field_0x11B))[1] ) /*0x48702c*/
     goto LABEL_21; /*0x48702c*/
   result = (int)this->Cell_field_0x140; /*0x487036*/
   if ( (result & 0x500) != 0 ) /*0x48703f*/
@@ -472,7 +473,7 @@ int Cell::IsBuildableAdvanced()
     goto LABEL_20; /*0x487048*/
   for ( i = this->Cell_field_0xE4; i; i = (unsigned int *)i[12] ) /*0x487052*/
   {
-    result = (*(int (__thiscall **)(unsigned int *))(*i + 44))(i); /*0x487058*/
+    result = (int)((unsigned int *)((*(int (**)(unsigned int *))(*i + 44))(i)));
     if ( result == 6 ) /*0x48705e*/
       goto LABEL_21; /*0x48705e*/
   }
@@ -484,7 +485,7 @@ int Cell::IsBuildableAdvanced()
   }
   while ( 1 ) /*0x487084*/
   {
-    result = (*(int (__thiscall **)(unsigned int *))(*Cell_field_0xE4 + 44))(Cell_field_0xE4); /*0x487084*/
+    result = (*(int (**)(unsigned int *))(*Cell_field_0xE4 + 44))(Cell_field_0xE4); /*0x487084*/
     if ( result == 36 ) /*0x48708a*/
       break; /*0x48708a*/
     Cell_field_0xE4 = (unsigned int *)Cell_field_0xE4[12]; /*0x48708c*/
@@ -518,7 +519,7 @@ int Cell::SearchEnemies(IUnknown * aP1)
   unsigned int *v9; // eax
   int *v10; // esi
   bool v11; // zf
-  int v12; // edx
+  IUnknown * v12;
   int result; // eax
   int v14; // [esp+70h] [ebp-1Ch]
   int v15; // [esp+74h] [ebp-18h]
@@ -532,7 +533,7 @@ int Cell::SearchEnemies(IUnknown * aP1)
     while ( 1 ) /*0x487a2d*/
     {
       v5 = (unsigned int *)v3[12]; /*0x487a2d*/
-      if ( (*(int (__thiscall **)(unsigned int *, int, int, int, unsigned int, int))(*v3 + 428))(v3, this, -1, -1, 0, 1) == 7 ) /*0x487a44*/
+      if ( (*(int (**)(unsigned int *, int, int, int, unsigned int, int))(*v3 + 428))(v3, this, -1, -1, 0, 1) == 7 ) /*0x487a44*/
         goto LABEL_10; /*0x487a44*/
       if ( !aP1 ) /*0x487a48*/
         goto LABEL_8; /*0x487a48*/
@@ -543,15 +544,15 @@ int Cell::SearchEnemies(IUnknown * aP1)
       if ( !v5 ) /*0x487aa8*/
         goto LABEL_12; /*0x487aa8*/
     }
-    if ( (v3[5] & 1) == 0 || !*(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*v3 + 132))(v3) + 3476) ) /*0x487a5e*/
+    if ( (v3[5] & 1) == 0 || !*(unsigned char *)((*(int (**)(unsigned int *))(*v3 + 132))(v3) + 3476) ) /*0x487a5e*/
     {
   LABEL_8:
-      if ( !v3 || (*(int (__thiscall **)(unsigned int *))(*v3 + 44))(v3) != 2 ) /*0x487a76*/
+      if ( !v3 || (*(int (**)(unsigned int *))(*v3 + 44))(v3) != 2 ) /*0x487a76*/
         goto LABEL_11; /*0x487a76*/
     }
   LABEL_10: v6 = (int)((IUnknown *)(*v3));
     aP1 = (IUnknown *)(v3[27]);
-    (*(void (__thiscall **)(unsigned int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v6 + 364))( /*0x487a9e*/
+    (*(void (**)(unsigned int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v6 + 364))( /*0x487a9e*/
       v3,
       &aP1,
       0,
@@ -598,11 +599,11 @@ int Cell::SearchEnemies(IUnknown * aP1)
                      v17[1],
                      v7) )
               {
-                if ( (*(int (__thiscall **)(int *, int, int, int, unsigned int, int))(*v10 + 428))(v10, this, -1, -1, 0, 1) == 7 ) /*0x487ba8*/
+                if ( (*(int (**)(int *, int, int, int, unsigned int, int))(*v10 + 428))(v10, this, -1, -1, 0, 1) == 7 ) /*0x487ba8*/
                 {
-                  v12 = (IUnknown *)(*v10);
-                  aP1 = v10[27]; /*0x487bb6*/
-                  (*(void (__thiscall **)(int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v12 + 364))( /*0x487bd0*/
+                  v12 = (IUnknown *)((int)((IUnknown *)(*v10)));
+                  aP1 = (IUnknown *)(v10[27]);
+                  (*(void (**)(int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v12 + 364))( /*0x487bd0*/
                     v10,
                     &aP1,
                     0,
@@ -696,18 +697,18 @@ Coord * * Cell::IsValidDestination(short * a2)
         return 0; /*0x4dcf19*/
     }
   }
-  v8 = (unsigned int *)(*(int (__thiscall **)(Cell *, unsigned int *, unsigned int))(this->Cell_field_0x0 + 76))(this, v16, 0); /*0x4dcf31*/
+  v8 = (unsigned int *)(*(int (**)(Cell *, unsigned int *, unsigned int))(this->Cell_field_0x0 + 76))(this, v16, 0); /*0x4dcf31*/
   IDA_LOWORD(v17) = *v8 / 256; /*0x4dcf4a*/
   Cell_field_0x0 = this->Cell_field_0x0; /*0x4dcf5b*/
   IDA_HIWORD(v17) = v8[1] / 256; /*0x4dcf60*/
   *(unsigned int *)v17 = v17; /*0x4dcf69*/
-  v10 = (*(int (__thiscall **)(Cell *))(Cell_field_0x0 + 188))(this); /*0x4dcf6f*/
-  v11 = (*(int (__thiscall **)(Cell *, int))(this->Cell_field_0x0 + 132))(this, v10); /*0x4dcf7a*/
+  v10 = (*(int (**)(Cell *))(Cell_field_0x0 + 188))(this); /*0x4dcf6f*/
+  v11 = (*(int (**)(Cell *, int))(this->Cell_field_0x0 + 132))(this, v10); /*0x4dcf7a*/
   if ( !MapSeed::CheckTileMatch((MapSeed *)&stru_87F5F0.__pad_58[416], v17, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
   v12 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x4dcfa1*/
   return v12[59] == 5 /*0x4dcfc7*/
-      && !(*(int (__thiscall **)(Cell *, unsigned int *, int, int, unsigned int, int))(this->Cell_field_0x0 + 428))(
+      && !(*(int (**)(Cell *, unsigned int *, int, int, unsigned int, int))(this->Cell_field_0x0 + 428))(
             this,
             v12,
             -1,
@@ -1016,7 +1017,7 @@ int Cell::IsPassableAllied(IUnknown * aP0, IUnknown * aP1)
   if ( !v4 ) /*0x578b0c*/
     return 1; /*0x578b58*/
   while ( aP0 == v4 /*0x578b30*/
-       || (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) != 6
+       || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) != 6
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1312) + 5815) )
   {
   LABEL_10:
@@ -1462,9 +1463,9 @@ int Cell::IsWalkable(unsigned short * a2, char a3)
           break; /*0x6b6018*/
       }
       v8 = *((unsigned int *)v7 + 14); /*0x6b601a*/
-      if ( v8 < 0 || v8 >= *(int *)&stru_A8EB00.?[340] ) /*0x6b6027*/
+      if ( v8 < 0 || v8 >= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340) ) /*0x6b6027*/
         v8 = 0; /*0x6b6029*/
-      if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v8) + 736) ) /*0x6b6034*/
+      if ( !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v8) + 736) ) /*0x6b6034*/
         break; /*0x6b6034*/
       if ( ++v6 >= (int)v9->Cell_field_0x298 ) /*0x6b6049*/
       {
@@ -1638,7 +1639,7 @@ void* Cell::CreateCrater(IUnknown aP2)
     if ( v5 < dword_B0CE80 /*0x6d2a8e*/
       || (byte_B0CE85 || !dword_B0CE80)
       && dword_B0CE8C > 0
-      && (IDA_LOBYTE(v12) = (*(int (__thiscall **)(int *, int, unsigned int))(dword_B0CE78 + 8))(
+      && (IDA_LOBYTE(v12) = (*(int (**)(int *, int, unsigned int))(dword_B0CE78 + 8))(
                           &dword_B0CE78,
                           dword_B0CE8C + dword_B0CE80,
                           0),
@@ -1955,7 +1956,7 @@ unsigned int * Cell::GetWorldCoords(unsigned int * a2, int a3)
   unsigned char v9[12]; // [esp+8h] [ebp-Ch] BYREF
 
   v3 = CellCoord::To_CellObj(&MapClass_Instance, ((char *)&this->q000 + 2) * a3 + 793); /*0x68bd1b*/
-  v4 = (int *)(*(int (__thiscall **)(unsigned int *, unsigned char *))(*v3 + 72))(v3, v9); /*0x68bd26*/
+  v4 = (int *)(*(int (**)(unsigned int *, unsigned char *))(*v3 + 72))(v3, v9); /*0x68bd26*/
   v5 = *v4; /*0x68bd29*/
   v6 = v4[1]; /*0x68bd2b*/
   v7 = v4[2]; /*0x68bd2e*/

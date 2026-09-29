@@ -13,6 +13,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x439110
 namespace gamemd {
@@ -24,15 +25,15 @@ int Stream::FlushAndReset()
   int Stream_field_04; // eax
   int Stream_field_0C; // edi
 v1 = (gamemd::Stream *)((int)(this));
-  m_Stream = (int)(this->m_Stream);
-  Stream_field_08 = this->Stream_field_08; /*0x439116*/
-  this->Stream_field_0C = 45; /*0x439119*/
+  m_Stream = (gamemd::StreamClass *)((int)(this->m_Stream));
+  Stream_field_08 = (int)(this->Stream_field_08);
+  this->Stream_field_0C = (int)(45);
   ((void (*)(void))m_Stream->m_Size)(); /*0x439120*/
   ((void (__thiscall *)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_08, 0); /*0x43912a*/
   Stream_field_04 = v1[1].Stream_field_04; /*0x43912d*/
   Stream_field_0C = v1[1].Stream_field_0C; /*0x439130*/
   v1 = (Stream *)((char *)v1 + 24); /*0x439133*/
-  (*(void (__thiscall **)(Stream *))(Stream_field_04 + 12))(v1); /*0x439138*/
+  (*(void (**)(Stream *))(Stream_field_04 + 12))(v1); /*0x439138*/
   return ((int (__thiscall *)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_0C, 0); /*0x439145*/
 }
 } // namespace gamemd

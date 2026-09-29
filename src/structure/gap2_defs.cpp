@@ -14,7 +14,7 @@
 #include "structure/building_light.hpp"
 #include "structure/infantry.hpp"
 #include "structure/unit.hpp"
-#include "e4/e4_globals.hpp"
+#include "e4/e4_globals_decls.hpp"
 
 // 0x517CC0
 namespace gamemd { 

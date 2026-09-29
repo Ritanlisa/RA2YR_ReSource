@@ -19,12 +19,13 @@ struct FilePipe_30 {
     unsigned int m_C;
     unsigned int vfptr;
     unsigned int __pad_0;
+    unsigned int Capacity;
 // --- flat members (END) ---
-    void ddtor();  // 0x4778A0
+    void ddtor(void *a1 = 0);  // 0x4778A0
     TypeList_flat * QueryInterface(char a2);  // 0x477A70
     char Release(int a2,  unsigned int * a3);    // 0x478140
-    int Read(unsigned int * a2);  // 0x4781F0
-    void Clear();  // 0x4B9BE0
+    int Read(unsigned int * a2, void *a1 = 0);  // 0x4781F0
+    void Clear(void *a1 = 0);  // 0x4B9BE0
     void Clear_0();  // 0x4B9C40
     char SetCapacity(int a2,  unsigned int * a3);    // 0x4B9E20
     int FindItemIndex(unsigned int * a2);  // 0x4B9ED0

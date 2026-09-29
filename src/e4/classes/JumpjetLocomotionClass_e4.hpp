@@ -183,12 +183,12 @@ struct JumpjetLocomotionClass {
     char UpdateFacingDirection_2(int a1, int a2);
     char UpdateFacingDirection_3(int a1, int a2);
     char UpdateFacingDirection_4(int a1, int a2);
-    double ComputeVectorLengthMetric();
+    double ComputeVectorLengthMetric(void *a1 = 0);
     float * ComputeAudio3DRotation(unsigned int * a1, float * a2, unsigned int * a3);
     float * ComputeAudio3DRotation_0(int a1, float * a2, unsigned int * a3);
     float * ComputeAudio3DRotation_1(unsigned int * a1, float * a2, unsigned int * a3);
     float * ComputeVoxelMatrix(int a1, float * a2, unsigned int * a3);
-    int AdjustClimbFacing(unsigned int * a2);
+    int AdjustClimbFacing(unsigned int * a2, void *a1 = 0);
     int CheckAttachStatus();
     int CheckState(TunnelLocomotionClass * aP0);
     int CheckState2(int a1, int a2);
@@ -337,7 +337,7 @@ struct JumpjetLocomotionClass {
     void * ComputeVoxelTransform(unsigned int * a1, float * a2, unsigned int * a3);
     void * ComputeVoxelTransform2(unsigned int * a1, float * a2, unsigned int * a3);
     void ** UpdateMovementPosition(unsigned int * a1, double VeteranCombat_low, int a3);
-    void ComputeVectorLengthMetric_0();
+    void ComputeVectorLengthMetric_0(void *a1 = 0);
     void Stub10(int a1);
     void Stub11(int a1, int a2, int a3, int a4);
     void Stub12(int a1, int a2, int a3, int a4, int a5);

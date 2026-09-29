@@ -14,12 +14,12 @@ struct VectorClass_ptr_EgoClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy();  // 0x4C49A0
+    void Destroy(void *a1 = 0);  // 0x4C49A0
     unsigned int GetItemIndex(int a2);  // 0x4C49D0
-    int Get(int a2);  // 0x4C49F0
+    int Get(int a2, void *a1 = 0);  // 0x4C49F0
     char Add(int a2);  // 0x4C4A00
     char Release(int a2,  unsigned int * a3);    // 0x4C4A40
-    void Remove();  // 0x4C4AF0
+    void Remove(void *a1 = 0);  // 0x4C4AF0
     int GetSize(unsigned int * a2);  // 0x4C4B20
     unsigned int GetCapacity(int a2);  // 0x4C4B60
     char SetCapacity(int a2,  unsigned int * a3);    // 0x4C4B80

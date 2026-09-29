@@ -34,6 +34,7 @@ struct COMObject {
     unsigned int __pad_0;
     unsigned int __pad_31;
     unsigned int vfptr;
+    unsigned int m_2D;
 // --- flat members (END) ---
     bool IsSameType(void* aP0);
     int FindNextActive(unsigned char * a1);
@@ -47,8 +48,8 @@ struct COMObject {
     unsigned int * ReturnZeroPos(int a1, unsigned int * a2);
     bool IsPrimaryInstance(void);
     int ActivateGlobal(void);
-    int ActivateThunk(int,int,int);
-    int Check(int);
+    int ActivateThunk(int, a1, a2);
+    int Check(int, void *a2 = 0, void *a1 = 0);
     int DeactivateGlobal(void);
     int FindInList(int);
     int SetField(int);

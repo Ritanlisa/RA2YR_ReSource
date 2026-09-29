@@ -14,6 +14,6 @@ struct CellStruct {
     unsigned int * Copy(void* aP1);  // 0x437F30
     BOOL Equals(unsigned short * a2);  // 0x50E470
     void* Sub(void* aP1,  void* aP2);    // 0x588C60
-    unsigned short * Set(short a2,  short a3);    // 0x42D470
+    unsigned short * Set(short a2, short a3, void *a1 = 0);    // 0x42D470
 };
 } // namespace gamemd

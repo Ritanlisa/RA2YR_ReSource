@@ -90,6 +90,8 @@
 #include "e4/classes/WWMouseClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/Winsock_e4.hpp"
+#include "e4/classes/WonlineStringDialogControl_12_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {
@@ -115,15 +117,15 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   unsigned int v20;
 
   v3 = (unsigned int)(dword_ABF168);
-  dword_ABF230 = aP0; /*0x5bc190*/
-  dword_ABF234 = a2; /*0x5bc196*/
-  byte_ABF238 = a3; /*0x5bc19c*/
+  dword_ABF230 = (unsigned int)(aP0);
+  dword_ABF234 = (unsigned int)(a2);
+  byte_ABF238 = (unsigned int *)(a3);
   v20 = 0; /*0x5bc1a1*/
   v19 = dword_ABF168; /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
     v4 = (unsigned char *)(RA2_OPNEW(0x2738u));
-    v5 = v4; /*0x5bc1b3*/
+    v5 = (unsigned char *)(v4);
     if ( v4 ) /*0x5bc1ba*/
     {
       v4[2503] = 0; /*0x5bc1c0*/
@@ -161,18 +163,18 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
     {
       v5 = 0; /*0x5bc235*/
     }
-    *v3++ = (int)v5; /*0x5bc23b*/
+    *(unsigned int *)(v3)++ = (int)v5; /*0x5bc23b*/
     ++v20; /*0x5bc247*/
     v19 = v3; /*0x5bc24b*/
   }
   while ( (int)v3 < (int)&dword_ABF188 ); /*0x5bc24f*/
   v11 = dword_ABF168; /*0x5bc25b*/
-  dword_ABF23C = dword_ABF168[0]; /*0x5bc260*/
+  dword_ABF23C = ((unsigned int *)(dword_ABF168))[0]; /*0x5bc260*/
   do /*0x5bc2b2*/
   {
-    v12 = (unsigned char *)*v11; /*0x5bc266*/
+    v12 = (unsigned char *)*(unsigned int *)(v11); /*0x5bc266*/
     v13 = 0; /*0x5bc268*/
-    v14 = *v11 + 2000; /*0x5bc26a*/
+    v14 = *(unsigned int *)(v11) + 2000; /*0x5bc26a*/
     do /*0x5bc293*/
     {
       v15 = &v12[v13]; /*0x5bc270*/
@@ -238,16 +240,16 @@ int WinMain::Constructor_VectorClass_Wstring_()
       RA2_OPDEL((void *)v3); /*0x69a258*/
     }
   }
-  (*(void (__thiscall **)(unsigned int *))(*(&this->u32_A80) + 12))(&this->u32_A80); /*0x69a277*/
+  (*(void (**)(unsigned int *))(*(&this->u32_A80) + 12))(&this->u32_A80); /*0x69a277*/
   for ( j = 0; j < *(&this->u32_41C3); ++j ) /*0x69a284*/
     RA2_OPDEL(*(void **)(*(&this->u32_41C0) + 4 * j)); /*0x69a290*/
-  (*(void (__thiscall **)(unsigned int *))(*(&this->u32_4189) + 12))(&this->u32_4189); /*0x69a2af*/
+  (*(void (**)(unsigned int *))(*(&this->u32_4189) + 12))(&this->u32_4189); /*0x69a2af*/
   for ( k = 0; k < *(&this->u32_4187); ++k ) /*0x69a2bc*/
   {
     if ( *(unsigned int *)(*(&this->u32_4184) + 4 * k) ) /*0x69a2c4*/
       RA2_OPDEL(*(void **)(*(&this->u32_4184) + 4 * k)); /*0x69a2cc*/
   }
-  return (*(int (__thiscall **)(unsigned int *))(*(&this->u32_4183) + 12))(&this->u32_4183); /*0x69a2ee*/
+  return (*(int (**)(unsigned int *))(*(&this->u32_4183) + 12))(&this->u32_4183); /*0x69a2ee*/
 }
 // 0x734D30
 unsigned int * WinMain::ShutdownCleanup()
@@ -320,7 +322,7 @@ void sub_5D7E50()
 {
   int i; // ebp
   char result; // al
-  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (***v3)(unsigned int, int); // ecx
 
   for ( i = 0; ; ++i ) /*0x5d7e56*/
   {
@@ -349,7 +351,7 @@ void sub_5D7E50()
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/
     }
-    v3 = *(void (__thiscall ****)(unsigned int, int))(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * i); /*0x5d7f07*/
+    v3 = *(void (****)(unsigned int, int))(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * i); /*0x5d7f07*/
     if ( v3 ) /*0x5d7f0c*/
       (**v3)(v3, 1); /*0x5d7f12*/
   }
@@ -367,21 +369,21 @@ void* sub_7B84F0()
   result = (HANDLE)(hMutex);
   if ( !hMutex ) /*0x7b8500*/
   {
-    result = (int)(CreateMutexA(0, 0, 0));
-    hMutex = result; /*0x7b850b*/
+    result = (HANDLE)((int)(CreateMutexA(0, 0, 0)));
+    hMutex = (int)(result);
   }
   if ( !dword_B7816C ) /*0x7b8516*/
   {
     if ( result ) /*0x7b851e*/
     {
       dword_B78138 = (unsigned int)(0);
-      dword_B78140 = 0; /*0x7b852a*/
-      dword_B78150 = 0; /*0x7b8530*/
-      dword_B78148 = 16; /*0x7b8536*/
-      dword_B7814C = 0; /*0x7b8540*/
-      dword_B7813C = 0; /*0x7b8546*/
-      result = CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)sub_7B8610, &dword_B78138, 0, &dword_B78158); /*0x7b8562*/
-      dword_B78154 = result; /*0x7b856a*/
+      dword_B78140 = (unsigned int)(0);
+      dword_B78150 = (unsigned int)(0);
+      dword_B78148 = (unsigned int)(16);
+      dword_B7814C = (unsigned int)(0);
+      dword_B7813C = (unsigned int)(0);
+      result = (unsigned int)(CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)sub_7B8610, &dword_B78138, 0, &dword_B78158));
+      dword_B78154 = (unsigned int)(result);
       if ( result ) /*0x7b856f*/
       {
         dword_B7816C = 1; /*0x7b8578*/
@@ -390,7 +392,7 @@ void* sub_7B84F0()
         {
           LastError = GetLastError(); /*0x7b8598*/
           FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x7b85a5*/
-          Debug::Log(); /*0x7b85b5*/
+          this->Debug::Log(); /*0x7b85b5*/
           while ( !dword_B78140 ) /*0x7b85c4*/
             Sleep(0); /*0x7b85ce*/
           WaitForSingleObject(dword_B78154, 0x1388u); /*0x7b85e6*/

@@ -8,6 +8,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4CC100
 namespace gamemd {
@@ -72,8 +74,8 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
     v32 = 0; /*0x4cc1de*/
   }
   v12 = (unsigned char *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v25));
-  v28 = v12; /*0x4cc21e*/
-  v27 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v26); /*0x4cc229*/
+  v28 = (unsigned char *)(v12);
+  v27 = (unsigned char *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v26));
   v13 = v12; /*0x4cc22f*/
   v24 = 0; /*0x4cc231*/
   if ( v7 <= 0 ) /*0x4cc235*/
@@ -175,7 +177,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
        || !(uint8_t)HouseClass::IsAlliedWith(v15, other)) )
     {
   LABEL_16:
-      v16 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, int *))(*v10 + 72))(v10, &v45); /*0x4cc489*/
+      v16 = (unsigned int *)(*(int (**)(unsigned int *, int *))(*v10 + 72))(v10, &v45); /*0x4cc489*/
       v17 = a4 - *v16; /*0x4cc49c*/
       v18 = v16[1]; /*0x4cc4a2*/
       v19 = v16[2]; /*0x4cc4a7*/
@@ -188,13 +190,13 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
             + (double)(a5 - v18) * (double)(a5 - v18));
       if ( (int)Math::RoundToInt(v20) <= 85 ) /*0x4cc4f1*/
         return v10; /*0x4cc665*/
-      v21 = (int *)(*(int (__thiscall **)(unsigned char *, int *))(*(unsigned int *)a1 + 72))(a1, &v45); /*0x4cc501*/
+      v21 = (int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)a1 + 72))(a1, &v45); /*0x4cc501*/
       v22 = *v21; /*0x4cc504*/
       v23 = v21[1]; /*0x4cc50a*/
       v24 = v21[2]; /*0x4cc50d*/
       v25 = *(unsigned int *)a2; /*0x4cc510*/
       v47 = v24; /*0x4cc512*/
-      v26 = (int *)(*(int (__thiscall **)(unsigned char *, char *))(v25 + 72))(a2, v48); /*0x4cc51b*/
+      v26 = (int *)(*(int (**)(unsigned char *, char *))(v25 + 72))(a2, v48); /*0x4cc51b*/
       v27 = *v26; /*0x4cc51e*/
       v46 = v26[1]; /*0x4cc523*/
       v47 = v26[2]; /*0x4cc52a*/

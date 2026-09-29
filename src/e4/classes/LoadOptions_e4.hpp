@@ -20,9 +20,9 @@ struct LoadOptions {
     unsigned char is_active;  // 0x20
     unsigned char owns_memory;  // 0x21
     unsigned int q024;  // 0x24
-    int q028;  // 0x28
+    void* ;  // 0x28
     unsigned char q02C;  // 0x2C
-    unsigned int u32_2D;  // 0x2D
+    void* ;  // 0x2D
     unsigned char pad_2E;  // 0x2E
     unsigned int capacity;  // 0x30
     unsigned int grow_step;  // 0x34
@@ -38,12 +38,17 @@ struct LoadOptions {
     unsigned int m_8;
     unsigned int m_C;
     unsigned int u32_420;
+    unsigned int u32_188;
+    unsigned int u32_18C;
+    unsigned int u32_3F0;
+    unsigned int q028;
+    unsigned int u32_2D;
 // --- flat members (END) ---
     DynamicVector * vt00(char a2);
     LoadOptions * QueryInterface(char a2);
     VectorClass_flat * Constructor_VectorClass_FileEntryClass___(char a2);
     bool ddtor(LPCSTR lpFileName);
-    char * GetData();
+    char * GetData(void *a1 = 0);
     char AddRef(LPCCH lpMultiByteStr);
     char Read(wchar_t * Destination, int a2);
     char Release(LPCCH lpMultiByteStr, wchar_t * Source);
@@ -52,15 +57,15 @@ struct LoadOptions {
     int vt04(unsigned int * a2);
     int vt06(int a2);
     unsigned int vt05(int a2);
-    wchar_t * Close();
-    wchar_t * Open();
-    wchar_t * Seek();
+    wchar_t * Close(void *a1 = 0);
+    wchar_t * Open(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    wchar_t * Seek(void *a1 = 0, void *a2 = 0);
     wchar_t * Write();
     char * GetDataPtr(void);
-    gamemd::void** GetEntries(void);
+    void** GetEntries(void);
     void SetExtension(const char *);
     void SetMode(uint32_t);
-    static double Cleanup(...);  // C2597 interim stub
+     double Cleanup(...);  // C2597 interim stub
     static double Run(...);  // C2597 interim stub
 };
 

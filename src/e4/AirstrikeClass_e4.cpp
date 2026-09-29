@@ -20,6 +20,9 @@
 #include "e4/classes/AudioClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
 
 // 0x41D860
 namespace gamemd {
@@ -55,14 +58,14 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   {
     v5 = (int)(this->AirstrikeClass_field_24);
   }
-  v7 = (unsigned int *)((void *)((unsigned int *)(*(int (__thiscall **)(int *, unsigned int *))(*a2 + 72))(a2, v18)));
+  v7 = (unsigned int *)((void *)((unsigned int *)(*(int (**)(int *, unsigned int *))(*a2 + 72))(a2, v18)));
   IDA_LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
   IDA_HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
   v19 = v19; /*0x41d902*/
   v8 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v19); /*0x41d907*/
   v17 = v17; /*0x41d916*/
   v14 = (int)v8; /*0x41d919*/
-  v9 = (unsigned int *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->referenceCount6) + 60))(this->owner); /*0x41d91f*/
+  v9 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)(&this->referenceCount6) + 60))(this->owner); /*0x41d91f*/
   result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v17, 0, this); /*0x41d926*/
   this->q02C = result; /*0x41d92d*/
   this->EliteAirstrikeTeamTypeIndex = result; /*0x41d930*/
@@ -80,22 +83,22 @@ int AirstrikeClass::SpawnAircraft(int * a2)
     this->u32_50 = (unsigned int)(a2);
     if ( a2 ) /*0x41d975*/
     {
-      result = (*(int (__thiscall **)(int *))(*a2 + 44))(a2); /*0x41d97f*/
+      result = (*(int (**)(int *))(*a2 + 44))(a2); /*0x41d97f*/
       if ( result == 6 ) /*0x41d985*/
       {
         v12 = (int)(*a2);
         a2[165] = (int)(this);
-        (*(void (__thiscall **)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
-        *((unsigned char *)a2 + 1784) = *((unsigned char *)&dword_8871E0[1].?[12] + 2 * dword_8871E0[1].?[10] + dword_8871E0[1].?[10]); /*0x41d9b8*/
-        *((unsigned char *)a2 + 1785) = *((unsigned char *)&dword_8871E0[1].?[12] + 2 * dword_8871E0[1].?[10] /*0x41d9d5*/
+        (*(void (**)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
+        *((unsigned char *)a2 + 1784) = *((unsigned char *)&((unsigned int *)(dword_8871E0))[1].?[12] + 2 * dword_8871E0[1].?[10] + dword_8871E0[1].?[10]); /*0x41d9b8*/
+        *((unsigned char *)a2 + 1785) = *((unsigned char *)&((unsigned int *)(dword_8871E0))[1].?[12] + 2 * dword_8871E0[1].?[10] /*0x41d9d5*/
                                                                   + dword_8871E0[1].?[10]
                                                                   + 1);
         v13 = *a2; /*0x41d9f1*/
-        *((unsigned char *)a2 + 1786) = *((unsigned char *)&dword_8871E0[1].?[12] + 2 * dword_8871E0[1].?[10] /*0x41d9f5*/
+        *((unsigned char *)a2 + 1786) = *((unsigned char *)&((unsigned int *)(dword_8871E0))[1].?[12] + 2 * dword_8871E0[1].?[10] /*0x41d9f5*/
                                                                   + dword_8871E0[1].?[10]
                                                                   + 2);
         a2[447] = 1; /*0x41d9fb*/
-        return (*(int (__thiscall **)(int *, int))(v13 + 292))(a2, 2); /*0x41da05*/
+        return (*(int (**)(int *, int))(v13 + 292))(a2, 2); /*0x41da05*/
       }
     }
   }
@@ -136,27 +139,27 @@ int AirstrikeClass::ReassignTarget(int a2)
   LABEL_6:
     v6 = this->q050; /*0x41da4f*/
     if ( v6 )
-      v7 = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)v6 + 44))(this->q050) == 6 ? (unsigned int *)v6 : 0;
+      v7 = (*(int (**)(unsigned int))(*(unsigned int *)v6 + 44))(this->q050) == 6 ? (unsigned int *)v6 : 0;
     else
       v7 = 0; /*0x41da56*/
     if ( a2 )
-      v9 = (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 44))(a2) == 6 ? (unsigned int *)a2 : 0;
+      v9 = (*(int (**)(int))(*(unsigned int *)a2 + 44))(a2) == 6 ? (unsigned int *)a2 : 0;
     else
       v9 = 0; /*0x41da84*/
     if ( v7 ) /*0x41da9e*/
     {
       v10 = *v7; /*0x41daa0*/
       v7[165] = 0; /*0x41daa4*/
-      (*(void (__thiscall **)(unsigned int *))(v10 + 344))(v7); /*0x41daae*/
-      (*(void (__thiscall **)(unsigned int *, int))(*v7 + 292))(v7, 2); /*0x41daba*/
+      (*(void (**)(unsigned int *))(v10 + 344))(v7); /*0x41daae*/
+      (*(void (**)(unsigned int *, int))(*v7 + 292))(v7, 2); /*0x41daba*/
     }
     this->q050 = 0; /*0x41dac2*/
     if ( v9 ) /*0x41dac9*/
     {
       v11 = (unsigned int)(*v9);
       v9[165] = (unsigned int)(this);
-      (*(void (__thiscall **)(unsigned int *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
-      (*(void (__thiscall **)(unsigned int *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
+      (*(void (**)(unsigned int *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
+      (*(void (**)(unsigned int *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
     }
     v8 = this->u32_30; /*0x41daec*/
     v12 = *(int **)(&this->q0242); /*0x41daef*/
@@ -167,8 +170,8 @@ int AirstrikeClass::ReassignTarget(int a2)
       {
         if ( v12[191] > 0 ) /*0x41db07*/
         {
-          (*(void (__thiscall **)(int *, int))(*v12 + 968))(v12, a2); /*0x41db0e*/
-          (*(void (__thiscall **)(int *, int, unsigned int))(*v12 + 488))(v12, 1, 0); /*0x41db1c*/
+          (*(void (**)(int *, int))(*v12 + 968))(v12, a2); /*0x41db0e*/
+          (*(void (**)(int *, int, unsigned int))(*v12 + 488))(v12, 1, 0); /*0x41db1c*/
           this->u8_3D = 1; /*0x41db22*/
         }
         v12 = (int *)v12[374]; /*0x41db26*/
@@ -188,8 +191,8 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
   int v3; // edi
 
   result = this->q05C; /*0x41dc80*/
-  v3 = 0; /*0x41dc8c*/
-  if ( result == aP1 ) /*0x41dc90*/
+  v3 = 0; /*(int)((int))((int))(0x41dc8c)*/
+  if ( result == (int)(aP1) ) /*0x41dc90*/
   {
     this->q05C = *(unsigned int *)(aP1 + 1496); /*0x41dc98*/
     *(unsigned int *)(aP1 + 1496) = 0; /*0x41dc9b*/
@@ -240,7 +243,7 @@ void * AirstrikeClass::CopyTo(char a2)
   *(void **)&this->vtable3 = (void*)&AirstrikeClass_vftable; /*0x41dd6a*/
   *(void **)&this->vtable4 = (void*)&AirstrikeClass_vftable; /*0x41dd71*/
   v5 = this; /*0x41dd7f*/
-  v3 = (*(int (__thiscall **)(int *, AirstrikeClass **))(dword_889FB8 + 16))(&dword_889FB8, &v5); /*0x41dd83*/
+  v3 = (*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16))(&dword_889FB8, &v5); /*0x41dd83*/
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
   {
     do /*0x41ddb6*/
@@ -250,7 +253,7 @@ void * AirstrikeClass::CopyTo(char a2)
     }
     while ( v3 < dword_889FC8 ); /*0x41ddb6*/
   }
-  AbstractClass::DTOR(); /*0x41ddba*/
+  this->AbstractClass::DTOR(); /*0x41ddba*/
   if ( (a2 & 1) != 0 ) /*0x41ddc4*/
     RA2_OPDEL(); /*0x41ddc7*/
   return &this->AbstractClass; /*0x41ddd1*/
@@ -261,9 +264,9 @@ void * AirstrikeClass::CopyTo(char a2)
 namespace gamemd {
 AbstractClass * * AirstrikeClass::UpdateAll()
 {
-  unsigned int v1;
-  int v2; // esi
-  int v3; // ecx
+  unsigned int * v1;
+  unsigned int * v2;
+  unsigned int * v3;
   int v4; // edx
   int v5; // esi
   unsigned char *v6; // edx
@@ -271,14 +274,14 @@ AbstractClass * * AirstrikeClass::UpdateAll()
   IDA_LOBYTE(v1) = byte_89A134; /*0x420e90*/
   if ( !byte_89A134 ) /*0x420e98*/
   {
-    byte_89A134 = 1; /*0x420e9a*/
-    v2 = 0; /*0x420ea1*/
+    byte_89A134 = (unsigned int *)(1);
+    v2 = (int)((unsigned int *)(0));
     while ( 1 ) /*0x420ec6*/
     {
-      v3 = (unsigned int)(v2 % 256 * (v2 / 256));
+      v3 = (unsigned int)((unsigned int)(v2)% 256 * ((unsigned int)(v2)/ 256));
       v1 = (unsigned int *)((unsigned int)((uint64_t)(2164392969LL * v3) >> 32) >> 31); /*0x420ed6*/
-      v4 = v3 / 127; /*0x420ed9*/
-      if ( v3 / 127 > 255 ) /*0x420ee1*/
+      v4 = (unsigned int)(v3)/ 127; /*0x420ed9*/
+      if ( (unsigned int)(v3)/ 127 > 255 ) /*0x420ee1*/
         break; /*0x420ee1*/
       if ( v4 >= 0 ) /*0x420ee5*/
       {
@@ -290,21 +293,20 @@ AbstractClass * * AirstrikeClass::UpdateAll()
         IDA_LOBYTE(v4) = 0; /*0x420ee7*/
       }
   LABEL_8:
-      byte_88A118[v2++] = v4; /*0x420ef8*/
-      if ( v2 >= 0x10000 ) /*0x420f05*/
+      ((unsigned int *)(byte_88A118))[v2++] = v4; /*0x420ef8*/
+      if ( v2 >= (unsigned int *)(0x10000) ) /*0x420f05*/
         goto LABEL_9; /*0x420f05*/
     }
     IDA_LOBYTE(v4) = -1; /*0x420ef3*/
     goto LABEL_8; /*0x420ef3*/
   }
-  LABEL_9:
-  v5 = g_AlphaShapeLimit - 1; /*0x420f07*/
+  LABEL_9: v5 = (unsigned int)(g_AlphaShapeLimit - 1);
   if ( g_AlphaShapeLimit - 1 >= 0 ) /*0x420f12*/
   {
     v1 = (unsigned int *)(dword_88A0F4);
     do /*0x420f36*/
     {
-      v6 = (unsigned char *)v1[v5]; /*0x420f19*/
+      v6 = (unsigned char *)((unsigned int *)(v1))[v5]; /*0x420f19*/
       if ( v6[60] && v6 ) /*0x420f27*/
       {
         (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 32))(1); /*0x420f2d*/
@@ -322,11 +324,11 @@ AbstractClass * * AirstrikeClass::UpdateAll()
 namespace gamemd {
 AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5;
-  int v6; // eax
-  int v7;
+  AirstrikeClass * v3;
+  TechnoClass * v4;
+  TechnoClass * v5;
+  TechnoClass * v6;
+  TechnoClass * v7;
   int v8; // eax
   int v9;
   int v10; // eax
@@ -343,33 +345,33 @@ AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
   if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_889FB8 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_889FB8 + 8))(
          &dword_889FB8,
          dword_889FC0 + dword_889FCC,
          0) )
   {
-    v3 = (unsigned int)(dword_889FC8++);
-    *((unsigned int *)dword_889FBC + v3) = this; /*0x41d3f5*/
+    v3 = (gamemd::AirstrikeClass *)((unsigned int)((unsigned int)(dword_889FC8)++));
+    *((unsigned int *)(unsigned int)(dword_889FBC)+ v3) = this; /*0x41d3f5*/
   }
-  this->AirstrikeClass_field_3C = (int)(0);
-  this->owner = aP1; /*0x41d3ff*/
-  this->AirstrikeClass_field_3D = 0; /*0x41d402*/
-  v4 = (*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 132))(aP1); /*0x41d407*/
-  v5 = this->owner; /*0x41d413*/
-  this->AirstrikeClass_field_24 = *(unsigned int *)(v4 + 1564); /*0x41d416*/
-  v6 = (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 132))(v5); /*0x41d41b*/
-  v7 = this->owner; /*0x41d427*/
-  this->AirstrikeClass_field_28 = *(unsigned int *)(v6 + 1568); /*0x41d42a*/
-  v8 = (*(int (__thiscall **)(int))(*(unsigned int *)v7 + 132))(v7); /*0x41d42f*/
+  this->AirstrikeClass_field_3C = (unsigned int)((int)(0));
+  this->owner = (unsigned char)((gamemd::TechnoClass *)(aP1));
+  this->AirstrikeClass_field_3D = (unsigned char)((gamemd::TechnoClass *)(0));
+  v4 = (gamemd::TechnoClass *)((int)((gamemd::TechnoClass *)((*(int (**)(int))(*(unsigned int *)aP1 + 132))(aP1))));
+  v5 = (gamemd::TechnoClass *)((int)((gamemd::TechnoClass *)(this->owner)));
+  this->AirstrikeClass_field_24 = (unsigned int)((gamemd::TechnoClass *)(*(unsigned int *)(v4 + 1564)));
+  v6 = (gamemd::TechnoClass *)((int)((gamemd::TechnoClass *)((*(int (**)(int))(*(unsigned int *)v5 + 132))(v5))));
+  v7 = (gamemd::TechnoClass *)((int)((gamemd::TechnoClass *)(this->owner)));
+  this->AirstrikeClass_field_28 = (unsigned int)((gamemd::TechnoClass *)(*(unsigned int *)(v6 + 1568)));
+  v8 = (gamemd::TechnoClass *)((*(int (**)(int))(*(unsigned int *)v7 + 132))(v7));
   v9 = this->owner; /*0x41d43b*/
   this->AirstrikeClass_field_44 = *(unsigned int *)(v8 + 1580); /*0x41d43e*/
-  v10 = (*(int (__thiscall **)(int))(*(unsigned int *)v9 + 132))(v9); /*0x41d443*/
+  v10 = (*(int (**)(int))(*(unsigned int *)v9 + 132))(v9); /*0x41d443*/
   v11 = this->owner; /*0x41d44f*/
   this->AirstrikeClass_field_48 = *(unsigned int *)(v10 + 1584); /*0x41d452*/
-  v12 = (*(int (__thiscall **)(int))(*(unsigned int *)v11 + 132))(v11); /*0x41d457*/
+  v12 = (*(int (**)(int))(*(unsigned int *)v11 + 132))(v11); /*0x41d457*/
   v13 = this->owner; /*0x41d463*/
   this->AirstrikeClass_field_54 = *(unsigned int *)(v12 + 1572); /*0x41d466*/
-  v14 = *(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)v13 + 132))(v13) + 1576); /*0x41d471*/
+  v14 = *(unsigned int *)((*(int (**)(int))(*(unsigned int *)v13 + 132))(v13) + 1576); /*0x41d471*/
   this->AirstrikeClass_field_5C = 0; /*0x41d477*/
   this->AirstrikeClass_field_58 = v14; /*0x41d47a*/
   this->u32_50 = 0; /*0x41d47d*/
@@ -443,7 +445,7 @@ char AirstrikeClass::StartMission(int * a2)
   result = (char)a2; /*0x41d835*/
   if ( !this->AirstrikeClass_field_3C ) /*0x41d830*/
     return AirstrikeClass::SpawnAircraft(a2); /*0x41d83c*/
-  if ( a2 != this->q140 ) /*0x41d847*/
+  if ( a2 != (int *)(this->q140) ) /*0x41d847*/
     return AirstrikeClass::ReassignTarget((int)a2); /*0x41d84a*/
   return result; /*0x41d841*/
 }

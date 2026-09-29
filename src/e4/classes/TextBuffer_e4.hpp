@@ -13,7 +13,7 @@ struct TextBuffer {
     unsigned int q8000;  // 0x8000
     unsigned int q2734;
 // --- flat members (END) ---
-    int Init();
+    int Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
 };
 
 } // namespace gamemd

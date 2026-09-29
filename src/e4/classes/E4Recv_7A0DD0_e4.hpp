@@ -15,6 +15,7 @@ struct E4Recv_7A0DD0 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
     unsigned int occupant;
+    unsigned int Dialog;
 // --- flat members (END) ---
     void sub_7A0DD0();  // 0x7A0DD0
 };

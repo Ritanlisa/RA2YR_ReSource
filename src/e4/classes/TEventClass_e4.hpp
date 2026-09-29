@@ -24,7 +24,7 @@ struct TEventClass {
     char TEventClass_field_28[4];  // 0x28
     bool q02B;  // 0x2B
     char TEventClass_field_2C[4];  // 0x2C
-    char TEventClass_field_30[4];  // 0x30
+    unsigned int TEventClass_field_30;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char TEventClass_field_34[4];  // 0x34
@@ -41,11 +41,11 @@ struct TEventClass {
     char TEventClass_field_4C[4];  // 0x4C
     unsigned char q04F;  // 0x4F
     char TEventClass_field_50[4];  // 0x50
-    char TEventClass_field_54[4];  // 0x54
+    unsigned int TEventClass_field_54;  // 0x54
     char TEventClass_field_58[4];  // 0x58
     char TEventClass_field_5C[4];  // 0x5C
 // --- flat members (END) ---
-    DynamicVector * * Execute(int a2, int a3, int a4, int * a5, int a6, int a7);
+    DynamicVector * * Execute(int a2, int a3, int a4, int * a5, int a6, int a7, void *a1 = 0);
     int CheckConditions(int a2, int a3);
     int PrepareSaveToINI(const char * a2);
     int ProcessEvent(int a2);

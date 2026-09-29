@@ -196,27 +196,27 @@ int DDraw::HandleSuspend()
   int j; // edi
   int v6; // ecx
 
-  IDA_LOBYTE(result) = stru_A8EB00.?[412]; /*0x5d2530*/
-  if ( stru_A8EB00.?[412] != 1 ) /*0x5d253b*/
+  IDA_LOBYTE(result) = *((unsigned int *)((char *)&stru_A8EB00 + 412)); /*0x5d2530*/
+  if ( *((unsigned int *)((char *)&stru_A8EB00 + 412)) != 1 ) /*0x5d253b*/
   {
-    Debug::Log(); /*0x5d2546*/
+    this->Debug::Log(); /*0x5d2546*/
     for ( i = 0; i < this->u32_28; ++i ) /*0x5d2555*/
     {
       v4 = *(unsigned int *)(this->u32_1C + 4 * i); /*0x5d255a*/
-      (*(void (__thiscall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x5d255f*/
+      (*(void (**)(int))(*(unsigned int *)v4 + 8))(v4); /*0x5d255f*/
     }
     while ( !stru_A8EB00.?[412] ) /*0x5d2571*/
     {
-      Debug::Log(); /*0x5d257e*/
+      this->Debug::Log(); /*0x5d257e*/
       Sleep(0x1F4u); /*0x5d258b*/
       MessageLoop(); /*0x5d258d*/
     }
-    Debug::Log(); /*0x5d25a0*/
+    this->Debug::Log(); /*0x5d25a0*/
     result = this->u32_28; /*0x5d25a5*/
     for ( j = 0; j < result; ++j ) /*0x5d25af*/
     {
       v6 = *(unsigned int *)(this->u32_1C + 4 * j); /*0x5d25b4*/
-      (*(void (__thiscall **)(int))(*(unsigned int *)v6 + 12))(v6); /*0x5d25b9*/
+      (*(void (**)(int))(*(unsigned int *)v6 + 12))(v6); /*0x5d25b9*/
       result = this->u32_28; /*0x5d25bc*/
     }
   }

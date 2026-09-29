@@ -10,6 +10,7 @@
 #include "e4/classes/DisplayClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x72B8E0
 namespace gamemd {
@@ -55,7 +56,7 @@ void sub_72B930()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1460] ) /*0x72b98c*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1460])( /*0x72b992*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1460])( /*0x72b992*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1460],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1460] = 0; /*0x72b994*/

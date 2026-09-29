@@ -41,7 +41,7 @@ DynamicVector * MapFile::QueryInterface(char a2)
     RA2_OPDEL(v5); /*0x69d55c*/
     *(unsigned int *)&this->q004 = 0; /*0x69d566*/
   }
-  this->IsAllocated = 0; /*0x69d571*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x69d577*/
   if ( (a2 & 1) != 0 ) /*0x69d57e*/
     RA2_OPDEL(); /*0x69d581*/

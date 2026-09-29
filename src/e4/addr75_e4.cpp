@@ -59,6 +59,8 @@
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/E4Recv_765000_e4.hpp"
 #include "e4/classes/ScoreScreen_e4.hpp"
+#include "e4/classes/DialogQueue_e4.hpp"
+#include "e4/classes/E4Recv_7741C0_e4.hpp"
 
 // 0x750920
 namespace gamemd {
@@ -96,7 +98,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
     if ( v6 || (v6 = AudioPool::ProcessQueue(v5)) != 0 ) /*0x7509ac*/
     {
       AudioMixer::PlayBuffer(v6, v8); /*0x7509b2*/
-      AudioMixer::RequestOrEndBuffer(v6, a2); /*0x7509bd*/
+      ((AudioMixer *)(v6))->RequestOrEndBuffer(a2); /*0x7509bd*/
     }
   }
   if ( a4 ) /*0x7509c5*/
@@ -210,7 +212,7 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
   float v11; // [esp+8h] [ebp-8h]
   unsigned int v12; // [esp+Ch] [ebp-4h] BYREF
 
-  result = (double)(0);
+  result = (gamemd::VocClass *)((double)(0));
   if ( !a2 ) /*0x750d4d*/
     return result; /*0x750d4d*/
   v5 = (VocClass *)AudioSource::Get(a2); /*0x750d5e*/
@@ -249,7 +251,7 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
   if ( v10 >= 0x4000 ) /*0x750dd0*/
     v10 = 0x4000; /*0x750dd2*/
   AudioMixer::PlayBuffer(v5, v10); /*0x750ddb*/
-  AudioMixer::RequestOrEndBuffer((int)v5, v12); /*0x750de6*/
+  ((AudioMixer *)((int)v5))->RequestOrEndBuffer(v12); /*0x750de6*/
   SetAudioSource((int)a2, v5, (int)v7); /*0x750df0*/
   return v5; /*0x750df9*/
 }
@@ -293,7 +295,7 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
           0x40u) )
   {
   LABEL_2:
-    Debug::Log(); /*0x751e0d*/
+    this->Debug::Log(); /*0x751e0d*/
     return 0; /*0x751e23*/
   }
   return 1; /*0x751e1d*/
@@ -362,7 +364,7 @@ void ThemeClass_Update()
   uint64_t v0; // rdi
   uint64_t v1; // rax
   int v2; // eax
-  unsigned int v3;
+  unsigned int * v3;
   int v4; // eax
   char *v5; // edi
   int v6; // eax
@@ -375,14 +377,14 @@ void ThemeClass_Update()
 
   if ( byte_A8ED64 ) /*0x752773*/
     return; /*0x752773*/
-  if ( !Audio::IsSoundEnabled() ) /*0x752779*/
+  if ( !this->Audio::IsSoundEnabled() ) /*0x752779*/
     return; /*0x752779*/
   if ( !g_InfantryDrawState ) /*0x75278e*/
     return; /*0x75278e*/
-  if ( Audio::IsSoundPlaying() ) /*0x752794*/
+  if ( this->Audio::IsSoundPlaying() ) /*0x752794*/
     return; /*0x752794*/
   v0 = qword_B1D4D0 + ThemeClass::GetValue(g_InfantryDrawState); /*0x7527b4*/
-  IDA_LODWORD(v1) = Audio::Callback(); /*0x7527be*/
+  IDA_LODWORD(v1) = this->Audio::Callback(); /*0x7527be*/
   if ( v1 <= v0 || dword_B1D428 ) /*0x7527dc*/
     return; /*0x7527dc*/
   if ( dword_B1D4C4 ) /*0x7527e9*/
@@ -391,7 +393,7 @@ void ThemeClass_Update()
     dword_B1D4C4 = 0; /*0x7527f2*/
   }
   v11 = (unsigned int)(0);
-  v10 = 0; /*0x752801*/
+  v10 = (unsigned int)(0);
   v2 = AudioQueue::GetNext(&stru_B1D3C8); /*0x752805*/
   v3 = (unsigned int *)v2; /*0x75280a*/
   if ( v2 ) /*0x75280e*/
@@ -405,7 +407,7 @@ void ThemeClass_Update()
   v3 = (unsigned int *)v4; /*0x75283f*/
   if ( !v4 ) /*0x752843*/
   {
-    v3 = dword_B1D4B8; /*0x752866*/
+    v3 = (unsigned int *)(dword_B1D4B8);
     if ( dword_B1D4B8 ) /*0x75286e*/
     {
       dword_B1D4B8 = 0; /*0x752870*/
@@ -437,11 +439,11 @@ void ThemeClass_Update()
   LABEL_22:
   if ( v3 ) /*0x7528a9*/
   {
-    v7 = v3[3]; /*0x7528af*/
+    v7 = ((unsigned int *)(v3))[3]; /*0x7528af*/
     if ( v9 != (unsigned char *)-20 ) /*0x7528b8*/
-      v11 = v3[6]; /*0x7528bd*/
+      v11 = ((unsigned int *)(v3))[6]; /*0x7528bd*/
     if ( v9 != (unsigned char *)-16 ) /*0x7528c7*/
-      v10 = v3[5]; /*0x7528cc*/
+      v10 = ((unsigned int *)(v3))[5]; /*0x7528cc*/
     RA2_OPDEL(v3); /*0x7528d1*/
     if ( v7 ) /*0x7528db*/
     {
@@ -480,10 +482,7 @@ void ThemeQueue_ClearPlaylist(int a1)
   {
     for ( i = AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)); /*0x752a61*/
           i;
-          i = AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)) )
-    {
-      if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/
-        LinkedList::Init((unsigned int **)i); /*0x752a6a*/
+          i = (int)(AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)) ) { if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/ LinkedList::Init((unsigned int **)i));
       if ( (void *)i == dword_B1D4B8 ) /*0x752a75*/
         dword_B1D4B8 = 0; /*0x752a77*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x752a85*/
@@ -559,25 +558,25 @@ int TauntClass_Play(int a1)
 namespace gamemd {
 int E4Recv_752CB0::sub_752CB0(const char * a2)
 {
-  int v3; // eax
+  E4Recv_752CB0 * v3;
 
   this->owningHouseIndex = 1065353216; /*0x752cbe*/
   strcpy(a2); /*0x752cd4*/
   IDA_LOBYTE(this->fallRate) = 0; /*0x752cdf*/
   IDA_BYTE1(this->attachedTag) = 0; /*0x752ce2*/
   IDA_BYTE2(this->ambientSoundController[0]) = 0; /*0x752ce5*/
-  this->ambientSoundController[3] = 1; /*0x752ce8*/
-  this->ambientSoundController[4] = 0; /*0x752cef*/
-  this->customSound_controller[0] = 2; /*0x752cf2*/
+  this-((unsigned int *)(>ambientSoundController))[3] = 1; /*0x752ce8*/
+  this-((unsigned int *)(>ambientSoundController))[4] = 0; /*0x752cef*/
+  this-((unsigned int *)(>customSound_controller))[0] = 2; /*0x752cf2*/
   if ( g_InfantrySelectState < dword_B1D4A8 /*0x752d2e*/
     || (byte_B1D4AD || !dword_B1D4A8)
     && dword_B1D4B4 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_B1D4A0 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_B1D4A0 + 8))(
          &dword_B1D4A0,
          dword_B1D4A8 + dword_B1D4B4,
          0) )
   {
-    v3 = g_InfantrySelectState++; /*0x752d3b*/
+    v3 = (gamemd::E4Recv_752CB0 *)((unsigned int)(g_InfantrySelectState++));
     *((unsigned int *)g_InfantryRenderPool + v3) = this; /*0x752d4a*/
   }
   return (int)this; /*0x752d4d*/
@@ -602,12 +601,12 @@ int CCINIClass::InitFromINIEVA()
   int v14; // [esp+18h] [ebp-CCh]
   char Destination[200]; // [esp+1Ch] [ebp-C8h] BYREF
 
-  v1 = this; /*0x75300a*/
+  v1 = (gamemd::ObjectClass *)(this);
   v13 = (int)this; /*0x753011*/
   IDA_LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, g_INI_Key_DialogList) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = INIClass::GetKeyCount((char *)v1, g_INI_Key_DialogList); /*0x753030*/
+    KeyCount = (int)(INIClass::GetKeyCount((char *)v1, g_INI_Key_DialogList));
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
@@ -635,8 +634,7 @@ int CCINIClass::InitFromINIEVA()
         }
         if ( v6 == -1 ) /*0x7530b7*/
         {
-  LABEL_10:
-          v7 = RA2_OPNEW(0x54u); /*0x7530bd*/
+  LABEL_10: v7 = (int)(RA2_OPNEW(0x54u));
           if ( v7 ) /*0x7530cb*/
           {
             *(unsigned int *)(v7 + 40) = 1065353216; /*0x7530da*/
@@ -650,7 +648,7 @@ int CCINIClass::InitFromINIEVA()
             if ( g_InfantrySelectState < dword_B1D4A8 /*0x753146*/
               || (byte_B1D4AD || !dword_B1D4A8)
               && dword_B1D4B4 > 0
-              && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_B1D4A0 + 8))(
+              && (*(uint8_t (**)(int *, int, unsigned int))(dword_B1D4A0 + 8))(
                    &dword_B1D4A0,
                    dword_B1D4A8 + dword_B1D4B4,
                    0) )
@@ -689,7 +687,7 @@ int E4Recv_7531A0::EVA_LoadINI()
   int v3; // eax
   ObjectClass *v4; // [esp+0h] [ebp-4h] BYREF
 
-  v4 = this; /*0x7531a0*/
+  v4 = (gamemd::ObjectClass *)(this);
   if ( dword_B1D4C4 ) /*0x7531a8*/
   {
     *(unsigned int *)(dword_B1D4C4 + 80) = 2; /*0x7531aa*/
@@ -704,7 +702,7 @@ int E4Recv_7531A0::EVA_LoadINI()
     if ( *(unsigned int *)g_InfantryRenderPool ) /*0x7531de*/
     {
       v4 = *(ObjectClass **)g_InfantryRenderPool; /*0x7531f4*/
-      v3 = (*(int (__thiscall **)(int *, ObjectClass **))(dword_B1D4A0 + 16))(&dword_B1D4A0, &v4); /*0x7531f8*/
+      v3 = (*(int (**)(int *, ObjectClass **))(dword_B1D4A0 + 16))(&dword_B1D4A0, &v4); /*0x7531f8*/
       if ( v3 != -1 && v3 < g_InfantrySelectState && v3 < --g_InfantrySelectState ) /*0x753213*/
       {
         do /*0x75322b*/
@@ -1936,7 +1934,7 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
   unsigned int v9[4]; // [esp+Ch] [ebp-10h] BYREF
 
   v3 = 0; /*0x758ae2*/
-  if ( !(*(int (__thiscall **)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
+  if ( !(*(int (**)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
   vtable2 = this->M8; /*0x758aed*/
   vtable1 = this->M4; /*0x758af0*/
@@ -1946,14 +1944,14 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
   v9[1] = vtable1; /*0x758afe*/
   v7 = *a2; /*0x758b02*/
   v9[3] = vtable3; /*0x758b08*/
-  if ( (*(int (__thiscall **)(int *, unsigned int *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
-    || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->M8, 768) != 768
-    || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->M8, (int)this->M8 << 8) != (int)this->M8 << 8 )
+  if ( (*(int (**)(int *, unsigned int *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
+    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->M8, 768) != 768
+    || (*(int (**)(int *, int, int))(*a2 + 48))(a2, this->M8, (int)this->M8 << 8) != (int)this->M8 << 8 )
   {
   LABEL_5:
     v3 = 1; /*0x758b4c*/
   }
-  (*(void (__thiscall **)(int *))(*a2 + 52))(a2); /*0x758b55*/
+  (*(void (**)(int *))(*a2 + 52))(a2); /*0x758b55*/
   return v3; /*0x758b58*/
 }
 }
@@ -2014,48 +2012,48 @@ int E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
       a3 = 0; /*0x75a147*/
       if ( !LookupFileInfoCache((const char *)(&this->u32_2C3), 0, &a3, &a2, 0) ) /*0x75a15e*/
         goto LABEL_5; /*0x75a15e*/
-      v6 = (*(int (__thiscall **)(int, int, int))(this->M4 + 32))(&this->u32_10, a3[3], 1) == 0; /*0x75a17c*/
+      v6 = (*(int (**)(int, int, int))(this->M4 + 32))(&this->u32_10, a3[3], 1) == 0; /*0x75a17c*/
       v7 = this->M4; /*0x75a17e*/
       a2 = a2; /*0x75a180*/
       this->M112 = !v6; /*0x75a186*/
-      result = (*(int (__thiscall **)(int, int, int))(v7 + 40))(&this->u32_10, a2, 1) == 0; /*0x75a191*/
+      result = (*(int (**)(int, int, int))(v7 + 40))(&this->u32_10, a2, 1) == 0; /*0x75a191*/
       break; /*0x75a193*/
     case 4: /*0x75a136*/
-      (*(void (__thiscall **)(int))(this->M4 + 52))&this->u32_10; /*0x75a273*/
+      (*(void (**)(int))(this->M4 + 52))&this->u32_10; /*0x75a273*/
       this->M112 = 0; /*0x75a278*/
       return 0; /*0x75a276*/
     case 5: /*0x75a136*/
       a4 = a4; /*0x75a1a0*/
-      return (*(int (__thiscall **)(int, int *, int))(this->M4 + 36))(&this->u32_10, a3, a4) != a4; /*0x75a1b3*/
+      return (*(int (**)(int, int *, int))(this->M4 + 36))(&this->u32_10, a3, a4) != a4; /*0x75a1b3*/
     case 6: /*0x75a136*/
   LABEL_5:
       result = 1; /*0x75a1b6*/
       break; /*0x75a1bc*/
     case 7: /*0x75a136*/
-      result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a1d7*/
+      result = (*(int (**)(int, int, int *))(this->M4 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a1d7*/
       break; /*0x75a1d8*/
     case 8: /*0x75a136*/
       if ( a4 <= 0 ) /*0x75a1e1*/
       {
         v10 = &this->u32_10; /*0x75a21c*/
-        result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a22a*/
+        result = (*(int (**)(int, int, int *))(this->M4 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a22a*/
         if ( !result ) /*0x75a22b*/
         {
-          result = (*(int (__thiscall **)(int, int *, int))(this->u32_28)(v10, &a4, 1) != 1; /*0x75a240*/
+          result = (*(int (**)(int, int *, int))(this->u32_28)(v10, &a4, 1) != 1; /*0x75a240*/
           if ( !result ) /*0x75a242*/
-            result = (*(int (__thiscall **)(int, int, int))(this->u32_2C)(v10, -1, 1) == 0; /*0x75a254*/
+            result = (*(int (**)(int, int, int))(this->u32_2C)(v10, -1, 1) == 0; /*0x75a254*/
         }
       }
       else
       {
         v9 = &this->u32_10; /*0x75a1ea*/
-        result = (*(int (__thiscall **)(int, int, int *))(this->M4 + 40))(&this->u32_10, a4 - 1, a3) == 0; /*0x75a1f9*/
+        result = (*(int (**)(int, int, int *))(this->M4 + 40))(&this->u32_10, a4 - 1, a3) == 0; /*0x75a1f9*/
         if ( !result ) /*0x75a1fa*/
-          result = (*(int (__thiscall **)(int, int *, int))(this->u32_28)(v9, &a4, 1) != 1; /*0x75a210*/
+          result = (*(int (**)(int, int *, int))(this->u32_28)(v9, &a4, 1) != 1; /*0x75a210*/
       }
       break; /*0x75a212*/
     case 9: /*0x75a136*/
-      v11 = (*(int (__thiscall **)(int))(this->M4 + 44))&this->u32_10; /*0x75a25e*/
+      v11 = (*(int (**)(int))(this->M4 + 44))&this->u32_10; /*0x75a25e*/
       *a3 = v11; /*0x75a265*/
   LABEL_14:
       result = 0; /*0x75a267*/
@@ -3476,9 +3474,9 @@ BOOL E4Recv_7589F0::sub_7589F0(int a2)
 {
   BOOL v4; // ebx
 
-  (*(void (__thiscall **)(int, int))(*(unsigned int *)a2 + 28))(a2, 1); /*0x758a01*/
-  v4 = (*(int (__thiscall **)(int, int, int))(*(unsigned int *)a2 + 36))(a2, this->?, 768) != 768; /*0x758a1b*/
-  (*(void (__thiscall **)(int))(*(unsigned int *)a2 + 52))(a2); /*0x758a24*/
+  (*(void (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1); /*0x758a01*/
+  v4 = (*(int (**)(int, int, int))(*(unsigned int *)a2 + 36))(a2, this->?, 768) != 768; /*0x758a1b*/
+  (*(void (**)(int))(*(unsigned int *)a2 + 52))(a2); /*0x758a24*/
   return v4; /*0x758a27*/
 }
 } // namespace gamemd

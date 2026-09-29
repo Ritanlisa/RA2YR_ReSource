@@ -14,9 +14,9 @@ struct VectorClass_PAG {
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
     int Count(int a2);  // 0x54A1E0
-    char Get(int a2);  // 0x54A250
+    char Get(int a2, void *a1 = 0);  // 0x54A250
     char Release(int a2,  unsigned int * a3);    // 0x54A290
-    void Set();  // 0x54A340
+    void Set(void *a1 = 0, void *a2 = 0, void *a3 = 0);  // 0x54A340
     int GetSize(unsigned int * a2);  // 0x54A370
     unsigned int GetCapacity(int a2);  // 0x54A3B0
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x54A710

@@ -18,6 +18,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x537DD0
 PageUserCommandClass::PageUserCommandClass()
@@ -50,7 +52,7 @@ char PageUserCommandClass::Do(int a1)
 {
   char result; // al
 
-  if ( g_GameMode_Current[0] == 4 ) /*0x537e57*/
+  if ( ((unsigned int *)(g_GameMode_Current))[0] == 4 ) /*0x537e57*/
     return UI_Add(); /*0x537e59*/
   return result; /*0x537e5e*/
 }

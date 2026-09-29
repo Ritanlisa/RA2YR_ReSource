@@ -272,7 +272,7 @@ struct OverlayTypeClass {
     int PowerDrainUpdate(int * a2);
     int ReadINIString(CCINIClass * aP1, unsigned char * a2, AnimTypeClass * aP3);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
-    unsigned int * Construct(ObjectClass * aP1);
+    unsigned int * Construct(ObjectClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     OverlayTypeClass(ObjectClass * aP1);
     unsigned int * vt_entry_6C(unsigned int * a0, OverlayTypeClass * aP1);
     void GetLandType(unsigned int * a2, int * a3, unsigned int a4);

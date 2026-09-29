@@ -149,11 +149,11 @@ struct TechnoClass {
     void* deployAnim;  // 0x130
     bool inAirFlag;  // 0x134
     unsigned char alignmentPadding139;  // 0x135
-    char currentWeaponSlot[4];  // 0x138
+    unsigned int currentWeaponSlot;  // 0x138
     unsigned char q139;  // 0x139
     char q13C[4];  // 0x13C
     unsigned int currentRank;  // 0x140
-    char gattlingStage[4];  // 0x144
+    unsigned int gattlingStage;  // 0x144
     char gattlingValue[4];  // 0x148
     unsigned int ammoReloadTimer;  // 0x14C
     void* q14E;  // 0x14E
@@ -195,7 +195,7 @@ struct TechnoClass {
     unsigned int u32_1A4;  // 0x1A4
     unsigned int q1A5;  // 0x1A5
     unsigned int q1A7;  // 0x1A7
-    char ironTintStage[4];  // 0x1A8
+    unsigned int ironTintStage;  // 0x1A8
     char q1AC[12];  // 0x1AC
     unsigned int q1AE;  // 0x1AE
     char airstrikeTimer[4];  // 0x1B0
@@ -268,7 +268,7 @@ struct TechnoClass {
     bool isImmobilized;  // 0x27C
     unsigned char q27D;  // 0x27D
     unsigned char alignmentPadding27E;  // 0x27E
-    char owningHouseIndex0[4];  // 0x280
+    unsigned int owningHouseIndex0;  // 0x280
     bool chronoLockRemaining;  // 0x284
     bool q285;  // 0x285
     bool q286;  // 0x286
@@ -312,7 +312,7 @@ struct TechnoClass {
     HouseClass* q2F4;  // 0x2F4
     TechnoClass* diskLaserChargeState;  // 0x2F8
     float ammo;  // 0x2FC
-    char unitValue[4];  // 0x300
+    unsigned int unitValue;  // 0x300
     ParticleSystemClass* fireParticles;  // 0x304
     void* sparkParticles;  // 0x308
     unsigned int q30A;  // 0x30A
@@ -519,7 +519,8 @@ struct TechnoClass {
     unsigned int vtable30;
     unsigned int vtable31;
     unsigned int vtable32;
-    unsigned int CalcFlashAlpha;
+    unsigned int queueUpToEnter;
+    unsigned int EvaluateTarget;
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);
     BOOL updateWeaponCooldown(int a1);
@@ -527,7 +528,7 @@ struct TechnoClass {
     HouseClass * * RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11);
     char ScanAdjacentCells();
     int COMStub_Return0_287();
-    int DTOR();
+    int DTOR(void *a1 = 0);
     int DrawAirstrikeFlare_SetContext(int a1, int a2, int a3, int a4, int a5, int a6);
     int HasVoiceResponse(int weaponIndex);
     int ProcessDeployAction();
@@ -540,8 +541,8 @@ struct TechnoClass {
     int checkMovementRestrictions();
     int processPowerDrain();
     TechnoClass(AbstractClass * aP1);
-    unsigned int * Update(BuildingClass * aP0, FootClass * aP1);
-    void GetField();
+    unsigned int * Update(BuildingClass * aP0, FootClass * aP1, void *a3 = 0, void *a1 = 0);
+    void GetField(void *a1 = 0);
     void updateSightRange(IUnknown * aP1, int a3);
     static double GetTileAnimationData(...);  // C2597 interim stub
     static double InvulnerabilityIntensity_SetContext(...);  // C2597 interim stub
@@ -551,6 +552,10 @@ struct TechnoClass {
     static double CreatePlanningNode(...);  // C2597 interim stub
     static double IsDeployed(...);  // C2597 interim stub
     static double IsWaypointHidden(...);  // C2597 interim stub
+    static double FindClosestPlacementCell(...);  // C2597 interim stub
+     double GetValue(...);  // C2597 interim stub
+    static double CreateFireEffect(...);  // C2597 interim stub
+    static double CreateRadarBlip(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

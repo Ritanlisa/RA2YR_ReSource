@@ -100,8 +100,8 @@ struct Object {
     int LoadObject(ObjectClass * aP1,  int aP1a);    // 0x5FD8F0
     SessionClass * DtorWithDelete(char a2);  // 0x7AD330
     int ComputeAllocationSize();  // 0x42B1F0
-    void ** RemoveObjectArray();  // 0x53E420
-    int Unlink();  // 0x5F5230
+    void ** RemoveObjectArray(void *a1 = 0);  // 0x53E420
+    int Unlink(void *a1 = 0);  // 0x5F5230
     char CheckState(void* aP1,  int a3);    // 0x5FD270
     int SaveObject(TechnoTypeClass * aP0,  int * a1,  int aP2);    // 0x5FD950
     int ddtor(int a1,  unsigned int * a2);    // 0x5FDF10

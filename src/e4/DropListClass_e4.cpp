@@ -6,6 +6,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/DriveLocomotionClass_e4.hpp"
+#include "e4/classes/EMPulseClass_e4.hpp"
 
 // 0x4B5030
 namespace gamemd {
@@ -21,16 +22,16 @@ void DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 
   v4 = (wchar_t **)v3; /*0x4b5032*/
   v5 = (int *)(v3 + 176); /*0x4b503a*/
-  result = (wchar_t *)(*(int (__thiscall **)(int))(*(unsigned int *)(v3 + 176) + 148))(v3 + 176); /*0x4b5042*/
+  result = (wchar_t *)(*(int (**)(int))(*(unsigned int *)(v3 + 176) + 148))(v3 + 176); /*0x4b5042*/
   if ( this >= (DropListClass *)result ) /*0x4b504e*/
   {
     *v4[13] = 0; /*0x4b5089*/
   }
   else
   {
-    (*(void (__thiscall **)(int *, DropListClass *, int))(*v5 + 184))(v5, this, a2); /*0x4b5056*/
+    (*(void (**)(int *, DropListClass *, int))(*v5 + 184))(v5, this, a2); /*0x4b5056*/
     v7 = *v5; /*0x4b505e*/
-    v8 = (*((int (__thiscall **)(wchar_t **))*v4 + 41))(v4); /*0x4b5062*/
+    v8 = (*((int (**)(wchar_t **))*v4 + 41))(v4); /*0x4b5062*/
     v9 = (const wchar_t *)v5->GetClamped(v8); /*0x4b506b*/
     return wcscpy(v4[13], v9); /*0x4b5076*/
   }

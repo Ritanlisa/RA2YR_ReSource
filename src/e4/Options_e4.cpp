@@ -23,6 +23,10 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/PageUserCommandClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4F11B0
 namespace gamemd {
@@ -103,7 +107,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
     if ( (byte_A8EDF8 & 1) == 0 ) /*0x4f12be*/
     {
       byte_A8EDF8 |= 1u; /*0x4f12ca*/
-      dword_A8EE30 = Timer::GetTicks(); /*0x4f12da*/
+      dword_A8EE30 = this->Timer::GetTicks(); /*0x4f12da*/
       dword_A8EE38 = 0; /*0x4f12df*/
       atexit(nullsub_14); /*0x4f12e9*/
     }
@@ -167,7 +171,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
         }
         if ( v10 ) /*0x4f13bf*/
           return 0; /*0x4f13bf*/
-        if ( dword_A8B238[0] && dword_A8B238[0] != 5 ) /*0x4f13d1*/
+        if ( ((unsigned int *)(dword_A8B238))[0] && ((unsigned int *)(dword_A8B238))[0] != 5 ) /*0x4f13d1*/
         {
           v15 = EventClass::AddEvent(v29, *((unsigned int *)dword_A83D4C + 12), 0x1Du); /*0x4f13e5*/
           ((void (__stdcall *)(char *))OptionQueue::PushEntry)(v15); /*0x4f13f0*/
@@ -176,7 +180,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
         }
         v12 = (void (__stdcall *)(HWND, int))ShowWindow; /*0x4f140b*/
         ShowWindow(hDlg, 0); /*0x4f1414*/
-        if ( dword_A8B238[0] ) /*0x4f141d*/
+        if ( ((unsigned int *)(dword_A8B238))[0] ) /*0x4f141d*/
           swprintf(Buffer, (const size_t)&off_8240B4, (const wchar_t *const)dword_A8B230 + 2480); /*0x4f1455*/
         else
           swprintf(Buffer, (const size_t)&off_8240B4, (const wchar_t *const)dword_A8B230 + 2541); /*0x4f1439*/
@@ -192,7 +196,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
     {
       if ( !v10 ) /*0x4f16c2*/
       {
-        if ( dword_A8B238[0] != 4 || (dword_A8EDA0 = 2, !*(unsigned int *)dword_B779C4) ) /*0x4f16de*/
+        if ( ((unsigned int *)(dword_A8B238))[0] != 4 || (dword_A8EDA0 = 2, !*(unsigned int *)dword_B779C4) ) /*0x4f16de*/
           dword_A8EDA0 = 3; /*0x4f16e0*/
         *WindowLongA = 2; /*0x4f16ea*/
       }
@@ -200,17 +204,17 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
     }
     if ( (uint16_t)a3 != 1653 && (uint16_t)a3 != 1670 || v10 ) /*0x4f1521*/
       return 0; /*0x4f16f1*/
-    if ( dword_A8B238[0] == 4 && !dword_A8B538 ) /*0x4f153b*/
+    if ( ((unsigned int *)(dword_A8B238))[0] == 4 && !dword_A8B538 ) /*0x4f153b*/
     {
       v18 = GetDlgItem(hDlg, 1007); /*0x4f154d*/
       if ( v18 ) /*0x4f1557*/
       {
         v19 = (wchar_t *)(3 - SendMessageA(v18, 0x400u, 0, 0)); /*0x4f156e*/
-        if ( v19 != dword_A8DB9C ) /*0x4f1577*/
+        if ( v19 != (wchar_t *)(dword_A8DB9C) ) /*0x4f1577*/
         {
           if ( Timer::GetRemainingMs(&dword_A8EE40) ) /*0x4f157e*/
           {
-            Debug::Log(); /*0x4f15eb*/
+            this->Debug::Log(); /*0x4f15eb*/
           }
           else
           {
@@ -220,7 +224,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
             dword_A8EE48 = v24[2]; /*0x4f15b6*/
             v20 = EventClass::Add2(v31, *((unsigned int *)dword_A83D4C + 12), 0x24u, (int)v19); /*0x4f15c6*/
             ((void (__stdcall *)(char *))OptionQueue::PushEntry)(v20); /*0x4f15d1*/
-            Debug::Log(); /*0x4f15dc*/
+            this->Debug::Log(); /*0x4f15dc*/
           }
         }
       }
@@ -241,7 +245,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
           }
-          Debug::Log(); /*0x4f169e*/
+          this->Debug::Log(); /*0x4f169e*/
         }
       }
     }
@@ -368,7 +372,7 @@ char Options::Screen_Dialog()
       Dialog::Show(v1); /*0x55fcd8*/
       while ( dwNewLong < 0 ) /*0x55fce3*/
       {
-        if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x55fcec*/
+        if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
         IDA_LOBYTE(v2) = 0; /*0x55fcee*/
         ScreenSaver::Process(v2); /*0x55fcf0*/
@@ -387,7 +391,7 @@ char Options::Screen_Dialog()
         Dialog::Show(v4); /*0x55fd5d*/
         while ( v9 < 0 ) /*0x55fd68*/
         {
-          if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x55fd71*/
+          if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
           IDA_LOBYTE(v5) = 0; /*0x55fd73*/
           ScreenSaver::Process(v5); /*0x55fd75*/
@@ -541,7 +545,7 @@ AbstractClass * * Options::DestroyComposite(char a2)
 
   if ( *(unsigned int *)&this->u32_2C ) /*0x625563*/
   {
-    RA2_OPDEL(*(void **)&this->__pad_14[24]); /*0x62556b*/
+    RA2_OPDEL(*(void **)&this-((unsigned int *)(>__pad_14))[24]); /*0x62556b*/
     *(unsigned int *)&this->__pad_14[24] = 0; /*0x625573*/
   }
   for ( i = *(unsigned int **)&this->__pad_34[4]; i; i = *(unsigned int **)&this->__pad_34[4] ) /*0x62557f*/
@@ -844,7 +848,7 @@ int Options::DialogProc(CCINIClass hWnd)
     unsigned int v23;
     int *v24;
     int *v25;
-    void (__thiscall ***v26)(int, int);
+    void (***v26)(int, int);
     int v27;
     int result;
     int v29;

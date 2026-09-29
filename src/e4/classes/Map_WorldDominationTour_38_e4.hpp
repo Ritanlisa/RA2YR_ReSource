@@ -9,8 +9,8 @@ struct Map_WorldDominationTour_38 {
     unsigned int u32_4;  // 0x4
     unsigned int RefCount;  // 0x8
 // --- flat members (END) ---
-    BOOL AddRef();  // 0x769D60
-    unsigned int * Release();  // 0x76A5A0
-    unsigned int * ddtor();  // 0x76A5B0
+    BOOL AddRef(void *a1 = 0);  // 0x769D60
+    unsigned int * Release(void *a1 = 0);  // 0x76A5A0
+    unsigned int * ddtor(void *a1 = 0);  // 0x76A5B0
 };
 } // namespace gamemd

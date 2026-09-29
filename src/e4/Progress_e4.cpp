@@ -35,7 +35,7 @@ namespace gamemd {
 int Progress::GetWeighted(int a2)
 {
   if ( a2 < this->u32_61 ) /*0x643e9a*/
-    return *(double *)(&this->m_Index * a2 + 8) / *(double *)(&this->u32_1C2); /*0x643ea6*/
+    return *(double *)(&(unsigned int)(this->m_Index)* a2 + 8) / *(double *)(&this->u32_1C2); /*0x643ea6*/
   else
     return *(double *)(&this->u32_1C2); /*0x643e9c*/
 }

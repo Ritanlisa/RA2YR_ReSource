@@ -19,10 +19,10 @@ struct AbstractClassVector {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    int Read(unsigned int * a2);
-    unsigned int * Construct(void* aP1, void* aP2);
+    int Read(unsigned int * a2, void *a1 = 0);
+    unsigned int * Construct(void* aP1, void* aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int Write(int a2);
-    static double ddtor(...);  // C2597 interim stub
+     double ddtor(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

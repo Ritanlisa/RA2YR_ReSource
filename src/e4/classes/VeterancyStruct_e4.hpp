@@ -5,7 +5,7 @@ namespace gamemd {
 
 struct VeterancyStruct {
     void* vfptr;
-    BOOL IsElite();
+    BOOL IsElite(void *a1 = 0);
     BOOL IsVeteran();
 };
 

@@ -22,7 +22,7 @@ int ThemeManager::ProcessCallback()
   uint64_t v3; // rax
   uint64_t v4; // kr00_8
 
-  v2 = Audio::Callback(); /*0x4080fa*/
+  v2 = this->Audio::Callback(); /*0x4080fa*/
   IDA_LODWORD(v3) = this->u32_14; /*0x4080fc*/
   v4 = *(unsigned long long *)(v3 + 32) + IDA___PAIR64__(IDA_HIDWORD(v3), v2); /*0x408104*/
   while ( (this->u8_C & 1) != 0 ) /*0x408107*/
@@ -30,10 +30,10 @@ int ThemeManager::ProcessCallback()
     IDA_LODWORD(v3) = this->u32_14; /*0x40810d*/
     if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/
       break; /*0x408118*/
-    IDA_LODWORD(v3) = Audio::Callback(); /*0x40811a*/
+    IDA_LODWORD(v3) = this->Audio::Callback(); /*0x40811a*/
     if ( v3 >= v4 ) /*0x408127*/
       break; /*0x408127*/
-    IDA_LOBYTE(v3) = Event::Dispatch(); /*0x408129*/
+    IDA_LOBYTE(v3) = this->Event::Dispatch(); /*0x408129*/
   }
   return v3; /*0x408130*/
 }
@@ -49,7 +49,7 @@ void ThemeManager::Cleanup()
 
   while ( this->q024 > 0 ) /*0x720778*/
   {
-    RA2_OPDEL(*this->u32_18); /*0x720780*/
+    RA2_OPDEL(*(unsigned int *)(this->u32_18)); /*0x720780*/
     v2 = this->q024; /*0x720785*/
     if ( v2 > 0 ) /*0x72078d*/
     {

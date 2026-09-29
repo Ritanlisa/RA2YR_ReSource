@@ -11,6 +11,7 @@
 namespace gamemd {
 void RawFileClass::Dtor()
 {
+    unsigned int v3 = 0;  /* G37 hoist */
   int result; // eax
   FileClass v3; // edi
   DWORD LastError; // eax
@@ -26,7 +27,7 @@ void RawFileClass::Dtor()
       v3 = this->FileClass; /*0x65ca25*/
       v5 = *(unsigned int *)this->FileNameAllocated; /*0x65ca27*/
       LastError = GetLastError(); /*0x65ca29*/
-      result = (*(int (__thiscall **)(BufferIOFileClass *, DWORD, unsigned int, int))(*(unsigned int *)&v3 + 64))( /*0x65ca32*/
+      result = (*(int (**)(BufferIOFileClass *, DWORD, unsigned int, int))(*(unsigned int *)&v3 + 64))( /*0x65ca32*/
                  this,
                  LastError,
                  0,
@@ -34,7 +35,7 @@ void RawFileClass::Dtor()
     }
     *(unsigned int *)this->FileTimeDateLo = -1; /*0x65ca36*/
   }
-  IDA_LOBYTE(result) = this->CacheReadAhead[0]; /*0x65ca3d*/
+  IDA_LOBYTE(result) = this-((unsigned int *)(>CacheReadAhead))[0]; /*0x65ca3d*/
   if ( (unsigned char)result ) /*0x65ca42*/
   {
     result = *(unsigned int *)this->FileNameAllocated; /*0x65ca44*/
@@ -42,7 +43,7 @@ void RawFileClass::Dtor()
     {
       result = (int)(free(*(void **)this->FileNameAllocated));
       *(unsigned int *)this->FileNameAllocated = 0; /*0x65ca54*/
-      this->CacheReadAhead[0] = 0; /*0x65ca5b*/
+      this-((unsigned int *)(>CacheReadAhead))[0] = 0; /*0x65ca5b*/
     }
   }
   this->FileClass = (FileClass)(void*)&FileClass_vftable; /*0x65ca5f*/
@@ -53,7 +54,7 @@ void RawFileClass::Dtor()
 namespace gamemd {
 int RawFileClass::Close(int a2, int a3)
 {
-  (*(void (__thiscall **)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 8))(this, a2); /*0x65cb3c*/
-  return (*(int (__thiscall **)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, a3); /*0x65cb4b*/
+  (*(void (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 8))(this, a2); /*0x65cb3c*/
+  return (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, a3); /*0x65cb4b*/
 }
 } // namespace gamemd

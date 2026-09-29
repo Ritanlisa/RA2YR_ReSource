@@ -14,12 +14,12 @@ struct VectorClass_ptr_TEventClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy();  // 0x71FBA0
+    void Destroy(void *a1 = 0);  // 0x71FBA0
     unsigned int GetItemIndex(int a2);  // 0x71FBD0
-    int Get(int a2);  // 0x71FBF0
+    int Get(int a2, void *a1 = 0);  // 0x71FBF0
     char Add(int a2);  // 0x71FC00
     char Release(int a2,  unsigned int * a3);    // 0x71FC40
-    void Remove();  // 0x71FCF0
+    void Remove(void *a1 = 0);  // 0x71FCF0
     int GetSize(unsigned int * a2);  // 0x71FD20
     unsigned int GetCapacity(int a2);  // 0x71FD60
     char SetCapacity(int a2,  unsigned int * a3);    // 0x71FD80

@@ -24,11 +24,11 @@ void E4Recv_7AE830::sub_7AE830()
   int *v13; // [esp+8h] [ebp-4h]
 
   vtable2 = (unsigned int)this->M8; /*0x7ae835*/
-  if ( (ObjectClass *)vtable2 > this->nextObject && IDA_LOBYTE(this->?) != 1 ) /*0x7ae847*/
+  if ( (ObjectClass *)vtable2 > (gamemd::ObjectClass *)(this->nextObject) && IDA_LOBYTE(this->?) != 1 ) /*0x7ae847*/
   {
     vtable0 = (int *)((unsigned int)((int *)this->AbstractClass));
     vtable3 = (unsigned int)((char *)this->?);
-    v13 = (unsigned int)((int *)this->AbstractClass);
+    v13 = (int *)((unsigned int)((int *)this->AbstractClass));
     *(void **)&this->M8 = (void *)(vtable2 >> 1); /*0x7ae85c*/
     this->M12 = vtable3 - 1; /*0x7ae864*/
     v5 = (void *)RA2_OPNEW(4 * (vtable2 >> 1)); /*0x7ae86f*/

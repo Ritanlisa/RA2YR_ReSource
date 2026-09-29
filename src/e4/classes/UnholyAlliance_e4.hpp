@@ -12,8 +12,8 @@ struct UnholyAlliance {
 // --- flat members (END) ---
     BOOL Write(MPCooperative * aP0);
     UnholyAlliance * QueryInterface(char a2);
-    char Read();
-    char Seek();
+    char Read(void *a1 = 0, void *a2 = 0);
+    char Seek(void *a1 = 0, void *a2 = 0);
 };
 
 } // namespace gamemd

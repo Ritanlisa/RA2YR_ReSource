@@ -36,6 +36,9 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/GameSettings_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Count_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {
@@ -46,32 +49,32 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
   int v5; // eax
   void *NeedsSaveOrLink; // ecx
   unsigned int *v7; // eax
-  int v8; // edx
-  int v9; // eax
+  unsigned int * v8;
+  unsigned int v9;
   int v10; // esi
   int v12; // [esp+0h] [ebp-8h]
 
   v3 = a3; /*0x6a6af3*/
   if ( a3 == -1 ) /*0x6a6afe*/
     v3 = this->M21404; /*0x6a6b00*/
-  v4 = (char *)&this->u32_F94 * v3 + 5444; /*0x6a6b19*/
+  v4 = (char *)&(unsigned int)(this->u32_F94)* v3 + 5444; /*0x6a6b19*/
   v5 = 26; /*0x6a6b20*/
   v4 = v4; /*0x6a6b25*/
-  NeedsSaveOrLink = dword_A8B230[374].NeedsSaveOrLink; /*0x6a6b29*/
+  NeedsSaveOrLink = ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink; /*0x6a6b29*/
   if ( NeedsSaveOrLink ) /*0x6a6b31*/
     v5 = 18; /*0x6a6b33*/
   v12 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6b77*/
-  if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a6b7b*/
+  if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a6b7b*/
     v12 = 1; /*0x6a6b7d*/
   if ( !aP1 ) /*0x6a6b8b*/
   {
-    v9 = (unsigned int *)(26);
+    v9 = (int)((unsigned int *)(26));
     if ( NeedsSaveOrLink ) /*0x6a6bae*/
       v9 = 18; /*0x6a6bb0*/
     v10 = g_DSurface_ViewBounds - g_SidebarBounds - v9; /*0x6a6bb5*/
-    if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a6bd0*/
+    if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a6bd0*/
     {
-      v7 = v4; /*0x6a6bdd*/
+      v7 = (unsigned int *)(v4);
       if ( v4[17] + (v10 + g_DSurface_SidebarBounds - 7) / 50 / 2 >= dword_884CF8 ) /*0x6a6be8*/
         return 0; /*0x6a6be8*/
     }
@@ -81,16 +84,15 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
         return 0; /*0x6a6bfc*/
       v7 = v4; /*0x6a6bfe*/
     }
-    v8 = (unsigned int *)(v12 + v7[18]);
+    v8 = (int)((unsigned int *)(v12 + v7[18]));
     goto LABEL_18; /*0x6a6c07*/
   }
-  v7 = v4; /*0x6a6b8d*/
+  v7 = (unsigned int *)(v4);
   if ( v4[17] ) /*0x6a6b91*/
   {
-    v8 = v4[18] - v12; /*0x6a6ba3*/
-  LABEL_18:
-    v7[18] = v8; /*0x6a6c09*/
-    (*((void (__thiscall **)(ObjectClass *, unsigned int))this->AbstractClass + 14))(this, 0); /*0x6a6c14*/
+    v8 = (unsigned int)(v4[18] - v12);
+  LABEL_18: v7[18] = (unsigned int)(v8);
+    (*((void (**)(ObjectClass *, unsigned int))this->AbstractClass + 14))(this, 0); /*0x6a6c14*/
     return 1; /*0x6a6c20*/
   }
   return 0; /*0x6a6c1d*/
@@ -107,8 +109,8 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
 
   *(&this->u32_85C1) = a2; /*0x6a74b6*/
   GadgetClass::Show((unsigned char *)&unk_B07C48 + 96 * a2); /*0x6a74bc*/
-  v3 = (int)(&this->u32_F94 * *(&this->u32_85C1) + 1361); /*0x6a74d4*/
-  *((unsigned char *)&this->u32_3E50 * *(&this->u32_85C1) + 5472) = 1; /*0x6a74db*/
+  v3 = (int)(&(unsigned int)(this->u32_F94)* *(&this->u32_85C1) + 1361); /*0x6a74d4*/
+  *((unsigned char *)&(unsigned int)((unsigned int)(this-)>u32_3E50)* *(&this->u32_85C1) + 5472) = 1; /*0x6a74db*/
   v4 = 26; /*0x6a74ed*/
   if ( *((unsigned int *)g_ScenarioClass_Instance + 3374) ) /*0x6a74e5*/
     v4 = 18; /*0x6a74f4*/
@@ -125,7 +127,7 @@ int E4Recv_6A74A0::sub_6A74A0(int a2)
     while ( v5 < v6 ); /*0x6a7570*/
   }
   g_CameoRenderFlag = 1; /*0x6a7574*/
-  return Tactical::UpdateUIVisibility(); /*0x6a7580*/
+  return this->Tactical::UpdateUIVisibility(); /*0x6a7580*/
 }
 }
 // 0x6A87F0
@@ -136,13 +138,13 @@ int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
   int v5; // ecx
   int *v6; // eax
 
-  v4 = this->customSound_controller[1]; /*0x6a87f5*/
+  v4 = this-((unsigned int *)(>customSound_controller))[1]; /*0x6a87f5*/
   if ( v4 > 75 ) /*0x6a87fb*/
     return 0; /*0x6a8857*/
   v5 = 0; /*0x6a8805*/
   if ( v4 > 0 ) /*0x6a8809*/
   {
-    v6 = &this->customSound_controller[2]; /*0x6a880b*/
+    v6 = &this-((unsigned int *)(>customSound_controller))[2]; /*0x6a880b*/
     while ( v6[1] != a2 || *v6 != a3 ) /*0x6a8815*/
     {
       ++v5; /*0x6a8817*/
@@ -169,22 +171,22 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
   int v3; // ecx
   int v5; // eax
   int v6; // eax
-  int v7; // kr04_4
+  ObjectClass * v7;
   ObjectClass *v8; // eax
   void *NeedsSaveOrLink; // [esp+4h] [ebp-4h]
 
-  NeedsSaveOrLink = dword_A8B230[374].NeedsSaveOrLink; /*0x6a89f2*/
+  NeedsSaveOrLink = ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink; /*0x6a89f2*/
   v2 = 26; /*0x6a89f8*/
   if ( NeedsSaveOrLink ) /*0x6a89fd*/
     v2 = 18; /*0x6a89ff*/
   v3 = (g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8a43*/
-  if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a8a45*/
+  if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a8a45*/
     v3 = 1; /*0x6a8a47*/
   if ( a2 ) /*0x6a8a52*/
   {
-    if ( this->ambientSoundController[2] ) /*0x6a8a58*/
+    if ( this-((unsigned int *)(>ambientSoundController))[2] ) /*0x6a8a58*/
     {
-      this->ambientSoundController[3] -= v3; /*0x6a8a72*/
+      this-((unsigned int *)(>ambientSoundController))[3] -= v3; /*0x6a8a72*/
       return 1; /*0x6a8a76*/
     }
     else
@@ -198,16 +200,16 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     if ( NeedsSaveOrLink ) /*0x6a8a8a*/
       v5 = 18; /*0x6a8a8c*/
     v6 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8aaa*/
-    if ( dword_A83D4C == (Object *)HouseClass_Observer ) /*0x6a8aac*/
+    if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a8aac*/
     {
-      v7 = (gamemd::ObjectClass *)(v6);
-      v8 = this; /*0x6a8ab9*/
-      if ( this->ambientSoundController[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
+      v7 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(v6)));
+      v8 = (gamemd::ObjectClass *)(this);
+      if ( this-((unsigned int *)(>ambientSoundController))[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/
     }
     else
     {
-      if ( 2 * (v6 + this->ambientSoundController[2]) >= this->customSound_controller[1] ) /*0x6a8ae2*/
+      if ( 2 * (v6 + this-((unsigned int *)(>ambientSoundController))[2]) >= this-((unsigned int *)(>customSound_controller))[1] ) /*0x6a8ae2*/
         return 0; /*0x6a8aed*/
       v8 = this; /*0x6a8af0*/
     }
@@ -228,7 +230,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
 
   IDA_LOBYTE(this->M28) = 1; /*0x6a93f8*/
   v2 = 26; /*0x6a9408*/
-  if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a9400*/
+  if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6a9400*/
     v2 = 18; /*0x6a940f*/
   v3 = 0; /*0x6a942f*/
   v4 = g_DSurface_ViewBounds - g_SidebarBounds - v2 + g_DSurface_SidebarBounds - 7; /*0x6a9431*/
@@ -503,21 +505,21 @@ void ShowSkirmishSetupScreen(void * a1, void * a2)
   RulesClass::LoadCountries(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x6ae2d6*/
   RulesClass::ReadDataList(*(RulesClass **)&DSurface_ViewBounds.__pad_FC[324]); /*0x6ae2e8*/
   for ( i = 0; i < dword_A83CA8; ++i ) /*0x6ae2f6*/
-    (*(void (__thiscall **)(unsigned int, unsigned int))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x6ae30a*/
+    (*(void (**)(unsigned int, unsigned int))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x6ae30a*/
       *((unsigned int *)dword_A83C9C + i),
       *(unsigned int *)&DSurface_ViewBounds.__pad_34[116]);
   LoadingScreen::Init(); /*0x6ae317*/
   Dialog = (HWND)CreateDialog(0x102u, Skirmish::Setup_DlgProc, 0); /*0x6ae32d*/
   if ( Dialog ) /*0x6ae331*/
   {
-    dword_B0B59C = Dialog; /*0x6ae337*/
+    dword_B0B59C = (unsigned int)(Dialog);
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6ae341*/
     Dialog::Show((Dialog *)Dialog); /*0x6ae349*/
     for ( j = dwNewLong; dwNewLong != 1559; j = dwNewLong ) /*0x6ae357*/
     {
       if ( j == 1472 ) /*0x6ae35e*/
         break; /*0x6ae35e*/
-      if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x6ae367*/
+      if ( (uint8_t)this->Dialog::PumpMessages() == 1 ) /*0x6ae367*/
         break; /*0x6ae367*/
       IDA_LOBYTE(v7) = 0; /*0x6ae369*/
       ScreenSaver::Process(v7, v10); /*0x6ae36b*/
@@ -525,7 +527,7 @@ void ShowSkirmishSetupScreen(void * a1, void * a2)
     Dialog::Destroy((Dialog *)Dialog); /*0x6ae37d*/
     dword_B0B59C = 0; /*0x6ae382*/
   }
-  v8 = g_UIControlState; /*0x6ae38c*/
+  v8 = (gamemd::Skirmish *)(g_UIControlState);
   if ( g_UIControlState ) /*0x6ae394*/
   {
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x6ae398*/
@@ -582,7 +584,7 @@ int TechnoClass::ProcessDeployAction()
       v3 = (unsigned int *)this->master; /*0x6afd7a*/
       if ( v3 ) /*0x6afd7f*/
       {
-        v2 = (*(int (__thiscall **)(unsigned int))(*v3 + 44))(this->master); /*0x6afd89*/
+        v2 = (*(int (**)(unsigned int))(*v3 + 44))(this->master); /*0x6afd89*/
         if ( v2 == 6 ) /*0x6afd8f*/
         {
           v4 = v3[43]; /*0x6afd95*/
@@ -596,17 +598,17 @@ int TechnoClass::ProcessDeployAction()
       break; /*0x6afdc0*/
     case 1:
       v5 = (unsigned int *)this->master; /*0x6afdc1*/
-      if ( v5 && (*(int (__thiscall **)(unsigned int))(*v5 + 44))(this->master) == 1 && (v2 = v5[361]) != 0 ) /*0x6afddc*/
+      if ( v5 && (*(int (**)(unsigned int))(*v5 + 44))(this->master) == 1 && (v2 = v5[361]) != 0 ) /*0x6afddc*/
       {
         *(&this->vtable33) = 2; /*0x6afdde*/
         *(&this->vtable34) = 0x7FFFFFFF; /*0x6afde5*/
       }
       else
       {
-        v2 = *(unsigned int *)(*(int (__thiscall **)(unsigned int, int *, int, int))(*(unsigned int *)this->master + 824))( /*0x6afe1c*/
+        v2 = *(unsigned int *)(*(int (**)(unsigned int, int *, int, int))(*(unsigned int *)this->master + 824))( /*0x6afe1c*/
                           this->master,
                           &v29,
-                          g_RulesClass_Instance[1].TurnRate / 256,
+                          ((unsigned int *)(g_RulesClass_Instance))[1].TurnRate / 256,
                           1);
         v28 = v2; /*0x6afe25*/
         v27 = v2; /*0x6afe29*/
@@ -620,8 +622,8 @@ int TechnoClass::ProcessDeployAction()
         {
           v6 = *(unsigned int *)this->master; /*0x6afe87*/
           v7 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v27); /*0x6afe8e*/
-          (*(void (__thiscall **)(unsigned int, void *, int))(v6 + 1152))(this->master, v7, 1); /*0x6afe97*/
-          IDA_LOBYTE(v2) = (*(int (__thiscall **)(unsigned int, int, unsigned int))(*(unsigned int *)this->master + 488))(this->master, 2, 0); /*0x6afea6*/
+          (*(void (**)(unsigned int, void *, int))(v6 + 1152))(this->master, v7, 1); /*0x6afe97*/
+          IDA_LOBYTE(v2) = (*(int (**)(unsigned int, int, unsigned int))(*(unsigned int *)this->master + 488))(this->master, 2, 0); /*0x6afea6*/
           *(&this->vtable33) = 2; /*0x6afeac*/
           *(&this->vtable34) = 0x7FFFFFFF; /*0x6afeb3*/
         }
@@ -629,7 +631,7 @@ int TechnoClass::ProcessDeployAction()
       break; /*0x6afdf1*/
     case 2:
       v8 = (int *)this->master; /*0x6afec0*/
-      if ( v8 && (v2 = (*(int (__thiscall **)(unsigned int))(*v8 + 44))(this->master), v2 == 1) ) /*0x6afed1*/
+      if ( v8 && (v2 = (*(int (**)(unsigned int))(*v8 + 44))(this->master), v2 == 1) ) /*0x6afed1*/
       {
         v2 = v8[361]; /*0x6afee9*/
         if ( !v2 ) /*0x6afef1*/
@@ -660,7 +662,7 @@ int TechnoClass::ProcessDeployAction()
       break; /*0x6afee8*/
     case 3:
       v10 = (int *)this->master; /*0x6aff43*/
-      if ( v10 && (*(int (__thiscall **)(unsigned int))(*v10 + 44))(this->master) == 1 ) /*0x6aff54*/
+      if ( v10 && (*(int (**)(unsigned int))(*v10 + 44))(this->master) == 1 ) /*0x6aff54*/
       {
         IDA_LOBYTE(v2) = TechnoClass::Deploy(v10); /*0x6aff6d*/
         if ( !(unsigned char)v2 ) /*0x6aff74*/
@@ -676,10 +678,10 @@ int TechnoClass::ProcessDeployAction()
       }
       break; /*0x6aff6a*/
     case 4:
-      v2 = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)this->master + 44))(this->master); /*0x6aff93*/
+      v2 = (*(int (**)(unsigned int))(*(unsigned int *)this->master + 44))(this->master); /*0x6aff93*/
       if ( v2 == 6
         && ((v11 = this->master) != 0
-          ? (v2 = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)v11 + 44))(this->master) == 6 ? v11 : 0)
+          ? (v2 = (*(int (**)(unsigned int))(*(unsigned int *)v11 + 44))(this->master) == 6 ? v11 : 0)
           : (v2 = 0),
             *(unsigned int *)(v2 + 1332)) )
       {
@@ -691,11 +693,11 @@ int TechnoClass::ProcessDeployAction()
         v12 = this->master; /*0x6affd6*/
         if ( v12 )
         {
-          v2 = (*(int (__thiscall **)(int))(v12->fallRate)(v12); /*0x6affe3*/
+          v2 = (*(int (**)(int))(v12->fallRate)(v12); /*0x6affe3*/
           if ( v2 == 1 )
           {
             v13 = this->master; /*0x6affef*/
-            v2 = v13 ? ((*(int (__thiscall **)(unsigned int))(v13->fallRate)(this->master) == 1 ? v13 : 0) : 0;
+            v2 = v13 ? ((*(int (**)(unsigned int))(v13->fallRate)(this->master) == 1 ? v13 : 0) : 0;
             if ( !*(unsigned char *)(v2 + 1676) && *(unsigned int *)(this->master + 172) == 5 ) /*0x6b0022*/
             {
               *(&this->vtable33) = 2; /*0x6b0028*/
@@ -707,7 +709,7 @@ int TechnoClass::ProcessDeployAction()
       break; /*0x6affd5*/
     case 5:
       v14 = this->master; /*0x6b003c*/
-      if ( v14 && (*(int (__thiscall **)(int))(v14->fallRate)(v14) == 1 ) /*0x6b004b*/
+      if ( v14 && (*(int (**)(int))(v14->fallRate)(v14) == 1 ) /*0x6b004b*/
       {
         *(&this->vtable33) = 0; /*0x6b004d*/
         IDA_LOBYTE(v2) = (unsigned char)g_CurrentFrame; /*0x6b0054*/
@@ -715,7 +717,7 @@ int TechnoClass::ProcessDeployAction()
       }
       else
       {
-        v2 = *(unsigned int *)(*(int (__thiscall **)(unsigned int, int *, int, unsigned int))(*(unsigned int *)this->master + 824))( /*0x6b008d*/
+        v2 = *(unsigned int *)(*(int (**)(unsigned int, int *, int, unsigned int))(*(unsigned int *)this->master + 824))( /*0x6b008d*/
                           this->master,
                           &v29,
                           g_RulesClass_Instance[1].GateUp / 256,
@@ -723,7 +725,7 @@ int TechnoClass::ProcessDeployAction()
         v28 = v2; /*0x6b0096*/
         if ( v2 == dword_B0B5B8 ) /*0x6b009a*/
         {
-          v27 = *(unsigned int *)(*(int (__thiscall **)(unsigned int, int *, int, int))(*(unsigned int *)this->master + 824))( /*0x6b00e7*/
+          v27 = *(unsigned int *)(*(int (**)(unsigned int, int *, int, int))(*(unsigned int *)this->master + 824))( /*0x6b00e7*/
                              this->master,
                              &v29,
                              g_RulesClass_Instance[1].TurnRate / 256,
@@ -734,7 +736,7 @@ int TechnoClass::ProcessDeployAction()
           v29 = *(int16_t *)v15; /*0x6b011b*/
           v17 = Math::Sqrt((double)v29 * (double)v29 + (double)v16 * (double)v16); /*0x6b0134*/
           v18 = Math::RoundToInt(v17); /*0x6b0144*/
-          v19 = (int16_t *)(*(int (__thiscall **)(unsigned int, unsigned char *))(*(unsigned int *)this->master + 440))(this->master, v33); /*0x6b014d*/
+          v19 = (int16_t *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)this->master + 440))(this->master, v33); /*0x6b014d*/
           v20 = CellStruct::Sub(v19, &v32, &v27); /*0x6b015f*/
           v21 = *(int16_t *)v20; /*0x6b0168*/
           v29 = *((int16_t *)v20 + 1); /*0x6b016b*/
@@ -746,9 +748,9 @@ int TechnoClass::ProcessDeployAction()
           if ( v2 < v24 ) /*0x6b01bf*/
           {
             *(unsigned char *)(this->master + 1272) = 1; /*0x6b01c4*/
-            v25 = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)this->master + 444))(this->master); /*0x6b01d0*/
+            v25 = (*(int (**)(unsigned int))(*(unsigned int *)this->master + 444))(this->master); /*0x6b01d0*/
             TechnoClass::SetFocus((unsigned int *)this->master, v25); /*0x6b01da*/
-            IDA_LOBYTE(v2) = (*(int (__thiscall **)(unsigned int, int, unsigned int))(*(unsigned int *)this->master + 488))(this->master, 19, 0); /*0x6b01e8*/
+            IDA_LOBYTE(v2) = (*(int (**)(unsigned int, int, unsigned int))(*(unsigned int *)this->master + 488))(this->master, 19, 0); /*0x6b01e8*/
             *(&this->vtable33) = 6; /*0x6b01ee*/
             *(&this->vtable34) = 0x7FFFFFFF; /*0x6b01f5*/
           }
@@ -758,7 +760,7 @@ int TechnoClass::ProcessDeployAction()
       }
       break; /*0x6b0061*/
     case 6:
-      v2 = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)this->master + 44))(this->master); /*0x6b0214*/
+      v2 = (*(int (**)(unsigned int))(*(unsigned int *)this->master + 44))(this->master); /*0x6b0214*/
       if ( v2 == 1 ) /*0x6b021a*/
       {
         IDA_LOBYTE(); /*0x6b021e*/

@@ -27,7 +27,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   int v17; // edi
   int v18; // eax
   int v19; // ecx
-  void * v20;
+  unsigned int v20;
   LONG v21; // edi
   LONG v22; // ebx
   void * v23;
@@ -56,13 +56,13 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   int v46; // [esp+5Eh] [ebp-20h] BYREF
   LONG v47; // [esp+62h] [ebp-1Ch]
   LONG v48; // [esp+66h] [ebp-18h]
-  unsigned int v49;
+  void * v49;
   struct tagRECT Rect; // [esp+6Eh] [ebp-10h] BYREF
   int v51; // [esp+8Eh] [ebp+10h]
 
   if ( !a5 ) /*0x4f4790*/
   {
-    v9 = (int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)a1 + 120))(a1, &v46); /*0x4f479b*/
+    v9 = (int *)(*(int (**)(int, int *))(*(unsigned int *)a1 + 120))(a1, &v46); /*0x4f479b*/
     v39 = *v9; /*0x4f47a0*/
     v40 = v9[1]; /*0x4f47a7*/
     v41 = v9[2]; /*0x4f47b6*/
@@ -75,8 +75,8 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
     result = ClientToScreen(g_hWnd, (LPPOINT)&v38[4]); /*0x4f47f6*/
     if ( result ) /*0x4f47fe*/
     {
-      v11 = (*(int (__thiscall **)(int, int, int, int))(*(unsigned int *)a1 + 128))(a1, a4, a3, a2); /*0x4f4811*/
-      v12 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4817*/
+      v11 = (*(int (**)(int, int, int, int))(*(unsigned int *)a1 + 128))(a1, a4, a3, a2); /*0x4f4811*/
+      v12 = (*(int (**)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4817*/
       v13 = dword_87F7F0; /*0x4f4828*/
       v45 = v40; /*0x4f4830*/
       v46 = v41; /*0x4f4834*/
@@ -110,10 +110,10 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
           if ( !byte_A8EB7C && !byte_A8ED6B ) /*0x4f4887*/
           {
             v15 = dword_886FB8 - v12; /*0x4f4895*/
-            if ( (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar) >= v15 ) /*0x4f489e*/
+            if ( (*(int (**)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar) >= v15 ) /*0x4f489e*/
               v16 = v15; /*0x4f48ad*/
             else
-              v16 = (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48a8*/
+              v16 = (*(int (**)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48a8*/
             if ( v16 <= 0 ) /*0x4f48b1*/
             {
               v18 = 0; /*0x4f48df*/
@@ -121,33 +121,33 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
             else
             {
               v17 = dword_886FB8 - v47; /*0x4f48c3*/
-              if ( (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar) >= v17 ) /*0x4f48cc*/
+              if ( (*(int (**)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar) >= v17 ) /*0x4f48cc*/
                 v18 = v17; /*0x4f48db*/
               else
-                v18 = (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48d6*/
+                v18 = (*(int (**)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48d6*/
             }
             v13 = dword_87F7F0; /*0x4f48e5*/
             v19 = v18 + v45; /*0x4f48eb*/
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = (unsigned int)((void *)((LONG)(*a8)));
+          v20 = (void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((LONG)(*a8))))))))))));
           v21 = (int)(a8[1]);
           v22 = (void *)(a8[2]);
-          Rect.right = a8[3]; /*0x4f4904*/
-          v49 = v20; /*0x4f4910*/
+          Rect.right = (unsigned int)(a8[3]);
+          v49 = (unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)(v20))))))));
           Rect.left = v21; /*0x4f4914*/
           Rect.top = v22; /*0x4f4918*/
           if ( g_TacticalClass_Instance /*0x4f4934*/
-            && (g_TacticalClass_Instance[48].__tail_0
-             || g_TacticalClass_Instance[49].__tail_0 != (struct IPersistStreamVtbl *)1072693248) )
+            && (((unsigned int *)(g_TacticalClass_Instance))[48].__tail_0
+             || ((unsigned int *)(g_TacticalClass_Instance))[49].__tail_0 != (struct IPersistStreamVtbl *)1072693248) )
           {
-            v51 = (int)((LPPERSISTSTREAM)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1)));
-            v23 = (int)((void *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1)));
+            v51 = (int)((LPPERSISTSTREAM)((*(int (**)(int))(*(unsigned int *)a1 + 124))(a1)));
+            v23 = (void *)((int)((void *)((*(int (**)(int))(*(unsigned int *)a1 + 128))(a1))));
             v24 = (void *)((double)v51);
-            v25 = g_TacticalClass_Instance; /*0x4f4953*/
+            v25 = (LPPERSISTSTREAM)((unsigned int)(g_TacticalClass_Instance));
             *(unsigned int *)v38 = v23; /*0x4f4959*/
-            v42 = v24 / *(double *)&g_TacticalClass_Instance[48].__tail_0; /*0x4f4965*/
+            v42 = v24 / *(double *)&((unsigned int *)(g_TacticalClass_Instance))[48].__tail_0; /*0x4f4965*/
             v26 = Math::RoundToInt((v24 - v42) * 0.5); /*0x4f4973*/
             v27 = (double)*(int *)v38; /*0x4f4978*/
             v20 = v26; /*0x4f497c*/
@@ -171,12 +171,12 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
           if ( v13 < 0 ) /*0x4f49e1*/
             Rect.left = v21 - v13; /*0x4f49e5*/
           if ( dword_87F7EC < 0 ) /*0x4f49f0*/
-            v49 = v20 - dword_87F7EC; /*0x4f49f4*/
+            v49 = (unsigned int)(v20)- dword_87F7EC; /*0x4f49f4*/
           if ( !byte_A8E378 ) /*0x4f49ff*/
             goto LABEL_51; /*0x4f49ff*/
           if ( dword_887368 ) /*0x4f4a09*/
           {
-            if ( (uint8_t)Frame::Init() ) /*0x4f4a0b*/
+            if ( (uint8_t)this->Frame::Init() ) /*0x4f4a0b*/
             {
               v13 = dword_87F7F0; /*0x4f4a14*/
               v30 = 1; /*0x4f4a1a*/
@@ -189,7 +189,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   LABEL_51:
               if ( dword_87F7EC ) /*0x4f4a5e*/
               {
-                v31 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1) - *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a7c*/
+                v31 = (*(int (**)(int))(*(unsigned int *)a1 + 128))(a1) - *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a7c*/
                 IDA_HIDWORD(v42) = v41; /*0x4f4a82*/
                 v44 = v31; /*0x4f4a86*/
                 v43 = abs32(dword_87F7EC); /*0x4f4a91*/
@@ -198,18 +198,18 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
                 else
                   IDA_LODWORD(v42) = v45 + v47; /*0x4f4aa1*/
                 v32 = *(unsigned int *)g_DSurface_Primary; /*0x4f4ac1*/
-                v33 = (*(int (__thiscall **)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4ac5*/
+                v33 = (*(int (**)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4ac5*/
                         g_DSurface_Primary,
                         v38,
                         &v42,
                         0);
-                (*(void (__thiscall **)(int, int))(v32 + 16))(g_DSurface_Primary, v33); /*0x4f4acf*/
+                (*(void (**)(int, int))(v32 + 16))(g_DSurface_Primary, v33); /*0x4f4acf*/
                 v13 = dword_87F7F0; /*0x4f4ad2*/
               }
               if ( v13 ) /*0x4f4ada*/
               {
                 v34 = abs32(v13); /*0x4f4ae7*/
-                v43 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4af0*/
+                v43 = (*(int (**)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4af0*/
                 IDA_LODWORD(v42) = v40; /*0x4f4af9*/
                 v44 = v34; /*0x4f4aff*/
                 if ( dword_87F7F0 >= 0 ) /*0x4f4b03*/
@@ -217,16 +217,16 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
                 else
                   IDA_HIDWORD(v42) = v46 + v48; /*0x4f4b0f*/
                 v35 = *(unsigned int *)g_DSurface_Primary; /*0x4f4b2f*/
-                v36 = (*(int (__thiscall **)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4b33*/
+                v36 = (*(int (**)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4b33*/
                         g_DSurface_Primary,
                         v38,
                         &v42,
                         0);
-                (*(void (__thiscall **)(int, int))(v35 + 16))(g_DSurface_Primary, v36); /*0x4f4b3d*/
+                (*(void (**)(int, int))(v35 + 16))(g_DSurface_Primary, v36); /*0x4f4b3d*/
               }
               if ( v37 && dword_887640 ) /*0x4f4b50*/
-                (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 60))(dword_887640, a1, 0); /*0x4f4b57*/
-              result = (*(int (__thiscall **)(int, int *, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x4f4b7b*/
+                (*(void (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 60))(dword_887640, a1, 0); /*0x4f4b57*/
+              result = (*(int (**)(int, int *, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x4f4b7b*/
                          g_DSurface_Primary,
                          &v45,
                          a1);
@@ -236,7 +236,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
                 if ( dword_887640 ) /*0x4f4b8c*/
                 {
                   Sleep(0x32u); /*0x4f4b90*/
-                  return (*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, a1, 0); /*0x4f4ba1*/
+                  return (*(int (**)(int, int, unsigned int))(*(unsigned int *)dword_887640 + 64))(dword_887640, a1, 0); /*0x4f4ba1*/
                 }
               }
               return result; /*0x4f4ba1*/

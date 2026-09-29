@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/MainMenu_e4.hpp"
 
 // 0x624020
 namespace gamemd {
@@ -36,7 +37,7 @@ namespace gamemd {
 void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
 {
   HWND DlgItem; // ebp
-  HWND v4; // eax
+  wchar_t * v4;
   wchar_t *StringCSF; // eax
   HWND v6; // ebp
   wchar_t *v7; // eax
@@ -56,7 +57,7 @@ void MainLobbyDlgProcWOL_Get(HWND hDlg, char a2)
     SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x77a8fe*/
     InvalidateRect(DlgItem, 0, 0); /*0x77a905*/
   }
-  v4 = GetDlgItem(hDlg, 1775); /*0x77a911*/
+  v4 = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1775))));
   SendMessageA(v4, 0x4B2u, 0, (LPARAM)&g_TypeClass_DefaultString); /*0x77a920*/
   StringCSF = GetStringCSF(g_Str_GUI_UnknownStats, 0, g_Str_File_WOLPersonaInformation_cpp, 892); /*0x77a933*/
   WideString::Assign((wchar_t **)&v16, StringCSF); /*0x77a93d*/

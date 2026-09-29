@@ -20,12 +20,12 @@ v5 = (void *)((int)(RA2_OPNEW(0x14u)));
   v6 = (void *)((int)(v5));
   if ( v5 ) /*0x76f485*/
   {
-    v7 = (unsigned int *)(v5 + 8); /*0x76f488*/
-    *(unsigned int *)(v5 + 4) = 0; /*0x76f48d*/
+    v7 = (unsigned int *)((unsigned int)(v5)+ 8); /*0x76f488*/
+    *(unsigned int *)((unsigned int)(v5)+ 4) = 0; /*0x76f48d*/
     *(unsigned int *)v5 = (void*)&ReferenceCounted_vftable; /*0x76f494*/
-    ComPtr::Constructor((ComPtr *)(v5 + 8)); /*0x76f49a*/
+    ComPtr::Constructor((ComPtr *)((unsigned int)(v5)+ 8)); /*0x76f49a*/
     *(void **)v7 = (void*)&rc_ptr_WDTState_vftable; /*0x76f49f*/
-    ComPtr::Set((ComPtr *)(v6 + 8), *(unsigned int *)(a2 + 4)); /*0x76f4ab*/
+    ComPtr::Set((ComPtr *)((unsigned int)(v6)+ 8), *(unsigned int *)(a2 + 4)); /*0x76f4ab*/
     v6->q010 = 0; /*0x76f4b0*/
     *(unsigned int *)v6 = (void*)&WorldDominationTour_State_vftable; /*0x76f4b7*/
     v8 = v6->q00C; /*0x76f4bd*/

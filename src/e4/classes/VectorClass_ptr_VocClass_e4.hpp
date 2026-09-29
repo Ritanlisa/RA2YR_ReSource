@@ -14,12 +14,12 @@ struct VectorClass_ptr_VocClass {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    void Destroy();  // 0x7518D0
+    void Destroy(void *a1 = 0);  // 0x7518D0
     unsigned int GetItemIndex(int a2);  // 0x751900
-    int Get(int a2);  // 0x751920
+    int Get(int a2, void *a1 = 0);  // 0x751920
     char Add(int a2);  // 0x751930
     char Release(int a2,  unsigned int * a3);    // 0x751970
-    void Remove();  // 0x751A20
+    void Remove(void *a1 = 0);  // 0x751A20
     int GetSize(unsigned int * a2);  // 0x751A50
     unsigned int GetCapacity(int a2);  // 0x751A90
     char SetCapacity(int a2,  unsigned int * a3);    // 0x751AB0

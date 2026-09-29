@@ -53,7 +53,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x478375*/
         {
-          v7 = (unsigned char *)(v6 + 2); /*0x478377*/
+          v7 = (unsigned char *)((unsigned int)(v6)+ 2); /*0x478377*/
           v8 = a2; /*0x47837a*/
           do /*0x478387*/
           {
@@ -113,7 +113,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_VRGBClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x478426*/
+    (*(void (**)(_VectorClass_VRGBClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x478426*/
     return 1; /*0x47842c*/
   }
 }
@@ -219,7 +219,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4781ce*/
+    (*(void (**)(_DynamicVectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4781ce*/
   }
   v7 = this->m_8; /*0x4781d1*/
   if ( v7 < this->q010 ) /*0x4781d9*/
@@ -336,14 +336,14 @@ VectorClass_flat * FilePipe_38::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_RGBClass_vftable; /*0x4786d6*/
   if ( v3 && this->IsAllocated ) /*0x4786e0*/
   {
     RA2_OPDEL(v3); /*0x4786e8*/
     *(unsigned int *)&this->Items = 0; /*0x4786f0*/
   }
-  this->IsAllocated = 0; /*0x4786fb*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   *(unsigned short *)&this->q008 = 0; /*0x478701*/
   if ( (a2 & 1) != 0 ) /*0x478708*/
     RA2_OPDEL(); /*0x47870b*/
@@ -447,7 +447,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUButtonFadeEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4b9eae*/
+    (*(void (**)(_DynamicVectorClass_PAUButtonFadeEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4b9eae*/
   }
   v7 = this->m_8; /*0x4b9eb1*/
   if ( v7 < this->q010 ) /*0x4b9eb9*/
@@ -514,7 +514,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUCrossDissolveEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4ba10e*/
+    (*(void (**)(_DynamicVectorClass_PAUCrossDissolveEffect *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4ba10e*/
   }
   v7 = this->m_8; /*0x4ba111*/
   if ( v7 < this->q010 ) /*0x4ba119*/
@@ -550,15 +550,15 @@ DynamicVector * FilePipe_30::Destructor(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x4ba166*/
   if ( v3 && this->IsAllocated ) /*0x4ba170*/
   {
     RA2_OPDEL(v3); /*0x4ba178*/
     *(unsigned int *)&this->q004 = 0; /*0x4ba180*/
   }
-  this->IsAllocated = 0; /*0x4ba18b*/
-  this->m_8 = 0; /*0x4ba191*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
+  this->m_8 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x4ba198*/
     RA2_OPDEL(); /*0x4ba19b*/
   return this; /*0x4ba1a5*/
@@ -571,15 +571,15 @@ DynamicVector * FilePipe_30::Destructor_0(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = &off_7E8500; /*0x4ba206*/
   if ( v3 && this->IsAllocated ) /*0x4ba210*/
   {
     RA2_OPDEL(v3); /*0x4ba218*/
     *(unsigned int *)&this->q004 = 0; /*0x4ba220*/
   }
-  this->IsAllocated = 0; /*0x4ba22b*/
-  this->m_8 = 0; /*0x4ba231*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
+  this->m_8 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x4ba238*/
     RA2_OPDEL(); /*0x4ba23b*/
   return this; /*0x4ba245*/
@@ -592,15 +592,15 @@ DynamicVector * FilePipe_30::Destructor_1(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CrossDissolveEffect___vftable; /*0x4ba2a6*/
   if ( v3 && this->IsAllocated ) /*0x4ba2b0*/
   {
     RA2_OPDEL(v3); /*0x4ba2b8*/
     *(unsigned int *)&this->q004 = 0; /*0x4ba2c0*/
   }
-  this->IsAllocated = 0; /*0x4ba2cb*/
-  this->m_8 = 0; /*0x4ba2d1*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
+  this->m_8 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x4ba2d8*/
     RA2_OPDEL(); /*0x4ba2db*/
   return this; /*0x4ba2e5*/

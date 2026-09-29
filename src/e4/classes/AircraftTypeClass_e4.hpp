@@ -203,7 +203,7 @@ struct AircraftTypeClass {
     bool q238;  // 0x238
     bool q239;  // 0x239
     bool q23A;  // 0x23A
-    char q23B[3];  // 0x23B
+    unsigned int q23B;  // 0x23B
     bool q23D;  // 0x23D
     unsigned char q23E;  // 0x23E
     int LineTrailColorDecrement;  // 0x240
@@ -338,7 +338,7 @@ struct AircraftTypeClass {
     unsigned int q400;  // 0x400
     unsigned int DeploysInto;  // 0x404
     unsigned int UndeploysInto;  // 0x408
-    char PowersUnit[4];  // 0x40C
+    unsigned int PowersUnit;  // 0x40C
     bool PoweredUnit;  // 0x410
     unsigned int VoiceSelect;  // 0x414
     unsigned int IntList_B_Items;  // 0x418
@@ -507,12 +507,12 @@ struct AircraftTypeClass {
     AbstractClass* q65C;  // 0x65C
     int WalkRate;  // 0x660
     int IdleRate;  // 0x664
-    char VeteranAbilities[4];  // 0x668
+    unsigned int VeteranAbilities;  // 0x668
     unsigned char q66C;  // 0x66C
     int ThreatPosed;  // 0x670
     int Points;  // 0x674
     int Speed;  // 0x678
-    char SpeedType[4];  // 0x67C
+    unsigned int SpeedType;  // 0x67C
     int InitialAmmo;  // 0x680
     int Ammo;  // 0x684
     int IFVMode;  // 0x688
@@ -536,7 +536,7 @@ struct AircraftTypeClass {
     bool DamageReducesReadiness;  // 0x6B1
     int ReadinessReductionMultiplier;  // 0x6B4
     unsigned int UnloadingClass;  // 0x6B8
-    char DeployingAnim[4];  // 0x6BC
+    unsigned int DeployingAnim;  // 0x6BC
     bool AttackFriendlies;  // 0x6C0
     bool AttackCursorOnFriendlies;  // 0x6C1
     int UndeployDelay;  // 0x6C4
@@ -555,7 +555,7 @@ struct AircraftTypeClass {
     unsigned int q6EC;  // 0x6EC
     bool q6EE;  // 0x6EE
     unsigned char q6EF;  // 0x6EF
-    char Cameo[4];  // 0x6F0
+    unsigned int Cameo;  // 0x6F0
     bool CameoAllocated;  // 0x6F4
     char AltCameoFile;  // 0x6F5
     unsigned int q6F8;  // 0x6F8
@@ -567,7 +567,7 @@ struct AircraftTypeClass {
     unsigned int q70C;  // 0x70C
     bool q70D;  // 0x70D
     unsigned char q70E;  // 0x70E
-    char AltCameo[4];  // 0x710
+    unsigned int AltCameo;  // 0x710
     double MyEffectivenessCoefficient;  // 0x712
     bool AltCameoAllocated;  // 0x714
     int RotCount;  // 0x718
@@ -587,11 +587,11 @@ struct AircraftTypeClass {
     TechnoTypeClass * ptr_758;  // 0x758
     void* q75C;  // 0x75C
     int q760;  // 0x760
-    char NaturalParticleSystem[4];  // 0x764
-    char NaturalParticleSystemLocation[4];  // 0x768
+    unsigned int NaturalParticleSystem;  // 0x764
+    unsigned int NaturalParticleSystemLocation;  // 0x768
     unsigned char q76C;  // 0x76C
     TechnoTypeClass * ptr_770;  // 0x770
-    char RefinerySmokeParticleSystem[4];  // 0x774
+    unsigned int RefinerySmokeParticleSystem;  // 0x774
     unsigned int DamageParticleSystems;  // 0x778
     unsigned char q77C;  // 0x77C
     unsigned char q780;  // 0x780
@@ -606,20 +606,20 @@ struct AircraftTypeClass {
     unsigned int q7A4;  // 0x7A4
     unsigned char q7A8;  // 0x7A8
     unsigned char q7AC;  // 0x7AC
-    char DamageSmokeOffset[4];  // 0x7B0
+    unsigned int DamageSmokeOffset;  // 0x7B0
     unsigned char q7B4;  // 0x7B4
     unsigned char q7B8;  // 0x7B8
     bool DamSmkOffScrnRel;  // 0x7BC
-    char DestroySmokeOffset[4];  // 0x7C0
+    unsigned int DestroySmokeOffset;  // 0x7C0
     unsigned int q7C4;  // 0x7C4
     unsigned char q7C8;  // 0x7C8
-    char RefinerySmokeOffsetOne[4];  // 0x7CC
+    unsigned int RefinerySmokeOffsetOne;  // 0x7CC
     unsigned char q7D0;  // 0x7D0
-    char RefinerySmokeOffsetTwo[4];  // 0x7D8
+    unsigned int RefinerySmokeOffsetTwo;  // 0x7D8
     unsigned char q7DC;  // 0x7DC
-    char RefinerySmokeOffsetThree[4];  // 0x7E4
+    unsigned int RefinerySmokeOffsetThree;  // 0x7E4
     unsigned char q7E8;  // 0x7E8
-    char RefinerySmokeOffsetFour[4];  // 0x7F0
+    unsigned int RefinerySmokeOffsetFour;  // 0x7F0
     unsigned char q7F4;  // 0x7F4
     int ShadowIndex;  // 0x7FC
     int Storage;  // 0x800
@@ -780,10 +780,10 @@ struct AircraftTypeClass {
     bool DamageSelf;  // 0xCA0
     bool Turret;  // 0xCA1
     bool TurretRecoil;  // 0xCA2
-    char TurretAnimData[4];  // 0xCA4
+    unsigned int TurretAnimData;  // 0xCA4
     unsigned char qCA8;  // 0xCA8
     bool unknown_bool_CB4;  // 0xCB4
-    char BarrelAnimData[4];  // 0xCB8
+    unsigned int BarrelAnimData;  // 0xCB8
     unsigned char qCBC;  // 0xCBC
     bool unknown_bool_CC8;  // 0xCC8
     unsigned int qCCB;  // 0xCCB
@@ -850,7 +850,7 @@ struct AircraftTypeClass {
     unsigned int ForbiddenHouses;  // 0xD78
     unsigned int SecretHouses;  // 0xD7C
     unsigned char qD80;  // 0xD80
-    char SecondSpawnOffset[4];  // 0xD84
+    unsigned int SecondSpawnOffset;  // 0xD84
     unsigned char qD88;  // 0xD88
     unsigned int qD8C;  // 0xD8C
     unsigned char qD90;  // 0xD90

@@ -26,14 +26,13 @@ struct MultiplayerGameMode {
     unsigned int q0104;
     unsigned int q0108;
     unsigned int u32_38;
-    unsigned int GetFirst;
 // --- flat members (END) ---
     MultiplayerGameMode * QueryInterface(char a2);
     unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3);
-    static double Construct(...);  // C2597 interim stub
+     double Construct(...);  // C2597 interim stub
     static double Find(...);  // C2597 interim stub
     static double ListGet(...);  // C2597 interim stub
-    static double Dtor(...);  // C2597 interim stub
+     double Dtor(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

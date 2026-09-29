@@ -8,6 +8,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/ShipLocomotionClass_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x72CBA0
 namespace gamemd {

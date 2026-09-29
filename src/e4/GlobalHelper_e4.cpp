@@ -15,18 +15,18 @@ char sub_758670(float * a1, int a2)
   float *v5; // edi
   double v6; // st7
 
-  v2 = dword_8469F4[a2]; /*0x758679*/
+  v2 = ((unsigned int *)(dword_8469F4))[a2]; /*0x758679*/
   v3 = 0; /*0x758681*/
   if ( v2 > 0 ) /*0x758687*/
   {
-    v5 = (float *)(dword_8469E0[a2] + 4); /*0x75868a*/
+    v5 = (float *)(((unsigned int *)(dword_8469E0))[a2] + 4); /*0x75868a*/
     do /*0x7586d0*/
     {
       v6 = *(v5 - 1) * *a1 + v5[1] * a1[2] + a1[1] * *v5; /*0x75869f*/
       if ( v6 >= 0.0 ) /*0x7586ac*/
-        g_VoxelShadeTable[v3] = Math::RoundToInt(v6 * 16.0); /*0x7586c4*/
+        ((unsigned int *)(g_VoxelShadeTable))[v3] = Math::RoundToInt(v6 * 16.0); /*0x7586c4*/
       else
-        g_VoxelShadeTable[v3] = 0; /*0x7586b0*/
+        ((unsigned int *)(g_VoxelShadeTable))[v3] = 0; /*0x7586b0*/
       ++v3; /*0x7586ca*/
       v5 += 3; /*0x7586cb*/
     }

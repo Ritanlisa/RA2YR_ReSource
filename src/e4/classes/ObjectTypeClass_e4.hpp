@@ -215,12 +215,12 @@ struct ObjectTypeClass {
     SomeVoxelCache* q258;  // 0x258
     SomeVoxelCache* q25C;  // 0x25C
     SomeVoxelCache* q260;  // 0x260
-    char q264[4];  // 0x264
+    unsigned int q264;  // 0x264
     SomeVoxelCache* q268;  // 0x268
     SomeVoxelCache* q26C;  // 0x26C
     SomeVoxelCache* q270;  // 0x270
     SomeVoxelCache* q274;  // 0x274
-    char q278[4];  // 0x278
+    unsigned int q278;  // 0x278
     SomeVoxelCache* q27C;  // 0x27C
     SomeVoxelCache* q280;  // 0x280
     SomeVoxelCache* q284;  // 0x284
@@ -276,13 +276,20 @@ struct ObjectTypeClass {
     unsigned int u32_884;
     unsigned int q0408;
     unsigned int q0D09;
+    unsigned int ImageFile;
+    unsigned int q094;
+    unsigned int q0D08;
+    unsigned int q0E07;
+    unsigned int u32_C84;
+    unsigned int u32_D40;
+    unsigned int u32_DC6;
 // --- flat members (END) ---
     AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();
-    BulletTypeClass * * FindOrCreate();
+    BulletTypeClass * * FindOrCreate(void *a1 = 0);
     ObjectTypeClass * Destru_vt08(char a2);
     void* * SelectArtOrAlt();
-    void* * Destruct();
+    void* * Destruct(void *a1 = 0);
     char ReadBool(INIClass * Block, INIClass * aP2, int a4);
     char ReadBool2(INIClass * Block, INIClass * aP2, short * a4);
     char ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4);
@@ -290,7 +297,7 @@ struct ObjectTypeClass {
     int ConstructFull(AbstractClass * aP1);
     int CreateInstance(CampaignScore * aP1, CampaignScore * aP2);
     int DeserializeArrays();
-    int FindByName();
+    int FindByName(void *a1 = 0);
     int FreeLoaderBuffer();
     int LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1);
     int LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2);
@@ -318,14 +325,14 @@ struct ObjectTypeClass {
     int loadTypeMember_5717AD0();
     unsigned char ** ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5);
     unsigned int * CheckFlag(ObjectTypeClass * aP1);
-    unsigned int * Construct(ObjectTypeClass * aP1);
+    unsigned int * Construct(ObjectTypeClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int * Copy(unsigned int * a0, ObjectTypeClass * aP1);
     unsigned int * InitTripleTen(unsigned int * a1);
     unsigned int * loadTypeMember_5717C00(unsigned int * a2);
     unsigned int * vt_entry_7C(unsigned int * a1);
     void CleanupWeapons();
-    void ReleaseWaveAndString();
-    void SetRTTI71();
+    void ReleaseWaveAndString(void *a1 = 0);
+    void SetRTTI71(void *a1 = 0);
     void UnloadPipsSHP();
     void* LoadFromINI(CCINIClass * aP1);
 };

@@ -24,6 +24,11 @@
 #include "e4/classes/WWMouseClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
+#include "e4/classes/WebBrowser_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/ShipLocomotionClass_e4.hpp"
 
 // 0x5E3850
 namespace gamemd {
@@ -60,9 +65,9 @@ v2 = (LPVOID)(ppv);
       v6 = ToWideStringChar(*(char **)(dword_A8DA78 + 4 * i)); /*0x5e3953*/
       if ( !_strcmpi(v6, a1) ) /*0x5e3959*/
       {
-        Debug::Log(); /*0x5e3974*/
+        this->Debug::Log(); /*0x5e3974*/
         Network::SendMessage((int)unk_A8E9C0, (int)v8, 455, 1, *(unsigned int *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
-        Event::Dispatch(); /*0x5e39a5*/
+        this->Event::Dispatch(); /*0x5e39a5*/
       }
       result = dword_A8DA84; /*0x5e39aa*/
     }
@@ -303,7 +308,7 @@ LABEL_56:
       }
       goto LABEL_21;
     case 0x497u:
-      if ( g_GameMode_Current[0] == 4 )
+      if ( ((unsigned int *)(g_GameMode_Current))[0] == 4 )
       {
         if ( dword_B76B24 || (v163 = IDA_BYTE1(dword_B76B30) & 1, (dword_B76B30 & 0x100) != 0) )
         {
@@ -335,9 +340,9 @@ LABEL_320:
       int v121 = First[10];
       g_GameStateFlags = (int)First;
       *(unsigned int *)g_ScenarioFlags = v121;
-      (*(void (__thiscall **)(unsigned int *))(*First + 32))(First);
+      (*(void (**)(unsigned int *))(*First + 32))(First);
       SetDialogPlayerName(hDlg, (int)First);
-      g_GameRulesOptions = (*(int (__thiscall **)(unsigned int *))(*First + 68))(First);
+      g_GameRulesOptions = (*(int (**)(unsigned int *))(*First + 68))(First);
       LoadScenarioClassByIndex(g_GameRulesOptions);
       SkirmishDialog::FillComboBoxes(hDlg);
       InitGameDropdownColors();
@@ -349,15 +354,15 @@ LABEL_320:
       unsigned int v122 =
       do
       {
-        *(v122 - 8) = -2;
-        *v122++ = -2;
+        *(unsigned int *)((v122 - 8)) = -2;
+        *(unsigned int *)(v122)++ = -2;
       }
       while ( (int)v122 < (int)&AlliesAllowed );
       SetupSkirmishDialogPlayerSlot(hDlg, g_NetworkPlayerCount);
       MapSkirmishDialogPlayerToControl(hDlg, g_NetworkPlayerCount);
       FillLobbyFactionComboBox(hDlg, g_NetworkPlayerCount);
       SetupMultiplayerLobbyPlayers(hDlg, (int)&DataGlobal_00A8B4BC);
-      if ( g_GameMode_Current[0] == 4 )
+      if ( ((unsigned int *)(g_GameMode_Current))[0] == 4 )
       {
         if ( dword_B76B24 || (v163 = IDA_BYTE1(dword_B76B30) & 1, (dword_B76B30 & 0x100) != 0) )
         {
@@ -381,17 +386,23 @@ LABEL_320:
       }
       signed int v128 = 0;
       if ( g_GameStateFlags
-        && !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 188))(g_GameStateFlags) )
+        && !(*(uint8_t (**)(int))(*(unsigned int *)g_GameStateFlags + 188))(g_GameStateFlags) )
       {
+    unsigned int v132 = 0;  /* G37 hoist */
+    unsigned int v132 = 0;  /* G37 hoist */
+    unsigned int v132 = 0;  /* G37 hoist */
+    unsigned int v132 = 0;  /* G37 hoist */
+    unsigned int v132 = 0;  /* G37 hoist */
+    unsigned int v132 = 0;  /* G37 hoist */
         g_MPCooperativeState = -1;
         g_MenuStateFlags = 0;
         Dialog::RefreshDialogsGame(0);
         *(unsigned int *)(*(unsigned int *)Game_PlayerInfoArray + 107) = 0;
-        int v129 = (*(int (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 40))(g_GameStateFlags);
+        int v129 = (*(int (**)(int))(*(unsigned int *)g_GameStateFlags + 40))(g_GameStateFlags);
         SessionClass::SetPlayerOption(g_NetworkPlayerName, v129);
         SessionClass::SetPlayerColor(g_NetworkPlayerName, -2);
         SessionClass::SetOption(g_NetworkPlayerName, -2);
-        int v130 = (*(int (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 44))(g_GameStateFlags);
+        int v130 = (*(int (**)(int))(*(unsigned int *)g_GameStateFlags + 44))(g_GameStateFlags);
         SessionClass::SetOption2(g_NetworkPlayerName, v130);
         Lobby::FillPlayerFactions(hDlg);
       }
@@ -404,7 +415,7 @@ LABEL_320:
       Session::StartGame(hDlg);
       PlayerCount = ReadPlayerCountMap(g_GameRulesOptions);
       if ( !g_GameStateFlags
-        || !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 4))(g_GameStateFlags)
+        || !(*(uint8_t (**)(int))(*(unsigned int *)g_GameStateFlags + 4))(g_GameStateFlags)
   int v132; // ecx
         || (v132 = *((unsigned int *)g_ScenarioClass_Instance + 1145), v132 > PlayerCount) )
       {
@@ -796,7 +807,7 @@ LABEL_293:
     v164 = (void (__stdcall **)(LPVOID, char *, int, char **))g_GameRulesOptions;
     if ( g_GameStateFlags )
     {
-      if ( !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 64))(g_GameStateFlags) )
+      if ( !(*(uint8_t (**)(int))(*(unsigned int *)g_GameStateFlags + 64))(g_GameStateFlags) )
       {
   char v108; // bl
         v103 = g_GameStateFlags;
@@ -804,7 +815,7 @@ LABEL_293:
 LABEL_260:
   char v104; // al
   int v165; // [esp+1Ch] [ebp-240h]
-        if ( !v103 || (v104 = (*(int (__thiscall **)(int))(*(unsigned int *)v103 + 188))(v103), IDA_HIBYTE(v165) = 0, v104) )
+        if ( !v103 || (v104 = (*(int (**)(int))(*(unsigned int *)v103 + 188))(v103), IDA_HIBYTE(v165) = 0, v104) )
           IDA_HIBYTE(v165) = 1;
         strcpy((char *)Destination, &Destination);
         wcscpy(String1, (const wchar_t *)&MCVRedeploy + 1);
@@ -853,7 +864,7 @@ LABEL_284:
           Session::StartGame(hDlg);
           int v111 = ReadPlayerCountMap(g_GameRulesOptions);
           if ( !g_GameStateFlags
-            || !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 4))(g_GameStateFlags)
+            || !(*(uint8_t (**)(int))(*(unsigned int *)g_GameStateFlags + 4))(g_GameStateFlags)
   int v112; // ecx
             || (v112 = *((unsigned int *)g_ScenarioClass_Instance + 1145), v112 > v111) )
           {
@@ -872,7 +883,7 @@ LABEL_284:
         int v107 = g_GameStateFlags;
         if ( g_GameStateFlags )
         {
-          if ( !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 64))(g_GameStateFlags) )
+          if ( !(*(uint8_t (**)(int))(*(unsigned int *)g_GameStateFlags + 64))(g_GameStateFlags) )
           {
             v107 = g_GameStateFlags;
             v108 = 0;
@@ -883,7 +894,7 @@ LABEL_284:
         v108 = 1;
 LABEL_272:
   char v109; // al
-        if ( !v107 || (v109 = (*(int (__thiscall **)(int))(*(unsigned int *)v107 + 188))(v107)) != 0 )
+        if ( !v107 || (v109 = (*(int (**)(int))(*(unsigned int *)v107 + 188))(v107)) != 0 )
           v109 = 1;
         if ( IDA_HIBYTE(v165) && !v109 )
           MultiplayerLobby::FillSlots(hDlg);
@@ -991,7 +1002,7 @@ LABEL_272:
         }
       }
     }
-    if ( v67 < 0 || (*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 4))(g_GameStateFlags) )
+    if ( v67 < 0 || (*(uint8_t (**)(int))(*(unsigned int *)g_GameStateFlags + 4))(g_GameStateFlags) )
     {
 LABEL_184:
       v71 = g_WOL_State;
@@ -1042,7 +1053,7 @@ LABEL_201:
           {
             int v81 = g_GameStateFlags;
             unknown_libname_74(&v162);
-            if ( (*(uint8_t (__thiscall **)(int, const wchar_t **))(*(unsigned int *)v81 + 20))(v81, &v162) )
+            if ( (*(uint8_t (**)(int, const wchar_t **))(*(unsigned int *)v81 + 20))(v81, &v162) )
             {
               if ( g_GameMode_Current[0] != 4 )
                 goto LABEL_233;
@@ -1120,12 +1131,12 @@ LABEL_201:
               else
               {
 LABEL_233:
-                (*(void (__thiscall **)(int))(*(unsigned int *)v81 + 104))(v81);
+                (*(void (**)(int))(*(unsigned int *)v81 + 104))(v81);
                 Player::RandomAssign(g_GameMode_Current);
                 Lobby::BuildPlayerList();
                 CheckGameSettingsChanged(1, 1);
-                (*(void (__thiscall **)(int))(*(unsigned int *)v81 + 100))(v81);
-                (*(void (__thiscall **)(int))(*(unsigned int *)v81 + 36))(v81);
+                (*(void (**)(int))(*(unsigned int *)v81 + 100))(v81);
+                (*(void (**)(int))(*(unsigned int *)v81 + 36))(v81);
                 signed int v94 = 0;
                 memset(String, 0, 0x6Cu);
                 signed int v95 = g_WOL_State;
@@ -1531,7 +1542,7 @@ int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
       First = (unsigned int *)MultiplayerGameMode::GetFirst();
       *(unsigned int *)&HouseClass_Player[29956] = First[10];
       SetDialogPlayerName(hDlg, (int)First);
-      int v79 = (*(int (__thiscall **)(unsigned int *))(*First + 68))(First);
+      int v79 = (*(int (**)(unsigned int *))(*First + 68))(First);
       *(unsigned int *)&HouseClass_Player[29960] = v79;
       LoadScenarioClassByIndex(v79);
       SkirmishDialog::FillComboBoxes((SkirmishDialog *)hDlg);
@@ -1547,7 +1558,7 @@ int WOLobby::ChatDlgProc(HWND hDlg, UINT a2, WPARAM a3, HWND hWnd)
       Dialog::ShowPlayerName(hDlg);
       Session::PrepareGame(hDlg);
       if ( *(unsigned int *)&HouseClass_Player[29936]
-        && (*(uint8_t (__thiscall **)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936] + 4))(*(unsigned int *)&HouseClass_Player[29936])
+        && (*(uint8_t (**)(unsigned int))(**(unsigned int **)&HouseClass_Player[29936] + 4))(*(unsigned int *)&HouseClass_Player[29936])
   int v80; // ebx
         && (v80 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 4580), v80 <= ReadPlayerCountMap(v79)) )
       {
@@ -2174,7 +2185,7 @@ void sub_72BB10()
     }
     if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] ) /*0x72bb6c*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1448])( /*0x72bb72*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1448])( /*0x72bb72*/
         *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448],
         1);
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] = 0; /*0x72bb74*/

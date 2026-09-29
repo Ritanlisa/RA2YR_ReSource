@@ -17,12 +17,14 @@ struct ComPtr {
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
     unsigned int __pad_0;
+    unsigned int Release;
+    unsigned int ReleaseSimple;
 // --- flat members (END) ---
     int DestroyWrapper(int aP0, ObjectClass * aP1);
-    static double Constructor(...);  // C2597 interim stub
-    static double Dtor(...);  // C2597 interim stub
+     double Constructor(...);  // C2597 interim stub
+     double Dtor(...);  // C2597 interim stub
     static double Release_Alt(...);  // C2597 interim stub
-    static double Set(...);  // C2597 interim stub
+     double Set(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

@@ -13,6 +13,8 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x40FFFF
 namespace gamemd {
@@ -20,7 +22,7 @@ int Math_InitDegToRad(void * a1, void * a2)
 {
   int result; // eax
 
-  if ( a1 | a2 ) /*0x40ffff*/
+  if ( (unsigned int)(a1)| a2 ) /*0x40ffff*/
     return sub_40FF90(); /*0x40ff8f*/
   dbl_887648 = 0.0174532925199433 * 90.0; /*0x41001c*/
   return result; /*0x410022*/
@@ -30,7 +32,7 @@ int Math_InitDegToRad(void * a1, void * a2)
 namespace gamemd {
 void Math::Hypotenuse2D()
 {
-  return Math::Sqrt(*(double *)this * *(double *)this + this->q008 * this->q008); /*0x41c36e*/
+  return Math::Sqrt(*(double *)this * *(double *)this + (unsigned int)(this->q008)* this->q008); /*0x41c36e*/
 }
 }
 // 0x4CAC40
@@ -46,14 +48,14 @@ void Math_Sqrt(void * a1)
   void * v7;
 
   v2 = (double)(a1);
-  v3 = a1 < 0.0; /*0x4cac44*/
+  v3 = a1 < (void *)(0.0); /*0x4cac44*/
   v4 = 0; /*0x4cac44*/
-  v5 = a1 == 0.0; /*0x4cac44*/
+  v5 = a1 == (void *)(0.0); /*0x4cac44*/
   IDA_LOWORD(result) = v1; /*0x4cac4a*/
-  if ( a1 != 0.0 ) /*0x4cac4f*/
+  if ( a1 != (void *)(0.0) ) /*0x4cac4f*/
   {
-    if ( a1 <= 0.0 ) /*0x4cac65*/
-      v2 = a1 * -1.0; /*0x4cac67*/
+    if ( a1 <= (void *)(0.0) ) /*0x4cac65*/
+      v2 = (unsigned int)(a1)* -1.0; /*0x4cac67*/
     v7 = v2; /*0x4cac6d*/
     return (((int16_t)((IDA_LODWORD(v7) >> 23) - 127) >> 1) + 127) << 23; /*0x4caca0*/
   }
@@ -147,25 +149,25 @@ void Math_CalcAngle(void * a1, void * a2)
   v3 = v19; /*0x4cae4b*/
   if ( v4 ) /*0x4cae54*/
   {
-    v5 = v3 < 0.0; /*0x4cae56*/
+    v5 = v3 < (void *)(0.0); /*0x4cae56*/
     v6 = 0; /*0x4cae56*/
-    v7 = v3 == 0.0; /*0x4cae56*/
+    v7 = v3 == (void *)(0.0); /*0x4cae56*/
     IDA_LOWORD(result) = v2; /*0x4cae5c*/
-    if ( v3 != 0.0 ) /*0x4cae61*/
+    if ( v3 != (void *)(0.0) ) /*0x4cae61*/
     {
-      v10 = v19 < 0.0; /*0x4cae6f*/
+      v10 = v19 < (void *)(0.0); /*0x4cae6f*/
       v11 = 0; /*0x4cae6f*/
-      v12 = v19 == 0.0; /*0x4cae6f*/
+      v12 = v19 == (void *)(0.0); /*0x4cae6f*/
       IDA_LOWORD(result) = v9; /*0x4cae75*/
     }
   }
   else
   {
-    IDA_LOWORD(v13) = Math::RoundToInt(v3 / v18 / flt_8650B8); /*0x4cae96*/
+    IDA_LOWORD(v13) = Math::RoundToInt((unsigned int)(v3)/ v18 / flt_8650B8); /*0x4cae96*/
     result = abs32(v13); /*0x4cae9e*/
-    v15 = v19 < 0.0; /*0x4caed1*/
+    v15 = v19 < (void *)(0.0); /*0x4caed1*/
     v16 = 0; /*0x4caed1*/
-    v17 = v19 == 0.0; /*0x4caed1*/
+    v17 = v19 == (void *)(0.0); /*0x4caed1*/
     IDA_LOWORD(result) = v14; /*0x4caed7*/
   }
   return result; /*0x4cae6a*/
@@ -222,7 +224,7 @@ int Math::DistSq2D(TechnoClass * aP1)
   unsigned char v6[8]; // [esp+4h] [ebp-Ch] BYREF
   int v7; // [esp+Ch] [ebp-4h]
 
-  v2 = (int *)(*(int (__thiscall **)(Math *, unsigned char *))(*(unsigned int *)this->__pad_0 + 72))(this, v6); /*0x5f656e*/
+  v2 = (int *)(*(int (**)(Math *, unsigned char *))(*(unsigned int *)this->__pad_0 + 72))(this, v6); /*0x5f656e*/
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/
@@ -273,10 +275,10 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
     v15 = 4; /*0x6466e3*/
     do /*0x6466fd*/
     {
-      v16 = *(float *)((char *)v14 + (char *)a3 - (char *)a2) * v13; /*0x6466eb*/
+      v16 = *(float *)((char *)(unsigned int)(v14)+ (char *)a3 - (char *)a2) * v13; /*0x6466eb*/
       v17 = *v14++ * v25; /*0x6466ef*/
       --v15; /*0x6466f6*/
-      *(float *)((char *)v14 + (char *)&v27 - (char *)a2 - 4) = v16 + v17; /*0x6466f9*/
+      *(float *)((char *)(unsigned int)(v14)+ (char *)&v27 - (char *)a2 - 4) = v16 + v17; /*0x6466f9*/
     }
     while ( v15 ); /*0x6466fd*/
   }
@@ -298,10 +300,10 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
     v10 = 4; /*0x646689*/
     do /*0x6466a3*/
     {
-      v11 = *(float *)((char *)v9 + (char *)a3 - (char *)a2) * v8; /*0x646691*/
+      v11 = *(float *)((char *)(unsigned int)(v9)+ (char *)a3 - (char *)a2) * v8; /*0x646691*/
       v12 = *v9++ * v24; /*0x646695*/
       --v10; /*0x64669c*/
-      *(float *)((char *)v9 + (char *)&v27 - (char *)a2 - 4) = v11 + v12; /*0x64669f*/
+      *(float *)((char *)(unsigned int)(v9)+ (char *)&v27 - (char *)a2 - 4) = v11 + v12; /*0x64669f*/
     }
     while ( v10 ); /*0x6466a3*/
   }

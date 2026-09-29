@@ -23,6 +23,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/WaypointPathClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
 
 // 0x75F650
 namespace gamemd {
@@ -84,7 +85,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
           if ( v4->q200 < v7 /*0x75f76e*/
             || (v4->u8_1FD || !v7)
             && (v8 = v4->q204, v8 > 0)
-            && (*(uint8_t (__thiscall **)(int, int, unsigned int))(v4->q7C0 + 8))(v4 + 496, v7 + v8, 0) )
+            && (*(uint8_t (**)(int, int, unsigned int))(v4->q7C0 + 8))(v4 + 496, v7 + v8, 0) )
           {
             v9 = v4->q200; /*0x75f775*/
             v10 = v4->u32_1F4; /*0x75f778*/
@@ -113,18 +114,18 @@ WaveClass * WaveClass::ddtor(char a2)
   *(void **)&this->vtable3 = (void*)&WaveClass_vftable; /*0x763213*/
   *(void **)&this->vtable4 = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x763221*/
-  v3 = (*(int (__thiscall **)(unsigned char *, WaveClass **))(*(unsigned int *)&stru_A8EB00.?[84] + 16))(&stru_A8EB00.?[84], &this); /*0x76323a*/
-  if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[100] ) /*0x76324a*/
+  v3 = (*(int (**)(unsigned char *, WaveClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 84) + 16))(&(unsigned int *)((char *)&stru_A8EB00 + 84), &this); /*0x76323a*/
+  if ( v3 != -1 && v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 100) ) /*0x76324a*/
   {
-    --*(unsigned int *)&stru_A8EB00.?[100]; /*0x76324f*/
+    --*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 100); /*0x76324f*/
     for ( ; /*0x763255*/
-          v3 < *(int *)&stru_A8EB00.?[100];
-          *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[88] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[88] + 4 * v3) )
+          v3 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 100);
+          *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 88) + 4 * v3) )
     {
       ++v3; /*0x76325d*/
     }
   }
-  (*(void (__thiscall **)(char *))(this->WaveClass_field_128 + 12))((char *)&this->WaveClass_field_1706); /*0x76327e*/
+  (*(void (**)(char *))(this->WaveClass_field_128 + 12))((char *)&this->WaveClass_field_1706); /*0x76327e*/
   v4 = (void *)this->u32_1F4; /*0x763281*/
   this->WaveClass_field_128 = (void*)&VectorClass_CellClass___vftable; /*0x763284*/
   if ( v4 && this->u32_1FD ) /*0x76328e*/
@@ -134,7 +135,7 @@ WaveClass * WaveClass::ddtor(char a2)
   }
   this->u32_1FD = 0; /*0x7632a7*/
   this->u32_1F8 = 0; /*0x7632ab*/
-  ObjectClass::Dtor(); /*0x7632b2*/
+  this->ObjectClass::Dtor(); /*0x7632b2*/
   if ( (a2 & 1) != 0 ) /*0x7632be*/
     RA2_OPDEL(); /*0x7632c1*/
   return &this->ObjectClass; /*0x7632cb*/
@@ -165,7 +166,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     IDA_LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     IDA_HIWORD(aP1) = aP1[1] / 256; /*0x75f372*/
     v5 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x75f391*/
-    v6 = (*(int (__thiscall **)(unsigned int, unsigned int))(*(unsigned int *)*(&this->fallRate7) + 1016))(*(&this->fallRate7), 0); /*0x75f395*/
+    v6 = (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)*(&this->fallRate7) + 1016))(*(&this->fallRate7), 0); /*0x75f395*/
     v7 = *(unsigned int *)v6; /*0x75f39b*/
     v15 = *(unsigned int *)(*(unsigned int *)v6 + 172); /*0x75f3a9*/
     v16 = *(unsigned int *)(*(unsigned int *)v6 + 152); /*0x75f3ad*/
@@ -177,7 +178,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     {
       v9 = *(&this->fallRate7); /*0x75f3e9*/
       if ( v8 != v9 && *(unsigned char *)(v8 + 144) && *(unsigned char *)(v8 + 116) && !*(unsigned char *)(v8 + 129) && *(int *)(v8 + 108) > 0 ) /*0x75f413*/
-        (*(void (__thiscall **)(int, int *, unsigned int, int, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v8 + 364))( /*0x75f42c*/
+        (*(void (**)(int, int *, unsigned int, int, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v8 + 364))( /*0x75f42c*/
           v8,
           &v16,
           0,
@@ -202,7 +203,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     IDA_LOBYTE(v3) = CellClass::IsActiveOrNext(v5); /*0x75f47e*/
     if ( (unsigned char)v3 ) /*0x75f486*/
     {
-      v12 = g_RulesClass_Instance[1].RadarEventVisibilityDurations[0]; /*0x75f497*/
+      v12 = ((unsigned int *)(g_RulesClass_Instance))[1].RadarEventVisibilityDurations[0]; /*0x75f497*/
       v3 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99); /*0x75f4a3*/
       if ( v3 < v12 ) /*0x75f4aa*/
         IDA_LOBYTE(v3) = LayerClass::DestroyCliff((int *)&MapClass_Instance, v13, (int)v5); /*0x75f4b2*/

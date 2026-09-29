@@ -26,7 +26,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   unsigned char * v5;
   unsigned char *v6; // ebx
   int v7; // ecx
-  int v8; // ecx
+  unsigned char * v8;
   int v9; // eax
   int v10; // eax
   uint8_t *pad_14; // [esp+8h] [ebp-Ch]
@@ -55,15 +55,15 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   v7 = this->field_10; /*0x42de0f*/
   if ( v7 > 0 ) /*0x42de14*/
   {
-    Size = (int)(a3);
-    if ( a3 >= v5 - v7 ) /*0x42de28*/
+    Size = (unsigned char *)((int)(a3));
+    if ( a3 >= (int)(v5) - v7 ) /*0x42de28*/
       Size = v5 - v7; /*0x42de2a*/
     memcpy(&pad_14[this->field_10], v3, Size); /*0x42de3e*/
     v8 = Size + this->field_10; /*0x42de4e*/
     v3 += Size; /*0x42de55*/
     this->field_10 = v8; /*0x42de59*/
     a3 -= Size; /*0x42de5c*/
-    if ( v8 == v5 ) /*0x42de60*/
+    if ( v8 == (unsigned char *)((int))(v5) ) /*0x42de60*/
     {
       if ( this->field_C ) /*0x42de62*/
         v9 = DecodeBitmapRGB(pad_14, v5, v6, Srca); /*0x42de88*/
@@ -73,7 +73,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
       this->field_10 = 0; /*0x42de9a*/
     }
   }
-  for ( ; a3 >= v5; a3 -= v5 ) /*0x42dea5*/
+  for ( ; a3 >= (int)(v5); a3 -= v5 ) /*0x42dea5*/
   {
     if ( this->field_C ) /*0x42dea7*/
       v10 = DecodeBitmapRGB((uint8_t *)v3, v5, v6, Srca); /*0x42dec9*/
@@ -98,7 +98,7 @@ void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
 
   v3 = this->m_count; /*0x631d10*/
   if ( v3 ) /*0x631d15*/
-    return (*(int (__thiscall **)(int, int, int))(v3->q010)(v3, aP1, aP2); /*0x631d23*/
+    return (*(int (**)(int, int, int))(v3->q010)(v3, aP1, aP2); /*0x631d23*/
   else
     return aP2; /*0x631d29*/
 }
@@ -121,14 +121,14 @@ void Delegate::Set(AbstractTypeClass * aP1)
   int result; // eax
   void * v4;
 
-  if ( this->Straw_field_0x04 != aP1 ) /*0x6c989b*/
+  if ( this->Straw_field_0x04 != (unsigned int)(aP1) ) /*0x6c989b*/
   {
     if ( aP1 ) /*0x6c989f*/
     {
       v4 = (void *)((int)(aP1->vtable3));
       if ( v4 ) /*0x6c98a6*/
       {
-        (*(void (__thiscall **)(int, unsigned int))(v4->q004)(v4, 0); /*0x6c98ac*/
+        (*(void (**)(int, unsigned int))(v4->q004)(v4, 0); /*0x6c98ac*/
         aP1->vtable3 = 0; /*0x6c98af*/
       }
     }
@@ -150,7 +150,7 @@ int Delegate::Invoke(int a2, Straw * aP2)
 
   v3 = (int)(this->m_count);
   if ( v3 ) /*0x6c98e5*/
-    return (*(int (__thiscall **)(int, int, int))(v3->q008)(v3, a2, aP2); /*0x6c98f3*/
+    return (*(int (**)(int, int, int))(v3->q008)(v3, a2, aP2); /*0x6c98f3*/
   else
     return 0; /*0x6c98f9*/
 }
@@ -198,7 +198,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
 
   result = 0; /*0x4a2786*/
   v10 = 0; /*0x4a278c*/
-  if ( *(unsigned int *)&this->__pad_0[12] ) /*0x4a2789*/
+  if ( *(unsigned int *)&this-((unsigned int *)(>__pad_0))[12] ) /*0x4a2789*/
   {
     v5 = a1; /*0x4a2794*/
     if ( a1 ) /*0x4a279a*/
@@ -213,19 +213,19 @@ int Delegate::StreamToBuffer(char * a1, int a3)
           {
             if ( v7 >= v6 ) /*0x4a27ad*/
               v7 = v6; /*0x4a27af*/
-            memcpy(v5, (const void *)(*(unsigned int *)&this->__pad_0[12] + *(unsigned int *)&this->__pad_14[4]), v7); /*0x4a27bc*/
+            memcpy(v5, (const void *)(*(unsigned int *)&this-((unsigned int *)(>__pad_0))[12] + *(unsigned int *)&this->__pad_14[4]), v7); /*0x4a27bc*/
             v8 = this->field_1C - v7; /*0x4a27cf*/
             v6 -= v7; /*0x4a27d4*/
-            *(unsigned int *)&this->__pad_14[4] += v7; /*0x4a27d6*/
+            *(unsigned int *)&this-((unsigned int *)(>__pad_14))[4] += v7; /*0x4a27d6*/
             v10 += v7; /*0x4a27d9*/
             this->field_1C = v8; /*0x4a27dd*/
             v5 += v7; /*0x4a27e0*/
           }
           if ( !v6 ) /*0x4a27e4*/
             break; /*0x4a27e4*/
-          v9 = Delegate::Invoke((Straw *)this, *(unsigned int *)&this->__pad_0[12], this->field_10); /*0x4a27f0*/
+          v9 = Delegate::Invoke((Straw *)this, *(unsigned int *)&this-((unsigned int *)(>__pad_0))[12], this->field_10); /*0x4a27f0*/
           this->field_1C = v9; /*0x4a27f7*/
-          *(unsigned int *)&this->__pad_14[4] = 0; /*0x4a27fa*/
+          *(unsigned int *)&this-((unsigned int *)(>__pad_14))[4] = 0; /*0x4a27fa*/
           if ( !v9 ) /*0x4a2801*/
             break; /*0x4a2801*/
         }

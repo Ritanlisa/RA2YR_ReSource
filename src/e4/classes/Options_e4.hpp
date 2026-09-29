@@ -70,13 +70,16 @@ struct Options {
     unsigned int field_C;
     unsigned int __pad_14;
     unsigned int __pad_34;
+    unsigned int Debug;
+    unsigned int Dialog;
+    unsigned int Timer;
 // --- flat members (END) ---
     int DlgProc(HWND hDlg,  unsigned int a2,  unsigned int a3,  HWND a4);    // 0x4F11B0
-    bool PrepareSaveLoadDlg();  // 0x558840
+    bool PrepareSaveLoadDlg(void *a1 = 0);  // 0x558840
     void Screen_Save();  // 0x55FAA0
     char Screen_Dialog();  // 0x55FC80
     int DeleteAndZero();  // 0x6244E0
-    char EnsureCapacity();  // 0x6248A0
+    char EnsureCapacity(void *a1 = 0, void *a2 = 0);  // 0x6248A0
     char GrowBuffer();  // 0x6253B0
     char ReadOptionValue();  // 0x6254D0
     void * DestroyComposite(char a2);  // 0x625560
@@ -85,7 +88,7 @@ struct Options {
     void SetScoreVolume(float volume,  int pad);    // 0x5FA4A0
     void SetSoundVolume(float volume,  int pad);    // 0x5FA510
     void SetVoiceVolume(float volume,  int pad);    // 0x5FA590
-    HWND InitDialogControls();  // 0x4F1720
+    HWND InitDialogControls(void *a1 = 0);  // 0x4F1720
     int DialogProc(CCINIClass hWnd);  // 0x618D40
     void ClearComboBoxes();  // 0x624460
 };

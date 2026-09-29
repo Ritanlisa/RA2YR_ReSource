@@ -396,7 +396,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   }
   v10 = (char *)((const char *)((char *)(v4 - 1)));
   v11 = (const char *)((unsigned int)((const char *)(v21 + *(unsigned int *)this->__pad_0)));
-  Stra = (unsigned int)(v10);
+  Stra = (char *)((unsigned int)(v10));
   if ( *aP3 ) /*0x7b5fc3*/
     RA2_OPDEL(*aP3); /*0x7b5fca*/
   *(unsigned int *)aP3 = (const char *)(0);
@@ -687,7 +687,7 @@ char * String::Trim()
         v2 = *++v3; /*0x727d04*/
       }
       while ( v2 ); /*0x727d0a*/
-      if ( v3 != this ) /*0x727d0e*/
+      if ( v3 != (const char *)(this) ) /*0x727d0e*/
         strcpy(v3); /*0x727d27*/
     }
     for ( i = strlen(this) - 1; i >= 0; --i ) /*0x727d3f*/
@@ -751,7 +751,7 @@ char ** String::AssignFromPtr(const char ** a2)
   *(unsigned int *)this->__pad_0 = 0; /*0x7b4699*/
   if ( *a2 ) /*0x7b469f*/
   {
-    v3 = (char *)RA2_OPNEW(strlen(*a2) + 1); /*0x7b46b4*/
+    v3 = (char *)((unsigned int)((char *)RA2_OPNEW(strlen(*a2) + 1)));
     *(unsigned int *)this->__pad_0 = v3; /*0x7b46b9*/
     strcpy(v3, *a2); /*0x7b46d1*/
   }

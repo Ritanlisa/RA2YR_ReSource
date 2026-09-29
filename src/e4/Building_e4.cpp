@@ -18,6 +18,7 @@
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x425D10
 namespace gamemd {
@@ -98,12 +99,12 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
             v36[1] = v13; /*0x425dc6*/
             v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x425dcb*/
             v15 = v14; /*0x425dd0*/
-            if ( *(unsigned int *)&v14->__pad_E8[4] == 2 /*0x425e18*/
+            if ( *(unsigned int *)&v14-((unsigned int *)(>__pad_E8))[4] == 2 /*0x425e18*/
               && ((int)v14->Cell_field_0x140 & 0x100) == 0
               && (*((unsigned int *)Cell::GetNeighbourContent(v14, 6u) + 80) & 0x100) == 0
               && (*((unsigned int *)Cell::GetNeighbourContent(v15, 0) + 80) & 0x100) == 0 )
             {
-              if ( *(unsigned int *)&v15->__pad_1C[8] == v39 ) /*0x425e27*/
+              if ( *(unsigned int *)&v15-((unsigned int *)(>__pad_1C))[8] == v39 ) /*0x425e27*/
               {
                 v16 = 0; /*0x425e77*/
               }
@@ -207,7 +208,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
     aP1[2] = Map_InvalidCoord_Z; /*0x4260ac*/
     return aP1; /*0x4260b5*/
   }
-  v26 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x426032*/
+  v26 = Random::Range((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink, 0, 7); /*0x426032*/
   v27 = 0; /*0x426034*/
   while ( 1 ) /*0x426046*/
   {
@@ -237,12 +238,12 @@ int Building::GetNthOfType()
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->u32_44); /*0x485026*/
+  BuildingByTiberiumType = (int)(FindBuildingByTiberiumType(*(unsigned int *)&this->u32_44));
   if ( BuildingByTiberiumType == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
   else
-    return ((uint8_t)this->__pad_A4[122] + 1) /*0x48504f*/
-         * *(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType) + 184);
+    return ((uint8_t)this-((unsigned int *)(>__pad_A4))[122] + 1) /*0x48504f*/
+         * *(unsigned int *)(*(unsigned int *)(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) + 4 * BuildingByTiberiumType) + 184);
 }
 }
 // 0x772A90

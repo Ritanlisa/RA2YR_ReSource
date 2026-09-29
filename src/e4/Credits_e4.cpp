@@ -76,7 +76,7 @@ char Credits::Screen()
         v9 = 1; /*0x52cc60*/
       CampaignClass::LoadFromINIList(v3); /*0x52cc67*/
       if ( v3 ) /*0x52cc6e*/
-        (*(void (__thiscall **)(unsigned int *, int))*v3)(v3, 1); /*0x52cc76*/
+        (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x52cc76*/
       v11[0] = (void*)&CCFileClass_vftable; /*0x52cc7c*/
       v13 = 0; /*0x52cc84*/
       Vector::Clear(v12); /*0x52cc88*/
@@ -111,7 +111,7 @@ char Credits::Screen()
       *v7 = &CCINIClass_Vtable; /*0x52cd1f*/
       CCINIClass::Load(v11, 0, 0); /*0x52cd25*/
       CampaignClass::LoadFromINIList(v7); /*0x52cd2c*/
-      (*(void (__thiscall **)(unsigned int *, int))*v7)(v7, 1); /*0x52cd37*/
+      (*(void (**)(unsigned int *, int))*v7)(v7, 1); /*0x52cd37*/
     }
     v11[0] = (void*)&CCFileClass_vftable; /*0x52cd3d*/
     v13 = 0; /*0x52cd45*/

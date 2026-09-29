@@ -28,6 +28,8 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
 
 // 0x59D510
 namespace gamemd {
@@ -287,6 +289,15 @@ LABEL_50:
           goto LABEL_42;
         if ( !v30[20 * v31 + 14 + 20 * unk_89C2DC * v35] )
         {
+    unsigned int v38 = 0;  /* G37 hoist */
+    unsigned int v38 = 0;  /* G37 hoist */
+    unsigned int v38 = 0;  /* G37 hoist */
+    unsigned int v38 = 0;  /* G37 hoist */
+    unsigned int v38 = 0;  /* G37 hoist */
+    unsigned int v38 = 0;  /* G37 hoist */
+    unsigned int v38 = 0;  /* G37 hoist */
+    unsigned int v38 = 0;  /* G37 hoist */
+    unsigned int v38 = 0;  /* G37 hoist */
           unsigned int * v36 = (unsigned int *)(CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v85));
           IsEmpty = Cell::IsEmpty(v36);
           v30 = g_MapTileArray;
@@ -306,7 +317,7 @@ LABEL_45:
           v99[0] = (unsigned int)(v31);
           v99[1] = v34;
           unsigned char * v39 = (unsigned char *)(CellCoord::To_CellObj(&DataGlobal_87F7E8, v99));
-          v40 = (unsigned int)(*(Random **)&g_NetworkPlayerBuffer[78076]);
+          v40 = (gamemd::Random *)((unsigned int)(*(Random **)&((unsigned int *)(g_NetworkPlayerBuffer))[78076]));
           v39[282] = (unsigned int)(0);
           *((unsigned int *)v39 + 14) = v40;
           v30 = g_MapTileArray;
@@ -328,6 +339,7 @@ LABEL_55:
       v89[0] = (MapResourceClass *)abs32(Math::RoundToInt(v91 - v97));
       if ( (double)(int)v89[0] < 0.7853981633974483 && v20[196].__tail_0[0] && v76 > (int)v79 )
       {
+    unsigned int v45 = 0;  /* G37 hoist */
         if ( v75 )
           int v45 = v90 <= 0.0 ? 6 : 2;
         else
@@ -462,6 +474,7 @@ LABEL_100:
         LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
         for ( i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); i; i = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
         {
+    unsigned int v57 = 0;  /* G37 hoist */
           if ( g_MapTileArray )
             int v57 = *((unsigned int *)g_MapTileArray + 20 * *(int16_t *)(i + 36) + 20 * unk_89C2DC * *(int16_t *)(i + 38) + 14);
           else
@@ -470,7 +483,7 @@ LABEL_100:
           {
             v58 = *(Random **)(i + 56);
             if ( !v58 || v58 == (Random *)0xFFFF )
-              *(unsigned int *)(i + 56) = *(unsigned int *)&g_NetworkPlayerBuffer[79836];
+              *(unsigned int *)(i + 56) = *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[79836];
           }
         }
       }

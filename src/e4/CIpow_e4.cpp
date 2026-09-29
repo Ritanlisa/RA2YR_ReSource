@@ -20,6 +20,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/COMClass_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x7C8FD2
 namespace gamemd {
@@ -52,10 +53,10 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
   v7 = v6 & 0x7FF00000; /*0x7c8fe6*/
   if ( v7 == 2146435072 ) /*0x7c8ff6*/
   {
-    if ( a3 | v4 & 0xFFFFF ) /*0x7c90a0*/
+    if ( (unsigned int)(a3)| v4 & 0xFFFFF ) /*0x7c90a0*/
     {
       v9 = _fload_withFB(0, &this); /*0x7c906d*/
-      if ( (a4 & 0x80000) != 0 ) /*0x7c9077*/
+      if ( ((unsigned int)(a4)& 0x80000) != 0 ) /*0x7c9077*/
         goto LABEL_15; /*0x7c9077*/
       v14 = v13 + 1; /*0x7c9079*/
     }
@@ -64,7 +65,7 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
       v9 = _fload_withFB(0, &this); /*0x7c90aa*/
     }
   LABEL_21:
-    if ( (a2 & 0x7FF00000) != 0x7FF00000 || !((unsigned int)this | a2 & 0xFFFFF) ) /*0x7c90c7*/
+    if ( ((unsigned int)(a2)& 0x7FF00000) != 0x7FF00000 || !((unsigned int)this | (unsigned int)(a2)& 0xFFFFF) ) /*0x7c90c7*/
     {
       if ( !v14 ) /*0x7c90cf*/
       {
@@ -80,7 +81,7 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
       }
       goto LABEL_17; /*0x7c90cf*/
     }
-    if ( (a2 & 0x80000) == 0 ) /*0x7c908a*/
+    if ( ((unsigned int)(a2)& 0x80000) == 0 ) /*0x7c908a*/
     {
   LABEL_17:
       result = v9 + v5; /*0x7c908c*/
@@ -96,7 +97,7 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
     v14 = 0; /*0x7c9095*/
     goto LABEL_21; /*0x7c9097*/
   }
-  if ( (v8 & 0x7FF00000) != 0 || (unsigned int)this | a2 & 0xFFFFF ) /*0x7c9111*/
+  if ( (v8 & 0x7FF00000) != 0 || (unsigned int)this | (unsigned int)(a2)& 0xFFFFF ) /*0x7c9111*/
   {
     if ( a2 >= 0 || (CIpow_Helper_Helper(v9), v5 = -v5, v19) ) /*0x7c918b*/
     {
@@ -113,9 +114,9 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
       _startTwoArgErrorHandling(); /*0x7c9062*/
     return result; /*0x7c9068*/
   }
-  if ( (a4 & 0x7FF00000) == 0 ) /*0x7c9126*/
+  if ( ((unsigned int)(a4)& 0x7FF00000) == 0 ) /*0x7c9126*/
   {
-    if ( a3 | a4 & 0xFFFFF ) /*0x7c916c*/
+    if ( (unsigned int)(a3)| (unsigned int)(a4)& 0xFFFFF ) /*0x7c916c*/
       return 0.0; /*0x7c9179*/
     else
       return 1.0; /*0x7c9172*/

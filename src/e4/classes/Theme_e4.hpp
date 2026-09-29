@@ -16,8 +16,10 @@ struct Theme {
     void* q104;  // 0x104
     void* ptr_41;
     void* ptr_4;
+    unsigned int Audio;
+    unsigned int ThemeClass;
 // --- flat members (END) ---
-    int IsPlaying();
+    int IsPlaying(void *a1 = 0);
     int QueueSong(IUnknown * aP1);
     int Stop(ObjectClass * aP1);
 };

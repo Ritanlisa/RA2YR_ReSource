@@ -13,8 +13,9 @@ struct DynamicVectorClass_PAD {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
+    unsigned int __pad_0;
 // --- flat members (END) ---
-    void ddtor();  // 0x49E950
+    void ddtor(void *a1 = 0);  // 0x49E950
     int Clear(int a2);  // 0x49E9A0
     void Clear_49E9B0();  // 0x49E9B0
     char AddRef(int a2);  // 0x49EA30
@@ -24,7 +25,7 @@ struct DynamicVectorClass_PAD {
     int FindItemIndex(unsigned int * a2);  // 0x49EDE0
     DynamicVector * Add(char a2);  // 0x49EE10
     DynamicVector * Destructor(char a2);  // 0x49F040
-    unsigned int Get(int a2);  // 0x49E980
+    unsigned int Get(int a2, void *a1 = 0);  // 0x49E980
     unsigned int GetCount(int a2);  // 0x49E9E0
 };
 } // namespace gamemd
