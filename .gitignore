@@ -146,3 +146,7 @@ Testing/
 
 # CSP mechanical-rebuild generators (foundation source of truth)
 !tools/csp_export/
+
+# vtable-via-inheritance pilot (extract/compare toolchain + calibration)
+!tools/vtable_inherit/
+tools/vtable_inherit/*.obj
