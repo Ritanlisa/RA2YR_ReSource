@@ -10,6 +10,7 @@ Usage (as a module):
     from read_obj_vtables import obj_vtables
     tables = obj_vtables('pilot.obj')   # {'??_7CDFileClass@@6B@': [slot symbol names...]}
 """
+import re
 import struct
 
 
@@ -65,8 +66,12 @@ def obj_vtables(path):
     # ---- vtable symbols -> slot symbol sequences ----
     out = {}
     for idx, (name, sec, value) in syms.items():
-        if not name.startswith('??_7') or not name.endswith('@@6B@'):
+        # single-inheritance: ??_7Cls@@6B@     (primary table)
+        # multiple-inheritance: ??_7Cls@@6BBase@@@ (per-base table)
+        m = re.match(r'^\?\?_7(\w+)@@6B(?:(\w+)?)@@', name)
+        if not m:
             continue
+        key = m.group(1) + ('::' + m.group(2) if m.group(2) else '')
         raw, rsize = sec_raw.get(sec, (0, 0))
         rels = sorted(sec_relocs.get(sec, []))
         slots = []
@@ -81,7 +86,7 @@ def obj_vtables(path):
             tgt = syms.get(symidx, ('?', 0, 0))[0]
             slots.append(tgt)
             pos += 4
-        out[name] = slots
+        out[key] = slots
     return out
 
 
