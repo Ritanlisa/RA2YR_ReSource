@@ -73,6 +73,6 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
   this->MultiplayerGameMode_field_0x10 = 0; /*0x5d7fb1*/
   if ( (a2 & 1) != 0 ) /*0x5d7fb8*/
     RA2_OPDEL(); /*0x5d7fbb*/
-  return this->__pad_0; /*0x5d7fc5*/
+  return this; /*0x5d7fc5*/
 }
 } // namespace gamemd

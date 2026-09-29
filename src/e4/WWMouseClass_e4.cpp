@@ -32,7 +32,7 @@ unsigned int * WWMouseClass::initSurface()
     v2 = (IUnknown *)(this->q024);
     if ( v2 ) /*0x7b9059*/
     {
-      v3 = this->q044; /*0x7b905b*/
+      v3 = *(unsigned int *)&this->q044; /*0x7b905b*/
       if ( v3 ) /*0x7b9060*/
       {
         v4 = (unsigned int)(this->q054);
@@ -80,7 +80,7 @@ int WWMouseClass::hideCursor()
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9994*/
         Debug::Log(); /*0x7b99a5*/
-      if ( *(int *)&this->__pad_48[8] > 0 && *(int *)&this->__pad_48[12] > 0 ) /*0x7b99ba*/
+      if ( *(int *)&this->q054 > 0 && *(int *)&this->q054 > 0 ) /*0x7b99ba*/
       {
         WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b99bc*/
         if ( WWMouseClass_field_0x24 ) /*0x7b99c1*/
@@ -232,7 +232,7 @@ void WWMouseClass::releaseMouse()
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9cb0*/
         Debug::Log(); /*0x7b9cc1*/
-      if ( *(int *)&this->__pad_48[8] > 0 && *(int *)&this->__pad_48[12] > 0 ) /*0x7b9cd6*/
+      if ( *(int *)&this->q054 > 0 && *(int *)&this->q054 > 0 ) /*0x7b9cd6*/
       {
         WWMouseClass_field_0x24 = this->WWMouseClass_field_0x24; /*0x7b9cd8*/
         if ( WWMouseClass_field_0x24 ) /*0x7b9cdd*/
@@ -312,7 +312,7 @@ MouseClass * WWMouseClass::updateHotspot(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&Mouse_vftable; /*0x7ba309*/
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
     RA2_OPDEL(); /*0x7ba312*/
-  return this->__pad_0; /*0x7ba31c*/
+  return this; /*0x7ba31c*/
 }
 } // namespace gamemd
 // 0x7BA330

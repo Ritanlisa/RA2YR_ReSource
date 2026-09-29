@@ -7,12 +7,12 @@ namespace gamemd {
 
 struct GameSettings {
 // --- flat members (BEGIN) ---
-    unsigned int ;  // 0x4
-    unsigned int ;  // 0x8
+    unsigned int q4;  // 0x4
+    unsigned int q8;  // 0x8
     unsigned int u32_C;  // 0xC
-    unsigned int ;  // 0x10
+    unsigned int q10;  // 0x10
     unsigned char u8_14;  // 0x14
-    unsigned int ;  // 0x18
+    unsigned int q18;  // 0x18
     unsigned char u8_1C;  // 0x1C
     unsigned char u8_1D;  // 0x1D
     unsigned char u8_1E;  // 0x1E

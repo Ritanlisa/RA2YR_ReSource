@@ -39,7 +39,7 @@ int Warhead::GetWarheadSound(int a2)
   if ( (uint8_t)Audio::IsLoud((int *)(this->q130 + 336)) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/
   else
-    v3 = this->q044; /*0x41d7fa*/
+    v3 = *(unsigned int *)&this->q044; /*0x41d7fa*/
   return !this->u8_3C && v3 + this->q040 <= (int)dword_A8ED84 || a2 != this->u32_14; /*0x41d814*/
 }
 } // namespace gamemd
@@ -709,7 +709,7 @@ LABEL_158:
         while ( v87 );
       }
     }
-    Instance = this->q0AC;
+    Instance = *(unsigned int *)&this->q0AC;
     if ( *(unsigned char *)(Instance + 660) )
     {
   double v158; // [esp+A0h] [ebp-8h]
@@ -1294,7 +1294,7 @@ int Warhead::ProcessDamageArea()
   this->u32_A0 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b5ab*/
   this->u32_2C = v32; /*0x65b5b3*/
   this->u32_30 = v28; /*0x65b5b9*/
-  this->q034 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b5c2*/
+  *(unsigned int *)&this->q034 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b5c2*/
   this->u32_38 = v32; /*0x65b5c8*/
   this->u8_3C = v29; /*0x65b5cb*/
   v2 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x65b5ce*/
@@ -1356,7 +1356,7 @@ int Warhead::ProcessDamageArea()
       v23 = LightSourceClass::Construct(v22, v31, v33, v34, v30, v7, v10, v12, v15); /*0x65b7b2*/
     else
       v23 = 0; /*0x65b7b9*/
-    this->u32_24 = v23; /*0x65b7bb*/
+    *(void **)&this->u32_24 = v23; /*0x65b7bb*/
     v23[13] = 0; /*0x65b7be*/
     Trigger::EnableOnce(*((Trigger **)this + 9), 0); /*0x65b7ca*/
     return RadSiteClass::Radiate(); /*0x65b7d1*/

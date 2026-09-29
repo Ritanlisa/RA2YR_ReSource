@@ -48,7 +48,7 @@
 namespace gamemd {
 int E4Recv_540C50::sub_540C50()
 {
-  return IDA_LOBYTE(this->?); /*0x540c55*/
+  return IDA_LOBYTE(this->M4); /*0x540c55*/
 }
 }
 // 0x541170
@@ -78,7 +78,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   }
   IDA_LOWORD(v5) = *(&dword_A8E2B2 + v7); /*0x5411be*/
   v10 = (unsigned int *)(dword_A8DA78[v7] + 40); /*0x5411c6*/
-  vtable1 = (char)this->?; /*0x5411c9*/
+  vtable1 = (char)this->M4; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
   v15[0] = *v10; /*0x5411d2*/
   v15[1] = v10[1]; /*0x5411d9*/
@@ -1135,11 +1135,11 @@ LABEL_26:
             v60 = CCFileClass::Open(v171, 0);
             if ( v60 && !v65 )
               strncpy((char *)v3 + 757, v182, 0xEu);
-            v171[0] = &vt_CCFileClass;
+            v171[0] = (unsigned int)&vt_CCFileClass;
             int v173 = 0;
   char v172[12]; // [esp+5C4h] [ebp-44Ch] BYREF
             Vector::Clear((int)v172);
-            v171[0] = &off_7E1668;
+            v171[0] = (unsigned int)&off_7E1668;
             BufferIOFileClass::Dtor(v171);
             if ( v60 )
               goto LABEL_190;
@@ -1163,11 +1163,11 @@ LABEL_26:
             v60 = CCFileClass::Open(v174, 0);
             if ( v60 && !v65 )
               strncpy((char *)v3 + 757, v182, 0xEu);
-            v174[0] = &vt_CCFileClass;
+            v174[0] = (unsigned int)&vt_CCFileClass;
             int v176 = 0;
   char v175[12]; // [esp+630h] [ebp-3E0h] BYREF
             Vector::Clear((int)v175);
-            v174[0] = &off_7E1668;
+            v174[0] = (unsigned int)&off_7E1668;
             BufferIOFileClass::Dtor(v174);
             if ( v60 )
               goto LABEL_190;
@@ -1186,11 +1186,11 @@ LABEL_26:
             v60 = CCFileClass::Open(v165, 0);
             if ( v60 && !v65 )
               strncpy((char *)v3 + 757, v182, 0xEu);
-            v165[0] = &vt_CCFileClass;
+            v165[0] = (unsigned int)&vt_CCFileClass;
             int v167 = 0;
   char v166[12]; // [esp+4ECh] [ebp-524h] BYREF
             Vector::Clear((int)v166);
-            v165[0] = &off_7E1668;
+            v165[0] = (unsigned int)&off_7E1668;
             BufferIOFileClass::Dtor(v165);
             if ( v60 )
               goto LABEL_190;
@@ -1216,11 +1216,11 @@ LABEL_189:
           v60 = CCFileClass::Open(v177, 0);
           if ( v60 && !v65 )
             strncpy((char *)v3 + 757, v182, 0xEu);
-          v177[0] = &vt_CCFileClass;
+          v177[0] = (unsigned int)&vt_CCFileClass;
           int v179 = 0;
   char v178[12]; // [esp+69Ch] [ebp-374h] BYREF
           Vector::Clear((int)v178);
-          v177[0] = &off_7E1668;
+          v177[0] = (unsigned int)&off_7E1668;
           BufferIOFileClass::Dtor(v177);
 LABEL_190:
           if ( !v65 )
@@ -1358,11 +1358,11 @@ LABEL_217:
   Vector::Clear((int)v169);
   *(unsigned int *)aP1[0] = &off_7E1668;
   BufferIOFileClass::Dtor(&aP1);
-  v161[0] = &vt_CCFileClass;
+  v161[0] = (unsigned int)&vt_CCFileClass;
   int v163 = 0;
   char v162[12]; // [esp+400h] [ebp-610h] BYREF
   Vector::Clear((int)v162);
-  v161[0] = &off_7E1668;
+  v161[0] = (unsigned int)&off_7E1668;
   BufferIOFileClass::Dtor(v161);
   v149[0] = (int)&vt_CCFileClass;
   int v151 = 0;
@@ -3154,17 +3154,17 @@ unsigned int * E4Recv_54E360::sub_54E360()
   void *v2; // [esp+8h] [ebp-8h]
 
   this->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x54e370*/
-  this->? = 0; /*0x54e375*/
-  this->? = 0; /*0x54e378*/
-  this->? = 0; /*0x54e37b*/
-  IDA_LOBYTE(this->?) = 1; /*0x54e37e*/
-  IDA_BYTE1(this->?) = 0; /*0x54e382*/
-  this->? = (void*)&DynamicVectorClass_KamikazeControl___vftable; /*0x54e385*/
-  this->? = (void *)10; /*0x54e38c*/
-  this->? = 0; /*0x54e393*/
+  this->M8 = 0; /*0x54e375*/
+  this->M16 = 0; /*0x54e378*/
+  this->M20 = 0; /*0x54e37b*/
+  IDA_LOBYTE(this->q018) = 1; /*0x54e37e*/
+  IDA_BYTE1(this->q018) = 0; /*0x54e382*/
+  *(unsigned short *)&this->M12 = (void*)&DynamicVectorClass_KamikazeControl___vftable; /*0x54e385*/
+  *(unsigned short *)&this->q020 = (void *)10; /*0x54e38c*/
+  this->M28 = 0; /*0x54e393*/
   this->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x54e39e*/
-  this->? = v2; /*0x54e3a4*/
-  this->? = (void *)100; /*0x54e3a7*/
+  *(void **)&this->M4 = v2; /*0x54e3a4*/
+  *(void **)&this->M8 = (void *)100; /*0x54e3a7*/
   return &this->AbstractClass; /*0x54e3aa*/
 }
 } // namespace gamemd

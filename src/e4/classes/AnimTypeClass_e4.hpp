@@ -66,7 +66,7 @@ struct AnimTypeClass {
     unsigned char unused_9B;  // 0x9B
     unsigned int Armor;  // 0x9C
     int Strength;  // 0xA0
-    unsigned int ;  // 0xA4
+    unsigned int qA4;  // 0xA4
     char ImageAllocated;  // 0xA8
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
@@ -233,7 +233,7 @@ struct AnimTypeClass {
     int MiddleFrameIndex;  // 0x294
     int MiddleFrameWidth;  // 0x298
     int q29C;  // 0x29C
-    unsigned int ;  // 0x2A0
+    unsigned int q2A0_a;  // 0x2A0
     unsigned char AnimTypeClass_field_2A4;  // 0x2A4
     unsigned char q2A5;  // 0x2A5
     double Damage;  // 0x2A8

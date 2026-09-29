@@ -509,7 +509,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
 }
 // 0x709550
 namespace gamemd {
-AbstractClass * * __usercall SelectTargetByWeight(unsigned int *a1@<ecx> a1, int a2@<esi> a2)
+AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
 {
   unsigned int *v2; // ecx
   unsigned int *v3; // edi
@@ -994,8 +994,8 @@ int E4Recv_70F740::sub_70F740(int a2)
 
   v2 = (ObjectClass *)((char *)this + 384); /*0x70f74c*/
   v2->AbstractClass = *(void **)&stru_A8EB00.?[416]; /*0x70f752*/
-  v2->? = (void *)v4; /*0x70f758*/
-  v2->? = (void *)a2; /*0x70f75b*/
+  v2->vtable2 = (void *)v4; /*0x70f758*/
+  v2->vtable3 = (void *)a2; /*0x70f75b*/
   return v4; /*0x70f75e*/
 }
 } // namespace gamemd

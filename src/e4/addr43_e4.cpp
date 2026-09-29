@@ -1058,7 +1058,7 @@ void nullsub_98()
 namespace gamemd {
 void E4Recv_430610::sub_430610()
 {
-  IDA_LOBYTE(this->?) &= ~1u; /*0x430610*/
+  IDA_LOBYTE(this->M12) &= ~1u; /*0x430610*/
 }
 } // namespace gamemd
 
@@ -1088,9 +1088,9 @@ int sub_4318D0()
 namespace gamemd {
 int E4Recv_431920::sub_431920()
 {
-  this->? = 0; /*0x431922*/
-  this->? = 0; /*0x431925*/
-  this->? = 0; /*0x431928*/
+  this->M8 = 0; /*0x431922*/
+  this->M12 = 0; /*0x431925*/
+  this->M16 = 0; /*0x431928*/
   return 0; /*0x43192b*/
 }
 } // namespace gamemd
@@ -1105,14 +1105,14 @@ int E4Recv_431930::sub_431930(int a2)
 
   if ( (unsigned char)a2 ) /*0x43193c*/
   {
-    this->? = 0; /*0x43193e*/
-    this->? = 0; /*0x431941*/
-    this->? = 0; /*0x431944*/
+    this->M8 = 0; /*0x43193e*/
+    this->M12 = 0; /*0x431941*/
+    this->M16 = 0; /*0x431944*/
   }
   v3 = Timer::ReadTSC(&a2); /*0x43194c*/
   result = (a2 << 28) | (v3 >> 4); /*0x431962*/
   this->AbstractClass = (void *)result; /*0x431964*/
-  this->? = v5; /*0x431966*/
+  *(void **)&this->M4 = v5; /*0x431966*/
   return result; /*0x431969*/
 }
 } // namespace gamemd
@@ -2132,12 +2132,12 @@ int E4Recv_43A670::sub_43A670()
   int v4; // ecx
 
   v2 = 0; /*0x43a675*/
-  abstractFlags = this->?; /*0x43a677*/
+  abstractFlags = this->M20; /*0x43a677*/
   if ( abstractFlags > 0 ) /*0x43a67c*/
   {
     do /*0x43a69d*/
     {
-      v4 = *((unsigned int *)this->? + v2); /*0x43a681*/
+      v4 = *((unsigned int *)this->M8 + v2); /*0x43a681*/
       if ( v4 ) /*0x43a686*/
         (*(void (__thiscall **)(int, int))(*(unsigned int *)v4 + 32))(v4, 1); /*0x43a68c*/
       *((unsigned int *)this->? + v2++) = 0; /*0x43a695*/
@@ -2157,12 +2157,12 @@ int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
   int v6; // ecx
 
   v4 = 0; /*0x43a6b5*/
-  abstractFlags = this->?; /*0x43a6b7*/
+  abstractFlags = this->M20; /*0x43a6b7*/
   if ( abstractFlags > 0 ) /*0x43a6bc*/
   {
     do /*0x43a6dd*/
     {
-      v6 = *((unsigned int *)this->? + v4); /*0x43a6c1*/
+      v6 = *((unsigned int *)this->M8 + v4); /*0x43a6c1*/
       if ( v6 ) /*0x43a6c6*/
         (*(void (__thiscall **)(int, int))(*(unsigned int *)v6 + 32))(v6, 1); /*0x43a6cc*/
       *((unsigned int *)this->? + v4++) = 0; /*0x43a6d5*/
@@ -2170,8 +2170,8 @@ int E4Recv_43A6B0::sub_43A6B0(int a2, int a3)
     while ( v4 < abstractFlags ); /*0x43a6dd*/
   }
   (*((void (__thiscall **)(void **))this->? + 3))(&this->?); /*0x43a6e5*/
-  this->? = a2; /*0x43a6f0*/
-  this->? = (void *)a3; /*0x43a6f3*/
+  this->M28 = a2; /*0x43a6f0*/
+  *(void **)&this->q020 = (void *)a3; /*0x43a6f3*/
   return a2; /*0x43a6f6*/
 }
 } // namespace gamemd
@@ -2192,7 +2192,7 @@ int E4Recv_43A770::sub_43A770(unsigned int * a2, int a3)
   v3 = a2; /*0x43a773*/
   if ( !a2 ) /*0x43a77c*/
     return -2147467261; /*0x43a781*/
-  abstractFlags = (unsigned int *)this->?; /*0x43a78a*/
+  abstractFlags = (unsigned int *)this->M20; /*0x43a78a*/
   v7 = *a2; /*0x43a78d*/
   v10 = a2; /*0x43a798*/
   a2 = abstractFlags; /*0x43a799*/
@@ -2226,9 +2226,9 @@ int E4Recv_43A770::sub_43A770(unsigned int * a2, int a3)
 namespace gamemd {
 ObjectClass * E4Recv_43ADF0::sub_43ADF0(unsigned int * a1)
 {
-  IDA_LOBYTE(this->?) = 0; /*0x43adf6*/
+  IDA_LOBYTE(this->M8) = 0; /*0x43adf6*/
   this->AbstractClass = (void *)*a1; /*0x43adfc*/
-  this->? = (void *)a1[1]; /*0x43ae01*/
+  *(void **)&this->M4 = (void *)a1[1]; /*0x43ae01*/
   return this; /*0x43ae04*/
 }
 } // namespace gamemd
@@ -2238,8 +2238,8 @@ namespace gamemd {
 unsigned int * E4Recv_43AF10::sub_43AF10()
 {
   this->AbstractClass = 0; /*0x43af14*/
-  this->? = 0; /*0x43af16*/
-  IDA_LOBYTE(this->?) = 0; /*0x43af19*/
+  this->M4 = 0; /*0x43af16*/
+  IDA_LOBYTE(this->M8) = 0; /*0x43af19*/
   return &this->AbstractClass; /*0x43af1c*/
 }
 } // namespace gamemd

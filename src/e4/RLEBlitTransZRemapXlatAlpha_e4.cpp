@@ -26,11 +26,11 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   uint8_t *v24; // [esp+1Ch] [ebp+8h]
 
   result = a7; /*0x497a2c*/
-  v24 = *(uint8_t **)this->m_4; /*0x497a30*/
+  v24 = *(uint8_t **)*(unsigned int *)&this->q014; /*0x497a30*/
   v14 = (261 * (a9 <= 0 ? 0 : a9)) >> 11;
   if ( v14 > 254 ) /*0x497a51*/
     v14 = 254; /*0x497a53*/
-  v23 = this->m_C + (v14 << 9); /*0x497a60*/
+  v23 = *(unsigned int *)&this->q014 + (v14 << 9); /*0x497a60*/
   v15 = aP4; /*0x497a64*/
   if ( aP4 <= 0 ) /*0x497a6a*/
   {
@@ -62,7 +62,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
       v22 = v24[v19] | *(uint16_t *)(v23 + 2 * *result); /*0x497b03*/
       --v18; /*0x497b09*/
       ++result; /*0x497b0a*/
-      *(unsigned short *)(arg0 - 2) = *(unsigned short *)(this->m_8 + 2 * v22); /*0x497b14*/
+      *(unsigned short *)(arg0 - 2) = *(unsigned short *)(*(unsigned int *)&this->q008 + 2 * v22); /*0x497b14*/
     }
     else
     {
@@ -153,10 +153,10 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
   m_C = (gamemd::RLEBlitTransZRemapXlatAlpha_ushort *)((void *)this->m_C);
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitTransZRemapXlatAlpha_unsigned_short_vftable; /*0x49aa4b*/
   FractalNoise::Dtor(m_C); /*0x49aa52*/
-  this->m_C = 0; /*0x49aa5b*/
+  *(unsigned short *)&this->u32_C = 0; /*0x49aa5b*/
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitter_vftable; /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
     RA2_OPDEL(); /*0x49aa6d*/
-  return this->__pad_0; /*0x49aa77*/
+  return this; /*0x49aa77*/
 }
 } // namespace gamemd

@@ -28,15 +28,15 @@ int ParasiteClass::Constructor()
   int v3; // eax
 
   AbstractClass::Constructor(); /*0x629213*/
-  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x62921f*/
+  *(unsigned int *)&this->q02C = *(unsigned int *)&stru_A8EB00.?[416]; /*0x62921f*/
   this->ParasiteClass_field_34 = 0; /*0x629222*/
   v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
   this->AbstractClass = (void*)&ParasiteClass_vftable; /*0x629231*/
-  this->? = (void*)&ParasiteClass_vftable; /*0x629237*/
-  this->? = (void*)&ParasiteClass_vftable; /*0x62923e*/
-  this->? = (void*)&ParasiteClass_vftable; /*0x629245*/
+  *(void **)&this->vtable2 = (void*)&ParasiteClass_vftable; /*0x629237*/
+  *(void **)&this->vtable3 = (void*)&ParasiteClass_vftable; /*0x62923e*/
+  *(void **)&this->vtable4 = (void*)&ParasiteClass_vftable; /*0x629245*/
   if ( dword_AC4920 < dword_AC4918 /*0x62927e*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
@@ -710,9 +710,9 @@ void * ParasiteClass::UpdateParasite(char a2)
 
   v3 = this->q011; /*0x62af77*/
   this->AbstractClass = (void*)&ParasiteClass_vftable; /*0x62af7a*/
-  this->? = (void*)&ParasiteClass_vftable; /*0x62af82*/
-  this->? = (void*)&ParasiteClass_vftable; /*0x62af89*/
-  this->? = (void*)&ParasiteClass_vftable; /*0x62af90*/
+  *(void **)&this->vtable2 = (void*)&ParasiteClass_vftable; /*0x62af82*/
+  *(void **)&this->vtable3 = (void*)&ParasiteClass_vftable; /*0x62af89*/
+  *(void **)&this->vtable4 = (void*)&ParasiteClass_vftable; /*0x62af90*/
   this->IsAllocated = 0; /*0x62af97*/
   this->abstractFlags = 0; /*0x62af9a*/
   this->u32_48 = 0; /*0x62af9d*/
@@ -1093,9 +1093,9 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
       a0->ParasiteClass_field_38 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6295f0*/
       a0->ParasiteClass_field_40 = 0; /*0x6295f3*/
       a0->AbstractClass = (void*)&ParasiteClass_vftable; /*0x6295fa*/
-      a0->? = (void*)&ParasiteClass_vftable; /*0x629600*/
-      a0->? = (void*)&ParasiteClass_vftable; /*0x629607*/
-      a0->? = (void*)&ParasiteClass_vftable; /*0x62960e*/
+      *(void **)&a0->vtable2 = (void*)&ParasiteClass_vftable; /*0x629600*/
+      *(void **)&a0->vtable3 = (void*)&ParasiteClass_vftable; /*0x629607*/
+      *(void **)&a0->vtable4 = (void*)&ParasiteClass_vftable; /*0x62960e*/
     }
     if ( *((unsigned int *)a0 + 17) /*0x629657*/
       && (g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.?

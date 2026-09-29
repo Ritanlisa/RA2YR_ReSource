@@ -11,7 +11,7 @@ struct MSEngine {
     void* q008;  // 0x8
     bool q00A;  // 0xA
     bool q00B;  // 0xB
-    void* ;  // 0xC
+    void *qC;  // 0xC
     void* IsAllocated;  // 0xD
     bool q00E;  // 0xE
     void* q010;  // 0x10

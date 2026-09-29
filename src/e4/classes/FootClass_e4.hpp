@@ -666,7 +666,7 @@ struct FootClass {
     int updateThreat();
     unsigned int checkTurning();
     void Destroyed(int a2);
-    void FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int a3@<edi> a3, unsigned int * ppv, IID rclsid, int a6);
+    void FootClass_ImbueLocomotor(int * a1, int a2, int a3, unsigned int * ppv, IID rclsid, int a6);
     void Stub(int a1);
     static double GetField(...);  // C2597 interim stub
     static double SetField(...);  // C2597 interim stub

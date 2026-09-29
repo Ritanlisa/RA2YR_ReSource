@@ -225,7 +225,7 @@ int TActionClass::executeRepairAction(int a2)
   this->u32_10C = 1; /*0x577ce6*/
   this->TActionClass_field_44 = v4; /*0x577cf0*/
   this->q045 = v4 - 1; /*0x577cf9*/
-  this->q046 = (v4 << 11) + this->q04F + 4; /*0x577d0e*/
+  *(unsigned int *)&this->q046 = (v4 << 11) + this->q04F + 4; /*0x577d0e*/
   for (); i; i = LayerClass::CellIteratorNext((LayerClass *)this) ) /*0x577d1d*/
   {
     DisplayClass::AdvanceFrameCounter((DisplayClass *)i); /*0x577d21*/
@@ -250,10 +250,10 @@ int TActionClass::executeSellAction()
   int result; // eax
   int v2; // edx
 
-  result = this->TActionClass_field_40; /*0x578850*/
+  result = *(unsigned int *)&this->TActionClass_field_40; /*0x578850*/
   v2 = this->u32_FC; /*0x578856*/
   this->u32_11C = v2 + result + 1; /*0x578861*/
-  this->TActionClass_field_48 = result + this->q03D - v2; /*0x578871*/
+  *(unsigned int *)&this->TActionClass_field_48 = result + this->q03D - v2; /*0x578871*/
   return result; /*0x578877*/
 }
 }
@@ -608,7 +608,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
   {
     GroundHeight += dword_B0E6D4; /*0x6e2cdc*/
   }
-  v6 = dword_842AFC[*(unsigned int *)&this->pad_6E[34]] /*0x6e2d0a*/
+  v6 = dword_842AFC[*(unsigned int *)&this->Value] /*0x6e2d0a*/
      + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 3;
   String = GlobalArray::FindString(&stru_842C20); /*0x6e2d1b*/
   v19 = GlobalArray::FindString(&stru_842C14); /*0x6e2d22*/
@@ -739,7 +739,7 @@ int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP
 
   if ( !a2 ) /*0x6e42d6*/
     return 0; /*0x6e42d6*/
-  v5 = *(unsigned int *)&this->pad_6E[34]; /*0x6e42d8*/
+  v5 = *(unsigned int *)&this->Value; /*0x6e42d8*/
   if ( v5 < 0 ) /*0x6e42e0*/
     return 0; /*0x6e42e0*/
   if ( v5 > *(unsigned int *)(a2 + 612) ) /*0x6e42ec*/
@@ -1338,7 +1338,7 @@ char TActionClass::executeSelfDestructAction(int a2, int a3, int a4, IUnknown * 
     10 * dword_A8B230[378].uniqueId,
     10 * dword_A8B230[378].abstractFlags,
     0);
-  dword_A8B230[378].vtable3 = *(void **)&this->pad_6E[34]; /*0x6e2ea1*/
+  dword_A8B230[378].vtable3 = *(void **)&this->Value; /*0x6e2ea1*/
   return 1; /*0x6e2ea0*/
 }
 } // namespace gamemd
@@ -1352,7 +1352,7 @@ char TActionClass::executeExplodeAction(int a2, int a3, int a4, IUnknown * aP4)
     10 * *(unsigned int *)&this->pad_6E[34],
     10 * dword_A8B230[378].abstractFlags,
     0);
-  dword_A8B230[378].uniqueId = *(unsigned int *)&this->pad_6E[34]; /*0x6e2ef1*/
+  dword_A8B230[378].uniqueId = *(unsigned int *)&this->Value; /*0x6e2ef1*/
   return 1; /*0x6e2ef0*/
 }
 } // namespace gamemd
@@ -1366,7 +1366,7 @@ char TActionClass::executeChronoshiftAction(int a2, int a3, int a4, IUnknown * a
     10 * dword_A8B230[378].uniqueId,
     10 * *(unsigned int *)&this->pad_6E[34],
     0);
-  dword_A8B230[378].abstractFlags = *(unsigned int *)&this->pad_6E[34]; /*0x6e2f41*/
+  dword_A8B230[378].abstractFlags = *(unsigned int *)&this->Value; /*0x6e2f41*/
   return 1; /*0x6e2f40*/
 }
 } // namespace gamemd
@@ -1561,7 +1561,7 @@ char TActionClass::executeLightningAction(int a2, int a3, int a4, IUnknown * aP4
 {
   if ( !a2 ) /*0x6e3b48*/
     return 0; /*0x6e3b4a*/
-  HouseClass::CreateRadarOutage(a2, *(unsigned int *)&this->pad_6E[34]); /*0x6e3b56*/
+  HouseClass::CreateRadarOutage(a2, *(unsigned int *)&this->Value); /*0x6e3b56*/
   return 1; /*0x6e3b4c*/
 }
 } // namespace gamemd
@@ -1593,9 +1593,9 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e3dcf*/
       aP0->AbstractClass = (void*)&TActionClass_vftable; /*0x6e3dd4*/
-      aP0->? = (void*)&TActionClass_vftable; /*0x6e3dda*/
-      aP0->? = (void*)&TActionClass_vftable; /*0x6e3de1*/
-      aP0->? = (void*)&TActionClass_vftable; /*0x6e3de8*/
+      *(void **)&aP0->vtable2 = (void*)&TActionClass_vftable; /*0x6e3dda*/
+      *(void **)&aP0->vtable3 = (void*)&TActionClass_vftable; /*0x6e3de1*/
+      *(void **)&aP0->vtable4 = (void*)&TActionClass_vftable; /*0x6e3de8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->TActionClass_field_28); /*0x6e3df8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->TActionClass_field_30); /*0x6e3e06*/
@@ -1634,26 +1634,26 @@ int TActionClass::Validate(int a2)
   int v10; // eax
 
   AbstractClass::ProcessPower(); /*0x6e3e59*/
-  TActionClass_field_28 = this->TActionClass_field_28; /*0x6e3e5e*/
+  TActionClass_field_28 = *(unsigned int *)&this->TActionClass_field_28; /*0x6e3e5e*/
   if ( TActionClass_field_28 ) /*0x6e3e63*/
   {
     v4 = (*(int (__stdcall **)(unsigned int *))(TActionClass_field_28[1] + 16))(TActionClass_field_28 + 1); /*0x6e3e6c*/
     Power::TimerProcess(v4); /*0x6e3e72*/
   }
   Power::TimerProcess((int)this->TActionClass_field_2C); /*0x6e3e7d*/
-  TActionClass_field_30 = this->TActionClass_field_30; /*0x6e3e82*/
+  TActionClass_field_30 = *(unsigned int *)&this->TActionClass_field_30; /*0x6e3e82*/
   if ( TActionClass_field_30 ) /*0x6e3e87*/
   {
     v6 = (*(int (__stdcall **)(unsigned int *))(TActionClass_field_30[1] + 16))(TActionClass_field_30 + 1); /*0x6e3e90*/
     Power::TimerProcess(v6); /*0x6e3e96*/
   }
-  TActionClass_field_4C = this->TActionClass_field_4C; /*0x6e3e9b*/
+  TActionClass_field_4C = *(unsigned int *)&this->TActionClass_field_4C; /*0x6e3e9b*/
   if ( TActionClass_field_4C ) /*0x6e3ea0*/
   {
     v8 = (*(int (__stdcall **)(unsigned int *))(TActionClass_field_4C[1] + 16))(TActionClass_field_4C + 1); /*0x6e3ea9*/
     Power::TimerProcess(v8); /*0x6e3eaf*/
   }
-  TActionClass_field_50 = this->TActionClass_field_50; /*0x6e3eb4*/
+  TActionClass_field_50 = *(unsigned int *)&this->TActionClass_field_50; /*0x6e3eb4*/
   if ( TActionClass_field_50 ) /*0x6e3eb9*/
   {
     v10 = (*(int (__stdcall **)(unsigned int *))(TActionClass_field_50[1] + 16))(TActionClass_field_50 + 1); /*0x6e3ec2*/
@@ -1669,7 +1669,7 @@ char TActionClass::executePsychicDominatorAction(int a2, int a3, int a4, IUnknow
 {
   unsigned int v5; // esi
 
-  v5 = *(unsigned int *)&this->pad_6E[34]; /*0x6e4101*/
+  v5 = *(unsigned int *)&this->Value; /*0x6e4101*/
   if ( v5 >= 4 || !(uint8_t)PlayerClass::HasPlayers((PlayerClass *)(3988 * v5 + 8916268)) ) /*0x6e4124*/
     return 0; /*0x6e413e*/
   SidebarClass::SwitchTab((int)&stru_87F5F0.__pad_58[416], v5); /*0x6e4133*/

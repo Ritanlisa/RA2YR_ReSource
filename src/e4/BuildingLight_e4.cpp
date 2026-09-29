@@ -110,7 +110,7 @@ Coord * * BuildingLight::CalculateShading()
           if ( v2 ) /*0x5ff9e2*/
           {
   LABEL_23:
-            v9 = this->q014; /*0x5ffb1c*/
+            v9 = *(unsigned int *)&this->q014; /*0x5ffb1c*/
             if ( (v9 & 1) != 0 ) /*0x5ffb21*/
             {
               j = 0; /*0x5ffb2b*/
@@ -164,7 +164,7 @@ Coord * * BuildingLight::CalculateShading()
                       v15 = (uint8_t)v33 + 256; /*0x5ffcd0*/
                       v42 = (uint8_t)(*v8 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x5ffcdf*/
                       v43 = (uint8_t)(v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ffd00*/
-                      v16 = this->q014; /*0x5ffd0a*/
+                      v16 = *(unsigned int *)&this->q014; /*0x5ffd0a*/
                       v44 = (uint8_t)(v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ffd0d*/
                       v17 = v42; /*0x5ffd1d*/
                       v18 = v43; /*0x5ffd22*/

@@ -8,7 +8,7 @@ namespace gamemd {
 struct Delegate {
 // --- flat members (BEGIN) ---
     void* m_items;  // 0x0
-    void* ;  // 0x4
+    void *q4;  // 0x4
     char Delegate_field_08[4];  // 0x8
     bool m_allocated;  // 0xC
     unsigned char q00D;  // 0xD

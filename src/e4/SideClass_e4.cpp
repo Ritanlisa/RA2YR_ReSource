@@ -125,8 +125,8 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
   this->houseTypes = (void*)&TypeList_int_vftable; /*0x6a458c*/
   this->AbstractClass = (void*)&SideClass_vftable; /*0x6a4597*/
   this->? = (void*)&SideClass_vftable; /*0x6a459d*/
-  this->? = (void*)&SideClass_vftable; /*0x6a45a3*/
-  this->? = (void*)&SideClass_vftable; /*0x6a45aa*/
+  *(void **)&this->vtable3 = (void*)&SideClass_vftable; /*0x6a45a3*/
+  *(void **)&this->vtable4 = (void*)&SideClass_vftable; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x6a45b1*/
   if ( FootClass_Array.?[0] < FootClass_Array.?[1] /*0x6a45ea*/
     || (IDA_BYTE1(FootClass_Array.?[2]) || !FootClass_Array.?[1])
@@ -178,9 +178,9 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       a0[1].? = 0; /*0x6a47d1*/
       a0->houseTypes = (void*)&TypeList_int_vftable; /*0x6a47d7*/
       a0->AbstractClass = (void*)&SideClass_vftable; /*0x6a47e1*/
-      a0->? = (void*)&SideClass_vftable; /*0x6a47e7*/
-      a0->? = (void*)&SideClass_vftable; /*0x6a47ee*/
-      a0->? = (void*)&SideClass_vftable; /*0x6a47f5*/
+      *(void **)&a0->vtable2 = (void*)&SideClass_vftable; /*0x6a47e7*/
+      *(void **)&a0->vtable3 = (void*)&SideClass_vftable; /*0x6a47ee*/
+      *(void **)&a0->vtable4 = (void*)&SideClass_vftable; /*0x6a47f5*/
     }
     p_houseTypes = &a0->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
@@ -230,9 +230,9 @@ void * SideClass::Init(char a2)
   void *houseTypesCount; // eax
 
   this->AbstractClass = (unsigned int)((void*)&SideClass_vftable);
-  this->? = (void*)&SideClass_vftable; /*0x6a493c*/
-  this->? = (void*)&SideClass_vftable; /*0x6a4943*/
-  this->? = (void*)&SideClass_vftable; /*0x6a494a*/
+  *(void **)&this->vtable2 = (void*)&SideClass_vftable; /*0x6a493c*/
+  *(void **)&this->vtable3 = (void*)&SideClass_vftable; /*0x6a4943*/
+  *(void **)&this->vtable4 = (void*)&SideClass_vftable; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6a4951*/
   v3 = (*(int (__thiscall **)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &this); /*0x6a496a*/
   if ( v3 != -1 && v3 < FootClass_Array.?[0] ) /*0x6a497a*/

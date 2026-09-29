@@ -6,9 +6,9 @@
 namespace gamemd {
 struct String {
 // --- flat members (BEGIN) ---
-    unsigned int ;  // 0x4
+    unsigned int q4;  // 0x4
     unsigned int u16_6;  // 0x6
-    unsigned int ;  // 0x8
+    unsigned int q8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int u32_14;  // 0x14
     unsigned int q018;  // 0x18
@@ -61,7 +61,6 @@ struct String {
     char ** AssignFromPtr(const char ** a2);  // 0x7B4690
     bool Equals_Alt(const char * a2);  // 0x7B4710
     bool Compare(const char ** a2);  // 0x7B4780
-    bool Equals(ObjectClass * aP1);  // 0x7B47F0
     void ** Assign_Alt(CCINIClass * aP1);  // 0x7B48D0
     char ** Reassign(AbstractClass * aP1);  // 0x7B4940
     const char ** Append(CCINIClass * aP1);  // 0x7B4C20
@@ -78,6 +77,5 @@ struct String {
     char CopyTruncated(size_t Count);  // 0x7B5D70
     char TruncateTo(size_t Count);  // 0x7B78D0
     int Wrapper5to4(CampaignScore * aP0,  int a2,  int a3,  int a4);    // 0x7CCA19
-    bool Equals(ObjectClass * aP1);  // def-aligned
 };
 } // namespace gamemd

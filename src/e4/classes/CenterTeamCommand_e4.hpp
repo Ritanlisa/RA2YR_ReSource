@@ -8,7 +8,7 @@ namespace gamemd {
 struct CenterTeamCommand {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* ;  // 0x4
+    void *q4;  // 0x4
     unsigned int CommandClass;
     unsigned int m_1;
     unsigned int CenterTeamCommand_field_00;

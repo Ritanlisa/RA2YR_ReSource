@@ -49,10 +49,10 @@ unsigned int * DialogControl::Constructor()
     v3 = unknown_libname_74(v2); /*0x623370*/
   else
     v3 = 0; /*0x623377*/
-  this->q00F = v3; /*0x623379*/
+  *(void **)&this->q00F = v3; /*0x623379*/
   this->u32_40 = 0; /*0x62337c*/
   this->u32_5C = 0; /*0x62337f*/
   this->u32_90 = -1; /*0x623382*/
-  return this->__pad_0; /*0x62338e*/
+  return this; /*0x62338e*/
 }
 } // namespace gamemd

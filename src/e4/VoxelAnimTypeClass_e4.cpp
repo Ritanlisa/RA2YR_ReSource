@@ -55,28 +55,28 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
   this->MaxZVel[1] = 1075052544; /*0x74ae15*/
   this->MaxXYVel[1] = 1076756480; /*0x74ae1f*/
   this->IsMeteor = 0; /*0x74ae29*/
-  this->Spawns = 0; /*0x74ae2f*/
+  *(unsigned int *)&this->Spawns = 0; /*0x74ae2f*/
   this->SpawnCount = 0; /*0x74ae35*/
-  this->BounceAnim = 0; /*0x74ae3b*/
-  this->ExpireAnim = 0; /*0x74ae41*/
-  this->TrailerAnim = 0; /*0x74ae47*/
+  *(unsigned int *)&this->BounceAnim = 0; /*0x74ae3b*/
+  *(unsigned int *)&this->ExpireAnim = 0; /*0x74ae41*/
+  *(unsigned int *)&this->TrailerAnim = 0; /*0x74ae47*/
   this->Damage = 0; /*0x74ae4d*/
   this->DamageRadius = 0; /*0x74ae53*/
-  this->Warhead = 0; /*0x74ae59*/
-  this->AttachedSystem = 0; /*0x74ae5f*/
+  *(unsigned int *)&this->Warhead = 0; /*0x74ae59*/
+  *(unsigned int *)&this->AttachedSystem = 0; /*0x74ae5f*/
   this->IsTiberium = 0; /*0x74ae65*/
   this->ObjectTypeClass = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae6b*/
   this->? = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae71*/
-  this->? = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae77*/
-  this->? = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae7e*/
+  *(void **)&this->vtable3 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae77*/
+  *(void **)&this->vtable4 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ae7e*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x74ae85*/
-  this->? = 0; /*0x74ae8c*/
-  this->? = 1; /*0x74ae92*/
-  this->? = 1; /*0x74ae98*/
-  this->? = 1; /*0x74ae9e*/
-  this->? = 1; /*0x74aea4*/
-  this->? = 1; /*0x74aeaa*/
-  this->? = 0; /*0x74aeb0*/
+  *(unsigned int *)&this->q231 = 0; /*0x74ae8c*/
+  *(unsigned int *)&this->q234 = 1; /*0x74ae92*/
+  *(unsigned int *)&this->q22F = 1; /*0x74ae98*/
+  *(unsigned int *)&this->q230 = 1; /*0x74ae9e*/
+  *(unsigned int *)&this->q232 = 1; /*0x74aea4*/
+  *(unsigned int *)&this->q233 = 1; /*0x74aeaa*/
+  *(unsigned int *)&this->q235 = 0; /*0x74aeb0*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x74aeea*/
     || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -476,9 +476,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
   VoxelAnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   this->ObjectTypeClass = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba36*/
-  this->? = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba3c*/
-  this->? = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba43*/
-  this->? = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba4a*/
+  *(void **)&this->vtable2 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba3c*/
+  *(void **)&this->vtable3 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba43*/
+  *(void **)&this->vtable4 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba4a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x74ba51*/
   v6 = this; /*0x74ba66*/
   v3 = (*(int (__thiscall **)(int *, VoxelAnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x74ba6a*/
@@ -512,8 +512,8 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
   }
   if ( this->SourceShared ) /*0x74bae8*/
   {
-    this->?[0] = 0; /*0x74baf4*/
-    this->?[0] = 0; /*0x74bafa*/
+    this->MainVoxel = 0; /*0x74baf4*/
+    this->q0B4 = 0; /*0x74bafa*/
   }
   ObjectTypeClass::Destruct(); /*0x74bb02*/
   if ( (a2 & 1) != 0 ) /*0x74bb0c*/
@@ -549,9 +549,9 @@ int VoxelAnimTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x74b833*/
       aP0->ObjectTypeClass = (void*)&VoxelAnimTypeClass_vftable; /*0x74b838*/
-      aP0->? = (void*)&VoxelAnimTypeClass_vftable; /*0x74b83e*/
-      aP0->? = (void*)&VoxelAnimTypeClass_vftable; /*0x74b845*/
-      aP0->? = (void*)&VoxelAnimTypeClass_vftable; /*0x74b84c*/
+      *(void **)&aP0->vtable2 = (void*)&VoxelAnimTypeClass_vftable; /*0x74b83e*/
+      *(void **)&aP0->vtable3 = (void*)&VoxelAnimTypeClass_vftable; /*0x74b845*/
+      *(void **)&aP0->vtable4 = (void*)&VoxelAnimTypeClass_vftable; /*0x74b84c*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->Warhead); /*0x74b85f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->BounceAnim); /*0x74b870*/
@@ -587,17 +587,17 @@ long long VoxelAnimTypeClass::GetData(ObjectTypeClass * aP1, int a3)
 
   result = aP1; /*0x74b8f0*/
   if ( this->Warhead == (WarheadTypeClass *)aP1 ) /*0x74b8ff*/
-    this->Warhead = 0; /*0x74b901*/
+    *(unsigned int *)&this->Warhead = 0; /*0x74b901*/
   if ( this->BounceAnim == (AnimTypeClass *)aP1 ) /*0x74b90d*/
-    this->BounceAnim = 0; /*0x74b90f*/
+    *(unsigned int *)&this->BounceAnim = 0; /*0x74b90f*/
   if ( this->ExpireAnim == (AnimTypeClass *)aP1 ) /*0x74b91b*/
-    this->ExpireAnim = 0; /*0x74b91d*/
+    *(unsigned int *)&this->ExpireAnim = 0; /*0x74b91d*/
   if ( this->TrailerAnim == (AnimTypeClass *)aP1 ) /*0x74b929*/
-    this->TrailerAnim = 0; /*0x74b92b*/
+    *(unsigned int *)&this->TrailerAnim = 0; /*0x74b92b*/
   if ( this->Spawns == (VoxelAnimTypeClass *)aP1 ) /*0x74b937*/
-    this->Spawns = 0; /*0x74b939*/
+    *(unsigned int *)&this->Spawns = 0; /*0x74b939*/
   if ( this->AttachedSystem == (ParticleSystemTypeClass *)aP1 ) /*0x74b948*/
-    this->AttachedSystem = 0; /*0x74b94a*/
+    *(unsigned int *)&this->AttachedSystem = 0; /*0x74b94a*/
   return result; /*0x74b947*/
 }
 } // namespace gamemd

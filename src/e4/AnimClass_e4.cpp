@@ -380,7 +380,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       v28 = *(unsigned int *)&v21[2].__pad_C[96]; /*0x423183*/
       if ( v28 <= 0 ) /*0x42318b*/
       {
-        v29 = this->__pad_178[0]; /*0x4231c1*/
+        v29 = this->__pad_178; /*0x4231c1*/
         if ( !v29 ) /*0x4231c9*/
           goto LABEL_47; /*0x4231c9*/
         if ( v29 > 15 ) /*0x4231d1*/
@@ -398,7 +398,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       }
       else
       {
-        if ( this->__pad_178[0] >= 15 ) /*0x423194*/
+        if ( *(unsigned char *)&this->__pad_178 >= 15 ) /*0x423194*/
           return; /*0x423194*/
         if ( v28 != 25 ) /*0x42319d*/
         {
@@ -417,7 +417,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       AnimClass_field_0x190 |= 2u; /*0x4230fb*/
       goto LABEL_47; /*0x4230fb*/
     }
-    if ( this->__pad_178[0] >= 15 ) /*0x4230a2*/
+    if ( *(unsigned char *)&this->__pad_178 >= 15 ) /*0x4230a2*/
       return; /*0x4230a2*/
     v23 = (double)(int)AnimClass_field_0xAC; /*0x4230a8*/
     v24 = (double)*(int *)&v21[2].__pad_C[52]; /*0x4230ac*/
@@ -487,7 +487,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     }
   }
   LABEL_78:
-  if ( this->__pad_194[0] ) /*0x423358*/
+  if ( this->IsBuildingAnim ) /*0x423358*/
   {
     v34 = ZCoordToScreenY(*(int *)v101); /*0x423373*/
     v35 = *a2; /*0x423384*/
@@ -515,7 +515,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       0,
       0);
   }
-  v40 = this->__pad_118[0]; /*0x4233ee*/
+  v40 = this->IsBuildingAnim; /*0x4233ee*/
   v41 = 0.0; /*0x4233f4*/
   *(float *)v100 = 0.0; /*0x4233f8*/
   if ( !v40 ) /*0x4233fc*/
@@ -903,7 +903,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
       {
         HouseClass::AddPower(v185, (IUnknown *)v6->ProduceCashStartup);
         int v7 = *(unsigned int *)(this->q148 + 5472);
-        this->q1B4 = *(unsigned int *)&HouseClass_Player[45112];
+        *(unsigned int *)&this->q1B4 = *(unsigned int *)&HouseClass_Player[45112];
         this->q1B5 = v174;
         this->u32_6D8 = v7;
       }
@@ -1710,7 +1710,7 @@ LABEL_183:
         v160 = (CCINIClass *)Block;
         if ( *(unsigned char *)(*((unsigned int *)Block + edi266) + 4) )
         {
-          this->q418 = 1;
+          *(unsigned int *)&this->q418 = 1;
           *(unsigned char *)(**(unsigned int **)&v160->__pad_0[4 * edi266] + 1048) = 1;
           v160 = (CCINIClass *)Block;
         }

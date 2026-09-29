@@ -25,9 +25,9 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1)
   this->UINameLabel = 0; /*0x41081a*/
   this->Name = 0; /*0x41081e*/
   *(unsigned int *)this = (int)&AbstractTypeClass_vftable; /*0x410822*/
-  this->vtable2 = (int)&AbstractTypeClass_vftable; /*0x410829*/
-  this->vtable3 = (int)&AbstractTypeClass_vftable; /*0x410830*/
-  this->vtable4 = (int)&AbstractTypeClass_vftable; /*0x410837*/
+  *(unsigned int *)&this->vtable2 = (int)&AbstractTypeClass_vftable; /*0x410829*/
+  *(unsigned int *)&this->vtable3 = (int)&AbstractTypeClass_vftable; /*0x410830*/
+  *(unsigned int *)&this->vtable4 = (int)&AbstractTypeClass_vftable; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1, 0x18u); /*0x410895*/
@@ -90,9 +90,9 @@ int AbstractTypeClass::Dtor()
   AbstractTypeClass *v4; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = (void*)&AbstractTypeClass_vftable; /*0x4109cd*/
-  this->? = (void*)&AbstractTypeClass_vftable; /*0x4109d3*/
-  this->? = (void*)&AbstractTypeClass_vftable; /*0x4109da*/
-  this->? = (void*)&AbstractTypeClass_vftable; /*0x4109e1*/
+  *(void **)&this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x4109d3*/
+  *(void **)&this->vtable3 = (void*)&AbstractTypeClass_vftable; /*0x4109da*/
+  *(void **)&this->vtable4 = (void*)&AbstractTypeClass_vftable; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (__thiscall **)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
   if ( v2 != -1 && v2 < dword_A8E978 && v2 < --dword_A8E978 ) /*0x410a0e*/
@@ -190,9 +190,9 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
   AbstractTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = (void*)&AbstractTypeClass_vftable; /*0x410c3d*/
-  this->? = (void*)&AbstractTypeClass_vftable; /*0x410c43*/
-  this->? = (void*)&AbstractTypeClass_vftable; /*0x410c4a*/
-  this->? = (void*)&AbstractTypeClass_vftable; /*0x410c51*/
+  *(void **)&this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x410c43*/
+  *(void **)&this->vtable3 = (void*)&AbstractTypeClass_vftable; /*0x410c4a*/
+  *(void **)&this->vtable4 = (void*)&AbstractTypeClass_vftable; /*0x410c51*/
   v5 = this; /*0x410c5f*/
   v3 = (*(int (__thiscall **)(unsigned int *, AbstractTypeClass **))(dword_A8E968 + 16))(&dword_A8E968, &v5); /*0x410c63*/
   if ( v3 != -1 && v3 < dword_A8E978 && v3 < --dword_A8E978 ) /*0x410c7e*/

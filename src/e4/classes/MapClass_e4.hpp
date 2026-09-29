@@ -556,7 +556,7 @@ struct MapClass {
     void InitCellVe_vt03();
     void allocateCellArrays();
     void checkCellBounds();
-    void* ApplyTerrainDamage(void*this@<ecx> a1, IUnknown aP1);
+    void* ApplyTerrainDamage(void *a1, IUnknown aP1);
     void* Destruct();
     void* InitTileData(MouseClass * aP0, int aP3);
 };

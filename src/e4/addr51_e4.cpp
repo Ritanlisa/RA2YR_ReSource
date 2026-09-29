@@ -644,7 +644,7 @@ int E4Recv_517110::sub_517110()
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  vtable3 = this->?; /*0x51717f*/
+  vtable3 = this->M12; /*0x51717f*/
   this->ambientSoundController[3] = 0; /*0x517182*/
   this->ambientSoundController[4] = 1072693248; /*0x517189*/
   (*(void (__thiscall **)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
@@ -691,7 +691,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
-  IDA_LOBYTE(this->?) = 0; /*0x51779f*/
+  IDA_LOBYTE(this->M4) = 0; /*0x51779f*/
   strcpy(v13, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
@@ -700,7 +700,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
       v4 = (unsigned int)(*(void **)v7);
-      IDA_LOBYTE(this->?) = 1; /*0x51781d*/
+      IDA_LOBYTE(this->M4) = 1; /*0x51781d*/
       this->AbstractClass = v4; /*0x517821*/
     }
     RegCloseKey(hKey); /*0x517829*/

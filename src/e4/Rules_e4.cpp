@@ -2144,7 +2144,7 @@ int Rules::ReadMiscINI()
               (INIClass *)&stru_830620[39048],
               (Color *)&stru_830620[39928],
               (Color *)&this->u32_2700);
-    this->ptr_1860 = *(unsigned short *)Coord;
+    *(unsigned int *)&this->ptr_1860 = *(unsigned short *)Coord;
     this->u8_1862 = *(unsigned char *)(Coord + 2);
   int v252; // eax
     v252 = INIClass::GetCoord(
@@ -2162,7 +2162,7 @@ int Rules::ReadMiscINI()
              (INIClass *)&stru_830620[39048],
              (Color *)&stru_830620[39888],
              (Color *)((char *)&this->u32_9C06));
-    this->ptr_1866 = *(unsigned short *)v253;
+    *(unsigned int *)&this->ptr_1866 = *(unsigned short *)v253;
     this->u8_1868 = *(unsigned char *)(v253 + 2);
   int v254; // eax
     v254 = INIClass::GetCoord(
@@ -3315,34 +3315,34 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
     goto LABEL_8; /*0x67a57a*/
   (*(void (__thiscall **)(Rules *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x67a57e*/
   v3 = aP1[2]; /*0x67a581*/
-  *(unsigned int *)&this->m_5[3] = v3; /*0x67a586*/
+  *(unsigned int *)&this->u32_8 = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/
   {
-    *(unsigned int *)&this->m_1[3] = 0; /*0x67a5d6*/
-    IDA_BYTE1(this->m_C) = 0; /*0x67a5dd*/
+    *(unsigned int *)&this->u32_4 = 0; /*0x67a5d6*/
+    this->u8_D = 0; /*0x67a5dd*/
   LABEL_8:
     *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5e1*/
     this->u32_14 = aP1[5]; /*0x67a5ea*/
-    return this->__pad_0; /*0x67a5ed*/
+    return this; /*0x67a5ed*/
   }
   v4 = RA2_OPNEW(4 * v3); /*0x67a593*/
-  *(unsigned int *)&this->m_1[3] = v4; /*0x67a59b*/
+  *(unsigned int *)&this->u32_4 = v4; /*0x67a59b*/
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/
-  v5 = *(unsigned int *)&this->m_5[3]; /*0x67a5a2*/
+  v5 = *(unsigned int *)&this->u32_8; /*0x67a5a2*/
   v6 = 0; /*0x67a5a5*/
-  IDA_BYTE1(this->m_C) = 1; /*0x67a5a9*/
+  this->u8_D = 1; /*0x67a5a9*/
   if ( v5 <= 0 ) /*0x67a5ad*/
     goto LABEL_8; /*0x67a5ad*/
   do /*0x67a5c1*/
   {
-    *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a5b8*/
+    *(unsigned int *)(*(unsigned int *)&this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a5b8*/
     ++v6; /*0x67a5be*/
   }
-  while ( v6 < *(unsigned int *)&this->m_5[3] ); /*0x67a5c1*/
+  while ( v6 < *(unsigned int *)&this->u32_8 ); /*0x67a5c1*/
   *(unsigned int *)this->__tail_10 = aP1[4]; /*0x67a5c6*/
   this->u32_14 = aP1[5]; /*0x67a5cc*/
-  return this->__pad_0; /*0x67a5d1*/
+  return this; /*0x67a5d1*/
 }
 }
 // 0x5FB2E0

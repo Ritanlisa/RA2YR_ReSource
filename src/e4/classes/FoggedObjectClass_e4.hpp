@@ -10,7 +10,7 @@ struct FoggedObjectClass {
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
-    unsigned int ;  // 0xC
+    unsigned int qC;  // 0xC
     int Count;  // 0x10
     unsigned int q011;  // 0x11
     bool IsInitialized;  // 0x12
@@ -21,8 +21,8 @@ struct FoggedObjectClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    void* ;  // 0x24
-    unsigned int ;  // 0x28
+    void *q24;  // 0x24
+    unsigned int q28;  // 0x28
     bool q02B;  // 0x2B
     char Cell[4];  // 0x2C
     unsigned int LastSight2;

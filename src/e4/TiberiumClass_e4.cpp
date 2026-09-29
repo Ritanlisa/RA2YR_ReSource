@@ -411,9 +411,9 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       Timer::Start((Timer *)v2->SpreadTimer, 0); /*0x721fb6*/
       Timer::Start((Timer *)v2->GrowthTimer, 0); /*0x721fc2*/
       v2->ObjectClass = (void*)&TiberiumClass_vftable; /*0x721fc7*/
-      v2->? = (void*)&TiberiumClass_vftable; /*0x721fcd*/
-      v2->? = (void*)&TiberiumClass_vftable; /*0x721fd4*/
-      v2->? = (void*)&TiberiumClass_vftable; /*0x721fdb*/
+      *(void **)&v2->vtable2 = (void*)&TiberiumClass_vftable; /*0x721fcd*/
+      *(void **)&v2->vtable3 = (void*)&TiberiumClass_vftable; /*0x721fd4*/
+      *(void **)&v2->vtable4 = (void*)&TiberiumClass_vftable; /*0x721fdb*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2->NumImages); /*0x721fee*/
     if ( v2 != (TiberiumClass *)-196 ) /*0x721ff5*/

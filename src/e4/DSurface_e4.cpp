@@ -62,18 +62,18 @@ AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClas
   void * v8;
 
   v6 = &this->u32_70; /*0x4ba5b0*/
-  this->q004 = aP1; /*0x4ba5b5*/
-  this->q008 = aP2; /*0x4ba5b8*/
-  this->q00C = 0; /*0x4ba5bb*/
-  this->q010 = 0; /*0x4ba5be*/
-  this->q014 = 0; /*0x4ba5c1*/
+  *(unsigned int *)&this->q004 = aP1; /*0x4ba5b5*/
+  *(unsigned int *)&this->q008 = aP2; /*0x4ba5b8*/
+  *(unsigned int *)&this->q00C = 0; /*0x4ba5bb*/
+  *(unsigned int *)&this->q010 = 0; /*0x4ba5be*/
+  *(unsigned int *)&this->q014 = 0; /*0x4ba5c1*/
   *(&this->q0084) = 0; /*0x4ba5c4*/
   *(&this->q0085) = 0; /*0x4ba5c7*/
   this->u32_1C = 0; /*0x4ba5ca*/
-  this->q020 = 0; /*0x4ba5cd*/
+  *(unsigned int *)&this->q020 = 0; /*0x4ba5cd*/
   *(unsigned int *)this = &DSurface_Vtable; /*0x4ba5d0*/
   v7 = operator new(0x6Cu); /*0x4ba5db*/
-  this->q020 = v7; /*0x4ba5e2*/
+  *(void **)&this->q020 = v7; /*0x4ba5e2*/
   if ( v7 ) /*0x4ba5e5*/
   {
     memset(v7, 0, 0x6Cu); /*0x4ba5f2*/
@@ -95,7 +95,7 @@ AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClas
       memset(this->q020, 0, 0x6Cu); /*0x4ba665*/
       *this->q020 = 108; /*0x4ba66a*/
       (*(void (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)this->q074)(*v6, this->q020); /*0x4ba67a*/
-      v8 = this->q020; /*0x4ba67d*/
+      v8 = *(unsigned int *)&this->q020; /*0x4ba67d*/
       this->q010 = (unsigned int)(v8->ptr_24 + 7) >> 3; /*0x4ba689*/
       *(&this->q0085) = (v8->q068 & 0x4000) != 0; /*0x4ba695*/
     }
@@ -819,7 +819,7 @@ void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
 } // namespace gamemd
 // 0x4BB830
 namespace gamemd {
-void DSurface_FillRectWithFlags()
+void DSurface_FillRectWithFlags(DSurface *aP0)
 {
   int v5; // ecx
   int v6; // edi
@@ -866,10 +866,10 @@ void DSurface_FillRectWithFlags()
   v32 = v5; /*0x4bb839*/
   if ( (*(int (**)(void))(*(unsigned int *)v5 + 112))() < 2 ) /*0x4bb845*/
     return 0; /*0x4bb847*/
-  if ( (int)this->DSurface_field_0x8 <= 0 || (int)this->DSurface_field_0xC <= 0 ) /*0x4bb863*/
+  if ( (int)aP0->DSurface_field_0x8 <= 0 || (int)aP0->DSurface_field_0xC <= 0 ) /*0x4bb863*/
     return 0; /*0x4bb865*/
   v8 = (int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v6 + 120))(v6, v38); /*0x4bb87a*/
-  v9 = ClipRectIntersection(v42, v8, (int *)this, 0, 0); /*0x4bb888*/
+  v9 = ClipRectIntersection(v42, v8, (int *)aP0, 0, 0); /*0x4bb888*/
   v39[0] = *v9; /*0x4bb891*/
   v39[1] = v9[1]; /*0x4bb898*/
   v40 = v9[2]; /*0x4bb89f*/

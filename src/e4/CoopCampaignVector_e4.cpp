@@ -13,8 +13,8 @@
 namespace gamemd {
 unsigned int CoopCampaignVector::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x5c5750*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5c5765*/
+  if ( this->q00C ) /*0x5c5750*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x5c5765*/
   else
     return 0; /*0x5c5757*/
 }
@@ -27,16 +27,16 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this->m_1[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5c5950*/
+  if ( v3 && this->IsAllocated ) /*0x5c5950*/
   {
     RA2_OPDEL(v3); /*0x5c5958*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x5c5960*/
+    *(unsigned int *)&this->q004 = 0; /*0x5c5960*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x5c596b*/
-  this->m_8 = 0; /*0x5c5971*/
+  this->IsAllocated = 0; /*0x5c596b*/
+  *(unsigned short *)&this->q008 = 0; /*0x5c5971*/
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
     RA2_OPDEL(); /*0x5c597b*/
-  return this->__pad_0; /*0x5c5985*/
+  return this; /*0x5c5985*/
 }
 } // namespace gamemd
 // 0x5C5A80

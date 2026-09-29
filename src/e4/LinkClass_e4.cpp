@@ -32,14 +32,14 @@ int LinkClass::Destruct()
   *(unsigned int *)this->__pad_0 = (void*)&LinkClass_vftable; /*0x5565a5*/
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
   result = (*(int (__thiscall **)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x5565b7*/
-  m_Prev = this->m_Prev; /*0x5565ba*/
+  m_Prev = *(unsigned int *)&this->m_Prev; /*0x5565ba*/
   if ( m_Prev ) /*0x5565c1*/
     m_Prev->m_Next = this->m_Next; /*0x5565c6*/
-  m_Next = this->m_Next; /*0x5565c9*/
+  m_Next = *(unsigned int *)&this->m_Next; /*0x5565c9*/
   if ( m_Next ) /*0x5565ce*/
     m_Next->m_Prev = this->m_Prev; /*0x5565d3*/
-  this->m_Prev = 0; /*0x5565d8*/
-  this->m_Next = 0; /*0x5565db*/
+  *(unsigned int *)&this->m_Prev = 0; /*0x5565d8*/
+  *(unsigned int *)&this->m_Next = 0; /*0x5565db*/
   if ( Prev == this && (LinkClass *)result != this ) /*0x5565e2*/
     return (*(int (__thiscall **)(int))(*(unsigned int *)result + 24))(result); /*0x5565e8*/
   return result; /*0x5565eb*/
@@ -52,6 +52,6 @@ LinkClass * LinkClass::Destru_vt00(char a2)
   LinkClass::Destruct(); /*0x4e1ad3*/
   if ( (a2 & 1) != 0 ) /*0x4e1add*/
     RA2_OPDEL(); /*0x4e1ae0*/
-  return this->__pad_0; /*0x4e1aea*/
+  return this; /*0x4e1aea*/
 }
 } // namespace gamemd

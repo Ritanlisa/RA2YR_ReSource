@@ -65,10 +65,10 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   if ( !Control::DispatchClick((ControlClass *)this, a2) ) /*0x4880fb*/
     return 0; /*0x488204*/
   (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 12))(stru_887598.lineTrailer); /*0x488110*/
-  uniqueId = this->?; /*0x488116*/
-  abstractFlags = this->?; /*0x488119*/
-  vtable3 = this->?; /*0x48811c*/
-  nextArrayIndex = this->?; /*0x488120*/
+  uniqueId = this->M16; /*0x488116*/
+  abstractFlags = this->M20; /*0x488119*/
+  vtable3 = this->M20; /*0x48811c*/
+  nextArrayIndex = this->q018; /*0x488120*/
   v16 = uniqueId; /*0x488123*/
   v17 = abstractFlags; /*0x488127*/
   v18 = nextArrayIndex; /*0x488133*/
@@ -78,8 +78,8 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   else
     v6 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 26); /*0x48815c*/
   v7 = this->? + 1; /*0x488167*/
-  vtable3 = (char *)this->? + 1; /*0x488168*/
-  v8 = this->?; /*0x48816c*/
+  vtable3 = (char *)this->M20 + 1; /*0x488168*/
+  v8 = this->M20; /*0x48816c*/
   v16 = v7; /*0x48816f*/
   v9 = this->? - 1; /*0x488177*/
   v17 = v8 - 1; /*0x488178*/
@@ -95,8 +95,8 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
     else
       v10 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 8); /*0x4881b8*/
     v11 = this->? + 1; /*0x4881c3*/
-    vtable3 = (char *)this->? + 1; /*0x4881c4*/
-    v12 = this->?; /*0x4881c8*/
+    vtable3 = (char *)this->M20 + 1; /*0x4881c4*/
+    v12 = this->M20; /*0x4881c8*/
     v16 = v11; /*0x4881cb*/
     v13 = this->? - 1; /*0x4881d3*/
     v17 = v12 - 1; /*0x4881d4*/
@@ -1022,7 +1022,7 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
   this->CommBufferClass_field_0x24 = RA2_OPNEW(36 * a2); /*0x48b117*/
   this->CommBufferClass_field_0x34 = RA2_OPNEW(24 * a3); /*0x48b123*/
   *(unsigned int *)&this->__pad_28[8] = RA2_OPNEW(4 * a2); /*0x48b13a*/
-  this->q010 = RA2_OPNEW(4 * a3); /*0x48b143*/
+  *(unsigned int *)&this->q010 = RA2_OPNEW(4 * a3); /*0x48b143*/
   v6 = 0; /*0x48b14c*/
   if ( *(int *)&this->__pad_0[4] > 0 ) /*0x48b150*/
   {
@@ -1056,7 +1056,7 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
     while ( v8 < this->CommBufferClass_field_0x8 ); /*0x48b1db*/
   }
   Struct::ClearAllMemberFlags(); /*0x48b1df*/
-  return this->__pad_0; /*0x48b1e6*/
+  return this; /*0x48b1e6*/
 }
 }
 // 0x48BB60
@@ -1809,7 +1809,7 @@ CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, List
   ListClass::Construct(aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x4882ad*/
   this->u32_174 = 0; /*0x4882b2*/
   *(unsigned int *)this->__pad_0 = (void*)&CheckListClass_vftable; /*0x4882b9*/
-  return this->__pad_0; /*0x4882c1*/
+  return this; /*0x4882c1*/
 }
 } // namespace gamemd
 
@@ -1840,7 +1840,7 @@ ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, List
   this->u32_190 = 0; /*0x4887cb*/
   this->u32_18C = 1; /*0x4887d1*/
   *(unsigned int *)this->__pad_0 = (void*)&ColorListClass_vftable; /*0x4887d7*/
-  return this->__pad_0; /*0x4887df*/
+  return this; /*0x4887df*/
 }
 } // namespace gamemd
 

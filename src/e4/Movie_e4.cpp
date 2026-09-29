@@ -44,14 +44,14 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
   this->q06C = 1; /*0x49cb2f*/
   this->q038 = -1; /*0x49cb33*/
   v5 = dword_89F570 + 76 * aP1; /*0x49cb3a*/
-  v6 = this->q044; /*0x49cb3d*/
+  v6 = *(unsigned int *)&this->q044; /*0x49cb3d*/
   this->q048 = 0; /*0x49cb42*/
   this->u32_4C = 0; /*0x49cb45*/
   this->u32_50 = 0; /*0x49cb48*/
   this->u32_54 = 0; /*0x49cb4b*/
   this->u32_60 = 0; /*0x49cb4e*/
   this->u32_64 = 0; /*0x49cb51*/
-  this->ptr_58 = 0; /*0x49cb54*/
+  *(unsigned int *)&this->ptr_58 = 0; /*0x49cb54*/
   this->u32_5C = 0; /*0x49cb57*/
   this->u32_68 = 0; /*0x49cb5a*/
   if ( v6 != aP1 ) /*0x49cb5d*/
@@ -300,10 +300,10 @@ AbstractClass * * Movie::Update()
         IsSoundEnabled = (void *)(this->Movie_field_0xC);
         if ( (int)IsSoundEnabled > 0 ) /*0x7209ff*/
         {
-          v3 = *(AudioSample **)&this->__pad_28[4]; /*0x720a01*/
+          v3 = *(AudioSample **)&this->q02C; /*0x720a01*/
           if ( !v3 ) /*0x720a06*/
             goto LABEL_10; /*0x720a06*/
-          if ( this->__pad_10[1] && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
+          if ( *(unsigned int *)&this->q02C && !AudioSample::IsBuffering(v3) ) /*0x720a0f*/
             Audio::Release(*(Audio **)&this->__pad_28[4]); /*0x720a1b*/
           IDA_LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(Audio **)&this->__pad_28[4]) != 0; /*0x720a2a*/
           if ( !(unsigned char)IsSoundEnabled ) /*0x720a2f*/

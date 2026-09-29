@@ -262,14 +262,14 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x52ae54*/
     RA2_OPDEL(); /*0x52ae57*/
-  return this->__pad_0; /*0x52ae61*/
+  return this; /*0x52ae61*/
 }
 } // namespace gamemd
 // 0x52AE70
 namespace gamemd {
 int * Delegate::ClearVectorAndStraw(char a2)
 {
-  Vector::Clear((int)&this->__pad_0[12]); /*0x52ae76*/
+  Vector::Clear((int)&this->m_allocated); /*0x52ae76*/
   Straw::Dtor(); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
     RA2_OPDEL(); /*0x52ae8a*/

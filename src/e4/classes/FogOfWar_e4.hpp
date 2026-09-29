@@ -29,7 +29,7 @@ struct FogOfWar {
     unsigned int q1124;  // 0x1124
     char q1160[4];  // 0x1160
     unsigned int u32_121C;  // 0x121C
-    unsigned int ;  // 0x1220
+    unsigned int q1220;  // 0x1220
     MapClass * ptr_1258;  // 0x1258
     unsigned int u32_125C;  // 0x125C
     unsigned int u32_1260;  // 0x1260

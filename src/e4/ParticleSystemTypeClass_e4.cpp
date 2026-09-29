@@ -86,7 +86,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                      (uint8_t *)(&this->vtable46),
                      (uint8_t *)g_INI_Key_Spawns,
                      v4);
-  v37 = this->q29C; /*0x64433f*/
+  v37 = *(unsigned int *)&this->q29C; /*0x64433f*/
   this->q298 = Bool_Overwrite; /*0x644346*/
   this->q29C = INIClass::ReadInt_Overwrite( /*0x644351*/
                               (int)aP1,
@@ -162,7 +162,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   v16 = (gamemd::AnimClass *)(*(double *)(&this->q1200));
   *(double *)(&this->q11C2) = v15; /*0x6444c1*/
   v17 = INIClass::ReadDouble_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aSpiraldeltaper, v16); /*0x6444d1*/
-  v18 = this->q2DC; /*0x6444d6*/
+  v18 = *(unsigned int *)&this->q2DC; /*0x6444d6*/
   v19 = this->u32_2D8; /*0x6444dc*/
   *(double *)(&this->q1200) = v17; /*0x6444e2*/
   v20 = INIClass::ReadDouble_Overwrite( /*0x6444f2*/
@@ -170,7 +170,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
           (uint8_t *)(&this->vtable46),
           (uint8_t *)aSpiralradius,
           COERCE_DOUBLE(IDA___PAIR64__(v18, v19)));
-  v21 = this->q2E4; /*0x6444f7*/
+  v21 = *(unsigned int *)&this->q2E4; /*0x6444f7*/
   v22 = this->q2E0; /*0x6444fd*/
   *(double *)(&this->q1208) = v20; /*0x644503*/
   v23 = INIClass::ReadDouble_Overwrite( /*0x644513*/
@@ -202,12 +202,12 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
             (uint8_t *)(&this->vtable46),
             (uint8_t *)aLasercolor,
             (uint8_t *)(&this->q1346));
-  v31 = this->q300; /*0x644596*/
+  v31 = *(unsigned int *)&this->q300; /*0x644596*/
   this->q308 = *(unsigned short *)Coord; /*0x64459c*/
   this->q30A = *(unsigned char *)(Coord + 2); /*0x6445af*/
   v32 = INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aSparkspawnfram, v31); /*0x6445b5*/
-  v38 = this->q304; /*0x6445c2*/
-  this->q300 = v32; /*0x6445c9*/
+  v38 = *(unsigned int *)&this->q304; /*0x6445c2*/
+  *(void **)&this->q300 = v32; /*0x6445c9*/
   this->q304 = INIClass::ReadInt_Overwrite( /*0x6445d4*/
                               (int)aP1,
                               (uint8_t *)(&this->vtable46),
@@ -236,7 +236,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 
   AbstractTypeClass::ProcessPower(a2); /*0x644709*/
   Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x294); /*0x644717*/
-  IDA_LOBYTE(v3) = this->__pad_298[0]; /*0x64471c*/
+  IDA_LOBYTE(v3) = this->__pad_298; /*0x64471c*/
   Power::FlagProcess((Power *)a2, v3); /*0x644725*/
   Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x29C); /*0x644733*/
   Checksummer::Add_float((Checksummer *)a2, (int)this->ParticleSystemTypeClass_field_0x2A0); /*0x644741*/

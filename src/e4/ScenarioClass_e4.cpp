@@ -92,7 +92,7 @@ result = (void *)(dword_A8B230);
 }
 // 0x5CC330
 namespace gamemd {
-CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, void * a3, void * a4)
+CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, void * a1, void * a2, void * a3, void * a4)
 {
   int v4; // ecx
   int v5; // esi
@@ -168,9 +168,9 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, v
     *v11 += *(int16_t *)(*(unsigned int *)(v5 + 28) + 2) / -2; /*0x5cc3e7*/
     v11[1] += *(int16_t *)(*(unsigned int *)(v5 + 28) + 4) / -2; /*0x5cc3fc*/
   }
-  (*(void (__thiscall **)(MSOverlayAnim *, unsigned int *, DSurface *, unsigned int *, unsigned int, int, int))(*(unsigned int *)this->__pad_0 /*0x5cc413*/
+  (*(void (__thiscall **)(MSOverlayAnim *, unsigned int *, DSurface *, unsigned int *, unsigned int, int, int))(*(unsigned int *)aP0->__pad_0 /*0x5cc413*/
                                                                                             + 8))(
-    this,
+    aP0,
     v11,
     DSurface_Alternate,
     v11,
@@ -181,13 +181,13 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, v
   if ( v14 >= 3 ) /*0x5cc41e*/
     v14 = 3; /*0x5cc420*/
   v15 = *(unsigned int *)(v5 + 56) | dword_830078[v14]; /*0x5cc443*/
-  v16 = *(unsigned int *)this->__pad_0; /*0x5cc445*/
+  v16 = *(unsigned int *)aP0->__pad_0; /*0x5cc445*/
   v30 = *(unsigned int *)(v5 + 4); /*0x5cc447*/
   v27 = v15; /*0x5cc452*/
   v31 = *(unsigned int *)(v5 + 8); /*0x5cc456*/
-  v17 = (int *)(*(int (__thiscall **)(MSOverlayAnim *))(v16 + 120))(this); /*0x5cc45a*/
+  v17 = (int *)(*(int (__thiscall **)(MSOverlayAnim *))(v16 + 120))(aP0); /*0x5cc45a*/
   DrawToSurfaceSHP( /*0x5cc470*/
-    (int)this,
+    (int)aP0,
     *(unsigned int *)(v5 + 32),
     *(unsigned int *)(v5 + 28),
     *(unsigned int *)(v5 + 40),
@@ -214,7 +214,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, v
       if ( i != a3 ) /*0x5cc49e*/
       {
         v21 = *(unsigned int *)(*(unsigned int *)(v19 + 4) + 4 * i); /*0x5cc4a5*/
-        (*(void (__thiscall **)(int, MSOverlayAnim *, unsigned int *))(*(unsigned int *)v21 + 20))(v21, this, v11); /*0x5cc4aa*/
+        (*(void (__thiscall **)(int, MSOverlayAnim *, unsigned int *))(*(unsigned int *)v21 + 20))(v21, aP0, v11); /*0x5cc4aa*/
       }
       v19 = *(unsigned int *)(v5 + 68); /*0x5cc4ad*/
     }
@@ -228,7 +228,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, v
     IDA_BYTE1(v23) |= 4u; /*0x5cc4e3*/
     v28 = v23; /*0x5cc4e7*/
     v30 = *(unsigned int *)(v5 + 8); /*0x5cc4e8*/
-    v24 = (int *)(*(int (__thiscall **)(MSOverlayAnim *, int *))(*(unsigned int *)this->__pad_0 + 120))(this, &v32); /*0x5cc4f5*/
+    v24 = (int *)(*(int (__thiscall **)(MSOverlayAnim *, int *))(*(unsigned int *)aP0->__pad_0 + 120))(aP0, &v32); /*0x5cc4f5*/
     DrawToSurfaceSHP( /*0x5cc50f*/
       (int)DSurface_Alternate,
       *(unsigned int *)(v5 + 32),
@@ -334,7 +334,7 @@ TimerStruct * * ScenarioClass::Constructor()
   this->ScenarioClass_field_timer_34C0[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x683381*/
   this->ScenarioClass_field_timer_34C0[2] = 0; /*0x683387*/
   TypeList::TechnoTypeConstructor((TypeList *)this->allowableUnits, 0, 0); /*0x68338d*/
-  this->dropshipUnitCounts = 0; /*0x683397*/
+  *(unsigned int *)&this->dropshipUnitCounts = 0; /*0x683397*/
   this->dropshipCountsCount = 10; /*0x68339a*/
   this->allowableUnits[0] = (int)&TypeList_TechnoTypeClass___vftable; /*0x68339d*/
   VectorClass::Construct((VectorClass *)&this->ambientCurrent, 0, 0); /*0x6833ad*/
@@ -346,7 +346,7 @@ TimerStruct * * ScenarioClass::Constructor()
   this->ionGround = 0; /*0x6833d2*/
   this->ionAmbient = (int)&TypeList_int_vftable; /*0x6833d5*/
   ScenarioClass::InitTimer(); /*0x6833db*/
-  this->__pad_3566[50] = 0; /*0x6833e2*/
+  *(unsigned int *)&this->q3598 = 0; /*0x6833e2*/
   this->isRandom = 0; /*0x6833e8*/
   ScenarioClass::ResetIntroFlags(); /*0x6833ee*/
   this->techLevel = 1; /*0x6833f3*/
@@ -1550,7 +1550,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   if ( &v116 != (void ***)(&this->u32_15204) )
   {
     TypeList_TechnoType::ddtor((int)&v116);
-    v115 = this->allowableUnitMaximums;
+    v115 = *(unsigned int *)&this->allowableUnitMaximums;
     if ( v115 )
     {
       var58 = (unsigned int *)operator new(4 * (unsigned int)v115);
@@ -1584,7 +1584,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
   {
     this->allowableUnits->vt_entry_68();
     v14 = v122[2];
-    this->allowableUnitMaximums = v14;
+    *(void **)&this->allowableUnitMaximums = v14;
     if ( v14 )
     {
       int v15 = operator new(4 * (unsigned int)v14);
@@ -1612,7 +1612,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
     }
     TechnoTypeList = v122;
   }
-  this->dropshipUnitCounts = TechnoTypeList[4];
+  *(unsigned int *)&this->dropshipUnitCounts = TechnoTypeList[4];
   this->dropshipCountsCount = TechnoTypeList[5];
   v18 = TechnoTypeList[6];
   v17 = (CCINIClass *)Block;
@@ -1992,7 +1992,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
           (INIClass *)IDA_LODWORD(v90));
   int v92 = Math::RoundToInt(v91);
   double v93 = (double)this->q357C;
-  this->q3578 = v92;
+  *(unsigned int *)&this->q3578 = v92;
   *(double *)aP3 = v93 * 0.01;
   double v94; // st7
   v94 = INIClass::ReadDouble_Overwrite(
@@ -2002,7 +2002,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
           aP3[0]);
   int v95 = Math::RoundToInt(v94 * 100.0 + 0.01);
   double v96 = (double)this->q3580;
-  this->q357C = v95;
+  *(unsigned int *)&this->q357C = v95;
   *(double *)aP3 = v96 * 0.01;
   double v97; // st7
   v97 = INIClass::ReadDouble_Overwrite(
@@ -2012,7 +2012,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
           aP3[0]);
   int v98 = Math::RoundToInt(v97 * 100.0 + 0.01);
   double v99 = (double)this->q3584;
-  this->q3580 = v98;
+  *(unsigned int *)&this->q3580 = v98;
   *(double *)aP3 = v99 * 0.01;
   double v100; // st7
   v100 = INIClass::ReadDouble_Overwrite(
@@ -2022,7 +2022,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
            aP3[0]);
   int v101 = Math::RoundToInt(v100 * 100.0 + 0.01);
   double v102 = (double)this->q3588;
-  this->q3584 = v101;
+  *(unsigned int *)&this->q3584 = v101;
   *(double *)aP3 = v102 * 0.01;
   double v103; // st7
   v103 = INIClass::ReadDouble_Overwrite(
@@ -2032,7 +2032,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
            aP3[0]);
   int v104 = Math::RoundToInt(v103 * 100.0 + 0.01);
   double v105 = (double)this->q358C;
-  this->q3588 = v104;
+  *(unsigned int *)&this->q3588 = v104;
   *(double *)aP3 = v105 * 0.001;
   double v106; // st7
   v106 = INIClass::ReadDouble_Overwrite(
@@ -2042,7 +2042,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
            aP3[0]);
   int v107 = Math::RoundToInt(v106 * 1000.0 + 0.01);
   double v108 = (double)this->q3590;
-  this->q358C = v107;
+  *(unsigned int *)&this->q358C = v107;
   *(double *)aP3 = v108 * 0.001;
   double v109; // st7
   v109 = INIClass::ReadDouble_Overwrite(
@@ -2052,7 +2052,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
            aP3[0]);
   int v110 = Math::RoundToInt(v109 * 1000.0 + 0.01);
   double v111 = (double)this->q3594;
-  this->q3590 = v110;
+  *(unsigned int *)&this->q3590 = v110;
   *(double *)aP3 = v111 * 0.001;
   double v112; // st7
   v112 = INIClass::ReadDouble_Overwrite(
@@ -2062,7 +2062,7 @@ int ScenarioClass::ReadMapINI(CCINIClass * aP1)
            aP3[0]);
   int v113 = Math::RoundToInt(v112 * 1000.0 + 0.01);
   aP3[1] = (INIClass *)55;
-  this->q3594 = v113;
+  *(unsigned int *)&this->q3594 = v113;
   Multiplayer::ShowProgress(&g_GameMode_Current, (int)aP3[1]->__pad_0);
   Event::Dispatch();
   if ( g_GameMode_Current )
@@ -2296,7 +2296,7 @@ MSAnim * ScenarioClass::checkWinningConditions(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&MSAnim_vftable; /*0x5ceb69*/
   if ( (a2 & 1) != 0 ) /*0x5ceb6f*/
     RA2_OPDEL(); /*0x5ceb72*/
-  return this->__pad_0; /*0x5ceb7c*/
+  return this; /*0x5ceb7c*/
 }
 } // namespace gamemd
 
@@ -2378,15 +2378,15 @@ void ScenarioClass::sub_5D80B0()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x5d80b6*/
-  this->q010 = 0; /*0x5d80b9*/
+  v2 = *(unsigned int *)&this->Items; /*0x5d80b6*/
+  *(unsigned int *)&this->q010 = 0; /*0x5d80b9*/
   if ( v2 && this->IsAllocated ) /*0x5d80c0*/
   {
     RA2_OPDEL(v2); /*0x5d80c6*/
-    this->Items = 0; /*0x5d80ce*/
+    *(unsigned int *)&this->Items = 0; /*0x5d80ce*/
   }
-  this->IsAllocated = 0; /*0x5d80d1*/
-  this->Capacity = 0; /*0x5d80d4*/
+  *(unsigned int *)&this->IsAllocated = 0; /*0x5d80d1*/
+  *(unsigned int *)&this->Capacity = 0; /*0x5d80d4*/
 }
 } // namespace gamemd
 

@@ -1014,7 +1014,7 @@ void Audio_Process()
           *(unsigned int *)v32[41].__pad_0 = v39; /*0x40467a*/
           if ( !v39 || (result = Audio::UpdatePlaybackPosition((Audio *)v32)) == 0 ) /*0x40468d*/
           {
-            if ( (v32[3].__pad_0[0] & 1) == 0 ) /*0x404693*/
+            if ( (v32[3].nextArrayIndex & 1) == 0 ) /*0x404693*/
             {
               Voice::DetachChannel((Voice *)v32); /*0x404697*/
               Audio::ReleaseChannelRefs((Audio *)v32); /*0x40469e*/
@@ -1208,7 +1208,7 @@ unsigned int * E4Recv_405E80::sub_405E80()
   result = &this->AbstractClass; /*0x405e81*/
   if ( g_AudioConfigState ) /*0x405e94*/
   {
-    if ( this->? == &dword_87E294 ) /*0x405ea1*/
+    if ( *(unsigned short *)&this->M12 == &dword_87E294 ) /*0x405ea1*/
     {
       vtable0 = (char *)this->AbstractClass; /*0x405ea7*/
       if ( this->AbstractClass ) /*0x405ea7*/
@@ -1845,8 +1845,8 @@ int E4Recv_408970::sub_408970()
 
   v1 = this; /*0x408973*/
   v2 = 0; /*0x408977*/
-  vtable1 = (void **)this->?; /*0x408979*/
-  p_vtable1 = &this->?; /*0x40897c*/
+  vtable1 = (void **)this->M4; /*0x408979*/
+  p_vtable1 = &this->M4; /*0x40897c*/
   if ( vtable1 != &this->? ) /*0x408985*/
   {
     do /*0x4089ce*/
@@ -1915,7 +1915,7 @@ int E4Recv_408970::sub_408970()
   }
   while ( v12 ); /*0x408a51*/
   result = *v11; /*0x408a53*/
-  *v11 += v1->?; /*0x408a5a*/
+  *v11 += v1->abstractFlags; /*0x408a5a*/
   return result; /*0x408a5c*/
 }
 }
@@ -2119,8 +2119,8 @@ int E4Recv_409100::sub_409100()
   fallRate = this->fallRate; /*0x409101*/
   if ( !fallRate ) /*0x409106*/
     return 0; /*0x409108*/
-  v3 = this->? + 1; /*0x40910f*/
-  if ( this->? == 1 ) /*0x409113*/
+  v3 = this->M20 + 1; /*0x40910f*/
+  if ( this->M20 == 1 ) /*0x409113*/
     v3 = 0; /*0x409115*/
   v4 = (char *)this->AbstractClass + 64 * v3 + 24; /*0x40911e*/
   this->attachedBomb = (BombClass *)((char *)this->attachedBomb + fallRate); /*0x409127*/
@@ -2129,7 +2129,7 @@ int E4Recv_409100::sub_409100()
   v6 = fallRate; /*0x409135*/
   while ( 1 ) /*0x409137*/
   {
-    abstractFlags = this->?; /*0x409137*/
+    abstractFlags = this->M20; /*0x409137*/
     v8 = owningHouseIndex[2 * abstractFlags + 9]; /*0x40913a*/
     v9 = &owningHouseIndex[2 * abstractFlags + 8]; /*0x40913e*/
     if ( v8 > fallRate ) /*0x409144*/
@@ -2154,13 +2154,13 @@ int E4Recv_409100::sub_409100()
   LABEL_13:
   this->owningHouseIndex = (int)owningHouseIndex; /*0x40917b*/
   this->fallRate = 0; /*0x409180*/
-  this->? = owningHouseIndex; /*0x409187*/
+  *(void **)&this->M12 = owningHouseIndex; /*0x409187*/
   if ( owningHouseIndex ) /*0x40918a*/
-    this->? = (void *)owningHouseIndex[2 * this->? + 8]; /*0x409193*/
+    *(void **)&this->M4 = (void *)owningHouseIndex[2 * this->M4 + 8]; /*0x409193*/
   else
-    this->? = 0; /*0x409198*/
-  this->? = 0; /*0x40919f*/
-  this->? &= ~1u; /*0x4091ac*/
+    *(unsigned short *)&this->M4 = 0; /*0x409198*/
+  *(unsigned short *)&this->M8 = 0; /*0x40919f*/
+  this->M16 &= ~1u; /*0x4091ac*/
   ReadAudioStream(0); /*0x4091b1*/
   return v6; /*0x40910a*/
 }
@@ -3299,8 +3299,8 @@ void AudioStream_BindChannel(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 int E4Recv_402850::sub_402850()
 {
-  this->? = 0; /*0x402852*/
-  this->? = 0; /*0x402855*/
+  this->M8 = 0; /*0x402852*/
+  this->M4 = 0; /*0x402855*/
   return 0; /*0x402858*/
 }
 } // namespace gamemd
@@ -3335,8 +3335,8 @@ void E4Recv_402EF0::sub_402EF0()
     AudioStream::Destructor(i); /*0x402f13*/
   }
   (*(void (__thiscall **)(ObjectClass *))(*(unsigned int *)(this->? + 12) + 32))(this); /*0x402f26*/
-  *(unsigned int *)(this->? + 4 * this->? + 28) = 0; /*0x402f2f*/
-  nextArrayIndex = this->?; /*0x402f37*/
+  *(unsigned int *)(*(unsigned short *)&this->M28 + 4 * *(unsigned short *)&this->M28 + 28) = 0; /*0x402f2f*/
+  nextArrayIndex = this->M24; /*0x402f37*/
   v5 = nextArrayIndex->uniqueId - 1; /*0x402f3d*/
   nextArrayIndex->uniqueId = v5; /*0x402f40*/
   if ( v5 < 0 ) /*0x402f43*/
@@ -3713,9 +3713,9 @@ int E4Recv_4052E0::sub_4052E0()
 {
   int result; // eax
 
-  result = this->?; /*0x4052e0*/
+  result = this->M24; /*0x4052e0*/
   IDA_LOBYTE(result) = result | 8; /*0x4052e3*/
-  this->? = result; /*0x4052e5*/
+  this->M24 = result; /*0x4052e5*/
   return result; /*0x4052e8*/
 }
 } // namespace gamemd
@@ -3759,7 +3759,7 @@ int E4Recv_405430::sub_405430()
     IDA_LODWORD(v2) = this->u32_158; /*0x405458*/
     if ( !(unsigned int)v2 ) /*0x405460*/
     {
-      IDA_LODWORD(v2) = this->?; /*0x405462*/
+      IDA_LODWORD(v2) = this->M28; /*0x405462*/
       if ( (unsigned int)v2 == 2 ) /*0x405468*/
       {
         IDA_LODWORD(v4) = Audio::Callback(); /*0x40546b*/
@@ -4914,13 +4914,13 @@ int E4Recv_4085B0::sub_4085B0()
   void *vtable1; // edx
   int result; // eax
 
-  vtable1 = this->?; /*0x4085b3*/
-  result = (int)this->? * (int)this->? * this->?; /*0x4085ba*/
-  this->? = result; /*0x4085c1*/
+  vtable1 = this->M4; /*0x4085b3*/
+  result = (int)this->M8 * (int)this->M8 * this->M8; /*0x4085ba*/
+  this->M20 = result; /*0x4085c1*/
   if ( vtable1 == (void *)1 || vtable1 == (void *)2 ) /*0x4085c9*/
   {
     result >>= 2; /*0x4085cb*/
-    this->? = result; /*0x4085ce*/
+    this->M20 = result; /*0x4085ce*/
   }
   return result; /*0x4085d1*/
 }
@@ -7008,22 +7008,22 @@ GenericNode * GenericNode::sub_40E390(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&GenericNode_vftable; /*0x40e397*/
   if ( this ) /*0x40e39d*/
   {
-    Previous = this->Previous; /*0x40e39f*/
+    Previous = *(unsigned int *)&this->Previous; /*0x40e39f*/
     if ( Previous ) /*0x40e3a4*/
     {
       v4 = *(unsigned int *)this->Blowfish; /*0x40e3a6*/
       if ( v4 ) /*0x40e3ab*/
       {
-        v4->Previous = Previous; /*0x40e3ad*/
+        *(unsigned int *)&v4->Previous = Previous; /*0x40e3ad*/
         *(unsigned int *)(this->Previous + 8) = *(unsigned int *)this->Blowfish; /*0x40e3b6*/
         *(unsigned int *)this->Blowfish = 0; /*0x40e3b9*/
-        this->Previous = 0; /*0x40e3bc*/
+        *(unsigned int *)&this->Previous = 0; /*0x40e3bc*/
       }
     }
   }
   if ( (a2 & 1) != 0 ) /*0x40e3c4*/
     RA2_OPDEL(); /*0x40e3c7*/
-  return this->__pad_0; /*0x40e3d1*/
+  return this; /*0x40e3d1*/
 }
 // 0x40E4A0
 namespace gamemd {

@@ -31,7 +31,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
   LABEL_8:
     this->DynamicVector_field_0x10 = (void *)aP1[4]; /*0x5ac4a1*/
     *(unsigned int *)this->__pad_14 = aP1[5]; /*0x5ac4aa*/
-    return this->__pad_0; /*0x5ac4ad*/
+    return this; /*0x5ac4ad*/
   }
   v4 = (void *)((int)(RA2_OPNEW(4 * v3)));
   *(unsigned int *)&this->DynamicVector_field_0x1[3] = v4; /*0x5ac45b*/
@@ -50,7 +50,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
   while ( v6 < this->DynamicVector_field_0x8 ); /*0x5ac481*/
   this->DynamicVector_field_0x10 = (void *)aP1[4]; /*0x5ac486*/
   *(unsigned int *)this->__pad_14 = aP1[5]; /*0x5ac48c*/
-  return this->__pad_0; /*0x5ac491*/
+  return this; /*0x5ac491*/
 }
 }
 // 0x413A70
@@ -64,7 +64,7 @@ char DynamicVector::AddItem(VectorClass_flat * aP1)
   DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x413a73*/
   result = (int)this->DynamicVector_field_0x10; /*0x413a76*/
   if ( result < DynamicVector_field_0x8 /*0x413a9d*/
-    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    || (this->q010 || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->__pad_14, result > 0)
     && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
@@ -115,7 +115,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   *(unsigned int *)this->__pad_0 = (void*)&DynamicVectorClass_Cell_vftable; /*0x42f6ca*/
   *(unsigned int *)this->__pad_14 = 10; /*0x42f6d0*/
   this->DynamicVector_field_0x10 = 0; /*0x42f6d7*/
-  return this->__pad_0; /*0x42f6e0*/
+  return this; /*0x42f6e0*/
 }
 } // namespace gamemd
 
@@ -164,7 +164,7 @@ char DynamicVector::Add_Alt(VectorClass_flat * aP1)
   DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x477ec3*/
   result = (int)this->DynamicVector_field_0x10; /*0x477ec6*/
   if ( result < DynamicVector_field_0x8 /*0x477eed*/
-    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    || (this->q010 || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->__pad_14, result > 0)
     && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
@@ -224,7 +224,7 @@ char DynamicVector::Add_Alt4(VectorClass_flat * aP1)
   DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x5253b3*/
   result = (int)this->DynamicVector_field_0x10; /*0x5253b6*/
   if ( result < DynamicVector_field_0x8 /*0x5253dd*/
-    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    || (this->q010 || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->__pad_14, result > 0)
     && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
@@ -289,7 +289,7 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
   DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x5ad7d3*/
   result = (int)this->DynamicVector_field_0x10; /*0x5ad7d6*/
   if ( result < DynamicVector_field_0x8 /*0x5ad7fd*/
-    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    || (this->q010 || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->__pad_14, result > 0)
     && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
@@ -416,7 +416,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   *(unsigned int *)this->__pad_0 = (void*)&DynamicVectorClass_VoxelAnimTypeClass_const___vftable; /*0x67acb3*/
   *(unsigned int *)this->__pad_14 = 10; /*0x67acb9*/
   this->DynamicVector_field_0x10 = 0; /*0x67acc0*/
-  return this->__pad_0; /*0x67acc9*/
+  return this; /*0x67acc9*/
 }
 } // namespace gamemd
 
@@ -431,7 +431,7 @@ char DynamicVector::Add2(VectorClass_flat * aP1)
   DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x67ad83*/
   result = (int)this->DynamicVector_field_0x10; /*0x67ad86*/
   if ( result < DynamicVector_field_0x8 /*0x67adad*/
-    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    || (this->q010 || !DynamicVector_field_0x8)
     && (result = *(unsigned int *)this->__pad_14, result > 0)
     && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
                    this,
@@ -565,7 +565,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
   *(unsigned int *)this->__pad_0 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x734313*/
   *(unsigned int *)this->__pad_14 = 10; /*0x734319*/
   this->DynamicVector_field_0x10 = 0; /*0x734320*/
-  return this->__pad_0; /*0x734329*/
+  return this; /*0x734329*/
 }
 } // namespace gamemd
 

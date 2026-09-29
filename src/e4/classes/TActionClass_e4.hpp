@@ -36,7 +36,7 @@ struct TActionClass {
     unsigned int q03D;  // 0x3D
     void* TActionClass_field_40;  // 0x40
     bool q042;  // 0x42
-    unsigned int ;  // 0x44
+    unsigned int q44;  // 0x44
     unsigned char q045;  // 0x45
     void* q046;  // 0x46
     void* TActionClass_field_48;  // 0x48

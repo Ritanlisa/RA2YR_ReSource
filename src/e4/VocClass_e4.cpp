@@ -34,7 +34,7 @@ int VocClass::Release()
       *((unsigned int *)this->pVoiceChannel + 36) = 0; /*0x40535f*/
       *((unsigned int *)this->pVoiceChannel + 38) = 0; /*0x40536b*/
       *((unsigned int *)this->pVoiceChannel + 39) = 0; /*0x405377*/
-      this->pVoiceChannel = 0; /*0x40537d*/
+      *(unsigned int *)&this->pVoiceChannel = 0; /*0x40537d*/
     }
     result = this->ActiveBufferCount; /*0x405383*/
     v5 = 0; /*0x405389*/

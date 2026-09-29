@@ -151,7 +151,7 @@ int BinkMovieHandle::Check(int a2)
   int result; // eax
 
   result = BinkGoto(this->tempPath, a2, 1); /*0x432bde*/
-  this->memoryBuffer = 0; /*0x432be4*/
+  *(unsigned int *)&this->memoryBuffer = 0; /*0x432be4*/
   return result; /*0x432beb*/
 }
 } // namespace gamemd

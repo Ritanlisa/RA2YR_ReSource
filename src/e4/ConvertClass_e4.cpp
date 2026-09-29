@@ -158,7 +158,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
       *((unsigned char *)this->ConvertClass_field_0x178 + v8++) = Palette::FindClosestColor((char *)aP1, (int)&aP3); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
-    v14 = (CampaignClass *)RA2_OPNEW(*(unsigned int *)&this->__pad_6[358] << 8); /*0x48e9eb*/
+    v14 = (CampaignClass *)RA2_OPNEW(*(unsigned int *)&this->q16C << 8); /*0x48e9eb*/
     this->ConvertClass_field_0x170 = v14; /*0x48e9f0*/
     v15 = v14; /*0x48e9f6*/
     v16 = *(unsigned int *)&this->__pad_6[358]; /*0x48e9f8*/
@@ -202,8 +202,8 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   }
   else
   {
-    v24 = (CampaignClass *)RA2_OPNEW(*(unsigned int *)&this->__pad_6[358] << 9); /*0x48eb1c*/
-    v25 = *(unsigned int *)&this->__pad_6[358]; /*0x48eb21*/
+    v24 = (CampaignClass *)RA2_OPNEW(*(unsigned int *)&this->q16C << 9); /*0x48eb1c*/
+    v25 = *(unsigned int *)&this->q16C; /*0x48eb21*/
     this->ConvertClass_field_0x170 = v24; /*0x48eb2a*/
     *(unsigned int *)this->__pad_174 = (char *)v24 + 512 * ((v25 - 1) >> 1); /*0x48eb3a*/
     if ( !aP5 ) /*0x48eb46*/
@@ -224,7 +224,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
     v26 = dword_89ED08++; /*0x48ebc4*/
     *((unsigned int *)dword_89ECFC + v26) = this; /*0x48ebd3*/
   }
-  return this->__pad_0; /*0x48ebd8*/
+  return this; /*0x48ebd8*/
 }
 } // namespace gamemd
 // 0x491430

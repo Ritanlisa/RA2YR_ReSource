@@ -970,7 +970,7 @@ void SeekAudioStream(int a1, DSurface * aP1, DSurface * aP2, int a4, unsigned in
 }
 // 0x7C3D60
 namespace gamemd {
-unsigned int int sub_7C3D60(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
+unsigned int sub_7C3D60(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
 {
   int *v6; // edx
   int v7; // ebp
@@ -1078,7 +1078,7 @@ unsigned int int sub_7C3D60(int a1, unsigned short * a2, int * a3, unsigned int 
 }
 // 0x7C4260
 namespace gamemd {
-unsigned int int sub_7C4260(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
+unsigned int sub_7C4260(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
 {
   int *v6; // edx
   int v7; // ebp
@@ -1186,7 +1186,7 @@ unsigned int int sub_7C4260(int a1, unsigned short * a2, int * a3, unsigned int 
 }
 // 0x7C43A0
 namespace gamemd {
-unsigned int int DecodeSHPFrame16bpp(int a1, unsigned char * a2, int * a3, unsigned int a4, int a5, int a6)
+unsigned int DecodeSHPFrame16bpp(int a1, unsigned char * a2, int * a3, unsigned int a4, int a5, int a6)
 {
   int v6; // edi
   int v7; // ecx
@@ -4107,7 +4107,7 @@ void * bsearch(const void * Key, const void * Base, ObjectClass * aP2, size_t Si
 }
 // 0x7C8F5E
 namespace gamemd {
-int int(__cdecl *_cfltcvt_init_13())( int, void * Src, int a3, size_t Size, int a5)
+int(__cdecl *_cfltcvt_init_13())( int, void * Src, int a3, size_t Size, int a5)
 {
   off_87C4D4[0] = (void (__noreturn *)())_cropzeros; /*0x7c8f63*/
   off_87C4D0[0] = (void (__noreturn *)())_cfltcvt; /*0x7c8f6d*/
@@ -6222,7 +6222,7 @@ void _initterm(_PVFV * First, _PVFV * Last)
 }
 // 0x7CBF00
 namespace gamemd {
-unsigned int int _clearfp()
+unsigned int _clearfp()
 {
   __asm { fnclex } /*0x7cbf07*/
   return _abstract_sw(); /*0x7cbf12*/
@@ -9153,7 +9153,7 @@ unsigned int * __sbh_alloc_block(IUnknown * aP0)
     if ( v4 ) /*0x7cfd16*/
     {
       i = (char *)thisa; /*0x7cfd18*/
-      thisa->? = (void *)((int)thisa->? & v27); /*0x7cfd1e*/
+      thisa->vtable2 = (void *)((int)thisa->vtable2 & v27); /*0x7cfd1e*/
       goto LABEL_47; /*0x7cfd21*/
     }
   }
@@ -12774,7 +12774,7 @@ wchar_t * wcscpy(wchar_t * Destination, const wchar_t * Source)
 
 // 0x7CA530
 namespace gamemd {
-int sscanf(const char *const Buffer, const char *const Format, ... a3)
+int sscanf(const char *const Buffer, const char *const Format, ...)
 {
   FILE Stream; // [esp+0h] [ebp-20h] BYREF
   va_list va; // [esp+30h] [ebp+10h] BYREF
@@ -13603,7 +13603,7 @@ size_t _mbsnccnt(const unsigned char * Str, size_t MaxCount)
 
 // 0x7CBBDB
 namespace gamemd {
-int swscanf(const wchar_t *const Buffer, CampaignScore * aP1, ... a3)
+int swscanf(const wchar_t *const Buffer, CampaignScore * aP1, ...)
 {
   FILE File; // [esp+0h] [ebp-20h] BYREF
   va_list va; // [esp+30h] [ebp+10h] BYREF

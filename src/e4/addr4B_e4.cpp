@@ -115,7 +115,7 @@ void JumpjetLocomotionClass_Process(int a1)
           IDA_BYTE2(v1->TrackIndex) = 0; /*0x4b089b*/
           (*((void (__thiscall **)(FootClass *, unsigned int))v1->?->TechnoClass + 99))(v1->?, 0); /*0x4b08a4*/
           v22 = v1->?; /*0x4b08aa*/
-          if ( !v22->? || v22->? || v22->? ) /*0x4b08bd*/
+          if ( !*(unsigned int *)&v22->isFallingDown || *(unsigned int *)&v22->isFallingDown || *(unsigned int *)&v22->isFallingDown ) /*0x4b08bd*/
             return 0; /*0x4b08ce*/
         }
         if ( (*((int (__thiscall **)(FootClass *))v1->?->TechnoClass + 97))(v1->?) == 5 /*0x4b08fd*/
@@ -262,7 +262,7 @@ void JumpjetLocomotionClass_Process(int a1)
     if ( !(*(unsigned int *)&stru_A8EB00.?[416] % 10) ) /*0x4b07a8*/
     {
       v18 = v1->?; /*0x4b07ae*/
-      if ( !v18->? && *(unsigned int *)((*((int (__thiscall **)(FootClass *))v18->TechnoClass + 111))(v18) + 236) == 2 ) /*0x4b07c8*/
+      if ( !*(unsigned short *)&v18->animation && *(unsigned int *)((*((int (__thiscall **)(FootClass *))v18->TechnoClass + 111))(v18) + 236) == 2 ) /*0x4b07c8*/
       {
         if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 148) ) /*0x4b07cf*/
         {
@@ -355,7 +355,7 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
   int *v9; // eax
   int v10; // eax
 
-  uniqueId = this->?; /*0x4b6ab4*/
+  uniqueId = this->M16; /*0x4b6ab4*/
   if ( uniqueId <= 0 || a2 < 0 || a2 >= uniqueId ) /*0x4b6acd*/
     return 0; /*0x4b6b72*/
   vtable1 = dword_A8B230[376].vtable1; /*0x4b6adb*/
@@ -390,8 +390,8 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
     }
     while ( v8 < this->? - 1 ); /*0x4b6b57*/
   }
-  v10 = this->? - 1; /*0x4b6b5d*/
-  this->? = v10; /*0x4b6b5f*/
+  v10 = this->M16 - 1; /*0x4b6b5d*/
+  this->M16 = v10; /*0x4b6b5f*/
   *(&this->? + v10) = 0; /*0x4b6b62*/
   return 1; /*0x4b6b6a*/
 }
@@ -738,7 +738,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   this->M124 = *(unsigned char *)(a2 + 124); /*0x4b5443*/
   this->M125 = *(unsigned char *)(a2 + 125); /*0x4b5449*/
   this->M80 = *(EditClass *)(a2 + 128); /*0x4b544f*/
-  this->q050 = (void*)&ToggleClass_vftable; /*0x4b5452*/
+  *(void **)&this->q050 = (void*)&ToggleClass_vftable; /*0x4b5452*/
   this->q084 = *(unsigned char *)(a2 + 132); /*0x4b545c*/
   this->M136 = *(EditClass *)(a2 + 136); /*0x4b5462*/
   this->M140 = *(EditClass *)(a2 + 140); /*0x4b5468*/
@@ -751,7 +751,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   this->M165 = *(unsigned char *)(a2 + 165); /*0x4b5492*/
   this->M168 = *(EditClass *)(a2 + 168); /*0x4b5498*/
   this->M172 = *(unsigned char *)(a2 + 172); /*0x4b54a4*/
-  this->q050 = (void*)&ShapeButtonClass_vftable; /*0x4b54a9*/
+  *(void **)&this->q050 = (void*)&ShapeButtonClass_vftable; /*0x4b54a9*/
   sub_557380((int)(this + 44), a2 + 176); /*0x4b54af*/
   v3 = this->M176; /*0x4b54b4*/
   *this = (EditClass)(void*)&DropListClass_vftable; /*0x4b54b9*/
@@ -822,18 +822,18 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
     return &this->AbstractClass; /*0x4b583a*/
   (*((void (__thiscall **)(ObjectClass *))this->AbstractClass + 3))(this); /*0x4b583e*/
   v3 = (void *)a2[2]; /*0x4b5841*/
-  this->? = v3; /*0x4b5846*/
+  *(void **)&this->M8 = v3; /*0x4b5846*/
   if ( !v3 ) /*0x4b5849*/
   {
-    this->? = 0; /*0x4b588a*/
+    *(unsigned short *)&this->M4 = 0; /*0x4b588a*/
     IDA_BYTE1(this->?) = 0; /*0x4b5891*/
     return &this->AbstractClass; /*0x4b5895*/
   }
   v4 = (void *)RA2_OPNEW(4 * (unsigned int)v3); /*0x4b5853*/
-  this->? = v4; /*0x4b585b*/
+  *(void **)&this->M4 = v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
     return &this->AbstractClass; /*0x4b5860*/
-  vtable2 = this->?; /*0x4b5862*/
+  vtable2 = this->M8; /*0x4b5862*/
   v6 = 0; /*0x4b5865*/
   IDA_BYTE1(this->?) = 1; /*0x4b5869*/
   if ( (int)vtable2 <= 0 ) /*0x4b586d*/
@@ -1137,8 +1137,8 @@ char E4Recv_4B6B80::sub_4B6B80()
   int uniqueId; // edi
   char result; // al
 
-  uniqueId = this->?; /*0x4b6b87*/
-  IDA_LOBYTE(this->?) = 0; /*0x4b6b8a*/
+  uniqueId = this->M16; /*0x4b6b87*/
+  IDA_LOBYTE(this->M12) = 0; /*0x4b6b8a*/
   if ( uniqueId > 0 ) /*0x4b6b8f*/
   {
     do /*0x4b6b9a*/
@@ -1148,7 +1148,7 @@ char E4Recv_4B6B80::sub_4B6B80()
     }
     while ( uniqueId ); /*0x4b6b9a*/
   }
-  this->? = 0; /*0x4b6b9c*/
+  this->M16 = 0; /*0x4b6b9c*/
   this->owningHouseIndex = 0; /*0x4b6b9f*/
   return result; /*0x4b6ba2*/
 }
@@ -1291,7 +1291,7 @@ BOOL E4Recv_4BAFE0::sub_4BAFE0()
 {
   int referenceCount; // eax
 
-  referenceCount = this->?; /*0x4bafe0*/
+  referenceCount = this->M28; /*0x4bafe0*/
   return referenceCount && (*(int (__stdcall **)(int))(referenceCount->q060)(referenceCount) == -2005532222; /*0x4baff9*/
 }
 } // namespace gamemd

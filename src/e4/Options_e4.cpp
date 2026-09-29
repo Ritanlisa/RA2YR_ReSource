@@ -539,7 +539,7 @@ AbstractClass * * Options::DestroyComposite(char a2)
   unsigned int *v5; // edx
   void *v6; // esi
 
-  if ( *(unsigned int *)&this->__pad_14[24] ) /*0x625563*/
+  if ( *(unsigned int *)&this->u32_2C ) /*0x625563*/
   {
     RA2_OPDEL(*(void **)&this->__pad_14[24]); /*0x62556b*/
     *(unsigned int *)&this->__pad_14[24] = 0; /*0x625573*/
@@ -558,7 +558,7 @@ AbstractClass * * Options::DestroyComposite(char a2)
     if ( v5 ) /*0x62559d*/
       *v5 = *v4; /*0x6255a1*/
     else
-      *(unsigned int *)&this->__pad_34[4] = *v4; /*0x6255a7*/
+      *(unsigned int *)&this->ptr_38 = *v4; /*0x6255a7*/
     RA2_OPDEL(v4); /*0x6255ab*/
   LABEL_12:
     ; /*0x6255b3*/
@@ -786,7 +786,7 @@ void Options::SetSoundVolume(float volume, int pad)
     v3 = 1.0; /*0x5fa52a*/
   else
     v3 = volume; /*0x5fa524*/
-  this->ptr_38 = v3; /*0x5fa530*/
+  *(unsigned int *)&this->ptr_38 = v3; /*0x5fa530*/
   IDA_LOWORD(v4) = Math::RoundToInt(v3 * 16384.0); /*0x5fa539*/
   EndBufferMixer((int *)g_MixerChannel_Score, v4); /*0x5fa546*/
   if ( pad ) /*0x5fa551*/
@@ -807,7 +807,7 @@ void Options::SetVoiceVolume(float volume, int pad)
     v4 = 1.0; /*0x5fa5aa*/
   else
     v4 = volume; /*0x5fa5a4*/
-  this->q0F0 = v4; /*0x5fa5b0*/
+  *(unsigned int *)&this->q0F0 = v4; /*0x5fa5b0*/
   IDA_LOWORD(v5) = Math::RoundToInt(v4 * 255.0); /*0x5fa5b9*/
   ThemeClass::GetField(v5); /*0x5fa5c0*/
   IDA_LOWORD(v6) = Math::RoundToInt(this->q0F0 * 16384.0); /*0x5fa5ce*/

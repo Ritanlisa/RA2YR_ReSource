@@ -123,7 +123,7 @@ void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
   *(unsigned int *)this->__pad_0 = aP1; /*0x41c23a*/
   *(unsigned int *)&this->Coord_field_0x2[2] = aP2; /*0x41c240*/
   this->Coord_field_0x8 = (void *)aP3; /*0x41c243*/
-  return this->__pad_0; /*0x41c246*/
+  return this; /*0x41c246*/
 }
 }
 // 0x41C380
@@ -166,8 +166,8 @@ namespace gamemd {
 void * Coord::Scale(IUnknown * aP1)
 {
   *this = aP1 * *this; /*0x43a0d8*/
-  this->q004 = aP1 * this->q004; /*0x43a0e1*/
-  this->q008 = aP1 * this->q008; /*0x43a0eb*/
+  *(unsigned int *)&this->q004 = aP1 * this->q004; /*0x43a0e1*/
+  *(unsigned int *)&this->q008 = aP1 * this->q008; /*0x43a0eb*/
   return this; /*0x43a0ee*/
 }
 }

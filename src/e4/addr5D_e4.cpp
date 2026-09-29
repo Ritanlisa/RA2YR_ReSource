@@ -704,11 +704,11 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
     v19.health = 0; /*0x5d75ce*/
     v19.estimatedHealth = 0; /*0x5d75d2*/
     GenericList::Constructor((GenericList *)&v19.isOnMap); /*0x5d75d6*/
-    *(unsigned int *)&v19.isOnMap = (void*)&List_INIClass_INISection___vftable; /*0x5d75e8*/
+    *(void **)&v19.isOnMap = (void*)&List_INIClass_INISection___vftable; /*0x5d75e8*/
     memset(&v19.isAliveFlag, 0, 13); /*0x5d75f3*/
     v19.location[1] = 0; /*0x5d760f*/
     v19.location[2] = 0; /*0x5d7616*/
-    *(unsigned int *)&v19.bombVisible = (void*)&INIClass_vftable; /*0x5d761d*/
+    *(void **)&v19.bombVisible = (void*)&INIClass_vftable; /*0x5d761d*/
     if ( FileStraw::Open((FileStraw *)&v19.bombVisible, (int)&v19.lineTrailer, 0) > 0 ) /*0x5d762c*/
     {
       v19.customSound_controller[4] = INIClass::FindKey(&v19.bombVisible, v2); /*0x5d763e*/
@@ -965,9 +965,9 @@ void GameInit_Complete()
     if ( v2 ) /*0x5d7d32*/
       (**v2)(v2, 1); /*0x5d7d37*/
   }
-  *(unsigned int *)&v4.m_3[1] = (void*)&MultiplayerGameMode_Initializer_MultiplayerBattle_vftable; /*0x5d7d45*/
+  *(void **)&v4.q4 = (void*)&MultiplayerGameMode_Initializer_MultiplayerBattle_vftable; /*0x5d7d45*/
   String::Assign(&v4, aBattle); /*0x5d7d4d*/
-  LoadMultiplayerModesList((char **)&v4, (int)&v4.m_3[1]); /*0x5d7d5a*/
+  LoadMultiplayerModesList((char **)&v4, (int)&v4.q4); /*0x5d7d5a*/
   DeleteAndZero((ObjectClass *)&v4); /*0x5d7d63*/
   v5 = (void*)&MultiplayerGameMode_Initializer_MultiplayerManBattle_vftable; /*0x5d7d6c*/
   String::Assign(&v4, aManbattle); /*0x5d7d79*/
@@ -1006,11 +1006,11 @@ int E4Recv_5D9060::sub_5D9060(int a2)
   v4 = 255; /*0x5d9073*/
   while ( 1 ) /*0x5d907b*/
   {
-    v5 = v2 + this->?; /*0x5d907b*/
-    this->? = v5; /*0x5d907f*/
+    v5 = v2 + this->M16; /*0x5d907b*/
+    this->M16 = v5; /*0x5d907f*/
     v6 = v5; /*0x5d9087*/
     if ( v5 > 0xFFFF ) /*0x5d908a*/
-      this->? = 2048; /*0x5d908c*/
+      *(unsigned short *)&this->M16 = 2048; /*0x5d908c*/
     if ( !*(unsigned int *)&stru_887598.isAliveFlag || *(unsigned int *)&dword_A8B238 != 4 ) /*0x5d90a4*/
       break; /*0x5d90a4*/
     if ( (*(uint8_t (__stdcall **)(unsigned short))(**(unsigned int **)&stru_887598.isAliveFlag + 104))(v5) ) /*0x5d90a9*/
@@ -2136,7 +2136,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
   v10 = 0; /*0x5d30ce*/
   if ( String && (v6 = wcslen(String)) != 0 ) /*0x5d30df*/
   {
-    vtable2 = (char *)this->?; /*0x5d30e2*/
+    vtable2 = (char *)this->M8; /*0x5d30e2*/
     while ( 1 ) /*0x5d30e9*/
     {
       for ( IDA_LOWORD(v6) = *v3; *v3; IDA_LOWORD(v6) = *v3 ) /*0x5d30e9*/
@@ -2151,7 +2151,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         v10 = v4; /*0x5d3112*/
       if ( *v3 == 10 ) /*0x5d311a*/
       {
-        v6 = (int)this->?; /*0x5d311c*/
+        v6 = (int)this->M8; /*0x5d311c*/
         ++v3; /*0x5d311f*/
         vtable2 += v6; /*0x5d3122*/
       }
@@ -2159,7 +2159,7 @@ unsigned int * E4Recv_5D30C0::sub_5D30C0(wchar_t * String, unsigned int * a3)
         break; /*0x5d3124*/
       v4 = 0; /*0x5d30e7*/
     }
-    vtable1 = (char *)this->?; /*0x5d312a*/
+    vtable1 = (char *)this->M4; /*0x5d312a*/
     a3[3] = vtable2; /*0x5d3137*/
     a3[2] = &vtable1[v10]; /*0x5d313a*/
     *a3 = 0; /*0x5d3140*/
@@ -2764,9 +2764,9 @@ namespace gamemd {
 unsigned int * E4Recv_5D8FB0::sub_5D8FB0()
 {
   this->AbstractClass = 0; /*0x5d8fb4*/
-  this->? = 0; /*0x5d8fb6*/
-  this->? = 0; /*0x5d8fb9*/
-  this->? = 0; /*0x5d8fbc*/
+  this->M4 = 0; /*0x5d8fb6*/
+  this->M8 = 0; /*0x5d8fb9*/
+  this->M12 = 0; /*0x5d8fbc*/
   return &this->AbstractClass; /*0x5d8fbf*/
 }
 } // namespace gamemd

@@ -68,9 +68,9 @@ int MapSeed::CheckName()
   String::ToLower(&v8); /*0x79c534*/
   if ( !String::Length((String *)this) /*0x79c5aa*/
     || (v7 = String::ToLowerCopy((String *)&g_WindowManager.__pad_EC[684], &v9),
-        v2 = String::ToLowerCopy(&v8, (char **)&v8.m_3[1]),
+        v2 = String::ToLowerCopy(&v8, (char **)&v8.q4),
         v3 = String::Compare((String *)v2, (const char **)v7),
-        DeleteAndZero((ObjectClass *)&v8.m_3[1]),
+        DeleteAndZero((ObjectClass *)&v8.q4),
         DeleteAndZero((ObjectClass *)&v9),
         v3)
     || (uint8_t)ValidateStringContains((const char **)this, v4, asc_84BA18) )
@@ -90,17 +90,17 @@ int MapSeed::CheckName()
     {
       while ( 1 ) /*0x79c5d2*/
       {
-        unknown_libname_73(&v8.m_3[1]); /*0x79c5d2*/
+        unknown_libname_73(&v8.q4); /*0x79c5d2*/
         if ( v6 >= 0 && v6 < *(int *)g_WindowManager.__pad_0 ) /*0x79c5e1*/
-          String::Reassign((String *)&v8.m_3[1], (const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v6)); /*0x79c5f1*/
-        String::ToLower((String *)&v8.m_3[1]); /*0x79c5fa*/
-        if ( (uint8_t)String::Compare((String *)&v8.m_3[1], (const char **)&v8) ) /*0x79c608*/
+          String::Reassign((String *)&v8.q4, (const char **)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * v6)); /*0x79c5f1*/
+        String::ToLower((String *)&v8.q4); /*0x79c5fa*/
+        if ( (uint8_t)String::Compare((String *)&v8.q4, (const char **)&v8) ) /*0x79c608*/
           break; /*0x79c608*/
-        DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c615*/
+        DeleteAndZero((ObjectClass *)&v8.q4); /*0x79c615*/
         if ( ++v6 >= *(int *)g_WindowManager.__pad_0 ) /*0x79c622*/
           goto LABEL_12; /*0x79c622*/
       }
-      DeleteAndZero((ObjectClass *)&v8.m_3[1]); /*0x79c634*/
+      DeleteAndZero((ObjectClass *)&v8.q4); /*0x79c634*/
       result = DeleteAndZero((ObjectClass *)&v8); /*0x79c63d*/
       IDA_LOBYTE(result) = 0; /*0x79c642*/
     }

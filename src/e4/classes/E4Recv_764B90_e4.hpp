@@ -9,7 +9,7 @@ struct E4Recv_764B90 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int u32_C;  // 0xC
-    void* ;  // 0x18
+    void *q18;  // 0x18
     unsigned int M28;  // 0x1C
     unsigned int M32;  // 0x20
     unsigned int M24;  // 0x24

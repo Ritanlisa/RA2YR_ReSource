@@ -48,15 +48,15 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   unsigned int v22[4]; // [esp+10h] [ebp-10h] BYREF
 
   this->AbstractClass = (void*)&TagClass_vftable; /*0x6e4f69*/
-  this->? = (void*)&TagClass_vftable; /*0x6e4f6f*/
-  this->? = (void*)&TagClass_vftable; /*0x6e4f76*/
-  this->? = (void*)&TagClass_vftable; /*0x6e4f7d*/
+  *(void **)&this->vtable2 = (void*)&TagClass_vftable; /*0x6e4f6f*/
+  *(void **)&this->vtable3 = (void*)&TagClass_vftable; /*0x6e4f76*/
+  *(void **)&this->vtable4 = (void*)&TagClass_vftable; /*0x6e4f7d*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6e4f84*/
   if ( byte_A8E9A0 ) /*0x6e4f90*/
   {
     if ( stru_A8EB00.?[376] ) /*0x6e4f9d*/
     {
-      buildingType = this->buildingType; /*0x6e4f9f*/
+      buildingType = *(unsigned int *)&this->buildingType; /*0x6e4f9f*/
       if ( buildingType ) /*0x6e4fa4*/
       {
         if ( (Debug::AccumFlags((Debug *)buildingType) & 0x10) != 0 ) /*0x6e4fad*/
@@ -92,7 +92,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
     {
       if ( stru_A8EB00.?[376] ) /*0x6e5002*/
       {
-        v6 = this->buildingType; /*0x6e5004*/
+        v6 = *(unsigned int *)&this->buildingType; /*0x6e5004*/
         if ( v6 ) /*0x6e5009*/
         {
           if ( (Debug::AccumFlags((Debug *)v6) & 4) != 0 ) /*0x6e5012*/
@@ -128,10 +128,10 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
       {
         if ( stru_A8EB00.?[376] ) /*0x6e5063*/
         {
-          firstTrigger = this->firstTrigger; /*0x6e5065*/
+          firstTrigger = *(unsigned int *)&this->firstTrigger; /*0x6e5065*/
           if ( firstTrigger ) /*0x6e506a*/
           {
-            v11 = firstTrigger->buildingType; /*0x6e506c*/
+            v11 = *(unsigned int *)&firstTrigger->buildingType; /*0x6e506c*/
             if ( v11 ) /*0x6e5071*/
             {
               if ( v11->House && TagClass::HasValidHouse((TagClass *)this->buildingType) ) /*0x6e5080*/
@@ -151,7 +151,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
       }
     }
   }
-  v15 = this->firstTrigger; /*0x6e50cd*/
+  v15 = *(unsigned int *)&this->firstTrigger; /*0x6e50cd*/
   if ( v15 ) /*0x6e50d2*/
   {
     v16 = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e50d4*/
@@ -250,7 +250,7 @@ Coord * * TagClass::Unlink()
   this->firstTrigger[8].destroyed = 0; /*0x71ade9*/
   this->firstTrigger[8].timer[1] = 0; /*0x71adf2*/
   v2 = this->q011; /*0x71adf8*/
-  this->firstTrigger = 0; /*0x71adfd*/
+  *(unsigned int *)&this->firstTrigger = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
   {
     if ( v2->occuredEvents == this ) /*0x71ae05*/
@@ -282,10 +282,10 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
   int result; // eax
 
   if ( this->buildingType == (TagTypeClass *)a2 ) /*0x6e561a*/
-    this->buildingType = 0; /*0x6e561c*/
-  firstTrigger = this->firstTrigger; /*0x6e5623*/
+    *(unsigned int *)&this->buildingType = 0; /*0x6e561c*/
+  firstTrigger = *(unsigned int *)&this->firstTrigger; /*0x6e5623*/
   if ( firstTrigger == (TriggerClass *)a2 ) /*0x6e5628*/
-    this->firstTrigger = firstTrigger->nextTrigger; /*0x6e562d*/
+    *(unsigned int *)&this->firstTrigger = firstTrigger->nextTrigger; /*0x6e562d*/
   result = (int)this->buildingType; /*0x6e5630*/
   if ( !result ) /*0x6e5635*/
   {
@@ -331,12 +331,12 @@ int TagClass::ProcessTag(int * a2)
   int v5; // eax
 
   AbstractClass::ProcessPower(); /*0x6e56e9*/
-  v3 = (*((int (__stdcall **)(void **))this->buildingType->? + 4))(&this->buildingType->?); /*0x6e56f7*/
+  v3 = (*((int (__stdcall **)(void **))*(unsigned short *)&this->buildingType->uniqueId + 4))(&this->buildingType->uniqueId); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
-  firstTrigger = this->firstTrigger; /*0x6e5702*/
+  firstTrigger = *(unsigned int *)&this->firstTrigger; /*0x6e5702*/
   if ( firstTrigger ) /*0x6e5707*/
   {
-    v5 = (*((int (__stdcall **)(void **))firstTrigger->? + 4))(&firstTrigger->?); /*0x6e5710*/
+    v5 = (*((int (__stdcall **)(void **))*(unsigned short *)&firstTrigger->uniqueId + 4))(&firstTrigger->uniqueId); /*0x6e5710*/
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   IDA_LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/
@@ -357,9 +357,9 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e574f*/
       aP0->AbstractClass = (void*)&TagClass_vftable; /*0x6e5754*/
-      aP0->? = (void*)&TagClass_vftable; /*0x6e575a*/
-      aP0->? = (void*)&TagClass_vftable; /*0x6e5761*/
-      aP0->? = (void*)&TagClass_vftable; /*0x6e5768*/
+      *(void **)&aP0->vtable2 = (void*)&TagClass_vftable; /*0x6e575a*/
+      *(void **)&aP0->vtable3 = (void*)&TagClass_vftable; /*0x6e5761*/
+      *(void **)&aP0->vtable4 = (void*)&TagClass_vftable; /*0x6e5768*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x6e5778*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->firstTrigger); /*0x6e5786*/

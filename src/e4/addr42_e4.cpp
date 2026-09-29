@@ -3897,12 +3897,12 @@ char E4Recv_42D830::sub_42D830(unsigned int * a2)
   int uniqueId; // eax
   unsigned int *vtable1; // edx
 
-  vtable2 = this->?; /*0x42d833*/
+  vtable2 = this->M8; /*0x42d833*/
   if ( this->? >= (int)vtable2 ) /*0x42d83b*/
   {
     if ( !IDA_BYTE1(this->?) && vtable2 ) /*0x42d846*/
       return 0; /*0x42d846*/
-    abstractFlags = this->?; /*0x42d848*/
+    abstractFlags = this->M20; /*0x42d848*/
     if ( abstractFlags <= 0 /*0x42d858*/
       || !(*((uint8_t (__thiscall **)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))(
             this,
@@ -3912,9 +3912,9 @@ char E4Recv_42D830::sub_42D830(unsigned int * a2)
       return 0; /*0x42d85f*/
     }
   }
-  uniqueId = this->?; /*0x42d865*/
-  vtable1 = this->?; /*0x42d868*/
-  this->? = uniqueId + 1; /*0x42d86e*/
+  uniqueId = this->M16; /*0x42d865*/
+  vtable1 = this->M4; /*0x42d868*/
+  this->M16 = uniqueId + 1; /*0x42d86e*/
   vtable1[uniqueId] = *a2; /*0x42d878*/
   return 1; /*0x42d861*/
 }
@@ -4098,7 +4098,7 @@ bool E4Recv_42E990::sub_42E990(unsigned int * a2)
   if ( a2[135] != *(unsigned int *)&this->isOnMap ) /*0x42e9a6*/
     return 0; /*0x42e9a6*/
   v4 = 0; /*0x42e9ab*/
-  if ( this->? <= 0 ) /*0x42e9af*/
+  if ( this->M20 <= 0 ) /*0x42e9af*/
     return 0; /*0x42e9af*/
   v5 = 0; /*0x42e9b1*/
   for ( i = 0; ; i += 4 ) /*0x42e9b3*/
@@ -4161,11 +4161,11 @@ int E4Recv_42EAD0::sub_42EAD0(unsigned short * a2)
   char *vtable2; // esi
   unsigned short *i; // ecx
 
-  abstractFlags = this->?; /*0x42ead0*/
+  abstractFlags = this->M20; /*0x42ead0*/
   v3 = 0; /*0x42ead5*/
   if ( abstractFlags <= 0 ) /*0x42eadb*/
     return 0; /*0x42eb0f*/
-  vtable2 = (char *)this->?; /*0x42eae1*/
+  vtable2 = (char *)this->M8; /*0x42eae1*/
   for ( i = vtable2 + 4; *a2 != *i || a2[1] != i[1]; i += 8 ) /*0x42eae7*/
   {
     if ( ++v3 >= abstractFlags ) /*0x42eaff*/

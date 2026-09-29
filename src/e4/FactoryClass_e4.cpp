@@ -43,10 +43,10 @@ int FactoryClass::UpdateProduction()
   IDA_LOBYTE(Speed) = this->isSuspended; /*0x4c9b28*/
   if ( !(unsigned char)Speed ) /*0x4c9b2d*/
   {
-    Speed = *(unsigned int *)&this->__pad_42[22]; /*0x4c9b33*/
+    Speed = *(unsigned int *)&this->q058; /*0x4c9b33*/
     if ( Speed ) /*0x4c9b38*/
     {
-      if ( this->production[0] == 54 ) /*0x4c9b4d*/
+      if ( *(unsigned short *)&this->production == 54 ) /*0x4c9b4d*/
         return Speed; /*0x4c9b4d*/
     }
     else if ( !this->specialItem ) /*0x4c9b3f*/
@@ -72,7 +72,7 @@ int FactoryClass::UpdateProduction()
         this->__pad_42[27] = 1; /*0x4c9b9f*/
         if ( v4 ) /*0x4c9ba2*/
         {
-          v5 = this->production[0]; /*0x4c9ba4*/
+          v5 = this->production; /*0x4c9ba4*/
           if ( v5 == 54 ) /*0x4c9bae*/
             balance = this->balance; /*0x4c9bc5*/
           else
@@ -94,7 +94,7 @@ int FactoryClass::UpdateProduction()
         }
         else
         {
-          v7 = this->production[0]; /*0x4c9be5*/
+          v7 = this->production; /*0x4c9be5*/
           this->__pad_42[26] = 1; /*0x4c9be8*/
           Speed = v7 - 1; /*0x4c9beb*/
           this->production[0] = Speed; /*0x4c9bec*/
@@ -122,7 +122,7 @@ int FactoryClass::HasProgressChanged()
 {
   char result; // al
 
-  result = this->__pad_42[27]; /*0x4c9c60*/
+  result = *(unsigned int *)&this->u8_5D; /*0x4c9c60*/
   this->__pad_42[27] = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 }
@@ -153,13 +153,13 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
     || a4 )
   {
     this->u8_5D = (unsigned char)((void *)(1));
-    this->isSuspended = (void *)(1);
+    *(void **)&this->isSuspended = (void *)(1);
     this->q02C = (void *)(dword_A8ED84);
     this->queuedCapacity = 0; /*0x4c9d8b*/
     this->queuedObjects = v17; /*0x4c9d8e*/
     this->queuedCount = 0; /*0x4c9d92*/
     this->production = 0; /*0x4c9d95*/
-    this->q058 = (*(int (__thiscall **)(int, void *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
+    *(unsigned int *)&this->q058 = (*(int (__thiscall **)(int, void *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
     if ( !(uint8_t)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
     {
       v12 = (void *)((int)(this->q058));
@@ -175,7 +175,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
       v14 = (int)(*(unsigned int *)(v13 + 540));
       this->owner = v14; /*0x4c9ddb*/
       v15 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a2 + 132))(a2, v14); /*0x4c9de1*/
-      v16 = this->q058; /*0x4c9de7*/
+      v16 = *(unsigned int *)&this->q058; /*0x4c9de7*/
       this->balance = v15; /*0x4c9dea*/
       *(unsigned int *)(v16 + 768) = v15; /*0x4c9ded*/
     }
@@ -199,7 +199,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q048)(v7, v5 + v8, 0) )
     {
       v9 = (int)(this->u32_50);
-      v10 = this->q044; /*0x4c9d25*/
+      v10 = *(unsigned int *)&this->q044; /*0x4c9d25*/
       this->u32_50 = v9 + 1; /*0x4c9d2b*/
       *(unsigned int *)(v10 + 4 * v9) = a2; /*0x4c9d2e*/
     }
@@ -262,7 +262,7 @@ int FactoryClass::GetBuildTimeFrames()
   int v3; // edx
   int result; // eax
 
-  v1 = *(HouseClass **)&this->__pad_42[22]; /*0x4c9fb0*/
+  v1 = *(HouseClass **)&this->q058; /*0x4c9fb0*/
   v2 = 0; /*0x4c9fb3*/
   if ( v1 ) /*0x4c9fb7*/
     v2 = HouseClass::CalcProductionSpeed(v1); /*0x4c9fbe*/
@@ -302,7 +302,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&v3->production[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor((TechnoTypeVector *)&v3->onHold, 0, 0); /*0x4ca2b2*/
-      *(unsigned int *)&v3->onHold = (void*)&DynamicVectorClass_TechnoTypeClass_const___vftable; /*0x4ca2b7*/
+      *(void **)&v3->onHold = (void*)&DynamicVectorClass_TechnoTypeClass_const___vftable; /*0x4ca2b7*/
       *(unsigned int *)&v3->__pad_42[18] = 10; /*0x4ca2bd*/
       *(unsigned int *)&v3->__pad_42[14] = 0; /*0x4ca2c4*/
       v3->AbstractClass = (void*)&FactoryClass_vftable; /*0x4ca2c7*/
@@ -389,16 +389,16 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   Debug::Log(); /*0x4ca4c3*/
   (*((void (__stdcall **)(void **))this->owner->? + 4))(&this->owner->?); /*0x4ca4d4*/
   Debug::Log(); /*0x4ca4dd*/
-  (*((void (__stdcall **)(void **))this->? + 4))(&this->?); /*0x4ca4ec*/
+  (*((void (__stdcall **)(void **))*(unsigned short *)&this->uniqueId + 4))(&this->uniqueId); /*0x4ca4ec*/
   Debug::Log(); /*0x4ca4f5*/
   v3 = AbstractClass::ProcessPower((AbstractClass *)this); /*0x4ca504*/
   IDA_LOBYTE(v3) = this->isSuspended; /*0x4ca509*/
   Power::FlagProcess((Power *)a2, v3); /*0x4ca50f*/
-  IDA_LOBYTE(v4) = this->__pad_42[27]; /*0x4ca514*/
+  IDA_LOBYTE(v4) = *(unsigned int *)&this->u8_5D; /*0x4ca514*/
   Power::FlagProcess((Power *)a2, v4); /*0x4ca51a*/
   Power::TimerProcess(this->balance); /*0x4ca525*/
   Power::TimerProcess(this->originalBalance); /*0x4ca530*/
-  v5 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca535*/
+  v5 = *(unsigned int *)&this->q058; /*0x4ca535*/
   if ( v5 ) /*0x4ca53a*/
   {
     v6 = (*(int (__stdcall **)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x4ca543*/
@@ -416,8 +416,8 @@ int FactoryClass::Revert(int a2, int a3)
   int result; // eax
 
   result = a2; /*0x4ca580*/
-  if ( a2 == *(unsigned int *)&this->__pad_42[22] ) /*0x4ca589*/
-    *(unsigned int *)&this->__pad_42[22] = 0; /*0x4ca58b*/
+  if ( a2 == *(unsigned int *)&this->q058 ) /*0x4ca589*/
+    *(unsigned int *)&this->q058 = 0; /*0x4ca58b*/
   return result; /*0x4ca592*/
 }
 }
@@ -434,15 +434,15 @@ int FactoryClass::StartProduction_2()
   int v9; // [esp-Ch] [ebp-14h]
   char v10; // [esp-8h] [ebp-10h]
 
-  v2 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca5a4*/
+  v2 = *(unsigned int *)&this->u32_50; /*0x4ca5a4*/
   if ( v2 ) /*0x4ca5a9*/
   {
-    v2 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca5ab*/
+    v2 = *(unsigned int *)&this->q058; /*0x4ca5ab*/
     if ( !v2 ) /*0x4ca5b0*/
     {
       if ( !this->queuedCapacity || (IDA_LOBYTE(v2) = this->isSuspended, (unsigned char)v2) ) /*0x4ca5be*/
       {
-        v3 = **(unsigned char ***)&this->__pad_42[2]; /*0x4ca5c3*/
+        v3 = **(unsigned char ***)&this->q044; /*0x4ca5c3*/
         v4 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca5c5*/
         if ( v4 > 0 ) /*0x4ca5ca*/
         {
@@ -483,10 +483,10 @@ int FactoryClass::CountType(IUnknown * aP1)
   v4 = *(unsigned int *)&this->__pad_42[22]; /*0x4ca67b*/
   if ( v4 ) /*0x4ca680*/
     v3 = (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 132))(v4) == aP1; /*0x4ca68e*/
-  v5 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca693*/
+  v5 = *(unsigned int *)&this->u32_50; /*0x4ca693*/
   if ( v5 > 0 ) /*0x4ca698*/
   {
-    v6 = *(unsigned int **)&this->__pad_42[2]; /*0x4ca69a*/
+    v6 = *(unsigned int **)&this->q044; /*0x4ca69a*/
     do /*0x4ca6a6*/
     {
       if ( *v6 == aP1 ) /*0x4ca69f*/
@@ -507,7 +507,7 @@ int FactoryClass::IsQueued(int a2)
   int v3; // eax
   unsigned int *i; // ecx
 
-  v2 = *(unsigned int *)&this->__pad_42[14]; /*0x4ca6b0*/
+  v2 = *(unsigned int *)&this->u32_50; /*0x4ca6b0*/
   v3 = 0; /*0x4ca6b3*/
   if ( v2 <= 0 ) /*0x4ca6b8*/
     return 0; /*0x4ca6cd*/
@@ -529,9 +529,9 @@ void * FactoryClass::CopyTo(char a2)
   FactoryClass *v7; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = (void*)&FactoryClass_vftable; /*0x4ca776*/
-  this->? = (void*)&FactoryClass_vftable; /*0x4ca77c*/
-  this->? = (void*)&FactoryClass_vftable; /*0x4ca783*/
-  this->? = (void*)&FactoryClass_vftable; /*0x4ca78a*/
+  *(void **)&this->vtable2 = (void*)&FactoryClass_vftable; /*0x4ca77c*/
+  *(void **)&this->vtable3 = (void*)&FactoryClass_vftable; /*0x4ca783*/
+  *(void **)&this->vtable4 = (void*)&FactoryClass_vftable; /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x4ca791*/
   v7 = this; /*0x4ca7a6*/
   v3 = (*(int (__thiscall **)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/
@@ -565,12 +565,12 @@ void * FactoryClass::CopyTo(char a2)
       ++v4; /*0x4ca826*/
     }
   }
-  v5 = *(void **)&this->__pad_42[2]; /*0x4ca838*/
-  *(unsigned int *)&this->onHold = (void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4ca83b*/
-  if ( v5 && this->__pad_42[11] ) /*0x4ca846*/
+  v5 = *(void **)&this->q044; /*0x4ca838*/
+  *(void **)&this->onHold = (void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4ca83b*/
+  if ( v5 && this->u8_4D ) /*0x4ca846*/
   {
     RA2_OPDEL(v5); /*0x4ca84e*/
-    *(unsigned int *)&this->__pad_42[2] = 0; /*0x4ca856*/
+    *(unsigned int *)&this->q044 = 0; /*0x4ca856*/
   }
   this->__pad_42[11] = 0; /*0x4ca85f*/
   *(unsigned int *)&this->__pad_42[6] = 0; /*0x4ca863*/
@@ -722,7 +722,7 @@ int FactoryClass::StubReturn116()
 namespace gamemd {
 int FactoryClass_33::Seek(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4ca8ea*/
+  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x4ca8ea*/
 }
 } // namespace gamemd
 
@@ -735,13 +735,13 @@ char FactoryClass_33::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x4ca8f2*/
+  m_8 = this->q008; /*0x4ca8f2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4ca8fd*/
   {
     v3 = 0; /*0x4ca8ff*/
     if ( m_8 <= 0 ) /*0x4ca903*/
       return 1; /*0x4ca923*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x4ca905*/
+    v4 = *(unsigned int **)&this->q004; /*0x4ca905*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4ca90b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4ca914*/
     {
@@ -765,30 +765,30 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4ca93c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x4ca946*/
+    this->q00C = 0; /*0x4ca946*/
     if ( a3 ) /*0x4ca94c*/
       v4 = a3; /*0x4ca962*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4ca95e*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x4ca966*/
+    this->q00C = 1; /*0x4ca966*/
     if ( v4 ) /*0x4ca96a*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x4ca975*/
+      if ( *(unsigned int *)&this->q004 ) /*0x4ca975*/
       {
-        m_8 = this->m_8; /*0x4ca97c*/
+        m_8 = this->q008; /*0x4ca97c*/
         if ( a2 < m_8 ) /*0x4ca981*/
           m_8 = a2; /*0x4ca983*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4ca989*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x4ca989*/
           ++i; /*0x4ca98e*/
-        if ( IDA_BYTE1(this->m_C) ) /*0x4ca99b*/
+        if ( this->IsAllocated ) /*0x4ca99b*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4ca9a6*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x4ca9ae*/
+          RA2_OPDEL(*(void **)&this->q004); /*0x4ca9a6*/
+          *(unsigned int *)&this->q004 = 0; /*0x4ca9ae*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4ca9b7*/
-      this->m_8 = a2; /*0x4ca9bf*/
-      IDA_BYTE1(this->m_C) = a3 == 0; /*0x4ca9c2*/
+      *(void **)&this->q004 = v4; /*0x4ca9b7*/
+      this->q008 = a2; /*0x4ca9bf*/
+      this->IsAllocated = a3 == 0; /*0x4ca9c2*/
       return 1; /*0x4ca9c8*/
     }
     else
@@ -808,13 +808,13 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void FactoryClass_33::ddtor()
 {
-  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4ca9ed*/
+  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x4ca9ed*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4ca9f3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4ca9fb*/
+    RA2_OPDEL(*(void **)&this->q004); /*0x4ca9f3*/
+    *(unsigned int *)&this->q004 = 0; /*0x4ca9fb*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x4ca9fe*/
-  this->m_8 = 0; /*0x4caa01*/
+  this->IsAllocated = 0; /*0x4ca9fe*/
+  this->q008 = 0; /*0x4caa01*/
 }
 } // namespace gamemd
 
@@ -826,13 +826,13 @@ int FactoryClass_33::Read(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x4caa10*/
+  if ( !this->q00C ) /*0x4caa10*/
     return 0; /*0x4caa18*/
-  m_8 = this->m_8; /*0x4caa1e*/
+  m_8 = this->q008; /*0x4caa1e*/
   result = 0; /*0x4caa21*/
   if ( m_8 <= 0 ) /*0x4caa25*/
     return -1; /*0x4caa3c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4caa2b*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x4caa2b*/
   {
     if ( ++result >= m_8 ) /*0x4caa3a*/
       return -1; /*0x4caa3a*/
@@ -845,8 +845,8 @@ int FactoryClass_33::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int FactoryClass_33::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x4caa50*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4caa65*/
+  if ( this->q00C ) /*0x4caa50*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x4caa65*/
   else
     return 0; /*0x4caa57*/
 }
@@ -858,18 +858,18 @@ VectorClass_flat * FactoryClass_33::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x4cab53*/
+  v3 = *(void **)&this->q004; /*0x4cab53*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4cab56*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4cab60*/
+  if ( v3 && this->IsAllocated ) /*0x4cab60*/
   {
     RA2_OPDEL(v3); /*0x4cab68*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4cab70*/
+    *(unsigned int *)&this->q004 = 0; /*0x4cab70*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x4cab7b*/
-  this->m_8 = 0; /*0x4cab81*/
+  this->IsAllocated = 0; /*0x4cab7b*/
+  *(unsigned short *)&this->q008 = 0; /*0x4cab81*/
   if ( (a2 & 1) != 0 ) /*0x4cab88*/
     RA2_OPDEL(); /*0x4cab8b*/
-  return this->__pad_0; /*0x4cab95*/
+  return this; /*0x4cab95*/
 }
 } // namespace gamemd
 
@@ -877,7 +877,7 @@ VectorClass_flat * FactoryClass_33::QueryInterface(char a2)
 namespace gamemd {
 int FactoryClass::GetState()
 {
-  return this->?; /*0x636dc3*/
+  return this->abstractFlags; /*0x636dc3*/
 }
 } // namespace gamemd
 

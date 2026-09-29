@@ -197,11 +197,11 @@ AbstractClass * * GameSettings::Read()
   v32 = Math::RoundToInt(this->u32_3C * 16384.0); /*0x5faa60*/
   EndBufferMixer(g_MixerChannel_Voice, v32); /*0x5faa6d*/
   Debug::Log("VoiceVolume = %f\n", *((float *)this->u32_3C)); /*0x5faa80*/
-  v33 = this->q040; /*0x5faa85*/
+  v33 = *(unsigned int *)&this->q040; /*0x5faa85*/
   INIClass::ReadDouble_Overwrite((int)g_INI_Key_Audio, (int)aScorevolume, v33); /*0x5faa9d*/
   if ( v33 >= 1.0 ) /*0x5faaad*/
     v33 = 1.0; /*0x5faab1*/
-  this->q040 = v33; /*0x5faab7*/
+  *(void **)&this->q040 = v33; /*0x5faab7*/
   v34 = Math::RoundToInt(v33 * 16384.0); /*0x5faac0*/
   EndBufferMixer(g_MixerChannel_Theme, v34); /*0x5faacd*/
   v35 = Math::RoundToInt(this->q040 * 255.0); /*0x5faadb*/

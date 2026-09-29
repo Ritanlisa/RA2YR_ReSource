@@ -19,9 +19,9 @@ DynamicVector * MapFile::QueryInterface(char a2)
   int v7; // ecx
   int v8; // ebp
 
-  v3 = *(unsigned int *)&this->m_1[3]; /*0x69d523*/
+  v3 = *(unsigned int *)&this->q004; /*0x69d523*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_Wstring_vftable; /*0x69d526*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x69d530*/
+  if ( v3 && this->IsAllocated ) /*0x69d530*/
   {
     v4 = *(unsigned int *)(v3 - 4); /*0x69d53b*/
     v5 = (void *)(v3 - 4); /*0x69d53f*/
@@ -39,13 +39,13 @@ DynamicVector * MapFile::QueryInterface(char a2)
       while ( v8 ); /*0x69d558*/
     }
     RA2_OPDEL(v5); /*0x69d55c*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x69d566*/
+    *(unsigned int *)&this->q004 = 0; /*0x69d566*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x69d571*/
-  this->m_8 = 0; /*0x69d577*/
+  this->IsAllocated = 0; /*0x69d571*/
+  *(unsigned short *)&this->q008 = 0; /*0x69d577*/
   if ( (a2 & 1) != 0 ) /*0x69d57e*/
     RA2_OPDEL(); /*0x69d581*/
-  return this->__pad_0; /*0x69d58b*/
+  return this; /*0x69d58b*/
 }
 } // namespace gamemd
 // 0x69D770

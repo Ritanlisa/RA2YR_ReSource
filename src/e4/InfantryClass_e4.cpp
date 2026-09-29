@@ -53,10 +53,10 @@ int InfantryClass::ScanTarget(int * a1)
   }
   if ( a1->FootClass_field_bool_68E ) /*0x4d4e0d*/
   {
-    v17 = a1->?[0]; /*0x4d4e21*/
+    v17 = *(unsigned int *)&a1->attachedTag; /*0x4d4e21*/
     v5 = (int (__thiscall **)(FootClass *, int, int *, unsigned int))a1->TechnoClass; /*0x4d4e25*/
-    v18 = a1->?[1]; /*0x4d4e2a*/
-    v19 = a1->?[2]; /*0x4d4e36*/
+    v18 = *(unsigned int *)&a1->attachedTag; /*0x4d4e2a*/
+    v19 = *(unsigned int *)&a1->attachedBomb; /*0x4d4e36*/
     v6 = v5[241](a1, 1, &v17, 0); /*0x4d4e3e*/
     if ( v6 ) /*0x4d4e46*/
     {
@@ -64,7 +64,7 @@ int InfantryClass::ScanTarget(int * a1)
       a1->FootClass_field_bool_68E = 0; /*0x4d4e53*/
     }
   }
-  if ( a1->? ) /*0x4d4e5a*/
+  if ( a1->target ) /*0x4d4e5a*/
     (*((void (__thiscall **)(FootClass *, unsigned int))a1->TechnoClass + 335))(a1, 0); /*0x4d4e6a*/
   else
     (*((void (__thiscall **)(FootClass *, unsigned int, int))a1->TechnoClass + 289))(a1, 0, 1); /*0x4d4e7a*/
@@ -83,7 +83,7 @@ int InfantryClass::ScanTarget(int * a1)
   {
     return v9; /*0x4d4f1c*/
   }
-  v10 = (int *)(*((int (__thiscall **)(AbstractClass *, unsigned char *))a1->?->TechnoClass::vtable0 + 18))(a1->?, v20); /*0x4d4f30*/
+  v10 = (int *)(*((int (__thiscall **)(AbstractClass *, unsigned char *))*(unsigned short *)&a1->q048->TechnoClass::vtable0 + 18))(*(unsigned short *)&a1->q048, v20); /*0x4d4f30*/
   v11 = *v10; /*0x4d4f33*/
   v12 = v10[1]; /*0x4d4f35*/
   v13 = (int *)(*((int (__thiscall **)(FootClass *, unsigned char *))a1->TechnoClass + 18))(a1, v21); /*0x4d4f41*/
@@ -210,11 +210,11 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   p_vtable1 = (AbstractClass *)&this->vtable1; /*0x517d9a*/
   this->vtable0 = (void*)&InfantryClass_vftable; /*0x517d9d*/
   this->vtable2 = (void*)&InfantryClass_vftable; /*0x517da3*/
-  this->vtable3 = &off_7EB02C; /*0x517daa*/
+  *(void **)&this->vtable3 = &off_7EB02C; /*0x517daa*/
   this->vtable1 = (void*)&InfantryClass_vftable; /*0x517db1*/
   if ( unk_A8E9A0 ) /*0x517dbe*/
   {
-    Type = this->Type; /*0x517dc4*/
+    Type = *(unsigned int *)&this->Type; /*0x517dc4*/
     if ( Type ) /*0x517dcc*/
     {
       if ( HouseClass::CanBuild(this->owner, (int)Type, 0, 0) == -1 ) /*0x517de3*/
@@ -259,7 +259,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     }
   }
   Vtable3 = AbstractClass::GetVtable3(p_vtable1); /*0x517ec3*/
-  vtable1 = g_BuildingLoadQueue_Array.vtable1; /*0x517ec8*/
+  vtable1 = *(unsigned int *)&g_BuildingLoadQueue_Array.vtable1; /*0x517ec8*/
   v10 = Vtable3; /*0x517ece*/
   if ( g_BuildingLoadQueue_Array.vtable1 ) /*0x517ed2*/
   {
@@ -270,7 +270,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
         (size_t)g_BuildingLoadQueue_Array.vtable1,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = g_BuildingLoadQueue_Array.vtable1; /*0x517ef3*/
+      vtable1 = *(unsigned int *)&g_BuildingLoadQueue_Array.vtable1; /*0x517ef3*/
       g_BuildingLoadQueue_Array.uniqueId = 0; /*0x517efc*/
       IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) = 1; /*0x517f02*/
     }
@@ -297,7 +297,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       }
     }
   }
-  this->isAliveFlag = 0; /*0x517f83*/
+  *(unsigned int *)&this->isAliveFlag = 0; /*0x517f83*/
   return FootClass::Destruct((FootClass *)this); /*0x517f8e*/
 }
 // 0x7447A0

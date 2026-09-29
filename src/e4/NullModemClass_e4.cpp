@@ -169,7 +169,7 @@ int NullModemClass::sendData()
   ResetEvent(*((HANDLE *)&this->PlayerIndex4)); /*0x77469b*/
   ResetEvent(*((HANDLE *)&this->PlayerIndex9)); /*0x7746a1*/
   v8 = (void *)this->u32_5C; /*0x7746ad*/
-  this->PacketsReceived = 0; /*0x7746ae*/
+  *(unsigned int *)&this->PacketsReceived = 0; /*0x7746ae*/
   this->u32_51 = 0; /*0x7746b1*/
   if ( GetCommState(v8, &DCB) ) /*0x7746b4*/
   {
@@ -228,7 +228,7 @@ int NullModemClass::receiveData()
   ResetEvent(*((HANDLE *)&this->PlayerIndex4)); /*0x7747eb*/
   ResetEvent(*((HANDLE *)&this->PlayerIndex9)); /*0x7747f1*/
   v7 = (void *)this->u32_5C; /*0x7747ff*/
-  this->PacketsReceived = 0; /*0x774800*/
+  *(unsigned int *)&this->PacketsReceived = 0; /*0x774800*/
   this->u32_51 = 0; /*0x774803*/
   if ( !SetCommState(v7, (LPDCB)((char *)this + 8300)) ) /*0x774806*/
     Debug::Log(); /*0x774816*/

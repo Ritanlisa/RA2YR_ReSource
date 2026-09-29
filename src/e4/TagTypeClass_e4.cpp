@@ -89,9 +89,9 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   int v8; // eax
 
   this->AbstractClass = (void*)&TagTypeClass_vftable; /*0x6e5ca7*/
-  this->? = (void*)&TagTypeClass_vftable; /*0x6e5cad*/
-  this->? = (void*)&TagTypeClass_vftable; /*0x6e5cb4*/
-  this->? = (void*)&TagTypeClass_vftable; /*0x6e5cbb*/
+  *(void **)&this->vtable2 = (void*)&TagTypeClass_vftable; /*0x6e5cad*/
+  *(void **)&this->vtable3 = (void*)&TagTypeClass_vftable; /*0x6e5cb4*/
+  *(void **)&this->vtable4 = (void*)&TagTypeClass_vftable; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6e5cc2*/
   v2 = (unsigned int *)this->persistence; /*0x6e5cc7*/
   this->persistence = 0; /*0x6e5ccd*/
@@ -319,9 +319,9 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e642f*/
       aP0->AbstractClass = (void*)&TagTypeClass_vftable; /*0x6e6434*/
-      aP0->? = (void*)&TagTypeClass_vftable; /*0x6e643a*/
-      aP0->? = (void*)&TagTypeClass_vftable; /*0x6e6441*/
-      aP0->? = (void*)&TagTypeClass_vftable; /*0x6e6448*/
+      *(void **)&aP0->vtable2 = (void*)&TagTypeClass_vftable; /*0x6e643a*/
+      *(void **)&aP0->vtable3 = (void*)&TagTypeClass_vftable; /*0x6e6441*/
+      *(void **)&aP0->vtable4 = (void*)&TagTypeClass_vftable; /*0x6e6448*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 40); /*0x6e645b*/
     return 0; /*0x6e6460*/

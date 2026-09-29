@@ -13,7 +13,7 @@ struct ParticleSystemTypeClass {
     void* vtable4;  // 0xC
     int SlowdownDistance;  // 0x10
     unsigned char alignmentPadding_3;  // 0x11
-    void* ;  // 0x12
+    void *q12;  // 0x12
     bool IsAllocated;  // 0x13
     int ParticleSystemTypeClass_field_29C;  // 0x14
     unsigned char q015;  // 0x15

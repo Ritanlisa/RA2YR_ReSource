@@ -66,7 +66,7 @@
 
 // 0x770E70
 namespace gamemd {
-void sub_770E70(char **this@<ecx> a1, ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
+void sub_770E70(char *a1, ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
 {
   void *v5; // edi
   char *v6; // [esp+10h] [ebp-4h] BYREF
@@ -2487,8 +2487,8 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
   v5 = (const char **)a1; /*0x77e915*/
   if ( v4 ) /*0x77e917*/
     v5 = (const char **)&g_WindowManager.__pad_EC[684]; /*0x77e919*/
-  String::AssignFromPtr((String *)&v23.m_3[1], v5); /*0x77e923*/
-  if ( (uint8_t)String::Compare((String *)&v23.m_3[1], (const char **)&g_WindowManager.__pad_EC[684]) && !a2 ) /*0x77e93c*/
+  String::AssignFromPtr((String *)&v23.q4, v5); /*0x77e923*/
+  if ( (uint8_t)String::Compare((String *)&v23.q4, (const char **)&g_WindowManager.__pad_EC[684]) && !a2 ) /*0x77e93c*/
   {
     v6 = (HWND)Dialog::FindByHandle((Dialog *)0xC9); /*0x77e943*/
     EnablePlayerSlotControls(v6, 1u); /*0x77e94c*/
@@ -2503,7 +2503,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
     {
       if ( v10 >= 0 && v9 < owningHouseIndex ) /*0x77e966*/
         v8 = (char *)g_WOL_UserList.nextObject + v10; /*0x77e96d*/
-      v11 = String::GetOrEmpty_Alt((String *)&v23.m_3[1]); /*0x77e978*/
+      v11 = String::GetOrEmpty_Alt((String *)&v23.q4); /*0x77e978*/
       if ( !_strcmpi(v11, v8 + 36) ) /*0x77e97e*/
         break; /*0x77e97e*/
       owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x77e98a*/
@@ -2520,7 +2520,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
   }
   LABEL_16:
   v22 = dword_B77E4C == 1; /*0x77e9b4*/
-  String::ToLowerCopy((String *)&v23.m_3[1], (char **)&v24.DeleteAndZero_field_0x04); /*0x77e9cb*/
+  String::ToLowerCopy((String *)&v23.q4, (char **)&v24.DeleteAndZero_field_0x04); /*0x77e9cb*/
   v12 = 0; /*0x77e9d5*/
   if ( dword_A8DA84 > 0 ) /*0x77e9d9*/
   {
@@ -2590,7 +2590,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
     DisplayRankingsWOL(0); /*0x77eb78*/
   }
   DeleteAndZero((ObjectClass *)&v24.DeleteAndZero_field_0x04); /*0x77eb81*/
-  DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x77eb8a*/
+  DeleteAndZero((ObjectClass *)&v23.q4); /*0x77eb8a*/
 }
 }
 // 0x77ED00
@@ -3342,10 +3342,10 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
 
   v16 = (char **)aP4; /*0x77085b*/
   v6 = StaticString::Factory((StaticString *)this->AbstractClass); /*0x77085e*/
-  ConcatStringAlloc((char **)&v17.m_3[1], (const char **)v6, v16); /*0x770869*/
+  ConcatStringAlloc((char **)&v17.q4, (const char **)v6, v16); /*0x770869*/
   unknown_libname_73(&v17); /*0x770872*/
   String::Assign((String *)&aP4, &g_INI_DefaultBuffer); /*0x770880*/
-  INIClass::ReadString((INIClass *)a1, a2, (char **)&v17.m_3[1], (char **)&aP4, (int)&v17); /*0x77089d*/
+  INIClass::ReadString((INIClass *)a1, a2, (char **)&v17.q4, (char **)&aP4, (int)&v17); /*0x77089d*/
   DeleteAndZero((ObjectClass *)&aP4); /*0x7708a6*/
   v7 = *((unsigned int *)&this->nextArrayIndex * a4 + 223); /*0x7708b2*/
   v8 = (char *)&this->q060 * a4 + 892; /*0x7708b9*/
@@ -3371,7 +3371,7 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
   }
   DeleteAndZero((ObjectClass *)&aP4); /*0x77094f*/
   DeleteAndZero((ObjectClass *)&v17); /*0x770958*/
-  DeleteAndZero((ObjectClass *)&v17.m_3[1]); /*0x770961*/
+  DeleteAndZero((ObjectClass *)&v17.q4); /*0x770961*/
 }
 } // namespace gamemd
 
@@ -4121,7 +4121,7 @@ BOOL E4Recv_7738A0::sub_7738A0(const char * cbData, LPBYTE lpData, const char * 
   if ( !Value ) /*0x7738c7*/
   {
     strcpy(ValueName, cbData); /*0x7738e8*/
-    if ( !this->? ) /*0x7738ec*/
+    if ( !this->M8 ) /*0x7738ec*/
       strcat(ValueName, asc_84968C); /*0x77391d*/
     cbData = Type; /*0x773932*/
     Value = RegQueryValueExA(phkResult, ValueName, 0, (LPDWORD)&Type, lpData, (LPDWORD)&cbData); /*0x77394f*/
@@ -4413,7 +4413,7 @@ unsigned int E4Recv_7767F0::sub_7767F0()
   char *referenceCount; // edi
   LPARAM lParam[10]; // [esp+8h] [ebp-28h] BYREF
 
-  referenceCount = (char *)this->?; /*0x7767f7*/
+  referenceCount = (char *)this->M28; /*0x7767f7*/
   if ( !referenceCount ) /*0x7767fc*/
     return 0; /*0x776873*/
   String::Trim(referenceCount); /*0x776801*/
@@ -4610,8 +4610,8 @@ void * E4Recv_776EB0::sub_776EB0()
   struct _OSVERSIONINFOA VersionInformation; // [esp+8h] [ebp-94h] BYREF
 
   this->AbstractClass = 0; /*0x776ec1*/
-  this->? = 0; /*0x776ec3*/
-  this->? = 0; /*0x776ec6*/
+  this->M4 = 0; /*0x776ec3*/
+  this->M8 = 0; /*0x776ec6*/
   this->onBridge = 0; /*0x776ec9*/
   this->isFallingDown = 0; /*0x776ecf*/
   VersionInformation.dwOSVersionInfoSize = 148; /*0x776ed5*/
@@ -4619,9 +4619,9 @@ void * E4Recv_776EB0::sub_776EB0()
   dwBuildNumber = (void *)VersionInformation.dwBuildNumber; /*0x776ee7*/
   dwMinorVersion = (void *)VersionInformation.dwMinorVersion; /*0x776eeb*/
   this->AbstractClass = (void *)VersionInformation.dwMajorVersion; /*0x776eef*/
-  this->? = dwBuildNumber; /*0x776ef1*/
+  *(void **)&this->M8 = dwBuildNumber; /*0x776ef1*/
   dwPlatformId = VersionInformation.dwPlatformId; /*0x776ef4*/
-  this->? = dwMinorVersion; /*0x776efd*/
+  *(void **)&this->M4 = dwMinorVersion; /*0x776efd*/
   if ( dwPlatformId == 1 ) /*0x776f02*/
   {
     this->onBridge = 1; /*0x776f04*/
@@ -5015,13 +5015,13 @@ char sub_779730()
                        (uint8_t *)g_INI_Key_AutoLogin,
                        1);
     HashTable::DestroyHashTableINIClass(v2); /*0x779806*/
-    v8[0] = &off_7E1668; /*0x77980f*/
+    v8[0] = (unsigned int)&off_7E1668; /*0x77980f*/
     BufferIOFileClass::Dtor(v8); /*0x779817*/
     return Bool_Overwrite; /*0x77981c*/
   }
   else
   {
-    v8[0] = &off_7E1668; /*0x779759*/
+    v8[0] = (unsigned int)&off_7E1668; /*0x779759*/
     BufferIOFileClass::Dtor(v8); /*0x779761*/
     return 0; /*0x779766*/
   }
@@ -5069,7 +5069,7 @@ int ReadWOLGameOption(INIClass * a1)
     INIClass::SaveToPipe(v3, (int)v9); /*0x779917*/
   }
   HashTable::DestroyHashTableINIClass(v3); /*0x779920*/
-  v9[0] = &off_7E1668; /*0x779929*/
+  v9[0] = (unsigned int)&off_7E1668; /*0x779929*/
   return BufferIOFileClass::Dtor(v9); /*0x779936*/
 }
 } // namespace gamemd
@@ -5113,13 +5113,13 @@ char sub_779940()
                        (uint8_t *)aAddmatchbuddie,
                        1);
     HashTable::DestroyHashTableINIClass(v2); /*0x779a16*/
-    v8[0] = &off_7E1668; /*0x779a1f*/
+    v8[0] = (unsigned int)&off_7E1668; /*0x779a1f*/
     BufferIOFileClass::Dtor(v8); /*0x779a27*/
     return Bool_Overwrite; /*0x779a2c*/
   }
   else
   {
-    v8[0] = &off_7E1668; /*0x779969*/
+    v8[0] = (unsigned int)&off_7E1668; /*0x779969*/
     BufferIOFileClass::Dtor(v8); /*0x779971*/
     return 0; /*0x779976*/
   }
@@ -5167,7 +5167,7 @@ int ReadWOLLobbyOption(INIClass * a1)
     INIClass::SaveToPipe(v3, (int)v9); /*0x779b27*/
   }
   HashTable::DestroyHashTableINIClass(v3); /*0x779b30*/
-  v9[0] = &off_7E1668; /*0x779b39*/
+  v9[0] = (unsigned int)&off_7E1668; /*0x779b39*/
   return BufferIOFileClass::Dtor(v9); /*0x779b46*/
 }
 } // namespace gamemd

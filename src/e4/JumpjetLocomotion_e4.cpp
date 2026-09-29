@@ -48,7 +48,7 @@ AbstractClass * * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
     v6 = aP3; /*0x4b0b07*/
     if ( !(unsigned char)v5 ) /*0x4b0b0d*/
     {
-      v5 = this->q058; /*0x4b0b13*/
+      v5 = *(unsigned int *)&this->q058; /*0x4b0b13*/
       if ( v5 != -1 ) /*0x4b0b19*/
       {
         v5 = byte_7E7B28[12 * v5]; /*0x4b0b22*/
@@ -716,7 +716,7 @@ LABEL_107:
                   }
                   aP3_16 = aP3_16;
                   char * v103 = (char *)aP3_20;
-                  this->ptr_60 = 0;
+                  *(unsigned int *)&this->ptr_60 = 0;
                   this->JumpjetLocomotion_field_0x58 = aP3_16;
                   aP3_92 = v103;
                   v181 = 0;
@@ -733,7 +733,7 @@ LABEL_107:
                     this->JumpjetLocomotion_field_0x44 = *(unsigned int *)&g_CellDirectionOffsets[4356];
                     v106 = *(TechnoClass **)&g_CellDirectionOffsets[4360];
                     this->u8_63 = 0;
-                    this->q048 = v106;
+                    *(void **)&this->q048 = v106;
                   }
                   v107 = this->q00C;
                   this->u8_63 = 1;
@@ -751,7 +751,7 @@ LABEL_107:
                     this->JumpjetLocomotion_field_0x44 = *(unsigned int *)&g_CellDirectionOffsets[4356];
                     v110 = *(TechnoClass **)&g_CellDirectionOffsets[4360];
                     this->u8_63 = 0;
-                    this->q048 = v110;
+                    *(void **)&this->q048 = v110;
                     v109 = *(unsigned int *)&g_CellDirectionOffsets[4352];
                   }
                   int v111 = *(unsigned int *)v185;
@@ -876,7 +876,7 @@ LABEL_107:
     this->JumpjetLocomotion_field_0x44 = *(unsigned int *)&g_CellDirectionOffsets[4356];
     v135 = *(TechnoClass **)&g_CellDirectionOffsets[4360];
     this->u8_63 = 0;
-    this->q048 = v135;
+    *(void **)&this->q048 = v135;
   }
   v136 = this->q00C;
   this->JumpjetLocomotion_field_0x58 = -1;
@@ -902,7 +902,7 @@ LABEL_107:
       if ( (int)((IDA_HIDWORD(rax162) ^ rax162) - IDA_HIDWORD(rax162)) < 2 * *(unsigned int *)g_CellDirectionOffsets[4416] )
       {
         v183 = 1;
-        this->ptr_34 = *(unsigned int *)&g_CellDirectionOffsets[4352];
+        *(unsigned int *)&this->ptr_34 = *(unsigned int *)&g_CellDirectionOffsets[4352];
         this->u32_38 = *(unsigned int *)&g_CellDirectionOffsets[4356];
         this->u32_3C = *(unsigned int *)&g_CellDirectionOffsets[4360];
         if ( *v126 != *(unsigned int *)&g_CellDirectionOffsets[4352]
@@ -946,7 +946,7 @@ LABEL_147:
   this->u32_4C = aP3_8;
   if ( cc146 )
     return 0;
-  v121 = this->q058;
+  v121 = *(unsigned int *)&this->q058;
   if ( (int)v121 <= -1 )
     return 0;
   unsigned char * v123 = (unsigned char *)(12 * (unsigned int)v121 + 8289064);
@@ -2103,7 +2103,7 @@ LABEL_263:
     this->u8_64 = 0;
   }
   v168 = v153 + 8 * v6;
-  this->ptr_60 = 0;
+  *(unsigned int *)&this->ptr_60 = 0;
   this->JumpjetLocomotion_field_0x58 = v168;
   if ( !byte_7E7B28[12 * v168] )
     this->JumpjetLocomotion_field_0x58 = 9 * v6;
@@ -2467,11 +2467,11 @@ void* JumpjetLocomotion::Land()
   int v55; // [esp+52h] [ebp-4h]
 
   v2 = this->q00C; /*0x54ca99*/
-  v50 = v2->q09C; /*0x54caa6*/
+  v50 = *(unsigned int *)&v2->q09C; /*0x54caa6*/
   v51 = v2->q280; /*0x54caad*/
   v52 = v2->q0A4; /*0x54cab4*/
   v3 = v2->q0A4; /*0x54caba*/
-  v53 = v2->q09C; /*0x54cabd*/
+  v53 = *(unsigned int *)&v2->q09C; /*0x54cabd*/
   v4 = v2->u8_6AD; /*0x54cac4*/
   v54 = v2->q280; /*0x54cacc*/
   if ( v4 ) /*0x54cad0*/
@@ -2480,7 +2480,7 @@ void* JumpjetLocomotion::Land()
     this->u32_70 = 0; /*0x54cad8*/
     this->q078 = 0; /*0x54cadb*/
     v6 = v5 - this->u32_28; /*0x54cade*/
-    this->q074 = 0; /*0x54cae1*/
+    *(unsigned int *)&this->q074 = 0; /*0x54cae1*/
     this->u32_7C = 0; /*0x54cae4*/
     v7 = Math::RoundToInt(v6); /*0x54cae7*/
     v8 = this->u32_28 + 1.0; /*0x54caef*/
@@ -2911,7 +2911,7 @@ void* JumpjetLocomotion::UpdateFacing()
     if ( !v27 ) /*0x54d405*/
     {
       v32 = *(unsigned int *)this->__pad_C; /*0x54d407*/
-      v62 = v32->q09C; /*0x54d416*/
+      v62 = *(unsigned int *)&v32->q09C; /*0x54d416*/
       v63 = v32->q0A4; /*0x54d424*/
       (*(void (__thiscall **)(int, double *))(v32->u32_F4)(v32, &v62); /*0x54d42f*/
       *(unsigned char *)(*(unsigned int *)this->__pad_C + 140) = 0; /*0x54d438*/
@@ -3023,7 +3023,7 @@ void* JumpjetLocomotion::UpdateFacing()
   if ( v55 ) /*0x54d69d*/
     return (*(int (__thiscall **)(unsigned int, int))(**(unsigned int **)this->__pad_C + 292))(*(unsigned int *)this->__pad_C, 1); /*0x54d6a6*/
   result = *(unsigned int *)this->__pad_C; /*0x54d6b4*/
-  result->q074 = v58; /*0x54d6bd*/
+  *(unsigned int *)&result->q074 = v58; /*0x54d6bd*/
   return result; /*0x54d6ac*/
 }
 }

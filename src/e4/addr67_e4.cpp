@@ -58,7 +58,7 @@ int sub_679CC0()
     v4 = 0; /*0x679d08*/
     v5 = 0; /*0x679d0c*/
     v6 = 0; /*0x679d10*/
-    v1[0] = &CCINIClass_Vtable; /*0x679d14*/
+    v1[0] = (unsigned int)&CCINIClass_Vtable; /*0x679d14*/
     CCFileClass::Construct(v7, g_Str_File_CoopCampMD_ini); /*0x679d1c*/
     if ( CCINIClass::Load(v1, (int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
@@ -66,7 +66,7 @@ int sub_679CC0()
     v7[0] = (void*)&CCFileClass_vftable; /*0x679d51*/
     v9 = 0; /*0x679d59*/
     Vector::Clear((int)v8); /*0x679d60*/
-    v7[0] = &off_7E1668; /*0x679d69*/
+    v7[0] = (unsigned int)&off_7E1668; /*0x679d69*/
     BufferIOFileClass::Dtor(v7); /*0x679d71*/
     HashTable::DestroyHashTableINIClass(v1); /*0x679d7a*/
   }
@@ -332,7 +332,7 @@ int ArtINI_Load()
   v1[0] = (void*)&CCFileClass_vftable; /*0x679f16*/
   v3 = 0; /*0x679f1e*/
   Vector::Clear((int)v2); /*0x679f26*/
-  v1[0] = &off_7E1668; /*0x679f2f*/
+  v1[0] = (unsigned int)&off_7E1668; /*0x679f2f*/
   return BufferIOFileClass::Dtor(v1); /*0x679f3c*/
 }
 } // namespace gamemd

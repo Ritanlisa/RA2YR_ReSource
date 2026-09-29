@@ -15,12 +15,12 @@ struct WarheadTypeClass {
     unsigned char alignmentPadding_3;  // 0x11
     char referenceCount[4];  // 0x12
     bool IsAllocated;  // 0x13
-    void* ;  // 0x14
+    void *q14;  // 0x14
     int DeformTreshold;  // 0x16
     char InfDeath[4];  // 0x18
     float CellSpread;  // 0x1C
     bool q01D;  // 0x1D
-    void* ;  // 0x20
+    void *q20;  // 0x20
     float q024;  // 0x24
     bool CausesDelayKill;  // 0x28
     int DelayKillFrames;  // 0x2C
@@ -95,9 +95,9 @@ struct WarheadTypeClass {
     void* q0F8;  // 0xF8
     unsigned int q0F9;  // 0xF9
     unsigned char q0FB;  // 0xFB
-    unsigned int ;  // 0xFC
+    unsigned int qFC;  // 0xFC
     unsigned int q100;  // 0x100
-    void* ;  // 0x104
+    void *q104_a;  // 0x104
     CampaignClass* q108;  // 0x108
     unsigned int q10C;  // 0x10C
     unsigned char q110;  // 0x110
@@ -162,7 +162,7 @@ struct WarheadTypeClass {
     int q180;  // 0x180
     int q184;  // 0x184
     int q188;  // 0x188
-    void* ;  // 0x18C
+    void *q18C;  // 0x18C
     unsigned int q190;  // 0x190
     int MaxDebris;  // 0x194
     int MinDebris;  // 0x198
@@ -173,7 +173,7 @@ struct WarheadTypeClass {
     unsigned int q1A2;  // 0x1A2
     unsigned int q1A5;  // 0x1A5
     unsigned int q1A7;  // 0x1A7
-    void* ;  // 0x1A8
+    void *q1A8;  // 0x1A8
     unsigned char q1AB;  // 0x1AB
     CampaignClass* q1AC;  // 0x1AC
     unsigned int q1B0;  // 0x1B0

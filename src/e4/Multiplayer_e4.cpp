@@ -221,7 +221,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
   v4 = (void *)((int)(RA2_OPNEW(4 * v3)));
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
-  this->u32_4 = v4; /*0x68c2eb*/
+  *(void **)&this->u32_4 = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
     return this; /*0x68c2ee*/
   v5 = this->u32_8; /*0x68c2f0*/

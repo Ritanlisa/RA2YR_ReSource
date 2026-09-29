@@ -212,12 +212,12 @@ File * * File::Dispatch()
     case 0: /*0x4cb94c*/
     case 1: /*0x4cb94c*/
       IDA_LOWORD(v5) = ntohs(**(unsigned short **)&this->__pad_6[2]); /*0x4cb95a*/
-      **(unsigned short **)&this->__pad_6[2] = v5; /*0x4cb963*/
+      **(unsigned short **)&this->q8 = v5; /*0x4cb963*/
       break; /*0x4cb966*/
     case 2: /*0x4cb94c*/
     case 3: /*0x4cb94c*/
       v5 = ntohl(**(unsigned int **)&this->__pad_6[2]); /*0x4cb96d*/
-      **(unsigned int **)&this->__pad_6[2] = v5; /*0x4cb975*/
+      **(unsigned int **)&this->q8 = v5; /*0x4cb975*/
       break; /*0x4cb975*/
     default:
       return v5;
@@ -235,7 +235,7 @@ unsigned int * File::LoadFileHVA(ObjectClass * aP1)
   *(unsigned int *)&this->__pad_6[6] = 0; /*0x5bd57d*/
   if ( !File::ParseFileHVA((int)this, aP1) ) /*0x5bd585*/
     this->__pad_0[0] = 1; /*0x5bd58e*/
-  return this->__pad_0; /*0x5bd593*/
+  return this; /*0x5bd593*/
 }
 }
 // 0x5BD5C0
@@ -272,7 +272,7 @@ AbstractClass * * File::ParseFileHVA(int a2)
     v7 = RA2_OPNEW(48 * this->u32_4 * this->ptr_8); /*0x5bd636*/
     if ( !v7 ) /*0x5bd640*/
       v7 = 0; /*0x5bd649*/
-    this->u32_C = v7; /*0x5bd64d*/
+    *(void **)&this->u32_C = v7; /*0x5bd64d*/
     if ( v7 ) /*0x5bd650*/
     {
       (*(void (__thiscall **)(int, int, int))(*(unsigned int *)a2 + 40))(a2, 16 * this->u32_4, 1); /*0x5bd675*/
@@ -585,7 +585,7 @@ AbstractClass * * File::ParseCSFString()
 namespace gamemd {
 unsigned int * File::LoadFileVXL(ObjectClass * aP1, SomeVoxelCache * aP2)
 {
-  this->__pad_0[0] = 0; /*0x755cd9*/
+  this->u32_4 = 0; /*0x755cd9*/
   *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x755cdb*/
   *(unsigned int *)&this->__pad_6[2] = 0; /*0x755cde*/
   *(unsigned int *)&this->__pad_6[6] = 0; /*0x755ce1*/
@@ -594,7 +594,7 @@ unsigned int * File::LoadFileVXL(ObjectClass * aP1, SomeVoxelCache * aP2)
   *(unsigned int *)&this->__pad_6[18] = 0; /*0x755cea*/
   if ( !Voxel::SortDepth((int)this, aP1, aP2) ) /*0x755cf5*/
     this->__pad_0[0] = 1; /*0x755cfe*/
-  return this->__pad_0; /*0x755d03*/
+  return this; /*0x755d03*/
 }
 }
 // 0x76AC90
@@ -753,7 +753,7 @@ AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
     while ( 1 ) /*0x76b10a*/
     {
       v10 = 0; /*0x76b10a*/
-      if ( *(unsigned int *)&this->__pad_6[26] ) /*0x76b107*/
+      if ( *(unsigned int *)&this->ptr_10 ) /*0x76b107*/
         break; /*0x76b107*/
   LABEL_18:
       if ( v8 ) /*0x76b15e*/

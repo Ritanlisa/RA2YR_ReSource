@@ -338,7 +338,7 @@ LABEL_16:
         int v86 = 0; /*0x5fba53*/
   unsigned char v85[12]; // [esp+74h] [ebp-B8h] BYREF
         Vector::Clear((int)v85); /*0x5fba5e*/
-        v79[0] = &off_7E1668; /*0x5fba67*/
+        v79[0] = (unsigned int)&off_7E1668; /*0x5fba67*/
         BufferIOFileClass::Dtor(v79); /*0x5fba6f*/
         return 1; /*0x5fba83*/
       }
@@ -354,7 +354,7 @@ LABEL_16:
       int v82 = 0; /*0x5fb932*/
       int v83 = 0; /*0x5fb936*/
       char v84 = 0; /*0x5fb93a*/
-      v79[0] = &CCINIClass_Vtable; /*0x5fb93f*/
+      v79[0] = (unsigned int)&CCINIClass_Vtable; /*0x5fb93f*/
       INIClass::ClearSection((int)v79, 0, 0); /*0x5fb947*/
       ObjectClass *v43 = dword_87F5D8[43]; /*0x5fb94c*/
       for ( m = 0; m < dword_87F5D8[43]; ++m ) /*0x5fb955*/

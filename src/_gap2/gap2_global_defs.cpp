@@ -7415,7 +7415,7 @@ int Gap2Recv_54BD30::UpdateFootMoveToState() {
         && *(unsigned char *)(v6[433] + 3603)
         && !*(unsigned char *)(*(unsigned int *)(v3 + 12) + 1709) )
       {
-        if ( *(unsigned char *)((*(int (__usercall **)@<eax>(unsigned int *@<ecx>, double@<st0>))(*v6 + 132))(v6, result) + 1709) ) /*0x54bde8*/
+        if ( *(unsigned char *)((*(int (__usercall **)(unsigned int *, double))(*v6 + 132))(v6, result) + 1709) ) /*0x54bde8*/
         {
           if ( !*((unsigned char *)v6 + 308) ) /*0x54bdf2*/
           {
@@ -7439,7 +7439,7 @@ int Gap2Recv_54BD30::UpdateFootMoveToState() {
       }
       else
       {
-        if ( *(unsigned char *)((*(int (__usercall **)@<eax>(unsigned int@<ecx>, double@<st0>))(**(unsigned int **)(v3 + 12) + 132))( /*0x54be6d*/
+        if ( *(unsigned char *)((*(int (__usercall **)(unsigned int, double))(**(unsigned int **)(v3 + 12) + 132))( /*0x54be6d*/
                           *(unsigned int *)(v3 + 12),
                           result)
                       + 3434) )
@@ -29231,7 +29231,7 @@ int Gap2Recv_729580::FindUnitPlacementTarget() {
     v28 = *((unsigned int *)vtable3 + 41); /*0x729612*/
     v9 = *(unsigned int *)vtable3; /*0x729616*/
     v10 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v27); /*0x72961d*/
-    if ( (*(int (__usercall **)@<eax>(void *@<ecx>, CellClass *, int, int, unsigned int, int, double@<st0>))(v9 + 428))( /*0x72965b*/
+    if ( (*(int (__usercall **)(void *, CellClass *, int, int, unsigned int, int, double))(v9 + 428))( /*0x72965b*/
            this->vtable3,
            v10,
            -1,

@@ -60,10 +60,7 @@ struct GameClass {
     unsigned int field_14;
     unsigned int field_3C;
     unsigned int m_10;
-    unsigned int m_13C;
-    unsigned int m_14;
     unsigned int m_140;
-    unsigned int m_34;
     unsigned int m_38;
     unsigned int m_3C;
     unsigned int m_C;

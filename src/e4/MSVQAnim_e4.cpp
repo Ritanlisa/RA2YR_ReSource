@@ -69,6 +69,6 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&MSAnim_vftable; /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
     RA2_OPDEL(); /*0x5cecfa*/
-  return this->__pad_0; /*0x5ced04*/
+  return this; /*0x5ced04*/
 }
 } // namespace gamemd

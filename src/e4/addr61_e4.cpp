@@ -1109,11 +1109,11 @@ namespace gamemd {
 unsigned int * E4Recv_6107E0::sub_6107E0()
 {
   this->AbstractClass = 0; /*0x6107e4*/
-  this->? = 0; /*0x6107e6*/
-  this->? = 0; /*0x6107e9*/
-  this->? = 0; /*0x6107ec*/
-  this->? = 0; /*0x6107ef*/
-  IDA_LOWORD(this->?) = 0; /*0x6107f2*/
+  this->M4 = 0; /*0x6107e6*/
+  this->M8 = 0; /*0x6107e9*/
+  this->M12 = 0; /*0x6107ec*/
+  this->M16 = 0; /*0x6107ef*/
+  IDA_LOWORD(this->M20) = 0; /*0x6107f2*/
   this->M276 = 0; /*0x6107f6*/
   this->M280 = 0; /*0x6107fc*/
   this->M284 = 0; /*0x610802*/

@@ -1472,7 +1472,7 @@ void sub_6E6A80()
 namespace gamemd {
 unsigned char * E4Recv_6E6B70::sub_6E6B70(unsigned int * a2)
 {
-  IDA_LOBYTE(this->?) = 11; /*0x6e6b75*/
+  IDA_LOBYTE(this->M4) = 11; /*0x6e6b75*/
   this->AbstractClass = (void *)(*a2 / 256 + 1000 * (a2[1] / 256)); /*0x6e6ba4*/
   return this; /*0x6e6ba3*/
 }
@@ -1626,25 +1626,25 @@ unsigned int * E4Recv_6E8000::sub_6E8000(int a2)
   int v6; // edx
 
   result = &this->AbstractClass; /*0x6e8004*/
-  this->? = (void*)&INoticeSink_vftable; /*0x6e8008*/
-  this->? = (void*)&INoticeSource_vftable; /*0x6e800f*/
-  this->? = *(unsigned int *)(a2 + 16); /*0x6e801c*/
-  IDA_LOBYTE(this->?) = *(unsigned char *)(a2 + 20); /*0x6e8022*/
-  this->? = *(unsigned int *)(a2 + 24); /*0x6e8028*/
-  this->? = *(unsigned int *)(a2 + 28); /*0x6e802e*/
-  IDA_LOBYTE(this->?) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
+  *(unsigned short *)&this->M8 = (void*)&INoticeSink_vftable; /*0x6e8008*/
+  *(unsigned short *)&this->M12 = (void*)&INoticeSource_vftable; /*0x6e800f*/
+  this->M16 = *(unsigned int *)(a2 + 16); /*0x6e801c*/
+  IDA_LOBYTE(this->M20) = *(unsigned char *)(a2 + 20); /*0x6e8022*/
+  this->q018 = *(unsigned int *)(a2 + 24); /*0x6e8028*/
+  this->M28 = *(unsigned int *)(a2 + 28); /*0x6e802e*/
+  IDA_LOBYTE(this->q020) = *(unsigned char *)(a2 + 32); /*0x6e8034*/
   this->AbstractClass = (void*)&AbstractClass_vftable; /*0x6e803f*/
-  this->? = (void*)&AbstractClass_vftable; /*0x6e8045*/
-  this->? = (void*)&AbstractClass_vftable; /*0x6e804c*/
-  this->? = (void*)&AbstractClass_vftable; /*0x6e8053*/
+  *(unsigned short *)&this->M4 = (void*)&AbstractClass_vftable; /*0x6e8045*/
+  *(unsigned short *)&this->M8 = (void*)&AbstractClass_vftable; /*0x6e804c*/
+  *(unsigned short *)&this->M12 = (void*)&AbstractClass_vftable; /*0x6e8053*/
   qmemcpy(&this->occupant, (const void *)(a2 + 36), 0x19u); /*0x6e805a*/
   qmemcpy((char *)this->ambientSoundController + 1, (const void *)(a2 + 61), 0x20u); /*0x6e8068*/
   this->customSound_controller[4] = *(unsigned int *)(a2 + 96); /*0x6e8070*/
   qmemcpy(&this->customSound, (const void *)(a2 + 100), 0x31u); /*0x6e807b*/
   this->AbstractClass = (void*)&TaskForceClass_vftable; /*0x6e807e*/
-  this->? = (void*)&TaskForceClass_vftable; /*0x6e8084*/
-  this->? = (void*)&TaskForceClass_vftable; /*0x6e808b*/
-  this->? = (void*)&TaskForceClass_vftable; /*0x6e8092*/
+  *(unsigned short *)&this->M4 = (void*)&TaskForceClass_vftable; /*0x6e8084*/
+  *(unsigned short *)&this->M8 = (void*)&TaskForceClass_vftable; /*0x6e808b*/
+  *(unsigned short *)&this->M12 = (void*)&TaskForceClass_vftable; /*0x6e8092*/
   v3 = &this->location[2]; /*0x6e809f*/
   result[38] = *(unsigned int *)(a2 + 152); /*0x6e80a5*/
   result[39] = *(unsigned int *)(a2 + 156); /*0x6e80b1*/

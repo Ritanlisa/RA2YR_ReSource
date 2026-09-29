@@ -293,7 +293,7 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   }
   FileStraw::Open(v8, (int)v14, 0); /*0x7650d7*/
   CCFileClass::Close(v14); /*0x7650e0*/
-  v14[0] = &off_7E1668; /*0x7650e9*/
+  v14[0] = (unsigned int)&off_7E1668; /*0x7650e9*/
   BufferIOFileClass::Dtor(v14); /*0x7650f1*/
   RegionStringWOL = GetRegionStringWOL(aP1); /*0x765101*/
   v3 = String::Assign((char **)&v6, g_INI_Key_LastDay); /*0x76510c*/
@@ -306,7 +306,7 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   BufferIOFile::Init(v15); /*0x76516b*/
   CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 2); /*0x76517e*/
   INIClass::SaveToPipe(v8, (int)v15); /*0x76518f*/
-  v15[0] = &off_7E1668; /*0x76519b*/
+  v15[0] = (unsigned int)&off_7E1668; /*0x76519b*/
   BufferIOFileClass::Dtor(v15); /*0x7651a6*/
   DeleteAndZero(&v7); /*0x7651af*/
   return HashTable::DestroyHashTableINIClass(v8); /*0x7651bd*/
@@ -943,10 +943,10 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
     return &this->AbstractClass; /*0x76b7bc*/
   (*((void (__thiscall **)(ObjectClass *))this->AbstractClass + 3))(this); /*0x76b7c4*/
   v4 = a2[2]; /*0x76b7c7*/
-  this->? = (void *)v4; /*0x76b7cc*/
+  *(void **)&this->M8 = (void *)v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/
   {
-    this->? = 0; /*0x76b855*/
+    *(unsigned short *)&this->M4 = 0; /*0x76b855*/
     IDA_BYTE1(this->?) = 0; /*0x76b85c*/
     return &this->AbstractClass; /*0x76b860*/
   }
@@ -974,10 +974,10 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   {
     v8 = 0; /*0x76b815*/
   }
-  this->? = v8; /*0x76b819*/
+  *(void **)&this->M4 = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
     return &this->AbstractClass; /*0x76b81c*/
-  vtable2 = this->?; /*0x76b81e*/
+  vtable2 = this->M8; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
   IDA_BYTE1(this->?) = 1; /*0x76b825*/
   if ( (int)vtable2 <= 0 ) /*0x76b829*/
@@ -987,7 +987,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
     ComPtr::Set((ComPtr *)((char *)this->? + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
     ++v10; /*0x76b847*/
   }
-  while ( v10 < (int)this->? ); /*0x76b84a*/
+  while ( v10 < (int)this->M8 ); /*0x76b84a*/
   return &this->AbstractClass; /*0x76b84e*/
 }
 }
@@ -1281,7 +1281,7 @@ namespace gamemd {
 unsigned int * E4Recv_763700::sub_763700(unsigned int * a2)
 {
   this->AbstractClass = (void *)*a2; /*0x76370b*/
-  this->? = (void *)a2[1]; /*0x763710*/
+  *(void **)&this->M4 = (void *)a2[1]; /*0x763710*/
   this->? = (void *)a2[2]; /*0x763717*/
   return &this->AbstractClass; /*0x763713*/
 }
@@ -1466,13 +1466,13 @@ AbstractClass * * ObjectClass::sub_764A20()
     v13 = 0; /*0x764a9a*/
     v14 = 0; /*0x764a9e*/
     v15 = 0; /*0x764aa2*/
-    *(unsigned int *)&v4.m_3[1] = (void*)&INIClass_vftable; /*0x764aa6*/
-    FileStraw::Open((FileStraw *)&v4.m_3[1], (int)&v16, 0); /*0x764aae*/
+    *(void **)&v4.q4 = (void*)&INIClass_vftable; /*0x764aa6*/
+    FileStraw::Open((FileStraw *)&v4.q4, (int)&v16, 0); /*0x764aae*/
     CCFileClass::Close((BufferIOFileClass *)&v16); /*0x764ab7*/
     String::Assign(&v4, g_INI_Key_CampaignID); /*0x764ac5*/
-    Int = INIClass::ReadInt((bool *)&v4.m_3[1], (char **)this, (char **)&v4, -1); /*0x764adf*/
+    Int = INIClass::ReadInt((bool *)&v4.q4, (char **)this, (char **)&v4, -1); /*0x764adf*/
     DeleteAndZero((ObjectClass *)&v4); /*0x764ae1*/
-    HashTable::DestroyHashTableINIClass((INIClass *)&v4.m_3[1]); /*0x764aea*/
+    HashTable::DestroyHashTableINIClass((INIClass *)&v4.q4); /*0x764aea*/
     *(unsigned int *)v16.__pad_0 = &off_7E1668; /*0x764af3*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x764afb*/
     return Int; /*0x764b00*/
@@ -1510,7 +1510,7 @@ int sub_765580(unsigned int * a1)
   }
   FileStraw::Open(a1, (int)v2, 0); /*0x7655d8*/
   CCFileClass::Close(v2); /*0x7655e1*/
-  v2[0] = &off_7E1668; /*0x7655ea*/
+  v2[0] = (unsigned int)&off_7E1668; /*0x7655ea*/
   return BufferIOFileClass::Dtor(v2); /*0x7655f7*/
 }
 } // namespace gamemd
@@ -1874,19 +1874,19 @@ rc_ptr * ConstructorWDTFlagOption(rc_ptr_base * a1, int a2, void * a3, int a4, v
   v9 = (void *)RA2_OPNEW(0x1Cu); /*0x76746e*/
   if ( v9 ) /*0x767475*/
   {
-    *(unsigned int *)&v14.m_3[1] = aP5; /*0x76747f*/
+    *(unsigned int *)&v14.q4 = aP5; /*0x76747f*/
     *(unsigned int *)v14.__pad_0 = v8; /*0x767480*/
     String::AssignFromPtr(&v14, (const char **)&a5); /*0x767484*/
-    *(unsigned int *)&v13.m_3[1] = a4; /*0x767491*/
+    *(unsigned int *)&v13.q4 = a4; /*0x767491*/
     *(unsigned int *)v13.__pad_0 = v10; /*0x767492*/
     String::AssignFromPtr(&v13, (const char **)&a3); /*0x767496*/
     v11 = ConstructorWDTFlagOption_Create( /*0x7674a3*/
             v9,
             a2,
             *(void **)v13.__pad_0,
-            *(int *)&v13.m_3[1],
+            *(int *)&v13.q4,
             *(void **)v14.__pad_0,
-            *(int *)&v14.m_3[1]);
+            *(int *)&v14.q4);
   }
   else
   {
@@ -2202,7 +2202,7 @@ unsigned int * E4Recv_767E90::sub_767E90()
   this->MSFrameAnim_field_0x10 = (void *)Timer::GetTicks(); /*0x767ea7*/
   this->MSFrameAnim_field_0x18 = 0; /*0x767eaa*/
   *(unsigned int *)this->__pad_0 = (void*)&MSFrameAnim_vftable; /*0x767ead*/
-  return this->__pad_0; /*0x767eb5*/
+  return this; /*0x767eb5*/
 }
 } // namespace gamemd
 
@@ -2215,7 +2215,7 @@ unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
   char *v4; // ecx
 
   result = &this->AbstractClass; /*0x769490*/
-  vtable1 = (char *)this->?; /*0x76949d*/
+  vtable1 = (char *)this->M4; /*0x76949d*/
   this->AbstractClass = (char *)this->AbstractClass + *a2; /*0x7694a0*/
   v4 = (char *)this->? + 1; /*0x7694aa*/
   result[1] = &vtable1[a2[1]]; /*0x7694ab*/
@@ -2426,7 +2426,7 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   if ( !v5 && v11 ) /*0x76ac76*/
     (**v8)(v8, 3); /*0x76ac7c*/
   this->u32_44 = 0; /*0x76ac7e*/
-  return this->__pad_0; /*0x76ac83*/
+  return this; /*0x76ac83*/
 }
 } // namespace gamemd
 
@@ -2880,11 +2880,11 @@ unsigned int * E4Recv_76E090::sub_76E090()
   }
   DeleteAndZero((ObjectClass *)&v4); /*0x76e13b*/
   this->currentTargets[2] = -1; /*0x76e144*/
-  ComPtr::Constructor((ComPtr *)&v4.m_3[1]); /*0x76e14e*/
-  *(unsigned int *)&v4.m_3[1] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76e15a*/
-  TerritorySelectWDT((int)&v4.m_3[1]); /*0x76e162*/
-  *(unsigned int *)&v4.m_3[1] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76e16b*/
-  return ComPtr::Release((ComPtr *)&v4.m_3[1]); /*0x76e178*/
+  ComPtr::Constructor((ComPtr *)&v4.q4); /*0x76e14e*/
+  *(void **)&v4.q4 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76e15a*/
+  TerritorySelectWDT((int)&v4.q4); /*0x76e162*/
+  *(void **)&v4.q4 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76e16b*/
+  return ComPtr::Release((ComPtr *)&v4.q4); /*0x76e178*/
 }
 } // namespace gamemd
 
@@ -3215,29 +3215,29 @@ rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
 unsigned int* Campaign_WorldDominationTour_24_::ddtor()
 {
   --this->q020; /*0x765b52*/
-  return this->__pad_0; /*0x765b55*/
+  return this; /*0x765b55*/
 }
 // 0x76f190
 unsigned int* VectorCursor::ddtor()
 {
   --this->q008; /*0x76f192*/
-  return this->__pad_0; /*0x76f195*/
+  return this; /*0x76f195*/
 }
 // 0x76f170
 unsigned int* Count::ddtor()
 {
   --this->q008; /*0x76f172*/
-  return this->__pad_0; /*0x76f175*/
+  return this; /*0x76f175*/
 }
 // 0x766fb0
 unsigned int* Conflict_WorldDominationTour_26::ddtor()
 {
   --this->q008; /*0x766fb2*/
-  return this->__pad_0; /*0x766fb5*/
+  return this; /*0x766fb5*/
 }
 // 0x76a5b0
 unsigned int* Map_WorldDominationTour_38::ddtor()
 {
   --this->q008; /*0x76a5b2*/
-  return this->__pad_0; /*0x76a5b5*/
+  return this; /*0x76a5b5*/
 }

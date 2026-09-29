@@ -8,7 +8,7 @@ namespace gamemd {
 struct RulesClass {
 // --- flat members (BEGIN) ---
     unsigned int DetailMinFrameRateNormal;  // 0x0
-    void* ;  // 0x4
+    void *q4;  // 0x4
     unsigned int DetailBufferZoneWidth;  // 0x8
     char AmmoCrateDamage[4];  // 0xC
     unsigned char u8_D;  // 0xD

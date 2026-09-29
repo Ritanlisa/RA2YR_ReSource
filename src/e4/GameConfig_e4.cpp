@@ -122,7 +122,7 @@ int GameConfig::ComputeHash()
   v9 = 0; /*0x679e17*/
   v10 = 0; /*0x679e1b*/
   v11 = 0; /*0x679e1f*/
-  v6[0] = &CCINIClass_Vtable; /*0x679e23*/
+  v6[0] = (unsigned int)&CCINIClass_Vtable; /*0x679e23*/
   CCFileClass::Construct(v12, (void *)g_Str_File_CoopCampMD_ini); /*0x679e2b*/
   if ( CCINIClass::Load((CCINIClass *)v6, v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/

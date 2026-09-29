@@ -46,7 +46,7 @@ struct AbstractTypeClass {
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
     unsigned char q05D;  // 0x5D
-    void* ;  // 0x60
+    void *q60;  // 0x60
     char Name;  // 0x64
     unsigned int q068;  // 0x68
     ObjectClass* q06C;  // 0x6C

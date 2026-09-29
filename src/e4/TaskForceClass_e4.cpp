@@ -46,7 +46,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
       v8 = (unsigned int *)(TypeClass::FindByName(&v10));
       if ( v8 != -1 ) /*0x4c4f77*/
         this->TaskForceClass_field_0x4 = *((unsigned int *)dword_A8B21C + v8); /*0x4c4f82*/
-      return this->__pad_0; /*0x4c4f85*/
+      return this; /*0x4c4f85*/
     }
     else
     {
@@ -100,7 +100,7 @@ unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
     --v5; /*0x6e7f37*/
   }
   while ( v5 ); /*0x6e7f38*/
-  return this->__pad_0; /*0x6e7f3c*/
+  return this; /*0x6e7f3c*/
 }
 }
 // 0x6E8220

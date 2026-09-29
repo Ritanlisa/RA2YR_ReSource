@@ -28,21 +28,21 @@ void UnitClass::ProcessIdleOrders()
         v5 = *(unsigned int **)v4; /*0x6b7bcf*/
         if ( *(unsigned char *)(v5[433] + 3432) ) /*0x6b7bd7*/
         {
-          UnitClass::GetExitCell((int)&g_MissionQueueFrame, v5, *(unsigned int **)&this->?); /*0x6b7beb*/
+          UnitClass::GetExitCell((int)&g_MissionQueueFrame, v5, *(unsigned int **)&this->bombVisible); /*0x6b7beb*/
           g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6b7bfa*/
           g_MissionQueueFrame.nextScenario[1] = v6; /*0x6b7bff*/
           g_MissionQueueFrame.nextScenario[2] = 2; /*0x6b7c05*/
           UnitClass::ClearTargetRef(**(unsigned int **)(this->?[0] + 4 * v3)); /*0x6b7c16*/
         }
       }
-      result = this->?[3]; /*0x6b7c1b*/
+      result = this->u32_48; /*0x6b7c1b*/
       ++v3; /*0x6b7c1e*/
     }
     while ( v3 < result ); /*0x6b7c21*/
   }
   this->? = 0; /*0x6b7c26*/
   this->? = 0; /*0x6b7c29*/
-  *(unsigned int *)&this->? = 0; /*0x6b7c2c*/
+  *(unsigned int *)&this->bombVisible = 0; /*0x6b7c2c*/
   return result; /*0x6b7c2f*/
 }
 }

@@ -61,7 +61,7 @@ struct WeaponTypeClass {
     unsigned int q094;  // 0x94
     unsigned char tail_95;  // 0x95
     int AmbientDamage;  // 0x98
-    unsigned int ;  // 0x9C
+    unsigned int q9C;  // 0x9C
     int Projectile;  // 0xA0
     int Damage;  // 0xA4
     WarheadTypeClass* Speed;  // 0xA8

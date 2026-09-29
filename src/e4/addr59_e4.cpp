@@ -1200,7 +1200,7 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
             if ( (int16_t)v6 - v7 < v5 && v7 - (int16_t)v6 < v5 && v8 <= g_MissionQueueFrame.localVariables[161] ) /*0x594356*/
             {
               if ( g_MissionQueueFrame.localVariables[163] ) /*0x594360*/
-                *(unsigned int *)(80 * ((int16_t)v6 + g_MapCellWidth * v7) + g_MissionQueueFrame.localVariables[163] + 56) = v12->?; /*0x59437a*/
+                *(unsigned int *)(80 * ((int16_t)v6 + g_MapCellWidth * v7) + g_MissionQueueFrame.localVariables[163] + 56) = v12->attachedBomb; /*0x59437a*/
               v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v11); /*0x594388*/
               v9[283] = v12->?; /*0x594394*/
               v5 = g_MissionQueueFrame.localVariables[160]; /*0x59439a*/

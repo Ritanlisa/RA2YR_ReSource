@@ -139,7 +139,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   this->flakScatter = 0; /*0x46bc31*/
   this->AA = 0; /*0x46bc37*/
   this->q2A5 = 1; /*0x46bc3d*/
-  this->acceleration = 3; /*0x46bc44*/
+  *(unsigned int *)&this->acceleration = 3; /*0x46bc44*/
   this->spawnDelay = 3; /*0x46bc4a*/
   this->degenerates = 0; /*0x46bc50*/
   this->bouncy = 0; /*0x46bc59*/
@@ -147,13 +147,13 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   this->elasticity = 0; /*0x46bc65*/
   this->firersPalette = 0; /*0x46bc6c*/
   this->cluster = 1; /*0x46bc72*/
-  this->airburstWeapon = 0; /*0x46bc7c*/
-  this->shrapnelWeapon = 0; /*0x46bc82*/
+  *(unsigned int *)&this->airburstWeapon = 0; /*0x46bc7c*/
+  *(unsigned int *)&this->shrapnelWeapon = 0; /*0x46bc82*/
   this->shrapnelCount = 0; /*0x46bc88*/
   this->detonationAltitude = 0; /*0x46bc8e*/
   this->vertical = 0; /*0x46bc94*/
   this->Acceleration = 1072168960; /*0x46bc9a*/
-  this->Color = 0; /*0x46bca4*/
+  *(unsigned int *)&this->Color = 0; /*0x46bca4*/
   this->trailer = 0; /*0x46bcaa*/
   this->rot = 0; /*0x46bcb0*/
   this->courseLockDuration = 0; /*0x46bcb6*/
@@ -694,7 +694,7 @@ int BulletTypeClass::ProcessImpact(int a1)
     }
     else
     {
-      Owner = v1->?; /*0x69fd7f*/
+      Owner = v1->u32_8; /*0x69fd7f*/
       if ( Owner->? != 5 /*0x69fddc*/
         || IDA_HIBYTE(v1->TrackIndex)
         || v1->SlopeTimer[3] == g_OverlayTypeConfig && *(unsigned long long *)v1->Dest == qword_B077FC
@@ -711,8 +711,8 @@ int BulletTypeClass::ProcessImpact(int a1)
         {
           IDA_BYTE2(v1->TrackIndex) = 0; /*0x69ff62*/
           (*((void (__thiscall **)(FootClass *, unsigned int))v1->?->TechnoClass + 99))(v1->?, 0); /*0x69ff6b*/
-          v16 = v1->?; /*0x69ff71*/
-          if ( !v16->? || v16->? || v16->? ) /*0x69ff84*/
+          v16 = v1->u32_8; /*0x69ff71*/
+          if ( !*(unsigned int *)&v16->isFallingDown || *(unsigned int *)&v16->isFallingDown || *(unsigned int *)&v16->isFallingDown ) /*0x69ff84*/
             return 0; /*0x69ff95*/
         }
         if ( (*((int (__thiscall **)(FootClass *))v1->?->TechnoClass + 97))(v1->?) == 5 /*0x69ffc4*/
@@ -723,10 +723,10 @@ int BulletTypeClass::ProcessImpact(int a1)
         }
         if ( !(*(uint8_t (__stdcall **)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1) ) /*0x69ffcd*/
         {
-          v17 = v1->?; /*0x69ffd8*/
+          v17 = v1->u32_8; /*0x69ffd8*/
           if ( v17->pathDirections[0] == -1 ) /*0x69ffe1*/
           {
-            if ( v17->? ) /*0x69ffe7*/
+            if ( *(unsigned int *)&v17->q3CD ) /*0x69ffe7*/
             {
               if ( *((unsigned int *)v2 + 16) != g_OverlayTypeConfig || *(unsigned long long *)(v2 + 68) != qword_B077FC ) /*0x6a0006*/
               {
@@ -745,7 +745,7 @@ int BulletTypeClass::ProcessImpact(int a1)
                 v19 = (unsigned int *)(*((int (__thiscall **)(AbstractClass *, int *, FootClass *))v18->vtable0 + 19))( /*0x6a004d*/
                                   v18,
                                   &v23,
-                                  v1->?);
+                                  *(unsigned short *)&v1->SpeedAccum);
                 (*(void (__stdcall **)(ShipLocomotionClass *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v1->LocomotionClass /*0x6a0069*/
                                                                                      + 68))(
                   v1,
@@ -757,8 +757,8 @@ int BulletTypeClass::ProcessImpact(int a1)
             goto LABEL_32; /*0x6a0032*/
           }
         }
-        v20 = v1->?; /*0x6a0074*/
-        if ( v20->? /*0x6a00ab*/
+        v20 = v1->u32_8; /*0x6a0074*/
+        if ( *(unsigned short *)&v20->lastTarget /*0x6a00ab*/
           && (*((int (__thiscall **)(FootClass *))v20->TechnoClass + 97))(v20) != 7
           && (*(uint8_t (__stdcall **)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
           && !(*((uint8_t (__thiscall **)(FootClass *, int *))v1->?->TechnoClass + 179))(
@@ -793,7 +793,7 @@ int BulletTypeClass::ProcessImpact(int a1)
         WalkLocomotion::Update((int)&v1[-1].Piggybackee, &a1, 1, 0); /*0x6a0142*/
         if ( (unsigned char)a1 ) /*0x6a014b*/
           return 0; /*0x6a0156*/
-        if ( !v1->?->? ) /*0x6a015c*/
+        if ( !*(unsigned int *)&v1->q00C->? ) /*0x6a015c*/
           return 0; /*0x6a016d*/
         v22 = 0; /*0x6a0170*/
         goto LABEL_81; /*0x6a0170*/
@@ -826,7 +826,7 @@ int BulletTypeClass::ProcessImpact(int a1)
   v22 = 1; /*0x69fd0c*/
   LABEL_81:
   WalkLocomotion::ProcessCollision((int)&v1[-1].Piggybackee, v22); /*0x6a0171*/
-  if ( !v1->?->? ) /*0x6a017b*/
+  if ( !*(unsigned int *)&v1->q00C->? ) /*0x6a017b*/
     return 0; /*0x6a018a*/
   LABEL_32:
   if ( (*(uint8_t (__stdcall **)(ShipLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))(v1) ) /*0x69fe3c*/
@@ -834,15 +834,15 @@ int BulletTypeClass::ProcessImpact(int a1)
     if ( !(*(unsigned int *)&stru_A8EB00.?[416] % 8) /*0x69fe6e*/
       && !*(unsigned char *)((*((int (__thiscall **)(FootClass *))v1->?->TechnoClass + 33))(v1->?) + 3433) )
     {
-      v12 = v1->?; /*0x69fe76*/
-      if ( !v12->? && *(unsigned int *)((*((int (__thiscall **)(FootClass *))v12->TechnoClass + 111))(v12) + 236) == 2 ) /*0x69fe90*/
+      v12 = v1->u32_8; /*0x69fe76*/
+      if ( !*(unsigned short *)&v12->animation && *(unsigned int *)((*((int (__thiscall **)(FootClass *))v12->TechnoClass + 111))(v12) + 236) == 2 ) /*0x69fe90*/
       {
         if ( *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 148) ) /*0x69fe97*/
         {
           v13 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x69fea4*/
           if ( v13 ) /*0x69feae*/
           {
-            location = v1->?->?; /*0x69feb4*/
+            location = v1->u32_8->?; /*0x69feb4*/
             v23 = *location; /*0x69fec5*/
             v24 = location[1]; /*0x69fecc*/
             v25 = location[2]; /*0x69fed8*/
@@ -865,7 +865,7 @@ int BulletTypeClass::ProcessImpact(int a1)
     && *(unsigned long long *)&v1->Dest[1] == IDA___PAIR64__(g_OverlayTypeConfig, IDA_HIDWORD(qword_B077FC))
     && *(unsigned long long *)v1->HeadToCoord == qword_B077FC )
   {
-    v15 = v1->?; /*0x69ff25*/
+    v15 = v1->u32_8; /*0x69ff25*/
     if ( v15->pathDirections[0] == -1 && *(double *)v15->currentSpeed_percentage > 0.0 ) /*0x69ff41*/
       (*((void (__thiscall **)(FootClass *, unsigned int, unsigned int))v15->TechnoClass + 337))(v15, 0, 0); /*0x69ff47*/
   }

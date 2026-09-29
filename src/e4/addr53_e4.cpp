@@ -268,7 +268,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     (**v31)(v31, 1); /*0x531636*/
   v41 = 0; /*0x531647*/
   Vector::Clear(v40); /*0x531652*/
-  v39[0] = &off_7E1668; /*0x53165b*/
+  v39[0] = (unsigned int)&off_7E1668; /*0x53165b*/
   return BufferIOFileClass::Dtor(v39); /*0x531668*/
 }
 }

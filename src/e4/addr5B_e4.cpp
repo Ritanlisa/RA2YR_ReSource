@@ -586,7 +586,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
 }
 // 0x5BB290
 namespace gamemd {
-LZOPipe * * __usercall GenerateRandomMapPreview(int a1@<esi> a1)
+LZOPipe * * __usercall GenerateRandomMapPreview(int a1)
 {
   int v1; // esi
   int v2; // eax
@@ -2020,32 +2020,32 @@ void E4Recv_5B3F50::sub_5B3F50()
   }
   if ( this ) /*0x5b3f9c*/
   {
-    Previous = this->?; /*0x5b3f9e*/
+    Previous = this->M4; /*0x5b3f9e*/
     if ( Previous ) /*0x5b3fa3*/
     {
       v5 = *(unsigned int *)&this->Blowfish; /*0x5b3fa5*/
       if ( v5 ) /*0x5b3faa*/
       {
         *(unsigned int *)(v5 + 4) = Previous; /*0x5b3fac*/
-        *(unsigned int *)this->?[1].__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b3fb5*/
+        *(unsigned int *)this->M8.__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b3fb5*/
         *(unsigned int *)&this->Blowfish = 0; /*0x5b3fb8*/
-        this->? = 0; /*0x5b3fbb*/
+        this->M4 = 0; /*0x5b3fbb*/
       }
     }
   }
   *(unsigned int *)this->Node = (void*)&GenericNode_vftable; /*0x5b3fc0*/
   if ( this ) /*0x5b3fc6*/
   {
-    v6 = this->?; /*0x5b3fc8*/
+    v6 = this->M4; /*0x5b3fc8*/
     if ( v6 ) /*0x5b3fcd*/
     {
       v7 = *(unsigned int *)&this->Blowfish; /*0x5b3fcf*/
       if ( v7 ) /*0x5b3fd4*/
       {
         *(unsigned int *)(v7 + 4) = v6; /*0x5b3fd6*/
-        *(unsigned int *)this->?[1].__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b3fdf*/
+        *(unsigned int *)this->M8.__pad_0 = *(unsigned int *)&this->Blowfish; /*0x5b3fdf*/
         *(unsigned int *)&this->Blowfish = 0; /*0x5b3fe2*/
-        this->? = 0; /*0x5b3fe5*/
+        this->M4 = 0; /*0x5b3fe5*/
       }
     }
   }
@@ -2318,8 +2318,8 @@ char E4Recv_5B5960::sub_5B5960()
     if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x5b598e*/
     {
       dword_A8B3AC = SendMessageA(v3, 0x150u, (WPARAM)DlgItem, 0); /*0x5b599b*/
-      IDA_BYTE1(this->?) = 1; /*0x5b59a2*/
-      IDA_LOBYTE(this->?) = 1; /*0x5b59a5*/
+      IDA_BYTE1(this->M8) = 1; /*0x5b59a2*/
+      IDA_LOBYTE(this->M9) = 1; /*0x5b59a5*/
       IDA_LOBYTE(DlgItem) = 1; /*0x5b59a0*/
     }
   }
@@ -2344,8 +2344,8 @@ char E4Recv_5B5A50::sub_5B5A50(char a2)
     if ( !a2 ) /*0x5b5a90*/
       SendMessageA(v4, 0x4B2u, 0, (LPARAM)lParam); /*0x5b5a9f*/
     CopyWideToChar(unk_A8B380, (char *)lParam, -1); /*0x5b5aac*/
-    IDA_BYTE1(this->?) = 1; /*0x5b5ab4*/
-    IDA_LOBYTE(this->?) = 1; /*0x5b5ab7*/
+    IDA_BYTE1(this->M8) = 1; /*0x5b5ab4*/
+    IDA_LOBYTE(this->M9) = 1; /*0x5b5ab7*/
     IDA_LOBYTE(DlgItem) = 1; /*0x5b5ab1*/
   }
   return (char)DlgItem; /*0x5b5aba*/
@@ -2665,8 +2665,8 @@ char E4Recv_5B93F0::sub_5B93F0()
       if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x5b942e*/
       {
         dword_A8B3AC = (int)DlgItem; /*0x5b9430*/
-        IDA_BYTE1(this->?) = 1; /*0x5b9437*/
-        IDA_LOBYTE(this->?) = 1; /*0x5b943a*/
+        IDA_BYTE1(this->M8) = 1; /*0x5b9437*/
+        IDA_LOBYTE(this->M9) = 1; /*0x5b943a*/
         IDA_LOBYTE(DlgItem) = 1; /*0x5b9435*/
       }
     }
@@ -2690,8 +2690,8 @@ unsigned int E4Recv_5B9450::sub_5B9450()
     if ( result != -1 ) /*0x5b947e*/
     {
       dword_A8B394 = result; /*0x5b9482*/
-      IDA_BYTE1(this->?) = 1; /*0x5b9489*/
-      IDA_LOBYTE(this->?) = 1; /*0x5b948c*/
+      IDA_BYTE1(this->M8) = 1; /*0x5b9489*/
+      IDA_LOBYTE(this->M8) = 1; /*0x5b948c*/
       if ( result >= 8 ) /*0x5b948f*/
         return SendMessageA(v3, 0x498u, 0, (LPARAM)Math::InitDegToRad); /*0x5b94ba*/
       else
@@ -2719,8 +2719,8 @@ char E4Recv_5B94C0::sub_5B94C0(char a2)
     if ( !a2 ) /*0x5b9500*/
       SendMessageA(v4, 0x4B2u, 0, (LPARAM)lParam); /*0x5b950f*/
     strcpy(unk_A8B380, ToWideStringChar((char *)lParam)); /*0x5b9533*/
-    IDA_BYTE1(this->?) = 1; /*0x5b953e*/
-    IDA_LOBYTE(this->?) = 1; /*0x5b9541*/
+    IDA_BYTE1(this->M8) = 1; /*0x5b953e*/
+    IDA_LOBYTE(this->M9) = 1; /*0x5b9541*/
     IDA_LOBYTE(DlgItem) = 1; /*0x5b9537*/
   }
   return (char)DlgItem; /*0x5b9545*/
@@ -3233,9 +3233,9 @@ namespace gamemd {
 unsigned int * E4Recv_5BD560::sub_5BD560()
 {
   IDA_LOBYTE(this->AbstractClass) = 0; /*0x5bd564*/
-  this->? = 0; /*0x5bd566*/
-  this->? = 0; /*0x5bd569*/
-  this->? = 0; /*0x5bd56c*/
+  this->M4 = 0; /*0x5bd566*/
+  this->M8 = 0; /*0x5bd569*/
+  this->M12 = 0; /*0x5bd56c*/
   return &this->AbstractClass; /*0x5bd56f*/
 }
 } // namespace gamemd

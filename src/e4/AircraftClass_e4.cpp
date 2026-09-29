@@ -137,9 +137,9 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   }
   while ( (int)v5 < (int)dword_817A78 ); /*0x415bab*/
   IDA_LOWORD(v22) = (uint16_t)dword_817A58[v19] << 13; /*0x415bc3*/
-  v13 = this->?[1]; /*0x415bc8*/
-  v21[0] = this->?[0]; /*0x415bcb*/
-  v14 = this->?[2]; /*0x415bd3*/
+  v13 = *(unsigned int *)&this->vtable2; /*0x415bc8*/
+  v21[0] = this->owningHouseIndex; /*0x415bcb*/
+  v14 = *(unsigned int *)&this->vtable3; /*0x415bd3*/
   v21[1] = v13; /*0x415bd6*/
   v21[2] = v14; /*0x415bda*/
   if ( !(*(uint8_t (__thiscall **)(int *, unsigned int *, unsigned int))(*a2 + 216))( /*0x415bf3*/
@@ -158,7 +158,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
 }
 // 0x4165C0
 namespace gamemd {
-void AircraftClass_DeployWithAnim(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
+void AircraftClass_DeployWithAnim(AircraftClass *aP0, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   int v11; // ebp
   AnimClass *v13; // ebx
@@ -169,7 +169,7 @@ void AircraftClass_DeployWithAnim(void * a1, void * a2, void * a3, void * a4, vo
   unsigned char v18[8]; // [esp+Ch] [ebp-8h] BYREF
 
   v11 = FootClass::ProcessDeploy( /*0x4165f1*/
-          this,
+          aP0,
           a1,
           COERCE_DOUBLE(IDA___PAIR64__((unsigned int)a3, a2)),
           (int *)a4,
@@ -180,22 +180,22 @@ void AircraftClass_DeployWithAnim(void * a1, void * a2, void * a3, void * a4, vo
           v17);
   if ( v11 == 4 ) /*0x4165f6*/
   {
-    (*(void (__thiscall **)(AircraftClass *, unsigned int))(this->vtable0 + 952))(this, 0); /*0x416613*/
-    if ( *(int *)(this->Type + 1852) > 0 ) /*0x416627*/
+    (*(void (__thiscall **)(AircraftClass *, unsigned int))(aP0->vtable0 + 952))(aP0, 0); /*0x416613*/
+    if ( *(int *)(aP0->Type + 1852) > 0 ) /*0x416627*/
     {
       v13 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x416633*/
       if ( v13 ) /*0x41663a*/
       {
-        v14 = *(void **)(this->Type->q730 /*0x416671*/
+        v14 = *(void **)(aP0->Type->q730 /*0x416671*/
                        + 4
                        * ((unsigned int)Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)
-                        % *(unsigned int *)(this->Type + 1852)));
-        v15 = (int *)(*(int (__thiscall **)(AircraftClass *, unsigned char *))(this->vtable0 + 164))(this, v18); /*0x41667b*/
+                        % *(unsigned int *)(aP0->Type + 1852)));
+        v15 = (int *)(*(int (__thiscall **)(AircraftClass *, unsigned char *))(aP0->vtable0 + 164))(aP0, v18); /*0x41667b*/
         AnimClass::ctor(v13, v14, v15, 0, 1, (void *)0x600, 0, 0); /*0x416685*/
       }
     }
-    if ( !(*(uint8_t (__thiscall **)(AircraftClass *, int))(this->vtable0 + 988))(this, a5) ) /*0x416694*/
-      (*(void (__thiscall **)(AircraftClass *))(this->vtable0 + 248))(this); /*0x4166a3*/
+    if ( !(*(uint8_t (__thiscall **)(AircraftClass *, int))(aP0->vtable0 + 988))(aP0, a5) ) /*0x416694*/
+      (*(void (__thiscall **)(AircraftClass *))(aP0->vtable0 + 248))(aP0); /*0x4166a3*/
   }
   else if ( v11 == 5 ) /*0x4165f9*/
   {
@@ -393,7 +393,7 @@ int AircraftClass::EvaluateTargetingState()
     {
       (*((void (__thiscall **)(AircraftClass *, unsigned int, int))this->FootClass + 289))(this, 0, 1); /*0x41a9ad*/
     }
-    if ( this->? ) /*0x41a9b3*/
+    if ( this->q2B4 ) /*0x41a9b3*/
     {
       (*((void (__thiscall **)(AircraftClass *, int, unsigned int))this->FootClass + 122))(this, 1, 0); /*0x41a9c5*/
       return 1; /*0x41a9cc*/
@@ -578,14 +578,14 @@ int AircraftClass::RevealSight(int a2, int a3)
   LABEL_4:
     v17 = this->?[0]; /*0x41ae1f*/
     v18 = this->?[1]; /*0x41ae40*/
-    owner = this->?; /*0x41ae44*/
-    v19 = this->?[2]; /*0x41ae4e*/
+    owner = *(unsigned int *)&this->focus; /*0x41ae44*/
+    v19 = *(unsigned int *)&this->nextObject; /*0x41ae4e*/
     MapClass::RevealArea1((MapClass *)&stru_87F5F0.__pad_58[416], &v17, v4, owner, a2, a3, 0, 1, 0); /*0x41ae5e*/
-    v6 = this->?[1]; /*0x41ae65*/
-    v7 = this->?[2]; /*0x41ae68*/
-    v17 = this->?[0]; /*0x41ae6d*/
+    v6 = *(unsigned int *)&this->vtable2; /*0x41ae65*/
+    v7 = *(unsigned int *)&this->vtable3; /*0x41ae68*/
+    v17 = *(unsigned int *)&this->NeedsSaveOrLink; /*0x41ae6d*/
     v18 = v6; /*0x41ae77*/
-    v8 = this->?; /*0x41ae7b*/
+    v8 = *(unsigned int *)&this->focus; /*0x41ae7b*/
     v19 = v7; /*0x41ae84*/
     return MapClass::RevealArea1((MapClass *)&stru_87F5F0.__pad_58[416], &v17, v4, v8, a2, a3, 0, 1, 1); /*0x41aea1*/
   }
@@ -604,15 +604,15 @@ int AircraftClass::RevealSight(int a2, int a3)
       (MapClass *)&stru_87F5F0.__pad_58[416],
       &v17,
       v10,
-      this->?,
+      this->focus,
       0,
       0,
       1,
       v12 < *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1972) / 2,
       0);
-    v13 = this->?[1]; /*0x41af21*/
-    v14 = this->?[2]; /*0x41af24*/
-    v17 = this->?[0]; /*0x41af27*/
+    v13 = *(unsigned int *)&this->vtable2; /*0x41af21*/
+    v14 = *(unsigned int *)&this->vtable3; /*0x41af24*/
+    v17 = this->nextArrayIndex; /*0x41af27*/
     v15 = (int (__thiscall **)(AircraftClass *))this->FootClass; /*0x41af2b*/
     v18 = v13; /*0x41af2d*/
     v19 = v14; /*0x41af35*/
@@ -621,7 +621,7 @@ int AircraftClass::RevealSight(int a2, int a3)
              (MapClass *)&stru_87F5F0.__pad_58[416],
              &v17,
              v10,
-             this->?,
+             this->focus,
              0,
              0,
              1,
@@ -649,8 +649,8 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
   int vtable2; // eax
 
   v2 = a0; /*0x41b432*/
-  p_vtable1 = &a0->?; /*0x41b43a*/
-  a0 = (AircraftClass *)(*((int (__stdcall **)(void **))a0->? + 4))(&a0->?); /*0x41b44b*/
+  p_vtable1 = &a0->vtable2; /*0x41b43a*/
+  a0 = (AircraftClass *)(*((int (__stdcall **)(void **))a0->uniqueId + 4))(&a0->uniqueId); /*0x41b44b*/
   v4 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, (int *)&a0); /*0x41b44f*/
   if ( v4 ) /*0x41b456*/
   {
@@ -675,20 +675,20 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
   result = ObjectClass::LoadFromStream_Common((int)v2, aP1); /*0x41b4be*/
   if ( result >= 0 ) /*0x41b4c5*/
   {
-    v10 = v2->?[0]; /*0x41b4cb*/
+    v10 = *(unsigned int *)&v2->locomotor; /*0x41b4cb*/
     if ( v2 ) /*0x41b4d3*/
     {
       FootClass::PostLoadInit((FootClass *)v2, (int)&a0); /*0x41b4dc*/
       v2->FootClass = (void*)&AircraftClass_vftable; /*0x41b4e1*/
       *p_vtable1 = (void*)&AircraftClass_vftable; /*0x41b4e7*/
-      v2->? = (void*)&AircraftClass_vftable; /*0x41b4ed*/
-      v2->? = (void*)&AircraftClass_vftable; /*0x41b4f4*/
+      *(void **)&v2->vtable3 = (void*)&AircraftClass_vftable; /*0x41b4ed*/
+      *(void **)&v2->vtable4 = (void*)&AircraftClass_vftable; /*0x41b4f4*/
       *(unsigned int *)v2->__pad_6C0 = (void*)&AircraftClass_vftable; /*0x41b4fb*/
     }
-    v11 = v2->?[0]; /*0x41b506*/
+    v11 = *(unsigned int *)&v2->locomotor; /*0x41b506*/
     if ( v11 != v10 ) /*0x41b50e*/
     {
-      v2->?[0] = v10; /*0x41b512*/
+      *(unsigned int *)&v2->locomotor = v10; /*0x41b512*/
       if ( v10 ) /*0x41b518*/
         (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 4))(v10); /*0x41b51d*/
       if ( v11 ) /*0x41b522*/
@@ -729,7 +729,7 @@ int AircraftClass::UpdateDocking(int a2)
     case 0x1B: /*0x41ba0b*/
     case 0x1E: /*0x41ba0b*/
     case 0x1F: /*0x41ba0b*/
-      if ( this->? ) /*0x41ba12*/
+      if ( this->airstrike ) /*0x41ba12*/
         goto LABEL_4; /*0x41ba1a*/
       result = a2 - 4; /*0x41ba1c*/
       switch ( a2 ) /*0x41ba2c*/
@@ -764,7 +764,7 @@ int AircraftClass::OverrideMission_SyncLog(int a2, int a3, int a4)
     case 0x1B: /*0x41bb4b*/
     case 0x1E: /*0x41bb4b*/
     case 0x1F: /*0x41bb4b*/
-      if ( this->? ) /*0x41bb52*/
+      if ( this->airstrike ) /*0x41bb52*/
         goto LABEL_4; /*0x41bb5a*/
       result = a2 - 4; /*0x41bb5c*/
       switch ( a2 ) /*0x41bb6c*/
@@ -837,7 +837,7 @@ int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
 {
   int v6; // edi
 
-  if ( !(uint8_t)House::IsHumanPlayer((House *)this->?) ) /*0x417f89*/
+  if ( !(uint8_t)House::IsHumanPlayer((House *)this->focus) ) /*0x417f89*/
     return 0; /*0x417f92*/
   v6 = FootClass::HandleCursorWithCheck((FootClass *)this, a1, aP2, aP3); /*0x417faf*/
   if ( v6 == 5 && !*(unsigned int *)(*((int (__thiscall **)(AircraftClass *, unsigned int))this->FootClass + 254))(this, 0) ) /*0x417fc2*/
@@ -863,7 +863,7 @@ char * AircraftClass::CheckLandingClearance(int a2, int a3, int a4)
 namespace gamemd {
 int AircraftClass::ProcessDockCheck()
 {
-  if ( !this->?[0] ) /*0x41adc3*/
+  if ( !this->locomotor ) /*0x41adc3*/
     WinAPI::Wrapper(-2147467261); /*0x41add2*/
   return (*(int (__stdcall **)(int))(*(unsigned int *)this->?[0] + 116))(this->?[0]); /*0x41ade3*/
 }
@@ -883,7 +883,7 @@ int AircraftClass::IsBelowScreen()
 {
   int v1; // eax
 
-  v1 = this->Type; /*0x41b989*/
+  v1 = *(unsigned int *)&this->Type; /*0x41b989*/
   if ( v1 != IDA_LODWORD(g_RulesClass_Instance->MissileROTVar) && v1 != g_RulesClass_Instance->HoverHeight ) /*0x41b99d*/
     return ObjectClass::IsBelowScreen(); /*0x41b9a1*/
   if ( !this->locomotor ) /*0x41b9a8*/

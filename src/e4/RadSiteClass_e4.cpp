@@ -89,9 +89,9 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       aP0->RadLightTimer[0] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b40c*/
       aP0->RadLightTimer[2] = 0; /*0x65b40f*/
       aP0->AbstractClass = (void*)&RadSiteClass_vftable; /*0x65b416*/
-      aP0->? = (void*)&RadSiteClass_vftable; /*0x65b41c*/
-      aP0->? = (void*)&RadSiteClass_vftable; /*0x65b423*/
-      aP0->? = (void*)&RadSiteClass_vftable; /*0x65b42a*/
+      *(void **)&aP0->vtable2 = (void*)&RadSiteClass_vftable; /*0x65b41c*/
+      *(void **)&aP0->vtable3 = (void*)&RadSiteClass_vftable; /*0x65b423*/
+      *(void **)&aP0->vtable4 = (void*)&RadSiteClass_vftable; /*0x65b42a*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->LightSource); /*0x65b43a*/
   }

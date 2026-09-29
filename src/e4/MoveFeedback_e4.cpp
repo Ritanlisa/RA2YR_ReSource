@@ -142,13 +142,13 @@ char MoveFeedback::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x40b962*/
+  m_8 = *(unsigned int *)&this->q008; /*0x40b962*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x40b96d*/
   {
     v3 = 0; /*0x40b96f*/
     if ( m_8 <= 0 ) /*0x40b973*/
       return 1; /*0x40b993*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x40b975*/
+    v4 = *(unsigned int **)&this->q004; /*0x40b975*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x40b97b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x40b984*/
     {
@@ -169,11 +169,11 @@ int MoveFeedback::Draw(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x40bb90*/
+  m_10 = *(unsigned int *)&this->q010; /*0x40bb90*/
   result = 0; /*0x40bb93*/
   if ( m_10 <= 0 ) /*0x40bb98*/
     return -1; /*0x40bbaf*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x40bb9e*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x40bb9e*/
   {
     if ( ++result >= m_10 ) /*0x40bbad*/
       return -1; /*0x40bbad*/
@@ -189,16 +189,16 @@ DynamicVector * MoveFeedback::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this->m_1[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TechnoClass___vftable; /*0x40bcb6*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40bcc0*/
+  if ( v3 && this->IsAllocated ) /*0x40bcc0*/
   {
     RA2_OPDEL(v3); /*0x40bcc8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x40bcd0*/
+    *(unsigned int *)&this->q004 = 0; /*0x40bcd0*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x40bcdb*/
-  this->m_8 = 0; /*0x40bce1*/
+  this->IsAllocated = 0; /*0x40bcdb*/
+  *(unsigned short *)&this->q008 = 0; /*0x40bce1*/
   if ( (a2 & 1) != 0 ) /*0x40bce8*/
     RA2_OPDEL(); /*0x40bceb*/
-  return this->__pad_0; /*0x40bcf5*/
+  return this; /*0x40bcf5*/
 }
 } // namespace gamemd
 // 0x40BE50
@@ -207,23 +207,23 @@ void MoveFeedback::Destroy()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x40be56*/
-  this->m_10 = 0; /*0x40be59*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x40be60*/
+  v2 = *(void **)&this->q004; /*0x40be56*/
+  *(unsigned int *)&this->q010 = 0; /*0x40be59*/
+  if ( v2 && this->IsAllocated ) /*0x40be60*/
   {
     RA2_OPDEL(v2); /*0x40be66*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x40be6e*/
+    *(unsigned int *)&this->q004 = 0; /*0x40be6e*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x40be71*/
-  this->m_8 = 0; /*0x40be74*/
+  this->IsAllocated = 0; /*0x40be71*/
+  *(unsigned int *)&this->q008 = 0; /*0x40be74*/
 }
 } // namespace gamemd
 // 0x40BE80
 namespace gamemd {
 unsigned int MoveFeedback::GetIndex2(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x40be80*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x40be95*/
+  if ( this->q00C ) /*0x40be80*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x40be95*/
   else
     return 0; /*0x40be87*/
 }
@@ -239,38 +239,38 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40c03c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x40c042*/
+    this->q00C = 0; /*0x40c042*/
     if ( a3 ) /*0x40c048*/
       v4 = a3; /*0x40c05e*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x40c05a*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x40c062*/
+    this->q00C = 1; /*0x40c062*/
     if ( !v4 ) /*0x40c066*/
       return 0; /*0x40c0da*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x40c068*/
+    if ( *(unsigned int *)&this->q004 ) /*0x40c068*/
     {
-      m_8 = this->m_8; /*0x40c06f*/
+      m_8 = *(unsigned int *)&this->q008; /*0x40c06f*/
       if ( a2 < m_8 ) /*0x40c074*/
         m_8 = a2; /*0x40c076*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40c07c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x40c07c*/
         ++i; /*0x40c081*/
-      if ( IDA_BYTE1(this->m_C) ) /*0x40c08e*/
+      if ( this->IsAllocated ) /*0x40c08e*/
       {
-        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x40c099*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x40c0a1*/
+        RA2_OPDEL(*(void **)&this->q004); /*0x40c099*/
+        *(unsigned int *)&this->q004 = 0; /*0x40c0a1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x40c0aa*/
-    this->m_8 = a2; /*0x40c0b2*/
-    IDA_BYTE1(this->m_C) = a3 == 0; /*0x40c0b5*/
+    *(void **)&this->q004 = v4; /*0x40c0aa*/
+    *(unsigned int *)&this->q008 = a2; /*0x40c0b2*/
+    this->IsAllocated = a3 == 0; /*0x40c0b5*/
   }
   else
   {
     (*(void (__thiscall **)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c0be*/
   }
-  v7 = this->m_8; /*0x40c0c1*/
-  if ( v7 < this->m_10 ) /*0x40c0c9*/
-    this->m_10 = v7; /*0x40c0cb*/
+  v7 = *(unsigned int *)&this->q008; /*0x40c0c1*/
+  if ( v7 < *(unsigned int *)&this->q010 ) /*0x40c0c9*/
+    *(unsigned int *)&this->q010 = v7; /*0x40c0cb*/
   return 1; /*0x40c0ce*/
 }
 } // namespace gamemd
@@ -282,11 +282,11 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x40c0e0*/
+  m_10 = *(unsigned int *)&this->q010; /*0x40c0e0*/
   result = 0; /*0x40c0e3*/
   if ( m_10 <= 0 ) /*0x40c0e8*/
     return -1; /*0x40c0ff*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x40c0ee*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x40c0ee*/
   {
     if ( ++result >= m_10 ) /*0x40c0fd*/
       return -1; /*0x40c0fd*/
@@ -302,15 +302,15 @@ DynamicVector * MoveFeedback::Constructor(char a2)
 
   v3 = (unsigned int)(*(void **)&this->m_1[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CommandClass_const___vftable; /*0x40c166*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40c170*/
+  if ( v3 && this->IsAllocated ) /*0x40c170*/
   {
     RA2_OPDEL(v3); /*0x40c178*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x40c180*/
+    *(unsigned int *)&this->q004 = 0; /*0x40c180*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x40c18b*/
-  this->m_8 = 0; /*0x40c191*/
+  this->IsAllocated = 0; /*0x40c18b*/
+  *(unsigned short *)&this->q008 = 0; /*0x40c191*/
   if ( (a2 & 1) != 0 ) /*0x40c198*/
     RA2_OPDEL(); /*0x40c19b*/
-  return this->__pad_0; /*0x40c1a5*/
+  return this; /*0x40c1a5*/
 }
 } // namespace gamemd

@@ -365,12 +365,12 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   if ( *(unsigned char *)(*(unsigned int *)(v12 + 172) + 345)
     && a0
     && (a0->? & 4) != 0
-    && !ParasiteClass::CanInfect(*((ParasiteClass **)a0 + 423), (v25->? & 4) != 0 ? v25 : 0) )
+    && !ParasiteClass::CanInfect(*((ParasiteClass **)a0 + 423), (v25->q11C & 4) != 0 ? v25 : 0) )
   {
     return 5; /*0x6fcac2*/
   }
   v32 = *(unsigned char *)(*(unsigned int *)(v12 + 172) + 345); /*0x6fcacb*/
-  if ( v32 && (v25->? & 4) != 0 && *(int *)&stru_A8EB00.?[416] < v25->unknown698 ) /*0x6fcae9*/
+  if ( v32 && (v25->q11C & 4) != 0 && *(int *)&stru_A8EB00.?[416] < v25->unknown698 ) /*0x6fcae9*/
     return 5; /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
     goto LABEL_231; /*0x6fcafc*/
@@ -447,9 +447,9 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x727c0f*/
       aP0->AbstractClass = (void*)&TriggerTypeClass_vftable; /*0x727c14*/
-      aP0->? = (void*)&TriggerTypeClass_vftable; /*0x727c1a*/
-      aP0->? = (void*)&TriggerTypeClass_vftable; /*0x727c21*/
-      aP0->? = (void*)&TriggerTypeClass_vftable; /*0x727c28*/
+      *(void **)&aP0->vtable2 = (void*)&TriggerTypeClass_vftable; /*0x727c1a*/
+      *(void **)&aP0->vtable3 = (void*)&TriggerTypeClass_vftable; /*0x727c21*/
+      *(void **)&aP0->vtable4 = (void*)&TriggerTypeClass_vftable; /*0x727c28*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->NextTrigger); /*0x727c3b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->FirstEvent); /*0x727c4c*/

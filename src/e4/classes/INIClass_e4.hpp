@@ -23,7 +23,7 @@ struct INIClass {
     char unknown30[4];  // 0x30
     bool needsSave_flag;  // 0x34
     unsigned char q035;  // 0x35
-    void* ;  // 0x38
+    void *q38;  // 0x38
     unsigned int INIClass_field_3C;  // 0x3C
     unsigned int Capacity;
     unsigned int IsAllocated;

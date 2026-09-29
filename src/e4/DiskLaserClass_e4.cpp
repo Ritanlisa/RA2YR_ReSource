@@ -77,7 +77,7 @@ void * DiskLaserClass::CopyTo(char a2)
   AbstractClass::DTOR(); /*0x4a7cfa*/
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
     RA2_OPDEL(); /*0x4a7d07*/
-  return this->__pad_0; /*0x4a7d11*/
+  return this; /*0x4a7d11*/
 }
 // 0x4A7B90
 int DiskLaserClass::Write(AbstractClass * aP0, int aP1)

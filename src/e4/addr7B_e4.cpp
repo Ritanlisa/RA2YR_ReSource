@@ -878,17 +878,17 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     v3 = 0; /*0x7b9587*/
     v4 = 0; /*0x7b9589*/
     v5 = 0; /*0x7b958b*/
-    if ( this->? ) /*0x7b957f*/
+    if ( this->M4 ) /*0x7b957f*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b95a8*/
         Debug::Log(); /*0x7b95b9*/
       FoundationSize = Building::GetFoundationSize(v21, (unsigned int)this->?); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
-      abstractFlags = this->?; /*0x7b95d4*/
+      abstractFlags = this->M20; /*0x7b95d4*/
       v9 = FoundationSize[1]; /*0x7b95d7*/
       v4 = FoundationSize[2]; /*0x7b95da*/
       v10 = FoundationSize[3]; /*0x7b95dd*/
-      nextArrayIndex = this->?; /*0x7b95e0*/
+      nextArrayIndex = this->q018; /*0x7b95e0*/
       v20 = v10; /*0x7b95e3*/
       v2 = abstractFlags - this->ambientSoundController[0] + v7; /*0x7b95f2*/
       v3 = nextArrayIndex - this->ambientSoundController[1] + v9; /*0x7b95fa*/
@@ -3438,8 +3438,8 @@ int E4Recv_7BCA50::sub_7BCA50(int a2, int a3, int a4, int a5, int a6)
         {
           v14 = *v9++; /*0x7bca9f*/
           *v8++ = v14; /*0x7bcaa5*/
-          if ( (unsigned int)v9 >= this->? ) /*0x7bcab0*/
-            v9 = (int16_t *)((char *)v9 - (unsigned int)this->?); /*0x7bcab2*/
+          if ( (unsigned int)v9 >= this->M28 ) /*0x7bcab0*/
+            v9 = (int16_t *)((char *)v9 - (unsigned int)this->M32); /*0x7bcab2*/
           --v13; /*0x7bcab5*/
         }
         while ( v13 ); /*0x7bcab6*/

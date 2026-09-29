@@ -257,7 +257,7 @@ LONG CStreamClass::IStreamRelease(int a1)
 namespace gamemd {
 int CStreamClass_16::Seek(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4a4b2a*/
+  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x4a4b2a*/
 }
 } // namespace gamemd
 
@@ -270,13 +270,13 @@ char CStreamClass_16::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x4a4b32*/
+  m_8 = this->q008; /*0x4a4b32*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a4b3d*/
   {
     v3 = 0; /*0x4a4b3f*/
     if ( m_8 <= 0 ) /*0x4a4b43*/
       return 1; /*0x4a4b63*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x4a4b45*/
+    v4 = *(unsigned int **)&this->q004; /*0x4a4b45*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a4b4b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a4b54*/
     {
@@ -300,30 +300,30 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a4b7c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x4a4b86*/
+    this->q00C = 0; /*0x4a4b86*/
     if ( a3 ) /*0x4a4b8c*/
       v4 = a3; /*0x4a4ba2*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4a4b9e*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x4a4ba6*/
+    this->q00C = 1; /*0x4a4ba6*/
     if ( v4 ) /*0x4a4baa*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x4a4bb5*/
+      if ( *(unsigned int *)&this->q004 ) /*0x4a4bb5*/
       {
-        m_8 = this->m_8; /*0x4a4bbc*/
+        m_8 = this->q008; /*0x4a4bbc*/
         if ( a2 < m_8 ) /*0x4a4bc1*/
           m_8 = a2; /*0x4a4bc3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a4bc9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x4a4bc9*/
           ++i; /*0x4a4bce*/
-        if ( IDA_BYTE1(this->m_C) ) /*0x4a4bdb*/
+        if ( this->IsAllocated ) /*0x4a4bdb*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4a4be6*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x4a4bee*/
+          RA2_OPDEL(*(void **)&this->q004); /*0x4a4be6*/
+          *(unsigned int *)&this->q004 = 0; /*0x4a4bee*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4a4bf7*/
-      this->m_8 = a2; /*0x4a4bff*/
-      IDA_BYTE1(this->m_C) = a3 == 0; /*0x4a4c02*/
+      *(void **)&this->q004 = v4; /*0x4a4bf7*/
+      this->q008 = a2; /*0x4a4bff*/
+      this->IsAllocated = a3 == 0; /*0x4a4c02*/
       return 1; /*0x4a4c08*/
     }
     else
@@ -343,13 +343,13 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void CStreamClass_16::ddtor()
 {
-  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4a4c2d*/
+  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x4a4c2d*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4a4c33*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a4c3b*/
+    RA2_OPDEL(*(void **)&this->q004); /*0x4a4c33*/
+    *(unsigned int *)&this->q004 = 0; /*0x4a4c3b*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x4a4c3e*/
-  this->m_8 = 0; /*0x4a4c41*/
+  this->IsAllocated = 0; /*0x4a4c3e*/
+  this->q008 = 0; /*0x4a4c41*/
 }
 } // namespace gamemd
 
@@ -361,13 +361,13 @@ int CStreamClass_16::Read(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x4a4c50*/
+  if ( !this->q00C ) /*0x4a4c50*/
     return 0; /*0x4a4c58*/
-  m_8 = this->m_8; /*0x4a4c5e*/
+  m_8 = this->q008; /*0x4a4c5e*/
   result = 0; /*0x4a4c61*/
   if ( m_8 <= 0 ) /*0x4a4c65*/
     return -1; /*0x4a4c7c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4a4c6b*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x4a4c6b*/
   {
     if ( ++result >= m_8 ) /*0x4a4c7a*/
       return -1; /*0x4a4c7a*/
@@ -380,8 +380,8 @@ int CStreamClass_16::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int CStreamClass_16::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x4a4c90*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a4ca5*/
+  if ( this->q00C ) /*0x4a4c90*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x4a4ca5*/
   else
     return 0; /*0x4a4c97*/
 }
@@ -395,15 +395,15 @@ VectorClass_flat * CStreamClass_16::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this->m_1[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4d96*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4a4da0*/
+  if ( v3 && this->IsAllocated ) /*0x4a4da0*/
   {
     RA2_OPDEL(v3); /*0x4a4da8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4a4db0*/
+    *(unsigned int *)&this->q004 = 0; /*0x4a4db0*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x4a4dbb*/
-  this->m_8 = 0; /*0x4a4dc1*/
+  this->IsAllocated = 0; /*0x4a4dbb*/
+  *(unsigned short *)&this->q008 = 0; /*0x4a4dc1*/
   if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
     RA2_OPDEL(); /*0x4a4dcb*/
-  return this->__pad_0; /*0x4a4dd5*/
+  return this; /*0x4a4dd5*/
 }
 } // namespace gamemd

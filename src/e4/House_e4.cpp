@@ -99,7 +99,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   v57 = (int)v5; /*0x47d2e2*/
   v6 = *(unsigned int *)&stru_87F5F0.__pad_58[528] /*0x47d2f3*/
      + 10 * CellToTileIndexMap((ObjectClass *)&stru_87F5F0.__pad_58[416], (int16_t *)(&this->u32_C6));
-  v7 = this->ptr_44; /*0x47d2f6*/
+  v7 = *(unsigned int *)&this->ptr_44; /*0x47d2f6*/
   v6 = v6; /*0x47d2fc*/
   if ( v7 != -1 ) /*0x47d300*/
   {
@@ -115,7 +115,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
                                    *(uint8_t *)(&this->u32_702));
       if ( this->u8_11C && *(unsigned char *)(v8 + 681) ) /*0x47d36e*/
       {
-        this->ptr_44 = -1; /*0x47d378*/
+        *(unsigned int *)&this->ptr_44 = -1; /*0x47d378*/
         this->u8_11E = 0; /*0x47d37f*/
       }
       if ( *(unsigned char *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1636) ) /*0x47d38b*/
@@ -197,7 +197,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   LABEL_40:
         this->u8_11C = HouseClass::GetCameoTypeIndex((HouseClass *)v19, *(uint8_t *)(&this->u32_702)); /*0x47d7fb*/
         CellClass::DetermineTileType(); /*0x47d813*/
-        v27 = this->ptr_44; /*0x47d818*/
+        v27 = *(unsigned int *)&this->ptr_44; /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
           goto LABEL_47; /*0x47d81e*/
         if ( FindBuildingByTiberiumType(v27) != -1 ) /*0x47d828*/
@@ -210,7 +210,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
           else
           {
             this->u32_EC = House::LookupObject((House *)v19, *(uint8_t *)(&this->u32_702)); /*0x47d843*/
-            this->ptr_44 = -1; /*0x47d849*/
+            *(unsigned int *)&this->ptr_44 = -1; /*0x47d849*/
             this->u8_11E = 0; /*0x47d850*/
           }
           goto LABEL_48; /*0x47d857*/
@@ -746,7 +746,7 @@ int House::UpdateHouseAI()
       }
       if ( this->u32_250 == 3 ) /*0x4fd87f*/
         goto LABEL_70; /*0x4fd87f*/
-      v25 = this->q078; /*0x4fd881*/
+      v25 = *(unsigned int *)&this->q078; /*0x4fd881*/
       v26 = 0; /*0x4fd884*/
       if ( v25 > 0 ) /*0x4fd888*/
         break; /*0x4fd888*/

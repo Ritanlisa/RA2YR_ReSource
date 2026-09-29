@@ -589,7 +589,7 @@ int CopySHPFrameToSurface(int a1, unsigned short * a2, int * a3, int a4, int a5,
 }
 // 0x748AF0
 namespace gamemd {
-unsigned int int sub_748AF0(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
+unsigned int sub_748AF0(int a1, unsigned short * a2, int * a3, unsigned int a4, int a5, int a6)
 {
   int *v6; // edx
   int v7; // ebp
@@ -726,15 +726,15 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   int v6; // ecx
   int v7; // eax
 
-  p_vtable3 = &this->?; /*0x74bbff*/
-  this->? = 0; /*0x74bc04*/
-  this->? = 0; /*0x74bc07*/
-  IDA_LOBYTE(this->?) = 1; /*0x74bc0a*/
-  IDA_BYTE1(this->?) = 0; /*0x74bc0e*/
+  p_vtable3 = &this->M12; /*0x74bbff*/
+  this->M4 = 0; /*0x74bc04*/
+  this->M8 = 0; /*0x74bc07*/
+  IDA_LOBYTE(this->M12) = 1; /*0x74bc0a*/
+  IDA_BYTE1(this->M12) = 0; /*0x74bc0e*/
   this->? = (void*)&VectorClass_unsigned_char_vftable; /*0x74bc11*/
-  this->? = (void *)-1; /*0x74bc17*/
-  IDA_LOBYTE(this->?) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
-  this->? = *(void **)(a2 + 8); /*0x74bc27*/
+  *(unsigned short *)&this->M8 = (void *)-1; /*0x74bc17*/
+  IDA_LOBYTE(this->M4) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
+  this->M8 = *(void **)(a2 + 8); /*0x74bc27*/
   if ( &this->? == (void **)(a2 + 12) ) /*0x74bc2a*/
     goto LABEL_8; /*0x74bc2a*/
   (*((void (__thiscall **)(void **))*p_vtable3 + 3))(p_vtable3); /*0x74bc30*/
@@ -777,34 +777,34 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
   int abstractFlags; // ecx
   int v7; // eax
 
-  vtable2 = this->?; /*0x74bca6*/
+  vtable2 = this->M8; /*0x74bca6*/
   if ( vtable2 != (void *)-1 ) /*0x74bcac*/
   {
     SetBitfieldBit(this->?, (int)vtable2, IDA_LOBYTE(this->?)); /*0x74bcb7*/
-    this->? = (void *)-1; /*0x74bcbc*/
+    *(unsigned short *)&this->M8 = (void *)-1; /*0x74bcbc*/
   }
-  IDA_LOBYTE(this->?) = *(unsigned char *)(a2 + 4); /*0x74bcd0*/
-  this->? = *(void **)(a2 + 8); /*0x74bcd8*/
+  IDA_LOBYTE(this->M4) = *(unsigned char *)(a2 + 4); /*0x74bcd0*/
+  this->M8 = *(void **)(a2 + 8); /*0x74bcd8*/
   if ( &this->? == (void **)(a2 + 12) ) /*0x74bcdb*/
     goto LABEL_10; /*0x74bcdb*/
-  (*((void (__thiscall **)(void **))this->? + 3))(&this->?); /*0x74bce1*/
+  (*((void (__thiscall **)(void **))*(unsigned short *)&this->M12 + 3))(&this->M12); /*0x74bce1*/
   v4 = *(unsigned int *)(a2 + 20); /*0x74bce4*/
-  this->? = v4; /*0x74bce9*/
+  this->M8 = v4; /*0x74bce9*/
   if ( !v4 ) /*0x74bcec*/
   {
-    this->? = 0; /*0x74bd2c*/
-    IDA_BYTE1(this->?) = 0; /*0x74bd33*/
+    *(unsigned short *)&this->M4 = 0; /*0x74bd2c*/
+    IDA_BYTE1(this->M12) = 0; /*0x74bd33*/
   LABEL_10:
     this->AbstractClass = *(void **)a2; /*0x74bd37*/
     return &this->AbstractClass; /*0x74bd39*/
   }
   v5 = RA2_OPNEW(v4); /*0x74bcef*/
-  this->? = v5; /*0x74bcf7*/
+  this->M4 = v5; /*0x74bcf7*/
   if ( !v5 ) /*0x74bcfc*/
     goto LABEL_10; /*0x74bcfc*/
-  abstractFlags = this->?; /*0x74bcfe*/
+  abstractFlags = this->M8; /*0x74bcfe*/
   v7 = 0; /*0x74bd01*/
-  IDA_BYTE1(this->?) = 1; /*0x74bd05*/
+  IDA_BYTE1(this->M12) = 1; /*0x74bd05*/
   if ( abstractFlags <= 0 ) /*0x74bd09*/
     goto LABEL_10; /*0x74bd09*/
   do /*0x74bd1d*/
@@ -830,23 +830,23 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   void (__thiscall **vtable3)(void **); // edx
   unsigned int v12; // [esp+10h] [ebp+4h]
 
-  vtable2 = this->?; /*0x74bdc8*/
+  vtable2 = this->M8; /*0x74bdc8*/
   if ( vtable2 != (void *)-1 ) /*0x74bdcd*/
   {
     SetBitfieldBit(this->?, (int)vtable2, IDA_LOBYTE(this->?)); /*0x74bdd8*/
-    this->? = (void *)-1; /*0x74bddd*/
+    *(void **)&this->M8 = (void *)-1; /*0x74bddd*/
   }
   if ( a2 ) /*0x74bde6*/
   {
     vtable0 = (char *)this->AbstractClass; /*0x74bdeb*/
-    v6 = (*((int (__thiscall **)(void **, unsigned int, unsigned int))this->? + 2))(&this->?, (a2 + 7) >> 3, 0); /*0x74bdf9*/
+    v6 = (*((int (__thiscall **)(void **, unsigned int, unsigned int))*(unsigned short *)&this->M8 + 2))(&this->M8, (a2 + 7) >> 3, 0); /*0x74bdf9*/
     this->AbstractClass = (void *)a2; /*0x74be01*/
     v12 = v6; /*0x74be03*/
     if ( v6 && (unsigned int)vtable0 < a2 ) /*0x74be0b*/
     {
       do /*0x74be53*/
       {
-        v7 = (char *)this->?; /*0x74be0e*/
+        v7 = (char *)this->M8; /*0x74be0e*/
         if ( v7 != vtable0 ) /*0x74be13*/
         {
           v8 = (int)vtable0; /*0x74be17*/
@@ -857,12 +857,12 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
             if ( v7 != (char *)-1 ) /*0x74be27*/
               SetBitfieldBit(this->?, (int)v7, IDA_LOBYTE(this->?)); /*0x74be32*/
             if ( v8 != -1 ) /*0x74be3a*/
-              IDA_LOBYTE(this->?) = BitArray::TestBit(this->?, v8); /*0x74be46*/
-            this->? = (void *)v8; /*0x74be49*/
+              IDA_LOBYTE(this->M4) = BitArray::TestBit(this->M4, v8); /*0x74be46*/
+            *(void **)&this->M8 = (void *)v8; /*0x74be49*/
           }
         }
         ++vtable0; /*0x74be4c*/
-        IDA_LOBYTE(this->?) = 0; /*0x74be4d*/
+        IDA_LOBYTE(this->M4) = 0; /*0x74be4d*/
       }
       while ( (unsigned int)vtable0 < a2 ); /*0x74be53*/
     }
@@ -870,15 +870,15 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   }
   else
   {
-    v10 = this->?; /*0x74be60*/
+    v10 = this->M8; /*0x74be60*/
     if ( v10 != (void *)-1 ) /*0x74be65*/
     {
       SetBitfieldBit(this->?, (int)v10, IDA_LOBYTE(this->?)); /*0x74be70*/
-      this->? = (void *)-1; /*0x74be75*/
+      *(void **)&this->M8 = (void *)-1; /*0x74be75*/
     }
-    vtable3 = (void (__thiscall **)(void **))this->?; /*0x74be78*/
+    vtable3 = (void (__thiscall **)(void **))this->M12; /*0x74be78*/
     this->AbstractClass = 0; /*0x74be7e*/
-    vtable3[3](&this->?); /*0x74be84*/
+    vtable3[3](&this->M12); /*0x74be84*/
     return 1; /*0x74be89*/
   }
 }
@@ -1183,13 +1183,13 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
   v3 = this->ambientSoundController[2]; /*0x74fb69*/
   if ( (v3 & 4) != 0 ) /*0x74fb6e*/
   {
-    vtable2_high = IDA_HIWORD(this->?); /*0x74fb70*/
+    vtable2_high = IDA_HIWORD(this->M10); /*0x74fb70*/
   }
   else
   {
     vtable2_high = 1; /*0x74fb76*/
     IDA_LOBYTE(v3) = v3 | 4; /*0x74fb7b*/
-    IDA_HIWORD(this->?) = 1; /*0x74fb7d*/
+    IDA_HIWORD(this->M10) = 1; /*0x74fb7d*/
     this->ambientSoundController[2] = v3; /*0x74fb81*/
   }
   if ( (stru_A8EB00.?[320] & 8) == 0 ) /*0x74fb8b*/
@@ -1788,14 +1788,14 @@ void E4Recv_74BF40::sub_74BF40(unsigned int a2)
   v3 = a2; /*0x74bf44*/
   if ( (void *)a2 >= this->AbstractClass ) /*0x74bf4a*/
     v3 = -1; /*0x74bf4c*/
-  vtable2 = this->?; /*0x74bf4f*/
+  vtable2 = this->M8; /*0x74bf4f*/
   if ( (void *)v3 != vtable2 ) /*0x74bf54*/
   {
     if ( vtable2 != (void *)-1 ) /*0x74bf59*/
       SetBitfieldBit(this->?, (int)vtable2, IDA_LOBYTE(this->?)); /*0x74bf64*/
     if ( v3 != -1 ) /*0x74bf6c*/
-      IDA_LOBYTE(this->?) = BitArray::TestBit(this->?, v3); /*0x74bf78*/
-    this->? = (void *)v3; /*0x74bf7b*/
+      IDA_LOBYTE(this->M4) = BitArray::TestBit(this->M4, v3); /*0x74bf78*/
+    *(void **)&this->M8 = (void *)v3; /*0x74bf7b*/
   }
 }
 } // namespace gamemd
@@ -2019,13 +2019,13 @@ unsigned int * E4Recv_74F730::sub_74F730()
   v2 = this->ambientSoundController[2]; /*0x74f734*/
   this->? = 0; /*0x74f737*/
   IDA_LOWORD(this->?) = 0; /*0x74f73d*/
-  IDA_HIWORD(this->?) = 0; /*0x74f741*/
+  IDA_HIWORD(this->u16_A) = 0; /*0x74f741*/
   this->ambientSoundController[0] = 0; /*0x74f745*/
   this->ambientSoundController[1] = 0; /*0x74f748*/
   this->ambientSoundController[2] = v2 & 0xFFFFFFF0; /*0x74f74b*/
   this->AbstractClass = (void*)&VersionClass_vftable; /*0x74f74e*/
   IDA_BYTE2(this->owningHouseIndex) = 0; /*0x74f754*/
-  IDA_LOBYTE(this->?) = 0; /*0x74f757*/
+  this->u8_C = 0; /*0x74f757*/
   return &this->AbstractClass; /*0x74f75a*/
 }
 } // namespace gamemd

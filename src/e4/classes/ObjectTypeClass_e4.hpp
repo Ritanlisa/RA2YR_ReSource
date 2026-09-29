@@ -61,7 +61,7 @@ struct ObjectTypeClass {
     unsigned int u32_88;  // 0x88
     void* q08C;  // 0x8C
     unsigned int u32_90;  // 0x90
-    void* ;  // 0x94
+    void *q94;  // 0x94
     unsigned int tail_95;  // 0x95
     Color* q098;  // 0x98
     unsigned char unused_9B;  // 0x9B

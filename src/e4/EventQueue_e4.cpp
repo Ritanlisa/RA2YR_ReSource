@@ -17,7 +17,7 @@ int EventQueue::Process()
 
   if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
-  v2 = this->q314; /*0x54f025*/
+  v2 = *(unsigned int *)&this->q314; /*0x54f025*/
   if ( v2 == this->q318 ) /*0x54f033*/
     return 0; /*0x54f035*/
   else
@@ -43,7 +43,7 @@ int EventQueue::Read()
   {
     if ( (*(unsigned int *)&this->q318 + 1) % 256 != this->q314 ) /*0x54f06f*/
       MessageLoop(); /*0x54f071*/
-    v2 = this->q314; /*0x54f076*/
+    v2 = *(unsigned int *)&this->q314; /*0x54f076*/
   }
   while ( v2 == *(unsigned int *)&this->q318 || !*((unsigned short *)this + v2 + 138) ); /*0x54f086*/
   do /*0x54f0b3*/
@@ -52,30 +52,30 @@ int EventQueue::Read()
       MessageLoop(); /*0x54f09c*/
   }
   while ( this->q314 == *(unsigned int *)&this->q318 || !(uint16_t)EventQueue::Check(this) ); /*0x54f0b3*/
-  v3 = this->q314; /*0x54f0bd*/
+  v3 = *(unsigned int *)&this->q314; /*0x54f0bd*/
   v4 = *(unsigned int *)&this->q318; /*0x54f0c3*/
   result = 0; /*0x54f0c9*/
   if ( v3 != v4 ) /*0x54f0cd*/
   {
     result = *((unsigned short *)this + v3 + 138); /*0x54f0cf*/
-    this->q314 = (v3 + 1) % 256; /*0x54f0e8*/
+    *(unsigned int *)&this->q314 = (v3 + 1) % 256; /*0x54f0e8*/
   }
   if ( (uint8_t)result == 1 || (uint8_t)result == 4 || (uint8_t)result == 2 ) /*0x54f106*/
   {
-    v6 = this->q314; /*0x54f108*/
+    v6 = *(unsigned int *)&this->q314; /*0x54f108*/
     v7 = 0; /*0x54f10e*/
     if ( v6 != v4 ) /*0x54f112*/
     {
       v7 = *((unsigned short *)this + v6 + 138); /*0x54f114*/
-      this->q314 = (v6 + 1) % 256; /*0x54f12d*/
+      *(unsigned int *)&this->q314 = (v6 + 1) % 256; /*0x54f12d*/
     }
-    v8 = this->q314; /*0x54f134*/
+    v8 = *(unsigned int *)&this->q314; /*0x54f134*/
     v9 = 0; /*0x54f140*/
     *(unsigned int *)this = v7; /*0x54f144*/
     if ( v8 != v4 ) /*0x54f146*/
     {
       v9 = *((unsigned short *)this + v8 + 138); /*0x54f148*/
-      this->q314 = (v8 + 1) % 256; /*0x54f161*/
+      *(unsigned int *)&this->q314 = (v8 + 1) % 256; /*0x54f161*/
     }
     this->u32_C = v7; /*0x54f16d*/
     this->u32_4 = v9; /*0x54f171*/
@@ -83,12 +83,12 @@ int EventQueue::Read()
   }
   else if ( (uint8_t)result == 10 ) /*0x54f17e*/
   {
-    v10 = this->q314; /*0x54f180*/
+    v10 = *(unsigned int *)&this->q314; /*0x54f180*/
     v11 = 0; /*0x54f186*/
     if ( v10 != v4 ) /*0x54f18a*/
     {
       v11 = *((unsigned short *)this + v10 + 138); /*0x54f18c*/
-      this->q314 = (v10 + 1) % 256; /*0x54f1a5*/
+      *(unsigned int *)&this->q314 = (v10 + 1) % 256; /*0x54f1a5*/
     }
     *(unsigned short *)&this->u16_8 = v11; /*0x54f1ab*/
   }

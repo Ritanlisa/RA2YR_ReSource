@@ -7,13 +7,13 @@ namespace gamemd {
 struct Tactical {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int ;  // 0x4
+    unsigned int q4;  // 0x4
     void* vtable3;  // 0x8
-    unsigned int ;  // 0xC
-    void* ;  // 0x10
+    unsigned int qC;  // 0xC
+    void *q10;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
-    void* ;  // 0x14
+    void *q14;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
@@ -47,8 +47,8 @@ struct Tactical {
     unsigned char q05C;  // 0x5C
     unsigned int q060;  // 0x60
     unsigned char q064;  // 0x64
-    void* ;  // 0x68
-    unsigned int ;  // 0x6C
+    void *q68;  // 0x68
+    unsigned int q6C;  // 0x6C
     unsigned char q070;  // 0x70
     unsigned int u16_72;  // 0x72
     bool q074;  // 0x74

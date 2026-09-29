@@ -2802,7 +2802,7 @@ int E4Recv_68F8A0::sub_68F8A0()
   v4 = RA2_OPNEW(0x2Cu); /*0x68f8e8*/
   if ( v4 ) /*0x68f8ef*/
   {
-    vtable3 = this->?; /*0x68f8f8*/
+    vtable3 = this->M12; /*0x68f8f8*/
     v6 = (char *)this->? + 214; /*0x68f8fd*/
     *(unsigned int *)(v4 + 4) = (char *)this->AbstractClass + 590 - 12 * (v3 - 1); /*0x68f902*/
     *(unsigned int *)(v4 + 8) = v6; /*0x68f908*/
@@ -2825,12 +2825,12 @@ int E4Recv_68F8A0::sub_68F8A0()
     || (IDA_BYTE1(this->owningHouseIndex) || !occupant)
     && (nextObject = this->nextObject, (int)nextObject > 0)
     && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(*p_referenceCount + 8))(
-         &this->?,
+         &this->u32_8,
          (int)nextObject + occupant,
          0) )
   {
     fallRate = this->fallRate; /*0x68f965*/
-    NeedsSaveOrLink = this->?; /*0x68f968*/
+    NeedsSaveOrLink = this->M4; /*0x68f968*/
     this->fallRate = fallRate + 1; /*0x68f96e*/
     NeedsSaveOrLink[fallRate] = v4; /*0x68f971*/
   }
@@ -2864,10 +2864,10 @@ unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a7, int a3, size_t Buffe
   if ( (int)Format >= (int)a6 ) /*0x68fb2b*/
     v8 = a6; /*0x68fb2d*/
   swprintf(Buffer, BufferCount, v8); /*0x68fb3d*/
-  vtable3 = this->?; /*0x68fb42*/
+  vtable3 = this->M12; /*0x68fb42*/
   v11 = a8 - vtable3[2]; /*0x68fb5d*/
   (*(void (__thiscall **)(unsigned int *, int, wchar_t *, int, int, int))(*vtable3 + 12))(vtable3, a3, Buffer, a7, v11, 2); /*0x68fb6e*/
-  v12 = this->?; /*0x68fb71*/
+  v12 = this->M12; /*0x68fb71*/
   v13 = v12[2]; /*0x68fb7b*/
   v14 = (*(int (__thiscall **)(unsigned int *, wchar_t *))(*v12 + 8))(v12, Buffer); /*0x68fb7e*/
   *a7 = a7; /*0x68fb8a*/

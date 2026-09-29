@@ -24,7 +24,7 @@ struct AirstrikeClass {
     unsigned int AirstrikeClass_field_28;  // 0x28
     bool q02B;  // 0x2B
     unsigned int q02C;  // 0x2C
-    unsigned int ;  // 0x30
+    unsigned int q30;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned int u32_34;  // 0x34
@@ -39,9 +39,9 @@ struct AirstrikeClass {
     unsigned int AirstrikeClass_field_44;  // 0x44
     unsigned int AirstrikeClass_field_48;  // 0x48
     bool q04A;  // 0x4A
-    unsigned int ;  // 0x4C
+    unsigned int q4C;  // 0x4C
     unsigned char q04F;  // 0x4F
-    void* ;  // 0x50
+    void *q50;  // 0x50
     unsigned int AirstrikeClass_field_54;  // 0x54
     char AirstrikeClass_field_58[4];  // 0x58
     unsigned int AirstrikeClass_field_5C;  // 0x5C

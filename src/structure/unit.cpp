@@ -10706,7 +10706,7 @@ int UnitClass::PowerDrainUpdate(int a2)
 }
 // IDA: 0x746810 (PerFrameUpdate, 167B)
 // 0x746810
-UnitTypeClass * * UnitClass::PerFrameUpdate(int unsigned int *a1@<ecx>, int int a2@<edi>)
+UnitTypeClass * * UnitClass::PerFrameUpdate(unsigned int *a1, int a2)
 {
   int v2; // ecx
   unsigned int *result; // eax

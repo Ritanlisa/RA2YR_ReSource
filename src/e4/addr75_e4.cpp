@@ -1938,17 +1938,17 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
   v3 = 0; /*0x758ae2*/
   if ( !(*(int (__thiscall **)(int *, int))(*a2 + 28))(a2, 2) ) /*0x758ae4*/
     goto LABEL_5; /*0x758ae4*/
-  vtable2 = this->?; /*0x758aed*/
-  vtable1 = this->?; /*0x758af0*/
+  vtable2 = this->M8; /*0x758aed*/
+  vtable1 = this->M4; /*0x758af0*/
   v9[0] = this->AbstractClass; /*0x758af3*/
-  vtable3 = this->?; /*0x758af7*/
+  vtable3 = this->M12; /*0x758af7*/
   v9[2] = vtable2; /*0x758afa*/
   v9[1] = vtable1; /*0x758afe*/
   v7 = *a2; /*0x758b02*/
   v9[3] = vtable3; /*0x758b08*/
   if ( (*(int (__thiscall **)(int *, unsigned int *, int))(v7 + 48))(a2, v9, 16) != 16 /*0x758b4a*/
-    || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->?, 768) != 768
-    || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->?, (int)this->? << 8) != (int)this->? << 8 )
+    || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->M8, 768) != 768
+    || (*(int (__thiscall **)(int *, int, int))(*a2 + 48))(a2, this->M8, (int)this->M8 << 8) != (int)this->M8 << 8 )
   {
   LABEL_5:
     v3 = 1; /*0x758b4c*/
@@ -3410,12 +3410,12 @@ namespace gamemd {
 unsigned int * E4Recv_755CB0::sub_755CB0()
 {
   IDA_LOBYTE(this->AbstractClass) = 0; /*0x755cb4*/
-  this->? = 0; /*0x755cb6*/
-  this->? = 0; /*0x755cb9*/
-  this->? = 0; /*0x755cbc*/
-  this->? = 0; /*0x755cbf*/
-  this->? = 0; /*0x755cc2*/
-  this->? = 0; /*0x755cc5*/
+  this->M4 = 0; /*0x755cb6*/
+  this->M8 = 0; /*0x755cb9*/
+  this->M12 = 0; /*0x755cbc*/
+  this->M16 = 0; /*0x755cbf*/
+  this->M20 = 0; /*0x755cc2*/
+  this->q018 = 0; /*0x755cc5*/
   return &this->AbstractClass; /*0x755cc8*/
 }
 } // namespace gamemd
@@ -3444,8 +3444,8 @@ float * E4Recv_7564E0::sub_7564E0(float * a2, int a3, int a4)
   float v14; // [esp+10h] [ebp-8h]
   float v15; // [esp+14h] [ebp-4h]
 
-  uniqueId = this->?; /*0x7564e7*/
-  abstractFlags = this->?; /*0x7564ea*/
+  uniqueId = this->M16; /*0x7564e7*/
+  abstractFlags = this->M20; /*0x7564ea*/
   v6 = 41 * (a4 + *(unsigned int *)(uniqueId + 12 * a3)); /*0x7564fc*/
   v7 = *(float *)(abstractFlags + 4 * v6 + 112) + *(float *)(abstractFlags + 4 * v6 + 88); /*0x756503*/
   v8 = (float *)(abstractFlags + 164 * (a4 + *(unsigned int *)(uniqueId + 12 * a3))); /*0x75650b*/
@@ -3495,7 +3495,7 @@ char E4Recv_758E10::sub_758E10(float a2, float a3, float a4)
   double v9; // st4
   float v11; // [esp+4h] [ebp-8h]
 
-  uniqueId = (uint8_t *)this->?; /*0x758e13*/
+  uniqueId = (uint8_t *)this->M16; /*0x758e13*/
   v5 = 0; /*0x758e17*/
   v11 = 100000.0; /*0x758e19*/
   for ( i = 0; i < 256; ++i ) /*0x758e21*/

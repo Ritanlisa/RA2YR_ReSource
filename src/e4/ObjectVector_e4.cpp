@@ -21,11 +21,11 @@ unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
     if ( aP2 ) /*0x4d0466*/
     {
       this->ObjectVector_field_0x04 = aP2; /*0x4d0468*/
-      return this->__pad_0; /*0x4d046e*/
+      return this; /*0x4d046e*/
     }
     this->ObjectVector_field_0x04 = RA2_OPNEW(4 * aP1); /*0x4d047d*/
     IDA_BYTE1(this->ObjectVector_field_0x0C) = 1; /*0x4d0480*/
   }
-  return this->__pad_0; /*0x4d046d*/
+  return this; /*0x4d046d*/
 }
 } // namespace gamemd

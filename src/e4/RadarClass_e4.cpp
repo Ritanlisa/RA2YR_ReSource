@@ -51,7 +51,7 @@ CampaignClass * * RadarClass::Destruct()
   while ( v3 ); /*0x652c53*/
   RadarClass_field_0x1260 = this->RadarClass_field_0x1260; /*0x652c55*/
   this->RadarClass_field_0x125C = (VectorClass *)(void*)&VectorClass_Point2D_vftable; /*0x652c5b*/
-  if ( RadarClass_field_0x1260 && this->__pad_1264[5] ) /*0x652c69*/
+  if ( RadarClass_field_0x1260 && this->u8_1269 ) /*0x652c69*/
   {
     RA2_OPDEL(RadarClass_field_0x1260); /*0x652c72*/
     this->RadarClass_field_0x1260 = 0; /*0x652c7a*/
@@ -60,7 +60,7 @@ CampaignClass * * RadarClass::Destruct()
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
   RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
   this->RadarClass_field_0x1224 = (VectorClass *)(void*)&VectorClass_Cell_vftable; /*0x652c92*/
-  if ( RadarClass_field_0x1228 && this->__pad_122C[5] ) /*0x652ca0*/
+  if ( RadarClass_field_0x1228 && this->u8_1231 ) /*0x652ca0*/
   {
     RA2_OPDEL(RadarClass_field_0x1228); /*0x652ca9*/
     this->RadarClass_field_0x1228 = 0; /*0x652cb1*/

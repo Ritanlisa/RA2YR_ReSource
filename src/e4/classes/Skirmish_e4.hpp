@@ -8,7 +8,7 @@ namespace gamemd {
 struct Skirmish {
 // --- flat members (BEGIN) ---
     unsigned int u32_38;  // 0x38
-    unsigned int ;  // 0x3C
+    unsigned int q3C;  // 0x3C
     unsigned int u32_40;  // 0x40
     TechnoTypeClass * ptr_44;  // 0x44
     unsigned int u32_48;  // 0x48
@@ -22,7 +22,7 @@ struct Skirmish {
     unsigned int u32_68;  // 0x68
     unsigned int u32_6C;  // 0x6C
     TechnoTypeClass * ptr_70;  // 0x70
-    unsigned int ;  // 0x74
+    unsigned int q74;  // 0x74
     unsigned int q080;  // 0x80
     unsigned int q084;  // 0x84
     unsigned int q088;  // 0x88

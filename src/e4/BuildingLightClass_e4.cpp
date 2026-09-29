@@ -54,7 +54,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   if ( aP1 == (unsigned int *)3 ) /*0x436c0c*/
   {
     v4 = *(unsigned int *)this->GetCellCoords_Alt(&v24); /*0x436c21*/
-    v5 = this->FollowingObject; /*0x436c23*/
+    v5 = *(unsigned int *)&this->FollowingObject; /*0x436c23*/
     v4 = v4; /*0x436c29*/
     v19 = &unk_98967F; /*0x436c2d*/
     v22 = 0; /*0x436c3b*/
@@ -111,7 +111,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
     while ( v17 < 2 ); /*0x436d74*/
     result = v22; /*0x436d7a*/
     if ( v22 ) /*0x436d80*/
-      this->BuildingLightClass_field_E0 = v22; /*0x436d82*/
+      *(void **)&this->BuildingLightClass_field_E0 = v22; /*0x436d82*/
   }
   return result; /*0x436d88*/
 }
@@ -125,8 +125,8 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
 
   this->vtable0 = (unsigned int)((void *)((int)&BuildingLightClass_vftable));
   this->vtable1 = (void *)((int)&BuildingLightClass_vftable);
-  this->vtable2 = (int)&BuildingLightClass_vftable; /*0x4370d1*/
-  this->vtable3 = (int)&BuildingLightClass_vftable; /*0x4370d8*/
+  *(unsigned int *)&this->vtable2 = (int)&BuildingLightClass_vftable; /*0x4370d1*/
+  *(unsigned int *)&this->vtable3 = (int)&BuildingLightClass_vftable; /*0x4370d8*/
   if ( (uint8_t)ObjectClass::Undeploy(this) ) /*0x4370df*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x4370ee*/
   v5 = this; /*0x437103*/

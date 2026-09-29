@@ -463,7 +463,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
       else
         v19 = 0; /*0x6f419b*/
       vtable0 = (int (__thiscall **)(TechnoClass *, unsigned int))v3->RadioClass; /*0x6f419d*/
-      v3->temporalUsing = v19; /*0x6f41a3*/
+      *(void **)&v3->temporalUsing = v19; /*0x6f41a3*/
       v3->temporalUsing[1].? = *(unsigned int *)(*(unsigned int *)vtable0[254](v3, 0) + 164); /*0x6f41bd*/
     }
     if ( *(int *)((*((int (__thiscall **)(TechnoClass *))v3->RadioClass + 33))(v3) + 1564) > 0 ) /*0x6f41d2*/
@@ -478,9 +478,9 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
     if ( *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))v3->RadioClass + 33))(v3) + 3375) /*0x6f4212*/
       && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))v3->RadioClass + 33))(v3) + 3376) )
     {
-      owner = v3->owner; /*0x6f421c*/
-      v3->isDisguisedFlag = 1; /*0x6f4222*/
-      v3->disguisedAsHouse = owner; /*0x6f4229*/
+      owner = *(unsigned int *)&v3->owner; /*0x6f421c*/
+      *(unsigned int *)&v3->isDisguisedFlag = 1; /*0x6f4222*/
+      *(void **)&v3->disguisedAsHouse = owner; /*0x6f4229*/
       sideIndex = owner->sideIndex; /*0x6f422f*/
       if ( sideIndex ) /*0x6f4237*/
       {
@@ -539,23 +539,23 @@ int TechnoClass::DTOR()
   *(unsigned int *)this = (void*)&TechnoClass_vftable; /*0x6f450d*/
   this->vtable2 = (void*)&TechnoClass_vftable; /*0x6f4515*/
   this->vtable3 = (void*)&TechnoClass_vftable; /*0x6f451c*/
-  this->vtable4 = &off_7F4934; /*0x6f4523*/
+  *(void **)&this->vtable4 = &off_7F4934; /*0x6f4523*/
   if ( v2 ) /*0x6f452a*/
   {
     Sidebar::CancelSidebarProductionQueue(v2); /*0x6f452c*/
-    this->planningToken = 0; /*0x6f4531*/
+    *(unsigned int *)&this->planningToken = 0; /*0x6f4531*/
   }
-  v3 = this->captureManager; /*0x6f4537*/
+  v3 = *(unsigned int *)&this->captureManager; /*0x6f4537*/
   if ( v3 ) /*0x6f453f*/
   {
     (*(void (__thiscall **)(int, int))(*(unsigned int *)v3 + 32))(v3, 1); /*0x6f4545*/
-    this->captureManager = 0; /*0x6f4548*/
+    *(unsigned int *)&this->captureManager = 0; /*0x6f4548*/
   }
-  v4 = this->spawnManager; /*0x6f454e*/
+  v4 = *(unsigned int *)&this->spawnManager; /*0x6f454e*/
   if ( v4 ) /*0x6f4556*/
   {
     (*(void (__thiscall **)(int, int))(*(unsigned int *)v4 + 32))(v4, 1); /*0x6f455c*/
-    this->spawnManager = 0; /*0x6f455f*/
+    *(unsigned int *)&this->spawnManager = 0; /*0x6f455f*/
   }
   v5 = *(TechnoClass **)(&this->q1208); /*0x6f4565*/
   if ( v5 ) /*0x6f456d*/
@@ -566,11 +566,11 @@ int TechnoClass::DTOR()
       (*(void (__thiscall **)(int, int))(*(unsigned int *)v6 + 32))(v6, 1); /*0x6f4584*/
     this->slaveManager = 0; /*0x6f4587*/
   }
-  v7 = this->temporalUsing; /*0x6f458d*/
+  v7 = *(unsigned int *)&this->temporalUsing; /*0x6f458d*/
   if ( v7 ) /*0x6f4595*/
   {
     (*(void (__thiscall **)(int, int))(v7->NeedsSaveOrLink)(v7, 1); /*0x6f459b*/
-    this->temporalUsing = 0; /*0x6f459e*/
+    *(unsigned int *)&this->temporalUsing = 0; /*0x6f459e*/
   }
   v8 = *(unsigned int **)(&this->q1080); /*0x6f45a4*/
   if ( v8 && v8[19] == this ) /*0x6f45b1*/
@@ -585,7 +585,7 @@ int TechnoClass::DTOR()
   AudioFile::Stop((AudioFile *)(&this->q1E46)); /*0x6f45f5*/
   AudioFileClass::Release((AudioFileClass *)(&this->q1E46)); /*0x6f45fc*/
   AudioFileClass::Release((AudioFileClass *)(&this->q1F04)); /*0x6f4607*/
-  this->owner = 0; /*0x6f4610*/
+  *(unsigned int *)&this->owner = 0; /*0x6f4610*/
   this->isOwnedByCurrentPlayer = 0; /*0x6f4616*/
   v9 = (*(int (__thiscall **)(unsigned char *, int *))(*(unsigned int *)&stru_A8EB00.?[148] + 16))(&stru_A8EB00.?[148], &this); /*0x6f462c*/
   if ( v9 != -1 ) /*0x6f4633*/
@@ -595,22 +595,22 @@ int TechnoClass::DTOR()
           &this);
   if ( v10 != -1 ) /*0x6f465a*/
     DynamicVector::RemoveItem((DynamicVector *)g_BuildingLoadQueue_Array.__pad_E88, v10); /*0x6f4662*/
-  v11 = this->behindAnim; /*0x6f4667*/
+  v11 = *(unsigned int *)&this->behindAnim; /*0x6f4667*/
   if ( v11 ) /*0x6f466f*/
   {
     (*(void (__thiscall **)(int))(*(unsigned int *)v11 + 248))(v11); /*0x6f4673*/
-    this->behindAnim = 0; /*0x6f4679*/
+    *(unsigned int *)&this->behindAnim = 0; /*0x6f4679*/
   }
-  v12 = this->deployAnim; /*0x6f467f*/
+  v12 = *(unsigned int *)&this->deployAnim; /*0x6f467f*/
   if ( v12 ) /*0x6f4687*/
   {
     (*(void (__thiscall **)(int))(*(unsigned int *)v12 + 248))(v12); /*0x6f468b*/
-    this->deployAnim = 0; /*0x6f4691*/
+    *(unsigned int *)&this->deployAnim = 0; /*0x6f4691*/
   }
-  this->q470 = (void*)&VectorClass_AbstractClass___vftable; /*0x6f469d*/
+  *(void **)&this->q470 = (void*)&VectorClass_AbstractClass___vftable; /*0x6f469d*/
   AbstractClassVector::ddtor(&this->q1C46); /*0x6f46a3*/
   v13 = *(void **)(&this->q1BC6); /*0x6f46a8*/
-  this->currentTargets = (void*)&VectorClass_AbstractClass___vftable; /*0x6f46ae*/
+  *(void **)&this->currentTargets = (void*)&VectorClass_AbstractClass___vftable; /*0x6f46ae*/
   if ( v13 && this->vecAbs_IsAllocated ) /*0x6f46bc*/
   {
     RA2_OPDEL(v13); /*0x6f46c5*/
@@ -619,11 +619,11 @@ int TechnoClass::DTOR()
   this->vecAbs_IsAllocated = 0; /*0x6f46d3*/
   this->audioController3 = 0; /*0x6f46d9*/
   v14 = *(void **)(&this->u32_1B42); /*0x6f46df*/
-  this->currentTargetThreatValues = (void*)&VectorClass_int_vftable; /*0x6f46e5*/
+  *(void **)&this->currentTargetThreatValues = (void*)&VectorClass_int_vftable; /*0x6f46e5*/
   if ( v14 && this->vecInt_IsAllocated ) /*0x6f46f3*/
   {
     RA2_OPDEL(v14); /*0x6f46fc*/
-    this->vecInt_Items = 0; /*0x6f4704*/
+    *(unsigned int *)&this->vecInt_Items = 0; /*0x6f4704*/
   }
   this->vecInt_IsAllocated = 0; /*0x6f4710*/
   this->vecInt_Capacity = 0; /*0x6f4716*/
@@ -633,7 +633,7 @@ int TechnoClass::DTOR()
   this->vtable3 = (void*)&RadioClass_vftable; /*0x6f472e*/
   this->vtable4 = (void*)&RadioClass_vftable; /*0x6f4735*/
   v15 = *(void **)(&this->q0588); /*0x6f473c*/
-  this->radioLinks = (void*)&VectorClass_TechnoClass___vftable; /*0x6f4742*/
+  *(void **)&this->radioLinks = (void*)&VectorClass_TechnoClass___vftable; /*0x6f4742*/
   if ( v15 && this->vecTechno_IsAllocated ) /*0x6f4750*/
   {
     RA2_OPDEL(v15); /*0x6f4759*/
@@ -741,14 +741,14 @@ Coord * * TechnoClass::RegisterKill()
         && *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v10 + 132))(v10) + 3214) )
       {
         v11 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(v28 + 284) + 132))(*(unsigned int *)(v28 + 284)); /*0x702ecb*/
-        v23 = this->owner; /*0x702eda*/
+        v23 = *(unsigned int *)&this->owner; /*0x702eda*/
         v19 = (*(int (__thiscall **)(int))(*(unsigned int *)v11 + 132))(v11); /*0x702ee9*/
         HouseClass::AccumulateScore((float *)(*(unsigned int *)(v28 + 284) + 336), v19, v23); /*0x702ef0*/
       }
       else if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v28 + 132))(v28) + 3214) )
       {
         v12 = (*(int (__thiscall **)(int))(*(unsigned int *)v28 + 132))(v28); /*0x702f0d*/
-        v24 = this->owner; /*0x702f1c*/
+        v24 = *(unsigned int *)&this->owner; /*0x702f1c*/
         v20 = (*(int (__thiscall **)(int))(*(unsigned int *)v12 + 132))(v12); /*0x702f25*/
         HouseClass::AccumulateScore((float *)(v28 + 336), v20, v24); /*0x702f2c*/
       }
@@ -758,7 +758,7 @@ Coord * * TechnoClass::RegisterKill()
         if ( v13 && *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v13 + 132))(v13) + 3214) ) /*0x702f5b*/
         {
           v14 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(v28 + 724) + 132))(*(unsigned int *)(v28 + 724)); /*0x702f71*/
-          v25 = this->owner; /*0x702f80*/
+          v25 = *(unsigned int *)&this->owner; /*0x702f80*/
           v21 = (*(int (__thiscall **)(int))(*(unsigned int *)v14 + 132))(v14); /*0x702f8f*/
           HouseClass::AccumulateScore((float *)(*(unsigned int *)(v28 + 724) + 336), v21, v25); /*0x702f96*/
         }
@@ -768,7 +768,7 @@ Coord * * TechnoClass::RegisterKill()
       {
         v15 = (*(int (__thiscall **)(int))(*(unsigned int *)v28 + 44))(v28); /*0x702fb6*/
         v16 = *(unsigned int *)(*(unsigned int *)(v15 == 6 ? v28 + 0x688 : 1672) + 4 * *(unsigned int *)(v15 == 6 ? v28 + 0x69C : 1692));
-        v26 = this->owner; /*0x702fda*/
+        v26 = *(unsigned int *)&this->owner; /*0x702fda*/
         v22 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(v16 + 1728) + 132))(*(unsigned int *)(v16 + 1728)); /*0x702fe9*/
         HouseClass::AccumulateScore((float *)(v16 + 336), v22, v26); /*0x702ff0*/
       }
@@ -1961,7 +1961,7 @@ int TechnoClass::checkAmmo(AircraftClass * aP0)
 namespace gamemd {
 int TechnoClass::processPowerDrain()
 {
-  return (int)this->?; /*0x4722d3*/
+  return (int)this->attachedTag; /*0x4722d3*/
 }
 } // namespace gamemd
 
@@ -1971,8 +1971,8 @@ void TechnoClass::updateSightRange(IUnknown * aP1, int a3)
 {
   if ( aP1 && (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)aP1 + 44))(aP1) == 1 && aP1[144] && !aP1[129] ) /*0x4c2bf2*/
   {
-    this->? = aP1; /*0x4c2c00*/
-    this->? = a3; /*0x4c2c03*/
+    *(unsigned int *)&this->NeedsSaveOrLink = aP1; /*0x4c2c00*/
+    *(unsigned int *)&this->objectTypeFlags = a3; /*0x4c2c03*/
   }
 }
 } // namespace gamemd

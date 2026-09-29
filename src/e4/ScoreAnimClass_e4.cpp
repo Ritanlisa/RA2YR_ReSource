@@ -13,17 +13,17 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&ScoreAnimClass_vftable; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     RA2_OPDEL(); /*0x691012*/
-  return this->__pad_0; /*0x69101c*/
+  return this; /*0x69101c*/
 }
 } // namespace gamemd
 // 0x691020
 namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 {
-  this->m_0 = (int)&ScoreAnimClass_vftable; /*0x691029*/
+  *(unsigned int *)&this->vtable1 = (int)&ScoreAnimClass_vftable; /*0x691029*/
   if ( (a2 & 1) != 0 ) /*0x69102f*/
     RA2_OPDEL(); /*0x691032*/
-  return &this->m_0; /*0x69103c*/
+  return &this->vtable1; /*0x69103c*/
 }
 } // namespace gamemd
 // 0x6910A0
@@ -54,6 +54,6 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   }
   if ( (a2 & 1) != 0 ) /*0x6910ee*/
     RA2_OPDEL(); /*0x6910f1*/
-  return this->__pad_0; /*0x6910fb*/
+  return this; /*0x6910fb*/
 }
 } // namespace gamemd

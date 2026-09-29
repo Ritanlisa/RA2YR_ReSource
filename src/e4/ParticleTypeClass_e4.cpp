@@ -22,15 +22,15 @@ void ParticleTypeClass::GetClassIdentifier()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x477906*/
-  this->m_10 = 0; /*0x477909*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x477910*/
+  v2 = *(void **)&this->vtable2; /*0x477906*/
+  *(unsigned int *)&this->q010 = 0; /*0x477909*/
+  if ( v2 && IDA_BYTE1(this->vtable4) ) /*0x477910*/
   {
     RA2_OPDEL(v2); /*0x477916*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x47791e*/
+    *(unsigned int *)&this->vtable2 = 0; /*0x47791e*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x477921*/
-  this->m_8 = 0; /*0x477924*/
+  IDA_BYTE1(this->vtable4) = 0; /*0x477921*/
+  *(unsigned int *)&this->vtable3 = 0; /*0x477924*/
 }
 }
 // 0x4784F0
@@ -54,7 +54,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   if ( a2 ) /*0x4784fe*/
   {
     v5 = a3; /*0x478504*/
-    IDA_LOBYTE(this->m_C) = 0; /*0x478508*/
+    IDA_LOBYTE(this->vtable4) = 0; /*0x478508*/
     if ( a3 ) /*0x47850d*/
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
@@ -98,12 +98,12 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         v5 = 0; /*0x47853d*/
       }
     }
-    IDA_LOBYTE(this->m_C) = 1; /*0x47855c*/
+    IDA_LOBYTE(this->vtable4) = 1; /*0x47855c*/
     if ( !v5 ) /*0x478560*/
       return 0; /*0x4785e2*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x478562*/
+    if ( *(unsigned int *)&this->vtable2 ) /*0x478562*/
     {
-      m_8 = this->m_8; /*0x478567*/
+      m_8 = *(unsigned int *)&this->vtable3; /*0x478567*/
       if ( a2 < m_8 ) /*0x47856c*/
         m_8 = a2; /*0x47856e*/
       if ( m_8 > 0 ) /*0x478572*/
@@ -111,7 +111,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         v12 = 0; /*0x478574*/
         do /*0x478590*/
         {
-          v13 = *(unsigned int *)&this->m_1[3] + v12; /*0x47857b*/
+          v13 = *(unsigned int *)&this->vtable2 + v12; /*0x47857b*/
           v14 = &v5[v12]; /*0x47857d*/
           v12 += 3; /*0x478580*/
           --m_8; /*0x478583*/
@@ -121,23 +121,23 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
         while ( m_8 ); /*0x478590*/
         v3 = a2; /*0x478592*/
       }
-      if ( IDA_BYTE1(this->m_C) ) /*0x478598*/
+      if ( IDA_BYTE1(this->vtable4) ) /*0x478598*/
       {
-        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4785a1*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x4785a9*/
+        RA2_OPDEL(*(void **)&this->vtable2); /*0x4785a1*/
+        *(unsigned int *)&this->vtable2 = 0; /*0x4785a9*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x4785b4*/
-    this->m_8 = v3; /*0x4785ba*/
-    IDA_BYTE1(this->m_C) = a3 == 0; /*0x4785bd*/
+    *(void **)&this->vtable2 = v5; /*0x4785b4*/
+    *(unsigned int *)&this->vtable3 = v3; /*0x4785ba*/
+    IDA_BYTE1(this->vtable4) = a3 == 0; /*0x4785bd*/
   }
   else
   {
     (*(void (__thiscall **)(_DynamicVectorClass_VRGBClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4785c6*/
   }
-  v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(this->m_8)));
-  if ( v15 < this->m_10 ) /*0x4785d1*/
-    this->m_10 = v15; /*0x4785d3*/
+  v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned short *)&this->vtable4)));
+  if ( v15 < this->q010 ) /*0x4785d1*/
+    *(void **)&this->q010 = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
 }
 }
@@ -839,8 +839,8 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
 namespace gamemd {
 unsigned int ParticleTypeClass::LoadTypeData(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x477930*/
-    return (a2 - *(unsigned int *)&this->m_1[3]) / 3u; /*0x47794e*/
+  if ( IDA_LOBYTE(this->vtable4) ) /*0x477930*/
+    return (a2 - *(unsigned int *)&this->vtable2) / 3u; /*0x47794e*/
   else
     return 0; /*0x477937*/
 }
@@ -857,10 +857,10 @@ TypeList_flat * ParticleTypeClass::QueryInterface(char a2)
   if ( v3 && this->ParticleTypeClass_field_2BC ) /*0x477ad0*/
   {
     RA2_OPDEL(v3); /*0x477ad8*/
-    this->vtable2 = 0; /*0x477ae0*/
+    *(unsigned int *)&this->vtable2 = 0; /*0x477ae0*/
   }
   this->ParticleTypeClass_field_2BC = 0; /*0x477aeb*/
-  this->vtable3 = 0; /*0x477af1*/
+  *(unsigned int *)&this->vtable3 = 0; /*0x477af1*/
   if ( (a2 & 1) != 0 ) /*0x477af8*/
     RA2_OPDEL(); /*0x477afb*/
   return this; /*0x477b05*/
@@ -875,11 +875,11 @@ int ParticleTypeClass::Init(unsigned char * a2)
   int result; // eax
   unsigned char *i; // ecx
 
-  m_10 = this->m_10; /*0x4785f2*/
+  m_10 = *(unsigned int *)&this->q010; /*0x4785f2*/
   result = 0; /*0x4785f5*/
   if ( m_10 <= 0 ) /*0x4785fa*/
     return -1; /*0x478621*/
-  for ( i = *(unsigned char **)&this->m_1[3]; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x478600*/
+  for ( i = *(unsigned char **)&this->vtable2; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x478600*/
   {
     if ( ++result >= m_10 ) /*0x47861f*/
       return -1; /*0x47861f*/

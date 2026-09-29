@@ -1044,7 +1044,7 @@ int SaveGame::LoadMainGameState()
                       {
                         result = (*(int (__stdcall **)(SaveGame *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f926*/
                                    this,
-                                   FootClass_Array.?[5] + 4 * v8,
+                                   &FootClass_Array.uniqueId + 4 * v8,
                                    4,
                                    0);
                         if ( result < 0 ) /*0x67f92b*/
@@ -1061,7 +1061,7 @@ int SaveGame::LoadMainGameState()
                   {
                     result = (*(int (__stdcall **)(SaveGame *, char *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 16))( /*0x67f8d6*/
                                this,
-                               (char *)&FootClass_Array.?->ObjectClass + 4 * v6,
+                               (char *)&FootClass_Array.uniqueId->ObjectClass + 4 * v6,
                                4,
                                0);
                     if ( result < 0 ) /*0x67f8db*/
@@ -3032,7 +3032,7 @@ int SaveGame::VtableDispatch(int a2)
 
   result = (*(int (__stdcall **)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->__pad_0[4], 4, 0); /*0x721023*/
   if ( result >= 0 ) /*0x721028*/
-    return (*(int (__stdcall **)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->__pad_0[8], 4, 0); /*0x721035*/
+    return (*(int (__stdcall **)(int, char *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->u32_10, 4, 0); /*0x721035*/
   return result; /*0x721038*/
 }
 } // namespace gamemd

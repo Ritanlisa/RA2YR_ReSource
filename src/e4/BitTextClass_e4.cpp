@@ -28,13 +28,13 @@ int BitTextClass::ParseFontData(char * Source)
   this->u32_41 = 1; /*0x4338b4*/
   this->u32_18 = 1; /*0x4338b7*/
   this->u32_1C = 1; /*0x4338ba*/
-  this->ptr_8 = 0; /*0x4338bd*/
+  *(unsigned int *)&this->ptr_8 = 0; /*0x4338bd*/
   this->u32_C = 0; /*0x4338c0*/
-  this->ptr_8 = 0; /*0x4338c3*/
+  *(unsigned int *)&this->ptr_8 = 0; /*0x4338c3*/
   SetRect((LPRECT)(&this->m_CharWidth8), 0, 0, 0, 0); /*0x4338c6*/
   this->u32_2C = 1; /*0x4338d0*/
   Font = File::LoadFont(Source); /*0x4338d3*/
-  this->m_CharWidth = Font; /*0x4338da*/
+  *(void **)&this->m_CharWidth = Font; /*0x4338da*/
   if ( Font ) /*0x4338dd*/
   {
     this->u32_18 = Font[1]; /*0x4338e2*/
@@ -51,9 +51,9 @@ int BitTextClass::ParseFontData(char * Source)
     this->u32_41 = 1; /*0x433919*/
     this->u32_18 = 1; /*0x43391c*/
     this->u32_1C = 1; /*0x43391f*/
-    this->ptr_8 = 0; /*0x433922*/
+    *(unsigned int *)&this->ptr_8 = 0; /*0x433922*/
     this->u32_C = 0; /*0x433925*/
-    this->ptr_8 = 0; /*0x433928*/
+    *(unsigned int *)&this->ptr_8 = 0; /*0x433928*/
     SetRect(v3, 0, 0, 0, 0); /*0x43392b*/
     this->u32_2C = 1; /*0x433931*/
   }

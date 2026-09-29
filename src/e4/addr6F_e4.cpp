@@ -455,7 +455,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
     {
       if ( !*(unsigned char *)(a1[1].ironTintTimer[1] + 3779) ) /*0x6f8aec*/
         goto LABEL_33; /*0x6f8aec*/
-      if ( a1->? != 11 ) /*0x6f8afd*/
+      if ( *(unsigned short *)&a1->q0AC != 11 ) /*0x6f8afd*/
         goto LABEL_33; /*0x6f8afd*/
       BuildingClass::GetHealthRatio((BuildingClass *)v14); /*0x6f8b01*/
       _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x6f8b06*/

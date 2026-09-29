@@ -28,7 +28,7 @@ unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * a
   this->u32_D = 0; /*0x4d2dc7*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
-    return this->__pad_0; /*0x4d2e38*/
+    return this; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
     v8 = RA2_OPNEW(16 * aP1); /*0x4d2e07*/
@@ -53,7 +53,7 @@ unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * a
     }
     this->FoggedObject_field_0x4 = v4; /*0x4d2e31*/
     this->u32_D = 1; /*0x4d2e34*/
-    return this->__pad_0; /*0x4d2e34*/
+    return this; /*0x4d2e34*/
   }
   if ( aP1 - 1 >= 0 ) /*0x4d2ddf*/
   {
@@ -71,7 +71,7 @@ unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * a
     while ( aP1 ); /*0x4d2df4*/
   }
   this->FoggedObject_field_0x4 = (AbstractClass *)aP2; /*0x4d2df6*/
-  return this->__pad_0; /*0x4d2dfb*/
+  return this; /*0x4d2dfb*/
 }
 }
 // 0x4D2D10
@@ -79,16 +79,16 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x4d2d13*/
+  v3 = *(void **)&this->q004; /*0x4d2d13*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d16*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4d2d20*/
+  if ( v3 && this->IsAllocated ) /*0x4d2d20*/
   {
     RA2_OPDEL(v3); /*0x4d2d28*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4d2d30*/
+    *(unsigned int *)&this->q004 = 0; /*0x4d2d30*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x4d2d3b*/
-  this->m_8 = 0; /*0x4d2d41*/
+  this->IsAllocated = 0; /*0x4d2d3b*/
+  *(unsigned short *)&this->q008 = 0; /*0x4d2d41*/
   if ( (a2 & 1) != 0 ) /*0x4d2d48*/
     RA2_OPDEL(); /*0x4d2d4b*/
-  return this->__pad_0; /*0x4d2d55*/
+  return this; /*0x4d2d55*/
 }

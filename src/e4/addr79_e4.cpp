@@ -4674,7 +4674,7 @@ AbstractClass * * WOL_SendGameList()
     v14 = v1; /*0x79d142*/
     do /*0x79d264*/
     {
-      unknown_libname_73(&v13.m_3[1]); /*0x79d14a*/
+      unknown_libname_73(&v13.q4); /*0x79d14a*/
       if ( *(int *)g_WOL_BuddyList.__pad_0 > 0 ) /*0x79d156*/
       {
         String::Reassign((String *)&v13.m_3[1], (const char **)g_WOL_BuddyList.DynamicVector_field_0x8); /*0x79d166*/
@@ -4716,8 +4716,8 @@ AbstractClass * * WOL_SendGameList()
       }
       if ( String::Length(&v13) ) /*0x79d22d*/
         String::Append(&v13, asc_8318B8); /*0x79d23f*/
-      String::Append2(&v13, (char **)&v13.m_3[1]); /*0x79d24d*/
-      DeleteAndZero((ObjectClass *)&v13.m_3[1]); /*0x79d256*/
+      String::Append2(&v13, (char **)&v13.q4); /*0x79d24d*/
+      DeleteAndZero((ObjectClass *)&v13.q4); /*0x79d256*/
       --v14; /*0x79d260*/
     }
     while ( v14 ); /*0x79d264*/
@@ -4769,7 +4769,7 @@ AbstractClass * * WOL_RefreshGameList()
     DeleteAndZero((ObjectClass *)(g_WOL_BuddyList.DynamicVector_field_0x8 + 4 * i)); /*0x79d308*/
   v2 = 0; /*0x79d31c*/
   *(unsigned int *)g_WOL_BuddyList.__pad_0 = 0; /*0x79d320*/
-  for ( *(unsigned int *)&v14.m_3[1] = 0; v2 < *(int *)g_WindowManager.__pad_0; *(unsigned int *)&v14.m_3[1] = v2 ) /*0x79d32e*/
+  for ( *(unsigned int *)&v14.q4 = 0; v2 < *(int *)g_WindowManager.__pad_0; *(unsigned int *)&v14.q4 = v2 ) /*0x79d32e*/
   {
     unknown_libname_73(&v14); /*0x79d33a*/
     if ( v2 >= 0 && v2 < *(int *)g_WindowManager.__pad_0 ) /*0x79d349*/
@@ -4873,7 +4873,7 @@ AbstractClass * * CleanupWOLSession()
     while ( v5 ) /*0x79d54e*/
     {
       v6 = v5; /*0x79d550*/
-      v5 = (ObjectClass *)v5->?; /*0x79d552*/
+      v5 = (ObjectClass *)v5->vtable3; /*0x79d552*/
       DeleteAndZero(v6); /*0x79d55b*/
       RA2_OPDEL(v6); /*0x79d561*/
     }
@@ -6733,9 +6733,9 @@ int sub_796B30()
   unsigned int v2[3]; // [esp+4h] [ebp-Ch] BYREF
 
   SimpleDialogControl::Constructor(v2); /*0x796b38*/
-  v2[0] = &off_7F7624; /*0x796b4c*/
+  v2[0] = (unsigned int)&off_7F7624; /*0x796b4c*/
   v0 = RunDialog(0xFEu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))LobbyDlgProcWOL, (LPARAM)v2); /*0x796b59*/
-  v2[0] = &off_7F7624; /*0x796b5b*/
+  v2[0] = (unsigned int)&off_7F7624; /*0x796b5b*/
   OwnerDrawControl::InitVtable(v2); /*0x796b6b*/
   if ( v0 >= 0 ) /*0x796b69*/
     return v0; /*0x796b7c*/

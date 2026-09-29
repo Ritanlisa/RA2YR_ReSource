@@ -1085,8 +1085,8 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
         {
           v14 = *v9++; /*0x410e0f*/
           *v8++ = v14; /*0x410e15*/
-          if ( (unsigned int)v9 >= this->? ) /*0x410e20*/
-            v9 = (int16_t *)((char *)v9 - (unsigned int)this->?); /*0x410e22*/
+          if ( (unsigned int)v9 >= this->M28 ) /*0x410e20*/
+            v9 = (int16_t *)((char *)v9 - (unsigned int)this->M32); /*0x410e22*/
           --v13; /*0x410e25*/
         }
         while ( v13 ); /*0x410e26*/

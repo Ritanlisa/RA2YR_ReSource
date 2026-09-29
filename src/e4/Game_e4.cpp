@@ -32,7 +32,7 @@ void Game::initScenario()
   int v3; // ebx
   int v4; // edi
 
-  if ( *(unsigned int *)&this->__pad_44[28] ) /*0x430983*/
+  if ( *(unsigned int *)&this->q060 ) /*0x430983*/
   {
     v2 = this; /*0x43098d*/
     v3 = 8; /*0x43098f*/
@@ -53,7 +53,7 @@ void Game::initScenario()
       --v3; /*0x4309b4*/
     }
     while ( v3 ); /*0x4309b5*/
-    *(unsigned int *)&this->__pad_44[28] = 0; /*0x4309b9*/
+    *(unsigned int *)&this->q060 = 0; /*0x4309b9*/
   }
 }
 }
@@ -1051,12 +1051,12 @@ unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
     if ( aP2 ) /*0x67c3c6*/
     {
       this->Game_field_0x4 = (AbstractClass *)aP2; /*0x67c3c8*/
-      return this->__pad_0; /*0x67c3ce*/
+      return this; /*0x67c3ce*/
     }
     this->Game_field_0x4 = (AbstractClass *)RA2_OPNEW(4 * aP1); /*0x67c3dd*/
     this->__pad_8[5] = 1; /*0x67c3e0*/
   }
-  return this->__pad_0; /*0x67c3cd*/
+  return this; /*0x67c3cd*/
 }
 }
 // 0x67E440
@@ -1816,16 +1816,16 @@ Coord * * Game::ProcessIdle()
       if ( v1 ) /*0x77fbbc*/
         v1->NeedsSaveOrLink = v6; /*0x77fbc4*/
       else
-        *(unsigned int *)&v29.m_3[1] = v6; /*0x77fbbe*/
+        *(void **)&v29.q4 = v6; /*0x77fbbe*/
       v1 = (signed int)v6; /*0x77fbcb*/
       DeleteAndZero((ObjectClass *)&v31); /*0x77fbcd*/
       ++*(unsigned int *)v29.__pad_0; /*0x77fbda*/
     }
     while ( *(int *)v29.__pad_0 < 10 ); /*0x77fbde*/
     if ( ppv ) /*0x77fbeb*/
-      (*(void (__stdcall **)(LPVOID, unsigned int))(*(unsigned int *)ppv + 192))(ppv, *(unsigned int *)&v29.m_3[1]); /*0x77fbf5*/
-    v9 = *(unsigned int **)&v29.m_3[1]; /*0x77fc03*/
-    if ( *(unsigned int *)&v29.m_3[1] ) /*0x77fc05*/
+      (*(void (__stdcall **)(LPVOID, unsigned int))(*(unsigned int *)ppv + 192))(ppv, *(unsigned int *)&v29.q4); /*0x77fbf5*/
+    v9 = *(unsigned int **)&v29.q4; /*0x77fc03*/
+    if ( *(unsigned int *)&v29.q4 ) /*0x77fc05*/
     {
       do /*0x77fc17*/
       {
@@ -1849,7 +1849,7 @@ Coord * * Game::ProcessIdle()
     || dword_B7617C < (unsigned int)(time(0) - 15) && dword_B765F8 > 0 )
   {
     *(unsigned int *)v29.__pad_0 = 0; /*0x77fcbe*/
-    *(unsigned int *)&v29.m_3[1] = 0; /*0x77fcc2*/
+    *(unsigned int *)&v29.q4 = 0; /*0x77fcc2*/
     *(unsigned int *)v30.__pad_0 = 0; /*0x77fcc6*/
     do /*0x77fe52*/
     {
@@ -1857,7 +1857,7 @@ Coord * * Game::ProcessIdle()
         break; /*0x77fcd1*/
       v12 = (char *)RA2_OPNEW(0x6Cu); /*0x77fcde*/
       memset(v12, 0, 0x6Cu); /*0x77fce9*/
-      *(unsigned int *)&v31.m_3[1] = v12; /*0x77fcf2*/
+      *(void **)&v31.q4 = v12; /*0x77fcf2*/
       unknown_libname_73(&v31); /*0x77fcf6*/
       v13 = dword_B765F8 - 1; /*0x77fd00*/
       if ( dword_B765F8 - 1 >= 0 && v13 < dword_B765F8 ) /*0x77fd0d*/
@@ -1900,7 +1900,7 @@ Coord * * Game::ProcessIdle()
       if ( strlen(v18) > 9 ) /*0x77fe01*/
         v18[9] = 0; /*0x77fe03*/
       strcpy(v12 + 36, v18); /*0x77fe23*/
-      if ( *(unsigned int *)&v29.m_3[1] ) /*0x77fe2e*/
+      if ( *(unsigned int *)&v29.q4 ) /*0x77fe2e*/
         *(unsigned int *)(*(unsigned int *)&v29.m_3[1] + 32) = v12; /*0x77fe36*/
       else
         *(unsigned int *)v29.__pad_0 = v12; /*0x77fe30*/

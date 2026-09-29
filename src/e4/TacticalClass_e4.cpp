@@ -240,7 +240,7 @@ void* TacticalClass::ProcessScroll(int * a2)
         IDA_LOBYTE(v4) = 1; /*0x4ac49c*/
         this->__pad_11B4[27] = 1; /*0x4ac4a0*/
         IDA_LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4ac4a6*/
-        if ( !DisplayClass_field_0x11B0_high && !this->__pad_11B4[0] ) /*0x4ac4af*/
+        if ( !DisplayClass_field_0x11B0_high && !this->__pad_11B4 ) /*0x4ac4af*/
         {
           g_TacticalClass_Instance[863].__tail_0[1] = 1; /*0x4ac4c0*/
           TacticalClass::InitScrollBounds((TacticalClass *)g_TacticalClass_Instance, &this->DisplayClass_field_0x11D4); /*0x4ac4cc*/
@@ -861,7 +861,7 @@ int TacticalClass::CalcAllDrawPositions(AbstractClass * aP1, BuildingTypeClass *
   if ( a5 ) /*0x6d367d*/
     goto LABEL_10; /*0x6d367d*/
   v6 = 0; /*0x6d3683*/
-  visibleCells = this->visibleCells; /*0x6d368d*/
+  visibleCells = *(unsigned int *)&this->visibleCells; /*0x6d368d*/
   do /*0x6d3734*/
   {
     Coords = CellClass::GetCoords((CellClass *)*visibleCells, v25); /*0x6d369b*/

@@ -324,7 +324,7 @@ Game * * E4Recv_634B20::sub_634B20()
       IDA_LOBYTE(v18[55]) = v3[2]; /*0x634b5f*/
       GetScenarioClassActionCoords(v17, v18); /*0x634b60*/
       Debug::Log(); /*0x634b7d*/
-      uniqueId = this->?; /*0x634b82*/
+      uniqueId = this->M16; /*0x634b82*/
       v5 = 0; /*0x634b88*/
       v14 = uniqueId; /*0x634b8a*/
       for ( i = 0; v5 < uniqueId; i = v5 ) /*0x634b94*/
@@ -350,11 +350,11 @@ Game * * E4Recv_634B20::sub_634B20()
     qmemcpy(v18, &this->attachedBomb, 0x6Fu); /*0x634c1b*/
     GetScenarioClassActionCoords(v17, v18); /*0x634c24*/
     Debug::Log(); /*0x634c43*/
-    v8 = this->?; /*0x634c48*/
+    v8 = this->M16; /*0x634c48*/
     v9 = 0; /*0x634c4e*/
     for ( j = v8; v9 < v8; ++v9 ) /*0x634c56*/
     {
-      v10 = (unsigned char *)*((unsigned int *)this->? + v9); /*0x634c5b*/
+      v10 = (unsigned char *)*((unsigned int *)this->M4 + v9); /*0x634c5b*/
       if ( v10[12] ) /*0x634c5e*/
       {
         v11 = *(unsigned int *)v10; /*0x634c65*/

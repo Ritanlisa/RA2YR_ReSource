@@ -657,9 +657,9 @@ void * Object::DrawObject(char a2)
   OverlayClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->ObjectClass = (void*)&OverlayClass_vftable; /*0x5fdf76*/
-  this->? = (void*)&OverlayClass_vftable; /*0x5fdf7c*/
-  this->? = (void*)&OverlayClass_vftable; /*0x5fdf83*/
-  this->? = (void*)&OverlayClass_vftable; /*0x5fdf8a*/
+  *(void **)&this->q004 = (void*)&OverlayClass_vftable; /*0x5fdf7c*/
+  *(void **)&this->q008 = (void*)&OverlayClass_vftable; /*0x5fdf83*/
+  *(unsigned short *)&this->q00C = (void*)&OverlayClass_vftable; /*0x5fdf8a*/
   AbstractClass::AnnounceExpiredPointer(&this->ObjectClass, 1); /*0x5fdf91*/
   v5 = this; /*0x5fdfa6*/
   v3 = (*(int (__thiscall **)(unsigned char *, OverlayClass **))(*(unsigned int *)&stru_A8EB00.?[108] + 16))(&stru_A8EB00.?[108], &v5); /*0x5fdfaa*/

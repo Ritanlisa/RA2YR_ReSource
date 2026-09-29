@@ -116,14 +116,14 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   vtable3 = this->?; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
   v4 = QuaternionMathMultiply((float *)v30[0].__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
-  v5 = *(float *)&this->?; /*0x645da3*/
+  v5 = *(float *)&this->M12; /*0x645da3*/
   v6 = *((unsigned int *)v4 + 1); /*0x645da6*/
   v25 = *(unsigned int *)v4; /*0x645da9*/
   v7 = *((unsigned int *)v4 + 2); /*0x645daf*/
   v26 = v6; /*0x645db2*/
   v27 = v7; /*0x645db7*/
   *(float *)&v20 = -v5; /*0x645dbe*/
-  v8 = *(float *)&this->?; /*0x645dc1*/
+  v8 = *(float *)&this->M8; /*0x645dc1*/
   v28 = *((unsigned int *)v4 + 3); /*0x645dc5*/
   *(float *)&v19 = -v8; /*0x645dcb*/
   *(float *)&v18 = -*(float *)&this->?; /*0x645dd4*/
@@ -143,9 +143,9 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   if ( !(v14 | v15) ) /*0x645e97*/
   {
     *(float *)&this->AbstractClass = -*(float *)&this->AbstractClass; /*0x645ea2*/
-    *(float *)&this->? = -*(float *)&this->?; /*0x645ea9*/
-    *(float *)&this->? = -*(float *)&this->?; /*0x645eb1*/
-    *(float *)&this->? = -*(float *)&this->?; /*0x645eb9*/
+    *(float *)&this->M4 = -*(float *)&this->M4; /*0x645ea9*/
+    *(float *)&this->M8 = -*(float *)&this->M8; /*0x645eb1*/
+    *(float *)&this->M12 = -*(float *)&this->M12; /*0x645eb9*/
   }
   return (float *)this; /*0x645ebe*/
 }
@@ -4314,9 +4314,9 @@ namespace gamemd {
 void E4Recv_645CD0::sub_645CD0(float a2)
 {
   *(float *)&this->AbstractClass = a2 * *(float *)&this->AbstractClass; /*0x645cd6*/
-  *(float *)&this->? = a2 * *(float *)&this->?; /*0x645cdf*/
-  *(float *)&this->? = a2 * *(float *)&this->?; /*0x645ce9*/
-  *(float *)&this->? = a2 * *(float *)&this->?; /*0x645cf3*/
+  *(float *)&this->M4 = a2 * *(float *)&this->M4; /*0x645cdf*/
+  *(float *)&this->M8 = a2 * *(float *)&this->M8; /*0x645ce9*/
+  *(float *)&this->M12 = a2 * *(float *)&this->M12; /*0x645cf3*/
 }
 } // namespace gamemd
 
@@ -4696,11 +4696,11 @@ namespace gamemd {
 unsigned int * E4Recv_646D00::sub_646D00()
 {
   this->AbstractClass = (void *)-1; /*0x646d04*/
-  this->? = 0; /*0x646d0a*/
-  this->? = 0; /*0x646d0d*/
-  this->? = 0; /*0x646d10*/
-  this->? = 0; /*0x646d13*/
-  this->? = 0; /*0x646d16*/
+  this->M4 = 0; /*0x646d0a*/
+  this->M8 = 0; /*0x646d0d*/
+  this->M12 = 0; /*0x646d10*/
+  this->M16 = 0; /*0x646d13*/
+  this->M20 = 0; /*0x646d16*/
   return &this->AbstractClass; /*0x646d19*/
 }
 } // namespace gamemd

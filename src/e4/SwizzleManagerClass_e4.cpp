@@ -34,7 +34,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
   if ( a2 ) /*0x6cf5ae*/
   {
     v5 = a3; /*0x6cf5b4*/
-    IDA_LOBYTE(this->m_C) = 0; /*0x6cf5b8*/
+    IDA_LOBYTE(this->q00C) = 0; /*0x6cf5b8*/
     if ( a3 ) /*0x6cf5bd*/
     {
       v9 = a3; /*0x6cf5f3*/
@@ -76,12 +76,12 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
         v5 = 0; /*0x6cf5ec*/
       }
     }
-    IDA_LOBYTE(this->m_C) = 1; /*0x6cf607*/
+    IDA_LOBYTE(this->q00C) = 1; /*0x6cf607*/
     if ( v5 ) /*0x6cf60b*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x6cf616*/
+      if ( *(unsigned int *)&this->q004 ) /*0x6cf616*/
       {
-        m_8 = this->m_8; /*0x6cf61b*/
+        m_8 = this->q008; /*0x6cf61b*/
         if ( a2 < m_8 ) /*0x6cf620*/
           m_8 = a2; /*0x6cf622*/
         v13 = 0; /*0x6cf624*/
@@ -90,22 +90,22 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
           do /*0x6cf647*/
           {
             v14 = 2 * v13; /*0x6cf62d*/
-            v15 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v13++); /*0x6cf636*/
+            v15 = (unsigned int *)(*(unsigned int *)&this->q004 + 8 * v13++); /*0x6cf636*/
             v5[v14] = *v15; /*0x6cf63d*/
             v5[v14 + 1] = v15[1]; /*0x6cf643*/
           }
           while ( v13 < m_8 ); /*0x6cf647*/
           v3 = a2; /*0x6cf649*/
         }
-        if ( IDA_BYTE1(this->m_C) ) /*0x6cf64f*/
+        if ( this->IsAllocated ) /*0x6cf64f*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x6cf658*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x6cf660*/
+          RA2_OPDEL(*(void **)&this->q004); /*0x6cf658*/
+          *(unsigned int *)&this->q004 = 0; /*0x6cf660*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v5; /*0x6cf66b*/
-      this->m_8 = v3; /*0x6cf671*/
-      IDA_BYTE1(this->m_C) = a3 == 0; /*0x6cf674*/
+      *(void **)&this->q004 = v5; /*0x6cf66b*/
+      this->q008 = v3; /*0x6cf671*/
+      this->IsAllocated = a3 == 0; /*0x6cf674*/
       return 1; /*0x6cf67a*/
     }
     else
@@ -141,7 +141,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   if ( a2 ) /*0x6cf72e*/
   {
     v5 = a3; /*0x6cf734*/
-    IDA_LOBYTE(this->m_C) = 0; /*0x6cf738*/
+    IDA_LOBYTE(this->q00C) = 0; /*0x6cf738*/
     if ( a3 ) /*0x6cf73d*/
     {
       v9 = a3; /*0x6cf773*/
@@ -183,12 +183,12 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
         v5 = 0; /*0x6cf76c*/
       }
     }
-    IDA_LOBYTE(this->m_C) = 1; /*0x6cf787*/
+    IDA_LOBYTE(this->q00C) = 1; /*0x6cf787*/
     if ( !v5 ) /*0x6cf78b*/
       return 0; /*0x6cf814*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x6cf791*/
+    if ( *(unsigned int *)&this->q004 ) /*0x6cf791*/
     {
-      m_8 = this->m_8; /*0x6cf796*/
+      m_8 = this->q008; /*0x6cf796*/
       if ( a2 < m_8 ) /*0x6cf79b*/
         m_8 = a2; /*0x6cf79d*/
       v12 = 0; /*0x6cf79f*/
@@ -197,30 +197,30 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
         do /*0x6cf7c2*/
         {
           v13 = 2 * v12; /*0x6cf7a8*/
-          v14 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v12++); /*0x6cf7b1*/
+          v14 = (unsigned int *)(*(unsigned int *)&this->q004 + 8 * v12++); /*0x6cf7b1*/
           v5[v13] = *v14; /*0x6cf7b8*/
           v5[v13 + 1] = v14[1]; /*0x6cf7be*/
         }
         while ( v12 < m_8 ); /*0x6cf7c2*/
         v3 = a2; /*0x6cf7c4*/
       }
-      if ( IDA_BYTE1(this->m_C) ) /*0x6cf7ca*/
+      if ( this->IsAllocated ) /*0x6cf7ca*/
       {
-        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x6cf7d3*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x6cf7db*/
+        RA2_OPDEL(*(void **)&this->q004); /*0x6cf7d3*/
+        *(unsigned int *)&this->q004 = 0; /*0x6cf7db*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x6cf7e6*/
-    this->m_8 = v3; /*0x6cf7ec*/
-    IDA_BYTE1(this->m_C) = a3 == 0; /*0x6cf7ef*/
+    *(void **)&this->q004 = v5; /*0x6cf7e6*/
+    this->q008 = v3; /*0x6cf7ec*/
+    this->IsAllocated = a3 == 0; /*0x6cf7ef*/
   }
   else
   {
     (*(void (__thiscall **)(_DynamicVectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6cf7f8*/
   }
-  v15 = this->m_8; /*0x6cf7fb*/
-  if ( v15 < this->m_10 ) /*0x6cf803*/
-    this->m_10 = v15; /*0x6cf805*/
+  v15 = this->q008; /*0x6cf7fb*/
+  if ( v15 < this->q010 ) /*0x6cf803*/
+    this->q010 = v15; /*0x6cf805*/
   return 1; /*0x6cf808*/
 }
 }
@@ -258,15 +258,15 @@ void SwizzleManagerClass_19::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x6cf4f6*/
-  this->m_10 = 0; /*0x6cf4f9*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x6cf500*/
+  v2 = *(void **)&this->q004; /*0x6cf4f6*/
+  this->q010 = 0; /*0x6cf4f9*/
+  if ( v2 && this->IsAllocated ) /*0x6cf500*/
   {
     RA2_OPDEL(v2); /*0x6cf506*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6cf50e*/
+    *(unsigned int *)&this->q004 = 0; /*0x6cf50e*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x6cf511*/
-  this->m_8 = 0; /*0x6cf514*/
+  this->IsAllocated = 0; /*0x6cf511*/
+  this->q008 = 0; /*0x6cf514*/
 }
 } // namespace gamemd
 
@@ -274,8 +274,8 @@ void SwizzleManagerClass_19::ClearBuffer()
 namespace gamemd {
 unsigned int SwizzleManagerClass_19::PointerToIndex(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x6cf520*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x6cf535*/
+  if ( IDA_LOBYTE(this->q00C) ) /*0x6cf520*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x6cf535*/
   else
     return 0; /*0x6cf527*/
 }
@@ -287,7 +287,7 @@ unsigned int * SwizzleManagerClass_19::Lookup(unsigned int * a2, int a3)
 {
   int v3; // edx
 
-  v3 = *(unsigned int *)&this->m_1[3]; /*0x6cf540*/
+  v3 = *(unsigned int *)&this->q004; /*0x6cf540*/
   *a2 = *(unsigned int *)(v3 + 8 * a3); /*0x6cf54f*/
   a2[1] = *(unsigned int *)(v3 + 8 * a3 + 4); /*0x6cf556*/
   return a2; /*0x6cf551*/
@@ -303,13 +303,13 @@ char SwizzleManagerClass_19::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x6cf562*/
+  m_8 = this->q008; /*0x6cf562*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x6cf56d*/
   {
     v3 = 0; /*0x6cf56f*/
     if ( m_8 <= 0 ) /*0x6cf573*/
       return 1; /*0x6cf593*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x6cf575*/
+    v4 = *(unsigned int **)&this->q004; /*0x6cf575*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x6cf57b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x6cf584*/
     {
@@ -327,13 +327,13 @@ char SwizzleManagerClass_19::AddRef(int a2)
 namespace gamemd {
 void SwizzleManagerClass_19::ddtor()
 {
-  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x6cf69d*/
+  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x6cf69d*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x6cf6a3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6cf6ab*/
+    RA2_OPDEL(*(void **)&this->q004); /*0x6cf6a3*/
+    *(unsigned int *)&this->q004 = 0; /*0x6cf6ab*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x6cf6ae*/
-  this->m_8 = 0; /*0x6cf6b1*/
+  this->IsAllocated = 0; /*0x6cf6ae*/
+  this->q008 = 0; /*0x6cf6b1*/
 }
 } // namespace gamemd
 
@@ -345,13 +345,13 @@ int SwizzleManagerClass_19::Init(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x6cf6c0*/
+  if ( !IDA_LOBYTE(this->q00C) ) /*0x6cf6c0*/
     return 0; /*0x6cf6c8*/
-  m_8 = this->m_8; /*0x6cf6ce*/
+  m_8 = this->q008; /*0x6cf6ce*/
   result = 0; /*0x6cf6d1*/
   if ( m_8 <= 0 ) /*0x6cf6d5*/
     return -1; /*0x6cf6ec*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; i += 2 ) /*0x6cf6db*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; i += 2 ) /*0x6cf6db*/
   {
     if ( ++result >= m_8 ) /*0x6cf6ea*/
       return -1; /*0x6cf6ea*/
@@ -364,8 +364,8 @@ int SwizzleManagerClass_19::Init(unsigned int * a2)
 namespace gamemd {
 unsigned int SwizzleManagerClass_19::Add(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x6cf700*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x6cf715*/
+  if ( IDA_LOBYTE(this->q00C) ) /*0x6cf700*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x6cf715*/
   else
     return 0; /*0x6cf707*/
 }
@@ -379,11 +379,11 @@ int SwizzleManagerClass_19::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x6cf820*/
+  m_10 = this->q010; /*0x6cf820*/
   result = 0; /*0x6cf823*/
   if ( m_10 <= 0 ) /*0x6cf828*/
     return -1; /*0x6cf83f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; i += 2 ) /*0x6cf82e*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; i += 2 ) /*0x6cf82e*/
   {
     if ( ++result >= m_10 ) /*0x6cf83d*/
       return -1; /*0x6cf83d*/
@@ -399,16 +399,16 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this->m_1[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf856*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x6cf860*/
+  if ( v3 && this->IsAllocated ) /*0x6cf860*/
   {
     RA2_OPDEL(v3); /*0x6cf868*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6cf870*/
+    *(unsigned int *)&this->q004 = 0; /*0x6cf870*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x6cf87b*/
-  this->m_8 = 0; /*0x6cf881*/
+  this->IsAllocated = 0; /*0x6cf87b*/
+  *(unsigned short *)&this->q008 = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
     RA2_OPDEL(); /*0x6cf88b*/
-  return this->__pad_0; /*0x6cf895*/
+  return this; /*0x6cf895*/
 }
 } // namespace gamemd
 
@@ -420,15 +420,15 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
 
   v3 = (unsigned int)(*(void **)&this->m_1[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf8a6*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x6cf8b0*/
+  if ( v3 && this->IsAllocated ) /*0x6cf8b0*/
   {
     RA2_OPDEL(v3); /*0x6cf8b8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6cf8c0*/
+    *(unsigned int *)&this->q004 = 0; /*0x6cf8c0*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x6cf8cb*/
-  this->m_8 = 0; /*0x6cf8d1*/
+  this->IsAllocated = 0; /*0x6cf8cb*/
+  *(unsigned short *)&this->q008 = 0; /*0x6cf8d1*/
   if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
     RA2_OPDEL(); /*0x6cf8db*/
-  return this->__pad_0; /*0x6cf8e5*/
+  return this; /*0x6cf8e5*/
 }
 } // namespace gamemd

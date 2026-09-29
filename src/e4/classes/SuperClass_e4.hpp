@@ -24,7 +24,7 @@ struct SuperClass {
     void* q028;  // 0x28
     bool q02B;  // 0x2B
     void* q02C;  // 0x2C
-    unsigned int ;  // 0x30
+    unsigned int q30;  // 0x30
     unsigned char q031;  // 0x31
     unsigned char needsSave;  // 0x32
     unsigned int alignmentPadding;  // 0x33
@@ -46,7 +46,7 @@ struct SuperClass {
     char SpecialSoundLocation[4];  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
-    unsigned int ;  // 0x60
+    unsigned int q60;  // 0x60
     unsigned int ChronoMapCoords;  // 0x62
     bool q064;  // 0x64
     void* q068;  // 0x68
@@ -55,9 +55,9 @@ struct SuperClass {
     void* OneTime;  // 0x6E
     void* IsCharged;  // 0x6F
     void* q070;  // 0x70
-    unsigned int ;  // 0x74
+    unsigned int q74;  // 0x74
     int q078;  // 0x78
-    unsigned int ;  // 0x7C
+    unsigned int q7C;  // 0x7C
     int q080;  // 0x80
     char q084[4];  // 0x84
     unsigned char q088;  // 0x88

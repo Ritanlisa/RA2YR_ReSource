@@ -718,7 +718,7 @@ unsigned int * E4Recv_655050::sub_655050(unsigned int * v5, short * a3)
 namespace gamemd {
 int E4Recv_655890::sub_655890()
 {
-  return (int)this->AbstractClass + 251 * (int)this->?; /*0x6558a3*/
+  return (int)this->AbstractClass + 251 * (int)this->M4; /*0x6558a3*/
 }
 }
 // 0x658640
@@ -1198,10 +1198,10 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
       vtable0 = this->AbstractClass; /*0x65c976*/
       while ( 1 ) /*0x65c980*/
       {
-        vtable1 = (unsigned int)this->?; /*0x65c980*/
+        vtable1 = (unsigned int)this->M4; /*0x65c980*/
         v14 = (unsigned int)vtable0; /*0x65c983*/
         v15 = 0; /*0x65c987*/
-        this->? = (void *)(vtable1 + 1); /*0x65c98c*/
+        *(void **)&this->M4 = (void *)(vtable1 + 1); /*0x65c98c*/
         do /*0x65c9d5*/
         {
           v16 = vtable1; /*0x65c995*/
@@ -1229,7 +1229,7 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
 }
 // 0x65D510
 namespace gamemd {
-unsigned int int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
+unsigned int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
 {
   unsigned int v4; // esi
   int v6; // ebp
@@ -3334,7 +3334,7 @@ namespace gamemd {
 unsigned int * E4Recv_65C890::sub_65C890(int a2, int a3)
 {
   this->AbstractClass = (void *)a2; /*0x65c89a*/
-  this->? = (void *)a3; /*0x65c89c*/
+  *(void **)&this->M4 = (void *)a3; /*0x65c89c*/
   return &this->AbstractClass; /*0x65c89f*/
 }
 } // namespace gamemd

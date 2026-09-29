@@ -83,6 +83,6 @@ unsigned int * NetworkGameSetup::DeleteComPtr(char a2)
   ComPtr::Dtor(); /*0x5bb563*/
   if ( (a2 & 1) != 0 ) /*0x5bb56d*/
     RA2_OPDEL(); /*0x5bb570*/
-  return this->__pad_0; /*0x5bb57a*/
+  return this; /*0x5bb57a*/
 }
 } // namespace gamemd

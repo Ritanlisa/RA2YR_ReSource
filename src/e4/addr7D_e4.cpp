@@ -4395,7 +4395,7 @@ void cvtdate(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int
 }
 // 0x7D544A
 namespace gamemd {
-void _sopen(const char * FileName, int OpenFlag, int ShareFlag, ... a4)
+void _sopen(const char * FileName, int OpenFlag, int ShareFlag, ...)
 {
   unsigned int v3; // ecx
   DWORD v5; // esi
@@ -11631,8 +11631,8 @@ int _ftbuf(int a1, int a2)
 namespace gamemd {
 unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 {
-  this->? = 0; /*0x7d2e70*/
-  this->? = 0; /*0x7d2e74*/
+  *(unsigned short *)&this->M4 = 0; /*0x7d2e70*/
+  *(unsigned short *)&this->M8 = 0; /*0x7d2e74*/
   this->AbstractClass = (void*)&exception_vftable; /*0x7d2e78*/
   return &this->AbstractClass; /*0x7d2e7e*/
 }
@@ -12393,7 +12393,7 @@ char * _strdup(INIClass * aP0)
 
 // 0x7D5433
 namespace gamemd {
-int _open(const char * FileName, int OpenFlag, ... a3)
+int _open(const char * FileName, int OpenFlag, ...)
 {
   int v3; // [esp+Ch] [ebp+Ch]
   va_list va; // [esp+10h] [ebp+10h] BYREF
@@ -15835,7 +15835,7 @@ unsigned char * _getextendedkeycode(int a1)
 
 // 0x7DD4F4
 namespace gamemd {
-int _cwprintf(const wchar_t *const Format, ... a2)
+int _cwprintf(const wchar_t *const Format, ...)
 {
   va_list va; // [esp+8h] [ebp+8h] BYREF
 

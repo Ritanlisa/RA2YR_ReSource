@@ -169,23 +169,23 @@ void IsometricTileTypeClass::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x54a196*/
-  this->m_10 = 0; /*0x54a199*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x54a1a0*/
+  v2 = *(void **)&this->vtable2; /*0x54a196*/
+  *(unsigned int *)&this->q010 = 0; /*0x54a199*/
+  if ( v2 && IDA_BYTE1(this->vtable4) ) /*0x54a1a0*/
   {
     RA2_OPDEL(v2); /*0x54a1a6*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x54a1ae*/
+    *(unsigned int *)&this->vtable2 = 0; /*0x54a1ae*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x54a1b1*/
-  this->m_8 = 0; /*0x54a1b4*/
+  IDA_BYTE1(this->vtable4) = 0; /*0x54a1b1*/
+  *(unsigned int *)&this->vtable3 = 0; /*0x54a1b4*/
 }
 } // namespace gamemd
 // 0x54A1C0
 namespace gamemd {
 unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x54a1c0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x54a1d5*/
+  if ( IDA_LOBYTE(this->vtable4) ) /*0x54a1c0*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->vtable2) >> 2; /*0x54a1d5*/
   else
     return 0; /*0x54a1c7*/
 }
@@ -201,38 +201,38 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x54a3dc*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x54a3e2*/
+    IDA_LOBYTE(this->vtable4) = 0; /*0x54a3e2*/
     if ( a3 ) /*0x54a3e8*/
       v4 = a3; /*0x54a3fe*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x54a3fa*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x54a402*/
+    IDA_LOBYTE(this->vtable4) = 1; /*0x54a402*/
     if ( !v4 ) /*0x54a406*/
       return 0; /*0x54a47a*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x54a408*/
+    if ( *(unsigned int *)&this->vtable2 ) /*0x54a408*/
     {
-      m_8 = this->m_8; /*0x54a40f*/
+      m_8 = *(unsigned int *)&this->vtable3; /*0x54a40f*/
       if ( a2 < m_8 ) /*0x54a414*/
         m_8 = a2; /*0x54a416*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x54a41c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->vtable2 + 4 * i - 4) ) /*0x54a41c*/
         ++i; /*0x54a421*/
-      if ( IDA_BYTE1(this->m_C) ) /*0x54a42e*/
+      if ( IDA_BYTE1(this->vtable4) ) /*0x54a42e*/
       {
-        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x54a439*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x54a441*/
+        RA2_OPDEL(*(void **)&this->vtable2); /*0x54a439*/
+        *(unsigned int *)&this->vtable2 = 0; /*0x54a441*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x54a44a*/
-    this->m_8 = a2; /*0x54a452*/
-    IDA_BYTE1(this->m_C) = a3 == 0; /*0x54a455*/
+    *(void **)&this->vtable2 = v4; /*0x54a44a*/
+    *(unsigned int *)&this->vtable3 = a2; /*0x54a452*/
+    IDA_BYTE1(this->vtable4) = a3 == 0; /*0x54a455*/
   }
   else
   {
     (*(void (__thiscall **)(_DynamicVectorClass_PAG *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x54a45e*/
   }
-  v7 = this->m_8; /*0x54a461*/
-  if ( v7 < this->m_10 ) /*0x54a469*/
-    this->m_10 = v7; /*0x54a46b*/
+  v7 = *(unsigned int *)&this->vtable3; /*0x54a461*/
+  if ( v7 < *(unsigned int *)&this->q010 ) /*0x54a469*/
+    *(unsigned int *)&this->q010 = v7; /*0x54a46b*/
   return 1; /*0x54a46e*/
 }
 } // namespace gamemd
@@ -244,11 +244,11 @@ int IsometricTileTypeClass::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x54a480*/
+  m_10 = *(unsigned int *)&this->q010; /*0x54a480*/
   result = 0; /*0x54a483*/
   if ( m_10 <= 0 ) /*0x54a488*/
     return -1; /*0x54a49f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x54a48e*/
+  for ( i = *(unsigned int **)&this->vtable2; *i != *a2; ++i ) /*0x54a48e*/
   {
     if ( ++result >= m_10 ) /*0x54a49d*/
       return -1; /*0x54a49d*/
@@ -264,16 +264,16 @@ DynamicVector * IsometricTileTypeClass::Constructor(char a2)
 
   v3 = (unsigned int)(*(void **)&this->m_1[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_unsigned_short___vftable; /*0x54a766*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x54a770*/
+  if ( v3 && IDA_BYTE1(this->vtable4) ) /*0x54a770*/
   {
     RA2_OPDEL(v3); /*0x54a778*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x54a780*/
+    *(unsigned int *)&this->vtable2 = 0; /*0x54a780*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x54a78b*/
-  this->m_8 = 0; /*0x54a791*/
+  IDA_BYTE1(this->vtable4) = 0; /*0x54a78b*/
+  *(unsigned int *)&this->vtable3 = 0; /*0x54a791*/
   if ( (a2 & 1) != 0 ) /*0x54a798*/
     RA2_OPDEL(); /*0x54a79b*/
-  return this->__pad_0; /*0x54a7a5*/
+  return this; /*0x54a7a5*/
 }
 } // namespace gamemd
 // 0x54A850

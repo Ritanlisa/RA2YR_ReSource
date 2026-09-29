@@ -2825,7 +2825,7 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
 
   v3 = 0; /*0x5cd855*/
   v4 = a2; /*0x5cd858*/
-  *(unsigned int *)&v31.m_3[1] = 0; /*0x5cd861*/
+  *(unsigned int *)&v31.q4 = 0; /*0x5cd861*/
   if ( String_Helper((ObjectClass *)ecx0, 0) ) /*0x5cd865*/
     return 0; /*0x5cd865*/
   if ( !v4 ) /*0x5cd874*/
@@ -2953,7 +2953,7 @@ MultiplayerGameMode * * WrapWideStringText(const wchar_t ** ecx0, int * a2, int 
     }
     while ( (uint16_t)WideString::GetChar((WideString *)ecx0, v3) ); /*0x5cdac6*/
   }
-  return *(unsigned int *)&v31.m_3[1]; /*0x5cdad9*/
+  return *(unsigned int *)&v31.q4; /*0x5cdad9*/
 }
 }
 // 0x5CE0C0
@@ -2976,10 +2976,10 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
   int v18; // [esp+24h] [ebp-8h]
   int v19; // [esp+30h] [ebp+4h]
 
-  nextArrayIndex = this->?; /*0x5ce0cb*/
+  nextArrayIndex = this->q018; /*0x5ce0cb*/
   if ( this->? != -1 ) /*0x5ce0d1*/
   {
-    v5 = Timer::GetTicks() - this->?; /*0x5ce0db*/
+    v5 = Timer::GetTicks() - this->M16; /*0x5ce0db*/
     if ( v5 >= nextArrayIndex ) /*0x5ce0e0*/
       goto LABEL_5; /*0x5ce0e0*/
     nextArrayIndex -= v5; /*0x5ce0e2*/
@@ -2994,13 +2994,13 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
     return 0; /*0x5ce296*/
   }
   LABEL_5:
-  if ( IDA_LOBYTE(this->?) != 1 ) /*0x5ce0f6*/
+  if ( IDA_LOBYTE(this->M12) != 1 ) /*0x5ce0f6*/
     goto LABEL_24; /*0x5ce0f6*/
   fallRate = this->fallRate; /*0x5ce0fc*/
-  this->? = Timer::GetTicks(); /*0x5ce108*/
-  this->? = v18; /*0x5ce10f*/
-  this->? = fallRate; /*0x5ce112*/
-  if ( this->? >= WideString::Length((const wchar_t **)&this->?) ) /*0x5ce122*/
+  this->M16 = Timer::GetTicks(); /*0x5ce108*/
+  this->M20 = v18; /*0x5ce10f*/
+  this->q018 = fallRate; /*0x5ce112*/
+  if ( this->q020 >= WideString::Length((const wchar_t **)&this->q020) ) /*0x5ce122*/
   {
     IDA_LOWORD(v7) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/
@@ -3014,7 +3014,7 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
       &this->customSound_controller[1],
       0,
       1);
-  vtable1 = (char *)this->?; /*0x5ce179*/
+  vtable1 = (char *)this->M73; /*0x5ce179*/
   if ( IDA_BYTE1(this->ambientSoundController[3]) ) /*0x5ce176*/
     vtable1 += this->ambientSoundController[4]; /*0x5ce180*/
   NeedsSaveOrLink = (char *)this->?; /*0x5ce18b*/
@@ -3049,7 +3049,7 @@ int E4Recv_5CE0C0::sub_5CE0C0(int a2, unsigned int * a3)
     this->customSound_controller[2] = 0; /*0x5ce20e*/
     this->customSound_controller[3] = 0; /*0x5ce211*/
     this->customSound_controller[4] = 0; /*0x5ce214*/
-    this->? = v10; /*0x5ce217*/
+    *(void **)&this->q020 = v10; /*0x5ce217*/
     if ( (unsigned short)i == 10 ) /*0x5ce21a*/
     {
       IDA_LOWORD(v14) = Math::RoundToInt(*(float *)&stru_A8EB00.ObjectTypeClass[38] * 64.0); /*0x5ce228*/
@@ -4588,7 +4588,7 @@ int sub_5CB360()
 namespace gamemd {
 void E4Recv_5CB3E0::sub_5CB3E0()
 {
-  *(unsigned int *)&this->m_Enabled = (void*)&UnholyAlliance_vftable; /*0x5cb3e0*/
+  *(void **)&this->m_Enabled = (void*)&UnholyAlliance_vftable; /*0x5cb3e0*/
   MultiplayerGameMode::Dtor(); /*0x5cb3e6*/
 }
 } // namespace gamemd
@@ -4747,16 +4747,16 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
     || (v4 = ClipRectIntersection(v17, a3, (int *)&this->attachedBomb, 0, 0), result = v4[2], v6 = v4[3], result > 0)
     && v6 > 0 )
   {
-    result = (int)this->?; /*0x5ce3e7*/
-    vtable2 = (int *)this->?; /*0x5ce3ea*/
-    vtable1 = (char *)this->?; /*0x5ce3ed*/
+    result = (int)this->q020; /*0x5ce3e7*/
+    vtable2 = (int *)this->M8; /*0x5ce3ea*/
+    vtable1 = (char *)this->M4; /*0x5ce3ed*/
     v9 = 0; /*0x5ce3f0*/
     v18 = vtable2; /*0x5ce3f4*/
     for ( i = result; v9 < i; ++v9 ) /*0x5ce3fc*/
     {
-      if ( (uint16_t)WideString::GetChar((const wchar_t **)&this->?, v9) == 10 ) /*0x5ce40f*/
+      if ( (uint16_t)WideString::GetChar((const wchar_t **)&this->M52, v9) == 10 ) /*0x5ce40f*/
       {
-        vtable1 = (char *)this->?; /*0x5ce414*/
+        vtable1 = (char *)this->M4; /*0x5ce414*/
         vtable2 = (int *)((char *)vtable2 + (unsigned int)this->attachedTag->?); /*0x5ce41e*/
         v14 = this->attachedTag->?; /*0x5ce420*/
         v18 = vtable2; /*0x5ce426*/

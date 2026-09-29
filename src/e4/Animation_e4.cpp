@@ -214,7 +214,7 @@ int Animation::GetProgress()
     if ( this->q014 ) /*0x4a52fb*/
     {
       v2 = (void *)((int)(this->q008));
-      result = this->q010; /*0x4a5314*/
+      result = *(unsigned int *)&this->q010; /*0x4a5314*/
       if ( v2 != -1 ) /*0x4a531a*/
       {
         if ( *(unsigned int *)&stru_A8EB00.?[416] - v2 >= result ) /*0x4a5326*/

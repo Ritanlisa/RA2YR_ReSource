@@ -493,7 +493,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
     sprintf((char *const)Buffer, "BurstDelay%d", v35++); /*0x747b1a*/
     *PrismTargetCoords = INIClass::ReadInt_Overwrite( /*0x747b3b*/
                            (bool *)this,
-                           (uint8_t *)&v4->?,
+                           (uint8_t *)&v4->initialOwner,
                            (uint8_t *)Buffer,
                            *PrismTargetCoords);
     ++PrismTargetCoords; /*0x747b43*/
@@ -590,7 +590,7 @@ int * UnitTypeClass::GetDimensions(int * a2)
   int v2; // eax
   int v3; // ecx
 
-  v2 = this->? - this->? / 4; /*0x7475a3*/
+  v2 = this->MaxDimension - this->MaxDimension / 4; /*0x7475a3*/
   v3 = v2; /*0x7475a5*/
   if ( v2 >= 60 ) /*0x7475aa*/
   {
@@ -609,8 +609,8 @@ unsigned int * UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
 
   v1 = (void *)(2 * dword_B1D138); /*0x7475dc*/
   a1->TechnoTypeClass = (void *)256; /*0x7475e7*/
-  a1->? = (void *)256; /*0x7475e9*/
-  a1->? = v1; /*0x7475ec*/
+  a1->vtable2 = (void *)256; /*0x7475e9*/
+  *(void **)&a1->vtable3 = v1; /*0x7475ec*/
   return (unsigned int *)a1; /*0x7475ef*/
 }
 // 0x747EB0
@@ -630,8 +630,8 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
   if ( v7 < GroundHeight ) /*0x747ee0*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x747ef1*/
   a1->TechnoTypeClass = v5; /*0x747efe*/
-  a1->? = v6; /*0x747f04*/
-  a1->? = v3; /*0x747f08*/
+  *(void **)&a1->vtable2 = v6; /*0x747f04*/
+  *(void **)&a1->vtable3 = v3; /*0x747f08*/
   return (unsigned int *)a1; /*0x747f0b*/
 }
 // 0x747F20
@@ -698,7 +698,7 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     {
       TechnoTypeClass::Construct((int)a1, (int)&v3); /*0x748038*/
       a1->TechnoTypeClass = (void*)&UnitTypeClass_vftable; /*0x74803d*/
-      a1->? = (void*)&UnitTypeClass_vftable; /*0x748043*/
+      *(void **)&a1->vtable2 = (void*)&UnitTypeClass_vftable; /*0x748043*/
       a1->? = (void*)&UnitTypeClass_vftable; /*0x74804a*/
       a1->? = (void*)&UnitTypeClass_vftable; /*0x748051*/
     }

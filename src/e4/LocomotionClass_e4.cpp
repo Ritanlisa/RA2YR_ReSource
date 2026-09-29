@@ -30,7 +30,7 @@ int LocomotionClass::Initialize()
   v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x4af553*/
   this->u32_2C = 0; /*0x4af559*/
   this->u32_24 = (unsigned int)(v2);
-  this->LinkedTo = 0; /*0x4af55f*/
+  *(unsigned int *)&this->LinkedTo = 0; /*0x4af55f*/
   this->u32_34 = (unsigned int)(g_DDraw_ClipRect);
   this->u32_38 = (unsigned int)(qword_8A0794);
   this->u32_10 = (unsigned int)(g_DDraw_ClipRect);
@@ -207,7 +207,7 @@ void LocomotionClass::Construct()
 {
   *(unsigned int *)this->ILocomotion = (void*)&LocomotionClass_vftable; /*0x55a6f0*/
   *(unsigned int *)&this->ILocomotion[4] = (void*)&LocomotionClass_vftable; /*0x55a6f6*/
-  this->LinkedTo = 0; /*0x55a6fd*/
+  *(unsigned int *)&this->LinkedTo = 0; /*0x55a6fd*/
 }
 } // namespace gamemd
 // 0x5172F0

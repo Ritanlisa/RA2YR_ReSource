@@ -57,15 +57,15 @@ DynamicVector * ToolTipManager_7::QueryInterface(char a2)
 
   v3 = (unsigned int)(*(void **)&this->m_1[3]);
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x724f50*/
+  if ( v3 && this->IsAllocated ) /*0x724f50*/
   {
     RA2_OPDEL(v3); /*0x724f58*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x724f60*/
+    *(unsigned int *)&this->Items = 0; /*0x724f60*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x724f6b*/
-  this->m_8 = 0; /*0x724f71*/
+  this->IsAllocated = 0; /*0x724f6b*/
+  *(unsigned short *)&this->Capacity = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
     RA2_OPDEL(); /*0x724f7b*/
-  return this->__pad_0; /*0x724f85*/
+  return this; /*0x724f85*/
 }
 } // namespace gamemd

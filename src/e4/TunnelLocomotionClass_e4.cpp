@@ -44,7 +44,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
       a1->? = 7; /*0x728dd9*/
       goto LABEL_11; /*0x728dd9*/
     case 3: /*0x728c17*/
-      a1->? = 5; /*0x728dd0*/
+      *(unsigned short *)&a1->RefCount = 5; /*0x728dd0*/
   LABEL_11:
       a1->CurrentState[0] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728de0*/
       a1->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728df0*/
@@ -53,8 +53,8 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
     case 4: /*0x728c17*/
       CurrentState = a1->CurrentState; /*0x728c29*/
       v4 = a1->?->?[0]; /*0x728c31*/
-      v5 = a1->?->?[2]; /*0x728c38*/
-      v16 = a1->?->?[1] - a1->CurrentState[1]; /*0x728c3b*/
+      v5 = a1->Owner->?[2]; /*0x728c38*/
+      v16 = a1->q034->?[1] - a1->CurrentState[1]; /*0x728c3b*/
       __asm { fild [esp+34h+var_8] } /*0x728c3f*/
       v17 = v5; /*0x728c43*/
       v15 = v4 - a1->CurrentState[0]; /*0x728c4b*/

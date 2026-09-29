@@ -20,7 +20,7 @@ struct WaypointPathClass {
     bool q01D;  // 0x1D
     unsigned char NeedsSaveOrLink;  // 0x20
     unsigned int idxArray;  // 0x24
-    void* ;  // 0x28
+    void *q28;  // 0x28
     bool q02B;  // 0x2B
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30

@@ -15,7 +15,7 @@
 
 // 0x6516F0
 namespace gamemd {
-CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, unsigned char *a2@<edx> a2, CellStruct *a3@<ebp> a3)
+CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)
 {
   int v3; // edx
   int v4; // ebx

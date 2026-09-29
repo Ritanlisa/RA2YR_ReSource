@@ -24,10 +24,10 @@ struct FactoryClass {
     bool q027;  // 0x27
     unsigned int u32_28;  // 0x28
     bool q02B;  // 0x2B
-    unsigned int ;  // 0x2C
+    unsigned int q2C;  // 0x2C
     unsigned int u32_2D;  // 0x2D
     bool q02F;  // 0x2F
-    unsigned int ;  // 0x30
+    unsigned int q30;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned int queuedCount;  // 0x34
@@ -55,7 +55,7 @@ struct FactoryClass {
     unsigned int balance;  // 0x60
     char originalBalance[4];  // 0x64
     char specialItem[4];  // 0x68
-    unsigned int ;  // 0x6C
+    unsigned int q6C;  // 0x6C
     bool isSuspended;  // 0x70
     bool isManual;  // 0x71
     unsigned char align72;  // 0x72

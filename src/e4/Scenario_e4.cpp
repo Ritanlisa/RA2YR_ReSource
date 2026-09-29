@@ -238,7 +238,7 @@ int Scenario::ReadTeams()
                       {
                         v38 = v29->q21C; /*0x44fc43*/
                         v29->q660 = 1; /*0x44fc49*/
-                        v29->q080 = 1; /*0x44fc50*/
+                        *(unsigned int *)&v29->q080 = 1; /*0x44fc50*/
                         v38->q5778 = 1; /*0x44fc57*/
                         *(unsigned char *)(v29->q21C + 22393) = 1; /*0x44fc64*/
                         v39 = v29->q21C; /*0x44fc6b*/

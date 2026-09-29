@@ -22,12 +22,12 @@ int AudioStream::ReleaseSubsystem()
   int (__thiscall ***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (__thiscall ****)(unsigned int, int))&this->__pad_D8[56]; /*0x401913*/
+  v2 = *(int (__thiscall ****)(unsigned int, int))&this->u32_110; /*0x401913*/
   *(unsigned int *)&this->__pad_D8[64] = 0; /*0x401919*/
   if ( v2 ) /*0x401925*/
   {
     result = (**v2)(v2, 1); /*0x40192b*/
-    *(unsigned int *)&this->__pad_D8[56] = 0; /*0x40192d*/
+    *(unsigned int *)&this->u32_110 = 0; /*0x40192d*/
   }
   return result; /*0x401937*/
 }
@@ -193,14 +193,14 @@ int AudioStream::SelectRandom()
   v3 = v2[4]; /*0x4047b9*/
   if ( v2[22] >= 0x21u && (this->u32_18 & 0x20) == 0 ) /*0x4047c5*/
     return 0; /*0x4047c5*/
-  v4 = this->q1E0; /*0x4047cb*/
+  v4 = *(unsigned int *)&this->q1E0; /*0x4047cb*/
   if ( v4 && (this->u32_18 & 0x20) == 0 ) /*0x4047d9*/
   {
     if ( (v3 & 2) != 0 ) /*0x4047de*/
     {
       v5 = (int)(Random::Range(&Randomizer_Global, 0, v4 - 1));
       v6 = this->q1E0 - 1; /*0x404803*/
-      this->q0AC = *(unsigned int *)(&this->u32_10 * v5 + 352); /*0x404804*/
+      *(unsigned int *)&this->q0AC = *(unsigned int *)(&this->u32_10 * v5 + 352); /*0x404804*/
       v5 = v5; /*0x40480c*/
       if ( v5 < v6 ) /*0x40480f*/
       {
@@ -1008,7 +1008,7 @@ int AudioStream::CalcReadPos()
   unsigned int i; // ecx
   unsigned int v17; // [esp+10h] [ebp-Ch]
 
-  if ( (this->__pad_5C[40] & 1) == 0 ) /*0x7bd2e1*/
+  if ( (*(unsigned int *)&this->u8_84 & 1) == 0 ) /*0x7bd2e1*/
     return -1; /*0x7bd2e1*/
   if ( !this->u32_78C ) /*0x7bd2e7*/
     return -1; /*0x7bd2e7*/
@@ -1321,7 +1321,7 @@ void AudioStream::Destructor()
   v2 = (void (__thiscall *)(AudioStream *))this->AudioStream_field_0xBC[0]; /*0x40257b*/
   if ( v2 ) /*0x402583*/
     v2(); /*0x402587*/
-  *(unsigned int *)&this->__pad_D8[144] = 0; /*0x40258b*/
+  *(unsigned int *)&this->q168 = 0; /*0x40258b*/
   AudioStream::InitListAndCounters(); /*0x402595*/
   (*(void (__thiscall **)(AudioStream *))(this->AudioStream_field_0xD4[0] + 8))(this); /*0x4025a2*/
   RA2_OPDEL(); /*0x4025a6*/

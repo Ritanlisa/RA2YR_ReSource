@@ -172,7 +172,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   p_referenceCount = &this->?; /*0x49c5c4*/
   if ( !IDA_LOBYTE(this->?) ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
-  v3 = this->scenario[7]; /*0x49c5d4*/
+  v3 = this->q044; /*0x49c5d4*/
   if ( !IDA_LOBYTE(g_DDrawSurfaceManager.scenario[14]) ) /*0x49c5d9*/
     CampaignClass::LoadFromINI(&g_DDrawSurfaceManager); /*0x49c5e0*/
   if ( v3 < 0 || v3 >= g_DDrawSurfaceManager.scenario[13] ) /*0x49c5f5*/
@@ -351,9 +351,9 @@ int CampaignClass::Write(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x46d01f*/
       aP0->AbstractClass = (void*)&CampaignClass_vftable; /*0x46d024*/
-      aP0->? = (void*)&CampaignClass_vftable; /*0x46d02a*/
-      aP0->? = (void*)&CampaignClass_vftable; /*0x46d031*/
-      aP0->? = (void*)&CampaignClass_vftable; /*0x46d038*/
+      *(void **)&aP0->vtable2 = (void*)&CampaignClass_vftable; /*0x46d02a*/
+      *(void **)&aP0->vtable3 = (void*)&CampaignClass_vftable; /*0x46d031*/
+      *(void **)&aP0->vtable4 = (void*)&CampaignClass_vftable; /*0x46d038*/
     }
     return 0; /*0x46d03f*/
   }
@@ -398,9 +398,9 @@ CampaignClass * CampaignClass::DTOR(char a2)
   CampaignClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = (void*)&CampaignClass_vftable; /*0x46d096*/
-  this->? = (void*)&CampaignClass_vftable; /*0x46d09c*/
-  this->? = (void*)&CampaignClass_vftable; /*0x46d0a3*/
-  this->? = (void*)&CampaignClass_vftable; /*0x46d0aa*/
+  *(void **)&this->vtable2 = (void*)&CampaignClass_vftable; /*0x46d09c*/
+  *(void **)&this->vtable3 = (void*)&CampaignClass_vftable; /*0x46d0a3*/
+  *(void **)&this->vtable4 = (void*)&CampaignClass_vftable; /*0x46d0aa*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x46d0b1*/
   v5 = this; /*0x46d0c6*/
   v3 = (*(int (__thiscall **)(unsigned int *, CampaignClass **))(dword_A83CF8 + 16))(&dword_A83CF8, &v5); /*0x46d0ca*/

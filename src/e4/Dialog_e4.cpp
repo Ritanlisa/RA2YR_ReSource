@@ -2081,7 +2081,7 @@ AbstractClass * * Dialog::Resize()
           {
             while ( *(HWND *)result != v4 ) /*0x62146a*/
             {
-              result = result->q204; /*0x62146c*/
+              result = *(unsigned int *)&result->q204; /*0x62146c*/
               if ( !result ) /*0x621474*/
                 return result; /*0x621474*/
             }
@@ -3044,7 +3044,7 @@ int Dialog::FindGameUI()
 
 // 0x5E2700
 namespace gamemd {
-HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ... a4)
+HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...)
 {
   int result; // eax
   HWND Current; // esi

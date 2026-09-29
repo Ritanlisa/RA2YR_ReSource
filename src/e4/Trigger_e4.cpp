@@ -52,7 +52,7 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   this->__pad_30[12] = 0; /*0x5cbd68*/
   *(unsigned int *)this->__pad_0 = (void*)&MSShapeAnim_vftable; /*0x5cbd6a*/
   FileClassToBuffer = LoadFileClassToBuffer(aP1, (bool *)&this->__pad_30[12]); /*0x5cbd70*/
-  *(unsigned int *)&this->__pad_18[4] = FileClassToBuffer; /*0x5cbd75*/
+  *(unsigned int *)&this->u32_1C = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
   v10 = *(int16_t *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
   *(unsigned int *)&this->__pad_30[20] = aP7; /*0x5cbd84*/
@@ -64,7 +64,7 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
 }
 // 0x76D4D0
 namespace gamemd {
-void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi> a3, int a4, char a5, char a6)
+void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char a6)
 {
   int v5; // ebx
   int v6; // eax
@@ -173,7 +173,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
         }
         v48 = 0; /*0x76d745*/
         Vector::Clear((int)v47); /*0x76d74c*/
-        v46[0] = &off_7E1668; /*0x76d755*/
+        v46[0] = (unsigned int)&off_7E1668; /*0x76d755*/
         BufferIOFileClass::Dtor(v46); /*0x76d75d*/
       }
       CCFileClass::Construct2(v49, *(char ***)(&this->u32_1C80)); /*0x76d770*/
@@ -278,7 +278,7 @@ unsigned int * Trigger::processTrigger(int a2, int a3)
   this->Trigger_field_0x4 = (unsigned int *)((MSAnim *)a2);
   *(unsigned int *)this->__pad_8 = a3; /*0x76f09d*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorCursor_MSSfxEntry___DynamicVectorClass_MSSfxEntry___vftable; /*0x76f0a0*/
-  return this->__pad_0; /*0x76f0a6*/
+  return this; /*0x76f0a6*/
 }
 }
 // 0x76F1C0
@@ -295,7 +295,7 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
     if ( aP2 ) /*0x76f1e6*/
     {
       this->Trigger_field_0x4 = (unsigned int *)((MSAnim *)aP2);
-      return this->__pad_0; /*0x76f1ee*/
+      return this; /*0x76f1ee*/
     }
     this->Trigger_field_0x4 = (MSAnim *)RA2_OPNEW(4 * aP1); /*0x76f1fd*/
     this->__pad_8[5] = 1; /*0x76f200*/

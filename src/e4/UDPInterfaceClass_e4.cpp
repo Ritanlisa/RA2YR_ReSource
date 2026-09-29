@@ -558,12 +558,12 @@ void UDPInterfaceClass::disconnect()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x7b42c6*/
+  v2 = *(void **)&this->Initialized; /*0x7b42c6*/
   this->m_10 = 0; /*0x7b42c9*/
   if ( v2 && IDA_BYTE1(this->m_C) ) /*0x7b42d0*/
   {
     RA2_OPDEL(v2); /*0x7b42d6*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x7b42de*/
+    *(unsigned int *)&this->Initialized = 0; /*0x7b42de*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x7b42e1*/
   this->m_8 = 0; /*0x7b42e4*/
@@ -574,7 +574,7 @@ namespace gamemd {
 unsigned int UDPInterfaceClass::reset(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x7b42f0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x7b4305*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->Initialized) >> 2; /*0x7b4305*/
   else
     return 0; /*0x7b42f7*/
 }
@@ -598,20 +598,20 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
     IDA_LOBYTE(this->m_C) = 1; /*0x7b44d2*/
     if ( !v4 ) /*0x7b44d6*/
       return 0; /*0x7b454a*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x7b44d8*/
+    if ( *(unsigned int *)&this->Initialized ) /*0x7b44d8*/
     {
       m_8 = this->m_8; /*0x7b44df*/
       if ( a2 < m_8 ) /*0x7b44e4*/
         m_8 = a2; /*0x7b44e6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x7b44ec*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->Initialized + 4 * i - 4) ) /*0x7b44ec*/
         ++i; /*0x7b44f1*/
       if ( IDA_BYTE1(this->m_C) ) /*0x7b44fe*/
       {
-        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x7b4509*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x7b4511*/
+        RA2_OPDEL(*(void **)&this->Initialized); /*0x7b4509*/
+        *(unsigned int *)&this->Initialized = 0; /*0x7b4511*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x7b451a*/
+    *(void **)&this->Initialized = v4; /*0x7b451a*/
     this->m_8 = a2; /*0x7b4522*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x7b4525*/
   }
@@ -637,7 +637,7 @@ int UDPInterfaceClass::sendPacket(unsigned int * a2)
   result = 0; /*0x7b4553*/
   if ( m_10 <= 0 ) /*0x7b4558*/
     return -1; /*0x7b456f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x7b455e*/
+  for ( i = *(unsigned int **)&this->Initialized; *i != *a2; ++i ) /*0x7b455e*/
   {
     if ( ++result >= m_10 ) /*0x7b456d*/
       return -1; /*0x7b456d*/
@@ -954,16 +954,16 @@ DynamicVector * UDPInterfaceClass::receivePacket(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x7b45d3*/
+  v3 = *(void **)&this->Initialized; /*0x7b45d3*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_unsigned_char___vftable; /*0x7b45d6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x7b45e0*/
   {
     RA2_OPDEL(v3); /*0x7b45e8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x7b45f0*/
+    *(unsigned int *)&this->Initialized = 0; /*0x7b45f0*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x7b45fb*/
   this->m_8 = 0; /*0x7b4601*/
   if ( (a2 & 1) != 0 ) /*0x7b4608*/
     RA2_OPDEL(); /*0x7b460b*/
-  return this->__pad_0; /*0x7b4615*/
+  return this; /*0x7b4615*/
 }

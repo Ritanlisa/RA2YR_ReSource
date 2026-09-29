@@ -19,7 +19,7 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
   int v6; // [esp+4h] [ebp-8h]
 
   IDA_LOBYTE(Ticks) = a2; /*0x7718a0*/
-  this->__pad_C[0] = a2; /*0x7718a9*/
+  this->__pad_C = a2; /*0x7718a9*/
   if ( !a2 ) /*0x7718ac*/
   {
     v3 = this->field_1C; /*0x7718af*/
@@ -44,19 +44,19 @@ signed int Territory_WorldDominationTour_8::Release()
   signed int result; // eax
   int v3; // edi
 
-  result = *(unsigned int *)&this->__pad_C[4]; /*0x771903*/
+  result = *(unsigned int *)&this->Ticks; /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
     v3 = this->field_18; /*0x77190c*/
-    result = Timer::GetTicks() - *(unsigned int *)&this->__pad_C[4]; /*0x77191c*/
+    result = Timer::GetTicks() - *(unsigned int *)&this->Ticks; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
       this->field_18 = 0; /*0x771934*/
-      *(unsigned int *)&this->__pad_C[4] = -1; /*0x771937*/
+      *(unsigned int *)&this->u32_18 = -1; /*0x771937*/
     }
     else
     {
-      *(unsigned int *)&this->__pad_C[4] = -1; /*0x771925*/
+      *(unsigned int *)&this->Ticks = -1; /*0x771925*/
       this->field_18 = v3 - result; /*0x77192c*/
     }
   }
@@ -102,7 +102,7 @@ unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
   VtableStub::5CB6C0(); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     RA2_OPDEL(); /*0x771a46*/
-  return this->__pad_0; /*0x771a50*/
+  return this; /*0x771a50*/
 }
 }
 // 0x771990

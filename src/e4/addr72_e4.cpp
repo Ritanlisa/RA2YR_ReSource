@@ -241,7 +241,7 @@ void sub_728200()
 }
 // 0x72AA40
 namespace gamemd {
-unsigned char char LoadMouseClassResources()
+unsigned char LoadMouseClassResources()
 {
   uint8_t result; // al
 
@@ -1549,17 +1549,17 @@ namespace gamemd {
 unsigned int * E4Recv_720960::sub_720960()
 {
   this->AbstractClass = (void *)-1; /*0x720965*/
-  this->? = (void *)-1; /*0x720967*/
-  this->? = (void *)-1; /*0x72096a*/
-  this->? = (void *)255; /*0x72096f*/
-  IDA_LOBYTE(this->?) = 0; /*0x720976*/
-  IDA_BYTE1(this->?) = 0; /*0x720979*/
-  IDA_BYTE2(this->?) = 0; /*0x72097c*/
-  this->? = 0; /*0x72097f*/
-  this->? = 0; /*0x720982*/
-  IDA_LOBYTE(this->?) = 1; /*0x720985*/
-  IDA_BYTE1(this->?) = 0; /*0x720989*/
-  this->? = (int)&DynamicVectorClass_ThemeControl___vftable; /*0x72098c*/
+  *(void **)&this->M4 = (void *)-1; /*0x720967*/
+  *(void **)&this->M8 = (void *)-1; /*0x72096a*/
+  *(unsigned short *)&this->M12 = (void *)255; /*0x72096f*/
+  IDA_LOBYTE(this->M16) = 0; /*0x720976*/
+  IDA_BYTE1(this->M16) = 0; /*0x720979*/
+  IDA_BYTE2(this->M16) = 0; /*0x72097c*/
+  this->M18 = 0; /*0x72097f*/
+  this->M28 = 0; /*0x720982*/
+  IDA_LOBYTE(this->q020) = 1; /*0x720985*/
+  IDA_BYTE1(this->q020) = 0; /*0x720989*/
+  *(unsigned short *)&this->M20 = (int)&DynamicVectorClass_ThemeControl___vftable; /*0x72098c*/
   this->owningHouseIndex = 10; /*0x720993*/
   this->occupant = 0; /*0x72099a*/
   this->fallRate = 0; /*0x72099d*/

@@ -69,9 +69,9 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   DropPodLocomotionClass *thisa; // [esp+44h] [ebp+4h]
 
   Owner = a1->?; /*0x4b5b7b*/
-  v36 = Owner->?[0]; /*0x4b5b88*/
-  v37 = Owner->?[1]; /*0x4b5b8f*/
-  v4 = Owner->?[2]; /*0x4b5b93*/
+  v36 = Owner->q040; /*0x4b5b88*/
+  v37 = Owner->q040; /*0x4b5b8f*/
+  v4 = Owner->vtable3; /*0x4b5b93*/
   v39[0] = v36; /*0x4b5b96*/
   v38 = v4; /*0x4b5b9a*/
   v39[1] = v37; /*0x4b5b9e*/
@@ -91,10 +91,10 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   Math::SinCos(v6); /*0x4b5c5c*/
   v7 = *(double *)v34 - v1 * v33; /*0x4b5c68*/
   IDA_LOWORD(v8) = Math::RoundToInt(v7); /*0x4b5c6c*/
-  v9 = a1->?; /*0x4b5c71*/
+  v9 = *(unsigned int *)&a1->q008; /*0x4b5c71*/
   v38 = v8; /*0x4b5c74*/
   v10 = (*((int (__thiscall **)(FootClass *))v9->TechnoClass + 114))(v9); /*0x4b5c7a*/
-  v11 = a1->?; /*0x4b5c80*/
+  v11 = *(unsigned int *)&a1->q008; /*0x4b5c80*/
   if ( v10 > 0 ) /*0x4b5c87*/
   {
     (*((void (__thiscall **)(FootClass *, int *))v11->TechnoClass + 109))(v11, &v36); /*0x4b5eaa*/
@@ -140,13 +140,13 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   else
   {
     (*((void (__thiscall **)(FootClass *, unsigned int))v11->TechnoClass + 115))(v11, 0); /*0x4b5c92*/
-    v36 = v11->?[0]; /*0x4b5ca4*/
-    v37 = v11->?[1]; /*0x4b5cab*/
-    v38 = v11->?[2]; /*0x4b5cb2*/
+    v36 = v11->q040; /*0x4b5ca4*/
+    v37 = v11->q040; /*0x4b5cab*/
+    v38 = v11->q040; /*0x4b5cb2*/
     (*((void (__thiscall **)(FootClass *))v11->TechnoClass + 53))(v11); /*0x4b5cba*/
     v12 = (char *)a1 - 4; /*0x4b5cc3*/
     (*(void (__stdcall **)(char *))(*((unsigned int *)a1 - 1) + 4))((char *)a1 - 4); /*0x4b5cc7*/
-    locomotor = a1->?->locomotor; /*0x4b5ccd*/
+    locomotor = a1->q008->locomotor; /*0x4b5ccd*/
     if ( *locomotor ) /*0x4b5cd3*/
       (*(void (__stdcall **)(int))(*(unsigned int *)*locomotor + 8))(*locomotor); /*0x4b5cdd*/
     *locomotor = 0; /*0x4b5ce3*/

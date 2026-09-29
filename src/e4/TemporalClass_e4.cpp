@@ -33,9 +33,9 @@ int TemporalClass::Constructor()
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *(unsigned int *)&this->__pad_28[4] = v2; /*0x71a464*/
   this->AbstractClass = (void*)&TemporalClass_vftable; /*0x71a467*/
-  this->? = (void*)&TemporalClass_vftable; /*0x71a46d*/
-  this->? = (void*)&TemporalClass_vftable; /*0x71a474*/
-  this->? = (void*)&TemporalClass_vftable; /*0x71a47b*/
+  *(void **)&this->vtable2 = (void*)&TemporalClass_vftable; /*0x71a46d*/
+  *(void **)&this->vtable3 = (void*)&TemporalClass_vftable; /*0x71a474*/
+  *(void **)&this->vtable4 = (void*)&TemporalClass_vftable; /*0x71a47b*/
   if ( g_BuildingLoadQueue_Array.?[0] < g_BuildingLoadQueue_Array.?[5] /*0x71a4b7*/
     || (IDA_BYTE1(g_BuildingLoadQueue_Array.?[6]) || !g_BuildingLoadQueue_Array.?[5])
     && g_BuildingLoadQueue_Array.?[1] > 0
@@ -354,9 +354,9 @@ void * TemporalClass::ProcessEvent(char a2)
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = (void*)&TemporalClass_vftable; /*0x71b1bd*/
-  this->? = (void*)&TemporalClass_vftable; /*0x71b1c3*/
-  this->? = (void*)&TemporalClass_vftable; /*0x71b1ca*/
-  this->? = (void*)&TemporalClass_vftable; /*0x71b1d1*/
+  *(void **)&this->vtable2 = (void*)&TemporalClass_vftable; /*0x71b1c3*/
+  *(void **)&this->vtable3 = (void*)&TemporalClass_vftable; /*0x71b1ca*/
+  *(void **)&this->vtable4 = (void*)&TemporalClass_vftable; /*0x71b1d1*/
   v5 = this; /*0x71b1df*/
   v3 = (*(int (__thiscall **)(int *, TemporalClass **))(g_BuildingLoadQueue_Array.?[3] + 16))( /*0x71b1e3*/
          &g_BuildingLoadQueue_Array.?[3],
@@ -399,9 +399,9 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
       aP0->AbstractClass = (void*)&TemporalClass_vftable; /*0x71a687*/
-      aP0->? = (void*)&TemporalClass_vftable; /*0x71a68d*/
-      aP0->? = (void*)&TemporalClass_vftable; /*0x71a694*/
-      aP0->? = (void*)&TemporalClass_vftable; /*0x71a69b*/
+      *(void **)&aP0->vtable2 = (void*)&TemporalClass_vftable; /*0x71a68d*/
+      *(void **)&aP0->vtable3 = (void*)&TemporalClass_vftable; /*0x71a694*/
+      *(void **)&aP0->vtable4 = (void*)&TemporalClass_vftable; /*0x71a69b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->creationFrame); /*0x71a6ab*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->__pad_28); /*0x71a6b9*/

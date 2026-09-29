@@ -19,7 +19,7 @@ void * BufferIOFile::Constructor(char * Source)
   IDA_LOBYTE(this->m_54) = 0; /*0x47a9df*/
   *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47a9e3*/
   FileClass::OpenWithCDSearch(Source); /*0x47a9e9*/
-  return this->__pad_0; /*0x47a9f0*/
+  return this; /*0x47a9f0*/
 }
 }
 // 0x47AA30
@@ -29,6 +29,6 @@ unsigned char * BufferIOFile::Init()
   BufferIOFileClass::Constructor(); /*0x47aa33*/
   IDA_LOBYTE(this->m_54) = 0; /*0x47aa38*/
   *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47aa3c*/
-  return this->__pad_0; /*0x47aa44*/
+  return this; /*0x47aa44*/
 }
 }

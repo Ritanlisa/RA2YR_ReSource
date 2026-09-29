@@ -68,8 +68,8 @@ void* BuildingClass::LoadFromStream()
   int v34; // [esp+64h] [ebp+8h] BYREF
 
   v1 = v33; /*0x453e25*/
-  p_vtable1 = &v33->?; /*0x453e2c*/
-  v33 = (BuildingClass *)(*((int (__stdcall **)(void **))v33->? + 4))(&v33->?); /*0x453e3d*/
+  p_vtable1 = &v33->vtable2; /*0x453e2c*/
+  v33 = (BuildingClass *)(*((int (__stdcall **)(void **))v33->nextArrayIndex + 4))(&v33->nextArrayIndex); /*0x453e3d*/
   v3 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, (int *)&v33); /*0x453e41*/
   v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/
@@ -159,7 +159,7 @@ void* BuildingClass::LoadFromStream()
               --v27; /*0x454135*/
             }
             while ( v27 ); /*0x454136*/
-            Upgrades = v1->Upgrades; /*0x454138*/
+            Upgrades = *(unsigned int *)&v1->Upgrades; /*0x454138*/
             v29 = 3; /*0x45413e*/
             do /*0x454152*/
             {
@@ -167,7 +167,7 @@ void* BuildingClass::LoadFromStream()
               --v29; /*0x454151*/
             }
             while ( v29 ); /*0x454152*/
-            DamageFireAnims = v1->DamageFireAnims; /*0x454154*/
+            DamageFireAnims = *(unsigned int *)&v1->DamageFireAnims; /*0x454154*/
             v31 = 8; /*0x45415a*/
             do /*0x45416e*/
             {
@@ -312,7 +312,7 @@ int BuildingClass::FindClosestForRepair(unsigned int * a1)
   {
     movementDestination = a1->movementDestination; /*0x4dfdba*/
     a1->shouldEnterOccupiable = 1; /*0x4dfdc0*/
-    if ( movementDestination != v13 || a1->? != 8 ) /*0x4dfdd2*/
+    if ( movementDestination != v13 || *(unsigned short *)&a1->currentMission != 8 ) /*0x4dfdd2*/
     {
       (*((void (__thiscall **)(FootClass *, AbstractClass *, int))a1->TechnoClass + 288))(a1, v13, 1); /*0x4dfddb*/
       (*((void (__thiscall **)(FootClass *, int, int))a1->TechnoClass + 122))(a1, 8, 1); /*0x4dfde9*/
@@ -412,7 +412,7 @@ int BuildingClass::AnimController()
   unsigned int v12[4]; // [esp+Ch] [ebp-10h] BYREF
 
   Value = ProgressTimer::GetValue((ProgressTimer *)(this->? + 904), v12); /*0x629736*/
-  v3 = this->?[3]; /*0x62973b*/
+  v3 = *(unsigned int *)&this->q048; /*0x62973b*/
   v4 = *Value; /*0x62973e*/
   if ( v3 < 0 ) /*0x629742*/
     goto LABEL_6; /*0x629742*/
@@ -433,12 +433,12 @@ int BuildingClass::AnimController()
   this->?[0] = v7; /*0x62976e*/
   if ( v7 >= v6 ) /*0x629773*/
   {
-    v8 = this->?[4]; /*0x629775*/
+    v8 = this->u32_4C; /*0x629775*/
     this->?[0] = 0; /*0x629778*/
-    this->?[4] = v8 + 1; /*0x629782*/
+    this->u32_4C = v8 + 1; /*0x629782*/
     if ( v8 + 1 >= 10 ) /*0x629788*/
       return 1; /*0x629792*/
-    v10 = (unsigned int *)this->?[2]; /*0x629793*/
+    v10 = (unsigned int *)this->q044; /*0x629793*/
     if ( v10 ) /*0x629798*/
     {
       v10[45] = *(unsigned int *)&stru_A8EB00.?[416]; /*0x6297af*/
@@ -575,7 +575,7 @@ void BuildingClass::ClearSuperWeaponAnim()
       this->SuperWeaponToken = -1; /*0x4516ee*/
       if ( v4 ) /*0x4516f8*/
       {
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)this->?); /*0x451700*/
+        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)this->owner); /*0x451700*/
         return 1; /*0x451709*/
       }
     }
@@ -586,7 +586,7 @@ void BuildingClass::ClearSuperWeaponAnim()
       this->UpgradeLevel = v6; /*0x45171b*/
       this->Upgrades[v6] = 0; /*0x451726*/
       if ( v4 ) /*0x451731*/
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)this->?); /*0x451739*/
+        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)this->owner); /*0x451739*/
     }
     return 1; /*0x45173f*/
   }

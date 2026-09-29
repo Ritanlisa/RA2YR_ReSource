@@ -221,7 +221,7 @@ int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
   IDA_LOWORD(result) = *aP1; /*0x4a95aa*/
   if ( *aP1 != *(unsigned short *)&stru_8A0390.bombVisible || aP1[1] != *(unsigned short *)&stru_8A0390.alignmentPadding69[1] ) /*0x4a95c2*/
   {
-    v6 = *(int16_t **)&this->__pad_1170[12]; /*0x4a95c4*/
+    v6 = *(int16_t **)&this->q117C; /*0x4a95c4*/
     v7 = (char)a2; /*0x4a95ca*/
     while ( *v6 != 0x7FFF || v6[1] != 0x7FFF ) /*0x4a95db*/
     {
@@ -258,7 +258,7 @@ int MapClass::ToggleZoom(int a2)
   MapClass *v7; // [esp+0h] [ebp-8h]
 
   result = a2; /*0x4ac960*/
-  v4 = this->__pad_11A4[12]; /*0x4ac96b*/
+  v4 = this->q11B0; /*0x4ac96b*/
   if ( a2 == -1 ) /*0x4ac971*/
   {
     v4 = v4 == 0; /*0x4ac986*/
@@ -272,28 +272,28 @@ int MapClass::ToggleZoom(int a2)
   {
     v4 = 0; /*0x4ac980*/
   }
-  if ( v4 != this->__pad_11A4[16] ) /*0x4ac98f*/
+  if ( v4 != this->q11B4 ) /*0x4ac98f*/
   {
-    result = *(unsigned int *)&this->__pad_11A4[4]; /*0x4ac991*/
+    result = *(unsigned int *)&this->q11A8; /*0x4ac991*/
     if ( !result ) /*0x4ac999*/
     {
       if ( v4 && !MapClass::isCellAccessible((char *)&g_VisibilitySystem, (int)dword_A83D4C->Object_field_0x30) ) /*0x4ac9ad*/
         v4 = 0; /*0x4ac9b6*/
       MapClass_field_0x0 = this->MapClass_field_0x0; /*0x4ac9b8*/
-      this->__pad_11A4[13] = 0; /*0x4ac9c0*/
+      *(unsigned char *)&this->q11B1 = 0; /*0x4ac9c0*/
       this->__pad_11A4[14] = 0; /*0x4ac9c7*/
       this->__pad_11A4[15] = 0; /*0x4ac9ce*/
       this->__pad_11A4[12] = 0; /*0x4ac9d5*/
       (*((void (__thiscall **)(MapClass *, unsigned int, unsigned int))MapClass_field_0x0 + 18))(this, 0, 0); /*0x4ac9dc*/
       if ( v4 ) /*0x4ac9e1*/
       {
-        this->__pad_11A4[16] = 1; /*0x4ac9e3*/
+        *(unsigned char *)&this->q11B4 = 1; /*0x4ac9e3*/
         return MapClass::UnselectAll_ClearLimboLaunchers(v7); /*0x4ac9ea*/
       }
       else
       {
         v6 = (int (__thiscall **)(MapClass *))this->MapClass_field_0x0; /*0x4ac9f4*/
-        this->__pad_11A4[16] = 0; /*0x4ac9f8*/
+        *(unsigned char *)&this->q11B4 = 0; /*0x4ac9f8*/
         return v6[20](this); /*0x4ac9ff*/
       }
     }
@@ -394,7 +394,7 @@ int MapClass::SetScrollMode(MouseClass * aP1)
   aP1 = (gamemd::MouseClass *)((void *)(aP1));
   this->q11A0 = (void *)(aP1);
   IDA_LOBYTE(aP1) = aP1 != 0; /*0x4aeb3c*/
-  this->q119C = aP1 != 0; /*0x4aeb3f*/
+  *(unsigned int *)&this->q119C = aP1 != 0; /*0x4aeb3f*/
 }
 } // namespace gamemd
 // 0x506D50
@@ -498,12 +498,12 @@ ObjectClass * * MapClass::LoadFileData()
 
   CCFileClass::Construct(&v12, &this->__pad_298[93]); /*0x547033*/
   Size = CCFileClass::GetSize(&v12); /*0x547041*/
-  if ( *(unsigned int *)&this->__pad_5C[72] ) /*0x547043*/
+  if ( *(unsigned int *)&this->q0A4 ) /*0x547043*/
     RA2_OPDEL(*(void **)&this->__pad_5C[72]); /*0x54704e*/
   v3 = (void *)RA2_OPNEW(Size); /*0x547057*/
   *(unsigned int *)&this->__pad_5C[72] = v3; /*0x547063*/
   CCFileClass::Read(&v12, v3, Size); /*0x54706b*/
-  v4 = *(uint8_t **)&this->__pad_5C[72]; /*0x547070*/
+  v4 = *(uint8_t **)&this->q0A4; /*0x547070*/
   this->__pad_5C[76] = 1; /*0x547078*/
   v5 = 0; /*0x54707f*/
   *(unsigned int *)&this->__pad_298[76] = *v4; /*0x547083*/
@@ -518,7 +518,7 @@ ObjectClass * * MapClass::LoadFileData()
       v9 = *v8; /*0x5470a4*/
       if ( *v8 ) /*0x5470a4*/
       {
-        v10 = *(unsigned int *)&this->__pad_5C[72]; /*0x5470aa*/
+        v10 = *(unsigned int *)&this->q0A4; /*0x5470aa*/
         if ( v9 < v10 ) /*0x5470b2*/
           *v8 = v10 + v9; /*0x5470b6*/
       }
@@ -575,7 +575,7 @@ void* MapClass::Destruct()
   if ( this->somecount_4C ) /*0x5652df*/
   {
     RA2_OPDEL(*((void **)&this->q0086)); /*0x5652e9*/
-    this->somecount_4C = 0; /*0x5652f1*/
+    *(unsigned int *)&this->somecount_4C = 0; /*0x5652f1*/
   }
   v2 = (unsigned int *)this->q014; /*0x5652f6*/
   if ( v2 ) /*0x5652fb*/
@@ -583,12 +583,12 @@ void* MapClass::Destruct()
     if ( *v2 ) /*0x5652fd*/
       (**(void (__thiscall ***)(unsigned int, int))*v2)(*v2, 3); /*0x565307*/
     RA2_OPDEL(v2); /*0x56530a*/
-    this->q014 = 0; /*0x565312*/
+    *(unsigned int *)&this->q014 = 0; /*0x565312*/
   }
   if ( this->q070 ) /*0x565315*/
   {
     RA2_OPDEL(*((void **)&this->q0088)); /*0x56531d*/
-    this->q070 = 0; /*0x565325*/
+    *(unsigned int *)&this->q070 = 0; /*0x565325*/
   }
   v3 = (unsigned int **)(&this->q0308); /*0x565328*/
   v12 = 3; /*0x56532e*/
@@ -611,28 +611,28 @@ void* MapClass::Destruct()
   if ( v5 && *(&this->u32_6F47) ) /*0x565378*/
   {
     RA2_OPDEL(v5); /*0x565381*/
-    this->q1160 = 0; /*0x565389*/
+    *(unsigned int *)&this->q1160 = 0; /*0x565389*/
   }
   *(&this->u32_6F47) = 0; /*0x56538f*/
-  this->q1164 = 0; /*0x565395*/
+  *(unsigned int *)&this->q1164 = 0; /*0x565395*/
   v6 = (void *)this->q13C; /*0x56539b*/
-  this->MaxLevel = (void*)&VectorClass_CellClass___vftable; /*0x5653a1*/
+  *(void **)&this->MaxLevel = (void*)&VectorClass_CellClass___vftable; /*0x5653a1*/
   if ( v6 && *(&this->q0805) ) /*0x5653af*/
   {
     RA2_OPDEL(v6); /*0x5653b8*/
-    this->q13C = 0; /*0x5653c0*/
+    *(unsigned int *)&this->q13C = 0; /*0x5653c0*/
   }
   *(&this->q0805) = 0; /*0x5653c6*/
-  this->q140 = 0; /*0x5653cc*/
+  *(unsigned int *)&this->q140 = 0; /*0x5653cc*/
   v7 = (void *)this->q0D8; /*0x5653d2*/
   this->q0D4 = (void*)&VectorClass_Cell_vftable; /*0x5653d8*/
   if ( v7 && *(&this->q0585) ) /*0x5653e2*/
   {
     RA2_OPDEL(v7); /*0x5653eb*/
-    this->q0D8 = 0; /*0x5653f3*/
+    *(unsigned int *)&this->q0D8 = 0; /*0x5653f3*/
   }
   *(&this->q0585) = 0; /*0x5653f9*/
-  this->q0DC = 0; /*0x5653ff*/
+  *(unsigned int *)&this->q0DC = 0; /*0x5653ff*/
   v8 = &this->u32_350; /*0x565405*/
   v9 = 3; /*0x56540b*/
   do /*0x56543a*/
@@ -655,10 +655,10 @@ void* MapClass::Destruct()
   if ( v11 && *(&this->outBuffer3) ) /*0x56544c*/
   {
     RA2_OPDEL(v11); /*0x565452*/
-    this->q054 = 0; /*0x56545a*/
+    *(unsigned int *)&this->q054 = 0; /*0x56545a*/
   }
   *(&this->outBuffer3) = 0; /*0x56545d*/
-  this->q058 = 0; /*0x565460*/
+  *(unsigned int *)&this->q058 = 0; /*0x565460*/
   *(unsigned int *)this = &off_7EA6FC; /*0x565463*/
 }
 } // namespace gamemd
@@ -2244,7 +2244,7 @@ int MapClass::TransitionCliff(MouseClass * aP0)
 } // namespace gamemd
 // 0x574C20
 namespace gamemd {
-void* MapClass::ApplyTerrainDamage(IUnknown *this@<ecx> a1, IUnknown aP1)
+void* MapClass::ApplyTerrainDamage(IUnknown *a1, IUnknown aP1)
 {
   CellClass *v2; // ebp
   int v3; // edi
@@ -3500,7 +3500,7 @@ int MapClass::AllocateCellDataBuffer(int a2, char * a3)
   }
   this->Items = v8; /*0x589478*/
   this->Capacity = v3; /*0x58947e*/
-  this->IsAllocated = a3 == 0; /*0x589481*/
+  *(unsigned int *)&this->IsAllocated = a3 == 0; /*0x589481*/
   return 1; /*0x589408*/
 }
 // 0x589A60
@@ -3576,7 +3576,7 @@ AbstractClass * * MapClass::AllocateMapDataBuffer(int a2, int * a3)
     return 0; /*0x589bbf*/
   if ( this->Items ) /*0x589b0e*/
   {
-    v10 = this->q008; /*0x589b15*/
+    v10 = *(unsigned int *)&this->q008; /*0x589b15*/
     if ( a2 < v10 ) /*0x589b1a*/
       v10 = a2; /*0x589b1c*/
     if ( v10 > 0 ) /*0x589b20*/
@@ -3607,12 +3607,12 @@ AbstractClass * * MapClass::AllocateMapDataBuffer(int a2, int * a3)
     }
   }
   this->Items = v8; /*0x589b90*/
-  this->q008 = v3; /*0x589b93*/
-  this->IsAllocated = a3 == 0; /*0x589b96*/
+  *(unsigned int *)&this->q008 = v3; /*0x589b93*/
+  *(unsigned int *)&this->IsAllocated = a3 == 0; /*0x589b96*/
   LABEL_28:
-  v15 = this->q008; /*0x589ba3*/
+  v15 = *(unsigned int *)&this->q008; /*0x589ba3*/
   if ( v15 < this->q010 ) /*0x589bab*/
-    this->q010 = v15; /*0x589bad*/
+    *(unsigned int *)&this->q010 = v15; /*0x589bad*/
   return 1; /*0x589bb0*/
 }
 // 0x589BD0
@@ -4605,7 +4605,7 @@ unsigned int MapClass::initCellVectors(int a2)
 // 0x588EF0
 int MapClass::InitCellVe_vt06(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x588efa*/
+  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x588efa*/
 }
 // 0x589060
 VectorClass_flat * MapClass::InitCellVe_vt00(char a2)
@@ -4619,7 +4619,7 @@ VectorClass_flat * MapClass::InitCellVe_vt00(char a2)
     RA2_OPDEL(v3); /*0x589078*/
     this->Items = 0; /*0x589080*/
   }
-  this->IsAllocated = 0; /*0x58908b*/
+  *(unsigned int *)&this->IsAllocated = 0; /*0x58908b*/
   this->Capacity = 0; /*0x589091*/
   if ( (a2 & 1) != 0 ) /*0x589098*/
     RA2_OPDEL(); /*0x58909b*/
@@ -4633,7 +4633,7 @@ void MapClass::allocateCellArrays()
     RA2_OPDEL(this->Items); /*0x5894b3*/
     this->Items = 0; /*0x5894bb*/
   }
-  this->IsAllocated = 0; /*0x5894be*/
+  *(unsigned int *)&this->IsAllocated = 0; /*0x5894be*/
   this->Capacity = 0; /*0x5894c1*/
 }
 // 0x5894D0
@@ -4709,7 +4709,7 @@ char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
     {
       if ( this->Items ) /*0x589d25*/
       {
-        v6 = this->q008; /*0x589d2c*/
+        v6 = *(unsigned int *)&this->q008; /*0x589d2c*/
         if ( a2 < a2 ) /*0x589d31*/
           a2 = a2; /*0x589d33*/
         for ( i = 0; i < a2; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x589d39*/
@@ -4722,7 +4722,7 @@ char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
       }
       this->Items = v4; /*0x589d67*/
       this->Capacity = a2; /*0x589d6f*/
-      this->IsAllocated = a3 == 0; /*0x589d72*/
+      *(unsigned int *)&this->IsAllocated = a3 == 0; /*0x589d72*/
       return 1; /*0x589d78*/
     }
     else
@@ -4744,7 +4744,7 @@ void MapClass::InitCellVe_vt03()
     RA2_OPDEL(this->Items); /*0x589da3*/
     this->Items = 0; /*0x589dab*/
   }
-  this->IsAllocated = 0; /*0x589dae*/
+  *(unsigned int *)&this->IsAllocated = 0; /*0x589dae*/
   this->Capacity = 0; /*0x589db1*/
 }
 // 0x589DC0
@@ -4800,15 +4800,15 @@ void MapClass::checkCellBounds()
 {
   void *v2; // eax
 
-  v2 = this->q004; /*0x5ac5a6*/
-  this->q010 = 0; /*0x5ac5a9*/
+  v2 = *(unsigned int *)&this->q004; /*0x5ac5a6*/
+  *(unsigned int *)&this->q010 = 0; /*0x5ac5a9*/
   if ( v2 && this->IsAllocated ) /*0x5ac5b0*/
   {
     RA2_OPDEL(v2); /*0x5ac5b6*/
     this->Items = 0; /*0x5ac5be*/
   }
-  this->IsAllocated = 0; /*0x5ac5c1*/
-  this->q008 = 0; /*0x5ac5c4*/
+  *(unsigned int *)&this->IsAllocated = 0; /*0x5ac5c1*/
+  *(unsigned int *)&this->q008 = 0; /*0x5ac5c4*/
 }
 // 0x5AC5D0
 unsigned int MapClass::validateCellCoord(int a2)
@@ -4825,7 +4825,7 @@ int MapClass::updatePathfindingGrid(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->q010; /*0x5ad0c0*/
+  v2 = *(unsigned int *)&this->q010; /*0x5ad0c0*/
   result = 0; /*0x5ad0c3*/
   if ( v2 <= 0 ) /*0x5ad0c8*/
     return -1; /*0x5ad0df*/

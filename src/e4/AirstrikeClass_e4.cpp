@@ -236,9 +236,9 @@ void * AirstrikeClass::CopyTo(char a2)
   AirstrikeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = (void*)&AirstrikeClass_vftable; /*0x41dd5d*/
-  this->? = (void*)&AirstrikeClass_vftable; /*0x41dd63*/
-  this->? = (void*)&AirstrikeClass_vftable; /*0x41dd6a*/
-  this->? = (void*)&AirstrikeClass_vftable; /*0x41dd71*/
+  *(void **)&this->vtable2 = (void*)&AirstrikeClass_vftable; /*0x41dd63*/
+  *(void **)&this->vtable3 = (void*)&AirstrikeClass_vftable; /*0x41dd6a*/
+  *(void **)&this->vtable4 = (void*)&AirstrikeClass_vftable; /*0x41dd71*/
   v5 = this; /*0x41dd7f*/
   v3 = (*(int (__thiscall **)(int *, AirstrikeClass **))(dword_889FB8 + 16))(&dword_889FB8, &v5); /*0x41dd83*/
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
@@ -398,9 +398,9 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
       aP0->AbstractClass = (void*)&AirstrikeClass_vftable; /*0x41d717*/
-      aP0->? = (void*)&AirstrikeClass_vftable; /*0x41d71d*/
-      aP0->? = (void*)&AirstrikeClass_vftable; /*0x41d724*/
-      aP0->? = (void*)&AirstrikeClass_vftable; /*0x41d72b*/
+      *(void **)&aP0->vtable2 = (void*)&AirstrikeClass_vftable; /*0x41d71d*/
+      *(void **)&aP0->vtable3 = (void*)&AirstrikeClass_vftable; /*0x41d724*/
+      *(void **)&aP0->vtable4 = (void*)&AirstrikeClass_vftable; /*0x41d72b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->owner); /*0x41d73b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_50); /*0x41d749*/

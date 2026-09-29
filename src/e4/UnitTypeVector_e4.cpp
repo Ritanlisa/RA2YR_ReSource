@@ -21,7 +21,7 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
     if ( a3 ) /*0x513966*/
     {
       this->UnitTypeVector_field_0x04 = (unsigned int *)(a3);
-      return this->__pad_0; /*0x51396e*/
+      return this; /*0x51396e*/
     }
     this->UnitTypeVector_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
     IDA_BYTE1(this->UnitTypeVector_field_0x0C) = 1; /*0x513980*/
@@ -43,7 +43,7 @@ unsigned int * UnitTypeVector::Construct2(int a2, int a3)
     if ( a3 ) /*0x5d8976*/
     {
       this->UnitTypeVector_field_0x04 = (unsigned int *)(a3);
-      return this->__pad_0; /*0x5d897e*/
+      return this; /*0x5d897e*/
     }
     this->UnitTypeVector_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
     IDA_BYTE1(this->UnitTypeVector_field_0x0C) = 1; /*0x5d8990*/

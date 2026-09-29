@@ -1501,7 +1501,7 @@ int FactoryClass_LoadTheaterSHP(int a1)
       v5[0] = (void*)&CCFileClass_vftable; /*0x6b5505*/
       v7 = 0; /*0x6b550d*/
       Vector::Clear((int)v6); /*0x6b5515*/
-      v5[0] = &off_7E1668; /*0x6b551e*/
+      v5[0] = (unsigned int)&off_7E1668; /*0x6b551e*/
       BufferIOFileClass::Dtor(v5); /*0x6b5526*/
     }
     result = dword_A8EC28; /*0x6b552b*/
@@ -2369,7 +2369,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     v55[0] = (void*)&CCFileClass_vftable; /*0x6ba0e2*/
     v57 = 0; /*0x6ba0ea*/
     Vector::Clear((int)v56); /*0x6ba0f1*/
-    v55[0] = &off_7E1668; /*0x6ba0fa*/
+    v55[0] = (unsigned int)&off_7E1668; /*0x6ba0fa*/
     BufferIOFileClass::Dtor(v55); /*0x6ba102*/
     return 1; /*0x6ba10a*/
   }
@@ -2378,7 +2378,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     v55[0] = (void*)&CCFileClass_vftable; /*0x6b9d68*/
     v57 = 0; /*0x6b9d70*/
     Vector::Clear((int)v56); /*0x6b9d77*/
-    v55[0] = &off_7E1668; /*0x6b9d80*/
+    v55[0] = (unsigned int)&off_7E1668; /*0x6b9d80*/
     BufferIOFileClass::Dtor(v55); /*0x6b9d88*/
     return 0; /*0x6b9d90*/
   }
@@ -4464,9 +4464,9 @@ long long E4Recv_6B1EE0::sub_6B1EE0()
   int v7; // kr00_4
 
   if ( IDA_BYTE2(this->fallRate) ) /*0x6b1ee6*/
-    abstractFlags = this->?; /*0x6b1eed*/
+    abstractFlags = this->M20; /*0x6b1eed*/
   else
-    abstractFlags = this->?; /*0x6b1ef2*/
+    abstractFlags = this->M24; /*0x6b1ef2*/
   nextObject = (double)(int)this->nextObject; /*0x6b1ef5*/
   IDA_LOWORD(v4) = Math::RoundToInt(nextObject); /*0x6b1f07*/
   v5 = v4; /*0x6b1f0f*/
@@ -5327,14 +5327,14 @@ unsigned int * E4Recv_6B9450::sub_6B9450()
   void *v5; // edi
   unsigned int v6; // edx
 
-  this->? = (void *)-1717986918; /*0x6b945a*/
+  *(void **)&this->q020 = (void *)-1717986918; /*0x6b945a*/
   this->owningHouseIndex = -1717986918; /*0x6b945d*/
   this->occupant = 1070176665; /*0x6b9466*/
   this->fallRate = 1072273817; /*0x6b946d*/
   this->nextObject = (ObjectClass *)128; /*0x6b9474*/
-  this->? = 128; /*0x6b9477*/
-  this->? = (void *)128; /*0x6b947a*/
-  this->? = 0; /*0x6b947d*/
+  this->M16 = 128; /*0x6b9477*/
+  *(void **)&this->M8 = (void *)128; /*0x6b947a*/
+  this->M12 = 0; /*0x6b947d*/
   v2 = 0; /*0x6b9480*/
   v3 = 128; /*0x6b9482*/
   do /*0x6b9489*/
@@ -5343,18 +5343,18 @@ unsigned int * E4Recv_6B9450::sub_6B9450()
     v3 >>= 1; /*0x6b9485*/
   }
   while ( v3 ); /*0x6b9489*/
-  this->? = v2; /*0x6b948b*/
-  this->? = 0; /*0x6b9496*/
+  *(void **)&this->M12 = v2; /*0x6b948b*/
+  this->M16 = 0; /*0x6b9496*/
   v4 = 1 << ((unsigned char)v2 - 1); /*0x6b9499*/
-  this->? = v2 - 1; /*0x6b949b*/
-  this->? = 0; /*0x6b949e*/
-  IDA_LOBYTE(this->?) = 0; /*0x6b94a1*/
-  this->? = (void *)v4; /*0x6b94a4*/
+  this->M12 = v2 - 1; /*0x6b949b*/
+  this->M4 = 0; /*0x6b949e*/
+  IDA_LOBYTE(this->M20) = 0; /*0x6b94a1*/
+  *(void **)&this->M8 = (void *)v4; /*0x6b94a4*/
   v5 = (void *)RA2_OPNEW(4 * v4); /*0x6b94b3*/
-  v6 = 4 * (int)this->?; /*0x6b94b8*/
+  v6 = 4 * (int)this->M8; /*0x6b94b8*/
   this->AbstractClass = v5; /*0x6b94bf*/
   memset(v5, 0, v6); /*0x6b94c4*/
-  this->? = (int)sub_6B94E0; /*0x6b94cd*/
+  *(unsigned short *)&this->q018 = (int)sub_6B94E0; /*0x6b94cd*/
   return &this->AbstractClass; /*0x6b94d6*/
 }
 } // namespace gamemd

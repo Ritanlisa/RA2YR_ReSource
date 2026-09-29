@@ -119,7 +119,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 namespace gamemd {
 int CCINIClass::GetDB()
 {
-  return this->?[0]; /*0x473453*/
+  return this->q004; /*0x473453*/
 }
 }
 // 0x4741F0

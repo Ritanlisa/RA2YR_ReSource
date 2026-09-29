@@ -142,7 +142,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
             v10 = (*(int (__thiscall **)(ParticleClass *))(*(unsigned int *)this->__pad_0 + 488))(this); /*0x62cfb5*/
             if ( stru_A8EB00.ObjectTypeClass[30] == 2 ) /*0x62cfc2*/
             {
-              v11 = this->__pad_128[7]; /*0x62cfc4*/
+              v11 = this->Translucency; /*0x62cfc4*/
               if ( v11 == 25 ) /*0x62cfcd*/
               {
                 v9 = 10242; /*0x62cfcf*/

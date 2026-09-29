@@ -107,7 +107,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   this->u32_45 = 0; /*0x7b27cd*/
   this->u32_40 = 0; /*0x7b27d0*/
   v5 = (void *)this->u32_24; /*0x7b27d3*/
-  this->u32_8 = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27d6*/
+  *(void **)&this->u32_8 = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27d6*/
   if ( v5 && this->u32_2D ) /*0x7b27e1*/
   {
     RA2_OPDEL(v5); /*0x7b27e7*/

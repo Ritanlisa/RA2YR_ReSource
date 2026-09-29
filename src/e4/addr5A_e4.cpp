@@ -4599,7 +4599,7 @@ namespace gamemd {
 ObjectClass * E4Recv_5A9920::sub_5A9920(unsigned int * a1, ObjectClass * aP2)
 {
   this->AbstractClass = (void *)*a1; /*0x5a992c*/
-  this->? = (void *)aP2; /*0x5a992e*/
+  *(void **)&this->M4 = (void *)aP2; /*0x5a992e*/
   return &this->AbstractClass; /*0x5a9931*/
 }
 } // namespace gamemd
@@ -4609,7 +4609,7 @@ namespace gamemd {
 ObjectClass * E4Recv_5A9960::sub_5A9960(unsigned int * a1)
 {
   this->AbstractClass = (void *)*a1; /*0x5a9968*/
-  this->? = (void *)a1[1]; /*0x5a996d*/
+  *(void **)&this->M4 = (void *)a1[1]; /*0x5a996d*/
   return &this->AbstractClass; /*0x5a9970*/
 }
 } // namespace gamemd
@@ -4632,10 +4632,10 @@ namespace gamemd {
 unsigned int * E4Recv_5A99F0::sub_5A99F0(unsigned int * a2)
 {
   this->AbstractClass = (void *)*a2; /*0x5a99f8*/
-  this->? = (void *)a2[1]; /*0x5a99fd*/
-  this->? = (void *)a2[2]; /*0x5a9a03*/
-  this->? = (void *)a2[3]; /*0x5a9a09*/
-  this->? = a2[4]; /*0x5a9a0f*/
+  *(void **)&this->M4 = (void *)a2[1]; /*0x5a99fd*/
+  *(void **)&this->M8 = (void *)a2[2]; /*0x5a9a03*/
+  *(void **)&this->M12 = (void *)a2[3]; /*0x5a9a09*/
+  this->M16 = a2[4]; /*0x5a9a0f*/
   return &this->AbstractClass; /*0x5a9a12*/
 }
 } // namespace gamemd
@@ -4857,8 +4857,8 @@ DWORD E4Recv_5AE530::sub_5AE530(ObjectClass * aP1, ObjectClass * aP2)
   result = Timer::GetTicks(); /*0x5ae54a*/
   v3 = (ObjectClass *)((char *)v3 + 204); /*0x5ae557*/
   v3->AbstractClass = (void *)result; /*0x5ae55d*/
-  v3->? = v5; /*0x5ae55f*/
-  v3->? = (void *)aP2; /*0x5ae562*/
+  v3->vtable2 = v5; /*0x5ae55f*/
+  v3->vtable3 = (void *)aP2; /*0x5ae562*/
   return result; /*0x5ae565*/
 }
 } // namespace gamemd
@@ -4899,26 +4899,26 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aec5f*/
   Math::ArcTan2(v19); /*0x5aec65*/
   __asm { fld [esp+40h+arg_0] } /*0x5aec70*/
-  abstractFlags = this->?; /*0x5aec74*/
+  abstractFlags = this->M40; /*0x5aec74*/
   __asm { fchs } /*0x5aec7b*/
-  NeedsSaveOrLink = this->?; /*0x5aec7d*/
+  NeedsSaveOrLink = this->M40; /*0x5aec7d*/
   __asm /*0x5aec84*/
   {
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
-  uniqueId = this->?; /*0x5aec8a*/
-  nextArrayIndex = this->?; /*0x5aec8e*/
+  uniqueId = this->M40; /*0x5aec8a*/
+  nextArrayIndex = this->M40; /*0x5aec8e*/
   __asm { fld [esp+40h+var_20] } /*0x5aec92*/
   __asm { fmul st, st(3) }
   occupant = this->occupant; /*0x5aec9e*/
-  IDA_LODWORD(v19) = this->?; /*0x5aeca2*/
+  IDA_LODWORD(v19) = *(unsigned short *)&this->M40; /*0x5aeca2*/
   result = this->owningHouseIndex; /*0x5aeca6*/
   __asm { faddp st(1), st } /*0x5aecac*/
   v16 = result; /*0x5aecae*/
   fallRate = this->fallRate; /*0x5aecb2*/
   __asm { fstp dword ptr [esi+10h] } /*0x5aecb9*/
-  this->? = _ET1; /*0x5aecb9*/
+  *(unsigned short *)&this->M16 = _ET1; /*0x5aecb9*/
   __asm /*0x5aecbc*/
   {
     fld [esp+30h+var_1C]
@@ -4928,7 +4928,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+14h]
   }
-  this->? = _ET1; /*0x5aecca*/
+  *(unsigned short *)&this->M20 = _ET1; /*0x5aecca*/
   __asm /*0x5aeccd*/
   {
     fld [esp+30h+var_14]
@@ -4938,7 +4938,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+18h]
   }
-  this->? = _ET1; /*0x5aecdb*/
+  *(unsigned short *)&this->q018 = _ET1; /*0x5aecdb*/
   __asm /*0x5aecde*/
   {
     fld [esp+30h+var_C]
@@ -4948,7 +4948,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+1Ch]
   }
-  this->? = _ET1; /*0x5aecec*/
+  *(unsigned short *)&this->M28 = _ET1; /*0x5aecec*/
   __asm /*0x5aecef*/
   {
     fstp st
@@ -4959,7 +4959,7 @@ int E4Recv_5AEC40::sub_5AEC40(float a2)
     faddp st(1), st
     fstp dword ptr [esi+20h]
   }
-  this->? = _ET1; /*0x5aed01*/
+  *(unsigned short *)&this->q020 = _ET1; /*0x5aed01*/
   __asm /*0x5aed04*/
   {
     fld [esp+30h+var_1C]
@@ -5136,24 +5136,24 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
   __asm { fstp [esp+38h+arg_0] } /*0x5aee6f*/
   Math::ArcTan2(v19); /*0x5aee75*/
   __asm { fld [esp+40h+arg_0] } /*0x5aee7f*/
-  vtable1 = this->?; /*0x5aee83*/
+  vtable1 = this->q040; /*0x5aee83*/
   __asm { fchs } /*0x5aee8a*/
-  uniqueId = this->?; /*0x5aee8c*/
+  uniqueId = this->q040; /*0x5aee8c*/
   __asm /*0x5aee93*/
   {
     fld [esp+40h+var_24]
     fmul st, st(1)
   }
   vtable0 = this->AbstractClass; /*0x5aee99*/
-  vtable2 = this->?; /*0x5aee9d*/
+  vtable2 = this->q040; /*0x5aee9d*/
   __asm { fld [esp+40h+var_20] } /*0x5aeea1*/
   __asm { fmul st, st(3) }
-  abstractFlags = this->?; /*0x5aeead*/
-  IDA_LODWORD(v19) = this->?; /*0x5aeeb1*/
-  result = this->?; /*0x5aeeb5*/
+  abstractFlags = this->q040; /*0x5aeead*/
+  IDA_LODWORD(v19) = *(unsigned short *)&this->q040; /*0x5aeeb1*/
+  result = this->q018; /*0x5aeeb5*/
   __asm { faddp st(1), st } /*0x5aeebb*/
   v16 = result; /*0x5aeebd*/
-  referenceCount = this->?; /*0x5aeec1*/
+  referenceCount = this->q040; /*0x5aeec1*/
   __asm { fstp dword ptr [esi] } /*0x5aeec8*/
   this->AbstractClass = _ET1; /*0x5aeec8*/
   __asm /*0x5aeeca*/
@@ -5165,7 +5165,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+4]
   }
-  this->? = _ET1; /*0x5aeed8*/
+  *(unsigned short *)&this->M4 = _ET1; /*0x5aeed8*/
   __asm /*0x5aeedb*/
   {
     fld [esp+30h+var_14]
@@ -5175,7 +5175,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+8]
   }
-  this->? = _ET1; /*0x5aeee9*/
+  *(unsigned short *)&this->M8 = _ET1; /*0x5aeee9*/
   __asm /*0x5aeeec*/
   {
     fld [esp+30h+var_C]
@@ -5185,7 +5185,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+0Ch]
   }
-  this->? = _ET1; /*0x5aeefa*/
+  *(unsigned short *)&this->M12 = _ET1; /*0x5aeefa*/
   __asm /*0x5aeefd*/
   {
     fstp st
@@ -5196,7 +5196,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+10h]
   }
-  this->? = _ET1; /*0x5aef0f*/
+  *(unsigned short *)&this->M16 = _ET1; /*0x5aef0f*/
   __asm /*0x5aef12*/
   {
     fld [esp+30h+var_1C]
@@ -5206,7 +5206,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+14h]
   }
-  this->? = _ET1; /*0x5aef22*/
+  *(unsigned short *)&this->M20 = _ET1; /*0x5aef22*/
   __asm /*0x5aef25*/
   {
     fld [esp+30h+var_14]
@@ -5216,7 +5216,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
     fstp dword ptr [esi+18h]
   }
-  this->? = _ET1; /*0x5aef35*/
+  *(unsigned short *)&this->q018 = _ET1; /*0x5aef35*/
   __asm /*0x5aef38*/
   {
     fld [esp+30h+var_C]
@@ -5226,7 +5226,7 @@ int E4Recv_5AEE50::sub_5AEE50(float a2)
     faddp st(1), st
   }
   __asm { fstp dword ptr [esi+1Ch] }
-  this->? = _ET1; /*0x5aef49*/
+  *(unsigned short *)&this->M28 = _ET1; /*0x5aef49*/
   __asm { fstp st } /*0x5aef4e*/
   return result; /*0x5aef50*/
 }

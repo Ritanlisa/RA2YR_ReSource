@@ -28,9 +28,9 @@ int BombClass::AbstractClass()
   AbstractClass::Constructor(); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
   this->AbstractClass = (void*)&BombClass_vftable; /*0x4385e1*/
-  this->? = (void*)&BombClass_vftable; /*0x4385e7*/
-  this->? = (void*)&BombClass_vftable; /*0x4385ee*/
-  this->? = (void*)&BombClass_vftable; /*0x4385f5*/
+  *(void **)&this->vtable2 = (void*)&BombClass_vftable; /*0x4385e7*/
+  *(void **)&this->vtable3 = (void*)&BombClass_vftable; /*0x4385ee*/
+  *(void **)&this->vtable4 = (void*)&BombClass_vftable; /*0x4385f5*/
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
@@ -165,9 +165,9 @@ int BombClass::Write(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x438b62*/
       aP0->AbstractClass = (void*)&BombClass_vftable; /*0x438b67*/
-      aP0->? = (void*)&BombClass_vftable; /*0x438b6d*/
-      aP0->? = (void*)&BombClass_vftable; /*0x438b74*/
-      aP0->? = (void*)&BombClass_vftable; /*0x438b7b*/
+      *(void **)&aP0->vtable2 = (void*)&BombClass_vftable; /*0x438b6d*/
+      *(void **)&aP0->vtable3 = (void*)&BombClass_vftable; /*0x438b74*/
+      *(void **)&aP0->vtable4 = (void*)&BombClass_vftable; /*0x438b7b*/
     }
     AudioController::Init((AudioController *)&aP0->audioController[3]); /*0x438b85*/
     aP0->BombClass_field_54 = 0; /*0x438b8d*/
@@ -195,9 +195,9 @@ BombClass * BombClass::CopyTo(char a2)
   BombClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = (void*)&BombClass_vftable; /*0x4393f7*/
-  this->? = (void*)&BombClass_vftable; /*0x4393fd*/
-  this->? = (void*)&BombClass_vftable; /*0x439404*/
-  this->? = (void*)&BombClass_vftable; /*0x43940b*/
+  *(void **)&this->vtable2 = (void*)&BombClass_vftable; /*0x4393fd*/
+  *(void **)&this->vtable3 = (void*)&BombClass_vftable; /*0x439404*/
+  *(void **)&this->vtable4 = (void*)&BombClass_vftable; /*0x43940b*/
   AudioFileClass::Release((AudioFileClass *)&this->audioController[3]); /*0x439412*/
   v5 = this; /*0x439427*/
   v3 = (*(int (__thiscall **)(int *, BombClass **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/

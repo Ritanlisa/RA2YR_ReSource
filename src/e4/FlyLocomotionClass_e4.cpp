@@ -74,7 +74,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
   v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
-    || (owner = a1->?->?, owner->enemyHouseIndex == -1)
+    || (owner = *(unsigned char *)&a1->ptr_40->?, owner->enemyHouseIndex == -1)
     || (thisa = 1, (uint8_t)House::IsCurrentPlayer((House *)owner)) )
   {
     thisa = 0; /*0x4cfefd*/

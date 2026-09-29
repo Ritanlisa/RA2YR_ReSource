@@ -270,7 +270,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
                              &Randomizer_Global,
                              *((unsigned int *)&stru_82ADA8.BounceAnim + aP1),
                              stru_82ADA8.Elasticity[aP1 + 1]);
-  this->ptr_44 = (gamemd::TechnoTypeClass *)(Random::Range(&Randomizer_Global, stru_82ADA8.Layer[aP1], dword_82B120[aP1]));
+  *(unsigned int *)&this->ptr_44 = (gamemd::TechnoTypeClass *)(Random::Range(&Randomizer_Global, stru_82ADA8.Layer[aP1], dword_82B120[aP1]));
   this->ptr_60 = Random::Range( /*0x5972bc*/
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 175],
@@ -279,7 +279,7 @@ TechnoTypeClass * * Skirmish::RandomizeSettings(ObjectClass * aP1)
                              &Randomizer_Global,
                              g_MissionQueueFrame.localVariables[aP1 + 165],
                              stru_82ADA8.MaxXYVel[aP1]);
-  this->ptr_70 = (gamemd::TechnoTypeClass *)(Random::Range( /*0x5972f6*/ &Randomizer_Global, *(&stru_82ADA8.TranslucencyDetailLevel + aP1), stru_82ADA8.RandomRate[aP1 + 2]));
+  *(unsigned int *)&this->ptr_70 = (gamemd::TechnoTypeClass *)(Random::Range( /*0x5972f6*/ &Randomizer_Global, *(&stru_82ADA8.TranslucencyDetailLevel + aP1), stru_82ADA8.RandomRate[aP1 + 2]));
   this->u32_54 = 20 * this->u32_40; /*0x59730b*/
   this->u32_58 = Random::Range(&Randomizer_Global, 0, 100); /*0x597313*/
   v3 = *(unsigned int *)(g_MissionQueueFrame.briefingCsf[6] + 4 * aP1); /*0x597322*/

@@ -1570,7 +1570,7 @@ int HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * a
           if ( ++v7 >= result ) /*0x505455*/
             goto LABEL_24; /*0x505455*/
         }
-        v10 = aP1->vtable2; /*0x505440*/
+        v10 = *(unsigned int *)&aP1->vtable2; /*0x505440*/
         while ( *v10 != v8 ) /*0x505445*/
         {
           ++v9; /*0x505447*/
@@ -1585,7 +1585,7 @@ int HouseClass::PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * a
         if ( aP2 <= 0 ) /*0x5053a0*/
           goto LABEL_24; /*0x5053a0*/
         v5 = *((unsigned int *)g_TriggerTypeCount + result); /*0x5053ac*/
-        result = aP1->vtable2; /*0x5053af*/
+        result = *(unsigned int *)&aP1->vtable2; /*0x5053af*/
         while ( *(unsigned int *)result != v5 ) /*0x5053b4*/
         {
           ++v4; /*0x5053ba*/
@@ -1680,7 +1680,7 @@ int HouseClass::UpdatePower()
   v2 = this->powerOutput; /*0x508c39*/
   v3 = this->powerDrain; /*0x508c3f*/
   v14 = v2 < v3 && v3 && (!v2 || (double)v2 / (double)this->powerDrain < 1.0); /*0x508c75*/
-  this->q5778 = 0; /*0x508c79*/
+  *(unsigned int *)&this->q5778 = 0; /*0x508c79*/
   this->powerOutput = 0; /*0x508c7f*/
   this->powerDrain = 0; /*0x508c85*/
   v4 = 0; /*0x508c8f*/
@@ -1939,9 +1939,9 @@ int HouseClass::CreatePowerOutage(int a2)
   int v4; // [esp+8h] [ebp-8h]
 
   g_CurrentFrame = g_CurrentFrame; /*0x50bc90*/
-  this->q5778 = 1; /*0x50bc9c*/
+  *(unsigned int *)&this->q5778 = 1; /*0x50bc9c*/
   this->powerBlackoutTimer = g_CurrentFrame; /*0x50bcaa*/
-  this->q2A8 = v4; /*0x50bcb4*/
+  *(unsigned int *)&this->q2A8 = v4; /*0x50bcb4*/
   this->u32_2AC = a2; /*0x50bcb7*/
   return v4; /*0x50bcba*/
 }
@@ -1955,7 +1955,7 @@ int HouseClass::CreateRadarOutage(int a2)
 
   v2 = g_CurrentFrame; /*0x50bcd0*/
   this->u8_5779 = 1; /*0x50bcdc*/
-  this->u32_AC0 = v2; /*0x50bcea*/
+  *(void **)&this->u32_AC0 = v2; /*0x50bcea*/
   *(unsigned int *)((char *)&this->qAC4 + 12) = v4; /*0x50bcf4*/
   this->qAE0 = a2; /*0x50bcf7*/
   return v4; /*0x50bcfa*/
@@ -2657,7 +2657,7 @@ std::locale::facet * HouseClass::initAngerStruct(char a2)
 namespace gamemd {
 int HouseClass_24::Seek(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4f28aa*/
+  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x4f28aa*/
 }
 } // namespace gamemd
 
@@ -2681,13 +2681,13 @@ char HouseClass_24::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x4f28e2*/
+  m_8 = this->q008; /*0x4f28e2*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4f28ed*/
   {
     v3 = 0; /*0x4f28ef*/
     if ( m_8 <= 0 ) /*0x4f28f3*/
       return 1; /*0x4f2913*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x4f28f5*/
+    v4 = *(unsigned int **)&this->q004; /*0x4f28f5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4f28fb*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4f2904*/
     {
@@ -2711,30 +2711,30 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4f292c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x4f2936*/
+    this->q00C = 0; /*0x4f2936*/
     if ( a3 ) /*0x4f293c*/
       v4 = a3; /*0x4f2952*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4f294e*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x4f2956*/
+    this->q00C = 1; /*0x4f2956*/
     if ( v4 ) /*0x4f295a*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x4f2965*/
+      if ( *(unsigned int *)&this->q004 ) /*0x4f2965*/
       {
-        m_8 = this->m_8; /*0x4f296c*/
+        m_8 = this->q008; /*0x4f296c*/
         if ( a2 < m_8 ) /*0x4f2971*/
           m_8 = a2; /*0x4f2973*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4f2979*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x4f2979*/
           ++i; /*0x4f297e*/
-        if ( IDA_BYTE1(this->m_C) ) /*0x4f298b*/
+        if ( this->IsAllocated ) /*0x4f298b*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4f2996*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x4f299e*/
+          RA2_OPDEL(*(void **)&this->q004); /*0x4f2996*/
+          *(unsigned int *)&this->q004 = 0; /*0x4f299e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x4f29a7*/
-      this->m_8 = a2; /*0x4f29af*/
-      IDA_BYTE1(this->m_C) = a3 == 0; /*0x4f29b2*/
+      *(void **)&this->q004 = v4; /*0x4f29a7*/
+      this->q008 = a2; /*0x4f29af*/
+      this->IsAllocated = a3 == 0; /*0x4f29b2*/
       return 1; /*0x4f29b8*/
     }
     else
@@ -2754,13 +2754,13 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void HouseClass_24::ddtor()
 {
-  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4f29dd*/
+  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x4f29dd*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4f29e3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4f29eb*/
+    RA2_OPDEL(*(void **)&this->q004); /*0x4f29e3*/
+    *(unsigned int *)&this->q004 = 0; /*0x4f29eb*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x4f29ee*/
-  this->m_8 = 0; /*0x4f29f1*/
+  this->IsAllocated = 0; /*0x4f29ee*/
+  this->q008 = 0; /*0x4f29f1*/
 }
 } // namespace gamemd
 
@@ -2772,13 +2772,13 @@ int HouseClass_24::Read(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x4f2a00*/
+  if ( !this->q00C ) /*0x4f2a00*/
     return 0; /*0x4f2a08*/
-  m_8 = this->m_8; /*0x4f2a0e*/
+  m_8 = this->q008; /*0x4f2a0e*/
   result = 0; /*0x4f2a11*/
   if ( m_8 <= 0 ) /*0x4f2a15*/
     return -1; /*0x4f2a2c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4f2a1b*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x4f2a1b*/
   {
     if ( ++result >= m_8 ) /*0x4f2a2a*/
       return -1; /*0x4f2a2a*/
@@ -2791,8 +2791,8 @@ int HouseClass_24::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int HouseClass_24::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x4f2a40*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4f2a55*/
+  if ( this->q00C ) /*0x4f2a40*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x4f2a55*/
   else
     return 0; /*0x4f2a47*/
 }
@@ -2822,18 +2822,18 @@ VectorClass_flat * HouseClass_24::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x4f2b63*/
+  v3 = *(void **)&this->q004; /*0x4f2b63*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_GraphicMenuItem___vftable; /*0x4f2b66*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4f2b70*/
+  if ( v3 && this->IsAllocated ) /*0x4f2b70*/
   {
     RA2_OPDEL(v3); /*0x4f2b78*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4f2b80*/
+    *(unsigned int *)&this->q004 = 0; /*0x4f2b80*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x4f2b8b*/
-  this->m_8 = 0; /*0x4f2b91*/
+  this->IsAllocated = 0; /*0x4f2b8b*/
+  *(unsigned short *)&this->q008 = 0; /*0x4f2b91*/
   if ( (a2 & 1) != 0 ) /*0x4f2b98*/
     RA2_OPDEL(); /*0x4f2b9b*/
-  return this->__pad_0; /*0x4f2ba5*/
+  return this; /*0x4f2ba5*/
 }
 } // namespace gamemd
 
@@ -3135,10 +3135,10 @@ char HouseClass::Set()
   int v4; // ecx
   int v6; // [esp+Ch] [ebp-4h] BYREF
 
-  IDA_LOBYTE(v2) = (*((int (__stdcall **)(void **))this->? + 4))(&this->?); /*0x54b98b*/
+  IDA_LOBYTE(v2) = (*((int (__stdcall **)(void **))*(unsigned short *)&this->uniqueId + 4))(&this->uniqueId); /*0x54b98b*/
   if ( (unsigned char)v2 ) /*0x54b990*/
   {
-    (*(void (__thiscall **)(void *, unsigned int, int))(*(unsigned int *)this->? + 1348))(this->?, 0, 1072693248); /*0x54b9a4*/
+    (*(void (__thiscall **)(void *, unsigned int, int))(*(unsigned int *)*(unsigned short *)&this->q544 + 1348))(*(unsigned short *)&this->q544, 0, 1072693248); /*0x54b9a4*/
     Value = ProgressTimer::GetValue((ProgressTimer *)((char *)this->? + 904), &v6); /*0x54b9b8*/
     FacingClass::Set_SyncLog((char *)&this->repairStationsCount, Value); /*0x54b9c1*/
     v4 = this->relatedTags[0]; /*0x54b9c6*/
@@ -3152,7 +3152,7 @@ char HouseClass::Set()
     {
       v2 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(*(unsigned int *)this->? + 756))(this->?, &v6); /*0x54b9f8*/
       if ( *v2 == dword_ABC588 ) /*0x54ba08*/
-        IDA_LOBYTE(v2) = GadgetGrid::InsertItem((GadgetGrid *)&g_CellClassManager, (int)this->?); /*0x54ba20*/
+        IDA_LOBYTE(v2) = GadgetGrid::InsertItem((GadgetGrid *)&g_CellClassManager, (int)this->vtable4); /*0x54ba20*/
       this->unitRepairStations[0] = 1; /*0x54ba25*/
     }
   }

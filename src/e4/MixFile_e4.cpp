@@ -84,7 +84,7 @@ MixFileClass * * MixFile::LoadAll()
   v47[0] = (unsigned int)((void*)&CCFileClass_vftable);
   v49 = (unsigned int)(0);
   Vector::Clear(v48); /*0x530495*/
-  v47[0] = &off_7E1668; /*0x5304a3*/
+  v47[0] = (unsigned int)&off_7E1668; /*0x5304a3*/
   BufferIOFileClass::Dtor(v47); /*0x5304a7*/
   if ( v1 ) /*0x5304ae*/
   {
@@ -129,7 +129,7 @@ MixFileClass * * MixFile::LoadAll()
   v47[0] = (void*)&CCFileClass_vftable; /*0x530613*/
   v49 = 0; /*0x530617*/
   Vector::Clear(v48); /*0x53061b*/
-  v47[0] = &off_7E1668; /*0x530624*/
+  v47[0] = (unsigned int)&off_7E1668; /*0x530624*/
   BufferIOFileClass::Dtor(v47); /*0x530628*/
   if ( v6 ) /*0x53062f*/
   {
@@ -146,7 +146,7 @@ MixFileClass * * MixFile::LoadAll()
   v47[0] = (void*)&CCFileClass_vftable; /*0x53069c*/
   v49 = 0; /*0x5306a0*/
   Vector::Clear(v48); /*0x5306a4*/
-  v47[0] = &off_7E1668; /*0x5306ad*/
+  v47[0] = (unsigned int)&off_7E1668; /*0x5306ad*/
   BufferIOFileClass::Dtor(v47); /*0x5306b1*/
   if ( v8 ) /*0x5306b8*/
   {
@@ -163,7 +163,7 @@ MixFileClass * * MixFile::LoadAll()
   v47[0] = (void*)&CCFileClass_vftable; /*0x530725*/
   v49 = 0; /*0x530729*/
   Vector::Clear(v48); /*0x53072d*/
-  v47[0] = &off_7E1668; /*0x530736*/
+  v47[0] = (unsigned int)&off_7E1668; /*0x530736*/
   BufferIOFileClass::Dtor(v47); /*0x53073a*/
   if ( v10 ) /*0x530741*/
   {
@@ -254,7 +254,7 @@ MixFileClass * * MixFile::LoadAll()
     v47[0] = (void*)&CCFileClass_vftable; /*0x530a63*/
     v49 = 0; /*0x530a67*/
     Vector::Clear(v48); /*0x530a6b*/
-    v47[0] = &off_7E1668; /*0x530a74*/
+    v47[0] = (unsigned int)&off_7E1668; /*0x530a74*/
     BufferIOFileClass::Dtor(v47); /*0x530a7c*/
     if ( v17 ) /*0x530a83*/
     {
@@ -270,7 +270,7 @@ MixFileClass * * MixFile::LoadAll()
     v47[0] = (void*)&CCFileClass_vftable; /*0x530afb*/
     v49 = 0; /*0x530aff*/
     Vector::Clear(v48); /*0x530b03*/
-    v47[0] = &off_7E1668; /*0x530b0c*/
+    v47[0] = (unsigned int)&off_7E1668; /*0x530b0c*/
     BufferIOFileClass::Dtor(v47); /*0x530b14*/
     if ( v19 ) /*0x530b1b*/
     {
@@ -289,7 +289,7 @@ MixFileClass * * MixFile::LoadAll()
   v47[0] = (void*)&CCFileClass_vftable; /*0x530b97*/
   v49 = 0; /*0x530b9b*/
   Vector::Clear(v48); /*0x530b9f*/
-  v47[0] = &off_7E1668; /*0x530bad*/
+  v47[0] = (unsigned int)&off_7E1668; /*0x530bad*/
   BufferIOFileClass::Dtor(v47); /*0x530bb1*/
   if ( v21 ) /*0x530bb8*/
   {
@@ -306,7 +306,7 @@ MixFileClass * * MixFile::LoadAll()
   v47[0] = (void*)&CCFileClass_vftable; /*0x530c25*/
   v49 = 0; /*0x530c29*/
   Vector::Clear(v48); /*0x530c2d*/
-  v47[0] = &off_7E1668; /*0x530c36*/
+  v47[0] = (unsigned int)&off_7E1668; /*0x530c36*/
   BufferIOFileClass::Dtor(v47); /*0x530c3a*/
   if ( v23 ) /*0x530c41*/
   {
@@ -324,7 +324,7 @@ MixFileClass * * MixFile::LoadAll()
     v47[0] = (unsigned int)((void*)&CCFileClass_vftable);
     v49 = (unsigned int)(0);
     Vector::Clear(v48); /*0x530c9b*/
-    v47[0] = &off_7E1668; /*0x530ca4*/
+    v47[0] = (unsigned int)&off_7E1668; /*0x530ca4*/
     BufferIOFileClass::Dtor(v47); /*0x530ca8*/
     if ( !v25 ) /*0x530caf*/
       goto LABEL_100; /*0x530caf*/
@@ -444,7 +444,7 @@ MixFileClass * * MixFile::LoadAll()
   v47[0] = (void*)&CCFileClass_vftable; /*0x5311ad*/
   v49 = 0; /*0x5311b5*/
   Vector::Clear(v48); /*0x5311b9*/
-  v47[0] = &off_7E1668; /*0x5311c2*/
+  v47[0] = (unsigned int)&off_7E1668; /*0x5311c2*/
   BufferIOFileClass::Dtor(v47); /*0x5311c6*/
   if ( v44 ) /*0x5311cd*/
   {
@@ -458,7 +458,7 @@ MixFileClass * * MixFile::LoadAll()
   v47[0] = (void*)&CCFileClass_vftable; /*0x531218*/
   v49 = 0; /*0x531220*/
   Vector::Clear(v48); /*0x531224*/
-  v47[0] = &off_7E1668; /*0x53122d*/
+  v47[0] = (unsigned int)&off_7E1668; /*0x53122d*/
   BufferIOFileClass::Dtor(v47); /*0x531231*/
   if ( v46 ) /*0x531238*/
   {

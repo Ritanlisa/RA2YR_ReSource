@@ -82,7 +82,7 @@ void sub_785EA0()
       while ( v3 ) /*0x785edb*/
       {
         v4 = v3; /*0x785edd*/
-        v3 = (ObjectClass *)v3->?; /*0x785edf*/
+        v3 = (ObjectClass *)v3->vtable3; /*0x785edf*/
         DeleteAndZero(v4); /*0x785ee8*/
         RA2_OPDEL(v4); /*0x785eee*/
       }
@@ -380,9 +380,9 @@ void sub_7A2970()
     if ( MapSeed::CheckName((const char **)&stru_B76AC4) ) /*0x7a2991*/
     {
       SimpleDialogControl::Constructor(v0); /*0x7a299e*/
-      v0[0] = &off_7F7624; /*0x7a29b2*/
+      v0[0] = (unsigned int)&off_7F7624; /*0x7a29b2*/
       RunDialog(0x122u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))BuddyDlgProcWOL, (LPARAM)v0); /*0x7a29ba*/
-      v0[0] = &off_7F7624; /*0x7a29c3*/
+      v0[0] = (unsigned int)&off_7F7624; /*0x7a29c3*/
       OwnerDrawControl::InitVtable(v0); /*0x7a29cb*/
     }
   }

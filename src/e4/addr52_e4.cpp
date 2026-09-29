@@ -252,9 +252,9 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
     v6 = a3; /*0x528235*/
     if ( a3 ) /*0x52823b*/
     {
-      if ( a2 == this->? ) /*0x528248*/
+      if ( a2 == this->M4 ) /*0x528248*/
       {
-        vtable2 = this->?; /*0x52824e*/
+        vtable2 = this->M8; /*0x52824e*/
   LABEL_5:
         if ( vtable2 ) /*0x528253*/
         {
@@ -327,14 +327,14 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
         if ( vtable2 ) /*0x528362*/
         {
           v6 = a3; /*0x528364*/
-          this->? = vtable2; /*0x528368*/
-          this->? = v4; /*0x52836b*/
+          *(void **)&this->M8 = vtable2; /*0x528368*/
+          *(void **)&this->M4 = v4; /*0x52836b*/
           goto LABEL_5; /*0x528370*/
         }
       }
   LABEL_27:
-      this->? = 0; /*0x528375*/
-      this->? = 0; /*0x52837c*/
+      this->M4 = 0; /*0x528375*/
+      this->M8 = 0; /*0x52837c*/
       return a4; /*0x528388*/
     }
   }
@@ -374,9 +374,9 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   Source = &g_INI_DefaultBuffer; /*0x529e98*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x529eb0*/
     goto LABEL_18; /*0x529eb0*/
-  if ( v7 == this->? ) /*0x529ebc*/
+  if ( v7 == this->M4 ) /*0x529ebc*/
   {
-    vtable2 = (int *)this->?; /*0x529ec2*/
+    vtable2 = (int *)this->M8; /*0x529ec2*/
   }
   else
   {
@@ -387,12 +387,12 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
     if ( !(uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, &v23) /*0x529ff0*/
       || (v24 = v19, (vtable2 = *(int **)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
     {
-      this->? = 0; /*0x52a006*/
-      this->? = 0; /*0x52a009*/
+      this->M4 = 0; /*0x52a006*/
+      this->M8 = 0; /*0x52a009*/
       goto LABEL_11; /*0x52a00c*/
     }
     v6 = a4; /*0x529ff2*/
-    this->? = vtable2; /*0x529ff9*/
+    *(void **)&this->M8 = vtable2; /*0x529ff9*/
     this->? = v7; /*0x529ffc*/
   }
   if ( vtable2 ) /*0x529ec7*/
@@ -464,9 +464,9 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   v7 = a4; /*0x52a13b*/
   if ( a4 == 0.0 ) /*0x52a141*/
     goto LABEL_18; /*0x52a141*/
-  if ( a3 == this->? ) /*0x52a14a*/
+  if ( a3 == this->M4 ) /*0x52a14a*/
   {
-    vtable2 = (int *)this->?; /*0x52a150*/
+    vtable2 = (int *)this->M8; /*0x52a150*/
   }
   else
   {
@@ -476,12 +476,12 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
     if ( !(uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, (int *)&a3) /*0x52a2a6*/
       || (v20 = (int)v16, (vtable2 = *(int **)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v20)) == 0) )
     {
-      this->? = 0; /*0x52a2b9*/
-      this->? = 0; /*0x52a2bc*/
+      this->M4 = 0; /*0x52a2b9*/
+      this->M8 = 0; /*0x52a2bc*/
       goto LABEL_11; /*0x52a2bf*/
     }
     v7 = a4; /*0x52a2a8*/
-    this->? = vtable2; /*0x52a2ac*/
+    *(void **)&this->M8 = vtable2; /*0x52a2ac*/
     this->? = v6; /*0x52a2af*/
   }
   if ( vtable2 ) /*0x52a155*/
@@ -564,9 +564,9 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   Source = COERCE_FLOAT(&g_INI_DefaultBuffer); /*0x52a318*/
   if ( &v22 == (int *)-48 || !v7 || !v6 ) /*0x52a330*/
     goto LABEL_18; /*0x52a330*/
-  if ( v7 == this->? ) /*0x52a33c*/
+  if ( v7 == this->M4 ) /*0x52a33c*/
   {
-    vtable2 = (int *)this->?; /*0x52a342*/
+    vtable2 = (int *)this->M8; /*0x52a342*/
   }
   else
   {
@@ -577,12 +577,12 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
     if ( !(uint8_t)HashTable::BinarySearch(&this->owningHouseIndex, &v23) /*0x52a488*/
       || (v24 = v19, (vtable2 = *(int **)SortedArray::FindValue((SortedArray *)&this->owningHouseIndex, &v24)) == 0) )
     {
-      this->? = 0; /*0x52a49e*/
-      this->? = 0; /*0x52a4a1*/
+      this->M4 = 0; /*0x52a49e*/
+      this->M8 = 0; /*0x52a4a1*/
       goto LABEL_11; /*0x52a4a4*/
     }
     v6 = a4; /*0x52a48a*/
-    this->? = vtable2; /*0x52a491*/
+    *(void **)&this->M8 = vtable2; /*0x52a491*/
     this->? = v7; /*0x52a494*/
   }
   if ( vtable2 ) /*0x52a347*/
@@ -1198,7 +1198,7 @@ LABEL_80:
       goto LABEL_68;
 LABEL_79:
     FadePalette(&stru_87C374[37900], 0, 0);
-    v81[0] = &stru_82083C;
+    v81[0] = (unsigned int)&stru_82083C;
     StringCSF = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_Init_CPP, 4276);
     v76 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_Init_CPP, 4276);
     v64 = GetStringCSF(aTxtCdDialog1, 0, g_Str_File_Init_CPP, 4276);
@@ -1265,7 +1265,7 @@ LABEL_94:
   }
   INIClass::INIClass(v97);
   v98 = 0;
-  v97[0] = &CCINIClass_Vtable;
+  v97[0] = (unsigned int)&CCINIClass_Vtable;
   if ( !CCINIClass::Load(v97, &aP1, 0, 0) )
   {
     Debug::Log();
@@ -3079,7 +3079,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   this->u32_C = 0; /*0x52ab09*/
   free(v7); /*0x52ab0c*/
   v3 = this->u32_14; /*0x52ab11*/
-  this->ptr_10 = 0; /*0x52ab19*/
+  *(unsigned int *)&this->ptr_10 = 0; /*0x52ab19*/
   if ( v3 ) /*0x52ab1c*/
   {
     do /*0x52ab40*/

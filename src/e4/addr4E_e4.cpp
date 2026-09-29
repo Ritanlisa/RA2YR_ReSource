@@ -2042,7 +2042,7 @@ unsigned int * FoggedObjectClass_42::loc_4E0D30(char a2)
     if ( v3 && this->IsAllocated )
   {
     RA2_OPDEL(v3);
-    this->Items = 0;
+    *(unsigned int *)&this->Items = 0;
   }
     this->IsAllocated = 0;
     this->Capacity = 0;
@@ -4851,10 +4851,10 @@ void HouseClass::vt_03_()
   if ( this->vtable2 && this->relatedTagsCapacity ) /*0x4e92fd*/
   {
     RA2_OPDEL(this->vtable2); /*0x4e9303*/
-    this->vtable2 = 0; /*0x4e930b*/
+    *(unsigned int *)&this->vtable2 = 0; /*0x4e930b*/
   }
   this->relatedTagsCapacity = 0; /*0x4e930e*/
-  this->vtable3 = 0; /*0x4e9311*/
+  *(unsigned int *)&this->vtable3 = 0; /*0x4e9311*/
 }
 } // namespace gamemd
 
@@ -4868,7 +4868,7 @@ int HouseClass::vt_04_(int * a2)
 
   if ( !this->vtable4 ) /*0x4e9320*/
     return 0; /*0x4e9328*/
-  v3 = this->vtable3; /*0x4e932e*/
+  v3 = *(unsigned int *)&this->vtable3; /*0x4e932e*/
   result = 0; /*0x4e9331*/
   if ( v3 <= 0 ) /*0x4e9335*/
     return -1; /*0x4e934c*/
@@ -4900,13 +4900,13 @@ int ParticleSystemClass::vt_04_(int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x4e9f00*/
+  if ( !IDA_LOBYTE(this->vtable4) ) /*0x4e9f00*/
     return 0; /*0x4e9f08*/
-  m_8 = this->m_8; /*0x4e9f0e*/
+  m_8 = *(unsigned int *)&this->vtable3; /*0x4e9f0e*/
   result = 0; /*0x4e9f11*/
   if ( m_8 <= 0 ) /*0x4e9f15*/
     return -1; /*0x4e9f2c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e9f1b*/
+  for ( i = *(unsigned int **)&this->vtable2; *i != *a2; ++i ) /*0x4e9f1b*/
   {
     if ( ++result >= m_8 ) /*0x4e9f2a*/
       return -1; /*0x4e9f2a*/
@@ -4919,8 +4919,8 @@ int ParticleSystemClass::vt_04_(int * a2)
 namespace gamemd {
 unsigned int ParticleSystemClass::vt_05_(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x4e9f40*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e9f55*/
+  if ( IDA_LOBYTE(this->vtable4) ) /*0x4e9f40*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->vtable2) >> 2; /*0x4e9f55*/
   else
     return 0; /*0x4e9f47*/
 }
@@ -4937,10 +4937,10 @@ VectorClass_flat * HouseClass::vt_00_(char a2)
   if ( v3 && this->relatedTagsCapacity ) /*0x4ef4f0*/
   {
     RA2_OPDEL(v3); /*0x4ef4f8*/
-    this->vtable2 = 0; /*0x4ef500*/
+    *(unsigned int *)&this->vtable2 = 0; /*0x4ef500*/
   }
   this->relatedTagsCapacity = 0; /*0x4ef50b*/
-  this->vtable3 = 0; /*0x4ef511*/
+  *(unsigned int *)&this->vtable3 = 0; /*0x4ef511*/
   if ( (a2 & 1) != 0 ) /*0x4ef518*/
     RA2_OPDEL(); /*0x4ef51b*/
   return this; /*0x4ef525*/
@@ -4953,17 +4953,17 @@ VectorClass_flat * ParticleSystemClass::vt_00_(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x4ef803*/
+  v3 = *(void **)&this->vtable2; /*0x4ef803*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_ParticleClass___vftable; /*0x4ef806*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4ef810*/
+  if ( v3 && IDA_BYTE1(this->vtable4) ) /*0x4ef810*/
   {
     RA2_OPDEL(v3); /*0x4ef818*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x4ef820*/
+    *(unsigned int *)&this->vtable2 = 0; /*0x4ef820*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x4ef82b*/
-  this->m_8 = 0; /*0x4ef831*/
+  IDA_BYTE1(this->vtable4) = 0; /*0x4ef82b*/
+  *(unsigned int *)&this->vtable3 = 0; /*0x4ef831*/
   if ( (a2 & 1) != 0 ) /*0x4ef838*/
     RA2_OPDEL(); /*0x4ef83b*/
-  return this->__pad_0; /*0x4ef845*/
+  return this; /*0x4ef845*/
 }
 } // namespace gamemd

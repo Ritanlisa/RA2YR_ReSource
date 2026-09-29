@@ -97,7 +97,7 @@ struct TechnoTypeClass {
     unsigned int u32_E4;  // 0xE4
     AbstractClass* q0E8;  // 0xE8
     unsigned int q0EC;  // 0xEC
-    unsigned int ;  // 0xF0
+    unsigned int qF0;  // 0xF0
     unsigned char u8_F1;  // 0xF1
     unsigned char u8_F2;  // 0xF2
     unsigned char u8_F3;  // 0xF3
@@ -290,7 +290,7 @@ struct TechnoTypeClass {
     unsigned int q304;  // 0x304
     double AccelerationFactor;  // 0x308
     unsigned int q30A;  // 0x30A
-    unsigned int ;  // 0x30C
+    unsigned int q30C_a;  // 0x30C
     int CloakingSpeed;  // 0x310
     unsigned char DebrisTypes;  // 0x314
     CampaignClass* VoxelAnimList_Items;  // 0x318
@@ -319,11 +319,11 @@ struct TechnoTypeClass {
     double unknown_double_368;  // 0x368
     unsigned char q36C;  // 0x36C
     double Weight;  // 0x370
-    unsigned int ;  // 0x374
+    unsigned int q374_a;  // 0x374
     double PhysicalSize;  // 0x378
     unsigned int u32_37C;  // 0x37C
     double Size;  // 0x380
-    unsigned int ;  // 0x384
+    unsigned int q384_a;  // 0x384
     double SizeLimit;  // 0x388
     void* q38C;  // 0x38C
     bool HoverAttack;  // 0x390
@@ -334,7 +334,7 @@ struct TechnoTypeClass {
     double RollAngle;  // 0x3A0
     unsigned int u32_3A4;  // 0x3A4
     double PitchSpeed;  // 0x3A8
-    unsigned int ;  // 0x3AC
+    unsigned int q3AC_a;  // 0x3AC
     double PitchAngle;  // 0x3B0
     unsigned int u32_3B4;  // 0x3B4
     unsigned int q3B7;  // 0x3B7
@@ -403,7 +403,7 @@ struct TechnoTypeClass {
     unsigned int q48F;  // 0x48F
     unsigned int IntList_F_FlagByte;  // 0x491
     TechnoTypeClass * ptr_494;  // 0x494
-    unsigned int ;  // 0x498
+    unsigned int q498_a;  // 0x498
     void* q49C;  // 0x49C
     unsigned int q49D;  // 0x49D
     unsigned char VoiceSpecialAttack;  // 0x4A0
@@ -412,7 +412,7 @@ struct TechnoTypeClass {
     unsigned char q4AC;  // 0x4AC
     unsigned int IntList_G_FlagByte;  // 0x4AD
     void* q4B0;  // 0x4B0
-    unsigned int ;  // 0x4B4
+    unsigned int q4B4_a;  // 0x4B4
     unsigned char q4B8;  // 0x4B8
     unsigned char VoiceDie;  // 0x4BC
     CampaignClass* IntList_H_Items;  // 0x4C0
@@ -420,7 +420,7 @@ struct TechnoTypeClass {
     unsigned char q4C8;  // 0x4C8
     unsigned int IntList_H_FlagByte;  // 0x4C9
     void* q4CC;  // 0x4CC
-    unsigned int ;  // 0x4D0
+    unsigned int q4D0_a;  // 0x4D0
     unsigned char q4D4;  // 0x4D4
     unsigned char VoiceFeedback;  // 0x4D8
     CampaignClass* VoiceFeedback_Items;  // 0x4DC

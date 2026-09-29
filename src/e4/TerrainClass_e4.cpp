@@ -1215,8 +1215,8 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
   int v17; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = (ObjectClass *)a1; /*0x71cda4*/
-  p_vtable1 = &a1->?; /*0x71cdad*/
-  v4 = (*((int (__stdcall **)(void **))a1->? + 4))(&a1->?); /*0x71cdb1*/
+  p_vtable1 = &a1->vtable2; /*0x71cdad*/
+  v4 = (*((int (__stdcall **)(void **))*(unsigned short *)&a1->uniqueId + 4))(&a1->uniqueId); /*0x71cdb1*/
   vtable1 = g_BuildingLoadQueue_Array.?; /*0x71cdb4*/
   v7 = v4; /*0x71cdba*/
   if ( g_BuildingLoadQueue_Array.? ) /*0x71cdbe*/
@@ -1230,7 +1230,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
       vtable1 = g_BuildingLoadQueue_Array.?; /*0x71cde1*/
       g_BuildingLoadQueue_Array.? = 0; /*0x71cdea*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x71cdf4*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array.abstractFlags) = 1; /*0x71cdf4*/
     }
     v17 = v7; /*0x71ce06*/
     v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, &v17); /*0x71ce0a*/
@@ -1251,7 +1251,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
         g_BuildingLoadQueue_Array.? = i - 1; /*0x71ce54*/
         *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = 0; /*0x71ce59*/
         vtable0 = (ObjectClass *)g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x71ce61*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = 0; /*0x71ce69*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.vtable2 + 1) = 0; /*0x71ce69*/
         g_BuildingLoadQueue_Array.? = 0; /*0x71ce6d*/
       }
     }
@@ -1264,8 +1264,8 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
       ObjectClass::Init(v2, (int)&a1); /*0x71ce93*/
       v2->AbstractClass = (void*)&TerrainClass_vftable; /*0x71ce98*/
       *p_vtable1 = &off_7F5200; /*0x71ce9f*/
-      v2->? = (void*)&TerrainClass_vftable; /*0x71cea5*/
-      v2->? = (void*)&TerrainClass_vftable; /*0x71ceac*/
+      *(void **)&v2->vtable3 = (void*)&TerrainClass_vftable; /*0x71cea5*/
+      *(void **)&v2->vtable4 = (void*)&TerrainClass_vftable; /*0x71ceac*/
     }
     v14 = (*((int (__stdcall **)(void **))*p_vtable1 + 4))(p_vtable1); /*0x71cebf*/
     vtable2 = (int)g_BuildingLoadQueue_Array.?; /*0x71cec1*/
@@ -1277,9 +1277,9 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
     {
   LABEL_16:
       *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = v14; /*0x71ceee*/
-      *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = v2; /*0x71cefc*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.?) = 0; /*0x71cf06*/
-      ++g_BuildingLoadQueue_Array.?; /*0x71cf0d*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.vtable2 + 1) = v2; /*0x71cefc*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable2) = 0; /*0x71cf06*/
+      ++g_BuildingLoadQueue_Array.vtable2; /*0x71cf0d*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1].?); /*0x71cf1e*/
   }

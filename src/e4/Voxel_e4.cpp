@@ -677,11 +677,11 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3)
   v116 = v116; /*0x755e27*/
   v117 = v117; /*0x755e2e*/
   this->u32_4 = v115; /*0x755e35*/
-  this->q008 = v116; /*0x755e3b*/
-  this->q00C = v117; /*0x755e42*/
+  *(unsigned int *)&this->q008 = v116; /*0x755e3b*/
+  *(unsigned int *)&this->q00C = v117; /*0x755e42*/
   v11 = operator new(12 * v115); /*0x755e45*/
-  v12 = this->q008; /*0x755e4a*/
-  this->u32_10 = v11; /*0x755e4d*/
+  v12 = *(unsigned int *)&this->q008; /*0x755e4a*/
+  *(void **)&this->u32_10 = v11; /*0x755e4d*/
   v13 = COERCE_FLOAT(operator new(164 * v12)); /*0x755e5c*/
   v72 = v13; /*0x755e66*/
   if ( v13 == 0.0 ) /*0x755e6a*/
@@ -709,7 +709,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3)
   this->u32_14 = v13; /*0x755e9b*/
   v17 = operator new(this->q00C); /*0x755ea2*/
   v18 = *(void **)(&this->u32_46); /*0x755ea7*/
-  this->u32_18 = v17; /*0x755eaf*/
+  *(void **)&this->u32_18 = v17; /*0x755eaf*/
   if ( !v18 ) /*0x755eb2*/
   {
   LABEL_67:
@@ -794,7 +794,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3)
            this->u32_18,
            this->q00C) == this->q00C )
     {
-      v28 = this->q008; /*0x75612d*/
+      v28 = *(unsigned int *)&this->q008; /*0x75612d*/
       v72 = 0.0; /*0x756134*/
       if ( !v28 ) /*0x756138*/
       {
@@ -906,7 +906,7 @@ AbstractClass * * Voxel::SortDepth(ObjectClass * aP1, int a3)
         *(unsigned int *)(this->u32_14 + v29 - 160) = this->u32_18 + v101[1]; /*0x7563cd*/
         v72 = v72; /*0x7563e1*/
         *(unsigned int *)(this->u32_14 + v29 - 156) = this->u32_18 + v101[2]; /*0x7563e7*/
-        v69 = this->q008; /*0x7563ee*/
+        v69 = *(unsigned int *)&this->q008; /*0x7563ee*/
         IDA_LODWORD(v72) = IDA_LODWORD(v72) + 1; /*0x7563f4*/
         if ( IDA_LODWORD(v72) + 1 >= v69 ) /*0x7563f8*/
           goto LABEL_59; /*0x7563f8*/

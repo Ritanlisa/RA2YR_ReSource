@@ -18,17 +18,17 @@ namespace gamemd {
 unsigned int * RadioClass::Release()
 {
   RadioClass::Constructor(); /*0x65a753*/
-  this->radioLinks[1] = 0; /*0x65a75a*/
+  *(unsigned int *)&this->q0E4 = 0; /*0x65a75a*/
   this->radioLinks[2] = 1; /*0x65a764*/
   IDA_LOBYTE(this->radioLinks[3]) = 1; /*0x65a76e*/
   IDA_BYTE1(this->radioLinks[3]) = 0; /*0x65a775*/
   this->radioLinks[0] = (int)&VectorClass_TechnoClass___vftable; /*0x65a77c*/
-  this->radioLinks[1] = RA2_OPNEW(4u); /*0x65a78b*/
+  *(unsigned int *)&this->q0E4 = RA2_OPNEW(4u); /*0x65a78b*/
   IDA_BYTE1(this->radioLinks[3]) = 1; /*0x65a791*/
   this->MissionClass = (void*)&RadioClass_vftable; /*0x65a798*/
-  this->? = (void*)&RadioClass_vftable; /*0x65a79e*/
-  this->? = (void*)&RadioClass_vftable; /*0x65a7a5*/
-  this->? = (void*)&RadioClass_vftable; /*0x65a7ac*/
+  *(void **)&this->vtable2 = (void*)&RadioClass_vftable; /*0x65a79e*/
+  *(void **)&this->vtable3 = (void*)&RadioClass_vftable; /*0x65a7a5*/
+  *(void **)&this->vtable4 = (void*)&RadioClass_vftable; /*0x65a7ac*/
   *(unsigned int *)this->radioLinks[1] = 0; /*0x65a7be*/
   this->lastCommands[0] = 0; /*0x65a7c4*/
   this->lastCommands[1] = 0; /*0x65a7ca*/
@@ -41,7 +41,7 @@ unsigned int * RadioClass::Release()
 namespace gamemd {
 int RadioClass::ProcessCmd()
 {
-  if ( !this->? ) /*0x65aa83*/
+  if ( !*(unsigned int *)&this->inLimbo ) /*0x65aa83*/
     (*((void (__thiscall **)(RadioClass *, int))this->MissionClass + 160))(this, 3); /*0x65aa91*/
   return ObjectClass::Undeploy(); /*0x65aa9e*/
 }
@@ -59,20 +59,20 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
   int v8; // eax
 
   AbstractClass::COMStub_13(aP1); /*0x65ab1a*/
-  Power::TimerProcess(this->radioLinks[2]); /*0x65ab28*/
-  result = this->radioLinks[2]; /*0x65ab2d*/
+  Power::TimerProcess(this->u32_E8); /*0x65ab28*/
+  result = this->u32_E8; /*0x65ab2d*/
   for ( i = 0; i < result; ++i ) /*0x65ab37*/
   {
-    v5 = *(unsigned int *)(this->radioLinks[1] + 4 * i); /*0x65ab3f*/
+    v5 = *(unsigned int *)(this->q0E4 + 4 * i); /*0x65ab3f*/
     if ( v5 ) /*0x65ab44*/
     {
       v6 = (*(int (__stdcall **)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
       Power::TimerProcess(v6); /*0x65ab53*/
-      v7 = *(unsigned int *)(this->radioLinks[1] + 4 * i); /*0x65ab5e*/
+      v7 = *(unsigned int *)(this->q0E4 + 4 * i); /*0x65ab5e*/
       v8 = (*(int (__thiscall **)(int))(*(unsigned int *)v7 + 44))(v7); /*0x65ab63*/
       Power::TimerProcess(v8); /*0x65ab69*/
     }
-    result = this->radioLinks[2]; /*0x65ab6e*/
+    result = this->u32_E8; /*0x65ab6e*/
   }
   return result; /*0x65ab79*/
 }
@@ -139,11 +139,11 @@ int RadioClass::FindLinkIndex(int a2)
 
   if ( !a2 ) /*0x65ad97*/
     return -1; /*0x65ad97*/
-  v2 = this->radioLinks[2]; /*0x65ad99*/
+  v2 = this->u32_E8; /*0x65ad99*/
   result = 0; /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
-  for ( i = (unsigned int *)this->radioLinks[1]; *i != a2; ++i ) /*0x65ada5*/
+  for ( i = (unsigned int *)this->q0E4; *i != a2; ++i ) /*0x65ada5*/
   {
     if ( ++result >= v2 ) /*0x65adb5*/
       return -1; /*0x65adb5*/
@@ -160,11 +160,11 @@ int RadioClass::HasFreeLink()
   int v2; // eax
   unsigned int *i; // ecx
 
-  v1 = this->radioLinks[2]; /*0x65adc0*/
+  v1 = this->u32_E8; /*0x65adc0*/
   v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
-  for ( i = (unsigned int *)this->radioLinks[1]; *i; ++i ) /*0x65adcc*/
+  for ( i = (unsigned int *)this->q0E4; *i; ++i ) /*0x65adcc*/
   {
     if ( ++v2 >= v1 ) /*0x65addd*/
       return 0; /*0x65addd*/
@@ -206,10 +206,10 @@ int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
   unsigned int *v8; // eax
 
   Object::Unlink(); /*0x65aacf*/
-  result = this->radioLinks[2]; /*0x65aad4*/
+  result = this->u32_E8; /*0x65aad4*/
   for ( i = 0; i < result; ++i ) /*0x65aade*/
   {
-    v6 = this->radioLinks[1]; /*0x65aae0*/
+    v6 = *(unsigned int *)&this->q0E4; /*0x65aae0*/
     v7 = *(unsigned int *)(v6 + 4 * i); /*0x65aae6*/
     v8 = (unsigned int *)(v6 + 4 * i); /*0x65aae9*/
     if ( v7 == aP1 ) /*0x65aaee*/
@@ -217,7 +217,7 @@ int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
       if ( aP2 ) /*0x65aaf2*/
         *v8 = 0; /*0x65aaf4*/
     }
-    result = this->radioLinks[2]; /*0x65aafa*/
+    result = this->u32_E8; /*0x65aafa*/
   }
   return result; /*0x65ab05*/
 }

@@ -991,7 +991,7 @@ struct InfantryTypeClass {
     unsigned char qDD8;  // 0xDD8
     void* qDF0;  // 0xDF0
     unsigned int qDF4;  // 0xDF4
-    unsigned int ;  // 0xDF8
+    unsigned int qDF8;  // 0xDF8
     unsigned int qDFC;  // 0xDFC
     char qE00[4];  // 0xE00
     unsigned int qE04;  // 0xE04
@@ -1008,7 +1008,7 @@ struct InfantryTypeClass {
     unsigned char qE30;  // 0xE30
     unsigned int u32_E34;  // 0xE34
     unsigned char u8_E38;  // 0xE38
-    void* ;  // 0xE3C
+    void *qE3C;  // 0xE3C
     int qE40;  // 0xE40
     int qE44;  // 0xE44
     int qE48;  // 0xE48

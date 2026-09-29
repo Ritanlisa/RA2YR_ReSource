@@ -724,12 +724,12 @@ void unknown::ddtor()
 
   v2 = *(void **)&this->m_1[3]; /*0x588ce6*/
   this->m_10 = 0; /*0x588ce9*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x588cf0*/
+  if ( v2 && this->IsAllocated ) /*0x588cf0*/
   {
     RA2_OPDEL(v2); /*0x588cf6*/
     *(unsigned int *)&this->m_1[3] = 0; /*0x588cfe*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x588d01*/
+  this->IsAllocated = 0; /*0x588d01*/
   this->m_8 = 0; /*0x588d04*/
 }
 // 0x5896A0
@@ -2142,7 +2142,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
       result = --v8; /*0x58d19f*/
     }
     while ( v8 ); /*0x58d1a4*/
-    this->? = 0; /*0x58d1a8*/
+    this->M12 = 0; /*0x58d1a8*/
   }
   return result; /*0x58d1ac*/
 }

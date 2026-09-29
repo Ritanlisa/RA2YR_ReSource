@@ -128,7 +128,7 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
           TEventClass::Execute((TEventClass *)v8, aP1, Owner, aP2, (int *)(&this->abstractFlags2), (int)&a5, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
-        this->house = TriggerClass::GetValue(v8); /*0x726561*/
+        *(unsigned int *)&this->house = TriggerClass::GetValue(v8); /*0x726561*/
       if ( a5 && TEventClass::GetStateA((TEventClass *)v8) && TEventClass::GetStateB_SpyEvent((TEventClass *)v8) ) /*0x726579*/
         this->occuredEvents |= 1 << v7; /*0x726582*/
     }
@@ -136,7 +136,7 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
     {
       v12 = 0; /*0x726549*/
     }
-    v8 = v8->nextTrigger; /*0x726585*/
+    v8 = *(unsigned int *)&v8->nextTrigger; /*0x726585*/
     ++v7; /*0x726588*/
   }
   while ( v8 ); /*0x72658b*/
@@ -176,9 +176,9 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x72687f*/
       aP0->AbstractClass = (void*)&TriggerClass_vftable; /*0x726884*/
-      aP0->? = (void*)&TriggerClass_vftable; /*0x72688a*/
-      aP0->? = (void*)&TriggerClass_vftable; /*0x726891*/
-      aP0->? = (void*)&TriggerClass_vftable; /*0x726898*/
+      *(void **)&aP0->vtable2 = (void*)&TriggerClass_vftable; /*0x72688a*/
+      *(void **)&aP0->vtable3 = (void*)&TriggerClass_vftable; /*0x726891*/
+      *(void **)&aP0->vtable4 = (void*)&TriggerClass_vftable; /*0x726898*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x7268a8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->nextTrigger); /*0x7268b6*/

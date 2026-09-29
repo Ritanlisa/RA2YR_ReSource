@@ -13,7 +13,7 @@ struct MPCooperative {
     bool IsAllocated;  // 0xD
     void* q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int ;  // 0x14
+    unsigned int q14;  // 0x14
     int Count;  // 0x16
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
@@ -23,11 +23,11 @@ struct MPCooperative {
     void* q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned int ;  // 0x38
+    unsigned int q38;  // 0x38
     unsigned int u32_3C;  // 0x3C
     void* q03F;  // 0x3F
     void* q040;  // 0x40
-    unsigned int ;  // 0x44
+    unsigned int q44;  // 0x44
     void* q048;  // 0x48
     unsigned char u8_49;  // 0x49
     void* q04C;  // 0x4C

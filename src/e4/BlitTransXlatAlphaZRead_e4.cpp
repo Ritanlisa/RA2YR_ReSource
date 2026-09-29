@@ -27,7 +27,7 @@ unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50(unsigned sh
       v13 = *a2++; /*0x494942*/
       if ( v13 && *result ) /*0x49494d*/
       {
-        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v13) >> 1)); /*0x494978*/
+        *a1 = (this->ptr_8 & (*a1 >> 1)) + (this->ptr_8 & (*(unsigned short *)(*(unsigned int *)&this->q004 + 2 * v13) >> 1)); /*0x494978*/
         v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x49497b*/
       }
       ++result; /*0x494984*/
@@ -60,7 +60,7 @@ unsigned short * BlitTransXlatAlphaZRead_ushort::Blit_Alpha_Lucent50_0(unsigned 
       v13 = *a2++; /*0x494a62*/
       if ( v13 && !*result ) /*0x494a6d*/
       {
-        *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * v13) >> 1)); /*0x494a98*/
+        *a1 = (this->ptr_8 & (*a1 >> 1)) + (this->ptr_8 & (*(unsigned short *)(*(unsigned int *)&this->q004 + 2 * v13) >> 1)); /*0x494a98*/
         v12 = *(unsigned int *)&stru_87E790.__pad_D8[60]; /*0x494a9b*/
       }
       ++result; /*0x494aa4*/
@@ -88,7 +88,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v11 > 254 ) /*0x494b8b*/
     v11 = 254; /*0x494b8d*/
-  result = this->m_8 + (v11 << 9); /*0x494b98*/
+  result = this->ptr_8 + (v11 << 9); /*0x494b98*/
   v17 = (uint16_t *)result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
@@ -99,7 +99,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
       v15 = *a6++; /*0x494bbf*/
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
-        *a2 = (gamemd::Stream *)(*(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((uint8_t)*a3 | v17[*a7])));
+        *a2 = (gamemd::Stream *)(*(unsigned short *)(*(unsigned int *)&this->q010 + 2 * ((uint8_t)*a3 | v17[*a7])));
         v13 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a2; /*0x494c06*/
@@ -130,7 +130,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
   v12 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
   if ( v12 > 254 ) /*0x494c6b*/
     v12 = 254; /*0x494c6d*/
-  result = this->m_8 + (v12 << 9); /*0x494c78*/
+  result = this->ptr_8 + (v12 << 9); /*0x494c78*/
   v18 = (uint16_t *)result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
@@ -141,7 +141,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
       v16 = *a6++; /*0x494c9f*/
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
-        *a2 = (gamemd::Stream *)(a10 | *(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((uint8_t)*a3 | v18[*a7])));
+        *a2 = (gamemd::Stream *)(a10 | *(unsigned short *)(*(unsigned int *)&this->q010 + 2 * ((uint8_t)*a3 | v18[*a7])));
         v14 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a2; /*0x494ceb*/
@@ -384,10 +384,10 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(char a2)
   m_8 = (gamemd::BlitTransXlatAlphaZRead_ushort *)((void *)this->m_8);
   *(unsigned int *)this->__pad_0 = (void*)&BlitTransXlatAlphaZRead_unsigned_short_vftable; /*0x49a42b*/
   FractalNoise::Dtor(m_8); /*0x49a432*/
-  this->m_8 = 0; /*0x49a43b*/
+  *(unsigned int *)&this->ptr_8 = 0; /*0x49a43b*/
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a444*/
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
     RA2_OPDEL(); /*0x49a44d*/
-  return this->__pad_0; /*0x49a457*/
+  return this; /*0x49a457*/
 }
 } // namespace gamemd

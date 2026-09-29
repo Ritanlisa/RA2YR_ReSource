@@ -45,9 +45,9 @@ int Audio::GetChannelStatus()
   int v3; // edi
   int v4; // eax
 
-  if ( (this->__pad_3C[104] & 5) != 0 ) /*0x40272a*/
+  if ( (this->u8_A4 & 5) != 0 ) /*0x40272a*/
     return -2146500608; /*0x40272c*/
-  if ( !*(unsigned int *)&this->__pad_3C[300] ) /*0x402733*/
+  if ( !*(unsigned int *)&this->q168 ) /*0x402733*/
     return -2147024896; /*0x40273d*/
   Audio::InitChannels(this->__pad_10); /*0x402748*/
   ObjectClass::Cleanup(); /*0x40274f*/
@@ -55,7 +55,7 @@ int Audio::GetChannelStatus()
   v3 = (*(int (__thiscall **)(Audio *))(*(unsigned int *)&this->__pad_3C[152] + 12))(this); /*0x40276a*/
   if ( !v3 ) /*0x40276e*/
   {
-    v4 = *(unsigned int *)&this->__pad_3C[104]; /*0x402770*/
+    v4 = *(unsigned int *)&this->u8_A4; /*0x402770*/
     IDA_LOBYTE(v4) = v4 | 1; /*0x402776*/
     *(unsigned int *)&this->__pad_3C[104] = v4; /*0x402778*/
   }
@@ -72,7 +72,7 @@ int Audio::ReleaseChannelRefs()
   RefCount **v4; // esi
 
   v2 = 0; /*0x404d84*/
-  result = *(unsigned int *)&this->__pad_3C[108]; /*0x404d86*/
+  result = *(unsigned int *)&this->u32_A8; /*0x404d86*/
   if ( result <= 0 ) /*0x404d8e*/
   {
     *(unsigned int *)&this->__pad_3C[108] = 0; /*0x404dbd*/
@@ -84,12 +84,12 @@ int Audio::ReleaseChannelRefs()
     {
       RefCount::Decrement(*v4); /*0x404d96*/
       *v4 = 0; /*0x404d9b*/
-      result = *(unsigned int *)&this->__pad_3C[108]; /*0x404da1*/
+      result = *(unsigned int *)&this->u32_A8; /*0x404da1*/
       ++v2; /*0x404da7*/
       ++v4; /*0x404da8*/
     }
     while ( v2 < result ); /*0x404dad*/
-    *(unsigned int *)&this->__pad_3C[108] = 0; /*0x404daf*/
+    *(unsigned int *)&this->u32_A8 = 0; /*0x404daf*/
   }
   return result; /*0x404dba*/
 }
@@ -109,13 +109,13 @@ int Audio::UpdatePlaybackPosition()
   if ( this != *(Audio **)(v2 + 192) ) /*0x4054b0*/
     return 0; /*0x4054b3*/
   AudioFile::GetCallback((AudioFile *)v2); /*0x4054b7*/
-  v4 = *(unsigned int **)&this->__pad_3C[268]; /*0x4054bc*/
+  v4 = *(unsigned int **)&this->u32_148; /*0x4054bc*/
   v5 = *(unsigned int *)this->__pad_18; /*0x4054c2*/
   IDA_LOBYTE(v5) = v5 | 8; /*0x4054c5*/
   *(unsigned int *)this->__pad_18 = v5; /*0x4054c7*/
   BindChannelAudioStream(*(unsigned int **)&this->__pad_3C[116], v4); /*0x4054d2*/
   EndBufferMixer((int *)(*(unsigned int *)&this->__pad_3C[116] + 56), *(unsigned int *)&this->__pad_3C[272]); /*0x4054e6*/
-  v6 = *(unsigned int *)&this->__pad_3C[276]; /*0x4054eb*/
+  v6 = *(unsigned int *)&this->q150; /*0x4054eb*/
   v7 = 0x4000; /*0x4054f1*/
   if ( v6 > 0 ) /*0x4054f8*/
     v7 = 0x4000 - (v6 << 14) / 0x64u; /*0x40550e*/
@@ -125,7 +125,7 @@ int Audio::UpdatePlaybackPosition()
   *(unsigned int *)&this->__pad_3C[268] = 0; /*0x40552e*/
   if ( Audio::GetChannelStatus(*(Audio **)&this->__pad_3C[116]) ) /*0x40553e*/
   {
-    *(unsigned int *)&this->__pad_18[4] = 1; /*0x405547*/
+    *(unsigned int *)&this->u32_1C = 1; /*0x405547*/
     *(unsigned int *)&this->__pad_3C[268] = v4; /*0x40554e*/
     v8 = *(unsigned int *)this->__pad_18; /*0x405554*/
     IDA_LOBYTE(v8) = v8 & 0xFD; /*0x405557*/
@@ -380,8 +380,8 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
   this->u32_C = 255; /*0x5d048e*/
   if ( (uint8_t)String::NotEquals((String *)a1, 0) && Audio::IsSoundEnabled() ) /*0x5d04a2*/
   {
-    unknown_libname_73(&v7.m_3[1]); /*0x5d04b5*/
-    v4 = String::Tokenize(aP2, 0, Str, (void **)&v7.m_3[1]); /*0x5d04d5*/
+    unknown_libname_73(&v7.q4); /*0x5d04b5*/
+    v4 = String::Tokenize(aP2, 0, Str, (void **)&v7.q4); /*0x5d04d5*/
     unknown_libname_73(&v7); /*0x5d04d7*/
     String::Tokenize(aP2, v4, Str, (void **)&v7); /*0x5d04e9*/
     if ( (uint8_t)String::NotEquals(&v7, 0) ) /*0x5d04f4*/
@@ -399,10 +399,10 @@ ObjectClass * * Audio::ParseVolume(const char ** a1, ObjectClass * aP2)
       }
       this->u32_C = 255 * this->u32_C / 100; /*0x5d053f*/
     }
-    if ( this->u32_C > 0 && (uint8_t)String::NotEquals((String *)&v7.m_3[1], 0) ) /*0x5d054f*/
+    if ( this->u32_C > 0 && (uint8_t)String::NotEquals((String *)&v7.q4, 0) ) /*0x5d054f*/
       String::Reassign(a1); /*0x5d055f*/
     DeleteAndZero((ObjectClass *)&v7); /*0x5d0568*/
-    DeleteAndZero((ObjectClass *)&v7.m_3[1]); /*0x5d0571*/
+    DeleteAndZero((ObjectClass *)&v7.q4); /*0x5d0571*/
   }
   return this; /*0x5d0578*/
 }
@@ -412,7 +412,7 @@ namespace gamemd {
 char ** Audio::SetSoundFileName(char * Source, int a3)
 {
   *(unsigned int *)this->__pad_0 = 0; /*0x5d5825*/
-  *(unsigned int *)&this->__pad_0[4] = 0; /*0x5d5827*/
+  *(unsigned int *)&this->u32_4 = 0; /*0x5d5827*/
   this->__pad_0[8] = 0; /*0x5d582a*/
   if ( Audio::IsSoundEnabled() ) /*0x5d582d*/
     *(unsigned int *)this->__pad_0 = _strdup(Source); /*0x5d5843*/
@@ -599,7 +599,7 @@ int Audio::LoadWAVFiles()
       IDA_LOBYTE(IsSoundEnabled) = stru_A8EB00.?[384]; /*0x720814*/
       if ( !stru_A8EB00.?[384] ) /*0x72081b*/
       {
-        IsSoundEnabled = *(unsigned int *)&this->__pad_18[12]; /*0x720821*/
+        IsSoundEnabled = *(unsigned int *)&this->q024; /*0x720821*/
         for ( i = 0; i < IsSoundEnabled; ++i ) /*0x720828*/
         {
           _makepath(Buffer, 0, 0, (const char *)(*(unsigned int *)(*(unsigned int *)this->__pad_18 + 4 * i) + 256), g_Str_File__WAV); /*0x720855*/
@@ -624,7 +624,7 @@ int Audio::LoadWAVFiles()
           Vector::Clear((int)v11); /*0x72090c*/
           *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x720915*/
           BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x72091d*/
-          IsSoundEnabled = *(unsigned int *)&this->__pad_18[12]; /*0x720922*/
+          IsSoundEnabled = *(unsigned int *)&this->q024; /*0x720922*/
         }
       }
     }

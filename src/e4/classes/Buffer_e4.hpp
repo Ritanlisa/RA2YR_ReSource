@@ -7,8 +7,8 @@ namespace gamemd {
 
 struct Buffer {
 // --- flat members (BEGIN) ---
-    void* ;  // 0x0
-    void* ;  // 0x4
+    void *q0;  // 0x0
+    void *q4;  // 0x4
     unsigned int Buffer_field_08;  // 0x8
     unsigned int Buffer_field_0C;  // 0xC
     bool IsAllocated;  // 0xD

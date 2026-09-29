@@ -519,19 +519,19 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
   this->isOnMap = (unsigned int)(0); /*0x4a3297*/
   memset(&this->?, 0, 0x6Cu); /*0x4a329e*/
   this->? = (void *)108; /*0x4a32a4*/
-  this->? = (void *)7; /*0x4a32aa*/
+  *(unsigned short *)&this->M8 = (void *)7; /*0x4a32aa*/
   this->health = dword_81FC60[a4]; /*0x4a32b8*/
-  this->? = a2; /*0x4a32bf*/
-  this->? = (void *)a3; /*0x4a32c2*/
+  this->M16 = a2; /*0x4a32bf*/
+  *(void **)&this->M12 = (void *)a3; /*0x4a32c2*/
   if ( a4 == 1 ) /*0x4a32c5*/
   {
-    this->? = (void *)71; /*0x4a32c7*/
-    this->? = 16; /*0x4a32ce*/
+    *(unsigned short *)&this->M8 = (void *)71; /*0x4a32c7*/
+    *(unsigned short *)&this->M28 = 16; /*0x4a32ce*/
   }
   if ( !dword_8A0E00 /*0x4a32e5*/
     || !(*(int (__stdcall **)(int, void **, int *, unsigned int))(*(unsigned int *)dword_8A0E00 + 24))(
           dword_8A0E00,
-          &this->?,
+          &this->q018,
           &this->estimatedHealth,
           0) )
   {
@@ -635,7 +635,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
         v8[0] = (void*)&CCFileClass_vftable; /*0x4a39df*/
         v9[3] = 0; /*0x4a39e7*/
         Vector::Clear((int)v9); /*0x4a39ef*/
-        v8[0] = &off_7E1668; /*0x4a39f8*/
+        v8[0] = (unsigned int)&off_7E1668; /*0x4a39f8*/
         BufferIOFileClass::Dtor(v8); /*0x4a3a00*/
         return (int)v5; /*0x4a3a05*/
       }
@@ -1543,7 +1543,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   this->M28 = 0; /*0x4a6869*/
   this->q020 = 0; /*0x4a686c*/
   v6 = operator new(0x42Cu); /*0x4a686f*/
-  this->M4 = v6; /*0x4a6879*/
+  *(void **)&this->M4 = v6; /*0x4a6879*/
   if ( !v6 ) /*0x4a687c*/
     goto LABEL_12; /*0x4a687c*/
   *v6 = 40; /*0x4a6882*/
@@ -1606,7 +1606,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   {
     v15 = 0; /*0x4a69d9*/
   }
-  this->q020 = v15; /*0x4a69dd*/
+  *(void **)&this->q020 = v15; /*0x4a69dd*/
   if ( !v15 ) /*0x4a69e0*/
   LABEL_12:
     *this = 1; /*0x4a69e2*/
@@ -2725,7 +2725,7 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
       goto LABEL_17; /*0x4afa5a*/
     }
   }
-  referenceCount = this->?; /*0x4afa5c*/
+  referenceCount = this->M28; /*0x4afa5c*/
   if ( referenceCount ) /*0x4afa61*/
   {
     v10 = CopyAudioData(v14, referenceCount); /*0x4afa67*/
@@ -2854,7 +2854,7 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
     v10 = *(unsigned int *)(this->EnumConnectionPointsClass_field_0x10 + 4 * i); /*0x4a0d8b*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 4))(v10); /*0x4a0d8e*/
   }
-  return this->__pad_0; /*0x4a0d9b*/
+  return this; /*0x4a0d9b*/
 }
 } // namespace gamemd
 
@@ -3782,8 +3782,8 @@ signed int sub_4A50A0(signed int a1)
 namespace gamemd {
 void E4Recv_4A52D0::sub_4A52D0()
 {
-  IDA_LOBYTE(this->?) = 0; /*0x4a52d0*/
-  IDA_BYTE1(this->?) = 1; /*0x4a52d4*/
+  IDA_LOBYTE(this->M24) = 0; /*0x4a52d0*/
+  IDA_BYTE1(this->M24) = 1; /*0x4a52d4*/
 }
 } // namespace gamemd
 
@@ -3791,8 +3791,8 @@ void E4Recv_4A52D0::sub_4A52D0()
 namespace gamemd {
 char E4Recv_4A52E0::sub_4A52E0()
 {
-  IDA_LOBYTE(this->?) = 0; /*0x4a52e2*/
-  IDA_BYTE1(this->?) = 0; /*0x4a52e5*/
+  IDA_LOBYTE(this->M24) = 0; /*0x4a52e2*/
+  IDA_BYTE1(this->M24) = 0; /*0x4a52e5*/
   return 0; /*0x4a52e8*/
 }
 } // namespace gamemd
@@ -4586,7 +4586,7 @@ BOOL E4Recv_4AFED0::sub_4AFED0()
   result = 0; /*0x4aff4f*/
   if ( v2 == 1.0 ) /*0x4aff20*/
   {
-    vtable3 = (float *)this->?; /*0x4aff22*/
+    vtable3 = (float *)this->M12; /*0x4aff22*/
     if ( fabs(vtable3[202]) < 0.005 && fabs(vtable3[203]) < 0.005 ) /*0x4aff4d*/
       return 1; /*0x4aff20*/
   }

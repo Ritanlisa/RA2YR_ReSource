@@ -137,7 +137,7 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
 }
 // 0x7C91A5
 namespace gamemd {
-void* __usercall CIpow_Helper_Helper(double a1@<st0> a1)
+void* __usercall CIpow_Helper_Helper(double a1)
 {
   _ST6 = a1; /*0x7c91a5*/
   __asm { frndint } /*0x7c91a7*/

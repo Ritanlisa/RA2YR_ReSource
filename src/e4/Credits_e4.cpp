@@ -80,7 +80,7 @@ char Credits::Screen()
       v11[0] = (void*)&CCFileClass_vftable; /*0x52cc7c*/
       v13 = 0; /*0x52cc84*/
       Vector::Clear(v12); /*0x52cc88*/
-      v11[0] = &off_7E1668; /*0x52cc91*/
+      v11[0] = (unsigned int)&off_7E1668; /*0x52cc91*/
       BufferIOFileClass::Dtor(v11); /*0x52cc99*/
       FirstFileA = v10; /*0x52cc9e*/
     }
@@ -116,7 +116,7 @@ char Credits::Screen()
     v11[0] = (void*)&CCFileClass_vftable; /*0x52cd3d*/
     v13 = 0; /*0x52cd45*/
     Vector::Clear(v12); /*0x52cd49*/
-    v11[0] = &off_7E1668; /*0x52cd52*/
+    v11[0] = (unsigned int)&off_7E1668; /*0x52cd52*/
     return BufferIOFileClass::Dtor(v11); /*0x52cd5a*/
   }
   return result; /*0x52cd5f*/

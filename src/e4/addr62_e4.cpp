@@ -2075,7 +2075,7 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
     v18 = 0; /*0x62791f*/
   }
   String::CopyUpper(String, a2); /*0x62792c*/
-  vtable3 = (int (__thiscall **)(char *))this->?; /*0x627931*/
+  vtable3 = (int (__thiscall **)(char *))this->M12; /*0x627931*/
   v6 = vtable3[1](String); /*0x627938*/
   v7 = *((unsigned int *)*vtable3 + 6 * (v6 % (int)vtable3[2]) + 4); /*0x627944*/
   v8 = (int)*vtable3 + 24 * (v6 % (int)vtable3[2]); /*0x627948*/
@@ -2138,7 +2138,7 @@ unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
   char String[256]; // [esp+14h] [ebp-100h] BYREF
 
   String::CopyUpper(String, aP1); /*0x627a2c*/
-  vtable3 = (int (__thiscall **)(char *))this->?; /*0x627a31*/
+  vtable3 = (int (__thiscall **)(char *))this->M12; /*0x627a31*/
   v4 = (int)*vtable3 + 24 * (vtable3[1](String) % (int)vtable3[2]); /*0x627a48*/
   v5 = *(unsigned int *)(v4 + 16) - 1; /*0x627a4b*/
   if ( v5 < 0 ) /*0x627a4c*/
@@ -2811,7 +2811,7 @@ int E4Recv_6274F0::sub_6274F0(ObjectClass * aP1)
   char String[256]; // [esp+10h] [ebp-100h] BYREF
 
   String::CopyUpper(String, aP1); /*0x627505*/
-  vtable3 = (int (__thiscall **)(char *))this->?; /*0x62750a*/
+  vtable3 = (int (__thiscall **)(char *))this->M12; /*0x62750a*/
   v4 = (int)*vtable3 + 24 * (vtable3[1](String) % (int)vtable3[2]); /*0x627521*/
   v5 = *(unsigned int *)(v4 + 16) - 1; /*0x627524*/
   if ( v5 < 0 ) /*0x627525*/

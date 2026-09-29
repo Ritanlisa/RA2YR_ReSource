@@ -522,8 +522,8 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
     while ( 1 ) /*0x7a7be3*/
     {
       ++v21; /*0x7a7be3*/
-      String::Assign((String *)&v19.m_3[1], (const char *)(v20 + 36)); /*0x7a7be7*/
-      String::ToLower((String *)&v19.m_3[1]); /*0x7a7bf0*/
+      String::Assign((String *)&v19.q4, (const char *)(v20 + 36)); /*0x7a7be7*/
+      String::ToLower((String *)&v19.q4); /*0x7a7bf0*/
       v8 = 0; /*0x7a7bf5*/
       if ( owningHouseIndex <= 0 ) /*0x7a7bf9*/
         break; /*0x7a7bf9*/
@@ -537,7 +537,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
         }
         String::Assign(&v19, &v24[36]); /*0x7a7c2e*/
         String::ToLower(&v19); /*0x7a7c37*/
-        if ( (uint8_t)String::Compare((String *)&v19.m_3[1], (const char **)&v19) ) /*0x7a7c45*/
+        if ( (uint8_t)String::Compare((String *)&v19.q4, (const char **)&v19) ) /*0x7a7c45*/
           break; /*0x7a7c45*/
         DeleteAndZero((ObjectClass *)&v19); /*0x7a7c52*/
         ++v8; /*0x7a7c57*/
@@ -550,13 +550,13 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
         break; /*0x7a7c68*/
       v20 = *(unsigned int *)(v20 + 32); /*0x7a7c75*/
       v10 = v20; /*0x7a7c72*/
-      DeleteAndZero((ObjectClass *)&v19.m_3[1]); /*0x7a7c79*/
+      DeleteAndZero((ObjectClass *)&v19.q4); /*0x7a7c79*/
       if ( !v10 ) /*0x7a7c80*/
         goto LABEL_16; /*0x7a7c80*/
     }
   LABEL_15:
     v18 = 0; /*0x7a7c87*/
-    DeleteAndZero((ObjectClass *)&v19.m_3[1]); /*0x7a7c90*/
+    DeleteAndZero((ObjectClass *)&v19.q4); /*0x7a7c90*/
   }
   LABEL_16:
   if ( v21 == owningHouseIndex && v18 ) /*0x7a7ca1*/
@@ -1599,7 +1599,7 @@ int CComObject_CChatEventSink___ATL::DispatchStub_33(int a1, int a2, int a3)
         else
           v7 = 0; /*0x7ab966*/
         String::Reassign(v7, (const char **)&a2); /*0x7ab96f*/
-        *(unsigned int *)&v7->m_3[1] = v5; /*0x7ab978*/
+        *(unsigned int *)&v7->q4 = v5; /*0x7ab978*/
         *(unsigned int *)v7[1].__pad_0 = 0; /*0x7ab981*/
         v8 = CComObject_CChatEventSink___ATL::Check((int)&g_WOL_ConnectionPool, (int)&a2); /*0x7ab984*/
         v9 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 + 4 * v8); /*0x7ab98f*/
@@ -1742,7 +1742,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_35(int a1, int a
     v11 = 0; /*0x7abca1*/
   String::Reassign(v11, (const char **)v15); /*0x7abcaa*/
   *(unsigned int *)v11[1].__pad_0 = 0; /*0x7abcaf*/
-  *(unsigned int *)&v11->m_3[1] = a3; /*0x7abcb6*/
+  *(unsigned int *)&v11->q4 = a3; /*0x7abcb6*/
   v12 = dword_B76548(v15) & ((1 << IDA_SLOBYTE(g_WOL_ConnectionPool.HashMap_field_0x0C)) - 1); /*0x7abcd7*/
   v13 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 + 4 * v12); /*0x7abcd9*/
   *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 + 4 * v12) = v11; /*0x7abcdc*/
@@ -1848,7 +1848,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_34(int a1, int a
         else
           v14 = 0; /*0x7abedf*/
         String::Reassign(v14, (const char **)&a2); /*0x7abee8*/
-        *(unsigned int *)&v14->m_3[1] = v12; /*0x7abef1*/
+        *(unsigned int *)&v14->q4 = v12; /*0x7abef1*/
         *(unsigned int *)v14[1].__pad_0 = 0; /*0x7abef4*/
         v15 = dword_B76698(&a2) & ((1 << IDA_SLOBYTE(stru_B765EC.location[1])) - 1); /*0x7abf11*/
         v16 = *(unsigned int *)(stru_B765EC.lastLayer + 4 * v15); /*0x7abf13*/
@@ -1956,7 +1956,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::DispatchStub_36(int a1, int a
   else
     v11 = 0; /*0x7ac168*/
   String::Reassign(v11, (const char **)&a3); /*0x7ac171*/
-  *(unsigned int *)&v11->m_3[1] = v3; /*0x7ac17a*/
+  *(unsigned int *)&v11->q4 = v3; /*0x7ac17a*/
   *(unsigned int *)v11[1].__pad_0 = 0; /*0x7ac17d*/
   v12 = dword_B76698(&a3) & ((1 << IDA_SLOBYTE(stru_B765EC.location[1])) - 1); /*0x7ac19a*/
   v13 = *(unsigned int *)(stru_B765EC.lastLayer + 4 * v12); /*0x7ac19c*/

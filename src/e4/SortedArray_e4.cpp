@@ -227,7 +227,7 @@ int SortedArray::FindPair(int * a2)
   }
   if ( !v10 ) /*0x538a09*/
     return 0; /*0x538a04*/
-  this->q010 = v10; /*0x538a0d*/
+  *(void **)&this->q010 = v10; /*0x538a0d*/
   return 1; /*0x5389a0*/
 }
 } // namespace gamemd

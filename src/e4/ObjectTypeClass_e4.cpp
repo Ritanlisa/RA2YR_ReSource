@@ -131,9 +131,9 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
 
   AbstractTypeClass::Constructor(aP1); /*0x5f709c*/
   v3 = &this->u32_C8; /*0x5f70a3*/
-  this->q098 = 0; /*0x5f70a9*/
+  *(unsigned int *)&this->q098 = 0; /*0x5f70a9*/
   this->q264 = 0; /*0x5f70af*/
-  this->q268 = 0; /*0x5f70b5*/
+  *(unsigned int *)&this->q268 = 0; /*0x5f70b5*/
   *(&this->vtable49) = 0; /*0x5f70bb*/
   *(&this->uniqueId0) = 0; /*0x5f70c1*/
   *(&this->uniqueId1) = 0; /*0x5f70c7*/
@@ -164,7 +164,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
     --v6; /*0x5f7120*/
   }
   while ( v6 ); /*0x5f7121*/
-  this->q1E8 = 0; /*0x5f712e*/
+  *(unsigned int *)&this->q1E8 = 0; /*0x5f712e*/
   *(&this->NoSpawnAlt3) = 0; /*0x5f7134*/
   *(&this->NoSpawnAlt4) = -1; /*0x5f713a*/
   *(&this->NoSpawnAlt5) = -1; /*0x5f7140*/
@@ -212,9 +212,9 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   this->q28C = 0; /*0x5f7243*/
   *(&this->q0404) = 0; /*0x5f7249*/
   *(unsigned int *)this = (int)&ObjectTypeClass_vftable; /*0x5f7251*/
-  this->vtable2 = (int)&ObjectTypeClass_vftable; /*0x5f7258*/
-  this->vtable3 = (int)&ObjectTypeClass_vftable; /*0x5f725f*/
-  this->vtable4 = (int)&ObjectTypeClass_vftable; /*0x5f7266*/
+  *(unsigned int *)&this->vtable2 = (int)&ObjectTypeClass_vftable; /*0x5f7258*/
+  *(unsigned int *)&this->vtable3 = (int)&ObjectTypeClass_vftable; /*0x5f725f*/
+  *(unsigned int *)&this->vtable4 = (int)&ObjectTypeClass_vftable; /*0x5f7266*/
   if ( &this->BarrelVoxel != &this->NoSpawnAlt6 ) /*0x5f726d*/
     qmemcpy(&this->ImageFile_0x19, &this->BarrelVoxel, 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
@@ -256,7 +256,7 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
 
   AbstractTypeClass::Init(aP1); /*0x5f7328*/
   v3 = &this->ChargerTurrets[3]; /*0x5f732f*/
-  this->Image = 0; /*0x5f7335*/
+  *(unsigned int *)&this->Image = 0; /*0x5f7335*/
   v4 = 18; /*0x5f733b*/
   do /*0x5f7349*/
   {
@@ -266,7 +266,7 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
     --v4; /*0x5f7348*/
   }
   while ( v4 ); /*0x5f7349*/
-  v5 = &this->__pad_14D[11]; /*0x5f734b*/
+  v5 = &this->u32_158; /*0x5f734b*/
   v6 = 18; /*0x5f7351*/
   do /*0x5f735f*/
   {
@@ -297,9 +297,9 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
   IDA_LOBYTE(this->VoxelCaches[18]) = 0; /*0x5f73cd*/
   this->VoxelCaches[19] = 0; /*0x5f73d3*/
   this->AbstractTypeClass = (void*)&ObjectTypeClass_vftable; /*0x5f73d9*/
-  this->? = (void*)&ObjectTypeClass_vftable; /*0x5f73df*/
-  this->? = (void*)&ObjectTypeClass_vftable; /*0x5f73e6*/
-  this->? = (void*)&ObjectTypeClass_vftable; /*0x5f73ed*/
+  *(void **)&this->vtable2 = (void*)&ObjectTypeClass_vftable; /*0x5f73df*/
+  *(void **)&this->vtable3 = (void*)&ObjectTypeClass_vftable; /*0x5f73e6*/
+  *(void **)&this->vtable4 = (void*)&ObjectTypeClass_vftable; /*0x5f73ed*/
   return &this->AbstractTypeClass; /*0x5f73f6*/
 }
 } // namespace gamemd
@@ -330,34 +330,34 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   if ( this->ImageAllocated && this->q0A4 ) /*0x5f7476*/
   {
     RA2_OPDEL(*(void **)(&this->q0404)); /*0x5f7481*/
-    this->q0A4 = 0; /*0x5f7489*/
+    *(unsigned int *)&this->q0A4 = 0; /*0x5f7489*/
     this->ImageAllocated = 0; /*0x5f748f*/
   }
   ObjectTypeClass::CleanupWeapons(); /*0x5f7497*/
   RA2_OPDEL(*(void **)(&this->q1000)); /*0x5f74a3*/
-  this->q280 = 0; /*0x5f74a8*/
-  this->q284 = 0; /*0x5f74ae*/
-  this->q288 = 0; /*0x5f74b4*/
+  *(unsigned int *)&this->q280 = 0; /*0x5f74a8*/
+  *(unsigned int *)&this->q284 = 0; /*0x5f74ae*/
+  *(unsigned int *)&this->q288 = 0; /*0x5f74b4*/
   this->q28C = 0; /*0x5f74ba*/
-  this->q290 = 0; /*0x5f74c0*/
+  *(unsigned int *)&this->q290 = 0; /*0x5f74c0*/
   RA2_OPDEL(*(void **)(&this->q0F80)); /*0x5f74cd*/
-  this->q26C = 0; /*0x5f74d2*/
-  this->q270 = 0; /*0x5f74d8*/
-  this->q274 = 0; /*0x5f74de*/
+  *(unsigned int *)&this->q26C = 0; /*0x5f74d2*/
+  *(unsigned int *)&this->q270 = 0; /*0x5f74d8*/
+  *(unsigned int *)&this->q274 = 0; /*0x5f74de*/
   this->q278 = 0; /*0x5f74e4*/
-  this->q27C = 0; /*0x5f74ea*/
+  *(unsigned int *)&this->q27C = 0; /*0x5f74ea*/
   RA2_OPDEL(*(void **)(&this->q0F00)); /*0x5f74f7*/
-  this->q258 = 0; /*0x5f74fc*/
-  this->q25C = 0; /*0x5f7502*/
-  this->q260 = 0; /*0x5f7508*/
+  *(unsigned int *)&this->q258 = 0; /*0x5f74fc*/
+  *(unsigned int *)&this->q25C = 0; /*0x5f7502*/
+  *(unsigned int *)&this->q260 = 0; /*0x5f7508*/
   this->q264 = 0; /*0x5f750e*/
-  this->q268 = 0; /*0x5f7514*/
+  *(unsigned int *)&this->q268 = 0; /*0x5f7514*/
   RA2_OPDEL(*(void **)(&this->q0E80)); /*0x5f7521*/
   this->VoxelCaches_4 = 0; /*0x5f7526*/
-  this->q248 = 0; /*0x5f752c*/
-  this->q24C = 0; /*0x5f7532*/
+  *(unsigned int *)&this->q248 = 0; /*0x5f752c*/
+  *(unsigned int *)&this->q24C = 0; /*0x5f7532*/
   this->q094 = 0; /*0x5f7538*/
-  this->q254 = 0; /*0x5f753e*/
+  *(unsigned int *)&this->q254 = 0; /*0x5f753e*/
   v3 = (ObjectTypeClass *)(&this->u32_C08); /*0x5f7547*/
   v4 = 18; /*0x5f754d*/
   do /*0x5f755d*/
@@ -579,13 +579,13 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   if ( *(&this->q0408) && this->q0A4 ) /*0x5f91eb*/
     RA2_OPDEL(*((void **)&this->uniqueId1)); /*0x5f91f6*/
   v6 = *(unsigned int *)this; /*0x5f91fe*/
-  this->q0A4 = 0; /*0x5f9203*/
+  *(unsigned int *)&this->q0A4 = 0; /*0x5f9203*/
   *(&this->q0408) = 0; /*0x5f920d*/
   if ( (*(int (__thiscall **)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
     || (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) == 5 )
   {
     v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
-    this->q0A4 = v9; /*0x5f926e*/
+    *(unsigned int *)&this->q0A4 = v9; /*0x5f926e*/
     if ( v9 ) /*0x5f9274*/
       goto LABEL_41; /*0x5f9274*/
     v15 = 71; /*0x5f9276*/
@@ -596,20 +596,20 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
     && (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) != 37 )
   {
     v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
-    this->q0A4 = v7; /*0x5f9250*/
+    *(unsigned int *)&this->q0A4 = v7; /*0x5f9250*/
     if ( !v7 ) /*0x5f9256*/
     {
       v15 = 71; /*0x5f9258*/
       v8 = 0; /*0x5f925d*/
   LABEL_40:
-      this->q0A4 = SearchMIXFile(&Source, v8); /*0x5f927d*/
+      *(unsigned int *)&this->q0A4 = SearchMIXFile(&Source, v8); /*0x5f927d*/
     }
   }
   LABEL_41:
-  result = this->q0A4; /*0x5f928c*/
+  result = *(unsigned int *)&this->q0A4; /*0x5f928c*/
   if ( result ) /*0x5f9294*/
   {
-    v11 = result->vtable3; /*0x5f9296*/
+    v11 = *(unsigned int *)&result->vtable3; /*0x5f9296*/
     IDA_LOWORD(result) = result->vtable2; /*0x5f929a*/
     if ( v11 <= (int16_t)result ) /*0x5f92a1*/
       result = (int16_t)result; /*0x5f92a8*/
@@ -704,7 +704,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aCrushable, Crushable); /*0x5f9412*/
   Bombable = this->Bombable; /*0x5f941f*/
   this->Crushable = Bool_Overwrite; /*0x5f9426*/
-  this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aBombable, Bombable); /*0x5f9431*/
+  this->Bombable = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)*(unsigned int *)&this->q22E, aBombable, Bombable); /*0x5f9431*/
   v9 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aNospawnalt, this->__pad_14D[155]); /*0x5f9446*/
   AlternateArcticArt = this->AlternateArcticArt; /*0x5f944b*/
   this->__pad_14D[155] = v9; /*0x5f9451*/
@@ -713,7 +713,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   this->AlternateArcticArt = v11; /*0x5f9474*/
   this->RadarInvisible = INIClass::ReadBool_Overwrite( /*0x5f947f*/
                            (int *)aP1,
-                           (uint8_t *)this->?,
+                           (uint8_t *)*(unsigned int *)&this->q22F,
                            aRadarinvisible,
                            RadarInvisible);
   v12 = INIClass::ReadBool_Overwrite((int *)aP1, (uint8_t *)this->?, aSelectable, this->Selectable); /*0x5f9494*/
@@ -731,12 +731,12 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   this->Immune = v17; /*0x5f9510*/
   this->Insignificant = INIClass::ReadBool_Overwrite( /*0x5f951b*/
                           (int *)aP1,
-                          (uint8_t *)this->?,
+                          (uint8_t *)*(unsigned int *)&this->q232,
                           aInsignificant,
                           Insignificant);
   this->HasRadialIndicator = INIClass::ReadBool_Overwrite( /*0x5f9549*/
                                (int *)aP1,
-                               (uint8_t *)this->?,
+                               (uint8_t *)*(unsigned int *)&this->q238,
                                aHasradialindic,
                                this->HasRadialIndicator);
   Coord = INIClass::GetCoord( /*0x5f954f*/
@@ -795,7 +795,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   if ( this->AlphaImageFile[0] ) /*0x5f9652*/
   {
     _makepath((char *)&Destination.Name[5], 0, 0, this->AlphaImageFile, Ext); /*0x5f9674*/
-    this->AlphaImage = (SHPStruct *)SearchMIXFile((char *)&Destination.Name[5], 0); /*0x5f968a*/
+    *(unsigned int *)&this->AlphaImage = (SHPStruct *)SearchMIXFile((char *)&Destination.VocClass_field_AC, 0); /*0x5f968a*/
   }
   return 1; /*0x5f9690*/
 }
@@ -1635,7 +1635,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
       *(unsigned int *)&aP3[8] = 128;
       *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
       *(unsigned int *)aP3 = &stru_87C374[56304];
-      *(unsigned int *)&v412.IsInitialized = &stru_830620[81100];
+      *(void **)&v412.IsInitialized = &stru_830620[81100];
       *(unsigned int *)(v4 + 2200) = eax42;
       v27 = *(CCINIClass **)(v4 + 2228);
       if ( INIClass::GetString(
@@ -1671,7 +1671,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
       *(unsigned int *)&aP3[8] = 128;
       *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
       *(unsigned int *)aP3 = &stru_87C374[56304];
-      *(unsigned int *)&v412.IsInitialized = &stru_830620[81068];
+      *(void **)&v412.IsInitialized = &stru_830620[81068];
       *(unsigned int *)(v4 + 2708) = eax48;
       v31 = *(CCINIClass **)(v4 + 2736);
       if ( INIClass::GetString(
@@ -1944,7 +1944,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80916];
+  *(void **)&v412.IsInitialized = &stru_830620[80916];
   *(unsigned int *)(v4 + 1324) = v49;
   int v60 = *(unsigned int *)(v4 + 1328);
   if ( !INIClass::GetString(
@@ -1962,7 +1962,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80904];
+  *(void **)&v412.IsInitialized = &stru_830620[80904];
   *(unsigned int *)(v4 + 1328) = v61;
   int v62 = *(unsigned int *)(v4 + 1332);
   if ( !INIClass::GetString(
@@ -1994,7 +1994,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[41908];
+  *(void **)&v412.IsInitialized = &stru_830620[41908];
   *(unsigned int *)(v4 + 1336) = v65;
   int v66 = *(unsigned int *)(v4 + 1340);
   if ( !INIClass::GetString(
@@ -2012,7 +2012,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[41892];
+  *(void **)&v412.IsInitialized = &stru_830620[41892];
   *(unsigned int *)(v4 + 1340) = v67;
   int v68 = *(unsigned int *)(v4 + 1344);
   if ( !INIClass::GetString(
@@ -2044,7 +2044,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[41876];
+  *(void **)&v412.IsInitialized = &stru_830620[41876];
   *(unsigned int *)(v4 + 1348) = v71;
   int v72 = *(unsigned int *)(v4 + 1352);
   if ( !INIClass::GetString(
@@ -2062,7 +2062,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80860];
+  *(void **)&v412.IsInitialized = &stru_830620[80860];
   *(unsigned int *)(v4 + 1352) = v73;
   int v74 = *(unsigned int *)(v4 + 1356);
   if ( !INIClass::GetString(
@@ -2094,7 +2094,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80828];
+  *(void **)&v412.IsInitialized = &stru_830620[80828];
   *(unsigned int *)(v4 + 1360) = v77;
   int v78 = *(unsigned int *)(v4 + 1364);
   if ( !INIClass::GetString(
@@ -2112,7 +2112,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80816];
+  *(void **)&v412.IsInitialized = &stru_830620[80816];
   *(unsigned int *)(v4 + 1364) = v79;
   int v80 = *(unsigned int *)(v4 + 1368);
   if ( !INIClass::GetString(
@@ -2165,7 +2165,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80748];
+  *(void **)&v412.IsInitialized = &stru_830620[80748];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 956) = TypeMember_54749E0;
   if ( INIClass::GetString(
@@ -2238,7 +2238,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80708];
+  *(void **)&v412.IsInitialized = &stru_830620[80708];
   *(unsigned int *)(v4 + 1032) = Alt;
   v92 = *(UnitTypeClass **)(v4 + 1036);
   if ( INIClass::GetString(
@@ -2297,7 +2297,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80604];
+  *(void **)&v412.IsInitialized = &stru_830620[80604];
   v412.Capacity = v4 + 36;
   *(unsigned char *)(v4 + 3233) = al112b;
   if ( !INIClass::GetString(
@@ -2330,7 +2330,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80564];
+  *(void **)&v412.IsInitialized = &stru_830620[80564];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1380) = v101;
   if ( !INIClass::GetString(
@@ -2412,7 +2412,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80512];
+  *(void **)&v412.IsInitialized = &stru_830620[80512];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1388) = v111;
   if ( !INIClass::GetString(
@@ -2431,7 +2431,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[41860];
+  *(void **)&v412.IsInitialized = &stru_830620[41860];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1392) = v113;
   if ( !INIClass::GetString(
@@ -2464,7 +2464,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80496];
+  *(void **)&v412.IsInitialized = &stru_830620[80496];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1400) = v117;
   if ( !INIClass::GetString(
@@ -2483,7 +2483,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80468];
+  *(void **)&v412.IsInitialized = &stru_830620[80468];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1404) = v119;
   if ( !INIClass::GetString(
@@ -2516,7 +2516,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80408];
+  *(void **)&v412.IsInitialized = &stru_830620[80408];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1412) = v123;
   if ( !INIClass::GetString(
@@ -2535,7 +2535,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80376];
+  *(void **)&v412.IsInitialized = &stru_830620[80376];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1416) = v125;
   if ( !INIClass::GetString(
@@ -2568,7 +2568,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80348];
+  *(void **)&v412.IsInitialized = &stru_830620[80348];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1424) = v129;
   if ( !INIClass::GetString(
@@ -2587,7 +2587,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[41232];
+  *(void **)&v412.IsInitialized = &stru_830620[41232];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1428) = v131;
   if ( !INIClass::GetString(
@@ -2620,7 +2620,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[41188];
+  *(void **)&v412.IsInitialized = &stru_830620[41188];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1436) = v135;
   if ( !INIClass::GetString(
@@ -2639,7 +2639,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[41164];
+  *(void **)&v412.IsInitialized = &stru_830620[41164];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1440) = v137;
   if ( !INIClass::GetString(
@@ -2672,7 +2672,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[41132];
+  *(void **)&v412.IsInitialized = &stru_830620[41132];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1448) = v141;
   if ( !INIClass::GetString(
@@ -2691,7 +2691,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[41252];
+  *(void **)&v412.IsInitialized = &stru_830620[41252];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1452) = v143;
   if ( !INIClass::GetString(
@@ -2802,7 +2802,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80284];
+  *(void **)&v412.IsInitialized = &stru_830620[80284];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1892) = v155;
   if ( INIClass::GetString(
@@ -2822,7 +2822,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = v4 + 1896;
   *(unsigned int *)&aP3[4] = &stru_830620[80260];
   *(unsigned int *)aP3 = v4 + 36;
-  *(unsigned int *)&v412.IsInitialized = &aP2.unknown30;
+  *(void **)&v412.IsInitialized = &aP2.unknown30;
   *(unsigned int *)(v4 + 1908) = v157;
   Coord2 = INIClass::GetCoord2(
              (uint8_t ***)aP0,
@@ -2838,7 +2838,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1900) = v160;
   *(unsigned int *)aP3 = &stru_87C374[56304];
   int v161 = Coord2[2];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[80236];
+  *(void **)&v412.IsInitialized = &stru_830620[80236];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1904) = v161;
   if ( INIClass::GetString(
@@ -2934,7 +2934,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = v4 + 1984;
   *(unsigned int *)&aP3[4] = &stru_830620[80152];
   *(unsigned int *)aP3 = v4 + 36;
-  *(unsigned int *)&v412.IsInitialized = &aP2.unknown30;
+  *(void **)&v412.IsInitialized = &aP2.unknown30;
   *(unsigned char *)(v4 + 1980) = v172;
   eax231a = INIClass::GetCoord2(
               (uint8_t ***)aP0,
@@ -3305,7 +3305,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[79140];
+  *(void **)&v412.IsInitialized = &stru_830620[79140];
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1572) = v177;
   if ( INIClass::GetString(
@@ -4368,7 +4368,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 32;
   *(unsigned int *)&aP3[4] = v4 + 3536;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_824238.sectionCount;
+  *(void **)&v412.IsInitialized = &stru_824238.sectionCount;
   v330 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   INIClass::GetString(
     (uint8_t ***)&stru_87C374[44556],
@@ -4459,7 +4459,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[8] = 25;
   *(unsigned int *)&aP3[4] = &aP4;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[77104];
+  *(void **)&v412.IsInitialized = &stru_830620[77104];
   *(unsigned char *)(v4 + 3519) = al283;
   v345 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   INIClass::GetString(
@@ -4490,7 +4490,7 @@ LABEL_286:
   *(unsigned int *)&aP3[8] = 25;
   *(unsigned int *)&aP3[4] = &aP4;
   *(unsigned int *)aP3 = &stru_87C374[56304];
-  *(unsigned int *)&v412.IsInitialized = &stru_830620[77092];
+  *(void **)&v412.IsInitialized = &stru_830620[77092];
   v348 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   INIClass::GetString(
     (uint8_t ***)&stru_87C374[44556],
@@ -4923,20 +4923,20 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
     return &this->AbstractTypeClass; /*0x717c0a*/
   (*((void (__thiscall **)(ObjectTypeClass *))this->AbstractTypeClass + 3))(this); /*0x717c0e*/
   v3 = (void *)a2[2]; /*0x717c11*/
-  this->? = v3; /*0x717c16*/
+  *(void **)&this->vtable3 = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/
   {
-    this->? = 0; /*0x717c5a*/
-    IDA_BYTE1(this->?) = 0; /*0x717c61*/
+    *(unsigned int *)&this->vtable2 = 0; /*0x717c5a*/
+    IDA_BYTE1(this->vtable4) = 0; /*0x717c61*/
     return &this->AbstractTypeClass; /*0x717c65*/
   }
   v4 = (void *)RA2_OPNEW(4 * (unsigned int)v3); /*0x717c23*/
-  this->? = v4; /*0x717c2b*/
+  *(void **)&this->vtable2 = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
     return &this->AbstractTypeClass; /*0x717c30*/
-  vtable2 = this->?; /*0x717c32*/
+  vtable2 = *(unsigned int *)&this->vtable3; /*0x717c32*/
   v6 = 0; /*0x717c35*/
-  IDA_BYTE1(this->?) = 1; /*0x717c39*/
+  IDA_BYTE1(this->vtable4) = 1; /*0x717c39*/
   if ( (int)vtable2 <= 0 ) /*0x717c3d*/
     return &this->AbstractTypeClass; /*0x717c3d*/
   do /*0x717c51*/
@@ -4966,7 +4966,7 @@ namespace gamemd {
 unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
 {
   a0->AbstractTypeClass = (void *)*aP1; /*0x41cf8d*/
-  a0->? = (void *)aP1[1]; /*0x41cf92*/
+  a0->vtable2 = (void *)aP1[1]; /*0x41cf92*/
   a0->? = (void *)aP1[2]; /*0x41cf99*/
   return &a0->AbstractTypeClass; /*0x41cf95*/
 }
@@ -5201,7 +5201,7 @@ int ObjectTypeClass::loadTypeMember_48DFF0()
 namespace gamemd {
 int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
 {
-  if ( *(unsigned int *)&this->? ) /*0x5f1c30*/
+  if ( *(unsigned int *)&this->zero_3C ) /*0x5f1c30*/
     return (*(int (__thiscall **)(unsigned int, int, int))(**(unsigned int **)&this->?[8] + 16))(*(unsigned int *)&this->?[8], aP1, aP2); /*0x5f1c4b*/
   else
     return 0; /*0x5f1c37*/
@@ -5220,14 +5220,14 @@ void ObjectTypeClass::ReleaseWaveAndString()
     WaveClass::Destroy((WaveClass *)this->AbstractTypeClass); /*0x5f61ac*/
     RA2_OPDEL(vtable0); /*0x5f61b2*/
   }
-  vtable1 = (String *)this->?; /*0x5f61ba*/
+  vtable1 = (String *)this->vtable2; /*0x5f61ba*/
   this->AbstractTypeClass = 0; /*0x5f61bd*/
   if ( vtable1 ) /*0x5f61c5*/
   {
     String::Release(vtable1); /*0x5f61c9*/
     RA2_OPDEL(vtable1); /*0x5f61cf*/
   }
-  this->? = 0; /*0x5f61d7*/
+  *(unsigned int *)&this->vtable2 = 0; /*0x5f61d7*/
 }
 } // namespace gamemd
 // 0x5F75C0
@@ -5235,8 +5235,8 @@ namespace gamemd {
 unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 {
   a1->AbstractTypeClass = (void *)10; /*0x5f75cd*/
-  a1->? = (void *)10; /*0x5f75d3*/
-  a1->? = (void *)10; /*0x5f75d6*/
+  a1->vtable2 = (void *)10; /*0x5f75d3*/
+  a1->vtable3 = (void *)10; /*0x5f75d6*/
   return &a1->AbstractTypeClass; /*0x5f75d9*/
 }
 } // namespace gamemd
@@ -5305,10 +5305,10 @@ int ObjectTypeClass::FreeLoaderBuffer()
 {
   RA2_OPDEL(this->AbstractTypeClass); /*0x5f9b66*/
   this->AbstractTypeClass = 0; /*0x5f9b70*/
-  this->? = 0; /*0x5f9b72*/
-  this->? = 0; /*0x5f9b75*/
-  IDA_LOBYTE(this->?) = 0; /*0x5f9b78*/
-  this->? = 0; /*0x5f9b7b*/
+  *(unsigned int *)&this->vtable2 = 0; /*0x5f9b72*/
+  *(unsigned int *)&this->vtable3 = 0; /*0x5f9b75*/
+  IDA_LOBYTE(this->vtable4) = 0; /*0x5f9b78*/
+  *(unsigned int *)&this->uniqueId = 0; /*0x5f9b7b*/
   return 0; /*0x5f9b7e*/
 }
 } // namespace gamemd
@@ -5342,15 +5342,15 @@ int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * 
   if ( this != (ObjectTypeClass *)aP2 ) /*0x7179d7*/
   {
     this->AbstractTypeClass = (void *)*aP2; /*0x7179dd*/
-    this->? = (void *)aP2[1]; /*0x7179e2*/
-    this->? = (void *)aP2[2]; /*0x7179e8*/
-    this->? = (void *)aP2[3]; /*0x7179ee*/
-    IDA_LOWORD(this->?) = *((unsigned short *)aP2 + 8); /*0x7179f5*/
+    this->vtable2 = (void *)aP2[1]; /*0x7179e2*/
+    this->vtable3 = (void *)aP2[2]; /*0x7179e8*/
+    this->vtable4 = (void *)aP2[3]; /*0x7179ee*/
+    IDA_LOWORD(this->uniqueId) = *((unsigned short *)aP2 + 8); /*0x7179f5*/
   }
   *(unsigned int *)aP1 = this->AbstractTypeClass; /*0x717a01*/
-  *(unsigned int *)(aP1 + 4) = this->?; /*0x717a06*/
-  *(unsigned int *)(aP1 + 8) = this->?; /*0x717a0c*/
-  *(unsigned int *)(aP1 + 12) = this->?; /*0x717a12*/
+  *(unsigned int *)(aP1 + 4) = this->vtable2; /*0x717a06*/
+  *(unsigned int *)(aP1 + 8) = this->vtable3; /*0x717a0c*/
+  *(unsigned int *)(aP1 + 12) = this->vtable4; /*0x717a12*/
   *(unsigned short *)(aP1 + 16) = this->?; /*0x717a1a*/
   return aP1; /*0x717a19*/
 }
@@ -5372,7 +5372,7 @@ int ObjectTypeClass::loadTypeMember_5717A50(int a2)
   result = a2; /*0x717a50*/
   if ( a2 <= 0 ) /*0x717a56*/
     result = 1; /*0x717a58*/
-  this->? = (void *)result; /*0x717a5d*/
+  this->vtable2 = (void *)result; /*0x717a5d*/
   return result; /*0x717a60*/
 }
 } // namespace gamemd
@@ -5392,7 +5392,7 @@ int ObjectTypeClass::loadTypeMember_5717A80(int a2)
   result = a2; /*0x717a80*/
   if ( a2 <= 0 ) /*0x717a86*/
     result = 1; /*0x717a88*/
-  this->? = (void *)result; /*0x717a8d*/
+  this->vtable3 = (void *)result; /*0x717a8d*/
   return result; /*0x717a90*/
 }
 } // namespace gamemd
@@ -5412,7 +5412,7 @@ int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
   result = a2; /*0x717ab0*/
   if ( a2 <= 0 ) /*0x717ab6*/
     result = 1; /*0x717ab8*/
-  this->? = (void *)result; /*0x717abd*/
+  this->vtable4 = (void *)result; /*0x717abd*/
   return result; /*0x717ac0*/
 }
 } // namespace gamemd

@@ -149,20 +149,20 @@ int SmudgeTypeClass::GetSize(unsigned char *** aP1, void * a1, void * a2)
     this->Burn = v6; /*0x6b5739*/
     this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
                     (bool *)a2,
-                    (uint8_t *)this->?,
+                    (uint8_t *)this->Width,
                     (uint8_t *)&stru_82BA00.?[151],
                     Width);
     this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
                      (bool *)a2,
-                     (uint8_t *)this->?,
+                     (uint8_t *)*(unsigned int *)&this->Height,
                      (uint8_t *)g_INI_Key_Height,
                      this->Height);
-    if ( this->? ) /*0x6b5764*/
+    if ( *(unsigned int *)&this->q22C ) /*0x6b5764*/
       _makepath(Buffer, 0, 0, this->?, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x6b57b4*/
     else
       _makepath(Buffer, 0, 0, this->?, Ext); /*0x6b5784*/
     result = (int)SearchMIXFile(Buffer, 0); /*0x6b57c2*/
-    this->? = (SHPStruct *)result; /*0x6b57c7*/
+    *(unsigned int *)&this->Image = (SHPStruct *)result; /*0x6b57c7*/
     IDA_LOBYTE(result) = 1; /*0x6b57ce*/
   }
   else
@@ -178,15 +178,15 @@ SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3, void * a1)
   int v4; // eax
   SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Image = this->?; /*0x6b6164*/
+  Image = *(unsigned int *)&this->Image; /*0x6b6164*/
   this->ObjectTypeClass = (void*)&SmudgeTypeClass_vftable; /*0x6b616a*/
-  this->? = (void*)&SmudgeTypeClass_vftable; /*0x6b6172*/
-  this->? = (void*)&SmudgeTypeClass_vftable; /*0x6b6179*/
-  this->? = (void*)&SmudgeTypeClass_vftable; /*0x6b6180*/
+  *(void **)&this->vtable2 = (void*)&SmudgeTypeClass_vftable; /*0x6b6172*/
+  *(void **)&this->vtable3 = (void*)&SmudgeTypeClass_vftable; /*0x6b6179*/
+  *(void **)&this->vtable4 = (void*)&SmudgeTypeClass_vftable; /*0x6b6180*/
   if ( Image ) /*0x6b6187*/
   {
     RA2_OPDEL(Image); /*0x6b618a*/
-    this->? = 0; /*0x6b6192*/
+    *(unsigned int *)&this->Image = 0; /*0x6b6192*/
   }
   AbstractClass::AnnounceExpiredPointer(&this->ObjectTypeClass, 1); /*0x6b61a0*/
   v6 = this; /*0x6b61b5*/
@@ -267,9 +267,9 @@ int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
       aP0->ObjectTypeClass = (void*)&SmudgeTypeClass_vftable; /*0x6b5874*/
-      aP0->? = (void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
-      aP0->? = (void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
-      aP0->? = (void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
+      *(void **)&aP0->vtable2 = (void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
+      *(void **)&aP0->vtable3 = (void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
+      *(void **)&aP0->vtable4 = (void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x6b5891*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x6b5898*/

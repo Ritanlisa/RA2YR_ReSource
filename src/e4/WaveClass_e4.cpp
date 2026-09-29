@@ -109,9 +109,9 @@ WaveClass * WaveClass::ddtor(char a2)
   void *v4; // eax
 
   this->ObjectClass = (void*)&WaveClass_vftable; /*0x763206*/
-  this->? = (void*)&WaveClass_vftable; /*0x76320c*/
-  this->? = (void*)&WaveClass_vftable; /*0x763213*/
-  this->? = &off_7F6BC8; /*0x76321a*/
+  *(void **)&this->vtable2 = (void*)&WaveClass_vftable; /*0x76320c*/
+  *(void **)&this->vtable3 = (void*)&WaveClass_vftable; /*0x763213*/
+  *(void **)&this->vtable4 = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x763221*/
   v3 = (*(int (__thiscall **)(unsigned char *, WaveClass **))(*(unsigned int *)&stru_A8EB00.?[84] + 16))(&stru_A8EB00.?[84], &this); /*0x76323a*/
   if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[100] ) /*0x76324a*/

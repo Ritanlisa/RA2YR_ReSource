@@ -20,7 +20,7 @@ struct E4Recv_557380 {
     unsigned int q040;  // 0x40
     unsigned int M65;  // 0x41
     unsigned int q044;  // 0x44
-    void* ;  // 0x48
+    void *q48;  // 0x48
     unsigned int M76;  // 0x4C
     unsigned int q050;  // 0x50
     unsigned int M52;  // 0x52
@@ -36,7 +36,7 @@ struct E4Recv_557380 {
     unsigned int M80;  // 0x80
     unsigned int M84;  // 0x84
     unsigned int M133;  // 0x85
-    void* ;  // 0x88
+    void *q88;  // 0x88
     unsigned int M140;  // 0x8C
     unsigned int M144;  // 0x90
     unsigned int M148;  // 0x94

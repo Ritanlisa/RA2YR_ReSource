@@ -1003,7 +1003,7 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
 {
   this->ambientSoundController[2] = a2; /*0x5f15cc*/
   this->ambientSoundController[3] = a3; /*0x5f15d3*/
-  this->? = (void *)a4; /*0x5f15da*/
+  *(void **)&this->M8 = (void *)a4; /*0x5f15da*/
   IDA_LOWORD(this->ambientSoundController[4]) = a5; /*0x5f15e2*/
   this->fallRate = 60; /*0x5f15eb*/
   this->customSound_controller[3] = 60; /*0x5f15ee*/
@@ -1011,12 +1011,12 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
   this->ambientSoundController[1] = -1; /*0x5f15f7*/
   this->attachedBomb = 0; /*0x5f15fa*/
   this->customSound_controller[0] = 0; /*0x5f15fd*/
-  this->? = 0; /*0x5f1600*/
-  this->? = 500; /*0x5f1603*/
-  this->? = 0; /*0x5f160a*/
-  this->? = -1; /*0x5f160d*/
-  this->? = 0; /*0x5f1610*/
-  this->? = 0; /*0x5f1613*/
+  this->M4 = 0; /*0x5f1600*/
+  *(unsigned short *)&this->M16 = 500; /*0x5f1603*/
+  this->M12 = 0; /*0x5f160a*/
+  this->q018 = -1; /*0x5f160d*/
+  this->M28 = 0; /*0x5f1610*/
+  this->M32 = 0; /*0x5f1613*/
   this->occupant = 3000; /*0x5f1616*/
   this->owningHouseIndex = 1200; /*0x5f161d*/
   IDA_LOBYTE(this->nextObject) = 43; /*0x5f1624*/

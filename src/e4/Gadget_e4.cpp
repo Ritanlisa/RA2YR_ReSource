@@ -16,6 +16,6 @@ unsigned int * Gadget::InitProperties()
   this->u32_C = -1; /*0x60064c*/
   this->u32_14 = -1; /*0x60064f*/
   this->u32_10 = 0; /*0x600652*/
-  return this->__pad_0; /*0x60065b*/
+  return this; /*0x60065b*/
 }
 }

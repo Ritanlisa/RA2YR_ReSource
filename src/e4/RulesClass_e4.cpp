@@ -1334,7 +1334,7 @@ int result;
     this->BaseBias = 0;
 }
     IDA_BYTE1(this->ExpSpread) = 0;
-    this->qA58 = 0;
+    *(unsigned int *)&this->qA58 = 0;
     v6 = (void *)this->InfantryBaseMult[3];
     this->InfantryBaseMult[2] = &vt_VectorClass_BuildingTypeClass_const;
     if ( v6 && IDA_BYTE1(this->PatrolScan[1]) )
@@ -1402,7 +1402,7 @@ int result;
     if ( ChronoDelay && IDA_BYTE1(this->q97D) )
     {
     RA2_OPDEL(ChronoDelay);
-    this->q974 = 0;
+    *(unsigned int *)&this->q974 = 0;
 }
     IDA_BYTE1(this->q97D) = 0;
     this->TargetEffectivenessCoefficientDefault = 0;
@@ -1423,7 +1423,7 @@ int result;
     this->CMisl[3] = 0;
 }
     IDA_BYTE1(this->q945) = 0;
-    this->q940 = 0;
+    *(unsigned int *)&this->q940 = 0;
     v16 = (void *)this->q920[0];
     this->q91C[3] = &vt_VectorClass_BuildingTypeClass_const;
     if ( v16 && IDA_BYTE1(this->q929[2]) )
@@ -1446,10 +1446,10 @@ int result;
     if ( ComputerBaseDefenseResponse && IDA_BYTE1(this->q8F1[0]) )
     {
     RA2_OPDEL(ComputerBaseDefenseResponse);
-    this->q8E8 = 0;
+    *(unsigned int *)&this->q8E8 = 0;
 }
     IDA_BYTE1(this->q8F1[0]) = 0;
-    this->q8EC = 0;
+    *(unsigned int *)&this->q8EC = 0;
     GDIWallDefense_high = (void *)IDA_HIDWORD(this->CHRONOSK_SHP);
     if ( GDIWallDefense_high && IDA_BYTE5(this->PsychicRevealRadius) )
     {
@@ -1551,7 +1551,7 @@ int result;
     if ( StopSound && IDA_BYTE1(this->q655) )
     {
     RA2_OPDEL(StopSound);
-    this->q64C = 0;
+    *(unsigned int *)&this->q64C = 0;
 }
     IDA_BYTE1(this->q655) = 0;
     this->VeteranCap = 0;
@@ -1594,7 +1594,7 @@ int result;
     if ( PrismSupportHeight && IDA_BYTE1(this->q3F1[1]) )
     {
     RA2_OPDEL(PrismSupportHeight);
-    this->q3E8 = 0;
+    *(unsigned int *)&this->q3E8 = 0;
 }
     IDA_BYTE1(this->q3F1[1]) = 0;
     this->q3EC[0] = 0;
@@ -1603,10 +1603,10 @@ int result;
     if ( IonCannonDamage && IDA_BYTE1(this->q3D5) )
     {
     RA2_OPDEL(IonCannonDamage);
-    this->q3CC = 0;
+    *(unsigned int *)&this->q3CC = 0;
 }
     IDA_BYTE1(this->q3D5) = 0;
-    this->q3D0 = 0;
+    *(unsigned int *)&this->q3D0 = 0;
     v37 = (void *)this->q3B0[1];
     this->q3AC[0] = &vt_VectorClass_int;
     if ( v37 && IDA_BYTE1(this->q3B9[3]) )
@@ -1623,7 +1623,7 @@ int result;
     IDA_HIDWORD(this->q394) = 0;
 }
     IDA_BYTE1(this->q39D[0]) = 0;
-    this->q398 = 0;
+    *(unsigned int *)&this->q398 = 0;
     Climb = (void *)this->q378;
     *(unsigned int *)&this->q374[4] = &vt_VectorClass_int;
     if ( Climb && IDA_BYTE1(this->q381) )
@@ -1638,34 +1638,34 @@ int result;
     if ( PrerequisiteProcAlternate && IDA_BYTE1(this->q365) )
     {
     RA2_OPDEL(PrerequisiteProcAlternate);
-    this->q35C = 0;
+    *(unsigned int *)&this->q35C = 0;
 }
     IDA_BYTE1(this->q365) = 0;
-    this->q360 = 0;
+    *(unsigned int *)&this->q360 = 0;
     WarpIn = (void *)this->q2DC;
     if ( WarpIn && IDA_BYTE1(this->q2E5) )
     {
     RA2_OPDEL(WarpIn);
-    this->q2DC = 0;
+    *(unsigned int *)&this->q2DC = 0;
 }
     IDA_BYTE1(this->q2E5) = 0;
-    this->q2E0 = 0;
+    *(unsigned int *)&this->q2E0 = 0;
     DrainAnimationType = (void *)this->q2C0;
     if ( DrainAnimationType && IDA_BYTE1(this->q2C9) )
     {
     RA2_OPDEL(DrainAnimationType);
-    this->q2C0 = 0;
+    *(unsigned int *)&this->q2C0 = 0;
 }
     IDA_BYTE1(this->q2C9) = 0;
-    this->q2C4 = 0;
+    *(unsigned int *)&this->q2C4 = 0;
     DominatorSecondAnim = (void *)this->q2A4;
     if ( DominatorSecondAnim && IDA_BYTE1(this->q2AD) )
     {
     RA2_OPDEL(DominatorSecondAnim);
-    this->q2A4 = 0;
+    *(unsigned int *)&this->q2A4 = 0;
 }
     IDA_BYTE1(this->q2AD) = 0;
-    this->q2A8 = 0;
+    *(unsigned int *)&this->q2A8 = 0;
     GUIOpenSound = (void *)this->CrateFireSound;
     if ( GUIOpenSound && IDA_BYTE1(this->CrateSpeedSound) )
     {
@@ -2064,8 +2064,8 @@ void * RulesClass::readAircraftTypes(int * a2)
       IDA_BYTE1(this->AmmoCrateDamage) = 0; /*0x67a1ec*/
     }
   }
-  this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a1f3*/
-  this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a1f9*/
+  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a1f3*/
+  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a1f9*/
   this->AttackingAircraftSightRange = a2[6]; /*0x67a1ff*/
   return &this->DetailMinFrameRateNormal; /*0x67a204*/
 }
@@ -2108,8 +2108,8 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
       IDA_BYTE1(this->AmmoCrateDamage) = 0; /*0x67a26c*/
     }
   }
-  this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a273*/
-  this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a279*/
+  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a273*/
+  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a279*/
   this->AttackingAircraftSightRange = a2[6]; /*0x67a27f*/
   return &this->DetailMinFrameRateNormal; /*0x67a284*/
 }
@@ -2152,8 +2152,8 @@ void * RulesClass::readBuildingTypes(int * a2)
       IDA_BYTE1(this->AmmoCrateDamage) = 0; /*0x67a36c*/
     }
   }
-  this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a373*/
-  this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a379*/
+  *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)a2[4]; /*0x67a373*/
+  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)a2[5]; /*0x67a379*/
   this->AttackingAircraftSightRange = a2[6]; /*0x67a37f*/
   return &this->DetailMinFrameRateNormal; /*0x67a384*/
 }
@@ -2164,8 +2164,8 @@ unsigned int * RulesClass::readParticles()
   this->DetailBufferZoneWidth = 0; /*0x67a8b7*/
   IDA_LOBYTE(this->AmmoCrateDamage) = 1; /*0x67a8ba*/
   IDA_BYTE1(this->AmmoCrateDamage) = 0; /*0x67a8be*/
-  this->SmallVisceroid = (UnitTypeClass *)10; /*0x67a8c1*/
-  this->LargeVisceroid = 0; /*0x67a8c8*/
+  *(unsigned int *)&this->SmallVisceroid = (UnitTypeClass *)10; /*0x67a8c1*/
+  *(unsigned int *)&this->LargeVisceroid = 0; /*0x67a8c8*/
   this->DetailMinFrameRateNormal = (int)&TypeList_TerrainTypeClass_const___vftable; /*0x67a8cb*/
   return &this->DetailMinFrameRateNormal; /*0x67a8d1*/
 }
@@ -2189,7 +2189,7 @@ int RulesClass::readAI(unsigned int * a2)
   {
     result = (int)this->LargeVisceroid; /*0x67b4b5*/
     DetailMinFrameRateMovie = this->DetailMinFrameRateMovie; /*0x67b4b8*/
-    this->LargeVisceroid = (UnitTypeClass *)(result + 1); /*0x67b4be*/
+    *(unsigned int *)&this->LargeVisceroid = (UnitTypeClass *)(result + 1); /*0x67b4be*/
     *(unsigned int *)(DetailMinFrameRateMovie + 4 * result) = *a2; /*0x67b4c8*/
     IDA_LOBYTE(result) = 1; /*0x67b4cb*/
   }
@@ -2544,7 +2544,7 @@ int RulesClass::readTerrainTypes(TechnoTypeClass * aP1)
   UnitTypeClass *LargeVisceroid; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *aP1; /*0x67a3cc*/
-  LargeVisceroid = this->LargeVisceroid; /*0x67a3d9*/
+  LargeVisceroid = *(unsigned int *)&this->LargeVisceroid; /*0x67a3d9*/
   aP1->IsClean(&LargeVisceroid, 4, 0); /*0x67a3dd*/
   result = (int)LargeVisceroid; /*0x67a3e0*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a3e8*/
@@ -2573,7 +2573,7 @@ int RulesClass::readAnimations(TechnoTypeClass * aP1)
   UnitTypeClass *LargeVisceroid; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *aP1; /*0x67a7dc*/
-  LargeVisceroid = this->LargeVisceroid; /*0x67a7e9*/
+  LargeVisceroid = *(unsigned int *)&this->LargeVisceroid; /*0x67a7e9*/
   aP1->IsClean(&LargeVisceroid, 4, 0); /*0x67a7ed*/
   result = (int)LargeVisceroid; /*0x67a7f0*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a7f8*/
@@ -2597,7 +2597,7 @@ int RulesClass::readParticleSystems(TechnoTypeClass * aP1)
   UnitTypeClass *LargeVisceroid; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *aP1; /*0x67a8ec*/
-  LargeVisceroid = this->LargeVisceroid; /*0x67a8f9*/
+  LargeVisceroid = *(unsigned int *)&this->LargeVisceroid; /*0x67a8f9*/
   aP1->IsClean(&LargeVisceroid, 4, 0); /*0x67a8fd*/
   result = (int)LargeVisceroid; /*0x67a900*/
   for ( i = 0; i < (int)LargeVisceroid; ++i ) /*0x67a908*/

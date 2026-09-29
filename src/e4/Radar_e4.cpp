@@ -198,7 +198,7 @@ int Radar::IsRadarTargetEligible()
   void * v1;
   int v2; // eax
 
-  v1 = this->q20C; /*0x5090f0*/
+  v1 = *(unsigned int *)&this->q20C; /*0x5090f0*/
   if ( v1 >= 0xC ) /*0x5090f8*/
     return 0; /*0x50912a*/
   v2 = *(this + v1 + 132); /*0x5090ff*/
@@ -1233,8 +1233,8 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
             v39 = *(unsigned int *)&v2->__pad_64[24 * i + 44] + 36 * v38; /*0x5849b8*/
             Radar::CopyDataArray((Radar *)v39, (int *)&v122); /*0x5849be*/
             v39->u32_18 = v125; /*0x5849cb*/
-            v39->q01C = v126; /*0x5849d6*/
-            v39->q020 = v127; /*0x5849e0*/
+            *(unsigned int *)&v39->q01C = v126; /*0x5849d6*/
+            *(unsigned int *)&v39->q020 = v127; /*0x5849e0*/
             v35 = (int)&v2->__pad_64[24 * i + 40]; /*0x5849e3*/
           }
           v122.vtable0 = (void*)&VectorClass_SubzoneConnectionStruct_vftable; /*0x5849eb*/

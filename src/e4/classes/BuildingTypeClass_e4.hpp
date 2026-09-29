@@ -998,25 +998,25 @@ struct BuildingTypeClass {
     unsigned char qDD8;  // 0xDD8
     void* qDF0;  // 0xDF0
     unsigned int qDF4;  // 0xDF4
-    unsigned int ;  // 0xDF8
+    unsigned int qDF8;  // 0xDF8
     unsigned int qDFC;  // 0xDFC
     unsigned int qE00;  // 0xE00
     bool qE04;  // 0xE04
     unsigned char qE05;  // 0xE05
     unsigned int qE08;  // 0xE08
     unsigned int HalfDamageSmokeLocation1;  // 0xE0C
-    unsigned int ;  // 0xE10
+    unsigned int qE10_a;  // 0xE10
     unsigned int u32_E14;  // 0xE14
     unsigned int HalfDamageSmokeLocation2;  // 0xE18
-    void* ;  // 0xE1C
-    void* ;  // 0xE20
+    void *qE1C;  // 0xE1C
+    void *qE20;  // 0xE20
     unsigned long qE24;  // 0xE24
     double GateCloseDelay;  // 0xE28
     SHPStruct* qE2C;  // 0xE2C
     int LightVisibility;  // 0xE30
     int LightIntensity;  // 0xE34
     int LightRedTint;  // 0xE38
-    void* ;  // 0xE3C
+    void *qE3C;  // 0xE3C
     int LightBlueTint;  // 0xE40
     unsigned int PrimaryFirePixelOffset;  // 0xE44
     unsigned int u32_E48;  // 0xE48
@@ -1032,16 +1032,16 @@ struct BuildingTypeClass {
     int WorkingSound;  // 0xE74
     int NotWorkingSound;  // 0xE78
     char PowersUpBuilding_0x18;  // 0xE7C
-    unsigned int ;  // 0xE80
-    unsigned int ;  // 0xE84
+    unsigned int qE80;  // 0xE80
+    unsigned int qE84;  // 0xE84
     UnitTypeClass* SecretUnit;  // 0xE88
     unsigned char qE8C;  // 0xE8C
     UnitTypeClass* qEA0;  // 0xEA0
     InfantryTypeClass* qEA4;  // 0xEA4
-    void* ;  // 0xEA8
+    void *qEA8;  // 0xEA8
     BuildingTypeClass* SecretBuilding;  // 0xEAC
     int BuildingTypeClass_field_EB0;  // 0xEB0
-    unsigned int ;  // 0xEB4
+    unsigned int qEB4;  // 0xEB4
     int BuildingTypeClass_field_ED8;  // 0xEB8
     int DeployFacing;  // 0xEBC
     SHPStruct* qEC0;  // 0xEC0
@@ -1058,7 +1058,7 @@ struct BuildingTypeClass {
     int Upgrades;  // 0xEEC
     SHPStruct* qEF0;  // 0xEF0
     bool DeployingAnimLoaded;  // 0xEF4
-    unsigned int ;  // 0xEF8
+    unsigned int qEF8;  // 0xEF8
     bool UnderDoorAnimLoaded;  // 0xEFC
     SHPStruct* Rubble;  // 0xF00
     bool RubbleLoaded;  // 0xF04
@@ -1068,7 +1068,7 @@ struct BuildingTypeClass {
     unsigned int u32_F14;  // 0xF14
     SHPStruct* qF18;  // 0xF18
     unsigned int BuildingAnim;  // 0xF1C
-    unsigned int ;  // 0xF20
+    unsigned int qF20_a;  // 0xF20
     SHPStruct* qF24;  // 0xF24
     SHPStruct* qF34;  // 0xF34
     unsigned int u32_F38;  // 0xF38
@@ -1517,11 +1517,11 @@ struct BuildingTypeClass {
     void* q177C;  // 0x177C
     int NumberOfDocks;  // 0x1780
     char AltCameoFile;  // 0x1781
-    void* ;  // 0x1784
+    void *q1784;  // 0x1784
     bool PreventsPlacementOverlap;  // 0x1788
     int ProductionCompletionThreshold;  // 0x178C
     double CostRatePerFrame;  // 0x1790
-    unsigned int ;  // 0x1791
+    unsigned int q1791_a;  // 0x1791
     unsigned int q1794;  // 0x1794
     unsigned int __pad_1714;
     unsigned int __pad_F70;

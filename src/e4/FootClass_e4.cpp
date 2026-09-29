@@ -38,9 +38,9 @@ AbstractClass * * FootClass::Destruct()
 
   team = (int *)this->team; /*0x4d3597*/
   this->TechnoClass = (void*)&FootClass_vftable; /*0x4d359d*/
-  this->? = (void*)&FootClass_vftable; /*0x4d35a5*/
-  this->? = (void*)&FootClass_vftable; /*0x4d35ac*/
-  this->? = (void*)&FootClass_vftable; /*0x4d35b3*/
+  *(void **)&this->vtable2 = (void*)&FootClass_vftable; /*0x4d35a5*/
+  *(void **)&this->vtable3 = (void*)&FootClass_vftable; /*0x4d35ac*/
+  *(void **)&this->vtable4 = (void*)&FootClass_vftable; /*0x4d35b3*/
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
@@ -72,7 +72,7 @@ AbstractClass * * FootClass::Destruct()
     (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(this->locomotor[0]); /*0x4d3690*/
   v8 = *(void **)this->__pad_5B0; /*0x4d3693*/
   this->FootClass_field_abstract_array_5AC[0] = (int)&VectorClass_AbstractClass___vftable; /*0x4d36a0*/
-  if ( v8 && this->__pad_5B0[9] ) /*0x4d36a8*/
+  if ( v8 && this->u8_5B9 ) /*0x4d36a8*/
   {
     RA2_OPDEL(v8); /*0x4d36b1*/
     *(unsigned int *)this->__pad_5B0 = 0; /*0x4d36b9*/
@@ -81,7 +81,7 @@ AbstractClass * * FootClass::Destruct()
   *(unsigned int *)&this->__pad_5B0[4] = 0; /*0x4d36c5*/
   v9 = *(void **)this->__pad_58C; /*0x4d36cb*/
   this->unknownAbstractArray588[0] = (int)&VectorClass_AbstractClass___vftable; /*0x4d36d1*/
-  if ( v9 && this->__pad_58C[9] ) /*0x4d36dc*/
+  if ( v9 && this->u8_595 ) /*0x4d36dc*/
   {
     RA2_OPDEL(v9); /*0x4d36e5*/
     *(unsigned int *)this->__pad_58C = 0; /*0x4d36ed*/
@@ -116,8 +116,8 @@ int FootClass::updateThreat()
   int v1; // edx
   int v2; // eax
 
-  v1 = this->?[0]; /*0x70f7e0*/
-  v2 = this->?[2]; /*0x70f7e6*/
+  v1 = *(unsigned int *)&this->targetingTimer; /*0x70f7e0*/
+  v2 = *(unsigned int *)&this->q188; /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
     if ( *(unsigned int *)&stru_A8EB00.?[416] - v1 < v2 ) /*0x70f7fb*/
@@ -130,7 +130,7 @@ int FootClass::updateThreat()
 
 // 0x710000
 namespace gamemd {
-void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int a3@<edi> a3, unsigned int * ppv, IID rclsid, int a6, void * a4, void * a5)
+void FootClass::FootClass_ImbueLocomotor(int * a1, int a2, int a3, unsigned int * ppv, IID rclsid, int a6, void * a4, void * a5)
 {
   int v4; // ebp
   int v5; // edi
@@ -284,10 +284,10 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
         if ( Member && (*(int (__thiscall **)(int))(*(unsigned int *)Member + 44))(Member) == 6 ) /*0x71036c*/
           (*(void (__thiscall **)(int *, int))(*v6 + 640))(v6, 3); /*0x710374*/
         (*(void (__thiscall **)(unsigned int, int, int))(*m_Size->locomotorTarget + 488))(m_Size->locomotorTarget, 5, 1); /*0x710386*/
-        v25 = m_Size->locomotorTarget; /*0x71038c*/
+        v25 = *(unsigned int *)&m_Size->locomotorTarget; /*0x71038c*/
         if ( !*(unsigned char *)(v25[135] + 492) && !*(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*v25 + 132))(v25) + 1516) ) /*0x7103aa*/
         {
-          v26 = m_Size->locomotorTarget; /*0x7103b4*/
+          v26 = *(unsigned int *)&m_Size->locomotorTarget; /*0x7103b4*/
           if ( !*(unsigned char *)(*(unsigned int *)(v26[135] + 52) + 422) ) /*0x7103c3*/
             (*(void (__thiscall **)(unsigned int *, int, unsigned int))(*v26 + 488))(v26, 15, 0); /*0x7103d5*/
         }
@@ -317,7 +317,7 @@ unsigned int FootClass::checkTurning()
 {
   unsigned int result; // eax
 
-  result = this->?[0]; /*0x50daa0*/
+  result = *(unsigned int *)&this->infantryBlinkTimer; /*0x50daa0*/
   if ( result >= 4 ) /*0x50daa8*/
     return 0; /*0x50daaf*/
   return result; /*0x50dab1*/

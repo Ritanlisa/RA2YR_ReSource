@@ -49,8 +49,8 @@ void ObjectClass::sub_550080()
   int v7; // eax
   unsigned int v8[4]; // [esp+4h] [ebp-10h] BYREF
 
-  vtable2 = this->?; /*0x550086*/
-  uniqueId = this->?; /*0x550089*/
+  vtable2 = *(unsigned int *)&this->vtable3; /*0x550086*/
+  uniqueId = *(unsigned int *)&this->uniqueId; /*0x550089*/
   if ( vtable2 == (void *)-1 ) /*0x55008f*/
   {
   LABEL_4:
@@ -64,20 +64,20 @@ void ObjectClass::sub_550080()
     goto LABEL_4; /*0x55009d*/
   }
   LABEL_5:
-  abstractFlags = this->?; /*0x5500a3*/
+  abstractFlags = *(unsigned int *)&this->abstractFlags; /*0x5500a3*/
   if ( abstractFlags ) /*0x5500a8*/
   {
-    v5 = (char *)this->AbstractClass + this->?; /*0x5500af*/
-    IDA_LOBYTE(this->?) = 1; /*0x5500b1*/
+    v5 = (char *)this->AbstractClass + this->nextArrayIndex; /*0x5500af*/
+    IDA_LOBYTE(this->vtable2) = 1; /*0x5500b1*/
     this->AbstractClass = v5; /*0x5500b5*/
     v6 = (void *)v8[2]; /*0x5500bd*/
-    this->? = *(void **)&stru_A8EB00.?[416]; /*0x5500c1*/
-    this->? = v6; /*0x5500c4*/
-    this->? = abstractFlags; /*0x5500c7*/
+    *(unsigned int *)&this->vtable3 = *(void **)&stru_A8EB00.?[416]; /*0x5500c1*/
+    *(void **)&this->vtable4 = v6; /*0x5500c4*/
+    *(unsigned int *)&this->uniqueId = abstractFlags; /*0x5500c7*/
     goto LABEL_8; /*0x5500ca*/
   }
   LABEL_7:
-  IDA_LOBYTE(this->?) = 0; /*0x5500cc*/
+  IDA_LOBYTE(this->vtable2) = 0; /*0x5500cc*/
   LABEL_8:
   if ( IDA_LOBYTE(this->customSound_controller[0]) ) /*0x5500d0*/
     IDA_BYTE1(this->customSound_controller[0]) = IDA_BYTE1(this->customSound_controller[0]) == 0; /*0x5500df*/
@@ -904,7 +904,7 @@ void DecompressCoreLCW(Pipe * aP0, unsigned char * a1, int a3)
 }
 // 0x552640
 namespace gamemd {
-unsigned int int sub_552640(unsigned char * a1, unsigned int a2)
+unsigned int sub_552640(unsigned char * a1, unsigned int a2)
 {
   unsigned int v3; // ebp
   unsigned int v4; // esi
@@ -1215,11 +1215,11 @@ int E4Recv_557380::sub_557380(int a2)
   this->M60 = 0; /*0x5573aa*/
   this->q040 = 1; /*0x5573ad*/
   this->M65 = 0; /*0x5573b1*/
-  this->q034 = (void*)&VectorClass_unsigned_short_const___vftable; /*0x5573b4*/
+  *(void **)&this->q034 = (void*)&VectorClass_unsigned_short_const___vftable; /*0x5573b4*/
   sub_4B5830((unsigned int *)(&this->u32_142), (unsigned int *)(a2 + 52)); /*0x5573ba*/
   this->q044 = *(unsigned int *)(a2 + 68); /*0x5573c2*/
   this->q048 = *(unsigned int *)(a2 + 72); /*0x5573c8*/
-  this->q034 = (void*)&DynamicVectorClass_unsigned_short_const___vftable; /*0x5573cb*/
+  *(void **)&this->q034 = (void*)&DynamicVectorClass_unsigned_short_const___vftable; /*0x5573cb*/
   this->M76 = *(unsigned int *)(a2 + 76); /*0x5573d7*/
   this->q050 = *(unsigned int *)(a2 + 80); /*0x5573dd*/
   this->q054 = *(unsigned char *)(a2 + 84); /*0x5573e9*/
@@ -1227,7 +1227,7 @@ int E4Recv_557380::sub_557380(int a2)
   this->M84 = *(unsigned char *)(a2 + 132); /*0x5573fa*/
   this->M133 = *(unsigned char *)(a2 + 133); /*0x557400*/
   this->q088 = *(unsigned int *)(a2 + 136); /*0x557406*/
-  this->M88 = (void*)&ToggleClass_vftable; /*0x557409*/
+  *(void **)&this->M88 = (void*)&ToggleClass_vftable; /*0x557409*/
   this->M140 = *(unsigned char *)(a2 + 140); /*0x557413*/
   this->M144 = *(unsigned int *)(a2 + 144); /*0x557419*/
   this->M148 = *(unsigned int *)(a2 + 148); /*0x55741f*/
@@ -1240,12 +1240,12 @@ int E4Recv_557380::sub_557380(int a2)
   this->M173 = *(unsigned char *)(a2 + 173); /*0x557449*/
   this->M176 = *(unsigned int *)(a2 + 176); /*0x55744f*/
   this->M180 = *(unsigned char *)(a2 + 180); /*0x55745b*/
-  this->M88 = (void*)&ShapeButtonClass_vftable; /*0x557460*/
+  *(void **)&this->M88 = (void*)&ShapeButtonClass_vftable; /*0x557460*/
   ControlClass::CtorFromData((unsigned int *)(&this->q0484), a2 + 184); /*0x557466*/
   this->M228 = *(unsigned char *)(a2 + 228); /*0x55746e*/
   this->M229 = *(unsigned char *)(a2 + 229); /*0x557474*/
   this->M232 = *(unsigned int *)(a2 + 232); /*0x55747a*/
-  this->M184 = (void*)&ToggleClass_vftable; /*0x55747d*/
+  *(void **)&this->M184 = (void*)&ToggleClass_vftable; /*0x55747d*/
   this->M236 = *(unsigned char *)(a2 + 236); /*0x557486*/
   this->M240 = *(unsigned int *)(a2 + 240); /*0x55748c*/
   this->M244 = *(unsigned int *)(a2 + 244); /*0x557492*/
@@ -1258,7 +1258,7 @@ int E4Recv_557380::sub_557380(int a2)
   this->M269 = *(unsigned char *)(a2 + 269); /*0x5574bc*/
   this->M272 = *(unsigned int *)(a2 + 272); /*0x5574c6*/
   this->q114 = *(unsigned char *)(a2 + 276); /*0x5574d2*/
-  this->M184 = (void*)&ShapeButtonClass_vftable; /*0x5574de*/
+  *(void **)&this->M184 = (void*)&ShapeButtonClass_vftable; /*0x5574de*/
   sub_5581A0(&this->u32_460, a2 + 280); /*0x5574e4*/
   this->M340 = *(unsigned int *)(a2 + 340); /*0x5574fa*/
   this->M344 = *(unsigned int *)(a2 + 344); /*0x557500*/
@@ -1266,7 +1266,7 @@ int E4Recv_557380::sub_557380(int a2)
   this->q160 = *(unsigned int *)(a2 + 352); /*0x55750c*/
   this->q164 = *(unsigned int *)(a2 + 356); /*0x557512*/
   this->q168 = *(unsigned int *)(a2 + 360); /*0x55751c*/
-  this->q118 = (void*)&SliderClass_vftable; /*0x55751f*/
+  *(void **)&this->q118 = (void*)&SliderClass_vftable; /*0x55751f*/
   this->M364 = *(unsigned int *)(a2 + 364); /*0x55752c*/
   v3 = this->M88; /*0x557538*/
   this->M368 = *(unsigned int *)(a2 + 368); /*0x55753c*/
@@ -1312,7 +1312,7 @@ int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
   this->M4 = 2; /*0x558814*/
   if ( !aP1 ) /*0x55881d*/
     p_referenceCount = (char *)&dword_A8B230[137].referenceCount; /*0x558824*/
-  this->M12 = p_referenceCount; /*0x558829*/
+  *(void **)&this->M12 = p_referenceCount; /*0x558829*/
   return SaveLoadDialog::DlgProc(); /*0x558831*/
 }
 }
@@ -1389,7 +1389,7 @@ int E4Recv_55B720::sub_55B720()
     goto LABEL_15; /*0x55b7ef*/
   }
   LABEL_16:
-  result = this->?; /*0x55b818*/
+  result = this->M16; /*0x55b818*/
   for ( i = 0; i < result; ++i ) /*0x55b81f*/
   {
     v14 = *((unsigned int *)this->? + i); /*0x55b824*/
@@ -1399,7 +1399,7 @@ int E4Recv_55B720::sub_55B720()
         WinAPI::Wrapper(-2147467261); /*0x55b85d*/
       (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v14 + 1652) + 64))(*(unsigned int *)(v14 + 1652)); /*0x55b86b*/
     }
-    result = this->?; /*0x55b86e*/
+    result = this->M16; /*0x55b86e*/
   }
   return result; /*0x55b876*/
 }
@@ -2245,7 +2245,7 @@ void GameFrameLoop()
       Time = timeGetTime(); /*0x55d53d*/
       Timer::EnableHighPrecision(&v50); /*0x55d541*/
       g_TacticalState = Time; /*0x55d54e*/
-      *(unsigned int *)&v50.m_2[2] = v4; /*0x55d554*/
+      *(unsigned int *)&v50.u32_4 = v4; /*0x55d554*/
       *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d558*/
       dword_887330 = v4; /*0x55d55e*/
     }
@@ -2257,7 +2257,7 @@ void GameFrameLoop()
       Time = timeGetTime(); /*0x55d4ca*/
       Timer::EnableHighPrecision(&v50); /*0x55d4ce*/
       g_TacticalState = Time; /*0x55d4e0*/
-      *(unsigned int *)&v50.m_2[2] = 33; /*0x55d4e6*/
+      *(unsigned int *)&v50.u32_4 = 33; /*0x55d4e6*/
       *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d4ea*/
       dword_887330 = 33; /*0x55d4f0*/
     }
@@ -2306,7 +2306,7 @@ void GameFrameLoop()
             Time = timeGetTime(); /*0x55d63f*/
             Timer::EnableHighPrecision(&v50); /*0x55d643*/
             g_TacticalState = Time; /*0x55d653*/
-            *(unsigned int *)&v50.m_2[2] = v11 + 10; /*0x55d65d*/
+            *(unsigned int *)&v50.u32_4 = v11 + 10; /*0x55d65d*/
             *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d661*/
             dword_887330 = v11 + 10; /*0x55d667*/
             Timer::DisableHighPrecision(); /*0x55d66c*/
@@ -2325,7 +2325,7 @@ void GameFrameLoop()
             Time = timeGetTime(); /*0x55d6b7*/
             Timer::EnableHighPrecision(&v50); /*0x55d6bb*/
             g_TacticalState = Time; /*0x55d6cb*/
-            *(unsigned int *)&v50.m_2[2] = v13 + 10; /*0x55d6d5*/
+            *(unsigned int *)&v50.u32_4 = v13 + 10; /*0x55d6d5*/
             *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d6d9*/
             dword_887330 = v13 + 10; /*0x55d6df*/
             Timer::DisableHighPrecision(); /*0x55d6e4*/
@@ -2344,7 +2344,7 @@ void GameFrameLoop()
             Time = timeGetTime(); /*0x55d733*/
             Timer::EnableHighPrecision(&v50); /*0x55d737*/
             g_TacticalState = Time; /*0x55d747*/
-            *(unsigned int *)&v50.m_2[2] = v15 + 10; /*0x55d751*/
+            *(unsigned int *)&v50.u32_4 = v15 + 10; /*0x55d751*/
             *(unsigned int *)stru_88732C.__pad_0 = *(unsigned int *)v50.__pad_0; /*0x55d755*/
             dword_887330 = v15 + 10; /*0x55d75b*/
             Timer::DisableHighPrecision(); /*0x55d760*/
@@ -3856,7 +3856,7 @@ LightConvertClass * E4Recv_556520::sub_556520(char a2)
   sub_490400(); /*0x556529*/
   if ( (a2 & 1) != 0 ) /*0x556533*/
     RA2_OPDEL(); /*0x556536*/
-  return this->__pad_0; /*0x556540*/
+  return this; /*0x556540*/
 }
 } // namespace gamemd
 

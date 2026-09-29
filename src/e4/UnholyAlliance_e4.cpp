@@ -88,7 +88,7 @@ AbstractClass * * UnholyAlliance_GetResult()
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
-  *(unsigned int *)&this->m_Enabled = (void*)&UnholyAlliance_vftable; /*0x5cb543*/
+  *(void **)&this->m_Enabled = (void*)&UnholyAlliance_vftable; /*0x5cb543*/
   MultiplayerGameMode::Dtor(); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     RA2_OPDEL(); /*0x5cb556*/

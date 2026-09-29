@@ -290,7 +290,7 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       v5[0] = (void*)&CCFileClass_vftable; /*0x71dd41*/
       v7 = 0; /*0x71dd49*/
       Vector::Clear((int)v6); /*0x71dd4d*/
-      v5[0] = &off_7E1668; /*0x71dd56*/
+      v5[0] = (unsigned int)&off_7E1668; /*0x71dd56*/
       BufferIOFileClass::Dtor(v5); /*0x71dd5e*/
     }
     result = dword_A8E328; /*0x71dd63*/

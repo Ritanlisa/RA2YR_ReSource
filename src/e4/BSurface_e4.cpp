@@ -34,10 +34,10 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   this->q00B = a5; /*0x410cf3*/
   *(unsigned int *)this->XSurface = a2; /*0x410cf8*/
   a3 = a3; /*0x410cfa*/
-  this->q00A = v14; /*0x410cfe*/
-  this->? = a3; /*0x410d01*/
-  this->? = v14; /*0x410d04*/
-  this->? = a5; /*0x410d07*/
+  *(void **)&this->q00A = v14; /*0x410cfe*/
+  *(unsigned int *)&this->Width = a3; /*0x410d01*/
+  *(void **)&this->Height = v14; /*0x410d04*/
+  this->LockCount = a5; /*0x410d07*/
   this->Height = 2 * v14 * a5; /*0x410d0f*/
   v10 = RA2_OPNEW(0x20u); /*0x410d17*/
   if ( v10 ) /*0x410d20*/
@@ -71,7 +71,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   this->BytesPerPixel = 0; /*0x410d96*/
   this->u32_24 = 0x8000; /*0x410d99*/
   v18 = v15 + 2 * v17; /*0x410da0*/
-  Buffer = this->Buffer; /*0x410da3*/
+  Buffer = *(unsigned int *)&this->Buffer; /*0x410da3*/
   this->u32_1C = v18; /*0x410da6*/
   (*(void (__thiscall **)(void *))(*(unsigned int *)Buffer + 96))(Buffer); /*0x410dab*/
   return this->XSurface; /*0x410db0*/
@@ -234,9 +234,9 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int v14, int a5)
   *(unsigned int *)this->XSurface = a2; /*0x7bc988*/
   a3 = a3; /*0x7bc98a*/
   this->q00A = v14; /*0x7bc98e*/
-  this->? = a3; /*0x7bc991*/
-  this->? = v14; /*0x7bc994*/
-  this->? = a5; /*0x7bc997*/
+  *(unsigned int *)&this->Width = a3; /*0x7bc991*/
+  this->Height = v14; /*0x7bc994*/
+  this->LockCount = a5; /*0x7bc997*/
   this->Height = 2 * v14 * a5; /*0x7bc99f*/
   v10 = RA2_OPNEW(0x20u); /*0x7bc9a7*/
   if ( v10 ) /*0x7bc9b0*/
@@ -258,7 +258,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int v14, int a5)
   }
   v14 = this->q00A; /*0x7bc9ec*/
   a5 = this->q00B; /*0x7bc9ef*/
-  this->Buffer = v13; /*0x7bc9f3*/
+  *(void **)&this->Buffer = v13; /*0x7bc9f3*/
   a2 = 0; /*0x7bc9f6*/
   a3 = 0; /*0x7bc9fa*/
   v14 = v14; /*0x7bc9fe*/
@@ -270,7 +270,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int v14, int a5)
   this->BytesPerPixel = 0; /*0x7bca29*/
   this->u32_24 = 0x8000; /*0x7bca2c*/
   v18 = v15 + 2 * v17; /*0x7bca33*/
-  Buffer = this->Buffer; /*0x7bca36*/
+  Buffer = *(unsigned int *)&this->Buffer; /*0x7bca36*/
   this->u32_1C = v18; /*0x7bca39*/
   (*(void (__thiscall **)(void *))(*(unsigned int *)Buffer + 96))(Buffer); /*0x7bca3e*/
   return this->XSurface; /*0x7bca43*/

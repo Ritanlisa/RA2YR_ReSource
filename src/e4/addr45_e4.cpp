@@ -267,7 +267,7 @@ void sub_452D40()
   for ( i = 0; i < stru_A8EB00.ObjectTypeClass[20]; ++i ) /*0x452d4a*/
   {
     v3 = *(BuildingClass **)(stru_A8EB00.ObjectTypeClass[17] + 4 * i); /*0x452d52*/
-    if ( v3 && v3->Type->LaserFencePost && !dword_A8E7AC && v3->? && !v3->? ) /*0x452d7c*/
+    if ( v3 && v3->Type->LaserFencePost && !dword_A8E7AC && v3->inLimbo && !v3->inLimbo ) /*0x452d7c*/
     {
       BuildingClass::DemolishBridge(v3); /*0x452d8a*/
       BuildingClass::DemolishBridge(v3); /*0x452d93*/

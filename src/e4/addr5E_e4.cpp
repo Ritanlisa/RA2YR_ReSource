@@ -2392,7 +2392,7 @@ void ProcessComboBoxAddString(HWND hWnd, int a2)
           {
             while ( !SendMultiplayerStartSignal_Start_77EBA0_Start(v8, (const wchar_t **)&v19) ) /*0x5e6309*/
             {
-              v8 = (ObjectClass *)v8->?; /*0x5e630b*/
+              v8 = (ObjectClass *)v8->vtable3; /*0x5e630b*/
               if ( !v8 ) /*0x5e6310*/
                 goto LABEL_14; /*0x5e6310*/
             }
@@ -2494,7 +2494,7 @@ AbstractClass * * Map_ReadPlayerCount(int a1)
     v10[0] = (void*)&CCFileClass_vftable; /*0x5e65fa*/
     v12 = 0; /*0x5e6602*/
     Vector::Clear((int)v11); /*0x5e6609*/
-    v10[0] = &off_7E1668; /*0x5e6612*/
+    v10[0] = (unsigned int)&off_7E1668; /*0x5e6612*/
     BufferIOFileClass::Dtor(v10); /*0x5e661a*/
     return 0; /*0x5e662a*/
   }
@@ -2515,7 +2515,7 @@ AbstractClass * * Map_ReadPlayerCount(int a1)
   v10[0] = (void*)&CCFileClass_vftable; /*0x5e669c*/
   v12 = 0; /*0x5e66a4*/
   Vector::Clear((int)v11); /*0x5e66ab*/
-  v10[0] = &off_7E1668; /*0x5e66b4*/
+  v10[0] = (unsigned int)&off_7E1668; /*0x5e66b4*/
   BufferIOFileClass::Dtor(v10); /*0x5e66bc*/
   return Int_Overwrite; /*0x5e661f*/
 }
@@ -2911,7 +2911,7 @@ char LoadScenarioClassByIndex(int a1)
   v5 = v4 == 0; /*0x5e7c57*/
   v19 = 0; /*0x5e7c5a*/
   Vector::Clear((int)v18); /*0x5e7c62*/
-  v17[0] = &off_7E1668; /*0x5e7c6b*/
+  v17[0] = (unsigned int)&off_7E1668; /*0x5e7c6b*/
   BufferIOFileClass::Dtor(v17); /*0x5e7c73*/
   if ( !v5 ) /*0x5e7c7a*/
     goto LABEL_9; /*0x5e7c7a*/
@@ -2958,14 +2958,14 @@ char LoadScenarioClassByIndex(int a1)
     v17[0] = (void*)&CCFileClass_vftable; /*0x5e7e4a*/
     v19 = 0; /*0x5e7e4e*/
     Vector::Clear((int)v18); /*0x5e7e52*/
-    v17[0] = &off_7E1668; /*0x5e7e60*/
+    v17[0] = (unsigned int)&off_7E1668; /*0x5e7e60*/
     BufferIOFileClass::Dtor(v17); /*0x5e7e64*/
     v14 = CCFileClass::Construct(v17, &byte_A8B8E0); /*0x5e7e72*/
     dword_A8BB04 = (*(int (__thiscall **)(unsigned int *))(*v14 + 44))(v14); /*0x5e7e82*/
     v17[0] = (void*)&CCFileClass_vftable; /*0x5e7e87*/
     v19 = 0; /*0x5e7e8b*/
     Vector::Clear((int)v18); /*0x5e7e8f*/
-    v17[0] = &off_7E1668; /*0x5e7e98*/
+    v17[0] = (unsigned int)&off_7E1668; /*0x5e7e98*/
     BufferIOFileClass::Dtor(v17); /*0x5e7e9c*/
     return 1; /*0x5e7ea1*/
   }

@@ -28,12 +28,12 @@ struct ParasiteClass {
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned int ParasiteClass_field_34;  // 0x34
-    void* ;  // 0x38
+    void *q38;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
-    void* ;  // 0x3C
+    void *q3C;  // 0x3C
     unsigned int q03D;  // 0x3D
-    void* ;  // 0x40
+    void *q40;  // 0x40
     bool q042;  // 0x42
     unsigned int ParasiteClass_field_38;
     unsigned int __pad_28;

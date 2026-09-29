@@ -1718,7 +1718,7 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
     if ( aP4 == -1 ) /*0x6c65bf*/
       this->M24 = *(unsigned int *)(Instance + 28); /*0x6c65c4*/
   }
-  return this->__pad_0; /*0x6c65c9*/
+  return this; /*0x6c65c9*/
 }
 } // namespace gamemd
 
@@ -1919,7 +1919,7 @@ char E4Recv_6C8900::sub_6C8900()
   void *v7; // [esp+4h] [ebp-4h]
 
   vtable0 = this->AbstractClass; /*0x6c8904*/
-  if ( (int)this->AbstractClass < (int)this->? ) /*0x6c890b*/
+  if ( (int)this->AbstractClass < (int)this->M4 ) /*0x6c890b*/
     return 0; /*0x6c890d*/
   v4 = 2 * (unsigned int)vtable0; /*0x6c8913*/
   if ( 2 * (int)vtable0 < 10 ) /*0x6c891b*/
@@ -1927,11 +1927,11 @@ char E4Recv_6C8900::sub_6C8900()
   v5 = (void *)RA2_OPNEW(32776 * v4); /*0x6c8932*/
   memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2)); /*0x6c893d*/
   v7 = v5; /*0x6c8947*/
-  vtable2 = this->?; /*0x6c894d*/
+  vtable2 = this->M8; /*0x6c894d*/
   if ( vtable2 ) /*0x6c8952*/
     qmemcpy(v5, vtable2, 32776 * (int)this->AbstractClass); /*0x6c8967*/
   RA2_OPDEL(this->?); /*0x6c8974*/
-  this->? = (void *)v4; /*0x6c8980*/
+  *(void **)&this->M4 = (void *)v4; /*0x6c8980*/
   this->? = v7; /*0x6c8983*/
   return 1; /*0x6c890f*/
 }
@@ -1957,8 +1957,8 @@ unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
 
   this->AbstractClass = (void *)Size; /*0x6c89b8*/
   v3 = (void *)RA2_OPNEW(Size); /*0x6c89ba*/
-  this->? = v3; /*0x6c89c2*/
-  this->? = v3; /*0x6c89c5*/
+  *(void **)&this->M4 = v3; /*0x6c89c2*/
+  *(void **)&this->M8 = v3; /*0x6c89c5*/
   return &this->AbstractClass; /*0x6c89ca*/
 }
 } // namespace gamemd
@@ -1977,18 +1977,18 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
   unsigned char *v14; // [esp+2Ch] [ebp+Ch]
   int v15; // [esp+30h] [ebp+10h]
 
-  vtable2 = this->?; /*0x6c8b19*/
+  vtable2 = this->M8; /*0x6c8b19*/
   if ( (char *)(vtable2 + 6) > (char *)this->? + (unsigned int)this->AbstractClass ) /*0x6c8b28*/
     return 0; /*0x6c8b28*/
   v12 = this->?; /*0x6c8b2c*/
-  this->? = vtable2 + 6; /*0x6c8b30*/
+  this->M8 = vtable2 + 6; /*0x6c8b30*/
   if ( !vtable2 ) /*0x6c8b33*/
     return 0; /*0x6c8b35*/
   *vtable2 = a4; /*0x6c8b4f*/
   vtable2[1] = a5; /*0x6c8b52*/
   vtable2[2] = *(unsigned short *)(a3 + 8); /*0x6c8b5a*/
   vtable2[3] = *(unsigned short *)(a3 + 12); /*0x6c8b66*/
-  *((unsigned int *)vtable2 + 2) = this->?; /*0x6c8b70*/
+  *((unsigned int *)vtable2 + 2) = this->M8; /*0x6c8b70*/
   v8 = CellStruct::Copy((CellStruct *)a3, &v13); /*0x6c8b73*/
   v9 = a2; /*0x6c8b7a*/
   v14 = (unsigned char *)(*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)a2 + 92))(a2, *v8, v8[1]); /*0x6c8b92*/
@@ -1998,7 +1998,7 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
     while ( 1 ) /*0x6c8bbb*/
     {
       v10 = Map_Append(v14, (int)&g_SidebarButtonState.needsRedraw, *(unsigned int *)(a3 + 8)); /*0x6c8bbb*/
-      v11 = (char *)this->?; /*0x6c8bc0*/
+      v11 = (char *)this->M8; /*0x6c8bc0*/
       if ( &v11[v10] > (char *)this->? + (unsigned int)this->AbstractClass || (this->? = &v11[v10], !v11) ) /*0x6c8bd4*/
       {
         (*(void (__thiscall **)(int))(*(unsigned int *)v9 + 96))(v9); /*0x6c8c16*/
@@ -2417,7 +2417,7 @@ int E4Recv_6C9940::sub_6C9940(char a2, char a3, unsigned char a4)
   IDA_HIBYTE(v4) = a2; /*0x6c9946*/
   IDA_LOBYTE(v4) = a3; /*0x6c9950*/
   result = a4 | (v4 << 8); /*0x6c9957*/
-  this->? = (void *)result; /*0x6c9959*/
+  *(void **)&this->M8 = (void *)result; /*0x6c9959*/
   return result; /*0x6c995c*/
 }
 } // namespace gamemd
@@ -2429,16 +2429,16 @@ void E4Recv_6C9960::sub_6C9960(wchar_t * String)
   int v3; // eax
   wchar_t *v4; // eax
 
-  if ( this->? ) /*0x6c9964*/
+  if ( this->M20 ) /*0x6c9964*/
   {
     RA2_OPDEL((void *)this->?); /*0x6c996c*/
-    this->? = 0; /*0x6c9974*/
+    *(unsigned short *)&this->M20 = 0; /*0x6c9974*/
   }
   if ( String ) /*0x6c9981*/
   {
     v3 = wcslen(String); /*0x6c9984*/
     v4 = (wchar_t *)RA2_OPNEW(2 * v3 + 2); /*0x6c998e*/
-    this->? = (int)v4; /*0x6c9996*/
+    this->M20 = (int)v4; /*0x6c9996*/
     if ( v4 ) /*0x6c999b*/
       wcscpy(v4, String); /*0x6c999f*/
   }
@@ -2462,14 +2462,14 @@ namespace gamemd {
 unsigned int * E4Recv_6C9AC0::sub_6C9AC0()
 {
   this->AbstractClass = 0; /*0x6c9ac4*/
-  this->? = 0; /*0x6c9ac6*/
-  this->? = 0; /*0x6c9ac9*/
-  this->? = 0; /*0x6c9acc*/
-  this->? = 0; /*0x6c9acf*/
-  this->? = 0; /*0x6c9ad2*/
-  this->? = 0; /*0x6c9ad5*/
-  this->? = 0; /*0x6c9ad8*/
-  this->? = 0; /*0x6c9adb*/
+  this->M4 = 0; /*0x6c9ac6*/
+  this->M8 = 0; /*0x6c9ac9*/
+  this->M12 = 0; /*0x6c9acc*/
+  this->M16 = 0; /*0x6c9acf*/
+  this->M20 = 0; /*0x6c9ad2*/
+  this->q018 = 0; /*0x6c9ad5*/
+  this->M28 = 0; /*0x6c9ad8*/
+  this->q020 = 0; /*0x6c9adb*/
   return &this->AbstractClass; /*0x6c9ade*/
 }
 } // namespace gamemd

@@ -525,7 +525,7 @@ int Cell::SearchEnemies(IUnknown * aP1)
   unsigned int v16[2]; // [esp+78h] [ebp-14h] BYREF
   unsigned int v17[3]; // [esp+80h] [ebp-Ch] BYREF
 
-  v3 = this->q0E4; /*0x487a19*/
+  v3 = *(unsigned int *)&this->q0E4; /*0x487a19*/
   if ( v3 ) /*0x487a21*/
   {
     aP1 = aP1; /*0x487a27*/
@@ -654,7 +654,7 @@ int Cell::IsBridge2()
 {
   int result; // eax
 
-  IDA_LOBYTE(result) = *(unsigned int *)&this->__pad_E8[4] == 5; /*0x487df7*/
+  IDA_LOBYTE(result) = *(unsigned int *)&this->u32_EC == 5; /*0x487df7*/
   return result; /*0x487dfa*/
 }
 }

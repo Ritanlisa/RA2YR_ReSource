@@ -244,7 +244,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   if ( (*(uint8_t (__thiscall **)(u_short *, unsigned char *))(((unsigned int)(this->q0208))))(this, v18) ) /*0x7b1665*/
   {
     NetworkID::Assign(v18, &a3, (int)&v27, 0); /*0x7b16d0*/
-    v19 = this->Count; /*0x7b16d5*/
+    v19 = *(unsigned int *)&this->Count; /*0x7b16d5*/
     v20 = this->u32_18; /*0x7b16d8*/
     v21 = &this->Count; /*0x7b16db*/
     if ( v20 < v19 /*0x7b16fe*/
@@ -531,39 +531,39 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x7b2a2c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x7b2a32*/
+    this->LocalNode = 0; /*0x7b2a32*/
     if ( a3 ) /*0x7b2a38*/
       v4 = a3; /*0x7b2a4e*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x7b2a4a*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x7b2a52*/
+    this->LocalNode = 1; /*0x7b2a52*/
     if ( !v4 ) /*0x7b2a56*/
       return 0; /*0x7b2aca*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x7b2a58*/
+    if ( *(unsigned int *)&this->Initialized ) /*0x7b2a58*/
     {
-      m_8 = this->m_8; /*0x7b2a5f*/
+      m_8 = this->LocalNetwork; /*0x7b2a5f*/
       if ( a2 < m_8 ) /*0x7b2a64*/
         m_8 = a2; /*0x7b2a66*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x7b2a6c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->Initialized + 4 * i - 4) ) /*0x7b2a6c*/
         ++i; /*0x7b2a71*/
-      if ( IDA_BYTE1(this->m_C) ) /*0x7b2a7e*/
+      if ( this->IsAllocated ) /*0x7b2a7e*/
       {
-        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x7b2a89*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x7b2a91*/
+        RA2_OPDEL(*(void **)&this->Initialized); /*0x7b2a89*/
+        *(unsigned int *)&this->Initialized = 0; /*0x7b2a91*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x7b2a9a*/
-    this->m_8 = a2; /*0x7b2aa2*/
-    IDA_BYTE1(this->m_C) = a3 == 0; /*0x7b2aa5*/
+    *(void **)&this->Initialized = v4; /*0x7b2a9a*/
+    this->LocalNetwork = a2; /*0x7b2aa2*/
+    this->IsAllocated = a3 == 0; /*0x7b2aa5*/
   }
   else
   {
     (*(void (__thiscall **)(_DynamicVectorClass_PAUWinsockBufferType_WinsockInterfaceClass *))(*(unsigned int *)this->__pad_0 /*0x7b2aae*/
                                                                                              + 12))(this);
   }
-  v7 = this->m_8; /*0x7b2ab1*/
-  if ( v7 < this->m_10 ) /*0x7b2ab9*/
-    this->m_10 = v7; /*0x7b2abb*/
+  v7 = this->LocalNetwork; /*0x7b2ab1*/
+  if ( v7 < this->Count ) /*0x7b2ab9*/
+    *(unsigned int *)&this->Count = v7; /*0x7b2abb*/
   return 1; /*0x7b2abe*/
 }
 } // namespace gamemd
@@ -691,23 +691,23 @@ void IPXInterfaceClass::getSocketCount()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x7b2846*/
-  this->m_10 = 0; /*0x7b2849*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x7b2850*/
+  v2 = *(void **)&this->Initialized; /*0x7b2846*/
+  *(unsigned int *)&this->Count = 0; /*0x7b2849*/
+  if ( v2 && this->IsAllocated ) /*0x7b2850*/
   {
     RA2_OPDEL(v2); /*0x7b2856*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x7b285e*/
+    *(unsigned int *)&this->Initialized = 0; /*0x7b285e*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x7b2861*/
-  this->m_8 = 0; /*0x7b2864*/
+  this->IsAllocated = 0; /*0x7b2861*/
+  this->LocalNetwork = 0; /*0x7b2864*/
 }
 } // namespace gamemd
 // 0x7B2870
 namespace gamemd {
 unsigned int IPXInterfaceClass::resetSocket(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x7b2870*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x7b2885*/
+  if ( this->LocalNode ) /*0x7b2870*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->Initialized) >> 2; /*0x7b2885*/
   else
     return 0; /*0x7b2877*/
 }
@@ -720,11 +720,11 @@ int IPXInterfaceClass::initSession(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x7b2ad0*/
+  m_10 = *(unsigned int *)&this->Count; /*0x7b2ad0*/
   result = 0; /*0x7b2ad3*/
   if ( m_10 <= 0 ) /*0x7b2ad8*/
     return -1; /*0x7b2aef*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x7b2ade*/
+  for ( i = *(unsigned int **)&this->Initialized; *i != *a2; ++i ) /*0x7b2ade*/
   {
     if ( ++result >= m_10 ) /*0x7b2aed*/
       return -1; /*0x7b2aed*/
@@ -738,17 +738,17 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x7b2b53*/
+  v3 = *(void **)&this->Initialized; /*0x7b2b53*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b2b56*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x7b2b60*/
+  if ( v3 && this->IsAllocated ) /*0x7b2b60*/
   {
     RA2_OPDEL(v3); /*0x7b2b68*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x7b2b70*/
+    *(unsigned int *)&this->Initialized = 0; /*0x7b2b70*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x7b2b7b*/
-  this->m_8 = 0; /*0x7b2b81*/
+  this->IsAllocated = 0; /*0x7b2b7b*/
+  *(unsigned short *)&this->LocalNetwork = 0; /*0x7b2b81*/
   if ( (a2 & 1) != 0 ) /*0x7b2b88*/
     RA2_OPDEL(); /*0x7b2b8b*/
-  return this->__pad_0; /*0x7b2b95*/
+  return this; /*0x7b2b95*/
 }
 } // namespace gamemd

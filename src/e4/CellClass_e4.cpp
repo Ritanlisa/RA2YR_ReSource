@@ -25,7 +25,7 @@ int CellClass::EnsureFileLoaded()
 {
   if ( !this->sensorsOfHouses[10] && this->u32_2F4 ) /*0x544c8d*/
     MapClass::LoadFileData(); /*0x544c97*/
-  return this->sensorsOfHouses[10] != 0; /*0x544ca9*/
+  return this->q0A4 != 0; /*0x544ca9*/
 }
 }
 // 0x56EF50
@@ -1394,7 +1394,7 @@ int CellClass::CheckTilePassable2(IUnknown * aP0)
   result = v5[17]; /*0x57bad9*/
   if ( result >= 74 && result <= 82 || result >= 92 && result <= 95 || result == 100 ) /*0x57baf3*/
   {
-    v7 = aP0->vtable3; /*0x57bafc*/
+    v7 = *(unsigned int *)&aP0->vtable3; /*0x57bafc*/
     IDA_LOWORD(aP0) = *(unsigned short *)aP0; /*0x57bb00*/
     IDA_HIWORD(aP0) = v7 - 1; /*0x57bb0b*/
     v8 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP0) + 17); /*0x57bb23*/

@@ -10,7 +10,7 @@ struct TimerClass {
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
-    unsigned int ;  // 0x10
+    unsigned int q10;  // 0x10
     unsigned int q004;
     unsigned int q030;
     unsigned int q034;

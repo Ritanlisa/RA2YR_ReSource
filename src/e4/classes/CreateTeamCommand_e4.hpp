@@ -9,7 +9,7 @@ struct CreateTeamCommand {
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     int Capacity;  // 0x8
-    unsigned int ;  // 0xC
+    unsigned int qC;  // 0xC
     bool IsAllocated;  // 0xD
     void* q010;  // 0x10
     bool IsInitialized;  // 0x12

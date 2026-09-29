@@ -14,7 +14,7 @@ struct Animation {
     void* q014;  // 0x14
     void* q018;  // 0x18
     unsigned int q019;  // 0x19
-    unsigned int ;  // 0x20
+    unsigned int q20;  // 0x20
     void* q024;  // 0x24
     unsigned int u32_30;  // 0x30
     void* q034;  // 0x34

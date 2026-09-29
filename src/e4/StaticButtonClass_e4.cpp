@@ -22,6 +22,6 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   GadgetClass::Dtor(); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
     RA2_OPDEL(); /*0x6c68b0*/
-  return this->__pad_0; /*0x6c68ba*/
+  return this; /*0x6c68ba*/
 }
 } // namespace gamemd

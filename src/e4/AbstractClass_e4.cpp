@@ -76,7 +76,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     *(int *)((char *)&v5[1].parent_gap[1] + 3) = 0; /*0x438f89*/
     *(int *)((char *)&v5[1].parent_gap[3] + 3) = v7; /*0x438f8c*/
     aP2[14] = v5; /*0x438f8f*/
-    v8 = this->vtable3; /*0x438f92*/
+    v8 = *(unsigned int *)&this->vtable3; /*0x438f92*/
     if ( this->uniqueId < v8 /*0x438fb4*/
       || (this->q034 || !v8)
       && (v9 = this->abstractFlags, v9 > 0)
@@ -1146,7 +1146,7 @@ int AbstractClass::getMapCoords()
 namespace gamemd {
 std::locale::facet * AbstractClass::setMapCoords(char a2)
 {
-  this->m_0 = (int)&Animate_vftable; /*0x427279*/
+  *(unsigned int *)&this->vtable1 = (int)&Animate_vftable; /*0x427279*/
   if ( (a2 & 1) != 0 ) /*0x42727f*/
     RA2_OPDEL(); /*0x427282*/
   return (std::locale::facet *)this; /*0x42728c*/
@@ -1185,7 +1185,7 @@ int AbstractClass::COMStub_Return0_270()
 
 // 0x464A70
 namespace gamemd {
-void AbstractClass_queryInterface()
+void AbstractClass_queryInterface(AbstractClass *aP0)
 {
   void *v3; // esi
   void *GroundHeight; // eax
@@ -1197,10 +1197,10 @@ void AbstractClass_queryInterface()
   v7 = (void *)a2[1]; /*0x464a8b*/
   v8 = a2[2]; /*0x464a92*/
   GroundHeight = (void *)Cell::GetGroundHeight(&v6); /*0x464a96*/
-  this->vtable0 = v3; /*0x464aa5*/
-  this->vtable1 = v7; /*0x464aab*/
-  this->vtable2 = GroundHeight; /*0x464aaf*/
-  return &this->vtable0; /*0x464a9f*/
+  aP0->vtable0 = v3; /*0x464aa5*/
+  aP0->vtable1 = v7; /*0x464aab*/
+  aP0->vtable2 = GroundHeight; /*0x464aaf*/
+  return &aP0->vtable0; /*0x464a9f*/
 }
 }
 // 0x465910

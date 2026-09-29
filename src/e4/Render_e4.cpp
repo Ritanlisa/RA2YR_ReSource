@@ -1739,7 +1739,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
   v11[0] = (void*)&CCFileClass_vftable; /*0x5c06ea*/
   v13 = 0; /*0x5c06f2*/
   Vector::Clear((int)v12); /*0x5c06fa*/
-  v11[0] = &off_7E1668; /*0x5c0703*/
+  v11[0] = (unsigned int)&off_7E1668; /*0x5c0703*/
   BufferIOFileClass::Dtor(v11); /*0x5c070b*/
   if ( !v6 ) /*0x5c0712*/
   {
@@ -1749,7 +1749,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
     v11[0] = (void*)&CCFileClass_vftable; /*0x5c0756*/
     v13 = 0; /*0x5c075e*/
     Vector::Clear((int)v12); /*0x5c0766*/
-    v11[0] = &off_7E1668; /*0x5c076f*/
+    v11[0] = (unsigned int)&off_7E1668; /*0x5c076f*/
     BufferIOFileClass::Dtor(v11); /*0x5c0777*/
     if ( !v8 ) /*0x5c077e*/
       return 0; /*0x5c07be*/

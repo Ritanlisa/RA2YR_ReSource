@@ -39,17 +39,17 @@ void * RadBeam::Create()
 namespace gamemd {
 unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
 {
-  this->? = 0; /*0x6593fe*/
+  this->nextArrayIndex = 0; /*0x6593fe*/
   this->AbstractClass = 0; /*0x659401*/
-  this->? = 0; /*0x659403*/
-  IDA_LOBYTE(this->?) = 0; /*0x659406*/
-  IDA_BYTE1(this->?) = 1; /*0x659409*/
-  this->? = 0; /*0x65940c*/
-  this->? = aP1; /*0x65940f*/
-  this->? = 0; /*0x659412*/
-  IDA_LOBYTE(this->?) = 0; /*0x659415*/
-  IDA_BYTE1(this->?) = 0; /*0x659418*/
-  IDA_BYTE2(this->?) = 0; /*0x65941b*/
+  *(unsigned int *)&this->q004 = 0; /*0x659403*/
+  IDA_LOBYTE(this->u32_8) = 0; /*0x659406*/
+  IDA_BYTE1(this->u32_8) = 1; /*0x659409*/
+  this->memberAtOffset12 = 0; /*0x65940c*/
+  this->uniqueId = aP1; /*0x65940f*/
+  this->referenceCount = 0; /*0x659412*/
+  IDA_LOBYTE(this->NeedsSaveOrLink) = 0; /*0x659415*/
+  this->u8_21 = 0; /*0x659418*/
+  this->u8_22 = 0; /*0x65941b*/
   this->range[0] = 0; /*0x65941e*/
   this->range[1] = 0; /*0x659421*/
   this->data[0] = 0; /*0x659424*/

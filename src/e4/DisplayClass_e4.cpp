@@ -119,7 +119,7 @@ int DisplayClass::SetSize()
   int result; // eax
 
   MapClass::Destru_vt07(); /*0x4a88c3*/
-  *(unsigned int *)&this->__pad_1198[12] = 0; /*0x4a88cd*/
+  *(unsigned int *)&this->q11A4 = 0; /*0x4a88cd*/
   this->DisplayClass_field_0x11A8 = 0; /*0x4a88d3*/
   *(unsigned int *)this->__pad_11AC = -1; /*0x4a88d9*/
   *(unsigned int *)&this->__pad_41E[3422] = 0; /*0x4a88df*/
@@ -580,7 +580,7 @@ int DisplayClass::InitViewBounds(unsigned int * a2)
     if ( !(unsigned char)DisplayClass_field_0x11A8 ) /*0x4ac322*/
     {
       IDA_LOBYTE(DisplayClass_field_0x11A8) = IDA_BYTE1(this->DisplayClass_field_0x11B0); /*0x4ac324*/
-      if ( !(unsigned char)DisplayClass_field_0x11A8 && *(unsigned int *)&this->__pad_11B4[4] == -1 ) /*0x4ac335*/
+      if ( !(unsigned char)DisplayClass_field_0x11A8 && *(unsigned int *)&this->q11B8 == -1 ) /*0x4ac335*/
       {
         DisplayClass_field_0x11A8 = this->DisplayClass_field_0x11A8; /*0x4ac337*/
         if ( !DisplayClass_field_0x11A8 ) /*0x4ac33f*/
@@ -684,7 +684,7 @@ int DisplayClass::ExitMode()
 {
   if ( g_TacticalClass_Instance ) /*0x4aeadb*/
     TacticalClass::ResetScrollBounds((TacticalClass *)g_TacticalClass_Instance); /*0x4aeadd*/
-  this->__pad_11B4[27] = 0; /*0x4aeae2*/
+  *(unsigned char *)&this->q11CF = 0; /*0x4aeae2*/
   IDA_LOBYTE(this->DisplayClass_field_0x11D0) = 0; /*0x4aeae9*/
   stru_A8EB00.?[441] = 1; /*0x4aeaf0*/
   return (*((int (__thiscall **)(DisplayClass *, unsigned int, unsigned int))this->DisplayClass_field_0x0 + 18))(this, 0, 0); /*0x4aeb02*/
@@ -711,7 +711,7 @@ int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
       return 0; /*0x551a04*/
   }
   v7 = this->Count; /*0x551a0a*/
-  v8 = this->ptr_4; /*0x551a0d*/
+  v8 = *(unsigned int *)&this->ptr_4; /*0x551a0d*/
   this->Count = v7 + 1; /*0x551a13*/
   *(unsigned int *)(v8 + 4 * v7) = aP1; /*0x551a1a*/
   return 1; /*0x5519c9*/
@@ -800,7 +800,7 @@ int DisplayClass::ScrollTacticalView(IUnknown * aP1, IUnknown * aP2)
   v4 = *(unsigned int *)&this->__pad_41E[2374]; /*0x6d85dc*/
   result = v4 + aP2 * dword_B0CE38[2 * aP1]; /*0x6d85fc*/
   if ( v4 != result /*0x6d8606*/
-    || *(unsigned int *)&this->__pad_41E[2378] != *(unsigned int *)&this->__pad_41E[2378] + aP2 * dword_B0CE3C[2 * aP1] )
+    || *(unsigned int *)&this->u32_D74 != *(unsigned int *)&this->u32_D74 + aP2 * dword_B0CE3C[2 * aP1] )
   {
     v6 = *(unsigned int *)&this->__pad_41E[2394]; /*0x6d8612*/
     v7 = aP2 * dword_B0CE3C[2 * aP1]; /*0x6d8618*/
@@ -1037,7 +1037,7 @@ unsigned int * DisplayClass::loc_4AEB50(char a2)
     if ( v3 && this->IsAllocated )
   {
     RA2_OPDEL(v3);
-    this->ptr_4 = 0;
+    *(unsigned int *)&this->ptr_4 = 0;
   }
     this->IsAllocated = 0;
     this->u32_8 = 0;

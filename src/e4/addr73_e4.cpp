@@ -1356,7 +1356,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
     v3 = 0; /*0x733d0d*/
   }
   v4 = 0; /*0x733d12*/
-  uniqueId = v1->?; /*0x733d16*/
+  uniqueId = v1->NeedsSaveOrLink; /*0x733d16*/
   v16 = 0; /*0x733d1a*/
   if ( uniqueId <= 0 ) /*0x733d1e*/
     return (unsigned int *)v3; /*0x733dfa*/

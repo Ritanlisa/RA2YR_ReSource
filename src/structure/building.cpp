@@ -12223,7 +12223,7 @@ void BuildingClass::Draw(Point2D* a, RectangleStruct* b) const { (void)a; (void)
             }
             else
             {
-              if ( (*((int (__usercall **)@<eax>(BuildingClass *@<ecx>))this->TechnoClass + 97))(this) == 16 ) /*0x43d69f*/
+              if ( (*((int (__usercall **)(BuildingClass *))this->TechnoClass + 97))(this) == 16 ) /*0x43d69f*/
               {
                 if ( v62 ) /*0x43d6a7*/
                 {

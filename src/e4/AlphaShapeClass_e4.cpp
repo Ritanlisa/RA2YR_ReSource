@@ -87,7 +87,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
   AbstractClass::DTOR(); /*0x4217e3*/
   if ( (a2 & 1) != 0 ) /*0x4217ed*/
     RA2_OPDEL(); /*0x4217f0*/
-  return this->__pad_0; /*0x4217fa*/
+  return this; /*0x4217fa*/
 }
 } // namespace gamemd
 // 0x420DE0

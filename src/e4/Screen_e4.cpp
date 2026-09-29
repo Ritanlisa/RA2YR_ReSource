@@ -163,7 +163,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v60 = 1; /*0x68f136*/
   v58 = v8; /*0x68f140*/
   v10 = v7 - v8; /*0x68f144*/
-  v11 = this->q008; /*0x68f146*/
+  v11 = *(unsigned int *)&this->q008; /*0x68f146*/
   v10 = v10; /*0x68f149*/
   v56 = v10; /*0x68f14d*/
   v55 = v6; /*0x68f15a*/
@@ -173,7 +173,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   (*(void (__thiscall **)(int, int *, int *, int))(*(unsigned int *)v11 + 28))(v11, &v55, &v53, 25); /*0x68f17b*/
   v58 = v61; /*0x68f189*/
   v55 = v6 + 4; /*0x68f18d*/
-  v12 = this->q008; /*0x68f191*/
+  v12 = *(unsigned int *)&this->q008; /*0x68f191*/
   v56 = v10; /*0x68f19b*/
   v57 = 7; /*0x68f19f*/
   IDA_LOWORD(v53) = -18947; /*0x68f1a7*/
@@ -181,7 +181,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   (*(void (__thiscall **)(int, int *, int *, int))(*(unsigned int *)v12 + 28))(v12, &v55, &v53, 50); /*0x68f1bc*/
   v58 = v61; /*0x68f1ca*/
   v55 = v6 + 11; /*0x68f1ce*/
-  v13 = this->q008; /*0x68f1d2*/
+  v13 = *(unsigned int *)&this->q008; /*0x68f1d2*/
   v56 = v10; /*0x68f1dc*/
   v57 = 4; /*0x68f1e0*/
   IDA_LOWORD(v53) = -18947; /*0x68f1e8*/
@@ -190,7 +190,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   v62 = v6 + 132; /*0x68f20a*/
   v55 = v6 + 132; /*0x68f20e*/
   v58 = v59; /*0x68f214*/
-  v14 = this->q008; /*0x68f21a*/
+  v14 = *(unsigned int *)&this->q008; /*0x68f21a*/
   v73 = v7 - v59; /*0x68f21d*/
   v56 = v7 - v59; /*0x68f221*/
   v57 = 4; /*0x68f22c*/
@@ -200,14 +200,14 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   v55 = v6 + 136; /*0x68f255*/
   v56 = v73; /*0x68f259*/
   v57 = 7; /*0x68f25d*/
-  v15 = this->q008; /*0x68f269*/
+  v15 = *(unsigned int *)&this->q008; /*0x68f269*/
   v58 = v59; /*0x68f26c*/
   IDA_LOWORD(v53) = 7418; /*0x68f277*/
   IDA_BYTE2(v53) = 28; /*0x68f280*/
   (*(void (__thiscall **)(int, int *, int *, int))(*(unsigned int *)v15 + 28))(v15, &v55, &v53, 50); /*0x68f28b*/
   v58 = v59; /*0x68f29c*/
   v55 = v6 + 143; /*0x68f2a0*/
-  v16 = this->q008; /*0x68f2a4*/
+  v16 = *(unsigned int *)&this->q008; /*0x68f2a4*/
   v56 = v73; /*0x68f2ae*/
   v57 = 4; /*0x68f2b2*/
   IDA_LOWORD(v53) = 7418; /*0x68f2ba*/
@@ -257,7 +257,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     else
     {
       v58 = v18; /*0x68f351*/
-      v21 = this->q008; /*0x68f35e*/
+      v21 = *(unsigned int *)&this->q008; /*0x68f35e*/
       v56 = v53; /*0x68f361*/
       v55 = v6; /*0x68f36c*/
       v57 = 15; /*0x68f370*/
@@ -325,7 +325,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     {
       v53 = v53; /*0x68f4b4*/
       v58 = v63; /*0x68f4b8*/
-      v33 = this->q008; /*0x68f4c5*/
+      v33 = *(unsigned int *)&this->q008; /*0x68f4c5*/
       v55 = v62; /*0x68f4c8*/
       v56 = v53; /*0x68f4d3*/
       v57 = 15; /*0x68f4d7*/
@@ -391,7 +391,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v19 = v61; /*0x68f6a9*/
   }
   v56 = v10; /*0x68f6b3*/
-  v47 = this->q008; /*0x68f6be*/
+  v47 = *(unsigned int *)&this->q008; /*0x68f6be*/
   v58 = v19; /*0x68f6c1*/
   v55 = v6; /*0x68f6cc*/
   v57 = 15; /*0x68f6d0*/
@@ -431,7 +431,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
       1);
   v62 = v62; /*0x68f7b4*/
   v56 = v73; /*0x68f7b8*/
-  v49 = this->q008; /*0x68f7c5*/
+  v49 = *(unsigned int *)&this->q008; /*0x68f7c5*/
   v58 = v59; /*0x68f7c8*/
   v55 = v62; /*0x68f7d3*/
   v57 = 15; /*0x68f7d7*/

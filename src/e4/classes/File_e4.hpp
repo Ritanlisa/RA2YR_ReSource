@@ -9,7 +9,7 @@ struct File {
     unsigned char q000;  // 0x0
     unsigned int u32_4;  // 0x4
     unsigned int u16_6;  // 0x6
-    unsigned int ;  // 0x8
+    unsigned int q8;  // 0x8
     unsigned int u32_C;  // 0xC
     AbstractClass * ptr_10;  // 0x10
     unsigned int u32_14;  // 0x14

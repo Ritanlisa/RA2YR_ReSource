@@ -237,7 +237,7 @@ unsigned int * LinkedList_flat::FindPrev()
 
   p_m_Prev = (gamemd::LinkClass **)((unsigned int *)(&this->m_Prev));
   if ( !this->m_Prev ) /*0x556640*/
-    return this->__pad_0; /*0x55665d*/
+    return this; /*0x55665d*/
   do /*0x556651*/
   {
     result = (unsigned int *)(*p_m_Prev);
@@ -276,7 +276,7 @@ unsigned int * LinkedList_flat::Attach(int a2)
   v3->m_Prev = this; /*0x5566e1*/
   this->m_Next = v3; /*0x5566e4*/
   this->m_Prev = 0; /*0x5566e7*/
-  return this->__pad_0; /*0x5566f0*/
+  return this; /*0x5566f0*/
 }
 } // namespace gamemd
 // 0x556700
@@ -492,7 +492,7 @@ unsigned int * LinkedList_flat::FindNext()
 
   p_m_Next = &this->m_Next; /*0x556673*/
   if ( !this->m_Next ) /*0x556670*/
-    return this->__pad_0; /*0x55668d*/
+    return this; /*0x55668d*/
   do /*0x556681*/
   {
     result = *p_m_Next; /*0x55667b*/

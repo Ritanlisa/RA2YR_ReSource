@@ -2117,7 +2117,7 @@ unsigned int * Surface::Construct(ObjectClass * aP1, IUnknown * aP2)
   this->Width = aP1; /*0x4aec6a*/
   this->Height = aP2; /*0x4aec6d*/
   *(unsigned int *)this->__pad_0 = &Surface_Vtable; /*0x4aec70*/
-  return this->__pad_0; /*0x4aec76*/
+  return this; /*0x4aec76*/
 }
 // 0x620F60
 namespace gamemd {

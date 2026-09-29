@@ -54,7 +54,7 @@ unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   this->ScoreScreen_field_0x04 = 11; /*0x690ab7*/
   this->ScoreScreen_field_0x14 = aP1; /*0x690abe*/
   this->ScoreScreen_field_0x08 = 21; /*0x690ac1*/
-  return this->__pad_0; /*0x690aca*/
+  return this; /*0x690aca*/
 }
 } // namespace gamemd
 // 0x690AE0
@@ -93,7 +93,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->ScoreScreen_field_0x04 = (unsigned int *)(20);
   this->ScoreScreen_field_0x14 = (unsigned int *)(a2);
   this->ScoreScreen_field_0x08 = (unsigned int *)(35);
-  return this->__pad_0; /*0x690b9a*/
+  return this; /*0x690b9a*/
 }
 } // namespace gamemd
 // 0x690F30
@@ -106,7 +106,7 @@ unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
   this->ScoreScreen_field_0x14 = 0; /*0x690f50*/
   this->ScoreScreen_field_0x18 = a4; /*0x690f57*/
   *(unsigned int *)this->__pad_0 = (void*)&ScoreAnimClass_vftable; /*0x690f5a*/
-  return this->__pad_0; /*0x690f62*/
+  return this; /*0x690f62*/
 }
 } // namespace gamemd
 // 0x7712C0

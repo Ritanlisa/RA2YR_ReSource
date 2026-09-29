@@ -166,9 +166,9 @@ void * ThemeClass::InitializeThemes(char * a2)
           && (v11 = this->ThemeClass_field_28, v11 > 0)
           && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q014 + 8))(&this->q014, v10 + v11, 0) )
         {
-          v12 = this->q024; /*0x7206d8*/
+          v12 = *(unsigned int *)&this->q024; /*0x7206d8*/
           v13 = this->u32_18; /*0x7206db*/
-          this->q024 = v12 + 1; /*0x7206e1*/
+          *(unsigned int *)&this->q024 = v12 + 1; /*0x7206e1*/
           *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7206e4*/
         }
       }
@@ -188,7 +188,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   {
     Enabled = Audio::GetEnabled(); /*0x720724*/
     result = AudioStream::Constructor(Enabled, 0x4E20u); /*0x72072b*/
-    this->ThemeClass_field_2C = result; /*0x720732*/
+    *(void **)&this->ThemeClass_field_2C = result; /*0x720732*/
     if ( result ) /*0x720735*/
     {
       SetAudioFileName((int)result, aMusicStream); /*0x72073e*/

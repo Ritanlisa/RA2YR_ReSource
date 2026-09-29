@@ -35,7 +35,7 @@ unsigned int * BinkMovie::Close(char * FullPath)
   this->q00A = -1; /*0x4326a8*/
   this->u32_2C = 1; /*0x4326af*/
   BinkMovie::InitFromFile((LPCSTR *)FullPath); /*0x4326b3*/
-  return this->__pad_0; /*0x4326ba*/
+  return this; /*0x4326ba*/
 }
 }
 // 0x4326C0
@@ -50,7 +50,7 @@ unsigned int * BinkMovie::Open(char * FullPath, int a3)
   this->u32_2C = 1; /*0x4326e2*/
   this->u32_2D = 0; /*0x4326e6*/
   BinkMovie::InitFromFile((LPCSTR *)FullPath); /*0x4326e9*/
-  return this->__pad_0; /*0x4326f0*/
+  return this; /*0x4326f0*/
 }
 }
 // 0x432700
@@ -119,7 +119,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
   {
     BinkMovie::FreeSurfaceTracker(this->q020); /*0x432764*/
     RA2_OPDEL(v4); /*0x43276a*/
-    this->q020 = 0; /*0x432772*/
+    *(unsigned int *)&this->q020 = 0; /*0x432772*/
   }
   if ( this->u32_4 ) /*0x432775*/
   {
@@ -249,7 +249,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
     this->u32_14 = (gamemd::AbstractClass **)(v22);
     this->q018 = (gamemd::AbstractClass **)(v27);
     this->q01C = bottom; /*0x432a32*/
-    this->q008 = BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28)); /*0x432a44*/
+    *(unsigned int *)&this->q008 = BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28)); /*0x432a44*/
     return 1; /*0x432a4a*/
   }
   else
@@ -448,7 +448,7 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
       {
         v14 = (void *)((int)((void *)((*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 116))(aP1))));
         v15 = (void *)((*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 128))(aP1));
-        v16 = this->q020; /*0x432fb9*/
+        v16 = *(unsigned int *)&this->q020; /*0x432fb9*/
         if ( v13 ) /*0x432fbe*/
           v16 |= 0x80000000; /*0x432fc0*/
         BinkCopyToBuffer(this->u32_10, v19, v14, v15, a3, a4, v16); /*0x432fdc*/
@@ -1643,7 +1643,7 @@ unsigned int * BinkMovie::VtableDispatch(int a2)
   (*(void (__thiscall **)(int, int *, int))(*(unsigned int *)a2 + 8))(a2, &a2, 2); /*0x6c9ede*/
   if ( (unsigned short)a2 != 0xFEFF ) /*0x6c9ee8*/
     Debug::Log(); /*0x6c9eef*/
-  return this->__pad_0; /*0x6c9ef9*/
+  return this; /*0x6c9ef9*/
 }
 }
 // 0x6C99D0

@@ -174,7 +174,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   v13 = 0; /*0x4fa5a8*/
   if ( v10->isSuspended ) /*0x4fa5a8*/
   {
-    v14 = v10->q058; /*0x4fa5b1*/
+    v14 = *(unsigned int *)&v10->q058; /*0x4fa5b1*/
     if ( v14 ) /*0x4fa5b6*/
     {
       if ( (*(int (__thiscall **)(int))(*(unsigned int *)v14 + 132))(v14) == v9 ) /*0x4fa5c2*/
@@ -216,11 +216,11 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   Debug::Log(); /*0x4fa6ec*/
   Debug::Log(); /*0x4fa6fc*/
   Debug::Log(); /*0x4fa70a*/
-  v19 = v10->q058; /*0x4fa70f*/
+  v19 = *(unsigned int *)&v10->q058; /*0x4fa70f*/
   if ( v19 ) /*0x4fa717*/
     (*(void (__thiscall **)(int))(*(unsigned int *)v19 + 44))(v19); /*0x4fa71b*/
   Debug::Log(); /*0x4fa729*/
-  v20 = v10->q058; /*0x4fa72e*/
+  v20 = *(unsigned int *)&v10->q058; /*0x4fa72e*/
   if ( v20 ) /*0x4fa736*/
     (*(void (__thiscall **)(int))(*(unsigned int *)v20 + 64))(v20); /*0x4fa73a*/
   Debug::Log(); /*0x4fa748*/
@@ -384,7 +384,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
   }
   Sidebar_field_0x4 = (int *)(this->Sidebar_field_0x4);
   (*(void (__thiscall **)(int *))(this->Sidebar_field_0x4[0] + 12))(this->Sidebar_field_0x4); /*0x6363f1*/
-  this->__pad_70[40] = 0; /*0x6363f7*/
+  this->u8_98 = 0; /*0x6363f7*/
   *(unsigned int *)&this->__pad_70[28] = -1; /*0x636400*/
   *(unsigned int *)&this->__pad_70[32] = -1; /*0x636406*/
   *(unsigned int *)&this->__pad_70[36] = -1; /*0x63640c*/
@@ -414,7 +414,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
       VectorClass::EraseAt((VectorClass *)&stru_AC4B30.__pad_EC[36], (int)&v17); /*0x6364a8*/
     }
     (*(void (__thiscall **)(int *))(*Sidebar_field_0x4 + 12))(this->Sidebar_field_0x4); /*0x6364b1*/
-    this->__pad_70[40] = 0; /*0x6364b7*/
+    this->u8_98 = 0; /*0x6364b7*/
     *(unsigned int *)&this->__pad_70[28] = -1; /*0x6364be*/
     *(unsigned int *)&this->__pad_70[32] = -1; /*0x6364c4*/
     *(unsigned int *)&this->__pad_70[36] = -1; /*0x6364ca*/

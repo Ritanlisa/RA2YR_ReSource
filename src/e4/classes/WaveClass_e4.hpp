@@ -65,7 +65,7 @@ struct WaveClass {
     unsigned int q075;  // 0x75
     unsigned char alignmentPadding99_2;  // 0x76
     unsigned int WaveClass_field_124;  // 0x78
-    void* ;  // 0x7C
+    void *q7C;  // 0x7C
     unsigned char WaveClass_field_12C;  // 0x80
     unsigned char WaveClass_field_12D;  // 0x81
     unsigned char WaveClass_field_12E;  // 0x82

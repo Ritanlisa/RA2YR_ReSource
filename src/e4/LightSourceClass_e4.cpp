@@ -30,10 +30,10 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP
   this->AbstractClass = (void*)&LightSourceClass_vftable; /*0x5547a0*/
   this->Location[1] = a3; /*0x5547a6*/
   this->LightVisibility = a5; /*0x5547ad*/
-  this->? = (void*)&LightSourceClass_vftable; /*0x5547b0*/
+  *(void **)&this->vtable2 = (void*)&LightSourceClass_vftable; /*0x5547b0*/
   this->Location[2] = aP3; /*0x5547b7*/
-  this->? = (void*)&LightSourceClass_vftable; /*0x5547ba*/
-  this->? = (void*)&LightSourceClass_vftable; /*0x5547c1*/
+  *(void **)&this->vtable3 = (void*)&LightSourceClass_vftable; /*0x5547ba*/
+  *(void **)&this->vtable4 = (void*)&LightSourceClass_vftable; /*0x5547c1*/
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5547fd*/
     || (IDA_BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
@@ -67,9 +67,9 @@ int LightSourceClass::Constructor()
   this->Activated = 0; /*0x554863*/
   this->Location[2] = v2; /*0x554866*/
   this->AbstractClass = (void*)&LightSourceClass_vftable; /*0x554869*/
-  this->? = (void*)&LightSourceClass_vftable; /*0x55486f*/
-  this->? = (void*)&LightSourceClass_vftable; /*0x554876*/
-  this->? = (void*)&LightSourceClass_vftable; /*0x55487d*/
+  *(void **)&this->vtable2 = (void*)&LightSourceClass_vftable; /*0x55486f*/
+  *(void **)&this->vtable3 = (void*)&LightSourceClass_vftable; /*0x554876*/
+  *(void **)&this->vtable4 = (void*)&LightSourceClass_vftable; /*0x55487d*/
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5548b6*/
     || (IDA_BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
@@ -117,9 +117,9 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x5550df*/
       aP0->AbstractClass = (void*)&LightSourceClass_vftable; /*0x5550e4*/
-      aP0->? = (void*)&LightSourceClass_vftable; /*0x5550ea*/
-      aP0->? = (void*)&LightSourceClass_vftable; /*0x5550f1*/
-      aP0->? = (void*)&LightSourceClass_vftable; /*0x5550f8*/
+      *(void **)&aP0->vtable2 = (void*)&LightSourceClass_vftable; /*0x5550ea*/
+      *(void **)&aP0->vtable3 = (void*)&LightSourceClass_vftable; /*0x5550f1*/
+      *(void **)&aP0->vtable4 = (void*)&LightSourceClass_vftable; /*0x5550f8*/
     }
     return 0; /*0x5550ff*/
   }
@@ -160,9 +160,9 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = (void*)&LightSourceClass_vftable; /*0x555156*/
-  this->? = (void*)&LightSourceClass_vftable; /*0x55515c*/
-  this->? = (void*)&LightSourceClass_vftable; /*0x555163*/
-  this->? = (void*)&LightSourceClass_vftable; /*0x55516a*/
+  *(void **)&this->vtable2 = (void*)&LightSourceClass_vftable; /*0x55515c*/
+  *(void **)&this->vtable3 = (void*)&LightSourceClass_vftable; /*0x555163*/
+  *(void **)&this->vtable4 = (void*)&LightSourceClass_vftable; /*0x55516a*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x555171*/
   v5 = this; /*0x555186*/
   v3 = (*(int (__thiscall **)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/

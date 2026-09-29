@@ -11,12 +11,12 @@
 
 // 0x4C1B50
 namespace gamemd {
-void Math_Vector2D_Magnitude()
+void Math_Vector2D_Magnitude(Vector *aP0)
 {
   double result; // st7
 
-  result = (double)this->Vector_field_0x4; /*0x4c1b50*/
-  Math::Sqrt((double)*(int *)this->__pad_0 * (double)*(int *)this->__pad_0 + result * result); /*0x4c1b69*/
+  result = (double)aP0->Vector_field_0x4; /*0x4c1b50*/
+  Math::Sqrt((double)*(int *)aP0->__pad_0 * (double)*(int *)aP0->__pad_0 + result * result); /*0x4c1b69*/
   Math::RoundToInt(result); /*0x4c1b71*/
   return result; /*0x4c1b6e*/
 }
@@ -27,14 +27,14 @@ void Vector::Cleanup()
 {
   int result; // eax
 
-  result = *(unsigned int *)&this->m_1[3]; /*0x512d36*/
-  if ( result && IDA_BYTE1(this->m_C) ) /*0x512d3d*/
+  result = *(unsigned int *)&this->q004; /*0x512d36*/
+  if ( result && this->u8_D ) /*0x512d3d*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x512d43*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x512d4b*/
+    RA2_OPDEL(*(void **)&this->q004); /*0x512d43*/
+    *(unsigned int *)&this->q004 = 0; /*0x512d4b*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x512d4e*/
-  this->m_8 = 0; /*0x512d51*/
+  this->u8_D = 0; /*0x512d4e*/
+  *(unsigned int *)&this->q008 = 0; /*0x512d51*/
   return result; /*0x512d54*/
 }
 }
@@ -44,14 +44,14 @@ void Vector::Destructor()
 {
   int result; // eax
 
-  result = *(unsigned int *)&this->m_1[3]; /*0x513106*/
-  if ( result && IDA_BYTE1(this->m_C) ) /*0x51310d*/
+  result = *(unsigned int *)&this->q004; /*0x513106*/
+  if ( result && this->u8_D ) /*0x51310d*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x513113*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x51311b*/
+    RA2_OPDEL(*(void **)&this->q004); /*0x513113*/
+    *(unsigned int *)&this->q004 = 0; /*0x51311b*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x51311e*/
-  this->m_8 = 0; /*0x513121*/
+  this->u8_D = 0; /*0x51311e*/
+  *(unsigned int *)&this->q008 = 0; /*0x513121*/
   return result; /*0x513124*/
 }
 }
@@ -82,14 +82,14 @@ void Vector::Cleanup2()
 {
   int result; // eax
 
-  result = *(unsigned int *)&this->m_1[3]; /*0x67abe6*/
-  if ( result && IDA_BYTE1(this->m_C) ) /*0x67abed*/
+  result = *(unsigned int *)&this->q004; /*0x67abe6*/
+  if ( result && this->u8_D ) /*0x67abed*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x67abf3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x67abfb*/
+    RA2_OPDEL(*(void **)&this->q004); /*0x67abf3*/
+    *(unsigned int *)&this->q004 = 0; /*0x67abfb*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x67abfe*/
-  this->m_8 = 0; /*0x67ac01*/
+  this->u8_D = 0; /*0x67abfe*/
+  *(unsigned int *)&this->q008 = 0; /*0x67ac01*/
   return result; /*0x67ac04*/
 }
 }
@@ -117,8 +117,8 @@ void Vector::Clear()
   if ( (unsigned char)result ) /*0x43ae58*/
     RA2_OPDEL(); /*0x43ae5d*/
   *(unsigned int *)this = 0; /*0x43ae65*/
-  this->q004 = 0; /*0x43ae6b*/
-  this->q008 = 0; /*0x43ae72*/
+  *(unsigned int *)&this->q004 = 0; /*0x43ae6b*/
+  *(unsigned int *)&this->q008 = 0; /*0x43ae72*/
   return result; /*0x43ae76*/
 }
 } // namespace gamemd
@@ -194,11 +194,11 @@ int Vector::Find(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->q010; /*0x4e0550*/
+  v2 = *(unsigned int *)&this->q010; /*0x4e0550*/
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e055e*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x4e055e*/
   {
     if ( ++result >= v2 ) /*0x4e056d*/
       return -1; /*0x4e056d*/
@@ -210,7 +210,7 @@ int Vector::Find(unsigned int * a2)
 namespace gamemd {
 BOOL Vector::HasCapacity()
 {
-  return this->q008 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0bd*/
+  return this->q008 < *(unsigned int *)(*(unsigned int *)&this->q004 + 16); /*0x76f0bd*/
 }
 } // namespace gamemd
 

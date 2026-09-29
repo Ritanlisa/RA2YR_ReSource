@@ -9,7 +9,7 @@ struct JumpjetLocomotion {
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
-    unsigned int ;  // 0xC
+    unsigned int qC;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18

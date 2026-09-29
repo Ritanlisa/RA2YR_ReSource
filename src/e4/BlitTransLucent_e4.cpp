@@ -62,7 +62,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
     if ( *a2++ ) /*0x49628f*/
     {
       --v17; /*0x4962b8*/
-      *result = *(unsigned short *)&this->m_2[2] & (*result >> 1); /*0x4962b9*/
+      *result = *(unsigned short *)&this->q004 & (*result >> 1); /*0x4962b9*/
       ++result; /*0x4962bc*/
     }
     else
@@ -137,7 +137,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
 
   v11 = a5; /*0x496170*/
   result = arg0; /*0x496175*/
-  v15 = *(unsigned int *)this->m_4; /*0x496187*/
+  v15 = *(unsigned int *)*(unsigned int *)&this->q004; /*0x496187*/
   if ( a5 <= 0 ) /*0x496189*/
   {
     v18 = a4; /*0x4961ad*/
@@ -163,7 +163,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
     {
       result += 2; /*0x4961e4*/
       --v18; /*0x4961e7*/
-      *(unsigned short *)(result - 2) = *(unsigned short *)(this->m_8 + 2 * *(uint8_t *)(v19 + v15)); /*0x4961f2*/
+      *(unsigned short *)(result - 2) = *(unsigned short *)(this->ptr_8 + 2 * *(uint8_t *)(v19 + v15)); /*0x4961f2*/
     }
     else
     {
@@ -220,11 +220,11 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
   m_8 = (gamemd::BlitTransLucent25Alpha_ushort *)((void *)this->m_8);
   *(unsigned int *)this->__pad_0 = (void*)&BlitTransLucent25Alpha_unsigned_short_vftable; /*0x49a34b*/
   FractalNoise::Dtor(m_8); /*0x49a352*/
-  this->m_8 = 0; /*0x49a35b*/
+  *(unsigned int *)&this->ptr_8 = 0; /*0x49a35b*/
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
     RA2_OPDEL(); /*0x49a36d*/
-  return this->__pad_0; /*0x49a377*/
+  return this; /*0x49a377*/
 }
 } // namespace gamemd
 // 0x49A380
@@ -246,11 +246,11 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
   m_8 = (gamemd::BlitTransLucent25AlphaZReadWrite_ushort *)((void *)this->m_8);
   *(unsigned int *)this->__pad_0 = (void*)&BlitTransLucent25AlphaZReadWrite_unsigned_short_vftable; /*0x49a72b*/
   FractalNoise::Dtor(m_8); /*0x49a732*/
-  this->m_8 = 0; /*0x49a73b*/
+  *(unsigned int *)&this->ptr_8 = 0; /*0x49a73b*/
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a744*/
   if ( (a2 & 1) != 0 ) /*0x49a74a*/
     RA2_OPDEL(); /*0x49a74d*/
-  return this->__pad_0; /*0x49a757*/
+  return this; /*0x49a757*/
 }
 } // namespace gamemd
 // 0x49A760

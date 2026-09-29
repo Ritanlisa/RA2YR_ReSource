@@ -35,9 +35,9 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
       aP0->AbstractClass = (void*)&ScriptClass_vftable; /*0x691654*/
-      aP0->? = (void*)&ScriptClass_vftable; /*0x69165a*/
-      aP0->? = (void*)&ScriptClass_vftable; /*0x691661*/
-      aP0->? = (void*)&ScriptClass_vftable; /*0x691668*/
+      *(void **)&aP0->vtable2 = (void*)&ScriptClass_vftable; /*0x69165a*/
+      *(void **)&aP0->vtable3 = (void*)&ScriptClass_vftable; /*0x691661*/
+      *(void **)&aP0->vtable4 = (void*)&ScriptClass_vftable; /*0x691668*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x691678*/
     return 0; /*0x69167d*/

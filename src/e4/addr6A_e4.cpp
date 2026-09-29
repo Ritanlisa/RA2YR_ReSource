@@ -226,7 +226,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
   unsigned int v5; // eax
   int v6; // ebp
 
-  IDA_LOBYTE(this->?) = 1; /*0x6a93f8*/
+  IDA_LOBYTE(this->M28) = 1; /*0x6a93f8*/
   v2 = 26; /*0x6a9408*/
   if ( dword_A8B230[374].NeedsSaveOrLink ) /*0x6a9400*/
     v2 = 18; /*0x6a940f*/

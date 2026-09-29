@@ -139,12 +139,12 @@ Coord * * int CollectWOLConnectionTokens()
         stru_B76AC4.? = (void *)(vtable3 + 1); /*0x7a064e*/
         DeleteAndZero((ObjectClass *)&v15); /*0x7a0653*/
         v3 = v16; /*0x7a0658*/
-        v2 = *(unsigned int *)&v15.m_3[1]; /*0x7a065c*/
+        v2 = *(unsigned int *)&v15.q4; /*0x7a065c*/
       }
       result = g_WOL_UserList.owningHouseIndex; /*0x7a0660*/
       ++v2; /*0x7a0665*/
       v3 += 108; /*0x7a0666*/
-      *(unsigned int *)&v15.m_3[1] = v2; /*0x7a066b*/
+      *(unsigned int *)&v15.q4 = v2; /*0x7a066b*/
       v16 = v3; /*0x7a066f*/
     }
     while ( v2 < g_WOL_UserList.owningHouseIndex ); /*0x7a0673*/
@@ -476,7 +476,7 @@ Coord * * WOL_ProcessPingRequests()
           {
             if ( v7 >= 0 && v6 < owningHouseIndex ) /*0x7a112b*/
               v5 = (char *)g_WOL_UserList.nextObject + v7; /*0x7a1132*/
-            v8 = String::GetOrEmpty_Alt((String *)&v13.m_3[1]); /*0x7a113d*/
+            v8 = String::GetOrEmpty_Alt((String *)&v13.q4); /*0x7a113d*/
             if ( !_strcmpi(v8, v5 + 36) ) /*0x7a1143*/
               break; /*0x7a1143*/
             owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7a114f*/
@@ -666,17 +666,17 @@ Coord * * UpdateWOLLobbyPings()
           String::GetOrEmpty(&v19); /*0x7a152d*/
           Debug::Log(); /*0x7a1538*/
           v18 = String::Assign(&v25, asc_81C8FC); /*0x7a1556*/
-          v17 = FromStringInt((char **)&v23.m_3[1], v20); /*0x7a1565*/
+          v17 = FromStringInt((char **)&v23.q4, v20); /*0x7a1565*/
           v9 = String::Assign(&v23, Str); /*0x7a1570*/
           v10 = String::Concat(&v19, &v24, v9); /*0x7a157f*/
-          v11 = String::Concat((String *)v10, (char **)&v25.m_3[1], v17); /*0x7a1586*/
+          v11 = String::Concat((String *)v10, (char **)&v25.q4, v17); /*0x7a1586*/
           v12 = String::Concat((String *)v11, (char **)&v22.m_3[1], v18); /*0x7a158d*/
-          String::Append2((String *)&v19.m_3[1], v12); /*0x7a1597*/
-          DeleteAndZero((ObjectClass *)&v22.m_3[1]); /*0x7a15a0*/
-          DeleteAndZero((ObjectClass *)&v25.m_3[1]); /*0x7a15a9*/
+          String::Append2((String *)&v19.q4, v12); /*0x7a1597*/
+          DeleteAndZero((ObjectClass *)&v22.q4); /*0x7a15a0*/
+          DeleteAndZero((ObjectClass *)&v25.q4); /*0x7a15a9*/
           DeleteAndZero((ObjectClass *)&v24); /*0x7a15b2*/
           DeleteAndZero((ObjectClass *)&v23); /*0x7a15bb*/
-          DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x7a15c4*/
+          DeleteAndZero((ObjectClass *)&v23.q4); /*0x7a15c4*/
           DeleteAndZero((ObjectClass *)&v25); /*0x7a15cd*/
           ++v21; /*0x7a15d2*/
         }
@@ -710,7 +710,7 @@ Coord * * UpdateWOLLobbyPings()
       }
     }
   LABEL_40:
-    DeleteAndZero((ObjectClass *)&v19.m_3[1]); /*0x7a168f*/
+    DeleteAndZero((ObjectClass *)&v19.q4); /*0x7a168f*/
   }
 }
 }
@@ -1320,7 +1320,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       swprintf(String, (const size_t)v11, v10, v17); /*0x7a4d72*/
       WideString::Assign((wchar_t **)&v18, String); /*0x7a4d86*/
       SimpleDialogControl::Constructor(v20); /*0x7a4d8f*/
-      v20[0] = &off_7F7624; /*0x7a4da0*/
+      v20[0] = (unsigned int)&off_7F7624; /*0x7a4da0*/
       v12 = (HWND)CreateDialog(0xD3u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_78DA30, 0); /*0x7a4dad*/
       v13 = GetDlgItem(v12, 1479); /*0x7a4dbf*/
       v14 = WideString::GetOrEmpty_Alt((wchar_t **)&v18); /*0x7a4dc1*/
@@ -1328,7 +1328,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       if ( MessageDialogLoopAlt(v12, (uint8_t (*)(void))GameLoop::Thunk, 0, 1, 1) == 2 ) /*0x7a4dea*/
         break; /*0x7a4dea*/
       v4 = v4->vtable4; /*0x7a4dec*/
-      v20[0] = &off_7F7624; /*0x7a4df3*/
+      v20[0] = (unsigned int)&off_7F7624; /*0x7a4df3*/
       OwnerDrawControl::InitVtable(v20); /*0x7a4dfb*/
       DeleteAndZero::Alt(&v18); /*0x7a4e04*/
       if ( !v4 ) /*0x7a4e0b*/
@@ -1342,7 +1342,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
     }
     SetEvent(Handles); /*0x7a4e64*/
     SetCurrentDirectoryA(Buffer); /*0x7a4e6f*/
-    v20[0] = &off_7F7624; /*0x7a4e79*/
+    v20[0] = (unsigned int)&off_7F7624; /*0x7a4e79*/
     OwnerDrawControl::InitVtable(v20); /*0x7a4e81*/
     DeleteAndZero::Alt(&v18); /*0x7a4e8a*/
     return 0; /*0x7a4e92*/
@@ -1362,7 +1362,7 @@ AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
   result = (int)DSurface_Alternate; /*0x7af640*/
   if ( DSurface_Alternate ) /*0x7af64d*/
   {
-    referenceCount = this->?; /*0x7af64f*/
+    referenceCount = this->M28; /*0x7af64f*/
     if ( referenceCount ) /*0x7af654*/
     {
       v5 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)referenceCount + 120))(referenceCount, v7); /*0x7af65d*/

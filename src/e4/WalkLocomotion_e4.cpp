@@ -53,7 +53,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
     v6 = aP3; /*0x6a01d7*/
     if ( !(unsigned char)v5 ) /*0x6a01dd*/
     {
-      v5 = this->q058; /*0x6a01e3*/
+      v5 = *(unsigned int *)&this->q058; /*0x6a01e3*/
       if ( v5 != -1 ) /*0x6a01e9*/
       {
         v5 = byte_7F2A40[12 * v5]; /*0x6a01f2*/
@@ -667,9 +667,9 @@ LABEL_101:
                     break;
                   }
                   v99 = *(IUnknown **)&aP3[12];
-                  this->ptr_60 = 0;
+                  *(unsigned int *)&this->ptr_60 = 0;
                   this->WalkLocomotion_field_0x58 = v99;
-                  *(unsigned int *)&aP3.bombVisible = v88;
+                  *(void **)&aP3.bombVisible = v88;
                   int v100 = 4 * *v88;
                   aP3.objectTypeFlags = v100 * 4;
                   v178 = 0;
@@ -684,7 +684,7 @@ LABEL_101:
                     this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
                     v102 = (TechnoClass *)g_OverlayTypeConfig.field_8;
                     this->u8_63 = 0;
-                    this->q048 = v102;
+                    *(void **)&this->q048 = v102;
                   }
                   v103 = this->q00C;
                   this->u8_63 = 1;
@@ -702,7 +702,7 @@ LABEL_101:
                     this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
                     v106 = (TechnoClass *)g_OverlayTypeConfig.field_8;
                     this->u8_63 = 0;
-                    this->q048 = v106;
+                    *(void **)&this->q048 = v106;
                     v105 = g_OverlayTypeConfig.field_0;
                   }
                   int v107 = *(unsigned int *)v182;
@@ -826,7 +826,7 @@ LABEL_101:
     this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
     v131 = (TechnoClass *)g_OverlayTypeConfig.field_8;
     this->u8_63 = 0;
-    this->q048 = v131;
+    *(void **)&this->q048 = v131;
   }
   v132 = this->q00C;
   this->WalkLocomotion_field_0x58 = -1;
@@ -856,7 +856,7 @@ LABEL_101:
       if ( (int)((IDA_HIDWORD(rax156) ^ rax156) - IDA_HIDWORD(rax156)) < 2 * g_OverlayTypeConfig.field_40 )
       {
         v180 = 1;
-        this->ptr_34 = g_OverlayTypeConfig.field_0;
+        *(unsigned int *)&this->ptr_34 = g_OverlayTypeConfig.field_0;
         this->u32_38 = g_OverlayTypeConfig.field_4;
         this->u32_3C = g_OverlayTypeConfig.field_8;
         if ( *v122 != g_OverlayTypeConfig.field_0
@@ -900,7 +900,7 @@ LABEL_141:
   this->u32_4C = *(unsigned int *)&aP3[4];
   if ( cc140 )
     return 0;
-  v117 = this->q058;
+  v117 = *(unsigned int *)&this->q058;
   if ( (int)v117 <= -1 )
     return 0;
   unsigned char * v119 = (unsigned char *)(12 * (unsigned int)v117 + 8333888);
@@ -944,7 +944,7 @@ LABEL_141:
   *(unsigned int *)&aP3.needsRedraw = eax178d[1];
   v158 = (TechnoClass *)eax178d[2];
   IDA_LODWORD(varD0) = aP3.customSound_controller[0] + aP3.visibilityFlags;
-  *(unsigned int *)&aP3.hasParachute = v158;
+  *(void **)&aP3.hasParachute = v158;
   IDA_HIDWORD(varD0) = aP3.customSound_controller[1] + *(unsigned int *)&aP3.needsRedraw;
   v183 = (IUnknown *)&v158->__pad_0[aP3.customSound_controller[2]];
   v159 = (IUnknown *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)aP3.customSound_controller);
@@ -974,7 +974,7 @@ LABEL_183:
     goto LABEL_183;
   }
   *(unsigned long long *)&aP3.parachute = v165;
-  *(unsigned int *)&aP3.isAliveFlag = v163;
+  *(void **)&aP3.isAliveFlag = v163;
   eax184 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)&aP3.parachute);
   v166 = this->q00C;
   aP3.owningHouseIndex = (int)eax184;
@@ -2061,7 +2061,7 @@ LABEL_263:
     this->u8_64 = 0;
   }
   v168 = v154 + 8 * v6;
-  this->ptr_60 = 0;
+  *(unsigned int *)&this->ptr_60 = 0;
   this->WalkLocomotion_field_0x58 = v168;
   if ( !byte_7F2A40[12 * v168] )
     this->WalkLocomotion_field_0x58 = 9 * v6;

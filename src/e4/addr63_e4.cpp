@@ -641,7 +641,7 @@ AbstractClass * * E4Recv_631640::sub_631640()
         }
         while ( v3 < (int)dword_A8DB44 ); /*0x6316a0*/
       }
-      IDA_LOBYTE(this->?) = 1; /*0x6316a4*/
+      IDA_LOBYTE(this->M8) = 1; /*0x6316a4*/
       PhoneEditor::PopulateList(); /*0x6316a8*/
       if ( dword_A8DABC == -1 ) /*0x6316b4*/
       {
@@ -830,7 +830,7 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   v21[1] = Viewport[1]; /*0x63557b*/
   v21[2] = Viewport[2]; /*0x635582*/
   v4 = Viewport[3]; /*0x635586*/
-  vtable1 = this->?; /*0x635589*/
+  vtable1 = this->M4; /*0x635589*/
   v21[3] = v4; /*0x63558c*/
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(vtable1->vtable2); /*0x635599*/
   v15[0] = *ScenarioClassActionCoords; /*0x6355a0*/
@@ -962,7 +962,7 @@ int E4Recv_636F00::sub_636F00(int a2, int a3)
   void **v10; // eax
   unsigned char *v11; // esi
 
-  vtable2 = this->?; /*0x636f00*/
+  vtable2 = this->M8; /*0x636f00*/
   vtable0 = this->AbstractClass; /*0x636f08*/
   v5 = vtable2[a3]; /*0x636f0b*/
   v6 = 0; /*0x636f0e*/
@@ -1459,7 +1459,7 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
       v24 = 0; /*0x6383b0*/
       goto LABEL_46; /*0x6383b2*/
     }
-    if ( Type->? == 15 ) /*0x6383b8*/
+    if ( *(unsigned short *)&Type->abstractFlags == 15 ) /*0x6383b8*/
     {
       v24 = 2; /*0x6383ba*/
       goto LABEL_46; /*0x6383ba*/
@@ -1476,7 +1476,7 @@ void ExecuteActionPlanManager(IUnknown * a1, char * a2)
     v19 = (wchar_t *)aMsgPostloop; /*0x6383f8*/
     goto LABEL_67; /*0x6383fd*/
   }
-  abstractFlags = Type->?; /*0x638402*/
+  abstractFlags = Type->abstractFlags; /*0x638402*/
   if ( abstractFlags ) /*0x638407*/
   {
     if ( abstractFlags == 16 ) /*0x6384df*/
@@ -2031,7 +2031,7 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
   v34 = (int)v2; /*0x63982e*/
   v7 = (*(int (__thiscall **)(int, int *))(v6 + 16))(Type + 4, &v34); /*0x639838*/
   v8 = (TeamClass *)BuildingClass::GetType(v4); /*0x63983f*/
-  TeamClass::UpdateBuildQueue(v8, a1, v7, v8->? - v7); /*0x63984b*/
+  TeamClass::UpdateBuildQueue(v8, a1, v7, v8->abstractFlags - v7); /*0x63984b*/
   v32 = (ScriptAction *)-1; /*0x639855*/
   v34 = -1; /*0x639859*/
   v33 = 0; /*0x63985d*/
@@ -2083,14 +2083,14 @@ TechnoClass * * CompleteBuildingProduction(IUnknown * a1, int edx0)
     }
     else
     {
-      abstractFlags = v8->?; /*0x639892*/
+      abstractFlags = v8->abstractFlags; /*0x639892*/
       v13 = v10; /*0x639895*/
       if ( !abstractFlags ) /*0x639899*/
         goto LABEL_10; /*0x639899*/
       if ( v10 >= abstractFlags ) /*0x63989d*/
         v13 = v10 + 0 % v34; /*0x6398a8*/
       if ( v13 >= 0 && v13 < abstractFlags ) /*0x6398b0*/
-        v14 = (ScriptAction *)*((unsigned int *)v8->? + v13); /*0x6398b5*/
+        v14 = (ScriptAction *)*((unsigned int *)v8->vtable3 + v13); /*0x6398b5*/
       else
   LABEL_10:
         v14 = 0; /*0x6398ba*/
@@ -3429,14 +3429,14 @@ int E4Recv_632D60::sub_632D60(int a2)
   if ( !a2 ) /*0x632d6a*/
   {
     result = (*((int (__thiscall **)(ObjectClass *))this->AbstractClass + 1))(this); /*0x632d6e*/
-    IDA_LOBYTE(this->?) = 0; /*0x632d71*/
+    IDA_LOBYTE(this->M12) = 0; /*0x632d71*/
   }
   this->attachedBomb = (BombClass *)a2; /*0x632d77*/
   if ( a2 ) /*0x632d7a*/
   {
     attachedTag = this->attachedTag; /*0x632d7c*/
     result = 1; /*0x632d7f*/
-    IDA_LOBYTE(this->?) = 1; /*0x632d86*/
+    IDA_LOBYTE(this->M12) = 1; /*0x632d86*/
     if ( attachedTag == (TagClass *)1 ) /*0x632d89*/
     {
       result = ((*(unsigned int *)(a2 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(a2 + 512) - 1) / 8) + 1); /*0x632da7*/
@@ -3827,9 +3827,9 @@ namespace gamemd {
 unsigned int * E4Recv_633A20::sub_633A20()
 {
   this->AbstractClass = 0; /*0x633a24*/
-  this->? = 0; /*0x633a26*/
-  this->? = (void *)-1; /*0x633a29*/
-  IDA_LOBYTE(this->?) = 0; /*0x633a30*/
+  this->M4 = 0; /*0x633a26*/
+  *(unsigned short *)&this->M8 = (void *)-1; /*0x633a29*/
+  IDA_LOBYTE(this->M12) = 0; /*0x633a30*/
   return &this->AbstractClass; /*0x633a33*/
 }
 } // namespace gamemd
@@ -3993,7 +3993,7 @@ int E4Recv_633E50::sub_633E50()
 namespace gamemd {
 int E4Recv_633E60::sub_633E60()
 {
-  return this->?; /*0x633e63*/
+  return this->M16; /*0x633e63*/
 }
 } // namespace gamemd
 
@@ -4006,12 +4006,12 @@ BOOL E4Recv_634360::sub_634360(int a2)
   int v4; // eax
   unsigned int **i; // ecx
 
-  uniqueId = this->?; /*0x634360*/
+  uniqueId = this->M16; /*0x634360*/
   v3 = -1; /*0x634365*/
   v4 = 0; /*0x634368*/
   if ( uniqueId > 0 ) /*0x63436d*/
   {
-    for ( i = (unsigned int **)this->?; **i != a2; ++i ) /*0x63436f*/
+    for ( i = (unsigned int **)this->M4; **i != a2; ++i ) /*0x63436f*/
     {
       if ( ++v4 >= uniqueId ) /*0x634382*/
         return 0; /*0x63438f*/
@@ -4186,7 +4186,7 @@ unsigned int * E4Recv_6348F0::sub_6348F0(unsigned int * a2)
 namespace gamemd {
 void E4Recv_634950::sub_634950()
 {
-  IDA_LOBYTE(this->?) = 1; /*0x634950*/
+  IDA_LOBYTE(this->M28) = 1; /*0x634950*/
 }
 } // namespace gamemd
 
@@ -4194,7 +4194,7 @@ void E4Recv_634950::sub_634950()
 namespace gamemd {
 char E4Recv_634960::sub_634960()
 {
-  return this->?; /*0x634963*/
+  return this->M28; /*0x634963*/
 }
 } // namespace gamemd
 
@@ -4268,12 +4268,12 @@ char E4Recv_6352D0::sub_6352D0()
   char result; // al
 
   v2 = 0; /*0x6352d5*/
-  uniqueId = this->?; /*0x6352d7*/
+  uniqueId = this->M16; /*0x6352d7*/
   if ( uniqueId > 0 ) /*0x6352dc*/
   {
     do /*0x6352fb*/
     {
-      v4 = (unsigned char *)**((unsigned int **)this->? + v2); /*0x6352e4*/
+      v4 = (unsigned char *)**((unsigned int **)this->M4 + v2); /*0x6352e4*/
       result = v4[131]; /*0x6352e6*/
       if ( !result ) /*0x6352ee*/
         result = (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v4 + 332))(v4); /*0x6352f2*/
@@ -4295,12 +4295,12 @@ char E4Recv_635310::sub_635310()
   char result; // al
 
   v2 = 0; /*0x635315*/
-  uniqueId = this->?; /*0x635317*/
+  uniqueId = this->M16; /*0x635317*/
   if ( uniqueId > 0 ) /*0x63531c*/
   {
     do /*0x63533b*/
     {
-      v4 = (unsigned char *)**((unsigned int **)this->? + v2); /*0x635324*/
+      v4 = (unsigned char *)**((unsigned int **)this->M4 + v2); /*0x635324*/
       result = v4[131]; /*0x635326*/
       if ( result ) /*0x63532e*/
         result = (*(int (__thiscall **)(unsigned char *))(v4->q054)(v4); /*0x635332*/
@@ -4416,7 +4416,7 @@ ObjectClass * E4Recv_636110::ReadPointerFromECX2()
 namespace gamemd {
 void E4Recv_636520::sub_636520()
 {
-  IDA_LOBYTE(this->?) = 1; /*0x636520*/
+  IDA_LOBYTE(this->M28) = 1; /*0x636520*/
 }
 } // namespace gamemd
 
@@ -4424,7 +4424,7 @@ void E4Recv_636520::sub_636520()
 namespace gamemd {
 void E4Recv_636530::sub_636530()
 {
-  IDA_LOBYTE(this->?) = 0; /*0x636530*/
+  IDA_LOBYTE(this->M28) = 0; /*0x636530*/
 }
 } // namespace gamemd
 
@@ -4432,7 +4432,7 @@ void E4Recv_636530::sub_636530()
 namespace gamemd {
 char E4Recv_636540::sub_636540()
 {
-  return this->?; /*0x636543*/
+  return this->M28; /*0x636543*/
 }
 } // namespace gamemd
 
@@ -4497,7 +4497,7 @@ int j_PlanningNodeClass_CleanupAll()
 
 // 0x637550
 namespace gamemd {
-void __usercall FlushPlanningQueue(CCINIClass *a1@<edi> a1)
+void __usercall FlushPlanningQueue(CCINIClass * a1)
 {
   int i; // esi
   void *v2; // edi

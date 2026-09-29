@@ -1510,7 +1510,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
     (*(void (__thiscall **)(_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x769f3d*/
     return 1; /*0x769f43*/
   }
-  IDA_LOBYTE(this->m_C) = 0; /*0x769e47*/
+  IDA_LOBYTE(this->q00C) = 0; /*0x769e47*/
   if ( a3 ) /*0x769e4d*/
   {
     *a3 = a2; /*0x769e93*/
@@ -1556,27 +1556,27 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
   }
   v8 = v6; /*0x769ebd*/
   LABEL_14:
-  IDA_LOBYTE(this->m_C) = 1; /*0x769ebf*/
+  IDA_LOBYTE(this->q00C) = 1; /*0x769ebf*/
   if ( !v8 ) /*0x769ec5*/
     return 0; /*0x769eca*/
-  if ( *(unsigned int *)&this->m_1[3] ) /*0x769ed1*/
+  if ( *(unsigned int *)&this->q004 ) /*0x769ed1*/
   {
-    if ( a2 >= this->m_8 ) /*0x769edd*/
-      m_8 = this->m_8; /*0x769edf*/
+    if ( a2 >= this->q008 ) /*0x769edd*/
+      m_8 = this->q008; /*0x769edf*/
     for ( i = 0; i < m_8; ++i ) /*0x769ee5*/
-      ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x769ef2*/
-    if ( IDA_BYTE1(this->m_C) ) /*0x769efc*/
+      ComPtr::Set((ComPtr *)((char *)v8 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->q004 + 8 * i + 4)); /*0x769ef2*/
+    if ( this->IsAllocated ) /*0x769efc*/
     {
-      v12 = *(void (__thiscall ****)(unsigned int, int))&this->m_1[3]; /*0x769f03*/
+      v12 = *(void (__thiscall ****)(unsigned int, int))&this->q004; /*0x769f03*/
       if ( v12 ) /*0x769f08*/
         (**v12)(v12, 3); /*0x769f0e*/
-      *(unsigned int *)&this->m_1[3] = 0; /*0x769f10*/
+      *(unsigned int *)&this->q004 = 0; /*0x769f10*/
     }
     m_8 = a2; /*0x769f17*/
   }
-  *(unsigned int *)&this->m_1[3] = v8; /*0x769f26*/
-  this->m_8 = m_8; /*0x769f29*/
-  IDA_BYTE1(this->m_C) = a3 == 0; /*0x769f2c*/
+  *(void **)&this->q004 = v8; /*0x769f26*/
+  this->q008 = m_8; /*0x769f29*/
+  IDA_BYTE1(this->q008) = a3 == 0; /*0x769f2c*/
   return 1; /*0x769ec7*/
 }
 }
@@ -1642,7 +1642,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
   if ( a2 ) /*0x76a3fe*/
   {
     v5 = a3; /*0x76a404*/
-    IDA_LOBYTE(this->m_C) = 0; /*0x76a408*/
+    IDA_LOBYTE(this->q00C) = 0; /*0x76a408*/
     if ( a3 ) /*0x76a40d*/
     {
       if ( a2 - 1 >= 0 ) /*0x76a449*/
@@ -1686,12 +1686,12 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
         v5 = 0; /*0x76a440*/
       }
     }
-    IDA_LOBYTE(this->m_C) = 1; /*0x76a45f*/
+    IDA_LOBYTE(this->q00C) = 1; /*0x76a45f*/
     if ( v5 ) /*0x76a463*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x76a46e*/
+      if ( *(unsigned int *)&this->q004 ) /*0x76a46e*/
       {
-        m_8 = this->m_8; /*0x76a473*/
+        m_8 = this->q008; /*0x76a473*/
         if ( a2 < m_8 ) /*0x76a478*/
           m_8 = a2; /*0x76a47a*/
         if ( m_8 > 0 ) /*0x76a47e*/
@@ -1699,7 +1699,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
           v13 = 0; /*0x76a480*/
           do /*0x76a4a0*/
           {
-            v14 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + v13); /*0x76a487*/
+            v14 = (unsigned int *)(*(unsigned int *)&this->q004 + v13); /*0x76a487*/
             v15 = &v5[v13]; /*0x76a489*/
             v13 += 12; /*0x76a48c*/
             --m_8; /*0x76a48f*/
@@ -1710,15 +1710,15 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
           while ( m_8 ); /*0x76a4a0*/
           v3 = a2; /*0x76a4a2*/
         }
-        if ( IDA_BYTE1(this->m_C) ) /*0x76a4a8*/
+        if ( this->IsAllocated ) /*0x76a4a8*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x76a4b1*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x76a4b9*/
+          RA2_OPDEL(*(void **)&this->q004); /*0x76a4b1*/
+          *(unsigned int *)&this->q004 = 0; /*0x76a4b9*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v5; /*0x76a4c4*/
-      this->m_8 = v3; /*0x76a4ca*/
-      IDA_BYTE1(this->m_C) = a3 == 0; /*0x76a4cd*/
+      *(void **)&this->q004 = v5; /*0x76a4c4*/
+      this->q008 = v3; /*0x76a4ca*/
+      this->IsAllocated = a3 == 0; /*0x76a4cd*/
       return 1; /*0x76a4d3*/
     }
     else
@@ -2009,7 +2009,7 @@ char sub_5BF580()
 
 // 0x5C9720
 namespace gamemd {
-void __usercall sub_5C9720(int a1@<ebx> a1, int a2@<ebp> a2, int a3@<edi> a3)
+void __usercall sub_5C9720(int a1, int a2, int a3)
 {
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4; // [esp+4h] [ebp-Ch]
@@ -2043,7 +2043,7 @@ char sub_5DB650(int a1, char a2, char a3)
 namespace gamemd {
 int E4Recv_5FBF70::sub_5FBF70()
 {
-  return (int)this->?; /*0x5fbf73*/
+  return (int)this->M12; /*0x5fbf73*/
 }
 } // namespace gamemd
 
@@ -2251,7 +2251,7 @@ int sub_6823D0(int a1, int a2, wchar_t * Destination)
 
 // 0x6C8E80
 namespace gamemd {
-void __usercall sub_6C8E80(int a1@<ebx> a1, int a2@<ebp> a2, int a3@<edi> a3)
+void __usercall sub_6C8E80(int a1, int a2, int a3)
 {
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4; // [esp+4h] [ebp-Ch]
@@ -2430,7 +2430,7 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3)
 {
   int v3; // edi
 
-  v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x769cad*/
+  v3 = *(unsigned int *)&this->q004 + 8 * a3; /*0x769cad*/
   ComPtr::Constructor((ComPtr *)a2); /*0x769cb2*/
   *a2 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x769cb7*/
   ComPtr::Set((ComPtr *)a2, v3->q010); /*0x769cc3*/
@@ -2442,7 +2442,7 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3)
 namespace gamemd {
 int Map_WorldDominationTour_28::Seek(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x769d2a*/
+  return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x769d2a*/
 }
 }
 // 0x769D30
@@ -2451,7 +2451,7 @@ unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
 {
   unsigned int *v3; // edx
 
-  v3 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 12 * a3); /*0x769d3b*/
+  v3 = (unsigned int *)(*(unsigned int *)&this->q004 + 12 * a3); /*0x769d3b*/
   *a2 = *v3; /*0x769d46*/
   a2[1] = v3[1]; /*0x769d4b*/
   a2[2] = v3[2]; /*0x769d52*/
@@ -2462,7 +2462,7 @@ unsigned int * Map_WorldDominationTour_43::Seek(unsigned int * a2, int a3)
 namespace gamemd {
 int Map_WorldDominationTour_38::AddRef()
 {
-  return this->RefCount < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8); /*0x769d6d*/
+  return this->RefCount < *(unsigned int *)(*(unsigned int *)&this->u32_4 + 8); /*0x769d6d*/
 }
 }
 // 0x769D70
@@ -2483,7 +2483,7 @@ VectorCursor * Map_WorldDominationTour_20::Constructor(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x769dc9*/
   if ( (a2 & 1) != 0 ) /*0x769dcf*/
     RA2_OPDEL(); /*0x769dd2*/
-  return this->__pad_0; /*0x769ddc*/
+  return this; /*0x769ddc*/
 }
 } // namespace gamemd
 
@@ -2496,13 +2496,13 @@ char Map_WorldDominationTour_20::AddRef(int a2)
   unsigned int *v4; // ecx
   unsigned int *i; // eax
 
-  m_8 = this->m_8; /*0x769de6*/
+  m_8 = this->q008; /*0x769de6*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x769def*/
   {
     v3 = 0; /*0x769df1*/
     if ( m_8 <= 0 ) /*0x769df5*/
       return 1; /*0x769e1b*/
-    v4 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 4); /*0x769dfd*/
+    v4 = (unsigned int *)(*(unsigned int *)&this->q004 + 4); /*0x769dfd*/
     for ( i = (unsigned int *)(*(unsigned int *)(a2 + 4) + 4); *v4 == *i; i += 2 ) /*0x769e00*/
     {
       ++v3; /*0x769e0b*/
@@ -2522,14 +2522,14 @@ int Map_WorldDominationTour_20::ddtor()
   int (__thiscall ***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (__thiscall ****)(unsigned int, int))&this->m_1[3]; /*0x769f56*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x769f5d*/
+  v2 = *(int (__thiscall ****)(unsigned int, int))&this->q004; /*0x769f56*/
+  if ( v2 && this->IsAllocated ) /*0x769f5d*/
   {
     result = (**v2)(v2, 3); /*0x769f6a*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x769f6c*/
+    *(unsigned int *)&this->q004 = 0; /*0x769f6c*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x769f6f*/
-  this->m_8 = 0; /*0x769f72*/
+  this->IsAllocated = 0; /*0x769f6f*/
+  this->q008 = 0; /*0x769f72*/
   return result; /*0x769f75*/
 }
 } // namespace gamemd
@@ -2542,13 +2542,13 @@ int Map_WorldDominationTour_20::Read(int a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x769f80*/
+  if ( !IDA_LOBYTE(this->q00C) ) /*0x769f80*/
     return 0; /*0x769f88*/
-  m_8 = this->m_8; /*0x769f8e*/
+  m_8 = this->q008; /*0x769f8e*/
   result = 0; /*0x769f91*/
   if ( m_8 <= 0 ) /*0x769f95*/
     return -1; /*0x769fb0*/
-  for ( i = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x769f9e*/
+  for ( i = (unsigned int *)(*(unsigned int *)&this->q004 + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x769f9e*/
   {
     if ( ++result >= m_8 ) /*0x769fae*/
       return -1; /*0x769fae*/
@@ -2560,8 +2560,8 @@ int Map_WorldDominationTour_20::Read(int a2)
 namespace gamemd {
 unsigned int Map_WorldDominationTour_20::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x769fc0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x769fd5*/
+  if ( IDA_LOBYTE(this->q00C) ) /*0x769fc0*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x769fd5*/
   else
     return 0; /*0x769fc7*/
 }
@@ -2576,13 +2576,13 @@ char Map_WorldDominationTour_28::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  m_8 = this->m_8; /*0x76a132*/
+  m_8 = this->q008; /*0x76a132*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x76a13d*/
   {
     v3 = 0; /*0x76a13f*/
     if ( m_8 <= 0 ) /*0x76a143*/
       return 1; /*0x76a163*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x76a145*/
+    v4 = *(unsigned int **)&this->q004; /*0x76a145*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x76a14b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x76a154*/
     {
@@ -2606,30 +2606,30 @@ char Map_WorldDominationTour_28::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x76a17c*/
   {
-    IDA_LOBYTE(this->m_C) = 0; /*0x76a186*/
+    this->q00C = 0; /*0x76a186*/
     if ( a3 ) /*0x76a18c*/
       v4 = a3; /*0x76a1a2*/
     else
       v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x76a19e*/
-    IDA_LOBYTE(this->m_C) = 1; /*0x76a1a6*/
+    this->q00C = 1; /*0x76a1a6*/
     if ( v4 ) /*0x76a1aa*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x76a1b5*/
+      if ( *(unsigned int *)&this->q004 ) /*0x76a1b5*/
       {
-        m_8 = this->m_8; /*0x76a1bc*/
+        m_8 = this->q008; /*0x76a1bc*/
         if ( a2 < m_8 ) /*0x76a1c1*/
           m_8 = a2; /*0x76a1c3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x76a1c9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * i - 4) ) /*0x76a1c9*/
           ++i; /*0x76a1ce*/
-        if ( IDA_BYTE1(this->m_C) ) /*0x76a1db*/
+        if ( this->IsAllocated ) /*0x76a1db*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x76a1e6*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x76a1ee*/
+          RA2_OPDEL(*(void **)&this->q004); /*0x76a1e6*/
+          *(unsigned int *)&this->q004 = 0; /*0x76a1ee*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x76a1f7*/
-      this->m_8 = a2; /*0x76a1ff*/
-      IDA_BYTE1(this->m_C) = a3 == 0; /*0x76a202*/
+      *(void **)&this->q004 = v4; /*0x76a1f7*/
+      this->q008 = a2; /*0x76a1ff*/
+      this->IsAllocated = a3 == 0; /*0x76a202*/
       return 1; /*0x76a208*/
     }
     else
@@ -2649,13 +2649,13 @@ char Map_WorldDominationTour_28::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void Map_WorldDominationTour_28::ddtor()
 {
-  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x76a22d*/
+  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x76a22d*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x76a233*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x76a23b*/
+    RA2_OPDEL(*(void **)&this->q004); /*0x76a233*/
+    *(unsigned int *)&this->q004 = 0; /*0x76a23b*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x76a23e*/
-  this->m_8 = 0; /*0x76a241*/
+  this->IsAllocated = 0; /*0x76a23e*/
+  this->q008 = 0; /*0x76a241*/
 }
 } // namespace gamemd
 
@@ -2667,13 +2667,13 @@ int Map_WorldDominationTour_28::Read(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x76a250*/
+  if ( !this->q00C ) /*0x76a250*/
     return 0; /*0x76a258*/
-  m_8 = this->m_8; /*0x76a25e*/
+  m_8 = this->q008; /*0x76a25e*/
   result = 0; /*0x76a261*/
   if ( m_8 <= 0 ) /*0x76a265*/
     return -1; /*0x76a27c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x76a26b*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x76a26b*/
   {
     if ( ++result >= m_8 ) /*0x76a27a*/
       return -1; /*0x76a27a*/
@@ -2686,8 +2686,8 @@ int Map_WorldDominationTour_28::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int Map_WorldDominationTour_28::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x76a290*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x76a2a5*/
+  if ( this->q00C ) /*0x76a290*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 2; /*0x76a2a5*/
   else
     return 0; /*0x76a297*/
 }
@@ -2704,14 +2704,14 @@ char Map_WorldDominationTour_43::AddRef(int a2)
   unsigned int *v6; // ecx
   int v7; // edx
 
-  m_8 = this->m_8; /*0x76a39b*/
+  m_8 = this->q008; /*0x76a39b*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x76a3a0*/
   {
     v3 = 0; /*0x76a3a2*/
     if ( m_8 <= 0 ) /*0x76a3a6*/
       return 1; /*0x76a3e0*/
     v4 = *(unsigned int *)(a2 + 4); /*0x76a3a8*/
-    v5 = *(unsigned int **)&this->m_1[3]; /*0x76a3ab*/
+    v5 = *(unsigned int **)&this->q004; /*0x76a3ab*/
     v6 = (unsigned int *)(v4 + 8); /*0x76a3ae*/
     v7 = v4 - (unsigned int)v5; /*0x76a3b1*/
     while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 ) /*0x76a3cd*/
@@ -2731,13 +2731,13 @@ char Map_WorldDominationTour_43::AddRef(int a2)
 namespace gamemd {
 void Map_WorldDominationTour_43::ddtor()
 {
-  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x76a4fd*/
+  if ( *(unsigned int *)&this->IsAllocated && this->IsAllocated ) /*0x76a4fd*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x76a503*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x76a50b*/
+    RA2_OPDEL(*(void **)&this->q004); /*0x76a503*/
+    *(unsigned int *)&this->q004 = 0; /*0x76a50b*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x76a50e*/
-  this->m_8 = 0; /*0x76a511*/
+  this->IsAllocated = 0; /*0x76a50e*/
+  this->q008 = 0; /*0x76a511*/
 }
 } // namespace gamemd
 
@@ -2749,13 +2749,13 @@ int Map_WorldDominationTour_43::Read(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x76a520*/
+  if ( !IDA_LOBYTE(this->q00C) ) /*0x76a520*/
     return 0; /*0x76a52e*/
-  m_8 = this->m_8; /*0x76a534*/
+  m_8 = this->q008; /*0x76a534*/
   result = 0; /*0x76a537*/
   if ( m_8 <= 0 ) /*0x76a53b*/
     return -1; /*0x76a566*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x76a541*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 3 ) /*0x76a541*/
   {
     if ( ++result >= m_8 ) /*0x76a564*/
       return -1; /*0x76a564*/
@@ -2768,8 +2768,8 @@ int Map_WorldDominationTour_43::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int Map_WorldDominationTour_43::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x76a570*/
-    return (a2 - *(unsigned int *)&this->m_1[3]) / 0xCu; /*0x76a58e*/
+  if ( IDA_LOBYTE(this->q00C) ) /*0x76a570*/
+    return (a2 - *(unsigned int *)&this->q004) / 0xCu; /*0x76a58e*/
   else
     return 0; /*0x76a577*/
 }
@@ -2780,7 +2780,7 @@ namespace gamemd {
 unsigned int * Map_WorldDominationTour_38::Release()
 {
   ++this->RefCount; /*0x76a5a2*/
-  return this->__pad_0; /*0x76a5a5*/
+  return this; /*0x76a5a5*/
 }
 }
 // 0x76A5B0
@@ -2788,7 +2788,7 @@ namespace gamemd {
 unsigned int * Map_WorldDominationTour_38::ddtor()
 {
   --this->RefCount; /*0x76a5b2*/
-  return this->__pad_0; /*0x76a5b5*/
+  return this; /*0x76a5b5*/
 }
 }
 // 0x76A5C0
@@ -2797,18 +2797,18 @@ VectorClass_flat * Map_WorldDominationTour_20::QueryInterface(char a2)
 {
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
-  v3 = *(void (__thiscall ****)(unsigned int, int))&this->m_1[3]; /*0x76a5c3*/
+  v3 = *(void (__thiscall ****)(unsigned int, int))&this->q004; /*0x76a5c3*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a5c6*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x76a5d0*/
+  if ( v3 && this->IsAllocated ) /*0x76a5d0*/
   {
     (**v3)(v3, 3); /*0x76a5df*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x76a5e1*/
+    *(unsigned int *)&this->q004 = 0; /*0x76a5e1*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x76a5ec*/
-  this->m_8 = 0; /*0x76a5f2*/
+  this->IsAllocated = 0; /*0x76a5ec*/
+  *(unsigned short *)&this->q008 = 0; /*0x76a5f2*/
   if ( (a2 & 1) != 0 ) /*0x76a5f9*/
     RA2_OPDEL(); /*0x76a5fc*/
-  return this->__pad_0; /*0x76a606*/
+  return this; /*0x76a606*/
 }
 } // namespace gamemd
 
@@ -2818,18 +2818,18 @@ VectorClass_flat * Map_WorldDominationTour_28::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x76a6d3*/
+  v3 = *(void **)&this->q004; /*0x76a6d3*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a6d6*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x76a6e0*/
+  if ( v3 && this->IsAllocated ) /*0x76a6e0*/
   {
     RA2_OPDEL(v3); /*0x76a6e8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x76a6f0*/
+    *(unsigned int *)&this->q004 = 0; /*0x76a6f0*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x76a6fb*/
-  this->m_8 = 0; /*0x76a701*/
+  this->IsAllocated = 0; /*0x76a6fb*/
+  *(unsigned short *)&this->q008 = 0; /*0x76a701*/
   if ( (a2 & 1) != 0 ) /*0x76a708*/
     RA2_OPDEL(); /*0x76a70b*/
-  return this->__pad_0; /*0x76a715*/
+  return this; /*0x76a715*/
 }
 } // namespace gamemd
 
@@ -2839,18 +2839,18 @@ VectorClass_flat * Map_WorldDominationTour_43::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x76a773*/
+  v3 = *(void **)&this->q004; /*0x76a773*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_WorldDominationTour_Centroid_vftable; /*0x76a776*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x76a780*/
+  if ( v3 && this->IsAllocated ) /*0x76a780*/
   {
     RA2_OPDEL(v3); /*0x76a788*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x76a790*/
+    *(unsigned int *)&this->q004 = 0; /*0x76a790*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x76a79b*/
-  this->m_8 = 0; /*0x76a7a1*/
+  this->IsAllocated = 0; /*0x76a79b*/
+  *(unsigned short *)&this->q008 = 0; /*0x76a7a1*/
   if ( (a2 & 1) != 0 ) /*0x76a7a8*/
     RA2_OPDEL(); /*0x76a7ab*/
-  return this->__pad_0; /*0x76a7b5*/
+  return this; /*0x76a7b5*/
 }
 } // namespace gamemd
 

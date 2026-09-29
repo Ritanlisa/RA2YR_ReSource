@@ -70,8 +70,8 @@ int TeamTypeClass::Construct()
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
   this->AbstractClass = (void*)&FactoryClass_vftable; /*0x4c991a*/
   this->? = (void*)&FactoryClass_vftable; /*0x4c9920*/
-  this->? = (void*)&FactoryClass_vftable; /*0x4c9926*/
-  this->? = (void*)&FactoryClass_vftable; /*0x4c992d*/
+  *(void **)&this->vtable3 = (void*)&FactoryClass_vftable; /*0x4c9926*/
+  *(void **)&this->vtable4 = (void*)&FactoryClass_vftable; /*0x4c992d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
     || (stru_A83D50.__pad_C8[37] || !*(unsigned int *)&stru_A83D50.__pad_C8[32])
@@ -210,7 +210,7 @@ int TeamTypeClass::Check(int a2)
 {
   int result; // eax
 
-  for ( result = *(unsigned int *)&this->__pad_4C[8]; result; result = *(unsigned int *)(result + 1496) ) /*0x6ef5f5*/
+  for ( result = *(unsigned int *)&this->q054; result; result = *(unsigned int *)(result + 1496) ) /*0x6ef5f5*/
     *(unsigned int *)(result + 240) = a2; /*0x6ef5fb*/
   return result; /*0x6ef60b*/
 }
@@ -825,9 +825,9 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
   TeamTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   this->AbstractClass = (void*)&TeamTypeClass_vftable; /*0x6f20d6*/
-  this->? = (void*)&TeamTypeClass_vftable; /*0x6f20dc*/
-  this->? = (void*)&TeamTypeClass_vftable; /*0x6f20e3*/
-  this->? = (void*)&TeamTypeClass_vftable; /*0x6f20ea*/
+  *(void **)&this->vtable2 = (void*)&TeamTypeClass_vftable; /*0x6f20dc*/
+  *(void **)&this->vtable3 = (void*)&TeamTypeClass_vftable; /*0x6f20e3*/
+  *(void **)&this->vtable4 = (void*)&TeamTypeClass_vftable; /*0x6f20ea*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6f20f1*/
   v6 = this; /*0x6f2106*/
   v3 = (*(int (__thiscall **)(unsigned char *, TeamTypeClass **))(*(unsigned int *)&stru_A8EB00.?[188] + 16))( /*0x6f210a*/
@@ -884,7 +884,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
   if ( a2 ) /*0x6f22fc*/
   {
     v4 = a3; /*0x6f2302*/
-    IDA_LOBYTE(this->m_C) = 0; /*0x6f2306*/
+    IDA_LOBYTE(this->q00C) = 0; /*0x6f2306*/
     if ( a3 ) /*0x6f230c*/
     {
       *a3 = a2; /*0x6f2347*/
@@ -927,12 +927,12 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
         v6 = 0; /*0x6f2340*/
       }
     }
-    IDA_LOBYTE(this->m_C) = 1; /*0x6f2362*/
+    IDA_LOBYTE(this->q00C) = 1; /*0x6f2362*/
     if ( v6 ) /*0x6f2366*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x6f2371*/
+      if ( *(unsigned int *)&this->q004 ) /*0x6f2371*/
       {
-        m_8 = this->m_8; /*0x6f2378*/
+        m_8 = this->q008; /*0x6f2378*/
         if ( a2 < m_8 ) /*0x6f237d*/
           m_8 = a2; /*0x6f237f*/
         v13 = 0; /*0x6f2381*/
@@ -940,7 +940,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
         {
           do /*0x6f239d*/
           {
-            v14 = *(unsigned int *)&this->m_1[3]; /*0x6f2387*/
+            v14 = *(unsigned int *)&this->q004; /*0x6f2387*/
             ++v13; /*0x6f238a*/
             v6[2 * v13 - 2] = *(unsigned int *)(v14 + 8 * v13 - 8); /*0x6f2391*/
             v6[2 * v13 - 1] = *(unsigned int *)(v14 + 8 * v13 - 4); /*0x6f2399*/
@@ -948,17 +948,17 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
           while ( v13 < m_8 ); /*0x6f239d*/
           v4 = a3; /*0x6f239f*/
         }
-        if ( IDA_BYTE1(this->m_C) ) /*0x6f23a3*/
+        if ( this->IsAllocated ) /*0x6f23a3*/
         {
-          v15 = *(unsigned int *)&this->m_1[3]; /*0x6f23aa*/
+          v15 = *(unsigned int *)&this->q004; /*0x6f23aa*/
           if ( v15 ) /*0x6f23af*/
             RA2_OPDEL((void *)(v15 - 4)); /*0x6f23b9*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x6f23c1*/
+          *(unsigned int *)&this->q004 = 0; /*0x6f23c1*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v6; /*0x6f23ca*/
-      this->m_8 = a2; /*0x6f23d2*/
-      IDA_BYTE1(this->m_C) = v4 == 0; /*0x6f23d5*/
+      *(void **)&this->q004 = v6; /*0x6f23ca*/
+      this->q008 = a2; /*0x6f23d2*/
+      this->IsAllocated = v4 == 0; /*0x6f23d5*/
       return 1; /*0x6f23db*/
     }
     else
@@ -994,7 +994,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
   if ( a2 ) /*0x6f24bc*/
   {
     v4 = a2; /*0x6f24c2*/
-    IDA_LOBYTE(this->m_C) = 0; /*0x6f24c6*/
+    IDA_LOBYTE(this->q00C) = 0; /*0x6f24c6*/
     if ( a2 ) /*0x6f24cc*/
     {
       *a2 = a2; /*0x6f2507*/
@@ -1037,12 +1037,12 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
         v6 = 0; /*0x6f2500*/
       }
     }
-    IDA_LOBYTE(this->m_C) = 1; /*0x6f2523*/
+    IDA_LOBYTE(this->q00C) = 1; /*0x6f2523*/
     if ( !v6 ) /*0x6f2527*/
       return 0; /*0x6f25c7*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x6f252d*/
+    if ( *(unsigned int *)&this->q004 ) /*0x6f252d*/
     {
-      m_8 = this->m_8; /*0x6f2534*/
+      m_8 = this->q008; /*0x6f2534*/
       if ( a2 < m_8 ) /*0x6f2539*/
         m_8 = a2; /*0x6f253b*/
       v12 = 0; /*0x6f253d*/
@@ -1050,7 +1050,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
       {
         do /*0x6f2559*/
         {
-          v13 = *(unsigned int *)&this->m_1[3]; /*0x6f2543*/
+          v13 = *(unsigned int *)&this->q004; /*0x6f2543*/
           ++v12; /*0x6f2546*/
           v6[2 * v12 - 2] = *(unsigned int *)(v13 + 8 * v12 - 8); /*0x6f254d*/
           v6[2 * v12 - 1] = *(unsigned int *)(v13 + 8 * v12 - 4); /*0x6f2555*/
@@ -1058,9 +1058,9 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
         while ( v12 < m_8 ); /*0x6f2559*/
         v4 = a2; /*0x6f255b*/
       }
-      if ( IDA_BYTE1(this->m_C) ) /*0x6f255f*/
+      if ( this->IsAllocated ) /*0x6f255f*/
       {
-        v14 = *(int **)&this->m_1[3]; /*0x6f2566*/
+        v14 = *(int **)&this->q004; /*0x6f2566*/
         if ( v14 ) /*0x6f256b*/
         {
           v15 = v14 - 1; /*0x6f2570*/
@@ -1068,20 +1068,20 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
           RA2_OPDEL(v15); /*0x6f2582*/
           v4 = a2; /*0x6f2587*/
         }
-        *(unsigned int *)&this->m_1[3] = 0; /*0x6f258e*/
+        *(unsigned int *)&this->q004 = 0; /*0x6f258e*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v6; /*0x6f2597*/
-    this->m_8 = a2; /*0x6f259f*/
-    IDA_BYTE1(this->m_C) = v4 == 0; /*0x6f25a2*/
+    *(void **)&this->q004 = v6; /*0x6f2597*/
+    this->q008 = a2; /*0x6f259f*/
+    this->IsAllocated = v4 == 0; /*0x6f25a2*/
   }
   else
   {
     (*(void (__thiscall **)(_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6f25ab*/
   }
-  v16 = this->m_8; /*0x6f25ae*/
-  if ( v16 < this->m_10 ) /*0x6f25b6*/
-    this->m_10 = v16; /*0x6f25b8*/
+  v16 = this->q008; /*0x6f25ae*/
+  if ( v16 < this->q010 ) /*0x6f25b6*/
+    this->q010 = v16; /*0x6f25b8*/
   return 1; /*0x6f25bb*/
 }
 }
@@ -1176,9 +1176,9 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6f1bcf*/
       aP0->AbstractClass = (void*)&TeamTypeClass_vftable; /*0x6f1bd4*/
-      aP0->? = (void*)&TeamTypeClass_vftable; /*0x6f1bda*/
-      aP0->? = (void*)&TeamTypeClass_vftable; /*0x6f1be1*/
-      aP0->? = (void*)&TeamTypeClass_vftable; /*0x6f1be8*/
+      *(void **)&aP0->vtable2 = (void*)&TeamTypeClass_vftable; /*0x6f1bda*/
+      *(void **)&aP0->vtable3 = (void*)&TeamTypeClass_vftable; /*0x6f1be1*/
+      *(void **)&aP0->vtable4 = (void*)&TeamTypeClass_vftable; /*0x6f1be8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 49); /*0x6f1bfb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 52); /*0x6f1c0c*/
@@ -1269,15 +1269,15 @@ void TeamTypeClass_28::ClearBuffer()
 {
   int v2; // eax
 
-  v2 = *(unsigned int *)&this->m_1[3]; /*0x6f21b6*/
-  this->m_10 = 0; /*0x6f21b9*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x6f21c0*/
+  v2 = *(unsigned int *)&this->q004; /*0x6f21b6*/
+  this->q010 = 0; /*0x6f21b9*/
+  if ( v2 && this->IsAllocated ) /*0x6f21c0*/
   {
     RA2_OPDEL((void *)(v2 - 4)); /*0x6f21d1*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6f21d9*/
+    *(unsigned int *)&this->q004 = 0; /*0x6f21d9*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x6f21dc*/
-  this->m_8 = 0; /*0x6f21df*/
+  this->IsAllocated = 0; /*0x6f21dc*/
+  this->q008 = 0; /*0x6f21df*/
 }
 } // namespace gamemd
 
@@ -1285,8 +1285,8 @@ void TeamTypeClass_28::ClearBuffer()
 namespace gamemd {
 unsigned int TeamTypeClass_28::PointerToIndex(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x6f21f0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x6f2205*/
+  if ( IDA_LOBYTE(this->q00C) ) /*0x6f21f0*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x6f2205*/
   else
     return 0; /*0x6f21f7*/
 }
@@ -1300,7 +1300,7 @@ unsigned int * TeamTypeClass_28::Seek(unsigned int * a2, int a3)
   int v4; // edx
   int v5; // ecx
 
-  v3 = *(unsigned int *)&this->m_1[3]; /*0x6f2210*/
+  v3 = *(unsigned int *)&this->q004; /*0x6f2210*/
   v4 = *(unsigned int *)(v3 + 8 * a3); /*0x6f2217*/
   v5 = v3 + 8 * a3; /*0x6f221a*/
   *a2 = v4; /*0x6f2221*/
@@ -1320,14 +1320,14 @@ char TeamTypeClass_28::AddRef(int v4)
   unsigned int *v6; // ecx
   int v7; // edx
 
-  m_8 = this->m_8; /*0x6f229b*/
+  m_8 = this->q008; /*0x6f229b*/
   if ( m_8 == *(unsigned int *)(v4 + 8) ) /*0x6f22a0*/
   {
     v3 = 0; /*0x6f22a2*/
     if ( m_8 <= 0 ) /*0x6f22a6*/
       return 1; /*0x6f22d6*/
     v4 = *(unsigned int *)(v4 + 4); /*0x6f22a8*/
-    v5 = *(unsigned int **)&this->m_1[3]; /*0x6f22ab*/
+    v5 = *(unsigned int **)&this->q004; /*0x6f22ab*/
     v6 = (unsigned int *)(v4 + 4); /*0x6f22ae*/
     v7 = v4 - (unsigned int)v5; /*0x6f22b1*/
     while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *v6 ) /*0x6f22c3*/
@@ -1349,14 +1349,14 @@ void TeamTypeClass_28::ddtor()
 {
   int v2; // eax
 
-  v2 = *(unsigned int *)&this->m_1[3]; /*0x6f2406*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x6f240d*/
+  v2 = *(unsigned int *)&this->q004; /*0x6f2406*/
+  if ( v2 && this->IsAllocated ) /*0x6f240d*/
   {
     RA2_OPDEL((void *)(v2 - 4)); /*0x6f241e*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6f2426*/
+    *(unsigned int *)&this->q004 = 0; /*0x6f2426*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x6f2429*/
-  this->m_8 = 0; /*0x6f242c*/
+  this->IsAllocated = 0; /*0x6f2429*/
+  this->q008 = 0; /*0x6f242c*/
 }
 } // namespace gamemd
 
@@ -1368,13 +1368,13 @@ int TeamTypeClass_28::Read(unsigned int * a2)
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(this->m_C) ) /*0x6f2440*/
+  if ( !IDA_LOBYTE(this->q00C) ) /*0x6f2440*/
     return 0; /*0x6f244e*/
-  m_8 = this->m_8; /*0x6f2454*/
+  m_8 = this->q008; /*0x6f2454*/
   result = 0; /*0x6f2457*/
   if ( m_8 <= 0 ) /*0x6f245b*/
     return -1; /*0x6f247c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x6f2461*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x6f2461*/
   {
     if ( ++result >= m_8 ) /*0x6f247a*/
       return -1; /*0x6f247a*/
@@ -1387,8 +1387,8 @@ int TeamTypeClass_28::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int TeamTypeClass_28::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x6f2490*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x6f24a5*/
+  if ( IDA_LOBYTE(this->q00C) ) /*0x6f2490*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->q004) >> 3; /*0x6f24a5*/
   else
     return 0; /*0x6f2497*/
 }
@@ -1402,11 +1402,11 @@ int TeamTypeClass_28::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  m_10 = this->m_10; /*0x6f2640*/
+  m_10 = this->q010; /*0x6f2640*/
   result = 0; /*0x6f2645*/
   if ( m_10 <= 0 ) /*0x6f264b*/
     return -1; /*0x6f266c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x6f2651*/
+  for ( i = *(unsigned int **)&this->q004; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x6f2651*/
   {
     if ( ++result >= m_10 ) /*0x6f266a*/
       return -1; /*0x6f266a*/
@@ -1420,18 +1420,18 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(char a2)
 {
   int v3; // eax
 
-  v3 = *(unsigned int *)&this->m_1[3]; /*0x6f2683*/
+  v3 = *(unsigned int *)&this->q004; /*0x6f2683*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f2686*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x6f2690*/
+  if ( v3 && this->IsAllocated ) /*0x6f2690*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x6f26a3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6f26ab*/
+    *(unsigned int *)&this->q004 = 0; /*0x6f26ab*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x6f26b6*/
-  this->m_8 = 0; /*0x6f26bc*/
+  this->IsAllocated = 0; /*0x6f26b6*/
+  *(unsigned short *)&this->q008 = 0; /*0x6f26bc*/
   if ( (a2 & 1) != 0 ) /*0x6f26c3*/
     RA2_OPDEL(); /*0x6f26c6*/
-  return this->__pad_0; /*0x6f26d0*/
+  return this; /*0x6f26d0*/
 }
 } // namespace gamemd
 
@@ -1441,17 +1441,17 @@ DynamicVector * TeamTypeClass_28::Constructor(char a2)
 {
   int v3; // eax
 
-  v3 = *(unsigned int *)&this->m_1[3]; /*0x6f2723*/
+  v3 = *(unsigned int *)&this->q004; /*0x6f2723*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f2726*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x6f2730*/
+  if ( v3 && this->IsAllocated ) /*0x6f2730*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x6f2743*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x6f274b*/
+    *(unsigned int *)&this->q004 = 0; /*0x6f274b*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x6f2756*/
-  this->m_8 = 0; /*0x6f275c*/
+  this->IsAllocated = 0; /*0x6f2756*/
+  *(unsigned short *)&this->q008 = 0; /*0x6f275c*/
   if ( (a2 & 1) != 0 ) /*0x6f2763*/
     RA2_OPDEL(); /*0x6f2766*/
-  return this->__pad_0; /*0x6f2770*/
+  return this; /*0x6f2770*/
 }
 } // namespace gamemd

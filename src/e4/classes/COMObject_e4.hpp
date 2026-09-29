@@ -33,7 +33,6 @@ struct COMObject {
     unsigned int Image;
     unsigned int __pad_0;
     unsigned int __pad_31;
-    unsigned int m_2D;
     unsigned int vfptr;
 // --- flat members (END) ---
     bool IsSameType(void* aP0);

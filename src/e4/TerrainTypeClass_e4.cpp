@@ -77,9 +77,9 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   this->u32_306 = 0; /*0x5448bc*/
   this->u32_308 = 0; /*0x5448c2*/
   this->ObjectTypeClass = (void*)&IsometricTileTypeClass_vftable; /*0x5448c8*/
-  this->? = (void*)&IsometricTileTypeClass_vftable; /*0x5448cf*/
-  this->? = (void*)&IsometricTileTypeClass_vftable; /*0x5448d6*/
-  this->? = (void*)&IsometricTileTypeClass_vftable; /*0x5448dd*/
+  *(void **)&this->vtable2 = (void*)&IsometricTileTypeClass_vftable; /*0x5448cf*/
+  *(void **)&this->vtable3 = (void*)&IsometricTileTypeClass_vftable; /*0x5448d6*/
+  *(void **)&this->vtable4 = (void*)&IsometricTileTypeClass_vftable; /*0x5448dd*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -114,15 +114,15 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   }
   if ( Destination != this->? ) /*0x5449b6*/
   {
-    qmemcpy(this->?, Destination, 0x30u); /*0x5449c1*/
-    this->?[48] = v11; /*0x5449c3*/
+    qmemcpy(this->u32_44, Destination, 0x30u); /*0x5449c1*/
+    this->u32_44 = v11; /*0x5449c3*/
   }
   this->u32_2F5 = 0; /*0x5449c5*/
-  this->? = 1; /*0x5449cb*/
-  this->? = 0; /*0x5449d2*/
-  this->? = 0; /*0x5449d8*/
-  this->? = 1; /*0x5449de*/
-  this->? = 1; /*0x5449e5*/
+  this->q22F = 1; /*0x5449cb*/
+  *(unsigned int *)&this->Selectable = 0; /*0x5449d2*/
+  *(unsigned int *)&this->LegalTarget = 0; /*0x5449d8*/
+  this->Insignificant = 1; /*0x5449de*/
+  this->q233 = 1; /*0x5449e5*/
   this->? = 0; /*0x5449ec*/
   return &this->ObjectTypeClass; /*0x5449c4*/
 }
@@ -228,7 +228,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
   if ( this->Strength == -1 ) /*0x71decf*/
     this->Strength = g_RulesClass_Instance->Normal[17]; /*0x71dedc*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite(&this->q024, aIsveinhole, this->IsVeinhole); /*0x71def6*/
-  this->IsVeinhole = Bool_Overwrite; /*0x71defd*/
+  *(unsigned int *)&this->IsVeinhole = Bool_Overwrite; /*0x71defd*/
   if ( Bool_Overwrite ) /*0x71df03*/
   {
     this->q234 = 0; /*0x71df05*/
@@ -245,18 +245,18 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
   v8 = 5 * v7; /*0x71df7e*/
   this->Foundation = v7; /*0x71df81*/
   IDA_LOBYTE(v7) = this->q22C; /*0x71df87*/
-  this->q2B8 = 8 * v8 + 11595200; /*0x71df96*/
+  *(unsigned int *)&this->q2B8 = 8 * v8 + 11595200; /*0x71df96*/
   if ( !(unsigned char)v7 ) /*0x71df9c*/
   {
     _makepath(Buffer, 0, 0, (const char *)(&this->u32_C84), Ext); /*0x71dfad*/
-    this->Image = SearchMIXFile(Buffer, 0); /*0x71dfc0*/
+    *(unsigned int *)&this->Image = SearchMIXFile(Buffer, 0); /*0x71dfc0*/
   }
   v9 = (char **)(*(int (__thiscall **)(int))(((unsigned int)(this->zero_3C6))))(this); /*0x71dfca*/
   if ( v9 ) /*0x71dfd2*/
   {
     PixelData = MixFileClass::GetPixelData(v9, (int)v22, 0); /*0x71dfdd*/
     this->RadarColor = *(unsigned short *)PixelData; /*0x71dfeb*/
-    this->q29E = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
+    *(unsigned int *)&this->q29E = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
   }
   Coord = INIClass::GetCoord( /*0x71e00c*/
             aP1,
@@ -266,7 +266,7 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
             (uint8_t *)(&this->q1088));
   v12 = this->q2B3; /*0x71e014*/
   this->RadarColor = *(unsigned short *)Coord; /*0x71e01a*/
-  this->q29E = *(unsigned char *)(Coord + 2); /*0x71e02a*/
+  *(unsigned int *)&this->q29E = *(unsigned char *)(Coord + 2); /*0x71e02a*/
   v13 = INIClass::ReadBool_Overwrite(&this->q024, aIsanimated, v12); /*0x71e02d*/
   v21 = this->AnimationRate; /*0x71e03a*/
   this->q2B3 = v13; /*0x71e041*/
@@ -405,8 +405,8 @@ unsigned int * TerrainTypeClass::GetWidth(unsigned int * a1, int * a2)
   if ( v7 < GroundHeight ) /*0x71e100*/
     v3 = (void *)Cell::GetGroundHeight(&v5); /*0x71e111*/
   a1->ObjectTypeClass = v5; /*0x71e11e*/
-  a1->? = v6; /*0x71e124*/
-  a1->? = v3; /*0x71e128*/
+  *(void **)&a1->vtable2 = v6; /*0x71e124*/
+  *(void **)&a1->vtable3 = v3; /*0x71e128*/
   return &a1->ObjectTypeClass; /*0x71e12b*/
 }
 // 0x71E140
@@ -443,9 +443,9 @@ int TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x71e1ef*/
       aP0->ObjectTypeClass = (void*)&TerrainTypeClass_vftable; /*0x71e1f4*/
-      aP0->? = (void*)&TerrainTypeClass_vftable; /*0x71e1fa*/
-      aP0->? = (void*)&TerrainTypeClass_vftable; /*0x71e201*/
-      aP0->? = (void*)&TerrainTypeClass_vftable; /*0x71e208*/
+      *(void **)&aP0->vtable2 = (void*)&TerrainTypeClass_vftable; /*0x71e1fa*/
+      *(void **)&aP0->vtable3 = (void*)&TerrainTypeClass_vftable; /*0x71e201*/
+      *(void **)&aP0->vtable4 = (void*)&TerrainTypeClass_vftable; /*0x71e208*/
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x71e211*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x71e218*/

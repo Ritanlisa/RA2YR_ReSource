@@ -63,7 +63,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   int v41; // [esp+40h] [ebp-8h]
   int v42; // [esp+44h] [ebp-4h]
 
-  v3 = (int *)&this->__pad_C[144]; /*0x425d1d*/
+  v3 = (int *)&this->q034; /*0x425d1d*/
   v4 = v3[1]; /*0x425d29*/
   v5 = (uint8_t)(*v3 >> 31) + *v3; /*0x425d32*/
   v37 = 10000; /*0x425d34*/
@@ -237,7 +237,7 @@ int Building::GetNthOfType()
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->__pad_C[56]); /*0x485026*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->u32_44); /*0x485026*/
   if ( BuildingByTiberiumType == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
   else

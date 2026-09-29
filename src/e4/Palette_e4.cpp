@@ -282,7 +282,7 @@ int Palette::CalcColorDistance(unsigned char * a2)
   int v3; // edx
   int v4; // eax
 
-  v2 = IDA_LOBYTE(this->m_Colors[0]) - *a2; /*0x661360*/
+  v2 = IDA_LOBYTE(this->u32_8) - *a2; /*0x661360*/
   if ( v2 < 0 ) /*0x661362*/
     v2 = *a2 - IDA_LOBYTE(this->m_Colors[0]); /*0x661364*/
   v3 = IDA_BYTE1(this->m_Colors[0]) - a2[1]; /*0x661370*/

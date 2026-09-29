@@ -7,8 +7,8 @@ namespace gamemd {
 struct Power {
 // --- flat members (BEGIN) ---
     unsigned int q000;  // 0x0
-    unsigned int ;  // 0x4
-    unsigned int ;  // 0x8
+    unsigned int q4;  // 0x4
+    unsigned int q8;  // 0x8
     void* q00C;  // 0xC
     unsigned int u32_11E8;
     unsigned int u32_11F0;

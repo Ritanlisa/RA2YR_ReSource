@@ -7,7 +7,7 @@ namespace gamemd {
 
 struct Theme {
 // --- flat members (BEGIN) ---
-    unsigned int ;  // 0x4
+    unsigned int q4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned char u8_11;  // 0x11
     void* audioSample;  // 0x2C

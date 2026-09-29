@@ -284,7 +284,7 @@ int RandomMap::GenerateTerrain()
     v17 = (int)((unsigned int *)(RandomMap::CellListAlloc(0)));
     v45 = (unsigned int)(v17);
     v18 = v17->q010 - 1; /*0x58cae9*/
-    v52 = v17->q010; /*0x58caed*/
+    v52 = *(unsigned int *)&v17->q010; /*0x58caed*/
     v51 = (double)v52; /*0x58caf5*/
     do /*0x58cb20*/
     {
@@ -497,7 +497,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
                            0) )
                     {
                       vtable0 = v12[1].vtable0; /*0x58d362*/
-                      Items = v12->Items; /*0x58d365*/
+                      Items = *(unsigned int *)&v12->Items; /*0x58d365*/
                       v12[1].vtable0 = (char *)vtable0 + 1; /*0x58d36b*/
                       Items[(unsigned int)vtable0] = v28; /*0x58d372*/
                     }
@@ -626,7 +626,7 @@ unsigned int * RandomMap::TerrainAlloc()
           && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v3->vtable0 + 2))(v3, Capacity + v12, 0) )
         {
           vtable0 = v3[1].vtable0; /*0x58d564*/
-          Items = v3->Items; /*0x58d567*/
+          Items = *(unsigned int *)&v3->Items; /*0x58d567*/
           v3[1].vtable0 = (char *)vtable0 + 1; /*0x58d56d*/
           Items[(unsigned int)vtable0] = v11; /*0x58d570*/
         }
@@ -732,7 +732,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
                        0) )
                 {
                   vtable0 = v4[1].vtable0; /*0x58e8df*/
-                  Items = v4->Items; /*0x58e8e2*/
+                  Items = *(unsigned int *)&v4->Items; /*0x58e8e2*/
                   v4[1].vtable0 = (char *)vtable0 + 1; /*0x58e8e8*/
                   Items[(unsigned int)vtable0] = *(unsigned int *)v24; /*0x58e8ef*/
                 }
@@ -2702,11 +2702,11 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
     RA2_OPDEL((void *)g_MissionQueueFrame.localVariables[163]); /*0x59595a*/
     g_MissionQueueFrame.localVariables[163] = 0; /*0x595962*/
   }
-  v6 = *(void (__thiscall ****)(unsigned int, int))&this->__pad_4C[300]; /*0x595968*/
+  v6 = *(void (__thiscall ****)(unsigned int, int))&this->ptr_178; /*0x595968*/
   if ( v6 ) /*0x595970*/
   {
     (**v6)(v6, 1); /*0x595976*/
-    *(unsigned int *)&this->__pad_4C[300] = 0; /*0x595978*/
+    *(unsigned int *)&this->ptr_178 = 0; /*0x595978*/
   }
   v7 = *(void **)&this->__pad_4C[304]; /*0x59597e*/
   if ( v7 ) /*0x595986*/
@@ -2715,7 +2715,7 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
     RA2_OPDEL(v7); /*0x595990*/
     *(unsigned int *)&this->__pad_4C[304] = 0; /*0x595998*/
   }
-  this->u32_B8 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5959a4*/
+  *(void **)&this->u32_B8 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5959a4*/
   DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)((char *)&this->u32_1246)); /*0x5959aa*/
   this->u32_2C4 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5959b5*/
   DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)((char *)&this->q1188)); /*0x5959bb*/
@@ -2761,46 +2761,46 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   this->u32_21C = 0; /*0x595aa5*/
   v12 = *(void **)&this->__pad_4C[432]; /*0x595aab*/
   *(unsigned int *)&this->__pad_4C[428] = (void*)&VectorClass_int_vftable; /*0x595ab1*/
-  if ( v12 && this->__pad_4C[441] ) /*0x595abb*/
+  if ( v12 && this->u8_205 ) /*0x595abb*/
   {
     RA2_OPDEL(v12); /*0x595ac4*/
-    *(unsigned int *)&this->__pad_4C[432] = 0; /*0x595acc*/
+    *(unsigned int *)&this->q1FC = 0; /*0x595acc*/
   }
   this->__pad_4C[441] = 0; /*0x595ad2*/
   *(unsigned int *)&this->__pad_4C[436] = 0; /*0x595ad8*/
   v13 = *(void **)&this->__pad_4C[404]; /*0x595ade*/
   *(unsigned int *)&this->__pad_4C[400] = (void*)&VectorClass_int_vftable; /*0x595ae4*/
-  if ( v13 && this->__pad_4C[413] ) /*0x595aee*/
+  if ( v13 && this->u8_1E9 ) /*0x595aee*/
   {
     RA2_OPDEL(v13); /*0x595af7*/
-    *(unsigned int *)&this->__pad_4C[404] = 0; /*0x595aff*/
+    *(unsigned int *)&this->q1E0 = 0; /*0x595aff*/
   }
   this->__pad_4C[413] = 0; /*0x595b05*/
   *(unsigned int *)&this->__pad_4C[408] = 0; /*0x595b0b*/
   v14 = *(void **)&this->__pad_4C[376]; /*0x595b11*/
   *(unsigned int *)&this->__pad_4C[372] = (void*)&VectorClass_int_vftable; /*0x595b17*/
-  if ( v14 && this->__pad_4C[385] ) /*0x595b21*/
+  if ( v14 && this->u8_1CD ) /*0x595b21*/
   {
     RA2_OPDEL(v14); /*0x595b2a*/
-    *(unsigned int *)&this->__pad_4C[376] = 0; /*0x595b32*/
+    *(unsigned int *)&this->q1C4 = 0; /*0x595b32*/
   }
   this->__pad_4C[385] = 0; /*0x595b38*/
   *(unsigned int *)&this->__pad_4C[380] = 0; /*0x595b3e*/
   v15 = *(void **)&this->__pad_4C[348]; /*0x595b44*/
   *(unsigned int *)&this->__pad_4C[344] = (void*)&VectorClass_int_vftable; /*0x595b4a*/
-  if ( v15 && this->__pad_4C[357] ) /*0x595b54*/
+  if ( v15 && this->u8_1B1 ) /*0x595b54*/
   {
     RA2_OPDEL(v15); /*0x595b5d*/
-    *(unsigned int *)&this->__pad_4C[348] = 0; /*0x595b65*/
+    *(unsigned int *)&this->q1A8 = 0; /*0x595b65*/
   }
   this->__pad_4C[357] = 0; /*0x595b6b*/
   *(unsigned int *)&this->__pad_4C[352] = 0; /*0x595b71*/
   v16 = *(void **)&this->__pad_4C[320]; /*0x595b77*/
   *(unsigned int *)&this->__pad_4C[316] = (void*)&VectorClass_int_vftable; /*0x595b7d*/
-  if ( v16 && this->__pad_4C[329] ) /*0x595b87*/
+  if ( v16 && this->u8_195 ) /*0x595b87*/
   {
     RA2_OPDEL(v16); /*0x595b90*/
-    *(unsigned int *)&this->__pad_4C[320] = 0; /*0x595b98*/
+    *(unsigned int *)&this->q18C = 0; /*0x595b98*/
   }
   this->__pad_4C[329] = 0; /*0x595ba0*/
   *(unsigned int *)&this->__pad_4C[324] = 0; /*0x595ba6*/
@@ -3909,7 +3909,7 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
   Node_flat::Init(v81);
   v81[5] = 0;
   v82 = 0;
-  v79[0] = &CCINIClass_Vtable;
+  v79[0] = (unsigned int)&CCINIClass_Vtable;
   INIClass::ClearSection((int)v79, 0, 0);
   v7 = this->q038;
   *(&this->u32_4C5) = 4;
@@ -3928,9 +3928,9 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
     g_INI_Key_Player,
     (char *)(*(unsigned int *)g_SuperWeaponTypeCount + 36));
   if ( this->q038 )
-    v8 = this->q1C4;
+    v8 = *(unsigned int *)&this->q1C4;
   else
-    v8 = this->q1A8;
+    v8 = *(unsigned int *)&this->q1A8;
   v73[0] = (double)*(int *)(v8 + 4 * this->q048) * 0.01;
   v9 = v73[0];
   INIClass::SetDouble((char *)v79, (uint8_t *)g_INI_Key_Lighting, g_INI_Key_Ambient, v73[0]);
@@ -4329,7 +4329,7 @@ LABEL_153:
       if ( v58 != -1 )
         Vector4::EraseAt(&g_RandomMap_BuildObject, v58);
       void * v59 = (void *)v57[11];
-      v57[10] = &vt_VectorClass_Cell;
+      v57[10] = (unsigned int)&vt_VectorClass_Cell;
       if ( v59 && *((unsigned char *)v57 + 53) )
       {
         RA2_OPDEL(v59);
@@ -4558,7 +4558,7 @@ void RandomMap::ArrangeBuildingGrid()
 
   this->u32_308 = 1; /*0x59ad27*/
   RandomMap::Constructor_0((RandomMap *)&v28, 0, 0); /*0x59ad31*/
-  v2 = *(unsigned int *)&this->__pad_4C[4]; /*0x59ad36*/
+  v2 = *(unsigned int *)&this->q050; /*0x59ad36*/
   v28 = (void*)&DynamicVectorClass_TRect_int_vftable; /*0x59ad39*/
   v32 = 10; /*0x59ad44*/
   v3 = v2 / 2; /*0x59ad4c*/
@@ -5649,7 +5649,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
         {
   LABEL_31:
           vtable0 = v23[1].vtable0; /*0x5a0885*/
-          v20 = v23->Items; /*0x5a0888*/
+          v20 = *(unsigned int *)&v23->Items; /*0x5a0888*/
           v23[1].vtable0 = (char *)vtable0 + 1; /*0x5a088e*/
           v20[(unsigned int)vtable0] = v7; /*0x5a0891*/
         }
@@ -5753,7 +5753,7 @@ int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, sh
   double v100; // [esp+54h] [ebp-10h]
   double v101; // [esp+5Ch] [ebp-8h]
 
-  v8 = *(unsigned int *)&this->__pad_4C[308]; /*0x5a08de*/
+  v8 = *(unsigned int *)&this->q180; /*0x5a08de*/
   p_RandomMap_field_0x8 = this; /*0x5a08e4*/
   v9 = 2 * *(unsigned int *)&this->__pad_4C[312] * v8; /*0x5a08f4*/
   if ( v9 <= 100 ) /*0x5a08f6*/
@@ -7199,7 +7199,7 @@ VectorClass_flat * * RandomMap::PlaceMapSeedBuildings()
     v8 += 12; /*0x5a80ef*/
   }
   while ( (int)v8 < (int)&g_MissionQueueFrame.globalVariables[1556] ); /*0x5a80f7*/
-  IDA_LOWORD(v10) = Math::RoundToInt((double)*(int *)&this->__pad_4C[20] + 0.49 + (double)*(int *)&this->__pad_4C[20] + 0.49); /*0x5a8104*/
+  IDA_LOWORD(v10) = Math::RoundToInt((double)*(int *)&this->q060 + 0.49 + (double)*(int *)&this->q060 + 0.49); /*0x5a8104*/
   v28 = v10; /*0x5a8109*/
   v27 = 0; /*0x5a810d*/
   v23 = 0; /*0x5a8111*/
@@ -7708,15 +7708,15 @@ void RandomMap::ddtor()
 {
   void *v2; // eax
 
-  v2 = *(void **)&this->m_1[3]; /*0x42f426*/
-  this->m_10 = 0; /*0x42f429*/
-  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x42f430*/
+  v2 = *(void **)&this->Items; /*0x42f426*/
+  *(unsigned int *)&this->q010 = 0; /*0x42f429*/
+  if ( v2 && this->IsAllocated ) /*0x42f430*/
   {
     RA2_OPDEL(v2); /*0x42f436*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x42f43e*/
+    *(unsigned int *)&this->Items = 0; /*0x42f43e*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x42f441*/
-  this->m_8 = 0; /*0x42f444*/
+  this->IsAllocated = 0; /*0x42f441*/
+  *(unsigned int *)&this->q008 = 0; /*0x42f444*/
 }
 } // namespace gamemd
 
@@ -7724,8 +7724,8 @@ void RandomMap::ddtor()
 namespace gamemd {
 unsigned int RandomMap::Write(int a2)
 {
-  if ( IDA_LOBYTE(this->m_C) ) /*0x42f450*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x42f465*/
+  if ( IDA_LOBYTE(this->q00C) ) /*0x42f450*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->Items) >> 2; /*0x42f465*/
   else
     return 0; /*0x42f457*/
 }
@@ -7735,7 +7735,7 @@ unsigned int RandomMap::Write(int a2)
 namespace gamemd {
 unsigned int * RandomMap::Seek(unsigned int * a2, int a3)
 {
-  *a2 = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a3); /*0x42f47e*/
+  *a2 = *(unsigned int *)(*(unsigned int *)&this->Items + 4 * a3); /*0x42f47e*/
   return a2; /*0x42f480*/
 }
 } // namespace gamemd
@@ -7751,14 +7751,14 @@ char RandomMap::AddRef(int a2)
   unsigned short *v6; // ecx
   int v7; // edx
 
-  m_8 = this->m_8; /*0x42f627*/
+  m_8 = *(unsigned int *)&this->q008; /*0x42f627*/
   if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x42f62f*/
   {
     v3 = 0; /*0x42f631*/
     if ( m_8 <= 0 ) /*0x42f635*/
       return 1; /*0x42f664*/
     v4 = *(unsigned int *)(a2 + 4); /*0x42f637*/
-    v5 = *(unsigned short **)&this->m_1[3]; /*0x42f63a*/
+    v5 = *(unsigned short **)&this->Items; /*0x42f63a*/
     v6 = (unsigned short *)(v4 + 2); /*0x42f63d*/
     v7 = v4 - (unsigned int)v5; /*0x42f640*/
     while ( *v5 == *(unsigned short *)((char *)v5 + v7) && v5[1] == *v6 ) /*0x42f652*/
@@ -7782,11 +7782,11 @@ int RandomMap::Read(unsigned short * a2)
   int result; // eax
   unsigned short *i; // ecx
 
-  m_10 = this->m_10; /*0x42f930*/
+  m_10 = *(unsigned int *)&this->q010; /*0x42f930*/
   result = 0; /*0x42f934*/
   if ( m_10 <= 0 ) /*0x42f93a*/
     return -1; /*0x42f95d*/
-  for ( i = *(unsigned short **)&this->m_1[3]; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x42f940*/
+  for ( i = *(unsigned short **)&this->Items; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x42f940*/
   {
     if ( ++result >= m_10 ) /*0x42f95b*/
       return -1; /*0x42f95b*/
@@ -7800,18 +7800,18 @@ DynamicVector * RandomMap::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x42fbf3*/
+  v3 = *(void **)&this->Items; /*0x42fbf3*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_Cell_vftable; /*0x42fbf6*/
-  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x42fc00*/
+  if ( v3 && this->IsAllocated ) /*0x42fc00*/
   {
     RA2_OPDEL(v3); /*0x42fc08*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x42fc10*/
+    *(unsigned int *)&this->Items = 0; /*0x42fc10*/
   }
-  IDA_BYTE1(this->m_C) = 0; /*0x42fc1b*/
-  this->m_8 = 0; /*0x42fc21*/
+  this->IsAllocated = 0; /*0x42fc1b*/
+  *(unsigned int *)&this->q008 = 0; /*0x42fc21*/
   if ( (a2 & 1) != 0 ) /*0x42fc28*/
     RA2_OPDEL(); /*0x42fc2b*/
-  return this->__pad_0; /*0x42fc35*/
+  return this; /*0x42fc35*/
 }
 } // namespace gamemd
 
@@ -7895,7 +7895,7 @@ unsigned int * RandomMap::Constructor_VectorClass_Cell_(char a2)
   this->RandomMap_field_0x30 = 0; /*0x5ac31e*/
   if ( (a2 & 1) != 0 ) /*0x5ac325*/
     RA2_OPDEL(); /*0x5ac328*/
-  return this->__pad_0; /*0x5ac332*/
+  return this; /*0x5ac332*/
 }
 } // namespace gamemd
 
@@ -7913,12 +7913,12 @@ unsigned int * RandomMap::Constructor(int a2, int a3)
     if ( a3 ) /*0x5ad846*/
     {
       *(unsigned int *)&this->RandomMap_field_0x2[2] = a3; /*0x5ad848*/
-      return this->__pad_0; /*0x5ad84e*/
+      return this; /*0x5ad84e*/
     }
     *(unsigned int *)&this->RandomMap_field_0x2[2] = RA2_OPNEW(4 * a2); /*0x5ad85d*/
     IDA_BYTE1(this->RandomMap_field_0xC) = 1; /*0x5ad860*/
   }
-  return this->__pad_0; /*0x5ad84d*/
+  return this; /*0x5ad84d*/
 }
 } // namespace gamemd
 
@@ -7938,19 +7938,19 @@ unsigned int * RandomMap::Constructor_0(int a2, int a3)
     if ( a3 ) /*0x5ada6a*/
     {
       *(unsigned int *)&this->RandomMap_field_0x2[2] = a3; /*0x5ada6d*/
-      return this->__pad_0; /*0x5ada78*/
+      return this; /*0x5ada78*/
     }
     v5 = RA2_OPNEW(16 * a2); /*0x5ada81*/
     if ( v5 ) /*0x5ada8b*/
     {
       *(unsigned int *)&this->RandomMap_field_0x2[2] = v5; /*0x5ada8e*/
       IDA_BYTE1(this->RandomMap_field_0xC) = 1; /*0x5ada95*/
-      return this->__pad_0; /*0x5ada9d*/
+      return this; /*0x5ada9d*/
     }
     IDA_BYTE1(this->RandomMap_field_0xC) = 1; /*0x5adaa2*/
     *(unsigned int *)&this->RandomMap_field_0x2[2] = 0; /*0x5adaa6*/
   }
-  return this->__pad_0; /*0x5ada76*/
+  return this; /*0x5ada76*/
 }
 } // namespace gamemd
 
@@ -7968,11 +7968,11 @@ unsigned int * RandomMap::Constructor_1(int a2, int a3)
     if ( a3 ) /*0x5adad6*/
     {
       *(unsigned int *)&this->RandomMap_field_0x2[2] = a3; /*0x5adad8*/
-      return this->__pad_0; /*0x5adade*/
+      return this; /*0x5adade*/
     }
     *(unsigned int *)&this->RandomMap_field_0x2[2] = RA2_OPNEW(8 * a2); /*0x5adaed*/
     IDA_BYTE1(this->RandomMap_field_0xC) = 1; /*0x5adaf0*/
   }
-  return this->__pad_0; /*0x5adadd*/
+  return this; /*0x5adadd*/
 }
 } // namespace gamemd
