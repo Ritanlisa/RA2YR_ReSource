@@ -9,8 +9,8 @@ struct Campaign_WorldDominationTour_24 {
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
 // --- flat members (END) ---
-    BOOL AddRef(void *a1 = 0);  // 0x765700
-    unsigned int * Release(void *a1 = 0);  // 0x765B40
-    unsigned int * ddtor(void *a1 = 0);  // 0x765B50
+    BOOL AddRef();  // 0x765700
+    BOOL Release();  // 0x765B40
+    BOOL ddtor();  // 0x765B50
 };
 } // namespace gamemd

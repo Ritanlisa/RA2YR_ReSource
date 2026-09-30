@@ -24,8 +24,8 @@ struct LoadingScreen {
     unsigned char q038;  // 0x38
     unsigned char q03C;  // 0x3C
 // --- flat members (END) ---
-    char * GetBackgroundImage(void * aP1);
-    char * GetOverlayImage(void * aP1);
+    char * GetBackgroundImage(ScenarioClass * aP1);
+    char * GetOverlayImage(ScenarioClass * aP1);
     char FreeResources3();
     char Init();
     int FreeResources();

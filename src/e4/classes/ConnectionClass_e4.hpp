@@ -29,13 +29,13 @@ struct ConnectionClass {
     unsigned int Debug;
     unsigned int Timer;
 // --- flat members (END) ---
-    AbstractClass * * sendAck(void * aP1, void * aP2, void * aP3, void * aP4);
+    AbstractClass * * sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4);
     int StubReturnFalse();
     int allocPacketSlot(const void * a2, signed int a3, const void * a4, signed int a5);
     int processTileUpdate(void * a2, signed int * a3);
     int receivePacket(int a2, int a3);
     int serviceSendQueue();
-    unsigned int initQueue(unsigned int a2, void *a1 = 0);
+    int initQueue(unsigned int a2);
     void dtor();
      double queueSendPacket(...);  // C2597 interim stub
 };

@@ -37,9 +37,9 @@ struct ComStreamClass {
     LONG AddRef(void *a1 = 0);
     int QueryInterface();
     int Release(void *a1 = 0);
-    int Seek(void *a1 = 0, void *a2 = 0);
+    int Seek();
     int Write();
-    int ddtor(void *a1 = 0);
+    int ddtor();
     unsigned int * getStreamSize();
     unsigned int * seekToPosition();
     void ** writeData(char a2);

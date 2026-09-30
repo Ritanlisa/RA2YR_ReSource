@@ -9,7 +9,7 @@ struct Float {
 // --- flat members (BEGIN) ---
     char Float_field_00[4];  // 0x0
 // --- flat members (END) ---
-    double SubtractClamped(void * aP1, void * aP2);
+    float SubtractClamped(BuildingTypeClass * aP1, IUnknown * aP2);
     float Accumulate(float value, int index);
 };
 

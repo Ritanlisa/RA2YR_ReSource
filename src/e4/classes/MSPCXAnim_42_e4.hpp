@@ -35,7 +35,7 @@ struct MSPCXAnim_42 {
     int  FindIndex_0(unsigned int * a2);  // 0x5D0F70
     char  AddRef(int a2);  // 0x5D1200
     char  Release(int a2, unsigned int * a3);  // 0x5D1240
-    void ddtor(void *a1 = 0);  // 0x5D12F0
+    void ddtor();  // 0x5D12F0
     int  Load(unsigned int * a2);  // 0x5D1320
     unsigned int  Draw(int a2);  // 0x5D1360
     DynamicVector *  Constructor_VectorClass_Point2D_(unsigned int * Block, char a2);  // 0x5D1710

@@ -206,7 +206,7 @@ struct MPCooperative {
     unsigned int MPCooperative_validateMove;
 // --- flat members (END) ---
     int  processTurn(char * a2, char * a3);  // 0x49B660
-    char  BuildScoreEntries(int a2, void * aP2);  // 0x49BCE0
+    int BuildScoreEntries(int a2, CCINIClass * aP2);  // 0x49BCE0
     char WriteCoopSaveINI();  // 0x49BE40
     bool ReadCoopSaveINI();  // 0x49D120
     unsigned int *  ctor(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5, void * aP6);  // 0x5C1470

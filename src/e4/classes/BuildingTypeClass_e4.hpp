@@ -1596,7 +1596,7 @@ struct BuildingTypeClass {
     unsigned int * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int * GetSizeInLeptons(unsigned int * a2);
     unsigned int * GetUpgradeOffset(unsigned int * a2);
-    unsigned int * loadBuildingProperty_b_545E520(void * aP1);
+    unsigned int * loadBuildingProperty_b_545E520(ObjectTypeClass * aP1);
     unsigned int * loadBuildingProperty_b_5478850(int a2, int a3);
     void IsPowered();
     void LoadVoxel();

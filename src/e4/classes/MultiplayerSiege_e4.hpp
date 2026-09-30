@@ -22,7 +22,7 @@ struct MultiplayerSiege {
     char CheckStatus(int a1);
     char GetResult(unsigned int * ppv, int a2);
     char StubReturnFalse();
-    int Read(void *a1 = 0, void *a2 = 0);
+    void Read();
     int Write(void ** a1);
 };
 

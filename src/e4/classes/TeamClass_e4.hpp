@@ -109,7 +109,7 @@ struct TeamClass {
     int ExecuteAction(int a2, char a3);
     int FindByMemberType(int a2);
     int GetLeaderIndex();
-    int GetMember(void *a1 = 0);
+    int GetMember();
     int HasAnyMemberFlagged();
     int LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractClass * aP3);
     int PowerDrainUpdate(int * a2);

@@ -21,9 +21,9 @@ struct Matrix3x4 {
     void* q02C;  // 0x2C
     unsigned int u32_DE4;
 // --- flat members (END) ---
-    int Identity(void *a1 = 0);
-    unsigned int * TransformCell(void * aP1, void * aP2);
-    void Translate(void * aP1);
+    int Identity();
+    unsigned int * TransformCell(AbstractClass * aP1, AbstractClass * aP2);
+    void Translate(ParticleSystemClass * aP1);
 };
 
 } // namespace gamemd

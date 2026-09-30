@@ -75,15 +75,15 @@ struct AbstractTypeClass {
 // --- flat members (END) ---
     AbstractTypeClass * ddtor(char a2);
     BOOL NameEquals(void * a2);
-    char WriteINI(void * aP1);
+    char WriteINI(CCINIClass * aP1);
     int AddSampleVocClass();
-    int Constructor(void * aP1);
-    int Dtor(void *a1 = 0);
+    int Constructor(AbstractClass * aP1);
+    int Dtor();
     int GetData(void *a1 = 0);
     int GetType(int a1);
-    int Init(void * aP1);
-    int LoadFromINI(void * aP1);
-    int ProcessPower(void * aP1);
+    int Init(AbstractTypeClass * aP1);
+    int LoadFromINI(AbstractTypeClass * aP1);
+    int ProcessPower(AbstractClass * aP1);
     int SetType();
     int StubReturnFalse();
     int Validate();

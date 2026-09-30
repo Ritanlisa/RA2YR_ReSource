@@ -30,11 +30,11 @@ struct TextRenderer {
     unsigned int __pad_4C;
 // --- flat members (END) ---
     TriggerTypeClass * Destructor(char a2);
-    int MeasureBuilding(int a2, void * aP2, void * aP3, void * aP4, char a6);
+    int MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6);
     unsigned int * Printf(void * aP0, size_t BufferCount, void * aP2, void * aP3, int a2, int a6, int a7, int a8, void * aP8);
     void * GetInstance(void *a1 = 0);
     void * MeasureBuilding2();
-    void * RenderCentered(int a1, int a2, void * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8);
+    void RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8);
     static double DrawTextA(...);  // C2597 interim stub
     static double m_bits(...);  // C2597 interim stub
     static double m_bmp(...);  // C2597 interim stub

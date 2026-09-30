@@ -696,7 +696,7 @@ struct VoxelAnimClass {
     int DrawVoxelFrame(int a2, int a3, int a4);
     int LoadFrame();
     int Reset();
-    int SaveLoad_Prefix(void * aP1, int aP1a);
+    int SaveLoad_Prefix(ObjectClass * aP1, int aP1a);
     int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
     int StubReturn3();
     int StubReturn328();

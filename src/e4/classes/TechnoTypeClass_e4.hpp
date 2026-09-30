@@ -1093,13 +1093,13 @@ struct TechnoTypeClass {
     int ComputeValue(void * a2, float a3);
     int ComputeValueSimple(float * a2);
     int DTOR();
-    int Dispatch(void * aP1, void *a2 = 0);
-    int GetThreatMultiplier(void * aP1);
+    void Dispatch(TechnoTypeClass * aP1);
+    int GetThreatMultiplier(TechnoTypeClass * aP1);
     int SaveLoadDataArray(void * aP1);
     int SaveLoad_Prefix_0(void * a1, void * aP2, void * aP3);
     unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int * Constructor_0(void * aP1, void *a2 = 0, void *a1 = 0);
-    unsigned int * LoadBase(void * aP1);
+    unsigned int * LoadBase(ObjectClass * aP1);
     void * ReadINI(char * Source, int a3);
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();

@@ -48,7 +48,7 @@ struct CaptureManagerClass {
     char CaptureManagerClass_field_2C[4];  // 0x50
     unsigned int __pad_3C;
 // --- flat members (END) ---
-    AbstractClass * * DecideUnitFate(void* aP1);
+    void DecideUnitFate(IUnknown * aP1);
     AnimClass * * FreeUnit(void* aP0, int _28, void* a2, void* aP1, int _34, void** a5);
     CaptureManagerClass(void * aP1, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);

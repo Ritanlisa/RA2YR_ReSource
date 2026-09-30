@@ -10,6 +10,6 @@ struct CoordStruct {
     int Y;  // 0x4
     int Z;  // 0x8
 // --- flat members (END) ---
-    unsigned int *  Set2(void * aP1, void * aP2);  // 0x642740
+    unsigned int * Set2(void* aP1, AbstractClass * aP2);  // 0x642740
 };
 } // namespace gamemd

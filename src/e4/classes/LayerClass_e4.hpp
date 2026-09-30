@@ -14,7 +14,7 @@ struct LayerClass {
 // --- flat members (END) ---
     int CellIteratorNext(void *a1 = 0);
     int CellIteratorReset(void *a1 = 0);
-    int CoordinatesLegal(void* aP1, void *a1 = 0);
+    int CoordinatesLegal(IUnknown * aP1);
     int IsWithinUsableArea(void * aP1, void * aP2);
     unsigned int * Pathfinding_Find(void* aP0, void* aP1, void* aP2, void* aP3, void* aP4, void* aP5, void* aP6, void* aP7, void* aP8, void* aP9, void* aP10, void* aP11, void* aP12, void* aP13, void* aP14, void * aP15, char a17);
     void * Reveal(int a2);

@@ -37,7 +37,7 @@ struct TagTypeClass {
     unsigned int __pad_0;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers();
-    AbstractTypeClass * * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    AbstractTypeClass * Construct(ObjectClass * aP1);
     AbstractTypeClass * * FindOrCreate(void *a1 = 0);
     TagTypeClass * ddtor(char a2);
     TriggerTypeClass * * FindOrCreateTriggerType(void *a1 = 0);

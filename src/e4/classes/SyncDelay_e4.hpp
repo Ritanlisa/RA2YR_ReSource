@@ -13,8 +13,8 @@ struct SyncDelay {
     unsigned int Timer;
     unsigned int Event;
 // --- flat members (END) ---
-    int Check(unsigned int * a2, void *a3 = 0, void *a1 = 0);
-    signed int Start(void *a1 = 0);
+    void Check(unsigned int * a2);
+    void Start();
 };
 
 } // namespace gamemd

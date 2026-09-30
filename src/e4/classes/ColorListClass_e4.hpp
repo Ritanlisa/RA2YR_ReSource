@@ -35,7 +35,7 @@ struct ColorListClass {
     int Clear(unsigned int a2);
     int GetColor(int a2);
     int SetColor();
-    void RemoveColor(void * String2);
+    void RemoveColor(wchar_t * String2);
 };
 
 } // namespace gamemd

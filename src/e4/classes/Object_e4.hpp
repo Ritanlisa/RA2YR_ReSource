@@ -90,12 +90,12 @@ struct Object {
     unsigned int q0A4;
     unsigned int u32_5788;
 // --- flat members (END) ---
-    int  FindClosestObjectCell(void * aP1, void * aP2, void * aP3);  // 0x47C3D0
-    int  FindObjectCell(void * aP1, char aP2);  // 0x47C5A0
+    int FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);  // 0x47C3D0
+    int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0
     int IsAlliedWithObjectHouse(IUnknown * aP1);  // 0x4F9A90
     bool  IsAlliedWithObjectSimpleHouse(unsigned char * a2);  // 0x4F9AF0
     unsigned int *  FindNearestObjectAtCell(unsigned int * a2);  // 0x56C210
-    void*  SpawnAtCell(void * aP1, void * aP2, void * aP3);  // 0x5FC380
+    int SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3);  // 0x5FC380
     void  HandleAction(int * a2, int * a3);  // 0x5FD970
     int ProcessEvent();  // 0x5FDDE0
     void*  DrawObject(void ** Block, char a2);  // 0x5FDF70

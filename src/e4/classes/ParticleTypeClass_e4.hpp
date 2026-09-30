@@ -304,12 +304,12 @@ struct ParticleTypeClass {
     int GetType(int a2, int a3);
     int GetTypeIdentifier();
     int Init(unsigned char * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
-    int ProcessPower(int * a2, void *a1 = 0);
+    int ProcessPower(int * a2);
     int SaveLoad_Prefix(int a1, int a2);
     int SaveLoad_Prefix_0(void * aP0, int aP1, int aP2);
     int StubReturnFalse(int a1);
-    unsigned int * Constructor(int a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0);
-    unsigned int * EnsureCapacity(unsigned int * a2, void *a1 = 0);
+    unsigned int * Constructor(int a2, int a3);
+    void EnsureCapacity(unsigned int * a2);
     unsigned int LoadTypeData(int a2);
     void GetClassIdentifier();
 };

@@ -62,10 +62,10 @@ struct LocomotionClass {
     int GetSpeedMultiplier();
     int Initialize();
     int ProcessData();
-    int Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0);
-    unsigned int * Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
+    int Update();
+    int Init();
     void * UpdateAll();
-    void Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void Construct();
 };
 
 } // namespace gamemd

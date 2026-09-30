@@ -22,12 +22,12 @@ struct FileClass {
     int Close();
     int GetState();
     int Open(int a2);
-    int Read(void * aP1, void * aP2);
-    int Seek(int lDistanceToMove, int dwMoveMethod);
-    int SetFileName(void * aP1);
+    int Read(BufferIOFileClass * aP1, AbstractClass * aP2);
+    int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);
+    const char* SetFileName(IUnknown * aP1);
     int SetState();
     int StubReturnFalse();
-    int Write(void * aP1, int nNumberOfBytesToWrite);
+    int Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite);
     unsigned int * loc_401950();
      double Load(...);  // C2597 interim stub
 };

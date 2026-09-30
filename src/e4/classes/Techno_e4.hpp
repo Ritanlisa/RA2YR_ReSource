@@ -27,6 +27,6 @@ struct Techno {
     unsigned int u32_500;
 // --- flat members (END) ---
     int GetOwnerHouse();  // 0x6F2070
-    BuildingTypeClass *  StartInvulnerability(void * aP1);  // 0x70E360
+    BuildingTypeClass * StartInvulnerability(BuildingTypeClass * aP1);  // 0x70E360
 };
 } // namespace gamemd

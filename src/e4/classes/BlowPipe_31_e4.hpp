@@ -20,7 +20,7 @@ struct BlowPipe_31 {
     unsigned int m_C;
     unsigned int __pad_0;
 // --- flat members (END) ---
-    void ddtor(void *a1 = 0);  // 0x63DC20
+    void ddtor();  // 0x63DC20
     int  Seek(int a2);  // 0x63DC70
     char  AddRef(int a2);  // 0x63E310
     char  Release(int a2, unsigned int * a3);  // 0x63E490

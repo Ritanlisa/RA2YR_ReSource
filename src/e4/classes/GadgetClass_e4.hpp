@@ -26,9 +26,9 @@ struct GadgetClass {
     AbstractClass * * FindByWindow(int hWnd, int a2);
     AbstractClass * * SetTooltip(void * String);
     GadgetClass * * Dtor();
-    int DrawBuildingPlacement(void * aP1);
+    ControlClass DrawBuildingPlacement(ControlClass * aP1);
     int Show();
-    void * Construct(void * aP1, void * aP2, void * aP3, void* aP4, void * aP5, void * aP6);
+    ControlClass Construct(int a2, int a3, int a4, int a5, int a6, char a7);
     static double Hide(...);  // C2597 interim stub
 };
 

@@ -39,16 +39,16 @@ struct String {
     void* ptr_4;
     void* ptr_8;
 // --- flat members (END) ---
-    void  AssignWideToChar(void * aP1, void * aP2);  // 0x49B760
+    void AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2);  // 0x49B760
     char *  AllocAndCopy(char * Destination, void * aP1, void * aP2);  // 0x4CB5E0
     int Release();  // 0x5BD5A0
-    int  SplitComma(void * aP1);  // 0x5D0380
+    ObjectClass * * SplitComma(ObjectClass * aP1);  // 0x5D0380
     int NormalizeNewlines();  // 0x5F3350
     int To_Waypoint();  // 0x763690
-    void  TrimLeft(void * aP1);  // 0x7B51D0
-    unsigned int Length(void *a1 = 0);  // 0x7B54B0
-    char  Replace(char * SubStr, void * a3);  // 0x7B57A0
-    int  Tokenize(int a2, void * aP2, void * aP3);  // 0x7B5F10
+    void TrimLeft(ObjectClass * aP1);  // 0x7B51D0
+    unsigned int Length();  // 0x7B54B0
+    AbstractClass * * Replace(char * SubStr, const char * a3);  // 0x7B57A0
+    AbstractClass * * Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3);  // 0x7B5F10
     int  Tokenize2(int a2, void * Str, void ** a4);  // 0x7B7A60
     ObjectClass *  FormatDword(char * Buffer);  // 0x777B30
     ObjectClass *  CopyConstant(char * Destination);  // 0x777B60
@@ -79,8 +79,8 @@ struct String {
     char  TruncateTo(int Count);  // 0x7B78D0
     int  Wrapper5to4(void * aP0, int a2, int a3, int a4);  // 0x7CCA19
     bool Equals(void * aP1);  // def-aligned
-    bool Equals(void * aP1);  // def-aligned
-    bool Equals(void * aP1);  // def-aligned
+    // dup-decl: bool Equals(void * aP1);  // def-aligned
+    // dup-decl: bool Equals(void * aP1);  // def-aligned
     bool NotEquals(const char * a2);  // def-aligned
 };
 } // namespace gamemd

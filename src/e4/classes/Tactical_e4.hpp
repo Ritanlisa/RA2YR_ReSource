@@ -605,8 +605,8 @@ struct Tactical {
     unsigned int field_24;
 // --- flat members (END) ---
     char * ConstructTacticalSurface();  // 0x42A6D0
-    int *  CreateTacticalLightSurface(int * a2, int * a1, void * aP2, int * a3, int * a4, void * aP5);  // 0x484050
-    ScenarioClass * *  CalculateTacticalLighting(int * a1, void * aP2, int * a3, int * a4, void * aP5, int * a6, int64_t a8);  // 0x484180
+    void * CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5);  // 0x484050
+    ScenarioClass * * CalculateTacticalLighting(int * a1, IUnknown * aP2, int * a3, int * a4, IUnknown * aP5, int * a6, long long a8);  // 0x484180
     unsigned int *  MouseMove(void * aP1, void * aP2);  // 0x4A91B0
     bool  IsCellVisible(void * aP1);  // 0x568350
     char * GetCellData(void *a1 = 0);  // 0x58C2A0

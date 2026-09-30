@@ -24,8 +24,8 @@ struct ThemeManager {
     unsigned int Audio;
     unsigned int Event;
 // --- flat members (END) ---
-    int ProcessCallback(void *a1 = 0);
-    void Cleanup(void *a1 = 0);
+    void ProcessCallback();
+    void Cleanup();
 };
 
 } // namespace gamemd

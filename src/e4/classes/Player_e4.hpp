@@ -10,7 +10,7 @@ struct Player {
     void* q004;  // 0x4
     unsigned int u32_54;  // 0x54
 // --- flat members (END) ---
-    BOOL IsObserver(void *a1 = 0);
+    void IsObserver();
     void BuildListString(void *a1 = 0);
     wchar_t * FindByName(void *a1 = 0);
 };

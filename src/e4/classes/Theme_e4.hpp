@@ -19,9 +19,9 @@ struct Theme {
     unsigned int Audio;
     unsigned int ThemeClass;
 // --- flat members (END) ---
-    int IsPlaying(void *a1 = 0);
-    int QueueSong(void * aP1);
-    int Stop(void * aP1);
+    void IsPlaying();
+    int QueueSong(IUnknown * aP1);
+    int Stop(ObjectClass * aP1);
 };
 
 } // namespace gamemd

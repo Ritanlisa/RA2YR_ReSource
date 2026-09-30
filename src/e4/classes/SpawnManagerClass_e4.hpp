@@ -72,7 +72,7 @@ struct SpawnManagerClass {
     int ddtor(int a1, unsigned int * a2);
     unsigned int * Constructor_6B83A0(void * aP1, void * aP2);
     void Constructor_SpawnManagerClass();
-    void* Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void* Constructor();
 };
 
 } // namespace gamemd

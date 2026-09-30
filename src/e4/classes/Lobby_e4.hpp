@@ -20,7 +20,7 @@ struct Lobby {
 // --- flat members (END) ---
     int BuildPlayerList();
     int InvalidatePlayerSlots(void *a1 = 0);
-    void SetupPlayerWidgets();
+    void SetupPlayerWidgets(HWND hDlg);
     void UpdatePlayerLabels();
     static double InvalidateFactionCombos(...);  // C2597 interim stub
 };

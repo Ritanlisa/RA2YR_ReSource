@@ -63,7 +63,7 @@ struct GameSettings {
     void* ptr_8;
     void* ptr_10;
 // --- flat members (END) ---
-    AbstractClass * * Read(void *a1 = 0, void *a2 = 0);
+    void Read();
     char * FindFlagged();
     void * ParseNetworkAddress();
     void SetScoreVolume(int volume, void *a2 = 0);

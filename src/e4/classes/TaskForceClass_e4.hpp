@@ -76,7 +76,7 @@ struct TaskForceClass {
     unsigned int __pad_A0;
 // --- flat members (END) ---
     unsigned int *  ParseUnitCountAndType(char * Buffer);  // 0x4C4EF0
-    unsigned int *  Construct(void * aP1);  // 0x6E7E80
+    int Construct(ObjectClass * aP1);  // 0x6E7E80
     CCINIClass *  LoadFromINI(char * a1, int a2);  // 0x6E8220
     TaskForceClass *  ExecuteAction(void ** Block, char a2);  // 0x6E87F0
     int  LoadTaskForce(void * aP0, int aP1);  // 0x6E86A0

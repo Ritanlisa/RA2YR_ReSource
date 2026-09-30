@@ -166,7 +166,7 @@ struct HouseTypeClass {
     unsigned int q1AC;  // 0x1AC
     unsigned int __pad_16D;
 // --- flat members (END) ---
-    AbstractClass * * Dtor(void *a1 = 0);
+    AbstractClass * Dtor();
     AbstractClass * * ProcessPower(int * a2, void *a1 = 0);
     HouseTypeClass * Destructor(char a2);
     char readPowerPlants(void * aP1);
@@ -184,7 +184,7 @@ struct HouseTypeClass {
     int readAiBuildLists(int a1);
     int readBaseDefenses(int a1, const void * a2, unsigned int * a3);
     int readLoadoutData(int a1);
-    unsigned int * loadVeteranWeapons(void * aP1);
+    unsigned int * loadVeteranWeapons(HouseTypeClass * aP1);
     unsigned int * readAllowedUnits(void * aP1);
     unsigned int * readBaseDefense(void * aP1);
     unsigned int * readDefaultAlly(int a2, int a3);

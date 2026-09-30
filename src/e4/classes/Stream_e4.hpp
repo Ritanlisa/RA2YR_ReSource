@@ -53,8 +53,8 @@ struct Stream {
     int FlushAndReset();
     int GetChecked();
     int ReadIntArray(int a2);
-    int WriteIntArray(void * aP1);
-    void * InitializeBinkAudio(void * a1, void * aP2, int a4, int a5, void * aP5, int a7, int a8);
+    int WriteIntArray(TechnoTypeClass * aP1);
+    void * InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8);
     static double CopyFromTemplate(...);  // C2597 interim stub
 };
 

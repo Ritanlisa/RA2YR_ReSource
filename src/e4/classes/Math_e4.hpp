@@ -79,13 +79,13 @@ struct Math {
     void Hypotenuse2D();  // 0x41C350
     double  Sin(double a1);  // 0x4CAD50
     float *  BuildRotationMatrix(float * a2, float a3);  // 0x5AE750
-    int  DistSq2D(void * aP1);  // 0x5F6560
+    int DistSq2D(TechnoClass * aP1);  // 0x5F6560
     unsigned int *  QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4);  // 0x646590
     double  ArcTan(double a1);  // 0x4CADE0
     void InitArcTan();  // 0x473650
     double  ArcTan2_Table(double a1);  // 0x4CADB0
-    void*  Sub16(void * aP1, void * aP2);  // 0x5B2950
-    bool  Abs16Cmp(void * aP1, void * aP2);  // 0x5B2990
+    IUnknown * Sub16(BuildingTypeClass * aP1, IUnknown * aP2);  // 0x5B2950
+    bool Abs16Cmp(IUnknown * aP1, IUnknown * aP2);  // 0x5B2990
     static double ArcTan2(...);  // C2597 interim stub
     static double CalcAngle(...);  // C2597 interim stub
     static double InitDegToRad(...);  // C2597 interim stub
@@ -95,7 +95,7 @@ struct Math {
     static double Cos(...);  // C2597/C2039 interim stub
     static double ArcTan(...);  // interim stub
     static double Dist2D(...);  // interim stub
-     double DistSq2D(...);  // interim stub
+     // dup: double DistSq2D(...);  // interim stub
     static double Hypotenuse2D(...);  // interim stub
     static double Sin(...);  // interim stub
 };

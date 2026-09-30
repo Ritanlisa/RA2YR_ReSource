@@ -239,7 +239,7 @@ struct WarheadTypeClass {
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);
     char AddRef(int a2);
-    void Construct(void * aP1);
+    void Construct(ObjectClass * aP1);
     int FindOrCreate(void *a1 = 0);
     int GetDamage(int a2, int a3);
     int GetObjectSize();
@@ -250,7 +250,7 @@ struct WarheadTypeClass {
     int SaveToINI(int a2);
     unsigned int LoadTypeData(int a2);
     void * ReadParticleSystems(char a2);
-    void * loadWarheadINI(void * aP1, unsigned char * a2, void * aP3);
+    void * loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4);
     void * parseModifiers(char a2);
     void GetClassIdentifier();
     void* ProcessPower(int * a2, void *a1 = 0);

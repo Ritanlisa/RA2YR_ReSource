@@ -42,7 +42,7 @@ struct GameOption {
     char CheckDuplicate();
     int GetField();
     void * SetDescriptionWStr(void * Destination, void * aP1);
-    void * SetDigest(void * aP1);
+    void * SetDigest(CCINIClass * aP1);
 };
 
 } // namespace gamemd

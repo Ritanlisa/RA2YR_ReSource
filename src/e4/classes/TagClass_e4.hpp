@@ -39,11 +39,11 @@ struct TagClass {
     unsigned int q011;
     unsigned int uniqueId;
 // --- flat members (END) ---
-    Coord * * Unlink(void *a1 = 0);
+    void Unlink();
     TagClass * ProcessTrigger(char a2);
     TriggerClass * * Destructor(void ** a1, void * a2);
-    int CheckEvent(int a2, void * aP2);
-    int HasValidHouse(void *a1 = 0);
+    int CheckEvent(int a2, TagTypeClass * aP2);
+    void HasValidHouse();
     int LoadTag(void * aP0, int aP1);
     int ProcessTag(int * a2);
     int SaveTag(void * aP0, int * a1, int aP2);

@@ -273,7 +273,7 @@ struct VoxelAnimTypeClass {
     int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
     int StubReturnFalse(int a1);
     long long GetData(void * aP1, int a3);
-    unsigned int * Constructor(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    VoxelAnimTypeClass * Constructor(char * Source);
 };
 
 } // namespace gamemd

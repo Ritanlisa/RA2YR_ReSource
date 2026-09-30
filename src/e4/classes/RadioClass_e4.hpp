@@ -125,14 +125,14 @@ struct RadioClass {
     unsigned int Undeploy;
     unsigned int __pad_0;
 // --- flat members (END) ---
-    int ExecuteAction(void* aP1, void* aP2);
+    int ExecuteAction(TimerStruct * aP1, IUnknown * aP2);
     int FindLinkIndex(int a2);
     int HasFreeLink();
-    int LoadState(void * aP1, void * aP2);
-    int PowerDrainUpdate(void * aP1);
+    int LoadState(ObjectClass * aP1, ObjectClass * aP2);
+    int PowerDrainUpdate(AbstractClass * aP1);
     int ProcessCmd();
     int SaveState(int * a0, void * aP1, int aP2);
-    unsigned int * Release(void *a1 = 0);
+    void Release();
     void SetLinkCount(int a2);
      double Constructor(...);  // C2597 interim stub
 };

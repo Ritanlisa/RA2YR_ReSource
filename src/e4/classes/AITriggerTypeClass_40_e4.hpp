@@ -20,7 +20,7 @@ struct AITriggerTypeClass_40 {
     int  Seek(int a2);  // 0x4203C0
     char  AddRef(int a2);  // 0x4203D0
     char  Release(int a2, unsigned int * a3);  // 0x420410
-    void ddtor(unsigned int * Block, char a2);  // 0x4204C0
+    void ddtor();  // 0x4204C0
     int  Read(unsigned int * a2);  // 0x4204F0
     char  SetCapacity(int a2, unsigned int * a3);  // 0x420550
     int  FindItem(unsigned int * a2);  // 0x420600

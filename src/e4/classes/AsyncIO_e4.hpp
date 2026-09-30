@@ -29,7 +29,7 @@ struct AsyncIO {
     unsigned int Timer;
 // --- flat members (END) ---
     AbstractClass * * Shutdown(void *a1 = 0);
-    int Read(void *a1 = 0, void *a2 = 0);
+    void Read();
     int WaitCompletion();
 };
 

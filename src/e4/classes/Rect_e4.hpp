@@ -17,9 +17,9 @@ struct Rect {
     unsigned int u32_1C;
     unsigned int SetRedraw;
 // --- flat members (END) ---
-    AbstractClass * Construct(void* aP1, void * aP2, void * aP3, void *a4 = 0, void *a5 = 0);
+    void Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3);
     BOOLInflate(LPRECT lprc, int dx, int dy);
-    void* Set(void * aP1, void * aP2, void * aP3, void * aP4);
+    void Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4);
     int Union(void * aP0, void * lprcSrc1, void * lprcSrc2);
 };
 

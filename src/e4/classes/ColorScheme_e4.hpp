@@ -16,7 +16,7 @@ struct ColorScheme {
     unsigned int q308;  // 0x308
     unsigned int u32_30C;  // 0x30C
 // --- flat members (END) ---
-    int Destructor(void *a1 = 0);
+    int Destructor();
 };
 
 } // namespace gamemd

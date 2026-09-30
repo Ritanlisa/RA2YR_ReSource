@@ -35,8 +35,8 @@ struct CChatEventSink {
 // --- flat members (END) ---
     Coord * * HandleChatChannelList(int a1, int a2, const char * a3);
     ObjectClass * DeleteAndZero(char a2);
-    char EncodeString(char a2, void *a1 = 0);
-    char EnsureCapacity(int a2, void *a1 = 0);
+    char EncodeString(char a2);
+    void EnsureCapacity(int a2);
     void Check(unsigned int * a2, int a3);
     int ComputeBucketMask(int a2);
     int GrowBuffer();

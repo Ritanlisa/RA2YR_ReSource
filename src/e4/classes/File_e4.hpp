@@ -37,11 +37,11 @@ struct File {
     short Dispatch();  // 0x4CB920
     unsigned int *  LoadFileHVA(int a2);  // 0x5BD570
     AbstractClass * *  ParseFileHVA(int a2);  // 0x5BD5C0
-    u_short *  LoadPaletteData(void * aP1);  // 0x625AF0
+    File * * LoadPaletteData(ObjectClass * aP1);  // 0x625AF0
     bool  FindByPrefix(char * Str1, unsigned char * a3);  // 0x625DB0
     int  ParseCSFString(char * Source);  // 0x734990
     unsigned int *  LoadFileVXL(int a2, int a3);  // 0x755CD0
-    WDTState *  LoadWDT(void * aP1);  // 0x76AC90
+    AbstractClass * * LoadWDT(ObjectClass * aP1);  // 0x76AC90
     char  LoadWDTDecompress(void * aP1, int a3);  // 0x76B0A0
     int ParseAudioFileRIFF();  // 0x7C12B0
 };

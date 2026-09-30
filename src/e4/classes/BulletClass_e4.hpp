@@ -395,7 +395,7 @@ struct BulletClass {
     unsigned int __pad_C;
 // --- flat members (END) ---
     BulletClass();
-    BulletClass * * Dtor(void *a1 = 0);
+    BulletClass * * Dtor();
     LONG CheckTargetValidity(int a1);
     LONG ValidateTarget(volatile void * a1);
     int * CalculateSpreadAngle(int a1);

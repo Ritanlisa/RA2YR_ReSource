@@ -623,7 +623,7 @@ struct RadarClass {
     unsigned int field_0;
     unsigned int field_4;
 // --- flat members (END) ---
-    CampaignClass * * Destruct(void *a1 = 0);
+    CampaignClass * Destruct();
     int GetBlip(int a1, int a2, int a3, void * aP3);
     unsigned int * initRadarSurface();
     void Destru_vt50();

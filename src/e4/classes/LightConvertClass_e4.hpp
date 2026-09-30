@@ -704,7 +704,7 @@ struct LightConvertClass {
     unsigned char q6474;  // 0x6474
     unsigned int q0908;
 // --- flat members (END) ---
-    int SelectRLEBlitter(void * aP1);
+    int SelectRLEBlitter(IUnknown * aP1);
      double Constructor(...);  // C2597 interim stub
 };
 

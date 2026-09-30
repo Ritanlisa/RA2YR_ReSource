@@ -14,7 +14,7 @@ struct AddTeamCommand {
     unsigned int m_1;
     unsigned int AddTeamCommand_field_00;
 // --- flat members (END) ---
-    unsigned int * Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void Construct(int a2);
     void * AddRef();
     void * Release();
     wchar_t * ddtor();

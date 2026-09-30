@@ -138,7 +138,7 @@ struct Cell {
     char  CanPlaceBuilding(unsigned int * a2);  // 0x43B4C0
     int ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4);  // 0x481670
     void *  GetNeighbourContent(unsigned int a2);  // 0x481810
-    bool  IsBuildable(int a2, char a3, char a4, void * aP4, void * aP5, void * aP6, void * aP7);  // 0x4834A0
+    int IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7);  // 0x4834A0
     BOOL IsValidHeight();  // 0x485060
     bool IsEmpty();  // 0x486380
     bool IsGroundTypeRange();  // 0x4865D0
@@ -146,8 +146,8 @@ struct Cell {
     bool IsInRange2();  // 0x486770
     bool IsShore();  // 0x4867B0
     char IsBuildableAdvanced();  // 0x486FF0
-    BOOL  HasOccupierBit(void * aP1);  // 0x4870B0
-    int  SearchEnemies(void * aP1);  // 0x487A10
+    int HasOccupierBit(IUnknown * aP1);  // 0x4870B0
+    int SearchEnemies(IUnknown * aP1);  // 0x487A10
     long long GetTraversability();  // 0x487CB0
     int GetSlopeIndex();  // 0x487D50
     bool IsBridge2();  // 0x487DF0

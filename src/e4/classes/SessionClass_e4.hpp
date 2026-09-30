@@ -668,7 +668,7 @@ struct SessionClass {
     int GetPlayerColor();
     int GetPlayerSide();
     int IsValidHouse(void * a2);
-    int LoadGameSession(void * aP1, void* aP2);
+    MixFileClass * LoadGameSession(ObjectClass * aP1, CellStruct * aP2);
     int Read(unsigned int * a2, void *a1 = 0);
     int Seek(int a2, void *a1 = 0);
     int SetField();
@@ -680,7 +680,7 @@ struct SessionClass {
     int initInternet();
     int initLAN(int a2, wchar_t * Source, unsigned int * a4);
     unsigned int * GetEntry(void * aP1);
-    unsigned int * Load(void *a1 = 0);
+    MixFileClass * Load();
     unsigned int * saveSettings();
     unsigned int GetPlayerColorScheme(void * aP0);
     unsigned int Write(int a2);

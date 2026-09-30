@@ -52,13 +52,13 @@ struct FoggedObjectClass {
     unsigned int u32_69;
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
-    AbstractClass * * InitTerrainFog(void* aP1, int a3, int a4);
+    AbstractClass * InitTerrainFog(IUnknown * aP1, int a3, int a4);
     AbstractClass * * ResizeArray(int v3, char * a3);
     DynamicVector * QueryInterface(char a2);
     FoggedObjectClass * ddtor(char a2);
     HouseClass * * PowerDrainUpdate(int a2);
     char AddRef(int a2);
-    int Constructor(void * aP1, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    AbstractClass * Constructor(BuildingClass * aP1, FoggedObjectClass * aP2);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();

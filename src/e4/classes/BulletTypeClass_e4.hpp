@@ -293,7 +293,7 @@ struct BulletTypeClass {
     int SaveLoad_Prefix(void * aP0, int aP1);
     int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
     int StubReturnFalse(int a1);
-    unsigned char * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    unsigned char * Construct(ObjectClass * aP1);
     unsigned int * GetROF(unsigned int * a1, int * a2);
 };
 

@@ -24,7 +24,7 @@ struct DialogControl {
     int Hide();
     int IsHidden();
     int Show();
-    unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void Constructor();
 };
 
 } // namespace gamemd

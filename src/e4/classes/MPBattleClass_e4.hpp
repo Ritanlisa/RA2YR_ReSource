@@ -42,12 +42,12 @@ struct MPBattleClass {
     long long isValidMap();
     long long startGame();
     MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6);
-    unsigned int * MPFreeForAllClass(const wchar_t ** a1, void * aP2, const char ** a3, void * aP4, char aP5, void * aP6);
-    unsigned int * MPManBattleClass(const wchar_t ** a1, void * aP2, const char ** a3, void * aP4, char aP5, void * aP6);
-    unsigned int * MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, void * aP4, char aP5, int aP6);
-    unsigned int * MPSiegeClass(const wchar_t ** a1, void * aP2, const char ** a3, void * aP4, char aP5, void * aP6);
+    unsigned int * MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6);
+    unsigned int * MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6);
+    unsigned int * MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6);
+    unsigned int * MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6);
     unsigned int * MPUnholyAllianceClass(const wchar_t ** a1, void * aP2, const char ** a3, void * aP4, char aP5, void * aP6);
-    unsigned int * initGame(const wchar_t ** a1, void * aP2, const char ** a3, void * aP4, char aP5, void * aP6);
+    unsigned int * initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6);
     void allyTeams();
     void getAlliesLimit();
     void getMaximumPlayers();

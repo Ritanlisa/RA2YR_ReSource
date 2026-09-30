@@ -24,6 +24,6 @@ struct WDTState_4 {
     int  Read(int a2);  // 0x76BB90
     DynamicVector *  QueryInterface(unsigned int * Block, char a2);  // 0x76BC10
     unsigned int  Write(int a2);  // 0x76B740
-    unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x76BC60
+    int Constructor();  // 0x76BC60
 };
 } // namespace gamemd

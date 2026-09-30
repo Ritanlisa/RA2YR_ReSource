@@ -141,8 +141,8 @@ struct AudioStream {
     void InitNodeFields();  // 0x4084E0
     int GetChannel();  // 0x408D50
     int ReadStreamAndReturn();  // 0x409310
-    int  ReadSamples(void * a2);  // 0x4A33A0
-    char  DrawWaveform(void * aP1, void * aP2, void * aP3, void * aP4, int a6, int a7, int a8);  // 0x4BEAC0
+    int ReadSamples(const void * a2);  // 0x4A33A0
+    MouseClass * * DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8);  // 0x4BEAC0
     int SetFlag4C();  // 0x7BD270
     int CalcReadPos();  // 0x7BD2D0
     int ProcessStream();  // 0x7BEA80

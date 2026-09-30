@@ -23,18 +23,18 @@ struct WideString {
     unsigned int GetChar;
 // --- flat members (END) ---
     int  WordWrap(void * a0, void * aP1, int a3, void * aP3, int a5);  // 0x5D4B20
-    char  Replace(void * aP1, void * String);  // 0x7B73F0
+    AbstractClass * * Replace(CampaignScore * aP1, wchar_t * String);  // 0x7B73F0
     wchar_t *  Trim(void * Source);  // 0x727D60
-    wchar_t **  Assign(void * aP1);  // 0x7B66D0
-    wchar_t **  AssignFromPtr(void * a2);  // 0x7B6720
-    void **  Assign_Alt(void * String);  // 0x7B6880
-    void **  Reassign_Alt(void * a2);  // 0x7B68E0
-    wchar_t **  Append2(void * aP1);  // 0x7B6AE0
-    wchar_t **  Append(void * aP1);  // 0x7B6B60
-    wchar_t **  AssignConcat(void * a2, void * String);  // 0x7B6BE0
-    wchar_t **  ConcatAlloc(void * a1, void * aP2);  // 0x7B6CB0
+    int Assign(CampaignScore * aP1);  // 0x7B66D0
+    int AssignFromPtr(const wchar_t ** a2);  // 0x7B6720
+    void ** Assign_Alt(wchar_t * String);  // 0x7B6880
+    int Reassign_Alt(const wchar_t ** a2);  // 0x7B68E0
+    wchar_t ** Append2(CampaignScore * aP1);  // 0x7B6AE0
+    wchar_t ** Append(CampaignScore * aP1);  // 0x7B6B60
+    wchar_t ** AssignConcat(wchar_t ** a2, wchar_t * String);  // 0x7B6BE0
+    wchar_t ** ConcatAlloc(wchar_t ** a1, ObjectClass * aP2);  // 0x7B6CB0
     short  Erase(int a2, int a3);  // 0x7B6D90
-    char  RemoveChar(int a2);  // 0x7B6E20
+    char RemoveChar(wchar_t a2);  // 0x7B6E20
     CampaignScore * GetOrEmpty();  // 0x7B7100
     CampaignScore * GetOrEmpty_Alt();  // 0x7B7140
          wchar_tGetChar(void * aP1);  // 0x7B7180

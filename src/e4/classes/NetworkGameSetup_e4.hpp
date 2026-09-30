@@ -23,7 +23,7 @@ struct NetworkGameSetup {
 // --- flat members (END) ---
     int ReadRulesUnknown();
     unsigned int * DeleteComPtr(unsigned int * Block, char a2);
-    void SendGameSetupPacket(void * Source);
+    void SendGameSetupPacket(wchar_t * Source);
 };
 
 } // namespace gamemd

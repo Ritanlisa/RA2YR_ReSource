@@ -16,6 +16,6 @@ struct GameMode {
     unsigned int q5160;  // 0x5160
 // --- flat members (END) ---
     int  IsValid(unsigned int a2);  // 0x5D5DE0
-    unsigned int  ReadFlagsFromINI(void * aP1);  // 0x6B8CA0
+    unsigned int ReadFlagsFromINI(CCINIClass * aP1);  // 0x6B8CA0
 };
 } // namespace gamemd

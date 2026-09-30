@@ -172,7 +172,7 @@ struct House {
     void* q520;  // 0x520
     unsigned int __pad_3D7;
 // --- flat members (END) ---
-    void  AnnounceUpgrade(void * aP1);  // 0x47D2B0
+    int AnnounceUpgrade(IUnknown * aP1);  // 0x47D2B0
     unsigned int *  GetStartCoords(void * aP1);  // 0x47FB90
     int UpdateHouseAI();  // 0x4FD500
     int IsHumanPlayer();  // 0x50B6F0

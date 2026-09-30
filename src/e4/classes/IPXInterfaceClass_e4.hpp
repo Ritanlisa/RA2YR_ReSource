@@ -76,9 +76,9 @@ struct IPXInterfaceClass {
     unsigned int u32_204;
 // --- flat members (END) ---
     AbstractClass * * Receive();
-    AbstractClass * * SendPacket(void * aP1, int a3, int a4, unsigned int fromlen);
+    AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);
     AbstractClass * * getSocketState(int a2, unsigned int * a3);
-    AbstractClass * * initSocket(void* aP1, void * aP2, void *a1 = 0);
+    int initSocket(IUnknown * aP1, Color * aP2);
     AnimClass * * AddRef(void *a1 = 0);
     AnimClass * * Connect(const void * a1, unsigned int a3, void * aP3);
     DynamicVector * closeSession(char a2);
@@ -93,7 +93,7 @@ struct IPXInterfaceClass {
     int SetAddress(unsigned int * a1);
     int initSession(unsigned int * a2);
     unsigned char * processPacket(void *a1 = 0);
-    unsigned int * Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Construct();
     unsigned int resetSocket(int a2);
     void * bindSocket();
     void Disconnect();

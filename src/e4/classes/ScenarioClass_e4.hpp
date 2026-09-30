@@ -499,7 +499,7 @@ struct ScenarioClass {
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     ScenarioClass * * CopyStartPositions();
-    void* * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    TimerStruct * * Constructor();
     char ClearFlag();
     char MissionStubReturnZero2(MPCooperative * aP0);
     char MissionStubReturnZero4(int a1);

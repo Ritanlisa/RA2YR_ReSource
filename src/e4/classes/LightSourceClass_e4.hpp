@@ -42,14 +42,14 @@ struct LightSourceClass {
     bool q04A;  // 0x4A
 // --- flat members (END) ---
     LightSourceClass * CopyTo(char a2);
-    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void Constructor();
     int Seek(void * aP0, int * a1, int aP2);
-    int Stat(void * aP1);
+    int Stat(AbstractClass * aP1);
     int StubReturn54();
     int StubReturn76();
     int Write(void * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
-    unsigned int * Construct(int a2, int a3, void * aP3, int a5, int a6, int a7, void* aP7, int a9);
+    void Construct(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
 };
 
 } // namespace gamemd

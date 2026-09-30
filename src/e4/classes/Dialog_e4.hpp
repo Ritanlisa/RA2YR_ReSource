@@ -79,7 +79,7 @@ struct Dialog {
 // --- flat members (END) ---
     void MapDialogResource();  // 0x49F740
     int InitializeGameSettings();  // 0x5B5BC0
-    int ShowMessageBox(int lParam, unsigned short * a2, void * aP2, void * aP3, void * aP4, int a6, void * a1, void * a3, void * a4, void * a5);    // 0x5D3490
+    int ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknown * aP3, IUnknown * aP4, int a6, void * a1, void * a3, void * a4, void * a5);  // 0x5D3490
     int GetModeNeg2();  // 0x5D5DC0
     int GetMode3();  // 0x5D5DD0
     HWND RefreshDialogsGame();  // 0x5EE350

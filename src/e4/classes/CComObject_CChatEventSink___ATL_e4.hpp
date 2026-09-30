@@ -17,7 +17,7 @@ struct CComObject_CChatEventSink___ATL {
     int  DispatchStub_32(int a1, int a2, int a3, int a4);  // 0x7A4EC0
     int  GetTypeInfo(int a1, int a2, void * a3);  // 0x7A5290
     int  FireEvent(int a1, int a2, unsigned char * a3);  // 0x7A5690
-    int  DispatchStub_23(int a1, int a2, int a3, int a4, void * a5);  // 0x7A7B60
+    Coord * * DispatchStub_23(int a1, int a2, int a3, int a4, wchar_t * a5);  // 0x7A7B60
     int  DispatchStub_22(int a1, int a2, int a3, int a4, char * Source);  // 0x7A7EA0
     int  DispatchStub_16(int a1, int a2, int a3, void * a4, char * String1);  // 0x7A8DA0
     int  DispatchStub_40(int a1, int a2, int a3, void * a4, void * String);  // 0x7A8ED0

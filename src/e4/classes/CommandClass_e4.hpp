@@ -22,7 +22,7 @@ struct CommandClass {
     unsigned char u8_241;
     unsigned int __tail_0;
 // --- flat members (END) ---
-    int AddAction(void * aP1);
+    int AddAction(ToolTipManager * aP1);
     int BuildBar();
     static double BinarySearchAction(...);  // C2597 interim stub
     static double executeAction(...);  // C2597 interim stub

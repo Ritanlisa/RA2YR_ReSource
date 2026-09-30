@@ -21,13 +21,13 @@ struct AudioMixer {
     unsigned int Audio;
     unsigned int AudioStream;
 // --- flat members (END) ---
-    int Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
+    int Init();
     int PlayBuffer(unsigned int * a1, unsigned int a2);
-    int PlaySample(void *a1 = 0);
+    int PlaySample();
     int Pump();
     int RequestOrEndBuffer(int a1, unsigned int a2);
-    int SetVolume(void *a1 = 0);
-    int Shutdown(void *a1 = 0);
+    int SetVolume();
+    int Shutdown();
 };
 
 } // namespace gamemd

@@ -90,6 +90,6 @@ struct E4Recv_431BC0 {
     int Vf44(int,  ...);    // G6 vtable slot dispatch
     int Vf52(int,  ...);    // G6 vtable slot dispatch
     int Vf64(int,  ...);    // G6 vtable slot dispatch
-    bool  sub_431BC0(int a2, int a3);  // 0x431BC0
+    int sub_431BC0(int a2, size_t a3);  // 0x431BC0
 };
 } // namespace gamemd

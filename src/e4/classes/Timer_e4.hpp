@@ -82,7 +82,7 @@ struct Timer {
     // dup-member: unsigned int DisableHighPrecision;
     unsigned int ReadTSC;
 // --- flat members (END) ---
-    DynamicVector *  Start(void * aP1);  // 0x46B640
+    void * Start(DynamicVector * aP1);  // 0x46B640
     char  StartDouble(double a2);  // 0x4A5240
     DWORD *  Init(DWORD a2);  // 0x4F1B00
     int GetRemainingMs();  // 0x4F1B20

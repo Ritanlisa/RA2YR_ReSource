@@ -47,8 +47,8 @@ struct Team {
     unsigned int field_E4;
     unsigned int field_E8;
 // --- flat members (END) ---
-    int  ReleaseAll(void * aP1);  // 0x5D26C0
-    int  GetMember(void * aP1);  // 0x65AD30
+    int ReleaseAll(ObjectClass * aP1);  // 0x5D26C0
+    int GetMember(AbstractClass * aP1);  // 0x65AD30
     int AllMembersValid();  // 0x65AE30
 };
 } // namespace gamemd

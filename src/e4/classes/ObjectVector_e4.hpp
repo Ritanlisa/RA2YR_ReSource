@@ -21,7 +21,7 @@ struct ObjectVector {
     unsigned int ObjectVector_field_0x14;
     unsigned int __pad_0;
 // --- flat members (END) ---
-    unsigned int * Construct(void* aP1, void* aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Construct(IUnknown * aP1, IUnknown * aP2);
      double ddtor(...);  // C2597 interim stub
 };
 

@@ -667,7 +667,7 @@ struct FootClass {
     unsigned int __pad_0;
     unsigned int MissionMoveCarryallLand;
 // --- flat members (END) ---
-    AbstractClass * * Destruct(void *a1 = 0);
+    AbstractClass * Destruct();
     int updateThreat();
     unsigned int checkTurning();
     void Destroyed(int a2);

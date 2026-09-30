@@ -31,7 +31,7 @@ struct DamageArea {
     unsigned int u32_5C;
 // --- flat members (END) ---
     int ApplyScatter();
-    int CheckOccupancyEligibility(void *a1 = 0);
+    int CheckOccupancyEligibility();
     unsigned int * CalcScatterOffset(unsigned int * v11, short * a3);
 };
 

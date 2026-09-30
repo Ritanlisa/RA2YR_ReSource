@@ -88,9 +88,9 @@ struct TeamTypeClass {
     AbstractClass * * LoadFromINI(unsigned char *** aP1);
     TeamTypeClass * ReadScriptData(char * a1, int a2);
     TeamTypeClass * ddtor(char a2);
-    int Check(int a2, void *a3 = 0, void *a1 = 0);
+    int Check(int a2);
     int Construct();
-    int DestroyAllInstances(void *a1 = 0);
+    int DestroyAllInstances();
     int FindByName(void *a1 = 0);
     int FindFirstInstance();
     int FlashAllInstances(void * aP1);

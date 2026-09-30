@@ -9,7 +9,7 @@ struct Process {
 // --- flat members (BEGIN) ---
     char Process_field_00[4];  // 0x0
 // --- flat members (END) ---
-    bool WaitForExit(DWORD dwMilliseconds, void* aP2);
+    void WaitForExit(DWORD dwMilliseconds, CellStruct * aP2);
 };
 
 } // namespace gamemd

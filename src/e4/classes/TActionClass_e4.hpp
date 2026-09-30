@@ -91,11 +91,11 @@ struct TActionClass {
     unsigned int TActionClass_field_44;
     unsigned int Debug;
 // --- flat members (END) ---
-    AbstractClass * * ConvertHouseUnits(int a2, int _14, unsigned int * a3, void * aP4);
-    AbstractClass * * CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, void * aP4);
+    AbstractClass * * ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4);
+    AbstractClass * * CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4);
     AbstractClass * * executeGeneticMutatorAction(int a2, int a3, int a4, void * aP4);
-    AnimClass * * executeEscortAction(int a2, int a3, int a4, void * aP4);
-    AnimClass * * executeRetreatAction(void * aP1, int a3, int a4, void * aP4);
+    AnimClass * * executeEscortAction(int a2, int a3, int a4, IUnknown * aP4);
+    AnimClass * * executeRetreatAction(AbstractClass * aP1, int a3, int a4, AbstractClass * aP4);
     ScenarioClass * * SpawnMeteorShower(void * aP1, int a3, int a4, void * aP4);
     TActionClass();
     char CreateNukeEffect(void * aP1, int a3, int a4, void * aP4);
@@ -147,7 +147,7 @@ struct TActionClass {
     int executeParadropAction(int a2, int a3, int a4, void * aP4);
     int executeRepairAction(int a2);
     int executeSellAction();
-    unsigned int * executeHarvestAction(int a2, void * aP2);
+    unsigned int * executeHarvestAction(int a2, MouseClass * aP2);
     void executeDetonateAction();
 };
 

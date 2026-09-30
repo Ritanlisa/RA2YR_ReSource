@@ -33,8 +33,8 @@ struct ThemeClass {
 // --- flat members (END) ---
     int ClearQueues();
     int ReadThemeEntry(uint8_t *** a2);
-    int RequestBuffer(void *a1 = 0);
-    long long GetValue(void *a1 = 0);
+    int RequestBuffer();
+    int GetValue();
     void * InitializeThemes(char * a2);
     void GetField(int a1);
 };

@@ -7,7 +7,7 @@ namespace gamemd {
 struct KeyboardConfig {
     unsigned int Debug;
     void* vfptr;
-    AbstractClass * * ReleaseBuffer(int a2, void *a1 = 0);
+    AbstractClass * ReleaseBuffer(int a2);
     int LoadINI();
 };
 

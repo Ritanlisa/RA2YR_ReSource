@@ -164,7 +164,7 @@ struct SuperWeaponTypeClass {
     int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
     SuperWeaponTypeClass(void * aP1);
     int loadSWProperties(void * aP1, unsigned char * a2, int a4);
-    unsigned char * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Construct(AbstractClass * aP1);
     void* SD_vt25(unsigned char *** aP1);
 };
 

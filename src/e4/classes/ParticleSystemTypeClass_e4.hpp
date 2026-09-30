@@ -293,7 +293,7 @@ struct ParticleSystemTypeClass {
 // --- flat members (END) ---
     ParticleSystemTypeClass * ddtor(char a2);
     char Stub(int a1, int a2);
-    float * ReadXYZFromINI(float * a1, void * aP2, unsigned char * a3, float * a4);
+    float * ReadXYZFromINI(float * a2, uint8_t * a3, uint8_t * a4, float * a5);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();

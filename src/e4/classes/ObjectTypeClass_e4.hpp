@@ -297,7 +297,7 @@ struct ObjectTypeClass {
     char ReadBool2(void * Block, void * aP2, short * a4);
     char ReadString(void * Block, void * aP2, unsigned char * a4);
     char ReadTypeListINI(unsigned char * Block, char * a2, void * aP3);
-    int ConstructFull(void * aP1);
+    int ConstructFull(AbstractClass * aP1);
     int CreateInstance(void * aP1, void * aP2);
     int DeserializeArrays();
     int FindByName(void *a1 = 0);
@@ -313,7 +313,7 @@ struct ObjectTypeClass {
     int loadTypeMember_473980();
     int loadTypeMember_476FC0(void * aP1, unsigned char * a2, void * aP3);
     int loadTypeMember_48DFF0();
-    int loadTypeMember_5474940(void * aP1, unsigned char * a2, int a4);
+    int loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4);
     int loadTypeMember_54749E0(void * aP1, unsigned char * a2, unsigned int a4);
     int loadTypeMember_5474E40(void * aP1, unsigned char * a2, int a4);
     int loadTypeMember_5477590(void * aP1, unsigned char * a2, void * aP3);

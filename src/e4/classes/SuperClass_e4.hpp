@@ -681,7 +681,7 @@ struct SuperClass {
     unsigned int ChronoMapCoords;
 // --- flat members (END) ---
     AbstractClass * * Reset();
-    AbstractClass * * StartTimer(void * aP1, void * aP2, void * aP3);
+    AbstractClass * * StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);
     AbstractClass * * StopPreclickAnim(void * aP1);
     SuperClass * * CleanupMembers();
     bool ShouldDrawProgress();
@@ -691,8 +691,8 @@ struct SuperClass {
     char SetReadiness(char a2);
     int AnnounceReady(void * aP1);
     int ClickFire(int a2, short * a3);
-    int Construct(int a2, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void Construct(int a2, CCINIClass * aP2);
+    void Constructor();
     int LoadFromStream(void * aP0, int aP1);
     int Lose();
     int PowerDrainUpdate(int * a2);
