@@ -423,11 +423,11 @@ AbstractClass * * File::ParseCSFString(char * Source)
   int v5; // eax
   int v6; // ebp
   size_t v7; // eax
-  int v8; // eax
+  wchar_t * v8;
   unsigned int v9;
-  int16_t v10; // dx
-  int v11; // esi
-  unsigned int v12;
+  wchar_t * v10;
+  unsigned int v11;
+  unsigned short * v12;
   unsigned short *v13; // edi
   size_t v14; // eax
   size_t v15; // eax
@@ -493,58 +493,58 @@ LABEL_42:
             ((CCFileClass *)(v23))->Read(g_abs_B17F24, 2 * Size); /*0x734b15*/
             v7 = Size; /*0x734b1a*/
           }
-          g_abs_B17F24[v7] = (wchar_t *)(0);
-          v8 = (wchar_t *)(*(unsigned int *)g_abs_B17F24);
-          v9 = (wchar_t *)(g_abs_B17F24);
+          g_abs_B17F24[v7] = (unsigned char)((wchar_t *)(0));
+          v8 = (wchar_t *)((int)((wchar_t *)(*(unsigned int *)g_abs_B17F24)));
+          v9 = (unsigned int)((wchar_t *)(g_abs_B17F24));
           if ( g_abs_B17F24[0] ) /*0x734b33*/
           {
             do /*0x734b44*/
             {
-              v8 = ~v8; /*0x734b35*/
-              *v9 = v8; /*0x734b37*/
-              IDA_LOWORD(v8) = v9[1]; /*0x734b3a*/
+              v8 = (wchar_t *)((unsigned int)(~v8));
+              *(unsigned int *)(v9) = v8; /*0x734b37*/
+              IDA_LOWORD(v8) = ((unsigned int *)(v9))[1]; /*0x734b3a*/
               ++v9; /*0x734b3e*/
             }
             while ( (unsigned short)v8 ); /*0x734b44*/
             IDA_LOWORD(v8) = g_abs_B17F24[0]; /*0x734b46*/
           }
-          v10 = (unsigned short *)(0);
-          v11 = (unsigned short *)(1);
+          v10 = (wchar_t *)((int16_t)((unsigned short *)(0)));
+          v11 = (int)((unsigned short *)(1));
           v12 = (unsigned short *)(g_abs_B17F24);
-          v13 = g_abs_B17F24 + 2; /*0x734b5a*/
+          v13 = (unsigned short *)(g_abs_B17F24 + 2);
           if ( (unsigned short)v8 ) /*0x734b5f*/
           {
             while ( 1 ) /*0x734b61*/
             {
               if ( (unsigned short)v8 == 32 ) /*0x734b65*/
               {
-                if ( v10 == 32 || v11 ) /*0x734b6e*/
+                if ( v10 == (unsigned short *)((unsigned short *))(32) || v11 ) /*0x734b6e*/
                   goto LABEL_31; /*0x734b6e*/
               }
               else if ( (unsigned short)v8 == 10 || (unsigned short)v8 == 9 ) /*0x734b7c*/
               {
-                if ( v10 == 32 ) /*0x734b8e*/
+                if ( v10 == (unsigned short *)((unsigned short *))(32) ) /*0x734b8e*/
                   --v12; /*0x734b90*/
-                *v12 = v8; /*0x734b93*/
+                *(unsigned int *)(v12) = v8; /*0x734b93*/
                 v11 = 1; /*0x734b96*/
                 v10 = v8; /*0x734b9b*/
                 ++v12; /*0x734b9d*/
                 goto LABEL_31; /*0x734b9d*/
               }
-              *v12++ = v8; /*0x734b7e*/
+              *(unsigned int *)(v12)++ = v8; /*0x734b7e*/
               v10 = v8; /*0x734b84*/
               v11 = 0; /*0x734b86*/
 LABEL_31:
               IDA_LOWORD(v8) = *v13++; /*0x734ba0*/
               if ( !(unsigned short)v8 ) /*0x734ba9*/
               {
-                if ( v10 == 32 ) /*0x734baf*/
+                if ( v10 == (unsigned short *)((unsigned short *))(32) ) /*0x734baf*/
                   --v12; /*0x734bb1*/
                 break; /*0x734bb1*/
               }
             }
           }
-          *v12 = 0; /*0x734bb4*/
+          *(unsigned int *)(v12) = 0; /*0x734bb4*/
           v14 = wcslen(g_abs_B17F24); /*0x734bbc*/
           *(unsigned int *)((char *)unk_B1CF78 + v6) = RA2_OPNEW(2 * v14 + 2); /*0x734bd6*/
           wcscpy(*(wchar_t **)((char *)unk_B1CF78 + v6), g_abs_B17F24); /*0x734be3*/

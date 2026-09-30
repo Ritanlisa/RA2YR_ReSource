@@ -46,6 +46,11 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
     unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
   void *v2; // eax
   void *v3; // eax
   unsigned int *v4; // ecx
@@ -369,7 +374,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   HWND v6; // ecx
   LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
   int v8; // eax
-  HWND v9; // ecx
+  AbstractClass ** v9;
   HDC v10; // esi
   struct tagRECT v12; // [esp+4h] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
@@ -397,7 +402,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   GetClientRect(hWnd, &Rect); /*0x612acc*/
   if ( dword_AC1B04 && (v8 = *((unsigned int *)dword_AC1B00 + (dword_AC1B18(&hWnd) & ((1 << dword_AC1B0C) - 1)))) != 0 ) /*0x612aff*/
   {
-    v9 = hWnd; /*0x612b01*/
+    v9 = (gamemd::AbstractClass **)(hWnd);
     do /*0x612b11*/
     {
       if ( *(HWND *)v8 == hWnd ) /*0x612b07*/
@@ -408,7 +413,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   }
   else
   {
-    v9 = (gamemd::AbstractClass **)(hWnd);
+    v9 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(hWnd)));
   }
   if ( Msg != 307 ) /*0x612b22*/
     return (HGDIOBJ)CallWindowProcA(v4, v9, Msg, (WPARAM)hdc, lParam); /*0x612b5b*/
@@ -640,7 +645,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
           }
         }
       }
-      return (gamemd::AbstractClass **)((gamemd::AbstractClass **)(0));
+      return (gamemd::AbstractClass **)((gamemd::AbstractClass **)((gamemd::AbstractClass **)(0)));
     case 0x14u: /*0x61ecb4*/
       return 1; /*0x61ed5b*/
     case 0x85u: /*0x61ecb4*/

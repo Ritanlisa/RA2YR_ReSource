@@ -19,6 +19,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
 #include "e4/classes/TriggerTypeClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x554A60
 namespace gamemd {
@@ -90,7 +91,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   MSShapeAnim *v17; // eax
   void *v21; // eax
   MSShapeAnim *v18; // edi
-  int v23; // eax
+  MSShapeAnim * v23;
   void (***v24)(unsigned int, int); // ecx
   void ** v25;
   int *v26; // [esp+4h] [ebp-148h]
@@ -118,7 +119,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   void *v48; // [esp+60h] [ebp-ECh]
   int v49; // [esp+64h] [ebp-E8h]
   char v50; // [esp+69h] [ebp-E3h]
-  MSShapeAnim *v51; // [esp+6Ch] [ebp-E0h]
+  ObjectClass * v51;
   int v52; // [esp+70h] [ebp-DCh]
   unsigned int v53[22]; // [esp+74h] [ebp-D8h] BYREF
   unsigned char v54[12]; // [esp+CCh] [ebp-80h] BYREF
@@ -193,7 +194,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             && ((uint8_t (*)(void ***, int, unsigned int))v47[2])(&v47, v52 + v49, 0) )
           {
             v17 = (gamemd::MSShapeAnim *)((unsigned int)(v51));
-            v51 = (gamemd::MSShapeAnim *)((unsigned int)((MSShapeAnim *)((char *)v51 + 1)));
+            v51 = (unsigned int)((gamemd::MSShapeAnim *)((unsigned int)((MSShapeAnim *)((char *)v51 + 1))));
             *((unsigned int *)v48 + (unsigned int)v17) = v5; /*0x76d731*/
           }
           v5 = 0; /*0x76d734*/
@@ -244,7 +245,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   v34 = (void **)(&vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim);
   var110 = (void **)(&v41);
   v33 = (gamemd::ObjectClass *)((void **)(0));
-  v38 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d8a7*/
+  v38 = (void **)(&vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim);
   if ( CampaignProperties_WorldDominationTour_22::AddRef(&v38) ) /*0x76d8ab*/
   {
     do /*0x76da41*/

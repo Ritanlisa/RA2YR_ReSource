@@ -811,8 +811,8 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
 {
 
   int *Viewport; // eax
-  int v4; // edx
-  int v5; // eax
+  int * v4;
+  int * v5;
   unsigned int *ScenarioClassActionCoords; // eax
   int *v7; // eax
   unsigned int *v8; // eax
@@ -837,12 +837,12 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   v21[2] = (unsigned int)((int *)(Viewport[2]));
   v4 = (int *)(Viewport[3]);
   v5 = (int *)(*((unsigned int *)this + 1));
-  v21[3] = (int *)(v4);
-  ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(*(unsigned int *)v5 + 4)); /*0x635599*/
-  v15[0] = *ScenarioClassActionCoords; /*0x6355a0*/
-  v15[1] = ScenarioClassActionCoords[1]; /*0x6355a7*/
-  v15[2] = ScenarioClassActionCoords[2]; /*0x6355b2*/
-  v7 = ToCoordPixel(&v14, v15); /*0x6355ba*/
+  v21[3] = (unsigned int)((int *)(v4));
+  ScenarioClassActionCoords = (int *)(GetScenarioClassActionCoords(v16, *(unsigned char **)(*(unsigned int *)v5 + 4)));
+  v15[0] = (unsigned int)((int *)(*ScenarioClassActionCoords));
+  v15[1] = (unsigned int)((int *)(ScenarioClassActionCoords[1]));
+  v15[2] = (unsigned int)((int *)(ScenarioClassActionCoords[2]));
+  v7 = (int *)(ToCoordPixel(&v14, v15));
   v8 = ComputeBounds(v22, 8, *v7, v7[1]); /*0x6355cf*/
   v9 = 3; /*0x6355d6*/
   v10 = v8[1] - 4; /*0x6355e8*/
@@ -910,13 +910,13 @@ int E4Recv_635680::sub_635680(int a2)
   v20[0] = (unsigned int)((int *)(*Viewport));
   v20[1] = (unsigned int)((int *)(Viewport[1]));
   v20[2] = (unsigned int)((int *)(Viewport[2]));
-  v20[3] = (int *)(Viewport[3]);
-  Coords = (int *)(ScriptAction::GetCoords(this, v11));
-  v10[0] = (int *)(*Coords);
-  v10[1] = Coords[1]; /*0x6356c6*/
-  v10[2] = Coords[2]; /*0x6356d1*/
-  v5 = ToCoordPixel(&v9, v10); /*0x6356d5*/
-  v6 = ComputeBounds(v21, 8, *v5, v5[1]); /*0x6356ea*/
+  v20[3] = (unsigned int)((int *)(Viewport[3]));
+  Coords = (unsigned int *)((int *)(ScriptAction::GetCoords(this, v11)));
+  v10[0] = (unsigned int)((int *)(*Coords));
+  v10[1] = (unsigned int)((int *)(Coords[1]));
+  v10[2] = (unsigned int)((int *)(Coords[2]));
+  v5 = (int *)(ToCoordPixel(&v9, v10));
+  v6 = (int *)(ComputeBounds(v21, 8, *v5, v5[1]));
   v16 = *v6; /*0x6356f1*/
   v17 = v6[1]; /*0x6356f8*/
   v18 = v6[2]; /*0x6356ff*/

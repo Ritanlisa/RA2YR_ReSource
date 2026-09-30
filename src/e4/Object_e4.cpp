@@ -143,7 +143,7 @@ int Object::IsAlliedWithObjectHouse( IUnknown * aP1)
   v3 = (unsigned int *)(*(int (**)(IUnknown *))(aP1->field_0 + 60))(aP1); /*0x4f9a9d*/
   if ( !v3 ) /*0x4f9aa2*/
     return 0; /*0x4f9aa2*/
-  if ( v3 == this ) /*0x4f9aa6*/
+  if ( v3 == (unsigned int *)(this) ) /*0x4f9aa6*/
     return 1; /*0x4f9aab*/
   v5 = v3[12]; /*0x4f9aae*/
   if ( v5 == *(this + 12) ) /*0x4f9ab6*/
@@ -594,7 +594,7 @@ LABEL_20:
       v26 = (int16_t *)Tactical::PixelToCell((int)g_abs_887324, &a2, &v30); /*0x5fdc21*/
       if ( LayerClass::CoordinatesLegal(&g_abs_87F7E8, v26) ) /*0x5fdc2c*/
       {
-        v28 = (unsigned int *)((int16_t *)Tactical::PixelToCell((int)g_abs_887324, &a2, &v30));
+        v28 = (int16_t *)((unsigned int *)((int16_t *)Tactical::PixelToCell((int)g_abs_887324, &a2, &v30)));
         v25 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, v28));
       }
       else
@@ -649,14 +649,14 @@ void * Object::DrawObject(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x5fdf91*/
   v5 = Block; /*0x5fdfa6*/
   v3 = (*(int (**)(int *, void ***))(g_abs_A8EC50 + 16))(&g_abs_A8EC50, &v5); /*0x5fdfaa*/
-  if ( v3 != -1 && v3 < g_abs_A8EC60 && v3 < --g_abs_A8EC60 ) /*0x5fdfc5*/
+  if ( v3 != -1 && v3 < (int)(g_abs_A8EC60) && v3 < (int)((int))(--g_abs_A8EC60) ) /*0x5fdfc5*/
   {
     do /*0x5fdfdd*/
     {
       ++v3; /*0x5fdfcd*/
       *((unsigned int *)g_abs_A8EC54 + v3 - 1) = *((unsigned int *)g_abs_A8EC54 + v3); /*0x5fdfd1*/
     }
-    while ( v3 < g_abs_A8EC60 ); /*0x5fdfdd*/
+    while ( v3 < (int)(g_abs_A8EC60) ); /*0x5fdfdd*/
   }
   if ( g_abs_A8E9A0 ) /*0x5fdfe6*/
     ObjectClass::Undeploy((void *)Block); /*0x5fdfea*/

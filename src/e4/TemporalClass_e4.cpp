@@ -26,6 +26,7 @@
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
 
 // 0x71A450
 namespace gamemd {
@@ -385,16 +386,16 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
 
   AbstractClass *Prefix_0; // edi
 
-  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x71a671*/
+  Prefix_0 = (AbstractClass *)((AbstractClass *)(aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x71a671*/
   if ( (int)Prefix_0 >= 0 ) /*0x71a675*/
   {
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x71a682*/
       *(unsigned int *)aP0->__pad_0 = &vt_TemporalClass; /*0x71a687*/
-      *(unsigned int *)&aP0->__pad_0[4] = &vt_TemporalClass; /*0x71a68d*/
-      *(unsigned int *)&aP0->__pad_0[8] = &vt_TemporalClass; /*0x71a694*/
-      *(unsigned int *)&aP0->__pad_0[12] = &vt_TemporalClass; /*0x71a69b*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_TemporalClass; /*0x71a68d*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_TemporalClass; /*0x71a694*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_TemporalClass; /*0x71a69b*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x71a6ab*/
     ObjectPtr::RegisterForTracking( /*0x71a6b9*/

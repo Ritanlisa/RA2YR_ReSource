@@ -28,6 +28,7 @@
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/Session_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/Selection_e4.hpp"
 
 // 0x540DC0
 namespace gamemd {
@@ -84,7 +85,7 @@ int SessionClass::initInternet()
   v3 = RA2_OPNEW(0xB8u); /*0x540e89*/
   if ( v3 ) /*0x540e90*/
   {
-    v4 = (int)((char *)(g_abs_A8DA78));
+    v4 = (char *)((int)((char *)(g_abs_A8DA78)));
     v5 = (char *)((int)((char *)(*((unsigned int *)this + 5))));
     v6 = (char *)(CharToWideString(aMulticast));
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
@@ -125,7 +126,7 @@ MixFileClass * SessionClass::Load()
   unsigned int *v4; // eax
   void *PlayerSide; // eax
   int v6; // esi
-  unsigned int v7;
+  char * v7;
 
   if ( *((unsigned int *)this + 2)
     || ((Debug::Log_0(g_abs_8298D0), (v2 = RA2_OPNEW(0x28u)) == 0)
@@ -153,7 +154,7 @@ MixFileClass * SessionClass::Load()
         {
           if ( v6 ) /*0x72b40c*/
           {
-            v7 = (char *)(g_abs_844BB4[0]);
+            v7 = (unsigned int)((char *)((unsigned int)((char *)(g_abs_844BB4[0]))));
             if ( v6 != 1 ) /*0x72b433*/
               v7 = g_abs_844BB8; /*0x72b435*/
             LoadPaletteSimple(v7, &g_abs_B0FB84, &g_abs_B0FB88); /*0x72b43b*/
@@ -370,19 +371,19 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
       {
         unknown_libname_73(&a3); /*0x5cf18a*/
         v16 = (ObjectClass *)String::Tokenize((const char **)&v44, 0, g_abs_817F70, (void **)&a3); /*0x5cf1a7*/
-        if ( String::Length((const char **)&a3) ) /*0x5cf1a9*/
+        if ( ((String *)((const char **)&a3))->Length() ) /*0x5cf1a9*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&a3); /*0x5cf1b6*/
           *((unsigned int *)v2 + 6) = v17; /*0x5cf1bb*/
         }
         v18 = (ObjectClass *)String::Tokenize((const char **)&v44, (int)v16, g_abs_817F70, (void **)&a3); /*0x5cf1d6*/
-        if ( String::Length((const char **)&a3) ) /*0x5cf1d8*/
+        if ( ((String *)((const char **)&a3))->Length() ) /*0x5cf1d8*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&a3); /*0x5cf1e5*/
           *((unsigned int *)v2 + 7) = v19; /*0x5cf1ea*/
         }
         v20 = (ObjectClass *)String::Tokenize((const char **)&v44, (int)v18, g_abs_817F70, (void **)&a3); /*0x5cf205*/
-        if ( String::Length((const char **)&a3) ) /*0x5cf207*/
+        if ( ((String *)((const char **)&a3))->Length() ) /*0x5cf207*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&a3); /*0x5cf214*/
           *((unsigned int *)v2 + 8) = v21; /*0x5cf219*/

@@ -11,6 +11,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Conflict_WorldDominationTour_12_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConnectionClass_e4.hpp"
 
 // 0x77D1F0
 namespace gamemd {

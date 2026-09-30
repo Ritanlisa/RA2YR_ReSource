@@ -390,8 +390,8 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
     }
     HouseTypeClass::readAllowedUnits(Destination, (InfantryTypeClass *)&((unsigned int *)(aP4.__pad_0))[2]); /*0x511da4*/
     *(unsigned int *)Destination = &vt_TypeList_InfantryTypeClass_const; /*0x511dad*/
-    *(unsigned int *)&aP4.__pad_0[2] = &vt_VectorClass_InfantryTypeClass_const; /*0x511db1*/
-    Vector::Cleanup((int)&aP4.__pad_0[2]); /*0x511db9*/
+    *(unsigned int *)&((unsigned int *)(aP4.__pad_0))[2] = &vt_VectorClass_InfantryTypeClass_const; /*0x511db1*/
+    Vector::Cleanup((int)&((unsigned int *)(aP4.__pad_0))[2]); /*0x511db9*/
   }
   else
   {

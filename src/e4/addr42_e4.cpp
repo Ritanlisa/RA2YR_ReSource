@@ -187,8 +187,8 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   char **v61; // [esp+64h] [ebp-6Ch]
   int * v62;
   int * v63;
-  int v64; // [esp+70h] [ebp-60h]
-  unsigned int v65;
+  int * v64;
+  int * v65;
   int * v66;
   int * v67;
   int v68[4]; // [esp+88h] [ebp-48h] BYREF
@@ -227,9 +227,9 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v68[3] = (int *)(v9);
         v63 = (int *)(v8);
         v62 = (int *)(v10);
-        v64 = 60; /*0x421032*/
-        v65 = 30; /*0x42103d*/
-        v11 = ClipRectIntersection(v71, v68, &v62, 0, 0); /*0x42104d*/
+        v64 = (int *)(60);
+        v65 = (int *)((unsigned int)((int *)(30)));
+        v11 = (int *)(ClipRectIntersection(v71, v68, &v62, 0, 0));
         v12 = *v11; /*0x42104f*/
         v55 = *v11; /*0x421051*/
         v13 = v11[1]; /*0x421055*/
@@ -314,7 +314,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             v28 = (char *)((int)(v49));
             v38 = (unsigned int)(v37 - v41);
-            v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))));
+            v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))));
             do /*0x4212ad*/
             {
               if ( v29 < (int *)((int))(v42) ) /*0x421239*/

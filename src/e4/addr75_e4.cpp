@@ -62,6 +62,7 @@
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/E4Recv_7741C0_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/File_e4.hpp"
 
 // 0x750920
 namespace gamemd {
@@ -572,10 +573,10 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
   *((unsigned int *)this + 20) = 2; /*0x752cf2*/
   if ( g_abs_B1D4B0 < g_abs_B1D4A8 /*0x752d2e*/
     || (g_abs_B1D4AD || !g_abs_B1D4A8)
-    && g_abs_B1D4B4 > 0
+    && g_abs_B1D4B4 > (unsigned char [1])(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B1D4A0 + 8))(
          &g_abs_B1D4A0,
-         g_abs_B1D4A8 + g_abs_B1D4B4,
+         (unsigned int)(g_abs_B1D4A8)+ g_abs_B1D4B4,
          0) )
   {
     v3 = g_abs_B1D4B0++; /*0x752d3b*/

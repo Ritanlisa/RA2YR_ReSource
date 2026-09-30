@@ -541,7 +541,7 @@ int Options::ReadOptionValue()
   const void *v7; // esi
   int v8; // [esp+8h] [ebp-4h]
 
-  v2 = *this; /*0x6254d5*/
+  v2 = (int)(*this);
   v3 = *((char *)this + 1); /*0x6254d8*/
   if ( 3 * v2 > v3 ) /*0x6254e0*/
     return 0; /*0x6254e3*/

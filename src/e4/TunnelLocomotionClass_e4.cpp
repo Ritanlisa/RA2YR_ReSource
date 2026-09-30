@@ -13,6 +13,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/TubeClass_e4.hpp"
 
 // 0x728C00
 namespace gamemd {
@@ -168,9 +170,9 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x72a168*/
     {
-      *a1 = (wchar_t *)((int)&vt_LocomotionClass);
-      a1[1] = (wchar_t *)((int)&vt_LocomotionClass);
-      v3 = (wchar_t *)(g_abs_A8ED84);
+      *a1 = (int)((wchar_t *)((int)&vt_LocomotionClass));
+      a1[1] = (int)((wchar_t *)((int)&vt_LocomotionClass));
+      v3 = (unsigned int)((wchar_t *)(g_abs_A8ED84));
       a1[12] = 0; /*0x72a17d*/
       a1[10] = (int)v3; /*0x72a180*/
       a1[13] = 0; /*0x72a183*/

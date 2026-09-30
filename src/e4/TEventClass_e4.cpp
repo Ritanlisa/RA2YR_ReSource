@@ -156,7 +156,7 @@ LABEL_8:
         return 0; /*0x71e9fd*/
       while ( 1 ) /*0x71ea03*/
       {
-        if ( (*(int (**)(unsigned int))(**((unsigned int **)g_abs_A8EC7C + v16) + 132))(*((unsigned int *)g_abs_A8EC7C /*0x71ea16*/
+        if ( (*(int (**)(unsigned int))(**((unsigned int **)(unsigned int)(g_abs_A8EC7C)+ v16) + 132))(*((unsigned int *)g_abs_A8EC7C /*0x71ea16*/
                                                                                            + v16)) == v14 )
           ++v13; /*0x71ea18*/
         if ( v13 >= v15 ) /*0x71ea1b*/
@@ -191,7 +191,7 @@ LABEL_22:
       v23 = g_abs_A8EC88 - 1; /*0x71eab5*/
       if ( g_abs_A8EC88 - 1 < 0 ) /*0x71eaba*/
         return 1; /*0x71eaba*/
-      while ( (*(int (**)(unsigned int))(**((unsigned int **)g_abs_A8EC7C + v23) + 132))(*((unsigned int *)g_abs_A8EC7C /*0x71ead2*/
+      while ( (*(int (**)(unsigned int))(**((unsigned int **)(unsigned int)(g_abs_A8EC7C)+ v23) + 132))(*((unsigned int *)g_abs_A8EC7C /*0x71ead2*/
                                                                                             + v23)) != v22 )
       {
         if ( --v23 < 0 ) /*0x71ead9*/
@@ -487,9 +487,9 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   int v3; // eax
   int v4; // esi
   const unsigned int v6;
-  int v7; // [esp-Ch] [ebp-14h]
-  int v8; // [esp-8h] [ebp-10h]
-  int v9; // [esp-4h] [ebp-Ch]
+  const const CHAR * v7;
+  const const CHAR * v8;
+  const CHAR * v9;
 
   v2 = *((char *)this + 11); /*0x71f390*/
   switch ( v2 ) /*0x71f3a8*/
@@ -563,10 +563,10 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   v4 = *((char *)this + 12); /*0x71f3fe*/
   if ( v4 ) /*0x71f403*/
   {
-    v9 = (const CHAR *)(v4 + 36);
-    v8 = (const CHAR *)(1);
-    v7 = (const CHAR *)(*((char *)this + 11));
-    v6 = g_abs_844714; /*0x71f40c*/
+    v9 = (int)((const CHAR *)(v4 + 36));
+    v8 = (int)((const CHAR *)(1));
+    v7 = (int)((const CHAR *)(*((char *)this + 11)));
+    v6 = (const unsigned int)(g_abs_844714);
   }
   else
   {
@@ -639,17 +639,17 @@ void * TEventClass::Fire(void ** Block, char a2)
   }
   v7 = Block; /*0x71fb48*/
   v5 = (*(int (**)(int *, void ***))(g_abs_B0F1A0 + 16))(&g_abs_B0F1A0, &v7); /*0x71fb4c*/
-  if ( v5 != -1 && v5 < g_abs_B0F1B0 && v5 < --g_abs_B0F1B0 ) /*0x71fb67*/
+  if ( v5 != -1 && v5 < (int)(g_abs_B0F1B0) && v5 < --g_abs_B0F1B0 ) /*0x71fb67*/
   {
     do /*0x71fb7f*/
     {
       ++v5; /*0x71fb6f*/
       *((unsigned int *)g_abs_B0F1A4 + v5 - 1) = *((unsigned int *)g_abs_B0F1A4 + v5); /*0x71fb73*/
     }
-    while ( v5 < g_abs_B0F1B0 ); /*0x71fb7f*/
+    while ( v5 < (int)(g_abs_B0F1B0) ); /*0x71fb7f*/
   }
   AbstractClass::DTOR(Block); /*0x71fb83*/
-  if ( (Block & 1) != 0 ) /*0x71fb8d*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x71fb8d*/
     RA2_OPDEL(Block); /*0x71fb90*/
   return (TEventClass *)Block; /*0x71fb9a*/
 

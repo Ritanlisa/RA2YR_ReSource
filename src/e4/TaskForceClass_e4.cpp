@@ -23,6 +23,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/TauntCommandClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4C4EF0
 namespace gamemd {
@@ -200,14 +201,14 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6e8811*/
   v5 = Block; /*0x6e8826*/
   v3 = (*(int (**)(int *, void ***))(g_abs_A8E8D0 + 16))(&g_abs_A8E8D0, &v5); /*0x6e882a*/
-  if ( v3 != -1 && v3 < g_abs_A8E8E0 && v3 < --g_abs_A8E8E0 ) /*0x6e8845*/
+  if ( v3 != -1 && v3 < (int)((int))(g_abs_A8E8E0) && v3 < --g_abs_A8E8E0 ) /*0x6e8845*/
   {
     do /*0x6e885d*/
     {
       ++v3; /*0x6e884d*/
       *((unsigned int *)g_abs_A8E8D4 + v3 - 1) = *((unsigned int *)g_abs_A8E8D4 + v3); /*0x6e8851*/
     }
-    while ( v3 < g_abs_A8E8E0 ); /*0x6e885d*/
+    while ( v3 < (int)((int))(g_abs_A8E8E0) ); /*0x6e885d*/
   }
   ((AbstractTypeClass *)(Block))->Dtor(); /*0x6e8861*/
   if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6e886b*/

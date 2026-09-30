@@ -131,7 +131,7 @@ int DamageArea::ApplyScatter()
   int v100; // [esp+4Ch] [ebp-54h]
   double v101; // [esp+50h] [ebp-50h] BYREF
   double v102; // [esp+58h] [ebp-48h] BYREF
-  int v103; // [esp+64h] [ebp-3Ch] BYREF
+  unsigned int * v103;
   double v104; // [esp+68h] [ebp-38h] BYREF
   int v105; // [esp+70h] [ebp-30h]
   double v106; // [esp+78h] [ebp-28h] BYREF
@@ -146,7 +146,7 @@ int DamageArea::ApplyScatter()
                     *((unsigned int *)this + 3),
                     &v106);
   v3 = (unsigned int *)(*((unsigned int *)this + 3) + 1376);
-  v103 = v2;
+  v103 = (unsigned int *)(v2);
   if ( v2 != *v3 && (*(uint8_t (**)(int))(*((unsigned int *)this + 1) + 128))((char *)this + 4) )
     Coord::ToGridIndex((char *)g_abs_887888, *((unsigned int *)this + 3), *(unsigned int *)(*((unsigned int *)this + 3) + 1376), v2);
   if ( (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 388))(*((unsigned int *)this + 3)) == 7
@@ -178,7 +178,7 @@ LABEL_34:
       return result;
     v22 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 132))(*((unsigned int *)this + 3));
     v23 = *((unsigned int *)this + 3);
-    v103 = v22;
+    v103 = (unsigned int *)(v22);
     v99 = *(unsigned char *)(v22 + 3221);
     (*(void (**)(int, unsigned int))(*(unsigned int *)v23 + 292))(v23, 0);
     v24 = *((unsigned int *)this + 3);
@@ -202,11 +202,11 @@ LABEL_34:
       v109 = v105;
       v108 = v104;
       IDA_LODWORD(v102) = *(unsigned int *)CellStruct::Set(&v104, IDA_SLODWORD(v104) / 256, IDA_SHIDWORD(v104) / 256);
-      LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v102);
+      ((LayerClass *)(&g_abs_87F7E8))->CoordinatesLegal((int16_t *)&v102);
     }
     IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
     IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
-    if ( LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v102)
+    if ( ((LayerClass *)(&g_abs_87F7E8))->CoordinatesLegal((int16_t *)&v102)
       || !(*(uint8_t (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 1244))(*((unsigned int *)this + 3)) )
     {
       goto LABEL_50;
@@ -222,19 +222,19 @@ LABEL_34:
     IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
     IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
     IDA_LODWORD(v101) = IDA_LODWORD(v102);
-    v35 = (int16_t)*(unsigned int *)DamageArea::CalcScatterOffset(&v106, &v101) >= g_abs_87F914 / 2
+    v35 = (int16_t)*(unsigned int *)DamageArea::CalcScatterOffset(&v106, &v101) >= (unsigned int)(g_abs_87F914)/ 2
         ? IDA_LODWORD(v108) - 128
         : IDA_LODWORD(v108) + 128;
     IDA_LODWORD(v108) = v35;
     IDA_LOWORD(v102) = v35 / 256;
     IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
-    if ( LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v102)
+    if ( ((LayerClass *)(&g_abs_87F7E8))->CoordinatesLegal((int16_t *)&v102)
       || (v36 = RandomCoordScatter(&v110, (int *)&v108, 64, 0),
           v108 = *(double *)v36,
           v109 = v36[2],
           IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256,
           IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256,
-          LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v102)) )
+          ((LayerClass *)(&g_abs_87F7E8))->CoordinatesLegal((int16_t *)&v102)) )
     {
 LABEL_50:
       (*(void (**)(unsigned int, double *))(**(unsigned int **)((char *)this + 12) + 436))(*((unsigned int *)this + 3), &v108);
@@ -243,7 +243,7 @@ LABEL_50:
     IDA_LODWORD(v101) = 0;
     v38 = (*(int (**)(int))(*(unsigned int *)v37 + 456))(v37);
     v39 = *((unsigned int *)this + 3);
-    if ( !*(unsigned char *)(v39 + 140) && v38 >= g_abs_8B3CAC )
+    if ( !*(unsigned char *)(v39 + 140) && v38 >= (int)(g_abs_8B3CAC) )
     {
       v40 = v39 + 156;
       v106 = *(double *)v40;
@@ -322,8 +322,8 @@ LABEL_114:
         && !*((unsigned char *)this + (unsigned int)((unsigned int))((unsigned int))(81))
         && (!*((unsigned char *)this + (unsigned int)((unsigned int))((unsigned int))(80)) || (*(int (**)(int *))(*v73 + 456))(v73) >= *((unsigned int *)this + 14) / 2)
         && (*((unsigned int *)this + 7) != (unsigned int)((unsigned int))((unsigned int))(g_abs_8B3C78)
-         || *((unsigned int *)this + 8) != g_abs_8B3C7C
-         || *((unsigned int *)this + 9) != g_abs_8B3C80) )
+         || *((unsigned int *)this + 8) != (unsigned int)(g_abs_8B3C7C)
+         || *((unsigned int *)this + 9) != (unsigned int)(g_abs_8B3C80)) )
       {
         v74 = *(int (****)(unsigned int, void *, double *))((char *)this + 12);
         v75 = 0;
@@ -519,8 +519,8 @@ LABEL_105:
         v62 = *(int **)((char *)this + (unsigned int)((unsigned int))((unsigned int))(12));
         if ( v62[27] > 0
           && (*((unsigned int *)this + 7) != (unsigned int)((unsigned int))((unsigned int))(g_abs_8B3C78)
-           || *((unsigned int *)this + 8) != g_abs_8B3C7C
-           || *((unsigned int *)this + 9) != g_abs_8B3C80)
+           || *((unsigned int *)this + 8) != (unsigned int)(g_abs_8B3C7C)
+           || *((unsigned int *)this + 9) != (unsigned int)(g_abs_8B3C80))
           && ((*(int (**)(int *))(*v62 + 388))(v62) != 7
            || (v63 = *(unsigned int *)(*((unsigned int *)this + 3) + 1444)) == 0
            || (*(int (**)(int))(*(unsigned int *)v63 + 44))(v63) != 6
@@ -580,8 +580,8 @@ LABEL_105:
   Coord::To_Cell(&g_abs_87F7E8, &v108);
   IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
   IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
-  v103 = IDA_LODWORD(v102);
-  if ( LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v103) )
+  v103 = (unsigned int *)(IDA_LODWORD(v102));
+  if ( ((LayerClass *)(&g_abs_87F7E8))->CoordinatesLegal((int16_t *)&v103) )
   {
     RemoveTarget(*((unsigned int *)this + 3));
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)((char *)this + 12) + 292))(*((unsigned int *)this + 3), 0);
@@ -599,9 +599,9 @@ LABEL_105:
   {
     IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
     IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
-    v103 = (unsigned int *)(IDA_LODWORD(v102));
+    v103 = (int)((unsigned int *)(IDA_LODWORD(v102)));
     TechnoClass::ComputeCombatDamage(v10, 0);
-    v12 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v103);
+    v12 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v103));
     v13 = **(unsigned int **)((char *)this + 12);
     if ( v12[59] == 2 )
     {

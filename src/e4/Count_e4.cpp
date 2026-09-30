@@ -47,13 +47,13 @@ int Count::SetupAllCountriesLobby()
   int v6; // edi
   int PlayerSide; // esi
   int *v8; // [esp+10h] [ebp-10h]
-  int v10; // [esp+18h] [ebp-8h]
+  int * v10;
   HWND hWnd; // [esp+1Ch] [ebp-4h]
 
   v1 = (int *)(0);
-  v2 = (int *)((wchar_t **)&g_abs_A8DA90);
+  v2 = (wchar_t **)((int *)((wchar_t **)&g_abs_A8DA90));
   v10 = (int *)(0);
-  v8 = &g_abs_A8DA90; /*0x46f6e6*/
+  v8 = (int *)(&g_abs_A8DA90);
   do /*0x46f7ff*/
   {
     ResourceID2 = GetResourceID2CSF(v1); /*0x46f6ef*/

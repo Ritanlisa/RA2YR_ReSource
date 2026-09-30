@@ -176,8 +176,8 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   int v23; // [esp-18h] [ebp-C8h]
   int v24; // [esp-10h] [ebp-C0h]
   int v25; // [esp+Ch] [ebp-A4h] BYREF
-  int v26; // [esp+10h] [ebp-A0h]
-  unsigned char * v27;
+  unsigned int v26;
+  unsigned int v27;
   int v28; // [esp+18h] [ebp-98h] BYREF
   int v29; // [esp+1Ch] [ebp-94h] BYREF
   int v30; // [esp+20h] [ebp-90h] BYREF
@@ -207,16 +207,15 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     v26 = *((char *)this + 40); /*0x749c26*/
     if ( *((char *)this + 41) >= (int)((int))((int))(g_abs_B1D1BC) + GroundHeight ) /*0x749c38*/
     {
-      v33 = (int)(g_abs_B1D1BC + GroundHeight);
-      v27 = (int)(g_abs_B1D1BC + GroundHeight + 1);
+      v33 = (unsigned char *)((int)(g_abs_B1D1BC + GroundHeight));
+      v27 = (unsigned char *)((int)(g_abs_B1D1BC + GroundHeight + 1));
       v25 = v30; /*0x749c4e*/
       v26 = v31; /*0x749c5b*/
       Coord::To_Screen(g_abs_887324, &v25, v36); /*0x749c60*/
     }
     else
     {
-LABEL_6:
-      v33 = GroundHeight; /*0x749c62*/
+LABEL_6: v33 = (unsigned char *)(GroundHeight);
       Coord::To_Screen(g_abs_887324, &v30, v36); /*0x749c76*/
     }
     IDA_LOBYTE(v4) = *((unsigned char *)this + 316); /*0x749c7b*/

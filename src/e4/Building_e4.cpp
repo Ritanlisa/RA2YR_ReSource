@@ -19,6 +19,7 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
 
 // 0x425D10
 namespace gamemd {
@@ -280,7 +281,7 @@ unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
     *a1 = (unsigned int)(g_abs_B077A0);
     a1[1] = (unsigned int)(g_abs_B077A4);
     a1[2] = (unsigned int)(g_abs_B077A8);
-    a1[3] = g_abs_B077AC; /*0x69e84f*/
+    a1[3] = (unsigned int)(g_abs_B077AC);
     return a1; /*0x69e829*/
   }
 

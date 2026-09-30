@@ -612,14 +612,14 @@ void RunNetworkGameLoop()
     }
     if ( v10 + dword_A8B554 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x64862a*/
     {
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       v2 = v13; /*0x648643*/
       continue; /*0x64864a*/
     }
     break;
   }
-    this->Debug::Log();
-    this->Debug::Log();
+    ((Debug *)0)->Log();
+    ((Debug *)0)->Log();
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64869f*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486b2*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486c5*/

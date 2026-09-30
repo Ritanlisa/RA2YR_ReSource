@@ -150,10 +150,10 @@ void* SpawnManagerClass::Constructor()
     && g_abs_B0B894 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0B880 + 8))(
          &g_abs_B0B880,
-         g_abs_B0B888 + g_abs_B0B894,
+         (unsigned int)(g_abs_B0B888)+ g_abs_B0B894,
          0) )
   {
-    v2 = g_abs_B0B890++; /*0x6b6f76*/
+    v2 = (int)(g_abs_B0B890++);
     *((unsigned int *)g_abs_B0B884 + v2) = this; /*0x6b6f85*/
   }
   return this; /*0x6b6f8a*/

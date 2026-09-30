@@ -23,6 +23,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/GameSetup_e4.hpp"
 
 // 0x430980
 namespace gamemd {
@@ -64,7 +66,7 @@ namespace gamemd {
 int Game::SendCampaignOptions()
 {
 
-  int result; // eax
+  void * result;
   int i; // esi
   int v2; // ecx
   int Option; // eax
@@ -148,7 +150,7 @@ int Game::SendCampaignOptions()
     }
     while ( (int)v12 < (int)&g_abs_A8DAB0 ); /*0x46d640*/
   }
-  return result; /*0x46d642*/
+  return (int)((int)(result));
 
 }
 }

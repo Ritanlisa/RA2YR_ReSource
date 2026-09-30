@@ -89,9 +89,9 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
         *(unsigned int *)(v9[2] + 4 * v11) = v10; /*0x7229d0*/
         v15 = v9[3]; /*0x7229d6*/
         ++*v9; /*0x7229dc*/
-        if ( v10 > (int *)(v15) ) /*0x7229df*/
+        if ( v10 > (unsigned int)((int *))(v15) ) /*0x7229df*/
           v9[3] = v10; /*0x7229e1*/
-        if ( v10 < (int *)(v9[4]) ) /*0x7229e7*/
+        if ( v10 < (unsigned int)((int *))(v9[4]) ) /*0x7229e7*/
           v9[4] = v10; /*0x7229e9*/
       }
       *((unsigned char *)*((unsigned int *)this + 62) + Cell::PosToIndex(v7)) = 1; /*0x7229f7*/

@@ -206,10 +206,10 @@ char E4Recv_6D1570::sub_6D1570()
     v2[2] = (unsigned int)(g_abs_B0CC50);
     v2[1] = (unsigned int)(g_abs_B0CC4C);
     v2[4] = (unsigned int)(g_abs_B0CC58);
-    v3 = 0; /*0x6d15b6*/
-    v2[0] = g_abs_B0CC64; /*0x6d15bb*/
-    v2[5] = g_abs_842838; /*0x6d15bf*/
-    v2[3] = g_abs_B0CC54; /*0x6d15c7*/
+    v3 = (unsigned int)(0);
+    v2[0] = (unsigned int)(g_abs_B0CC64);
+    v2[5] = (unsigned int)(g_abs_842838);
+    v2[3] = (unsigned int)(g_abs_B0CC54);
     HashTable::Remove((int *)g_abs_887368, g_abs_B0CC64); /*0x6d15cb*/
     return CommandClass::AddAction(g_abs_887368, (int)v2); /*0x6d15db*/
   }

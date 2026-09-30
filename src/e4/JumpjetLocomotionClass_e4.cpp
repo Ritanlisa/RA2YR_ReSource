@@ -125,9 +125,9 @@ void* JumpjetLocomotionClass::Update2()
   v5 = (char *)(*((float *)this + 11));
   v6 = (char *)(*((float *)this + 7));
   v63 = (char *)(*((float *)this + 6));
-  v7 = v5 - *((double *)this + 1); /*0x439b32*/
-  v8 = *((float *)this + 8); /*0x439b35*/
-  v4 = this + 36; /*0x439b1d*/
+  v7 = (char *)(v5 - *((double *)this + 1));
+  v8 = (char *)(*((float *)this + 8));
+  v4 = (char *)(this + 36);
   v64 = v6; /*0x439b3a*/
   v65 = v8; /*0x439b3e*/
   v66 = *((unsigned int *)this + 9); /*0x439b44*/

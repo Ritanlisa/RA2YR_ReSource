@@ -18,6 +18,9 @@
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
+#include "e4/classes/MSOverlayAnim_e4.hpp"
 
 // 0x67CEF0
 namespace gamemd {

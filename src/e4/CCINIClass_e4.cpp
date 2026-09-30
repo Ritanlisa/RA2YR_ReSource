@@ -22,6 +22,15 @@
 namespace gamemd {
 int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
@@ -42,14 +51,14 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   CCINIClass *v11; // edi
   int v12; // esi
   int v13; // esi
-  int v14; // [esp+10h] [ebp-8h]
+  CCINIClass * v14;
   int i; // [esp+10h] [ebp-8h]
 
-  v2 = a2; /*0x41f2ec*/
-  result = INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes); /*0x41f2f5*/
+  v2 = (gamemd::CCINIClass *)((int)(a2));
+  result = (int)(INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes));
   v5 = 0; /*0x41f2fa*/
   v14 = result; /*0x41f2fe*/
-  while ( (int)v5 < v14 ) /*0x41f302*/
+  while ( (int)v5 < (int)(v14) ) /*0x41f302*/
   {
     StringByIndex = (CCINIClass *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, v5); /*0x41f317*/
     if ( _strcmpi((char *)&stru_817460.sectionHead[1], StringByIndex->__pad_0) ) /*0x41f31f*/
@@ -87,8 +96,7 @@ LABEL_11:
     {
       v7 = 0; /*0x41f32b*/
     }
-LABEL_13:
-    v2 = a2; /*0x41f3a9*/
+LABEL_13: v2 = (gamemd::CCINIClass *)(a2);
     if ( a2 == (CCINIClass *)1 ) /*0x41f3b0*/
       *((unsigned char *)v7 + 164) = 1; /*0x41f3b2*/
     result = v14; /*0x41f3b9*/
@@ -97,7 +105,7 @@ LABEL_13:
   if ( !v2 ) /*0x41f3c8*/
   {
     result = (unsigned int)(INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes_0));
-    v10 = (unsigned int)(0);
+    v10 = (int)((unsigned int)(0));
     for ( i = result; (int)v10 < i; v10 = (CCINIClass *)((char *)v10 + 1) ) /*0x41f3e4*/
     {
       v11 = (CCINIClass *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes_0, v10); /*0x41f3f9*/
@@ -114,8 +122,7 @@ LABEL_13:
           *(unsigned char *)(v13 + 164) = INIClass::ReadBool_Overwrite((int)a1, (uint8_t *)aAitriggertypes_0, v11, 0) /*0x41f46c*/
                                || g_abs_A8B238;
       }
-LABEL_28:
-      result = i; /*0x41f473*/
+LABEL_28: result = (gamemd::CCINIClass *)(i);
     }
   }
   return result; /*0x41f480*/
@@ -157,7 +164,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v10[2] = (unsigned int)(0);
   v10[3] = (unsigned int)(a2);
   v11 = (unsigned int)(0);
-  v10[0] = &vt_FileStraw; /*0x474223*/
+  v10[0] = (unsigned int)(&vt_FileStraw);
   File = INIClass::LoadFile(this, (int)v10, a4); /*0x474230*/
   *((unsigned char *)this + 64) = 0; /*0x474232*/
   if ( !File || !a3 ) /*0x474244*/
@@ -307,7 +314,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
       result = g_abs_A8B210; /*0x41f563*/
     }
   }
-  return result; /*0x41f56d*/
+  return (gamemd::AITriggerTypeClass *)((gamemd::AITriggerTypeClass *)(result));
 
 }
 } // namespace gamemd

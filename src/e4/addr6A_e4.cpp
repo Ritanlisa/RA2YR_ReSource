@@ -186,7 +186,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
   int v3; // ecx
   int v5; // eax
   int v6; // eax
-  int v7; // kr04_4
+  unsigned int * v7;
   unsigned int *v8; // eax
   int v10; // [esp+4h] [ebp-4h]
 
@@ -195,7 +195,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
   if ( v10 ) /*0x6a89fd*/
     v2 = 18; /*0x6a89ff*/
   v3 = (g_abs_886F9C - (int)((int))((int))(g_abs_B0B4F8) - v2 + g_abs_886F94 - 7) / 50; /*0x6a8a43*/
-  if ( HouseClass_Player == (void *)g_abs_AC1198 ) /*0x6a8a45*/
+  if ( HouseClass_Player == (int)((void *))g_abs_AC1198 ) /*0x6a8a45*/
     v3 = 1; /*0x6a8a47*/
   if ( a2 ) /*0x6a8a52*/
   {
@@ -215,11 +215,11 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     if ( v10 ) /*0x6a8a8a*/
       v5 = 18; /*0x6a8a8c*/
     v6 = (g_abs_886F9C - (int)((int))((int))(g_abs_B0B4F8) - v5 + g_abs_886F94 - 7) / 50; /*0x6a8aaa*/
-    if ( HouseClass_Player == (void *)g_abs_AC1198 ) /*0x6a8aac*/
+    if ( HouseClass_Player == (int)((void *))g_abs_AC1198 ) /*0x6a8aac*/
     {
-      v7 = (unsigned int *)(v6);
-      v8 = this; /*0x6a8ab9*/
-      if ( *((unsigned int *)this + 17) + v7 / 2 >= g_abs_884CF8 ) /*0x6a8ac4*/
+      v7 = (int)((unsigned int *)(v6));
+      v8 = (unsigned int *)(this);
+      if ( *((unsigned int *)this + 17) + (unsigned int)(v7)/ (unsigned int)(2) >= (unsigned int)(g_abs_884CF8) ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/
     }
     else
@@ -241,7 +241,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
 
   int v2; // eax
   unsigned char * v3;
-  int v4; // ecx
+  unsigned char * v4;
   unsigned int v5; // eax
   int v6; // ebp
 
@@ -252,7 +252,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
   v3 = 0; /*0x6a942f*/
   v4 = g_abs_886F9C - g_abs_B0B4F8 - v2 + g_abs_886F94 - 7; /*0x6a9431*/
   v5 = (unsigned int)((uint64_t)(1374389535LL * v4) >> 32) >> 31; /*0x6a943c*/
-  v6 = 2 * (v4 / 50); /*0x6a9443*/
+  v6 = (unsigned int)(2)* ((unsigned int)(v4)/ 50); /*0x6a9443*/
   if ( v6 > 0 ) /*0x6a9447*/
   {
     do /*0x6a9494*/
@@ -261,7 +261,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
       IDA_LOBYTE(v5) = Hash::InsertOrdered(&g_abs_87F7E8, 56 * (v3 + 60 * *((unsigned int *)this + 14)) + 11566720); /*0x6a948c*/
       ++v3; /*0x6a9491*/
     }
-    while ( v3 < v6 ); /*0x6a9494*/
+    while ( v3 < (unsigned char *)(v6) ); /*0x6a9494*/
   }
   g_abs_884B8F = 1; /*0x6a9498*/
   return v5; /*0x6a9496*/
@@ -535,7 +535,7 @@ void ShowSkirmishSetupScreen(void * a1, void * a2)
     {
       if ( j == 1472 ) /*0x6ae35e*/
         break; /*0x6ae35e*/
-            if ( Dialog::PumpMessages() == 1 )
+            if ( this->Dialog::PumpMessages() == 1 )
         break; /*0x6ae367*/
       IDA_LOBYTE(v7) = 0; /*0x6ae369*/
       ScreenSaver::Process(v7, v10); /*0x6ae36b*/
@@ -602,7 +602,7 @@ int TechnoClass::ProcessDeployAction()
       v3 = *((unsigned int *)this + 9); /*0x6afd7a*/
       if ( v3 ) /*0x6afd7f*/
       {
-        v2 = (int)((SlaveManagerClass *)(*(int (**)(unsigned int))(*(unsigned int *)v3->__pad_0 + 44))(*((unsigned int *)this + 9)));
+        v2 = (gamemd::SlaveManagerClass *)((int)((SlaveManagerClass *)(*(int (**)(unsigned int))(*(unsigned int *)v3->__pad_0 + 44))(*((unsigned int *)this + 9))));
         if ( v2 == (SlaveManagerClass *)6 ) /*0x6afd8f*/
         {
           currentMission = (unsigned int)(v3->currentMission);

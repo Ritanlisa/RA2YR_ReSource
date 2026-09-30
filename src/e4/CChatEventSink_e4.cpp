@@ -368,7 +368,7 @@ LABEL_88:
       }
     }
     SetEvent(dword_B73690); /*0x7aaef2*/
-    if ( g_abs_A8B244 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) || g_abs_A8B244 == (unsigned char [1])(1) || g_abs_A8B244 == 2 ) /*0x7aaf0a*/
+    if ( g_abs_A8B244 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) || g_abs_A8B244 == (unsigned char [1])((unsigned char [1]))(1) || g_abs_A8B244 == 2 ) /*0x7aaf0a*/
     {
       this->Debug::Log(); /*0x7aaf18*/
     }

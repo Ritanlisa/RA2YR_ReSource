@@ -47,6 +47,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v45 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
@@ -264,6 +265,7 @@ LABEL_52:
 namespace gamemd {
 int ObjectClass::CheckCellFlags(int a1, int a2, int * a3, unsigned char * a4, unsigned int * a5)
 {
+    unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */

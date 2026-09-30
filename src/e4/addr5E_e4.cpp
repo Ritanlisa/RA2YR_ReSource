@@ -60,7 +60,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
   v3 = (wchar_t *)((wint_t *)((wchar_t *)(a1)));
-  v4 = (wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd)))))))));
+  v4 = (wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd)))))))))))));
   v5 = (wint_t *)(wcslen(a1));
   v13 = 18; /*0x5e2842*/
   ScreenDialogToClient(hWnd, &Rect); /*0x5e284a*/
@@ -144,9 +144,9 @@ void sub_5E2AC0()
   wchar_t *v4; // eax
   int v5; // [esp+Ch] [ebp-4h] BYREF
 
-    if ( this->Dialog::GetCurrent() )
+    if ( ((Dialog *)0)->GetCurrent() )
   {
-        Current = this->Dialog::GetCurrent();
+        Current = ((Dialog *)0)->GetCurrent();
     DlgItem = GetDlgItem(Current, 1343); /*0x5e2ae6*/
     if ( DlgItem ) /*0x5e2aea*/
     {
@@ -437,11 +437,11 @@ char Game_CheckSettingsChanged(char a1, char a2)
       dword_AC11B8 = (unsigned char)(time(0));
       dword_8316D8 = (unsigned char)(g_abs_A8B268);
       dword_8316DC = (unsigned char)(g_abs_A8B25C);
-      dword_8316E0 = g_abs_A8B270; /*0x5e34ae*/
-      byte_AC11BD = g_abs_A8B262; /*0x5e34b8*/
-      byte_AC11BE = g_abs_A8B263; /*0x5e34c4*/
-      byte_AC11BF = g_abs_A8B264; /*0x5e34da*/
-      byte_AC11C0 = dword_A8B320; /*0x5e34df*/
+      dword_8316E0 = (unsigned char)(g_abs_A8B270);
+      byte_AC11BD = (unsigned char)(g_abs_A8B262);
+      byte_AC11BE = (unsigned char)(g_abs_A8B263);
+      byte_AC11BF = (unsigned char)(g_abs_A8B264);
+      byte_AC11C0 = (unsigned char)(dword_A8B320);
       byte_AC11C1 = g_abs_A8B261; /*0x5e34e5*/
       wcscpy(&word_AC10F0, (const wchar_t *)&dword_A8B320 + 1); /*0x5e34eb*/
       strcpy(byte_AC0D00, &byte_A8BAE2); /*0x5e350f*/
@@ -566,7 +566,7 @@ int SendMultiplayerStartSignal()
       SetGameSetupPlayerState(0, 0); /*0x5e3b3a*/
     }
     sprintf(Buffer, aA0); /*0x5e3b49*/
-    Network::SendOptionsGame(Buffer); /*0x5e3b55*/
+    ((Network *)(Buffer))->SendOptionsGame(); /*0x5e3b55*/
     if ( byte_AC11C2 ) /*0x5e3b66*/
     {
       v1 = (HWND)Dialog::FindByHandle((void *)0xC2); /*0x5e3b68*/

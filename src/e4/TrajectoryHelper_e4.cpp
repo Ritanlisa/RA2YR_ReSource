@@ -257,7 +257,7 @@ unsigned int * TrajectoryHelper::FindFirstImpenetrableObstacle(IUnknown * aP0, i
   IUnknown *FirstObstacle; // eax
   IUnknown *v5; // esi
 
-  FirstObstacle = (IUnknown *)TrajectoryHelper::FindFirstObstacle(aP0, a1, *(unsigned int *)(arg0 + 160), a3); /*0x4cc322*/
+  FirstObstacle = (IUnknown *)((TrajectoryHelper *)(aP0))->FindFirstObstacle(a1, *(unsigned int *)(arg0 + 160), a3); /*0x4cc322*/
   v5 = FirstObstacle; /*0x4cc327*/
   if ( FirstObstacle /*0x4cc342*/
     && BuildingPlacement::ValidateType(FirstObstacle, (AbstractClass *)0xFFFFFFFF, (IUnknown *)0xFFFFFFFF)

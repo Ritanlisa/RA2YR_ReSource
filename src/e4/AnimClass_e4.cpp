@@ -112,7 +112,7 @@ void AnimClass::Destruct( void * a2)
   AudioFileClass::Release((unsigned int *)this + 109); /*0x422a4a*/
   *((unsigned int *)this + 51) = 0; /*0x422a52*/
   *((unsigned int *)this + 50) = 0; /*0x422a59*/
-  if ( AbstractClass::GetVtable3((AbstractClass *)((char *)this + 4)) == -2 ) /*0x422a67*/
+  if ( ((AbstractClass *)((AbstractClass *)((char *)this + 4)))->GetVtable3() == -2 ) /*0x422a67*/
   {
     v11 = (ObjectClass *)this; /*0x422a79*/
     v10 = (*(int (**)(char *, ObjectClass **))(*(unsigned int *)&HouseClass_Player.__pad_74[64] + 16))( /*0x422a7d*/

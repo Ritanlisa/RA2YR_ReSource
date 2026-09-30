@@ -182,16 +182,16 @@ void * * LoadingScreen::LoadSHPs()
     g_abs_B0FA68 = (char *)(LoadFileSHP(g_abs_844D14, (bool *)&g_abs_B0FCA5));
     g_abs_B0FAC8 = (char *)(LoadFileSHP(g_abs_844D04, (bool *)&g_abs_B0FCA1));
     SHP = (char *)(LoadFileSHP(g_abs_844D00, (bool *)&g_abs_B0FCA0));
-    v1 = g_abs_844D08; /*0x72fa9f*/
+    v1 = (unsigned int)(g_abs_844D08);
   }
   g_abs_B0FAD4 = (void **)(SHP);
   g_abs_B0FA50 = (void **)(LoadFileSHP(v1, (bool *)&g_abs_B0FCA2));
   g_abs_B0F9EC = (void **)(LoadFileSHP(g_abs_844CFC, (bool *)&g_abs_B0FC9F));
-  g_abs_B0FB08 = LoadFileSHP(g_abs_844D0C, (bool *)&g_abs_B0FCA3); /*0x72fae9*/
-  g_abs_B0F9E0 = LoadFileSHP(g_abs_844D10, (bool *)&g_abs_B0FCA4); /*0x72fafe*/
-  g_abs_B0FA70 = LoadFileSHP(g_abs_844D18, (bool *)&g_abs_B0FCA6); /*0x72fb13*/
-  g_abs_B0FAFC = LoadFileSHP(g_abs_844D1C, (bool *)&g_abs_B0FCA7); /*0x72fb28*/
-  g_abs_B0FA00 = LoadFileSHP(g_abs_844D20, (bool *)&g_abs_B0FCA8); /*0x72fb3d*/
+  g_abs_B0FB08 = (void **)(LoadFileSHP(g_abs_844D0C, (bool *)&g_abs_B0FCA3));
+  g_abs_B0F9E0 = (void **)(LoadFileSHP(g_abs_844D10, (bool *)&g_abs_B0FCA4));
+  g_abs_B0FA70 = (void **)(LoadFileSHP(g_abs_844D18, (bool *)&g_abs_B0FCA6));
+  g_abs_B0FAFC = (void **)(LoadFileSHP(g_abs_844D1C, (bool *)&g_abs_B0FCA7));
+  g_abs_B0FA00 = (void **)(LoadFileSHP(g_abs_844D20, (bool *)&g_abs_B0FCA8));
   g_abs_B0FA8C = LoadFileSHP(g_abs_844D24, (bool *)&g_abs_B0FCA9); /*0x72fb52*/
   g_abs_B0FA48 = LoadFileSHP(g_abs_844D28, (bool *)&g_abs_B0FCAA); /*0x72fb67*/
   g_abs_B0FA3C = LoadFileSHP(g_abs_844D2C, (bool *)&g_abs_B0FCAB); /*0x72fb7c*/
@@ -257,10 +257,10 @@ char LoadingScreen::Init()
 
   char result; // al
 
-  result = g_abs_B0FCD9; /*0x72cf40*/
+  result = (char)(g_abs_B0FCD9);
   if ( !g_abs_B0FCD9 ) /*0x72cf47*/
   {
-    if ( g_abs_8A00A4 == 800 ) /*0x72cf53*/
+    if ( g_abs_8A00A4 == (unsigned char [1])((unsigned char [1]))(800) ) /*0x72cf53*/
       g_abs_B0FA18 = LoadFileSHP(g_abs_844D6C, (bool *)&g_abs_B0FCD8); /*0x72cf65*/
     result = LoadPaletteSimple(g_abs_844D70, &g_abs_B0FCDC, &g_abs_B0FCE0); /*0x72cf7a*/
     g_abs_B0FCD9 = 1; /*0x72cf7f*/
@@ -276,7 +276,7 @@ char LoadingScreen::FreeResources3()
 
   char result; // al
 
-  result = g_abs_B0FBE0; /*0x72def0*/
+  result = (char)(g_abs_B0FBE0);
   if ( g_abs_B0FBE0 ) /*0x72defa*/
   {
     g_abs_B0FBE0 = 0; /*0x72df00*/

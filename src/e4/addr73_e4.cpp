@@ -267,12 +267,12 @@ int E4Recv_731130::sub_731130()
   int v3; // esi
   char *v5; // ecx
 
-  v1 = (int)(g_abs_A8EC88 - 1);
+  v1 = (unsigned char *)((int)(g_abs_A8EC88 - 1));
   if ( g_abs_A8EC88 - 1 < 0 ) /*0x73113f*/
     return 1; /*0x7311a6*/
   while ( 1 )
   {
-    v3 = *((unsigned int *)g_abs_A8EC7C + v1); /*0x731147*/
+    v3 = *((unsigned int *)(unsigned int)(g_abs_A8EC7C)+ v1); /*0x731147*/
     if ( v3 && !*(unsigned char *)(v3 + 129) )
     {
       if ( g_abs_A8B238[0] ? House::IsHumanPlayer(*(void **)(v3 + 540)) : *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493) )

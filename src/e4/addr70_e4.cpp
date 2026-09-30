@@ -29,6 +29,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/TeamTypeClass_28_e4.hpp"
 
 // 0x7049C0
 namespace gamemd {
@@ -48,7 +49,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   int *v17; // eax
   int *v18; // eax
   int v19; // eax
-  int v20; // esi
+  int * v20;
   unsigned int *v21; // eax
   int *v22; // eax
   int *v23; // eax
@@ -63,8 +64,8 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   int v32; // [esp+38h] [ebp-74h]
   int v33[2]; // [esp+3Ch] [ebp-70h] BYREF
   int v34[2]; // [esp+44h] [ebp-68h] BYREF
-  int * v35;
-  unsigned int v36;
+  unsigned int v35;
+  int * v36;
   unsigned int v37[2]; // [esp+54h] [ebp-58h] BYREF
   int v38[4]; // [esp+5Ch] [ebp-50h] BYREF
   int * v39;
@@ -145,7 +146,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v19);
   }
   v20 = (unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green));
-  v35 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))))))))));
+  v35 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))))))))));
   v36 = (unsigned int)((int *)((unsigned int)((int *)(-2))));
   v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
@@ -220,7 +221,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   void * v20;
   int v21; // [esp+18h] [ebp-88h] BYREF
   int v22; // [esp+1Ch] [ebp-84h]
-  unsigned int v23;
+  void * v23;
   int v24; // [esp+24h] [ebp-7Ch] BYREF
   int v25; // [esp+28h] [ebp-78h]
   int16_t v26; // [esp+2Ch] [ebp-74h] BYREF
@@ -238,9 +239,9 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   int v38; // [esp+58h] [ebp-48h] BYREF
   int v39; // [esp+5Ch] [ebp-44h]
   int v40; // [esp+60h] [ebp-40h]
-  void * v41;
+  unsigned int v41;
   unsigned int v42;
-  unsigned int v43;
+  void * v43;
   int v44[4]; // [esp+70h] [ebp-30h] BYREF
   unsigned int v45[4]; // [esp+80h] [ebp-20h] BYREF
   unsigned int v46[4]; // [esp+90h] [ebp-10h] BYREF
@@ -341,7 +342,7 @@ namespace gamemd {
 void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, const void * a5, int a6, int * a7, unsigned int a8, int a9, int a10, int a11)
 {
   int v12; // eax
-  unsigned int *v13; // esi
+  unsigned int v13;
   unsigned int *v14; // edi
   unsigned int v15; // ebx
   float *v16; // eax
@@ -353,7 +354,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   IPersistStream v22; // esi
   int *v23; // eax
   BuildingClass * v24;
-  BuildingClass * v25;
+  unsigned int v25;
   BuildingClass * v26;
   BuildingClass * v27;
   int v28; // eax

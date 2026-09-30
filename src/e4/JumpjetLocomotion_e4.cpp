@@ -789,7 +789,7 @@ LABEL_107:
       v88 = *(MouseClass **)((char *)this + 12);
       aP3_156 = *(unsigned int *)&v88-((unsigned int *)(>__pad_74))[40];
       aP3_160 = *(unsigned int *)&v88-((unsigned int *)(>__pad_74))[44];
-      aP3_164 = *(unsigned int *)&v88->__pad_74[48];
+      aP3_164 = *(unsigned int *)&v88-((unsigned int *)(>__pad_74))[48];
       (*(void (**)(MouseClass *, int *))(v88->field_0 + 244))(v88, &aP3_156);
     }
     v89 = (IUnknown *)aP3_48;
@@ -812,8 +812,8 @@ LABEL_107:
             {
               v93 = *(MouseClass **)((char *)this + 12);
               v94 = (unsigned int *)((char *)this + 64);
-              v95 = *(unsigned int *)&v93->__pad_1D4[936];
-              IDA_LODWORD(aP3_60) = *(unsigned int *)&v93->__pad_1D4[932];
+              v95 = *(unsigned int *)&v93-((unsigned int *)(>__pad_1D4))[936];
+              IDA_LODWORD(aP3_60) = *(unsigned int *)&v93-((unsigned int *)(>__pad_1D4))[932];
               v96 = aP3_48 & 7;
               IDA_HIDWORD(aP3_60) = v95;
               v97 = *(unsigned int *)&g_abs_89F690 + *((unsigned int *)this + 16);

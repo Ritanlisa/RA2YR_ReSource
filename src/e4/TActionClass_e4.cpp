@@ -226,7 +226,7 @@ int TActionClass::executeRepairAction(int a2)
   result = a2; /*0x577c90*/
   if ( a2 ) /*0x577c99*/
     *(unsigned char *)(*(unsigned int *)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(a2 + 48)] + 577) = 0; /*0x577ca7*/
-  if ( (void *)a2 != HouseClass_Player ) /*0x577cb4*/
+  if ( (void *)a2 != (void *)(HouseClass_Player) ) /*0x577cb4*/
   {
     if ( a2 ) /*0x577cb8*/
       return result; /*0x577cb8*/
@@ -234,8 +234,8 @@ int TActionClass::executeRepairAction(int a2)
   }
   if ( !a2 ) /*0x577cc2*/
 LABEL_7:
-    Debug::Log(); /*0x577cc4*/
-  HouseClass::ResetObjectOrders(0, 0); /*0x577cd1*/
+    this->Debug::Log(); /*0x577cc4*/
+  ((HouseClass *)(0))->ResetObjectOrders(0); /*0x577cd1*/
   v4 = *((unsigned int *)this + 61); /*0x577ce0*/
   *((unsigned int *)this + 67) = 1; /*0x577ce6*/
   *((unsigned int *)this + 68) = v4; /*0x577cf0*/
@@ -252,7 +252,7 @@ LABEL_7:
       i[80] = v6; /*0x577d47*/
     }
   }
-  Radar::UpdateReveal(0, 0); /*0x577d63*/
+  ((Radar *)(0))->UpdateReveal(0); /*0x577d63*/
   *((unsigned char *)HouseClass_Player + 576) = 0; /*0x577d72*/
   FogOfWar::Render((int **)&g_abs_87F7E8); /*0x577d79*/
   return (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 224))(this, 2); /*0x577d88*/

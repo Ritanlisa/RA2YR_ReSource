@@ -162,9 +162,9 @@ LABEL_26:
     v16 = aP1c; /*0x655f7a*/
   }
   if ( v16 ) /*0x655f7e*/
-    v17 = ((uint8_t)aP1c[1].__pad_16BB[2946] >> g_abs_89F690 << g_abs_89F690) /*0x655fd2*/
-        | ((uint8_t)aP1c[1].__pad_16BB[2947] >> g_abs_89F690 << g_abs_89F690)
-        | ((uint8_t)v16[1].__pad_16BB[2948] >> g_abs_89F690 << g_abs_89F690);
+    v17 = ((uint8_t)aP1c[((unsigned int *)(1].__pad_16BB))[2946] >> g_abs_89F690 << g_abs_89F690) /*0x655fd2*/
+        | ((uint8_t)aP1c[((unsigned int *)(1].__pad_16BB))[2947] >> g_abs_89F690 << g_abs_89F690)
+        | ((uint8_t)v16[((unsigned int *)(1].__pad_16BB))[2948] >> g_abs_89F690 << g_abs_89F690);
   else
     v17 = *(unsigned int *)(FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1) + 816); /*0x655fe5*/
   v18 = ((unsigned int *)(v13))[93]; /*0x655feb*/
@@ -174,7 +174,7 @@ LABEL_26:
 LABEL_37:
     if ( v19 <= 0 /*0x65603a*/
       || (v19 - 1) / *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 136) % 2 != 1
-      || ((unsigned int *)(v13))[135] != (void *)HouseClass_Player )
+      || ((unsigned int *)(v13))[135] != (unsigned int)((void *))HouseClass_Player )
     {
       goto LABEL_41; /*0x65603a*/
     }

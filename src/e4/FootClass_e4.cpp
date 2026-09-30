@@ -24,6 +24,7 @@
 #include "e4/classes/FogOfWar_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/GameOption_e4.hpp"
 
 // 0x4D3590
 namespace gamemd {
@@ -68,7 +69,7 @@ AbstractClass * FootClass::Destruct()
   if ( *((unsigned short *)this + 690) != *(unsigned short *)&g_abs_89F690 /*0x4d3653*/
     || *((unsigned short *)this + 691) != *(unsigned short *)&g_abs_89F690 )
   {
-    v6 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)this + 690); /*0x4d365b*/
+    v6 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)this + 690));
     if ( (void *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
@@ -173,7 +174,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
   int v31; // [esp+70h] [ebp-Ch] BYREF
   int v32; // [esp+78h] [ebp-4h]
 v6 = (unsigned int *)(ppv);
-  v30 = a1; /*0x71000d*/
+  v30 = (int *)(a1);
   if ( ppv )
   {
     v7 = (unsigned int *)((unsigned int *)(ppv))[180]; /*0x710017*/
@@ -276,7 +277,7 @@ v6 = (unsigned int *)(ppv);
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
         (*(void (**)(int, unsigned int))(*(unsigned int *)v28 + 12))(v28, *v10); /*0x7102d8*/
         v22 = *v10; /*0x7102db*/
-        if ( (unsigned int *)*v10 != ppv ) /*0x7102e3*/
+        if ( (unsigned int *)*v10 != (unsigned int *)((unsigned int *))(ppv) ) /*0x7102e3*/
         {
           *v10 = ppv; /*0x7102e7*/
           SuperClass::SetFieldX(v6 + 413); /*0x7102e9*/

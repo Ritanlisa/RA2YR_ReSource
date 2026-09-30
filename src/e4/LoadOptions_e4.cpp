@@ -21,14 +21,14 @@ namespace gamemd {
 char LoadOptions::AddRef(LPCCH lpMultiByteStr)
 {
 
-  int v1; // esi
+  wchar_t * v1;
   wchar_t *StringCSF; // eax
-  HWND MessageBox; // edi
+  void * MessageBox;
   char Saved; // bl
 
-  v1 = (wchar_t *)((*(int (**)(int))(*(unsigned int *)g_abs_887640 + 40))(g_abs_887640));
+  v1 = (wchar_t *)((int)((wchar_t *)((*(int (**)(int))(*(unsigned int *)g_abs_887640 + 40))(g_abs_887640))));
   StringCSF = (wchar_t *)(GetStringCSF(aTxtLoading, 0, g_abs_829F5C, 1052));
-  MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
+  MessageBox = (HWND)(CreateMessageBox((LPARAM)StringCSF, 0, 0));
   (*(void (**)(int))(*(unsigned int *)g_abs_887640 + 12))(g_abs_887640); /*0x559d9b*/
   if ( MessageBox ) /*0x559da0*/
     Dialog::Show(MessageBox); /*0x559da4*/
@@ -36,9 +36,9 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   g_abs_A8E378 = 0; /*0x559db5*/
   WTFMode::Shutdown(g_abs_A8B238); /*0x559dbc*/
   Saved = Game::LoadSaved(lpMultiByteStr); /*0x559dd0*/
-  while ( (*(int (**)(int))(*(unsigned int *)g_abs_887640 + 40))(g_abs_887640) < v1 ) /*0x559dd9*/
+  while ( (*(int (**)(int))(*(unsigned int *)g_abs_887640 + 40))(g_abs_887640) < (int)((int))(v1) ) /*0x559dd9*/
     (*(void (**)(int))(*(unsigned int *)g_abs_887640 + 16))(g_abs_887640); /*0x559de3*/
-  while ( (*(int (**)(int))(*(unsigned int *)g_abs_887640 + 40))(g_abs_887640) > v1 ) /*0x559e02*/
+  while ( (*(int (**)(int))(*(unsigned int *)g_abs_887640 + 40))(g_abs_887640) > (int)((int))(v1) ) /*0x559e02*/
     (*(void (**)(int))(*(unsigned int *)g_abs_887640 + 12))(g_abs_887640); /*0x559e0c*/
   if ( MessageBox ) /*0x559e20*/
     Dialog::Destroy(MessageBox); /*0x559e24*/

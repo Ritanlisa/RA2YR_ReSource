@@ -888,7 +888,7 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4cab53*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_TechnoTypeClass_const; /*0x4cab56*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4cab60*/
   {
@@ -897,7 +897,7 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
   }
   *((unsigned char *)Block + 13) = 0; /*0x4cab7b*/
   *(Block + 2) = 0; /*0x4cab81*/
-  if ( (Block & 1) != 0 ) /*0x4cab88*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4cab88*/
     RA2_OPDEL(Block); /*0x4cab8b*/
   return (VectorClass *)Block; /*0x4cab95*/
 

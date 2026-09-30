@@ -252,7 +252,7 @@ LABEL_40: v23 = (int)(*(unsigned int *)(a2 + 4));
           v27[0] = 0; /*0x48c2b0*/
         this->Debug::Log(); /*0x48c2c6*/
         v24 = g_abs_A8EA0C; /*0x48c2cb*/
-        IDA_LOBYTE(v24) = this == (unsigned int *)g_abs_A8EA0C; /*0x48c2d7*/
+        IDA_LOBYTE(v24) = this == (gamemd::ConnectionClass *)((unsigned int *))g_abs_A8EA0C; /*0x48c2d7*/
         (*(void (**)(unsigned int *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this + 144))( /*0x48c2ea*/
           this,
           &v25,
@@ -426,8 +426,8 @@ int ConnectionClass::serviceSendQueue()
         if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) ) /*0x48c40d*/
         {
           v6 = (int)(g_abs_887340);
-          if ( g_abs_887338 != -1 ) /*0x48c422*/
-            v6 += Timer::GetTicks() - g_abs_887338; /*0x48c434*/
+          if ( g_abs_887338 != (unsigned char [1])(-1) ) /*0x48c422*/
+            v6 += this->Timer::GetTicks() - g_abs_887338; /*0x48c434*/
           ConnectionClass::initQueue(v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
         }
         PacketQueue::ExtractEntry(0, 0, v2--, 0, 0, 0); /*0x48c452*/
@@ -447,14 +447,14 @@ int ConnectionClass::serviceSendQueue()
     if ( (*(unsigned char *)v8 & 2) == 0 ) /*0x48c483*/
     {
       v9 = (int)(g_abs_887340);
-      if ( g_abs_887338 != -1 ) /*0x48c497*/
-        v9 += Timer::GetTicks() - g_abs_887338; /*0x48c4a9*/
+      if ( g_abs_887338 != (unsigned char [1])(-1) ) /*0x48c497*/
+        v9 += this->Timer::GetTicks() - g_abs_887338; /*0x48c4a9*/
       v10 = *(unsigned int *)(v8 + 8); /*0x48c4ab*/
       if ( v9 - v10 > *((char *)this + 10) ) /*0x48c4b7*/
       {
         v11 = (int)(g_abs_A8EA0C);
         IDA_LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
-        IDA_LOBYTE(v11) = this == (unsigned int *)g_abs_A8EA0C; /*0x48c4cb*/
+        IDA_LOBYTE(v11) = this == (gamemd::ConnectionClass *)((unsigned int *))g_abs_A8EA0C; /*0x48c4cb*/
         (*(void (**)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this + 36))( /*0x48c4e2*/
           this,
           *(unsigned int *)(v8 + 20),

@@ -41,7 +41,7 @@ int DialogQueue::RemoveEntry()
 
   v2 = this; /*0x5d4ed7*/
   result = (*(int (**)(int *, void **))(g_abs_ABFC90 + 16))(&g_abs_ABFC90, &v2); /*0x5d4ee5*/
-  if ( result != -1 && result < (int)((int))((int))(g_abs_ABFCA0) && (int)(result) < --g_abs_ABFCA0 ) /*0x5d4f00*/
+  if ( result != -1 && result < (int)((int))((int))(g_abs_ABFCA0) && (int)((int))(result) < --g_abs_ABFCA0 ) /*0x5d4f00*/
   {
     do /*0x5d4f18*/
     {

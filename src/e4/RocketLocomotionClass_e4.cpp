@@ -64,9 +64,9 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x663426*/
     {
-      *a1 = (wchar_t *)((int)&vt_LocomotionClass);
-      a1[1] = (wchar_t *)((int)&vt_LocomotionClass);
-      v3 = (wchar_t *)(g_abs_A8ED84);
+      *a1 = (int)((wchar_t *)((int)&vt_LocomotionClass));
+      a1[1] = (int)((wchar_t *)((int)&vt_LocomotionClass));
+      v3 = (unsigned int)((wchar_t *)(g_abs_A8ED84));
       a1[15] = 0; /*0x66343b*/
       a1[13] = (int)v3; /*0x663442*/
       *a1 = (int)&vt_RocketLocomotionClass; /*0x663445*/

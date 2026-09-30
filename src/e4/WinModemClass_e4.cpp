@@ -221,7 +221,7 @@ LABEL_2:
     WinModemClass_field_0x2C = (int (*)(void))v5[1].WinModemClass_field_0x2C; /*0x774d63*/
     if ( WinModemClass_field_0x2C ) /*0x774d68*/
     {
-      result = (gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((int)((gamemd::WinModemClass **)(WinModemClass_field_0x2C())))));
+      result = (gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((int)((gamemd::WinModemClass **)(WinModemClass_field_0x2C())))))))));
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
@@ -468,7 +468,7 @@ LABEL_21:
       && Str[2] >= 48
       && Str[2] <= 57 )
     {
-      v24 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((size_t)((gamemd::AbstractClass **)(Count)))));
+      v24 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((size_t)((gamemd::AbstractClass **)(Count)))))))));
       if ( Count >= 80 ) /*0x775456*/
         v24 = 80; /*0x775458*/
       strncpy(Destination, Str, v24); /*0x77546b*/

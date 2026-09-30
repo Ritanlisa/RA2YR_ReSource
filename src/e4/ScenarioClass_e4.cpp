@@ -85,7 +85,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
         v4 = &dword_ABE328 - 1104; /*0x58bb82*/
       }
     }
-    v1[1099] = dword_ABDFD4; /*0x58bbda*/
+    ((unsigned int *)(v1))[1099] = dword_ABDFD4; /*0x58bbda*/
     *((unsigned int *)g_abs_A8B230 + 1100) = dword_ABDFD0; /*0x58bbed*/
     *((unsigned int *)g_abs_A8B230 + 1101) = dword_ABEC90; /*0x58bbfe*/
     result = (void *)dword_ABECD0; /*0x58bc0a*/

@@ -496,7 +496,7 @@ void GenerateTerrainHeightMapInternal()
             *((unsigned char *)dword_ABED10 + 80 * (int16_t)v16 + 80 * g_MapCellWidth * IDA_SHIWORD(v16) + 69) = 1; /*0x5a3503*/
             goto LABEL_24; /*0x5a3508*/
           }
-          v2 = dword_ABED04; /*0x5a349f*/
+          v2 = (unsigned int *)(dword_ABED04);
         }
         if ( ++v3 >= 8 ) /*0x5a34a9*/
           goto LABEL_24; /*0x5a34a9*/

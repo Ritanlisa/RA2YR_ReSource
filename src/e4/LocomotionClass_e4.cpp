@@ -62,22 +62,22 @@ namespace gamemd {
 void * LocomotionClass::UpdateAll()
 {
 
-  unsigned int result;
+  wchar_t * result;
   int i; // esi
   unsigned int *v2; // ecx
 
-  result = (int)((wchar_t *)g_abs_8A3880);
+  result = (wchar_t *)((int)((wchar_t *)g_abs_8A3880));
   for ( i = g_abs_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
-    v2 = (wchar_t *)((unsigned int *)*((unsigned int *)g_abs_8A3874 + i));
-    result = (wchar_t *)(g_abs_A8ED84);
+    v2 = (unsigned int *)((wchar_t *)((unsigned int *)*((unsigned int *)g_abs_8A3874 + i)));
+    result = (wchar_t *)((unsigned int)((wchar_t *)(g_abs_A8ED84)));
     if ( (int)g_abs_A8ED84 >= v2[11] + v2[12] ) /*0x4c54c5*/
     {
       if ( v2 ) /*0x4c54c9*/
         result = (wchar_t *)(*(int (**)(unsigned int *, int))(*v2 + 32))(v2, 1); /*0x4c54cf*/
     }
   }
-  return result; /*0x4c54d5*/
+  return (void *)(result);
 
 }
 } // namespace gamemd

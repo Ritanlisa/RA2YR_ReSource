@@ -138,10 +138,10 @@ void TacticalMap::Redraw()
   v7 = v3 == 2; /*0x4f44be*/
   if ( !(uint8_t)UI_Helper() ) /*0x4f44c2*/
   {
-    TacticalMap::Render((int)g_abs_887324, g_abs_88731C, v6, 0); /*0x4f44df*/
-    TacticalMap::Render((int)g_abs_887324, g_abs_88731C, v6, 1); /*0x4f44f4*/
+    ((TacticalMap *)((int)g_abs_887324))->Render(g_abs_88731C, v6, 0); /*0x4f44df*/
+    ((TacticalMap *)((int)g_abs_887324))->Render(g_abs_88731C, v6, 1); /*0x4f44f4*/
     (*(void (**)(unsigned int *, bool))(*(unsigned int *)this + 256))(this, v7); /*0x4f4502*/
-    TacticalMap::Render((int)g_abs_887324, g_abs_88731C, v6, 2); /*0x4f4515*/
+    ((TacticalMap *)((int)g_abs_887324))->Render(g_abs_88731C, v6, 2); /*0x4f4515*/
   }
   if ( g_abs_B0B519 && !g_abs_A8ED6B ) /*0x4f452b*/
   {

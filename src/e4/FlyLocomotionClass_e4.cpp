@@ -59,7 +59,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   int v2; // ecx
   int i; // edi
   int v4; // esi
-  int v5; // eax
+  unsigned int * v5;
   unsigned int *v6; // ecx
   int v7; // eax
   unsigned int *v8; // esi
@@ -133,7 +133,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         {
           continue; /*0x4d006e*/
         }
-        v5 = (unsigned int *)(v14++);
+        v5 = (int)((unsigned int *)(v14++));
         v6 = (unsigned int *)(Block);
       }
       else
@@ -145,7 +145,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         {
           continue; /*0x4d00b0*/
         }
-        v5 = (unsigned int *)(v20++);
+        v5 = (int)((unsigned int *)(v20++));
         v6 = (unsigned int *)(v17);
       }
       v6[v5] = v4; /*0x4d00c1*/

@@ -16,6 +16,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/HotkeyOptions_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x517070
 namespace gamemd {

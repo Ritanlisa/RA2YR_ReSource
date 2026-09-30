@@ -16,6 +16,10 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x6A0310
 namespace gamemd {
@@ -26,7 +30,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   int v5; // esi
   unsigned int *v6; // edi
   int v7; // ecx
-  int64_t v8; // kr00_8
+  unsigned int * v8;
   unsigned int *v9; // eax
   int v11; // [esp-4h] [ebp-20h]
   unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
@@ -37,11 +41,11 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   v4 = g_abs_B077F8; /*0x6a032d*/
   if ( a3 != (unsigned int)((unsigned int))((unsigned int))(g_abs_B077F8) || a4 != g_abs_B077FC ) /*0x6a0340*/
   {
-    v5 = a1 - 4; /*0x6a0358*/
+    v5 = (unsigned int)(a1 - 4);
     v13 = a4; /*0x6a035b*/
     v6 = (unsigned int *)(a1 - 4 + 64); /*0x6a0363*/
     v12 = a3; /*0x6a036a*/
-    if ( *(unsigned int)((unsigned int))((unsigned int))(v6) != g_abs_B077F8 || __PAIR64__(*(unsigned int *)(a1 - 4 + 72), *(unsigned int *)(a1 + 64)) != g_abs_B077FC ) /*0x6a0375*/
+    if ( *(unsigned int *)((unsigned int))((unsigned int))((unsigned int))(v6) != g_abs_B077F8 || __PAIR64__(*(unsigned int *)(a1 - 4 + 72), *(unsigned int *)(a1 + 64)) != g_abs_B077FC ) /*0x6a0375*/
     {
       *v6 = (unsigned int)((int)(g_abs_B077F8));
       *(unsigned int *)(a1 + 64) = g_abs_B077FC; /*0x6a038d*/
@@ -53,7 +57,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( __PAIR64__(a4, a3) != __PAIR64__(g_abs_B077FC, v4) /*0x6a03be*/
       || (IDA_LOBYTE(v4) = BYTE4(g_abs_B077FC), IDA_HIDWORD(a4) != IDA_HIDWORD(g_abs_B077FC)) )
     {
-      v8 = (unsigned int *)(v13);
+      v8 = (int64_t)((unsigned int *)(v13));
       *(unsigned char *)(v5 + 99) = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)(a1 + 64) = v8; /*0x6a03d0*/

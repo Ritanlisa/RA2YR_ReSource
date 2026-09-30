@@ -45,8 +45,9 @@ namespace gamemd {
 void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
     unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
-    unsigned int v6 = 0;  /* G37 hoist */
+    double (__cdecl *)(...) v6 = 0;
+    double (__cdecl *)(...) v6 = 0;
+    double (__cdecl *)(...) v6 = 0;
     double (__cdecl *)(...) v6 = 0;
     double (__cdecl *)(...) v6 = 0;
     double (__cdecl *)(...) v6 = 0;

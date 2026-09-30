@@ -45,7 +45,7 @@ ControlClass GadgetClass::Dtor()
   int v1; // eax
   int v2; // eax
 
-  *this = (int)(&vt_GadgetClass);
+  *(unsigned int *)this = (int)(&vt_GadgetClass);
   v1 = (int)(g_abs_8B3E90);
   if ( this == (gamemd::GadgetClass *)((gamemd::GadgetClass *))((gamemd::GadgetClass *))((unsigned int *))g_abs_8B3E90 ) /*0x4e139f*/
   {
@@ -296,7 +296,7 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
     if ( *(unsigned short *)String ) /*0x623583*/
     {
       v3 = (unsigned int)(wcslen(String));
-      v4 = (unsigned int)((void *)RA2_OPNEW(2 * v3 + 2));
+      v4 = (void *)((unsigned int)((void *)RA2_OPNEW(2 * v3 + 2)));
       *((unsigned int *)this + 10) = v4; /*0x62359b*/
       wcscpy((void *)v4, String); /*0x62359e*/
     }

@@ -99,13 +99,13 @@ void Lobby::UpdatePlayerLabels()
   int v17; // ebx
   int v18; // eax
   wchar_t *v19; // eax
-  LRESULT v20; // eax
+  wchar_t * v20;
   wchar_t *v21; // eax
-  LRESULT v22; // eax
+  wchar_t * v22;
   wchar_t *v23; // eax
-  LRESULT v24; // eax
+  wchar_t * v24;
   wchar_t *v25; // eax
-  LRESULT v26; // eax
+  wchar_t * v26;
   wchar_t *v27; // eax
   LRESULT v28; // eax
   wchar_t *v29; // eax
@@ -203,7 +203,7 @@ LABEL_26:
       {
         v5 = (int)(*(&g_abs_A8DA90 + v36));
         if ( v5 != (int)((int))((int))(g_abs_AC119C) /*0x5eb1d2*/
-          && (!v5 || v5 != (int)((int))((int))(g_abs_AC11A4) && v5 != (int)((int))(g_abs_AC11A8) && v5 != g_abs_AC11AC) )
+          && (!v5 || v5 != (int)((int))((int))(g_abs_AC11A4) && v5 != (int)((int))((int))(g_abs_AC11A8) && v5 != g_abs_AC11AC) )
         {
           v34 = 1; /*0x5eb1d4*/
         }
@@ -339,23 +339,23 @@ LABEL_79:
           if ( v36 < v17 ) /*0x5eb4ac*/
           {
 LABEL_111: v19 = (wchar_t *)(GetStringCSF(g_abs_831C80, 0, g_abs_8317D8, 5479));
-            v20 = (wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v19));
+            v20 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v19))));
             SendMessageA(DlgItem, 0x151u, v20, g_abs_AC119C); /*0x5eb4dd*/
           }
         }
-        if ( v36 == g_abs_8316A4 ) /*0x5eb4e5*/
+        if ( v36 == (int)(g_abs_8316A4) ) /*0x5eb4e5*/
         {
           v21 = (wchar_t *)(GetStringCSF(g_abs_831C2C, 0, g_abs_8317D8, 5489));
-          v22 = (wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v21));
+          v22 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v21))));
           SendMessageA(DlgItem, 0x151u, v22, g_abs_AC11B4); /*0x5eb516*/
         }
         v23 = (wchar_t *)(GetStringCSF(g_abs_831C74, 0, g_abs_8317D8, 5496));
-        v24 = (wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v23));
+        v24 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v23))));
         SendMessageA(DlgItem, 0x151u, v24, g_abs_AC11A0); /*0x5eb547*/
         if ( v33 && !v34 ) /*0x5eb55b*/
         {
           v25 = (wchar_t *)(GetStringCSF(g_abs_831C68, 0, g_abs_8317D8, 5504));
-          v26 = (wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25));
+          v26 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25))));
           SendMessageA(DlgItem, 0x151u, v26, g_abs_AC11A4); /*0x5eb590*/
           v27 = GetStringCSF(g_abs_831C58, 0, g_abs_8317D8, 5510); /*0x5eb5a3*/
           v28 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v27); /*0x5eb5b1*/
@@ -408,7 +408,7 @@ void Lobby::SetupPlayerWidgets(HWND hDlg)
   HWND hWnd; // [esp+20h] [ebp-4h]
 
   v1 = (INIClass *)g_abs_8316A4; /*0x5eba04*/
-  if ( g_abs_8316A4 >= 0 ) /*0x5eba0f*/
+  if ( g_abs_8316A4 >= (unsigned char [1])(0) ) /*0x5eba0f*/
   {
     if ( !g_abs_8316A4 ) /*0x5eba15*/
       v1 = (INIClass *)g_abs_A8BB0C; /*0x5eba17*/
@@ -463,17 +463,17 @@ void Lobby::SetupPlayerWidgets(HWND hDlg)
         v4 = 1041; /*0x5eba31*/
       }
       nIDDlgItem = (int)(GetResourceIDHardcodedCSF(v1));
-      ResourceIDCSF = (int)((HWND)GetResourceIDCSF(v1));
-      ResourceID2CSF = (int)((HWND)GetResourceID2CSF(v1));
-      ResourceID3CSF = GetResourceID3CSF(v1); /*0x5ebadf*/
-      ResourceID4CSF = GetResourceID4CSF(v1); /*0x5ebae3*/
-      v6 = *(&g_abs_A8DA90 + (unsigned int)v1); /*0x5ebae8*/
+      ResourceIDCSF = (HWND)((int)((HWND)GetResourceIDCSF(v1)));
+      ResourceID2CSF = (HWND)((int)((HWND)GetResourceID2CSF(v1)));
+      ResourceID3CSF = (int)(GetResourceID3CSF(v1));
+      ResourceID4CSF = (int)(GetResourceID4CSF(v1));
+      v6 = (int)(*(&g_abs_A8DA90 + (unsigned int)v1));
       v18 = ResourceID4CSF; /*0x5ebaef*/
-      v10 = v6 == g_abs_AC11B4 /*0x5ebb24*/
+      v10 = v6 == (int)(g_abs_AC11B4) /*0x5ebb24*/
          || (int)((int))((int))(v6)
-         && v6 != g_abs_AC119C
-         && v6 != g_abs_AC11A0
-         && (wchar_t *)v6 != g_abs_AC11B0
+         && v6 != (int)(g_abs_AC119C)
+         && v6 != (int)(g_abs_AC11A0)
+         && (wchar_t *)v6 != (wchar_t *)(g_abs_AC11B0)
          && *(unsigned int *)(v6 + 107) == -1;
       DlgItem = GetDlgItem(hDlg, v3); /*0x5ebb33*/
       v8 = GetDlgItem(hDlg, v4); /*0x5ebb39*/
@@ -495,7 +495,7 @@ void Lobby::SetupPlayerWidgets(HWND hDlg)
       {
         ShowWindow(v12, 5); /*0x5ebb9f*/
         ShowWindow(nIDDlgItema, 5); /*0x5ebba8*/
-        if ( g_abs_A8B238[0] != 4 || !Network::IsLobbyFeature() ) /*0x5ebbb3*/
+        if ( g_abs_A8B238[0] != 4 || !this->Network::IsLobbyFeature() ) /*0x5ebbb3*/
         {
           ShowWindow(v9, 5); /*0x5ebbbf*/
           ShowWindow(v16, 5); /*0x5ebbc8*/
@@ -544,7 +544,7 @@ int Lobby::BuildPlayerList()
       String::Reassign((char **)&v6, v3); /*0x77dc1e*/
       DeleteAndZero(&v9); /*0x77dc27*/
     }
-    v4 = String::GetOrEmpty((char **)&v6); /*0x77dc35*/
+    v4 = ((String *)((char **)&v6))->GetOrEmpty(); /*0x77dc35*/
     strncat(Destination, v4, 0x100u); /*0x77dc40*/
     strncat(Destination, g_abs_817F70, 0x100u); /*0x77dc54*/
     DeleteAndZero(&v6); /*0x77dc60*/

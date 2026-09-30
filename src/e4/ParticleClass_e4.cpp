@@ -81,7 +81,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
           if ( v27 >= *a3 && v27 < *a3 + a3[2] ) /*0x62d086*/
           {
             v13 = a3[1]; /*0x62d08c*/
-            if ( v12 >= v13 && v12 < v13 + a3[3] ) /*0x62d09e*/
+            if ( v12 >= (unsigned char *)(v13) && v12 < (unsigned char *)((unsigned char *))(v13) + a3[3] ) /*0x62d09e*/
             {
               v14 = *(uint16_t *)StreamClass::ReadAndSeek( /*0x62d0b6*/
                                            (int)g_abs_87E8A4,

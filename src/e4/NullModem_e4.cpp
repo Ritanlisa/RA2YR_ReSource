@@ -20,7 +20,7 @@ char NullModem_TestConnection(void * a1)
   wchar_t * v1;
   wchar_t *StringCSF; // esi
   wchar_t *v3; // eax
-  HWND MessageBox; // eax
+  void * MessageBox;
   int v5; // esi
   int v6; // ebp
   int v7; // eax
@@ -35,7 +35,7 @@ char NullModem_TestConnection(void * a1)
   wchar_t *v17; // [esp-18h] [ebp-228h]
   wchar_t * v19;
   int v20; // [esp+Ch] [ebp-204h]
-  HWND hWnd; // [esp+10h] [ebp-200h]
+  void * hWnd;
   unsigned char v22[4]; // [esp+14h] [ebp-1FCh] BYREF
   int v23[62]; // [esp+18h] [ebp-1F8h] BYREF
   int16_t v24; // [esp+110h] [ebp-100h]
@@ -46,9 +46,9 @@ char NullModem_TestConnection(void * a1)
   v19 = (wchar_t *)((char)((wchar_t *)(1)));
   g_NetworkTestFlag = (int)((wchar_t *)(0));
   StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullDlg_CPP, 6489));
-  v3 = GetStringCSF(aTxtNullConnerr, 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f3*/
-  MessageBox = CreateMessageBox((LPARAM)v3, (LPARAM)StringCSF, (LONG)&g_NetworkTestFlag); /*0x5f03fc*/
-  hWnd = MessageBox; /*0x5f0403*/
+  v3 = (HWND)(GetStringCSF(aTxtNullConnerr, 0, g_Str_File_NullDlg_CPP, 6489));
+  MessageBox = (HWND)(CreateMessageBox((LPARAM)v3, (LPARAM)StringCSF, (LONG)&g_NetworkTestFlag));
+  hWnd = (HWND)(MessageBox);
   if ( !MessageBox ) /*0x5f0407*/
     return 0; /*0x5f067c*/
   Dialog::Show(MessageBox); /*0x5f040f*/

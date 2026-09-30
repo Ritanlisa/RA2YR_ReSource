@@ -48,17 +48,17 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_148()
 {
 
-  int v1; // eax
+  IUnknown * v1;
   unsigned int result;
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6728) << 8) + 128);
-  v4[0] = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6727) << 8) + 128);
-  v4[1] = (IUnknown *)(v1);
-  GroundHeight = 0; /*0x53738a*/
-  GroundHeight = Cell::GetGroundHeight(v4); /*0x53739d*/
+  v1 = (IUnknown *)((int)((IUnknown *)((*((int16_t *)g_abs_A8B230 + 6728) << 8) + 128)));
+  v4[0] = (int)((IUnknown *)((*((int16_t *)g_abs_A8B230 + 6727) << 8) + 128));
+  v4[1] = (int)((IUnknown *)(v1));
+  GroundHeight = (unsigned int)(0);
+  GroundHeight = (unsigned int)(Cell::GetGroundHeight(v4));
   Tactical::SetTacticalPosition((int)g_abs_887324, v4); /*0x5373a6*/
   result = g_abs_880990; /*0x5373ab*/
   if ( g_abs_880990 ) /*0x5373b2*/
@@ -75,17 +75,17 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_153()
 {
 
-  int v1; // eax
+  IUnknown * v1;
   unsigned int result;
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6730) << 8) + 128);
-  v4[0] = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6729) << 8) + 128);
-  v4[1] = (IUnknown *)(v1);
-  GroundHeight = 0; /*0x53747a*/
-  GroundHeight = Cell::GetGroundHeight(v4); /*0x53748d*/
+  v1 = (IUnknown *)((int)((IUnknown *)((*((int16_t *)g_abs_A8B230 + 6730) << 8) + 128)));
+  v4[0] = (int)((IUnknown *)((*((int16_t *)g_abs_A8B230 + 6729) << 8) + 128));
+  v4[1] = (int)((IUnknown *)(v1));
+  GroundHeight = (unsigned int)(0);
+  GroundHeight = (unsigned int)(Cell::GetGroundHeight(v4));
   Tactical::SetTacticalPosition((int)g_abs_887324, v4); /*0x537496*/
   result = g_abs_880990; /*0x53749b*/
   if ( g_abs_880990 ) /*0x5374a2*/
@@ -102,17 +102,17 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_158()
 {
 
-  int v1; // eax
+  IUnknown * v1;
   unsigned int result;
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6732) << 8) + 128);
-  v4[0] = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6731) << 8) + 128);
-  v4[1] = (IUnknown *)(v1);
-  GroundHeight = 0; /*0x53756a*/
-  GroundHeight = Cell::GetGroundHeight(v4); /*0x53757d*/
+  v1 = (IUnknown *)((int)((IUnknown *)((*((int16_t *)g_abs_A8B230 + 6732) << 8) + 128)));
+  v4[0] = (int)((IUnknown *)((*((int16_t *)g_abs_A8B230 + 6731) << 8) + 128));
+  v4[1] = (int)((IUnknown *)(v1));
+  GroundHeight = (unsigned int)(0);
+  GroundHeight = (unsigned int)(Cell::GetGroundHeight(v4));
   Tactical::SetTacticalPosition((int)g_abs_887324, v4); /*0x537586*/
   result = g_abs_880990; /*0x53758b*/
   if ( g_abs_880990 ) /*0x537592*/

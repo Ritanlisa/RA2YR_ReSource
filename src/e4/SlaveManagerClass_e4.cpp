@@ -242,7 +242,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
     }
     while ( v4 < (int)((int))((int))(g_abs_B0B600) ); /*0x6af53d*/
   }
-  v5 = (unsigned int)(*(void **)((char *)this + 60));
+  v5 = (void *)((unsigned int)(*(void **)((char *)this + 60)));
   *((unsigned int *)this + 14) = &vt_VectorClass_SlaveManagerClass_SlaveControl; /*0x6af542*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6af54c*/
   {

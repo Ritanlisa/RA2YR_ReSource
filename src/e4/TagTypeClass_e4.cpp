@@ -118,7 +118,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
     v5 = (unsigned int *)(g_abs_B0E724);
     do /*0x6e5d2e*/
     {
-      v6 = (unsigned int *)v5[v4]; /*0x6e5d0c*/
+      v6 = (unsigned int *)((unsigned int *)(v5))[v4]; /*0x6e5d0c*/
       if ( v6[9] == (unsigned int)(this) ) /*0x6e5d12*/
       {
         if ( v6 ) /*0x6e5d16*/
@@ -299,7 +299,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(ObjectClass * Source)
 LABEL_6:
     v3 = (unsigned int *)RA2_OPNEW(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
-      return (TriggerTypeClass *)TriggerTypeClass::Construct(v3, Source); /*0x727b11*/
+      return (TriggerTypeClass *)((TriggerTypeClass *)(v3))->Construct(Source); /*0x727b11*/
     return 0; /*0x727b05*/
   }
   while ( _strcmpi((const void *)(*((unsigned int *)unk_8B417C + v2) + 36), Source) ) /*0x727aea*/

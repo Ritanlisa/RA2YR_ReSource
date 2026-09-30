@@ -361,13 +361,13 @@ LABEL_85:
     v40 = (unsigned int)(CCFileClass::Construct(v69, g_Str_File_THEME_MIX));
     v41 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v40 + 20))(v40, 0));
     v69[0] = (unsigned int)(&vt_CCFileClass);
-    v71 = 0; /*0x530c97*/
+    v71 = (unsigned int)(0);
     Vector::Clear((int)v70); /*0x530c9b*/
     v69[0] = &off_7E1668; /*0x530ca4*/
-    BufferIOFileClass::Dtor(v69); /*0x530ca8*/
+    ((BufferIOFileClass *)(v69))->Dtor(); /*0x530ca8*/
     if ( !v41 ) /*0x530caf*/
       goto LABEL_100; /*0x530caf*/
-    Debug::Log(); /*0x530cb6*/
+    this->this->Debug::Log(); /*0x530cb6*/
     v42 = (unsigned int *)RA2_OPNEW(40); /*0x530cbd*/
     if ( v42 ) /*0x530cc7*/
     {

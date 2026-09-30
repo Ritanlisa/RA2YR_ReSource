@@ -418,7 +418,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
   *this = &DSurface_Vtable; /*0x4bac86*/
   if ( a2 ) /*0x4bac8c*/
   {
-    v3 = (unsigned int)(RA2_OPNEW(0x6Cu));
+    v3 = (void *)((unsigned int)(RA2_OPNEW(0x6Cu)));
     *((unsigned int *)this + 8) = v3; /*0x4bac9f*/
     memset(v3, 0, 0x6Cu); /*0x4baca2*/
     *(unsigned int *)*((unsigned int *)this + 8) = 108; /*0x4bacaa*/

@@ -145,6 +145,11 @@ int SideClass::Construct(CCINIClass * aP1)
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   int v3; // eax
 
@@ -281,13 +286,13 @@ void * SideClass::Init(void ** Block, char a2)
   *(Block + 3) = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6a4951*/
   v6 = Block; /*0x6a4966*/
-  v3 = (*(int (**)(int *, void ***))(g_abs_8B4120 + 16))(&g_abs_8B4120, &v6); /*0x6a496a*/
-  if ( v3 != -1 && v3 < (int)(g_abs_8B4130) && v3 < --g_abs_8B4130 ) /*0x6a4985*/
+  v3 = (*(int (**)(int *, void ***))(g_abs_8B4120 + (int)(16)))(&g_abs_8B4120, &v6); /*0x6a496a*/
+  if ( v3 != -1 && v3 < (int)(g_abs_8B4130) && v3 < (int)(--g_abs_8B4130) ) /*0x6a4985*/
   {
     do /*0x6a499d*/
     {
-      ++v3; /*0x6a498d*/
-      *(int)(((unsigned int *)g_abs_8B4124 + v3 - 1)) = *((unsigned int *)g_abs_8B4124 + v3); /*0x6a4991*/
+      ++v3; /*(unsigned int *)(0x6a498d)*/
+      *(unsigned int *)((int))(((unsigned int *)g_abs_8B4124 + v3 - 1)) = *((unsigned int *)g_abs_8B4124 + v3); /*0x6a4991*/
     }
     while ( v3 < (int)(g_abs_8B4130) ); /*0x6a499d*/
   }

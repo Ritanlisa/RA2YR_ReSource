@@ -310,7 +310,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   (*(void (**)(int, int (*)()))(*(unsigned int *)dword_A8ED54[233459] + 36))(dword_A8ED54[233459], PumpEventLoop); /*0x5f2a54*/
   IDA_LOBYTE(dword_A8ED54[51580]) = 0; /*0x5f2a57*/
   v11 = *((char *)this + 9); /*0x5f2a5e*/
-  Debug::Log(); /*0x5f2a66*/
+  this->Debug::Log(); /*0x5f2a66*/
   while ( 1 ) /*0x5f2a6e*/
   {
     if ( Dialog::PumpMessages() == 1 || IDA_LOBYTE(dword_A8ED54[51580]) ) /*0x5f2a82*/

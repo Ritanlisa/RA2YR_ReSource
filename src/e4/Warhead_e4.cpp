@@ -417,8 +417,8 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
       v29 = *((unsigned int *)this + 67);
       if ( *(unsigned int *)&v28->isBerserk != v29
         && !v28->isBerserk_duration_left
-        && ((v28->abstractFlags & 4) == 0
-         || !*((v28->abstractFlags & 4) != 0 ? (char *)&v28[1].targetingTimer[2] + 1 : (unsigned char *)1709)) )
+        && (((unsigned int)((unsigned int)(v28)->abstractFlags)& 4) == 0
+         || !*(((unsigned int)((unsigned int)(v28)->abstractFlags)& 4) != 0 ? (char *)&v28[1].targetingTimer[2] + 1 : (unsigned char *)1709)) )
       {
         v143 = 0;
         if ( v29 && (*(int (**)(int))(*(unsigned int *)v29 + 44))(v29) == 1 )

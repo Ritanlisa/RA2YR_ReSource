@@ -172,7 +172,7 @@ LABEL_12:
         v11 = v9[2]; /*0x62a30e*/
         ++g_abs_A8E7AC; /*0x62a311*/
         v17[2] = v11; /*0x62a31d*/
-        if ( v17[0] == (unsigned int)((unsigned int))((unsigned int))(g_abs_AC4948) && v10 == (int)(g_abs_AC494C) && v11 == g_abs_AC4950 /*0x62a364*/
+        if ( v17[0] == (unsigned int)((unsigned int))((unsigned int))(g_abs_AC4948) && (int)(v10) == (int)(g_abs_AC494C) && v11 == g_abs_AC4950 /*0x62a364*/
           || (Value = ProgressTimer::GetValue((unsigned short *)(*((unsigned int *)this + 10) + 904), &a2),
               !(*(uint8_t (**)(unsigned int, unsigned int *, unsigned int))(**(unsigned int **)((char *)this + 36) + 216))(
                  *((unsigned int *)this + 9),
@@ -401,7 +401,7 @@ int TeamClass::FindByMemberType(int a2)
   int v6; // ebp
   int *v7; // eax
   int Type; // esi
-  int v9; // eax
+  int * v9;
   int v10; // eax
   int v11; // esi
   int v12; // ecx
@@ -438,7 +438,7 @@ int TeamClass::FindByMemberType(int a2)
           v5 = (int *)((unsigned int *)*v7);
           Type = (int *)(BuildingClass::GetPlanningToken((unsigned int *)*v7));
           v9 = (int *)(*(unsigned int *)(Type + 4));
-          v21 = this; /*0x635a97*/
+          v21 = (int *)(this);
           v10 = (*(int (**)(int, int **))(v9 + 16))(Type + 4, &v21); /*0x635a9f*/
           v11 = *(unsigned int *)(Type + 140); /*0x635aa2*/
           if ( v11 == -1 || v10 < v11 ) /*0x635ab4*/

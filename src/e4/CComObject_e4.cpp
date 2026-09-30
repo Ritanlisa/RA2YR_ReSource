@@ -573,7 +573,7 @@ LABEL_15:
 LABEL_16:
   if ( v20 == v5 && v16 ) /*0x7a7ca1*/
   {
-    if ( g_abs_A8B244 == 3 || g_abs_A8B244 == 1 || g_abs_A8B244 == 2 ) /*0x7a7cd9*/
+    if ( g_abs_A8B244 == (unsigned char [1])(3) || g_abs_A8B244 == (unsigned char [1])(1) || g_abs_A8B244 == (unsigned char [1])((unsigned char [1]))(2) ) /*0x7a7cd9*/
     {
       v10 = (HWND)Dialog::FindByHandle((void *)0x117); /*0x7a7ce0*/
       CloseDialog(v10, 0); /*0x7a7ce9*/

@@ -13,6 +13,7 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x65B1E0
 namespace gamemd {
@@ -21,7 +22,7 @@ RadSiteClass::RadSiteClass()
     unsigned int v2 = 0;  /* G37 hoist */
 
   void *v2; // edx
-  int v3; // eax
+  RadSiteClass * v3;
 
   ((AbstractClass *)((int)this))->Constructor(); /*0x65b1e3*/
   *((unsigned int *)this + 9) = 0; /*0x65b1ea*/

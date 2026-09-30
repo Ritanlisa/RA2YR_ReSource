@@ -31,6 +31,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/TriggerTypeClass_e4.hpp"
 
 // 0x42A6D0
 namespace gamemd {

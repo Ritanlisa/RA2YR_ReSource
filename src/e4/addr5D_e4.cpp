@@ -49,6 +49,8 @@
 #include "e4/classes/TagClass_e4.hpp"
 #include "e4/classes/WinModemClass_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
 
 // 0x5D0190
 namespace gamemd {

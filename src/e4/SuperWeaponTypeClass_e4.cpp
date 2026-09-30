@@ -21,6 +21,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/SuperWeapon_e4.hpp"
 
 // 0x4F6540
 namespace gamemd {
@@ -62,7 +63,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   bool v35; // [esp+15h] [ebp-7h]
   bool v36; // [esp+16h] [ebp-6h]
   bool v37; // [esp+17h] [ebp-5h]
-  int v38; // [esp+18h] [ebp-4h]
+  unsigned int v38;
 
   v36 = *((unsigned int *)this + 87) > 0; /*0x4f6565*/
   v33 = *((unsigned int *)this + 86) > 0; /*0x4f656c*/

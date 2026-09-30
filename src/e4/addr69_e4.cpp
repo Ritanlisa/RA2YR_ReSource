@@ -66,6 +66,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
 
 // 0x690400
 namespace gamemd {
@@ -461,7 +462,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   v9 = a3; /*0x694307*/
   if ( a3 == 3 || (v10 = 10800, a3 != 4) ) /*0x69431b*/
     v10 = 3600; /*0x69431d*/
-    v32.CampaignScore_field_0x04 = this->Timer::GetTicks();
+    v32.CampaignScore_field_0x04 = ((Timer *)0)->GetTicks();
   v34 = v40; /*0x694333*/
   v35 = v10; /*0x69433f*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694343*/
@@ -471,14 +472,14 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   }
   if ( a3 == 3 || (v11 = 10800, a3 != 4) ) /*0x69436f*/
     v11 = 3600; /*0x694371*/
-  Ticks = this->Timer::GetTicks(); /*0x694383*/
+  Ticks = ((Timer *)0)->GetTicks(); /*0x694383*/
   v34 = v40; /*0x694387*/
   v35 = v11; /*0x69438b*/
   v12 = 0; /*0x69438f*/
   while ( v9 == 1 || v9 == 2 ) /*0x69439d*/
   {
     MessageLoop(); /*0x69452f*/
-    Event::Dispatch(); /*0x694534*/
+    ((Event *)0)->Dispatch(); /*0x694534*/
     if ( ObjectTypeClass::CreateInstance(&unk_A8EA70, (int)v6, (int)v32) <= 0 ) /*0x69454b*/
       goto LABEL_43; /*0x69454b*/
     if ( *(unsigned int *)v6 != 112 ) /*0x694555*/
@@ -489,12 +490,12 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
     *((unsigned char *)Block + v18) = 1; /*0x694570*/
     ++v26; /*0x69457c*/
     v12 += 100; /*0x694580*/
-    v39 = Timer::GetTicks(); /*0x69458c*/
+    v39 = ((Timer *)0)->GetTicks(); /*0x69458c*/
     Ticks = v39; /*0x694595*/
     v34 = v40; /*0x69459b*/
     v35 = 1800; /*0x69459f*/
     v41 = 1800; /*0x6945ad*/
-    Debug::Log(); /*0x6945b1*/
+    this->this->Debug::Log(); /*0x6945b1*/
     qmemcpy((char *)lpBuffer + 192 * *((uint16_t *)v6 + 12), v6 + 28, *((uint16_t *)v6 + 13)); /*0x6945dd*/
     if ( a4 ) /*0x6945eb*/
     {
@@ -516,7 +517,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
     v19 = v35; /*0x694629*/
     if ( Ticks != -1 ) /*0x694634*/
     {
-      v20 = Timer::GetTicks() - Ticks; /*0x69463f*/
+      v20 = this->this->Timer::GetTicks() - Ticks; /*0x69463f*/
       if ( v20 >= v19 ) /*0x694645*/
         goto LABEL_53; /*0x694645*/
       v19 -= v20; /*0x694647*/
@@ -525,7 +526,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
       goto LABEL_53; /*0x69464b*/
   }
   MessageLoop(); /*0x6943a3*/
-  Event::Dispatch(); /*0x6943a8*/
+  this->this->Event::Dispatch(); /*0x6943a8*/
   v29 = 487; /*0x6943c2*/
   if ( !Network::Send((Network *)&unk_A8E9C0, (int)v6, (int)&v29, (int)v42, (int)v24) ) /*0x6943ca*/
     goto LABEL_43; /*0x6943ca*/

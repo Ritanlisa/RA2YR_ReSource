@@ -437,7 +437,7 @@ int ComStreamClass::ddtor()
     }
     return 0; /*0x7a4114*/
   }
-  if ( g_abs_A8B244 != (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) && g_abs_A8B244 != (unsigned char [1])(1) && g_abs_A8B244 != 2 ) /*0x7a413f*/
+  if ( g_abs_A8B244 != (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) && g_abs_A8B244 != (unsigned char [1])((unsigned char [1]))(1) && g_abs_A8B244 != 2 ) /*0x7a413f*/
   {
     if ( g_WOL_ProcessIdle ) /*0x7a4188*/
       DisplayRankingsWOL(0, 0); /*0x7a418e*/

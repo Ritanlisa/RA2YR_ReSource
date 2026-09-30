@@ -11,11 +11,17 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/LoadGame_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
 
 // 0x5ACD30
 namespace gamemd {
 AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
+    unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
@@ -41,7 +47,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   char *v7; // edi
   int v9; // ecx
   unsigned int * v10;
-  char *v11; // ebx
+  unsigned int * v11;
   unsigned int *v12; // edx
 
   v3 = a2; /*0x5acd32*/
@@ -115,6 +121,9 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
 namespace gamemd {
 AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 {
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
 
   int v3; // ebx
   char *v5; // ebp
@@ -199,7 +208,7 @@ CampaignClass * MSEngine::Destructor()
   void *v3; // eax
   void *v4; // eax
 
-  SessionClass::Destruct((unsigned int *)this); /*0x5cee64*/
+  ((SessionClass *)((unsigned int *)this))->Destruct(); /*0x5cee64*/
   v2 = *(void **)((char *)this + 72); /*0x5cee69*/
   *((unsigned int *)this + 17) = &vt_VectorClass_MSSfxEntry; /*0x5cee70*/
   if ( v2 && *((unsigned char *)this + 81) ) /*0x5cee79*/
@@ -281,7 +290,7 @@ CampaignClass * MSEngine::Destruct()
   unsigned int *v5; // ebp
   int i; // edi
   void (***v7)(unsigned int, int); // ecx
-  unsigned int *v8; // edi
+  unsigned char (*)[4] v8;
   unsigned char (*)[4] v9;
   unsigned int *v10; // esi
   unsigned char (*)[4] v11;

@@ -281,7 +281,7 @@ namespace gamemd {
 AbstractClass * * AirstrikeClass::UpdateAll()
 {
 
-  unsigned int *v0; // eax
+  unsigned int * v0;
   int v1; // esi
   int v2; // ecx
   int v3; // edx
@@ -295,7 +295,7 @@ AbstractClass * * AirstrikeClass::UpdateAll()
     v1 = 0; /*0x420ea1*/
     while ( 1 ) /*0x420ec6*/
     {
-      v2 = v1 % 256 * (v1 / 256); /*0x420ec6*/
+      v2 = (unsigned int)(v1 % 256 * (v1 / 256));
       v0 = (unsigned int *)((unsigned int)((uint64_t)(2164392969LL * v2) >> 32) >> 31); /*0x420ed6*/
       v3 = v2 / 127; /*0x420ed9*/
       if ( v2 / 127 > 255 ) /*0x420ee1*/
@@ -323,7 +323,7 @@ LABEL_9: v4 = (int)(g_abs_88A100 - 1);
     v0 = (unsigned int *)(g_abs_88A0F4);
     do /*0x420f36*/
     {
-      v5 = (unsigned char *)v0[v4]; /*0x420f19*/
+      v5 = (unsigned char *)((unsigned int *)(v0))[v4]; /*0x420f19*/
       if ( v5[60] && v5 ) /*0x420f27*/
       {
         (*(void (**)(int))(*(unsigned int *)v5 + 32))(1); /*0x420f2d*/
@@ -363,10 +363,10 @@ AirstrikeClass::AirstrikeClass(int a2)
   *((unsigned int *)this + 3) = &vt_AirstrikeClass; /*0x41d39d*/
   if ( g_abs_889FC8 < g_abs_889FC0 /*0x41d3d9*/
     || (g_abs_889FC5 || !g_abs_889FC0)
-    && g_abs_889FCC > 0
+    && g_abs_889FCC > (unsigned char [1])(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_889FB8 + 8))(
          &g_abs_889FB8,
-         g_abs_889FC0 + g_abs_889FCC,
+         (unsigned int)(g_abs_889FC0)+ g_abs_889FCC,
          0) )
   {
     v3 = (int)(g_abs_889FC8++);
@@ -416,23 +416,23 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
 
   AbstractClass *Prefix_0; // edi
 
-  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x41d701*/
+  Prefix_0 = (AbstractClass *)((AbstractClass *)(aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x41d701*/
   if ( (int)Prefix_0 >= 0 ) /*0x41d705*/
   {
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x41d712*/
       *(unsigned int *)aP0->__pad_0 = &vt_AirstrikeClass; /*0x41d717*/
-      *(unsigned int *)&aP0->__pad_0[4] = &vt_AirstrikeClass; /*0x41d71d*/
-      *(unsigned int *)&aP0->__pad_0[8] = &vt_AirstrikeClass; /*0x41d724*/
-      *(unsigned int *)&aP0->__pad_0[12] = &vt_AirstrikeClass; /*0x41d72b*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_AirstrikeClass; /*0x41d71d*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_AirstrikeClass; /*0x41d724*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_AirstrikeClass; /*0x41d72b*/
     }
     ObjectPtr::RegisterForTracking( /*0x41d73b*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[2].__pad_0[4]);
+      (MouseClass *)&aP0[((unsigned int *)(2].__pad_0))[4]);
     ObjectPtr::RegisterForTracking( /*0x41d749*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[2].__pad_0[8]);
+      (MouseClass *)&aP0[((unsigned int *)(2].__pad_0))[8]);
     ObjectPtr::RegisterForTracking( /*0x41d757*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
       (MouseClass *)&aP0[2].__pad_0[12]);

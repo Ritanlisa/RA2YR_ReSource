@@ -22,6 +22,9 @@
 #include "e4/classes/Draw_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/File_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/E4Recv_7B9530_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x7D038F
 namespace gamemd {
@@ -112,7 +115,7 @@ void __sbh_heap_check()
               }
               else
               {
-                v11 = (v9 >> 4) - 1; /*0x7d049b*/
+                v11 = (unsigned int *)((v9 >> 4) - 1);
                 if ( v11 > 63 ) /*0x7d049f*/
                   v11 = 63; /*0x7d04a3*/
                 ++v21[v11]; /*0x7d04a4*/

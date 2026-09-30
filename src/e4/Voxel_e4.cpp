@@ -151,7 +151,7 @@ AbstractClass * Voxel::RenderFrame()
   if ( g_abs_B2D820 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x75458f*/
   {
     v4 = (unsigned int *)((int)(&g_abs_B2D824));
-    v5 = (int)((char *)&g_abs_B2D958);
+    v5 = (char *)((int)((char *)&g_abs_B2D958));
     v6 = (int)(g_abs_B2D820);
     do /*0x7545a8*/
     {

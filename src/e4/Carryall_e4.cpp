@@ -16,6 +16,8 @@
 #include "e4/classes/CaptureManagerClass_e4.hpp"
 #include "e4/classes/Campaign_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x416D50
 namespace gamemd {
@@ -106,15 +108,14 @@ LABEL_18:
         (*(void (**)(FootClass **, int))&(*this)->__pad_26A[10])(this, 3); /*0x416ea4*/
         ((void (*)(FootClass **, unsigned int, int))(*this)->audioController4[2])(this, 0, 1); /*0x416eb2*/
       }
-LABEL_5:
-      MissionControl = MissionClass::GetMissionControl(this); /*0x416d9d*/
+LABEL_5: MissionControl = (gamemd::FootClass *)(MissionClass::GetMissionControl(this));
       v4 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dc2*/
       return v4 + Random::Range((unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)2);
     case 1u: /*0x416d64*/
       v11 = *((unsigned int *)this + 361); /*0x416f29*/
       if ( v11 ) /*0x416f31*/
       {
-        v12 = (unsigned int *)(*(int (**)(FootClass *, unsigned char *))(*(unsigned int *)v11->__pad_0 + 72))(v11, v29); /*0x416f54*/
+        v12 = (unsigned int *)((gamemd::FootClass **)((unsigned int *)(*(int (**)(FootClass *, unsigned char *))(*(unsigned int *)v11->__pad_0 + 72))(v11, v29)));
         if ( !*((unsigned int *)this + 413) ) /*0x416f5f*/
           WinAPI::Wrapper(-2147467261); /*0x416f6e*/
         (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)(*((unsigned int *)this + 413))->__pad_0 + 68))( /*0x416f89*/

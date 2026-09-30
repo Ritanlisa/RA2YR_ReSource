@@ -90,14 +90,14 @@ namespace gamemd {
 int SidebarClass::CalcBounds(char a1)
 {
 
-  int v1; // ebx
-  int v2; // eax
+  unsigned char * v1;
+  unsigned char * v2;
   unsigned int *v3; // eax
   int v4; // ecx
   int v5; // esi
   int v6; // esi
   int v7; // ecx
-  int result; // eax
+  unsigned char * result;
   unsigned char v9[16]; // [esp+8h] [ebp-10h] BYREF
 
   if ( a1 ) /*0x6a513b*/
@@ -114,17 +114,17 @@ int SidebarClass::CalcBounds(char a1)
   }
   else if ( g_abs_A8EB7C ) /*0x6a5144*/
   {
-    g_abs_886F94 = 158; /*0x6a515b*/
-    v1 = (unsigned int)(g_abs_886FA8)+ g_abs_886FA0; /*0x6a5165*/
-    g_abs_886F98 = 168; /*0x6a5173*/
+    g_abs_886F94 = (int)(158);
+    v1 = (int)((unsigned int)(g_abs_886FA8)+ g_abs_886FA0);
+    g_abs_886F98 = (int)(168);
     g_abs_886F90 = (unsigned int)(g_abs_886FA8)+ g_abs_886FA0; /*0x6a5181*/
     v2 = (unsigned int)(g_abs_886FAC)+ (unsigned int)(32)+ g_abs_886FA4 - 158; /*0x6a5187*/
     g_abs_886F9C = v2; /*0x6a518e*/
   }
   else
   {
-    v2 = (int)(g_abs_886F9C);
-    v1 = (int)(g_abs_886F90);
+    v2 = (unsigned char *)((int)(g_abs_886F9C));
+    v1 = (unsigned char *)((int)(g_abs_886F90));
   }
   v6 = *((unsigned int *)g_abs_A8B230 + 3374); /*0x6a51ef*/
   g_abs_B0B500 = 50; /*0x6a51f5*/
@@ -137,7 +137,7 @@ int SidebarClass::CalcBounds(char a1)
   {
     if ( v6 == 1 ) /*0x6a5263*/
     {
-      g_abs_B0B50C = g_abs_B0B4F8 + result + 7; /*0x6a5269*/
+      g_abs_B0B50C = (unsigned int)(g_abs_B0B4F8)+ result + 7; /*0x6a5269*/
     }
     else
     {
@@ -149,7 +149,7 @@ int SidebarClass::CalcBounds(char a1)
   else
   {
     g_abs_B0B510 = 46; /*0x6a524e*/
-    g_abs_B0B50C = g_abs_B0B4F8 + result + 7; /*0x6a5258*/
+    g_abs_B0B50C = (unsigned int)(g_abs_B0B4F8)+ result + 7; /*0x6a5258*/
   }
   g_abs_B0B514 = 50; /*0x6a5287*/
   g_abs_B0B4F4 = v1 + 22; /*0x6a5293*/
@@ -163,12 +163,12 @@ int SidebarClass::CalcBounds(char a1)
   }
   else
   {
-    g_abs_B0B508 = v1 + 39; /*0x6a52a6*/
-    g_abs_B0B4DC = v1 + 20; /*0x6a52ac*/
-    g_abs_B0B4E8 = v1 + 26; /*0x6a52b2*/
-    return v1 + 26; /*0x6a529f*/
+    g_abs_B0B508 = (int)(v1 + 39);
+    g_abs_B0B4DC = (int)(v1 + 20);
+    g_abs_B0B4E8 = (int)(v1 + 26);
+    return (int)(v1 + 26);
   }
-  return result; /*0x6a52a5*/
+  return (int)(result);
 
 }
 } // namespace gamemd

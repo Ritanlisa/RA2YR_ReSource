@@ -39,7 +39,7 @@ int Scenario::ReadTeams()
 {
 
   CCINIClass *v1; // esi
-  int result; // eax
+  CCINIClass * result;
   CCINIClass *v3; // ecx
   uint8_t *StringByIndex; // eax
   char *v5; // eax
@@ -68,7 +68,7 @@ int Scenario::ReadTeams()
   void * v28;
   TechnoClass *v29; // esi
   void *v30; // eax
-  int v31; // eax
+  void * v31;
   int v32; // edi
   int v33; // eax
   int v34; // edi
@@ -108,7 +108,7 @@ int Scenario::ReadTeams()
   int v68; // [esp+28h] [ebp-BCh]
   CCINIClass *v69; // [esp+2Ch] [ebp-B8h]
   int aP1; // [esp+30h] [ebp-B4h]
-  int v71; // [esp+34h] [ebp-B0h]
+  CCINIClass * v71;
   unsigned int v73[3]; // [esp+3Ch] [ebp-A8h] BYREF
   unsigned int v74[3]; // [esp+48h] [ebp-9Ch] BYREF
   unsigned int v75[3]; // [esp+54h] [ebp-90h] BYREF
@@ -215,7 +215,7 @@ int Scenario::ReadTeams()
                   v30 = (void *)((ObjectTypeClass *)(v16))->FindByName(); /*0x44fb33*/
                   if ( v30 ) /*0x44fb3a*/
                   {
-                    v31 = ((TeamClass *)(v30))->FindOrCreate(); /*0x44fb3e*/
+                    v31 = (void *)((int)(((TeamClass *)(v30))->FindOrCreate()));
                     if ( v31 ) /*0x44fb45*/
                       ObjectClass::SetReference(v29, v31); /*0x44fb4a*/
                   }
@@ -298,8 +298,8 @@ int Scenario::ReadTeams()
                       {
                         if ( *v46 != -1 ) /*0x44fd66*/
                         {
-                          v48 = (unsigned int)((AbstractClass *)*((unsigned int *)g_TriggerTypeCount + *v46));
-                          v49 = (int)((unsigned int)(RA2_OPNEW(0x720u)));
+                          v48 = (gamemd::AbstractClass *)((unsigned int)((AbstractClass *)*((unsigned int *)g_TriggerTypeCount + *v46)));
+                          v49 = (void *)((int)((unsigned int)(RA2_OPNEW(0x720u))));
                           if ( v49 ) /*0x44fd80*/
                             v50 = ((BuildingClass *)(v49))->Construct(v48, (AbstractClass *)v65); /*0x44fd8a*/
                           else
@@ -339,14 +339,14 @@ int Scenario::ReadTeams()
           }
         }
       }
-      result = (gamemd::CCINIClass *)(v71);
+      result = (gamemd::CCINIClass *)((int)((gamemd::CCINIClass *)(v71)));
       v3 = (gamemd::CCINIClass *)((CCINIClass *)++v68);
-      if ( v68 >= v71 ) /*0x44fe41*/
+      if ( v68 >= (int)(v71) ) /*0x44fe41*/
         break; /*0x44fe41*/
       v1 = this; /*0x44f866*/
     }
   }
-  return result; /*0x44fe4a*/
+  return (int)((int)(result));
 
 }
 }
@@ -402,11 +402,11 @@ int Scenario::ProcessSidebarUnits()
   int i; // [esp+Ch] [ebp-8h]
   char v12[4]; // [esp+10h] [ebp-4h] BYREF
 
-  result = (int)(g_abs_A8EC88 - 1);
+  result = (unsigned char *)((int)(g_abs_A8EC88 - 1));
   for ( i = g_abs_A8EC88 - 1; i >= 0; --i ) /*0x50d622*/
   {
-    v3 = (unsigned int *)*((unsigned int *)g_abs_A8EC7C + result); /*0x50d631*/
-    if ( v3[135] == this ) /*0x50d63a*/
+    v3 = (unsigned int *)*((unsigned int *)(unsigned int)(g_abs_A8EC7C)+ result); /*0x50d631*/
+    if ( v3[135] == (unsigned int)(this) ) /*0x50d63a*/
     {
       v4 = *(unsigned int *)(*(int (**)(unsigned int *, char *))(*v3 + 440))(v3, v12); /*0x50d64d*/
       v5 = (*(int (**)(unsigned int *))(*v3 + 132))(v3); /*0x50d659*/
@@ -425,9 +425,9 @@ int Scenario::ProcessSidebarUnits()
         *(unsigned int *)(v10 + 4 * v9) = v6; /*0x50d6a8*/
       }
     }
-    result = i - 1; /*0x50d6af*/
+    result = (unsigned char *)(i - 1);
   }
-  return result; /*0x50d6bd*/
+  return (int)((int)(result));
 
 }
 }
@@ -447,14 +447,14 @@ Game * * Scenario::ComputeDisplayPosition()
   int v9; // ebx
   int v10; // eax
 
-  v1 = g_abs_8A00A4; /*0x552b12*/
+  v1 = (int)(g_abs_8A00A4);
   v2 = 640; /*0x552b20*/
-  if ( g_abs_8A00A4 != 640 ) /*0x552b2b*/
+  if ( g_abs_8A00A4 != (unsigned char [1])(640) ) /*0x552b2b*/
     v2 = 800; /*0x552b2d*/
   if ( g_abs_A8B238[0] ) /*0x552b3b*/
   {
-    v9 = 480; /*0x552b9a*/
-    if ( g_abs_8A00A4 != 640 ) /*0x552ba2*/
+    v9 = (int)(480);
+    if ( g_abs_8A00A4 != (unsigned char [1])(640) ) /*0x552ba2*/
       v9 = 600; /*0x552ba4*/
     v10 = g_abs_8A00A8; /*0x552baa*/
     *((unsigned int *)this + 9) = v2; /*0x552baf*/
@@ -466,7 +466,7 @@ Game * * Scenario::ComputeDisplayPosition()
   else
   {
     v3 = 480; /*0x552b3f*/
-    if ( g_abs_8A00A4 != 640 ) /*0x552b44*/
+    if ( g_abs_8A00A4 != (unsigned char [1])(640) ) /*0x552b44*/
       v3 = 600; /*0x552b46*/
     v4 = v3 - 80; /*0x552b4b*/
     v5 = g_abs_8A00A8 - (v3 - 80); /*0x552b5c*/

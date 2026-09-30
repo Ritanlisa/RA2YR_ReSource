@@ -956,8 +956,8 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(unsigned int * Block, c
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x420633*/
-  *Block = &vt_VectorClass_AlphaLightingRemapClass; /*0x420636*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_AlphaLightingRemapClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x420640*/
   {
     RA2_OPDEL(v3); /*0x420648*/
@@ -965,7 +965,7 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(unsigned int * Block, c
   }
   *((unsigned char *)Block + 13) = 0; /*0x42065b*/
   *(Block + 2) = 0; /*0x420661*/
-  if ( (Block & 1) != 0 ) /*0x420668*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x420668*/
     RA2_OPDEL(Block); /*0x42066b*/
   return (VectorClass *)Block; /*0x420675*/
 

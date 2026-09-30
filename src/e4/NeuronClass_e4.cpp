@@ -26,6 +26,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/NullModemClass_e4.hpp"
 
 // 0x43A350
 NeuronClass::NeuronClass()

@@ -39,7 +39,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   ScrollClass *v8; // eax
   int v9; // eax
   int v10; // eax
-  unsigned int v11; // eax
+  char * v11;
   char *v12; // eax
   char *v13; // edi
   int i; // edi
@@ -149,8 +149,8 @@ LABEL_6:
     }
     else if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d078a*/
     {
-      v11 = (char *)(*(unsigned int *)&g_abs_B077F8[4 * *(unsigned int *)&g_abs_B077F8 + 16080]);
-      if ( v11 > 0x18 ) /*0x6d0795*/
+      v11 = (char *)((unsigned int)((char *)(*(unsigned int *)&g_abs_B077F8[4 * *(unsigned int *)&g_abs_B077F8 + 16080])));
+      if ( v11 > (char *)((char *))(0x18) ) /*0x6d0795*/
         v12 = 0; /*0x6d07a9*/
       else
         v12 = &g_abs_B077F8; /*0x6d07a2*/

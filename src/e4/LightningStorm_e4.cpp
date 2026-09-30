@@ -29,7 +29,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   int16_t v7; // si
   int v8; // esi
   int v9; // ecx
-  int v10; // esi
+  wchar_t * v10;
   wchar_t *StringCSF; // eax
   int v12; // [esp+Ch] [ebp-4h]
 
@@ -76,7 +76,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       ScenarioClass::UpdateLighting(); /*0x53a009*/
       if ( IDA_LOBYTE(g_abs_8871E0[1].?) ) /*0x53a014*/
       {
-        v10 = (wchar_t *)(3);
+        v10 = (wchar_t *)((int)((wchar_t *)(3)));
         if ( HouseClass_Player ) /*0x53a02a*/
           v10 = *((unsigned int *)HouseClass_Player + 22549); /*0x53a02c*/
         PlayVocClass(g_abs_8871E0->?[3], 0x2000, 1.0, 0); /*0x53a044*/
@@ -180,7 +180,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void **v9; // edi
   int v10; // eax
   void **v11; // eax
-  RulesClass *v12; // eax
+  unsigned int v12;
   unsigned int v13; // eax
   int Climb; // ebp
   void *WarheadVersusMultiplier; // ebx
@@ -198,7 +198,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   int v28; // [esp+18h] [ebp-28h]
   int v29; // [esp+1Ch] [ebp-24h] BYREF
   int v30; // [esp+20h] [ebp-20h]
-  int v31; // [esp+28h] [ebp-18h] BYREF
+  RulesClass * v31;
   int v32; // [esp+2Ch] [ebp-14h]
   void **v33; // [esp+30h] [ebp-10h]
   int v34[3]; // [esp+34h] [ebp-Ch] BYREF
@@ -228,15 +228,15 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v27 = v3[9]; /*0x53a40f*/
   v28 = *((char *)v3 + 283); /*0x53a413*/
   v11 = (void **)(v28 * unk_A9FA90 + ((v3[80] & 0x100) != 0 ? unk_A9FA84 : 0));
-  v31 = ((int16_t)v27 << 8) + 128; /*0x53a43d*/
+  v31 = (gamemd::RulesClass *)((int)((gamemd::RulesClass *)(((int16_t)v27 << 8) + 128)));
   v32 = (SHIWORD(v27) << 8) + 128; /*0x53a441*/
   v33 = v11; /*0x53a445*/
   if ( v31 != unk_A9FA30 || __PAIR64__((unsigned int)v11, (SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
   {
-    v12 = g_abs_8871E0; /*0x53a45f*/
+    v12 = (gamemd::RulesClass *)(g_abs_8871E0);
     if ( g_abs_8871E0->? > 0 ) /*0x53a46c*/
     {
-      v13 = Random::State((unsigned int *)g_abs_A8B230 + 134); /*0x53a47a*/
+      v13 = (gamemd::RulesClass *)(Random::State((unsigned int *)g_abs_A8B230 + 134));
       StartAudioControllerAt(*(unsigned int *)(g_abs_8871E0->?[1] + 4 * (v13 % g_abs_8871E0->?)), (int)&v31, 0); /*0x53a49e*/
       v12 = g_abs_8871E0; /*0x53a4a3*/
     }

@@ -27,6 +27,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v26 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
@@ -70,7 +71,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   int v33; // [esp+24h] [ebp-8h]
   int i; // [esp+28h] [ebp-4h]
 
-  v28 = (unsigned int *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
+  v28 = (unsigned int *)((RandomMap *)(a1))->CellListAlloc(); /*0x5a0171*/
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
     v8 = (unsigned int *)(RA2_OPNEW(0x18u));
@@ -95,7 +96,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
       while ( 2 ) /*0x5a01da*/
       {
         v11 = (unsigned int)(0);
-        v33 = 0; /*0x5a01dc*/
+        v33 = (unsigned int)(0);
         while ( 1 ) /*0x5a01f3*/
         {
           v12 = (unsigned short *)(v10[1] + 4 * v31); /*0x5a01f3*/

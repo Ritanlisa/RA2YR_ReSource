@@ -826,7 +826,7 @@ char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
 
   int v6; // edi
   int v7; // esi
-  unsigned int *v8; // eax
+  unsigned int v8;
   int v9; // ecx
 
   if ( *((unsigned int *)this + 19) ) /*0x6e2a55*/

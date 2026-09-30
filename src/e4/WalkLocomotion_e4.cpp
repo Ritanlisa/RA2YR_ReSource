@@ -26,6 +26,7 @@
 #include "e4/classes/Particle_e4.hpp"
 #include "e4/classes/Trigger_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/WalkLocomotionClass_e4.hpp"
 
 // 0x6A01A0
 namespace gamemd {
@@ -140,7 +141,7 @@ void WalkLocomotion::ProcessCollision( char a2)
   bool v5; // al
   int v6; // esi
   unsigned char * v7;
-  unsigned int *v8; // esi
+  unsigned char * v8;
   int v9; // edx
   int v10; // esi
   double v11; // st7
@@ -339,7 +340,7 @@ void WalkLocomotion::ProcessCollision( char a2)
       *(unsigned int *)&v182[4] = *(unsigned int *)(this + 56);
       *(unsigned int *)&v182[8] = *(unsigned int *)(this + 60);
       v6 = (int)((*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)v182) + 80) & 0x100) != 0 ? g_abs_B077F8 : 0);
-      v7 = (int)(v6 + Cell::GetGroundHeight(v182));
+      v7 = (unsigned char *)((int)(v6 + Cell::GetGroundHeight(v182)));
       v8 = (unsigned int *)(*(unsigned int *)(this + 12) + 156);
       *(unsigned int *)&v182[8] = v7;
       v9 = v8[1];
@@ -453,17 +454,17 @@ LABEL_37:
   {
     (*(void (**)(MouseClass *, unsigned int))(v27->field_0 + 292))(v27, 0);
     v31 = (int *)(this + 64);
-    if ( *(unsigned int *)(this + 64) != g_abs_B077F8
-      || *(unsigned int *)(this + 68) != g_abs_B077F8
+    if ( *(unsigned int *)(this + 64) != (unsigned int)(g_abs_B077F8)
+      || *(unsigned int *)(this + 68) != (unsigned int)(g_abs_B077F8)
       || *(unsigned int *)(this + 72) != (unsigned int)((unsigned int))((unsigned int))(g_abs_B077F8) )
     {
-      *v31 = (int)(g_abs_B077F8);
+      *v31 = (unsigned int)((int)(g_abs_B077F8));
       *(unsigned int *)(this + 68) = g_abs_B077F8;
-      v32 = (int)((TechnoClass *)g_abs_B077F8);
+      v32 = (gamemd::TechnoClass *)((int)((TechnoClass *)g_abs_B077F8));
       *(unsigned char *)(this + 99) = 0;
       *(unsigned int *)(this + 72) = v32;
     }
-    v33 = (unsigned int)(*(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(this + 12) + 444))(*(unsigned int *)(this + 12)) + 278));
+    v33 = (gamemd::TechnoClass *)((unsigned int)(*(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(this + 12) + 444))(*(unsigned int *)(this + 12)) + 278)));
     if ( v33 >= 0 && v33 < *(int *)&g_abs_89F690 )
     {
       v34 = *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v33);
@@ -506,14 +507,14 @@ LABEL_37:
     }
     *(unsigned int *)(*(unsigned int *)(this + 12) + 1504) = -1;
     *(unsigned int *)(this + 88) = -1;
-    *v31 = (int)(g_abs_B077F8);
+    *v31 = (unsigned int)((int)(g_abs_B077F8));
     *(unsigned int *)(this + 68) = g_abs_B077F8;
     *(unsigned int *)(this + 72) = g_abs_B077F8;
-    if ( *v31 != g_abs_B077F8
-      || *(unsigned int *)(this + 68) != g_abs_B077F8
+    if ( *v31 != (int)(g_abs_B077F8)
+      || *(unsigned int *)(this + 68) != (unsigned int)(g_abs_B077F8)
       || *(int)((int))((int))((unsigned int *))(this + 72) != g_abs_B077F8 )
     {
-      *v31 = (int)(g_abs_B077F8);
+      *v31 = (unsigned int)((int)(g_abs_B077F8));
       *(unsigned int *)(this + 68) = g_abs_B077F8;
       *(unsigned int *)(this + 72) = g_abs_B077F8;
       *(unsigned char *)(this + 99) = 0;
@@ -524,10 +525,10 @@ LABEL_37:
   if ( v30 <= 7 )
     goto LABEL_141;
   v45 = (char *)(12 * *(unsigned int *)(this + 88) + 8333888);
-  v46 = (char *)(*(unsigned char *)(this + 96));
+  v46 = (unsigned int)((char *)(*(unsigned char *)(this + 96)));
   *(unsigned int *)&aP3.bombVisible = v45;
   if ( v46 )
-    v47 = (unsigned int)(v45[1]);
+    v47 = (char *)((unsigned int)(v45[1]));
   else
     v47 = *v45;
   aP3.objectTypeFlags = 16 * v47;

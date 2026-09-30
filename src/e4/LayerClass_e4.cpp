@@ -526,7 +526,7 @@ LABEL_8:
   {
     v8 = 0; /*0x577dff*/
   }
-  result = HouseClass_Player; /*0x577e04*/
+  result = (void *)(HouseClass_Player);
   if ( !*((unsigned char *)HouseClass_Player + 576) ) /*0x577e09*/
   {
     HouseClass::ResetObjectOrders(0, 0); /*0x577e1e*/

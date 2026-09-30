@@ -168,6 +168,10 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
 
   int v5; // eax
   char *v6; // eax

@@ -703,14 +703,14 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
   }
   v7 = Block; /*0x6459cf*/
   v4 = (*(int (**)(int *, void ***))(g_abs_A83D98 + 16))(&g_abs_A83D98, &v7); /*0x6459d3*/
-  if ( v4 != -1 && v4 < g_abs_A83DA8 && v4 < --g_abs_A83DA8 ) /*0x6459ee*/
+  if ( v4 != -1 && v4 < (int)(g_abs_A83DA8) && v4 < (int)((int))(--g_abs_A83DA8) ) /*0x6459ee*/
   {
     do /*0x645a06*/
     {
       ++v4; /*0x6459f6*/
       *((unsigned int *)g_abs_A83D9C + v4 - 1) = *((unsigned int *)g_abs_A83D9C + v4); /*0x6459fa*/
     }
-    while ( v4 < g_abs_A83DA8 ); /*0x645a06*/
+    while ( v4 < (int)((int))(g_abs_A83DA8) ); /*0x645a06*/
   }
   v5 = *(Block + 175); /*0x645a08*/
   *(Block + 174) = &vt_VectorClass_RGBClass; /*0x645a0e*/
@@ -722,7 +722,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
   *((unsigned char *)Block + 709) = 0; /*0x645a3b*/
   *(Block + 176) = 0; /*0x645a42*/
   ObjectTypeClass::Destruct((int)Block); /*0x645a4c*/
-  if ( (Block & 1) != 0 ) /*0x645a56*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x645a56*/
     OperatorDelete(Block); /*0x645a59*/
   return (ParticleTypeClass *)Block; /*0x645a63*/
 

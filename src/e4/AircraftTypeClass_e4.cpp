@@ -29,6 +29,7 @@
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x41C8B0
 AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)

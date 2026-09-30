@@ -199,7 +199,7 @@ v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::Abstract
   g_NetworkTestFlag = (int)((wchar_t *)(0));
   v7 = (wchar_t *)((gamemd::AbstractClass **)(GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1589)));
   MessageBox = (gamemd::AbstractClass **)(CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag));
-  v21 = (HWND)((gamemd::AbstractClass **)(MessageBox));
+  v21 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(MessageBox)));
   if ( !MessageBox ) /*0x5f2d6d*/
     return 3; /*0x5f3155*/
   Dialog::Show(MessageBox); /*0x5f2d76*/

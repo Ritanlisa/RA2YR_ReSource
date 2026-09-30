@@ -215,23 +215,23 @@ void* TacticalClass::ProcessScroll(int * a2)
   unsigned char * v3;
   unsigned char * v4;
   int v5; // edx
-  int v6; // edx
+  unsigned char * v6;
   double v7; // st7
   char v8; // cl
-  int v10; // [esp+10h] [ebp-10h] BYREF
-  int v11; // [esp+14h] [ebp-Ch]
+  unsigned char * v10;
+  unsigned char * v11;
 
   if ( !*((unsigned char *)this + 4559) || *((unsigned char *)this + 4531) || *((unsigned char *)this + 4532) ) /*0x4ac3a3*/
   {
     IDA_LOBYTE(v3) = *((unsigned char *)this + 4560); /*0x4ac436*/
     if ( (unsigned char)v3 ) /*0x4ac43e*/
     {
-      v6 = a2[1]; /*0x4ac45b*/
+      v6 = (int)((unsigned char *)(a2[1]));
       v10 = *a2 - *((unsigned int *)this + 1141); /*0x4ac45e*/
       v11 = v6 - *((unsigned int *)this + 1142); /*0x4ac467*/
       v7 = Math::Sqrt((double)v10 * (double)v10 + (double)v11 * (double)v11); /*0x4ac484*/
       v3 = Math::RoundToInt(v7); /*0x4ac48c*/
-      if ( v3 > 4 ) /*0x4ac494*/
+      if ( v3 > (unsigned char *)(4) ) /*0x4ac494*/
       {
         v8 = *((unsigned char *)this + 4531); /*0x4ac496*/
         IDA_LOBYTE(v3) = 1; /*0x4ac49c*/
@@ -248,22 +248,22 @@ void* TacticalClass::ProcessScroll(int * a2)
   }
   else
   {
-    v11 = (int)(g_abs_886FA4);
-    v10 = (int)(g_abs_886FA0);
-    v3 = (int)(*a2);
-    v4 = a2[1]; /*0x4ac3d6*/
+    v11 = (unsigned char *)((int)(g_abs_886FA4));
+    v10 = (unsigned char *)((int)(g_abs_886FA0));
+    v3 = (unsigned char *)((int)(*a2));
+    v4 = (unsigned char *)((int)(a2[1]));
     if ( *a2 < 0 ) /*0x4ac3db*/
       v3 = 0; /*0x4ac3dd*/
-    if ( v3 >= (int)((int))((int))(g_abs_886FA8) ) /*0x4ac3e1*/
+    if ( v3 >= (unsigned char *)((int))((int))((int))(g_abs_886FA8) ) /*0x4ac3e1*/
       v3 = g_abs_886FA8 - 1; /*0x4ac3e3*/
     if ( v4 < 0 ) /*0x4ac3e8*/
       v4 = 0; /*0x4ac3ea*/
-    if ( v4 >= (int)((int))((int))(g_abs_886FAC) ) /*0x4ac3ee*/
+    if ( v4 >= (unsigned char *)((int))((int))((int))(g_abs_886FAC) ) /*0x4ac3ee*/
       v4 = g_abs_886FAC - 1; /*0x4ac3f0*/
     v5 = *((unsigned int *)this + 1143); /*0x4ac3f3*/
     v10 = v3; /*0x4ac3f9*/
     v11 = v4; /*0x4ac3ff*/
-    if ( v3 != v5 || v4 != *((unsigned int *)this + 1144) ) /*0x4ac40b*/
+    if ( v3 != (unsigned char *)(v5) || v4 != *((unsigned int *)this + 1144) ) /*0x4ac40b*/
     {
       IDA_BYTE1(g_abs_887324[863].__tail_0) = 1; /*0x4ac41c*/
       IDA_LOBYTE(v3) = TacticalClass::UpdateScrollMaxBounds(&v10); /*0x4ac429*/
@@ -355,9 +355,9 @@ void TacticalClass::InterpolateView()
 {
 
   wchar_t *v0; // ebp
-  int v1; // edi
-  int v2; // ecx
-  int v3; // esi
+  unsigned int v1;
+  wchar_t * v2;
+  wchar_t * v3;
   unsigned int v4;
   unsigned int *v5; // edx
   int v6; // ebx
@@ -370,41 +370,41 @@ void TacticalClass::InterpolateView()
   int v13; // esi
   int v14; // edi
   int v15; // eax
-  unsigned int v16;
+  wchar_t * v16;
   int v17; // [esp+8h] [ebp-40h]
-  int v18; // [esp+Ch] [ebp-3Ch] BYREF
-  int v19; // [esp+10h] [ebp-38h]
-  int v20; // [esp+14h] [ebp-34h]
+  wchar_t * v18;
+  unsigned int v19;
+  unsigned int v20;
   int v21; // [esp+18h] [ebp-30h]
   int v22; // [esp+1Ch] [ebp-2Ch]
   int v23; // [esp+20h] [ebp-28h]
-  int v24; // [esp+24h] [ebp-24h]
-  int v25; // [esp+28h] [ebp-20h]
-  int v26; // [esp+2Ch] [ebp-1Ch]
+  wchar_t * v24;
+  unsigned int v25;
+  wchar_t * v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
   v0 = (wchar_t *)(g_abs_A8ECC8);
   if ( (int)g_abs_A8ECC8 > 0 ) /*0x4ae29f*/
   {
-    v1 = (wchar_t *)(0);
-    v2 = (wchar_t *)(0);
-    v3 = (wchar_t *)(0);
-    v18 = 0; /*0x4ae2af*/
-    v19 = 0; /*0x4ae2b3*/
-    v20 = 0; /*0x4ae2b7*/
-    v4 = g_abs_A8ECBC; /*0x4ae2bd*/
-    v16 = g_abs_A8ECC8; /*0x4ae2c2*/
+    v1 = (wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))));
+    v2 = (unsigned int)((wchar_t *)((int)((wchar_t *)(0))));
+    v3 = (wchar_t *)((int)((wchar_t *)(0)));
+    v18 = (unsigned int)((wchar_t *)((unsigned int)(0)));
+    v19 = (wchar_t *)((int)((wchar_t *)(0)));
+    v20 = (wchar_t *)((int)((wchar_t *)(0)));
+    v4 = (unsigned int)(g_abs_A8ECBC);
+    v16 = (wchar_t *)(g_abs_A8ECC8);
     do /*0x4ae2fc*/
     {
-      v5 = (unsigned int *)*v4++; /*0x4ae2c6*/
-      v27[0] = v5[39]; /*0x4ae2d5*/
+      v5 = (int)((unsigned int *)*(unsigned int *)(v4)++);
+      v27[0] = (int)(v5[39]);
       v1 += v27[0]; /*0x4ae2d9*/
       v2 += v5[40]; /*0x4ae2e0*/
       v6 = v5[41]; /*0x4ae2e6*/
       v18 = v1; /*0x4ae2e9*/
       v3 += v6; /*0x4ae2ed*/
-      v7 = v16 == (wchar_t *)1; /*0x4ae2ef*/
+      v7 = v16 == (unsigned int)((wchar_t *))1; /*0x4ae2ef*/
       v19 = v2; /*0x4ae2f0*/
       v20 = v3; /*0x4ae2f4*/
       v16 = (wchar_t *)((char *)v16 - 1); /*0x4ae2f8*/
@@ -416,11 +416,11 @@ void TacticalClass::InterpolateView()
     v26 = v3; /*0x4ae30a*/
     if ( g_abs_A8ECC8 ) /*0x4ae30e*/
     {
-      v1 /= (int)g_abs_A8ECC8; /*0x4ae315*/
+      (unsigned int)(v1)/= (int)g_abs_A8ECC8; /*0x4ae315*/
       v18 = v1; /*0x4ae31c*/
-      v2 /= (int)g_abs_A8ECC8; /*0x4ae320*/
+      (unsigned int)(v2)/= (int)g_abs_A8ECC8; /*0x4ae320*/
       v19 = v2; /*0x4ae327*/
-      v3 /= (int)g_abs_A8ECC8; /*0x4ae32b*/
+      (unsigned int)(v3)/= (int)g_abs_A8ECC8; /*0x4ae32b*/
       v20 = v3; /*0x4ae32d*/
     }
     if ( (int)g_abs_A8ECC8 > 2 ) /*0x4ae334*/
@@ -467,7 +467,7 @@ void TacticalClass::InterpolateView()
         v14 = (v25 - v22) / v12; /*0x4ae419*/
         v15 = (v26 - v23) / v12; /*0x4ae41e*/
       }
-      v18 = v13; /*0x4ae420*/
+      v18 = (wchar_t *)(v13);
       v19 = v14; /*0x4ae424*/
       v20 = v15; /*0x4ae428*/
     }
@@ -555,7 +555,7 @@ void TacticalClass::DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnk
   int v18; // eax
 
   v10 = (gamemd::CCINIClass *)(*((unsigned int *)this + 165));
-  v11 = g_TerrainTypeTable2; /*0x547237*/
+  v11 = (unsigned int)(g_TerrainTypeTable2);
   if ( (v10 < (int)g_TerrainTypeTable2 || v10 >= (int)&g_TerrainTypeTable2->headNode[1] + 2) /*0x547260*/
     && ((v11 = *(CCINIClass **)&g_abs_A8D63C, v10 < *(int *)&g_abs_A8D63C)
      || v10 >= *(unsigned int *)&g_abs_A8D63C + 10)
@@ -575,9 +575,9 @@ void TacticalClass::DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnk
       }
       while ( (int)v16 < (int)&g_abs_A8D63C ); /*0x5472c9*/
       v18 = 4 * v17; /*0x5472cf*/
-      if ( a2 == dword_ABC2D4[v18] ) /*0x5472d8*/
+      if ( a2 == ((unsigned int *)(dword_ABC2D4))[v18] ) /*0x5472d8*/
       {
-        v13 = dword_ABC2D0[v18]; /*0x5472de*/
+        v13 = ((unsigned int *)(dword_ABC2D0))[v18]; /*0x5472de*/
         if ( v13 ) /*0x5472e6*/
         {
           v14 = dword_ABC2DC[v18]; /*0x5472ee*/

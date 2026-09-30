@@ -248,18 +248,18 @@ SuperClass * * SuperClass::CleanupMembers()
   }
   v9 = this; /*0x6cb24f*/
   v7 = (*(int (**)(int *, int *))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v9); /*0x6cb253*/
-  if ( v7 != -1 && v7 < g_abs_B0F680 && v7 < --g_abs_B0F680 ) /*0x6cb26e*/
+  if ( v7 != -1 && v7 < (int)(g_abs_B0F680) && v7 < (int)((int))(--g_abs_B0F680) ) /*0x6cb26e*/
   {
     do /*0x6cb286*/
     {
       ++v7; /*0x6cb276*/
       *((unsigned int *)g_abs_B0F674 + v7 - 1) = *((unsigned int *)g_abs_B0F674 + v7); /*0x6cb27a*/
     }
-    while ( v7 < g_abs_B0F680 ); /*0x6cb286*/
+    while ( v7 < (int)(g_abs_B0F680) ); /*0x6cb286*/
   }
   v9 = this; /*0x6cb298*/
   v8 = (*(int (**)(int *, int *))(g_abs_B0F6C8 + 16))(&g_abs_B0F6C8, &v9); /*0x6cb29c*/
-  if ( v8 != -1 && v8 < g_abs_B0F6D8 && v8 < --g_abs_B0F6D8 ) /*0x6cb2b7*/
+  if ( v8 != -1 && v8 < (int)((int))(g_abs_B0F6D8) && v8 < --g_abs_B0F6D8 ) /*0x6cb2b7*/
   {
     do /*0x6cb2cf*/
     {

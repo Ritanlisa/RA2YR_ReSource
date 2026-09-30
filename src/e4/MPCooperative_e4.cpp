@@ -31,6 +31,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/GameLoop_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/MSVQAnim_e4.hpp"
 
 // 0x49B660
 namespace gamemd {
@@ -71,6 +72,9 @@ int MPCooperative::processTurn(char * a2, char * a3)
 namespace gamemd {
 int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
 {
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v15 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
@@ -125,7 +129,7 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
   }
   for ( i = 0; i < 2; ++i ) /*0x49bdb0*/
   {
-    v11 = v16; /*0x49bdb2*/
+    v11 = (wchar_t *)((unsigned int)(v16));
     if ( i ) /*0x49bdb8*/
       v11 = v17; /*0x49bdba*/
     *((unsigned int *)v11 + 16) = *(unsigned int *)((char *)this + 4 * i + 72); /*0x49bdc2*/
@@ -142,7 +146,7 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
       if ( v13 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)a2 + 8))(a2, v12 + v13, 0) ) /*0x49be03*/
         continue; /*0x49be03*/
     }
-    v14 = (wchar_t *)(*(unsigned int *)(a2 + 16));
+    v14 = (unsigned int)((wchar_t *)(*(unsigned int *)(a2 + 16)));
     v15 = *(unsigned int *)(a2 + 4); /*0x49be0d*/
     *(unsigned int *)(a2 + 16) = v14 + 1; /*0x49be13*/
     *(unsigned int *)(v15 + 4 * v14) = v11; /*0x49be16*/
@@ -188,7 +192,7 @@ int MPCooperative::WriteCoopSaveINI()
   v2 = (unsigned char *)this + 28; /*0x49be58*/
   if ( !*((unsigned char *)this + 28) ) /*0x49be55*/
     return 1; /*0x49c0c5*/
-  CCFileClass::Construct(v22, g_abs_81F0F8); /*0x49be70*/
+  ((CCFileClass *)(v22))->Construct(g_abs_81F0F8); /*0x49be70*/
   v15[1] = 0; /*0x49be79*/
   v15[2] = 0; /*0x49be7d*/
   INISectionList::Constructor(v16); /*0x49be81*/
@@ -310,6 +314,7 @@ int MPCooperative::ReadCoopSaveINI()
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
 
   char *v1; // edi
   char *v2; // ebx
@@ -331,7 +336,7 @@ int MPCooperative::ReadCoopSaveINI()
   void *v19[3]; // [esp+78h] [ebp-BCh] BYREF
   unsigned int v20[7]; // [esp+84h] [ebp-B0h] BYREF
   unsigned int v21[6]; // [esp+A0h] [ebp-94h] BYREF
-  char v22; // [esp+B8h] [ebp-7Ch]
+  void ** v22;
   char v23[100]; // [esp+D0h] [ebp-64h] BYREF
 
   v1 = (char *)(this);
@@ -340,7 +345,7 @@ int MPCooperative::ReadCoopSaveINI()
   v2 = (unsigned char *)this + 28; /*0x49d137*/
   if ( !*((unsigned char *)this + 28) ) /*0x49d134*/
     return 0; /*0x49d13c*/
-  CCFileClass::Construct(v16, g_abs_81F0F8); /*0x49d14b*/
+  ((CCFileClass *)(v16))->Construct(g_abs_81F0F8); /*0x49d14b*/
   v19[1] = 0; /*0x49d159*/
   v19[2] = 0; /*0x49d15d*/
   INISectionList::Constructor(v20); /*0x49d164*/
@@ -412,7 +417,7 @@ int MPCooperative::ReadCoopSaveINI()
       else
         v14 = v13 >= 10 ? v13 + 55 : v13 + 48;
       g_abs_89ED18[v12] = (unsigned int)(v14);
-      v10 = v12 + 1; /*0x49d2e3*/
+      v10 = (unsigned int)(v12 + 1);
       g_abs_89ED18[v10] = EncodeDigitHex(*v9 & 0xF); /*0x49d2e9*/
     }
     i = (unsigned int)(v9[1]);

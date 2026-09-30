@@ -14,6 +14,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/SideClass_e4.hpp"
 
 // 0x69EE90
 namespace gamemd {

@@ -28,6 +28,7 @@
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/AlphaShapeClass_e4.hpp"
 
 // 0x413F80
 namespace gamemd {
@@ -106,10 +107,10 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   unsigned int v5;
   int * v6;
   unsigned short *v7; // eax
-  int v8; // esi
+  int * v8;
   int v9; // ecx
   int16_t v10; // dx
-  int v11; // esi
+  int * v11;
   void *v12; // eax
   int v13; // edx
   int v14; // eax
@@ -120,8 +121,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   char v20[4]; // [esp+30h] [ebp-10h] BYREF
   unsigned int v21[3]; // [esp+34h] [ebp-Ch] BYREF
   unsigned int v22; // [esp+44h] [ebp+4h]
-
-  v18 = (int *)((unsigned int)((int *)((unsigned int)((int *)(0)))));
+v18 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(0)))))))));
   v19 = 0; /*0x415b29*/
   v5 = dword_817A58; /*0x415b2d*/
   do /*0x415bab*/
@@ -131,7 +131,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
     v8 = (int *)((unsigned int)(v6)& 7);
     v9 = (int *)(4 * v8 + 9041544);
     v10 = (int *)(*v7 + IDA_LOWORD(g_abs_89F688[v8]));
-    v11 = *a2; /*0x415b5f*/
+    v11 = (int *)(*a2);
     IDA_LOWORD(v22) = v10; /*0x415b6b*/
     IDA_HIWORD(v22) = v7[1] + *(unsigned short *)(v9 + 2); /*0x415b74*/
     v18 = v22; /*0x415b83*/
