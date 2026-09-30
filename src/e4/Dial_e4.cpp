@@ -39,7 +39,7 @@ unsigned int Dial8Class_48::PointerToIndex(int a2)
 
 // 0x4A7D70
 namespace gamemd {
-void Dial8Class_48::Seek(void *a1 = 0)
+int Dial8Class_48::Seek(int a2, void *a1 = 0)
 {
   return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x4a7d7a*/
 }
@@ -139,7 +139,7 @@ void Dial8Class_48::ddtor(void *a1 = 0)
 
 // 0x4A7EA0
 namespace gamemd {
-void Dial8Class_48::Read(void *a1 = 0)
+int Dial8Class_48::Read(int a2, void *a1 = 0)
 {
   int result; // eax
   int m_8; // edx

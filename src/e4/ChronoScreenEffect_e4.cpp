@@ -9,6 +9,7 @@
 // 0x753580
 namespace gamemd {
 public:
+public:
     int ChronoScreenEffect::DecrementCounter()
 {
   int result; // eax

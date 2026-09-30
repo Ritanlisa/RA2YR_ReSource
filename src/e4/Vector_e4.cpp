@@ -125,7 +125,7 @@ void Vector::Clear(void *a1 = 0)
 
 // 0x45AE10
 namespace gamemd {
-void Vector::RemoveAt(void *a1 = 0)
+int Vector::RemoveAt()
 {
   char *Vector_field_0x10; // edx
   AbstractClass * result;

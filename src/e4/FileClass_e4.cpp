@@ -36,7 +36,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 } // namespace gamemd
 // 0x473FC0
 namespace gamemd {
-int FileClass::SetFileName(IUnknown * aP1)
+const char* FileClass::SetFileName(const char* pFileName)
 {
   this->u32_68 = 0; /*0x473fc4*/
 // 0x47ae10
@@ -45,7 +45,7 @@ int FileClass::SetFileName(IUnknown * aP1)
 } // namespace gamemd
 // 0x65CBF0
 namespace gamemd {
-int FileClass::Open(int a2)
+const char* FileClass::Open(const char* pFileName)
 {
   int result; // eax
   int v4; // edi

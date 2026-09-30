@@ -53,7 +53,7 @@ DWORD * Timer::Init(DWORD a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5
 }
 // 0x4F1B20
 namespace gamemd {
-DWORD * Timer::GetRemainingMs(DWORD a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0)
+int Timer::GetRemainingMs()
 {
   int v1; // edi
   int v2; // ecx

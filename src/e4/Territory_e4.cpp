@@ -107,7 +107,7 @@ unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
 }
 // 0x771990
 namespace gamemd {
-signed int Territory_WorldDominationTour_8::Seek(void *a1 = 0)
+unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1, void *a2 = 0)
 {
   int v2; // [esp+0h] [ebp-10h]
   int v3; // [esp+4h] [ebp-Ch]
@@ -124,7 +124,7 @@ signed int Territory_WorldDominationTour_8::Seek(void *a1 = 0)
 
 // 0x7719C0
 namespace gamemd {
-signed int Territory_WorldDominationTour_8::Open(void *a1 = 0)
+unsigned int * Territory_WorldDominationTour_8::Open(unsigned int * a1, void *a2 = 0)
 {
   return (uint8_t)this->Audio::IsPlaying() == 0; /*0x7719ca*/
 }

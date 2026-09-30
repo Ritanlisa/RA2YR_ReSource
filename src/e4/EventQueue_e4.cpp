@@ -26,7 +26,7 @@ void EventQueue::Process(void* bink_player)
 } // namespace gamemd
 // 0x54F050
 namespace gamemd {
-void EventQueue::Read(void* bink_player)
+void EventQueue::Read()
 {
   void * v2;
   void * v3;
@@ -97,7 +97,7 @@ void EventQueue::Read(void* bink_player)
 } // namespace gamemd
 // 0x54F650
 namespace gamemd {
-void EventQueue::Check(void* bink_player)
+void EventQueue::Check()
 {
   void * v1;
 

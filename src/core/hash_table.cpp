@@ -131,7 +131,7 @@ void SHA1::Compute(uint8_t digest[20])
   return 20; /*0x69db1e*/
 }
 // 0x69db30
-void SHA1::Transform(uint8_t digest[20])
+void SHA1::Transform()
 {
   int *v2; // ecx
   int v3; // esi

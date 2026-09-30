@@ -104,7 +104,7 @@ unsigned int WonlineStringDialogControl_12::PointerToIndex(int a2)
 
 // 0x7AC9C0
 namespace gamemd {
-void WonlineStringDialogControl_12::Seek(void *a1 = 0)
+int WonlineStringDialogControl_12::Seek(int a2, void *a1 = 0)
 {
   return *(unsigned int *)(*(unsigned int *)&this->q004 + 4 * a2); /*0x7ac9ca*/
 }
@@ -204,7 +204,7 @@ void WonlineStringDialogControl_12::ddtor(void *a1 = 0)
 
 // 0x7AD1B0
 namespace gamemd {
-void WonlineStringDialogControl_12::Read(void *a1 = 0)
+int WonlineStringDialogControl_12::Read(int a2, void *a1 = 0)
 {
   int result; // eax
   int m_8; // edx

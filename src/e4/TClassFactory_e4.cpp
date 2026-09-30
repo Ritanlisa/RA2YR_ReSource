@@ -76,7 +76,7 @@ int TClassFactory_CampaignClass::ddtor(void *a1 = 0)
 } // namespace gamemd
 // 0x6C0310
 namespace gamemd {
-int TClassFactory_CampaignClass::GetSize(void *a1 = 0)
+int TClassFactory_CampaignClass::GetSize(int a1, int a2)
 {
   int v2; // ecx
   int v3; // ecx
@@ -130,7 +130,7 @@ int TClassFactory_MechLocomotionClass::ddtor(void *a1 = 0)
 } // namespace gamemd
 // 0x6C4E10
 namespace gamemd {
-int TClassFactory_MechLocomotionClass::GetSize(void *a1 = 0)
+int TClassFactory_MechLocomotionClass::GetSize(int a1, int a2)
 {
   int v2; // ecx
   int v3; // ecx

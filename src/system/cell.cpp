@@ -223,7 +223,7 @@ int CellClass::Draw(int a1, int a2) const
   return COMObject::ActivateThunk((GadgetClass *)this, a2, (int)a3, 0); /*0x48e5ef*/
 }
 // 0x7235a0
-int CellClass::RegisterForRedraw(void * a1, void * a2)
+int CellClass::RegisterForRedraw(int a1, int a2)
 {
   unsigned char *result; // eax
   int v4; // eax

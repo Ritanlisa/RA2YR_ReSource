@@ -34,7 +34,7 @@ char File::IsReady(int a2, void *a1 = 0)
 }
 // 0x433990
 namespace gamemd {
-char File::LoadFont(int a2, void *a1 = 0)
+AbstractClass * File::LoadFont()
 {
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */

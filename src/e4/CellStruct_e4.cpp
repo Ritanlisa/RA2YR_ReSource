@@ -22,7 +22,7 @@ void* CellStruct::Add(void* aP1,  void* aP2)
 }
 // 0x437F30
 namespace gamemd {
-void* CellStruct::Copy(void* aP1,  void* aP2)
+unsigned int * CellStruct::Copy(void* aP1)
 {
   int v3; // edx
   void *v4; // ecx
@@ -59,7 +59,7 @@ void* CellStruct::Sub(void* aP1,  void* aP2)
 }
 // 0x42D470
 namespace gamemd {
-void* CellStruct::Set(void* aP1,  void* aP2)
+unsigned int * CellStruct::Set(void* aP1)
 {
   IDA_LOWORD(this->field_0) = a2; /*0x42d47c*/
   IDA_HIWORD(this->field_0) = a3; /*0x42d47f*/

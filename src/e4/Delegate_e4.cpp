@@ -93,7 +93,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
 } // namespace gamemd
 // 0x631D10
 namespace gamemd {
-void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
+void Delegate::Dispatch()
 {
   int v3; // ecx
 
@@ -106,7 +106,7 @@ void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
 } // namespace gamemd
 // 0x6C95E0
 namespace gamemd {
-unsigned int * Delegate::GetField()
+void Delegate::GetField()
 {
   this->m_items = (unsigned int *)(0);
   this->m_count = (unsigned int *)(0);

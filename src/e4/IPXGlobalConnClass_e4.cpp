@@ -213,7 +213,7 @@ int IPXGlobalConnClass::CheckStatus()
 } // namespace gamemd
 // 0x5402D0
 namespace gamemd {
-int IPXGlobalConnClass::Send()
+void IPXGlobalConnClass::Send()
 {
   int v2; // ebx
   int v3; // esi

@@ -1233,7 +1233,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   Vector::Clear((int)v40); /*0x70773f*/
 }
 // 0x7602E0
-void  Surface::RenderToSurfaceVoxel(int * a3)
+void   Surface::RenderToSurfaceVoxel()
 {
   int *v4; // edi
   int v5; // eax
@@ -1323,12 +1323,12 @@ void  Surface::RenderToSurfaceVoxel(int * a3)
           0);
   if ( v74 ) /*0x76030d*/
   {
-    v4 = a3; /*0x760313*/
-    v5 = a3[1]; /*0x760319*/
-    v78 = v5 + a3[3] - 3; /*0x760329*/
+    v4 = this; /*0x760313*/
+    v5 = this[1]; /*0x760319*/
+    v78 = v5 + this[3] - 3; /*0x760329*/
     v77 = v5 + 3; /*0x76032f*/
-    v79 = *a3 + 3; /*0x760340*/
-    v69 = *a3 + a3[2] - 3; /*0x760348*/
+    v79 = *this + 3; /*0x760340*/
+    v69 = *this + this[2] - 3; /*0x760348*/
     v6 = this[1] - this->WaveClass_field_17C; /*0x760359*/
     v57 = *this - this->WaveClass_field_178; /*0x760367*/
     v6 = v6; /*0x76036b*/
@@ -1339,9 +1339,9 @@ void  Surface::RenderToSurfaceVoxel(int * a3)
       v8 = (char *)DSurface_ViewBounds.field_4 + this->q1A4 + v6; /*0x76039e*/
       v61 = (int)v8; /*0x7603a0*/
       v9 = (int)&v8[v7 - 1]; /*0x7603a4*/
-      if ( v9 >= a3[3] + a3[1] ) /*0x7603aa*/
+      if ( v9 >= this[3] + this[1] ) /*0x7603aa*/
       {
-        v64 = (char *)(a3[3] + a3[1]); /*0x7603b2*/
+        v64 = (char *)(this[3] + this[1]); /*0x7603b2*/
         v9 = (int)v64; /*0x7603b6*/
       }
       else
@@ -1398,7 +1398,7 @@ void  Surface::RenderToSurfaceVoxel(int * a3)
                 }
                 v47 = v88; /*0x760972*/
                 v8 = (char *)v61; /*0x760976*/
-                v4 = a3; /*0x76097a*/
+                v4 = this; /*0x76097a*/
                 v46 = v56; /*0x76097e*/
               }
               ++v47; /*0x760986*/
@@ -1515,7 +1515,7 @@ void  Surface::RenderToSurfaceVoxel(int * a3)
                   }
                 }
                 v27 = v54; /*0x76066d*/
-                v4 = a3; /*0x760671*/
+                v4 = this; /*0x760671*/
               }
               ++v27; /*0x760682*/
               --v86; /*0x760688*/

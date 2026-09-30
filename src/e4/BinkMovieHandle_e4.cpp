@@ -148,7 +148,7 @@ void BinkMovieHandle::CopyFrameToSurface()
 } // namespace gamemd
 // 0x432BD0
 namespace gamemd {
-int BinkMovieHandle::Check(int a2)
+void BinkMovieHandle::Check()
 {
   int result; // eax
 
@@ -178,14 +178,14 @@ BOOL BinkMovieHandle::COMStub()
 } // namespace gamemd
 // 0x5C0580
 namespace gamemd {
-bool BinkMovieHandle::AddRef()
+void BinkMovieHandle::AddRef()
 {
   return BinkMovie::RenderFrameToSurface((BinkMovieHandle *)this->height);
 }
 } // namespace gamemd
 // 0x5C0590
 namespace gamemd {
-int BinkMovieHandle::Release()
+void BinkMovieHandle::Release()
 {
   int height; // esi
   int result; // eax

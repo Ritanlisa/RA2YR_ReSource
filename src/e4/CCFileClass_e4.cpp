@@ -45,7 +45,7 @@ AudioController * * CCFileClass::Close(void *a1 = 0)
 } // namespace gamemd
 // 0x535A70
 namespace gamemd {
-int CCFileClass::Destruct()
+void CCFileClass::Destruct()
 {
   *(unsigned int *)this->CDFileClass = (void*)&CCFileClass_vftable; /*0x535a76*/
   this->tail_19 = 0; /*0x535a7c*/
@@ -57,7 +57,7 @@ int CCFileClass::Destruct()
 } // namespace gamemd
 // 0x65D0D0
 namespace gamemd {
-int CCFileClass::GetFileSize()
+void CCFileClass::GetFileSize()
 {
   DWORD FileSize; // edi
   int result; // eax

@@ -248,7 +248,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
 } // namespace gamemd
 // 0x5F7320
 namespace gamemd {
-unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
+BulletTypeClass * ObjectTypeClass::Construct()
 {
   int *v3; // eax
   int v4; // edx

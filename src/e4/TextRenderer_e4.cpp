@@ -30,7 +30,7 @@ void * TextRenderer::GetInstance(void *a1 = 0)
 }
 // 0x4B96A0
 namespace gamemd {
-void * TextRenderer::RenderCentered(void *a1 = 0)
+void TextRenderer::RenderCentered(void* a1, void* a2, void* a3, void* a4, int a5)
 {
   void * v11;
   void * v12;

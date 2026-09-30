@@ -135,7 +135,7 @@ unsigned int WDTState_4::Write(int a2)
 
 // 0x76BB90
 namespace gamemd {
-int WDTState_4::Read(void *a1 = 0)
+int WDTState_4::Read(int a2, void *a1 = 0)
 {
   int m_10; // edx
   int result; // eax
@@ -176,7 +176,7 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
 
 // 0x76BC60
 namespace gamemd {
-int WDTState_4::Constructor(void *a1 = 0)
+int WDTState_4::Constructor(int a2, void *a1 = 0)
 {
   ComPtr::Constructor(); /*0x76bc63*/
   *(unsigned int *)this->__pad_0 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76bc68*/

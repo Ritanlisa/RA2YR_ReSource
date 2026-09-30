@@ -115,7 +115,7 @@ int DDraw::CapabilityCheck()
 } // namespace gamemd
 // 0x4A4830
 namespace gamemd {
-int DDraw::WaitForIdle()
+void DDraw::WaitForIdle()
 {
   int result; // eax
 
@@ -226,7 +226,7 @@ int DDraw::HandleSuspend()
 } // namespace gamemd
 // 0x4A3DD0
 namespace gamemd {
-int DDraw::LogError(void * a1, void * a2)
+void DDraw::LogError()
 {
   int result; // eax
   CHAR Text[80]; // [esp+0h] [ebp-50h] BYREF

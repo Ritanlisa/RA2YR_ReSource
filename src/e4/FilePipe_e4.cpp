@@ -230,7 +230,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
 
 // 0x4781F0
 namespace gamemd {
-void FilePipe_30::Read(void *a1 = 0)
+int FilePipe_30::Read(unsigned int * a2, void *a1 = 0)
 {
   int m_10; // edx
   int result; // eax
@@ -298,7 +298,7 @@ void FilePipe_38::ddtor(void *a1 = 0)
 
 // 0x478470
 namespace gamemd {
-void FilePipe_38::Read(void *a1 = 0)
+int FilePipe_38::Read(unsigned char * a2, void *a1 = 0)
 {
   int result; // eax
   int m_8; // esi

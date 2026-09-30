@@ -264,7 +264,7 @@ int WideString::Trim(void *a1 = 0)
 
 // 0x7B66D0
 namespace gamemd {
-int WideString::Assign(void *a1 = 0)
+int WideString::Assign(void* a1, void* a2, void* a3, void* a4, void* a5)
 {
   int v3; // eax
   unsigned short *v4; // eax
@@ -285,7 +285,7 @@ int WideString::Assign(void *a1 = 0)
 
 // 0x7B6720
 namespace gamemd {
-int WideString::AssignFromPtr(void *a1 = 0)
+int WideString::AssignFromPtr(void* a1, void* a2, void* a3, void* a4, void* a5)
 {
   int v3; // eax
   wchar_t *v4; // eax

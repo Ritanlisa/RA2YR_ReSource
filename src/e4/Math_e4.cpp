@@ -176,7 +176,7 @@ void Math_CalcAngle(void * a1, void * a2)
 }
 // 0x5AE750
 namespace gamemd {
-void * Math::BuildRotationMatrix(float * a2, float a3)
+void Math::BuildRotationMatrix(int a1, float a2, void* a3, void* a4, void* a5, void* a6)
 {
   double v5; // st7
   double v7; // st6

@@ -57,7 +57,7 @@ AbstractClass * * DSurface::Process(void* aP1, int * a2)
 } // namespace gamemd
 // 0x4BA5A0
 namespace gamemd {
-AbstractClass * * DSurface::Construct(void* aP1, int * a2)
+AbstractClass * DSurface::Construct(void* a1, void* a2, void* a3, void* a4, void* a5)
 {
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
