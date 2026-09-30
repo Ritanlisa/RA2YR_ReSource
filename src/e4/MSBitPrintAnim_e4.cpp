@@ -20,12 +20,12 @@ namespace gamemd {
 MSBitPrintAnim * MSBitPrintAnim::QueryInterface(void ** Block, char a2)
 {
 
-  *Block = &vt_MSBitPrintAnim; /*0x5ced16*/
-  DeleteAndZero::Alt(Block + 7); /*0x5ced1c*/
-  *Block = &vt_MSAnim; /*0x5ced25*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5ced2d*/
-    RA2_OPDEL(Block); /*0x5ced30*/
-  return (MSBitPrintAnim *)Block; /*0x5ced3a*/
+  *(unsigned int *)Block->__pad_0 = &MSBitPrintAnim::`vftable'; /*0x5ced16*/
+  DeleteAndZero::Alt((DeleteAndZero *)((char *)Block + 28)); /*0x5ced1c*/
+  *(unsigned int *)Block->__pad_0 = &MSAnim::`vftable'; /*0x5ced25*/
+  if ( (a2 & 1) != 0 ) /*0x5ced2d*/
+    __3_YAXPAX_Z(Block); /*0x5ced30*/
+  return (void **)Block; /*0x5ced3a*/
 
 }
 } // namespace gamemd

@@ -5,13 +5,14 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ColorStruct_e4.hpp"
 
 // 0x427290
 namespace gamemd {
 char * AnimFile::Stub()
 {
 
-  return (char *)((unsigned char *)this + 1292);
+  return (char *)this + 1292; /*0x427296*/
 
 }
 } // namespace gamemd
@@ -24,7 +25,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
   void (***v4)(unsigned int, int); // ecx
 
   v3 = *((unsigned char *)Block + 137); /*0x4272a6*/
-  *(unsigned int *)Block = &vt_AnimFile; /*0x4272ac*/
+  *(unsigned int *)Block->__pad_0 = &AnimFile::`vftable'; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
     (*(void (**)(unsigned int))(**((unsigned int **)Block + 33) + 52))(*((unsigned int *)Block + 33)); /*0x4272be*/
@@ -39,14 +40,14 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
   }
   if ( *((unsigned int *)Block + 900) ) /*0x4272e3*/
   {
-    RA2_OPDEL(*((void **)Block + 900)); /*0x4272ee*/
+    __3_YAXPAX_Z(*((void **)Block + 900)); /*0x4272ee*/
     *((unsigned int *)Block + 900) = 0; /*0x4272f6*/
   }
   *((unsigned char *)Block + 136) = 0; /*0x427300*/
-  *(unsigned int *)Block = &vt_Animate; /*0x427308*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x42730e*/
-    RA2_OPDEL(Block); /*0x427311*/
-  return (AnimFile *)Block; /*0x42731b*/
+  *(unsigned int *)Block->__pad_0 = &Animate::`vftable'; /*0x427308*/
+  if ( (a2 & 1) != 0 ) /*0x42730e*/
+    __3_YAXPAX_Z(Block); /*0x427311*/
+  return Block; /*0x42731b*/
 
 }
 } // namespace gamemd

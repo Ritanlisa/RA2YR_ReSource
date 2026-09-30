@@ -93,11 +93,11 @@ int CheckListClass::ddtor(int a2)
 
   if ( *((unsigned char *)this + 84) ) /*0x557e18*/
   {
-    (*(void (**)(int, int))(*((unsigned int *)this + 70) + 12))((char *)this + 280, a2); /*0x557e2c*/
-    (*(void (**)(int, int))(*((unsigned int *)this + 46) + 12))((char *)this + 184, a2); /*0x557e3c*/
-    (*(void (**)(int, int))(*((unsigned int *)this + 22) + 12))((char *)this + 88, a2); /*0x557e46*/
+    (*(void (**)(char *, int))(*((unsigned int *)this + 70) + 12))((char *)this + 280, a2); /*0x557e2c*/
+    (*(void (**)(char *, int))(*((unsigned int *)this + 46) + 12))((char *)this + 184, a2); /*0x557e3c*/
+    (*(void (**)(char *, int))(*((unsigned int *)this + 22) + 12))((char *)this + 88, a2); /*0x557e46*/
   }
-  return LinkedList::InsertAfter((unsigned int *)this, a2); /*0x557e51*/
+  return LinkedList::InsertAfter((LinkClass *)this, a2); /*0x557e51*/
 
 }
 // 0x48E650

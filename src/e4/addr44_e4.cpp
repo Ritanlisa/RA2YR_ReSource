@@ -26,7 +26,7 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
 
   v3 = 6; /*0x44f6ed*/
   v4 = 5; /*0x44f6f2*/
-  v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this + 72))(this, v9); /*0x44f6f7*/
+  v5 = (unsigned int *)(*((int (**)(ObjectClass *, unsigned char *))this->AbstractClass + 18))(this, v9); /*0x44f6f7*/
   v6 = *v5 / 256; /*0x44f71b*/
   v7 = v5[1] / 256; /*0x44f71e*/
   if ( a3 ) /*0x44f72e*/
@@ -38,9 +38,9 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
   {
     v3 = 0; /*0x44f739*/
   }
-  if ( (int16_t)v6 - MEMORY[0x87F90C] > MEMORY[0x87F914] / 2 ) /*0x44f751*/
+  if ( (int16_t)v6 - *(unsigned int *)&stru_87F5F0.__pad_58[708] > *(unsigned int *)&stru_87F5F0.__pad_58[716] / 2 ) /*0x44f751*/
     v3 = -v3; /*0x44f753*/
-  if ( (int16_t)v7 - MEMORY[0x87F910] > MEMORY[0x87F918] / 2 ) /*0x44f76b*/
+  if ( (int16_t)v7 - *(unsigned int *)&stru_87F5F0.__pad_58[712] > *(unsigned int *)&stru_87F5F0.__pad_58[720] / 2 ) /*0x44f76b*/
     v4 = -v4; /*0x44f76d*/
   LOWORD(v10) = v6 + v3; /*0x44f77f*/
   HIWORD(v10) = v7 + v4; /*0x44f784*/
@@ -59,14 +59,14 @@ int INIClass::sub_44FE60()
   int i; // esi
   int v4; // ecx
 
-  INIClass::ClearSection((int)this, (INIClass *)aStructures, 0); /*0x44fe6c*/
-  result = *(unsigned int *)&g_abs_A8D63C; /*0x44fe71*/
-  for ( i = 0; i < *(int *)&g_abs_A8D63C; ++i ) /*0x44fe7a*/
+  INIClass::ClearSection((int)this, (int)aStructures, 0); /*0x44fe6c*/
+  result = dword_A8EB50; /*0x44fe71*/
+  for ( i = 0; i < dword_A8EB50; ++i ) /*0x44fe7a*/
   {
-    v4 = *(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * i); /*0x44fe82*/
+    v4 = *((unsigned int *)dword_A8EB44 + i); /*0x44fe82*/
     if ( !*(unsigned char *)(v4 + 129) && !*(unsigned char *)(*(unsigned int *)(v4 + 1312) + 5823) ) /*0x44fe95*/
       BuildingClass::ReadConstructionData(v4, this); /*0x44fea0*/
-    result = *(unsigned int *)&g_abs_A8D63C; /*0x44fea5*/
+    result = dword_A8EB50; /*0x44fea5*/
   }
   return result; /*0x44feaf*/
 

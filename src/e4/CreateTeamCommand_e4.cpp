@@ -40,7 +40,7 @@ namespace gamemd {
 int CreateTeamCommand::vt02()
 {
 
-  return (*(int (**)(void *))(*(unsigned int *)this + 16))(this);
+  return (*(int (**)(CommandClass *))(*(unsigned int *)this + 16))(this);
 
 }
 // 0x537350
@@ -49,24 +49,21 @@ unsigned int * CreateTeamCommand::performAction_148()
 {
 
   int v1; // eax
-  IUnknown *result; // eax
+  unsigned int *result; // eax
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((int16_t *)MEMORY[0xA8B230] + 6728) << 8) + 128; /*0x537378*/
-  v4[0] = (*((int16_t *)MEMORY[0xA8B230] + 6727) << 8) + 128; /*0x53737d*/
+  v1 = (SLOWORD(((unsigned int *)(dword_A8B230))[373].referenceCount) << 8) + 128; /*0x537378*/
+  v4[0] = (SHIWORD(((unsigned int *)(dword_A8B230))[373].nextArrayIndex) << 8) + 128; /*0x53737d*/
   v4[1] = v1; /*0x537386*/
   GroundHeight = 0; /*0x53738a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53739d*/
-  Tactical::SetTacticalPosition((int)MEMORY[0x887324], v4); /*0x5373a6*/
-  result = MEMORY[0x880990]; /*0x5373ab*/
-  if ( MEMORY[0x880990] ) /*0x5373b2*/
-    return Tactical::MouseMove( /*0x5373c3*/
-             (int)&MEMORY[0x87F7E8],
-             (MouseClass *)&v3,
-             (MouseClass *)&MEMORY[0xA8EA70].__pad_6A8[480]);
-  return &result->field_0; /*0x5373c8*/
+  Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v4); /*0x5373a6*/
+  result = (unsigned int *)dword_880990; /*0x5373ab*/
+  if ( dword_880990 ) /*0x5373b2*/
+    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x5373c3*/
+  return result; /*0x5373c8*/
 
 }
 }
@@ -76,24 +73,21 @@ unsigned int * CreateTeamCommand::performAction_153()
 {
 
   int v1; // eax
-  IUnknown *result; // eax
+  unsigned int *result; // eax
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((int16_t *)MEMORY[0xA8B230] + 6730) << 8) + 128; /*0x537468*/
-  v4[0] = (*((int16_t *)MEMORY[0xA8B230] + 6729) << 8) + 128; /*0x53746d*/
+  v1 = (SLOWORD(((unsigned int *)(dword_A8B230))[373].NeedsSaveOrLink) << 8) + 128; /*0x537468*/
+  v4[0] = (SHIWORD(((unsigned int *)(dword_A8B230))[373].referenceCount) << 8) + 128; /*0x53746d*/
   v4[1] = v1; /*0x537476*/
   GroundHeight = 0; /*0x53747a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53748d*/
-  Tactical::SetTacticalPosition((int)MEMORY[0x887324], v4); /*0x537496*/
-  result = MEMORY[0x880990]; /*0x53749b*/
-  if ( MEMORY[0x880990] ) /*0x5374a2*/
-    return Tactical::MouseMove( /*0x5374b3*/
-             (int)&MEMORY[0x87F7E8],
-             (MouseClass *)&v3,
-             (MouseClass *)&MEMORY[0xA8EA70].__pad_6A8[480]);
-  return &result->field_0; /*0x5374b8*/
+  Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v4); /*0x537496*/
+  result = (unsigned int *)dword_880990; /*0x53749b*/
+  if ( dword_880990 ) /*0x5374a2*/
+    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x5374b3*/
+  return result; /*0x5374b8*/
 
 }
 }
@@ -103,24 +97,21 @@ unsigned int * CreateTeamCommand::performAction_158()
 {
 
   int v1; // eax
-  IUnknown *result; // eax
+  unsigned int *result; // eax
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((int16_t *)MEMORY[0xA8B230] + 6732) << 8) + 128; /*0x537558*/
-  v4[0] = (*((int16_t *)MEMORY[0xA8B230] + 6731) << 8) + 128; /*0x53755d*/
+  v1 = (SLOWORD(((unsigned int *)(dword_A8B230))[374].vtable0) << 8) + 128; /*0x537558*/
+  v4[0] = (SHIWORD(((unsigned int *)(dword_A8B230))[373].NeedsSaveOrLink) << 8) + 128; /*0x53755d*/
   v4[1] = v1; /*0x537566*/
   GroundHeight = 0; /*0x53756a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53757d*/
-  Tactical::SetTacticalPosition((int)MEMORY[0x887324], v4); /*0x537586*/
-  result = MEMORY[0x880990]; /*0x53758b*/
-  if ( MEMORY[0x880990] ) /*0x537592*/
-    return Tactical::MouseMove( /*0x5375a3*/
-             (int)&MEMORY[0x87F7E8],
-             (MouseClass *)&v3,
-             (MouseClass *)&MEMORY[0xA8EA70].__pad_6A8[480]);
-  return &result->field_0; /*0x5375a8*/
+  Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v4); /*0x537586*/
+  result = (unsigned int *)dword_880990; /*0x53758b*/
+  if ( dword_880990 ) /*0x537592*/
+    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x5375a3*/
+  return result; /*0x5375a8*/
 
 }
 }
@@ -178,40 +169,40 @@ void * CreateTeamCommand::performAction_243(rc_ptr_base * Block, char a2)
 {
 
   int v3; // eax
-  rc_ptr_base *v4; // ebp
-  rc_ptr_base *v5; // esi
+  char *v4; // ebp
+  ComPtr *v5; // esi
   int v6; // eax
   int v7; // edi
 
-  if ( ((unsigned int)(Block)& 2) != 0 ) /*0x538a2b*/
+  if ( (a2 & 2) != 0 ) /*0x538a2b*/
   {
     v3 = *((unsigned int *)Block - 1); /*0x538a2d*/
-    v4 = Block - 1; /*0x538a31*/
-    v5 = Block + 2 * v3; /*0x538a34*/
+    v4 = (char *)Block - 4; /*0x538a31*/
+    v5 = (ComPtr *)((char *)Block + 8 * v3); /*0x538a34*/
     v6 = v3 - 1; /*0x538a37*/
     if ( v6 >= 0 ) /*0x538a38*/
     {
       v7 = v6 + 1; /*0x538a3b*/
       do /*0x538a4f*/
       {
-        v5 -= 2; /*0x538a3e*/
-        v5->vfptr = &vt_rc_ptr_WDTTerritory; /*0x538a43*/
+        v5 = (ComPtr *)((char *)v5 - 8); /*0x538a3e*/
+        *(unsigned int *)v5->__pad_0 = &rc_ptr<WDTTerritory>::`vftable'; /*0x538a43*/
         ComPtr::Release(v5); /*0x538a49*/
         --v7; /*0x538a4e*/
       }
       while ( v7 ); /*0x538a4f*/
     }
-    if ( ((unsigned int)(Block)& 1) != 0 ) /*0x538a55*/
-      RA2_OPDEL(v4); /*0x538a58*/
+    if ( (a2 & 1) != 0 ) /*0x538a55*/
+      __3_YAXPAX_Z(v4); /*0x538a58*/
     return v4; /*0x538a60*/
   }
   else
   {
-    Block->vfptr = &vt_rc_ptr_WDTTerritory; /*0x538a6a*/
-    ComPtr::Release(Block); /*0x538a70*/
-    if ( ((unsigned int)(Block)& 1) != 0 ) /*0x538a78*/
-      RA2_OPDEL(Block); /*0x538a7b*/
-    return Block; /*0x538a83*/
+    *(unsigned int *)Block->__pad_0 = &rc_ptr<WDTTerritory>::`vftable'; /*0x538a6a*/
+    ComPtr::Release((ComPtr *)Block); /*0x538a70*/
+    if ( (a2 & 1) != 0 ) /*0x538a78*/
+      __3_YAXPAX_Z(Block); /*0x538a7b*/
+    return Block->__pad_0; /*0x538a83*/
   }
 
 }
@@ -222,40 +213,40 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
 {
 
   int v3; // eax
-  unsigned int *v4; // esi
+  CreateTeamCommand *v4; // esi
   int v6; // eax
   int v7; // eax
 
-  if ( !MEMORY[0xA8ED8C] ) /*0x6a6a09*/
+  if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 424) ) /*0x6a6a09*/
   {
     v3 = a3; /*0x6a6a0f*/
     if ( a3 == -1 ) /*0x6a6a16*/
       v3 = *((unsigned int *)this + 5351); /*0x6a6a18*/
-    v4 = (unsigned int *)this + 997 * v3 + 1361; /*0x6a6a2b*/
+    v4 = (CreateTeamCommand *)((char *)this + 3988 * v3 + 5444); /*0x6a6a2b*/
     if ( a2 ) /*0x6a6a38*/
     {
       if ( *((unsigned int *)this + 997 * v3 + 1378) ) /*0x6a6a3a*/
       {
         --*((unsigned int *)this + 997 * v3 + 1379); /*0x6a6a4b*/
-        (*(void (**)(unsigned int *, unsigned int))(*(unsigned int *)this + 224))(this, 0); /*0x6a6a50*/
+        (*(void (**)(CreateTeamCommand *, unsigned int))(*(unsigned int *)this->__pad_0 + 56))(this, 0); /*0x6a6a50*/
         return 1; /*0x6a6a57*/
       }
       return 0; /*0x6a6a3f*/
     }
     v6 = 26; /*0x6a6a68*/
-    if ( *((unsigned int *)MEMORY[0xA8B230] + 3374) ) /*0x6a6a60*/
+    if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6a6a60*/
       v6 = 18; /*0x6a6a6f*/
-    v7 = (MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v6 + MEMORY[0x886F94] - 7) / 50; /*0x6a6aa4*/
-    if ( HouseClass_Player == (#375 *)MEMORY[0xAC1198] ) /*0x6a6aae*/
+    v7 = (g_DSurface_ViewBounds - g_SidebarBounds - v6 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a6aa4*/
+    if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a6aae*/
     {
-      if ( v4[17] + v7 / 2 < MEMORY[0x884CF8] ) /*0x6a6ac2*/
+      if ( *(unsigned int *)&v4-((unsigned int *)(>__pad_14))[48] + v7 / 2 < dword_884CF8 ) /*0x6a6ac2*/
         goto LABEL_13; /*0x6a6ac2*/
     }
-    else if ( 2 * (v7 + v4[17]) < v4[21] ) /*0x6a6ad2*/
+    else if ( 2 * (v7 + *(unsigned int *)&v4-((unsigned int *)(>__pad_14))[48]) < *(unsigned int *)&v4->__pad_14[64] ) /*0x6a6ad2*/
     {
 LABEL_13:
-      ++v4[18]; /*0x6a6ad4*/
-      (*(void (**)(unsigned int *, unsigned int))(*(unsigned int *)this + 224))(this, 0); /*0x6a6adf*/
+      ++*(unsigned int *)&v4-((unsigned int *)(>__pad_14))[52]; /*0x6a6ad4*/
+      (*(void (**)(CreateTeamCommand *, unsigned int))(*(unsigned int *)this->__pad_0 + 56))(this, 0); /*0x6a6adf*/
       return 1; /*0x6a6ae6*/
     }
   }
@@ -273,14 +264,14 @@ void CreateTeamCommand::performAction_246()
   int v4; // esi
   int v5; // ecx
 
-  v1 = MEMORY[0xA8EC88]; /*0x731061*/
+  v1 = dword_A8EC88; /*0x731061*/
   for ( i = 0; i < v1; ++i )
   {
-    v4 = *((unsigned int *)MEMORY[0xA8EC7C] + i); /*0x731077*/
+    v4 = *((unsigned int *)dword_A8EC7C + i); /*0x731077*/
     if ( v4 )
     {
       v5 = *(unsigned int *)(v4 + 540); /*0x731083*/
-      if ( MEMORY[0xA8B238][0] ? House::IsHumanPlayer((#375 *)v5) : *(unsigned char *)(v5 + 493) )
+      if ( dword_A8B238[0] ? House::IsHumanPlayer((#375 *)v5) : *(unsigned char *)(v5 + 493) )
       {
         if ( *(char **)(v4 + 532) == this - 1 ) /*0x7310a9*/
           *(unsigned int *)(v4 + 532) = -1; /*0x7310ab*/
@@ -317,9 +308,9 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::Construct(int a2)
 {
 
-  *((unsigned int *)this + 1) = a2; /*0x535c06*/
-  *this = &vt_CreateTeamCommandClass; /*0x535c09*/
-  return this; /*0x535c0f*/
+  this->CreateTeamCommand_field_0x4 = (void *)a2; /*0x535c06*/
+  *(unsigned int *)this->__pad_0 = &CreateTeamCommandClass::`vftable'; /*0x535c09*/
+  return this->__pad_0; /*0x535c0f*/
 
 }
 } // namespace gamemd
@@ -329,8 +320,8 @@ namespace gamemd {
 ObjectClass * CreateTeamCommand::AddRef()
 {
 
-  sprintf(&HouseClass_Player.__pad_5568[25344], &stru_826F84, (INIClass *)*((unsigned int *)this + 1)); /*0x535c2e*/
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x535c3b*/
+  sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamCreate_%d", *(unsigned int *)&this->m_1[3]); /*0x535c2e*/
+  return &(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x535c3b*/
 
 }
 } // namespace gamemd
@@ -343,10 +334,10 @@ wchar_t * CreateTeamCommand::Release()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *((unsigned int *)this + 1); /*0x535c45*/
-  StringCSF = GetStringCSF(MEMORY[0x826F94], 0, g_Str_File_Init_CPP, 6165); /*0x535c55*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x535c60*/
-  return &MEMORY[0xA8F654]; /*0x535c6d*/
+  v3 = *(const wchar_t **)&this->m_1[3]; /*0x535c45*/
+  StringCSF = GetStringCSF(aTxtCreateTeam, 0, g_Str_File_Init_CPP, 6165); /*0x535c55*/
+  swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535c60*/
+  return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535c6d*/
 
 }
 } // namespace gamemd
@@ -356,7 +347,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::ddtor()
 {
 
-  return GetStringCSF(g_abs_826FA4, 0, g_Str_File_Init_CPP, 6167); /*0x535c86*/
+  return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6167); /*0x535c86*/
 
 }
 } // namespace gamemd
@@ -369,10 +360,10 @@ wchar_t * CreateTeamCommand::Read()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *((unsigned int *)this + 1); /*0x535c95*/
-  StringCSF = GetStringCSF(MEMORY[0x826FB0], 0, g_Str_File_Init_CPP, 6169); /*0x535ca5*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x535cb0*/
-  return &MEMORY[0xA8F654]; /*0x535cbd*/
+  v3 = *(const wchar_t **)&this->m_1[3]; /*0x535c95*/
+  StringCSF = GetStringCSF(aTxtCreateTeamD, 0, g_Str_File_Init_CPP, 6169); /*0x535ca5*/
+  swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x535cb0*/
+  return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x535cbd*/
 
 }
 } // namespace gamemd
@@ -382,7 +373,7 @@ namespace gamemd {
 void CreateTeamCommand::Undo(int a2)
 {
 
-  CreateTeamCommand::performAction_246(*((unsigned int *)this + 1)); /*0x535cc3*/
+  CreateTeamCommand::performAction_246(*(char **)&this->m_1[3]); /*0x535cc3*/
 
 }
 } // namespace gamemd
@@ -392,10 +383,10 @@ namespace gamemd {
 CreateTeamCommand * CreateTeamCommand::performAction_0(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x535cd9*/
+  *(unsigned int *)this->__pad_0 = &CommandClass::`vftable'; /*0x535cd9*/
   if ( (a2 & 1) != 0 ) /*0x535cdf*/
-    RA2_OPDEL(this); /*0x535ce2*/
-  return (CreateTeamCommand *)this; /*0x535cec*/
+    __3_YAXPAX_Z(this); /*0x535ce2*/
+  return (std::locale::facet *)this; /*0x535cec*/
 
 }
 } // namespace gamemd
@@ -405,10 +396,10 @@ namespace gamemd {
 CommandClass * CreateTeamCommand::performAction_1(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x535d09*/
+  *this = (CommandClass)&CommandClass::`vftable'; /*0x535d09*/
   if ( (a2 & 1) != 0 ) /*0x535d0f*/
-    RA2_OPDEL(this); /*0x535d12*/
-  return (CommandClass *)this; /*0x535d1c*/
+    __3_YAXPAX_Z(this); /*0x535d12*/
+  return (std::locale::facet *)this; /*0x535d1c*/
 
 }
 } // namespace gamemd
@@ -418,7 +409,7 @@ namespace gamemd {
 char * CreateTeamCommand::performAction_2()
 {
 
-  return g_abs_826FC8; /*0x535d25*/
+  return aStructuretab; /*0x535d25*/
 
 }
 } // namespace gamemd
@@ -428,7 +419,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_3()
 {
 
-  return GetStringCSF(g_abs_826FD8, 0, g_Str_File_Init_CPP, 6186); /*0x535d46*/
+  return GetStringCSF(aTxtStructureTa, 0, g_Str_File_Init_CPP, 6186); /*0x535d46*/
 
 }
 } // namespace gamemd
@@ -438,7 +429,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_4()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 6188); /*0x535d66*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6188); /*0x535d66*/
 
 }
 } // namespace gamemd
@@ -448,7 +439,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_5()
 {
 
-  return GetStringCSF(g_abs_826FFC, 0, g_Str_File_Init_CPP, 6190); /*0x535d86*/
+  return GetStringCSF(aTxtStructureTa_0, 0, g_Str_File_Init_CPP, 6190); /*0x535d86*/
 
 }
 } // namespace gamemd
@@ -462,16 +453,16 @@ char CreateTeamCommand::performAction_6()
   int v2; // eax
   unsigned int *v4; // [esp-4h] [ebp-4h]
 
-  IDA_LOBYTE(_7342A0) = PlayerClass::HasPlayers(&g_abs_87F8E4); /*0x535d95*/
+  LOBYTE(_7342A0) = PlayerClass::HasPlayers(&stru_880D2C); /*0x535d95*/
   if ( (unsigned char)_7342A0 ) /*0x535d9c*/
   {
-    SidebarClass::SwitchTab((int)&g_abs_87F7E8, 0); /*0x535da5*/
+    SidebarClass::SwitchTab((int)&dword_87F7E8, 0); /*0x535da5*/
     _7342A0 = UI_Create_7342A0(); /*0x535daa*/
     if ( _7342A0 ) /*0x535db1*/
     {
       v4 = (unsigned int *)_7342A0; /*0x535db5*/
       v2 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)_7342A0 + 400))(_7342A0, 0, 0); /*0x535dbc*/
-      IDA_LOBYTE(_7342A0) = BuildingPlacement::Activate((int)HouseClass_Player, v2, v4); /*0x535dc9*/
+      LOBYTE(_7342A0) = BuildingPlacement::Activate(dword_A83D4C, v2, v4); /*0x535dc9*/
     }
   }
   return _7342A0; /*0x535dce*/
@@ -484,7 +475,7 @@ namespace gamemd {
 char * CreateTeamCommand::performAction_7()
 {
 
-  return g_abs_827014; /*0x535de5*/
+  return aDefensetab; /*0x535de5*/
 
 }
 } // namespace gamemd
@@ -494,7 +485,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_8()
 {
 
-  return GetStringCSF(g_abs_827020, 0, g_Str_File_Init_CPP, 6212); /*0x535e06*/
+  return GetStringCSF(aTxtDefenseTab, 0, g_Str_File_Init_CPP, 6212); /*0x535e06*/
 
 }
 } // namespace gamemd
@@ -504,7 +495,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_9()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 6214); /*0x535e26*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6214); /*0x535e26*/
 
 }
 } // namespace gamemd
@@ -528,16 +519,16 @@ char CreateTeamCommand::performAction_11()
   int v2; // eax
   unsigned int *v4; // [esp-4h] [ebp-4h]
 
-  IDA_LOBYTE(_7342B0) = PlayerClass::HasPlayers(&g_abs_87F8E4); /*0x535e55*/
+  LOBYTE(_7342B0) = PlayerClass::HasPlayers(&stru_881CC0); /*0x535e55*/
   if ( (unsigned char)_7342B0 ) /*0x535e5c*/
   {
-    SidebarClass::SwitchTab((int)&g_abs_87F7E8, 1); /*0x535e65*/
+    SidebarClass::SwitchTab((int)&dword_87F7E8, 1); /*0x535e65*/
     _7342B0 = UI_Create_7342B0(); /*0x535e6a*/
     if ( _7342B0 ) /*0x535e71*/
     {
       v4 = (unsigned int *)_7342B0; /*0x535e75*/
       v2 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)_7342B0 + 400))(_7342B0, 0, 0); /*0x535e7c*/
-      IDA_LOBYTE(_7342B0) = BuildingPlacement::Activate((int)HouseClass_Player, v2, v4); /*0x535e89*/
+      LOBYTE(_7342B0) = BuildingPlacement::Activate(dword_A83D4C, v2, v4); /*0x535e89*/
     }
   }
   return _7342B0; /*0x535e8e*/
@@ -570,7 +561,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_14()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 6240); /*0x535ee6*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6240); /*0x535ee6*/
 
 }
 } // namespace gamemd
@@ -592,9 +583,9 @@ int CreateTeamCommand::performAction_16()
 
   int result; // eax
 
-  result = PlayerClass::HasPlayers(&g_abs_87F8E4); /*0x535f15*/
+  result = PlayerClass::HasPlayers(&stru_882C54); /*0x535f15*/
   if ( (unsigned char)result ) /*0x535f1c*/
-    return SidebarClass::SwitchTab((int)&g_abs_87F7E8, 2); /*0x535f25*/
+    return SidebarClass::SwitchTab((int)&dword_87F7E8, 2); /*0x535f25*/
   return result; /*0x535f2a*/
 
 }
@@ -625,7 +616,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_19()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 6261); /*0x535f76*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 6261); /*0x535f76*/
 
 }
 } // namespace gamemd
@@ -647,9 +638,9 @@ int CreateTeamCommand::performAction_21()
 
   int result; // eax
 
-  result = PlayerClass::HasPlayers(&g_abs_87F8E4); /*0x535fa5*/
+  result = PlayerClass::HasPlayers(&stru_883BE8); /*0x535fa5*/
   if ( (unsigned char)result ) /*0x535fac*/
-    return SidebarClass::SwitchTab((int)&g_abs_87F7E8, 3); /*0x535fb5*/
+    return SidebarClass::SwitchTab((int)&dword_87F7E8, 3); /*0x535fb5*/
   return result; /*0x535fba*/
 
 }
@@ -660,10 +651,10 @@ namespace gamemd {
 SelectTeamCommand * CreateTeamCommand::performAction_22(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x536099*/
+  *(unsigned int *)this->__pad_0 = &CommandClass::`vftable'; /*0x536099*/
   if ( (a2 & 1) != 0 ) /*0x53609f*/
-    RA2_OPDEL(this); /*0x5360a2*/
-  return (SelectTeamCommand *)this; /*0x5360ac*/
+    __3_YAXPAX_Z(this); /*0x5360a2*/
+  return (std::locale::facet *)this; /*0x5360ac*/
 
 }
 } // namespace gamemd
@@ -673,10 +664,10 @@ namespace gamemd {
 AddTeamCommand * CreateTeamCommand::performAction_23(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x536189*/
+  *(unsigned int *)this->__pad_0 = &CommandClass::`vftable'; /*0x536189*/
   if ( (a2 & 1) != 0 ) /*0x53618f*/
-    RA2_OPDEL(this); /*0x536192*/
-  return (AddTeamCommand *)this; /*0x53619c*/
+    __3_YAXPAX_Z(this); /*0x536192*/
+  return (std::locale::facet *)this; /*0x53619c*/
 
 }
 } // namespace gamemd
@@ -686,10 +677,10 @@ namespace gamemd {
 CenterTeamCommand * CreateTeamCommand::performAction_24(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x536279*/
+  *(unsigned int *)this->__pad_0 = &CommandClass::`vftable'; /*0x536279*/
   if ( (a2 & 1) != 0 ) /*0x53627f*/
-    RA2_OPDEL(this); /*0x536282*/
-  return (CenterTeamCommand *)this; /*0x53628c*/
+    __3_YAXPAX_Z(this); /*0x536282*/
+  return (std::locale::facet *)this; /*0x53628c*/
 
 }
 } // namespace gamemd
@@ -699,10 +690,10 @@ namespace gamemd {
 TauntCommandClass * CreateTeamCommand::performAction_25(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x536589*/
+  *(unsigned int *)this->CommandClass = &CommandClass::`vftable'; /*0x536589*/
   if ( (a2 & 1) != 0 ) /*0x53658f*/
-    RA2_OPDEL(this); /*0x536592*/
-  return (TauntCommandClass *)this; /*0x53659c*/
+    __3_YAXPAX_Z(this); /*0x536592*/
+  return (std::locale::facet *)this; /*0x53659c*/
 
 }
 } // namespace gamemd
@@ -712,7 +703,7 @@ namespace gamemd {
 char * CreateTeamCommand::performAction_26()
 {
 
-  return g_abs_827234; /*0x5365a5*/
+  return aNextobject; /*0x5365a5*/
 
 }
 } // namespace gamemd
@@ -722,7 +713,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_27()
 {
 
-  return GetStringCSF(g_abs_827240, 0, g_Str_File_Init_CPP, 6526); /*0x5365c6*/
+  return GetStringCSF(aTxtNextObject, 0, g_Str_File_Init_CPP, 6526); /*0x5365c6*/
 
 }
 } // namespace gamemd
@@ -752,26 +743,30 @@ namespace gamemd {
 unsigned char * CreateTeamCommand::performAction_30()
 {
 
-  unsigned char *v1; // eax
-  unsigned char *result; // eax
-  unsigned char *v3; // esi
+  MapClass *v3; // esi
+  unsigned char *v4; // eax
+  AnimClass *result; // eax
+  AnimClass *v6; // esi
+  MapClass *v7; // [esp-4h] [ebp-4h]
+  TacticalClass *v8; // [esp-4h] [ebp-4h]
 
-  TacticalClass::SetObserverMode(&g_abs_87F7E8, 0); /*0x536617*/
-  TacticalClass::SetDisplayMode(&g_abs_87F7E8, 0, 0); /*0x536625*/
-  BuildingClass::TogglePower2(&g_abs_87F7E8, 0); /*0x536631*/
-  BuildingClass::TogglePower(&g_abs_87F7E8, 0); /*0x53663d*/
-  if ( *(unsigned int *)&g_abs_A8D63C ) /*0x536649*/
-    v1 = **(unsigned char ***)&g_abs_A8D63C; /*0x536650*/
+  TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536617*/
+  TacticalClass::SetDisplayMode((TacticalClass *)&dword_87F7E8, 0, 0); /*0x536625*/
+  BuildingClass::TogglePower2((BuildingClass *)&dword_87F7E8, 0); /*0x536631*/
+  BuildingClass::TogglePower((BuildingClass *)&dword_87F7E8, 0); /*0x53663d*/
+  if ( dword_A8ECC8 ) /*0x536649*/
+    v4 = *(unsigned char **)dword_A8ECBC; /*0x536650*/
   else
-    v1 = 0; /*0x536654*/
-  result = sub_4AA2B0(v1); /*0x53665d*/
-  v3 = result; /*0x536662*/
+    v4 = 0; /*0x536654*/
+  v7 = v3; /*0x536656*/
+  result = (AnimClass *)sub_4AA2B0(v4); /*0x53665d*/
+  v6 = result; /*0x536662*/
   if ( result ) /*0x536666*/
   {
-    MapClass::UnselectAll_ClearLimboLaunchers(); /*0x536668*/
-    (*(void (**)(unsigned char *))(*(unsigned int *)v3 + 332))(v3); /*0x536671*/
-    TacticalClass::InterpolateView(); /*0x53667c*/
-    return (unsigned char *)MapClass::MarkForRedraw(&g_abs_87F7E8, 1); /*0x536688*/
+    MapClass::UnselectAll_ClearLimboLaunchers(v7); /*0x536668*/
+    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536671*/
+    TacticalClass::InterpolateView(v8); /*0x53667c*/
+    return (AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1); /*0x536688*/
   }
   return result; /*0x53668e*/
 
@@ -928,7 +923,7 @@ int CreateTeamCommand::performAction_44()
   unsigned int v3; // [esp+4h] [ebp+4h]
 
   v1 = v3 >> 8; /*0x5367f4*/
-  IDA_LOBYTE(v1) = (v3 & 0x100) == 0; /*0x5367f9*/
+  LOBYTE(v1) = (v3 & 0x100) == 0; /*0x5367f9*/
   return ((int (*)(unsigned int))loc_732280)(v1); /*0x536801*/
 
 }
@@ -1080,12 +1075,9 @@ namespace gamemd {
 int CreateTeamCommand::performAction_58()
 {
 
-  HealthNavCommandClass *v1; // ecx
-  unsigned int v3; // [esp+4h] [ebp+4h]
+  char v2; // [esp+5h] [ebp+5h]
 
-  v1 = (HealthNavCommandClass *)(v3 >> 8); /*0x536954*/
-  IDA_LOBYTE(v1) = (v3 & 0x100) == 0; /*0x536959*/
-  return UpdateUnitHealthTooltip(v1); /*0x536961*/
+  return UpdateUnitHealthTooltip((v2 & 1) == 0); /*0x536961*/
 
 }
 } // namespace gamemd
@@ -1147,12 +1139,9 @@ namespace gamemd {
 int CreateTeamCommand::performAction_64()
 {
 
-  VeterancyNavCommandClass *v1; // ecx
-  unsigned int v3; // [esp+4h] [ebp+4h]
+  char v2; // [esp+5h] [ebp+5h]
 
-  v1 = (VeterancyNavCommandClass *)(v3 >> 8); /*0x5369f4*/
-  IDA_LOBYTE(v1) = (v3 & 0x100) == 0; /*0x5369f9*/
-  return DrawUnitExperiencePopup(v1); /*0x536a01*/
+  return DrawUnitExperiencePopup((v2 & 1) == 0); /*0x536a01*/
 
 }
 } // namespace gamemd
@@ -1202,26 +1191,30 @@ namespace gamemd {
 unsigned char * CreateTeamCommand::performAction_69()
 {
 
-  unsigned char *v1; // eax
-  unsigned char *result; // eax
-  unsigned char *v3; // esi
+  MapClass *v3; // esi
+  unsigned char *v4; // eax
+  AnimClass *result; // eax
+  AnimClass *v6; // esi
+  MapClass *v7; // [esp-4h] [ebp-4h]
+  TacticalClass *v8; // [esp-4h] [ebp-4h]
 
-  TacticalClass::SetObserverMode(&g_abs_87F7E8, 0); /*0x536a87*/
-  TacticalClass::SetDisplayMode(&g_abs_87F7E8, 0, 0); /*0x536a95*/
-  BuildingClass::TogglePower2(&g_abs_87F7E8, 0); /*0x536aa1*/
-  BuildingClass::TogglePower(&g_abs_87F7E8, 0); /*0x536aad*/
-  if ( *(unsigned int *)&g_abs_A8D63C ) /*0x536ab9*/
-    v1 = **(unsigned char ***)&g_abs_A8D63C; /*0x536ac0*/
+  TacticalClass::SetObserverMode((TacticalClass *)&dword_87F7E8, 0); /*0x536a87*/
+  TacticalClass::SetDisplayMode((TacticalClass *)&dword_87F7E8, 0, 0); /*0x536a95*/
+  BuildingClass::TogglePower2((BuildingClass *)&dword_87F7E8, 0); /*0x536aa1*/
+  BuildingClass::TogglePower((BuildingClass *)&dword_87F7E8, 0); /*0x536aad*/
+  if ( dword_A8ECC8 ) /*0x536ab9*/
+    v4 = *(unsigned char **)dword_A8ECBC; /*0x536ac0*/
   else
-    v1 = 0; /*0x536ac4*/
-  result = sub_4AA380(v1); /*0x536acd*/
-  v3 = result; /*0x536ad2*/
+    v4 = 0; /*0x536ac4*/
+  v7 = v3; /*0x536ac6*/
+  result = (AnimClass *)sub_4AA380(v4); /*0x536acd*/
+  v6 = result; /*0x536ad2*/
   if ( result ) /*0x536ad6*/
   {
-    MapClass::UnselectAll_ClearLimboLaunchers(); /*0x536ad8*/
-    (*(void (**)(unsigned char *))(*(unsigned int *)v3 + 332))(v3); /*0x536ae1*/
-    TacticalClass::InterpolateView(); /*0x536aec*/
-    return (unsigned char *)MapClass::MarkForRedraw(&g_abs_87F7E8, 1); /*0x536af8*/
+    MapClass::UnselectAll_ClearLimboLaunchers(v7); /*0x536ad8*/
+    (*(void (**)(AnimClass *))(v6->AnimClass_field_0x0 + 332))(v6); /*0x536ae1*/
+    TacticalClass::InterpolateView(v8); /*0x536aec*/
+    return (AnimClass *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 1); /*0x536af8*/
   }
   return result; /*0x536afe*/
 
@@ -1514,15 +1507,15 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_99()
 {
 
-  ParticleSystemClass *result; // eax
+  wchar_t *result; // eax
 
-  result = *(ParticleSystemClass **)&g_abs_A8D63C; /*0x536e00*/
-  if ( *(int *)&g_abs_A8D63C > 0 ) /*0x536e07*/
+  result = g_SelectionManager; /*0x536e00*/
+  if ( (int)g_SelectionManager > 0 ) /*0x536e07*/
   {
     TacticalClass::InterpolateView(); /*0x536e0e*/
-    return (wchar_t *)MapClass::MarkForRedraw(&g_abs_87F7E8, 1); /*0x536e1a*/
+    return (wchar_t *)MapClass::MarkForRedraw(&MapClass_Instance, 1); /*0x536e1a*/
   }
-  return (wchar_t *)result; /*0x536e1f*/
+  return result; /*0x536e1f*/
 
 }
 } // namespace gamemd
@@ -1650,7 +1643,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_112()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7105); /*0x536f76*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7105); /*0x536f76*/
 
 }
 } // namespace gamemd
@@ -1690,7 +1683,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_116()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7131); /*0x536ff6*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7131); /*0x536ff6*/
 
 }
 } // namespace gamemd
@@ -1710,7 +1703,7 @@ namespace gamemd {
 char CreateTeamCommand::performAction_118(int a1)
 {
 
-  return BuildingClass::TogglePower(&g_abs_87F7E8, -1); /*0x53702c*/
+  return BuildingClass::TogglePower((BuildingClass *)&stru_87F5F0.__pad_58[416], -1); /*0x53702c*/
 
 }
 } // namespace gamemd
@@ -1740,7 +1733,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_121()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7174); /*0x537076*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7174); /*0x537076*/
 
 }
 } // namespace gamemd
@@ -1760,15 +1753,15 @@ namespace gamemd {
 int CreateTeamCommand::performAction_123()
 {
 
-  CellStruct *result; // eax
+  int result; // eax
 
-  result = g_abs_A8B238; /*0x5370a0*/
-  if ( g_abs_A8B238 ) /*0x5370a7*/
+  result = *(unsigned int *)&dword_A8B238; /*0x5370a0*/
+  if ( *(unsigned int *)&dword_A8B238 ) /*0x5370a7*/
   {
-    if ( g_abs_A8B238 != (CellStruct *)5 ) /*0x5370ac*/
+    if ( *(unsigned int *)&dword_A8B238 != 5 ) /*0x5370ac*/
       return UI_Create_731A30(); /*0x5370ae*/
   }
-  return (int)result; /*0x5370b3*/
+  return result; /*0x5370b3*/
 
 }
 } // namespace gamemd
@@ -1798,7 +1791,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_126()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7197); /*0x537106*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7197); /*0x537106*/
 
 }
 } // namespace gamemd
@@ -1818,7 +1811,10 @@ namespace gamemd {
 int CreateTeamCommand::performAction_128()
 {
 
-  return UI_Create_734120(); /*0x537135*/
+  unsigned int result; // eax
+
+  LOWORD(result) = UI_Create_734120(); /*0x537130*/
+  return result; /*0x537135*/
 
 }
 {
@@ -1851,7 +1847,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_131()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7251); /*0x537186*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7251); /*0x537186*/
 
 }
 } // namespace gamemd
@@ -1871,7 +1867,7 @@ namespace gamemd {
 char CreateTeamCommand::performAction_133()
 {
 
-  return CreateTeamCommand::performAction_245(&g_abs_87F7E8, 1, -1); /*0x5371be*/
+  return CreateTeamCommand::performAction_245((CreateTeamCommand *)&dword_87F7E8, 1, -1); /*0x5371be*/
 
 }
 } // namespace gamemd
@@ -1901,7 +1897,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_136()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7391); /*0x537216*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7391); /*0x537216*/
 
 }
 } // namespace gamemd
@@ -1921,7 +1917,7 @@ namespace gamemd {
 char CreateTeamCommand::performAction_138()
 {
 
-  return CreateTeamCommand::performAction_245(&g_abs_87F7E8, 0, -1); /*0x53724e*/
+  return CreateTeamCommand::performAction_245((CreateTeamCommand *)&dword_87F7E8, 0, -1); /*0x53724e*/
 
 }
 } // namespace gamemd
@@ -1931,7 +1927,7 @@ namespace gamemd {
 CHAR * CreateTeamCommand::performAction_139()
 {
 
-  return (CHAR *)&g_INI_Key_Options; /*0x537265*/
+  return g_INI_Key_Options; /*0x537265*/
 
 }
 } // namespace gamemd
@@ -1951,7 +1947,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_141()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7532); /*0x5372a6*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7532); /*0x5372a6*/
 
 }
 } // namespace gamemd
@@ -2007,7 +2003,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_146()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7709); /*0x537326*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7709); /*0x537326*/
 
 }
 } // namespace gamemd
@@ -2047,7 +2043,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_151()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7745); /*0x537416*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7745); /*0x537416*/
 
 }
 } // namespace gamemd
@@ -2087,7 +2083,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_156()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7781); /*0x537506*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7781); /*0x537506*/
 
 }
 } // namespace gamemd
@@ -2127,7 +2123,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_161()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7817); /*0x5375f6*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7817); /*0x5375f6*/
 
 }
 } // namespace gamemd
@@ -2167,7 +2163,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_165()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7853); /*0x5376e6*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7853); /*0x5376e6*/
 
 }
 } // namespace gamemd
@@ -2189,16 +2185,16 @@ void * CreateTeamCommand::performAction_167()
 
   int *v1; // eax
   int v2; // edx
-  ScenarioClass *result; // eax
+  void *result; // eax
   int v4[2]; // [esp+0h] [ebp-10h] BYREF
-  unsigned int v5[2]; // [esp+8h] [ebp-8h] BYREF
+  int v5[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v1 = ObjectClass::ComputeDelta(*(unsigned int **)&g_abs_87F8E4, v4); /*0x53771e*/
+  v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53771e*/
   v5[0] = *v1; /*0x537725*/
   v5[1] = v1[1]; /*0x53773c*/
-  v2 = *Tactical::PixelToCell(*(int *)&g_abs_87F8E4, (AbstractClass *)v4, (IUnknown *)v5); /*0x537745*/
-  result = g_abs_A8B230; /*0x537747*/
-  *(int *)((char *)&g_abs_A8B230->localVariables[1024] + 2) = v2; /*0x53774c*/
+  v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537745*/
+  result = dword_A8B230; /*0x537747*/
+  *(int *)((char *)&dword_A8B230[373].nextArrayIndex + 2) = v2; /*0x53774c*/
   return result; /*0x537752*/
 
 }
@@ -2229,7 +2225,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_170()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7880); /*0x5377a6*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7880); /*0x5377a6*/
 
 }
 } // namespace gamemd
@@ -2251,16 +2247,16 @@ void * CreateTeamCommand::performAction_172()
 
   int *v1; // eax
   int v2; // edx
-  ScenarioClass *result; // eax
+  void *result; // eax
   int v4[2]; // [esp+0h] [ebp-10h] BYREF
-  unsigned int v5[2]; // [esp+8h] [ebp-8h] BYREF
+  int v5[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v1 = ObjectClass::ComputeDelta(*(unsigned int **)&g_abs_87F8E4, v4); /*0x5377de*/
+  v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x5377de*/
   v5[0] = *v1; /*0x5377e5*/
   v5[1] = v1[1]; /*0x5377fc*/
-  v2 = *Tactical::PixelToCell(*(int *)&g_abs_87F8E4, (AbstractClass *)v4, (IUnknown *)v5); /*0x537805*/
-  result = g_abs_A8B230; /*0x537807*/
-  *(int *)((char *)g_abs_A8B230->view1 + 2) = v2; /*0x53780c*/
+  v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537805*/
+  result = dword_A8B230; /*0x537807*/
+  *(int *)((char *)&dword_A8B230[373].referenceCount + 2) = v2; /*0x53780c*/
   return result; /*0x537812*/
 
 }
@@ -2291,7 +2287,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_175()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7907); /*0x537866*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7907); /*0x537866*/
 
 }
 } // namespace gamemd
@@ -2313,16 +2309,16 @@ void * CreateTeamCommand::performAction_177()
 
   int *v1; // eax
   int v2; // edx
-  ScenarioClass *result; // eax
+  void *result; // eax
   int v4[2]; // [esp+0h] [ebp-10h] BYREF
-  unsigned int v5[2]; // [esp+8h] [ebp-8h] BYREF
+  int v5[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v1 = ObjectClass::ComputeDelta(*(unsigned int **)&g_abs_87F8E4, v4); /*0x53789e*/
+  v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53789e*/
   v5[0] = *v1; /*0x5378a5*/
   v5[1] = v1[1]; /*0x5378bc*/
-  v2 = *Tactical::PixelToCell(*(int *)&g_abs_87F8E4, (AbstractClass *)v4, (IUnknown *)v5); /*0x5378c5*/
-  result = g_abs_A8B230; /*0x5378c7*/
-  *(int *)((char *)g_abs_A8B230->view2 + 2) = v2; /*0x5378cc*/
+  v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x5378c5*/
+  result = dword_A8B230; /*0x5378c7*/
+  *(int *)((char *)&dword_A8B230[373].NeedsSaveOrLink + 2) = v2; /*0x5378cc*/
   return result; /*0x5378d2*/
 
 }
@@ -2353,7 +2349,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_180()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7934); /*0x537926*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7934); /*0x537926*/
 
 }
 } // namespace gamemd
@@ -2375,16 +2371,16 @@ void * CreateTeamCommand::performAction_182()
 
   int *v1; // eax
   int v2; // edx
-  ScenarioClass *result; // eax
+  void *result; // eax
   int v4[2]; // [esp+0h] [ebp-10h] BYREF
-  unsigned int v5[2]; // [esp+8h] [ebp-8h] BYREF
+  int v5[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v1 = ObjectClass::ComputeDelta(*(unsigned int **)&g_abs_87F8E4, v4); /*0x53795e*/
+  v1 = ObjectClass::ComputeDelta((ObjectClass *)g_TacticalClass_Instance, v4); /*0x53795e*/
   v5[0] = *v1; /*0x537965*/
   v5[1] = v1[1]; /*0x53797c*/
-  v2 = *Tactical::PixelToCell(*(int *)&g_abs_87F8E4, (AbstractClass *)v4, (IUnknown *)v5); /*0x537985*/
-  result = g_abs_A8B230; /*0x537987*/
-  *(int *)((char *)g_abs_A8B230->view3 + 2) = v2; /*0x53798c*/
+  v2 = *Tactical::PixelToCell((Tactical *)g_TacticalClass_Instance, v4, v5); /*0x537985*/
+  result = dword_A8B230; /*0x537987*/
+  *(int *)((char *)&dword_A8B230[374].vtable0 + 2) = v2; /*0x53798c*/
   return result; /*0x537992*/
 
 }
@@ -2415,7 +2411,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_185()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 7961); /*0x5379e6*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 7961); /*0x5379e6*/
 
 }
 } // namespace gamemd
@@ -2435,10 +2431,10 @@ namespace gamemd {
 bool CreateTeamCommand::performAction_187()
 {
 
-  if ( !*(unsigned int *)&g_abs_A8D63C || MapClass::GetScrollMode((int)&g_abs_87F7E8) ) /*0x537a1e*/
-    return MapClass::SetScrollMode((int)&g_abs_87F7E8, 0); /*0x537a43*/
+  if ( !dword_A8ECC8 || MapClass::GetScrollMode((MapClass *)&dword_87F7E8) ) /*0x537a1e*/
+    return MapClass::SetScrollMode((int)&dword_87F7E8, 0); /*0x537a43*/
   else
-    return MapClass::SetScrollMode((int)&g_abs_87F7E8, **(MouseClass ***)&g_abs_A8D63C); /*0x537a34*/
+    return MapClass::SetScrollMode((int)&dword_87F7E8, *(unsigned int *)dword_A8ECBC); /*0x537a34*/
 
 }
 } // namespace gamemd
@@ -2498,7 +2494,7 @@ int CreateTeamCommand::performAction_192()
   if ( v1 ) /*0x537b15*/
     v2 = aExtraSyncInfoO_0; /*0x537b17*/
   v3 = CharToWideString(v2); /*0x537b1c*/
-  return MessageListClass::AddMessage(g_abs_A8BC60, 0, 0, (CellStruct *)v3, 3, (IUnknown *)0x4046, 150, 0); /*0x537b30*/
+  return MessageListClass::AddMessage(&unk_A8BC60, 0, 0, (wchar_t *)v3, 3, 16454, 150, 0); /*0x537b30*/
 
 }
 } // namespace gamemd
@@ -2508,7 +2504,7 @@ namespace gamemd {
 char * CreateTeamCommand::performAction_193()
 {
 
-  return g_abs_827ADC; /*0x537e85*/
+  return aCursorcheat; /*0x537e85*/
 
 }
 } // namespace gamemd
@@ -2518,7 +2514,7 @@ namespace gamemd {
 wchar_t * CreateTeamCommand::performAction_194()
 {
 
-  return GetStringCSF(g_abs_827AE8, 0, g_Str_File_Init_CPP, 8231); /*0x537ea6*/
+  return GetStringCSF(aGuiCursorcheat, 0, g_Str_File_Init_CPP, 8231); /*0x537ea6*/
 
 }
 } // namespace gamemd
@@ -2550,8 +2546,8 @@ bool CreateTeamCommand::performAction_197(int a1)
 
   bool result; // al
 
-  result = g_abs_A8F7D8 == 0; /*0x537ef7*/
-  g_abs_A8F7D8 = g_abs_A8F7D8 == 0; /*0x537efa*/
+  result = LOBYTE(stru_A8EB00.__pad_CD4[1]) == 0; /*0x537ef7*/
+  LOBYTE(stru_A8EB00.__pad_CD4[1]) = LOBYTE(stru_A8EB00.__pad_CD4[1]) == 0; /*0x537efa*/
   return result; /*0x537eff*/
 
 }
@@ -2562,10 +2558,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_198(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x537fa9*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x537fa9*/
   if ( (a2 & 1) != 0 ) /*0x537faf*/
-    RA2_OPDEL(this); /*0x537fb2*/
-  return this; /*0x537fbc*/
+    __3_YAXPAX_Z(this); /*0x537fb2*/
+  return (std::locale::facet *)this; /*0x537fbc*/
 
 }
 } // namespace gamemd
@@ -2575,10 +2571,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_199(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x537fc9*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x537fc9*/
   if ( (a2 & 1) != 0 ) /*0x537fcf*/
-    RA2_OPDEL(this); /*0x537fd2*/
-  return this; /*0x537fdc*/
+    __3_YAXPAX_Z(this); /*0x537fd2*/
+  return (std::locale::facet *)this; /*0x537fdc*/
 
 }
 } // namespace gamemd
@@ -2588,10 +2584,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_200(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x537fe9*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x537fe9*/
   if ( (a2 & 1) != 0 ) /*0x537fef*/
-    RA2_OPDEL(this); /*0x537ff2*/
-  return this; /*0x537ffc*/
+    __3_YAXPAX_Z(this); /*0x537ff2*/
+  return (std::locale::facet *)this; /*0x537ffc*/
 
 }
 } // namespace gamemd
@@ -2601,10 +2597,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_201(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538009*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538009*/
   if ( (a2 & 1) != 0 ) /*0x53800f*/
-    RA2_OPDEL(this); /*0x538012*/
-  return this; /*0x53801c*/
+    __3_YAXPAX_Z(this); /*0x538012*/
+  return (std::locale::facet *)this; /*0x53801c*/
 
 }
 } // namespace gamemd
@@ -2614,10 +2610,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_202(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538029*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538029*/
   if ( (a2 & 1) != 0 ) /*0x53802f*/
-    RA2_OPDEL(this); /*0x538032*/
-  return this; /*0x53803c*/
+    __3_YAXPAX_Z(this); /*0x538032*/
+  return (std::locale::facet *)this; /*0x53803c*/
 
 }
 } // namespace gamemd
@@ -2627,10 +2623,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_203(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538049*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538049*/
   if ( (a2 & 1) != 0 ) /*0x53804f*/
-    RA2_OPDEL(this); /*0x538052*/
-  return this; /*0x53805c*/
+    __3_YAXPAX_Z(this); /*0x538052*/
+  return (std::locale::facet *)this; /*0x53805c*/
 
 }
 } // namespace gamemd
@@ -2640,10 +2636,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_204(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538069*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538069*/
   if ( (a2 & 1) != 0 ) /*0x53806f*/
-    RA2_OPDEL(this); /*0x538072*/
-  return this; /*0x53807c*/
+    __3_YAXPAX_Z(this); /*0x538072*/
+  return (std::locale::facet *)this; /*0x53807c*/
 
 }
 } // namespace gamemd
@@ -2653,10 +2649,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_205(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538089*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538089*/
   if ( (a2 & 1) != 0 ) /*0x53808f*/
-    RA2_OPDEL(this); /*0x538092*/
-  return this; /*0x53809c*/
+    __3_YAXPAX_Z(this); /*0x538092*/
+  return (std::locale::facet *)this; /*0x53809c*/
 
 }
 } // namespace gamemd
@@ -2666,10 +2662,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_206(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x5380a9*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x5380a9*/
   if ( (a2 & 1) != 0 ) /*0x5380af*/
-    RA2_OPDEL(this); /*0x5380b2*/
-  return this; /*0x5380bc*/
+    __3_YAXPAX_Z(this); /*0x5380b2*/
+  return (std::locale::facet *)this; /*0x5380bc*/
 
 }
 } // namespace gamemd
@@ -2679,10 +2675,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_207(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x5380c9*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x5380c9*/
   if ( (a2 & 1) != 0 ) /*0x5380cf*/
-    RA2_OPDEL(this); /*0x5380d2*/
-  return this; /*0x5380dc*/
+    __3_YAXPAX_Z(this); /*0x5380d2*/
+  return (std::locale::facet *)this; /*0x5380dc*/
 
 }
 } // namespace gamemd
@@ -2692,10 +2688,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_208(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x5380e9*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x5380e9*/
   if ( (a2 & 1) != 0 ) /*0x5380ef*/
-    RA2_OPDEL(this); /*0x5380f2*/
-  return this; /*0x5380fc*/
+    __3_YAXPAX_Z(this); /*0x5380f2*/
+  return (std::locale::facet *)this; /*0x5380fc*/
 
 }
 } // namespace gamemd
@@ -2705,10 +2701,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_209(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538109*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538109*/
   if ( (a2 & 1) != 0 ) /*0x53810f*/
-    RA2_OPDEL(this); /*0x538112*/
-  return this; /*0x53811c*/
+    __3_YAXPAX_Z(this); /*0x538112*/
+  return (std::locale::facet *)this; /*0x53811c*/
 
 }
 } // namespace gamemd
@@ -2718,10 +2714,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_210(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538129*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538129*/
   if ( (a2 & 1) != 0 ) /*0x53812f*/
-    RA2_OPDEL(this); /*0x538132*/
-  return this; /*0x53813c*/
+    __3_YAXPAX_Z(this); /*0x538132*/
+  return (std::locale::facet *)this; /*0x53813c*/
 
 }
 } // namespace gamemd
@@ -2731,10 +2727,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_211(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538149*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538149*/
   if ( (a2 & 1) != 0 ) /*0x53814f*/
-    RA2_OPDEL(this); /*0x538152*/
-  return this; /*0x53815c*/
+    __3_YAXPAX_Z(this); /*0x538152*/
+  return (std::locale::facet *)this; /*0x53815c*/
 
 }
 } // namespace gamemd
@@ -2744,10 +2740,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_212(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538169*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538169*/
   if ( (a2 & 1) != 0 ) /*0x53816f*/
-    RA2_OPDEL(this); /*0x538172*/
-  return this; /*0x53817c*/
+    __3_YAXPAX_Z(this); /*0x538172*/
+  return (std::locale::facet *)this; /*0x53817c*/
 
 }
 } // namespace gamemd
@@ -2757,10 +2753,10 @@ namespace gamemd {
 std::locale::facet * CreateTeamCommand::performAction_213(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x538189*/
+  this->m_0 = (int)&CommandClass::`vftable'; /*0x538189*/
   if ( (a2 & 1) != 0 ) /*0x53818f*/
-    RA2_OPDEL(this); /*0x538192*/
-  return this; /*0x53819c*/
+    __3_YAXPAX_Z(this); /*0x538192*/
+  return (std::locale::facet *)this; /*0x53819c*/
 
 }
 } // namespace gamemd
@@ -2770,10 +2766,10 @@ namespace gamemd {
 ToggleSellCommandClass * CreateTeamCommand::performAction_214(char a2)
 {
 
-  *(unsigned int *)this = &vt_CommandClass; /*0x5381a9*/
+  *this = (ToggleSellCommandClass)&CommandClass::`vftable'; /*0x5381a9*/
   if ( (a2 & 1) != 0 ) /*0x5381af*/
-    RA2_OPDEL(this); /*0x5381b2*/
-  return (ToggleSellCommandClass *)this; /*0x5381bc*/
+    __3_YAXPAX_Z(this); /*0x5381b2*/
+  return (std::locale::facet *)this; /*0x5381bc*/
 
 }
 } // namespace gamemd
@@ -2783,10 +2779,10 @@ namespace gamemd {
 ToggleRepairCommandClass * CreateTeamCommand::performAction_215(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x5381c9*/
-  if ( (Block & 1) != 0 ) /*0x5381cf*/
-    RA2_OPDEL(Block); /*0x5381d2*/
-  return (ToggleRepairCommandClass *)Block; /*0x5381dc*/
+  *Block = (ToggleRepairCommandClass)&CommandClass::`vftable'; /*0x5381c9*/
+  if ( (a2 & 1) != 0 ) /*0x5381cf*/
+    __3_YAXPAX_Z(Block); /*0x5381d2*/
+  return Block; /*0x5381dc*/
 
 }
 } // namespace gamemd
@@ -2796,10 +2792,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_216(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x5381e9*/
-  if ( (Block & 1) != 0 ) /*0x5381ef*/
-    RA2_OPDEL(Block); /*0x5381f2*/
-  return Block; /*0x5381fc*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x5381e9*/
+  if ( (a2 & 1) != 0 ) /*0x5381ef*/
+    __3_YAXPAX_Z(Block); /*0x5381f2*/
+  return &Block->m_0; /*0x5381fc*/
 
 }
 } // namespace gamemd
@@ -2809,10 +2805,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_217(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538209*/
-  if ( (Block & 1) != 0 ) /*0x53820f*/
-    RA2_OPDEL(Block); /*0x538212*/
-  return Block; /*0x53821c*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x538209*/
+  if ( (a2 & 1) != 0 ) /*0x53820f*/
+    __3_YAXPAX_Z(Block); /*0x538212*/
+  return &Block->m_0; /*0x53821c*/
 
 }
 } // namespace gamemd
@@ -2822,10 +2818,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_218(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538229*/
-  if ( (Block & 1) != 0 ) /*0x53822f*/
-    RA2_OPDEL(Block); /*0x538232*/
-  return Block; /*0x53823c*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x538229*/
+  if ( (a2 & 1) != 0 ) /*0x53822f*/
+    __3_YAXPAX_Z(Block); /*0x538232*/
+  return &Block->m_0; /*0x53823c*/
 
 }
 } // namespace gamemd
@@ -2835,10 +2831,10 @@ namespace gamemd {
 ScatterCommandClass * CreateTeamCommand::performAction_219(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538249*/
-  if ( (Block & 1) != 0 ) /*0x53824f*/
-    RA2_OPDEL(Block); /*0x538252*/
-  return (ScatterCommandClass *)Block; /*0x53825c*/
+  *Block = (ScatterCommandClass)&CommandClass::`vftable'; /*0x538249*/
+  if ( (a2 & 1) != 0 ) /*0x53824f*/
+    __3_YAXPAX_Z(Block); /*0x538252*/
+  return Block; /*0x53825c*/
 
 }
 } // namespace gamemd
@@ -2848,10 +2844,10 @@ namespace gamemd {
 GuardCommandClass * CreateTeamCommand::performAction_220(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538269*/
-  if ( (Block & 1) != 0 ) /*0x53826f*/
-    RA2_OPDEL(Block); /*0x538272*/
-  return (GuardCommandClass *)Block; /*0x53827c*/
+  *Block = (GuardCommandClass)&CommandClass::`vftable'; /*0x538269*/
+  if ( (a2 & 1) != 0 ) /*0x53826f*/
+    __3_YAXPAX_Z(Block); /*0x538272*/
+  return Block; /*0x53827c*/
 
 }
 } // namespace gamemd
@@ -2861,10 +2857,10 @@ namespace gamemd {
 StopCommandClass * CreateTeamCommand::performAction_221(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538289*/
-  if ( (Block & 1) != 0 ) /*0x53828f*/
-    RA2_OPDEL(Block); /*0x538292*/
-  return (StopCommandClass *)Block; /*0x53829c*/
+  *Block = (StopCommandClass)&CommandClass::`vftable'; /*0x538289*/
+  if ( (a2 & 1) != 0 ) /*0x53828f*/
+    __3_YAXPAX_Z(Block); /*0x538292*/
+  return Block; /*0x53829c*/
 
 }
 } // namespace gamemd
@@ -2874,10 +2870,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_222(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x5382a9*/
-  if ( (Block & 1) != 0 ) /*0x5382af*/
-    RA2_OPDEL(Block); /*0x5382b2*/
-  return Block; /*0x5382bc*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x5382a9*/
+  if ( (a2 & 1) != 0 ) /*0x5382af*/
+    __3_YAXPAX_Z(Block); /*0x5382b2*/
+  return &Block->m_0; /*0x5382bc*/
 
 }
 } // namespace gamemd
@@ -2887,10 +2883,10 @@ namespace gamemd {
 DeployCommandClass * CreateTeamCommand::performAction_223(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x5382c9*/
-  if ( (Block & 1) != 0 ) /*0x5382cf*/
-    RA2_OPDEL(Block); /*0x5382d2*/
-  return (DeployCommandClass *)Block; /*0x5382dc*/
+  *Block = (DeployCommandClass)&CommandClass::`vftable'; /*0x5382c9*/
+  if ( (a2 & 1) != 0 ) /*0x5382cf*/
+    __3_YAXPAX_Z(Block); /*0x5382d2*/
+  return Block; /*0x5382dc*/
 
 }
 } // namespace gamemd
@@ -2900,10 +2896,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_224(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x5382e9*/
-  if ( (Block & 1) != 0 ) /*0x5382ef*/
-    RA2_OPDEL(Block); /*0x5382f2*/
-  return Block; /*0x5382fc*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x5382e9*/
+  if ( (a2 & 1) != 0 ) /*0x5382ef*/
+    __3_YAXPAX_Z(Block); /*0x5382f2*/
+  return &Block->m_0; /*0x5382fc*/
 
 }
 } // namespace gamemd
@@ -2913,10 +2909,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_225(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538309*/
-  if ( (Block & 1) != 0 ) /*0x53830f*/
-    RA2_OPDEL(Block); /*0x538312*/
-  return Block; /*0x53831c*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x538309*/
+  if ( (a2 & 1) != 0 ) /*0x53830f*/
+    __3_YAXPAX_Z(Block); /*0x538312*/
+  return &Block->m_0; /*0x53831c*/
 
 }
 } // namespace gamemd
@@ -2926,10 +2922,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_226(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538329*/
-  if ( (Block & 1) != 0 ) /*0x53832f*/
-    RA2_OPDEL(Block); /*0x538332*/
-  return Block; /*0x53833c*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x538329*/
+  if ( (a2 & 1) != 0 ) /*0x53832f*/
+    __3_YAXPAX_Z(Block); /*0x538332*/
+  return &Block->m_0; /*0x53833c*/
 
 }
 } // namespace gamemd
@@ -2939,10 +2935,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_227(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538349*/
-  if ( (Block & 1) != 0 ) /*0x53834f*/
-    RA2_OPDEL(Block); /*0x538352*/
-  return Block; /*0x53835c*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x538349*/
+  if ( (a2 & 1) != 0 ) /*0x53834f*/
+    __3_YAXPAX_Z(Block); /*0x538352*/
+  return &Block->m_0; /*0x53835c*/
 
 }
 } // namespace gamemd
@@ -2952,10 +2948,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_228(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538369*/
-  if ( (Block & 1) != 0 ) /*0x53836f*/
-    RA2_OPDEL(Block); /*0x538372*/
-  return Block; /*0x53837c*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x538369*/
+  if ( (a2 & 1) != 0 ) /*0x53836f*/
+    __3_YAXPAX_Z(Block); /*0x538372*/
+  return &Block->m_0; /*0x53837c*/
 
 }
 } // namespace gamemd
@@ -2965,10 +2961,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_229(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538389*/
-  if ( (Block & 1) != 0 ) /*0x53838f*/
-    RA2_OPDEL(Block); /*0x538392*/
-  return Block; /*0x53839c*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x538389*/
+  if ( (a2 & 1) != 0 ) /*0x53838f*/
+    __3_YAXPAX_Z(Block); /*0x538392*/
+  return &Block->m_0; /*0x53839c*/
 
 }
 } // namespace gamemd
@@ -2978,10 +2974,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_230(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x5383a9*/
-  if ( (Block & 1) != 0 ) /*0x5383af*/
-    RA2_OPDEL(Block); /*0x5383b2*/
-  return Block; /*0x5383bc*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x5383a9*/
+  if ( (a2 & 1) != 0 ) /*0x5383af*/
+    __3_YAXPAX_Z(Block); /*0x5383b2*/
+  return &Block->m_0; /*0x5383bc*/
 
 }
 } // namespace gamemd
@@ -2991,10 +2987,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_231(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x5383c9*/
-  if ( (Block & 1) != 0 ) /*0x5383cf*/
-    RA2_OPDEL(Block); /*0x5383d2*/
-  return Block; /*0x5383dc*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x5383c9*/
+  if ( (a2 & 1) != 0 ) /*0x5383cf*/
+    __3_YAXPAX_Z(Block); /*0x5383d2*/
+  return &Block->m_0; /*0x5383dc*/
 
 }
 } // namespace gamemd
@@ -3004,10 +3000,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_232(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x5383e9*/
-  if ( (Block & 1) != 0 ) /*0x5383ef*/
-    RA2_OPDEL(Block); /*0x5383f2*/
-  return Block; /*0x5383fc*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x5383e9*/
+  if ( (a2 & 1) != 0 ) /*0x5383ef*/
+    __3_YAXPAX_Z(Block); /*0x5383f2*/
+  return &Block->m_0; /*0x5383fc*/
 
 }
 } // namespace gamemd
@@ -3017,10 +3013,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_233(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538409*/
-  if ( (Block & 1) != 0 ) /*0x53840f*/
-    RA2_OPDEL(Block); /*0x538412*/
-  return Block; /*0x53841c*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x538409*/
+  if ( (a2 & 1) != 0 ) /*0x53840f*/
+    __3_YAXPAX_Z(Block); /*0x538412*/
+  return &Block->m_0; /*0x53841c*/
 
 }
 } // namespace gamemd
@@ -3030,10 +3026,10 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::performAction_234(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538429*/
-  if ( (Block & 1) != 0 ) /*0x53842f*/
-    RA2_OPDEL(Block); /*0x538432*/
-  return Block; /*0x53843c*/
+  Block->m_0 = (int)&CommandClass::`vftable'; /*0x538429*/
+  if ( (a2 & 1) != 0 ) /*0x53842f*/
+    __3_YAXPAX_Z(Block); /*0x538432*/
+  return &Block->m_0; /*0x53843c*/
 
 }
 } // namespace gamemd
@@ -3043,10 +3039,10 @@ namespace gamemd {
 ScreenCaptureCommandClass * CreateTeamCommand::performAction_235(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538449*/
-  if ( (Block & 1) != 0 ) /*0x53844f*/
-    RA2_OPDEL(Block); /*0x538452*/
-  return (ScreenCaptureCommandClass *)Block; /*0x53845c*/
+  *(unsigned int *)Block->CommandClass = &CommandClass::`vftable'; /*0x538449*/
+  if ( (a2 & 1) != 0 ) /*0x53844f*/
+    __3_YAXPAX_Z(Block); /*0x538452*/
+  return Block->CommandClass; /*0x53845c*/
 
 }
 } // namespace gamemd
@@ -3056,10 +3052,10 @@ namespace gamemd {
 PageUserCommandClass * CreateTeamCommand::performAction_236(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538469*/
-  if ( (Block & 1) != 0 ) /*0x53846f*/
-    RA2_OPDEL(Block); /*0x538472*/
-  return (PageUserCommandClass *)Block; /*0x53847c*/
+  *(unsigned int *)Block->CommandClass = &CommandClass::`vftable'; /*0x538469*/
+  if ( (a2 & 1) != 0 ) /*0x53846f*/
+    __3_YAXPAX_Z(Block); /*0x538472*/
+  return Block->CommandClass; /*0x53847c*/
 
 }
 } // namespace gamemd
@@ -3069,10 +3065,10 @@ namespace gamemd {
 CursorPositionCommandClass * CreateTeamCommand::performAction_237(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x538489*/
-  if ( (Block & 1) != 0 ) /*0x53848f*/
-    RA2_OPDEL(Block); /*0x538492*/
-  return (CursorPositionCommandClass *)Block; /*0x53849c*/
+  *(unsigned int *)Block->CommandClass = &CommandClass::`vftable'; /*0x538489*/
+  if ( (a2 & 1) != 0 ) /*0x53848f*/
+    __3_YAXPAX_Z(Block); /*0x538492*/
+  return Block->CommandClass; /*0x53849c*/
 
 }
 } // namespace gamemd
@@ -3082,10 +3078,10 @@ namespace gamemd {
 DeleteCommandClass * CreateTeamCommand::performAction_238(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_CommandClass; /*0x5384a9*/
-  if ( (Block & 1) != 0 ) /*0x5384af*/
-    RA2_OPDEL(Block); /*0x5384b2*/
-  return (DeleteCommandClass *)Block; /*0x5384bc*/
+  *(unsigned int *)Block->CommandClass = &CommandClass::`vftable'; /*0x5384a9*/
+  if ( (a2 & 1) != 0 ) /*0x5384af*/
+    __3_YAXPAX_Z(Block); /*0x5384b2*/
+  return Block->CommandClass; /*0x5384bc*/
 
 }
 } // namespace gamemd
@@ -3101,7 +3097,7 @@ void CreateTeamCommand::performAction_239()
   *((unsigned int *)this + 4) = 0; /*0x5384c9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5384d0*/
   {
-    RA2_OPDEL(v2); /*0x5384d6*/
+    __3_YAXPAX_Z(v2); /*0x5384d6*/
     *((unsigned int *)this + 1) = 0; /*0x5384de*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5384e1*/
@@ -3167,17 +3163,17 @@ DynamicVector * CreateTeamCommand::performAction_244(unsigned int * Block, char 
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x538ae3*/
-  *Block = &vt_VectorClass_CCINIClass; /*0x538ae6*/
+  *Block = &VectorClass<CCINIClass *>::`vftable'; /*0x538ae6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x538af0*/
   {
-    RA2_OPDEL(v3); /*0x538af8*/
+    __3_YAXPAX_Z(v3); /*0x538af8*/
     *(Block + 1) = 0; /*0x538b00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x538b0b*/
   *(Block + 2) = 0; /*0x538b11*/
-  if ( (Block & 1) != 0 ) /*0x538b18*/
-    RA2_OPDEL(Block); /*0x538b1b*/
-  return (DynamicVector *)Block; /*0x538b25*/
+  if ( (a2 & 1) != 0 ) /*0x538b18*/
+    __3_YAXPAX_Z(Block); /*0x538b1b*/
+  return Block; /*0x538b25*/
 
 }
 } // namespace gamemd

@@ -11,7 +11,7 @@ namespace gamemd {
 void Function::Function_643E80(void * a2)
 {
 
-  *((unsigned int *)this + 1) = a2; /*0x643e84*/
+  this->Function_field_0x04 = a2; /*0x643e84*/
   return a2; /*0x643e87*/
 
 }

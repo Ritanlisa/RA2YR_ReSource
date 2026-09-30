@@ -1078,7 +1078,7 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
   int v16; // [esp+14h] [ebp+4h]
 
   v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)a2 + 92))(a2, a3, a4); /*0x410de2*/
-  v9 = (int16_t *)(*((unsigned int *)this + 4) + *((unsigned int *)this + 6)); /*0x410de9*/
+  v9 = (int16_t *)(this->? + this->?); /*0x410de9*/
   v10 = (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x410deb*/
   v11 = a5; /*0x410df1*/
   v12 = v10 / 2 - a5; /*0x410df7*/
@@ -1094,8 +1094,8 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
         {
           v14 = *v9++; /*0x410e0f*/
           *v8++ = v14; /*0x410e15*/
-          if ( (unsigned int)v9 >= *((unsigned int *)this + 7) ) /*0x410e20*/
-            v9 = (int16_t *)((char *)v9 - *((unsigned int *)this + 8)); /*0x410e22*/
+          if ( (unsigned int)v9 >= this->? ) /*0x410e20*/
+            v9 = (int16_t *)((char *)v9 - (unsigned int)this->?); /*0x410e22*/
           --v13; /*0x410e25*/
         }
         while ( v13 ); /*0x410e26*/
@@ -1919,9 +1919,9 @@ namespace gamemd {
 char E4Recv_41DD10::sub_41DD10()
 {
 
-  *((unsigned int *)this + 16) = g_abs_A8ED84; /*0x41dd15*/
-  *((unsigned char *)this + 60) = 0; /*0x41dd1a*/
-  *((unsigned char *)this + 61) = 0; /*0x41dd1d*/
+  this->ambientSoundController[1] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x41dd15*/
+  LOBYTE(this->ambientSoundController[0]) = 0; /*0x41dd1a*/
+  BYTE1(this->ambientSoundController[0]) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/
 
 }

@@ -32,10 +32,10 @@ namespace gamemd {
 BuildingTypeClass * Techno::StartInvulnerability(BuildingTypeClass * aP1)
 {
 
-  BuildingTypeClass *v1; // eax
+  int v3; // eax
 
-  v1 = (gamemd::BuildingTypeClass *)(TechnoClass::InvulnerabilityIntensity_SetContext(this, aP1));
-  return TechnoClass::CalcFlashAlpha(this, v1); /*0x70e375*/
+  v3 = TechnoClass::InvulnerabilityIntensity_SetContext(this, aP1); /*0x70e368*/
+  return TechnoClass::CalcFlashAlpha(this, v3); /*0x70e375*/
 
 }
 } // namespace gamemd

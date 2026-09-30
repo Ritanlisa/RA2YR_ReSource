@@ -66,14 +66,14 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x74eef4*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x74eef4*/
 
 }
 // 0x74EF00
 int VeinholeMonsterClass::CheckStatus()
 {
 
-  return g_abs_8871E0->?; /*0x74ef0b*/
+  return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4084); /*0x74ef0b*/
 
 }
 // 0x74F2D0
@@ -108,8 +108,8 @@ VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(void ** Block, char 
 {
 
   DestroyVeinholeMonster(Block); /*0x74f343*/
-  if ( (Block & 1) != 0 ) /*0x74f34d*/
-    RA2_OPDEL(Block); /*0x74f350*/
-  return (VeinholeMonsterClass *)Block; /*0x74f35a*/
+  if ( (a2 & 1) != 0 ) /*0x74f34d*/
+    __3_YAXPAX_Z(Block); /*0x74f350*/
+  return (void **)Block; /*0x74f35a*/
 
 }

@@ -17,10 +17,10 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
 
   char * v2;
   char *i; // ebx
-  int v4; // eax
-  WaypointPathClass *v5; // eax
+  void *v4; // eax
+  int v5; // eax
   unsigned int *v6; // ecx
-  CampaignScore *v7; // edi
+  int v7; // edi
   unsigned int *Element; // esi
   signed int v10; // [esp+10h] [ebp-4h]
 
@@ -30,9 +30,9 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
     {
-      v4 = (unsigned int)(__2_YAPAXI_Z(0x40u));
+      v4 = (int)(__2_YAPAXI_Z(0x40u));
       if ( v4 ) /*0x5023d6*/
-        v5 = (WaypointPathClass *)WaypointPathClass::Construct(v4, v2); /*0x5023db*/
+        v5 = WaypointPathClass::Construct((int)v4, v2); /*0x5023db*/
       else
         v5 = 0; /*0x5023e2*/
       *(unsigned int *)i = v5; /*0x5023e4*/
@@ -49,14 +49,10 @@ LABEL_12:
   while ( 1 ) /*0x5023f7*/
   {
     Element = (unsigned int *)Array::GetElement(v6, v7); /*0x5023f7*/
-    if ( (uint16_t)(*Element / 256) == LOWORD(aP1->field_0) /*0x502422*/
-      && (uint16_t)(Element[1] / 256) == HIWORD(aP1->field_0) )
-    {
+    if ( (uint16_t)(*Element / 256) == *aP1 && (uint16_t)(Element[1] / 256) == aP1[1] ) /*0x502422*/
       return Element; /*0x502441*/
-    }
     v6 = *(unsigned int **)i; /*0x502424*/
-    v7 = (CampaignScore *)((char *)v7 + 1); /*0x502426*/
-    if ( (int)v7 >= *(unsigned int *)(*(unsigned int *)i + 56) ) /*0x50242a*/
+    if ( ++v7 >= *(unsigned int *)(*(unsigned int *)i + 56) ) /*0x50242a*/
     {
       v2 = v10; /*0x50242c*/
       goto LABEL_12; /*0x50242c*/
@@ -70,17 +66,17 @@ namespace gamemd {
 void * Waypoint::InitInvalid()
 {
 
-  *(unsigned int *)this = -1; /*0x53ecb4*/
-  *((unsigned char *)this + 1) = -1; /*0x53ecb6*/
-  *((unsigned char *)this + 2) = -1; /*0x53ecb9*/
-  *((unsigned char *)this + 3) = -1; /*0x53ecbc*/
-  *((unsigned char *)this + 4) = -1; /*0x53ecbf*/
-  *((unsigned char *)this + 5) = -1; /*0x53ecc2*/
-  *((unsigned char *)this + 6) = -1; /*0x53ecc5*/
-  *((unsigned char *)this + 7) = -1; /*0x53ecc8*/
-  *((unsigned char *)this + 8) = -1; /*0x53eccb*/
-  *((unsigned char *)this + 9) = -1; /*0x53ecce*/
-  return (IPXManagerClass *)this; /*0x53ecd1*/
+  this-((unsigned int *)(>__pad_0))[0] = -1; /*0x53ecb4*/
+  this-((unsigned int *)(>__pad_0))[1] = -1; /*0x53ecb6*/
+  this-((unsigned int *)(>__pad_0))[2] = -1; /*0x53ecb9*/
+  this-((unsigned int *)(>__pad_0))[3] = -1; /*0x53ecbc*/
+  this-((unsigned int *)(>__pad_0))[4] = -1; /*0x53ecbf*/
+  this-((unsigned int *)(>__pad_0))[5] = -1; /*0x53ecc2*/
+  this-((unsigned int *)(>__pad_0))[6] = -1; /*0x53ecc5*/
+  this-((unsigned int *)(>__pad_0))[7] = -1; /*0x53ecc8*/
+  this-((unsigned int *)(>__pad_0))[8] = -1; /*0x53eccb*/
+  this-((unsigned int *)(>__pad_0))[9] = -1; /*0x53ecce*/
+  return this->__pad_0; /*0x53ecd1*/
 
 }
 }
@@ -89,25 +85,25 @@ namespace gamemd {
 int Waypoint::FindCell(unsigned int * a2)
 {
 
-  int * v3;
+  void * v3;
   unsigned int *i; // edi
-  int v6; // [esp+10h] [ebp-8h]
-  int *v7; // [esp+14h] [ebp-4h]
+  void *v6; // [esp+10h] [ebp-8h]
+  Waypoint *v7; // [esp+14h] [ebp-4h]
 
-  v3 = (int *)(0);
-  v7 = (int *)(this);
-  v6 = *((char *)this + 14); /*0x763a64*/
-  if ( v6 <= 0 ) /*0x763a68*/
+  v3 = (int)((void *)(0));
+  v7 = (void *)(this);
+  v6 = this->field_38; /*0x763a64*/
+  if ( (int)v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
-  for ( i = (unsigned int *)*((char *)this + 11); /*0x763a6e*/
+  for ( i = *(unsigned int **)&this-((unsigned int *)(>__pad_0))[44]; /*0x763a6e*/
         (uint16_t)(*i / 256) != (uint16_t)(*a2 / 256)
      || (uint16_t)(i[1] / 256) != (uint16_t)(a2[1] / 256);
         i += 3 )
   {
-    if ( ++v3 >= v6 ) /*0x763ac5*/
+    if ( ++v3 >= (int)v6 ) /*0x763ac5*/
       return 0; /*0x763ac5*/
   }
-  v7[9] = v3; /*0x763ad0*/
+  *(unsigned int *)&v7-((unsigned int *)(>__pad_0))[36] = v3; /*0x763ad0*/
   return 1; /*0x763acd*/
 
 }
@@ -117,17 +113,17 @@ namespace gamemd {
 CHAR * Waypoint::To_String(CCINIClass * aP0)
 {
 
-  if ( aP0 == (CCINIClass *)-1 ) /*0x763613*/
+  if ( aP0 == (gamemd::CCINIClass *)(-1) ) /*0x763613*/
   {
     byte_B72654 = 0; /*0x763615*/
     return &byte_B72654; /*0x76361c*/
   }
   else
   {
-    if ( (int)aP0 >= 26 ) /*0x763625*/
-      wsprintfA(&byte_B72654, "%c%c", (int)aP0 / 26 + 64, (int)aP0 % 26 + 65); /*0x763671*/
+    if ( aP0 >= (gamemd::CCINIClass *)(26) ) /*0x763625*/
+      wsprintfA(&byte_B72654, "%c%c", (unsigned int)(aP0)/ 26 + 64, aP0 % 26 + 65); /*0x763671*/
     else
-      wsprintfA(&byte_B72654, "%c", aP0->__pad_41); /*0x763635*/
+      wsprintfA(&byte_B72654, "%c", aP0 + 65); /*0x763635*/
     return &byte_B72654; /*0x76363e*/
   }
 

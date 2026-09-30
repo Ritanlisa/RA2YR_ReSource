@@ -17,26 +17,26 @@
 TeleportLocomotionClass::TeleportLocomotionClass()
 {
 
-  unsigned int v2;
+  int v2; // ecx
 
-  LocomotionClass::Init((unsigned int *)this); /*0x718003*/
-  *((unsigned int *)this + 7) = g_abs_B0EBF8; /*0x718011*/
-  *((unsigned int *)this + 8) = g_abs_B0EBFC; /*0x71801a*/
-  *((unsigned int *)this + 9) = g_abs_B0EC00; /*0x718026*/
-  *((unsigned int *)this + 10) = g_abs_B0EBF8; /*0x71802e*/
-  *((unsigned int *)this + 11) = g_abs_B0EBFC; /*0x718036*/
-  *((unsigned int *)this + 12) = g_abs_B0EC00; /*0x71803e*/
-  *((unsigned char *)this + 52) = 0; /*0x718043*/
-  *((unsigned char *)this + 53) = 0; /*0x718046*/
-  *((unsigned char *)this + 54) = 0; /*0x718049*/
-  *((unsigned int *)this + 14) = 0; /*0x71804c*/
-  v2 = g_abs_A8ED84; /*0x71804f*/
-  *((unsigned int *)this + 17) = 0; /*0x718055*/
-  *((unsigned int *)this + 15) = v2; /*0x718058*/
-  *((unsigned int *)this + 18) = 0; /*0x71805b*/
-  *(unsigned int *)this = &vt_TeleportLocomotionClass; /*0x71805e*/
-  *((unsigned int *)this + 1) = &vt_TeleportLocomotionClass; /*0x718064*/
-  *((unsigned int *)this + 6) = &vt_TeleportLocomotionClass; /*0x71806b*/
-  return this; /*0x718074*/
+  LocomotionClass::Init((LocomotionClass *)this); /*0x718003*/
+  this->MovingDestination[0] = g_BuildingLoadQueue_Array.?; /*0x718011*/
+  this->MovingDestination[1] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x71801a*/
+  this->MovingDestination[2] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718026*/
+  this->LastCoords[0] = g_BuildingLoadQueue_Array.?; /*0x71802e*/
+  this->LastCoords[1] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x718036*/
+  this->LastCoords[2] = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)); /*0x71803e*/
+  this->Moving = 0; /*0x718043*/
+  this->TeleportLocomotionClass_field_bool_35 = 0; /*0x718046*/
+  this->TeleportLocomotionClass_field_bool_36 = 0; /*0x718049*/
+  this->State = 0; /*0x71804c*/
+  v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71804f*/
+  this->Timer[2] = 0; /*0x718055*/
+  this->Timer[0] = v2; /*0x718058*/
+  this->Piggybackee = 0; /*0x71805b*/
+  *(unsigned int *)this->LocomotionClass = &TeleportLocomotionClass::`vftable'; /*0x71805e*/
+  *(unsigned int *)&this->LocomotionClass[4] = &TeleportLocomotionClass::`vftable'; /*0x718064*/
+  *(unsigned int *)this->__pad_18 = &TeleportLocomotionClass::`vftable'; /*0x71806b*/
+  return (int)this->LocomotionClass; /*0x718074*/
 
 }

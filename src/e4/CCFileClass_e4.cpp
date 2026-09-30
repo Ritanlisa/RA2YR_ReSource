@@ -20,30 +20,31 @@
 namespace gamemd {
 AudioController * * CCFileClass::Close()
 {
+    unsigned int v3 = 0;  /* G37 hoist */
 
-  AudioController ** result;
+  char result; // al
   AudioController ** v3;
 
-  if ( !*((unsigned char *)this + 41) ) /*0x4325c3*/
-    return ((int (*)(void))FileClass::CloseHandle)(); /*0x432607*/
-  BufferIO::Flush(); /*0x4325ca*/
-  result = *((unsigned char *)this + 38); /*0x4325cf*/
+  if ( !BYTE1(this->BufferSize) ) /*0x4325c3*/
+    return FileClass::CloseHandle(this); /*0x432607*/
+  BufferIO::Flush((BufferIO *)this); /*0x4325ca*/
+  result = BYTE2(this->BufferOffset); /*0x4325cf*/
   if ( result ) /*0x4325d4*/
   {
-    if ( *((unsigned int *)this + 20) ) /*0x4325d6*/
+    if ( this->MixFileIndex ) /*0x4325d6*/
     {
-      v3 = (int)((gamemd::AudioController **)(*(unsigned int *)this));
-      *((unsigned char *)this + 41) = 0; /*0x4325e1*/
-      result = (*(int (**)(unsigned char *))(v3 + 52))(this); /*0x4325e5*/
-      *((unsigned char *)this + 41) = 1; /*0x4325e8*/
-      *((unsigned char *)this + 38) = 0; /*0x4325ec*/
-      *((unsigned char *)this + 37) = 0; /*0x4325f0*/
+      v3 = (unsigned int)((gamemd::AudioController **)(this->FileClass));
+      BYTE1(this->BufferSize) = 0; /*0x4325e1*/
+      result = (*(int (**)(CCFileClass *))(*(unsigned int *)&v3 + 52))(this); /*0x4325e5*/
+      BYTE1(this->BufferSize) = 1; /*0x4325e8*/
+      BYTE2(this->BufferOffset) = 0; /*0x4325ec*/
+      BYTE1(this->BufferOffset) = 0; /*0x4325f0*/
       return result; /*0x4325f5*/
     }
-    result = (char)((gamemd::AudioController **)(FileClass::CloseHandle(this)));
-    *((unsigned char *)this + 38) = 0; /*0x4325fd*/
+    result = FileClass::CloseHandle(this); /*0x4325f8*/
+    BYTE2(this->BufferOffset) = 0; /*0x4325fd*/
   }
-  *((unsigned char *)this + 37) = 0; /*0x432601*/
+  BYTE1(this->BufferOffset) = 0; /*0x432601*/
   return result; /*0x4325f4*/
 
 }
@@ -53,11 +54,11 @@ namespace gamemd {
 void CCFileClass::Destruct()
 {
 
-  *this = &vt_CCFileClass; /*0x535a76*/
+  *(unsigned int *)this->CDFileClass = &CCFileClass::`vftable'; /*0x535a76*/
   *((unsigned int *)this + 25) = 0; /*0x535a7c*/
-  Vector::Clear((int)((unsigned int *)this + 22)); /*0x535a83*/
-  *this = &off_7E1668; /*0x535a8a*/
-  return ((BufferIOFileClass *)(this))->Dtor(); /*0x535a95*/
+  Vector::Clear((int)(unsigned int *)this + 88); /*0x535a83*/
+  *(unsigned int *)this->CDFileClass = &off_7E1668; /*0x535a8a*/
+  return ((BufferIOFileClass *)((BufferIOFileClass *)this))->Dtor(); /*0x535a95*/
 
 }
 } // namespace gamemd
@@ -73,30 +74,30 @@ void CCFileClass::GetFileSize()
   int v6; // [esp-8h] [ebp-10h]
 
   FileSize = 0; /*0x65d0d4*/
-  result = *((char *)this + 4); /*0x65d0d6*/
+  result = (int)this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65d0e0*/
+    if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d0e0*/
     {
-      FileSize = (int)(GetFileSize((HANDLE)*((char *)this + 5), 0));
+      FileSize = (DWORD)(GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0));
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
-        v4 = (int)(*this);
-        v6 = *((char *)this + 6); /*0x65d0ff*/
+        v4 = *(unsigned int *)this->FileClass; /*0x65d0fd*/
+        v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
-        (*(void (**)(int *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
-        result = -1 - *((char *)this + 3); /*0x65d113*/
-        *((char *)this + 4) = result; /*0x65d116*/
+        (*(void (**)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
+        result = -1 - (unsigned int)this->Handle; /*0x65d113*/
+        this->FileName = (void *)result; /*0x65d116*/
         return result; /*0x65d11b*/
       }
     }
-    else if ( (*(int (**)(int *, int))(*(unsigned int *)this + 28))(this, 1) ) /*0x65d122*/
+    else if ( (*(int (**)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1) ) /*0x65d122*/
     {
-      FileSize = (*(int (**)(int *))(*(unsigned int *)this + 44))(this); /*0x65d130*/
-      (*(void (**)(int *))(*(unsigned int *)this + 52))(this); /*0x65d136*/
+      FileSize = (*(int (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
+      (*(void (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/
     }
-    result = FileSize - *((char *)this + 3); /*0x65d13e*/
-    *((char *)this + 4) = result; /*0x65d140*/
+    result = FileSize - (unsigned int)this->Handle; /*0x65d13e*/
+    this->FileName = (void *)result; /*0x65d140*/
   }
   return result; /*0x65d119*/
 
@@ -118,8 +119,8 @@ void CCFileClass::ProcessStream(unsigned int a1)
   int v10; // eax
   int v11; // eax
 
-  v1 = MEMORY[0xB077B0]; /*0x69e324*/
-  if ( MEMORY[0xB077B0] ) /*0x69e330*/
+  v1 = (unsigned int *)(dword_B077B0);
+  if ( dword_B077B0 ) /*0x69e330*/
   {
     do /*0x69e3a1*/
     {
@@ -138,7 +139,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
             if ( v5 ) /*0x69e368*/
               *(unsigned int *)(v5 + 24) = *((unsigned int *)v3 + 6); /*0x69e36d*/
             else
-              MEMORY[0xB077B0] = (void *)*((unsigned int *)v3 + 6); /*0x69e375*/
+              dword_B077B0 = (void *)*((unsigned int *)v3 + 6); /*0x69e375*/
             if ( *((unsigned int *)v3 + 2) ) /*0x69e37a*/
             {
               free(*((void **)v3 + 2)); /*0x69e382*/
@@ -154,16 +155,16 @@ void CCFileClass::ProcessStream(unsigned int a1)
     }
     while ( v1 ); /*0x69e3a1*/
   }
-  v6 = MEMORY[0xB077B4]; /*0x69e3a3*/
-  if ( MEMORY[0xB077B4] ) /*0x69e3ab*/
+  v6 = (void *)(dword_B077B4);
+  if ( dword_B077B4 ) /*0x69e3ab*/
   {
-    if ( *(unsigned short *)MEMORY[0xB077B4] == 0xFFFF ) /*0x69e3b1*/
+    if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-      v7 = (char *)MEMORY[0xB077B4] + 16; /*0x69e3b6*/
-      if ( *((unsigned char *)MEMORY[0xB077B4] + 16) ) /*0x69e3b3*/
+      v7 = (unsigned char *)((char *)dword_B077B4 + 16);
+      if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e3b3*/
       {
-        v8 = (void *)*((unsigned int *)MEMORY[0xB077B4] + 3); /*0x69e3bd*/
-        v9 = (char *)MEMORY[0xB077B4] + 12; /*0x69e3c0*/
+        v8 = (unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3));
+        v9 = (unsigned int *)((char *)dword_B077B4 + 12);
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/
@@ -176,7 +177,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
       if ( v11 ) /*0x69e3e5*/
         *(unsigned int *)(v11 + 24) = *((unsigned int *)v6 + 6); /*0x69e3ea*/
       else
-        MEMORY[0xB077B0] = (void *)*((unsigned int *)v6 + 6); /*0x69e3f2*/
+        dword_B077B0 = (void *)*((unsigned int *)v6 + 6); /*0x69e3f2*/
       if ( *((unsigned int *)v6 + 2) ) /*0x69e3f7*/
       {
         free(*((void **)v6 + 2)); /*0x69e3ff*/
@@ -184,9 +185,9 @@ void CCFileClass::ProcessStream(unsigned int a1)
       }
     }
     __3_YAXPAX_Z(v6); /*0x69e40b*/
-    MEMORY[0xB077B4] = 0; /*0x69e413*/
-    MEMORY[0xB077B8] = 0; /*0x69e419*/
-    MEMORY[0xB077BC] = 0; /*0x69e41f*/
+    dword_B077B4 = 0; /*0x69e413*/
+    dword_B077B8 = 0; /*0x69e419*/
+    dword_B077BC = 0; /*0x69e41f*/
   }
 
 }

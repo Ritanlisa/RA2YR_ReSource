@@ -11,10 +11,10 @@ namespace gamemd {
 VectorCursor * GraphicMenuAnimItem::Constructor(std::locale::facet * this, char a2)
 {
 
-  *(unsigned int *)this = &vt_VectorCursor_unsigned_int_DynamicVectorClass_unsigned_int; /*0x4f3fd9*/
-  if ( (this & 1) != 0 ) /*0x4f3fdf*/
-    RA2_OPDEL(this); /*0x4f3fe2*/
-  return (VectorCursor *)this; /*0x4f3fec*/
+  *(unsigned int *)this->__pad_0 = &VectorCursor<unsigned int,DynamicVectorClass<unsigned int>>::`vftable'; /*0x4f3fd9*/
+  if ( (a2 & 1) != 0 ) /*0x4f3fdf*/
+    __3_YAXPAX_Z(this); /*0x4f3fe2*/
+  return (std::locale::facet *)this; /*0x4f3fec*/
 
 }
 } // namespace gamemd

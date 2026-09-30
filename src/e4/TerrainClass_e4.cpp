@@ -177,7 +177,7 @@ LABEL_162:
         int v45 = v43 != 1 ? 5 : 1;
       else
         v45 = 2;
-      PlayerColorScheme = SessionClass::GetPlayerColorScheme((ObjectClass *)v45);
+      PlayerColorScheme = ((SessionClass *)((ObjectClass *)v45))->GetPlayerColorScheme();
       if ( !v44 )
         return 1;
       int v121 = Math::RoundToInt(*(double *)(*(unsigned int *)&((unsigned int *)(stru_87C374))[44652] + 5312) * 900.0);
@@ -219,10 +219,10 @@ LABEL_162:
       if ( *(unsigned char *)(HouseClass_Player.field_0 + 576) )
         return 1;
       *(unsigned char *)(HouseClass_Player.field_0 + 576) = 1;
-      LayerClass::CellIteratorReset(&stru_87C374[13428]);
-      for ( i = LayerClass::CellIteratorNext(&stru_87C374[13428]);
+      ((LayerClass *)(&((unsigned int *)(stru_87C374))[13428]))->CellIteratorReset();
+      for ( i = ((LayerClass *)(&((unsigned int *)(stru_87C374))[13428]))->CellIteratorNext();
             i;
-            i = LayerClass::CellIteratorNext(&stru_87C374[13428]) )
+            i = ((LayerClass *)(&((unsigned int *)(stru_87C374))[13428]))->CellIteratorNext() )
       {
         Conditions::CheckResult(i + 36, (IUnknown *, unsigned int a1, unsigned int a5)HouseClass_Player.field_0);
       }
@@ -287,7 +287,7 @@ LABEL_162:
       {
         int v60 = CDTimerClass::TimeRemaining((int *)(*(unsigned int *)&HouseClass_Player[29924] + 4584));
         Timer::Start(&v113, (DynamicVector *)(v60 - 15 * *(unsigned int *)((unsigned int)(a1)+ 144)));
-        ecx134 = (unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584))));
+        ecx134 = (gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)((unsigned int)((gamemd::CellStruct *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584)))));
         *(unsigned int *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4584) = v113;
         *(unsigned int *)(ecx134 + 4) = v128;
         *(unsigned int *)(ecx134 + 8) = GroundHeight;
@@ -328,7 +328,7 @@ LABEL_162:
       ScenarioClass::SetGlobalToByID(*(unsigned char **)&HouseClass_Player[29924], *(unsigned int *)(a1 + 144), 0);
       return 1;
     case 0x1E:
-      if ( !*(unsigned char *)(a1 + 144) )
+      if ( !*(unsigned char *)((unsigned int)(a1)+ 144) )
       {
         IDA_HIBYTE(aP1[13].referenceCount) = 0;
         return 1;
@@ -1208,84 +1208,90 @@ namespace gamemd {
 void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 {
 
-  unsigned int *v2; // ebp
-  unsigned int *v3; // esi
+  ObjectClass *v2; // ebp
+  void **p_vtable1; // esi
   int v4; // eax
-  void *v5; // ecx
-  int v6; // edx
+  ObjectClass *vtable0; // ecx
+  void *vtable1; // edx
   int v7; // edi
   int v8; // eax
-  int v9; // eax
-  signed int v10; // ecx
-  size_t i; // eax
+  signed int v9; // eax
+  int v10; // ecx
+  char *i; // eax
   unsigned int *v12; // eax
   int Register; // edi
   int v14; // esi
-  int v15; // eax
+  int vtable2; // eax
   int v17; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = a1; /*0x71cda4*/
-  v3 = a1 + 1; /*0x71cdad*/
-  v4 = (*(int (**)(unsigned int *))(a1[1] + 16))(a1 + 1); /*0x71cdb1*/
-  v6 = g_abs_B0E844; /*0x71cdb4*/
+  v2 = (ObjectClass *)a1; /*0x71cda4*/
+  p_vtable1 = &a1->?; /*0x71cdad*/
+  v4 = (*((int (**)(void **))a1->? + 4))(&a1->?); /*0x71cdb1*/
+  vtable1 = g_BuildingLoadQueue_Array.?; /*0x71cdb4*/
   v7 = v4; /*0x71cdba*/
-  if ( g_abs_B0E844 ) /*0x71cdbe*/
+  if ( g_BuildingLoadQueue_Array.? ) /*0x71cdbe*/
   {
-    if ( !g_abs_B0E84C ) /*0x71cdcb*/
+    if ( !LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x71cdcb*/
     {
-      qsort(g_abs_B0E840, g_abs_B0E844, 8u, CompareFunction); /*0x71cddc*/
-      v6 = g_abs_B0E844; /*0x71cde1*/
-      g_abs_B0E850 = 0; /*0x71cdea*/
-      g_abs_B0E84C = 1; /*0x71cdf4*/
+      qsort( /*0x71cddc*/
+        g_BuildingLoadQueue_Array.TechnoTypeClass,
+        (size_t)g_BuildingLoadQueue_Array.?,
+        8u,
+        (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
+      vtable1 = g_BuildingLoadQueue_Array.?; /*0x71cde1*/
+      g_BuildingLoadQueue_Array.? = 0; /*0x71cdea*/
+      LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x71cdf4*/
     }
     v17 = v7; /*0x71ce06*/
-    v8 = BinaryArraySearch((int)g_abs_B0E840, v6, &v17); /*0x71ce0a*/
+    v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, &v17); /*0x71ce0a*/
     if ( v8 ) /*0x71ce11*/
     {
-      v9 = (v8 - (int)g_abs_B0E840) >> 3; /*0x71ce19*/
+      v9 = (signed int)(v8 - (unsigned int)g_BuildingLoadQueue_Array.TechnoTypeClass) >> 3; /*0x71ce19*/
       if ( v9 != -1 ) /*0x71ce1f*/
       {
         v10 = v9 + 1; /*0x71ce21*/
-        for ( i = g_abs_B0E844; v10 < (int)g_abs_B0E844; i = g_abs_B0E844 ) /*0x71ce2b*/
+        for ( i = (char *)g_BuildingLoadQueue_Array.?; /*0x71ce2b*/
+              v10 < (int)g_BuildingLoadQueue_Array.?;
+              i = (char *)g_BuildingLoadQueue_Array.? )
         {
-          v12 = (unsigned int *)((char *)g_abs_B0E840 + 8 * v10++); /*0x71ce33*/
+          v12 = (char *)g_BuildingLoadQueue_Array.TechnoTypeClass + 8 * v10++; /*0x71ce33*/
           *(v12 - 2) = *v12; /*0x71ce39*/
           *(v12 - 1) = v12[1]; /*0x71ce3f*/
         }
-        g_abs_B0E844 = i - 1; /*0x71ce54*/
-        *((unsigned int *)g_abs_B0E840 + 2 * g_abs_B0E844) = 0; /*0x71ce59*/
-        v5 = g_abs_B0E840; /*0x71ce61*/
-        *((unsigned int *)g_abs_B0E840 + 2 * g_abs_B0E844 + 1) = 0; /*0x71ce69*/
-        g_abs_B0E850 = 0; /*0x71ce6d*/
+        g_BuildingLoadQueue_Array.? = i - 1; /*0x71ce54*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = 0; /*0x71ce59*/
+        vtable0 = (ObjectClass *)g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x71ce61*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = 0; /*0x71ce69*/
+        g_BuildingLoadQueue_Array.? = 0; /*0x71ce6d*/
       }
     }
   }
-  Register = BuildingClass::SaveLoad_Register(v5); /*0x71ce7e*/
+  Register = BuildingClass::SaveLoad_Register(vtable0); /*0x71ce7e*/
   if ( Register >= 0 ) /*0x71ce82*/
   {
     if ( v2 ) /*0x71ce8a*/
     {
       ObjectClass::Init(v2, (int)&a1); /*0x71ce93*/
-      *v2 = &vt_TerrainClass; /*0x71ce98*/
-      *v3 = &off_7F5200; /*0x71ce9f*/
-      v2[2] = &vt_TerrainClass; /*0x71cea5*/
-      v2[3] = &vt_TerrainClass; /*0x71ceac*/
+      v2->AbstractClass = &TerrainClass::`vftable'; /*0x71ce98*/
+      *p_vtable1 = &off_7F5200; /*0x71ce9f*/
+      v2->? = &TerrainClass::`vftable'; /*0x71cea5*/
+      v2->? = &TerrainClass::`vftable'; /*0x71ceac*/
     }
-    v14 = (*(int (**)(unsigned int *))(*v3 + 16))(v3); /*0x71cebf*/
-    v15 = g_abs_B0E848; /*0x71cec1*/
-    if ( (int)(g_abs_B0E844 + 1) <= g_abs_B0E848 ) /*0x71cec9*/
+    v14 = (*((int (**)(void **))*p_vtable1 + 4))(p_vtable1); /*0x71cebf*/
+    vtable2 = (int)g_BuildingLoadQueue_Array.?; /*0x71cec1*/
+    if ( (int)g_BuildingLoadQueue_Array.? + 1 <= (int)g_BuildingLoadQueue_Array.? ) /*0x71cec9*/
       goto LABEL_16; /*0x71cec9*/
-    if ( !g_abs_B0E848 ) /*0x71cecd*/
-      v15 = 10; /*0x71cecf*/
-    if ( BuildingTypeClass::Enqueue((int)&g_abs_B0E840, v15) ) /*0x71ceda*/
+    if ( !g_BuildingLoadQueue_Array.? ) /*0x71cecd*/
+      vtable2 = 10; /*0x71cecf*/
+    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x71ceda*/
     {
 LABEL_16:
-      *((unsigned int *)g_abs_B0E840 + 2 * g_abs_B0E844) = v14; /*0x71ceee*/
-      *((unsigned int *)g_abs_B0E840 + 2 * g_abs_B0E844 + 1) = v2; /*0x71cefc*/
-      g_abs_B0E84C = 0; /*0x71cf06*/
-      ++g_abs_B0E844; /*0x71cf0d*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = v14; /*0x71ceee*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = v2; /*0x71cefc*/
+      LOBYTE(g_BuildingLoadQueue_Array.?) = 0; /*0x71cf06*/
+      ++g_BuildingLoadQueue_Array.?; /*0x71cf0d*/
     }
-    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v2 + 50); /*0x71cf1e*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1].?); /*0x71cf1e*/
   }
   return Register; /*0x71cf25*/
 
@@ -1296,10 +1302,10 @@ namespace gamemd {
 AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2)
 {
 
-  IUnknown *v3; // ebp
-  IUnknown *v4; // edi
-  IUnknown *v5; // ebx
-  IUnknown *i; // esi
+  unsigned int *v3; // ebp
+  int v4; // edi
+  int v5; // ebx
+  int i; // esi
   int v7; // ecx
   int16_t v8; // ax
   unsigned char *v9; // eax
@@ -1307,33 +1313,34 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
   int v11; // edi
   char v14[12]; // [esp+8h] [ebp-Ch] BYREF
 
-  v3 = (IUnknown *)a1; /*0x71d008*/
-  if ( !(uint8_t)ObjectClass::Deploy((#374 *)this) ) /*0x71d012*/
+  v3 = a1; /*0x71d008*/
+  if ( !(uint8_t)ObjectClass::Deploy((ObjectClass *)this) ) /*0x71d012*/
     return 0; /*0x71d13e*/
-  v4 = (IUnknown *)(v3->field_0 / 256); /*0x71d03e*/
-  v5 = (IUnknown *)(v3->field_4 / 256); /*0x71d041*/
-  for ( i = 0; (int)i < 8; i = (IUnknown *)((char *)i + 1) ) /*0x71d044*/
+  v4 = *v3 / 256; /*0x71d03e*/
+  v5 = v3[1] / 256; /*0x71d041*/
+  for ( i = 0; i < 8; ++i ) /*0x71d044*/
   {
-    v7 = (uint8_t)i & 7; /*0x71d048*/
-    v8 = *((unsigned short *)&MEMORY[0x89F68A] + 2 * v7); /*0x71d05d*/
-    LOWORD(aP2) = (unsigned short)v4 + *((unsigned short *)&MEMORY[0x89F688].field_0 + 2 * v7); /*0x71d061*/
-    HIWORD(aP2) = (unsigned short)v5 + v8; /*0x71d06d*/
-    a1 = aP2->__pad_0; /*0x71d076*/
-    v9 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&a1); /*0x71d080*/
+    v7 = i & 7; /*0x71d048*/
+    v8 = HIWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d05d*/
+    LOWORD(aP2) = v4 + LOWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d061*/
+    HIWORD(aP2) = v5 + v8; /*0x71d06d*/
+    a1 = aP2; /*0x71d076*/
+    v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
-  v10 = (unsigned int *)(*(int (**)(char *))(*(unsigned int *)this + 172))(v14); /*0x71d0ab*/
-  Coord::To_Screen(*(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9432], v10, (IUnknown *)((char *)this + 216)); /*0x71d0b8*/
-  v11 = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9432] + 180) + *((unsigned int *)this + 55); /*0x71d0d6*/
-  *((unsigned int *)this + 54) += *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9432] + 176); /*0x71d0dd*/
-  *((unsigned int *)this + 55) = v11; /*0x71d0df*/
-  if ( *((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], v3) + 17) != -1 ) /*0x71d0ef*/
+  v10 = (unsigned int *)(*((int (**)(char *))this->ObjectClass + 43))(v14); /*0x71d0ab*/
+  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v10, &this->TerrainClass_field_rect_D0[2]); /*0x71d0b8*/
+  v11 = *(unsigned int *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
+  this->TerrainClass_field_rect_D0[2] += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
+  this->TerrainClass_field_rect_D0[3] = v11; /*0x71d0df*/
+  if ( *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
   {
-    if ( *(unsigned char *)(*(unsigned int *)&MEMORY[0xA83D84]->__pad_0[4 * *((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], v3) + 17)] /*0x71d108*/
+    if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 /*0x71d108*/
+                              + 4 * *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28])
                   + 681) )
     {
-      *((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], v3) + 17) = -1; /*0x71d123*/
-      *((unsigned char *)Coord::To_Cell(&MEMORY[0x87F7E8], v3) + 286) = 0; /*0x71d12b*/
+      *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] = -1; /*0x71d123*/
+      Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->powerup = 0; /*0x71d12b*/
     }
   }
   return 1; /*0x71d137*/
@@ -1345,7 +1352,7 @@ namespace gamemd {
 int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x71cf44*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71cf44*/
 
 }
 } // namespace gamemd
@@ -1380,7 +1387,7 @@ int TerrainClass::MissionStubReturnZero3(int a1, unsigned int * a2)
   *a2 = 237448654; /*0x71d326*/
   a2[1] = 298949647; /*0x71d32e*/
   a2[2] = -1610610249; /*0x71d337*/
-  a2[3] = -777003740; /*0x71d340*/
+  a2[3] = unk_7E974C; /*0x71d340*/
   return 0; /*0x71d31d*/
 
 }

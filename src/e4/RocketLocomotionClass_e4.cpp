@@ -16,28 +16,28 @@
 RocketLocomotionClass::RocketLocomotionClass()
 {
 
-  unsigned int v2;
+  int v2; // ecx
 
-  LocomotionClass::Init((unsigned int *)this); /*0x661ec3*/
-  *((unsigned int *)this + 6) = dword_B04E38; /*0x661ed1*/
-  *((unsigned int *)this + 7) = dword_B04E3C; /*0x661eda*/
-  *((unsigned int *)this + 8) = dword_B04E40; /*0x661ee3*/
-  *((unsigned int *)this + 9) = g_abs_A8ED84; /*0x661eee*/
-  *((unsigned int *)this + 11) = 0; /*0x661ef1*/
-  *((unsigned int *)this + 12) = 0; /*0x661ef4*/
-  v2 = g_abs_A8ED84; /*0x661ef7*/
-  *((unsigned int *)this + 15) = 0; /*0x661efd*/
-  *((unsigned int *)this + 13) = v2; /*0x661f00*/
-  *((unsigned int *)this + 18) = 0; /*0x661f03*/
-  *((unsigned int *)this + 16) = 0; /*0x661f06*/
-  *((unsigned int *)this + 19) = 0; /*0x661f09*/
-  *((unsigned char *)this + 81) = 0; /*0x661f0c*/
-  *((unsigned int *)this + 21) = 0; /*0x661f0f*/
-  *((unsigned int *)this + 22) = 0; /*0x661f12*/
-  *((unsigned char *)this + 80) = 1; /*0x661f15*/
-  *(unsigned int *)this = &vt_RocketLocomotionClass; /*0x661f19*/
-  *((unsigned int *)this + 1) = &vt_RocketLocomotionClass; /*0x661f1f*/
-  return this; /*0x661f28*/
+  LocomotionClass::Init((LocomotionClass *)this); /*0x661ec3*/
+  this->MovingDestination[0] = dword_B04E38; /*0x661ed1*/
+  this->MovingDestination[1] = dword_B04E3C; /*0x661eda*/
+  this->MovingDestination[2] = dword_B04E40; /*0x661ee3*/
+  this->MissionTimer[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661eee*/
+  this->MissionTimer[2] = 0; /*0x661ef1*/
+  this->MissionTimer[3] = 0; /*0x661ef4*/
+  v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x661ef7*/
+  this->TrailerTimer[2] = 0; /*0x661efd*/
+  this->TrailerTimer[0] = v2; /*0x661f00*/
+  this->CurrentSpeed[0] = 0; /*0x661f03*/
+  this->MissionState = 0; /*0x661f06*/
+  this->CurrentSpeed[1] = 0; /*0x661f09*/
+  this->SpawnerIsElite = 0; /*0x661f0c*/
+  this->CurrentPitch = 0.0; /*0x661f0f*/
+  this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
+  this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
+  *(unsigned int *)this->LocomotionClass = &RocketLocomotionClass::`vftable'; /*0x661f19*/
+  *(unsigned int *)&this->LocomotionClass[4] = &RocketLocomotionClass::`vftable'; /*0x661f1f*/
+  return (int)this->LocomotionClass; /*0x661f28*/
 
 }
 // 0x6633D0
@@ -46,10 +46,8 @@ int RocketLocomotionClass::ddtor(int a1, unsigned int * a2)
 
   if ( !a2 ) /*0x6633d6*/
     return -2147467261; /*0x6633d8*/
-  *a2 = -1212901530; /*0x6633e6*/
-  a2[1] = 299099510; /*0x6633ee*/
-  a2[2] = 268491163; /*0x6633f7*/
-  a2[3] = -399534261; /*0x663400*/
+  *(IID *)a2 = g_CLSID_ShipLocomotion; /*0x6633e6*/
+  a2[3] = unk_7E9ADC; /*0x663400*/
   return 0; /*0x6633dd*/
 
 }
@@ -58,20 +56,20 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
 {
 
   int result; // eax
-  wchar_t *v3; // ecx
+  int v3; // ecx
 
-  result = SwizzleManager::SaveLoad(a1, a2); /*0x66341b*/
+  result = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x66341b*/
   if ( result >= 0 ) /*0x663422*/
   {
     if ( a1 ) /*0x663426*/
     {
-      *a1 = (int)&LocomotionClass::`vftable'; /*0x663428*/
-      a1[1] = (int)&vt_LocomotionClass; /*0x66342e*/
-      v3 = MEMORY[0xA8ED84]; /*0x663435*/
-      a1[15] = 0; /*0x66343b*/
-      a1[13] = (int)v3; /*0x663442*/
-      *a1 = (int)&RocketLocomotionClass::`vftable'; /*0x663445*/
-      a1[1] = (int)&vt_RocketLocomotionClass; /*0x66344b*/
+      *(unsigned int *)a1->LocomotionClass = &LocomotionClass::`vftable'; /*0x663428*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &LocomotionClass::`vftable'; /*0x66342e*/
+      v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x663435*/
+      a1->TrailerTimer[2] = 0; /*0x66343b*/
+      a1->TrailerTimer[0] = v3; /*0x663442*/
+      *(unsigned int *)a1->LocomotionClass = &RocketLocomotionClass::`vftable'; /*0x663445*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &RocketLocomotionClass::`vftable'; /*0x66344b*/
     }
   }
   return result; /*0x663452*/
@@ -88,12 +86,12 @@ int RocketLocomotionClass::StubReturn96()
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_RocketLocomotionClass; /*0x6635c3*/
-  *(Block + 1) = &vt_RocketLocomotionClass; /*0x6635c9*/
-  LocomotionClass::Construct(Block); /*0x6635d0*/
-  if ( (Block & 1) != 0 ) /*0x6635da*/
-    RA2_OPDEL(Block); /*0x6635dd*/
-  return (RocketLocomotionClass *)Block; /*0x6635e7*/
+  *(unsigned int *)Block->LocomotionClass = &RocketLocomotionClass::`vftable'; /*0x6635c3*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &RocketLocomotionClass::`vftable'; /*0x6635c9*/
+  LocomotionClass::Construct((LocomotionClass *)Block); /*0x6635d0*/
+  if ( (a2 & 1) != 0 ) /*0x6635da*/
+    __3_YAXPAX_Z(Block); /*0x6635dd*/
+  return Block->LocomotionClass; /*0x6635e7*/
 
 }
 // 0x6647B0
@@ -103,15 +101,15 @@ void RocketLocomotionClass_17::ddtor()
 
   void *v2; // eax
 
-  v2 = *(void **)((char *)this + 4); /*0x6647b6*/
-  *((unsigned int *)this + 4) = 0; /*0x6647b9*/
-  if ( v2 && *((unsigned char *)this + 13) ) /*0x6647c0*/
+  v2 = *(void **)&this->m_1[3]; /*0x6647b6*/
+  this->m_10 = 0; /*0x6647b9*/
+  if ( v2 && BYTE1(this->m_C) ) /*0x6647c0*/
   {
-    RA2_OPDEL(v2); /*0x6647c6*/
-    *((unsigned int *)this + 1) = 0; /*0x6647ce*/
+    __3_YAXPAX_Z(v2); /*0x6647c6*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6647ce*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x6647d1*/
-  *((unsigned int *)this + 2) = 0; /*0x6647d4*/
+  BYTE1(this->m_C) = 0; /*0x6647d1*/
+  this->m_8 = 0; /*0x6647d4*/
 
 }
 } // namespace gamemd
@@ -121,8 +119,8 @@ namespace gamemd {
 unsigned int RocketLocomotionClass_17::BeginMove(int a2)
 {
 
-  if ( *((unsigned char *)this + 12) ) /*0x6647e0*/
-    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x6647f5*/
+  if ( LOBYTE(this->m_C) ) /*0x6647e0*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x6647f5*/
   else
     return 0; /*0x6647e7*/
 
@@ -134,7 +132,7 @@ namespace gamemd {
 int RocketLocomotionClass_17::UpdateMovement(int a2)
 {
 
-  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * a2); /*0x66480a*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x66480a*/
 
 }
 } // namespace gamemd
@@ -144,24 +142,24 @@ namespace gamemd {
 char RocketLocomotionClass_17::AddRef(int a2)
 {
 
-  int v2; // esi
+  int m_8; // esi
   int v3; // edx
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = *((char *)this + 2); /*0x664812*/
-  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x66481d*/
+  m_8 = this->m_8; /*0x664812*/
+  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x66481d*/
   {
     v3 = 0; /*0x66481f*/
-    if ( v2 <= 0 ) /*0x664823*/
+    if ( m_8 <= 0 ) /*0x664823*/
       return 1; /*0x664843*/
-    v4 = (unsigned int *)*((char *)this + 1); /*0x664825*/
+    v4 = *(unsigned int **)&this->m_1[3]; /*0x664825*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x66482b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x664834*/
     {
       ++v3; /*0x664836*/
       ++v4; /*0x664837*/
-      if ( v3 >= v2 ) /*0x66483c*/
+      if ( v3 >= m_8 ) /*0x66483c*/
         return 1; /*0x66483c*/
     }
   }
@@ -176,35 +174,35 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 {
 
   unsigned int *v4; // edi
-  int v6; // ecx
+  int m_8; // ecx
   int i; // eax
 
   if ( a2 ) /*0x66485c*/
   {
-    *((unsigned char *)this + 12) = 0; /*0x664866*/
+    LOBYTE(this->m_C) = 0; /*0x664866*/
     if ( a3 ) /*0x66486c*/
       v4 = a3; /*0x664882*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x66487e*/
-    *((unsigned char *)this + 12) = 1; /*0x664886*/
+      v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x66487e*/
+    LOBYTE(this->m_C) = 1; /*0x664886*/
     if ( v4 ) /*0x66488a*/
     {
-      if ( *((unsigned int *)this + 1) ) /*0x664895*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x664895*/
       {
-        v6 = *((unsigned int *)this + 2); /*0x66489c*/
-        if ( a2 < v6 ) /*0x6648a1*/
-          v6 = a2; /*0x6648a3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) ) /*0x6648a9*/
+        m_8 = this->m_8; /*0x66489c*/
+        if ( a2 < m_8 ) /*0x6648a1*/
+          m_8 = a2; /*0x6648a3*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x6648a9*/
           ++i; /*0x6648ae*/
-        if ( *((unsigned char *)this + 13) ) /*0x6648bb*/
+        if ( BYTE1(this->m_C) ) /*0x6648bb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6648c6*/
-          *((unsigned int *)this + 1) = 0; /*0x6648ce*/
+          __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6648c6*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x6648ce*/
         }
       }
-      *((unsigned int *)this + 1) = v4; /*0x6648d7*/
-      *((unsigned int *)this + 2) = a2; /*0x6648df*/
-      *((unsigned char *)this + 13) = a3 == 0; /*0x6648e2*/
+      *(unsigned int *)&this->m_1[3] = v4; /*0x6648d7*/
+      this->m_8 = a2; /*0x6648df*/
+      BYTE1(this->m_C) = a3 == 0; /*0x6648e2*/
       return 1; /*0x6648e8*/
     }
     else
@@ -214,7 +212,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6648f2*/
+    (*(void (**)(_VectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6648f2*/
     return 1; /*0x6648f8*/
   }
 
@@ -226,13 +224,13 @@ namespace gamemd {
 void RocketLocomotionClass_17::Destroy()
 {
 
-  if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x66490d*/
+  if ( *(unsigned int *)&this->m_1[3] && BYTE1(this->m_C) ) /*0x66490d*/
   {
-    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x664913*/
-    *((unsigned int *)this + 1) = 0; /*0x66491b*/
+    __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x664913*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x66491b*/
   }
-  *((unsigned char *)this + 13) = 0; /*0x66491e*/
-  *((unsigned int *)this + 2) = 0; /*0x664921*/
+  BYTE1(this->m_C) = 0; /*0x66491e*/
+  this->m_8 = 0; /*0x664921*/
 
 }
 } // namespace gamemd
@@ -243,18 +241,18 @@ int RocketLocomotionClass_17::IndexOf(unsigned int * a2)
 {
 
   int result; // eax
-  int v3; // edx
+  int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !*((unsigned char *)this + 12) ) /*0x664930*/
+  if ( !LOBYTE(this->m_C) ) /*0x664930*/
     return 0; /*0x664938*/
-  v3 = *((unsigned int *)this + 2); /*0x66493e*/
+  m_8 = this->m_8; /*0x66493e*/
   result = 0; /*0x664941*/
-  if ( v3 <= 0 ) /*0x664945*/
+  if ( m_8 <= 0 ) /*0x664945*/
     return -1; /*0x66495c*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x66494b*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x66494b*/
   {
-    if ( ++result >= v3 ) /*0x66495a*/
+    if ( ++result >= m_8 ) /*0x66495a*/
       return -1; /*0x66495a*/
   }
   return result; /*0x66493a*/
@@ -267,8 +265,8 @@ namespace gamemd {
 unsigned int RocketLocomotionClass_17::PointerToIndex(int a2)
 {
 
-  if ( *((unsigned char *)this + 12) ) /*0x664970*/
-    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x664985*/
+  if ( LOBYTE(this->m_C) ) /*0x664970*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x664985*/
   else
     return 0; /*0x664977*/
 
@@ -281,44 +279,44 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
 {
 
   unsigned int *v4; // edi
-  int v5; // ecx
+  int m_8; // ecx
   int i; // eax
   int v7; // eax
 
   if ( a2 ) /*0x66499c*/
   {
-    *((unsigned char *)this + 12) = 0; /*0x6649a2*/
+    LOBYTE(this->m_C) = 0; /*0x6649a2*/
     if ( a3 ) /*0x6649a8*/
       v4 = a3; /*0x6649be*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6649ba*/
-    *((unsigned char *)this + 12) = 1; /*0x6649c2*/
+      v4 = (unsigned int *)__2_YAPAXI_Z(4 * a2); /*0x6649ba*/
+    LOBYTE(this->m_C) = 1; /*0x6649c2*/
     if ( !v4 ) /*0x6649c6*/
       return 0; /*0x664a3a*/
-    if ( *((unsigned int *)this + 1) ) /*0x6649c8*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x6649c8*/
     {
-      v5 = *((unsigned int *)this + 2); /*0x6649cf*/
-      if ( a2 < v5 ) /*0x6649d4*/
-        v5 = a2; /*0x6649d6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) ) /*0x6649dc*/
+      m_8 = this->m_8; /*0x6649cf*/
+      if ( a2 < m_8 ) /*0x6649d4*/
+        m_8 = a2; /*0x6649d6*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x6649dc*/
         ++i; /*0x6649e1*/
-      if ( *((unsigned char *)this + 13) ) /*0x6649ee*/
+      if ( BYTE1(this->m_C) ) /*0x6649ee*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6649f9*/
-        *((unsigned int *)this + 1) = 0; /*0x664a01*/
+        __3_YAXPAX_Z(*(void **)&this->m_1[3]); /*0x6649f9*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x664a01*/
       }
     }
-    *((unsigned int *)this + 1) = v4; /*0x664a0a*/
-    *((unsigned int *)this + 2) = a2; /*0x664a12*/
-    *((unsigned char *)this + 13) = a3 == 0; /*0x664a15*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x664a0a*/
+    this->m_8 = a2; /*0x664a12*/
+    BYTE1(this->m_C) = a3 == 0; /*0x664a15*/
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x664a1e*/
+    (*(void (**)(_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x664a1e*/
   }
-  v7 = *((unsigned int *)this + 2); /*0x664a21*/
-  if ( v7 < *((unsigned int *)this + 4) ) /*0x664a29*/
-    *((unsigned int *)this + 4) = v7; /*0x664a2b*/
+  v7 = this->m_8; /*0x664a21*/
+  if ( v7 < this->m_10 ) /*0x664a29*/
+    this->m_10 = v7; /*0x664a2b*/
   return 1; /*0x664a2e*/
 
 }
@@ -329,17 +327,17 @@ namespace gamemd {
 int RocketLocomotionClass_17::Launch(unsigned int * a2)
 {
 
-  int v2; // edx
+  int m_10; // edx
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = *((char *)this + 4); /*0x664a40*/
+  m_10 = this->m_10; /*0x664a40*/
   result = 0; /*0x664a43*/
-  if ( v2 <= 0 ) /*0x664a48*/
+  if ( m_10 <= 0 ) /*0x664a48*/
     return -1; /*0x664a5f*/
-  for ( i = (unsigned int *)*((char *)this + 1); *i != *a2; ++i ) /*0x664a4e*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x664a4e*/
   {
-    if ( ++result >= v2 ) /*0x664a5d*/
+    if ( ++result >= m_10 ) /*0x664a5d*/
       return -1; /*0x664a5d*/
   }
   return result; /*0x664a62*/
@@ -353,18 +351,18 @@ void RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x664a76*/
-  if ( v3 && *((unsigned char *)Block + 13) ) /*0x664a80*/
+  v3 = *(void **)&Block->m_1[3]; /*0x664a73*/
+  *(unsigned int *)Block->__pad_0 = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664a76*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x664a80*/
   {
     __3_YAXPAX_Z(v3); /*0x664a88*/
-    *(Block + 1) = 0; /*0x664a90*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x664a90*/
   }
-  *((unsigned char *)Block + 13) = 0; /*0x664a9b*/
-  *(Block + 2) = 0; /*0x664aa1*/
+  BYTE1(Block->m_C) = 0; /*0x664a9b*/
+  Block->m_8 = 0; /*0x664aa1*/
   if ( (a2 & 1) != 0 ) /*0x664aa8*/
     __3_YAXPAX_Z(Block); /*0x664aab*/
-  return (VectorClass *)Block; /*0x664ab5*/
+  return Block->__pad_0; /*0x664ab5*/
 
 }
 } // namespace gamemd
@@ -376,18 +374,18 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, c
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x664ac6*/
-  if ( v3 && *((unsigned char *)Block + 13) ) /*0x664ad0*/
+  v3 = *(void **)&Block->m_1[3]; /*0x664ac3*/
+  *(unsigned int *)Block->__pad_0 = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664ac6*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x664ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x664ad8*/
-    *(Block + 1) = 0; /*0x664ae0*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x664ae0*/
   }
-  *((unsigned char *)Block + 13) = 0; /*0x664aeb*/
-  *(Block + 2) = 0; /*0x664af1*/
+  BYTE1(Block->m_C) = 0; /*0x664aeb*/
+  Block->m_8 = 0; /*0x664af1*/
   if ( (a2 & 1) != 0 ) /*0x664af8*/
     __3_YAXPAX_Z(Block); /*0x664afb*/
-  return (DynamicVector *)Block; /*0x664b05*/
+  return Block->__pad_0; /*0x664b05*/
 
 }
 } // namespace gamemd

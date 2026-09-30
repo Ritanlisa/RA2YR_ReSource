@@ -29,7 +29,7 @@ int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
   *a2 = 1247291202; /*0x517086*/
   a2[1] = 298948665; /*0x51708e*/
   a2[2] = -1610610249; /*0x517097*/
-  a2[3] = -777003740; /*0x5170a0*/
+  a2[3] = unk_7E9A4C; /*0x5170a0*/
   return 0; /*0x51707d*/
 
 }
@@ -41,14 +41,14 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
 
   int v2; // edi
 
-  v2 = SwizzleManager::SaveLoad((int *)a1, a2); /*0x5170c1*/
+  v2 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x5170c1*/
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
-    *(unsigned int *)a1 = &LocomotionClass::`vftable'; /*0x5170ce*/
-    *(unsigned int *)(a1 + 4) = &vt_LocomotionClass; /*0x5170d4*/
-    FrameSnapshot::Init((unsigned short *)(a1 + 48)); /*0x5170db*/
-    *(unsigned int *)a1 = &HoverLocomotionClass::`vftable'; /*0x5170e0*/
-    *(unsigned int *)(a1 + 4) = &vt_HoverLocomotionClass; /*0x5170e6*/
+    *(unsigned int *)a1->LocomotionClass = &LocomotionClass::`vftable'; /*0x5170ce*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &LocomotionClass::`vftable'; /*0x5170d4*/
+    FrameSnapshot::Init((FrameSnapshot *)a1->LocomotionFacing); /*0x5170db*/
+    *(unsigned int *)a1->LocomotionClass = &HoverLocomotionClass::`vftable'; /*0x5170e0*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &HoverLocomotionClass::`vftable'; /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
 
@@ -68,12 +68,12 @@ namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = &HoverLocomotionClass::`vftable'; /*0x5172c3*/
-  *(Block + 1) = &vt_HoverLocomotionClass; /*0x5172c9*/
-  LocomotionClass::Construct(Block); /*0x5172d0*/
+  *(unsigned int *)Block->LocomotionClass = &HoverLocomotionClass::`vftable'; /*0x5172c3*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &HoverLocomotionClass::`vftable'; /*0x5172c9*/
+  LocomotionClass::Construct((LocomotionClass *)Block); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     __3_YAXPAX_Z(Block); /*0x5172dd*/
-  return (HoverLocomotionClass *)Block; /*0x5172e7*/
+  return Block->LocomotionClass; /*0x5172e7*/
 
 }
 } // namespace gamemd

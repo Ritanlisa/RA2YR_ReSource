@@ -24,90 +24,93 @@
 #include "e4/classes/JumpjetLocomotionClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/LightConvertClass_e4.hpp"
 
 // 0x533D20
 namespace gamemd {
 int KeyboardConfig::LoadINI()
 {
 
-  int v0; // esi
-  const char *StringByIndex; // ebp
-  int v2; // edi
-  int v3; // esi
-  int v4; // eax
+  int v1; // esi
+  uint8_t *StringByIndex; // ebp
+  int v3; // edi
+  int v4; // esi
+  int v5; // eax
   int i; // [esp+4h] [ebp-CCh]
   int Int_Overwrite; // [esp+8h] [ebp-C8h]
-  void *v8[16]; // [esp+Ch] [ebp-C4h] BYREF
-  char v9; // [esp+4Ch] [ebp-84h]
-  unsigned int v10[22]; // [esp+64h] [ebp-6Ch] BYREF
-  unsigned char v11[12]; // [esp+BCh] [ebp-14h] BYREF
+  CCINIClass v9; // [esp+Ch] [ebp-C4h] BYREF
+  CCFileClass v10; // [esp+64h] [ebp-6Ch] BYREF
+  int v11[3]; // [esp+BCh] [ebp-14h] BYREF
   int v12; // [esp+C8h] [ebp-8h]
 
-  INIClass::INIClass(v8); /*0x533d2b*/
-  v9 = 0; /*0x533d3b*/
-  v8[0] = &CCINIClass_Vtable; /*0x533d3f*/
-  CCFileClass::Construct(v10, MEMORY[0x827B88]); /*0x533d47*/
-  if ( CCINIClass::Load(v8, (int)v10, 0, 0) ) /*0x533d57*/
+  INIClass::INIClass((INIClass *)&v9); /*0x533d2b*/
+  v9.ownsFile = 0; /*0x533d3b*/
+  *(unsigned int *)v9.INIClass = &CCINIClass_Vtable; /*0x533d3f*/
+  CCFileClass::Construct(&v10, aKeyboardmdIni); /*0x533d47*/
+  if ( CCINIClass::Load(&v9, (int)&v10, 0, 0) ) /*0x533d57*/
   {
-    __3_YAXPAX_Z(MEMORY[0x87F680]); /*0x533d6c*/
-    v0 = 0; /*0x533d74*/
-    MEMORY[0x87F680] = 0; /*0x533d7a*/
-    MEMORY[0x87F684] = 0; /*0x533d85*/
-    MEMORY[0x87F688] = 0; /*0x533d8b*/
-    MEMORY[0x87F68C] = 0; /*0x533d91*/
-    MEMORY[0x87F690] = 0; /*0x533d97*/
-    for ( i = 0; i < (int)(INIClass)::GetKeyCount((char *)v8, (uint8_t *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
+    __3_YAXPAX_Z(*(void **)&stru_87F5F0.__pad_58[56]); /*0x533d6c*/
+    v1 = 0; /*0x533d74*/
+    *(unsigned int *)&stru_87F5F0.__pad_58[56] = 0; /*0x533d7a*/
+    *(unsigned int *)&stru_87F5F0.__pad_58[60] = 0; /*0x533d85*/
+    *(unsigned int *)&stru_87F5F0.__pad_58[64] = 0; /*0x533d8b*/
+    stru_87F5F0.__pad_58[68] = 0; /*0x533d91*/
+    *(unsigned int *)&stru_87F5F0.__pad_58[72] = 0; /*0x533d97*/
+    for ( i = 0; i < (int)(INIClass)::GetKeyCount(v9.INIClass, g_INI_Key_Hotkey); v1 = i ) /*0x533da8*/
     {
-      StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (uint8_t *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
-      v2 = 0; /*0x533dd1*/
-      Int_Overwrite = INIClass::ReadInt_Overwrite(g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
-      if ( MEMORY[0x87F668] > 0 ) /*0x533dde*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v9.INIClass, g_INI_Key_Hotkey, v1); /*0x533dbf*/
+      v3 = 0; /*0x533dd1*/
+      Int_Overwrite = INIClass::ReadInt_Overwrite((bool *)v9.INIClass, g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
+      if ( *(int *)&stru_87F5F0.__pad_58[32] > 0 ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/
-                  (const char *)(*(int (**)(unsigned int))(**((unsigned int **)MEMORY[0x87F65C] + v2) + 4))(*((unsigned int *)MEMORY[0x87F65C] + v2)),
-                  StringByIndex) )
+                  (const char *)(*(int (**)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_87F5F0.__pad_58[20]
+                                                                            + 4 * v3)
+                                                              + 4))(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[20]
+                                                                              + 4 * v3)),
+                  (const char *)StringByIndex) )
         {
-          if ( ++v2 >= MEMORY[0x87F668] ) /*0x533e29*/
+          if ( ++v3 >= *(int *)&stru_87F5F0.__pad_58[32] ) /*0x533e29*/
             goto LABEL_14; /*0x533e29*/
         }
-        v3 = *((unsigned int *)MEMORY[0x87F65C] + v2); /*0x533e32*/
-        if ( v3 && Int_Overwrite ) /*0x533e3f*/
+        v4 = *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[20] + 4 * v3); /*0x533e32*/
+        if ( v4 && Int_Overwrite ) /*0x533e3f*/
         {
-          v4 = MEMORY[0x87F688]; /*0x533e47*/
-          if ( (int)(MEMORY[0x87F684] + 1) <= MEMORY[0x87F688] ) /*0x533e4f*/
+          v5 = *(unsigned int *)&stru_87F5F0.__pad_58[64]; /*0x533e47*/
+          if ( *(unsigned int *)&stru_87F5F0.__pad_58[60] + 1 <= *(int *)&stru_87F5F0.__pad_58[64] ) /*0x533e4f*/
             goto LABEL_13; /*0x533e4f*/
-          if ( !MEMORY[0x87F688] ) /*0x533e53*/
-            v4 = 10; /*0x533e55*/
-          if ( (uint8_t)KeyboardConfig::ReleaseBuffer(v4) ) /*0x533e60*/
+          if ( !*(unsigned int *)&stru_87F5F0.__pad_58[64] ) /*0x533e53*/
+            v5 = 10; /*0x533e55*/
+          if ( KeyboardConfig::ReleaseBuffer((int)&stru_87F5F0.__pad_58[56], v5) ) /*0x533e60*/
           {
 LABEL_13:
-            *((unsigned int *)MEMORY[0x87F680] + 2 * MEMORY[0x87F684]) = Int_Overwrite; /*0x533e74*/
-            *((unsigned int *)MEMORY[0x87F680] + 2 * MEMORY[0x87F684] + 1) = v3; /*0x533e83*/
-            MEMORY[0x87F68C] = 0; /*0x533e8d*/
-            ++MEMORY[0x87F684]; /*0x533e93*/
+            *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[56] + 8 * *(unsigned int *)&stru_87F5F0.__pad_58[60]) = Int_Overwrite; /*0x533e74*/
+            *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[56] + 8 * *(unsigned int *)&stru_87F5F0.__pad_58[60] + 4) = v4; /*0x533e83*/
+            stru_87F5F0.__pad_58[68] = 0; /*0x533e8d*/
+            ++*(unsigned int *)&stru_87F5F0.__pad_58[60]; /*0x533e93*/
           }
         }
       }
 LABEL_14:
       ++i; /*0x533e98*/
     }
-    v10[0] = (unsigned int)(&vt_CCFileClass);
-    v12 = (unsigned int)(0);
+    *(unsigned int *)v10.CDFileClass = &CCFileClass::`vftable'; /*0x533ec0*/
+    v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
-    v10[0] = &off_7E1668; /*0x533ed8*/
-    ((BufferIOFileClass *)(v10))->Dtor(); /*0x533ee0*/
-    HashTable::DestroyHashTableINIClass(v8); /*0x533ee9*/
+    *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x533ed8*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533ee0*/
+    HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533ee9*/
     return 1; /*0x533eee*/
   }
   else
   {
     this->Debug::Log(); /*0x533efe*/
-    v10[0] = &vt_CCFileClass; /*0x533f0d*/
+    *(unsigned int *)v10.CDFileClass = &CCFileClass::`vftable'; /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
-    v10[0] = &off_7E1668; /*0x533f25*/
-    ((BufferIOFileClass *)(v10))->Dtor(); /*0x533f2d*/
-    HashTable::DestroyHashTableINIClass(v8); /*0x533f36*/
+    *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x533f25*/
+    ((BufferIOFileClass *)((BufferIOFileClass *)&v10))->Dtor(); /*0x533f2d*/
+    HashTable::DestroyHashTableINIClass((INIClass *)&v9); /*0x533f36*/
     return 0; /*0x533f3b*/
   }
 
@@ -122,24 +125,24 @@ AbstractClass * KeyboardConfig::ReleaseBuffer( int a2)
   int i; // ecx
   int v5; // eax
   unsigned int *v6; // edx
-  int v7; // eax
+  char * v7;
 
   if ( a2 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/
-  v3 = (char *)RA2_OPNEW(8 * (a2 + *(unsigned int *)(this + 8))); /*0x538ba0*/
+  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + *((unsigned int *)this + 2))); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
-  for ( i = 0; i < *(unsigned int *)(this + 4); *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
+  for ( i = 0; i < *((unsigned int *)this + 1); *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
   {
     v5 = 8 * i; /*0x538bb9*/
     v6 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x538bc2*/
     *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
-  RA2_OPDEL(*(void **)this); /*0x538bdb*/
-  v7 = a2 + *(unsigned int *)(this + 8); /*0x538be6*/
+  __3_YAXPAX_Z(*(void **)this); /*0x538bdb*/
+  v7 = a2 + *((unsigned int *)this + 2); /*0x538be6*/
   *(unsigned int *)this = v3; /*0x538be8*/
-  *(unsigned int *)(this + 8) = v7; /*0x538bea*/
-  *(unsigned int *)(this + 16) = 0; /*0x538bed*/
+  *((unsigned int *)this + 2) = v7; /*0x538bea*/
+  *((unsigned int *)this + 4) = 0; /*0x538bed*/
   return 1; /*0x538bf4*/
 
 }

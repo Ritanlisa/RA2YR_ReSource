@@ -36,32 +36,32 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   int v22; // ecx
   int v23; // edx
 
-  (*(void (**)(VectorClass *, VectorClass *))(*(unsigned int *)aP1->vtable0 + 760))(aP1, aP3); /*0x4138d4*/
-  if ( (int16_t)aP2 >= 0 ) /*0x4138e1*/
+  (*(void (**)(int, int))(*(unsigned int *)aP1 + 760))(aP1, aP3); /*0x4138d4*/
+  if ( (aP2 & 0x8000u) == 0 ) /*0x4138e1*/
     v4 = (int16_t)aP2; /*0x4138e7*/
   else
     v4 = 0; /*0x4138e3*/
-  if ( IDA_SHIWORD(aP2) >= 0 ) /*0x4138f2*/
-    v5 = IDA_SHIWORD(aP2); /*0x4138f8*/
+  if ( aP2 >= 0 ) /*0x4138f2*/
+    v5 = SHIWORD(aP2); /*0x4138f8*/
   else
     v5 = 0; /*0x4138f4*/
   v6 = 19; /*0x41390d*/
-  if ( v4 / (*(unsigned int *)&g_abs_87F8E4 / 20) <= 19 ) /*0x413921*/
-    v6 = v4 / (*(unsigned int *)&g_abs_87F8E4 / 20); /*0x413923*/
-  v7 = *(unsigned int *)&g_abs_87F8E4 / 20; /*0x41393e*/
-  v8 = v5 / (*(unsigned int *)&g_abs_87F8E4 / 20); /*0x413941*/
+  if ( v4 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20) <= 19 ) /*0x413921*/
+    v6 = v4 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x413923*/
+  v7 = *(unsigned int *)&stru_87F5F0.__pad_58[720] / 20; /*0x41393e*/
+  v8 = v5 / (*(unsigned int *)&stru_87F5F0.__pad_58[720] / 20); /*0x413941*/
   if ( v8 > 19 ) /*0x413946*/
     v8 = 19; /*0x413948*/
   v9 = v6 + 20 * v8; /*0x413957*/
-  if ( (int16_t)aP3 >= 0 ) /*0x41395a*/
+  if ( (aP3 & 0x8000u) == 0 ) /*0x41395a*/
     v10 = (int16_t)aP3; /*0x413960*/
   else
     v10 = 0; /*0x41395c*/
-  if ( IDA_SHIWORD(aP3) >= 0 ) /*0x41396b*/
-    v11 = IDA_SHIWORD(aP3); /*0x413971*/
+  if ( aP3 >= 0 ) /*0x41396b*/
+    v11 = SHIWORD(aP3); /*0x413971*/
   else
     v11 = 0; /*0x41396d*/
-  v12 = v10 / (*(unsigned int *)&g_abs_87F8E4 / 20); /*0x413975*/
+  v12 = v10 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x413975*/
   v13 = 19; /*0x413977*/
   if ( v12 <= 19 ) /*0x41397f*/
     v13 = v12; /*0x413981*/
@@ -73,7 +73,7 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   if ( v9 != v16 ) /*0x41399a*/
   {
     v17 = (unsigned char *)this + 24 * v9; /*0x4139ae*/
-    v18 = (*(int (**)(char *, VectorClass **))(*(unsigned int *)v17 + 16))(v17, &aP1); /*0x4139b4*/
+    v18 = (*(int (**)(char *, int *))(*(unsigned int *)v17 + 16))(v17, &aP1); /*0x4139b4*/
     if ( v18 != -1 ) /*0x4139ba*/
     {
       v19 = *((unsigned int *)v17 + 4); /*0x4139bc*/
@@ -111,12 +111,12 @@ namespace gamemd {
 unsigned int * Coord::ToCell(IUnknown * aP1)
 {
 
-  int aP1; // [esp+0h] [ebp-4h]
+  int v3; // [esp+0h] [ebp-4h]
 
-  IDA_LOWORD(aP1) = *this / 256; /*0x413a3f*/
-  IDA_HIWORD(aP1) = *((unsigned int *)this + 1) / 256; /*0x413a53*/
-  aP1->field_0 = aP1; /*0x413a60*/
-  return &aP1->field_0; /*0x413a63*/
+  LOWORD(v3) = *(unsigned int *)this->__pad_0 / 256; /*0x413a3f*/
+  HIWORD(v3) = *(unsigned int *)&this->Coord_field_0x2[2] / 256; /*0x413a53*/
+  *aP1 = v3; /*0x413a60*/
+  return aP1; /*0x413a63*/
 
 }
 }
@@ -125,10 +125,10 @@ namespace gamemd {
 void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
 
-  *this = aP1; /*0x41c23a*/
-  *((unsigned int *)this + 1) = aP2; /*0x41c240*/
-  *((unsigned int *)this + 2) = aP3; /*0x41c243*/
-  return (IUnknown *)this; /*0x41c246*/
+  *(unsigned int *)this->__pad_0 = aP1; /*0x41c23a*/
+  *(unsigned int *)&this->Coord_field_0x2[2] = aP2; /*0x41c240*/
+  this->Coord_field_0x8 = (void *)aP3; /*0x41c243*/
+  return this->__pad_0; /*0x41c246*/
 
 }
 }
@@ -137,13 +137,18 @@ namespace gamemd {
 int Coord::Length()
 {
 
-  double result; // st7
+  double Coord_field_0x8; // st7
+  int64_t result; // rax
+  int v3; // kr00_4
 
-  result = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( /*0x41c3a4*/
-                                         (double)*this * (double)*this
-                                       + (double)*((char *)this + 1) * (double)*((char *)this + 1)
-                                       + (double)*((char *)this + 2) * (double)*((char *)this + 2)));
-  Math::RoundToInt(result); /*0x41c3ac*/
+  Coord_field_0x8 = (double)(int)this->Coord_field_0x8; /*0x41c380*/
+  Math::Sqrt( /*0x41c3a4*/
+    (double)*(int *)this->__pad_0 * (double)*(int *)this->__pad_0
+  + (double)*(int *)&this->Coord_field_0x2[2] * (double)*(int *)&this->Coord_field_0x2[2]
+  + Coord_field_0x8 * Coord_field_0x8);
+  v3 = Math::RoundToInt(Coord_field_0x8); /*0x41c3ac*/
+  WORD2(result) = HIWORD(v3); /*0x41c3ac*/
+  LOWORD(result) = v3; /*0x41c3ac*/
   return result; /*0x41c3a9*/
 
 }
@@ -153,17 +158,24 @@ namespace gamemd {
 unsigned int * Coord::GetCoords(int * outCoords)
 {
 
-  int v3; // edi
-  int v4; // ebx
-  int v5; // eax
+  int v2; // ecx
+  int v3; // esi
+  int v4; // eax
+  int v5; // edi
+  int v6; // eax
+  int v7; // ebx
+  int v8; // eax
 
-  v3 = Math::RoundToInt(*((unsigned int *)this + 6)); /*0x4399b0*/
-  v4 = Math::RoundToInt(*((unsigned int *)this + 7)); /*0x4399ba*/
-  v5 = Math::RoundToInt(*((unsigned int *)this + 8)); /*0x4399bc*/
-  *outCoords = v3; /*0x4399c7*/
-  outCoords[1] = v4; /*0x4399cb*/
-  outCoords[2] = v5; /*0x4399cf*/
-  return outCoords; /*0x4399c9*/
+  v3 = v2; /*0x4399a2*/
+  LOWORD(v4) = Math::RoundToInt(*(float *)(v2 + 24)); /*0x4399a8*/
+  v5 = v4; /*0x4399b0*/
+  LOWORD(v6) = Math::RoundToInt(*(float *)(v3 + 28)); /*0x4399b2*/
+  v7 = v6; /*0x4399ba*/
+  LOWORD(v8) = Math::RoundToInt(*(float *)(v3 + 32)); /*0x4399bc*/
+  *outCoords = v5; /*0x4399c7*/
+  *(outCoords + 1) = v7; /*0x4399cb*/
+  *(outCoords + 2) = v8; /*0x4399cf*/
+  return (int)outCoords; /*0x4399c9*/
 
 }
 }
@@ -172,10 +184,12 @@ namespace gamemd {
 void * Coord::Scale(IUnknown * aP1)
 {
 
-  *this = *(float *)&aP1 * *this; /*0x43a0d8*/
-  *((unsigned int *)this + 1) = *(float *)&aP1 * *((unsigned int *)this + 1); /*0x43a0e1*/
-  *((unsigned int *)this + 2) = *(float *)&aP1 * *((unsigned int *)this + 2); /*0x43a0eb*/
-  return this; /*0x43a0ee*/
+  float *v2; // ecx
+
+  *v2 = *(float *)&aP1 * *v2; /*0x43a0d8*/
+  v2[1] = *(float *)&aP1 * v2[1]; /*0x43a0e1*/
+  v2[2] = *(float *)&aP1 * v2[2]; /*0x43a0eb*/
+  return (int)v2; /*0x43a0ee*/
 
 }
 }
@@ -186,21 +200,21 @@ void * Coord::To_Cell(IUnknown * aP1)
 
   int v2; // eax
   int v3; // edx
-  void *v4; // edx
-  ObjectClass *aP1a; // [esp+Ch] [ebp+4h]
+  CellClass *v4; // edx
+  unsigned int *v6; // [esp+Ch] [ebp+4h]
 
-  v2 = aP1->field_4 / 256; /*0x56574f*/
-  v3 = aP1->field_0 / 256 + (v2 << 9); /*0x56575a*/
+  v2 = aP1[1] / 256; /*0x56574f*/
+  v3 = *aP1 / 256 + (v2 << 9); /*0x56575a*/
   if ( v3 >= 0 && v3 < *((unsigned int *)this + 80) ) /*0x565764*/
   {
-    v4 = *(void **)(*((unsigned int *)this + 79) + 4 * v3); /*0x56576c*/
+    v4 = (CellClass *)*((unsigned int *)this->Coord_field_0x13C + v3); /*0x56576c*/
     if ( v4 ) /*0x565771*/
       return v4; /*0x565774*/
   }
-  IDA_LOWORD(aP1a) = aP1->field_0 / 256; /*0x56577a*/
-  IDA_HIWORD(aP1a) = v2; /*0x56577f*/
-  g_Map_GlobalCellIndex = (IUnknown *)aP1a; /*0x565789*/
-  return g_CellClassArray; /*0x565773*/
+  LOWORD(v6) = *aP1 / 256; /*0x56577a*/
+  HIWORD(v6) = v2; /*0x56577f*/
+  g_MissionQueueFrame.briefing[139] = (int)v6; /*0x565789*/
+  return (CellClass *)&g_MissionQueueFrame.briefing[130]; /*0x565773*/
 
 }
 }
@@ -209,7 +223,7 @@ namespace gamemd {
 int Coord::Compare2D(unsigned short * a2)
 {
 
-  return *this != *a2 || *((unsigned short *)this + 1) != a2[1]; /*0x5ac388*/
+  return *(unsigned short *)this->__pad_0 != *a2 || *(unsigned short *)this->Coord_field_0x2 != a2[1]; /*0x5ac388*/
 
 }
 }
@@ -219,32 +233,34 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 {
 
   int v4; // ebx
-  void *v5; // esi
-  int v7; // ebp
-  void *v8; // eax
-  int v9; // ecx
-  int v10; // edi
+  int v5; // esi
+  int v7; // eax
+  int v8; // ebp
+  int v9; // eax
+  int v10; // ecx
+  int v11; // edi
 
-  v4 = aP2->field_0; /*0x6557f7*/
-  v5 = aP2->field_4; /*0x6557f9*/
-  v7 = Math::RoundToInt((double)(aP2->field_0 + (*((unsigned int *)this + 1316) << 8) - (int)v5) * *(float *)((char *)this + 5256) * 0.00390625); /*0x65582b*/
-  v8 = (void *)Math::RoundToInt((double)((int)v5 + v4 + -256 * *((unsigned int *)this + 1318)) * *(float *)((char *)this + 5256) * 0.00390625); /*0x655848*/
+  v4 = *aP2; /*0x6557f7*/
+  v5 = aP2[1]; /*0x6557f9*/
+  LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (*((unsigned int *)this + 1316) << 8) - v5) * *((float *)this + 1314) * 0.00390625); /*0x655820*/
+  v8 = v7; /*0x65582b*/
+  LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (*((unsigned int *)this + 1318) << 8)) * *((float *)this + 1314) * 0.00390625); /*0x655848*/
   if ( a4 ) /*0x655853*/
   {
-    if ( v7 < 0 ) /*0x655857*/
-      v7 = 0; /*0x655859*/
-    v9 = *((unsigned int *)this + 1321); /*0x65585b*/
-    if ( v7 >= v9 ) /*0x655863*/
-      v7 = v9 - 1; /*0x655865*/
-    if ( (int)v8 < 0 ) /*0x65586a*/
-      v8 = 0; /*0x65586c*/
-    v10 = *((unsigned int *)this + 1322); /*0x65586e*/
-    if ( (int)v8 >= v10 ) /*0x655876*/
-      v8 = (void *)(v10 - 1); /*0x655878*/
+    if ( v8 < 0 ) /*0x655857*/
+      v8 = 0; /*0x655859*/
+    v10 = *((unsigned int *)this + 1321); /*0x65585b*/
+    if ( v8 >= v10 ) /*0x655863*/
+      v8 = v10 - 1; /*0x655865*/
+    if ( v9 < 0 ) /*0x65586a*/
+      v9 = 0; /*0x65586c*/
+    v11 = *((unsigned int *)this + 1322); /*0x65586e*/
+    if ( v9 >= v11 ) /*0x655876*/
+      v9 = v11 - 1; /*0x655878*/
   }
-  aP1->field_0 = v7; /*0x655881*/
-  aP1->field_4 = v8; /*0x655883*/
-  return &aP1->field_0; /*0x65587f*/
+  *aP1 = v8; /*0x655881*/
+  aP1[1] = v9; /*0x655883*/
+  return aP1; /*0x65587f*/
 
 }
 }
@@ -263,19 +279,19 @@ AbstractClass * * Coord::To_Screen(unsigned int * a2, int * a3)
   v10 = a2[1]; /*0x6d214f*/
   v4 = (-60 * v10 / 2 + 60 * *a2 / 2) / 256; /*0x6d21c8*/
   v5 = (30 * v10 / 2 + 30 * *a2 / 2) / 256; /*0x6d21cb*/
-  v6 = Math::RoundToInt((double)(int)a2[2] * g_abs_B0CD48 + (double)(a2[2] >= 728) + 0.5); /*0x6d21f2*/
+  LOWORD(v6) = Math::RoundToInt((double)(int)a2[2] * dbl_B0CD48 + (double)(a2[2] >= 728) + 0.5); /*0x6d21f2*/
   *a3 = v4; /*0x6d21fd*/
   a3[1] = v5 - v6; /*0x6d21ff*/
-  v7 = *a3 - *((unsigned int *)this + 44); /*0x6d2213*/
-  v8 = a3[1] - *((unsigned int *)this + 45); /*0x6d2215*/
+  v7 = *a3 - *(unsigned int *)&this->__pad_C[164]; /*0x6d2213*/
+  v8 = a3[1] - *(unsigned int *)&this->__pad_C[168]; /*0x6d2215*/
   *a3 = v7; /*0x6d2217*/
   a3[1] = v8; /*0x6d221b*/
   if ( v7 < -360 ) /*0x6d222a*/
     return 0; /*0x6d222c*/
-  if ( v7 > g_abs_B0CE30 + 360 ) /*0x6d2242*/
+  if ( v7 > dword_B0CE30 + 360 ) /*0x6d2242*/
     return 0; /*0x6d2244*/
   if ( v8 >= -180 ) /*0x6d2251*/
-    return v8 <= g_abs_B0CE34 + 180; /*0x6d2269*/
+    return v8 <= dword_B0CE34 + 180; /*0x6d2269*/
   return 0; /*0x6d2220*/
 
 }
@@ -290,9 +306,9 @@ void * Coord::Divide(int * a2, int a3)
 
   if ( a3 ) /*0x710708*/
   {
-    v4 = *((unsigned int *)this + 1) / a3; /*0x71072f*/
-    v5 = *((unsigned int *)this + 2) / a3; /*0x710735*/
-    *a2 = *this / a3; /*0x71073d*/
+    v4 = *(unsigned int *)&this->Coord_field_0x2[2] / a3; /*0x71072f*/
+    v5 = (int)this->Coord_field_0x8 / a3; /*0x710735*/
+    *a2 = *(unsigned int *)this->__pad_0 / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/
     a2[2] = v5; /*0x710745*/
   }
@@ -316,14 +332,13 @@ int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
   int v4; // esi
   int v6; // [esp+10h] [ebp-4h]
 
-  v6 = aP1->field_4; /*0x6d1f1f*/
-  v2 = (-60 * v6 / 2 + 60 * aP1->field_0 / 2) / 256; /*0x6d1f95*/
-  v3 = (30 * v6 / 2 + 30 * aP1->field_0 / 2) / 256; /*0x6d1f98*/
-  v4 = v3 /*0x6d1fc4*/
-     - Math::RoundToInt((double)aP1->field_8 * *(double *)&stru_B05488.__pad_579C[8484] + (double)(aP1->field_8 >= 728) + 0.5);
-  *(unsigned int *)aP0->__pad_0 = v2; /*0x6d1fca*/
-  *(unsigned int *)&aP0->__pad_0[4] = v4; /*0x6d1fcc*/
-  return (int *)aP0->__pad_0; /*0x6d1fcf*/
+  v6 = aP1[1]; /*0x6d1f1f*/
+  v2 = (-60 * v6 / 2 + 60 * *aP1 / 2) / 256; /*0x6d1f95*/
+  v3 = (30 * v6 / 2 + 30 * *aP1 / 2) / 256; /*0x6d1f98*/
+  v4 = v3 - Math::RoundToInt((double)(int)aP1[2] * dbl_B0CD48 + (double)(aP1[2] >= 728) + 0.5); /*0x6d1fc4*/
+  *aP0 = v2; /*0x6d1fca*/
+  aP0[1] = v4; /*0x6d1fcc*/
+  return aP0; /*0x6d1fcf*/
 
 }
 } // namespace gamemd
@@ -333,7 +348,13 @@ namespace gamemd {
 long long Coord::ScaleToScreenY()
 {
 
-  return Math::RoundToInt(((double)(int)this - 0.5) * g_abs_B0CDD8); /*0x6d213b*/
+  int64_t result; // rax
+  int v2; // kr00_4
+
+  v2 = Math::RoundToInt(((double)(int)this - 0.5) * LightningStorm_CloudHeightFactor); /*0x6d2135*/
+  WORD2(result) = HIWORD(v2); /*0x6d2135*/
+  LOWORD(result) = v2; /*0x6d2135*/
+  return result; /*0x6d213b*/
 
 }
 } // namespace gamemd

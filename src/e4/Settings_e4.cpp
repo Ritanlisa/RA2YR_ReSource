@@ -14,8 +14,8 @@ BOOL Settings::CheckString()
 
   char *v0; // eax
 
-  v0 = CharToWideString(MEMORY[0xA8B380]); /*0x5e8765*/
-  return wcscmp((const wchar_t *)v0, &MEMORY[0xA8D610]) == 0; /*0x5e877d*/
+  v0 = (char *)(CharToWideString(unk_A8B380));
+  return wcscmp((const wchar_t *)v0, word_A8D610) == 0; /*0x5e877d*/
 
 }
 } // namespace gamemd

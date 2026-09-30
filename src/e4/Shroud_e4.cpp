@@ -26,77 +26,76 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   int v7; // ecx
   int result; // eax
   int v9; // edi
-  int v10; // eax
-  int v11; // ebp
-  int v12; // eax
+  MapClass *RadarClass_field_0x1490; // eax
+  MapClass *RadarClass_field_0x1498; // ebp
+  RadarClass *v12; // eax
   int v13; // ecx
   int v14; // edx
-  int v15; // edi
+  RadarClass *RadarClass_field_0x149C; // edi
   int v16; // eax
 
-  ShroudClass::UpdateVisibility(this, aP1); /*0x65449d*/
-  v3 = *((unsigned int *)this + 63); /*0x6544a2*/
-  v4 = *((unsigned int *)this + 64); /*0x6544a8*/
-  *((unsigned int *)this + 1322) = 0; /*0x6544b3*/
-  *((unsigned int *)this + 1320) = 10000; /*0x6544bd*/
-  *((unsigned int *)this + 1319) = 10000; /*0x6544c3*/
+  ShroudClass::UpdateVisibility((MapClass *)this, aP1); /*0x65449d*/
+  v3 = *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[60]; /*0x6544a2*/
+  v4 = *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[64]; /*0x6544a8*/
+  *(unsigned int *)this->__pad_14A8 = 0; /*0x6544b3*/
+  *(unsigned int *)this->__pad_14A0 = 10000; /*0x6544bd*/
+  this->RadarClass_field_0x149C = (RadarClass *)10000; /*0x6544c3*/
   v5 = v3 + v4 + 1; /*0x6544cf*/
-  v6 = v4 + *((unsigned int *)this + 61) - v3; /*0x6544da*/
-  v7 = *((unsigned int *)this + 65); /*0x6544dc*/
-  *((unsigned int *)this + 1321) = 0; /*0x6544e7*/
-  *((unsigned int *)this + 1318) = -1; /*0x6544f4*/
-  *((unsigned int *)this + 1317) = (int16_t)(v7 - 1 + v5) - (int16_t)(1 - v7 + v6); /*0x654533*/
-  *((unsigned int *)this + 1316) = v6 - v5; /*0x65453e*/
-  LayerClass::CellIteratorReset(&MEMORY[0x87F7E8]); /*0x654544*/
-  result = ((LayerClass *)(this))->CellIteratorNext(); /*0x65454b*/
+  v6 = v4 + *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[52] - v3; /*0x6544da*/
+  v7 = *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[68]; /*0x6544dc*/
+  this->RadarClass_field_0x14A4 = 0; /*0x6544e7*/
+  this->RadarClass_field_0x1498 = (MapClass *)-1; /*0x6544f4*/
+  this->RadarClass_field_0x1494 = (MapClass *)((int16_t)(v7 - 1 + v5) - (int16_t)(1 - v7 + v6)); /*0x654533*/
+  this->RadarClass_field_0x1490 = (MapClass *)(v6 - v5); /*0x65453e*/
+  LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x654544*/
+  result = ((LayerClass *)((LayerClass *)this))->CellIteratorNext(); /*0x65454b*/
   v9 = result; /*0x654550*/
   if ( result ) /*0x654554*/
   {
     while ( 1 ) /*0x654567*/
     {
-      aP1 = (gamemd::MouseClass *)((gamemd::RadarClass **)(*(MouseClass **)(v9 + 36)));
-      if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&aP1, (TechnoClass *)1) ) /*0x65456b*/
+      aP1 = (gamemd::MouseClass *)((gamemd::RadarClass **)(*(int **)(v9 + 36)));
+      if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)this, (int16_t *)&aP1, 1) ) /*0x65456b*/
         break; /*0x65456b*/
 LABEL_17:
-      result = ((LayerClass *)(this))->CellIteratorNext(); /*0x65462c*/
+      result = ((LayerClass *)((LayerClass *)this))->CellIteratorNext(); /*0x65462c*/
       v9 = result; /*0x654633*/
       if ( !result ) /*0x654637*/
         return result; /*0x654637*/
     }
-    if ( *((unsigned int *)this + 1318) == -1 ) /*0x65457f*/
-      *((unsigned int *)this + 1318) = *(int16_t *)(v9 + 36) + *(int16_t *)(v9 + 38); /*0x65458b*/
-    v10 = *((unsigned int *)this + 1316); /*0x654594*/
-    v11 = *((unsigned int *)this + 1318); /*0x65459a*/
-    aP1 = *(MouseClass **)(v9 + 36); /*0x6545a0*/
-    v12 = (int16_t)aP1 + v10 - SHIWORD(aP1); /*0x6545b0*/
-    v13 = (int16_t)aP1 + SHIWORD(aP1) - v11; /*0x6545b2*/
+    if ( this->RadarClass_field_0x1498 == (unsigned int)((MapClass *))-1 ) /*0x65457f*/
+      this->RadarClass_field_0x1498 = (MapClass *)(*(int16_t *)(v9 + 36) + *(int16_t *)(v9 + 38)); /*0x65458b*/
+    RadarClass_field_0x1490 = this->RadarClass_field_0x1490; /*0x654594*/
+    RadarClass_field_0x1498 = this->RadarClass_field_0x1498; /*0x65459a*/
+    aP1 = *(int **)(v9 + 36); /*0x6545a0*/
+    v12 = (RadarClass *)((char *)RadarClass_field_0x1490 + (int16_t)aP1 - SHIWORD(aP1)); /*0x6545b0*/
+    v13 = (int16_t)aP1 + SHIWORD(aP1) - (unsigned int)RadarClass_field_0x1498; /*0x6545b2*/
     v14 = 2; /*0x6545b7*/
-    if ( v12 == -1 ) /*0x6545bc*/
+    if ( v12 == (RadarClass *)-1 ) /*0x6545bc*/
     {
       v12 = 0; /*0x6545be*/
     }
-    else if ( v12 != 2 * *((unsigned int *)this + 65) - 1 ) /*0x6545ce*/
+    else if ( v12 != (RadarClass *)(2 * *(unsigned int *)&this-((unsigned int *)(>__pad_C0))[68] - 1) ) /*0x6545ce*/
     {
-LABEL_9:
-      v15 = *((unsigned int *)this + 1319); /*0x6545d5*/
-      if ( v12 >= v15 ) /*0x6545dd*/
+LABEL_9: RadarClass_field_0x149C = (gamemd::RadarClass *)(this->RadarClass_field_0x149C);
+      if ( (int)v12 >= (int)RadarClass_field_0x149C ) /*0x6545dd*/
       {
-        if ( v14 + v12 > v15 + *((unsigned int *)this + 1321) ) /*0x6545f4*/
-          *((unsigned int *)this + 1321) = v12 + v14 - v15; /*0x6545fa*/
+        if ( (int)v12 + v14 > (int)((int)RadarClass_field_0x149C + (unsigned int)this->RadarClass_field_0x14A4) ) /*0x6545f4*/
+          this->RadarClass_field_0x14A4 = (CampaignClass *)((char *)v12 + v14 - (unsigned int)RadarClass_field_0x149C); /*0x6545fa*/
       }
       else
       {
-        *((unsigned int *)this + 1319) = v12; /*0x6545df*/
+        this->RadarClass_field_0x149C = (unsigned int)(v12);
       }
-      v16 = *((unsigned int *)this + 1320); /*0x654600*/
+      v16 = *(unsigned int *)this->__pad_14A0; /*0x654600*/
       if ( v13 >= v16 ) /*0x654608*/
       {
-        if ( v13 + 1 > *((unsigned int *)this + 1322) + v16 ) /*0x654621*/
-          *((unsigned int *)this + 1322) = v13 - v16 + 1; /*0x654626*/
+        if ( v13 + 1 > *(unsigned int *)this->__pad_14A8 + v16 ) /*0x654621*/
+          *(unsigned int *)this->__pad_14A8 = v13 - v16 + 1; /*0x654626*/
       }
       else
       {
-        *((unsigned int *)this + 1320) = v13; /*0x65460a*/
+        *(unsigned int *)this->__pad_14A0 = v13; /*0x65460a*/
       }
       goto LABEL_17; /*0x654610*/
     }

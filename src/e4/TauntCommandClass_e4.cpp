@@ -25,9 +25,9 @@ namespace gamemd {
 void TauntCommandClass::Construct( int a2)
 {
 
-  *(this + 1) = a2; /*0x536296*/
-  *this = &vt_TauntCommandClass; /*0x536299*/
-  return this; /*0x53629f*/
+  this->TauntCommandClass_field_00 = a2; /*0x536296*/
+  *(unsigned int *)this->CommandClass = &TauntCommandClass::`vftable'; /*0x536299*/
+  return this->CommandClass; /*0x53629f*/
 
 }
 } // namespace gamemd
@@ -36,11 +36,8 @@ namespace gamemd {
 void TauntCommandClass::AddRef()
 {
 
-  sprintf( /*0x5362be*/
-    &HouseClass_Player.__pad_5568[25344],
-    (ObjectClass *)&stru_8271A0.customSound_controller[2],
-    (INIClass *)*((unsigned int *)this + 1));
-  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x5362cb*/
+  sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "Taunt_%d", this->TauntCommandClass_field_00); /*0x5362be*/
+  return &(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x5362cb*/
 
 }
 } // namespace gamemd
@@ -50,12 +47,12 @@ void TauntCommandClass::Release()
 {
 
   wchar_t *StringCSF; // eax
-  const wchar_t *v3; // [esp-4h] [ebp-4h]
+  const wchar_t *TauntCommandClass_field_00; // [esp-4h] [ebp-4h]
 
-  v3 = (wchar_t *)(*((unsigned int *)this + 1));
-  StringCSF = (wchar_t *)(GetStringCSF(MEMORY[0x827204], 0, g_Str_File_Init_CPP, 6400));
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x5362f0*/
-  return &MEMORY[0xA8F654]; /*0x5362fd*/
+  TauntCommandClass_field_00 = (const wchar_t *)this->TauntCommandClass_field_00; /*0x5362d5*/
+  StringCSF = GetStringCSF(aTxtTauntNumber, 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
+  swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, TauntCommandClass_field_00); /*0x5362f0*/
+  return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x5362fd*/
 
 }
 } // namespace gamemd
@@ -64,7 +61,7 @@ namespace gamemd {
 void TauntCommandClass::ddtor()
 {
 
-  return GetStringCSF(g_abs_827218, 0, g_Str_File_Init_CPP, 6405); /*0x536316*/
+  return GetStringCSF(aTxtTaunt, 0, g_Str_File_Init_CPP, 6405); /*0x536316*/
 
 }
 } // namespace gamemd

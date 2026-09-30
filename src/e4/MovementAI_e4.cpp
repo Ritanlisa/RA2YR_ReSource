@@ -13,8 +13,9 @@ int MovementAI::IsPathMovementAllowed()
 {
 
   unsigned int *v2; // esi
+  BOOL v3; // eax
 
-  if ( !g_abs_A8E9A0 ) /*0x487e0b*/
+  if ( !byte_A8E9A0 ) /*0x487e0b*/
     return *((unsigned int *)this + 64) != 0; /*0x487e0b*/
   v2 = (unsigned int *)*((unsigned int *)this + 57); /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
@@ -25,7 +26,11 @@ int MovementAI::IsPathMovementAllowed()
     if ( !v2 ) /*0x487e28*/
       return *((unsigned int *)this + 64) != 0; /*0x487e28*/
   }
-  return *((unsigned int *)this + 64) != 1 && *((unsigned int *)this + 64) != 0; /*0x487e48*/
+  if ( *((unsigned int *)this + 64) == 1 ) /*0x487e45*/
+    LOBYTE(v3) = 0; /*0x487e48*/
+  else
+    return *((unsigned int *)this + 64) != 0; /*0x487e2a*/
+  return v3; /*0x487e34*/
 
 }
 } // namespace gamemd
@@ -34,25 +39,25 @@ namespace gamemd {
 int MovementAI::IsProgressAtEnd()
 {
 
-  int v1; // esi
+  int MovementAI_field_14; // esi
   int v2; // edx
-  int v3; // eax
+  int MovementAI_field_10; // eax
 
-  if ( !*((unsigned char *)this + 24) ) /*0x4a5150*/
+  if ( !LOBYTE(this->MovementAI_field_18) ) /*0x4a5150*/
     return 1; /*0x4a5150*/
-  v1 = *((unsigned int *)this + 5); /*0x4a515b*/
-  if ( !v1 ) /*0x4a5164*/
+  MovementAI_field_14 = this->MovementAI_field_14; /*0x4a515b*/
+  if ( !MovementAI_field_14 ) /*0x4a5164*/
     return 1; /*0x4a5164*/
-  v2 = *((unsigned int *)this + 2); /*0x4a5166*/
-  v3 = *((unsigned int *)this + 4); /*0x4a5169*/
+  v2 = this->m_Target[2]; /*0x4a5166*/
+  MovementAI_field_10 = this->MovementAI_field_10; /*0x4a5169*/
   if ( v2 != -1 ) /*0x4a516f*/
   {
-    if ( (int)g_abs_A8ED84 - v2 >= v3 ) /*0x4a517b*/
-      v3 = 0; /*0x4a5181*/
+    if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v2 >= MovementAI_field_10 ) /*0x4a517b*/
+      MovementAI_field_10 = 0; /*0x4a5181*/
     else
-      v3 -= (int)g_abs_A8ED84 - v2; /*0x4a517d*/
+      MovementAI_field_10 -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v2; /*0x4a517d*/
   }
-  return (double)(v1 - v3) / (double)*((int *)this + 5) == 1.0; /*0x4a519e*/
+  return (double)(MovementAI_field_14 - MovementAI_field_10) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
 
 }
 } // namespace gamemd
@@ -64,19 +69,19 @@ void MovementAI::Check()
   char result; // al
 
   result = 0; /*0x4a5363*/
-  if ( *((unsigned char *)this + 24) ) /*0x4a5360*/
+  if ( LOBYTE(this->MovementAI_field_18) ) /*0x4a5360*/
   {
-    if ( *((unsigned char *)this + 25) ) /*0x4a5369*/
+    if ( BYTE1(this->MovementAI_field_18) ) /*0x4a5369*/
     {
-      *((unsigned char *)this + 24) = 0; /*0x4a536e*/
-      *((unsigned char *)this + 25) = 1; /*0x4a5371*/
+      LOBYTE(this->MovementAI_field_18) = 0; /*0x4a536e*/
+      BYTE1(this->MovementAI_field_18) = 1; /*0x4a5371*/
     }
-    if ( *((unsigned char *)this + 24) ) /*0x4a5375*/
+    if ( LOBYTE(this->MovementAI_field_18) ) /*0x4a5375*/
     {
-      if ( !*((unsigned char *)this + 25) ) /*0x4a537a*/
+      if ( !BYTE1(this->MovementAI_field_18) ) /*0x4a537a*/
       {
-        *((unsigned char *)this + 24) = 0; /*0x4a537f*/
-        *((unsigned char *)this + 25) = 0; /*0x4a5382*/
+        LOBYTE(this->MovementAI_field_18) = 0; /*0x4a537f*/
+        BYTE1(this->MovementAI_field_18) = 0; /*0x4a5382*/
       }
     }
   }

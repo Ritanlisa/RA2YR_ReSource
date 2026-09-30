@@ -18,34 +18,34 @@ namespace gamemd {
 void TextBuffer::Init()
 {
 
-  unsigned int * v1;
-  unsigned int *v2; // ebx
-  unsigned char *v3; // edx
-  unsigned int *v4; // eax
+  TextBuffer * v1;
+  TextBuffer *v2; // ebx
+  TextBuffer *v3; // edx
+  TextBuffer *v4; // eax
   int v5; // esi
 
-  v1 = (int)((unsigned int *)(0));
-  v2 = (unsigned char *)this + 2000; /*0x5bcc95*/
+  v1 = (int)((gamemd::TextBuffer *)(0));
+  v2 = (gamemd::TextBuffer *)((unsigned int *)this + 2000);
   do /*0x5bccbe*/
   {
-    v3 = (unsigned char *)(this + v1);
+    v3 = this + v1; /*0x5bcc9b*/
     v4 = v2; /*0x5bcc9e*/
     v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/
     {
-      *v3 = 32; /*0x5bcca5*/
-      *v4 = 0; /*0x5bcca8*/
-      v4 += 25; /*0x5bccae*/
+      *v3 = (TextBuffer)32; /*0x5bcca5*/
+      *(unsigned int *)v4 = 0; /*0x5bcca8*/
+      v4 += 100; /*0x5bccae*/
       v3 += 25; /*0x5bccb1*/
       --v5; /*0x5bccb4*/
     }
     while ( v5 ); /*0x5bccb5*/
     ++v1; /*0x5bccb7*/
-    ++v2; /*0x5bccb8*/
+    v2 += 4; /*0x5bccb8*/
   }
   while ( v1 < 25 ); /*0x5bccbe*/
   *((unsigned char *)this + 10036) = 1; /*0x5bccc8*/
-  return Text::DrawRepeated(this, 0, 0, 80, 25); /*0x5bccd4*/
+  return Text::DrawRepeated((Text *)this, 0, 0, 80, 25); /*0x5bccd4*/
 
 }
 } // namespace gamemd

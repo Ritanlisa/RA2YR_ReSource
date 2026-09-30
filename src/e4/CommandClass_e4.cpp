@@ -26,163 +26,163 @@ namespace gamemd {
 int CommandClass::BuildBar()
 {
 
-  int *v2; // esi
+  ShapeButtonClass *v2; // esi
   unsigned int v3; // eax
-  unsigned int *v4; // esi
+  ShapeButtonClass *v4; // esi
   int v5; // edx
   int v6; // eax
   int v7; // ecx
-  int v8; // edx
+  int ShapeButtonClass_field_0x08; // edx
   unsigned int v9; // eax
-  unsigned int *v10; // esi
+  ShapeButtonClass *v10; // esi
   int v11; // edx
   int v12; // eax
   int v13; // ecx
   int v14; // edx
   unsigned int v15; // eax
-  unsigned int *v16; // esi
+  ShapeButtonClass *v16; // esi
   int v17; // edx
   int v18; // eax
   int v19; // ecx
   int v20; // edx
   unsigned int v21; // eax
-  unsigned int *v22; // esi
+  ShapeButtonClass *v22; // esi
   int v23; // edx
   int v24; // eax
   int v25; // ecx
   int v26; // edx
-  unsigned int v27; // eax
-  unsigned int *v28; // ecx
+  ShapeButtonClass * v27;
+  ShapeButtonClass *v28; // ecx
   unsigned int v29; // eax
-  unsigned int *v30; // ecx
-  char *Entry; // eax
+  ShapeButtonClass *v30; // ecx
+  char *FontClassEntry; // eax
   char *v32; // eax
   char *v33; // eax
   char *v34; // eax
   char *v35; // eax
-  int v37; // [esp+8h] [ebp-1Ch] BYREF
+  Struct v37; // [esp+8h] [ebp-1Ch] BYREF
   int v38; // [esp+Ch] [ebp-18h]
-  int v39; // [esp+10h] [ebp-14h]
+  int ShapeButtonClass_field_0x04; // [esp+10h] [ebp-14h]
   int v40; // [esp+14h] [ebp-10h]
   int v41; // [esp+18h] [ebp-Ch]
   char *v42; // [esp+1Ch] [ebp-8h]
 
-  v2 = (int *)&MEMORY[0xB0C1C0]; /*0x6d1207*/
+  v2 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0);
   do /*0x6d1224*/
   {
-    (*(void (**)(int *))(*v2 + 32))(v2); /*0x6d1210*/
-    (*(void (**)(void *, int *))(*(unsigned int *)this + 48))(this, v2); /*0x6d1218*/
-    v2 += 24; /*0x6d121b*/
+    (*(void (**)(ShapeButtonClass *))(*(unsigned int *)v2->__pad_0 + 32))(v2); /*0x6d1210*/
+    (*(void (**)(CommandClass *, ShapeButtonClass *))(*(unsigned int *)this + 48))(this, v2); /*0x6d1218*/
+    (unsigned int)(v2)+= 8; /*0x6d121b*/
   }
-  while ( (int)v2 < (int)&MEMORY[0xB0CB20] ); /*0x6d1224*/
-  (*(void (**)(void *, unsigned int *))(*(unsigned int *)this + 48))(this, MEMORY[0xB0CCB0]); /*0x6d122f*/
-  v3 = MEMORY[0xB0CB78][MEMORY[0xB0CD24]]; /*0x6d1238*/
+  while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d1224*/
+  (*(void (**)(CommandClass *, GadgetClass *))(*(unsigned int *)this + 48))(this, &stru_B0CCB0); /*0x6d122f*/
+  v3 = g_ObjectTrackingPool[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
-    v4 = (unsigned int *)((char *)&MEMORY[0xB0C1C0] + 96 * v3); /*0x6d124e*/
+    v4 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v3);
     if ( v4 ) /*0x6d1256*/
     {
       Struct::Zero25(&v37); /*0x6d125c*/
-      v5 = v4[3]; /*0x6d1264*/
-      v6 = v4[9]; /*0x6d1267*/
-      v39 = v4[4]; /*0x6d126a*/
-      v7 = v4[6]; /*0x6d126e*/
+      v5 = *(unsigned int *)v4[1].__pad_0; /*0x6d1264*/
+      v6 = *(unsigned int *)v4[3].__pad_0; /*0x6d1267*/
+      ShapeButtonClass_field_0x04 = v4[1].ShapeButtonClass_field_0x04; /*0x6d126a*/
+      v7 = *(unsigned int *)v4[2].__pad_0; /*0x6d126e*/
       v38 = v5; /*0x6d1271*/
-      v8 = v4[5]; /*0x6d1275*/
+      ShapeButtonClass_field_0x08 = v4[1].ShapeButtonClass_field_0x08; /*0x6d1275*/
       v41 = v7; /*0x6d1278*/
-      v37 = v6; /*0x6d1283*/
-      v42 = MEMORY[0x8428DC]; /*0x6d1287*/
-      v40 = v8; /*0x6d128f*/
-      HashTable::Remove((int *)MEMORY[0x887368], v6); /*0x6d1293*/
-      CommandClass::AddAction(MEMORY[0x887368], (int)&v37); /*0x6d12a3*/
+      v37.Struct_field_00 = v6; /*0x6d1283*/
+      v42 = aTipAttackmove; /*0x6d1287*/
+      v40 = ShapeButtonClass_field_0x08; /*0x6d128f*/
+      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v6); /*0x6d1293*/
+      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d12a3*/
     }
   }
-  v9 = MEMORY[0xB0CB78][MEMORY[0xB0CB3C]]; /*0x6d12ad*/
+  v9 = g_ObjectTrackingPool[dword_B0CB3C]; /*0x6d12ad*/
   if ( v9 <= 0x18 ) /*0x6d12b6*/
   {
-    v10 = (unsigned int *)((char *)&MEMORY[0xB0C1C0] + 96 * v9); /*0x6d12c3*/
+    v10 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v9);
     if ( v10 ) /*0x6d12cb*/
     {
       Struct::Zero25(&v37); /*0x6d12d1*/
-      v11 = v10[4]; /*0x6d12d9*/
-      v12 = v10[9]; /*0x6d12dc*/
-      v38 = v10[3]; /*0x6d12df*/
-      v13 = v10[5]; /*0x6d12e3*/
-      v39 = v11; /*0x6d12e6*/
-      v14 = v10[6]; /*0x6d12ea*/
+      v11 = v10[1].ShapeButtonClass_field_0x04; /*0x6d12d9*/
+      v12 = *(unsigned int *)v10[3].__pad_0; /*0x6d12dc*/
+      v38 = *(unsigned int *)v10[1].__pad_0; /*0x6d12df*/
+      v13 = v10[1].ShapeButtonClass_field_0x08; /*0x6d12e3*/
+      ShapeButtonClass_field_0x04 = v11; /*0x6d12e6*/
+      v14 = *(unsigned int *)v10[2].__pad_0; /*0x6d12ea*/
       v40 = v13; /*0x6d12ed*/
-      v37 = v12; /*0x6d12f8*/
-      v42 = MEMORY[0x8428D0]; /*0x6d12fc*/
+      v37.Struct_field_00 = v12; /*0x6d12f8*/
+      v42 = aTipBeacon; /*0x6d12fc*/
       v41 = v14; /*0x6d1304*/
-      HashTable::Remove((int *)MEMORY[0x887368], v12); /*0x6d1308*/
-      CommandClass::AddAction(MEMORY[0x887368], (int)&v37); /*0x6d1318*/
+      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v12); /*0x6d1308*/
+      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1318*/
     }
   }
-  v15 = MEMORY[0xB0CB78][MEMORY[0xB0C1B8]]; /*0x6d1323*/
+  v15 = g_ObjectTrackingPool[dword_B0C1B8]; /*0x6d1323*/
   if ( v15 <= 0x18 ) /*0x6d132c*/
   {
-    v16 = (unsigned int *)((char *)&MEMORY[0xB0C1C0] + 96 * v15); /*0x6d1339*/
+    v16 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v15);
     if ( v16 ) /*0x6d1341*/
     {
       Struct::Zero25(&v37); /*0x6d1347*/
-      v17 = v16[3]; /*0x6d134f*/
-      v18 = v16[9]; /*0x6d1352*/
-      v39 = v16[4]; /*0x6d1355*/
-      v19 = v16[6]; /*0x6d1359*/
+      v17 = *(unsigned int *)v16[1].__pad_0; /*0x6d134f*/
+      v18 = *(unsigned int *)v16[3].__pad_0; /*0x6d1352*/
+      ShapeButtonClass_field_0x04 = v16[1].ShapeButtonClass_field_0x04; /*0x6d1355*/
+      v19 = *(unsigned int *)v16[2].__pad_0; /*0x6d1359*/
       v38 = v17; /*0x6d135c*/
-      v20 = v16[5]; /*0x6d1360*/
+      v20 = v16[1].ShapeButtonClass_field_0x08; /*0x6d1360*/
       v41 = v19; /*0x6d1363*/
-      v37 = v18; /*0x6d136e*/
-      v42 = MEMORY[0x8428C4]; /*0x6d1372*/
+      v37.Struct_field_00 = v18; /*0x6d136e*/
+      v42 = aTipCheer; /*0x6d1372*/
       v40 = v20; /*0x6d137a*/
-      HashTable::Remove((int *)MEMORY[0x887368], v18); /*0x6d137e*/
-      CommandClass::AddAction(MEMORY[0x887368], (int)&v37); /*0x6d138e*/
+      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v18); /*0x6d137e*/
+      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d138e*/
     }
   }
-  v21 = MEMORY[0xB0CB78][MEMORY[0xB0CB20]]; /*0x6d1398*/
+  v21 = g_ObjectTrackingPool[dword_B0CB20]; /*0x6d1398*/
   if ( v21 <= 0x18 ) /*0x6d13a1*/
   {
-    v22 = (unsigned int *)((char *)&MEMORY[0xB0C1C0] + 96 * v21); /*0x6d13ae*/
+    v22 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v21);
     if ( v22 ) /*0x6d13b6*/
     {
       Struct::Zero25(&v37); /*0x6d13bc*/
-      v23 = v22[4]; /*0x6d13c4*/
-      v24 = v22[9]; /*0x6d13c7*/
-      v38 = v22[3]; /*0x6d13ca*/
-      v25 = v22[5]; /*0x6d13ce*/
-      v39 = v23; /*0x6d13d1*/
-      v26 = v22[6]; /*0x6d13d5*/
+      v23 = v22[1].ShapeButtonClass_field_0x04; /*0x6d13c4*/
+      v24 = *(unsigned int *)v22[3].__pad_0; /*0x6d13c7*/
+      v38 = *(unsigned int *)v22[1].__pad_0; /*0x6d13ca*/
+      v25 = v22[1].ShapeButtonClass_field_0x08; /*0x6d13ce*/
+      ShapeButtonClass_field_0x04 = v23; /*0x6d13d1*/
+      v26 = *(unsigned int *)v22[2].__pad_0; /*0x6d13d5*/
       v40 = v25; /*0x6d13d8*/
-      v37 = v24; /*0x6d13e3*/
-      v42 = MEMORY[0x8428B8]; /*0x6d13e7*/
+      v37.Struct_field_00 = v24; /*0x6d13e3*/
+      v42 = aTipDeploy; /*0x6d13e7*/
       v41 = v26; /*0x6d13ef*/
-      HashTable::Remove((int *)MEMORY[0x887368], v24); /*0x6d13f3*/
-      CommandClass::AddAction(MEMORY[0x887368], (int)&v37); /*0x6d1403*/
+      HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], v24); /*0x6d13f3*/
+      CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1403*/
     }
   }
-  v27 = MEMORY[0xB0CB78][MEMORY[0xB0CB68]]; /*0x6d1410*/
+  v27 = (unsigned int)((gamemd::ShapeButtonClass *)(((unsigned int *)(g_ObjectTrackingPool))[dword_B0CB68]));
   if ( v27 > 0x18 ) /*0x6d1419*/
     v28 = 0; /*0x6d142e*/
   else
-    v28 = (unsigned int *)((char *)&MEMORY[0xB0C1C0] + 96 * v27); /*0x6d1426*/
-  PushCommandClass::Execute(v28, (int)MEMORY[0x8428AC]); /*0x6d1435*/
-  v29 = MEMORY[0xB0CB78][MEMORY[0xB0CC1C]]; /*0x6d1440*/
+    v28 = &stru_B0C1C0 + 8 * v27; /*0x6d1426*/
+  PushCommandClass::Execute(v28, (int)aTipGuard); /*0x6d1435*/
+  v29 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d1440*/
   if ( v29 > 0x18 ) /*0x6d1449*/
     v30 = 0; /*0x6d145e*/
   else
-    v30 = (unsigned int *)((char *)&MEMORY[0xB0C1C0] + 96 * v29); /*0x6d1456*/
-  PushCommandClass::Execute(v30, (int)MEMORY[0x842898]); /*0x6d1465*/
-  Entry = GetFontClassEntry(MEMORY[0xB0CB6C]); /*0x6d1470*/
-  PushCommandClass::Execute(Entry, (int)MEMORY[0x84288C]); /*0x6d147c*/
-  v32 = GetFontClassEntry(MEMORY[0xB0CC20]); /*0x6d1487*/
-  PushCommandClass::Execute(v32, (int)MEMORY[0x842880]); /*0x6d1493*/
-  v33 = GetFontClassEntry(MEMORY[0xB0CC28]); /*0x6d149e*/
-  PushCommandClass::Execute(v33, (int)MEMORY[0x842874]); /*0x6d14aa*/
-  v34 = GetFontClassEntry(MEMORY[0xB0CD28]); /*0x6d14b5*/
-  PushCommandClass::Execute(v34, (int)MEMORY[0x842868]); /*0x6d14c1*/
-  v35 = GetFontClassEntry(MEMORY[0xB0CB38]); /*0x6d14cc*/
-  PushCommandClass::Execute(v35, (int)MEMORY[0x842858]); /*0x6d14d8*/
-  return PushCommandClass::Execute(MEMORY[0xB0CCB0], (int)MEMORY[0x842848]); /*0x6d14ec*/
+    v30 = &stru_B0C1C0 + 8 * v29; /*0x6d1456*/
+  PushCommandClass::Execute(v30, (int)aTipPlanningmod); /*0x6d1465*/
+  FontClassEntry = GetFontClassEntry(dword_B0CB6C); /*0x6d1470*/
+  PushCommandClass::Execute(FontClassEntry, (int)aTipStop); /*0x6d147c*/
+  v32 = GetFontClassEntry(dword_B0CC20); /*0x6d1487*/
+  PushCommandClass::Execute(v32, (int)aTipTeam01); /*0x6d1493*/
+  v33 = GetFontClassEntry(dword_B0CC28); /*0x6d149e*/
+  PushCommandClass::Execute(v33, (int)aTipTeam02); /*0x6d14aa*/
+  v34 = GetFontClassEntry(dword_B0CD28); /*0x6d14b5*/
+  PushCommandClass::Execute(v34, (int)aTipTeam03); /*0x6d14c1*/
+  v35 = GetFontClassEntry(dword_B0CB38); /*0x6d14cc*/
+  PushCommandClass::Execute(v35, (int)aTipTypeselect); /*0x6d14d8*/
+  return PushCommandClass::Execute(&stru_B0CCB0, (int)aTipThumbopen); /*0x6d14ec*/
 
 }
 } // namespace gamemd
@@ -191,104 +191,105 @@ namespace gamemd {
 int CommandClass::AddAction(ToolTipManager * aP1)
 {
 
-  ToolTipManager *v2; // edi
-  ObjectClass *v4; // esi
-  size_t v5; // eax
+  ToolTipManager * v2;
+  int *v4; // esi
+  int result; // eax
+  unsigned int *v6; // ebp
   int v7; // eax
-  unsigned int *v8; // ebp
+  int v8; // ecx
   int v9; // eax
-  int v10; // ecx
-  int v11; // eax
-  int v12; // edx
-  int v13; // eax
-  char *v14; // ebx
-  AbstractClass *v15; // eax
-  AbstractClass *v16; // edi
+  int v10; // edx
+  ToolTipManager * v11;
+  int v12; // edi
   int i; // eax
-  int v18; // ecx
-  char *v19; // ecx
-  int v20; // eax
+  char *v14; // ecx
+  int v15; // ecx
 
-  v2 = aP1; /*0x724584*/
-  v4 = (ObjectClass *)((char *)this + 588); /*0x72458c*/
-  aP1 = *(ToolTipManager **)&aP1->IsVisible; /*0x724592*/
-  if ( *((unsigned int *)this + 148) ) /*0x724596*/
+  v2 = (gamemd::ToolTipManager *)(aP1);
+  v4 = (char *)this + 147; /*0x72458c*/
+  aP1 = *(unsigned int *)aP1; /*0x724592*/
+  if ( *((char *)this + 148) ) /*0x724596*/
   {
-    if ( CommandClass::executeAction((unsigned int *)((char *)this + 588), (ObjectClass *)&aP1) ) /*0x7245a4*/
-      return 0; /*0x7245ab*/
-    v5 = CommandClass::BinarySearchAction((char **)v4, (ObjectClass *)&aP1); /*0x7245b8*/
-    if ( v5 ) /*0x7245bf*/
+    if ( CommandClass::executeAction((char *)this + 147, &aP1) ) /*0x7245a4*/
+      goto LABEL_22; /*0x7245ab*/
+    result = CommandClass::BinarySearchAction((char **)v4, (unsigned int *)&aP1); /*0x7245b8*/
+    if ( result ) /*0x7245bf*/
     {
-      v4->uniqueId = (void *)(v5);
-      return 0; /*0x7245ca*/
+      v4[4] = result; /*0x7245c1*/
+      LOBYTE(result) = 0; /*0x7245c7*/
+      return result; /*0x7245ca*/
     }
   }
-  v7 = __2_YAPAXI_Z(0x1Cu); /*0x7245cf*/
-  v8 = (unsigned int *)v7; /*0x7245d4*/
-  if ( v7 ) /*0x7245db*/
+  result = __2_YAPAXI_Z(0x1Cu); /*0x7245cf*/
+  v6 = (unsigned int *)result; /*0x7245d4*/
+  if ( result ) /*0x7245db*/
   {
-    *(unsigned int *)v7 = *(unsigned int *)&v2->IsVisible; /*0x7245e6*/
-    *(unsigned int *)(v7 + 4) = v2->Position[0]; /*0x7245ee*/
-    *(unsigned int *)(v7 + 8) = v2->Position[1]; /*0x7245f3*/
-    *(unsigned int *)(v7 + 12) = v2->ToolTipText; /*0x7245f9*/
-    *(unsigned int *)(v7 + 16) = v2->Duration; /*0x7245ff*/
-    *(unsigned int *)(v7 + 20) = v2->DisplayTimer[0]; /*0x724605*/
-    *(unsigned char *)(v7 + 24) = v2->DisplayTimer[1]; /*0x724611*/
-    v9 = *((unsigned int *)this + 143); /*0x724614*/
-    if ( *((unsigned int *)this + 145) < v9 /*0x724641*/
-      || (*((unsigned char *)this + 577) || !v9)
-      && (v10 = *((unsigned int *)this + 146), v10 > 0)
-      && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 141) + 8))((char *)this + 564, v9 + v10, 0) )
+    *(unsigned int *)result = *(unsigned int *)v2; /*0x7245e6*/
+    *(unsigned int *)(result + 4) = *(unsigned int *)(v2 + 4); /*0x7245ee*/
+    *(unsigned int *)(result + 8) = *(unsigned int *)(v2 + 8); /*0x7245f3*/
+    *(unsigned int *)(result + 12) = *(unsigned int *)(v2 + 12); /*0x7245f9*/
+    *(unsigned int *)(result + 16) = *(unsigned int *)(v2 + 16); /*0x7245ff*/
+    *(unsigned int *)(result + 20) = *(unsigned int *)(v2 + 20); /*0x724605*/
+    *(unsigned char *)(result + 24) = *(unsigned char *)(v2 + 24); /*0x724611*/
+    v7 = *((char *)this + 143); /*0x724614*/
+    if ( *((char *)this + 145) < v7 /*0x724641*/
+      || (*((unsigned char *)this + 577) || !v7)
+      && (v8 = *((char *)this + 146), v8 > 0)
+      && (*(uint8_t (**)(int *, int, unsigned int))(*((char *)this + 141) + 8))((char *)this + 141, v7 + v8, 0) )
     {
-      v11 = *((unsigned int *)this + 145); /*0x72464c*/
-      v12 = *((unsigned int *)this + 142); /*0x72464f*/
-      *((unsigned int *)this + 145) = v11 + 1; /*0x724655*/
-      *(unsigned int *)(v12 + 4 * v11) = v8; /*0x724658*/
-      v13 = *(unsigned int *)&v4->__pad_0[8]; /*0x72465e*/
-      if ( *(unsigned int *)&v4->__pad_0[4] + 1 <= v13 ) /*0x724664*/
+      v9 = (unsigned int)(*((char *)this + 145));
+      v10 = *((char *)this + 142); /*0x72464f*/
+      *((char *)this + 145) = v9 + 1; /*0x724655*/
+      *(unsigned int *)(v10 + 4 * v9) = v6; /*0x724658*/
+      result = v4[2]; /*0x72465e*/
+      if ( v4[1] + 1 <= result ) /*0x724664*/
       {
 LABEL_19:
-        *(unsigned int *)(*(unsigned int *)v4->__pad_0 + 8 * *(unsigned int *)&v4->__pad_0[4]) = *v8; /*0x7246f4*/
-        *(unsigned int *)(*(unsigned int *)v4->__pad_0 + 8 * *(unsigned int *)&v4->__pad_0[4] + 4) = v8; /*0x724704*/
-        v20 = *(unsigned int *)&v4->__pad_0[4] + 1; /*0x72470b*/
-        v4->__pad_0[12] = 0; /*0x72470c*/
-        *(unsigned int *)&v4->__pad_0[4] = v20; /*0x724710*/
-        return 1; /*0x724710*/
+        *(unsigned int *)(*v4 + 8 * v4[1]) = *v6; /*0x7246f4*/
+        *(unsigned int *)(*v4 + 8 * v4[1] + 4) = v6; /*0x724704*/
+        result = v4[1] + 1; /*0x72470b*/
+        *((unsigned char *)v4 + 12) = 0; /*0x72470c*/
+        v4[1] = result; /*0x724710*/
+        goto LABEL_20; /*0x724710*/
       }
-      if ( v13 ) /*0x72466c*/
+      if ( result ) /*0x72466c*/
       {
-        aP1 = *(ToolTipManager **)&v4->__pad_0[8]; /*0x72467c*/
-        if ( v13 < 0 ) /*0x724680*/
-          return 1; /*0x724680*/
+        aP1 = (gamemd::ToolTipManager *)(v4[2]);
+        if ( result < 0 ) /*0x724680*/
+          goto LABEL_20; /*0x724680*/
       }
       else
       {
-        aP1 = (ToolTipManager *)10; /*0x72466e*/
+        aP1 = (gamemd::ToolTipManager *)(10);
       }
-      v14 = &aP1->IsVisible + v13; /*0x72468a*/
-      v15 = (AbstractClass *)__2_YAPAXI_Z(8 * ((unsigned int)aP1 + v13)); /*0x724695*/
-      v16 = v15; /*0x72469a*/
-      if ( v15 ) /*0x7246a1*/
+      v11 = (int)(result + aP1);
+      result = __2_YAPAXI_Z(8 * (result + aP1)); /*0x724695*/
+      v12 = result; /*0x72469a*/
+      if ( result ) /*0x7246a1*/
       {
-        Array::ForEach((int)v15, 8, (int)v14, (int (*)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
-        for ( i = 0; i < *(unsigned int *)&v4->__pad_0[4]; *(unsigned int *)&v16->__pad_0[8 * i - 4] = *(unsigned int *)(v18 + 8 * i - 4) ) /*0x7246b8*/
+        Array::ForEach((int *)result, 8, v11, (int (*)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
+        for ( i = 0; i < v4[1]; *(unsigned int *)(v12 + 8 * i - 4) = *(unsigned int *)&v14[8 * i - 4] ) /*0x7246b8*/
         {
-          v18 = *(unsigned int *)v4->__pad_0; /*0x7246ba*/
+          v14 = (char *)*v4; /*0x7246ba*/
           ++i; /*0x7246bc*/
-          *(unsigned int *)&v16->__pad_0[8 * i - 8] = *(unsigned int *)(*(unsigned int *)v4->__pad_0 + 8 * i - 8); /*0x7246c1*/
+          *(unsigned int *)(v12 + 8 * i - 8) = *(unsigned int *)(*v4 + 8 * i - 8); /*0x7246c1*/
         }
-        __3_YAXPAX_Z(*(void **)v4->__pad_0); /*0x7246d7*/
-        v19 = &aP1->IsVisible + *(unsigned int *)&v4->__pad_0[8]; /*0x7246e6*/
-        *(unsigned int *)v4->__pad_0 = v16; /*0x7246e8*/
-        *(unsigned int *)&v4->__pad_0[8] = v19; /*0x7246ea*/
-        v4->uniqueId = 0; /*0x7246ed*/
+        __3_YAXPAX_Z((void *)*v4); /*0x7246d7*/
+        v15 = aP1 + v4[2]; /*0x7246e6*/
+        *v4 = v12; /*0x7246e8*/
+        v4[2] = v15; /*0x7246ea*/
+        v4[4] = 0; /*0x7246ed*/
         goto LABEL_19; /*0x7246ed*/
       }
-      return 1; /*0x724719*/
+LABEL_20:
+      LOBYTE(result) = 1; /*0x724713*/
+      return result; /*0x724719*/
     }
-    __3_YAXPAX_Z(v8); /*0x72471d*/
+    __3_YAXPAX_Z(v6); /*0x72471d*/
   }
-  return 0; /*0x7245c4*/
+LABEL_22:
+  LOBYTE(result) = 0; /*0x724725*/
+  return result; /*0x7245c4*/
 
 }
 } // namespace gamemd

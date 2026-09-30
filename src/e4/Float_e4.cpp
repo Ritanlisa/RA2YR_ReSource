@@ -12,11 +12,8 @@ namespace gamemd {
 float Float::Accumulate(float value, int index)
 {
 
-  double v3; // st7
-
-  v3 = value + *(this + index); /*0x6c9698*/
-  *(this + index) = v3; /*0x6c969b*/
-  return v3; /*0x6c969e*/
+  *((float *)this + index) = value + *((float *)this + index); /*0x6c969b*/
+  return index; /*0x6c969e*/
 
 }
 } // namespace gamemd
@@ -25,20 +22,24 @@ namespace gamemd {
 float Float::SubtractClamped( BuildingTypeClass * aP1, IUnknown * aP2)
 {
 
-  double result; // st7
-  double v4; // st6
+  int16_t v3; // fps
+  double v4; // st7
+  bool v5; // c0
+  char v6; // c2
+  bool v7; // c3
+  int result; // eax
+  double v9; // st6
 
-  if ( *(this + (unsigned int)aP2) >= (double)*(float *)&aP1 ) /*0x6c96c0*/
-  {
-    result = *(float *)&aP1; /*0x6c96d0*/
-    v4 = *(this + (unsigned int)aP2) - *(float *)&aP1; /*0x6c96d7*/
-  }
+  v4 = *((float *)(unsigned int)(this)+ aP2); /*0x6c96b4*/
+  v5 = v4 < (double)(aP1); /*0x6c96b7*/
+  v6 = 0; /*0x6c96b7*/
+  v7 = v4 == (double)(aP1); /*0x6c96b7*/
+  LOWORD(result) = v3; /*0x6c96bb*/
+  if ( v4 >= (double)(aP1) ) /*0x6c96c0*/
+    v9 = *((float *)(unsigned int)(this)+ aP2) - aP1; /*0x6c96d7*/
   else
-  {
-    result = (double)(*(this + (unsigned int)aP2));
-    v4 = result - result; /*0x6c96c8*/
-  }
-  *(this + (unsigned int)aP2) = v4; /*0x6c96ca*/
+    v9 = *((float *)(unsigned int)(this)+ aP2) (unsigned int)(-)*((float *)this + aP2); /*0x6c96c8*/
+  *((float *)(unsigned int)(this)+ aP2) = v9; /*0x6c96ca*/
   return result; /*0x6c96cd*/
 
 }

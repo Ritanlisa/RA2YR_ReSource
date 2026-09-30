@@ -21,11 +21,11 @@ void AnimSystem::Init()
   for ( i = 0; i < 18; ++i ) /*0x75a791*/
   {
     v1 = i >> 3; /*0x75a79e*/
-    v2 = ~(1 << (i & 7)) & g_abs_B45BA8[i >> 3]; /*0x75a7a9*/
-    g_abs_B45BA8[v1] = v2; /*0x75a7af*/
+    v2 = ~(1 << (i & 7)) & byte_B45BA8[i >> 3]; /*0x75a7a9*/
+    ((unsigned int *)(byte_B45BA8))[v1] = v2; /*0x75a7af*/
   }
-  result = g_abs_B45BA8[0] | 0x40; /*0x75a7bd*/
-  g_abs_B45BA8[0] |= 0x40u; /*0x75a7bf*/
+  result = ((unsigned int *)(byte_B45BA8))[0] | 0x40; /*0x75a7bd*/
+  ((unsigned int *)(byte_B45BA8))[0] |= 0x40u; /*0x75a7bf*/
   return result; /*0x75a7bc*/
 
 }

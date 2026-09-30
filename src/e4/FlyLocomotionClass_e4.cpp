@@ -23,31 +23,31 @@ int FlyLocomotionClass::LocomotionClass()
 
   int v2; // edx
 
-  LocomotionClass::Init((unsigned int *)this); /*0x4cc9a3*/
-  *((unsigned char *)this + 24) = 0; /*0x4cc9ad*/
-  *((unsigned int *)this + 7) = g_abs_8B3C78; /*0x4cc9b6*/
-  *((unsigned int *)this + 8) = g_abs_8B3C7C; /*0x4cc9be*/
-  *((unsigned int *)this + 9) = g_abs_8B3C80; /*0x4cc9c7*/
-  *((unsigned int *)this + 10) = g_abs_8B3C78; /*0x4cc9d3*/
-  *((unsigned int *)this + 11) = g_abs_8B3C7C; /*0x4cc9dc*/
-  v2 = g_abs_8B3C80; /*0x4cc9df*/
-  *((unsigned int *)this + 16) = 0; /*0x4cc9e5*/
-  *((unsigned int *)this + 18) = 0; /*0x4cc9e8*/
-  *((unsigned char *)this + 52) = 0; /*0x4cc9eb*/
-  *((unsigned int *)this + 14) = 0; /*0x4cc9ee*/
-  *((unsigned int *)this + 17) = 0; /*0x4cc9f1*/
-  *((unsigned int *)this + 19) = 0; /*0x4cc9f4*/
-  *((unsigned char *)this + 80) = 0; /*0x4cc9f7*/
-  *((unsigned char *)this + 81) = 0; /*0x4cc9fa*/
-  *((unsigned char *)this + 82) = 0; /*0x4cc9fd*/
-  *((unsigned char *)this + 83) = 0; /*0x4cca00*/
-  *((unsigned int *)this + 21) = 0; /*0x4cca03*/
-  *((unsigned int *)this + 22) = 0; /*0x4cca06*/
-  *((unsigned char *)this + 92) = 0; /*0x4cca09*/
-  *(unsigned int *)this = &vt_FlyLocomotionClass; /*0x4cca0c*/
-  *((unsigned int *)this + 1) = &vt_FlyLocomotionClass; /*0x4cca12*/
-  *((unsigned int *)this + 12) = v2; /*0x4cca1b*/
-  return this; /*0x4cca1e*/
+  LocomotionClass::Init((LocomotionClass *)this); /*0x4cc9a3*/
+  this->AirportBound = 0; /*0x4cc9ad*/
+  this->MovingDestination[0] = dword_8B3C78; /*0x4cc9b6*/
+  this->MovingDestination[1] = dword_8B3C7C; /*0x4cc9be*/
+  this->MovingDestination[2] = dword_8B3C80; /*0x4cc9c7*/
+  this->XYZ2[0] = dword_8B3C78; /*0x4cc9d3*/
+  this->XYZ2[1] = dword_8B3C7C; /*0x4cc9dc*/
+  v2 = dword_8B3C80; /*0x4cc9df*/
+  this->TargetSpeed[1] = 0; /*0x4cc9e5*/
+  this->CurrentSpeed[1] = 0; /*0x4cc9e8*/
+  this->HasMoveOrder = 0; /*0x4cc9eb*/
+  this->FlightLevel = 0; /*0x4cc9ee*/
+  this->CurrentSpeed[0] = 0; /*0x4cc9f1*/
+  *(unsigned int *)&this->IsTakingOff = 0; /*0x4cc9f4*/
+  this->__pad_4F[1] = 0; /*0x4cc9f7*/
+  this->__pad_4F[2] = 0; /*0x4cc9fa*/
+  this->__pad_4F[3] = 0; /*0x4cc9fd*/
+  this->FlyLocomotionClass_field_bool_53 = 0; /*0x4cca00*/
+  this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
+  this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
+  this->IsElevating = 0; /*0x4cca09*/
+  *(unsigned int *)this->LocomotionClass = &FlyLocomotionClass::`vftable'; /*0x4cca0c*/
+  *(unsigned int *)&this->LocomotionClass[4] = &FlyLocomotionClass::`vftable'; /*0x4cca12*/
+  this->XYZ2[2] = v2; /*0x4cca1b*/
+  return (int)this->LocomotionClass; /*0x4cca1e*/
 
 }
 } // namespace gamemd
@@ -56,56 +56,43 @@ namespace gamemd {
 void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
 
-  int v2; // ecx
+  HouseClass *owner; // ecx
   int i; // edi
   int v4; // esi
   int v5; // eax
-  unsigned int *v6; // ecx
+  int ObjectVector_field_0x04; // ecx
   int v7; // eax
-  unsigned int *v8; // esi
-  int v9; // edx
-  void **v10; // [esp+Ch] [ebp-30h] BYREF
-  void *Block; // [esp+10h] [ebp-2Ch]
-  int v12; // [esp+14h] [ebp-28h]
-  char v13; // [esp+19h] [ebp-23h]
-  int v14; // [esp+1Ch] [ebp-20h]
-  int v15; // [esp+20h] [ebp-1Ch]
-  void **v16; // [esp+24h] [ebp-18h] BYREF
-  void *v17; // [esp+28h] [ebp-14h]
-  int v18; // [esp+2Ch] [ebp-10h]
-  char v19; // [esp+31h] [ebp-Bh]
-  int v20; // [esp+34h] [ebp-8h]
-  int v21; // [esp+38h] [ebp-4h]
-  char v22; // [esp+40h] [ebp+4h]
+  int v8; // esi
+  void (**vtable0)(unsigned int); // edx
+  ObjectVector v10; // [esp+Ch] [ebp-30h] BYREF
+  ObjectVector v11; // [esp+24h] [ebp-18h] BYREF
+  char thisa; // [esp+40h] [ebp+4h]
 
-  if ( *(unsigned int *)(*(unsigned int *)(a1 + 8) + 692) ) /*0x4cfe8e*/
+  if ( a1->?->? ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
-  ObjectVector::Construct(&v16, 0, 0); /*0x4cfea2*/
-  v16 = &vt_DynamicVectorClass_ObjectClass; /*0x4cfeb7*/
-  v21 = 10; /*0x4cfebb*/
-  v20 = 0; /*0x4cfebf*/
+  ObjectVector::Construct(&v11, 0, 0); /*0x4cfea2*/
+  *(unsigned int *)v11.__pad_0 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfeb7*/
+  v11.ObjectVector_field_0x14 = 10; /*0x4cfebb*/
+  v11.ObjectVector_field_0x10 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  v10 = &vt_DynamicVectorClass_ObjectClass; /*0x4cfecd*/
-  v15 = 10; /*0x4cfed3*/
-  v14 = 0; /*0x4cfed7*/
-  if ( !MEMORY[0xA8B238][0] /*0x4cfeef*/
-    || (v2 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 540), *(unsigned int *)(v2 + 22016) == -1)
-    || (v22 = 1, (uint8_t)House::IsCurrentPlayer((#375 *)v2)) )
+  *(unsigned int *)v10.__pad_0 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfecd*/
+  v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
+  v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
+  if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
+    || (owner = a1->?->?, owner->enemyHouseIndex == -1)
+    || (thisa = 1, (uint8_t)House::IsCurrentPlayer((House *)owner)) )
   {
-    v22 = 0; /*0x4cfefd*/
+    thisa = 0; /*0x4cfefd*/
   }
-  for ( i = MEMORY[0xA8EC88] - 1; i >= 0; --i ) /*0x4cff0c*/
+  for ( i = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 164) - 1; i >= 0; --i ) /*0x4cff0c*/
   {
-    v4 = *((unsigned int *)MEMORY[0xA8EC7C] + i); /*0x4cff17*/
-    if ( v22 ) /*0x4cff20*/
+    v4 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x4cff17*/
+    if ( thisa ) /*0x4cff20*/
     {
-      if ( *(unsigned int *)(v4 + 540) != *(unsigned int *)&HouseClass_Array->__pad_0[4 /*0x4cff5e*/
-                                                                        * *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a1 + 8)
-                                                                                                + 540)
-                                                                                    + 22016)] )
+      if ( *(unsigned int *)(v4 + 540) != *((unsigned int *)stru_A80220.? + a1->?->?->enemyHouseIndex) ) /*0x4cff5e*/
         continue; /*0x4cff5e*/
     }
-    else if ( (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(*(unsigned int *)(a1 + 8) + 540), *(#375 **)(v4 + 540)) ) /*0x4cff32*/
+    else if ( (uint8_t)HouseClass::IsAlliedWith((#375 *)a1->?->?, *(#375 **)(v4 + 540)) ) /*0x4cff32*/
     {
       continue; /*0x4cff39*/
     }
@@ -114,72 +101,78 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       && *(unsigned char *)(v4 + 144)
       && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 3226)
       && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 561)
-      && ((*(unsigned int *)MEMORY[0xA8B230] & 0x800) == 0
+      && (((int)dword_A8B230->vtable0 & 0x800) == 0
        || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) != 1
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3598)) )
     {
-      if ( MEMORY[0xA8B238][0] /*0x4d003d*/
-        && (uint8_t)House::IsCurrentPlayer(*(#375 **)(*(unsigned int *)(a1 + 8) + 540))
+      if ( *(unsigned int *)&dword_A8B238 /*0x4d003d*/
+        && (uint8_t)House::IsCurrentPlayer((House *)a1->?->?)
         && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(v4 + 540) + 52) + 422)
         && ((*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 1
          || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6
          || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 15
          || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 2) )
       {
-        if ( v14 >= v12 /*0x4d0069*/
-          && (!v13 && v12
-           || v15 <= 0
-           || !((uint8_t (*)(void ***, int, unsigned int))v10[2])(&v10, v15 + v12, 0)) )
+        if ( v10.ObjectVector_field_0x10 >= v10.ObjectVector_field_0x08 /*0x4d0069*/
+          && (!BYTE1(v10.ObjectVector_field_0x0C) && v10.ObjectVector_field_0x08
+           || v10.ObjectVector_field_0x14 <= 0
+           || !(*(uint8_t (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v10.__pad_0 + 8))(
+                 &v10,
+                 v10.ObjectVector_field_0x14 + v10.ObjectVector_field_0x08,
+                 0)) )
         {
           continue; /*0x4d006e*/
         }
-        v5 = v14++; /*0x4d0074*/
-        v6 = Block; /*0x4d007b*/
+        v5 = v10.ObjectVector_field_0x10++; /*0x4d0074*/
+        ObjectVector_field_0x04 = v10.ObjectVector_field_0x04; /*0x4d007b*/
       }
       else
       {
-        if ( v20 >= v18 /*0x4d00ab*/
-          && (!v19 && v18
-           || v21 <= 0
-           || !((uint8_t (*)(void ***, int, unsigned int))v16[2])(&v16, v21 + v18, 0)) )
+        if ( v11.ObjectVector_field_0x10 >= v11.ObjectVector_field_0x08 /*0x4d00ab*/
+          && (!BYTE1(v11.ObjectVector_field_0x0C) && v11.ObjectVector_field_0x08
+           || v11.ObjectVector_field_0x14 <= 0
+           || !(*(uint8_t (**)(ObjectVector *, int, unsigned int))(*(unsigned int *)v11.__pad_0 + 8))(
+                 &v11,
+                 v11.ObjectVector_field_0x14 + v11.ObjectVector_field_0x08,
+                 0)) )
         {
           continue; /*0x4d00b0*/
         }
-        v5 = v20++; /*0x4d00b6*/
-        v6 = v17; /*0x4d00bd*/
+        v5 = v11.ObjectVector_field_0x10++; /*0x4d00b6*/
+        ObjectVector_field_0x04 = v11.ObjectVector_field_0x04; /*0x4d00bd*/
       }
-      v6[v5] = v4; /*0x4d00c1*/
+      *(unsigned int *)(ObjectVector_field_0x04 + 4 * v5) = v4; /*0x4d00c1*/
     }
   }
-  if ( v14 <= 0 ) /*0x4d00d1*/
+  if ( v10.ObjectVector_field_0x10 <= 0 ) /*0x4d00d1*/
   {
-    if ( v20 <= 0 ) /*0x4d00f8*/
+    if ( v11.ObjectVector_field_0x10 <= 0 ) /*0x4d00f8*/
       goto LABEL_45; /*0x4d00f8*/
-    v7 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, v20 - 1); /*0x4d0109*/
-    v8 = v17; /*0x4d0111*/
-    v9 = **(unsigned int **)(a1 + 8); /*0x4d0115*/
+    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v11.ObjectVector_field_0x10 - 1); /*0x4d0109*/
+    v8 = v11.ObjectVector_field_0x04; /*0x4d0111*/
+    vtable0 = (void (**)(unsigned int))a1->?->TechnoClass; /*0x4d0115*/
   }
   else
   {
-    v7 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, v14 - 1); /*0x4d00e2*/
-    v8 = Block; /*0x4d00ea*/
-    v9 = **(unsigned int **)(a1 + 8); /*0x4d00ee*/
+    v7 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v10.ObjectVector_field_0x10 - 1); /*0x4d00e2*/
+    v8 = v10.ObjectVector_field_0x04; /*0x4d00ea*/
+    vtable0 = (void (**)(unsigned int))a1->?->TechnoClass; /*0x4d00ee*/
   }
-  (*(void (**)(unsigned int))(v9 + 968))(v8[v7]); /*0x4d011b*/
+  vtable0[242](*(unsigned int *)(v8 + 4 * v7)); /*0x4d011b*/
 LABEL_45:
-  v10 = &vt_VectorClass_ObjectClass; /*0x4d0121*/
-  if ( Block && v13 ) /*0x4d0136*/
+  *(unsigned int *)v10.__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0121*/
+  if ( v10.ObjectVector_field_0x04 && BYTE1(v10.ObjectVector_field_0x0C) ) /*0x4d0136*/
   {
-    __3_YAXPAX_Z(Block); /*0x4d0139*/
-    Block = 0; /*0x4d0141*/
+    __3_YAXPAX_Z((void *)v10.ObjectVector_field_0x04); /*0x4d0139*/
+    v10.ObjectVector_field_0x04 = 0; /*0x4d0141*/
   }
-  v16 = &vt_VectorClass_ObjectClass; /*0x4d0149*/
-  v13 = 0; /*0x4d0150*/
-  v12 = 0; /*0x4d0154*/
-  if ( v17 ) /*0x4d0159*/
+  *(unsigned int *)v11.__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0149*/
+  BYTE1(v10.ObjectVector_field_0x0C) = 0; /*0x4d0150*/
+  v10.ObjectVector_field_0x08 = 0; /*0x4d0154*/
+  if ( v11.ObjectVector_field_0x04 ) /*0x4d0159*/
   {
-    if ( v19 ) /*0x4d015f*/
-      __3_YAXPAX_Z(v17); /*0x4d0162*/
+    if ( BYTE1(v11.ObjectVector_field_0x0C) ) /*0x4d015f*/
+      __3_YAXPAX_Z((void *)v11.ObjectVector_field_0x04); /*0x4d0162*/
   }
 
 }
@@ -191,10 +184,8 @@ int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
 
   if ( !a2 ) /*0x4cfc86*/
     return -2147467261; /*0x4cfc88*/
-  *a2 = 1247291206; /*0x4cfc96*/
-  a2[1] = 298948665; /*0x4cfc9e*/
-  a2[2] = -1610610249; /*0x4cfca7*/
-  a2[3] = -777003740; /*0x4cfcb0*/
+  *(IID *)a2 = g_CLSID_FlyLocomotion; /*0x4cfc96*/
+  a2[3] = unk_7E9A8C; /*0x4cfcb0*/
   return 0; /*0x4cfc8d*/
 
 }
@@ -206,13 +197,13 @@ int FlyLocomotionClass::BeginMove(int * a1, int * a2)
 
   int result; // eax
 
-  result = SwizzleManager::SaveLoad(a1, a2); /*0x4cfccb*/
+  result = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x4cfccb*/
   if ( result >= 0 ) /*0x4cfcd2*/
   {
     if ( a1 ) /*0x4cfcd6*/
     {
-      *a1 = (int)&vt_FlyLocomotionClass; /*0x4cfcd8*/
-      a1[1] = (int)&vt_FlyLocomotionClass; /*0x4cfcde*/
+      *(unsigned int *)a1->LocomotionClass = &FlyLocomotionClass::`vftable'; /*0x4cfcd8*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &FlyLocomotionClass::`vftable'; /*0x4cfcde*/
     }
   }
   return result; /*0x4cfce5*/
@@ -233,12 +224,12 @@ namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = &FlyLocomotionClass::`vftable'; /*0x4d03a3*/
-  *(Block + 1) = &vt_FlyLocomotionClass; /*0x4d03a9*/
-  LocomotionClass::Construct(Block); /*0x4d03b0*/
+  *(unsigned int *)Block->LocomotionClass = &FlyLocomotionClass::`vftable'; /*0x4d03a3*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &FlyLocomotionClass::`vftable'; /*0x4d03a9*/
+  LocomotionClass::Construct((LocomotionClass *)Block); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     __3_YAXPAX_Z(Block); /*0x4d03bd*/
-  return (FlyLocomotionClass *)Block; /*0x4d03c7*/
+  return Block->LocomotionClass; /*0x4d03c7*/
 
 }
 } // namespace gamemd

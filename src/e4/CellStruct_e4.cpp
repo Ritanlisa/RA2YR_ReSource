@@ -11,13 +11,13 @@ namespace gamemd {
 void* CellStruct::Add(void* aP1,  void* aP2)
 {
 
-  int16_t v3; // dx
-  IUnknown *aP2a; // [esp+8h] [ebp+8h]
+  void * v3;
+  unsigned short *v5; // [esp+8h] [ebp+8h]
 
-  v3 = *this + IDA_LOWORD(aP2->field_0); /*0x42d51f*/
-  IDA_HIWORD(aP2a) = *((unsigned short *)this + 1) + IDA_HIWORD(aP2->field_0); /*0x42d522*/
-  IDA_LOWORD(aP2a) = v3; /*0x42d52b*/
-  aP1->field_0 = (int)aP2a; /*0x42d534*/
+  v3 = (short)(LOWORD((unsigned int)(this-)>field_0) + *(unsigned int *)(aP2));
+  HIWORD(v5) = HIWORD(this->field_0) + aP2[1]; /*0x42d522*/
+  LOWORD(v5) = v3; /*0x42d52b*/
+  *(unsigned int *)(aP1) = v5; /*0x42d534*/
   return aP1; /*0x42d536*/
 
 }
@@ -27,14 +27,14 @@ namespace gamemd {
 unsigned int * CellStruct::Copy(void* aP1)
 {
 
-  AbstractClass *v3; // edx
-  int v4; // ecx
+  unsigned int * v3;
+  void *v4; // ecx
 
-  v3 = (AbstractClass *)*this; /*0x437f34*/
-  v4 = *((char *)this + 1); /*0x437f36*/
-  aP1->field_0 = (int)v3; /*0x437f39*/
-  aP1->field_4 = v4; /*0x437f3b*/
-  return &aP1->field_0; /*0x437f3e*/
+  v3 = (int)((unsigned int *)(this->field_0));
+  v4 = (unsigned int *)(this->field_4);
+  *(unsigned int *)(aP1) = v3; /*0x437f39*/
+  aP1[1] = v4; /*0x437f3b*/
+  return aP1; /*0x437f3e*/
 
 }
 }
@@ -43,7 +43,7 @@ namespace gamemd {
 BOOL CellStruct::Equals(unsigned short * a2)
 {
 
-  return *this == *a2 && *((unsigned short *)this + 1) == a2[1]; /*0x50e48b*/
+  return LOWORD(this->field_0) == *a2 && HIWORD(this->field_0) == a2[1]; /*0x50e48b*/
 
 }
 }
@@ -54,13 +54,13 @@ void* CellStruct::Sub(void* aP1,  void* aP2)
 
   int16_t v3; // dx
   int16_t v4; // cx
-  IUnknown *aP2a; // [esp+8h] [ebp+8h]
+  unsigned short *v6; // [esp+8h] [ebp+8h]
 
-  v3 = (short)(*this);
-  v4 = *((unsigned short *)this + 1) - HIWORD(aP2->field_0); /*0x588c6e*/
-  LOWORD(aP2a) = v3 - LOWORD(aP2->field_0); /*0x588c76*/
-  HIWORD(aP2a) = v4; /*0x588c7b*/
-  aP1->field_0 = (int)aP2a; /*0x588c84*/
+  v3 = (unsigned int)(this->field_0);
+  v4 = HIWORD(this->field_0) - aP2[1]; /*0x588c6e*/
+  LOWORD(v6) = v3 - *(unsigned int *)(aP2); /*0x588c76*/
+  HIWORD(v6) = v4; /*0x588c7b*/
+  *(unsigned int *)(aP1) = v6; /*0x588c84*/
   return aP1; /*0x588c86*/
 
 }
@@ -70,8 +70,8 @@ namespace gamemd {
 unsigned int * CellStruct::Set( int16_t a2, int16_t a3)
 {
 
-  IDA_LOWORD(this->vfptr) = a2; /*0x42d47c*/
-  IDA_HIWORD(this->vfptr) = a3; /*0x42d47f*/
+  LOWORD(this->field_0) = a2; /*0x42d47c*/
+  HIWORD(this->field_0) = a3; /*0x42d47f*/
   return this; /*0x42d483*/
 
 }

@@ -24,23 +24,23 @@ namespace gamemd {
 int Stream::FlushAndReset()
 {
 
-  unsigned int *v1; // esi
-  int v2; // eax
-  int v3; // edi
-  int v4; // eax
-  int v5; // edi
+  Stream *v1; // esi
+  StreamClass *m_Stream; // eax
+  int Stream_field_08; // edi
+  int Stream_field_04; // eax
+  int Stream_field_0C; // edi
 
-  v1 = (unsigned int *)((int)(this));
-  v2 = (int)(*this);
-  v3 = *((unsigned int *)this + 2); /*0x439116*/
+  v1 = (gamemd::Stream *)((int)(this));
+  m_Stream = (int)(this->m_Stream);
+  Stream_field_08 = this->Stream_field_08; /*0x439116*/
   *((unsigned int *)this + 12) = 45; /*0x439119*/
-  (*(void (**)(void))(v2 + 12))(); /*0x439120*/
-  (*(void (**)(unsigned int *, int, unsigned int))(*v1 + 8))(v1, v3, 0); /*0x43912a*/
-  v4 = v1[6]; /*0x43912d*/
-  v5 = v1[8]; /*0x439130*/
-  v1 += 6; /*0x439133*/
-  (*(void (**)(unsigned int *))(v4 + 12))(v1); /*0x439138*/
-  return (*(int (**)(unsigned int *, int, unsigned int))(*v1 + 8))(v1, v5, 0); /*0x439145*/
+  ((void (*)(void))m_Stream->m_Size)(); /*0x439120*/
+  ((void (*)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_08, 0); /*0x43912a*/
+  Stream_field_04 = v1[1].Stream_field_04; /*0x43912d*/
+  Stream_field_0C = v1[1].Stream_field_0C; /*0x439130*/
+  v1 = (Stream *)((char *)v1 + 24); /*0x439133*/
+  (*(void (**)(Stream *))(Stream_field_04 + 12))(v1); /*0x439138*/
+  return ((int (*)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_0C, 0); /*0x439145*/
 
 }
 } // namespace gamemd
@@ -55,11 +55,15 @@ int Stream::ReadIntArray(int a2)
   int v6; // ebx
 
   v2 = a2; /*0x49fb72*/
-  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, (char *)this + 4, 4, 0); /*0x49fb84*/
+  result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))( /*0x49fb84*/
+             a2,
+             &this->Stream_field_10,
+             4,
+             0);
   if ( result >= 0 ) /*0x49fb89*/
   {
     v5 = *(unsigned int *)v2; /*0x49fb8e*/
-    a2 = *((char *)this + 2); /*0x49fb9a*/
+    a2 = this->a2; /*0x49fb9a*/
     result = (*(int (**)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {
@@ -72,7 +76,11 @@ int Stream::ReadIntArray(int a2)
       {
         while ( 1 ) /*0x49fbbd*/
         {
-          result = (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)v2 + 16))(v2, *((char *)this + 1) + 4 * v6, 4, 0); /*0x49fbbd*/
+          result = (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)v2 + 16))( /*0x49fbbd*/
+                     v2,
+                     this->Stream_field_04 + 4 * v6,
+                     4,
+                     0);
           if ( result < 0 ) /*0x49fbc2*/
             break; /*0x49fbc2*/
           if ( ++v6 >= a2 ) /*0x49fbcb*/
@@ -93,20 +101,16 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
   int v3; // ecx
   int result; // eax
   int i; // esi
-  int v6; // [esp+20h] [ebp-4h] BYREF
+  int Stream_field_10; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *(unsigned int *)aP1->vtable0; /*0x67a4ac*/
-  v6 = *((unsigned int *)this + 4); /*0x67a4b9*/
-  (*(void (**)(TechnoTypeClass *, int *, int, unsigned int))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a4bd*/
-  result = v6; /*0x67a4c0*/
-  for ( i = 0; i < v6; ++i ) /*0x67a4c8*/
+  v3 = (int)(*aP1);
+  Stream_field_10 = this->Stream_field_10; /*0x67a4b9*/
+  (*(void (**)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &Stream_field_10, 4, 0); /*0x67a4bd*/
+  result = Stream_field_10; /*0x67a4c0*/
+  for ( i = 0; i < Stream_field_10; ++i ) /*0x67a4c8*/
   {
-    (*(void (**)(TechnoTypeClass *, int, int, unsigned int))(*(unsigned int *)aP1->vtable0 + 16))( /*0x67a4d8*/
-      aP1,
-      *((unsigned int *)this + 1) + 4 * i,
-      4,
-      0);
-    result = v6; /*0x67a4db*/
+    (*(void (**)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->Stream_field_04 + 4 * i, 4, 0); /*0x67a4d8*/
+    result = Stream_field_10; /*0x67a4db*/
   }
   return result; /*0x67a4e4*/
 
@@ -139,19 +143,19 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
   if ( !TestBitArray(1) ) /*0x7592b7*/
   {
     v9 = *((unsigned int *)this + 110); /*0x7592c0*/
-    IDA_LOBYTE(v9) = v9 | 4; /*0x7592c6*/
+    LOBYTE(v9) = v9 | 4; /*0x7592c6*/
     *((unsigned int *)this + 110) = v9; /*0x7592c8*/
   }
   if ( TestBitArray(10) ) /*0x7592d3*/
   {
     v10 = *((unsigned int *)this + 110); /*0x7592dc*/
-    IDA_LOBYTE(v10) = v10 | 0x40; /*0x7592e2*/
+    LOBYTE(v10) = v10 | 0x40; /*0x7592e2*/
     *((unsigned int *)this + 110) = v10; /*0x7592e4*/
   }
   if ( TestBitArray(12) ) /*0x7592ef*/
   {
     v11 = *((unsigned int *)this + 110); /*0x7592f8*/
-    IDA_LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
+    LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
     *((unsigned int *)this + 110) = v11; /*0x759300*/
   }
   v12 = *((unsigned int *)this + 111) | 8; /*0x75930c*/
@@ -159,29 +163,29 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
   v13 = v12; /*0x75931e*/
   if ( (*((unsigned char *)this + 1324) & 2) != 0 ) /*0x759320*/
   {
-    IDA_LOBYTE(v13) = v12 | 0x20; /*0x759322*/
+    LOBYTE(v13) = v12 | 0x20; /*0x759322*/
     *((unsigned int *)this + 111) = v13; /*0x759324*/
     if ( (*((unsigned char *)this + 1324) & 4) == 0 ) /*0x759333*/
       goto LABEL_14; /*0x759333*/
-    IDA_BYTE1(v13) = IDA_BYTE1(v12) | 1; /*0x759335*/
+    BYTE1(v13) = BYTE1(v12) | 1; /*0x759335*/
   }
   else
   {
-    IDA_LOBYTE(v13) = v12 & 0xDF; /*0x75933a*/
+    LOBYTE(v13) = v12 & 0xDF; /*0x75933a*/
   }
   *((unsigned int *)this + 111) = v13; /*0x75933c*/
 LABEL_14:
   v14 = TestBitArray(17); /*0x759342*/
   v15 = *((unsigned int *)this + 111); /*0x75934e*/
   if ( v14 ) /*0x759354*/
-    IDA_LOBYTE(v15) = v15 | 4; /*0x759356*/
+    LOBYTE(v15) = v15 | 4; /*0x759356*/
   else
-    IDA_LOBYTE(v15) = v15 & 0xFB; /*0x75935a*/
+    LOBYTE(v15) = v15 & 0xFB; /*0x75935a*/
   *((unsigned int *)this + 111) = v15; /*0x759361*/
   v14 = TestBitArray(3); /*0x75936c*/
   v16 = *((unsigned int *)this + 111); /*0x75936e*/
   if ( v14 ) /*0x759374*/
-    IDA_LOBYTE(v16) = v16 & 0xFE; /*0x759376*/
+    LOBYTE(v16) = v16 & 0xFE; /*0x759376*/
   else
     v16 |= 1u; /*0x75937a*/
   *((unsigned int *)this + 111) = v16; /*0x759383*/
@@ -213,7 +217,7 @@ LABEL_14:
   {
     *((unsigned int *)this + 98) = sub_4116A0; /*0x759435*/
     *((unsigned int *)this + 108) = 60; /*0x75943f*/
-    *((unsigned int *)this + 127) = *(uint16_t *)&g_abs_A8D63C; /*0x759455*/
+    *((unsigned int *)this + 127) = (uint16_t)unk_A8EBA8; /*0x759455*/
   }
   *((unsigned int *)this + 100) = ManageMultimediaTimer; /*0x759463*/
   *((unsigned int *)this + 117) = 0x2000; /*0x75946d*/
@@ -244,9 +248,9 @@ namespace gamemd {
 int Stream::GetChecked()
 {
 
-  if ( !*(unsigned int *)this ) /*0x45a053*/
+  if ( !this->m_Stream ) /*0x45a053*/
     WinAPI::Wrapper(-2147467261); /*0x45a05d*/
-  return *(unsigned int *)this; /*0x45a064*/
+  return (int)this->m_Stream->__pad_0; /*0x45a064*/
 
 }
 } // namespace gamemd

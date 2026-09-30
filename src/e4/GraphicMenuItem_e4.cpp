@@ -12,10 +12,10 @@ namespace gamemd {
 void GraphicMenuItem::Dtor()
 {
 
-  void **v1; // esi
+  ObjectClass *v1; // esi
 
-  v1 = (void **)(*((unsigned int *)this + 3));
-  *this = &vt_GraphicMenuItem; /*0x4f3a76*/
+  v1 = (ObjectClass *)*((unsigned int *)this + 3); /*0x4f3a71*/
+  *(unsigned int *)this->__pad_0 = &GraphicMenuItem::`vftable'; /*0x4f3a76*/
   if ( v1 ) /*0x4f3a7c*/
   {
     j_DeleteAndZero(v1); /*0x4f3a80*/

@@ -12,15 +12,15 @@ namespace gamemd {
 int ColorStruct::SetRGB(unsigned char a2, unsigned char a3, unsigned char a4)
 {
 
-  unsigned int v4; // eax
+  void *v4; // eax
 
-  v4 = a4 | ((a3 | ((a2 | 0xFFFFFF00) << 8)) << 8); /*0x4a35c5*/
-  *((unsigned int *)this + 20) = v4; /*0x4a35c7*/
-  *((unsigned int *)this + 12) = v4; /*0x4a35ca*/
-  *((unsigned int *)this + 4) = v4; /*0x4a35cd*/
-  *((unsigned int *)this + 21) = -16777216; /*0x4a35d5*/
-  *((unsigned int *)this + 13) = -16777216; /*0x4a35d8*/
-  *((unsigned int *)this + 5) = -16777216; /*0x4a35db*/
+  v4 = (void *)(a4 | ((a3 | ((a2 | 0xFFFFFF00) << 8)) << 8)); /*0x4a35c5*/
+  this->field_50 = v4; /*0x4a35c7*/
+  this->field_30 = v4; /*0x4a35ca*/
+  this->field_10 = v4; /*0x4a35cd*/
+  this->field_54 = (void *)-16777216; /*0x4a35d5*/
+  this->field_34 = (void *)-16777216; /*0x4a35d8*/
+  this->field_14 = (void *)-16777216; /*0x4a35db*/
   return -16777216; /*0x4a35de*/
 
 }

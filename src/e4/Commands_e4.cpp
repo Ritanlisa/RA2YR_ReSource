@@ -57,11 +57,11 @@ int32_t Commands::Execute()
 
   char result; // al
 
-  result = MEMORY[0xA8B8B4]; /*0x537a90*/
-  if ( MEMORY[0xA8B8B4] ) /*0x537a97*/
+  result = byte_A8B8B4; /*0x537a90*/
+  if ( byte_A8B8B4 ) /*0x537a97*/
   {
-    result = MEMORY[0xA8B8B5] == 0; /*0x537aa0*/
-    MEMORY[0xA8B8B5] = MEMORY[0xA8B8B5] == 0; /*0x537aa3*/
+    result = byte_A8B8B5 == 0; /*0x537aa0*/
+    byte_A8B8B5 = byte_A8B8B5 == 0; /*0x537aa3*/
   }
   return result; /*0x537aa8*/
 

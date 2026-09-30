@@ -18,17 +18,17 @@ int Array::GetClamped(CheckListClass * aP1)
 {
 
   int result; // eax
-  CheckListClass *v3; // edx
-  CheckListClass *v4; // eax
+  unsigned int v3;
+  int v4; // eax
 
   result = *((unsigned int *)this + 17); /*0x557ac0*/
   if ( result ) /*0x557ac5*/
   {
-    v3 = aP1; /*0x557aca*/
-    v4 = (CheckListClass *)(result - 1); /*0x557ace*/
-    if ( (int)aP1 >= (int)v4 ) /*0x557ad1*/
+    v3 = (gamemd::CheckListClass *)((int)(aP1));
+    v4 = (gamemd::CheckListClass *)(result - 1);
+    if ( aP1 >= (gamemd::CheckListClass *)(v4) ) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
-    return *(unsigned int *)(*((unsigned int *)this + 14) + 4 * (unsigned int)v3); /*0x557ad8*/
+    return *(unsigned int *)(*((unsigned int *)this + 14) + 4 * v3); /*0x557ad8*/
   }
   return result; /*0x557ac7*/
 
@@ -39,19 +39,19 @@ namespace gamemd {
 int Array::FindValue(IUnknown * aP1)
 {
 
-  int v2; // esi
+  void *Array_field_0x10; // esi
   int result; // eax
   int v4; // edx
-  VectorClass *i; // ecx
+  unsigned int **i; // ecx
 
-  v2 = *((char *)this + 4); /*0x634292*/
+  Array_field_0x10 = (void *)(this->Array_field_0x10);
   result = -1; /*0x634295*/
   v4 = 0; /*0x634298*/
-  if ( v2 > 0 ) /*0x63429d*/
+  if ( (int)Array_field_0x10 > 0 ) /*0x63429d*/
   {
-    for ( i = (VectorClass *)*((char *)this + 1); **(IUnknown ***)i->vtable0 != aP1; i = (VectorClass *)((char *)i + 4) ) /*0x63429f*/
+    for ( i = (unsigned int **)this->Array_field_0x4; **(unsigned int)(i) != (unsigned int)(aP1); ++i ) /*0x63429f*/
     {
-      if ( ++v4 >= v2 ) /*0x6342b2*/
+      if ( ++v4 >= (int)Array_field_0x10 ) /*0x6342b2*/
         return result; /*0x6342b2*/
     }
     return v4; /*0x6342ba*/
@@ -65,26 +65,32 @@ namespace gamemd {
 int Array::RemoveAt( int a2)
 {
 
-  int v2; // edx
-  int v3; // eax
-  int v4; // edx
+  char *Array_field_0x10; // edx
+  int result; // eax
+  char *v4; // edx
 
-  v2 = *((unsigned int *)this + 4); /*0x63e590*/
-  v3 = a2; /*0x63e593*/
-  if ( a2 >= v2 ) /*0x63e599*/
-    return 0; /*0x63e5bc*/
-  v4 = v2 - 1; /*0x63e59b*/
-  *((unsigned int *)this + 4) = v4; /*0x63e59e*/
-  if ( a2 < v4 ) /*0x63e5a1*/
+  Array_field_0x10 = (char *)this->Array_field_0x10; /*0x63e590*/
+  result = a2; /*0x63e593*/
+  if ( a2 >= (int)Array_field_0x10 ) /*0x63e599*/
   {
-    do /*0x63e5b4*/
-    {
-      ++v3; /*0x63e5a7*/
-      *(unsigned int *)(*((unsigned int *)this + 1) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * v3); /*0x63e5ab*/
-    }
-    while ( v3 < *((unsigned int *)this + 4) ); /*0x63e5b4*/
+    LOBYTE(result) = 0; /*0x63e5bc*/
   }
-  return 1; /*0x63e5b9*/
+  else
+  {
+    v4 = (char *)((unsigned int)(Array_field_0x10 - 1));
+    this->Array_field_0x10 = (unsigned int)(v4);
+    if ( a2 < (int)v4 ) /*0x63e5a1*/
+    {
+      do /*0x63e5b4*/
+      {
+        ++result; /*0x63e5a7*/
+        *((unsigned int *)this->Array_field_0x4 + result - 1) = *((unsigned int *)this->Array_field_0x4 + result); /*0x63e5ab*/
+      }
+      while ( result < (int)this->Array_field_0x10 ); /*0x63e5b4*/
+    }
+    LOBYTE(result) = 1; /*0x63e5b7*/
+  }
+  return result; /*0x63e5b9*/
 
 }
 }
@@ -93,7 +99,7 @@ namespace gamemd {
 int Array::Get( int a2)
 {
 
-  return *(unsigned int *)(*(this + 57) + 4 * a2); /*0x65ad4d*/
+  return *((unsigned int *)this->Array_field_0xE4 + a2); /*0x65ad4d*/
 
 }
 }
@@ -102,20 +108,34 @@ namespace gamemd {
 int Array::ContainsValue( IUnknown * aP1)
 {
 
-  int v2; // esi
-  int v3; // edx
-  IUnknown **i; // ecx
+  int result; // eax
+  void *Array_field_0xE8; // esi
+  int v4; // edx
+  int *Array_field_0xE4; // ecx
 
-  v2 = *((char *)this + 58); /*0x65adf1*/
-  v3 = 0; /*0x65adf7*/
-  if ( v2 <= 0 ) /*0x65adfc*/
-    return 0; /*0x65ae1a*/
-  for ( i = (IUnknown **)*((char *)this + 57); *i && *i != aP1; ++i ) /*0x65adfe*/
+  Array_field_0xE8 = this->Array_field_0xE8; /*0x65adf1*/
+  v4 = 0; /*0x65adf7*/
+  if ( (int)Array_field_0xE8 <= 0 ) /*0x65adfc*/
   {
-    if ( ++v3 >= v2 ) /*0x65ae18*/
-      return 0; /*0x65ae18*/
+LABEL_6:
+    LOBYTE(result) = 0; /*0x65ae1a*/
   }
-  return 1; /*0x65ae1a*/
+  else
+  {
+    Array_field_0xE4 = (int *)this->Array_field_0xE4; /*0x65adfe*/
+    while ( 1 ) /*0x65ae08*/
+    {
+      result = *Array_field_0xE4; /*0x65ae08*/
+      if ( !*Array_field_0xE4 || result == (int)(aP1) ) /*0x65ae10*/
+        break; /*0x65ae10*/
+      ++v4; /*0x65ae12*/
+      ++Array_field_0xE4; /*0x65ae13*/
+      if ( v4 >= (int)Array_field_0xE8 ) /*0x65ae18*/
+        goto LABEL_6; /*0x65ae18*/
+    }
+    LOBYTE(result) = 1; /*0x65ae22*/
+  }
+  return result; /*0x65ae1a*/
 
 }
 }
@@ -125,19 +145,19 @@ int Array::Zero()
 {
 
   int result; // eax
-  unsigned int *v2; // edx
+  Array *v2; // edx
 
   result = 0; /*0x7490d6*/
-  if ( (int)*((unsigned int *)this + 512) > 0 ) /*0x7490da*/
+  if ( (int)this->Array_field_0x800 > 0 ) /*0x7490da*/
   {
-    v2 = (unsigned int *)(this);
+    v2 = this; /*0x7490dd*/
     do /*0x7490f1*/
     {
-      *v2 = 0; /*0x7490df*/
+      *(unsigned int *)v2->__pad_0 = 0; /*0x7490df*/
       ++result; /*0x7490eb*/
-      ++v2; /*0x7490ec*/
+      v2 = (Array *)((char *)v2 + 4); /*0x7490ec*/
     }
-    while ( result < *((unsigned int *)this + 512) ); /*0x7490f1*/
+    while ( result < (int)this->Array_field_0x800 ); /*0x7490f1*/
   }
   return result; /*0x7490f4*/
 
@@ -148,19 +168,19 @@ namespace gamemd {
 void Array::ByteSwap()
 {
 
-  signed int v2; // ebx
+  int v2; // ebx
   u_long *v3; // esi
 
-  if ( *((unsigned int *)this + 513) && (v2 = 0, (int)*((unsigned int *)this + 512) > 0) ) /*0x749169*/
+  if ( *((unsigned int *)this + 513) && (v2 = 0, (int)this->Array_field_0x800 > 0) ) /*0x749169*/
   {
-    v3 = (gamemd::u_long *)(this);
+    v3 = (u_long *)this; /*0x74916c*/
     do /*0x749184*/
     {
       *v3 = ntohl(*v3); /*0x749176*/
       ++v2; /*0x74917e*/
       ++v3; /*0x74917f*/
     }
-    while ( v2 < (int)*((unsigned int *)this + 512) ); /*0x749184*/
+    while ( v2 < (int)this->Array_field_0x800 ); /*0x749184*/
     *((unsigned int *)this + 513) = 0; /*0x749186*/
   }
   else
@@ -175,10 +195,10 @@ namespace gamemd {
 int Array::GetElement( CampaignScore * aP1)
 {
 
-  if ( (int)aP1 < 0 || (int)aP1 >= *(this + 14) ) /*0x76398b*/
+  if ( aP1 < 0 || aP1 >= (int)this->Array_field_0x38 ) /*0x76398b*/
     return 0; /*0x763999*/
   else
-    return *(this + 11) + 12 * (unsigned int)aP1; /*0x763993*/
+    return (int)this->Array_field_0x2C + 12 * aP1; /*0x763993*/
 
 }
 }
@@ -190,12 +210,12 @@ int Array::CleanupArrayWOL()
   int i; // edi
   int result; // eax
 
-  for ( i = 0; i < *this; ++i ) /*0x7acd39*/
+  for ( i = 0; i < *(unsigned int *)this->__pad_0; ++i ) /*0x7acd39*/
   {
-    DeleteAndZero((void **)(*((char *)this + 2) + 4 * i)); /*0x7acd41*/
-    result = *this; /*0x7acd46*/
+    DeleteAndZero((ObjectClass *)(*(unsigned int *)this->__pad_8 + 4 * i)); /*0x7acd41*/
+    result = *(unsigned int *)this->__pad_0; /*0x7acd46*/
   }
-  *(unsigned int *)this = 0; /*0x7acd4d*/
+  *(unsigned int *)this->__pad_0 = 0; /*0x7acd4d*/
   return result; /*0x7acd53*/
 
 }
@@ -205,67 +225,70 @@ namespace gamemd {
 AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
 {
 
-  int v4; // esi
+  ObjectClass * v4;
   int v5; // ecx
-  int v6; // eax
+  void *Array_field_0x4; // eax
   int v7; // ebp
-  CCINIClass *v8; // edx
-  CCINIClass *v9; // esi
+  void *v8; // edx
+  const void *v9; // esi
   int v10; // eax
   int v11; // ebp
-  CCINIClass *v12; // edx
-  CCINIClass *v13; // esi
+  void *v12; // edx
+  const void *v13; // esi
   void *v14; // edi
-  int v16; // [esp+Ch] [ebp-4h]
-  int v17; // [esp+Ch] [ebp-4h]
+  void *v16; // [esp+Ch] [ebp-4h]
+  void *v17; // [esp+Ch] [ebp-4h]
 
-  v4 = (int)aP2; /*0x7ad795*/
-  v5 = *this; /*0x7ad799*/
-  if ( (int)aP2 > v5 ) /*0x7ad79e*/
+  v4 = (gamemd::ObjectClass *)((int)(aP2));
+  v5 = *(unsigned int *)this->__pad_0; /*0x7ad799*/
+  if ( aP2 > (gamemd::ObjectClass *)(v5) ) /*0x7ad79e*/
   {
-    aP2 = (ObjectClass *)v5; /*0x7ad7a0*/
-    v4 = v5; /*0x7ad7a4*/
+    aP2 = (gamemd::ObjectClass *)(v5);
+    v4 = (gamemd::ObjectClass *)(v5);
   }
-  v6 = *((char *)this + 1); /*0x7ad7a6*/
-  if ( v4 >= v6 && v5 >= v6 ) /*0x7ad7b4*/
+  Array_field_0x4 = (void *)(this->Array_field_0x4);
+  if ( v4 >= (gamemd::ObjectClass *)((int))Array_field_0x4 && v5 >= (int)Array_field_0x4 ) /*0x7ad7b4*/
   {
-    v7 = 2 * v5; /*0x7ad7b6*/
+    v7 = (unsigned int)(2 * v5);
     if ( 2 * v5 < 10 ) /*0x7ad7bc*/
       v7 = 10; /*0x7ad7be*/
-    v8 = (CCINIClass *)__2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
+    v8 = (void *)__2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
     memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
-    v16 = (int)v8; /*0x7ad7ec*/
-    v9 = (CCINIClass *)*((char *)this + 2); /*0x7ad7f2*/
+    v16 = v8; /*0x7ad7ec*/
+    v9 = *(const void **)this->__pad_8; /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
-      qmemcpy(v8, v9, 268 * *this); /*0x7ad80f*/
-    __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7ad81c*/
-    v4 = (int)aP2; /*0x7ad825*/
-    *((char *)this + 2) = v16; /*0x7ad82c*/
-    *((char *)this + 1) = v7; /*0x7ad82f*/
+      qmemcpy(v8, v9, 268 * *(unsigned int *)this->__pad_0); /*0x7ad80f*/
+    __3_YAXPAX_Z(*(void **)this->__pad_8); /*0x7ad81c*/
+    v4 = aP2; /*0x7ad825*/
+    *(unsigned int *)this->__pad_8 = v16; /*0x7ad82c*/
+    this->Array_field_0x4 = (void *)v7; /*0x7ad82f*/
   }
-  v10 = (int)(*this);
-  if ( *this >= *((char *)this + 1) ) /*0x7ad839*/
+  v10 = *(unsigned int *)this->__pad_0; /*0x7ad832*/
+  if ( *(unsigned int *)this->__pad_0 >= (int)this->Array_field_0x4 ) /*0x7ad839*/
   {
-    v11 = 2 * v10; /*0x7ad83b*/
+    v11 = (unsigned int)(2 * v10);
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
-    v12 = (CCINIClass *)__2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
+    v12 = (void *)__2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
     memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
-    v17 = (int)v12; /*0x7ad871*/
-    v13 = (CCINIClass *)*((char *)this + 2); /*0x7ad877*/
+    v17 = v12; /*0x7ad871*/
+    v13 = *(const void **)this->__pad_8; /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
-      qmemcpy(v12, v13, 268 * *this); /*0x7ad894*/
-    __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7ad8a1*/
-    v4 = (int)aP2; /*0x7ad8aa*/
-    *((char *)this + 2) = v17; /*0x7ad8b1*/
-    *((char *)this + 1) = v11; /*0x7ad8b4*/
+      qmemcpy(v12, v13, 268 * *(unsigned int *)this->__pad_0); /*0x7ad894*/
+    __3_YAXPAX_Z(*(void **)this->__pad_8); /*0x7ad8a1*/
+    v4 = aP2; /*0x7ad8aa*/
+    *(unsigned int *)this->__pad_8 = v17; /*0x7ad8b1*/
+    this->Array_field_0x4 = (void *)v11; /*0x7ad8b4*/
   }
-  if ( v4 < *this ) /*0x7ad8bc*/
-    memcpy((void *)(*((char *)this + 2) + 268 * (v4 + 1)), (const void *)(*((char *)this + 2) + 268 * v4), 268 * *this - 268 * v4); /*0x7ad8f2*/
-  v14 = (void *)(*((char *)this + 2) + 268 * v4); /*0x7ad907*/
+  if ( v4 < *(unsigned int *)this->__pad_0 ) /*0x7ad8bc*/
+    memcpy( /*0x7ad8f2*/
+      (void *)(*(unsigned int *)this->__pad_8 + 268 * (v4 + 1)),
+      (const void *)(*(unsigned int *)this->__pad_8 + 268 * v4),
+      268 * *(unsigned int *)this->__pad_0 - 268 * v4);
+  v14 = (gamemd::AbstractClass **)((void *)(*(unsigned int *)this->__pad_8 + 268 * v4));
   if ( v14 ) /*0x7ad90c*/
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
-  ++*this; /*0x7ad91e*/
+  ++*(unsigned int *)this->__pad_0; /*0x7ad91e*/
   return 1; /*0x7ad91b*/
 
 }
@@ -284,8 +307,8 @@ int Array::ForEach(int a1, int a2, int a3, int (* a4)(int) a4)
     v6 = a3; /*0x406907*/
     do /*0x406911*/
     {
-      result = a4(a1); /*0x40690c*/
-      a1 += a2; /*0x40690e*/
+      result = (int)(a4((int)a1));
+      a1 = (int *)((char *)a1 + a2); /*0x40690e*/
       --v6; /*0x406910*/
     }
     while ( v6 ); /*0x406911*/
@@ -304,7 +327,7 @@ int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int) a4)
   int result; // eax
   int v6; // edi
 
-  v4 = &aP0->__pad_0[a3 * a2]; /*0x40afe3*/
+  v4 = (char *)aP0 + a3 * a2; /*0x40afe3*/
   result = a3 - 1; /*0x40afe5*/
   if ( a3 - 1 >= 0 ) /*0x40afe6*/
   {
@@ -327,17 +350,20 @@ namespace gamemd {
 int Array::Cleanup()
 {
 
+  int result; // eax
   int i; // edi
 
-  if ( *((unsigned int *)this + 15) ) /*0x49b723*/
+  result = this-((unsigned int *)(>Array_field_0x3C))[0]; /*0x49b723*/
+  if ( result ) /*0x49b728*/
   {
-    for ( i = 0; i < *((unsigned int *)this + 16); ++i ) /*0x49b732*/
+    for ( i = 0; i < (int)this->Array_field_0x40; ++i ) /*0x49b732*/
     {
-      if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x49b737*/
-        RA2_OPDEL(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x49b73f*/
+      if ( *(unsigned int *)(this-((unsigned int *)(>Array_field_0x3C))[0] + 4 * i) ) /*0x49b737*/
+        __3_YAXPAX_Z(*(void **)(this-((unsigned int *)(>Array_field_0x3C))[0] + 4 * i)); /*0x49b73f*/
     }
-    RA2_OPDEL(*(void **)((char *)this + 60)); /*0x49b753*/
+    __3_YAXPAX_Z((void *)this-((unsigned int *)(>Array_field_0x3C))[0]); /*0x49b753*/
   }
+  return result; /*0x49b75c*/
 
 }
 } // namespace gamemd
@@ -348,21 +374,21 @@ char Array::GetElementAt(unsigned int * a2, int a3)
 {
 
   int v3; // edx
-  char result; // al
+  int result; // eax
 
   v3 = a3; /*0x49d070*/
-  result = 0; /*0x49d079*/
+  LOBYTE(result) = 0; /*0x49d079*/
   *a2 = 0; /*0x49d07e*/
   if ( a3 == -1 ) /*0x49d084*/
-    v3 = *((unsigned int *)this + 14); /*0x49d086*/
-  if ( v3 < 0 || v3 >= *((unsigned int *)this + 16) ) /*0x49d094*/
+    v3 = *((char *)this + 14); /*0x49d086*/
+  if ( v3 < 0 || v3 >= *((char *)this + 16) ) /*0x49d094*/
     v3 = -1; /*0x49d096*/
   if ( *((unsigned char *)this + 108) ) /*0x49d09a*/
   {
     if ( v3 != -1 ) /*0x49d0a5*/
-      *a2 = *(unsigned int *)(*((unsigned int *)this + 15) + 4 * v3); /*0x49d0ad*/
+      *a2 = *(unsigned int *)(*((char *)this + 15) + 4 * v3); /*0x49d0ad*/
     if ( *a2 ) /*0x49d0af*/
-      return 1; /*0x49d0b4*/
+      LOBYTE(result) = 1; /*0x49d0b4*/
   }
   return result; /*0x49d0b6*/
 
@@ -374,46 +400,40 @@ namespace gamemd {
 void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 {
 
-  ParticleSystemClass *v2; // ecx
+  int v2; // ecx
   int v3; // edx
-  ParticleSystemClass *v4; // esi
+  unsigned int * v4;
   int v5; // eax
 
   if ( aP0 ) /*0x55b887*/
   {
-    if ( (*(int (**)(AbstractClass *))(*(unsigned int *)aP0->__pad_0 + 44))(aP0) == 44 ) /*0x55b893*/
+    if ( (*(int (**)(int))(*(unsigned int *)aP0 + 44))(aP0) == 44 ) /*0x55b893*/
     {
-      v2 = *(ParticleSystemClass **)&stru_89E138.__pad_579C[67588]; /*0x55b895*/
+      v2 = dword_8B40D8; /*0x55b895*/
       v3 = 0; /*0x55b89b*/
-      if ( *(int *)&stru_89E138.__pad_579C[67588] > 0 ) /*0x55b89f*/
+      if ( dword_8B40D8 > 0 ) /*0x55b89f*/
       {
-        v4 = *(ParticleSystemClass **)&stru_89E138.__pad_579C[67576]; /*0x55b8a2*/
+        v4 = (unsigned int *)(dword_8B40CC);
         do /*0x55b8da*/
         {
-          if ( aP0 == *(AbstractClass **)&v4->__pad_0[4 * v3] ) /*0x55b8ab*/
+          if ( aP0 == (gamemd::AbstractClass *)(((unsigned int *)(v4))[v3]) ) /*0x55b8ab*/
           {
-            if ( v3 < (int)v2 ) /*0x55b8af*/
+            if ( v3 < v2 ) /*0x55b8af*/
             {
-              v2 = (ParticleSystemClass *)((char *)v2 - 1); /*0x55b8b1*/
+              --v2; /*0x55b8b1*/
               v5 = v3; /*0x55b8b2*/
-              *(unsigned int *)&stru_89E138.__pad_579C[67588] = v2; /*0x55b8b6*/
-              if ( v3 < (int)v2 ) /*0x55b8bc*/
+              for ( dword_8B40D8 = v2; v5 < dword_8B40D8; ++v5 ) /*0x55b8bc*/
               {
-                do /*0x55b8d4*/
-                {
-                  *(unsigned int *)&v4->__pad_0[4 * v5] = *(unsigned int *)&v4->__pad_0[4 * v5 + 4]; /*0x55b8c2*/
-                  v2 = *(ParticleSystemClass **)&stru_89E138.__pad_579C[67588]; /*0x55b8c5*/
-                  v4 = *(ParticleSystemClass **)&stru_89E138.__pad_579C[67576]; /*0x55b8cb*/
-                  ++v5; /*0x55b8d1*/
-                }
-                while ( v5 < *(int *)&stru_89E138.__pad_579C[67588] ); /*0x55b8d4*/
+                ((unsigned int *)(v4))[v5] = (unsigned int *)(v4[v5 + 1]);
+                v2 = dword_8B40D8; /*0x55b8c5*/
+                v4 = dword_8B40CC; /*0x55b8cb*/
               }
             }
             --v3; /*0x55b8d6*/
           }
           ++v3; /*0x55b8d7*/
         }
-        while ( v3 < (int)v2 ); /*0x55b8da*/
+        while ( v3 < v2 ); /*0x55b8da*/
       }
     }
   }

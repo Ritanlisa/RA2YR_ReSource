@@ -13,18 +13,18 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_SmudgeTypeClass_const);
-  if ( v3 && *((unsigned char *)Block + 13) ) /*0x67c0c0*/
+  v3 = *(void **)&Block->m_1[3]; /*0x67c0b3*/
+  *(unsigned int *)Block->__pad_0 = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c0b6*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x67c0c0*/
   {
     __3_YAXPAX_Z(v3); /*0x67c0c8*/
-    *(Block + 1) = 0; /*0x67c0d0*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x67c0d0*/
   }
-  *((unsigned char *)Block + 13) = 0; /*0x67c0db*/
-  *(Block + 2) = 0; /*0x67c0e1*/
+  BYTE1(Block->m_C) = 0; /*0x67c0db*/
+  Block->m_8 = 0; /*0x67c0e1*/
   if ( (a2 & 1) != 0 ) /*0x67c0e8*/
     __3_YAXPAX_Z(Block); /*0x67c0eb*/
-  return (VectorClass *)Block; /*0x67c0f5*/
+  return Block->__pad_0; /*0x67c0f5*/
 
 }
 } // namespace gamemd

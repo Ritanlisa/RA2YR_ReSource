@@ -15,15 +15,15 @@ namespace gamemd {
 bool CopyProtection::CheckLauncher()
 {
 
-  int v0; // esi
+  HANDLE MutexA; // esi
   bool v1; // bl
 
-  this->Debug::Log(); /*0x49f5c8*/
-  v0 = ((int (*)(unsigned int, unsigned int, char *))CreateMutexA)(0, 0, Name); /*0x49f5df*/
-  v1 = ((int (*)(void))GetLastError)() == 183; /*0x49f5ec*/
-  if ( v0 ) /*0x49f5f5*/
-    ((void (*)(int))CloseHandle)(v0); /*0x49f5f8*/
-  this->Debug::Log(); /*0x49f60d*/
+  Debug::Log(aCopyprotection_0); /*0x49f5c8*/
+  MutexA = CreateMutexA(0, 0, Name); /*0x49f5df*/
+  v1 = GetLastError() == 183; /*0x49f5ec*/
+  if ( MutexA ) /*0x49f5f5*/
+    CloseHandle(MutexA); /*0x49f5f8*/
+  Debug::Log("result was %d\n", v1); /*0x49f60d*/
   return v1; /*0x49f617*/
 
 }
@@ -33,52 +33,45 @@ namespace gamemd {
 char CopyProtection::NotifyLauncher()
 {
 
-  unsigned int v0; // edi
-  int v1; // esi
-  unsigned int v2; // esi
-  unsigned int Msg[7]; // [esp+10h] [ebp-1Ch] BYREF
+  DWORD v0; // edi
+  HANDLE v1; // esi
+  DWORD v2; // esi
+  struct tagMSG Msg; // [esp+10h] [ebp-1Ch] BYREF
 
-  this->Debug::Log(); /*0x49f62c*/
-  ((void (*)(unsigned int *, unsigned int, int, int, unsigned int))PeekMessageA)(Msg, 0, 1024, 1024, 0); /*0x49f647*/
-  v0 = ((int (*)(void))timeGetTime)() + 60000; /*0x49f657*/
-  if ( ((int (*)(void))timeGetTime)() < v0 ) /*0x49f661*/
+  Debug::Log(aCopyprotection_1); /*0x49f62c*/
+  PeekMessageA(&Msg, 0, 0x400u, 0x400u, 0); /*0x49f647*/
+  v0 = timeGetTime() + 60000; /*0x49f657*/
+  if ( timeGetTime() < v0 ) /*0x49f661*/
   {
     while ( 1 ) /*0x49f678*/
     {
-      v1 = ((int (*)(int, int, char *))OpenEventA)(2, 1, aD6e7fc9764f94d); /*0x49f678*/
+      v1 = OpenEventA(2u, 1, aD6e7fc9764f94d); /*0x49f678*/
       if ( v1 ) /*0x49f67c*/
         break; /*0x49f67c*/
-      ((void (*)(unsigned int))Sleep)(0); /*0x49f67f*/
-      if ( ((int (*)(void))timeGetTime)() >= v0 ) /*0x49f689*/
+      Sleep(0); /*0x49f67f*/
+      if ( timeGetTime() >= v0 ) /*0x49f689*/
         goto LABEL_9; /*0x49f689*/
     }
-    ((void (*)(int))SetEvent)(v1); /*0x49f690*/
-    ((void (*)(int))CloseHandle)(v1); /*0x49f697*/
-    this->Debug::Log(); /*0x49f6a2*/
-    this->Debug::Log(); /*0x49f6ac*/
-    v2 = ((int (*)(void))timeGetTime)() + 10000; /*0x49f6b8*/
-    if ( ((int (*)(void))timeGetTime)() <= v2 ) /*0x49f6c2*/
+    SetEvent(v1); /*0x49f690*/
+    CloseHandle(v1); /*0x49f697*/
+    Debug::Log(aLauncherNotifi); /*0x49f6a2*/
+    Debug::Log(aWaitingForMess); /*0x49f6ac*/
+    v2 = timeGetTime() + 10000; /*0x49f6b8*/
+    if ( timeGetTime() <= v2 ) /*0x49f6c2*/
     {
-      while ( !((int (*)(unsigned int *, unsigned int, int, int, int))PeekMessageA)(Msg, 0, 48879, 48879, 1) /*0x49f6e2*/
-           || Msg[1] != 48879 )
+      while ( !PeekMessageA(&Msg, 0, 0xBEEFu, 0xBEEFu, 1u) || Msg.message != 48879 ) /*0x49f6e2*/
       {
-        ((void (*)(unsigned int))Sleep)(0); /*0x49f6e6*/
-        if ( ((int (*)(void))timeGetTime)() > v2 ) /*0x49f6f0*/
+        Sleep(0); /*0x49f6e6*/
+        if ( timeGetTime() > v2 ) /*0x49f6f0*/
           goto LABEL_9; /*0x49f6f0*/
       }
-      g_abs_87F7E8[32733] = ((int (*)(unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int))MapViewOfFileEx)( /*0x49f723*/
-                                  Msg[3],
-                                  983071,
-                                  0,
-                                  0,
-                                  0,
-                                  0);
-      if ( g_abs_87F7E8[32733] ) /*0x49f728*/
+      dword_89F75C = (unsigned int)(MapViewOfFileEx((HANDLE)Msg.lParam, 0xF001Fu, 0, 0, 0, 0));
+      if ( dword_89F75C ) /*0x49f728*/
         return 1; /*0x49f72d*/
     }
   }
 LABEL_9:
-  this->Debug::Log(); /*0x49f6f2*/
+  Debug::Log(aFailedToNotify); /*0x49f6f2*/
   return 0; /*0x49f701*/
 
 }

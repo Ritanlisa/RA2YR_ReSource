@@ -27,7 +27,7 @@ int WinModemClass::ReadSerial()
   DWORD v4; // ecx
   DWORD v5; // eax
   int cbInQue; // edi
-  NullModemClass *v8; // ecx
+  DWORD v8; // ecx
   DWORD cbOutQue; // eax
   bool v10; // zf
   void *v11; // ecx
@@ -72,7 +72,7 @@ int WinModemClass::ReadSerial()
   cbInQue = 1; /*0x774a29*/
   if ( ClearCommError(*(HANDLE *)((char *)this + 92), &Errors, &Stat) ) /*0x774a2e*/
   {
-    v8 = (NullModemClass *)Errors; /*0x774a38*/
+    v8 = Errors; /*0x774a38*/
     cbInQue = Stat.cbInQue; /*0x774a3c*/
     cbOutQue = Stat.cbOutQue; /*0x774a40*/
     v10 = Errors == 0; /*0x774a44*/
@@ -80,7 +80,7 @@ int WinModemClass::ReadSerial()
     *((unsigned int *)this + 8) = cbOutQue; /*0x774a49*/
     if ( !v10 ) /*0x774a4c*/
     {
-      WinModemClass::LogCommErrors((unsigned int *)this, v8, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
+      WinModemClass::LogCommErrors((WinModemClass *)this, v8, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
       cbInQue = Stat.cbInQue; /*0x774a67*/
     }
     if ( cbInQue < 0x2000 ) /*0x774a71*/
@@ -131,34 +131,33 @@ int WinModemClass::ReadBytes(void ()() a1, WinModemClass * aP1, WinModemClass * 
 {
 
   int v4; // ebx
-  WinModemClass *v5; // ebx
-  WinModemClass *v7; // ebp
+  int v5; // ebx
+  int v7; // ebp
   void (*v8)(void); // eax
 
   if ( !WinModemClass::ReadSerial((int)this) ) /*0x774b37*/
     return 0; /*0x774ba9*/
-  v4 = (char *)*(this + 22) - (char *)*(this + 21); /*0x774b46*/
-  v5 = (WinModemClass *)(v4 + (v4 < 0 ? 0x2000 : 0));
-  if ( (int)v5 > (int)aP2 ) /*0x774b56*/
-    v5 = aP2; /*0x774b58*/
-  if ( (int)v5 <= 0 ) /*0x774b5c*/
-    return (int)v5->__pad_0; /*0x774ba2*/
+  v4 = *((unsigned int *)this + 22) - *((unsigned int *)this + 21); /*0x774b46*/
+  v5 = v4 + (v4 < 0 ? 0x2000 : 0);
+  if ( v5 > a3 ) /*0x774b56*/
+    v5 = a3; /*0x774b58*/
+  if ( v5 <= 0 ) /*0x774b5c*/
+    return v5; /*0x774ba2*/
   v7 = v5; /*0x774b63*/
   do /*0x774b96*/
   {
-    v8 = *(this + 25); /*0x774b65*/
+    v8 = (void (*)(void))*((unsigned int *)this + 25); /*0x774b65*/
     if ( v8 ) /*0x774b6a*/
     {
-      if ( *((unsigned char *)*(this + 9) + (unsigned int)*(this + 21)) != 13 ) /*0x774b78*/
+      if ( *(unsigned char *)(*((unsigned int *)this + 21) + this->WinModemClass_field_0x24) != 13 ) /*0x774b78*/
         v8(); /*0x774b7a*/
     }
-    aP1 = (WinModemClass *)((char *)aP1 + 1); /*0x774b82*/
-    IDA_HIBYTE(aP1[-1].WinModemClass_field_0x38) = *((unsigned char *)*(this + 9) + (unsigned int)*(this + 21)); /*0x774b86*/
-    v7 = (WinModemClass *)((char *)v7 - 1); /*0x774b92*/
-    *(this + 21) = (void (*)())(((uint16_t)*(this + 21) + 1) & 0x1FFF); /*0x774b93*/
+    *a2++ = *(unsigned char *)(*((unsigned int *)this + 21) + this->WinModemClass_field_0x24); /*0x774b86*/
+    --v7; /*0x774b92*/
+    *((unsigned int *)this + 21) = ((uint16_t)*((unsigned int *)this + 21) + 1) & 0x1FFF; /*0x774b93*/
   }
   while ( v7 ); /*0x774b96*/
-  return (int)v5->__pad_0; /*0x774b99*/
+  return v5; /*0x774b99*/
 
 }
 } // namespace gamemd
@@ -170,15 +169,20 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
   int result; // eax
   DWORD NumberOfBytesWritten; // [esp+4h] [ebp-4h] BYREF
 
-  AsyncIO::WaitCompletion(this); /*0x774c74*/
-  result = WriteFile(*(HANDLE *)((char *)this + 92), lpBuffer, (DWORD)aP2, &NumberOfBytesWritten, (LPOVERLAPPED)((char *)this + 60)); /*0x774c90*/
+  AsyncIO::WaitCompletion((int)this); /*0x774c74*/
+  result = WriteFile( /*0x774c90*/
+             (HANDLE)*((char *)this + 23),
+             lpBuffer,
+             aP2,
+             &NumberOfBytesWritten,
+             (LPOVERLAPPED)(char *)this + 3);
   if ( !result ) /*0x774c98*/
   {
     result = GetLastError(); /*0x774c9a*/
     if ( result == 997 ) /*0x774ca5*/
       *((unsigned char *)this + 81) = 1; /*0x774ca7*/
     else
-      this->Debug::Log(); /*0x774cb7*/
+      return this->Debug::Log(); /*0x774cb7*/
   }
   return result; /*0x774cab*/
 
@@ -191,22 +195,22 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
 
   WinModemClass *v5; // esi
   int v6; // ebx
-  WinModemClass *v7; // edi
+  WinModemClass * v7;
   int (*WinModemClass_field_0x2C)(void); // eax
-  WinModemClass ** result;
+  int result; // eax
   int Bytes; // eax
   int v11; // esi
   int v12; // eax
-  WinModemClass *v13; // esi
+  WinModemClass * v13;
   int v14; // eax
-  AbstractClass *v15; // esi
+  char *v15; // esi
   char *v16; // eax
   int v17; // eax
-  DWORD v19; // [esp+14h] [ebp-30h]
-  DWORD Ticks; // [esp+20h] [ebp-24h]
-  WinModemClass *v21; // [esp+28h] [ebp-1Ch]
+  int v19; // [esp+14h] [ebp-30h]
+  int Ticks; // [esp+20h] [ebp-24h]
+  WinModemClass * v21;
 
-  v5 = this; /*0x774cd6*/
+  v5 = (gamemd::WinModemClass *)((int)(this));
   v6 = 0; /*0x774ce6*/
   this->Timer::GetTicks(); /*0x774ce1*/
   this->Timer::GetTicks(); /*0x774cf4*/
@@ -221,16 +225,13 @@ LABEL_2:
     WinModemClass_field_0x2C = (int (*)(void))v5[1].WinModemClass_field_0x2C; /*0x774d63*/
     if ( WinModemClass_field_0x2C ) /*0x774d68*/
     {
-      result = (int)((gamemd::WinModemClass **)(WinModemClass_field_0x2C()));
+      result = WinModemClass_field_0x2C(); /*0x774d6a*/
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
-    if ( !HouseClass_Player.__pad_5568[23244] ) /*0x774d7b*/
+    if ( !stru_A8EB00.?[412] ) /*0x774d7b*/
       return 0; /*0x774d7b*/
-    Bytes = WinModemClass::ReadBytes(
-              (void (**)())v5,
-              (WinModemClass *)&Str[v6],
-              a4 - v6 < 0 ? 0 : (WinModemClass *)(a4 - v6));
+    Bytes = WinModemClass::ReadBytes(v5, &Str[v6], a4 - v6 < 0 ? 0 : a4 - v6);
     if ( Bytes ) /*0x774da0*/
     {
       v6 += Bytes; /*0x774da6*/
@@ -249,43 +250,42 @@ LABEL_2:
       goto LABEL_20; /*0x774def*/
     if ( strchr(Str, 13) ) /*0x774df4*/
     {
-      if ( v7 == (WinModemClass *)-1 ) /*0x774e07*/
+      if ( v7 == (gamemd::WinModemClass *)(-1) ) /*0x774e07*/
         goto LABEL_20; /*0x774e07*/
       v13 = v21; /*0x774e0d*/
       if ( Ticks != -1 ) /*0x774e14*/
       {
-        v14 = this->Timer::GetTicks() - Ticks; /*0x774e1f*/
-        if ( v14 >= (int)v21 ) /*0x774e25*/
+        v14 = (int)(this->Timer::GetTicks() - Ticks);
+        if ( v14 >= (int)(v21) ) /*0x774e25*/
           goto LABEL_20; /*0x774e25*/
-        v13 = (WinModemClass *)((char *)v21 - v14); /*0x774e27*/
+        v13 = v21 - v14; /*0x774e27*/
       }
       if ( !v13 ) /*0x774e2b*/
       {
-LABEL_20:
-        Str[a4 - 1] = 0; /*0x774e31*/
-        v15 = (AbstractClass *)strstr((ObjectClass *)Str, &stru_830620.__pad_14B0[2984]); /*0x774e45*/
+LABEL_20: Str[a4 - 1] = (char *)(0);
+        v15 = (char *)(strstr(Str, word_832678));
         if ( v15 ) /*0x774e4c*/
         {
           if ( *Str == 65 && Str[1] == 84 && strchr(Str, 13) ) /*0x774e5d*/
-            v15 = (AbstractClass *)strchr(Str, 13); /*0x774e74*/
+            v15 = strchr(Str, 13); /*0x774e74*/
           if ( v15 ) /*0x774e78*/
             goto LABEL_38; /*0x774e78*/
         }
         if ( *Str == 13 || *Str == 10 ) /*0x774e83*/
         {
-          v15 = (AbstractClass *)strchr(Str, 13); /*0x774e90*/
+          v15 = strchr(Str, 13); /*0x774e90*/
           v16 = strchr(Str, 10); /*0x774e92*/
-          if ( !v15 || v16 && v16 < (char *)v15 ) /*0x774ea4*/
-            v15 = (AbstractClass *)strchr(Str, 10); /*0x774eb1*/
+          if ( !v15 || v16 && v16 < v15 ) /*0x774ea4*/
+            v15 = strchr(Str, 10); /*0x774eb1*/
           if ( v15 ) /*0x774eb5*/
           {
 LABEL_38:
-            while ( v15->__pad_0[0] == 13 || v15->__pad_0[0] == 10 ) /*0x774ebf*/
-              v15 = (AbstractClass *)((char *)v15 + 1); /*0x774ec1*/
-            if ( v15 != (AbstractClass *)Str ) /*0x774ec6*/
+            while ( *v15 == 13 || *v15 == 10 ) /*0x774ebf*/
+              ++v15; /*0x774ec1*/
+            if ( v15 != Str ) /*0x774ec6*/
             {
-              memcpy(Str, v15, a4 - ((char *)v15 - Str)); /*0x774ed5*/
-              v6 -= (char *)v15 - Str; /*0x774edd*/
+              memcpy(Str, v15, a4 - (v15 - Str)); /*0x774ed5*/
+              v6 -= v15 - Str; /*0x774edd*/
               v7 = aP4; /*0x774edf*/
             }
             if ( v15 ) /*0x774ee5*/
@@ -300,12 +300,12 @@ LABEL_38:
         result = a2; /*0x774f11*/
         if ( v19 != -1 ) /*0x774f1a*/
         {
-          v17 = (gamemd::WinModemClass **)(this->Timer::GetTicks() - v19);
+          v17 = this->Timer::GetTicks() - v19; /*0x774f25*/
           if ( v17 < a2 ) /*0x774f2b*/
             return a2 - v17; /*0x774f38*/
           return 0; /*0x774f3b*/
         }
-        return (gamemd::WinModemClass **)(result);
+        return result; /*0x774f1a*/
       }
     }
     v5 = this; /*0x774d5f*/
@@ -326,30 +326,30 @@ int WinModemClass::SaveToINI(const char * NumberOfBytesWritten)
   if ( *((unsigned int *)this + 24) ) /*0x774f87*/
   {
     this->Debug::Log(); /*0x774fd5*/
-    strcat(Buffer, g_abs_83ED58); /*0x775002*/
+    strcat(Buffer, aP); /*0x775002*/
   }
   else
   {
-    strcat(Buffer, g_abs_83ED5C); /*0x774fbd*/
+    strcat(Buffer, g_Str_T); /*0x774fbd*/
     this->Debug::Log(); /*0x774fc6*/
   }
   this->Debug::Log(); /*0x775010*/
   strcat(Buffer, NumberOfBytesWritten); /*0x77503e*/
   this->Debug::Log(); /*0x775047*/
-  strcat(Buffer, (const char *)&g_abs_8327A0); /*0x775071*/
+  strcat(Buffer, (const char *)&word_8327A0); /*0x775071*/
   this->Debug::Log(); /*0x775084*/
   v3 = strlen(Buffer) + 1; /*0x775095*/
-  AsyncIO::WaitCompletion(this); /*0x77509e*/
-  if ( !WriteFile(*(HANDLE *)((char *)this + 92), Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)((char *)this + 60)) ) /*0x7750b6*/
+  AsyncIO::WaitCompletion((int)this); /*0x77509e*/
+  if ( !WriteFile(*((HANDLE *)this + 23), Buffer, v3 - 1, (LPDWORD)&NumberOfBytesWritten, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x7750b6*/
   {
     if ( GetLastError() == 997 ) /*0x7750cb*/
     {
       *((unsigned char *)this + 81) = 1; /*0x7750cf*/
-      return AsyncIO::WaitCompletion(this); /*0x7750df*/
+      return AsyncIO::WaitCompletion((int)this); /*0x7750df*/
     }
     this->Debug::Log(); /*0x7750e9*/
   }
-  return AsyncIO::WaitCompletion(this); /*0x7750d8*/
+  return AsyncIO::WaitCompletion((int)this); /*0x7750d8*/
 
 }
 } // namespace gamemd
@@ -359,53 +359,53 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
 {
 
   unsigned int v9; // kr0C_4
-  ObjectClass *v10; // ecx
+  int v10; // ecx
   int v11; // edx
   int v12; // esi
-  DWORD v13; // eax
-  signed int v14; // eax
+  int v13; // eax
+  int v14; // eax
   int v15; // esi
   int v16; // esi
-  DWORD v17; // eax
-  signed int v18; // eax
+  int v17; // eax
+  int v18; // eax
   int v19; // esi
-  signed int v20; // esi
-  signed int v21; // eax
+  int v20; // esi
+  int v21; // eax
   size_t v22; // eax
-  AbstractClass ** v24;
+  size_t v24; // eax
   int i; // [esp+10h] [ebp-108h] BYREF
-  ObjectClass *Ticks; // [esp+14h] [ebp-104h]
+  int Ticks; // [esp+14h] [ebp-104h]
   int v27; // [esp+1Ch] [ebp-FCh]
   DWORD v28; // [esp+20h] [ebp-F8h] BYREF
   DWORD NumberOfBytesWritten; // [esp+24h] [ebp-F4h] BYREF
   char Str[80]; // [esp+28h] [ebp-F0h] BYREF
   char Buffer[80]; // [esp+78h] [ebp-A0h] BYREF
-  WinModemClass aP1; // [esp+C8h] [ebp-50h] BYREF
+  unsigned char v32[80]; // [esp+C8h] [ebp-50h] BYREF
 
   LOWORD(i) = a3; /*0x77512a*/
   strcpy(Buffer, a2); /*0x77514b*/
   strcat(Buffer, (const char *)&i); /*0x77517a*/
-  WinModemClass::ReadBytes((void (**)())this, &aP1, (WinModemClass *)0x50); /*0x77518d*/
+  WinModemClass::ReadBytes(this, v32, 80); /*0x77518d*/
   Sleep(0x64u); /*0x775194*/
-  WinModemClass::ReadBytes((void (**)())this, &aP1, (WinModemClass *)0x50); /*0x7751a6*/
+  WinModemClass::ReadBytes(this, v32, 80); /*0x7751a6*/
   for ( i = 0; i < a7; ++i ) /*0x7751bc*/
   {
-    Ticks = (ObjectClass *)this->Timer::GetTicks(); /*0x7751d1*/
+    Ticks = this->Timer::GetTicks(); /*0x7751d1*/
     v9 = strlen(Buffer) + 1; /*0x7751de*/
     v27 = a6; /*0x7751ea*/
-    AsyncIO::WaitCompletion(this); /*0x7751f2*/
-    if ( !WriteFile(*(HANDLE *)((char *)this + 92), Buffer, v9 - 1, &NumberOfBytesWritten, (LPOVERLAPPED)((char *)this + 60)) ) /*0x77520d*/
+    AsyncIO::WaitCompletion((int)this); /*0x7751f2*/
+    if ( !WriteFile(*((HANDLE *)this + 23), Buffer, v9 - 1, &NumberOfBytesWritten, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x77520d*/
     {
       if ( GetLastError() == 997 ) /*0x77521e*/
         *((unsigned char *)this + 81) = 1; /*0x775220*/
       else
         this->Debug::Log(); /*0x77522d*/
     }
-    AsyncIO::WaitCompletion(this); /*0x775237*/
+    AsyncIO::WaitCompletion((int)this); /*0x775237*/
     v10 = Ticks; /*0x77523c*/
     v11 = v27; /*0x775240*/
     v12 = v27; /*0x775247*/
-    if ( Ticks == (ObjectClass *)-1 ) /*0x775249*/
+    if ( Ticks == -1 ) /*0x775249*/
     {
       v15 = v27; /*0x77526a*/
     }
@@ -413,7 +413,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     {
       v13 = this->Timer::GetTicks(); /*0x77524f*/
       v10 = Ticks; /*0x775254*/
-      v14 = v13 - (unsigned int)Ticks; /*0x775258*/
+      v14 = v13 - Ticks; /*0x775258*/
       if ( v14 >= v12 ) /*0x77525c*/
         return 0; /*0x77525c*/
       v11 = v27; /*0x775262*/
@@ -422,7 +422,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     if ( v15 <= 0 ) /*0x77526e*/
       return 0; /*0x77526e*/
     v16 = v11; /*0x775277*/
-    if ( v10 == (ObjectClass *)-1 ) /*0x775279*/
+    if ( v10 == -1 ) /*0x775279*/
     {
       v19 = v11; /*0x775296*/
     }
@@ -430,7 +430,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     {
       v17 = this->Timer::GetTicks(); /*0x77527f*/
       v10 = Ticks; /*0x775284*/
-      v18 = v17 - (unsigned int)Ticks; /*0x775288*/
+      v18 = v17 - Ticks; /*0x775288*/
       if ( v18 >= v16 ) /*0x77528c*/
         goto LABEL_16; /*0x77528c*/
       v11 = v27; /*0x77528e*/
@@ -443,9 +443,9 @@ LABEL_16:
       goto LABEL_21; /*0x7752a2*/
     }
     v20 = v11; /*0x7752a7*/
-    if ( v10 != (ObjectClass *)-1 ) /*0x7752a9*/
+    if ( v10 != -1 ) /*0x7752a9*/
     {
-      v21 = this->Timer::GetTicks() - (unsigned int)Ticks; /*0x7752b4*/
+      v21 = this->Timer::GetTicks() - Ticks; /*0x7752b4*/
       if ( v21 >= v20 ) /*0x7752ba*/
         v11 = 0; /*0x7752c2*/
       else
@@ -453,10 +453,15 @@ LABEL_16:
     }
 LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (**)(int, int, char *, int, int))(*(unsigned int *)this + 20))(this, v11, Str, 80, a8); /*0x7752e6*/
-    if ( !strcmp(Str, &g_INI_Key_Lighting.__pad_20[4]) ) /*0x77531d*/
+    (*(void (**)(WinModemClass *, int, char *, int, int))(*(unsigned int *)this->__pad_0 + 20))( /*0x7752e6*/
+      this,
+      v11,
+      Str,
+      80,
+      a8);
+    if ( !strcmp(Str, (const char *)&stru_82BA00.?) ) /*0x77531d*/
       return 3; /*0x775437*/
-    if ( strstr(Str, MEMORY[0x81FD14]) ) /*0x77532d*/
+    if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/
       return 2; /*0x775337*/
     if ( strstr(Str, aError) ) /*0x775347*/
       return 1; /*0x775449*/
@@ -468,7 +473,7 @@ LABEL_21:
       && Str[2] >= 48
       && Str[2] <= 57 )
     {
-      v24 = (size_t)((gamemd::AbstractClass **)(Count));
+      v24 = Count; /*0x77544c*/
       if ( Count >= 80 ) /*0x775456*/
         v24 = 80; /*0x775458*/
       strncpy(Destination, Str, v24); /*0x77546b*/
@@ -479,15 +484,15 @@ LABEL_21:
       v22 = 80; /*0x77539c*/
     strncpy(Destination, Str, v22); /*0x7753af*/
     Sleep(0x64u); /*0x7753bf*/
-    AsyncIO::WaitCompletion(this); /*0x7753c3*/
-    if ( !WriteFile(*(HANDLE *)((char *)this + 92), &stru_830620.__pad_14B0[3280], 1u, &v28, (LPOVERLAPPED)((char *)this + 60)) ) /*0x7753dc*/
+    AsyncIO::WaitCompletion((int)this); /*0x7753c3*/
+    if ( !WriteFile(*((HANDLE *)this + 23), &word_8327A0, 1u, &v28, (LPOVERLAPPED)(unsigned int *)this + 3) ) /*0x7753dc*/
     {
       if ( GetLastError() == 997 ) /*0x7753ed*/
         *((unsigned char *)this + 81) = 1; /*0x7753ef*/
       else
         this->Debug::Log(); /*0x7753fc*/
     }
-    AsyncIO::WaitCompletion(this); /*0x775406*/
+    AsyncIO::WaitCompletion((int)this); /*0x775406*/
     Sleep(0x64u); /*0x77540d*/
   }
   return 0; /*0x775428*/
@@ -523,59 +528,59 @@ int WinModemClass::LogCommErrors(NullModemClass * aP1, char a3, int a4, int a5)
 
   if ( aP1 ) /*0x7754da*/
   {
-    if ( ((uint8_t)aP1 & 8) != 0 ) /*0x7754e3*/
+    if ( ((unsigned int)(aP1)& 8) != 0 ) /*0x7754e3*/
     {
       this->Debug::Log(); /*0x7754ea*/
-      result = *((unsigned int *)this + 1) + 1; /*0x7754f5*/
-      *((unsigned int *)this + 1) = result; /*0x7754f6*/
+      result = this->WinModemClass_field_0x04 + 1; /*0x7754f5*/
+      this->WinModemClass_field_0x04 = result; /*0x7754f6*/
     }
-    if ( ((uint8_t)aP1 & 0x10) != 0 ) /*0x7754fc*/
-      this->Debug::Log(); /*0x775503*/
-    if ( (IDA_BYTE1(aP1) & 4) != 0 ) /*0x77550e*/
+    if ( ((unsigned int)(aP1)& 0x10) != 0 ) /*0x7754fc*/
+      result = this->Debug::Log(); /*0x775503*/
+    if ( ((unsigned int)(aP1)& 0x400) != 0 ) /*0x77550e*/
     {
       this->Debug::Log(); /*0x775515*/
-      result = *((unsigned int *)this + 2) + 1; /*0x775520*/
-      *((unsigned int *)this + 2) = result; /*0x775521*/
+      result = this->WinModemClass_field_0x08 + 1; /*0x775520*/
+      this->WinModemClass_field_0x08 = result; /*0x775521*/
     }
-    if ( ((uint8_t)aP1 & 2) != 0 ) /*0x775527*/
+    if ( ((unsigned int)(aP1)& 2) != 0 ) /*0x775527*/
     {
       this->Debug::Log(); /*0x77552e*/
-      result = *((unsigned int *)this + 3) + 1; /*0x775539*/
-      *((unsigned int *)this + 3) = result; /*0x77553a*/
+      result = this->WinModemClass_field_0x0C + 1; /*0x775539*/
+      this->WinModemClass_field_0x0C = result; /*0x77553a*/
     }
-    if ( ((uint8_t)aP1 & 1) != 0 ) /*0x775540*/
+    if ( ((unsigned int)(aP1)& 1) != 0 ) /*0x775540*/
     {
       this->Debug::Log(); /*0x775547*/
-      result = *((unsigned int *)this + 4) + 1; /*0x775552*/
-      *((unsigned int *)this + 4) = result; /*0x775553*/
+      result = this->WinModemClass_field_0x10 + 1; /*0x775552*/
+      this->WinModemClass_field_0x10 = result; /*0x775553*/
     }
-    if ( ((uint8_t)aP1 & 4) != 0 ) /*0x775559*/
+    if ( ((unsigned int)(aP1)& 4) != 0 ) /*0x775559*/
     {
       this->Debug::Log(); /*0x775560*/
-      result = *((unsigned int *)this + 5) + 1; /*0x77556b*/
-      *((unsigned int *)this + 5) = result; /*0x77556c*/
+      result = this->WinModemClass_field_0x14 + 1; /*0x77556b*/
+      this->WinModemClass_field_0x14 = result; /*0x77556c*/
     }
-    if ( (IDA_BYTE1(aP1) & 1) != 0 ) /*0x775572*/
+    if ( ((unsigned int)(aP1)& 0x100) != 0 ) /*0x775572*/
     {
       this->Debug::Log(); /*0x775579*/
-      result = *((unsigned int *)this + 6) + 1; /*0x775584*/
-      *((unsigned int *)this + 6) = result; /*0x775585*/
+      result = this->WinModemClass_field_0x18 + 1; /*0x775584*/
+      this->WinModemClass_field_0x18 = result; /*0x775585*/
     }
   }
   if ( (a3 & 1) != 0 ) /*0x77558f*/
-    this->Debug::Log(); /*0x775596*/
+    result = this->Debug::Log(); /*0x775596*/
   if ( (a3 & 2) != 0 ) /*0x7755a1*/
-    this->Debug::Log(); /*0x7755a8*/
+    result = this->Debug::Log(); /*0x7755a8*/
   if ( (a3 & 4) != 0 ) /*0x7755b3*/
-    this->Debug::Log(); /*0x7755ba*/
+    result = this->Debug::Log(); /*0x7755ba*/
   if ( (a3 & 8) != 0 ) /*0x7755c5*/
-    this->Debug::Log(); /*0x7755cc*/
+    result = this->Debug::Log(); /*0x7755cc*/
   if ( (a3 & 0x10) != 0 ) /*0x7755d7*/
-    this->Debug::Log(); /*0x7755de*/
+    result = this->Debug::Log(); /*0x7755de*/
   if ( (a3 & 0x20) != 0 ) /*0x7755e9*/
-    this->Debug::Log(); /*0x7755f0*/
+    result = this->Debug::Log(); /*0x7755f0*/
   if ( (a3 & 0x40) != 0 ) /*0x7755fd*/
-    this->Debug::Log(); /*0x775604*/
+    return this->Debug::Log(); /*0x775604*/
   return result; /*0x7755f8*/
 
 }
@@ -588,18 +593,18 @@ WinModemClass * WinModemClass::QueryInterface(void * Block, char a2)
   int v3; // eax
 
   v3 = *((unsigned int *)Block + 23); /*0x775613*/
-  *(unsigned int *)Block = &vt_WinModemClass; /*0x775616*/
+  *(unsigned int *)Block->__pad_0 = &WinModemClass::`vftable'; /*0x775616*/
   if ( v3 != -1 ) /*0x77561f*/
   {
     this->Debug::Log(); /*0x775626*/
     CloseHandle(*((HANDLE *)Block + 23)); /*0x775632*/
     *((unsigned int *)Block + 23) = -1; /*0x775638*/
   }
-  if ( *((unsigned int *)Block + 9) ) /*0x77563f*/
-    RA2_OPDEL(*((void **)Block + 9)); /*0x775647*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x775654*/
-    RA2_OPDEL(Block); /*0x775657*/
-  return (WinModemClass *)Block; /*0x775661*/
+  if ( Block->WinModemClass_field_0x24 ) /*0x77563f*/
+    __3_YAXPAX_Z((void *)Block->WinModemClass_field_0x24); /*0x775647*/
+  if ( (a2 & 1) != 0 ) /*0x775654*/
+    __3_YAXPAX_Z(Block); /*0x775657*/
+  return Block; /*0x775661*/
 
 }
 } // namespace gamemd

@@ -120,33 +120,35 @@ namespace gamemd {
 void AudioController::GetVolume()
 {
 
-  void *v0; // esi
+  void *v1; // esi
 
-  if ( g_abs_B0FCCE ) /*0x72d17a*/
+  if ( g_BuildingLoadQueue_Array.__pad_F70[1310] ) /*0x72d17a*/
   {
-    if ( g_abs_B0FCCD ) /*0x72d182*/
+    if ( g_BuildingLoadQueue_Array.__pad_F70[1309] ) /*0x72d182*/
     {
-      v0 = g_abs_B0FAB8; /*0x72d185*/
-      if ( g_abs_B0FAB8 ) /*0x72d18d*/
+      v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[776]; /*0x72d185*/
+      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[776] ) /*0x72d18d*/
       {
-        FileTreeNode::Destroy(g_abs_B0FAB8); /*0x72d191*/
-        RA2_OPDEL(v0); /*0x72d197*/
+        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[776]); /*0x72d191*/
+        __3_YAXPAX_Z(v1); /*0x72d197*/
       }
-      g_abs_B0FCCD = 0; /*0x72d19f*/
+      g_BuildingLoadQueue_Array.__pad_F70[1309] = 0; /*0x72d19f*/
     }
-    g_abs_B0FAB8 = 0; /*0x72d1ab*/
-    if ( g_abs_B0FCD0 ) /*0x72d1b3*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[776] = 0; /*0x72d1ab*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1312] ) /*0x72d1b3*/
     {
-      RA2_OPDEL(g_abs_B0FCD0); /*0x72d1b6*/
-      g_abs_B0FCD0 = 0; /*0x72d1be*/
+      __3_YAXPAX_Z(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1312]); /*0x72d1b6*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1312] = 0; /*0x72d1be*/
     }
-    if ( g_abs_B0FCD4 ) /*0x72d1cc*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1316] ) /*0x72d1cc*/
     {
-      (**(void (***)(int, int))g_abs_B0FCD4)(g_abs_B0FCD4, 1); /*0x72d1d2*/
-      g_abs_B0FCD4 = 0; /*0x72d1d4*/
+      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1316])( /*0x72d1d2*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1316],
+        1);
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1316] = 0; /*0x72d1d4*/
     }
   }
-  g_abs_B0FCCE = 0; /*0x72d1da*/
+  g_BuildingLoadQueue_Array.__pad_F70[1310] = 0; /*0x72d1da*/
 
 }
 } // namespace gamemd

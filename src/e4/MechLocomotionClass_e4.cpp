@@ -14,10 +14,8 @@ int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 
   if ( !a2 ) /*0x5b1966*/
     return -2147467261; /*0x5b1968*/
-  *a2 = 1439777208; /*0x5b1976*/
-  a2[1] = 298965908; /*0x5b197e*/
-  a2[2] = 1610651820; /*0x5b1987*/
-  a2[3] = -1252326136; /*0x5b1990*/
+  *(IID *)a2 = g_CLSID_TunnelLocomotion; /*0x5b1976*/
+  a2[3] = unk_7E9AAC; /*0x5b1990*/
   return 0; /*0x5b196d*/
 
 }
@@ -29,13 +27,13 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
 
   int result; // eax
 
-  result = SwizzleManager::SaveLoad(a1, a2); /*0x5b19ab*/
+  result = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x5b19ab*/
   if ( result >= 0 ) /*0x5b19b2*/
   {
     if ( a1 ) /*0x5b19b6*/
     {
-      *a1 = (int)&vt_MechLocomotionClass; /*0x5b19b8*/
-      a1[1] = (int)&vt_MechLocomotionClass; /*0x5b19be*/
+      *(unsigned int *)a1->LocomotionClass = &MechLocomotionClass::`vftable'; /*0x5b19b8*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &MechLocomotionClass::`vftable'; /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/
@@ -56,12 +54,12 @@ namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = &MechLocomotionClass::`vftable'; /*0x5b1b53*/
-  *(Block + 1) = &vt_MechLocomotionClass; /*0x5b1b59*/
-  LocomotionClass::Construct(Block); /*0x5b1b60*/
+  *(unsigned int *)Block->LocomotionClass = &MechLocomotionClass::`vftable'; /*0x5b1b53*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &MechLocomotionClass::`vftable'; /*0x5b1b59*/
+  LocomotionClass::Construct((LocomotionClass *)Block); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     __3_YAXPAX_Z(Block); /*0x5b1b6d*/
-  return (MechLocomotionClass *)Block; /*0x5b1b77*/
+  return Block->LocomotionClass; /*0x5b1b77*/
 
 }
 } // namespace gamemd

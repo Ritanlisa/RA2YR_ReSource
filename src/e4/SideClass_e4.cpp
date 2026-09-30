@@ -14,6 +14,7 @@
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Shroud_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x679A10
 namespace gamemd {
@@ -38,97 +39,88 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   int i6; // edi
   int i7; // edi
   int i8; // edi
-  int v19; // ebx
-  int *v20; // edi
+  char *v19; // ebx
+  MissionClass *v20; // edi
+  ObjectClass *v22; // [esp+0h] [ebp-Ch]
 
-  for ( i = 0; i < g_SuperWeaponTypeArray; ++i ) /*0x679a20*/
-    (*(void (**)(unsigned int, CCINIClass *))(**((unsigned int **)g_SuperWeaponTypeCount + i) + 100))( /*0x679a2d*/
-      *((unsigned int *)g_SuperWeaponTypeCount + i),
+  for ( i = 0; i < dword_A83CA8; ++i ) /*0x679a20*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A83C9C + i) + 100))( /*0x679a2d*/
+      *((unsigned int *)dword_A83C9C + i),
       aP0);
-  for ( j = 0; j < *(int *)&HouseClass_Player.__pad_5568[20620]; ++j ) /*0x679a43*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_5568[20608] + 4 * j) /*0x679a50*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[20608] + 4 * j),
+  for ( j = 0; j < dword_A8E340; ++j ) /*0x679a43*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8E334 + j) + 100))( /*0x679a50*/
+      *((unsigned int *)dword_A8E334 + j),
       aP0);
-  for ( k = 0; k < *(int *)&stru_89E138.__pad_1600D[27]; ++k ) /*0x679a66*/
-    (*(void (**)(unsigned int, char *))(**(unsigned int **)(*(unsigned int *)&stru_89E138.__pad_1600D[15] + 4 * k) + 100))( /*0x679a77*/
-      *(unsigned int *)(*(unsigned int *)&stru_89E138.__pad_1600D[15] + 4 * k),
-      &stru_87C374.__pad_579C[22128]);
-  for ( m = 0; m < (int)g_TriggerClassCount; ++m ) /*0x679a8d*/
-    (*(void (**)(unsigned int, CCINIClass *))(**((unsigned int **)g_TriggerTypeCount + m) + 100))( /*0x679a9a*/
-      *((unsigned int *)g_TriggerTypeCount + m),
+  for ( k = 0; k < *((unsigned int *)((char *)&FootClass_Array + 0)); ++k ) /*0x679a66*/
+    (*(void (**)(unsigned int, char *))(**(unsigned int **)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * k) + 100))( /*0x679a77*/
+      *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 3)) + 4 * k),
+      &DSurface_ViewBounds.__pad_FC[228]);
+  for ( m = 0; m < dword_A83C78; ++m ) /*0x679a8d*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A83C6C + m) + 100))( /*0x679a9a*/
+      *((unsigned int *)dword_A83C6C + m),
       aP0);
-  for ( n = 0; n < *(int *)&HouseClass_Player.__pad_5568[8052]; ++n ) /*0x679ab0*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_5568[8040] + 4 * n) /*0x679abd*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8040] + 4 * n),
+  for ( n = 0; n < dword_A8B228; ++n ) /*0x679ab0*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8B21C + n) + 100))( /*0x679abd*/
+      *((unsigned int *)dword_A8B21C + n),
       aP0);
-  for ( ii = 0; ii < (int)g_CrateCount; ++ii ) /*0x679ad3*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)&g_UnitTypeCount2->__pad_0[4 * ii] + 100))( /*0x679ae0*/
-      *(unsigned int *)&g_UnitTypeCount2->__pad_0[4 * ii],
+  for ( ii = 0; ii < dword_A83CF0; ++ii ) /*0x679ad3*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A83CE4 + ii) + 100))( /*0x679ae0*/
+      *((unsigned int *)dword_A83CE4 + ii),
       aP0);
-  for ( jj = 0; jj < *(int *)&HouseClass_Player.__pad_5568[20644]; ++jj ) /*0x679af6*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_5568[20632] + 4 * jj) /*0x679b03*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[20632] + 4 * jj),
+  for ( jj = 0; jj < dword_A8E358; ++jj ) /*0x679af6*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8E34C + jj) + 100))( /*0x679b03*/
+      *((unsigned int *)dword_A8E34C + jj),
       aP0);
-  for ( kk = 0; kk < *(int *)&stru_87C374.__pad_579C[23144]; ++kk ) /*0x679b19*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_579C[23132] + 4 * kk) /*0x679b26*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23132] + 4 * kk),
+  for ( kk = 0; kk < g_WeaponTypePool; ++kk ) /*0x679b19*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)g_WeaponTypeConfig + kk) + 100))( /*0x679b26*/
+      *((unsigned int *)g_WeaponTypeConfig + kk),
       aP0);
-  for ( mm = 0; mm < (int)g_BulletTypeInitState; ++mm ) /*0x679b3c*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)&dword_A83C84->__pad_0[4 * mm] + 100))( /*0x679b49*/
-      *(unsigned int *)&dword_A83C84->__pad_0[4 * mm],
+  for ( mm = 0; mm < dword_A83C90; ++mm ) /*0x679b3c*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A83C84 + mm) + 100))( /*0x679b49*/
+      *((unsigned int *)dword_A83C84 + mm),
       aP0);
-  for ( nn = 0; nn < *(int *)&stru_87C374.__pad_579C[22976]; ++nn ) /*0x679b5f*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_579C[22964] + 4 * nn) /*0x679b6c*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22964] + 4 * nn),
+  for ( nn = 0; nn < g_WarheadTypePool; ++nn ) /*0x679b5f*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_8874C4 + nn) + 100))( /*0x679b6c*/
+      *((unsigned int *)dword_8874C4 + nn),
       aP0);
-  for ( i1 = 0; i1 < *(int *)&stru_87C374.__pad_579C[23144]; ++i1 ) /*0x679b82*/
-    WeaponTypeClass::CalculateSpeed(*(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_579C[23132] + 4 * i1)); /*0x679b8c*/
-  for ( i2 = 0; i2 < (int)g_TriggerClassCount; ++i2 ) /*0x679ba4*/
-    nullsub_7(); /*0x679baf*/
-  for ( i3 = 0; i3 < *(int *)&HouseClass_Player.__pad_5568[20596]; ++i3 ) /*0x679bc7*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_5568[20584] + 4 * i3) /*0x679bd5*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[20584] + 4 * i3),
+  for ( i1 = 0; i1 < g_WeaponTypePool; ++i1 ) /*0x679b82*/
+    ((WeaponTypeClass *)(*((WeaponTypeClass **)g_WeaponTypeConfig + i1)))->CalculateSpeed(); /*0x679b8c*/
+  for ( i2 = 0; i2 < dword_A83C78; ++i2 ) /*0x679ba4*/
+    nullsub_7(v22); /*0x679baf*/
+  for ( i3 = 0; i3 < dword_A8E328; ++i3 ) /*0x679bc7*/
+    (*(void (**)(unsigned int, unsigned int *))(**((unsigned int **)dword_A8E31C + i3) + 100))( /*0x679bd5*/
+      *((unsigned int *)dword_A8E31C + i3),
       aP0);
-  for ( i4 = 0; i4 < *(int *)&HouseClass_Player.__pad_5568[22900]; ++i4 ) /*0x679beb*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_5568[22888] + 4 * i4) /*0x679bf9*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[22888] + 4 * i4),
+  for ( i4 = 0; i4 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 68); ++i4 ) /*0x679beb*/
+    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4) + 100))( /*0x679bf9*/
+      *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 56) + 4 * i4),
       aP0);
-  for ( i5 = 0; i5 < *(int *)&HouseClass_Player.__pad_3C[8]; ++i5 ) /*0x679c0f*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(HouseClass_Player.field_38 + 4 * i5) + 100))( /*0x679c1c*/
-      *(unsigned int *)(HouseClass_Player.field_38 + 4 * i5),
+  for ( i5 = 0; i5 < *(int *)&stru_A83D50.__pad_3C[4]; ++i5 ) /*0x679c0f*/
+    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i5) + 100))( /*0x679c1c*/
+      *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 + 4 * i5),
       aP0);
-  for ( i6 = 0; i6 < *(int *)&HouseClass_Player.__pad_3C[32]; ++i6 ) /*0x679c32*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_3C[20] + 4 * i6) /*0x679c3f*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_3C[20] + 4 * i6),
+  for ( i6 = 0; i6 < *(int *)&stru_A83D50.__pad_3C[28]; ++i6 ) /*0x679c32*/
+    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i6) + 100))( /*0x679c3f*/
+      *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_3C[16] + 4 * i6),
       aP0);
-  for ( i7 = 0; i7 < *(int *)HouseClass_Player.__pad_2C; ++i7 ) /*0x679c55*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_18[8] + 4 * i7) /*0x679c62*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_18[8] + 4 * i7),
+  for ( i7 = 0; i7 < (int)stru_A83D50.SuperClass_field_0x28; ++i7 ) /*0x679c55*/
+    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i7) + 100))( /*0x679c62*/
+      *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * i7),
       aP0);
-  for ( i8 = 0; i8 < *(int *)&HouseClass_Player.__pad_5568[22660]; ++i8 ) /*0x679c78*/
-    (*(void (**)(unsigned int, CCINIClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_5568[22648] + 4 * i8) /*0x679c85*/
-                                                 + 100))(
-      *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[22648] + 4 * i8),
+  for ( i8 = 0; i8 < stru_A8EB00.ObjectTypeClass[14]; ++i8 ) /*0x679c78*/
+    (*(void (**)(unsigned int, unsigned int *))(**(unsigned int **)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8) + 100))( /*0x679c85*/
+      *(unsigned int *)(stru_A8EB00.ObjectTypeClass[11] + 4 * i8),
       aP0);
-  v19 = 0; /*0x679c92*/
-  v20 = (int *)&HouseClass_Player.__pad_5568[20724]; /*0x679c94*/
+  v19 = (char *)((gamemd::MissionClass *)(0));
+  v20 = (gamemd::MissionClass *)(&stru_A8E3A8);
   do /*0x679cad*/
   {
-    *v20 = v19; /*0x679c9c*/
+    v20->ObjectClass = v19; /*0x679c9c*/
     MissionClass::LoadFromINI(v20, aP0); /*0x679c9e*/
-    v20 += 8; /*0x679ca3*/
+    v20 = (MissionClass *)((char *)v20 + 32); /*0x679ca3*/
     ++v19; /*0x679ca6*/
   }
-  while ( (int)v20 < (int)&HouseClass_Player.__pad_5568[21748] ); /*0x679cad*/
+  while ( (int)v20 < (int)&dword_A8E7A8 ); /*0x679cad*/
   return 1; /*0x679caf*/
 
 }
@@ -137,36 +129,34 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
 namespace gamemd {
 int SideClass::Construct(CCINIClass * aP1)
 {
-    unsigned int v3 = 0;  /* G37 hoist */
-    unsigned int v3 = 0;  /* G37 hoist */
 
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6a4559*/
-  *((unsigned int *)this + 39) = 0; /*0x6a4563*/
+  AbstractTypeClass::Constructor((int *)this, aP1); /*0x6a4559*/
+  this->houseTypesCount = 0; /*0x6a4563*/
   *((unsigned int *)this + 40) = 0; /*0x6a4569*/
   *((unsigned char *)this + 164) = 1; /*0x6a456f*/
   *((unsigned char *)this + 165) = 0; /*0x6a4576*/
   *((unsigned int *)this + 43) = 10; /*0x6a457c*/
   *((unsigned int *)this + 42) = 0; /*0x6a4586*/
-  *((unsigned int *)this + 38) = &vt_TypeList_int; /*0x6a458c*/
-  *this = &SideClass::`vftable'; /*0x6a4597*/
-  *((unsigned int *)this + 1) = &SideClass::`vftable'; /*0x6a459d*/
-  *((unsigned int *)this + 2) = &SideClass::`vftable'; /*0x6a45a3*/
-  *((unsigned int *)this + 3) = &vt_SideClass; /*0x6a45aa*/
-  AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x6a45b1*/
-  if ( *(int *)stru_89E138.__pad_15FF8 < *(int *)&stru_89E138.__pad_579C[67668] /*0x6a45ea*/
-    || (BYTE1(stru_89E138.field_15FF4) || !*(unsigned int *)&stru_89E138.__pad_579C[67668])
-    && *(int *)&stru_89E138.__pad_15FF8[4] > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_89E138.__pad_579C[67660] + 8))(
-         &stru_89E138.__pad_579C[67660],
-         *(unsigned int *)&stru_89E138.__pad_579C[67668] + *(unsigned int *)&stru_89E138.__pad_15FF8[4],
+  this->houseTypes = &TypeList<int>::`vftable'; /*0x6a458c*/
+  this->AbstractClass = &SideClass::`vftable'; /*0x6a4597*/
+  this->? = &SideClass::`vftable'; /*0x6a459d*/
+  this->? = &SideClass::`vftable'; /*0x6a45a3*/
+  this->? = &SideClass::`vftable'; /*0x6a45aa*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x6a45b1*/
+  if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 1)) /*0x6a45ea*/
+    || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 2))) || !FootClass_Array.?[1])
+    && *((unsigned int *)((char *)&FootClass_Array + 1)) > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(FootClass_Array.? + 8))(
+         &FootClass_Array.?,
+         *((unsigned int *)((char *)&FootClass_Array + 1)) + *((unsigned int *)((char *)&FootClass_Array + 1)),
          0) )
   {
-    v3 = (*(unsigned int *)stru_89E138.__pad_15FF8)++; /*0x6a45f7*/
-    *(unsigned int *)(*(unsigned int *)&stru_89E138.__pad_579C[67664] + 4 * v3) = this; /*0x6a4606*/
+    v3 = (int)(*((unsigned int *)((char *)&FootClass_Array + 0))++);
+    *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3) = this; /*0x6a4606*/
   }
-  return (int)(this);
+  return (int)(&this->AbstractClass);
 
 }
 }
@@ -175,7 +165,7 @@ namespace gamemd {
 int SideClass::GetCountry(int * a2)
 {
 
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6a4719*/
+  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6a4719*/
   return Power::TimerProcess(*((unsigned int *)this + 42)); /*0x6a472c*/
 
 }
@@ -185,74 +175,70 @@ namespace gamemd {
 int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 {
 
-  AbstractTypeClass *v2; // esi
-  AbstractClass *v3; // edi
+  AbstractTypeClass * v2;
+  AbstractTypeClass * v3;
   int result; // eax
-  AbstractTypeClass *v5; // esi
+  void **p_houseTypes; // esi
   int i; // ebp
-  int v7; // eax
-  int abstractFlags; // ecx
-  int uniqueId; // eax
-  int v10; // edx
+  void *v7; // eax
+  int v8; // ecx
+  void *v9; // eax
+  unsigned int *v10; // edx
 
-  v2 = (AbstractTypeClass *)a0; /*0x6a4782*/
-  v3 = (AbstractClass *)aP1; /*0x6a4787*/
-  result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)a0, (AbstractClass *)aP1); /*0x6a478d*/
+  v2 = (gamemd::AbstractTypeClass *)((int)(a0));
+  v3 = (int)(aP1);
+  result = AbstractClass::SaveLoad_Prefix_0(a0, aP1); /*0x6a478d*/
   if ( result >= 0 ) /*0x6a4796*/
   {
     if ( v2 ) /*0x6a47a4*/
     {
-      AbstractTypeClass::Init((int)v2, (AbstractTypeClass *)&aP1); /*0x6a47ad*/
-      *(unsigned int *)&v2[((unsigned int *)(1].__pad_0))[4] = 0; /*0x6a47b2*/
-      *(unsigned int *)&v2[((unsigned int *)(1].__pad_0))[8] = 0; /*0x6a47b8*/
-      v2[((unsigned int *)(1].__pad_0))[12] = 1; /*0x6a47be*/
-      v2[((unsigned int *)(1].__pad_0))[13] = 0; /*0x6a47c5*/
-      v2[1].abstractFlags = 10; /*0x6a47cb*/
-      v2[1].uniqueId = 0; /*0x6a47d1*/
-      *(unsigned int *)v2[1].__pad_0 = &vt_TypeList_int; /*0x6a47d7*/
-      *(unsigned int *)v2->__pad_0 = &SideClass::`vftable'; /*0x6a47e1*/
-      *(unsigned int *)&v2->__pad_0[4] = &SideClass::`vftable'; /*0x6a47e7*/
-      *(unsigned int *)&v2->__pad_0[8] = &SideClass::`vftable'; /*0x6a47ee*/
-      *(unsigned int *)&v2-((unsigned int *)(>__pad_0))[12] = &vt_SideClass; /*0x6a47f5*/
+      AbstractTypeClass::Init((int)v2, (int)&aP1); /*0x6a47ad*/
+      v2->houseTypesCount = 0; /*0x6a47b2*/
+      v2[1].AbstractClass = 0; /*0x6a47b8*/
+      LOBYTE(v2[1].?) = 1; /*0x6a47be*/
+      BYTE1(v2[1].?) = 0; /*0x6a47c5*/
+      v2[1].? = (void *)10; /*0x6a47cb*/
+      v2[1].? = 0; /*0x6a47d1*/
+      v2->houseTypes = &TypeList<int>::`vftable'; /*0x6a47d7*/
+      v2->AbstractClass = &SideClass::`vftable'; /*0x6a47e1*/
+      v2->? = &SideClass::`vftable'; /*0x6a47e7*/
+      v2->? = &SideClass::`vftable'; /*0x6a47ee*/
+      v2->? = &SideClass::`vftable'; /*0x6a47f5*/
     }
-    v5 = v2 + 1; /*0x6a47fc*/
-    if ( v5 ) /*0x6a4804*/
+    p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
+    if ( p_houseTypes ) /*0x6a4804*/
     {
-      *(unsigned int *)&v5-((unsigned int *)(>__pad_0))[4] = 0; /*0x6a4806*/
-      *(unsigned int *)&v5-((unsigned int *)(>__pad_0))[8] = 0; /*0x6a4809*/
-      v5-((unsigned int *)(>__pad_0))[12] = 1; /*0x6a480c*/
-      v5-((unsigned int *)(>__pad_0))[13] = 0; /*0x6a4810*/
-      v5->abstractFlags = 10; /*0x6a4813*/
-      v5->uniqueId = 0; /*0x6a4816*/
-      *(unsigned int *)v5->__pad_0 = &vt_TypeList_int; /*0x6a4819*/
+      p_houseTypes[1] = 0; /*0x6a4806*/
+      p_houseTypes[2] = 0; /*0x6a4809*/
+      *((unsigned char *)p_houseTypes + 12) = 1; /*0x6a480c*/
+      *((unsigned char *)p_houseTypes + 13) = 0; /*0x6a4810*/
+      p_houseTypes[5] = (void *)10; /*0x6a4813*/
+      p_houseTypes[4] = 0; /*0x6a4816*/
+      *p_houseTypes = &TypeList<int>::`vftable'; /*0x6a4819*/
     }
-    (*(void (**)(AbstractClass *, AbstractTypeClass **, int, unsigned int))(*(unsigned int *)v3->__pad_0 + 12))( /*0x6a482a*/
-      v3,
-      &aP1,
-      4,
-      0);
-    for ( i = 0; i < (int)aP1; ++i ) /*0x6a4833*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &aP1, 4, 0); /*0x6a482a*/
+    for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
     {
-      (*(void (**)(AbstractClass *, unsigned int **, int, unsigned int))(*(unsigned int *)v3->__pad_0 + 12))(v3, &a0, 4, 0); /*0x6a4840*/
-      v7 = *(unsigned int *)&v5-((unsigned int *)(>__pad_0))[8]; /*0x6a4843*/
-      if ( v5->uniqueId >= v7 ) /*0x6a484b*/
+      (*(void (**)(int, SideClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a0, 4, 0); /*0x6a4840*/
+      v7 = p_houseTypes[2]; /*0x6a4843*/
+      if ( (int)p_houseTypes[4] >= (int)v7 ) /*0x6a484b*/
       {
-        if ( !v5-((unsigned int *)(>__pad_0))[13] && v7 ) /*0x6a4854*/
+        if ( !*((unsigned char *)p_houseTypes + 13) && v7 ) /*0x6a4854*/
           continue; /*0x6a4854*/
-        abstractFlags = v5->abstractFlags; /*0x6a4856*/
-        if ( abstractFlags <= 0 /*0x6a4865*/
-          || !(*(uint8_t (**)(AbstractTypeClass *, int, unsigned int))(*(unsigned int *)v5->__pad_0 + 8))(
-                v5,
-                v7 + abstractFlags,
+        v8 = (int)p_houseTypes[5]; /*0x6a4856*/
+        if ( v8 <= 0 /*0x6a4865*/
+          || !(*((uint8_t (**)(void **, int, unsigned int))*p_houseTypes + 2))(
+                p_houseTypes,
+                (int)v7 + v8,
                 0) )
         {
           continue; /*0x6a4865*/
         }
       }
-      uniqueId = (unsigned int)(v5->uniqueId);
-      v10 = *(unsigned int *)&v5-((unsigned int *)(>__pad_0))[4]; /*0x6a486f*/
-      v5->uniqueId = uniqueId + 1; /*0x6a4875*/
-      *(unsigned int *)(v10 + 4 * uniqueId) = a0; /*0x6a487c*/
+      v9 = p_houseTypes[4]; /*0x6a486c*/
+      v10 = p_houseTypes[1]; /*0x6a486f*/
+      p_houseTypes[4] = (char *)v9 + 1; /*0x6a4875*/
+      v10[(unsigned int)v9] = a0; /*0x6a487c*/
     }
     return 0; /*0x6a4888*/
   }
@@ -266,38 +252,39 @@ void * SideClass::Init(void ** Block, char a2)
 {
 
   int v3; // eax
-  void *v4; // eax
-  void **v6; // [esp+4h] [ebp-4h] BYREF
+  void *houseTypesCount; // eax
+  SideClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &SideClass::`vftable'; /*0x6a4936*/
-  *(Block + 1) = &SideClass::`vftable'; /*0x6a493c*/
-  *(Block + 2) = &SideClass::`vftable'; /*0x6a4943*/
-  *(Block + 3) = &vt_SideClass; /*0x6a494a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6a4951*/
+  Block->AbstractClass = &SideClass::`vftable'; /*0x6a4936*/
+  Block->? = &SideClass::`vftable'; /*0x6a493c*/
+  Block->? = &SideClass::`vftable'; /*0x6a4943*/
+  Block->? = &SideClass::`vftable'; /*0x6a494a*/
+  AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
   v6 = Block; /*0x6a4966*/
-  v3 = (*(int (**)(int *, void ***))(MEMORY[0x8B4120] + 16))(&MEMORY[0x8B4120], &v6); /*0x6a496a*/
-  if ( v3 != -1 && v3 < MEMORY[0x8B4130] && v3 < --MEMORY[0x8B4130] ) /*0x6a4985*/
+  v3 = (*(int (**)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &v6); /*0x6a496a*/
+  if ( v3 != -1 && v3 < *((unsigned int *)((char *)&FootClass_Array + 0)) ) /*0x6a497a*/
   {
-    do /*0x6a499d*/
+    --FootClass_Array.?[0]; /*0x6a497f*/
+    for ( ; /*0x6a4985*/
+          v3 < *((unsigned int *)((char *)&FootClass_Array + 0));
+          *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)((char *)&FootClass_Array + 0)) + 4 * v3) )
     {
       ++v3; /*0x6a498d*/
-      *((unsigned int *)MEMORY[0x8B4124] + v3 - 1) = *((unsigned int *)MEMORY[0x8B4124] + v3); /*0x6a4991*/
     }
-    while ( v3 < MEMORY[0x8B4130] ); /*0x6a499d*/
   }
-  v4 = *(Block + 39); /*0x6a499f*/
-  *(Block + 38) = &vt_VectorClass_int; /*0x6a49a5*/
-  if ( v4 && *((unsigned char *)Block + 165) ) /*0x6a49b3*/
+  houseTypesCount = (void *)Block->houseTypesCount; /*0x6a499f*/
+  Block->houseTypes = &VectorClass<int>::`vftable'; /*0x6a49a5*/
+  if ( houseTypesCount && *((unsigned char *)Block + 165) ) /*0x6a49b3*/
   {
-    __3_YAXPAX_Z(v4); /*0x6a49be*/
-    *(Block + 39) = 0; /*0x6a49c6*/
+    __3_YAXPAX_Z(houseTypesCount); /*0x6a49be*/
+    Block->houseTypesCount = 0; /*0x6a49c6*/
   }
   *((unsigned char *)Block + 165) = 0; /*0x6a49d2*/
-  *(Block + 40) = 0; /*0x6a49d9*/
-  AbstractTypeClass::Dtor(Block); /*0x6a49e3*/
+  *((unsigned int *)Block + 40) = 0; /*0x6a49d9*/
+  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     __3_YAXPAX_Z(Block); /*0x6a49f0*/
-  return (SideClass *)Block; /*0x6a49fa*/
+  return &Block->AbstractClass; /*0x6a49fa*/
 
 }
 }
@@ -309,19 +296,19 @@ int SideClass::FindByName()
   int v3; // ebx
   int v4; // esi
 
-  if ( !_strcmpi(this, &g_INI_Key_Digest.__pad_20[8]) ) /*0x49d9fb*/
+  if ( !_strcmpi((char *)this, g_Str__random_) ) /*0x49d9fb*/
     return -2; /*0x49da09*/
   if ( !this ) /*0x49da12*/
     return -1; /*0x49da12*/
   v3 = 0; /*0x49da19*/
-  if ( g_SuperWeaponTypeArray <= 0 ) /*0x49da1d*/
+  if ( dword_A83CA8 <= 0 ) /*0x49da1d*/
     return -1; /*0x49da53*/
   while ( 1 ) /*0x49da25*/
   {
-    v4 = *((unsigned int *)g_SuperWeaponTypeCount + v3); /*0x49da25*/
-    if ( !_strcmpi((const void *)(v4 + 100), this) || !_strcmpi((const void *)(v4 + 36), this) ) /*0x49da3d*/
+    v4 = *((unsigned int *)dword_A83C9C + v3); /*0x49da25*/
+    if ( !_strcmpi((char *)(v4 + 100), (char *)this) || !_strcmpi((char *)(v4 + 36), (char *)this) ) /*0x49da3d*/
       break; /*0x49da3d*/
-    if ( ++v3 >= g_SuperWeaponTypeArray ) /*0x49da51*/
+    if ( ++v3 >= dword_A83CA8 ) /*0x49da51*/
       return -1; /*0x49da51*/
   }
   return v3; /*0x49da07*/
@@ -334,29 +321,29 @@ namespace gamemd {
 wchar_t * SideClass::GetName()
 {
 
-  if ( this == (void *)-2 ) /*0x4e38a3*/
+  if ( this == (SideClass *)-2 ) /*0x4e38a3*/
     return GetStringCSF(aSttPlayersider, 0, g_Str_File_GDlgSupp_cpp, 237); /*0x4e38b6*/
-  if ( this == (void *)-3 ) /*0x4e38bf*/
+  if ( this == (SideClass *)-3 ) /*0x4e38bf*/
     return GetStringCSF(aSttPlayersideo, 0, g_Str_File_GDlgSupp_cpp, 239); /*0x4e38d2*/
   if ( !this ) /*0x4e38da*/
     return GetStringCSF(aSttPlayersidea, 0, g_Str_File_GDlgSupp_cpp, 241); /*0x4e38ed*/
-  if ( this == (void *)1 ) /*0x4e38f6*/
+  if ( this == (SideClass *)1 ) /*0x4e38f6*/
     return GetStringCSF(aSttPlayersidek, 0, g_Str_File_GDlgSupp_cpp, 243); /*0x4e3909*/
-  if ( this == (void *)2 ) /*0x4e3912*/
+  if ( this == (SideClass *)2 ) /*0x4e3912*/
     return GetStringCSF(aSttPlayersidef, 0, g_Str_File_GDlgSupp_cpp, 245); /*0x4e3925*/
-  if ( this == (void *)3 ) /*0x4e392e*/
+  if ( this == (SideClass *)3 ) /*0x4e392e*/
     return GetStringCSF(aSttPlayersideg, 0, g_Str_File_GDlgSupp_cpp, 247); /*0x4e3941*/
-  if ( this == (void *)4 ) /*0x4e394a*/
+  if ( this == (SideClass *)4 ) /*0x4e394a*/
     return GetStringCSF(aSttPlayersideb, 0, g_Str_File_GDlgSupp_cpp, 249); /*0x4e395d*/
-  if ( this == (void *)5 ) /*0x4e3966*/
+  if ( this == (SideClass *)5 ) /*0x4e3966*/
     return GetStringCSF(aSttPlayersidel, 0, g_Str_File_GDlgSupp_cpp, 251); /*0x4e3979*/
-  if ( this == (void *)6 ) /*0x4e3982*/
+  if ( this == (SideClass *)6 ) /*0x4e3982*/
     return GetStringCSF(aSttPlayersidei, 0, g_Str_File_GDlgSupp_cpp, 253); /*0x4e3995*/
-  if ( this == (void *)7 ) /*0x4e399e*/
+  if ( this == (SideClass *)7 ) /*0x4e399e*/
     return GetStringCSF(aSttPlayersidec, 0, g_Str_File_GDlgSupp_cpp, 255); /*0x4e39b1*/
-  if ( this == (void *)8 ) /*0x4e39ba*/
+  if ( this == (SideClass *)8 ) /*0x4e39ba*/
     return GetStringCSF(aSttPlayersider_0, 0, g_Str_File_GDlgSupp_cpp, 257); /*0x4e39cd*/
-  if ( this == (void *)9 ) /*0x4e39d6*/
+  if ( this == (SideClass *)9 ) /*0x4e39d6*/
     return GetStringCSF(aSttPlayersidey, 0, g_Str_File_GDlgSupp_cpp, 259); /*0x4e39e9*/
   return 0; /*0x4e38bb*/
 
@@ -373,7 +360,7 @@ int SideClass::ddtor(int a1, unsigned int * a2)
   *a2 = -985803918; /*0x6a4756*/
   a2[1] = 298980638; /*0x6a475e*/
   a2[2] = 1610642817; /*0x6a4767*/
-  a2[3] = -1252326136; /*0x6a4770*/
+  a2[3] = unk_7E991C; /*0x6a4770*/
   return 0; /*0x6a474d*/
 
 }
@@ -388,14 +375,14 @@ int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   int v4; // edx
   int i; // esi
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6a48b1*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6a48b1*/
   if ( result >= 0 ) /*0x6a48b8*/
   {
     v4 = *a1; /*0x6a48c0*/
-    aP2 = *(unsigned int *)&aP0->ImageAllocated; /*0x6a48cd*/
+    aP2 = *((unsigned int *)aP0 + 42); /*0x6a48cd*/
     (*(void (**)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
     for ( i = 0; i < aP2; ++i ) /*0x6a48dc*/
-      (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, aP0->Armor[0] + 4 * i, 4, 0); /*0x6a48ef*/
+      (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, aP0->houseTypesCount + 4 * i, 4, 0); /*0x6a48ef*/
     return 0; /*0x6a48f9*/
   }
   return result; /*0x6a48fc*/

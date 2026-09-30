@@ -30,17 +30,17 @@ namespace gamemd {
 int Font::GetGlyphDataForChar(AbstractClass * aP1)
 {
 
-  AbstractClass *v2; // ecx
+  unsigned int *Font_field_04; // ecx
   int result; // eax
   int v4; // edx
 
-  v2 = (AbstractClass *)*((unsigned int *)this + 1); /*0x4346c0*/
+  Font_field_04 = (unsigned int *)this->Font_field_04; /*0x4346c0*/
   result = 0; /*0x4346c3*/
-  if ( v2 ) /*0x4346c7*/
+  if ( Font_field_04 ) /*0x4346c7*/
   {
-    v4 = *(uint16_t *)(v2->nextArrayIndex + 2 * (uint16_t)aP1); /*0x4346da*/
+    v4 = *(uint16_t *)(Font_field_04[6] + 2 * aP1); /*0x4346da*/
     if ( (unsigned short)v4 ) /*0x4346e2*/
-      return v2->referenceCount + (v4 - 1) * v2->abstractFlags; /*0x4346eb*/
+      return Font_field_04[7] + (v4 - 1) * Font_field_04[5]; /*0x4346eb*/
   }
   return result; /*0x4346ee*/
 
@@ -51,329 +51,332 @@ namespace gamemd {
 int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
 {
 
-  int v10; // edi
-  AbstractClass *v11; // ebp
-  int16_t v12; // ax
-  int v13; // ebx
-  ObjectClass *v14; // esi
-  AbstractClass *v15; // edx
-  AbstractClass *v16; // ecx
-  int v17; // eax
-  AbstractClass *v18; // ecx
-  int v19; // edi
-  char *v20; // ebx
-  ObjectClass *v21; // eax
-  ObjectClass *v22; // eax
-  AbstractClass *v23; // ecx
-  int referenceCount; // eax
+  int result; // eax
+  int v11; // edi
+  uint16_t *v12; // ebp
+  int16_t v13; // ax
+  int v14; // ebx
+  int v15; // esi
+  unsigned short *v16; // edx
+  int v17; // ecx
+  AbstractClass * v18;
+  AbstractClass * v19;
+  AbstractClass * v20;
+  char v21; // bl
+  int v22; // eax
+  unsigned char *v23; // eax
+  unsigned int *v24; // ecx
+  int v25; // eax
   uint8_t *GlyphDataForChar; // eax
-  int eax28; // eax
-  AbstractClass *v26; // ecx
-  int v28; // eax
-  AbstractClass *edx41; // edx
-  AbstractClass *v29; // ecx
-  int v31; // ebx
-  char *v32; // edi
-  AbstractClass *ecx43; // ecx
-  ObjectClass *v33; // eax
+  int v27; // eax
+  unsigned short *v28; // ecx
+  AbstractClass * v29;
+  AbstractClass * v30;
+  int v31; // ecx
+  AbstractClass * v32;
+  char v33; // di
+  int v34; // ecx
   int v35; // eax
-  AbstractClass *v36; // ecx
-  int v38; // eax
-  AbstractClass *v39; // edx
-  char *v40; // ebx
-  char *v41; // edi
-  AbstractClass *v42; // ecx
-  AbstractClass *v43; // eax
-  int16_t var30; // [esp+10h] [ebp-30h]
-  AbstractClass *v44; // [esp+14h] [ebp-2Ch] BYREF
-  AbstractClass *v45; // [esp+18h] [ebp-28h]
-  AbstractClass *xLeft; // [esp+1Ch] [ebp-24h]
-  int v48; // [esp+20h] [ebp-20h]
-  AbstractClass *v49; // [esp+24h] [ebp-1Ch]
-  AbstractClass *v50; // [esp+28h] [ebp-18h]
-  int v51; // [esp+2Ch] [ebp-14h]
-  uint8_t v52[8]; // [esp+30h] [ebp-10h] BYREF
-  uint8_t v53[8]; // [esp+38h] [ebp-8h] BYREF
-  int16_t aP5a; // [esp+58h] [ebp+18h]
+  int v36; // eax
+  unsigned short *v37; // ecx
+  AbstractClass * v38;
+  AbstractClass * v39;
+  AbstractClass * v40;
+  char v41; // di
+  int v42; // ecx
+  int v43; // eax
+  uint16_t v44; // [esp-10h] [ebp-50h]
+  uint16_t v45; // [esp-10h] [ebp-50h]
+  uint16_t v46; // [esp-10h] [ebp-50h]
+  int16_t v47; // [esp+10h] [ebp-30h]
+  char v48[4]; // [esp+14h] [ebp-2Ch] BYREF
+  int v49; // [esp+18h] [ebp-28h]
+  AbstractClass * xLeft;
+  int v51; // [esp+20h] [ebp-20h]
+  unsigned short *v52; // [esp+24h] [ebp-1Ch]
+  unsigned short *v53; // [esp+28h] [ebp-18h]
+  int v54; // [esp+2Ch] [ebp-14h]
+  int16_t v55; // [esp+30h] [ebp-10h] BYREF
+  uint8_t v56; // [esp+32h] [ebp-Eh]
+  int16_t v57; // [esp+38h] [ebp-8h] BYREF
+  uint8_t v58; // [esp+3Ah] [ebp-6h]
+  int16_t v59; // [esp+58h] [ebp+18h]
 
-  v10 = 0; /*0x434cdb*/
-  if ( !aP0 ) /*0x434cdf*/
-    return 0; /*0x434cdf*/
-  v11 = aP2; /*0x434ce5*/
-  if ( !aP2 ) /*0x434ceb*/
-    return 0; /*0x43530a*/
-  FontRenderer::InitContext(aP0, (int *)aP1->__pad_0); /*0x434cf8*/
-  Field::Int_Set(aP0, (AbstractClass *)aP1a); /*0x434d04*/
-  v12 = 0; /*0x434d0f*/
-  v13 = 0; /*0x434d11*/
-  v14 = (ObjectClass *)*(uint16_t *)aP0[1].__pad_0; /*0x434d13*/
-  IDA_HIWORD(v15) = IDA_HIWORD(aP2); /*0x434d17*/
-  v16 = 0; /*0x434d19*/
-  v48 = 0; /*0x434d1b*/
-  IDA_LOWORD(v15) = *(unsigned short *)aP2->__pad_0; /*0x434d1f*/
-  v51 = 0; /*0x434d22*/
-  v49 = 0; /*0x434d29*/
-  v45 = 0; /*0x434d2d*/
-  v50 = v15; /*0x434d31*/
-  if ( (unsigned short)v15 ) /*0x434d35*/
+  v11 = (int)((unsigned short *)(0));
+  if ( aP0 && (v12 = aP2) != 0 ) /*0x434ceb*/
   {
+    FontRenderer::InitContext((unsigned int *)aP0, (int *)aP1); /*0x434cf8*/
+    Field::Int_Set((unsigned int *)aP0, aP1a); /*0x434d04*/
+    v13 = 0; /*0x434d0f*/
+    v14 = 0; /*0x434d11*/
+    v15 = *(uint16_t *)(aP0 + 36); /*0x434d13*/
+    HIWORD(v16) = HIWORD(aP2); /*0x434d17*/
+    v17 = 0; /*0x434d19*/
+    v51 = 0; /*0x434d1b*/
+    LOWORD(v16) = *aP2; /*0x434d1f*/
+    v54 = 0; /*0x434d22*/
+    v52 = 0; /*0x434d29*/
+    v49 = 0; /*0x434d2d*/
+    v53 = v16; /*0x434d31*/
+    if ( (unsigned short)v16 ) /*0x434d35*/
+    {
 LABEL_4:
-    switch ( (int16_t)v50 ) /*0x434d59*/
-    {
-      case 9: /*0x434d59*/
-        v10 = *(unsigned int *)&aP0[((unsigned int *)(1].__pad_0))[4] /*0x434ef7*/
-            + v10
-            - (*(unsigned int *)&aP0[((unsigned int *)(1].__pad_0))[4] + v10) % *(unsigned int *)&aP0[1].__pad_0[4];
-        goto LABEL_55; /*0x434ef9*/
-      case 10: /*0x434d59*/
-      case 13: /*0x434d59*/
-        if ( v12 == 13 ) /*0x434d64*/
-          goto LABEL_23; /*0x434d64*/
-        v17 = 0; /*0x434d6e*/
-        if ( (int)aP5 > v10 ) /*0x434d72*/
-        {
-          if ( ((uint8_t)aP7 & 1) != 0 ) /*0x434d7b*/
+      switch ( (int16_t)v53 ) /*0x434d59*/
+      {
+        case 9: /*0x434d59*/
+          v11 = *(unsigned int *)(aP0 + 40) + v11 - (*(unsigned int *)(aP0 + 40) + v11) % *(unsigned int *)(aP0 + 40); /*0x434ef7*/
+          goto LABEL_55; /*0x434ef9*/
+        case 10: /*0x434d59*/
+        case 13: /*0x434d59*/
+          if ( v13 == 13 ) /*0x434d64*/
+            goto LABEL_23; /*0x434d64*/
+          v18 = 0; /*0x434d6e*/
+          if ( aP5 > (gamemd::AbstractClass *)(v11) ) /*0x434d72*/
           {
-            v17 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10] / 2; /*0x434d84*/
+            if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x434d7b*/
+            {
+              v18 = (aP5 - v11) / 2; /*0x434d84*/
+            }
+            else if ( ((unsigned int)(aP7)& 2) != 0 ) /*0x434d8b*/
+            {
+              v18 = (gamemd::AbstractClass *)((int)(aP5 - v11));
+            }
           }
-          else if ( ((uint8_t)aP7 & 2) != 0 ) /*0x434d8b*/
+          xLeft = (int)(aP1a + v18);
+          if ( v12 >= (unsigned short *)(aP2) ) /*0x434da1*/
+            goto LABEL_20; /*0x434da1*/
+          v19 = aP8; /*0x434da7*/
+          v20 = aP8 - v49 - 1; /*0x434db7*/
+          v21 = v49 - aP8 + aP9 + 1; /*0x434dba*/
+          while ( 2 ) /*0x434dc4*/
           {
-            v17 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10]; /*0x434d8f*/
-          }
-        }
-        xLeft = (AbstractClass *)(aP1a + v17); /*0x434d97*/
-        if ( v11 >= aP2 ) /*0x434da1*/
-          goto LABEL_20; /*0x434da1*/
-        v18 = aP8; /*0x434da7*/
-        v19 = (char *)aP8 - (char *)v45 - 1; /*0x434db7*/
-        v20 = &aP9->__pad_0[(char *)v45 - (char *)aP8 + 1]; /*0x434dba*/
-        while ( 2 ) /*0x434dc4*/
-        {
-          ++v20; /*0x434dc4*/
-          --v19; /*0x434dca*/
-          v45 = (AbstractClass *)((char *)v45 + 1); /*0x434dcb*/
-          v21 = v14; /*0x434dd1*/
-          if ( !v18 ) /*0x434dd3*/
-            goto LABEL_18; /*0x434dd3*/
-          if ( (int)v45 >= (int)v18 ) /*0x434ddd*/
-            goto LABEL_73; /*0x434ddd*/
-          if ( v19 < (int)aP9 ) /*0x434de7*/
-          {
-            v22 = (ObjectClass *)Palette::6BitTo16Bit( /*0x434e2e*/
-                                   &v44,
-                                   (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124],
-                                   (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140],
-                                   (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]);
-            *(unsigned short *)v52 = *(unsigned short *)v22->__pad_0; /*0x434e3b*/
-            v52[2] = v22->__pad_0[2]; /*0x434e4c*/
-            Color::Lerp(v52, (ObjectClass *)((unsigned int)v20 * (255 / (int)aP9)), &byte_A80220); /*0x434e59*/
-            v21 = (ObjectClass *)PackRGB565(v52[0], v52[1], v52[2]); /*0x434e7c*/
-          }
+            ++v21; /*0x434dc4*/
+            --v20; /*0x434dca*/
+            ++v49; /*0x434dcb*/
+            v22 = v15; /*0x434dd1*/
+            if ( !v19 ) /*0x434dd3*/
+              goto LABEL_18; /*0x434dd3*/
+            if ( v49 >= (int)(v19) ) /*0x434ddd*/
+              goto LABEL_73; /*0x434ddd*/
+            if ( v20 < (gamemd::AbstractClass *)((int))(aP9) ) /*0x434de7*/
+            {
+              v23 = Palette::SixBitTo16Bit( /*0x434e2e*/
+                      v48,
+                      (uint8_t)((uint16_t)v15 >> g_BitShift_Red) << g_BitShift_Green_0,
+                      (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue,
+                      (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red);
+              v55 = *(unsigned short *)v23; /*0x434e3b*/
+              v56 = v23[2]; /*0x434e4c*/
+              Color::Lerp((uint8_t *)&v55, v21 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x434e59*/
+              v22 = PackRGB565((uint8_t)v55, HIBYTE(v55), v56); /*0x434e7c*/
+            }
 LABEL_18:
-          if ( v21 == (ObjectClass *)-1 ) /*0x434e84*/
-            goto LABEL_73; /*0x434e84*/
-          IDA_LOWORD(v18) = *(unsigned short *)v11->__pad_0; /*0x434e8e*/
-          v11 = (AbstractClass *)((char *)v11 + 2); /*0x434e9e*/
-          xLeft = (AbstractClass *)FontClass::RenderGlyph((int)aP0, v18, xLeft, aP4, (AbstractClass *)v21); /*0x434ea6*/
-          if ( v11 < aP2 ) /*0x434eb0*/
-          {
-            v18 = aP8; /*0x434dc0*/
-            continue; /*0x434dc0*/
+            if ( v22 == -1 ) /*0x434e84*/
+              goto LABEL_73; /*0x434e84*/
+            v44 = *v12++; /*0x434e99*/
+            xLeft = FontClass::RenderGlyph(aP0, v44, xLeft, aP4, v22); /*0x434ea6*/
+            if ( v12 < (unsigned short *)(aP2) ) /*0x434eb0*/
+            {
+              v19 = (gamemd::AbstractClass *)((int)(aP8));
+              continue; /*0x434dc0*/
+            }
+            break;
           }
-          break;
-        }
 LABEL_20:
-        v23 = aP0; /*0x434eb6*/
-        v10 = 0; /*0x434ebe*/
-        v13 = 0; /*0x434ec0*/
-        referenceCount = aP0->referenceCount; /*0x434ec2*/
-        v48 += referenceCount; /*0x434ec7*/
-        if ( aP6 && v48 >= (int)aP6 ) /*0x434ed7*/
-          goto LABEL_57; /*0x434ed7*/
-        aP4 = (AbstractClass *)((char *)aP4 + referenceCount); /*0x434edd*/
+          v24 = (unsigned int *)aP0; /*0x434eb6*/
+          v11 = 0; /*0x434ebe*/
+          v14 = 0; /*0x434ec0*/
+          v25 = *(unsigned int *)(aP0 + 28); /*0x434ec2*/
+          v51 += v25; /*0x434ec7*/
+          if ( aP6 && v51 >= (int)(aP6) ) /*0x434ed7*/
+            goto LABEL_57; /*0x434ed7*/
+          aP4 += v25; /*0x434edd*/
 LABEL_23:
-        v11 = (AbstractClass *)((char *)v11 + 2); /*0x434ee1*/
-        goto LABEL_55; /*0x434ee4*/
-      case 32: /*0x434d59*/
-        v51 = v10; /*0x434f02*/
-        v49 = aP2; /*0x434f06*/
-        goto LABEL_26; /*0x434f06*/
-      default:
+          ++v12; /*0x434ee1*/
+          goto LABEL_55; /*0x434ee4*/
+        case 32: /*0x434d59*/
+          v54 = v11; /*0x434f02*/
+          v52 = aP2; /*0x434f06*/
+          goto LABEL_26; /*0x434f06*/
+        default:
 LABEL_26:
-        GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar(aP0, v50); /*0x434f0a*/
-        if ( !GlyphDataForChar ) /*0x434f1a*/
-        {
-          GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar(aP0, (AbstractClass *)0x3F); /*0x434f22*/
-          if ( !GlyphDataForChar ) /*0x434f29*/
-            goto LABEL_55; /*0x434f29*/
-        }
-        ++v13; /*0x434f37*/
-        eax28 = *GlyphDataForChar + *(unsigned int *)&aP0[((unsigned int *)(1].__pad_0))[8]; /*0x434f3b*/
-        v10 += eax28; /*0x434f41*/
-        if ( !aP5 || v10 <= (int)aP5 ) /*0x434f4d*/
-          goto LABEL_55; /*0x434f4d*/
-        v26 = v49; /*0x434f53*/
-        if ( v49 ) /*0x434f59*/
-        {
-          if ( v13 > 1 ) /*0x434f5e*/
+          GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar((unsigned int *)aP0, (uint16_t)v53); /*0x434f0a*/
+          if ( !GlyphDataForChar ) /*0x434f1a*/
           {
-            v10 = v51; /*0x434f60*/
-            aP2 = v49; /*0x434f64*/
+            GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar((unsigned int *)aP0, 0x3Fu); /*0x434f22*/
+            if ( !GlyphDataForChar ) /*0x434f29*/
+              goto LABEL_55; /*0x434f29*/
           }
-        }
-        else if ( v13 > 1 ) /*0x434f6d*/
-        {
-          v10 -= eax28; /*0x434f6f*/
-          aP2 = (AbstractClass *)((char *)aP2 - 2); /*0x434f78*/
-        }
-        v28 = 0; /*0x434f80*/
-        if ( (int)aP5 > v10 ) /*0x434f84*/
-        {
-          if ( ((uint8_t)aP7 & 1) != 0 ) /*0x434f8d*/
+          ++v14; /*0x434f37*/
+          v27 = *GlyphDataForChar + *(unsigned int *)(aP0 + 44); /*0x434f3b*/
+          v11 += v27; /*0x434f41*/
+          if ( !aP5 || v11 <= (int)(aP5) ) /*0x434f4d*/
+            goto LABEL_55; /*0x434f4d*/
+          v28 = v52; /*0x434f53*/
+          if ( v52 ) /*0x434f59*/
           {
-            v28 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10] / 2; /*0x434f96*/
+            if ( v14 > 1 ) /*0x434f5e*/
+            {
+              v11 = (int)((gamemd::AbstractClass *)(v54));
+              aP2 = (gamemd::AbstractClass *)(v52);
+            }
           }
-          else if ( ((uint8_t)aP7 & 2) != 0 ) /*0x434f9d*/
+          else if ( v14 > 1 ) /*0x434f6d*/
           {
-            v28 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10]; /*0x434fa1*/
+            v11 -= v27; /*0x434f6f*/
+            --aP2; /*0x434f78*/
           }
-        }
-        xLeft = (AbstractClass *)(aP1a + v28); /*0x434fa9*/
-        if ( v11 >= aP2 ) /*0x434fb3*/
-          goto LABEL_50; /*0x434fb3*/
-        edx41 = aP8; /*0x434fb9*/
-        v29 = v45; /*0x434fbd*/
-        v31 = (char *)aP8 - (char *)v45 - 1; /*0x434fcb*/
-        v32 = &aP9->__pad_0[(char *)v45 - (char *)aP8 + 1]; /*0x434fce*/
-        break; /*0x434fd2*/
-    }
-    while ( 1 ) /*0x434fdc*/
-    {
-      ecx43 = (AbstractClass *)&v29-((unsigned int *)(>__pad_0))[1]; /*0x434fdc*/
-      ++v32; /*0x434fdd*/
-      --v31; /*0x434fde*/
-      v45 = ecx43; /*0x434fdf*/
-      v33 = v14; /*0x434fe5*/
-      if ( edx41 ) /*0x434fe7*/
-      {
-        if ( (int)ecx43 >= (int)edx41 ) /*0x434fef*/
-          break; /*0x434fef*/
-        if ( v31 < (int)aP9 ) /*0x434ff9*/
-        {
-          IDA_LOBYTE(var30) = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x435028*/
-          IDA_HIBYTE(var30) = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x435035*/
-          *(unsigned short *)v53 = var30; /*0x43504b*/
-          v53[2] = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x435054*/
-          Color::Lerp(v53, (ObjectClass *)((unsigned int)v32 * (255 / (int)aP9)), &byte_A80220); /*0x435066*/
-          IDA_HIWORD(ecx43) = *(unsigned short *)&stru_89E138.__pad_14B0[6122]; /*0x4350b2*/
-          v33 = (ObjectClass *)((v53[0] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]) /*0x4350ba*/
-                              | (v53[2] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128])
-                              | (v53[1] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]));
-        }
+          v29 = 0; /*0x434f80*/
+          if ( aP5 > (gamemd::AbstractClass *)(v11) ) /*0x434f84*/
+          {
+            if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x434f8d*/
+            {
+              v29 = (aP5 - v11) / 2; /*0x434f96*/
+            }
+            else if ( ((unsigned int)(aP7)& 2) != 0 ) /*0x434f9d*/
+            {
+              v29 = (gamemd::AbstractClass *)((int)(aP5 - v11));
+            }
+          }
+          xLeft = (int)(aP1a + v29);
+          if ( v12 >= (unsigned short *)(aP2) ) /*0x434fb3*/
+            goto LABEL_50; /*0x434fb3*/
+          v30 = aP8; /*0x434fb9*/
+          v31 = v49; /*0x434fbd*/
+          v32 = aP8 - v49 - 1; /*0x434fcb*/
+          v33 = v49 - aP8 + aP9 + 1; /*0x434fce*/
+          break; /*0x434fd2*/
       }
-      if ( v33 == (ObjectClass *)-1 ) /*0x4350bf*/
-        break; /*0x4350bf*/
-      IDA_LOWORD(ecx43) = *(unsigned short *)v11->__pad_0; /*0x4350c9*/
-      v11 = (AbstractClass *)((char *)v11 + 2); /*0x4350d9*/
-      xLeft = (AbstractClass *)FontClass::RenderGlyph((int)aP0, ecx43, xLeft, aP4, (AbstractClass *)v33); /*0x4350e1*/
-      if ( v11 >= aP2 ) /*0x4350eb*/
+      while ( 1 ) /*0x434fdc*/
       {
-        v26 = v49; /*0x4350f1*/
+        v34 = v31 + 1; /*0x434fdc*/
+        ++v33; /*0x434fdd*/
+        --v32; /*0x434fde*/
+        v49 = v34; /*0x434fdf*/
+        v35 = v15; /*0x434fe5*/
+        if ( v30 ) /*0x434fe7*/
+        {
+          if ( v34 >= (int)(v30) ) /*0x434fef*/
+            break; /*0x434fef*/
+          if ( v32 < (gamemd::AbstractClass *)((int))(aP9) ) /*0x434ff9*/
+          {
+            LOBYTE(v47) = (uint8_t)((uint16_t)v15 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435028*/
+            HIBYTE(v47) = (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435035*/
+            v57 = v47; /*0x43504b*/
+            v58 = (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435054*/
+            Color::Lerp((uint8_t *)&v57, v33 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435066*/
+            v35 = ((uint8_t)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4350ba*/
+                | (v58 >> g_BitMask_Red << g_BitShift_Blue)
+                | (HIBYTE(v57) >> g_BitMask_Blue << g_BitMask_Green);
+          }
+        }
+        if ( v35 == -1 ) /*0x4350bf*/
+          break; /*0x4350bf*/
+        v45 = *v12++; /*0x4350d4*/
+        xLeft = FontClass::RenderGlyph(aP0, v45, xLeft, aP4, v35); /*0x4350e1*/
+        if ( v12 >= (unsigned short *)(aP2) ) /*0x4350eb*/
+        {
+          v28 = v52; /*0x4350f1*/
 LABEL_50:
-        if ( aP2 == v26 ) /*0x4350f9*/
-        {
-          v49 = 0; /*0x4350fb*/
-          v11 = (AbstractClass *)((char *)v11 + 2); /*0x435103*/
-        }
-        v23 = aP0; /*0x435106*/
-        v10 = 0; /*0x43510e*/
-        v13 = 0; /*0x435110*/
-        v35 = aP0->referenceCount; /*0x435112*/
-        v48 += v35; /*0x435117*/
-        if ( aP6 && v48 >= (int)aP6 ) /*0x435127*/
-        {
+          if ( aP2 == (gamemd::AbstractClass *)(v28) ) /*0x4350f9*/
+          {
+            v52 = 0; /*0x4350fb*/
+            ++v12; /*0x435103*/
+          }
+          v24 = (unsigned int *)aP0; /*0x435106*/
+          v11 = 0; /*0x43510e*/
+          v14 = 0; /*0x435110*/
+          v36 = *(unsigned int *)(aP0 + 28); /*0x435112*/
+          v51 += v36; /*0x435117*/
+          if ( aP6 && v51 >= (int)(aP6) ) /*0x435127*/
+          {
 LABEL_57:
-          BufferIO::Cleanup(v23, aP1); /*0x43514d*/
-          return 1; /*0x435160*/
-        }
-        aP4 = (AbstractClass *)((char *)aP4 + v35); /*0x435129*/
+            result = BufferIO::Cleanup(v24, aP1); /*0x43514d*/
+            LOBYTE(result) = 1; /*0x43515a*/
+            return result; /*0x435160*/
+          }
+          aP4 += v36; /*0x435129*/
 LABEL_55:
-        v12 = (int16_t)v50; /*0x43512d*/
-        v36 = (AbstractClass *)&aP2-((unsigned int *)(>__pad_0))[2]; /*0x435135*/
-        aP2 = v36; /*0x435138*/
-        IDA_LOWORD(v36) = *(unsigned short *)v36->__pad_0; /*0x43513c*/
-        v50 = v36; /*0x435142*/
-        if ( !(unsigned short)v36 ) /*0x435146*/
-        {
-          v16 = v45; /*0x435163*/
-          goto LABEL_59; /*0x435163*/
+          v13 = (int16_t)v53; /*0x43512d*/
+          v37 = aP2 + 1; /*0x435135*/
+          aP2 = v37; /*0x435138*/
+          LOWORD(v37) = *v37; /*0x43513c*/
+          v53 = v37; /*0x435142*/
+          if ( !(unsigned short)v37 ) /*0x435146*/
+          {
+            v17 = v49; /*0x435163*/
+            goto LABEL_59; /*0x435163*/
+          }
+          goto LABEL_4; /*0x435146*/
         }
-        goto LABEL_4; /*0x435146*/
+        v30 = (gamemd::AbstractClass *)((int)(aP8));
+        v31 = v49; /*0x434fd8*/
       }
-      edx41 = aP8; /*0x434fd4*/
-      v29 = v45; /*0x434fd8*/
     }
+    else
+    {
+LABEL_59:
+      v38 = 0; /*0x435167*/
+      if ( aP5 > (gamemd::AbstractClass *)(v11) ) /*0x43516f*/
+      {
+        if ( ((unsigned int)(aP7)& 1) != 0 ) /*0x435178*/
+        {
+          v38 = (aP5 - v11) / 2; /*0x435181*/
+        }
+        else if ( ((unsigned int)(aP7)& 2) != 0 ) /*0x435188*/
+        {
+          v38 = (gamemd::AbstractClass *)((int)(aP5 - v11));
+        }
+      }
+      xLeft = (int)(aP1a + v38);
+      if ( v12 < (unsigned short *)(aP2) ) /*0x43519e*/
+      {
+        v39 = (gamemd::AbstractClass *)((int)(aP8));
+        v40 = aP8 - v17 - 1; /*0x4351b2*/
+        v41 = v17 - aP8 + aP9 + 1; /*0x4351b5*/
+        while ( 1 ) /*0x4351b9*/
+        {
+          v42 = v17 + 1; /*0x4351b9*/
+          ++v41; /*0x4351ba*/
+          --v40; /*0x4351bb*/
+          v49 = v42; /*0x4351bc*/
+          v43 = v15; /*0x4351c2*/
+          if ( v39 ) /*0x4351c4*/
+          {
+            if ( v42 >= (int)(v39) ) /*0x4351cc*/
+              break; /*0x4351cc*/
+            if ( v40 < (gamemd::AbstractClass *)((int))(aP9) ) /*0x4351d6*/
+            {
+              LOBYTE(v59) = (uint8_t)((uint16_t)v15 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435205*/
+              HIBYTE(v59) = (uint8_t)((uint16_t)v15 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435212*/
+              v57 = v59; /*0x435228*/
+              v58 = (uint8_t)((uint16_t)v15 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435231*/
+              Color::Lerp((uint8_t *)&v57, v41 * (255 / aP9), (uint8_t *)&stru_A80220); /*0x435243*/
+              v43 = ((uint8_t)v57 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x435297*/
+                  | (v58 >> g_BitMask_Red << g_BitShift_Blue)
+                  | (HIBYTE(v57) >> g_BitMask_Blue << g_BitMask_Green);
+            }
+          }
+          if ( v43 == -1 ) /*0x43529c*/
+            break; /*0x43529c*/
+          v46 = *v12++; /*0x4352ad*/
+          xLeft = FontClass::RenderGlyph(aP0, v46, xLeft, aP4, v43); /*0x4352ba*/
+          if ( v12 >= (unsigned short *)(aP2) ) /*0x4352c4*/
+            break; /*0x4352c4*/
+          v17 = v49; /*0x4352c6*/
+          v39 = aP8; /*0x4352ca*/
+        }
+      }
+    }
+LABEL_73:
+    result = BufferIO::Cleanup((unsigned int *)aP0, aP1); /*0x4352ed*/
+    LOBYTE(result) = 1; /*0x4352fe*/
   }
   else
   {
-LABEL_59:
-    v38 = 0; /*0x435167*/
-    if ( (int)aP5 > v10 ) /*0x43516f*/
-    {
-      if ( ((uint8_t)aP7 & 1) != 0 ) /*0x435178*/
-      {
-        v38 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10] / 2; /*0x435181*/
-      }
-      else if ( ((uint8_t)aP7 & 2) != 0 ) /*0x435188*/
-      {
-        v38 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10]; /*0x43518c*/
-      }
-    }
-    xLeft = (AbstractClass *)(aP1a + v38); /*0x435194*/
-    if ( v11 < aP2 ) /*0x43519e*/
-    {
-      v39 = aP8; /*0x4351a4*/
-      v40 = (char *)((char *)aP8 - (char *)v16 - 1); /*0x4351b2*/
-      v41 = &aP9->__pad_0[(char *)v16 - (char *)aP8 + 1]; /*0x4351b5*/
-      while ( 1 ) /*0x4351b9*/
-      {
-        v42 = (AbstractClass *)&v16-((unsigned int *)(>__pad_0))[1]; /*0x4351b9*/
-        ++v41; /*0x4351ba*/
-        --v40; /*0x4351bb*/
-        v45 = v42; /*0x4351bc*/
-        v43 = (AbstractClass *)v14; /*0x4351c2*/
-        if ( v39 ) /*0x4351c4*/
-        {
-          if ( (int)v42 >= (int)v39 ) /*0x4351cc*/
-            break; /*0x4351cc*/
-          if ( (int)v40 < (int)aP9 ) /*0x4351d6*/
-          {
-            IDA_LOBYTE(aP5a) = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x435205*/
-            IDA_HIBYTE(aP5a) = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x435212*/
-            *(unsigned short *)v53 = aP5a; /*0x435228*/
-            v53[2] = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x435231*/
-            Color::Lerp(v53, (ObjectClass *)((unsigned int)v41 * (255 / (int)aP9)), &byte_A80220); /*0x435243*/
-            IDA_HIWORD(v42) = *(unsigned short *)&stru_89E138.__pad_14B0[6122]; /*0x43528f*/
-            v43 = (AbstractClass *)((v53[0] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]) /*0x435297*/
-                                  | (v53[2] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128])
-                                  | (v53[1] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]));
-          }
-        }
-        if ( v43 == (AbstractClass *)-1 ) /*0x43529c*/
-          break; /*0x43529c*/
-        IDA_LOWORD(v42) = *(unsigned short *)v11->__pad_0; /*0x4352a2*/
-        v11 = (AbstractClass *)((char *)v11 + 2); /*0x4352b2*/
-        xLeft = (AbstractClass *)FontClass::RenderGlyph((int)aP0, v42, xLeft, aP4, v43); /*0x4352ba*/
-        if ( v11 >= aP2 ) /*0x4352c4*/
-          break; /*0x4352c4*/
-        v16 = v45; /*0x4352c6*/
-        v39 = aP8; /*0x4352ca*/
-      }
-    }
+    LOBYTE(result) = 0; /*0x43530a*/
   }
-LABEL_73:
-  BufferIO::Cleanup(aP0, aP1); /*0x4352ed*/
-  return 1; /*0x435157*/
+  return result; /*0x435157*/
 
 }
 } // namespace gamemd

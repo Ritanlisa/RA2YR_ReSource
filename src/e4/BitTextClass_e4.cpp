@@ -21,7 +21,7 @@ int BitTextClass::ParseFontData(char * Source)
   unsigned int *Font; // eax
 
   v3 = (tagRECT *)((unsigned int)((struct tagRECT *)((char *)this + 48)));
-  *(unsigned int *)this = &vt_BitFont; /*0x433895*/
+  *(unsigned int *)this = &BitFont::`vftable'; /*0x433895*/
   *((unsigned int *)this + 1) = 0; /*0x43389b*/
   *((unsigned short *)this + 18) = 0x7FFF; /*0x43389e*/
   *((unsigned short *)this + 19) = 13653; /*0x4338a4*/
@@ -41,7 +41,7 @@ int BitTextClass::ParseFontData(char * Source)
   {
     *((unsigned int *)this + 6) = Font[1]; /*0x4338e2*/
     *((unsigned int *)this + 7) = Font[3]; /*0x4338ea*/
-    sub_434700((unsigned int *)this); /*0x4338ed*/
+    sub_434700((ObjectClass *)this); /*0x4338ed*/
   }
   else
   {
@@ -70,17 +70,17 @@ void BitTextClass::LoadFont()
 
   int v2; // eax
 
-  *this = &BitText::`vftable'; /*0x434ad5*/
-  v2 = __2_YAPAXI_Z(68); /*0x434adb*/
+  this->m_FontBitmap = &BitText::`vftable'; /*0x434ad5*/
+  v2 = __2_YAPAXI_Z(0x44u); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/
   {
-    MEMORY[0x87F7E8][29498] = BitTextClass::ParseFontData(v2, aGameFnt); /*0x434af3*/
-    return this; /*0x434af8*/
+    g_FogOfWarState = (int)((Text *)BitTextClass::ParseFontData(v2, aGameFnt));
+    return &this->m_FontBitmap; /*0x434af8*/
   }
   else
   {
-    MEMORY[0x87F7E8][29498] = 0; /*0x434afe*/
-    return this; /*0x434afc*/
+    g_FogOfWarState = 0; /*0x434afe*/
+    return &this->m_FontBitmap; /*0x434afc*/
   }
 
 }

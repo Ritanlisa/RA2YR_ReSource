@@ -13,18 +13,18 @@ namespace gamemd {
 int Matrix3x4::Identity()
 {
 
-  *(unsigned int *)this = 1065353216; /*0x5ae867*/
-  *(this + 1) = 0; /*0x5ae869*/
-  *(this + 2) = 0; /*0x5ae86c*/
-  *(this + 3) = 0; /*0x5ae86f*/
-  *(this + 4) = 0; /*0x5ae872*/
-  *(this + 5) = 1065353216; /*0x5ae875*/
-  *(this + 6) = 0; /*0x5ae878*/
-  *(this + 7) = 0; /*0x5ae87b*/
-  *(this + 8) = 0; /*0x5ae87e*/
-  *(this + 9) = 0; /*0x5ae881*/
-  *(this + 10) = 1065353216; /*0x5ae884*/
-  *(this + 11) = 0; /*0x5ae887*/
+  this-((unsigned int *)(>m_Data))[0] = 1065353216; /*0x5ae867*/
+  this-((unsigned int *)(>m_Data))[1] = 0; /*0x5ae869*/
+  this-((unsigned int *)(>m_Data))[2] = 0; /*0x5ae86c*/
+  this-((unsigned int *)(>m_Data))[3] = 0; /*0x5ae86f*/
+  this-((unsigned int *)(>m_Data))[4] = 0; /*0x5ae872*/
+  this-((unsigned int *)(>m_Data))[5] = 1065353216; /*0x5ae875*/
+  this-((unsigned int *)(>m_Data))[6] = 0; /*0x5ae878*/
+  this-((unsigned int *)(>m_Data))[7] = 0; /*0x5ae87b*/
+  this-((unsigned int *)(>m_Data))[8] = 0; /*0x5ae87e*/
+  this-((unsigned int *)(>m_Data))[9] = 0; /*0x5ae881*/
+  this-((unsigned int *)(>m_Data))[10] = 1065353216; /*0x5ae884*/
+  this-((unsigned int *)(>m_Data))[11] = 0; /*0x5ae887*/
   return 0; /*0x5ae88a*/
 
 }
@@ -34,9 +34,12 @@ namespace gamemd {
 void Matrix3x4::Translate(ParticleSystemClass * aP1)
 {
 
-  *((unsigned int *)this + 3) = *(float *)&aP1 * *this + *((unsigned int *)this + 3); /*0x5ae989*/
-  *((unsigned int *)this + 7) = *(float *)&aP1 * *((unsigned int *)this + 4) + *((unsigned int *)this + 7); /*0x5ae996*/
-  *((unsigned int *)this + 11) = *(float *)&aP1 * *((unsigned int *)this + 8) + *((unsigned int *)this + 11); /*0x5ae9a3*/
+  int result; // eax
+
+  *((float *)this + 3) = (unsigned int)(aP1)* *(float *)this + *((float *)this + 3); /*0x5ae989*/
+  *((float *)this + 7) = (unsigned int)(aP1)* *((float *)this + 4) + *((float *)this + 7); /*0x5ae996*/
+  *((float *)this + 11) = (unsigned int)(aP1)* *((float *)this + 8) + *((float *)this + 11); /*0x5ae9a3*/
+  return result; /*0x5ae9a6*/
 
 }
 } // namespace gamemd
@@ -46,39 +49,38 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
 {
 
   float *v4; // eax
-  BuildingTypeClass *v5; // esi
+  int v5; // esi
   int v6; // eax
   int v8; // [esp+4h] [ebp-1Ch]
   float v9; // [esp+8h] [ebp-18h] BYREF
-  BuildingTypeClass *v10; // [esp+Ch] [ebp-14h]
+  float v10; // [esp+Ch] [ebp-14h]
   int v11; // [esp+10h] [ebp-10h]
   float v12[3]; // [esp+14h] [ebp-Ch] BYREF
-  AbstractClass *aP2a; // [esp+28h] [ebp+8h]
+  int v13; // [esp+28h] [ebp+8h]
 
-  aP2a = *(AbstractClass **)aP2->__pad_0; /*0x6d2372*/
-  if ( (int)aP2a >= *(int *)&g_abs_B077F8 /*0x6d2386*/
-    || (v8 = *(unsigned int *)&aP2->__pad_0[4], v8 >= *(int *)&g_abs_B077F8) )
+  v13 = *aP2; /*0x6d2372*/
+  if ( v13 >= dword_B0CE30 || (v8 = aP2[1], v8 >= dword_B0CE34) ) /*0x6d2386*/
   {
-    *(unsigned int *)aP1->__pad_0 = *(unsigned int *)&g_abs_B077F8; /*0x6d2404*/
-    *(unsigned int *)&aP1->__pad_0[4] = *(unsigned int *)&g_abs_B077F8; /*0x6d240c*/
-    *(unsigned int *)&aP1->__pad_0[8] = *(unsigned int *)&g_abs_B077F8; /*0x6d2415*/
-    return aP1->__pad_0; /*0x6d23f7*/
+    *aP1 = (unsigned int *)(dword_B0CE08);
+    aP1[1] = (unsigned int *)(dword_B0CE0C);
+    aP1[2] = dword_B0CE10; /*0x6d2415*/
+    return aP1; /*0x6d23f7*/
   }
   else
   {
-    v9 = (float)(int)aP2a; /*0x6d2398*/
-    v11 = 0; /*0x6d23a4*/
-    *(float *)&v10 = (float)v8; /*0x6d23ac*/
+    v9 = (unsigned int *)((float)v13);
+    v11 = (unsigned int *)(0);
+    v10 = (float)v8; /*0x6d23ac*/
     v4 = TransformMatrix3x4Point(v12, (unsigned int *)this + 889, &v9); /*0x6d23b0*/
     v9 = *v4; /*0x6d23b7*/
-    v10 = (BuildingTypeClass *)*((unsigned int *)v4 + 1); /*0x6d23c2*/
+    v10 = v4[1]; /*0x6d23c2*/
     v11 = *((unsigned int *)v4 + 2); /*0x6d23c9*/
-    v5 = (BuildingTypeClass *)Math::RoundToInt(v9); /*0x6d23d6*/
-    v6 = Math::RoundToInt(*(float *)&v10); /*0x6d23d8*/
-    *(unsigned int *)aP1->__pad_0 = v5; /*0x6d23e5*/
-    *(unsigned int *)&aP1->__pad_0[4] = v6; /*0x6d23e7*/
-    *(unsigned int *)&aP1->__pad_0[8] = 0; /*0x6d23ec*/
-    return aP1->__pad_0; /*0x6d23ea*/
+    v5 = Math::RoundToInt(v9); /*0x6d23d6*/
+    v6 = Math::RoundToInt(v10); /*0x6d23d8*/
+    *aP1 = v5; /*0x6d23e5*/
+    aP1[1] = v6; /*0x6d23e7*/
+    aP1[2] = 0; /*0x6d23ec*/
+    return aP1; /*0x6d23ea*/
   }
 
 }

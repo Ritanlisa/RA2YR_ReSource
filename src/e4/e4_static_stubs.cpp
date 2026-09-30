@@ -25,8 +25,6 @@ double BitArray::TestBit(...) { return 0; }
 double BufferIO::Cleanup(...) { return 0; }
 double BufferIO::Flush(...) { return 0; }
 double BuildingLoadQueue::Find(...) { return 0; }
-double BuildingLoadQueue::FindBuilding(...) { return 0; }
-double BuildingLoadQueue::FindObject(...) { return 0; }
 double BuildingLoadQueue::GetNext(...) { return 0; }
 double ButtonClass::SetState(...) { return 0; }
 double CDTimerClass::TimeRemaining(...) { return 0; }
@@ -38,10 +36,8 @@ double Checksummer::Add_float(...) { return 0; }
 double Cliff::ProcessTransitions(...) { return 0; }
 double Conditions::CheckResult(...) { return 0; }
 double Conflict::GetOwnerHouse(...) { return 0; }
-double ControlClass::CtorFromData(...) { return 0; }
 double Coord2D::Add(...) { return 0; }
 double Coord2D::Coord2D_field_0x04(...) { return 0; }
-double Coord2D::Sub(...) { return 0; }
 double Coord2D::__pad_0(...) { return 0; }
 double CoordList::GetBounds(...) { return 0; }
 double CountdownTimer::UpdateDisplay(...) { return 0; }
@@ -74,7 +70,6 @@ double FontRenderer::InitContext(...) { return 0; }
 double FrameSnapshot::Init(...) { return 0; }
 double FrameSnapshot::InitMax(...) { return 0; }
 double Function::Method_424CA0(...) { return 0; }
-double GScreenClass::parent_gap(...) { return 0; }
 double GameOptions::SaveLoad(...) { return 0; }
 double GameState::Reset(...) { return 0; }
 double GenericList::Constructor(...) { return 0; }
@@ -86,7 +81,6 @@ double InputManager_ProcessEvents::Vtable(...) { return 0; }
 double Int4::Set(...) { return 0; }
 double IsRandMap::Sed(...) { return 0; }
 double IsRandMap::Sed2(...) { return 0; }
-double KeywordType::FindOrCreate2(...) { return 0; }
 double Lightning::Draw(...) { return 0; }
 double ListClass::Destruct(...) { return 0; }
 double ListClass::ListClass_field_0x10(...) { return 0; }
@@ -95,17 +89,13 @@ double Locomotor::GetSpeed(...) { return 0; }
 double MPCombatTeam::Constructor(...) { return 0; }
 double MPCombatTeam::Constructor2(...) { return 0; }
 double MPCombatTeam::MPTeam(...) { return 0; }
-double MSAnim::GetField(...) { return 0; }
-double MSAnim::SetField(...) { return 0; }
-double MSShapeAnim::Constructor(...) { return 0; }
+double MSChoiceClass::LoadFromINI(...) { return 0; }
 double Matrix::Copy12Float(...) { return 0; }
 double Matrix::Scale(...) { return 0; }
 double Matrix2D::Rotate(...) { return 0; }
 double Matrix3x3::Multiply(...) { return 0; }
-double Matrix3x3::RotateX(...) { return 0; }
 double Matrix3x3::TransformPoint(...) { return 0; }
 double MessageListClass::AddMessage(...) { return 0; }
-double Miles::DriverGet(...) { return 0; }
 double ModemGame::AdvanceTauntCommand(...) { return 0; }
 double MovieContext::Cleanup(...) { return 0; }
 double Multiplay::LogToSYNC_NOMPDEBUG(...) { return 0; }
@@ -114,13 +104,9 @@ double NetworkEventQueueClass::WaitForResponse(...) { return 0; }
 double NetworkID::Assign(...) { return 0; }
 double NetworkID::Compare(...) { return 0; }
 double ObjectClass::CalcTargetFacing(...) { return 0; }
-double ObjectClass::CleanupAudioAndRefs(...) { return 0; }
-double ObjectClass::DistanceTo(...) { return 0; }
 double ObjectClass::FreeResources(...) { return 0; }
-double ObjectClass::GetLandHeight(...) { return 0; }
 double ObjectClass::GetSizeMax(...) { return 0; }
 double ObjectClass::Init(...) { return 0; }
-double ObjectClass::IsCrushable(...) { return 0; }
 double ObjectClass::PreDraw(...) { return 0; }
 double ObjectClass::SetReference(...) { return 0; }
 double ObjectClass::StepCleanup(...) { return 0; }
@@ -135,7 +121,6 @@ double Performance::Profile(...) { return 0; }
 double PhoneEditor::PopulateList(...) { return 0; }
 double PingPongBuffer::GetWriteOffset(...) { return 0; }
 double Pipe::Dtor(...) { return 0; }
-double Pipe::__pad_0(...) { return 0; }
 double PreviewClass::ReadPreview(...) { return 0; }
 double PriorityQueue::Add(...) { return 0; }
 double Property::GetField11(...) { return 0; }
@@ -161,7 +146,6 @@ double SwizzleManager::SaveLoad(...) { return 0; }
 double SyncDelayClass::ProcessNetworkSync(...) { return 0; }
 double TabCameoListClass::AddCameo_ReplaceItAll(...) { return 0; }
 double Targeting::Readd(...) { return 0; }
-double TechnoTypeVector::Constructor(...) { return 0; }
 double Text::DrawRepeated(...) { return 0; }
 double Text::Layout(...) { return 0; }
 double Text::MeasureWidth(...) { return 0; }
@@ -174,9 +158,7 @@ double Tooltip::Enable(...) { return 0; }
 double Tree::Destructor(...) { return 0; }
 double TypeClass::FindByName(...) { return 0; }
 double VQAClass::AdvanceFrame(...) { return 0; }
-double Vector2::NormalizeNonZero(...) { return 0; }
 double Vector3::AddAssign(...) { return 0; }
-double Vector3::Magnitude(...) { return 0; }
 double Vector3::Subtract(...) { return 0; }
 double VectorClassUInt::Constructor(...) { return 0; }
 double Viewport::Clear(...) { return 0; }
@@ -184,7 +166,20 @@ double VoxelPalette::Init(...) { return 0; }
 double VoxelPalette::Reset(...) { return 0; }
 double VoxelSection::GetInfo(...) { return 0; }
 double WDTClass::GetCellType(...) { return 0; }
-double WDTObject::GetSize(...) { return 0; }
 double WinAPI::Wrapper(...) { return 0; }
+double WorldDominationTour::State(...) { return 0; }
 
 } // namespace gamemd
+// GENERATED static-varargs stubs for C2597 no-def methods
+// (fix_member_static_calls.py). INTERIM: return 0 — same
+// fidelity as the tree-era return-0 stubs these replace.
+#include <cstdint>
+#include "e4/e4_globals.hpp"
+#include "e4/e4_protos.h"
+
+namespace gamemd {
+
+double Network::UpdateLatencyDisplay(...) { return 0; }
+
+} // namespace gamemd
+

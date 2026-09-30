@@ -11,23 +11,23 @@ namespace gamemd {
 int ArrayClass::GetAt_Wrap(int a2)
 {
 
-  int v2; // edi
+  void *v2; // edi
   int v3; // eax
-  int v4; // esi
+  void *v4; // esi
 
-  v2 = *((char *)this + 5); /*0x636e62*/
+  v2 = (void *)(this->field_14);
   if ( !v2 ) /*0x636e67*/
     return 0; /*0x636e67*/
   v3 = a2; /*0x636e69*/
-  if ( a2 >= v2 ) /*0x636e6f*/
+  if ( a2 >= (int)v2 ) /*0x636e6f*/
   {
-    v4 = *((char *)this + 37); /*0x636e71*/
-    if ( v4 < 0 ) /*0x636e79*/
+    v4 = (void *)(this->field_94);
+    if ( (int)v4 < 0 ) /*0x636e79*/
       return 0; /*0x636e79*/
-    v3 = v4 + (a2 - v4) % *((char *)this + 36); /*0x636e88*/
+    v3 = (int)v4 + (a2 - (int)v4) % *(unsigned int *)&this-((unsigned int *)(>__pad_18))[120]; /*0x636e88*/
   }
-  if ( v3 >= 0 && v3 < v2 ) /*0x636e90*/
-    return *(unsigned int *)(*((char *)this + 2) + 4 * v3); /*0x636e9a*/
+  if ( v3 >= 0 && v3 < (int)v2 ) /*0x636e90*/
+    return *((unsigned int *)this->field_8 + v3); /*0x636e9a*/
   return 0; /*0x636e95*/
 
 }

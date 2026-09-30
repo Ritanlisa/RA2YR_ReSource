@@ -35,37 +35,37 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   int Index; // eax
   int v7; // edx
   int v8; // eax
-  const char *v9; // [esp-10h] [ebp-54h]
-  unsigned char v10[64]; // [esp+4h] [ebp-40h] BYREF
+  char *v9; // [esp-10h] [ebp-54h]
+  TypeClass v10; // [esp+4h] [ebp-40h] BYREF
 
-  v9 = Buffer; /*0x4c4f09*/
-  *(unsigned int *)this = 0; /*0x4c4f0a*/
-  *((unsigned int *)this + 1) = 0; /*0x4c4f10*/
-  sscanf(v9, MEMORY[0x82085C], &Buffer, v10); /*0x4c4f17*/
-  *this = Buffer; /*0x4c4f27*/
-  ExitCellByName = Factory::FindExitCellByName(v10); /*0x4c4f29*/
+  v9 = (char *)((unsigned int)(Buffer));
+  *(unsigned int *)this->__pad_0 = 0; /*0x4c4f0a*/
+  this->TaskForceClass_field_0x4 = 0; /*0x4c4f10*/
+  sscanf(v9, "%d,%s", &Buffer, &v10); /*0x4c4f17*/
+  *(unsigned int *)this->__pad_0 = Buffer; /*0x4c4f27*/
+  ExitCellByName = Factory::FindExitCellByName((Factory *)&v10); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
-    Index = ((BuildingTypeClass *)(v10))->FindIndex(); /*0x4c4f4c*/
+    Index = ((BuildingTypeClass *)((BuildingTypeClass *)&v10))->FindIndex(); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = (unsigned int *)(TypeClass::FindByName(v10));
+      v8 = (unsigned int *)(TypeClass::FindByName(&v10));
       if ( v8 != -1 ) /*0x4c4f77*/
-        *((unsigned int *)this + 1) = *((unsigned int *)MEMORY[0xA8B21C] + v8); /*0x4c4f82*/
-      return this; /*0x4c4f85*/
+        this->TaskForceClass_field_0x4 = *((unsigned int *)dword_A8B21C + v8); /*0x4c4f82*/
+      return this->__pad_0; /*0x4c4f85*/
     }
     else
     {
-      v7 = *((unsigned int *)g_UnitTypeCount2 + Index); /*0x4c4f5c*/
-      *((unsigned int *)this + 1) = v7; /*0x4c4f61*/
-      return this; /*0x4c4f5f*/
+      v7 = *((unsigned int *)dword_A83CE4 + Index); /*0x4c4f5c*/
+      this->TaskForceClass_field_0x4 = v7; /*0x4c4f61*/
+      return this->__pad_0; /*0x4c4f5f*/
     }
   }
   else
   {
-    v4 = *((unsigned int *)MEMORY[0xA8E34C] + ExitCellByName); /*0x4c4f39*/
-    *((unsigned int *)this + 1) = v4; /*0x4c4f3e*/
-    return this; /*0x4c4f3c*/
+    v4 = *((unsigned int *)dword_A8E34C + ExitCellByName); /*0x4c4f39*/
+    this->TaskForceClass_field_0x4 = v4; /*0x4c4f3e*/
+    return this->__pad_0; /*0x4c4f3c*/
   }
 
 }
@@ -75,40 +75,40 @@ namespace gamemd {
 int TaskForceClass::Construct(ObjectClass * aP1)
 {
 
-  TaskForceClass *v3; // eax
-  ObjectTypeClass *v4; // eax
+  int v3; // eax
+  ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
   int v5; // ecx
 
-  AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e7e8a*/
-  *((unsigned int *)this + 38) = -1; /*0x6e7e8f*/
-  *((unsigned int *)this + 39) = 0; /*0x6e7e99*/
-  *((unsigned int *)this + 40) = 0; /*0x6e7ea3*/
-  *this = &vt_TaskForceClass; /*0x6e7ead*/
-  *((unsigned int *)this + 1) = &vt_TaskForceClass; /*0x6e7eb3*/
-  *((unsigned int *)this + 2) = &vt_TaskForceClass; /*0x6e7eba*/
-  *((unsigned int *)this + 3) = &vt_TaskForceClass; /*0x6e7ec1*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[22060] < *(int *)&HouseClass_Player.__pad_5568[22052] /*0x6e7f05*/
-    || (HouseClass_Player.__pad_5568[22057] || !*(unsigned int *)&HouseClass_Player.__pad_5568[22052])
-    && *(int *)&HouseClass_Player.__pad_5568[22064] > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22044] + 8))(
-         &HouseClass_Player.__pad_5568[22044],
-         *(unsigned int *)&HouseClass_Player.__pad_5568[22052] + *(unsigned int *)&HouseClass_Player.__pad_5568[22064],
+  AbstractTypeClass::Constructor((int *)this->__pad_0, aP1); /*0x6e7e8a*/
+  this->TaskForceClass_field_0x98 = (AbstractClass *)-1; /*0x6e7e8f*/
+  this-((unsigned int *)(>TaskForceClass_field_0x9C))[0] = 0; /*0x6e7e99*/
+  *(unsigned int *)this->__pad_A0 = 0; /*0x6e7ea3*/
+  *(unsigned int *)this->__pad_0 = &TaskForceClass::`vftable'; /*0x6e7ead*/
+  this->TaskForceClass_field_0x4 = (int)&TaskForceClass::`vftable'; /*0x6e7eb3*/
+  *(unsigned int *)this->__pad_8 = &TaskForceClass::`vftable'; /*0x6e7eba*/
+  *(unsigned int *)&this->__pad_8[4] = &TaskForceClass::`vftable'; /*0x6e7ec1*/
+  if ( dword_A8E8E0 < dword_A8E8D8 /*0x6e7f05*/
+    || (byte_A8E8DD || !dword_A8E8D8)
+    && dword_A8E8E4 > 0
+    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A8E8D0 + 8))(
+         &dword_A8E8D0,
+         dword_A8E8D8 + dword_A8E8E4,
          0) )
   {
-    v3 = (TaskForceClass *)(*(unsigned int *)&HouseClass_Player.__pad_5568[22060])++; /*0x6e7f12*/
-    *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[22048] + 4 * (unsigned int)v3) = this; /*0x6e7f21*/
+    v3 = (unsigned int)(dword_A8E8E0++);
+    *((unsigned int *)dword_A8E8D4 + v3) = this; /*0x6e7f21*/
   }
-  v4 = (ObjectTypeClass *)((unsigned int *)this + 41); /*0x6e7f28*/
+  p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->TaskForceClass_field_0xA4);
   v5 = 6; /*0x6e7f2a*/
   do /*0x6e7f38*/
   {
-    *(unsigned int *)v4->__pad_0 = 0; /*0x6e7f2f*/
-    *(unsigned int *)&v4-((unsigned int *)(>__pad_0))[4] = 0; /*0x6e7f31*/
-    v4 = (ObjectTypeClass *)((char *)v4 + 8); /*0x6e7f34*/
+    *p_TaskForceClass_field_0xA4 = 0; /*0x6e7f2f*/
+    p_TaskForceClass_field_0xA4[1] = 0; /*0x6e7f31*/
+    p_TaskForceClass_field_0xA4 += 2; /*0x6e7f34*/
     --v5; /*0x6e7f37*/
   }
   while ( v5 ); /*0x6e7f38*/
-  return this; /*0x6e7f3c*/
+  return this->__pad_0; /*0x6e7f3c*/
 
 }
 }
@@ -117,68 +117,57 @@ namespace gamemd {
 AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
 {
 
-  CCINIClass *result; // eax
-  CCINIClass *v5; // esi
-  CCINIClass *v6; // ebx
+  int result; // eax
+  int v5; // esi
+  int v6; // ebx
   uint8_t *StringByIndex; // eax
   int v8; // esi
-  unsigned int *v9; // eax
-  TaskForceClass *v10; // esi
+  TaskForceClass *v9; // eax
+  unsigned int *v10; // esi
   int v11; // eax
-  CCINIClass *v12; // [esp+10h] [ebp-1Ch]
+  int v12; // [esp+10h] [ebp-1Ch]
   char Source[24]; // [esp+14h] [ebp-18h] BYREF
 
-  result = (CCINIClass *)((INIClass *)(a1))->GetKeyCount((INIClass *)&stru_830620.__pad_579C[53244]); /*0x6e8230*/
+  result = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces));
   v5 = result; /*0x6e8235*/
   v6 = 0; /*0x6e8237*/
   v12 = result; /*0x6e823b*/
-  if ( (int)result > 0 ) /*0x6e823f*/
+  if ( result > 0 ) /*0x6e823f*/
   {
     while ( 1 ) /*0x6e824d*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex( /*0x6e824d*/
-                                           a1,
-                                           (CCINIClass *)&stru_830620.__pad_579C[53244],
-                                           v6);
-      result = (CCINIClass *)INIClass::GetString( /*0x6e8266*/
-                               (uint8_t ***)a1,
-                               (INIClass *)&stru_830620.__pad_579C[53244],
-                               StringByIndex,
-                               (INIClass *)&g_abs_87F8E4,
-                               (INIClass *)Source,
-                               24);
-      if ( (int)result > 0 ) /*0x6e826d*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, v6); /*0x6e824d*/
+      result = INIClass::GetString(a1, g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Source, 24); /*0x6e8266*/
+      if ( result > 0 ) /*0x6e826d*/
         break; /*0x6e826d*/
 LABEL_13:
-      v6 = (CCINIClass *)((char *)v6 + 1); /*0x6e8327*/
-      if ( (int)v6 >= (int)v5 ) /*0x6e832a*/
+      if ( ++v6 >= v5 ) /*0x6e832a*/
         return result; /*0x6e832a*/
     }
-    if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e8293*/
+    if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e8293*/
       goto LABEL_11; /*0x6e8293*/
     v8 = 0; /*0x6e82a4*/
-    if ( *(int *)&g_abs_A8D63C > 0 ) /*0x6e82a8*/
+    if ( dword_A8E8E0 > 0 ) /*0x6e82a8*/
     {
-      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * v8) + 36), Source) ) /*0x6e82c6*/
+      while ( _strcmpi((char *)(*((unsigned int *)dword_A8E8D4 + v8) + 36), Source) ) /*0x6e82c6*/
       {
-        if ( ++v8 >= *(int *)&g_abs_A8D63C ) /*0x6e82d0*/
+        if ( ++v8 >= dword_A8E8E0 ) /*0x6e82d0*/
           goto LABEL_8; /*0x6e82d0*/
       }
-      v10 = *(TaskForceClass **)(*(unsigned int *)&g_abs_A8D63C + 4 * v8); /*0x6e82f9*/
+      v10 = (unsigned int *)*((unsigned int *)dword_A8E8D4 + v8); /*0x6e82f9*/
       goto LABEL_12; /*0x6e82fc*/
     }
-LABEL_8:
-    v9 = (unsigned int *)RA2_OPNEW(0xD4u); /*0x6e82d7*/
+LABEL_8: v9 = (unsigned int *)((TaskForceClass *)__2_YAPAXI_Z(0xD4u));
     if ( v9 ) /*0x6e82e1*/
-      v10 = (TaskForceClass *)TaskForceClass::Construct(v9, Source); /*0x6e82ef*/
+      v10 = TaskForceClass::Construct(v9, Source); /*0x6e82ef*/
     else
 LABEL_11:
       v10 = 0; /*0x6e82fe*/
 LABEL_12:
     v11 = sub_412610(Source); /*0x6e8300*/
-    SwizzleManagerClass::Here_I_Am((int)&g_abs_B077F8, v11, (int)v10); /*0x6e8310*/
-    result = (CCINIClass *)(*(int (**)(TaskForceClass *, char *))(*(unsigned int *)v10->__pad_0 + 100))(v10, a1); /*0x6e831a*/
-    *(unsigned int *)v10->__pad_A0 = a2; /*0x6e831d*/
+    SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, v11, (int)v10); /*0x6e8310*/
+    result = (*(int (**)(unsigned int *, INIClass *))(*v10 + 100))(v10, a1); /*0x6e831a*/
+    v10[40] = a2; /*0x6e831d*/
     v5 = v12; /*0x6e8323*/
     goto LABEL_13; /*0x6e8323*/
   }
@@ -192,28 +181,28 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
 {
 
   int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
+  TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &TaskForceClass::`vftable'; /*0x6e87f6*/
-  *(Block + 1) = &TaskForceClass::`vftable'; /*0x6e87fc*/
-  *(Block + 2) = &TaskForceClass::`vftable'; /*0x6e8803*/
-  *(Block + 3) = &vt_TaskForceClass; /*0x6e880a*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6e8811*/
+  *(unsigned int *)Block->__pad_0 = &TaskForceClass::`vftable'; /*0x6e87f6*/
+  Block->TaskForceClass_field_0x4 = (int)&TaskForceClass::`vftable'; /*0x6e87fc*/
+  *(unsigned int *)Block->__pad_8 = &TaskForceClass::`vftable'; /*0x6e8803*/
+  *(unsigned int *)&Block->__pad_8[4] = &TaskForceClass::`vftable'; /*0x6e880a*/
+  AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x6e8811*/
   v5 = Block; /*0x6e8826*/
-  v3 = (*(int (**)(int *, void ***))(MEMORY[0xA8E8D0] + 16))(&MEMORY[0xA8E8D0], &v5); /*0x6e882a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8E8E0] && v3 < --MEMORY[0xA8E8E0] ) /*0x6e8845*/
+  v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5); /*0x6e882a*/
+  if ( v3 != -1 && v3 < dword_A8E8E0 && v3 < --dword_A8E8E0 ) /*0x6e8845*/
   {
     do /*0x6e885d*/
     {
       ++v3; /*0x6e884d*/
-      *((unsigned int *)MEMORY[0xA8E8D4] + v3 - 1) = *((unsigned int *)MEMORY[0xA8E8D4] + v3); /*0x6e8851*/
+      *((unsigned int *)dword_A8E8D4 + v3 - 1) = *((unsigned int *)dword_A8E8D4 + v3); /*0x6e8851*/
     }
-    while ( v3 < MEMORY[0xA8E8E0] ); /*0x6e885d*/
+    while ( v3 < dword_A8E8E0 ); /*0x6e885d*/
   }
-  AbstractTypeClass::Dtor(Block); /*0x6e8861*/
+  AbstractTypeClass::Dtor((AbstractTypeClass *)Block); /*0x6e8861*/
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
     __3_YAXPAX_Z(Block); /*0x6e886e*/
-  return (TaskForceClass *)Block; /*0x6e8878*/
+  return (void **)Block; /*0x6e8878*/
 
 }
 }
@@ -222,8 +211,8 @@ namespace gamemd {
 int TaskForceClass::Check()
 {
 
-  sprintf((char *const)&stru_89E138.field_5668, (ObjectClass *)&stru_82083C.CampaignScore_field_0x20, (INIClass *)*this); /*0x4c4fa4*/
-  return (ObjectClass *)&stru_89E138.field_5668; /*0x4c4fb1*/
+  sprintf(byte_8A37A0, "%d,%s", *(unsigned int *)this->__pad_0, (const char *)(this->TaskForceClass_field_0x4 + 36)); /*0x4c4fa4*/
+  return byte_8A37A0; /*0x4c4fb1*/
 
 }
 } // namespace gamemd
@@ -233,46 +222,44 @@ namespace gamemd {
 char TaskForceClass::GetUnitCount(unsigned char *** aP1)
 {
 
-  INIClass *v3; // edi
+  int v3; // edi
   unsigned int *v4; // eax
-  INIClass *v5; // ecx
-  INIClass *v6; // eax
-  int v8; // [esp+8h] [ebp-A8h] BYREF
-  char Buffer[32]; // [esp+10h] [ebp-A0h] BYREF
-  INIClass Destination[2]; // [esp+30h] [ebp-80h] BYREF
+  int v5; // ecx
+  int v6; // eax
+  TaskForceClass v8; // [esp+8h] [ebp-A8h] BYREF
 
-  INIClass::ResetSection(aP1); /*0x6e8433*/
-  if ( !AbstractTypeClass::LoadFromINI(this, (AbstractTypeClass *)aP1) ) /*0x6e843b*/
+  INIClass::ResetSection((INIClass *)aP1); /*0x6e8433*/
+  if ( !(uint8_t)AbstractTypeClass::LoadFromINI((AbstractTypeClass *)this, aP1) ) /*0x6e843b*/
     return 0; /*0x6e84f7*/
   v3 = 0; /*0x6e844a*/
-  *((unsigned int *)this + 39) = 0; /*0x6e844f*/
+  this-((unsigned int *)(>TaskForceClass_field_0x9C))[0] = 0; /*0x6e844f*/
   do /*0x6e84cb*/
   {
-    sprintf(Buffer, g_abs_817F6C, v3); /*0x6e8460*/
-    if ( (int)INIClass::GetString( /*0x6e8486*/
-                aP1,
-                (INIClass *)((char *)this + 36),
-                (uint8_t *)Buffer,
-                (INIClass *)&g_abs_87F8E4,
-                Destination,
-                128) > 0 )
+    sprintf(v8.__pad_8, "%d", v3); /*0x6e8460*/
+    if ( INIClass::GetString( /*0x6e8486*/
+           (INIClass *)aP1,
+           (uint8_t *)&this->TaskForceClass_field_0x24,
+           (uint8_t *)v8.__pad_8,
+           &g_INI_DefaultBuffer,
+           v8.__pad_28,
+           128) > 0 )
     {
-      v4 = TaskForceClass::ParseUnitCountAndType(&v8, Destination[0].__pad_0); /*0x6e8491*/
-      v5 = *(INIClass **)((char *)this + 156); /*0x6e8496*/
-      *(unsigned int *)((char *)this + 8 * (unsigned int)v5 + 164) = *v4; /*0x6e849e*/
-      *(unsigned int *)((char *)this + 8 * (unsigned int)v5 + 168) = v4[1]; /*0x6e84a8*/
-      v6 = *(INIClass **)((char *)this + 156); /*0x6e84af*/
-      if ( *(unsigned int *)((char *)this + 8 * (unsigned int)v6 + 168) ) /*0x6e84b5*/
-        *((unsigned int *)this + 39) = &v6-((unsigned int *)(>__pad_0))[1]; /*0x6e84c1*/
+      v4 = TaskForceClass::ParseUnitCountAndType(&v8, v8.__pad_28); /*0x6e8491*/
+      v5 = this->TaskForceClass_field_0x9C[0]; /*0x6e8496*/
+      *(unsigned int *)&this->__pad_A0[8 * v5 + 4] = *v4; /*0x6e849e*/
+      *((unsigned int *)this + 2 * v5 + 42) = v4[1]; /*0x6e84a8*/
+      v6 = this->TaskForceClass_field_0x9C[0]; /*0x6e84af*/
+      if ( *((unsigned int *)this + 2 * v6 + 42) ) /*0x6e84b5*/
+        this->TaskForceClass_field_0x9C[0] = v6 + 1; /*0x6e84c1*/
     }
-    v3 = (INIClass *)((char *)v3 + 1); /*0x6e84c7*/
+    ++v3; /*0x6e84c7*/
   }
-  while ( (int)v3 < 6 ); /*0x6e84cb*/
-  *((unsigned int *)this + 38) = INIClass::ReadInt_Overwrite( /*0x6e84e2*/
-                              (int)aP1,
-                              (uint8_t *)((char *)this + 36),
-                              (CCINIClass *)&stru_830620.__pad_579C[53256],
-                              *(INIClass **)((char *)this + 152));
+  while ( v3 < 6 ); /*0x6e84cb*/
+  this->TaskForceClass_field_0x98 = (AbstractClass *)INIClass::ReadInt_Overwrite( /*0x6e84e2*/
+                                                       (bool *)aP1,
+                                                       (uint8_t *)&this->TaskForceClass_field_0x24,
+                                                       (uint8_t *)g_INI_Key_Group,
+                                                       (int)this->TaskForceClass_field_0x98);
   return 1; /*0x6e84e9*/
 
 }
@@ -284,31 +271,36 @@ char TaskForceClass::GetUnitType(char * a2)
 {
 
   int v3; // esi
-  unsigned int *v4; // ebx
+  ObjectTypeClass **p_TaskForceClass_field_0xA4; // ebx
   char *v5; // eax
   char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
 
-  if ( !AbstractTypeClass::WriteINI((char *)this, a2) ) /*0x6e851c*/
+  if ( !AbstractTypeClass::WriteINI((AbstractTypeClass *)this, a2) ) /*0x6e851c*/
     return 0; /*0x6e85a5*/
   v3 = 0; /*0x6e8527*/
-  v4 = (unsigned int *)((char *)this + 164); /*0x6e8529*/
+  p_TaskForceClass_field_0xA4 = &this->TaskForceClass_field_0xA4; /*0x6e8529*/
   do /*0x6e857d*/
   {
-    sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6e853a*/
-    if ( v3 >= *((unsigned int *)this + 39) ) /*0x6e854a*/
+    sprintf(Buffer, "%d", v3); /*0x6e853a*/
+    if ( v3 >= this->TaskForceClass_field_0x9C[0] ) /*0x6e854a*/
     {
-      INIClass::ClearSection((int)a2, (char *)this + 36, (uint8_t *)Buffer); /*0x6e8571*/
+      INIClass::ClearSection((int *)a2, (int)&this->TaskForceClass_field_0x24, (uint8_t *)Buffer); /*0x6e8571*/
     }
     else
     {
-      v5 = (char *)(TaskForceClass::Check(v4));
-      INIClass::SetString(a2, (uint8_t *)((char *)this + 36), Buffer, v5); /*0x6e855f*/
+      v5 = TaskForceClass::Check((TaskForceClass *)p_TaskForceClass_field_0xA4); /*0x6e854e*/
+      INIClass::SetString(a2, (uint8_t *)&this->TaskForceClass_field_0x24, Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
-    v4 += 2; /*0x6e8577*/
+    p_TaskForceClass_field_0xA4 += 2; /*0x6e8577*/
   }
   while ( v3 < 6 ); /*0x6e857d*/
-  INIClass::SetInt(a2, (uint8_t *)((char *)this + 36), MEMORY[0x842DC4], *((unsigned int *)this + 38), 0); /*0x6e8593*/
+  INIClass::SetInt( /*0x6e8593*/
+    a2,
+    (uint8_t *)&this->TaskForceClass_field_0x24,
+    g_INI_Key_Group,
+    (int)this->TaskForceClass_field_0x98,
+    0);
   return 1; /*0x6e859a*/
 
 }
@@ -321,7 +313,7 @@ int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6e868f*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x6e868f*/
   if ( result >= 0 ) /*0x6e8696*/
     return 0; /*0x6e8698*/
   return result; /*0x6e869a*/
@@ -335,26 +327,26 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
 {
 
   int result; // eax
-  MouseClass *v3; // esi
+  int *v3; // esi
   int v4; // edi
 
-  result = ((AbstractClass *)((AbstractClass *)aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x6e86ab*/
+  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x6e86ab*/
   if ( result >= 0 ) /*0x6e86b2*/
   {
     if ( aP0 ) /*0x6e86b6*/
     {
-      AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1); /*0x6e86bf*/
-      *(unsigned int *)aP0->__pad_0 = &vt_TaskForceClass; /*0x6e86c4*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_TaskForceClass; /*0x6e86ca*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_TaskForceClass; /*0x6e86d1*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_TaskForceClass; /*0x6e86d8*/
+      AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e86bf*/
+      *(unsigned int *)aP0->__pad_0 = &TaskForceClass::`vftable'; /*0x6e86c4*/
+      aP0->TaskForceClass_field_0x4 = (int)&TaskForceClass::`vftable'; /*0x6e86ca*/
+      *(unsigned int *)aP0->__pad_8 = &TaskForceClass::`vftable'; /*0x6e86d1*/
+      *(unsigned int *)&aP0->__pad_8[4] = &TaskForceClass::`vftable'; /*0x6e86d8*/
     }
-    v3 = (MouseClass *)&aP0[1].uniqueId; /*0x6e86e0*/
+    v3 = (int *)(aP0 + 1); /*0x6e86e0*/
     v4 = 6; /*0x6e86e6*/
     do /*0x6e86fa*/
     {
-      ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], v3); /*0x6e86f1*/
-      v3 = (MouseClass *)((char *)v3 + 8); /*0x6e86f6*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v3); /*0x6e86f1*/
+      v3 += 2; /*0x6e86f6*/
       --v4; /*0x6e86f9*/
     }
     while ( v4 ); /*0x6e86fa*/
@@ -375,7 +367,7 @@ int TaskForceClass::ddtor(int a1, unsigned int * a2)
   *a2 = 1641952286; /*0x6e8726*/
   a2[1] = 298977140; /*0x6e872e*/
   a2[2] = 1610655148; /*0x6e8737*/
-  a2[3] = -1252326136; /*0x6e8740*/
+  a2[3] = unk_7E977C; /*0x6e8740*/
   return 0; /*0x6e871d*/
 
 }
@@ -386,9 +378,9 @@ namespace gamemd {
 int TaskForceClass::LoadTask(int * a2)
 {
 
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6e8759*/
-  Power::TimerProcess(*((unsigned int *)this + 38)); /*0x6e8767*/
-  return Power::TimerProcess(*((unsigned int *)this + 39)); /*0x6e877a*/
+  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6e8759*/
+  Power::TimerProcess((int)this->TaskForceClass_field_0x98); /*0x6e8767*/
+  return Power::TimerProcess(this->TaskForceClass_field_0x9C[0]); /*0x6e877a*/
 
 }
 } // namespace gamemd

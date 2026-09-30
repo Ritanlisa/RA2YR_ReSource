@@ -6,28 +6,29 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/FootClass_e4.hpp"
 
 // 0x4D0440
 namespace gamemd {
 int ObjectVector::Construct( IUnknown * aP1, IUnknown * aP2)
 {
 
-  *((unsigned int *)this + 1) = 0; /*0x4d044b*/
-  *((unsigned int *)this + 2) = aP1; /*0x4d044e*/
-  *((unsigned char *)this + 12) = 1; /*0x4d0451*/
-  *((unsigned char *)this + 13) = 0; /*0x4d0455*/
-  *this = &vt_VectorClass_ObjectClass; /*0x4d0458*/
+  this->ObjectVector_field_0x04 = (unsigned int)(0);
+  this->ObjectVector_field_0x08 = aP1; /*0x4d044e*/
+  LOBYTE(this->ObjectVector_field_0x0C) = 1; /*0x4d0451*/
+  BYTE1(this->ObjectVector_field_0x0C) = 0; /*0x4d0455*/
+  *(unsigned int *)this->__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0458*/
   if ( aP1 ) /*0x4d045e*/
   {
     if ( aP2 ) /*0x4d0466*/
     {
-      *((unsigned int *)this + 1) = aP2; /*0x4d0468*/
-      return this; /*0x4d046e*/
+      this->ObjectVector_field_0x04 = (unsigned int)(aP2);
+      return this->__pad_0; /*0x4d046e*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x4d047d*/
-    *((unsigned char *)this + 13) = 1; /*0x4d0480*/
+    this->ObjectVector_field_0x04 = __2_YAPAXI_Z(4 * aP1); /*0x4d047d*/
+    BYTE1(this->ObjectVector_field_0x0C) = 1; /*0x4d0480*/
   }
-  return (int)(this);
+  return this->__pad_0; /*0x4d046d*/
 
 }
 } // namespace gamemd

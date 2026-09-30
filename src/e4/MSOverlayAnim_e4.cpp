@@ -22,18 +22,18 @@ MSShapeAnim * MSOverlayAnim::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 7)));
-  *Block = (unsigned int)(&vt_MSShapeAnim);
+  v3 = (void *)*((unsigned int *)Block + 7); /*0x5ceb83*/
+  *(unsigned int *)Block->__pad_0 = &MSShapeAnim::`vftable'; /*0x5ceb86*/
   if ( v3 && *((unsigned char *)Block + 60) ) /*0x5ceb90*/
   {
     __3_YAXPAX_Z(v3); /*0x5ceb98*/
-    *(Block + 7) = 0; /*0x5ceba0*/
+    *((unsigned int *)Block + 7) = 0; /*0x5ceba0*/
     *((unsigned char *)Block + 60) = 0; /*0x5ceba7*/
   }
-  *Block = (unsigned int)(&vt_MSAnim);
+  *(unsigned int *)Block->__pad_0 = &MSAnim::`vftable'; /*0x5cebaf*/
   if ( (a2 & 1) != 0 ) /*0x5cebb7*/
     __3_YAXPAX_Z(Block); /*0x5cebba*/
-  return (MSShapeAnim *)Block; /*0x5cebc4*/
+  return Block->__pad_0; /*0x5cebc4*/
 
 }
 } // namespace gamemd

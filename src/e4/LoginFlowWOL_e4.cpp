@@ -19,6 +19,7 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
 
 // 0x786EF0
 namespace gamemd {

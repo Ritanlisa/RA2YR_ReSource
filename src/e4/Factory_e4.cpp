@@ -31,27 +31,36 @@ namespace gamemd {
 int Factory::GetLinkedIndex(DynamicVector * aP1)
 {
 
-  char result; // al
-  int v3; // edx
-  int v4; // eax
-  char **v5; // esi
+  int result; // eax
+  void *v3; // edx
+  char **v4; // esi
   char **i; // ecx
 
-  if ( aP1 == (DynamicVector *)-1 ) /*0x663d68*/
-    return -1; /*0x663d6a*/
-  v3 = *((char *)this + 4); /*0x663d70*/
-  v4 = 0; /*0x663d73*/
-  if ( v3 <= 0 ) /*0x663d79*/
-    return -1; /*0x663d79*/
-  v5 = (char **)*((char *)this + 1); /*0x663d7b*/
-  for ( i = v5; aP1 != (DynamicVector *)**i; ++i ) /*0x663d7e*/
+  if ( aP1 == -1 ) /*0x663d68*/
   {
-    if ( ++v4 >= v3 ) /*0x663d8f*/
-      return -1; /*0x663d96*/
+    LOBYTE(result) = -1; /*0x663d6a*/
   }
-  result = v5[v4][40]; /*0x663d9c*/
-  if ( !result ) /*0x663da1*/
-    return -1; /*0x663da3*/
+  else
+  {
+    v3 = this->field_10; /*0x663d70*/
+    result = 0; /*0x663d73*/
+    if ( (int)v3 <= 0 ) /*0x663d79*/
+      goto LABEL_9; /*0x663d79*/
+    v4 = (char **)this->field_4; /*0x663d7b*/
+    for ( i = v4; aP1 != **i; ++i ) /*0x663d7e*/
+    {
+      if ( ++result >= (int)v3 ) /*0x663d8f*/
+      {
+        LOBYTE(result) = -1; /*0x663d93*/
+        return result; /*0x663d96*/
+      }
+    }
+    result = (int)v4[result]; /*0x663d99*/
+    LOBYTE(result) = *(unsigned char *)(result + 40); /*0x663d9c*/
+    if ( !(unsigned char)result ) /*0x663da1*/
+LABEL_9:
+      LOBYTE(result) = -1; /*0x663da3*/
+  }
   return result; /*0x663d6c*/
 
 }
@@ -391,16 +400,16 @@ int Factory::FindExitCellByName()
 
   int v2; // esi
 
-  if ( !_strcmpi(this, &stru_817460.sectionHead[1]) ) /*0x523c9a*/
+  if ( !_strcmpi(this->__pad_0, g_Str__none_) ) /*0x523c9a*/
     return -1; /*0x523c9a*/
-  if ( !_strcmpi(this, g_Str_none) ) /*0x523cac*/
+  if ( !_strcmpi(this->__pad_0, g_Str_none) ) /*0x523cac*/
     return -1; /*0x523cac*/
   v2 = 0; /*0x523cbd*/
-  if ( *(int *)&HouseClass_Player.__pad_5568[20644] <= 0 ) /*0x523cc1*/
+  if ( dword_A8E358 <= 0 ) /*0x523cc1*/
     return -1; /*0x523ce6*/
-  while ( _strcmpi((const void *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[20632] + 4 * v2) + 36), this) ) /*0x523cda*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E34C + v2) + 36), this->__pad_0) ) /*0x523cda*/
   {
-    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20644] ) /*0x523ce4*/
+    if ( ++v2 >= dword_A8E358 ) /*0x523ce4*/
       return -1; /*0x523ce4*/
   }
   return v2; /*0x523ce6*/

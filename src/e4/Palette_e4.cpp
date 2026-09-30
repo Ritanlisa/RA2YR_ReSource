@@ -24,10 +24,10 @@ namespace gamemd {
 unsigned char * Palette::Palette_6BitTo16Bit(char a2, char a3, char a4)
 {
 
-  *this = a2; /*0x4355ba*/
-  *((unsigned char *)this + 1) = a3; /*0x4355c0*/
-  *((unsigned char *)this + 2) = a4; /*0x4355c3*/
-  return this; /*0x4355c6*/
+  this->m_Colors[0] = a2; /*0x4355ba*/
+  this->m_Colors[1] = a3; /*0x4355c0*/
+  this->m_Colors[2] = a4; /*0x4355c3*/
+  return this->m_Colors; /*0x4355c6*/
 
 }
 }
@@ -287,15 +287,15 @@ int Palette::CalcColorDistance(unsigned char * a2)
   int v3; // edx
   int v4; // eax
 
-  v2 = *this - *a2; /*0x661360*/
+  v2 = LOBYTE(this->m_Colors[0]) - *a2; /*0x661360*/
   if ( v2 < 0 ) /*0x661362*/
-    v2 = *a2 - *this; /*0x661364*/
-  v3 = *((unsigned char *)this + 1) - a2[1]; /*0x661370*/
+    v2 = *a2 - LOBYTE(this->m_Colors[0]); /*0x661364*/
+  v3 = BYTE1(this->m_Colors[0]) - a2[1]; /*0x661370*/
   if ( v3 < 0 ) /*0x661372*/
-    v3 = a2[1] - *((unsigned char *)this + 1); /*0x661374*/
-  v4 = *((unsigned char *)this + 2) - a2[2]; /*0x661382*/
+    v3 = a2[1] - BYTE1(this->m_Colors[0]); /*0x661374*/
+  v4 = BYTE2(this->m_Colors[0]) - a2[2]; /*0x661382*/
   if ( v4 < 0 ) /*0x661384*/
-    v4 = a2[2] - *((unsigned char *)this + 2); /*0x661386*/
+    v4 = a2[2] - BYTE2(this->m_Colors[0]); /*0x661386*/
   return 3 * v4 + 2 * (v2 + 2 * v3); /*0x66138e*/
 
 }
@@ -306,7 +306,7 @@ int Palette::FindClosestColor(int a2)
   int v2; // ebx
   int v3; // esi
   int v5; // eax
-  char *v7; // [esp-4h] [ebp-18h]
+  uint8_t *v7; // [esp-4h] [ebp-18h]
   int v8; // [esp+10h] [ebp-4h]
 
   v2 = 0; /*0x626208*/
@@ -314,9 +314,9 @@ int Palette::FindClosestColor(int a2)
   v3 = -1; /*0x62620f*/
   do /*0x626237*/
   {
-    v7 = this; /*0x626218*/
+    v7 = (uint8_t *)this; /*0x626218*/
     this += 3; /*0x626219*/
-    v5 = Palette::CalcColorDistance(v7); /*0x62621c*/
+    v5 = Palette::CalcColorDistance(a2, v7); /*0x62621c*/
     if ( v3 == -1 || v5 < v3 ) /*0x626228*/
     {
       v3 = v5; /*0x62622a*/
@@ -333,22 +333,21 @@ unsigned char * Palette::ConvertIndices(int a2)
 {
 
   int v3; // ebx
-  int v4; // eax
+  unsigned short *v4; // eax
   unsigned short *v5; // esi
-  unsigned short *v6; // edi
+  int16_t *v6; // edi
 
-  *this = 0; /*0x632be9*/
+  LOBYTE(this->m_Colors[0]) = 0; /*0x632be9*/
   v3 = Hash_Check_5C61E0(); /*0x632bf1*/
   v4 = Hash_Check(); /*0x632bf3*/
   if ( v3 <= 0 ) /*0x632bfa*/
     return this; /*0x632c31*/
-  v5 = (unsigned short *)v4; /*0x632c02*/
-  v6 = (unsigned char *)this + 2; /*0x632c04*/
+  v5 = v4; /*0x632c02*/
+  v6 = (int16_t *)this->m_Colors + 1; /*0x632c04*/
   do /*0x632c23*/
   {
-    IDA_LOWORD(v4) = *v5; /*0x632c07*/
-    v4 = ShiftBigIntAndScan(v4, 64); /*0x632c14*/
-    *v6 = v4; /*0x632c19*/
+    LOWORD(v4) = *v5; /*0x632c07*/
+    *v6 = ShiftBigIntAndScan(&(unsigned int *)((char *)&stru_A8EB00 + 1), a2, (int)v4, 64); /*0x632c19*/
     ++v5; /*0x632c1c*/
     ++v6; /*0x632c1f*/
     --v3; /*0x632c22*/
@@ -361,16 +360,16 @@ unsigned char * Palette::ConvertIndices(int a2)
 int Palette::LoadFile(char * Source)
 {
 
-  if ( g_abs_B0FBA0 ) /*0x72b82b*/
+  if ( dword_B0FBA0 ) /*0x72b82b*/
   {
-    (**(void (***)(int, int))g_abs_B0FBA0)(g_abs_B0FBA0, 1); /*0x72b831*/
-    g_abs_B0FBA0 = 0; /*0x72b833*/
+    (**(void (***)(int, int))dword_B0FBA0)(dword_B0FBA0, 1); /*0x72b831*/
+    dword_B0FBA0 = 0; /*0x72b833*/
   }
-  if ( g_abs_B0FB9C ) /*0x72b844*/
+  if ( dword_B0FB9C ) /*0x72b844*/
   {
-    RA2_OPDEL(g_abs_B0FB9C); /*0x72b847*/
-    g_abs_B0FB9C = 0; /*0x72b84f*/
+    __3_YAXPAX_Z(dword_B0FB9C); /*0x72b847*/
+    dword_B0FB9C = 0; /*0x72b84f*/
   }
-  return LoadPaletteSimple(Source, &g_abs_B0FB9C, &g_abs_B0FBA0); /*0x72b86a*/
+  return LoadPaletteSimple(Source, &dword_B0FB9C, &dword_B0FBA0); /*0x72b86a*/
 
 }

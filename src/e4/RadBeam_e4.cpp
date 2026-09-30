@@ -11,28 +11,28 @@ namespace gamemd {
 void * RadBeam::Create()
 {
 
-  unsigned int *v2; // eax
+  RadBeam *v2; // eax
   double *inited; // edi
   int v4; // eax
 
-  v2 = (unsigned int *)__2_YAPAXI_Z(0xC8u); /*0x65911a*/
+  v2 = (RadBeam *)__2_YAPAXI_Z(0xC8u); /*0x65911a*/
   if ( v2 ) /*0x659124*/
-    inited = (double *)RadBeam::InitState(v2, this); /*0x65912e*/
+    inited = (double *)RadBeam::InitState(v2, (int)this); /*0x65912e*/
   else
     inited = 0; /*0x659132*/
-  if ( MEMORY[0xB04A70] < MEMORY[0xB04A68] /*0x65916a*/
-    || (MEMORY[0xB04A6D] || !MEMORY[0xB04A68])
-    && unk_B04A74 > 0
-    && ((uint8_t (*)(DynamicVector **, int, unsigned int))MEMORY[0xB04A60]->field_8)(
-         &MEMORY[0xB04A60],
-         MEMORY[0xB04A68] + unk_B04A74,
+  if ( dword_B04A70 < dword_B04A68 /*0x65916a*/
+    || (byte_B04A6D || !dword_B04A68)
+    && dword_B04A74 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(RadBeam_Array + 8))(
+         &RadBeam_Array,
+         dword_B04A68 + dword_B04A74,
          0) )
   {
-    v4 = MEMORY[0xB04A70]++; /*0x659177*/
-    *(unsigned int *)&MEMORY[0xB04A64]->__pad_0[4 * v4] = inited; /*0x659186*/
+    v4 = (unsigned int)(dword_B04A70++);
+    *((unsigned int *)dword_B04A64 + v4) = inited; /*0x659186*/
   }
-  inited[3] = (double)(this != (gamemd::RadBeam *)((rc_ptr_base *))1 ? 20 : 10);
-  return inited; /*0x6591a1*/
+  inited[3] = (double)(this != (RadBeam *)1 ? 20 : 10);
+  return (void *)((int)inited);
 
 }
 } // namespace ra2
@@ -42,36 +42,36 @@ namespace gamemd {
 unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
 {
 
-  *((unsigned int *)this + 6) = 0; /*0x6593fe*/
-  *(unsigned int *)this = 0; /*0x659401*/
-  *((unsigned int *)this + 1) = 0; /*0x659403*/
-  *((unsigned char *)this + 8) = 0; /*0x659406*/
-  *((unsigned char *)this + 9) = 1; /*0x659409*/
-  *((unsigned int *)this + 3) = 0; /*0x65940c*/
-  *((unsigned int *)this + 4) = aP1; /*0x65940f*/
-  *((unsigned int *)this + 7) = 0; /*0x659412*/
-  *((unsigned char *)this + 32) = 0; /*0x659415*/
-  *((unsigned char *)this + 33) = 0; /*0x659418*/
-  *((unsigned char *)this + 34) = 0; /*0x65941b*/
-  *((unsigned int *)this + 9) = 0; /*0x65941e*/
-  *((unsigned int *)this + 10) = 0; /*0x659421*/
-  *((unsigned int *)this + 11) = 0; /*0x659424*/
-  *((unsigned int *)this + 12) = 0; /*0x659427*/
-  *((unsigned int *)this + 13) = 0; /*0x65942a*/
-  *((unsigned int *)this + 14) = 0; /*0x65942d*/
-  *((unsigned int *)this + 16) = 0; /*0x659430*/
-  *((unsigned int *)this + 18) = 0; /*0x659433*/
-  *((unsigned int *)this + 15) = 0; /*0x659436*/
-  *((unsigned int *)this + 17) = 0; /*0x659439*/
-  *((unsigned int *)this + 19) = 0; /*0x65943c*/
-  *((unsigned int *)this + 20) = 0; /*0x65943f*/
-  *((unsigned int *)this + 21) = 1; /*0x659442*/
-  *((unsigned char *)this + 88) = 0; /*0x659445*/
-  *((unsigned int *)this + 31) = 0; /*0x659448*/
-  *((unsigned char *)this + 192) = 0; /*0x65944b*/
-  *((unsigned char *)this + 193) = 0; /*0x659451*/
-  *((unsigned char *)this + 194) = 0; /*0x659457*/
-  return this; /*0x65945d*/
+  this->? = 0; /*0x6593fe*/
+  this->AbstractClass = 0; /*0x659401*/
+  this->? = 0; /*0x659403*/
+  LOBYTE(this->?) = 0; /*0x659406*/
+  BYTE1(this->?) = 1; /*0x659409*/
+  this->? = 0; /*0x65940c*/
+  this->? = aP1; /*0x65940f*/
+  this->? = 0; /*0x659412*/
+  LOBYTE(this->?) = 0; /*0x659415*/
+  BYTE1(this->?) = 0; /*0x659418*/
+  BYTE2(this->?) = 0; /*0x65941b*/
+  this-((unsigned int *)(>range))[0] = 0; /*0x65941e*/
+  this-((unsigned int *)(>range))[1] = 0; /*0x659421*/
+  this-((unsigned int *)(>data))[0] = 0; /*0x659424*/
+  this-((unsigned int *)(>data))[1] = 0; /*0x659427*/
+  this-((unsigned int *)(>data))[2] = 0; /*0x65942a*/
+  this-((unsigned int *)(>data))[3] = 0; /*0x65942d*/
+  this-((unsigned int *)(>data))[5] = 0; /*0x659430*/
+  this-((unsigned int *)(>data))[7] = 0; /*0x659433*/
+  this-((unsigned int *)(>data))[4] = 0; /*0x659436*/
+  this-((unsigned int *)(>data))[6] = 0; /*0x659439*/
+  this-((unsigned int *)(>data))[8] = 0; /*0x65943c*/
+  this-((unsigned int *)(>data))[9] = 0; /*0x65943f*/
+  this-((unsigned int *)(>data))[10] = 1; /*0x659442*/
+  LOBYTE(this->data[11]) = 0; /*0x659445*/
+  this-((unsigned int *)(>data))[20] = 0; /*0x659448*/
+  LOBYTE(this->data[37]) = 0; /*0x65944b*/
+  BYTE1(this-((unsigned int *)(>data))[37]) = 0; /*0x659451*/
+  BYTE2(this-((unsigned int *)(>data))[37]) = 0; /*0x659457*/
+  return &this->AbstractClass; /*0x65945d*/
 
 }
 } // namespace ra2

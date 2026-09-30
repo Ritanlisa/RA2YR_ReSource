@@ -12,27 +12,42 @@ namespace gamemd {
 int Input::OffsetToDirection()
 {
 
-  int v1; // edi
-  int v2; // esi
-  double v3; // st7
+  double v1; // st7
+  int v2; // edi
+  int Input_field_00; // esi
   int v4; // eax
+  int result; // eax
+  double v6; // [esp+0h] [ebp-18h]
+  int v7; // [esp+10h] [ebp-8h]
+  int v8; // [esp+14h] [ebp-4h]
 
-  v1 = (uint8_t)*(this + 1); /*0x4810aa*/
-  v2 = (uint8_t)*this; /*0x4810b0*/
-  v3 = Math::Sqrt((double)(v2 - 128) * (double)(v2 - 128) + (double)(v1 - 128) * (double)(v1 - 128)); /*0x4810e0*/
-  if ( (int)Math::RoundToInt(v3) >= 60 ) /*0x4810f0*/
+  v2 = (uint8_t)*((unsigned int *)this + 1); /*0x4810aa*/
+  Input_field_00 = (uint8_t)this->Input_field_00; /*0x4810b0*/
+  v8 = v2 - 128; /*0x4810bf*/
+  v7 = Input_field_00 - 128; /*0x4810c3*/
+  __asm /*0x4810c7*/
   {
-    v4 = v2 > 128; /*0x481104*/
-    if ( v1 > 128 ) /*0x48110f*/
-      IDA_LOBYTE(v4) = v4 | 2; /*0x481111*/
-    if ( v4 ) /*0x481115*/
-      IDA_LOBYTE(v4) = v4 + 1; /*0x48111e*/
+    fild [esp+18h+var_4]
+    fild [esp+18h+var_8]
+    fld st
+    fmul st, st(1)
+    fld st(2)
+    fmul st, st(3)
+    faddp st(1), st
+    fstp [esp+18h+var_18]; double
+    fstp st
+    fstp st
   }
-  else
-  {
-    IDA_LOBYTE(v4) = 0; /*0x4810f3*/
-  }
-  return v4; /*0x4810f2*/
+  Math::Sqrt(v6); /*0x4810e0*/
+  LOWORD(v4) = Math::RoundToInt(v1); /*0x4810e8*/
+  if ( v4 < 60 ) /*0x4810f0*/
+    return 0; /*0x4810f3*/
+  result = Input_field_00 > 128; /*0x481104*/
+  if ( v2 > 128 ) /*0x48110f*/
+    LOBYTE(result) = result | 2; /*0x481111*/
+  if ( result ) /*0x481115*/
+    ++result; /*0x48111e*/
+  return result; /*0x4810f2*/
 
 }
 } // namespace gamemd

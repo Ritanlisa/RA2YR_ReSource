@@ -33,7 +33,7 @@ namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
 
-  *this = &vt_CampaignScoreClass; /*0x46d350*/
+  this->m_0 = (int)&CampaignScoreClass::`vftable'; /*0x46d350*/
 
 }
 } // namespace gamemd
@@ -1107,7 +1107,7 @@ namespace gamemd {
 char E4Recv_46D490::sub_46D490()
 {
 
-  return *((unsigned char *)&g_abs_89E000 + (unsigned int)this); /*0x46d496*/
+  return *((unsigned char *)&g_GameModeOptionState + (unsigned int)this); /*0x46d496*/
 
 }
 } // namespace gamemd

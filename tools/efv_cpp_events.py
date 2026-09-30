@@ -607,12 +607,16 @@ def make_cpp_leaf(class_name, locals_set, M, signals, this_alias=None):
         # a bare `*ALIAS = vtable` observes only the RHS global read.
         recv_req_n = bool(this_alias)
         if 'this' in text or (this_alias and this_alias in text):
+            # G41.20: the wrapped form `*(CAST *)(this + N)` (cache-verbatim
+            # remat output) parenthesizes the receiver after the cast —
+            # allow one `(` between the cast and the receiver, and one extra
+            # `)` in the offset closure.
             for am in re.finditer(
                     r'\*\s*(?:\(\s*)?(?:(?:\(\s*)?(unsigned\s+char|_BYTE|'
                     r'unsigned\s+short|_WORD|unsigned\s+int|_DWORD|'
                     r'unsigned\s+long\s+long|_QWORD|unsigned|char|int|long)'
-                    r'\s*\*\s*\)?)?\s*' + recv_alt +
-                    (r'(?:\s*\+\s*(\d+)\s*\))?' if not recv_req_n
+                    r'\s*\*\s*\)\s*\(?\s*)?\(?\s*' + recv_alt +
+                    (r'(?:\s*\+\s*(\d+)\s*\)\s*\)?)?' if not recv_req_n
                      else r'\s*\+\s*(\d+)\s*\)'), text):
                 tname = am.group(1) or 'unsigned'
                 stride = 8 if ('long long' in tname or '_QWORD' in tname) else \

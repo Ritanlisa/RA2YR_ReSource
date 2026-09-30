@@ -133,33 +133,35 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
 
   int result; // eax
-  unsigned int *v5; // eax
-  int v6; // esi
-  char *ModuleInternalVersion; // eax
-  int v8; // eax
-  unsigned char lParam[256]; // [esp+Ch] [ebp-100h] BYREF
+  unsigned int *WindowLongA; // eax
+  HWND v6; // esi
+  int v7; // eax
+  const wchar_t *v8; // eax
+  HWND DlgItem; // eax
+  int v10; // [esp-4h] [ebp-110h]
+  wchar_t lParam[128]; // [esp+Ch] [ebp-100h] BYREF
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x531f88*/
+  result = BaseDialogProc(hWnd, a3, a4); /*0x531f88*/
   if ( !result ) /*0x531f8f*/
   {
-    v5 = (unsigned int *)((int (*)(int, int))GetWindowLongA)(hWnd, 8); /*0x531f98*/
+    WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531f98*/
     switch ( a2 ) /*0x531fa1*/
     {
       case 15: /*0x531fa1*/
-        v8 = ((int (*)(int, int))GetDlgItem)(hWnd, 1818); /*0x5320db*/
-        ((void (*)(int, int, unsigned int, unsigned int))SendMessageA)(v8, 1264, 0, 0); /*0x5320eb*/
+        DlgItem = GetDlgItem(hWnd, 1818); /*0x5320db*/
+        SendMessageA(DlgItem, 0x4F0u, 0, 0); /*0x5320eb*/
         break;
       case 273: /*0x531fa1*/
         if ( (uint16_t)a3 > 0x683u ) /*0x532033*/
         {
           if ( (uint16_t)a3 == 1668 ) /*0x5320a6*/
           {
-            *v5 = 2; /*0x5320c2*/
+            *WindowLongA = 2; /*0x5320c2*/
             return 0; /*0x5320d2*/
           }
           if ( (uint16_t)a3 == 1670 ) /*0x5320ab*/
           {
-            *v5 = 4; /*0x5320ae*/
+            *WindowLongA = 4; /*0x5320ae*/
             return 0; /*0x5320be*/
           }
         }
@@ -168,27 +170,27 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
           switch ( (uint16_t)a3 ) /*0x532035*/
           {
             case 0x683u: /*0x532035*/
-              *v5 = 1; /*0x53208d*/
+              *WindowLongA = 1; /*0x53208d*/
               return 0; /*0x53209d*/
             case 0x3EEu: /*0x532035*/
-              *v5 = 6; /*0x532079*/
+              *WindowLongA = 6; /*0x532079*/
               return 0; /*0x532089*/
             case 0x55Cu: /*0x532035*/
-              *v5 = 5; /*0x532065*/
+              *WindowLongA = 5; /*0x532065*/
               return 0; /*0x532075*/
             case 0x578u: /*0x532035*/
-              *v5 = 3; /*0x532051*/
+              *WindowLongA = 3; /*0x532051*/
               return 0; /*0x532061*/
           }
         }
         break;
       case 1175: /*0x531fa1*/
-        v6 = ((int (*)(int, int))GetDlgItem)(hWnd, 1821); /*0x531fcc*/
-        ModuleInternalVersion = GetModuleInternalVersion((int)&g_abs_87F7E8[539966]); /*0x531fce*/
-        CharToWideString(ModuleInternalVersion); /*0x531fd5*/
-        GetStringCSF((void *)aGuiVersion, 0, g_Str_File_Init_CPP, 5975); /*0x531fec*/
-        swprintf((void *const)lParam, &off_826960); /*0x531ffc*/
-        ((void (*)(int, int, unsigned int, unsigned char *))SendMessageA)(v6, 1202, 0, lParam); /*0x532011*/
+        v6 = GetDlgItem(hWnd, 1821); /*0x531fcc*/
+        v7 = GetModuleInternalVersion(&dword_A8ECE0); /*0x531fce*/
+        v10 = CharToWideString(v7); /*0x531fda*/
+        v8 = (const wchar_t *)GetStringCSF(aGuiVersion, (int)g_Str_File_Init_CPP, 5975); /*0x531fec*/
+        swprintf(lParam, (const size_t)&off_826960, v8, v10); /*0x531ffc*/
+        SendMessageA(v6, 0x4B2u, 0, (LPARAM)lParam); /*0x532011*/
         return 0; /*0x532022*/
     }
     return 0; /*0x5320f1*/

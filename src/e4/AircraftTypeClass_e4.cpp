@@ -35,12 +35,12 @@
 AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
 {
 
-  AircraftTypeClass *v3; // eax
+  int v3; // eax
   bool v4; // zf
   int v5; // ecx
-  CCINIClass *v6; // edx
+  unsigned int *v6; // edx
 
-  TechnoTypeClass::ReadINI((char *)this, aP1->__pad_0, 4); /*0x41c8bb*/
+  TechnoTypeClass::ReadINI((char *)this, aP1, 4); /*0x41c8bb*/
   *((unsigned int *)this + 894) = -1; /*0x41c8c6*/
   *((unsigned char *)this + 3580) = 0; /*0x41c8d0*/
   *((unsigned char *)this + 3592) = 0; /*0x41c8d6*/
@@ -50,40 +50,40 @@ AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
   *((unsigned char *)this + 3596) = 0; /*0x41c8ee*/
   *((unsigned char *)this + 3597) = 0; /*0x41c8f4*/
   *((unsigned char *)this + 3598) = 0; /*0x41c8fa*/
-  *(unsigned int *)this = &vt_AircraftTypeClass; /*0x41c900*/
-  *((unsigned int *)this + 1) = &vt_AircraftTypeClass; /*0x41c906*/
-  *((unsigned int *)this + 2) = &vt_AircraftTypeClass; /*0x41c90c*/
-  *((unsigned int *)this + 3) = &vt_AircraftTypeClass; /*0x41c913*/
+  *(unsigned int *)this = &AircraftTypeClass::`vftable'; /*0x41c900*/
+  *((unsigned int *)this + 1) = &AircraftTypeClass::`vftable'; /*0x41c906*/
+  *((unsigned int *)this + 2) = &AircraftTypeClass::`vftable'; /*0x41c90c*/
+  *((unsigned int *)this + 3) = &AircraftTypeClass::`vftable'; /*0x41c913*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x41c91a*/
-  v3 = g_abs_A8B228; /*0x41c91f*/
-  if ( (int)g_abs_A8B228 < g_abs_A8B220 /*0x41c95d*/
-    || (g_abs_A8B225 || !g_abs_A8B220)
-    && g_abs_A8B22C > 0
-    && (v4 = ((uint8_t (*)(DynamicVector **, int, unsigned int))g_abs_A8B218->field_8)(
-               &g_abs_A8B218,
-               g_abs_A8B220 + g_abs_A8B22C,
+  v3 = dword_A8B228; /*0x41c91f*/
+  if ( dword_A8B228 < dword_A8B220 /*0x41c95d*/
+    || (byte_A8B225 || !dword_A8B220)
+    && dword_A8B22C > 0
+    && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A8B218 + 8))(
+               &dword_A8B218,
+               dword_A8B220 + dword_A8B22C,
                0) == 0,
-        v3 = g_abs_A8B228,
+        v3 = dword_A8B228,
         !v4) )
   {
-    g_abs_A8B228 = (AircraftTypeClass *)&v3->vtable0[1]; /*0x41c962*/
-    *(unsigned int *)&g_abs_A8B21C->__pad_0[4 * (unsigned int)v3] = this; /*0x41c96c*/
-    v3 = g_abs_A8B228; /*0x41c96f*/
+    dword_A8B228 = v3 + 1; /*0x41c962*/
+    *((unsigned int *)dword_A8B21C + v3) = this; /*0x41c96c*/
+    v3 = dword_A8B228; /*0x41c96f*/
   }
   v5 = 0; /*0x41c974*/
-  if ( (int)v3 <= 0 ) /*0x41c978*/
+  if ( v3 <= 0 ) /*0x41c978*/
   {
 LABEL_11:
     v5 = -1; /*0x41c98c*/
   }
   else
   {
-    v6 = g_abs_A8B21C; /*0x41c97a*/
-    while ( *(unsigned int *)v6->__pad_0 != this ) /*0x41c982*/
+    v6 = dword_A8B21C; /*0x41c97a*/
+    while ( *v6 != this ) /*0x41c982*/
     {
       ++v5; /*0x41c984*/
-      v6 = (CCINIClass *)((char *)v6 + 4); /*0x41c985*/
-      if ( v5 >= (int)v3 ) /*0x41c98a*/
+      ++v6; /*0x41c985*/
+      if ( v5 >= v3 ) /*0x41c98a*/
         goto LABEL_11; /*0x41c98a*/
     }
   }
@@ -188,39 +188,40 @@ AircraftTypeClass * AircraftTypeClass::ddtor(void ** Block, char a2)
 {
 
   int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
+  AircraftTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &vt_AircraftTypeClass; /*0x41cfe6*/
-  *(Block + 1) = &vt_AircraftTypeClass; /*0x41cfec*/
-  *(Block + 2) = &vt_AircraftTypeClass; /*0x41cff3*/
-  *(Block + 3) = &vt_AircraftTypeClass; /*0x41cffa*/
-  AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x41d001*/
+  *(unsigned int *)Block->TechnoTypeClass = &AircraftTypeClass::`vftable'; /*0x41cfe6*/
+  *(unsigned int *)&Block->TechnoTypeClass[4] = &AircraftTypeClass::`vftable'; /*0x41cfec*/
+  *(unsigned int *)&Block->TechnoTypeClass[8] = &AircraftTypeClass::`vftable'; /*0x41cff3*/
+  *(unsigned int *)&Block->TechnoTypeClass[12] = &AircraftTypeClass::`vftable'; /*0x41cffa*/
+  AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x41d001*/
   v5 = Block; /*0x41d016*/
-  v3 = (*(int (**)(int *, void ***))(g_abs_A8B218 + 16))(&g_abs_A8B218, &v5); /*0x41d01a*/
-  if ( v3 != -1 && v3 < g_abs_A8B228 && v3 < --g_abs_A8B228 ) /*0x41d035*/
+  v3 = (*(int (**)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
+  if ( v3 != -1 && v3 < dword_A8B228 && v3 < --dword_A8B228 ) /*0x41d035*/
   {
     do /*0x41d04d*/
     {
       ++v3; /*0x41d03d*/
-      *((unsigned int *)g_abs_A8B21C + v3 - 1) = *((unsigned int *)g_abs_A8B21C + v3); /*0x41d041*/
+      *((unsigned int *)dword_A8B21C + v3 - 1) = *((unsigned int *)dword_A8B21C + v3); /*0x41d041*/
     }
-    while ( v3 < g_abs_A8B228 ); /*0x41d04d*/
+    while ( v3 < dword_A8B228 ); /*0x41d04d*/
   }
   TechnoTypeClass::DTOR((int)Block); /*0x41d051*/
-  if ( (Block & 1) != 0 ) /*0x41d05b*/
-    OperatorDelete(Block); /*0x41d05e*/
-  return (AircraftTypeClass *)Block; /*0x41d068*/
+  if ( (a2 & 1) != 0 ) /*0x41d05b*/
+    __3_YAXPAX_Z(Block); /*0x41d05e*/
+  return (void **)Block; /*0x41d068*/
 
 }
 // 0x41CB20
 AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
 {
 
-  int v3; // eax
+  int v2; // edi
+  int v4; // eax
 
-  v3 = RA2_OPNEW(0x6D8u); /*0x41cb28*/
-  if ( v3 ) /*0x41cb32*/
-    return (AircraftClass *)AircraftClass::Construct(v3, this, ppv); /*0x41cb3c*/
+  v4 = __2_YAPAXI_Z(0x6D8u); /*0x41cb28*/
+  if ( v4 ) /*0x41cb32*/
+    return (AircraftClass *)AircraftClass::Construct(v4, v2, (int)this, ppv); /*0x41cb3c*/
   else
     return 0; /*0x41cb45*/
 
@@ -236,14 +237,14 @@ char AircraftTypeClass::StubReturnFalse()
 int * AircraftTypeClass::CreateAircraft(int a1)
 {
 
-  if ( (MEMORY[0x889F38] & 1) == 0 ) /*0x41cb7b*/
+  if ( (byte_889F38 & 1) == 0 ) /*0x41cb7b*/
   {
-    MEMORY[0x889F38] |= 1u; /*0x41cb96*/
-    MEMORY[0x889F20] = 0; /*0x41cb9c*/
-    MEMORY[0x889F24] = 2147450879; /*0x41cbb4*/
+    byte_889F38 |= 1u; /*0x41cb96*/
+    dword_889F20 = 0; /*0x41cb9c*/
+    dword_889F24 = 2147450879; /*0x41cbb4*/
     atexit(nullsub_85); /*0x41cbba*/
   }
-  return &MEMORY[0x889F20]; /*0x41cbc8*/
+  return &dword_889F20; /*0x41cbc8*/
 
 }
 // 0x41CBE0
@@ -263,17 +264,17 @@ int AircraftTypeClass::PowerDrainUpdate(int * a2)
   int v6; // eax
   int v7; // ecx
 
-  v3 = BuildingTypeClass::ProcessPower(this, a2); /*0x41cdb9*/
-  IDA_LOBYTE(v3) = *((unsigned char *)this + 3592); /*0x41cdbe*/
-  Power::FlagProcess(a2, v3); /*0x41cdc7*/
-  IDA_LOBYTE(v4) = *((unsigned char *)this + 3593); /*0x41cdcc*/
-  Power::FlagProcess(a2, v4); /*0x41cdd5*/
-  IDA_LOBYTE(v5) = *((unsigned char *)this + 3594); /*0x41cdda*/
-  v6 = Power::FlagProcess(a2, v5); /*0x41cde3*/
-  IDA_LOBYTE(v6) = *((unsigned char *)this + 3597); /*0x41cde8*/
-  Power::FlagProcess(a2, v6); /*0x41cdf1*/
-  IDA_LOBYTE(v7) = *((unsigned char *)this + 3598); /*0x41cdf6*/
-  Power::FlagProcess(a2, v7); /*0x41cdff*/
+  v3 = BuildingTypeClass::ProcessPower((int)this, a2); /*0x41cdb9*/
+  LOBYTE(v3) = *((unsigned char *)this + 3592); /*0x41cdbe*/
+  Power::FlagProcess((Power *)a2, v3); /*0x41cdc7*/
+  LOBYTE(v4) = *((unsigned char *)this + 3593); /*0x41cdcc*/
+  Power::FlagProcess((Power *)a2, v4); /*0x41cdd5*/
+  LOBYTE(v5) = *((unsigned char *)this + 3594); /*0x41cdda*/
+  v6 = Power::FlagProcess((Power *)a2, v5); /*0x41cde3*/
+  LOBYTE(v6) = *((unsigned char *)this + 3597); /*0x41cde8*/
+  Power::FlagProcess((Power *)a2, v6); /*0x41cdf1*/
+  LOBYTE(v7) = *((unsigned char *)this + 3598); /*0x41cdf6*/
+  Power::FlagProcess((Power *)a2, v7); /*0x41cdff*/
   return Power::TimerProcess(*((unsigned int *)this + 894)); /*0x41ce12*/
 
 }
@@ -283,22 +284,20 @@ int  AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = TechnoTypeClass::SaveLoad_Prefix(aP0, aP0); /*0x41ce2b*/
+  result = TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)aP0, aP1); /*0x41ce2b*/
   if ( result >= 0 ) /*0x41ce32*/
   {
     if ( aP0 ) /*0x41ce36*/
     {
-      TechnoTypeClass::Construct((int)aP0, (ObjectTypeClass *)&aP0); /*0x41ce3f*/
-      *(unsigned int *)aP0->__pad_0 = &vt_AircraftTypeClass; /*0x41ce44*/
-      *(unsigned int *)&aP0->__pad_0[4] = &vt_AircraftTypeClass; /*0x41ce4a*/
-      *(unsigned int *)&aP0->__pad_0[8] = &vt_AircraftTypeClass; /*0x41ce51*/
-      *(unsigned int *)&aP0->__pad_0[12] = &vt_AircraftTypeClass; /*0x41ce58*/
+      TechnoTypeClass::Construct((int)aP0, (int)&aP1); /*0x41ce3f*/
+      *(unsigned int *)aP0->TechnoTypeClass = &AircraftTypeClass::`vftable'; /*0x41ce44*/
+      *(unsigned int *)&aP0->TechnoTypeClass[4] = &AircraftTypeClass::`vftable'; /*0x41ce4a*/
+      *(unsigned int *)&aP0->TechnoTypeClass[8] = &AircraftTypeClass::`vftable'; /*0x41ce51*/
+      *(unsigned int *)&aP0->TechnoTypeClass[12] = &AircraftTypeClass::`vftable'; /*0x41ce58*/
     }
-    ObjectPtr::RegisterForTracking( /*0x41ce6b*/
-      (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[5].ChargerBarrels[6]);
-    VoxelAnimType::LoadAnim(aP0->__pad_0); /*0x41ce72*/
-    ObjectTypeClass::Load2DArt(aP0->__pad_0); /*0x41ce79*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 896); /*0x41ce6b*/
+    VoxelAnimType::LoadAnim(aP0->TechnoTypeClass); /*0x41ce72*/
+    ObjectTypeClass::Load2DArt(aP0->TechnoTypeClass); /*0x41ce79*/
     return 0; /*0x41ce7e*/
   }
   return result; /*0x41ce80*/
@@ -326,7 +325,7 @@ int AircraftTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   *a2 = -1366608935; /*0x41cec6*/
   a2[1] = 298976796; /*0x41cece*/
   a2[2] = 1610654892; /*0x41ced7*/
-  a2[3] = -1252326136; /*0x41cee0*/
+  a2[3] = unk_7E95BC; /*0x41cee0*/
   return 0; /*0x41cebd*/
 
 }
@@ -355,6 +354,6 @@ int AircraftTypeClass::GetAuxField()
 int AircraftTypeClass::GetGameplayValue()
 {
 
-  return g_abs_8871E0[1].?; /*0x71212b*/
+  return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5836); /*0x71212b*/
 
 }

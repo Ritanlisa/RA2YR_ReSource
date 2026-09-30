@@ -13,10 +13,10 @@ namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&vt_ScoreAnimClass);
+  *(unsigned int *)Block->__pad_0 = &ScoreAnimClass::`vftable'; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     __3_YAXPAX_Z(Block); /*0x691012*/
-  return Block; /*0x69101c*/
+  return Block->__pad_0; /*0x69101c*/
 
 }
 } // namespace gamemd
@@ -25,10 +25,10 @@ namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&vt_ScoreAnimClass);
+  Block->m_0 = (int)&ScoreAnimClass::`vftable'; /*0x691029*/
   if ( (a2 & 1) != 0 ) /*0x69102f*/
     __3_YAXPAX_Z(Block); /*0x691032*/
-  return Block; /*0x69103c*/
+  return &Block->m_0; /*0x69103c*/
 
 }
 } // namespace gamemd
@@ -39,28 +39,29 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(unsigned int * Block, 
 
   void *v3; // eax
   char *v4; // eax
-v3 = (void *)((unsigned int)((void *)*(Block + 3)));
-  *Block = &vt_ScoreFontClass; /*0x6910a9*/
+
+  v3 = (void *)Block->field_C; /*0x6910a6*/
+  *(unsigned int *)Block->__pad_0 = &ScoreFontClass::`vftable'; /*0x6910a9*/
   if ( v3 && *((unsigned char *)Block + 16) == 1 ) /*0x6910b7*/
   {
     __3_YAXPAX_Z(v3); /*0x6910ba*/
-    *(Block + 3) = 0; /*0x6910c2*/
+    Block->field_C = 0; /*0x6910c2*/
     *((unsigned char *)Block + 16) = 0; /*0x6910c5*/
   }
-  if ( !--MEMORY[0xB0558C] ) /*0x6910d3*/
+  if ( !--dword_B0558C ) /*0x6910d3*/
   {
-    v4 = &MEMORY[0xB05594]; /*0x6910d5*/
+    v4 = (char *)&byte_B05594; /*0x6910d5*/
     do /*0x6910e7*/
     {
       *((unsigned int *)v4 - 1) = 0; /*0x6910da*/
       *v4 = 0; /*0x6910dd*/
       v4 += 8; /*0x6910df*/
     }
-    while ( (int)v4 < (int)((char *)&MEMORY[0xB055A8] + 4) ); /*0x6910e7*/
+    while ( (int)v4 < (int)byte_B055AC ); /*0x6910e7*/
   }
   if ( (a2 & 1) != 0 ) /*0x6910ee*/
     __3_YAXPAX_Z(Block); /*0x6910f1*/
-  return Block; /*0x6910fb*/
+  return Block->__pad_0; /*0x6910fb*/
 
 }
 } // namespace gamemd

@@ -11,7 +11,7 @@ namespace gamemd {
 int EnumConnectionPointsClass::Skip(int a1)
 {
 
-  *(unsigned int *)(a1 + 4) = 0; /*0x4a0b14*/
+  a1->EnumConnectionPointsClass_field_0x04 = 0; /*0x4a0b14*/
   return 0; /*0x4a0b1d*/
 
 }

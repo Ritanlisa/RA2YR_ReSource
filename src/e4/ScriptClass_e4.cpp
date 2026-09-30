@@ -19,7 +19,7 @@ int ScriptClass::ddtor(int a1, unsigned int * a2)
   *a2 = 1123264070; /*0x691606*/
   a2[1] = 298977161; /*0x69160e*/
   a2[2] = 1610655148; /*0x691617*/
-  a2[3] = -1252326136; /*0x691620*/
+  a2[3] = unk_7E97AC; /*0x691620*/
   return 0; /*0x6915fd*/
 
 }
@@ -32,18 +32,18 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = ((AbstractClass *)(aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x69163b*/
+  result = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x69163b*/
   if ( result >= 0 ) /*0x691642*/
   {
     if ( aP0 ) /*0x691646*/
     {
-      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x69164f*/
-      *(unsigned int *)aP0->__pad_0 = &vt_ScriptClass; /*0x691654*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_ScriptClass; /*0x69165a*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_ScriptClass; /*0x691661*/
-      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_ScriptClass; /*0x691668*/
+      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
+      aP0->AbstractClass = &ScriptClass::`vftable'; /*0x691654*/
+      aP0->? = &ScriptClass::`vftable'; /*0x69165a*/
+      aP0->? = &ScriptClass::`vftable'; /*0x691661*/
+      aP0->? = &ScriptClass::`vftable'; /*0x691668*/
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x691678*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x691678*/
     return 0; /*0x69167d*/
   }
   return result; /*0x69167f*/
@@ -58,7 +58,7 @@ int ScriptClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x69169f*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x69169f*/
   if ( result >= 0 ) /*0x6916a6*/
     return 0; /*0x6916a8*/
   return result; /*0x6916aa*/

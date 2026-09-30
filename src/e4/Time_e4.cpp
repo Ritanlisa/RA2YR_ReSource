@@ -15,10 +15,10 @@ unsigned int Time::GetElapsedMS()
   unsigned int v1; // ecx
 
   Time = timeGetTime(); /*0x4e24a0*/
-  if ( Time > (DWORD)((DWORD))((DWORD))(g_abs_8B3F14) ) /*0x4e24ae*/
-    v1 = 3 * (Time - g_abs_8B3F14); /*0x4e24c5*/
+  if ( Time > dword_8B3F14 ) /*0x4e24ae*/
+    v1 = 3 * (Time - dword_8B3F14); /*0x4e24c5*/
   else
-    v1 = 3 * (Time - g_abs_8B3F14 - 1); /*0x4e24b3*/
+    v1 = 3 * (Time - dword_8B3F14 - 1); /*0x4e24b3*/
   return v1 / 0x32; /*0x4e24c2*/
 
 }
@@ -33,7 +33,15 @@ int Time::FormatDate(char * Buffer)
 
   result = FileTimeToSystemTime(&FileTime, &SystemTime); /*0x777ad0*/
   if ( result ) /*0x777ad8*/
-    return sprintf(Buffer, &stru_849F20, (INIClass *)SystemTime.wMonth); /*0x777b20*/
+    return sprintf( /*0x777b20*/
+             Buffer,
+             "%02d/%02d/%04d - %02d:%02d:%02d",
+             SystemTime.wMonth,
+             SystemTime.wDay,
+             SystemTime.wYear,
+             SystemTime.wHour,
+             SystemTime.wMinute,
+             SystemTime.wSecond);
   return result; /*0x777b28*/
 
 }

@@ -12,67 +12,64 @@ namespace gamemd {
 void Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
 
-  int *v3; // edx
-  int *v4; // ecx
-  int *v5; // edi
-  int v7; // edi
-  int v8; // esi
-  int v9; // ebx
+  LONG *v3; // edx
+  struct tagRECT *v4; // ecx
+  struct tagRECT *v5; // edi
+  LONG v7; // edi
+  LONG left; // esi
+  LONG v9; // ebx
   int v10; // ebp
   int v11; // edx
-  int v12; // ecx
-  int v14; // [esp+Ch] [ebp-8h]
-  int *v15; // [esp+10h] [ebp-4h]
-  LPRECT lprcDst; // [esp+18h] [ebp+4h]
+  LONG top; // ecx
+  LONG bottom; // [esp+Ch] [ebp-8h]
+  struct tagRECT *v15; // [esp+10h] [ebp-4h]
+  LPRECT lprcDsta; // [esp+18h] [ebp+4h]
 
   v5 = v4; /*0x487f48*/
   v15 = v4; /*0x487f4c*/
   if ( v3[2] <= 0 || v3[3] <= 0 ) /*0x487f5b*/
   {
-    *v4 = aP0->field_0; /*0x488012*/
-    v4[1] = aP0->field_4; /*0x488017*/
-    v4[2] = aP0->field_8; /*0x48801d*/
-    v4[3] = aP0->field_C; /*0x488023*/
-    return (BOOL)v4; /*0x488026*/
+    *(unsigned int *)v4 = *aP0; /*0x488012*/
+    return (int)v4; /*0x488026*/
   }
   else
   {
-    lprcDst = (LPRECT)aP0->field_8; /*0x487f6a*/
-    if ( (int)lprcDst <= 0 || (v14 = aP0->field_C, v14 <= 0) ) /*0x487f79*/
+    lprcDsta = (LPRECT)aP0->right; /*0x487f6a*/
+    if ( (int)lprcDsta <= 0 || (bottom = aP0->bottom, bottom <= 0) ) /*0x487f79*/
     {
-      *v5 = *v3; /*0x487ff0*/
-      v5[1] = v3[1]; /*0x487ff5*/
-      v5[2] = v3[2]; /*0x487ffb*/
-      v5[3] = v3[3]; /*0x488001*/
-      return (BOOL)v5; /*0x487fec*/
+      v5->left = *v3; /*0x487ff0*/
+      v5->top = v3[1]; /*0x487ff5*/
+      v5->right = v3[2]; /*0x487ffb*/
+      v5->bottom = v3[3]; /*0x488001*/
+      return (int)v5; /*0x487fec*/
     }
     else
     {
       v7 = *v3; /*0x487f7b*/
-      v8 = aP0->field_0; /*0x487f7d*/
+      left = aP0->left; /*0x487f7d*/
       v9 = v3[1]; /*0x487f80*/
       v10 = v3[2]; /*0x487f84*/
       v11 = v3[3]; /*0x487f87*/
-      if ( v7 > aP0->field_0 ) /*0x487f8c*/
+      if ( v7 > aP0->left ) /*0x487f8c*/
       {
-        v10 += v7 - v8; /*0x487f90*/
-        v7 = aP0->field_0; /*0x487f92*/
+        v10 += v7 - left; /*0x487f90*/
+        v7 = aP0->left; /*0x487f92*/
       }
-      v12 = aP0->field_4; /*0x487f94*/
-      if ( v9 > v12 ) /*0x487f9d*/
+      top = aP0->top; /*0x487f94*/
+      if ( v9 > top ) /*0x487f9d*/
       {
-        v11 += v9 - v12; /*0x487fa1*/
-        v9 = v12; /*0x487fa3*/
+        v11 += v9 - top; /*0x487fa1*/
+        v9 = top; /*0x487fa3*/
       }
-      if ( v7 + v10 < (int)lprcDst + v8 ) /*0x487fac*/
-        v10 = (int)&lprcDst->left + v8 - v7 + 1; /*0x487fb4*/
-      if ( v11 + v9 < v12 + v14 ) /*0x487fc8*/
-        v11 = v12 + v14 - v9 + 1; /*0x487fcd*/
-      *v15 = v7; /*0x487fd5*/
-      v15[1] = v9; /*0x487fd7*/
-      v15[2] = v10; /*0x487fda*/
-      v15[3] = v11; /*0x487fe0*/
-      return (BOOL)v15; /*0x487fcf*/
+      if ( v7 + v10 < (int)lprcDsta + left ) /*0x487fac*/
+        v10 = (int)&lprcDsta->left + left - v7 + 1; /*0x487fb4*/
+      if ( v11 + v9 < top + bottom ) /*0x487fc8*/
+        v11 = top + bottom - v9 + 1; /*0x487fcd*/
+      v15->left = v7; /*0x487fd5*/
+      v15->top = v9; /*0x487fd7*/
+      v15->right = v10; /*0x487fda*/
+      v15->bottom = v11; /*0x487fe0*/
+      return (int)v15; /*0x487fcf*/
     }
   }
 
@@ -83,11 +80,11 @@ namespace gamemd {
 void Rect::Set( IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
 {
 
-  *this = aP1; /*0x42e41a*/
-  *(this + 1) = aP2; /*0x42e420*/
-  *(this + 2) = aP3; /*0x42e427*/
-  *(this + 3) = aP4; /*0x42e42a*/
-  return (IUnknown *)this; /*0x42e42d*/
+  this->X = aP1; /*0x42e41a*/
+  this->Y = aP2; /*0x42e420*/
+  this->Width = aP3; /*0x42e427*/
+  this->Height = aP4; /*0x42e42a*/
+  return &this->X; /*0x42e42d*/
 
 }
 } // namespace gamemd
@@ -96,11 +93,11 @@ namespace gamemd {
 void Rect::Construct( IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
 {
 
-  *this = aP1->field_0; /*0x45a138*/
-  *(this + 1) = aP1->field_4; /*0x45a141*/
-  *(this + 2) = aP2; /*0x45a148*/
-  *(this + 3) = aP3; /*0x45a14b*/
-  return (AbstractClass *)this; /*0x45a14e*/
+  this->X = *aP1; /*0x45a138*/
+  this->Y = aP1[1]; /*0x45a141*/
+  this->Width = aP2; /*0x45a148*/
+  this->Height = aP3; /*0x45a14b*/
+  return &this->X; /*0x45a14e*/
 
 }
 } // namespace gamemd

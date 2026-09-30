@@ -14,8 +14,8 @@ namespace gamemd {
 unsigned int CoopCampaignVector::Write(int a2)
 {
 
-  if ( *((unsigned char *)this + 12) ) /*0x5c5750*/
-    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x5c5765*/
+  if ( LOBYTE(this->m_C) ) /*0x5c5750*/
+    return (unsigned int)(a2 - *(unsigned int *)&this-((unsigned int *)(>m_1))[3]) >> 2; /*0x5c5765*/
   else
     return 0; /*0x5c5757*/
 
@@ -28,18 +28,18 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_CoopCampaignClass);
-  if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c5950*/
+  v3 = *(void **)&Block->m_1[3]; /*0x5c5943*/
+  *(unsigned int *)Block->__pad_0 = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5946*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x5c5950*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5958*/
-    *(Block + 1) = 0; /*0x5c5960*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x5c5960*/
   }
-  *((unsigned char *)Block + 13) = 0; /*0x5c596b*/
-  *(Block + 2) = 0; /*0x5c5971*/
+  BYTE1(Block->m_C) = 0; /*0x5c596b*/
+  Block->m_8 = 0; /*0x5c5971*/
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
     __3_YAXPAX_Z(Block); /*0x5c597b*/
-  return (VectorClass *)Block; /*0x5c5985*/
+  return Block->__pad_0; /*0x5c5985*/
 
 }
 } // namespace gamemd
@@ -48,22 +48,22 @@ namespace gamemd {
 void CoopCampaignVector::Construct( MultiplayerGameMode * aP1, MultiplayerGameMode * aP2)
 {
 
-  *(this + 1) = 0; /*0x5c5a8b*/
-  *(this + 2) = aP1; /*0x5c5a8e*/
-  *((unsigned char *)this + 12) = 1; /*0x5c5a91*/
-  *((unsigned char *)this + 13) = 0; /*0x5c5a95*/
-  *this = &vt_VectorClass_CoopCampaignClass; /*0x5c5a98*/
+  this->CoopCampaignVector_field_0x04 = (unsigned int)(0);
+  this->CoopCampaignVector_field_0x08 = (unsigned int)(aP1);
+  LOBYTE(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5a91*/
+  BYTE1(this->CoopCampaignVector_field_0x0C) = 0; /*0x5c5a95*/
+  *(unsigned int *)this->__pad_0 = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/
     {
-      *(this + 1) = aP2; /*0x5c5aa8*/
-      return this; /*0x5c5aae*/
+      this->CoopCampaignVector_field_0x04 = (unsigned int)(aP2);
+      return this->__pad_0; /*0x5c5aae*/
     }
-    *(this + 1) = RA2_OPNEW(4 * (unsigned int)aP1); /*0x5c5abd*/
-    *((unsigned char *)this + 13) = 1; /*0x5c5ac0*/
+    this->CoopCampaignVector_field_0x04 = __2_YAPAXI_Z(4 * aP1); /*0x5c5abd*/
+    BYTE1(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5ac0*/
   }
-  return this; /*0x5c5aad*/
+  return this->__pad_0; /*0x5c5aad*/
 
 }
 } // namespace gamemd

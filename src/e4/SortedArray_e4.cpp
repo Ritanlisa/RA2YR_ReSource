@@ -23,41 +23,41 @@ namespace gamemd {
 int SortedArray::BinarySearch(CCINIClass * aP1)
 {
 
-  size_t result; // eax
-  ObjectClass *v4; // edi
-  ObjectClass *v5; // ebx
-  int v6; // ecx
-  ObjectClass *v7; // esi
+  int result; // eax
+  int v4; // edi
+  int v5; // ebx
+  int SortedArray_field_0x04; // ecx
+  int v7; // esi
 
-  result = (size_t)*((unsigned int *)this + 1); /*0x52b623*/
+  result = this->SortedArray_field_0x04; /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
-    if ( !*((unsigned char *)this + 12) ) /*0x52b62e*/
+    if ( !LOBYTE(this->SortedArray_field_0x0C) ) /*0x52b62e*/
     {
-      qsort(*this, result, 8u, CompareFunc4Int); /*0x52b640*/
-      *((unsigned int *)this + 4) = 0; /*0x52b648*/
-      *((unsigned char *)this + 12) = 1; /*0x52b64f*/
+      qsort(*(void **)this->__pad_0, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int); /*0x52b640*/
+      this->SortedArray_field_0x10 = 0; /*0x52b648*/
+      LOBYTE(this->SortedArray_field_0x0C) = 1; /*0x52b64f*/
     }
-    v4 = (ObjectClass *)*this; /*0x52b659*/
-    v5 = *(ObjectClass **)aP1->__pad_0; /*0x52b65b*/
-    v6 = (int)*((unsigned int *)this + 1); /*0x52b65d*/
-    if ( v6 <= 0 ) /*0x52b662*/
+    v4 = (int)(*(unsigned int *)this->__pad_0);
+    v5 = (int)(*aP1);
+    SortedArray_field_0x04 = this->SortedArray_field_0x04; /*0x52b65d*/
+    if ( SortedArray_field_0x04 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/
     {
-      v7 = *(ObjectClass **)&v4->__pad_0[8 * (v6 / 2)]; /*0x52b66b*/
-      if ( (int)v7 <= (int)v5 ) /*0x52b673*/
+      v7 = *(unsigned int *)(v4 + 8 * (SortedArray_field_0x04 / 2)); /*0x52b66b*/
+      if ( v7 <= v5 ) /*0x52b673*/
       {
         if ( v7 == v5 ) /*0x52b679*/
-          return (size_t)v4 + 8 * (v6 / 2); /*0x52b693*/
-        v4 = (ObjectClass *)((char *)v4 + 8 * (v6 / 2) + 8); /*0x52b67b*/
-        v6 += -1 - v6 / 2; /*0x52b683*/
+          return v4 + 8 * (SortedArray_field_0x04 / 2); /*0x52b693*/
+        v4 += 8 * (SortedArray_field_0x04 / 2) + 8; /*0x52b67b*/
+        SortedArray_field_0x04 += -1 - SortedArray_field_0x04 / 2; /*0x52b683*/
       }
       else
       {
-        v6 /= 2; /*0x52b675*/
+        SortedArray_field_0x04 /= 2; /*0x52b675*/
       }
-      if ( v6 <= 0 ) /*0x52b687*/
+      if ( SortedArray_field_0x04 <= 0 ) /*0x52b687*/
         return 0; /*0x52b687*/
     }
   }
@@ -72,7 +72,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
 
   int v4; // eax
   int v5; // ebx
-  int v6; // edi
+  char *v6; // edi
   int i; // ecx
   int v8; // eax
   unsigned int *v9; // edx
@@ -83,7 +83,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   if ( *((unsigned int *)this + 1) + 1 <= v4 ) /*0x5387e0*/
   {
 LABEL_9:
-    *(unsigned int *)(*(unsigned int *)this + 8 * *((unsigned int *)this + 1)) = *(unsigned int *)aP1->__pad_0; /*0x53885b*/
+    *(unsigned int *)(*(unsigned int *)this + 8 * *((unsigned int *)this + 1)) = *aP1; /*0x53885b*/
     *(unsigned int *)(*(unsigned int *)this + 8 * *((unsigned int *)this + 1) + 4) = *a2; /*0x538875*/
     v11 = *((unsigned int *)this + 1) + 1; /*0x53887c*/
     *((unsigned char *)this + 12) = 0; /*0x53887d*/
@@ -100,14 +100,14 @@ LABEL_9:
   {
     v5 = 10; /*0x5387e6*/
   }
-  v6 = __2_YAPAXI_Z(8 * (v4 + v5)); /*0x538807*/
+  v6 = (char *)__2_YAPAXI_Z(8 * (v4 + v5)); /*0x538807*/
   if ( v6 ) /*0x53880e*/
   {
-    for ( i = 0; i < *((unsigned int *)this + 1); *(unsigned int *)(v8 + v6 + 4) = v9[1] ) /*0x53881c*/
+    for ( i = 0; i < *((unsigned int *)this + 1); *(unsigned int *)&v6[v8 + 4] = v9[1] ) /*0x53881c*/
     {
       v8 = 8 * i; /*0x538820*/
       v9 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x538829*/
-      *(unsigned int *)(v8 + v6) = *v9; /*0x53882e*/
+      *(unsigned int *)&v6[v8] = *v9; /*0x53882e*/
     }
     __3_YAXPAX_Z(*(void **)this); /*0x538842*/
     v10 = *((unsigned int *)this + 2); /*0x538847*/
@@ -134,7 +134,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   int i; // ecx
   int v11; // edi
   int v12; // eax
-  ObjectClass *v13; // edi
+  unsigned int *v13; // edi
   int v14; // eax
   int v15; // [esp+10h] [ebp-8h]
 
@@ -147,9 +147,9 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     *((unsigned int *)this + 4) = 0; /*0x5388ca*/
     *((unsigned char *)this + 12) = 1; /*0x5388d1*/
   }
-  v4 = *((unsigned int *)this + 1); /*0x5388d9*/
-  v5 = *(unsigned int **)this; /*0x5388e0*/
-  v15 = *(unsigned int *)aP1->__pad_0; /*0x5388e4*/
+  v4 = (int)(*((unsigned int *)this + 1));
+  v5 = (int)(*(unsigned int **)this);
+  v15 = *aP1; /*0x5388e4*/
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
   while ( 1 ) /*0x5388f1*/
@@ -180,11 +180,11 @@ LABEL_9:
     v12 = *(unsigned int *)this + 8 * i++; /*0x538940*/
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
-  v13 = (gamemd::ObjectClass **)(*(ObjectClass **)this);
+  v13 = (unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this));
   v14 = (gamemd::ObjectClass **)(*((unsigned int *)this + 1) - 1);
   *((unsigned int *)this + 1) = v14; /*0x53895c*/
-  *(unsigned int *)&v13->__pad_0[8 * v14] = 0; /*0x53895f*/
-  *(unsigned int *)&v13->__pad_0[8 * v14 + 4] = 0; /*0x538962*/
+  v13[2 * v14] = 0; /*0x53895f*/
+  v13[2 * v14 + 1] = 0; /*0x538962*/
   *((unsigned int *)this + 4) = 0; /*0x538966*/
   return 1; /*0x538917*/
 

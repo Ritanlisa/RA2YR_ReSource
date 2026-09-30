@@ -29,10 +29,12 @@ int ToolTipManager::ddtor(char a2)
   int result; // eax
 
   if ( a2 == 1 ) /*0x724b89*/
-    ToolTipClass::initString((wchar_t *)this); /*0x724b8b*/
-  result = *((unsigned int *)this + 1); /*0x724b90*/
+    ToolTipClass::initString((ToolTipClass *)this); /*0x724b8b*/
+  result = this->Position[0]; /*0x724b90*/
   if ( result ) /*0x724b95*/
-    return (*(int (**)(int, int))(*(unsigned int *)this + 16))(this, (char *)this + 24); /*0x724b9f*/
+    return (*(int (**)(ToolTipManager *, int *))(*(unsigned int *)&this->IsVisible + 16))( /*0x724b9f*/
+             this,
+             &this->DisplayTimer[1]);
   return result; /*0x724ba2*/
 
 }
@@ -62,18 +64,18 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_ToolTip_const);
-  if ( v3 && *((unsigned char *)Block + 13) ) /*0x724f50*/
+  v3 = *(void **)&Block->m_1[3]; /*0x724f43*/
+  *(unsigned int *)Block->__pad_0 = &VectorClass<ToolTip const *>::`vftable'; /*0x724f46*/
+  if ( v3 && BYTE1(Block->m_C) ) /*0x724f50*/
   {
     __3_YAXPAX_Z(v3); /*0x724f58*/
-    *(Block + 1) = 0; /*0x724f60*/
+    *(unsigned int *)&Block->m_1[3] = 0; /*0x724f60*/
   }
-  *((unsigned char *)Block + 13) = 0; /*0x724f6b*/
-  *(Block + 2) = 0; /*0x724f71*/
+  BYTE1(Block->m_C) = 0; /*0x724f6b*/
+  Block->m_8 = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
     __3_YAXPAX_Z(Block); /*0x724f7b*/
-  return (DynamicVector *)Block; /*0x724f85*/
+  return Block->__pad_0; /*0x724f85*/
 
 }
 } // namespace gamemd

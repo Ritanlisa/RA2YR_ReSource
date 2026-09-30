@@ -68,120 +68,71 @@ unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
   char v29; // al
   int v30; // ecx
 
-  INIClass::ResetSection(aP1); /*0x6b8caa*/
+  INIClass::ResetSection((INIClass *)aP1); /*0x6b8caa*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6b8cc5*/
-                     (int)aP1,
-                     *(uint8_t **)&stru_830620.__pad_579C[42000],
-                     (CCINIClass *)&stru_830620.__pad_579C[20336],
-                     (*this & 0x4000) != 0);
-  v4 = (int)(*this);
-  BYTE1(v4) = BYTE1(*this) & 0xBF; /*0x6b8cd2*/
+                     aP1,
+                     off_8401CC,
+                     (uint8_t *)g_INI_Key_TiberiumExplosive,
+                     (*(unsigned int *)this & 0x4000) != 0);
+  v4 = *(unsigned int *)this; /*0x6b8cca*/
+  BYTE1(v4) = BYTE1(*(unsigned int *)this) & 0xBF; /*0x6b8cd2*/
   v5 = v4 | ((Bool_Overwrite & 1) << 14); /*0x6b8cd7*/
   *(unsigned int *)this = v5; /*0x6b8cd9*/
-  v6 = INIClass::ReadBool_Overwrite( /*0x6b8cec*/
-         (int)aP1,
-         *(uint8_t **)&stru_830620.__pad_579C[42000],
-         (CCINIClass *)&stru_830620.__pad_579C[42112],
-         BYTE1(v5) & 1);
-  v7 = (int)(*this);
-  BYTE1(v7) = BYTE1(*this) & 0xFE; /*0x6b8cf9*/
+  v6 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aMcvdeploy, BYTE1(v5) & 1); /*0x6b8cec*/
+  v7 = *(unsigned int *)this; /*0x6b8cf1*/
+  BYTE1(v7) = BYTE1(*(unsigned int *)this) & 0xFE; /*0x6b8cf9*/
   v8 = v7 | ((v6 & 1) << 8); /*0x6b8cfc*/
   *(unsigned int *)this = v8; /*0x6b8d00*/
-  v9 = INIClass::ReadBool_Overwrite( /*0x6b8d14*/
-         (int)aP1,
-         *(uint8_t **)&stru_830620.__pad_579C[42000],
-         (CCINIClass *)&stru_830620.__pad_579C[42096],
-         (v8 & 0x200) != 0);
-  v10 = (int)(*this);
-  BYTE1(v10) = BYTE1(*this) & 0xFD; /*0x6b8d21*/
+  v9 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aInitialveteran, (v8 & 0x200) != 0); /*0x6b8d14*/
+  v10 = *(unsigned int *)this; /*0x6b8d19*/
+  BYTE1(v10) = BYTE1(*(unsigned int *)this) & 0xFD; /*0x6b8d21*/
   v11 = v10 | ((v9 & 1) << 9); /*0x6b8d24*/
   *(unsigned int *)this = v11; /*0x6b8d28*/
-  v12 = *this & 0xFFFDFFFF /*0x6b8d4f*/
-      | ((INIClass::ReadBool_Overwrite(
-            (int)aP1,
-            *(uint8_t **)&stru_830620.__pad_579C[42000],
-            (CCINIClass *)&stru_830620.__pad_579C[42044],
-            (v11 & 0x20000) != 0)
-        & 1) << 17);
+  v12 = *(unsigned int *)this & 0xFFFDFFFF /*0x6b8d4f*/
+      | ((INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aIonstorms, (v11 & 0x20000) != 0) & 1) << 17);
   *(unsigned int *)this = v12; /*0x6b8d53*/
-  v13 = *this & 0xFFFEFFFF /*0x6b8d7a*/
-      | ((INIClass::ReadBool_Overwrite(
-            (int)aP1,
-            *(uint8_t **)&stru_830620.__pad_579C[42000],
-            (CCINIClass *)&stru_830620.__pad_579C[42032],
-            BYTE2(v12) & 1)
-        & 1) << 16);
+  v13 = *(unsigned int *)this & 0xFFFEFFFF /*0x6b8d7a*/
+      | ((INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aMeteorites, BYTE2(v12) & 1) & 1) << 16);
   *(unsigned int *)this = v13; /*0x6b8d7c*/
-  result = *this & 0xFFFBFFFF /*0x6b8da5*/
-         | ((INIClass::ReadBool_Overwrite(
-               (int)aP1,
-               *(uint8_t **)&stru_830620.__pad_579C[42000],
-               (CCINIClass *)&stru_830620.__pad_579C[42020],
-               (v13 & 0x40000) != 0)
-           & 1) << 18);
+  result = *(unsigned int *)this & 0xFFFBFFFF /*0x6b8da5*/
+         | ((INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aVisceroids, (v13 & 0x40000) != 0) & 1) << 18);
   *(unsigned int *)this = result; /*0x6b8da7*/
-  if ( !MEMORY[0xA8B238] || MEMORY[0xA8D63C].__pad_14B0[639] ) /*0x6b8dbb*/
+  if ( !*(unsigned int *)&dword_A8B238 || *((unsigned int *)((char *)&stru_A8EB00 + 391)) ) /*0x6b8dbb*/
   {
-    v15 = *this & 0xFFFFFFBF /*0x6b8de5*/
+    v15 = *(unsigned int *)this & 0xFFFFFFBF /*0x6b8de5*/
         | ((INIClass::ReadBool_Overwrite(
-              (int)aP1,
-              *(uint8_t **)&stru_830620.__pad_579C[42000],
-              (CCINIClass *)&stru_830620.__pad_579C[29252],
+              aP1,
+              off_8401CC,
+              (uint8_t *)g_INI_Key_TiberiumGrows,
               (result & 0x40) != 0)
           & 1) << 6);
     *(unsigned int *)this = v15; /*0x6b8de9*/
-    v16 = INIClass::ReadBool_Overwrite( /*0x6b8dfd*/
-            (int)aP1,
-            *(uint8_t **)&stru_830620.__pad_579C[42000],
-            (CCINIClass *)&stru_830620.__pad_579C[42144],
-            (v15 & 0x80) != 0);
-    v17 = (int)(*this);
-    LOBYTE(v17) = *this & 0x7F; /*0x6b8e0a*/
+    v16 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aTiberiumspread, (v15 & 0x80) != 0); /*0x6b8dfd*/
+    v17 = *(unsigned int *)this; /*0x6b8e02*/
+    LOBYTE(v17) = *(unsigned int *)this & 0x7F; /*0x6b8e0a*/
     v18 = v17 | ((v16 & 1) << 7); /*0x6b8e0d*/
     *(unsigned int *)this = v18; /*0x6b8e11*/
-    v19 = INIClass::ReadBool_Overwrite( /*0x6b8e25*/
-            (int)aP1,
-            *(uint8_t **)&stru_830620.__pad_579C[42000],
-            (CCINIClass *)&stru_830620.__pad_579C[42124],
-            (v18 & 0x8000) != 0);
-    v20 = (int)(*this);
-    BYTE1(v20) = BYTE1(*this) & 0x7F; /*0x6b8e32*/
+    v19 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aDestroyablebri, (v18 & 0x8000) != 0); /*0x6b8e25*/
+    v20 = *(unsigned int *)this; /*0x6b8e2a*/
+    BYTE1(v20) = BYTE1(*(unsigned int *)this) & 0x7F; /*0x6b8e32*/
     v21 = v20 | ((v19 & 1) << 15); /*0x6b8e35*/
     *(unsigned int *)this = v21; /*0x6b8e39*/
-    v22 = INIClass::ReadBool_Overwrite( /*0x6b8e4d*/
-            (int)aP1,
-            *(uint8_t **)&stru_830620.__pad_579C[42000],
-            (CCINIClass *)&stru_830620.__pad_579C[42080],
-            (v21 & 0x400) != 0);
-    v23 = (int)(*this);
-    BYTE1(v23) = BYTE1(*this) & 0xFB; /*0x6b8e5a*/
+    v22 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aFixedalliance, (v21 & 0x400) != 0); /*0x6b8e4d*/
+    v23 = *(unsigned int *)this; /*0x6b8e52*/
+    BYTE1(v23) = BYTE1(*(unsigned int *)this) & 0xFB; /*0x6b8e5a*/
     v24 = v23 | ((v22 & 1) << 10); /*0x6b8e5d*/
     *(unsigned int *)this = v24; /*0x6b8e61*/
-    v25 = INIClass::ReadBool_Overwrite( /*0x6b8e75*/
-            (int)aP1,
-            *(uint8_t **)&stru_830620.__pad_579C[42000],
-            (CCINIClass *)&stru_830620.__pad_579C[29116],
-            (v24 & 0x1000) != 0);
-    v26 = (int)(*this);
-    BYTE1(v26) = BYTE1(*this) & 0xEF; /*0x6b8e82*/
+    v25 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)g_INI_Key_FogOfWar, (v24 & 0x1000) != 0); /*0x6b8e75*/
+    v26 = *(unsigned int *)this; /*0x6b8e7a*/
+    BYTE1(v26) = BYTE1(*(unsigned int *)this) & 0xEF; /*0x6b8e82*/
     v27 = v26 | ((v25 & 1) << 12); /*0x6b8e85*/
     *(unsigned int *)this = v27; /*0x6b8e89*/
-    v28 = *this & 0xFFFFFFDF /*0x6b8ead*/
-        | (32
-         * (INIClass::ReadBool_Overwrite(
-              (int)aP1,
-              *(uint8_t **)&stru_830620.__pad_579C[42000],
-              (CCINIClass *)&stru_830620.__pad_579C[42056],
-              (v27 & 0x20) != 0)
-          & 1));
+    v28 = *(unsigned int *)this & 0xFFFFFFDF /*0x6b8ead*/
+        | (32 * (INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aInert, (v27 & 0x20) != 0) & 1));
     *(unsigned int *)this = v28; /*0x6b8eb1*/
-    v29 = INIClass::ReadBool_Overwrite( /*0x6b8ec5*/
-            (int)aP1,
-            *(uint8_t **)&stru_830620.__pad_579C[42000],
-            (CCINIClass *)&stru_830620.__pad_579C[42064],
-            (v28 & 0x800) != 0);
-    v30 = (int)(*this);
-    BYTE1(v30) = BYTE1(*this) & 0xF7; /*0x6b8ed2*/
+    v29 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aHarvesterimmun, (v28 & 0x800) != 0); /*0x6b8ec5*/
+    v30 = *(unsigned int *)this; /*0x6b8eca*/
+    BYTE1(v30) = BYTE1(*(unsigned int *)this) & 0xF7; /*0x6b8ed2*/
     result = v30 | ((v29 & 1) << 11); /*0x6b8ed5*/
     *(unsigned int *)this = result; /*0x6b8ed7*/
   }

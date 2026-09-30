@@ -17,26 +17,26 @@ namespace gamemd {
 void * MSVQAnim::GetFrameRect(int * a2)
 {
 
-  int v3; // eax
-  int *v4; // ecx
+  int MSVQAnim_field_0x1C; // eax
+  int *p_parTimeMedium; // ecx
 
-  if ( (MEMORY[0xABFB98] & 1) == 0 ) /*0x5cd2a0*/
+  if ( (g_MissionQueueFrame.__pad_3566[58] & 1) == 0 ) /*0x5cd2a0*/
   {
-    MEMORY[0xABFBA0] = 0; /*0x5cd2ab*/
-    MEMORY[0xABFB98] |= 1u; /*0x5cd2b1*/
-    MEMORY[0xABFBA4] = 0; /*0x5cd2b7*/
-    MEMORY[0xABFBA8] = 0; /*0x5cd2bd*/
-    MEMORY[0xABFBAC] = 0; /*0x5cd2c3*/
+    g_MissionQueueFrame.parTimeMedium = 0; /*0x5cd2ab*/
+    g_MissionQueueFrame.__pad_3566[58] |= 1u; /*0x5cd2b1*/
+    g_MissionQueueFrame.parTimeDifficult = 0; /*0x5cd2b7*/
+    *(unsigned int *)g_MissionQueueFrame.underParTitle = 0; /*0x5cd2bd*/
+    *(unsigned int *)&g_MissionQueueFrame.underParTitle[4] = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
-  v3 = *((unsigned int *)this + 7); /*0x5cd2d1*/
-  v4 = (int *)(v3 + 52); /*0x5cd2d6*/
-  if ( !v3 ) /*0x5cd2d9*/
-    v4 = &MEMORY[0xABFBA0]; /*0x5cd2db*/
-  *a2 = *v4; /*0x5cd2e9*/
-  a2[1] = v4[1]; /*0x5cd2ee*/
-  a2[2] = v4[2]; /*0x5cd2f4*/
-  a2[3] = v4[3]; /*0x5cd2fb*/
+  MSVQAnim_field_0x1C = this->MSVQAnim_field_0x1C; /*0x5cd2d1*/
+  p_parTimeMedium = (int *)(MSVQAnim_field_0x1C + 52); /*0x5cd2d6*/
+  if ( !MSVQAnim_field_0x1C ) /*0x5cd2d9*/
+    p_parTimeMedium = &g_MissionQueueFrame.parTimeMedium; /*0x5cd2db*/
+  *a2 = *p_parTimeMedium; /*0x5cd2e9*/
+  a2[1] = p_parTimeMedium[1]; /*0x5cd2ee*/
+  a2[2] = p_parTimeMedium[2]; /*0x5cd2f4*/
+  a2[3] = p_parTimeMedium[3]; /*0x5cd2fb*/
   return a2; /*0x5cd2e8*/
 
 }
@@ -56,28 +56,28 @@ MSVQAnim * MSVQAnim::QueryInterface(ObjectClass ** Block, char a2)
 {
 
   void (***v3)(unsigned int, int); // ecx
-  unsigned int **v4; // ecx
-  ObjectClass *v5; // edi
+  MovieContext *MSVQAnim_field_0x1C; // ecx
+  void *v5; // edi
 
-  v3 = (void (***)(unsigned int, int))*(Block + 10); /*0x5cecb3*/
-  *Block = (ObjectClass *)&vt_MSVQAnim; /*0x5cecb6*/
+  v3 = (void (***)(unsigned int, int))*((unsigned int *)Block + 10); /*0x5cecb3*/
+  *(unsigned int *)Block->__pad_0 = &MSVQAnim::`vftable'; /*0x5cecb6*/
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/
-  v4 = (unsigned int **)*(Block + 7); /*0x5cecc6*/
-  if ( v4 ) /*0x5ceccc*/
+  MSVQAnim_field_0x1C = (MovieContext *)Block->MSVQAnim_field_0x1C; /*0x5cecc6*/
+  if ( MSVQAnim_field_0x1C ) /*0x5ceccc*/
   {
-    MovieContext::Cleanup(v4); /*0x5cecce*/
-    v5 = *(Block + 7); /*0x5cecd3*/
+    MovieContext::Cleanup(MSVQAnim_field_0x1C); /*0x5cecce*/
+    v5 = (void *)Block->MSVQAnim_field_0x1C; /*0x5cecd3*/
     if ( v5 ) /*0x5cecd8*/
     {
-      BinkMovie::Cleanup(*(Block + 7)); /*0x5cecdc*/
-      RA2_OPDEL(v5); /*0x5cece2*/
+      BinkMovie::Cleanup((BinkMovie *)Block->MSVQAnim_field_0x1C); /*0x5cecdc*/
+      __3_YAXPAX_Z(v5); /*0x5cece2*/
     }
   }
-  *Block = (ObjectClass *)&vt_MSAnim; /*0x5cecee*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5cecf7*/
-    RA2_OPDEL(Block); /*0x5cecfa*/
-  return (MSVQAnim *)Block; /*0x5ced04*/
+  *(unsigned int *)Block->__pad_0 = &MSAnim::`vftable'; /*0x5cecee*/
+  if ( (a2 & 1) != 0 ) /*0x5cecf7*/
+    __3_YAXPAX_Z(Block); /*0x5cecfa*/
+  return Block->__pad_0; /*0x5ced04*/
 
 }
 } // namespace gamemd

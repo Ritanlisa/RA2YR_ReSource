@@ -2511,16 +2511,16 @@ unsigned int * E4Recv_578C50::sub_578C50(unsigned int * a2, int a3)
   int v5; // edi
   int v6; // edx
   int16_t v8; // [esp+12h] [ebp-Eh]
-  int a2; // [esp+28h] [ebp+8h]
+  int v9; // [esp+28h] [ebp+8h]
 
   v3 = ((2 * *((unsigned int *)this + 65) - 1) % 3 != 0) + (2 * *((unsigned int *)this + 65) - 1) / 3 * ((a3 - 1) % 3); /*0x578ca4*/
   v4 = *((unsigned int *)this + 64); /*0x578ccc*/
   v5 = ((2 * *((unsigned int *)this + 66) - 1) % 3 != 0) + (a3 - 1) / 3 * ((2 * *((unsigned int *)this + 66) - 1) / 3); /*0x578cd8*/
   v6 = *((unsigned int *)this + 63); /*0x578cda*/
   v8 = v4 + *((unsigned int *)this + 61) - v6; /*0x578cf0*/
-  IDA_LOWORD(a2) = v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2; /*0x578d34*/
-  IDA_HIWORD(a2) = (v5 - v3) / 2 + v8; /*0x578d3f*/
-  *a2 = a2; /*0x578d4b*/
+  LOWORD(v9) = v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2; /*0x578d34*/
+  HIWORD(v9) = (v5 - v3) / 2 + v8; /*0x578d3f*/
+  *a2 = v9; /*0x578d4b*/
   return a2; /*0x578d48*/
 
 }

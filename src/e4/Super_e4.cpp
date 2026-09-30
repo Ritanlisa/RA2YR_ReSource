@@ -13,9 +13,9 @@ int Super::GetDefaultTimer()
 
   int result; // eax
 
-  result = *((unsigned int *)this + 9); /*0x6cc260*/
+  result = (int)this->field_24; /*0x6cc260*/
   if ( result == -1 ) /*0x6cc266*/
-    return *(unsigned int *)(*((unsigned int *)this + 10) + 176); /*0x6cc26b*/
+    return *((unsigned int *)this->field_28 + 44); /*0x6cc26b*/
   return result; /*0x6cc271*/
 
 }

@@ -234,7 +234,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             2 * (*(unsigned int *)(*(unsigned int *)(a1 + 1892) + 4 * v38) & 0xFFFFFFF)) )
     {
       v26 = (gamemd::DSurface *)(v38);
-      result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((int)((gamemd::DSurface *)(-1)))))))))))))))))))))));
+      result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((int)((gamemd::DSurface *)(-1)))))))))))))))))))))))));
       *(unsigned int *)(a1 + 384) = v38; /*0x7c0a6e*/
       v28 = 5; /*0x7c0a76*/
       if ( v39 ) /*0x7c0a7b*/
@@ -329,7 +329,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             result = -6,
             v36) )
       {
-        result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v33)))))))))))))))))));
+        result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v33)))))))))))))))))))));
       }
       goto LABEL_82; /*0x7c0bc4*/
     }
@@ -5218,7 +5218,7 @@ namespace gamemd {
 void ObjectClass::j_Exception_Destructor()
 {
 
-  Exception::Destructor(this); /*0x7ca9af*/
+  Exception::Destructor((Exception *)this); /*0x7ca9af*/
 
 }
 }
@@ -5227,7 +5227,7 @@ namespace gamemd {
 void ObjectClass::j_Exception_Destructor_2()
 {
 
-  Exception::Destructor(this); /*0x7caa00*/
+  Exception::Destructor((Exception *)this); /*0x7caa00*/
 
 }
 }
@@ -5236,7 +5236,7 @@ namespace gamemd {
 void ObjectClass::j_Exception_Destructor_3()
 {
 
-  Exception::Destructor(this); /*0x7cac2f*/
+  Exception::Destructor((Exception *)this); /*0x7cac2f*/
 
 }
 }
@@ -9557,7 +9557,7 @@ namespace gamemd {
 int E4Recv_7C35B0::sub_7C35B0()
 {
 
-  return *((unsigned short *)this + 906); /*0x7c35b9*/
+  return *((uint16_t *)this + 906); /*0x7c35b9*/
 
 }
 } // namespace gamemd
@@ -12169,8 +12169,8 @@ ObjectClass * E4Recv_7C8AB7::___Gtype_info_UAEPAXI_Z(char a2)
 
   __1type_info_UAE_XZ(this); /*0x7c8aba*/
   if ( (a2 & 1) != 0 ) /*0x7c8ac4*/
-    RA2_OPDEL(this); /*0x7c8ac7*/
-  return (ObjectClass *)this; /*0x7c8acf*/
+    __3_YAXPAX_Z(this); /*0x7c8ac7*/
+  return this; /*0x7c8acf*/
 
 }
 } // namespace gamemd
@@ -12210,7 +12210,7 @@ namespace gamemd {
 char * E4Recv_7C8B29::sub_7C8B29()
 {
 
-  return (unsigned char *)this + 8; /*0x7c8b2c*/
+  return (char *)&this->?; /*0x7c8b2c*/
 
 }
 } // namespace gamemd
@@ -12220,8 +12220,8 @@ namespace gamemd {
 unsigned int * E4Recv_7C8B2D::sub_7C8B2D(int a2)
 {
 
-  *this = &off_7F9594; /*0x7c8b2f*/
-  return this; /*0x7c8b35*/
+  this->AbstractClass = &off_7F9594; /*0x7c8b2f*/
+  return &this->AbstractClass; /*0x7c8b35*/
 
 }
 } // namespace gamemd
@@ -12231,7 +12231,7 @@ namespace gamemd {
 ObjectClass * E4Recv_7C8B38::sub_7C8B38(int a2)
 {
 
-  return (ObjectClass *)this; /*0x7c8b3a*/
+  return this; /*0x7c8b3a*/
 
 }
 } // namespace gamemd
@@ -13070,7 +13070,7 @@ __non_rtti_object * E4Recv_7CA971::__0__non_rtti_object_QAE_PBD_Z(char * a2)
 {
 
   __0exception_QAE_ABQBD_Z(this, (const char *const *)&a2); /*0x7ca981*/
-  *(unsigned int *)this = &vt_non_rtti_object; /*0x7ca986*/
+  *(unsigned int *)this = &__non_rtti_object::`vftable'; /*0x7ca986*/
   return this; /*0x7ca98e*/
 
 }
@@ -13083,8 +13083,8 @@ ObjectClass * ObjectClass::sub_7CA993(void * Block, char a2)
 
   j_Exception_Destructor(Block); /*0x7ca996*/
   if ( (a2 & 1) != 0 ) /*0x7ca9a0*/
-    RA2_OPDEL(Block); /*0x7ca9a3*/
-  return (ObjectClass *)Block; /*0x7ca9ab*/
+    __3_YAXPAX_Z(Block); /*0x7ca9a3*/
+  return Block; /*0x7ca9ab*/
 
 }
 } // namespace gamemd
@@ -13095,7 +13095,7 @@ exception * E4Recv_7CA9B4::sub_7CA9B4(struct exception * a2)
 {
 
   __0exception_QAE_ABV0__Z(this, a2); /*0x7ca9bb*/
-  *(unsigned int *)this = &vt_non_rtti_object; /*0x7ca9c0*/
+  *(unsigned int *)this = &__non_rtti_object::`vftable'; /*0x7ca9c0*/
   return this; /*0x7ca9c8*/
 
 }
@@ -13107,7 +13107,7 @@ exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
 
   __0exception_QAE_ABV0__Z((exception *)this, a1); /*0x7ca9d3*/
-  this->vfptr = &vt_bad_typeid; /*0x7ca9d8*/
+  this->m_0 = (int)&bad_typeid::`vftable'; /*0x7ca9d8*/
   return (exception *)this; /*0x7ca9e0*/
 
 }
@@ -13120,8 +13120,8 @@ ObjectClass * ObjectClass::sub_7CA9E4(void * Block, char a2)
 
   j_Exception_Destructor_2(Block); /*0x7ca9e7*/
   if ( (a2 & 1) != 0 ) /*0x7ca9f1*/
-    RA2_OPDEL(Block); /*0x7ca9f4*/
-  return (ObjectClass *)Block; /*0x7ca9fc*/
+    __3_YAXPAX_Z(Block); /*0x7ca9f4*/
+  return Block; /*0x7ca9fc*/
 
 }
 } // namespace gamemd
@@ -13228,8 +13228,8 @@ ObjectClass * ObjectClass::sub_7CAC13(void * Block, char a2)
 
   j_Exception_Destructor_3(Block); /*0x7cac16*/
   if ( (a2 & 1) != 0 ) /*0x7cac20*/
-    RA2_OPDEL(Block); /*0x7cac23*/
-  return (ObjectClass *)Block; /*0x7cac2b*/
+    __3_YAXPAX_Z(Block); /*0x7cac23*/
+  return Block; /*0x7cac2b*/
 
 }
 } // namespace gamemd
@@ -13240,7 +13240,7 @@ exception * E4Recv_7CAC34::sub_7CAC34(struct exception * a2)
 {
 
   __0exception_QAE_ABV0__Z(this, a2); /*0x7cac3b*/
-  *(unsigned int *)this = &vt_bad_cast; /*0x7cac40*/
+  *(unsigned int *)this = &bad_cast::`vftable'; /*0x7cac40*/
   return this; /*0x7cac48*/
 
 }

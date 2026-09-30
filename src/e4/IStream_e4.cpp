@@ -15,15 +15,15 @@ namespace gamemd {
 int IStream::Read(IStream * pstm, void * pv, ULONG cb)
 {
 
-  unsigned int *v3; // ecx
+  int v3; // ecx
   unsigned int *v4; // esi
   void *v5; // ecx
-  HRESULT result; // eax
+  int result; // eax
   void *v7; // [esp+20h] [ebp-4h] BYREF
 
-  v4 = (unsigned int)(v3);
-  v7 = (unsigned int)(pv);
-  WriteCompressionBlock(v3[7], &v7, v3[8]); /*0x4a303e*/
+  v4 = (unsigned int *)v3; /*0x4a3026*/
+  v7 = pv; /*0x4a302d*/
+  WriteCompressionBlock(pstm, (unsigned int)pv, *(unsigned char **)(v3 + 28), (int *)&v7, *(unsigned int *)(v3 + 32)); /*0x4a303e*/
   v5 = v7; /*0x4a3043*/
   v4[10] = 0x10000; /*0x4a304a*/
   pv = 0; /*0x4a3051*/

@@ -1232,16 +1232,14 @@ unsigned int * E4Recv_642E00::UI_Render()
 {
 
   unsigned int *FoundationSize; // eax
-  int v2; // ecx
-  unsigned int v4[4]; // [esp+10h] [ebp-10h] BYREF
-  unsigned int *v5; // [esp+24h] [ebp+4h]
-  unsigned int *v6; // [esp+28h] [ebp+8h]
+  int v3; // ecx
+  unsigned int v5[4]; // [esp+10h] [ebp-10h] BYREF
 
-  FoundationSize = Building::GetFoundationSize(v4, 0); /*0x642e0d*/
-  v2 = FoundationSize[3]; /*0x642e2b*/
-  *v5 = FoundationSize[2] + 6; /*0x642e2e*/
-  *v6 = v2 + 6; /*0x642e37*/
-  return v6; /*0x642e39*/
+  FoundationSize = Building::GetFoundationSize(v5, 0); /*0x642e0d*/
+  v3 = FoundationSize[3]; /*0x642e2b*/
+  *a1 = FoundationSize[2] + 6; /*0x642e2e*/
+  *a2 = v3 + 6; /*0x642e37*/
+  return a2; /*0x642e39*/
 
 }
 } // namespace gamemd
@@ -1252,24 +1250,22 @@ int E4Recv_642E40::UI_Render_642E40()
 {
 
   int Default; // eax
-  int v2; // esi
+  int v3; // esi
   int result; // eax
-  unsigned int *v4; // [esp+8h] [ebp+4h]
-  unsigned int *v5; // [esp+Ch] [ebp+8h]
 
   Default = BuildingType::FindDefault(0); /*0x642e43*/
-  v2 = Default; /*0x642e48*/
+  v3 = Default; /*0x642e48*/
   if ( Default ) /*0x642e4c*/
   {
-    *v4 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642e69*/
-    result = (*(int (**)(int))(*(unsigned int *)v2 + 128))(v2); /*0x642e6f*/
-    *v5 = result; /*0x642e7a*/
+    *a1 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642e69*/
+    result = (*(int (**)(int))(*(unsigned int *)v3 + 128))(v3); /*0x642e6f*/
+    *a2 = result; /*0x642e7a*/
   }
   else
   {
-    *v4 = 0; /*0x642e56*/
-    *v5 = 0; /*0x642e58*/
-    return (int)v4; /*0x642e4e*/
+    *a1 = 0; /*0x642e56*/
+    *a2 = 0; /*0x642e58*/
+    return (int)a1; /*0x642e4e*/
   }
   return result; /*0x642e5a*/
 
@@ -1309,40 +1305,35 @@ namespace gamemd {
 int * E4Recv_643670::UI_Render_643670()
 {
 
-  AbstractClass *Instance; // ebx
-  unsigned short *v2; // esi
-  int v3; // edi
-  int v4; // eax
-  int referenceCount; // ecx
-  int v7; // [esp+Ch] [ebp-38h] BYREF
-  unsigned int v8[4]; // [esp+14h] [ebp-30h] BYREF
-  unsigned char v9[30]; // [esp+24h] [ebp-20h] BYREF
-  int16_t v10; // [esp+42h] [ebp-2h]
-  int v11; // [esp+48h] [ebp+4h] BYREF
-  int v12; // [esp+4Ch] [ebp+8h]
-  size_t v13; // [esp+50h] [ebp+Ch]
-  int v14; // [esp+54h] [ebp+10h]
-  int v15; // [esp+58h] [ebp+14h]
+  int Instance; // ebx
+  unsigned short *v6; // esi
+  int v7; // edi
+  int v8; // eax
+  int v9; // ecx
+  int v11; // [esp+Ch] [ebp-38h] BYREF
+  unsigned int v12[4]; // [esp+14h] [ebp-30h] BYREF
+  unsigned char v13[30]; // [esp+24h] [ebp-20h] BYREF
+  int16_t v14; // [esp+42h] [ebp-2h]
 
   Instance = TextRenderer::GetInstance(); /*0x643680*/
-  v2 = v9; /*0x643682*/
-  v3 = 15; /*0x643686*/
+  v6 = v13; /*0x643682*/
+  v7 = 15; /*0x643686*/
   do /*0x64369f*/
   {
-    *v2++ = *(unsigned short *)CharToWideString(g_abs_8258C0); /*0x643698*/
-    --v3; /*0x64369e*/
+    *v6++ = *(unsigned short *)CharToWideString(g_Str_W); /*0x643698*/
+    --v7; /*0x64369e*/
   }
-  while ( v3 ); /*0x64369f*/
-  v10 = 0; /*0x6436ab*/
-  v4 = Text::MeasureWidth((int)v9, 0); /*0x6436b0*/
-  referenceCount = Instance->referenceCount; /*0x6436b9*/
-  if ( v15 != -1 ) /*0x6436bf*/
-    v4 = v15; /*0x6436c1*/
-  v8[2] = v4 + v11; /*0x6436d5*/
-  v8[3] = referenceCount + v12; /*0x6436d9*/
-  v8[0] = 0; /*0x6436fa*/
-  v8[1] = 0; /*0x6436fe*/
-  return TextRenderer::DrawText(&v7, v13, (int)g_abs_88730C, v8, (int)&v11, v14, 0, 25); /*0x64370a*/
+  while ( v7 ); /*0x64369f*/
+  v14 = 0; /*0x6436ab*/
+  v8 = Text::MeasureWidth((int)v13, 0); /*0x6436b0*/
+  v9 = *(unsigned int *)(Instance + 28); /*0x6436b9*/
+  if ( a5 != -1 ) /*0x6436bf*/
+    v8 = a5; /*0x6436c1*/
+  v12[2] = v8 + a1; /*0x6436d5*/
+  v12[3] = v9 + a2; /*0x6436d9*/
+  v12[0] = 0; /*0x6436fa*/
+  v12[1] = 0; /*0x6436fe*/
+  return TextRenderer::DrawText(&v11, a3, g_DSurface_Hidden, v12, (int)&a1, a4, 0, 25); /*0x64370a*/
 
 }
 } // namespace gamemd

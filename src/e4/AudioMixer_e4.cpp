@@ -19,7 +19,7 @@ int AudioMixer::SetVolume()
   int result; // eax
 
   result = 1; /*0x406653*/
-  if ( (*((unsigned char *)this + 16) & 1) == 0 || *((unsigned int *)this + 19) ) /*0x40665c*/
+  if ( (this->AudioMixer_field_10 & 1) == 0 || *((unsigned int *)this + 19) ) /*0x40665c*/
     return 0; /*0x406663*/
   return result; /*0x406665*/
 
@@ -30,16 +30,16 @@ namespace gamemd {
 int AudioMixer::PlaySample()
 {
 
-  int v2; // eax
-  int v3; // ecx
+  int AudioMixer_field_08; // eax
+  int AudioMixer_field_04; // ecx
   int v4; // ebx
-  int v5; // eax
+  int AudioMixer_field_00; // eax
   int v7; // eax
   unsigned int v8; // edi
   unsigned int v9; // ebp
   int v10; // ecx
-  unsigned int v11; // eax
-  int v12; // ecx
+  int AudioMixer_field_14; // eax
+  int AudioMixer_field_10; // ecx
   unsigned int v13; // edi
   uint64_t v14; // kr00_8
   unsigned int v15; // edx
@@ -49,17 +49,17 @@ int AudioMixer::PlaySample()
   int v19; // eax
   int v20; // ecx
 
-  v2 = *((unsigned int *)this + 2); /*0x4071c7*/
-  v3 = *((unsigned int *)this + 1); /*0x4071ca*/
-  v4 = v2 - v3; /*0x4071cf*/
-  if ( v2 == v3 ) /*0x4071d1*/
+  AudioMixer_field_08 = this->AudioMixer_field_08; /*0x4071c7*/
+  AudioMixer_field_04 = this->AudioMixer_field_04; /*0x4071ca*/
+  v4 = AudioMixer_field_08 - AudioMixer_field_04; /*0x4071cf*/
+  if ( AudioMixer_field_08 == AudioMixer_field_04 ) /*0x4071d1*/
     return 0; /*0x40729e*/
-  if ( (*(unsigned char *)this & 1) != 0 ) /*0x4071da*/
+  if ( (this->AudioMixer_field_00 & 1) != 0 ) /*0x4071da*/
   {
-    *((unsigned int *)this + 1) = v2; /*0x4071dc*/
-    v5 = *this; /*0x4071df*/
-    LOBYTE(v5) = *this | 2; /*0x4071e1*/
-    *(unsigned int *)this = v5; /*0x4071e3*/
+    this->AudioMixer_field_04 = AudioMixer_field_08; /*0x4071dc*/
+    AudioMixer_field_00 = this->AudioMixer_field_00; /*0x4071df*/
+    LOBYTE(AudioMixer_field_00) = this->AudioMixer_field_00 | 2; /*0x4071e1*/
+    this->AudioMixer_field_00 = AudioMixer_field_00; /*0x4071e3*/
     return 1; /*0x4071e6*/
   }
   else
@@ -69,48 +69,48 @@ int AudioMixer::PlaySample()
     v9 = *((unsigned int *)this + 7); /*0x4071fa*/
     v10 = v7; /*0x4071fd*/
     *((unsigned int *)this + 6) = v7; /*0x4071ff*/
-    v11 = *((unsigned int *)this + 5); /*0x407202*/
+    AudioMixer_field_14 = this->AudioMixer_field_14; /*0x407202*/
     *((unsigned int *)this + 7) = v15; /*0x407209*/
     v14 = __PAIR64__(v15, v10) - __PAIR64__(v9, v8); /*0x407205*/
     v13 = (__PAIR64__(v15, v10) - __PAIR64__(v9, v8)) >> 32; /*0x407205*/
-    v12 = v14; /*0x407205*/
-    if ( __PAIR64__(v13, v14) > __PAIR64__(v11, *((unsigned int *)this + 4)) ) /*0x40721b*/
-      v12 = *((unsigned int *)this + 4); /*0x40721d*/
-    v16 = v12 * *((unsigned int *)this + 3); /*0x407226*/
+    AudioMixer_field_10 = v14; /*0x407205*/
+    if ( __PAIR64__(v13, v14) > __PAIR64__(AudioMixer_field_14, this->AudioMixer_field_10) ) /*0x40721b*/
+      AudioMixer_field_10 = this->AudioMixer_field_10; /*0x40721d*/
+    v16 = AudioMixer_field_10 * this->AudioMixer_field_0C; /*0x407226*/
     if ( v4 >= 0 ) /*0x40722b*/
     {
       if ( v16 <= v4 ) /*0x407269*/
       {
-        v20 = (int)(v16 + *((unsigned int *)this + 1));
-        v19 = (int)(*this);
-        LOBYTE(v19) = *this | 2; /*0x40728b*/
-        *((unsigned int *)this + 1) = v20; /*0x40728d*/
+        v20 = v16 + this->AudioMixer_field_04; /*0x407287*/
+        v19 = this->AudioMixer_field_00; /*0x407289*/
+        LOBYTE(v19) = this->AudioMixer_field_00 | 2; /*0x40728b*/
+        this->AudioMixer_field_04 = v20; /*0x40728d*/
       }
       else
       {
-        *((unsigned int *)this + 1) += v4; /*0x407270*/
-        v19 = *this; /*0x407273*/
-        LOBYTE(v19) = *this | 2; /*0x407275*/
+        this->AudioMixer_field_04 += v4; /*0x407270*/
+        v19 = this->AudioMixer_field_00; /*0x407273*/
+        LOBYTE(v19) = this->AudioMixer_field_00 | 2; /*0x407275*/
       }
-      *(unsigned int *)this = v19; /*0x407277*/
+      this->AudioMixer_field_00 = v19; /*0x407277*/
       return 1; /*0x40727a*/
     }
     else
     {
       if ( v16 <= -v4 ) /*0x407233*/
       {
-        v18 = (int)(*((unsigned int *)this + 1) - v16);
-        v17 = (int)(*this);
-        LOBYTE(v17) = *this | 2; /*0x407255*/
-        *((unsigned int *)this + 1) = v18; /*0x407257*/
+        v18 = this->AudioMixer_field_04 - v16; /*0x407251*/
+        v17 = this->AudioMixer_field_00; /*0x407253*/
+        LOBYTE(v17) = this->AudioMixer_field_00 | 2; /*0x407255*/
+        this->AudioMixer_field_04 = v18; /*0x407257*/
       }
       else
       {
-        *((unsigned int *)this + 1) += v4; /*0x40723a*/
-        v17 = *this; /*0x40723d*/
-        LOBYTE(v17) = *this | 2; /*0x40723f*/
+        this->AudioMixer_field_04 += v4; /*0x40723a*/
+        v17 = this->AudioMixer_field_00; /*0x40723d*/
+        LOBYTE(v17) = this->AudioMixer_field_00 | 2; /*0x40723f*/
       }
-      *(unsigned int *)this = v17; /*0x407241*/
+      this->AudioMixer_field_00 = v17; /*0x407241*/
       return 1; /*0x407244*/
     }
   }
@@ -122,13 +122,13 @@ namespace gamemd {
 int AudioMixer::Init()
 {
 
-  SetupSampleAudioMixer(this, (ObjectClass *)0x4000); /*0x40100a*/
-  SetupSampleAudioMixer((char *)this + 10, (ObjectClass *)0x64); /*0x401019*/
-  SetupSampleAudioMixer((char *)this + 20, (ObjectClass *)0x2000); /*0x401028*/
-  SetRateMixerSample((char *)this + 10, 10, 0x3E8u, 0); /*0x40103b*/
+  SetupSampleAudioMixer(&this->AudioMixer_field_00, 0x4000); /*0x40100a*/
+  SetupSampleAudioMixer((int *)this + 10, 100); /*0x401019*/
+  SetupSampleAudioMixer((int *)this + 20, 0x2000); /*0x401028*/
+  SetRateMixerSample((unsigned int *)this + 10, 10, 0x3E8u, 0); /*0x40103b*/
   SetRateMixerSample(this, 0x4000, 0x3E8u, 0); /*0x40104e*/
-  SetRateMixerSample((char *)this + 20, 0x4000, 0x3E8u, 0); /*0x401061*/
-  return EndBufferMixer(this, 0x4000); /*0x40106d*/
+  SetRateMixerSample((unsigned int *)this + 20, 0x4000, 0x3E8u, 0); /*0x401061*/
+  return EndBufferMixer(&this->AudioMixer_field_00, 0x4000); /*0x40106d*/
 
 }
 } // namespace gamemd
@@ -145,14 +145,14 @@ int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
   {
     if ( a2 > 0x4000 ) /*0x4061e0*/
       v2 = 0x4000; /*0x4061e2*/
-    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406204*/
+    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406204*/
   }
   else
   {
     if ( a2 > 0x4000 ) /*0x40620f*/
       v2 = 0x4000; /*0x406211*/
     v4 = a1 + 46; /*0x40621f*/
-    EndBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406236*/
+    EndBufferMixer(a1 + 46, (unsigned int)(v2 * HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406236*/
     return AudioMixer::PlaySample(v4); /*0x40623e*/
   }
 
@@ -183,8 +183,8 @@ namespace gamemd {
 int AudioMixer::Shutdown()
 {
 
-  if ( g_abs_87E728 ) /*0x406e88*/
-    ((AudioQueue *)(g_abs_87E728))->StopAllVoices(1); /*0x406e8f*/
+  if ( g_Audio_Enabled ) /*0x406e88*/
+    ((AudioQueue *)(g_Audio_Enabled))->StopAllVoices(1); /*0x406e8f*/
   return this->AudioStream::CleanupChannels();
 
 }
@@ -196,14 +196,14 @@ int AudioMixer::Pump()
 
   int result; // eax
 
-  if ( MEMORY[0xB1D4CC] ) /*0x753628*/
+  if ( g_InfantryDrawState ) /*0x753628*/
     AudioMixer::ProcessAudioFrame(); /*0x75362a*/
-  result = MEMORY[0xB1D428]; /*0x75362f*/
-  if ( MEMORY[0xB1D428] ) /*0x753636*/
+  result = dword_B1D428; /*0x75362f*/
+  if ( dword_B1D428 ) /*0x753636*/
   {
-    result = --MEMORY[0xB1D428]; /*0x75363d*/
-    if ( MEMORY[0xB1D428] < 0 ) /*0x753643*/
-      MEMORY[0xB1D428] = 0; /*0x753645*/
+    result = --dword_B1D428; /*0x75363d*/
+    if ( dword_B1D428 < 0 ) /*0x753643*/
+      dword_B1D428 = 0; /*0x753645*/
   }
   return result; /*0x75364f*/
 

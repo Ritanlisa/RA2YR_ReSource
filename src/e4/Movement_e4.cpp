@@ -18,363 +18,470 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Bounds_e4.hpp"
+#include "e4/classes/NeuronClass_e4.hpp"
 
 // 0x5B20F0
 namespace gamemd {
 void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9)
 {
-    unsigned int v74 = 0;  /* G37 hoist */
 
-  int v9; // edx
-  int *v10; // ecx
-  double v11; // st7
-  int *v12; // ebx
-  BuildingTypeClass *v13; // esi
-  bool v14; // zf
-  double v15; // st7
-  double v16; // st7
-  double v17; // st7
-  double v18; // st7
-  int v19; // edx
-  double v20; // st7
-  int v21; // eax
-  double v22; // st7
-  double v23; // st7
-  unsigned int v24; // edx
-  int eax10a; // eax
-  int v26; // edi
-  int v27; // eax
-  IUnknown *v25; // eax
-  int v29; // ecx
-  int v30; // edx
-  double v31; // st7
-  int64_t result; // rax
-  double v33; // st7
-  int edx11; // edx
-  int v35; // esi
-  int v36; // eax
-  IUnknown *v34; // eax
-  int v38; // ecx
-  int v39; // edx
-  int *v40; // eax
-  int v41; // ecx
-  int v42; // edx
-  IUnknown *v43; // eax
-  int v44; // eax
+  unsigned int * v11;
+  unsigned int v13; // edi
+  int Movement_field_00_low; // edx
+  int v18; // eax
+  int v20; // edx
+  unsigned int v22; // eax
+  int v23; // eax
+  int v24; // edi
+  int v25; // eax
+  int v26; // eax
+  unsigned int *v27; // eax
+  unsigned int v28; // ecx
+  unsigned int v29; // edx
+  int result; // eax
+  unsigned int v31; // edx
+  int v32; // eax
+  int v33; // esi
+  int v34; // eax
+  int v35; // eax
+  unsigned int *v36; // eax
+  unsigned int v37; // ecx
+  unsigned int v38; // edx
+  int *v39; // eax
+  int v40; // eax
+  void *v41; // ecx
+  void *v42; // edx
+  int v43; // eax
+  unsigned int Vector3_field_0x04; // ecx
   int *v45; // eax
-  int v46; // ecx
-  int esi11a; // esi
-  int edx11c; // edx
-  int v49; // eax
-  IUnknown *v47; // eax
-  BuildingTypeClass *v48; // esi
-  double v52; // st7
-  double v53; // st7
-  double v54; // st7
-  int v55; // edx
-  double v56; // st7
-  double v57; // st7
-  double v58; // st7
-  double v59; // st7
-  int ecx20; // ecx
-  int edi20a; // edi
-  int v62; // eax
-  IUnknown *v60; // eax
-  IUnknown *v61; // eax
+  double v46; // st7
+  unsigned int v47; // ecx
+  unsigned int Vector3_field_0x08; // esi
+  unsigned int v49; // edx
+  void *v50; // eax
+  double *v51; // eax
+  int v53; // edx
+  int v56; // ecx
+  int v57; // eax
+  int v58; // edi
+  int v59; // eax
+  int v60; // eax
+  unsigned int *v61; // eax
+  double *v62; // eax
   int GroundHeight; // edi
-  int v66; // eax
-  int v67; // edx
-  int v68; // ecx
-  int v69; // edx
-  int16_t *eax47; // eax
-  int16_t *eax47a; // eax
-  IUnknown *v72; // [esp+0h] [ebp-A8h]
-  unsigned char v73[12]; // [esp+0h] [ebp-A8h]
-  __int128 v74; // [esp+0h] [ebp-A8h]
-  unsigned char v75[12]; // [esp+4h] [ebp-A4h]
-  unsigned char v76[12]; // [esp+4h] [ebp-A4h]
-  BuildingTypeClass *v70; // [esp+Ch] [ebp-9Ch]
-  BuildingTypeClass *v71; // [esp+20h] [ebp-88h] BYREF
-  double *v79; // [esp+24h] [ebp-84h] BYREF
-  double v80[3]; // [esp+28h] [ebp-80h] BYREF
-  double *v81; // [esp+44h] [ebp-64h] BYREF
-  double v82[2]; // [esp+48h] [ebp-60h] BYREF
-  IUnknown *v83[2]; // [esp+58h] [ebp-50h] BYREF
-  AbstractClass aP1; // [esp+60h] [ebp-48h] BYREF
-  int v85; // [esp+84h] [ebp-24h]
-  double v86[3]; // [esp+90h] [ebp-18h] BYREF
+  int v64; // eax
+  unsigned int v65; // edx
+  int v66; // ecx
+  unsigned int v67; // edx
+  Movement *v68; // eax
+  int *v69; // eax
+  int16_t *v70; // eax
+  double v71; // [esp+0h] [ebp-A8h]
+  double v72; // [esp+0h] [ebp-A8h]
+  double v73; // [esp+0h] [ebp-A8h]
+  double v74; // [esp+8h] [ebp-A0h]
+  double v75; // [esp+8h] [ebp-A0h]
+  double v76; // [esp+8h] [ebp-A0h]
+  double v77; // [esp+8h] [ebp-A0h]
+  uint64_t v78; // [esp+8h] [ebp-A0h]
+  double v79; // [esp+8h] [ebp-A0h]
+  double v80; // [esp+8h] [ebp-A0h]
+  double v81; // [esp+8h] [ebp-A0h]
+  double v82; // [esp+8h] [ebp-A0h]
+  int16_t *v83; // [esp+Ch] [ebp-9Ch]
+  unsigned short *v84; // [esp+10h] [ebp-98h]
+  Movement v85; // [esp+20h] [ebp-88h] BYREF
+  int v86; // [esp+24h] [ebp-84h] BYREF
+  unsigned char v87[24]; // [esp+28h] [ebp-80h] BYREF
+  Math v88; // [esp+44h] [ebp-64h] BYREF
+  double v89; // [esp+58h] [ebp-50h] BYREF
+  double v90; // [esp+60h] [ebp-48h] BYREF
+  double v91; // [esp+68h] [ebp-40h]
+  double v92; // [esp+78h] [ebp-30h] BYREF
+  unsigned int v93[4]; // [esp+80h] [ebp-28h]
+  double v94[3]; // [esp+90h] [ebp-18h] BYREF
 
-  v12 = v10; /*0x5b2102*/
-  v13 = (BuildingTypeClass *)v9; /*0x5b2104*/
-  v14 = aP0->field_0 == (unsigned int)*(&g_MatrixTransformState + 64); /*0x5b210e*/
-  v81 = (double *)v9; /*0x5b2110*/
-  if ( v14 && *(unsigned long long *)&aP0->field_4 == *(unsigned long long *)(&g_MatrixTransformState + 65) ) /*0x5b2124*/
+  _ESI = (unsigned int)(a1);
+  v11 = (unsigned int)(*aP3 == (void *)g_MissionQueueFrame.localVariables[291]);
+  *(unsigned int *)v88.__pad_0 = a1; /*0x5b2110*/
+  if ( v11 /*0x5b2134*/
+    && aP3[1] == (void *)g_MissionQueueFrame.localVariables[292]
+    && aP3[2] == (void *)g_MissionQueueFrame.localVariables[293] )
   {
-    Math::Hypotenuse2D((double *)v9); /*0x5b213c*/
-    *(double *)&v75[4] = v11; /*0x5b214a*/
-    *(unsigned int *)v75 = v13->abstractFlags; /*0x5b214d*/
-    v15 = Math::CalcAngle((AbstractClass *)v13->uniqueId, *(double *)v75); /*0x5b214f*/
-    LOWORD(v81) = Math::RoundToInt((v15 - 1.570796326794897) * -10430.06004058427); /*0x5b216b*/
-    v71 = (BuildingTypeClass *)v81; /*0x5b217e*/
-    LOWORD(v79) = 0x2000; /*0x5b2182*/
-    if ( Math::Abs16Cmp(&v71, (IUnknown *)&v79, (IUnknown *)a1) ) /*0x5b2189*/
+    Math::Hypotenuse2D((int *)a1); /*0x5b213c*/
+    __asm { fstp [esp+0A0h+var_A0]; double } /*0x5b214a*/
+    Math::CalcAngle(_ESI[2], v74); /*0x5b214f*/
+    __asm { fsub ds:dbl_7E2820 } /*0x5b2154*/
+    __asm { fmul ds:dbl_7E2818 }
+    *(unsigned short *)v88.__pad_0 = Math::RoundToInt(a3); /*0x5b216b*/
+    v85.Movement_field_00 = *(unsigned int *)v88.__pad_0; /*0x5b217e*/
+    LOWORD(v86) = 0x2000; /*0x5b2182*/
+    if ( Math::Abs16Cmp((Math *)&v85, &v86, aP4) ) /*0x5b2189*/
     {
-      LOWORD(v71) = (unsigned short)v79; /*0x5b2197*/
+      LOWORD(v85.Movement_field_00) = v86; /*0x5b2197*/
     }
-    else if ( SLOWORD(Math::Sub16(&v79, (BuildingTypeClass *)v83, (IUnknown *)&v71)->field_0) >= 0 ) /*0x5b21b5*/
+    else if ( *(int16_t *)Math::Sub16((Math *)&v86, &v89, &v85) >= 0 ) /*0x5b21b5*/
     {
-      LOWORD(v71) = *(unsigned short *)a1 + (unsigned short)v71; /*0x5b21c4*/
+      LOWORD(v85.Movement_field_00) += *aP4; /*0x5b21c4*/
     }
     else
     {
-      LOWORD(v71) = (unsigned short)v71 - *(unsigned short *)a1; /*0x5b21ba*/
+      LOWORD(v85.Movement_field_00) -= *aP4; /*0x5b21ba*/
     }
-    v81 = (double *)((int16_t)*Vector::ToFacingMath((double *)v13->vtable0, v83) - 0x3FFF); /*0x5b21de*/
-    v16 = (double)(int)v81 * -0.00009587672516830327; /*0x5b21e8*/
-    *(double *)v83 = v16; /*0x5b21ee*/
-    Vector3::Magnitude((double *)v13->vtable0); /*0x5b21f2*/
-    v82[0] = v16; /*0x5b21f7*/
-    if ( *(double *)v83 != 0.0 ) /*0x5b220a*/
+    *(unsigned int *)v88.__pad_0 = *(int16_t *)Vector::ToFacingMath((int *)&v89, v84) - 0x3FFF; /*0x5b21de*/
+    __asm /*0x5b21e4*/
     {
-      v17 = Math::ArcTan2(v83[0]); /*0x5b2216*/
-      v72 = v83[0]; /*0x5b2222*/
-      *(double *)v13->vtable0 = *(double *)v13->vtable0 / v17; /*0x5b2223*/
-      *(double *)&v13-((unsigned int *)(>vtable0))[8] = *(double *)&v13->vtable0[8] / Math::ArcTan2(v72); /*0x5b2230*/
+      fild dword ptr [esp+98h+var_64.__pad_0]
+      fmul ds:dbl_7E2810
+      fstp qword ptr [esp+98h+var_50]
     }
-    v81 = (double *)((IUnknown *)((double *)((int16_t)v71 - 0x3FFF)));
-    v18 = (IUnknown *)(Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(int)v81 * -0.00009587672516830327)));
-    v19 = (int16_t)v71; /*0x5b2259*/
-    *(double *)v13->vtable0 = v18 * *(double *)v13->vtable0; /*0x5b225e*/
-    v81 = (double *)(v19 - 0x3FFF); /*0x5b2266*/
-    v20 = Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(v19 - 0x3FFF) * -0.00009587672516830327)); /*0x5b2277*/
-    v21 = (int16_t)v71; /*0x5b227f*/
-    *(double *)&v13-((unsigned int *)(>vtable0))[8] = v20 * *(double *)&v13->vtable0[8]; /*0x5b2284*/
-    v81 = (double *)(v21 - 0x3FFF); /*0x5b228c*/
-    v22 = Math::SinCos((IUnknown *)COERCE_UNSIGNED_INT64((double)(v21 - 0x3FFF) * -0.00009587672516830327)); /*0x5b229d*/
-    v23 = v22 * v82[0]; /*0x5b22a2*/
-    v24 = *(unsigned int *)v13->vtable0; /*0x5b22ab*/
-    *(double *)&v13->uniqueId = v23; /*0x5b22ad*/
-    *(unsigned long long *)&aP1.nextArrayIndex = __PAIR64__(*(unsigned int *)&v13-((unsigned int *)(>vtable0))[4], v24); /*0x5b22b3*/
-    eax10a = *(unsigned int *)&v13-((unsigned int *)(>vtable0))[12]; /*0x5b22c2*/
-    aP1.NeedsSaveOrLink = *(void **)&v13-((unsigned int *)(>vtable0))[8]; /*0x5b22c5*/
-    v85 = eax10a; /*0x5b22c9*/
-    v26 = Math::RoundToInt(v23); /*0x5b22d6*/
-    aP1.referenceCount = Math::RoundToInt(v23); /*0x5b22dd*/
-    v27 = Math::RoundToInt(v23); /*0x5b22e1*/
-    v25 = Coord::Subtract( /*0x5b22ff*/
-            &aP1.nextArrayIndex,
-            (IUnknown *)(*v12 + v26),
-            (IUnknown *)(aP1.referenceCount + v12[1]),
-            (IUnknown *)(v27 + v12[2]));
-    v29 = v25->field_4; /*0x5b2308*/
-    v30 = v25->field_8; /*0x5b230b*/
-    *v12 = v25->field_0; /*0x5b230e*/
-    v12[1] = v29; /*0x5b2310*/
-    v12[2] = v30; /*0x5b2313*/
-    v31 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64( /*0x5b233a*/
-                                        *(double *)&v13->vtable0[8] * *(double *)&v13->vtable0[8]
-                                      + *(double *)v13->vtable0 * *(double *)v13->vtable0
-                                      + *(double *)&v13->uniqueId * *(double *)&v13->uniqueId));
-    return Math::RoundToInt(v31); /*0x5b234d*/
+    Vector3::Magnitude((int *)_ESI); /*0x5b21f2*/
+    __asm /*0x5b21f7*/
+    {
+      fstp qword ptr [esp+98h+var_64.field_4]
+      fld qword ptr [esp+98h+var_50]
+      fcomp ds:dbl_7E2800
+      fnstsw ax
+    }
+    if ( (_AX & 0x4000) == 0 ) /*0x5b220a*/
+    {
+      v13 = HIDWORD(v89); /*0x5b220c*/
+      Math::ArcTan2(v89); /*0x5b2216*/
+      __asm { fdivr qword ptr [esi] } /*0x5b221b*/
+      v71 = COERCE_DOUBLE(__PAIR64__(v13, LODWORD(v89))); /*0x5b2222*/
+      __asm { fstp qword ptr [esi] } /*0x5b2223*/
+      *_ESI = _RT1; /*0x5b2223*/
+      Math::ArcTan2(v71); /*0x5b2225*/
+      __asm { fdivr qword ptr [esi+8] } /*0x5b222a*/
+      __asm { fstp qword ptr [esi+8] }
+      _ESI[1] = _RT1; /*0x5b2230*/
+    }
+    *(unsigned int *)v88.__pad_0 = SLOWORD(v85.Movement_field_00) - 0x3FFF; /*0x5b2241*/
+    __asm /*0x5b2245*/
+    {
+      fild dword ptr [esp+0A0h+var_64.__pad_0]
+      fmul ds:dbl_7E2810
+      fstp [esp+0A0h+var_A0]; double
+    }
+    Math::ArcTan2(v75); /*0x5b2252*/
+    __asm { fmul qword ptr [esi] } /*0x5b2257*/
+    Movement_field_00_low = SLOWORD(v85.Movement_field_00); /*0x5b2259*/
+    __asm { fstp qword ptr [esi] } /*0x5b225e*/
+    *_ESI = _RT1; /*0x5b225e*/
+    *(unsigned int *)v88.__pad_0 = Movement_field_00_low - 0x3FFF; /*0x5b2266*/
+    __asm /*0x5b226a*/
+    {
+      fild dword ptr [esp+0A0h+var_64.__pad_0]
+      fmul ds:dbl_7E2810
+      fstp [esp+0A0h+var_A0]; double
+    }
+    Math::ArcTan2(v76); /*0x5b2277*/
+    __asm { fmul qword ptr [esi+8] } /*0x5b227c*/
+    v18 = SLOWORD(v85.Movement_field_00); /*0x5b227f*/
+    __asm { fstp qword ptr [esi+8] } /*0x5b2284*/
+    _ESI[1] = _RT1; /*0x5b2284*/
+    *(unsigned int *)v88.__pad_0 = v18 - 0x3FFF; /*0x5b228c*/
+    __asm /*0x5b2290*/
+    {
+      fild dword ptr [esp+0A0h+var_64.__pad_0]
+      fmul ds:dbl_7E2810
+      fstp [esp+0A0h+var_A0]; double
+    }
+    Math::SinCos(v77); /*0x5b229d*/
+    __asm { fmul qword ptr [esp+0A0h+var_64.field_4] } /*0x5b22a2*/
+    v20 = *(unsigned int *)_ESI; /*0x5b22ab*/
+    __asm { fst qword ptr [esi+10h] } /*0x5b22ad*/
+    _ESI[2] = _RT1; /*0x5b22ad*/
+    *(unsigned long long *)&v92 = __PAIR64__(*((unsigned int *)_ESI + 1), v20); /*0x5b22b3*/
+    __asm { fld [esp+98h+var_30] } /*0x5b22be*/
+    v22 = *((unsigned int *)_ESI + 3); /*0x5b22c2*/
+    v93[0] = *((unsigned int *)_ESI + 2); /*0x5b22c5*/
+    v93[1] = v22; /*0x5b22c9*/
+    LOWORD(v23) = Math::RoundToInt(a3); /*0x5b22cd*/
+    __asm { fld qword ptr [esp+98h+var_28] } /*0x5b22d2*/
+    v24 = v23; /*0x5b22d6*/
+    LOWORD(v25) = Math::RoundToInt(a3); /*0x5b22d8*/
+    HIDWORD(v92) = v25; /*0x5b22dd*/
+    LOWORD(v26) = Math::RoundToInt(a3); /*0x5b22e1*/
+    v78 = __PAIR64__(v26 + a2->Vector3_field_0x08, HIDWORD(v92) + a2->Vector3_field_0x04); /*0x5b22f9*/
+    v27 = Coord::Subtract((Coord *)&v92, *(unsigned int *)a2->__pad_0 + v24, v78, SHIDWORD(v78)); /*0x5b22ff*/
+    v28 = v27[1]; /*0x5b2308*/
+    v29 = v27[2]; /*0x5b230b*/
+    *(unsigned int *)a2->__pad_0 = *v27; /*0x5b230e*/
+    a2->Vector3_field_0x04 = v28; /*0x5b2310*/
+    a2->Vector3_field_0x08 = v29; /*0x5b2313*/
+    __asm /*0x5b2316*/
+    {
+      fld qword ptr [esi+10h]
+      fld qword ptr [esi+8]
+      fld qword ptr [esi]
+      fld st(1)
+      fmul st, st(2)
+      fld st(1)
+      fmul st, st(2)
+      faddp st(1), st
+      fld st(3)
+      fmul st, st(4, void * a1, void * a2)
+      faddp st(1), st
+    }
+    __asm
+    {
+      fstp [esp+0A0h+var_A0]; double
+      fstp st
+      fstp st
+      fstp st
+    }
+    Math::Sqrt(v79); /*0x5b233a*/
+    LOWORD(result, unsigned int a2) = Math::RoundToInt(a3); /*0x5b2342*/
+    return result; /*0x5b234d*/
   }
-  v33 = (IUnknown *)(*(double *)(v9 + 16));
-  *(unsigned long long *)&aP1.nextArrayIndex = *(unsigned long long *)v9; /*0x5b2357*/
-  edx11 = *(unsigned int *)(v9 + 12); /*0x5b2369*/
-  aP1.NeedsSaveOrLink = *(void **)&v13-((unsigned int *)(>vtable0))[8]; /*0x5b236c*/
-  v85 = edx11; /*0x5b2370*/
-  v35 = Math::RoundToInt(v33); /*0x5b237d*/
-  aP1.referenceCount = Math::RoundToInt(v33); /*0x5b2384*/
-  v36 = Math::RoundToInt(v33); /*0x5b2388*/
-  v34 = Coord::Subtract( /*0x5b23a6*/
-          &aP1,
-          (IUnknown *)(*v12 + v35),
-          (IUnknown *)(v12[1] + aP1.referenceCount),
-          (IUnknown *)(v12[2] + v36));
-  v38 = v34->field_4; /*0x5b23b2*/
-  v39 = v34->field_8; /*0x5b23b5*/
-  *v12 = v34->field_0; /*0x5b23b8*/
-  v12[1] = v38; /*0x5b23be*/
-  v12[2] = v39; /*0x5b23c4*/
-  v40 = Vector3::Subtract(v12, (IUnknown *)&aP1, aP0); /*0x5b23c7*/
-  Coord::Length(v40); /*0x5b23ce*/
-  v41 = aP0->field_0; /*0x5b23d3*/
-  v42 = aP0->field_4; /*0x5b23d5*/
-  v83[0] = v43; /*0x5b23d8*/
-  v44 = *v12; /*0x5b23dc*/
-  *(unsigned long long *)&v82[0] = __PAIR64__(v42, v41); /*0x5b23de*/
-  *(unsigned long long *)&v80[0] = __PAIR64__(v12[1], v44); /*0x5b23e9*/
-  v45 = Coord2D::Sub(v80, &aP1, (IUnknown *)v82); /*0x5b23ff*/
-  Vector::2DMagnitudeMath(v45); /*0x5b2406*/
-  v46 = aP0->field_8; /*0x5b240b*/
-  esi11a = v12[2]; /*0x5b240e*/
-  edx11c = aP0->field_4; /*0x5b2411*/
-  LODWORD(v82[0]) = v49; /*0x5b2414*/
-  v47 = Coord::Subtract( /*0x5b242c*/
-          &aP1,
-          (IUnknown *)(aP0->field_0 - *v12),
-          (IUnknown *)(edx11c - v12[1]),
-          (IUnknown *)(v46 - esi11a));
-  aP1.nextArrayIndex = v47->field_0; /*0x5b2433*/
-  aP1.referenceCount = v47->field_4; /*0x5b243a*/
-  aP1.NeedsSaveOrLink = (void *)v47->field_8; /*0x5b2449*/
-  *(double *)aP1.__pad_0 = (double)aP1.nextArrayIndex; /*0x5b2454*/
-  v80[0] = *(double *)aP1.__pad_0; /*0x5b2464*/
-  *(double *)&((unsigned int *)(aP1.__pad_0))[8] = (double)aP1.referenceCount; /*0x5b246c*/
-  v80[2] = (double)(int)aP1.NeedsSaveOrLink; /*0x5b247c*/
-  v80[1] = *(double *)&((unsigned int *)(aP1.__pad_0))[8]; /*0x5b2489*/
-  qmemcpy(v86, v80, sizeof(v86)); /*0x5b248d*/
-  v48 = (BuildingTypeClass *)v81; /*0x5b248f*/
-  *(unsigned int *)&v73[8] = *(unsigned int *)v81; /*0x5b249c*/
-  *(double *)v73 = -v81[1]; /*0x5b24a2*/
-  v52 = Math::CalcAngle(*(AbstractClass **)v73, *(double *)&v73[4]); /*0x5b24a5*/
-  LOWORD(v81) = Math::RoundToInt((v52 - 1.570796326794897) * -10430.06004058427); /*0x5b24c5*/
-  *((double *)&v74 + 1) = v86[0]; /*0x5b24dd*/
-  v79 = v81; /*0x5b24e1*/
-  *(double *)&v74 = -v86[1]; /*0x5b24e7*/
-  v53 = (Math::CalcAngle((AbstractClass *)v74, *(double *)((char *)&v74 + 4)) - 1.570796326794897) * -10430.06004058427; /*0x5b24f8*/
-  LOWORD(v80[0]) = Math::RoundToInt(v53); /*0x5b2510*/
-  if ( Math::Abs16Cmp(&v79, (IUnknown *)v80, (IUnknown *)a1) ) /*0x5b2515*/
+  __asm { fld qword ptr [esi+10h] } /*0x5b2352*/
+  v92 = *a1; /*0x5b2357*/
+  __asm { fld [esp+98h+var_30] } /*0x5b2365*/
+  v31 = *((unsigned int *)a1 + 3); /*0x5b2369*/
+  v93[0] = *((unsigned int *)_ESI + 2); /*0x5b236c*/
+  v93[1] = v31; /*0x5b2370*/
+  LOWORD(v32) = Math::RoundToInt(a3); /*0x5b2374*/
+  __asm { fld qword ptr [esp+98h+var_28] } /*0x5b2379*/
+  v33 = v32; /*0x5b237d*/
+  LOWORD(v34) = Math::RoundToInt(a3); /*0x5b237f*/
+  HIDWORD(v92) = v34; /*0x5b2384*/
+  LOWORD(v35) = Math::RoundToInt(a3); /*0x5b2388*/
+  v36 = Coord::Subtract( /*0x5b23a6*/
+          (Coord *)&v90,
+          *(unsigned int *)a2->__pad_0 + v33,
+          a2->Vector3_field_0x04 + HIDWORD(v92),
+          a2->Vector3_field_0x08 + v35);
+  v37 = (void *)(v36[1]);
+  v38 = v36[2]; /*0x5b23b5*/
+  *(unsigned int *)a2->__pad_0 = *v36; /*0x5b23b8*/
+  a2->Vector3_field_0x04 = v37; /*0x5b23be*/
+  a2->Vector3_field_0x08 = v38; /*0x5b23c4*/
+  v39 = Vector3::Subtract(a2, (int *)&v90, aP3); /*0x5b23c7*/
+  v40 = Coord::Length((Coord *)v39); /*0x5b23ce*/
+  v41 = *aP3; /*0x5b23d3*/
+  v42 = aP3[1]; /*0x5b23d5*/
+  LODWORD(v89) = v40; /*0x5b23d8*/
+  v43 = *(unsigned int *)a2->__pad_0; /*0x5b23dc*/
+  v88.field_4 = v41; /*0x5b23de*/
+  Vector3_field_0x04 = a2->Vector3_field_0x04; /*0x5b23e2*/
+  v88.field_8 = v42; /*0x5b23e5*/
+  *(unsigned int *)v87 = v43; /*0x5b23e9*/
+  *(unsigned int *)&v87[4] = Vector3_field_0x04; /*0x5b23f5*/
+  v45 = Coord2D::Sub((Coord2D *)v87, (int *)&v90, &v88.field_4); /*0x5b23ff*/
+  v46 = Vector::TwoDMagnitudeMath(v45); /*0x5b2406*/
+  v47 = (unsigned int)aP3[2]; /*0x5b240b*/
+  Vector3_field_0x08 = a2->Vector3_field_0x08; /*0x5b240e*/
+  v49 = (unsigned int)aP3[1]; /*0x5b2411*/
+  v88.field_4 = v50; /*0x5b2414*/
+  v51 = (double *)Coord::Subtract( /*0x5b242c*/
+                    (Coord *)&v90,
+                    (int)*aP3 - *(unsigned int *)a2->__pad_0,
+                    v49 - a2->Vector3_field_0x04,
+                    v47 - Vector3_field_0x08);
+  v92 = *v51; /*0x5b2433*/
+  __asm { fild dword ptr [esp+98h+var_30] } /*0x5b243e*/
+  v93[0] = *((unsigned int *)v51 + 2); /*0x5b2449*/
+  __asm /*0x5b2454*/
   {
-    LOWORD(v79) = LOWORD(v80[0]); /*0x5b2523*/
+    fstp qword ptr [esp+98h+var_48]
+    fild dword ptr [esp+98h+var_30+4]
   }
-  else if ( SLOWORD(Math::Sub16(v80, (BuildingTypeClass *)&v81, (IUnknown *)&v79)->field_0) >= 0 ) /*0x5b2541*/
+  *(double *)v87 = v90; /*0x5b2464*/
+  __asm { fstp [esp+98h+var_40] } /*0x5b246c*/
+  __asm
   {
-    LOWORD(v79) = *(unsigned short *)a1 + (unsigned short)v79; /*0x5b2550*/
+    fild [esp+98h+var_28]
+    fstp [esp+98h+var_70]
+  }
+  *(double *)&v87[8] = v91; /*0x5b2489*/
+  qmemcpy(v94, v87, sizeof(v94)); /*0x5b248d*/
+  _ESI = *(unsigned int *)v88.__pad_0; /*0x5b248f*/
+  __asm { fld qword ptr [esi+8] } /*0x5b2498*/
+  __asm
+  {
+    fchs
+    fstp [esp+0A8h+var_A8]; double
+  }
+  Math::CalcAngle(v72, **(double **)v88.__pad_0); /*0x5b24a5*/
+  __asm { fsub ds:dbl_7E2820 } /*0x5b24aa*/
+  __asm { fmul ds:dbl_7E2818 }
+  *(unsigned short *)v88.__pad_0 = Math::RoundToInt(v46); /*0x5b24c5*/
+  __asm { fld [esp+98h+var_10] } /*0x5b24d5*/
+  v86 = *(unsigned int *)v88.__pad_0; /*0x5b24e1*/
+  __asm /*0x5b24e5*/
+  {
+    fchs
+    fstp [esp+0A8h+var_A8]; double
+  }
+  Math::CalcAngle(v73, v94[0]); /*0x5b24ea*/
+  __asm { fsub ds:dbl_7E2820 } /*0x5b24ef*/
+  __asm { fmul ds:dbl_7E2818 }
+  *(unsigned short *)v87 = Math::RoundToInt(v46); /*0x5b2510*/
+  if ( Math::Abs16Cmp((Math *)&v86, v87, aP4) ) /*0x5b2515*/
+  {
+    LOWORD(v86) = *(unsigned short *)v87; /*0x5b2523*/
+  }
+  else if ( *(int16_t *)Math::Sub16((Math *)v87, &v88, &v86) >= 0 ) /*0x5b2541*/
+  {
+    LOWORD(v86) = *aP4 + v86; /*0x5b2550*/
   }
   else
   {
-    LOWORD(v79) = (unsigned short)v79 - *(unsigned short *)a1; /*0x5b2546*/
+    LOWORD(v86) = v86 - *aP4; /*0x5b2546*/
   }
-  Vector2::NormalizeNonZero((double *)v48->vtable0); /*0x5b2557*/
-  Function::Method_41C430((double *)v48->vtable0); /*0x5b255e*/
-  v80[0] = v53; /*0x5b2568*/
-  v81 = (double *)((int16_t)v79 - 0x3FFF); /*0x5b2575*/
-  v54 = Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(int)v81 * -0.00009587672516830327)); /*0x5b2586*/
-  v55 = (int16_t)v79; /*0x5b258f*/
-  *(double *)v48->vtable0 = v54 * v80[0]; /*0x5b2594*/
-  v81 = (double *)(v55 - 0x3FFF); /*0x5b259c*/
-  v56 = Math::SinCos((IUnknown *)COERCE_UNSIGNED_INT64((double)(v55 - 0x3FFF) * -0.00009587672516830327)); /*0x5b25ad*/
-  v57 = -(v56 * v80[0]); /*0x5b25bb*/
-  *(double *)&v48-((unsigned int *)(>vtable0))[8] = v57; /*0x5b25bd*/
-  Math::Hypotenuse2D((double *)v48->vtable0); /*0x5b25c0*/
-  *(double *)&v76[4] = v57; /*0x5b25ce*/
-  *(unsigned int *)v76 = v48->abstractFlags; /*0x5b25d1*/
-  v58 = Math::CalcAngle((AbstractClass *)v48->uniqueId, *(double *)v76); /*0x5b25d3*/
-  LOWORD(v81) = Math::RoundToInt((v58 - 1.570796326794897) * -10430.06004058427); /*0x5b25ec*/
-  v71 = (BuildingTypeClass *)v81; /*0x5b25fa*/
-  if ( LOBYTE(a3)
-    || !BYTE4(a3) && SLODWORD(v82[0]) <= ((unsigned char)aP3 != 0 ? 6 : 3) << 8
-    || (uint8_t)(((*a1 >> 7) + 1) >> 1) <= 1u )
+  Vector2::NormalizeNonZero((int *)_ESI); /*0x5b2557*/
+  Function::41C430((double *)_ESI); /*0x5b255e*/
+  __asm { fstp qword ptr [esp+98h+var_88.field_8] } /*0x5b2568*/
+  *(unsigned int *)v88.__pad_0 = (int16_t)v86 - 0x3FFF; /*0x5b2575*/
+  __asm /*0x5b2579*/
   {
-    if ( !(unsigned char)aP4 ) /*0x5b28a1*/
+    fild dword ptr [esp+0A0h+var_64.__pad_0]
+    fmul ds:dbl_7E2810
+    fstp [esp+0A0h+var_A0]; double
+  }
+  Math::ArcTan2(v80); /*0x5b2586*/
+  __asm { fmul qword ptr [esp+0A0h+var_88.field_8] } /*0x5b258b*/
+  v53 = (int16_t)v86; /*0x5b258f*/
+  __asm { fstp qword ptr [esi] } /*0x5b2594*/
+  *(double *)_ESI = _RT1; /*0x5b2594*/
+  *(unsigned int *)v88.__pad_0 = v53 - 0x3FFF; /*0x5b259c*/
+  __asm /*0x5b25a0*/
+  {
+    fild dword ptr [esp+0A0h+var_64.__pad_0]
+    fmul ds:dbl_7E2810
+    fstp [esp+0A0h+var_A0]; double
+  }
+  Math::SinCos(v81); /*0x5b25ad*/
+  __asm { fmul qword ptr [esp+0A0h+var_88.field_8] } /*0x5b25b2*/
+  __asm
+  {
+    fchs
+    fstp qword ptr [esi+8]
+  }
+  *(double *)(_ESI + 8) = _RT1; /*0x5b25bd*/
+  Math::Hypotenuse2D((int *)_ESI); /*0x5b25c0*/
+  __asm { fstp [esp+0A0h+var_A0]; double } /*0x5b25ce*/
+  Math::CalcAngle(*(double *)(_ESI + 16), v82); /*0x5b25d3*/
+  __asm { fsub ds:dbl_7E2820 } /*0x5b25d8*/
+  __asm { fmul ds:dbl_7E2818 }
+  *(unsigned short *)v88.__pad_0 = Math::RoundToInt(v46); /*0x5b25ec*/
+  v85.Movement_field_00 = *(unsigned int *)v88.__pad_0; /*0x5b25fa*/
+  if ( aP5
+    || !a7 && (int)v88.field_4 <= (a8 != 0 ? 6 : 3) << 8
+    || (uint8_t)((unsigned int)((*(unsigned int *)aP4 >> 7) + 1) >> 1) <= 1u )
+  {
+    if ( !a9 ) /*0x5b28a1*/
     {
-      LOWORD(v83[0]) = 256; /*0x5b28b6*/
-      eax47 = (int16_t *)Movement::Check(a1, &v81, v83); /*0x5b28bd*/
-      v70 = (BuildingTypeClass *)Movement::DivideAndStoreScaled(eax47, (int *)v82, 2); /*0x5b28cd*/
-      eax47a = Vector::ToFacingMath(v86, v80); /*0x5b28d6*/
-      Movement::CompareAbsCoords((int16_t *)&v71, eax47a, (int16_t *)v70->vtable0); /*0x5b28e0*/
+      LOWORD(v89) = 256; /*0x5b28b6*/
+      v68 = (Movement *)Movement::Check((Movement *)aP4, &v88, &v89); /*0x5b28bd*/
+      v69 = Movement::DivideAndStoreScaled(v68, (int *)&v88.field_4, 2); /*0x5b28c4*/
+      v70 = (int16_t *)Vector::ToFacingMath((int *)v87, v69); /*0x5b28d6*/
+      Movement::CompareAbsCoords(&v85, v70, v83); /*0x5b28e0*/
     }
-    goto LABEL_48; /*0x5b28e0*/
+    goto LABEL_49; /*0x5b28e0*/
   }
-  v59 = *(double *)&v48->uniqueId; /*0x5b2640*/
-  *(unsigned long long *)aP1.__pad_0 = *(unsigned long long *)v48->vtable0; /*0x5b2645*/
-  ecx20 = *(unsigned int *)&v48-((unsigned int *)(>vtable0))[12]; /*0x5b2657*/
-  *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[8] = *(unsigned int *)&v48->vtable0[8]; /*0x5b265a*/
-  *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[12] = ecx20; /*0x5b265e*/
-  edi20a = Math::RoundToInt(v59); /*0x5b266b*/
-  *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[4] = Math::RoundToInt(v59); /*0x5b2672*/
-  v62 = Math::RoundToInt(v59); /*0x5b2676*/
-  v60 = Coord::Subtract( /*0x5b2695*/
-          v82,
-          (IUnknown *)(6 * edi20a),
-          (IUnknown *)(6 * *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[4]),
-          (IUnknown *)(6 * v62));
-  v61 = (IUnknown *)(Coord::Subtract( /*0x5b26b9*/ v80, (IUnknown *)(*v12 + v60->field_0), (IUnknown *)(v12[1] + v60->field_4), (IUnknown *)(v12[2] + v60->field_8)));
-  *(unsigned int *)aP1.__pad_0 = v61->field_0; /*0x5b26c0*/
-  *(unsigned int *)&aP1.__pad_0[4] = v61->field_4; /*0x5b26cc*/
-  *(unsigned int *)&aP1.__pad_0[8] = v61->field_8; /*0x5b26d8*/
-  GroundHeight = Cell::GetGroundHeight((IUnknown *)&aP1); /*0x5b26eb*/
-  if ( (*((unsigned int *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)&aP1) + 80) & 0x100) != 0 ) /*0x5b26fb*/
-    GroundHeight += (int)*(&g_MatrixTransformState + 77); /*0x5b26fd*/
-  v66 = (int)v83[0] / 256; /*0x5b2713*/
-  if ( BYTE4(a3) || (unsigned char)aP3 ) /*0x5b271f*/
+  __asm { fld qword ptr [esi+10h] } /*0x5b2640*/
+  v90 = *(double *)_ESI; /*0x5b2645*/
+  __asm { fld qword ptr [esp+98h+var_48] } /*0x5b2653*/
+  v56 = *(unsigned int *)(_ESI + 12); /*0x5b2657*/
+  LODWORD(v91) = *(unsigned int *)(_ESI + 8); /*0x5b265a*/
+  HIDWORD(v91) = v56; /*0x5b265e*/
+  LOWORD(v57) = Math::RoundToInt(v46); /*0x5b2662*/
+  __asm { fld [esp+98h+var_40] } /*0x5b2667*/
+  v58 = v57; /*0x5b266b*/
+  LOWORD(v59) = Math::RoundToInt(v46); /*0x5b266d*/
+  HIDWORD(v90) = v59; /*0x5b2672*/
+  LOWORD(v60) = Math::RoundToInt(v46); /*0x5b2676*/
+  v61 = Coord::Subtract((Coord *)&v88.field_4, 6 * v58, 6 * HIDWORD(v90), 6 * v60); /*0x5b2695*/
+  v62 = (double *)Coord::Subtract( /*0x5b26b9*/
+                    (Coord *)v87,
+                    *(unsigned int *)a2->__pad_0 + *v61,
+                    a2->Vector3_field_0x04 + v61[1],
+                    a2->Vector3_field_0x08 + v61[2]);
+  v90 = *v62; /*0x5b26c0*/
+  LODWORD(v91) = *((unsigned int *)v62 + 2); /*0x5b26d8*/
+  GroundHeight = Cell::GetGroundHeight(&v90); /*0x5b26eb*/
+  if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v90)->flags[0] & 0x100) != 0 ) /*0x5b26fb*/
+    GroundHeight += g_MissionQueueFrame.localVariables[304]; /*0x5b26fd*/
+  v64 = SLODWORD(v89) / 256; /*0x5b2713*/
+  if ( a7 || a8 ) /*0x5b271f*/
   {
-    v66 = 10; /*0x5b272d*/
+    v64 = 10; /*0x5b272d*/
   }
-  else if ( v66 >= 5 ) /*0x5b2724*/
+  else if ( v64 >= 5 ) /*0x5b2724*/
   {
-    v66 = 5; /*0x5b2726*/
+    v64 = 5; /*0x5b2726*/
   }
-  if ( !(unsigned char)aP4 ) /*0x5b2737*/
+  if ( !a9 ) /*0x5b2737*/
   {
-    v67 = v12[2]; /*0x5b2744*/
-    v68 = v67 - (unsigned int)*(&g_MatrixTransformState + 80) * v66 - GroundHeight; /*0x5b274b*/
-    if ( v68 >= -20 ) /*0x5b2750*/
+    v65 = a2->Vector3_field_0x08; /*0x5b2744*/
+    v66 = v65 - g_MissionQueueFrame.localVariables[307] * v64 - GroundHeight; /*0x5b274b*/
+    if ( v66 >= -20 ) /*0x5b2750*/
     {
-      if ( v68 <= 20 ) /*0x5b275a*/
-        goto LABEL_33; /*0x5b275a*/
-      v69 = v67 - 18; /*0x5b275c*/
+      if ( v66 <= 20 ) /*0x5b275a*/
+        goto LABEL_34; /*0x5b275a*/
+      v67 = v65 - 18; /*0x5b275c*/
     }
     else
     {
-      v69 = v67 + 18; /*0x5b2752*/
+      v67 = v65 + 18; /*0x5b2752*/
     }
-    v12[2] = v69; /*0x5b275f*/
-LABEL_33:
-    if ( v68 >= (int)*(&g_MatrixTransformState + 80) / -2 ) /*0x5b2773*/
+    a2->Vector3_field_0x08 = v67; /*0x5b275f*/
+LABEL_34:
+    if ( v66 >= g_MissionQueueFrame.localVariables[307] / -2 ) /*0x5b2773*/
     {
-      if ( v68 <= (int)*(&g_MatrixTransformState + 80) / 2 ) /*0x5b27fa*/
+      if ( v66 <= g_MissionQueueFrame.localVariables[307] / 2 ) /*0x5b27fa*/
       {
-        LOWORD(v82[0]) = 0x4000; /*0x5b2875*/
-        LOWORD(v83[0]) = *(int16_t *)a1 / 2; /*0x5b2888*/
-        Movement::CompareAbsCoords((int16_t *)&v71, (int16_t *)v82, (int16_t *)v83); /*0x5b289a*/
+        LOWORD(v88.field_4) = 0x4000; /*0x5b2875*/
+        LOWORD(v89) = *aP4 / 2; /*0x5b2888*/
+        Movement::CompareAbsCoords(&v85, (int16_t *)&v88.field_4, (int16_t *)&v89); /*0x5b289a*/
       }
       else
       {
-        LOWORD(v81) = 18432; /*0x5b27ff*/
-        LOWORD(v83[0]) = *(int16_t *)a1 / 2; /*0x5b2812*/
-        *(IUnknown **)&v80[0] = v83[0]; /*0x5b281f*/
-        if ( Math::Abs16Cmp(&v71, (IUnknown *)&v81, (IUnknown *)v80) ) /*0x5b2829*/
+        *(unsigned short *)v88.__pad_0 = 18432; /*0x5b27ff*/
+        LOWORD(v89) = *aP4 / 2; /*0x5b2812*/
+        *(unsigned int *)v87 = LODWORD(v89); /*0x5b281f*/
+        if ( Math::Abs16Cmp((Math *)&v85, &v88, (int16_t *)v87) ) /*0x5b2829*/
         {
-          LOWORD(v71) = (unsigned short)v81; /*0x5b2837*/
+          LOWORD(v85.Movement_field_00) = *(unsigned short *)v88.__pad_0; /*0x5b2837*/
         }
-        else if ( SLOWORD(Math::Sub16(&v81, (BuildingTypeClass *)v83, (IUnknown *)&v71)->field_0) >= 0 ) /*0x5b2858*/
+        else if ( *(int16_t *)Math::Sub16(&v88, &v89, &v85) >= 0 ) /*0x5b2858*/
         {
-          LOWORD(v71) = LOWORD(v80[0]) + (unsigned short)v71; /*0x5b286b*/
+          LOWORD(v85.Movement_field_00) += *(unsigned short *)v87; /*0x5b286b*/
         }
         else
         {
-          LOWORD(v71) = (unsigned short)v71 - LOWORD(v80[0]); /*0x5b285f*/
+          LOWORD(v85.Movement_field_00) -= *(unsigned short *)v87; /*0x5b285f*/
         }
       }
     }
     else
     {
-      LOWORD(v80[0]) = 0x2000; /*0x5b2778*/
-      LOWORD(v83[0]) = *(int16_t *)a1 / 2; /*0x5b278b*/
-      v81 = (double *)&v83[0]->field_0; /*0x5b2798*/
-      if ( Math::Abs16Cmp(&v71, (IUnknown *)v80, (IUnknown *)&v81) ) /*0x5b27a2*/
+      *(unsigned short *)v87 = 0x2000; /*0x5b2778*/
+      LOWORD(v89) = *aP4 / 2; /*0x5b278b*/
+      *(unsigned int *)v88.__pad_0 = LODWORD(v89); /*0x5b2798*/
+      if ( Math::Abs16Cmp((Math *)&v85, v87, (int16_t *)v88.__pad_0) ) /*0x5b27a2*/
       {
-        LOWORD(v71) = LOWORD(v80[0]); /*0x5b27b0*/
+        LOWORD(v85.Movement_field_00) = *(unsigned short *)v87; /*0x5b27b0*/
       }
-      else if ( SLOWORD(Math::Sub16(v80, (BuildingTypeClass *)v83, (IUnknown *)&v71)->field_0) >= 0 ) /*0x5b27d1*/
+      else if ( *(int16_t *)Math::Sub16((Math *)v87, &v89, &v85) >= 0 ) /*0x5b27d1*/
       {
-        LOWORD(v71) = (unsigned short)v81 + (unsigned short)v71; /*0x5b27e7*/
+        LOWORD(v85.Movement_field_00) += *(unsigned short *)v88.__pad_0; /*0x5b27e7*/
       }
       else
       {
-        LOWORD(v71) = (unsigned short)v71 - (unsigned short)v81; /*0x5b27d8*/
+        LOWORD(v85.Movement_field_00) -= *(unsigned short *)v88.__pad_0; /*0x5b27d8*/
       }
     }
   }
-LABEL_48:
-  Movement::UpdateLocomotion((double *)v48->vtable0, (IUnknown *)&v71); /*0x5b28e5*/
-  if ( BYTE4(a3) ) /*0x5b28f6*/
-    aP1.NeedsSaveOrLink = 0; /*0x5b28f8*/
+LABEL_49:
+  Movement::UpdateLocomotion((double *)_ESI, (int16_t *)&v85); /*0x5b28e5*/
+  if ( a7 ) /*0x5b28f6*/
+    v93[0] = 0; /*0x5b28f8*/
   else
-    aP1.NeedsSaveOrLink = (void *)((int)aP1.NeedsSaveOrLink / 4); /*0x5b290f*/
-  Coord::Length(&aP1.nextArrayIndex); /*0x5b2917*/
-  return result; /*0x5b2347*/
+    v93[0] = (signed int)v93[0] / 4; /*0x5b290f*/
+  return Coord::Length((Coord *)&v92); /*0x5b2347*/
 
 }
 } // namespace gamemd
@@ -383,7 +490,7 @@ namespace gamemd {
 unsigned int * Movement::Check(unsigned int * a2, unsigned short * a3)
 {
 
-  IDA_LOWORD(a3) = *this + *a3; /*0x5b293e*/
+  LOWORD(a3) = LOWORD(this->Movement_field_00) + *a3; /*0x5b293e*/
   *a2 = a3; /*0x5b2947*/
   return a2; /*0x5b2949*/
 
@@ -394,7 +501,7 @@ namespace gamemd {
 int * Movement::DivideAndStoreScaled(int * a2, int a3)
 {
 
-  IDA_LOWORD(a3) = *this / a3; /*0x5b2978*/
+  LOWORD(a3) = SLOWORD(this->Movement_field_00) / a3; /*0x5b2978*/
   *a2 = a3; /*0x5b2985*/
   return a2; /*0x5b2987*/
 

@@ -4368,35 +4368,38 @@ int E4Recv_79BF50::sub_79BF50(HWND hDlg)
 
   HWND DlgItem; // eax
   HWND v3; // eax
-  ObjectClass *v4; // esi
+  int v4; // esi
   HWND v5; // eax
   BOOL v7; // [esp-4h] [ebp-18h]
   BOOL BuddyWOL; // [esp-4h] [ebp-18h]
   uint8_t v9; // [esp+10h] [ebp-4h]
 
-  v7 = String::Length(&g_WOL_LoginObject) != 0; /*0x79bf6f*/
-  DlgItem = GetDlgItem(hDlg, 1795); /*0x79bf76*/
+  v7 = String::Length((String *)&g_WOL_LoginObject) != 0; /*0x79bf6f*/
+  DlgItem = GetDlgItem((HWND)hDlg, 1795); /*0x79bf76*/
   EnableWindow(DlgItem, v7); /*0x79bf7f*/
   BuddyWOL = FindBuddyWOL(); /*0x79bf8b*/
-  v3 = GetDlgItem(hDlg, 1581); /*0x79bf92*/
+  v3 = GetDlgItem((HWND)hDlg, 1581); /*0x79bf92*/
   EnableWindow(v3, BuddyWOL); /*0x79bf95*/
-  if ( String::Length(&g_WOL_LoginObject) ) /*0x79bf9c*/
+  if ( String::Length((String *)&g_WOL_LoginObject) ) /*0x79bf9c*/
   {
-    if ( !dword_B76994 ) /*0x79bfb2*/
+    if ( !stru_B76900.lastLayer ) /*0x79bfb2*/
       goto LABEL_10; /*0x79bfb2*/
-    v4 = (ObjectClass *)*((unsigned int *)g_WOL_AccountInfo + (dword_B769A8(&g_WOL_LoginObject) & ((1 << dword_B7699C) - 1))); /*0x79bfd4*/
+    v4 = *(unsigned int *)(*(unsigned int *)&stru_B76900.isAliveFlag /*0x79bfd4*/
+                   + 4
+                   * (((int (*)(ObjectClass *))stru_B76900.lineTrailer)(&g_WOL_LoginObject)
+                    & ((1 << SLOBYTE(stru_B76900.location[0])) - 1)));
     if ( !v4 ) /*0x79bfd9*/
       goto LABEL_10; /*0x79bfd9*/
-    while ( !String::Compare((const char **)v4, &g_WOL_LoginObject) ) /*0x79bfe9*/
+    while ( !(uint8_t)String::Compare((String *)v4, (const char **)&g_WOL_LoginObject) ) /*0x79bfe9*/
     {
-      v4 = *(ObjectClass **)&v4->__pad_0[8]; /*0x79bfeb*/
+      v4 = *(unsigned int *)(v4 + 8); /*0x79bfeb*/
       if ( !v4 ) /*0x79bff0*/
       {
         v9 = 0; /*0x79bff2*/
         goto LABEL_12; /*0x79bff7*/
       }
     }
-    if ( v4 != (ObjectClass *)-4 && *(unsigned int *)&v4->__pad_0[4] > 2u ) /*0x79c008*/
+    if ( v4 != -4 && *(unsigned int *)(v4 + 4) > 2u ) /*0x79c008*/
       v9 = 1; /*0x79c016*/
     else
 LABEL_10:
@@ -4407,7 +4410,7 @@ LABEL_10:
     v9 = 0; /*0x79bfa5*/
   }
 LABEL_12:
-  v5 = GetDlgItem(hDlg, 1474); /*0x79c01b*/
+  v5 = GetDlgItem((HWND)hDlg, 1474); /*0x79c01b*/
   return EnableWindow(v5, v9); /*0x79c031*/
 
 }
@@ -6603,25 +6606,25 @@ bool E4Recv_793120::sub_793120()
 {
 
   int v1; // eax
-  char *i; // edx
+  ObjectClass *i; // edx
   char *v4; // eax
 
   v1 = 0; /*0x793128*/
-  if ( (int)g_WOL_State <= 0 ) /*0x793130*/
+  if ( g_WOL_UserList.owningHouseIndex <= 0 ) /*0x793130*/
     return 0; /*0x793130*/
-  for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 ) /*0x793132*/
+  for ( i = g_WOL_UserList.nextObject; ; i = (ObjectClass *)((char *)i + 108) ) /*0x793132*/
   {
-    if ( v1 >= 0 && v1 < (int)g_WOL_State ) /*0x79313e*/
-      qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu); /*0x79314c*/
-    if ( (g_IsMultiplayerSession & 1) != 0 ) /*0x793155*/
+    if ( v1 >= 0 && v1 < g_WOL_UserList.owningHouseIndex ) /*0x79313e*/
+      qmemcpy(&g_WebBrowserConfig.occupant, i, 0x6Cu); /*0x79314c*/
+    if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x793155*/
       break; /*0x793155*/
-    if ( ++v1 >= (int)g_WOL_State ) /*0x79315d*/
+    if ( ++v1 >= g_WOL_UserList.owningHouseIndex ) /*0x79315d*/
       return 0; /*0x793165*/
   }
-  if ( !&g_IsMultiplayerSession ) /*0x79316d*/
+  if ( &g_WebBrowserConfig == (ObjectClass *)-36 ) /*0x79316d*/
     return 0; /*0x793172*/
-  v4 = String::GetOrEmpty_Alt(this); /*0x793178*/
-  return _strcmpi(byte_B777D4, v4) == 0; /*0x79315f*/
+  v4 = String::GetOrEmpty_Alt((String *)this); /*0x793178*/
+  return _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v4) == 0; /*0x79315f*/
 
 }
 } // namespace gamemd
@@ -6707,17 +6710,17 @@ namespace gamemd {
 int E4Recv_793CD0::sub_793CD0()
 {
 
-  DWORD Ticks; // eax
-  DWORD *v2; // ecx
-  DWORD v4; // [esp+4h] [ebp-8h]
+  int Ticks; // eax
+  int *v2; // ecx
+  int v4; // [esp+4h] [ebp-8h]
 
-  g_abs_A8E1A4[g_abs_A8E224] = (int)this; /*0x793cd8*/
+  dword_A8E1A4[dword_A8E224] = this; /*0x793cd8*/
   Ticks = Timer::GetTicks(); /*0x793ce3*/
-  v2 = (DWORD *)(12 * g_abs_A8E224 + 11067844); /*0x793cf6*/
+  v2 = (int *)(12 * dword_A8E224 + 11067844); /*0x793cf6*/
   *v2 = Ticks; /*0x793cfd*/
   v2[1] = v4; /*0x793d03*/
   v2[2] = 1200; /*0x793d06*/
-  return ++g_abs_A8E224; /*0x793d14*/
+  return ++dword_A8E224; /*0x793d14*/
 
 }
 } // namespace gamemd

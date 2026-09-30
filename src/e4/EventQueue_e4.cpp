@@ -16,10 +16,10 @@ void EventQueue::Process()
 
   int v2; // eax
 
-  if ( (*(this + 198) + 1) % 256 != *(this + 197) ) /*0x54f01e*/
+  if ( (*((unsigned int *)this + 198) + 1) % 256 != *((unsigned int *)this + 197) ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
-  v2 = *(this + 197); /*0x54f025*/
-  if ( v2 == *(this + 198) ) /*0x54f033*/
+  v2 = *((unsigned int *)this + 197); /*0x54f025*/
+  if ( v2 == *((unsigned int *)this + 198) ) /*0x54f033*/
     return 0; /*0x54f035*/
   else
     return *((unsigned short *)this + v2 + 138); /*0x54f03a*/
@@ -54,7 +54,7 @@ void EventQueue::Read()
     if ( !(uint8_t)EventQueue::CheckPosition(this) ) /*0x54f093*/
       MessageLoop(); /*0x54f09c*/
   }
-  while ( *((unsigned int *)this + 197) == *((unsigned int *)this + 198) || !(uint16_t)EventQueue::Check(this) ); /*0x54f0b3*/
+  while ( *((unsigned int *)this + 197) == *((unsigned int *)this + 198) || !EventQueue::Check(this) ); /*0x54f0b3*/
   v3 = *((unsigned int *)this + 197); /*0x54f0bd*/
   v4 = *((unsigned int *)this + 198); /*0x54f0c3*/
   result = 0; /*0x54f0c9*/

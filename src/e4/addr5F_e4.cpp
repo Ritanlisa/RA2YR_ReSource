@@ -40,6 +40,7 @@
 #include "e4/classes/Map_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/Skirmish_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {
@@ -1008,33 +1009,33 @@ namespace gamemd {
 unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
 {
 
-  *((unsigned int *)this + 17) = a2; /*0x5f15cc*/
-  *((unsigned int *)this + 18) = a3; /*0x5f15d3*/
-  *((unsigned int *)this + 2) = a4; /*0x5f15da*/
-  *((unsigned short *)this + 38) = a5; /*0x5f15e2*/
-  *((unsigned int *)this + 11) = 60; /*0x5f15eb*/
-  *((unsigned int *)this + 23) = 60; /*0x5f15ee*/
-  *this = &vt_NullModemClass; /*0x5f15f1*/
-  *((unsigned int *)this + 16) = -1; /*0x5f15f7*/
-  *((unsigned int *)this + 14) = 0; /*0x5f15fa*/
-  *((unsigned int *)this + 20) = 0; /*0x5f15fd*/
-  *((unsigned int *)this + 1) = 0; /*0x5f1600*/
-  *((unsigned int *)this + 4) = 500; /*0x5f1603*/
-  *((unsigned int *)this + 3) = 0; /*0x5f160a*/
-  *((unsigned int *)this + 6) = -1; /*0x5f160d*/
-  *((unsigned int *)this + 7) = 0; /*0x5f1610*/
-  *((unsigned int *)this + 8) = 0; /*0x5f1613*/
-  *((unsigned int *)this + 9) = 3000; /*0x5f1616*/
-  *((unsigned int *)this + 10) = 1200; /*0x5f161d*/
-  *((unsigned char *)this + 48) = 43; /*0x5f1624*/
-  *((unsigned int *)this + 26) = 0; /*0x5f1628*/
-  *((unsigned int *)this + 27) = 0; /*0x5f162b*/
-  *((unsigned int *)this + 28) = 0; /*0x5f162e*/
-  *((unsigned int *)this + 15) = 0; /*0x5f1631*/
-  *((unsigned int *)this + 24) = -1; /*0x5f1634*/
-  *((unsigned int *)this + 25) = 1200; /*0x5f1637*/
-  *((unsigned int *)this + 13) = 0; /*0x5f163e*/
-  return this; /*0x5f1641*/
+  this->ambientSoundController[2] = a2; /*0x5f15cc*/
+  this->ambientSoundController[3] = a3; /*0x5f15d3*/
+  this->? = (void *)a4; /*0x5f15da*/
+  LOWORD(this->ambientSoundController[4]) = a5; /*0x5f15e2*/
+  this->fallRate = 60; /*0x5f15eb*/
+  this->customSound_controller[3] = 60; /*0x5f15ee*/
+  this->AbstractClass = &NullModemClass::`vftable'; /*0x5f15f1*/
+  this->ambientSoundController[1] = -1; /*0x5f15f7*/
+  this->attachedBomb = 0; /*0x5f15fa*/
+  this->customSound_controller[0] = 0; /*0x5f15fd*/
+  this->? = 0; /*0x5f1600*/
+  this->? = 500; /*0x5f1603*/
+  this->? = 0; /*0x5f160a*/
+  this->? = -1; /*0x5f160d*/
+  this->? = 0; /*0x5f1610*/
+  this->? = 0; /*0x5f1613*/
+  this->occupant = 3000; /*0x5f1616*/
+  this->owningHouseIndex = 1200; /*0x5f161d*/
+  LOBYTE(this->nextObject) = 43; /*0x5f1624*/
+  *(unsigned int *)&this->bombVisible = 0; /*0x5f1628*/
+  this->health = 0; /*0x5f162b*/
+  this->estimatedHealth = 0; /*0x5f162e*/
+  this->ambientSoundController[0] = 0; /*0x5f1631*/
+  this->customSound_controller[4] = -1; /*0x5f1634*/
+  this->customSound = 1200; /*0x5f1637*/
+  this->attachedTag = 0; /*0x5f163e*/
+  return &this->AbstractClass; /*0x5f1641*/
 
 }
 } // namespace gamemd
@@ -1045,24 +1046,24 @@ int E4Recv_5F1F20::sub_5F1F20()
 {
 
   int v2; // esi
-  unsigned int *v3; // ecx
+  int *vtable1; // ecx
   int TileIndex; // eax
 
   v2 = 0; /*0x5f1f27*/
-  v3 = *(unsigned int **)(*((unsigned int *)this + 14) + 4); /*0x5f1f2c*/
-  if ( (int)v3[10] <= 0 ) /*0x5f1f34*/
+  vtable1 = (int *)this->attachedBomb->?; /*0x5f1f2c*/
+  if ( vtable1[10] <= 0 ) /*0x5f1f34*/
     return 0; /*0x5f1f5b*/
   while ( 1 ) /*0x5f1f37*/
   {
-    TileIndex = Terrain::GetTileIndex(v3, v2); /*0x5f1f37*/
+    TileIndex = Terrain::GetTileIndex((Terrain *)vtable1, v2); /*0x5f1f37*/
     if ( TileIndex ) /*0x5f1f3e*/
     {
       if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) && (*(unsigned char *)TileIndex & 2) == 0 ) /*0x5f1f4d*/
         break; /*0x5f1f4d*/
     }
     ++v2; /*0x5f1f52*/
-    v3 = *(unsigned int **)(*((unsigned int *)this + 14) + 4); /*0x5f1f53*/
-    if ( v2 >= v3[10] ) /*0x5f1f59*/
+    vtable1 = (int *)this->attachedBomb->?; /*0x5f1f53*/
+    if ( v2 >= vtable1[10] ) /*0x5f1f59*/
       return 0; /*0x5f1f59*/
   }
   return *(unsigned int *)(TileIndex + 20); /*0x5f1f5b*/
@@ -1075,7 +1076,9 @@ namespace gamemd {
 void ObjectClass::nullsub_28()
 {
 
-  ; /*0x5f3340*/
+  int result; // eax
+
+  return result; /*0x5f3340*/
 
 }
 } // namespace gamemd

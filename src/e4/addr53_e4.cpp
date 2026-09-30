@@ -2216,39 +2216,38 @@ AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
 {
 
   int v3; // edi
-  unsigned int v4; // esi
+  char *v4; // esi
   int v5; // eax
   uint8_t v6; // cl
   int v7; // eax
   int v8; // ecx
   int16_t result; // ax
   unsigned char v10[4]; // [esp+Ch] [ebp-18h] BYREF
-  unsigned char v11[4]; // [esp+10h] [ebp-14h] BYREF
-  int16_t v12; // [esp+14h] [ebp-10h] BYREF
-  uint8_t v13; // [esp+16h] [ebp-Eh]
-  int v14; // [esp+18h] [ebp-Ch]
-  int v15; // [esp+1Eh] [ebp-6h]
+  int v11; // [esp+10h] [ebp-14h] BYREF
+  Color v12; // [esp+14h] [ebp-10h] BYREF
+  int v13; // [esp+18h] [ebp-Ch]
+  int v14; // [esp+1Eh] [ebp-6h]
 
   v3 = 0; /*0x538e78*/
   do
   {
-    v4 = (unsigned int)(unsigned int *)this + 2 * (v3 % 256) + v3 % 256; /*0x538e92*/
-    v5 = ComputeColorSaturation(v4, (int)v10, (int)v10); /*0x538e97*/
+    v4 = (char *)this + 2 * (v3 % 256) + v3 % 256; /*0x538e92*/
+    v5 = ComputeColorSaturation((unsigned int)v4, (int)v10, (int)v10); /*0x538e97*/
     v6 = *(unsigned char *)(v5 + 2); /*0x538ea1*/
-    v12 = *(unsigned short *)v5; /*0x538ea4*/
-    IDA_LOBYTE(v15) = v6; /*0x538ea9*/
-    v13 = v6; /*0x538eb7*/
-    v14 = v6; /*0x538ebb*/
-    v7 = Math::RoundToInt((double)v6 * a2); /*0x538ec7*/
+    LOWORD(v12.Color_field_00) = *(unsigned short *)v5; /*0x538ea4*/
+    LOBYTE(v14) = v6; /*0x538ea9*/
+    BYTE2(v12.Color_field_00) = v6; /*0x538eb7*/
+    v13 = v6; /*0x538ebb*/
+    LOWORD(v7) = Math::RoundToInt((double)v6 * a2); /*0x538ec7*/
     if ( v7 >= 255 ) /*0x538ed1*/
       v7 = 255; /*0x538ed3*/
-    v13 = v7 <= 0 ? 0 : v7;
-    v8 = Color::ConvertToRGB((uint8_t *)&v12, (int)v11); /*0x538ef2*/
+    BYTE2(v12.Color_field_00) = v7 <= 0 ? 0 : v7;
+    v8 = Color::ConvertToRGB(&v12, (int)&v11); /*0x538ef2*/
     ++v3; /*0x538ef4*/
     result = *(unsigned short *)v8; /*0x538efb*/
-    IDA_LOBYTE(v8) = *(unsigned char *)(v8 + 2); /*0x538efe*/
+    LOBYTE(v8) = *(unsigned char *)(v8 + 2); /*0x538efe*/
     *(unsigned short *)v4 = result; /*0x538f01*/
-    *(unsigned char *)(v4 + 2) = v8; /*0x538f04*/
+    v4[2] = v8; /*0x538f04*/
   }
   while ( v3 < 256 );
   return result; /*0x538f0d*/
@@ -2628,47 +2627,47 @@ namespace gamemd {
 AnimClass * * PsyDom::Update()
 {
 
-  int v0; // esi
   int v1; // esi
-  int v2; // [esp+4h] [ebp-4h]
+  int v2; // esi
+  PsyDom *v3; // [esp+0h] [ebp-8h]
+  int v4; // [esp+4h] [ebp-4h]
 
-  switch ( unk_A9FAC0 ) /*0x53af50*/
+  switch ( PsyDom_Status ) /*0x53af50*/
   {
     case 1: /*0x53af50*/
-      unk_A9FAC0 = 2; /*0x53af57*/
+      PsyDom_Status = 2; /*0x53af57*/
       break; /*0x53af63*/
     case 2: /*0x53af50*/
-      v2 = *(unsigned int *)(unk_A9FAC4 + 172); /*0x53af6f*/
-      if ( (double)g_abs_8871E0->?[2] * 0.01 <= (double)v2 /*0x53afaa*/
-                                                  / (double)*(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(unk_A9FAC4 + 200) + 156))(*(unsigned int *)(unk_A9FAC4 + 200))
-                                                                       + 6) )
+      v4 = *(unsigned int *)(PsyDom_Anim + 172); /*0x53af6f*/
+      if ( (double)*(int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 772) * 0.01 <= (double)v4 /*0x53afaa*/
+                                                                                         / (double)*(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(PsyDom_Anim + 200) + 156))(*(unsigned int *)(PsyDom_Anim + 200)) + 6) )
       {
-        unk_A9FAC0 = 3; /*0x53afb0*/
-        PsyDom::Fire(); /*0x53afba*/
+        PsyDom_Status = 3; /*0x53afb0*/
+        PsyDom::Fire(v3); /*0x53afba*/
       }
       break; /*0x53afc1*/
     case 3: /*0x53af50*/
-      v0 = *(unsigned int *)(unk_A9FAC4 + 172); /*0x53afcd*/
-      if ( *(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(unk_A9FAC4 + 200) + 156))(*(unsigned int *)(unk_A9FAC4 + 200)) /*0x53afe4*/
+      v1 = *(unsigned int *)(PsyDom_Anim + 172); /*0x53afcd*/
+      if ( *(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(PsyDom_Anim + 200) + 156))(*(unsigned int *)(PsyDom_Anim + 200)) /*0x53afe4*/
                       + 6)
-         - v0 <= 10 )
-        unk_A9FAC0 = 4; /*0x53afe6*/
+         - v1 <= 10 )
+        PsyDom_Status = 4; /*0x53afe6*/
       break; /*0x53aff2*/
     case 4: /*0x53af50*/
-      v1 = *(unsigned int *)(unk_A9FAC4 + 172); /*0x53affe*/
-      if ( *(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(unk_A9FAC4 + 200) + 156))(*(unsigned int *)(unk_A9FAC4 + 200)) /*0x53b015*/
+      v2 = *(unsigned int *)(PsyDom_Anim + 172); /*0x53affe*/
+      if ( *(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(PsyDom_Anim + 200) + 156))(*(unsigned int *)(PsyDom_Anim + 200)) /*0x53b015*/
                       + 6)
-         - v1 <= 1 )
+         - v2 <= 1 )
       {
-        unk_A9FAC0 = 5; /*0x53b01d*/
-        word_A9FA48 = unk_A9F9F8; /*0x53b027*/
-        unk_A9FAC4 = 0; /*0x53b02d*/
+        PsyDom_Status = 5; /*0x53b01d*/
+        *(unsigned int *)&PsyDom_Coords = dword_A9F9F8; /*0x53b027*/
+        PsyDom_Anim = 0; /*0x53b02d*/
         ScenarioClass::UpdateLighting(); /*0x53b037*/
       }
       break; /*0x53b03e*/
     case 5: /*0x53af50*/
-      if ( *((unsigned int *)g_abs_A8B230 + 3404) == *((unsigned int *)g_abs_A8B230 + 3403) ) /*0x53b052*/
-        unk_A9FAC0 = 0; /*0x53b054*/
+      if ( dword_A8B230[378].vtable2 == dword_A8B230[378].vtable1 ) /*0x53b052*/
+        PsyDom_Status = 0; /*0x53b054*/
       break; /*0x53b054*/
     default:
       return;
@@ -3598,23 +3597,23 @@ namespace gamemd {
 int E4Recv_538C40::sub_538C40(char * Source)
 {
 
-  int v2[22]; // [esp+0h] [ebp-6Ch] BYREF
-  unsigned char v3[12]; // [esp+58h] [ebp-14h] BYREF
+  CCFileClass v2; // [esp+0h] [ebp-6Ch] BYREF
+  int v3[3]; // [esp+58h] [ebp-14h] BYREF
   int v4; // [esp+64h] [ebp-8h]
 
-  CCFileClass::Construct(v2, Source); /*0x538c48*/
-  if ( CCFileClass::Open(v2, 0) ) /*0x538c53*/
+  CCFileClass::Construct(&v2, (char *)Source); /*0x538c48*/
+  if ( (uint8_t)CCFileClass::Open(&v2, 0) ) /*0x538c53*/
   {
-    FileClass::Load(v2, 1); /*0x538c62*/
-    CCFileClass::Read(v2, g_abs_A8F91C, 0x10000); /*0x538c75*/
-    CCFileClass::Reset(v2); /*0x538c7e*/
-    unk_A9F91C = 0; /*0x538c83*/
+    FileClass::Load(&v2, (const CHAR *)1); /*0x538c62*/
+    CCFileClass::Read(&v2, &byte_A8F91C, 0x10000); /*0x538c75*/
+    CCFileClass::Reset(&v2); /*0x538c7e*/
+    byte_A9F91C = 0; /*0x538c83*/
   }
-  v2[0] = (int)&vt_CCFileClass; /*0x538c8e*/
+  v2.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x538c8e*/
   v4 = 0; /*0x538c96*/
   Vector::Clear((int)v3); /*0x538c9e*/
-  v2[0] = (int)&off_7E1668; /*0x538ca7*/
-  return BufferIOFileClass::Dtor(v2); /*0x538cb4*/
+  v2.FileClass = (FileClass)&off_7E1668; /*0x538ca7*/
+  return BufferIOFileClass::Dtor(&v2); /*0x538cb4*/
 
 }
 } // namespace gamemd
@@ -3624,22 +3623,22 @@ namespace gamemd {
 int E4Recv_538CC0::sub_538CC0(char * Source)
 {
 
-  int v2[22]; // [esp+0h] [ebp-6Ch] BYREF
-  unsigned char v3[12]; // [esp+58h] [ebp-14h] BYREF
+  CCFileClass v2; // [esp+0h] [ebp-6Ch] BYREF
+  int v3[3]; // [esp+58h] [ebp-14h] BYREF
   int v4; // [esp+64h] [ebp-8h]
 
-  CCFileClass::Construct(v2, Source); /*0x538cc8*/
-  if ( !CCFileClass::Open(v2, 0) ) /*0x538cd3*/
+  CCFileClass::Construct(&v2, (char *)Source); /*0x538cc8*/
+  if ( !(uint8_t)CCFileClass::Open(&v2, 0) ) /*0x538cd3*/
   {
-    FileClass::Load(v2, 2); /*0x538ce2*/
-    FileClass::Write(v2, g_abs_A8F91C, 0x10000u); /*0x538cf5*/
-    CCFileClass::Reset(v2); /*0x538cfe*/
+    FileClass::Load(&v2, (const CHAR *)2); /*0x538ce2*/
+    FileClass::Write(&v2, &byte_A8F91C, 0x10000u); /*0x538cf5*/
+    CCFileClass::Reset(&v2); /*0x538cfe*/
   }
-  v2[0] = (int)&vt_CCFileClass; /*0x538d07*/
+  v2.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x538d07*/
   v4 = 0; /*0x538d0f*/
   Vector::Clear((int)v3); /*0x538d17*/
-  v2[0] = (int)&off_7E1668; /*0x538d20*/
-  return BufferIOFileClass::Dtor(v2); /*0x538d2d*/
+  v2.FileClass = (FileClass)&off_7E1668; /*0x538d20*/
+  return BufferIOFileClass::Dtor(&v2); /*0x538d2d*/
 
 }
 } // namespace gamemd
@@ -4495,7 +4494,7 @@ namespace gamemd {
 bool E4Recv_53F020::sub_53F020(const char * a2)
 {
 
-  return memcmp(this, a2, 10) > 0; /*0x53f031*/
+  return memcmp((const char *)this, a2, 10) > 0; /*0x53f031*/
 
 }
 } // namespace gamemd
@@ -4505,7 +4504,7 @@ namespace gamemd {
 bool E4Recv_53F050::sub_53F050(const char * a2)
 {
 
-  return memcmp(this, a2, 10) < 0; /*0x53f061*/
+  return memcmp((const char *)this, a2, 10) < 0; /*0x53f061*/
 
 }
 } // namespace gamemd
@@ -4515,7 +4514,7 @@ namespace gamemd {
 bool E4Recv_53F080::sub_53F080(const char * a2)
 {
 
-  return memcmp(this, a2, 10) >= 0; /*0x53f091*/
+  return memcmp((const char *)this, a2, 10) >= 0; /*0x53f091*/
 
 }
 } // namespace gamemd
@@ -4525,7 +4524,7 @@ namespace gamemd {
 bool E4Recv_53F0B0::sub_53F0B0(const char * a2)
 {
 
-  return memcmp(this, a2, 10) <= 0; /*0x53f0c1*/
+  return memcmp((const char *)this, a2, 10) <= 0; /*0x53f0c1*/
 
 }
 } // namespace gamemd

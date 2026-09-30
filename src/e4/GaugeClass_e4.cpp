@@ -33,10 +33,10 @@ namespace gamemd {
 GaugeClass * GaugeClass::QueryInterface(unsigned int * Block, char a2)
 {
 
-  GadgetClass::Dtor(Block); /*0x4e30d3*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4e30dd*/
-    RA2_OPDEL(Block); /*0x4e30e0*/
-  return (GaugeClass *)Block; /*0x4e30ea*/
+  GadgetClass::Dtor((GadgetClass *)Block); /*0x4e30d3*/
+  if ( (a2 & 1) != 0 ) /*0x4e30dd*/
+    __3_YAXPAX_Z(Block); /*0x4e30e0*/
+  return Block->__pad_0; /*0x4e30ea*/
 
 }
 } // namespace gamemd

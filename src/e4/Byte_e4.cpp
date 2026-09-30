@@ -11,7 +11,7 @@ namespace gamemd {
 void Byte::Zero()
 {
 
-  *(unsigned int *)this = 0; /*0x4f4c22*/
+  LOBYTE(this->Byte_field_00) = 0; /*0x4f4c22*/
   return this; /*0x4f4c25*/
 
 }

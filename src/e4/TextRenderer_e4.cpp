@@ -30,7 +30,7 @@ namespace gamemd {
 void * TextRenderer::GetInstance()
 {
 
-  return aP0; /*0x4a60d5*/
+  return g_FogOfWarState; /*0x4a60d5*/
 
 }
 }
@@ -39,106 +39,80 @@ namespace gamemd {
 void TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
 {
 
-  CampaignScore *v9; // edx
-  CampaignScore *v10; // ecx
-  CampaignScore *v11; // esi
-  CampaignScore *v12; // edi
-  AbstractClass *v13; // esi
-  int v14; // eax
-  int v15; // ecx
-  int v16; // edx
-  int v17; // edx
-  int v18; // edi
-  int v19; // eax
-  int v20; // edx
-  int v21; // edi
-  int BuildingAnimByName; // eax
-  unsigned int *v23; // eax
-  int v25; // [esp-10h] [ebp-5Ch]
-  ObjectClass *v26; // [esp-Ch] [ebp-58h]
-  int _FFFFFFF8; // [esp-8h] [ebp-54h]
-  int v28; // [esp-4h] [ebp-50h]
-  AbstractClass *v27; // [esp+14h] [ebp-38h] BYREF
-  int v30; // [esp+18h] [ebp-34h]
-  AbstractClass *v29; // [esp+1Ch] [ebp-30h]
-  int v32; // [esp+20h] [ebp-2Ch]
-  int v33; // [esp+24h] [ebp-28h]
-  int v34; // [esp+28h] [ebp-24h]
-  AbstractClass *v35; // [esp+2Ch] [ebp-20h]
-  int v36; // [esp+30h] [ebp-1Ch]
-  int v37; // [esp+34h] [ebp-18h]
-  int v38; // [esp+38h] [ebp-14h]
-  char v39[12]; // [esp+40h] [ebp-Ch] BYREF
+  int v11; // esi
+  int v12; // eax
+  int v13; // ecx
+  int v14; // edx
+  int v15; // edx
+  int v16; // edi
+  int v17; // eax
+  int v18; // edx
+  int v19; // edi
+  int v20; // eax
+  unsigned int *v21; // eax
+  int v23; // [esp-10h] [ebp-5Ch]
+  int v24; // [esp-Ch] [ebp-58h]
+  int v25; // [esp-8h] [ebp-54h]
+  int v26; // [esp-4h] [ebp-50h]
+  int v27; // [esp+14h] [ebp-38h] BYREF
+  int v28; // [esp+18h] [ebp-34h] BYREF
+  int v29; // [esp+1Ch] [ebp-30h]
+  int v30; // [esp+20h] [ebp-2Ch] BYREF
+  int v31; // [esp+24h] [ebp-28h]
+  int v32; // [esp+28h] [ebp-24h]
+  int v33; // [esp+2Ch] [ebp-20h]
+  unsigned int v34[4]; // [esp+30h] [ebp-1Ch] BYREF
+  char v35[12]; // [esp+40h] [ebp-Ch] BYREF
 
-  v11 = v10; /*0x4b96aa*/
-  v12 = v9; /*0x4b96b2*/
-  this->TextRenderer::GetInstance(); /*0x4b96c5*/
-  swprintf( /*0x4b96dc*/
-    (wchar_t *const)&stru_89E138.__pad_14B0[4744],
-    (const size_t)&stru_820524.__pad_0[8],
-    (const wchar_t *const)a3,
-    v11);
-  swprintf( /*0x4b96ed*/
-    (wchar_t *const)&stru_89E138.__pad_14B0[4824],
-    (const size_t)&stru_820524.__pad_0[8],
-    (const wchar_t *const)a3,
-    v12);
-  if ( (unsigned char)a3 ) /*0x4b96f7*/
+  TextRenderer::GetInstance(); /*0x4b96c5*/
+  swprintf(&word_8A0870, (const size_t)&aSD, Format, a2); /*0x4b96dc*/
+  swprintf(&word_8A08C0, (const size_t)&aSD, Format, a1); /*0x4b96ed*/
+  if ( a6 ) /*0x4b96f7*/
   {
-    v13 = (AbstractClass *)(*(unsigned int *)a2 - Text::MeasureWidth((CampaignScore *)&stru_89E138.__pad_14B0[4744], 0) / 2); /*0x4b971b*/
-    v14 = *(unsigned int *)a2 - Text::MeasureWidth((CampaignScore *)&stru_89E138.__pad_14B0[4824], 0) / 2; /*0x4b972b*/
+    v11 = *a3 - Text::MeasureWidth((int)&word_8A0870, 0) / 2; /*0x4b971b*/
+    v12 = *a3 - Text::MeasureWidth((int)&word_8A08C0, 0) / 2; /*0x4b972b*/
   }
   else
   {
-    v13 = *(AbstractClass **)a2; /*0x4b9733*/
-    v14 = *(unsigned int *)a2; /*0x4b9735*/
+    v11 = *a3; /*0x4b9733*/
+    v12 = *a3; /*0x4b9735*/
   }
-  v15 = *(unsigned int *)(a2 + 4); /*0x4b9737*/
-  v16 = 110; /*0x4b9740*/
-  if ( (int)v13 > v14 ) /*0x4b974a*/
+  v13 = a3[1]; /*0x4b9737*/
+  v14 = 110; /*0x4b9740*/
+  if ( v11 > v12 ) /*0x4b974a*/
   {
-    v16 = (int)&v13[3].__pad_0[-v14 + 2]; /*0x4b9750*/
-    v13 = (AbstractClass *)v14; /*0x4b9752*/
+    v14 = v11 - v12 + 110; /*0x4b9750*/
+    v11 = v12; /*0x4b9752*/
   }
-  if ( (int)&v13-((unsigned int *)(>__pad_0))[v16] < v14 + 110 ) /*0x4b9766*/
-    v16 = v14 - (unsigned int)v13 + 111; /*0x4b976d*/
-  v35 = v13; /*0x4b9784*/
-  v29 = v13; /*0x4b9788*/
-  v37 = v16; /*0x4b9790*/
-  v33 = v16; /*0x4b9794*/
-  v36 = v15; /*0x4b9798*/
-  v17 = *(unsigned int *)a1; /*0x4b979c*/
-  v32 = v15; /*0x4b979e*/
-  v38 = 15; /*0x4b97a4*/
-  v34 = 15; /*0x4b97a8*/
-  v18 = (*(int (**)(int))(v17 + 124))(a1); /*0x4b97b5*/
-  v19 = (*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374.__pad_579C[22524] + 124))(*(unsigned int *)&stru_87C374.__pad_579C[22524]); /*0x4b97b9*/
-  v20 = *(unsigned int *)a1; /*0x4b97c5*/
-  v32 += (v19 - v18) / -2; /*0x4b97cd*/
-  v21 = (*(int (**)(int))(v20 + 128))(a1); /*0x4b97df*/
-  v33 += ((*(int (**)(unsigned int))(**(unsigned int **)&stru_87C374.__pad_579C[22524] + 128))(*(unsigned int *)&stru_87C374.__pad_579C[22524]) /*0x4b97fc*/
-        - v21)
-       / -2;
-  v30 = 0; /*0x4b982a*/
+  if ( v14 + v11 < v12 + 110 ) /*0x4b9766*/
+    v14 = v12 - v11 + 111; /*0x4b976d*/
+  v33 = v11; /*0x4b9784*/
+  v29 = v11; /*0x4b9788*/
+  v34[1] = v14; /*0x4b9790*/
+  v31 = v14; /*0x4b9794*/
+  v34[0] = v13; /*0x4b9798*/
+  v15 = *aP2; /*0x4b979c*/
+  v30 = v13; /*0x4b979e*/
+  v34[2] = 15; /*0x4b97a4*/
+  v32 = 15; /*0x4b97a8*/
+  v16 = (*(int (**)(int *))(v15 + 124))(aP2); /*0x4b97b5*/
+  v17 = (*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x4b97b9*/
+  v18 = *aP2; /*0x4b97c5*/
+  v30 += (v17 - v16) / -2; /*0x4b97cd*/
+  v19 = (*(int (**)(int *))(v18 + 128))(aP2); /*0x4b97df*/
+  v31 += ((*(int (**)(int))(*(unsigned int *)g_DSurface_Hidden + 128))(g_DSurface_Hidden) - v19) / -2; /*0x4b97fc*/
+  v28 = 0; /*0x4b982a*/
   v29 = 0; /*0x4b982e*/
-  BlitterDrawSHP(*(IUnknown **)&stru_87C374.__pad_579C[22524]); /*0x4b9832*/
-  BuildingAnimByName = FindBuildingAnimByName(&stru_820524, 1); /*0x4b9847*/
-  v23 = (unsigned int *)(*(int (**)(unsigned int, char *, ObjectClass *, int, unsigned int, AbstractClass *))(**(unsigned int **)&stru_87C374.__pad_579C[22524] + 120))( /*0x4b985f*/
-                    *(unsigned int *)&stru_87C374.__pad_579C[22524],
-                    v39,
-                    a3,
-                    BuildingAnimByName,
+  BlitterDrawSHP((int *)g_DSurface_Hidden, _6C, aP2, &v30, &v28, v34, 0, a8, 0, 0, 1000, 0, 0); /*0x4b9832*/
+  v20 = FindBuildingAnimByName(aYellow, 1); /*0x4b9847*/
+  v21 = (unsigned int *)(*(int (**)(int, char *, wchar_t *, int, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden + 120))( /*0x4b985f*/
+                    g_DSurface_Hidden,
+                    v35,
+                    Format,
+                    v20,
                     0,
                     v27);
-  return TextRenderer::DrawText( /*0x4b987c*/
-           (int *)&v27,
-           (size_t)&stru_89E138.__pad_14B0[4744],
-           *(IUnknown **)&stru_87C374.__pad_579C[22524],
-           v23,
-           v25,
-           v26,
-           _FFFFFFF8,
-           v28);
+  return TextRenderer::DrawText(&v27, (size_t)&word_8A0870, g_DSurface_Hidden, v21, v23, v24, v25, v26); /*0x4b987c*/
 
 }
 }
@@ -147,146 +121,143 @@ namespace gamemd {
 int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6)
 {
 
+  int result; // eax
   unsigned int *FoundationSize; // eax
-  int v8; // ebx
+  int v9; // ebx
   int Default; // edi
-  int *v10; // ebp
-  int v11; // eax
-  int v12; // ebp
-  int v13; // edi
+  int *v11; // ebp
+  int v12; // eax
+  int v13; // ebp
+  int v14; // edi
   int *Viewport; // eax
-  int v15; // kr04_4
-  int v16; // eax
-  AbstractClass *Instance; // [esp+4h] [ebp-3Ch]
-  int v19; // [esp+8h] [ebp-38h]
-  int v20; // [esp+Ch] [ebp-34h]
-  int v21; // [esp+18h] [ebp-28h]
-  int v22[7]; // [esp+20h] [ebp-20h] BYREF
-  int16_t v23; // [esp+3Eh] [ebp-2h]
-  int v24; // [esp+44h] [ebp+4h]
+  int v16; // kr04_4
+  void * Instance;
+  int v18; // [esp+8h] [ebp-38h]
+  int v19; // [esp+Ch] [ebp-34h]
+  int v20; // [esp+18h] [ebp-28h]
+  int v21[7]; // [esp+20h] [ebp-20h] BYREF
+  int16_t v22; // [esp+3Eh] [ebp-2h]
+  int v23; // [esp+44h] [ebp+4h]
 
-  if ( a2 == -1 && aP2 == (ProgressScreenClass *)-1 ) /*0x642c9a*/
+  result = a2; /*0x642c80*/
+  if ( a2 == -1 && aP2 == (gamemd::ProgressScreenClass *)(-1) ) /*0x642c9a*/
   {
-    v20 = *((char *)this + 97); /*0x642cb1*/
-    FoundationSize = Building::GetFoundationSize(v22, 0); /*0x642cb5*/
-    v8 = 0; /*0x642cbc*/
+    v19 = *((char *)this + 97); /*0x642cb1*/
+    FoundationSize = Building::GetFoundationSize(v21, 0); /*0x642cb5*/
+    v9 = 0; /*0x642cbc*/
     Default = 0; /*0x642cc2*/
-    v21 = FoundationSize[2]; /*0x642cce*/
-    v19 = FoundationSize[3] + 6; /*0x642cd8*/
-    if ( (unsigned char)aP4 ) /*0x642ce2*/
+    v20 = FoundationSize[2]; /*0x642cce*/
+    v18 = FoundationSize[3] + 6; /*0x642cd8*/
+    if ( aP4 ) /*0x642ce2*/
     {
       Default = BuildingType::FindDefault(0); /*0x642ceb*/
       if ( Default ) /*0x642cef*/
       {
-        v8 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642cfc*/
+        v9 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642cfc*/
         Default = (*(int (**)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
-    Instance = (gamemd::AbstractClass *)(TextRenderer::GetInstance());
-    v10 = v22; /*0x642d14*/
-    v24 = 15; /*0x642d18*/
+    Instance = (void *)((int)(TextRenderer::GetInstance()));
+    v11 = v21; /*0x642d14*/
+    v23 = 15; /*0x642d18*/
     do /*0x642d3d*/
     {
-      *(unsigned short *)v10 = *(unsigned short *)CharToWideString(MEMORY[0x8258C0]); /*0x642d2d*/
-      v10 = (int *)((char *)v10 + 2); /*0x642d35*/
-      --v24; /*0x642d39*/
+      *(unsigned short *)v11 = *(unsigned short *)CharToWideString(g_Str_W); /*0x642d2d*/
+      v11 = (int *)((char *)v11 + 2); /*0x642d35*/
+      --v23; /*0x642d39*/
     }
-    while ( v24 ); /*0x642d3d*/
-    v23 = 0; /*0x642d4c*/
-    v11 = Text::MeasureWidth((int)v22, 0); /*0x642d53*/
-    if ( v19 > Default ) /*0x642d6b*/
-      Default = v19; /*0x642d6d*/
-    if ( Default <= Instance->referenceCount ) /*0x642d71*/
-      Default = Instance->referenceCount; /*0x642d73*/
-    v12 = v8 + v11 + v21 + 36; /*0x642d79*/
-    v13 = Default + 4; /*0x642d7c*/
-    if ( v20 > 1 ) /*0x642d82*/
-      v13 *= v20; /*0x642d87*/
-    Viewport = Display::GetViewport(v22); /*0x642d8d*/
-    v15 = Viewport[2] - v12; /*0x642dac*/
-    v16 = Viewport[3] - v13; /*0x642db0*/
-    *((unsigned int *)this + 26) = v15 / 2; /*0x642dbb*/
-    *((unsigned int *)this + 27) = v16 / 2; /*0x642dbe*/
+    while ( v23 ); /*0x642d3d*/
+    v22 = 0; /*0x642d4c*/
+    v12 = Text::MeasureWidth((int)v21, 0); /*0x642d53*/
+    if ( v18 > Default ) /*0x642d6b*/
+      Default = v18; /*0x642d6d*/
+    if ( Default <= *(unsigned int *)((unsigned int)(Instance)+ 28) ) /*0x642d71*/
+      Default = *(unsigned int *)((unsigned int)(Instance)+ 28); /*0x642d73*/
+    v13 = v9 + v12 + v20 + 36; /*0x642d79*/
+    v14 = Default + 4; /*0x642d7c*/
+    if ( v19 > 1 ) /*0x642d82*/
+      v14 *= v19; /*0x642d87*/
+    Viewport = Display::GetViewport(v21); /*0x642d8d*/
+    v16 = Viewport[2] - v13; /*0x642dac*/
+    result = (Viewport[3] - v14) / 2; /*0x642db9*/
+    *((char *)this + 26) = v16 / 2; /*0x642dbb*/
+    *((char *)this + 27) = result; /*0x642dbe*/
   }
   else
   {
-    *((unsigned int *)this + 26) = a2; /*0x642dc4*/
-    *((unsigned int *)this + 27) = aP2; /*0x642dc7*/
+    *((char *)this + 26) = a2; /*0x642dc4*/
+    *((char *)this + 27) = aP2; /*0x642dc7*/
   }
-  *(unsigned int *)&this-((unsigned int *)(>__pad_4C))[4] = aP3; /*0x642dd6*/
-  *((unsigned char *)this + 112) = (unsigned char)aP4; /*0x642dd9*/
-  *((unsigned char *)this + 113) = a6; /*0x642ddc*/
-  return a6; /*0x642ddf*/
+  LOBYTE(result) = a6; /*0x642dd2*/
+  *((char *)this + 20) = aP3; /*0x642dd6*/
+  *((unsigned char *)this + 112) = aP4; /*0x642dd9*/
+  *((unsigned char *, unsigned int a4)this + 113) = a6; /*0x642ddc*/
+  return result; /*0x642ddf*/
 
 }
 }
 // 0x642EF0
 namespace gamemd {
-void * TextRenderer::MeasureBuilding2()
+void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4)
 {
 
   unsigned int *FoundationSize; // eax
-  int v2; // ebp
-  int v3; // edi
+  int v5; // ebp
+  int v6; // edi
   int Default; // eax
-  int v5; // esi
-  AbstractClass *Instance; // ebx
-  CampaignScore *v10; // esi
-  int v8; // eax
-  int referenceCount; // ebx
+  int v8; // esi
+  void * Instance;
+  unsigned int v10;
+  int v11; // eax
+  int v12; // ebx
   int *result; // eax
-  int v11; // edi
-  int v12; // [esp+10h] [ebp-34h]
-  CampaignScore *v16; // [esp+1Ch] [ebp-28h]
-  unsigned int v14[7]; // [esp+24h] [ebp-20h] BYREF
-  int16_t v15; // [esp+42h] [ebp-2h]
-  unsigned int *arg0; // [esp+48h] [ebp+4h]
-  int *v17; // [esp+4Ch] [ebp+8h]
-  int v18; // [esp+50h] [ebp+Ch]
-  char v19; // [esp+54h] [ebp+10h]
-  int v20; // [esp+54h] [ebp+10h]
+  void * v14;
+  int v15; // [esp+10h] [ebp-34h]
+  int v16; // [esp+1Ch] [ebp-28h]
+  unsigned int v17[7]; // [esp+24h] [ebp-20h] BYREF
+  int16_t v18; // [esp+42h] [ebp-2h]
+  int v19; // [esp+54h] [ebp+10h]
 
-  FoundationSize = ((Building *)(v14))->GetFoundationSize(0); /*0x642f01*/
-  v2 = 0; /*0x642f08*/
-  v3 = 0; /*0x642f0e*/
-  v16 = (CampaignScore *)FoundationSize[2]; /*0x642f1a*/
-  v12 = FoundationSize[3] + 6; /*0x642f24*/
-  if ( v19 ) /*0x642f2e*/
+  FoundationSize = ((Building *)(v17))->GetFoundationSize(0); /*0x642f01*/
+  v5 = 0; /*0x642f08*/
+  v6 = 0; /*0x642f0e*/
+  v16 = FoundationSize[2]; /*0x642f1a*/
+  v15 = FoundationSize[3] + 6; /*0x642f24*/
+  if ( a4 ) /*0x642f2e*/
   {
     Default = BuildingType::FindDefault(0); /*0x642f32*/
-    v5 = Default; /*0x642f37*/
+    v8 = Default; /*0x642f37*/
     if ( Default ) /*0x642f3b*/
     {
-      v2 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642f44*/
-      v3 = (*(int (**)(int))(*(unsigned int *)v5 + 128))(v5); /*0x642f50*/
+      v5 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642f44*/
+      v6 = (*(int (**)(int))(*(unsigned int *)v8 + 128))(v8); /*0x642f50*/
     }
   }
-  Instance = (gamemd::AbstractClass *)(TextRenderer::GetInstance());
-  v10 = (CampaignScore *)v14; /*0x642f5e*/
-  v20 = 15; /*0x642f62*/
+  Instance = (unsigned short *)(this->TextRenderer::GetInstance());
+  v10 = (unsigned int)(v17);
+  v19 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
-    *(unsigned short *)v10->__pad_0 = *(unsigned short *)CharToWideString(MEMORY[0x8258C0]); /*0x642f7b*/
-    v10 = (CampaignScore *)((char *)v10 + 2); /*0x642f7e*/
-    --v20; /*0x642f82*/
+    *(unsigned int *)(v10)++ = *(unsigned short *, unsigned int a1, unsigned int a2, unsigned int a3)CharToWideString(g_Str_W); /*0x642f7b*/
+    --v19; /*0x642f82*/
   }
-  while ( v20 ); /*0x642f86*/
-  v15 = 0; /*0x642f91*/
-  v8 = Text::MeasureWidth((int)v14, 0); /*0x642f98*/
-  referenceCount = Instance->referenceCount; /*0x642fa1*/
-  *arg0 = (char *)&v16->CampaignScore_field_0x18 + v2 + v8 + 2; /*0x642fb4*/
-  if ( v12 > v3 ) /*0x642fb6*/
-    v3 = v12; /*0x642fb8*/
-  result = v17; /*0x642fba*/
-  *v17 = v3; /*0x642fc0*/
-  if ( v3 <= referenceCount ) /*0x642fc2*/
-    v3 = referenceCount; /*0x642fc4*/
-  *v17 = v3; /*0x642fc6*/
-  *arg0 += 10; /*0x642fd1*/
-  v11 = *v17 + 4; /*0x642fd5*/
-  *v17 = v11; /*0x642fdb*/
-  if ( v18 > 1 ) /*0x642fe3*/
-    *v17 = v18 * v11; /*0x642fe8*/
+  while ( v19 ); /*0x642f86*/
+  v18 = 0; /*0x642f91*/
+  v11 = Text::MeasureWidth((int)v17, 0); /*0x642f98*/
+  v12 = *(unsigned int *)((unsigned int)(Instance)+ 28); /*0x642fa1*/
+  *(unsigned int *)(a1) = v5 + v11 + v16 + 26; /*0x642fb4*/
+  if ( v15 > v6 ) /*0x642fb6*/
+    v6 = v15; /*0x642fb8*/
+  result = a2; /*0x642fba*/
+  *(unsigned int *)(a2) = v6; /*0x642fc0*/
+  if ( v6 <= v12 ) /*0x642fc2*/
+    v6 = v12; /*0x642fc4*/
+  *(unsigned int *)(a2) = v6; /*0x642fc6*/
+  *(unsigned int *)(a1) += 10; /*0x642fd1*/
+  v14 = *(unsigned int *)(a2) + 4; /*0x642fd5*/
+  *(unsigned int *)(a2) = v14; /*0x642fdb*/
+  if ( a3 > (void *)(1) ) /*0x642fe3*/
+    *(unsigned int *)(a2) = a3 * v14; /*0x642fe8*/
   return result; /*0x642fdf*/
 
 }
@@ -296,36 +267,25 @@ namespace gamemd {
 unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8)
 {
 
-  wchar_t *v9; // ecx
-  AbstractClass *v11; // edx
-  AbstractClass v12[29]; // [esp-10h] [ebp-418h] BYREF
+  unsigned int *v9; // ecx
+  unsigned int *v11; // edx
+  va_list v12; // [esp+0h] [ebp-408h]
+  wchar_t Buffer[512]; // [esp+8h] [ebp-400h] BYREF
 
   if ( BufferCount ) /*0x4a60ec*/
   {
-    vswprintf( /*0x4a60fc*/
-      (wchar_t *const)&v12[0].nextArrayIndex,
-      (CampaignScore *)BufferCount,
-      (ObjectClass *)&aP8,
-      (SessionClass *)((unsigned int *)(v12))[0].uniqueId);
-    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[12] = 1; /*0x4a6119*/
-    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[8] = a8; /*0x4a611b*/
-    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[4] = a7; /*0x4a6123*/
-    *(unsigned int *)v12[0].__pad_0 = a6; /*0x4a612b*/
-    v9 = (wchar_t *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]); /*0x4a6143*/
-    *(unsigned int *)aP0->__pad_0 = *(unsigned int *)v9; /*0x4a614e*/
-    *(unsigned int *)&aP0-((unsigned int *)(>field_2))[2] = *((unsigned int *)v9 + 1); /*0x4a6153*/
-    return aP0->__pad_0; /*0x4a6145*/
+    vswprintf(Buffer, BufferCount, &aP8, v12); /*0x4a60fc*/
+    v9 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a6143*/
+    *(unsigned int *)aP0 = *v9; /*0x4a614e*/
+    aP0[1] = v9[1]; /*0x4a6153*/
+    return aP0; /*0x4a6145*/
   }
   else
   {
-    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[12] = 1; /*0x4a6172*/
-    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[8] = a8; /*0x4a6174*/
-    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[4] = a7; /*0x4a617c*/
-    *(unsigned int *)v12[0].__pad_0 = a6; /*0x4a6184*/
-    v11 = (AbstractClass *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]); /*0x4a619a*/
-    *(unsigned int *)aP0->__pad_0 = *(unsigned int *)v11->__pad_0; /*0x4a61a5*/
-    *(unsigned int *)&aP0-((unsigned int *)(>field_2))[2] = *(unsigned int *)&v11->__pad_0[4]; /*0x4a61aa*/
-    return aP0->__pad_0; /*0x4a619c*/
+    v11 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a619a*/
+    *(unsigned int *)aP0 = *v11; /*0x4a61a5*/
+    aP0[1] = v11[1]; /*0x4a61aa*/
+    return aP0; /*0x4a619c*/
   }
 
 }
@@ -336,10 +296,10 @@ namespace gamemd {
 TriggerTypeClass * TextRenderer::Destructor(void * Block, char a2)
 {
 
-  TriggerClass::ProcessEvents((int)Block); /*0x727cd3*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x727cdd*/
-    RA2_OPDEL(Block); /*0x727ce0*/
-  return (TriggerTypeClass *)Block; /*0x727cea*/
+  TriggerClass::ProcessEvents((AbstractClass *)Block); /*0x727cd3*/
+  if ( (a2 & 1) != 0 ) /*0x727cdd*/
+    __3_YAXPAX_Z(Block); /*0x727ce0*/
+  return Block; /*0x727cea*/
 
 }
 } // namespace gamemd

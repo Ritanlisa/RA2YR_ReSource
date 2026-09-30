@@ -16,11 +16,11 @@ namespace gamemd {
 int BufferIOFile::Constructor( char * Source)
 {
 
-  ((BufferIOFileClass *)(this))->Constructor(); /*0x47a9d3*/
-  *(this + 84) = 0; /*0x47a9df*/
-  *(unsigned int *)this = &off_7E1668; /*0x47a9e3*/
-  FileClass::OpenWithCDSearch(this, (IUnknown *)Source); /*0x47a9e9*/
-  return (CDFileClass *)this; /*0x47a9f0*/
+  BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47a9d3*/
+  LOBYTE(this->m_54) = 0; /*0x47a9df*/
+  *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47a9e3*/
+  FileClass::OpenWithCDSearch((CDFileClass *)this, Source); /*0x47a9e9*/
+  return this->__pad_0; /*0x47a9f0*/
 
 }
 }
@@ -29,10 +29,10 @@ namespace gamemd {
 int BufferIOFile::Init()
 {
 
-  this->BufferIOFileClass::Constructor(); /*0x47aa33*/
-  *(this + 84) = 0; /*0x47aa38*/
-  *(unsigned int *)this = &off_7E1668; /*0x47aa3c*/
-  return this; /*0x47aa44*/
+  BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa33*/
+  LOBYTE(this->m_54) = 0; /*0x47aa38*/
+  *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47aa3c*/
+  return this->__pad_0; /*0x47aa44*/
 
 }
 }

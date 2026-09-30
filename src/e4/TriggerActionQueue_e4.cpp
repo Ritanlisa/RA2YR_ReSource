@@ -15,11 +15,11 @@ int TriggerActionQueue::ProcessAll()
   int result; // eax
   int i; // esi
 
-  result = MEMORY[0xB0E730]; /*0x6e5820*/
-  for ( i = 0; i < MEMORY[0xB0E730]; ++i ) /*0x6e582d*/
+  result = g_GameObjectCleanup; /*0x6e5820*/
+  for ( i = 0; i < g_GameObjectCleanup; ++i ) /*0x6e582d*/
   {
-    TriggerClass::NotifyLocalChanged(this); /*0x6e583b*/
-    result = MEMORY[0xB0E730]; /*0x6e5840*/
+    TriggerClass::NotifyLocalChanged(*(TriggerClass **)(*((unsigned int *)g_TagClassCount + i) + 40), (int)this); /*0x6e583b*/
+    result = g_GameObjectCleanup; /*0x6e5840*/
   }
   return result; /*0x6e584a*/
 

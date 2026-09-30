@@ -17,7 +17,7 @@ unsigned int * VectorCursor::Release()
 {
 
   ++*((unsigned int *)this + 2); /*0x76f182*/
-  return this; /*0x76f185*/
+  return this->__pad_0; /*0x76f185*/
 
 }
 } // namespace gamemd
@@ -27,7 +27,7 @@ unsigned int * VectorCursor::ddtor()
 {
 
   --*((unsigned int *)this + 2); /*0x76f192*/
-  return this; /*0x76f195*/
+  return this->__pad_0; /*0x76f195*/
 
 }
 } // namespace gamemd
@@ -49,9 +49,9 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
   int v4; // edx
   int v5; // eax
 
-  if ( ((uint8_t)g_abs_A8ED84 & 1) == 0 ) /*0x4f4bb7*/
+  if ( ((uint8_t)dword_A8ED84 & 1) == 0 ) /*0x4f4bb7*/
   {
-    v3 = *((char *)this + 1); /*0x4f4bb9*/
+    v3 = *((unsigned int *)this + 1); /*0x4f4bb9*/
     if ( v3 >= 0 ) /*0x4f4bbe*/
     {
       if ( v3 <= 0 ) /*0x4f4bc5*/
@@ -62,17 +62,17 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
     {
       v4 = -1; /*0x4f4bc0*/
     }
-    *((char *)this + 1) = v4 - v3; /*0x4f4bce*/
+    *((unsigned int *)this + 1) = v4 - v3; /*0x4f4bce*/
 LABEL_7:
-    v5 = *((char *)this + 2); /*0x4f4bd1*/
+    v5 = *((unsigned int *)this + 2); /*0x4f4bd1*/
     if ( v5 >= 0 ) /*0x4f4bd6*/
     {
       if ( v5 > 0 ) /*0x4f4be3*/
-        *((char *)this + 2) = 1 - v5; /*0x4f4bec*/
+        *((unsigned int *)this + 2) = 1 - v5; /*0x4f4bec*/
     }
     else
     {
-      *((char *)this + 2) = -1 - v5; /*0x4f4bdd*/
+      *((unsigned int *)this + 2) = -1 - v5; /*0x4f4bdd*/
     }
   }
 
@@ -83,7 +83,7 @@ namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
 {
 
-  g_abs_A8EF54 = 0; /*0x4f42a0*/
+  dword_A8EF54 = 0; /*0x4f42a0*/
 
 }
 } // namespace gamemd
@@ -93,7 +93,7 @@ namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Get()
 {
 
-  g_abs_A8EF54 = 0; /*0x4f42e0*/
+  dword_A8EF54 = 0; /*0x4f42e0*/
 
 }
 } // namespace gamemd

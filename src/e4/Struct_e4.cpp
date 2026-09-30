@@ -25,56 +25,56 @@ void Struct::ClearAllMemberFlags()
   int v6; // esi
   unsigned int *v7; // edi
 
-  v1 = *(unsigned int *)&this-((unsigned int *)(>__pad_0))[4]; /*0x48b2a0*/
+  v1 = *((unsigned int *)this + 1); /*0x48b2a0*/
   v2 = 0; /*0x48b2a7*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_28))[4] = 0; /*0x48b2ac*/
+  *((unsigned int *)this + 11) = 0; /*0x48b2ac*/
   *((unsigned int *)this + 15) = 0; /*0x48b2af*/
-  *(unsigned int *)this->__pad_14 = 0; /*0x48b2b2*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_14))[4] = 0; /*0x48b2b5*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_14))[8] = 0; /*0x48b2b8*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_14))[12] = 0; /*0x48b2bb*/
-  *(unsigned int *)this->__pad_28 = 0; /*0x48b2be*/
+  *((unsigned int *)this + 5) = 0; /*0x48b2b2*/
+  *((unsigned int *)this + 6) = 0; /*0x48b2b5*/
+  *((unsigned int *)this + 7) = 0; /*0x48b2b8*/
+  *((unsigned int *)this + 8) = 0; /*0x48b2bb*/
+  *((unsigned int *)this + 10) = 0; /*0x48b2be*/
   *((unsigned int *)this + 14) = 0; /*0x48b2c1*/
   if ( v1 > 0 ) /*0x48b2c4*/
   {
     v3 = 0; /*0x48b2c6*/
     do /*0x48b327*/
     {
-      *(unsigned int *)(v3 + this->field_24) &= ~1u; /*0x48b2d2*/
-      *(unsigned int *)(v3 + this->field_24) &= ~2u; /*0x48b2de*/
-      v4 = (unsigned int *)(v3 + this->field_24); /*0x48b2e3*/
+      *(unsigned int *)(v3 + *((unsigned int *)this + 9)) &= ~1u; /*0x48b2d2*/
+      *(unsigned int *)(v3 + *((unsigned int *)this + 9)) &= ~2u; /*0x48b2de*/
+      v4 = (unsigned int *)(v3 + *((unsigned int *)this + 9)); /*0x48b2e3*/
       v3 += 36; /*0x48b2e5*/
       ++v2; /*0x48b2ed*/
       *v4 &= ~4u; /*0x48b2ee*/
-      *(unsigned int *)(v3 + this->field_24 - 32) = 0; /*0x48b2f3*/
-      *(unsigned int *)(v3 + this->field_24 - 28) = 0; /*0x48b2fa*/
-      *(unsigned int *)(v3 + this->field_24 - 24) = 0; /*0x48b301*/
-      *(unsigned int *)(v3 + this->field_24 - 20) = 0; /*0x48b308*/
-      *(unsigned int *)(v3 + this->field_24 - 12) = 0; /*0x48b30f*/
-      *(unsigned short *)(v3 + this->field_24 - 4) = 0; /*0x48b316*/
-      *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>__pad_28))[8] + 4 * v2 - 4) = 0; /*0x48b31e*/
+      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 32) = 0; /*0x48b2f3*/
+      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 28) = 0; /*0x48b2fa*/
+      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 24) = 0; /*0x48b301*/
+      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 20) = 0; /*0x48b308*/
+      *(unsigned int *)(v3 + *((unsigned int *)this + 9) - 12) = 0; /*0x48b30f*/
+      *(unsigned short *)(v3 + *((unsigned int *)this + 9) - 4) = 0; /*0x48b316*/
+      *(unsigned int *)(*((unsigned int *)this + 12) + 4 * v2 - 4) = 0; /*0x48b31e*/
     }
-    while ( v2 < *(unsigned int *)&this-((unsigned int *)(>__pad_0))[4] ); /*0x48b327*/
+    while ( v2 < *((unsigned int *)this + 1) ); /*0x48b327*/
   }
-  result = this->field_8; /*0x48b329*/
+  result = *((unsigned int *)this + 2); /*0x48b329*/
   v6 = 0; /*0x48b32c*/
   if ( result > 0 ) /*0x48b330*/
   {
     result = 0; /*0x48b332*/
     do /*0x48b37d*/
     {
-      *(unsigned int *)(result + this->field_34) &= ~1u; /*0x48b33e*/
-      *(unsigned int *)(result + this->field_34) &= ~2u; /*0x48b34a*/
-      v7 = (unsigned int *)(result + this->field_34); /*0x48b34f*/
+      *(unsigned int *)(result + *((unsigned int *)this + 13)) &= ~1u; /*0x48b33e*/
+      *(unsigned int *)(result + *((unsigned int *)this + 13)) &= ~2u; /*0x48b34a*/
+      v7 = (unsigned int *)(result + *((unsigned int *)this + 13)); /*0x48b34f*/
       result += 24; /*0x48b351*/
       ++v6; /*0x48b359*/
       *v7 &= ~4u; /*0x48b35a*/
-      *(unsigned int *)(this->field_34 + result - 20) = 0; /*0x48b35f*/
-      *(unsigned int *)(this->field_34 + result - 16) = 0; /*0x48b366*/
-      *(unsigned int *)(this->field_34 + result - 8) = 0; /*0x48b36d*/
+      *(unsigned int *)(*((unsigned int *)this + 13) + result - 20) = 0; /*0x48b35f*/
+      *(unsigned int *)(*((unsigned int *)this + 13) + result - 16) = 0; /*0x48b366*/
+      *(unsigned int *)(*((unsigned int *)this + 13) + result - 8) = 0; /*0x48b36d*/
       *(unsigned int *)(*((unsigned int *)this + 16) + 4 * v6 - 4) = 0; /*0x48b374*/
     }
-    while ( v6 < this->field_8 ); /*0x48b37d*/
+    while ( v6 < *((unsigned int *)this + 2) ); /*0x48b37d*/
   }
   *((unsigned int *)this + 17) = 0; /*0x48b381*/
   *((unsigned int *)this + 18) = 0; /*0x48b384*/
@@ -89,18 +89,18 @@ namespace gamemd {
 int Struct::ZeroInitAndSetup()
 {
 
-  *((unsigned int *)this + 13) = 0; /*0x48bf12*/
-  *((unsigned int *)this + 14) = 0; /*0x48bf15*/
-  *((unsigned int *)this + 15) = 0; /*0x48bf18*/
-  *((unsigned int *)this + 16) = 0; /*0x48bf1b*/
-  *((unsigned int *)this + 2) = 0; /*0x48bf1e*/
-  *((unsigned int *)this + 3) = 0; /*0x48bf21*/
-  *((unsigned int *)this + 4) = 0; /*0x48bf24*/
-  *((unsigned int *)this + 5) = 0; /*0x48bf27*/
-  *((unsigned int *)this + 6) = 0; /*0x48bf2a*/
-  *((unsigned int *)this + 17) = -1; /*0x48bf30*/
-  *((unsigned int *)this + 18) = -1; /*0x48bf33*/
-  return Struct::ClearAllMemberFlags(*((unsigned int *)this + 1));
+  this-((unsigned int *)(>PhoneNumber))[7] = 0; /*0x48bf12*/
+  this-((unsigned int *)(>PhoneNumber))[8] = 0; /*0x48bf15*/
+  this-((unsigned int *)(>PhoneNumber))[9] = 0; /*0x48bf18*/
+  this-((unsigned int *)(>PhoneNumber))[10] = 0; /*0x48bf1b*/
+  *(unsigned int *)this->Active = 0; /*0x48bf1e*/
+  this->LastPacketTime = 0; /*0x48bf21*/
+  this->PacketsSent = 0; /*0x48bf24*/
+  this->PacketsReceived = 0; /*0x48bf27*/
+  this-((unsigned int *)(>PhoneNumber))[0] = 0; /*0x48bf2a*/
+  this-((unsigned int *)(>PhoneNumber))[11] = -1; /*0x48bf30*/
+  this-((unsigned int *)(>PhoneNumber))[12] = -1; /*0x48bf33*/
+  return Struct::ClearAllMemberFlags((Struct *)this->PlayerIndex);
 
 }
 } // namespace gamemd
@@ -109,9 +109,9 @@ namespace gamemd {
 unsigned char * Struct::Zero3()
 {
 
-  *(unsigned int *)this = (unsigned char *)(0);
-  *((unsigned char *)this + 1) = 0; /*0x4b9bd6*/
-  *((unsigned char *)this + 2) = 0; /*0x4b9bd9*/
+  LOBYTE(this->Struct_field_00) = 0; /*0x4b9bd4*/
+  BYTE1(this->Struct_field_00) = 0; /*0x4b9bd6*/
+  BYTE2(this->Struct_field_00) = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/
 
 }
@@ -131,7 +131,7 @@ namespace gamemd {
 int Struct::ZeroInitAndSetup_0()
 {
 
-  return Struct::ZeroInitAndSetup(this);
+  return Struct::ZeroInitAndSetup((ConnectionClass *)this);
 
 }
 }
@@ -140,7 +140,7 @@ namespace gamemd {
 int Struct::ZeroInitAndSetup_0_0()
 {
 
-  return Struct::ZeroInitAndSetup(this);
+  return Struct::ZeroInitAndSetup((ConnectionClass *)this);
 
 }
 }
@@ -148,12 +148,12 @@ int Struct::ZeroInitAndSetup_0_0()
 unsigned int * Struct::InitTriple256(unsigned int * a1)
 {
 
-  int v1; // esi
+  void *v1; // esi
 
-  v1 = 2 * g_abs_AC1474; /*0x5f75ec*/
-  *a1 = 256; /*0x5f75f7*/
-  a1[1] = 256; /*0x5f75f9*/
-  a1[2] = v1; /*0x5f75fc*/
-  return a1; /*0x5f75ff*/
+  v1 = (void *)(2 * dword_AC1474); /*0x5f75ec*/
+  a1->AbstractTypeClass = (void *)256; /*0x5f75f7*/
+  a1->? = (void *)256; /*0x5f75f9*/
+  a1->? = v1; /*0x5f75fc*/
+  return &a1->AbstractTypeClass; /*0x5f75ff*/
 
 }

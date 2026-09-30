@@ -15,8 +15,8 @@ long long Display::CalculateDefaultSize()
 
   int64_t result; // rax
 
-  result = Math::RoundToInt((double)(4 * g_abs_ABFDD0) + 0.5); /*0x5d5a3b*/
-  g_abs_ABFDC4 = result; /*0x5d5a40*/
+  result = Math::RoundToInt((double)(4 * dword_ABFDD0) + 0.5); /*0x5d5a3b*/
+  dword_ABFDC4 = result; /*0x5d5a40*/
   return result; /*0x5d5a46*/
 
 }
@@ -32,12 +32,12 @@ int Display::GetViewport()
   int v3; // edx
   int v4; // esi
 
-  result = (int *)(this);
+  result = (int *)this; /*0x72ad29*/
   v2 = 0; /*0x72ad44*/
-  if ( !MEMORY[0xA8EB7C] && !MEMORY[0xA8ED6B] ) /*0x72ad5e*/
+  if ( !byte_A8EB7C && !byte_A8ED6B ) /*0x72ad5e*/
     v2 = 168; /*0x72ad60*/
-  v3 = MEMORY[0x886FB8] - 168; /*0x72ad67*/
-  v4 = MEMORY[0x886FBC] - 32; /*0x72ad6d*/
+  v3 = dword_886FB8 - 168; /*0x72ad67*/
+  v4 = dword_886FBC - 32; /*0x72ad6d*/
   *result = v2; /*0x72ad70*/
   result[1] = 0; /*0x72ad72*/
   result[2] = v3; /*0x72ad76*/

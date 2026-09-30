@@ -30,140 +30,140 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
 
   int v2; // eax
   void *v3; // edi
-  unsigned int *v4; // eax
-  unsigned int *File; // eax
+  File *v4; // eax
+  unsigned int *FileVXL; // eax
   void *v6; // edi
-  unsigned int *v7; // eax
-  unsigned int *v8; // eax
-  unsigned int *v9; // ecx
+  File *v7; // eax
+  unsigned int *FileHVA; // eax
+  VoxelSection *v9; // ecx
   int Info; // eax
   void *v11; // edi
-  unsigned int *v12; // eax
+  File *v12; // eax
   unsigned int *v13; // eax
   void *v14; // edi
-  unsigned int *v15; // eax
+  File *v15; // eax
   unsigned int *v16; // eax
-  unsigned int *v17; // ecx
+  VoxelSection *v17; // ecx
   int v18; // eax
-  unsigned int v20[22]; // [esp+8h] [ebp-348h] BYREF
-  unsigned char v21[12]; // [esp+60h] [ebp-2F0h] BYREF
+  CCFileClass v20; // [esp+8h] [ebp-348h] BYREF
+  int v21[3]; // [esp+60h] [ebp-2F0h] BYREF
   int v22; // [esp+6Ch] [ebp-2E4h]
-  unsigned int v23[22]; // [esp+74h] [ebp-2DCh] BYREF
-  unsigned char v24[12]; // [esp+CCh] [ebp-284h] BYREF
+  CCFileClass v23; // [esp+74h] [ebp-2DCh] BYREF
+  int v24[3]; // [esp+CCh] [ebp-284h] BYREF
   int v25; // [esp+D8h] [ebp-278h]
-  unsigned int v26[22]; // [esp+E0h] [ebp-270h] BYREF
-  unsigned char v27[12]; // [esp+138h] [ebp-218h] BYREF
+  CCFileClass v26; // [esp+E0h] [ebp-270h] BYREF
+  int v27[3]; // [esp+138h] [ebp-218h] BYREF
   int v28; // [esp+144h] [ebp-20Ch]
   char Buffer[256]; // [esp+14Ch] [ebp-204h] BYREF
   char Source[260]; // [esp+24Ch] [ebp-104h] BYREF
 
-  v2 = (*(int (**)(void *))(*(unsigned int *)this + 44))(this); /*0x5f8cec*/
+  v2 = (*(int (**)(Turret *))(this->Turret_field_00 + 44))(this); /*0x5f8cec*/
   if ( v2 == 40 ) /*0x5f8cf2*/
   {
-    v2 = (*(int (**)(void *))(*(unsigned int *)this + 156))(this); /*0x5f8cfc*/
+    v2 = (*(int (**)(Turret *))(this->Turret_field_00 + 156))(this); /*0x5f8cfc*/
     if ( v2 ) /*0x5f8d04*/
     {
       LOBYTE(v2) = *((unsigned char *)this + 3233); /*0x5f8d0a*/
       if ( (unsigned char)v2 ) /*0x5f8d14*/
       {
-        sprintf(Buffer, MEMORY[0x832ABC], (const char *)this + 504); /*0x5f8d30*/
+        sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8d30*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8d4c*/
-        CCFileClass::Construct(v26, Source); /*0x5f8d63*/
-        if ( CCFileClass::Open(v26, 0) ) /*0x5f8d70*/
+        CCFileClass::Construct(&v26, Source); /*0x5f8d63*/
+        if ( (uint8_t)CCFileClass::Open(&v26, 0) ) /*0x5f8d70*/
         {
           v3 = (void *)*((unsigned int *)this + 46); /*0x5f8d7d*/
           if ( v3 ) /*0x5f8d85*/
           {
-            WaveClass::Destroy(*((unsigned int *)this + 46)); /*0x5f8d89*/
+            WaveClass::Destroy(*((WaveClass **)this + 46)); /*0x5f8d89*/
             __3_YAXPAX_Z(v3); /*0x5f8d8f*/
           }
-          v4 = __2_YAPAXI_Z(0x1Cu); /*0x5f8d99*/
+          v4 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8d99*/
           if ( v4 ) /*0x5f8da3*/
-            File = File::LoadFileVXL(v4, (int)v26, 0); /*0x5f8db0*/
+            FileVXL = File::LoadFileVXL(v4, (int)&v26, 0); /*0x5f8db0*/
           else
-            File = 0; /*0x5f8db7*/
-          *((unsigned int *)this + 46) = File; /*0x5f8dbb*/
-          if ( File && !*(unsigned char *)File ) /*0x5f8dc7*/
+            FileVXL = 0; /*0x5f8db7*/
+          *((unsigned int *)this + 46) = FileVXL; /*0x5f8dbb*/
+          if ( FileVXL && !*(unsigned char *)FileVXL ) /*0x5f8dc7*/
           {
-            sprintf(Buffer, MEMORY[0x832ABC], (const char *)this + 504); /*0x5f8ddd*/
+            sprintf(Buffer, "%sTUR", (const char *)this + 504); /*0x5f8ddd*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8df9*/
-            CCFileClass::Construct(v20, Source); /*0x5f8e0d*/
+            CCFileClass::Construct(&v20, Source); /*0x5f8e0d*/
             v6 = (void *)*((unsigned int *)this + 47); /*0x5f8e12*/
             if ( v6 ) /*0x5f8e1a*/
             {
-              String::Release(*((void ***)this + 47)); /*0x5f8e1e*/
+              String::Release(*((String **)this + 47)); /*0x5f8e1e*/
               __3_YAXPAX_Z(v6); /*0x5f8e24*/
             }
-            v7 = __2_YAPAXI_Z(0x10u); /*0x5f8e2e*/
+            v7 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8e2e*/
             if ( v7 ) /*0x5f8e38*/
-              v8 = File::LoadFileHVA(v7, (int)v20); /*0x5f8e41*/
+              FileHVA = File::LoadFileHVA(v7, (int)&v20); /*0x5f8e41*/
             else
-              v8 = 0; /*0x5f8e48*/
-            v9 = (unsigned int *)*((unsigned int *)this + 46); /*0x5f8e4a*/
-            *((unsigned int *)this + 47) = v8; /*0x5f8e52*/
+              FileHVA = 0; /*0x5f8e48*/
+            v9 = (VoxelSection *)*((unsigned int *)this + 46); /*0x5f8e4a*/
+            *((unsigned int *)this + 47) = FileHVA; /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
-            Matrix::Scale(*((unsigned int **)this + 47), *(float *)(Info + 12)); /*0x5f8e67*/
-            v20[0] = &vt_CCFileClass; /*0x5f8e70*/
+            Matrix::Scale(*((Matrix **)this + 47), *(float *)(Info + 12)); /*0x5f8e67*/
+            *(unsigned int *)v20.CDFileClass = &CCFileClass::`vftable'; /*0x5f8e70*/
             v22 = 0; /*0x5f8e78*/
             Vector::Clear((int)v21); /*0x5f8e7c*/
-            v20[0] = &off_7E1668; /*0x5f8e85*/
-            BufferIOFileClass::Dtor(v20); /*0x5f8e8d*/
+            *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f8e85*/
+            BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8e8d*/
           }
         }
-        sprintf(Buffer, MEMORY[0x832AD0], (const char *)this + 504); /*0x5f8ea0*/
+        sprintf(Buffer, "%sBARL", (const char *)this + 504); /*0x5f8ea0*/
         _makepath(Source, 0, 0, Buffer, g_Str_File__VXL); /*0x5f8ebc*/
-        CCFileClass::Construct(v23, Source); /*0x5f8ed0*/
-        if ( CCFileClass::Open(v23, 0) ) /*0x5f8edd*/
+        CCFileClass::Construct(&v23, Source); /*0x5f8ed0*/
+        if ( (uint8_t)CCFileClass::Open(&v23, 0) ) /*0x5f8edd*/
         {
           v11 = (void *)*((unsigned int *)this + 48); /*0x5f8eea*/
           if ( v11 ) /*0x5f8ef2*/
           {
-            WaveClass::Destroy(*((unsigned int *)this + 48)); /*0x5f8ef6*/
+            WaveClass::Destroy(*((WaveClass **)this + 48)); /*0x5f8ef6*/
             __3_YAXPAX_Z(v11); /*0x5f8efc*/
           }
-          v12 = __2_YAPAXI_Z(0x1Cu); /*0x5f8f06*/
+          v12 = (File *)__2_YAPAXI_Z(0x1Cu); /*0x5f8f06*/
           if ( v12 ) /*0x5f8f10*/
-            v13 = File::LoadFileVXL(v12, (int)v23, 0); /*0x5f8f1a*/
+            v13 = File::LoadFileVXL(v12, (int)&v23, 0); /*0x5f8f1a*/
           else
             v13 = 0; /*0x5f8f21*/
           *((unsigned int *)this + 48) = v13; /*0x5f8f25*/
           if ( v13 && !*(unsigned char *)v13 ) /*0x5f8f31*/
           {
-            sprintf(Buffer, MEMORY[0x832AD0], (const char *)this + 504); /*0x5f8f47*/
+            sprintf(Buffer, "%sBARL", (const char *)this + 504); /*0x5f8f47*/
             _makepath(Source, 0, 0, Buffer, g_Str_File__HVA); /*0x5f8f63*/
-            CCFileClass::Construct(v20, Source); /*0x5f8f77*/
+            CCFileClass::Construct(&v20, Source); /*0x5f8f77*/
             v14 = (void *)*((unsigned int *)this + 49); /*0x5f8f7c*/
             if ( v14 ) /*0x5f8f84*/
             {
-              String::Release(*((void ***)this + 49)); /*0x5f8f88*/
+              String::Release(*((String **)this + 49)); /*0x5f8f88*/
               __3_YAXPAX_Z(v14); /*0x5f8f8e*/
             }
-            v15 = __2_YAPAXI_Z(0x10u); /*0x5f8f98*/
+            v15 = (File *)__2_YAPAXI_Z(0x10u); /*0x5f8f98*/
             if ( v15 ) /*0x5f8fa2*/
-              v16 = File::LoadFileHVA(v15, (int)v20); /*0x5f8fab*/
+              v16 = File::LoadFileHVA(v15, (int)&v20); /*0x5f8fab*/
             else
               v16 = 0; /*0x5f8fb2*/
-            v17 = (unsigned int *)*((unsigned int *)this + 48); /*0x5f8fb4*/
+            v17 = (VoxelSection *)*((unsigned int *)this + 48); /*0x5f8fb4*/
             *((unsigned int *)this + 49) = v16; /*0x5f8fbc*/
             v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
-            Matrix::Scale(*((unsigned int **)this + 49), *(float *)(v18 + 12)); /*0x5f8fd1*/
-            v20[0] = &vt_CCFileClass; /*0x5f8fda*/
+            Matrix::Scale(*((Matrix **)this + 49), *(float *)(v18 + 12)); /*0x5f8fd1*/
+            *(unsigned int *)v20.CDFileClass = &CCFileClass::`vftable'; /*0x5f8fda*/
             v22 = 0; /*0x5f8fe2*/
             Vector::Clear((int)v21); /*0x5f8fe6*/
-            v20[0] = &off_7E1668; /*0x5f8fef*/
-            BufferIOFileClass::Dtor(v20); /*0x5f8ff7*/
+            *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f8fef*/
+            BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8ff7*/
           }
         }
-        v23[0] = &vt_CCFileClass; /*0x5f9008*/
+        *(unsigned int *)v23.CDFileClass = &CCFileClass::`vftable'; /*0x5f9008*/
         v25 = 0; /*0x5f900c*/
         Vector::Clear((int)v24); /*0x5f9013*/
-        v23[0] = &off_7E1668; /*0x5f9021*/
-        BufferIOFileClass::Dtor(v23); /*0x5f9025*/
-        v26[0] = &vt_CCFileClass; /*0x5f9031*/
+        *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x5f9021*/
+        BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x5f9025*/
+        *(unsigned int *)v26.CDFileClass = &CCFileClass::`vftable'; /*0x5f9031*/
         v28 = 0; /*0x5f9038*/
         Vector::Clear((int)v27); /*0x5f903f*/
-        v26[0] = &off_7E1668; /*0x5f904b*/
-        LOBYTE(v2) = BufferIOFileClass::Dtor(v26); /*0x5f9052*/
+        *(unsigned int *)v26.CDFileClass = &off_7E1668; /*0x5f904b*/
+        LOBYTE(v2) = BufferIOFileClass::Dtor((BufferIOFileClass *)&v26); /*0x5f9052*/
       }
     }
   }
@@ -176,27 +176,28 @@ namespace gamemd {
 float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
 {
 
-  signed int v3; // edi
+  LocomotionClass *v3; // edi
   unsigned int *v4; // esi
   float *result; // eax
   float v6; // [esp+0h] [ebp-40h]
   int v7; // [esp+Ch] [ebp-34h] BYREF
-  float v8[12]; // [esp+10h] [ebp-30h] BYREF
+  Matrix3x4 v8; // [esp+10h] [ebp-30h] BYREF
 
-  Matrix3x4::Identity(v8); /*0x55a739*/
+  Matrix3x4::Identity(&v8); /*0x55a739*/
   v3 = a1; /*0x55a73e*/
-  a1 = (((unsigned int)((*ProgressTimer::GetValue((unsigned short *)(*(unsigned int *)(a1 + 8) + 904), &v7) >> 10) + 1) >> 1) & 0x1F) /*0x55a763*/
-     - 8;
-  v6 = (double)a1 * -0.1963495408493621; /*0x55a776*/
-  Matrix2D::Rotate(v8, v6); /*0x55a779*/
+  a1 = (LocomotionClass *)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)a1->Owner->?, &v7) >> 10) + 1) >> 1) /*0x55a763*/
+                            & 0x1F)
+                           - 8);
+  v6 = (double)(int)a1 * -0.1963495408493621; /*0x55a776*/
+  Matrix2D::Rotate(v8.m_Data, v6); /*0x55a779*/
   v4 = a3; /*0x55a77e*/
   if ( a3 && *a3 != -1 ) /*0x55a78b*/
   {
     *a3 *= 32; /*0x55a790*/
-    *v4 |= ((unsigned int)((*ProgressTimer::GetValue((unsigned short *)(*(unsigned int *)(v3 + 8) + 904), &a1) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
+    *v4 |= ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)v3->Owner->?, &a1) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
   }
   result = a2; /*0x55a7b6*/
-  qmemcpy(a2, v8, 0x30u); /*0x55a7c5*/
+  qmemcpy(a2, &v8, 0x30u); /*0x55a7c5*/
   return result; /*0x55a7c7*/
 
 }

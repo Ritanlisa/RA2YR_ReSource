@@ -14,9 +14,8 @@ int Type::CheckAmbiguity(int a2, char a3)
   int v3; // edx
   int v4; // esi
   int v5; // edi
-  int v6; // eax
+  int result; // eax
   int v7; // esi
-  bool result; // al
 
   v3 = *(int16_t *)(a2 + 38); /*0x57854a*/
   v4 = 0; /*0x57854f*/
@@ -30,14 +29,11 @@ int Type::CheckAmbiguity(int a2, char a3)
         ++v4; /*0x578584*/
     }
   }
-  v6 = *((unsigned int *)this + 61); /*0x57858b*/
-  result = 0; /*0x5785e9*/
-  if ( v3 + v5 > v4 + v6 + 2 * *((unsigned int *)this + 64) && v3 + v5 <= v4 + v6 + 2 * (*((unsigned int *)this + 64) + *((unsigned int *)this + 66)) + 2 ) /*0x5785b6*/
-  {
-    v7 = *((unsigned int *)this + 63); /*0x5785b8*/
-    if ( v5 - v3 < 2 * (v7 + *((unsigned int *)this + 65)) - v6 && v3 - v5 < v6 - 2 * v7 ) /*0x5785db*/
-      return 1; /*0x57859b*/
-  }
+  result = *((unsigned int *)this + 61); /*0x57858b*/
+  LOBYTE(result) = v3 + v5 > v4 + result + 2 * *((unsigned int *)this + 64) /*0x5785e9*/
+                && v3 + v5 <= v4 + result + 2 * (*((unsigned int *)this + 64) + *((unsigned int *)this + 66)) + 2
+                && (v7 = *((unsigned int *)this + 63), v5 - v3 < 2 * (v7 + *((unsigned int *)this + 65)) - result)
+                && (result -= 2 * v7, v3 - v5 < result);
   return result; /*0x5785dd*/
 
 }

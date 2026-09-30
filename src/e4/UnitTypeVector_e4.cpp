@@ -12,22 +12,22 @@ namespace gamemd {
 unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
 {
 
-  *((unsigned int *)this + 1) = 0; /*0x51394b*/
-  *((unsigned int *)this + 2) = a2; /*0x51394e*/
-  *((unsigned char *)this + 12) = 1; /*0x513951*/
-  *((unsigned char *)this + 13) = 0; /*0x513955*/
-  *this = &vt_VectorClass_UnitTypeClass_const; /*0x513958*/
+  this->UnitTypeVector_field_0x04 = 0; /*0x51394b*/
+  this->UnitTypeVector_field_0x08 = a2; /*0x51394e*/
+  LOBYTE(this->UnitTypeVector_field_0x0C) = 1; /*0x513951*/
+  BYTE1(this->UnitTypeVector_field_0x0C) = 0; /*0x513955*/
+  *(unsigned int *)this->__pad_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x513958*/
   if ( a2 ) /*0x51395e*/
   {
     if ( a3 ) /*0x513966*/
     {
-      *((unsigned int *)this + 1) = a3; /*0x513968*/
-      return this; /*0x51396e*/
+      this->UnitTypeVector_field_0x04 = (unsigned int *)(a3);
+      return (unsigned int *)(this->__pad_0);
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x51397d*/
-    *((unsigned char *)this + 13) = 1; /*0x513980*/
+    this->UnitTypeVector_field_0x04 = __2_YAPAXI_Z(4 * a2); /*0x51397d*/
+    BYTE1(this->UnitTypeVector_field_0x0C) = 1; /*0x513980*/
   }
-  return (unsigned int *)(this);
+  return (unsigned int *)(this->__pad_0);
 
 }
 } // namespace gamemd
@@ -36,22 +36,22 @@ namespace gamemd {
 unsigned int * UnitTypeVector::Construct2(int a2, int a3)
 {
 
-  *((unsigned int *)this + 1) = 0; /*0x5d895b*/
-  *((unsigned int *)this + 2) = a2; /*0x5d895e*/
-  *((unsigned char *)this + 12) = 1; /*0x5d8961*/
-  *((unsigned char *)this + 13) = 0; /*0x5d8965*/
-  *this = &vt_VectorClass_UnitTypeClass; /*0x5d8968*/
+  this->UnitTypeVector_field_0x04 = 0; /*0x5d895b*/
+  this->UnitTypeVector_field_0x08 = a2; /*0x5d895e*/
+  LOBYTE(this->UnitTypeVector_field_0x0C) = 1; /*0x5d8961*/
+  BYTE1(this->UnitTypeVector_field_0x0C) = 0; /*0x5d8965*/
+  *(unsigned int *)this->__pad_0 = &VectorClass<UnitTypeClass *>::`vftable'; /*0x5d8968*/
   if ( a2 ) /*0x5d896e*/
   {
     if ( a3 ) /*0x5d8976*/
     {
-      *((unsigned int *)this + 1) = a3; /*0x5d8978*/
-      return this; /*0x5d897e*/
+      this->UnitTypeVector_field_0x04 = (unsigned int *)(a3);
+      return (unsigned int *)(this->__pad_0);
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x5d898d*/
-    *((unsigned char *)this + 13) = 1; /*0x5d8990*/
+    this->UnitTypeVector_field_0x04 = __2_YAPAXI_Z(4 * a2); /*0x5d898d*/
+    BYTE1(this->UnitTypeVector_field_0x0C) = 1; /*0x5d8990*/
   }
-  return (unsigned int *)(this);
+  return (unsigned int *)(this->__pad_0);
 
 }
 } // namespace gamemd

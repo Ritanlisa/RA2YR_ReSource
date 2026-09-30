@@ -28,82 +28,95 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/E4Recv_65FB80_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
 
 // 0x660840
 namespace gamemd {
 int LoadGame::LoadTriggerEvents()
 {
 
-  int v1; // edx
+  int LoadGame_field_0x10; // edx
   int v2; // edi
-  unsigned int * v4;
+  int LoadGame_field_0x04; // ecx
   void *v5; // esi
   int v6; // eax
   int v7; // eax
   int v9; // esi
-  unsigned int *v10; // eax
-  unsigned int *v11; // eax
+  ObjectClass *v10; // eax
+  unsigned int *_65FB80; // eax
   int v12; // [esp+20h] [ebp-8h] BYREF
   int v13; // [esp+24h] [ebp-4h] BYREF
 
-  v1 = g_TriggerEventState; /*0x660840*/
-  v2 = g_TriggerEventState - 1; /*0x66084d*/
-  if ( g_TriggerEventState - 1 >= 0 ) /*0x660856*/
+  LoadGame_field_0x10 = stru_B04DA8.LoadGame_field_0x10; /*0x660840*/
+  v2 = stru_B04DA8.LoadGame_field_0x10 - 1; /*0x66084d*/
+  if ( stru_B04DA8.LoadGame_field_0x10 - 1 >= 0 ) /*0x660856*/
   {
-    v4 = (unsigned int *)(g_TriggerPool);
+    LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x660858*/
     do /*0x6608cb*/
     {
-      v5 = (void *)((unsigned int *)(v4))[v2]; /*0x66085e*/
+      v5 = *(void **)(LoadGame_field_0x04 + 4 * v2); /*0x66085e*/
       if ( v5 ) /*0x660863*/
       {
-        v12 = (unsigned int *)(((unsigned int *)(v4))[v2]);
-        v6 = (*(int (**)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v12); /*0x660879*/
+        v12 = *(unsigned int *)(LoadGame_field_0x04 + 4 * v2); /*0x660875*/
+        v6 = (*(int (**)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v12); /*0x660879*/
         if ( v6 != -1 ) /*0x66087f*/
-          LoadGame::RemoveItem(&dword_B04DA8, v6); /*0x660887*/
+          LoadGame::RemoveItem(&stru_B04DA8, v6); /*0x660887*/
         __3_YAXPAX_Z(v5); /*0x66088d*/
-        v4 = g_TriggerPool; /*0x660892*/
-        v1 = g_TriggerEventState; /*0x660898*/
+        LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x660892*/
+        LoadGame_field_0x10 = stru_B04DA8.LoadGame_field_0x10; /*0x660898*/
       }
-      if ( v2 < v1 ) /*0x6608a3*/
+      if ( v2 < LoadGame_field_0x10 ) /*0x6608a3*/
       {
-        --v1; /*0x6608a5*/
+        --LoadGame_field_0x10; /*0x6608a5*/
         v7 = v2; /*0x6608a6*/
-        for ( g_TriggerEventState = v1; v7 < g_TriggerEventState; ++v7 ) /*0x6608b0*/
+        for ( stru_B04DA8.LoadGame_field_0x10 = LoadGame_field_0x10; v7 < stru_B04DA8.LoadGame_field_0x10; ++v7 ) /*0x6608b0*/
         {
-          ((unsigned int *)(v4))[v7] = (unsigned int *)(v4[v7 + 1]);
-          v1 = g_TriggerEventState; /*0x6608b9*/
-          v4 = g_TriggerPool; /*0x6608bf*/
+          *(unsigned int *)(LoadGame_field_0x04 + 4 * v7) = *(unsigned int *)(LoadGame_field_0x04 + 4 * v7 + 4); /*0x6608b6*/
+          LoadGame_field_0x10 = stru_B04DA8.LoadGame_field_0x10; /*0x6608b9*/
+          LoadGame_field_0x04 = stru_B04DA8.LoadGame_field_0x04; /*0x6608bf*/
         }
       }
       --v2; /*0x6608ca*/
     }
     while ( v2 >= 0 ); /*0x6608cb*/
   }
-  if ( (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
+  if ( (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
     return 0; /*0x6608e8*/
   v9 = 0; /*0x6608ed*/
   if ( v13 > 0 ) /*0x6608f1*/
   {
     while ( 1 ) /*0x6608f5*/
     {
-      v10 = __2_YAPAXI_Z(0x40u); /*0x6608f5*/
+      v10 = (ObjectClass *)__2_YAPAXI_Z(0x40u); /*0x6608f5*/
       if ( v10 ) /*0x6608ff*/
       {
         v12 = 0; /*0x660901*/
-        v11 = Team_Load_65FB80(v10, -1, 0); /*0x660914*/
+        _65FB80 = Team_Load_65FB80(v10, -1, 0); /*0x660914*/
       }
       else
       {
-        v11 = 0; /*0x66091b*/
+        _65FB80 = 0; /*0x66091b*/
       }
-      if ( (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v11, 64, 0) < 0 ) /*0x660929*/
+      if ( (*(int (**)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x660929*/
+             this,
+             _65FB80,
+             64,
+             0) < 0 )
         break; /*0x660929*/
       if ( ++v9 >= v13 ) /*0x660932*/
-        return (*(int (**)(void *, int16_t *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
+        return (*(int (**)(LoadGame *, int16_t *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x660932*/
+                 this,
+                 &word_B04D78,
+                 4,
+                 0) >= 0;
     }
     return 0; /*0x660929*/
   }
-  return (*(int (**)(void *, int16_t *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
+  return (*(int (**)(LoadGame *, int16_t *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x6608df*/
+           this,
+           &word_B04D78,
+           4,
+           0) >= 0;
 
 }
     return 0; /*0x6608e8*/
@@ -138,24 +151,24 @@ namespace gamemd {
 void LoadGame::RemoveItem( int a2)
 {
 
-  int v2; // edx
+  int LoadGame_field_0x10; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *((unsigned int *)this + 4); /*0x660f10*/
+  LoadGame_field_0x10 = this->LoadGame_field_0x10; /*0x660f10*/
   v3 = a2; /*0x660f13*/
-  if ( a2 >= v2 ) /*0x660f19*/
+  if ( a2 >= LoadGame_field_0x10 ) /*0x660f19*/
     return 0; /*0x660f3c*/
-  v4 = v2 - 1; /*0x660f1b*/
-  *((unsigned int *)this + 4) = v4; /*0x660f1e*/
+  v4 = LoadGame_field_0x10 - 1; /*0x660f1b*/
+  this->LoadGame_field_0x10 = v4; /*0x660f1e*/
   if ( a2 < v4 ) /*0x660f21*/
   {
     do /*0x660f34*/
     {
       ++v3; /*0x660f27*/
-      *(unsigned int *)(*((unsigned int *)this + 1) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * v3); /*0x660f2b*/
+      *(unsigned int *)(this->LoadGame_field_0x04 + 4 * v3 - 4) = *(unsigned int *)(this->LoadGame_field_0x04 + 4 * v3); /*0x660f2b*/
     }
-    while ( v3 < *((unsigned int *)this + 4) ); /*0x660f34*/
+    while ( v3 < this->LoadGame_field_0x10 ); /*0x660f34*/
   }
   return 1; /*0x660f39*/
 
@@ -218,821 +231,7 @@ void LoadGame::Start(LPSTREAM pStm)
   int v51; // ebp
   int v52; // ebp
   int v53; // ebp
-  int v54; // ebp
-  int v55; // edi
-  int v56; // eax
-  int v57; // eax
-  int v58; // edi
-  int v59; // ebp
-  int v60; // edi
-  int v61; // eax
-  int v62; // eax
-  int v63; // edi
-  int v64; // [esp+330h] [ebp-4Ch] BYREF
-  LPVOID ppvObj; // [esp+334h] [ebp-48h] BYREF
-  LPVOID v66; // [esp+338h] [ebp-44h] BYREF
-  unsigned int v67[4]; // [esp+33Ch] [ebp-40h] BYREF
-  unsigned int v68[4]; // [esp+34Ch] [ebp-30h] BYREF
-  int v69[4]; // [esp+35Ch] [ebp-20h] BYREF
-  int v70[4]; // [esp+36Ch] [ebp-10h] BYREF
-
-  ResetScenario();
-  ScenarioClass::SaveLoad_Prefix_0((int)g_abs_A8B230, (int)pStm);
-  g_abs_A8ED9C = *((unsigned char *)g_abs_A8B230 + 13730);
-  result = MixFile::LoadSide(*((unsigned int *)g_abs_A8B230 + 3374));
-  if ( result )
-  {
-    Viewport = Display::GetViewport(v69);
-    v67[0] = 0;
-    v4 = *Viewport;
-    v67[1] = 0;
-    v70[0] = v4;
-    v68[0] = 0;
-    v5 = Viewport[1];
-    v68[1] = 0;
-    v70[1] = v5;
-    v6 = Viewport[2];
-    v67[2] = 168;
-    v70[2] = v6;
-    v7 = Viewport[3];
-    v68[2] = v6;
-    v70[3] = v7;
-    v69[2] = v6;
-    v67[3] = (unsigned int)(g_abs_886FBC);
-    v68[3] = (unsigned int)(g_abs_886FBC);
-    v69[3] = (int)(g_abs_886FBC);
-    v69[0] = 0;
-    v69[1] = 0;
-    AllocateSurfaceScreenSurfaces((int)&g_abs_886FB0, (int)v69, (int)v68, (int)v67, 0);
-    TacticalClass::SetViewDimensions(v70);
-    LoadGame::LoadBlock68(&g_abs_8A38E0, (int)pStm);
-    LoadTheaterClassMIX(*((unsigned int *)g_abs_A8B230 + 1174));
-    RulesClass::SaveLoad_Prefix_0(&g_abs_8871E0->DetailMinFrameRateNormal, (int)pStm);
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v8 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v8 >= v64 )
-          goto LABEL_6;
-      }
-      return 0;
-    }
-LABEL_6:
-    MouseClass::LoadGameAssets(&g_abs_87F7E8, pStm);
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v9 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v9 >= v64 )
-          goto LABEL_10;
-      }
-      return 0;
-    }
-LABEL_10:
-    if ( Game::SerializeGameSaveState(pStm) < 0 )
-      return 0;
-    MapClass::BuildSubzones(&g_abs_87F7E8);
-    LayerClass::Load(&g_abs_87F778, pStm);
-    if ( g_abs_887324 )
-    {
-      (*(void (**)(LPPERSISTSTREAM, int))(*(unsigned int *)g_abs_887324 + 32))(g_abs_887324, 1);
-      g_abs_887324 = 0;
-    }
-    if ( OleLoadFromStream(pStm, &IID_IUnknown, &v66) < 0 )
-      return 0;
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v10 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v10 >= v64 )
-          goto LABEL_20;
-      }
-      return 0;
-    }
-LABEL_20:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v11 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v11 >= v64 )
-          goto LABEL_24;
-      }
-      return 0;
-    }
-LABEL_24:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v12 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v12 >= v64 )
-          goto LABEL_28;
-      }
-      return 0;
-    }
-LABEL_28:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v13 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v13 >= v64 )
-          goto LABEL_32;
-      }
-      return 0;
-    }
-LABEL_32:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v14 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v14 >= v64 )
-          goto LABEL_36;
-      }
-      return 0;
-    }
-LABEL_36:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v15 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v15 >= v64 )
-          goto LABEL_40;
-      }
-      return 0;
-    }
-LABEL_40:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v16 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v16 >= v64 )
-          goto LABEL_44;
-      }
-      return 0;
-    }
-LABEL_44:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v17 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v17 >= v64 )
-          goto LABEL_48;
-      }
-      return 0;
-    }
-LABEL_48:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v18 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v18 >= v64 )
-          goto LABEL_52;
-      }
-      return 0;
-    }
-LABEL_52:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v19 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v19 >= v64 )
-          goto LABEL_56;
-      }
-      return 0;
-    }
-LABEL_56:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v20 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v20 >= v64 )
-          goto LABEL_60;
-      }
-      return 0;
-    }
-LABEL_60:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v21 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v21 >= v64 )
-          goto LABEL_64;
-      }
-      return 0;
-    }
-LABEL_64:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v22 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v22 >= v64 )
-          goto LABEL_68;
-      }
-      return 0;
-    }
-LABEL_68:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v23 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v23 >= v64 )
-          goto LABEL_72;
-      }
-      return 0;
-    }
-LABEL_72:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v24 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v24 >= v64 )
-          goto LABEL_76;
-      }
-      return 0;
-    }
-LABEL_76:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v25 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v25 >= v64 )
-          goto LABEL_80;
-      }
-      return 0;
-    }
-LABEL_80:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v26 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v26 >= v64 )
-          goto LABEL_84;
-      }
-      return 0;
-    }
-LABEL_84:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v27 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v27 >= v64 )
-          goto LABEL_88;
-      }
-      return 0;
-    }
-LABEL_88:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v28 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v28 >= v64 )
-          goto LABEL_92;
-      }
-      return 0;
-    }
-LABEL_92:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v29 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v29 >= v64 )
-          goto LABEL_96;
-      }
-      return 0;
-    }
-LABEL_96:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v30 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v30 >= v64 )
-          goto LABEL_100;
-      }
-      return 0;
-    }
-LABEL_100:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v31 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v31 >= v64 )
-          goto LABEL_104;
-      }
-      return 0;
-    }
-LABEL_104:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v32 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v32 >= v64 )
-          goto LABEL_108;
-      }
-      return 0;
-    }
-LABEL_108:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v33 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v33 >= v64 )
-          goto LABEL_112;
-      }
-      return 0;
-    }
-LABEL_112:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v34 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v34 >= v64 )
-          goto LABEL_116;
-      }
-      return 0;
-    }
-LABEL_116:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v35 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v35 >= v64 )
-          goto LABEL_120;
-      }
-      return 0;
-    }
-LABEL_120:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v36 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v36 >= v64 )
-          goto LABEL_124;
-      }
-      return 0;
-    }
-LABEL_124:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v37 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v37 >= v64 )
-          goto LABEL_128;
-      }
-      return 0;
-    }
-LABEL_128:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v38 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v38 >= v64 )
-          goto LABEL_132;
-      }
-      return 0;
-    }
-LABEL_132:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v39 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v39 >= v64 )
-          goto LABEL_136;
-      }
-      return 0;
-    }
-LABEL_136:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v40 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v40 >= v64 )
-          goto LABEL_140;
-      }
-      return 0;
-    }
-LABEL_140:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v41 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v41 >= v64 )
-          goto LABEL_144;
-      }
-      return 0;
-    }
-LABEL_144:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v42 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v42 >= v64 )
-          goto LABEL_148;
-      }
-      return 0;
-    }
-LABEL_148:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v43 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v43 >= v64 )
-          goto LABEL_152;
-      }
-      return 0;
-    }
-LABEL_152:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v44 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v44 >= v64 )
-          goto LABEL_156;
-      }
-      return 0;
-    }
-LABEL_156:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v45 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v45 >= v64 )
-          goto LABEL_160;
-      }
-      return 0;
-    }
-LABEL_160:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v46 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v46 >= v64 )
-          goto LABEL_164;
-      }
-      return 0;
-    }
-LABEL_164:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v47 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v47 >= v64 )
-          goto LABEL_168;
-      }
-      return 0;
-    }
-LABEL_168:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v48 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v48 >= v64 )
-          goto LABEL_172;
-      }
-      return 0;
-    }
-LABEL_172:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v49 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v49 >= v64 )
-          goto LABEL_176;
-      }
-      return 0;
-    }
-LABEL_176:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v50 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v50 >= v64 )
-          goto LABEL_180;
-      }
-      return 0;
-    }
-LABEL_180:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v51 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v51 >= v64 )
-          goto LABEL_184;
-      }
-      return 0;
-    }
-LABEL_184:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v52 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v52 >= v64 )
-          goto LABEL_188;
-      }
-      return 0;
-    }
-LABEL_188:
-    if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
-      return 0;
-    v53 = 0;
-    if ( v64 > 0 )
-    {
-      while ( OleLoadFromStream(pStm, &IID_IUnknown, &ppvObj) >= 0 )
-      {
-        if ( ++v53 >= v64 )
-          goto LABEL_192;
-      }
-      return 0;
-    }
-LABEL_192:
-    g_abs_A83D60 = 0;
-    VectorClass_ptr_SuperClass::Remove((int)&g_abs_A83D50);
-    v54 = (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0);
-    if ( v54 < 0 )
-      return 0;
-    if ( v64 > 0 )
-    {
-      v55 = 0;
-      while ( 1 )
-      {
-        v54 = (*(int (**)(LPSTREAM, LPVOID *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(
-                pStm,
-                &ppvObj,
-                4,
-                0);
-        if ( v54 < 0 )
-          break;
-        if ( g_abs_A83D60 < g_abs_A83D58
-          || (g_abs_A83D5D || !g_abs_A83D58)
-          && g_abs_A83D64 > 0
-          && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A83D50 + 8))(
-               &g_abs_A83D50,
-               g_abs_A83D64 + g_abs_A83D58,
-               0) )
-        {
-          v56 = g_abs_A83D60++;
-          *((unsigned int *)g_abs_A83D54 + v56) = ppvObj;
-        }
-        v57 = v64;
-        if ( ++v55 >= v64 )
-          goto LABEL_205;
-      }
-      v57 = v64;
-LABEL_205:
-      v58 = 0;
-      if ( v57 > 0 )
-      {
-        do
-          ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)g_abs_A83D54 + v58++);
-        while ( v58 < v64 );
-      }
-    }
-    if ( v54 < 0 )
-      return 0;
-    unk_8B41F0 = 0;
-    VectorClass_Building::Set((int)&dword_8B41E0);
-    v59 = (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0);
-    if ( v59 < 0 )
-      return 0;
-    if ( v64 > 0 )
-    {
-      v60 = 0;
-      while ( 1 )
-      {
-        v59 = (*(int (**)(LPSTREAM, LPVOID *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(
-                pStm,
-                &ppvObj,
-                4,
-                0);
-        if ( v59 < 0 )
-          break;
-        if ( unk_8B41F0 < unk_8B41E8
-          || (unk_8B41ED || !unk_8B41E8)
-          && unk_8B41F4 > 0
-          && (*(uint8_t (**)(int *, int, unsigned int))(dword_8B41E0 + 8))(
-               &dword_8B41E0,
-               unk_8B41F4 + unk_8B41E8,
-               0) )
-        {
-          v61 = unk_8B41F0++;
-          *((unsigned int *)unk_8B41E4 + v61) = ppvObj;
-        }
-        v62 = v64;
-        if ( ++v60 >= v64 )
-          goto LABEL_222;
-      }
-      v62 = v64;
-LABEL_222:
-      v63 = 0;
-      if ( v62 > 0 )
-      {
-        do
-          ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)unk_8B41E4 + v63++);
-        while ( v63 < v64 );
-      }
-    }
-    if ( v59 < 0 )
-      return 0;
-    if ( Stream::ReadOLEObjects(pStm) < 0 )
-      return 0;
-    if ( Stream::ReadOLEObjects(pStm) < 0 )
-      return 0;
-    if ( Stream::ReadOLEObjects(pStm) < 0 )
-      return 0;
-    if ( Stream::ReadOLEObjects(pStm) < 0 )
-      return 0;
-    if ( Stream::ReadOLEObjects(pStm) < 0 )
-      return 0;
-    result = LoadVeinholeMonsters((int *)pStm->__pad_0);
-    if ( result )
-    {
-      result = LoadGame::LoadTriggerEvents(pStm);
-      if ( result )
-      {
-        if ( Stream::ReadOLEObjects(pStm) < 0 )
-          return 0;
-        if ( Stream::ReadOLEObjects(pStm) < 0 )
-          return 0;
-        if ( Stream::ReadOLEObjects(pStm) < 0 )
-          return 0;
-        if ( Stream::ReadOLEObjects(pStm) < 0 )
-          return 0;
-        if ( Stream::ReadOLEObjects(pStm) < 0 )
-          return 0;
-        if ( Stream::ReadOLEObjects(pStm) < 0 )
-          return 0;
-        if ( Stream::ReadOLEObjects(pStm) < 0 )
-          return 0;
-        LoadGame::ClearAllSlots(g_abs_887888);
-        if ( LoadGame::LoadIteratedData((char *)g_abs_887888, (int)pStm) < 0 )
-          return 0;
-        LoadGame::CleanupArray(&g_MissionQueueFrame);
-        if ( LoadGame::LoadPointArray(&g_MissionQueueFrame, (int)pStm) < 0 )
-          return 0;
-        Stream::FlushAndReset(&g_abs_87F5D8);
-        if ( LoadGame::DeserializePointerArrays(&g_abs_87F5D8, (int)pStm) < 0 )
-          return 0;
-        if ( Stream::ReadOLEObjects(pStm) < 0 )
-          return 0;
-        if ( Stream::ReadOLEObjects(pStm) < 0 )
-          return 0;
-        if ( g_abs_A8B238[0] == 5 )
-        {
-          Debug::Log();
-          if ( !LoadGame::LoadBlock300(g_abs_A8B250, (int)pStm) )
-          {
-            Debug::Log();
-            return 0;
-          }
-        }
-        if ( LoadGame::RestoreAudioState(pStm) < 0 )
-          return 0;
-        if ( LoadGame::LoadMagicAndAudio(pStm) < 0 )
-          return 0;
-        if ( LoadGame_Start((int)pStm) < 0 )
-          return 0;
-        MapClass::MarkForRedraw(&g_abs_87F7E8, 2);
-        if ( !g_abs_A8B238[0] )
-          g_abs_ABCE08 = 1;
-        return 1;
-      }
-    }
-  }
-  return result;
-
+  int v54; ... [31771 chars total]
 }
 } // namespace gamemd
 
@@ -1051,8 +250,8 @@ int LoadGame::LoadBlock300(int a2)
   {
     if ( (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, &a2, 4, 0) >= 0 && a2 == 300 ) /*0x69b5d7*/
     {
-      v4 = (*(int (**)(int, unsigned int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, this, 300, 0); /*0x69b5e4*/
-      *((unsigned int *)this + 1) = -1; /*0x69b5e9*/
+      v4 = (*(int (**)(int, LoadGame *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, this, 300, 0); /*0x69b5e4*/
+      this->LoadGame_field_0x04 = -1; /*0x69b5e9*/
       if ( v4 >= 0 ) /*0x69b5f0*/
         return 1; /*0x69b5ba*/
     }
@@ -1066,11 +265,11 @@ namespace gamemd {
 int LoadGame::RestoreAudioState()
 {
 
-  void *v1; // edi
-  int *Next; // esi
+  LoadGame *v1; // edi
+  int Next; // esi
   int NextAlt; // ebx
   int result; // eax
-  int v5; // ecx
+  AudioMixer *v5; // ecx
   int v6; // ebx
   int v7; // ebp
   int *v8; // eax
@@ -1085,22 +284,22 @@ int LoadGame::RestoreAudioState()
   unsigned int v18[4]; // [esp+40h] [ebp-10h] BYREF
 
   v1 = this; /*0x751717*/
-  Next = (int *)AudioQueue::GetNext(g_abs_B1D320); /*0x751727*/
+  Next = AudioQueue::GetNext((AudioQueue *)&stru_B1D290.isAliveFlag); /*0x751727*/
   if ( Next ) /*0x75172b*/
   {
     do /*0x751763*/
     {
-      NextAlt = AudioQueue::GetNextAlt(Next); /*0x751737*/
-      AudioController::Stop(Next + 3); /*0x751739*/
-      LinkedList::Init((unsigned int **)Next); /*0x751740*/
-      PushFrontLinkedListAlt(g_abs_B1D3A4, (int)Next); /*0x75174d*/
-      Next = (int *)NextAlt; /*0x751758*/
-      --g_abs_B1D3A8; /*0x75175d*/
+      NextAlt = AudioQueue::GetNextAlt((AudioQueue *)Next); /*0x751737*/
+      AudioController::Stop((AudioController *)(Next + 12)); /*0x751739*/
+      LinkedList::Init((LinkedList *)Next); /*0x751740*/
+      PushFrontLinkedListAlt(dword_B1D3A4, Next); /*0x75174d*/
+      Next = NextAlt; /*0x751758*/
+      --dword_B1D3A8; /*0x75175d*/
     }
     while ( NextAlt ); /*0x751763*/
   }
   AudioMixer::Shutdown(); /*0x751765*/
-  result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)v1 + 12))(v1, &v14, 4, 0); /*0x751776*/
+  result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))(v1, &v14, 4, 0); /*0x751776*/
   if ( result >= 0 ) /*0x75177b*/
   {
     v13 = 0; /*0x751785*/
@@ -1108,13 +307,13 @@ int LoadGame::RestoreAudioState()
     {
       while ( 1 ) /*0x7517a1*/
       {
-        result = (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)v1 + 12))(v1, v18, 16, 0); /*0x7517a1*/
+        result = (*(int (**)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)v1->__pad_0 + 12))(v1, v18, 16, 0); /*0x7517a1*/
         v16 = result; /*0x7517a6*/
         if ( result < 0 ) /*0x7517aa*/
           break; /*0x7517aa*/
-        if ( v18[0] != -1 && v18[0] < g_abs_B1D388 && v18[0] >= 0 ) /*0x7517cb*/
+        if ( v18[0] != -1 && v18[0] < g_VocPlayState && v18[0] >= 0 ) /*0x7517cb*/
         {
-          v5 = **((unsigned int **)g_abs_B1D37C + v18[0]); /*0x7517da*/
+          v5 = (AudioMixer *)**((unsigned int **)g_VocAudioConfig + v18[0]); /*0x7517da*/
           if ( v5 ) /*0x7517de*/
           {
             if ( AudioMixer::SetVolume(v5) ) /*0x7517e4*/
@@ -1125,23 +324,23 @@ int LoadGame::RestoreAudioState()
               v15 = v18[0]; /*0x751807*/
               if ( v18[0] >= 0 ) /*0x75180b*/
               {
-                v8 = LinkedList::Next((int **)g_abs_B1D3A4); /*0x751813*/
+                v8 = LinkedList::Next((LinkedList *)dword_B1D3A4); /*0x751813*/
                 v9 = v8; /*0x751818*/
                 if ( v8 ) /*0x75181c*/
                 {
-                  AudioController::Init(v8 + 3); /*0x751823*/
-                  DListNode::InitEmpty(v9); /*0x75182a*/
+                  ((AudioController *)((AudioController *)(v8 + 3)))->Init(); /*0x751823*/
+                  DListNode::InitEmpty((DListNode *)v9); /*0x75182a*/
                   v9[12] = 0; /*0x751831*/
                   v9[11] = 0; /*0x75183a*/
                   v9[8] = v6; /*0x75183d*/
                   v10 = v17; /*0x75183f*/
                   v9[9] = v7; /*0x751843*/
                   v9[10] = v10; /*0x751846*/
-                  StartAudioControllerAt(v15, (int)(v9 + 8), (int)(v9 + 3)); /*0x75184d*/
-                  InsertAfterDListNode((int)g_abs_B1D320, v9); /*0x751859*/
-                  v11 = ++g_abs_B1D3A8; /*0x751869*/
-                  if ( g_abs_B1D3A8 > g_abs_B1D3AC ) /*0x751871*/
-                    g_abs_B1D3AC = v11; /*0x751873*/
+                  StartAudioControllerAt(v15, v9 + 8, (int **)v9 + 3); /*0x75184d*/
+                  InsertAfterDListNode((int)&stru_B1D290.isAliveFlag, v9); /*0x751859*/
+                  v11 = ++dword_B1D3A8; /*0x751869*/
+                  if ( dword_B1D3A8 > dword_B1D3AC ) /*0x751871*/
+                    dword_B1D3AC = v11; /*0x751873*/
                   v1 = this; /*0x751878*/
                 }
               }
@@ -1166,30 +365,38 @@ int LoadGame::LoadMagicAndAudio()
   int v3; // [esp+30h] [ebp-10h] BYREF
   unsigned int v4[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  if ( MEMORY[0xB1D4C4] ) /*0x7533fd*/
+  if ( dword_B1D4C4 ) /*0x7533fd*/
   {
-    *(unsigned int *)(MEMORY[0xB1D4C4] + 80) = 2; /*0x7533ff*/
-    MEMORY[0xB1D4C4] = 0; /*0x753406*/
+    *(unsigned int *)(dword_B1D4C4 + 80) = 2; /*0x7533ff*/
+    dword_B1D4C4 = 0; /*0x753406*/
   }
-  if ( MEMORY[0xB1D4CC] ) /*0x753418*/
-    Audio::Release(MEMORY[0xB1D4CC]); /*0x75341a*/
+  if ( g_InfantryDrawState ) /*0x753418*/
+    Audio::Release(g_InfantryDrawState); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
-  result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x753430*/
+  result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0); /*0x753430*/
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
   {
-    result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x753455*/
+    result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0); /*0x753455*/
     if ( result >= 0 ) /*0x75345a*/
     {
       while ( v3 != 1450145861 ) /*0x753466*/
       {
         if ( v3 != 1450145865 ) /*0x75346e*/
           return -2147467259; /*0x7534cb*/
-        result = (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v4, 12, 0); /*0x75347c*/
+        result = (*(int (**)(LoadGame *, unsigned int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x75347c*/
+                   this,
+                   v4,
+                   12,
+                   0);
         if ( result >= 0 ) /*0x753481*/
         {
-          if ( MEMORY[0xB1D4CC] && v4[0] >= 0 && v4[0] < MEMORY[0xB1D4B0] ) /*0x75349a*/
-            Audio_Load(*((unsigned int *)MEMORY[0xB1D4A4] + v4[0]), v4[1], v4[2]); /*0x7534ae*/
-          result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x7534bf*/
+          if ( g_InfantryDrawState && v4[0] >= 0 && v4[0] < g_InfantrySelectState ) /*0x75349a*/
+            Audio_Load(*((unsigned int *)g_InfantryRenderPool + v4[0]), v4[1], v4[2]); /*0x7534ae*/
+          result = (*(int (**)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( /*0x7534bf*/
+                     this,
+                     &v3,
+                     4,
+                     0);
           if ( result >= 0 ) /*0x7534c4*/
             continue; /*0x7534c4*/
         }
@@ -1208,13 +415,13 @@ int LoadGame::LoadPointArray(int a2)
 
   int v3; // ebx
   int *v4; // edi
-  int v5; // eax
-  unsigned int *v6; // esi
-  int v7; // ecx
+  int LoadGame_field_0x14; // eax
+  int *p_LoadGame_field_0x0C; // esi
+  int LoadGame_field_0x20; // ecx
   int v8; // eax
   int v9; // edx
   int v11; // [esp+28h] [ebp-8h] BYREF
-  unsigned int *v12; // [esp+2Ch] [ebp-4h]
+  LoadGame *v12; // [esp+2Ch] [ebp-4h]
   int v13; // [esp+34h] [ebp+4h]
 
   v12 = this; /*0x54e7ba*/
@@ -1224,25 +431,31 @@ int LoadGame::LoadPointArray(int a2)
     v13 = 0; /*0x54e7dd*/
     while ( v13 < v11 ) /*0x54e7e7*/
     {
-      v4 = (int *)RA2_OPNEW(8u); /*0x54e7fa*/
+      v4 = (int *)__2_YAPAXI_Z(8u); /*0x54e7fa*/
       v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, v4, 8, 0); /*0x54e805*/
       if ( v3 < 0 ) /*0x54e809*/
         break; /*0x54e809*/
-      ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v4); /*0x54e811*/
-      ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v4 + 1); /*0x54e81f*/
-      v5 = v12[5]; /*0x54e828*/
-      v6 = v12 + 3; /*0x54e82b*/
-      if ( v12[7] >= v5 ) /*0x54e833*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4); /*0x54e811*/
+      ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 1); /*0x54e81f*/
+      LoadGame_field_0x14 = v12->LoadGame_field_0x14; /*0x54e828*/
+      p_LoadGame_field_0x0C = &v12->LoadGame_field_0x0C; /*0x54e82b*/
+      if ( v12->LoadGame_field_0x1C >= LoadGame_field_0x14 ) /*0x54e833*/
       {
-        if ( !*((unsigned char *)v12 + 25) && v5 ) /*0x54e83e*/
+        if ( !BYTE1(v12->LoadGame_field_0x18) && LoadGame_field_0x14 ) /*0x54e83e*/
           continue; /*0x54e83e*/
-        v7 = v12[8]; /*0x54e840*/
-        if ( v7 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*v6 + 8))(v12 + 3, v5 + v7, 0) ) /*0x54e850*/
+        LoadGame_field_0x20 = v12->LoadGame_field_0x20; /*0x54e840*/
+        if ( LoadGame_field_0x20 <= 0 /*0x54e850*/
+          || !(*(uint8_t (**)(int *, int, unsigned int))(*p_LoadGame_field_0x0C + 8))(
+                &v12->LoadGame_field_0x0C,
+                LoadGame_field_0x14 + LoadGame_field_0x20,
+                0) )
+        {
           continue; /*0x54e850*/
+        }
       }
-      v8 = v6[4]; /*0x54e857*/
-      v9 = v6[1]; /*0x54e85a*/
-      v6[4] = v8 + 1; /*0x54e860*/
+      v8 = (unsigned int)(p_LoadGame_field_0x0C[4]);
+      v9 = (unsigned int)(p_LoadGame_field_0x0C[1]);
+      p_LoadGame_field_0x0C[4] = v8 + 1; /*0x54e860*/
       *(unsigned int *)(v9 + 4 * v8) = v4; /*0x54e863*/
       ++v13; /*0x54e871*/
     }
@@ -1273,14 +486,14 @@ int sub_721040(int a1)
         v3 = v5; /*0x72109a*/
         if ( byte_A8EC74 ) /*0x7210a0*/
         {
-          if ( Audio::IsSoundEnabled() ) /*0x7210a6*/
+          if ( this->Audio::IsSoundEnabled() ) /*0x7210a6*/
           {
             if ( !byte_A8ED64 ) /*0x7210ba*/
             {
               dword_A83D18 = v3; /*0x7210bf*/
               if ( v3 != -1 && v3 != -2 && v3 != dword_A83D14 ) /*0x7210d2*/
               {
-                Debug::Log(); /*0x7210da*/
+                this->Debug::Log(); /*0x7210da*/
                 if ( dword_A83D3C ) /*0x7210ea*/
                 {
                   if ( byte_A83D21 && !AudioSample::IsBuffering(dword_A83D3C) ) /*0x7210f5*/

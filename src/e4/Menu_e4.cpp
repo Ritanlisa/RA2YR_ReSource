@@ -15,9 +15,9 @@ int Menu::Reset()
   *((unsigned int *)this + 14) = 0; /*0x4c614f*/
   *((unsigned int *)this + 15) = 1; /*0x4c6152*/
   *((unsigned short *)this + 32) = 0; /*0x4c6159*/
-  memset((void *)this, 0, 0x30u); /*0x4c615d*/
+  memset(this, 0, 0x30u); /*0x4c615d*/
   *((unsigned short *)this + 24) = 0; /*0x4c615f*/
-  return this; /*0x4c6163*/
+  return (int)this; /*0x4c6163*/
 
 }
 } // namespace gamemd

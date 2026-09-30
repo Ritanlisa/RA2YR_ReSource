@@ -15,14 +15,14 @@ int LCWStraw::Dtor()
   void *v2; // eax
   void *v3; // ecx
 
-  v2 = (void *)*((char *)this + 5); /*0x552453*/
-  *(unsigned int *)this = (int)&vt_LCWStraw; /*0x552456*/
-  RA2_OPDEL(v2); /*0x55245d*/
-  v3 = (void *)*((char *)this + 6); /*0x552462*/
-  *((char *)this + 5) = 0; /*0x552465*/
-  RA2_OPDEL(v3); /*0x55246d*/
-  *((char *)this + 6) = 0; /*0x552477*/
-  return Straw::Dtor(this); /*0x552483*/
+  v2 = (void *)*((unsigned int *)this + 5); /*0x552453*/
+  *(unsigned int *)this->__pad_0 = &LCWStraw::`vftable'; /*0x552456*/
+  __3_YAXPAX_Z(v2); /*0x55245d*/
+  v3 = (void *)*((unsigned int *)this + 6); /*0x552462*/
+  *((unsigned int *)this + 5) = 0; /*0x552465*/
+  __3_YAXPAX_Z(v3); /*0x55246d*/
+  *((unsigned int *)this + 6) = 0; /*0x552477*/
+  return Straw::Dtor((Straw *)this); /*0x552483*/
 
 }
 } // namespace gamemd

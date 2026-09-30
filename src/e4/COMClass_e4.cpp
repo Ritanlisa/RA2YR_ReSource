@@ -22,40 +22,40 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
 {
 
   int v3; // eax
-  rc_ptr_base *v4; // ebp
-  rc_ptr_base *v5; // esi
+  char *v4; // ebp
+  ComPtr *v5; // esi
   int v6; // eax
   int v7; // edi
 
-  if ( ((unsigned int)(Block)& 2) != 0 ) /*0x76701b*/
+  if ( (a2 & 2) != 0 ) /*0x76701b*/
   {
     v3 = *((unsigned int *)Block - 1); /*0x76701d*/
-    v4 = Block - 1; /*0x767021*/
-    v5 = Block + 2 * v3; /*0x767024*/
+    v4 = (char *)Block - 4; /*0x767021*/
+    v5 = (ComPtr *)((char *)Block + 8 * v3); /*0x767024*/
     v6 = v3 - 1; /*0x767027*/
     if ( v6 >= 0 ) /*0x767028*/
     {
       v7 = v6 + 1; /*0x76702b*/
       do /*0x76703f*/
       {
-        v5 -= 2; /*0x76702e*/
-        v5->vfptr = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x767033*/
+        v5 = (ComPtr *)((char *)v5 - 8); /*0x76702e*/
+        *(unsigned int *)v5->__pad_0 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x767033*/
         ComPtr::Release(v5); /*0x767039*/
         --v7; /*0x76703e*/
       }
       while ( v7 ); /*0x76703f*/
     }
-    if ( ((unsigned int)(Block)& 1) != 0 ) /*0x767045*/
-      RA2_OPDEL(v4); /*0x767048*/
+    if ( (a2 & 1) != 0 ) /*0x767045*/
+      __3_YAXPAX_Z(v4); /*0x767048*/
     return v4; /*0x767050*/
   }
   else
   {
-    Block->vfptr = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x76705a*/
-    ComPtr::Release(Block); /*0x767060*/
-    if ( ((unsigned int)(Block)& 1) != 0 ) /*0x767068*/
-      RA2_OPDEL(Block); /*0x76706b*/
-    return Block; /*0x767073*/
+    *(unsigned int *)Block->__pad_0 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76705a*/
+    ComPtr::Release((ComPtr *)Block); /*0x767060*/
+    if ( (a2 & 1) != 0 ) /*0x767068*/
+      __3_YAXPAX_Z(Block); /*0x76706b*/
+    return Block->__pad_0; /*0x767073*/
   }
 
 }
@@ -65,10 +65,10 @@ namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption);
+  *(unsigned int *)Block->__pad_0 = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     __3_YAXPAX_Z(Block); /*0x766a02*/
-  return (VectorCursor *)Block; /*0x766a0c*/
+  return Block->__pad_0; /*0x766a0c*/
 
 }
 } // namespace gamemd

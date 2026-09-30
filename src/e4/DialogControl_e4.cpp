@@ -13,7 +13,7 @@ int DialogControl::Hide()
 
   int v1; // eax
 
-  v1 = *(unsigned int *)this; /*0x4e1450*/
+  v1 = *(unsigned int *)this->__pad_0; /*0x4e1450*/
   *((unsigned char *)this + 30) = 0; /*0x4e1452*/
   *((unsigned char *)this + 28) = 1; /*0x4e1456*/
   return (*(int (**)(void))(v1 + 84))();
@@ -25,9 +25,9 @@ namespace gamemd {
 void DialogControl::Show()
 {
 
-  *((unsigned char *)this + 30) = 1; /*0x4e1462*/
-  *((unsigned char *)this + 28) = 1; /*0x4e1465*/
-  return (*(int (**)(unsigned char *))(*(unsigned int *)this + 84))(this);
+  BYTE2(this->Image) = 1; /*0x4e1462*/
+  LOBYTE(this->Image) = 1; /*0x4e1465*/
+  return (*(int (**)(ShpButtonClass *))(*(unsigned int *)this->__pad_0 + 84))(this);
 
 }
 } // namespace gamemd
@@ -50,8 +50,8 @@ void DialogControl::Constructor()
 
   memset(this, 0, 0x200u); /*0x62334d*/
   *((unsigned int *)this + 26) = 11; /*0x62334f*/
-  *((unsigned int *)this + 25) = g_abs_87F7E8[29498]; /*0x62335d*/
-  v2 = (unsigned int *)RA2_OPNEW(4); /*0x623360*/
+  *((unsigned int *)this + 25) = g_FogOfWarState; /*0x62335d*/
+  v2 = (unsigned int *)__2_YAPAXI_Z(4u); /*0x623360*/
   if ( v2 ) /*0x62336c*/
     v3 = unknown_libname_74(v2); /*0x623370*/
   else
@@ -60,7 +60,7 @@ void DialogControl::Constructor()
   *((unsigned int *)this + 16) = 0; /*0x62337c*/
   *((unsigned int *)this + 23) = 0; /*0x62337f*/
   *((unsigned int *)this + 36) = -1; /*0x623382*/
-  return this; /*0x62338e*/
+  return this->__pad_0; /*0x62338e*/
 
 }
 } // namespace gamemd

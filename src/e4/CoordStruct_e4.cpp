@@ -15,11 +15,11 @@ unsigned int * CoordStruct::Set2(void* aP1,  AbstractClass * aP2)
 
   int v4; // edx
 
-  v4 = (unsigned int *)(SLOWORD(aP1->field_0) << 8);
-  *((unsigned int *)this + 1) = (SHIWORD(aP1->field_0) << 8) + 128; /*0x642759*/
+  v4 = (unsigned int)(*(unsigned int *)(aP1) << 8);
+  *((unsigned int *)this + 1) = (aP1[(unsigned int)(1])<< 8) + 128; /*0x642759*/
   *((unsigned int *)this + 2) = aP2; /*0x642766*/
-  *(unsigned int *)this = v4 + 128; /*0x642769*/
-  return this; /*0x64276b*/
+  this->vfptr = (void *)(v4 + 128); /*0x642769*/
+  return &this->vfptr; /*0x64276b*/
 
 }
 }

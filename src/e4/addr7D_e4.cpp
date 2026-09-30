@@ -9602,7 +9602,7 @@ unsigned int * _com_error::sub_7DCE0E(int a2)
   v3 = *(unsigned int *)(a2 + 8); /*0x7dce1b*/
   *((unsigned int *)this + 3) = 0; /*0x7dce1e*/
   *((unsigned int *)this + 2) = v3; /*0x7dce22*/
-  this->vfptr = &off_7FA498; /*0x7dce27*/
+  this->vfptr = (int)&_com_error::`vftable'; /*0x7dce27*/
   if ( v3 ) /*0x7dce2d*/
     (*(void (**)(int))(*(unsigned int *)v3 + 4))(v3); /*0x7dce32*/
   return &this->vfptr; /*0x7dce37*/
@@ -9618,7 +9618,7 @@ int _com_error::sub_7DCE3B()
   void *v3; // esi
 
   result = (HLOCAL)*((unsigned int *)this + 2); /*0x7dce3e*/
-  this->vfptr = &off_7FA498; /*0x7dce41*/
+  this->vfptr = (int)&_com_error::`vftable'; /*0x7dce41*/
   if ( result ) /*0x7dce49*/
     result = (HLOCAL)(*(int (**)(HLOCAL))(*(unsigned int *)result + 8))(result); /*0x7dce4e*/
   v3 = (void *)*((unsigned int *)this + 3); /*0x7dce51*/
@@ -11643,10 +11643,10 @@ namespace gamemd {
 unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 {
 
-  *((unsigned int *)this + 1) = 0; /*0x7d2e70*/
-  *((unsigned int *)this + 2) = 0; /*0x7d2e74*/
-  *this = &vt_exception; /*0x7d2e78*/
-  return this; /*0x7d2e7e*/
+  this->? = 0; /*0x7d2e70*/
+  this->? = 0; /*0x7d2e74*/
+  this->AbstractClass = &exception::`vftable'; /*0x7d2e78*/
+  return &this->AbstractClass; /*0x7d2e7e*/
 
 }
 } // namespace gamemd
@@ -11656,10 +11656,10 @@ namespace gamemd {
 ObjectClass * E4Recv_7D2E7F::sub_7D2E7F(void * Block, char a2)
 {
 
-  Exception::Destructor(Block); /*0x7d2e82*/
-  if ( (Block & 1) != 0 ) /*0x7d2e8c*/
-    RA2_OPDEL(Block); /*0x7d2e8f*/
-  return (ObjectClass *)Block; /*0x7d2e97*/
+  Exception::Destructor((Exception *)Block); /*0x7d2e82*/
+  if ( (a2 & 1) != 0 ) /*0x7d2e8c*/
+    __3_YAXPAX_Z(Block); /*0x7d2e8f*/
+  return Block; /*0x7d2e97*/
 
 }
 } // namespace gamemd
@@ -11669,12 +11669,12 @@ namespace gamemd {
 exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
 {
 
-  size_t v3; // eax
+  int v3; // eax
   char *v4; // eax
 
-  *(unsigned int *)this = &vt_exception; /*0x7d2ea3*/
+  *(unsigned int *)this = &exception::`vftable'; /*0x7d2ea3*/
   v3 = strlen(*a2); /*0x7d2eab*/
-  v4 = (char *)RA2_OPNEW(v3 + 1); /*0x7d2eb2*/
+  v4 = (char *)__2_YAPAXI_Z(v3 + 1); /*0x7d2eb2*/
   *((unsigned int *)this + 1) = v4; /*0x7d2eb8*/
   if ( v4 ) /*0x7d2ebe*/
     strcpy(v4, *a2); /*0x7d2ec3*/
@@ -11690,16 +11690,16 @@ exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
 {
 
   int v3; // eax
-  size_t v4; // eax
+  int v4; // eax
   char *v5; // eax
 
-  *(unsigned int *)this = &vt_exception; /*0x7d2ee0*/
+  *(unsigned int *)this = &exception::`vftable'; /*0x7d2ee0*/
   v3 = *((unsigned int *)a2 + 2); /*0x7d2ee6*/
   *((unsigned int *)this + 2) = v3; /*0x7d2eeb*/
   if ( v3 ) /*0x7d2eee*/
   {
     v4 = strlen(*((const char **)a2 + 1)); /*0x7d2ef3*/
-    v5 = (char *)RA2_OPNEW(v4 + 1); /*0x7d2efa*/
+    v5 = (char *)__2_YAPAXI_Z(v4 + 1); /*0x7d2efa*/
     *((unsigned int *)this + 1) = v5; /*0x7d2f00*/
     if ( v5 ) /*0x7d2f06*/
       strcpy(v5, *((const char **)a2 + 1)); /*0x7d2f0c*/
@@ -11723,7 +11723,7 @@ ObjectClass * E4Recv_7D2F22::__4exception_QAEAAV0_ABV0__Z(struct exception * a2)
     Exception::Destructor(this); /*0x7d2f2b*/
     __0exception_QAE_ABV0__Z(this, a2); /*0x7d2f36*/
   }
-  return (ObjectClass *)this; /*0x7d2f3d*/
+  return this; /*0x7d2f3d*/
 
 }
 } // namespace gamemd
@@ -15165,9 +15165,9 @@ ObjectClass * E4Recv_7DCDF2::sub_7DCDF2(unsigned int * Block, char a2)
 {
 
   sub_7DCE3B(Block); /*0x7dcdf5*/
-  if ( (Block & 1) != 0 ) /*0x7dcdff*/
-    RA2_OPDEL(Block); /*0x7dce02*/
-  return (ObjectClass *)Block; /*0x7dce0a*/
+  if ( (a2 & 1) != 0 ) /*0x7dcdff*/
+    __3_YAXPAX_Z(Block); /*0x7dce02*/
+  return &Block->AbstractClass; /*0x7dce0a*/
 
 }
 } // namespace gamemd

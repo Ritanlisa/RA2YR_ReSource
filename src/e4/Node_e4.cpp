@@ -11,12 +11,12 @@ namespace gamemd {
 unsigned int * Node_flat::Init()
 {
 
-  *(unsigned int *)this = (unsigned int *)(0);
-  *((unsigned int *)this + 1) = 0; /*0x49ea16*/
-  *((unsigned int *)this + 2) = 0; /*0x49ea19*/
-  *((unsigned char *)this + 12) = 0; /*0x49ea1c*/
-  *((unsigned int *)this + 4) = 0; /*0x49ea1f*/
-  return this; /*0x49ea22*/
+  *(unsigned int *)this->__pad_0 = 0; /*0x49ea14*/
+  this->Previous = 0; /*0x49ea16*/
+  *(unsigned int *)this->Blowfish = 0; /*0x49ea19*/
+  LOBYTE(this->CountFiles) = 0; /*0x49ea1c*/
+  this->FileSize = 0; /*0x49ea1f*/
+  return this->__pad_0; /*0x49ea22*/
 
 }
 } // namespace gamemd

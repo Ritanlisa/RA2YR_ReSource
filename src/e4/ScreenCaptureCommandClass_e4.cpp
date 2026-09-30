@@ -12,8 +12,8 @@ namespace gamemd {
 void ScreenCaptureCommandClass::Constructor()
 {
 
-  *this = &vt_ScreenCaptureCommandClass; /*0x537b42*/
-  return this; /*0x537b48*/
+  *(unsigned int *)this->CommandClass = &ScreenCaptureCommandClass::`vftable'; /*0x537b42*/
+  return this->CommandClass; /*0x537b48*/
 
 }
 } // namespace gamemd
@@ -31,7 +31,7 @@ namespace gamemd {
 void ScreenCaptureCommandClass::ddtor()
 {
 
-  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 8071); /*0x537b76*/
+  return GetStringCSF(g_Str_TXT_INTERFACE, 0, g_Str_File_Init_CPP, 8071); /*0x537b76*/
 
 }
 } // namespace gamemd
