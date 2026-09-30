@@ -321,6 +321,7 @@ v3 = (char *)(Src);
     }
     return v5 + Delegate::Dispatch((Pipe *)this, (int)v3, aP2); /*0x632f0a*/
   }
+// 0x631d10
   return Delegate::Dispatch((int)Src, aP2); /*0x632f02*/
 }
 }
@@ -345,11 +346,14 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   v3 = a2; /*0x633138*/
   v4 = Size; /*0x633141*/
   if ( !a2 ) /*0x63314c*/
+// 0x6c98e0
     return Delegate::Invoke((int)a2, Size); /*0x63314c*/
   if ( Size < 1 ) /*0x633155*/
+// 0x6c98e0
     return Delegate::Invoke((int)a2, Size); /*0x633155*/
   m_38 = this->u32_38; /*0x63315b*/
   if ( !m_38 ) /*0x633160*/
+// 0x6c98e0
     return Delegate::Invoke((int)a2, Size); /*0x6332e5*/
   v16 = 0; /*0x633169*/
   if ( IDA_LOBYTE(this->u32_C) ) /*0x633166*/
@@ -411,6 +415,7 @@ int GameClass::initPlayerData(const char ** a2)
 
   v3 = *(unsigned int *)&this->u32_1B4; /*0x69ae15*/
   if ( !v3 ) /*0x69ae1d*/
+// 0x7b4710
     return String::Equals_Alt((String *)a2, aStandard_0); /*0x69ae28*/
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/

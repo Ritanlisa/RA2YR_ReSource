@@ -147,6 +147,7 @@ namespace gamemd {
 int SideClass::GetCountry(int * a2)
 {
   AbstractTypeClass::ProcessPower(a2); /*0x6a4719*/
+// 0x4a1d50
   return Power::TimerProcess(this->u32_A8); /*0x6a472c*/
 }
 }

@@ -71,6 +71,7 @@ int TeamClass::CheckCohesion()
   }
   else
   {
+// 0x5f42c0
     return AbstractClass::COMStub_Return0_38(v3); /*0x4d9f5d*/
   }
 }
@@ -1047,6 +1048,7 @@ void * TeamClass::FindOrCreate()
   {
   LABEL_5:
     if ( operator new(0x38u) ) /*0x6e52c7*/
+// 0x6e4de0
       return TeknoClass::GetType(); /*0x6e52d6*/
     else
       return 0; /*0x6e52de*/
@@ -1301,6 +1303,7 @@ void TeamClass::Destructor(AbstractClass * a2)
     if ( v13 ) /*0x6e9034*/
       (*((void (**)(TeamTypeClass *, int))v13->AbstractClass + 8))(v13, 1); /*0x6e903a*/
   }
+// 0x4101f0
   return AbstractClass::DTOR((AbstractClass *)a2); /*0x6e9044*/
 }
 }
@@ -3157,6 +3160,7 @@ int TeamClass::PowerDrainUpdate(int * a2)
   Power::FlagProcess((Power *)a2, v24); /*0x6ec6fb*/
   IDA_LOBYTE(v25) = this->isSuspended; /*0x6ec700*/
   Power::FlagProcess((Power *)a2, v25); /*0x6ec709*/
+// 0x4a1de0
   return Checksummer::Add_Buffer((Checksummer *)a2, (uint8_t *)this->countObjects, 24); /*0x6ec71e*/
 }
 }

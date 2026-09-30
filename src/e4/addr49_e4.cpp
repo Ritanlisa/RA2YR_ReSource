@@ -1769,6 +1769,7 @@ void FillScoreScreenStats(IUnknown * Destination, char a2)
   if ( v16 > 0 ) /*0x49b8ea*/
     *((unsigned int *)Destination + 24) += v16; /*0x49b8ec*/
   ToWideStringChar((char *)Destination); /*0x49b902*/
+// 0x4068e0
   return Debug::Log(); /*0x49b826*/
 }
 }

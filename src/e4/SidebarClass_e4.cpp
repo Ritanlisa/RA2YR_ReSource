@@ -768,6 +768,7 @@ GadgetClass * * SidebarClass::LoadResources()
     v29 = dword_B0B338; /*0x6ac1de*/
     v30 = dword_B0B33C; /*0x6ac1e2*/
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], 201); /*0x6ac1e6*/
+// 0x724580
     return CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v27); /*0x6ac1f6*/
   }
   return result; /*0x6ac1fb*/

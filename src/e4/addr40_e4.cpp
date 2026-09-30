@@ -3006,12 +3006,14 @@ int AudioMixer_EndFrame(int * a1, unsigned int * a2)
     if ( v4 < 0 ) /*0x40112c*/
     {
       EndBufferMixer(a1 + 20, 0); /*0x401133*/
+// 0x4071c0
       return AudioMixer::PlaySample((AudioMixer *)(a1 + 20)); /*0x401143*/
     }
     if ( (unsigned int)v4 > 0x4000 ) /*0x40114a*/
       v4 = 0x4000; /*0x40114c*/
     EndBufferMixer(a1 + 20, v4); /*0x401154*/
   }
+// 0x4071c0
   return AudioMixer::PlaySample((AudioMixer *)(a1 + 20)); /*0x401140*/
 }
 } // namespace gamemd
@@ -3958,6 +3960,7 @@ int AbstractTypeClass::sub_406550()
 
   v2 = (unsigned int *)(a1 + 24); /*0x406551*/
   EndBufferMixer((int *)(a1 + 24), a2); /*0x406556*/
+// 0x4071c0
   return AudioMixer::PlaySample(v2); /*0x40655d*/
 }
 // 0x406570
@@ -4304,6 +4307,7 @@ bool sub_406DE0()
   sub_4085B0(v2); /*0x406e20*/
   AudioChannel = CreateAudioChannel(-1, v2); /*0x406e2c*/
   g_Audio_Enabled = AudioChannel; /*0x406e33*/
+// 0x403530
   return AudioChannel && AudioQueue::PreallocateChannels(AudioChannel, 16) == 16; /*0x406e50*/
 }
 } // namespace gamemd
@@ -4345,6 +4349,7 @@ int sub_406F00()
   }
   result = AudioFrame::CounterInc(); /*0x406f27*/
   if ( dword_B1D4D8 ) /*0x753508*/
+// 0x407fb0
     return AudioFrame::ProcessAudioFrame((int)dword_B1D4D8); /*0x75350a*/
   return result; /*0x75350f*/
 }
@@ -4398,6 +4403,7 @@ int SetupSampleAudioMixer(int * a0, ObjectClass * aP1)
   a0[1].AudioMixer_field_04 = v6; /*0x407128*/
   a0->AudioMixer_field_0C = 1073741; /*0x40712b*/
   a0->AudioMixer_field_14 = 0; /*0x407132*/
+// 0x4071c0
   return AudioMixer::PlaySample(a0); /*0x40713b*/
 }
 } // namespace gamemd

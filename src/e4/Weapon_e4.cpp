@@ -37,6 +37,7 @@ int sub_53AE00()
   v1 = 3; /*0x53ae1c*/
   if ( dword_A83D4C ) /*0x53ae23*/
     v1 = *((unsigned int *)dword_A83D4C + 22549); /*0x53ae25*/
+// 0x5d3ba0
   return MessageListClass::AddMessage(unk_A8BC60, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
 }
 }
@@ -500,6 +501,7 @@ int sub_53B410()
   v1 = 3; /*0x53b42c*/
   if ( dword_A83D4C ) /*0x53b433*/
     v1 = *((unsigned int *)dword_A83D4C + 22549); /*0x53b435*/
+// 0x5d3ba0
   return MessageListClass::AddMessage(unk_A8BC60, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53b457*/
 }
 }

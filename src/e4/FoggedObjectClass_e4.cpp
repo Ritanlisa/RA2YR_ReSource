@@ -790,6 +790,7 @@ HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
   Power::TimerProcess(this->q014); /*0x4d2892*/
   Power::TimerProcess(this->u32_54); /*0x4d289d*/
   Power::TimerProcess(this->u32_58); /*0x4d28a8*/
+// 0x4a1d50
   return Power::TimerProcess(this->u32_6C); /*0x4d28b8*/
 }
 } // namespace gamemd

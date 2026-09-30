@@ -651,6 +651,7 @@ int E4Recv_517110::sub_517110()
   (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
   result = MovementAI::StepFootClass((MovementAI *)this, 0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
+// 0x514f70
     return MovementAI::MainFootClass(1); /*0x5171b0*/
   return result; /*0x5171b5*/
 }

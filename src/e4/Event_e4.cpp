@@ -294,6 +294,7 @@ int sub_7A0F40()
       while ( v1 < v10 ); /*0x7a102a*/
     }
     this->Debug::Log(); /*0x7a103c*/
+// 0x5e3720
     return Network::SendOptionsGame(Source); /*0x7a1048*/
   }
   return result; /*0x7a104e*/

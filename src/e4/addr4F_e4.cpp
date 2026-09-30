@@ -2179,6 +2179,7 @@ char E4Recv_4FBD00::sub_4FBD00(int a2)
         v5 = v4[12]; /*0x4fbd24*/
         if ( v5 != *(&this->vtable22) /*0x4fbd55*/
           && (v5 == -1 || ((1 << v5) & *(&this->q2302)) == 0)
+// 0x49fae0
           && DynamicVector::GetOrGrow(v4 + 5460, a2) > 0 )
         {
           break; /*0x4fbd55*/
@@ -2236,6 +2237,7 @@ int E4Recv_4FFD50::sub_4FFD50(int a2)
   if ( !a2 ) /*0x4ffd5c*/
     return -1; /*0x4ffd5e*/
   v4 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)a2 + 72))(a2, v5); /*0x4ffd6f*/
+// 0x4ffb20
   return PathfindingClass::FindPath(v4); /*0x4ffd61*/
 }
 } // namespace gamemd
@@ -2251,6 +2253,7 @@ int E4Recv_4FFD90::sub_4FFD90(short * a2)
   v2 = a2[1]; /*0x4ffda2*/
   v4[0] = (*a2 << 8) + 128; /*0x4ffdaf*/
   v4[1] = (v2 << 8) + 128; /*0x4ffdc0*/
+// 0x4ffb20
   return PathfindingClass::FindPath(v4); /*0x4ffdc9*/
 }
 } // namespace gamemd

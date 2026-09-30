@@ -532,6 +532,7 @@ v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)(
     *(float *)&v46 = (float)(int)v62; /*0x551193*/
     Tactical::SetCellTransform((char *)v78, 2, v46, v52, v39, 1065353216, 0); /*0x551198*/
     StructTable::Append(dword_8A0E10, v77); /*0x5511ab*/
+// 0x4a3840
     return StructTable::Append(dword_8A0E10, v78); /*0x5511be*/
   }
   else if ( v53 ) /*0x5511d4*/
@@ -1314,6 +1315,7 @@ int E4Recv_558810::ShowSaveLoadDialog(CampaignScore * aP1)
   if ( !aP1 ) /*0x55881d*/
     p_referenceCount = (char *)&dword_A8B230[137].referenceCount; /*0x558824*/
   *(void **)&this->M12 = p_referenceCount; /*0x558829*/
+// 0x558dd0
   return SaveLoadDialog::DlgProc(); /*0x558831*/
 }
 }
@@ -4454,6 +4456,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
   v8 = 0; /*0x559641*/
   Vector::Clear((int)v7); /*0x559649*/
   *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x559652*/
+// 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x55965f*/
 }
 } // namespace gamemd

@@ -198,6 +198,7 @@ void String::TrimLeft(ObjectClass * aP1)
       break; /*0x7b5212*/
   }
   if ( i > 0 ) /*0x7b5219*/
+// 0x7b5020
     return String::Erase(0, i); /*0x7b5220*/
   return result; /*0x7b5225*/
 }

@@ -403,6 +403,7 @@ int FogOfWar::Render()
            1);
     v5 = (*(int (**)(int *, unsigned char *, unsigned int, int))(*v2 + 120))(v2, v12, this->ptr_1220, v4); /*0x657d21*/
     (*(void (**)(unsigned int, int))(v3 + 8))(this->u32_121C, v5); /*0x657d2b*/
+// 0x656150
     return FogOfWar::RenderCell(); /*0x657d30*/
   }
   return result; /*0x657d35*/

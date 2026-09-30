@@ -270,6 +270,7 @@ void * Cell::GetNeighbourContent(unsigned int a2)
     v3 = IDA_HIWORD(v4) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(a2 & 7) + 82]); /*0x481839*/
     IDA_LOWORD(a2) = v4 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[(a2 & 7) + 82]); /*0x481841*/
     IDA_HIWORD(a2) = v3; /*0x48184a*/
+// 0x5657a0
     return CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&a2); /*0x48185d*/
   }
   return result; /*0x481863*/
@@ -791,9 +792,11 @@ int Cell::SetRadar(IUnknown * aP1)
       if ( !*v16 ) /*0x56d4f8*/
         break; /*0x56d4f8*/
       if ( ++v9 >= 8 ) /*0x56d50f*/
+// 0x56c510
         return Terrain::ConnectivityGraph((Terrain *)&stru_87F5F0.__pad_58[416]); /*0x56d50f*/
     }
     if ( !&v5[4 * *i] ) /*0x56d4fc*/
+// 0x56c510
       return Terrain::ConnectivityGraph((Terrain *)&stru_87F5F0.__pad_58[416]); /*0x56d4fc*/
     v11 = this->Cell_field_0x18[0]; /*0x56d528*/
     v18 = 0; /*0x56d52c*/
@@ -814,6 +817,7 @@ int Cell::SetRadar(IUnknown * aP1)
     while ( v15 ); /*0x56d574*/
     result = v18; /*0x56d576*/
     if ( v18 > 3 || *v5 ) /*0x56d580*/
+// 0x56c510
       return Terrain::ConnectivityGraph((Terrain *)&stru_87F5F0.__pad_58[416]); /*0x56d516*/
     *((unsigned short *)v5 + 1) = *((unsigned short *)v16 + 1); /*0x56d58f*/
   }
@@ -1031,6 +1035,7 @@ int Cell::IsPassableAllied(IUnknown * aP0, IUnknown * aP1)
       return 1; /*0x578b4b*/
     goto LABEL_10; /*0x578b4b*/
   }
+// 0x452540
   return BuildingClass::MakeTraversable(v4); /*0x578b58*/
 }
 }
@@ -1880,6 +1885,7 @@ int Cell::GetGroundHeight(IUnknown * aP0)
     v4 = &g_MissionQueueFrame.briefing[130]; /*0x5780de*/
     g_MissionQueueFrame.briefing[139] = v7; /*0x5780e3*/
   }
+// 0x47b3a0
   return Isometric::InitTables((int)v4, v6); /*0x5780f2*/
 }
 } // namespace gamemd

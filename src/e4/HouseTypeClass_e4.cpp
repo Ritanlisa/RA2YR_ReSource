@@ -563,6 +563,7 @@ AbstractClass * * HouseTypeClass::ProcessPower(int * a2)
   IDA_LOBYTE(v3) = this->__pad_16D[55]; /*0x512257*/
   v4 = Power::FinalizeDrain((Power *)a2, v3); /*0x512260*/
   IDA_LOBYTE(v4) = this->q1A5; /*0x512265*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v4); /*0x512273*/
 }
 }

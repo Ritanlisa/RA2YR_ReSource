@@ -178,6 +178,7 @@ int CommandClass::BuildBar()
   PushCommandClass::Execute(v34, (int)aTipTeam03); /*0x6d14c1*/
   v35 = GetFontClassEntry(dword_B0CB38); /*0x6d14cc*/
   PushCommandClass::Execute(v35, (int)aTipTypeselect); /*0x6d14d8*/
+// 0x6d09c0
   return PushCommandClass::Execute(dword_B0CCB0, (int)aTipThumbopen); /*0x6d14ec*/
 }
 } // namespace gamemd

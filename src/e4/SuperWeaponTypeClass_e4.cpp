@@ -895,6 +895,7 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
   IDA_LOBYTE(v8) = this->UseChargeDrain; /*0x6ce9e2*/
   v9 = Power::FlagProcess((Power *)a2, v8); /*0x6ce9eb*/
   IDA_LOBYTE(v9) = this->ManualControl; /*0x6ce9f0*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v9); /*0x6ce9fe*/
 }
 } // namespace gamemd

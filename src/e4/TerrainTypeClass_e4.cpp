@@ -300,6 +300,7 @@ TerrainTypeClass * * TerrainTypeClass::FindOrCreate()
   LABEL_6:
     v3 = (TerrainTypeClass *)RA2_OPNEW(0x2BCu); /*0x71e2f6*/
     if ( v3 ) /*0x71e305*/
+// 0x71da80
       return TerrainTypeClass::TerrainTypeClass(v3, Source); /*0x71e311*/
     return 0; /*0x71e305*/
   }
@@ -379,6 +380,7 @@ bool TerrainTypeClass::GetHeight(TerrainClass * aP2, int a3)
   TerrainClass *v4; // eax
 
   v4 = (TerrainClass *)RA2_OPNEW(0xE0u); /*0x71ddd8*/
+// 0x71bb90
   return v4 && TerrainClass::Construct(v4, this, aP2); /*0x71ddf7*/
 }
 // 0x71DE10
@@ -388,6 +390,7 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2)
 
   v3 = (TerrainClass *)RA2_OPNEW(0xE0u); /*0x71de18*/
   if ( v3 ) /*0x71de22*/
+// 0x71bb90
     return TerrainClass::Construct(v3, this, (int16_t *)&g_BuildingLoadQueue_Array.?); /*0x71de2c*/
   else
     return 0; /*0x71de35*/
@@ -433,6 +436,7 @@ int TerrainTypeClass::PowerDrainUpdate(int * a2)
   IDA_LOBYTE(v6) = this->IsAnimated; /*0x71e194*/
   Power::FlagProcess((Power *)a2, v6); /*0x71e19d*/
   Power::TimerProcess(this->AnimationRate); /*0x71e1ab*/
+// 0x4a1d70
   return Checksummer::Add_float((Checksummer *)a2, IDA_LODWORD(this->AnimationProbability)); /*0x71e1be*/
 }
 // 0x71E1D0

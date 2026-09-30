@@ -252,6 +252,7 @@ int E4Recv_5C60D0::ShowConfirmDialog(void * a1, void * a2)
 
   StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108));
   v3 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108));
+// 0x5d3490
   return Dialog::ShowMessageBox(lParam, v3, StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 }
 }
@@ -3089,6 +3090,7 @@ void nullsub_176()
 namespace gamemd {
 int BinkMovieHandle::_vt03(unsigned char a2)
 {
+// 0x432c30
   return BinkMovie::Pause(this->height, a2); /*0x5c054d*/
 }
 } // namespace gamemd

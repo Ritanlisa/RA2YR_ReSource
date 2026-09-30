@@ -465,6 +465,7 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->Damage); /*0x74b7a3*/
   Power::TimerProcess(this->DamageRadius); /*0x74b7b1*/
   IDA_LOBYTE(v7) = this->IsTiberium; /*0x74b7b6*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v7); /*0x74b7c4*/
 }
 }

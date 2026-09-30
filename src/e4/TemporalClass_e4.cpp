@@ -388,6 +388,7 @@ void * TemporalClass::ProcessEvent(char a2)
 namespace gamemd {
 int TemporalClass::SetTarget(AbstractClass * aP1)
 {
+// 0x410410
   return AbstractClass::ProcessPower(); /*0x71a65a*/
 }
 } // namespace gamemd
@@ -424,6 +425,7 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int TemporalClass::SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71a714*/
 }
 } // namespace gamemd

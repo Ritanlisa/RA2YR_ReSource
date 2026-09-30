@@ -4005,6 +4005,7 @@ char sub_6435B0(int a1, int a2, int a3)
   {
     result = sub_4BAFE0((unsigned int *)g_DSurface_Hidden); /*0x64363b*/
     if ( !result ) /*0x643642*/
+// 0x6ba580
       return Surface::BlitTransparent(v8, g_DSurface_Hidden, a3, v7); /*0x64365b*/
   }
   return result; /*0x643660*/

@@ -1480,6 +1480,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
   v22 = 0; /*0x699953*/
   Vector::Clear((int)v21); /*0x69995a*/
   *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x699963*/
+// 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x699970*/
 }
 }
@@ -2298,6 +2299,7 @@ HWND E4Recv_696950::sub_696950()
     IDA_HIBYTE(this->?) = 0; /*0x69698f*/
     String::Trim((char *)&this->M23); /*0x696993*/
     _strupr((char *)&this->?); /*0x696999*/
+// 0x6969c0
     return ListBox::SetCustomEntry(1625, 3, &this->?); /*0x6969ab*/
   }
   return result; /*0x6969b1*/

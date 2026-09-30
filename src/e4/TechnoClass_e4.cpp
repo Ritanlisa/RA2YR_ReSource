@@ -648,6 +648,7 @@ int TechnoClass::DTOR()
   this->vtable2 = (void*)&MissionClass_vftable; /*0x6f477b*/
   this->vtable3 = (void*)&MissionClass_vftable; /*0x6f4782*/
   this->vtable4 = (void*)&MissionClass_vftable; /*0x6f4789*/
+// 0x5f3b80
   return ObjectClass::Dtor(); /*0x6f4795*/
 }
 } // namespace gamemd

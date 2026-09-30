@@ -103,6 +103,7 @@ int Network::SendBeaconDelete(int a2, int a3)
       if ( v4 == *((unsigned int *)HouseClass_Player + 12) || !v14 ) /*0x431252*/
       {
         if ( (v9->vtable4 & 1) != 0 /*0x4312a6*/
+// 0x4f9a10
           && HouseClass::IsAllied(HouseClass_Player, v4)
           && (uint8_t)HouseClass::IsAlliedWith(
                                 *(void **)&HouseClass_Array->gap0[4 * v9->q110],
@@ -1686,6 +1687,7 @@ void * Network::ReceiveLoop()
             for ( i = 1; i < dword_A8DA84; ++i ) /*0x541fff*/
             {
               if ( (uint8_t)NetworkID::Compare((bool *)(dword_A8DA78[i] + 40), this->u32_50 + 76) /*0x54203e*/
+// 0x697e70
                 && SessionClass::IsValidHouse(
                      (int)&dword_A8B238,
                      *((void **)stru_A80220.? + *(unsigned int *)(dword_A8DA78[i] + 111))) )
@@ -1796,6 +1798,7 @@ int Network::GetLobbyStatus()
 
   Network_field_0x48 = this->Network_field_0x48; /*0x5424c0*/
   if ( Network_field_0x48 ) /*0x5424c5*/
+// 0x48ba80
     return CellClass::GetBridgeIndex(*(CellClass **)(Network_field_0x48 + 4)); /*0x5424ca*/
   else
     return 0; /*0x5424cf*/
@@ -1809,6 +1812,7 @@ int Network::updateLatency()
 
   Network_field_0x50 = (CellClass **)this->Network_field_0x50; /*0x542500*/
   if ( Network_field_0x50 ) /*0x542505*/
+// 0x48ba80
     return CellClass::GetBridgeIndex(Network_field_0x50[1]); /*0x54250a*/
   else
     return 0; /*0x54250f*/
@@ -3448,6 +3452,7 @@ int sub_646D70()
   int result; // eax
 
   if ( dword_A8B238[0] == 4 ) /*0x646d77*/
+// 0x543080
     return Network::Disconnect(unk_A8E9C0); /*0x646d7e*/
   return result; /*0x646d83*/
 }
@@ -3464,6 +3469,7 @@ int Network::AddFrameEvent()
   if ( *(unsigned int *)&dword_A8B238 == 4 /*0x6471cb*/
     && byte_A8DBA0
     && dword_A8DA84 > 2
+// 0x697e70
     && SessionClass::IsValidHouse((int)&dword_A8B238, 0) )
   {
     v3 = 39; /*0x6471d4*/
@@ -4620,6 +4626,7 @@ int Network::SendUnreachable()
     }
     result = *(unsigned int *)&dword_A8B238; /*0x65251f*/
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x65252a*/
+// 0x543090
       return Connection::Close((Connection *)&unk_A8E9C0); /*0x652531*/
   }
   return result; /*0x652536*/
@@ -5441,6 +5448,7 @@ int Network::SendSettingsRequest()
   memset(v3, 0, sizeof(v3)); /*0x5b5eba*/
   v4 = 0; /*0x5b5ec8*/
   v3[0] = 116; /*0x5b5ecf*/
+// 0x5f1bf0
   return Stream::WriteBlock((int *)&unk_A8EA70, (int)v3, 250, 1); /*0x5b5edd*/
 }
 } // namespace gamemd

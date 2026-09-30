@@ -1121,6 +1121,7 @@ void IsValidActionDialog(int a1, HWND a2)
   {
     return 1; /*0x602aa0*/
   }
+// 0x601360
   return Event::IsValidActionType(v4) && DlgCtrlID == 1685 && !SessionClass::GetGameSpeed(dword_A8B238); /*0x60262e*/
 }
 }
@@ -3129,6 +3130,7 @@ bool sub_609B30(int a1, HWND a2)
   LABEL_5:
     v4 = 0; /*0x609b7a*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x609b85*/
+// 0x601360
   return Event::IsValidActionType(v4) && DlgCtrlID == 1685; /*0x609b98*/
 }
 }

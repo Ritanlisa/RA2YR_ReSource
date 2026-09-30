@@ -111,6 +111,7 @@ int BombClass::Stat(int * a2)
     Power::TimerProcess(v9); /*0x438ae4*/
   }
   IDA_LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v3); /*0x438af4*/
 }
 } // namespace ra2
@@ -183,6 +184,7 @@ int BombClass::Write(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x438be4*/
 }
 } // namespace gamemd

@@ -1124,6 +1124,7 @@ int sub_46D810()
   if ( dword_A8DA90 ) /*0x46d881*/
   {
     Network::SendToPlayer((int)&unk_A8E9C0, (int)&v2, 455, 1, (wchar_t *)dword_A8DA90); /*0x46d895*/
+// 0x541820
     return Network::ReceiveLoop(&unk_A8E9C0); /*0x46d89f*/
   }
   return result; /*0x46d87d*/
@@ -1160,6 +1161,7 @@ int Lobby_GetPlayerColor(int a1)
     return -2; /*0x46f859*/
   if ( v2 == (wchar_t *)g_Lobby_MaxPlayers ) /*0x46f866*/
     return -2; /*0x46f869*/
+// 0x696f20
   return SessionClass::GetPlayerColor((int)v2); /*0x46f82d*/
 }
 } // namespace gamemd
@@ -1181,6 +1183,7 @@ int HouseClass_GetSideIndex(int a1)
     return -2; /*0x46f8c9*/
   if ( v2 == (wchar_t *)g_Lobby_MaxPlayers ) /*0x46f8d6*/
     return -2; /*0x46f8d9*/
+// 0x696f50
   return SessionClass::GetOption((int)v2); /*0x46f89d*/
 }
 } // namespace gamemd

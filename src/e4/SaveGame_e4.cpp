@@ -826,13 +826,17 @@ int SaveGame::Start()
                             if ( SaveGame_Start_680EF0(this, (int)&RadSiteClass_Array) >= 0 )
                             {
                               if ( g_GameMode_Current != (CellStruct *)5 )
+// 0x751620
                                 return SaveGame::SaveAudioQueueItems((int *)this->__pad_0) >= 0
+// 0x7533b0
                                     && SaveGame::WriteMagicHeader((int *)this->__pad_0) >= 0
                                     && SaveGame::VtableDispatch(&g_BuildingTypeClass_Count, (int)this) >= 0;
                               Debug::Log();
                               if ( SaveGame::SaveAudioData(&g_ScenarioFlags, (int)this) )
                               {
+// 0x751620
                                 return SaveGame::SaveAudioQueueItems((int *)this->__pad_0) >= 0
+// 0x7533b0
                                     && SaveGame::WriteMagicHeader((int *)this->__pad_0) >= 0
                                     && SaveGame::VtableDispatch(&g_BuildingTypeClass_Count, (int)this) >= 0;
                               }

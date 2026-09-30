@@ -678,7 +678,9 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_22(int a1, int a2, int a
     v11 = (int *)Player::FindByName((Player *)v10); /*0x7a7fa3*/
     v12 = (SessionClass *)v11; /*0x7a7fa8*/
     if ( v11 /*0x7a7fed*/
+// 0x696f10
       && SessionClass::GetPlayerSide(v11) >= 0
+// 0x696f20
       && SessionClass::GetPlayerColor(v12) >= 0
       && *Source >= 48
       && *Source <= 57

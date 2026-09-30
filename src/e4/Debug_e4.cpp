@@ -67,6 +67,7 @@ int Debug::ScrollText(CellStruct * aP1)
           break; /*0x5bd1d1*/
       }
     }
+// 0x5bd490
     return Text::DrawRepeated(v5, v13, v7 - v5, 1); /*0x5bd1e0*/
   }
   return result; /*0x5bd1e8*/
@@ -121,6 +122,7 @@ char Debug::Printf()
   {
     vsprintf(Buffer, Format, va); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/
+// 0x5bd0d0
     return Debug::ScrollText(Buffer); /*0x5bd230*/
   }
   return result; /*0x5bd235*/

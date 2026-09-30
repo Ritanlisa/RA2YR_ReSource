@@ -1143,6 +1143,7 @@ int BuildingLightClass::SD_vt13(void* a1) {
   if ( FollowingObject ) /*0x43700c*/
   {
     v7 = (*((int (__stdcall **)(void **))FollowingObject->? + 4))(&FollowingObject->?); /*0x437015*/
+// 0x4a1d50
     return Power::TimerProcess(v7); /*0x43701b*/
   }
   return result; /*0x437020*/
@@ -1426,6 +1427,7 @@ int BuildingClass::PushScriptAction() {
       *(unsigned short *)v7.__tail_0 = *v3 / 256; /*0x44d79b*/
       *(unsigned short *)&v7.__tail_0[2] = v3[1] / 256; /*0x44d7b3*/
       v7 = v7; /*0x44d7bc*/
+// 0x660b80
       return ScriptActionQueue::PushNext(&v7); /*0x44d7c0*/
     }
   }
@@ -1671,6 +1673,7 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
   Object *v3; // eax
 
   v3 = (Object *)CellCoord::To_CellObj((CellCoord *)this, aP1); /*0x4aa29c*/
+// 0x47c5a0
   return Object::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
 }
 }
@@ -1741,6 +1744,7 @@ double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
   if ( Float4::Sum(pHouse + 197) == 0.0 ) /*0x4f9769*/
     return 0.0; /*0x4f976b*/
   else
+// 0x6c9650
     return Float4::Sum(v1) / (double)dword_8871E0[1].?[1]; /*0x4f9780*/
 }
 }
@@ -4425,8 +4429,10 @@ int BuildingClass::updateAnimationState() {
 
   v1 = *(this + 12); /*0x63d540*/
   if ( v1 == 11 ) /*0x63d547*/
+// 0x731ce0
     return Memory::Alloc76(); /*0x63d549*/
   if ( v1 == 29 ) /*0x63d551*/
+// 0x731cd0
     return Factory::IdleHandler(); /*0x63d553*/
   return -1; /*0x63d55b*/
 }

@@ -5070,6 +5070,7 @@ int ReadWOLGameOption(INIClass * a1)
   }
   HashTable::DestroyHashTableINIClass(v3); /*0x779920*/
   v9[0] = (unsigned int)&off_7E1668; /*0x779929*/
+// 0x431b80
   return BufferIOFileClass::Dtor(v9); /*0x779936*/
 }
 } // namespace gamemd
@@ -5168,6 +5169,7 @@ int ReadWOLLobbyOption(INIClass * a1)
   }
   HashTable::DestroyHashTableINIClass(v3); /*0x779b30*/
   v9[0] = (unsigned int)&off_7E1668; /*0x779b39*/
+// 0x431b80
   return BufferIOFileClass::Dtor(v9); /*0x779b46*/
 }
 } // namespace gamemd
@@ -6771,6 +6773,7 @@ void ** ParseStringCommaInts(char * String, int * a2, int * a3, int * a4, int * 
     v17 = 0; /*0x77e8d5*/
   *a6 = v17; /*0x77e8e2*/
   v18 = strtok(0, Str); /*0x77e8e4*/
+// 0x7b48d0
   return String::Assign_Alt(a7, v18); /*0x77e8f6*/
 }
 } // namespace gamemd

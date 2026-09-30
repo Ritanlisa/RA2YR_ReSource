@@ -726,6 +726,7 @@ int VoxelAnimType::LoadAnim()
   v60 = 0; /*0x5f8cad*/
   Vector::Clear((int)v59); /*0x5f8cb4*/
   *(unsigned int *)v58.CDFileClass = &off_7E1668; /*0x5f8cc0*/
+// 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v58); /*0x5f8cd0*/
 }
 }

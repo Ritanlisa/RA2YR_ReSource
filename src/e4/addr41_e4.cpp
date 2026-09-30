@@ -2103,6 +2103,7 @@ bool globalHelper_01FEE0(IUnknown * aP0, unsigned int * a1, unsigned int * a2)
       if ( !*(unsigned char *)(v3 + 241) ) /*0x41ff37*/
       {
         TileIndex = MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&aP0, v6, 0); /*0x41ffa2*/
+// 0x56d230
         return MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&a2, v6, 0) == TileIndex; /*0x41ffbd*/
       }
       v7 = MapClass::GetTileIndex(&dword_87F7E8, (int16_t *)&aP0, v6, 0); /*0x41ff55*/

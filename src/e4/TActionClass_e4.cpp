@@ -41,6 +41,7 @@ int TActionClass::executeBuildAction()
   {
     result = this->u32_1F7; /*0x4fcdca*/
     if ( !result ) /*0x4fcdd2*/
+// 0x4fc9e0
       return HouseClass::CheckWinCondition(0); /*0x4fcdd6*/
   }
   if ( this->u32_298 == -1 ) /*0x4fcde3*/
@@ -1660,6 +1661,7 @@ int TActionClass::Validate(int a2)
     v10 = (*(int (__stdcall **)(unsigned int *))(TActionClass_field_50[1] + 16))(TActionClass_field_50 + 1); /*0x6e3ec2*/
     Power::TimerProcess(v10); /*0x6e3ec8*/
   }
+// 0x4a1d50
   return Power::TimerProcess(*(unsigned int *)&this->pad_6E[34]); /*0x6e3edb*/
 }
 } // namespace gamemd

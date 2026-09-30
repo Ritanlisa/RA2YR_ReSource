@@ -240,6 +240,7 @@ int sub_5E8A20()
     RA2_OPDEL((void *)g_Lobby_MaxPlayers); /*0x5e8abd*/
     g_Lobby_MaxPlayers = 0; /*0x5e8ac5*/
   }
+// 0x5c6120
   return PtrVector::Destroy(&stru_A8DA74); /*0x5e8ad0*/
 }
 } // namespace gamemd

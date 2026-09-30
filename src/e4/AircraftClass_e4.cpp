@@ -403,6 +403,7 @@ int AircraftClass::EvaluateTargetingState()
     }
     else
     {
+// 0x4d6aa0
       return FootClass::FindAITarget(); /*0x41a9d5*/
     }
   }
@@ -589,6 +590,7 @@ int AircraftClass::RevealSight(int a2, int a3)
     v18 = v6; /*0x41ae77*/
     v8 = *(unsigned int *)&this->focus; /*0x41ae7b*/
     v19 = v7; /*0x41ae84*/
+// 0x5678e0
     return MapClass::RevealArea1((MapClass *)&stru_87F5F0.__pad_58[416], &v17, v4, v8, a2, a3, 0, 1, 1); /*0x41aea1*/
   }
   if ( v4 ) /*0x41ae19*/
@@ -619,6 +621,7 @@ int AircraftClass::RevealSight(int a2, int a3)
     v18 = v13; /*0x41af2d*/
     v19 = v14; /*0x41af35*/
     v16 = v15[114](this); /*0x41af39*/
+// 0x5678e0
     return MapClass::RevealArea1( /*0x41af70*/
              (MapClass *)&stru_87F5F0.__pad_58[416],
              &v17,
@@ -875,6 +878,7 @@ int AircraftClass::ProcessDockCheck()
 namespace gamemd {
 HRESULT AircraftClass::CheckPassengerCount(IPersistStream * a0, FootClass * aP1, struct IPersistStreamVtbl * a2)
 {
+// 0x4db690
   return ObjectClass::SaveToStream_Common((ObjectClass *)a0, aP1, a2); /*0x41b5d4*/
 }
 } // namespace gamemd
@@ -887,6 +891,7 @@ int AircraftClass::IsBelowScreen()
 
   v1 = *(unsigned int *)&this->Type; /*0x41b989*/
   if ( v1 != IDA_LODWORD(g_RulesClass_Instance->MissileROTVar) && v1 != g_RulesClass_Instance->HoverHeight ) /*0x41b99d*/
+// 0x5f6b60
     return ObjectClass::IsBelowScreen(); /*0x41b9a1*/
   if ( !this->locomotor ) /*0x41b9a8*/
     WinAPI::Wrapper(-2147467261); /*0x41b9b7*/

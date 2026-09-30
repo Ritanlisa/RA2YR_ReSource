@@ -577,6 +577,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
+// 0x7bbb90
     return XSurface::BlitPart((void **)a2, v10, (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
   v17 = a2[1]; /*0x4bb2a7*/
   v18 = a2[2]; /*0x4bb2aa*/
@@ -756,6 +757,7 @@ void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
            this->DSurface_field_0x1C[0],
            1) )
     {
+// 0x7bb050
       return XSurface::FillRectEx((unsigned int *)aP1, (int *)a2, aP3); /*0x4bb81d*/
     }
     if ( g_DDraw_Initialized || *((unsigned int *)((char *)&stru_A8EB00 + 412)) ) /*0x4bb690*/
@@ -5229,6 +5231,7 @@ char DSurface::IsDSurface()
 int DSurface::Flip2()
 {
   g_LoadScreenFlag = 1; /*0x5d1e55*/
+// 0x5d1e70
   return DSurface::RenderToSurface(g_DSurface_Hidden); /*0x5d1e62*/
 }
 // 0x63D400
@@ -5263,6 +5266,7 @@ char DSurface::FlipIfNeeded()
 
   result = (char)this->DSurface_field_0x514; /*0x759e60*/
   if ( result ) /*0x759e68*/
+// 0x7c2c60
     return DSurface::Flip((DSurface *)this->DSurface_field_0x200); /*0x759e70*/
   return result; /*0x759e75*/
 }

@@ -239,6 +239,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
   Checksummer::Add_float((Checksummer *)a2, this->ParticleSystemTypeClass_field_0x2AC); /*0x64476b*/
   Checksummer::Add_float((Checksummer *)a2, this->DamageDelay); /*0x644779*/
   Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B4); /*0x644787*/
+// 0x4a1d50
   return Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
 }
 }

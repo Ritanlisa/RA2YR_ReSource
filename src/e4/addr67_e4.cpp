@@ -345,6 +345,7 @@ int ArtINI_Load()
   v3 = 0; /*0x679f1e*/
   Vector::Clear((int)v2); /*0x679f26*/
   v1[0] = (unsigned int)&off_7E1668; /*0x679f2f*/
+// 0x431b80
   return BufferIOFileClass::Dtor(v1); /*0x679f3c*/
 }
 } // namespace gamemd
@@ -356,6 +357,7 @@ InfantryTypeClass * GetINIClassInt(unsigned char *** a0, INIClass * aP1, unsigne
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
   if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bade*/
+// 0x524cb0
     return KeywordType::FindOrCreate2(Destination); /*0x67baeb*/
   else
     return a4; /*0x67baf9*/
@@ -369,6 +371,7 @@ AircraftTypeClass * GetINIClassKeyword(unsigned char *** a0, INIClass * aP1, uns
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
   if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd4e*/
+// 0x41cef0
     return KeywordClass::FindOrCreate(Destination); /*0x67bd5b*/
   else
     return a4; /*0x67bd69*/

@@ -175,6 +175,7 @@ int WinModemClass::WriteSerial(LPCVOID lpBuffer, WinModemClass * aP2)
     if ( result == 997 ) /*0x774ca5*/
       this->u8_51 = 1; /*0x774ca7*/
     else
+// 0x4068e0
       return Debug::Log("Writing to port handle failed with error %s\n", 0); /*0x774cb7*/
   }
   return result; /*0x774cab*/

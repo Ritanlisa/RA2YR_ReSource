@@ -33,6 +33,7 @@ bool TagClass::HasCrossesHorizontalLineEvent() const
   TagTypeClass *buildingType; // ecx
 
   buildingType = this->buildingType; /*0x6e5320*/
+// 0x6e6250
   return buildingType && TagTypeClass::HasCrossesHorizontalLineEvent(buildingType); /*0x6e5335*/
 }
 // 0x6e5300
@@ -41,6 +42,7 @@ bool TagClass::HasCrossesVerticalLineEvent() const
   TagTypeClass *buildingType; // ecx
 
   buildingType = this->buildingType; /*0x6e5300*/
+// 0x6e6280
   return buildingType && TagTypeClass::HasCrossesVerticalLineEvent(buildingType); /*0x6e5315*/
 }
 // 0x6e5340
@@ -49,6 +51,7 @@ bool TagClass::HasZoneEntryByEvent() const
   TagTypeClass *buildingType; // ecx
 
   buildingType = this->buildingType; /*0x6e5340*/
+// 0x6e62b0
   return buildingType && TagTypeClass::HasZoneEntryByEvent(buildingType); /*0x6e5355*/
 }
 bool TagClass::HasAllowWinAction() const

@@ -25,6 +25,7 @@ int AlphaShapeClass::SD_vt13(int a2)
   Power::TimerProcess(this->u32_28); /*0x420db4*/
   Power::TimerProcess(this->u32_2C); /*0x420dbf*/
   Power::TimerProcess(this->vtable4); /*0x420dca*/
+// 0x4a1d50
   return Power::TimerProcess(this->u32_34); /*0x420dda*/
 }
 } // namespace gamemd

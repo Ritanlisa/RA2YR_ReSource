@@ -79,6 +79,7 @@ int sub_5EA9B0(int a1)
   {
     return -2; /*0x5eaa02*/
   }
+// 0x696f20
   return SessionClass::GetPlayerColor(*(&dword_A8DA90 + a1)); /*0x5ea9da*/
 }
 } // namespace gamemd
@@ -104,6 +105,7 @@ int sub_5EAA10(int a1)
   {
     return -2; /*0x5eaa62*/
   }
+// 0x696f50
   return SessionClass::GetOption(*(&dword_A8DA90 + a1)); /*0x5eaa3a*/
 }
 } // namespace gamemd
@@ -129,6 +131,7 @@ int sub_5EAA70(int a1)
   {
     return -2; /*0x5eaac2*/
   }
+// 0x696f70
   return SessionClass::GetOption2(*(&dword_A8DA90 + a1)); /*0x5eaa9a*/
 }
 } // namespace gamemd

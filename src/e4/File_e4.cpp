@@ -464,7 +464,9 @@ AbstractClass * * File::ParseCSFString()
   CCFileClass::Construct(&v23, Source); /*0x73499f*/
   v19 = 0; /*0x7349ab*/
   if ( (uint8_t)CCFileClass::Open(&v23, 0) /*0x7349e5*/
+// 0x473d10
     && FileClass::Load(&v23, (const CHAR *)1)
+// 0x473b10
     && CCFileClass::Read(&v23, Buffer, 24) == 24 )
   {
     if ( CCFileClass::Read(&v23, &v18, 4) != 4 ) /*0x7349fe*/

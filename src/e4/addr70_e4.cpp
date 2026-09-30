@@ -915,6 +915,7 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
     dword_B0EA70 = Ticks; /*0x70f16e*/
     dword_B0EA78 = v3; /*0x70f173*/
     v5 = (*(int (**)(int, unsigned char *))(*(unsigned int *)a1 + 72))(a1, v8); /*0x70f180*/
+// 0x5673a0
     return MapClass::RevealArea0(v5, 2, v7, 0, 0, 0, 1, 1); /*0x70f189*/
   }
   else

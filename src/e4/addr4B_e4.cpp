@@ -563,6 +563,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
                       BuildingAnimByName,
                       0,
                       70);
+// 0x4a61c0
     return TextRenderer::DrawText(&v42, (size_t)v48, (int)g_DSurface_Hidden, v22, v23, v25, v28, v31); /*0x4b9bb7*/
   }
   return result; /*0x4b9bbf*/

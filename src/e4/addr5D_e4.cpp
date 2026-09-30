@@ -810,7 +810,9 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
           IDA_LOBYTE(v19.ambientSoundController[2]) = _strcmpi(v14, g_Str_false) != 0; /*0x5d7979*/
         }
         if ( WideString::Length((const wchar_t **)&v19.?) /*0x5d79a3*/
+// 0x7b54b0
           && String::Length((String *)&v19.?)
+// 0x7b54b0
           && String::Length((String *)&v19.?) )
         {
           v15 = 0; /*0x5d79d3*/
@@ -936,6 +938,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
   v21 = 0; /*0x5d7c9d*/
   Vector::Clear((int)v20); /*0x5d7ca4*/
   v19.lineTrailer = &off_7E1668; /*0x5d7cb0*/
+// 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v19.lineTrailer); /*0x5d7cc0*/
 }
 }
@@ -2029,6 +2032,7 @@ void int Network_SendHeartbeat(int a1, int a2, int a3, int a4)
   *(unsigned int *)((char *)&v15[12] + 3) = v12; /*0x5dfd95*/
   result = Network::SendMessage((int)unk_A8E9C0, (int)v15, 455, 0, 0, 0, 0); /*0x5dfd99*/
   if ( dword_A8D5FC ) /*0x5dfda4*/
+// 0x5410f0
     return Network::SendMessage((int)unk_A8E9C0, (int)v15, 455, 0, (int)&stru_A8D600, 0, 0); /*0x5dfdbd*/
   return result; /*0x5dfdc2*/
 }
@@ -3167,6 +3171,7 @@ unsigned char sub_5DAF20()
   }
   else if ( g_GameMode_Current[0] == 4 ) /*0x5e6875*/
   {
+// 0x77f900
     return Game::ProcessIdle(); /*0x5e6877*/
   }
   else

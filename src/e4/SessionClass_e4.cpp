@@ -1721,6 +1721,7 @@ AbstractClass * * SessionClass::LoadMissionList()
   Vector::Clear((int)v64); /*0x69a1c1*/
   *(unsigned int *)v63.CDFileClass = &off_7E1668; /*0x69a1ca*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v63); /*0x69a1d2*/
+// 0x5256f0
   return HashTable::DestroyHashTableINIClass(&v60); /*0x69a1e0*/
 }
 // 0x69A980

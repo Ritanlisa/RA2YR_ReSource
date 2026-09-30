@@ -368,6 +368,7 @@ int OverlayTypeClass::ReadINIString(CCINIClass * aP1, unsigned char * a2, AnimTy
 
   v5 = sub_48DFD0(aP3); /*0x4754cd*/
   if ( INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 128) ) /*0x4754e5*/
+// 0x48df80
     return OverlayTypeClass::LookupByName((OverlayTypeClass *)Destination); /*0x4754f2*/
   else
     return aP3; /*0x475502*/
@@ -409,6 +410,7 @@ bool OverlayTypeClass::GetType(IUnknown * aP2, int a3)
   Object *v4; // eax
 
   v4 = (Object *)RA2_OPNEW(0xB0u); /*0x5fe538*/
+// 0x5fc380
   return v4 && Object::SpawnAtCell(v4, (int)this, aP2, -1); /*0x5fe559*/
 }
 // 0x5FE570
@@ -418,6 +420,7 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
 
   v3 = (Object *)RA2_OPNEW(0xB0u); /*0x5fe578*/
   if ( v3 ) /*0x5fe582*/
+// 0x5fc380
     return Object::SpawnAtCell(v3, (int)this, &word_AC1608, -1); /*0x5fe58e*/
   else
     return 0; /*0x5fe597*/
@@ -482,6 +485,7 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
   IDA_LOBYTE(v6) = this->ImageLoaded; /*0x5feac0*/
   Power::FlagProcess((Power *)a2, v6); /*0x5feac9*/
   IDA_LOBYTE(v7) = this->IsRubble; /*0x5feace*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v7); /*0x5feadc*/
 }
 // 0x5FEC10

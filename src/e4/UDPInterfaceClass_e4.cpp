@@ -790,6 +790,7 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
              arg4,
              aP5);
   else
+// 0x7b23b0
     return AudioQueue::WriteBuffer(aP1, arg4, a3, a5, aP5, a7, a8); /*0x7b3713*/
 }
 } // namespace gamemd

@@ -30,6 +30,7 @@ int Trigger::EnableOnce(AbstractClass * aP1)
   if ( !(unsigned char)result ) /*0x554a65*/
   {
     IDA_LOBYTE(this->Trigger_field_0x48) = 1; /*0x554a6b*/
+// 0x554af0
     return TacticalClass::ScrollView(aP1); /*0x554a70*/
   }
   return result; /*0x554a75*/

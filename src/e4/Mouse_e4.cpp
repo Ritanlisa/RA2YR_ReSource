@@ -66,6 +66,7 @@ Tactical * * Mouse::SetBounds(IUnknown * aP1)
     IDA_LOWORD(v7) = this->u32_117A + this->u32_1176; /*0x4a8cee*/
     IDA_LOWORD(aP1) = v8 + this->u32_1174; /*0x4a8cf8*/
     IDA_HIWORD(aP1) = v7; /*0x4a8cfd*/
+// 0x4a95a0
     return MapClass::SetCellFlagsAlongPath(&aP1, (unsigned short *)1); /*0x4a8d11*/
   }
   return result; /*0x4a8d17*/
@@ -234,6 +235,7 @@ BOOL Mouse::IsButtonDown(unsigned char a1)
   v1 = a1; /*0x54f5c5*/
   if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 ) /*0x54f5e2*/
     v1 = 2 - (a1 != 1); /*0x54f5eb*/
+// 0x53ec90
   return Mouse::GetKeyState(v1) != 0; /*0x54f600*/
 }
 } // namespace gamemd

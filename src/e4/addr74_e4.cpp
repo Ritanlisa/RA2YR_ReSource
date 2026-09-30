@@ -707,6 +707,7 @@ void * globalHelper_04BB20(ObjectClass * Source, int a2)
   LABEL_6:
     v5 = (VoxelAnimTypeClass *)RA2_OPNEW(0x308u); /*0x74bb73*/
     if ( v5 ) /*0x74bb82*/
+// 0x74ad80
       return VoxelAnimTypeClass::Constructor(v5, Source); /*0x74bb8f*/
     return 0; /*0x74bb82*/
   }

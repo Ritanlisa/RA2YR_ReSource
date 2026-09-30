@@ -2685,6 +2685,7 @@ char Audio_Render(unsigned int * a0, SomeVoxelCache * edx0, ObjectClass * aP2, f
   v16[1] = v10[1]; /*0x753dac*/
   v16[2] = v10[2]; /*0x753dbe*/
   Info = VoxelSection::GetInfo(a0, edx0, aP2); /*0x753dc2*/
+// 0x7586f0
   return VoxelAnim::ComputeTransform(v17, v16, a7, *(uint8_t *)(Info + 163)); /*0x753de7*/
 }
 } // namespace gamemd
@@ -2765,6 +2766,7 @@ int sub_7B84D0()
   if ( !dword_B7816C ) /*0x7b84d7*/
   {
     if ( dword_B78164 ) /*0x7b84e1*/
+// 0x7ba090
       return WWMouseClass::UpdateCursorMovement((LONG *)dword_B78164); /*0x7b84e3*/
   }
   return result; /*0x7b84e8*/

@@ -702,6 +702,7 @@ int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
   int v8; // edx
 
   if ( a3 ) /*0x5519b9*/
+// 0x551a90
     return DisplayClass::InsertPriorityText((unsigned int *)this, aP1) != 0; /*0x5519ca*/
   v5 = this->u32_8; /*0x5519cf*/
   if ( this->Count >= v5 ) /*0x5519d7*/
@@ -975,6 +976,7 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   Tactical::MouseOver(&v12, v9, v14, &v10, &v8[1], &a2); /*0x4aacd4*/
   if ( *(unsigned int *)v9 != dword_88095C ) /*0x4aace5*/
     Tactical::MouseMove((Tactical *)&dword_87F7E8, v11, v9); /*0x4aad04*/
+// 0x4e1530
   return COMObject::ActivateThunk(0, a3, 0); /*0x4aad19*/
 }
 } // namespace gamemd

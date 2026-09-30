@@ -1582,6 +1582,7 @@ char E4Recv_483710::sub_483710()
     return 0; /*0x48377c*/
   }
   v4 = FindBuildingByTiberiumType(this->u32_44); /*0x48376b*/
+// 0x487190
   return Crate::FindPlacement(v4, 1); /*0x48377a*/
 }
 } // namespace gamemd
@@ -1750,6 +1751,7 @@ char E4Recv_4879B0::sub_4879B0()
   v6[0] = v1; /*0x4879e9*/
   v6[1] = v2; /*0x4879f3*/
   v6[2] = inited; /*0x4879f7*/
+// 0x5865e0
   return Game::Stub3((int)v6); /*0x487a00*/
 }
 } // namespace gamemd
@@ -1800,10 +1802,12 @@ int E4Recv_488210::sub_488210(unsigned int a2, unsigned int * a3, int a4)
     if ( IDA_BYTE1(this->fallRate) ) /*0x48821d*/
     {
       GadgetClass::Hide(); /*0x488224*/
+// 0x723ec0
       return GadgetClass::ProcessMouseOver(a2, a3, 0); /*0x48823a*/
     }
     GadgetClass::Show(); /*0x48823d*/
   }
+// 0x723ec0
   return GadgetClass::ProcessMouseOver(a2, a3, 0); /*0x488238*/
 }
 } // namespace gamemd
@@ -1882,6 +1886,7 @@ int E4Recv_4887F0::sub_4887F0()
   }
   *((unsigned char *)v3 + 13) = 0; /*0x488834*/
   v3[2] = 0; /*0x488837*/
+// 0x557600
   return ListClass::Destruct(); /*0x48883f*/
 }
 } // namespace gamemd
@@ -2047,6 +2052,7 @@ int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, Coord
   if ( aP2 == 2 /*0x48a54f*/
     && *(unsigned char *)(aP1 + 333)
     && (*((unsigned int *)Coord::To_Cell(&dword_87F7E8, aP3) + 80) & 0x100) == 0
+// 0x578080
     && aP3[2] < Cell::GetGroundHeight(aP3) + 2 * dword_89E870 )
   {
     v6 = *((unsigned int *)dword_8871E0 + 756); /*0x48a557*/

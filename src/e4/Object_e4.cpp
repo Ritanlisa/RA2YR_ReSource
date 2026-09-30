@@ -1705,6 +1705,7 @@ char Object::CheckState(IUnknown * aP1, int a3)
   if ( CellClass::FindInfantry(v5, 0) ) /*0x5fd2ba*/
     return 0; /*0x5fd2c4*/
   else
+// 0x5f4ec0
     return ObjectClass::Deploy(); /*0x5fd2d2*/
 }
 } // namespace gamemd
@@ -1736,6 +1737,7 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
 namespace gamemd {
 int Object::SaveObject(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x5fd964*/
 }
 } // namespace gamemd
@@ -1785,6 +1787,7 @@ char sub_637DD0(char a1, int a2, int a3, int a4, int a5, int a6, int a7, short a
     qmemcpy(v29, &a1, sizeof(v29)); /*0x637df0*/
     IDA_LOWORD(v30) = a28; /*0x637df2*/
     IDA_BYTE2(v30) = IDA_BYTE2(a28); /*0x637df4*/
+// 0x6521c0
     return Network::RecordEvent( /*0x637df5*/
              *(int64_t *)v29,
              *(int *)&v29[8],

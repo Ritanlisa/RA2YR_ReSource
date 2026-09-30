@@ -1271,6 +1271,7 @@ void * globalHelper_028F70(AbstractClass * Source, int a2)
   LABEL_6:
     v5 = (AnimTypeClass *)RA2_OPNEW(0x378u); /*0x428fc3*/
     if ( v5 ) /*0x428fd2*/
+// 0x427530
       return AnimTypeClass::Construct(v5, Source); /*0x428fdf*/
     return 0; /*0x428fd2*/
   }

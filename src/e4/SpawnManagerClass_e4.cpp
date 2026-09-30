@@ -331,6 +331,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   if ( owner ) /*0x6b7ea9*/
   {
     v14 = (*((int (__stdcall **)(void **))*(unsigned short *)&owner->uniqueId + 4))(&owner->uniqueId); /*0x6b7eb2*/
+// 0x4a1d50
     return Power::TimerProcess(v14); /*0x6b7eb8*/
   }
   return result; /*0x6b7ebd*/

@@ -90,6 +90,7 @@ int sub_6863E0()
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x686536*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x68654a*/
     Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], stru_A8EB00.ObjectTypeClass[32]); /*0x686553*/
+// 0x4f4480
   return TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x686562*/
 }
 }

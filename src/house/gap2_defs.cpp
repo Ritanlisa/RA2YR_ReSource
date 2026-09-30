@@ -336,6 +336,7 @@ int HouseClass::Render(int a2, int a3, int a4, int a5, int a6) {
           v8 = *v7; /*0x431745*/
           if ( *v7 /*0x431794*/
             && (*(unsigned char *)(v8 + 12) & 1) != 0
+// 0x4f9a10
             && HouseClass::IsAllied(HouseClass_Player, *(unsigned int *)(v8 + 272))
             && (uint8_t)HouseClass::IsAlliedWith(
                                   *(void **)&HouseClass_Array->gap0[4 * *(unsigned int *)(v8 + 272)],
@@ -444,8 +445,10 @@ int HouseClass::Process() {
     {
       v4 = *(unsigned int *)(this->builtInfantryTypes[126] + 5468); /*0x4587a0*/
       if ( v4 <= 0 ) /*0x4587a8*/
+// 0x4f9790
         return HouseClass::ProcessPowerDrain((int *)this->planningPaths[3], -v4); /*0x4587c4*/
       else
+// 0x4f9950
         return HouseClass::AddPower((HouseClass *)this->planningPaths[3], v4); /*0x4587b1*/
     }
   }
@@ -519,6 +522,7 @@ int HouseClass::SumPowerDrain() {
 // 0x474B20
 namespace gamemd { 
 int HouseClass::WriteBuildingTypeNameToINI(void* aP1, void* a2, int a4) {
+// 0x528660
   return INIClass::SetString(this, aP1, a2, *(char **)(*((unsigned int *)dword_B054D4 + a4) + 772)); /*0x474b43*/
 }
 }
@@ -567,6 +571,7 @@ int HouseClass::WriteHouseListToINI(void* aP1, void* a2, int a4) {
   }
   while ( v8 ); /*0x4753a3*/
   if ( v4 ) /*0x4753ae*/
+// 0x528660
     return INIClass::SetString(this, aP1, a2, Source); /*0x4753c9*/
   else
     return 1; /*0x4753d8*/
@@ -578,6 +583,7 @@ int HouseClass::ReadIntFromINI(void* a1, void* a2, int a3) {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
   if ( INIClass::GetString((INIClass *)this, a1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x4759a2*/
+// 0x48db80
     return HouseClass::FindHouseIndexByName((HouseClass *)Destination); /*0x4759af*/
   else
     return a3; /*0x4759bd*/
@@ -586,6 +592,7 @@ int HouseClass::ReadIntFromINI(void* a1, void* a2, int a3) {
 // 0x4759D0
 namespace gamemd { 
 int HouseClass::updateBuildingProduction(void* a1, void* a2, int a3) {
+// 0x528660
   return INIClass::SetString(this, a1, a2, (&off_7E1B60)[a3]); /*0x4759eb*/
 }
 }
@@ -1649,6 +1656,7 @@ int HouseClass::Destruct() {
   }
   this->q045 = 0; /*0x4f7836*/
   this->conYardsCapacity = 0; /*0x4f7839*/
+// 0x4101f0
   return AbstractClass::DTOR(this); /*0x4f7841*/
 }
 }
@@ -2101,6 +2109,7 @@ int HouseClass::CanBuild(int a1, int a2, int a3) {
       if ( v54 <= 0 ) /*0x4f81c6*/
       {
         v55 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 64))(a1); /*0x4f81cc*/
+// 0x49fae0
         return DynamicVector::GetOrGrow(&this->q1568, v55) < (int)abs32(v54); /*0x4f81f1*/
       }
       v56 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 64))(a1); /*0x4f8200*/
@@ -2548,6 +2557,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
     if ( dword_A8E7AC ) /*0x4f9c0d*/
       *(&this->u32_2C8) |= 1 << *(unsigned int *)(a1 + 48); /*0x4f9c19*/
     if ( *(unsigned int *)&unk_A8B238 != 4 && dword_A8E7AC ) /*0x4f9c31*/
+// 0x4adcd0
       return Radar::UpdateReveal(0, 0); /*0x4f9c31*/
     v9 = this->u32_1EC; /*0x4f9c37*/
     if ( !*(unsigned int *)&unk_A8B238 ) /*0x4f9c3f*/
@@ -2623,6 +2633,7 @@ int HouseClass::HandleAlliance(int a1, int a2) {
     {
   LABEL_79:
       MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x4f9f3a*/
+// 0x4adcd0
       return Radar::UpdateReveal(0, 0); /*0x4f9f4f*/
     }
     if ( this ) /*0x4f9e12*/
@@ -3514,6 +3525,7 @@ int HouseClass::DefeatPlayer() {
     {
   LABEL_104:
       Debug::Log(); /*0x4fc6a7*/
+// 0x4fc9e0
       return HouseClass::CheckWinCondition((HouseClass *)dword_A83D4C, 0); /*0x4fc6b7*/
     }
     v30 = dword_A8B23C; /*0x4fc5be*/
@@ -3562,6 +3574,7 @@ int HouseClass::DefeatPlayer() {
     {
   LABEL_102:
       Debug::Log(); /*0x4fc67b*/
+// 0x4fcbd0
       return HouseClass::CheckDefeat((HouseClass *)dword_A83D4C, 0); /*0x4fc69a*/
     }
     goto LABEL_104; /*0x4fc66d*/
@@ -4518,6 +4531,7 @@ int HouseClass::AutoBuild() {
     if ( Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99) < *(unsigned int *)(*((unsigned int *)g_RulesClass_Instance /*0x4fe5bd*/
                                                                                       + 886)
                                                                                     + 4 * this->q184)
+// 0x50c340
       && HouseClass::FindBuildLocation(this, v25) )
     {
       v26 = (*(int (__thiscall **)(int, unsigned int *))(this->q5704 + 16))(&this->u32_15C10, v81); /*0x4fe5cf*/
@@ -5394,6 +5408,7 @@ int HouseClass::GetBuildLimit(int a1, int a2, int a3) {
 // 0x500910
 namespace gamemd
 {
+// 0x500910
 int HouseClass::GetFactoryCount(int a1, int a2)
 {
   int *p_numShipyards; // eax
@@ -5578,6 +5593,7 @@ int HouseClass::ReadFromINI(void* a1) {
                               (uint8_t *)g_INI_Key_TechLevel,
                               *((unsigned int *)dword_A8B230 + 1173));
   this->u32_1DC = 100 /*0x500bd0*/
+// 0x5276d0
                           * INIClass::ReadInt_Overwrite(
                               (bool *)a1,
                               (uint8_t *)v38,
@@ -5796,6 +5812,7 @@ int HouseClass::SaveToINI(void* a1) {
   HouseClass::WriteHouseListToINI(Block, aAllies, v4); /*0x501359*/
   if ( this->u32_16009 ) /*0x50135e*/
     INIClass::SetString(a1, (uint8_t *)Block, g_INI_Key_UIName, (char *)(this + 90121)); /*0x50137b*/
+// 0x42ed60
   return HouseClass::SaveTriggerNodeData((int)a1, Block); /*0x501391*/
 }
 }
@@ -9125,6 +9142,7 @@ int HouseClass::Fire_ParaDrop(int a2) {
   if ( (unsigned short)v10 != v4 || (result = stru_A8EB00.?[950], IDA_HIWORD(v10) != *(unsigned short *)&stru_A8EB00.?[950]) ) /*0x509dcd*/
   {
     v9 = (*(int (__thiscall **)(int *, char *))(v2->supers[0] + 16))(v2->supers, &a2); /*0x509de5*/
+// 0x4fae50
     return SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)v2, v9, (int)&v10); /*0x509deb*/
   }
   return result; /*0x509df0*/
@@ -9163,6 +9181,7 @@ int HouseClass::Fire_LightningStorm(int a1) {
       || (result = stru_A8EB00.?[950], IDA_HIWORD(v8) != *(unsigned short *)&stru_A8EB00.?[950]) )
     {
       v7 = (*(int (__thiscall **)(int, char *))(this->supers + 16))(&this->u32_950, &a1); /*0x509ea2*/
+// 0x4fae50
       return SuperWeapon::FireSuperWeaponHouseClass((SuperWeapon *)this, v7, (int)&v8); /*0x509ea8*/
     }
   }
@@ -9345,6 +9364,7 @@ int HouseClass::Fire_PsyDom(int a1) {
                       continue; /*0x50a276*/
                   }
                   if ( !(*((uint8_t (__thiscall **)(TechnoClass *))v11->RadioClass + 21))(v11) /*0x50a285*/
+// 0x53c450
                     && TechnoClass::CanBePermaMC(v11) )
                   {
                     ++v19; /*0x50a28e*/
@@ -11343,6 +11363,7 @@ int HouseClass::ProcessPower() {
   Power::FlagProcess(v16, v14); /*0x5f631f*/
   Power::TimerProcess(this->location[0]); /*0x5f632d*/
   Power::TimerProcess(this->location[1]); /*0x5f633b*/
+// 0x4a1d50
   return Power::TimerProcess(this->location[2]); /*0x5f634e*/
 }
 }
@@ -11707,6 +11728,7 @@ int HouseClass::RouteFactoryRemoval(int a1, int a2, void* a3) {
       v5 = -1; /*0x6abb0e*/
       break;
   }
+// 0x6abb60
   return HouseClass::RemoveFromProductionQueue((int)&this->builtAircraftTypes[997 * v5 + 131], a3); /*0x6abb59*/
 }
 }

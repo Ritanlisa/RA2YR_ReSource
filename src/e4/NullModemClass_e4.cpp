@@ -31,6 +31,7 @@ int NullModemClass::Flush(int a2)
 
   result = this->u32_38; /*0x5f1f00*/
   if ( result ) /*0x5f1f05*/
+// 0x48baa0
     return Rect::SetRedraw(result->vtable2, 1); /*0x5f1f0c*/
   return result; /*0x5f1f11*/
 }

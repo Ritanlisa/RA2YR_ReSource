@@ -271,6 +271,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   v41 = 0; /*0x531647*/
   Vector::Clear(v40); /*0x531652*/
   v39[0] = (unsigned int)&off_7E1668; /*0x53165b*/
+// 0x431b80
   return BufferIOFileClass::Dtor(v39); /*0x531668*/
 }
 }
@@ -1659,6 +1660,7 @@ CreateTeamCommand * * InitCommands()
     SortedArray::RemoveByKey((int)&dword_87F5D8[42], &v175); /*0x533cfb*/
   }
   v175 = 32; /*0x533d0f*/
+// 0x5387d0
   return SortedArray::Append((int)&dword_87F5D8[42], &v175, &v174); /*0x533d18*/
 }
 } // namespace gamemd
@@ -3605,6 +3607,7 @@ int E4Recv_538C40::sub_538C40()
   v4 = 0; /*0x538c96*/
   Vector::Clear((int)v3); /*0x538c9e*/
   v2.FileClass = (FileClass)&off_7E1668; /*0x538ca7*/
+// 0x431b80
   return BufferIOFileClass::Dtor(&v2); /*0x538cb4*/
 }
 } // namespace gamemd
@@ -3628,6 +3631,7 @@ int E4Recv_538CC0::sub_538CC0()
   v4 = 0; /*0x538d0f*/
   Vector::Clear((int)v3); /*0x538d17*/
   v2.FileClass = (FileClass)&off_7E1668; /*0x538d20*/
+// 0x431b80
   return BufferIOFileClass::Dtor(&v2); /*0x538d2d*/
 }
 } // namespace gamemd

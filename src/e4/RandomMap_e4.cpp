@@ -2197,6 +2197,7 @@ int RandomMap::CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3)
             IDA_LOWORD(aP3) = v37 - 1; /*0x590f97*/
             IDA_HIWORD(a1) = v38 - 4; /*0x590f9c*/
             IDA_HIWORD(aP3) = v38 + 4; /*0x590fb1*/
+// 0x592440
             return RandomMap::CheckPlacementArea((int16_t *)&a1, (int16_t *)&aP3, a2); /*0x590fbb*/
           }
         }
@@ -3398,6 +3399,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   if ( v3 ) /*0x59892a*/
     (**(void (***)(INIClass *, int))v3->__pad_0)(v3, 1); /*0x598932*/
   CCFileClass::Reset(&v29); /*0x598938*/
+// 0x535a70
   return CCFileClass::Destruct(&v29); /*0x598946*/
 }
 }
@@ -3812,6 +3814,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
       Multiplayer::ShowProgress(&g_GameMode_Current, 99); /*0x5994f9*/
     else
       Network::UpdateLatencyDisplay((int)g_UIManager, 0, 0.0, NAN); /*0x599510*/
+// 0x643e70
     return VtableStub::643E70(g_UIManager); /*0x59951a*/
   }
 }

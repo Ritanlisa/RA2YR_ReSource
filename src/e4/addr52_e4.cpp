@@ -2787,6 +2787,7 @@ Straw * * Random_Init()
     qmemcpy(&dword_A8B230[14].NeedsSaveOrLink, v4, 0x3F4u); /*0x52fe80*/
     SeedInitRNG((ObjectClass *)v4, dword_A8ED94); /*0x52fe8d*/
     qmemcpy(&Randomizer_Global, v4, 0x3F4u); /*0x52feab*/
+// 0x4068e0
     return Debug::Log(); /*0x52fead*/
   }
   else
@@ -2837,6 +2838,7 @@ void sub_52FFD0(char a1)
   if ( a1 ) /*0x52ffe3*/
   {
     IDA_LOBYTE(v3) = 1; /*0x52ffed*/
+// 0x4f4780
     return Frame::Present(v3, 0); /*0x52ffef*/
   }
   return result; /*0x52ffe2*/

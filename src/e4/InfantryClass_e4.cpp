@@ -300,6 +300,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
     }
   }
   *(unsigned int *)&this->isAliveFlag = 0; /*0x517f83*/
+// 0x4d3590
   return FootClass::Destruct((FootClass *)this); /*0x517f8e*/
 }
 // 0x7447A0

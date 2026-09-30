@@ -530,6 +530,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   }
   v15 = (*(int (**)(int, int))(((unsigned int)(this->u32_146))))(this, v10); /*0x7b25b9*/
   SendMessageA(g_hWnd, v15, 0, 2); /*0x7b25c3*/
+// 0x54f000
   return EventQueue::Process(g_BinkMoviePlayer); /*0x7b25d4*/
 }
 } // namespace gamemd

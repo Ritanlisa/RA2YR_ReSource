@@ -328,6 +328,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   v40 = 0; /*0x778469*/
   Vector::Clear((int)v39); /*0x778474*/
   *(unsigned int *)v38.CDFileClass = &off_7E1668; /*0x77847d*/
+// 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v38); /*0x77848a*/
 }
 }

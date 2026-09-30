@@ -766,6 +766,7 @@ void ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
   }
   v4 = *(void **)HouseClass_Array->gap0; /*0x6586a4*/
   TabClass::DrawPower(hDlg, 0, *(void **)&HouseClass_Array->gap0[4 * v1]); /*0x6586b4*/
+// 0x658330
   return TabClass::DrawPower(hDlg, (void *)v1, v4); /*0x6586c3*/
 }
 }

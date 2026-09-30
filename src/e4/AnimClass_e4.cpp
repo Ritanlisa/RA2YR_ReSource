@@ -141,6 +141,7 @@ void AnimClass::Destruct(AbstractClass * a2)
       while ( v10 < dword_A8E9B8 ); /*0x422b0c*/
     }
   }
+// 0x5f3b80
   return ObjectClass::Dtor((ObjectClass *)a2); /*0x422abd*/
 }
 }
@@ -796,6 +797,7 @@ int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   LABEL_6:
     *(unsigned int *)aP0->__pad_D8 = -1; /*0x4253e5*/
   }
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x4253ff*/
 }
 }
@@ -1859,6 +1861,7 @@ int AnimClass::ProcessFrame()
   v4 = *(unsigned int *)&this->__pad_120[16] - 1; /*0x761074*/
   *(unsigned int *)&this->__pad_120[16] = v4; /*0x761075*/
   if ( v4 >= 0 ) /*0x76107b*/
+// 0x5f3e70
     return ObjectClass::DetectCloaked((ObjectClass *)this); /*0x76108f*/
   else
     return (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 62))(this); /*0x761081*/

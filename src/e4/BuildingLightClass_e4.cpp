@@ -283,6 +283,7 @@ int BuildingLightClass::SD_vt03(int a1, unsigned int * a2)
 namespace gamemd {
 int BuildingLightClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x4369d4*/
 }
 } // namespace gamemd

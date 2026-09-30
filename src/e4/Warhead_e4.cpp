@@ -1349,6 +1349,7 @@ int Warhead::ProcessDamageArea()
   if ( v21 ) /*0x65b77a*/
   {
     TacticalClass::UpdateScrollTarget(v21, v7, v10, v12, v15, 0); /*0x65b7e8*/
+// 0x65b9c0
     return RadSiteClass::Radiate(); /*0x65b7ef*/
   }
   else
@@ -1361,6 +1362,7 @@ int Warhead::ProcessDamageArea()
     *(void **)&this->u32_24 = v23; /*0x65b7bb*/
     v23[13] = 0; /*0x65b7be*/
     Trigger::EnableOnce(*((Trigger **)this + 9), 0); /*0x65b7ca*/
+// 0x65b9c0
     return RadSiteClass::Radiate(); /*0x65b7d1*/
   }
 }

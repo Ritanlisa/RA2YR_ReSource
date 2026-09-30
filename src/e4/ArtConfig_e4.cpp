@@ -50,6 +50,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   v13 = (unsigned int)(0);
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = (unsigned int)&off_7E1668; /*0x76fcf8*/
+// 0x431b80
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
 }
 } // namespace gamemd

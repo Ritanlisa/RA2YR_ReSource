@@ -2573,6 +2573,7 @@ int RulesClass::Addition() {
   Rules::ReadMiscINI((Rules *)this); /*0x668f56*/
   RulesClass::LoadSpecialWeapons(this); /*0x668f5e*/
   SmallFunc_721D10(v1->__pad_0); /*0x668f65*/
+// 0x674650
   return SidebarClass::ReadButtonList((SidebarClass *)this); /*0x668f86*/
 }
 }

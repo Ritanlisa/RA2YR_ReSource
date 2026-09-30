@@ -117,6 +117,7 @@ char Credits::Screen()
     v13 = 0; /*0x52cd45*/
     Vector::Clear(v12); /*0x52cd49*/
     v11[0] = (unsigned int)&off_7E1668; /*0x52cd52*/
+// 0x431b80
     return BufferIOFileClass::Dtor(v11); /*0x52cd5a*/
   }
   return result; /*0x52cd5f*/

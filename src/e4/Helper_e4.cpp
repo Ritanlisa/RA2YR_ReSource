@@ -97,6 +97,7 @@ unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char *
 
   v6 = (unsigned int *)(RA2_OPNEW(0x40u));
   if ( v6 ) /*0x5d81bc*/
+// 0x5c6150
     return MPBattleClass::MPManBattleClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d81de*/
   else
     return 0; /*0x5d81e6*/

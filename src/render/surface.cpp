@@ -798,6 +798,7 @@ bool DSurface::Blit(
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
+// 0x7bbb90
     return XSurface::BlitPart((XSurface *)this, (void **)a3, v10, (void **)a6, (void **)a7, 1); /*0x4bb2a2*/
   v17 = a3[1]; /*0x4bb2a7*/
   v18 = a3[2]; /*0x4bb2aa*/
@@ -998,6 +999,7 @@ bool DSurface::FillRectEx(
            this->DSurface_field_0x1C[0],
            1) )
     {
+// 0x7bb050
       return XSurface::FillRectEx((XSurface *)this, (unsigned int *)a2, (int *)a3, a4); /*0x4bb81d*/
     }
     if ( g_DDraw_Initialized || stru_A8EB00.?[412] ) /*0x4bb690*/

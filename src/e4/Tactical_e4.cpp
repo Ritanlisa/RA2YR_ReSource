@@ -1170,6 +1170,7 @@ int Tactical::UpdateUIVisibility()
         DialogControl::Hide(byte_B0B328); /*0x6a6753*/
       result = DialogControl::IsHidden(g_SidebarFlag); /*0x6a675d*/
       if ( !(unsigned char)result ) /*0x6a6764*/
+// 0x4e1450
         return DialogControl::Hide(g_SidebarFlag); /*0x6a6764*/
       return result; /*0x6a6764*/
     }
@@ -1178,6 +1179,7 @@ int Tactical::UpdateUIVisibility()
     result = DialogControl::IsHidden(g_SidebarFlag); /*0x6a6788*/
     if ( !(unsigned char)result ) /*0x6a678f*/
       return result; /*0x6a678f*/
+// 0x4e1460
     return DialogControl::Show(g_SidebarFlag); /*0x6a6796*/
   }
   v1 = 26; /*0x6a6631*/
@@ -1196,12 +1198,14 @@ int Tactical::UpdateUIVisibility()
     result = DialogControl::IsHidden(g_SidebarFlag); /*0x6a66d3*/
     if ( !(unsigned char)result ) /*0x6a66da*/
       return result; /*0x6a66da*/
+// 0x4e1460
     return DialogControl::Show(g_SidebarFlag); /*0x6a66da*/
   }
   if ( !(uint8_t)DialogControl::IsHidden(byte_B0B328) ) /*0x6a668c*/
     DialogControl::Hide(byte_B0B328); /*0x6a669a*/
   result = DialogControl::IsHidden(g_SidebarFlag); /*0x6a66a4*/
   if ( !(unsigned char)result ) /*0x6a66ab*/
+// 0x4e1450
     return DialogControl::Hide(g_SidebarFlag); /*0x6a66b1*/
   return result; /*0x6a679b*/
 }

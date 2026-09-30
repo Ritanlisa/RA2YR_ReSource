@@ -304,6 +304,7 @@ AbstractClass * * HandleWOLForwardingError()
       {
   LABEL_26:
         v10 = GetStringCSF(aTxtFailedToTal, 0, g_Str_File_wonline_cpp, 18888); /*0x7936d5*/
+// 0x5e2700
         return Dialog::ShowMessage(-1, (size_t)v10); /*0x7936e2*/
       }
     }
@@ -2302,6 +2303,7 @@ AbstractClass * * NetworkGame_Init()
   *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) = 0; /*0x79758c*/
   byte_B77A04 = 0; /*0x797591*/
   byte_B76568[0] = 0; /*0x797596*/
+// 0x5e7460
   return Scenario::PreGameInit(); /*0x7975a0*/
 }
 }

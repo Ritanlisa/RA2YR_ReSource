@@ -3040,6 +3040,7 @@ int Dialog::FindGameUI()
     {
       result = Dialog::FindByHandle((void *)0xBC); /*0x5e26e1*/
       if ( !result ) /*0x5e26e8*/
+// 0x775940
         return Dialog::FindByHandle((void *)0xBD); /*0x5e26ef*/
     }
   }
@@ -3286,6 +3287,7 @@ HWND Dialog::Show()
 {
   ShowWindow(1); /*0x622806*/
   SetForegroundWindow(); /*0x62280d*/
+// 0x54f720
   return Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x62281e*/
 }
 } // namespace gamemd
@@ -3339,6 +3341,7 @@ namespace gamemd {
 BOOL Dialog::GetField()
 {
   EnumChildWindows(DialogClass::Reposition, 1); /*0x775bab*/
+// 0x775bc0
   return DialogClass::Reposition(0); /*0x775bb9*/
 }
 } // namespace gamemd

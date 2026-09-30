@@ -199,6 +199,7 @@ void UnitTypeClass::UnitTypeClass_ConstructUnit()
 
   v3 = (int *)RA2_OPNEW(0x8E8u); /*0x747568*/
   if ( v3 ) /*0x747572*/
+// 0x7353c0
     return UnitClass::Construct(v3, (int)this, ppv); /*0x74757c*/
   else
     return 0; /*0x747585*/
@@ -575,6 +576,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate()
   LABEL_6:
     v3 = (VoxelAnimTypeClass *)RA2_OPNEW(0x308u); /*0x74b9b6*/
     if ( v3 ) /*0x74b9c5*/
+// 0x74ad80
       return VoxelAnimTypeClass::Constructor(v3, Source); /*0x74b9d1*/
     return 0; /*0x74b9c5*/
   }
@@ -683,6 +685,7 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
   IDA_LOBYTE(v10) = this->IsSimpleDeployer; /*0x747fee*/
   v11 = Power::FlagProcess((Power *)a2, v10); /*0x747ff7*/
   IDA_LOBYTE(v11) = this->UseTurretShadow; /*0x747ffc*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v11); /*0x74800a*/
 }
 // 0x748010

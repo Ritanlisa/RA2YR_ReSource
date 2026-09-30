@@ -50,6 +50,7 @@ int sub_6D1130()
   dword_B0CC70 = 0; /*0x6d11bc*/
   dword_B0CC60 = 5; /*0x6d11c2*/
   Rect_Point::Set(stru_B0CC40, *(unsigned int *)dword_B0FC64, *((unsigned int *)dword_B0FC64 + 1)); /*0x6d11e2*/
+// 0x69de00
   return ShapeButton::SetShape((int)stru_B0CC40, (int)v0, 0, 0); /*0x6d11f4*/
 }
 }
@@ -207,6 +208,7 @@ char E4Recv_6D1570::sub_6D1570()
     v2[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d15bf*/
     v2[3] = *(unsigned int *)&stru_B0CC40.Visible; /*0x6d15c7*/
     HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], dword_B0CC64); /*0x6d15cb*/
+// 0x724580
     return CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)v2); /*0x6d15db*/
   }
   return result; /*0x6d15e0*/
@@ -521,6 +523,7 @@ long long sub_6D6A90(unsigned int * a1)
   v2 = a1[1]; /*0x6d6aa5*/
   v4[0] = *a1; /*0x6d6aa8*/
   v4[1] = v2; /*0x6d6ab3*/
+// 0x47b3a0
   return Isometric::InitTables((int)v1, v4); /*0x6d6abc*/
 }
 } // namespace gamemd

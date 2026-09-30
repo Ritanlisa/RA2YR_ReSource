@@ -453,6 +453,7 @@ char Game_CheckSettingsChanged(char a1, char a2)
         Game::EncodeGameSetupState(Buffer); /*0x5e356f*/
       else
         Game::BuildGameSettingsPacket(Buffer); /*0x5e3585*/
+// 0x5e3720
       return Network::SendOptionsGame(Buffer); /*0x5e3578*/
     }
   }
@@ -502,6 +503,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
         {
           v11 = *(unsigned int *)(dword_A8DA78 + 4 * v6); /*0x5e3a88*/
           String = GetStringCSF(aGuiHostmaptran, 0, g_Str_File_netshare_cpp, 1173); /*0x5e3a93*/
+// 0x5e2700
           return Dialog::ShowMessage(-1, (size_t)String, v11, 11055906); /*0x5e3a9b*/
         }
       }
@@ -509,6 +511,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
       {
         v10 = (wchar_t *)((int)((wchar_t *)(*(unsigned int *)(dword_A8DA78 + 4 * v6))));
         v8 = (wchar_t *)(GetStringCSF(g_Str_GUI_HostNoMap, 0, g_Str_File_netshare_cpp, 1169));
+// 0x5e2700
         return Dialog::ShowMessage(-1, (size_t)v8, v10, 11055906); /*0x5e3a62*/
       }
     }
@@ -1524,6 +1527,7 @@ LABEL_171:
         {
           CCFileClass::Construct(v200, (char *)(v138 + 88));
           if ( CCFileClass::Open(v200, 0)
+// 0x473c00
             && CCFileClass::GetSize(v200) == *(unsigned int *)&HouseClass_Player[32184] )
           {
             *(unsigned int *)&v198[112] = 0;
@@ -2599,6 +2603,7 @@ char sub_5E66F0()
   }
   else if ( g_GameMode_Current[0] == 4 ) /*0x5e6875*/
   {
+// 0x77f900
     return Game::ProcessIdle(); /*0x5e6877*/
   }
   else
@@ -3128,6 +3133,7 @@ void Player_AssignColor(HWND hDlg, void * nIDDlgItem)
             && v7 != (wchar_t *)g_Lobby_PlayerTeam
             && v7 != (wchar_t *)g_Lobby_PlayerSide
             && v7 != (wchar_t *)g_Lobby_PlayerColor
+// 0x696f20
             && SessionClass::GetPlayerColor((SessionClass *)v7) == ComboBoxSelectedRaw )
           {
             break; /*0x5e9c7b*/
@@ -3151,6 +3157,7 @@ void Player_AssignColor(HWND hDlg, void * nIDDlgItem)
     SessionClass::AssignColor((SessionClass *)&dword_A8B238, ComboBoxSelectedRaw, 0); /*0x5e9ca2*/
     result = dword_A8DA84; /*0x5e9caf*/
     if ( dword_A8DA84 ) /*0x5e9cb6*/
+// 0x696fc0
       return SessionClass::SetPlayerColor((int *)*dword_A8DA78, ComboBoxSelectedRaw); /*0x5e9cc0*/
   }
   else
@@ -3190,6 +3197,7 @@ void Player_AssignSide(HWND hDlg, int nIDDlgItem)
             && v7 != (wchar_t *)g_Lobby_PlayerTeam
             && v7 != (wchar_t *)g_Lobby_PlayerSide
             && v7 != (wchar_t *)g_Lobby_PlayerColor
+// 0x696f50
             && SessionClass::GetOption((int *)v7) == v4 )
           {
             break; /*0x5e9d5b*/
@@ -3212,6 +3220,7 @@ void Player_AssignSide(HWND hDlg, int nIDDlgItem)
   LABEL_19:
     result = dword_A8DA84; /*0x5e9d82*/
     if ( dword_A8DA84 ) /*0x5e9d89*/
+// 0x696ff0
       return SessionClass::SetOption((int *)*dword_A8DA78, v4); /*0x5e9d93*/
   }
   else
@@ -3235,6 +3244,7 @@ void ProcessNetworkLobbyOption(SessionClass * hDlg, void * nIDDlgItem)
     SetupLobbyPlayerSlots(hDlg, (int)nIDDlgItem, ComboBoxSelectedRaw2); /*0x5e9dd4*/
     result = dword_A8DA84; /*0x5e9dd9*/
     if ( dword_A8DA84 ) /*0x5e9de0*/
+// 0x697020
       return SessionClass::SetOption2((int *)*dword_A8DA78, ComboBoxSelectedRaw2); /*0x5e9dea*/
   }
   else
@@ -3655,6 +3665,7 @@ int sub_5EA920(int a1)
     if ( v3 == (wchar_t *)g_Lobby_MaxPlayers ) /*0x5ea993*/
       return -3; /*0x5ea996*/
     else
+// 0x696f10
       return SessionClass::GetPlayerSide((int)v3); /*0x5ea99f*/
   }
   return result; /*0x5ea972*/
@@ -5099,6 +5110,7 @@ void SetupMultiplayerLobbyPlayers(SkirmishDialog * hDlg, int a2)
                 && v26 != (wchar_t *)g_Lobby_PlayerTeam
                 && v26 != (wchar_t *)g_Lobby_PlayerSide
                 && v26 != (wchar_t *)g_Lobby_PlayerColor
+// 0x696f20
                 && SessionClass::GetPlayerColor((SessionClass *)v26) == ComboBoxSelectedRaw )
               {
                 break; /*0x5eda83*/
@@ -5148,6 +5160,7 @@ void SetupMultiplayerLobbyPlayers(SkirmishDialog * hDlg, int a2)
                 && v31 != (wchar_t *)g_Lobby_PlayerTeam
                 && v31 != (wchar_t *)g_Lobby_PlayerSide
                 && v31 != (wchar_t *)g_Lobby_PlayerColor
+// 0x696f50
                 && SessionClass::GetOption((int *)v31) == v28 )
               {
                 break; /*0x5edb5a*/
@@ -5796,6 +5809,7 @@ int Lobby_SelectCountry(HWND a1, void * a2)
     SessionClass::AssignSide((SessionClass *)&dword_A8B238, ComboBoxSelected, 0); /*0x5e9b84*/
     result = dword_A8DA84; /*0x5e9b89*/
     if ( dword_A8DA84 ) /*0x5e9b90*/
+// 0x696f90
       return SessionClass::SetPlayerOption((int *)*dword_A8DA78, ComboBoxSelected); /*0x5e9b9a*/
   }
   else

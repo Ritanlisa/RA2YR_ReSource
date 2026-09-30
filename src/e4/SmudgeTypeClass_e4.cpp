@@ -248,6 +248,7 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 
   v3 = (UnitClass *)RA2_OPNEW(0xB0u); /*0x6b55c8*/
   if ( v3 ) /*0x6b55d2*/
+// 0x6b4a50
     return UnitClass::Create(v3, this, &dword_B0B7A8, -1); /*0x6b55de*/
   else
     return 0; /*0x6b55e7*/
@@ -265,6 +266,7 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
   IDA_LOBYTE(v4) = this->Burn; /*0x6b581a*/
   Power::FlagProcess((Power *)a2, v4); /*0x6b5823*/
   Power::TimerProcess(this->Width); /*0x6b5831*/
+// 0x4a1d50
   return Power::TimerProcess(this->Height); /*0x6b5844*/
 }
 // 0x6B5850

@@ -261,6 +261,7 @@ int AbstractTypeClass::ProcessPower(AbstractClass * aP1)
   AbstractClass::ProcessPower(); /*0x410be9*/
   Checksum::AddString((Checksum *)aP1, (uint8_t *)this->__pad_24); /*0x410bf4*/
   Checksum::AddString((Checksum *)aP1, (uint8_t *)this->Name); /*0x410bff*/
+// 0x4a1db0
   return Checksum::AddString((Checksum *)aP1, (uint8_t *)this->UINameLabel); /*0x410c0f*/
 }
 } // namespace gamemd

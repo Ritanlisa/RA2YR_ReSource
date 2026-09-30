@@ -719,6 +719,7 @@ CampaignClass * * MPCooperative::CopyTo()
     if ( MPCooperative_field_0x40 ) /*0x5c1a5b*/
     {
       if ( (Movie::GetSectionID(MPCooperative_field_0x40, &String2), v3 = (char *)MPCooperative_Copy(v13), v3 != String2) /*0x5c1a86*/
+// 0x775b20
         && Dialog::GetCurrentType() == 107
         || Dialog::GetCurrentType() != 107 )
       {
@@ -749,6 +750,7 @@ CampaignClass * * MPCooperative::CopyTo()
     if ( result ) /*0x5c1c8b*/
     {
       Campaign::SetupMovie((HWND)result); /*0x5c1c90*/
+// 0x5c21d0
       return CampaignCoop::Setup(v12, 1); /*0x5c1c9a*/
     }
     return result; /*0x5c1c9a*/
@@ -1016,6 +1018,7 @@ int MPCooperative::Revert()
   if ( !v6 ) /*0x5c2015*/
     return -2; /*0x5c2017*/
   if ( v6 <= 1 ) /*0x5c2024*/
+// 0x49d9f0
     return SideClass::FindByName(**(SideClass ***)(v5 + 4)); /*0x5c2035*/
   return -2; /*0x5c1fd1*/
 }
@@ -2913,6 +2916,7 @@ char MPCooperative::Write(int a2)
     if ( MPCooperative_field_0x40 ) /*0x5c1d92*/
       String::AssignWideToChar(MPCooperative_field_0x40, (char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c1da0*/
   }
+// 0x5d6310
   return ScenarioClass::MissionStubReturnZero2((int *)a2); /*0x5c1db1*/
 }
 } // namespace gamemd
@@ -2968,6 +2972,7 @@ char MPCooperative::ValidateSettings()
 namespace gamemd {
 int MPCooperative::SaveSettings(HWND hWnd, int a3)
 {
+// 0x5d6540
   return ListBox::FillPlayers(hWnd, a3); /*0x5c2cef*/
 }
 } // namespace gamemd

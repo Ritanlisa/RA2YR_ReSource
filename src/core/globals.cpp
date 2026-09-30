@@ -961,6 +961,7 @@ void NetworkShutdownInterface() {
     v20 = 0; /*0x5fa0a6*/
     v21 = 0; /*0x5fa0aa*/
     v22 = 0; /*0x5fa0ae*/
+// 0x4a1de0
     return Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9e91*/
   }
   if ( v4 < 16 || (v4 & 3) != 0 )

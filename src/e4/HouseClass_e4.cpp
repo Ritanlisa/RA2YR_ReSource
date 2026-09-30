@@ -2948,6 +2948,7 @@ char HouseClass::UpdateAllSilos(int a2, int a3)
 namespace gamemd {
 int HouseClass::MakeAlly(int a2, char a3)
 {
+// 0x4f9b70
   return HouseClass::HandleAlliance(*(unsigned int *)&HouseClass_Array->gap0[4 * a2], a3); /*0x4f9b67*/
 }
 } // namespace gamemd
@@ -3091,6 +3092,7 @@ char HouseClass::ReshroudMap()
 
   result = IDA_BYTE2(this->HouseClass_field_timer_B[2]); /*0x50bd10*/
   if ( !result ) /*0x50bd18*/
+// 0x577ab0
     return ShroudClass::Reset((ShroudClass *)&stru_87F5F0.__pad_58[416], (int)this); /*0x50bd20*/
   return result; /*0x50bd25*/
 }

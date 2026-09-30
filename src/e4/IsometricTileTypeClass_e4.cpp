@@ -50,6 +50,7 @@ int IsometricTileTypeClass::ProcessPower(int * a2)
   Power::TimerProcess(this->u32_2E4); /*0x549c4b*/
   Power::TimerProcess(this->u32_2E8); /*0x549c59*/
   Power::TimerProcess(this->u32_2EC); /*0x549c67*/
+// 0x4a1d50
   return Power::TimerProcess(this->u32_2F0); /*0x549c7a*/
 }
 } // namespace gamemd

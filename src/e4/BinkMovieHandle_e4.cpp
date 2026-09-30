@@ -142,6 +142,7 @@ unsigned int * BinkMovieHandle::CopyFrameToSurface()
       goto LABEL_6; /*0x433155*/
     }
   }
+// 0x433270
   return BinkMovie::BlitToTarget((int)width); /*0x43316a*/
 }
 } // namespace gamemd
@@ -200,6 +201,7 @@ int BinkMovieHandle::Release()
 namespace gamemd {
 int BinkMovieHandle::Pause(int a2, int a3)
 {
+// 0x432ab0
   return BinkMovieHandle::RenderFrameClipped(this->height, a2, a3); /*0x5c05b2*/
 }
 } // namespace gamemd
@@ -214,6 +216,7 @@ int BinkMovieHandle::RenderLoop(int a2)
 namespace gamemd {
 int BinkMovieHandle::AdjustSurfaceFormat(int a2)
 {
+// 0x432bd0
   return BinkMovieHandle::Check((BinkMovieHandle *)this->height, a2); /*0x5c05dd*/
 }
 } // namespace gamemd

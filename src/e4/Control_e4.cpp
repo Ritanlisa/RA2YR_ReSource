@@ -21,6 +21,7 @@ int Control::DispatchClick(ControlClass * aP1)
   v3 = this->u32_28; /*0x48e623*/
   if ( v3 ) /*0x48e628*/
     (*(void (**)(int, unsigned int))(*(unsigned int *)v3 + 108))(v3, 0); /*0x48e62e*/
+// 0x4e1550
   return GadgetClass::ClearState(aP1); /*0x48e63d*/
 }
 } // namespace gamemd

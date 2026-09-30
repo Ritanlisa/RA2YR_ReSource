@@ -1513,10 +1513,12 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
         v11 = v1[1]; /*0x57ce0d*/
         IDA_LOWORD(aP0) = *v1; /*0x57ce11*/
         IDA_HIWORD(aP0) = v11 - 1; /*0x57ce1c*/
+// 0x57cf60
         return CellClass::ApplyTileModification3(&aP0); /*0x57ce2c*/
       }
       else
       {
+// 0x57cf60
         return CellClass::ApplyTileModification3(v1); /*0x57cdfd*/
       }
     }
@@ -1525,6 +1527,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
       v7 = v1[1] + 1; /*0x57cd95*/
       IDA_LOWORD(aP0) = *v1; /*0x57cd97*/
       IDA_HIWORD(aP0) = v7; /*0x57cd9c*/
+// 0x57cf60
       return CellClass::ApplyTileModification3(&aP0); /*0x57cdb0*/
     }
   }
@@ -1544,10 +1547,12 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
       {
         aP0 = 1; /*0x57cf23*/
         v17 = *CellStruct::Sub(v1, &v18, &aP0); /*0x57cf3c*/
+// 0x57d530
         return CellClass::ApplyTileModification4(&v17); /*0x57cf43*/
       }
       else
       {
+// 0x57d530
         return CellClass::ApplyTileModification4(v1); /*0x57cf0a*/
       }
     }
@@ -1556,6 +1561,7 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
       v14 = *v1 + 1; /*0x57cea2*/
       IDA_HIWORD(aP0) = v1[1]; /*0x57cea4*/
       IDA_LOWORD(aP0) = v14; /*0x57cea9*/
+// 0x57d530
       return CellClass::ApplyTileModification4(&aP0); /*0x57cebd*/
     }
   }

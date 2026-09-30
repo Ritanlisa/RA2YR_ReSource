@@ -309,6 +309,7 @@ AbstractClass * * BinkMovie::Play()
       if ( GameLoopMessagePump(&Msg, 0, 0, 0, 0) ) /*0x432ceb*/
       {
         if ( !IsMessageDialog(&Msg, 0, 0, 0) ) /*0x432d05*/
+// 0x54f720
           return Timer::PumpMessages((Timer *)dword_87F770); /*0x432d05*/
         TranslateMessage(&Msg); /*0x432d10*/
         DispatchMessageA(&Msg); /*0x432d1b*/
@@ -355,12 +356,15 @@ AbstractClass * * BinkMovie::Play()
         }
         if ( EventQueue::Process((EventQueue *)dword_87F770) /*0x432e21*/
           && !this-((unsigned int *)(>__pad_0))[0]
+// 0x54f050
           && EventQueue::Read((EventQueue *)dword_87F770) == 2075 )
         {
+// 0x54f720
           return Timer::PumpMessages((Timer *)dword_87F770); /*0x432e21*/
         }
       }
     }
+// 0x54f720
     return Timer::PumpMessages((Timer *)dword_87F770); /*0x432e27*/
   }
   else
@@ -468,6 +472,7 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
 namespace gamemd {
 int BinkMovie::RenderFrameToSurface()
 {
+// 0x432e40
   return BinkMovie::RenderLoop((bool *)this->MovieHandle, this->width, this->height, this->currentFrame); /*0x433051*/
 }
 }

@@ -523,6 +523,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   }
   v19 = (*(int (**)(int, int))(((unsigned int)(this->u32_146))))(this, v14); /*0x7b24af*/
   SendMessageA(g_hWnd, v19, 0, 2); /*0x7b24b9*/
+// 0x54f000
   return EventQueue::Process(g_BinkMoviePlayer); /*0x7b24ca*/
 }
 }

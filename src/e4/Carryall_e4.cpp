@@ -132,6 +132,7 @@ FootClass * * Carryall::MissionStateMachine()
       v13 = this->q5A4; /*0x416fa3*/
       if ( v13 /*0x416fc7*/
         && (*(int (**)(int))(v13->fallRate)(v13) != 11
+// 0x65ad30
         && Team::GetMember((unsigned int *)this, 0) != this->q5A4 )
       {
         Debug::Log(); /*0x416fce*/

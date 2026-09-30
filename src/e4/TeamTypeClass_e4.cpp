@@ -196,6 +196,7 @@ AbstractClass * * TeamTypeClass::FindOrCreateTaskForce()
   LABEL_6:
     v3 = (TaskForceClass *)RA2_OPNEW(0xD4u); /*0x6e8646*/
     if ( v3 ) /*0x6e8655*/
+// 0x6e7e80
       return TaskForceClass::Construct(v3, Source); /*0x6e8661*/
     return 0; /*0x6e8655*/
   }
@@ -768,6 +769,7 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
   if ( v21 ) /*0x6f1dfd*/
   {
     v22 = (*(int (__stdcall **)(int))(*(unsigned int *)(v21 + 4) + 16))(v21 + 4); /*0x6f1e06*/
+// 0x4a1d50
     return Power::TimerProcess(v22); /*0x6f1e0c*/
   }
   return result; /*0x6f1e11*/

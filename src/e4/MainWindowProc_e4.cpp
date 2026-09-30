@@ -36,6 +36,7 @@ AbstractClass * * sub_777420()
     if ( g_DSurface_Hidden ) /*0x777499*/
       DSurface::RestoreIfLost((DSurface *)g_DSurface_Hidden); /*0x77749b*/
     if ( DSurface_Composite /*0x7774c7*/
+// 0x4bb000
       && DSurface::RestoreIfLost((DSurface *)DSurface_Composite)
       && (!stru_A8EB00.?[376] || *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > 16) )
     {
@@ -44,6 +45,7 @@ AbstractClass * * sub_777420()
         0);
     }
     if ( DSurface_Tile /*0x7774f8*/
+// 0x4bb000
       && DSurface::RestoreIfLost(DSurface_Tile)
       && (!stru_A8EB00.?[376] || *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > 16) )
     {
@@ -59,6 +61,7 @@ AbstractClass * * sub_777420()
       }
     }
     if ( g_DSurface_Primary /*0x777561*/
+// 0x4bb000
       && DSurface::RestoreIfLost(g_DSurface_Primary)
       && (!stru_A8EB00.?[376] || *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > 16) )
     {

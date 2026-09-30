@@ -42,6 +42,7 @@ BulletTypeClass * * ObjectTypeClass::FindOrCreate()
   LABEL_6:
     v3 = (BulletTypeClass *)RA2_OPNEW(0x2F8u); /*0x46c7e6*/
     if ( v3 ) /*0x46c7f5*/
+// 0x46bbc0
       return BulletTypeClass::Construct(v3, Source); /*0x46c801*/
     return 0; /*0x46c7f5*/
   }
@@ -4978,6 +4979,7 @@ char ObjectTypeClass::ReadBool(INIClass * Block, INIClass * aP2, int a4)
   char Buffer[32]; // [esp+4h] [ebp-20h] BYREF
 
   sprintf(Buffer, "%d", 360 * a4 / 256); /*0x4746ba*/
+// 0x528660
   return INIClass::SetString(Block, aP2, Buffer); /*0x4746d8*/
 }
 } // namespace gamemd
@@ -5020,6 +5022,7 @@ char ObjectTypeClass::ReadBool2(INIClass * Block, INIClass * aP2, short * a4)
   char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
 
   sprintf(Buffer, "%d,%d", *a4, a4[1]); /*0x4747dd*/
+// 0x528660
   return INIClass::SetString(Block, aP2, Buffer); /*0x4747fb*/
 }
 } // namespace gamemd
@@ -5032,6 +5035,7 @@ int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2
 
   v5 = sub_473960(a4); /*0x4749f1*/
   INIClass::GetString(aP1, a2, v5, Destination, 32); /*0x474a03*/
+// 0x473980
   return ObjectTypeClass::loadTypeMember_473980((ObjectTypeClass *)Destination); /*0x474a11*/
 }
 } // namespace gamemd
@@ -5042,6 +5046,7 @@ char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char
   char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
 
   sprintf(Buffer, "%d,%d,%d", *a4, a4[1], a4[2]); /*0x474d75*/
+// 0x528660
   return INIClass::SetString(Block, aP2, Buffer); /*0x474d93*/
 }
 } // namespace gamemd
@@ -5074,6 +5079,7 @@ int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
 
   INIClass::GetString(a2, a3, &g_INI_DefaultBuffer, Destination, 100); /*0x474fba*/
   if ( strlen(Destination) ) /*0x474fc3*/
+// 0x753250
     return VocClass::FindByName((VocClass *)Destination); /*0x474fd4*/
   else
     return a4; /*0x474fdf*/
@@ -5088,6 +5094,7 @@ int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
 
   Name = AbstractType::FindName(a4); /*0x475001*/
   INIClass::GetString(aP1, a2, Name, Destination[0].__pad_0, 32); /*0x475013*/
+// 0x40dce0
   return StringTable::Lookup(Destination); /*0x475021*/
 }
 } // namespace gamemd
@@ -5130,6 +5137,7 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
     *(unsigned int *)v8 = v6 & 0xFFFFFF; /*0x4762ce*/
     strcat(&v8[12], (const char *)(System_Read_6E7330((ObjectClass *)v8) + 36)); /*0x4762fa*/
   }
+// 0x528660
   return INIClass::SetString(*(char **)&v8[8], Block, a2, &v8[12]); /*0x47632e*/
 }
 } // namespace gamemd
@@ -5142,6 +5150,7 @@ int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2,
 
   v5 = sub_48E030(aP3); /*0x476fdd*/
   if ( INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 128) ) /*0x476ff5*/
+// 0x48dff0
     return ObjectTypeClass::loadTypeMember_48DFF0((ObjectTypeClass *)Destination); /*0x477002*/
   else
     return aP3; /*0x477012*/

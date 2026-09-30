@@ -1019,6 +1019,7 @@ ObjectClass * * ObjectClass::Dtor()
   }
   if ( this->isInLogic[0] ) /*0x5f3d65*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x5f3d75*/
+// 0x4101f0
   return AbstractClass::DTOR(); /*0x5f3d81*/
 }
 } // namespace ra2
@@ -2374,11 +2375,14 @@ int ObjectClass::FindOwner(unsigned int * a0, AnimClass * aP1)
   if ( !a0 ) /*0x6e45e6*/
     return 0; /*0x6e45e8*/
   if ( aP1 == (void *)8997 ) /*0x6e45f8*/
+// 0x726910
     return Property::GetField11(a0); /*0x6e45fa*/
   if ( aP1 == (void *)-1 ) /*0x6e4606*/
     return 0; /*0x6e4608*/
   if ( BuildingType::IsSpecialType(aP1) ) /*0x6e4610*/
+// 0x510ed0
     return BuildingType::FindOwnerHouse(aP1); /*0x6e461b*/
+// 0x502d30
   return HouseClass::FindOwner(aP1); /*0x6e45ea*/
 }
 } // namespace gamemd

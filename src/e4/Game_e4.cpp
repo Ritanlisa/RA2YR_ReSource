@@ -490,6 +490,7 @@ int Game::MakeScreenshot(int a1)
         v18 = 0; /*0x537da3*/
         Vector::Clear((int)v17); /*0x537daa*/
         *(unsigned int *)v16.CDFileClass = &off_7E1668; /*0x537db3*/
+// 0x431b80
         return BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x537dbb*/
       }
     }
@@ -690,6 +691,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
   v15 = 0; /*0x5ba934*/
   Vector::Clear((int)v14); /*0x5ba93f*/
   *(unsigned int *)v13.CDFileClass = &off_7E1668; /*0x5ba94b*/
+// 0x431b80
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v13); /*0x5ba95b*/
 }
 }

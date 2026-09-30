@@ -3706,6 +3706,7 @@ unsigned int E4Recv_759BC0::sub_759BC0(signed int a2)
 namespace gamemd {
 bool sub_75A100(int a1, int a2, unsigned int * a3, int a4)
 {
+// 0x759fb0
   return VoxelRenderer::InitializeBuffers(*(unsigned int *)(a1 + 172), a2, a3, a4); /*0x75a11e*/
 }
 } // namespace gamemd

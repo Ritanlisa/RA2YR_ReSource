@@ -477,6 +477,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     v93[0] = 0; /*0x5b28f8*/
   else
     v93[0] = (signed int)v93[0] / 4; /*0x5b290f*/
+// 0x41c380
   return Coord::Length((Coord *)&v92); /*0x5b2347*/
 }
 } // namespace gamemd

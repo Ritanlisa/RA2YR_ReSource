@@ -2370,6 +2370,7 @@ int SuperClass::PowerDrainUpdate(int * a2)
   {
     Power::TimerProcess(*(uint8_t *)(result + 405)); /*0x6ce08d*/
     v9 = (*(int (__stdcall **)(char *))(*((unsigned int *)this->SuperClass_field_0x68 + 1) + 16))((char *)this->SuperClass_field_0x68 + 4); /*0x6ce09c*/
+// 0x4a1d50
     return Power::TimerProcess(v9); /*0x6ce0a2*/
   }
   return result; /*0x6ce0a7*/

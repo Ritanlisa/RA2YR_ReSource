@@ -816,6 +816,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
           IDA_LOWORD(v94) = v21 + v99;
           a3 = (int)v94;
           if ( *(unsigned int *)(v92 + 4 * (v21 + i * v20) + 16)
+// 0x578460
             && LayerClass::IsWithinUsableArea(v13, (int16_t *)&a3, 1)
             && !*(unsigned short *)(v13[28] + 10 * CellToTileIndexMap(v13, (int16_t *)&a3)) )
           {

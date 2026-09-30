@@ -202,6 +202,7 @@ void ParticleClass::AdjustHeight()
 
   v2 = *(unsigned int *)(*(&this->q0103) + 788); /*0x62d5ec*/
   if ( !v2 ) /*0x62d5f5*/
+// 0x62d2a0
     return BuildingClass::UpdateFloatPosition((BuildingClass *)this); /*0x62d6db*/
   v3 = v2 - 1; /*0x62d5fb*/
   if ( v3 ) /*0x62d5fc*/

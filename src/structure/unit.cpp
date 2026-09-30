@@ -1649,6 +1649,7 @@ int __thiscall UnitClass::MissionDispatch(int this, int *a2, int a3, unsigned in
         v4 = a3; /*0x737990*/
   LABEL_69:
         if ( *(int *)(*((unsigned int *)this + 433) + 1504) <= 0 ) /*0x7379a2*/
+// 0x4d8fb0
           return FootClass::MissionDispatch((FootClass *)a2, (int)v4, v4, (int)a4, v24); /*0x7379a2*/
         v32 = *(unsigned int **)(*((unsigned int *)this + 433) + 1504); /*0x7379ae*/
         v19 = HouseClass::SumPowerDrain((HouseClass *)(this + 276)); /*0x7379b2*/
@@ -1658,6 +1659,7 @@ int __thiscall UnitClass::MissionDispatch(int this, int *a2, int a3, unsigned in
         if ( (double)(int)v32 < v29 + *(double *)(v21 + 896) /*0x737a09*/
           || *(double *)((*(int (__thiscall **)(BuildingClass *))(a2->vtable0 + 132))(a2) + 896) > *(double *)(*((unsigned int *)this + 433) + 904) )
         {
+// 0x4d8fb0
           return FootClass::MissionDispatch((FootClass *)a2, (int)v4, v4, (int)a4, v24); /*0x737a09*/
         }
         FootClass::MissionDispatch((FootClass *)a2, (int)v4, v4, (int)a4, v24); /*0x737a18*/
@@ -1776,6 +1778,7 @@ int __thiscall UnitClass::MissionDispatch(int this, int *a2, int a3, unsigned in
             (*(void (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)this + 492))(this); /*0x737af6*/
         }
       }
+// 0x4d8fb0
       return FootClass::MissionDispatch((FootClass *)a2, (int)v4, v4, (int)a4, v24); /*0x737af6*/
     case 0x24u:
       if ( (*(uint8_t (__thiscall **)(Class_7F5C70 *))(*(unsigned int *)this + 468))(this) ) /*0x737460*/
@@ -1792,6 +1795,7 @@ int __thiscall UnitClass::MissionDispatch(int this, int *a2, int a3, unsigned in
         return 10; /*0x7374e4*/
       return *((unsigned char *)this + 1668) != 0xFF ? 10 : 1;
     default:
+// 0x4d8fb0
       return FootClass::MissionDispatch((FootClass *)a2, (int)v4, v4, (int)a4, v24); /*0x737b11*/
   }
   return result; /*0x73746a*/
@@ -6262,13 +6266,16 @@ void *__thiscall UnitClass::ApproachTarget_DisallowMoving(unsigned int *this, ch
       }
     }
     if ( !*(unsigned char *)(*((unsigned int *)this + 433) + 3369) ) /*0x741609*/
+// 0x4d5690
       return FootClass::CalculateApproachPath((FootClass *)this, 0); /*0x741609*/
     v10 = *((unsigned int *)this + 173); /*0x741613*/
     if ( !v10 || *(unsigned char *)(*((unsigned int *)this + 135) + 492) && *((unsigned char *)this + 1292) ) /*0x74162d*/
+// 0x4d5690
       return FootClass::CalculateApproachPath((FootClass *)this, 0); /*0x74162d*/
     if ( (v10->abstractFlags & 2) == 0
       || !ObjectClass::IsCrushable((v10->abstractFlags & 2) != 0 ? (TechnoClass *)v10 : 0, this) )
     {
+// 0x4d5690
       return FootClass::CalculateApproachPath((FootClass *)this, 0); /*0x741689*/
     }
   }
@@ -7528,6 +7535,7 @@ int UnitClass::OnUnderAttack(ObjectClass* attacker, int damage, int weaponIdx, C
         v54 = *(unsigned int *)(a1 + 1732); /*0x7385b5*/
         if ( (*(unsigned char *)(v54 + 3598) || *(unsigned char *)(v54 + 3599)) /*0x7385fd*/
           && (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 696))(a1) > 0
+// 0x5f5c60
           && BuildingClass::GetHealthRatio((int *)a1) <= *((double *)g_RulesClass_Instance + 736) )
         {
           v55 = *(unsigned int *)(a1 + 1732); /*0x7385ff*/
@@ -8171,6 +8179,7 @@ int __thiscall UnitClass::EvaluateTarget(int this, int a2, int a3, int a4, int a
               goto LABEL_153; /*0x73f71d*/
             }
             if ( (v38[5801] || v38[5803]) /*0x73f76d*/
+// 0x47c520
               && Cell::IsBridge(v27) == (unsigned int *)v31
               && !(uint8_t)UnitClass::IsCellBlockedByBridge(v31, v27) )
             {
@@ -8327,6 +8336,7 @@ int __thiscall UnitClass::EvaluateTarget(int this, int a2, int a3, int a4, int a
             }
             else if ( (*(unsigned char *)(*(unsigned int *)(this + 1732) + 3368) /*0x73fb4a*/
                     || (uint8_t)TechnoTypeClass::HasVoiceResponse((int *)this, 17))
+// 0x5f6cd0
                    && ObjectClass::IsCrushable(v31, (unsigned int **)this) )
             {
               if ( !(uint8_t)Object::IsAlliedWithObjectHouse(*(unsigned int **)(this + 540), (int)v31) ) /*0x73fb5a*/
@@ -10191,6 +10201,7 @@ int __thiscall UnitClass::Destructor(void **this)
     }
   }
   this->? = 0; /*0x7359da*/
+// 0x4d3590
   return FootClass::Destruct((FootClass *)this); /*0x735975*/
 }
 /* ASM:
@@ -10685,6 +10696,7 @@ int UnitClass::SaveLoadData(ObjectClass* aP1, int aP1a)
 // 0x6b4f00
 int UnitClass::SaveState(void* aP0, void* a1, void* aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6b4f14*/
 }
 // 0x744640
@@ -10718,6 +10730,7 @@ int UnitClass::PowerDrainUpdate(int a2)
   IDA_LOBYTE(v9) = this->UnitClass_field_bool_6D2; /*0x7446be*/
   Power::FlagProcess((Power *)a2, v9); /*0x7446c7*/
   IDA_LOBYTE(v10) = this->?; /*0x7446cc*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v10); /*0x7446da*/
 }
 // IDA: 0x746810 (PerFrameUpdate, 167B)
@@ -10814,6 +10827,7 @@ void UnitClass::ClearTargetRef(int a2)
     result = this->?; /*0x6b7c71*/
     *(unsigned int *)&this->? = 0; /*0x6b7c74*/
     if ( !result ) /*0x6b7c7d*/
+// 0x6b7bb0
       return UnitClass::ProcessIdleOrders(this); /*0x6b7c7f*/
   }
   else if ( a2 == this->? ) /*0x6b7c90*/
@@ -10829,6 +10843,7 @@ void UnitClass::ClearTargetRef(int a2)
       if ( a2 == this->? ) /*0x6b7cbf*/
       {
         TaskManager::Update((TaskManager *)this); /*0x6b7cc3*/
+// 0x6b7bb0
         return UnitClass::ProcessIdleOrders(this); /*0x6b7cca*/
       }
     }

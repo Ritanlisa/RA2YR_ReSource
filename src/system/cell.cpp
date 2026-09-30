@@ -219,6 +219,7 @@ int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds, vo
   v6 = this->attached1; /*0x48e5d5*/
   if ( v6 ) /*0x48e5da*/
     (*(void (__thiscall **)(int, int, unsigned int *, ControlClass *))(*(unsigned int *)v6 + 76))(v6, a2, a3, this); /*0x48e5e1*/
+// 0x4e1530
   return COMObject::ActivateThunk((GadgetClass *)this, a2, (int)a3, 0); /*0x48e5ef*/
 }
 // 0x7235a0

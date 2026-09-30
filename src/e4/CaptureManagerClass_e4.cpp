@@ -945,6 +945,7 @@ int CaptureManagerClass::PowerDrainUpdate(int a2)
   if ( overloadCount ) /*0x472703*/
   {
     v5 = (*(int (__stdcall **)(int))(*(unsigned int *)(overloadCount + 4) + 16))(overloadCount + 4); /*0x47270c*/
+// 0x4a1d50
     return Power::TimerProcess(v5); /*0x472712*/
   }
   return result; /*0x472717*/
@@ -1273,6 +1274,7 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 namespace gamemd {
 char CaptureManagerClass::AddMember(TechnoClass * aP1)
 {
+// 0x6ea500
   return TeamClass::AddMember(aP1, 1); /*0x6ea4fc*/
 }
 } // namespace gamemd

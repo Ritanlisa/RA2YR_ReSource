@@ -173,6 +173,7 @@ int AudioStream::SetupPlayback()
   if ( (this-((unsigned int *)(>AudioStream_field_0x18))[0] & 8) == 0 && (*(unsigned char *)(this->AudioStream_field_0x24 + 16) & 0x20) != 0 ) /*0x40478f*/
     return (int)this->AudioStream_field_0x28 + 28; /*0x402030*/
   else
+// 0x4047b0
     return AudioStream::SelectRandom(); /*0x404793*/
 }
 }
@@ -229,6 +230,7 @@ int AudioStream::SelectRandom()
     if ( !v10 || this->u32_1E4 < v10 - 1 ) /*0x404867*/
     {
       ++this->u32_1E4; /*0x404872*/
+// 0x404700
       return AudioStream::SetupPlayback(); /*0x404879*/
     }
   }

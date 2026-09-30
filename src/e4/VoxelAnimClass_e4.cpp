@@ -893,6 +893,7 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
   v8 = Power::FlagProcess((Power *)a2, v7); /*0x74aa9f*/
   IDA_LOBYTE(v8) = this->q13C; /*0x74aaa4*/
   Power::FlagProcess((Power *)a2, v8); /*0x74aaad*/
+// 0x4a1d50
   return Power::TimerProcess(this->VoxelAnimClass_field_0x140); /*0x74aac0*/
 }
 }
@@ -1052,6 +1053,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
   v5 = (unsigned int *)(*((int (**)(VoxelAnimClass *, unsigned char *))this->VoxelAnimClass_field_0x0 + 18))(this, v7); /*0x749b2f*/
   if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
     this->__pad_20[96] = 1; /*0x749b46*/
+// 0x5f4b10
   return ObjectClass::CalcDrawRect(); /*0x749b60*/
 }
 } // namespace gamemd
@@ -1068,6 +1070,7 @@ int VoxelAnimClass::StubReturn3()
 namespace gamemd {
 int VoxelAnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x74aa24*/
 }
 } // namespace gamemd

@@ -1948,6 +1948,7 @@ int E4Recv_4C4FC0::sub_4C4FC0(int a2)
     v5 = (*(int (**)(void *))(*(unsigned int *)vtable1 + 44))(vtable1); /*0x4c4fdb*/
     Power::TimerProcess(v5); /*0x4c4fe1*/
     v6 = (*(int (__stdcall **)(char *))(*((unsigned int *)this->? + 1) + 16))((char *)this->? + 4); /*0x4c4ff0*/
+// 0x4a1d50
     return Power::TimerProcess(v6); /*0x4c4ff6*/
   }
   return result; /*0x4c4ffb*/

@@ -111,6 +111,7 @@ int DiskLaserClass::Write(AbstractClass * aP0, int aP1)
 // 0x4A7C10
 int DiskLaserClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x4a7c24*/
 }
 // 0x4A7C30

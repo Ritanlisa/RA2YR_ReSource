@@ -18,6 +18,7 @@ namespace gamemd {
 int Power::Update(int * a2)
 {
   AbstractClass::ProcessPower(); /*0x43a5d9*/
+// 0x4a1d50
   return Power::TimerProcess(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - this->q00C); /*0x43a5f0*/
 }
 }
@@ -417,6 +418,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
   Power::TimerProcess(this->u32_355C); /*0x68bc73*/
   Power::TimerProcess(this->u32_3528); /*0x68bc81*/
   Power::TimerProcess(this->u32_352C); /*0x68bc8f*/
+// 0x4a1d50
   return Power::TimerProcess(this->u32_3530); /*0x68bca2*/
 }
 }
@@ -506,6 +508,7 @@ int Power::FlagProcess(int a2)
 namespace gamemd {
 int Power::TimerProcess(void * a1)
 {
+// 0x4a1de0
   return Checksummer::Add_Buffer(&a1, 4); /*0x4a1d64*/
 }
 } // namespace gamemd

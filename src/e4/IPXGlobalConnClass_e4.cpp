@@ -150,6 +150,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
     v19 = dword_A8DBA8; /*0x540550*/
     v20 = dword_A8DBAC; /*0x540554*/
     if ( GUID::Compare((char *)&dword_A8DBB0, *(unsigned int *)Game_PlayerInfoArray + 40) /*0x54057b*/
+// 0x53ef30
       && NetworkID::Compare((int)&v18, *(unsigned int *)Game_PlayerInfoArray + 40) )
     {
       v13 = a2 + 8; /*0x540584*/
@@ -292,6 +293,7 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
 namespace gamemd {
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
 {
+// 0x48bf40
   return ConnectionClass::sendAck(a1, aP2, aP3, aP4); /*0x540629*/
 }
 } // namespace gamemd
@@ -299,6 +301,7 @@ int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char 
 namespace gamemd {
 int IPXGlobalConnClass::ddtor(int a2, int a3)
 {
+// 0x48c040
   return ConnectionClass::receivePacket(a2, a3); /*0x54063f*/
 }
 } // namespace gamemd
@@ -306,6 +309,7 @@ int IPXGlobalConnClass::ddtor(int a2, int a3)
 namespace gamemd {
 int IPXGlobalConnClass::Connect(void * a2, signed int * a3)
 {
+// 0x48c320
   return ConnectionClass::processTileUpdate(a2, a3); /*0x54065f*/
 }
 } // namespace gamemd

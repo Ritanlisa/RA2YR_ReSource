@@ -842,6 +842,7 @@ WeaponTypeClass * * InfantryTypeClass::Find()
   LABEL_6:
     v3 = (WeaponTypeClass *)RA2_OPNEW(0x160u); /*0x772ff6*/
     if ( v3 ) /*0x773005*/
+// 0x771c70
       return WeaponTypeClass::Constructor(v3, Source); /*0x773011*/
     return 0; /*0x773005*/
   }
@@ -962,6 +963,7 @@ int InfantryTypeClass::PowerDrainUpdate(int * a2)
   IDA_LOBYTE(v12) = this->Thief; /*0x524933*/
   Power::FlagProcess((Power *)a2, v12); /*0x52493c*/
   IDA_LOBYTE(v13) = this->VehicleThief; /*0x524941*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v13); /*0x52494f*/
 }
 // 0x524C70

@@ -1738,6 +1738,7 @@ int Scenario::FindBuildingTypeByName(unsigned char * a1, unsigned char * a2, CCI
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
   if ( INIClass::GetString((INIClass *)this, a1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475912*/
+// 0x721210
     return StringList::Find((StringList *)&unk_A83D10, Destination); /*0x475925*/
   else
     return aP3; /*0x475933*/

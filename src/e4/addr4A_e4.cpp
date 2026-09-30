@@ -701,10 +701,12 @@ void Palette_Fade(const void * a1, signed int a2, void (*a3)(void) a3)
         v8 = Ticks; /*0x4a3cbd*/
         v11 = v10 - Ticks; /*0x4a3cc1*/
         if ( v11 >= v22 ) /*0x4a3cc5*/
+// 0x4a4780
           return Surface::CreateSurfacePalette(v26); /*0x4a3cc5*/
         v9 = v22 - v11; /*0x4a3ccb*/
       }
       if ( !v9 ) /*0x4a3ccf*/
+// 0x4a4780
         return Surface::CreateSurfacePalette(v26); /*0x4a3daf*/
       qmemcpy(Src, v24, sizeof(Src)); /*0x4a3ce8*/
       v12 = v22; /*0x4a3cea*/
@@ -2638,6 +2640,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
         }
         if ( v39 ) /*0x4af275*/
           (**v39)(v39, 1); /*0x4af27b*/
+// 0x43ae50
         return Vector::Clear((int)v65); /*0x4af284*/
       }
     }
@@ -3032,6 +3035,7 @@ namespace gamemd {
 int E4Recv_4A2030::sub_4A2030(Pipe * aP1, int aP2)
 {
   Checksummer::Add_Buffer((Checksummer *)&this->?, aP1, aP2); /*0x4a2042*/
+// 0x631d10
   return Delegate::Dispatch((int)aP1, aP2); /*0x4a2050*/
 }
 } // namespace gamemd

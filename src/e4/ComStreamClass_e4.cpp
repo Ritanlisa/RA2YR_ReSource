@@ -358,6 +358,7 @@ unsigned int * ComStreamClass::seekToPosition()
   *(unsigned int *)v5 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b0260*/
   ComPtr::Release((ComPtr *)v5); /*0x7b0268*/
   *(unsigned int *)v6 = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b0271*/
+// 0x65d460
   return ComPtr::Release((ComPtr *)v6); /*0x7b027e*/
 }
 } // namespace gamemd
@@ -377,6 +378,7 @@ unsigned int * ComStreamClass::getStreamSize()
   *(unsigned int *)v5 = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b02e0*/
   ComPtr::Release((ComPtr *)v5); /*0x7b02e8*/
   *(unsigned int *)v6 = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b02f1*/
+// 0x65d460
   return ComPtr::Release((ComPtr *)v6); /*0x7b02fe*/
 }
 } // namespace gamemd

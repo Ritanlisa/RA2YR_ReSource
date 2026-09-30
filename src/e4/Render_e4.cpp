@@ -60,6 +60,7 @@ void Render_Load(void * a1, void * a2, void * a3)
   if ( a2 ) /*0x52ffb9*/
   {
     IDA_LOBYTE(v6) = 1; /*0x52ffc3*/
+// 0x4f4780
     return Frame::Present(v6, 0); /*0x52ffc5*/
   }
   return result; /*0x52ffb7*/
@@ -1427,6 +1428,7 @@ CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClas
     v14[0] = (unsigned int)(aP4)+ aP2 - v8; /*0x554245*/
   }
   Rect::Inflate(v10, v11, dy); /*0x554252*/
+// 0x621b80
   return DSurface::FillRectWithColor(v14, a2, 0, 0x9Fu); /*0x554269*/
 }
 }

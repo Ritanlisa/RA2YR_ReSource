@@ -817,6 +817,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->RandomLoopDelay[1]); /*0x428b4c*/
   Power::TimerProcess(this->Translucency); /*0x428b5a*/
   IDA_LOBYTE(v14) = this->Tiled; /*0x428b5f*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v14); /*0x428b6d*/
 }
 }
@@ -835,6 +836,7 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate()
   LABEL_6:
     v3 = (AnimTypeClass *)RA2_OPNEW(0x378u); /*0x428bd6*/
     if ( v3 ) /*0x428be5*/
+// 0x427530
       return AnimTypeClass::Construct(v3, Source); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
@@ -1129,6 +1131,7 @@ int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3)
 
   v5 = globalHelper_08E090(a3); /*0x47706d*/
   if ( INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 128) ) /*0x477085*/
+// 0x48e050
     return AnimTypeClass::LookupByName((AnimTypeClass *)Destination); /*0x477092*/
   else
     return a3; /*0x4770a2*/

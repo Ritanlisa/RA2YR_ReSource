@@ -26,6 +26,7 @@ bool TriggerClass::HasCrossesHorizontalLineEvent() const
   nextTrigger = this->nextTrigger; /*0x726253*/
   buildingType = (HouseClass *)this->buildingType; /*0x726256*/
   if ( !nextTrigger ) /*0x72625b*/
+// 0x726f80
     return HouseClass::HasType25Building(buildingType); /*0x72627d*/
   return (uint8_t)HouseClass::HasType25Building(buildingType) /*0x726274*/
       || TriggerClass::HasCrossesHorizontalLineEvent(this->nextTrigger);
@@ -39,6 +40,7 @@ bool TriggerClass::HasCrossesVerticalLineEvent() const
   nextTrigger = this->nextTrigger; /*0x726293*/
   buildingType = (HouseClass *)this->buildingType; /*0x726296*/
   if ( !nextTrigger ) /*0x72629b*/
+// 0x726f50
     return HouseClass::HasType26Building(buildingType); /*0x7262bd*/
   return (uint8_t)HouseClass::HasType26Building(buildingType) /*0x7262b4*/
       || TriggerClass::HasCrossesVerticalLineEvent(this->nextTrigger);

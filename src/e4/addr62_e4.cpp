@@ -778,6 +778,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   Char::Swap((Char *)v9, 1); /*0x62134a*/
   TextGroup::SetRect((TextGroup *)v9, v22); /*0x621356*/
   Property::Set((Property *)v9, v13); /*0x62135e*/
+// 0x434b90
   return FontRenderer::DrawText(v9, a7, a3, v12, yTopa, a5, a9) - v12; /*0x6211e4*/
 }
 }
@@ -1234,6 +1235,7 @@ AbstractClass * * SetupDialog(CoordStruct * hWnd, int a2)
   }
   EnumChildWindows((HWND)hWnd, Dialog::HandleTabKey, 0); /*0x622b30*/
   EnumChildWindows((HWND)hWnd, Dialog::DispatchEvent, 0); /*0x622b39*/
+// 0x777060
   return Dialog::RestoreParent(hWnd); /*0x622b42*/
 }
 }
@@ -2323,6 +2325,7 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
   }
   this->q0C9 = 0; /*0x62e26b*/
   this->q0C4 = 0; /*0x62e271*/
+// 0x5f3b80
   return ObjectClass::Dtor(); /*0x62e27c*/
 }
 }

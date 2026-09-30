@@ -550,6 +550,7 @@ int BuildingClass::Dtor()
   }
   IDA_BYTE1(this->Audio7[0]) = 0; /*0x43c0b8*/
   this->FiringOccupantIndex = 0; /*0x43c0bc*/
+// 0x6f4500
   return TechnoClass::DTOR((int)this); /*0x43c0c4*/
 }
 // 0x459f20
@@ -811,8 +812,10 @@ int BuildingClass::AfterDestruction()
     v22 = v1->Type; /*0x4421e4*/
     v23[1] = v21[1] / 256; /*0x4421ed*/
     if ( v22->__pad_1714[85] ) /*0x4421f2*/
+// 0x56bec0
       return BuildingClass::SearchPlacement((BuildingClass *)&stru_87F5F0.__pad_58[416], *(int *)v23, 0); /*0x442208*/
     else
+// 0x56bec0
       return BuildingClass::SearchPlacement((BuildingClass *)&stru_87F5F0.__pad_58[416], *(int *)v23, 20); /*0x442221*/
   }
   return result; /*0x44220d*/
@@ -6038,6 +6041,7 @@ void BuildingClass::ProcessSuperWeaponEffects() {}
     {
   LABEL_56:
       MissionControl = MissionClass::GetMissionControl(this); /*0x44d584*/
+// 0x7c5f00
       return Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x44d594*/
     }
   }
@@ -7663,8 +7667,10 @@ bool BuildingClass::CheckMissionAttack() { return missionStatus == 1; }
 
   FoundationHeight = BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0); /*0x458e17*/
   if ( BuildingTypeClass::GetFoundationWidth(this->Type) >= FoundationHeight ) /*0x458e20*/
+// 0x45eca0
     return BuildingTypeClass::GetFoundationHeight((int *)this->Type, 0) / 2; /*0x458e46*/
   else
+// 0x45ec90
     return BuildingTypeClass::GetFoundationWidth(this->Type) / 2; /*0x458e31*/
 }
     v2 = this->Type; /*0x452371*/
@@ -8277,6 +8283,7 @@ int BuildingClass::CompleteProduction()
     }
     BuildingClass::CheckExitPath((BuildingClass *)a1); /*0x6397e5*/
   }
+// 0x6349b0
   return ScriptAction::FindSquadMember(v2); /*0x6397f1*/
 }
 // 0x43f180
@@ -9298,6 +9305,7 @@ void BuildingClass::ProcessStructureAbandoned() {}
       || Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99) >= 25
       || this->Type->BuildingTypeClass_field_ED8 != 7 )
     {
+// 0x707d20
       return TechnoClass::GetCrew(this); /*0x44eb55*/
     }
     else
@@ -11268,6 +11276,7 @@ void BuildingClass::ProcessActiveAnimation() {}
       && (unsigned int)Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 50) < *(unsigned int *)(*(&this->ptr_345) + 468)
       && !*(&this->u32_43)
       && *(unsigned int *)(*(&this->u32_808) + 3768) != 7
+// 0x5f5c60
       && BuildingClass::GetHealthRatio(this) < *(double *)&g_RulesClass_Instance[1].ChronoSparkle1 )
     {
       this->vt_slot_416(1); /*0x45080d*/
@@ -13197,6 +13206,7 @@ void BuildingClass::ProcessSpreadEffect() {}
   if ( !(unsigned char)result ) /*0x43fe63*/
     return result; /*0x43fe63*/
   if ( *(unsigned char *)((*(int (__thiscall **)(BuildingClass *))(this->vtable0 + 132))(this) + 3285) /*0x43fe86*/
+// 0x70ddf0
     && TechnoClass::GetMember81(this) > 0 )
   {
     ++this->ammoReloadTimer; /*0x43fe88*/
@@ -13227,6 +13237,7 @@ void BuildingClass::ProcessSpreadEffect() {}
       }
     }
     if ( *(unsigned char *)((*(int (__thiscall **)(BuildingClass *))(this->vtable0 + 132))(this) + 3285) /*0x43ff89*/
+// 0x70ddf0
       && TechnoClass::GetMember81(this) > 0 )
     {
       ++this->ammoReloadTimer; /*0x43ff8b*/
@@ -13292,6 +13303,7 @@ void BuildingClass::ProcessSpreadEffect() {}
         (*(void (__thiscall **)(BuildingClass *))(this->vtable0 + 212))(this); /*0x4400c1*/
         BuildingClass::EjectCrew(this, (unsigned char *)this->C4AppliedBy); /*0x4400d4*/
         (*(void (__thiscall **)(BuildingClass *))(this->vtable0 + 248))(this); /*0x4400dd*/
+// 0x441f60
         return BuildingClass::AfterDestruction(this); /*0x4400f1*/
       }
       result -= (int)dword_A8ED84 - v34; /*0x4400b7*/
@@ -13644,6 +13656,7 @@ void BuildingClass::ProcessSpreadEffect() {}
   if ( !(unsigned char)result ) /*0x43fe63*/
     return result; /*0x43fe63*/
   if ( *(unsigned char *)((*((int (__thiscall **)(BuildingClass *))this->vtable0 + 33))(this) + 3285) /*0x43fe86*/
+// 0x70ddf0
     && TechnoClass::GetMember81((TechnoClass *)this) > 0 )
   {
     ++this->ammoReloadTimer; /*0x43fe88*/
@@ -13676,6 +13689,7 @@ void BuildingClass::ProcessSpreadEffect() {}
       }
     }
     if ( *(unsigned char *)((*((int (__thiscall **)(BuildingClass *))this->vtable0 + 33))(this) + 3285) /*0x43ff89*/
+// 0x70ddf0
       && TechnoClass::GetMember81((TechnoClass *)this) > 0 )
     {
       ++this->ammoReloadTimer; /*0x43ff8b*/
@@ -13741,6 +13755,7 @@ void BuildingClass::ProcessSpreadEffect() {}
         (*((void (__thiscall **)(BuildingClass *))this->vtable0 + 53))(this); /*0x4400c1*/
         BuildingClass::EjectCrew(this, this->C4AppliedBy); /*0x4400d4*/
         (*((void (__thiscall **)(BuildingClass *))this->vtable0 + 62))(this); /*0x4400dd*/
+// 0x441f60
         return BuildingClass::AfterDestruction(this); /*0x4400f1*/
       }
       result -= *(unsigned int *)&stru_A8EB00.gapE4[416] - v34; /*0x4400b7*/
@@ -14094,6 +14109,7 @@ void BuildingClass::ProcessSpreadEffect() {}
   if ( !(unsigned char)result ) /*0x43fe63*/
     return result; /*0x43fe63*/
   if ( *(unsigned char *)((*((int (__thiscall **)(BuildingClass *))this->vtable0 + 33))(this) + 3285) /*0x43fe86*/
+// 0x70ddf0
     && TechnoClass::GetMember81((TechnoClass *)this) > 0 )
   {
     ++this->ammoReloadTimer; /*0x43fe88*/
@@ -14126,6 +14142,7 @@ void BuildingClass::ProcessSpreadEffect() {}
       }
     }
     if ( *(unsigned char *)((*((int (__thiscall **)(BuildingClass *))this->vtable0 + 33))(this) + 3285) /*0x43ff89*/
+// 0x70ddf0
       && TechnoClass::GetMember81((TechnoClass *)this) > 0 )
     {
       ++this->ammoReloadTimer; /*0x43ff8b*/
@@ -14191,6 +14208,7 @@ void BuildingClass::ProcessSpreadEffect() {}
         (*((void (__thiscall **)(BuildingClass *))this->vtable0 + 53))(this); /*0x4400c1*/
         BuildingClass::EjectCrew(this, this->C4AppliedBy); /*0x4400d4*/
         (*((void (__thiscall **)(BuildingClass *))this->vtable0 + 62))(this); /*0x4400dd*/
+// 0x441f60
         return BuildingClass::AfterDestruction(this); /*0x4400f1*/
       }
       result -= *(unsigned int *)&stru_A8EB00.gapE4[416] - v34; /*0x4400b7*/
@@ -14535,6 +14553,7 @@ void BuildingClass::ProcessSpreadEffect() {}
   if ( !(unsigned char)result ) /*0x43fe63*/
     return result; /*0x43fe63*/
   if ( *(unsigned char *)((*(int (__thiscall **)(void *))(*(unsigned int *)&this->attachedTag2))(this) + 3285) /*0x43fe86*/
+// 0x70ddf0
     && TechnoClass::GetMember81(this) > 0 )
   {
     ++this->gattlingValue; /*0x43fe88*/
@@ -14565,6 +14584,7 @@ void BuildingClass::ProcessSpreadEffect() {}
       }
     }
     if ( *(unsigned char *)((*(int (__thiscall **)(void *))(*(unsigned int *)&this->attachedTag2))(this) + 3285) /*0x43ff89*/
+// 0x70ddf0
       && TechnoClass::GetMember81(this) > 0 )
     {
       ++this->gattlingValue; /*0x43ff8b*/
@@ -14628,6 +14648,7 @@ void BuildingClass::ProcessSpreadEffect() {}
         (*(void (__thiscall **)(void *))(*(unsigned int *)&this->q0542))(this); /*0x4400c1*/
         BuildingClass::EjectCrew((int *)this, *((unsigned char **)&this->hasParachute6)); /*0x4400d4*/
         (*(void (__thiscall **)(void *))(*(unsigned int *)&this->q0608))(this); /*0x4400dd*/
+// 0x441f60
         return BuildingClass::AfterDestruction(this); /*0x4400f1*/
       }
       result -= (int)g_CurrentFrame - v33; /*0x4400b7*/
@@ -14954,6 +14975,7 @@ void BuildingClass::ProcessSpreadEffect() {}
   if ( !(unsigned char)result ) /*0x43fe63*/
     return result; /*0x43fe63*/
   if ( *(unsigned char *)((*(int (__thiscall **)(void *))(((unsigned int)(this->attachedTag2))))(this) + 3285) /*0x43fe86*/
+// 0x70ddf0
     && TechnoClass::GetMember81(this) > 0 )
   {
     ++this->gattlingValue; /*0x43fe88*/
@@ -14984,6 +15006,7 @@ void BuildingClass::ProcessSpreadEffect() {}
       }
     }
     if ( *(unsigned char *)((*(int (__thiscall **)(void *))(((unsigned int)(this->attachedTag2))))(this) + 3285) /*0x43ff89*/
+// 0x70ddf0
       && TechnoClass::GetMember81(this) > 0 )
     {
       ++this->gattlingValue; /*0x43ff8b*/

@@ -513,6 +513,7 @@ void* WarheadTypeClass::ProcessPower(int * a2)
   }
   while ( v20 ); /*0x75e04f*/
   Power::TimerProcess(this->WarheadTypeClass_field_0x114); /*0x75e05a*/
+// 0x4a1d50
   return Power::TimerProcess(this->WarheadTypeClass_field_0x120); /*0x75e06d*/
 }
 } // namespace gamemd
@@ -647,6 +648,7 @@ int WarheadTypeClass::FindOrCreate()
   {
   LABEL_6:
     if ( RA2_OPNEW(0x1D0u) ) /*0x75e40b*/
+// 0x75cec0
       return WarheadTypeClass::Construct(Source); /*0x75e421*/
     return 0; /*0x75e415*/
   }

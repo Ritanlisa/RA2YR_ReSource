@@ -271,6 +271,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
       }
       v18 = (int)(this->PlayerIndex);
       if ( (this->LastPacketTime - this->u32_3C > 1 || *(unsigned int *)(a2 + 4) == this->q011 + 1) /*0x48c216*/
+// 0x48b750
         && ConnectionClass::allocPacketSlot((ConnectionClass *)v18, (const void *)a2, a3, 0, 0) )
       {
         v19 = this->q011 + 1; /*0x48c23f*/

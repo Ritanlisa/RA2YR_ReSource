@@ -51,6 +51,7 @@ void AddMessageListPlayerMessage(CellStruct * a1, int a2)
   v2 = 3; /*0x730aa3*/
   if ( dword_A83D4C ) /*0x730aa8*/
     v2 = *(unsigned int *)&((unsigned int *)(dword_A83D4C))[134].__pad_90[4]; /*0x730aaa*/
+// 0x5d3ba0
   return MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, a1, v2, 16454, a2, 1); /*0x730ac9*/
 }
 }
@@ -136,6 +137,7 @@ AbstractClass * * ProcessSelectionExperience()
       if ( v6 ) /*0x730b9a*/
       {
         if ( (*(int (**)(unsigned int))(v6->vtable0 + 44))(*((unsigned int *)dword_A8ECBC + v5)) == 15 /*0x730baa*/
+// 0x5224e0
           && TechnoClass::GetTypeFlag(v6) )
         {
           if ( !(uint8_t)TechnoClass::IsMission27to30(v6) ) /*0x730bbc*/
@@ -1640,6 +1642,7 @@ int E4Recv_734F50::sub_734F50()
   {
     WinMain::ShutdownCleanup(v3); /*0x734f5c*/
     dword_B1CF84 = (int)this; /*0x734f67*/
+// 0x7346a0
     return CSFClass::LoadFile((const char *)dword_B1CF68); /*0x734f6d*/
   }
   return result; /*0x734f72*/
@@ -1657,6 +1660,7 @@ int E4Recv_734F80::sub_734F80()
   {
     WinMain::ShutdownCleanup(v3); /*0x734f8c*/
     dword_B1CF60 = (int)this; /*0x734f97*/
+// 0x7346a0
     return CSFClass::LoadFile((const char *)dword_B1CF68); /*0x734f9d*/
   }
   return result; /*0x734fa2*/

@@ -493,6 +493,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
     || a1->isBerserk
     || v25 )
   {
+// 0x6f7ca0
     return TechnoClass::EvaluateTarget( /*0x6f8c05*/
              a4,
              a3,

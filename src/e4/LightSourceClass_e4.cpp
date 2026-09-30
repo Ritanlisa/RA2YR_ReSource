@@ -88,6 +88,7 @@ int LightSourceClass::Constructor()
 namespace gamemd {
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
+// 0x410410
   return AbstractClass::ProcessPower(); /*0x55507a*/
 }
 } // namespace gamemd

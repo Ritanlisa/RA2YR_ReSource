@@ -997,6 +997,7 @@ HWND sub_5E2340()
   {
     SendMessageA(DlgItem, 0x4DCu, 0, 1); /*0x5e236a*/
     StringCSF = GetStringCSF(aGuiHostgamesta_0, 0, g_Str_File_netdlg2_cpp, 5300); /*0x5e2381*/
+// 0x5e2700
     return Dialog::ShowMessage(-1, (size_t)StringCSF); /*0x5e2389*/
   }
   return result; /*0x5e2391*/
@@ -1327,6 +1328,7 @@ int * E4Recv_643670::UI_Render_643670()
   v12[3] = v9 + a2; /*0x6436d9*/
   v12[0] = 0; /*0x6436fa*/
   v12[1] = 0; /*0x6436fe*/
+// 0x4a61c0
   return TextRenderer::DrawText(&v11, a3, g_DSurface_Hidden, v12, (int)&a1, a4, 0, 25); /*0x64370a*/
 }
 } // namespace gamemd
@@ -1382,6 +1384,7 @@ void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
       Property::Set((unsigned short *)v6, v9); /*0x6ac569*/
       v13 = (unsigned short *)v15; /*0x6ac57a*/
       Text::Layout((unsigned int *)v6, (uint16_t *)v15, &v17, &v16, a4); /*0x6ac584*/
+// 0x434cd0
       return Font::Print(v6, DSurface_Sidebar, v13, v20, *(unsigned int *)(v6 + 28) - v16 + v5, a4, 0, 0, 0, 0); /*0x6ac5b2*/
     }
   }
@@ -1749,6 +1752,7 @@ char sub_731A10()
   if ( v0 ) /*0x731a17*/
     return UI_Delete_Delete(v0); /*0x731a1b*/
   else
+// 0x4311c0
     return Network::SendBeaconDelete(g_VisibilitySystem, -1, -1); /*0x731a29*/
 }
 } // namespace gamemd
@@ -1761,6 +1765,7 @@ int sub_731A30()
 
   result = dword_A8B538; /*0x731a30*/
   if ( !dword_A8B538 ) /*0x731a37*/
+// 0x4ac960
     return MapClass::ToggleZoom((int *)&dword_87F7E8, -1); /*0x731a40*/
   return result; /*0x731a45*/
 }

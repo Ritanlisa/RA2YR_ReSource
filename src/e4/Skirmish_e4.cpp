@@ -244,6 +244,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   if ( hDlgf == (HWND)v13 ) /*0x596dee*/
   {
     if ( !g_MissionQueueFrame.globalVariables[88] ) /*0x596e00*/
+// 0x5975e0
       return SettingsClass::ClampValues(); /*0x596e00*/
   }
   else
@@ -259,6 +260,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   }
   g_MissionQueueFrame.briefing[451] = 0; /*0x596e27*/
   g_MissionQueueFrame.globalVariables[88] = 0; /*0x596e31*/
+// 0x5975e0
   return SettingsClass::ClampValues(); /*0x596e3f*/
 }
 } // namespace gamemd
@@ -632,6 +634,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
     else
     {
       if ( a2 == 1175 ) /*0x6ae423*/
+// 0x6ae6e0
         return Skirmish::SetupGame(hDlg, a4); /*0x6ae4a0*/
       if ( a2 != 15 ) /*0x6ae428*/
       {
@@ -1112,6 +1115,7 @@ int sub_5E2F80()
 
   result = MultiplayerGameMode::Find(*(void **)stru_A8B250); /*0x5e2f86*/
   if ( !result ) /*0x5e2f8d*/
+// 0x5d5e10
     return MultiplayerGameMode::GetFirst(); /*0x5e2f8f*/
   return result; /*0x5e2f94*/
 }

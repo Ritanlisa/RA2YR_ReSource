@@ -407,6 +407,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   }
   Power::TimerProcess(this->specialItem); /*0x4ca554*/
   v7 = (*((int (__stdcall **)(void **))this->owner->? + 4))(&this->owner->?); /*0x4ca563*/
+// 0x4a1d50
   return Power::TimerProcess(v7); /*0x4ca56e*/
 }
 }

@@ -145,6 +145,7 @@ int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
       v2 = 0x4000; /*0x406211*/
     v4 = a1 + 46; /*0x40621f*/
     EndBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406236*/
+// 0x4071c0
     return AudioMixer::PlaySample(v4); /*0x40623e*/
   }
 }

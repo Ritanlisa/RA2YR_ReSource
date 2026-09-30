@@ -383,6 +383,7 @@ AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
 namespace gamemd {
 int AirstrikeClass::Stat(AbstractClass * aP1)
 {
+// 0x410410
   return AbstractClass::ProcessPower(); /*0x41d6ea*/
 }
 } // namespace gamemd
@@ -418,6 +419,7 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x41d794*/
 }
 } // namespace gamemd
@@ -444,8 +446,10 @@ char AirstrikeClass::StartMission(int * a2)
 
   result = (char)a2; /*0x41d835*/
   if ( !this->AirstrikeClass_field_3C ) /*0x41d830*/
+// 0x41d860
     return AirstrikeClass::SpawnAircraft(a2); /*0x41d83c*/
   if ( a2 != (int *)(this->q140) ) /*0x41d847*/
+// 0x41da20
     return AirstrikeClass::ReassignTarget((int)a2); /*0x41d84a*/
   return result; /*0x41d841*/
 }

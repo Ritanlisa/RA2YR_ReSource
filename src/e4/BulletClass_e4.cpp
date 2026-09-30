@@ -118,6 +118,7 @@ BulletClass * * BulletClass::Dtor()
       ++v3; /*0x46663e*/
     }
   }
+// 0x5f3b80
   return ObjectClass::Dtor(); /*0x466657*/
 }
 }
@@ -139,6 +140,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
 namespace gamemd {
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x46afc4*/
 }
 } // namespace gamemd

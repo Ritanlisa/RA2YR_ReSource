@@ -321,6 +321,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
         {
           v24 = (char *)dword_ABED10 + 80 * v20[18] + 80 * g_MapCellWidth * v20[19]; /*0x594642*/
           if ( !*((unsigned int *)v20 + 19) /*0x594664*/
+// 0x56d230
             && MapClass::GetTileIndex(&dword_87F7E8, v23, v31, 0) == a3
             && *((unsigned int *)v24 + 15) == -1 )
           {
@@ -430,6 +431,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
                    + g_MissionQueueFrame.localVariables[163]
                    + 56) == -1
       && !*(unsigned int *)(i + 76)
+// 0x56d230
       && MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], (int16_t *)(i + 36), v4, 0) == v5 )
     {
       FloodFillRandomMapTerrain(i, v4, v5); /*0x594c32*/
@@ -869,6 +871,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   *(unsigned int *)v18.CDFileClass = &off_7E1668; /*0x5962d7*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v18); /*0x5962df*/
   *(unsigned int *)v17.__pad_0 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
+// 0x65d460
   return ComPtr::Release(&v17); /*0x5962f5*/
 }
 }

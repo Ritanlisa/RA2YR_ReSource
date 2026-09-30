@@ -265,6 +265,7 @@ AbstractClass * * GameSettings::Read()
   nullsub_36(v47); /*0x5facf5*/
   IDA_LOBYTE(v48) = this->u8_1E; /*0x5facfa*/
   SetGlobalFlag(v48); /*0x5facfd*/
+// 0x5fb050
   return GameSettings::ParseNetworkAddress(); /*0x5fad09*/
 }
 } // namespace gamemd

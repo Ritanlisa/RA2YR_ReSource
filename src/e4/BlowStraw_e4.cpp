@@ -183,6 +183,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
     }
   }
   this->CountdownTimer_1547.UpdateDisplay(0); /*0x6d099d*/
+// 0x6a7780
   return SidebarClass::UpdateStrips(aP1, a2); /*0x6d09af*/
 }
 }

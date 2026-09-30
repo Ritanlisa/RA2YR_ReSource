@@ -2563,6 +2563,7 @@ unsigned int E4Recv_6CA5A0::sub_6CA5A0()
   v7 = wcschr(v3 + 1, 0x3Au); /*0x6ca607*/
   *v7 = 0; /*0x6ca60e*/
   v8 = WideChar::ToLong(v5, 0, 10); /*0x6ca61e*/
+// 0x7cbb76
   return 60 * WideChar::ToLong((int)(v7 + 1), 0, 10) / 0x64u + 60 * (v8 + 60 * (v6 + 60 * v2)); /*0x6ca640*/
 }
 } // namespace gamemd

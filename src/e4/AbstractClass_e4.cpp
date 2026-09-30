@@ -132,6 +132,7 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
   if ( this->PlaceAnywhere ) /*0x464ac0*/
     return 1; /*0x464aca*/
   else
+// 0x716150
     return BuildingClass::ValidatePath(a2, a3); /*0x464ad9*/
 }
 } // namespace gamemd
@@ -1519,6 +1520,7 @@ unsigned int * AbstractClass::processRevealArea(const wchar_t ** a1, const wchar
 
   v6 = RA2_OPNEW(0x40u); /*0x5d81f2*/
   if ( v6 ) /*0x5d81fc*/
+// 0x5ca630
     return MPBattleClass::MPSiegeClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d821e*/
   else
     return 0; /*0x5d8226*/
@@ -1533,6 +1535,7 @@ unsigned int * AbstractClass::computeRevealRadius(const wchar_t ** a1, const wch
 
   v6 = RA2_OPNEW(0x40u); /*0x5d8232*/
   if ( v6 ) /*0x5d823c*/
+// 0x5cb3a0
     return MPBattleClass::MPUnholyAllianceClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d825e*/
   else
     return 0; /*0x5d8266*/
@@ -1547,6 +1550,7 @@ unsigned int * AbstractClass::applyRevealToCell(const wchar_t ** a1, const wchar
 
   v6 = RA2_OPNEW(0x40u); /*0x5d8272*/
   if ( v6 ) /*0x5d827c*/
+// 0x5c5ce0
     return MPBattleClass::MPFreeForAllClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d829e*/
   else
     return 0; /*0x5d82a6*/
@@ -1561,6 +1565,7 @@ unsigned int * AbstractClass::checkRevealCell(const wchar_t ** a1, const wchar_t
 
   v6 = RA2_OPNEW(0x344u); /*0x5d82b5*/
   if ( v6 ) /*0x5d82bf*/
+// 0x5c1470
     return MPCooperative::ctor(v6, a1, a2, a3, a4, a5, a6); /*0x5d82e1*/
   else
     return 0; /*0x5d82e9*/

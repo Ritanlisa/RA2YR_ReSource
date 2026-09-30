@@ -201,6 +201,7 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
   dword_AC1DCC = 1; /*0x61091f*/
   IDA_HIDWORD(dword_AC1CB8) = v6; /*0x610925*/
   dword_AC1DD4 = a3; /*0x61092d*/
+// 0x610950
   return TriggerClass::FindByEventType(1); /*0x610938*/
 }
 }

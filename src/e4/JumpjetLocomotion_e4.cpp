@@ -2102,6 +2102,7 @@ LABEL_263:
      || *(unsigned char *)(v167 + 680)
      && *(unsigned int *)((*(int (**)(unsigned int))(*this->q00C + 132))(this->q00C) + 1460) == 12
      || *(unsigned int *)((*(int (**)(unsigned int))(*this->q00C + 132))(this->q00C) + 1460) == 12
+// 0x47eba0
      && CellClass::FindBuilding(v165, 0))
     || v214 )
   {

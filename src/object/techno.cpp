@@ -3566,6 +3566,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
   if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->RadioClass + 171))(this) /*0x707db2*/
+// 0x65c7e0
     && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
     return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707dc4*/
@@ -3580,6 +3581,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
   if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vtable0 + 171))(this) /*0x707db2*/
+// 0x65c7e0
     && Random::Range((Random *)&unk_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
     return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707dc4*/
@@ -3594,6 +3596,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
   if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vtable0 + 171))(this) /*0x707db2*/
+// 0x65c7e0
     && Random::Range((Random *)&unk_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
   {
     return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707dc4*/
@@ -3608,6 +3611,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   if ( *(unsigned int *)(v3->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return v5->?; /*0x707dc5*/
   if ( this->HasActiveParam() /*0x707db2*/
+// 0x65c7e0
     && Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99) < 15 )
   {
     return g_RulesClass_Instance->?; /*0x707dc4*/
@@ -3620,6 +3624,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   if ( *(unsigned int *)(v3->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return v5->Production; /*0x707dc5*/
   if ( this->HasActiveParam() /*0x707db2*/
+// 0x65c7e0
     && Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99) < 15 )
   {
     return g_RulesClass_Instance->Production; /*0x707dc4*/

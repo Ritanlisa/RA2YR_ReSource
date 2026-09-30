@@ -526,7 +526,9 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
             return v18; /*0x71f12c*/
           case 0xB: /*0x71f092*/
             if ( *(int *)(Owner + 752) <= 0 /*0x71f1af*/
+// 0x49fb60
               && VectorClass::GetCount((VectorClass *)(Owner + 21860)) <= 0
+// 0x49fb60
               && VectorClass::GetCount((VectorClass *)(Owner + 21880)) <= 0 )
             {
               break; /*0x71f1af*/
@@ -785,6 +787,7 @@ int TEventClass::ProcessEvent(int a2)
     v6 = (*(int (__stdcall **)(int))(*(unsigned int *)(TEventClass_field_30 + 4) + 16))(TEventClass_field_30 + 4); /*0x71f860*/
     Power::TimerProcess(v6); /*0x71f866*/
   }
+// 0x4a1d50
   return Power::TimerProcess(this->TEventClass_field_34); /*0x71f876*/
 }
 } // namespace gamemd

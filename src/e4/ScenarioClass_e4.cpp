@@ -259,6 +259,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
 namespace gamemd {
 void ScenarioClass_dispatchEvents()
 {
+// 0x65c7e0
   return Random::Range((Random *)&((unsigned int *)(dword_A8B230))[14].NeedsSaveOrLink, 0, 9); /*0x69b684*/
 }
 }

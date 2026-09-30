@@ -1475,6 +1475,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
       v54 = v54; /*0x57e274*/
       Cell::SearchEnemies(v24, v54); /*0x57e27b*/
       Cell::SearchEnemies(v51, v54); /*0x57e283*/
+// 0x487a10
       return Cell::SearchEnemies((int)v47, v54); /*0x57e28b*/
     }
   }
@@ -2040,6 +2041,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
       v54 = v54; /*0x57ecd1*/
       Cell::SearchEnemies(v24, v54); /*0x57ecd8*/
       Cell::SearchEnemies(v51, v54); /*0x57ece0*/
+// 0x487a10
       return Cell::SearchEnemies((int)v47, v54); /*0x57ece8*/
     }
   }

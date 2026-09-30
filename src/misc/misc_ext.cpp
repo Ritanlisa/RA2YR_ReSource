@@ -88,6 +88,7 @@ void AITriggerTypeClass::ProcessPower(void * a1, void * a2)
   Power::FlagProcess(a2, v6); /*0x41e6d4*/
   v7 = Power::TimerProcess(this->q0AC); /*0x41e6e2*/
   IDA_LOBYTE(v7) = this->u8_D1; /*0x41e6e7*/
+// 0x4a1ca0
   return Power::FlagProcess(a2, v7, unsigned int a3); /*0x41e6f5*/
 }
 // 0x41eaf0
@@ -1182,6 +1183,7 @@ void EMPulseClass::Stat()
   Checksummer::Add_WORD((Checksummer *)a2, this->u32_26); /*0x4c59c1*/
   Power::TimerProcess(this->u32_28); /*0x4c59cc*/
   Power::TimerProcess(this->u32_2C); /*0x4c59d7*/
+// 0x4a1d50
   return Power::TimerProcess(this->vtable4); /*0x4c59e7*/
 }
 // 0x4c59f0
@@ -1852,6 +1854,7 @@ void FilePipe::Destructor()
     (*(void (__thiscall **)(int))(*(unsigned int *)Pipe_field_0x0C + 52))(Pipe_field_0x0C); /*0x7ba43d*/
     this->Pipe_field_0x0C = 0; /*0x7ba440*/
   }
+// 0x631c80
   return Pipe::Dtor(this); /*0x7ba44e*/
 }
 // 0x7ba450
@@ -1921,6 +1924,7 @@ void FileStraw::Destructor()
     this->q004 = 0; /*0x7ba5ac*/
     this->u32_C = 0; /*0x7ba5b0*/
   }
+// 0x6c9850
   return Straw::Dtor(this); /*0x7ba5be*/
 }
 // 0x477770
@@ -3623,6 +3627,7 @@ void IsometricTileTypeClass::CleanupMembers()
   }
   this->u32_2B1 = 0; /*0x544bc4*/
   this->u32_2AC = 0; /*0x544bca*/
+// 0x5f7400
   return ObjectTypeClass::Destruct(this); /*0x544bd5*/
 }
 // 0x544cb0
@@ -3647,6 +3652,7 @@ void IsometricTileTypeClass::GetTerrainType()
   IsometricTileClass *v4; // eax
 
   v4 = (IsometricTileClass *)RA2_OPNEW(0xB0u); /*0x549aa8*/
+// 0x543780
   return v4 && IsometricTileClass::IsometricTileClass(v4, this->q294, a2); /*0x549acd*/
 }
 // 0x549ae0
@@ -3658,6 +3664,7 @@ void IsometricTileTypeClass::GetHeight()
     MapClass::LoadFileData((MapClass *)this); /*0x549af7*/
   v3 = (IsometricTileClass *)RA2_OPNEW(0xB0u); /*0x549b01*/
   if ( v3 ) /*0x549b0b*/
+// 0x543780
     return IsometricTileClass::IsometricTileClass(v3, this->u32_294, dword_AA105C); /*0x549b1b*/
   else
     return 0; /*0x549b24*/
@@ -4282,6 +4289,7 @@ void MapData::InitHeights()
   Array::ForEach((int)&dword_89D2C4, 4, 5, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); /*0x45c29e*/
   dword_89D2D8 = *(unsigned int *)CellStruct::Set(&v2, 0x7FFF, 0x7FFF); /*0x45c2cb*/
   memset(&dword_89D2DC, 0, 0x74u); /*0x45c2d3*/
+// 0x4068f0
   return Array::ForEach((int)&dword_89D2DC, 4, 29, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); /*0x45c2df*/
 }
 // 0x69a3b0
@@ -4885,6 +4893,7 @@ void MapPreview::Upload()
           RawFileClass::Dtor((RawFileClass *)&v33.__pad_0[12]); /*0x5e849c*/
           LZOPipe::Destructor((LZOPipe *)&v33.__pad_0[48]); /*0x5e84a8*/
           Vector::Clear((int)&v31.Pipe_field_0x0C); /*0x5e84b1*/
+// 0x631c80
           return Pipe::Dtor(&v31); /*0x5e84ba*/
         }
       }
@@ -4979,6 +4988,7 @@ void MapSeed::CheckTileMatch()
   if ( a7 && v20 && !v21 && v17 ) /*0x56d1df*/
     return 1; /*0x56d1e4*/
   TileIndex = MapClass::GetTileIndex((MapClass *)this, a3, a4, a6); /*0x56d205*/
+// 0x56d230
   return MapClass::GetTileIndex((MapClass *)this, a2, a4, a5) == TileIndex; /*0x56d112*/
 }
 // 0x58b7d0
@@ -6334,6 +6344,7 @@ void MapSeedClass::AddRef()
 // 0x597d50
 bool MapSeedClass::ddtor(char* lpFileName)
 {
+// 0x559eb0
   return LoadOptions::ddtor(lpFileName->__pad_0); /*0x597d5a*/
 }
 // 0x597f80
@@ -7639,6 +7650,7 @@ void ScoreFontClass::AddRef()
   {
     v2 = 216; /*0x69082a*/
   }
+// 0x69e7e0
   return Building::GetFoundationSize(v4, 3 * v2 + 2)[2]; /*0x6907fa*/
 }
 // 0x691040
@@ -7756,11 +7768,13 @@ void ScoreScreen::AccumulateScoreStats()
   if ( *((unsigned int *)dword_A83D4C->Object_field_0x34 + 47) ) /*0x68f00f*/
   {
     Screen::TransitionRender((Screen *)v1, v2, v4, 227); /*0x68f03c*/
+// 0x68f060
     return Screen::TransitionRender((Screen *)v1, v5, v3, 283); /*0x68f04a*/
   }
   else
   {
     Screen::TransitionRender((Screen *)v1, v4, v2, 227); /*0x68f01d*/
+// 0x68f060
     return Screen::TransitionRender((Screen *)v1, v3, v5, 283); /*0x68f02b*/
   }
 }
@@ -7884,6 +7898,7 @@ void ScoreScreen::LoadAudio()
     v3 = 0; /*0x69077c*/
     Vector::Clear((int)v2); /*0x690784*/
     v1[0] = &off_7E1668; /*0x69078d*/
+// 0x431b80
     return BufferIOFileClass::Dtor(v1); /*0x690795*/
   }
   return result; /*0x69079a*/
@@ -9040,6 +9055,7 @@ void Actions::Reset()
   v4 = 7 * this->u32_5560; /*0x5bddd5*/
   v5 = (unsigned int *)(4 * v4 + 8572968); /*0x5bdde0*/
   if ( !*(unsigned int *)&stru_82BA00.__pad_1624[4 * v4 + 12] ) /*0x5bdde7*/
+// 0x6922e0
     return ScrollClass::Scroll((ScrollClass *)this, a2, a3); /*0x5bdde7*/
   v6 = g_MissionQueueFrame.localVariables[521]; /*0x5bddf2*/
   if ( g_MissionQueueFrame.localVariables[519] == -1 ) /*0x5bddfb*/
@@ -9050,6 +9066,7 @@ void Actions::Reset()
     v6 -= v7; /*0x5bde11*/
   LABEL_5:
     if ( v6 ) /*0x5bde15*/
+// 0x6922e0
       return ScrollClass::Scroll((ScrollClass *)this, a2, a3); /*0x5bde15*/
   }
   v8 = this->u32_555C; /*0x5bde1b*/
@@ -9088,6 +9105,7 @@ void Actions::Reset()
     &v13,
     g_MissionQueueFrame.localVariables[516],
     v18 + v16);
+// 0x6922e0
   return ScrollClass::Scroll((ScrollClass *)this, a2, a3); /*0x5bdf24*/
 }
 // 0x412b40
@@ -9610,6 +9628,7 @@ void AircraftTrackerClass::FillCurrentVector()
         v106 = Slider::CalcPosition(v94, 2, 1); /*0x413452*/
         DynamicArray::AddFromList(v95, v106); /*0x41345a*/
         v107 = Slider::CalcPosition(v94, 1, 2); /*0x41346e*/
+// 0x4129c0
         return DynamicArray::AddFromList(v95, v107); /*0x413476*/
       }
     }
@@ -9863,6 +9882,7 @@ void ArmorType::FindIndex()
   ArmorType Destination[16]; // [esp+0h] [ebp-80h] BYREF
 
   INIClass::GetString((INIClass *)this, a2, a3, (char *)(&off_7E5210)[a4], Destination[0].__pad_0, 128); /*0x47541c*/
+// 0x772a50
   return ArmorType::LookupByName(Destination); /*0x47542a*/
 }
 // 0x772a50
@@ -10522,6 +10542,7 @@ void ArtConfig::resetConfig()
   v13 = 0; /*0x76fc27*/
   Vector::Clear((int)v12); /*0x76fc2f*/
   v11[0] = &off_7E1668; /*0x76fc38*/
+// 0x431b80
   return BufferIOFileClass::Dtor(v11); /*0x76fc45*/
 }
 // 0x534e50
@@ -11040,6 +11061,7 @@ void BinkMovieClass::SetPosition()
     BinkCopyToBuffer(this->BinkMovieClass_field_0x04, v5, v6, v7, a3, a4, this->BinkMovieClass_field_0x08 | 0x80000000); /*0x4331d1*/
     (*(void (__thiscall **)(int))(*(unsigned int *)a2 + 96))(a2); /*0x4331db*/
   }
+// 0x433270
   return BinkMovie::BlitToTarget((BinkMovie *)this, a2); /*0x4331e7*/
 }
 // 0x4333f0
@@ -11450,6 +11472,7 @@ void BlowStraw::Get()
   if ( Size <= 0 ) /*0x438227*/
     return 0; /*0x4382ed*/
   if ( !this->q00C ) /*0x43822d*/
+// 0x6c98e0
     return Delegate::Invoke(this, (int)a2, Size); /*0x438236*/
   Sizea = 0; /*0x438242*/
   while ( 1 ) /*0x438250*/
@@ -11743,6 +11766,7 @@ void C07F5C70::Write()
     UnitClass::updateHarvesting(ElectricBolt); /*0x74460f*/
     this->ElectricBolt = 0; /*0x744614*/
   }
+// 0x4db690
   return ObjectClass::SaveToStream_Common((ObjectClass *)this, pPStm, a3); /*0x74462e*/
 }
 // 0x746dd0
@@ -11932,12 +11956,14 @@ void CCToolTip::Release()
     }
   }
   MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x478df6*/
+// 0x724ab0
   return ToolTipManager::release((ToolTipManager *)this, (int)v3); /*0x478e0a*/
 }
 // 0x478e10
 void CCToolTip::Draw1()
 {
   this->u32_260 = a2; /*0x478e16*/
+// 0x724b80
   return ToolTipManager::ddtor((ToolTipManager *)this, a2 == 0); /*0x478e25*/
 }
 // 0x478e30
@@ -12044,6 +12070,7 @@ void CCToolTip::Draw2()
 void CCToolTip::Show()
 {
   if ( (*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) >= 0 ) /*0x47905d*/
+// 0x6d1800
     return CursorAnim::Load((TabClass *)this); /*0x47906e*/
   else
     return 0; /*0x47905f*/
@@ -14657,6 +14684,7 @@ void Compression::Read()
   v3 = (char *)Src; /*0x55c351*/
   v4 = Size; /*0x55c357*/
   if ( !Src || Size < 1 ) /*0x55c368*/
+// 0x631d10
     return Delegate::Dispatch((Pipe *)this, Src, Size); /*0x55c5d0*/
   v6 = this->u32_C; /*0x55c36e*/
   Src = 0; /*0x55c375*/
@@ -14772,6 +14800,7 @@ void Conditions::CheckResult()
 {
   DisplayClass *v2; // ecx
 
+// 0x4a9890
   return DisplayClass::UpdateCellPassability(v2, (int16_t *)this, a2) != 0; /*0x653824*/
 }
 // 0x653830
@@ -14779,6 +14808,7 @@ void Conditions::CheckResult3()
 {
   DisplayClass *v3; // ecx
 
+// 0x4a9ca0
   return DisplayClass::vt_entry_94(v3, (int16_t *)this, a2, a3) != 0; /*0x653849*/
 }
 // 0x7667a0
@@ -15193,6 +15223,7 @@ void Dial8Class::SetValue()
     *a3 = 0; /*0x4a569d*/
     dword_8A0148 = 0; /*0x4a56a3*/
   }
+// 0x48e5a0
   return CellClass::Draw((ControlClass *)this, 0, a3, 0); /*0x4a56b9*/
 }
 // 0x4a57b0
@@ -15767,6 +15798,7 @@ void DiskLaserClass::PointerGotInvalid()
 // 0x4a7b80
 void DiskLaserClass::Stat()
 {
+// 0x410410
   return AbstractClass::ProcessPower((AbstractClass *)this); /*0x4a7b8a*/
 }
 // 0x48dd50
@@ -17828,6 +17860,7 @@ void KeywordClass::FindOrCreate()
   {
   LABEL_6:
     if ( RA2_OPNEW(0xE10u) ) /*0x41cf4b*/
+// 0x41c8b0
       return AircraftTypeClass::AircraftTypeClass(Source); /*0x41cf61*/
     return 0; /*0x41cf55*/
   }
@@ -17850,6 +17883,7 @@ void KeywordType::FindOrCreate2()
   {
   LABEL_6:
     if ( RA2_OPNEW(0xED0u) ) /*0x524d0b*/
+// 0x5236a0
       return InfantryTypeClass::Constructor(Source); /*0x524d21*/
     return 0; /*0x524d15*/
   }
@@ -18300,6 +18334,7 @@ void LZOPipe::Destructor()
   this->u32_14 = 0; /*0x55c325*/
   RA2_OPDEL(v3); /*0x55c32d*/
   this->u32_18 = 0; /*0x55c337*/
+// 0x631c80
   return Pipe::Dtor((Pipe *)this); /*0x55c343*/
 }
 // 0x55c5e0
@@ -18398,6 +18433,7 @@ void LZOStraw::Destructor()
   this->u32_14 = 0; /*0x55c795*/
   RA2_OPDEL(v3); /*0x55c79d*/
   this->u32_18 = 0; /*0x55c7a7*/
+// 0x6c9850
   return Straw::Dtor((Straw *)this); /*0x55c7b3*/
 }
 // 0x55c990
@@ -18703,6 +18739,7 @@ void MIXClass::CopyHeader()
     IDA_LOWORD(v7) = this->u32_1188 + this->u32_1184; /*0x4a8e4e*/
     IDA_LOWORD(a2) = v8 + this->u32_1182; /*0x4a8e58*/
     IDA_HIWORD(a2) = v7; /*0x4a8e5d*/
+// 0x4a9650
     return BuildingClass::MarkExitPath(&a2, 1); /*0x4a8e71*/
   }
   return result; /*0x4a8e77*/
@@ -19223,6 +19260,7 @@ void MSBitPrintAnim::Draw()
     v12 = this->u32_24; /*0x5cd544*/
     v11 = this->q008; /*0x5cd545*/
     v10 = WideString::GetOrEmpty((wchar_t **)this + 7); /*0x5cd549*/
+// 0x434cd0
     return Font::Print((int)g_FogOfWarState, a2, v10, v11, v12, v13, v14, v15, 0, 0); /*0x5cd560*/
   }
 }
@@ -19579,6 +19617,7 @@ void MSEngine_Destru::CheckStringNotEmpty()
   if ( result ) /*0x5ae4d2*/
   {
     if ( this->m_CC != -1 ) /*0x5ae4db*/
+// 0x6c8c40
       return Timer::GetTicks(); /*0x5ae4e3*/
   }
   return result; /*0x5ae4e8*/
@@ -19694,6 +19733,7 @@ void MSFont::AddRef()
   {
     v2 = 0; /*0x5d3216*/
   }
+// 0x69e7e0
   return Building::GetFoundationSize(v3, 3 * v2 + 2)[2] + 1; /*0x5d31fd*/
 }
 // 0x5d3250
@@ -22040,6 +22080,7 @@ void NullGuard::Call()
 // 0x5d3a40
 void ObjectManager::InitMessageList()
 {
+// 0x5d3a60
   return MessageListClass::Init((MessageListClass *)this, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 640); /*0x5d3a5e*/
 }
 // 0x697840
@@ -23581,6 +23622,7 @@ void PreviewClass::ReadPreview()
 
   CCFileClass::Construct((CCFileClass *)&v12.Buffer_field_10, Source); /*0x641efa*/
   if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v12.Buffer_field_10, 0) /*0x641f19*/
+// 0x473d10
     && FileClass::Load((CCFileClass *)&v12.Buffer_field_10, (const CHAR *)1) )
   {
     INIClass::INIClass((INIClass *)&v15); /*0x641f2d*/
@@ -23842,6 +23884,7 @@ void PrintTimerOnTactical::Start()
                     v10,
                     0,
                     17944);
+// 0x4a61c0
   return TextRenderer::DrawText(&v29, (size_t)v35, DSurface_Composite, v18, v20, v21, v22, v24); /*0x6d4da2*/
 }
 // 0x5ac960
@@ -24139,6 +24182,7 @@ void PushCommandClass::Execute()
     v6[0] = v2; /*0x6d09f2*/
     v6[3] = v3; /*0x6d09f6*/
     HashTable::Remove((int *)dword_887368, v2); /*0x6d09fa*/
+// 0x724580
     return CommandClass::AddAction((int)dword_887368, (int)v6); /*0x6d0a0a*/
   }
   return result; /*0x6d0a0f*/
@@ -24624,6 +24668,7 @@ void ShapeButtonClass::Destructor()
     this->u32_14 = 0; /*0x69dde9*/
     this->u32_18 = 0; /*0x69ddec*/
   }
+// 0x4e1390
   return GadgetClass::Dtor((ShpButtonClass *)this); /*0x69ddf6*/
 }
 // 0x4b57f0
@@ -25426,6 +25471,7 @@ void StaticButtonClass::OnClick()
     v8 = (unsigned int *)(*(int (__thiscall **)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x6c6854*/
                      g_DSurface_Hidden_2,
                      v13);
+// 0x4a61c0
     return TextRenderer::DrawText(&v12, a2, (int)g_DSurface_Hidden_2, v8, (int)v11, v9, 0, v10); /*0x6c6869*/
   }
   return result; /*0x6c6872*/
@@ -30941,6 +30987,7 @@ void ToggleClass::Construct()
 // 0x536fa0
 void ToggleRepairModeCommandClass::Execute()
 {
+// 0x4ac8c0
   return BuildingClass::TogglePower2((BuildingClass *)&stru_87F5F0.__pad_58[416], -1); /*0x536fac*/
 }
 // 0x43a0b0
@@ -32500,6 +32547,7 @@ void WDTGame::ToggleTeamMode()
       v6 = this->u32_6C; /*0x76940f*/
     MSAnim::Reset(v6); /*0x769416*/
     Team::ReleaseAll(a2, &this->q0084); /*0x769425*/
+// 0x5d1e50
     return DSurface::Flip2(); /*0x76942c*/
   }
   return result; /*0x769431*/
@@ -32770,6 +32818,7 @@ void WDTSurface::ToggleState()
       v5 = this->u32_6C; /*0x7693bf*/
     MSAnim::Reset(*(unsigned int **)(&this->q0280), v5); /*0x7693c6*/
     Team::ReleaseAll(a2, &this->q0204); /*0x7693d5*/
+// 0x5d1e50
     return DSurface::Flip2(); /*0x7693dc*/
   }
   return result; /*0x7693e1*/

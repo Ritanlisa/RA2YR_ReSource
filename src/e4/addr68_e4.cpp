@@ -1179,6 +1179,7 @@ void SaveScenarioToINI()
   RawFileClass::Construct((BufferIOFileClass *)&v13, (int)Source); /*0x687ed2*/
   INIClass::WriteDigest((CCINIClass *)&v10.vtable1, (int)&v13, 1); /*0x687ee5*/
   RawFileClass::Dtor((BufferIOFileClass *)&v13); /*0x687ef1*/
+// 0x5256f0
   return HashTable::DestroyHashTableINIClass((INIClass *)&v10.vtable1); /*0x687eff*/
 }
 }
@@ -1403,6 +1404,7 @@ AbstractClass * * SessionClass_AssignHouses()
     v26 = 0; /*0x68835a*/
   }
   *(unsigned int *)(v26 + 90196) = Network_Assign(g_INI_Key_LightGrey, 53); /*0x68836d*/
+// 0x50b840
   return HouseClass::GetColor((char *)v26); /*0x688378*/
 }
 }

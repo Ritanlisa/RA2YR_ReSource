@@ -5020,6 +5020,7 @@ long long E4Recv_63F8F0::sub_63F8F0()
   v4 = *(&this->q21C5) + *(&this->q21C6) + *(&this->q21C7); /*0x63f917*/
   if ( v4 > v2 ) /*0x63f91c*/
     v4 = v2; /*0x63f91e*/
+// 0x7c5f00
   return Math::RoundToInt((double)v4 / (double)v2 * 5.0); /*0x63f935*/
 }
 } // namespace gamemd

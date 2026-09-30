@@ -472,6 +472,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v7 - *(unsigned int *)(this->u32_C + 8) - v59,
     2);
   (*(void (**)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))(this->u32_C, v76); /*0x68f878*/
+// 0x690160
   return Screen::TransitionLoop(20); /*0x68f884*/
 }
 // 0x690160

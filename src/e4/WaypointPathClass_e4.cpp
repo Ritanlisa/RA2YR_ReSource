@@ -258,6 +258,7 @@ int WaypointPathClass::PowerDrainUpdate(int a2)
 {
   AbstractClass::ProcessPower(); /*0x763c09*/
   Power::TimerProcess(this->idxArray); /*0x763c14*/
+// 0x4a1d50
   return Power::TimerProcess(this-((unsigned int *)(>waypoints))[4]); /*0x763c24*/
 }
 } // namespace gamemd

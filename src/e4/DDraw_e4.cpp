@@ -109,6 +109,7 @@ int DDraw::CapabilityCheck()
   {
     Debug::Log_0(aOk_1); /*0x4a3fac*/
   }
+// 0x4ba6b0
   return DSurface::Destroy(v7); /*0x4a3fa1*/
 }
 } // namespace gamemd

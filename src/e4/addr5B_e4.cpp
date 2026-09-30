@@ -1055,6 +1055,7 @@ int E4Recv_5BCE10::sub_5BCE10(int a2)
       }
       while ( v23 ); /*0x5bcef5*/
     }
+// 0x5bd490
     return Text::DrawRepeated(0, 0, 80, 25); /*0x5bcf7b*/
   }
   return result; /*0x5bcf83*/
@@ -2453,6 +2454,7 @@ HWND sub_5B6F30()
   }
   result = (HWND)Network::CleanupOnDisconnect(); /*0x5b7069*/
   if ( v2 ) /*0x5b7070*/
+// 0x622720
     return Dialog::Destroy(v2); /*0x5b7074*/
   return result; /*0x5b7079*/
 }
@@ -2812,6 +2814,7 @@ HWND sub_5BAB00()
   }
   result = (HWND)Network::CleanupOnDisconnect(); /*0x5bac39*/
   if ( v2 ) /*0x5bac40*/
+// 0x622720
     return Dialog::Destroy(v2); /*0x5bac44*/
   return result; /*0x5bac49*/
 }
@@ -3035,6 +3038,7 @@ char sub_5BC460(int a1)
   while ( v2 < 25 ); /*0x5bc49b*/
   v1[10036] = 1; /*0x5bc4a5*/
   Text::DrawRepeated(v1, 0, 0, 80, 25); /*0x5bc4ac*/
+// 0x5bd490
   return Text::DrawRepeated((void *)dword_ABF23C, 0, 0, 80, 25); /*0x5bc4c4*/
 }
 } // namespace gamemd
@@ -3214,6 +3218,7 @@ char sub_5BD240(int a1, size_t BufferCount, wchar_t Format)
   {
     vswprintf(Buffer, BufferCount, &Format, *(va_list *)v4); /*0x5bd267*/
     sprintf(v4, "%S", Buffer); /*0x5bd27e*/
+// 0x5bd0d0
     return Debug::ScrollText(a1, v4); /*0x5bd292*/
   }
   return result; /*0x5bd297*/
@@ -3235,6 +3240,7 @@ char E4Recv_5BD2E0::sub_5BD2E0(ObjectClass * aP1, int a3, int a4, int a5)
     if ( IDA_BYTE2(g_MissionQueueFrame.localVariables[493]) ) /*0x5bd313*/
       this->u32_2710 = a5; /*0x5bd31c*/
     sprintf(Buffer, (const char *const)&stru_82BA00.NumberImpassableRows, aP1); /*0x5bd334*/
+// 0x5bd0d0
     return Debug::ScrollText(Buffer); /*0x5bd343*/
   }
   return result; /*0x5bd348*/
@@ -3607,6 +3613,7 @@ int E4Recv_5BF360::sub_5BF360()
   int result; // eax
 
   if ( this ) /*0x5bf362*/
+// 0x5d3ba0
     return MessageListClass::AddMessage( /*0x5bf37e*/
              (MessageListClass *)&stru_A8BB1C.__pad_87[189],
              0,

@@ -327,6 +327,7 @@ int AnimClass::ProcessCraterFormation() {
       }
     }
   }
+// 0x5f65f0
   return ObjectClass::Destroy((ObjectClass *)this); /*0x425624*/
 }
 }
@@ -484,6 +485,7 @@ void* AnimClass::InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, 
   Float4::Copy((float *)this->AnimClass_field_0x40, v30, v19); /*0x439969*/
   Matrix3x4::Identity(&v31); /*0x439972*/
   v20 = ConvertMatrixToQuaternion(v30, (float *)v31.m_Data); /*0x43997f*/
+// 0x645d20
   return Float4::Copy((float *)this->AnimClass_field_0x30, &v27, v20); /*0x439992*/
 }
 }
@@ -1060,6 +1062,7 @@ bool BulletClass::CheckBulletCollision(void* a1) {
     if ( v14 ) /*0x468d47*/
     {
       if ( (*(uint8_t (__thiscall **)(void *))(v14->u8_15)(v14) /*0x468d65*/
+// 0x5f6360
         && ObjectClass::DistanceTo((ObjectClass *)this, (int)this->BulletClass_field_0x10C) < 128 )
       {
         return 1; /*0x468d3d*/
@@ -1364,6 +1367,7 @@ int BulletClass::InitScalable() {
   v3 = dword_89DE28 - 5; /*0x46b2dc*/
   if ( dword_89DE28 - 5 < 0 ) /*0x46b2e1*/
     v3 = 0; /*0x46b2e3*/
+// 0x46c840
   return BulletTypeClass::SetScaledSpawnDelay( /*0x46b307*/
            (BulletTypeClass *)this->BulletClass_field_0xAC,
            v3 / 3 + *((unsigned int *)this->BulletClass_field_0xAC + 185));
@@ -5167,6 +5171,7 @@ int OverlayClass::WriteINI() {
   Pipe::Dtor(v23); /*0x5fd8c1*/
   LCWPipe::Dtor(v26); /*0x5fd8ca*/
   Vector::Clear((int)v22); /*0x5fd8d3*/
+// 0x631c80
   return Pipe::Dtor(v21); /*0x5fd8e1*/
 }
 }
@@ -6637,6 +6642,7 @@ int ParticleSystemClass::PowerDrainUpdate(void* a1) {
     Power::TimerProcess(v8); /*0x630173*/
   }
   Checksummer::Add_float((Checksummer *)a1, *(unsigned int *)&this->__pad_E5[3]); /*0x630181*/
+// 0x4a1d50
   return Power::TimerProcess(*(unsigned int *)&this->__pad_E5[7]); /*0x630194*/
 }
 }
@@ -6713,6 +6719,7 @@ void RadSiteClass::Constructor() {
 // 0x65B3B0
 namespace gamemd { 
 int RadSiteClass::PowerDrainUpdate(int a1) {
+// 0x410410
   return AbstractClass::ProcessPower((AbstractClass *)this); /*0x65b3ba*/
 }
 }
@@ -6939,6 +6946,7 @@ int TerrainClass::CleanupMembers() {
       }
     }
   }
+// 0x5f3b80
   return ObjectClass::Dtor((ObjectClass *)this); /*0x71b910*/
 }
 }
@@ -7718,6 +7726,7 @@ int TerrainClass::PowerDrainUpdate(void* a1) {
   IDA_LOBYTE(v6) = this->__pad_C0[13]; /*0x71cf96*/
   Power::FlagProcess((Power *)a1, v6); /*0x71cf9f*/
   Power::TimerProcess(this->TerrainClass_field_rect_D0[0]); /*0x71cfad*/
+// 0x4a1d50
   return Power::TimerProcess(this->TerrainClass_field_rect_D0[1]); /*0x71cfc0*/
 }
 }
@@ -7931,6 +7940,7 @@ int TiberiumClass::CleanupMembers() {
   }
   this->q0D1 = 0; /*0x721a2e*/
   this->q0CC = 0; /*0x721a34*/
+// 0x4109c0
   return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x721a3f*/
 }
 }
@@ -7944,6 +7954,7 @@ int TiberiumClass::Harvest(void* a1) {
   Power::TimerProcess(this->Growth); /*0x721e01*/
   Power::TimerProcess(this->GrowthPercentage[0]); /*0x721e0f*/
   Power::TimerProcess(*(unsigned int *)this->__pad_E4); /*0x721e1d*/
+// 0x4a1d50
   return Power::TimerProcess(*(unsigned int *)&this->__pad_E4[4]); /*0x721e30*/
 }
 }
@@ -8070,6 +8081,7 @@ int TubeClass::PowerDrainUpdate(void* a1) {
     --v4; /*0x728690*/
   }
   while ( v4 ); /*0x728691*/
+// 0x4a1d50
   return Power::TimerProcess(this->estimatedHealth); /*0x7286a1*/
 }
 }
@@ -8332,6 +8344,7 @@ int WaveClass::Destructor() {
   }
   this->u32_1FD = 0; /*0x75edd7*/
   this->u32_1F8 = 0; /*0x75eddb*/
+// 0x5f3b80
   return ObjectClass::Dtor((ObjectClass *)this); /*0x75ede7*/
 }
 }

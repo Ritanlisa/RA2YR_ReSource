@@ -288,6 +288,7 @@ int MapClass::ToggleZoom(int a2)
       if ( v4 ) /*0x4ac9e1*/
       {
         *(unsigned char *)&this->q11B4 = 1; /*0x4ac9e3*/
+// 0x48dc90
         return MapClass::UnselectAll_ClearLimboLaunchers(v7); /*0x4ac9ea*/
       }
       else
@@ -383,6 +384,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   }
   (*((void (**)(DSurface *))DSurface_Alternate->DSurface_field_0x0 + 24))(DSurface_Alternate); /*0x4ada06*/
   Vector::Clear((int)&v18.Pipe_field_0x0C); /*0x4ada0d*/
+// 0x631c80
   return Pipe::Dtor(&v18); /*0x4ada1b*/
 }
 } // namespace gamemd
@@ -546,6 +548,7 @@ int MapClass::ScrollOnce(AbstractClass * aP1)
   if ( (unsigned char)result ) /*0x554a85*/
   {
     this->Activated = 0; /*0x554a8b*/
+// 0x554af0
     return TacticalClass::ScrollView(aP1); /*0x554a90*/
   }
   return result; /*0x554a95*/
@@ -1175,6 +1178,7 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
       }
     }
   }
+// 0x567da0
   return MapClass::RevealArea2(&v51, 0, aP2 + 3, 0); /*0x5678cf*/
 }
 } // namespace gamemd
@@ -2193,10 +2197,12 @@ int MapClass::TransitionCliff(MouseClass * aP0)
         v12 = *(unsigned short *)(v2 + 2); /*0x57488b*/
         IDA_LOWORD(aP0) = *(unsigned short *)v2; /*0x57488f*/
         IDA_HIWORD(aP0) = v12 - 1; /*0x57489a*/
+// 0x575220
         return CellClass::ApplyCliffMod2(&aP0); /*0x5748aa*/
       }
       else
       {
+// 0x575220
         return CellClass::ApplyCliffMod2((unsigned int *)v2); /*0x57487b*/
       }
     }
@@ -2205,6 +2211,7 @@ int MapClass::TransitionCliff(MouseClass * aP0)
       v9 = *(unsigned short *)(v2 + 2) + 1; /*0x574817*/
       IDA_LOWORD(aP0) = *(unsigned short *)v2; /*0x574819*/
       IDA_HIWORD(aP0) = v9; /*0x57481e*/
+// 0x575220
       return CellClass::ApplyCliffMod2(&aP0); /*0x574832*/
     }
   }
@@ -2224,10 +2231,12 @@ int MapClass::TransitionCliff(MouseClass * aP0)
       {
         aP0 = 1; /*0x57498f*/
         v18 = *CellStruct::Sub((CellStruct *)v2, &v19, &aP0); /*0x5749a8*/
+// 0x575540
         return CellClass::ApplyCliffMod(&v18); /*0x5749af*/
       }
       else
       {
+// 0x575540
         return CellClass::ApplyCliffMod((unsigned int *)v2); /*0x574976*/
       }
     }
@@ -2236,6 +2245,7 @@ int MapClass::TransitionCliff(MouseClass * aP0)
       v15 = *(unsigned short *)v2 + 1; /*0x574912*/
       IDA_HIWORD(aP0) = *(unsigned short *)(v2 + 2); /*0x574914*/
       IDA_LOWORD(aP0) = v15; /*0x574919*/
+// 0x575540
       return CellClass::ApplyCliffMod(&aP0); /*0x57492d*/
     }
   }
@@ -3340,6 +3350,7 @@ int MapClass::IsAreaFree(int * a2, int a3)
   v5 = a2[2] + *a2; /*0x5867b4*/
   v16 = (int *)v4; /*0x5867b6*/
   if ( v4 >= v5 ) /*0x5867bc*/
+// 0x578390
     return MapClass::IsRectInBounds(a2, 1); /*0x586874*/
   while ( 1 ) /*0x5867c2*/
   {
@@ -3349,6 +3360,7 @@ int MapClass::IsAreaFree(int * a2, int a3)
   LABEL_20:
     v16 = (int *)++v4; /*0x58686a*/
     if ( v4 >= a2[2] + *a2 ) /*0x58686e*/
+// 0x578390
       return MapClass::IsRectInBounds(a2, 1); /*0x58686e*/
   }
   IDA_LOWORD(v17) = v4; /*0x5867d4*/
@@ -3767,6 +3779,7 @@ int MapClass::ProcessTile()
   MapClass::PostProcessReveal((MapClass *)&stru_87F5F0.__pad_58[416], 1); /*0x599615*/
   Debug::Log(); /*0x59961f*/
   Shroud::ProcessCellVisibility((RadarClass *)&stru_87F5F0.__pad_58[416], (int *)&stru_87F5F0.__pad_58[668]); /*0x599631*/
+// 0x654650
   return RadarClass::RecreateSurface(v6, 0); /*0x599640*/
 }
 // 0x5A0410
@@ -4222,6 +4235,7 @@ char MapClass::isCellAccessible(int a2)
 // 0x4758C0
 char MapClass::loadTheaterINI(INIClass * aP1, char * a2, int a4)
 {
+// 0x528660
   return INIClass::SetString(aP1, a2, &Theater_Array[112 * a4]); /*0x4758e6*/
 }
 // 0x48DC90
@@ -4584,6 +4598,7 @@ unsigned int * MapClass::BuildSubzones()
     pad_BC -= 24; /*0x581f70*/
   }
   while ( v2 >= 0 ); /*0x581f75*/
+// 0x42c1c0
   return MapClass::AllocArrays(&stru_87E790.__pad_D8[80]); /*0x581f81*/
 }
 // 0x588BF0

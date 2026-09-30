@@ -586,6 +586,7 @@ int BulletTypeClass::ProcessPower(int * a2)
   Power::TimerProcess(this->rot); /*0x46c66c*/
   Power::TimerProcess(this->arm); /*0x46c67a*/
   IDA_LOBYTE(v18) = this->flat; /*0x46c67f*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v18); /*0x46c68d*/
 }
 } // namespace gamemd
@@ -1016,6 +1017,7 @@ char BulletTypeClass::ReadTrajectoryFlags(unsigned char * Block, char * a3, int 
   }
   while ( v8 ); /*0x475213*/
   if ( v4 ) /*0x47521e*/
+// 0x528660
     return INIClass::SetString(this->ObjectTypeClass, Block, a3, Source); /*0x475239*/
   else
     return 1; /*0x475248*/

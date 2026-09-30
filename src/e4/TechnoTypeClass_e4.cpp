@@ -1015,6 +1015,7 @@ int TechnoTypeClass::DTOR()
   }
   this->VoxelAnimList_FlagByte = 0; /*0x711e5f*/
   this->VoxelAnimList_Capacity = 0; /*0x711e65*/
+// 0x5f7400
   return ObjectTypeClass::Destruct(); /*0x711e70*/
 }
 } // namespace gamemd

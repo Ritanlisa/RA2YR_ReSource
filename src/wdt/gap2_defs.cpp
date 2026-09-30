@@ -13,6 +13,7 @@
 
 // 0x4104C0
 namespace gamemd { namespace wdt { 
+// 0x4104c0
 int Map::GetInvalidCoord() {
   unsigned int *v2; // [esp+4h] [ebp+4h]
 
@@ -25,6 +26,7 @@ int Map::GetInvalidCoord() {
 }
 // 0x4F28B0
 namespace gamemd { namespace wdt { 
+// 0x4f28b0
 bool Map::CanScroll() {
   return this->Height < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f28bd*/
 }
@@ -32,6 +34,7 @@ bool Map::CanScroll() {
 }
 // 0x4F3A90
 namespace gamemd { namespace wdt { 
+// 0x4f3a90
 int State::SetIfChanged(int a1) {
   int result; // eax
   int v3; // edx
@@ -49,6 +52,7 @@ int State::SetIfChanged(int a1) {
 }
 // 0x5C2500
 namespace gamemd { namespace wdt { 
+// 0x5c2500
 void Campaign::SetupMovie() {
   int result; // eax
   HWND v3; // ebx
@@ -133,6 +137,7 @@ void Campaign::SetupMovie() {
           DisableCampaignSlots(v3, v7); /*0x5c261b*/
           result = Dialog::FindGameUI(); /*0x5c2620*/
           if ( result ) /*0x5c2627*/
+// 0x5c21d0
             return CampaignCoop::Setup(v5, (HWND)result, 1); /*0x5c262e*/
         }
       }
@@ -144,6 +149,7 @@ void Campaign::SetupMovie() {
 }
 // 0x76BFE0
 namespace gamemd { namespace wdt { 
+// 0x76bfe0
 int Conflict::GetOwnerHouse() {
   int Outcome; // eax
 

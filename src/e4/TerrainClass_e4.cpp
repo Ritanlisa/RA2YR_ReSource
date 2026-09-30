@@ -1098,6 +1098,7 @@ LABEL_290:
       HouseClass::NotifyImpactWater(v120);
       return 1;
     case 0x72:
+// 0x6e4100
       return TActionClass::executePsychicDominatorAction(
                (unsigned int *)a1,
                (int)aP1,
@@ -1341,6 +1342,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * aP2, AbstractCla
 namespace gamemd {
 int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71cf44*/
 }
 } // namespace gamemd

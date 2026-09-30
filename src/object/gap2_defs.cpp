@@ -20,6 +20,7 @@
 
 // 0x410540
 namespace ra2 { namespace game { 
+// 0x410540
 gamemd::Vector3D<int> * AbstractClass::GetCoords(gamemd::Vector3D<int> *) const { return nullptr; } }
   int *v1; // ecx
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
@@ -50,6 +51,7 @@ gamemd::Vector3D<int> * AbstractClass::GetCoords(gamemd::Vector3D<int> *) const 
 }
 // 0x4101C0
 namespace ra2 { namespace game { 
+// 0x4101c0
 void* AbstractClass::InitVtables(int a1) {
   this->vtable2 = &(void*)(void*)&INoticeSink_vftable; /*0x4101c2*/
   this->vtable3 = &(void*)(void*)&INoticeSource_vftable; /*0x4101c9*/
@@ -63,6 +65,7 @@ void* AbstractClass::InitVtables(int a1) {
 }
 // 0x410300
 namespace ra2 { namespace game { 
+// 0x410300
 int AbstractClass::COMStub_AddRef() {
   return 1; /*0x410305*/
 }
@@ -70,6 +73,7 @@ int AbstractClass::COMStub_AddRef() {
 }
 // 0x410310
 namespace ra2 { namespace game { 
+// 0x410310
 int AbstractClass::COMStub_Release() {
   return 1; /*0x410315*/
 }
@@ -77,6 +81,7 @@ int AbstractClass::COMStub_Release() {
 }
 // 0x4103E0
 namespace ra2 { namespace game { 
+// 0x4103e0
 int ObjectClass::GetSizeMax() {
   int v2; // [esp+8h] [ebp+4h]
   unsigned int *v3; // [esp+Ch] [ebp+8h]
@@ -91,18 +96,21 @@ int ObjectClass::GetSizeMax() {
 }
 // 0x410410
 namespace ra2 { namespace game { 
+// 0x410410
 int AbstractClass::ProcessPower() {
   int v2; // ecx
   Power *v4; // [esp+Ch] [ebp+4h]
 
   Power::TimerProcess(this->uniqueId); /*0x41041e*/
   IDA_LOBYTE(v2) = this->NeedsSaveOrLink; /*0x410423*/
+// 0x4a1ca0
   return Power::FlagProcess(v4, v2); /*0x41042e*/
 }
 }
 }
 // 0x410450
 namespace ra2 { namespace game { 
+// 0x410450
 int AbstractClass::IsClean() {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -112,6 +120,7 @@ int AbstractClass::IsClean() {
 }
 // 0x4104F0
 namespace ra2 { namespace game { 
+// 0x4104f0
 int* AbstractClass::GetCoordsEx(int* outBuffer, AbstractClass* source) {
   unsigned int *v1; // ecx
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
@@ -127,6 +136,7 @@ int* AbstractClass::GetCoordsEx(int* outBuffer, AbstractClass* source) {
 }
 // 0x4105A0
 namespace ra2 { namespace game { 
+// 0x4105a0
 int AbstractClass::COMStub_8() {
   char v3; // [esp+8h] [ebp+4h]
 
@@ -142,6 +152,7 @@ int AbstractClass::COMStub_8() {
 }
 // 0x414BB0
 namespace ra2 { namespace game { 
+// 0x414bb0
 int TechnoClass::SmokeUpdate() {
   int v2; // ecx
   void **v3; // eax
@@ -377,13 +388,16 @@ int TechnoClass::SmokeUpdate() {
 }
 // 0x417C80
 namespace ra2 { namespace game { 
+// 0x417c80
 int ObjectClass::vt_entry_140(int a1, void* a2, void* a3, void* a4) {
+// 0x4d7d50
   return ObjectClass::SpawnInfantry(this, a1, a2, a3, a4); /*0x417c99*/
 }
 }
 }
 // 0x41B5E0
 namespace ra2 { namespace game { 
+// 0x41b5e0
 bool MissionClass::vt_entry_200() {
   int currentMission; // eax
 
@@ -404,6 +418,7 @@ int TechnoClass::updateROFTimer()
 }
 // 0x41BDD0
 namespace ra2 { namespace game { 
+// 0x41bdd0
 int ObjectClass::GetCoordsThunk1() {
   unsigned int *v1; // ecx
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
@@ -419,6 +434,7 @@ int ObjectClass::GetCoordsThunk1() {
 }
 // 0x41BE30
 namespace ra2 { namespace game { 
+// 0x41be30
 int ObjectClass::GetCoordsThunk3() {
   unsigned int *v1; // ecx
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
@@ -434,6 +450,7 @@ int ObjectClass::GetCoordsThunk3() {
 }
 // 0x41C490
 namespace ra2 { namespace game { 
+// 0x41c490
 void* AbstractClass::processCleanup(int a2) {
   int v3; // eax
   char *v4; // ebp
@@ -476,6 +493,7 @@ void* AbstractClass::processCleanup(int a2) {
 }
 // 0x41C640
 namespace ra2 { namespace game { 
+// 0x41c640
 int TechnoClass::processIdleState(int a1, void* a2, void* a3) {
   return AircraftClass::QueryInterface((AircraftClass *)this, (AbstractClass *)(a1 - 4), a2, a3);
 }
@@ -483,6 +501,7 @@ int TechnoClass::processIdleState(int a1, void* a2, void* a3) {
 }
 // 0x41C650
 namespace ra2 { namespace game { 
+// 0x41c650
 int TechnoClass::processGuardState(int a1) {
   return AircraftClass::AddRef((AircraftClass *)this, a1 - 4);
 }
@@ -490,6 +509,7 @@ int TechnoClass::processGuardState(int a1) {
 }
 // 0x41C660
 namespace ra2 { namespace game { 
+// 0x41c660
 int TechnoClass::processAttackState(int a1) {
   return AircraftClass::Release((AircraftClass *)this, a1 - 4);
 }
@@ -497,6 +517,7 @@ int TechnoClass::processAttackState(int a1) {
 }
 // 0x41C670
 namespace ra2 { namespace game { 
+// 0x41c670
 int TechnoClass::processMoveState(int a1, void* a2, void* a3) {
   return AircraftClass::QueryInterface((AircraftClass *)this, (AbstractClass *)(a1 - 1728), a2, a3);
 }
@@ -504,6 +525,7 @@ int TechnoClass::processMoveState(int a1, void* a2, void* a3) {
 }
 // 0x41C680
 namespace ra2 { namespace game { 
+// 0x41c680
 int TechnoClass::processHarvestState(int a1) {
   return AircraftClass::AddRef((AircraftClass *)this, a1 - 1728);
 }
@@ -511,6 +533,7 @@ int TechnoClass::processHarvestState(int a1) {
 }
 // 0x41C690
 namespace ra2 { namespace game { 
+// 0x41c690
 int TechnoClass::processDeployState(int a1) {
   return AircraftClass::Release((AircraftClass *)this, a1 - 1728);
 }
@@ -518,6 +541,7 @@ int TechnoClass::processDeployState(int a1) {
 }
 // 0x41CFA0
 namespace ra2 { namespace game { 
+// 0x41cfa0
 int ObjectClass::GetMember41_2() {
   return (int)this->Image; /*0x41cfa6*/
 }
@@ -525,6 +549,7 @@ int ObjectClass::GetMember41_2() {
 }
 // 0x41D300
 namespace ra2 { namespace game { 
+// 0x41d300
 void* AbstractClass::Create() {
   int v2; // eax
 
@@ -550,6 +575,7 @@ void* AbstractClass::Create() {
 }
 // 0x41D540
 namespace ra2 { namespace game { 
+// 0x41d540
 int ObjectClass::CleanupAirstrikeTarget(int a1) {
   int v3; // ebp
   int v4; // eax
@@ -624,6 +650,7 @@ int ObjectClass::CleanupAirstrikeTarget(int a1) {
 }
 // 0x4263D0
 namespace ra2 { namespace game { 
+// 0x4263d0
 int ObjectClass::GetDrawPosition() {
   int *v1; // eax
   int v2; // ecx
@@ -645,6 +672,7 @@ int ObjectClass::GetDrawPosition() {
 }
 // 0x431A30
 namespace ra2 { namespace game { 
+// 0x431a30
 int ObjectClass::Set(void* a1) {
   this->FilePointer = 0; /*0x431a39*/
   this->FileSize = 1; /*0x431a3c*/
@@ -690,6 +718,7 @@ int ObjectClass::Set(void* a1) {
 }
 // 0x4389B0
 namespace ra2 { namespace game { 
+// 0x4389b0
 int ObjectClass::CleanupAudioAndRefs() {
   int fallRate; // eax
   int result; // eax
@@ -712,6 +741,7 @@ int ObjectClass::CleanupAudioAndRefs() {
 }
 // 0x439080
 namespace ra2 { namespace game { 
+// 0x439080
 int TechnoClass::checkRange(TechnoClass * aP1) {
   int owningHouseIndex; // eax
   int *p_nextArrayIndex; // esi
@@ -742,6 +772,7 @@ int TechnoClass::checkRange(TechnoClass * aP1) {
 }
 // 0x439150
 namespace ra2 { namespace game { 
+// 0x439150
 int AbstractClass::processDetection(int aP1) {
   int v3; // edi
   int v4; // eax
@@ -781,6 +812,7 @@ int AbstractClass::processDetection(int aP1) {
 }
 // 0x43A7E0
 namespace ra2 { namespace game { 
+// 0x43a7e0
 int AbstractClass::Construct(void* a1) {
   unsigned int *v2; // edi
   int result; // eax
@@ -878,6 +910,7 @@ int AbstractClass::Construct(void* a1) {
 }
 // 0x43DA80
 namespace ra2 { namespace game { 
+// 0x43da80
 int FootClass::DrawPlacementPreview() {
   int v2; // edx
   int (__thiscall **vfptr0)(void *); // eax
@@ -1455,6 +1488,7 @@ int FootClass::DrawPlacementPreview() {
 }
 // 0x4436F0
 namespace ra2 { namespace game { 
+// 0x4436f0
 int ObjectClass::HandleRallyPointCommand() {
   int result; // eax
   int v3; // edi
@@ -1524,6 +1558,7 @@ int ObjectClass::HandleRallyPointCommand() {
 }
 // 0x454250
 namespace ra2 { namespace game { 
+// 0x454250
 int MissionClass::IsProducing() {
   int result; // eax
 
@@ -1534,6 +1569,7 @@ int MissionClass::IsProducing() {
 }
 // 0x455C20
 namespace ra2 { namespace game { 
+// 0x455c20
 int ObjectClass::GetScreenCoords() {
   int *v2; // eax
   bool v3; // zf
@@ -1609,6 +1645,7 @@ int ObjectClass::GetScreenCoords() {
 }
 // 0x45A040
 namespace ra2 { namespace game { 
+// 0x45a040
 int FootClass::Get(int a2) {
   return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x45a04a*/
 }
@@ -1616,6 +1653,7 @@ int FootClass::Get(int a2) {
 }
 // 0x45A3E0
 namespace ra2 { namespace game { 
+// 0x45a3e0
 int FootClass::Add(int a2) {
   int m_8; // esi
   int v3; // edx
@@ -1644,6 +1682,7 @@ int FootClass::Add(int a2) {
 }
 // 0x45A420
 namespace ra2 { namespace game { 
+// 0x45a420
 int FootClass::Release(int a1, void* a2) {
   unsigned int *v4; // edi
   int v6; // ecx
@@ -1692,6 +1731,7 @@ int FootClass::Release(int a1, void* a2) {
 }
 // 0x45A500
 namespace ra2 { namespace game { 
+// 0x45a500
 int FootClass::GetSize(int * a2) {
   int result; // eax
   int v3; // edx
@@ -1714,6 +1754,7 @@ int FootClass::GetSize(int * a2) {
 }
 // 0x45AA60
 namespace ra2 { namespace game { 
+// 0x45aa60
 void* FootClass::QueryInterface(int a2) {
   void *v3; // eax
 
@@ -1734,6 +1775,7 @@ void* FootClass::QueryInterface(int a2) {
 }
 // 0x45E800
 namespace ra2 { namespace game { 
+// 0x45e800
 int AbstractClass::clearRefCount(void* a1, int a2) {
   int v4; // eax
   int v5; // eax
@@ -1756,11 +1798,13 @@ int AbstractClass::clearRefCount(void* a1, int a2) {
 }
 // 0x45E880
 namespace ra2 { namespace game { 
+// 0x45e880
 int AbstractClass::addRefCount(int a1) {
   int v3; // eax
 
   v3 = RA2_OPNEW(0x720u); /*0x45e888*/
   if ( v3 ) /*0x45e892*/
+// 0x43b740
     return BuildingClass::Construct(v3, (int)this, a1); /*0x45e89c*/
   else
     return 0; /*0x45e8a5*/
@@ -1769,6 +1813,7 @@ int AbstractClass::addRefCount(int a1) {
 }
 // 0x45EBD0
 namespace ra2 { namespace game { 
+// 0x45ebd0
 void* AbstractClass::checkPointer(void* a1) {
   unsigned int *FoundationSize; // eax
   int v3; // ecx
@@ -1795,6 +1840,7 @@ void* AbstractClass::checkPointer(void* a1) {
 }
 // 0x45EC20
 namespace ra2 { namespace game { 
+// 0x45ec20
 void* AbstractClass::validatePointer(int a1) {
   int *result; // eax
 
@@ -1813,6 +1859,7 @@ void* AbstractClass::validatePointer(int a1) {
 }
 // 0x45ED50
 namespace ra2 { namespace game { 
+// 0x45ed50
 int AbstractClass::removePointer() {
   int Member388; // esi
   int *v3; // eax
@@ -1839,6 +1886,7 @@ int AbstractClass::removePointer() {
 }
 // 0x45EDD0
 namespace ra2 { namespace game { 
+// 0x45edd0
 int AbstractClass::addPointer(int a1) {
   int v4; // esi
   int *v5; // eax
@@ -1865,6 +1913,7 @@ int AbstractClass::addPointer(int a1) {
 }
 // 0x45F040
 namespace ra2 { namespace game { 
+// 0x45f040
 int AbstractClass::LoadTypeFile() {
   int result; // eax
   void *v3; // eax
@@ -1919,6 +1968,7 @@ int AbstractClass::LoadTypeFile() {
 }
 // 0x465960
 namespace ra2 { namespace game { 
+// 0x465960
 int AbstractClass::LoadTheaterSHP() {
   int result; // eax
   int16_t *EntireFile; // edi
@@ -1985,6 +2035,7 @@ int AbstractClass::LoadTheaterSHP() {
 }
 // 0x471F90
 namespace ra2 { namespace game { 
+// 0x471f90
 int ObjectClass::RemoveFromPointerList(int a2) {
   int v3; // edi
   unsigned int *v4; // eax
@@ -2024,6 +2075,7 @@ int ObjectClass::RemoveFromPointerList(int a2) {
 }
 // 0x4734B0
 namespace ra2 { namespace game { 
+// 0x4734b0
 void FootClass::updateMovementAnimation(int aP1) {
   unsigned int *vtable1; // edx
   unsigned int *v3; // eax
@@ -2058,6 +2110,7 @@ void FootClass::updateMovementAnimation(int aP1) {
 }
 // 0x4818E0
 namespace ra2 { namespace game { 
+// 0x4818e0
 int ObjectClass::UpdateTiberiumGrowth(int a1) {
   int v3; // ecx
   int BuildingByTiberiumType; // eax
@@ -2115,6 +2168,7 @@ int ObjectClass::UpdateTiberiumGrowth(int a1) {
 }
 // 0x485240
 namespace ra2 { namespace game { 
+// 0x485240
 void* ObjectClass::SetMember09(void* a1) {
   this->occupant = *a1; /*0x485246*/
   return a1; /*0x485249*/
@@ -2123,6 +2177,7 @@ void* ObjectClass::SetMember09(void* a1) {
 }
 // 0x485250
 namespace ra2 { namespace game { 
+// 0x485250
 int ObjectClass::SetTriggerTarget(int a2) {
   int v3; // eax
   int result; // eax
@@ -2155,6 +2210,7 @@ int ObjectClass::SetTriggerTarget(int a2) {
 }
 // 0x4914C0
 namespace ra2 { namespace game { 
+// 0x4914c0
 int AbstractClass::getFactoryCount(void* result, void* a2, int a3, int a4, int a5, int a6, int a7, int a8) {
   uint8_t result; // al
   int v12; // edi
@@ -2182,6 +2238,7 @@ int AbstractClass::getFactoryCount(void* result, void* a2, int a3, int a4, int a
 }
 // 0x491500
 namespace ra2 { namespace game { 
+// 0x491500
 int AbstractClass::getFactoryIndex(int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49152a*/
            this,
@@ -2198,6 +2255,7 @@ int AbstractClass::getFactoryIndex(int a1, int a2, int a3, int a4, int a5, int a
 }
 // 0x491530
 namespace ra2 { namespace game { 
+// 0x491530
 int AbstractClass::setFactoryState(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49155a*/
            this,
@@ -2214,6 +2272,7 @@ int AbstractClass::setFactoryState(int a1, int a2, int a3, int a4, int a5, int a
 }
 // 0x491560
 namespace ra2 { namespace game { 
+// 0x491560
 int AbstractClass::checkFactoryQueue(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49158a*/
            this,
@@ -2230,6 +2289,7 @@ int AbstractClass::checkFactoryQueue(int a1, int a2, int a3, int a4, int a5, int
 }
 // 0x491590
 namespace ra2 { namespace game { 
+// 0x491590
 int AbstractClass::readFactoryINI(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8) {
   int v9; // edi
   uint8_t result; // al
@@ -2258,6 +2318,7 @@ int AbstractClass::readFactoryINI(void* a1, void* a2, int a3, int a4, int a5, in
 }
 // 0x491640
 namespace ra2 { namespace game { 
+// 0x491640
 int AbstractClass::validateFactory(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49166a*/
            this,
@@ -2274,6 +2335,7 @@ int AbstractClass::validateFactory(int a1, int a2, int a3, int a4, int a5, int a
 }
 // 0x49B610
 namespace ra2 { namespace game { 
+// 0x49b610
 void* MissionClass::Init() {
   this->? = -2; /*0x49b619*/
   this->? = (ObjectClass *)-2; /*0x49b61c*/
@@ -2301,6 +2363,7 @@ void* MissionClass::Init() {
 }
 // 0x4A50F0
 namespace ra2 { namespace game { 
+// 0x4a50f0
 int TechnoClass::checkCloakState() {
   this->? = *(void **)&stru_A8EB00.?[416]; /*0x4a50f8*/
   this->? = 0; /*0x4a50fd*/
@@ -2313,6 +2376,7 @@ int TechnoClass::checkCloakState() {
 }
 // 0x4C9470
 namespace ra2 { namespace game { 
+// 0x4c9470
 void* TechnoClass::GetWeaponType(void* a1) {
   *a1 = this->RadioClass; /*0x4c9476*/
   return a1; /*0x4c9478*/
@@ -2321,6 +2385,7 @@ void* TechnoClass::GetWeaponType(void* a1) {
 }
 // 0x4CA130
 namespace ra2 { namespace game { 
+// 0x4ca130
 bool ObjectClass::IsCliffWall() {
   int result; // eax
 
@@ -2333,6 +2398,7 @@ bool ObjectClass::IsCliffWall() {
 }
 // 0x4CA890
 namespace ra2 { namespace game { 
+// 0x4ca890
 void AbstractClass::processScriptEvent() {
   void *v2; // eax
 
@@ -2350,6 +2416,7 @@ void AbstractClass::processScriptEvent() {
 }
 // 0x4CA8C0
 namespace ra2 { namespace game { 
+// 0x4ca8c0
 int AbstractClass::checkScriptCondition(int a2) {
   if ( this->IsInitialized ) /*0x4ca8c0*/
     return (unsigned int)(a2 - this->Items) >> 2; /*0x4ca8d5*/
@@ -2360,6 +2427,7 @@ int AbstractClass::checkScriptCondition(int a2) {
 }
 // 0x4CAA70
 namespace ra2 { namespace game { 
+// 0x4caa70
 int AbstractClass::executeScriptAction(int a2, void* a3) {
   unsigned int *v4; // edi
   int v5; // ecx
@@ -2406,6 +2474,7 @@ int AbstractClass::executeScriptAction(int a2, void* a3) {
 }
 // 0x4CAB20
 namespace ra2 { namespace game { 
+// 0x4cab20
 int AbstractClass::validateScriptArgs(void* a2) {
   int v2; // edx
   int result; // eax
@@ -2426,6 +2495,7 @@ int AbstractClass::validateScriptArgs(void* a2) {
 }
 // 0x4CABA0
 namespace ra2 { namespace game { 
+// 0x4caba0
 void* AbstractClass::resetScriptState(int a2) {
   void *v3; // eax
 
@@ -2446,6 +2516,7 @@ void* AbstractClass::resetScriptState(int a2) {
 }
 // 0x4D08B0
 namespace ra2 { namespace game { 
+// 0x4d08b0
 void* ObjectClass::Construct() {
   int v2; // eax
 
@@ -2493,6 +2564,7 @@ void* ObjectClass::Construct() {
 }
 // 0x4D28C0
 namespace ra2 { namespace game { 
+// 0x4d28c0
 int TechnoClass::recalcThreat() {
   if ( this->? <= 0 ) /*0x4d28c5*/
     return 0; /*0x4d28cd*/
@@ -2503,6 +2575,7 @@ int TechnoClass::recalcThreat() {
 }
 // 0x4D2930
 namespace ra2 { namespace game { 
+// 0x4d2930
 void AbstractClass::getMissionState() {
   void *v2; // eax
 
@@ -2520,6 +2593,7 @@ void AbstractClass::getMissionState() {
 }
 // 0x4D2960
 namespace ra2 { namespace game { 
+// 0x4d2960
 int AbstractClass::setMissionState(int a1) {
   if ( this->IsInitialized ) /*0x4d2960*/
     return (unsigned int)(a1 - this->Items) >> 4; /*0x4d2975*/
@@ -2530,6 +2604,7 @@ int AbstractClass::setMissionState(int a1) {
 }
 // 0x4D31E0
 namespace ra2 { namespace game { 
+// 0x4d31e0
 void* FootClass::Construct(int a1) {
   int v3; // eax
   int v4; // eax
@@ -2660,6 +2735,7 @@ void* FootClass::Construct(int a1) {
 }
 // 0x4D94A0
 namespace ra2 { namespace game { 
+// 0x4d94a0
 int ObjectClass::SetMember360(int a1) {
   this->FootClass_field_5A0 = a1; /*0x4d94a4*/
   return a1; /*0x4d94aa*/
@@ -2668,6 +2744,7 @@ int ObjectClass::SetMember360(int a1) {
 }
 // 0x4DB0D0
 namespace ra2 { namespace game { 
+// 0x4db0d0
 int TechnoClass::QueueDrawVoiceResponse(void* a1, int aP2, int aP3, int aP4, int aP5, void* aP6, int aP7, int aP8, int aP9, int aP10, int aP11) {
   int result; // eax
   int v14; // edx
@@ -2708,6 +2785,7 @@ int TechnoClass::QueueDrawVoiceResponse(void* a1, int aP2, int aP3, int aP4, int
 }
 // 0x4E0190
 namespace ra2 { namespace game { 
+// 0x4e0190
 void AbstractClass::updateMission() {
   void *v2; // eax
 
@@ -2725,6 +2803,7 @@ void AbstractClass::updateMission() {
 }
 // 0x4E0270
 namespace ra2 { namespace game { 
+// 0x4e0270
 void* AbstractClass::processMissionQueue(int a2) {
   void *v3; // eax
 
@@ -2745,6 +2824,7 @@ void* AbstractClass::processMissionQueue(int a2) {
 }
 // 0x4E04A0
 namespace ra2 { namespace game { 
+// 0x4e04a0
 int AbstractClass::completeMission(int a2, void* a3) {
   unsigned int *v4; // edi
   int v5; // ecx
@@ -2791,6 +2871,7 @@ int AbstractClass::completeMission(int a2, void* a3) {
 }
 // 0x4E13F0
 namespace ra2 { namespace game { 
+// 0x4e13f0
 int ObjectClass::DispatchEvent(int a1, int a2, int a3, int a4, int a5) {
   int v6; // eax
 
@@ -2810,6 +2891,7 @@ int ObjectClass::DispatchEvent(int a1, int a2, int a3, int a4, int a5) {
 }
 // 0x4E14C0
 namespace ra2 { namespace game { 
+// 0x4e14c0
 int ObjectClass::DestroyChain() {
   GadgetClass *v1; // esi
   int result; // eax
@@ -2834,6 +2916,7 @@ int ObjectClass::DestroyChain() {
 }
 // 0x4E1570
 namespace ra2 { namespace game { 
+// 0x4e1570
 void ObjectClass::BroadcastFlag(int a1) {
   GadgetClass *i; // esi
 
@@ -2844,6 +2927,7 @@ void ObjectClass::BroadcastFlag(int a1) {
 }
 // 0x4E1A40
 namespace ra2 { namespace game { 
+// 0x4e1a40
 int ObjectClass::SetPositionXY(int a1, int a2) {
   *(unsigned int *)&this->Visible = a1; /*0x4e1a48*/
   this->ID = a2; /*0x4e1a4b*/
@@ -2853,6 +2937,7 @@ int ObjectClass::SetPositionXY(int a1, int a2) {
 }
 // 0x505180
 namespace ra2 { namespace game { 
+// 0x505180
 void TechnoClass::checkBuildLimit() {
   char v2; // al
   int v3; // edi
@@ -2875,6 +2960,7 @@ void TechnoClass::checkBuildLimit() {
 }
 // 0x50E010
 namespace ra2 { namespace game { 
+// 0x50e010
 void TechnoClass::Find(int a1) {
   char v4; // bl
   int v5; // ebp
@@ -2926,6 +3012,7 @@ void TechnoClass::Find(int a1) {
 }
 // 0x50E1C0
 namespace ra2 { namespace game { 
+// 0x50e1c0
 void TechnoClass::Process(int a1) {
   char v3; // bl
   int v4; // edi
@@ -2972,6 +3059,7 @@ void TechnoClass::Process(int a1) {
 }
 // 0x50E380
 namespace ra2 { namespace game { 
+// 0x50e380
 void* AbstractClass::getMovementSpeed(int a2) {
   HouseClass::Destruct((int)this); /*0x50e383*/
   if ( (a2 & 1) != 0 ) /*0x50e38d*/
@@ -2982,6 +3070,7 @@ void* AbstractClass::getMovementSpeed(int a2) {
 }
 // 0x50E5D0
 namespace ra2 { namespace game { 
+// 0x50e5d0
 void AbstractClass::getTargetCoordinates() {
   void *v2; // eax
 
@@ -2999,6 +3088,7 @@ void AbstractClass::getTargetCoordinates() {
 }
 // 0x50E600
 namespace ra2 { namespace game { 
+// 0x50e600
 int AbstractClass::setTargetCoordinates(int a1) {
   if ( this->IsInitialized ) /*0x50e600*/
     return (unsigned int)(a1 - this->Items) >> 3; /*0x50e615*/
@@ -3009,6 +3099,7 @@ int AbstractClass::setTargetCoordinates(int a1) {
 }
 // 0x50F3A0
 namespace ra2 { namespace game { 
+// 0x50f3a0
 int AbstractClass::evaluateTarget(int a1, void* a2) {
   int v3; // ebp
   char *v5; // edi
@@ -3112,6 +3203,7 @@ int AbstractClass::evaluateTarget(int a1, void* a2) {
 }
 // 0x50F4A0
 namespace ra2 { namespace game { 
+// 0x50f4a0
 int AbstractClass::selectBestTarget(int a2) {
   int v2; // esi
   int result; // eax
@@ -3132,6 +3224,7 @@ int AbstractClass::selectBestTarget(int a2) {
 }
 // 0x510220
 namespace ra2 { namespace game { 
+// 0x510220
 void* AbstractClass::updateThreatMap(int a2) {
   void *v3; // eax
 
@@ -3152,6 +3245,7 @@ void* AbstractClass::updateThreatMap(int a2) {
 }
 // 0x5224F0
 namespace ra2 { namespace game { 
+// 0x5224f0
 bool TechnoClass::updateTurretRotation() {
   return *(unsigned int *)(this->u32_6C0 + 1732) > -1; /*0x522504*/
 }
@@ -3159,6 +3253,7 @@ bool TechnoClass::updateTurretRotation() {
 }
 // 0x543330
 namespace ra2 { namespace game { 
+// 0x543330
 int AbstractClass::ModifyCellTiles(int a1) {
   void *v2; // edi
   int v3; // esi
@@ -3369,6 +3464,7 @@ int AbstractClass::ModifyCellTiles(int a1) {
 }
 // 0x543990
 namespace ra2 { namespace game { 
+// 0x543990
 int AbstractClass::COMStub_5(void* a1, int a2) {
   int Register; // edi
 
@@ -3391,6 +3487,7 @@ int AbstractClass::COMStub_5(void* a1, int a2) {
 }
 // 0x543A10
 namespace ra2 { namespace game { 
+// 0x543a10
 int AbstractClass::COMStub_54(int a1, int a2) {
   void (__thiscall **vtable0)(AbstractClass *, int); // eax
 
@@ -3403,6 +3500,7 @@ int AbstractClass::COMStub_54(int a1, int a2) {
 }
 // 0x543A40
 namespace ra2 { namespace game { 
+// 0x543a40
 int AbstractClass::COMStub_53() {
   if ( !g_WTFMode || *(&this->q0309) ) /*0x543a4c*/
     return 0; /*0x543a88*/
@@ -3417,6 +3515,7 @@ int AbstractClass::COMStub_53() {
 }
 // 0x543B10
 namespace ra2 { namespace game { 
+// 0x543b10
 void* AbstractClass::CreateInstance(int a1) {
   int v3; // eax
   int v4; // eax
@@ -3473,6 +3572,7 @@ void* AbstractClass::CreateInstance(int a1) {
 }
 // 0x54E590
 namespace ra2 { namespace game { 
+// 0x54e590
 void AbstractClass::processStateTransition(int aP1) {
   int v3; // esi
   int uniqueId; // ebx
@@ -3530,6 +3630,7 @@ void AbstractClass::processStateTransition(int aP1) {
 }
 // 0x5B2DA0
 namespace ra2 { namespace game { 
+// 0x5b2da0
 int RadioClass::Constructor() {
 
   ObjectClass::ctor((unsigned int *)this); /*0x5b2da3*/
@@ -3553,6 +3654,7 @@ int RadioClass::Constructor() {
 }
 // 0x5B2FD0
 namespace ra2 { namespace game { 
+// 0x5b2fd0
 int MissionClass::ForceMission() {
   int *missionTimer; // ecx
   int v3; // [esp+4h] [ebp-8h]
@@ -3588,6 +3690,7 @@ int ra2::game::MissionClass::GetPrimaryOrFallback() {
 }
 // 0x5B3060
 namespace ra2 { namespace game { 
+// 0x5b3060
 int ObjectClass::ProcessCloaking() {
   int health; // eax
   int v3; // edx
@@ -3793,6 +3896,7 @@ int ObjectClass::ProcessCloaking() {
 }
 // 0x5B3570
 namespace ra2 { namespace game { 
+// 0x5b3570
 int MissionClass::NextMission() {
   int result; // eax
   int v2; // eax
@@ -3824,6 +3928,7 @@ int MissionClass::NextMission() {
 }
 // 0x5B3650
 namespace ra2 { namespace game { 
+// 0x5b3650
 int AbstractClass::COMStub_125(int a1, int a2, int a3) {
   int result; // eax
   int queuedMission; // edx
@@ -3850,6 +3955,7 @@ int AbstractClass::COMStub_125(int a1, int a2, int a3) {
 }
 // 0x5B36B0
 namespace ra2 { namespace game { 
+// 0x5b36b0
 int AbstractClass::COMStub_126() {
   int suspendedMission; // eax
 
@@ -3865,6 +3971,7 @@ int AbstractClass::COMStub_126() {
 }
 // 0x5B3700
 namespace ra2 { namespace game { 
+// 0x5b3700
 void* MissionClass::FindName() {
   IDA_LOBYTE(this->?) = 0; /*0x5b3706*/
   IDA_BYTE1(this->?) = 0; /*0x5b3709*/
@@ -3883,6 +3990,7 @@ void* MissionClass::FindName() {
 }
 // 0x5B3970
 namespace ra2 { namespace game { 
+// 0x5b3970
 int AbstractClass::COMStub_13(int a1) {
   int v3; // edx
   int v4; // eax
@@ -3902,12 +4010,14 @@ int AbstractClass::COMStub_13(int a1) {
       v4 -= (int)dword_A8ED84 - v3; /*0x5b39d3*/
   }
   Power::TimerProcess(v4); /*0x5b39dc*/
+// 0x4a1d50
   return Power::TimerProcess(this->missionStartTime); /*0x5b39ef*/
 }
 }
 }
 // 0x5B3A00
 namespace ra2 { namespace game { 
+// 0x5b3a00
 void* MissionClass::GetMissionControl() {
   return (char *)&stru_A8E3A8 + 32 * this->currentMission; /*0x5b3a0e*/
 }
@@ -3915,6 +4025,7 @@ void* MissionClass::GetMissionControl() {
 }
 // 0x5B46E0
 namespace ra2 { namespace game { 
+// 0x5b46e0
 void* AbstractClass::getWeaponSpeed(int a1) {
   unsigned int *vtable2; // eax
   int v4; // ecx
@@ -3984,6 +4095,7 @@ void* AbstractClass::getWeaponSpeed(int a1) {
 }
 // 0x5C0280
 namespace ra2 { namespace game { 
+// 0x5c0280
 void AbstractClass::checkLOS(int a1) {
   AbstractClass **currentFrame; // eax
   AbstractClass *v3; // eax
@@ -4010,6 +4122,7 @@ void AbstractClass::checkLOS(int a1) {
 }
 // 0x5C02C0
 namespace ra2 { namespace game { 
+// 0x5c02c0
 int AbstractClass::computePathCost() {
   char result; // al
 
@@ -4022,6 +4135,7 @@ int AbstractClass::computePathCost() {
 }
 // 0x5C02F0
 namespace ra2 { namespace game { 
+// 0x5c02f0
 int AbstractClass::processPathNode() {
   char **currentFrame; // eax
   char result; // al
@@ -4038,6 +4152,7 @@ int AbstractClass::processPathNode() {
 }
 // 0x5C0340
 namespace ra2 { namespace game { 
+// 0x5c0340
 int AbstractClass::computePathDistance(int a2, int a3) {
   unsigned int *currentFrame; // ecx
   unsigned int *v4; // eax
@@ -4059,13 +4174,16 @@ int AbstractClass::computePathDistance(int a2, int a3) {
 }
 // 0x5C0380
 namespace ra2 { namespace game { 
+// 0x5c0380
 int AbstractClass::checkPathEnd(int a1) {
+// 0x6c9d30
   return AbstractClass::getTotalValue(*(AbstractClass **)(this->currentFrame + 72), a1); /*0x5c0390*/
 }
 }
 }
 // 0x5C03A0
 namespace ra2 { namespace game { 
+// 0x5c03a0
 void AbstractClass::finalizePath(int a1) {
   AbstractClass::finalizeConstruction(*(AbstractClass **)this->currentFrame); /*0x5c03a8*/
   AbstractClass::updateBuildingState(*(AbstractClass **)this->currentFrame, a1); /*0x5c03b7*/
@@ -4074,6 +4192,7 @@ void AbstractClass::finalizePath(int a1) {
 }
 // 0x5C09B0
 namespace ra2 { namespace game { 
+// 0x5c09b0
 void* AbstractClass::processCombatState(int a2) {
   int currentFrame; // esi
   DSurface *v4; // edi
@@ -4112,6 +4231,7 @@ void* AbstractClass::processCombatState(int a2) {
 }
 // 0x5C0B10
 namespace ra2 { namespace game { 
+// 0x5c0b10
 int AbstractClass::checkCombatFlags(int a2, void* a3) {
   unsigned int *v4; // edi
   int v6; // ecx
@@ -4160,6 +4280,7 @@ int AbstractClass::checkCombatFlags(int a2, void* a3) {
 }
 // 0x5C0BC0
 namespace ra2 { namespace game { 
+// 0x5c0bc0
 void AbstractClass::processDamageEvent() {
   if ( this->Items && this->IsAllocated ) /*0x5c0bcd*/
   {
@@ -4173,6 +4294,7 @@ void AbstractClass::processDamageEvent() {
 }
 // 0x5C0BF0
 namespace ra2 { namespace game { 
+// 0x5c0bf0
 int AbstractClass::applyDamageEffects(void* a1) {
   int result; // eax
   int v3; // edx
@@ -4195,6 +4317,7 @@ int AbstractClass::applyDamageEffects(void* a1) {
 }
 // 0x5C0C30
 namespace ra2 { namespace game { 
+// 0x5c0c30
 int AbstractClass::checkDamageThreshold(int a1) {
   if ( this->IsInitialized ) /*0x5c0c30*/
     return (unsigned int)(a1 - this->Items) >> 2; /*0x5c0c45*/
@@ -4205,6 +4328,7 @@ int AbstractClass::checkDamageThreshold(int a1) {
 }
 // 0x5C0D30
 namespace ra2 { namespace game { 
+// 0x5c0d30
 void* AbstractClass::processDeathEvent(int a2) {
   void *v3; // eax
 
@@ -4225,6 +4349,7 @@ void* AbstractClass::processDeathEvent(int a2) {
 }
 // 0x5C5A30
 namespace ra2 { namespace game { 
+// 0x5c5a30
 void* AbstractClass::updateAnimationState(int aP1, int aP2) {
   this->vtable1 = 0; /*0x5c5a3b*/
   this->vtable2 = (void *)aP1; /*0x5c5a3e*/
@@ -4247,6 +4372,7 @@ void* AbstractClass::updateAnimationState(int aP1, int aP2) {
 }
 // 0x5F1960
 namespace ra2 { namespace game { 
+// 0x5f1960
 int ObjectClass::FreeResources() {
   BombClass *attachedBomb; // ecx
 
@@ -4278,6 +4404,7 @@ int ObjectClass::FreeResources() {
 }
 // 0x5F1B70
 namespace ra2 { namespace game { 
+// 0x5f1b70
 int ObjectClass::DetachAndFree() {
   int result; // eax
 
@@ -4288,6 +4415,7 @@ int ObjectClass::DetachAndFree() {
       (**(void (__thiscall ***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f1b96*/
     g_ClipboardBuffer = 0; /*0x5f1b98*/
     this->ambientSoundController[1] = -1; /*0x5f1ba4*/
+// 0x5f1960
     return ObjectClass::FreeResources(this); /*0x5f1bab*/
   }
   return result; /*0x5f1bb0*/
@@ -4296,6 +4424,7 @@ int ObjectClass::DetachAndFree() {
 }
 // 0x5F3DB0
 namespace ra2 { namespace game { 
+// 0x5f3db0
 void* ObjectClass::CalcTargetFacing(void* aP1, int aP2) {
   double v3; // st7
   int *v5; // edi
@@ -4316,6 +4445,7 @@ void* ObjectClass::CalcTargetFacing(void* aP1, int aP2) {
 }
 // 0x5F3E30
 namespace ra2 { namespace game { 
+// 0x5f3e30
 int ObjectClass::HasC4() {
   int v1; // eax
 
@@ -4326,16 +4456,19 @@ int ObjectClass::HasC4() {
 }
 // 0x5F3E50
 namespace ra2 { namespace game { 
+// 0x5f3e50
 int ObjectClass::StepCleanup(void* a2) {
   int v2; // eax
 
   v2 = (*((int (__thiscall **)(ObjectClass *))this->AbstractClass + 34))(this); /*0x5f3e57*/
+// 0x410a40
   return AbstractTypeClass::NameEquals(v2, a2); /*0x5f3e64*/
 }
 }
 }
 // 0x5F3E70
 namespace ra2 { namespace game { 
+// 0x5f3e70
 int ObjectClass::DetectCloaked() {
   int result; // eax
   int vtable0; // edx
@@ -4506,6 +4639,7 @@ int ObjectClass::DetectCloaked() {
 }
 // 0x5F4260
 namespace ra2 { namespace game { 
+// 0x5f4260
 int ObjectClass::GetThreatLevel() {
   if ( (*(uint8_t (__thiscall **)(void *))(((unsigned int)(this->NeedsSaveOrLink4))))(this) ) /*0x5f4265*/
     return ((*(int (__thiscall **)(void *))(*(unsigned int *)&this->q0B46))(this) >= g_RulesClass_Instance->V3Rocket[13]) + 3; /*0x5f4294*/
@@ -4516,6 +4650,7 @@ int ObjectClass::GetThreatLevel() {
 }
 // 0x5F4410
 namespace ra2 { namespace game { 
+// 0x5f4410
 int ObjectClass::MoveToDirection() {
   int v2; // edx
   int v3; // edi
@@ -4544,6 +4679,7 @@ int ObjectClass::MoveToDirection() {
 }
 // 0x5F4520
 namespace ra2 { namespace game { 
+// 0x5f4520
 int ObjectClass::HandleSelection() {
   int result; // eax
   unsigned char *v3; // edi
@@ -4653,6 +4789,7 @@ int ObjectClass::HandleSelection() {
 }
 // 0x5F4730
 namespace ra2 { namespace game { 
+// 0x5f4730
 int ObjectClass::GetPlacementScreenRect() {
   unsigned int *v2; // eax
   int v3; // edi
@@ -4720,6 +4857,7 @@ int ObjectClass::GetPlacementScreenRect() {
 }
 // 0x5F4B10
 namespace ra2 { namespace game { 
+// 0x5f4b10
 int ObjectClass::CalcDrawRect() {
   int result; // eax
   int (__thiscall **vtable0)(ObjectClass *, unsigned int *); // edx
@@ -4829,6 +4967,7 @@ int ObjectClass::CalcDrawRect() {
 }
 // 0x5F5320
 namespace ra2 { namespace game { 
+// 0x5f5320
 int ObjectClass::ProcessInputKey() {
   double health; // [esp+0h] [ebp-8h]
   int v3; // [esp+10h] [ebp+8h]
@@ -4851,6 +4990,7 @@ int ObjectClass::ProcessInputKey() {
 }
 // 0x5F5930
 namespace ra2 { namespace game { 
+// 0x5f5930
 int AbstractClass::IsNotNull() {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -4860,6 +5000,7 @@ int AbstractClass::IsNotNull() {
 }
 // 0x5F5940
 namespace ra2 { namespace game { 
+// 0x5f5940
 int ObjectClass::ParachuteDrop() {
   int *v1; // edi
   int result; // eax
@@ -4980,6 +5121,7 @@ int ObjectClass::ParachuteDrop() {
 }
 // 0x5F5B50
 namespace ra2 { namespace game { 
+// 0x5f5b50
 int ObjectClass::SetReference(int a1) {
   TagClass *attachedTag; // eax
 
@@ -4999,6 +5141,7 @@ int ObjectClass::SetReference(int a1) {
 }
 // 0x5F5B90
 namespace ra2 { namespace game { 
+// 0x5f5b90
 int ObjectClass::GetOrCreateResHandle() {
   int v3; // eax
   int v4; // [esp+Ch] [ebp+4h]
@@ -5018,6 +5161,7 @@ int ObjectClass::GetOrCreateResHandle() {
 }
 // 0x5F5C20
 namespace ra2 { namespace game { 
+// 0x5f5c20
 int ObjectClass::Fire() {
   int *v2; // edi
   int v3; // ebx
@@ -5034,6 +5178,7 @@ int ObjectClass::Fire() {
 }
 // 0x5F5D20
 namespace ra2 { namespace game { 
+// 0x5f5d20
 bool ObjectClass::IsYellowHP() {
   BOOL result; // eax
   double health; // [esp+4h] [ebp-8h]
@@ -5053,6 +5198,7 @@ bool ObjectClass::IsYellowHP() {
 }
 // 0x5F5D90
 namespace ra2 { namespace game { 
+// 0x5f5d90
 bool ObjectClass::IsGreenHP() {
   double health; // [esp+0h] [ebp-8h]
 
@@ -5063,6 +5209,7 @@ bool ObjectClass::IsGreenHP() {
 }
 // 0x5F5F00
 namespace ra2 { namespace game { 
+// 0x5f5f00
 int ObjectClass::GetLandHeight() {
   return *(char *)((*((int (__thiscall **)(ObjectClass *))this->AbstractClass + 111))(this) + 283)
        + (this->onBridge != 0 ? 4 : 0);
@@ -5071,6 +5218,7 @@ int ObjectClass::GetLandHeight() {
 }
 // 0x5F5F30
 namespace ra2 { namespace game { 
+// 0x5f5f30
 int ObjectClass::GetMember41() {
   return this->location[2]; /*0x5f5f36*/
 }
@@ -5078,6 +5226,7 @@ int ObjectClass::GetMember41() {
 }
 // 0x5F5FA0
 namespace ra2 { namespace game { 
+// 0x5f5fa0
 int ObjectClass::SetZ() {
   int v2; // edi
   int64_t GroundHeight; // rax
@@ -5114,6 +5263,7 @@ int ObjectClass::SetZ() {
 }
 // 0x5F6060
 namespace ra2 { namespace game { 
+// 0x5f6060
 int ObjectClass::SetAnim(int a1) {
   int (__thiscall **vtable0)(ObjectClass *, int); // edx
 
@@ -5134,6 +5284,7 @@ int ObjectClass::SetAnim(int a1) {
 }
 // 0x5F6440
 namespace ra2 { namespace game { 
+// 0x5f6440
 int ObjectClass::ComputeDistance(int a1) {
   double v2; // st7
   int *v5; // eax
@@ -5172,6 +5323,7 @@ int ObjectClass::ComputeDistance(int a1) {
 }
 // 0x5F65A0
 namespace ra2 { namespace game { 
+// 0x5f65a0
 int ObjectClass::GetCoords() {
   int *location; // ecx
   CoordStruct *out; // [esp+8h] [ebp+4h]
@@ -5186,6 +5338,7 @@ int ObjectClass::GetCoords() {
 }
 // 0x5F65D0
 namespace ra2 { namespace game { 
+// 0x5f65d0
 int ObjectClass::DelegateVt69() {
   int v2; // [esp+4h] [ebp+4h]
   int v3; // [esp+8h] [ebp+8h]
@@ -5196,6 +5349,7 @@ int ObjectClass::DelegateVt69() {
 }
 // 0x5F6940
 namespace ra2 { namespace game { 
+// 0x5f6940
 int ObjectClass::SetPosition() {
   int *v1; // ecx
   int result; // eax
@@ -5212,6 +5366,7 @@ int ObjectClass::SetPosition() {
 }
 // 0x5F6960
 namespace ra2 { namespace game { 
+// 0x5f6960
 int ObjectClass::GetCellCoords() {
   int *v1; // esi
   int v2; // ecx
@@ -5236,6 +5391,7 @@ int ObjectClass::GetCellCoords() {
 }
 // 0x5F69C0
 namespace ra2 { namespace game { 
+// 0x5f69c0
 int ObjectClass::CoordToCell() {
   unsigned int *v1; // eax
   int v3; // [esp+8h] [ebp-10h]
@@ -5252,6 +5408,7 @@ int ObjectClass::CoordToCell() {
 }
 // 0x5F6A70
 namespace ra2 { namespace game { 
+// 0x5f6a70
 int ObjectClass::CheckGroundHeightDiff() {
   char v2; // bl
   unsigned int *v3; // eax
@@ -5300,6 +5457,7 @@ int ObjectClass::CheckGroundHeightDiff() {
 }
 // 0x5F6B60
 namespace ra2 { namespace game { 
+// 0x5f6b60
 int ObjectClass::IsBelowScreen() {
   int result; // eax
 
@@ -5311,6 +5469,7 @@ int ObjectClass::IsBelowScreen() {
 }
 // 0x5F6B90
 namespace ra2 { namespace game { 
+// 0x5f6b90
 int ObjectClass::IsHeightAboveThreshold() {
   int result; // eax
 
@@ -5322,6 +5481,7 @@ int ObjectClass::IsHeightAboveThreshold() {
 }
 // 0x5F6C30
 namespace ra2 { namespace game { 
+// 0x5f6c30
 int ObjectClass::IsPlayerOwnedAndCheck() {
   int result; // eax
 
@@ -5341,6 +5501,7 @@ int ObjectClass::IsPlayerOwnedAndCheck() {
 }
 // 0x5F6C70
 namespace ra2 { namespace game { 
+// 0x5f6c70
 int AbstractClass::COMStub_79() {
   return (*((int (__thiscall **)(ObjectClass *))this->AbstractClass + 78))(this);
 }
@@ -5348,6 +5509,7 @@ int AbstractClass::COMStub_79() {
 }
 // 0x5F6C80
 namespace ra2 { namespace game { 
+// 0x5f6c80
 int ObjectClass::GetCoords_Alt() {
   unsigned int *v1; // ecx
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
@@ -5363,12 +5525,14 @@ int ObjectClass::GetCoords_Alt() {
 }
 // 0x5F6CB0
 namespace ra2 { namespace game { 
+// 0x5f6cb0
 int ObjectClass::CheckFlagD0(int a1) {
   int result; // eax
 
   result = a1; /*0x5f6cb0*/
   this->customSound = a1; /*0x5f6cb7*/
   if ( a1 == -1 ) /*0x5f6cba*/
+// 0x405fd0
     return AudioFile::Stop((AudioFile *)this->customSound_controller); /*0x5f6cbf*/
   return result; /*0x5f6cc4*/
 }
@@ -5376,6 +5540,7 @@ int ObjectClass::CheckFlagD0(int a1) {
 }
 // 0x5F6CD0
 namespace ra2 { namespace game { 
+// 0x5f6cd0
 bool ObjectClass::IsCrushable(void* a1) {
   if ( a1 /*0x5f6d2e*/
     && *(unsigned char *)(((int (__thiscall *)(unsigned int **))(*a1)[33])(a1) + 3369)
@@ -5399,6 +5564,7 @@ bool ObjectClass::IsCrushable(void* a1) {
 }
 // 0x5F6DA0
 namespace ra2 { namespace game { 
+// 0x5f6da0
 int ObjectClass::ResetPointerIfMatch() {
   int result; // eax
   AnimClass *v2; // [esp+4h] [ebp+4h]
@@ -5412,6 +5578,7 @@ int ObjectClass::ResetPointerIfMatch() {
 }
 // 0x5FF250
 namespace ra2 { namespace game { 
+// 0x5ff250
 void* ObjectClass::RegisterInArray(int a1, int a2, int a3, int a4) {
   int v6; // eax
 
@@ -5438,6 +5605,7 @@ void* ObjectClass::RegisterInArray(int a1, int a2, int a3, int a4) {
 }
 // 0x6293E0
 namespace ra2 { namespace game { 
+// 0x6293e0
 void AbstractClass::ProcessData() {
   int v2; // ecx
   int v3; // eax
@@ -5491,6 +5659,7 @@ void AbstractClass::ProcessData() {
 }
 // 0x62BB20
 namespace ra2 { namespace game { 
+// 0x62bb20
 int ObjectClass::ProcessUpdate() {
   int v2; // eax
 
@@ -5555,6 +5724,7 @@ int ObjectClass::ProcessUpdate() {
 }
 // 0x6301F0
 namespace ra2 { namespace game { 
+// 0x6301f0
 int ObjectClass::SetMember59(int a1) {
   this->q0EC = a1; /*0x6301f4*/
   return a1; /*0x6301fa*/
@@ -5563,6 +5733,7 @@ int ObjectClass::SetMember59(int a1) {
 }
 // 0x645B10
 namespace ra2 { namespace game { 
+// 0x645b10
 void* AbstractClass::getTeamIndex(int a2) {
   void *v3; // eax
 
@@ -5583,6 +5754,7 @@ void* AbstractClass::getTeamIndex(int a2) {
 }
 // 0x6594A0
 namespace ra2 { namespace game { 
+// 0x6594a0
 int RadBeam::drawPipScale(int* a2) {
   int *p_occupant; // ecx
   int result; // eax
@@ -5598,6 +5770,7 @@ int RadBeam::drawPipScale(int* a2) {
 }
 // 0x6594C0
 namespace ra2 { namespace game { 
+// 0x6594c0
 int RadBeam::drawSpawnPips(int* a2) {
   ObjectClass **p_nextObject; // ecx
   int result; // eax
@@ -5613,6 +5786,7 @@ int RadBeam::drawSpawnPips(int* a2) {
 }
 // 0x6594E0
 namespace ra2 { namespace game { 
+// 0x6594e0
 int RadBeam::drawAmmoPips(int a2) {
   this->?[0] = a2; /*0x6594e4*/
   return a2; /*0x6594e7*/
@@ -5621,6 +5795,7 @@ int RadBeam::drawAmmoPips(int a2) {
 }
 // 0x6594F0
 namespace ra2 { namespace game { 
+// 0x6594f0
 int RadBeam::drawTiberiumPips(int a2, int a3) {
   this->?[1] = a2; /*0x6594f8*/
   this->?[2] = a3; /*0x6594fb*/
@@ -5630,6 +5805,7 @@ int RadBeam::drawTiberiumPips(int a2, int a3) {
 }
 // 0x65A820
 namespace ra2 { namespace game { 
+// 0x65a820
 int ObjectClass::ProcessGroupInput(int a1, int a2, int a3) {
   int v5; // eax
   int v6; // ecx
@@ -5661,15 +5837,18 @@ int ObjectClass::ProcessGroupInput(int a1, int a2, int a3) {
       for ( i = *(unsigned int **)(&this->q0588); a1 != *i; ++i ) /*0x65a860*/
       {
         if ( ++v8 >= v7 ) /*0x65a870*/
+// 0x5f5320
           return ObjectClass::ProcessInputKey((ObjectClass *)this); /*0x65a870*/
       }
       ObjectClass::ProcessInputKey((ObjectClass *)this); /*0x65a890*/
       *(unsigned int *)(this->q0E4 + 4 * v8) = 0; /*0x65a8a0*/
       return 1; /*0x65a8aa*/
     }
+// 0x5f5320
     return ObjectClass::ProcessInputKey((ObjectClass *)this); /*0x65a883*/
   }
   if ( a2 != 2 || !this->health ) /*0x65a8b2*/
+// 0x5f5320
     return ObjectClass::ProcessInputKey((ObjectClass *)this); /*0x65a8b7*/
   if ( !(uint8_t)Object::IsAlliedWithObjectHouse(*(Object **)(a1 + 540), this) ) /*0x65a8c4*/
     return 10; /*0x65a8d5*/
@@ -5715,6 +5894,7 @@ int ObjectClass::ProcessGroupInput(int a1, int a2, int a3) {
 }
 // 0x65AAA0
 namespace ra2 { namespace game { 
+// 0x65aaa0
 int ObjectClass::ThunkTo636() {
   int v2; // [esp+4h] [ebp+4h]
   int v3; // [esp+8h] [ebp+8h]
@@ -5729,6 +5909,7 @@ int ObjectClass::ThunkTo636() {
 }
 // 0x65ACB0
 namespace ra2 { namespace game { 
+// 0x65acb0
 int ObjectClass::ThunkTo159x4() {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -5745,6 +5926,7 @@ int ObjectClass::ThunkTo159x4() {
 }
 // 0x65AEB0
 namespace ra2 { namespace game { 
+// 0x65aeb0
 void* RadioClass::ProcessEvent(int a1) {
   void *v3; // eax
 
@@ -5774,6 +5956,7 @@ void* RadioClass::ProcessEvent(int a1) {
 }
 // 0x65C2E0
 namespace ra2 { namespace game { 
+// 0x65c2e0
 int AbstractClass::checkTeamMembership() {
   if ( (*(uint8_t (__thiscall **)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this) ) /*0x65c2e5*/
     return 0; /*0x65c2fa*/
@@ -5784,6 +5967,7 @@ int AbstractClass::checkTeamMembership() {
 }
 // 0x65C340
 namespace ra2 { namespace game { 
+// 0x65c340
 int AbstractClass::dispatchTeamEvent(int a2, int a3) {
   return (*(int (__thiscall **)(RAMFileClass *, int))(*(unsigned int *)this->__pad_0 + 28))(this, a3); /*0x65c34a*/
 }
@@ -5791,6 +5975,7 @@ int AbstractClass::dispatchTeamEvent(int a2, int a3) {
 }
 // 0x65C4B0
 namespace ra2 { namespace game { 
+// 0x65c4b0
 int AbstractClass::validateTeamConfig() {
   char *v4; // edi
   char v5; // bl
@@ -5832,6 +6017,7 @@ int AbstractClass::validateTeamConfig() {
 }
 // 0x65D4D0
 namespace ra2 { namespace game { 
+// 0x65d4d0
 void* AbstractClass::checkAICondition(int a1) {
   void *vtable1; // ecx
 
@@ -5850,6 +6036,7 @@ void* AbstractClass::checkAICondition(int a1) {
 }
 // 0x68BCB0
 namespace ra2 { namespace game { 
+// 0x68bcb0
 int AbstractClass::updateAITimer() {
   int result; // eax
 
@@ -5861,6 +6048,7 @@ int AbstractClass::updateAITimer() {
 }
 // 0x6AC7F0
 namespace ra2 { namespace game { 
+// 0x6ac7f0
 void* ObjectClass::DestructWithRadar(int a2) {
   int *v3; // esi
   int v4; // edi
@@ -5883,6 +6071,7 @@ void* ObjectClass::DestructWithRadar(int a2) {
 }
 // 0x6B14B0
 namespace ra2 { namespace game { 
+// 0x6b14b0
 int AbstractClass::getAIPriority(int a2, void* a3) {
   int v6; // ecx
   int i; // eax
@@ -5930,6 +6119,7 @@ int AbstractClass::getAIPriority(int a2, void* a3) {
 }
 // 0x6B1560
 namespace ra2 { namespace game { 
+// 0x6b1560
 void AbstractClass::setAIPriority() {
   if ( this->Items && this->IsAllocated ) /*0x6b156d*/
   {
@@ -5943,6 +6133,7 @@ void AbstractClass::setAIPriority() {
 }
 // 0x6B1590
 namespace ra2 { namespace game { 
+// 0x6b1590
 int AbstractClass::evaluateAIOption(void* a1) {
   int result; // eax
   int v3; // edx
@@ -5965,6 +6156,7 @@ int AbstractClass::evaluateAIOption(void* a1) {
 }
 // 0x6B15D0
 namespace ra2 { namespace game { 
+// 0x6b15d0
 int AbstractClass::selectAIAction(int a1) {
   if ( this->IsInitialized ) /*0x6b15d0*/
     return (unsigned int)(a1 - this->Items) >> 2; /*0x6b15e5*/
@@ -5975,6 +6167,7 @@ int AbstractClass::selectAIAction(int a1) {
 }
 // 0x6B1930
 namespace ra2 { namespace game { 
+// 0x6b1930
 void* AbstractClass::checkAIResources(int a2) {
   void *v3; // eax
 
@@ -5995,6 +6188,7 @@ void* AbstractClass::checkAIResources(int a2) {
 }
 // 0x6B8260
 namespace ra2 { namespace game { 
+// 0x6b8260
 int AbstractClass::allocatePathMemory(int a2, void* a3) {
   unsigned int *v4; // edi
   int v6; // ecx
@@ -6043,6 +6237,7 @@ int AbstractClass::allocatePathMemory(int a2, void* a3) {
 }
 // 0x6B8310
 namespace ra2 { namespace game { 
+// 0x6b8310
 void AbstractClass::freePathMemory() {
   if ( this->Items && this->IsAllocated ) /*0x6b831d*/
   {
@@ -6056,6 +6251,7 @@ void AbstractClass::freePathMemory() {
 }
 // 0x6B8340
 namespace ra2 { namespace game { 
+// 0x6b8340
 int AbstractClass::initPathState(void* a1) {
   int result; // eax
   int v3; // edx
@@ -6078,6 +6274,7 @@ int AbstractClass::initPathState(void* a1) {
 }
 // 0x6B8380
 namespace ra2 { namespace game { 
+// 0x6b8380
 int AbstractClass::resetPathMemory(int a1) {
   if ( this->IsInitialized ) /*0x6b8380*/
     return (unsigned int)(a1 - this->Items) >> 2; /*0x6b8395*/
@@ -6088,6 +6285,7 @@ int AbstractClass::resetPathMemory(int a1) {
 }
 // 0x6B8740
 namespace ra2 { namespace game { 
+// 0x6b8740
 void* AbstractClass::validatePathMemory(int a2) {
   void *v3; // eax
 
@@ -6108,6 +6306,7 @@ void* AbstractClass::validatePathMemory(int a2) {
 }
 // 0x6C9600
 namespace ra2 { namespace game { 
+// 0x6c9600
 int AbstractClass::GetTotalValue() {
   int v1; // edx
   float *v2; // esi
@@ -6137,6 +6336,7 @@ int AbstractClass::GetTotalValue() {
 }
 // 0x6C9D30
 namespace ra2 { namespace game { 
+// 0x6c9d30
 int AbstractClass::getTotalValue(int a1) {
   this->vtable3 = (void *)a1; /*0x6c9d34*/
   return a1; /*0x6c9d37*/
@@ -6145,6 +6345,7 @@ int AbstractClass::getTotalValue(int a1) {
 }
 // 0x6D0F00
 namespace ra2 { namespace game { 
+// 0x6d0f00
 int ObjectClass::PreDraw() {
   int (__stdcall **vtable0)(unsigned int); // eax
 
@@ -6156,6 +6357,7 @@ int ObjectClass::PreDraw() {
 }
 // 0x6D6190
 namespace ra2 { namespace game { 
+// 0x6d6190
 void* ObjectClass::ComputeDelta(void* a1) {
   int v2; // edx
   int v4; // ecx
@@ -6169,6 +6371,7 @@ void* ObjectClass::ComputeDelta(void* a1) {
 }
 // 0x6E1440
 namespace ra2 { namespace game { 
+// 0x6e1440
 int ObjectClass::Render(int a1, int a2, int a3, int a4) {
   void **p_vtable3; // edx
   void *vtable3; // edi
@@ -6202,6 +6405,7 @@ int ObjectClass::Render(int a1, int a2, int a3, int a4) {
 }
 // 0x6E15F0
 namespace ra2 { namespace game { 
+// 0x6e15f0
 int ObjectClass::ReadINIEntry(int a1, int a2, int a3, int a4) {
   wchar_t *v5; // esi
   int *p_referenceCount; // edi
@@ -6250,6 +6454,7 @@ int ObjectClass::ReadINIEntry(int a1, int a2, int a3, int a4) {
 }
 // 0x6E52F0
 namespace ra2 { namespace game { 
+// 0x6e52f0
 void* FootClass::processScriptAction(void* a1) {
   *a1 = this->?; /*0x6e52f7*/
   return a1; /*0x6e52f9*/
@@ -6258,6 +6463,7 @@ void* FootClass::processScriptAction(void* a1) {
 }
 // 0x6E57C0
 namespace ra2 { namespace game { 
+// 0x6e57c0
 bool TechnoClass::HasAnyMission() {
   int result; // eax
   std::codecvt_base *v2; // ecx
@@ -6287,6 +6493,7 @@ bool TechnoClass::HasAnyMission() {
 }
 // 0x6E8A90
 namespace ra2 { namespace game { 
+// 0x6e8a90
 int MissionClass::Construct(int a1, int a2, int a3) {
   int v5; // ecx
   int v6; // edx
@@ -6433,6 +6640,7 @@ int MissionClass::Construct(int a1, int a2, int a3) {
 }
 // 0x6EC130
 namespace ra2 { namespace game { 
+// 0x6ec130
 int ObjectClass::Get(int a1) {
   int v3; // eax
   int v4; // edi
@@ -6467,6 +6675,7 @@ int ObjectClass::Get(int a1) {
 }
 // 0x6F3270
 namespace ra2 { namespace game { 
+// 0x6f3270
 int ObjectClass::Vt34Thunk() {
   return (*((int (__thiscall **)(ObjectClass *))this->AbstractClass + 34))(this);
 }
@@ -6474,6 +6683,7 @@ int ObjectClass::Vt34Thunk() {
 }
 // 0x6F3D60
 namespace ra2 { namespace game { 
+// 0x6f3d60
 void* TechnoClass::GetTurretOffset(void* a1, int a2) {
   int v4; // ebp
   const void *v5; // eax
@@ -6560,6 +6770,7 @@ void* TechnoClass::GetTurretOffset(void* a1, int a2) {
 }
 // 0x6F4300
 namespace ra2 { namespace game { 
+// 0x6f4300
 void* TechnoClass::Constructor(int a1) {
   int v3; // ecx
   int v4; // ecx
@@ -6647,6 +6858,7 @@ void* TechnoClass::Constructor(int a1) {
 }
 // 0x6FBFA0
 namespace ra2 { namespace game { 
+// 0x6fbfa0
 int TechnoClass::ExecuteMoveCommand() {
   int result; // eax
   TeamClass *attachedTag; // ecx
@@ -6678,6 +6890,7 @@ int TechnoClass::ExecuteMoveCommand() {
 }
 // 0x6FC090
 namespace ra2 { namespace game { 
+// 0x6fc090
 int TechnoClass::Vt240Thunk() {
   int v2; // [esp+4h] [ebp+4h]
   int v3; // [esp+8h] [ebp+8h]
@@ -6688,6 +6901,7 @@ int TechnoClass::Vt240Thunk() {
 }
 // 0x6FF960
 namespace ra2 { namespace game { 
+// 0x6ff960
 int TechnoClass::DrawTargetLine() {
   AbstractClass *target; // eax
   unsigned int *v3; // eax
@@ -6793,6 +7007,7 @@ int TechnoClass::DrawTargetLine() {
 }
 // 0x7010D0
 namespace ra2 { namespace game { 
+// 0x7010d0
 int TechnoClass::HasValidWeapon() {
   int result; // eax
 
@@ -6807,6 +7022,7 @@ int TechnoClass::HasValidWeapon() {
 }
 // 0x7013A0
 namespace ra2 { namespace game { 
+// 0x7013a0
 int MissionClass::OverrideMission_SyncLog() {
   int v3; // [esp+Ch] [ebp+4h]
   int v4; // [esp+10h] [ebp+8h]
@@ -6820,6 +7036,7 @@ int MissionClass::OverrideMission_SyncLog() {
 }
 // 0x704350
 namespace ra2 { namespace game { 
+// 0x704350
 int TechnoClass::GetDrawHeight() {
   int v2; // eax
   int v3; // eax
@@ -7043,6 +7260,7 @@ int TechnoClass::GetDrawHeight() {
 }
 // 0x7077C0
 namespace ra2 { namespace game { 
+// 0x7077c0
 int ObjectClass::NotifyExpired(void* a1, void* a2) {
   int drainAnim; // ecx
   int drainTarget; // eax
@@ -7346,6 +7564,7 @@ int ObjectClass::NotifyExpired(void* a1, void* a2) {
 }
 // 0x707CB0
 namespace ra2 { namespace game { 
+// 0x707cb0
 int TechnoClass::CleanupAll(int a1) {
   int result; // eax
   int DB; // eax
@@ -7374,6 +7593,7 @@ int TechnoClass::CleanupAll(int a1) {
 }
 // 0x708B30
 namespace ra2 { namespace game { 
+// 0x708b30
 int ObjectClass::GetTypeVt28() {
   int v1; // eax
 
@@ -7384,6 +7604,7 @@ int ObjectClass::GetTypeVt28() {
 }
 // 0x7091D0
 namespace ra2 { namespace game { 
+// 0x7091d0
 bool FootClass::CanEnterBuilding() {
   CaptureManagerClass *captureManager; // ecx
   bool v3; // bl
@@ -8049,6 +8270,7 @@ LABEL_87:
 
 // 0x70A990
 namespace ra2 { namespace game { 
+// 0x70a990
 int TechnoClass::DrawVeterancy() {
   int v2; // ebp
   unsigned int v3; // ebx
@@ -8107,6 +8329,7 @@ int TechnoClass::DrawVeterancy() {
 }
 // 0x70AA60
 namespace ra2 { namespace game { 
+// 0x70aa60
 int TechnoClass::DrawPowerIndicator() {
   int result; // eax
   uint16_t *v3; // esi
@@ -8227,6 +8450,7 @@ int TechnoClass::DrawPowerIndicator() {
 }
 // 0x70C5B0
 namespace ra2 { namespace game { 
+// 0x70c5b0
 int ObjectClass::GetShroudByte() {
   int result; // eax
 
@@ -8237,6 +8461,7 @@ int ObjectClass::GetShroudByte() {
 }
 // 0x70C5C0
 namespace ra2 { namespace game { 
+// 0x70c5c0
 int ObjectClass::GetFogByte() {
   int result; // eax
 
@@ -8247,6 +8472,7 @@ int ObjectClass::GetFogByte() {
 }
 // 0x70C5D0
 namespace ra2 { namespace game { 
+// 0x70c5d0
 int ObjectClass::HasSubObject() {
   int result; // eax
 
@@ -8258,6 +8484,7 @@ int ObjectClass::HasSubObject() {
 }
 // 0x70C5F0
 namespace ra2 { namespace game { 
+// 0x70c5f0
 int ObjectClass::IsNotShrouded() {
   int result; // eax
 
@@ -8268,6 +8495,7 @@ int ObjectClass::IsNotShrouded() {
 }
 // 0x70DC50
 namespace ra2 { namespace game { 
+// 0x70dc50
 int TechnoClass::processEMPulse() {
   return *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 2054); /*0x70dc5e*/
 }
@@ -8275,6 +8503,7 @@ int TechnoClass::processEMPulse() {
 }
 // 0x70DCE0
 namespace ra2 { namespace game { 
+// 0x70dce0
 bool TechnoClass::checkEMPState() {
   return this->currentTurretNumber != -1; /*0x70dcee*/
 }
@@ -8282,6 +8511,7 @@ bool TechnoClass::checkEMPState() {
 }
 // 0x70DCF0
 namespace ra2 { namespace game { 
+// 0x70dcf0
 int TechnoClass::applyEMPulseDamage() {
   return this->currentTurretNumber; /*0x70dcf6*/
 }
@@ -8289,6 +8519,7 @@ int TechnoClass::applyEMPulseDamage() {
 }
 // 0x70DD70
 namespace ra2 { namespace game { 
+// 0x70dd70
 int ObjectClass::CheckTypeFlag1681() {
   return *(unsigned char *)((*((int (__thiscall **)(ObjectClass *))this->AbstractClass + 33))(this) + 1681) == 0; /*0x70dd87*/
 }
@@ -8296,6 +8527,7 @@ int ObjectClass::CheckTypeFlag1681() {
 }
 // 0x70DDA0
 namespace ra2 { namespace game { 
+// 0x70dda0
 int ObjectClass::CheckTypeFlag1681_2() {
   return *(unsigned char *)((*((int (__thiscall **)(ObjectClass *))this->AbstractClass + 33))(this) + 1681) == 0; /*0x70ddb7*/
 }
@@ -8303,6 +8535,7 @@ int ObjectClass::CheckTypeFlag1681_2() {
 }
 // 0x70DDF0
 namespace ra2 { namespace game { 
+// 0x70ddf0
 int TechnoClass::GetMember81() {
   return this->gattlingValue; /*0x70ddf6*/
 }
@@ -8310,6 +8543,7 @@ int TechnoClass::GetMember81() {
 }
 // 0x70E120
 namespace ra2 { namespace game { 
+// 0x70e120
 int TechnoClass::Vt249to254() {
   int (__thiscall **vtable0)(TechnoClass *, int); // edi
   int v3; // eax
@@ -8322,6 +8556,7 @@ int TechnoClass::Vt249to254() {
 }
 // 0x70E340
 namespace ra2 { namespace game { 
+// 0x70e340
 int ObjectClass::ResetTimer2() {
   ObjectClass *v1; // ecx
   int v3; // [esp+4h] [ebp-8h]
@@ -8336,6 +8571,7 @@ int ObjectClass::ResetTimer2() {
 }
 // 0x70E4B0
 namespace ra2 { namespace game { 
+// 0x70e4b0
 int TechnoClass::CalcFlashAlpha(int a1) {
   int v2; // edx
   int v3; // esi
@@ -8390,6 +8626,7 @@ int TechnoClass::CalcFlashAlpha(int a1) {
 }
 // 0x70F000
 namespace ra2 { namespace game { 
+// 0x70f000
 int TechnoClass::ClearUnknownFlag() {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -8399,6 +8636,7 @@ int TechnoClass::ClearUnknownFlag() {
 }
 // 0x70F090
 namespace ra2 { namespace game { 
+// 0x70f090
 int ObjectClass::GetTypeVt41() {
   int v1; // eax
 
@@ -8409,11 +8647,13 @@ int ObjectClass::GetTypeVt41() {
 }
 // 0x70F820
 namespace ra2 { namespace game { 
+// 0x70f820
 int ObjectClass::GetPriorityTarget() {
   int mindControlledBy; // eax
 
   mindControlledBy = this->mindControlledBy; /*0x70f820*/
   if ( mindControlledBy ) /*0x70f828*/
+// 0x4722f0
     return CaptureManagerClass::GetOriginalOwner(*(CaptureManagerClass **)(mindControlledBy + 700), (int)this); /*0x70f831*/
   if ( this->mindControlledBy_house ) /*0x70f837*/
     return this->originalOwnerHouse; /*0x70f841*/
@@ -8423,6 +8663,7 @@ int ObjectClass::GetPriorityTarget() {
 }
 // 0x70FEB0
 namespace ra2 { namespace game { 
+// 0x70feb0
 bool FootClass::checkPassability() {
   return this->? != 0; /*0x70febd*/
 }
@@ -8430,6 +8671,7 @@ bool FootClass::checkPassability() {
 }
 // 0x70FEC0
 namespace ra2 { namespace game { 
+// 0x70fec0
 bool ObjectClass::HasLocation() {
   return this->isOnMap != 0; /*0x70fecd*/
 }
@@ -8437,6 +8679,7 @@ bool ObjectClass::HasLocation() {
 }
 // 0x710410
 namespace ra2 { namespace game { 
+// 0x710410
 int ObjectClass::ClearPointerRefs() {
   int v2; // [esp+4h] [ebp+4h]
 
@@ -8448,18 +8691,21 @@ int ObjectClass::ClearPointerRefs() {
     this->mindControlRingAnim = 0; /*0x71043d*/
   if ( v2 == this->deployAnim ) /*0x71044c*/
     this->deployAnim = 0; /*0x71044e*/
+// 0x5f6da0
   return ObjectClass::ResetPointerIfMatch(this); /*0x71045a*/
 }
 }
 }
 // 0x710460
 namespace ra2 { namespace game { 
+// 0x710460
 int ObjectClass::FreeCaptureManager() {
   CaptureManagerClass *captureManager; // ecx
   int result; // eax
 
   captureManager = this->captureManager; /*0x710460*/
   if ( captureManager ) /*0x710468*/
+// 0x472140
     return CaptureManager::FreeAll((CaptureManager *)captureManager); /*0x71046a*/
   return result; /*0x71046f*/
 }
@@ -8467,6 +8713,7 @@ int ObjectClass::FreeCaptureManager() {
 }
 // 0x7120D0
 namespace ra2 { namespace game { 
+// 0x7120d0
 int ObjectClass::ComputeValue() {
   int v2; // eax
   int result; // eax
@@ -8485,6 +8732,7 @@ int ObjectClass::ComputeValue() {
 }
 // 0x716290
 namespace ra2 { namespace game { 
+// 0x716290
 int ObjectClass::GetModeSpecificValue() {
   int result; // eax
 
@@ -8515,6 +8763,7 @@ int ObjectClass::GetModeSpecificValue() {
 }
 // 0x7177E0
 namespace ra2 { namespace game { 
+// 0x7177e0
 WeaponStruct* TechnoClass::GetEliteWeaponSlot(int a1) {
   return (int)&this->q070 * a1 + 2708; /*0x7177f4*/
 }
@@ -8522,6 +8771,7 @@ WeaponStruct* TechnoClass::GetEliteWeaponSlot(int a1) {
 }
 // 0x71AB60
 namespace ra2 { namespace game { 
+// 0x71ab60
 void* ObjectClass::UnlinkFromFactory(void* a2) {
   unsigned int *result; // eax
   unsigned int *occupant; // ecx
@@ -8553,6 +8803,7 @@ void* ObjectClass::UnlinkFromFactory(void* a2) {
 }
 // 0x71BDF0
 namespace ra2 { namespace game { 
+// 0x71bdf0
 int ObjectClass::ProcessFoggedState() {
   int v2; // eax
   int v3; // eax
@@ -8629,6 +8880,7 @@ int ObjectClass::ProcessFoggedState() {
 }
 // 0x71FFE0
 namespace ra2 { namespace game { 
+// 0x71ffe0
 int AbstractClass::checkWeaponCooldown(int a2) {
   if ( !Control::DispatchClick((ControlClass *)this, a2) ) /*0x71ffe8*/
     return 0; /*0x720012*/
@@ -8640,6 +8892,7 @@ int AbstractClass::checkWeaponCooldown(int a2) {
 }
 // 0x720020
 namespace ra2 { namespace game { 
+// 0x720020
 int AbstractClass::getCurrentWeapon(int a2, int a3) {
   int v4; // edx
   int v5; // eax
@@ -8666,6 +8919,7 @@ int AbstractClass::getCurrentWeapon(int a2, int a3) {
 }
 // 0x720070
 namespace ra2 { namespace game { 
+// 0x720070
 int AbstractClass::selectWeapon() {
   char result; // al
   int v3; // eax
@@ -8721,6 +8975,7 @@ int AbstractClass::selectWeapon() {
 }
 // 0x720140
 namespace ra2 { namespace game { 
+// 0x720140
 void* AbstractClass::fireWeapon(int a2) {
   int *result; // eax
   int v4; // edx
@@ -8769,6 +9024,7 @@ void* AbstractClass::fireWeapon(int a2) {
 }
 // 0x720200
 namespace ra2 { namespace game { 
+// 0x720200
 int AbstractClass::reloadWeapon(int a1) {
   this->u32_3C = a1; /*0x720204*/
   return a1; /*0x720207*/
@@ -8777,6 +9033,7 @@ int AbstractClass::reloadWeapon(int a1) {
 }
 // 0x720210
 namespace ra2 { namespace game { 
+// 0x720210
 void* AbstractClass::checkAmmunition(int a1) {
   GadgetClass::Dtor((GadgetClass *)this); /*0x720213*/
   if ( (a1 & 1) != 0 ) /*0x72021d*/
@@ -8787,6 +9044,7 @@ void* AbstractClass::checkAmmunition(int a1) {
 }
 // 0x729AA0
 namespace ra2 { namespace game { 
+// 0x729aa0
 void FootClass::Process() {
   TagClass *attachedTag; // edi
   int owningHouseIndex; // edx
@@ -8824,6 +9082,7 @@ void FootClass::Process() {
 }
 // 0x72A4A0
 namespace ra2 { namespace game { 
+// 0x72a4a0
 int ObjectClass::DrawTypewriterText(int a1) {
   int v3; // eax
   Color *v4; // edi
@@ -8920,6 +9179,7 @@ int ObjectClass::DrawTypewriterText(int a1) {
 }
 // 0x733160
 namespace ra2 { namespace game { 
+// 0x733160
 void AbstractClass::processRadarEvent() {
   int v2; // ecx
   int v3; // eax
@@ -8962,6 +9222,7 @@ void AbstractClass::processRadarEvent() {
 }
 // 0x73B0B0
 namespace ra2 { namespace game { 
+// 0x73b0b0
 int TechnoClass::ShouldSkipOccupierDraw(int a1, int a2, int a3) {
   Window *v5; // esi
   Window *v6; // esi
@@ -8979,6 +9240,7 @@ int TechnoClass::ShouldSkipOccupierDraw(int a1, int a2, int a3) {
   }
   else
   {
+// 0x5f4b10
     return ObjectClass::CalcDrawRect((ObjectClass *)this); /*0x73b132*/
   }
 }
@@ -8986,6 +9248,7 @@ int TechnoClass::ShouldSkipOccupierDraw(int a1, int a2, int a3) {
 }
 // 0x73CEC0
 namespace ra2 { namespace game { 
+// 0x73cec0
 int TechnoClass::Draw(void* a1, void* a2) {
   TechnoClass *v4; // ecx
   TechnoClass *v5; // esi
@@ -9264,6 +9527,7 @@ int TechnoClass::Draw(void* a1, void* a2) {
 }
 // 0x740B10
 namespace ra2 { namespace game { 
+// 0x740b10
 int TechnoClass::updateTargeting() {
   unsigned char *v2; // edi
 
@@ -9271,12 +9535,14 @@ int TechnoClass::updateTargeting() {
   this->q6D2 = 0; /*0x740b1a*/
   if ( !Flag::CheckNone((unsigned char *)(&this->initialOwner8)) ) /*0x740b23*/
     Timer::StartDouble(v2, this->type->DeployTime); /*0x740b42*/
+// 0x4d4280
   return UnitClass::ApproachEvaluate((unsigned int *)this); /*0x740b4e*/
 }
 }
 }
 // 0x7465B0
 namespace ra2 { namespace game { 
+// 0x7465b0
 int TechnoClass::updateParasiteState(int a1) {
   if ( !(uint8_t)HouseClass::IsAlliedWith((void *)this->owner, (void *)dword_A83D4C) || a1 ) /*0x7465ce*/
     return (int)this->disguiseAsType; /*0x7465da*/
@@ -9285,6 +9551,7 @@ int TechnoClass::updateParasiteState(int a1) {
 }
 // 0x7465F0
 namespace ra2 { namespace game { 
+// 0x7465f0
 int TechnoClass::detachParasites(int a1) {
   if ( !(uint8_t)HouseClass::IsAlliedWith((void *)this->owner, (void *)dword_A83D4C) || a1 ) /*0x74660e*/
     return (int)this->disguisedAsHouse; /*0x74661a*/
@@ -9295,11 +9562,13 @@ int TechnoClass::detachParasites(int a1) {
 }
 // 0x746C90
 namespace ra2 { namespace game { 
+// 0x746c90
 bool TechnoClass::checkSpawnState() {
   return this->u32_6D8 != -1 || (uint8_t)TechnoClass::HasPassengers(this); /*0x746ca4*/
 }
 // 0x746D00
 namespace ra2 { namespace game { 
+// 0x746d00
 int TechnoClass::updateSpawnManager() {
   return *(unsigned char *)(this->u32_6C4 + 1708); /*0x746d0c*/
 }
@@ -9307,16 +9576,19 @@ int TechnoClass::updateSpawnManager() {
 }
 // 0x746D60
 namespace ra2 { namespace game { 
+// 0x746d60
 int TechnoClass::releaseSpawns() {
   double v1; // st7
 
   TechnoClass::CreateDeathAnim((int *)this, v1); /*0x746d63*/
+// 0x710460
   return ObjectClass::FreeCaptureManager(this); /*0x746d6f*/
 }
 }
 }
 // 0x746D80
 namespace ra2 { namespace game { 
+// 0x746d80
 int FootClass::updateScanRange() {
   return this->airstrikeTintTimer; /*0x746d86*/
 }
@@ -9324,6 +9596,7 @@ int FootClass::updateScanRange() {
 }
 // 0x746E30
 namespace ra2 { namespace game { 
+// 0x746e30
 void* TechnoClass::checkIronCurtainState(void* a1) {
   int v2; // ecx
 
@@ -9338,6 +9611,7 @@ void* TechnoClass::checkIronCurtainState(void* a1) {
 }
 // 0x746EA0
 namespace ra2 { namespace game { 
+// 0x746ea0
 bool TechnoClass::processIronCurtainExpiry(void* aP1) {
   unsigned int *uniqueId; // eax
 
@@ -9348,6 +9622,7 @@ bool TechnoClass::processIronCurtainExpiry(void* aP1) {
 }
 // 0x7498D0
 namespace ra2 { namespace game { 
+// 0x7498d0
 int ObjectClass::Initialize() {
   int v2; // eax
 
@@ -9391,6 +9666,7 @@ int ObjectClass::Initialize() {
 }
 // 0x74D670
 namespace ra2 { namespace game { 
+// 0x74d670
 int ObjectClass::IsCellSuitableForPlacement() {
   int v2; // edi
   char *v3; // ebx
@@ -9456,6 +9732,7 @@ int ObjectClass::IsCellSuitableForPlacement() {
 }
 // 0x74F360
 namespace ra2 { namespace game { 
+// 0x74f360
 void IRTTITypeInfo::ClearBuffer() {
   void *v2; // eax
 
@@ -9473,6 +9750,7 @@ void IRTTITypeInfo::ClearBuffer() {
 }
 // 0x74F390
 namespace ra2 { namespace game { 
+// 0x74f390
 int IRTTITypeInfo::PointerToIndex(int a1) {
   if ( this->vtable4 ) /*0x74f390*/
     return (unsigned int)(a1 - this->vtable2) >> 2; /*0x74f3a5*/
@@ -9483,6 +9761,7 @@ int IRTTITypeInfo::PointerToIndex(int a1) {
 }
 // 0x74F540
 namespace ra2 { namespace game { 
+// 0x74f540
 int IRTTITypeInfo::SetCapacity(int a1, void* a2) {
   unsigned int *v4; // edi
   int v5; // ecx
@@ -9529,6 +9808,7 @@ int IRTTITypeInfo::SetCapacity(int a1, void* a2) {
 }
 // 0x74F5F0
 namespace ra2 { namespace game { 
+// 0x74f5f0
 int IRTTITypeInfo::FindItem(void* a1) {
   int v2; // edx
   int result; // eax
@@ -9549,12 +9829,14 @@ int IRTTITypeInfo::FindItem(void* a1) {
 }
 // 0x7598D0
 namespace ra2 { namespace game { 
+// 0x7598d0
 void AbstractClass::updateBuildingState(int a1) {
   if ( a1 != this->u32_504 && ProcessAudioStreamBuffer(this->u32_200, a1, 0) != -6 ) /*0x7598f2*/
     this->u32_504 = a1; /*0x7598f4*/
 }
 // 0x759E10
 namespace ra2 { namespace game { 
+// 0x759e10
 int AbstractClass::processConstruction() {
   char result; // al
 
@@ -9572,6 +9854,7 @@ int AbstractClass::processConstruction() {
 }
 // 0x759E50
 namespace ra2 { namespace game { 
+// 0x759e50
 void AbstractClass::checkBuildProgress() {
   this->u32_550 = 0; /*0x759e50*/
 }
@@ -9579,6 +9862,7 @@ void AbstractClass::checkBuildProgress() {
 }
 // 0x759E80
 namespace ra2 { namespace game { 
+// 0x759e80
 int AbstractClass::finalizeConstruction() {
   int result; // eax
   unsigned int *vtable0; // ecx
@@ -9597,6 +9881,7 @@ int AbstractClass::finalizeConstruction() {
 }
 // 0x75D230
 namespace ra2 { namespace game { 
+// 0x75d230
 int AbstractClass::ProcessInit() {
   int v2; // eax
   int v3; // eax
@@ -9664,12 +9949,14 @@ int AbstractClass::ProcessInit() {
   }
   this->q111 = 0; /*0x75d386*/
   this->q10C = 0; /*0x75d38c*/
+// 0x4109c0
   return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x75d397*/
 }
 }
 }
 // 0x763EF0
 namespace ra2 { namespace game { 
+// 0x763ef0
 void AbstractClass::checkSuperWeaponStatus() {
   int v2; // eax
 
@@ -9687,6 +9974,7 @@ void AbstractClass::checkSuperWeaponStatus() {
 }
 // 0x763F30
 namespace ra2 { namespace game { 
+// 0x763f30
 int AbstractClass::updateSuperWeaponTimer(int a1) {
   if ( this->vtable4 ) /*0x763f30*/
     return (a1 - this->vtable2) / 0xCu; /*0x763f4e*/
@@ -9697,6 +9985,7 @@ int AbstractClass::updateSuperWeaponTimer(int a1) {
 }
 // 0x763F60
 namespace ra2 { namespace game { 
+// 0x763f60
 void* AbstractClass::fireSuperWeapon(void* a1, int a2) { return nullptr; } } }
   unsigned int *v3; // edx
 

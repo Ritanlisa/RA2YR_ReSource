@@ -775,6 +775,7 @@ int House::UpdateHouseAI()
             }
           }
         }
+// 0x65c7e0
         return Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 1, 7) + 105; /*0x4fd911*/
       }
     }
@@ -796,6 +797,7 @@ int House::UpdateHouseAI()
     v29 = 0; /*0x4fd8c3*/
     goto LABEL_71; /*0x4fd8c3*/
   }
+// 0x65c7e0
   return Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 1, 7) + 105; /*0x4fd927*/
 }
 }

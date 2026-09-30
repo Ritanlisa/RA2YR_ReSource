@@ -354,6 +354,7 @@ MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const cha
 
   v6 = RA2_OPNEW(0x40u); /*0x5d8172*/
   if ( v6 ) /*0x5d817c*/
+// 0x5c0dd0
     return MPBattleClass::initGame(v6, a1, a2, a3, a4, a5, a6); /*0x5d819e*/
   else
     return 0; /*0x5d81a6*/

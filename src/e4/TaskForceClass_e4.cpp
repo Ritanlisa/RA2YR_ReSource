@@ -357,6 +357,7 @@ int TaskForceClass::LoadTask(int * a2)
 {
   AbstractTypeClass::ProcessPower(a2); /*0x6e8759*/
   Power::TimerProcess((int)this->TaskForceClass_field_0x98); /*0x6e8767*/
+// 0x4a1d50
   return Power::TimerProcess(this-((unsigned int *)(>TaskForceClass_field_0x9C))[0]); /*0x6e877a*/
 }
 } // namespace gamemd

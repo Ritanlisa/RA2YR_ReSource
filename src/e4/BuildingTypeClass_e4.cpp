@@ -920,6 +920,7 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
       this->q0A4 = SearchMIXFile(Source, 0); /*0x45fa70*/
     }
   }
+// 0x45fa90
   return BuildingTypeClass::LoadVoxel(); /*0x45fa7d*/
 }
 } // namespace gamemd
@@ -1276,6 +1277,7 @@ int BuildingTypeClass::UpdatePower()
   Power::TimerProcess(*(unsigned int *)&this->__pad_1714[108]); /*0x464fe0*/
   Power::TimerProcess(this->BarrelStartPitch); /*0x464fee*/
   IDA_LOBYTE(v52) = this->ConcentricRadialIndicator; /*0x464ff3*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)v54, v52); /*0x465001*/
 }
 } // namespace gamemd
@@ -1437,6 +1439,7 @@ BuildingTypeClass * * BuildingTypeClass::FindOrCreate()
   LABEL_6:
     v3 = RA2_OPNEW(0x1798u); /*0x465416*/
     if ( v3 ) /*0x465425*/
+// 0x45dd90
       return BuildingTypeClass::ConstructFull(v3, Source); /*0x465431*/
     return 0; /*0x465425*/
   }
@@ -1622,6 +1625,7 @@ OverlayTypeClass * * BuildingTypeClass::FindOrCreate2()
   LABEL_6:
     v3 = (OverlayTypeClass *)RA2_OPNEW(0x2BCu); /*0x5fecc6*/
     if ( v3 ) /*0x5fecd5*/
+// 0x5fe250
       return OverlayTypeClass::OverlayTypeClass(v3, Source); /*0x5fece1*/
     return 0; /*0x5fecd5*/
   }
@@ -1648,6 +1652,7 @@ ParticleSystemTypeClass * * BuildingTypeClass::LoadOrGet()
   LABEL_6:
     v3 = (OverlayTypeClass *)RA2_OPNEW(0x310u); /*0x6448e6*/
     if ( v3 ) /*0x6448f5*/
+// 0x6440a0
       return OverlayTypeClass::Construct(v3, Source); /*0x644901*/
     return 0; /*0x6448f5*/
   }
@@ -1961,6 +1966,7 @@ void* BuildingTypeClass::ProcessPower(AbstractClass * aP1)
   IDA_LOBYTE(v40) = this->OpportunityFire; /*0x717791*/
   Power::FlagProcess(aP1, v40); /*0x71779a*/
   IDA_LOBYTE(v41) = this->DistributedFire; /*0x71779f*/
+// 0x4a1ca0
   return Power::FlagProcess(aP1, v41); /*0x7177ad*/
 }
 } // namespace gamemd
@@ -2055,6 +2061,7 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   }
   v6 = *((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], aP2) + 80) >> 8; /*0x7460cd*/
   IDA_LOBYTE(v6) = v6 & 1; /*0x7460d0*/
+// 0x42d170
   return Pathfinding::CalcDistance((int)&stru_87E790.__pad_D8[80], aP1, aP2, (int)this, 0, v6, 0) > 15; /*0x746052*/
 }
 } // namespace gamemd
@@ -2071,6 +2078,7 @@ AbstractClass * * BuildingTypeClass::FindOrCreateAlt()
   {
   LABEL_6:
     if ( RA2_OPNEW(0xE78u) ) /*0x74812b*/
+// 0x7470d0
       return UnitTypeClass::UnitTypeClass(Source); /*0x748141*/
     return 0; /*0x748135*/
   }
@@ -2215,6 +2223,7 @@ int BuildingTypeClass::GetMaxPips()
   }
   else if ( this->?[0] != 4 ) /*0x45ed0d*/
   {
+// 0x716290
     return ObjectClass::GetModeSpecificValue(); /*0x45ed0f*/
   }
   return result; /*0x45ed30*/

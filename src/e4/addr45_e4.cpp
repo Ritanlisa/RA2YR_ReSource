@@ -471,6 +471,7 @@ BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
 
   v4 = (*(int (**)(unsigned int *, int))(*a1 + 1124))(a1, a3); /*0x456fc7*/
   if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))(a1) ) /*0x456fc9*/
+// 0x70e360
     return Techno::StartInvulnerability(v4); /*0x456fc9*/
   if ( a1[165]
     && (a1 ? (v5 = (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 6 ? a1 : 0) : (v5 = 0),

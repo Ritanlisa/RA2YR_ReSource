@@ -1402,6 +1402,7 @@ char sub_435340(int a1, int a2, unsigned short * a3, int a4, int yTop, int a6, i
   v11 = Property::Set((unsigned short *)a1, *(unsigned short *)(a1 + 38)); /*0x435375*/
   Font::Print(a1, a2, a3, a4 + 1, yTop + 1, a6, a7, a8, a9, a10); /*0x43539f*/
   Property::Set((unsigned short *)a1, v11); /*0x4353a7*/
+// 0x434cd0
   return Font::Print(a1, a2, a3, a4, yTop, a6, a7, a8, a9, a10); /*0x43534c*/
 }
 } // namespace gamemd
@@ -1416,6 +1417,7 @@ char sub_4353F0(int a1, int a2, unsigned short * a3, int a4, int yTop, int a6, i
     return 0; /*0x4353fd*/
   Field::Int_Set((unsigned int *)a1, a4); /*0x43540b*/
   if ( !*(unsigned char *)(a1 + 64) ) /*0x435410*/
+// 0x434cd0
     return Font::Print(a1, a2, a3, a4, yTop, a6, a7, a8, a9, a10); /*0x4354b8*/
   *(unsigned int *)(a1 + 44) = 2; /*0x435428*/
   Font::Print(a1, a2, a3, a4, yTop, a6, a7, a8, a9, a10); /*0x43544b*/

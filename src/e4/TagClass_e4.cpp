@@ -341,6 +341,7 @@ int TagClass::ProcessTag(int * a2)
     firstTrigger = (TriggerClass *)Power::TimerProcess(v5); /*0x6e5716*/
   }
   IDA_LOBYTE(firstTrigger) = this->destroyed; /*0x6e571b*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, (int)firstTrigger); /*0x6e5726*/
 }
 } // namespace gamemd

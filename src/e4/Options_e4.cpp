@@ -775,6 +775,7 @@ void Options::SetScoreVolume(float volume, int pad)
   EndBufferMixer((int *)g_MixerChannel_Theme, v5); /*0x5fa4d6*/
   IDA_LOWORD(v6) = Math::RoundToInt(this->q100 * 255.0); /*0x5fa4e4*/
   TechnoTypeClass::CheckFlag(&unk_A83D10, v6); /*0x5fa4ef*/
+// 0x4068e0
   return Debug::Log(); /*0x5fa50b*/
 }
 } // namespace gamemd
@@ -795,6 +796,7 @@ void Options::SetSoundVolume(float volume, int pad)
   EndBufferMixer((int *)g_MixerChannel_Score, v4); /*0x5fa546*/
   if ( pad ) /*0x5fa551*/
     PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[12], 0x2000, 1.0, 0); /*0x5fa56a*/
+// 0x4068e0
   return Debug::Log(); /*0x5fa586*/
 }
 } // namespace gamemd
@@ -818,6 +820,7 @@ void Options::SetVoiceVolume(float volume, int pad)
   EndBufferMixer((int *)g_MixerChannel_Voice, v6); /*0x5fa5db*/
   if ( pad ) /*0x5fa5e6*/
     PlayVocClass(*(unsigned int *)&dword_8871E0->__pad_704[12], 0x2000, this->q0F0, 0); /*0x5fa5ff*/
+// 0x4068e0
   return Debug::Log(); /*0x5fa61b*/
 }
 } // namespace gamemd

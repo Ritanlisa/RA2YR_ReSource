@@ -150,6 +150,7 @@ int WebBrowser::ShowDialog()
       (*(void (__stdcall **)(int))(*(unsigned int *)dword_B72D0C + 8))(dword_B72D0C); /*0x77403c*/
       dword_B72D0C = 0; /*0x77403f*/
     }
+// 0x622720
     return Dialog::Destroy(v3); /*0x77404b*/
   }
   return result; /*0x774051*/

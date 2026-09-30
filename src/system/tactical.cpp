@@ -2100,6 +2100,7 @@ int TacticalClass::InitView()
   Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v4); /*0x537676*/
   result = (unsigned int *)dword_880990; /*0x53767b*/
   if ( dword_880990 ) /*0x537682*/
+// 0x4a91b0
     return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x537693*/
   return result; /*0x537698*/
 }

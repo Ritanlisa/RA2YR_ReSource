@@ -260,6 +260,7 @@ int AircraftTypeClass::PowerDrainUpdate(int * a2)
   Power::FlagProcess((Power *)a2, v6); /*0x41cdf1*/
   IDA_LOBYTE(v7) = this->qE0E; /*0x41cdf6*/
   Power::FlagProcess((Power *)a2, v7); /*0x41cdff*/
+// 0x4a1d50
   return Power::TimerProcess(this->ArrayIndex); /*0x41ce12*/
 }
 // 0x41CE20

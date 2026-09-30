@@ -603,6 +603,7 @@ int ParticleTypeClass::ProcessPower(int * a2)
   Power::FlagProcess((Power *)a2, v7); /*0x6455db*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x310); /*0x6455e9*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x314); /*0x6455f7*/
+// 0x4a1d90
   return Checksummer::Add_double( /*0x645611*/
            (Checksummer *)a2,
            (int)this->ParticleTypeClass_field_0x2B0,

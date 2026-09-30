@@ -208,6 +208,7 @@ long long Isometric::InitTables(IUnknown * aP1)
       v6 = 0.0; /*0x47bb2c*/
     if ( v6 > *(double *)&dbl_89E720[5 * *(uint8_t *)(&this->u32_704) - 5] ) /*0x47bb3d*/
       v6 = *(double *)&dbl_89E720[5 * *(uint8_t *)(&this->u32_704) - 5]; /*0x47bb41*/
+// 0x7c5f00
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }
   return result; /*0x47bb54*/

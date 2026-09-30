@@ -1995,6 +1995,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   int v13; // [esp+44h] [ebp-44h]
 
   if ( !a3 ) /*0x474552*/
+// 0x526470
     return INIClass::WriteToString(aP1); /*0x47455c*/
   INIClass::ClearSection((int)g_INI_Key_Digest, 0); /*0x474575*/
   memset(&v6.SHA1_field_0x04, 0, 9); /*0x47457e*/
@@ -2025,6 +2026,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
 namespace gamemd {
 char E4Recv_474660::sub_474660(unsigned char * Block, char * a3, int a4)
 {
+// 0x5285b0
   return INIClass::SetDouble(Block, a3, (double)a4 * 0.00390625); /*0x47467f*/
 }
 } // namespace gamemd
@@ -2054,6 +2056,7 @@ int E4Recv_476E20::sub_476E20()
   INIClass::WriteToString((int)&v3); /*0x476e74*/
   SHA1::ComputeThunk(&v3, (char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   IDA_LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/
+// 0x631c80
   return Pipe::Dtor((Pipe *)&v3); /*0x476e93*/
 }
 } // namespace gamemd
@@ -2476,6 +2479,7 @@ bool sub_47AAC0()
     while ( v1 ); /*0x47aaeb*/
   }
   CmdLine_NoCD = 0; /*0x47aaee*/
+// 0x47ab10
   return Game::FindGameDirectoryCD(byte_89E41C); /*0x47aafd*/
 }
 } // namespace gamemd

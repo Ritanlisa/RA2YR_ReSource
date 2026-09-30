@@ -312,6 +312,7 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   v15[0] = (unsigned int)&off_7E1668; /*0x76519b*/
   BufferIOFileClass::Dtor(v15); /*0x7651a6*/
   DeleteAndZero(&v7); /*0x7651af*/
+// 0x5256f0
   return HashTable::DestroyHashTableINIClass(v8); /*0x7651bd*/
 }
 }
@@ -365,6 +366,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   INIClass::SaveToPipe((INIClass *)&v7.?, (int)&v7.location[1]); /*0x76534a*/
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.location[1]); /*0x765361*/
+// 0x5256f0
   return HashTable::DestroyHashTableINIClass((INIClass *)&v7.?); /*0x76536f*/
 }
 }
@@ -925,6 +927,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   MSEngine::ddtor(&v51); /*0x769b9a*/
   BufferIOFileClass::Destruct(&v56); /*0x769ba6*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v55.ambientSoundController[1]); /*0x769baf*/
+// 0x535a60
   return BufferIOFileClass::Destruct((BufferIOFileClass *)&v55.needsRedraw); /*0x769bc0*/
 }
 }
@@ -1514,6 +1517,7 @@ int sub_765580(unsigned int * a1)
   FileStraw::Open(a1, (int)v2, 0); /*0x7655d8*/
   CCFileClass::Close(v2); /*0x7655e1*/
   v2[0] = (unsigned int)&off_7E1668; /*0x7655ea*/
+// 0x431b80
   return BufferIOFileClass::Dtor(v2); /*0x7655f7*/
 }
 } // namespace gamemd
@@ -2755,6 +2759,7 @@ unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
     FindTerritoryWOL(v4, this->currentTargets[1] + 44, (int)result); /*0x76d4a2*/
     TerritorySelectWDT((int)v4); /*0x76d4ae*/
     *(unsigned int *)v4 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76d4b7*/
+// 0x65d460
     return ComPtr::Release((ComPtr *)v4); /*0x76d4bf*/
   }
   return result; /*0x76d4c4*/
@@ -2887,6 +2892,7 @@ unsigned int * E4Recv_76E090::sub_76E090()
   *(void **)&v4.q4 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76e15a*/
   TerritorySelectWDT((int)&v4.q4); /*0x76e162*/
   *(void **)&v4.q4 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76e16b*/
+// 0x65d460
   return ComPtr::Release((ComPtr *)&v4.q4); /*0x76e178*/
 }
 } // namespace gamemd

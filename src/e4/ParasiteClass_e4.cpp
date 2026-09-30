@@ -119,6 +119,7 @@ int ParasiteClass::Attach(int * a2)
   Power::TimerProcess(this->q04C); /*0x629508*/
   Power::TimerProcess(this->u32_50); /*0x629513*/
   IDA_LOBYTE(v5) = this->q054; /*0x629518*/
+// 0x4a1ca0
   return Power::FlagProcess(a2, v5); /*0x629523*/
 }
 } // namespace ra2
@@ -699,6 +700,7 @@ int ParasiteClass::CanExistOnVictimCell()
   }
   LABEL_20:
   v9 = (Cell *)(*(int (**)(unsigned int))(**(unsigned int **)this->__pad_28 + 444))(*(unsigned int *)this->__pad_28); /*0x62ac14*/
+// 0x47c520
   return Cell::IsBridge(v9) == 0; /*0x62ab4b*/
 }
 } // namespace ra2
@@ -1125,6 +1127,7 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
 namespace gamemd {
 int ParasiteClass::SaveParasite(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6296c4*/
 }
 } // namespace gamemd

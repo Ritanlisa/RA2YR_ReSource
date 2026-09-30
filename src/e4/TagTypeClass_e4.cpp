@@ -240,6 +240,7 @@ AbstractTypeClass * * TagTypeClass::FindOrCreate()
   LABEL_6:
     v3 = (char *)RA2_OPNEW(0xA4u); /*0x6e6366*/
     if ( v3 ) /*0x6e6375*/
+// 0x6e5b60
       return TagTypeClass::Construct(v3, Source); /*0x6e6381*/
     return 0; /*0x6e6375*/
   }
@@ -256,6 +257,7 @@ namespace gamemd {
 int TagTypeClass::PowerDrainUpdate(int * a2)
 {
   AbstractTypeClass::ProcessPower(a2); /*0x6e63e9*/
+// 0x4a1d50
   return Power::TimerProcess(this->u32_9C); /*0x6e63fc*/
 }
 }
@@ -281,6 +283,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType()
   LABEL_6:
     v3 = (TriggerTypeClass *)RA2_OPNEW(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
+// 0x726c80
       return TriggerTypeClass::Construct(v3, Source); /*0x727b11*/
     return 0; /*0x727b05*/
   }

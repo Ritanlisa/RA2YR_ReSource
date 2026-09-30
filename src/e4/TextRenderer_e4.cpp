@@ -105,6 +105,7 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
                     v20,
                     0,
                     v27);
+// 0x4a61c0
   return TextRenderer::DrawText(&v27, (size_t)&word_8A0870, g_DSurface_Hidden, v21, v23, v24, v25, v26); /*0x4b987c*/
 }
 }

@@ -41,6 +41,7 @@ void * WeaponTypeClass::Create()
   LABEL_6:
     v3 = (SuperWeaponTypeClass *)RA2_OPNEW(0x1B0u); /*0x5126d6*/
     if ( v3 ) /*0x5126e5*/
+// 0x5113f0
       return SuperWeaponTypeClass::Construct(v3, Source); /*0x5126f1*/
     return 0; /*0x5126e5*/
   }
@@ -67,6 +68,7 @@ int WeaponTypeClass::Process()
   LABEL_6:
     v3 = RA2_OPNEW(0x100u); /*0x6cef46*/
     if ( v3 ) /*0x6cef55*/
+// 0x6ce5b0
       return SuperWeaponTypeClass::SuperWeaponTypeClass((int)v3, Source); /*0x6cef61*/
     return 0; /*0x6cef55*/
   }
@@ -320,6 +322,7 @@ int WeaponTypeClass::ProcessPower(int * a2)
   IDA_LOBYTE(v21) = this->OmniFire; /*0x772c68*/
   Power::FlagProcess((Power *)a2, v21); /*0x772c71*/
   IDA_LOBYTE(v22) = this->DistributedWeaponFire; /*0x772c76*/
+// 0x4a1ca0
   return Power::FlagProcess((Power *)a2, v22); /*0x772c84*/
 }
 } // namespace gamemd
@@ -513,6 +516,7 @@ char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a
     }
     while ( v5 < v4 ); /*0x475c3a*/
   }
+// 0x528660
   return INIClass::SetString(aP1, a2, Source); /*0x475c61*/
 }
 // 0x475C70

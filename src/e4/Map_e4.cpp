@@ -522,9 +522,11 @@ void sub_55CF10()
           }
         }
         if ( !dword_A8B23C ) /*0x55cfb2*/
+// 0x6523a0
           return Network::SendUnreachable(Ticks); /*0x55cfb2*/
         result = (*((int (**)(ObjectClass *))dword_A8B23C->AbstractClass + 2))(dword_A8B23C); /*0x55cfb6*/
         if ( !result ) /*0x55cfbb*/
+// 0x6523a0
           return Network::SendUnreachable(Ticks); /*0x55cfbd*/
       }
     }
@@ -1921,6 +1923,7 @@ double Map_Helper_59B940(MapResourceClass * aP0, short * a1, MapResourceClass * 
   {
     v18 = *aP0 - *a1; /*0x59ba7b*/
     v19 = aP0[1] - a1[1]; /*0x59ba7d*/
+// 0x4cac40
     return Math::Sqrt((double)(v18 * v18 + v19 * v19)); /*0x59ba94*/
   }
   else

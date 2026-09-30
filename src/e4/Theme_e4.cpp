@@ -115,6 +115,7 @@ int Theme::IsPlaying()
     if ( !AudioSample::IsBuffering(v2) ) /*0x720fe1*/
       Audio::Release(*((Audio **)&this->ptr_41)); /*0x720fed*/
   }
+// 0x408070
   return Audio::IsSoundPlaying(*((Audio **)&this->ptr_41)) != 0; /*0x720ffe*/
 }
 } // namespace gamemd

@@ -2104,6 +2104,7 @@ LABEL_151:
           {
             char * v60 = ToWideStringChar(*(IUnknown **)(*(unsigned int *)&HouseClass_Player[40212] + 4 * i));
             if ( !_strcmpi(v60, &HouseClass_Player[39152])
+// 0x53ee70
               && GUID::Compare(
                    (char *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player[40212] + 4 * i) + 40),
                    (int)&HouseClass_Player[39608]) )

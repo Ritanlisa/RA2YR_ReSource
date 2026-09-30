@@ -1945,6 +1945,7 @@ int AircraftClass::Mission_Enter()
   unsigned int v50[3]; // [esp+54h] [ebp-Ch] BYREF
 
   if ( *(unsigned char *)(v5[433].Carryall_field_00 + 3580) ) /*0x4166c6*/
+// 0x416d50
     return Carryall::MissionStateMachine(v5); /*0x4166d0*/
   v7 = (int)v5; /*0x4166e6*/
   switch ( v5[47].Carryall_field_00 ) /*0x4166f4*/
@@ -2353,12 +2354,14 @@ int AircraftClass::MissionDispatch()
             || (!this->?[1] || (unsigned int *)CCINIClass::GetDB((CCINIClass *)this->?) != a2)
             && this->? != (AbstractClass *)a2 )
           {
+// 0x4d8fb0
             return FootClass::MissionDispatch((FootClass *)a2, a3, (unsigned int *)a3, (int)a4, v17); /*0x419519*/
           }
           return 10; /*0x419519*/
         case 14:
           v14 = *(unsigned int *)&this->Type->TechnoTypeClass[1504]; /*0x41939d*/
           if ( v14 <= 0 || this->?[0] >= v14 ) /*0x4193b1*/
+// 0x4d8fb0
             return FootClass::MissionDispatch((FootClass *)a2, a3, (unsigned int *)a3, (int)a4, v17); /*0x4193b1*/
           FootClass::MissionDispatch((FootClass *)a2, a3, (unsigned int *)a3, (int)a4, v17); /*0x4193c4*/
           if ( !this->?[0] ) /*0x4193c9*/
@@ -2456,6 +2459,7 @@ int AircraftClass::MissionDispatch()
           ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((TechnoClass *)this); /*0x4191c3*/
           v6[288](this, ClosestPlacementCell, 1); /*0x4191cb*/
           (*((void (__thiscall **)(AircraftClass *, int))this->FootClass + 157))(this, 3); /*0x4191d7*/
+// 0x4d8fb0
           return FootClass::MissionDispatch((FootClass *)a2, a3, (unsigned int *)a3, (int)a4, v17); /*0x4191d7*/
         case 29:
           if ( this->? )
@@ -2464,11 +2468,13 @@ int AircraftClass::MissionDispatch()
             return *(unsigned int *)&this->Type->TechnoTypeClass[1668] != this->? ? 10 : 1;
         case 31:
           if ( this->? < *(unsigned int *)&this->Type->TechnoTypeClass[1668] / 2 || !this->? ) /*0x419124*/
+// 0x4d8fb0
             return FootClass::MissionDispatch((FootClass *)a2, a3, (unsigned int *)a3, (int)a4, v17); /*0x41912c*/
           return 1; /*0x419137*/
         case 33:
           return *(unsigned int *)&this->Type->TechnoTypeClass[1668] != this->? ? 10 : 1;
         default:
+// 0x4d8fb0
           return FootClass::MissionDispatch((FootClass *)a2, a3, (unsigned int *)a3, (int)a4, v17); /*0x4191ef*/
       }
       break; /*0x4191ef*/
@@ -2743,6 +2749,7 @@ int AircraftClass::PowerDrainUpdate(int a2)
   Power::FlagProcess((Power *)a2, v4); /*0x41b635*/
   IDA_LOBYTE(v5) = this->AircraftClass_field_bool_6D1; /*0x41b63a*/
   Power::FlagProcess((Power *)a2, v5); /*0x41b643*/
+// 0x4a1d50
   return Power::TimerProcess(this->AircraftClass_field_char_6D3); /*0x41b657*/
 }
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
@@ -2949,6 +2956,7 @@ int AircraftClass::GetMissionTimer()
       if ( !(uint8_t)House::IsCurrentPlayer((House *)this->?) /*0x41a8ef*/
         || (*((uint8_t (__thiscall **)(AircraftClass *))this->FootClass + 21))(this) )
       {
+// 0x4d5070
         return FootClass::FindMovePosition((FootClass *)this); /*0x41a92b*/
       }
       else
@@ -3138,6 +3146,7 @@ int AircraftClass::Destruct()
     }
   }
   this->? = 0; /*0x41426d*/
+// 0x4d3590
   return FootClass::Destruct((FootClass *)this); /*0x414208*/
 }
 // IDA: 0x417CC0 (GetCursorOverObject, 692B)
@@ -3155,6 +3164,7 @@ int AircraftClass::IsHeightAboveThreshold()
 
   v1 = this->Type; /*0x41b929*/
   if ( v1 != IDA_LODWORD(g_RulesClass_Instance->MissileROTVar) && v1 != g_RulesClass_Instance->HoverHeight ) /*0x41b93d*/
+// 0x4de620
     return ObjectClass::IsHeightAboveThreshold_0(this); /*0x41b941*/
   if ( !this->locomotor ) /*0x41b948*/
     WinAPI::Wrapper(-2147467261); /*0x41b957*/

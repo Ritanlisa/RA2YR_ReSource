@@ -274,9 +274,11 @@ void IPXManagerClass::Init(void * a1, void * a2, void * a3, void * a4, void * a5
   int result; // eax
 
   if ( a2 == (void *)(-1) ) /*0x542fe7*/
+// 0x48bad0
     return EventClass::SetData(*(EventClass **)(this->u32_48 + 4), a3, a4, a5, a6, a7); /*0x543008*/
   result = *((unsigned int *)this + a2 + 10); /*0x543010*/
   if ( result ) /*0x543016*/
+// 0x48bad0
     return EventClass::SetData(*(EventClass **)(result + 4), a3, a4, a5, a6, a7); /*0x543034*/
   return result; /*0x54300d*/
 }

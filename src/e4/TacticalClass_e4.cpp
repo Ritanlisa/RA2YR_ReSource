@@ -479,6 +479,7 @@ void TacticalClass::InterpolateView()
       v21 = v16; /*0x4ae424*/
       v22 = v17; /*0x4ae428*/
     }
+// 0x6d6070
     return Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, &v20); /*0x4ae437*/
   }
   return result; /*0x4ae43e*/
@@ -1843,6 +1844,7 @@ int TacticalClass::StubReturnFalse10()
 namespace gamemd {
 int TacticalClass::SetPositionThunk(MouseClass * aP0)
 {
+// 0x6d6070
   return Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, (int *)aP0); /*0x653f80*/
 }
 } // namespace gamemd

@@ -281,6 +281,7 @@ int Session::StartGame()
   Skirmish *v4; // eax
 
   if ( !(uint8_t)IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4])) ) /*0x5ed381*/
+// 0x5e74e0
     return Session::PrepareGame(); /*0x5ed3f1*/
   v2 = g_UIControlState; /*0x5ed38b*/
   if ( g_UIControlState ) /*0x5ed393*/

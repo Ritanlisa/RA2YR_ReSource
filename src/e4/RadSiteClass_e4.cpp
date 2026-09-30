@@ -104,6 +104,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
+// 0x410320
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x65b464*/
 }
 } // namespace gamemd
