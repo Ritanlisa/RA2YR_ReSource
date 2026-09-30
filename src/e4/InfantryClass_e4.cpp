@@ -217,10 +217,10 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
   int v17[2]; // [esp+Ch] [ebp-8h] BYREF
 
   p_vtable1 = (AbstractClass *)&a1->?; /*0x517d9a*/
-  a1->FootClass = &InfantryClass::`vftable'; /*0x517d9d*/
-  a1->? = &InfantryClass::`vftable'; /*0x517da3*/
+  a1->FootClass = &vt_InfantryClass; /*0x517d9d*/
+  a1->? = &vt_InfantryClass; /*0x517da3*/
   a1->? = &off_7EB02C; /*0x517daa*/
-  a1->? = &InfantryClass::`vftable'; /*0x517db1*/
+  a1->? = &vt_InfantryClass; /*0x517db1*/
   if ( byte_A8E9A0 ) /*0x517dbe*/
   {
     Type = a1->Type; /*0x517dc4*/

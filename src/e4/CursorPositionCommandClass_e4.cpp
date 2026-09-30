@@ -11,7 +11,7 @@ namespace gamemd {
 void CursorPositionCommandClass::Constructor()
 {
 
-  *(unsigned int *)this->CommandClass = &CursorPositionCommandClass::`vftable'; /*0x537e72*/
+  *(unsigned int *)this->CommandClass = &vt_CursorPositionCommandClass; /*0x537e72*/
   return this->CommandClass; /*0x537e78*/
 
 }

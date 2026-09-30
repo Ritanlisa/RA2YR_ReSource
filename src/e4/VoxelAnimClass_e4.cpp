@@ -109,10 +109,10 @@ int VoxelAnimClass::CleanupMembers()
   int v4; // eax
   VoxelAnimClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  this->VoxelAnimClass_field_0x0 = &VoxelAnimClass::`vftable'; /*0x7499f6*/
-  this->VoxelAnimClass_field_0x4[0] = (int)&VoxelAnimClass::`vftable'; /*0x7499fc*/
-  this->VoxelAnimClass_field_0x8 = &VoxelAnimClass::`vftable'; /*0x749a03*/
-  *(unsigned int *)this->__pad_C = &VoxelAnimClass::`vftable'; /*0x749a0a*/
+  this->VoxelAnimClass_field_0x0 = &vt_VoxelAnimClass; /*0x7499f6*/
+  this->VoxelAnimClass_field_0x4[0] = (int)&vt_VoxelAnimClass; /*0x7499fc*/
+  this->VoxelAnimClass_field_0x8 = &vt_VoxelAnimClass; /*0x749a03*/
+  *(unsigned int *)this->__pad_C = &vt_VoxelAnimClass; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x749a11*/
   v6 = this; /*0x749a26*/
   v2 = (*(int (**)(char *, VoxelAnimClass **))(*(unsigned int *)&stru_88732C.__pad_1C[64] + 16))( /*0x749a2a*/
@@ -865,10 +865,10 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x74a989*/
     {
       ObjectClass::Init((ObjectClass *)aP1, (int)&aP1a); /*0x74a992*/
-      *aP1 = (int)&VoxelAnimClass::`vftable'; /*0x74a997*/
-      aP1[1] = (int)&VoxelAnimClass::`vftable'; /*0x74a99d*/
-      aP1[2] = (int)&VoxelAnimClass::`vftable'; /*0x74a9a4*/
-      aP1[3] = (int)&VoxelAnimClass::`vftable'; /*0x74a9ab*/
+      *aP1 = (int)&vt_VoxelAnimClass; /*0x74a997*/
+      aP1[1] = (int)&vt_VoxelAnimClass; /*0x74a99d*/
+      aP1[2] = (int)&vt_VoxelAnimClass; /*0x74a9a4*/
+      aP1[3] = (int)&vt_VoxelAnimClass; /*0x74a9ab*/
     }
     AudioController::Init((AudioController *)(aP1 + 69)); /*0x74a9b8*/
     AudioController::Init((AudioController *)(aP1 + 74)); /*0x74a9c3*/
@@ -937,9 +937,9 @@ int VoxelAnimClass::Reset()
   this->__pad_20[21] = 0; /*0x75aad6*/
   this->__pad_20[22] = 0; /*0x75aad9*/
   *(unsigned int *)&this->__pad_20[24] = 0; /*0x75aadc*/
-  this->VoxelAnimClass_field_0x0 = &WalkLocomotionClass::`vftable'; /*0x75aadf*/
-  this->VoxelAnimClass_field_0x4[0] = (int)&WalkLocomotionClass::`vftable'; /*0x75aae5*/
-  *(unsigned int *)&this->__pad_C[12] = &WalkLocomotionClass::`vftable'; /*0x75aaec*/
+  this->VoxelAnimClass_field_0x0 = &vt_WalkLocomotionClass; /*0x75aadf*/
+  this->VoxelAnimClass_field_0x4[0] = (int)&vt_WalkLocomotionClass; /*0x75aae5*/
+  *(unsigned int *)&this->__pad_C[12] = &vt_WalkLocomotionClass; /*0x75aaec*/
   return (int)this; /*0x75aaf5*/
 
 }
@@ -973,15 +973,15 @@ int VoxelAnimClass::Constructor()
   *(unsigned int *)&this->__pad_144[180] = 5; /*0x75ec5d*/
   this->__pad_144[184] = 1; /*0x75ec67*/
   this->__pad_144[185] = 0; /*0x75ec6e*/
-  *(unsigned int *)&this->__pad_144[172] = &VectorClass<CellClass *>::`vftable'; /*0x75ec74*/
+  *(unsigned int *)&this->__pad_144[172] = &vt_VectorClass; /*0x75ec74*/
   *(unsigned int *)&this->__pad_144[176] = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
   this->__pad_144[185] = 1; /*0x75ec89*/
-  *(unsigned int *)&this->__pad_144[172] = &DynamicVectorClass<CellClass *>::`vftable'; /*0x75ec90*/
+  *(unsigned int *)&this->__pad_144[172] = &vt_DynamicVectorClass; /*0x75ec90*/
   *(unsigned int *)&this->__pad_144[192] = 10; /*0x75ec9a*/
   *(unsigned int *)&this->__pad_144[188] = 0; /*0x75eca4*/
-  this->VoxelAnimClass_field_0x0 = &WaveClass::`vftable'; /*0x75ecaa*/
-  this->VoxelAnimClass_field_0x4[0] = (int)&WaveClass::`vftable'; /*0x75ecb0*/
-  this->VoxelAnimClass_field_0x8 = &WaveClass::`vftable'; /*0x75ecb7*/
+  this->VoxelAnimClass_field_0x0 = &vt_WaveClass; /*0x75ecaa*/
+  this->VoxelAnimClass_field_0x4[0] = (int)&vt_WaveClass; /*0x75ecb0*/
+  this->VoxelAnimClass_field_0x8 = &vt_WaveClass; /*0x75ecb7*/
   *(unsigned int *)this->__pad_C = &off_7F6BC8; /*0x75ecbe*/
   if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 100) < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 92) /*0x75ecfb*/
     || (*((unsigned int *)((char *)&stru_A8EB00 + 97)) || !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 92))

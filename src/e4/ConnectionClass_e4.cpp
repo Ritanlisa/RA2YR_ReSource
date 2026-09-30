@@ -123,7 +123,7 @@ void ConnectionClass::dtor()
   void (***PlayerIndex)(unsigned int, int); // ecx
 
   v2 = (void *)*((unsigned int *)this + 8); /*0x48bee3*/
-  *(unsigned int *)this->__pad_0 = &ConnectionClass::`vftable'; /*0x48bee6*/
+  *(unsigned int *)this->__pad_0 = &vt_ConnectionClass; /*0x48bee6*/
   __3_YAXPAX_Z(v2); /*0x48beed*/
   PlayerIndex = (void (***)(unsigned int, int))this->PlayerIndex; /*0x48bef2*/
   if ( PlayerIndex ) /*0x48befb*/

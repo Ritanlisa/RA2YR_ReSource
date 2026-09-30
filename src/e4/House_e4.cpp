@@ -1184,7 +1184,7 @@ void House::Constructor()
       *(unsigned int *)this->__pad_C = v2; /*0x69e0bd*/
       this->__pad_C[4] = 1; /*0x69e0c0*/
     }
-    *(unsigned int *)v3.CDFileClass = &CCFileClass::`vftable'; /*0x69e0c8*/
+    *(unsigned int *)v3.CDFileClass = &vt_CCFileClass; /*0x69e0c8*/
     v5 = 0; /*0x69e0d0*/
     Vector::Clear((int)v4); /*0x69e0d8*/
     *(unsigned int *)v3.CDFileClass = &off_7E1668; /*0x69e0e1*/

@@ -56,10 +56,10 @@ SmudgeTypeClass::SmudgeTypeClass(char * Source)
   *((unsigned int *)this + 167) = 1; /*0x6b5287*/
   *((unsigned char *)this + 672) = 0; /*0x6b528d*/
   *((unsigned char *)this + 673) = 0; /*0x6b5294*/
-  *(unsigned int *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
-  *((unsigned int *)this + 1) = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
-  *((unsigned int *)this + 2) = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
-  *((unsigned int *)this + 3) = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
+  *(unsigned int *)this = &vt_SmudgeTypeClass; /*0x6b529b*/
+  *((unsigned int *)this + 1) = &vt_SmudgeTypeClass; /*0x6b52a1*/
+  *((unsigned int *)this + 2) = &vt_SmudgeTypeClass; /*0x6b52a7*/
+  *((unsigned int *)this + 3) = &vt_SmudgeTypeClass; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x6b52b5*/
   *(unsigned short *)((unsigned char *)this + 559) = 1; /*0x6b52ba*/
   *((unsigned char *)this + 561) = 0; /*0x6b52c7*/
@@ -189,10 +189,10 @@ SmudgeTypeClass *  SmudgeTypeClass::ddtor( void * a2, char a3)
   SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Image = a3->?; /*0x6b6164*/
-  a3->ObjectTypeClass = &SmudgeTypeClass::`vftable'; /*0x6b616a*/
-  a3->? = &SmudgeTypeClass::`vftable'; /*0x6b6172*/
-  a3->? = &SmudgeTypeClass::`vftable'; /*0x6b6179*/
-  a3->? = &SmudgeTypeClass::`vftable'; /*0x6b6180*/
+  a3->ObjectTypeClass = &vt_SmudgeTypeClass; /*0x6b616a*/
+  a3->? = &vt_SmudgeTypeClass; /*0x6b6172*/
+  a3->? = &vt_SmudgeTypeClass; /*0x6b6179*/
+  a3->? = &vt_SmudgeTypeClass; /*0x6b6180*/
   if ( Image ) /*0x6b6187*/
   {
     __3_YAXPAX_Z(Image); /*0x6b618a*/
@@ -284,10 +284,10 @@ int  SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
-      aP0->ObjectTypeClass = &SmudgeTypeClass::`vftable'; /*0x6b5874*/
-      aP0->? = &SmudgeTypeClass::`vftable'; /*0x6b587a*/
-      aP0->? = &SmudgeTypeClass::`vftable'; /*0x6b5881*/
-      aP0->? = &SmudgeTypeClass::`vftable'; /*0x6b5888*/
+      aP0->ObjectTypeClass = &vt_SmudgeTypeClass; /*0x6b5874*/
+      aP0->? = &vt_SmudgeTypeClass; /*0x6b587a*/
+      aP0->? = &vt_SmudgeTypeClass; /*0x6b5881*/
+      aP0->? = &vt_SmudgeTypeClass; /*0x6b5888*/
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x6b5891*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x6b5898*/

@@ -12,7 +12,7 @@ namespace gamemd {
 void ScreenCaptureCommandClass::Constructor()
 {
 
-  *(unsigned int *)this->CommandClass = &ScreenCaptureCommandClass::`vftable'; /*0x537b42*/
+  *(unsigned int *)this->CommandClass = &vt_ScreenCaptureCommandClass; /*0x537b42*/
   return this->CommandClass; /*0x537b48*/
 
 }

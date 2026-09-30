@@ -740,7 +740,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   this->? = 0; /*0x74bc07*/
   LOBYTE(this->?) = 1; /*0x74bc0a*/
   BYTE1(this->?) = 0; /*0x74bc0e*/
-  this->? = &VectorClass<unsigned char>::`vftable'; /*0x74bc11*/
+  this->? = &vt_VectorClass; /*0x74bc11*/
   this->? = (void *)-1; /*0x74bc17*/
   LOBYTE(this->?) = *(unsigned char *)(a2 + 4); /*0x74bc21*/
   this->? = *(void **)(a2 + 8); /*0x74bc27*/
@@ -1807,7 +1807,7 @@ char * E4Recv_74BBA0::sub_74BBA0(int a2, int a3)
   *((unsigned int *)v4 + 2) = 0; /*0x74bbc3*/
   v4[12] = 1; /*0x74bbc6*/
   v4[13] = 0; /*0x74bbca*/
-  *(unsigned int *)v4 = &VectorClass<unsigned char>::`vftable'; /*0x74bbcd*/
+  *(unsigned int *)v4 = &vt_VectorClass; /*0x74bbcd*/
   (*(void (**)(char *, unsigned int, int))(*(unsigned int *)v4 + 8))(v4, (unsigned int)(a2 + 7) >> 3, a3); /*0x74bbda*/
   return this; /*0x74bbdf*/
 
@@ -2039,7 +2039,7 @@ VectorClass_flat * _::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x74f653*/
-  *Block = &VectorClass<VeinholeMonsterClass *>::`vftable'; /*0x74f656*/
+  *Block = &vt_VectorClass; /*0x74f656*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x74f660*/
   {
     __3_YAXPAX_Z(v3); /*0x74f668*/
@@ -2068,7 +2068,7 @@ unsigned int * E4Recv_74F730::sub_74F730()
   this->ambientSoundController[0] = 0; /*0x74f745*/
   this->ambientSoundController[1] = 0; /*0x74f748*/
   this->ambientSoundController[2] = v2 & 0xFFFFFFF0; /*0x74f74b*/
-  this->AbstractClass = &VersionClass::`vftable'; /*0x74f74e*/
+  this->AbstractClass = &vt_VersionClass; /*0x74f74e*/
   BYTE2(this->owningHouseIndex) = 0; /*0x74f754*/
   LOBYTE(this->?) = 0; /*0x74f757*/
   return &this->AbstractClass; /*0x74f75a*/

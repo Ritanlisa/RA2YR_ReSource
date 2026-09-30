@@ -321,13 +321,13 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4ca299*/
       __4type_info_AAEAAV0_ABV0__Z(&v3->production[2], (int)&a2); /*0x4ca2a6*/
       TechnoTypeVector::Constructor((TechnoTypeVector *)&v3->onHold, 0, 0); /*0x4ca2b2*/
-      *(unsigned int *)&v3->onHold = &DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca2b7*/
+      *(unsigned int *)&v3->onHold = &vt_DynamicVectorClass; /*0x4ca2b7*/
       *(unsigned int *)&v3->__pad_42[18] = 10; /*0x4ca2bd*/
       *(unsigned int *)&v3->__pad_42[14] = 0; /*0x4ca2c4*/
-      v3->AbstractClass = &FactoryClass::`vftable'; /*0x4ca2c7*/
-      v3->? = &FactoryClass::`vftable'; /*0x4ca2cd*/
-      v3->? = &FactoryClass::`vftable'; /*0x4ca2d4*/
-      v3->? = &FactoryClass::`vftable'; /*0x4ca2db*/
+      v3->AbstractClass = &vt_FactoryClass; /*0x4ca2c7*/
+      v3->? = &vt_FactoryClass; /*0x4ca2cd*/
+      v3->? = &vt_FactoryClass; /*0x4ca2d4*/
+      v3->? = &vt_FactoryClass; /*0x4ca2db*/
     }
     v5 = *v2; /*0x4ca2e2*/
     a1 = 0; /*0x4ca2ee*/
@@ -559,10 +559,10 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   void *v5; // eax
   FactoryClass *v7; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &FactoryClass::`vftable'; /*0x4ca776*/
-  Block->? = &FactoryClass::`vftable'; /*0x4ca77c*/
-  Block->? = &FactoryClass::`vftable'; /*0x4ca783*/
-  Block->? = &FactoryClass::`vftable'; /*0x4ca78a*/
+  Block->AbstractClass = &vt_FactoryClass; /*0x4ca776*/
+  Block->? = &vt_FactoryClass; /*0x4ca77c*/
+  Block->? = &vt_FactoryClass; /*0x4ca783*/
+  Block->? = &vt_FactoryClass; /*0x4ca78a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x4ca791*/
   v7 = Block; /*0x4ca7a6*/
   v3 = (*(int (**)(char *, FactoryClass **))(*(unsigned int *)&stru_A83D50.__pad_C8[24] + 16))( /*0x4ca7aa*/
@@ -597,7 +597,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
     }
   }
   v5 = *(void **)&Block->__pad_42[2]; /*0x4ca838*/
-  *(unsigned int *)&Block->onHold = &VectorClass<TechnoTypeClass const *>::`vftable'; /*0x4ca83b*/
+  *(unsigned int *)&Block->onHold = &vt_VectorClass; /*0x4ca83b*/
   if ( v5 && Block->__pad_42[11] ) /*0x4ca846*/
   {
     __3_YAXPAX_Z(v5); /*0x4ca84e*/
@@ -916,7 +916,7 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4cab53*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<TechnoTypeClass const *>::`vftable'; /*0x4cab56*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4cab56*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4cab60*/
   {
     __3_YAXPAX_Z(v3); /*0x4cab68*/

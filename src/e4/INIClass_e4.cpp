@@ -332,11 +332,11 @@ INIClass::INIClass()
   result[2] = 0; /*0x535aaf*/
   sectionHead[1] = 0; /*0x535ab2*/
   sectionHead[2] = 0; /*0x535ab5*/
-  *sectionHead = (int)&GenericNode::`vftable'; /*0x535ab8*/
+  *sectionHead = (int)&vt_GenericNode; /*0x535ab8*/
   result[8] = 0; /*0x535abe*/
   result[9] = 0; /*0x535ac1*/
-  result[7] = &GenericNode::`vftable'; /*0x535ac4*/
-  result[3] = &GenericList::`vftable'; /*0x535acd*/
+  result[7] = &vt_GenericNode; /*0x535ac4*/
+  result[3] = &vt_GenericList; /*0x535acd*/
   if ( result != (unsigned int *)-28 ) /*0x535ad4*/
   {
     v4 = result[8]; /*0x535ad6*/
@@ -359,14 +359,14 @@ INIClass::INIClass()
   if ( v7 ) /*0x535b04*/
     *(unsigned int *)(v7 + 8) = v3; /*0x535b06*/
   sectionHead[1] = (int)v3; /*0x535b09*/
-  result[3] = &List<INIClass::INISection *>::`vftable'; /*0x535b0c*/
+  result[3] = &vt_List; /*0x535b0c*/
   result[10] = 0; /*0x535b13*/
   result[11] = 0; /*0x535b16*/
   result[12] = 0; /*0x535b19*/
   *((unsigned char *)result + 52) = 0; /*0x535b1c*/
   result[14] = 0; /*0x535b1f*/
   result[15] = 0; /*0x535b23*/
-  *result = &INIClass::`vftable'; /*0x535b27*/
+  *result = &vt_INIClass; /*0x535b27*/
   return result; /*0x535b22*/
 
 }

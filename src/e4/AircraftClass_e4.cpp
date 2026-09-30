@@ -702,11 +702,11 @@ void* AircraftClass::LoadFromStream(unsigned int * a0, FootClass * aP1)
     if ( v2 ) /*0x41b4d3*/
     {
       FootClass::PostLoadInit((FootClass *)v2, (int)&a0); /*0x41b4dc*/
-      v2->FootClass = &AircraftClass::`vftable'; /*0x41b4e1*/
-      *p_vtable1 = &AircraftClass::`vftable'; /*0x41b4e7*/
-      v2->? = &AircraftClass::`vftable'; /*0x41b4ed*/
-      v2->? = &AircraftClass::`vftable'; /*0x41b4f4*/
-      *(unsigned int *)v2->__pad_6C0 = &AircraftClass::`vftable'; /*0x41b4fb*/
+      v2->FootClass = &vt_AircraftClass; /*0x41b4e1*/
+      *p_vtable1 = &vt_AircraftClass; /*0x41b4e7*/
+      v2->? = &vt_AircraftClass; /*0x41b4ed*/
+      v2->? = &vt_AircraftClass; /*0x41b4f4*/
+      *(unsigned int *)v2->__pad_6C0 = &vt_AircraftClass; /*0x41b4fb*/
     }
     v11 = v2->?[0]; /*0x41b506*/
     if ( v11 != v10 ) /*0x41b50e*/

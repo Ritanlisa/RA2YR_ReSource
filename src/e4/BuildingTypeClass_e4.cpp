@@ -249,13 +249,13 @@ int BuildingTypeClass::ConstructFull(char * Source)
   *((unsigned int *)this + 1507) = 1; /*0x45e298*/
   *((unsigned char *)this + 6032) = 1; /*0x45e29e*/
   *((unsigned char *)this + 6033) = 0; /*0x45e2a5*/
-  *((unsigned int *)this + 1505) = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e2ab*/
+  *((unsigned int *)this + 1505) = &vt_VectorClassTPoint3D; /*0x45e2ab*/
   *((unsigned int *)this + 1506) = __2_YAPAXI_Z(0xCu); /*0x45e2ba*/
   *((unsigned char *)this + 6033) = 1; /*0x45e2c6*/
-  *(unsigned int *)this = &BuildingTypeClass::`vftable'; /*0x45e2cd*/
-  *((unsigned int *)this + 1) = &BuildingTypeClass::`vftable'; /*0x45e2d3*/
-  *((unsigned int *)this + 2) = &BuildingTypeClass::`vftable'; /*0x45e2d9*/
-  *((unsigned int *)this + 3) = &BuildingTypeClass::`vftable'; /*0x45e2e1*/
+  *(unsigned int *)this = &vt_BuildingTypeClass; /*0x45e2cd*/
+  *((unsigned int *)this + 1) = &vt_BuildingTypeClass; /*0x45e2d3*/
+  *((unsigned int *)this + 2) = &vt_BuildingTypeClass; /*0x45e2d9*/
+  *((unsigned int *)this + 3) = &vt_BuildingTypeClass; /*0x45e2e1*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x45e2e8*/
   v4 = dword_A83C78; /*0x45e2ed*/
   if ( dword_A83C78 < dword_A83C70 /*0x45e32b*/
@@ -405,11 +405,11 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass
   *(unsigned int *)&this-((unsigned int *)(>__pad_1714))[120] = 0; /*0x45e53b*/
   this-((unsigned int *)(>__pad_1714))[124] = 1; /*0x45e541*/
   this-((unsigned int *)(>__pad_1714))[125] = 0; /*0x45e548*/
-  *(unsigned int *)&this->__pad_1714[112] = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e54e*/
-  this->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e558*/
-  this->? = &BuildingTypeClass::`vftable'; /*0x45e55e*/
-  this->? = &BuildingTypeClass::`vftable'; /*0x45e565*/
-  this->? = &BuildingTypeClass::`vftable'; /*0x45e56c*/
+  *(unsigned int *)&this->__pad_1714[112] = &vt_VectorClassTPoint3D; /*0x45e54e*/
+  this->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e558*/
+  this->? = &vt_BuildingTypeClass; /*0x45e55e*/
+  this->? = &vt_BuildingTypeClass; /*0x45e565*/
+  this->? = &vt_BuildingTypeClass; /*0x45e56c*/
   return &this->TechnoTypeClass; /*0x45e575*/
 
 }
@@ -425,10 +425,10 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   BuildingTypeClass *v6; // [esp+8h] [ebp-4h] BYREF
 
   BuildupLoaded = a1->BuildupLoaded; /*0x45e587*/
-  a1->TechnoTypeClass = &BuildingTypeClass::`vftable'; /*0x45e58d*/
-  a1->? = &BuildingTypeClass::`vftable'; /*0x45e595*/
-  a1->? = &BuildingTypeClass::`vftable'; /*0x45e59c*/
-  a1->? = &BuildingTypeClass::`vftable'; /*0x45e5a3*/
+  a1->TechnoTypeClass = &vt_BuildingTypeClass; /*0x45e58d*/
+  a1->? = &vt_BuildingTypeClass; /*0x45e595*/
+  a1->? = &vt_BuildingTypeClass; /*0x45e59c*/
+  a1->? = &vt_BuildingTypeClass; /*0x45e5a3*/
   if ( BuildupLoaded && a1->Buildup[0] ) /*0x45e5ac*/
   {
     __3_YAXPAX_Z((void *)a1->Buildup[0]); /*0x45e5b7*/
@@ -484,7 +484,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     while ( v3 < dword_A83C78 ); /*0x45e705*/
   }
   v4 = *(void **)&a1->__pad_1714[116]; /*0x45e707*/
-  *(unsigned int *)&a1->__pad_1714[112] = &VectorClass<TPoint3D<int>>::`vftable'; /*0x45e70d*/
+  *(unsigned int *)&a1->__pad_1714[112] = &vt_VectorClassTPoint3D; /*0x45e70d*/
   if ( v4 && a1->__pad_1714[125] ) /*0x45e71b*/
   {
     __3_YAXPAX_Z(v4); /*0x45e724*/
@@ -1022,7 +1022,7 @@ void BuildingTypeClass::LoadVoxel()
           Info = VoxelSection::GetInfo((VoxelSection *)this->?[0], 0, 0); /*0x45fc12*/
           Matrix::Scale((Matrix *)this->?[0], *(float *)(Info + 12)); /*0x45fc21*/
         }
-        *(unsigned int *)v22.CDFileClass = &CCFileClass::`vftable'; /*0x45fc2a*/
+        *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fc2a*/
         v24 = 0; /*0x45fc32*/
         Vector::Clear((int)v23); /*0x45fc36*/
         *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fc3f*/
@@ -1040,7 +1040,7 @@ void BuildingTypeClass::LoadVoxel()
         *v12 = 76; /*0x45fc7f*/
         v12[1] = 0; /*0x45fc82*/
       }
-      *(unsigned int *)v25.CDFileClass = &CCFileClass::`vftable'; /*0x45fc8c*/
+      *(unsigned int *)v25.CDFileClass = &vt_CCFileClass; /*0x45fc8c*/
       v27 = 0; /*0x45fc94*/
       Vector::Clear((int)v26); /*0x45fc9b*/
       *(unsigned int *)v25.CDFileClass = &off_7E1668; /*0x45fca4*/
@@ -1088,13 +1088,13 @@ void BuildingTypeClass::LoadVoxel()
           Matrix::Scale((Matrix *)this->?[2], *(float *)(v19 + 12)); /*0x45fdea*/
         }
       }
-      *(unsigned int *)v22.CDFileClass = &CCFileClass::`vftable'; /*0x45fdf3*/
+      *(unsigned int *)v22.CDFileClass = &vt_CCFileClass; /*0x45fdf3*/
       v24 = 0; /*0x45fdfb*/
       Vector::Clear((int)v23); /*0x45fdff*/
       *(unsigned int *)v22.CDFileClass = &off_7E1668; /*0x45fe08*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v22); /*0x45fe0c*/
     }
-    *(unsigned int *)v28.CDFileClass = &CCFileClass::`vftable'; /*0x45fe18*/
+    *(unsigned int *)v28.CDFileClass = &vt_CCFileClass; /*0x45fe18*/
     v30 = 0; /*0x45fe23*/
     Vector::Clear((int)v29); /*0x45fe2a*/
     *(unsigned int *)v28.CDFileClass = &off_7E1668; /*0x45fe36*/
@@ -1380,7 +1380,7 @@ AbstractClass * * BuildingTypeClass::SaveLoad_Prefix()
         *(unsigned int *)&v1[1].Weapon[252] = 0; /*0x465174*/
         v1[1].Weapon[256] = 1; /*0x465177*/
         v1[1].Weapon[257] = 0; /*0x46517b*/
-        *(unsigned int *)v4 = &VectorClass<TPoint3D<int>>::`vftable'; /*0x46517e*/
+        *(unsigned int *)v4 = &vt_VectorClassTPoint3D; /*0x46517e*/
       }
       (*(void (**)(char *, int, unsigned int))(*(unsigned int *)v4 + 8))(v4, v14, 0); /*0x46518c*/
       v5 = 0; /*0x46518f*/
@@ -1716,7 +1716,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   BuildingTypeClass::loadBuildingProperty_b_5478850((BuildingTypeClass *)&this->?[10], 0, 0); /*0x644c37*/
   this->?[1] = 10; /*0x644c3c*/
   this->?[0] = 0; /*0x644c43*/
-  *(unsigned int *)&this->?[10] = &TypeList<RGBClass>::`vftable'; /*0x644c46*/
+  *(unsigned int *)&this->?[10] = &vt_TypeList; /*0x644c46*/
   this->?[1] = 0; /*0x644c4c*/
   LOBYTE(this->?[0]) = 0; /*0x644c66*/
   BYTE1(this->?[0]) = 0; /*0x644c6c*/
@@ -1741,10 +1741,10 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   HIBYTE(this->?[1]) = 0; /*0x644ce2*/
   this->? = -1; /*0x644ce8*/
   this->?[0] = -1; /*0x644cee*/
-  this->TechnoTypeClass = &ParticleTypeClass::`vftable'; /*0x644cf4*/
-  this->? = &ParticleTypeClass::`vftable'; /*0x644cfa*/
-  this->? = &ParticleTypeClass::`vftable'; /*0x644d01*/
-  this->? = &ParticleTypeClass::`vftable'; /*0x644d08*/
+  this->TechnoTypeClass = &vt_ParticleTypeClass; /*0x644cf4*/
+  this->? = &vt_ParticleTypeClass; /*0x644cfa*/
+  this->? = &vt_ParticleTypeClass; /*0x644d01*/
+  this->? = &vt_ParticleTypeClass; /*0x644d08*/
   if ( *(int *)&stru_A83D50.__pad_3C[28] < *(int *)&stru_A83D50.__pad_3C[20] /*0x644d43*/
     || (stru_A83D50.__pad_3C[25] || !*(unsigned int *)&stru_A83D50.__pad_3C[20])
     && *(int *)&stru_A83D50.__pad_3C[32] > 0
@@ -2456,7 +2456,7 @@ unsigned int * BuildingTypeClass::loadBuildingProperty_b_5478850(int a2, int a3)
   this->? = (void *)a2; /*0x478860*/
   LOBYTE(this->?) = 1; /*0x478863*/
   BYTE1(this->?) = 0; /*0x478867*/
-  this->TechnoTypeClass = &VectorClass<RGBClass>::`vftable'; /*0x47886a*/
+  this->TechnoTypeClass = &vt_VectorClass; /*0x47886a*/
   if ( !a2 ) /*0x478870*/
     return &this->TechnoTypeClass; /*0x4788d0*/
   if ( !a3 ) /*0x478878*/

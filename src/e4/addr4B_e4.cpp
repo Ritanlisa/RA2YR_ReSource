@@ -720,7 +720,7 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   this->DropListClass_field_0x4C = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor((ShapeButtonClass *)&this->DropListClass_field_0x50, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
   ListClass::Construct((int)(unsigned int *)this + 176, 0, aP5, aP6 + *(int16_t *)(a11 + 4), aP7 + *(int16_t *)(a11 + 2), a9, aP4, a10, a11); /*0x4b4ea3*/
-  *(unsigned int *)this->__pad_0 = &DropListClass::`vftable'; /*0x4b4eac*/
+  *(unsigned int *)this->__pad_0 = &vt_DropListClass; /*0x4b4eac*/
   Instance = TextRenderer::GetInstance(); /*0x4b4eb2*/
   v13 = *((unsigned int *)this + 44); /*0x4b4eba*/
   this->DropListClass_field_0x18 = *(unsigned int *)(Instance + 28) + 1; /*0x4b4ebf*/
@@ -748,14 +748,14 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   *((unsigned int *)this + 15) = *(EditClass *)(a2 + 60); /*0x4b540e*/
   *((unsigned int *)this + 16) = *(EditClass *)(a2 + 64); /*0x4b5414*/
   *((unsigned int *)this + 17) = *(EditClass *)(a2 + 68); /*0x4b541a*/
-  *this = (EditClass)&EditClass::`vftable'; /*0x4b541d*/
+  *this = (EditClass)&vt_EditClass; /*0x4b541d*/
   *((unsigned char *)this + 72) = *(unsigned char *)(a2 + 72); /*0x4b5429*/
   *((unsigned int *)this + 19) = *(EditClass *)(a2 + 76); /*0x4b5432*/
   ControlClass::CtorFromData((ControlClass *)this + 5, a2 + 80); /*0x4b5435*/
   *((unsigned char *)this + 124) = *(unsigned char *)(a2 + 124); /*0x4b5443*/
   *((unsigned char *)this + 125) = *(unsigned char *)(a2 + 125); /*0x4b5449*/
   *((unsigned int *)this + 32) = *(EditClass *)(a2 + 128); /*0x4b544f*/
-  *((unsigned int *)this + 20) = &ToggleClass::`vftable'; /*0x4b5452*/
+  *((unsigned int *)this + 20) = &vt_ToggleClass; /*0x4b5452*/
   *((unsigned char *)this + 132) = *(unsigned char *)(a2 + 132); /*0x4b545c*/
   *((unsigned int *)this + 34) = *(EditClass *)(a2 + 136); /*0x4b5462*/
   *((unsigned int *)this + 35) = *(EditClass *)(a2 + 140); /*0x4b5468*/
@@ -768,10 +768,10 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
   *((unsigned char *)this + 165) = *(unsigned char *)(a2 + 165); /*0x4b5492*/
   *((unsigned int *)this + 42) = *(EditClass *)(a2 + 168); /*0x4b5498*/
   *((unsigned char *)this + 172) = *(unsigned char *)(a2 + 172); /*0x4b54a4*/
-  *((unsigned int *)this + 20) = &ShapeButtonClass::`vftable'; /*0x4b54a9*/
+  *((unsigned int *)this + 20) = &vt_ShapeButtonClass; /*0x4b54a9*/
   sub_557380((int)((unsigned int *)this + 44), a2 + 176); /*0x4b54af*/
   v3 = *((unsigned int *)this + 44); /*0x4b54b4*/
-  *this = (EditClass)&DropListClass::`vftable'; /*0x4b54b9*/
+  *this = (EditClass)&vt_DropListClass; /*0x4b54b9*/
   (*(void (**)(EditClass *, EditClass *))(v3 + 132))((unsigned int *)this + 44, this); /*0x4b54bf*/
   (*(void (**)(EditClass *, EditClass *))(*((unsigned int *)this + 20) + 132))((unsigned int *)this + 20, this); /*0x4b54ca*/
   return (int)this; /*0x4b54d3*/

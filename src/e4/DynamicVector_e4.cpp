@@ -101,7 +101,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   this->DynamicVector_field_0x8 = aP1; /*0x42f681*/
   this->__pad_C[0] = 1; /*0x42f684*/
   this->__pad_C[1] = 0; /*0x42f688*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<Cell>::`vftable'; /*0x42f68c*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x42f68c*/
   if ( aP1 ) /*0x42f692*/
   {
     if ( aP2 ) /*0x42f69a*/
@@ -117,7 +117,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
       this->__pad_C[1] = 1; /*0x42f6c6*/
     }
   }
-  *(unsigned int *)this->__pad_0 = &DynamicVectorClass<Cell>::`vftable'; /*0x42f6ca*/
+  *(unsigned int *)this->__pad_0 = &vt_DynamicVectorClass; /*0x42f6ca*/
   *(unsigned int *)this->__pad_14 = 10; /*0x42f6d0*/
   this->DynamicVector_field_0x10 = 0; /*0x42f6d7*/
   return this->__pad_0; /*0x42f6e0*/
@@ -425,7 +425,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
   this->DynamicVector_field_0x8 = a2; /*0x67ac80*/
   this->__pad_C[0] = 1; /*0x67ac83*/
   this->__pad_C[1] = 0; /*0x67ac87*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67ac8b*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x67ac8b*/
   if ( a2 ) /*0x67ac91*/
   {
     if ( a3 ) /*0x67ac99*/
@@ -438,7 +438,7 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
       this->__pad_C[1] = 1; /*0x67acaf*/
     }
   }
-  *(unsigned int *)this->__pad_0 = &DynamicVectorClass<VoxelAnimTypeClass const *>::`vftable'; /*0x67acb3*/
+  *(unsigned int *)this->__pad_0 = &vt_DynamicVectorClass; /*0x67acb3*/
   *(unsigned int *)this->__pad_14 = 10; /*0x67acb9*/
   this->DynamicVector_field_0x10 = 0; /*0x67acc0*/
   return this->__pad_0; /*0x67acc9*/
@@ -584,7 +584,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
   this->DynamicVector_field_0x8 = a2; /*0x7342e0*/
   this->__pad_C[0] = 1; /*0x7342e3*/
   this->__pad_C[1] = 0; /*0x7342e7*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<TechnoClass *>::`vftable'; /*0x7342eb*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x7342eb*/
   if ( a2 ) /*0x7342f1*/
   {
     if ( a3 ) /*0x7342f9*/
@@ -597,7 +597,7 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
       this->__pad_C[1] = 1; /*0x73430f*/
     }
   }
-  *(unsigned int *)this->__pad_0 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x734313*/
+  *(unsigned int *)this->__pad_0 = &vt_DynamicVectorClass; /*0x734313*/
   *(unsigned int *)this->__pad_14 = 10; /*0x734319*/
   this->DynamicVector_field_0x10 = 0; /*0x734320*/
   return this->__pad_0; /*0x734329*/

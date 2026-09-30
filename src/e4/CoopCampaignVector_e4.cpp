@@ -29,7 +29,7 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5c5943*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5946*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5c5946*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5c5950*/
   {
     __3_YAXPAX_Z(v3); /*0x5c5958*/
@@ -52,7 +52,7 @@ void CoopCampaignVector::Construct( MultiplayerGameMode * aP1, MultiplayerGameMo
   this->CoopCampaignVector_field_0x08 = (unsigned int)(aP1);
   LOBYTE(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5a91*/
   BYTE1(this->CoopCampaignVector_field_0x0C) = 0; /*0x5c5a95*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5a98*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/

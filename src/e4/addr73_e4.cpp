@@ -1355,7 +1355,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
     *(unsigned int *)(v2 + 8) = 0; /*0x733cef*/
     *(unsigned char *)(v2 + 12) = 1; /*0x733cf2*/
     *(unsigned char *)(v2 + 13) = 0; /*0x733cf6*/
-    *(unsigned int *)v2 = &DynamicVectorClass<char const *>::`vftable'; /*0x733cf9*/
+    *(unsigned int *)v2 = &vt_DynamicVectorClass; /*0x733cf9*/
     *(unsigned int *)(v2 + 20) = 10; /*0x733cff*/
     *(unsigned int *)(v2 + 16) = 0; /*0x733d06*/
     v3 = v2; /*0x733d09*/

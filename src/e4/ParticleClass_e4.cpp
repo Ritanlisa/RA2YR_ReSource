@@ -288,10 +288,10 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x62d7b6*/
     {
       ObjectClass::Init((ObjectClass *)aP1, (int)&aP1a); /*0x62d7bf*/
-      *aP1 = &ParticleClass::`vftable'; /*0x62d7c4*/
-      aP1[1] = &ParticleClass::`vftable'; /*0x62d7ca*/
-      aP1[2] = &ParticleClass::`vftable'; /*0x62d7d1*/
-      aP1[3] = &ParticleClass::`vftable'; /*0x62d7d8*/
+      *aP1 = &vt_ParticleClass; /*0x62d7c4*/
+      aP1[1] = &vt_ParticleClass; /*0x62d7ca*/
+      aP1[2] = &vt_ParticleClass; /*0x62d7d1*/
+      aP1[3] = &vt_ParticleClass; /*0x62d7d8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 43); /*0x62d7eb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 73); /*0x62d7fc*/

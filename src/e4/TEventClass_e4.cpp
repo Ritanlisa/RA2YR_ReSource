@@ -715,10 +715,10 @@ void * TEventClass::Fire(void ** Block, char a2)
   int v5; // eax
   TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &TEventClass::`vftable'; /*0x71fa86*/
-  Block->? = &TEventClass::`vftable'; /*0x71fa8c*/
-  Block->? = &TEventClass::`vftable'; /*0x71fa93*/
-  Block->? = &TEventClass::`vftable'; /*0x71fa9a*/
+  Block->AbstractClass = &vt_TEventClass; /*0x71fa86*/
+  Block->? = &vt_TEventClass; /*0x71fa8c*/
+  Block->? = &vt_TEventClass; /*0x71fa93*/
+  Block->? = &vt_TEventClass; /*0x71fa9a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x71faa1*/
   v7 = Block; /*0x71fab6*/
   v3 = (*(int (**)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/
@@ -829,10 +829,10 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71f8d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71f8df*/
-      aP0->AbstractClass = &TEventClass::`vftable'; /*0x71f8e4*/
-      aP0->? = &TEventClass::`vftable'; /*0x71f8ea*/
-      aP0->? = &TEventClass::`vftable'; /*0x71f8f1*/
-      aP0->? = &TEventClass::`vftable'; /*0x71f8f8*/
+      aP0->AbstractClass = &vt_TEventClass; /*0x71f8e4*/
+      aP0->? = &vt_TEventClass; /*0x71f8ea*/
+      aP0->? = &vt_TEventClass; /*0x71f8f1*/
+      aP0->? = &vt_TEventClass; /*0x71f8f8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_28); /*0x71f908*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_30); /*0x71f916*/

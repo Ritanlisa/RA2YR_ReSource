@@ -1374,7 +1374,7 @@ LABEL_11:
     g_MixerChannel_SFX = (ObjectClass *)&g_Audio_Enabled->__pad_5C[12]; /*0x406c4c*/
     v3 = CCFileClass::Construct(&v14, aAudiomdMix); /*0x406c51*/
     v4 = (*(int (**)(unsigned int *, unsigned int))(*v3 + 20))(v3, 0); /*0x406c65*/
-    *(unsigned int *)v14.CDFileClass = &CCFileClass::`vftable'; /*0x406c67*/
+    *(unsigned int *)v14.CDFileClass = &vt_CCFileClass; /*0x406c67*/
     v16 = 0; /*0x406c6f*/
     Vector::Clear((int)v15); /*0x406c76*/
     *(unsigned int *)v14.CDFileClass = &off_7E1668; /*0x406c7f*/
@@ -2885,7 +2885,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
   int v8; // edx
   int v9; // ecx
 
-  Block->vtable = &GenericList::`vftable'; /*0x40e3e6*/
+  Block->vtable = &vt_GenericList; /*0x40e3e6*/
   while ( 1 ) /*0x40e3ec*/
   {
     v3 = *((unsigned int *)Block + 2); /*0x40e3ec*/
@@ -2905,7 +2905,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
       *(unsigned int *)(v3 + 4) = 0; /*0x40e41d*/
     }
   }
-  *((unsigned int *)Block + 4) = &GenericNode::`vftable'; /*0x40e427*/
+  *((unsigned int *)Block + 4) = &vt_GenericNode; /*0x40e427*/
   if ( Block != (GenericList *)-16 ) /*0x40e42d*/
   {
     v6 = *((unsigned int *)Block + 5); /*0x40e42f*/
@@ -2921,7 +2921,7 @@ void * E4Recv_40E3E0::sub_40E3E0(unsigned int * Block, char a2)
       }
     }
   }
-  *((unsigned int *)Block + 1) = &GenericNode::`vftable'; /*0x40e454*/
+  *((unsigned int *)Block + 1) = &vt_GenericNode; /*0x40e454*/
   if ( Block != (GenericList *)-4 ) /*0x40e45a*/
   {
     v8 = *((unsigned int *)Block + 2); /*0x40e45c*/
@@ -2956,7 +2956,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
   int v8; // edx
   int v9; // ecx
 
-  Block->vtable = &GenericList::`vftable'; /*0x40e4c6*/
+  Block->vtable = &vt_GenericList; /*0x40e4c6*/
   while ( 1 ) /*0x40e4cc*/
   {
     v3 = *((unsigned int *)Block + 2); /*0x40e4cc*/
@@ -2976,7 +2976,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
       *(unsigned int *)(v3 + 4) = 0; /*0x40e4fd*/
     }
   }
-  *((unsigned int *)Block + 4) = &GenericNode::`vftable'; /*0x40e507*/
+  *((unsigned int *)Block + 4) = &vt_GenericNode; /*0x40e507*/
   if ( Block != (GenericList *)-16 ) /*0x40e50d*/
   {
     v6 = *((unsigned int *)Block + 5); /*0x40e50f*/
@@ -2992,7 +2992,7 @@ void * E4Recv_40E4C0::sub_40E4C0(unsigned int * Block, char a2)
       }
     }
   }
-  *((unsigned int *)Block + 1) = &GenericNode::`vftable'; /*0x40e534*/
+  *((unsigned int *)Block + 1) = &vt_GenericNode; /*0x40e534*/
   if ( Block != (GenericList *)-4 ) /*0x40e53a*/
   {
     v8 = *((unsigned int *)Block + 2); /*0x40e53c*/
@@ -7168,7 +7168,7 @@ GenericNode * GenericNode::sub_40E390(GenericNode ** Block, char a2)
   int Previous; // ecx
   int v4; // eax
 
-  *(unsigned int *)Block->__pad_0 = &GenericNode::`vftable'; /*0x40e397*/
+  *(unsigned int *)Block->__pad_0 = &vt_GenericNode; /*0x40e397*/
   if ( Block ) /*0x40e39d*/
   {
     Previous = Block->Previous; /*0x40e39f*/

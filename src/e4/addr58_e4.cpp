@@ -187,7 +187,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   int v20; // [esp+24h] [ebp-4h]
 
   VectorClass::Construct(&v18, 0, 0); /*0x583ae1*/
-  v18.vtable0 = &DynamicVectorClass<int>::`vftable'; /*0x583af1*/
+  v18.vtable0 = &vt_DynamicVectorClass; /*0x583af1*/
   v20 = 10; /*0x583af9*/
   v19 = 0; /*0x583b05*/
   *(unsigned int *)&stru_87F5F0.__pad_58[700] = *(unsigned int *)&stru_87F5F0.__pad_58[668] /*0x583b0d*/
@@ -265,7 +265,7 @@ LABEL_16:
   *a2 = v12; /*0x583bfe*/
   if ( v12 < 0 ) /*0x583c00*/
   {
-    v18.vtable0 = &VectorClass<int>::`vftable'; /*0x583c31*/
+    v18.vtable0 = &vt_VectorClass; /*0x583c31*/
     if ( Items && v18.IsAllocated ) /*0x583c41*/
       __3_YAXPAX_Z(Items); /*0x583c44*/
     return 0; /*0x583c4f*/
@@ -273,7 +273,7 @@ LABEL_16:
   else
   {
     v16 = *((unsigned int *)Items + v12); /*0x583c02*/
-    v18.vtable0 = &VectorClass<int>::`vftable'; /*0x583c06*/
+    v18.vtable0 = &vt_VectorClass; /*0x583c06*/
     if ( Items ) /*0x583c10*/
     {
       if ( v18.IsAllocated ) /*0x583c18*/

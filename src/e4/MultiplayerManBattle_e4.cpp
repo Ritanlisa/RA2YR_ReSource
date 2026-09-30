@@ -16,7 +16,7 @@ namespace gamemd {
 MultiplayerManBattle * MultiplayerManBattle::QueryInterface(unsigned int * Block, char a2)
 {
 
-  Block->MultiplayerManBattle_field_00 = (int)&MultiplayerManBattle::`vftable'; /*0x5c61a3*/
+  Block->MultiplayerManBattle_field_00 = (int)&vt_MultiplayerManBattle; /*0x5c61a3*/
   ((MultiplayerGameMode *)((MultiplayerGameMode *)Block))->Dtor(); /*0x5c61a9*/
   if ( (a2 & 1) != 0 ) /*0x5c61b3*/
     __3_YAXPAX_Z(Block); /*0x5c61b6*/

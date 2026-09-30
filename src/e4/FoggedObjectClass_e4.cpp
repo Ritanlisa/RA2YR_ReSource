@@ -61,14 +61,14 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   *((unsigned int *)this + 21) = -1; /*0x4d09dd*/
   *((unsigned int *)this + 22) = 0; /*0x4d09e4*/
   FoggedObject::DrawVector_Constructor((FoggedObject *)((char *)this + 92), 0, 0); /*0x4d09e7*/
-  *((unsigned int *)this + 23) = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d09ec*/
+  *((unsigned int *)this + 23) = &vt_DynamicVectorClass; /*0x4d09ec*/
   *((unsigned int *)this + 28) = 10; /*0x4d09f2*/
   *((unsigned int *)this + 27) = 0; /*0x4d09f9*/
   *((unsigned char *)this + 116) = 1; /*0x4d0a02*/
-  this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0a06*/
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d0a0c*/
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d0a13*/
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d0a1a*/
+  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d0a06*/
+  this->? = &vt_FoggedObjectClass; /*0x4d0a0c*/
+  this->? = &vt_FoggedObjectClass; /*0x4d0a13*/
+  this->? = &vt_FoggedObjectClass; /*0x4d0a1a*/
   v5 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], a2); /*0x4d0a2a*/
   PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)v5, v25); /*0x4d0a3b*/
   StartCoords = House::GetStartCoords((House *)v5, v26); /*0x4d0a3d*/
@@ -197,14 +197,14 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   *((unsigned int *)this + 20) = level; /*0x4d0c8c*/
   *((unsigned int *)this + 22) = a4; /*0x4d0c8f*/
   FoggedObject::DrawVector_Constructor((FoggedObject *)((char *)this + 92), 0, 0); /*0x4d0c92*/
-  *((unsigned int *)this + 23) = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d0c97*/
+  *((unsigned int *)this + 23) = &vt_DynamicVectorClass; /*0x4d0c97*/
   *((unsigned int *)this + 28) = 10; /*0x4d0c9e*/
   *((unsigned int *)this + 27) = 0; /*0x4d0ca5*/
   *((unsigned char *)this + 116) = 1; /*0x4d0cae*/
-  this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d0cb2*/
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d0cb8*/
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d0cbf*/
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d0cc6*/
+  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d0cb2*/
+  this->? = &vt_FoggedObjectClass; /*0x4d0cb8*/
+  this->? = &vt_FoggedObjectClass; /*0x4d0cbf*/
+  this->? = &vt_FoggedObjectClass; /*0x4d0cc6*/
   v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x4d0ccd*/
   v7 = aP1[1]; /*0x4d0cd4*/
   v8 = aP1[2]; /*0x4d0cd7*/
@@ -360,14 +360,14 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   *((unsigned int *)this + 21) = -1; /*0x4d0f73*/
   *((unsigned int *)this + 22) = 0; /*0x4d0f7a*/
   FoggedObject::DrawVector_Constructor((unsigned int *)((char *)this + 92), 0, 0); /*0x4d0f81*/
-  *((unsigned int *)this + 23) = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d0f8a*/
+  *((unsigned int *)this + 23) = &vt_DynamicVectorClass; /*0x4d0f8a*/
   *((unsigned int *)this + 28) = 10; /*0x4d0f90*/
   *((unsigned int *)this + 27) = 0; /*0x4d0f97*/
   *((unsigned char *)this + 116) = aP2; /*0x4d0fa2*/
-  *(unsigned int *)this = &FoggedObjectClass::`vftable'; /*0x4d0fa5*/
-  *((unsigned int *)this + 1) = &FoggedObjectClass::`vftable'; /*0x4d0fab*/
-  *((unsigned int *)this + 2) = &FoggedObjectClass::`vftable'; /*0x4d0fb2*/
-  *((unsigned int *)this + 3) = &FoggedObjectClass::`vftable'; /*0x4d0fb9*/
+  *(unsigned int *)this = &vt_FoggedObjectClass; /*0x4d0fa5*/
+  *((unsigned int *)this + 1) = &vt_FoggedObjectClass; /*0x4d0fab*/
+  *((unsigned int *)this + 2) = &vt_FoggedObjectClass; /*0x4d0fb2*/
+  *((unsigned int *)this + 3) = &vt_FoggedObjectClass; /*0x4d0fb9*/
   v8 = (unsigned int *)(*(int (**)(int *, char *))(*aP1 + 300))(aP1, v52); /*0x4d0fc5*/
   *((unsigned int *)this + 16) = *v8; /*0x4d0fd2*/
   *((unsigned int *)this + 17) = v8[1]; /*0x4d0fd7*/
@@ -572,14 +572,14 @@ AbstractClass * * FoggedObjectClass::InitDrawRecord(unsigned int * a2)
   *((unsigned int *)this + 21) = -1; /*0x4d13e7*/
   *((unsigned int *)this + 22) = 0; /*0x4d13ee*/
   FoggedObject::DrawVector_Constructor((FoggedObject *)((char *)this + 92), 0, 0); /*0x4d13f1*/
-  *((unsigned int *)this + 23) = &DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d13f6*/
+  *((unsigned int *)this + 23) = &vt_DynamicVectorClass; /*0x4d13f6*/
   *((unsigned int *)this + 28) = 10; /*0x4d13fc*/
   *((unsigned int *)this + 27) = 0; /*0x4d1403*/
   *((unsigned char *)this + 116) = 1; /*0x4d140a*/
-  this->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d140e*/
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d1414*/
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d141b*/
-  this->? = &FoggedObjectClass::`vftable'; /*0x4d1422*/
+  this->AbstractClass = &vt_FoggedObjectClass; /*0x4d140e*/
+  this->? = &vt_FoggedObjectClass; /*0x4d1414*/
+  this->? = &vt_FoggedObjectClass; /*0x4d141b*/
+  this->? = &vt_FoggedObjectClass; /*0x4d1422*/
   v5 = (unsigned int *)(*(int (**)(unsigned int *, unsigned int *))(*a2 + 300))(a2, v22); /*0x4d1431*/
   *((unsigned int *)this + 16) = *v5; /*0x4d143b*/
   *((unsigned int *)this + 17) = v5[1]; /*0x4d1440*/
@@ -693,13 +693,13 @@ int FoggedObjectClass::LoadTypeData(int * a1, int a2)
   {
     AbstractClass::InitVtables((AbstractClass *)v3, (int)&a2); /*0x4d253b*/
     FoggedObject::DrawVector_Constructor((FoggedObject *)v3[1].Cell, 0, 0); /*0x4d2547*/
-    v3[1].Cell[0] = (int)&DynamicVectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d254c*/
+    v3[1].Cell[0] = (int)&vt_DynamicVectorClass; /*0x4d254c*/
     v3[2].? = 10; /*0x4d2552*/
     v3[2].? = 0; /*0x4d2559*/
-    v3->AbstractClass = &FoggedObjectClass::`vftable'; /*0x4d255c*/
-    v3->? = &FoggedObjectClass::`vftable'; /*0x4d2562*/
-    v3->? = &FoggedObjectClass::`vftable'; /*0x4d2569*/
-    v3->? = &FoggedObjectClass::`vftable'; /*0x4d2570*/
+    v3->AbstractClass = &vt_FoggedObjectClass; /*0x4d255c*/
+    v3->? = &vt_FoggedObjectClass; /*0x4d2562*/
+    v3->? = &vt_FoggedObjectClass; /*0x4d2569*/
+    v3->? = &vt_FoggedObjectClass; /*0x4d2570*/
   }
   ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->House); /*0x4d2580*/
   v5 = *v2; /*0x4d2585*/
@@ -1099,7 +1099,7 @@ DynamicVector * FoggedObjectClass::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4d2d63*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<FoggedObjectClass::DrawRecord>::`vftable'; /*0x4d2d66*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4d2d66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4d2d70*/
   {
     __3_YAXPAX_Z(v3); /*0x4d2d78*/
@@ -1348,7 +1348,7 @@ VectorClass_flat * FoggedObjectClass_42::QueryInterface(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4e0ce3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<FootClass *>::`vftable'; /*0x4e0ce6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4e0ce6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4e0cf0*/
   {
     __3_YAXPAX_Z(v3); /*0x4e0cf8*/

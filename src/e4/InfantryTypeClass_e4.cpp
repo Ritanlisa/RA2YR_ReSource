@@ -50,15 +50,15 @@ InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1)
   AnimTypeVector::Constructor((unsigned int *)((char *)this + 3664), 0, 0); /*0x5236f9*/
   *((unsigned int *)this + 920) = 0; /*0x523703*/
   *((unsigned int *)this + 921) = 10; /*0x523706*/
-  *((unsigned int *)this + 916) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x523709*/
+  *((unsigned int *)this + 916) = &vt_TypeList; /*0x523709*/
   AnimTypeVector::Constructor((unsigned int *)((char *)this + 3692), 0, 0); /*0x523719*/
   *((unsigned int *)this + 928) = 10; /*0x52371e*/
   *((unsigned int *)this + 927) = 0; /*0x523721*/
-  *((unsigned int *)this + 923) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x523724*/
+  *((unsigned int *)this + 923) = &vt_TypeList; /*0x523724*/
   VectorClass::Construct((unsigned int *)((char *)this + 3720), 0, 0); /*0x523734*/
   *((unsigned int *)this + 935) = 10; /*0x523739*/
   *((unsigned int *)this + 934) = 0; /*0x52373c*/
-  *((unsigned int *)this + 930) = &TypeList<int>::`vftable'; /*0x52373f*/
+  *((unsigned int *)this + 930) = &vt_TypeList; /*0x52373f*/
   *((unsigned int *)this + 937) = -1; /*0x523748*/
   *((unsigned int *)this + 938) = -1; /*0x52374e*/
   *((unsigned char *)this + 3756) = 0; /*0x523754*/
@@ -84,10 +84,10 @@ InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1)
   *((unsigned char *)this + 3785) = 1; /*0x5237d5*/
   *((unsigned char *)this + 3786) = 0; /*0x5237dc*/
   *((unsigned char *)this + 3787) = 0; /*0x5237e2*/
-  *(unsigned int *)this = &InfantryTypeClass::`vftable'; /*0x5237e8*/
-  *((unsigned int *)this + 1) = &InfantryTypeClass::`vftable'; /*0x5237ee*/
-  *((unsigned int *)this + 2) = &InfantryTypeClass::`vftable'; /*0x5237f4*/
-  *((unsigned int *)this + 3) = &InfantryTypeClass::`vftable'; /*0x5237fb*/
+  *(unsigned int *)this = &vt_InfantryTypeClass; /*0x5237e8*/
+  *((unsigned int *)this + 1) = &vt_InfantryTypeClass; /*0x5237ee*/
+  *((unsigned int *)this + 2) = &vt_InfantryTypeClass; /*0x5237f4*/
+  *((unsigned int *)this + 3) = &vt_InfantryTypeClass; /*0x5237fb*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x523802*/
   v3 = dword_A8E358; /*0x523807*/
   if ( dword_A8E358 < dword_A8E350 /*0x523845*/
@@ -167,13 +167,13 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 {
 
   TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
-  this->DeadBodies[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x523992*/
-  this->DeathAnims[0] = (int)&TypeList<AnimTypeClass const *>::`vftable'; /*0x523998*/
-  this->VoiceComment[0] = (int)&TypeList<int>::`vftable'; /*0x52399e*/
-  this->TechnoTypeClass = &InfantryTypeClass::`vftable'; /*0x5239a8*/
-  this->? = &InfantryTypeClass::`vftable'; /*0x5239ae*/
-  this->? = &InfantryTypeClass::`vftable'; /*0x5239b5*/
-  this->? = &InfantryTypeClass::`vftable'; /*0x5239bc*/
+  this->DeadBodies[0] = (int)&vt_TypeList; /*0x523992*/
+  this->DeathAnims[0] = (int)&vt_TypeList; /*0x523998*/
+  this->VoiceComment[0] = (int)&vt_TypeList; /*0x52399e*/
+  this->TechnoTypeClass = &vt_InfantryTypeClass; /*0x5239a8*/
+  this->? = &vt_InfantryTypeClass; /*0x5239ae*/
+  this->? = &vt_InfantryTypeClass; /*0x5239b5*/
+  this->? = &vt_InfantryTypeClass; /*0x5239bc*/
   return &this->TechnoTypeClass; /*0x5239c5*/
 
 }
@@ -332,7 +332,7 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
   *(unsigned int *)(v4 + 3616) = v9; /*0x52417f*/
   INIClassIntList = &v44; /*0x524186*/
   DynamicVectorClass::Copy(&v44, (unsigned int *)(v4 + 3720)); /*0x52418a*/
-  *(unsigned int *)INIClassIntList->VectorClass = &TypeList<int>::`vftable'; /*0x524198*/
+  *(unsigned int *)INIClassIntList->VectorClass = &vt_TypeList; /*0x524198*/
   inited = (uint8_t *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36)); /*0x5241a0*/
   INIClassIntList = (DynamicVectorClass *)GetINIClassIntList( /*0x5241b4*/
                                             (int)&v48,
@@ -351,7 +351,7 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
   *(unsigned int *)(v4 + 3736) = INIClassIntList->Count; /*0x5241c4*/
   *(unsigned int *)(v4 + 3740) = v11->CapacityIncrement; /*0x5241ca*/
   *(unsigned int *)(v4 + 3744) = *(unsigned int *)v11[1].VectorClass; /*0x5241d4*/
-  *(unsigned int *)v48.__pad_0 = &VectorClass<int>::`vftable'; /*0x5241d7*/
+  *(unsigned int *)v48.__pad_0 = &vt_VectorClass; /*0x5241d7*/
   VectorClass::Destroy((int)&v48); /*0x5241df*/
   if ( INIClass::GetString( /*0x5241fb*/
          (INIClass *)a2,
@@ -362,7 +362,7 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x524210*/
-    *(unsigned int *)v48.__pad_0 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x52421f*/
+    *(unsigned int *)v48.__pad_0 = &vt_TypeList; /*0x52421f*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x524231*/
     {
       if ( !*i ) /*0x524233*/
@@ -372,7 +372,7 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x524250*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x524271*/
-    *(unsigned int *)v48.__pad_0 = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x52427a*/
+    *(unsigned int *)v48.__pad_0 = &vt_VectorClass; /*0x52427a*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524282*/
   }
   else
@@ -385,7 +385,7 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
   *(unsigned int *)(v4 + 3680) = v49; /*0x5242b7*/
   *(unsigned int *)(v4 + 3684) = v13; /*0x5242ba*/
   *(unsigned int *)(v4 + 3688) = v14; /*0x5242bd*/
-  v48.DynamicVector_field_0x1C = (AbstractClass *)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x5242c9*/
+  v48.DynamicVector_field_0x1C = (AbstractClass *)&vt_VectorClass; /*0x5242c9*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5242cd*/
   if ( INIClass::GetString( /*0x5242e9*/
          (INIClass *)a2,
@@ -396,7 +396,7 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)&v48, 0, 0); /*0x5242fa*/
-    *(unsigned int *)v48.__pad_0 = &TypeList<AnimTypeClass const *>::`vftable'; /*0x524309*/
+    *(unsigned int *)v48.__pad_0 = &vt_TypeList; /*0x524309*/
     for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x52431b*/
     {
       if ( !*j ) /*0x52431d*/
@@ -406,7 +406,7 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
         DynamicVector::Add_Alt4(&v48, &INIClassIntList); /*0x52433a*/
     }
     TypeList::AnimTypeCopy((TypeList *)&v48.DynamicVector_field_0x1C, &v48); /*0x52435b*/
-    *(unsigned int *)v48.__pad_0 = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x524364*/
+    *(unsigned int *)v48.__pad_0 = &vt_VectorClass; /*0x524364*/
     DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48); /*0x524368*/
   }
   else
@@ -415,7 +415,7 @@ int InfantryTypeClass::LoadFromINI( uint8_t *** a2)
   }
   InfantryTypeClass::CopyDataArray((InfantryTypeClass *)(v4 + 3692), &v48.DynamicVector_field_0x1C); /*0x52438c*/
   *(unsigned int *)(v4 + 3716) = v51; /*0x524399*/
-  v48.DynamicVector_field_0x1C = (AbstractClass *)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x52439c*/
+  v48.DynamicVector_field_0x1C = (AbstractClass *)&vt_VectorClass; /*0x52439c*/
   DynamicVectorClass::Destroy_Alt((_VectorClass_PBVAnimTypeClass *)&v48.DynamicVector_field_0x1C); /*0x5243a4*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5243b8*/
                      (int *)a2,
@@ -740,10 +740,10 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   void *v6; // eax
   InfantryTypeClass *v8; // [esp+4h] [ebp-4h] BYREF
 
-  Block->TechnoTypeClass = &InfantryTypeClass::`vftable'; /*0x524d76*/
-  Block->? = &InfantryTypeClass::`vftable'; /*0x524d7c*/
-  Block->? = &InfantryTypeClass::`vftable'; /*0x524d83*/
-  Block->? = &InfantryTypeClass::`vftable'; /*0x524d8a*/
+  Block->TechnoTypeClass = &vt_InfantryTypeClass; /*0x524d76*/
+  Block->? = &vt_InfantryTypeClass; /*0x524d7c*/
+  Block->? = &vt_InfantryTypeClass; /*0x524d83*/
+  Block->? = &vt_InfantryTypeClass; /*0x524d8a*/
   AbstractClass::AnnounceExpiredPointer(&Block->TechnoTypeClass, 1); /*0x524d91*/
   v8 = Block; /*0x524da6*/
   v3 = (*(int (**)(unsigned int *, InfantryTypeClass **))(dword_A8E348 + 16))(&dword_A8E348, &v8); /*0x524daa*/
@@ -759,7 +759,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   __3_YAXPAX_Z((void *)Block->Sequence[0]); /*0x524de7*/
   Block->Sequence[0] = 0; /*0x524df1*/
   v4 = (void *)Block->VoiceComment[1]; /*0x524df7*/
-  Block->VoiceComment[0] = (int)&VectorClass<int>::`vftable'; /*0x524dff*/
+  Block->VoiceComment[0] = (int)&vt_VectorClass; /*0x524dff*/
   if ( v4 && BYTE1(Block->VoiceComment[3]) ) /*0x524e0b*/
   {
     __3_YAXPAX_Z(v4); /*0x524e14*/
@@ -768,7 +768,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   BYTE1(Block->VoiceComment[3]) = 0; /*0x524e22*/
   Block->VoiceComment[2] = 0; /*0x524e28*/
   v5 = (void *)Block->DeathAnims[1]; /*0x524e2e*/
-  Block->DeathAnims[0] = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x524e34*/
+  Block->DeathAnims[0] = (int)&vt_VectorClass; /*0x524e34*/
   if ( v5 && BYTE1(Block->DeathAnims[3]) ) /*0x524e42*/
   {
     __3_YAXPAX_Z(v5); /*0x524e4b*/
@@ -777,7 +777,7 @@ InfantryTypeClass * InfantryTypeClass::ddtor(int Block, char a2)
   BYTE1(Block->DeathAnims[3]) = 0; /*0x524e59*/
   Block->DeathAnims[2] = 0; /*0x524e5f*/
   v6 = (void *)Block->DeadBodies[1]; /*0x524e65*/
-  Block->DeadBodies[0] = (int)&VectorClass<AnimTypeClass const *>::`vftable'; /*0x524e6b*/
+  Block->DeadBodies[0] = (int)&vt_VectorClass; /*0x524e6b*/
   if ( v6 && BYTE1(Block->DeadBodies[3]) ) /*0x524e79*/
   {
     __3_YAXPAX_Z(v6); /*0x524e82*/

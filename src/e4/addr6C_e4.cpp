@@ -1773,7 +1773,7 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
   Buffer::Init((Buffer *)((char *)this + 36), 0, 0); /*0x6c656c*/
   *((unsigned int *)this + 12) = 0; /*0x6c657e*/
   *((unsigned int *)this + 13) = a4; /*0x6c6585*/
-  *(unsigned int *)this->__pad_0 = &StaticButtonClass::`vftable'; /*0x6c6588*/
+  *(unsigned int *)this->__pad_0 = &vt_StaticButtonClass; /*0x6c6588*/
   StaticButtonClass::Draw(this, String, 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
@@ -1967,7 +1967,7 @@ namespace gamemd {
 rc_ptr * E4Recv_6C8840::sub_6C8840(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block = &rc_ptr<PlayerProfile>::`vftable'; /*0x6c8843*/
+  *(unsigned int *)Block = &vt_rc_ptr; /*0x6c8843*/
   ComPtr::Release((ComPtr *)Block); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
     __3_YAXPAX_Z(Block); /*0x6c8856*/
@@ -3024,7 +3024,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
   this->Capacity = a2; /*0x6cf900*/
   this->IsInitialized = 1; /*0x6cf903*/
   this->IsAllocated = 0; /*0x6cf907*/
-  this->vtable0 = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf90a*/
+  this->vtable0 = &vt_VectorClass; /*0x6cf90a*/
   if ( !a2 ) /*0x6cf910*/
     return &this->vtable0; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/

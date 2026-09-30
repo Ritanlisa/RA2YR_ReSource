@@ -1007,7 +1007,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   v2 = 32; /*0x6616b8*/
   this->Straw_field_0x04 = 0; /*0x6616bd*/
   *((unsigned int *)this + 2) = 0; /*0x6616c0*/
-  *(unsigned int *)this->__pad_0 = &Straw::`vftable'; /*0x6616c3*/
+  *(unsigned int *)this->__pad_0 = &vt_Straw; /*0x6616c3*/
   *((unsigned int *)this + 3) = 0; /*0x6616c9*/
   *((unsigned int *)this + 4) = 0; /*0x6616cc*/
   v3 = (ObjectClass *)((char *)this + 20); /*0x6616cf*/
@@ -1020,7 +1020,7 @@ unsigned int * E4Recv_6616B0::sub_6616B0()
   while ( v2 ); /*0x6616df*/
   *((unsigned int *)this + 3) = 0; /*0x6616e1*/
   *((unsigned int *)this + 4) = 0; /*0x6616e4*/
-  *(unsigned int *)this->__pad_0 = &RandomStraw::`vftable'; /*0x6616f1*/
+  *(unsigned int *)this->__pad_0 = &vt_RandomStraw; /*0x6616f1*/
   memset((char *)this + 20, 0, 0x100u); /*0x6616f7*/
   return this->__pad_0; /*0x6616fb*/
 
@@ -1338,8 +1338,8 @@ namespace gamemd {
 void E4Recv_661F30::sub_661F30()
 {
 
-  *(unsigned int *)this->LocomotionClass = &RocketLocomotionClass::`vftable'; /*0x661f30*/
-  *(unsigned int *)&this->LocomotionClass[4] = &RocketLocomotionClass::`vftable'; /*0x661f36*/
+  *(unsigned int *)this->LocomotionClass = &vt_RocketLocomotionClass; /*0x661f30*/
+  *(unsigned int *)&this->LocomotionClass[4] = &vt_RocketLocomotionClass; /*0x661f36*/
   LocomotionClass::Construct((LocomotionClass *)this); /*0x661f3d*/
 
 }
@@ -1607,7 +1607,7 @@ unsigned int * E4Recv_6638E0::sub_6638E0()
   this->? = 0; /*0x6638e7*/
   LOBYTE(this->?) = 1; /*0x6638ea*/
   BYTE1(this->?) = 0; /*0x6638ee*/
-  this->AbstractClass = &DynamicVectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6638f1*/
+  this->AbstractClass = &vt_DynamicVectorClass; /*0x6638f1*/
   this->? = 10; /*0x6638f7*/
   this->? = 0; /*0x6638fe*/
   LOBYTE(this->?) = 0; /*0x663901*/
@@ -1640,7 +1640,7 @@ void E4Recv_663960::sub_663960()
     }
   }
   Items = (void *)this->Items; /*0x6639a3*/
-  this->vtable0 = (int)&VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x6639a6*/
+  this->vtable0 = (int)&vt_VectorClass; /*0x6639a6*/
   if ( Items && this->IsAllocated[0] ) /*0x6639b0*/
   {
     __3_YAXPAX_Z(Items); /*0x6639b6*/

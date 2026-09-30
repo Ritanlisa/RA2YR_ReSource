@@ -32,13 +32,13 @@ unsigned int * HouseTypeClass::loadVeteranWeapons(HouseTypeClass * aP1)
 {
 
   AbstractTypeClass::Init((int)this, aP1); /*0x511658*/
-  this->veteranInfantry[0] = (int)&TypeList<InfantryTypeClass const *>::`vftable'; /*0x51165d*/
-  *(unsigned int *)&this->prefix = &TypeList<UnitTypeClass const *>::`vftable'; /*0x511667*/
-  *(unsigned int *)&this->__pad_16D[23] = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x511671*/
-  this->AbstractClass = &HouseTypeClass::`vftable'; /*0x51167b*/
-  this->? = &HouseTypeClass::`vftable'; /*0x511681*/
-  this->? = &HouseTypeClass::`vftable'; /*0x511688*/
-  this->? = &HouseTypeClass::`vftable'; /*0x51168f*/
+  this->veteranInfantry[0] = (int)&vt_TypeList; /*0x51165d*/
+  *(unsigned int *)&this->prefix = &vt_TypeList; /*0x511667*/
+  *(unsigned int *)&this->__pad_16D[23] = &vt_TypeList; /*0x511671*/
+  this->AbstractClass = &vt_HouseTypeClass; /*0x51167b*/
+  this->? = &vt_HouseTypeClass; /*0x511681*/
+  this->? = &vt_HouseTypeClass; /*0x511688*/
+  this->? = &vt_HouseTypeClass; /*0x51168f*/
   return &this->AbstractClass; /*0x511698*/
 
 }
@@ -54,10 +54,10 @@ AbstractClass * HouseTypeClass::Dtor()
   void *veteranInfantryCount; // eax
   HouseTypeClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  this->AbstractClass = &HouseTypeClass::`vftable'; /*0x5116a7*/
-  this->? = &HouseTypeClass::`vftable'; /*0x5116ad*/
-  this->? = &HouseTypeClass::`vftable'; /*0x5116b4*/
-  this->? = &HouseTypeClass::`vftable'; /*0x5116bb*/
+  this->AbstractClass = &vt_HouseTypeClass; /*0x5116a7*/
+  this->? = &vt_HouseTypeClass; /*0x5116ad*/
+  this->? = &vt_HouseTypeClass; /*0x5116b4*/
+  this->? = &vt_HouseTypeClass; /*0x5116bb*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x5116c2*/
   v7 = this; /*0x5116d7*/
   v2 = (*(int (**)(unsigned int *, HouseTypeClass **))(dword_A83C98 + 16))(&dword_A83C98, &v7); /*0x5116db*/
@@ -71,7 +71,7 @@ AbstractClass * HouseTypeClass::Dtor()
     while ( v2 < dword_A83CA8 ); /*0x51170e*/
   }
   v3 = *(void **)&this-((unsigned int *)(>__pad_16D))[27]; /*0x511710*/
-  *(unsigned int *)&this->__pad_16D[23] = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x51171a*/
+  *(unsigned int *)&this->__pad_16D[23] = &vt_VectorClass; /*0x51171a*/
   if ( v3 && this-((unsigned int *)(>__pad_16D))[36] ) /*0x511726*/
   {
     __3_YAXPAX_Z(v3); /*0x51172f*/
@@ -80,7 +80,7 @@ AbstractClass * HouseTypeClass::Dtor()
   this-((unsigned int *)(>__pad_16D))[36] = 0; /*0x51173d*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_16D))[31] = 0; /*0x511743*/
   v4 = *(void **)&this->smartAi; /*0x511749*/
-  *(unsigned int *)&this->prefix = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x51174f*/
+  *(unsigned int *)&this->prefix = &vt_VectorClass; /*0x51174f*/
   if ( v4 && this->__pad_16D[8] ) /*0x51175d*/
   {
     __3_YAXPAX_Z(v4); /*0x511766*/
@@ -89,7 +89,7 @@ AbstractClass * HouseTypeClass::Dtor()
   this->__pad_16D[8] = 0; /*0x511774*/
   *(unsigned int *)&this->__pad_16D[3] = 0; /*0x51177a*/
   veteranInfantryCount = (void *)this->veteranInfantryCount; /*0x511780*/
-  this->veteranInfantry[0] = (int)&VectorClass<InfantryTypeClass const *>::`vftable'; /*0x511786*/
+  this->veteranInfantry[0] = (int)&vt_VectorClass; /*0x511786*/
   if ( veteranInfantryCount && BYTE1(this->veteranUnitsCount) ) /*0x511794*/
   {
     __3_YAXPAX_Z(veteranInfantryCount); /*0x51179d*/
@@ -377,7 +377,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
          128) )
   {
     InfantryTypeVector::Construct(&v82, 0, 0); /*0x511d42*/
-    *(unsigned int *)v82.__pad_0 = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x511d56*/
+    *(unsigned int *)v82.__pad_0 = &vt_TypeList; /*0x511d56*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x511d64*/
     {
       if ( !*i ) /*0x511d66*/
@@ -387,14 +387,14 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
         InfantryTypeVector::Add(&v82, &v82.InfantryTypeVector_field_0x1C); /*0x511d83*/
     }
     HouseTypeClass::readAllowedUnits((HouseTypeClass *)&Destination, &v82); /*0x511da4*/
-    *(unsigned int *)Destination.__pad_0 = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x511dad*/
-    *(unsigned int *)v82.__pad_0 = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x511db1*/
+    *(unsigned int *)Destination.__pad_0 = &vt_TypeList; /*0x511dad*/
+    *(unsigned int *)v82.__pad_0 = &vt_VectorClass; /*0x511db1*/
     Vector::Cleanup((_VectorClass_PBVInfantryTypeClass *)&v82); /*0x511db9*/
   }
   else
   {
     HouseTypeClass::readAllowedUnits((HouseTypeClass *)&Destination, (unsigned int *)(_EBX + 332)); /*0x511dcb*/
-    *(unsigned int *)Destination.__pad_0 = &TypeList<InfantryTypeClass const *>::`vftable'; /*0x511dd0*/
+    *(unsigned int *)Destination.__pad_0 = &vt_TypeList; /*0x511dd0*/
   }
   HouseTypeClass::readStartInfantry((HouseTypeClass *)(_EBX + 332), &Destination); /*0x511de5*/
   UnitTypeVector_field_0x10 = Destination.UnitTypeVector_field_0x10; /*0x511dee*/
@@ -403,7 +403,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
   UnitTypeVector_field_0x04 = (void *)Destination.UnitTypeVector_field_0x04; /*0x511df9*/
   *(unsigned int *)(_EBX + 348) = UnitTypeVector_field_0x10; /*0x511dfd*/
   *(unsigned int *)(_EBX + 356) = UnitTypeVector_field_0x18; /*0x511e02*/
-  *(unsigned int *)Destination.__pad_0 = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x511e05*/
+  *(unsigned int *)Destination.__pad_0 = &vt_VectorClass; /*0x511e05*/
   if ( UnitTypeVector_field_0x04 && BYTE1(Destination.UnitTypeVector_field_0x0C) ) /*0x511e15*/
     __3_YAXPAX_Z(UnitTypeVector_field_0x04); /*0x511e18*/
   if ( INIClass::GetString( /*0x511e3a*/
@@ -415,7 +415,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
          128) )
   {
     UnitTypeVector::Construct(&Destination, 0, 0); /*0x511e4f*/
-    *(unsigned int *)Destination.__pad_0 = &TypeList<UnitTypeClass const *>::`vftable'; /*0x511e5e*/
+    *(unsigned int *)Destination.__pad_0 = &vt_TypeList; /*0x511e5e*/
     for ( j = strtok(String, Str); j; j = strtok(0, Str) ) /*0x511e70*/
     {
       if ( !*j ) /*0x511e72*/
@@ -435,7 +435,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
       }
     }
     TypeList::CopyConstructor((TypeList *)&v82, &Destination); /*0x511ee6*/
-    *(unsigned int *)Destination.__pad_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x511eef*/
+    *(unsigned int *)Destination.__pad_0 = &vt_VectorClass; /*0x511eef*/
     Vector::Destructor((_VectorClass_PBVUnitTypeClass *)&Destination); /*0x511ef7*/
   }
   else
@@ -449,7 +449,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
   InfantryTypeVector_field_0x04 = (void *)v82.InfantryTypeVector_field_0x04; /*0x511f2f*/
   *(unsigned int *)(_EBX + 376) = InfantryTypeVector_field_0x10; /*0x511f33*/
   *(unsigned int *)(_EBX + 384) = InfantryTypeVector_field_0x18; /*0x511f38*/
-  *(unsigned int *)v82.__pad_0 = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x511f3b*/
+  *(unsigned int *)v82.__pad_0 = &vt_VectorClass; /*0x511f3b*/
   if ( InfantryTypeVector_field_0x04 && BYTE1(v82.InfantryTypeVector_field_0x0C) ) /*0x511f4b*/
     __3_YAXPAX_Z(InfantryTypeVector_field_0x04); /*0x511f4e*/
   if ( INIClass::GetString( /*0x511f70*/
@@ -461,7 +461,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
          128) )
   {
     HouseTypeClass::readDefaultAlly((HouseTypeClass *)&Destination, 0, 0); /*0x511f85*/
-    *(unsigned int *)Destination.__pad_0 = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x511f94*/
+    *(unsigned int *)Destination.__pad_0 = &vt_TypeList; /*0x511f94*/
     for ( k = strtok(String, Str); k; k = strtok(0, Str) ) /*0x511fa6*/
     {
       if ( !*k ) /*0x511fa8*/
@@ -481,7 +481,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
       }
     }
     HouseTypeClass::readParaDropTypes((HouseTypeClass *)&v82, &Destination); /*0x51201c*/
-    *(unsigned int *)Destination.__pad_0 = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x512025*/
+    *(unsigned int *)Destination.__pad_0 = &vt_VectorClass; /*0x512025*/
     VectorClass::ClearAndFree4((int)&Destination); /*0x51202d*/
   }
   else
@@ -495,7 +495,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
   v43 = (void *)v82.InfantryTypeVector_field_0x04; /*0x512065*/
   *(unsigned int *)(_EBX + 404) = v41; /*0x512069*/
   *(unsigned int *)(_EBX + 412) = v42; /*0x51206e*/
-  *(unsigned int *)v82.__pad_0 = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x512071*/
+  *(unsigned int *)v82.__pad_0 = &vt_VectorClass; /*0x512071*/
   if ( v43 && BYTE1(v82.InfantryTypeVector_field_0x0C) ) /*0x512081*/
     __3_YAXPAX_Z(v43); /*0x512084*/
   v44 = *(unsigned int *)(_EBX + 188); /*0x51208c*/
@@ -604,7 +604,7 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
     if ( veteranInfantry ) /*0x5122ef*/
     {
       InfantryTypeVector::Construct((InfantryTypeVector *)veteranInfantry, 0, 0); /*0x5122f7*/
-      *veteranInfantry = (int)&TypeList<InfantryTypeClass const *>::`vftable'; /*0x5122fc*/
+      *veteranInfantry = (int)&vt_TypeList; /*0x5122fc*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &a2, 4, 0); /*0x51230e*/
     for ( i = 0; (int)i < a2; i = (HouseTypeClass *)((char *)i + 1) ) /*0x51231f*/
@@ -615,7 +615,7 @@ int HouseTypeClass::SaveLoad_Prefix(unsigned int * i, int a2)
     if ( v2 != (HouseTypeClass *)-360 ) /*0x51234f*/
     {
       UnitTypeVector::Construct((UnitTypeVector *)&v2->prefix, 0, 0); /*0x512357*/
-      *(unsigned int *)&v2->prefix = &TypeList<UnitTypeClass const *>::`vftable'; /*0x51235c*/
+      *(unsigned int *)&v2->prefix = &vt_TypeList; /*0x51235c*/
     }
     (*(void (**)(int, HouseTypeClass **, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &i, 4, 0); /*0x51236f*/
     for ( i = 0; i < (int)i; ++i ) /*0x51237a*/
@@ -747,7 +747,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     AircraftTypeVector::Constructor(&v17, 0, 0); /*0x67b931*/
     v22 = 10; /*0x67b93a*/
     v21 = 0; /*0x67b948*/
-    v17 = (AircraftTypeVector)&TypeList<AircraftTypeClass const *>::`vftable'; /*0x67b94c*/
+    v17 = (AircraftTypeVector)&vt_TypeList; /*0x67b94c*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67b95e*/
     {
       if ( !*i ) /*0x67b960*/
@@ -770,10 +770,10 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     *(unsigned int *)(a1 + 8) = 0; /*0x67b9d0*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67b9d3*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67b9d7*/
-    *(unsigned int *)a1 = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x67b9da*/
+    *(unsigned int *)a1 = &vt_VectorClass; /*0x67b9da*/
     HouseTypeClass::readBaseDefense((HouseTypeClass *)a1, &v17); /*0x67b9e0*/
-    *(unsigned int *)a1 = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x67b9e5*/
-    v17 = (AircraftTypeVector)&VectorClass<AircraftTypeClass const *>::`vftable'; /*0x67b9eb*/
+    *(unsigned int *)a1 = &vt_TypeList; /*0x67b9e5*/
+    v17 = (AircraftTypeVector)&vt_VectorClass; /*0x67b9eb*/
     v9 = v22; /*0x67b9f7*/
     *(unsigned int *)(a1 + 16) = v21; /*0x67b9fb*/
     v10 = Block; /*0x67b9fe*/
@@ -791,7 +791,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     *(unsigned int *)(a1 + 8) = 0; /*0x67ba3c*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67ba3f*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67ba43*/
-    *(unsigned int *)a1 = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x67ba46*/
+    *(unsigned int *)a1 = &vt_VectorClass; /*0x67ba46*/
     if ( (unsigned int *)a1 != a5 ) /*0x67ba4c*/
     {
       VectorClass::ClearAndFree4(a1); /*0x67ba50*/
@@ -825,7 +825,7 @@ void * HouseTypeClass::ReadCountryName(int a1, unsigned char *** edx0, INIClass 
     }
     *(unsigned int *)(a1 + 16) = a5[4]; /*0x67baa3*/
     *(unsigned int *)(a1 + 20) = a5[5]; /*0x67baa9*/
-    *(unsigned int *)a1 = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x67baac*/
+    *(unsigned int *)a1 = &vt_TypeList; /*0x67baac*/
   }
   return a1; /*0x67ba22*/
 
@@ -1006,10 +1006,10 @@ HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
   void *veteranInfantryCount; // eax
   HouseTypeClass *v8; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &HouseTypeClass::`vftable'; /*0x512766*/
-  Block->? = &HouseTypeClass::`vftable'; /*0x51276c*/
-  Block->? = &HouseTypeClass::`vftable'; /*0x512773*/
-  Block->? = &HouseTypeClass::`vftable'; /*0x51277a*/
+  Block->AbstractClass = &vt_HouseTypeClass; /*0x512766*/
+  Block->? = &vt_HouseTypeClass; /*0x51276c*/
+  Block->? = &vt_HouseTypeClass; /*0x512773*/
+  Block->? = &vt_HouseTypeClass; /*0x51277a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x512781*/
   v8 = Block; /*0x512796*/
   v3 = (*(int (**)(unsigned int *, HouseTypeClass **))(dword_A83C98 + 16))(&dword_A83C98, &v8); /*0x51279a*/
@@ -1023,7 +1023,7 @@ HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
     while ( v3 < dword_A83CA8 ); /*0x5127cd*/
   }
   v4 = *(void **)&Block->__pad_16D[27]; /*0x5127cf*/
-  *(unsigned int *)&Block->__pad_16D[23] = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x5127d8*/
+  *(unsigned int *)&Block->__pad_16D[23] = &vt_VectorClass; /*0x5127d8*/
   if ( v4 && Block->__pad_16D[36] ) /*0x5127e6*/
   {
     __3_YAXPAX_Z(v4); /*0x5127ef*/
@@ -1032,7 +1032,7 @@ HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
   Block->__pad_16D[36] = 0; /*0x5127fd*/
   *(unsigned int *)&Block->__pad_16D[31] = 0; /*0x512803*/
   v5 = *(void **)&Block->smartAi; /*0x512809*/
-  *(unsigned int *)&Block->prefix = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x51280f*/
+  *(unsigned int *)&Block->prefix = &vt_VectorClass; /*0x51280f*/
   if ( v5 && Block->__pad_16D[8] ) /*0x51281d*/
   {
     __3_YAXPAX_Z(v5); /*0x512826*/
@@ -1041,7 +1041,7 @@ HouseTypeClass * HouseTypeClass::Destructor(void ** Block, char a2)
   Block->__pad_16D[8] = 0; /*0x512834*/
   *(unsigned int *)&Block->__pad_16D[3] = 0; /*0x51283a*/
   veteranInfantryCount = (void *)Block->veteranInfantryCount; /*0x512840*/
-  Block->veteranInfantry[0] = (int)&VectorClass<InfantryTypeClass const *>::`vftable'; /*0x512846*/
+  Block->veteranInfantry[0] = (int)&vt_VectorClass; /*0x512846*/
   if ( veteranInfantryCount && BYTE1(Block->veteranUnitsCount) ) /*0x512854*/
   {
     __3_YAXPAX_Z(veteranInfantryCount); /*0x51285d*/
@@ -1111,7 +1111,7 @@ unsigned int * HouseTypeClass::readStartUnit()
   BYTE1(this->?) = 0; /*0x51296e*/
   this->? = 10; /*0x512971*/
   this->? = 0; /*0x512978*/
-  this->AbstractClass = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x51297b*/
+  this->AbstractClass = &vt_TypeList; /*0x51297b*/
   return &this->AbstractClass; /*0x512981*/
 
 }
@@ -1168,7 +1168,7 @@ TypeList_flat * HouseTypeClass_36::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x512a43*/
-  Block->vfptr = &VectorClass<UnitTypeClass const *>::`vftable'; /*0x512a46*/
+  Block->vfptr = &vt_VectorClass; /*0x512a46*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512a50*/
   {
     __3_YAXPAX_Z(v3); /*0x512a58*/
@@ -1191,7 +1191,7 @@ TypeList_flat * HouseTypeClass_28::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x512a93*/
-  Block->vfptr = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x512a96*/
+  Block->vfptr = &vt_VectorClass; /*0x512a96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512aa0*/
   {
     __3_YAXPAX_Z(v3); /*0x512aa8*/
@@ -1214,7 +1214,7 @@ VectorClass_flat * HouseTypeClass_36::Constructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x512b83*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x512b86*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x512b86*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x512b90*/
   {
     __3_YAXPAX_Z(v3); /*0x512b98*/
@@ -1501,7 +1501,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
   this->? = (void *)a2; /*0x513570*/
   LOBYTE(this->?) = 1; /*0x513573*/
   BYTE1(this->?) = 0; /*0x513577*/
-  this->AbstractClass = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x51357b*/
+  this->AbstractClass = &vt_VectorClass; /*0x51357b*/
   if ( a2 ) /*0x513581*/
   {
     if ( a3 ) /*0x513589*/
@@ -1514,7 +1514,7 @@ unsigned int * HouseTypeClass::readDefaultAlly(int a2, int a3)
       BYTE1(this->?) = 1; /*0x51359f*/
     }
   }
-  this->AbstractClass = &DynamicVectorClass<AircraftTypeClass const *>::`vftable'; /*0x5135a3*/
+  this->AbstractClass = &vt_DynamicVectorClass; /*0x5135a3*/
   this->? = 10; /*0x5135a9*/
   this->? = 0; /*0x5135b0*/
   return &this->AbstractClass; /*0x5135b9*/
@@ -1641,7 +1641,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * aP1)
   this->? = 0; /*0x5137e0*/
   LOBYTE(this->?) = 1; /*0x5137e3*/
   BYTE1(this->?) = 0; /*0x5137e7*/
-  this->AbstractClass = &VectorClass<AircraftTypeClass const *>::`vftable'; /*0x5137ea*/
+  this->AbstractClass = &vt_VectorClass; /*0x5137ea*/
   if ( this != (HouseTypeClass *)aP1 ) /*0x5137f0*/
   {
     VectorClass::ClearAndFree4((int)this); /*0x5137f2*/
@@ -1675,7 +1675,7 @@ unsigned int * HouseTypeClass::readParaDropTypes(VectorClass_flat * aP1)
   }
   this->? = aP1[4]; /*0x513841*/
   this->? = aP1[5]; /*0x513847*/
-  this->AbstractClass = &TypeList<AircraftTypeClass const *>::`vftable'; /*0x51384a*/
+  this->AbstractClass = &vt_TypeList; /*0x51384a*/
   return &this->AbstractClass; /*0x513852*/
 
 }
@@ -1695,7 +1695,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
   this->? = 0; /*0x513870*/
   LOBYTE(this->?) = 1; /*0x513873*/
   BYTE1(this->?) = 0; /*0x513877*/
-  this->AbstractClass = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x51387a*/
+  this->AbstractClass = &vt_VectorClass; /*0x51387a*/
   if ( this != (HouseTypeClass *)aP1 ) /*0x513880*/
   {
     Vector::Cleanup((_VectorClass_PBVInfantryTypeClass *)this); /*0x513882*/
@@ -1729,7 +1729,7 @@ unsigned int * HouseTypeClass::readAllowedUnits(InfantryTypeClass * aP1)
   }
   this->? = aP1[4]; /*0x5138d1*/
   this->? = aP1[5]; /*0x5138d7*/
-  this->AbstractClass = &DynamicVectorClass<InfantryTypeClass const *>::`vftable'; /*0x5138da*/
+  this->AbstractClass = &vt_DynamicVectorClass; /*0x5138da*/
   return &this->AbstractClass; /*0x5138e2*/
 
 }

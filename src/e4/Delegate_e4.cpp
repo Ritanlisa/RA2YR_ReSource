@@ -261,7 +261,7 @@ GenericNode * Delegate::Constructor_GenericNode(GenericNode ** Block, char a2)
   int Previous; // ecx
   int v4; // eax
 
-  *(unsigned int *)Block->__pad_0 = &GenericNode::`vftable'; /*0x52ae27*/
+  *(unsigned int *)Block->__pad_0 = &vt_GenericNode; /*0x52ae27*/
   if ( Block ) /*0x52ae2d*/
   {
     Previous = Block->Previous; /*0x52ae2f*/

@@ -91,7 +91,7 @@ namespace gamemd {
 void E4Recv_771890::sub_771890()
 {
 
-  *this = &WorldDominationTour::Voices::Anim::`vftable'; /*0x771890*/
+  *this = &WorldDominationTour::Voices::vt_Anim; /*0x771890*/
   VtableStub::5CB6C0(this, unsigned int a2); /*0x771896*/
 
 }
@@ -3777,7 +3777,7 @@ unsigned int * E4Recv_771850::sub_771850(int a2)
   *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x771867*/
   *((unsigned int *)this + 6) = 0; /*0x77186e*/
   *((unsigned int *)this + 7) = a2; /*0x771871*/
-  *this = &WorldDominationTour::Voices::Anim::`vftable'; /*0x771874*/
+  *this = &WorldDominationTour::Voices::vt_Anim; /*0x771874*/
   return this; /*0x77187c*/
 
 }
@@ -3792,7 +3792,7 @@ int E4Recv_7719E0::sub_7719E0()
   this->Items = 0; /*0x7719e6*/
   this->Capacity = 0; /*0x7719e9*/
   this->IsAllocated = 0; /*0x7719ec*/
-  *(unsigned int *)this->__pad_0 = &DynamicVectorClass<unsigned int>::`vftable'; /*0x7719ef*/
+  *(unsigned int *)this->__pad_0 = &vt_DynamicVectorClass; /*0x7719ef*/
   this->CapacityIncrement[0] = 10; /*0x7719f5*/
   this->Count = 0; /*0x7719fc*/
   return 0; /*0x7719ff*/
@@ -3808,7 +3808,7 @@ void E4Recv_771A00::sub_771A00()
   void *Items; // eax
 
   Items = this->Items; /*0x771a06*/
-  this->vtable0 = &VectorClass<unsigned int>::`vftable'; /*0x771a09*/
+  this->vtable0 = &vt_VectorClass; /*0x771a09*/
   if ( Items && this->IsAllocated ) /*0x771a13*/
   {
     __3_YAXPAX_Z(Items); /*0x771a19*/

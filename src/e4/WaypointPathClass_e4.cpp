@@ -34,13 +34,13 @@ void WaypointPathClass::Init()
   this-((unsigned int *)(>waypoints))[2] = 0; /*0x763744*/
   LOBYTE(this->waypoints[3]) = 1; /*0x763747*/
   BYTE1(this-((unsigned int *)(>waypoints))[3]) = 0; /*0x76374b*/
-  this->waypoints[0] = (int)&DynamicVectorClass<WaypointClass>::`vftable'; /*0x76374e*/
+  this->waypoints[0] = (int)&vt_DynamicVectorClass; /*0x76374e*/
   this-((unsigned int *)(>waypoints))[5] = 10; /*0x763755*/
   this-((unsigned int *)(>waypoints))[4] = 0; /*0x76375c*/
-  this->AbstractClass = &WaypointPathClass::`vftable'; /*0x76375f*/
-  this->? = &WaypointPathClass::`vftable'; /*0x763765*/
-  this->? = &WaypointPathClass::`vftable'; /*0x76376c*/
-  this->? = &WaypointPathClass::`vftable'; /*0x763773*/
+  this->AbstractClass = &vt_WaypointPathClass; /*0x76375f*/
+  this->? = &vt_WaypointPathClass; /*0x763765*/
+  this->? = &vt_WaypointPathClass; /*0x76376c*/
+  this->? = &vt_WaypointPathClass; /*0x763773*/
   if ( dword_B72618 < dword_B72610 /*0x7637ac*/
     || (byte_B72615 || !dword_B72610)
     && dword_B7261C > 0
@@ -69,13 +69,13 @@ void WaypointPathClass::Construct( WaypointClass * aP1)
   *((unsigned int *)this + 12) = 0; /*0x763828*/
   *((unsigned char *)this + 52) = 1; /*0x76382b*/
   *((unsigned char *)this + 53) = 0; /*0x76382f*/
-  *((unsigned int *)this + 10) = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x763832*/
+  *((unsigned int *)this + 10) = &vt_DynamicVectorClass; /*0x763832*/
   *((unsigned int *)this + 15) = 10; /*0x763839*/
   *((unsigned int *)this + 14) = 0; /*0x763840*/
-  *(unsigned int *)this = &WaypointPathClass::`vftable'; /*0x763845*/
-  *((unsigned int *)this + 1) = &WaypointPathClass::`vftable'; /*0x76384b*/
-  *((unsigned int *)this + 2) = &WaypointPathClass::`vftable'; /*0x763852*/
-  *((unsigned int *)this + 3) = &WaypointPathClass::`vftable'; /*0x763859*/
+  *(unsigned int *)this = &vt_WaypointPathClass; /*0x763845*/
+  *((unsigned int *)this + 1) = &vt_WaypointPathClass; /*0x76384b*/
+  *((unsigned int *)this + 2) = &vt_WaypointPathClass; /*0x763852*/
+  *((unsigned int *)this + 3) = &vt_WaypointPathClass; /*0x763859*/
   if ( aP1 < (gamemd::WaypointClass *)(0xC) /*0x76389a*/
     && (dword_B72618 < dword_B72610
      || (byte_B72615 || !dword_B72610)
@@ -122,11 +122,11 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
     if ( v2 ) /*0x763c92*/
     {
       AbstractClass::InitVtables(v2, (int)&a2); /*0x763c9b*/
-      v2[1].vtable1 = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ca0*/
-      v2->vtable0 = &WaypointPathClass::`vftable'; /*0x763ca7*/
-      v2->vtable1 = &WaypointPathClass::`vftable'; /*0x763cad*/
-      v2->vtable2 = &WaypointPathClass::`vftable'; /*0x763cb4*/
-      v2->vtable3 = &WaypointPathClass::`vftable'; /*0x763cbb*/
+      v2[1].vtable1 = &vt_DynamicVectorClass; /*0x763ca0*/
+      v2->vtable0 = &vt_WaypointPathClass; /*0x763ca7*/
+      v2->vtable1 = &vt_WaypointPathClass; /*0x763cad*/
+      v2->vtable2 = &vt_WaypointPathClass; /*0x763cb4*/
+      v2->vtable3 = &vt_WaypointPathClass; /*0x763cbb*/
     }
     result = (*(int (**)(int, WaypointPathClass **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a1, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
@@ -135,7 +135,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
       if ( p_vtable1 ) /*0x763cdd*/
       {
         WaypointPathClass::computePath(p_vtable1, 0, 0); /*0x763ce3*/
-        p_vtable1->AbstractClass = &DynamicVectorClass<WaypointClass>::`vftable'; /*0x763ce8*/
+        p_vtable1->AbstractClass = &vt_DynamicVectorClass; /*0x763ce8*/
         p_vtable1->? = 10; /*0x763cee*/
         p_vtable1->? = 0; /*0x763cf5*/
       }
@@ -200,7 +200,7 @@ void WaypointPathClass::computePath( int a2, unsigned int * a3)
   this->? = (void *)a2; /*0x764770*/
   LOBYTE(this->?) = 1; /*0x764773*/
   BYTE1(this->?) = 0; /*0x764777*/
-  this->AbstractClass = &VectorClass<WaypointClass>::`vftable'; /*0x76477a*/
+  this->AbstractClass = &vt_VectorClass; /*0x76477a*/
   if ( !a2 ) /*0x764780*/
     return &this->AbstractClass; /*0x764780*/
   if ( !a3 ) /*0x764788*/
@@ -354,10 +354,10 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(void ** Block, char a2)
   int v4; // eax
   WaypointPathClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &WaypointPathClass::`vftable'; /*0x763e26*/
-  Block->? = &WaypointPathClass::`vftable'; /*0x763e2c*/
-  Block->? = &WaypointPathClass::`vftable'; /*0x763e33*/
-  Block->? = &WaypointPathClass::`vftable'; /*0x763e3a*/
+  Block->AbstractClass = &vt_WaypointPathClass; /*0x763e26*/
+  Block->? = &vt_WaypointPathClass; /*0x763e2c*/
+  Block->? = &vt_WaypointPathClass; /*0x763e33*/
+  Block->? = &vt_WaypointPathClass; /*0x763e3a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x763e41*/
   v6 = Block; /*0x763e56*/
   v3 = (*(int (**)(int *, WaypointPathClass **))(dword_B72608 + 16))(&dword_B72608, &v6); /*0x763e5a*/
@@ -371,7 +371,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(void ** Block, char a2)
     while ( v3 < dword_B72618 ); /*0x763e8d*/
   }
   v4 = Block->waypoints[1]; /*0x763e8f*/
-  Block->waypoints[0] = (int)&VectorClass<WaypointClass>::`vftable'; /*0x763e92*/
+  Block->waypoints[0] = (int)&vt_VectorClass; /*0x763e92*/
   if ( v4 && BYTE1(Block->waypoints[3]) ) /*0x763e9d*/
   {
     __3_YAXPAX_Z((void *)(v4 - 4)); /*0x763eb0*/

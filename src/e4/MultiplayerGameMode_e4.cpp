@@ -27,7 +27,7 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
   this->MultiplayerGameMode_field_0x08 = a2; /*0x5d89fe*/
   LOBYTE(this->MultiplayerGameMode_field_0x0C) = 1; /*0x5d8a01*/
   BYTE1(this->MultiplayerGameMode_field_0x0C) = 0; /*0x5d8a05*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d8a08*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x5d8a08*/
   if ( a2 ) /*0x5d8a0e*/
   {
     if ( a3 ) /*0x5d8a16*/
@@ -53,7 +53,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
   void *MultiplayerGameMode_field_0x0C; // eax
 
   v3 = 0; /*0x5d7f24*/
-  for ( *(unsigned int *)Block->__pad_0 = &MultiplayerGameMode::`vftable'; v3 < Block->MultiplayerGameMode_field_0x18; ++v3 ) /*0x5d7f31*/
+  for ( *(unsigned int *)Block->__pad_0 = &vt_MultiplayerGameMode; v3 < Block->MultiplayerGameMode_field_0x18; ++v3 ) /*0x5d7f31*/
   {
     v4 = *(void (****)(unsigned int, int))(Block->MultiplayerGameMode_field_0x0C + 4 * v3); /*0x5d7f36*/
     if ( v4 ) /*0x5d7f3b*/
@@ -68,7 +68,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
   DeleteAndZero::Alt((DeleteAndZero *)Block + 3); /*0x5d7f76*/
   DeleteAndZero::Alt((DeleteAndZero *)((char *)Block + 32)); /*0x5d7f7e*/
   MultiplayerGameMode_field_0x0C = (void *)Block->MultiplayerGameMode_field_0x0C; /*0x5d7f83*/
-  Block->MultiplayerGameMode_field_0x08 = (int)&VectorClass<MultiplayerTeam *>::`vftable'; /*0x5d7f86*/
+  Block->MultiplayerGameMode_field_0x08 = (int)&vt_VectorClass; /*0x5d7f86*/
   if ( MultiplayerGameMode_field_0x0C && BYTE1(Block->MultiplayerGameMode_field_0x14) ) /*0x5d7f90*/
   {
     __3_YAXPAX_Z(MultiplayerGameMode_field_0x0C); /*0x5d7f98*/

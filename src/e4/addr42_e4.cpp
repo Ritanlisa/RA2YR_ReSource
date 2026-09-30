@@ -1433,7 +1433,7 @@ AbstractClass * * E4Recv_42A900::sub_42A900()
   {
     v11 = (void *)*((unsigned int *)v9 - 5); /*0x42aa0f*/
     v9 -= 24; /*0x42aa12*/
-    *(unsigned int *)v9 = &VectorClass<unsigned int>::`vftable'; /*0x42aa17*/
+    *(unsigned int *)v9 = &vt_VectorClass; /*0x42aa17*/
     if ( v11 ) /*0x42aa1d*/
     {
       if ( v9[13] ) /*0x42aa1f*/
@@ -2275,7 +2275,7 @@ AbstractClass * * E4Recv_42CCD0::sub_42CCD0(int a2)
   {
     v5 = *(unsigned short *)(v20 + 2 * v3); /*0x42cd12*/
     WordVector::Constructor(&v22, 0, 0); /*0x42cd16*/
-    v22 = &DynamicVectorClass<unsigned short>::`vftable'; /*0x42cd1f*/
+    v22 = &vt_DynamicVectorClass; /*0x42cd1f*/
     v27 = 10; /*0x42cd29*/
     v26 = 0; /*0x42cd31*/
     if ( Block && v25 ) /*0x42cd41*/
@@ -2292,7 +2292,7 @@ AbstractClass * * E4Recv_42CCD0::sub_42CCD0(int a2)
       v8 = CellToTileIndexMap((int *)&dword_87F7E8, v6); /*0x42cd8f*/
       sub_42CF80((unsigned char *)this, *(uint16_t *)(dword_87F858 + 10 * v8 + 2 * v3), v3); /*0x42cdac*/
       v9 = Block; /*0x42cdb1*/
-      v22 = &VectorClass<unsigned short>::`vftable'; /*0x42cdb9*/
+      v22 = &vt_VectorClass; /*0x42cdb9*/
       if ( Block && v25 ) /*0x42cdcd*/
         goto LABEL_25; /*0x42cdcd*/
     }
@@ -2332,7 +2332,7 @@ AbstractClass * * E4Recv_42CCD0::sub_42CCD0(int a2)
         }
       }
       v9 = Block; /*0x42ce5c*/
-      v22 = &VectorClass<unsigned short>::`vftable'; /*0x42ce64*/
+      v22 = &vt_VectorClass; /*0x42ce64*/
       if ( Block && v25 ) /*0x42ce74*/
       {
 LABEL_25:
@@ -3193,7 +3193,7 @@ void E4Recv_4266D0::sub_4266D0()
   void (***v3)(unsigned int, int); // ecx
 
   v2 = *((unsigned char *)this + 137); /*0x4266d6*/
-  *(unsigned int *)this->__pad_0 = &AnimFile::`vftable'; /*0x4266dc*/
+  *(unsigned int *)this->__pad_0 = &vt_AnimFile; /*0x4266dc*/
   if ( v2 ) /*0x4266e4*/
   {
     (*(void (**)(unsigned int))(**((unsigned int **)this + 33) + 52))(*((unsigned int *)this + 33)); /*0x4266ee*/
@@ -3212,7 +3212,7 @@ void E4Recv_4266D0::sub_4266D0()
     *((unsigned int *)this + 900) = 0; /*0x426726*/
   }
   *((unsigned char *)this + 136) = 0; /*0x42672c*/
-  *(unsigned int *)this->__pad_0 = &Animate::`vftable'; /*0x426732*/
+  *(unsigned int *)this->__pad_0 = &vt_Animate; /*0x426732*/
 
 }
 } // namespace gamemd

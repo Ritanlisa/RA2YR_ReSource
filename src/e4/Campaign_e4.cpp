@@ -61,7 +61,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x7658bd*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x7658bd*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x7658c3*/
         --v9; /*0x7658c6*/
       }
@@ -86,7 +86,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x76588d*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x76588d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x765893*/
         --v7; /*0x765896*/
       }
@@ -202,7 +202,7 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3)
 
   v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x7656dd*/
   ComPtr::Constructor((ComPtr *)a2); /*0x7656e2*/
-  *a2 = &rc_ptr<WorldDominationTour::Conflict>::`vftable'; /*0x7656e7*/
+  *a2 = &vt_rc_ptr; /*0x7656e7*/
   ComPtr::Set((ComPtr *)a2, *(unsigned int *)(v3 + 4)); /*0x7656f3*/
   return a2; /*0x7656fa*/
 
@@ -214,7 +214,7 @@ namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor(unsigned int * Block, char a2)
 {
 
-  *Block = (Campaign_WorldDominationTour)&rc_ptr<WorldDominationTour::CampaignProperties>::`vftable'; /*0x765713*/
+  *Block = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765713*/
   ComPtr::Release((ComPtr *)Block); /*0x765719*/
   if ( (a2 & 1) != 0 ) /*0x765723*/
     __3_YAXPAX_Z(Block); /*0x765726*/
@@ -228,7 +228,7 @@ namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(unsigned int * Block, char a2)
 {
 
-  *Block = (Campaign_WorldDominationTour)&rc_ptr<WorldDominationTour::History>::`vftable'; /*0x765743*/
+  *Block = (Campaign_WorldDominationTour)&vt_rc_ptr; /*0x765743*/
   ComPtr::Release((ComPtr *)Block); /*0x765749*/
   if ( (a2 & 1) != 0 ) /*0x765753*/
     __3_YAXPAX_Z(Block); /*0x765756*/
@@ -242,7 +242,7 @@ namespace gamemd {
 VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x765779*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
     __3_YAXPAX_Z(Block); /*0x765782*/
   return Block->__pad_0; /*0x76578c*/
@@ -346,7 +346,7 @@ VectorClass_flat * Campaign_WorldDominationTour_16::QueryInterface(unsigned int 
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x765b63*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<rc_ptr<WorldDominationTour::Conflict>>::`vftable'; /*0x765b66*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x765b66*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x765b70*/
   {
     (**v3)(v3, 3); /*0x765b7f*/

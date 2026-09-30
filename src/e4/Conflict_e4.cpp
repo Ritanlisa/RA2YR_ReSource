@@ -42,7 +42,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c97*/
       {
         ((ComPtr *)(v6))->Constructor(); /*0x766c88*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766c8d*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x766c8d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c93*/
         --v9; /*0x766c96*/
       }
@@ -67,7 +67,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c67*/
       {
         ((ComPtr *)(v6))->Constructor(); /*0x766c58*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766c5d*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x766c5d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x766c63*/
         --v7; /*0x766c66*/
       }
@@ -132,7 +132,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
         do /*0x766e45*/
         {
           ((ComPtr *)(v8))->Constructor(); /*0x766e36*/
-          *(unsigned int *)v8->__pad_0 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766e3b*/
+          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr; /*0x766e3b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x766e41*/
           --v9; /*0x766e44*/
         }
@@ -272,7 +272,7 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3)
 
   v3 = *(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 8 * a3; /*0x76685d*/
   ((ComPtr *)((ComPtr *)a2))->Constructor(); /*0x766862*/
-  *a2 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x766867*/
+  *a2 = &vt_rc_ptr; /*0x766867*/
   ((ComPtr *)((ComPtr *)a2))->Set(*(unsigned int *)(v3 + 4)); /*0x766873*/
   return a2; /*0x76687a*/
 
@@ -284,7 +284,7 @@ namespace gamemd {
 rc_ptr * Conflict_WorldDominationTour_12::Constructor(unsigned int * Block, char a2)
 {
 
-  *Block = (Conflict_WorldDominationTour)&rc_ptr<WorldDominationTour::ValueGameOption<unsigned char>>::`vftable'; /*0x766963*/
+  *Block = (Conflict_WorldDominationTour)&vt_rc_ptrWorldDominationTourValueGameOption; /*0x766963*/
   ComPtr::Release((ComPtr *)Block); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
     __3_YAXPAX_Z(Block); /*0x766976*/
@@ -298,7 +298,7 @@ namespace gamemd {
 rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(unsigned int * Block, char a2)
 {
 
-  *Block = (Conflict_WorldDominationTour)&rc_ptr<WorldDominationTour::FlagGameOption>::`vftable'; /*0x766993*/
+  *Block = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x766993*/
   ComPtr::Release((ComPtr *)Block); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
     __3_YAXPAX_Z(Block); /*0x7669a6*/
@@ -425,7 +425,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(unsigned int 
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x766fc3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<rc_ptr<WorldDominationTour::GameOption>>::`vftable'; /*0x766fc6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x766fc6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x766fd0*/
   {
     (**v3)(v3, 3); /*0x766fdf*/
@@ -448,7 +448,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(unsigned int * Bl
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x767083*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<rc_ptr<WorldDominationTour::GameOption>>::`vftable'; /*0x767086*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x767086*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x767090*/
   {
     (**v3)(v3, 3); /*0x76709f*/
@@ -469,7 +469,7 @@ int Conflict_WorldDominationTour_12::Constructor_3()
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x7670d3*/
-  *this = (Conflict_WorldDominationTour)&rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x7670d8*/
+  *this = (Conflict_WorldDominationTour)&vt_rc_ptr; /*0x7670d8*/
   return this; /*0x7670e0*/
 
 }

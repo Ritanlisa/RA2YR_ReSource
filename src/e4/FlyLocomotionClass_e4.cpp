@@ -44,8 +44,8 @@ int FlyLocomotionClass::LocomotionClass()
   this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
   this->IsElevating = 0; /*0x4cca09*/
-  *(unsigned int *)this->LocomotionClass = &FlyLocomotionClass::`vftable'; /*0x4cca0c*/
-  *(unsigned int *)&this->LocomotionClass[4] = &FlyLocomotionClass::`vftable'; /*0x4cca12*/
+  *(unsigned int *)this->LocomotionClass = &vt_FlyLocomotionClass; /*0x4cca0c*/
+  *(unsigned int *)&this->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4cca12*/
   this->XYZ2[2] = v2; /*0x4cca1b*/
   return (int)this->LocomotionClass; /*0x4cca1e*/
 
@@ -71,11 +71,11 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( a1->?->? ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v11, 0, 0); /*0x4cfea2*/
-  *(unsigned int *)v11.__pad_0 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfeb7*/
+  *(unsigned int *)v11.__pad_0 = &vt_DynamicVectorClass; /*0x4cfeb7*/
   v11.ObjectVector_field_0x14 = 10; /*0x4cfebb*/
   v11.ObjectVector_field_0x10 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  *(unsigned int *)v10.__pad_0 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfecd*/
+  *(unsigned int *)v10.__pad_0 = &vt_DynamicVectorClass; /*0x4cfecd*/
   v10.ObjectVector_field_0x14 = 10; /*0x4cfed3*/
   v10.ObjectVector_field_0x10 = 0; /*0x4cfed7*/
   if ( !*(unsigned int *)&dword_A8B238 /*0x4cfeef*/
@@ -160,13 +160,13 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   vtable0[242](*(unsigned int *)(v8 + 4 * v7)); /*0x4d011b*/
 LABEL_45:
-  *(unsigned int *)v10.__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0121*/
+  *(unsigned int *)v10.__pad_0 = &vt_VectorClass; /*0x4d0121*/
   if ( v10.ObjectVector_field_0x04 && BYTE1(v10.ObjectVector_field_0x0C) ) /*0x4d0136*/
   {
     __3_YAXPAX_Z((void *)v10.ObjectVector_field_0x04); /*0x4d0139*/
     v10.ObjectVector_field_0x04 = 0; /*0x4d0141*/
   }
-  *(unsigned int *)v11.__pad_0 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0149*/
+  *(unsigned int *)v11.__pad_0 = &vt_VectorClass; /*0x4d0149*/
   BYTE1(v10.ObjectVector_field_0x0C) = 0; /*0x4d0150*/
   v10.ObjectVector_field_0x08 = 0; /*0x4d0154*/
   if ( v11.ObjectVector_field_0x04 ) /*0x4d0159*/
@@ -202,8 +202,8 @@ int FlyLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x4cfcd6*/
     {
-      *(unsigned int *)a1->LocomotionClass = &FlyLocomotionClass::`vftable'; /*0x4cfcd8*/
-      *(unsigned int *)&a1->LocomotionClass[4] = &FlyLocomotionClass::`vftable'; /*0x4cfcde*/
+      *(unsigned int *)a1->LocomotionClass = &vt_FlyLocomotionClass; /*0x4cfcd8*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4cfcde*/
     }
   }
   return result; /*0x4cfce5*/
@@ -224,8 +224,8 @@ namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->LocomotionClass = &FlyLocomotionClass::`vftable'; /*0x4d03a3*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &FlyLocomotionClass::`vftable'; /*0x4d03a9*/
+  *(unsigned int *)Block->LocomotionClass = &vt_FlyLocomotionClass; /*0x4d03a3*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4d03a9*/
   LocomotionClass::Construct((LocomotionClass *)Block); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     __3_YAXPAX_Z(Block); /*0x4d03bd*/

@@ -25,7 +25,7 @@
 PageUserCommandClass::PageUserCommandClass()
 {
 
-  *(unsigned int *)this->CommandClass = &PageUserCommandClass::`vftable'; /*0x537dd2*/
+  *(unsigned int *)this->CommandClass = &vt_PageUserCommandClass; /*0x537dd2*/
   return this->CommandClass; /*0x537dd8*/
 
 }

@@ -42,10 +42,10 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 10) = 0; /*0x43a35f*/
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
   *((unsigned int *)this + 12) = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x43a372*/
-  *(unsigned int *)this->__pad_0 = &NeuronClass::`vftable'; /*0x43a375*/
-  this->NeuronClass_field_0x04 = (int)&NeuronClass::`vftable'; /*0x43a37b*/
-  this->NeuronClass_field_0x08 = (int)&NeuronClass::`vftable'; /*0x43a382*/
-  this->NeuronClass_field_0x0C = (int)&NeuronClass::`vftable'; /*0x43a389*/
+  *(unsigned int *)this->__pad_0 = &vt_NeuronClass; /*0x43a375*/
+  this->NeuronClass_field_0x04 = (int)&vt_NeuronClass; /*0x43a37b*/
+  this->NeuronClass_field_0x08 = (int)&vt_NeuronClass; /*0x43a382*/
+  this->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a389*/
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) < g_BuildingLoadQueue_Array.? /*0x43a3c5*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0))) || !g_BuildingLoadQueue_Array.?)
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2)) > 0
@@ -80,10 +80,10 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   int v4; // eax
   unsigned (unsigned int)(int)* v6;
 
-  *(unsigned int *)Block->__pad_0 = &NeuronClass::`vftable'; /*0x43a9cd*/
-  Block->NeuronClass_field_0x04 = (int)&NeuronClass::`vftable'; /*0x43a9d3*/
-  Block->NeuronClass_field_0x08 = (int)&NeuronClass::`vftable'; /*0x43a9da*/
-  Block->NeuronClass_field_0x0C = (int)&NeuronClass::`vftable'; /*0x43a9e1*/
+  *(unsigned int *)Block->__pad_0 = &vt_NeuronClass; /*0x43a9cd*/
+  Block->NeuronClass_field_0x04 = (int)&vt_NeuronClass; /*0x43a9d3*/
+  Block->NeuronClass_field_0x08 = (int)&vt_NeuronClass; /*0x43a9da*/
+  Block->NeuronClass_field_0x0C = (int)&vt_NeuronClass; /*0x43a9e1*/
   v6 = Block; /*0x43a9ef*/
   v3 = (*(int (**)(int *, NeuronClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x43a9f3*/
          &g_BuildingLoadQueue_Array.LightVisibility,
@@ -273,7 +273,7 @@ VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x43acb3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<NeuronClass *>::`vftable'; /*0x43acb6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x43acb6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x43acc0*/
   {
     __3_YAXPAX_Z(v3); /*0x43acc8*/

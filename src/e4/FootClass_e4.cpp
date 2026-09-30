@@ -47,10 +47,10 @@ AbstractClass * FootClass::Destruct()
   FootClass *v11; // [esp+8h] [ebp-4h] BYREF
 
   team = (int *)this->team; /*0x4d3597*/
-  this->TechnoClass = &FootClass::`vftable'; /*0x4d359d*/
-  this->? = &FootClass::`vftable'; /*0x4d35a5*/
-  this->? = &FootClass::`vftable'; /*0x4d35ac*/
-  this->? = &FootClass::`vftable'; /*0x4d35b3*/
+  this->TechnoClass = &vt_FootClass; /*0x4d359d*/
+  this->? = &vt_FootClass; /*0x4d35a5*/
+  this->? = &vt_FootClass; /*0x4d35ac*/
+  this->? = &vt_FootClass; /*0x4d35b3*/
   if ( team && byte_A8E9A0 ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(team, (int)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
@@ -81,7 +81,7 @@ AbstractClass * FootClass::Destruct()
   if ( v7 ) /*0x4d368b*/
     (*(void (**)(int))(*(unsigned int *)v7 + 8))(this-((unsigned int *)(>locomotor))[0]); /*0x4d3690*/
   v8 = *(void **)this->__pad_5B0; /*0x4d3693*/
-  this->FootClass_field_abstract_array_5AC[0] = (int)&VectorClass<AbstractClass *>::`vftable'; /*0x4d36a0*/
+  this->FootClass_field_abstract_array_5AC[0] = (int)&vt_VectorClass; /*0x4d36a0*/
   if ( v8 && this-((unsigned int *)(>__pad_5B0))[9] ) /*0x4d36a8*/
   {
     __3_YAXPAX_Z(v8); /*0x4d36b1*/
@@ -90,7 +90,7 @@ AbstractClass * FootClass::Destruct()
   this-((unsigned int *)(>__pad_5B0))[9] = 0; /*0x4d36bf*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_5B0))[4] = 0; /*0x4d36c5*/
   v9 = *(void **)this->__pad_58C; /*0x4d36cb*/
-  this->unknownAbstractArray588[0] = (int)&VectorClass<AbstractClass *>::`vftable'; /*0x4d36d1*/
+  this->unknownAbstractArray588[0] = (int)&vt_VectorClass; /*0x4d36d1*/
   if ( v9 && this-((unsigned int *)(>__pad_58C))[9] ) /*0x4d36dc*/
   {
     __3_YAXPAX_Z(v9); /*0x4d36e5*/

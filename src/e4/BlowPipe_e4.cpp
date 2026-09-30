@@ -624,7 +624,7 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ed93*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x63ed96*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ed96*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x63eda0*/
   {
     __3_YAXPAX_Z(v3); /*0x63eda8*/
@@ -647,7 +647,7 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ede3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x63ede6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ede6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x63edf0*/
   {
     __3_YAXPAX_Z(v3); /*0x63edf8*/
@@ -670,7 +670,7 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ee33*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<EventClass *>::`vftable'; /*0x63ee36*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ee36*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x63ee40*/
   {
     __3_YAXPAX_Z(v3); /*0x63ee48*/
@@ -693,7 +693,7 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ee83*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<EventClass *>::`vftable'; /*0x63ee86*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ee86*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x63ee90*/
   {
     __3_YAXPAX_Z(v3); /*0x63ee98*/
@@ -716,7 +716,7 @@ DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x63ef23*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<PlanningTokenClass *>::`vftable'; /*0x63ef26*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x63ef26*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x63ef30*/
   {
     __3_YAXPAX_Z(v3); /*0x63ef38*/

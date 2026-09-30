@@ -40,7 +40,7 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
   this->DetailBufferZoneWidth = a2; /*0x538b3e*/
   LOBYTE(this->AmmoCrateDamage) = 1; /*0x538b41*/
   BYTE1(this->AmmoCrateDamage) = 0; /*0x538b45*/
-  this->DetailMinFrameRateNormal = (int)&VectorClass<CCINIClass *>::`vftable'; /*0x538b48*/
+  this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x538b48*/
   if ( a2 ) /*0x538b4e*/
   {
     if ( a3 ) /*0x538b56*/
@@ -399,7 +399,7 @@ void RulesClass::readMaximums()
   void *DetailMinFrameRateMovie; // eax
 
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x679fa6*/
-  this->DetailMinFrameRateNormal = (int)&VectorClass<BuildingTypeClass const *>::`vftable'; /*0x679fa9*/
+  this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x679fa9*/
   if ( DetailMinFrameRateMovie && BYTE1(this->AmmoCrateDamage) ) /*0x679fb3*/
   {
     __3_YAXPAX_Z(DetailMinFrameRateMovie); /*0x679fb9*/
@@ -416,7 +416,7 @@ void RulesClass::readInfantryTypes()
   void *DetailMinFrameRateMovie; // eax
 
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x679fd6*/
-  this->DetailMinFrameRateNormal = (int)&VectorClass<UnitTypeClass const *>::`vftable'; /*0x679fd9*/
+  this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x679fd9*/
   if ( DetailMinFrameRateMovie && BYTE1(this->AmmoCrateDamage) ) /*0x679fe3*/
   {
     __3_YAXPAX_Z(DetailMinFrameRateMovie); /*0x679fe9*/
@@ -433,7 +433,7 @@ void RulesClass::readCountries()
   void *DetailMinFrameRateMovie; // eax
 
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x67a006*/
-  this->DetailMinFrameRateNormal = (int)&VectorClass<AircraftTypeClass const *>::`vftable'; /*0x67a009*/
+  this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67a009*/
   if ( DetailMinFrameRateMovie && BYTE1(this->AmmoCrateDamage) ) /*0x67a013*/
   {
     __3_YAXPAX_Z(DetailMinFrameRateMovie); /*0x67a019*/
@@ -450,7 +450,7 @@ void RulesClass::readVehicleTypes()
   void *DetailMinFrameRateMovie; // eax
 
   DetailMinFrameRateMovie = (void *)this->DetailMinFrameRateMovie; /*0x67a066*/
-  this->DetailMinFrameRateNormal = (int)&VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67a069*/
+  this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67a069*/
   if ( DetailMinFrameRateMovie && BYTE1(this->AmmoCrateDamage) ) /*0x67a073*/
   {
     __3_YAXPAX_Z(DetailMinFrameRateMovie); /*0x67a079*/
@@ -608,7 +608,7 @@ unsigned int * RulesClass::readParticles()
   BYTE1(this->AmmoCrateDamage) = 0; /*0x67a8be*/
   this->SmallVisceroid = (UnitTypeClass *)10; /*0x67a8c1*/
   this->LargeVisceroid = 0; /*0x67a8c8*/
-  this->DetailMinFrameRateNormal = (int)&TypeList<TerrainTypeClass const *>::`vftable'; /*0x67a8cb*/
+  this->DetailMinFrameRateNormal = (int)&vt_TypeList; /*0x67a8cb*/
   return &this->DetailMinFrameRateNormal; /*0x67a8d1*/
 
 }
@@ -671,7 +671,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     RulesClass::readIQ((RulesClass *)&v17, 0, 0); /*0x67be11*/
     v22 = 10; /*0x67be1a*/
     v21 = 0; /*0x67be28*/
-    v17 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67be2c*/
+    v17 = &vt_TypeList; /*0x67be2c*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67be3e*/
     {
       if ( !*i ) /*0x67be40*/
@@ -691,10 +691,10 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67beb0*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67beb3*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67beb7*/
-    *(unsigned int *)a1 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67beba*/
+    *(unsigned int *)a1 = &vt_VectorClass; /*0x67beba*/
     System_Load_67BFA0((ObjectClass *)a1, &v17); /*0x67bec0*/
-    *(unsigned int *)a1 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67bec5*/
-    v17 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67becb*/
+    *(unsigned int *)a1 = &vt_TypeList; /*0x67bec5*/
+    v17 = &vt_VectorClass; /*0x67becb*/
     v9 = v22; /*0x67bed7*/
     *(unsigned int *)(a1 + 16) = v21; /*0x67bedb*/
     v10 = Block; /*0x67bede*/
@@ -712,7 +712,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     *(unsigned int *)(a1 + 8) = 0; /*0x67bf1c*/
     *(unsigned char *)(a1 + 12) = 1; /*0x67bf1f*/
     *(unsigned char *)(a1 + 13) = 0; /*0x67bf23*/
-    *(unsigned int *)a1 = &VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67bf26*/
+    *(unsigned int *)a1 = &vt_VectorClass; /*0x67bf26*/
     if ( (unsigned int *)a1 != a5 ) /*0x67bf2c*/
     {
       TypeList_cptr_TerrainTypeClass::TryFreeAndClear((_VectorClass_PBVTerrainTypeClass *)a1); /*0x67bf30*/
@@ -746,7 +746,7 @@ void * RulesClass::LoadTypeList(int a1, unsigned char *** edx0, INIClass * aP1, 
     }
     *(unsigned int *)(a1 + 16) = a5[4]; /*0x67bf83*/
     *(unsigned int *)(a1 + 20) = a5[5]; /*0x67bf89*/
-    *(unsigned int *)a1 = &TypeList<TerrainTypeClass const *>::`vftable'; /*0x67bf8c*/
+    *(unsigned int *)a1 = &vt_TypeList; /*0x67bf8c*/
   }
   return (void *)a1; /*0x67bf02*/
 
@@ -759,7 +759,7 @@ unsigned int * RulesClass::readIQ(int a2, int a3)
   this->DetailBufferZoneWidth = a2; /*0x67c43e*/
   LOBYTE(this->AmmoCrateDamage) = 1; /*0x67c441*/
   BYTE1(this->AmmoCrateDamage) = 0; /*0x67c445*/
-  this->DetailMinFrameRateNormal = (int)&VectorClass<TerrainTypeClass const *>::`vftable'; /*0x67c448*/
+  this->DetailMinFrameRateNormal = (int)&vt_VectorClass; /*0x67c448*/
   if ( a2 ) /*0x67c44e*/
   {
     if ( a3 ) /*0x67c456*/

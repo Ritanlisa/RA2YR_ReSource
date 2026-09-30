@@ -379,7 +379,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
       if ( aP0 != (gamemd::FootClass *)(-1416) ) /*0x4db413*/
       {
         AbstractClassVector::Construct((unsigned int *)(aP0 + 1416), 0, 0); /*0x4db419*/
-        *(unsigned int *)v6 = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4db41e*/
+        *(unsigned int *)v6 = &vt_DynamicVectorClass; /*0x4db41e*/
         *(unsigned int *)(aP0 + 1436) = 10; /*0x4db424*/
         *(unsigned int *)(aP0 + 1432) = 0; /*0x4db42b*/
       }
@@ -398,7 +398,7 @@ LABEL_16:
           if ( aP0 != (gamemd::FootClass *)(-1452) ) /*0x4db4c1*/
           {
             AbstractClassVector::Construct((unsigned int *)(aP0 + 1452), 0, 0); /*0x4db4c7*/
-            *(unsigned int *)v12 = &DynamicVectorClass<AbstractClass *>::`vftable'; /*0x4db4cc*/
+            *(unsigned int *)v12 = &vt_DynamicVectorClass; /*0x4db4cc*/
             *(unsigned int *)(aP0 + 1472) = 10; /*0x4db4d2*/
             *(unsigned int *)(aP0 + 1468) = 0; /*0x4db4d9*/
           }
@@ -986,10 +986,10 @@ ObjectClass * * ObjectClass::Dtor()
   ObjectClass *v10; // [esp+10h] [ebp-4h] BYREF
 
   attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f3b84*/
-  this->vtable0 = (int)&ObjectClass::`vftable'; /*0x5f3b87*/
-  this->vtable1 = (int)&ObjectClass::`vftable'; /*0x5f3b8f*/
-  this->vtable2 = (int)&ObjectClass::`vftable'; /*0x5f3b96*/
-  this->vtable3 = (int)&ObjectClass::`vftable'; /*0x5f3b9d*/
+  this->vtable0 = (int)&vt_ObjectClass; /*0x5f3b87*/
+  this->vtable1 = (int)&vt_ObjectClass; /*0x5f3b8f*/
+  this->vtable2 = (int)&vt_ObjectClass; /*0x5f3b96*/
+  this->vtable3 = (int)&vt_ObjectClass; /*0x5f3b9d*/
   if ( attachedBomb ) /*0x5f3ba4*/
     ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f3ba6*/
   v10 = this; /*0x5f3bbb*/

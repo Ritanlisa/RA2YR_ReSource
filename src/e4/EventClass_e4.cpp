@@ -659,7 +659,7 @@ DynamicVector * EventClass::executeAction(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x40bc13*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<BombClass *>::`vftable'; /*0x40bc16*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40bc16*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40bc20*/
   {
     __3_YAXPAX_Z(v3); /*0x40bc28*/
@@ -683,7 +683,7 @@ unsigned int * EventClass::resetEvent(BuildingClass * aP1, BuildingClass * aP2)
   this->EventClass_field_0x8 = (void *)aP1; /*0x40bd0e*/
   LOBYTE(this->EventClass_field_0xC) = 1; /*0x40bd11*/
   BYTE1(this->EventClass_field_0xC) = 0; /*0x40bd15*/
-  this->EventClass_field_0x0 = (int)&VectorClass<TechnoClass *>::`vftable'; /*0x40bd18*/
+  this->EventClass_field_0x0 = (int)&vt_VectorClass; /*0x40bd18*/
   if ( aP1 ) /*0x40bd1e*/
   {
     if ( aP2 ) /*0x40bd26*/
@@ -704,7 +704,7 @@ namespace gamemd {
 void EventClass::finalizeEvent()
 {
 
-  dword_87F658 = (int)&VectorClass<CommandClass const *>::`vftable'; /*0x40be18*/
+  dword_87F658 = (int)&vt_VectorClass; /*0x40be18*/
   if ( dword_87F65C && byte_87F665 ) /*0x40be2c*/
   {
     __3_YAXPAX_Z(dword_87F65C); /*0x40be2f*/
@@ -724,7 +724,7 @@ VectorClass_flat * EventClass::queueEvent(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x40c113*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<CommandClass const *>::`vftable'; /*0x40c116*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40c116*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40c120*/
   {
     __3_YAXPAX_Z(v3); /*0x40c128*/

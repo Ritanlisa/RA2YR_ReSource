@@ -33,8 +33,8 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x5b19b6*/
     {
-      *(unsigned int *)a1->LocomotionClass = &MechLocomotionClass::`vftable'; /*0x5b19b8*/
-      *(unsigned int *)&a1->LocomotionClass[4] = &MechLocomotionClass::`vftable'; /*0x5b19be*/
+      *(unsigned int *)a1->LocomotionClass = &vt_MechLocomotionClass; /*0x5b19b8*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &vt_MechLocomotionClass; /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/
@@ -55,8 +55,8 @@ namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->LocomotionClass = &MechLocomotionClass::`vftable'; /*0x5b1b53*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &MechLocomotionClass::`vftable'; /*0x5b1b59*/
+  *(unsigned int *)Block->LocomotionClass = &vt_MechLocomotionClass; /*0x5b1b53*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &vt_MechLocomotionClass; /*0x5b1b59*/
   LocomotionClass::Construct((LocomotionClass *)Block); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     __3_YAXPAX_Z(Block); /*0x5b1b6d*/

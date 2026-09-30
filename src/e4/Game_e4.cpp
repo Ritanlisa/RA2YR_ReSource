@@ -490,7 +490,7 @@ int Game::MakeScreenshot(int a1)
           sprintf(Buffer, "SCRN%04d.pcx", ++v6); /*0x537d10*/
           v7 = CCFileClass::Construct(&v19, Buffer); /*0x537d27*/
           v8 = (*(int (**)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0); /*0x537d3b*/
-          *(unsigned int *)v19.CDFileClass = &CCFileClass::`vftable'; /*0x537d3d*/
+          *(unsigned int *)v19.CDFileClass = &vt_CCFileClass; /*0x537d3d*/
           v21 = 0; /*0x537d48*/
           Vector::Clear((int)v20); /*0x537d4f*/
           *(unsigned int *)v19.CDFileClass = &off_7E1668; /*0x537d5b*/
@@ -499,7 +499,7 @@ int Game::MakeScreenshot(int a1)
         while ( v8 ); /*0x537d6d*/
         CCFileClass::Construct(&v16, Buffer); /*0x537d7b*/
         CompressScreenshot((int *)v16.CDFileClass, (int *)g_DSurface_Hidden, &FileSystem_TEMPERAT_PAL); /*0x537d8f*/
-        *(unsigned int *)v16.CDFileClass = &CCFileClass::`vftable'; /*0x537d9b*/
+        *(unsigned int *)v16.CDFileClass = &vt_CCFileClass; /*0x537d9b*/
         v18 = 0; /*0x537da3*/
         Vector::Clear((int)v17); /*0x537daa*/
         *(unsigned int *)v16.CDFileClass = &off_7E1668; /*0x537db3*/
@@ -705,7 +705,7 @@ AbstractClass * * Game::BuildGameSetupPacket()
                                   * (*(unsigned char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 380)
                                    & 1));
   Stream::WriteBlock((int *)&unk_A8EA70, (int)v11, 250, 1); /*0x5ba91d*/
-  *(unsigned int *)v13.CDFileClass = &CCFileClass::`vftable'; /*0x5ba929*/
+  *(unsigned int *)v13.CDFileClass = &vt_CCFileClass; /*0x5ba929*/
   v15 = 0; /*0x5ba934*/
   Vector::Clear((int)v14); /*0x5ba93f*/
   *(unsigned int *)v13.CDFileClass = &off_7E1668; /*0x5ba94b*/
@@ -1074,7 +1074,7 @@ unsigned int * Game::LockMutex(IUnknown * aP1, IUnknown * aP2)
   *(unsigned int *)this->__pad_8 = aP1; /*0x67c3ae*/
   this->__pad_8[4] = 1; /*0x67c3b1*/
   this->__pad_8[5] = 0; /*0x67c3b5*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<SmudgeTypeClass const *>::`vftable'; /*0x67c3b8*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x67c3b8*/
   if ( aP1 ) /*0x67c3be*/
   {
     if ( aP2 ) /*0x67c3c6*/

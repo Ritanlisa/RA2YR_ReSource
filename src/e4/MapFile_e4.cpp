@@ -23,7 +23,7 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
   int v8; // ebp
 
   v3 = *(unsigned int *)&Block->m_1[3]; /*0x69d523*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<Wstring>::`vftable'; /*0x69d526*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x69d526*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x69d530*/
   {
     v4 = *(unsigned int *)(v3 - 4); /*0x69d53b*/
@@ -61,7 +61,7 @@ void MapFile::Constructor( int a2, int a3)
   this->MapFile_field_0x08 = a2; /*0x69d77e*/
   LOBYTE(this->MapFile_field_0x0C) = 1; /*0x69d781*/
   BYTE1(this->MapFile_field_0x0C) = 0; /*0x69d785*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<enum DiskID>::`vftable'; /*0x69d788*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
     if ( a3 ) /*0x69d796*/

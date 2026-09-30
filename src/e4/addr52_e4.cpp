@@ -3105,7 +3105,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   void *v7; // [esp-8h] [ebp-10h]
 
   v2 = (void *)*((unsigned int *)this + 3); /*0x52aaf4*/
-  *(unsigned int *)this = &INIClass::INIEntry::`vftable'; /*0x52aaf7*/
+  *(unsigned int *)this = &INIClass::vt_INIEntry; /*0x52aaf7*/
   free(v2); /*0x52aafe*/
   v7 = (void *)*((unsigned int *)this + 4); /*0x52ab08*/
   *((unsigned int *)this + 3) = 0; /*0x52ab09*/
@@ -3125,7 +3125,7 @@ void E4Recv_52AAF0::sub_52AAF0()
   }
   free(*((void **)this + 6)); /*0x52ab47*/
   *((unsigned int *)this + 6) = 0; /*0x52ab51*/
-  *(unsigned int *)this = &GenericNode::`vftable'; /*0x52ab54*/
+  *(unsigned int *)this = &vt_GenericNode; /*0x52ab54*/
   if ( this ) /*0x52ab5a*/
   {
     v5 = *((unsigned int *)this + 1); /*0x52ab5c*/

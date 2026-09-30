@@ -91,11 +91,11 @@ ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
 
   v3 = *((unsigned int *)Block + 93); /*0x488f05*/
   v4 = (char *)Block + 372; /*0x488f0b*/
-  *(unsigned int *)Block->__pad_0 = &ColorListClass::`vftable'; /*0x488f13*/
+  *(unsigned int *)Block->__pad_0 = &vt_ColorListClass; /*0x488f13*/
   (*(void (**)(char *))(v3 + 12))((char *)Block + 372); /*0x488f19*/
   *((unsigned int *)Block + 100) = 0; /*0x488f1e*/
   v5 = (void *)*((unsigned int *)v4 + 1); /*0x488f24*/
-  *(unsigned int *)v4 = &VectorClass<int>::`vftable'; /*0x488f29*/
+  *(unsigned int *)v4 = &vt_VectorClass; /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
     __3_YAXPAX_Z(v5); /*0x488f37*/

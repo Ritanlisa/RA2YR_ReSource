@@ -865,7 +865,7 @@ int BinkMovie::InitKeyframeTracking(char * Source)
   if ( !(uint8_t)CCFileClass::Open(&v8, 0) ) /*0x6c9b8a*/
   {
 LABEL_6:
-    *(unsigned int *)v8.CDFileClass = &CCFileClass::`vftable'; /*0x6c9be2*/
+    *(unsigned int *)v8.CDFileClass = &vt_CCFileClass; /*0x6c9be2*/
     v10 = 0; /*0x6c9bee*/
     Vector::Clear((int)v9); /*0x6c9bf5*/
     *(unsigned int *)v8.CDFileClass = &off_7E1668; /*0x6c9bfe*/
@@ -876,7 +876,7 @@ LABEL_6:
   v6[2] = 0; /*0x6c9ba0*/
   v6[3] = (int)&v8; /*0x6c9ba4*/
   v7 = 0; /*0x6c9ba8*/
-  v6[0] = (int)&FileStraw::`vftable'; /*0x6c9bac*/
+  v6[0] = (int)&vt_FileStraw; /*0x6c9bac*/
   BinkMovie::VtableDispatch(&v11, (int)v6); /*0x6c9bb4*/
   v3 = ParseMovieSubtitles(v11.__pad_0, Source); /*0x6c9bc1*/
   *(unsigned int *)this->__pad_0 = v3; /*0x6c9bc8*/
@@ -888,7 +888,7 @@ LABEL_6:
   }
   nullsub_40(v5); /*0x6c9c19*/
   FileStraw::Destructor((int)v6); /*0x6c9c22*/
-  *(unsigned int *)v8.CDFileClass = &CCFileClass::`vftable'; /*0x6c9c2b*/
+  *(unsigned int *)v8.CDFileClass = &vt_CCFileClass; /*0x6c9c2b*/
   v10 = 0; /*0x6c9c33*/
   Vector::Clear((int)v9); /*0x6c9c3a*/
   *(unsigned int *)v8.CDFileClass = &off_7E1668; /*0x6c9c43*/

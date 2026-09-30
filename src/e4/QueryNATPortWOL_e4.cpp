@@ -15,7 +15,7 @@ unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
   this->Capacity = a2; /*0x7aecde*/
   this->IsInitialized = 1; /*0x7aece1*/
   this->IsAllocated = 0; /*0x7aece5*/
-  this->vtable0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7aece8*/
+  this->vtable0 = &vt_VectorClass; /*0x7aece8*/
   if ( a2 ) /*0x7aecee*/
   {
     if ( a3 ) /*0x7aecf6*/

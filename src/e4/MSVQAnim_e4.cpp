@@ -63,7 +63,7 @@ MSVQAnim * MSVQAnim::QueryInterface(ObjectClass ** Block, char a2)
   void *v5; // edi
 
   v3 = (void (***)(unsigned int, int))*((unsigned int *)Block + 10); /*0x5cecb3*/
-  *(unsigned int *)Block->__pad_0 = &MSVQAnim::`vftable'; /*0x5cecb6*/
+  *(unsigned int *)Block->__pad_0 = &vt_MSVQAnim; /*0x5cecb6*/
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/
   MSVQAnim_field_0x1C = (MovieContext *)Block->MSVQAnim_field_0x1C; /*0x5cecc6*/
@@ -77,7 +77,7 @@ MSVQAnim * MSVQAnim::QueryInterface(ObjectClass ** Block, char a2)
       __3_YAXPAX_Z(v5); /*0x5cece2*/
     }
   }
-  *(unsigned int *)Block->__pad_0 = &MSAnim::`vftable'; /*0x5cecee*/
+  *(unsigned int *)Block->__pad_0 = &vt_MSAnim; /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
     __3_YAXPAX_Z(Block); /*0x5cecfa*/
   return Block->__pad_0; /*0x5ced04*/

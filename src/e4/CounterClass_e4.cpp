@@ -15,7 +15,7 @@ CounterClass * CounterClass::QueryInterface(unsigned int * Block, char a2)
   void *count; // eax
 
   count = (void *)Block->count; /*0x49fce3*/
-  Block->items = &VectorClass<int>::`vftable'; /*0x49fce6*/
+  Block->items = &vt_VectorClass; /*0x49fce6*/
   if ( count && *((unsigned char *)Block + 13) ) /*0x49fcf0*/
   {
     __3_YAXPAX_Z(count); /*0x49fcf8*/

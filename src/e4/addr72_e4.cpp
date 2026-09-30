@@ -1565,7 +1565,7 @@ unsigned int * E4Recv_720960::sub_720960()
   this->? = 0; /*0x720982*/
   LOBYTE(this->?) = 1; /*0x720985*/
   BYTE1(this->?) = 0; /*0x720989*/
-  this->? = (int)&DynamicVectorClass<ThemeControl *>::`vftable'; /*0x72098c*/
+  this->? = (int)&vt_DynamicVectorClass; /*0x72098c*/
   this->owningHouseIndex = 10; /*0x720993*/
   this->occupant = 0; /*0x72099a*/
   this->fallRate = 0; /*0x72099d*/

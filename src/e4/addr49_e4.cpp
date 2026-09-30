@@ -228,7 +228,7 @@ int E4Recv_490400::sub_490400()
   int result; // eax
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &ConvertClass::`vftable'; /*0x490404*/
+  *(unsigned int *)this = &vt_ConvertClass; /*0x490404*/
   COMClass::RegisterAll((unsigned int *)this); /*0x49040a*/
   __3_YAXPAX_Z(*(void **)((char *)this + 368)); /*0x490416*/
   v2 = *(void **)((char *)this + 376); /*0x49041b*/
@@ -1951,7 +1951,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   {
 LABEL_44:
     HashTable::DestroyHashTableINIClass(v24); /*0x49c553*/
-    v29[0] = &CCFileClass::`vftable'; /*0x49c563*/
+    v29[0] = &vt_CCFileClass; /*0x49c563*/
     v31 = 0; /*0x49c56e*/
     Vector::Clear((int)v30); /*0x49c575*/
     v29[0] = &off_7E1668; /*0x49c581*/
@@ -2008,7 +2008,7 @@ LABEL_44:
   }
   *((unsigned char *)this + 108) = 1; /*0x49c505*/
   HashTable::DestroyHashTableINIClass(v24); /*0x49c509*/
-  v29[0] = &CCFileClass::`vftable'; /*0x49c515*/
+  v29[0] = &vt_CCFileClass; /*0x49c515*/
   v31 = 0; /*0x49c520*/
   Vector::Clear((int)v30); /*0x49c527*/
   v29[0] = &off_7E1668; /*0x49c533*/
@@ -2323,7 +2323,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
     CCFileClass::Reset(v17); /*0x49d418*/
 LABEL_5:
     HashTable::DestroyHashTableINIClass(v20); /*0x49d41d*/
-    v17[0] = &CCFileClass::`vftable'; /*0x49d42a*/
+    v17[0] = &vt_CCFileClass; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
     Vector::Clear((int)v18); /*0x49d436*/
     v17[0] = &off_7E1668; /*0x49d43f*/
@@ -2403,7 +2403,7 @@ LABEL_5:
   if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   HashTable::DestroyHashTableINIClass(v20); /*0x49d644*/
-  v17[0] = &CCFileClass::`vftable'; /*0x49d64d*/
+  v17[0] = &vt_CCFileClass; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
   Vector::Clear((int)v18); /*0x49d659*/
   v17[0] = &off_7E1668; /*0x49d662*/
@@ -2611,7 +2611,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char * Block, char a2)
         DeleteAndZero((ObjectClass *)(v7 + 7)); /*0x49e7fc*/
         DeleteAndZero((ObjectClass *)(v7 + 6)); /*0x49e804*/
         v9 = (void *)*v7; /*0x49e809*/
-        *(v7 - 1) = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e80b*/
+        *(v7 - 1) = (int)&vt_VectorClassDynamicVectorClass; /*0x49e80b*/
         if ( v9 && *((unsigned char *)v7 + 9) ) /*0x49e812*/
         {
           __3_YAXPAX_Z(v9); /*0x49e818*/
@@ -2620,7 +2620,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char * Block, char a2)
         *((unsigned char *)v7 + 9) = 0; /*0x49e822*/
         v7[1] = 0; /*0x49e825*/
         v10 = (void *)*(v7 - 6); /*0x49e828*/
-        *(v7 - 7) = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e82b*/
+        *(v7 - 7) = (int)&vt_VectorClassDynamicVectorClass; /*0x49e82b*/
         if ( v10 && *((unsigned char *)v7 - 15) ) /*0x49e832*/
         {
           __3_YAXPAX_Z(v10); /*0x49e838*/
@@ -2642,7 +2642,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char * Block, char a2)
     DeleteAndZero((ObjectClass *)&Block->ambientSoundController[3]); /*0x49e86d*/
     DeleteAndZero((ObjectClass *)&Block->ambientSoundController[2]); /*0x49e875*/
     fallRate = (void *)Block->fallRate; /*0x49e87a*/
-    Block->owningHouseIndex = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e886*/
+    Block->owningHouseIndex = (int)&vt_VectorClassDynamicVectorClass; /*0x49e886*/
     if ( fallRate && BYTE1(Block->attachedTag) ) /*0x49e88b*/
     {
       __3_YAXPAX_Z(fallRate); /*0x49e891*/
@@ -2651,7 +2651,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char * Block, char a2)
     BYTE1(Block->attachedTag) = 0; /*0x49e89c*/
     Block->nextObject = 0; /*0x49e89f*/
     abstractFlags = (void *)Block->?; /*0x49e8a2*/
-    Block->? = (int)&VectorClass<DynamicVectorClass<char *> *>::`vftable'; /*0x49e8a5*/
+    Block->? = (int)&vt_VectorClassDynamicVectorClass; /*0x49e8a5*/
     if ( abstractFlags && BYTE1(Block->?) ) /*0x49e8ac*/
     {
       __3_YAXPAX_Z(abstractFlags); /*0x49e8b2*/
@@ -5731,7 +5731,7 @@ namespace gamemd {
 BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499ca9*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499ca9*/
   if ( (a2 & 1) != 0 ) /*0x499caf*/
     __3_YAXPAX_Z(this); /*0x499cb2*/
   return this; /*0x499cbc*/
@@ -5744,7 +5744,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499d49*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499d49*/
   if ( (a2 & 1) != 0 ) /*0x499d4f*/
     __3_YAXPAX_Z(this); /*0x499d52*/
   return this; /*0x499d5c*/
@@ -5757,7 +5757,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499d69*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499d69*/
   if ( (a2 & 1) != 0 ) /*0x499d6f*/
     __3_YAXPAX_Z(this); /*0x499d72*/
   return this; /*0x499d7c*/
@@ -5770,7 +5770,7 @@ namespace gamemd {
 RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499d89*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499d89*/
   if ( (a2 & 1) != 0 ) /*0x499d8f*/
     __3_YAXPAX_Z(this); /*0x499d92*/
   return this; /*0x499d9c*/
@@ -5783,7 +5783,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499dc9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499dc9*/
   if ( (a2 & 1) != 0 ) /*0x499dcf*/
     __3_YAXPAX_Z(this); /*0x499dd2*/
   return this; /*0x499ddc*/
@@ -5796,7 +5796,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499de9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499de9*/
   if ( (a2 & 1) != 0 ) /*0x499def*/
     __3_YAXPAX_Z(this); /*0x499df2*/
   return this; /*0x499dfc*/
@@ -5809,7 +5809,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499e09*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e09*/
   if ( (a2 & 1) != 0 ) /*0x499e0f*/
     __3_YAXPAX_Z(this); /*0x499e12*/
   return this; /*0x499e1c*/
@@ -5822,7 +5822,7 @@ namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499e29*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e29*/
   if ( (a2 & 1) != 0 ) /*0x499e2f*/
     __3_YAXPAX_Z(this); /*0x499e32*/
   return this; /*0x499e3c*/
@@ -5835,7 +5835,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499e49*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e49*/
   if ( (a2 & 1) != 0 ) /*0x499e4f*/
     __3_YAXPAX_Z(this); /*0x499e52*/
   return this; /*0x499e5c*/
@@ -5848,7 +5848,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499e69*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e69*/
   if ( (a2 & 1) != 0 ) /*0x499e6f*/
     __3_YAXPAX_Z(this); /*0x499e72*/
   return this; /*0x499e7c*/
@@ -5861,7 +5861,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499e89*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499e89*/
   if ( (a2 & 1) != 0 ) /*0x499e8f*/
     __3_YAXPAX_Z(this); /*0x499e92*/
   return this; /*0x499e9c*/
@@ -5874,7 +5874,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499ea9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499ea9*/
   if ( (a2 & 1) != 0 ) /*0x499eaf*/
     __3_YAXPAX_Z(this); /*0x499eb2*/
   return this; /*0x499ebc*/
@@ -5887,7 +5887,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499ec9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499ec9*/
   if ( (a2 & 1) != 0 ) /*0x499ecf*/
     __3_YAXPAX_Z(this); /*0x499ed2*/
   return this; /*0x499edc*/
@@ -5900,7 +5900,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499ee9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499ee9*/
   if ( (a2 & 1) != 0 ) /*0x499eef*/
     __3_YAXPAX_Z(this); /*0x499ef2*/
   return this; /*0x499efc*/
@@ -5913,7 +5913,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x499f09*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x499f09*/
   if ( (a2 & 1) != 0 ) /*0x499f0f*/
     __3_YAXPAX_Z(this); /*0x499f12*/
   return this; /*0x499f1c*/
@@ -5926,7 +5926,7 @@ namespace gamemd {
 BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499f29*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499f29*/
   if ( (a2 & 1) != 0 ) /*0x499f2f*/
     __3_YAXPAX_Z(this); /*0x499f32*/
   return this; /*0x499f3c*/
@@ -5939,7 +5939,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499f49*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499f49*/
   if ( (a2 & 1) != 0 ) /*0x499f4f*/
     __3_YAXPAX_Z(this); /*0x499f52*/
   return this; /*0x499f5c*/
@@ -5952,7 +5952,7 @@ namespace gamemd {
 BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499f69*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499f69*/
   if ( (a2 & 1) != 0 ) /*0x499f6f*/
     __3_YAXPAX_Z(this); /*0x499f72*/
   return this; /*0x499f7c*/
@@ -5965,7 +5965,7 @@ namespace gamemd {
 BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499f89*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499f89*/
   if ( (a2 & 1) != 0 ) /*0x499f8f*/
     __3_YAXPAX_Z(this); /*0x499f92*/
   return this; /*0x499f9c*/
@@ -5978,7 +5978,7 @@ namespace gamemd {
 BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499fa9*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499fa9*/
   if ( (a2 & 1) != 0 ) /*0x499faf*/
     __3_YAXPAX_Z(this); /*0x499fb2*/
   return this; /*0x499fbc*/
@@ -5991,7 +5991,7 @@ namespace gamemd {
 BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499fc9*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499fc9*/
   if ( (a2 & 1) != 0 ) /*0x499fcf*/
     __3_YAXPAX_Z(this); /*0x499fd2*/
   return this; /*0x499fdc*/
@@ -6004,7 +6004,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499fe9*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499fe9*/
   if ( (a2 & 1) != 0 ) /*0x499fef*/
     __3_YAXPAX_Z(this); /*0x499ff2*/
   return this; /*0x499ffc*/
@@ -6017,7 +6017,7 @@ namespace gamemd {
 BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a009*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a009*/
   if ( (a2 & 1) != 0 ) /*0x49a00f*/
     __3_YAXPAX_Z(this); /*0x49a012*/
   return this; /*0x49a01c*/
@@ -6030,7 +6030,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a029*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a029*/
   if ( (a2 & 1) != 0 ) /*0x49a02f*/
     __3_YAXPAX_Z(this); /*0x49a032*/
   return this; /*0x49a03c*/
@@ -6043,7 +6043,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a049*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a049*/
   if ( (a2 & 1) != 0 ) /*0x49a04f*/
     __3_YAXPAX_Z(this); /*0x49a052*/
   return this; /*0x49a05c*/
@@ -6056,7 +6056,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a069*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a069*/
   if ( (a2 & 1) != 0 ) /*0x49a06f*/
     __3_YAXPAX_Z(this); /*0x49a072*/
   return this; /*0x49a07c*/
@@ -6069,7 +6069,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a089*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a089*/
   if ( (a2 & 1) != 0 ) /*0x49a08f*/
     __3_YAXPAX_Z(this); /*0x49a092*/
   return this; /*0x49a09c*/
@@ -6082,7 +6082,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a0a9*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a0a9*/
   if ( (a2 & 1) != 0 ) /*0x49a0af*/
     __3_YAXPAX_Z(this); /*0x49a0b2*/
   return this; /*0x49a0bc*/
@@ -6095,7 +6095,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a0c9*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a0c9*/
   if ( (a2 & 1) != 0 ) /*0x49a0cf*/
     __3_YAXPAX_Z(this); /*0x49a0d2*/
   return this; /*0x49a0dc*/
@@ -6108,7 +6108,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a0e9*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a0e9*/
   if ( (a2 & 1) != 0 ) /*0x49a0ef*/
     __3_YAXPAX_Z(this); /*0x49a0f2*/
   return this; /*0x49a0fc*/
@@ -6121,7 +6121,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a109*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a109*/
   if ( (a2 & 1) != 0 ) /*0x49a10f*/
     __3_YAXPAX_Z(this); /*0x49a112*/
   return this; /*0x49a11c*/
@@ -6134,7 +6134,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a129*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a129*/
   if ( (a2 & 1) != 0 ) /*0x49a12f*/
     __3_YAXPAX_Z(this); /*0x49a132*/
   return this; /*0x49a13c*/
@@ -6147,7 +6147,7 @@ namespace gamemd {
 BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a149*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a149*/
   if ( (a2 & 1) != 0 ) /*0x49a14f*/
     __3_YAXPAX_Z(this); /*0x49a152*/
   return this; /*0x49a15c*/
@@ -6160,7 +6160,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a169*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a169*/
   if ( (a2 & 1) != 0 ) /*0x49a16f*/
     __3_YAXPAX_Z(this); /*0x49a172*/
   return this; /*0x49a17c*/
@@ -6173,7 +6173,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x49a189*/
+  *(unsigned int *)this = &vt_Blitter; /*0x49a189*/
   if ( (a2 & 1) != 0 ) /*0x49a18f*/
     __3_YAXPAX_Z(this); /*0x49a192*/
   return this; /*0x49a19c*/
@@ -6186,7 +6186,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a7c9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a7c9*/
   if ( (a2 & 1) != 0 ) /*0x49a7cf*/
     __3_YAXPAX_Z(this); /*0x49a7d2*/
   return this; /*0x49a7dc*/
@@ -6199,7 +6199,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a7e9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a7e9*/
   if ( (a2 & 1) != 0 ) /*0x49a7ef*/
     __3_YAXPAX_Z(this); /*0x49a7f2*/
   return this; /*0x49a7fc*/
@@ -6212,7 +6212,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a809*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a809*/
   if ( (a2 & 1) != 0 ) /*0x49a80f*/
     __3_YAXPAX_Z(this); /*0x49a812*/
   return this; /*0x49a81c*/
@@ -6225,7 +6225,7 @@ namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a829*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a829*/
   if ( (a2 & 1) != 0 ) /*0x49a82f*/
     __3_YAXPAX_Z(this); /*0x49a832*/
   return this; /*0x49a83c*/
@@ -6238,7 +6238,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a849*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a849*/
   if ( (a2 & 1) != 0 ) /*0x49a84f*/
     __3_YAXPAX_Z(this); /*0x49a852*/
   return this; /*0x49a85c*/
@@ -6251,7 +6251,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a869*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a869*/
   if ( (a2 & 1) != 0 ) /*0x49a86f*/
     __3_YAXPAX_Z(this); /*0x49a872*/
   return this; /*0x49a87c*/
@@ -6264,7 +6264,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a889*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a889*/
   if ( (a2 & 1) != 0 ) /*0x49a88f*/
     __3_YAXPAX_Z(this); /*0x49a892*/
   return this; /*0x49a89c*/
@@ -6277,7 +6277,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a8a9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a8a9*/
   if ( (a2 & 1) != 0 ) /*0x49a8af*/
     __3_YAXPAX_Z(this); /*0x49a8b2*/
   return this; /*0x49a8bc*/
@@ -6290,7 +6290,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a8c9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a8c9*/
   if ( (a2 & 1) != 0 ) /*0x49a8cf*/
     __3_YAXPAX_Z(this); /*0x49a8d2*/
   return this; /*0x49a8dc*/
@@ -6303,7 +6303,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a8e9*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a8e9*/
   if ( (a2 & 1) != 0 ) /*0x49a8ef*/
     __3_YAXPAX_Z(this); /*0x49a8f2*/
   return this; /*0x49a8fc*/
@@ -6316,7 +6316,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a909*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a909*/
   if ( (a2 & 1) != 0 ) /*0x49a90f*/
     __3_YAXPAX_Z(this); /*0x49a912*/
   return this; /*0x49a91c*/
@@ -6329,7 +6329,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a929*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a929*/
   if ( (a2 & 1) != 0 ) /*0x49a92f*/
     __3_YAXPAX_Z(this); /*0x49a932*/
   return this; /*0x49a93c*/
@@ -6342,7 +6342,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a949*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a949*/
   if ( (a2 & 1) != 0 ) /*0x49a94f*/
     __3_YAXPAX_Z(this); /*0x49a952*/
   return this; /*0x49a95c*/
@@ -6355,7 +6355,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a969*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a969*/
   if ( (a2 & 1) != 0 ) /*0x49a96f*/
     __3_YAXPAX_Z(this); /*0x49a972*/
   return this; /*0x49a97c*/
@@ -6368,7 +6368,7 @@ namespace gamemd {
 std::locale::facet * E4Recv_49A980::___Gfacet_locale_std__UAEPAXI_Z_69(char a2)
 {
 
-  *(unsigned int *)this = &RLEBlitter::`vftable'; /*0x49a989*/
+  *(unsigned int *)this = &vt_RLEBlitter; /*0x49a989*/
   if ( (a2 & 1) != 0 ) /*0x49a98f*/
     __3_YAXPAX_Z(this); /*0x49a992*/
   return this; /*0x49a99c*/
@@ -6576,11 +6576,11 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   result[2] = 0; /*0x49da6f*/
   p_uniqueId[1] = 0; /*0x49da72*/
   p_uniqueId[2] = 0; /*0x49da75*/
-  *p_uniqueId = (int)&GenericNode::`vftable'; /*0x49da78*/
+  *p_uniqueId = (int)&vt_GenericNode; /*0x49da78*/
   p_referenceCount[1] = 0; /*0x49da7e*/
   p_referenceCount[2] = 0; /*0x49da81*/
-  *p_referenceCount = (int)&GenericNode::`vftable'; /*0x49da84*/
-  result[3] = &GenericList::`vftable'; /*0x49da8d*/
+  *p_referenceCount = (int)&vt_GenericNode; /*0x49da84*/
+  result[3] = &vt_GenericList; /*0x49da8d*/
   if ( p_referenceCount ) /*0x49da94*/
   {
     v4 = p_referenceCount[1]; /*0x49da96*/
@@ -6603,7 +6603,7 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   if ( v7 ) /*0x49dac4*/
     *(unsigned int *)(v7 + 8) = p_referenceCount; /*0x49dac6*/
   p_uniqueId[1] = (int)p_referenceCount; /*0x49dac9*/
-  result[3] = &List<INIClass::INISection *>::`vftable'; /*0x49dacc*/
+  result[3] = &vt_List; /*0x49dacc*/
   result[10] = 0; /*0x49dad4*/
   result[11] = 0; /*0x49dad7*/
   result[12] = 0; /*0x49dada*/

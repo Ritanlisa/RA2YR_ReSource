@@ -30,7 +30,7 @@ ControlClass GadgetClass::Construct( int a2, int a3, int a4, int a5, int a6, cha
   BYTE2(this->Image) = 0; /*0x4e1322*/
   BYTE1(this->Image) = a7; /*0x4e1327*/
   *(unsigned int *)this->Hovered = a6; /*0x4e132a*/
-  *(unsigned int *)this->__pad_0 = &GadgetClass::`vftable'; /*0x4e132d*/
+  *(unsigned int *)this->__pad_0 = &vt_GadgetClass; /*0x4e132d*/
   if ( a7 ) /*0x4e1334*/
     *(unsigned int *)this->Hovered = a6 | 5; /*0x4e1339*/
   return result; /*0x4e1333*/
@@ -45,7 +45,7 @@ ControlClass GadgetClass::Dtor()
   ShpButtonClass *v1; // eax
   int v2; // eax
 
-  *(unsigned int *)this->__pad_0 = &GadgetClass::`vftable'; /*0x4e1390*/
+  *(unsigned int *)this->__pad_0 = &vt_GadgetClass; /*0x4e1390*/
   v1 = (ShpButtonClass *)dword_8B3E90; /*0x4e1396*/
   if ( this == (gamemd::GadgetClass *)((ShpButtonClass *))dword_8B3E90 ) /*0x4e139f*/
   {

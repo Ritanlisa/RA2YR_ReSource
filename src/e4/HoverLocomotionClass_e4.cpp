@@ -46,11 +46,11 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
   v2 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x5170c1*/
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
-    *(unsigned int *)a1->LocomotionClass = &LocomotionClass::`vftable'; /*0x5170ce*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &LocomotionClass::`vftable'; /*0x5170d4*/
+    *(unsigned int *)a1->LocomotionClass = &vt_LocomotionClass; /*0x5170ce*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &vt_LocomotionClass; /*0x5170d4*/
     FrameSnapshot::Init((FrameSnapshot *)a1->LocomotionFacing); /*0x5170db*/
-    *(unsigned int *)a1->LocomotionClass = &HoverLocomotionClass::`vftable'; /*0x5170e0*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &HoverLocomotionClass::`vftable'; /*0x5170e6*/
+    *(unsigned int *)a1->LocomotionClass = &vt_HoverLocomotionClass; /*0x5170e0*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &vt_HoverLocomotionClass; /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
 
@@ -70,8 +70,8 @@ namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->LocomotionClass = &HoverLocomotionClass::`vftable'; /*0x5172c3*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &HoverLocomotionClass::`vftable'; /*0x5172c9*/
+  *(unsigned int *)Block->LocomotionClass = &vt_HoverLocomotionClass; /*0x5172c3*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &vt_HoverLocomotionClass; /*0x5172c9*/
   LocomotionClass::Construct((LocomotionClass *)Block); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     __3_YAXPAX_Z(Block); /*0x5172dd*/

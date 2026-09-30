@@ -34,10 +34,10 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 38) = -1; /*0x6e5b78*/
   *((unsigned int *)this + 39) = 0; /*0x6e5b82*/
   *((unsigned int *)this + 40) = 0; /*0x6e5b88*/
-  *(unsigned int *)this = &TagTypeClass::`vftable'; /*0x6e5b8e*/
-  *((unsigned int *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5b95*/
-  *((unsigned int *)this + 2) = &TagTypeClass::`vftable'; /*0x6e5b9c*/
-  *((unsigned int *)this + 3) = &TagTypeClass::`vftable'; /*0x6e5ba3*/
+  *(unsigned int *)this = &vt_TagTypeClass; /*0x6e5b8e*/
+  *((unsigned int *)this + 1) = &vt_TagTypeClass; /*0x6e5b95*/
+  *((unsigned int *)this + 2) = &vt_TagTypeClass; /*0x6e5b9c*/
+  *((unsigned int *)this + 3) = &vt_TagTypeClass; /*0x6e5ba3*/
   if ( this == (gamemd::TagTypeClass *)((char *))-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
@@ -93,10 +93,10 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   int v8; // eax
   AbstractTypeClass *v10; // [esp+Ch] [ebp-4h] BYREF
 
-  this->AbstractClass = &TagTypeClass::`vftable'; /*0x6e5ca7*/
-  this->? = &TagTypeClass::`vftable'; /*0x6e5cad*/
-  this->? = &TagTypeClass::`vftable'; /*0x6e5cb4*/
-  this->? = &TagTypeClass::`vftable'; /*0x6e5cbb*/
+  this->AbstractClass = &vt_TagTypeClass; /*0x6e5ca7*/
+  this->? = &vt_TagTypeClass; /*0x6e5cad*/
+  this->? = &vt_TagTypeClass; /*0x6e5cb4*/
+  this->? = &vt_TagTypeClass; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6e5cc2*/
   v2 = (unsigned int *)*((unsigned int *)this + 40); /*0x6e5cc7*/
   *((unsigned int *)this + 40) = 0; /*0x6e5ccd*/
@@ -348,10 +348,10 @@ int TagTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e6426*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e642f*/
-      aP0->AbstractClass = &TagTypeClass::`vftable'; /*0x6e6434*/
-      aP0->? = &TagTypeClass::`vftable'; /*0x6e643a*/
-      aP0->? = &TagTypeClass::`vftable'; /*0x6e6441*/
-      aP0->? = &TagTypeClass::`vftable'; /*0x6e6448*/
+      aP0->AbstractClass = &vt_TagTypeClass; /*0x6e6434*/
+      aP0->? = &vt_TagTypeClass; /*0x6e643a*/
+      aP0->? = &vt_TagTypeClass; /*0x6e6441*/
+      aP0->? = &vt_TagTypeClass; /*0x6e6448*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 40); /*0x6e645b*/
     return 0; /*0x6e6460*/

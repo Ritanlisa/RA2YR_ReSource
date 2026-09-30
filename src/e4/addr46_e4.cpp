@@ -33,7 +33,7 @@ namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
 
-  this->m_0 = (int)&CampaignScoreClass::`vftable'; /*0x46d350*/
+  this->m_0 = (int)&vt_CampaignScoreClass; /*0x46d350*/
 
 }
 } // namespace gamemd

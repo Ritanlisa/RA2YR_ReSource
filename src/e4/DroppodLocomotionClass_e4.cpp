@@ -256,9 +256,9 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4b625a*/
   {
     a1->Piggybackee = 0; /*0x4b625c*/
-    *(unsigned int *)a1->LocomotionClass = &DropPodLocomotionClass::`vftable'; /*0x4b6263*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &DropPodLocomotionClass::`vftable'; /*0x4b6269*/
-    *(unsigned int *)a1->__pad_18 = &DropPodLocomotionClass::`vftable'; /*0x4b6270*/
+    *(unsigned int *)a1->LocomotionClass = &vt_DropPodLocomotionClass; /*0x4b6263*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &vt_DropPodLocomotionClass; /*0x4b6269*/
+    *(unsigned int *)a1->__pad_18 = &vt_DropPodLocomotionClass; /*0x4b6270*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4b6283*/
   if ( !(unsigned char)pStm ) /*0x4b628c*/
@@ -346,9 +346,9 @@ DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(ILocomotion ** Bloc
 
   ILocomotion *Piggybackee; // eax
 
-  *(unsigned int *)Block->LocomotionClass = &DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
-  *(unsigned int *)Block->__pad_18 = &DropPodLocomotionClass::`vftable'; /*0x4b6700*/
+  *(unsigned int *)Block->LocomotionClass = &vt_DropPodLocomotionClass; /*0x4b66f3*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &vt_DropPodLocomotionClass; /*0x4b66f9*/
+  *(unsigned int *)Block->__pad_18 = &vt_DropPodLocomotionClass; /*0x4b6700*/
   Piggybackee = Block->Piggybackee; /*0x4b6707*/
   if ( Piggybackee ) /*0x4b670c*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b6711*/

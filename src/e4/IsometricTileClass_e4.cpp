@@ -18,10 +18,10 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
 
   ObjectClass::ctor((ObjectClass *)this); /*0x543786*/
   *((unsigned int *)this + 43) = *(IsometricTileClass *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * aP1); /*0x54379c*/
-  *this = (IsometricTileClass)&IsometricTileClass::`vftable'; /*0x5437a2*/
-  *((unsigned int *)this + 1) = &IsometricTileClass::`vftable'; /*0x5437a8*/
-  *((unsigned int *)this + 2) = &IsometricTileClass::`vftable'; /*0x5437af*/
-  *((unsigned int *)this + 3) = &IsometricTileClass::`vftable'; /*0x5437b6*/
+  *this = (IsometricTileClass)&vt_IsometricTileClass; /*0x5437a2*/
+  *((unsigned int *)this + 1) = &vt_IsometricTileClass; /*0x5437a8*/
+  *((unsigned int *)this + 2) = &vt_IsometricTileClass; /*0x5437af*/
+  *((unsigned int *)this + 3) = &vt_IsometricTileClass; /*0x5437b6*/
   if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
   {
     *((unsigned char *)this + 129) = 0; /*0x543805*/

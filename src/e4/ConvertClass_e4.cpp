@@ -139,7 +139,7 @@ unsigned int * ConvertClass::Construct(char * a2, char * a3, int a4, int a5, cha
   *(unsigned int *)this->__pad_174 = 0; /*0x48e929*/
   this->ConvertClass_field_0x178 = 0; /*0x48e92f*/
   *((unsigned int *)this + 95) = 0; /*0x48e935*/
-  *(unsigned int *)this->__pad_0 = &ConvertClass::`vftable'; /*0x48e93b*/
+  *(unsigned int *)this->__pad_0 = &vt_ConvertClass; /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
     *(unsigned int *)&this->__pad_6[358] = 1; /*0x48e943*/
   if ( *(unsigned int *)&this->ConvertClass_field_0x2[2] == 1 ) /*0x48e94f*/

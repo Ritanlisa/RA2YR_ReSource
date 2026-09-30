@@ -44,10 +44,10 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x691da6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x691daf*/
-      aP0->AbstractClass = &ScriptTypeClass::`vftable'; /*0x691db4*/
-      aP0->? = &ScriptTypeClass::`vftable'; /*0x691dba*/
-      aP0->? = &ScriptTypeClass::`vftable'; /*0x691dc1*/
-      aP0->? = &ScriptTypeClass::`vftable'; /*0x691dc8*/
+      aP0->AbstractClass = &vt_ScriptTypeClass; /*0x691db4*/
+      aP0->? = &vt_ScriptTypeClass; /*0x691dba*/
+      aP0->? = &vt_ScriptTypeClass; /*0x691dc1*/
+      aP0->? = &vt_ScriptTypeClass; /*0x691dc8*/
     }
     return 0; /*0x691dcf*/
   }
@@ -99,10 +99,10 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &ScriptTypeClass::`vftable'; /*0x691fa6*/
-  Block->? = &ScriptTypeClass::`vftable'; /*0x691fac*/
-  Block->? = &ScriptTypeClass::`vftable'; /*0x691fb3*/
-  Block->? = &ScriptTypeClass::`vftable'; /*0x691fba*/
+  Block->AbstractClass = &vt_ScriptTypeClass; /*0x691fa6*/
+  Block->? = &vt_ScriptTypeClass; /*0x691fac*/
+  Block->? = &vt_ScriptTypeClass; /*0x691fb3*/
+  Block->? = &vt_ScriptTypeClass; /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x691fc1*/
   v5 = Block; /*0x691fd6*/
   v3 = (*(int (**)(int *, ScriptTypeClass **))(*((unsigned int *)((char *)&FootClass_Array + 4)) + 16))(&(unsigned int *)((char *)&FootClass_Array + 4), &v5); /*0x691fda*/

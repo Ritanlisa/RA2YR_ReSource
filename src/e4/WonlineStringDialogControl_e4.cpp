@@ -17,7 +17,7 @@ namespace gamemd {
 void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(DialogControl_OwnerDraw * Block, char a2)
 {
 
-  Block->m_0 = (int)&WonlineStringDialogControl::`vftable'; /*0x7ac636*/
+  Block->m_0 = (int)&vt_WonlineStringDialogControl; /*0x7ac636*/
   DeleteAndZero((ObjectClass *)&Block->__pad_9[3]); /*0x7ac63c*/
   Block->m_0 = (int)&off_7F7624; /*0x7ac643*/
   OwnerDrawControl::InitVtable((OwnerDrawControl *)Block); /*0x7ac649*/
@@ -336,7 +336,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x7ad373*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7ad376*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7ad376*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x7ad380*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad388*/
@@ -359,7 +359,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x7ad3c3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<tConnInfoStruct *>::`vftable'; /*0x7ad3c6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x7ad3c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x7ad3d0*/
   {
     __3_YAXPAX_Z(v3); /*0x7ad3d8*/
@@ -505,7 +505,7 @@ LONG WonlineStringDialogControl_28::Release(char * Block)
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
   if ( !v1 && Block ) /*0x7ad65c*/
   {
-    *(unsigned int *)Block = &ATL::CComObject<CDownloadEventSink>::`vftable'; /*0x7ad663*/
+    *(unsigned int *)Block = &vt_ATLCComObject; /*0x7ad663*/
     *((unsigned int *)Block + 1) = 1; /*0x7ad669*/
     InterlockedDecrement(&Addend); /*0x7ad66f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/

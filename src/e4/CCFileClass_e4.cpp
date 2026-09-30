@@ -56,7 +56,7 @@ namespace gamemd {
 void CCFileClass::Destruct()
 {
 
-  *(unsigned int *)this->CDFileClass = &CCFileClass::`vftable'; /*0x535a76*/
+  *(unsigned int *)this->CDFileClass = &vt_CCFileClass; /*0x535a76*/
   *((unsigned int *)this + 25) = 0; /*0x535a7c*/
   Vector::Clear((int)(unsigned int *)this + 88); /*0x535a83*/
   *(unsigned int *)this->CDFileClass = &off_7E1668; /*0x535a8a*/

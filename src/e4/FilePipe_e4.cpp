@@ -178,7 +178,7 @@ TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x477a73*/
-  Block->vfptr = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x477a76*/
+  Block->vfptr = &vt_VectorClass; /*0x477a76*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477a80*/
   {
     __3_YAXPAX_Z(v3); /*0x477a88*/
@@ -362,7 +362,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4786d3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<RGBClass>::`vftable'; /*0x4786d6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4786d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4786e0*/
   {
     __3_YAXPAX_Z(v3); /*0x4786e8*/
@@ -594,7 +594,7 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4ba163*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<TechnoTypeClass *>::`vftable'; /*0x4ba166*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ba166*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ba170*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba178*/
@@ -640,7 +640,7 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4ba2a3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<CrossDissolveEffect *>::`vftable'; /*0x4ba2a6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ba2a6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ba2b0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ba2b8*/

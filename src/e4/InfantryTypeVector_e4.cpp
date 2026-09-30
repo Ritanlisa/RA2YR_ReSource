@@ -53,7 +53,7 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
   this->InfantryTypeVector_field_0x08 = a2; /*0x5138fe*/
   LOBYTE(this->InfantryTypeVector_field_0x0C) = 1; /*0x513901*/
   BYTE1(this->InfantryTypeVector_field_0x0C) = 0; /*0x513905*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<InfantryTypeClass const *>::`vftable'; /*0x513908*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x513908*/
   if ( a2 ) /*0x51390e*/
   {
     if ( a3 ) /*0x513916*/
@@ -77,7 +77,7 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
   this->InfantryTypeVector_field_0x08 = a2; /*0x5d89ae*/
   LOBYTE(this->InfantryTypeVector_field_0x0C) = 1; /*0x5d89b1*/
   BYTE1(this->InfantryTypeVector_field_0x0C) = 0; /*0x5d89b5*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<InfantryTypeClass *>::`vftable'; /*0x5d89b8*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x5d89b8*/
   if ( a2 ) /*0x5d89be*/
   {
     if ( a3 ) /*0x5d89c6*/

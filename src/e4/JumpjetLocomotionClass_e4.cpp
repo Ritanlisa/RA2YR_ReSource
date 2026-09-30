@@ -4604,9 +4604,9 @@ HRESULT JumpjetLocomotionClass::InitClass(int * a1, int * pStm)
   if ( a1 ) /*0x54b76a*/
   {
     a1->Piggybackee = 0; /*0x54b76c*/
-    a1->LocomotionClass[0] = (int)&JumpjetLocomotionClass::`vftable'; /*0x54b776*/
-    a1->LocomotionClass[1] = (int)&JumpjetLocomotionClass::`vftable'; /*0x54b77c*/
-    a1->TurnRate = (int)&JumpjetLocomotionClass::`vftable'; /*0x54b783*/
+    a1->LocomotionClass[0] = (int)&vt_JumpjetLocomotionClass; /*0x54b776*/
+    a1->LocomotionClass[1] = (int)&vt_JumpjetLocomotionClass; /*0x54b77c*/
+    a1->TurnRate = (int)&vt_JumpjetLocomotionClass; /*0x54b783*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x54b796*/
   if ( !(unsigned char)pStm ) /*0x54b79f*/
@@ -4972,9 +4972,9 @@ JumpjetLocomotionClass * JumpjetLocomotionClass::ProcessAttach(int * Block, char
 
   ILocomotion *Piggybackee; // eax
 
-  Block->LocomotionClass[0] = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa3*/
-  Block->LocomotionClass[1] = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfa9*/
-  Block->TurnRate = (int)&JumpjetLocomotionClass::`vftable'; /*0x54dfb0*/
+  Block->LocomotionClass[0] = (int)&vt_JumpjetLocomotionClass; /*0x54dfa3*/
+  Block->LocomotionClass[1] = (int)&vt_JumpjetLocomotionClass; /*0x54dfa9*/
+  Block->TurnRate = (int)&vt_JumpjetLocomotionClass; /*0x54dfb0*/
   Piggybackee = Block->Piggybackee; /*0x54dfb7*/
   if ( Piggybackee ) /*0x54dfbf*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x54dfc4*/
@@ -5261,7 +5261,7 @@ VectorClass_flat * JumpjetLocomotionClass_26::QueryInterface(unsigned int * Bloc
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x54eb53*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54eb56*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x54eb56*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x54eb60*/
   {
     __3_YAXPAX_Z(v3); /*0x54eb68*/
@@ -5284,7 +5284,7 @@ DynamicVector * JumpjetLocomotionClass_26::Constructor_VectorClass_KamikazeContr
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x54eba3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54eba6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x54eba6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x54ebb0*/
   {
     __3_YAXPAX_Z(v3); /*0x54ebb8*/
@@ -6400,15 +6400,15 @@ HRESULT JumpjetLocomotionClass::InitMultiFieldArray_0(int * a1, int * pStm)
     return v3; /*0x719cb6*/
   if ( a1 ) /*0x719cba*/
   {
-    *(unsigned int *)a1->LocomotionClass = &LocomotionClass::`vftable'; /*0x719cbc*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &LocomotionClass::`vftable'; /*0x719cc2*/
+    *(unsigned int *)a1->LocomotionClass = &vt_LocomotionClass; /*0x719cbc*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &vt_LocomotionClass; /*0x719cc2*/
     v4 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x719cc9*/
     a1->Timer[2] = 0; /*0x719cce*/
     a1->Timer[0] = v4; /*0x719cd5*/
     a1->Piggybackee = 0; /*0x719cd8*/
-    *(unsigned int *)a1->LocomotionClass = &TeleportLocomotionClass::`vftable'; /*0x719cdf*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &TeleportLocomotionClass::`vftable'; /*0x719ce5*/
-    *(unsigned int *)a1->__pad_18 = &TeleportLocomotionClass::`vftable'; /*0x719cec*/
+    *(unsigned int *)a1->LocomotionClass = &vt_TeleportLocomotionClass; /*0x719cdf*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &vt_TeleportLocomotionClass; /*0x719ce5*/
+    *(unsigned int *)a1->__pad_18 = &vt_TeleportLocomotionClass; /*0x719cec*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x719cff*/
   if ( !(unsigned char)pStm ) /*0x719d08*/

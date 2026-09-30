@@ -81,7 +81,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
   *(unsigned int *)(v3 + 12) = 0; /*0x4a01cb*/
   *(unsigned char *)(v3 + 16) = 1; /*0x4a01ce*/
   *(unsigned char *)(v3 + 17) = 0; /*0x4a01d2*/
-  *(unsigned int *)(v3 + 4) = &VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a01d5*/
+  *(unsigned int *)(v3 + 4) = &vt_VectorClass; /*0x4a01d5*/
   if ( (int *)(v3 + 4) != &a1->EnumConnectionsClass_field_0x04 ) /*0x4a01db*/
   {
     VectorClass::ClearAndFree2(v3 + 4); /*0x4a01df*/
@@ -117,11 +117,11 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
   }
   *(unsigned int *)(v3 + 20) = a1->EnumConnectionsClass_field_0x14; /*0x4a0249*/
   *(unsigned int *)(v3 + 24) = *((unsigned int *)a1 + 6); /*0x4a024f*/
-  *(unsigned int *)(v3 + 4) = &DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a0252*/
+  *(unsigned int *)(v3 + 4) = &vt_DynamicVectorClass; /*0x4a0252*/
   v10 = *((unsigned int *)a1 + 7); /*0x4a0258*/
   *(unsigned int *)(v3 + 32) = 0; /*0x4a025b*/
   *(unsigned int *)(v3 + 28) = v10; /*0x4a025e*/
-  *(unsigned int *)v3 = &EnumConnectionsClass::`vftable'; /*0x4a0261*/
+  *(unsigned int *)v3 = &vt_EnumConnectionsClass; /*0x4a0261*/
   for ( i = 0; i < *(unsigned int *)(v3 + 20); ++i ) /*0x4a026e*/
   {
     v13 = *(unsigned int *)(*(unsigned int *)(v3 + 8) + 8 * i); /*0x4a0276*/
@@ -155,7 +155,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   this->EnumConnectionsClass_field_0x0C = 0; /*0x4a02c4*/
   LOBYTE(this->EnumConnectionsClass_field_0x10) = 1; /*0x4a02c7*/
   BYTE1(this->EnumConnectionsClass_field_0x10) = 0; /*0x4a02cb*/
-  this->EnumConnectionsClass_field_0x04 = (int)&VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a02ce*/
+  this->EnumConnectionsClass_field_0x04 = (int)&vt_VectorClass; /*0x4a02ce*/
   if ( &this->EnumConnectionsClass_field_0x04 != a2 ) /*0x4a02d4*/
   {
     VectorClass::ClearAndFree2((int)&this->EnumConnectionsClass_field_0x04); /*0x4a02d8*/
@@ -192,10 +192,10 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   }
   p_EnumConnectionsClass_field_0x04[4] = a2[4]; /*0x4a0331*/
   p_EnumConnectionsClass_field_0x04[5] = a2[5]; /*0x4a0337*/
-  *p_EnumConnectionsClass_field_0x04 = (int)&DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a033a*/
+  *p_EnumConnectionsClass_field_0x04 = (int)&vt_DynamicVectorClass; /*0x4a033a*/
   *((unsigned int *)this + 7) = 0; /*0x4a0340*/
   *((unsigned int *)this + 8) = 0; /*0x4a0343*/
-  *(unsigned int *)this->__pad_0 = &EnumConnectionsClass::`vftable'; /*0x4a0346*/
+  *(unsigned int *)this->__pad_0 = &vt_EnumConnectionsClass; /*0x4a0346*/
   for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0353*/
   {
     v12 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a035b*/
@@ -226,7 +226,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   this->EnumConnectionsClass_field_0x0C = 0; /*0x4a0397*/
   LOBYTE(this->EnumConnectionsClass_field_0x10) = 1; /*0x4a039a*/
   BYTE1(this->EnumConnectionsClass_field_0x10) = 0; /*0x4a039e*/
-  this->EnumConnectionsClass_field_0x04 = (int)&VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a03a1*/
+  this->EnumConnectionsClass_field_0x04 = (int)&vt_VectorClass; /*0x4a03a1*/
   if ( &this->EnumConnectionsClass_field_0x04 != a2 + 1 ) /*0x4a03a7*/
   {
     VectorClass::ClearAndFree2((int)&this->EnumConnectionsClass_field_0x04); /*0x4a03ab*/
@@ -263,11 +263,11 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   }
   p_EnumConnectionsClass_field_0x04[4] = a2[5]; /*0x4a040c*/
   p_EnumConnectionsClass_field_0x04[5] = a2[6]; /*0x4a0412*/
-  *p_EnumConnectionsClass_field_0x04 = (int)&DynamicVectorClass<tagCONNECTDATA>::`vftable'; /*0x4a0415*/
+  *p_EnumConnectionsClass_field_0x04 = (int)&vt_DynamicVectorClass; /*0x4a0415*/
   v10 = a2[7]; /*0x4a041b*/
   *((unsigned int *)this + 8) = 0; /*0x4a041e*/
   *((unsigned int *)this + 7) = v10; /*0x4a0421*/
-  *(unsigned int *)this->__pad_0 = &EnumConnectionsClass::`vftable'; /*0x4a0424*/
+  *(unsigned int *)this->__pad_0 = &vt_EnumConnectionsClass; /*0x4a0424*/
   for ( i = 0; i < this->EnumConnectionsClass_field_0x14; ++i ) /*0x4a0431*/
   {
     v13 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a0439*/
@@ -300,7 +300,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   *(unsigned int *)(v3 + 20) = 0; /*0x4a0b64*/
   *(unsigned char *)(v3 + 24) = 1; /*0x4a0b67*/
   *(unsigned char *)(v3 + 25) = 0; /*0x4a0b6b*/
-  *(unsigned int *)(v3 + 12) = &VectorClass<IConnectionPoint *>::`vftable'; /*0x4a0b6e*/
+  *(unsigned int *)(v3 + 12) = &vt_VectorClass; /*0x4a0b6e*/
   if ( (int *)(v3 + 12) != &a1->EnumConnectionPointsClass_field_0x0C ) /*0x4a0b74*/
   {
     VectorClass::CleanupTyped(v3 + 12); /*0x4a0b78*/
@@ -334,8 +334,8 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
   }
   *(unsigned int *)(v3 + 28) = a1->EnumConnectionPointsClass_field_0x1C; /*0x4a0bcb*/
   *(unsigned int *)(v3 + 32) = a1->EnumConnectionPointsClass_field_0x20; /*0x4a0bd1*/
-  *(unsigned int *)(v3 + 12) = &DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4a0bd4*/
-  *(unsigned int *)v3 = &EnumConnectionPointsClass::`vftable'; /*0x4a0bda*/
+  *(unsigned int *)(v3 + 12) = &vt_DynamicVectorClass; /*0x4a0bd4*/
+  *(unsigned int *)v3 = &vt_EnumConnectionPointsClass; /*0x4a0bda*/
   for ( i = 0; i < *(unsigned int *)(v3 + 28); ++i ) /*0x4a0be7*/
   {
     v9 = *(unsigned int *)(*(unsigned int *)(v3 + 16) + 4 * i); /*0x4a0bef*/
@@ -2767,7 +2767,7 @@ void E4Recv_4A0450::sub_4A0450()
   int v6; // [esp-4h] [ebp-10h]
 
   v2 = 0; /*0x4a0457*/
-  for ( *(unsigned int *)this->__pad_0 = &EnumConnectionsClass::`vftable'; v2 < this->EnumConnectionsClass_field_0x14; ++v2 ) /*0x4a0464*/
+  for ( *(unsigned int *)this->__pad_0 = &vt_EnumConnectionsClass; v2 < this->EnumConnectionsClass_field_0x14; ++v2 ) /*0x4a0464*/
   {
     v6 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * v2); /*0x4a046c*/
     (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x4a046f*/
@@ -2776,7 +2776,7 @@ void E4Recv_4A0450::sub_4A0450()
   p_EnumConnectionsClass_field_0x04 = &this->EnumConnectionsClass_field_0x04; /*0x4a047d*/
   (*(void (**)(int *))(EnumConnectionsClass_field_0x04 + 12))(p_EnumConnectionsClass_field_0x04); /*0x4a0482*/
   v5 = (void *)p_EnumConnectionsClass_field_0x04[1]; /*0x4a0485*/
-  *p_EnumConnectionsClass_field_0x04 = (int)&VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a0488*/
+  *p_EnumConnectionsClass_field_0x04 = (int)&vt_VectorClass; /*0x4a0488*/
   if ( v5 && *((unsigned char *)p_EnumConnectionsClass_field_0x04 + 13) ) /*0x4a0492*/
   {
     __3_YAXPAX_Z(v5); /*0x4a0498*/
@@ -2799,13 +2799,13 @@ void E4Recv_4A08D0::sub_4A08D0()
   void *v5; // eax
 
   ConnectionPointClass_field_0x18 = this->ConnectionPointClass_field_0x18; /*0x4a08d4*/
-  *(unsigned int *)this->__pad_0 = &ConnectionPointClass::`vftable'; /*0x4a08d7*/
+  *(unsigned int *)this->__pad_0 = &vt_ConnectionPointClass; /*0x4a08d7*/
   (*(void (**)(int))(*(unsigned int *)ConnectionPointClass_field_0x18 + 8))(ConnectionPointClass_field_0x18); /*0x4a08e0*/
   ConnectionPointClass_field_0x1C = this->ConnectionPointClass_field_0x1C; /*0x4a08e3*/
   p_ConnectionPointClass_field_0x1C = &this->ConnectionPointClass_field_0x1C; /*0x4a08e6*/
   (*(void (**)(int *))(ConnectionPointClass_field_0x1C + 12))(p_ConnectionPointClass_field_0x1C); /*0x4a08eb*/
   v5 = (void *)p_ConnectionPointClass_field_0x1C[1]; /*0x4a08ee*/
-  *p_ConnectionPointClass_field_0x1C = (int)&VectorClass<tagCONNECTDATA>::`vftable'; /*0x4a08f5*/
+  *p_ConnectionPointClass_field_0x1C = (int)&vt_VectorClass; /*0x4a08f5*/
   if ( v5 && *((unsigned char *)p_ConnectionPointClass_field_0x1C + 13) ) /*0x4a08fd*/
   {
     __3_YAXPAX_Z(v5); /*0x4a0903*/
@@ -2837,7 +2837,7 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
   this->EnumConnectionPointsClass_field_0x14 = 0; /*0x4a0d00*/
   LOBYTE(this->EnumConnectionPointsClass_field_0x18) = 1; /*0x4a0d03*/
   BYTE1(this->EnumConnectionPointsClass_field_0x18) = 0; /*0x4a0d07*/
-  this->EnumConnectionPointsClass_field_0x0C = (int)&VectorClass<IConnectionPoint *>::`vftable'; /*0x4a0d0a*/
+  this->EnumConnectionPointsClass_field_0x0C = (int)&vt_VectorClass; /*0x4a0d0a*/
   if ( &this->EnumConnectionPointsClass_field_0x0C != a2 + 3 ) /*0x4a0d10*/
   {
     VectorClass::CleanupTyped((int)&this->EnumConnectionPointsClass_field_0x0C); /*0x4a0d14*/
@@ -2871,8 +2871,8 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
   }
   this->EnumConnectionPointsClass_field_0x1C = a2[7]; /*0x4a0d67*/
   this->EnumConnectionPointsClass_field_0x20 = a2[8]; /*0x4a0d6d*/
-  *p_EnumConnectionPointsClass_field_0x0C = (int)&DynamicVectorClass<IConnectionPoint *>::`vftable'; /*0x4a0d70*/
-  *(unsigned int *)this->__pad_0 = &EnumConnectionPointsClass::`vftable'; /*0x4a0d76*/
+  *p_EnumConnectionPointsClass_field_0x0C = (int)&vt_DynamicVectorClass; /*0x4a0d70*/
+  *(unsigned int *)this->__pad_0 = &vt_EnumConnectionPointsClass; /*0x4a0d76*/
   for ( i = 0; i < this->EnumConnectionPointsClass_field_0x1C; ++i ) /*0x4a0d83*/
   {
     v10 = *(unsigned int *)(this->EnumConnectionPointsClass_field_0x10 + 4 * i); /*0x4a0d8b*/
@@ -2895,7 +2895,7 @@ void E4Recv_4A0DB0::sub_4A0DB0()
   int v6; // [esp-4h] [ebp-10h]
 
   v2 = 0; /*0x4a0db7*/
-  for ( *(unsigned int *)this->__pad_0 = &EnumConnectionPointsClass::`vftable'; /*0x4a0dc4*/
+  for ( *(unsigned int *)this->__pad_0 = &vt_EnumConnectionPointsClass; /*0x4a0dc4*/
         v2 < this->EnumConnectionPointsClass_field_0x1C;
         ++v2 )
   {
@@ -2906,7 +2906,7 @@ void E4Recv_4A0DB0::sub_4A0DB0()
   p_EnumConnectionPointsClass_field_0x0C = &this->EnumConnectionPointsClass_field_0x0C; /*0x4a0ddd*/
   (*(void (**)(int *))(EnumConnectionPointsClass_field_0x0C + 12))(p_EnumConnectionPointsClass_field_0x0C); /*0x4a0de2*/
   v5 = (void *)p_EnumConnectionPointsClass_field_0x0C[1]; /*0x4a0de5*/
-  *p_EnumConnectionPointsClass_field_0x0C = (int)&VectorClass<IConnectionPoint *>::`vftable'; /*0x4a0de8*/
+  *p_EnumConnectionPointsClass_field_0x0C = (int)&vt_VectorClass; /*0x4a0de8*/
   if ( v5 && *((unsigned char *)p_EnumConnectionPointsClass_field_0x0C + 13) ) /*0x4a0df2*/
   {
     __3_YAXPAX_Z(v5); /*0x4a0df8*/
@@ -3230,8 +3230,8 @@ void E4Recv_4A2880::sub_4A2880()
   ULONG v6; // [esp+0h] [ebp-8h]
 
   CStreamClass_field_0x08 = this->CStreamClass_field_0x08; /*0x4a2886*/
-  *(unsigned int *)this->__pad_0 = &CStreamClass::`vftable'; /*0x4a2889*/
-  this->CStreamClass_field_0x04 = (int)&CStreamClass::`vftable'; /*0x4a2891*/
+  *(unsigned int *)this->__pad_0 = &vt_CStreamClass; /*0x4a2889*/
+  this->CStreamClass_field_0x04 = (int)&vt_CStreamClass; /*0x4a2891*/
   if ( CStreamClass_field_0x08 ) /*0x4a2898*/
   {
     if ( BYTE1(this->CStreamClass_field_0x10) && this->CStreamClass_field_0x14 > 0 && this->CStreamClass_field_0x08 ) /*0x4a28aa*/
@@ -3621,7 +3621,7 @@ unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
   this->Capacity = a2; /*0x4a4e3e*/
   this->IsInitialized = 1; /*0x4a4e41*/
   this->IsAllocated = 0; /*0x4a4e45*/
-  this->vtable0 = &VectorClass<_DDSURFACEDESC *>::`vftable'; /*0x4a4e48*/
+  this->vtable0 = &vt_VectorClass; /*0x4a4e48*/
   if ( a2 ) /*0x4a4e4e*/
   {
     if ( a3 ) /*0x4a4e56*/

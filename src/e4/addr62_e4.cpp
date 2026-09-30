@@ -2588,7 +2588,7 @@ namespace gamemd {
 unsigned int * E4Recv_624080::sub_624080()
 {
 
-  this->AbstractClass = &OwnerDraw::DialogControl::`vftable'; /*0x624082*/
+  this->AbstractClass = &OwnerDraw::vt_DialogControl; /*0x624082*/
   return &this->AbstractClass; /*0x624088*/
 
 }
@@ -2599,7 +2599,7 @@ namespace gamemd {
 void E4Recv_624090::sub_624090()
 {
 
-  *this = &OwnerDraw::DialogControl::`vftable'; /*0x624090*/
+  *this = &OwnerDraw::vt_DialogControl; /*0x624090*/
 
 }
 } // namespace gamemd
@@ -2896,7 +2896,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
   this->Capacity = a2; /*0x628b13*/
   this->IsInitialized = 1; /*0x628b16*/
   this->IsAllocated = 0; /*0x628b1a*/
-  this->vtable0 = &VectorClass<HashObject<HashString,SchemeNode *>>::`vftable'; /*0x628b1e*/
+  this->vtable0 = &vt_VectorClassHashObject; /*0x628b1e*/
   if ( a2 ) /*0x628b24*/
   {
     if ( a3 ) /*0x628b2c*/
@@ -2939,7 +2939,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
       this->IsAllocated = 1; /*0x628b8b*/
     }
   }
-  this->vtable0 = &DynamicVectorClass<HashObject<HashString,SchemeNode *>>::`vftable'; /*0x628b8f*/
+  this->vtable0 = &vt_DynamicVectorClassHashObject; /*0x628b8f*/
   *((unsigned int *)this + 5) = 10; /*0x628b95*/
   *((unsigned int *)this + 4) = 0; /*0x628b9c*/
   return &this->vtable0; /*0x628ba5*/

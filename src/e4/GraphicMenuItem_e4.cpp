@@ -15,7 +15,7 @@ void GraphicMenuItem::Dtor()
   ObjectClass *v1; // esi
 
   v1 = (ObjectClass *)*((unsigned int *)this + 3); /*0x4f3a71*/
-  *(unsigned int *)this->__pad_0 = &GraphicMenuItem::`vftable'; /*0x4f3a76*/
+  *(unsigned int *)this->__pad_0 = &vt_GraphicMenuItem; /*0x4f3a76*/
   if ( v1 ) /*0x4f3a7c*/
   {
     j_DeleteAndZero(v1); /*0x4f3a80*/

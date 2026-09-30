@@ -842,10 +842,10 @@ TActionClass::TActionClass()
   this->TActionClass_field_30 = 0; /*0x71e6b8*/
   LOBYTE(this->TActionClass_field_38) = 0; /*0x71e6bb*/
   *(unsigned int *)&this->TActionClass_field_54 = 0; /*0x71e6be*/
-  this->AbstractClass = &TEventClass::`vftable'; /*0x71e6c1*/
-  this->? = &TEventClass::`vftable'; /*0x71e6c7*/
-  this->? = &TEventClass::`vftable'; /*0x71e6ce*/
-  this->? = &TEventClass::`vftable'; /*0x71e6d5*/
+  this->AbstractClass = &vt_TEventClass; /*0x71e6c1*/
+  this->? = &vt_TEventClass; /*0x71e6c7*/
+  this->? = &vt_TEventClass; /*0x71e6ce*/
+  this->? = &vt_TEventClass; /*0x71e6d5*/
   v2 = *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)); /*0x71e6dc*/
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 54)) < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 52)) /*0x71e71a*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 53))) || !g_BuildingLoadQueue_Array.?[52])
@@ -1700,10 +1700,10 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e3dc6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x6e3dcf*/
-      aP0->AbstractClass = &TActionClass::`vftable'; /*0x6e3dd4*/
-      aP0->? = &TActionClass::`vftable'; /*0x6e3dda*/
-      aP0->? = &TActionClass::`vftable'; /*0x6e3de1*/
-      aP0->? = &TActionClass::`vftable'; /*0x6e3de8*/
+      aP0->AbstractClass = &vt_TActionClass; /*0x6e3dd4*/
+      aP0->? = &vt_TActionClass; /*0x6e3dda*/
+      aP0->? = &vt_TActionClass; /*0x6e3de1*/
+      aP0->? = &vt_TActionClass; /*0x6e3de8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->TActionClass_field_28); /*0x6e3df8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->TActionClass_field_30); /*0x6e3e06*/

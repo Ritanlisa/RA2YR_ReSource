@@ -48,10 +48,10 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       v5[2].vtable3 = 0; /*0x438ecb*/
-      v5->vtable0 = &BombClass::`vftable'; /*0x438ece*/
-      v5->vtable1 = &BombClass::`vftable'; /*0x438ed4*/
-      v5->vtable2 = &BombClass::`vftable'; /*0x438edb*/
-      v5->vtable3 = &BombClass::`vftable'; /*0x438ee2*/
+      v5->vtable0 = &vt_BombClass; /*0x438ece*/
+      v5->vtable1 = &vt_BombClass; /*0x438ed4*/
+      v5->vtable2 = &vt_BombClass; /*0x438edb*/
+      v5->vtable3 = &vt_BombClass; /*0x438ee2*/
       v5[1].vtable1 = 0; /*0x438ee9*/
       v5[1].vtable2 = 0; /*0x438eec*/
       LOBYTE(v5[2].uniqueId) = 0; /*0x438eef*/
@@ -420,7 +420,7 @@ namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7fd9*/
+  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d7fd9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
     __3_YAXPAX_Z(this); /*0x5d7fe2*/
   return &this->vtable0; /*0x5d7fec*/
@@ -432,7 +432,7 @@ namespace gamemd {
 unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8039*/
+  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d8039*/
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
     __3_YAXPAX_Z(this); /*0x5d8042*/
   return &this->vtable0; /*0x5d804c*/
@@ -444,7 +444,7 @@ namespace gamemd {
 unsigned int * AbstractClass::processFogReveal(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8059*/
+  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d8059*/
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
     __3_YAXPAX_Z(this); /*0x5d8062*/
   return &this->vtable0; /*0x5d806c*/
@@ -456,7 +456,7 @@ namespace gamemd {
 unsigned int * AbstractClass::checkShroudState(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8079*/
+  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d8079*/
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
     __3_YAXPAX_Z(this); /*0x5d8082*/
   return &this->vtable0; /*0x5d808c*/
@@ -468,7 +468,7 @@ namespace gamemd {
 unsigned int * AbstractClass::updateShroudMap(char a2)
 {
 
-  this->vtable0 = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8099*/
+  this->vtable0 = &MultiplayerGameMode::vt_InitializerBase; /*0x5d8099*/
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
     __3_YAXPAX_Z(this); /*0x5d80a2*/
   return &this->vtable0; /*0x5d80ac*/
@@ -722,10 +722,10 @@ void AbstractClass::DTOR()
 
   int result; // eax
 
-  this->vtable0 = &AbstractClass::`vftable'; /*0x4101f0*/
-  this->vtable1 = &AbstractClass::`vftable'; /*0x4101f6*/
-  this->vtable2 = &AbstractClass::`vftable'; /*0x4101fd*/
-  this->vtable3 = &AbstractClass::`vftable'; /*0x410204*/
+  this->vtable0 = &vt_AbstractClass; /*0x4101f0*/
+  this->vtable1 = &vt_AbstractClass; /*0x4101f6*/
+  this->vtable2 = &vt_AbstractClass; /*0x4101fd*/
+  this->vtable3 = &vt_AbstractClass; /*0x410204*/
   return result; /*0x41020b*/
 
 }
@@ -1264,7 +1264,7 @@ namespace gamemd {
 std::locale::facet * AbstractClass::setMapCoords(char a2)
 {
 
-  this->m_0 = (int)&Animate::`vftable'; /*0x427279*/
+  this->m_0 = (int)&vt_Animate; /*0x427279*/
   if ( (a2 & 1) != 0 ) /*0x42727f*/
     __3_YAXPAX_Z(this); /*0x427282*/
   return (std::locale::facet *)this; /*0x42728c*/
@@ -1363,7 +1363,7 @@ namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
 
-  *(unsigned int *)this->BlitterCore = &Blitter::`vftable'; /*0x499cc9*/
+  *(unsigned int *)this->BlitterCore = &vt_Blitter; /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
     __3_YAXPAX_Z(this); /*0x499cd2*/
   return (std::locale::facet *)this; /*0x499cdc*/
@@ -1376,7 +1376,7 @@ namespace gamemd {
 BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499ce9*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499ce9*/
   if ( (a2 & 1) != 0 ) /*0x499cef*/
     __3_YAXPAX_Z(this); /*0x499cf2*/
   return this; /*0x499cfc*/
@@ -1389,7 +1389,7 @@ namespace gamemd {
 BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499d09*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499d09*/
   if ( (a2 & 1) != 0 ) /*0x499d0f*/
     __3_YAXPAX_Z(this); /*0x499d12*/
   return this; /*0x499d1c*/
@@ -1402,7 +1402,7 @@ namespace gamemd {
 std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 {
 
-  *(unsigned int *)this = &Blitter::`vftable'; /*0x499d29*/
+  *(unsigned int *)this = &vt_Blitter; /*0x499d29*/
   if ( (a2 & 1) != 0 ) /*0x499d2f*/
     __3_YAXPAX_Z(this); /*0x499d32*/
   return this; /*0x499d3c*/
@@ -1415,7 +1415,7 @@ namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
 
-  *(unsigned int *)this->RLEBlitterCore = &RLEBlitter::`vftable'; /*0x499da9*/
+  *(unsigned int *)this->RLEBlitterCore = &vt_RLEBlitter; /*0x499da9*/
   if ( (a2 & 1) != 0 ) /*0x499daf*/
     __3_YAXPAX_Z(this); /*0x499db2*/
   return (std::locale::facet *)this; /*0x499dbc*/
@@ -1656,10 +1656,10 @@ namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(unsigned int * Block, char a2)
 {
 
-  Block->vtable0 = &MissionClass::`vftable'; /*0x5b3a63*/
-  Block->vtable1 = &MissionClass::`vftable'; /*0x5b3a69*/
-  Block->vtable2 = &MissionClass::`vftable'; /*0x5b3a70*/
-  Block->vtable3 = &MissionClass::`vftable'; /*0x5b3a77*/
+  Block->vtable0 = &vt_MissionClass; /*0x5b3a63*/
+  Block->vtable1 = &vt_MissionClass; /*0x5b3a69*/
+  Block->vtable2 = &vt_MissionClass; /*0x5b3a70*/
+  Block->vtable3 = &vt_MissionClass; /*0x5b3a77*/
   ObjectClass::Dtor((ObjectClass *)Block); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
     __3_YAXPAX_Z(Block); /*0x5b3a8b*/
@@ -2101,7 +2101,7 @@ namespace gamemd {
 FileClass * AbstractClass::processAITrigger(unsigned int * Block, char a2)
 {
 
-  *Block = (FileClass)&FileClass::`vftable'; /*0x65c619*/
+  *Block = (FileClass)&vt_FileClass; /*0x65c619*/
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
     __3_YAXPAX_Z(Block); /*0x65c622*/
   return Block; /*0x65c62c*/

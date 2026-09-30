@@ -145,7 +145,7 @@ void * NullModemClass::QueryInterface(void *** Block, char a2)
   void **v3; // edi
 
   v3 = (void **)*((unsigned int *)Block + 13); /*0x5f3654*/
-  *(unsigned int *)Block->ConnectionClass = &NullModemClass::`vftable'; /*0x5f3657*/
+  *(unsigned int *)Block->ConnectionClass = &vt_NullModemClass; /*0x5f3657*/
   if ( v3 ) /*0x5f365f*/
   {
     FileFind::Close(v3); /*0x5f3663*/
@@ -169,7 +169,7 @@ void * NullModemClass::QueryInterface(void *** Block, char a2)
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
 LABEL_10:
-  *(unsigned int *)Block->ConnectionClass = &ConnManClass::`vftable'; /*0x5f36cf*/
+  *(unsigned int *)Block->ConnectionClass = &vt_ConnManClass; /*0x5f36cf*/
   if ( (a2 & 1) != 0 ) /*0x5f36db*/
     __3_YAXPAX_Z(Block); /*0x5f36de*/
   return Block->ConnectionClass; /*0x5f36e8*/

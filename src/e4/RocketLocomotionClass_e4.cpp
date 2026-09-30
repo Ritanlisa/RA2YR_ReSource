@@ -35,8 +35,8 @@ RocketLocomotionClass::RocketLocomotionClass()
   this->CurrentPitch = 0.0; /*0x661f0f*/
   this->RocketLocomotionClass_field_58 = 0; /*0x661f12*/
   this->RocketLocomotionClass_field_bool_4C = 1; /*0x661f15*/
-  *(unsigned int *)this->LocomotionClass = &RocketLocomotionClass::`vftable'; /*0x661f19*/
-  *(unsigned int *)&this->LocomotionClass[4] = &RocketLocomotionClass::`vftable'; /*0x661f1f*/
+  *(unsigned int *)this->LocomotionClass = &vt_RocketLocomotionClass; /*0x661f19*/
+  *(unsigned int *)&this->LocomotionClass[4] = &vt_RocketLocomotionClass; /*0x661f1f*/
   return (int)this->LocomotionClass; /*0x661f28*/
 
 }
@@ -63,13 +63,13 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x663426*/
     {
-      *(unsigned int *)a1->LocomotionClass = &LocomotionClass::`vftable'; /*0x663428*/
-      *(unsigned int *)&a1->LocomotionClass[4] = &LocomotionClass::`vftable'; /*0x66342e*/
+      *(unsigned int *)a1->LocomotionClass = &vt_LocomotionClass; /*0x663428*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &vt_LocomotionClass; /*0x66342e*/
       v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x663435*/
       a1->TrailerTimer[2] = 0; /*0x66343b*/
       a1->TrailerTimer[0] = v3; /*0x663442*/
-      *(unsigned int *)a1->LocomotionClass = &RocketLocomotionClass::`vftable'; /*0x663445*/
-      *(unsigned int *)&a1->LocomotionClass[4] = &RocketLocomotionClass::`vftable'; /*0x66344b*/
+      *(unsigned int *)a1->LocomotionClass = &vt_RocketLocomotionClass; /*0x663445*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &vt_RocketLocomotionClass; /*0x66344b*/
     }
   }
   return result; /*0x663452*/
@@ -86,8 +86,8 @@ int RocketLocomotionClass::StubReturn96()
 RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->LocomotionClass = &RocketLocomotionClass::`vftable'; /*0x6635c3*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &RocketLocomotionClass::`vftable'; /*0x6635c9*/
+  *(unsigned int *)Block->LocomotionClass = &vt_RocketLocomotionClass; /*0x6635c3*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &vt_RocketLocomotionClass; /*0x6635c9*/
   LocomotionClass::Construct((LocomotionClass *)Block); /*0x6635d0*/
   if ( (a2 & 1) != 0 ) /*0x6635da*/
     __3_YAXPAX_Z(Block); /*0x6635dd*/
@@ -352,7 +352,7 @@ void RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x664a73*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664a76*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x664a76*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x664a80*/
   {
     __3_YAXPAX_Z(v3); /*0x664a88*/
@@ -375,7 +375,7 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x664ac3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable'; /*0x664ac6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x664ac6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x664ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x664ad8*/

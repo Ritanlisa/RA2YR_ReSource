@@ -18,7 +18,7 @@ namespace gamemd {
 CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &CCToolTip::`vftable'; /*0x7784a3*/
+  *(unsigned int *)Block->__pad_0 = &vt_CCToolTip; /*0x7784a3*/
   ToolTipClass::updateString((ToolTipClass *)Block); /*0x7784a9*/
   if ( (a2 & 1) != 0 ) /*0x7784b3*/
     __3_YAXPAX_Z(Block); /*0x7784b6*/

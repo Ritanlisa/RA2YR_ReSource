@@ -35,7 +35,7 @@ CampaignClass * RadarClass::Destruct()
   CampaignClass *RadarClass_field_0x1228; // eax
   int result; // eax
 
-  this->RadarClass_field_0x0 = (gamemd::MapClass **)(&RadarClass::`vftable');
+  this->RadarClass_field_0x0 = (gamemd::MapClass **)(&vt_RadarClass);
   AudioFileClass::Release((AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
   TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
   p_RadarClass_field_0x1488 = &this->RadarClass_field_0x1488; /*0x652c1e*/
@@ -44,7 +44,7 @@ CampaignClass * RadarClass::Destruct()
   {
     v4 = *(p_RadarClass_field_0x1488 - 5); /*0x652c2b*/
     p_RadarClass_field_0x1488 -= 6; /*0x652c2e*/
-    *p_RadarClass_field_0x1488 = (MapClass *)&VectorClass<Point2D>::`vftable'; /*0x652c33*/
+    *p_RadarClass_field_0x1488 = (MapClass *)&vt_VectorClass; /*0x652c33*/
     if ( v4 && *((unsigned char *)p_RadarClass_field_0x1488 + 13) ) /*0x652c3b*/
     {
       __3_YAXPAX_Z(v4); /*0x652c41*/
@@ -56,7 +56,7 @@ CampaignClass * RadarClass::Destruct()
   }
   while ( v3 ); /*0x652c53*/
   RadarClass_field_0x1260 = this->RadarClass_field_0x1260; /*0x652c55*/
-  this->RadarClass_field_0x125C = (VectorClass *)&VectorClass<Point2D>::`vftable'; /*0x652c5b*/
+  this->RadarClass_field_0x125C = (VectorClass *)&vt_VectorClass; /*0x652c5b*/
   if ( RadarClass_field_0x1260 && this->__pad_1264[5] ) /*0x652c69*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1260); /*0x652c72*/
@@ -65,7 +65,7 @@ CampaignClass * RadarClass::Destruct()
   this-((unsigned int *)(>__pad_1264))[5] = (gamemd::CampaignClass *)(0);
   *(unsigned int *)this->__pad_1264 = 0; /*0x652c86*/
   RadarClass_field_0x1228 = this->RadarClass_field_0x1228; /*0x652c8c*/
-  this->RadarClass_field_0x1224 = (VectorClass *)&VectorClass<Cell>::`vftable'; /*0x652c92*/
+  this->RadarClass_field_0x1224 = (VectorClass *)&vt_VectorClass; /*0x652c92*/
   if ( RadarClass_field_0x1228 && this->__pad_122C[5] ) /*0x652ca0*/
   {
     __3_YAXPAX_Z(RadarClass_field_0x1228); /*0x652ca9*/

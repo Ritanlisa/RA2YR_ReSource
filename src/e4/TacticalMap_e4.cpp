@@ -294,10 +294,10 @@ void TacticalMap::Construct()
   this->Tactical_field_0xDA4 = (AbstractClass *)Timer::GetTicks(); /*0x6d1d35*/
   *(unsigned int *)&this->__pad_DA8[4] = 0; /*0x6d1d3b*/
   *(unsigned int *)&this->__pad_DA8[8] = 0; /*0x6d1d4e*/
-  *(unsigned int *)this->__pad_0 = &Tactical::`vftable'; /*0x6d1d54*/
-  *(unsigned int *)&this->Tactical_field_0x2[2] = &Tactical::`vftable'; /*0x6d1d5a*/
-  this->Tactical_field_0x8[0] = (int)&Tactical::`vftable'; /*0x6d1d61*/
-  this->Tactical_field_0xC[0] = (int)&Tactical::`vftable'; /*0x6d1d68*/
+  *(unsigned int *)this->__pad_0 = &vt_Tactical; /*0x6d1d54*/
+  *(unsigned int *)&this->Tactical_field_0x2[2] = &vt_Tactical; /*0x6d1d5a*/
+  this->Tactical_field_0x8[0] = (int)&vt_Tactical; /*0x6d1d61*/
+  this->Tactical_field_0xC[0] = (int)&vt_Tactical; /*0x6d1d68*/
   memset(&this->__pad_AC[56], 0, 0xC80u); /*0x6d1d6f*/
   *(unsigned short *)&this->__pad_10[20] = 0; /*0x6d1d77*/
   *(unsigned int *)&this->__pad_34[112] = -1; /*0x6d1d7d*/

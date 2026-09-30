@@ -197,7 +197,7 @@ LABEL_42: v12 = (gamemd::Skirmish *)(g_UIControlState);
 LABEL_44:
       v13 = CCFileClass::Construct((CCFileClass *)Str, byte_A8B8E0); /*0x5e7845*/
       v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
-      *(unsigned int *)Str = &CCFileClass::`vftable'; /*0x5e7864*/
+      *(unsigned int *)Str = &vt_CCFileClass; /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
       *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
       Vector::Clear((int)&Str[88]); /*0x5e7876*/

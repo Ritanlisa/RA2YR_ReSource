@@ -373,10 +373,10 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
           0);
   v18.Pipe_field_0x04 = 0; /*0x4ad956*/
   v18.Pipe_field_0x08 = 0; /*0x4ad95a*/
-  *(unsigned int *)v18.__pad_0 = &Pipe::`vftable'; /*0x4ad95e*/
+  *(unsigned int *)v18.__pad_0 = &vt_Pipe; /*0x4ad95e*/
   Buffer::Init((Buffer *)&v18.Pipe_field_0x0C, v10, v9); /*0x4ad966*/
   v19 = 0; /*0x4ad96f*/
-  *(unsigned int *)v18.__pad_0 = &BufferPipe::`vftable'; /*0x4ad979*/
+  *(unsigned int *)v18.__pad_0 = &vt_BufferPipe; /*0x4ad979*/
   v11 = MapClass::DecompressCellData((MapClass *)&stru_87F5F0.__pad_58[416], (int)&v18); /*0x4ad990*/
   INIClass::ClearSection((int *)a2, (int)aIsomappack, 0); /*0x4ad992*/
   INIClass::ClearSection((int *)a2, (int)aIsomappack2, 0); /*0x4ad9a0*/
@@ -547,7 +547,7 @@ ObjectClass * * MapClass::LoadFileData()
     while ( v5 < *(unsigned int *)&this->__pad_298[80] * *(unsigned int *)&this->__pad_298[76] ); /*0x5470cb*/
   }
   TerrainClass::InitTheatre((TerrainClass *)this); /*0x5470cf*/
-  *(unsigned int *)v12.CDFileClass = &CCFileClass::`vftable'; /*0x5470d8*/
+  *(unsigned int *)v12.CDFileClass = &vt_CCFileClass; /*0x5470d8*/
   v14 = 0; /*0x5470e0*/
   Vector::Clear((int)v13); /*0x5470e8*/
   *(unsigned int *)v12.CDFileClass = &off_7E1668; /*0x5470f1*/
@@ -590,7 +590,7 @@ void* MapClass::Destruct()
   void *v11; // eax
   int v12; // [esp+8h] [ebp-4h]
 
-  *(unsigned int *)this = &MapClass::`vftable'; /*0x5652c5*/
+  *(unsigned int *)this = &vt_MapClass; /*0x5652c5*/
   CleanupVeinholeSystem(); /*0x5652cb*/
   Map_Destroy(); /*0x5652d0*/
   BuildingClass::FreeUpgradeQueue(); /*0x5652d5*/
@@ -630,7 +630,7 @@ void* MapClass::Destruct()
   }
   while ( v12 ); /*0x565361*/
   v5 = (void *)*((unsigned int *)this + 1112); /*0x565363*/
-  *((unsigned int *)this + 1111) = &VectorClass<Cell>::`vftable'; /*0x565370*/
+  *((unsigned int *)this + 1111) = &vt_VectorClass; /*0x565370*/
   if ( v5 && *((unsigned char *)this + 4457) ) /*0x565378*/
   {
     __3_YAXPAX_Z(v5); /*0x565381*/
@@ -639,7 +639,7 @@ void* MapClass::Destruct()
   *((unsigned char *)this + 4457) = 0; /*0x56538f*/
   *((unsigned int *)this + 1113) = 0; /*0x565395*/
   v6 = (void *)*((unsigned int *)this + 79); /*0x56539b*/
-  *((unsigned int *)this + 78) = &VectorClass<CellClass *>::`vftable'; /*0x5653a1*/
+  *((unsigned int *)this + 78) = &vt_VectorClass; /*0x5653a1*/
   if ( v6 && *((unsigned char *)this + 325) ) /*0x5653af*/
   {
     __3_YAXPAX_Z(v6); /*0x5653b8*/
@@ -648,7 +648,7 @@ void* MapClass::Destruct()
   *((unsigned char *)this + 325) = 0; /*0x5653c6*/
   *((unsigned int *)this + 80) = 0; /*0x5653cc*/
   v7 = (void *)*((unsigned int *)this + 54); /*0x5653d2*/
-  *((unsigned int *)this + 53) = &VectorClass<Cell>::`vftable'; /*0x5653d8*/
+  *((unsigned int *)this + 53) = &vt_VectorClass; /*0x5653d8*/
   if ( v7 && *((unsigned char *)this + 225) ) /*0x5653e2*/
   {
     __3_YAXPAX_Z(v7); /*0x5653eb*/
@@ -662,7 +662,7 @@ void* MapClass::Destruct()
   {
     v10 = (void *)*((unsigned int *)v8 - 5); /*0x565410*/
     v8 -= 24; /*0x565413*/
-    *(unsigned int *)v8 = &VectorClass<SubzoneTrackingStruct>::`vftable'; /*0x565418*/
+    *(unsigned int *)v8 = &vt_VectorClass; /*0x565418*/
     if ( v10 && v8[13] ) /*0x565420*/
     {
       SubzoneConnectionVector::Destruct(v10, 3); /*0x56542b*/
@@ -674,7 +674,7 @@ void* MapClass::Destruct()
   }
   while ( v9 ); /*0x56543a*/
   v11 = (void *)*((unsigned int *)this + 21); /*0x56543c*/
-  *((unsigned int *)this + 20) = &VectorClass<ZoneConnectionClass>::`vftable'; /*0x565442*/
+  *((unsigned int *)this + 20) = &vt_VectorClass; /*0x565442*/
   if ( v11 && *((unsigned char *)this + 93) ) /*0x56544c*/
   {
     __3_YAXPAX_Z(v11); /*0x565452*/
@@ -745,7 +745,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
       do /*0x5658ae*/
       {
         HashVector_UInt::Construct(v7, 0, 0); /*0x565891*/
-        *v7 = (HashVector_UInt)&DynamicVectorClass<HashObject<unsigned int,unsigned int>>::`vftable'; /*0x565896*/
+        *v7 = (HashVector_UInt)&vt_DynamicVectorClassHashObject; /*0x565896*/
         v7[5] = (HashVector_UInt)10; /*0x56589c*/
         v7[4] = 0; /*0x5658a3*/
         v7 += 6; /*0x5658aa*/
@@ -806,7 +806,7 @@ LABEL_14:
         do /*0x56597f*/
         {
           SubzoneHashVector::Construct(v18, 0, 0); /*0x565962*/
-          *v18 = (SubzoneHashVector)&DynamicVectorClass<HashObject<unsigned int,SubzoneConnectionStruct>>::`vftable'; /*0x565967*/
+          *v18 = (SubzoneHashVector)&vt_DynamicVectorClassHashObject; /*0x565967*/
           v18[5] = (SubzoneHashVector)10; /*0x56596d*/
           v18[4] = 0; /*0x565974*/
           v18 += 6; /*0x56597b*/
@@ -915,7 +915,7 @@ int MapClass::InitCellVector()
     *((unsigned int *)v2 + 2) = 0; /*0x565ab4*/
     v2[12] = 1; /*0x565abb*/
     v2[13] = 0; /*0x565abf*/
-    *(unsigned int *)v2 = &VectorClass<CellClass *>::`vftable'; /*0x565ac3*/
+    *(unsigned int *)v2 = &vt_VectorClass; /*0x565ac3*/
   }
   (*(void (**)(char *, unsigned int, unsigned int))(*(unsigned int *)v2 + 8))(v2, *(unsigned int *)&this->__pad_144[16], 0); /*0x565ad4*/
   for ( result = 0; result < *(unsigned int *)&this->__pad_144[16]; *((unsigned int *)this->MapClass_field_0x13C + result - 1) = 0 ) /*0x565ae1*/
@@ -2525,7 +2525,7 @@ LABEL_34:
     VectorClass::CellConstructor(&v69, 0, 0); /*0x574f85*/
     v40 = *(int16_t **)v63; /*0x574f8a*/
     occupationFlags = v2->occupationFlags; /*0x574f8e*/
-    v69.vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x574f99*/
+    v69.vtable0 = &vt_DynamicVectorClass; /*0x574f99*/
     v71 = 10; /*0x574fa1*/
     v70 = 0; /*0x574fa9*/
     if ( v63[0] >= occupationFlags ) /*0x574fb1*/
@@ -2629,7 +2629,7 @@ LABEL_79:
       while ( (int16_t)aP1 >= occupationFlags ); /*0x574fbd*/
     }
     Terrain::ConnectivityGraph((Terrain *)v2); /*0x5751e6*/
-    v69.vtable0 = &VectorClass<Cell>::`vftable'; /*0x5751f1*/
+    v69.vtable0 = &vt_VectorClass; /*0x5751f1*/
     if ( v69.Items ) /*0x5751fb*/
     {
       if ( v69.IsAllocated ) /*0x575203*/
@@ -3713,7 +3713,7 @@ unsigned int * MapClass::allocateMapBuffers()
   this->MapClass_field_0x8 = 0; /*0x589bd9*/
   LOBYTE(this->MapClass_field_0xC) = 1; /*0x589bdc*/
   BYTE1(this->MapClass_field_0xC) = 0; /*0x589be0*/
-  this->MapClass_field_0x0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x589be3*/
+  this->MapClass_field_0x0 = &vt_DynamicVectorClass; /*0x589be3*/
   this->MapClass_field_0x14 = (void *)10; /*0x589be9*/
   this->MapClass_field_0x10 = 0; /*0x589bf0*/
   VectorClass::CleanupSubzone((int)this); /*0x589bf3*/
@@ -3774,7 +3774,7 @@ int MapClass::Cleanup(int a1, int a2)
       v6 = (*(int (**)(int *, unsigned int **))(dword_ABDF90 + 16))(&dword_ABDF90, &v13); /*0x594782*/
       if ( v6 != -1 ) /*0x594787*/
         Vector4::EraseAt(&dword_ABDF90, v6); /*0x59478f*/
-      v5[10] = &VectorClass<Cell>::`vftable'; /*0x594797*/
+      v5[10] = &vt_VectorClass; /*0x594797*/
       Buffer::Cleanup((int)(v5 + 10)); /*0x59479d*/
       __3_YAXPAX_Z(v5); /*0x5947a3*/
     }
@@ -3847,7 +3847,7 @@ int MapClass::ProcessTile()
         }
       }
       v4 = (void *)v2[11]; /*0x5995d2*/
-      v2[10] = &VectorClass<Cell>::`vftable'; /*0x5995d5*/
+      v2[10] = &vt_VectorClass; /*0x5995d5*/
       if ( v4 && *((unsigned char *)v2 + 53) ) /*0x5995e0*/
       {
         __3_YAXPAX_Z(v4); /*0x5995e6*/
@@ -3941,7 +3941,7 @@ MapClass * * MapClass::GrowLayer(int a2, int a3, int a4)
         if ( v11 ) /*0x5a0515*/
         {
           VectorClass::CellConstructor(v11, 0, 0); /*0x5a051b*/
-          v12->vtable0 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a0520*/
+          v12->vtable0 = &vt_DynamicVectorClass; /*0x5a0520*/
           v12[1].Items = (void *)10; /*0x5a0526*/
           v12[1].vtable0 = 0; /*0x5a052d*/
           v13 = v12; /*0x5a0530*/
@@ -4754,7 +4754,7 @@ VectorClass_flat * MapClass::InitCellVe_vt00(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x589063*/
-  *Block = &VectorClass<CellClass *>::`vftable'; /*0x589066*/
+  *Block = &vt_VectorClass; /*0x589066*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x589070*/
   {
     __3_YAXPAX_Z(v3); /*0x589078*/

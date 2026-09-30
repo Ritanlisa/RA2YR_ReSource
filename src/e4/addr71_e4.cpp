@@ -1280,7 +1280,7 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
   this->__pad_0[52] = a9; /*0x71ff5c*/
   this->field_38 = a3; /*0x71ff5f*/
   *((unsigned int *)this + 15) = a4; /*0x71ff62*/
-  *(unsigned int *)this->__pad_0 = &TextButtonClass::`vftable'; /*0x71ff65*/
+  *(unsigned int *)this->__pad_0 = &vt_TextButtonClass; /*0x71ff65*/
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {
     Instance = TextRenderer::GetInstance(); /*0x71ff7a*/

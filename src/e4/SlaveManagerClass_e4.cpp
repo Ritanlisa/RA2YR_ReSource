@@ -82,17 +82,17 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6af1a8*/
   SlaveControlVector::Constructor((unsigned int *)((char *)this + 56), 0, 0); /*0x6af1b6*/
-  *((unsigned int *)this + 14) = &DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af1c3*/
+  *((unsigned int *)this + 14) = &vt_DynamicVectorClass; /*0x6af1c3*/
   *((unsigned int *)this + 19) = 10; /*0x6af1c9*/
   *((unsigned int *)this + 18) = 0; /*0x6af1d0*/
   *((unsigned int *)this + 20) = dword_A8ED84; /*0x6af1d8*/
   *((unsigned int *)this + 22) = 0; /*0x6af1df*/
   *((unsigned int *)this + 9) = aP1; /*0x6af1e2*/
   *((unsigned int *)this + 10) = a3; /*0x6af1e9*/
-  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af1f2*/
-  *((unsigned int *)this + 1) = &SlaveManagerClass::`vftable'; /*0x6af1f8*/
-  *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af1ff*/
-  *((unsigned int *)this + 3) = &SlaveManagerClass::`vftable'; /*0x6af206*/
+  *(unsigned int *)this = &vt_SlaveManagerClass; /*0x6af1f2*/
+  *((unsigned int *)this + 1) = &vt_SlaveManagerClass; /*0x6af1f8*/
+  *((unsigned int *)this + 2) = &vt_SlaveManagerClass; /*0x6af1ff*/
+  *((unsigned int *)this + 3) = &vt_SlaveManagerClass; /*0x6af206*/
   *((unsigned int *)this + 11) = a4; /*0x6af20d*/
   *((unsigned int *)this + 12) = a5; /*0x6af210*/
   *((unsigned int *)this + 13) = a6; /*0x6af213*/
@@ -174,15 +174,15 @@ void SlaveManagerClass::Constructor()
   this->slaveVectorCapacity = 0; /*0x6af374*/
   LOBYTE(this->creationFrame) = 1; /*0x6af377*/
   BYTE1(this->creationFrame) = 0; /*0x6af37b*/
-  this->slaves[0] = (int)&DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af37e*/
+  this->slaves[0] = (int)&vt_DynamicVectorClass; /*0x6af37e*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_48))[4] = 10; /*0x6af385*/
   *(unsigned int *)this->__pad_48 = 0; /*0x6af38c*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_48))[8] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6af395*/
   this->SlaveManagerClass_field_58 = 0; /*0x6af398*/
-  this->AbstractClass = &SlaveManagerClass::`vftable'; /*0x6af39b*/
-  this->? = &SlaveManagerClass::`vftable'; /*0x6af3a1*/
-  this->? = &SlaveManagerClass::`vftable'; /*0x6af3a8*/
-  this->? = &SlaveManagerClass::`vftable'; /*0x6af3af*/
+  this->AbstractClass = &vt_SlaveManagerClass; /*0x6af39b*/
+  this->? = &vt_SlaveManagerClass; /*0x6af3a1*/
+  this->? = &vt_SlaveManagerClass; /*0x6af3a8*/
+  this->? = &vt_SlaveManagerClass; /*0x6af3af*/
   this->master = 0; /*0x6af3b6*/
   this->house = 0; /*0x6af3b9*/
   this->slaveOwner = 0; /*0x6af3bc*/
@@ -220,10 +220,10 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   void *v5; // eax
   int v6; // [esp+8h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af4a5*/
-  *((unsigned int *)this + 1) = &SlaveManagerClass::`vftable'; /*0x6af4ab*/
-  *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af4b2*/
-  *((unsigned int *)this + 3) = &SlaveManagerClass::`vftable'; /*0x6af4b9*/
+  *(unsigned int *)this = &vt_SlaveManagerClass; /*0x6af4a5*/
+  *((unsigned int *)this + 1) = &vt_SlaveManagerClass; /*0x6af4ab*/
+  *((unsigned int *)this + 2) = &vt_SlaveManagerClass; /*0x6af4b2*/
+  *((unsigned int *)this + 3) = &vt_SlaveManagerClass; /*0x6af4b9*/
   for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i ) /*0x6af4c4*/
   {
     if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x6af4c9*/
@@ -244,7 +244,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
     while ( v4 < dword_B0B600 ); /*0x6af53d*/
   }
   v5 = *(void **)((char *)this + 60); /*0x6af53f*/
-  *((unsigned int *)this + 14) = &VectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6af542*/
+  *((unsigned int *)this + 14) = &vt_VectorClass; /*0x6af542*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6af54c*/
   {
     __3_YAXPAX_Z(v5); /*0x6af554*/
@@ -824,15 +824,15 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
     {
       AbstractClass::InitVtables((AbstractClass *)v3, (int)&a1); /*0x6b119b*/
       SlaveControlVector::Constructor((SlaveControlVector *)v3->slaves, 0, 0); /*0x6b11a7*/
-      v3->slaves[0] = (int)&DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6b11b0*/
+      v3->slaves[0] = (int)&vt_DynamicVectorClass; /*0x6b11b0*/
       *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b11b6*/
       *(unsigned int *)v3->__pad_48 = 0; /*0x6b11bd*/
       Timer::Start((Timer *)&v3->__pad_48[8], 0); /*0x6b11c0*/
-      v3->AbstractClass = &SlaveManagerClass::`vftable'; /*0x6b11c5*/
-      v3->? = &SlaveManagerClass::`vftable'; /*0x6b11cb*/
+      v3->AbstractClass = &vt_SlaveManagerClass; /*0x6b11c5*/
+      v3->? = &vt_SlaveManagerClass; /*0x6b11cb*/
       v2 = a2; /*0x6b11d2*/
-      v3->? = &SlaveManagerClass::`vftable'; /*0x6b11d6*/
-      v3->? = &SlaveManagerClass::`vftable'; /*0x6b11dd*/
+      v3->? = &vt_SlaveManagerClass; /*0x6b11d6*/
+      v3->? = &vt_SlaveManagerClass; /*0x6b11dd*/
     }
     Prefix_0 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v2 + 12))(v2, &v16, 4, 0); /*0x6b11f2*/
     if ( Prefix_0 >= 0 ) /*0x6b11f6*/
@@ -841,7 +841,7 @@ AbstractClass * * SlaveManagerClass::LoadManager(unsigned int * a1, int a2)
       if ( v3 != (SlaveManagerClass *)-56 ) /*0x6b1201*/
       {
         SlaveControlVector::Constructor((SlaveControlVector *)v3->slaves, 0, 0); /*0x6b1207*/
-        *slaves = (int)&DynamicVectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6b120c*/
+        *slaves = (int)&vt_DynamicVectorClass; /*0x6b120c*/
         *(unsigned int *)&v3->__pad_48[4] = 10; /*0x6b1212*/
         *(unsigned int *)v3->__pad_48 = 0; /*0x6b1219*/
       }
@@ -1206,7 +1206,7 @@ DynamicVector * SlaveManagerClass_25::QueryInterface(unsigned int * Block, char 
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x6b1983*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<SlaveManagerClass::SlaveControl *>::`vftable'; /*0x6b1986*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6b1986*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6b1990*/
   {
     __3_YAXPAX_Z(v3); /*0x6b1998*/

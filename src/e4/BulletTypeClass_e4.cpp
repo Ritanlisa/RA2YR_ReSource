@@ -175,10 +175,10 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   *((unsigned char *)this + 757) = 0; /*0x46bcd4*/
   *((unsigned char *)this + 758) = 0; /*0x46bcda*/
   *((unsigned char *)this + 759) = 0; /*0x46bce0*/
-  *(unsigned int *)this->ObjectTypeClass = &BulletTypeClass::`vftable'; /*0x46bce6*/
-  *(unsigned int *)&this->ObjectTypeClass[4] = &BulletTypeClass::`vftable'; /*0x46bcec*/
-  *(unsigned int *)&this->ObjectTypeClass[8] = &BulletTypeClass::`vftable'; /*0x46bcf2*/
-  *(unsigned int *)&this->ObjectTypeClass[12] = &BulletTypeClass::`vftable'; /*0x46bcf9*/
+  *(unsigned int *)this->ObjectTypeClass = &vt_BulletTypeClass; /*0x46bce6*/
+  *(unsigned int *)&this->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46bcec*/
+  *(unsigned int *)&this->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46bcf2*/
+  *(unsigned int *)&this->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46bcf9*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->ObjectTypeClass[4]); /*0x46bd00*/
   *((unsigned char *)this + 564) = 1; /*0x46bd05*/
   *((unsigned char *)this + 559) = 1; /*0x46bd0c*/
@@ -614,10 +614,10 @@ BulletTypeClass * BulletTypeClass::ddtor(void ** Block, char a2)
   int v4; // eax
   BulletTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->ObjectTypeClass = &BulletTypeClass::`vftable'; /*0x46c896*/
-  *(unsigned int *)&Block->ObjectTypeClass[4] = &BulletTypeClass::`vftable'; /*0x46c89c*/
-  *(unsigned int *)&Block->ObjectTypeClass[8] = &BulletTypeClass::`vftable'; /*0x46c8a3*/
-  *(unsigned int *)&Block->ObjectTypeClass[12] = &BulletTypeClass::`vftable'; /*0x46c8aa*/
+  *(unsigned int *)Block->ObjectTypeClass = &vt_BulletTypeClass; /*0x46c896*/
+  *(unsigned int *)&Block->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46c89c*/
+  *(unsigned int *)&Block->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46c8a3*/
+  *(unsigned int *)&Block->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46c8aa*/
   AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x46c8b1*/
   v6 = Block; /*0x46c8c6*/
   v3 = (*(int (**)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
@@ -930,10 +930,10 @@ int BulletTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x46c6b6*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x46c6bf*/
-      *(unsigned int *)aP0->ObjectTypeClass = &BulletTypeClass::`vftable'; /*0x46c6c4*/
-      *(unsigned int *)&aP0->ObjectTypeClass[4] = &BulletTypeClass::`vftable'; /*0x46c6ca*/
-      *(unsigned int *)&aP0->ObjectTypeClass[8] = &BulletTypeClass::`vftable'; /*0x46c6d1*/
-      *(unsigned int *)&aP0->ObjectTypeClass[12] = &BulletTypeClass::`vftable'; /*0x46c6d8*/
+      *(unsigned int *)aP0->ObjectTypeClass = &vt_BulletTypeClass; /*0x46c6c4*/
+      *(unsigned int *)&aP0->ObjectTypeClass[4] = &vt_BulletTypeClass; /*0x46c6ca*/
+      *(unsigned int *)&aP0->ObjectTypeClass[8] = &vt_BulletTypeClass; /*0x46c6d1*/
+      *(unsigned int *)&aP0->ObjectTypeClass[12] = &vt_BulletTypeClass; /*0x46c6d8*/
     }
     VoxelAnimType::LoadAnim(aP0->ObjectTypeClass); /*0x46c6e1*/
     ObjectTypeClass::Load2DArt(aP0->ObjectTypeClass); /*0x46c6e8*/

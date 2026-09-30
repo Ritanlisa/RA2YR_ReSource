@@ -5605,8 +5605,8 @@ namespace gamemd {
 void E4Recv_5AFF50::sub_5AFF50()
 {
 
-  *(unsigned int *)this->LocomotionClass = &MechLocomotionClass::`vftable'; /*0x5aff50*/
-  *(unsigned int *)&this->LocomotionClass[4] = &MechLocomotionClass::`vftable'; /*0x5aff56*/
+  *(unsigned int *)this->LocomotionClass = &vt_MechLocomotionClass; /*0x5aff50*/
+  *(unsigned int *)&this->LocomotionClass[4] = &vt_MechLocomotionClass; /*0x5aff56*/
   LocomotionClass::Construct((LocomotionClass *)this); /*0x5aff5d*/
 
 }

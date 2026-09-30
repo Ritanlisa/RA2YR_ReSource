@@ -30,8 +30,8 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4af79a*/
   {
     a1->Piggybackee = 0; /*0x4af79c*/
-    *(unsigned int *)a1->LocomotionClass = &DriveLocomotionClass::`vftable'; /*0x4af7a3*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &DriveLocomotionClass::`vftable'; /*0x4af7a9*/
+    *(unsigned int *)a1->LocomotionClass = &vt_DriveLocomotionClass; /*0x4af7a3*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &vt_DriveLocomotionClass; /*0x4af7a9*/
     *(unsigned int *)a1->__pad_18 = &off_7E7E8C; /*0x4af7b0*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4af7c3*/
@@ -137,8 +137,8 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, c
 
   ILocomotion *Piggybackee; // eax
 
-  *(unsigned int *)Block->LocomotionClass = &DriveLocomotionClass::`vftable'; /*0x4b4d03*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &DriveLocomotionClass::`vftable'; /*0x4b4d09*/
+  *(unsigned int *)Block->LocomotionClass = &vt_DriveLocomotionClass; /*0x4b4d03*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &vt_DriveLocomotionClass; /*0x4b4d09*/
   *(unsigned int *)Block->__pad_18 = &off_7E7E8C; /*0x4b4d10*/
   Piggybackee = Block->Piggybackee; /*0x4b4d17*/
   if ( Piggybackee ) /*0x4b4d1c*/

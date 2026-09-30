@@ -93,7 +93,7 @@ void * Tactical::ConstructTacticalSurface()
   do /*0x42a73d*/
   {
     VectorClassUInt::Constructor(0, 0); /*0x42a724*/
-    *v2 = &DynamicVectorClass<unsigned int>::`vftable'; /*0x42a729*/
+    *v2 = &vt_DynamicVectorClass; /*0x42a729*/
     v2[5] = 10; /*0x42a72f*/
     v2[4] = 0; /*0x42a736*/
     v2 += 6; /*0x42a739*/
@@ -2112,10 +2112,10 @@ namespace gamemd {
 Tactical * Tactical::UpdateView(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &Tactical::`vftable'; /*0x6dc473*/
-  *(unsigned int *)&Block->Tactical_field_0x2[2] = &Tactical::`vftable'; /*0x6dc479*/
-  Block->Tactical_field_0x8[0] = (int)&Tactical::`vftable'; /*0x6dc480*/
-  Block->Tactical_field_0xC[0] = (int)&Tactical::`vftable'; /*0x6dc487*/
+  *(unsigned int *)Block->__pad_0 = &vt_Tactical; /*0x6dc473*/
+  *(unsigned int *)&Block->Tactical_field_0x2[2] = &vt_Tactical; /*0x6dc479*/
+  Block->Tactical_field_0x8[0] = (int)&vt_Tactical; /*0x6dc480*/
+  Block->Tactical_field_0xC[0] = (int)&vt_Tactical; /*0x6dc487*/
   g_TacticalClass_Instance = 0; /*0x6dc48e*/
   AbstractClass::DTOR((AbstractClass *)Block); /*0x6dc498*/
   if ( (a2 & 1) != 0 ) /*0x6dc4a2*/
@@ -2361,7 +2361,7 @@ VectorClass_flat * Tactical_42::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x6e4ab3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<TActionClass *>::`vftable'; /*0x6e4ab6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x6e4ab6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6e4ac0*/
   {
     __3_YAXPAX_Z(v3); /*0x6e4ac8*/

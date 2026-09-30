@@ -26,7 +26,7 @@ void DeleteCommandClass_Undo()
 unsigned int * DeleteCommandClass::Constructor()
 {
 
-  *(unsigned int *)this->CommandClass = &DeleteCommandClass::`vftable'; /*0x537f12*/
+  *(unsigned int *)this->CommandClass = &vt_DeleteCommandClass; /*0x537f12*/
   return this->CommandClass; /*0x537f18*/
 
 }
@@ -316,7 +316,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x53c783*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<AnimClass const *>::`vftable'; /*0x53c786*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x53c786*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x53c790*/
   {
     __3_YAXPAX_Z(v3); /*0x53c798*/
@@ -339,7 +339,7 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x53c7d3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<AnimClass const *>::`vftable'; /*0x53c7d6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x53c7d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x53c7e0*/
   {
     __3_YAXPAX_Z(v3); /*0x53c7e8*/

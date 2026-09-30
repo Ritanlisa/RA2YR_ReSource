@@ -81,13 +81,13 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)&a2); /*0x549cd8*/
       IsometricTileTypeClass::Constructor_0((IsometricTileTypeClass *)((char *)a1 + 676), 0, 0); /*0x549ce9*/
-      *((unsigned int *)a1 + 169) = &DynamicVectorClass<unsigned short *>::`vftable'; /*0x549cee*/
+      *((unsigned int *)a1 + 169) = &vt_DynamicVectorClass; /*0x549cee*/
       *((unsigned int *)a1 + 174) = 10; /*0x549cf4*/
       *((unsigned int *)a1 + 173) = 0; /*0x549cfb*/
-      *(unsigned int *)a1->__pad_0 = &IsometricTileTypeClass::`vftable'; /*0x549d02*/
-      a1->IsometricTileTypeClass_field_0x04 = (int)&IsometricTileTypeClass::`vftable'; /*0x549d08*/
-      a1->IsometricTileTypeClass_field_0x08 = (int)&IsometricTileTypeClass::`vftable'; /*0x549d0f*/
-      a1->IsometricTileTypeClass_field_0x0C = (int)&IsometricTileTypeClass::`vftable'; /*0x549d16*/
+      *(unsigned int *)a1->__pad_0 = &vt_IsometricTileTypeClass; /*0x549d02*/
+      a1->IsometricTileTypeClass_field_0x04 = (int)&vt_IsometricTileTypeClass; /*0x549d08*/
+      a1->IsometricTileTypeClass_field_0x08 = (int)&vt_IsometricTileTypeClass; /*0x549d0f*/
+      a1->IsometricTileTypeClass_field_0x0C = (int)&vt_IsometricTileTypeClass; /*0x549d16*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a1 + 175); /*0x549d2a*/
     for ( j = 0; j < *(int *)&stru_87F5F0.__pad_58[96]; *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[84] + 4 * j - 4) = 0 ) /*0x549d39*/
@@ -292,7 +292,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x54a763*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<unsigned short *>::`vftable'; /*0x54a766*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x54a766*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x54a770*/
   {
     __3_YAXPAX_Z(v3); /*0x54a778*/
@@ -315,7 +315,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
   this->IsometricTileTypeClass_field_0x08 = a2; /*0x54a85e*/
   LOBYTE(this->IsometricTileTypeClass_field_0x0C) = 1; /*0x54a861*/
   BYTE1(this->IsometricTileTypeClass_field_0x0C) = 0; /*0x54a865*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<unsigned short *>::`vftable'; /*0x54a868*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x54a868*/
   if ( a2 ) /*0x54a86e*/
   {
     if ( a3 ) /*0x54a876*/

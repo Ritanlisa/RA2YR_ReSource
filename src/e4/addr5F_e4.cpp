@@ -1016,7 +1016,7 @@ unsigned int * E4Recv_5F15C0::sub_5F15C0(int a2, int a3, int a4, short a5)
   LOWORD(this->ambientSoundController[4]) = a5; /*0x5f15e2*/
   this->fallRate = 60; /*0x5f15eb*/
   this->customSound_controller[3] = 60; /*0x5f15ee*/
-  this->AbstractClass = &NullModemClass::`vftable'; /*0x5f15f1*/
+  this->AbstractClass = &vt_NullModemClass; /*0x5f15f1*/
   this->ambientSoundController[1] = -1; /*0x5f15f7*/
   this->attachedBomb = 0; /*0x5f15fa*/
   this->customSound_controller[0] = 0; /*0x5f15fd*/

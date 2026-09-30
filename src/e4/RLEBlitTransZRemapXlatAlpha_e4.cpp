@@ -126,7 +126,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49a9a9*/
+  *(unsigned int *)this->__pad_0 = &vt_RLEBlitter; /*0x49a9a9*/
   if ( (a2 & 1) != 0 ) /*0x49a9af*/
     __3_YAXPAX_Z(this); /*0x49a9b2*/
   return (std::locale::facet *)this; /*0x49a9bc*/
@@ -138,7 +138,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_0(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49a9c9*/
+  *(unsigned int *)this->__pad_0 = &vt_RLEBlitter; /*0x49a9c9*/
   if ( (a2 & 1) != 0 ) /*0x49a9cf*/
     __3_YAXPAX_Z(this); /*0x49a9d2*/
   return (std::locale::facet *)this; /*0x49a9dc*/
@@ -150,7 +150,7 @@ namespace gamemd {
 std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_1(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &RLEBlitter::`vftable'; /*0x49a9e9*/
+  *(unsigned int *)this->__pad_0 = &vt_RLEBlitter; /*0x49a9e9*/
   if ( (a2 & 1) != 0 ) /*0x49a9ef*/
     __3_YAXPAX_Z(this); /*0x49a9f2*/
   return (std::locale::facet *)this; /*0x49a9fc*/
@@ -165,10 +165,10 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
   void *m_C; // eax
 
   m_C = (void *)Block->m_C; /*0x49aa48*/
-  *(unsigned int *)Block->__pad_0 = &RLEBlitTransZRemapXlatAlpha<unsigned short>::`vftable'; /*0x49aa4b*/
+  *(unsigned int *)Block->__pad_0 = &vt_RLEBlitTransZRemapXlatAlpha; /*0x49aa4b*/
   FractalNoise::Dtor(m_C); /*0x49aa52*/
   Block->m_C = 0; /*0x49aa5b*/
-  *(unsigned int *)Block->__pad_0 = &RLEBlitter::`vftable'; /*0x49aa64*/
+  *(unsigned int *)Block->__pad_0 = &vt_RLEBlitter; /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
     __3_YAXPAX_Z(Block); /*0x49aa6d*/
   return Block->__pad_0; /*0x49aa77*/

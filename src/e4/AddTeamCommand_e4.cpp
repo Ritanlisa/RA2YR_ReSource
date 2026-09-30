@@ -14,7 +14,7 @@ void AddTeamCommand::Construct( int a2)
 {
 
   this->AddTeamCommand_field_00 = a2; /*0x5360b6*/
-  *(unsigned int *)this->CommandClass = &AddTeamCommandClass::`vftable'; /*0x5360b9*/
+  *(unsigned int *)this->CommandClass = &vt_AddTeamCommandClass; /*0x5360b9*/
   return this->CommandClass; /*0x5360bf*/
 
 }

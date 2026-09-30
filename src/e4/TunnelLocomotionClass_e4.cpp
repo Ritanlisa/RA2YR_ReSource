@@ -197,14 +197,14 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x72a168*/
     {
-      *(unsigned int *)a1->LocomotionClass = &LocomotionClass::`vftable'; /*0x72a16a*/
-      *(unsigned int *)&a1->LocomotionClass[4] = &LocomotionClass::`vftable'; /*0x72a170*/
+      *(unsigned int *)a1->LocomotionClass = &vt_LocomotionClass; /*0x72a16a*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &vt_LocomotionClass; /*0x72a170*/
       v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x72a177*/
       a1->CurrentState[6] = 0; /*0x72a17d*/
       a1->CurrentState[4] = v3; /*0x72a180*/
       a1->CurrentState[7] = 0; /*0x72a183*/
-      *(unsigned int *)a1->LocomotionClass = &TunnelLocomotionClass::`vftable'; /*0x72a186*/
-      *(unsigned int *)&a1->LocomotionClass[4] = &TunnelLocomotionClass::`vftable'; /*0x72a18c*/
+      *(unsigned int *)a1->LocomotionClass = &vt_TunnelLocomotionClass; /*0x72a186*/
+      *(unsigned int *)&a1->LocomotionClass[4] = &vt_TunnelLocomotionClass; /*0x72a18c*/
     }
   }
   return result; /*0x72a193*/

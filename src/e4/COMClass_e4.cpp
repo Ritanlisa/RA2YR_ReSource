@@ -39,7 +39,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
       do /*0x76703f*/
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x76702e*/
-        *(unsigned int *)v5->__pad_0 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x767033*/
+        *(unsigned int *)v5->__pad_0 = &vt_rc_ptr; /*0x767033*/
         ComPtr::Release(v5); /*0x767039*/
         --v7; /*0x76703e*/
       }
@@ -51,7 +51,7 @@ void * COMClass::lockServer(rc_ptr_base * Block, char a2)
   }
   else
   {
-    *(unsigned int *)Block->__pad_0 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76705a*/
+    *(unsigned int *)Block->__pad_0 = &vt_rc_ptr; /*0x76705a*/
     ComPtr::Release((ComPtr *)Block); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       __3_YAXPAX_Z(Block); /*0x76706b*/
@@ -65,7 +65,7 @@ namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x7669f9*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     __3_YAXPAX_Z(Block); /*0x766a02*/
   return Block->__pad_0; /*0x766a0c*/

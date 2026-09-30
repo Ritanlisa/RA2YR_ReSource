@@ -298,7 +298,7 @@ int E4Recv_5ADD10::Map_Delete()
   unknown_libname_73(v9); /*0x5add33*/
   v9[1] = (void *)this->Timer::GetTicks(); /*0x5add48*/
   v9[3] = 0; /*0x5add50*/
-  *(unsigned int *)v7.__pad_0 = &MapSelect::`vftable'; /*0x5add5b*/
+  *(unsigned int *)v7.__pad_0 = &vt_MapSelect; /*0x5add5b*/
   v2 = ((ScenarioClass *)((ScenarioClass *)&v7))->Load((int)this) == 0; /*0x5add71*/
   DeleteAndZero((ObjectClass *)v9); /*0x5add74*/
   MSEngine::Destructor((MSEngine *)v8); /*0x5add7d*/
@@ -1530,7 +1530,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       do /*0x769eb7*/
       {
         ComPtr::Constructor(v6); /*0x769ea8*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769ead*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x769ead*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769eb3*/
         --v9; /*0x769eb6*/
       }
@@ -1555,7 +1555,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
       do /*0x769e87*/
       {
         ComPtr::Constructor(v6); /*0x769e78*/
-        *(unsigned int *)v6->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769e7d*/
+        *(unsigned int *)v6->__pad_0 = &vt_rc_ptr; /*0x769e7d*/
         v6 = (ComPtr *)((char *)v6 + 8); /*0x769e83*/
         --v7; /*0x769e86*/
       }
@@ -1613,7 +1613,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2)
       do /*0x76a63f*/
       {
         v5 = (ComPtr *)((char *)v5 - 8); /*0x76a62e*/
-        *(unsigned int *)v5->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a633*/
+        *(unsigned int *)v5->__pad_0 = &vt_rc_ptr; /*0x76a633*/
         ComPtr::Release(v5); /*0x76a639*/
         --v7; /*0x76a63e*/
       }
@@ -1625,7 +1625,7 @@ void * Map_WorldDominationTour_20::Constructor_0(rc_ptr_base * Block, char a2)
   }
   else
   {
-    *Block = (Map_WorldDominationTour)&rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a65a*/
+    *Block = (Map_WorldDominationTour)&vt_rc_ptr; /*0x76a65a*/
     ComPtr::Release((ComPtr *)Block); /*0x76a660*/
     if ( (a2 & 1) != 0 ) /*0x76a668*/
       __3_YAXPAX_Z(Block); /*0x76a66b*/
@@ -2452,7 +2452,7 @@ unsigned int * Map_WorldDominationTour_20::Seek(unsigned int * a2, int a3)
 
   v3 = *(unsigned int *)&this->m_1[3] + 8 * a3; /*0x769cad*/
   ComPtr::Constructor((ComPtr *)a2); /*0x769cb2*/
-  *a2 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x769cb7*/
+  *a2 = &vt_rc_ptr; /*0x769cb7*/
   ComPtr::Set((ComPtr *)a2, *(unsigned int *)(v3 + 4)); /*0x769cc3*/
   return a2; /*0x769cca*/
 
@@ -2508,7 +2508,7 @@ namespace gamemd {
 VectorCursor * Map_WorldDominationTour_20::Constructor(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &VectorCursor<TRect<int>,VectorClass<TRect<int>>>::`vftable'; /*0x769dc9*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorCursorTRectVectorClassTRect; /*0x769dc9*/
   if ( (a2 & 1) != 0 ) /*0x769dcf*/
     __3_YAXPAX_Z(Block); /*0x769dd2*/
   return Block->__pad_0; /*0x769ddc*/
@@ -2858,7 +2858,7 @@ VectorClass_flat * Map_WorldDominationTour_20::QueryInterface(unsigned int * Blo
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x76a5c3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<rc_ptr<WorldDominationTour::Territory>>::`vftable'; /*0x76a5c6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x76a5c6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x76a5d0*/
   {
     (**v3)(v3, 3); /*0x76a5df*/
@@ -2881,7 +2881,7 @@ VectorClass_flat * Map_WorldDominationTour_28::QueryInterface(unsigned int * Blo
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x76a6d3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<WorldDominationTour::Map::AnimationPalette *>::`vftable'; /*0x76a6d6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x76a6d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x76a6e0*/
   {
     __3_YAXPAX_Z(v3); /*0x76a6e8*/
@@ -2904,7 +2904,7 @@ VectorClass_flat * Map_WorldDominationTour_43::QueryInterface(unsigned int * Blo
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x76a773*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<WorldDominationTour::Centroid>::`vftable'; /*0x76a776*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x76a776*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x76a780*/
   {
     __3_YAXPAX_Z(v3); /*0x76a788*/

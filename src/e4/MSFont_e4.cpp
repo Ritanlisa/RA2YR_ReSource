@@ -442,7 +442,7 @@ VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d56e3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<HWND__ *>::`vftable'; /*0x5d56e6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d56e6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5d56f0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d56f8*/
@@ -465,7 +465,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Bloc
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d5733*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<HWND__ *>::`vftable'; /*0x5d5736*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d5736*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5d5740*/
   {
     __3_YAXPAX_Z(v3); /*0x5d5748*/
@@ -488,7 +488,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned 
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5d57d3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<AcceleratorTracker>::`vftable'; /*0x5d57d6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x5d57d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5d57e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5d57e8*/

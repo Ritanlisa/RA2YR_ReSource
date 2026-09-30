@@ -204,9 +204,9 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x75c69a*/
   {
     a1->Piggybackee = 0; /*0x75c69c*/
-    *(unsigned int *)a1->LocomotionClass = &WalkLocomotionClass::`vftable'; /*0x75c6a3*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &WalkLocomotionClass::`vftable'; /*0x75c6a9*/
-    *(unsigned int *)a1->__pad_18 = &WalkLocomotionClass::`vftable'; /*0x75c6b0*/
+    *(unsigned int *)a1->LocomotionClass = &vt_WalkLocomotionClass; /*0x75c6a3*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &vt_WalkLocomotionClass; /*0x75c6a9*/
+    *(unsigned int *)a1->__pad_18 = &vt_WalkLocomotionClass; /*0x75c6b0*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x75c6c3*/
   if ( !(unsigned char)pStm ) /*0x75c6cc*/
@@ -296,9 +296,9 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(ILocomotion ** Block, cha
 
   ILocomotion *Piggybackee; // eax
 
-  *(unsigned int *)Block->LocomotionClass = &WalkLocomotionClass::`vftable'; /*0x75cbe3*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &WalkLocomotionClass::`vftable'; /*0x75cbe9*/
-  *(unsigned int *)Block->__pad_18 = &WalkLocomotionClass::`vftable'; /*0x75cbf0*/
+  *(unsigned int *)Block->LocomotionClass = &vt_WalkLocomotionClass; /*0x75cbe3*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &vt_WalkLocomotionClass; /*0x75cbe9*/
+  *(unsigned int *)Block->__pad_18 = &vt_WalkLocomotionClass; /*0x75cbf0*/
   Piggybackee = Block->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/

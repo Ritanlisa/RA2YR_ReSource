@@ -806,7 +806,7 @@ void BrainClass::sub_43A600()
   void *v5; // eax
 
   v2 = 0; /*0x43a608*/
-  this->vfptr = (int)&BrainClass::`vftable'; /*0x43a60a*/
+  this->vfptr = (int)&vt_BrainClass; /*0x43a60a*/
   v3 = *((unsigned int *)this + 5); /*0x43a610*/
   if ( v3 > 0 ) /*0x43a615*/
   {
@@ -822,7 +822,7 @@ void BrainClass::sub_43A600()
   }
   (*(void (**)(BrainClass *))(*((unsigned int *)this + 1) + 12))((unsigned int *)this + 1); /*0x43a63c*/
   v5 = (void *)*((unsigned int *)this + 2); /*0x43a63f*/
-  *((unsigned int *)this + 1) = &VectorClass<NeuronClass *>::`vftable'; /*0x43a642*/
+  *((unsigned int *)this + 1) = &vt_VectorClass; /*0x43a642*/
   if ( v5 && *((unsigned char *)this + 17) ) /*0x43a64c*/
   {
     __3_YAXPAX_Z(v5); /*0x43a652*/
@@ -844,7 +844,7 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   void *v6; // eax
 
   v3 = 0; /*0x43aa95*/
-  this->vfptr = (int)&BrainClass::`vftable'; /*0x43aa97*/
+  this->vfptr = (int)&vt_BrainClass; /*0x43aa97*/
   v4 = *((unsigned int *)this + 5); /*0x43aa9d*/
   if ( v4 > 0 ) /*0x43aaa2*/
   {
@@ -860,7 +860,7 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   }
   (*(void (**)(BrainClass *))(*((unsigned int *)this + 1) + 12))((unsigned int *)this + 1); /*0x43aacd*/
   v6 = (void *)*((unsigned int *)this + 2); /*0x43aad0*/
-  *((unsigned int *)this + 1) = &VectorClass<NeuronClass *>::`vftable'; /*0x43aad3*/
+  *((unsigned int *)this + 1) = &vt_VectorClass; /*0x43aad3*/
   if ( v6 && *((unsigned char *)this + 17) ) /*0x43aadd*/
   {
     __3_YAXPAX_Z(v6); /*0x43aae5*/

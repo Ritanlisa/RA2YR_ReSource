@@ -538,7 +538,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
         v11 = 0; /*0x4f24a7*/
         *(unsigned int *)&v21.m_1[3] = (char *)this + 88; /*0x4f24a9*/
         v22 = 0; /*0x4f24b1*/
-        *(unsigned int *)v21.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f24b5*/
+        *(unsigned int *)v21.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f24b5*/
         if ( Map::CanScroll(&v21) ) /*0x4f24bd*/
         {
           do /*0x4f24f6*/
@@ -552,13 +552,13 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
         }
         if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v21.__pad_0 + 4))(&v21) ) /*0x4f2505*/
           v11 = *(State **)(*(unsigned int *)(*(unsigned int *)&v21.m_1[3] + 4) + 4 * v22); /*0x4f2517*/
-        *(unsigned int *)v21.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f251a*/
+        *(unsigned int *)v21.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f251a*/
       }
       else
       {
         *(unsigned int *)&v19.m_1[3] = (char *)this + 88; /*0x4f241e*/
         v20 = 0; /*0x4f2422*/
-        *(unsigned int *)v19.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f242a*/
+        *(unsigned int *)v19.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f242a*/
         if ( Map::CanScroll(&v19) ) /*0x4f2432*/
         {
           do /*0x4f2467*/
@@ -574,7 +574,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
           v11 = *(State **)(*(unsigned int *)(*(unsigned int *)&v19.m_1[3] + 4) + 4 * v20); /*0x4f2488*/
         else
           v11 = 0; /*0x4f2498*/
-        *(unsigned int *)v19.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f248b*/
+        *(unsigned int *)v19.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f248b*/
       }
       if ( v11 ) /*0x4f2524*/
       {
@@ -593,7 +593,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
       v13 = 0; /*0x4f2553*/
       *(unsigned int *)&v23.m_1[3] = (char *)this + 88; /*0x4f2559*/
       v24 = 0; /*0x4f255d*/
-      *(unsigned int *)v23.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f2561*/
+      *(unsigned int *)v23.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2561*/
       if ( Map::CanScroll(&v23) ) /*0x4f2569*/
       {
         do /*0x4f25a2*/
@@ -607,7 +607,7 @@ ObjectClass * * E4Recv_4F2300::ProcessGraphicMenu()
       }
       if ( (*(uint8_t (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v23.__pad_0 + 4))(&v23) ) /*0x4f25b1*/
         v13 = *(State **)(*(unsigned int *)(*(unsigned int *)&v23.m_1[3] + 4) + 4 * v24); /*0x4f25c3*/
-      *(unsigned int *)v23.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f25c8*/
+      *(unsigned int *)v23.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f25c8*/
       if ( v13 != v4 ) /*0x4f25d0*/
       {
         if ( v4 ) /*0x4f25d4*/
@@ -912,7 +912,7 @@ MSAnim * * E4Recv_4F3460::sub_4F3460(int aP1, ReferenceCounted * aP2, unsigned i
   *((unsigned int *)this + 12) = 0; /*0x4f34a7*/
   unknown_libname_73((char *)this + 52); /*0x4f34aa*/
   v15 = aP8; /*0x4f34af*/
-  *(unsigned int *)this = &GraphicMenuImageItem::`vftable'; /*0x4f34b3*/
+  *(unsigned int *)this = &vt_GraphicMenuImageItem; /*0x4f34b3*/
   if ( String::Length(v15) && (aP2 = __2_YAPAXI_Z(0x10u)) != 0 ) /*0x4f34d4*/
   {
     String::Assign((char **)&aP1, aHighlightsound); /*0x4f34df*/
@@ -1217,7 +1217,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   *(unsigned int *)(a2 + 8) = 0; /*0x4fa234*/
   *(unsigned char *)(a2 + 12) = 1; /*0x4fa237*/
   *(unsigned char *)(a2 + 13) = 0; /*0x4fa23b*/
-  *(unsigned int *)a2 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x4fa23e*/
+  *(unsigned int *)a2 = &vt_VectorClass; /*0x4fa23e*/
   if ( (void ***)a2 != &v11 ) /*0x4fa244*/
   {
     VectorClass::ClearAndFree3(a2); /*0x4fa248*/
@@ -1255,8 +1255,8 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
   v9 = Block; /*0x4fa2a5*/
   v4 = Block == 0; /*0x4fa2a9*/
   *(unsigned int *)(a2 + 20) = v8; /*0x4fa2ab*/
-  *(unsigned int *)a2 = &TypeList<TeamTypeClass const *>::`vftable'; /*0x4fa2ae*/
-  v11 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x4fa2b4*/
+  *(unsigned int *)a2 = &vt_TypeList; /*0x4fa2ae*/
+  v11 = &vt_VectorClass; /*0x4fa2b4*/
   if ( !v4 && v14 ) /*0x4fa2c2*/
     __3_YAXPAX_Z(v9); /*0x4fa2c5*/
   return a2; /*0x4fa2cf*/
@@ -1539,7 +1539,7 @@ int E4Recv_4F2280::sub_4F2280(int a2, int a3)
 
   v5 = 0; /*0x4f2286*/
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f228e*/
-  *(unsigned int *)v4.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f2296*/
+  *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2296*/
   for ( result = Map::CanScroll(&v4); /*0x4f22a6*/
         (unsigned char)result;
         result = (*(int (**)(_VectorCursor_PAVGraphicMenuItem_V_DynamicVectorClass_PAVGraphicMenuItem *))(*(unsigned int *)v4.__pad_0 + 4))(&v4) )
@@ -1564,7 +1564,7 @@ int E4Recv_4F26E0::sub_4F26E0(int a2)
 
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f26e7*/
   v5 = 0; /*0x4f26ef*/
-  *(unsigned int *)v4.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f26f7*/
+  *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f26f7*/
   if ( Map::CanScroll(&v4) ) /*0x4f26ff*/
   {
     do /*0x4f2738*/
@@ -1595,7 +1595,7 @@ int E4Recv_4F2770::sub_4F2770(int a2)
 
   *(unsigned int *)&v4.m_1[3] = &this->customSound_controller[2]; /*0x4f2777*/
   v5 = 0; /*0x4f277f*/
-  *(unsigned int *)v4.__pad_0 = &VectorCursor<GraphicMenuItem *,DynamicVectorClass<GraphicMenuItem *>>::`vftable'; /*0x4f2787*/
+  *(unsigned int *)v4.__pad_0 = &vt_VectorCursorGraphicMenuItemDynamicVectorClass; /*0x4f2787*/
   if ( Map::CanScroll(&v4) ) /*0x4f278f*/
   {
     do /*0x4f27c8*/
@@ -1624,7 +1624,7 @@ unsigned int * E4Recv_4F2C00::sub_4F2C00(int a2, int a3)
   this->Capacity = a2; /*0x4f2c0e*/
   this->IsInitialized = 1; /*0x4f2c11*/
   this->IsAllocated = 0; /*0x4f2c15*/
-  this->vtable0 = &VectorClass<GraphicMenuItem *>::`vftable'; /*0x4f2c18*/
+  this->vtable0 = &vt_VectorClass; /*0x4f2c18*/
   if ( a2 ) /*0x4f2c1e*/
   {
     if ( a3 ) /*0x4f2c26*/
@@ -1673,7 +1673,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
   *((unsigned int *)this + 8) = 0; /*0x4f2f4d*/
   *((unsigned int *)this + 7) = v10; /*0x4f2f50*/
   *((unsigned int *)this + 9) = 0; /*0x4f2f5a*/
-  *(unsigned int *)this->__pad_0 = &GraphicMenuAnimItem::`vftable'; /*0x4f2f5d*/
+  *(unsigned int *)this->__pad_0 = &vt_GraphicMenuAnimItem; /*0x4f2f5d*/
   CCFileClass::Construct2((CCFileClass *)&v15.estimatedHealth, aP5); /*0x4f2f63*/
   CCFileClass::Construct2((CCFileClass *)&v15.?, a6); /*0x4f2f74*/
   if ( (uint8_t)CCFileClass::Open((CCFileClass *)&v15.estimatedHealth, 0) ) /*0x4f2f81*/
@@ -1693,12 +1693,12 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
       }
     }
   }
-  v15.? = &CCFileClass::`vftable'; /*0x4f3011*/
+  v15.? = &vt_CCFileClass; /*0x4f3011*/
   *(unsigned int *)&v15.bombVisible = 0; /*0x4f3015*/
   Vector::Clear((int)&v15.customSound_controller[3]); /*0x4f3019*/
   v15.? = &off_7E1668; /*0x4f3027*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v15.?); /*0x4f302b*/
-  v15.estimatedHealth = (int)&CCFileClass::`vftable'; /*0x4f3037*/
+  v15.estimatedHealth = (int)&vt_CCFileClass; /*0x4f3037*/
   v17 = 0; /*0x4f303e*/
   Vector::Clear((int)v16); /*0x4f3045*/
   v15.estimatedHealth = (int)&off_7E1668; /*0x4f3051*/
@@ -1765,10 +1765,10 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   v3->? = 0; /*0x4f3c61*/
   LOBYTE(v3->?) = 1; /*0x4f3c64*/
   BYTE1(v3->?) = 0; /*0x4f3c68*/
-  v3->? = (int)&DynamicVectorClass<unsigned int>::`vftable'; /*0x4f3c6b*/
+  v3->? = (int)&vt_DynamicVectorClass; /*0x4f3c6b*/
   v3->occupant = 10; /*0x4f3c71*/
   v3->? = 0; /*0x4f3c78*/
-  v3->AbstractClass = &GraphicMenuShortcutItem::`vftable'; /*0x4f3c7b*/
+  v3->AbstractClass = &vt_GraphicMenuShortcutItem; /*0x4f3c7b*/
   unknown_libname_73(&a2); /*0x4f3c82*/
   v5 = String::Tokenize((String *)a3, 0, Str, (void **)&a2); /*0x4f3c9f*/
   if ( String::Length((String *)&a2) ) /*0x4f3ca1*/

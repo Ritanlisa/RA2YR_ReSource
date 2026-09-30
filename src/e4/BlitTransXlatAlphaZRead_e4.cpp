@@ -371,7 +371,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a3a9*/
+  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a3a9*/
   if ( (a2 & 1) != 0 ) /*0x49a3af*/
     __3_YAXPAX_Z(this); /*0x49a3b2*/
   return (std::locale::facet *)this; /*0x49a3bc*/
@@ -383,7 +383,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a3c9*/
+  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a3c9*/
   if ( (a2 & 1) != 0 ) /*0x49a3cf*/
     __3_YAXPAX_Z(this); /*0x49a3d2*/
   return (std::locale::facet *)this; /*0x49a3dc*/
@@ -395,7 +395,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a3e9*/
+  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a3e9*/
   if ( (a2 & 1) != 0 ) /*0x49a3ef*/
     __3_YAXPAX_Z(this); /*0x49a3f2*/
   return (std::locale::facet *)this; /*0x49a3fc*/
@@ -407,7 +407,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a409*/
+  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a409*/
   if ( (a2 & 1) != 0 ) /*0x49a40f*/
     __3_YAXPAX_Z(this); /*0x49a412*/
   return (std::locale::facet *)this; /*0x49a41c*/
@@ -422,10 +422,10 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(unsigned i
   void *m_8; // eax
 
   m_8 = (void *)Block->m_8; /*0x49a428*/
-  *(unsigned int *)Block->__pad_0 = &BlitTransXlatAlphaZRead<unsigned short>::`vftable'; /*0x49a42b*/
+  *(unsigned int *)Block->__pad_0 = &vt_BlitTransXlatAlphaZRead; /*0x49a42b*/
   FractalNoise::Dtor(m_8); /*0x49a432*/
   Block->m_8 = 0; /*0x49a43b*/
-  *(unsigned int *)Block->__pad_0 = &Blitter::`vftable'; /*0x49a444*/
+  *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a444*/
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
     __3_YAXPAX_Z(Block); /*0x49a44d*/
   return Block->__pad_0; /*0x49a457*/

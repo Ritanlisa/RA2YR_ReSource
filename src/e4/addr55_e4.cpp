@@ -1227,11 +1227,11 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned int *)this + 15) = 0; /*0x5573aa*/
   *((unsigned char *)this + 64) = 1; /*0x5573ad*/
   *((unsigned char *)this + 65) = 0; /*0x5573b1*/
-  *((unsigned int *)this + 13) = &VectorClass<unsigned short const *>::`vftable'; /*0x5573b4*/
+  *((unsigned int *)this + 13) = &vt_VectorClass; /*0x5573b4*/
   sub_4B5830((unsigned int *)((char *)this + 52), (unsigned int *)(a2 + 52)); /*0x5573ba*/
   *((unsigned int *)this + 17) = *(unsigned int *)(a2 + 68); /*0x5573c2*/
   *((unsigned int *)this + 18) = *(unsigned int *)(a2 + 72); /*0x5573c8*/
-  *((unsigned int *)this + 13) = &DynamicVectorClass<unsigned short const *>::`vftable'; /*0x5573cb*/
+  *((unsigned int *)this + 13) = &vt_DynamicVectorClass; /*0x5573cb*/
   *((unsigned int *)this + 19) = *(unsigned int *)(a2 + 76); /*0x5573d7*/
   *((unsigned int *)this + 20) = *(unsigned int *)(a2 + 80); /*0x5573dd*/
   *((unsigned char *)this + 84) = *(unsigned char *)(a2 + 84); /*0x5573e9*/
@@ -1239,7 +1239,7 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned char *)this + 132) = *(unsigned char *)(a2 + 132); /*0x5573fa*/
   *((unsigned char *)this + 133) = *(unsigned char *)(a2 + 133); /*0x557400*/
   *((unsigned int *)this + 34) = *(unsigned int *)(a2 + 136); /*0x557406*/
-  *((unsigned int *)this + 22) = &ToggleClass::`vftable'; /*0x557409*/
+  *((unsigned int *)this + 22) = &vt_ToggleClass; /*0x557409*/
   *((unsigned char *)this + 140) = *(unsigned char *)(a2 + 140); /*0x557413*/
   *((unsigned int *)this + 36) = *(unsigned int *)(a2 + 144); /*0x557419*/
   *((unsigned int *)this + 37) = *(unsigned int *)(a2 + 148); /*0x55741f*/
@@ -1252,12 +1252,12 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned char *)this + 173) = *(unsigned char *)(a2 + 173); /*0x557449*/
   *((unsigned int *)this + 44) = *(unsigned int *)(a2 + 176); /*0x55744f*/
   *((unsigned char *)this + 180) = *(unsigned char *)(a2 + 180); /*0x55745b*/
-  *((unsigned int *)this + 22) = &ShapeButtonClass::`vftable'; /*0x557460*/
+  *((unsigned int *)this + 22) = &vt_ShapeButtonClass; /*0x557460*/
   ControlClass::CtorFromData((unsigned int *)((char *)this + 184), a2 + 184); /*0x557466*/
   *((unsigned char *)this + 228) = *(unsigned char *)(a2 + 228); /*0x55746e*/
   *((unsigned char *)this + 229) = *(unsigned char *)(a2 + 229); /*0x557474*/
   *((unsigned int *)this + 58) = *(unsigned int *)(a2 + 232); /*0x55747a*/
-  *((unsigned int *)this + 46) = &ToggleClass::`vftable'; /*0x55747d*/
+  *((unsigned int *)this + 46) = &vt_ToggleClass; /*0x55747d*/
   *((unsigned char *)this + 236) = *(unsigned char *)(a2 + 236); /*0x557486*/
   *((unsigned int *)this + 60) = *(unsigned int *)(a2 + 240); /*0x55748c*/
   *((unsigned int *)this + 61) = *(unsigned int *)(a2 + 244); /*0x557492*/
@@ -1270,7 +1270,7 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned char *)this + 269) = *(unsigned char *)(a2 + 269); /*0x5574bc*/
   *((unsigned int *)this + 68) = *(unsigned int *)(a2 + 272); /*0x5574c6*/
   *((unsigned char *)this + 276) = *(unsigned char *)(a2 + 276); /*0x5574d2*/
-  *((unsigned int *)this + 46) = &ShapeButtonClass::`vftable'; /*0x5574de*/
+  *((unsigned int *)this + 46) = &vt_ShapeButtonClass; /*0x5574de*/
   sub_5581A0((char *)this + 280, a2 + 280); /*0x5574e4*/
   *((unsigned int *)this + 85) = *(unsigned int *)(a2 + 340); /*0x5574fa*/
   *((unsigned int *)this + 86) = *(unsigned int *)(a2 + 344); /*0x557500*/
@@ -1278,11 +1278,11 @@ int E4Recv_557380::sub_557380(int a2)
   *((unsigned int *)this + 88) = *(unsigned int *)(a2 + 352); /*0x55750c*/
   *((unsigned int *)this + 89) = *(unsigned int *)(a2 + 356); /*0x557512*/
   *((unsigned int *)this + 90) = *(unsigned int *)(a2 + 360); /*0x55751c*/
-  *((unsigned int *)this + 70) = &SliderClass::`vftable'; /*0x55751f*/
+  *((unsigned int *)this + 70) = &vt_SliderClass; /*0x55751f*/
   *((unsigned int *)this + 91) = *(unsigned int *)(a2 + 364); /*0x55752c*/
   v3 = *((unsigned int *)this + 22); /*0x557538*/
   *((unsigned int *)this + 92) = *(unsigned int *)(a2 + 368); /*0x55753c*/
-  *(unsigned int *)this = &ListClass::`vftable'; /*0x557542*/
+  *(unsigned int *)this = &vt_ListClass; /*0x557542*/
   (*(void (**)(int, int))(v3 + 132))((char *)this + 88, this); /*0x557548*/
   (*(void (**)(int, int))(*((unsigned int *)this + 46) + 132))((char *)this + 184, this); /*0x557553*/
   (*(void (**)(int, int))(*((unsigned int *)this + 70) + 132))((char *)this + 280, this); /*0x55755f*/
@@ -3863,7 +3863,7 @@ namespace gamemd {
 int E4Recv_556510::sub_556510()
 {
 
-  *(unsigned int *)this->__pad_0 = &LightConvertClass::`vftable'; /*0x556510*/
+  *(unsigned int *)this->__pad_0 = &vt_LightConvertClass; /*0x556510*/
   return sub_490400((int)this);
 
 }
@@ -3874,7 +3874,7 @@ namespace gamemd {
 LightConvertClass * E4Recv_556520::sub_556520(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &LightConvertClass::`vftable'; /*0x556523*/
+  *(unsigned int *)Block->__pad_0 = &vt_LightConvertClass; /*0x556523*/
   sub_490400((int)Block); /*0x556529*/
   if ( (a2 & 1) != 0 ) /*0x556533*/
     __3_YAXPAX_Z(Block); /*0x556536*/
@@ -4074,7 +4074,7 @@ int E4Recv_5581A0::sub_5581A0(GaugeClass * aP1)
   *((unsigned int *)this + 12) = *(unsigned int *)(aP1 + 48); /*0x5581c3*/
   *((unsigned int *)this + 13) = *(unsigned int *)(aP1 + 52); /*0x5581c9*/
   *((unsigned int *)this + 14) = *(unsigned int *)(aP1 + 56); /*0x5581cf*/
-  *(unsigned int *)this = &GaugeClass::`vftable'; /*0x5581d2*/
+  *(unsigned int *)this = &vt_GaugeClass; /*0x5581d2*/
   return this; /*0x5581da*/
 
 }
@@ -4476,7 +4476,7 @@ int E4Recv_5595F0::sub_5595F0(char * Buffer)
     FileClass::SetFileName(&v6, Buffer); /*0x559621*/
   }
   while ( (uint8_t)CCFileClass::Open(&v6, 0) == 1 ); /*0x559633*/
-  *(unsigned int *)v6.CDFileClass = &CCFileClass::`vftable'; /*0x559639*/
+  *(unsigned int *)v6.CDFileClass = &vt_CCFileClass; /*0x559639*/
   v8 = 0; /*0x559641*/
   Vector::Clear((int)v7); /*0x559649*/
   *(unsigned int *)v6.CDFileClass = &off_7E1668; /*0x559652*/

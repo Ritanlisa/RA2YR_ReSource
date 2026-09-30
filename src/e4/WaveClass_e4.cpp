@@ -60,9 +60,9 @@ int WaveClass::LoadWaveData(int a2, int a3)
       *(unsigned int *)(v4 + 424) = 0; /*0x75f68c*/
       FrameSnapshot::Init((FrameSnapshot *)(v4 + 472)); /*0x75f692*/
       WaveClass::Constructor_7632D0((WaveClass *)(v4 + 496), 0, 0); /*0x75f69f*/
-      *(unsigned int *)v4 = &WaveClass::`vftable'; /*0x75f6a4*/
-      *(unsigned int *)(v4 + 4) = &WaveClass::`vftable'; /*0x75f6aa*/
-      *(unsigned int *)(v4 + 8) = &WaveClass::`vftable'; /*0x75f6b1*/
+      *(unsigned int *)v4 = &vt_WaveClass; /*0x75f6a4*/
+      *(unsigned int *)(v4 + 4) = &vt_WaveClass; /*0x75f6aa*/
+      *(unsigned int *)(v4 + 8) = &vt_WaveClass; /*0x75f6b1*/
       *(unsigned int *)(v4 + 12) = &off_7F6BC8; /*0x75f6b8*/
     }
     *(unsigned int *)(v4 + 332) = *(unsigned int *)(v4 + 176) == 3 ? v4 + 384 : v4 + 336;
@@ -124,9 +124,9 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   void *v4; // eax
   WaveClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectClass = (gamemd::WaveClass *)(&WaveClass::`vftable');
-  Block->? = &WaveClass::`vftable'; /*0x76320c*/
-  Block->? = &WaveClass::`vftable'; /*0x763213*/
+  Block->ObjectClass = (gamemd::WaveClass *)(&vt_WaveClass);
+  Block->? = &vt_WaveClass; /*0x76320c*/
+  Block->? = &vt_WaveClass; /*0x763213*/
   Block->? = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)Block, 1); /*0x763221*/
   v6 = Block; /*0x763236*/
@@ -143,7 +143,7 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   }
   (*(void (**)(char *))(*((unsigned int *)Block + 124) + 12))((char *)Block + 496); /*0x76327e*/
   v4 = (void *)*((unsigned int *)Block + 125); /*0x763281*/
-  *((unsigned int *)Block + 124) = &VectorClass<CellClass *>::`vftable'; /*0x763284*/
+  *((unsigned int *)Block + 124) = &vt_VectorClass; /*0x763284*/
   if ( v4 && *((unsigned char *)Block + 509) ) /*0x76328e*/
   {
     __3_YAXPAX_Z(v4); /*0x763296*/

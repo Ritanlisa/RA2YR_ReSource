@@ -124,7 +124,7 @@ char * E4Recv_724000::sub_724000(int a2)
   *((unsigned int *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
   v3[13] = 0; /*0x724037*/
-  *(unsigned int *)v3 = &DynamicVectorClass<ToolTip const *>::`vftable'; /*0x72403a*/
+  *(unsigned int *)v3 = &vt_DynamicVectorClass; /*0x72403a*/
   *((unsigned int *)v3 + 5) = 10; /*0x724040*/
   *((unsigned int *)v3 + 4) = 0; /*0x724047*/
   *((unsigned int *)this + 147) = 0; /*0x72404a*/
@@ -133,7 +133,7 @@ char * E4Recv_724000::sub_724000(int a2)
   *((unsigned char *)this + 600) = 0; /*0x72405c*/
   *((unsigned int *)this + 151) = 0; /*0x724062*/
   v4 = *(unsigned int *)v3; /*0x724068*/
-  *(unsigned int *)this = &ToolTipManager::`vftable'; /*0x72406a*/
+  *(unsigned int *)this = &vt_ToolTipManager; /*0x72406a*/
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
   __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
   *((unsigned int *)this + 147) = 0; /*0x724082*/

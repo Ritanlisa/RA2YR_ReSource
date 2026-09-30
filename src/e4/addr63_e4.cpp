@@ -3354,7 +3354,7 @@ namespace gamemd {
 void E4Recv_631F30::sub_631F30()
 {
 
-  this->m_0 = (int)&PixelFXClass::`vftable'; /*0x631f30*/
+  this->m_0 = (int)&vt_PixelFXClass; /*0x631f30*/
 
 }
 } // namespace gamemd

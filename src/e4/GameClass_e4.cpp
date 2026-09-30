@@ -723,7 +723,7 @@ namespace gamemd {
 unsigned int * GameClass::saveGameState(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &PixelFXClass::`vftable'; /*0x631f49*/
+  *(unsigned int *)this->__pad_0 = &vt_PixelFXClass; /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
     __3_YAXPAX_Z(this); /*0x631f52*/
   return this->__pad_0; /*0x631f5c*/
@@ -751,7 +751,7 @@ PKPipe * GameClass::validateGameFile(unsigned int * Block, char a2)
 
   v3 = (COMObject *)Block->field_20; /*0x632ff5*/
   v4 = (Pipe *)&Block->field_14; /*0x632ff8*/
-  Block->field_14 = (int)&BlowPipe::`vftable'; /*0x632ffd*/
+  Block->field_14 = (int)&vt_BlowPipe; /*0x632ffd*/
   if ( v3 ) /*0x633003*/
   {
     COMObject::Release(v3); /*0x633007*/
@@ -787,7 +787,7 @@ PKStrawClass * GameClass::applyGameSettings(unsigned int * Block, char a2)
 
   v3 = *(COMObject **)&Block->__pad_18[8]; /*0x633375*/
   p_m_14 = (Straw *)&Block->m_14; /*0x633378*/
-  Block->m_14 = (int)&BlowStraw::`vftable'; /*0x63337d*/
+  Block->m_14 = (int)&vt_BlowStraw; /*0x63337d*/
   if ( v3 ) /*0x633383*/
   {
     COMObject::Release(v3); /*0x633387*/

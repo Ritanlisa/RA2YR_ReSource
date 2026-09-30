@@ -53,7 +53,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
   this->Capacity = a2; /*0x4e0a11*/
   this->IsInitialized = 1; /*0x4e0a14*/
   this->IsAllocated = 0; /*0x4e0a18*/
-  this->vtable0 = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
+  this->vtable0 = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
     if ( a3 ) /*0x4e0a2a*/
@@ -102,7 +102,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
       this->IsAllocated = 1; /*0x4e0a86*/
     }
   }
-  this->vtable0 = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
+  this->vtable0 = &vt_DynamicVectorClassDiscreteDistributionClassDistributionObject; /*0x4e0a8a*/
   *((unsigned int *)this + 5) = 10; /*0x4e0a90*/
   *((unsigned int *)this + 4) = 0; /*0x4e0a97*/
   return &this->vtable0; /*0x4e0aa0*/
@@ -2054,7 +2054,7 @@ unsigned int * FoggedObjectClass_42::loc_4E0D30(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4e0ce3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<FootClass *>::`vftable'; /*0x4e0ce6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4e0ce6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4e0cf0*/
   {
     __3_YAXPAX_Z(v3); /*0x4e0cf8*/
@@ -2377,7 +2377,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
 
   ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
   v7 = *((unsigned int *)this + 12); /*0x4e2a79*/
-  *(unsigned int *)this->__pad_0 = &GaugeClass::`vftable'; /*0x4e2a83*/
+  *(unsigned int *)this->__pad_0 = &vt_GaugeClass; /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     *((unsigned int *)this + 12) = 255; /*0x4e2a8d*/
@@ -2397,7 +2397,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   *((unsigned int *)this + 14) = 0; /*0x4e2ac0*/
   *((unsigned int *)this + 15) = 0; /*0x4e2ac7*/
   *((unsigned int *)this + 16) = 0; /*0x4e2ace*/
-  *(unsigned int *)this->__pad_0 = &TriColorGaugeClass::`vftable'; /*0x4e2ad5*/
+  *(unsigned int *)this->__pad_0 = &vt_TriColorGaugeClass; /*0x4e2ad5*/
   return (int)this->__pad_0; /*0x4e2add*/
 
 }
@@ -4965,7 +4965,7 @@ VectorClass_flat * HouseClass::vt_00_(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x4ef4e3*/
-  *Block = &VectorClass<TagClass *>::`vftable'; /*0x4ef4e6*/
+  *Block = &vt_VectorClass; /*0x4ef4e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef4f0*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef4f8*/
@@ -4988,7 +4988,7 @@ VectorClass_flat * ParticleSystemClass::vt_00_(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x4ef803*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<ParticleClass *>::`vftable'; /*0x4ef806*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x4ef806*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x4ef810*/
   {
     __3_YAXPAX_Z(v3); /*0x4ef818*/

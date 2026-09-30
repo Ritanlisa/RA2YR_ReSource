@@ -106,10 +106,10 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
   *((unsigned char *)this + 3676) = 12; /*0x7471ab*/
   *((unsigned char *)this + 3677) = 0; /*0x7471b2*/
   *((unsigned char *)this + 3678) = 0; /*0x7471b8*/
-  *(unsigned int *)this = &UnitTypeClass::`vftable'; /*0x7471bf*/
-  *((unsigned int *)this + 1) = &UnitTypeClass::`vftable'; /*0x7471c5*/
-  *((unsigned int *)this + 2) = &UnitTypeClass::`vftable'; /*0x7471cb*/
-  *((unsigned int *)this + 3) = &UnitTypeClass::`vftable'; /*0x7471d2*/
+  *(unsigned int *)this = &vt_UnitTypeClass; /*0x7471bf*/
+  *((unsigned int *)this + 1) = &vt_UnitTypeClass; /*0x7471c5*/
+  *((unsigned int *)this + 2) = &vt_UnitTypeClass; /*0x7471cb*/
+  *((unsigned int *)this + 3) = &vt_UnitTypeClass; /*0x7471d2*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x7471d9*/
   *((unsigned int *)this + 454) = 32; /*0x7471de*/
   v3 = dword_A83CF0; /*0x7471e8*/
@@ -722,10 +722,10 @@ int UnitTypeClass::LoadFromINI2(int a1, int a2)
     if ( a1 ) /*0x74802f*/
     {
       TechnoTypeClass::Construct((int)a1, (int)&v3); /*0x748038*/
-      a1->TechnoTypeClass = &UnitTypeClass::`vftable'; /*0x74803d*/
-      a1->? = &UnitTypeClass::`vftable'; /*0x748043*/
-      a1->? = &UnitTypeClass::`vftable'; /*0x74804a*/
-      a1->? = &UnitTypeClass::`vftable'; /*0x748051*/
+      a1->TechnoTypeClass = &vt_UnitTypeClass; /*0x74803d*/
+      a1->? = &vt_UnitTypeClass; /*0x748043*/
+      a1->? = &vt_UnitTypeClass; /*0x74804a*/
+      a1->? = &vt_UnitTypeClass; /*0x748051*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x74805a*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x748061*/
@@ -783,10 +783,10 @@ UnitTypeClass * UnitTypeClass::ddtor(void ** Block, char a2)
   UnitTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   v3 = (UnitTypeClass *)v2; /*0x748192*/
-  v2->vtable0 = &UnitTypeClass::`vftable'; /*0x748196*/
-  v2->vtable1 = &UnitTypeClass::`vftable'; /*0x74819c*/
-  v2->vtable2 = &UnitTypeClass::`vftable'; /*0x7481a3*/
-  v2->vtable3 = &UnitTypeClass::`vftable'; /*0x7481aa*/
+  v2->vtable0 = &vt_UnitTypeClass; /*0x748196*/
+  v2->vtable1 = &vt_UnitTypeClass; /*0x74819c*/
+  v2->vtable2 = &vt_UnitTypeClass; /*0x7481a3*/
+  v2->vtable3 = &vt_UnitTypeClass; /*0x7481aa*/
   AbstractClass::AnnounceExpiredPointer(v2, 1); /*0x7481b1*/
   v6 = v3; /*0x7481c6*/
   v4 = (*(int (**)(unsigned int *, UnitTypeClass **))(dword_A83CE0 + 16))(&dword_A83CE0, &v6); /*0x7481ca*/

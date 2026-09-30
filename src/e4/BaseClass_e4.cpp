@@ -45,12 +45,12 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
     if ( aP0 ) /*0x42ee53*/
     {
       BaseNodeClass::Vector_Constructor((BaseNodeClass *)&aP0->baseNodeCount, 0, 0); /*0x42ee5e*/
-      aP0->baseNodeCount = (int)&DynamicVectorClass<BaseNodeClass>::`vftable'; /*0x42ee6a*/
+      aP0->baseNodeCount = (int)&vt_DynamicVectorClass; /*0x42ee6a*/
       aP0->cells24Capacity = 10; /*0x42ee70*/
       aP0->cells24Count = 0; /*0x42ee77*/
       DynamicVector::Constructor_Cell((DynamicVector *)&aP0->cells38Count, 0, 0); /*0x42ee7e*/
       DynamicVector::Constructor_Cell((DynamicVector *)&aP0->unknown54[3], 0, 0); /*0x42ee8a*/
-      aP0->baseNodes = (BaseNodeClass *)&BaseClass::`vftable'; /*0x42ee8f*/
+      aP0->baseNodes = (BaseNodeClass *)&vt_BaseClass; /*0x42ee8f*/
     }
     v3 = *(unsigned int *)v2; /*0x42ee96*/
     a2 = 0; /*0x42eea2*/

@@ -4612,20 +4612,20 @@ int Network::finalizeSession()
   *((unsigned int *)this + 64720) = 0; /*0x7b2dca*/
   *((unsigned char *)this + 258884) = 1; /*0x7b2dd0*/
   *((unsigned char *)this + 258885) = 0; /*0x7b2dd7*/
-  *((unsigned int *)this + 64718) = &DynamicVectorClass<unsigned char *>::`vftable'; /*0x7b2ddd*/
+  *((unsigned int *)this + 64718) = &vt_DynamicVectorClass; /*0x7b2ddd*/
   *((unsigned int *)this + 64723) = 10; /*0x7b2de3*/
   *((unsigned int *)this + 64722) = 0; /*0x7b2de9*/
   *((unsigned int *)this + 64853) = 0; /*0x7b2def*/
   *((unsigned int *)this + 64854) = 0; /*0x7b2df5*/
   *((unsigned char *)this + 259420) = 1; /*0x7b2dfb*/
   *((unsigned char *)this + 259421) = 0; /*0x7b2e02*/
-  *((unsigned int *)this + 64852) = &DynamicVectorClass<unsigned char *>::`vftable'; /*0x7b2e08*/
+  *((unsigned int *)this + 64852) = &vt_DynamicVectorClass; /*0x7b2e08*/
   *((unsigned int *)this + 64857) = 10; /*0x7b2e0e*/
   *((unsigned int *)this + 64856) = 0; /*0x7b2e14*/
   *((unsigned short *)this + 129406) = 0; /*0x7b2e1a*/
   *((unsigned int *)this + 64716) = 0; /*0x7b2e21*/
   *((unsigned int *)this + 64858) = 0; /*0x7b2e27*/
-  this->Network_field_0x0 = (int)&UDPInterfaceClass::`vftable'; /*0x7b2e2d*/
+  this->Network_field_0x0 = (int)&vt_UDPInterfaceClass; /*0x7b2e2d*/
   *((unsigned int *)this + 64717) = -1; /*0x7b2e33*/
   return (int)this; /*0x7b2e3f*/
 

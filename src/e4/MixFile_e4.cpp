@@ -152,7 +152,7 @@ AbstractClass * * MixFile::LoadSide()
   this->Debug::Log(); /*0x5350f0*/
   v6 = ((CCFileClass *)(&v18))->Construct(Buffer); /*0x535101*/
   v7 = (*(int (**)(unsigned int *, unsigned int))(*v6 + 20))(v6, 0); /*0x535115*/
-  v18.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x535117*/
+  v18.FileClass = (FileClass)&vt_CCFileClass; /*0x535117*/
   v20 = 0; /*0x53511f*/
   Vector::Clear((int)v19); /*0x535126*/
   v18.FileClass = (FileClass)&off_7E1668; /*0x535134*/
@@ -170,7 +170,7 @@ AbstractClass * * MixFile::LoadSide()
   this->Debug::Log(); /*0x535193*/
   v9 = ((CCFileClass *)(&v18))->Construct(Buffer); /*0x5351a4*/
   v10 = (*(int (**)(unsigned int *, unsigned int))(*v9 + 20))(v9, 0); /*0x5351b8*/
-  v18.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x5351ba*/
+  v18.FileClass = (FileClass)&vt_CCFileClass; /*0x5351ba*/
   v20 = 0; /*0x5351c2*/
   Vector::Clear((int)v19); /*0x5351c9*/
   v18.FileClass = (FileClass)&off_7E1668; /*0x5351d2*/
@@ -198,7 +198,7 @@ AbstractClass * * MixFile::LoadSide()
     this->Debug::Log(); /*0x53526a*/
     v13 = ((CCFileClass *)(&v18))->Construct(Buffer); /*0x53527b*/
     v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x535294*/
-    v18.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x535296*/
+    v18.FileClass = (FileClass)&vt_CCFileClass; /*0x535296*/
     v20 = 0; /*0x53529a*/
     Vector::Clear((int)v19); /*0x5352a1*/
     v18.FileClass = (FileClass)&off_7E1668; /*0x5352aa*/
@@ -218,7 +218,7 @@ AbstractClass * * MixFile::LoadSide()
     {
       SidebarClass::ReadButtonList((SidebarClass *)dword_8871E0); /*0x53533d*/
       SidebarClass::LoadButtonSHPs((TabClass *)&dword_87F7E8); /*0x535347*/
-      v21.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x535353*/
+      v21.FileClass = (FileClass)&vt_CCFileClass; /*0x535353*/
       v23 = 0; /*0x53535a*/
       Vector::Clear((int)v22); /*0x535361*/
       v21.FileClass = (FileClass)&off_7E1668; /*0x53536d*/
@@ -228,7 +228,7 @@ AbstractClass * * MixFile::LoadSide()
     else
     {
       this->Debug::Log(); /*0x53538b*/
-      v21.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x53539a*/
+      v21.FileClass = (FileClass)&vt_CCFileClass; /*0x53539a*/
       v23 = 0; /*0x5353a1*/
       Vector::Clear((int)v22); /*0x5353a8*/
       v21.FileClass = (FileClass)&off_7E1668; /*0x5353b4*/
@@ -330,10 +330,10 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
     *(unsigned int *)(v13 + 8) = 20; /*0x627733*/
     *(unsigned char *)(v13 + 12) = 1; /*0x62773a*/
     *(unsigned char *)(v13 + 13) = 0; /*0x62773e*/
-    *(unsigned int *)v13 = &VectorClass<ColorScheme *>::`vftable'; /*0x627742*/
+    *(unsigned int *)v13 = &vt_VectorClass; /*0x627742*/
     *(unsigned int *)(v13 + 4) = __2_YAPAXI_Z(0x50u); /*0x627750*/
     *((unsigned char *)v14 + 13) = 1; /*0x627753*/
-    *v14 = &DynamicVectorClass<ColorScheme *>::`vftable'; /*0x627757*/
+    *v14 = &vt_DynamicVectorClass; /*0x627757*/
     v14[5] = 10; /*0x62775d*/
     v14[4] = 0; /*0x627764*/
   }

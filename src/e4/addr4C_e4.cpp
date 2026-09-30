@@ -1435,7 +1435,7 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
   v11 = aP4; /*0x4c2ff6*/
   BYTE1(v11) = BYTE1(aP4) & 0xFE; /*0x4c2ff8*/
   *((unsigned int *)this + 11) = v11; /*0x4c2ffc*/
-  *this = (EditClass)&EditClass::`vftable'; /*0x4c3004*/
+  *this = (EditClass)&vt_EditClass; /*0x4c3004*/
   *((unsigned int *)this + 12) = a10; /*0x4c300a*/
   *((unsigned int *)this + 13) = aP2; /*0x4c300d*/
   *((unsigned int *)this + 14) = a4 - 1; /*0x4c3010*/
@@ -3507,8 +3507,8 @@ namespace gamemd {
 void E4Recv_4CCA70::sub_4CCA70()
 {
 
-  *(unsigned int *)this->LocomotionClass = &FlyLocomotionClass::`vftable'; /*0x4cca70*/
-  *(unsigned int *)&this->LocomotionClass[4] = &FlyLocomotionClass::`vftable'; /*0x4cca76*/
+  *(unsigned int *)this->LocomotionClass = &vt_FlyLocomotionClass; /*0x4cca70*/
+  *(unsigned int *)&this->LocomotionClass[4] = &vt_FlyLocomotionClass; /*0x4cca76*/
   LocomotionClass::Construct((LocomotionClass *)this); /*0x4cca7d*/
 
 }

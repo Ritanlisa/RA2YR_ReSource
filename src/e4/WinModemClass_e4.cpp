@@ -593,7 +593,7 @@ WinModemClass * WinModemClass::QueryInterface(void * Block, char a2)
   int v3; // eax
 
   v3 = *((unsigned int *)Block + 23); /*0x775613*/
-  *(unsigned int *)Block->__pad_0 = &WinModemClass::`vftable'; /*0x775616*/
+  *(unsigned int *)Block->__pad_0 = &vt_WinModemClass; /*0x775616*/
   if ( v3 != -1 ) /*0x77561f*/
   {
     this->Debug::Log(); /*0x775626*/

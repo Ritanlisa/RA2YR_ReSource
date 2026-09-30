@@ -52,7 +52,7 @@ int MoveFeedback::ProcessCommand()
     if ( result ) /*0x732809*/
     {
       result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
-      *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x732814*/
+      *(unsigned int *)v3 = &vt_DynamicVectorClass; /*0x732814*/
       *(unsigned int *)(v3 + 20) = 10; /*0x73281a*/
       *(unsigned int *)(v3 + 16) = 0; /*0x732821*/
     }
@@ -96,7 +96,7 @@ int MoveFeedback::ProcessCommand()
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *(unsigned int *)v3 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x7328a8*/
+      *(unsigned int *)v3 = &vt_DynamicVectorClass; /*0x7328a8*/
       *(unsigned int *)(v3 + 20) = 10; /*0x7328ae*/
       *(unsigned int *)(v3 + 16) = 0; /*0x7328b5*/
     }
@@ -199,7 +199,7 @@ DynamicVector * MoveFeedback::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x40bcb3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<TechnoClass *>::`vftable'; /*0x40bcb6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40bcb6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40bcc0*/
   {
     __3_YAXPAX_Z(v3); /*0x40bcc8*/
@@ -322,7 +322,7 @@ void MoveFeedback::Constructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x40c163*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<CommandClass const *>::`vftable'; /*0x40c166*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x40c166*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x40c170*/
   {
     __3_YAXPAX_Z(v3); /*0x40c178*/

@@ -9602,7 +9602,7 @@ unsigned int * _com_error::sub_7DCE0E(int a2)
   v3 = *(unsigned int *)(a2 + 8); /*0x7dce1b*/
   *((unsigned int *)this + 3) = 0; /*0x7dce1e*/
   *((unsigned int *)this + 2) = v3; /*0x7dce22*/
-  this->vfptr = (int)&_com_error::`vftable'; /*0x7dce27*/
+  this->vfptr = (int)&vt__com_error; /*0x7dce27*/
   if ( v3 ) /*0x7dce2d*/
     (*(void (**)(int))(*(unsigned int *)v3 + 4))(v3); /*0x7dce32*/
   return &this->vfptr; /*0x7dce37*/
@@ -9618,7 +9618,7 @@ int _com_error::sub_7DCE3B()
   void *v3; // esi
 
   result = (HLOCAL)*((unsigned int *)this + 2); /*0x7dce3e*/
-  this->vfptr = (int)&_com_error::`vftable'; /*0x7dce41*/
+  this->vfptr = (int)&vt__com_error; /*0x7dce41*/
   if ( result ) /*0x7dce49*/
     result = (HLOCAL)(*(int (**)(HLOCAL))(*(unsigned int *)result + 8))(result); /*0x7dce4e*/
   v3 = (void *)*((unsigned int *)this + 3); /*0x7dce51*/
@@ -11645,7 +11645,7 @@ unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 
   this->? = 0; /*0x7d2e70*/
   this->? = 0; /*0x7d2e74*/
-  this->AbstractClass = &exception::`vftable'; /*0x7d2e78*/
+  this->AbstractClass = &vt_exception; /*0x7d2e78*/
   return &this->AbstractClass; /*0x7d2e7e*/
 
 }
@@ -11672,7 +11672,7 @@ exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
   int v3; // eax
   char *v4; // eax
 
-  *(unsigned int *)this = &exception::`vftable'; /*0x7d2ea3*/
+  *(unsigned int *)this = &vt_exception; /*0x7d2ea3*/
   v3 = strlen(*a2); /*0x7d2eab*/
   v4 = (char *)__2_YAPAXI_Z(v3 + 1); /*0x7d2eb2*/
   *((unsigned int *)this + 1) = v4; /*0x7d2eb8*/
@@ -11693,7 +11693,7 @@ exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
   int v4; // eax
   char *v5; // eax
 
-  *(unsigned int *)this = &exception::`vftable'; /*0x7d2ee0*/
+  *(unsigned int *)this = &vt_exception; /*0x7d2ee0*/
   v3 = *((unsigned int *)a2 + 2); /*0x7d2ee6*/
   *((unsigned int *)this + 2) = v3; /*0x7d2eeb*/
   if ( v3 ) /*0x7d2eee*/

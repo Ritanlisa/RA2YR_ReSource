@@ -17,7 +17,7 @@ import re
 import sys
 
 APPLY = '--apply' in sys.argv
-SITE = re.compile(r'\b([A-Za-z_]\w*)::`vftable\'')
+SITE = re.compile(r'([A-Za-z_][\w:<>,\s\*&]*)::`vftable\'')
 
 decls_h = 'src/e4/e4_globals_decls.hpp'
 
@@ -47,6 +47,10 @@ for p in (glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp')
     def _rep(m):
         stats['sites'] += 1
         cls = m.group(1)
+        # template instances (`VectorClass<int>`) collapse to the sanitized
+        # base name: vt_VectorClass_int
+        cls = re.sub(r'<[^<>]*>', '', cls)
+        cls = re.sub(r'[^A-Za-z0-9_]', '', cls)
         needed.setdefault(cls, None)
         return 'vt_' + cls
     new = SITE.sub(_rep, raw)

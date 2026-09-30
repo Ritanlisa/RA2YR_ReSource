@@ -186,7 +186,7 @@ CampaignClass * MSEngine::Destructor()
 
   SessionClass::Destruct((SessionClass *)this); /*0x5cee64*/
   v2 = (void *)*((unsigned int *)this + 18); /*0x5cee69*/
-  *((unsigned int *)this + 17) = &VectorClass<MSSfxEntry *>::`vftable'; /*0x5cee70*/
+  *((unsigned int *)this + 17) = &vt_VectorClass; /*0x5cee70*/
   if ( v2 && *((unsigned char *)this + 81) ) /*0x5cee79*/
   {
     __3_YAXPAX_Z(v2); /*0x5cee7f*/
@@ -195,7 +195,7 @@ CampaignClass * MSEngine::Destructor()
   *((unsigned char *)this + 81) = 0; /*0x5cee8a*/
   *((unsigned int *)this + 19) = 0; /*0x5cee8d*/
   v3 = (void *)*((unsigned int *)this + 12); /*0x5cee90*/
-  *((unsigned int *)this + 11) = &VectorClass<MSAnimEntry *>::`vftable'; /*0x5cee93*/
+  *((unsigned int *)this + 11) = &vt_VectorClass; /*0x5cee93*/
   if ( v3 && *((unsigned char *)this + 57) ) /*0x5cee9e*/
   {
     __3_YAXPAX_Z(v3); /*0x5ceea4*/
@@ -205,7 +205,7 @@ CampaignClass * MSEngine::Destructor()
   *((unsigned int *)this + 13) = 0; /*0x5ceeb5*/
   DeleteAndZero((ObjectClass *)((unsigned int *)this + 2)); /*0x5ceeb8*/
   MSEngine_field_0x4 = this->MSEngine_field_0x4; /*0x5ceebd*/
-  *(unsigned int *)this->__pad_0 = &VectorClass<MapStage *>::`vftable'; /*0x5ceec0*/
+  *(unsigned int *)this->__pad_0 = &vt_VectorClass; /*0x5ceec0*/
   if ( MSEngine_field_0x4 && BYTE1(this->MSEngine_field_0xC[0]) ) /*0x5ceeca*/
   {
     __3_YAXPAX_Z(MSEngine_field_0x4); /*0x5ceed0*/
@@ -229,23 +229,23 @@ CampaignClass * MSEngine::Construct()
   p_MSEngine_field_0x8[2] = 0; /*0x5d1ab5*/
   *((unsigned char *)p_MSEngine_field_0x8 + 12) = 1; /*0x5d1ab8*/
   *((unsigned char *)p_MSEngine_field_0x8 + 13) = 0; /*0x5d1abb*/
-  *p_MSEngine_field_0x8 = &VectorClass<TRect<int>>::`vftable'; /*0x5d1abe*/
+  *p_MSEngine_field_0x8 = &vt_VectorClassTRect; /*0x5d1abe*/
   *((unsigned int *)this + 7) = 0; /*0x5d1ac4*/
   *((unsigned int *)this + 8) = 0; /*0x5d1ac7*/
   *((unsigned char *)this + 36) = 1; /*0x5d1aca*/
   *((unsigned char *)this + 37) = 0; /*0x5d1acd*/
-  *((unsigned int *)this + 6) = &DynamicVectorClass<MSAnim *>::`vftable'; /*0x5d1ad0*/
+  *((unsigned int *)this + 6) = &vt_DynamicVectorClass; /*0x5d1ad0*/
   *((unsigned int *)this + 11) = 10; /*0x5d1ad6*/
   *((unsigned int *)this + 10) = 0; /*0x5d1add*/
   *((unsigned int *)this + 13) = 0; /*0x5d1ae0*/
   *((unsigned int *)this + 14) = 0; /*0x5d1ae3*/
   *((unsigned char *)this + 60) = 1; /*0x5d1ae6*/
   *((unsigned char *)this + 61) = 0; /*0x5d1ae9*/
-  *((unsigned int *)this + 12) = &DynamicVectorClass<MSSfx *>::`vftable'; /*0x5d1aec*/
+  *((unsigned int *)this + 12) = &vt_DynamicVectorClass; /*0x5d1aec*/
   *((unsigned int *)this + 17) = 10; /*0x5d1af2*/
   *((unsigned int *)this + 16) = 0; /*0x5d1af9*/
   v3 = (void (**)(void **, int, unsigned int))*p_MSEngine_field_0x8; /*0x5d1afc*/
-  *(unsigned int *)this->__pad_0 = &MSEngine::`vftable'; /*0x5d1b01*/
+  *(unsigned int *)this->__pad_0 = &vt_MSEngine; /*0x5d1b01*/
   this->MSEngine_field_0x4 = 0; /*0x5d1b07*/
   v3[2](p_MSEngine_field_0x8, 20, 0); /*0x5d1b0a*/
   (*(void (**)(char *))(*((unsigned int *)this + 6) + 12))((char *)this + 24); /*0x5d1b11*/
@@ -273,7 +273,7 @@ CampaignClass * MSEngine::Destruct()
   int result; // eax
 
   v2 = 0; /*0x5d1b37*/
-  for ( *(unsigned int *)this->__pad_0 = &MSEngine::`vftable'; v2 < *((unsigned int *)this + 16); ++v2 ) /*0x5d1b45*/
+  for ( *(unsigned int *)this->__pad_0 = &vt_MSEngine; v2 < *((unsigned int *)this + 16); ++v2 ) /*0x5d1b45*/
   {
     v3 = *((unsigned int *)this + 13); /*0x5d1b47*/
     v4 = *(void **)(v3 + 4 * v2); /*0x5d1b4a*/
@@ -297,7 +297,7 @@ CampaignClass * MSEngine::Destruct()
   p_MSEngine_field_0x8 = &this->MSEngine_field_0x8; /*0x5d1ba3*/
   MSEngine_field_0x8[3](p_MSEngine_field_0x8); /*0x5d1ba8*/
   v11 = (void *)*((unsigned int *)v5 + 1); /*0x5d1bab*/
-  *(unsigned int *)v5 = &VectorClass<MSSfx *>::`vftable'; /*0x5d1bae*/
+  *(unsigned int *)v5 = &vt_VectorClass; /*0x5d1bae*/
   if ( v11 && v5[13] ) /*0x5d1bb9*/
   {
     __3_YAXPAX_Z(v11); /*0x5d1bbf*/
@@ -306,7 +306,7 @@ CampaignClass * MSEngine::Destruct()
   v5[13] = 0; /*0x5d1bca*/
   *((unsigned int *)v5 + 2) = 0; /*0x5d1bcd*/
   v12 = (void *)*((unsigned int *)v8 + 1); /*0x5d1bd0*/
-  *(unsigned int *)v8 = &VectorClass<MSAnim *>::`vftable'; /*0x5d1bd3*/
+  *(unsigned int *)v8 = &vt_VectorClass; /*0x5d1bd3*/
   if ( v12 && v8[13] ) /*0x5d1bdd*/
   {
     __3_YAXPAX_Z(v12); /*0x5d1be3*/
@@ -315,7 +315,7 @@ CampaignClass * MSEngine::Destruct()
   v8[13] = 0; /*0x5d1bee*/
   *((unsigned int *)v8 + 2) = 0; /*0x5d1bf1*/
   result = (int)p_MSEngine_field_0x8[1]; /*0x5d1bf4*/
-  *p_MSEngine_field_0x8 = &VectorClass<TRect<int>>::`vftable'; /*0x5d1bf7*/
+  *p_MSEngine_field_0x8 = &vt_VectorClassTRect; /*0x5d1bf7*/
   if ( result && *((unsigned char *)p_MSEngine_field_0x8 + 13) ) /*0x5d1c01*/
   {
     __3_YAXPAX_Z((void *)result); /*0x5d1c07*/
@@ -523,7 +523,7 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5ad4d3*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<TRect<int>>::`vftable'; /*0x5ad4d6*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassTRect; /*0x5ad4d6*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5ad4e0*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad4e8*/
@@ -546,7 +546,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x5ad523*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<TRect<int>>::`vftable'; /*0x5ad526*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassTRect; /*0x5ad526*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x5ad530*/
   {
     __3_YAXPAX_Z(v3); /*0x5ad538*/

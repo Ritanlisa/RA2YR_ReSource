@@ -17,7 +17,7 @@ namespace gamemd {
 void * MSFrameAnim::QueryInterface(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &MSFrameAnim::`vftable'; /*0x769bd3*/
+  *(unsigned int *)Block->__pad_0 = &vt_MSFrameAnim; /*0x769bd3*/
   VtableStub::5CB6C0(Block); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     __3_YAXPAX_Z(Block); /*0x769be6*/
@@ -55,7 +55,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *(unsigned int *)v8->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a05b*/
+          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr; /*0x76a05b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76a061*/
           --v9; /*0x76a064*/
         }
@@ -263,7 +263,7 @@ namespace gamemd {
 rc_ptr * MSFrameAnim::resumeAnimation(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &rc_ptr<WorldDominationTour::Map>::`vftable'; /*0x769d93*/
+  *(unsigned int *)Block->__pad_0 = &vt_rc_ptr; /*0x769d93*/
   ComPtr::Release((ComPtr *)Block); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     __3_YAXPAX_Z(Block); /*0x769da6*/
@@ -374,7 +374,7 @@ DynamicVector * MSFrameAnim::setPosition(unsigned int * Block, char a2)
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x76a683*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<rc_ptr<WorldDominationTour::Territory>>::`vftable'; /*0x76a686*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x76a686*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
@@ -397,7 +397,7 @@ DynamicVector * MSFrameAnim::setScale(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x76a723*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<WorldDominationTour::Map::AnimationPalette *>::`vftable'; /*0x76a726*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x76a726*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x76a730*/
   {
     __3_YAXPAX_Z(v3); /*0x76a738*/
@@ -418,7 +418,7 @@ unsigned int * MSFrameAnim::drawFrame()
 {
 
   ComPtr::Constructor((ComPtr *)this); /*0x76a7c3*/
-  *(unsigned int *)this->__pad_0 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76a7c8*/
+  *(unsigned int *)this->__pad_0 = &vt_rc_ptr; /*0x76a7c8*/
   return this->__pad_0; /*0x76a7d0*/
 
 }

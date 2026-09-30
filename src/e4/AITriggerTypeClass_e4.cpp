@@ -676,10 +676,10 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
   int v3; // eax
   AITriggerTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->__pad_0 = &AITriggerTypeClass::`vftable'; /*0x41fffd*/
-  Block->AITriggerTypeClass_field_0x04 = (int)&AITriggerTypeClass::`vftable'; /*0x420003*/
-  Block->AITriggerTypeClass_field_0x08 = (int)&AITriggerTypeClass::`vftable'; /*0x42000a*/
-  Block->AITriggerTypeClass_field_0x0C = (int)&AITriggerTypeClass::`vftable'; /*0x420011*/
+  *(unsigned int *)Block->__pad_0 = &vt_AITriggerTypeClass; /*0x41fffd*/
+  Block->AITriggerTypeClass_field_0x04 = (int)&vt_AITriggerTypeClass; /*0x420003*/
+  Block->AITriggerTypeClass_field_0x08 = (int)&vt_AITriggerTypeClass; /*0x42000a*/
+  Block->AITriggerTypeClass_field_0x0C = (int)&vt_AITriggerTypeClass; /*0x420011*/
   v5 = Block; /*0x42001f*/
   v3 = (*(int (**)(unsigned int *, AITriggerTypeClass **))(dword_A8B200 + 16))(&dword_A8B200, &v5); /*0x420023*/
   if ( v3 != -1 && v3 < dword_A8B210 && v3 < --dword_A8B210 ) /*0x42003e*/
@@ -974,7 +974,7 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(unsigned int * Block, c
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x420633*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420636*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x420636*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x420640*/
   {
     __3_YAXPAX_Z(v3); /*0x420648*/
@@ -997,7 +997,7 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
   void *v3; // eax
 
   v3 = *(void **)&Block->m_1[3]; /*0x420683*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420686*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClass; /*0x420686*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x420690*/
   {
     __3_YAXPAX_Z(v3); /*0x420698*/

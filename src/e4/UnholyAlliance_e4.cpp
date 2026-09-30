@@ -89,7 +89,7 @@ AbstractClass * * UnholyAlliance_GetResult()
 UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)&Block->m_Enabled = &UnholyAlliance::`vftable'; /*0x5cb543*/
+  *(unsigned int *)&Block->m_Enabled = &vt_UnholyAlliance; /*0x5cb543*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)Block); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     __3_YAXPAX_Z(Block); /*0x5cb556*/

@@ -139,11 +139,11 @@ int SideClass::Construct(CCINIClass * aP1)
   *((unsigned char *)this + 165) = 0; /*0x6a4576*/
   *((unsigned int *)this + 43) = 10; /*0x6a457c*/
   *((unsigned int *)this + 42) = 0; /*0x6a4586*/
-  this->houseTypes = &TypeList<int>::`vftable'; /*0x6a458c*/
-  this->AbstractClass = &SideClass::`vftable'; /*0x6a4597*/
-  this->? = &SideClass::`vftable'; /*0x6a459d*/
-  this->? = &SideClass::`vftable'; /*0x6a45a3*/
-  this->? = &SideClass::`vftable'; /*0x6a45aa*/
+  this->houseTypes = &vt_TypeList; /*0x6a458c*/
+  this->AbstractClass = &vt_SideClass; /*0x6a4597*/
+  this->? = &vt_SideClass; /*0x6a459d*/
+  this->? = &vt_SideClass; /*0x6a45a3*/
+  this->? = &vt_SideClass; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x6a45b1*/
   if ( *((unsigned int *)((char *)&FootClass_Array + 0)) < *((unsigned int *)((char *)&FootClass_Array + 1)) /*0x6a45ea*/
     || (BYTE1(*((unsigned int *)((char *)&FootClass_Array + 2))) || !FootClass_Array.?[1])
@@ -199,11 +199,11 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       BYTE1(v2[1].?) = 0; /*0x6a47c5*/
       v2[1].? = (void *)10; /*0x6a47cb*/
       v2[1].? = 0; /*0x6a47d1*/
-      v2->houseTypes = &TypeList<int>::`vftable'; /*0x6a47d7*/
-      v2->AbstractClass = &SideClass::`vftable'; /*0x6a47e1*/
-      v2->? = &SideClass::`vftable'; /*0x6a47e7*/
-      v2->? = &SideClass::`vftable'; /*0x6a47ee*/
-      v2->? = &SideClass::`vftable'; /*0x6a47f5*/
+      v2->houseTypes = &vt_TypeList; /*0x6a47d7*/
+      v2->AbstractClass = &vt_SideClass; /*0x6a47e1*/
+      v2->? = &vt_SideClass; /*0x6a47e7*/
+      v2->? = &vt_SideClass; /*0x6a47ee*/
+      v2->? = &vt_SideClass; /*0x6a47f5*/
     }
     p_houseTypes = &v2->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
@@ -214,7 +214,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       *((unsigned char *)p_houseTypes + 13) = 0; /*0x6a4810*/
       p_houseTypes[5] = (void *)10; /*0x6a4813*/
       p_houseTypes[4] = 0; /*0x6a4816*/
-      *p_houseTypes = &TypeList<int>::`vftable'; /*0x6a4819*/
+      *p_houseTypes = &vt_TypeList; /*0x6a4819*/
     }
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &aP1, 4, 0); /*0x6a482a*/
     for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
@@ -255,10 +255,10 @@ void * SideClass::Init(void ** Block, char a2)
   void *houseTypesCount; // eax
   SideClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &SideClass::`vftable'; /*0x6a4936*/
-  Block->? = &SideClass::`vftable'; /*0x6a493c*/
-  Block->? = &SideClass::`vftable'; /*0x6a4943*/
-  Block->? = &SideClass::`vftable'; /*0x6a494a*/
+  Block->AbstractClass = &vt_SideClass; /*0x6a4936*/
+  Block->? = &vt_SideClass; /*0x6a493c*/
+  Block->? = &vt_SideClass; /*0x6a4943*/
+  Block->? = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6a4951*/
   v6 = Block; /*0x6a4966*/
   v3 = (*(int (**)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &v6); /*0x6a496a*/
@@ -273,7 +273,7 @@ void * SideClass::Init(void ** Block, char a2)
     }
   }
   houseTypesCount = (void *)Block->houseTypesCount; /*0x6a499f*/
-  Block->houseTypes = &VectorClass<int>::`vftable'; /*0x6a49a5*/
+  Block->houseTypes = &vt_VectorClass; /*0x6a49a5*/
   if ( houseTypesCount && *((unsigned char *)Block + 165) ) /*0x6a49b3*/
   {
     __3_YAXPAX_Z(houseTypesCount); /*0x6a49be*/

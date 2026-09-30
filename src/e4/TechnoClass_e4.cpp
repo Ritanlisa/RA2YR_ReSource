@@ -275,21 +275,21 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->currentTargetThreatValues[2] = 0; /*0x6f3057*/
   LOBYTE(this->currentTargetThreatValues[3]) = 1; /*0x6f305d*/
   BYTE1(this->currentTargetThreatValues[3]) = 0; /*0x6f3064*/
-  this->currentTargetThreatValues[0] = (int)&DynamicVectorClass<int>::`vftable'; /*0x6f306a*/
+  this->currentTargetThreatValues[0] = (int)&vt_DynamicVectorClass; /*0x6f306a*/
   this->currentTargetThreatValues[5] = 10; /*0x6f3074*/
   this->currentTargetThreatValues[4] = 0; /*0x6f307a*/
   this->currentTargets[1] = 0; /*0x6f3080*/
   this->currentTargets[2] = 0; /*0x6f3086*/
   LOBYTE(this->currentTargets[3]) = 1; /*0x6f308c*/
   BYTE1(this->currentTargets[3]) = 0; /*0x6f3093*/
-  this->currentTargets[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x6f3099*/
+  this->currentTargets[0] = (int)&vt_DynamicVectorClass; /*0x6f3099*/
   this->currentTargets[5] = 10; /*0x6f309f*/
   this->currentTargets[4] = 0; /*0x6f30a5*/
   this->attackedTargets[1] = 0; /*0x6f30ab*/
   this->attackedTargets[2] = 0; /*0x6f30b1*/
   LOBYTE(this->attackedTargets[3]) = 1; /*0x6f30b7*/
   BYTE1(this->attackedTargets[3]) = 0; /*0x6f30be*/
-  this->attackedTargets[0] = (int)&DynamicVectorClass<AbstractClass *>::`vftable'; /*0x6f30c4*/
+  this->attackedTargets[0] = (int)&vt_DynamicVectorClass; /*0x6f30c4*/
   this->attackedTargets[5] = 10; /*0x6f30ca*/
   this->attackedTargets[4] = 0; /*0x6f30d0*/
   this->isTurretRotateSoundPlaying = 1; /*0x6f30d6*/
@@ -306,9 +306,9 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->planningToken = 0; /*0x6f311e*/
   this->disguiseAsType = 0; /*0x6f3124*/
   this->disguisedAsHouse = 0; /*0x6f312a*/
-  this->RadioClass = &TechnoClass::`vftable'; /*0x6f3130*/
-  this->? = &TechnoClass::`vftable'; /*0x6f3136*/
-  this->? = &TechnoClass::`vftable'; /*0x6f313d*/
+  this->RadioClass = &vt_TechnoClass; /*0x6f3130*/
+  this->? = &vt_TechnoClass; /*0x6f3136*/
+  this->? = &vt_TechnoClass; /*0x6f313d*/
   this->? = &off_7F4934; /*0x6f314a*/
   AudioController::Init((AudioController *)this->turretRotateSoundController); /*0x6f3151*/
   AudioController::Init((AudioController *)this->gattlingSoundController); /*0x6f315c*/
@@ -547,9 +547,9 @@ int TechnoClass::DTOR()
   int v18; // [esp+18h] [ebp-4h] BYREF
 
   v2 = *(Sidebar **)((char *)this + 1300); /*0x6f4507*/
-  *(unsigned int *)this = &TechnoClass::`vftable'; /*0x6f450d*/
-  *((unsigned int *)this + 1) = &TechnoClass::`vftable'; /*0x6f4515*/
-  *((unsigned int *)this + 2) = &TechnoClass::`vftable'; /*0x6f451c*/
+  *(unsigned int *)this = &vt_TechnoClass; /*0x6f450d*/
+  *((unsigned int *)this + 1) = &vt_TechnoClass; /*0x6f4515*/
+  *((unsigned int *)this + 2) = &vt_TechnoClass; /*0x6f451c*/
   *((unsigned int *)this + 3) = &off_7F4934; /*0x6f4523*/
   if ( v2 ) /*0x6f452a*/
   {
@@ -620,10 +620,10 @@ int TechnoClass::DTOR()
     (*(void (**)(int))(*(unsigned int *)v12 + 248))(v12); /*0x6f468b*/
     *((unsigned int *)this + 76) = 0; /*0x6f4691*/
   }
-  *((unsigned int *)this + 284) = &VectorClass<AbstractClass *>::`vftable'; /*0x6f469d*/
+  *((unsigned int *)this + 284) = &vt_VectorClass; /*0x6f469d*/
   AbstractClassVector::ddtor((char *)this + 1136); /*0x6f46a3*/
   v13 = *(void **)((char *)this + 1116); /*0x6f46a8*/
-  *((unsigned int *)this + 278) = &VectorClass<AbstractClass *>::`vftable'; /*0x6f46ae*/
+  *((unsigned int *)this + 278) = &vt_VectorClass; /*0x6f46ae*/
   if ( v13 && *((unsigned char *)this + 1125) ) /*0x6f46bc*/
   {
     __3_YAXPAX_Z(v13); /*0x6f46c5*/
@@ -632,7 +632,7 @@ int TechnoClass::DTOR()
   *((unsigned char *)this + 1125) = 0; /*0x6f46d3*/
   *((unsigned int *)this + 280) = 0; /*0x6f46d9*/
   v14 = *(void **)((char *)this + 1092); /*0x6f46df*/
-  *((unsigned int *)this + 272) = &VectorClass<int>::`vftable'; /*0x6f46e5*/
+  *((unsigned int *)this + 272) = &vt_VectorClass; /*0x6f46e5*/
   if ( v14 && *((unsigned char *)this + 1101) ) /*0x6f46f3*/
   {
     __3_YAXPAX_Z(v14); /*0x6f46fc*/
@@ -641,12 +641,12 @@ int TechnoClass::DTOR()
   *((unsigned char *)this + 1101) = 0; /*0x6f4710*/
   *((unsigned int *)this + 274) = 0; /*0x6f4716*/
   nullsub_69(v17); /*0x6f471c*/
-  *(unsigned int *)this = &RadioClass::`vftable'; /*0x6f4721*/
-  *((unsigned int *)this + 1) = &RadioClass::`vftable'; /*0x6f4727*/
-  *((unsigned int *)this + 2) = &RadioClass::`vftable'; /*0x6f472e*/
-  *((unsigned int *)this + 3) = &RadioClass::`vftable'; /*0x6f4735*/
+  *(unsigned int *)this = &vt_RadioClass; /*0x6f4721*/
+  *((unsigned int *)this + 1) = &vt_RadioClass; /*0x6f4727*/
+  *((unsigned int *)this + 2) = &vt_RadioClass; /*0x6f472e*/
+  *((unsigned int *)this + 3) = &vt_RadioClass; /*0x6f4735*/
   v15 = *(void **)((char *)this + 228); /*0x6f473c*/
-  *((unsigned int *)this + 56) = &VectorClass<TechnoClass *>::`vftable'; /*0x6f4742*/
+  *((unsigned int *)this + 56) = &vt_VectorClass; /*0x6f4742*/
   if ( v15 && *((unsigned char *)this + 237) ) /*0x6f4750*/
   {
     __3_YAXPAX_Z(v15); /*0x6f4759*/
@@ -654,10 +654,10 @@ int TechnoClass::DTOR()
   }
   *((unsigned char *)this + 237) = 0; /*0x6f4767*/
   *((unsigned int *)this + 58) = 0; /*0x6f476d*/
-  *(unsigned int *)this = &MissionClass::`vftable'; /*0x6f4775*/
-  *((unsigned int *)this + 1) = &MissionClass::`vftable'; /*0x6f477b*/
-  *((unsigned int *)this + 2) = &MissionClass::`vftable'; /*0x6f4782*/
-  *((unsigned int *)this + 3) = &MissionClass::`vftable'; /*0x6f4789*/
+  *(unsigned int *)this = &vt_MissionClass; /*0x6f4775*/
+  *((unsigned int *)this + 1) = &vt_MissionClass; /*0x6f477b*/
+  *((unsigned int *)this + 2) = &vt_MissionClass; /*0x6f4782*/
+  *((unsigned int *)this + 3) = &vt_MissionClass; /*0x6f4789*/
   return ObjectClass::Dtor((ObjectClass *)this); /*0x6f4795*/
 
 }

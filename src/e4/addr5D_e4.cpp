@@ -2469,7 +2469,7 @@ namespace gamemd {
 unsigned int * E4Recv_5D7580::sub_5D7580()
 {
 
-  this->AbstractClass = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7582*/
+  this->AbstractClass = &MultiplayerGameMode::vt_InitializerBase; /*0x5d7582*/
   return &this->AbstractClass; /*0x5d7588*/
 
 }
@@ -2480,7 +2480,7 @@ namespace gamemd {
 void E4Recv_5D7CD0::sub_5D7CD0()
 {
 
-  *this = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7cd0*/
+  *this = &MultiplayerGameMode::vt_InitializerBase; /*0x5d7cd0*/
 
 }
 } // namespace gamemd
@@ -2490,7 +2490,7 @@ namespace gamemd {
 unsigned int * E4Recv_5D7FF0::___Gfacet_locale_std__UAEPAXI_Z_127(unsigned int * Block, char a2)
 {
 
-  *Block = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7ff9*/
+  *Block = &MultiplayerGameMode::vt_InitializerBase; /*0x5d7ff9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fff*/
     __3_YAXPAX_Z(Block); /*0x5d8002*/
   return Block; /*0x5d800c*/
@@ -2503,7 +2503,7 @@ namespace gamemd {
 unsigned int * E4Recv_5D8010::___Gfacet_locale_std__UAEPAXI_Z_128(unsigned int * Block, char a2)
 {
 
-  *Block = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8019*/
+  *Block = &MultiplayerGameMode::vt_InitializerBase; /*0x5d8019*/
   if ( (a2 & 1) != 0 ) /*0x5d801f*/
     __3_YAXPAX_Z(Block); /*0x5d8022*/
   return Block; /*0x5d802c*/

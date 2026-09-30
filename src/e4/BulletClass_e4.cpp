@@ -49,10 +49,10 @@ BulletClass::BulletClass()
   *(unsigned short *)&this-((unsigned int *)(>__pad_144))[10] = -1; /*0x46640e*/
   this->BulletClass_field_0x154 = 0; /*0x466419*/
   this-((unsigned int *)(>__pad_158))[0] = 0; /*0x46641f*/
-  *(unsigned int *)this->__pad_0 = &BulletClass::`vftable'; /*0x466425*/
-  this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46642b*/
-  this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466431*/
-  *(unsigned int *)this->__pad_C = &BulletClass::`vftable'; /*0x466438*/
+  *(unsigned int *)this->__pad_0 = &vt_BulletClass; /*0x466425*/
+  this->BulletClass_field_0x4 = &vt_BulletClass; /*0x46642b*/
+  this->BulletClass_field_0x8 = &vt_BulletClass; /*0x466431*/
+  *(unsigned int *)this->__pad_C = &vt_BulletClass; /*0x466438*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->BulletClass_field_0x4); /*0x46643f*/
   *(unsigned int *)this->__pad_134 = 0; /*0x466444*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_134))[4] = 0; /*0x46644a*/
@@ -84,10 +84,10 @@ BulletClass * * BulletClass::Dtor()
   int v3; // eax
   BulletClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->__pad_0 = &BulletClass::`vftable'; /*0x466566*/
-  this->BulletClass_field_0x4 = &BulletClass::`vftable'; /*0x46656c*/
-  this->BulletClass_field_0x8 = &BulletClass::`vftable'; /*0x466573*/
-  *(unsigned int *)this->__pad_C = &BulletClass::`vftable'; /*0x46657a*/
+  *(unsigned int *)this->__pad_0 = &vt_BulletClass; /*0x466566*/
+  this->BulletClass_field_0x4 = &vt_BulletClass; /*0x46656c*/
+  this->BulletClass_field_0x8 = &vt_BulletClass; /*0x466573*/
+  *(unsigned int *)this->__pad_C = &vt_BulletClass; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
   if ( this-((unsigned int *)(>__pad_158))[0] ) /*0x466586*/
   {

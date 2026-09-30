@@ -140,10 +140,10 @@ BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
   int v3; // eax
   BuildingLightClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->vtable0 = (int)&BuildingLightClass::`vftable'; /*0x4370c4*/
-  Block->vtable1 = (int)&BuildingLightClass::`vftable'; /*0x4370ca*/
-  Block->vtable2 = (int)&BuildingLightClass::`vftable'; /*0x4370d1*/
-  Block->vtable3 = (int)&BuildingLightClass::`vftable'; /*0x4370d8*/
+  Block->vtable0 = (int)&vt_BuildingLightClass; /*0x4370c4*/
+  Block->vtable1 = (int)&vt_BuildingLightClass; /*0x4370ca*/
+  Block->vtable2 = (int)&vt_BuildingLightClass; /*0x4370d1*/
+  Block->vtable3 = (int)&vt_BuildingLightClass; /*0x4370d8*/
   if ( (uint8_t)ObjectClass::Undeploy(Block) ) /*0x4370df*/
     VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)Block); /*0x4370ee*/
   v5 = Block; /*0x437103*/

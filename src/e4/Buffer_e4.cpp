@@ -443,7 +443,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(unsigned int * Bl
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x488033*/
-  *(unsigned int *)Block = &VectorClass<ObjectClass *>::`vftable'; /*0x488036*/
+  *(unsigned int *)Block = &vt_VectorClass; /*0x488036*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x488040*/
   {
     __3_YAXPAX_Z(v3); /*0x488048*/

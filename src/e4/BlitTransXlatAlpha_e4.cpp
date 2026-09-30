@@ -397,7 +397,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a1a9*/
+  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a1a9*/
   if ( (a2 & 1) != 0 ) /*0x49a1af*/
     __3_YAXPAX_Z(this); /*0x49a1b2*/
   return (std::locale::facet *)this; /*0x49a1bc*/
@@ -410,7 +410,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a1c9*/
+  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a1c9*/
   if ( (a2 & 1) != 0 ) /*0x49a1cf*/
     __3_YAXPAX_Z(this); /*0x49a1d2*/
   return (std::locale::facet *)this; /*0x49a1dc*/
@@ -423,7 +423,7 @@ namespace gamemd {
 std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 {
 
-  *(unsigned int *)this->__pad_0 = &Blitter::`vftable'; /*0x49a1e9*/
+  *(unsigned int *)this->__pad_0 = &vt_Blitter; /*0x49a1e9*/
   if ( (a2 & 1) != 0 ) /*0x49a1ef*/
     __3_YAXPAX_Z(this); /*0x49a1f2*/
   return (std::locale::facet *)this; /*0x49a1fc*/
@@ -439,10 +439,10 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 2); /*0x49a248*/
-  *(unsigned int *)Block->__pad_0 = &BlitTransXlatAlpha<unsigned short>::`vftable'; /*0x49a24b*/
+  *(unsigned int *)Block->__pad_0 = &vt_BlitTransXlatAlpha; /*0x49a24b*/
   FractalNoise::Dtor(v3); /*0x49a252*/
   *((unsigned int *)Block + 2) = 0; /*0x49a25b*/
-  *(unsigned int *)Block->__pad_0 = &Blitter::`vftable'; /*0x49a264*/
+  *(unsigned int *)Block->__pad_0 = &vt_Blitter; /*0x49a264*/
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
     __3_YAXPAX_Z(Block); /*0x49a26d*/
   return Block->__pad_0; /*0x49a277*/

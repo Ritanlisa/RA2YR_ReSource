@@ -46,10 +46,10 @@ void TemporalClass::Constructor()
   v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_28))[4] = v2; /*0x71a464*/
-  this->AbstractClass = &TemporalClass::`vftable'; /*0x71a467*/
-  this->? = &TemporalClass::`vftable'; /*0x71a46d*/
-  this->? = &TemporalClass::`vftable'; /*0x71a474*/
-  this->? = &TemporalClass::`vftable'; /*0x71a47b*/
+  this->AbstractClass = &vt_TemporalClass; /*0x71a467*/
+  this->? = &vt_TemporalClass; /*0x71a46d*/
+  this->? = &vt_TemporalClass; /*0x71a474*/
+  this->? = &vt_TemporalClass; /*0x71a47b*/
   if ( *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 0)) < *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 5)) /*0x71a4b7*/
     || (BYTE1(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 6))) || !g_BuildingLoadQueue_Array.?[5])
     && *((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 1)) > 0
@@ -77,10 +77,10 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
-  this->AbstractClass = &TemporalClass::`vftable'; /*0x71a501*/
-  this->? = &TemporalClass::`vftable'; /*0x71a507*/
-  this->? = &TemporalClass::`vftable'; /*0x71a50e*/
-  this->? = &TemporalClass::`vftable'; /*0x71a515*/
+  this->AbstractClass = &vt_TemporalClass; /*0x71a501*/
+  this->? = &vt_TemporalClass; /*0x71a507*/
+  this->? = &vt_TemporalClass; /*0x71a50e*/
+  this->? = &vt_TemporalClass; /*0x71a515*/
   this->creationFrame = aP1; /*0x71a51c*/
   *(unsigned int *)this->__pad_28 = 0; /*0x71a51f*/
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x71a529*/
@@ -376,10 +376,10 @@ void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
   int v3; // eax
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &TemporalClass::`vftable'; /*0x71b1bd*/
-  Block->? = &TemporalClass::`vftable'; /*0x71b1c3*/
-  Block->? = &TemporalClass::`vftable'; /*0x71b1ca*/
-  Block->? = &TemporalClass::`vftable'; /*0x71b1d1*/
+  Block->AbstractClass = &vt_TemporalClass; /*0x71b1bd*/
+  Block->? = &vt_TemporalClass; /*0x71b1c3*/
+  Block->? = &vt_TemporalClass; /*0x71b1ca*/
+  Block->? = &vt_TemporalClass; /*0x71b1d1*/
   v5 = Block; /*0x71b1df*/
   v3 = (*(int (**)(int *, TemporalClass **))(*((unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3)) + 16))( /*0x71b1e3*/
          &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 3),
@@ -425,10 +425,10 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71a682*/
-      aP0->AbstractClass = &TemporalClass::`vftable'; /*0x71a687*/
-      aP0->? = &TemporalClass::`vftable'; /*0x71a68d*/
-      aP0->? = &TemporalClass::`vftable'; /*0x71a694*/
-      aP0->? = &TemporalClass::`vftable'; /*0x71a69b*/
+      aP0->AbstractClass = &vt_TemporalClass; /*0x71a687*/
+      aP0->? = &vt_TemporalClass; /*0x71a68d*/
+      aP0->? = &vt_TemporalClass; /*0x71a694*/
+      aP0->? = &vt_TemporalClass; /*0x71a69b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->creationFrame); /*0x71a6ab*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0->__pad_28); /*0x71a6b9*/

@@ -57,7 +57,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   this->SnowOccupationBits = 0; /*0x5447fe*/
   this->WaterBound = 1; /*0x544804*/
   this->SpawnsTiberium = 0; /*0x54480b*/
-  LODWORD(this->AnimationProbability) = &DynamicVectorClass<unsigned short *>::`vftable'; /*0x544811*/
+  LODWORD(this->AnimationProbability) = &vt_DynamicVectorClass; /*0x544811*/
   this->FoundationData = (CellStruct *)10; /*0x54481b*/
   *(unsigned int *)&this->IsVeinhole = 0; /*0x544825*/
   *((unsigned int *)this + 179) = 0; /*0x544830*/
@@ -81,10 +81,10 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   *((unsigned char *)this + 773) = 1; /*0x5448b5*/
   *((unsigned char *)this + 774) = 0; /*0x5448bc*/
   *((unsigned int *)this + 194) = 0; /*0x5448c2*/
-  this->ObjectTypeClass = &IsometricTileTypeClass::`vftable'; /*0x5448c8*/
-  this->? = &IsometricTileTypeClass::`vftable'; /*0x5448cf*/
-  this->? = &IsometricTileTypeClass::`vftable'; /*0x5448d6*/
-  this->? = &IsometricTileTypeClass::`vftable'; /*0x5448dd*/
+  this->ObjectTypeClass = &vt_IsometricTileTypeClass; /*0x5448c8*/
+  this->? = &vt_IsometricTileTypeClass; /*0x5448cf*/
+  this->? = &vt_IsometricTileTypeClass; /*0x5448d6*/
+  this->? = &vt_IsometricTileTypeClass; /*0x5448dd*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
@@ -158,10 +158,10 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   this->IsAnimated = 0; /*0x71dae5*/
   this->IsVeinhole = 0; /*0x71daeb*/
   this->FoundationData = 0; /*0x71daf1*/
-  this->ObjectTypeClass = &TerrainTypeClass::`vftable'; /*0x71daf7*/
-  this->? = &TerrainTypeClass::`vftable'; /*0x71dafd*/
-  this->? = &TerrainTypeClass::`vftable'; /*0x71db03*/
-  this->? = &TerrainTypeClass::`vftable'; /*0x71db0a*/
+  this->ObjectTypeClass = &vt_TerrainTypeClass; /*0x71daf7*/
+  this->? = &vt_TerrainTypeClass; /*0x71dafd*/
+  this->? = &vt_TerrainTypeClass; /*0x71db03*/
+  this->? = &vt_TerrainTypeClass; /*0x71db0a*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x71db11*/
   this->? = 0; /*0x71db18*/
   this->? = 1; /*0x71db1e*/
@@ -391,10 +391,10 @@ TerrainTypeClass * TerrainTypeClass::ddtor( void * a2, char a3)
   TerrainTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Image = a3->?; /*0x71e364*/
-  a3->ObjectTypeClass = &TerrainTypeClass::`vftable'; /*0x71e36a*/
-  a3->? = &TerrainTypeClass::`vftable'; /*0x71e372*/
-  a3->? = &TerrainTypeClass::`vftable'; /*0x71e379*/
-  a3->? = &TerrainTypeClass::`vftable'; /*0x71e380*/
+  a3->ObjectTypeClass = &vt_TerrainTypeClass; /*0x71e36a*/
+  a3->? = &vt_TerrainTypeClass; /*0x71e372*/
+  a3->? = &vt_TerrainTypeClass; /*0x71e379*/
+  a3->? = &vt_TerrainTypeClass; /*0x71e380*/
   if ( Image ) /*0x71e387*/
   {
     __3_YAXPAX_Z(Image); /*0x71e38a*/
@@ -531,10 +531,10 @@ int  TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x71e1e6*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x71e1ef*/
-      aP0->ObjectTypeClass = &TerrainTypeClass::`vftable'; /*0x71e1f4*/
-      aP0->? = &TerrainTypeClass::`vftable'; /*0x71e1fa*/
-      aP0->? = &TerrainTypeClass::`vftable'; /*0x71e201*/
-      aP0->? = &TerrainTypeClass::`vftable'; /*0x71e208*/
+      aP0->ObjectTypeClass = &vt_TerrainTypeClass; /*0x71e1f4*/
+      aP0->? = &vt_TerrainTypeClass; /*0x71e1fa*/
+      aP0->? = &vt_TerrainTypeClass; /*0x71e201*/
+      aP0->? = &vt_TerrainTypeClass; /*0x71e208*/
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x71e211*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x71e218*/

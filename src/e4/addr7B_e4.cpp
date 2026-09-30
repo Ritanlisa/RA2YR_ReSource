@@ -501,7 +501,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   void *v8; // eax
   void *v9; // eax
 
-  this->Socket = (int)&UDPInterfaceClass::`vftable'; /*0x7b2e56*/
+  this->Socket = (int)&vt_UDPInterfaceClass; /*0x7b2e56*/
   while ( *((unsigned int *)this + 64722) ) /*0x7b2e5c*/
   {
     __3_YAXPAX_Z(**((void ***)this + 64719)); /*0x7b2e6f*/
@@ -536,7 +536,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   }
   UDPInterfaceClass::connect(this); /*0x7b2f04*/
   v8 = (void *)*((unsigned int *)this + 64853); /*0x7b2f09*/
-  *((unsigned int *)this + 64852) = &VectorClass<unsigned char *>::`vftable'; /*0x7b2f0f*/
+  *((unsigned int *)this + 64852) = &vt_VectorClass; /*0x7b2f0f*/
   if ( v8 && *((unsigned char *)this + 259421) ) /*0x7b2f1d*/
   {
     __3_YAXPAX_Z(v8); /*0x7b2f26*/
@@ -545,7 +545,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
   *((unsigned char *)this + 259421) = 0; /*0x7b2f34*/
   *((unsigned int *)this + 64854) = 0; /*0x7b2f3a*/
   v9 = (void *)*((unsigned int *)this + 64719); /*0x7b2f40*/
-  *((unsigned int *)this + 64718) = &VectorClass<unsigned char *>::`vftable'; /*0x7b2f46*/
+  *((unsigned int *)this + 64718) = &vt_VectorClass; /*0x7b2f46*/
   if ( v9 && *((unsigned char *)this + 258885) ) /*0x7b2f54*/
   {
     __3_YAXPAX_Z(v9); /*0x7b2f5d*/
@@ -3219,7 +3219,7 @@ namespace gamemd {
 BlitPlain * E4Recv_7BC640::___Gfacet_locale_std__UAEPAXI_Z_148(unsigned int * Block, char a2)
 {
 
-  *Block = &Blitter::`vftable'; /*0x7bc649*/
+  *Block = &vt_Blitter; /*0x7bc649*/
   if ( (a2 & 1) != 0 ) /*0x7bc64f*/
     __3_YAXPAX_Z(Block); /*0x7bc652*/
   return Block; /*0x7bc65c*/
@@ -3232,7 +3232,7 @@ namespace gamemd {
 BlitPlain * E4Recv_7BC660::___Gfacet_locale_std__UAEPAXI_Z_149(unsigned int * Block, char a2)
 {
 
-  *Block = &Blitter::`vftable'; /*0x7bc669*/
+  *Block = &vt_Blitter; /*0x7bc669*/
   if ( (a2 & 1) != 0 ) /*0x7bc66f*/
     __3_YAXPAX_Z(Block); /*0x7bc672*/
   return Block; /*0x7bc67c*/
@@ -3245,7 +3245,7 @@ namespace gamemd {
 BlitTrans * E4Recv_7BC680::___Gfacet_locale_std__UAEPAXI_Z_150(unsigned int * Block, char a2)
 {
 
-  *Block = &Blitter::`vftable'; /*0x7bc689*/
+  *Block = &vt_Blitter; /*0x7bc689*/
   if ( (a2 & 1) != 0 ) /*0x7bc68f*/
     __3_YAXPAX_Z(Block); /*0x7bc692*/
   return Block; /*0x7bc69c*/
@@ -3258,7 +3258,7 @@ namespace gamemd {
 BlitTrans * E4Recv_7BC6A0::___Gfacet_locale_std__UAEPAXI_Z_151(unsigned int * Block, char a2)
 {
 
-  *Block = &Blitter::`vftable'; /*0x7bc6a9*/
+  *Block = &vt_Blitter; /*0x7bc6a9*/
   if ( (a2 & 1) != 0 ) /*0x7bc6af*/
     __3_YAXPAX_Z(Block); /*0x7bc6b2*/
   return Block; /*0x7bc6bc*/

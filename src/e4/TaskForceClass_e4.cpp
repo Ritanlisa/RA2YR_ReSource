@@ -84,10 +84,10 @@ int TaskForceClass::Construct(ObjectClass * aP1)
   this->TaskForceClass_field_0x98 = (AbstractClass *)-1; /*0x6e7e8f*/
   this-((unsigned int *)(>TaskForceClass_field_0x9C))[0] = 0; /*0x6e7e99*/
   *(unsigned int *)this->__pad_A0 = 0; /*0x6e7ea3*/
-  *(unsigned int *)this->__pad_0 = &TaskForceClass::`vftable'; /*0x6e7ead*/
-  this->TaskForceClass_field_0x4 = (int)&TaskForceClass::`vftable'; /*0x6e7eb3*/
-  *(unsigned int *)this->__pad_8 = &TaskForceClass::`vftable'; /*0x6e7eba*/
-  *(unsigned int *)&this->__pad_8[4] = &TaskForceClass::`vftable'; /*0x6e7ec1*/
+  *(unsigned int *)this->__pad_0 = &vt_TaskForceClass; /*0x6e7ead*/
+  this->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e7eb3*/
+  *(unsigned int *)this->__pad_8 = &vt_TaskForceClass; /*0x6e7eba*/
+  *(unsigned int *)&this->__pad_8[4] = &vt_TaskForceClass; /*0x6e7ec1*/
   if ( dword_A8E8E0 < dword_A8E8D8 /*0x6e7f05*/
     || (byte_A8E8DD || !dword_A8E8D8)
     && dword_A8E8E4 > 0
@@ -184,10 +184,10 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   int v3; // eax
   TaskForceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)Block->__pad_0 = &TaskForceClass::`vftable'; /*0x6e87f6*/
-  Block->TaskForceClass_field_0x4 = (int)&TaskForceClass::`vftable'; /*0x6e87fc*/
-  *(unsigned int *)Block->__pad_8 = &TaskForceClass::`vftable'; /*0x6e8803*/
-  *(unsigned int *)&Block->__pad_8[4] = &TaskForceClass::`vftable'; /*0x6e880a*/
+  *(unsigned int *)Block->__pad_0 = &vt_TaskForceClass; /*0x6e87f6*/
+  Block->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e87fc*/
+  *(unsigned int *)Block->__pad_8 = &vt_TaskForceClass; /*0x6e8803*/
+  *(unsigned int *)&Block->__pad_8[4] = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer((void **)Block, 1); /*0x6e8811*/
   v5 = Block; /*0x6e8826*/
   v3 = (*(int (**)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5); /*0x6e882a*/
@@ -337,10 +337,10 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e86b6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e86bf*/
-      *(unsigned int *)aP0->__pad_0 = &TaskForceClass::`vftable'; /*0x6e86c4*/
-      aP0->TaskForceClass_field_0x4 = (int)&TaskForceClass::`vftable'; /*0x6e86ca*/
-      *(unsigned int *)aP0->__pad_8 = &TaskForceClass::`vftable'; /*0x6e86d1*/
-      *(unsigned int *)&aP0->__pad_8[4] = &TaskForceClass::`vftable'; /*0x6e86d8*/
+      *(unsigned int *)aP0->__pad_0 = &vt_TaskForceClass; /*0x6e86c4*/
+      aP0->TaskForceClass_field_0x4 = (int)&vt_TaskForceClass; /*0x6e86ca*/
+      *(unsigned int *)aP0->__pad_8 = &vt_TaskForceClass; /*0x6e86d1*/
+      *(unsigned int *)&aP0->__pad_8[4] = &vt_TaskForceClass; /*0x6e86d8*/
     }
     v3 = (int *)(aP0 + 1); /*0x6e86e0*/
     v4 = 6; /*0x6e86e6*/

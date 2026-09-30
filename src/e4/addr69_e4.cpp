@@ -1678,7 +1678,7 @@ char * E4Recv_6905F0::sub_6905F0()
   char *result; // eax
 
   ScoreFontClass_field_0x0C = (void *)this->ScoreFontClass_field_0x0C; /*0x6905f6*/
-  *(unsigned int *)this->__pad_0 = &ScoreFontClass::`vftable'; /*0x6905f9*/
+  *(unsigned int *)this->__pad_0 = &vt_ScoreFontClass; /*0x6905f9*/
   if ( ScoreFontClass_field_0x0C && *((unsigned char *)this + 16) == 1 ) /*0x690607*/
   {
     __3_YAXPAX_Z(ScoreFontClass_field_0x0C); /*0x69060a*/

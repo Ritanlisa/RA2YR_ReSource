@@ -54,10 +54,10 @@ unsigned int * AnimTypeClass::Construct2(char * Source)
   this->?[9] = 0; /*0x41e3ef*/
   this->?[0] = 0; /*0x41e3f5*/
   this->?[1] = 0; /*0x41e3fb*/
-  this->ObjectTypeClass = &AITriggerTypeClass::`vftable'; /*0x41e401*/
-  this->? = &AITriggerTypeClass::`vftable'; /*0x41e407*/
-  this->? = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
-  this->? = &AITriggerTypeClass::`vftable'; /*0x41e415*/
+  this->ObjectTypeClass = &vt_AITriggerTypeClass; /*0x41e401*/
+  this->? = &vt_AITriggerTypeClass; /*0x41e407*/
+  this->? = &vt_AITriggerTypeClass; /*0x41e40e*/
+  this->? = &vt_AITriggerTypeClass; /*0x41e415*/
   memset(&this->?[10], 0, 0x20u); /*0x41e41c*/
   if ( dword_A8B210 < dword_A8B208 /*0x41e452*/
     || (byte_A8B20D || !dword_A8B208)
@@ -162,10 +162,10 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
   this->Shadow = 0; /*0x42771e*/
   this->PsiWarning = 0; /*0x427724*/
   this->ShouldFogRemove = 1; /*0x42772a*/
-  this->ObjectTypeClass = &AnimTypeClass::`vftable'; /*0x427731*/
-  this->? = &AnimTypeClass::`vftable'; /*0x427737*/
-  this->? = &AnimTypeClass::`vftable'; /*0x42773d*/
-  this->? = &AnimTypeClass::`vftable'; /*0x427744*/
+  this->ObjectTypeClass = &vt_AnimTypeClass; /*0x427731*/
+  this->? = &vt_AnimTypeClass; /*0x427737*/
+  this->? = &vt_AnimTypeClass; /*0x42773d*/
+  this->? = &vt_AnimTypeClass; /*0x427744*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x42774b*/
   this->? = 1; /*0x427750*/
   this->? = 1; /*0x427757*/
@@ -353,10 +353,10 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x428823*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x42882c*/
-      a1->ObjectTypeClass = &AnimTypeClass::`vftable'; /*0x428831*/
-      a1->? = &AnimTypeClass::`vftable'; /*0x428837*/
-      a1->? = &AnimTypeClass::`vftable'; /*0x42883e*/
-      a1->? = &AnimTypeClass::`vftable'; /*0x428845*/
+      a1->ObjectTypeClass = &vt_AnimTypeClass; /*0x428831*/
+      a1->? = &vt_AnimTypeClass; /*0x428837*/
+      a1->? = &vt_AnimTypeClass; /*0x42883e*/
+      a1->? = &vt_AnimTypeClass; /*0x428845*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
@@ -523,7 +523,7 @@ int AnimTypeClass::GetDamage()
       this->? = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         this->? = 1; /*0x428d55*/
-      *(unsigned int *)v10.CDFileClass = &CCFileClass::`vftable'; /*0x428d63*/
+      *(unsigned int *)v10.CDFileClass = &vt_CCFileClass; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
       *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
@@ -531,7 +531,7 @@ int AnimTypeClass::GetDamage()
     }
     (*((void (**)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = this->?; /*0x428da2*/
-    *(unsigned int *)v7.CDFileClass = &CCFileClass::`vftable'; /*0x428dac*/
+    *(unsigned int *)v7.CDFileClass = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
     *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x428dc5*/
@@ -551,10 +551,10 @@ AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
   int v4; // eax
   AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectTypeClass = &AnimTypeClass::`vftable'; /*0x428ead*/
-  Block->? = &AnimTypeClass::`vftable'; /*0x428eb3*/
-  Block->? = &AnimTypeClass::`vftable'; /*0x428eba*/
-  Block->? = &AnimTypeClass::`vftable'; /*0x428ec1*/
+  Block->ObjectTypeClass = &vt_AnimTypeClass; /*0x428ead*/
+  Block->? = &vt_AnimTypeClass; /*0x428eb3*/
+  Block->? = &vt_AnimTypeClass; /*0x428eba*/
+  Block->? = &vt_AnimTypeClass; /*0x428ec1*/
   v6 = Block; /*0x428ecf*/
   v3 = (*(int (**)(int *, AnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x428ed3*/
          &g_BuildingLoadQueue_Array.LightVisibility,

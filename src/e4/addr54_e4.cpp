@@ -2253,7 +2253,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
   unsigned int *v9; // eax
   int16_t v10; // cx
 
-  *(unsigned int *)this = &IPXManagerClass::`vftable'; /*0x5408f7*/
+  *(unsigned int *)this = &vt_IPXManagerClass; /*0x5408f7*/
   if ( dword_887628 ) /*0x540905*/
   {
     (**(void (***)(int, int))dword_887628)(dword_887628, 1); /*0x54090b*/
@@ -3203,7 +3203,7 @@ unsigned int * E4Recv_54E360::sub_54E360()
   this->? = 0; /*0x54e37b*/
   LOBYTE(this->?) = 1; /*0x54e37e*/
   BYTE1(this->?) = 0; /*0x54e382*/
-  this->? = &DynamicVectorClass<KamikazeControl *>::`vftable'; /*0x54e385*/
+  this->? = &vt_DynamicVectorClass; /*0x54e385*/
   this->? = (void *)10; /*0x54e38c*/
   this->? = 0; /*0x54e393*/
   this->AbstractClass = *(void **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x54e39e*/
@@ -3235,7 +3235,7 @@ void E4Recv_54E690::sub_54E690()
   vtable3[3](v5); /*0x54e6b8*/
   (*((void (**)(void **, int, unsigned int))*p_vtable3 + 2))(p_vtable3, abstractFlags, 0); /*0x54e6c3*/
   v7 = p_vtable3[1]; /*0x54e6c6*/
-  *p_vtable3 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54e6c9*/
+  *p_vtable3 = &vt_VectorClass; /*0x54e6c9*/
   if ( v7 && *((unsigned char *)p_vtable3 + 13) ) /*0x54e6d3*/
   {
     __3_YAXPAX_Z(v7); /*0x54e6d9*/
@@ -3256,7 +3256,7 @@ unsigned int * E4Recv_54EBF0::sub_54EBF0(int a2, int a3)
   this->Capacity = a2; /*0x54ebfe*/
   this->IsInitialized = 1; /*0x54ec01*/
   this->IsAllocated = 0; /*0x54ec05*/
-  this->vtable0 = &VectorClass<KamikazeControl *>::`vftable'; /*0x54ec08*/
+  this->vtable0 = &vt_VectorClass; /*0x54ec08*/
   if ( a2 ) /*0x54ec0e*/
   {
     if ( a3 ) /*0x54ec16*/

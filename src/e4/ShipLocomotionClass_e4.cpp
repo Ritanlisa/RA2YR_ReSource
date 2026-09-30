@@ -33,8 +33,8 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x69eeaa*/
   {
     a1->Piggybackee = 0; /*0x69eeac*/
-    *(unsigned int *)a1->LocomotionClass = &ShipLocomotionClass::`vftable'; /*0x69eeb3*/
-    *(unsigned int *)&a1->LocomotionClass[4] = &ShipLocomotionClass::`vftable'; /*0x69eeb9*/
+    *(unsigned int *)a1->LocomotionClass = &vt_ShipLocomotionClass; /*0x69eeb3*/
+    *(unsigned int *)&a1->LocomotionClass[4] = &vt_ShipLocomotionClass; /*0x69eeb9*/
     *(unsigned int *)a1->__pad_18 = &off_7F2D68; /*0x69eec0*/
   }
   (*(void (**)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x69eed3*/
@@ -138,8 +138,8 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, cha
 
   ILocomotion *Piggybackee; // eax
 
-  *(unsigned int *)Block->LocomotionClass = &ShipLocomotionClass::`vftable'; /*0x6a42b3*/
-  *(unsigned int *)&Block->LocomotionClass[4] = &ShipLocomotionClass::`vftable'; /*0x6a42b9*/
+  *(unsigned int *)Block->LocomotionClass = &vt_ShipLocomotionClass; /*0x6a42b3*/
+  *(unsigned int *)&Block->LocomotionClass[4] = &vt_ShipLocomotionClass; /*0x6a42b9*/
   *(unsigned int *)Block->__pad_18 = &off_7F2D68; /*0x6a42c0*/
   Piggybackee = Block->Piggybackee; /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/

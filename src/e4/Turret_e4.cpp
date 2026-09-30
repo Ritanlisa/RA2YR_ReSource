@@ -103,7 +103,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             *((unsigned int *)this + 47) = FileHVA; /*0x5f8e52*/
             Info = VoxelSection::GetInfo(v9, 0, 0); /*0x5f8e58*/
             Matrix::Scale(*((Matrix **)this + 47), *(float *)(Info + 12)); /*0x5f8e67*/
-            *(unsigned int *)v20.CDFileClass = &CCFileClass::`vftable'; /*0x5f8e70*/
+            *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f8e70*/
             v22 = 0; /*0x5f8e78*/
             Vector::Clear((int)v21); /*0x5f8e7c*/
             *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f8e85*/
@@ -147,19 +147,19 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             *((unsigned int *)this + 49) = v16; /*0x5f8fbc*/
             v18 = VoxelSection::GetInfo(v17, 0, 0); /*0x5f8fc2*/
             Matrix::Scale(*((Matrix **)this + 49), *(float *)(v18 + 12)); /*0x5f8fd1*/
-            *(unsigned int *)v20.CDFileClass = &CCFileClass::`vftable'; /*0x5f8fda*/
+            *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x5f8fda*/
             v22 = 0; /*0x5f8fe2*/
             Vector::Clear((int)v21); /*0x5f8fe6*/
             *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x5f8fef*/
             BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x5f8ff7*/
           }
         }
-        *(unsigned int *)v23.CDFileClass = &CCFileClass::`vftable'; /*0x5f9008*/
+        *(unsigned int *)v23.CDFileClass = &vt_CCFileClass; /*0x5f9008*/
         v25 = 0; /*0x5f900c*/
         Vector::Clear((int)v24); /*0x5f9013*/
         *(unsigned int *)v23.CDFileClass = &off_7E1668; /*0x5f9021*/
         BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x5f9025*/
-        *(unsigned int *)v26.CDFileClass = &CCFileClass::`vftable'; /*0x5f9031*/
+        *(unsigned int *)v26.CDFileClass = &vt_CCFileClass; /*0x5f9031*/
         v28 = 0; /*0x5f9038*/
         Vector::Clear((int)v27); /*0x5f903f*/
         *(unsigned int *)v26.CDFileClass = &off_7E1668; /*0x5f904b*/

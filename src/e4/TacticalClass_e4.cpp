@@ -1643,7 +1643,7 @@ unsigned int * TacticalClass::CollectSelectedIDs()
   if ( v0 ) /*0x732d26*/
   {
     TacticalClass::updateScroll(v0, 0, 0); /*0x732d2c*/
-    *v1 = &DynamicVectorClass<char const *>::`vftable'; /*0x732d31*/
+    *v1 = &vt_DynamicVectorClass; /*0x732d31*/
     v1[5] = 10; /*0x732d37*/
     v1[4] = 0; /*0x732d3e*/
     v2 = v1; /*0x732d41*/

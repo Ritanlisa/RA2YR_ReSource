@@ -56,10 +56,10 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->__tail_2B5[1] = 0; /*0x5fe2de*/
   this->__tail_2B5[2] = 0; /*0x5fe2e4*/
   *((unsigned char *)this + 696) = 0; /*0x5fe2ea*/
-  this->ObjectTypeClass = &OverlayTypeClass::`vftable'; /*0x5fe2f1*/
-  this->? = &OverlayTypeClass::`vftable'; /*0x5fe2f7*/
-  this->? = &OverlayTypeClass::`vftable'; /*0x5fe2fd*/
-  this->? = &OverlayTypeClass::`vftable'; /*0x5fe304*/
+  this->ObjectTypeClass = &vt_OverlayTypeClass; /*0x5fe2f1*/
+  this->? = &vt_OverlayTypeClass; /*0x5fe2f7*/
+  this->? = &vt_OverlayTypeClass; /*0x5fe2fd*/
+  this->? = &vt_OverlayTypeClass; /*0x5fe304*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x5fe30b*/
   this->? = 1; /*0x5fe310*/
   this->? = 0; /*0x5fe317*/
@@ -245,10 +245,10 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x5feb13*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x5feb1c*/
-      a1->ObjectTypeClass = &OverlayTypeClass::`vftable'; /*0x5feb21*/
-      a1->? = &OverlayTypeClass::`vftable'; /*0x5feb27*/
-      a1->? = &OverlayTypeClass::`vftable'; /*0x5feb2e*/
-      a1->? = &OverlayTypeClass::`vftable'; /*0x5feb35*/
+      a1->ObjectTypeClass = &vt_OverlayTypeClass; /*0x5feb21*/
+      a1->? = &vt_OverlayTypeClass; /*0x5feb27*/
+      a1->? = &vt_OverlayTypeClass; /*0x5feb2e*/
+      a1->? = &vt_OverlayTypeClass; /*0x5feb35*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x5feb3e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x5feb45*/
@@ -301,7 +301,7 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
     this->? = v3; /*0x5feeb1*/
     if ( v3 ) /*0x5feeb7*/
       this->? = 1; /*0x5feeb9*/
-    *(unsigned int *)v4.CDFileClass = &CCFileClass::`vftable'; /*0x5feec4*/
+    *(unsigned int *)v4.CDFileClass = &vt_CCFileClass; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
     *(unsigned int *)v4.CDFileClass = &off_7E1668; /*0x5feedd*/
@@ -352,10 +352,10 @@ unsigned int *  OverlayTypeClass::Construct( ObjectClass * aP1)
   *((unsigned char *)this + 778) = 0; /*0x644189*/
   *((unsigned char *)this + 779) = 0; /*0x644190*/
   *((unsigned char *)this + 780) = 0; /*0x644196*/
-  this->ObjectTypeClass = &ParticleSystemTypeClass::`vftable'; /*0x64419c*/
-  this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441a2*/
-  this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441a8*/
-  this->? = &ParticleSystemTypeClass::`vftable'; /*0x6441af*/
+  this->ObjectTypeClass = &vt_ParticleSystemTypeClass; /*0x64419c*/
+  this->? = &vt_ParticleSystemTypeClass; /*0x6441a2*/
+  this->? = &vt_ParticleSystemTypeClass; /*0x6441a8*/
+  this->? = &vt_ParticleSystemTypeClass; /*0x6441af*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x6441b6*/
   if ( (int)stru_A83D50.SuperClass_field_0x28 < *(int *)&stru_A83D50.__pad_14[12] /*0x6441ef*/
     || (BYTE1(stru_A83D50.SuperClass_field_0x24) || !*(unsigned int *)&stru_A83D50.__pad_14[12])
@@ -610,10 +610,10 @@ OverlayTypeClass * OverlayTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   OverlayTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ObjectTypeClass = &OverlayTypeClass::`vftable'; /*0x5fef36*/
-  Block->? = &OverlayTypeClass::`vftable'; /*0x5fef3c*/
-  Block->? = &OverlayTypeClass::`vftable'; /*0x5fef43*/
-  Block->? = &OverlayTypeClass::`vftable'; /*0x5fef4a*/
+  Block->ObjectTypeClass = &vt_OverlayTypeClass; /*0x5fef36*/
+  Block->? = &vt_OverlayTypeClass; /*0x5fef3c*/
+  Block->? = &vt_OverlayTypeClass; /*0x5fef43*/
+  Block->? = &vt_OverlayTypeClass; /*0x5fef4a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ObjectTypeClass, 1); /*0x5fef51*/
   v5 = Block; /*0x5fef66*/
   v3 = (*((int (**)(void **, OverlayTypeClass **))stru_A83D50.SuperClass_field_0x30 + 4))( /*0x5fef6a*/

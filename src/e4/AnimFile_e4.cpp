@@ -25,7 +25,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
   void (***v4)(unsigned int, int); // ecx
 
   v3 = *((unsigned char *)Block + 137); /*0x4272a6*/
-  *(unsigned int *)Block->__pad_0 = &AnimFile::`vftable'; /*0x4272ac*/
+  *(unsigned int *)Block->__pad_0 = &vt_AnimFile; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
     (*(void (**)(unsigned int))(**((unsigned int **)Block + 33) + 52))(*((unsigned int *)Block + 33)); /*0x4272be*/
@@ -44,7 +44,7 @@ AnimFile * AnimFile::QueryInterface(void * Block, char a2)
     *((unsigned int *)Block + 900) = 0; /*0x4272f6*/
   }
   *((unsigned char *)Block + 136) = 0; /*0x427300*/
-  *(unsigned int *)Block->__pad_0 = &Animate::`vftable'; /*0x427308*/
+  *(unsigned int *)Block->__pad_0 = &vt_Animate; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
     __3_YAXPAX_Z(Block); /*0x427311*/
   return Block; /*0x42731b*/

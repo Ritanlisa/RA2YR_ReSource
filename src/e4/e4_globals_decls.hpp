@@ -14763,3 +14763,156 @@ extern int DataGlobal_B04988;  // data: 0xb04988
 extern int DataGlobal_B0498C;  // data: 0xb0498c
 extern int DataGlobal_B04990;  // data: 0xb04990
 extern int DataGlobal_B049BC;  // data: 0xb049bc
+extern unsigned char vt_Anim[4];
+extern unsigned char vt_Base64Pipe[4];  // data: 0x7EB774
+extern unsigned char vt_Base64Straw[4];  // data: 0x7EB764
+extern unsigned char vt_BufferIOFileClass[4];  // data: 0x7E3A2C
+extern unsigned char vt_CD[4];  // data: 0x7E4C30
+extern unsigned char vt_CacheStraw[4];  // data: 0x7EB754
+extern unsigned char vt_Campaign[4];
+extern unsigned char vt_CampaignProperties[4];
+extern unsigned char vt_CellClass[4];  // data: 0x7E4EC0
+extern unsigned char vt_DialogControl[4];
+extern unsigned char vt_DisplayClass[4];  // data: 0x7E6114
+extern unsigned char vt_FilePipe[4];  // data: 0x7E4DA0
+extern unsigned char vt_FlagGameOption[4];
+extern unsigned char vt_GameOption[4];
+extern unsigned char vt_HouseClass[4];  // data: 0x7EA7F4
+extern unsigned char vt_INIEntry[4];
+extern unsigned char vt_INISection[4];
+extern unsigned char vt_InitializerBase[4];
+extern unsigned char vt_Map[4];
+extern unsigned char vt_PlayerProfile[4];  // data: 0x7F74F4
+extern unsigned char vt_PowerClass[4];  // data: 0x7EFF54
+extern unsigned char vt_ScrollClass[4];  // data: 0x7F108C
+extern unsigned char vt_Selection[4];
+extern unsigned char vt_SidebarClass[4];  // data: 0x7F3058
+extern unsigned char vt_State[4];
+extern unsigned char vt_Territory[4];
+extern unsigned char vt_VeinholeMonsterClass[4];  // data: 0x7F667C
+extern unsigned char vt___non_rtti_object[4];  // data: 0x7F95D0
+extern unsigned char vt__com_error[4];  // data: 0x7FA498
+extern unsigned char vt_bad_cast[4];  // data: 0x7F9660
+extern unsigned char vt_ATLCComObject[4];
+extern unsigned char vt_BlitPlain[4];
+extern unsigned char vt_BlitPlainXlat[4];
+extern unsigned char vt_BlitPlainXlatAlpha[4];
+extern unsigned char vt_BlitPlainXlatZRead[4];
+extern unsigned char vt_BlitPlainXlatZReadWrite[4];
+extern unsigned char vt_BlitTrans[4];
+extern unsigned char vt_BlitTransDarken[4];
+extern unsigned char vt_BlitTransDarkenZRead[4];
+extern unsigned char vt_BlitTransDarkenZReadWrite[4];
+extern unsigned char vt_BlitTransLucent25[4];
+extern unsigned char vt_BlitTransLucent25Alpha[4];
+extern unsigned char vt_BlitTransLucent25AlphaZRead[4];
+extern unsigned char vt_BlitTransLucent25AlphaZReadWarp[4];
+extern unsigned char vt_BlitTransLucent25AlphaZReadWrite[4];
+extern unsigned char vt_BlitTransLucent25ZRead[4];
+extern unsigned char vt_BlitTransLucent25ZReadWarp[4];
+extern unsigned char vt_BlitTransLucent25ZReadWrite[4];
+extern unsigned char vt_BlitTransLucent50[4];
+extern unsigned char vt_BlitTransLucent50Alpha[4];
+extern unsigned char vt_BlitTransLucent50AlphaZRead[4];
+extern unsigned char vt_BlitTransLucent50AlphaZReadWarp[4];
+extern unsigned char vt_BlitTransLucent50AlphaZReadWrite[4];
+extern unsigned char vt_BlitTransLucent50ZRead[4];
+extern unsigned char vt_BlitTransLucent50ZReadWarp[4];
+extern unsigned char vt_BlitTransLucent50ZReadWrite[4];
+extern unsigned char vt_BlitTransLucent75[4];
+extern unsigned char vt_BlitTransLucent75Alpha[4];
+extern unsigned char vt_BlitTransLucent75AlphaZRead[4];
+extern unsigned char vt_BlitTransLucent75AlphaZReadWarp[4];
+extern unsigned char vt_BlitTransLucent75AlphaZReadWrite[4];
+extern unsigned char vt_BlitTransLucent75ZRead[4];
+extern unsigned char vt_BlitTransLucent75ZReadWarp[4];
+extern unsigned char vt_BlitTransLucent75ZReadWrite[4];
+extern unsigned char vt_BlitTransRemapDest[4];
+extern unsigned char vt_BlitTransRemapXlat[4];
+extern unsigned char vt_BlitTransXlat[4];
+extern unsigned char vt_BlitTransXlatAlpha[4];
+extern unsigned char vt_BlitTransXlatAlphaZRead[4];
+extern unsigned char vt_BlitTransXlatAlphaZReadWrite[4];
+extern unsigned char vt_BlitTransXlatMultWriteAlpha[4];
+extern unsigned char vt_BlitTransXlatWriteAlpha[4];
+extern unsigned char vt_BlitTransXlatZRead[4];
+extern unsigned char vt_BlitTransXlatZReadWrite[4];
+extern unsigned char vt_BlitTransZRemapXlat[4];
+extern unsigned char vt_BlitTransZRemapXlatAlpha[4];
+extern unsigned char vt_BlitTransZRemapXlatAlphaZRead[4];
+extern unsigned char vt_BlitTransZRemapXlatAlphaZReadWrite[4];
+extern unsigned char vt_BlitTransZRemapXlatZRead[4];
+extern unsigned char vt_BlitTransZRemapXlatZReadWrite[4];
+extern unsigned char vt_BlitTranslucent50NonzeroAlpha[4];
+extern unsigned char vt_BlitTranslucent50ZeroAlpha[4];
+extern unsigned char vt_BlitTranslucentWriteAlpha[4];
+extern unsigned char vt_DynamicVectorClass[4];
+extern unsigned char vt_DynamicVectorClassDiscreteDistributionClassDistributionObject[4];
+extern unsigned char vt_DynamicVectorClassHashObject[4];
+extern unsigned char vt_DynamicVectorClassTRect[4];
+extern unsigned char vt_DynamicVectorClassrc_ptr[4];
+extern unsigned char vt_List[4];
+extern unsigned char vt_Node[4];
+extern unsigned char vt_RLEBlitTransDarken[4];
+extern unsigned char vt_RLEBlitTransDarkenZRead[4];
+extern unsigned char vt_RLEBlitTransDarkenZReadWrite[4];
+extern unsigned char vt_RLEBlitTransLucent25[4];
+extern unsigned char vt_RLEBlitTransLucent25Alpha[4];
+extern unsigned char vt_RLEBlitTransLucent25AlphaZRead[4];
+extern unsigned char vt_RLEBlitTransLucent25AlphaZReadWarp[4];
+extern unsigned char vt_RLEBlitTransLucent25AlphaZReadWrite[4];
+extern unsigned char vt_RLEBlitTransLucent25ZRead[4];
+extern unsigned char vt_RLEBlitTransLucent25ZReadWarp[4];
+extern unsigned char vt_RLEBlitTransLucent25ZReadWrite[4];
+extern unsigned char vt_RLEBlitTransLucent50[4];
+extern unsigned char vt_RLEBlitTransLucent50Alpha[4];
+extern unsigned char vt_RLEBlitTransLucent50AlphaZRead[4];
+extern unsigned char vt_RLEBlitTransLucent50AlphaZReadWarp[4];
+extern unsigned char vt_RLEBlitTransLucent50AlphaZReadWrite[4];
+extern unsigned char vt_RLEBlitTransLucent50ZRead[4];
+extern unsigned char vt_RLEBlitTransLucent50ZReadWarp[4];
+extern unsigned char vt_RLEBlitTransLucent50ZReadWrite[4];
+extern unsigned char vt_RLEBlitTransLucent75[4];
+extern unsigned char vt_RLEBlitTransLucent75Alpha[4];
+extern unsigned char vt_RLEBlitTransLucent75AlphaZRead[4];
+extern unsigned char vt_RLEBlitTransLucent75AlphaZReadWarp[4];
+extern unsigned char vt_RLEBlitTransLucent75AlphaZReadWrite[4];
+extern unsigned char vt_RLEBlitTransLucent75ZRead[4];
+extern unsigned char vt_RLEBlitTransLucent75ZReadWarp[4];
+extern unsigned char vt_RLEBlitTransLucent75ZReadWrite[4];
+extern unsigned char vt_RLEBlitTransRemapDest[4];
+extern unsigned char vt_RLEBlitTransRemapDestZRead[4];
+extern unsigned char vt_RLEBlitTransRemapDestZReadWrite[4];
+extern unsigned char vt_RLEBlitTransRemapXlat[4];
+extern unsigned char vt_RLEBlitTransRemapXlatZRead[4];
+extern unsigned char vt_RLEBlitTransRemapXlatZReadWrite[4];
+extern unsigned char vt_RLEBlitTransXlat[4];
+extern unsigned char vt_RLEBlitTransXlatAlpha[4];
+extern unsigned char vt_RLEBlitTransXlatAlphaZRead[4];
+extern unsigned char vt_RLEBlitTransXlatAlphaZReadWrite[4];
+extern unsigned char vt_RLEBlitTransXlatZRead[4];
+extern unsigned char vt_RLEBlitTransXlatZReadWrite[4];
+extern unsigned char vt_RLEBlitTransZRemapXlat[4];
+extern unsigned char vt_RLEBlitTransZRemapXlatAlpha[4];
+extern unsigned char vt_RLEBlitTransZRemapXlatAlphaZRead[4];
+extern unsigned char vt_RLEBlitTransZRemapXlatAlphaZReadWrite[4];
+extern unsigned char vt_RLEBlitTransZRemapXlatZRead[4];
+extern unsigned char vt_RLEBlitTransZRemapXlatZReadWrite[4];
+extern unsigned char vt_TClassFactory[4];
+extern unsigned char vt_TypeList[4];
+extern unsigned char vt_VectorClass[4];
+extern unsigned char vt_VectorClassDiscreteDistributionClassDistributionObject[4];
+extern unsigned char vt_VectorClassDynamicVectorClass[4];
+extern unsigned char vt_VectorClassHashObject[4];
+extern unsigned char vt_VectorClassTPoint3D[4];
+extern unsigned char vt_VectorClassTRect[4];
+extern unsigned char vt_VectorClassrc_ptr[4];
+extern unsigned char vt_VectorCursorGraphicMenuItemDynamicVectorClass[4];
+extern unsigned char vt_VectorCursorMSAnimDynamicVectorClass[4];
+extern unsigned char vt_VectorCursorMSSfxEntryDynamicVectorClass[4];
+extern unsigned char vt_VectorCursorTRectVectorClassTRect[4];
+extern unsigned char vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr[4];
+extern unsigned char vt_VectorCursorunsignedintDynamicVectorClass[4];
+extern unsigned char vt_WorldDominationTourValueGameOption[4];
+extern unsigned char vt_rc_ptr[4];
+extern unsigned char vt_rc_ptrWorldDominationTourValueGameOption[4];

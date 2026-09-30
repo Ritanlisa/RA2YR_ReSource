@@ -305,7 +305,7 @@ int ScenarioClass::AssignStartPositions(char a1)
       }
     }
   }
-  *(unsigned int *)v5 = &VectorClass<Cell>::`vftable'; /*0x5d6c45*/
+  *(unsigned int *)v5 = &vt_VectorClass; /*0x5d6c45*/
   if ( Block && v7 ) /*0x5d6c58*/
     __3_YAXPAX_Z(Block); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
@@ -355,15 +355,15 @@ TimerStruct * * ScenarioClass::Constructor()
   TypeList::TechnoTypeConstructor((TypeList *)this->allowableUnits, 0, 0); /*0x68338d*/
   this->dropshipUnitCounts = 0; /*0x683397*/
   this->dropshipCountsCount = 10; /*0x68339a*/
-  this->allowableUnits[0] = (int)&TypeList<TechnoTypeClass *>::`vftable'; /*0x68339d*/
+  this->allowableUnits[0] = (int)&vt_TypeList; /*0x68339d*/
   VectorClass::Construct((VectorClass *)&this->ambientCurrent, 0, 0); /*0x6833ad*/
   this->ground = 10; /*0x6833b2*/
   this->blue = 0; /*0x6833b5*/
-  this->ambientCurrent = (int)&TypeList<int>::`vftable'; /*0x6833b8*/
+  this->ambientCurrent = (int)&vt_TypeList; /*0x6833b8*/
   VectorClass::Construct((VectorClass *)&this->ionAmbient, 0, 0); /*0x6833c8*/
   this->ionLevel = 10; /*0x6833cf*/
   this->ionGround = 0; /*0x6833d2*/
-  this->ionAmbient = (int)&TypeList<int>::`vftable'; /*0x6833d5*/
+  this->ionAmbient = (int)&vt_TypeList; /*0x6833d5*/
   ScenarioClass::InitTimer(this); /*0x6833db*/
   this-((unsigned int *)(>__pad_3566))[50] = 0; /*0x6833e2*/
   this->isRandom = 0; /*0x6833e8*/
@@ -484,7 +484,7 @@ LABEL_13:
   }
 LABEL_14:
   v9 = ++dword_A8DAB4; /*0x683bce*/
-  if ( !(uint8_t)CD::`vftable'(dword_81C1D0) ) /*0x683bf6*/
+  if ( !(uint8_t)vt_CD(dword_81C1D0) ) /*0x683bf6*/
   {
 LABEL_21:
     if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x683d3c*/
@@ -496,7 +496,7 @@ LABEL_21:
   *((unsigned int *)((char *)&v19 + 0)) = 0; /*0x683c18*/
   *((unsigned int *)((char *)&v19 + 1)) = 0; /*0x683c1c*/
   GenericList::Constructor((GenericList *)&(unsigned int *)((char *)&v19 + 2)); /*0x683c20*/
-  *((unsigned int *)((char *)&v19 + 2)) = (int)&List<INIClass::INISection *>::`vftable'; /*0x683c29*/
+  *((unsigned int *)((char *)&v19 + 2)) = (int)&vt_List; /*0x683c29*/
   memset(&(unsigned int *)((char *)&v19 + 8), 0, 13); /*0x683c32*/
   memset(&v19.?, 0, 9); /*0x683c42*/
   *(unsigned int *)v19.INIClass = &CCINIClass_Vtable; /*0x683c4e*/
@@ -520,7 +520,7 @@ LABEL_21:
       Movie::PlayWrapper(Bool, (int)v4, v9, 1, 1, 1); /*0x683cbd*/
     }
   }
-  *(unsigned int *)v20.CDFileClass = &CCFileClass::`vftable'; /*0x683cc9*/
+  *(unsigned int *)v20.CDFileClass = &vt_CCFileClass; /*0x683cc9*/
   v22 = 0; /*0x683cd1*/
   Vector::Clear((int)v21); /*0x683cd8*/
   *(unsigned int *)v20.CDFileClass = &off_7E1668; /*0x683ce1*/
@@ -1619,7 +1619,7 @@ namespace gamemd {
 MSAnim * ScenarioClass::checkWinningConditions(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &MSAnim::`vftable'; /*0x5ceb69*/
+  *(unsigned int *)Block->__pad_0 = &vt_MSAnim; /*0x5ceb69*/
   if ( (a2 & 1) != 0 ) /*0x5ceb6f*/
     __3_YAXPAX_Z(Block); /*0x5ceb72*/
   return Block->__pad_0; /*0x5ceb7c*/

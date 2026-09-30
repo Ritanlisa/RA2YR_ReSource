@@ -17,7 +17,7 @@ void CenterTeamCommand::Construct( int a2)
 {
 
   this->CenterTeamCommand_field_00 = a2; /*0x5361a6*/
-  *(unsigned int *)this->CommandClass = &CenterTeamCommandClass::`vftable'; /*0x5361a9*/
+  *(unsigned int *)this->CommandClass = &vt_CenterTeamCommandClass; /*0x5361a9*/
   return this->CommandClass; /*0x5361af*/
 
 }

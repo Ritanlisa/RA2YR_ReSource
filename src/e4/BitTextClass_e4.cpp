@@ -21,7 +21,7 @@ int BitTextClass::ParseFontData(char * Source)
   unsigned int *Font; // eax
 
   v3 = (tagRECT *)((unsigned int)((struct tagRECT *)((char *)this + 48)));
-  *(unsigned int *)this = &BitFont::`vftable'; /*0x433895*/
+  *(unsigned int *)this = &vt_BitFont; /*0x433895*/
   *((unsigned int *)this + 1) = 0; /*0x43389b*/
   *((unsigned short *)this + 18) = 0x7FFF; /*0x43389e*/
   *((unsigned short *)this + 19) = 13653; /*0x4338a4*/
@@ -70,7 +70,7 @@ void BitTextClass::LoadFont()
 
   int v2; // eax
 
-  this->m_FontBitmap = &BitText::`vftable'; /*0x434ad5*/
+  this->m_FontBitmap = &vt_BitText; /*0x434ad5*/
   v2 = __2_YAPAXI_Z(0x44u); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/
   {

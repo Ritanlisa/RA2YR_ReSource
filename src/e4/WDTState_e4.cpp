@@ -38,7 +38,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ((ComPtr *)(v8))->Constructor(); /*0x76bae6*/
-          *(unsigned int *)v8->__pad_0 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76baeb*/
+          *(unsigned int *)v8->__pad_0 = &vt_rc_ptr; /*0x76baeb*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76baf1*/
           --v9; /*0x76baf4*/
         }
@@ -169,7 +169,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
   void (***v3)(unsigned int, int); // ecx
 
   v3 = *(void (****)(unsigned int, int))&Block->m_1[3]; /*0x76bc13*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<rc_ptr<WDTTerritory>>::`vftable'; /*0x76bc16*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassrc_ptr; /*0x76bc16*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
@@ -190,7 +190,7 @@ int WDTState_4::Constructor()
 {
 
   ((ComPtr *)((ComPtr *)this))->Constructor(); /*0x76bc63*/
-  *(unsigned int *)this->__pad_0 = &rc_ptr<WDTTerritory>::`vftable'; /*0x76bc68*/
+  *(unsigned int *)this->__pad_0 = &vt_rc_ptr; /*0x76bc68*/
   return this->__pad_0; /*0x76bc70*/
 
 }

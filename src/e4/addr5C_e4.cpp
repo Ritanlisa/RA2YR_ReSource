@@ -3110,7 +3110,7 @@ namespace gamemd {
 void E4Recv_5C0630::sub_5C0630()
 {
 
-  *this = (MovieHandle)&MovieHandle::`vftable'; /*0x5c0630*/
+  *this = (MovieHandle)&vt_MovieHandle; /*0x5c0630*/
 
 }
 } // namespace gamemd
@@ -3120,7 +3120,7 @@ namespace gamemd {
 void E4Recv_5C0E10::sub_5C0E10()
 {
 
-  this->m_0 = (int)&MultiplayerBattle::`vftable'; /*0x5c0e10*/
+  this->m_0 = (int)&vt_MultiplayerBattle; /*0x5c0e10*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c0e16*/
 
 }
@@ -3415,7 +3415,7 @@ namespace gamemd {
 void E4Recv_5C5D20::sub_5C5D20()
 {
 
-  this->m_0 = (int)&FreeForAll::`vftable'; /*0x5c5d20*/
+  this->m_0 = (int)&vt_FreeForAll; /*0x5c5d20*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c5d26*/
 
 }
@@ -3580,7 +3580,7 @@ namespace gamemd {
 void E4Recv_5C6190::sub_5C6190()
 {
 
-  this->MultiplayerManBattle_field_00 = (int)&MultiplayerManBattle::`vftable'; /*0x5c6190*/
+  this->MultiplayerManBattle_field_00 = (int)&vt_MultiplayerManBattle; /*0x5c6190*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c6196*/
 
 }
@@ -4146,7 +4146,7 @@ namespace gamemd {
 void E4Recv_5C9420::sub_5C9420()
 {
 
-  *(unsigned int *)this->__pad_0 = &Megawealth::`vftable'; /*0x5c9420*/
+  *(unsigned int *)this->__pad_0 = &vt_Megawealth; /*0x5c9420*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5c9426*/
 
 }
@@ -4444,7 +4444,7 @@ namespace gamemd {
 void E4Recv_5CA670::sub_5CA670()
 {
 
-  this->MultiplayerSiege_field_00 = (int)&MultiplayerSiege::`vftable'; /*0x5ca670*/
+  this->MultiplayerSiege_field_00 = (int)&vt_MultiplayerSiege; /*0x5ca670*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5ca676*/
 
 }
@@ -4518,7 +4518,7 @@ namespace gamemd {
 void E4Recv_5CAE60::sub_5CAE60()
 {
 
-  *(unsigned int *)this->__pad_0 = &MultiplayerSiegeDefenderTeam::`vftable'; /*0x5cae60*/
+  *(unsigned int *)this->__pad_0 = &vt_MultiplayerSiegeDefenderTeam; /*0x5cae60*/
   MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5cae66*/
 
 }
@@ -4529,7 +4529,7 @@ namespace gamemd {
 void E4Recv_5CAF00::sub_5CAF00()
 {
 
-  *this = (MultiplayerSiegeAttackerTeam)&MultiplayerSiegeAttackerTeam::`vftable'; /*0x5caf00*/
+  *this = (MultiplayerSiegeAttackerTeam)&vt_MultiplayerSiegeAttackerTeam; /*0x5caf00*/
   MultiplayerTeam::Destructor((MultiplayerTeam *)this); /*0x5caf06*/
 
 }
@@ -4623,7 +4623,7 @@ namespace gamemd {
 void E4Recv_5CB3E0::sub_5CB3E0()
 {
 
-  *(unsigned int *)&this->m_Enabled = &UnholyAlliance::`vftable'; /*0x5cb3e0*/
+  *(unsigned int *)&this->m_Enabled = &vt_UnholyAlliance; /*0x5cb3e0*/
   MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5cb3e6*/
 
 }
@@ -4663,7 +4663,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   v11 = 0; /*0x5cd597*/
   *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5cd59c*/
   *((unsigned int *)this + 6) = 0; /*0x5cd59f*/
-  *(unsigned int *)this->__pad_0 = &MSAnim::`vftable'; /*0x5cd5a5*/
+  *(unsigned int *)this->__pad_0 = &vt_MSAnim; /*0x5cd5a5*/
   WideString::AssignFromPtr((wchar_t **)this + 7, a2); /*0x5cd5ab*/
   *((unsigned int *)this + 11) = a8; /*0x5cd5c0*/
   *((unsigned char *)this + 48) = a9; /*0x5cd5c7*/
@@ -4674,7 +4674,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
   *((unsigned char *)this + 72) = 0; /*0x5cd5da*/
   *((unsigned char *)this + 73) = a10; /*0x5cd5dd*/
   *((unsigned int *)this + 19) = 0; /*0x5cd5e0*/
-  *(unsigned int *)this->__pad_0 = &MSPrintAnim::`vftable'; /*0x5cd5e3*/
+  *(unsigned int *)this->__pad_0 = &vt_MSPrintAnim; /*0x5cd5e3*/
   *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5cd5f6*/
   *((unsigned int *)this + 5) = v15; /*0x5cd5f9*/
   *((unsigned int *)this + 6) = a7; /*0x5cd5ff*/

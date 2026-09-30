@@ -13071,7 +13071,7 @@ __non_rtti_object * E4Recv_7CA971::__0__non_rtti_object_QAE_PBD_Z(char * a2)
 {
 
   __0exception_QAE_ABQBD_Z(this, (const char *const *)&a2); /*0x7ca981*/
-  *(unsigned int *)this = &__non_rtti_object::`vftable'; /*0x7ca986*/
+  *(unsigned int *)this = &vt___non_rtti_object; /*0x7ca986*/
   return this; /*0x7ca98e*/
 
 }
@@ -13096,7 +13096,7 @@ exception * E4Recv_7CA9B4::sub_7CA9B4(struct exception * a2)
 {
 
   __0exception_QAE_ABV0__Z(this, a2); /*0x7ca9bb*/
-  *(unsigned int *)this = &__non_rtti_object::`vftable'; /*0x7ca9c0*/
+  *(unsigned int *)this = &vt___non_rtti_object; /*0x7ca9c0*/
   return this; /*0x7ca9c8*/
 
 }
@@ -13108,7 +13108,7 @@ exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 {
 
   __0exception_QAE_ABV0__Z((exception *)this, a1); /*0x7ca9d3*/
-  this->m_0 = (int)&bad_typeid::`vftable'; /*0x7ca9d8*/
+  this->m_0 = (int)&vt_bad_typeid; /*0x7ca9d8*/
   return (exception *)this; /*0x7ca9e0*/
 
 }
@@ -13241,7 +13241,7 @@ exception * E4Recv_7CAC34::sub_7CAC34(struct exception * a2)
 {
 
   __0exception_QAE_ABV0__Z(this, a2); /*0x7cac3b*/
-  *(unsigned int *)this = &bad_cast::`vftable'; /*0x7cac40*/
+  *(unsigned int *)this = &vt_bad_cast; /*0x7cac40*/
   return this; /*0x7cac48*/
 
 }

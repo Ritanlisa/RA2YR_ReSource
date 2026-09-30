@@ -251,10 +251,10 @@ void * AirstrikeClass::CopyTo(unsigned int * Block, char a2)
   int v3; // eax
   AirstrikeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &AirstrikeClass::`vftable'; /*0x41dd5d*/
-  Block->? = &AirstrikeClass::`vftable'; /*0x41dd63*/
-  Block->? = &AirstrikeClass::`vftable'; /*0x41dd6a*/
-  Block->? = &AirstrikeClass::`vftable'; /*0x41dd71*/
+  Block->AbstractClass = &vt_AirstrikeClass; /*0x41dd5d*/
+  Block->? = &vt_AirstrikeClass; /*0x41dd63*/
+  Block->? = &vt_AirstrikeClass; /*0x41dd6a*/
+  Block->? = &vt_AirstrikeClass; /*0x41dd71*/
   v5 = Block; /*0x41dd7f*/
   v3 = (*(int (**)(int *, AirstrikeClass **))(dword_889FB8 + 16))(&dword_889FB8, &v5); /*0x41dd83*/
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
@@ -356,10 +356,10 @@ AirstrikeClass::AirstrikeClass(int a2)
   int v14; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
-  *(unsigned int *)this = &AirstrikeClass::`vftable'; /*0x41d389*/
-  *((unsigned int *)this + 1) = &AirstrikeClass::`vftable'; /*0x41d38f*/
-  *((unsigned int *)this + 2) = &AirstrikeClass::`vftable'; /*0x41d396*/
-  *((unsigned int *)this + 3) = &AirstrikeClass::`vftable'; /*0x41d39d*/
+  *(unsigned int *)this = &vt_AirstrikeClass; /*0x41d389*/
+  *((unsigned int *)this + 1) = &vt_AirstrikeClass; /*0x41d38f*/
+  *((unsigned int *)this + 2) = &vt_AirstrikeClass; /*0x41d396*/
+  *((unsigned int *)this + 3) = &vt_AirstrikeClass; /*0x41d39d*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
@@ -421,10 +421,10 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x41d712*/
-      aP0->AbstractClass = &AirstrikeClass::`vftable'; /*0x41d717*/
-      aP0->? = &AirstrikeClass::`vftable'; /*0x41d71d*/
-      aP0->? = &AirstrikeClass::`vftable'; /*0x41d724*/
-      aP0->? = &AirstrikeClass::`vftable'; /*0x41d72b*/
+      aP0->AbstractClass = &vt_AirstrikeClass; /*0x41d717*/
+      aP0->? = &vt_AirstrikeClass; /*0x41d71d*/
+      aP0->? = &vt_AirstrikeClass; /*0x41d724*/
+      aP0->? = &vt_AirstrikeClass; /*0x41d72b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->owner); /*0x41d73b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AirstrikeClass_field_50); /*0x41d749*/

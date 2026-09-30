@@ -1124,7 +1124,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
   char v3; // al
 
   v3 = *((unsigned char *)this + 29); /*0x65c5a3*/
-  *(unsigned int *)this->__pad_0 = &RAMFileClass::`vftable'; /*0x65c5a6*/
+  *(unsigned int *)this->__pad_0 = &vt_RAMFileClass; /*0x65c5a6*/
   *((unsigned char *)this + 28) = 0; /*0x65c5ae*/
   if ( v3 ) /*0x65c5b2*/
   {
@@ -1132,7 +1132,7 @@ void * RAMFileClass::nullsub_0_10(char a2)
     this->RAMFileClass_field_0x8 = 0; /*0x65c5c0*/
     *((unsigned char *)this + 29) = 0; /*0x65c5c7*/
   }
-  *(unsigned int *)this->__pad_0 = &FileClass::`vftable'; /*0x65c5cf*/
+  *(unsigned int *)this->__pad_0 = &vt_FileClass; /*0x65c5cf*/
   if ( (a2 & 1) != 0 ) /*0x65c5d7*/
     __3_YAXPAX_Z(this); /*0x65c5da*/
   return this; /*0x65c5e4*/

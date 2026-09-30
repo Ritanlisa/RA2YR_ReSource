@@ -878,7 +878,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
       v6 = 0; /*0x5845bd*/
       WordVector::Constructor(&v109, 0, 0); /*0x5845c1*/
       v7 = *(unsigned int **)&v2->__pad_64[4 * i + 28]; /*0x5845c6*/
-      v109 = (WordVector)&DynamicVectorClass<unsigned short>::`vftable'; /*0x5845cd*/
+      v109 = (WordVector)&vt_DynamicVectorClass; /*0x5845cd*/
       v114 = 10; /*0x5845d5*/
       v113 = 0; /*0x5845dd*/
       v8 = v7[2]; /*0x5845e1*/
@@ -1118,7 +1118,7 @@ LABEL_73:
         v87 = v50; /*0x584c81*/
       }
       while ( v50 < 6144 ); /*0x584c85*/
-      v109 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x584c93*/
+      v109 = (WordVector)&vt_VectorClass; /*0x584c93*/
       if ( v110 && v112 ) /*0x584ca3*/
       {
         __3_YAXPAX_Z(v110); /*0x584ca6*/
@@ -1247,7 +1247,7 @@ LABEL_72:
           v108[1] = v28; /*0x584920*/
           Radar::ProcessSubzone(v2, v91, i, v86, &v104, v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v122, 0, 0); /*0x584932*/
-          v122.vtable0 = &DynamicVectorClass<SubzoneConnectionStruct>::`vftable'; /*0x58493b*/
+          v122.vtable0 = &vt_DynamicVectorClass; /*0x58493b*/
           v124 = 10; /*0x584943*/
           v123 = 0; /*0x58494e*/
           VectorClass::CleanupSubzone((int)&v122); /*0x584955*/
@@ -1270,7 +1270,7 @@ LABEL_72:
             *(unsigned int *)(v39 + 32) = v127; /*0x5849e0*/
             v35 = (int)&v2->__pad_64[24 * i + 40]; /*0x5849e3*/
           }
-          v122.vtable0 = &VectorClass<SubzoneConnectionStruct>::`vftable'; /*0x5849eb*/
+          v122.vtable0 = &vt_VectorClass; /*0x5849eb*/
           if ( v122.Items && v122.IsAllocated ) /*0x5849fd*/
           {
             __3_YAXPAX_Z(v122.Items); /*0x584a00*/
@@ -1309,7 +1309,7 @@ LABEL_72:
     }
     while ( v76 >= 0 ); /*0x584d84*/
     MapClass::AllocArrays(&stru_87E790.__pad_D8[80]); /*0x584d8b*/
-    v109 = (WordVector)&VectorClass<unsigned short>::`vftable'; /*0x584d94*/
+    v109 = (WordVector)&vt_VectorClass; /*0x584d94*/
     if ( v110 && v112 ) /*0x584daa*/
       __3_YAXPAX_Z(v110); /*0x584db1*/
   }

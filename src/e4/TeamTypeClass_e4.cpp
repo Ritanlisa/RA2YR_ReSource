@@ -61,7 +61,7 @@ int TeamTypeClass::Construct()
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this-((unsigned int *)(>__pad_4C))[0] = 1; /*0x4c98e0*/
   this-((unsigned int *)(>__pad_4C))[1] = 0; /*0x4c98e3*/
-  this->taskForce[0] = (int)&DynamicVectorClass<TechnoTypeClass const *>::`vftable'; /*0x4c98e6*/
+  this->taskForce[0] = (int)&vt_DynamicVectorClass; /*0x4c98e6*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_4C))[8] = 10; /*0x4c98ed*/
   *(unsigned int *)&this-((unsigned int *)(>__pad_4C))[4] = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -73,10 +73,10 @@ int TeamTypeClass::Construct()
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  this->AbstractClass = &FactoryClass::`vftable'; /*0x4c991a*/
-  this->? = &FactoryClass::`vftable'; /*0x4c9920*/
-  this->? = &FactoryClass::`vftable'; /*0x4c9926*/
-  this->? = &FactoryClass::`vftable'; /*0x4c992d*/
+  this->AbstractClass = &vt_FactoryClass; /*0x4c991a*/
+  this->? = &vt_FactoryClass; /*0x4c9920*/
+  this->? = &vt_FactoryClass; /*0x4c9926*/
+  this->? = &vt_FactoryClass; /*0x4c992d*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x4c9934*/
   if ( *(int *)&stru_A83D50.__pad_C8[40] < *(int *)&stru_A83D50.__pad_C8[32] /*0x4c996d*/
     || (stru_A83D50.__pad_C8[37] || !*(unsigned int *)&stru_A83D50.__pad_C8[32])
@@ -136,10 +136,10 @@ LABEL_6:
       AbstractTypeClass::Constructor(v3, Source); /*0x691c7c*/
       v4[39] = 0; /*0x691c81*/
       v4[40] = 0; /*0x691c8b*/
-      *v4 = (int)&ScriptTypeClass::`vftable'; /*0x691c95*/
-      v4[1] = (int)&ScriptTypeClass::`vftable'; /*0x691c9b*/
-      v4[2] = (int)&ScriptTypeClass::`vftable'; /*0x691ca2*/
-      v4[3] = (int)&ScriptTypeClass::`vftable'; /*0x691ca9*/
+      *v4 = (int)&vt_ScriptTypeClass; /*0x691c95*/
+      v4[1] = (int)&vt_ScriptTypeClass; /*0x691c9b*/
+      v4[2] = (int)&vt_ScriptTypeClass; /*0x691ca2*/
+      v4[3] = (int)&vt_ScriptTypeClass; /*0x691ca9*/
       v5 = dword_8B41D8; /*0x691cb0*/
       if ( dword_8B41D8 < dword_8B41D0 /*0x691cf1*/
         || (byte_8B41D5 || !dword_8B41D0)
@@ -983,10 +983,10 @@ TeamTypeClass * TeamTypeClass::ddtor(void ** Block, char a2)
   int v4; // eax
   TeamTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  Block->AbstractClass = &TeamTypeClass::`vftable'; /*0x6f20d6*/
-  Block->? = &TeamTypeClass::`vftable'; /*0x6f20dc*/
-  Block->? = &TeamTypeClass::`vftable'; /*0x6f20e3*/
-  Block->? = &TeamTypeClass::`vftable'; /*0x6f20ea*/
+  Block->AbstractClass = &vt_TeamTypeClass; /*0x6f20d6*/
+  Block->? = &vt_TeamTypeClass; /*0x6f20dc*/
+  Block->? = &vt_TeamTypeClass; /*0x6f20e3*/
+  Block->? = &vt_TeamTypeClass; /*0x6f20ea*/
   AbstractClass::AnnounceExpiredPointer(&Block->AbstractClass, 1); /*0x6f20f1*/
   v6 = Block; /*0x6f2106*/
   v3 = (*(int (**)(unsigned char *, TeamTypeClass **))(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 188) + 16))( /*0x6f210a*/
@@ -1346,10 +1346,10 @@ int TeamTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6f1bc6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6f1bcf*/
-      aP0->AbstractClass = &TeamTypeClass::`vftable'; /*0x6f1bd4*/
-      aP0->? = &TeamTypeClass::`vftable'; /*0x6f1bda*/
-      aP0->? = &TeamTypeClass::`vftable'; /*0x6f1be1*/
-      aP0->? = &TeamTypeClass::`vftable'; /*0x6f1be8*/
+      aP0->AbstractClass = &vt_TeamTypeClass; /*0x6f1bd4*/
+      aP0->? = &vt_TeamTypeClass; /*0x6f1bda*/
+      aP0->? = &vt_TeamTypeClass; /*0x6f1be1*/
+      aP0->? = &vt_TeamTypeClass; /*0x6f1be8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 49); /*0x6f1bfb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)aP0 + 52); /*0x6f1c0c*/
@@ -1620,7 +1620,7 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(unsigned int * Block, char a
   int v3; // eax
 
   v3 = *(unsigned int *)&Block->m_1[3]; /*0x6f2683*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f2686*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x6f2686*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6f2690*/
   {
     __3_YAXPAX_Z((void *)(v3 - 4)); /*0x6f26a3*/
@@ -1643,7 +1643,7 @@ DynamicVector * TeamTypeClass_28::Constructor(unsigned int * Block, char a2)
   int v3; // eax
 
   v3 = *(unsigned int *)&Block->m_1[3]; /*0x6f2723*/
-  *(unsigned int *)Block->__pad_0 = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f2726*/
+  *(unsigned int *)Block->__pad_0 = &vt_VectorClassDiscreteDistributionClassDistributionObject; /*0x6f2726*/
   if ( v3 && BYTE1(Block->m_C) ) /*0x6f2730*/
   {
     __3_YAXPAX_Z((void *)(v3 - 4)); /*0x6f2743*/

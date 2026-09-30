@@ -14,7 +14,7 @@ namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(unsigned int * Block, char a2)
 {
 
-  *(unsigned int *)Block->__pad_0 = &ScoreAnimClass::`vftable'; /*0x691009*/
+  *(unsigned int *)Block->__pad_0 = &vt_ScoreAnimClass; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     __3_YAXPAX_Z(Block); /*0x691012*/
   return Block->__pad_0; /*0x69101c*/
@@ -26,7 +26,7 @@ namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(unsigned int * Block, char a2)
 {
 
-  Block->m_0 = (int)&ScoreAnimClass::`vftable'; /*0x691029*/
+  Block->m_0 = (int)&vt_ScoreAnimClass; /*0x691029*/
   if ( (a2 & 1) != 0 ) /*0x69102f*/
     __3_YAXPAX_Z(Block); /*0x691032*/
   return &Block->m_0; /*0x69103c*/
@@ -42,7 +42,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(unsigned int * Block, 
   char *v4; // eax
 
   v3 = (void *)Block->field_C; /*0x6910a6*/
-  *(unsigned int *)Block->__pad_0 = &ScoreFontClass::`vftable'; /*0x6910a9*/
+  *(unsigned int *)Block->__pad_0 = &vt_ScoreFontClass; /*0x6910a9*/
   if ( v3 && *((unsigned char *)Block + 16) == 1 ) /*0x6910b7*/
   {
     __3_YAXPAX_Z(v3); /*0x6910ba*/

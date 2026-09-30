@@ -24,13 +24,13 @@ void RadioClass::Release()
   this-((unsigned int *)(>radioLinks))[2] = 1; /*0x65a764*/
   LOBYTE(this->radioLinks[3]) = 1; /*0x65a76e*/
   BYTE1(this-((unsigned int *)(>radioLinks))[3]) = 0; /*0x65a775*/
-  this->radioLinks[0] = (int)&VectorClass<TechnoClass *>::`vftable'; /*0x65a77c*/
+  this->radioLinks[0] = (int)&vt_VectorClass; /*0x65a77c*/
   this-((unsigned int *)(>radioLinks))[1] = __2_YAPAXI_Z(4u); /*0x65a78b*/
   BYTE1(this-((unsigned int *)(>radioLinks))[3]) = 1; /*0x65a791*/
-  this->MissionClass = &RadioClass::`vftable'; /*0x65a798*/
-  this->? = &RadioClass::`vftable'; /*0x65a79e*/
-  this->? = &RadioClass::`vftable'; /*0x65a7a5*/
-  this->? = &RadioClass::`vftable'; /*0x65a7ac*/
+  this->MissionClass = &vt_RadioClass; /*0x65a798*/
+  this->? = &vt_RadioClass; /*0x65a79e*/
+  this->? = &vt_RadioClass; /*0x65a7a5*/
+  this->? = &vt_RadioClass; /*0x65a7ac*/
   *(unsigned int *)this->radioLinks[1] = 0; /*0x65a7be*/
   this->lastCommands[0] = 0; /*0x65a7c4*/
   this->lastCommands[1] = 0; /*0x65a7ca*/
@@ -110,7 +110,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
       *(unsigned int *)(v3 + 232) = 0; /*0x65abab*/
       *(unsigned char *)(v3 + 236) = 1; /*0x65abb2*/
       *(unsigned char *)(v3 + 237) = 0; /*0x65abb6*/
-      *(unsigned int *)v6 = &VectorClass<TechnoClass *>::`vftable'; /*0x65abba*/
+      *(unsigned int *)v6 = &vt_VectorClass; /*0x65abba*/
     }
     result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v4 + 12))(v4, &aP2, 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/

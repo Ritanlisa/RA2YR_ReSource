@@ -194,7 +194,7 @@ LABEL_5:
               MultiMissionVector::Constructor((MultiMissionVector *)&v47, 0, 0); /*0x5e6a67*/
               a2 = dword_A8B8D8; /*0x5e6a6c*/
               v13 = 0; /*0x5e6a72*/
-              v47 = (SkirmishVector)&DynamicVectorClass<MultiMission const *>::`vftable'; /*0x5e6a76*/
+              v47 = (SkirmishVector)&vt_DynamicVectorClass; /*0x5e6a76*/
               v49 = 10; /*0x5e6a7e*/
               for ( i = 0; v13 < a2; ++v13 ) /*0x5e6a8e*/
               {
@@ -208,7 +208,7 @@ LABEL_5:
                 DlgItem,
                 &v47,
                 0);
-              v47 = (SkirmishVector)&VectorClass<MultiMission const *>::`vftable'; /*0x5e6adb*/
+              v47 = (SkirmishVector)&vt_VectorClass; /*0x5e6adb*/
               VectorClass::Cleanup3((int)&v47); /*0x5e6ae3*/
               v10 = _3C; /*0x5e6ae8*/
             }
@@ -255,7 +255,7 @@ LABEL_28:
             {
               (*(void (**)(char *))(*(unsigned int *)v19 + 16))(v19); /*0x5e6c23*/
               MultiMissionVector::Constructor((MultiMissionVector *)&v47, 0, 0); /*0x5e6c2c*/
-              v47 = (SkirmishVector)&DynamicVectorClass<MultiMission const *>::`vftable'; /*0x5e6c36*/
+              v47 = (SkirmishVector)&vt_DynamicVectorClass; /*0x5e6c36*/
               v49 = 10; /*0x5e6c40*/
               i = 0; /*0x5e6c48*/
               hWnd = (HWND)dword_A8B8D8; /*0x5e6c4c*/
@@ -272,7 +272,7 @@ LABEL_28:
               }
               v20 = GetDlgItem((HWND)v15, 1363); /*0x5e6c8d*/
               (*(void (**)(char *, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)v19 + 76))(v19, v20, &v47, 0); /*0x5e6c9b*/
-              v47 = (SkirmishVector)&VectorClass<MultiMission const *>::`vftable'; /*0x5e6ca2*/
+              v47 = (SkirmishVector)&vt_VectorClass; /*0x5e6ca2*/
               VectorClass::Cleanup3((int)&v47); /*0x5e6caa*/
               LOBYTE(_3C) = (*(int (**)(char *))(*(unsigned int *)v19 + 60))(v19); /*0x5e6cbc*/
               v21 = GetDlgItem((HWND)v15, 1411); /*0x5e6cc0*/
@@ -344,7 +344,7 @@ LABEL_28:
     if ( First ) /*0x5e6ee5*/
     {
       MultiMissionVector::Constructor((MultiMissionVector *)&v47, 0, 0); /*0x5e6ef1*/
-      v47 = (SkirmishVector)&DynamicVectorClass<MultiMission const *>::`vftable'; /*0x5e6efb*/
+      v47 = (SkirmishVector)&vt_DynamicVectorClass; /*0x5e6efb*/
       v49 = 10; /*0x5e6f05*/
       i = 0; /*0x5e6f0d*/
       _3C = dword_A8B8D8; /*0x5e6f11*/
@@ -361,7 +361,7 @@ LABEL_28:
       }
       v39 = GetDlgItem((HWND)v37, 1363); /*0x5e6f4d*/
       (*(void (**)(int, HWND, SkirmishVector *, unsigned int))(*(unsigned int *)First + 76))(First, v39, &v47, 0); /*0x5e6f5b*/
-      v47 = (SkirmishVector)&VectorClass<MultiMission const *>::`vftable'; /*0x5e6f62*/
+      v47 = (SkirmishVector)&vt_VectorClass; /*0x5e6f62*/
       VectorClass::Cleanup3((int)&v47); /*0x5e6f6a*/
     }
     LOBYTE(aP0) = (*(int (**)(int))(*(unsigned int *)First + 60))(First); /*0x5e6f7c*/

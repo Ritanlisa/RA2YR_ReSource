@@ -75,7 +75,7 @@ int FileSystem::ProcessNextFileExtension()
       if ( v3 ) /*0x626ddb*/
       {
         StringVector::Construct(v3, 0, 0); /*0x626de1*/
-        *(unsigned int *)v4->__pad_0 = &DynamicVectorClass<char *>::`vftable'; /*0x626de6*/
+        *(unsigned int *)v4->__pad_0 = &vt_DynamicVectorClass; /*0x626de6*/
         v4->StringVector_field_0x14 = 10; /*0x626dec*/
         v4->StringVector_field_0x10 = 0; /*0x626df3*/
       }

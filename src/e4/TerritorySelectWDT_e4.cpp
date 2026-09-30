@@ -58,14 +58,14 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   unknown_libname_74(&v11); /*0x7665f4*/
   v17 = &stru_B72760; /*0x7665f9*/
   v18 = 0; /*0x766601*/
-  v16 = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x766605*/
+  v16 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x766605*/
   do /*0x7666b0*/
   {
     if ( !((uint8_t (*)(void ***))v16[1])(&v16) ) /*0x76661a*/
       break; /*0x76661f*/
     v4 = v17[1] + 8 * v18; /*0x766634*/
     ((ComPtr *)(&v14))->Constructor(); /*0x766637*/
-    v14 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76663c*/
+    v14 = &vt_rc_ptr; /*0x76663c*/
     ((ComPtr *)(&v14))->Set(*(unsigned int *)(v4 + 4)); /*0x766648*/
     if ( ((unsigned int)(v2)& v15[2]) == 0 ) /*0x766654*/
     {
@@ -83,7 +83,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
         (unsigned int)(v2)|= v15[2]; /*0x766693*/
       }
     }
-    v14 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76669a*/
+    v14 = &vt_rc_ptr; /*0x76669a*/
     ComPtr::Release(&v14); /*0x76669e*/
     ((void (*)(void ***))v16[2])(&v16); /*0x7666ab*/
   }
@@ -95,7 +95,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
       break; /*0x7666d3*/
     v7 = v17[1] + 8 * v18; /*0x7666e8*/
     ((ComPtr *)(&v14))->Constructor(); /*0x7666eb*/
-    v14 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x7666f0*/
+    v14 = &vt_rc_ptr; /*0x7666f0*/
     ((ComPtr *)(&v14))->Set(*(unsigned int *)(v7 + 4)); /*0x7666fc*/
     if ( ((unsigned int)(v2)& v15[2]) == 0 ) /*0x766708*/
     {
@@ -113,12 +113,12 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
         (unsigned int)(v2)|= v15[2]; /*0x766748*/
       }
     }
-    v14 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76674f*/
+    v14 = &vt_rc_ptr; /*0x76674f*/
     ComPtr::Release(&v14); /*0x766753*/
     ((void (*)(void ***))v16[2])(&v16); /*0x766760*/
   }
   WideString::AssignFromPtr(a2, (const wchar_t **)&v11); /*0x766776*/
-  v16 = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x76677f*/
+  v16 = &vt_VectorCursorrc_ptrDynamicVectorClassrc_ptr; /*0x76677f*/
   DeleteAndZero::Alt(&v11); /*0x766787*/
   return a2; /*0x76678e*/
 

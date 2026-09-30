@@ -3609,7 +3609,7 @@ int E4Recv_538C40::sub_538C40(char * Source)
     CCFileClass::Reset(&v2); /*0x538c7e*/
     byte_A9F91C = 0; /*0x538c83*/
   }
-  v2.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x538c8e*/
+  v2.FileClass = (FileClass)&vt_CCFileClass; /*0x538c8e*/
   v4 = 0; /*0x538c96*/
   Vector::Clear((int)v3); /*0x538c9e*/
   v2.FileClass = (FileClass)&off_7E1668; /*0x538ca7*/
@@ -3634,7 +3634,7 @@ int E4Recv_538CC0::sub_538CC0(char * Source)
     FileClass::Write(&v2, &byte_A8F91C, 0x10000u); /*0x538cf5*/
     CCFileClass::Reset(&v2); /*0x538cfe*/
   }
-  v2.FileClass = (FileClass)&CCFileClass::`vftable'; /*0x538d07*/
+  v2.FileClass = (FileClass)&vt_CCFileClass; /*0x538d07*/
   v4 = 0; /*0x538d0f*/
   Vector::Clear((int)v3); /*0x538d17*/
   v2.FileClass = (FileClass)&off_7E1668; /*0x538d20*/

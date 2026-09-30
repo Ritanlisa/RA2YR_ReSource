@@ -3769,7 +3769,7 @@ unsigned int * E4Recv_6429E0::sub_6429E0()
   *(unsigned int *)&this->needsRedraw = -1; /*0x642a0f*/
   LOBYTE(this->estimatedHealth) = 0; /*0x642a1d*/
   this->visibilityFlags = 0; /*0x642a20*/
-  this->AbstractClass = &ProgressScreenClass::`vftable'; /*0x642a23*/
+  this->AbstractClass = &vt_ProgressScreenClass; /*0x642a23*/
   memset(&this->?, 0, 0x40u); /*0x642a29*/
   return &this->AbstractClass; /*0x642a2d*/
 

@@ -2031,7 +2031,7 @@ void E4Recv_5B3F50::sub_5B3F50()
   int v7; // eax
 
   CountFiles = (void *)this->CountFiles; /*0x5b3f56*/
-  *(unsigned int *)this->Node = &MixFileClass::`vftable'; /*0x5b3f59*/
+  *(unsigned int *)this->Node = &vt_MixFileClass; /*0x5b3f59*/
   if ( CountFiles ) /*0x5b3f61*/
     free(CountFiles); /*0x5b3f64*/
   if ( this->MixFileClass_field_24 && BYTE2(this->FileSize) ) /*0x5b3f73*/
@@ -2061,7 +2061,7 @@ void E4Recv_5B3F50::sub_5B3F50()
       }
     }
   }
-  *(unsigned int *)this->Node = &GenericNode::`vftable'; /*0x5b3fc0*/
+  *(unsigned int *)this->Node = &vt_GenericNode; /*0x5b3fc0*/
   if ( this ) /*0x5b3fc6*/
   {
     v6 = this->?; /*0x5b3fc8*/
@@ -3471,12 +3471,12 @@ unsigned char * E4Recv_5BDA40::sub_5BDA40()
 {
 
   SmallFunc_692290((int)this); /*0x5bda43*/
-  this->MouseClass_field_0x0 = &MouseClass::`vftable'; /*0x5bda4a*/
+  this->MouseClass_field_0x0 = &vt_MouseClass; /*0x5bda4a*/
   *((unsigned char *)this + 21852) = 0; /*0x5bda50*/
   *((unsigned int *)this + 5464) = 0; /*0x5bda56*/
   *((unsigned int *)this + 5465) = 0; /*0x5bda5c*/
   *((unsigned int *)this + 5466) = 0; /*0x5bda62*/
-  *((unsigned int *)this + 5446) = &MouseClass::`vftable'; /*0x5bda68*/
+  *((unsigned int *)this + 5446) = &vt_MouseClass; /*0x5bda68*/
   return this; /*0x5bda74*/
 
 }

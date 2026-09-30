@@ -239,10 +239,10 @@ int WinMain::Constructor_VectorClass_Wstring_()
     v3 = *(unsigned int *)(*((unsigned int *)this + 421) + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
-      *(unsigned int *)(v3 + 420) = &VectorClass<Wstring>::`vftable'; /*0x69a215*/
+      *(unsigned int *)(v3 + 420) = &vt_VectorClass; /*0x69a215*/
       VectorClass_Wstring::ddtor((_VectorClass_VWstring *)(v3 + 420)); /*0x69a21b*/
       v4 = *(void **)(v3 + 396); /*0x69a220*/
-      *(unsigned int *)(v3 + 392) = &VectorClass<enum DiskID>::`vftable'; /*0x69a226*/
+      *(unsigned int *)(v3 + 392) = &vt_VectorClass; /*0x69a226*/
       if ( v4 && *(unsigned char *)(v3 + 405) ) /*0x69a234*/
       {
         __3_YAXPAX_Z(v4); /*0x69a23d*/

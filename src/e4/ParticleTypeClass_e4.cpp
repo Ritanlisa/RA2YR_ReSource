@@ -287,7 +287,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, aP1) ) /*0x644f6d*/
     return 0; /*0x645417*/
   ParticleTypeClass::Constructor((ParticleTypeClass *)v44, 0, 0); /*0x644f85*/
-  v44[0] = &TypeList<RGBClass>::`vftable'; /*0x644f8a*/
+  v44[0] = &vt_TypeList; /*0x644f8a*/
   inited = (uint8_t *)__0Iostream_init_QAE_XZ_4((Iostream_init *)&this->ParticleTypeClass_field_0x24); /*0x644f9a*/
   RGBColorList = INIClass::ReadRGBColorList( /*0x644fac*/
                    (INIClass *)aP1,
@@ -305,7 +305,7 @@ void ParticleTypeClass::ParticleTypeClass_LoadFromINI(uint8_t *** aP1)
   this->ParticleTypeClass_field_0x2C8 = *(VectorClass **)(RGBColorList + 16); /*0x644fbd*/
   this->ParticleTypeClass_field_0x2CC = *(VectorClass **)(RGBColorList + 20); /*0x644fc6*/
   *(unsigned int *)this->__pad_2D0 = *(unsigned int *)(RGBColorList + 24); /*0x644fd3*/
-  v52[0] = (int)&VectorClass<RGBClass>::`vftable'; /*0x644fd9*/
+  v52[0] = (int)&vt_VectorClass; /*0x644fd9*/
   FilePipe_38::ddtor((int)v52); /*0x644fe1*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644ff5*/
                     (bool *)aP1,
@@ -659,11 +659,11 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)v3, (int)&a2); /*0x645689*/
       ParticleTypeClass::Constructor((ParticleTypeClass *)&v3->ParticleTypeClass_field_0x2B8, 0, 0); /*0x645698*/
-      v3->ParticleTypeClass_field_0x2B8 = (VectorClass *)&TypeList<RGBClass>::`vftable'; /*0x64569d*/
-      v3->ArrayIndex = &ParticleTypeClass::`vftable'; /*0x6456a3*/
-      v3->ParticleTypeClass_field_28C = &ParticleTypeClass::`vftable'; /*0x6456a9*/
-      v3->BehavesLike = &ParticleTypeClass::`vftable'; /*0x6456b0*/
-      v3->ParticleTypeClass_field_0xC = &ParticleTypeClass::`vftable'; /*0x6456b7*/
+      v3->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_TypeList; /*0x64569d*/
+      v3->ArrayIndex = &vt_ParticleTypeClass; /*0x6456a3*/
+      v3->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x6456a9*/
+      v3->BehavesLike = &vt_ParticleTypeClass; /*0x6456b0*/
+      v3->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x6456b7*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v3->ParticleTypeClass_field_0x2E4); /*0x6456ca*/
     v5 = *v2; /*0x6456cf*/
@@ -740,10 +740,10 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
   CampaignClass *ParticleTypeClass_field_0x2BC; // eax
   ParticleTypeClass *v7; // [esp+4h] [ebp-4h] BYREF
 
-  Block->ArrayIndex = &ParticleTypeClass::`vftable'; /*0x645956*/
-  Block->ParticleTypeClass_field_28C = &ParticleTypeClass::`vftable'; /*0x64595c*/
-  Block->BehavesLike = &ParticleTypeClass::`vftable'; /*0x645963*/
-  Block->ParticleTypeClass_field_0xC = &ParticleTypeClass::`vftable'; /*0x64596a*/
+  Block->ArrayIndex = &vt_ParticleTypeClass; /*0x645956*/
+  Block->ParticleTypeClass_field_28C = &vt_ParticleTypeClass; /*0x64595c*/
+  Block->BehavesLike = &vt_ParticleTypeClass; /*0x645963*/
+  Block->ParticleTypeClass_field_0xC = &vt_ParticleTypeClass; /*0x64596a*/
   AbstractClass::AnnounceExpiredPointer(&Block->ArrayIndex, 1); /*0x645971*/
   v7 = Block; /*0x645986*/
   v3 = (*(int (**)(int *, ParticleTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x64598a*/
@@ -776,7 +776,7 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
     }
   }
   ParticleTypeClass_field_0x2BC = Block->ParticleTypeClass_field_0x2BC; /*0x645a08*/
-  Block->ParticleTypeClass_field_0x2B8 = (VectorClass *)&VectorClass<RGBClass>::`vftable'; /*0x645a0e*/
+  Block->ParticleTypeClass_field_0x2B8 = (VectorClass *)&vt_VectorClass; /*0x645a0e*/
   if ( ParticleTypeClass_field_0x2BC && Block->__pad_2C0[5] ) /*0x645a1c*/
   {
     __3_YAXPAX_Z(ParticleTypeClass_field_0x2BC); /*0x645a27*/
@@ -807,7 +807,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
   this->BehavesLike = (void *)a2; /*0x645a80*/
   LOBYTE(this->ParticleTypeClass_field_0xC) = 1; /*0x645a83*/
   BYTE1(this->ParticleTypeClass_field_0xC) = 0; /*0x645a87*/
-  this->ArrayIndex = &VectorClass<RGBClass>::`vftable'; /*0x645a8a*/
+  this->ArrayIndex = &vt_VectorClass; /*0x645a8a*/
   if ( a2 ) /*0x645a90*/
   {
     if ( a3 ) /*0x645a98*/
@@ -856,7 +856,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
       BYTE1(this->ParticleTypeClass_field_0xC) = 1; /*0x645ae8*/
     }
   }
-  this->ArrayIndex = &DynamicVectorClass<RGBClass>::`vftable'; /*0x645aec*/
+  this->ArrayIndex = &vt_DynamicVectorClass; /*0x645aec*/
   this->Damage = 10; /*0x645af2*/
   this->ParticleTypeClass_field_0x10 = 0; /*0x645af9*/
   return &this->ArrayIndex; /*0x645afe*/
@@ -884,7 +884,7 @@ TypeList_flat * ParticleTypeClass::QueryInterface(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 1); /*0x477ac3*/
-  *(unsigned int *)Block = &VectorClass<RGBClass>::`vftable'; /*0x477ac6*/
+  *(unsigned int *)Block = &vt_VectorClass; /*0x477ac6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477ad0*/
   {
     __3_YAXPAX_Z(v3); /*0x477ad8*/

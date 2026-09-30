@@ -53,9 +53,9 @@ void AnimClass::Destruct( void * a2)
   AnimClass *v12; // [esp+10h] [ebp-10h] BYREF
   unsigned int v13[3]; // [esp+14h] [ebp-Ch] BYREF
 
-  a2->AnimClass_field_0x0 = &AnimClass::`vftable'; /*0x4228eb*/
-  a2->AnimClass_field_0x4 = &AnimClass::`vftable'; /*0x4228f1*/
-  a2->AnimClass_field_0x8 = &AnimClass::`vftable'; /*0x4228f8*/
+  a2->AnimClass_field_0x0 = &vt_AnimClass; /*0x4228eb*/
+  a2->AnimClass_field_0x4 = &vt_AnimClass; /*0x4228f1*/
+  a2->AnimClass_field_0x8 = &vt_AnimClass; /*0x4228f8*/
   *(unsigned int *)a2->__pad_C = &off_7E3328; /*0x4228ff*/
   AbstractClass::AnnounceExpiredPointer(&a2->AnimClass_field_0x0, 1); /*0x422906*/
   if ( byte_A8E9A0 ) /*0x422914*/

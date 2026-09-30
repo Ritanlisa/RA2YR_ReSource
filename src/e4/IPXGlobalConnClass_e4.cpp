@@ -343,7 +343,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(unsigned int * Block, ch
   void *v3; // eax
 
   v3 = (void *)*((unsigned int *)Block + 52); /*0x540673*/
-  *(unsigned int *)Block->__pad_0 = &IPXGlobalConnClass::`vftable'; /*0x540679*/
+  *(unsigned int *)Block->__pad_0 = &vt_IPXGlobalConnClass; /*0x540679*/
   if ( v3 ) /*0x540681*/
   {
     __3_YAXPAX_Z(v3); /*0x540684*/
@@ -354,7 +354,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(unsigned int * Block, ch
     __3_YAXPAX_Z(*((void **)Block + 51)); /*0x5406a1*/
     *((unsigned int *)Block + 51) = 0; /*0x5406a9*/
   }
-  *(unsigned int *)Block->__pad_0 = &IPXConnClass::`vftable'; /*0x5406b5*/
+  *(unsigned int *)Block->__pad_0 = &vt_IPXConnClass; /*0x5406b5*/
   ConnectionClass::dtor((ConnectionClass *)Block); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(Block); /*0x5406c8*/

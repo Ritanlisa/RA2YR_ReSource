@@ -37,7 +37,7 @@ unsigned int * IRTTITypeInfo::loc_74F6A0(unsigned int * Block, char a2)
   void *v3; // eax
 
   v3 = (void *)*(Block + 1); /*0x74f653*/
-  *Block = &VectorClass<VeinholeMonsterClass *>::`vftable'; /*0x74f656*/
+  *Block = &vt_VectorClass; /*0x74f656*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x74f660*/
   {
     __3_YAXPAX_Z(v3); /*0x74f668*/
