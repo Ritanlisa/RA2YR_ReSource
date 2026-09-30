@@ -48,7 +48,7 @@ HRESULT __stdcall LocomotionClass::Load(IStream* stream) { return S_OK; }
 
 HRESULT __stdcall LocomotionClass::Save(IStream* stream, int clear_dirty) {
         if (!stream) return E_POINTER;
-        HRESULT hr = stream->Write((const char*)&this->q020, Size(), nullptr);
+        HRESULT hr = stream->Write((const char*)&((unsigned char *)(this) + 0x020), Size(), nullptr);
         if (SUCCEEDED(hr) && clear_dirty) Dirty = false;
         return hr;
     }
@@ -115,7 +115,7 @@ bool __stdcall LocomotionClass::Process() { return true; }
 
   LocomotionClass::Init((unsigned int *)this); /*0x69ec53*/
   this->u32_1C = 0; /*0x69ec5d*/
-  this->q020 = 0; /*0x69ec60*/
+  ((unsigned char *)(this) + 0x020) = 0; /*0x69ec60*/
   g_CurrentFrame = g_CurrentFrame; /*0x69ec63*/
   this->u32_2C = 0; /*0x69ec69*/
   this->q024 = g_CurrentFrame; /*0x69ec6c*/
@@ -127,9 +127,9 @@ bool __stdcall LocomotionClass::Process() { return true; }
   v3 = IDA_HIDWORD(qword_B077FC); /*0x69eca1*/
   this->q050 = 0; /*0x69eca7*/
   this->u32_4C = 0; /*0x69ecaa*/
-  this->q048 = v3; /*0x69ecad*/
+  ((unsigned char *)(this) + 0x048) = v3; /*0x69ecad*/
   this->ptr_24 = 0; /*0x69ecb3*/
-  this->q058 = -1; /*0x69ecb6*/
+  ((unsigned char *)(this) + 0x058) = -1; /*0x69ecb6*/
   this->q05C = -1; /*0x69ecb9*/
   this->u8_60 = 0; /*0x69ecbc*/
   this->__pad_061 = 0; /*0x69ecbf*/

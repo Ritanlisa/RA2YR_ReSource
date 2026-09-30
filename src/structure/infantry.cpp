@@ -439,7 +439,7 @@ AnimClass * InfantryClass::CheckDeployPath()
       goto LABEL_38; /*0x521ee6*/
   }
   result = (AnimClass *)this->Type; /*0x521eec*/
-  if ( !result->__pad_CD2[194] ) /*0x521ef2*/
+  if ( !((unsigned char *)(result) + 0xCD2)[194] ) /*0x521ef2*/
     goto LABEL_38; /*0x521ef2*/
   locomotor = this->?; /*0x521f00*/
   InfantryClass::updateOccupiedBuilding((InfantryClass *)&v13, (int (__stdcall ****)(unsigned int, void *, unsigned int *))this->?); /*0x521f0b*/
@@ -4055,7 +4055,7 @@ int InfantryClass::EvaluateTarget()
           parasiteImUsing = this->?; /*0x51c259*/
           if ( parasiteImUsing ) /*0x51c261*/
           {
-            v25 = *(unsigned int *)parasiteImUsing->__pad_28; /*0x51c263*/
+            v25 = *(unsigned int *)((unsigned char *)(parasiteImUsing) + 0x28); /*0x51c263*/
             if ( v25 ) /*0x51c268*/
             {
               v26 = (unsigned short *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)v25 + 440))(v25, &a5); /*0x51c27b*/
@@ -4941,9 +4941,9 @@ int InfantryClass::AssignDestination_SyncLog(AbstractClass* dest, int sync_flag)
     }
     goto LABEL_48; /*0x51ad0f*/
   }
-  if ( (*(int (__thiscall **)(Team *))(*(unsigned int *)v16->__pad_0 + 44))(v16) != 1 )
+  if ( (*(int (__thiscall **)(Team *))(*(unsigned int *)((unsigned char *)(v16) + 0x0) + 44))(v16) != 1 )
   {
-    if ( (*(int (__thiscall **)(Team *))(*(unsigned int *)v16->__pad_0 + 44))(v16) == 6 )
+    if ( (*(int (__thiscall **)(Team *))(*(unsigned int *)((unsigned char *)(v16) + 0x0) + 44))(v16) == 6 )
     {
       if ( !v6 ) /*0x51ac99*/
       {

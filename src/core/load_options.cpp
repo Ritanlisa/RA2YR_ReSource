@@ -96,12 +96,12 @@ LoadOptions::LoadOptions() {
   *(unsigned int *)p_is_active = &(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable; /*0x558755*/
   *((unsigned int *)p_is_active + 5) = 10; /*0x55875b*/
   *((unsigned int *)p_is_active + 4) = 0; /*0x558762*/
-  *(unsigned int *)this->__pad_4 = 0; /*0x558765*/
+  *(unsigned int *)((unsigned char *)(this) + 0x4) = 0; /*0x558765*/
   this->field_0C = 0; /*0x558768*/
   this->field_14 = 0; /*0x55876b*/
   v3 = *(unsigned int *)p_is_active; /*0x55876e*/
   this->extension = &(void*)(void*)&LoadOptionsClass_vftable; /*0x558770*/
-  *(unsigned int *)&this->__pad_4[4] = &off_829EA0; /*0x558776*/
+  *(unsigned int *)&((unsigned char *)(this) + 0x4)[4] = &off_829EA0; /*0x558776*/
   this->max_entries = 2048; /*0x55877d*/
   (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x558784*/
   return &this->extension; /*0x558789*/
@@ -120,7 +120,7 @@ void LoadOptions::Cleanup() {
 
   v2 = (unsigned int)(0);
   for ( this->extension = &(void*)(void*)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
-    RA2_OPDEL(*(void **)(*(unsigned int *)&this->__pad_22[2] + 4 * v2)); /*0x5587ad*/
+    RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)(this) + 0x22)[2] + 4 * v2)); /*0x5587ad*/
   v3 = *(unsigned int *)&this->is_active; /*0x5587bd*/
   p_is_active = &this->is_active; /*0x5587c0*/
   (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
@@ -153,7 +153,7 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 int LoadOptions::Run() {
   int result; // eax
 
-  *(unsigned int *)this->__pad_4 = 1; /*0x5587f0*/
+  *(unsigned int *)((unsigned char *)(this) + 0x4) = 1; /*0x5587f0*/
   this->field_0C = 0; /*0x5587f7*/
   IDA_LOBYTE(result) = SaveLoadDialog::DlgProc((SaveLoadDialog *)this); /*0x5587fe*/
   return result;
@@ -178,7 +178,7 @@ bool LoadOptions::Check() {
   struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
 
   v2 = 0; /*0x559c2f*/
-  v3 = *(const char **)&this->__pad_4[4]; /*0x559c31*/
+  v3 = *(const char **)&((unsigned char *)(this) + 0x4)[4]; /*0x559c31*/
   v9 = 0; /*0x559c34*/
   v10 = -1; /*0x559c42*/
   v12 = -1; /*0x559c4d*/
@@ -232,7 +232,7 @@ bool LoadOptions::Check() {
       struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
 
       v2 = 0; /*0x559c2f*/
-      v3 = *(const char **)&this->__pad_4[4]; /*0x559c31*/
+      v3 = *(const char **)&((unsigned char *)(this) + 0x4)[4]; /*0x559c31*/
       v9 = 0; /*0x559c34*/
       v10 = -1; /*0x559c42*/
       v12 = -1; /*0x559c4d*/
@@ -431,7 +431,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVFileEntryClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x55a292*/
+    (*(void (__thiscall **)(_VectorClass_PAVFileEntryClass *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x55a292*/
     return 1; /*0x55a298*/
   }
 }

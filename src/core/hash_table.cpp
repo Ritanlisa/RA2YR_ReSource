@@ -55,7 +55,7 @@ EditClass * * SHA1::Process(const void* data, uint32_t size)
   int *v5; // edi
   int v6; // ebx
 
-  this->__pad_0[0] = 0; /*0x69d96f*/
+  ((unsigned char *)(this) + 0x0)[0] = 0; /*0x69d96f*/
   SHA1::ProcessBlock(this, (const void **)&data, &size); /*0x69d972*/
   size = size; /*0x69d977*/
   if ( size ) /*0x69d97d*/
@@ -92,7 +92,7 @@ void SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
   unsigned int v12[5]; // [esp+14h] [ebp-54h] BYREF
   int v13[16]; // [esp+28h] [ebp-40h] BYREF
 
-  if ( a1->__pad_0[0] ) /*0x69d9e9*/
+  if ( ((unsigned char *)(a1) + 0x0)[0] ) /*0x69d9e9*/
     qmemcpy(a2, &a1->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
   v3 = *((unsigned int *)a1 + 12); /*0x69d9fd*/
   v4 = *((unsigned int *)a1 + 11); /*0x69da00*/
@@ -126,7 +126,7 @@ void SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
     *(p_SHA1_field_0x04 - 1, unsigned int a1, unsigned int a2) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
   while ( v9 ); /*0x69db0b*/
-  a1->__pad_0[0] = 1; /*0x69db18*/
+  ((unsigned char *)(a1) + 0x0)[0] = 1; /*0x69db18*/
   qmemcpy(a2, &a1->SHA1_field_0x04, 0x14u); /*0x69db1c*/
   return 20; /*0x69db1e*/
 }

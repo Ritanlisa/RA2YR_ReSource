@@ -102,10 +102,10 @@ void ObjectClass::MarkForRedraw()
 {
   int result; // eax
 
-  IDA_LOBYTE(result) = this->__pad_74[12]; /*0x5f4d10*/
+  IDA_LOBYTE(result) = ((unsigned char *)(this) + 0x74)[12]; /*0x5f4d10*/
   if ( !(unsigned char)result ) /*0x5f4d18*/
   {
-    this->__pad_74[12] = 1; /*0x5f4d1a*/
+    ((unsigned char *)(this) + 0x74)[12] = 1; /*0x5f4d1a*/
     return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
   }
   return result; /*0x5f4d2d*/
@@ -115,10 +115,10 @@ void ObjectClass::MarkForRedraw()
     {
       int result; // eax
 
-      IDA_LOBYTE(result) = this->__pad_74[12]; /*0x5f4d10*/
+      IDA_LOBYTE(result) = ((unsigned char *)(this) + 0x74)[12]; /*0x5f4d10*/
       if ( !(unsigned char)result ) /*0x5f4d18*/
       {
-        this->__pad_74[12] = 1; /*0x5f4d1a*/
+        ((unsigned char *)(this) + 0x74)[12] = 1; /*0x5f4d1a*/
         return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
       }
       return result; /*0x5f4d2d*/

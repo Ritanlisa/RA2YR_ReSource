@@ -652,7 +652,7 @@ const wchar_t* CellClass::GetUIName() const
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->__pad_28[28]); /*0x484ff3*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&((unsigned char *)(this) + 0x28)[28]); /*0x484ff3*/
   if ( BuildingByTiberiumType == -1 ) /*0x484ffb*/
     return 0; /*0x48500a*/
   else

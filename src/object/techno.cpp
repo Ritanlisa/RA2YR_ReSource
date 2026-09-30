@@ -1233,9 +1233,9 @@ int TechnoClass::CreateUnit()
   int v122; // [esp+54h] [ebp-4Ch] BYREF
   int v123; // [esp+58h] [ebp-48h]
   int v124; // [esp+5Ch] [ebp-44h]
-  if ( !this->q198 && *(unsigned int *)(this->missionTimer + 760) != -1 )
+  if ( !((unsigned char *)(this) + 0x198) && *(unsigned int *)(this->missionTimer + 760) != -1 )
   {
-    int v2 = (*(int (__thiscall **)(void *, int *))(this->q048)(this, &v122);
+    int v2 = (*(int (__thiscall **)(void *, int *))(((unsigned char *)(this) + 0x048))(this, &v122);
     StartAudioController(v2, (int)&this->locationZ6);
   }
   if ( *(unsigned char *)(this->missionTimer + 852) )
@@ -1245,7 +1245,7 @@ int TechnoClass::CreateUnit()
   }
   if ( *(unsigned char *)(this->missionTimer + 883) )
   {
-    unsigned int * v3 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(this->q048)(this, &v122);
+    unsigned int * v3 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(((unsigned char *)(this) + 0x048))(this, &v122);
     unsigned int * v4 = Coord::To_Cell(DataGlobal_87F7E8, v3);
     this->q674 = Cell::CanPlaceBuilding(*((void **)&this->objectTypeFlags6), v4) == 0;
   }
@@ -1263,10 +1263,10 @@ int TechnoClass::CreateUnit()
   }
   if ( *(unsigned int *)(this->missionTimer + 844) != -1 )
   {
-    v122 = this->q027;
+    v122 = ((unsigned char *)(this) + 0x027);
     int v6 = *(unsigned int *)this;
     v123 = this->owningHouseIndex;
-    v124 = this->q029;
+    v124 = ((unsigned char *)(this) + 0x029);
     (*(void (__thiscall **)(void *, int *))(v6 + 240))(this, &v122);
   }
   if ( this->q11B && this->q11C == this->q02B )
@@ -1277,17 +1277,17 @@ int TechnoClass::CreateUnit()
     if ( v7 == 2 || v7 == 1 )
     {
       int * v8 = (int *)((char *)&this->ambientSoundController6);
-      v122 = this->q027;
+      v122 = ((unsigned char *)(this) + 0x027);
       v123 = this->owningHouseIndex;
-      v124 = this->q029;
+      v124 = ((unsigned char *)(this) + 0x029);
       int v9 = *((unsigned int *)Coord::To_Cell(DataGlobal_87F7E8, &v122) + 59);
-      v122 = this->q027;
+      v122 = ((unsigned char *)(this) + 0x027);
       v123 = this->owningHouseIndex;
-      int v10 = this->q029;
-      v122 = this->q027;
+      int v10 = ((unsigned char *)(this) + 0x029);
+      v122 = ((unsigned char *)(this) + 0x027);
       v123 = this->owningHouseIndex;
       bool v11 = v9 == 2;
-      v124 = this->q029;
+      v124 = ((unsigned char *)(this) + 0x029);
       bool v12 = v10 >= DataGlobal_87F7E8[27251] + Cell::GetGroundHeight(&v122);
       bool v114 = v12;
       if ( !v11 || v12 )
@@ -1325,7 +1325,7 @@ int TechnoClass::CreateUnit()
         {
           int v14 = *v8;
           int v15 = this->owningHouseIndex;
-          int v16 = this->q029;
+          int v16 = ((unsigned char *)(this) + 0x029);
           v122 = v14;
           v123 = v15;
           v124 = v16 + 3;
@@ -1347,7 +1347,7 @@ int TechnoClass::CreateUnit()
         {
           v122 = *v8;
           v123 = this->owningHouseIndex;
-          v124 = this->q029;
+          v124 = ((unsigned char *)(this) + 0x029);
           AnimClass::ctor(v17, *(void **)(DataGlobal_87F7E8[7806] + 148), &v122, 0, 1, (void *)0x600, 0, 0);
         }
         v18 = (void **)RA2_OPNEW(456);
@@ -1355,7 +1355,7 @@ int TechnoClass::CreateUnit()
         {
           int v19 = *v8;
           int v20 = this->owningHouseIndex;
-          int v21 = this->q029;
+          int v21 = ((unsigned char *)(this) + 0x029);
           v122 = v19;
           v123 = v20;
           v124 = v21 + 3;
@@ -1515,7 +1515,7 @@ int TechnoClass::CreateUnit()
           v59 = (void **)RA2_OPNEW(456);
           if ( v59 )
           {
-            int * v60 = (int *)(*(int (__thiscall **)(void *, int *))(this->q048)(this, &v122);
+            int * v60 = (int *)(*(int (__thiscall **)(void *, int *))(((unsigned char *)(this) + 0x048))(this, &v122);
             AnimClass::ctor(v59, *(void **)(this->missionTimer + 776), v60, (void *)1, 1, (void *)0x600, 0, 0);
           }
         }
@@ -1524,7 +1524,7 @@ int TechnoClass::CreateUnit()
   }
   if ( this->missionTimer == *(unsigned int *)(DataGlobal_87F7E8[7806] + 5244) )
   {
-    unsigned int * v61 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(this->q048)(this, &v122);
+    unsigned int * v61 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(((unsigned char *)(this) + 0x048))(this, &v122);
     unsigned int * v62 = Coord::To_Cell(DataGlobal_87F7E8, v61);
     if ( Cell::IsBridge(v62) )
       this->u8_19B = 1;
@@ -1551,7 +1551,7 @@ int TechnoClass::CreateUnit()
   {
     if ( *(unsigned char *)(this->missionTimer + 864) )
     {
-      int * v64 = (int *)(*(int (__thiscall **)(void *, double *))(this->q048)(this, &v120);
+      int * v64 = (int *)(*(int (__thiscall **)(void *, double *))(((unsigned char *)(this) + 0x048))(this, &v120);
       int v65 = *v64;
       int v66 = v64[1];
       int v67 = v64[2];
@@ -1602,7 +1602,7 @@ int TechnoClass::CreateUnit()
         else
           v76 = *(double *)(this->missionTimer + 680);
         this->q031 = v76 + this->q031;
-        if ( this->q031 < 1.0 || this->q198 )
+        if ( this->q031 < 1.0 || ((unsigned char *)(this) + 0x198) )
           goto LABEL_120;
         int v77 = Math::RoundToInt(this->q031);
         int v78 = this->missionTimer;
@@ -1612,7 +1612,7 @@ int TechnoClass::CreateUnit()
         v113 = !strcmp((const char *)(v78 + 36), aInviso)
              ? *(unsigned int *)(DataGlobal_87F7E8[7806] + 4008)
              : *(unsigned int *)(DataGlobal_87F7E8[7806] + 3976);
-        unsigned int * v79 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(this->q048)(this, &v122);
+        unsigned int * v79 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(((unsigned char *)(this) + 0x048))(this, &v122);
         PlaySoundEffectAt(v79, v77, 0, v113, 1, 0);
         IDA_LOBYTE(Speed) = this->isAliveFlag;
         if ( (unsigned char)Speed )
@@ -1706,7 +1706,7 @@ LABEL_143:
             int v89 = this->missionTimer;
             this->u8_19B = 0;
             char v90 = *(unsigned char *)(v89 + 708);
-            this->q188 = 0;
+            ((unsigned char *)(this) + 0x188) = 0;
             this->q654 = v90;
             int v91 = v89;
             this->q18C = 0;
@@ -1730,10 +1730,10 @@ LABEL_143:
           if ( *(unsigned int *)(v84 + 844) != -1 )
           {
             int * v94 = (int *)((char *)&this->ambientSoundController6);
-            v122 = this->q027;
+            v122 = ((unsigned char *)(this) + 0x027);
             int v95 = *(unsigned int *)this;
             v123 = this->owningHouseIndex;
-            v124 = this->q029;
+            v124 = ((unsigned char *)(this) + 0x029);
             (*(void (__thiscall **)(void *, int *))(v95 + 244))(this, &v122);
             if ( *(unsigned int *)(this->missionTimer + 844) <= *(unsigned int *)(DataGlobal_87F7E8[7806] + 3316) )
             {
@@ -1772,14 +1772,14 @@ LABEL_176:
                 v122 = *v94;
                 v123 = this->owningHouseIndex;
                 int v103 = *(unsigned int *)v102;
-                v124 = this->q029;
+                v124 = ((unsigned char *)(this) + 0x029);
                 IDA_LOBYTE(Speed) = (*(int (__thiscall **)(unsigned char *, int *, int))(v103 + 216))(v102, &v122, 96);
                 if ( !(unsigned char)Speed )
                 {
                   --this->q02B;
                   return Speed;
                 }
-                unsigned int * v104 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(this->q048)(this, &v122);
+                unsigned int * v104 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(((unsigned char *)(this) + 0x048))(this, &v122);
                 IDA_LOWORD(v117) = *v104 / 256;
                 IDA_HIWORD(v117) = v104[1] / 256;
                 v119 = v117;
@@ -1790,7 +1790,7 @@ LABEL_176:
                   {
                     int v106 = *v94;
                     int v107 = this->owningHouseIndex;
-                    int v108 = this->q029;
+                    int v108 = ((unsigned char *)(this) + 0x029);
                     v122 = v106;
                     v123 = v107;
                     if ( v108 > *(unsigned int *)((*(int (__thiscall **)(unsigned int *, int *))(*v105 + 72))(v105, &v122) + 8) )
@@ -3645,7 +3645,7 @@ int TechnoClass::vt_entry_4B8() { return 0; }
   v2 = this->u32_5C8; /*0x4df1f0*/
   if ( v2 ) /*0x4df1fc*/
   {
-    v3 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(v2->q048)(v2, v7); /*0x4df20a*/
+    v3 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(((unsigned char *)(v2) + 0x048))(v2, v7); /*0x4df20a*/
     *a2 = *v3; /*0x4df214*/
     a2[1] = v3[1]; /*0x4df219*/
     a2[2] = v3[2]; /*0x4df220*/
@@ -3762,7 +3762,7 @@ int TechnoClass::FindMatchingUnit() { return -1; }
       && v8->q520->BuildingTypeClass_field_ED8 == (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)&this->uniqueId4))(this)
       && (!a3 || v8->q660)
       && (*(int (__thiscall **)(int))(v8->q184)(v8) != 19
-      && v8->q0B4 != 19
+      && ((unsigned char *)(v8) + 0x0B4) != 19
       && (!a4 || (int)HouseClass::CanBuild(this, 1, 1) > 0)
       && ((*(int (__thiscall **)(unsigned int))(*v8->q520 + 112))(v8->q520) & v10) != 0 )
     {

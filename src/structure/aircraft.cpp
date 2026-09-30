@@ -57,7 +57,7 @@ AbstractClass * * AircraftClass::Mission_Attack()
   char v99; // [esp+38h] [ebp-D4h]
   int v98; // [esp+34h] [ebp-D8h]
     case 0:
-      int v2 = this->q2B4;
+      int v2 = ((unsigned char *)(this) + 0x2B4);
       this->AircraftClass_field_bool_6D2 = 0;
       int v3 = -(v2 != 0);
       IDA_LOBYTE(v3) = v3 & 0xF7;
@@ -68,17 +68,17 @@ AbstractClass * * AircraftClass::Mission_Attack()
       this->AircraftClass_field_bool_6D2 = 0;
       if ( v5 )
       {
-        bool v6 = this->q0BF;
+        bool v6 = ((unsigned char *)(this) + 0x0BF);
         this->AircraftClass_field_bool_6C8 = 0;
-        this->q0BF = v6 - 1;
+        ((unsigned char *)(this) + 0x0BF) = v6 - 1;
       }
-      int v7 = this->q2B4;
-      if ( v7 && this->q0BF )
+      int v7 = ((unsigned char *)(this) + 0x2B4);
+      if ( v7 && ((unsigned char *)(this) + 0x0BF) )
       {
         int v8 = (int)(*this);
         int v9 = FindSpiralMoveTarget(v7);
         this->AssignDestination(v9, 1);
-        this->missionStatus = this->q169 != 0 ? 3 : 10;
+        this->missionStatus = ((unsigned char *)(this) + 0x169) != 0 ? 3 : 10;
       }
       else
       {
@@ -89,25 +89,25 @@ LABEL_107:
     case 3:
       if ( this->AircraftClass_field_bool_6C8 )
       {
-        bool v10 = this->q0BF;
+        bool v10 = ((unsigned char *)(this) + 0x0BF);
         this->AircraftClass_field_bool_6C8 = 0;
-        this->q0BF = v10 - 1;
+        ((unsigned char *)(this) + 0x0BF) = v10 - 1;
       }
-      int v11 = this->q2B4;
+      int v11 = ((unsigned char *)(this) + 0x2B4);
       this->AircraftClass_field_bool_6D2 = 0;
-      if ( !v11 || !this->q0BF )
+      if ( !v11 || !((unsigned char *)(this) + 0x0BF) )
         goto LABEL_83;
       ProgressTimer *v12 = &this->vtable5;
-      if ( this->q1B0->vt_slot_24() )
+      if ( ((unsigned char *)(this) + 0x1B0)->vt_slot_24() )
       {
         int v13 = *(unsigned int *)this->SelectVocOrSfx(0);
-        if ( ObjectClass::ComputeDistance(this, this->q2B4) < *(unsigned int *)(v13 + 180) )
+        if ( ObjectClass::ComputeDistance(this, ((unsigned char *)(this) + 0x2B4)) < *(unsigned int *)(v13 + 180) )
         {
 LABEL_14:
           this->missionStatus = 4;
           return 1;
         }
-        this->AssignDestination(this->q2B4, 1);
+        this->AssignDestination(((unsigned char *)(this) + 0x2B4), 1);
       }
       else
       {
@@ -118,13 +118,13 @@ LABEL_14:
         if ( !this->locomotor->Thunk_VtableDispatch4() )
           goto LABEL_14;
       }
-      if ( this->q169 )
+      if ( ((unsigned char *)(this) + 0x169) )
       {
-        int v14 = ObjectClass::ComputeDistance(this, this->q169);
+        int v14 = ObjectClass::ComputeDistance(this, ((unsigned char *)(this) + 0x169));
         if ( v14 >= 512 )
         {
   unsigned char v117[4]; // [esp+C4h] [ebp-48h] BYREF
-          int * v17 = (int *)*(unsigned int *)this->q169->vt_slot_72(this->q169, v117);
+          int * v17 = (int *)*(unsigned int *)((unsigned char *)(this) + 0x169)->vt_slot_72(((unsigned char *)(this) + 0x169), v117);
   int *v18; // eax
           v18 = (int *)this->ComputeTransform(unsigned char v115[4]; // [esp+ACh] [ebp-60h] BYREF
                          v115, 0, 0, 0, 0);
@@ -138,7 +138,7 @@ LABEL_14:
         else
         {
   int v113; // [esp+A4h] [ebp-68h] BYREF
-          int * v15 = (int *)(ObjectClass::CalcTargetFacing(this, &v113, this->q2B4));
+          int * v15 = (int *)(ObjectClass::CalcTargetFacing(this, &v113, ((unsigned char *)(this) + 0x2B4)));
           this->secondaryFacing.Update(v15);
           if ( v14 >= 16 )
           {
@@ -159,25 +159,25 @@ LABEL_14:
         return 1;
       }
     case 4:
-      if ( !this->q2B4 || !this->q0BF )
+      if ( !((unsigned char *)(this) + 0x2B4) || !((unsigned char *)(this) + 0x0BF) )
         goto LABEL_83;
       ProgressTimer *v20 = &this->vtable5;
-      if ( !this->q1B0->vt_slot_24() )
+      if ( !((unsigned char *)(this) + 0x1B0)->vt_slot_24() )
       {
   int v109; // [esp+94h] [ebp-78h] BYREF
-        int * v21 = (int *)(ObjectClass::CalcTargetFacing(this, &v109, this->q2B4));
+        int * v21 = (int *)(ObjectClass::CalcTargetFacing(this, &v109, ((unsigned char *)(this) + 0x2B4)));
         this->primaryFacing.Update(v21);
   int v112; // [esp+A0h] [ebp-6Ch] BYREF
-        int * v22 = (int *)(ObjectClass::CalcTargetFacing(this, &v112, this->q2B4));
+        int * v22 = (int *)(ObjectClass::CalcTargetFacing(this, &v112, ((unsigned char *)(this) + 0x2B4)));
         this->secondaryFacing.Update(v22);
       }
       int v23 = (int)(*this);
-      int v24 = this->SelectWeapon(this->q2B4, 1);
-      switch ( this->ReadINI_3(this->q2B4, v24) )
+      int v24 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4), 1);
+      switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v24) )
       {
         case 0:
           int v25 = *this;
-          int v93 = this->q2B4;
+          int v93 = ((unsigned char *)(this) + 0x2B4);
           this->AircraftClass_field_bool_6C8 = 1;
           int v26 = 0;
           int v27 = this->SelectWeapon(v93);
@@ -187,20 +187,20 @@ LABEL_14:
             do
             {
               int v28 = (int)(*this);
-              int v29 = this->SelectWeapon(this->q2B4);
-              this->FireWeapon(this->q2B4, v29);
+              int v29 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
+              this->FireWeapon(((unsigned char *)(this) + 0x2B4), v29);
               int v30 = (int)(*this);
               ++v26;
-              v31 = this->SelectWeapon(this->q2B4);
+              v31 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
             }
             while ( v26 < *(unsigned int *)(*(unsigned int *)this->SelectVocOrSfx(v31) + 156) );
           }
   unsigned int v103[3]; // [esp+64h] [ebp-A8h] BYREF
-          v103[0] = this->q027;
+          v103[0] = ((unsigned char *)(this) + 0x027);
           v103[1] = this->owningHouseIndex;
-          v103[2] = this->q029;
+          v103[2] = ((unsigned char *)(this) + 0x029);
   unsigned int *v32; // eax
-          v32 = (unsigned int *)*(unsigned int *)this->q2B4->GetInvalidCoord(this->q2B4,
+          v32 = (unsigned int *)*(unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord(((unsigned char *)(this) + 0x2B4),
                             v120,
                             v103);
           unsigned int * v33 = Coord::To_Cell(DataGlobal_87F7E8, v32);
@@ -214,7 +214,7 @@ LABEL_14:
           }
           if ( !v20->vt_slot_28() )
             goto LABEL_54;
-          bool v35 = this->q0BF;
+          bool v35 = ((unsigned char *)(this) + 0x0BF);
           bool v36 = v35 == 0;
           bool v37 = v35 < 0;
           int v38 = (int)(*this);
@@ -222,12 +222,12 @@ LABEL_14:
           this->missionStatus = !v37 && !v36 ? 1 : 10;
           return *(unsigned int *)(*(unsigned int *)this->SelectVocOrSfx(0) + 176);
         case 2:
-          if ( !this->q0BF )
+          if ( !((unsigned char *)(this) + 0x0BF) )
           {
             this->missionStatus = 10;
             return 1;
           }
-          if ( !this->CheckCellPassable2(this->q2B4)
+          if ( !this->CheckCellPassable2(((unsigned char *)(this) + 0x2B4))
             || v20->vt_slot_24() )
           {
             this->missionStatus = 1;
@@ -249,7 +249,7 @@ LABEL_14:
           this->TransitionEffectState(0);
           return 1;
         default:
-          if ( !this->q0BF )
+          if ( !((unsigned char *)(this) + 0x0BF) )
           {
             this->missionStatus = 10;
             return 1;
@@ -263,37 +263,37 @@ LABEL_54:
       }
       return result;
     case 5:
-      if ( this->q2B4 )
+      if ( ((unsigned char *)(this) + 0x2B4) )
       {
   int v114; // [esp+A8h] [ebp-64h] BYREF
-        int * v39 = (int *)(ObjectClass::CalcTargetFacing(this, &v114, this->q2B4));
+        int * v39 = (int *)(ObjectClass::CalcTargetFacing(this, &v114, ((unsigned char *)(this) + 0x2B4)));
         this->primaryFacing.Update(v39);
   int v111; // [esp+9Ch] [ebp-70h] BYREF
-        int * v40 = ObjectClass::CalcTargetFacing(this, &v111, this->q2B4);
+        int * v40 = ObjectClass::CalcTargetFacing(this, &v111, ((unsigned char *)(this) + 0x2B4));
         this->secondaryFacing.Update(v40);
         int v41 = *this;
-        int v42 = this->SelectWeapon(this->q2B4, 1);
-        switch ( this->ReadINI_3(this->q2B4, v42) )
+        int v42 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4), 1);
+        switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v42) )
         {
           case 0u:
             int v44 = *this;
-            int v45 = this->SelectWeapon(this->q2B4);
-            this->FireWeapon(this->q2B4, v45);
-            v105 = this->q027;
+            int v45 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
+            this->FireWeapon(((unsigned char *)(this) + 0x2B4), v45);
+            v105 = ((unsigned char *)(this) + 0x027);
             v106 = this->owningHouseIndex;
-            int v107 = this->q029;
-            unsigned int * v46 = (unsigned int *)this->q2B4->GetInvalidCoord();
+            int v107 = ((unsigned char *)(this) + 0x029);
+            unsigned int * v46 = (unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord();
             unsigned int * v47 = Coord::To_Cell(DataGlobal_87F7E8, v46);
             Cell::ApplyDamage(v47, (int)v119, (int)&v105, 1, 0);
-            if ( !this->q0BF )
+            if ( !((unsigned char *)(this) + 0x0BF) )
               goto LABEL_107;
             this->missionStatus = *(unsigned char *)(DataGlobal_87F7E8[7806] + 6113) != 0 ? 1 : 4;
             goto LABEL_108;
           case 2u:
-            if ( !this->q0BF )
+            if ( !((unsigned char *)(this) + 0x0BF) )
               goto LABEL_107;
-            if ( !this->CheckCellPassable2(this->q2B4)
-              || this->q1B0->vt_slot_24() )
+            if ( !this->CheckCellPassable2(((unsigned char *)(this) + 0x2B4))
+              || ((unsigned char *)(this) + 0x1B0)->vt_slot_24() )
             {
               this->missionStatus = 1;
             }
@@ -303,7 +303,7 @@ LABEL_54:
               IDA_LOBYTE(v43) = v43 & 0xFD;
               this->missionStatus = v43 + 4;
             }
-            if ( !this->q1B0->vt_slot_24() )
+            if ( !((unsigned char *)(this) + 0x1B0)->vt_slot_24() )
               goto LABEL_108;
             result = 45;
             break;
@@ -313,9 +313,9 @@ LABEL_54:
             this->TransitionEffectState(0);
             goto LABEL_108;
           default:
-            if ( !this->q0BF )
+            if ( !((unsigned char *)(this) + 0x0BF) )
               goto LABEL_107;
-            if ( this->CheckCellPassable2(this->q2B4) )
+            if ( this->CheckCellPassable2(((unsigned char *)(this) + 0x2B4)) )
               this->missionStatus = *(unsigned char *)(DataGlobal_87F7E8[7806] + 6113) != 0 ? 1 : 4;
             else
               this->missionStatus = 1;
@@ -329,31 +329,31 @@ LABEL_54:
       }
       return result;
     case 6:
-      int v48 = this->q2B4;
+      int v48 = ((unsigned char *)(this) + 0x2B4);
       if ( v48 )
       {
         int v49 = *this;
         int v50 = this->SelectWeapon(v48, 1);
-        switch ( this->ReadINI_3(this->q2B4, v50) )
+        switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v50) )
         {
           case 0:
           case 2:
           case 9:
             break;
           case 8:
-            this->AssignDestination(this->q2B4, 1);
+            this->AssignDestination(((unsigned char *)(this) + 0x2B4), 1);
             break;
           default:
             goto LABEL_91;
         }
         int v51 = *this;
-        int v94 = this->SelectWeapon(this->q2B4);
-        int v89 = this->q2B4;
+        int v94 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
+        int v89 = ((unsigned char *)(this) + 0x2B4);
         this->FireWeapon();
-        v100 = this->q027;
-        int v52 = this->q2B4;
+        v100 = ((unsigned char *)(this) + 0x027);
+        int v52 = ((unsigned char *)(this) + 0x2B4);
         v101[0] = this->owningHouseIndex;
-        v101[1] = this->q029;
+        v101[1] = ((unsigned char *)(this) + 0x029);
   unsigned int *v53; // eax
         v53 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *, int *, int, unsigned int, unsigned int))(*(unsigned int *)v52 + 72))(
                           v52,
@@ -365,7 +365,7 @@ LABEL_54:
                           0);
         unsigned int * v54 = Coord::To_Cell(DataGlobal_87F7E8, v53);
         Cell::ApplyDamage(v54, v89, v94, v98, v99);
-        this->AssignDestination(this->q2B4, 1);
+        this->AssignDestination(((unsigned char *)(this) + 0x2B4), 1);
         int v55 = *this;
         this->missionStatus = 7;
         return *(unsigned int *)(*(unsigned int *)this->SelectVocOrSfx(0) + 176);
@@ -376,33 +376,33 @@ LABEL_54:
         return 1;
       }
     case 7:
-      int v56 = this->q2B4;
+      int v56 = ((unsigned char *)(this) + 0x2B4);
       if ( v56 )
       {
         int v57 = *this;
         int v58 = this->SelectWeapon(v56, 1);
-        switch ( this->ReadINI_3(this->q2B4, v58) )
+        switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v58) )
         {
           case 0u:
           case 2u:
           case 9u:
             break;
           case 8u:
-            this->AssignDestination(this->q2B4, 1);
+            this->AssignDestination(((unsigned char *)(this) + 0x2B4), 1);
             break;
           default:
             goto LABEL_91;
         }
         int v59 = *this;
-        int v95 = this->SelectWeapon(this->q2B4);
-        int v90 = this->q2B4;
+        int v95 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
+        int v90 = ((unsigned char *)(this) + 0x2B4);
         this->FireWeapon();
   unsigned int v108[5]; // [esp+80h] [ebp-8Ch] BYREF
-        v108[0] = this->q027;
+        v108[0] = ((unsigned char *)(this) + 0x027);
         v108[1] = this->owningHouseIndex;
-        v108[2] = this->q029;
+        v108[2] = ((unsigned char *)(this) + 0x029);
   unsigned int *v60; // eax
-        v60 = (unsigned int *)*(unsigned int *)this->q2B4->GetInvalidCoord(this->q2B4,
+        v60 = (unsigned int *)*(unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord(((unsigned char *)(this) + 0x2B4),
   unsigned char v118[24]; // [esp+C8h] [ebp-44h] BYREF
                           v118,
                           v108,
@@ -411,7 +411,7 @@ LABEL_54:
                           0);
         unsigned int * v61 = Coord::To_Cell(DataGlobal_87F7E8, v60);
         Cell::ApplyDamage(v61, v90, v95, v98, v99);
-        this->AssignDestination(this->q2B4, 1);
+        this->AssignDestination(((unsigned char *)(this) + 0x2B4), 1);
         int v62 = *this;
         this->missionStatus = 8;
         return *(unsigned int *)(*(unsigned int *)this->SelectVocOrSfx(0) + 176);
@@ -422,33 +422,33 @@ LABEL_54:
         return 1;
       }
     case 8:
-      int v63 = this->q2B4;
+      int v63 = ((unsigned char *)(this) + 0x2B4);
       if ( v63 )
       {
         int v64 = *this;
         int v65 = this->SelectWeapon(v63, 1);
-        switch ( this->ReadINI_3(this->q2B4, v65) )
+        switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v65) )
         {
           case 0u:
           case 2u:
           case 9u:
             break;
           case 8u:
-            this->AssignDestination(this->q2B4, 1);
+            this->AssignDestination(((unsigned char *)(this) + 0x2B4), 1);
             break;
           default:
             goto LABEL_91;
         }
         int v66 = *this;
-        int v96 = this->SelectWeapon(this->q2B4);
-        int v91 = this->q2B4;
+        int v96 = this->SelectWeapon(((unsigned char *)(this) + 0x2B4));
+        int v91 = ((unsigned char *)(this) + 0x2B4);
         this->FireWeapon();
   unsigned int v102[5]; // [esp+50h] [ebp-BCh] BYREF
-        v102[0] = this->q027;
+        v102[0] = ((unsigned char *)(this) + 0x027);
         v102[1] = this->owningHouseIndex;
-        v102[2] = this->q029;
+        v102[2] = ((unsigned char *)(this) + 0x029);
   unsigned int *v67; // eax
-        v67 = (unsigned int *)*(unsigned int *)this->q2B4->GetInvalidCoord(this->q2B4,
+        v67 = (unsigned int *)*(unsigned int *)((unsigned char *)(this) + 0x2B4)->GetInvalidCoord(((unsigned char *)(this) + 0x2B4),
                           v119,
                           v102,
                           1,
@@ -456,7 +456,7 @@ LABEL_54:
                           0);
         unsigned int * v68 = Coord::To_Cell(DataGlobal_87F7E8, v67);
         Cell::ApplyDamage(v68, v91, v96, v98, v99);
-        this->AssignDestination(this->q2B4, 1);
+        this->AssignDestination(((unsigned char *)(this) + 0x2B4), 1);
         int v69 = *this;
         this->missionStatus = 9;
         return *(unsigned int *)(*(unsigned int *)this->SelectVocOrSfx(0) + 176);
@@ -468,26 +468,26 @@ LABEL_83:
         return 1;
       }
     case 9:
-      int v70 = this->q2B4;
+      int v70 = ((unsigned char *)(this) + 0x2B4);
       if ( v70 )
       {
         int v71 = *this;
         int v72 = this->SelectWeapon(v70, 1);
-        switch ( this->ReadINI_3(this->q2B4, v72) )
+        switch ( this->ReadINI_3(((unsigned char *)(this) + 0x2B4), v72) )
         {
           case 0u:
           case 2u:
           case 8u:
           case 9u:
             int v73 = *this;
-            int v97 = this->q2B4;
+            int v97 = ((unsigned char *)(this) + 0x2B4);
             int v92 = this->SelectWeapon();
-            int v88 = this->q2B4;
+            int v88 = ((unsigned char *)(this) + 0x2B4);
             this->FireWeapon();
-            int v104 = this->q027;
+            int v104 = ((unsigned char *)(this) + 0x027);
             v105 = this->owningHouseIndex;
-            int v74 = this->q2B4;
-            v106 = this->q029;
+            int v74 = ((unsigned char *)(this) + 0x2B4);
+            v106 = ((unsigned char *)(this) + 0x029);
   unsigned int *v75; // eax
             v75 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *, int *, int, unsigned int, unsigned int))(*(unsigned int *)v74 + 72))(
                               v74,
@@ -505,7 +505,7 @@ LABEL_83:
             break;
           default:
 LABEL_91:
-            if ( !this->q0BF )
+            if ( !((unsigned char *)(this) + 0x0BF) )
             {
               this->missionStatus = 10;
               this->AircraftClass_field_bool_6D2 = 0;
@@ -524,14 +524,14 @@ LABEL_91:
       this->AircraftClass_field_bool_6D2 = 0;
       if ( v78 )
       {
-        bool v79 = this->q0BF;
+        bool v79 = ((unsigned char *)(this) + 0x0BF);
         this->AircraftClass_field_bool_6C8 = 0;
         if ( v79 > 0 )
-          this->q0BF = v79 - 1;
+          ((unsigned char *)(this) + 0x0BF) = v79 - 1;
       }
-      if ( this->q0BF )
+      if ( ((unsigned char *)(this) + 0x0BF) )
       {
-        if ( this->q2B4 )
+        if ( ((unsigned char *)(this) + 0x2B4) )
         {
           this->missionStatus = 1;
           return 1;
@@ -560,7 +560,7 @@ LABEL_91:
       this->AssignDestination(v84, 1);
       int v85 = this->airstrike;
       this->AircraftClass_field_bool_6D5 = 0;
-      if ( v85 && this->q0BF > 0 )
+      if ( v85 && ((unsigned char *)(this) + 0x0BF) > 0 )
       {
         this->ProcessLanding(4, 0);
         this->AircraftClass_field_bool_6D5 = 1;

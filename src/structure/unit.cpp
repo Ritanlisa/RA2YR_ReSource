@@ -244,24 +244,24 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
   unsigned short *v9; // [esp+10h] [ebp+4h]
 
   v7 = 0; /*0x6b6086*/
-  result = *(&this->q0407); /*0x6b608e*/
+  result = *(&((unsigned char *)(this) + 0x0407)); /*0x6b608e*/
   if ( result > 0 ) /*0x6b6096*/
   {
     do /*0x6b611c*/
     {
-      for ( i = 0; i < *(&this->q0406); ++i ) /*0x6b60ac*/
+      for ( i = 0; i < *(&((unsigned char *)(this) + 0x0406)); ++i ) /*0x6b60ac*/
       {
         IDA_LOWORD(v9) = i + *cell; /*0x6b60bd*/
         IDA_HIWORD(v9) = v7 + cell[1]; /*0x6b60c6*/
         v9 = v9; /*0x6b60d5*/
         v6 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v9); /*0x6b60d9*/
-        v6[18] = *(&this->q0405); /*0x6b60ea*/
+        v6[18] = *(&((unsigned char *)(this) + 0x0405)); /*0x6b60ea*/
         *((unsigned char *)v6 + 287) = i + this->storedTiberium * v7; /*0x6b60f5*/
         BuildingClass::CreatePlacementCrater(v6); /*0x6b60fb*/
       }
       result = ++v7; /*0x6b6115*/
     }
-    while ( v7 < *(&this->q0407) ); /*0x6b611c*/
+    while ( v7 < *(&((unsigned char *)(this) + 0x0407)) ); /*0x6b611c*/
   }
   return result; /*0x6b6120*/
 }
@@ -3536,7 +3536,7 @@ LABEL_251:
                         if ( v94 )
                           (*(void (__stdcall **)(int *))(*v94 + 8))(v94);
                       }
-                      v138 = this->q027;
+                      v138 = ((unsigned char *)(this) + 0x027);
                       v139 = *(&this->uniqueId1);
                       if ( !*v81 )
                         WinAPI::Wrapper(-2147467261);
@@ -6473,7 +6473,7 @@ char __thiscall UnitClass::UpdateRotation_TurretFacing_EMP(int this)
   unsigned short *Value; // [esp-4h] [ebp-14h]
   int v15; // [esp+Ch] [ebp-4h] BYREF
 
-  v2 = this->q2B4; /*0x736997*/
+  v2 = ((unsigned char *)(this) + 0x2B4); /*0x736997*/
   if ( v2 && !this->q6AF ) /*0x7369a5*/
   {
     v3 = *ObjectClass::CalcTargetFacing((void *)this, &v15, v2); /*0x7369c0*/
@@ -6522,7 +6522,7 @@ char __thiscall UnitClass::UpdateRotation_TurretFacing_EMP(int this)
       if ( !this->Type->qD21 ) /*0x736b01*/
         this->q6AF = TimerClass::Active(&this->q1708); /*0x736b16*/
     }
-    else if ( !this->q2B4 ) /*0x736b21*/
+    else if ( !((unsigned char *)(this) + 0x2B4) ) /*0x736b21*/
     {
       v7 = (int)g_CurrentFrame - this->turretChargeTimer >= g_RulesClass_Instance->AIIonCannonEngineerValue[0] + 5; /*0x736b52*/
       if ( this->turretRecoil ) /*0x736b54*/
@@ -9992,13 +9992,13 @@ int UnitClass::ReadINI()
   char String[128]; // [esp+18h] [ebp-80h] BYREF
 
   INIClass::ResetSection(this); /*0x6b4c89*/
-  result = INIClass::GetKeyCount(this->__pad_0, (uint8_t *)&g_INI_Key_Special.?); /*0x6b4c96*/
+  result = INIClass::GetKeyCount(((unsigned char *)(this) + 0x0), (uint8_t *)&g_INI_Key_Special.?); /*0x6b4c96*/
   v3 = 0; /*0x6b4c9b*/
   v14 = result; /*0x6b4c9f*/
   for ( i = 0; i < v14; ++i ) /*0x6b4ca7*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex( /*0x6b4cba*/
-                                         this->__pad_0,
+                                         ((unsigned char *)(this) + 0x0),
                                          (uint8_t *)&g_INI_Key_Special.?,
                                          v3);
     INIClass::GetString(this, (uint8_t *)&g_INI_Key_Special.?, StringByIndex, 0, String, 128); /*0x6b4cd4*/
@@ -11337,7 +11337,7 @@ LABEL_41:
           {
 LABEL_44:
             this->CalculateApproachPath(0);
-            if ( this->q2B4 )
+            if ( ((unsigned char *)(this) + 0x2B4) )
               goto LABEL_23;
             this->AssignDestination(this->focus, 1);
             TechnoClass::SetFocus(this, 0);
@@ -11348,7 +11348,7 @@ LABEL_44:
         }
       }
 LABEL_38:
-      if ( !this->q2B4 )
+      if ( !((unsigned char *)(this) + 0x2B4) )
       {
         int v24 = *this;
   unsigned char v77[12]; // [esp+6Ch] [ebp-60h] BYREF

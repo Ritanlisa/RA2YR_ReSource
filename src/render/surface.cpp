@@ -3484,7 +3484,7 @@ bool DSurface::DrawLineZBuf(
   v40 = (unsigned short *)StreamClass::ReadAndSeek(*(int **)&stru_87E790.__pad_D8[60], v89, v90 - v39); /*0x4c004e*/
   v82 = -1; /*0x4c0055*/
   IDA_LOWORD(v41) = IDA_LOWORD(g_ZBufferDescriptor->Stream_field_04) + IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4c0061*/
-  result = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4c0065*/
+  result = (int)g_ZBufferDescriptor[2].((unsigned char *)(m_Stream) + 0x0); /*0x4c0065*/
   v96 = result; /*0x4c0068*/
   v110 = v34 + v41 - v90 - v93; /*0x4c0076*/
   if ( !v36 ) /*0x4c007d*/
@@ -4012,7 +4012,7 @@ bool DSurface::DrawLineModulated(
         SamplePosition = (unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v96, v97 - Stream_field_04); /*0x4bbf5d*/
         v88 = -1; /*0x4bbf6d*/
         IDA_LOWORD(v36) = IDA_LOWORD(g_ZBufferDescriptor->Stream_field_04) + IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4bbf79*/
-        pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4bbf80*/
+        pad_0 = (int)g_ZBufferDescriptor[2].((unsigned char *)(m_Stream) + 0x0); /*0x4bbf80*/
         v37 = v110; /*0x4bbf8b*/
         v111 = v110 + v36 - v97 - v100; /*0x4bbf96*/
         if ( v34 ) /*0x4bbf9d*/
@@ -4581,7 +4581,7 @@ bool DSurface::DrawLineZBufColored(
   v42 = (uint16_t *)StreamClass::ReadAndSeek(*(int **)&stru_87E790.__pad_D8[60], v95, v96 - v41); /*0x4be2b6*/
   v85 = -1; /*0x4be2c1*/
   IDA_LOWORD(v41) = IDA_LOWORD(g_ZBufferDescriptor->Stream_field_04) + IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10); /*0x4be2cd*/
-  pad_0 = (int)g_ZBufferDescriptor[2].m_Stream->__pad_0; /*0x4be2d4*/
+  pad_0 = (int)g_ZBufferDescriptor[2].((unsigned char *)(m_Stream) + 0x0); /*0x4be2d4*/
   a8 = v109 + v41 - v96 - v99; /*0x4be2ea*/
   if ( !v38 ) /*0x4be2f1*/
     return 0; /*0x4be9b9*/

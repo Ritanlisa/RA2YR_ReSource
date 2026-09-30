@@ -117,7 +117,7 @@ bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, vo
 
   IDA_LOWORD(a1->PhoneNumber[3]) = a5; /*0x48be73*/
   a1->PhoneNumber[4] = a6; /*0x48be7b*/
-  *(unsigned int *)a1->__pad_0 = &(void*)(void*)&ConnectionClass_vftable; /*0x48be83*/
+  *(unsigned int *)((unsigned char *)(a1) + 0x0) = &(void*)(void*)&ConnectionClass_vftable; /*0x48be83*/
   a1->PhoneNumber[1] = (unsigned int)(a4)+ 14; /*0x48be89*/
   a1->PhoneNumber[5] = a7; /*0x48be8c*/
   a1->PhoneNumber[6] = a8; /*0x48be8f*/
@@ -298,18 +298,18 @@ void IPXManagerClass::processPacket()
   int v7; // ebp
   unsigned int *v8; // edi
 
-  v2 = (unsigned int)(this->q014);
+  v2 = (unsigned int)(((unsigned char *)(this) + 0x014));
   *(unsigned int *)this = &(void*)(void*)&IPXManagerClass_vftable; /*0x5409fa*/
   if ( v2 ) /*0x540a02*/
   {
     Network_Helper(); /*0x540a04*/
-    this->q014 = 0; /*0x540a09*/
+    ((unsigned char *)(this) + 0x014) = 0; /*0x540a09*/
   }
-  v3 = (void (__thiscall ***)(unsigned int, int))this->q048; /*0x540a0c*/
+  v3 = (void (__thiscall ***)(unsigned int, int))((unsigned char *)(this) + 0x048); /*0x540a0c*/
   if ( v3 ) /*0x540a11*/
   {
     (**v3)(v3, 1); /*0x540a17*/
-    this->q048 = 0; /*0x540a19*/
+    ((unsigned char *)(this) + 0x048) = 0; /*0x540a19*/
   }
   v4 = (void (__thiscall ***)(unsigned int, int))this->q04C; /*0x540a1c*/
   if ( v4 ) /*0x540a21*/

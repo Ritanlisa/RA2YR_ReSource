@@ -6103,7 +6103,7 @@ char BuildingClass::ClearSuperWeaponAnim()
     }
     return *(unsigned int *)(*(unsigned int *)(a2 + 4) + 4 * v3); /*0x50534e*/
   }
-  return *(unsigned int *)(*(unsigned int *)&aP1->__pad_0[4] + 4 * v3); /*0x50534e*/
+  return *(unsigned int *)(*(unsigned int *)&((unsigned char *)(aP1) + 0x0)[4] + 4 * v3); /*0x50534e*/
 }
     return {}; // TODO stub - retranslate via C-line pipeline
     }
@@ -6219,7 +6219,7 @@ void BuildingClass::UpdatePrism() {}
           {
             Member = Team::GetMember(this, 0);
             unsigned int * v22 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)Member + 72))(Member, v51);
-            unsigned int * v23 = (unsigned int *)(*(int (__thiscall **)(void *, unsigned char *))(this->q048)(this, v52);
+            unsigned int * v23 = (unsigned int *)(*(int (__thiscall **)(void *, unsigned char *))(((unsigned char *)(this) + 0x048))(this, v52);
             int v24 = *v23 - *v22;
             int v25 = v23[1];
             int v26 = v23[2];
@@ -6273,9 +6273,9 @@ void BuildingClass::UpdatePrism() {}
       if ( Array::ContainsValue((int *)this, v53) )
       {
   unsigned int v49[3]; // [esp+40h] [ebp-30h] BYREF
-        v49[0] = this->q027;
+        v49[0] = ((unsigned char *)(this) + 0x027);
         v49[1] = this->owningHouseIndex;
-        v49[2] = this->q029;
+        v49[2] = ((unsigned char *)(this) + 0x029);
         *v12 = Coord::To_Cell(DataGlobal_87F7E8, v49);
         (*(void (__thiscall **)(void *, int, unsigned int *, int))(this->isImmobilized)(this, 18, v12, v53);
         return 1;
@@ -6385,7 +6385,7 @@ LABEL_33:
         return 10;
       if ( (uint8_t)BuildingClass::IsBeingRepairedOrCaptured(v6) )
         return 10;
-      int v7 = -(this->q0BF != 0);
+      int v7 = -(((unsigned char *)(this) + 0x0BF) != 0);
       IDA_LOBYTE(v7) = v7 & 0xF7;
       return v7 + 10;
     case 16:
@@ -7877,7 +7877,7 @@ LABEL_28:
   unsigned char v21[12]; // [esp+34h] [ebp-24h] BYREF
         unsigned int * v13 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, unsigned char *))(*(unsigned int *)v12 + 72))(v12, v21);
   unsigned char v22[12]; // [esp+40h] [ebp-18h] BYREF
-        unsigned int * v14 = (unsigned int *)(*(int (__thiscall **)(void *, unsigned char *))(this->q048)(this, v22);
+        unsigned int * v14 = (unsigned int *)(*(int (__thiscall **)(void *, unsigned char *))(((unsigned char *)(this) + 0x048))(this, v22);
   unsigned int v23[3]; // [esp+4Ch] [ebp-Ch] BYREF
         int * v15 = Coord::Subtract(v23, *v14 - *v13, v14[1] - v13[1], v14[2] - v13[2]);
         double v16 = Math::Sqrt((double)*v15 * (double)*v15 + (double)v15[2] * (double)v15[2] + (double)v15[1] * (double)v15[1]);
@@ -8850,7 +8850,7 @@ void BuildingClass::AddToProductionQueue(int) {}
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q16B + 8))(this + 1452, v5 + v6, 0) )
     {
       v7 = this->q16F; /*0x4da14b*/
-      v8 = this->q16C; /*0x4da14e*/
+      v8 = ((unsigned char *)(this) + 0x16C); /*0x4da14e*/
       this->q16F = v7 + 1; /*0x4da154*/
       *(unsigned int *)(v8 + 4 * v7) = int; /*0x4da157*/
     }
@@ -8883,7 +8883,7 @@ void BuildingClass::AddToProductionQueue(int) {}
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q16B + 8))(this + 1452, v5 + v6, 0) )
     {
       v7 = this->q16F; /*0x4da14b*/
-      v8 = this->q16C; /*0x4da14e*/
+      v8 = ((unsigned char *)(this) + 0x16C); /*0x4da14e*/
       this->q16F = v7 + 1; /*0x4da154*/
       *(unsigned int *)(v8 + 4 * v7) = int; /*0x4da157*/
     }
@@ -8916,7 +8916,7 @@ void BuildingClass::AddToProductionQueue(int) {}
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q16B + 8))(this + 1452, v5 + v6, 0) )
     {
       v7 = this->q16F; /*0x4da14b*/
-      v8 = this->q16C; /*0x4da14e*/
+      v8 = ((unsigned char *)(this) + 0x16C); /*0x4da14e*/
       this->q16F = v7 + 1; /*0x4da154*/
       *(unsigned int *)(v8 + 4 * v7) = int; /*0x4da157*/
     }
@@ -8949,7 +8949,7 @@ void BuildingClass::AddToProductionQueue(int) {}
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q16B + 8))(this + 1452, v5 + v6, 0) )
     {
       v7 = this->q16F; /*0x4da14b*/
-      v8 = this->q16C; /*0x4da14e*/
+      v8 = ((unsigned char *)(this) + 0x16C); /*0x4da14e*/
       this->q16F = v7 + 1; /*0x4da154*/
       *(unsigned int *)(v8 + 4 * v7) = int; /*0x4da157*/
     }
