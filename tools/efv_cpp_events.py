@@ -590,6 +590,26 @@ def make_cpp_leaf(class_name, locals_set, M, signals):
                 is_wr = bool(re.match(r'\s*=(?!=)', after))
                 hits.append((am.start(), am.end(),
                              write_member(off) if is_wr else read_member(off)))
+
+            # G40: member-slot write/read through cast-deref of the member
+            # itself: `*(unsigned int *)this->M = X` / `*(T *)this->M` (the
+            # G29 rewriter's rendering of IDA `*(T *)(this + off)`).
+            # IDA renders the original as WRITE/READ(member, off(M)).
+            for am in re.finditer(
+                    r'\*\s*\(\s*(?:unsigned\s+int|_DWORD|int|void|char|'
+                    r'unsigned\s+char|_BYTE|long|unsigned\s+short|_WORD)\s*\**'
+                    r'\s*\)\s*this\s*->\s*(\w+)', text):
+                after = text[am.end():am.end() + 4]
+                is_wr = bool(re.match(r'\s*=(?!=)', after))
+                kind, val = member_resolver.resolve(am.group(1))
+                if kind == 'member':
+                    hits.append((am.start(), am.end(),
+                                 write_member(val) if is_wr
+                                 else read_member(val)))
+                else:
+                    hits.append((am.start(), am.end(),
+                                 write_member_unresolved() if is_wr
+                                 else read_member_unresolved()))
         i = 0
         while i < n:
             t = toks[i]
