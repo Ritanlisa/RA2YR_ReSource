@@ -346,7 +346,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
            v8 + v9,
            0) )
     {
-      v10 = uniqueId->unknown_10[0]; /*0x5cf03f*/
+      v10 = uniqueId-((unsigned int *)(>unknown_10))[0]; /*0x5cf03f*/
       v11 = uniqueId->MPGameMode[0]; /*0x5cf042*/
       uniqueId->unknown_10[0] = v10 + 1; /*0x5cf048*/
       *(unsigned int *)(v11 + 4 * v10) = v7; /*0x5cf04b*/

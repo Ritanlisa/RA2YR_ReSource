@@ -24,6 +24,7 @@
 #include "e4/classes/GameClass_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x5D5DE0
 namespace gamemd {

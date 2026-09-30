@@ -266,7 +266,7 @@ AbstractClass * * SlaveManager_InitGrid()
   int v35; // [esp+1Ch] [ebp-38h]
   int v36; // [esp+20h] [ebp-34h]
   unsigned short v37[2]; // [esp+24h] [ebp-30h] BYREF
-  int v38; // [esp+28h] [ebp-2Ch]
+  unsigned int v38;
   int v39; // [esp+2Ch] [ebp-28h]
   MapSeed v40; // [esp+30h] [ebp-24h] BYREF
 
@@ -359,7 +359,7 @@ AbstractClass * * SlaveManager_InitGrid()
           v15 = *((uint8_t *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v31) + 284); /*0x6b2c6c*/
           v16 = 15 * *((char *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v31) + 283) /*0x6b2c95*/
               + *(unsigned int *)*(&off_83FF18 + v15);
-          v17 = g_MissionQueueFrame.localVariables[160]; /*0x6b2c97*/
+          v17 = (int *)(g_MissionQueueFrame.localVariables[160]);
           v38 = v16; /*0x6b2c9c*/
           v18 = (int16_t)(IDA_HIWORD(v40.MapSeed_field_0x10) - 1); /*0x6b2ca3*/
           v19 = v18 + IDA_SLOWORD(v40.MapSeed_field_0x10); /*0x6b2ca6*/

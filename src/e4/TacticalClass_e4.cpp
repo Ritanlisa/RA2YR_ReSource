@@ -216,13 +216,13 @@ void* TacticalClass::ProcessScroll(int * a2)
 {
 
   double v2; // st7
-  int v4; // eax
+  void * v4;
   void *v5; // ecx
   void *DisplayClass_field_0x11DC; // edx
   int v7; // edx
   char DisplayClass_field_0x11B0_high; // cl
   double v10; // [esp+0h] [ebp-20h]
-  int v11; // [esp+10h] [ebp-10h] BYREF
+  void * v11;
   void *v12; // [esp+14h] [ebp-Ch]
 
   if ( !this-((unsigned int *)(>__pad_11B4))[27] || HIBYTE(this->DisplayClass_field_0x11B0) || this->__pad_11B4[0] ) /*0x4ac3a3*/
@@ -248,7 +248,7 @@ void* TacticalClass::ProcessScroll(int * a2)
       }
       Math::Sqrt(v10); /*0x4ac484*/
       LOWORD(v4) = Math::RoundToInt(v2); /*0x4ac48c*/
-      if ( v4 > 4 ) /*0x4ac494*/
+      if ( v4 > (void *)(4) ) /*0x4ac494*/
       {
         DisplayClass_field_0x11B0_high = HIBYTE(this->DisplayClass_field_0x11B0); /*0x4ac496*/
         LOBYTE(v4) = 1; /*0x4ac49c*/
@@ -267,8 +267,8 @@ void* TacticalClass::ProcessScroll(int * a2)
   {
     v12 = (void *)(DSurface_ViewBounds.field_4);
     v11 = (void *)(DSurface_ViewBounds.field_0);
-    v4 = (void *)(*a2);
-    v5 = (void *)a2[1]; /*0x4ac3d6*/
+    v4 = (void *)((int)((void *)(*a2)));
+    v5 = (int)((void *)a2[1]);
     if ( *a2 < 0 ) /*0x4ac3db*/
       v4 = 0; /*0x4ac3dd*/
     if ( v4 >= *(int *)DSurface_ViewBounds.__pad_8 ) /*0x4ac3e1*/

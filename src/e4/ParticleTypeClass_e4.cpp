@@ -47,6 +47,8 @@ void ParticleTypeClass::GetClassIdentifier()
 namespace gamemd {
 AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
 {
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
 
   int v3; // ebp
   char *v5; // edi
@@ -635,7 +637,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
 
   int *v2; // ebp
-  ParticleTypeClass *v3; // edi
+  unsigned int v3;
   int result; // eax
   int v5; // edx
   int v6; // ecx
@@ -648,7 +650,7 @@ int ParticleTypeClass::SaveLoad_Prefix(int a1, int a2)
   char *v13; // edx
   int v14; // [esp+28h] [ebp-4h]
 
-  v2 = (int *)a2; /*0x645663*/
+  v2 = (int *)((gamemd::ParticleTypeClass *)((int *)a2));
   v3 = a1; /*0x645669*/
   result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)a1, a2); /*0x64566f*/
   if ( result >= 0 ) /*0x645678*/

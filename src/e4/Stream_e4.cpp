@@ -18,6 +18,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x439110
 namespace gamemd {
@@ -182,7 +183,7 @@ LABEL_14:
   else
     LOBYTE(v15) = v15 & 0xFB; /*0x75935a*/
   *((unsigned int *)this + 111) = v15; /*0x759361*/
-  v14 = TestBitArray(3); /*0x75936c*/
+  v14 = (unsigned int)(TestBitArray(3));
   v16 = *((unsigned int *)this + 111); /*0x75936e*/
   if ( v14 ) /*0x759374*/
     LOBYTE(v16) = v16 & 0xFE; /*0x759376*/

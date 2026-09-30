@@ -143,8 +143,8 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
   v17 = (gamemd::MapClass *)((IUnknown *)((MapClass *)aP0));
   v18 = (IUnknown *)(*aP3);
   v19 = (IUnknown *)((Type *)aP3[1]);
-  v81 = aP0; /*0x56dc49*/
-  v78 = 0; /*0x56dc4d*/
+  v81 = (gamemd::Type *)((IUnknown *)(aP0));
+  v78 = (IUnknown *)(0);
   v86 = v18; /*0x56dc51*/
   v82 = v19; /*0x56dc55*/
   v77 = 0; /*0x56dc59*/
@@ -263,7 +263,7 @@ LABEL_36:
         g_MissionQueueFrame.briefing[139] = (int)(v90);
         v39 = (int)((Cell *)&g_MissionQueueFrame.briefing[130]);
 LABEL_44: v98[1] = (int)(v36);
-        v98[3] = aP9; /*0x56dfbe*/
+        v98[3] = (int)(aP9);
         v98[0] = (int16_t)(v86 + v26); /*0x56dfc8*/
         v98[2] = aP8; /*0x56dfcf*/
         if ( (uint8_t)Type::CheckAmbiguity((Type *)v17, (int)v39, 1) ) /*0x56dfd6*/

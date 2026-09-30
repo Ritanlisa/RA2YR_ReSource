@@ -217,7 +217,7 @@ int Scenario::ReadTeams()
                   v30 = (TeamClass *)((ObjectTypeClass *)((ObjectTypeClass *)v16))->FindByName(); /*0x44fb33*/
                   if ( v30 ) /*0x44fb3a*/
                   {
-                    v31 = (int)(((TeamClass *)(v30))->FindOrCreate());
+                    v31 = (void *)((int)(((TeamClass *)(v30))->FindOrCreate()));
                     if ( v31 ) /*0x44fb45*/
                       ObjectClass::SetReference((ObjectClass *)v29, v31); /*0x44fb4a*/
                   }
@@ -342,8 +342,8 @@ int Scenario::ReadTeams()
         }
       }
       result = (gamemd::INIClass *)((int)((gamemd::INIClass *)(v71)));
-      v3 = (int)((gamemd::INIClass *)(++v68));
-      if ( v68 >= v71 ) /*0x44fe41*/
+      v3 = (gamemd::INIClass *)((int)((gamemd::INIClass *)(++v68)));
+      if ( v68 >= (int)(v71) ) /*0x44fe41*/
         break; /*0x44fe41*/
       v1 = this; /*0x44f866*/
     }
@@ -424,9 +424,9 @@ int Scenario::ProcessSidebarUnits()
              v7 + v8,
              0) )
       {
-        v9 = *(unsigned int *)&this->__pad_9C[224]; /*0x50d69c*/
-        v10 = *(unsigned int *)&this->__pad_9C[212]; /*0x50d69f*/
-        *(unsigned int *)&this->__pad_9C[224] = v9 + 1; /*0x50d6a5*/
+        v9 = *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[224]; /*0x50d69c*/
+        v10 = *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[212]; /*0x50d69f*/
+        *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[224] = v9 + 1; /*0x50d6a5*/
         *(unsigned int *)(v10 + 4 * v9) = v6; /*0x50d6a8*/
       }
     }

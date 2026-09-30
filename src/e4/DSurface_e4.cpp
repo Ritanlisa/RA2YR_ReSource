@@ -399,8 +399,8 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
   this->DSurface_field_0x4 = (unsigned int)(0);
   this->DSurface_field_0x8 = (unsigned int)(0);
   this->DSurface_field_0xC = (unsigned int)(0);
-  this->DSurface_field_0x10 = 0; /*0x4bac74*/
-  this->DSurface_field_0x14 = 0; /*0x4bac77*/
+  this->DSurface_field_0x10 = (unsigned int)(0);
+  this->DSurface_field_0x14 = (unsigned int)(0);
   LOBYTE(this->DSurface_field_0x18) = 0; /*0x4bac7a*/
   BYTE1(this->DSurface_field_0x18) = 0; /*0x4bac7d*/
   this-((unsigned int *)(>DSurface_field_0x1C))[0] = a2; /*0x4bac80*/

@@ -149,8 +149,8 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v19);
   }
   v20 = (int *)((unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)));
-  v35 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))))))))))))))))))));
-  v36 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))))))))))));
+  v35 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))))))))))))))))))))));
+  v36 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))))))))))))));
   v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
   v43 = (int *)(*v22);
@@ -357,7 +357,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   IPersistStream v22; // esi
   int *v23; // eax
   BuildingClass * v24;
-  unsigned int v25;
+  BuildingClass * v25;
   BuildingClass * v26;
   BuildingClass * v27;
   int v28; // eax

@@ -64,15 +64,15 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     *aP1 = (unsigned int *)(dword_B0CE08);
     aP1[1] = (unsigned int *)(dword_B0CE0C);
     aP1[2] = (unsigned int *)(dword_B0CE10);
-    return aP1; /*0x6d23f7*/
+    return (unsigned int *)(aP1);
   }
   else
   {
     v9 = (unsigned int *)((float)v13);
     v11 = (int)((unsigned int *)(0));
     v10 = (unsigned int *)((float)v8);
-    v4 = TransformMatrix3x4Point(v12, (unsigned int *)this + 889, &v9); /*0x6d23b0*/
-    v9 = *v4; /*0x6d23b7*/
+    v4 = (float *)((unsigned int *)(TransformMatrix3x4Point(v12, (unsigned int *)this + 889, &v9)));
+    v9 = (unsigned int *)(*v4);
     v10 = v4[1]; /*0x6d23c2*/
     v11 = *((unsigned int *)v4 + 2); /*0x6d23c9*/
     v5 = Math::RoundToInt(v9); /*0x6d23d6*/

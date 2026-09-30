@@ -20,8 +20,8 @@ int Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
   v3 = (int)(*((unsigned int *)this + 1));
   Bounds_field_00 = (int)(this->Bounds_field_00);
   v5 = (int)(*((unsigned int *)this + 2));
-  v6 = *((unsigned int *)this + 3); /*0x487ef4*/
-  v7 = v3 - a2[1]; /*0x487ef7*/
+  v6 = (int)(*((unsigned int *)this + 3));
+  v7 = (int)(v3 - a2[1]);
   *(unsigned int *)aP1 = Bounds_field_00 - *a2; /*0x487f01*/
   aP1[1] = v7; /*0x487f06*/
   aP1[2] = v5; /*0x487f09*/

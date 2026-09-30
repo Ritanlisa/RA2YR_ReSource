@@ -34,6 +34,7 @@
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/SlaveManagerClass_e4.hpp"
 #include "e4/classes/Vector3_e4.hpp"
+#include "e4/classes/Particle_e4.hpp"
 
 // 0x47C3D0
 namespace gamemd {
@@ -57,7 +58,7 @@ int Object::FindClosestObjectCell( IUnknown * aP1, IUnknown * aP2, IUnknown * aP
   v12 = (int)((unsigned char *)(0));
   v13 = (int)((unsigned char *)(0));
   v5 = (unsigned char *)(7 * *aP1);
-  v6 = 7 * aP1[1]; /*0x47c3fe*/
+  v6 = (unsigned char *)(7 * aP1[1]);
   if ( aP2 ) /*0x47c405*/
     Object_field_0xE8 = this->Object_field_0xE8; /*0x47c407*/
   else
@@ -75,10 +76,10 @@ int Object::FindClosestObjectCell( IUnknown * aP1, IUnknown * aP2, IUnknown * aP
       v17 = v9[2]; /*0x47c467*/
       Math::Sqrt((double)v14 * (double)v14 + (double)v15 * (double)v15); /*0x47c484*/
       LOWORD(v10) = Math::RoundToInt(v4); /*0x47c48c*/
-      if ( !v12 || v10 < v13 ) /*0x47c49d*/
+      if ( !v12 || v10 < (int)(v13) ) /*0x47c49d*/
       {
         v12 = (unsigned char *)((int)v8);
-        v13 = v10; /*0x47c4a3*/
+        v13 = (unsigned char *)(v10);
       }
     }
     v8 = (unsigned char *)*((unsigned int *)v8 + 12); /*0x47c4a7*/
@@ -427,7 +428,7 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
 {
 
   IUnknown * v5;
-  int v6; // eax
+  Object * v6;
   int v7; // ecx
   CellClass *v8; // eax
 

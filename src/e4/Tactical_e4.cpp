@@ -107,8 +107,8 @@ void * Tactical::ConstructTacticalSurface()
     v4[3] = (unsigned int)(0);
     v4[4] = (unsigned int)(-1);
     *v4 = (unsigned int)(0);
-    v4[1] = 0x10000; /*0x42a760*/
-    v6 = __2_YAPAXI_Z(0x40004u); /*0x42a767*/
+    v4[1] = (unsigned int)(0x10000);
+    v6 = (unsigned int)(__2_YAPAXI_Z(0x40004u));
     v7 = v5[1]; /*0x42a76c*/
     v5[2] = v6; /*0x42a76f*/
     v8 = 0; /*0x42a775*/
@@ -134,8 +134,8 @@ void * Tactical::ConstructTacticalSurface()
     v9[3] = (unsigned int)(0);
     v9[4] = (unsigned int)(-1);
     *v9 = (unsigned int)(0);
-    v9[1] = 10000; /*0x42a7b2*/
-    v11 = __2_YAPAXI_Z(0x9C44u); /*0x42a7b9*/
+    v9[1] = (unsigned int)(10000);
+    v11 = (unsigned int)(__2_YAPAXI_Z(0x9C44u));
     v12 = v10[1]; /*0x42a7be*/
     v10[2] = v11; /*0x42a7c1*/
     v13 = 0; /*0x42a7c7*/
@@ -194,8 +194,8 @@ void * Tactical::ConstructTacticalSurface()
     }
     while ( v18 <= *v19 ); /*0x42a859*/
   }
-  *v19 = (unsigned int *)(0);
-  v20 = (char *)((unsigned int *)*((unsigned int *)this + 26));
+  *v19 = (int)((unsigned int *)(0));
+  v20 = (unsigned int *)((char *)((unsigned int *)*((unsigned int *)this + 26)));
   for ( i = 0; i <= *v20; *(unsigned int *)(v20[2] + 4 * i - 4) = 0 ) /*0x42a864*/
     ++i; /*0x42a869*/
   *v20 = 0; /*0x42a874*/
@@ -240,9 +240,9 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
   int v16; // [esp+10h] [ebp-4h] BYREF
 
   v7 = (int *)((unsigned int *)(a1));
-  v8 = (unsigned int *)(a3);
-  v9 = (unsigned int *)((int *)aP5);
-  v11 = aP2; /*0x484063*/
+  v8 = (int *)((unsigned int *)(a3));
+  v9 = (int *)((unsigned int *)((int *)aP5));
+  v11 = (unsigned int *)(aP2);
   v12 = (int *)a4; /*0x484067*/
   *a1 = 0x10000; /*0x48406b*/
   *v11 = 0; /*0x484071*/
@@ -409,27 +409,27 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
     {
       *v10 += v9-((unsigned int *)(>Tactical_field_0x11B))[0] * (int)dword_A8B230[380].vtable1 - dword_A8B230[380].referenceCount; /*0x4844ec*/
       referenceCount = ((unsigned int *)(dword_A8B230))[380].referenceCount; /*0x4844fa*/
-      v24 = (int)((unsigned int *)(dword_A8B230))[380].NeedsSaveOrLink * (v9->Tactical_field_0x11B[0] + 4); /*0x484503*/
+      v24 = (int)((unsigned int *)(dword_A8B230))[380].NeedsSaveOrLink * (v9-((unsigned int *)(>Tactical_field_0x11B))[0] + 4); /*0x484503*/
     }
     else
     {
       if ( NukeFlash::IsActive() ) /*0x48450f*/
       {
         *v10 += v9-((unsigned int *)(>Tactical_field_0x11B))[0] * (int)((unsigned int *)(dword_A8B230))[380].vtable1 - (unsigned int)dword_A8B230[380].vtable0; /*0x484537*/
-        v22 = (int)dword_A8B230[380].vtable1 * (v9->Tactical_field_0x11B[0] + 4) /*0x484559*/
-            - (unsigned int)dword_A8B230[380].vtable0
+        v22 = (int)((unsigned int *)(dword_A8B230))[380].vtable1 * (v9-((unsigned int *)(>Tactical_field_0x11B))[0] + 4) /*0x484559*/
+            - (unsigned int)((unsigned int *)(dword_A8B230))[380].vtable0
             + *aP5;
         goto LABEL_21; /*0x48455b*/
       }
       *v10 += v9-((unsigned int *)(>Tactical_field_0x11B))[0] * dword_A8B230[378].referenceCount - dword_A8B230[378].nextArrayIndex; /*0x48457c*/
       referenceCount = ((unsigned int *)(dword_A8B230))[378].nextArrayIndex; /*0x48458a*/
-      v24 = dword_A8B230[378].referenceCount * (v9->Tactical_field_0x11B[0] + 4); /*0x484593*/
+      v24 = ((unsigned int *)(dword_A8B230))[378].referenceCount * (v9-((unsigned int *)(>Tactical_field_0x11B))[0] + 4); /*0x484593*/
     }
     v22 = v24 - referenceCount + *aP5; /*0x48459e*/
     goto LABEL_21; /*0x48459e*/
   }
   *v10 += v9-((unsigned int *)(>Tactical_field_0x11B))[0] * ((unsigned int *)(dword_A8B230))[379].uniqueId - (unsigned int)dword_A8B230[379].vtable3; /*0x48449b*/
-  v22 = dword_A8B230[379].uniqueId * (v9->Tactical_field_0x11B[0] + 4) - (unsigned int)dword_A8B230[379].vtable3 + *aP5; /*0x4844bd*/
+  v22 = ((unsigned int *)(dword_A8B230))[379].uniqueId * (v9-((unsigned int *)(>Tactical_field_0x11B))[0] + 4) - (unsigned int)dword_A8B230[379].vtable3 + *aP5; /*0x4844bd*/
 LABEL_21:
   *aP5 = v22; /*0x4845a0*/
   v25 = *v10; /*0x4845a2*/

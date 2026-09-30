@@ -53,6 +53,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
 
 // 0x5C00E0
 namespace gamemd {
@@ -342,7 +343,7 @@ void sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
   unsigned char *v6; // edi
   unsigned int v7; // esi
   unsigned int v8; // ebp
-  int v9; // eax
+  void * v9;
   int v10; // eax
   char *v11; // ecx
   unsigned int i; // ebp
@@ -524,7 +525,7 @@ void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
         v6 = aP2; /*0x5c67bf*/
         do /*0x5c67cc*/
         {
-          v7 = (gamemd::Buffer *)((int)((gamemd::Buffer *)(*v5)));
+          v7 = (int)((gamemd::Buffer *)((int)((gamemd::Buffer *)(*v5))));
           *v5++ = result; /*0x5c67c4*/
           --v6; /*0x5c67c9*/
           result = v7; /*0x5c67ca*/
@@ -971,7 +972,7 @@ int MultiplyAddBigInteger(char * a1, unsigned short * a2, short a3, int a4)
   do /*0x5c6e84*/
   {
     v15 = *v14++; /*0x5c6e6e*/
-    v16 = v13 + (int16_t)-a3 * v15; /*0x5c6e77*/
+    v16 = v13 + (int16_t)-a3 * v15; /*(unsigned int)(0x5c6e77)*/
     *(uint16_t *)((char *)(unsigned int)(v14)+ v5 - (char *)v44 - 2) = v16; /*0x5c6e79*/
     --v12; /*0x5c6e81*/
     v13 = IDA_HIWORD(v16); /*0x5c6e82*/
@@ -1279,7 +1280,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
   int v35; // ebx
   char *v36; // ecx
   bool v38; // [esp+13h] [ebp-209h]
-  bool v39; // [esp+14h] [ebp-208h]
+  char * v39;
   char *v40; // [esp+18h] [ebp-204h]
   unsigned int v41[64]; // [esp+1Ch] [ebp-200h] BYREF
   unsigned int v42[64]; // [esp+11Ch] [ebp-100h] BYREF
@@ -1433,7 +1434,7 @@ char SubtractBigIntegerWithSign(char * a1, int * a2, const void * a3, const void
         {
           v19 = (char *)((unsigned int)((char *)(*(unsigned int *)v34 + *(unsigned int *)&v18[v35])));
           v36 = (char *)((unsigned int)(&v19[v39]));
-          v39 = (unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = v39) != 0 && !v36);
+          v39 = (unsigned int)((unsigned int)((unsigned int)v19 < *(unsigned int *)v34 || (IDA_LOBYTE(v19) = v39) != 0 && !v36));
           *(unsigned int *)v18 = v36; /*0x5c7723*/
           v34 += 4; /*0x5c7725*/
           v18 += 4; /*0x5c7728*/

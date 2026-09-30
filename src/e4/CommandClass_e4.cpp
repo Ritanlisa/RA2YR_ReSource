@@ -207,8 +207,8 @@ int CommandClass::AddAction(ToolTipManager * aP1)
   int v15; // ecx
 
   v2 = (gamemd::ToolTipManager *)(aP1);
-  v4 = (gamemd::ToolTipManager *)((char *)this + 147);
-  aP1 = *(unsigned int *)aP1; /*0x724592*/
+  v4 = (int *)((gamemd::ToolTipManager *)((char *)this + 147));
+  aP1 = (gamemd::ToolTipManager *)(*(unsigned int *)aP1);
   if ( *((char *)this + 148) ) /*0x724596*/
   {
     if ( CommandClass::executeAction((char *)this + 147, &aP1) ) /*0x7245a4*/
@@ -239,7 +239,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
       && (*(uint8_t (**)(int *, int, unsigned int))(*((char *)this + 141) + 8))((char *)this + 141, v7 + v8, 0) )
     {
       v9 = (unsigned int)(*((char *)this + 145));
-      v10 = *((char *)this + 142); /*0x72464f*/
+      v10 = (unsigned int)(*((char *)this + 142));
       *((char *)this + 145) = v9 + 1; /*0x724655*/
       *(unsigned int *)(v10 + 4 * v9) = v6; /*0x724658*/
       result = v4[2]; /*0x72465e*/
@@ -263,7 +263,7 @@ LABEL_19:
       {
         aP1 = (gamemd::ToolTipManager *)(10);
       }
-      v11 = (int)(result + aP1);
+      v11 = (gamemd::ToolTipManager *)((int)(result + aP1));
       result = __2_YAPAXI_Z(8 * (result + aP1)); /*0x724695*/
       v12 = result; /*0x72469a*/
       if ( result ) /*0x7246a1*/

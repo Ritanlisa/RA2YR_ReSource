@@ -17,6 +17,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/Movement_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
 
 // 0x7327D0
 namespace gamemd {

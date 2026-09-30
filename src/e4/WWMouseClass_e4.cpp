@@ -13,6 +13,7 @@
 #include "e4/classes/WalkLocomotion_e4.hpp"
 #include "e4/classes/ShipLocomotionClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/WalkLocomotionClass_e4.hpp"
 
 // 0x7B9040
 namespace gamemd {
@@ -74,7 +75,7 @@ int WWMouseClass::hideCursor()
   int WWMouseClass_field_0x44; // ebp
   int v4; // edx
   int v5; // edi
-  int v6; // ebx
+  char * v6;
   char *v7; // edx
   unsigned int v9[4]; // [esp+8h] [ebp-20h] BYREF
   unsigned int v10[4]; // [esp+18h] [ebp-10h] BYREF
@@ -145,7 +146,7 @@ void* WWMouseClass::captureMouse()
   int Width; // edx
   int Height; // edi
   char *v11; // ebp
-  int *WWMouseClass_field_0x44; // eax
+  char * WWMouseClass_field_0x44;
   int v13; // ebp
   unsigned int *v14; // eax
   int WWMouseClass_field_0x24; // [esp-1Ch] [ebp-50h]
@@ -185,8 +186,8 @@ void* WWMouseClass::captureMouse()
         X = (unsigned int)(v16.X);
         Y = (unsigned int)(v16.Y);
         Width = (unsigned int)(v16.Width);
-        Height = v16.Height; /*0x7b9b9c*/
-        v17[0] = v16.X; /*0x7b9ba0*/
+        Height = (unsigned int)(v16.Height);
+        v17[0] = (unsigned int)(v16.X);
         *(unsigned int *)this->__pad_48 = v16.X; /*0x7b9ba4*/
         v17[2] = Width; /*0x7b9ba7*/
         v17[3] = Height; /*0x7b9bab*/
@@ -227,7 +228,7 @@ void WWMouseClass::releaseMouse()
   int WWMouseClass_field_0x44; // ebx
   int v5; // edx
   int v6; // edi
-  int v7; // ebp
+  char * v7;
   char *v8; // edx
   unsigned int v9[4]; // [esp+4h] [ebp-20h] BYREF
   unsigned int v10[4]; // [esp+14h] [ebp-10h] BYREF
@@ -302,7 +303,7 @@ unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
   WWMouseClass_field_0x1C = (void *)((unsigned int)(this->WWMouseClass_field_0x1C));
   WWMouseClass_field_0x20 = (void *)((unsigned int)(this->WWMouseClass_field_0x20));
   *a2 = (unsigned int)(WWMouseClass_field_0x1C);
-  a2[1] = WWMouseClass_field_0x20; /*0x7ba36c*/
+  a2[1] = (unsigned int)(WWMouseClass_field_0x20);
   return a2; /*0x7ba36f*/
 
 }

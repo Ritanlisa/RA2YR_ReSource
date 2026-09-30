@@ -25,7 +25,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   char * v10;
 
   v2 = (char *)((int)((char *)(0)));
-  v10 = (int)((char *)(0));
+  v10 = (char *)((int)((char *)(0)));
   for ( i = (unsigned char *)this + 528; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/

@@ -63,6 +63,7 @@
 #include "e4/classes/E4Recv_752CB0_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/VocClass_e4.hpp"
 
 // 0x770E70
 namespace gamemd {

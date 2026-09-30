@@ -50,6 +50,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/E4Recv_5B3910_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/BitArray_e4.hpp"
 
 // 0x743270
 namespace gamemd {
@@ -835,12 +836,12 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
 
   void *vtable2; // edx
   char *vtable0; // edi
-  uint8_t v6; // al
+  void * v6;
   char *v7; // edx
   int v8; // ebp
   void *v10; // edx
   void (**vtable3)(void **); // edx
-  unsigned int v12; // [esp+10h] [ebp+4h]
+  void * v12;
 
   vtable2 = this->?; /*0x74bdc8*/
   if ( vtable2 != (void *)-1 ) /*0x74bdcd*/
@@ -852,7 +853,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   {
     vtable0 = (char *)((unsigned int)((char *)this->AbstractClass));
     v6 = (unsigned int)((*((int (**)(void **, unsigned int, unsigned int))this->? + 2))(&this->?, (a2 + 7) >> 3, 0));
-    this->AbstractClass = (void *)a2; /*0x74be01*/
+    this->AbstractClass = (unsigned int)((void *)a2);
     v12 = v6; /*0x74be03*/
     if ( v6 && (unsigned int)vtable0 < a2 ) /*0x74be0b*/
     {

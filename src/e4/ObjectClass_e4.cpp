@@ -215,9 +215,9 @@ LABEL_52:
       v31 = (InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d81af*/
       Type = (gamemd::FootClass *)(InfantryClass::GetType(v31));
       aP2 = (gamemd::FootClass *)(*(int16_t **)(Type + 40));
-      v33 = (gamemd::FootClass *)((InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP2));
-      v34 = *(unsigned int *)(InfantryClass::GetType(v33) + 44) - 4; /*0x4d81e0*/
-      aP3 = *(int16_t **)(Type + 40); /*0x4d81e3*/
+      v33 = (gamemd::InfantryClass *)((gamemd::FootClass *)((InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP2)));
+      v34 = (gamemd::FootClass *)(*(unsigned int *)(InfantryClass::GetType(v33) + 44) - 4);
+      aP3 = (gamemd::FootClass *)(*(int16_t **)(Type + 40));
       v35 = v34 & 7; /*0x4d81e7*/
       v37 = 0; /*0x4d81ea*/
       v36 = (unsigned short)aP3 + LOWORD(dword_89F688[v35]); /*0x4d81fb*/
@@ -343,7 +343,7 @@ namespace gamemd {
 int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
 {
 
-  int v3; // eax
+  IStream * v3;
   unsigned int v4;
   int result; // eax
   FootClass * v6;
@@ -364,7 +364,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
   int v21; // [esp+5Ch] [ebp+4h]
   int v22; // [esp+5Ch] [ebp+4h]
 
-  v3 = (gamemd::IStream *)(*(unsigned int *)(aP0 + 1652));
+  v3 = (gamemd::IStream *)((int)((gamemd::IStream *)(*(unsigned int *)(aP0 + 1652))));
   if ( v3 ) /*0x4db3d3*/
     (*(void (**)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(aP0 + 1652)); /*0x4db3d8*/
   v4 = pStm; /*0x4db3db*/

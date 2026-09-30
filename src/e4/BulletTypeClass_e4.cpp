@@ -58,8 +58,8 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
         v3[3] = (unsigned int)(0);
         v3[1] = (unsigned int)(v1 + 16);
         v3[2] = (unsigned int)(v1 + 16);
-        *v3 = &XSurface_Vtable; /*0x4654b9*/
-        v3[4] = 1; /*0x4654bf*/
+        *v3 = (unsigned int)(&XSurface_Vtable);
+        v3[4] = (unsigned int)(1);
         Buffer::Init(v3 + 5, 0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/
         *v3 = &BSurface_Vtable; /*0x4654cb*/
         dword_89DDC0 = (int)v3; /*0x4654d1*/

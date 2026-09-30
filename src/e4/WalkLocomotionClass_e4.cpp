@@ -62,9 +62,9 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( __PAIR64__(a4, a3) != __PAIR64__(qword_B077FC, v4) /*0x6a03be*/
       || (LOBYTE(v4) = BYTE4(qword_B077FC), HIDWORD(a4) != HIDWORD(qword_B077FC)) )
     {
-      v8 = (char)((int64_t)((gamemd::CellClass *)(v13)));
-      v5[99] = (gamemd::CellClass *)(1);
-      *v6 = (gamemd::CellClass *)(a3);
+      v8 = (gamemd::CellClass *)((char)((int64_t)((gamemd::CellClass *)(v13))));
+      v5[99] = (char)((gamemd::CellClass *)(1));
+      *v6 = (int)((gamemd::CellClass *)(a3));
       *(unsigned long long *)a1->HeadToCoord = v8; /*0x6a03d0*/
       v11 = *((unsigned int *)v5 + 3); /*0x6a03dd*/
       v9 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v12); /*0x6a03e4*/
@@ -150,7 +150,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
             v14 = (int *)(*(unsigned int *)(v13 + 4));
             v20[0] = (int *)(*(unsigned int *)v13);
             v20[1] = (int *)(v14);
-            v15 = WalkLocomotion::TransformCoords((WalkLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1); /*0x6a4011*/
+            v15 = (int *)(WalkLocomotion::TransformCoords((WalkLocomotion *)&v4[-1].Piggybackee, v21, v20, (int *)&a1));
             v16 = *v15; /*0x6a4016*/
             v17 = v15[1]; /*0x6a4018*/
             location = v4->?->?; /*0x6a401e*/
@@ -233,7 +233,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   int v8; // edi
   int *v9; // ebx
   HRESULT v10; // esi
-  int v12; // edx
+  ILocomotion * v12;
 
   v3 = (gamemd::IStream *)((gamemd::WalkLocomotionClass *)((IStream *)pPStm));
   v4 = (gamemd::WalkLocomotionClass *)(a1);
@@ -242,14 +242,14 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     return IPersistStream; /*0x75c71b*/
   if ( !v4->Piggybackee ) /*0x75c726*/
   {
-    v12 = (gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0);
+    v12 = (gamemd::ILocomotion *)((int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0)));
     LOBYTE(a3) = 0; /*0x75c7cf*/
-    (*(void (**)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x75c7d4*/
+    (*(void (**)(IStream *, int *, int, unsigned int))((unsigned int)(v12)+ 16))(v3, &a3, 1, 0); /*0x75c7d4*/
     return IPersistStream; /*0x75c7d8*/
   }
-  v6 = (int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0));
+  v6 = (gamemd::ILocomotion *)((int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0)));
   LOBYTE(a3) = 1; /*0x75c738*/
-  (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x75c73d*/
+  (*(void (**)(IStream *, int *, int, unsigned int))((unsigned int)(v6)+ 16))(v3, &a3, 1, 0); /*0x75c73d*/
   Piggybackee = v4->Piggybackee; /*0x75c740*/
   pPStm = 0; /*0x75c743*/
   if ( Piggybackee ) /*0x75c74d*/

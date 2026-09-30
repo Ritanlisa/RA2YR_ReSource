@@ -27,6 +27,8 @@
 #include "e4/classes/RulesClass_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/LinkClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
 
 // 0x4791F0
 namespace gamemd {

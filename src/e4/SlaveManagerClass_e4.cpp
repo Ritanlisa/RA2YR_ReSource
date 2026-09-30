@@ -153,8 +153,8 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
          dword_B0B5F8 + dword_B0B604,
          0) )
   {
-    v17 = (unsigned int)(dword_B0B600++);
-    *((unsigned int *)dword_B0B5F4 + v17) = this; /*0x6af34a*/
+    v17 = (gamemd::SlaveManagerClass *)((unsigned int)(dword_B0B600++));
+    *((unsigned int *)(unsigned int)(dword_B0B5F4)+ v17) = this; /*0x6af34a*/
   }
   return this; /*0x6af34f*/
 
@@ -201,8 +201,8 @@ void SlaveManagerClass::Constructor()
          dword_B0B5F8 + dword_B0B604,
          0) )
   {
-    v2 = (unsigned int)(dword_B0B600++);
-    *((unsigned int *)dword_B0B5F4 + v2) = this; /*0x6af428*/
+    v2 = (gamemd::SlaveManagerClass *)((unsigned int)(dword_B0B600++));
+    *((unsigned int *)(unsigned int)(dword_B0B5F4)+ v2) = this; /*0x6af428*/
   }
   return (int)this; /*0x6af42d*/
 

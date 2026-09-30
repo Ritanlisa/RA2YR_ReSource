@@ -106,6 +106,8 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
     unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v9 = 0;  /* G37 hoist */
 
   int result; // eax
   ObjectClass * v4;
@@ -305,12 +307,12 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
     {
       if ( *(unsigned int *)&this-((unsigned int *)(>__pad_24))[16] ) /*0x632e01*/
       {
-        v9 = (int)((char *)(*((unsigned int *)this + 80)));
-        if ( v9 >= aP2 ) /*0x632e7e*/
+        v9 = (unsigned int)((char *)((int)((char *)(*((unsigned int *)this + 80)))));
+        if ( v9 >= (unsigned int)((char *))(aP2) ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
         memcpy(&this->__pad_24[*((unsigned int *)this + 79) - *((unsigned int *)this + 80) + 24], Src, v9); /*0x632e97*/
         v3 = &Src[v9]; /*0x632eb0*/
-        v10 = *((unsigned int *)this + 80) == v9; /*0x632eb2*/
+        v10 = *((unsigned int *)this + 80) == (unsigned int)(v9); /*0x632eb2*/
         aP2 -= v9; /*0x632eb4*/
         *((unsigned int *)this + 80) -= v9; /*0x632ebb*/
         if ( !v10 ) /*0x632ec1*/

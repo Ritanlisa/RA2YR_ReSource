@@ -21,6 +21,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Options_e4.hpp"
 
 // 0x5B9750
 namespace gamemd {
@@ -45,6 +46,7 @@ namespace gamemd {
 void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
     unsigned int v6 = 0;  /* G37 hoist */
+    double (__cdecl *)(...) v6 = 0;
     double (__cdecl *)(...) v6 = 0;
 
   char *v3; // eax

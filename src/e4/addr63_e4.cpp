@@ -837,9 +837,9 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   unsigned int v22[4]; // [esp+54h] [ebp-10h] BYREF
 
   Viewport = (int *)(Display::GetViewport(v16));
-  v21[0] = (int *)(*Viewport);
-  v21[1] = Viewport[1]; /*0x63557b*/
-  v21[2] = Viewport[2]; /*0x635582*/
+  v21[0] = (unsigned int)((int *)(*Viewport));
+  v21[1] = (unsigned int)((int *)(Viewport[1]));
+  v21[2] = (int *)(Viewport[2]);
   v4 = Viewport[3]; /*0x635586*/
   vtable1 = this->?; /*0x635589*/
   v21[3] = v4; /*0x63558c*/
@@ -912,9 +912,9 @@ int E4Recv_635680::sub_635680(int a2)
   int v21[4]; // [esp+60h] [ebp-10h] BYREF
 
   Viewport = (int *)(Display::GetViewport(&v16));
-  v20[0] = (int *)(*Viewport);
-  v20[1] = Viewport[1]; /*0x63569b*/
-  v20[2] = Viewport[2]; /*0x6356a2*/
+  v20[0] = (unsigned int)((int *)(*Viewport));
+  v20[1] = (unsigned int)((int *)(Viewport[1]));
+  v20[2] = (int *)(Viewport[2]);
   v20[3] = Viewport[3]; /*0x6356b0*/
   Coords = ScriptAction::GetCoords((ScriptAction *)this, v11); /*0x6356b4*/
   v10[0] = *Coords; /*0x6356bb*/

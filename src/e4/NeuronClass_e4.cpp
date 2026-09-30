@@ -74,7 +74,7 @@ NeuronClass::NeuronClass()
 // 0x43A9C0
 void * NeuronClass::Reset(unsigned int * Block, char a2)
 {
-    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int * v6 = 0;
 
   int v3; // eax
   int v4; // eax

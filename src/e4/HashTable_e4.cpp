@@ -76,6 +76,8 @@ AbstractClass * * HashTable_flat::Grow2()
 {
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   int HashTable_field_0x08; // esi
   unsigned int *v3; // ebp
@@ -197,8 +199,8 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         v14 = (int *)((unsigned int)(*(int **)this->__pad_0));
         v35 = (int *)((unsigned int)(*(int **)this->__pad_0));
         v15 = (unsigned int)(this->HashTable_field_0x0C - 1);
-        this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x625172*/
-        this->HashTable_field_0x0C = v15; /*0x62517c*/
+        this->HashTable_field_0x08 = (unsigned int)(HashTable_field_0x08 >> 1);
+        this->HashTable_field_0x0C = (unsigned int)(v15);
         v16 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x625188*/
         v17 = 4 * this->HashTable_field_0x08; /*0x62518d*/
         *(unsigned int *)this->__pad_0 = v16; /*0x625194*/
@@ -260,9 +262,9 @@ LABEL_23:
       {
         HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
         v25 = (int *)((unsigned int)(*(int **)this->__pad_0));
-        v36 = (unsigned int)(*(int **)this->__pad_0);
-        this->HashTable_field_0x08 = v23 >> 1; /*0x62526f*/
-        this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x625277*/
+        v36 = (int *)((unsigned int)(*(int **)this->__pad_0));
+        this->HashTable_field_0x08 = (unsigned int)(v23 >> 1);
+        this->HashTable_field_0x0C = (unsigned int)(HashTable_field_0x0C - 1);
         v26 = (void *)__2_YAPAXI_Z(4 * (v23 >> 1)); /*0x625282*/
         v27 = 4 * this->HashTable_field_0x08; /*0x625287*/
         *(unsigned int *)this->__pad_0 = v26; /*0x62528e*/
@@ -323,9 +325,9 @@ void HashTable_flat::Shrink2()
   {
     v3 = (int *)((unsigned int)(*(int **)this->__pad_0));
     HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
-    v13 = (unsigned int)(*(int **)this->__pad_0);
-    this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x6257ac*/
-    this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x6257b4*/
+    v13 = (int *)((unsigned int)(*(int **)this->__pad_0));
+    this->HashTable_field_0x08 = (unsigned int)(HashTable_field_0x08 >> 1);
+    this->HashTable_field_0x0C = (unsigned int)(HashTable_field_0x0C - 1);
     v5 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x6257bf*/
     v6 = 4 * this->HashTable_field_0x08; /*0x6257c4*/
     *(unsigned int *)this->__pad_0 = v5; /*0x6257cb*/
@@ -384,9 +386,9 @@ void HashTable_flat::Rebuild2()
   {
     v3 = (int *)((unsigned int)(*(int **)this->__pad_0));
     HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
-    v13 = (unsigned int)(*(int **)this->__pad_0);
-    this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x62585c*/
-    this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x625864*/
+    v13 = (int *)((unsigned int)(*(int **)this->__pad_0));
+    this->HashTable_field_0x08 = (unsigned int)(HashTable_field_0x08 >> 1);
+    this->HashTable_field_0x0C = (unsigned int)(HashTable_field_0x0C - 1);
     v5 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x62586f*/
     v6 = 4 * this->HashTable_field_0x08; /*0x625874*/
     *(unsigned int *)this->__pad_0 = v5; /*0x62587b*/
@@ -566,9 +568,9 @@ CampaignClass * * HashTable_flat::Clear()
       {
         HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
         v15 = (int *)((unsigned int)(*(int **)this->__pad_0));
-        v29 = (unsigned int)(*(int **)this->__pad_0);
-        this->HashTable_field_0x08 = v13 >> 1; /*0x6b961d*/
-        this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x6b9627*/
+        v29 = (int *)((unsigned int)(*(int **)this->__pad_0));
+        this->HashTable_field_0x08 = (unsigned int)(v13 >> 1);
+        this->HashTable_field_0x0C = (unsigned int)(HashTable_field_0x0C - 1);
         v16 = (void *)__2_YAPAXI_Z(4 * (v13 >> 1)); /*0x6b9633*/
         v17 = 4 * this->HashTable_field_0x08; /*0x6b9638*/
         *(unsigned int *)this->__pad_0 = v16; /*0x6b963f*/
@@ -860,8 +862,8 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         v14 = (int *)((unsigned int)(*(int **)this->__pad_0));
         v39 = (int *)((unsigned int)(*(int **)this->__pad_0));
         v15 = (unsigned int)(this->HashTable_field_0x0C - 1);
-        this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x6bad32*/
-        this->HashTable_field_0x0C = v15; /*0x6bad3c*/
+        this->HashTable_field_0x08 = (unsigned int)(HashTable_field_0x08 >> 1);
+        this->HashTable_field_0x0C = (unsigned int)(v15);
         v16 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x6bad48*/
         v17 = 4 * this->HashTable_field_0x08; /*0x6bad4d*/
         *(unsigned int *)this->__pad_0 = v16; /*0x6bad54*/
@@ -926,9 +928,9 @@ LABEL_24:
       {
         HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
         v27 = (int *)((unsigned int)(*(int **)this->__pad_0));
-        v40 = (unsigned int)(*(int **)this->__pad_0);
-        this->HashTable_field_0x08 = v25 >> 1; /*0x6bae60*/
-        this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x6bae68*/
+        v40 = (int *)((unsigned int)(*(int **)this->__pad_0));
+        this->HashTable_field_0x08 = (unsigned int)(v25 >> 1);
+        this->HashTable_field_0x0C = (unsigned int)(HashTable_field_0x0C - 1);
         v28 = (void *)__2_YAPAXI_Z(4 * (v25 >> 1)); /*0x6bae73*/
         v29 = 4 * this->HashTable_field_0x08; /*0x6bae78*/
         *(unsigned int *)this->__pad_0 = v28; /*0x6bae7f*/
@@ -991,9 +993,9 @@ AbstractClass * * HashTable_flat::RebuildEx()
   {
     v3 = (int *)((unsigned int)(*(int **)this->__pad_0));
     HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
-    v13 = (unsigned int)(*(int **)this->__pad_0);
-    this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x6baf1c*/
-    this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x6baf24*/
+    v13 = (int *)((unsigned int)(*(int **)this->__pad_0));
+    this->HashTable_field_0x08 = (unsigned int)(HashTable_field_0x08 >> 1);
+    this->HashTable_field_0x0C = (unsigned int)(HashTable_field_0x0C - 1);
     v5 = (void *)__2_YAPAXI_Z(4 * (HashTable_field_0x08 >> 1)); /*0x6baf2f*/
     v6 = 4 * this->HashTable_field_0x08; /*0x6baf34*/
     *(unsigned int *)this->__pad_0 = v5; /*0x6baf3b*/

@@ -43,6 +43,12 @@ STUB_DECL = re.compile(r'^[ \t]*static double (\w+)\(\.\.\.\);[^\n]*$')
 n_off = n_method = n_junk = n_dup = n_files = 0
 for p in sorted(E4C.glob('*_e4.hpp')):
     try:
+        if 'GENERATED minimal flat class' in \
+                open(p, encoding='utf-8', errors='replace').read(200):
+            continue  # G41.22: minimal generated headers are off-limits
+    except OSError:
+        pass
+    try:
         lines = p.read_text(encoding='utf-8', errors='replace').split('\n')
     except OSError:
         continue

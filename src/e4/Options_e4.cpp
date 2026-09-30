@@ -470,7 +470,7 @@ void Options::EnsureCapacity()
   void *v7; // esi
   void *v8; // [esp+8h] [ebp-4h]
 
-  v2 = (int)((void *)(*(unsigned int *)this->__pad_0));
+  v2 = (void *)((int)((void *)(*(unsigned int *)this->__pad_0)));
   v3 = (unsigned int)((int)this->field_4);
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
@@ -530,15 +530,15 @@ namespace gamemd {
 int Options::ReadOptionValue()
 {
 
-  int v2; // eax
+  void * v2;
   int v3; // ecx
   int v5; // ebx
   void *v6; // eax
   void *v7; // esi
   void *v8; // [esp+8h] [ebp-4h]
 
-  v2 = (void *)(*(unsigned int *)this->__pad_0);
-  v3 = (int)this->field_4; /*0x6254d8*/
+  v2 = (int)((void *)(*(unsigned int *)this->__pad_0));
+  v3 = (void *)((int)this->field_4);
   if ( 3 * v2 > v3 ) /*0x6254e0*/
     return 0; /*0x6254e3*/
   v5 = v3 / 2; /*0x6254ef*/

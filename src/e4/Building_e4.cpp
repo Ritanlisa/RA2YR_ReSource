@@ -48,11 +48,11 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   int16_t v20; // di
   int16_t v21; // di
   int16_t v22; // bx
-  int v23; // ecx
+  AnimClass ** v23;
   AnimClass ** v24;
   int v26; // edi
   int v27; // esi
-  int v28; // edx
+  AnimClass ** v28;
   int16_t v29; // cx
   double v30; // [esp+0h] [ebp-48h]
   int v31; // [esp+14h] [ebp-34h]
@@ -179,8 +179,8 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       v38[1] = v19 + HIWORD(v39); /*0x425f2d*/
       if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f3b*/
       {
-        v23 = (gamemd::AnimClass **)((v21 << 8) + 128);
-        v24 = v22; /*0x425f50*/
+        v23 = (gamemd::AnimClass **)((int)((gamemd::AnimClass **)((v21 << 8) + 128)));
+        v24 = (gamemd::AnimClass **)(v22);
         goto LABEL_41; /*0x425f53*/
       }
       v38[0] = (unsigned int)(v21);
@@ -214,8 +214,8 @@ LABEL_39: *aP1 = (gamemd::AnimClass **)(Map_InvalidCoord_X);
   v27 = 0; /*0x426034*/
   while ( 1 ) /*0x426046*/
   {
-    v28 = (gamemd::AnimClass **)(((v27 + v26) % 8) & 7);
-    v29 = v39 + LOWORD(g_DDrawSurfaceManager.scenario[v28 + 82]); /*0x426058*/
+    v28 = (gamemd::AnimClass **)((int)((gamemd::AnimClass **)(((v27 + v26) % 8) & 7)));
+    v29 = (int16_t)(v39 + LOWORD(g_DDrawSurfaceManager.scenario[v28 + 82]));
     LOWORD(v28) = HIWORD(v39) + HIWORD(g_DDrawSurfaceManager.scenario[v28 + 82]); /*0x426061*/
     v38[0] = v29; /*0x426066*/
     v38[1] = v28; /*0x42606f*/
@@ -225,11 +225,11 @@ LABEL_39: *aP1 = (gamemd::AnimClass **)(Map_InvalidCoord_X);
     if ( ++v27 >= 8 ) /*0x42608e*/
       goto LABEL_39; /*0x42608e*/
   }
-  v24 = (int)((gamemd::AnimClass **)(v34[1]));
-  v23 = (v34[0] << 8) + 128; /*0x4260c5*/
+  v24 = (gamemd::AnimClass **)((int)((gamemd::AnimClass **)(v34[1])));
+  v23 = (gamemd::AnimClass **)((v34[0] << 8) + 128);
 LABEL_41:
   *(unsigned (unsigned int)(int)*)aP1 = v23; /*0x4260cb*/
-  aP1[1] = (v24 << 8) + 128; /*0x4260dd*/
+  aP1[1] = ((unsigned int)(v24)<< 8) + 128; /*0x4260dd*/
   aP1[2] = 0; /*0x4260e0*/
   return aP1; /*0x425faa*/
 

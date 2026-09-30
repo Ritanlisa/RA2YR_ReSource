@@ -361,7 +361,7 @@ LABEL_111: v19 = (wchar_t *)(GetStringCSF(g_Str_GUI_Open, 0, g_Str_File_netshare
         if ( v33 && !v34 ) /*0x5eb55b*/
         {
           v25 = (wchar_t *)(GetStringCSF(g_Str_GUI_AIEasy, 0, g_Str_File_netshare_cpp, 5504));
-          v26 = (LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25)));
+          v26 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25))));
           SendMessageA(DlgItem, 0x151u, v26, g_Lobby_PlayerTeam); /*0x5eb590*/
           v27 = GetStringCSF(g_Str_GUI_AINormal, 0, g_Str_File_netshare_cpp, 5510); /*0x5eb5a3*/
           v28 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v27); /*0x5eb5b1*/

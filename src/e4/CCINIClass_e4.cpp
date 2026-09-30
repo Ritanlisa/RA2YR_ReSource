@@ -237,7 +237,7 @@ CCINIClass::CCINIClass()
   v6 = (unsigned int)(sectionHead[1]);
   p_sectionCount[2] = (unsigned int)((int)sectionHead);
   p_sectionCount[1] = (unsigned int)(v6);
-  v7 = sectionHead[1]; /*0x535b8f*/
+  v7 = (unsigned int)(sectionHead[1]);
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = p_sectionCount; /*0x535b96*/
   sectionHead[1] = (int)p_sectionCount; /*0x535b99*/

@@ -8,6 +8,7 @@
 #include "e4/classes/WDTState_4_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/E4Recv_76C6E0_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x76EFE0
 namespace gamemd {

@@ -52,7 +52,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x4d0989*/
   this->LastSight = (int *)(a3);
   this->House = (unsigned int)((int *)(0));
-  this->Cell[0] = (int *)(a4);
+  this->Cell[0] = (char)((int *)(a4));
   *((unsigned int *)this + 12) = 20; /*0x4d09a7*/
   *((unsigned int *)this + 13) = *a2; /*0x4d09b4*/
   *((unsigned int *)this + 14) = a2[1]; /*0x4d09b9*/
@@ -251,13 +251,13 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     goto LABEL_15; /*0x4d0e1a*/
   if ( dword_8B3CC8 ) /*0x4d0e22*/
   {
-    v16 = (int)((gamemd::AbstractClass *)(dword_8B3CC8));
+    v16 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(dword_8B3CC8)));
     if ( dword_8B3CC8 < 0 ) /*0x4d0e2f*/
       return (int)this; /*0x4d0e2f*/
   }
   else
   {
-    v16 = 10; /*0x4d0e24*/
+    v16 = (gamemd::AbstractClass *)(10);
   }
   v17 = (unsigned int *)__2_YAPAXI_Z(8 * (v16 + dword_8B3CC8)); /*0x4d0e44*/
   if ( v17 ) /*0x4d0e4b*/

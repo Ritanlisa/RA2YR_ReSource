@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4E0440
 namespace gamemd {
@@ -50,7 +51,7 @@ int AbstractClassVector::Construct( IUnknown * aP1, IUnknown * aP2)
 {
 
   this->AbstractClassVector_field_0x04 = (unsigned char)(0);
-  this->AbstractClassVector_field_0x08 = aP1; /*0x4e0e8e*/
+  this->AbstractClassVector_field_0x08 = (unsigned char)(aP1);
   LOBYTE(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0e91*/
   BYTE1(this->AbstractClassVector_field_0x0C) = 0; /*0x4e0e95*/
   *(unsigned int *)this->__pad_0 = &VectorClass<AbstractClass *>::`vftable'; /*0x4e0e98*/

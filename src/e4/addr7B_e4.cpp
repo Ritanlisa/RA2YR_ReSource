@@ -59,6 +59,7 @@
 #include "e4/classes/Socket_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x7B0310
 namespace gamemd {
@@ -579,7 +580,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   size_t v11; // ecx
   unsigned char *v12; // eax
   const char *v13; // edi
-  size_t v14; // esi
+  void * v14;
   char *v15; // eax
   char *v16; // ebp
   const char *v17; // esi
@@ -602,7 +603,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
     ++v5; /*0x7b613e*/
   }
   vtable0 = (unsigned char *)((const char *)(this->AbstractClass));
-  v20 = (int)((void *)(v5));
+  v20 = (void *)((int)((void *)(v5)));
   if ( *((unsigned char *)this->AbstractClass + v5) == 13 && vtable0[v5 + 1] == 10 ) /*0x7b6152*/
     v20 = v5 + 1; /*0x7b6155*/
   v10 = &vtable0[a2]; /*0x7b615d*/
@@ -619,10 +620,10 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   if ( v10 ) /*0x7b619b*/
     strcpy((char *)*a3, v10); /*0x7b61b3*/
   v13 = &g_INI_DefaultBuffer; /*0x7b61c4*/
-  v14 = v20 - a2 + 1; /*0x7b61c9*/
+  v14 = (unsigned int)(v20)- a2 + 1; /*0x7b61c9*/
   if ( *a3 ) /*0x7b61c0*/
     v13 = (const char *)*a3; /*0x7b61ce*/
-  v15 = (char *)__2_YAPAXI_Z(v20 - a2 + 2); /*0x7b61d4*/
+  v15 = (char *)__2_YAPAXI_Z((unsigned int)(v20)- a2 + 2); /*0x7b61d4*/
   v16 = v15; /*0x7b61d9*/
   *v15 = 0; /*0x7b61e0*/
   if ( v13 ) /*0x7b61e4*/
@@ -645,7 +646,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
     strcpy((char *)*a3, v17); /*0x7b6253*/
   if ( v16 ) /*0x7b625e*/
     __3_YAXPAX_Z(v16); /*0x7b6261*/
-  return v20 + 1; /*0x7b6104*/
+  return (unsigned int)(v20)+ 1; /*0x7b6104*/
 
 }
 }
@@ -780,7 +781,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   const wchar_t *v11; // esi
   int v12; // eax
   unsigned short *v13; // eax
-  size_t v14; // esi
+  void * v14;
   const wchar_t *v15; // ebp
   wchar_t *v16; // eax
   wchar_t *v17; // ebx
@@ -805,10 +806,10 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     ++v5; /*0x7b7c54*/
   }
   v9 = (unsigned short *)(this->AbstractClass);
-  v21 = (int)(v5);
+  v21 = (void *)((int)(v5));
   if ( *((unsigned short *)(unsigned int)(this->AbstractClass)+ v5) == 13 ) /*0x7b7c62*/
   {
-    v10 = (int)(v5 + 1);
+    v10 = ((unsigned int)(void)*)((int)(v5 + 1));
     if ( v9[v10] == 10 ) /*0x7b7c6a*/
       v21 = v10; /*0x7b7c6c*/
   }
@@ -825,7 +826,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   *v13 = 0; /*0x7b7cb1*/
   if ( v11 ) /*0x7b7cb6*/
     wcscpy((wchar_t *)*a3, v11); /*0x7b7cbc*/
-  v14 = v21 - a2 + 1; /*0x7b7ccd*/
+  v14 = (unsigned int)(v21)- a2 + 1; /*0x7b7ccd*/
   v15 = &g_TypeClass_DefaultString; /*0x7b7cce*/
   if ( *a3 ) /*0x7b7cc8*/
     v15 = (const wchar_t *)*a3; /*0x7b7cd7*/
@@ -852,7 +853,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     wcscpy((wchar_t *)*a3, v18); /*0x7b7d53*/
   if ( v17 ) /*0x7b7d5d*/
     __3_YAXPAX_Z(v17); /*0x7b7d60*/
-  return v21 + 1; /*0x7b7c1e*/
+  return (unsigned int)(v21)+ 1; /*0x7b7c1e*/
 
 }
 }

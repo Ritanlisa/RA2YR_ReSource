@@ -46,6 +46,12 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
 
   int64_t v3; // rax
   uint64_t v4; // kr00_8
@@ -125,6 +131,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
 // 0x403A80
 namespace gamemd { 
 int ObjectClass::DumpAudioDeviceDebug(unsigned int * a1, void (* a2) {
+    unsigned int v16 = 0;  /* G37 hoist */
     unsigned int v16 = 0;  /* G37 hoist */
     unsigned int v16 = 0;  /* G37 hoist */
     unsigned int v16 = 0;  /* G37 hoist */

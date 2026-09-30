@@ -16,6 +16,7 @@
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/AudioFileClass_e4.hpp"
 #include "e4/classes/Mixer_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4F4780
 namespace gamemd {
@@ -33,12 +34,12 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
   int v17; // edi
   int v18; // eax
   int v19; // ecx
-  unsigned int v20;
+  void * v20;
   LONG v21; // edi
   LONG v22; // ebx
-  int v23; // eax
+  void * v23;
   double v24; // st7
-  LPPERSISTSTREAM v25; // edi
+  void * v25;
   int v26; // eax
   double v27; // st7
   LONG v28; // ebx
@@ -62,7 +63,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
   int v46; // [esp+5Eh] [ebp-20h] BYREF
   LONG v47; // [esp+62h] [ebp-1Ch]
   LONG v48; // [esp+66h] [ebp-18h]
-  void * v49;
+  unsigned int v49;
   struct tagRECT Rect; // [esp+6Eh] [ebp-10h] BYREF
   void * v51;
 
@@ -133,25 +134,25 @@ LABEL_18:
                 v18 = (*(int (**)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48d6*/
             }
             v13 = (unsigned int)(dword_87F7F0);
-            v19 = v18 + v45; /*0x4f48eb*/
+            v19 = (unsigned int)(v18 + v45);
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = (void *)((LONG)(*(unsigned int *)(a8)));
+          v20 = (unsigned int)((void *)((LONG)(*(unsigned int *)(a8))));
           v21 = (LONG)((int)(a8[1]));
-          v22 = (void *)(a8[2]);
-          Rect.right = a8[3]; /*0x4f4904*/
-          v49 = v20; /*0x4f4910*/
+          v22 = (LONG)((void *)(a8[2]));
+          Rect.right = (void *)(a8[3]);
+          v49 = (void *)(v20);
           Rect.left = v21; /*0x4f4914*/
           Rect.top = v22; /*0x4f4918*/
           if ( g_TacticalClass_Instance /*0x4f4934*/
             && (((unsigned int *)(g_TacticalClass_Instance))[48].__tail_0
              || ((unsigned int *)(g_TacticalClass_Instance))[49].__tail_0 != (struct IPersistStreamVtbl *)1072693248) )
           {
-            v51 = (int)((LPPERSISTSTREAM)((*(int (**)(int))(*(unsigned int *)a1 + 124))(a1)));
-            v23 = (void *)((*(int (**)(int))(*(unsigned int *)a1 + 128))(a1));
-            v24 = (void *)((double)v51);
-            v25 = g_TacticalClass_Instance; /*0x4f4953*/
+            v51 = (void *)((int)((LPPERSISTSTREAM)((*(int (**)(int))(*(unsigned int *)a1 + 124))(a1))));
+            v23 = (int)((void *)((*(int (**)(int))(*(unsigned int *)a1 + 128))(a1)));
+            v24 = (LPPERSISTSTREAM)((void *)((double)v51));
+            v25 = (LPPERSISTSTREAM)((void *)(g_TacticalClass_Instance));
             *(unsigned int *)v38 = v23; /*0x4f4959*/
             v42 = v24 / *(double *)&((unsigned int *)(g_TacticalClass_Instance))[48].__tail_0; /*0x4f4965*/
             v26 = Math::RoundToInt((v24 - v42) * 0.5); /*0x4f4973*/

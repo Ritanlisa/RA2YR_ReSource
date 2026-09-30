@@ -239,7 +239,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject( IUnknown * aP1, IUnknown
 
   v3 = (int)(a3);
   v4 = (int)(aP1);
-  result = InfantryClass::GetCursorOverObject((FootClass *)this, (int)aP1, (char)a3); /*0x417cd3*/
+  result = (int)(InfantryClass::GetCursorOverObject((FootClass *)this, (int)aP1, (char)a3));
   v7 = result; /*0x417cd8*/
   if ( result == 8 ) /*0x417cdd*/
     return result; /*0x417cdd*/

@@ -19,6 +19,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/Flag_e4.hpp"
+#include "e4/classes/Weapon_e4.hpp"
 
 // 0x773600
 namespace gamemd {
@@ -108,7 +109,7 @@ int WebBrowser::ShowDialog()
   v3 = result; /*0x773ed4*/
   if ( result ) /*0x773ed8*/
   {
-    dwNewLong = 0; /*0x773ee7*/
+    dwNewLong = (unsigned int *)(0);
     SetWindowLongA(result, 8, (LONG)&dwNewLong); /*0x773eef*/
     LOBYTE(v4) = 1; /*0x773ef5*/
     SetDialogActiveFlag(v3, v4); /*0x773ef9*/

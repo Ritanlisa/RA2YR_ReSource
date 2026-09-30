@@ -47,7 +47,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   int v8; // eax
   int v9; // eax
   int v10; // eax
-  unsigned int v11; // eax
+  ShapeButtonClass * v11;
   ShapeButtonClass *v12; // eax
   char *v13; // edi
   int i; // edi
@@ -157,8 +157,8 @@ LABEL_6:
     }
     else if ( v10 == dword_B0CC1C ) /*0x6d078a*/
     {
-      v11 = (gamemd::ShapeButtonClass *)(((unsigned int *)(g_ObjectTrackingPool))[dword_B0CC1C]);
-      if ( v11 > 0x18 ) /*0x6d0795*/
+      v11 = (gamemd::ShapeButtonClass *)((unsigned int)((gamemd::ShapeButtonClass *)(((unsigned int *)(g_ObjectTrackingPool))[dword_B0CC1C])));
+      if ( v11 > (gamemd::ShapeButtonClass *)(0x18) ) /*0x6d0795*/
         v12 = 0; /*0x6d07a9*/
       else
         v12 = &stru_B0C1C0 + 8 * v11; /*0x6d07a2*/

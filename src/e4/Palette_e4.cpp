@@ -18,6 +18,7 @@
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/CommandClass_e4.hpp"
+#include "e4/classes/OverlayTypeClass_e4.hpp"
 
 // 0x4355B0
 namespace gamemd {

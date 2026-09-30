@@ -277,7 +277,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
     v5 = (int)((unsigned int *)(*((unsigned int *)&this->EventClass_field_0x28 + result) + 76));
     *v5 = (int)(*aP2);
     v5[1] = (int)(aP2[1]);
-    result = aP2[2]; /*0x5422ae*/
+    result = (int)(aP2[2]);
     v5[2] = result; /*0x5422b1*/
   }
   return result; /*0x5422b4*/

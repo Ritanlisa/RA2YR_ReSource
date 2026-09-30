@@ -599,9 +599,9 @@ LABEL_16:
       dword_B77DD4 = (uint8_t)*(unsigned int *)(a3 + 32); /*0x7a7ddd*/
     byte_B77E26 = 0; /*0x7a7dea*/
     byte_B77E27 = 1; /*0x7a7df1*/
-    Network::SyncPlayerList(v17); /*0x7a7df8*/
+    ((Network *)(v17))->SyncPlayerList(); /*0x7a7df8*/
     g_NetworkLobbyState = 2; /*0x7a7e03*/
-    Debug::Log(); /*0x7a7e0f*/
+    this->Debug::Log(); /*0x7a7e0f*/
     v15 = 0; /*0x7a7e1d*/
     if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a7e21*/
     {
@@ -617,7 +617,7 @@ LABEL_16:
         if ( v15 >= g_WOL_UserList.owningHouseIndex ) /*0x7a7e4e*/
           goto LABEL_41; /*0x7a7e4e*/
       }
-      if ( &g_WebBrowserConfig != (ObjectClass *)-36 ) /*0x7a7e59*/
+      if ( &g_WebBrowserConfig != (int *)((ObjectClass *))-36 ) /*0x7a7e59*/
         BulkCharToWide(word_A8E258, (uint8_t *)&g_WebBrowserConfig.ambientSoundController[3], -1); /*0x7a7e67*/
     }
 LABEL_41:

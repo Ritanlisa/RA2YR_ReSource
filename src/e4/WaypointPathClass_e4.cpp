@@ -23,6 +23,8 @@ void WaypointPathClass::Init()
     unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
 
   int v2; // eax
 

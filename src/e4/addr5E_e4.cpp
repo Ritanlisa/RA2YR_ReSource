@@ -64,7 +64,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
   v3 = (wchar_t *)((wint_t *)((wchar_t *)((wint_t *)((wchar_t *)(a1)))));
-  v4 = (unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd))))))))))))))))))))));
+  v4 = (unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd))))))))))))))))))))))));
   v5 = (wint_t *)(wcslen(a1));
   v13 = 18; /*0x5e2842*/
   ScreenDialogToClient(hWnd, &Rect); /*0x5e284a*/

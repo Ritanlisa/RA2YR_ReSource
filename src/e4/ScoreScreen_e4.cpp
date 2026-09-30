@@ -102,7 +102,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   this->ScoreScreen_field_0x04 = (unsigned int *)(20);
   this->ScoreScreen_field_0x14 = (unsigned int *)(a2);
   this->ScoreScreen_field_0x08 = (unsigned int *)(35);
-  return this->__pad_0; /*0x690b9a*/
+  return (unsigned int *)(this->__pad_0);
 
 }
 } // namespace gamemd
@@ -177,9 +177,9 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
       *((unsigned int *)this + 236) = v25.DeleteAndZero_field_0x08; /*0x771390*/
       *((unsigned int *)this + 237) = a6; /*0x771393*/
     }
-    v14 = (int)((gamemd::ScoreScreen *)(*((unsigned int *)this + 242)));
+    v14 = (gamemd::ScoreScreen *)((int)((gamemd::ScoreScreen *)(*((unsigned int *)this + 242))));
     v15 = (gamemd::ScoreScreen *)((unsigned int *)this + 24);
-    if ( *((unsigned int *)this + 244) < v14 /*0x7713c7*/
+    if ( *((unsigned int *)this + 244) < (unsigned int)(v14) /*0x7713c7*/
       || (*((unsigned char *)this + 973) || !v14)
       && (v16 = *((unsigned int *)this + 245), v16 > 0)
       && (*(uint8_t (**)(ScoreScreen *, int, unsigned int))(*(unsigned int *)v15->__pad_0 + 8))(

@@ -16,22 +16,22 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
 {
 
   int result; // eax
-  unsigned int v11;
+  Stream * v11;
   unsigned short *v13; // eax
   unsigned short *v14; // [esp+18h] [ebp+14h]
 
   result = a4; /*0x493930*/
   if ( a4 > 0 ) /*0x49393b*/
   {
-    v11 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)));
+    v11 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)))));
     v14 = (unsigned short *)a4; /*0x493952*/
     do /*0x4939c4*/
     {
       if ( argC < (uint16_t)*a5 && *a2 ) /*0x493967*/
       {
         *a1 = (unsigned short)((gamemd::Stream *)(3 * (this->m_8 & (*a1 >> 2)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2))));
-        *a5 = (gamemd::Stream *)(argC);
-        v11 = g_ZBufferDescriptor; /*0x49399c*/
+        *a5 = (unsigned short)((gamemd::Stream *)(argC));
+        v11 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a1; /*0x4939a6*/
       ++a2; /*0x4939aa*/
@@ -95,22 +95,22 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
 {
 
   int result; // eax
-  unsigned int v11;
+  Stream * v11;
   unsigned short *v13; // eax
   unsigned short *v14; // [esp+18h] [ebp+14h]
 
   result = a4; /*0x493b90*/
   if ( a4 > 0 ) /*0x493b9b*/
   {
-    v11 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)));
+    v11 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)))));
     v14 = (unsigned short *)a4; /*0x493bb2*/
     do /*0x493c24*/
     {
       if ( argC < (uint16_t)*a5 && *a2 ) /*0x493bc7*/
       {
         *a1 = (unsigned short)((gamemd::Stream *)((this->m_8 & (*a1 >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2))));
-        *a5 = (gamemd::Stream *)(argC);
-        v11 = g_ZBufferDescriptor; /*0x493bfc*/
+        *a5 = (unsigned short)((gamemd::Stream *)(argC));
+        v11 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a1; /*0x493c06*/
       ++a2; /*0x493c0a*/

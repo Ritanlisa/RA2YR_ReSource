@@ -12,6 +12,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/TemporalClass_e4.hpp"
 
 // 0x718000
 TeleportLocomotionClass::TeleportLocomotionClass()

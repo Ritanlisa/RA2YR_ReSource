@@ -138,7 +138,7 @@ int TeamClass::DeployUnit(int a2, int a3)
   int ParasiteClass_field_34; // eax
   int v8; // ecx
   int *v9; // eax
-  int v10; // ecx
+  unsigned int * v10;
   int v11; // edx
   unsigned int *Value; // eax
   int v13; // eax
@@ -163,20 +163,20 @@ int TeamClass::DeployUnit(int a2, int a3)
       *(unsigned int *)this->__pad_28 = 0; /*0x62a297*/
       return result; /*0x62a2a0*/
     }
-    v6 = *(unsigned int *)&this->__pad_28[4]; /*0x62a2a3*/
+    v6 = *(unsigned int *)&this-((unsigned int *)(>__pad_28))[4]; /*0x62a2a3*/
     ParasiteClass_field_34 = this->ParasiteClass_field_34; /*0x62a2a6*/
     if ( v6 != -1 ) /*0x62a2ac*/
     {
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v6 >= ParasiteClass_field_34 ) /*0x62a2b8*/
       {
-LABEL_12: v9 = (unsigned int)((int *)((unsigned int *)(Object::CalculateObjectPlacementPosition((Object *)this, v18))));
+LABEL_12: v9 = (int *)((unsigned int)((int *)((unsigned int *)(Object::CalculateObjectPlacementPosition((Object *)this, v18)))));
         v17[0] = (unsigned int *)(*v9);
-        v10 = (unsigned int *)(v9[1]);
-        v17[1] = v10; /*0x62a30a*/
-        v11 = v9[2]; /*0x62a30e*/
+        v10 = (int)((unsigned int *)(v9[1]));
+        v17[1] = (unsigned int *)(v10);
+        v11 = (unsigned int *)(v9[2]);
         ++dword_A8E7AC; /*0x62a311*/
         v17[2] = v11; /*0x62a31d*/
-        if ( v17[0] == dword_AC4948 && v10 == dword_AC494C && v11 == dword_AC4950 /*0x62a364*/
+        if ( v17[0] == dword_AC4948 && v10 == (unsigned int *)(dword_AC494C) && v11 == dword_AC4950 /*0x62a364*/
           || (Value = ProgressTimer::GetValue((ProgressTimer *)(*(unsigned int *)this->__pad_28 + 904), &a2),
               !(*(uint8_t (**)(int, unsigned int *, unsigned int))(*(unsigned int *)this->creationFrame + 216))(
                  this->creationFrame,
@@ -292,7 +292,7 @@ AbstractClass * * TeamClass::DestroyAllMembers(unsigned int * Block, TechnoClass
     goto LABEL_7; /*0x6340c0*/
   vtable1 = (unsigned int ***)Block->?; /*0x6340c2*/
   v6 = vtable1; /*(unsigned int *)(0x6340c9)*/
-  while ( **(unsigned int *)(v6) != aP1 ) /*0x6340d0*/
+  while ( **(unsigned int *)(v6) != (unsigned int)(aP1) ) /*0x6340d0*/
   {
     ++v3; /*0x6340d2*/
     ++v6; /*0x6340d3*/

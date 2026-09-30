@@ -37,15 +37,15 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
     v8 = v7; /*0x5d4b4b*/
   if ( a5 ) /*0x5d4b53*/
   {
-    v9 = (int)(v8);
-    if ( v8 >= (gamemd::CampaignScore *)(a3) ) /*0x5d4b7b*/
+    v9 = (gamemd::CampaignScore *)((int)(v8));
+    if ( v8 >= (unsigned int)((gamemd::CampaignScore *))(a3) ) /*0x5d4b7b*/
     {
       v11 = (wchar_t *)(&aP1[v8 - 1]);
       while ( !*v11 || *v11 > 0x20u ) /*0x5d4b8d*/
       {
         --v9; /*0x5d4b8f*/
         --v11; /*0x5d4b90*/
-        if ( v9 < a3 ) /*0x5d4b95*/
+        if ( v9 < (gamemd::CampaignScore *)(a3) ) /*0x5d4b95*/
           goto LABEL_17; /*0x5d4b95*/
       }
       goto LABEL_18; /*0x5d4b8d*/
@@ -53,7 +53,7 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
   }
   else
   {
-    v9 = a3; /*0x5d4b57*/
+    v9 = (gamemd::CampaignScore *)(a3);
     if ( a3 <= (int)(v8) ) /*0x5d4b59*/
     {
       v10 = (wchar_t *)(&aP1[a3 - 1]);
@@ -61,14 +61,13 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
       {
         ++v9; /*0x5d4b6d*/
         ++v10; /*0x5d4b6e*/
-        if ( v9 > (int)(v8) ) /*0x5d4b73*/
+        if ( v9 > (gamemd::CampaignScore *)((int))(v8) ) /*0x5d4b73*/
           goto LABEL_17; /*0x5d4b73*/
       }
       goto LABEL_18; /*0x5d4b6b*/
     }
   }
-LABEL_17:
-  v9 = a3; /*0x5d4b97*/
+LABEL_17: v9 = (gamemd::CampaignScore *)(a3);
 LABEL_18:
   if ( a0 ) /*0x5d4b9f*/
   {

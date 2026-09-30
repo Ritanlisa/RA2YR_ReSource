@@ -88,6 +88,8 @@ int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, H
 {
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v28 = 0;  /* G37 hoist */
     unsigned int v26 = 0;  /* G37 hoist */
     unsigned int v25 = 0;  /* G37 hoist */

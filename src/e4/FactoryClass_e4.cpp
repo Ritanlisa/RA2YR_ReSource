@@ -200,7 +200,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   {
     v5 = (int)(*((unsigned int *)this + 18));
     v6 = (int)(*((unsigned int *)this + 20));
-    v7 = (char *)this + 64; /*0x4c9cf9*/
+    v7 = (int)((char *)this + 64);
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)

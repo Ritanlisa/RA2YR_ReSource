@@ -283,7 +283,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
       if ( v8 != -1 ) /*0x65cf90*/
       {
 LABEL_20: Handle = (void *)(this->Handle);
-        result = v8 - (unsigned int)Handle; /*0x65cfab*/
+        result = (void *)(v8 - (unsigned int)Handle);
         if ( result >= 0 ) /*0x65cfad*/
           goto LABEL_27; /*0x65cfad*/
         if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65cfb3*/
@@ -292,9 +292,9 @@ LABEL_20: Handle = (void *)(this->Handle);
           if ( v13 != -1 ) /*0x65cfd9*/
           {
 LABEL_26: Handle = (void *)(this->Handle);
-            result = (int)((void *)(v13 - (unsigned int)Handle));
+            result = (void *)((int)((void *)(v13 - (unsigned int)Handle)));
 LABEL_27: v16 = (void *)(this->FileName);
-            if ( result > (int)v16 ) /*0x65cffb*/
+            if ( result > (void *)((int))v16 ) /*0x65cffb*/
             {
               v17 = (LONG)Handle + (unsigned int)v16; /*0x65cfff*/
               if ( (*(uint8_t (**)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d003*/
@@ -320,7 +320,7 @@ LABEL_27: v16 = (void *)(this->FileName);
                 return -(int)this->Handle; /*0x65d021*/
               }
             }
-            return result; /*0x65d024*/
+            return (int)(result);
           }
           v14 = *(unsigned int *)this->FileClass; /*0x65cfde*/
           v25 = *(unsigned int *)&this->FileNameAllocated; /*0x65cfe0*/
@@ -372,8 +372,8 @@ LABEL_27: v16 = (void *)(this->FileName);
     {
       v21 = 0; /*0x65d097*/
     }
-    result = SetFilePointer(*(HANDLE *)this->FileTimeDateLo, lDistanceToMove, 0, v21); /*0x65d0a5*/
-    if ( result == -1 ) /*0x65d0ae*/
+    result = (void *)(SetFilePointer(*(HANDLE *)this->FileTimeDateLo, lDistanceToMove, 0, v21));
+    if ( result == (void *)(-1) ) /*0x65d0ae*/
     {
       v22 = *(unsigned int *)this->FileClass; /*0x65d0b3*/
       v27 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0b5*/
@@ -391,7 +391,7 @@ LABEL_27: v16 = (void *)(this->FileName);
       *(unsigned int *)&this->FileNameAllocated);
     return 0; /*0x65d076*/
   }
-  return result; /*0x65d020*/
+  return (int)(result);
 
 }
 } // namespace gamemd

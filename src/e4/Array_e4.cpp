@@ -24,8 +24,8 @@ int Array::GetClamped(CheckListClass * aP1)
   result = *((unsigned int *)this + 17); /*0x557ac0*/
   if ( result ) /*0x557ac5*/
   {
-    v3 = (unsigned int)((gamemd::CheckListClass *)((int)(aP1)));
-    v4 = (int)((gamemd::CheckListClass *)(result - 1));
+    v3 = (gamemd::CheckListClass *)((unsigned int)((gamemd::CheckListClass *)((int)(aP1))));
+    v4 = (gamemd::CheckListClass *)((int)((gamemd::CheckListClass *)(result - 1)));
     if ( aP1 >= (gamemd::CheckListClass *)(v4) ) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
     return *(unsigned int *)(*((unsigned int *)this + 14) + 4 * v3); /*0x557ad8*/
@@ -400,16 +400,16 @@ namespace gamemd {
 void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 {
 
-  int v2; // ecx
+  unsigned int * v2;
   int v3; // edx
-  unsigned int v4;
+  unsigned int * v4;
   int v5; // eax
 
   if ( aP0 ) /*0x55b887*/
   {
     if ( (*(int (**)(int))(*(unsigned int *)aP0 + 44))(aP0) == 44 ) /*0x55b893*/
     {
-      v2 = dword_8B40D8; /*0x55b895*/
+      v2 = (unsigned int *)(dword_8B40D8);
       v3 = 0; /*0x55b89b*/
       if ( dword_8B40D8 > 0 ) /*0x55b89f*/
       {
@@ -418,22 +418,22 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
         {
           if ( aP0 == (gamemd::AbstractClass *)(((unsigned int *)(v4))[v3]) ) /*0x55b8ab*/
           {
-            if ( v3 < v2 ) /*0x55b8af*/
+            if ( v3 < (int)(v2) ) /*0x55b8af*/
             {
               --v2; /*0x55b8b1*/
               v5 = v3; /*0x55b8b2*/
               for ( dword_8B40D8 = v2; v5 < dword_8B40D8; ++v5 ) /*0x55b8bc*/
               {
                 ((unsigned int *)(v4))[v5] = (unsigned int *)(v4[v5 + 1]);
-                v2 = (unsigned int *)(dword_8B40D8);
-                v4 = dword_8B40CC; /*0x55b8cb*/
+                v2 = (int)((unsigned int *)(dword_8B40D8));
+                v4 = (unsigned int *)(dword_8B40CC);
               }
             }
             --v3; /*0x55b8d6*/
           }
           ++v3; /*0x55b8d7*/
         }
-        while ( v3 < v2 ); /*0x55b8da*/
+        while ( v3 < (int)(v2) ); /*0x55b8da*/
       }
     }
   }

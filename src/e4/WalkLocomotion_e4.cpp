@@ -251,7 +251,7 @@ unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2
   v4 = (int)(*aP3);
   v5 = (int)(dword_7F2A48[3 * (int)this->WalkLocomotion_field_0x58]);
   v6 = (int)(*aP2);
-  v7 = aP2[1]; /*0x6a3dd1*/
+  v7 = (int)(aP2[1]);
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/
   {
     v6 = (int)(aP2[1]);

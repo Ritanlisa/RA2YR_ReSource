@@ -71,7 +71,7 @@ int GadgetGrid::RemoveItem(int a2)
 {
 
   GadgetGrid * v3;
-  int v4; // edi
+  GadgetGrid * v4;
   int v5; // eax
   int v6; // esi
   int v7; // eax
@@ -84,7 +84,7 @@ int GadgetGrid::RemoveItem(int a2)
   char v14[4]; // [esp+Ch] [ebp-4h] BYREF
 
   v3 = (gamemd::GadgetGrid *)((int)((gamemd::GadgetGrid *)(*(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 756))(a2, v14))));
-  v13 = (int16_t)((gamemd::GadgetGrid *)(HIWORD(v3)));
+  v13 = (gamemd::GadgetGrid *)((int16_t)((gamemd::GadgetGrid *)(HIWORD(v3))));
   (*(void (**)(int, int))(*(unsigned int *)a2 + 760))(a2, dword_887850); /*0x4135fb*/
   if ( ((unsigned int)(v3)& 0x8000u) == 0 ) /*0x413604*/
     v3 = (int16_t)v3; /*0x41360a*/

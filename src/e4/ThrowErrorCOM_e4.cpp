@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/TiberiumClass_e4.hpp"
 
 // 0x7DCDC0
 namespace gamemd {

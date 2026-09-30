@@ -139,7 +139,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   v74 = this; /*0x439b0b*/
   v3 = *(this + 2); /*0x439b17*/
   v4 = (float *)(this + 3); /*0x439b1a*/
-  *(double *)v72[0].__tail_0 = v3; /*0x439b22*/
+  *(double *)((unsigned int *)(v72))[0].__tail_0 = v3; /*0x439b22*/
   v6 = *((float *)this + 11); /*0x439b28*/
   v7 = *((float *)this + 7); /*0x439b2b*/
   v77 = *((float *)this + 6); /*0x439b2e*/
@@ -159,7 +159,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   if ( v3 > 0.0 ) /*0x439b71*/
   {
     JumpjetLocomotionClass::ComputeVectorLengthMetric_0((float *)v5); /*0x439b75*/
-    if ( v3 > *(double *)v72[0].__tail_0 ) /*0x439b83*/
+    if ( v3 > *(double *)((unsigned int *)(v72))[0].__tail_0 ) /*0x439b83*/
     {
       *(float *)&v61 = v3 / v3; /*0x439b8c*/
       Coord::Scale(v61, v65, unsigned int a2); /*0x439b8f*/
@@ -211,7 +211,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
           v66 = 0; /*0x439cc9*/
           goto LABEL_24; /*0x439ccd*/
         }
-        v20 = (unsigned int *)v72[0]; /*0x439ccf*/
+        v20 = (unsigned int *)((unsigned int *)(v72))[0]; /*0x439ccf*/
       }
       v66 = 1; /*0x439cd5*/
       if ( v20 ) /*0x439cda*/
@@ -266,20 +266,20 @@ LABEL_35:
   Triple::Set(v72, SLODWORD(v25), v53, *((unsigned int *)v5 + 2)); /*0x439df6*/
   v26 = Matrix3x3::TransformPoint(v86, (float *)v72, (float *)v62); /*0x439e0c*/
   ((unsigned int *)(v72))[0] = *(Triple *)v26; /*0x439e17*/
-  v72[1] = *(Triple *)(v26 + 4); /*0x439e1e*/
+  ((unsigned int *)(v72))[1] = *(Triple *)(v26 + 4); /*0x439e1e*/
   *(float *)&v58 = *(double *)v85; /*0x439e2a*/
   v73 = *(float *)(v26 + 8); /*0x439e2d*/
   Coord::Scale(v58, v63); /*0x439e31*/
   v73 = -v73; /*0x439e46*/
   v27 = (Triple *)Matrix3x3::TransformPoint(v85, (float *)v72, v64); /*0x439e51*/
   v28 = v74; /*0x439e58*/
-  v72[0] = *v27; /*0x439e5c*/
+  ((unsigned int *)(v72))[0] = *v27; /*0x439e5c*/
   v29 = (char *)(v74 + 8); /*0x439e65*/
-  v72[1] = v27[1]; /*0x439e68*/
+  ((unsigned int *)(v72))[1] = v27[1]; /*0x439e68*/
   v30 = *(float *)&v27[2]; /*0x439e6c*/
-  v31 = v72[0]; /*0x439e6f*/
+  v31 = ((unsigned int *)(v72))[0]; /*0x439e6f*/
   v73 = v30; /*0x439e79*/
-  *((float *)v5 + 1) = -*(float *)&v72[1]; /*0x439e7f*/
+  *((float *)v5 + 1) = -*(float *)&((unsigned int *)(v72))[1]; /*0x439e7f*/
   *((float *)v5 + 2) = v30; /*0x439e82*/
   *(Triple *)v5 = v31; /*0x439e87*/
   v69 = -*(float *)Function::645D00(v29, 0); /*0x439e92*/
@@ -306,8 +306,8 @@ LABEL_35:
   {
     v39 = (int)(v78);
     v40 = (int)(v79);
-    *v4 = v77; /*0x439fc3*/
-    v4[1] = v39; /*0x439fc6*/
+    *v4 = (int)(v77);
+    v4[1] = (int)(v39);
     v41 = v80; /*0x439fc9*/
     v4[2] = v40; /*0x439fcf*/
     v42 = v81; /*0x439fd2*/

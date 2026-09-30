@@ -345,7 +345,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
       CaptureManagerClass::DecideUnitFate((CaptureManagerClass *)a1, (int)v5); /*0x471eae*/
       if ( (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6 ) /*0x471ec1*/
       {
-        v21 = (int)(a3);
+        v21 = (void *)((int)(a3));
         v22 = dword_89E178 * *(unsigned int *)(*(unsigned int *)((unsigned int)(a3)+ 1312) + 3828); /*0x471ed8*/
       }
       else

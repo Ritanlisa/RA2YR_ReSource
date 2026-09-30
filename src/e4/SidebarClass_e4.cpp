@@ -333,7 +333,7 @@ int SidebarClass::Redraw(char a2)
   {
     if ( v2[((unsigned int *)(3].__pad_CD2))[1789] ) /*0x6a6cee*/
     {
-      v21 = g_DSurface_SidebarBounds; /*0x6a6d1f*/
+      v21 = (void *)(g_DSurface_SidebarBounds);
       v17 = 1; /*0x6a6d39*/
       v20 = 0; /*0x6a6d3e*/
       DrawToSurfaceSHP( /*0x6a6d42*/
@@ -403,7 +403,7 @@ int SidebarClass::Redraw(char a2)
         0,
         0,
         0);
-      v21 = (int)(v4 + *((int16_t *)dword_B0B470 + 2));
+      v21 = ((unsigned int)(void)*)((int)(v4 + *((int16_t *)dword_B0B470 + 2)));
       v20 = 0; /*0x6a6e6b*/
       DrawToSurfaceSHP( /*0x6a6e6f*/
         (int)DSurface_Sidebar,
@@ -437,7 +437,7 @@ int SidebarClass::Redraw(char a2)
     ShapeButton::Draw(&g_SidebarFlag, v17); /*0x6a6ec2*/
     if ( *(unsigned int *)&v2[((unsigned int *)(3].__pad_CD2))[1774] ) /*0x6a6ec7*/
     {
-      v21 = g_SidebarBounds; /*0x6a6eef*/
+      v21 = (void *)(g_SidebarBounds);
       v14 = *(unsigned int *)&v2[((unsigned int *)(3].__pad_CD2))[1770]; /*0x6a6f0a*/
       v20 = 0; /*0x6a6f18*/
       DrawToSurfaceSHP( /*0x6a6f1c*/
@@ -457,7 +457,7 @@ int SidebarClass::Redraw(char a2)
         0,
         0,
         0);
-      v21 = g_SidebarBounds; /*0x6a6f3a*/
+      v21 = (void *)(g_SidebarBounds);
       v15 = *(unsigned int *)&v2[((unsigned int *)(3].__pad_CD2))[1770]; /*0x6a6f55*/
       v20 = 0; /*0x6a6f63*/
       DrawToSurfaceSHP( /*0x6a6f67*/
@@ -477,7 +477,7 @@ int SidebarClass::Redraw(char a2)
         0,
         0,
         0);
-      v21 = g_SidebarBounds; /*0x6a6f85*/
+      v21 = (void *)(g_SidebarBounds);
       v16 = *(unsigned int *)&v2[((unsigned int *)(3].__pad_CD2))[1770]; /*0x6a6fa0*/
       v20 = 0; /*0x6a6fae*/
       DrawToSurfaceSHP( /*0x6a6fb2*/

@@ -19,6 +19,7 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Bounds_e4.hpp"
 #include "e4/classes/NeuronClass_e4.hpp"
+#include "e4/classes/Vector3_e4.hpp"
 
 // 0x5B20F0
 namespace gamemd {
@@ -102,7 +103,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   double v94[3]; // [esp+90h] [ebp-18h] BYREF
 
   _ESI = (unsigned int)(a1);
-  v11 = (unsigned int)(*aP3 == (void *)g_MissionQueueFrame.localVariables[291]);
+  v11 = (unsigned int)((unsigned int)(*aP3 == (void *)g_MissionQueueFrame.localVariables[291]));
   *(unsigned int *)v88.__pad_0 = a1; /*0x5b2110*/
   if ( v11 /*0x5b2134*/
     && aP3[1] == (void *)g_MissionQueueFrame.localVariables[292]
@@ -252,7 +253,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
           *(unsigned int *)a2->__pad_0 + v33,
           a2->Vector3_field_0x04 + HIDWORD(v92),
           a2->Vector3_field_0x08 + v35);
-  v37 = (unsigned int)((void *)(v36[1]));
+  v37 = (void *)((unsigned int)((void *)(v36[1])));
   v38 = v36[2]; /*0x5b23b5*/
   *(unsigned int *)a2->__pad_0 = *v36; /*0x5b23b8*/
   a2->Vector3_field_0x04 = v37; /*0x5b23be*/

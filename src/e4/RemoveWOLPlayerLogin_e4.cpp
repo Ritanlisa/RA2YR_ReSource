@@ -29,7 +29,7 @@ void E4Recv_7AE830::sub_7AE830()
   {
     vtable0 = (int *)((unsigned int)((int *)this->AbstractClass));
     vtable3 = (unsigned int)((char *)this->?);
-    v13 = (unsigned int)((int *)this->AbstractClass);
+    v13 = (int *)((unsigned int)((int *)this->AbstractClass));
     this->? = (void *)(vtable2 >> 1); /*0x7ae85c*/
     this->? = vtable3 - 1; /*0x7ae864*/
     v5 = (void *)__2_YAPAXI_Z(4 * (vtable2 >> 1)); /*0x7ae86f*/

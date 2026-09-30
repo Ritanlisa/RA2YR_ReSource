@@ -28,6 +28,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
     unsigned int v5 = 0;  /* G37 hoist */
     unsigned int v5 = 0;  /* G37 hoist */
     unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
 
   HWND v5; // esi
   HWND DlgItem; // ebx
@@ -48,7 +49,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
   ObjectClass v22[59]; // [esp+Ch] [ebp-2818h] BYREF
   char *v23; // [esp+2838h] [ebp+14h]
 
-  Debug::Log(); /*0x7a3da1*/
+  this->Debug::Log(); /*0x7a3da1*/
   dword_B77DF0 = (int)a3; /*0x7a3dba*/
   if ( a3 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/
@@ -66,7 +67,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
   }
   v21 = (unsigned int)(1);
   v20 = (unsigned int)(0);
-  v5 = (HWND)Dialog::FindByHandle((Dialog *)0x10F); /*0x7a3e4a*/
+  v5 = (unsigned int)((HWND)Dialog::FindByHandle((Dialog *)0x10F));
   if ( v5 /*0x7a3e7a*/
     || (v5 = (HWND)Dialog::FindByHandle((Dialog *)0x11D), v20 = v5 != 0, v5)
     || (v21 = 0, (v5 = (HWND)Dialog::FindByHandle((Dialog *)0x114)) != 0) )
@@ -87,7 +88,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
       String::Assign_Alt((String *)&dword_B73E40, lParama); /*0x7a3eeb*/
       String::Assign_Alt((String *)&g_WebBrowserConfig, v23); /*0x7a3efd*/
       v7 = GetDlgItem(v5, 1836); /*0x7a3f0f*/
-      v8 = String::GetOrEmpty_Alt((String *)&g_WebBrowserConfig); /*0x7a3f11*/
+      v8 = ((String *)((String *)&g_WebBrowserConfig))->GetOrEmpty_Alt(); /*0x7a3f11*/
       SendMessageA(v7, 0x4B4u, 0, (LPARAM)v8); /*0x7a3f1f*/
       LOBYTE(dword_84A238) = 1; /*0x7a3f29*/
       v9 = GetDlgItem(v5, 1337); /*0x7a3f30*/
@@ -137,7 +138,7 @@ LABEL_16:
     if ( !dword_B77DC8 ) /*0x7a403c*/
       CloseDialog(v16, 0); /*0x7a4042*/
   }
-  Current = (HWND)Dialog::GetCurrent(); /*0x7a4047*/
+  Current = (HWND)this->Dialog::GetCurrent(); /*0x7a4047*/
   v18 = GetDlgItem(Current, 1344); /*0x7a4052*/
   if ( v18 ) /*0x7a4058*/
     SetFocus(v18); /*0x7a405b*/
@@ -197,7 +198,7 @@ int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
   {
     v5 = *v3; /*0x7ac8dd*/
     v6 = *v3 == 0; /*(char *)(0x7ac8e6)*/
-    if ( !*v3 || *v5 == *(unsigned int *)(a3) && v5[1] == a3[1] && v5[2] == a3[2] && v5[3] == a3[3] ) /*0x7ac910*/
+    if ( !*v3 || *(char *)(v5) == *(unsigned int *)(a3) && v5[1] == a3[1] && v5[2] == a3[2] && v5[3] == a3[3] ) /*0x7ac910*/
       break; /*0x7ac910*/
 LABEL_17:
     v8 = v3[5]; /*0x7ac933*/
@@ -241,8 +242,8 @@ AbstractClass * * ComStreamClass::readData()
   if ( LOBYTE(this->ComStreamClass_field_0x14) != 1 ) /*0x7ae0e8*/
   {
     ComStreamClass_field_0x08 = (unsigned int)(this->ComStreamClass_field_0x08);
-    v3 = *(unsigned int **)this->__pad_0; /*0x7ae0f3*/
-    v4 = this->ComStreamClass_field_0x0C + 1; /*0x7ae0fc*/
+    v3 = (unsigned int *)((void *)(*(unsigned int **)this->__pad_0));
+    v4 = (unsigned int)(this->ComStreamClass_field_0x0C + 1);
     this->ComStreamClass_field_0x08 = 2 * ComStreamClass_field_0x08; /*0x7ae0fd*/
     v13 = v3; /*0x7ae100*/
     this->ComStreamClass_field_0x0C = v4; /*0x7ae108*/
@@ -305,9 +306,9 @@ void ComStreamClass::flushStream()
   {
     v3 = (int *)((unsigned int)(*(int **)this->__pad_0));
     ComStreamClass_field_0x0C = (unsigned int)(this->ComStreamClass_field_0x0C);
-    v13 = (unsigned int)(*(int **)this->__pad_0);
-    this->ComStreamClass_field_0x08 = ComStreamClass_field_0x08 >> 1; /*0x7aef7c*/
-    this->ComStreamClass_field_0x0C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
+    v13 = (int *)((unsigned int)(*(int **)this->__pad_0));
+    this->ComStreamClass_field_0x08 = (unsigned int)(ComStreamClass_field_0x08 >> 1);
+    this->ComStreamClass_field_0x0C = (unsigned int)(ComStreamClass_field_0x0C - 1);
     v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/
     v6 = 4 * this->ComStreamClass_field_0x08; /*0x7aef94*/
     *(unsigned int *)this->__pad_0 = v5; /*0x7aef9b*/

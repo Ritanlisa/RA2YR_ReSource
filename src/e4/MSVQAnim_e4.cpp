@@ -13,6 +13,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
 #include "e4/classes/MovieContext_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x5CD290
 namespace gamemd {

@@ -372,12 +372,12 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
   v8 = (int)((unsigned int *)(997 * v7));
   v9 = (int)((unsigned int *)(0));
   v10 = (unsigned int *)((char *)this + 4 * v8 + 5444);
-  v11 = v10 + 88; /*0x6ac6ef*/
+  v11 = (unsigned int *)(v10 + 88);
   while ( *v11 != v5 ) /*0x6ac6f4*/
   {
     ++v9; /*0x6ac6f6*/
     v11 += 13; /*0x6ac6f7*/
-    if ( v9 >= 75 ) /*0x6ac6fd*/
+    if ( v9 >= (unsigned int *)(75) ) /*0x6ac6fd*/
       goto LABEL_38; /*0x6ac6fd*/
   }
   *(unsigned int *)&v10[52 * v9 + 136] = (unsigned int)(aP2)+ *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x6ac713*/

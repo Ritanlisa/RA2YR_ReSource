@@ -36,6 +36,8 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
 
   int v3; // eax
   size_t v4; // ecx
@@ -47,7 +49,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   ObjectClass ** v10;
   ObjectClass ** v11;
   ObjectClass ** v12;
-  int v13; // edx
+  ObjectClass ** v13;
   unsigned int v15[3]; // [esp+Ch] [ebp-Ch] BYREF
   int v16; // [esp+1Ch] [ebp+4h]
 
@@ -88,13 +90,13 @@ LABEL_9:
     *((unsigned char *)this + 52) = 1; /*0x5268d3*/
   }
   v10 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 11))));
-  v11 = (int)((gamemd::ObjectClass **)(*((unsigned int *)this + 10)));
+  v11 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 10))));
   if ( v10 <= 0 ) /*0x5268df*/
     return unk_B7882C; /*0x5268df*/
   while ( 1 ) /*0x5268ec*/
   {
-    v12 = (int)((gamemd::ObjectClass **)(*(unsigned int *)(v11 + 8 * ((unsigned int)(v10)/ 2))));
-    v13 = (gamemd::ObjectClass **)(v11 + 8 * ((unsigned int)(v10)/ 2));
+    v12 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*(unsigned int *)(v11 + 8 * ((unsigned int)(v10)/ 2)))));
+    v13 = (unsigned int)((gamemd::ObjectClass **)(v11 + 8 * ((unsigned int)(v10)/ 2)));
     if ( v12 <= (gamemd::ObjectClass **)(v16) ) /*0x5268f6*/
       break; /*0x5268f6*/
     (unsigned int)(v10)/= 2; /*0x5268f8*/
@@ -104,7 +106,7 @@ LABEL_19:
   }
   if ( v12 != (gamemd::ObjectClass **)(v16) ) /*0x5268fc*/
   {
-    v11 = v13 + 8; /*0x5268fe*/
+    v11 = (gamemd::ObjectClass **)(v13 + 8);
     v10 += -1 - (unsigned int)(v10)/ 2; /*0x526906*/
     goto LABEL_19; /*0x526906*/
   }
@@ -353,7 +355,7 @@ INIClass::INIClass()
   v6 = (unsigned int)(sectionHead[1]);
   result[9] = (unsigned int)(sectionHead);
   result[8] = (unsigned int)(v6);
-  v7 = sectionHead[1]; /*0x535aff*/
+  v7 = (int *)((unsigned int)(sectionHead[1]));
   if ( v7 ) /*0x535b04*/
     *(unsigned int *)(v7 + 8) = v3; /*0x535b06*/
   sectionHead[1] = (int)v3; /*0x535b09*/

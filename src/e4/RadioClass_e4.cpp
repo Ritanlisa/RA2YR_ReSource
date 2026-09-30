@@ -99,7 +99,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
   int v9; // esi
 
   v3 = (gamemd::ObjectClass *)((int)(aP1));
-  v4 = (int)(aP2);
+  v4 = (int)((gamemd::ObjectClass *)((int)(aP2)));
   result = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {

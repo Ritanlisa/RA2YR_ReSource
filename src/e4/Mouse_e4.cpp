@@ -185,7 +185,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   int v15; // [esp+Ch] [ebp-40h] BYREF
   int v16; // [esp+10h] [ebp-3Ch]
   int v17; // [esp+14h] [ebp-38h]
-  int v18; // [esp+18h] [ebp-34h]
+  WWMouseClass * v18;
   unsigned char v19[16]; // [esp+1Ch] [ebp-30h] BYREF
   int v20[5]; // [esp+2Ch] [ebp-20h] BYREF
   int v21[3]; // [esp+40h] [ebp-Ch] BYREF
@@ -195,10 +195,10 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   if ( v5 && aP1 && *(unsigned int *)&stru_87F5F0.__pad_58[128] ) /*0x7b9418*/
   {
     v6 = (int)(*((unsigned int *)this + 20));
-    v7 = (int)((gamemd::WWMouseClass *)(*((unsigned int *)this + 21)));
+    v7 = (gamemd::WWMouseClass *)((int)((gamemd::WWMouseClass *)(*((unsigned int *)this + 21))));
     v8 = (gamemd::WWMouseClass *)((unsigned int)(aP2)+ *((unsigned int *)this + 18));
-    v9 = a4 + *((unsigned int *)this + 19); /*0x7b943e*/
-    SubFile = MixFileClass::GetSubFile(v5, *(unsigned int *)&this-((unsigned int *)(>__pad_5))[3]); /*0x7b9440*/
+    v9 = (int)(a4 + *((unsigned int *)this + 19));
+    SubFile = (int)(MixFileClass::GetSubFile(v5, *(unsigned int *)&this-((unsigned int *)(>__pad_5))[3]));
     v20[1] = v6; /*0x7b9447*/
     v20[2] = v7; /*0x7b9454*/
     v20[3] = 0; /*0x7b9458*/
@@ -208,7 +208,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     if ( aP1 == *(int **)((unsigned int)(v13)+ 36) ) /*0x7b9488*/
     {
       v15 = (int)(0);
-      v16 = 0; /*0x7b949d*/
+      v16 = (int)(0);
       v12 = (unsigned int *)((unsigned int)(v13)+ 44); /*0x7b94a6*/
       v13 = v8; /*0x7b94b8*/
       v14 = v9; /*0x7b94bc*/
@@ -220,7 +220,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
       v15 = (int)(0);
       v16 = (int)(0);
       v11 = (int)(*aP1);
-      v13 = v8; /*0x7b94e6*/
+      v13 = (gamemd::WWMouseClass *)((int)(v8));
       v14 = v9; /*0x7b94ea*/
       v17 = v6; /*0x7b94ee*/
       v18 = v7; /*0x7b94f2*/

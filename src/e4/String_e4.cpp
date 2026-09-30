@@ -420,7 +420,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   }
   v10 = (char *)((const char *)((char *)(v4 - 1)));
   v11 = (const char *)((unsigned int)((const char *)(v21 + *(unsigned int *)this->__pad_0)));
-  Stra = (unsigned int)(v10);
+  Stra = (char *)((unsigned int)(v10));
   if ( *aP3 ) /*0x7b5fc3*/
     __3_YAXPAX_Z(*aP3); /*0x7b5fca*/
   *(unsigned int *)aP3 = (const char *)(0);
@@ -474,7 +474,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   int v8; // eax
   int v9; // ebp
   int v10; // eax
-  int v11; // ebx
+  const wchar_t * v11;
   const wchar_t *v12; // esi
   int v13; // eax
   unsigned short *v14; // eax
@@ -515,7 +515,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
       break; /*0x7b7ade*/
     ++v4; /*0x7b7aea*/
   }
-  v11 = v4 - 1; /*0x7b7af3*/
+  v11 = (int)((const wchar_t *)(v4 - 1));
   v23 = v4 - 1; /*0x7b7af8*/
   v12 = (const wchar_t *)(*(unsigned int *)this->__pad_0 + 2 * v9); /*0x7b7afe*/
   if ( *a4 ) /*0x7b7af6*/

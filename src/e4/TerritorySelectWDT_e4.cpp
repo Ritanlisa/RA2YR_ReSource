@@ -26,6 +26,7 @@
 #include "e4/classes/TerrainTypeClass_e4.hpp"
 #include "e4/classes/GameOption_e4.hpp"
 #include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x7665D0
 namespace gamemd {

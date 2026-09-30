@@ -13,6 +13,7 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/E4Recv_74F6F0_e4.hpp"
+#include "e4/classes/DialogClass_e4.hpp"
 
 // 0x537F90
 namespace gamemd {

@@ -97,8 +97,8 @@ Coord * * BuildingLight::CalculateShading()
         v52[1] = (BYTE)(v47[1] - 64);
         v39 = (BYTE)(g_DSurface_Hidden_2);
         v52[2] = (BYTE)(255);
-        v52[3] = 127; /*0x5ff91e*/
-        v53[2] = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x5ff925*/
+        v52[3] = (BYTE)(127);
+        v53[2] = (BYTE)(*(unsigned int *)DSurface_ViewBounds.__pad_8);
         if ( v7 < 64 ) /*0x5ff92c*/
           v7 = v7 * v3[4] / 64; /*0x5ff93d*/
         v8 = *(unsigned int *)g_DSurface_Hidden_2->__pad_0; /*0x5ff946*/

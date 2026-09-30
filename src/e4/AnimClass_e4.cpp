@@ -33,6 +33,8 @@
 #include "e4/classes/AudioFileClass_e4.hpp"
 #include "e4/classes/PingPongBuffer_e4.hpp"
 #include "e4/classes/StructTable_e4.hpp"
+#include "e4/classes/AnimSystem_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x4228E0
 namespace gamemd {
@@ -87,7 +89,7 @@ void AnimClass::Destruct( void * a2)
       v13[0] = (gamemd::CellClass *)(a2->AnimClass_field_0x9C);
       v13[1] = (gamemd::CellClass *)(*(unsigned int *)a2->__pad_A0);
       v13[2] = (gamemd::CellClass *)(a2->AnimClass_field_0xA4);
-      v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13); /*0x4229a1*/
+      v6 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13));
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
     if ( (uint8_t)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
@@ -272,7 +274,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     && (uint8_t)ObjectClass::StepCleanup((ObjectClass *)this, &g_INI_Key_Civilian.__pad_16D[31]) )
   {
     AnimClass_field_0xB4 = (IUnknown *)(this->AnimClass_field_0xB4);
-    AnimClass_field_0xC0 = (unsigned int)((IUnknown *)(this->AnimClass_field_0xC0));
+    AnimClass_field_0xC0 = (IUnknown *)((unsigned int)((IUnknown *)(this->AnimClass_field_0xC0)));
     AnimClass_field_0xBC = (IUnknown *)(this->AnimClass_field_0xBC);
     if ( AnimClass_field_0xB4 != (IUnknown *)-1 ) /*0x422cf3*/
     {

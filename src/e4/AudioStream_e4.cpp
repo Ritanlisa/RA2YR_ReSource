@@ -161,8 +161,8 @@ int AudioStream::SetupPlayback()
 
   v1 = (unsigned int)((char *)this-((unsigned int *)(>AudioStream_field_0xA8))[0]);
   v2 = (unsigned int)(0);
-  v3 = (unsigned int)(0);
-  this->AudioStream_field_0x1E0 = v1; /*0x40470e*/
+  v3 = (char *)((unsigned int)(0));
+  this->AudioStream_field_0x1E0 = (unsigned int)(v1);
   if ( !v1 || (this-((unsigned int *)(>AudioStream_field_0x18))[0] & 0x20) != 0 ) /*0x40471a*/
     return 0; /*0x40471a*/
   AudioStream_field_0x24 = this->AudioStream_field_0x24; /*0x40471c*/
@@ -170,7 +170,7 @@ int AudioStream::SetupPlayback()
     return (int)this->AudioStream_field_0x28 + 28; /*0x404727*/
   if ( (*(unsigned char *)(AudioStream_field_0x24 + 16) & 0x20) != 0 ) /*0x40472d*/
   {
-    v3 = (unsigned int)(1);
+    v3 = (char *)((unsigned int)(1));
     this->AudioStream_field_0x1E0 = (unsigned int)(v1 - 1);
     this->AudioStream_field_0xAC = 0; /*0x40473b*/
   }

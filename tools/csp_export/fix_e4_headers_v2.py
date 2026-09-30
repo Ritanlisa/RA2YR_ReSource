@@ -178,6 +178,12 @@ def main():
     for p in sorted(E4C.glob('*_e4.hpp')):
         if p.name.startswith('_'):
             continue
+        try:
+            if 'GENERATED minimal flat class' in \
+                    open(p, encoding='utf-8', errors='replace').read(200):
+                continue  # G41.22: minimal generated headers are off-limits
+        except OSError:
+            pass
         lines = p.read_text(encoding='utf-8', errors='replace').split('\n')
         out = []
         changed = False

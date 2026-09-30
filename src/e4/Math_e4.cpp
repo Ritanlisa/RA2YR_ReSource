@@ -16,6 +16,8 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/MissionClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x40FFFF
 namespace gamemd {
@@ -51,7 +53,7 @@ void Math_Sqrt(void * a1)
   void * v7;
 
   v2 = (double)(a1);
-  v3 = a1 < (void *)(0.0); /*0x4cac44*/
+  v3 = (void *)(a1 < (void *)(0.0));
   v4 = 0; /*0x4cac44*/
   v5 = a1 == (void *)(0.0); /*0x4cac44*/
   IDA_LOWORD(result) = v1; /*0x4cac4a*/

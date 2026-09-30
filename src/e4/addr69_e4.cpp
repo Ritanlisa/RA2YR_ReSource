@@ -73,6 +73,7 @@
 #include "e4/classes/NetworkID_e4.hpp"
 #include "e4/classes/ProgressAnim_e4.hpp"
 #include "e4/classes/SHPClass_e4.hpp"
+#include "e4/classes/VoxClass_e4.hpp"
 
 // 0x690400
 namespace gamemd {

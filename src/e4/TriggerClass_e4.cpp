@@ -57,8 +57,8 @@ char TriggerClass::FindByEventType(char a1)
       v4 = (unsigned int)(HIDWORD(dword_AC1CB8));
       v3 = (unsigned int)(DWORD2(dword_AC1CB8));
       v2[1] = (unsigned int)(DWORD2(dword_AC1CB8));
-      v2[2] = v4; /*0x6109a9*/
-      v2[3] = 0; /*0x6109b1*/
+      v2[2] = (unsigned int)(v4);
+      v2[3] = (unsigned int)(0);
       *v2 = &XSurface_Vtable; /*0x6109b4*/
       v2[4] = 2; /*0x6109ba*/
       Buffer::Init(v2 + 5, 0, 2 * v4 * v3); /*0x6109c1*/
