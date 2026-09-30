@@ -69,6 +69,7 @@ struct Power {
     unsigned int q004;
     unsigned int q008;
     unsigned int Timer;
+    unsigned char Power_field_0x8;  // 0x8
 // --- flat members (END) ---
     int  Update(int * a2);  // 0x43A5D0
     unsigned int * UpdateAll();  // 0x67C6E0

@@ -70,6 +70,9 @@ struct AITriggerTypeClass {
     unsigned int AITriggerTypeClass_field_0x0C;
     unsigned int __pad_0;
     unsigned int AbstractTypeClass;
+    unsigned char AITriggerTypeClass_field_0x18;  // 0x18
+    unsigned char AITriggerTypeClass_field_0x24;  // 0x24
+    unsigned char AITriggerTypeClass_field_0x28;  // 0x28
 // --- flat members (END) ---
     AITriggerTypeClass * ddtor(char a2);
     DynamicVector * * OwnerHouseOwns(unsigned int * a2, int a3);

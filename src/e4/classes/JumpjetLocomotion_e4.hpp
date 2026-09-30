@@ -201,6 +201,11 @@ struct JumpjetLocomotion {
     unsigned int u32_184;
     unsigned int v22;
     unsigned int q00C;
+    unsigned char __pad_C;  // 0xC
+    unsigned char __pad_48;  // 0x48
+    unsigned char __pad_5C;  // 0x5C
+    unsigned char JumpjetLocomotion_field_0x74;  // 0x74
+    unsigned char __pad_78;  // 0x78
 // --- flat members (END) ---
     AbstractClass * MoveTo(IUnknown * aP1, int aP3);  // 0x4B0AD0
     char  ProcessCollision(char a2);  // 0x4B0F20

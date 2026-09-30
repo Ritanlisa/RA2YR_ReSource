@@ -76,6 +76,9 @@ struct Array {
     unsigned int q0045;
     unsigned int q0046;
     unsigned int q230;  // 0x230
+    unsigned char Array_field_0x2C;  // 0x2C
+    unsigned char Array_field_0x38;  // 0x38
+    unsigned char Array_field_0xE8;  // 0xE8
 // --- flat members (END) ---
     int GetClamped(CheckListClass * aP1);  // 0x557AC0
     int FindValue(IUnknown * aP1);  // 0x634290

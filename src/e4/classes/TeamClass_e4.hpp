@@ -88,6 +88,7 @@ struct TeamClass {
     unsigned int u32_A8;
     unsigned int u32_B0;
     unsigned int Debug;
+    unsigned char __pad_28;  // 0x28
 // --- flat members (END) ---
     AbstractClass * * DestroyAllMembers(void * aP1);
     AbstractClass * * FindClosestEnemy(void * aP1, void * aP2);

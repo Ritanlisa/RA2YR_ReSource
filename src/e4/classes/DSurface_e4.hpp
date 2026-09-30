@@ -271,6 +271,9 @@ struct DSurface {
     unsigned int DSurface_field_0xC;
     unsigned int field_0;
     unsigned int Unlock;
+    unsigned char DSurface_field_0x4;  // 0x4
+    unsigned char DSurface_field_0x8;  // 0x8
+    unsigned char DSurface_field_0x14;  // 0x14
 // --- flat members (END) ---
     AbstractClass * Construct(IUnknown * aP1, DSurface * aP2, ObjectClass * aP3, char a5);
     AbstractClass * * Process(void* aP1, int * a2);

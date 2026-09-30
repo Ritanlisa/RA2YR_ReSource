@@ -30,6 +30,7 @@ struct ColorStruct {
     void* q5684;  // 0x5684
     unsigned int q6000;  // 0x6000
     void* q6408;  // 0x6408
+    unsigned char __pad_0;  // 0x0
 // --- flat members (END) ---
     int SetRGB(uint8_t a2, uint8_t a3, uint8_t a4);
 };

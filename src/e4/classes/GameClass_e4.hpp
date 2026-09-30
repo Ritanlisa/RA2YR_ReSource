@@ -71,6 +71,7 @@ struct GameClass {
     unsigned int Timer;
     unsigned int Event;
     unsigned int Network;
+    unsigned char Pipe_field_0x04;  // 0x4
 // --- flat members (END) ---
     int  initGameMode(int a2, int a3);  // 0x437FD0
     unsigned int *  processFrame(int a2, int a3);  // 0x4381D0

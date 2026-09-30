@@ -33,6 +33,7 @@ struct Building {
     unsigned int __pad_A4;
     unsigned int __pad_C;
     unsigned int uniqueId0;
+    unsigned char Building_field_0xA0;  // 0xA0
 // --- flat members (END) ---
     AnimClass * * ComputePosition(AnimClass * aP1);  // 0x425D10
     int GetNthOfType();  // 0x485020

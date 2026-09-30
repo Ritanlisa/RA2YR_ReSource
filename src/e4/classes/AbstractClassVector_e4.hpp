@@ -18,6 +18,10 @@ struct AbstractClassVector {
     unsigned int m_1;
     unsigned int m_8;
     unsigned int m_C;
+    unsigned char __pad_0;  // 0x0
+    unsigned char AbstractClassVector_field_0x04;  // 0x4
+    unsigned char AbstractClassVector_field_0x08;  // 0x8
+    unsigned char AbstractClassVector_field_0x0C;  // 0xC
 // --- flat members (END) ---
     int Read(unsigned int * a2);
     int Construct(IUnknown * aP1, IUnknown * aP2);

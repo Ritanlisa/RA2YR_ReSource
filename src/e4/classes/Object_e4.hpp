@@ -89,6 +89,12 @@ struct Object {
     unsigned int q0A0;
     unsigned int q0A4;
     unsigned int u32_5788;
+    unsigned char __pad_0;  // 0x0
+    unsigned char Object_field_0x2;  // 0x2
+    unsigned char Object_field_0x8;  // 0x8
+    unsigned char __pad_C;  // 0xC
+    unsigned char Object_field_0xAC;  // 0xAC
+    unsigned char Object_field_0xE8;  // 0xE8
 // --- flat members (END) ---
     int FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);  // 0x47C3D0
     int FindObjectCell(TechnoClass * aP1, char aP2);  // 0x47C5A0

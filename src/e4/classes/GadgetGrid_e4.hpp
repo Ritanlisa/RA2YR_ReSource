@@ -12,6 +12,8 @@ struct GadgetGrid {
     unsigned int q008;
     unsigned int u32_1E0;
     unsigned int u32_A;
+    unsigned char __pad_0;  // 0x0
+    unsigned char GadgetGrid_field_0x04;  // 0x4
 // --- flat members (END) ---
     int InsertItem(int a2);
     int RemoveItem(int a2);

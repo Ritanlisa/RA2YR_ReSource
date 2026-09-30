@@ -703,6 +703,7 @@ struct LightConvertClass {
     unsigned char q6470;  // 0x6470
     unsigned char q6474;  // 0x6474
     unsigned int q0908;
+    unsigned char __pad_5;  // 0x5
 // --- flat members (END) ---
     int SelectRLEBlitter(IUnknown * aP1);
      double Constructor(...);  // C2597 interim stub

@@ -23,6 +23,11 @@ struct LoadGame {
     unsigned int LoadGame_field_0x04;
     unsigned int LoadGame_field_0x10;
     unsigned int __pad_0;
+    unsigned char LoadGame_field_0x0C;  // 0xC
+    unsigned char LoadGame_field_0x14;  // 0x14
+    unsigned char LoadGame_field_0x18;  // 0x18
+    unsigned char LoadGame_field_0x1C;  // 0x1C
+    unsigned char LoadGame_field_0x20;  // 0x20
 // --- flat members (END) ---
     int LoadBlock300(int a2);
     int LoadMagicAndAudio();

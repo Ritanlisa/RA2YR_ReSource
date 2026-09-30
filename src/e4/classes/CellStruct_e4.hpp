@@ -11,6 +11,7 @@ struct CellStruct {
     unsigned int field_0;
     // dup-member: unsigned int Equals;
     unsigned int vfptr;
+    unsigned char q004;  // 0x4
 // --- flat members (END) ---
     void*  Add(void * aP1, void * aP2);  // 0x42D510
     unsigned int *  Copy(void * aP1);  // 0x437F30

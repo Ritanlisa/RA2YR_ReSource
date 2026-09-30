@@ -22,6 +22,10 @@ struct GadgetClass {
     unsigned int u32_28;
     unsigned int LinkClass;
     unsigned int ClearState;
+    unsigned char ListClass_field_0x0C;  // 0xC
+    unsigned char ListClass_field_0x10;  // 0x10
+    unsigned char ListClass_field_0x14;  // 0x14
+    unsigned char ListClass_field_0x18;  // 0x18
 // --- flat members (END) ---
     AbstractClass * * FindByWindow(int hWnd, int a2);
     AbstractClass * * SetTooltip(void * String);
