@@ -957,7 +957,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   v2 = a2; /*0x76b7b1*/
   if ( this == a2 ) /*0x76b7bc*/
     return this; /*0x76b7bc*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x76b7c4*/
+  unsigned int *sub_76B7B0(ObjectClass *this, unsigned int *a2)
   v4 = a2[2]; /*0x76b7c7*/
   *((unsigned int *)this + 2) = v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/

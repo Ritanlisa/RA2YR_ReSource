@@ -1433,7 +1433,7 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
   *((char *)this + 13) = (int)aP2; /*0x4c300d*/
   *((char *)this + 14) = a4 - 1; /*0x4c3010*/
   *((char *)this + 15) = wcslen((const wchar_t *)aP2); /*0x4c3018*/
-  (*(void (**)(int *))(*(unsigned int *)this + 72))(this); /*0x4c3022*/
+  int *sub_4C2FC0( EditClass *this, int a2, wchar_t *String, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
   *((char *)this + 16) = BuildingAnim::GetType(); /*0x4c302d*/
   if ( aP7 == (ControlClass *)-1 || a9 == -1 ) /*0x4c3035*/
   {

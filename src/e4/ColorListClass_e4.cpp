@@ -38,13 +38,13 @@ int ColorListClass::Clear(unsigned int a2)
   else
   {
     *((char *)this + 91) = a2; /*0x557f4c*/
-    (*(void (**)(int *))(*(unsigned int *)this + 72))(this); /*0x557f56*/
+    int ColorListClass::Clear(ListClass *this, unsigned int a2)
     if ( *((char *)this + 91) < *((char *)this + 92) ) /*0x557f67*/
-      (*(void (**)(int *, unsigned int))(*(unsigned int *)this + 192))(this, *((char *)this + 91)); /*0x557f6e*/
+      int ColorListClass::Clear(ListClass *this, unsigned int a2)
     v4 = *((char *)this + 20); /*0x557f74*/
     result = *((char *)this + 91); /*0x557f7d*/
     if ( result >= v4 + *((char *)this + 92) ) /*0x557f87*/
-      return (*(int (**)(int *, int))(*(unsigned int *)this + 192))(this, result - v4 + 1); /*0x557f91*/
+      int ColorListClass::Clear(ListClass *this, unsigned int a2)
   }
   return result; /*0x557f97*/
 
@@ -65,7 +65,7 @@ void ColorListClass::RemoveColor(wchar_t * String2)
       if ( ++v3 >= *((unsigned int *)this + 17) ) /*0x558044*/
         return; /*0x558044*/
     }
-    (*(void (**)(unsigned int *, int))(*(unsigned int *)this + 736))(this, v3); /*0x558051*/
+    void ColorListClass::RemoveColor(ListClass *this, wchar_t *String2)
   }
 
 }
@@ -75,7 +75,7 @@ namespace gamemd {
 int ColorListClass::GetColor(int a2)
 {
 
-  return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)this + 204))(this, a2, 0); /*0x488eef*/
+  int ColorListClass::GetColor(ColorListClass *this, int a2)
 
 }
 } // namespace gamemd

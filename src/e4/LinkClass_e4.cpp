@@ -18,7 +18,7 @@ namespace gamemd {
 void LinkClass::Destroy()
 {
 
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 336))(this); /*0x4e1485*/
+  int LinkClass::Destroy(GadgetClass *this)
   return LinkedList::RemoveNode(this); /*0x4e148f*/
 
 }
@@ -35,7 +35,7 @@ void LinkClass::Destruct()
 
   *this = &vt_LinkClass; /*0x5565a5*/
   Prev = LinkedList::FindPrev(this); /*0x5565b1*/
-  result = (*(int (**)(unsigned int *))(*(unsigned int *)this + 112))(this); /*0x5565b7*/
+  int LinkClass::Destruct(LinkClass *this)
   v4 = *((unsigned int *)this + 2); /*0x5565ba*/
   if ( v4 ) /*0x5565c1*/
     *(unsigned int *)(v4 + 4) = *((unsigned int *)this + 1); /*0x5565c6*/

@@ -1175,7 +1175,7 @@ char CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x472c22*/
+    char CaptureManagerClass::SetCapacity(_VectorClass_PAUControlNode *this, int a2, unsigned int *a3)
     return 1; /*0x472c28*/
   }
 
@@ -1275,7 +1275,7 @@ char CaptureManagerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x472d4e*/
+    char CaptureManagerClass::Release(_DynamicVectorClass_PAUControlNode *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x472d51*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x472d59*/

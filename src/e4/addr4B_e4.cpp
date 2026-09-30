@@ -850,7 +850,7 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
 
   if ( this == a2 ) /*0x4b583a*/
     return this; /*0x4b583a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x4b583e*/
+  unsigned int *sub_4B5830(ObjectClass *this, unsigned int *a2)
   v3 = a2[2]; /*0x4b5841*/
   *((unsigned int *)this + 2) = v3; /*0x4b5846*/
   if ( !v3 ) /*0x4b5849*/

@@ -213,8 +213,8 @@ int NullModemClass::sendData()
     this->Debug::Log(); /*0x774717*/
   }
   GetCommMask(*(HANDLE *)((char *)this + 92), &EvtMask); /*0x774728*/
-  (*(void (**)(int, int))(*(unsigned int *)this + 16))(this, 1); /*0x774734*/
-  (*(void (**)(int))(*(unsigned int *)this + 12))(this); /*0x77473b*/
+  char NullModemClass::sendData(NullModemClass *this)
+  char NullModemClass::sendData(NullModemClass *this)
   if ( !EscapeCommFunction(*(HANDLE *)((char *)this + 92), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
@@ -273,7 +273,7 @@ int NullModemClass::receiveData()
     if ( !v5 ) /*0x77486f*/
       WinModemClass::LogCommErrors((unsigned int *)this, v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
-  return (*(int (**)(int, int))(*(unsigned int *)this + 16))(this, 1); /*0x774893*/
+  int NullModemClass::receiveData(NullModemClass *this)
 
 }
 } // namespace gamemd
@@ -309,7 +309,7 @@ namespace gamemd {
 int NullModemClass::Disconnect(int a2, int a3, int a4)
 {
 
-  return (*(int (**)(void *, int, int, int, int))(*(unsigned int *)this + 52))(this, a2, a3, a4, 1); /*0x5f3556*/
+  ( this, a2, a3, a4, 1)
 
 }
 } // namespace gamemd

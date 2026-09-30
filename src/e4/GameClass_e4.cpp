@@ -184,7 +184,7 @@ int GameClass::FrameLoop(int a2)
     do /*0x5d24dc*/
     {
       this->Event::Dispatch(); /*0x5d2437*/
-      (*(void (**)(int *))(*(unsigned int *)this + 8))(this); /*0x5d2440*/
+      int GameClass::FrameLoop(GameClass *this, int a2)
       this->DDraw::WaitForIdle(); /*0x5d2443*/
       DSurface::RenderToSurface(this, *(ObjectClass **)&g_abs_87F8E4); /*0x5d2451*/
       GameClass::loadScenarioFiles(this, *(ObjectClass **)&g_abs_87F8E4); /*0x5d245f*/
@@ -244,7 +244,7 @@ int GameClass::FindOpenSlot()
     v4 = *(unsigned int *)(g_abs_A8B8CC + 4 * v2); /*0x5d6387*/
     if ( IsRandMap::Sed(v4) ) /*0x5d638c*/
     {
-      v5 = (*(int (**)(char *))(*(unsigned int *)this + 60))(this); /*0x5d6399*/
+      int GameClass::FindOpenSlot(MultiplayerGameMode *this)
     }
     else
     {
@@ -719,7 +719,7 @@ namespace gamemd {
 int GameClass::loadGameState(int a2)
 {
 
-  return (*(int (**)(void *, int))(*(unsigned int *)this + 12))(this, a2); /*0x632fea*/
+  int GameClass::loadGameState(PKPipe *this, int a2)
 
 }
 } // namespace gamemd
@@ -755,7 +755,7 @@ namespace gamemd {
 int GameClass::parseGameOptions(int a2)
 {
 
-  return (*(int (**)(void *, int))(*(unsigned int *)this + 4))(this, a2); /*0x63336a*/
+  int GameClass::parseGameOptions(PKStraw *this, int a2)
 
 }
 } // namespace gamemd

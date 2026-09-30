@@ -129,13 +129,13 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         }
         else
         {
-          v6 = (*(int (**)(void *))(*(unsigned int *)this + 464))(this); /*0x62cf87*/
+          void ParticleClass::DrawParticle(ParticleClass *this, int *a2, int *a3)
           v7 = -15 - ZCoordToScreenY(v6); /*0x62cf9d*/
-          v8 = (*(int (**)(void *))(*(unsigned int *)this + 108))(this); /*0x62cfa2*/
+          void ParticleClass::DrawParticle(ParticleClass *this, int *a2, int *a3)
           if ( v8 ) /*0x62cfa6*/
           {
             v9 = 10240; /*0x62cfb0*/
-            v10 = (*(int (**)(void *))(*(unsigned int *)this + 488))(this); /*0x62cfb5*/
+            void ParticleClass::DrawParticle(ParticleClass *this, int *a2, int *a3)
             if ( g_abs_A8EB78 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(2) ) /*0x62cfc2*/
             {
               v11 = *((unsigned char *)this + 303); /*0x62cfc4*/

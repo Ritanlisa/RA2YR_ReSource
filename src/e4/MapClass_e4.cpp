@@ -3422,7 +3422,7 @@ int MapClass::AllocateCellDataBuffer(int a2, char * a3)
   v3 = a2; /*0x589373*/
   if ( !a2 ) /*0x58937f*/
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x589492*/
+    int MapClass::AllocateCellDataBuffer(void *this, int a2, char *a3)
     return 1; /*0x589498*/
   }
   v5 = a3; /*0x589385*/
@@ -3538,7 +3538,7 @@ AbstractClass * * MapClass::AllocateMapDataBuffer(int a2, int * a3)
   v3 = a2; /*0x589a67*/
   if ( !a2 ) /*0x589a6f*/
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x589ba0*/
+    char MapClass::sub_589A60(void *this, int a2, int *a3)
     goto LABEL_28; /*0x589ba0*/
   }
   *((unsigned char *)this + 12) = 0; /*0x589a79*/
@@ -4162,13 +4162,13 @@ unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2)
   int v12; // [esp+14h] [ebp-10h] BYREF
   unsigned char v13[12]; // [esp+18h] [ebp-Ch] BYREF
 
-  v4 = *(unsigned int *)((*(int (**)(char *))(*(unsigned int *)this + 132))(this) + 1660); /*0x7035a1*/
+  unsigned int *MapClass_FindPlacementCells_Alt(char *this, unsigned int *a2, int a3)
   if ( v4 == 4 ) /*0x7035aa*/
     v4 = 1; /*0x7035ac*/
   if ( aP2 ) /*0x7035b9*/
     v5 = (unsigned int *)(*(int (**)(IUnknown *, unsigned char *))(aP2->field_0 + 72))(aP2, v13); /*0x7035c2*/
   else
-    v5 = (unsigned int *)(*(int (**)(char *, unsigned char *))(*(unsigned int *)this + 72))(this, v13); /*0x7035fd*/
+    unsigned int *MapClass_FindPlacementCells_Alt(char *this, unsigned int *a2, int a3)
   IDA_LOWORD(aP2) = *v5 / 256; /*0x7035d5*/
   IDA_HIWORD(aP2) = v5[1] / 256; /*0x7035e9*/
   v6 = *(unsigned int *)this; /*0x70362d*/
@@ -4330,7 +4330,7 @@ int MapClass::ProcessVisibilityFlags()
     }
   }
   HouseClass::RevealShroudForAllies(0, 0); /*0x4acb9c*/
-  return (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 224))(this, 1); /*0x4acbaa*/
+  int MapClass::ProcessVisibilityFlags(MapClass *this)
 
 }
 // 0x4ACBC0
@@ -4797,7 +4797,7 @@ char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x589d82*/
+    char MapClass::InitCellVe_vt02(void *this, int a2, unsigned int *a3)
     return 1; /*0x589d88*/
   }
 

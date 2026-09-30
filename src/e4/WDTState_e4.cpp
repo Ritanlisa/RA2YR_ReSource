@@ -96,7 +96,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x76bb69*/
+    char WDTState_4::Release(_DynamicVectorClass_V_rc_ptr_VWDTTerritory *this, int a2, unsigned int *a3)
   }
   v12 = *((unsigned int *)this + 2); /*0x76bb6c*/
   if ( v12 < *((unsigned int *)this + 4) ) /*0x76bb74*/

@@ -1108,7 +1108,7 @@ AbstractClass * * _::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x74f4a2*/
+    char QRelease_74F400(_VectorClass_PAVVeinholeMonsterClass *this, int a2, unsigned int *a3)
     return 1; /*0x74f4a8*/
   }
 

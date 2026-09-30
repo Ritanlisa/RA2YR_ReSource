@@ -567,16 +567,29 @@ def make_cpp_leaf(class_name, locals_set, M, signals, this_alias=None):
                 r'\(\s*(unsigned\s+int|_DWORD|unsigned)\s*(\*+)\s*\)\s*'
                 r'(?:this|this\s*->\s*\w+)'
                 r'\s*\+\s*(\d+)\s*\)\s*$', text[i0 + 2:c1])
-            if not cm:
+            if cm:
+                # single-star cast `*(unsigned int *)this + N`: N is BYTE
+                # arithmetic on the vtable address (slot N/4). Double-star
+                # `*(unsigned int **)this + N`: N is ELEMENT arithmetic on the
+                # vtable pointer (slot N) = 4N bytes -- mirrors the IDA-side
+                # _IDA_VTABLE pointer-type scaling.
+                _scale = 4 if len(cm.group(2)) > 1 else 1
+                covered.append((i0, c2 + 1,
+                                call_virtual(int(cm.group(3)) * _scale)))
                 continue
-            # single-star cast `*(unsigned int *)this + N`: N is BYTE
-            # arithmetic on the vtable address (slot N/4). Double-star
-            # `*(unsigned int **)this + N`: N is ELEMENT arithmetic on the
-            # vtable pointer (slot N) = 4N bytes -- mirrors the IDA-side
-            # _IDA_VTABLE pointer-type scaling.
-            _scale = 4 if len(cm.group(2)) > 1 else 1
-            covered.append((i0, c2 + 1,
-                            call_virtual(int(cm.group(3)) * _scale)))
+            # G41.11: named-vptr member walk `(this->vtable0 + N)` /
+            # `(ALIAS->vtable0 + N)` -- the cache-verbatim form of a vtable
+            # dispatch through the vptr member. Slot byte offset is N when
+            # the member resolves to offset 0 (the vptr); other offsets
+            # stay event-less (vocabulary gap, both sides must agree).
+            mm = re.search(
+                r'\(\s*(?:this|(?:this\s*->\s*\w+))\s*\+\s*(\d+)\s*\)\s*$',
+                text[i0 + 2:c1])
+            if mm:
+                covered.append((i0, c2 + 1,
+                                call_virtual(int(mm.group(1)))))
+                continue
+            continue
         if covered:
             hits.extend(covered)
 

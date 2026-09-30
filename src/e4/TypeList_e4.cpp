@@ -141,7 +141,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a262*/
+    char TypeList_Particle::Remove(_VectorClass_PBVParticleSystemTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x45a268*/
   }
 
@@ -225,7 +225,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a38e*/
+    char TypeList_cptr_ParticleSystemTypeClass::Add( _DynamicVectorClass_PBVParticleSystemTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x45a391*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x45a399*/
@@ -432,7 +432,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4780a2*/
+    char TypeList_TechnoType::Remove(_VectorClass_PAVTechnoTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4780a8*/
   }
 
@@ -527,7 +527,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
 
   if ( this == (gamemd::TypeList_flat *)(a2) ) /*0x47872a*/
     return this; /*0x47872a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x47872e*/
+  unsigned int *TypeList::Copy(TypeList *this, unsigned int *a2)
   v3 = a2[2]; /*0x478731*/
   *((unsigned int *)this + 2) = v3; /*0x478736*/
   if ( !v3 ) /*0x478739*/
@@ -735,7 +735,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x512efe*/
+    char TypeList_Infantry::Remove(_DynamicVectorClass_PBVInfantryTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x512f01*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x512f09*/
@@ -1078,7 +1078,7 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
 
   if ( this != (int *)aP1 ) /*0x67a11a*/
   {
-    (*(void (**)(int *))(*(unsigned int *)this + 12))(this); /*0x67a11e*/
+    int *TypeList::CopyAircraft(TypeList *this, int *a2)
     v3 = aP1->Capacity; /*0x67a121*/
     *((char *)this + 2) = v3; /*0x67a126*/
     if ( v3 ) /*0x67a129*/
@@ -1124,7 +1124,7 @@ int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
 
   if ( this != (int *)aP1 ) /*0x67a29a*/
   {
-    (*(void (**)(int *))(*(unsigned int *)this + 12))(this); /*0x67a29e*/
+    int *TypeList::CopyInfantry(TypeList *this, int *a2)
     v3 = aP1->headNode[1]; /*0x67a2a1*/
     *((char *)this + 2) = v3; /*0x67a2a6*/
     if ( v3 ) /*0x67a2a9*/
@@ -1485,7 +1485,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67abd2*/
+    char TypeList_VoxelAnim::SetCapacity(_VectorClass_PBVVoxelAnimTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x67abd8*/
   }
 
@@ -1569,7 +1569,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67ad5e*/
+    char TypeList_VoxelAnim::Remove(_DynamicVectorClass_PBVVoxelAnimTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x67ad61*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x67ad69*/
@@ -1668,7 +1668,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67b0de*/
+    char TypeList::Release(_DynamicVectorClass_PBVSmudgeTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x67b0e1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x67b0e9*/
@@ -1774,7 +1774,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67b2d2*/
+    char TypeList_cptr_TerrainTypeClass::SetCapacity(_VectorClass_PBVTerrainTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x67b2d8*/
   }
 
@@ -1874,7 +1874,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67b45e*/
+    char TypeList_cptr_TerrainTypeClass::Remove( _DynamicVectorClass_PBVTerrainTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x67b461*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x67b469*/
@@ -2115,7 +2115,7 @@ char TypeList_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x717ce6*/
       return 0; /*0x717ce6*/
     v4 = *((unsigned int *)this + 5); /*0x717ce8*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x717cf8*/
+    if ( CapacityIncrement <= 0 || !(*((unsigned __int8 (**)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))( this, Capacity + CapacityIncrement, 0) )
       return 0; /*0x717cff*/
   }
   v6 = *((unsigned int *)this + 4); /*0x717d05*/

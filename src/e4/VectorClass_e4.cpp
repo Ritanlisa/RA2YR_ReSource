@@ -276,7 +276,7 @@ LABEL_9:
       }
     }
   }
-  (*(void (**)(void *, int, unsigned int))(*(unsigned int *)this + 632))(this, 3, **((unsigned int **)this + 57)); /*0x65aa1f*/
+  ( this, 3, *(unsigned int *)this->radioLinks[1])
   v12 = 0; /*0x65aa34*/
 LABEL_20:
   v15 = *v1; /*0x65aa36*/
@@ -360,7 +360,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x42f7a8*/
+    char VectorClass_Cell::Release(_VectorClass_VCell *this, int a2, unsigned int *a3)
     return 1; /*0x42f7ae*/
   }
 
@@ -470,7 +470,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e0935*/
+    char VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release( _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass *this, int a2, int *a3)
     return 1; /*0x4e093b*/
   }
 
@@ -581,7 +581,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e0c0b*/
+    char VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity( _DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass *this, int a2, int *a3)
   }
   v16 = *((unsigned int *)this + 2); /*0x4e0c0e*/
   if ( v16 < *((unsigned int *)this + 4) ) /*0x4e0c16*/
@@ -649,7 +649,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ad09e*/
+    char VectorClass_Ptr::ResizeAndCopy(_DynamicVectorClass_PAVCellClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5ad0a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5ad0a9*/
@@ -1074,7 +1074,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f5c2*/
+    char VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release( _VectorClass_PAUBuildChoiceClass_HouseClass *this, int a2, unsigned int *a3)
     return 1; /*0x50f5c8*/
   }
 
@@ -1119,7 +1119,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f6ee*/
+    char VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6( VectorClass_ptr_BuildChoiceClass_int_ouseClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x50f6f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x50f6f9*/
@@ -1233,7 +1233,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x628a2d*/
+    char VectorClass_ptr_ColorScheme::SetCapacity_0( _VectorClass_U_HashObject_VHashString_PAVSchemeNode *this, int a2, unsigned char *a3)
     return 1; /*0x628a33*/
   }
 
@@ -1325,7 +1325,7 @@ AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned 
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e132*/
+    char VectorClass_ptr_PlanningBranchClass::Release( _VectorClass_PAVPlanningBranchClass *this, int a2, unsigned int *a3)
     return 1; /*0x63e138*/
   }
 
@@ -1349,7 +1349,7 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
   v3 = a2; /*0x76b8c3*/
   if ( !a2 ) /*0x76b8cd*/
   {
-    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x76b9cd*/
+    char VectorClass_rc_ptr_WDTTerritory::Release(_VectorClass_V_rc_ptr_VWDTTerritory *this, int a2, unsigned int *a3)
     return 1; /*0x76b9d3*/
   }
   *((unsigned char *)this + 12) = 0; /*0x76b8d7*/
@@ -1462,7 +1462,7 @@ AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d84fe*/
+    char VectorClass_Scenario::ResizeAndCopy(_DynamicVectorClass_PAVMultiplayerTeam *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5d8501*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d8509*/
@@ -1510,7 +1510,7 @@ AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d87be*/
+    char VectorClass_Scenario2::ResizeAndCopy( _DynamicVectorClass_PAVMultiplayerGameMode *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5d87c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d87c9*/
@@ -1563,7 +1563,7 @@ AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d8632*/
+    char VectorClass_Scenario3::ResizeAndCopy(_VectorClass_PAVMultiplayerGameMode *this, int a2, unsigned int *a3)
     return 1; /*0x5d8638*/
   }
 
@@ -1608,7 +1608,7 @@ AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e98ce*/
+    char VectorClass_SuperPtr::ResizeAndCopy(_DynamicVectorClass_PAVSuperClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4e98d1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4e98d9*/
@@ -1637,7 +1637,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
   v3 = aP1; /*0x6dc855*/
   if ( !aP1 ) /*0x6dc85d*/
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6dc94a*/
+    char VectorClass_UDirtyAreaStruct::SetCapacity(VectorClass_UDirtyAreaStruct *this, int a2, char *a3)
     goto LABEL_26; /*0x6dc94a*/
   }
   v5 = a2; /*0x6dc863*/
@@ -1740,7 +1740,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
   v3 = a2; /*0x6b44a2*/
   if ( !a2 ) /*0x6b44ae*/
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b4591*/
+    char VectorClass_UUndoInfoStruct::Release(_VectorClass_UUndoInfoStruct *this, int a2, unsigned int *a3)
     return 1; /*0x6b4597*/
   }
   v5 = a3; /*0x6b44b4*/
@@ -1844,7 +1844,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
   v3 = a2; /*0x6b4652*/
   if ( !a2 ) /*0x6b465e*/
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b4731*/
+    char VectorClass_UUndoInfoStruct::SetCapacity(_DynamicVectorClass_UUndoInfoStruct *this, int a2, unsigned int *a3)
     goto LABEL_26; /*0x6b4731*/
   }
   v5 = a3; /*0x6b4664*/
@@ -2076,7 +2076,7 @@ char VectorClass_flat::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40b264*/
+    char VectorClass::_vt02(void *this, int a2, char *a3)
     return 1; /*0x40b26a*/
   }
 
@@ -2426,7 +2426,7 @@ char VectorClass_cptr_CommandClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40bf92*/
+    char VectorClass_cptr_CommandClass::Release(_VectorClass_PBVCommandClass *this, int a2, unsigned int *a3)
     return 1; /*0x40bf98*/
   }
 
@@ -2592,7 +2592,7 @@ char VectorClass_ptr_LightConvertClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40c372*/
+    char VectorClass_ptr_LightConvertClass::Release(_VectorClass_PAVLightConvertClass *this, int a2, unsigned int *a3)
     return 1; /*0x40c378*/
   }
 
@@ -2840,7 +2840,7 @@ char VectorClass_ptr_IsometricTileClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40c962*/
+    char VectorClass_ptr_IsometricTileClass::Release( _VectorClass_PAVIsometricTileClass *this, int a2, unsigned int *a3)
     return 1; /*0x40c968*/
   }
 
@@ -2940,7 +2940,7 @@ char VectorClass_ptr_IsometricTileClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40ca8e*/
+    char VectorClass_ptr_IsometricTileClass::SetCapacity( _DynamicVectorClass_PAVIsometricTileClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x40ca91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40ca99*/
@@ -3200,7 +3200,7 @@ char VectorClass_ptr_MixFileClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40d682*/
+    char VectorClass_ptr_MixFileClass::Release(_VectorClass_PAVMixFileClass *this, int a2, unsigned int *a3)
     return 1; /*0x40d688*/
   }
 
@@ -3402,7 +3402,7 @@ char VectorClass_ptr_ScriptClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40e932*/
+    char VectorClass_ptr_ScriptClass::Release(_VectorClass_PAVScriptClass *this, int a2, unsigned int *a3)
     return 1; /*0x40e938*/
   }
 
@@ -3502,7 +3502,7 @@ char VectorClass_ptr_ScriptClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40ea5e*/
+    char VectorClass_ptr_ScriptClass::SetCapacity(_DynamicVectorClass_PAVScriptClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x40ea61*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40ea69*/
@@ -3699,7 +3699,7 @@ char VectorClass_ptr_VoxelAnimClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40f002*/
+    char VectorClass_ptr_VoxelAnimClass::Release(_VectorClass_PAVVoxelAnimClass *this, int a2, unsigned int *a3)
     return 1; /*0x40f008*/
   }
 
@@ -3799,7 +3799,7 @@ char VectorClass_ptr_VoxelAnimClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40f12e*/
+    char VectorClass_ptr_VoxelAnimClass::SetCapacity( _DynamicVectorClass_PAVVoxelAnimClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x40f131*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40f139*/
@@ -3996,7 +3996,7 @@ char VectorClass_ptr_WarheadTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40f722*/
+    char VectorClass_ptr_WarheadTypeClass::Release(_VectorClass_PAVWarheadTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x40f728*/
   }
 
@@ -4096,7 +4096,7 @@ char VectorClass_ptr_WarheadTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40f84e*/
+    char VectorClass_ptr_WarheadTypeClass::SetCapacity( _DynamicVectorClass_PAVWarheadTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x40f851*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40f859*/
@@ -4293,7 +4293,7 @@ char VectorClass_ptr_WeaponTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40fcf2*/
+    char VectorClass_ptr_WeaponTypeClass::Release(_VectorClass_PAVWeaponTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x40fcf8*/
   }
 
@@ -4393,7 +4393,7 @@ char VectorClass_ptr_WeaponTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40fe1e*/
+    char VectorClass_ptr_WeaponTypeClass::SetCapacity( _DynamicVectorClass_PAVWeaponTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x40fe21*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40fe29*/
@@ -4590,7 +4590,7 @@ char VectorClass_ptr_AirstrikeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x41df22*/
+    char VectorClass_ptr_AirstrikeClass::Release(_VectorClass_PAVAirstrikeClass *this, int a2, unsigned int *a3)
     return 1; /*0x41df28*/
   }
 
@@ -4690,7 +4690,7 @@ char VectorClass_ptr_AirstrikeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x41e04e*/
+    char VectorClass_ptr_AirstrikeClass::SetCapacity( _DynamicVectorClass_PAVAirstrikeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x41e051*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x41e059*/
@@ -4887,7 +4887,7 @@ char VectorClass_ptr_AlphaShapeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x421942*/
+    char VectorClass_ptr_AlphaShapeClass::Release(_VectorClass_PAVAlphaShapeClass *this, int a2, unsigned int *a3)
     return 1; /*0x421948*/
   }
 
@@ -4987,7 +4987,7 @@ char VectorClass_ptr_AlphaShapeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x421a6e*/
+    char VectorClass_ptr_AlphaShapeClass::SetCapacity(VectorClass_ptr_AlphaShapeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x421a71*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x421a79*/
@@ -5184,7 +5184,7 @@ char VectorClass_ushort::Remove(int a2, unsigned short * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x42d991*/
+    char VectorClass_ushort::Remove(_VectorClass_G *this, int a2, unsigned short *a3)
     return 1; /*0x42d997*/
   }
 
@@ -5284,7 +5284,7 @@ char VectorClass_ushort::SetCapacity(int a2, unsigned short * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x42dabd*/
+    char VectorClass_ushort::SetCapacity(_DynamicVectorClass_G *this, int a2, unsigned short *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x42dac0*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x42dac8*/
@@ -5448,7 +5448,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x42f908*/
+    char VectorClass_ResizeEx(void *this, int a2, unsigned int *a3)
   }
   v8 = *((unsigned int *)this + 2); /*0x42f90b*/
   if ( v8 < *((unsigned int *)this + 4) ) /*0x42f913*/
@@ -5695,7 +5695,7 @@ char VectorClass_ptr_FoggedObjectClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a70e*/
+    char VectorClass_ptr_FoggedObjectClass::SetCapacity( _DynamicVectorClass_PAVFoggedObjectClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x45a711*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x45a719*/
@@ -5803,7 +5803,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a842*/
+    char VectorClass_ptr_Reestablish::Remove(_VectorClass_PAVReestablish *this, int a2, unsigned int *a3)
     return 1; /*0x45a848*/
   }
 
@@ -5903,7 +5903,7 @@ char VectorClass_ptr_Reestablish::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a96e*/
+    char VectorClass_ptr_Reestablish::SetCapacity(_DynamicVectorClass_PAVReestablish *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x45a971*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x45a979*/
@@ -6049,7 +6049,7 @@ char VectorClass_ptr_FoggedObjectClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45abf2*/
+    char VectorClass_ptr_FoggedObjectClass::Release(_VectorClass_PAVFoggedObjectClass *this, int a2, unsigned int *a3)
     return 1; /*0x45abf8*/
   }
 
@@ -6352,7 +6352,7 @@ char VectorClass_TPoint3D_int::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x465f40*/
+    char VectorClass_TPoint3D_int::Release(_VectorClass_V_TPoint3D_H *this, int a2, char *a3)
     return 1; /*0x465f46*/
   }
 
@@ -6554,7 +6554,7 @@ char VectorClass_ptr_BulletClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x46b742*/
+    char VectorClass_ptr_BulletClass::Release(_VectorClass_PAVBulletClass *this, int a2, unsigned int *a3)
     return 1; /*0x46b748*/
   }
 
@@ -6654,7 +6654,7 @@ char VectorClass_ptr_BulletClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x46b86e*/
+    char VectorClass_ptr_BulletClass::SetCapacity(VectorClass_ptr_BulletClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x46b871*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x46b879*/
@@ -6871,7 +6871,7 @@ char VectorClass_ptr_CaptureManagerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x472e82*/
+    char VectorClass_ptr_CaptureManagerClass::Release( _VectorClass_PAVCaptureManagerClass *this, int a2, unsigned int *a3)
     return 1; /*0x472e88*/
   }
 
@@ -6971,7 +6971,7 @@ char VectorClass_ptr_CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x472fae*/
+    char VectorClass_ptr_CaptureManagerClass::SetCapacity( _DynamicVectorClass_PAVCaptureManagerClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x472fb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x472fb9*/
@@ -7183,7 +7183,7 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x477d12*/
+    char VectorClass::vt02(_VectorClass_H *this, int a2, unsigned int *a3)
     return 1; /*0x477d18*/
   }
 
@@ -7271,7 +7271,7 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x477e9e*/
+    char VectorClass::Resize(_DynamicVectorClass_H *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x477ea1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x477ea9*/
@@ -7417,7 +7417,7 @@ char VectorClass_ptr_DamageGroup::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x48ae52*/
+    char VectorClass_ptr_DamageGroup::Remove(_VectorClass_PAUDamageGroup *this, int a2, unsigned int *a3)
     return 1; /*0x48ae58*/
   }
 
@@ -7517,7 +7517,7 @@ char VectorClass_ptr_DamageGroup::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x48af7e*/
+    char VectorClass_ptr_DamageGroup::SetCapacity(_DynamicVectorClass_PAUDamageGroup *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x48af81*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x48af89*/
@@ -7714,7 +7714,7 @@ char VectorClass_ptr_ConvertClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x49af62*/
+    char VectorClass_ptr_ConvertClass::Release(_VectorClass_PAVConvertClass *this, int a2, unsigned int *a3)
     return 1; /*0x49af68*/
   }
 
@@ -7814,7 +7814,7 @@ char VectorClass_ptr_ConvertClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x49b08e*/
+    char VectorClass_ptr_ConvertClass::SetCapacity( _DynamicVectorClass_PAVConvertClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x49b091*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x49b099*/
@@ -8065,7 +8065,7 @@ char VectorClass_UtagCONNECTDATA::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4a108e*/
+    char VectorClass_UtagCONNECTDATA::Release(_VectorClass_UtagCONNECTDATA *this, int a2, unsigned int *a3)
     return 1; /*0x4a1094*/
   }
 
@@ -8176,7 +8176,7 @@ char VectorClass_UtagCONNECTDATA::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4a11de*/
+    char VectorClass_UtagCONNECTDATA::SetCapacity(_DynamicVectorClass_UtagCONNECTDATA *this, int a2, unsigned int *a3)
   }
   v9 = *((unsigned int *)this + 2); /*0x4a11e1*/
   if ( v9 < *((unsigned int *)this + 4) ) /*0x4a11e9*/
@@ -8365,7 +8365,7 @@ char VectorClass_ptr_CrossDissolveEffect::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4b9d82*/
+    char VectorClass_ptr_CrossDissolveEffect::SetCapacity( VectorClass_ptr_CrossDissolveEffect *this, int a2, unsigned int *a3)
     return 1; /*0x4b9d88*/
   }
 
@@ -8501,7 +8501,7 @@ char VectorClass_ptr_CrossDissolveEffect::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4b9fe2*/
+    char VectorClass_ptr_CrossDissolveEffect::Remove( _VectorClass_PAUCrossDissolveEffect *this, int a2, unsigned int *a3)
     return 1; /*0x4b9fe8*/
   }
 
@@ -8726,7 +8726,7 @@ char VectorClass_ptr_EBolt::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c2d82*/
+    char VectorClass_ptr_EBolt::Release(_VectorClass_PAVEBolt *this, int a2, unsigned int *a3)
     return 1; /*0x4c2d88*/
   }
 
@@ -8826,7 +8826,7 @@ char VectorClass_ptr_EBolt::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c2eae*/
+    char VectorClass_ptr_EBolt::SetCapacity(_DynamicVectorClass_PAVEBolt *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4c2eb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4c2eb9*/
@@ -9023,7 +9023,7 @@ char VectorClass_ptr_EgoClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c4ae2*/
+    char VectorClass_ptr_EgoClass::Release(_VectorClass_PAVEgoClass *this, int a2, unsigned int *a3)
     return 1; /*0x4c4ae8*/
   }
 
@@ -9123,7 +9123,7 @@ char VectorClass_ptr_EgoClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c4c0e*/
+    char VectorClass_ptr_EgoClass::SetCapacity(_DynamicVectorClass_PAVEgoClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4c4c11*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4c4c19*/
@@ -9320,7 +9320,7 @@ char VectorClass_ptr_EMPulseClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c5ca2*/
+    char VectorClass_ptr_EMPulseClass::Release(_VectorClass_PAVEMPulseClass *this, int a2, unsigned int *a3)
     return 1; /*0x4c5ca8*/
   }
 
@@ -9420,7 +9420,7 @@ char VectorClass_ptr_EMPulseClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c5dce*/
+    char VectorClass_ptr_EMPulseClass::SetCapacity( _DynamicVectorClass_PAVEMPulseClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4c5dd1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4c5dd9*/
@@ -11321,7 +11321,7 @@ char VectorClass_Building::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9542*/
+    char VectorClass_Building::Release(_VectorClass_PAVBuildingClass *this, int a2, unsigned int *a3)
     return 1; /*0x4e9548*/
   }
 
@@ -11457,7 +11457,7 @@ char VectorClass_ptr_SuperClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e97a2*/
+    char VectorClass_ptr_SuperClass::Release(_VectorClass_PAVSuperClass *this, int a2, unsigned int *a3)
     return 1; /*0x4e97a8*/
   }
 
@@ -11616,7 +11616,7 @@ char VectorClass_ptr_AITriggerTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9a02*/
+    char VectorClass_ptr_AITriggerTypeClass::Release( _VectorClass_PAVAITriggerTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4e9a08*/
   }
 
@@ -11716,7 +11716,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9b2e*/
+    char VectorClass_ptr_AITriggerTypeClass::SetCapacity( _DynamicVectorClass_PAVAITriggerTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4e9b31*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4e9b39*/
@@ -11824,7 +11824,7 @@ char VectorClass_ptr_BuildingLightClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9c62*/
+    char VectorClass_ptr_BuildingLightClass::Release( _VectorClass_PAVBuildingLightClass *this, int a2, unsigned int *a3)
     return 1; /*0x4e9c68*/
   }
 
@@ -11924,7 +11924,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9d8e*/
+    char VectorClass_ptr_BuildingLightClass::SetCapacity( _DynamicVectorClass_PAVBuildingLightClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4e9d91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4e9d99*/
@@ -12032,7 +12032,7 @@ char VectorClass_ptr_TeamClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea122*/
+    char VectorClass_ptr_TeamClass::Release(_VectorClass_PAVTeamClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ea128*/
   }
 
@@ -12132,7 +12132,7 @@ char VectorClass_ptr_TeamClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea24e*/
+    char VectorClass_ptr_TeamClass::SetCapacity(_DynamicVectorClass_PAVTeamClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ea251*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ea259*/
@@ -12240,7 +12240,7 @@ char VectorClass_ptr_ThemeControl::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea382*/
+    char VectorClass_ptr_ThemeControl::Remove(_VectorClass_PAUThemeControl *this, int a2, unsigned int *a3)
     return 1; /*0x4ea388*/
   }
 
@@ -12376,7 +12376,7 @@ char VectorClass_ptr_TriggerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea502*/
+    char VectorClass_ptr_TriggerClass::Release(_VectorClass_PAVTriggerClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ea508*/
   }
 
@@ -12476,7 +12476,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_0(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea62e*/
+    char VectorClass_ptr_AITriggerTypeClass::SetCapacity_0( _DynamicVectorClass_PAVTriggerClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ea631*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ea639*/
@@ -12584,7 +12584,7 @@ char VectorClass_ptr_TriggerTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea762*/
+    char VectorClass_ptr_TriggerTypeClass::Release(_VectorClass_PAVTriggerTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ea768*/
   }
 
@@ -12684,7 +12684,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea88e*/
+    char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1( _DynamicVectorClass_PAVTriggerTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ea891*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ea899*/
@@ -12792,7 +12792,7 @@ char VectorClass_ptr_TubeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea9c2*/
+    char VectorClass_ptr_TubeClass::Release(_VectorClass_PAVTubeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ea9c8*/
   }
 
@@ -12892,7 +12892,7 @@ char VectorClass_ptr_TubeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eaaee*/
+    char VectorClass_ptr_TubeClass::SetCapacity(_DynamicVectorClass_PAVTubeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4eaaf1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eaaf9*/
@@ -13000,7 +13000,7 @@ char VectorClass_ptr_ParticleSystemClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eac22*/
+    char VectorClass_ptr_ParticleSystemClass::Release( _VectorClass_PAVParticleSystemClass *this, int a2, unsigned int *a3)
     return 1; /*0x4eac28*/
   }
 
@@ -13100,7 +13100,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity_0(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ead4e*/
+    char VectorClass_ptr_BuildingLightClass::SetCapacity_0( _DynamicVectorClass_PAVParticleSystemClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ead51*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ead59*/
@@ -13208,7 +13208,7 @@ char VectorClass_ptr_WaveClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eae82*/
+    char VectorClass_ptr_WaveClass::Release(_VectorClass_PAVWaveClass *this, int a2, unsigned int *a3)
     return 1; /*0x4eae88*/
   }
 
@@ -13308,7 +13308,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eafae*/
+    char VectorClass_ptr_TubeClass::SetCapacity_0(_DynamicVectorClass_PAVWaveClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4eafb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eafb9*/
@@ -13416,7 +13416,7 @@ char VectorClass_ptr_OverlayClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eb0e2*/
+    char VectorClass_ptr_OverlayClass::Release(_VectorClass_PAVOverlayClass *this, int a2, unsigned int *a3)
     return 1; /*0x4eb0e8*/
   }
 
@@ -13516,7 +13516,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eb20e*/
+    char VectorClass_ptr_TubeClass::SetCapacity_1(_DynamicVectorClass_PAVOverlayClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4eb211*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eb219*/
@@ -13624,7 +13624,7 @@ char VectorClass_ptr_AircraftClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eb802*/
+    char VectorClass_ptr_AircraftClass::Release(_VectorClass_PAVAircraftClass *this, int a2, unsigned int *a3)
     return 1; /*0x4eb808*/
   }
 
@@ -13760,7 +13760,7 @@ char VectorClass_ptr_UnitClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eba62*/
+    char VectorClass_ptr_UnitClass::Release(_VectorClass_PAVUnitClass *this, int a2, unsigned int *a3)
     return 1; /*0x4eba68*/
   }
 
@@ -13860,7 +13860,7 @@ char VectorClass_ptr_UnitClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ebb8e*/
+    char VectorClass_ptr_UnitClass::SetCapacity(_DynamicVectorClass_PAVUnitClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ebb91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ebb99*/
@@ -13968,7 +13968,7 @@ char VectorClass_ptr_HouseClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ebcc2*/
+    char VectorClass_ptr_HouseClass::Release(_VectorClass_PAVHouseClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ebcc8*/
   }
 
@@ -14068,7 +14068,7 @@ char VectorClass_ptr_UnitClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ebdee*/
+    char VectorClass_ptr_UnitClass::SetCapacity_0(_DynamicVectorClass_PAVHouseClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ebdf1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ebdf9*/
@@ -14176,7 +14176,7 @@ char VectorClass_ptr_AnimClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ebf22*/
+    char VectorClass_ptr_AnimClass::Release(_VectorClass_PAVAnimClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ebf28*/
   }
 
@@ -14273,7 +14273,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec04e*/
+    char VectorClass_ptr_TeamClass::SetCapacity_0(_DynamicVectorClass_PAVAnimClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec051*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec059*/
@@ -14381,7 +14381,7 @@ char VectorClass_ptr_FactoryClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec182*/
+    char VectorClass_ptr_FactoryClass::Release(_VectorClass_PAVFactoryClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ec188*/
   }
 
@@ -14481,7 +14481,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec2ae*/
+    char VectorClass_ptr_TeamClass::SetCapacity_1(_DynamicVectorClass_PAVFactoryClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec2b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec2b9*/
@@ -14589,7 +14589,7 @@ char VectorClass_ptr_CampaignClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec3e2*/
+    char VectorClass_ptr_CampaignClass::Release(_VectorClass_PAVCampaignClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ec3e8*/
   }
 
@@ -14689,7 +14689,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec50e*/
+    char VectorClass_ptr_CampaignClass::SetCapacity( _DynamicVectorClass_PAVCampaignClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec511*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec519*/
@@ -14797,7 +14797,7 @@ char VectorClass_ptr_SideClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec642*/
+    char VectorClass_ptr_SideClass::Release(_VectorClass_PAVSideClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ec648*/
   }
 
@@ -14897,7 +14897,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec76e*/
+    char VectorClass_ptr_CampaignClass::SetCapacity_0( _DynamicVectorClass_PAVSideClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec771*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec779*/
@@ -15005,7 +15005,7 @@ char VectorClass_ptr_HouseTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec8a2*/
+    char VectorClass_ptr_HouseTypeClass::Release(_VectorClass_PAVHouseTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ec8a8*/
   }
 
@@ -15105,7 +15105,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec9ce*/
+    char VectorClass_ptr_HouseTypeClass::SetCapacity( _DynamicVectorClass_PAVHouseTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec9d1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec9d9*/
@@ -15213,7 +15213,7 @@ char VectorClass_ptr_TaskForceClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ecb02*/
+    char VectorClass_ptr_TaskForceClass::Release(_VectorClass_PAVTaskForceClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ecb08*/
   }
 
@@ -15313,7 +15313,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ecc2e*/
+    char VectorClass_ptr_HouseTypeClass::SetCapacity_0( _DynamicVectorClass_PAVTaskForceClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ecc31*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ecc39*/
@@ -15421,7 +15421,7 @@ char VectorClass_ptr_TeamTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ecd62*/
+    char VectorClass_ptr_TeamTypeClass::Release(_VectorClass_PAVTeamTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ecd68*/
   }
 
@@ -15521,7 +15521,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ece8e*/
+    char VectorClass_ptr_HouseTypeClass::SetCapacity_1( _DynamicVectorClass_PAVTeamTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ece91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ece99*/
@@ -15629,7 +15629,7 @@ char VectorClass_ptr_ScriptTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ecfc2*/
+    char VectorClass_ptr_ScriptTypeClass::Release(_VectorClass_PAVScriptTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ecfc8*/
   }
 
@@ -15729,7 +15729,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed0ee*/
+    char VectorClass_ptr_ScriptTypeClass::SetCapacity( _DynamicVectorClass_PAVScriptTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ed0f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ed0f9*/
@@ -15837,7 +15837,7 @@ char VectorClass_ptr_OverlayTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed222*/
+    char VectorClass_ptr_OverlayTypeClass::Release(_VectorClass_PAVOverlayTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ed228*/
   }
 
@@ -15937,7 +15937,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed34e*/
+    char VectorClass_ptr_ScriptTypeClass::SetCapacity_0( _DynamicVectorClass_PAVOverlayTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ed351*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ed359*/
@@ -16045,7 +16045,7 @@ char VectorClass_ptr_SmudgeTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed482*/
+    char VectorClass_ptr_SmudgeTypeClass::Release(_VectorClass_PAVSmudgeTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ed488*/
   }
 
@@ -16145,7 +16145,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed5ae*/
+    char VectorClass_ptr_SmudgeTypeClass::SetCapacity( _DynamicVectorClass_PAVSmudgeTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ed5b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ed5b9*/
@@ -16253,7 +16253,7 @@ char VectorClass_ptr_TerrainTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed6e2*/
+    char VectorClass_ptr_TerrainTypeClass::Release(_VectorClass_PAVTerrainTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ed6e8*/
   }
 
@@ -16353,7 +16353,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed80e*/
+    char VectorClass_ptr_SmudgeTypeClass::SetCapacity_0( _DynamicVectorClass_PAVTerrainTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ed811*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ed819*/
@@ -16461,7 +16461,7 @@ char VectorClass_ptr_BuildingTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed942*/
+    char VectorClass_ptr_BuildingTypeClass::Release(_VectorClass_PAVBuildingTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ed948*/
   }
 
@@ -16558,7 +16558,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eda6e*/
+    char VectorClass_ptr_SmudgeTypeClass::SetCapacity_1( _DynamicVectorClass_PAVBuildingTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4eda71*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eda79*/
@@ -16666,7 +16666,7 @@ char VectorClass_ptr_AircraftTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4edba2*/
+    char VectorClass_ptr_AircraftTypeClass::Release(_VectorClass_PAVAircraftTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4edba8*/
   }
 
@@ -16766,7 +16766,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4edcce*/
+    char VectorClass_ptr_AircraftTypeClass::SetCapacity( _DynamicVectorClass_PAVAircraftTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4edcd1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4edcd9*/
@@ -16874,7 +16874,7 @@ char VectorClass_ptr_UnitTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ede02*/
+    char VectorClass_ptr_UnitTypeClass::Release(_VectorClass_PAVUnitTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ede08*/
   }
 
@@ -16974,7 +16974,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4edf2e*/
+    char VectorClass_ptr_AircraftTypeClass::SetCapacity_0( _DynamicVectorClass_PAVUnitTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4edf31*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4edf39*/
@@ -17082,7 +17082,7 @@ char VectorClass_ptr_AnimTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee062*/
+    char VectorClass_ptr_AnimTypeClass::Release(_VectorClass_PAVAnimTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ee068*/
   }
 
@@ -17182,7 +17182,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee18e*/
+    char VectorClass_ptr_AnimTypeClass::SetCapacity( _DynamicVectorClass_PAVAnimTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ee191*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ee199*/
@@ -17290,7 +17290,7 @@ char VectorClass_ptr_InfantryTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee2c2*/
+    char VectorClass_ptr_InfantryTypeClass::Release(_VectorClass_PAVInfantryTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ee2c8*/
   }
 
@@ -17390,7 +17390,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee3ee*/
+    char VectorClass_ptr_AnimTypeClass::SetCapacity_0( _DynamicVectorClass_PAVInfantryTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ee3f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ee3f9*/
@@ -17498,7 +17498,7 @@ char VectorClass_ptr_BulletTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee522*/
+    char VectorClass_ptr_BulletTypeClass::Release(_VectorClass_PAVBulletTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ee528*/
   }
 
@@ -17598,7 +17598,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee64e*/
+    char VectorClass_ptr_AnimTypeClass::SetCapacity_1( _DynamicVectorClass_PAVBulletTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ee651*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ee659*/
@@ -17706,7 +17706,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee782*/
+    char VectorClass_ptr_VoxelAnimTypeClass::Release( _VectorClass_PAVVoxelAnimTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ee788*/
   }
 
@@ -17806,7 +17806,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee8ae*/
+    char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity( _DynamicVectorClass_PAVVoxelAnimTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ee8b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ee8b9*/
@@ -17914,7 +17914,7 @@ char VectorClass_ptr_IsometricTileTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee9e2*/
+    char VectorClass_ptr_IsometricTileTypeClass::Release( _VectorClass_PAVIsometricTileTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ee9e8*/
   }
 
@@ -18014,7 +18014,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity_0(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eeb0e*/
+    char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity_0( _DynamicVectorClass_PAVIsometricTileTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4eeb11*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eeb19*/
@@ -18122,7 +18122,7 @@ char VectorClass_ptr_ParticleTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eec42*/
+    char VectorClass_ptr_ParticleTypeClass::Release(_VectorClass_PAVParticleTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4eec48*/
   }
 
@@ -18222,7 +18222,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eed6e*/
+    char VectorClass_ptr_ParticleTypeClass::SetCapacity( _DynamicVectorClass_PAVParticleTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4eed71*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eed79*/
@@ -18330,7 +18330,7 @@ char VectorClass_ptr_ParticleSystemTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eeea2*/
+    char VectorClass_ptr_ParticleSystemTypeClass::Release( _VectorClass_PAVParticleSystemTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4eeea8*/
   }
 
@@ -18430,7 +18430,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eefce*/
+    char VectorClass_ptr_ParticleTypeClass::SetCapacity_0( _DynamicVectorClass_PAVParticleSystemTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4eefd1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eefd9*/
@@ -18538,7 +18538,7 @@ char VectorClass_ptr_SuperWeaponTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ef102*/
+    char VectorClass_ptr_SuperWeaponTypeClass::Release( _VectorClass_PAVSuperWeaponTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ef108*/
   }
 
@@ -18638,7 +18638,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ef22e*/
+    char VectorClass_ptr_ParticleTypeClass::SetCapacity_1( _DynamicVectorClass_PAVSuperWeaponTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ef231*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ef239*/
@@ -18746,7 +18746,7 @@ char VectorClass_ptr_AbstractTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ef362*/
+    char VectorClass_ptr_AbstractTypeClass::Release(_VectorClass_PAVAbstractTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x4ef368*/
   }
 
@@ -18846,7 +18846,7 @@ char VectorClass_ptr_SuperClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ef48e*/
+    char VectorClass_ptr_SuperClass::SetCapacity( _DynamicVectorClass_PAVAbstractTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4ef491*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ef499*/
@@ -21191,7 +21191,7 @@ char VectorClass_BuildingType::Set(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50e9f2*/
+    char VectorClass_BuildingType::Set(_VectorClass_PBVBuildingTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x50e9f8*/
   }
 
@@ -21274,7 +21274,7 @@ char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
     if ( !*((unsigned char *)this + 13) && v4 ) /*0x50eb86*/
       return 0; /*0x50eb86*/
     v5 = *((unsigned int *)this + 5); /*0x50eb88*/
-    if ( v5 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v4 + v5, 0) ) /*0x50eb98*/
+    if ( CapacityIncrement <= 0 || !(*(unsigned __int8 (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
       return 0; /*0x50eb9f*/
   }
   v7 = *((unsigned int *)this + 4); /*0x50eba5*/
@@ -21367,7 +21367,7 @@ char VectorClass_UAngerStruct___16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50ed02*/
+    char VectorClass_UAngerStruct___16::Release( _VectorClass_PAUStartingTechnoStruct_HouseClass *this, int a2, unsigned int *a3)
     return 1; /*0x50ed08*/
   }
 
@@ -21467,7 +21467,7 @@ char VectorClass_UAngerStruct::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50ee2e*/
+    char VectorClass_UAngerStruct::SetCapacity( _DynamicVectorClass_PAUStartingTechnoStruct_HouseClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x50ee31*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x50ee39*/
@@ -21638,7 +21638,7 @@ char VectorClass_UAngerStruct::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50efc4*/
+    char VectorClass_UAngerStruct::Release(_VectorClass_UAngerStruct *this, int a2, unsigned int *a3)
     return 1; /*0x50efca*/
   }
 
@@ -21796,7 +21796,7 @@ char VectorClass_UAngerStruct::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f148*/
+    char VectorClass_UAngerStruct::SetCapacity_0(_DynamicVectorClass_UAngerStruct *this, int a2, unsigned int *a3)
   }
   v15 = *((unsigned int *)this + 2); /*0x50f14b*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x50f153*/
@@ -21967,7 +21967,7 @@ char VectorClass_UScoutStruct::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f2f4*/
+    char VectorClass_UScoutStruct::Release(_VectorClass_UScoutStruct *this, int a2, char *a3)
     return 1; /*0x50f2fa*/
   }
 
@@ -22211,7 +22211,7 @@ char VectorClass_BuildingType::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f822*/
+    char VectorClass_BuildingType::SetCapacity(_VectorClass_PBVTeamTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x50f828*/
   }
 
@@ -22308,7 +22308,7 @@ char VectorClass_BuildingType::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f94e*/
+    char VectorClass_BuildingType::SetCapacity_0(_DynamicVectorClass_PBVTeamTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x50f951*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x50f959*/
@@ -22410,7 +22410,7 @@ char VectorClass__N::Remove(signed int Size, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50fa7b*/
+    char VectorClass__N::Remove(_VectorClass__N *this, signed int Size, char *a3)
     return 1; /*0x50fa81*/
   }
 
@@ -22511,7 +22511,7 @@ char VectorClass__N::SetCapacity(signed int Size, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50fba7*/
+    char VectorClass__N::SetCapacity(_DynamicVectorClass__N *this, signed int Size, char *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x50fbaa*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x50fbb2*/
@@ -22685,7 +22685,7 @@ char VectorClass__N_18::Remove(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50fd55*/
+    char VectorClass__N_18::Remove( _VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass *this, int a2, int *a3)
     return 1; /*0x50fd5b*/
   }
 
@@ -22854,7 +22854,7 @@ char VectorClass__N_18::SetCapacity(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50ff1b*/
+    char VectorClass__N_18::SetCapacity( _DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass *this, int a2, int *a3)
   }
   v16 = *((unsigned int *)this + 2); /*0x50ff1e*/
   if ( v16 < *((unsigned int *)this + 4) ) /*0x50ff26*/
@@ -23374,7 +23374,7 @@ unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x512faa*/
     return this; /*0x512faa*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x512fae*/
+  unsigned int *VectorClass::CopyConstructor(VectorClass *this, unsigned int *a2)
   v3 = *(unsigned int *)&aP1->__pad_0[8]; /*0x512fb1*/
   *((unsigned int *)this + 2) = v3; /*0x512fb6*/
   if ( !v3 ) /*0x512fb9*/
@@ -23416,7 +23416,7 @@ char VectorClass_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x513306*/
       return 0; /*0x513306*/
     v4 = *((unsigned int *)this + 5); /*0x513308*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, char *, unsigned int))(*(unsigned int *)this + 32))(this, (char *)v3 + v4, 0) ) /*0x513318*/
+    if ( CapacityIncrement <= 0 || !(*(unsigned __int8 (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
       return 0; /*0x51331f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x513325*/
@@ -23562,7 +23562,7 @@ char VectorClass_ptr_CCINIClass::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x538602*/
+    char VectorClass_ptr_CCINIClass::Remove(_VectorClass_PAVCCINIClass *this, int a2, unsigned int *a3)
     return 1; /*0x538608*/
   }
 
@@ -23764,7 +23764,7 @@ char VectorClass_ptr_IonBlastClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x53db82*/
+    char VectorClass_ptr_IonBlastClass::Release(_VectorClass_PAVIonBlastClass *this, int a2, unsigned int *a3)
     return 1; /*0x53db88*/
   }
 
@@ -23864,7 +23864,7 @@ char VectorClass_ptr_IonBlastClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x53dcae*/
+    char VectorClass_ptr_IonBlastClass::SetCapacity( _DynamicVectorClass_PAVIonBlastClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x53dcb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x53dcb9*/
@@ -24071,7 +24071,7 @@ char VectorClass_PAG::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x54a332*/
+    char VectorClass_PAG::Release(_VectorClass_PAG *this, int a2, unsigned int *a3)
     return 1; /*0x54a338*/
   }
 
@@ -24207,7 +24207,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Release(int a2, 
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x54a592*/
+    char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Release( _VectorClass_PAUTileInsertType_IsometricTileTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x54a598*/
   }
 
@@ -24307,7 +24307,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::SetCapacity(int 
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x54a6be*/
+    (*(unsigned int *)this->__pad_0 + 12)
   }
   v7 = *((unsigned int *)this + 2); /*0x54a6c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x54a6c9*/
@@ -24527,7 +24527,7 @@ char VectorClass_ptr_LaserDrawClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x551412*/
+    char VectorClass_ptr_LaserDrawClass::Release(_VectorClass_PAVLaserDrawClass *this, int a2, unsigned int *a3)
     return 1; /*0x551418*/
   }
 
@@ -24627,7 +24627,7 @@ char VectorClass_ptr_LaserDrawClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x55153e*/
+    char VectorClass_ptr_LaserDrawClass::SetCapacity( _DynamicVectorClass_PAVLaserDrawClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x551541*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x551549*/
@@ -24867,7 +24867,7 @@ char VectorClass_ptr_LightSourceClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5553a2*/
+    char VectorClass_ptr_LightSourceClass::Release(_VectorClass_PAVLightSourceClass *this, int a2, unsigned int *a3)
     return 1; /*0x5553a8*/
   }
 
@@ -24967,7 +24967,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5554ce*/
+    char VectorClass_ptr_LightSourceClass::SetCapacity( _DynamicVectorClass_PAVLightSourceClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5554d1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5554d9*/
@@ -25075,7 +25075,7 @@ char VectorClass_ptr_PendingCellClass_LightSourceClass::Release(int a2, unsigned
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x555602*/
+    char VectorClass_ptr_PendingCellClass_LightSourceClass::Release( _VectorClass_PAVPendingCellClass_LightSourceClass *this, int a2, unsigned int *a3)
     return 1; /*0x555608*/
   }
 
@@ -25175,7 +25175,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x55572e*/
+    char VectorClass_ptr_LightSourceClass::SetCapacity_0( _DynamicVectorClass_PAVPendingCellClass_LightSourceClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x555731*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x555739*/
@@ -25385,7 +25385,7 @@ char VectorClass_ptr_LineTrail::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x556ff2*/
+    char VectorClass_ptr_LineTrail::Release(_VectorClass_PAVLineTrail *this, int a2, unsigned int *a3)
     return 1; /*0x556ff8*/
   }
 
@@ -25554,7 +25554,7 @@ char VectorClass_PBG::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x558322*/
+    char VectorClass_PBG::Release(_VectorClass_PBG *this, int a2, unsigned int *a3)
     return 1; /*0x558328*/
   }
 
@@ -25650,7 +25650,7 @@ int VectorClass_flat::RemoveItem(ObjectClass * aP1)
   result = aP1; /*0x55bae0*/
   if ( aP1->isInLogic ) /*0x55bae7*/
   {
-    v4 = (*(int (**)(int *, ObjectClass **))(*(unsigned int *)this + 16))(this, &aP1); /*0x55bafa*/
+    int VectorClass::RemoveItem(DynamicVectorClass *this, int a2)
     if ( v4 != -1 ) /*0x55bb00*/
     {
       v5 = *((char *)this + 4); /*0x55bb02*/
@@ -26121,7 +26121,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x589942*/
+    char VectorClass_USubzoneTrackingStruct::Release(_VectorClass_USubzoneTrackingStruct *this, int a2, int *a3)
     return 1; /*0x589948*/
   }
 
@@ -26296,7 +26296,7 @@ char VectorClass_W4PassabilityType::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x589f92*/
+    char VectorClass_W4PassabilityType::Release(_VectorClass_W4PassabilityType *this, int a2, unsigned int *a3)
     return 1; /*0x589f98*/
   }
 
@@ -26396,7 +26396,7 @@ char VectorClass_W4PassabilityType::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a0be*/
+    char VectorClass_W4PassabilityType::SetCapacity( _DynamicVectorClass_W4PassabilityType *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x58a0c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x58a0c9*/
@@ -26522,7 +26522,7 @@ char VectorClass_W4PassabilityType::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a204*/
+    char VectorClass_W4PassabilityType::SetCapacity_0( _DynamicVectorClass_U_HashObject_II *this, int a2, unsigned int *a3)
   }
   v10 = *((unsigned int *)this + 2); /*0x58a207*/
   if ( v10 < *((unsigned int *)this + 4) ) /*0x58a20f*/
@@ -26686,7 +26686,7 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a375*/
+    char VectorClass_W4PassabilityType::SetCapacity_1( _DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct *this, int a2, char *a3)
   }
   v15 = *((unsigned int *)this + 2); /*0x58a378*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x58a380*/
@@ -26906,7 +26906,7 @@ char VectorClass_UHashObject_uint_uint::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a7a4*/
+    char VectorClass_UHashObject_uint_uint::Release(_VectorClass_U_HashObject_II *this, int a2, unsigned int *a3)
     return 1; /*0x58a7aa*/
   }
 
@@ -27135,7 +27135,7 @@ char VectorClass_UHashObject_uint_SubzoneConn::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a9d5*/
+    char VectorClass_UHashObject_uint_SubzoneConn::Release( _VectorClass_U_HashObject_IUSubzoneConnectionStruct *this, int a2, char *a3)
     return 1; /*0x58a9db*/
   }
 
@@ -27368,7 +27368,7 @@ unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2
 
   if ( this == a2 ) /*0x58ad1c*/
     return this; /*0x58ad1c*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x58ad20*/
+  unsigned int *VectorClass_USubzoneTrackingStruct::SetCapacity( VectorClass_USubzoneTrackingStruct *this, unsigned int *a2)
   v3 = a2[2]; /*0x58ad23*/
   *((unsigned int *)this + 2) = v3; /*0x58ad2a*/
   if ( !v3 ) /*0x58ad2d*/
@@ -27581,7 +27581,7 @@ char VectorClass_ptr_MapRegionClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ac782*/
+    char VectorClass_ptr_MapRegionClass::Release(_VectorClass_PAVMapRegionClass *this, int a2, unsigned int *a3)
     return 1; /*0x5ac788*/
   }
 
@@ -27681,7 +27681,7 @@ char VectorClass_ptr_MapRegionClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ac8ae*/
+    char VectorClass_ptr_MapRegionClass::SetCapacity(VectorClass_ptr_MapRegionClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5ac8b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5ac8b9*/
@@ -27802,7 +27802,7 @@ char VectorClass_N::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ad1db*/
+    char VectorClass_N::Release(_VectorClass_N *this, int a2, unsigned int *a3)
     return 1; /*0x5ad1e0*/
   }
 
@@ -27915,7 +27915,7 @@ char VectorClass_N::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ad32d*/
+    char VectorClass_N::SetCapacity(_DynamicVectorClass_N *this, int a2, unsigned int *a3)
   }
   v9 = *((unsigned int *)this + 2); /*0x5ad330*/
   if ( v9 < *((unsigned int *)this + 4) ) /*0x5ad338*/
@@ -28188,7 +28188,7 @@ char VectorClass_Point2D::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d0914*/
+    char VectorClass_Point2D::Release(_VectorClass_VPoint2D *this, int a2, unsigned int *a3)
     return 1; /*0x5d091a*/
   }
 
@@ -28324,7 +28324,7 @@ char VectorClass_ptr_MSTextEntry::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d0bc2*/
+    char VectorClass_ptr_MSTextEntry::Release(_VectorClass_PAVMSTextEntry *this, int a2, unsigned int *a3)
     return 1; /*0x5d0bc8*/
   }
 
@@ -28460,7 +28460,7 @@ char VectorClass_ptr_MapSelection::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d0e22*/
+    char VectorClass_ptr_MapSelection::Release(_VectorClass_PAVMapSelection *this, int a2, unsigned int *a3)
     return 1; /*0x5d0e28*/
   }
 
@@ -28596,7 +28596,7 @@ char VectorClass_ptr_MSSfxEntry::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d1542*/
+    char VectorClass_ptr_MSSfxEntry::Release(_VectorClass_PAVMSSfxEntry *this, int a2, unsigned int *a3)
     return 1; /*0x5d1548*/
   }
 
@@ -28900,7 +28900,7 @@ char VectorClass_ptr_MSSfx::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d28c2*/
+    char VectorClass_ptr_MSSfx::SetCapacity(_VectorClass_PAVMSAnim *this, int a2, unsigned int *a3)
     return 1; /*0x5d28c8*/
   }
 
@@ -28962,7 +28962,7 @@ char VectorClass_ptr_MSSfx::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d29ee*/
+    char VectorClass_ptr_MSSfx::SetCapacity_0(_DynamicVectorClass_PAVMSAnim *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5d29f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d29f9*/
@@ -29070,7 +29070,7 @@ char VectorClass_ptr_MSSfx::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d2b22*/
+    char VectorClass_ptr_MSSfx::Release(_VectorClass_PAVMSSfx *this, int a2, unsigned int *a3)
     return 1; /*0x5d2b28*/
   }
 
@@ -29170,7 +29170,7 @@ char VectorClass_Point2D::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d2c4e*/
+    char VectorClass_Point2D::SetCapacity(_DynamicVectorClass_PAVMSSfx *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5d2c51*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d2c59*/
@@ -29425,7 +29425,7 @@ char VectorClass_UAcceleratorTracker::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d54f4*/
+    char VectorClass_UAcceleratorTracker::Release(_VectorClass_UAcceleratorTracker *this, int a2, unsigned int *a3)
     return 1; /*0x5d54fa*/
   }
 
@@ -29594,7 +29594,7 @@ char VectorClass_ptr_MultiplayerTeam::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d83d2*/
+    char VectorClass_ptr_MultiplayerTeam::Release(_VectorClass_PAVMultiplayerTeam *this, int a2, unsigned int *a3)
     return 1; /*0x5d83d8*/
   }
 
@@ -29809,7 +29809,7 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5eecf2*/
+    char VectorClass_cptr_MultiMission::SetAt(_VectorClass_PBVMultiMission *this, int a2, unsigned int *a3)
     return 1; /*0x5eecf8*/
   }
 
@@ -29906,7 +29906,7 @@ char VectorClass_cptr_MultiMission::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5eee1e*/
+    char VectorClass_cptr_MultiMission::SetCapacity( _DynamicVectorClass_PBVMultiMission *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5eee21*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5eee29*/
@@ -30160,7 +30160,7 @@ char VectorClass_ptr_ObjectTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5f9c62*/
+    char VectorClass_ptr_ObjectTypeClass::Release(_VectorClass_PAVObjectTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x5f9c68*/
   }
 
@@ -30260,7 +30260,7 @@ char VectorClass_ptr_ObjectTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5f9d8e*/
+    char VectorClass_ptr_ObjectTypeClass::SetCapacity( _DynamicVectorClass_PAVObjectTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5f9d91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5f9d99*/
@@ -30454,7 +30454,7 @@ char VectorClass_ptr_SpotLightClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x600102*/
+    char VectorClass_ptr_SpotLightClass::Release(_VectorClass_PAVSpotLightClass *this, int a2, unsigned int *a3)
     return 1; /*0x600108*/
   }
 
@@ -30554,7 +30554,7 @@ char VectorClass_ptr_SpotLightClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x60022e*/
+    char VectorClass_ptr_SpotLightClass::SetCapacity( _DynamicVectorClass_PAVSpotLightClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x600231*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x600239*/
@@ -30718,7 +30718,7 @@ char VectorClass_ptr_ColorScheme::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x627ef2*/
+    char VectorClass_ptr_ColorScheme::Release(_VectorClass_PAVColorScheme *this, int a2, unsigned int *a3)
     return 1; /*0x627ef8*/
   }
 
@@ -30885,7 +30885,7 @@ char VectorClass_ptr_ColorScheme::SetCapacity(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6283c6*/
+    char VectorClass_ptr_ColorScheme::SetCapacity(_VectorClass_VHSVClass *this, int a2, char *a3)
     return 1; /*0x6283cc*/
   }
 
@@ -31227,7 +31227,7 @@ char VectorClass_ptr_ParasiteClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x62b1b2*/
+    char VectorClass_ptr_ParasiteClass::Release(_VectorClass_PAVParasiteClass *this, int a2, unsigned int *a3)
     return 1; /*0x62b1b8*/
   }
 
@@ -31327,7 +31327,7 @@ char VectorClass_ptr_ParasiteClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x62b2de*/
+    char VectorClass_ptr_ParasiteClass::SetCapacity( _DynamicVectorClass_PAVParasiteClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x62b2e1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x62b2e9*/
@@ -31602,7 +31602,7 @@ char VectorClass_ptr_PlanningMemberClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63de22*/
+    char VectorClass_ptr_PlanningMemberClass::Release( _VectorClass_PAVPlanningMemberClass *this, int a2, unsigned int *a3)
     return 1; /*0x63de28*/
   }
 
@@ -31702,7 +31702,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63dfae*/
+    char VectorClass_ptr_PlanningMemberClass::SetCapacity( _DynamicVectorClass_PAVPlanningMemberClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x63dfb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63dfb9*/
@@ -31856,7 +31856,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity_0(int a2, unsigned int * a
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e2be*/
+    char VectorClass_ptr_PlanningMemberClass::SetCapacity_0( _DynamicVectorClass_PAVPlanningBranchClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x63e2c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63e2c9*/
@@ -31922,7 +31922,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1)
   int v4; // ecx
   int v5; // ecx
 
-  v3 = (*(int (**)(int *, IUnknown *))(*(unsigned int *)this + 16))(this, aP1); /*0x63e90c*/
+  int VectorClass::EraseAt(DynamicVectorClass *this, int a2)
   if ( v3 == -1 ) /*0x63e912*/
     return 0; /*0x63e912*/
   v4 = *((char *)this + 4); /*0x63e914*/
@@ -32009,7 +32009,7 @@ char VectorClass_ptr_PlanningTokenClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63ea32*/
+    char VectorClass_ptr_PlanningTokenClass::Release( _VectorClass_PAVPlanningTokenClass *this, int a2, unsigned int *a3)
     return 1; /*0x63ea38*/
   }
 
@@ -32334,7 +32334,7 @@ char VectorClass_ptr_RadBeam::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x65a322*/
+    char VectorClass_ptr_RadBeam::Release(_VectorClass_PAVRadBeam *this, int a2, unsigned int *a3)
     return 1; /*0x65a328*/
   }
 
@@ -32434,7 +32434,7 @@ char VectorClass_ptr_RadBeam::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x65a44e*/
+    char VectorClass_ptr_RadBeam::SetCapacity(_DynamicVectorClass_PAVRadBeam *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x65a451*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x65a459*/
@@ -32631,7 +32631,7 @@ char VectorClass_ptr_RadSiteClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x65c032*/
+    char VectorClass_ptr_RadSiteClass::Release(_VectorClass_PAVRadSiteClass *this, int a2, unsigned int *a3)
     return 1; /*0x65c038*/
   }
 
@@ -32731,7 +32731,7 @@ char VectorClass_ptr_RadSiteClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x65c15e*/
+    char VectorClass_ptr_RadSiteClass::SetCapacity( _DynamicVectorClass_PAVRadSiteClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x65c161*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x65c169*/
@@ -32928,7 +32928,7 @@ char VectorClass_ptr_RadarEventClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x660dc2*/
+    char VectorClass_ptr_RadarEventClass::Release(_VectorClass_PAVRadarEventClass *this, int a2, unsigned int *a3)
     return 1; /*0x660dc8*/
   }
 
@@ -33028,7 +33028,7 @@ char VectorClass_ptr_RadarEventClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x660eee*/
+    char VectorClass_ptr_RadarEventClass::SetCapacity(VectorClass_ptr_RadarEventClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x660ef1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x660ef9*/
@@ -33185,7 +33185,7 @@ unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67aa8a*/
     return this; /*0x67aa8a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x67aa8e*/
+  unsigned int *VectorClass::CopyAssign(VectorClass *this, unsigned int *a2)
   v3 = aP1->field_8; /*0x67aa91*/
   *((unsigned int *)this + 2) = v3; /*0x67aa96*/
   if ( !v3 ) /*0x67aa99*/
@@ -33223,7 +33223,7 @@ unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67ae0a*/
     return this; /*0x67ae0a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x67ae0e*/
+  unsigned int *VectorClass::CopySmudge(VectorClass *this, unsigned int *a2)
   v3 = aP1->headNode[1]; /*0x67ae11*/
   *((unsigned int *)this + 2) = v3; /*0x67ae16*/
   if ( !v3 ) /*0x67ae19*/
@@ -33316,7 +33316,7 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x691176*/
       return 0; /*0x691176*/
     v4 = *((unsigned int *)this + 5); /*0x691178*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x691188*/
+    if ( CapacityIncrement <= 0 || !(*(unsigned __int8 (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
       return 0; /*0x69118f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x691195*/
@@ -33606,7 +33606,7 @@ char VectorClass_Wstring::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x69caf3*/
+    char VectorClass_Wstring::Release(_VectorClass_VWstring *this, int a2, unsigned int *a3)
     return 1; /*0x69caf9*/
   }
 
@@ -33761,7 +33761,7 @@ char VectorClass_ptr_MultiMission::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69ce22*/
+    char VectorClass_ptr_MultiMission::Release(_VectorClass_PAVMultiMission *this, int a2, unsigned int *a3)
     return 1; /*0x69ce28*/
   }
 
@@ -33861,7 +33861,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69cf4e*/
+    char VectorClass_ptr_GlobalPacketType::SetCapacity( _DynamicVectorClass_PAVMultiMission *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x69cf51*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x69cf59*/
@@ -33969,7 +33969,7 @@ char VectorClass_ptr_GlobalPacketType::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69d082*/
+    char VectorClass_ptr_GlobalPacketType::Release(_VectorClass_PAUGlobalPacketType *this, int a2, unsigned int *a3)
     return 1; /*0x69d088*/
   }
 
@@ -34069,7 +34069,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69d1ae*/
+    char VectorClass_ptr_GlobalPacketType::SetCapacity_0( _DynamicVectorClass_PAUGlobalPacketType *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x69d1b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x69d1b9*/
@@ -34177,7 +34177,7 @@ char VectorClass_ptr_PhoneEntryClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69d2e2*/
+    char VectorClass_ptr_PhoneEntryClass::Release(_VectorClass_PAVPhoneEntryClass *this, int a2, unsigned int *a3)
     return 1; /*0x69d2e8*/
   }
 
@@ -34277,7 +34277,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69d40e*/
+    char VectorClass_ptr_GlobalPacketType::SetCapacity_1( VectorClass_ptr_GlobalPacketType *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x69d411*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x69d419*/
@@ -34678,7 +34678,7 @@ char VectorClass_ptr_SlaveManagerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b17b2*/
+    char VectorClass_ptr_SlaveManagerClass::Release(_VectorClass_PAVSlaveManagerClass *this, int a2, unsigned int *a3)
     return 1; /*0x6b17b8*/
   }
 
@@ -34778,7 +34778,7 @@ char VectorClass_ptr_SlaveManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b18de*/
+    char VectorClass_ptr_SlaveManagerClass::SetCapacity( _DynamicVectorClass_PAVSlaveManagerClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x6b18e1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b18e9*/
@@ -35183,7 +35183,7 @@ char VectorClass_ptr_SpawnManagerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b85c2*/
+    char VectorClass_ptr_SpawnManagerClass::Release(_VectorClass_PAVSpawnManagerClass *this, int a2, unsigned int *a3)
     return 1; /*0x6b85c8*/
   }
 
@@ -35283,7 +35283,7 @@ char VectorClass_ptr_SpawnManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b86ee*/
+    char VectorClass_ptr_SpawnManagerClass::SetCapacity( _DynamicVectorClass_PAVSpawnManagerClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x6b86f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b86f9*/
@@ -36124,7 +36124,7 @@ char VectorClass_K::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6c62b2*/
+    char VectorClass_K::Release(_VectorClass_K *this, int a2, unsigned int *a3)
     return 1; /*0x6c62b8*/
   }
 
@@ -36224,7 +36224,7 @@ char VectorClass_K::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6c63de*/
+    char VectorClass_K::SetCapacity(_DynamicVectorClass_K *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x6c63e1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6c63e9*/
@@ -36416,7 +36416,7 @@ char VectorClass_ptr_SubTitle::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6ca8ee*/
+    char VectorClass_ptr_SubTitle::SetCapacity(_DynamicVectorClass_PAVSubTitle *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x6ca8f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6ca8f9*/
@@ -36516,7 +36516,7 @@ char VectorClass_ptr_SubTitle::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6caab2*/
+    char VectorClass_ptr_SubTitle::Release(_VectorClass_PAVSubTitle *this, int a2, unsigned int *a3)
     return 1; /*0x6caab8*/
   }
 
@@ -36608,7 +36608,7 @@ char VectorClass_flat::RemoveAt(int a2)
   int v4; // ecx
   int v5; // ecx
 
-  v3 = (*(int (**)(int *, int))(*(unsigned int *)this + 16))(this, a2); /*0x6ce2dc*/
+  int VectorClass::RemoveAt(DynamicVectorClass *this, int a2)
   if ( v3 == -1 ) /*0x6ce2e2*/
     return 0; /*0x6ce2e2*/
   v4 = *((char *)this + 4); /*0x6ce2e4*/
@@ -36866,7 +36866,7 @@ char VectorClass_UDirtyAreaStruct::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6dc765*/
+    char VectorClass_UDirtyAreaStruct::Release(_VectorClass_UDirtyAreaStruct *this, int a2, char *a3)
     return 1; /*0x6dc76b*/
   }
 
@@ -37037,7 +37037,7 @@ char VectorClass_UDirtyAreaStruct___16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6dcab2*/
+    char VectorClass_UDirtyAreaStruct___16::Release( _VectorClass_PAVShadowControlClass *this, int a2, unsigned int *a3)
     return 1; /*0x6dcab8*/
   }
 
@@ -37137,7 +37137,7 @@ char VectorClass_UDirtyAreaStruct::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6dcbde*/
+    char VectorClass_UDirtyAreaStruct::SetCapacity_0( _DynamicVectorClass_PAVShadowControlClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x6dcbe1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6dcbe9*/
@@ -37380,7 +37380,7 @@ char VectorClass_ptr_TagTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6e6622*/
+    char VectorClass_ptr_TagTypeClass::Release(_VectorClass_PAVTagTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x6e6628*/
   }
 
@@ -37480,7 +37480,7 @@ char VectorClass_ptr_TagTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6e674e*/
+    char VectorClass_ptr_TagTypeClass::SetCapacity( _DynamicVectorClass_PAVTagTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x6e6751*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6e6759*/
@@ -37728,7 +37728,7 @@ char VectorClass_ptr_TemporalClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x71b382*/
+    char VectorClass_ptr_TemporalClass::Release(_VectorClass_PAVTemporalClass *this, int a2, unsigned int *a3)
     return 1; /*0x71b388*/
   }
 
@@ -37828,7 +37828,7 @@ char VectorClass_ptr_TemporalClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x71b4ae*/
+    char VectorClass_ptr_TemporalClass::SetCapacity( _DynamicVectorClass_PAVTemporalClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x71b4b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x71b4b9*/
@@ -38025,7 +38025,7 @@ char VectorClass_ptr_TEventClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x71fce2*/
+    char VectorClass_ptr_TEventClass::Release(_VectorClass_PAVTEventClass *this, int a2, unsigned int *a3)
     return 1; /*0x71fce8*/
   }
 
@@ -38125,7 +38125,7 @@ char VectorClass_ptr_TEventClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x71fe0e*/
+    char VectorClass_ptr_TEventClass::SetCapacity(_DynamicVectorClass_PAVTEventClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x71fe11*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x71fe19*/
@@ -38276,7 +38276,7 @@ char VectorClass_ptr_ThemeControl::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x72138e*/
+    char VectorClass_ptr_ThemeControl::SetCapacity( _DynamicVectorClass_PAUThemeControl *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x721391*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x721399*/
@@ -38450,7 +38450,7 @@ char VectorClass_ptr_TiberiumClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x723872*/
+    char VectorClass_ptr_TiberiumClass::Release(_VectorClass_PAVTiberiumClass *this, int a2, unsigned int *a3)
     return 1; /*0x723878*/
   }
 
@@ -38550,7 +38550,7 @@ char VectorClass_ptr_TiberiumClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x72399e*/
+    char VectorClass_ptr_TiberiumClass::SetCapacity( _DynamicVectorClass_PAVTiberiumClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x7239a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x7239a9*/
@@ -38731,7 +38731,7 @@ char VectorClass_E::Release(signed int Size, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x74c0cb*/
+    char VectorClass_E::Release(_VectorClass_E *this, signed int Size, char *a3)
     return 1; /*0x74c0d1*/
   }
 
@@ -38911,7 +38911,7 @@ char VectorClass_ptr_VocClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x751a12*/
+    char VectorClass_ptr_VocClass::Release(_VectorClass_PAVVocClass *this, int a2, unsigned int *a3)
     return 1; /*0x751a18*/
   }
 
@@ -39011,7 +39011,7 @@ char VectorClass_ptr_VocClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x751b3e*/
+    char VectorClass_ptr_VocClass::SetCapacity(_DynamicVectorClass_PAVVocClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x751b41*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x751b49*/
@@ -39175,7 +39175,7 @@ char VectorClass_ptr_VoxClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x753792*/
+    char VectorClass_ptr_VoxClass::Release(_VectorClass_PAVVoxClass *this, int a2, unsigned int *a3)
     return 1; /*0x753798*/
   }
 
@@ -39377,7 +39377,7 @@ char VectorClass_ptr_MovieHandle::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x75a572*/
+    char VectorClass_ptr_MovieHandle::Release(_VectorClass_PAVMovieHandle *this, int a2, unsigned int *a3)
     return 1; /*0x75a578*/
   }
 
@@ -39477,7 +39477,7 @@ char VectorClass_ptr_MovieHandle::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x75a69e*/
+    char VectorClass_ptr_MovieHandle::SetCapacity(_DynamicVectorClass_PAVMovieHandle *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x75a6a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x75a6a9*/
@@ -39674,7 +39674,7 @@ char VectorClass_ptr_WaypointPathClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x764542*/
+    char VectorClass_ptr_WaypointPathClass::Release(_VectorClass_PAVWaypointPathClass *this, int a2, unsigned int *a3)
     return 1; /*0x764548*/
   }
 
@@ -39774,7 +39774,7 @@ char VectorClass_ptr_WaypointPathClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x76466e*/
+    char VectorClass_ptr_WaypointPathClass::SetCapacity( _DynamicVectorClass_PAVWaypointPathClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x764671*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x764679*/
@@ -40408,7 +40408,7 @@ char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release(int a2, un
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x7b2982*/
+    char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release( _VectorClass_PAUWinsockBufferType_WinsockInterfaceClass *this, int a2, unsigned int *a3)
     return 1; /*0x7b2988*/
   }
 
@@ -40577,7 +40577,7 @@ char VectorClass_PAE::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x7b4402*/
+    char VectorClass_PAE::Release(_VectorClass_PAE *this, int a2, unsigned int *a3)
     return 1; /*0x7b4408*/
   }
 

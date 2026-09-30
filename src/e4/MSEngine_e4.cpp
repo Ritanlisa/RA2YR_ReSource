@@ -114,7 +114,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ace05*/
+    char MSEngine::Release(_VectorClass_V_TRect_H *this, int a2, char *a3)
     return 1; /*0x5ace0b*/
   }
 
@@ -195,7 +195,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5acf97*/
+    char MSEngine::SetCapacity(_DynamicVectorClass_V_TRect_H *this, int a2, char *a3)
   }
   v12 = *((unsigned int *)this + 2); /*0x5acf9a*/
   if ( v12 < *((unsigned int *)this + 4) ) /*0x5acfa2*/

@@ -101,7 +101,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     v8 = v14[18] - v12; /*0x6a6ba3*/
 LABEL_18:
     v7[18] = v8; /*0x6a6c09*/
-    (*(void (**)(unsigned int *, unsigned int))(*(unsigned int *)this + 224))(this, 0); /*0x6a6c14*/
+    char sub_6A6AF0(ObjectClass *this, char a2, int a3)
     return 1; /*0x6a6c20*/
   }
   return 0; /*0x6a6c1d*/

@@ -3417,7 +3417,7 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x67a57e*/
+  unsigned int *Rules::CopyDataArray(Rules *this, unsigned int *a2)
   v3 = aP1->Capacity; /*0x67a581*/
   *((unsigned int *)this + 2) = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/

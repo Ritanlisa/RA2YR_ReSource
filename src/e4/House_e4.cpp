@@ -1015,7 +1015,7 @@ int House::LookupObject(int a2)
   unsigned int *v2; // eax
   int v3; // ecx
 
-  v2 = (unsigned int *)(*(int (**)(void *))(*(unsigned int *)this + 156))(this); /*0x544be2*/
+  int House::LookupObject(House *this, int a2)
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x544c03*/
     return dword_8288E4[*(char *)(v3 + 41)]; /*0x544c09*/
   else
@@ -1032,7 +1032,7 @@ int House::LoadMapFileData(int a2, char a3)
 
   if ( a3 && !*((unsigned int *)this + 41) && *((unsigned char *)this + 756) ) /*0x544c35*/
     MapClass::LoadFileData((int)this); /*0x544c3f*/
-  v4 = (unsigned int *)(*(int (**)(unsigned int *))(*(unsigned int *)this + 624))(this); /*0x544c48*/
+  bool House::LoadMapFileData(House *this, int a2, char a3)
   return v4 && a2 < *v4 * v4[1] && v4[a2 + 4]; /*0x544c50*/
 
 }

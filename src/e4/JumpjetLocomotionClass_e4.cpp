@@ -5012,7 +5012,7 @@ char JumpjetLocomotionClass_26::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x54e9d2*/
+    char JumpjetLocomotionClass_26::Release(_VectorClass_PAUKamikazeControl *this, int a2, unsigned int *a3)
     return 1; /*0x54e9d8*/
   }
 
@@ -5112,7 +5112,7 @@ char JumpjetLocomotionClass_26::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x54eafe*/
+    char JumpjetLocomotionClass_26::SetCapacity( _DynamicVectorClass_PAUKamikazeControl *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x54eb01*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x54eb09*/

@@ -24,7 +24,7 @@ void SlaveManagerClass::Check()
   int result; // eax
 
   if ( *((unsigned int *)this + 43) != 10 ) /*0x522d07*/
-    return (*(int (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 1952))(this, 10, 0); /*0x522d0f*/
+    int SlaveManagerClass::Check(SlaveManagerClass *this)
   return result; /*0x522d15*/
 
 }
@@ -35,7 +35,7 @@ namespace gamemd {
 int SlaveManagerClass::VtableDispatch()
 {
 
-  return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)this + 488))(this, 5, 0); /*0x522d2c*/
+  int SlaveManagerClass::VtableDispatch(SlaveManagerClass *this)
 
 }
 } // namespace ra2
@@ -45,7 +45,7 @@ namespace gamemd {
 int SlaveManagerClass::CheckIsOne()
 {
 
-  return ((double (*)(void *))*(unsigned int *)(*(unsigned int *)this + 692))(this) == 1.0; /*0x522d47*/
+  bool SlaveManagerClass::CheckIsOne(SlaveManagerClass *this)
 
 }
 } // namespace ra2
@@ -55,7 +55,7 @@ namespace gamemd {
 int SlaveManagerClass::IsMasterHarvester()
 {
 
-  return (*(int (**)(void *))(*(unsigned int *)this + 388))(this) == 10; /*0x522fd2*/
+  bool SlaveManagerClass::IsMasterHarvester(SlaveManagerClass *this)
 
 }
 } // namespace ra2
@@ -1134,7 +1134,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b167e*/
+    char SlaveManagerClass_25::Release( _DynamicVectorClass_PAUSlaveControl_SlaveManagerClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x6b1681*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b1689*/

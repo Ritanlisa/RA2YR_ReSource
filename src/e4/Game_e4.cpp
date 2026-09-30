@@ -1120,22 +1120,22 @@ CellStruct * * Game::SerializeGameSaveState()
   int v13; // [esp+B8h] [ebp-8h] BYREF
   int v14; // [esp+BCh] [ebp-4h] BYREF
 
-  result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &g_abs_A8ED78, 4, 0); /*0x67f9d3*/
+  ( this, &stru_A8EB00.?[404], 4, 0)
   if ( result >= 0 )
   {
     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, &g_abs_A8ED78); /*0x67f9e8*/
-    result = (*(int (**)(void *, void **, int, unsigned int))(*(unsigned int *)this + 12))(this, &HouseClass_Player, 4, 0); /*0x67f9f9*/
+    ( this, &dword_A83D4C, 4, 0)
     if ( result >= 0 )
     {
       ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)&HouseClass_Player); /*0x67fa0e*/
-      result = (*(int (**)(void *, wchar_t **, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fa1f*/
+      ( this, &stru_A8EB00.?[416], 4, 0)
                  this,
                  &g_abs_A8ED84,
                  4,
                  0);
       if ( result >= 0 )
       {
-        result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0); /*0x67fa36*/
+        int Game::SerializeGameSaveState(Game *this)
         if ( result >= 0 )
         {
           v3 = 0; /*0x67fa45*/
@@ -1144,7 +1144,7 @@ CellStruct * * Game::SerializeGameSaveState()
 LABEL_14:
             for ( i = 0; i < (int)g_abs_A8ECC8; ++i ) /*0x67face*/
               ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)g_abs_A8ECBC + i); /*0x67fade*/
-            result = (*(int (**)(void *, float *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fafc*/
+            ( this, flt_89EA40, 432, 0)
                        this,
                        g_abs_89EA40,
                        432,
@@ -1152,7 +1152,7 @@ LABEL_14:
             if ( result >= 0 )
             {
               SuperWeapon::SerializeSuperWeaponState(this); /*0x67fb09*/
-              result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0); /*0x67fb1a*/
+              ( this, &v13, 4, 0)
               if ( result >= 0 )
               {
                 v6 = 0; /*0x67fb29*/
@@ -1161,7 +1161,7 @@ LABEL_14:
 LABEL_27:
                   for ( j = 0; j < g_abs_8B40D8; ++j ) /*0x67fbb2*/
                     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)g_abs_8B40CC + j); /*0x67fbc2*/
-                  result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0); /*0x67fbdd*/
+                  ( this, &v13, 4, 0)
                   if ( result >= 0 )
                   {
                     v9 = 0; /*0x67fbec*/
@@ -1170,42 +1170,42 @@ LABEL_27:
 LABEL_39:
                       for ( k = 0; k < dword_8B41B8; ++k ) /*0x67fc74*/
                         ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)unk_8B41AC + k); /*0x67fc84*/
-                      result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fc9f*/
+                      ( this, dword_81DA8C, 76, 0)
                                  this,
                                  &dword_81DA8C,
                                  76,
                                  0);
                       if ( result >= 0 )
                       {
-                        result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fcb2*/
+                        ( this, dword_81DAD8, 76, 0)
                                    this,
                                    dword_81DAD8,
                                    76,
                                    0);
                         if ( result >= 0 )
                         {
-                          result = (*(int (**)(void *, double *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fcc8*/
+                          ( this, dbl_89EC28, 152, 0)
                                      this,
                                      g_abs_89EC28,
                                      152,
                                      0);
                           if ( result >= 0 )
                           {
-                            result = (*(int (**)(void *, char *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fcdb*/
+                            ( this, byte_89ECC0, 19, 0)
                                        this,
                                        g_abs_89ECC0,
                                        19,
                                        0);
                             if ( result >= 0 )
                             {
-                              result = (*(int (**)(void *, void *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fcf1*/
+                              (*(unsigned int *)this->__pad_0 + 12)
                                          this,
                                          &g_abs_A8E3A8,
                                          1024,
                                          0);
                               if ( result >= 0 )
                               {
-                                v12 = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fd04*/
+                                ( this, &dword_B07784, 4, 0)
                                         this,
                                         &g_abs_B07784,
                                         4,
@@ -1221,7 +1221,7 @@ LABEL_39:
                     {
                       while ( 1 ) /*0x67fbfe*/
                       {
-                        result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fbfe*/
+                        int Game::SerializeGameSaveState(Game *this)
                                    this,
                                    &v14,
                                    4,
@@ -1249,7 +1249,7 @@ LABEL_39:
                 {
                   while ( 1 ) /*0x67fb3b*/
                   {
-                    result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v14, 4, 0); /*0x67fb3b*/
+                    int Game::SerializeGameSaveState(Game *this)
                     if ( result < 0 ) /*0x67fb40*/
                       break; /*0x67fb40*/
                     if ( g_abs_8B40D8 < g_abs_8B40D0 /*0x67fb7d*/
@@ -1274,7 +1274,7 @@ LABEL_39:
           {
             while ( 1 ) /*0x67fa57*/
             {
-              result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v14, 4, 0); /*0x67fa57*/
+              int Game::SerializeGameSaveState(Game *this)
               if ( result < 0 ) /*0x67fa5c*/
                 break; /*0x67fa5c*/
               if ( (int)g_abs_A8ECC8 < g_abs_A8ECC0 /*0x67fa99*/

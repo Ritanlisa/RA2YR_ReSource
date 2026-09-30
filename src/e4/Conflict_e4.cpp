@@ -27,7 +27,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
   v3 = a2; /*0x766c13*/
   if ( !a2 ) /*0x766c1d*/
   {
-    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x766d1d*/
+    char Conflict_WorldDominationTour_12::Release( _VectorClass_V_rc_ptr_VGameOption_WorldDominationTour *this, int a2, unsigned int *a3)
     return 1; /*0x766d23*/
   }
   *((unsigned char *)this + 12) = 0; /*0x766c27*/
@@ -189,7 +189,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
   }
   else
   {
-    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x766eb9*/
+    (*(unsigned int *)this->__pad_0 + 12)
   }
   v12 = *((unsigned int *)this + 2); /*0x766ebc*/
   if ( v12 < *((unsigned int *)this + 4) ) /*0x766ec4*/

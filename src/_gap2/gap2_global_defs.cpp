@@ -2714,7 +2714,7 @@ LABEL_6:
       goto LABEL_19; /*0x450136*/
   }
   TypeAbstractClass = (unsigned int *)AbstractClass::GetType(*((unsigned int **)this + 329)); /*0x45013c*/
-  v6 = (*(int (**)(void *, unsigned int *, int))(*(unsigned int *)this + 256))(this, TypeAbstractClass, dword_89C818); /*0x450155*/
+  void ProcessAutoProduction(TechnoClass *this)
   if ( !v6 ) /*0x45015d*/
   {
     if ( (*(int (**)(unsigned int *))(*TypeAbstractClass + 44))(TypeAbstractClass) == 6 /*0x450211*/
@@ -3276,7 +3276,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim() {
   if ( *((char *)this + 361) )
   {
     v2 = BuildingClass::GetHealthRatio(this) <= *(double *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 5888); /*0x458354*/
-    v3 = (*(int (**)(int *))(*(unsigned int *)this + 1032))(this) > 0; /*0x45836b*/
+    unsigned char *PlayHealthDependentBuildingAnim(TechnoClass *this)
     IDA_LOBYTE(v28) = v3; /*0x458370*/
     if ( v2 )
     {
@@ -3294,7 +3294,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim() {
   if ( *((char *)this + 346) )
   {
     v8 = BuildingClass::GetHealthRatio(this) <= *(double *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 5888); /*0x4583d6*/
-    v9 = (*(int (**)(int *))(*(unsigned int *)this + 1032))(this) > 0; /*0x4583ed*/
+    unsigned char *PlayHealthDependentBuildingAnim(TechnoClass *this)
     IDA_LOBYTE(v28) = v9; /*0x4583f2*/
     if ( v8 )
     {
@@ -3312,7 +3312,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim() {
   if ( *((char *)this + 347) )
   {
     v13 = BuildingClass::GetHealthRatio(this) <= *(double *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 5888); /*0x458458*/
-    v14 = (*(int (**)(int *))(*(unsigned int *)this + 1032))(this) > 0; /*0x45846f*/
+    unsigned char *PlayHealthDependentBuildingAnim(TechnoClass *this)
     IDA_LOBYTE(v28) = v14; /*0x458474*/
     if ( v13 )
     {
@@ -3330,7 +3330,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim() {
   if ( *((char *)this + 348) )
   {
     v18 = BuildingClass::GetHealthRatio(this) <= *(double *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 5888); /*0x4584da*/
-    v19 = (*(int (**)(int *))(*(unsigned int *)this + 1032))(this) > 0; /*0x4584f1*/
+    unsigned char *PlayHealthDependentBuildingAnim(TechnoClass *this)
     IDA_LOBYTE(v28) = v19; /*0x4584f6*/
     if ( v18 )
     {
@@ -3349,7 +3349,7 @@ char* Gap2Recv_458330::PlayHealthDependentBuildingAnim() {
   if ( result ) /*0x458542*/
   {
     v24 = BuildingClass::GetHealthRatio(this) <= *(double *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 5888); /*0x45855c*/
-    v25 = (*(int (**)(int *))(*(unsigned int *)this + 1032))(this) > 0; /*0x458573*/
+    unsigned char *PlayHealthDependentBuildingAnim(TechnoClass *this)
     IDA_LOBYTE(v28) = v25; /*0x458578*/
     if ( v24 ) /*0x45857c*/
     {
@@ -3388,7 +3388,7 @@ char Gap2Recv_459CA0::ProcessDataCellClass() {
   int v9; // [esp+10h] [ebp-4h] BYREF
 
   v1 = *(unsigned short **)(*((unsigned int *)this + 328) + 3796); /*0x459cad*/
-  v2 = *(unsigned int *)(*(int (**)(unsigned int *, int *))(*(unsigned int *)this + 1760))(this, &v9); /*0x459cbf*/
+  char ProcessDataCellClass(TechnoClass *this)
   v9 = v2; /*0x459cc3*/
   if ( v1 ) /*0x459cc7*/
   {
@@ -3477,7 +3477,7 @@ void* Gap2Recv_465570::CalculateBuildingFoundationBounds(BuildingTypeClass * aP1
     && *((char *)this + 1360) == unk_89C8A8
     && *((char *)this + 1361) == unk_89C8AC )
   {
-    v3 = (int16_t *)(*(int (**)(int *))(*(unsigned int *)this + 156))(this); /*0x4655de*/
+    int *CalculateBuildingFoundationBounds(ObjectClass *this, int *a2)
     if ( v3 ) /*0x4655ea*/
     {
       v4 = unk_89C8A8; /*0x465624*/
@@ -3528,7 +3528,7 @@ void* Gap2Recv_465570::CalculateBuildingFoundationBounds(BuildingTypeClass * aP1
         v6 = v12; /*0x4656ef*/
       }
       v25 = *((char *)this + 896) == 0; /*0x465710*/
-      v13 = (*(int (**)(int *))(*(unsigned int *)this + 192))(this); /*0x465715*/
+      int *CalculateBuildingFoundationBounds(ObjectClass *this, int *a2)
       if ( v13 ) /*0x465721*/
       {
         v30 = *(int16_t *)(v13 + 6); /*0x46572d*/
@@ -4962,7 +4962,7 @@ char Gap2Recv_4DC340::DrawFootTargetLine() {
   v18[2] = 0; /*0x4dc36b*/
   if ( v2 ) /*0x4dc370*/
   {
-    v3 = (int *)(*(int (**)(int *, char **, unsigned int))(*(unsigned int *)this + 768))(this, &tail_1602E, 0); /*0x4dc38f*/
+    char DrawFootTargetLine(TechnoClass *this)
     a1 = *v3; /*0x4dc397*/
     v38 = v3[1]; /*0x4dc39e*/
     v39 = v3[2]; /*0x4dc3ac*/
@@ -6031,7 +6031,7 @@ int Gap2Recv_518D80::CalculateLocomotionFrameIndex() {
   v2 = *((char *)this + 433); /*0x518d88*/
   if ( v2 == -1 ) /*0x518d91*/
   {
-    v3 = (int16_t *)(*(int (**)(int *, AbstractClass **))(*(unsigned int *)this + 440))(this, &v17); /*0x518d9d*/
+    int CalculateLocomotionFrameIndex(TechnoClass *this)
     if ( *((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, v3) + 59) != 2 || *((unsigned char *)this + 140) ) /*0x518db7*/
       v2 = 0; /*0x518dc8*/
     else
@@ -6042,7 +6042,7 @@ int Gap2Recv_518D80::CalculateLocomotionFrameIndex() {
   v17 = v4; /*0x518ddb*/
   if ( !(*(uint8_t (**)(int *, IUnknown *))(v5 + 1088))(this, HouseClass_Player) ) /*0x518ddf*/
   {
-    v17 = (AbstractClass *)(*(int (**)(int *, int))(*(unsigned int *)this + 204))(this, 1); /*0x518df6*/
+    int CalculateLocomotionFrameIndex(TechnoClass *this)
     v4 = v17; /*0x518dfa*/
   }
   v6 = 36 * v2; /*0x518e05*/
@@ -6478,12 +6478,12 @@ void Gap2Recv_5206B0::FireTechnoAtTarget() {
     *((unsigned char *)this + 1677) = 0; /*0x520ad2*/
     return; /*0x520ad2*/
   }
-  v3 = (ObjectClass *)(*(int (**)(int, TechnoClass *))(*(unsigned int *)this + 740))(this, v2); /*0x5206d0*/
+  void FireTechnoAtTarget(TechnoClass *this)
   v4 = *((unsigned char *)this + 1677); /*0x5206d2*/
   v22 = v3; /*0x5206da*/
   if ( !v4 ) /*0x5206de*/
   {
-    v5 = (*(int (**)(int, unsigned int, ObjectClass *, int))(*(unsigned int *)this + 960))( /*0x5206f3*/
+    void FireTechnoAtTarget(TechnoClass *this)
            this,
            *((unsigned int *)this + 173),
            v3,
@@ -6501,13 +6501,13 @@ void Gap2Recv_5206B0::FireTechnoAtTarget() {
             || BuildingClass::GetHealthRatio((int *)v6->__pad_0) >= *(double *)(*(unsigned int *)&g_abs_87F8E4
                                                                               + 5880) )
           {
-            (*(void (**)(int, unsigned int))(*(unsigned int *)this + 968))(this, 0); /*0x520772*/
+            void FireTechnoAtTarget(TechnoClass *this)
           }
         }
       }
       else if ( v5 == 9 ) /*0x520709*/
       {
-        (*(void (**)(int, unsigned int))(*(unsigned int *)this + 1116))(this, 0); /*0x520716*/
+        void FireTechnoAtTarget(TechnoClass *this)
       }
       goto LABEL_46; /*0x52071c*/
     }
@@ -6529,7 +6529,7 @@ LABEL_20:
         (*(void (**)(int))(*(unsigned int *)v21 + 8))(v21); /*0x520818*/
       if ( v9 ) /*0x52081e*/
       {
-        (*(void (**)(int, int, unsigned int, unsigned int))(*(unsigned int *)this + 1368))(this, 26, 0, 0); /*0x52082b*/
+        void FireTechnoAtTarget(TechnoClass *this)
         v3 = v22; /*0x520831*/
         goto LABEL_44; /*0x520835*/
       }
@@ -6538,7 +6538,7 @@ LABEL_20:
     v10 = *((unsigned int *)this + 433); /*0x52083e*/
     if ( v10 == 27 || v10 == 28 || v10 == 29 || v10 == 30 ) /*0x520856*/
     {
-      (*(void (**)(int, int, unsigned int, unsigned int))(*(unsigned int *)this + 1368))(this, 29, 0, 0); /*0x520861*/
+      void FireTechnoAtTarget(TechnoClass *this)
       goto LABEL_44; /*0x520861*/
     }
     if ( *((unsigned int *)this + 165) && (v10 == 40 || v10 == 41) ) /*0x520878*/
@@ -6550,20 +6550,20 @@ LABEL_20:
       goto LABEL_73; /*0x520888*/
     if ( *((unsigned char *)this + 1755) && *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 432) + 3644) + 1480) ) /*0x5208a0*/
     {
-      (*(void (**)(int, int, unsigned int, unsigned int))(*(unsigned int *)this + 1368))(this, 41, 0, 0); /*0x5208b3*/
+      void FireTechnoAtTarget(TechnoClass *this)
       goto LABEL_44; /*0x5208b3*/
     }
     if ( *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 432) + 3644) + 1444) ) /*0x5208c1*/
     {
-      (*(void (**)(int, int, unsigned int, unsigned int))(*(unsigned int *)this + 1368))(this, 40, 0, 0); /*0x5208d4*/
+      void FireTechnoAtTarget(TechnoClass *this)
     }
     else
     {
 LABEL_73:
       if ( *((unsigned char *)this + 1755) ) /*0x5208d6*/
-        (*(void (**)(int, int, unsigned int, unsigned int))(*(unsigned int *)this + 1368))(this, 8, 0, 0); /*0x5208eb*/
+        void FireTechnoAtTarget(TechnoClass *this)
       else
-        (*(void (**)(int, int, unsigned int, unsigned int))(*(unsigned int *)this + 1368))(this, 4, 0, 0); /*0x5208fe*/
+        void FireTechnoAtTarget(TechnoClass *this)
     }
 LABEL_44:
     v20 = *(ObjectClass **)((char *)this + 692); /*0x520904*/
@@ -6573,7 +6573,7 @@ LABEL_44:
     if ( *((unsigned int *)this + 173) == *((unsigned int *)this + 361) ) /*0x520938*/
     {
       FootClass::ClearPathIndex((unsigned int *)this); /*0x52093c*/
-      (*(void (**)(int))(*(unsigned int *)this + 1280))(this); /*0x520946*/
+      void FireTechnoAtTarget(TechnoClass *this)
     }
   }
 LABEL_46:
@@ -6596,8 +6596,8 @@ LABEL_46:
   }
   if ( *((unsigned char *)this + 1677) && *((unsigned int *)this + 62) == v14 ) /*0x5209b5*/
   {
-    v15 = (ObjectClass *)(*(int (**)(int, unsigned int))(*(unsigned int *)this + 740))(this, *((unsigned int *)this + 173)); /*0x5209d0*/
-    if ( (*(int (**)(int, unsigned int, ObjectClass *, int))(*(unsigned int *)this + 960))( /*0x5209de*/
+    void FireTechnoAtTarget(TechnoClass *this)
+    void FireTechnoAtTarget(TechnoClass *this)
            this,
            *((unsigned int *)this + 173),
            v15,
@@ -6607,24 +6607,24 @@ LABEL_46:
       *((unsigned char *)this + 1677) = 0; /*0x520a03*/
       if ( v16 ) /*0x520a0c*/
       {
-        (*(void (**)(int, int, unsigned int, unsigned int))(*(unsigned int *)this + 1368))(this, 2, 0, 0); /*0x520a17*/
+        void FireTechnoAtTarget(TechnoClass *this)
       }
       else
       {
         v17 = *((unsigned int *)this + 433); /*0x520a19*/
         if ( v17 == 27 || v17 == 28 || v17 == 29 || v17 == 30 ) /*0x520a31*/
-          (*(void (**)(int, int, unsigned int, unsigned int))(*(unsigned int *)this + 1368))(this, 28, 0, 0); /*0x520a3e*/
+          void FireTechnoAtTarget(TechnoClass *this)
         else
-          (*(void (**)(int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)this + 1368))(this, 0, 0, 0); /*0x520a51*/
+          void FireTechnoAtTarget(TechnoClass *this)
       }
     }
     else
     {
-      (*(void (**)(int, unsigned int, ObjectClass *))(*(unsigned int *)this + 972))(this, *((unsigned int *)this + 173), v15); /*0x5209f5*/
+      void FireTechnoAtTarget(TechnoClass *this)
     }
     if ( *((unsigned int *)this + 173) ) /*0x520a57*/
     {
-      if ( *(unsigned int *)(*(unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)this + 1016))(this, 0) + 168) < *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 5824) ) /*0x520a83*/
+      void FireTechnoAtTarget(TechnoClass *this)
       {
         v24[0] = *((unsigned int *)this + 39); /*0x520a93*/
         v24[1] = *((unsigned int *)this + 40); /*0x520a9f*/
@@ -6891,7 +6891,7 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
   v2 = this; /*0x53b789*/
   if ( unk_A9FAB0 == 3 ) /*0x53b792*/
   {
-    v15 = (*(int (**)(void *))(*(unsigned int *)this + 124))(this); /*0x53b7a6*/
+    int ApplyChronoScreenColorShift(ObjectClass *this)
     v3 = (*(int (**)(void *))(*(unsigned int *)v2 + 128))(v2) - 32; /*0x53b7cc*/
     v4 = ((*(int (**)(void *))(*(unsigned int *)v2 + 116))(v2) - 2 * v15) / 2; /*0x53b7d0*/
     v18 = v4; /*0x53b7d6*/
@@ -14158,7 +14158,7 @@ unsigned int Gap2Recv_5CB790::TerritoryUpdateDisplayWOL(int a2) {
   int v11; // [esp+14h] [ebp-14h]
   unsigned char v12[16]; // [esp+18h] [ebp-10h] BYREF
 
-  v3 = (int *)(*(int (**)(unsigned int *, unsigned char *))(*(unsigned int *)this + 96))(this, v12); /*0x5cb79f*/
+  int TerritoryUpdateDisplayWOL(ObjectClass *this, int a2)
   v8 = *v3; /*0x5cb7a4*/
   v9 = v3[1]; /*0x5cb7ab*/
   v10 = v3[2]; /*0x5cb7b6*/
@@ -14301,7 +14301,7 @@ char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
   *((unsigned int *)this + 17) = &DynamicVectorClass<MSSfxEntry *>::`vftable'; /*0x5cee2f*/
   *((unsigned int *)this + 22) = 10; /*0x5cee36*/
   *((unsigned int *)this + 21) = 0; /*0x5cee39*/
-  (*(void (**)(char *))(*(unsigned int *)this + 12))(this); /*0x5cee3e*/
+  char *Map_Delete_5CEDD0(DynamicVector *this)
   DeleteAndZero::Alt2(v2); /*0x5cee43*/
   (*(void (**)(char *))(*((unsigned int *)this + 11) + 12))((unsigned char *)this + 44); /*0x5cee4c*/
   return this; /*0x5cee51*/
@@ -14312,7 +14312,7 @@ char* Gap2Recv_5CEDD0::Map_Delete_5CEDD0() {
 namespace gamemd { 
 int Gap2Recv_5CF830::Network_Load(ObjectClass * aP1) {
 
-  return (*(int (**)(void *, ObjectClass **))(*(unsigned int *)this + 16))(this, &aP1); /*0x5cf83a*/
+  int Network_Load(ObjectClass *this, char a2)
 
 }
 }
@@ -16169,7 +16169,7 @@ LABEL_31:
   aP2c = (IUnknown *)Math::RoundToInt(v33); /*0x62ca52*/
   v15 = (IUnknown *)Math::RoundToInt(v32); /*0x62ca53*/
   Coord::Subtract(v40, v15, aP2c, v25); /*0x62ca5d*/
-  (*(void (**)(void *, unsigned int *))(*(unsigned int *)this + 436))(this, v40); /*0x62ca6c*/
+  void UpdateParticleSystem(TechnoClass *this)
   v31 = COERCE_FLOAT(Random::Range(&g_abs_A8B230->random[1], 0, (IUnknown *)0x7FFFFFFE)); /*0x62ca8b*/
   v16 = *((unsigned int *)this + 43); /*0x62ca8f*/
   v17 = (double)IDA_SLODWORD(v31) * 4.656612877414201e-10 * 0.05 + *(double *)(v16 + 688) + *((double *)this + 23); /*0x62caab*/
@@ -17011,11 +17011,11 @@ char Gap2Recv_62F9A0::UpdateBuildingDamageParticles() {
     }
     if ( !IDA_LOBYTE(v7[12].X) ) /*0x62fbaf*/
 LABEL_13:
-      (*(void (**)(char *))(*(unsigned int *)this + 248))(this); /*0x62fbbd*/
+      char UpdateBuildingDamageParticles(char *this)
   }
   else
   {
-    (*(void (**)(char *))(*(unsigned int *)this + 248))(this); /*0x62fbc9*/
+    char UpdateBuildingDamageParticles(char *this)
   }
   IDA_LOBYTE(v22) = *((unsigned char *)this + 248); /*0x62fbcf*/
   if ( !(unsigned char)v22 ) /*0x62fbd7*/
@@ -18206,7 +18206,7 @@ char Gap2Recv_63E5D0::Team_Destroy(int aP1) {
   int v4; // ecx
   int v5; // ecx
 
-  v3 = (*(int (**)(int *, VectorClass *))(*(unsigned int *)this + 16))(this, aP1); /*0x63e5dc*/
+  char Team_Destroy(ObjectClass *this, int a2)
   if ( v3 == -1 ) /*0x63e5e2*/
     return 0; /*0x63e5e2*/
   v4 = *((char *)this + 4); /*0x63e5e4*/
@@ -22162,7 +22162,7 @@ void* Gap2Recv_67BFA0::System_Load_67BFA0(void* a2) {
 
   if ( this == a2 ) /*0x67bfaa*/
     return this; /*0x67bfaa*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x67bfae*/
+  unsigned int *System_Load_67BFA0(ObjectClass *this, unsigned int *a2)
   v3 = a2[2]; /*0x67bfb1*/
   *((unsigned int *)this + 2) = v3; /*0x67bfb6*/
   if ( !v3 ) /*0x67bfb9*/
@@ -22710,7 +22710,7 @@ char Gap2Recv_68C260::DynamicVector_PushBack(void* aP1) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x68c276*/
       return 0; /*0x68c276*/
     v4 = *((unsigned int *)this + 5); /*0x68c278*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, char *, unsigned int))(*(unsigned int *)this + 32))(this, (char *)v3 + v4, 0) ) /*0x68c288*/
+    if ( abstractFlags <= 0 || !(*((unsigned __int8 (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
       return 0; /*0x68c28f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x68c295*/
@@ -23319,7 +23319,7 @@ LABEL_51:
               {
                 DisplayClass::SetCoordVisible(4, v24, 1); /*0x693808*/
               }
-              return (*(int (**)(int *, int, int))(*(unsigned int *)this + 72))(this, g_abs_83E790[v25], 1); /*0x693831*/
+              ( this, dword_83E790[v31], 1)
             }
             if ( v10 > 0 && v10 < 5 ) /*0x6935fd*/
               v10 = 5; /*0x6935ff*/
@@ -25681,7 +25681,7 @@ int Gap2Recv_6D04D0::SidebarUpdateAll() {
   v2 = (int *)&g_abs_B0C1C0; /*0x6d04d4*/
   do /*0x6d04ea*/
   {
-    result = (*(int (**)(void *, int *))(*(unsigned int *)this + 52))(this, v2); /*0x6d04de*/
+    int SidebarUpdateAll(ObjectClass *this)
     v2 += 24; /*0x6d04e1*/
   }
   while ( (int)v2 < (int)&g_abs_B0CB20 ); /*0x6d04ea*/
@@ -28037,7 +28037,7 @@ char Gap2Recv_6F25E0::Team_Helper_6F25E0(void* a2) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x6f25f6*/
       return 0; /*0x6f25f6*/
     v4 = *((unsigned int *)this + 5); /*0x6f25f8*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x6f2608*/
+    if ( abstractFlags <= 0 || !(*((unsigned __int8 (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
       return 0; /*0x6f260f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x6f2615*/
@@ -28084,7 +28084,7 @@ void* Gap2Recv_6F2780::Team_Helper_6F2780(void* aP1) {
 
   if ( this == (unsigned int *)aP1 ) /*0x6f278a*/
     return this; /*0x6f278a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x6f278e*/
+  unsigned int *Team_Helper_6F2780(ObjectClass *this, unsigned int *a2)
   v3 = aP1->field_8; /*0x6f2791*/
   *((unsigned int *)this + 2) = v3; /*0x6f2796*/
   if ( !v3 ) /*0x6f2799*/
@@ -28209,7 +28209,7 @@ int Gap2Recv_6FD800::SpreadRadiationAreaEffect(InfantryClass * aP1) {
   int v29; // [esp+5Ch] [ebp-10h]
   int v30[3]; // [esp+60h] [ebp-Ch] BYREF
 
-  v2 = (*(int (**)(void *, int *))(*(unsigned int *)this + 72))(this, &v24); /*0x6fd813*/
+  int SpreadRadiationAreaEffect(ObjectClass *this, __int16 a2)
   v17 = 0; /*0x6fd818*/
   v27 = *(unsigned int *)v2; /*0x6fd822*/
   v28 = *(IUnknown **)(v2 + 4); /*0x6fd829*/
@@ -28568,21 +28568,21 @@ bool Gap2Recv_7087C0::ValidateAttackTarget(TechnoClass * aP1, int a3) {
   }
   if ( TechnoClass::GetValue((unsigned int *)this, (ObjectClass *)0xFFFFFFFF) <= 0 ) /*0x7088b2*/
     return 0; /*0x7088b2*/
-  if ( !(*(uint8_t (**)(int))(*(unsigned int *)this + 684))(this) ) /*0x7088bc*/
+  bool ValidateAttackTarget(int this, int *a2, int a3)
     return 0; /*0x7088bc*/
-  v5 = (*(int (**)(int))(*(unsigned int *)this + 132))(this); /*0x7088d9*/
-  v6 = (*(int (**)(int, TechnoClass *))(*(unsigned int *)this + 740))(this, aP1); /*0x7088e1*/
-  v7 = (*(int (**)(int, TechnoClass *, int))(*(unsigned int *)this + 956))(this, aP1, v6); /*0x7088ed*/
+  bool ValidateAttackTarget(int this, int *a2, int a3)
+  bool ValidateAttackTarget(int this, int *a2, int a3)
+  bool ValidateAttackTarget(int this, int *a2, int a3)
   if ( v7 == 5 || v7 == 6 ) /*0x7088ff*/
     return 0; /*0x7088ff*/
   if ( (uint8_t)House::IsCurrentPlayer(*(#375 **)((char *)this + 540)) /*0x708923*/
     && (*(int (**)(TechnoClass *))(*(unsigned int *)aP1->__pad_0 + 44))(aP1) == 6 )
   {
-    if ( (*(int (**)(int))(*(unsigned int *)this + 44))(this) == 15 && *(unsigned char *)(v5 + 3778) ) /*0x708935*/
+    bool ValidateAttackTarget(int this, int *a2, int a3)
       return 0; /*0x708935*/
     if ( VeterancyStruct::IsVeteran((float *)((char *)this + 336)) || VeterancyStruct::IsElite((float *)((char *)this + 336)) ) /*0x708956*/
     {
-      v8 = (*(int (**)(int))(*(unsigned int *)this + 132))(this); /*0x70896b*/
+      bool ValidateAttackTarget(int this, int *a2, int a3)
       if ( VeterancyStruct::IsVeteran((float *)((char *)this + 336)) ) /*0x70896d*/
       {
         if ( *(unsigned char *)(v8 + 682) ) /*0x708976*/
@@ -28594,7 +28594,7 @@ bool Gap2Recv_7087C0::ValidateAttackTarget(TechnoClass * aP1, int a3) {
   }
   if ( (uint8_t)House::IsCurrentPlayer(*(#375 **)((char *)this + 540)) ) /*0x7089b5*/
   {
-    if ( (*(int (**)(int))(*(unsigned int *)this + 44))(this) == 1 ) /*0x7089c8*/
+    bool ValidateAttackTarget(int this, int *a2, int a3)
     {
       v9 = *(unsigned int *)(*((unsigned int *)this + 433) + 1028); /*0x7089d0*/
       if ( v9 ) /*0x7089d8*/
@@ -28641,7 +28641,7 @@ bool Gap2Recv_7087C0::ValidateAttackTarget(TechnoClass * aP1, int a3) {
   }
   if ( this && (*((unsigned char *)this + 20) & 4) != 0 && aP1 == *(TechnoClass **)((char *)this + 1684) ) /*0x708ac3*/
     return 0; /*0x708ac3*/
-  v13 = *(unsigned int *)(*(int (**)(int, int))(*(unsigned int *)this + 1016))(this, v6); /*0x708ad0*/
+  bool ValidateAttackTarget(int this, int *a2, int a3)
   return !v13 /*0x708b1a*/
       || !*(unsigned int *)(v13 + 172)
       || *(double *)(*(unsigned int *)(v13 + 172)
@@ -28672,7 +28672,7 @@ int Gap2Recv_70E5A0::UpdateTechnoIdleTimer() {
   int v17; // edx
   int v18; // [esp+Ch] [ebp-8h]
 
-  result = (*(int (**)(int *))(*(unsigned int *)this + 352))(this); /*0x70e5a9*/
+  int UpdateTechnoIdleTimer(ObjectClass *this)
   if ( (unsigned char)result ) /*0x70e5b1*/
   {
     result = *((char *)this + 105); /*0x70e5b7*/
@@ -29681,7 +29681,7 @@ LABEL_31:
 LABEL_7:
         if ( *((unsigned int *)this + 1) ) /*0x724281*/
 LABEL_8:
-          (*(void (**)(int, int))(*(unsigned int *)this + 8))(this, (char *)this + 24); /*0x72428c*/
+          void HandleToolTipMessage(int this, int a2)
         break; /*0x72429b*/
       default:
         return;
@@ -30096,7 +30096,7 @@ char Gap2Recv_734390::SelectFactionThemeMusic_Helper_734390(void* a2) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x7343a6*/
       return 0; /*0x7343a6*/
     v4 = *((unsigned int *)this + 5); /*0x7343a8*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x7343b8*/
+    if ( abstractFlags <= 0 || !(*((unsigned __int8 (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
       return 0; /*0x7343bf*/
   }
   v6 = *((unsigned int *)this + 4); /*0x7343c5*/
@@ -30128,17 +30128,17 @@ int Gap2Recv_736DF0::UpdateTechnoFiring() {
   char v16[8]; // [esp+20h] [ebp-10h] BYREF
   int v17; // [esp+28h] [ebp-8h]
 
-  if ( *((unsigned int *)this + 173) && *(unsigned int *)(*(int (**)(#377 *, unsigned int))(*(unsigned int *)this + 1016))(this, 0) ) /*0x736e10*/
+  int UpdateTechnoFiring(TechnoClass *this)
   {
-    v2 = (ObjectClass *)(*(int (**)(#377 *, unsigned int))(*(unsigned int *)this + 740))(this, *((unsigned int *)this + 173)); /*0x736e2c*/
-    v3 = (*(int (**)(#377 *, unsigned int, ObjectClass *, int))(*(unsigned int *)this + 960))( /*0x736e3a*/
+    int UpdateTechnoFiring(TechnoClass *this)
+    int UpdateTechnoFiring(TechnoClass *this)
            this,
            *((unsigned int *)this + 173),
            v2,
            1);
     v4 = v3; /*0x736e40*/
-    if ( (!v3 || v3 == 2) && (*(uint8_t (**)(#377 *))(*(unsigned int *)this + 1252))(this) ) /*0x736e4f*/
-      return (*(int (**)(#377 *, int, unsigned int))(*(unsigned int *)this + 488))(this, 16, 0); /*0x736e6d*/
+    int UpdateTechnoFiring(TechnoClass *this)
+      int UpdateTechnoFiring(TechnoClass *this)
     switch ( v4 ) /*0x736e77*/
     {
       case 0: /*0x736e77*/
@@ -30160,7 +30160,7 @@ int Gap2Recv_736DF0::UpdateTechnoFiring() {
           *((unsigned int *)this + 67) = 5; /*0x736f58*/
           *((unsigned int *)this + 66) = 5; /*0x736f5e*/
         }
-        (*(void (**)(#377 *, unsigned int, ObjectClass *))(*(unsigned int *)this + 972))( /*0x736f6d*/
+        int UpdateTechnoFiring(TechnoClass *this)
           this,
           *((unsigned int *)this + 173),
           v2);
@@ -30198,7 +30198,7 @@ int Gap2Recv_736DF0::UpdateTechnoFiring() {
             || BuildingClass::GetHealthRatio((int *)v6->__pad_0) >= *(double *)(*(unsigned int *)&g_abs_87F8E4
                                                                               + 5880) )
           {
-            (*(void (**)(#377 *, unsigned int))(*(unsigned int *)this + 968))(this, 0); /*0x736ecd*/
+            int UpdateTechnoFiring(TechnoClass *this)
           }
         }
         break; /*0x736ed3*/
@@ -30214,7 +30214,7 @@ int Gap2Recv_736DF0::UpdateTechnoFiring() {
       case 9: /*0x736e77*/
         *((unsigned char *)this + 1677) = 0; /*0x73702d*/
         if ( (uint8_t)TechnoClass::ValidateTarget(this) ) /*0x737034*/
-          (*(void (**)(#377 *, unsigned int))(*(unsigned int *)this + 1116))(this, 0); /*0x737043*/
+          int UpdateTechnoFiring(TechnoClass *this)
         break; /*0x737049*/
       default:
         break;
@@ -30223,11 +30223,11 @@ int Gap2Recv_736DF0::UpdateTechnoFiring() {
     {
       TechnoClass::GattlingRateUp_GattlingRateDownReset((float *)this, 1); /*0x73708a*/
     }
-    else if ( *(unsigned char *)((*(int (**)(#377 *))(*(unsigned int *)this + 132))(this) + 3285) ) /*0x73709b*/
+    int UpdateTechnoFiring(TechnoClass *this)
     {
       TechnoClass::DrainAmmo((char *)this, (BuildingClass *)1); /*0x7370a9*/
     }
-    result = (*(int (**)(#377 *))(*(unsigned int *)this + 132))(this); /*0x7370b2*/
+    int UpdateTechnoFiring(TechnoClass *this)
     if ( *(unsigned char *)(result + 3285) ) /*0x7370b8*/
     {
       result = TechnoClass::GetMember81(this); /*0x7370c4*/
@@ -30251,9 +30251,9 @@ LABEL_52:
     ++*((unsigned int *)this + 82); /*0x73713a*/
     return result; /*0x73713a*/
   }
-  if ( *(unsigned char *)((*(int (**)(#377 *))(*(unsigned int *)this + 132))(this) + 3285) ) /*0x737108*/
+  int UpdateTechnoFiring(TechnoClass *this)
     TechnoClass::DrainAmmo((char *)this, (BuildingClass *)1); /*0x737116*/
-  result = (*(int (**)(#377 *))(*(unsigned int *)this + 132))(this); /*0x73711f*/
+  int UpdateTechnoFiring(TechnoClass *this)
   if ( *(unsigned char *)(result + 3285) ) /*0x737125*/
   {
     result = TechnoClass::GetMember81(this); /*0x737131*/
@@ -30292,7 +30292,7 @@ int Gap2Recv_737180::UpdateInfantryIdleWander() {
   int16_t v23[4]; // [esp+18h] [ebp-10h] BYREF
   int v24; // [esp+20h] [ebp-8h]
 
-  v2 = *(unsigned int *)(*(int (**)(int *, int16_t *))(*(unsigned int *)this + 440))(this, v23); /*0x737198*/
+  int UpdateInfantryIdleWander(TechnoClass *this)
   v3 = *((char *)this + 62); /*0x73719a*/
   v21 = v2; /*0x7371a0*/
   if ( v3 >= 90 ) /*0x7371a8*/
@@ -30393,7 +30393,7 @@ LABEL_15:
                      v20,
                      1);
           if ( !result ) /*0x73740c*/
-            return (*(int (**)(int *, void *, int))(*(unsigned int *)this + 1152))(this, v18, 1); /*0x737419*/
+            int UpdateInfantryIdleWander(TechnoClass *this)
           goto LABEL_23; /*0x73740c*/
         }
       }
@@ -31172,15 +31172,15 @@ char Gap2Recv_74EA70::LoadVeinholeMonsters() {
   if ( (*(int (**)(int *, int *, int, unsigned int))(v5 + 12))(this, &v21, 4, 0) < 0 ) /*0x74eaee*/
     return 0; /*0x74eaf9*/
   g_abs_B1D2F0 = RA2_OPNEW(v4); /*0x74eb03*/
-  if ( (*(int (**)(int *, void *, size_t, unsigned int))(*(unsigned int *)this + 12))(this, g_abs_B1D2F0, v4, 0) < 0 ) /*0x74eb13*/
+  ( this, stru_B1D290.customSound_controller[4], v4, 0)
     return 0; /*0x74eb1e*/
   for ( j = 0; j < v21; ++j ) /*0x74eb29*/
   {
     v7 = RA2_OPNEW(0x108u); /*0x74eb40*/
-    if ( (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v22, 4, 0) < 0 ) /*0x74eb4e*/
+    char LoadVeinholeMonsters(ObjectClass *this)
       return 0; /*0x74eb4e*/
     SwizzleManagerClass::Here_I_Am(&g_abs_B0C110, v22, v7); /*0x74eb5b*/
-    if ( (*(int (**)(int *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v7, 264, 0) < 0 ) /*0x74eb6f*/
+    ( this, v7, 264, 0)
       return 0; /*0x74eb6f*/
     if ( v7 ) /*0x74eb73*/
       VeinholeMonsterClass::Construct(v7, (int)&v18); /*0x74eb7c*/
@@ -31192,14 +31192,14 @@ char Gap2Recv_74EA70::LoadVeinholeMonsters() {
       return 0; /*0x74eba7*/
     v7[49] = v8; /*0x74ebad*/
     v11 = v19; /*0x74ebb8*/
-    if ( (*(int (**)(int *, int, int, unsigned int))(*(unsigned int *)this + 12))( /*0x74ebd1*/
+    ( this, *(unsigned int *)&v18[1], 8 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 220), 0)
            this,
            v19,
            8 * g_abs_8871E0->AircraftFogReveal,
            0) < 0 )
       return 0; /*0x74ebd1*/
     v7[45] = v11; /*0x74ebd9*/
-    if ( (*(int (**)(int *, int, int, unsigned int))(*(unsigned int *)this + 12))(this, v10, 4, 0) < 0 /*0x74ec00*/
+    if ( (*((int (__stdcall **)(ObjectClass *, int, int, unsigned int))this->AbstractClass + 3))(this, v10, 4, 0) < 0 || (*((int (__stdcall **)(ObjectClass *, int, int, unsigned int))this->AbstractClass + 3))(this, v10 + 4, 4, 0) < 0 )
       || (*(int (**)(int *, int, int, unsigned int))(*(unsigned int *)this + 12))(this, v10 + 4, 4, 0) < 0 )
     {
       return 0; /*0x74ec00*/
@@ -31207,7 +31207,7 @@ char Gap2Recv_74EA70::LoadVeinholeMonsters() {
     v12 = 0; /*0x74ec09*/
     if ( *(int *)(v10 + 4) > 0 ) /*0x74ec0d*/
     {
-      while ( (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v24, 4, 0) >= 0 ) /*0x74ec20*/
+      char LoadVeinholeMonsters(ObjectClass *this)
       {
         ++v12; /*0x74ec2e*/
         *(unsigned int *)(*(unsigned int *)(v10 + 8) + 4 * v12 - 4) = v19 + 8 * v24; /*0x74ec35*/
@@ -32437,7 +32437,7 @@ char Gap2Recv_766EE0::System_Init_766EE0(int aP1) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x766ef6*/
       return 0; /*0x766ef6*/
     v4 = *((unsigned int *)this + 5); /*0x766ef8*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x766f08*/
+    if ( abstractFlags <= 0 || !(*((unsigned __int8 (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
       return 0; /*0x766f0f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x766f15*/

@@ -84,7 +84,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x52538e*/
+    char WarheadTypeClass::Release(_DynamicVectorClass_PBVAnimTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*((unsigned int *)this + 2))));
   if ( v7 < *((unsigned int *)this + 4) ) /*0x525399*/

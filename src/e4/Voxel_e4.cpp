@@ -2392,7 +2392,7 @@ int Voxel::SectionProject(int * a2, int a3)
   *((unsigned int *)this + 45) = v9; /*0x761b27*/
   *((unsigned int *)this + 46) = v59; /*0x761b2d*/
   *((unsigned int *)this + 47) = v60; /*0x761b34*/
-  (*(void (**)(unsigned int *, unsigned int *))(*(unsigned int *)this + 1744))(this, (unsigned int *)this + 45); /*0x761b3b*/
+  int Voxel::SectionProject(Voxel *this, int *a2, int a3)
   v12 = v61; /*0x761b41*/
   v13 = v62; /*0x761b45*/
   *((unsigned int *)this + 82) = 6; /*0x761b55*/
@@ -2701,7 +2701,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   *((unsigned int *)this + 45) = a1; /*0x7625bb*/
   *((unsigned int *)this + 46) = v57; /*0x7625c1*/
   *((unsigned int *)this + 47) = v58; /*0x7625c8*/
-  (*(void (**)(unsigned int *, unsigned int *))(*(unsigned int *)this + 1744))(this, (unsigned int *)this + 45); /*0x7625cf*/
+  int Voxel::LightRender(Voxel *this, int *a2, int a3)
   v10 = var94; /*0x7625d5*/
   v11 = v59; /*0x7625d9*/
   *((unsigned int *)this + 82) = 4; /*0x7625e3*/
@@ -3034,7 +3034,7 @@ LABEL_22:
       v57 = *(double *)((char *)this + 320) + 0.050000001; /*0x7630ca*/
       *(double *)((char *)this + 320) = v57; /*0x7630d6*/
       if ( !v59 ) /*0x7630e1*/
-        return (*(int (**)(int))(*(unsigned int *)this + 248))(this); /*0x7630e1*/
+        void Voxel::TransformMatrix(int this)
       v60 = Math::RoundToInt(v57); /*0x76311c*/
       v61 = Math::RoundToInt(v57); /*0x76312a*/
       v62 = *((unsigned int *)this + 83); /*0x76312f*/
@@ -3082,7 +3082,7 @@ LABEL_22:
   v33 = *(double *)((char *)this + 320) + 0.050000001; /*0x762e8e*/
   *(double *)((char *)this + 320) = v33; /*0x762e9a*/
   if ( !v35 ) /*0x762ea5*/
-    return (*(int (**)(int))(*(unsigned int *)this + 248))(this); /*0x762eba*/
+    void Voxel::TransformMatrix(int this)
   v37 = Math::RoundToInt(v33); /*0x762ee0*/
   v38 = Math::RoundToInt(v33); /*0x762eee*/
   v39 = *((unsigned int *)this + 83); /*0x762ef3*/
@@ -3114,7 +3114,7 @@ int Voxel::freeSectionMemory(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x763346*/
       return 0; /*0x763346*/
     v4 = *((unsigned int *)this + 5); /*0x763348*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x763358*/
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(Voxel *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, Voxel_field_0x8 + v4, 0) )
       return 0; /*0x76335f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x763365*/

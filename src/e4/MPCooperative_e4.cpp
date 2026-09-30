@@ -901,7 +901,7 @@ int MPCooperative::InitSession()
   if ( g_abs_A8B8D8 <= 0 ) /*0x5c1d26*/
   {
 LABEL_10:
-    (*(void (**)(int *))(*(unsigned int *)this + 16))(this); /*0x5c1d5d*/
+    int MPCooperative::InitSession(MPCooperative *this)
     return -1; /*0x5c1d6f*/
   }
   while ( _strnicmp((const char *)(*(unsigned int *)(g_abs_A8B8CC + 4 * v2) + 88), String2, strlen(String2)) ) /*0x5c1d51*/
@@ -2382,7 +2382,7 @@ AbstractClass * * MPCooperative::ProcessChat()
   {
     if ( g_abs_A8DA84 == 2 ) /*0x5c415e*/
       String::AssignWideToChar(v5, *(char **)g_abs_A8DA78, *(char **)(g_abs_A8DA78 + 4)); /*0x5c416c*/
-    (*(void (**)(LRESULT *))(*(unsigned int *)this + 384))(this); /*0x5c4175*/
+    char MPCooperative::ProcessChat(MPCooperative *this)
     IDA_LOBYTE(v2) = MPCooperative::ReadCoopSaveINI(*((unsigned int *)this + 16)); /*0x5c417b*/
     if ( (unsigned char)v2 ) /*0x5c4182*/
     {
@@ -3288,7 +3288,7 @@ char MPCooperative::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5c5212*/
+    char MPCooperative::_vt02(void *this, int a2, unsigned int *a3)
     return 1; /*0x5c5218*/
   }
 
@@ -3388,7 +3388,7 @@ char MPCooperative::migrateHost(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5c533e*/
+    char MPCooperative::sub_5C52B0(void *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5c5341*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5c5349*/
@@ -3464,7 +3464,7 @@ char MPCooperative::processTeamChat(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5c5472*/
+    char MPCooperative::sub_5C53D0(void *this, int a2, unsigned int *a3)
     return 1; /*0x5c5478*/
   }
 
@@ -3564,7 +3564,7 @@ char MPCooperative::broadcastMessage(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5c57fe*/
+    char MPCooperative::sub_5C5770(void *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5c5801*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5c5809*/

@@ -149,7 +149,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
       if ( IDA_HIWORD(fromlen) ) /*0x7b140c*/
       {
 LABEL_6:
-        (*(void (**)(u_short *, unsigned int))(*(unsigned int *)this + 36))(this, *((unsigned int *)this + 64539)); /*0x7b1411*/
+        int IPXInterfaceClass::SendPacket(IPXInterfaceClass *this, int a2, int a3, int a4, unsigned int fromlen)
         return 0; /*0x7b1429*/
       }
       if ( *((unsigned int *)this + 12) ) /*0x7b142c*/
@@ -209,7 +209,7 @@ LABEL_6:
   }
   if ( IDA_HIWORD(fromlen) ) /*0x7b153f*/
   {
-    (*(void (**)(u_short *, unsigned int))(*(unsigned int *)this + 36))(this, *((unsigned int *)this + 64539)); /*0x7b1550*/
+    int IPXInterfaceClass::SendPacket(IPXInterfaceClass *this, int a2, int a3, int a4, unsigned int fromlen)
     return 0; /*0x7b155c*/
   }
   v11 = *((unsigned int *)this + 64539); /*0x7b1577*/
@@ -220,7 +220,7 @@ LABEL_6:
   {
     if ( WSAGetLastError() != 10035 ) /*0x7b159e*/
     {
-      (*(void (**)(u_short *, unsigned int))(*(unsigned int *)this + 36))(this, *((unsigned int *)this + 64539)); /*0x7b15b0*/
+      int IPXInterfaceClass::SendPacket(IPXInterfaceClass *this, int a2, int a3, int a4, unsigned int fromlen)
       return 0; /*0x7b15bc*/
     }
     return 0; /*0x7b159e*/
@@ -256,7 +256,7 @@ LABEL_6:
   v18->sectionHead[0] = v26 - 4; /*0x7b1646*/
   v18->sectionCount = *((unsigned int *)this + 64541); /*0x7b1651*/
   qmemcpy(v18->__pad_20, (unsigned int *)this + 129084, v26 - 4); /*0x7b1657*/
-  if ( (*(uint8_t (**)(u_short *, CCINIClass *))(*(unsigned int *)this + 88))(this, v18) ) /*0x7b1665*/
+  int IPXInterfaceClass::SendPacket(IPXInterfaceClass *this, int a2, int a3, int a4, unsigned int fromlen)
   {
     NetworkID::Assign(v18, (IPXManagerClass *)&a3, (int)&v27, 0); /*0x7b16d0*/
     v19 = *((unsigned int *)this + 4); /*0x7b16d5*/
@@ -394,13 +394,13 @@ AbstractClass * * IPXInterfaceClass::Receive()
   AbstractClass ** v4;
   u_int v5; // eax
 
-  v2 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 224))(this, -1); /*0x7b1bc9*/
+  char IPXInterfaceClass::Receive(WinsockInterfaceClass *this)
   if ( WSAAsyncSelect(*((unsigned int *)this + 64539), g_hWnd, v2, 3) != -1 ) /*0x7b1be3*/
   {
     v4 = (int)((gamemd::AbstractClass **)(*((unsigned int *)this + 64540)));
     if ( v4 == -1 ) /*0x7b1c05*/
       return 1; /*0x7b1c05*/
-    v5 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 224))(this, v4); /*0x7b1c0e*/
+    char IPXInterfaceClass::Receive(WinsockInterfaceClass *this)
     if ( WSAAsyncSelect(*((unsigned int *)this + 64540), g_hWnd, v5, 3) != -1 ) /*0x7b1c27*/
       return 1; /*0x7b1c40*/
   }
@@ -513,7 +513,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   v5 = (UDPInterfaceClass *)AudioQueue::AllocBuffer((unsigned int *)this, (WinsockInterfaceClass *)aP3); /*0x7b24f4*/
   qmemcpy(&v5[4], a1, a3); /*0x7b2505*/
   v5[2].Socket = a3; /*0x7b250e*/
-  (*(void (**)(int, UDPInterfaceClass *))(*(unsigned int *)this + 84))(this, v5); /*0x7b2516*/
+  __int16 IPXInterfaceClass::Connect(WinsockInterfaceClass *this, const void *a2, unsigned int a3, char a4)
   v5[2].Initialized = 1; /*0x7b251d*/
   if ( (unsigned char)aP3 ) /*0x7b2523*/
   {
@@ -545,7 +545,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
     }
     v10 = *((unsigned int *)this + 64539); /*0x7b25a9*/
   }
-  v15 = (*(int (**)(int, int))(*(unsigned int *)this + 56))(this, v10); /*0x7b25b9*/
+  __int16 IPXInterfaceClass::Connect(WinsockInterfaceClass *this, const void *a2, unsigned int a3, char a4)
   SendMessageA((HWND)g_hWnd, v15, 0, 2); /*0x7b25c3*/
   return EventQueue::Process(g_abs_87F770); /*0x7b25d4*/
 
@@ -590,7 +590,7 @@ AbstractClass * * IPXInterfaceClass::getSocketState(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x7b2aae*/
+    (*(unsigned int *)this->__pad_0 + 12)
   }
   v7 = *((unsigned int *)this + 2); /*0x7b2ab1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x7b2ab9*/

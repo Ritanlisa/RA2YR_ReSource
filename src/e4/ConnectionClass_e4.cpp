@@ -253,7 +253,7 @@ LABEL_40: v23 = (int)(*(unsigned int *)(a2 + 4));
         this->Debug::Log(); /*0x48c2c6*/
         v24 = g_abs_A8EA0C; /*0x48c2cb*/
         IDA_LOBYTE(v24) = this == (gamemd::ConnectionClass *)((unsigned int *))g_abs_A8EA0C; /*0x48c2d7*/
-        (*(void (**)(unsigned int *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this + 144))( /*0x48c2ea*/
+        ( this, &v27, 14, 0, 0, v26, 0)
           this,
           &v25,
           14,
@@ -455,7 +455,7 @@ int ConnectionClass::serviceSendQueue()
         v11 = (int)(g_abs_A8EA0C);
         IDA_LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
         IDA_LOBYTE(v11) = this == (gamemd::ConnectionClass *)((unsigned int *))g_abs_A8EA0C; /*0x48c4cb*/
-        (*(void (**)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this + 36))( /*0x48c4e2*/
+        (*(unsigned int *)this->__pad_0 + 36)
           this,
           *(unsigned int *)(v8 + 20),
           *(unsigned int *)(v8 + 16),

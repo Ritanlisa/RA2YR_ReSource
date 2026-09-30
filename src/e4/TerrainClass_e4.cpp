@@ -1318,7 +1318,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
     v9 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
-  v10 = (unsigned int *)(*(int (**)(char *))(*(unsigned int *)this + 172))(v14); /*0x71d0ab*/
+  char TerrainClass::ProcessSpawnAnim(TerrainClass *this, unsigned int *a2, unsigned int *a3)
   Coord::To_Screen(*(unsigned int **)&g_abs_87F8E4, v10, (IUnknown *)((char *)this + 216)); /*0x71d0b8*/
   v11 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 180) + *((unsigned int *)this + 55); /*0x71d0d6*/
   *((unsigned int *)this + 54) += *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 176); /*0x71d0dd*/

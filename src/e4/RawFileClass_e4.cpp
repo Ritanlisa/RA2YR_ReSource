@@ -43,8 +43,8 @@ namespace gamemd {
 int RawFileClass::Close(int a2, int a3)
 {
 
-  (*(void (**)(void *, int))(*(unsigned int *)this + 8))(this, a2); /*0x65cb3c*/
-  return (*(int (**)(void *, int))(*(unsigned int *)this + 28))(this, a3); /*0x65cb4b*/
+  int RawFileClass::Close(RawFileClass *this, int a2, int a3)
+  int RawFileClass::Close(RawFileClass *this, int a2, int a3)
 
 }
 } // namespace gamemd

@@ -3468,7 +3468,7 @@ int E4Recv_632D60::sub_632D60(int a2)
 
   if ( !a2 ) /*0x632d6a*/
   {
-    result = (*(int (**)(unsigned char *))(*(unsigned int *)this + 4))(this); /*0x632d6e*/
+    int sub_632D60(ObjectClass *this, int a2)
     *((unsigned char *)this + 12) = 0; /*0x632d71*/
   }
   *((unsigned int *)this + 14) = a2; /*0x632d77*/

@@ -584,7 +584,7 @@ int SessionClass::Destruct()
       RA2_OPDEL(v10); /*0x5cf694*/
     }
   }
-  return (*(int (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x5cf6ab*/
+  int SessionClass::Destruct(SessionClass *this)
 
 }
 } // namespace gamemd
@@ -2693,7 +2693,7 @@ char SessionClass::addPlayer(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69c7f2*/
+    char SessionClass::addPlayer(_VectorClass_W4DiskID *this, int a2, unsigned int *a3)
     return 1; /*0x69c7f8*/
   }
 
@@ -2781,7 +2781,7 @@ char SessionClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69c91e*/
+    char SessionClass::Release(_TypeList_W4DiskID *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x69c921*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x69c929*/

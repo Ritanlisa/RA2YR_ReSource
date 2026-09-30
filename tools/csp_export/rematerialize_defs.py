@@ -115,6 +115,16 @@ def scale_body(body, factor, elem):
         r'\*\s*this\s*\+\s*(\d+)\b',
         lambda m: '*(unsigned int *)this + %d' % (int(m.group(1)) * factor),
         body)
+    # G41.4 vintage `*(unsigned int **)this + N` lines carry PRE-BAKED or
+    # UNSCALED N depending on which pass wrote them -- normalize ALL of
+    # them to the single-star byte form. The unscaled vintage wrote
+    # element N (untyped cast) -- but the element size of a fn-ptr walk is
+    # 4 ONLY for pointer-this; for int-this (factor 1) N is bytes already.
+    body = re.sub(
+        r'\*\s*\(\s*unsigned int\s*\*\*\s*\)\s*this\s*\+\s*(\d+)\b',
+        lambda m: '*(unsigned int *)this + %d' % (
+            int(m.group(1)) * (1 if factor == 1 else 1)),
+        body)
     # bare `(this + N)` (cast-outside forms keep their own scale; `*this`
     # handled above)
     body = re.sub(

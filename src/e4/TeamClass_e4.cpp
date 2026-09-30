@@ -48,7 +48,7 @@ int TeamClass::CheckCohesion()
   unsigned char v10[12]; // [esp+24h] [ebp-18h] BYREF
   unsigned char v11[12]; // [esp+30h] [ebp-Ch] BYREF
 
-  v2 = (*(int (**)(void *))(*(unsigned int *)this + 44))(this); /*0x4d9e78*/
+  char __usercall TeamClass::CheckCohesion@<al>(FootClass *this, double a2@<st0>)
   if ( v2 > 0 /*0x4d9f52*/
     && v2 <= 2
     && Team::AllMembersValid((int *)this)
@@ -118,7 +118,7 @@ LABEL_7:
   HouseClass::RevealShroudForAllies(0, 0); /*0x577c60*/
   *((unsigned char *)HouseClass_Player + 576) = 0; /*0x577c6f*/
   FogOfWar::Render((int **)&g_abs_87F7E8); /*0x577c76*/
-  return (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 224))(this, 2); /*0x577c84*/
+  int TeamClass::DisbandTeam(TeamClass *this, int a2)
 
 }
 }
@@ -2127,7 +2127,7 @@ LABEL_14:
     }
   }
   if ( this ) /*0x6ea4d6*/
-    (*(void (**)(void *, int))(*(unsigned int *)this + 32))(this, 1); /*0x6ea4de*/
+    char TeamClass::UpdateReadinessState(TeamClass *this)
   return 0; /*0x6ea47c*/
 
 }

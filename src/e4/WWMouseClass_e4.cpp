@@ -82,7 +82,7 @@ int WWMouseClass::hideCursor()
     this->Debug::Log(); /*0x7b9960*/
   if ( !*((unsigned int *)this + 3) ) /*0x7b9968*/
   {
-    if ( (*(uint8_t (**)(unsigned int *))(*(unsigned int *)this + 112))(this) ) /*0x7b9977*/
+    BOOL WWMouseClass::hideCursor(WWMouseClass *this)
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9994*/
         this->Debug::Log(); /*0x7b99a5*/
@@ -155,7 +155,7 @@ void* WWMouseClass::captureMouse()
   unsigned int v20[4]; // [esp+14h] [ebp-20h] BYREF
   unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
 
-  if ( this && !(*(uint8_t (**)(int *))(*(unsigned int *)this + 28))(this) ) /*0x7b9a70*/
+  void WWMouseClass::captureMouse(WWMouseClass *this)
   {
     this->Debug::Log(); /*0x7b9a82*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9aa3*/
@@ -234,7 +234,7 @@ void WWMouseClass::releaseMouse()
   unsigned int v9[4]; // [esp+4h] [ebp-20h] BYREF
   unsigned int v10[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( this && (*(uint8_t (**)(unsigned char *))(*(unsigned int *)this + 28))(this) ) /*0x7b9c40*/
+  void WWMouseClass::releaseMouse(WWMouseClass *this)
   {
     this->Debug::Log(); /*0x7b9c51*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9c72*/

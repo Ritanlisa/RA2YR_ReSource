@@ -319,7 +319,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x55a3be*/
+    char LoadOptions::vt02(_DynamicVectorClass_PAVFileEntryClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x55a3c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x55a3c9*/

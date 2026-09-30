@@ -2048,7 +2048,7 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   int v5; // eax
   IUnknown *v6; // eax
 
-  if ( (*(int (__fastcall **)(void *))(*(unsigned int *)this + 456))(this) < 0 /*0x746030*/
+  if ( (*((int (__fastcall **)(BuildingTypeClass *))this->TechnoTypeClass + 114))(this) < 0 || !MapSeed::CheckTileMatch((MapSeed *)&stru_87F5F0.__pad_58[416], a2, a3, 0, 0, 0, 0) )
     || !MapSeed::CheckTileMatch(&g_abs_87F7E8, (int16_t *)aP1, (int16_t *)aP2, 0, 0, 0, 0) )
   {
     return 1; /*0x746030*/

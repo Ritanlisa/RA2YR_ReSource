@@ -695,7 +695,7 @@ unsigned int * HouseTypeClass::readBaseDefense(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x51337a*/
     return this; /*0x51337a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x51337e*/
+  unsigned int *HouseTypeClass::readBaseDefense(HouseTypeClass *this, unsigned int *a2)
   v3 = aP1->Capacity; /*0x513381*/
   *((unsigned int *)this + 2) = v3; /*0x513386*/
   if ( !v3 ) /*0x513389*/
@@ -1244,7 +1244,7 @@ unsigned int * HouseTypeClass::readStartInfantry(InfantryTypeClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x512bda*/
     return this; /*0x512bda*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x512bde*/
+  unsigned int *HouseTypeClass::readStartInfantry(HouseTypeClass *this, unsigned int *a2)
   v3 = *(unsigned int *)&aP1->vtable0[8]; /*0x512be1*/
   *((unsigned int *)this + 2) = v3; /*0x512be6*/
   if ( !v3 ) /*0x512be9*/
@@ -1343,7 +1343,7 @@ char HouseTypeClass_36::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5132ce*/
+    char HouseTypeClass_36::Release(_DynamicVectorClass_PBVUnitTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5132d1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5132d9*/
@@ -1450,7 +1450,7 @@ char HouseTypeClass_36::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5134c2*/
+    char HouseTypeClass_36::SetCapacity(_VectorClass_PBVAircraftTypeClass *this, int a2, unsigned int *a3)
     return 1; /*0x5134c8*/
   }
 
@@ -1564,7 +1564,7 @@ char HouseTypeClass_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x51369e*/
+    char HouseTypeClass_28::Release(_DynamicVectorClass_PBVAircraftTypeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5136a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5136a9*/
@@ -1590,7 +1590,7 @@ char HouseTypeClass::readPowerPlants(TypeList_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x5136d6*/
       return 0; /*0x5136d6*/
     v4 = *((unsigned int *)this + 5); /*0x5136d8*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x5136e8*/
+    if ( abstractFlags <= 0 || !(*((unsigned __int8 (**)(HouseTypeClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
       return 0; /*0x5136ef*/
   }
   v6 = *((unsigned int *)this + 4); /*0x5136f5*/

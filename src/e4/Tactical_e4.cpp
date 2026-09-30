@@ -1139,7 +1139,7 @@ MouseClass * * Tactical::HandleTacticalMouseInput(int _28, unsigned int * a2, in
               case 0x215: /*0x69311f*/
                 IDA_LOBYTE(v5) = (unsigned char)g_hWnd; /*0x6933ea*/
                 if ( (ObjectClass *)aP4->field_0 != g_hWnd && *((unsigned char *)this + 21850) == 1 ) /*0x6933fc*/
-                  IDA_LOBYTE(v5) = (*(char (**)(unsigned char *))(*(unsigned int *)this + 140))(this); /*0x693402*/
+                  char Tactical::HandleTacticalMouseInput(Tactical *this, int a2, unsigned int *a3, int a4, HWND a5)
                 break; /*0x693402*/
               default:
                 return v5;
@@ -1910,7 +1910,7 @@ char Tactical::SelectObject(int a2)
 
   char result; // al
 
-  result = (*(int (**)(void *, int))(*(unsigned int *)this + 44))(this, a2); /*0x4f4458*/
+  int Tactical::SelectObject(GScreenClass *this, int a2)
   if ( result ) /*0x4f445d*/
   {
     g_abs_A8EF54 = (*(int (**)(int))(*(unsigned int *)a2 + 36))(a2); /*0x4f446a*/
@@ -2195,7 +2195,7 @@ char Tactical_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6e4932*/
+    char Tactical_42::Release(_VectorClass_PAVTActionClass *this, int a2, unsigned int *a3)
     return 1; /*0x6e4938*/
   }
 
@@ -2295,7 +2295,7 @@ char Tactical_42::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6e4a5e*/
+    char Tactical_42::SetCapacity(Tactical *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x6e4a61*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6e4a69*/

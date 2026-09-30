@@ -1270,7 +1270,11 @@ def _cpp_this_alias(cpp_text, class_name):
     bidx = cpp_text.find('{')
     head = cpp_text[:bidx] if bidx >= 0 else cpp_text
     body = cpp_text[bidx:] if bidx >= 0 else ''
-    if 'this->' in body:
+    # a genuinely demoted-this body never mentions `this` AT ALL — an
+    # explicit `this` (even as a call argument) means this is an ordinary
+    # member fn whose first param is a REAL param, not the demoted this
+    # (INIClass::GetCoord case: `GetString(this, ...)`).
+    if re.search(r'\bthis\b', body):
         return None
     m = re.match(r'[^;(]*?\(\s*([^,()]+)', head.strip())
     if not m:

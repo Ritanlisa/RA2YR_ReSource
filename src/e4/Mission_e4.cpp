@@ -77,34 +77,34 @@ LABEL_19:
           }
         }
 LABEL_20:
-        (*(void (**)(unsigned int *))(*(unsigned int *)this + 992))(this); /*0x520ca9*/
+        int Mission::ExecuteTechnoMissionAction(Mission *this)
         break; /*0x520cb3*/
       case 20: /*0x520b27*/
       case 21: /*0x520b27*/
       case 36: /*0x520b27*/
         if ( *((unsigned int *)this + 62) >= *(unsigned int *)(*(unsigned int *)(*((unsigned int *)this + 432) + 3644) + 36 * v2 + 4) ) /*0x520cd1*/
-          (*(void (**)(unsigned int *))(*(unsigned int *)this + 992))(this); /*0x520cdb*/
+          int Mission::ExecuteTechnoMissionAction(Mission *this)
         break; /*0x520ce1*/
       case 27: /*0x520b27*/
-        (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 28, 1, 0); /*0x520b38*/
+        int Mission::ExecuteTechnoMissionAction(Mission *this)
         if ( !*(unsigned char *)(*((unsigned int *)this + 432) + 3785) ) /*0x520b44*/
           *((unsigned char *)this + 676) = 1; /*0x520b4e*/
         Mission::GetMissionDelay(this); /*0x520b57*/
         break; /*0x520b5c*/
       case 31: /*0x520b27*/
-        (*(void (**)(unsigned int *, unsigned int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 0, 1, 0); /*0x520b93*/
+        int Mission::ExecuteTechnoMissionAction(Mission *this)
         if ( !*(unsigned char *)(*((unsigned int *)this + 432) + 3785) ) /*0x520b9f*/
           *((unsigned char *)this + 676) = 0; /*0x520bad*/
         break; /*0x520bb4*/
       case 33: /*0x520b27*/
         break;
       case 34: /*0x520b27*/
-        (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 35, 1, 0); /*0x520bc1*/
+        int Mission::ExecuteTechnoMissionAction(Mission *this)
         break; /*0x520bc1*/
       case 38: /*0x520b27*/
-        if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 1552))(this) != 10 ) /*0x520b6e*/
+        int Mission::ExecuteTechnoMissionAction(Mission *this)
           goto LABEL_51; /*0x520b6e*/
-        (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 38, 1, 0); /*0x520b7e*/
+        int Mission::ExecuteTechnoMissionAction(Mission *this)
         break; /*0x520b84*/
       default:
         if ( v2 != -1 ) /*0x520ce9*/
@@ -122,9 +122,9 @@ LABEL_20:
           && *((double *)this + 175) > 0.1 )
         {
           if ( *((unsigned char *)this + 1755) ) /*0x520d52*/
-            (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 6, 1, 0); /*0x520d66*/
+            int Mission::ExecuteTechnoMissionAction(Mission *this)
           else
-            (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 3, 1, 0); /*0x520d79*/
+            int Mission::ExecuteTechnoMissionAction(Mission *this)
         }
         else
         {
@@ -136,9 +136,9 @@ LABEL_20:
           if ( !(*(uint8_t (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x520dbf*/
           {
             if ( *((unsigned char *)this + 1755) ) /*0x520dc6*/
-              (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 41, 1, 0); /*0x520dda*/
+              int Mission::ExecuteTechnoMissionAction(Mission *this)
             else
-              (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 40, 1, 0); /*0x520df3*/
+              int Mission::ExecuteTechnoMissionAction(Mission *this)
             *((unsigned char *)this + 1677) = 0; /*0x520de0*/
           }
           else
@@ -147,16 +147,16 @@ LABEL_44:
             v12 = *((unsigned int *)this + 433); /*0x520e02*/
             if ( v12 == 27 || v12 == 28 || v12 == 29 || v12 == 30 ) /*0x520e1a*/
             {
-              (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 28, 1, 0); /*0x520e24*/
+              int Mission::ExecuteTechnoMissionAction(Mission *this)
             }
             else if ( *((unsigned char *)this + 1755) ) /*0x520e26*/
             {
-              (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 2, 1, 0); /*0x520e3a*/
+              int Mission::ExecuteTechnoMissionAction(Mission *this)
             }
             else
             {
 LABEL_51:
-              (*(void (**)(unsigned int *, unsigned int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 0, 1, 0); /*0x520e42*/
+              int Mission::ExecuteTechnoMissionAction(Mission *this)
             }
           }
         }
@@ -164,7 +164,7 @@ LABEL_51:
     }
   }
   if ( *((unsigned int *)this + 433) == 33 && !*((unsigned char *)this + 141) ) /*0x520e5b*/
-    (*(void (**)(unsigned int *, unsigned int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 0, 1, 0); /*0x520e6f*/
+    int Mission::ExecuteTechnoMissionAction(Mission *this)
   v13 = 0; /*0x520e81*/
   v14 = *(unsigned int *)(*((unsigned int *)this + 432) + 3644) + 36 * *((unsigned int *)this + 433); /*0x520e8c*/
   result = *(unsigned int *)(v14 + 16); /*0x520e8f*/
@@ -225,7 +225,7 @@ char Mission::ProcessUnitMissionAI()
   int v24; // [esp+68h] [ebp-14h] BYREF
   unsigned char v25[16]; // [esp+6Ch] [ebp-10h] BYREF
 
-  if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 1552))(this) == 2 ) /*0x520f53*/
+  char Mission::ProcessUnitMissionAI(Mission *this)
   {
     if ( !*((unsigned int *)this + 413) ) /*0x520f55*/
       WinAPI::Wrapper(-2147467261); /*0x520f64*/
@@ -236,7 +236,7 @@ char Mission::ProcessUnitMissionAI()
       if ( v2 ) /*0x520f86*/
       {
         (*(void (**)(unsigned int *, int, int))(v3 + 1152))(this, v2, 1); /*0x520f97*/
-        (*(void (**)(unsigned int *, unsigned int, int))(*(unsigned int *)this + 5392))(this, 0, 1072693248); /*0x520fa9*/
+        char Mission::ProcessUnitMissionAI(Mission *this)
       }
       else
       {
@@ -274,7 +274,7 @@ char Mission::ProcessUnitMissionAI()
             v19 = (*(int (**)(unsigned int *))(v9 + 800))(this); /*0x5210c9*/
             v10 = *((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, &v21) + 80) >> 8; /*0x5210de*/
             IDA_LOBYTE(v10) = v10 & 1; /*0x5210e1*/
-            v11 = (*(int (**)(unsigned int *, unsigned int, int, int))(*(unsigned int *)this + 752))(this, 0, v10, v19); /*0x5210e9*/
+            ( this, 0, v10, v19)
             if ( !MapSeed::CheckTileMatch( /*0x521133*/
                     &g_abs_87F7E8,
                     (int16_t *)&v24,
@@ -286,7 +286,7 @@ char Mission::ProcessUnitMissionAI()
               && !*(unsigned char *)(*((unsigned int *)this + 432) + 3774)
               && (*(int (**)(unsigned int *))(*(unsigned int *)this + 1552))(this) != 7 )
             {
-              (*(void (**)(unsigned int *, unsigned int, int))(*(unsigned int *)this + 4608))(this, 0, 1); /*0x52113e*/
+              char Mission::ProcessUnitMissionAI(Mission *this)
             }
           }
         }
@@ -331,18 +331,18 @@ LABEL_33:
       if ( !(unsigned char)v17 ) /*0x521230*/
       {
         if ( *((double *)this + 175) <= 0.8 ) /*0x521247*/
-          IDA_LOBYTE(v17) = (*(int (**)(unsigned int *, int, unsigned int, unsigned int))(*(unsigned int *)this + 5472))(this, 23, 0, 0); /*0x52126b*/
+          ( this, 23, 0, 0)
         else
-          IDA_LOBYTE(v17) = (*(int (**)(unsigned int *, int, unsigned int, unsigned int))(*(unsigned int *)this + 5472))(this, 24, 0, 0); /*0x521254*/
+          ( this, 24, 0, 0)
       }
     }
     else
     {
 LABEL_55:
       if ( *((unsigned char *)this + 1755) ) /*0x521277*/
-        IDA_LOBYTE(v17) = (*(int (**)(unsigned int *, int, unsigned int, unsigned int))(*(unsigned int *)this + 5472))(this, 6, 0, 0); /*0x52128c*/
+        ( this, 6, 0, 0)
       else
-        IDA_LOBYTE(v17) = (*(int (**)(unsigned int *, int, unsigned int, unsigned int))(*(unsigned int *)this + 5472))(this, 3, 0, 0); /*0x5212a3*/
+        ( this, 3, 0, 0)
     }
   }
   else
@@ -353,13 +353,13 @@ LABEL_55:
       case 3: /*0x5212c2*/
       case 24: /*0x5212c2*/
       case 23: /*0x5212c2*/
-        IDA_LOBYTE(v17) = (*(int (**)(unsigned int *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)this + 5472))(this, 0, 0, 0); /*0x521307*/
+        ( this, 0, 0, 0)
         break;
       case 6: /*0x5212c2*/
-        IDA_LOBYTE(v17) = (*(int (**)(unsigned int *, int, unsigned int, unsigned int))(*(unsigned int *)this + 5472))(this, 2, 0, 0); /*0x5212d4*/
+        ( this, 2, 0, 0)
         break;
       case 17: /*0x5212c2*/
-        IDA_LOBYTE(v17) = (*(int (**)(unsigned int *, int, unsigned int, unsigned int))(*(unsigned int *)this + 5472))(this, 16, 0, 0); /*0x5212f0*/
+        ( this, 16, 0, 0)
         break;
     }
   }

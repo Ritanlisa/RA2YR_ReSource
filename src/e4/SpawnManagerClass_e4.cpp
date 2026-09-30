@@ -699,7 +699,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b848e*/
+    char SpawnManagerClass_25::Release( _DynamicVectorClass_PAUSpawnControl_SpawnManagerClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x6b8491*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b8499*/

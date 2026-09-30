@@ -143,7 +143,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4785c6*/
+    char ParticleTypeClass::Release(_DynamicVectorClass_VRGBClass *this, int a2, char *a3)
   }
   v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*((unsigned int *)this + 2))));
   if ( v15 < *((unsigned int *)this + 4) ) /*0x4785d1*/
@@ -169,7 +169,7 @@ void ParticleTypeClass::EnsureCapacity(unsigned int * a2)
 
   if ( this == (gamemd::ParticleTypeClass *)(a2) ) /*0x4788ec*/
     return this; /*0x4788ec*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x4788f4*/
+  unsigned int *ParticleTypeClass::EnsureCapacity(ParticleTypeClass *this, unsigned int *a2)
   v3 = a2[2]; /*0x4788f7*/
   *((unsigned int *)this + 2) = v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/

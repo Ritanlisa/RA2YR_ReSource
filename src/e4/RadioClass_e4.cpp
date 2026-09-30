@@ -45,7 +45,7 @@ int RadioClass::ProcessCmd()
 {
 
   if ( !*((unsigned char *)this + 129) ) /*0x65aa83*/
-    (*(void (**)(void *, int))(*(unsigned int *)this + 640))(this, 3); /*0x65aa91*/
+    int RadioClass::ProcessCmd(RadioClass *this)
   return ObjectClass::Undeploy(this); /*0x65aa9e*/
 
 }

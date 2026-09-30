@@ -1131,7 +1131,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   if ( (*(int (**)(unsigned char *))(v11 + 44))(this) == 1 && *((unsigned char *)this + 1747) ) /*0x7074f0*/
     v13 = *(unsigned int **)&g_abs_B077F8; /*0x7074fa*/
   else
-    v13 = (unsigned int *)(*(int (**)(unsigned char *))(*(unsigned int *)this + 484))(this); /*0x707505*/
+    void Surface::BlitTechnoTo(Surface *this, __int16 *a2, unsigned int *a3, unsigned int *a4, int a5, int a6, int a7)
   aP4a = (int *)LightConvertClass::SelectRLEBlitter(v13, (IUnknown *)v12); /*0x707516*/
   a1a = 0; /*0x70751a*/
   if ( (v12 & 8) != 0 ) /*0x707522*/
@@ -1139,7 +1139,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v14 = (*(int (**)(unsigned char *))(*((unsigned int *)this + 1) + 16))((unsigned char *)this + 4); /*0x707534*/
     a1a = (int)(v14 + Math::RoundToInt(*((float *)this + 147))) % 400; /*0x707545*/
   }
-  if ( (*(int (**)(unsigned char *))(*(unsigned int *)this + 44))(this) == 1 ) /*0x707557*/
+  void Surface::BlitTechnoTo(Surface *this, __int16 *a2, unsigned int *a3, unsigned int *a4, int a5, int a6, int a7)
   {
     eax8 = (TechnoClass *)(*(unsigned int *)aP2->__pad_0 + *a1); /*0x70756b*/
     v15 = (TechnoClass *)(*(unsigned int *)&aP2->__pad_0[4] + a1[1]); /*0x707571*/
@@ -1210,7 +1210,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v24 = *(unsigned int *)this; /*0x7076e3*/
     v35[3] = (uint16_t)a1[3]; /*0x7076e5*/
     v25 = (AbstractClass *)(*(int (**)(unsigned char *))(v24 + 752))(this); /*0x707703*/
-    eax24a = (*(int (**)(unsigned char *))(*(unsigned int *)this + 748))(this); /*0x707706*/
+    void Surface::BlitTechnoTo(Surface *this, __int16 *a2, unsigned int *a3, unsigned int *a4, int a5, int a6, int a7)
     BlitterRLEBlitSHP( /*0x707736*/
       *(int *)&g_abs_87F8E4,
       (int *)aP3->__pad_0,

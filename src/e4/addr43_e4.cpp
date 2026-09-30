@@ -51,8 +51,8 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 
   if ( *((unsigned int *)this + 12) ) /*0x431bc8*/
     return !a2 && !a3; /*0x431bdb*/
-  if ( (*(uint8_t (**)(size_t *, unsigned int))(*(unsigned int *)this + 80))(this, 0) ) /*0x431bef*/
-    *((unsigned int *)this + 18) = (*(int (**)(size_t *))(*(unsigned int *)this + 176))(this); /*0x431bfd*/
+  bool sub_431BC0(ObjectClass *this, int a2, size_t a3)
+    bool sub_431BC0(ObjectClass *this, int a2, size_t a3)
   else
     *((unsigned int *)this + 18) = 0; /*0x431c02*/
   v5 = a2; /*0x431c05*/
@@ -62,7 +62,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
     {
       v5 = 1024; /*0x431c1b*/
       if ( a3 ) /*0x431c20*/
-        (*(void (**)(size_t *, int, unsigned int, unsigned int))(*(unsigned int *)this + 256))(this, 22, 0, 0); /*0x431c2a*/
+        bool sub_431BC0(ObjectClass *this, int a2, size_t a3)
     }
     *((unsigned int *)this + 13) = v5; /*0x431c2f*/
     if ( v5 ) /*0x431c32*/
@@ -83,7 +83,7 @@ LABEL_14:
     *((unsigned int *)this + 12) = (size_t)RA2_OPNEW(*((unsigned int *)this + 13)); /*0x431c61*/
   if ( !*((unsigned int *)this + 12) ) /*0x431c67*/
   {
-    (*(void (**)(size_t *, int, unsigned int, unsigned int))(*(unsigned int *)this + 256))(this, 12, 0, 0); /*0x431d7d*/
+    bool sub_431BC0(ObjectClass *this, int a2, size_t a3)
     return 0; /*0x431d7d*/
   }
   v6 = *((unsigned int *)this + 18); /*0x431c6d*/
@@ -102,7 +102,7 @@ LABEL_14:
     v10 = (size_t)(v6);
     if ( v6 > (int)*((unsigned int *)this + 13) ) /*0x431ca3*/
       v10 = *((unsigned int *)this + 13); /*0x431ca5*/
-    v8 = (*(uint8_t (**)(size_t *))(*(unsigned int *)this + 96))(this) == 0; /*0x431cb0*/
+    bool sub_431BC0(ObjectClass *this, int a2, size_t a3)
     v9 = *this; /*0x431cb2*/
     if ( v8 ) /*0x431cb6*/
     {
@@ -127,21 +127,21 @@ LABEL_14:
       else
       {
         if ( v7 ) /*0x431ce5*/
-          (*(void (**)(size_t *, unsigned int, unsigned int))(*(unsigned int *)this + 160))(this, 0, 0); /*0x431ced*/
+          bool sub_431BC0(ObjectClass *this, int a2, size_t a3)
         *((unsigned int *)this + 14) = v7; /*0x431cf0*/
         *((unsigned int *)this + 19) = v7; /*0x431cf3*/
       }
     }
-    if ( (*(int (**)(size_t *, unsigned int, signed int))(*(unsigned int *)this + 144))(this, *((unsigned int *)this + 12), v10) != v10 ) /*0x431d30*/
-      (*(void (**)(size_t *, int, unsigned int, unsigned int))(*(unsigned int *)this + 256))(this, 5, 0, 0); /*0x431d3a*/
+    ( this, this->nextObject, attachedTag)
+      bool sub_431BC0(ObjectClass *this, int a2, size_t a3)
     if ( v11 ) /*0x431d41*/
     {
-      (*(void (**)(size_t *))(*(unsigned int *)this + 208))(this); /*0x431d47*/
+      bool sub_431BC0(ObjectClass *this, int a2, size_t a3)
       *((unsigned char *)this + 39) = 1; /*0x431d4a*/
       *((unsigned char *)this + 41) = 1; /*0x431d4e*/
       return 1; /*0x431d58*/
     }
-    (*(void (**)(size_t *, int, unsigned int))(*(unsigned int *)this + 160))(this, v7, 0); /*0x431d61*/
+    bool sub_431BC0(ObjectClass *this, int a2, size_t a3)
     *((unsigned char *)this + 39) = 1; /*0x431d64*/
   }
   *((unsigned char *)this + 41) = 1; /*0x431d68*/
@@ -2437,7 +2437,7 @@ int E4Recv_43EE50::sub_43EE50()
   int result; // eax
   int v5; // [esp+8h] [ebp-4h] BYREF
 
-  if ( !(*(uint8_t (**)(unsigned int *))(*(unsigned int *)this + 4080))(this) || !*((unsigned int *)this + 352) ) /*0x43ee63*/
+  int sub_43EE50(TechnoClass *this)
     return 0; /*0x43eea7*/
   Value = ProgressTimer::GetValue((unsigned short *)this + 452, &v5); /*0x43ee76*/
   v3 = *((unsigned int *)this + 352); /*0x43ee7d*/

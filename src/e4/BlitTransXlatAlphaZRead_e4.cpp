@@ -172,7 +172,7 @@ namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x494d4a*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,
@@ -190,7 +190,7 @@ namespace gamemd {
 int BlitTransXlatAlphaZRead_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int, int))(*(unsigned int *)this + 8))( /*0x494d7f*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0, a9)
            this,
            a2,
            a3,

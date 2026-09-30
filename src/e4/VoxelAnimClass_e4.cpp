@@ -528,7 +528,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
   unsigned int *v5; // eax
   unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this + 72))(this, v7); /*0x749b2f*/
+  int VoxelAnimClass::DrawVoxelFrame(VoxelAnimClass *this, int a2, int a3, int a4)
   if ( (*((unsigned char *)Coord::To_Cell(&g_abs_87F7E8, v5) + 300) & 0x10) != 0 ) /*0x749b44*/
     *((unsigned char *)this + 128) = 1; /*0x749b46*/
   return ObjectClass::CalcDrawRect(this); /*0x749b60*/

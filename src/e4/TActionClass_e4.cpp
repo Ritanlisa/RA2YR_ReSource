@@ -255,7 +255,7 @@ LABEL_7:
   ((Radar *)(0))->UpdateReveal(0); /*0x577d63*/
   *((unsigned char *)HouseClass_Player + 576) = 0; /*0x577d72*/
   FogOfWar::Render((int **)&g_abs_87F7E8); /*0x577d79*/
-  return (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 224))(this, 2); /*0x577d88*/
+  int TActionClass::executeRepairAction(TActionClass *this, int a2)
 
 }
 }

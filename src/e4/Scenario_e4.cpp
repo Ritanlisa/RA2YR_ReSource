@@ -929,7 +929,7 @@ int Scenario::LoadOrReloadOptions(IUnknown * aP1)
 {
 
   if ( aP1 ) /*0x597a16*/
-    return (*(char (**)(unsigned int *, IUnknown *))(*(unsigned int *)this + 16))(this, aP1); /*0x597a1b*/
+    char Scenario::LoadOrReloadOptions(Scenario *this, int a2)
   else
     return (uint8_t)LoadOptions::Run(this) != 0; /*0x597a28*/
 

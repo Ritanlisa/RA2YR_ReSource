@@ -677,7 +677,7 @@ Coord * * TechnoClass::RegisterKill()
   int v28; // [esp+14h] [ebp+4h]
 
   v27 = 0; /*0x702d46*/
-  v2 = (*(int (**)(void *))(*(unsigned int *)this + 132))(this); /*0x702d50*/
+  int TechnoClass::RegisterKill(TechnoClass *this)
   v3 = (*(int (**)(int, unsigned int))(*(unsigned int *)v2 + 132))(v2, *((unsigned int *)this + 135)); /*0x702d6b*/
   if ( *((unsigned char *)this + 144) ) /*0x702d6d*/
   {
@@ -714,7 +714,7 @@ Coord * * TechnoClass::RegisterKill()
       }
     }
   }
-  result = (*(int (**)(void *))(*(unsigned int *)this + 132))(this); /*0x702e48*/
+  int TechnoClass::RegisterKill(TechnoClass *this)
   if ( !*(unsigned char *)(result + 3231) )
   {
     if ( v28 )
@@ -770,7 +770,7 @@ Coord * * TechnoClass::RegisterKill()
       *(unsigned int *)(*((unsigned int *)this + 135) + 21644) = (*(int (**)(int))(*(unsigned int *)v28 + 56))(v28); /*0x703003*/
       *(unsigned int *)(*(unsigned int *)(v28 + 540) + 21736) += v3; /*0x70300f*/
     }
-    result = (*(int (**)(void *))(*(unsigned int *)this + 44))(this) - 1; /*0x70301c*/
+    int TechnoClass::RegisterKill(TechnoClass *this)
     switch ( result ) /*0x70302e*/
     {
       case 0: /*0x70302e*/
@@ -778,7 +778,7 @@ Coord * * TechnoClass::RegisterKill()
       case 1: /*0x70302e*/
         if ( !v28 ) /*0x7030d5*/
           goto LABEL_63; /*0x7030d5*/
-        if ( !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x7030e5*/
+        int TechnoClass::RegisterKill(TechnoClass *this)
         {
           HouseClass::IncrementStat( /*0x703108*/
             (unsigned int *)(*(unsigned int *)(v28 + 540) + 9032),
@@ -788,7 +788,7 @@ Coord * * TechnoClass::RegisterKill()
 LABEL_55:
         if ( v28 ) /*0x703117*/
         {
-          if ( !v27 && !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x70312f*/
+          int TechnoClass::RegisterKill(TechnoClass *this)
           {
             HouseClass::IncrementStat( /*0x703152*/
               (unsigned int *)(*(unsigned int *)(v28 + 540) + 11088),
@@ -796,7 +796,7 @@ LABEL_55:
             v27 = 1; /*0x703157*/
           }
 LABEL_59:
-          if ( v28 && !v27 && !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x703175*/
+          int TechnoClass::RegisterKill(TechnoClass *this)
             HouseClass::IncrementStat( /*0x703198*/
               (unsigned int *)(*(unsigned int *)(v28 + 540) + 13144),
               *(unsigned int *)(*((unsigned int *)this + 433) + 3576));
@@ -805,7 +805,7 @@ LABEL_63:
         ++*(unsigned int *)(*((unsigned int *)this + 135) + 21556); /*0x70319d*/
         if ( v28 ) /*0x7031b2*/
         {
-          if ( !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x7031be*/
+          int TechnoClass::RegisterKill(TechnoClass *this)
           {
             v18 = (unsigned int *)(*(unsigned int *)(v28 + 540) /*0x7031d5*/
                            + 4 * (*(int (**)(void *))(*(unsigned int *)this + 56))(this)
@@ -819,12 +819,12 @@ LABEL_67:
           result = RadarClass::SetFlag(&g_abs_87F7E8, 0); /*0x7031ec*/
         break; /*0x7031f3*/
       case 5: /*0x70302e*/
-        result = (*(int (**)(void *))(*(unsigned int *)this + 132))(this); /*0x703039*/
+        int TechnoClass::RegisterKill(TechnoClass *this)
         if ( !*(unsigned char *)(result + 562) ) /*0x70303f*/
         {
           if ( *((unsigned int *)this + 335) != -1 ) /*0x703054*/
             ++*(unsigned int *)(*((unsigned int *)this + 135) + 21640); /*0x70305c*/
-          if ( v28 && !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x703070*/
+          int TechnoClass::RegisterKill(TechnoClass *this)
           {
             HouseClass::IncrementStat( /*0x703093*/
               (unsigned int *)(*(unsigned int *)(v28 + 540) + 15200),
@@ -2004,7 +2004,7 @@ char TechnoClass::ScanAdjacentCells()
   int v15; // [esp+1Ch] [ebp-8h] BYREF
   int v16; // [esp+20h] [ebp-4h] BYREF
 
-  v12 = *(unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)this + 440))(this, &v16); /*0x703ce4*/
+  char TechnoClass::ScanAdjacentCells(TechnoClass *this)
   v2 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v12); /*0x703ced*/
   if ( !v2 || *((unsigned char *)this + 140) ) /*0x703cf7*/
     return 0; /*0x703cf7*/

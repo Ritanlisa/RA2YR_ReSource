@@ -1115,7 +1115,7 @@ int AnimTypeClass::GetDamage()
       v10[0] = &off_7E1668; /*0x428d7f*/
       BufferIOFileClass::Dtor(v10); /*0x428d87*/
     }
-    (*(void (**)(char *, unsigned int))(*(unsigned int *)this + 160))(this, *((unsigned int *)g_abs_A8B230 + 1174)); /*0x428d9c*/
+    int AnimTypeClass::GetDamage(AnimTypeClass *this)
     v6 = *((unsigned int *)this + 41); /*0x428da2*/
     v7[0] = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/
@@ -1209,7 +1209,7 @@ char AnimTypeClass::GetLoopCount(int a2)
     {
       IDA_LOBYTE(v2) = *((unsigned char *)this + 567); /*0x427b2b*/
       if ( (unsigned char)v2 ) /*0x427b33*/
-        IDA_LOBYTE(v2) = (*(int (**)(void *, int))(*(unsigned int *)this + 160))(this, a2); /*0x427b3a*/
+        char AnimTypeClass::GetLoopCount(AnimTypeClass *this, int a2)
     }
     else
     {

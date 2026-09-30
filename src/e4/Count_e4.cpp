@@ -23,12 +23,12 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   if ( v1 < 0 ) /*0x408e79*/
     *((unsigned int *)this + 7) = 0; /*0x408e7b*/
   result = *this; /*0x408e82*/
-  v3 = *(unsigned int *)(*(unsigned int *)this + 608) - 1; /*0x408e8a*/
-  *(unsigned int *)(*(unsigned int *)this + 608) = v3; /*0x408e8d*/
+  int Count::DecrementRefCountsAudio(Count *this)
+  int Count::DecrementRefCountsAudio(Count *this)
   if ( v3 < 0 ) /*0x408e93*/
   {
     result = (int)(*this);
-    *(unsigned int *)(*(unsigned int *)this + 608) = 0; /*0x408e97*/
+    int Count::DecrementRefCountsAudio(Count *this)
   }
   return (gamemd::AbstractClass **)(result);
 

@@ -453,7 +453,7 @@ LABEL_16:
     }
 LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (**)(int, int, char *, int, int))(*(unsigned int *)this + 20))(this, v11, Str, 80, a8); /*0x7752e6*/
+    ( this, v11, Str, 80, a8)
     if ( !strcmp(Str, &g_INI_Key_Lighting.__pad_20[4]) ) /*0x77531d*/
       return 3; /*0x775437*/
     if ( strstr(Str, g_abs_81FD14) ) /*0x77532d*/

@@ -619,7 +619,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
     v8 = 1; /*0x5f927b*/
     goto LABEL_40; /*0x5f927b*/
   }
-  if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 30 /*0x5f9241*/
+  if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 30 && (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 37 )
     && (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 37 )
   {
     v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
@@ -864,7 +864,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
           (CCINIClass *)&stru_830620.__pad_14B0[4124],
           *((unsigned char *)this + 566));
   *((unsigned char *)this + 566) = v25; /*0x5f9634*/
-  if ( !v25 && (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 5 ) /*0x5f9649*/
+  char ObjectTypeClass::LoadFromINI(ObjectTypeClass *this, unsigned __int8 ***a2)
     ObjectTypeClass::Load2DArt(this); /*0x5f964d*/
   if ( *((unsigned char *)this + 531) ) /*0x5f9652*/
   {
@@ -1034,7 +1034,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
     return *((unsigned int *)this + 444); /*0x7120bf*/
   if ( *((unsigned char *)HouseClass_Player + 703) ) /*0x71204c*/
   {
-    if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 176))(this) == 16 ) /*0x712060*/
+    int ObjectTypeClass::SelectArtOrAlt(TechnoTypeClass *this)
     {
       result = *((unsigned int *)this + 452); /*0x712062*/
       if ( result ) /*0x71206a*/
@@ -5085,7 +5085,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 
   if ( this == a2 ) /*0x717c0a*/
     return this; /*0x717c0a*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x717c0e*/
+  unsigned int *ObjectTypeClass::loadTypeMember_5717C00(ObjectTypeClass *this, unsigned int *a2)
   v3 = a2[2]; /*0x717c11*/
   *((unsigned int *)this + 2) = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/

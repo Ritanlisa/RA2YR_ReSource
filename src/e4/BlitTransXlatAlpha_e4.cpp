@@ -173,7 +173,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x493eca*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,
@@ -192,7 +192,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x493efa*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,
@@ -210,7 +210,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x493f2a*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,

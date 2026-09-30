@@ -14,7 +14,7 @@ namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this + 4))( /*0x496167*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
            this,
            a2,
            a3,

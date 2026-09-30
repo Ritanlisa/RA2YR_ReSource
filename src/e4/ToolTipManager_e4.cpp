@@ -32,7 +32,7 @@ int ToolTipManager::ddtor(char a2)
     ToolTipClass::initString((wchar_t *)this); /*0x724b8b*/
   result = *((unsigned int *)this + 1); /*0x724b90*/
   if ( result ) /*0x724b95*/
-    return (*(int (**)(int, int))(*(unsigned int *)this + 16))(this, (char *)this + 24); /*0x724b9f*/
+    ( this, &this->DisplayTimer[1])
   return result; /*0x724ba2*/
 
 }

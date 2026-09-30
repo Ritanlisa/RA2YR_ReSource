@@ -932,7 +932,7 @@ AbstractClass * * FoggedObjectClass::ResizeArray(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4d2cab*/
+    char FoggedObjectClass::ResizeArray( _DynamicVectorClass_UDrawRecord_FoggedObjectClass *this, int a2, char *a3)
   }
   v15 = *((unsigned int *)this + 2); /*0x4d2cae*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x4d2cb6*/
@@ -1229,7 +1229,7 @@ char FoggedObjectClass_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e0662*/
+    char FoggedObjectClass_42::Release(_VectorClass_PAVFootClass *this, int a2, unsigned int *a3)
     return 1; /*0x4e0668*/
   }
 
@@ -1329,7 +1329,7 @@ char FoggedObjectClass_42::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e078e*/
+    char FoggedObjectClass_42::SetCapacity(FoggedObjectClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x4e0791*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4e0799*/

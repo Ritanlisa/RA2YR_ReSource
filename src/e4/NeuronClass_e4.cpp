@@ -194,7 +194,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x43ac12*/
+    char NeuronClass_25::Release(_VectorClass_PAVNeuronClass *this, int a2, unsigned int *a3)
     return 1; /*0x43ac18*/
   }
 

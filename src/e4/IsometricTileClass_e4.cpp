@@ -26,7 +26,7 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
   {
     *((unsigned char *)this + 129) = 0; /*0x543805*/
     ObjectClass::SetPosition((void *)this); /*0x54380c*/
-    (*(void (**)(IsometricTileClass *, int))(*(unsigned int *)this + 292))(this, 1); /*0x543818*/
+    IsometricTileClass *IsometricTileClass::IsometricTileClass(IsometricTileClass *this, int a2, unsigned short *a3)
   }
   if ( *(int *)&stru_87C374.__pad_14B0[7996] < *(int *)&stru_87C374.__pad_14B0[7988] /*0x543855*/
     || (stru_87C374.__pad_14B0[7993] || !*(unsigned int *)&stru_87C374.__pad_14B0[7988])

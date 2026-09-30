@@ -77,7 +77,7 @@ int LoadGame::LoadTriggerEvents()
     }
     while ( v2 >= 0 ); /*0x6608cb*/
   }
-  if ( (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
+  bool LoadGame::LoadTriggerEvents(LoadGame *this)
     return 0; /*0x6608e8*/
   v9 = 0; /*0x6608ed*/
   if ( v13 > 0 ) /*0x6608f1*/
@@ -94,14 +94,14 @@ int LoadGame::LoadTriggerEvents()
       {
         v11 = 0; /*0x66091b*/
       }
-      if ( (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v11, 64, 0) < 0 ) /*0x660929*/
+      ( this, _65FB80, 64, 0)
         break; /*0x660929*/
       if ( ++v9 >= v13 ) /*0x660932*/
-        return (*(int (**)(void *, int16_t *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
+        bool LoadGame::LoadTriggerEvents(LoadGame *this)
     }
     return 0; /*0x660929*/
   }
-  return (*(int (**)(void *, int16_t *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
+  ( this, &word_B04D78, 4, 0)
 
 }
 } // namespace gamemd
@@ -1146,22 +1146,22 @@ int LoadGame::LoadMagicAndAudio()
   if ( g_abs_B1D4CC ) /*0x753418*/
     Audio::Release(g_abs_B1D4CC); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
-  result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x753430*/
+  int LoadGame::LoadMagicAndAudio(LoadGame *this)
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
   {
-    result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x753455*/
+    int LoadGame::LoadMagicAndAudio(LoadGame *this)
     if ( result >= 0 ) /*0x75345a*/
     {
       while ( v3 != 1450145861 ) /*0x753466*/
       {
         if ( v3 != 1450145865 ) /*0x75346e*/
           return -2147467259; /*0x7534cb*/
-        result = (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v4, 12, 0); /*0x75347c*/
+        ( this, v4, 12, 0)
         if ( result >= 0 ) /*0x753481*/
         {
           if ( g_abs_B1D4CC && v4[0] >= 0 && v4[0] < g_abs_B1D4B0 ) /*0x75349a*/
             Audio_Load(*((unsigned int *)g_abs_B1D4A4 + v4[0]), v4[1], v4[2]); /*0x7534ae*/
-          result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x7534bf*/
+          ( this, &v3, 4, 0)
           if ( result >= 0 ) /*0x7534c4*/
             continue; /*0x7534c4*/
         }

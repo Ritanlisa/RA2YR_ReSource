@@ -117,7 +117,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6cf684*/
+    char SwizzleManagerClass_19::Release(_VectorClass_VSwizzlePointerClass *this, int a2, unsigned int *a3)
     return 1; /*0x6cf68a*/
   }
 
@@ -220,7 +220,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6cf7f8*/
+    char SwizzleManagerClass_19::SetCapacity(_DynamicVectorClass_VSwizzlePointerClass *this, int a2, unsigned int *a3)
   }
   v15 = *((unsigned int *)this + 2); /*0x6cf7fb*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x6cf803*/

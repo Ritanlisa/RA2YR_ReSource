@@ -2121,7 +2121,7 @@ namespace gamemd {
 BOOL E4Recv_7325C0::sub_7325C0()
 {
 
-  return (*(int (**)(void *))(*(unsigned int *)this + 44))(this) != 6 /*0x7325f4*/
+  BOOL sub_7325C0(ObjectClass *this)
       && *(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3516)
       && (*(uint8_t (**)(void *))(*(unsigned int *)this + 316))(this);
 
@@ -2506,7 +2506,7 @@ char E4Recv_736C10::sub_736C10()
   int v2; // eax
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 1552))(this) != 5 ) /*0x736c21*/
+  char sub_736C10(TechnoClass *this)
     return 0; /*0x736c21*/
   v4[0] = *((unsigned int *)this + 39); /*0x736c2f*/
   v4[1] = *((unsigned int *)this + 40); /*0x736c3b*/
@@ -2516,8 +2516,8 @@ char E4Recv_736C10::sub_736C10()
   v2 = *((unsigned int *)this + 373); /*0x736c5e*/
   if ( v2 ) /*0x736c66*/
     *(unsigned char *)(v2 + 130) = 1; /*0x736c68*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 3712))(this); /*0x736c73*/
-  (*(void (**)(unsigned int *))(*(unsigned int *)this + 992))(this); /*0x736c7d*/
+  char sub_736C10(TechnoClass *this)
+  char sub_736C10(TechnoClass *this)
   return 1; /*0x736c85*/
 
 }

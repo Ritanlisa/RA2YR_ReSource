@@ -207,6 +207,15 @@ class Resolver:
         if m:
             return ("global", int(m.group(1) or m.group(2), 16))
 
+        # G41: flat-memory externs (`g_abs_818994`) emitted by
+        # fix_memory_refs — address IS the suffix, same contract as the
+        # auto-name family; IDA side events MEMORY[0xX] at the same sites.
+        if ident.startswith('g_abs_'):
+            try:
+                return ("global", int(ident[6:], 16))
+            except ValueError:
+                return (None, None)
+
         # 4. Unknown -> not a data location (callee name / type / macro / ...).
         return (None, None)
 

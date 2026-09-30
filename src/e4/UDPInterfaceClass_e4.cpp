@@ -36,8 +36,8 @@ int UDPInterfaceClass::connect()
   result = *((unsigned char *)this + 258152); /*0x7b1b53*/
   if ( result ) /*0x7b1b5b*/
   {
-    (*(void (**)(unsigned char *))(*(unsigned int *)this + 32))(this); /*0x7b1b5f*/
-    (*(void (**)(unsigned char *))(*(unsigned int *)this + 4))(this); /*0x7b1b66*/
+    char UDPInterfaceClass::connect(UDPInterfaceClass *this)
+    char UDPInterfaceClass::connect(UDPInterfaceClass *this)
     result = WSACleanup(); /*0x7b1b69*/
     *((unsigned char *)this + 258152) = 0; /*0x7b1b6e*/
   }
@@ -633,7 +633,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x7b452e*/
+    char UDPInterfaceClass::flush(_DynamicVectorClass_PAE *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x7b4531*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x7b4539*/
@@ -777,7 +777,7 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
 {
 
   if ( a3 && Network::IsBroadcastAddr(a3) ) /*0x7b36ce*/
-    return (*(int16_t (**)(void *, WinsockInterfaceClass *, unsigned int, WinsockInterfaceClass *))(*(unsigned int *)this + 16))( /*0x7b36ea*/
+    ( this, a2, a3, a6)
              this,
              aP1,
              arg4,
@@ -887,7 +887,7 @@ int UDPInterfaceClass_Destru::Receive()
     v3 = (unsigned int *)this + 64704; /*0x7b38aa*/
     while ( 1 ) /*0x7b38b8*/
     {
-      v4 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 224))(this, -1); /*0x7b38b8*/
+      int UDPInterfaceClass_Destru::Receive(UDPInterfaceClass *this)
       if ( WSAAsyncSelect(*v3, g_hWnd, v4, 3) == -1 ) /*0x7b38ce*/
         break; /*0x7b38ce*/
       ++v2; /*0x7b38d6*/
@@ -911,7 +911,7 @@ int UDPInterfaceClass_Destru::CheckStatus()
 {
 
   NetworkClass::UnregisterAsync(this); /*0x7b3903*/
-  return (*(int (**)(SOCKET *))(*(unsigned int *)this + 448))(this); /*0x7b390f*/
+  int UDPInterfaceClass_Destru::CheckStatus(UDPInterfaceClass *this)
 
 }
 // 0x7B3920

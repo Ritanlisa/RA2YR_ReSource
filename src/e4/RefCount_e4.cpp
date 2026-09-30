@@ -39,7 +39,7 @@ LABEL_5:
     ++*((unsigned int *)this + 4); /*0x49fa51*/
     return *(unsigned int *)(v5 + 4 * a2); /*0x49fa59*/
   }
-  if ( (*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, a2 + 10, 0) ) /*0x49fa1a*/
+  int RefCount::Increment(RefCount *this, int a2)
   {
     for ( i = v3; i < *((unsigned int *)this + 2); *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) = 0 ) /*0x49fa28*/
       ++i; /*0x49fa2d*/

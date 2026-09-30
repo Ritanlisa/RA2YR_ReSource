@@ -175,7 +175,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x53c602*/
+    char DeleteCommandClass_28::Release(_VectorClass_PBVAnimClass *this, int a2, unsigned int *a3)
     return 1; /*0x53c608*/
   }
 
@@ -275,7 +275,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x53c72e*/
+    char DeleteCommandClass_28::SetCapacity(_DynamicVectorClass_PBVAnimClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x53c731*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x53c739*/

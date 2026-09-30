@@ -201,7 +201,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e3f2*/
+    char BlowPipe_23::SetCapacity(_VectorClass_PAVPlanningNodeClass *this, int a2, unsigned int *a3)
     return 1; /*0x63e3f8*/
   }
 
@@ -301,7 +301,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e51e*/
+    char BlowPipe_31::Release(_DynamicVectorClass_PAVPlanningNodeClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x63e521*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63e529*/
@@ -408,7 +408,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e732*/
+    char BlowPipe_23::Release(_VectorClass_PAVEventClass *this, int a2, unsigned int *a3)
     return 1; /*0x63e738*/
   }
 
@@ -508,7 +508,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e85e*/
+    char BlowPipe_23::SetCapacity_0(_DynamicVectorClass_PAVEventClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x63e861*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63e869*/
@@ -579,7 +579,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63eb5e*/
+    char BlowPipe_23::SetCapacity_1(_DynamicVectorClass_PAVPlanningTokenClass *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x63eb61*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63eb69*/

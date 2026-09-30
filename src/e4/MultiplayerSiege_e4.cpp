@@ -199,7 +199,7 @@ LABEL_26:
     if ( !*(unsigned char *)(v10[13] + 422) && v10 != v7 ) /*0x5ca910*/
     {
       this->Debug::Log(); /*0x5ca91c*/
-      v11 = (int *)(*(int (**)(void *, char *, int, void ***, unsigned int *))(*(unsigned int *)this + 196))( /*0x5ca939*/
+      ( this, &a2, i, v14, v13)
                      this,
                      &a2,
                      i,

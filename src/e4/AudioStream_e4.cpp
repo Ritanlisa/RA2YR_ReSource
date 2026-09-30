@@ -665,7 +665,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
 
   if ( a6 < 8 ) /*0x4bead5*/
     return 0; /*0x4bead5*/
-  v8 = (int *)(*(int (**)(void *, MouseClass **))(*(unsigned int *)this + 120))(this, &v76); /*0x4beae2*/
+  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, unsigned __int8 *a5, int a6, int a7, int a8)
   v9 = (IUnknown **)ClipRectIntersection(&v74, &aP1->field_0, v8, 0, 0); /*0x4beaf5*/
   v10 = *v9; /*0x4beafc*/
   v82 = *v9; /*0x4beafe*/
@@ -735,8 +735,8 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
     else
       aP2a = (IUnknown *)(v15 - v27); /*0x4becf1*/
   }
-  (*(void (**)(void *))(*(unsigned int *)this + 112))(this); /*0x4bed0b*/
-  v99 = (*(int (**)(void *, MouseClass *, int))(*(unsigned int *)this + 92))(this, aP1a, v79); /*0x4bed25*/
+  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, unsigned __int8 *a5, int a6, int a7, int a8)
+  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, unsigned __int8 *a5, int a6, int a7, int a8)
   if ( !*(unsigned int *)&g_abs_87F8E4 ) /*0x4bed2e*/
     return 0; /*0x4bed2e*/
   v28 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 4); /*0x4bed38*/
@@ -764,7 +764,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   v70 = (char *)v80 - (char *)aP1a; /*0x4bee0c*/
   v95 = v81 - v79; /*0x4bee19*/
   aP2b = (IUnknown *)((char *)aP3a - (char *)aP2a); /*0x4bee2b*/
-  v35 = (*(int (**)(void *))(*(unsigned int *)this + 116))(this); /*0x4bee32*/
+  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, unsigned __int8 *a5, int a6, int a7, int a8)
   v64 = v35; /*0x4bee3c*/
   if ( v95 < 0 ) /*0x4bee42*/
   {
@@ -1020,7 +1020,7 @@ LABEL_43:
     }
   }
 LABEL_52:
-  (*(void (**)(void *))(*(unsigned int *)this + 96))(this); /*0x4bf132*/
+  char AudioStream::DrawWaveform( AudioStream *this, int *a2, unsigned int *a3, unsigned int *a4, unsigned __int8 *a5, int a6, int a7, int a8)
   return 1; /*0x4bf13b*/
 
 }

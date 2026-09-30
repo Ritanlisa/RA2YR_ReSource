@@ -3145,7 +3145,7 @@ int E4Recv_7B9DF0::sub_7B9DF0(LONG * a2, LONG * a3)
   y = Point.y; /*0x7b9e09*/
   *a2 = Point.x; /*0x7b9e0d*/
   *a3 = y; /*0x7b9e15*/
-  return (*(int (**)(void *, LONG *, LONG *))(*(unsigned int *)this + 68))(this, a2, a3); /*0x7b9e1e*/
+  int sub_7B9DF0(ObjectClass *this, LONG *a2, LONG *a3)
 
 }
 } // namespace gamemd
@@ -3263,7 +3263,7 @@ namespace gamemd {
 int E4Recv_7BC6C0::sub_7BC6C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc6ea*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,
@@ -3282,7 +3282,7 @@ namespace gamemd {
 int E4Recv_7BC6F0::sub_7BC6F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc71a*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,
@@ -3301,7 +3301,7 @@ namespace gamemd {
 int E4Recv_7BC720::sub_7BC720(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc74a*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,
@@ -3413,7 +3413,7 @@ namespace gamemd {
 int E4Recv_7BC8C0::sub_7BC8C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc8ea*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,
@@ -3432,7 +3432,7 @@ namespace gamemd {
 int E4Recv_7BC8F0::sub_7BC8F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc91a*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,
@@ -3451,7 +3451,7 @@ namespace gamemd {
 int E4Recv_7BC920::sub_7BC920(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc94a*/
+  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
            this,
            a2,
            a3,

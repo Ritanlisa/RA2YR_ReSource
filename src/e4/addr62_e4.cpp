@@ -3295,7 +3295,7 @@ int E4Recv_62D510::sub_62D510()
       *((unsigned char *)this + 305) = 1; /*0x62d5c2*/
     }
   }
-  return (*(int (**)(float *, int *))(*(unsigned int *)this + 436))(this, &v12); /*0x62d5d7*/
+  int sub_62D510(ObjectClass *this)
 
 }
 } // namespace gamemd

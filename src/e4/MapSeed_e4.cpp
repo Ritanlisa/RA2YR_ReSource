@@ -27,7 +27,7 @@ int MapSeed::ValidateName(int a2)
 {
 
   if ( a2 ) /*0x597736*/
-    return (*(int (**)(int, char *))(*(unsigned int *)this + 8))(a2, (unsigned char *)this + 120); /*0x597740*/
+    int MapSeed::ValidateName(char *this, int a2)
   else
     return (uint8_t)ShowSaveLoadDialog((unsigned char *)this + 120) != 0; /*0x597752*/
 

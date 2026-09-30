@@ -109,7 +109,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d5678*/
+    char MSFont_18::SetCapacity8(_DynamicVectorClass_UAcceleratorTracker *this, int a2, unsigned int *a3)
   }
   v15 = *((unsigned int *)this + 2); /*0x5d567b*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x5d5683*/
@@ -279,7 +279,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d5232*/
+    char MSFont_18::Release(_VectorClass_PAUHWND *this, int a2, unsigned int *a3)
     return 1; /*0x5d5238*/
   }
 
@@ -379,7 +379,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d535e*/
+    char MSFont_18::SetCapacity(_DynamicVectorClass_PAUHWND *this, int a2, unsigned int *a3)
   }
   v7 = *((unsigned int *)this + 2); /*0x5d5361*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d5369*/

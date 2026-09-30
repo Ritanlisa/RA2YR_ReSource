@@ -1965,7 +1965,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e92e2*/
+    char HouseClass::vt_02_(void *this, int a2, unsigned int *a3)
     return 1; /*0x4e92e8*/
   }
 
@@ -2015,7 +2015,7 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9ec2*/
+    char ParticleSystemClass::vt_02(_VectorClass_PAVParticleClass *this, int a2, unsigned int *a3)
     return 1; /*0x4e9ec8*/
   }
 
@@ -2395,7 +2395,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   if ( v8 != *((unsigned int *)this + 13) ) /*0x4e2aa4*/
   {
     *((unsigned int *)this + 13) = v8; /*0x4e2aa6*/
-    (*(void (**)(int))(*(unsigned int *)this + 72))(this); /*0x4e2aad*/
+    int sub_4E2A50(GaugeClass *this, int a2, int a3, int a4, int a5, int a6)
   }
   *((unsigned char *)this + 45) = 1; /*0x4e2ab2*/
   *((unsigned char *)this + 46) = (int)aP4 > aP5; /*0x4e2ab9*/

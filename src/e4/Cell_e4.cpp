@@ -707,13 +707,13 @@ Coord * * Cell::IsValidDestination(short * a2)
         return 0; /*0x4dcf19*/
     }
   }
-  v8 = (unsigned int *)(*(int (**)(unsigned char *, unsigned int *, unsigned int))(*(unsigned int *)this + 76))(this, v16, 0); /*0x4dcf31*/
+  bool Cell::IsValidDestination(Cell *this, __int16 *a2)
   IDA_LOWORD(v17) = *v8 / 256; /*0x4dcf4a*/
   v9 = *(unsigned int *)this; /*0x4dcf5b*/
   IDA_HIWORD(v17) = v8[1] / 256; /*0x4dcf60*/
   v14 = v17; /*0x4dcf69*/
   v10 = (*(int (**)(unsigned char *))(v9 + 188))(this); /*0x4dcf6f*/
-  v11 = (*(int (**)(unsigned char *, int))(*(unsigned int *)this + 132))(this, v10); /*0x4dcf7a*/
+  bool Cell::IsValidDestination(Cell *this, __int16 *a2)
   if ( !MapSeed::CheckTileMatch(&g_abs_87F7E8, (int16_t *)&v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
   v12 = CellCoord::To_CellObj(&g_abs_87F7E8, a2); /*0x4dcfa1*/

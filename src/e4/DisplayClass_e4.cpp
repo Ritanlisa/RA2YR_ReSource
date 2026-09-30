@@ -161,7 +161,7 @@ char DisplayClass::ddtor()
   if ( !g_abs_A8ED6B ) /*0x4a893f*/
   {
     Hash::Reset(g_abs_8A06F8); /*0x4a8946*/
-    return (*(int (**)(void *, int *))(*(unsigned int *)this + 48))(this, g_abs_8A06F8); /*0x4a8954*/
+    ( this, &stru_8A06F8)
   }
   return result; /*0x4a8957*/
 
@@ -291,7 +291,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
         if ( v15 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4a9ac6*/
         {
 LABEL_19:
-          (*(void (**)(unsigned int *, IUnknown **, IUnknown *))(*(unsigned int *)this + 576))(this, &v32, aP2); /*0x4a9a0d*/
+          char DisplayClass::UpdateCellPassability(DisplayClass *this, __int16 *a2, int a3)
           goto LABEL_30; /*0x4a9a21*/
         }
         if ( v15 >= 0 && v15 != v14->__pad_11C[4] ) /*0x4a9aeb*/
@@ -337,7 +337,7 @@ LABEL_30:
         if ( v22 != -2 && (v14->field_140 & 2) == 0 ) /*0x4a9c03*/
         {
 LABEL_34:
-          (*(void (**)(unsigned int *, IUnknown **, IUnknown *))(*(unsigned int *)this + 576))(this, &v32, aP2); /*0x4a9b4a*/
+          char DisplayClass::UpdateCellPassability(DisplayClass *this, __int16 *a2, int a3)
           continue; /*0x4a9b5e*/
         }
         if ( v22 >= 0 && v22 != v14->__pad_11C[5] ) /*0x4a9c28*/
@@ -451,7 +451,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
         if ( eax10 != -2 && (v13->field_140 & 2) == 0 ) /*0x4a9fac*/
         {
 LABEL_12:
-          (*(void (**)(unsigned int *, IUnknown **, IUnknown *))(*(unsigned int *)this + 608))(this, &v22, aP2); /*0x4a9ef2*/
+          char DisplayClass::ProcessCellReveal(DisplayClass *this, __int16 *a2, int a3)
           continue; /*0x4a9f07*/
         }
         if ( eax10 >= 0 && eax10 != v13->__pad_11C[5] ) /*0x4a9fd2*/
@@ -565,7 +565,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
         if ( eax10 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4aa218*/
         {
 LABEL_12:
-          (*(void (**)(unsigned int *, int *, IUnknown *))(*(unsigned int *)this + 624))(this, &v22, aP2); /*0x4aa162*/
+          bool DisplayClass::RevealFogCell(DisplayClass *this, __int16 *a2, int a3)
           continue; /*0x4aa177*/
         }
         if ( eax10 >= 0 && eax10 != v14->__pad_11C[4] ) /*0x4aa23e*/
@@ -638,7 +638,7 @@ void * DisplayClass::Draw(int a2)
   unsigned char v18[12]; // [esp+1Ch] [ebp-18h] BYREF
   int v19[3]; // [esp+28h] [ebp-Ch] BYREF
 
-  if ( a2 < 500 || a2 > 900 || (*(uint8_t (**)(unsigned int *))(*(unsigned int *)this + 416))(this) ) /*0x4ae513*/
+  if ( a2 < 500 || a2 > 900 || (*((unsigned __int8 (**)(DisplayClass *))this->DisplayClass_field_0x0 + 26))(this) )
     return 0; /*0x4ae513*/
   v3 = g_abs_886FA0; /*0x4ae524*/
   v4 = g_abs_886FA4; /*0x4ae531*/
@@ -701,7 +701,7 @@ int DisplayClass::ExitMode()
   *((unsigned char *)this + 4559) = 0; /*0x4aeae2*/
   *((unsigned char *)this + 4560) = 0; /*0x4aeae9*/
   g_abs_A8ED9D = 1; /*0x4aeaf0*/
-  return (*(int (**)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)this + 72))(this, 0, 0); /*0x4aeb02*/
+  int DisplayClass::ExitMode(DisplayClass *this)
 
 }
 } // namespace gamemd
@@ -723,7 +723,7 @@ int DisplayClass::RenderStatusText(IUnknown * aP1, char a3)
     if ( !*((unsigned char *)this + 13) && v5 ) /*0x5519e2*/
       return 0; /*0x5519e2*/
     v6 = *((unsigned int *)this + 5); /*0x5519e4*/
-    if ( v6 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)this + 8))(this, v5 + v6, 0) ) /*0x5519f4*/
+    bool DisplayClass::sub_5519B0(int this, int a2, char a3)
       return 0; /*0x551a04*/
   }
   v7 = *((unsigned int *)this + 4); /*0x551a0a*/
@@ -750,7 +750,7 @@ int DisplayClass::InsertPriorityText(int a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x551aa6*/
       return 0; /*0x551aa6*/
     v4 = *((unsigned int *)this + 5); /*0x551aa8*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x551ab8*/
+    if ( v4 <= 0 || !(*((unsigned __int8 (**)(DisplayClass *, int, unsigned int))this->DisplayClass_field_0x0 + 2))( this, v3 + v4, 0) )
       return 0; /*0x551abf*/
   }
   for ( i = 0; i < *((unsigned int *)this + 4); ++i ) /*0x551ad2*/
@@ -774,7 +774,7 @@ int DisplayClass::checkScreenBounds(int a2)
   int v3; // edi
 
   v3 = (*(int (**)(int))(*(unsigned int *)a2 + 184))(a2); /*0x5f6234*/
-  return (*(int (**)(void *))(*(unsigned int *)this + 184))(this) > v3; /*0x5f623e*/
+  bool DisplayClass::checkScreenBounds(DisplayClass *this, int a2)
 
 }
 } // namespace gamemd

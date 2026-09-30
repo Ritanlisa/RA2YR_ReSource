@@ -3634,7 +3634,7 @@ int HouseClass::GetCameoTypeIndex(int a2)
   unsigned int *v2; // eax
   int v3; // ecx
 
-  v2 = (unsigned int *)(*(int (**)(void *))(*(unsigned int *)this + 156))(this); /*0x5471b2*/
+  int HouseClass::GetCameoTypeIndex(HouseClass *this, int a2)
   if ( v2 && (v3 = v2[a2 % (*v2 * v2[1]) + 4]) != 0 ) /*0x5471d3*/
     return *(char *)(v3 + 42); /*0x5471d5*/
   else
@@ -4025,7 +4025,7 @@ int HouseClass::SetPrimaryFactory(int a2)
   if ( a2 == -1 || *((unsigned int *)this + 435) != -1 ) /*0x740e00*/
     return 0; /*0x740e17*/
   *((unsigned int *)this + 435) = a2; /*0x740e02*/
-  (*(void (**)(unsigned int *, int))(*(unsigned int *)this + 1168))(this, 2); /*0x740e0c*/
+  char HouseClass::SetPrimaryFactory(HouseClass *this, int a2)
   return 1; /*0x740e14*/
 
 }
@@ -4254,7 +4254,7 @@ char HouseClass_24::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4f29c2*/
+    char HouseClass_24::Release(_VectorClass_PAVGraphicMenuItem *this, int a2, unsigned int *a3)
     return 1; /*0x4f29c8*/
   }
 
@@ -4535,7 +4535,7 @@ unsigned int * HouseClass::SDDTORAllAndTriggers()
     while ( v6 < g_abs_A8EAF8 ); /*0x4fb99b*/
   }
   if ( this ) /*0x4fb99f*/
-    return (unsigned int *)(*(int (**)(unsigned int *, int))(*(unsigned int *)this + 128))(this, 1); /*0x4fb9a7*/
+    unsigned int *HouseClass::SDDTORAllAndTriggers(HouseClass *this)
   return result; /*0x4fb9aa*/
 
 }
