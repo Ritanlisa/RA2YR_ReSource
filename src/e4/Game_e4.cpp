@@ -1120,7 +1120,7 @@ CellStruct * * Game::SerializeGameSaveState()
   int v13; // [esp+B8h] [ebp-8h] BYREF
   int v14; // [esp+BCh] [ebp-4h] BYREF
 
-  ( this, &stru_A8EB00.?[404], 4, 0)
+  ( this, &(unsigned int *)((char *)&stru_A8EB00 + 404), 4, 0)
   if ( result >= 0 )
   {
     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, &g_abs_A8ED78); /*0x67f9e8*/
@@ -1128,7 +1128,7 @@ CellStruct * * Game::SerializeGameSaveState()
     if ( result >= 0 )
     {
       ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)&HouseClass_Player); /*0x67fa0e*/
-      ( this, &stru_A8EB00.?[416], 4, 0)
+      ( this, &(unsigned int *)((char *)&stru_A8EB00 + 416), 4, 0)
                  this,
                  &g_abs_A8ED84,
                  4,

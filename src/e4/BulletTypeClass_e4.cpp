@@ -178,7 +178,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 1) = &vt_BulletTypeClass; /*0x46bcec*/
   *((unsigned int *)this + 2) = &vt_BulletTypeClass; /*0x46bcf2*/
   *((unsigned int *)this + 3) = &vt_BulletTypeClass; /*0x46bcf9*/
-  AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x46bd00*/
+  ((AbstractClass *)((int)((unsigned char *)this + 4)))->GenerateUniqueID(); /*0x46bd00*/
   *((unsigned char *)this + 564) = 1; /*0x46bd05*/
   *((unsigned char *)this + 559) = 1; /*0x46bd0c*/
   *((unsigned char *)this + 560) = 0; /*0x46bd13*/
@@ -209,7 +209,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
     v4 = (*(unsigned int *)&g_abs_B077F8)++; /*0x46bdc5*/
     *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * v4) = this; /*0x46bdd4*/
   }
-  return this; /*0x46bdd9*/
+  return (unsigned char *)(this);
 
 }
 } // namespace gamemd

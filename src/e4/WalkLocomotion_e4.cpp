@@ -600,9 +600,9 @@ LABEL_37:
     v62 = *(MouseClass **)(this + 12);
     aP3.referenceCount = (void *)(v61);
     v63 = v61;
-    v64 = *(unsigned int *)&v62->__pad_74[40];
-    v65 = *(unsigned int *)&v62->__pad_74[44];
-    *(unsigned short *)&aP3.isOnMap = aP3.nextArrayIndex / 256;
+    v64 = *(unsigned int *)&v62-((unsigned int *)(>__pad_74))[40];
+    v65 = *(unsigned int *)&v62-((unsigned int *)(>__pad_74))[44];
+    *(unsigned short *)&aP3.isOnMap = (unsigned int)(aP3.nextArrayIndex)/ 256;
     v187 = v65;
     v188 = *(unsigned int *)&v62-((unsigned int *)(>__pad_74))[48];
     *(unsigned short *)&((unsigned int *)(aP3.alignmentPadding75))[1] = v63 / 256;

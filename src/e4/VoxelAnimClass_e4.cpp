@@ -177,7 +177,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   int v24; // [esp-10h] [ebp-C0h]
   int v25; // [esp+Ch] [ebp-A4h] BYREF
   unsigned int v26;
-  unsigned char * v27;
+  unsigned int v27;
   int v28; // [esp+18h] [ebp-98h] BYREF
   int v29; // [esp+1Ch] [ebp-94h] BYREF
   int v30; // [esp+20h] [ebp-90h] BYREF

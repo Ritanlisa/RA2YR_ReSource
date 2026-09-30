@@ -181,10 +181,12 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
 
   void * v4;
   InfantryClass *v5; // esi
-  int v6; // eax
+  unsigned int * v6;
   unsigned int *v7; // eax
   int *v8; // eax
   int v9; // ecx
@@ -193,16 +195,16 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   unsigned int v13[3]; // [esp+10h] [ebp-18h] BYREF
   int a1[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v4 = (int)(RA2_OPNEW(0x6F0u));
+  v4 = (void *)((int)(RA2_OPNEW(0x6F0u)));
   if ( v4 ) /*0x523b55*/
   {
     v5 = (InfantryClass *)InfantryClass::Construct(v4, this, ppv); /*0x523b68*/
     if ( v5 ) /*0x523b6c*/
     {
-      v6 = (unsigned int *)(a2[1] << 8);
-      v12[0] = (*a2 << 8) + 128; /*0x523b93*/
-      v12[1] = v6 + 128; /*0x523b9b*/
-      v12[2] = 0; /*0x523bb1*/
+      v6 = (int)((unsigned int *)(a2[1] << 8));
+      ((unsigned int *)(v12))[0] = (unsigned int *)((*a2 << 8) + 128);
+      ((unsigned int *)(v12))[1] = v6 + 128; /*0x523b9b*/
+      ((unsigned int *)(v12))[2] = 0; /*0x523bb1*/
       v7 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v12); /*0x523bb9*/
       v8 = ObjectPlacement::CalcPosition(v7, a1, (IUnknown *)v12, 0, 0, 0); /*0x523bc0*/
       v13[0] = *v8; /*0x523bcf*/

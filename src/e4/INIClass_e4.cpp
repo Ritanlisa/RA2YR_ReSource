@@ -66,7 +66,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
     *((unsigned char *)this + 52) = 1; /*0x526881*/
   }
   v7 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 11))));
-  ecx7 = (int)((gamemd::ObjectClass **)(*((unsigned int *)this + 10)));
+  ecx7 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 10))));
   v17[0] = (int)(v5);
   eax7 = (int)(System_Search(ecx7, v7, (int *)v17));
   if ( !eax7 ) /*0x52689b*/
@@ -163,9 +163,8 @@ LABEL_12:
       goto LABEL_14; /*0x5269ff*/
     }
   }
-  v9 = (gamemd::VoxelStruct **)((int *)&unk_B7882C);
-LABEL_14:
-  v10 = *v9; /*0x526a06*/
+  v9 = (int *)((gamemd::VoxelStruct **)((int *)&unk_B7882C));
+LABEL_14: v10 = (gamemd::VoxelStruct **)(*v9);
   if ( v10 ) /*0x526a0a*/
     return *(unsigned int *)(v10 + 48); /*0x526a14*/
   return 0; /*0x526a0f*/

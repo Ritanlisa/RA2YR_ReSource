@@ -112,7 +112,7 @@ namespace gamemd {
 void Delegate::GetField()
 {
 
-  *(_DWORD *)this = 0; /*0x6c95e6*/
+  *(unsigned int *)this = 0; /*0x6c95e6*/
   *((unsigned int *)this + 1) = 0; /*0x6c95e8*/
   *((unsigned int *)this + 2) = 0; /*0x6c95eb*/
   *((unsigned int *)this + 3) = 0; /*0x6c95ee*/
@@ -139,7 +139,7 @@ void Delegate::Set(AbstractTypeClass * aP1)
         *(unsigned int *)&aP1-((unsigned int *)(>__pad_0))[8] = 0; /*0x6c98af*/
       }
     }
-    v4 = (unsigned int)((AbstractTypeClass *)*((unsigned int *)this + 1));
+    v4 = (gamemd::AbstractTypeClass *)((unsigned int)((AbstractTypeClass *)*((unsigned int *)this + 1)));
     if ( v4 ) /*0x6c98bb*/
       *(unsigned int *)&v4-((unsigned int *)(>__pad_0))[8] = 0; /*0x6c98bd*/
     *((unsigned int *)this + 1) = aP1; /*0x6c98c6*/

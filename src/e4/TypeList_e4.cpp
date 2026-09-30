@@ -2115,7 +2115,7 @@ char TypeList_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x717ce6*/
       return 0; /*0x717ce6*/
     v4 = *((unsigned int *)this + 5); /*0x717ce8*/
-    if ( CapacityIncrement <= 0 || !(*((unsigned __int8 (**)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))( this, Capacity + CapacityIncrement, 0) )
+    if ( CapacityIncrement <= 0 || !(*((uint8_t (**)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))( this, Capacity + CapacityIncrement, 0) )
       return 0; /*0x717cff*/
   }
   v6 = *((unsigned int *)this + 4); /*0x717d05*/

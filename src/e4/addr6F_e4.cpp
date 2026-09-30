@@ -28,6 +28,7 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/E4Recv_6E0270_e4.hpp"
 
 // 0x6F0AB0
 namespace gamemd {

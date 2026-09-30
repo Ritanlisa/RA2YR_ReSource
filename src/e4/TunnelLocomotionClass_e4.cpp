@@ -15,6 +15,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/TubeClass_e4.hpp"
+#include "e4/classes/TypeList_TechnoType_e4.hpp"
 
 // 0x728C00
 namespace gamemd {

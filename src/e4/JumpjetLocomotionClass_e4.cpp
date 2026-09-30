@@ -287,7 +287,7 @@ LABEL_35:
     *((float *)v4 + 2) = v34; /*0x439fe4*/
     Coord::To_Cell(&g_abs_87F7E8, v69); /*0x439ff1*/
     v35 = JumpjetLocomotionClass::AdjustClimbFacing(v70); /*0x439ff8*/
-    if ( v35 != -1 ) /*0x43a000*/
+    if ( v35 != (void *)(-1) ) /*0x43a000*/
     {
       qmemcpy(v74, (const void *)Locomotor_Update(v76, v35), sizeof(v74)); /*0x43a01f*/
       v36 = TransformMatrix3x4Point(v73, v74, (float *)v4); /*0x43a02c*/
@@ -333,7 +333,7 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
   int v7; // esi
   int v8; // edi
   bool v9; // zf
-  int result; // eax
+  void * result;
   int v11; // edi
   int v12; // esi
   int v13; // ecx
@@ -347,8 +347,8 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
   int16_t v21; // [esp+16h] [ebp-Ah]
   int v22; // [esp+18h] [ebp-8h]
 
-  v2 = (int)(a2);
-  v4 = *((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, a2) + 9); /*0x4848c8*/
+  v2 = (unsigned int *)((int)(a2));
+  v4 = (int)(*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, a2) + 9));
   v5 = *(this + 18); /*0x4848cb*/
   v6 = *(this + 19); /*0x4848cf*/
   v22 = v4; /*0x4848d3*/
@@ -394,7 +394,7 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
     }
     else
     {
-      result = (void *)(v19);
+      result = (int)((void *)(v19));
       if ( v14 == v15 ) /*0x484a38*/
         return v19 + 1; /*0x484a62*/
     }

@@ -50,7 +50,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
   int v39; // [esp+18h] [ebp-8h]
   int v40; // [esp+1Ch] [ebp-4h]
   int v41; // [esp+24h] [ebp+4h]
-  int v42; // [esp+28h] [ebp+8h]
+  unsigned char * v42;
   unsigned char *v43; // [esp+34h] [ebp+14h]
 
   v7 = *a3; /*0x7ba8cd*/
@@ -76,8 +76,8 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
     v13 = (a6 + v11) % 16; /*0x7ba927*/
     v41 = -1; /*0x7ba92c*/
   }
-  v42 = (unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 112))(this));
-  int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, __int16 a4, int a5, int a6)
+  v42 = (int)((unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 112))(this)));
+  int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, int16_t a4, int a5, int a6)
   v43 = v14; /*0x7ba954*/
   if ( v14 )
   {
@@ -104,9 +104,9 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
     else if ( v7 == v8 )
     {
       if ( v40 <= v9 ) /*0x7ba9ac*/
-        int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, __int16 a4, int a5, int a6)
+        int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, int16_t a4, int a5, int a6)
       else
-        int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, __int16 a4, int a5, int a6)
+        int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, int16_t a4, int a5, int a6)
       v19 = abs32(v9 - v40); /*0x7ba9cb*/
       if ( v19 >= 0 )
       {
@@ -134,7 +134,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
     {
       v22 = v9 - v40; /*0x7baa1d*/
       v23 = v8 - v7; /*0x7baa23*/
-      int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, __int16 a4, int a5, int a6)
+      int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, int16_t a4, int a5, int a6)
       v25 = v24; /*0x7baa2a*/
       v39 = v24; /*0x7baa2e*/
       if ( v22 < 0 ) /*0x7baa32*/
@@ -203,7 +203,7 @@ int XSurface::DrawDashedLine(int * a2, int * a3, int16_t a4, int a5, int a6)
         }
       }
     }
-    int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, __int16 a4, int a5, int a6)
+    int XSurface::DrawDashedLine(XSurface *this, int *a2, int *a3, int16_t a4, int a5, int a6)
   }
   return v13; /*0x7bab23*/
 
@@ -850,7 +850,7 @@ XSurface * XSurface::BlitPart( void ** a2, XSurface * a3, void ** arg8, void ** 
 
   v6 = (gamemd::XSurface *)((void *)((gamemd::XSurface *)((void *)(a3))));
   v8 = (void *)((int)((void *)((*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)a3->__pad_0 + 120))(a3, v14))));
-  v9 = (unsigned int)((void *)((*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->__pad_0 + 120))(this, v15)));
+  v9 = (void *)((unsigned int)((void *)((*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->__pad_0 + 120))(this, v15))));
   *(unsigned int *)aP1.__pad_0 = *a2; /*0x7bbbbd*/
   aP1.Width = (int)a2[1]; /*0x7bbbc4*/
   aP1.Height = (int)a2[2]; /*0x7bbbcb*/
@@ -866,24 +866,24 @@ XSurface * XSurface::BlitPart( void ** a2, XSurface * a3, void ** arg8, void ** 
   {
     if ( (*(int (**)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc1f*/
     {
-      arg8 = (gamemd::XSurface *)((void **)(&vt_BlitTrans_unsigned_char));
-      return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbc45*/
+      arg8 = (void **)((gamemd::XSurface *)((void **)(&vt_BlitTrans_unsigned_char)));
+      return (gamemd::XSurface *)(BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&arg8, 0, 3, 1000, 0));
     }
     else
     {
       a3 = (gamemd::XSurface *)((XSurface *)&vt_BlitTrans_unsigned_short);
-      return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a3, 0, 3, 1000, 0); /*0x7bbc6a*/
+      return (gamemd::XSurface *)(BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a3, 0, 3, 1000, 0));
     }
   }
   else if ( (*(int (**)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc72*/
   {
-    a2 = (gamemd::XSurface *)((void **)(&vt_BlitPlain_unsigned_char));
-    return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a2, 0, 3, 1000, 0); /*0x7bbc98*/
+    a2 = (void **)((gamemd::XSurface *)((void **)(&vt_BlitPlain_unsigned_char)));
+    return (gamemd::XSurface *)(BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&a2, 0, 3, 1000, 0));
   }
   else
   {
-    arg8 = (gamemd::XSurface *)((void **)(&vt_BlitPlain_unsigned_short));
-    return BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbcca*/
+    arg8 = (void **)((gamemd::XSurface *)((void **)(&vt_BlitPlain_unsigned_short)));
+    return (gamemd::XSurface *)(BlitterCopySimpleSHP(this, &aP1, v6, (int)&aP2, (int *)&arg8, 0, 3, 1000, 0));
   }
 
 }

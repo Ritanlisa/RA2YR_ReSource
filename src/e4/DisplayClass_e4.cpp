@@ -291,7 +291,7 @@ Tactical * * DisplayClass::UpdateCellPassability(short * a1, IUnknown * aP2)
         if ( v15 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4a9ac6*/
         {
 LABEL_19:
-          char DisplayClass::UpdateCellPassability(DisplayClass *this, __int16 *a2, int a3)
+          char DisplayClass::UpdateCellPassability(DisplayClass *this, int16_t *a2, int a3)
           goto LABEL_30; /*0x4a9a21*/
         }
         if ( v15 >= 0 && v15 != v14->__pad_11C[4] ) /*0x4a9aeb*/
@@ -337,7 +337,7 @@ LABEL_30:
         if ( v22 != -2 && (v14->field_140 & 2) == 0 ) /*0x4a9c03*/
         {
 LABEL_34:
-          char DisplayClass::UpdateCellPassability(DisplayClass *this, __int16 *a2, int a3)
+          char DisplayClass::UpdateCellPassability(DisplayClass *this, int16_t *a2, int a3)
           continue; /*0x4a9b5e*/
         }
         if ( v22 >= 0 && v22 != v14->__pad_11C[5] ) /*0x4a9c28*/
@@ -451,7 +451,7 @@ VectorClass_flat * * DisplayClass::ProcessCellReveal(MouseClass * aP1, IUnknown 
         if ( eax10 != -2 && (v13->field_140 & 2) == 0 ) /*0x4a9fac*/
         {
 LABEL_12:
-          char DisplayClass::ProcessCellReveal(DisplayClass *this, __int16 *a2, int a3)
+          char DisplayClass::ProcessCellReveal(DisplayClass *this, int16_t *a2, int a3)
           continue; /*0x4a9f07*/
         }
         if ( eax10 >= 0 && eax10 != v13->__pad_11C[5] ) /*0x4a9fd2*/
@@ -565,7 +565,7 @@ int DisplayClass::RevealFogCell(short * a1, IUnknown * aP2)
         if ( eax10 != -2 && (v14->__pad_11C[16] & 8) == 0 ) /*0x4aa218*/
         {
 LABEL_12:
-          bool DisplayClass::RevealFogCell(DisplayClass *this, __int16 *a2, int a3)
+          bool DisplayClass::RevealFogCell(DisplayClass *this, int16_t *a2, int a3)
           continue; /*0x4aa177*/
         }
         if ( eax10 >= 0 && eax10 != v14->__pad_11C[4] ) /*0x4aa23e*/
@@ -638,7 +638,7 @@ void * DisplayClass::Draw(int a2)
   unsigned char v18[12]; // [esp+1Ch] [ebp-18h] BYREF
   int v19[3]; // [esp+28h] [ebp-Ch] BYREF
 
-  if ( a2 < 500 || a2 > 900 || (*((unsigned __int8 (**)(DisplayClass *))this->DisplayClass_field_0x0 + 26))(this) )
+  if ( a2 < 500 || a2 > 900 || (*((uint8_t (**)(DisplayClass *))this->DisplayClass_field_0x0 + 26))(this) )
     return 0; /*0x4ae513*/
   v3 = g_abs_886FA0; /*0x4ae524*/
   v4 = g_abs_886FA4; /*0x4ae531*/
@@ -750,7 +750,7 @@ int DisplayClass::InsertPriorityText(int a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x551aa6*/
       return 0; /*0x551aa6*/
     v4 = *((unsigned int *)this + 5); /*0x551aa8*/
-    if ( v4 <= 0 || !(*((unsigned __int8 (**)(DisplayClass *, int, unsigned int))this->DisplayClass_field_0x0 + 2))( this, v3 + v4, 0) )
+    if ( v4 <= 0 || !(*((uint8_t (**)(DisplayClass *, int, unsigned int))this->DisplayClass_field_0x0 + 2))( this, v3 + v4, 0) )
       return 0; /*0x551abf*/
   }
   for ( i = 0; i < *((unsigned int *)this + 4); ++i ) /*0x551ad2*/

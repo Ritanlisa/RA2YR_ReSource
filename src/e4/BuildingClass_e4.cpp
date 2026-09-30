@@ -251,7 +251,7 @@ int BuildingClass::AssignDestination_SyncLog()
 
   if ( *((unsigned int *)this + 43) != 19 ) /*0x455d5a*/
   {
-    if ( (*((unsigned __int8 (**)(BuildingClass *))this->TechnoClass + 161))(this) || this->Type->ConstructionYard )
+    if ( (*((uint8_t (**)(BuildingClass *))this->TechnoClass + 161))(this) || this->Type->ConstructionYard )
       || *(unsigned char *)(*((unsigned int *)this + 328) + 5817) )
     {
       TechnoClass::SetFocus(this, aP1); /*0x455d80*/

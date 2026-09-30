@@ -181,7 +181,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
          *(unsigned int *)&g_abs_89F690 + *(unsigned int *)&g_abs_89F690,
          0) )
   {
-    v3 = (unsigned int)((AnimTypeClass *)(*(unsigned int *)&g_abs_89F690)++);
+    v3 = (gamemd::AnimTypeClass *)((unsigned int)((AnimTypeClass *)(*(unsigned int *)&g_abs_89F690)++));
     *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * (unsigned int)v3) = this; /*0x4277cc*/
   }
   if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x427803*/
@@ -246,7 +246,7 @@ void* AnimTypeClass::GetWarhead(int a2)
         *((unsigned char *)this + 168) = 0; /*0x427b98*/
       }
       v4 = (int)(*((unsigned char *)this + 504));
-      v5 = (const char *)((char *)this + 504); /*0x427ba5*/
+      v5 = (int)((const char *)((char *)this + 504));
       *((unsigned int *)this + 41) = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
         v5 = (const char *)((char *)this + 36); /*0x427bb9*/

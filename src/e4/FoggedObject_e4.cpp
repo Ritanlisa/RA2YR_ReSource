@@ -24,7 +24,7 @@ int FoggedObject::DrawVector_Constructor( IUnknown * aP1, IUnknown * aP2)
   void * v9;
   IUnknown *v10; // edx
 
-  v4 = (int)(0);
+  v4 = (void *)((int)(0));
   *(this + 1) = 0; /*0x4d2dbd*/
   *(this + 2) = aP1; /*0x4d2dc0*/
   *((unsigned char *)this + 12) = 1; /*0x4d2dc3*/

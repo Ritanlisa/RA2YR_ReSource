@@ -30,6 +30,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   signed int v5; // ebx
   char *result; // eax
@@ -432,7 +433,7 @@ namespace gamemd {
 void Buffer::Init( int a2, AbstractClass * aP2)
 {
 
-  *(_DWORD *)this = a2; /*0x43ad0d*/
+  *(unsigned int *)this = a2; /*0x43ad0d*/
   *(this + 1) = aP2; /*0x43ad0f*/
   *((unsigned char *)this + 8) = 0; /*0x43ad12*/
   if ( !a2 && (int)aP2 > 0 ) /*0x43ad1a*/

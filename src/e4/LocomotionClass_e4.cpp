@@ -219,7 +219,7 @@ namespace gamemd {
 void LocomotionClass::Construct()
 {
 
-  *this = (unsigned int)(&vt_LocomotionClass);
+  *(_DWORD *)this = (unsigned int)(&vt_LocomotionClass);
   *((unsigned int *)this + 1) = &vt_LocomotionClass; /*0x55a6f6*/
   *((unsigned int *)this + 3) = 0; /*0x55a6fd*/
 

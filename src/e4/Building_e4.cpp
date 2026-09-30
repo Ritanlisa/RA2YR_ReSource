@@ -173,8 +173,8 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       {
         aP1->field_0 = (unsigned int)((v21 << 8) + 128);
         aP1->field_4 = (unsigned int)((void *)((v30 << 8) + 128));
-        aP1->field_8 = (gamemd::AnimClass **)(0);
-        return &aP1->field_0; /*0x425fb0*/
+        aP1->field_8 = (unsigned int)((gamemd::AnimClass **)(0));
+        return (gamemd::AnimClass **)(&aP1->field_0);
       }
       IDA_HIWORD(v37) = v22; /*0x425fb8*/
       IDA_LOWORD(v37) = (unsigned short)v38; /*0x425fbd*/
@@ -182,14 +182,14 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       {
         aP1->field_0 = (unsigned int)((v7 << 8) + 128);
         aP1->field_4 = (unsigned int)((void *)((v22 << 8) + 128));
-        aP1->field_8 = (gamemd::AnimClass **)(0);
-        return &aP1->field_0; /*0x426006*/
+        aP1->field_8 = (unsigned int)((gamemd::AnimClass **)(0));
+        return (gamemd::AnimClass **)(&aP1->field_0);
       }
     }
   }
   if ( dword_89A150 ) /*0x426011*/
   {
-LABEL_39: aP1->field_0 = (gamemd::AnimClass **)(unk_89A178);
+LABEL_39: aP1->field_0 = (unsigned int)((gamemd::AnimClass **)(unk_89A178));
     *(unsigned long long *)&aP1->field_4 = qword_89A17C; /*0x4260a3*/
     return &aP1->field_0; /*0x4260b5*/
   }
@@ -212,8 +212,8 @@ LABEL_39: aP1->field_0 = (gamemd::AnimClass **)(unk_89A178);
   v23 = (unsigned int)(((int16_t)v32 << 8) + 128);
 LABEL_41: aP1->field_0 = (unsigned int)(v23);
   aP1->field_4 = (unsigned int)((void *)((v24 << 8) + 128));
-  aP1->field_8 = (gamemd::AnimClass **)(0);
-  return &aP1->field_0; /*0x425faa*/
+  aP1->field_8 = (unsigned int)((gamemd::AnimClass **)(0));
+  return (gamemd::AnimClass **)(&aP1->field_0);
 
 }
 }

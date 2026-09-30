@@ -341,7 +341,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   *((unsigned int *)this + 3) = &vt_ObjectTypeClass; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
   v2 = (*(int (**)(int *, int *))(g_abs_AC1418 + 16))(&g_abs_AC1418, &v8); /*0x5f7435*/
-  if ( v2 != -1 && v2 < (int)(g_abs_AC1428) && v2 < --g_abs_AC1428 ) /*0x5f7450*/
+  if ( v2 != -1 && v2 < (int)(g_abs_AC1428) && v2 < (int)(--g_abs_AC1428) ) /*0x5f7450*/
   {
     do /*0x5f7468*/
     {
@@ -864,7 +864,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
           (CCINIClass *)&stru_830620.__pad_14B0[4124],
           *((unsigned char *)this + 566));
   *((unsigned char *)this + 566) = v25; /*0x5f9634*/
-  char ObjectTypeClass::LoadFromINI(ObjectTypeClass *this, unsigned __int8 ***a2)
+  char ObjectTypeClass::LoadFromINI(ObjectTypeClass *this, uint8_t ***a2)
     ObjectTypeClass::Load2DArt(this); /*0x5f964d*/
   if ( *((unsigned char *)this + 531) ) /*0x5f9652*/
   {

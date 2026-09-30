@@ -356,8 +356,8 @@ void TacticalClass::InterpolateView()
 
   wchar_t *v0; // ebp
   wchar_t * v1;
-  unsigned int v2;
-  unsigned int v3;
+  wchar_t * v2;
+  wchar_t * v3;
   unsigned int v4;
   unsigned int *v5; // edx
   int v6; // ebx
@@ -373,14 +373,14 @@ void TacticalClass::InterpolateView()
   wchar_t * v16;
   int v17; // [esp+8h] [ebp-40h]
   wchar_t * v18;
-  wchar_t * v19;
-  wchar_t * v20;
+  unsigned int v19;
+  unsigned int v20;
   int v21; // [esp+18h] [ebp-30h]
   int v22; // [esp+1Ch] [ebp-2Ch]
   int v23; // [esp+20h] [ebp-28h]
   wchar_t * v24;
-  wchar_t * v25;
-  wchar_t * v26;
+  unsigned int v25;
+  unsigned int v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
@@ -388,11 +388,11 @@ void TacticalClass::InterpolateView()
   if ( (int)g_abs_A8ECC8 > 0 ) /*0x4ae29f*/
   {
     v1 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))))));
-    v2 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))))));
-    v3 = (wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))));
+    v2 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0))))))));
+    v3 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0))))));
     v18 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)(0))))));
-    v19 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0))))));
-    v20 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0))))));
+    v19 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))))));
+    v20 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))))));
     v4 = (unsigned int)(g_abs_A8ECBC);
     v16 = (wchar_t *)(g_abs_A8ECC8);
     do /*0x4ae2fc*/
@@ -468,7 +468,7 @@ void TacticalClass::InterpolateView()
         v15 = (v26 - v23) / v12; /*0x4ae41e*/
       }
       v18 = (wchar_t *)(v13);
-      v19 = v14; /*0x4ae424*/
+      v19 = (wchar_t *)(v14);
       v20 = v15; /*0x4ae428*/
     }
     ((Tactical *)(&v18))->SetTacticalPosition(); /*0x4ae437*/

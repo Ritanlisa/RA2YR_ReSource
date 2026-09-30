@@ -354,7 +354,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   v3 = (gamemd::u_short)(*(unsigned short *)aP1->__pad_0);
   *this = (gamemd::u_short)(*(unsigned short *)aP1->__pad_0);
   *this = (gamemd::File **)(ntohs(v3));
-  v4 = *(unsigned short *)&aP1->__pad_0[2]; /*0x625b17*/
+  v4 = (gamemd::File **)(*(unsigned short *)&aP1->__pad_0[2]);
   *((unsigned int *)this + 1) = v4; /*0x625b1a*/
   v5 = &aP1->__pad_0[4]; /*0x625b1f*/
   *((unsigned int *)this + 1) = ntohs(v4); /*0x625b27*/
@@ -468,8 +468,8 @@ LABEL_42:
         ((CCFileClass *)(v23))->Read(unk_B1BF38, Size); /*0x734a4a*/
         v2 = Size; /*0x734a4f*/
       }
-      v3 = (unsigned char *)((char *)dword_B1CF74);
-      unk_B1BF38[v2] = 0; /*0x734a59*/
+      v3 = (char *)((unsigned char *)((char *)dword_B1CF74));
+      unk_B1BF38[v2] = (unsigned char *)(0);
       strcpy(&v3[v1], unk_B1BF38); /*0x734a7b*/
       if ( (int)Size > (int)(unk_B1CF58) ) /*0x734a90*/
         unk_B1CF58 = Size; /*0x734a92*/

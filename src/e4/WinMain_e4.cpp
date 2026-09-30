@@ -99,8 +99,9 @@ namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
     unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
   unsigned int v3;
-  unsigned int *v4; // eax
+  unsigned char * v4;
   unsigned char *v5; // esi
   int v6; // edi
   unsigned int *v7; // ebp
@@ -130,13 +131,13 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
     v5 = (unsigned char *)(v4);
     if ( v4 ) /*0x5bc1ba*/
     {
-      v4[2503] = 0; /*0x5bc1c0*/
-      v4[2502] = v20; /*0x5bc1c6*/
-      v4[2504] = 0; /*0x5bc1cc*/
-      v4[2505] = 0; /*0x5bc1d2*/
-      v4[2506] = 0; /*0x5bc1d8*/
-      v4[2507] = 80; /*0x5bc1de*/
-      v4[2508] = 25; /*0x5bc1e8*/
+      ((unsigned int *)(v4))[2503] = (unsigned int *)(0);
+      ((unsigned int *)(v4))[2502] = v20; /*0x5bc1c6*/
+      ((unsigned int *)(v4))[2504] = 0; /*0x5bc1cc*/
+      ((unsigned int *)(v4))[2505] = 0; /*0x5bc1d2*/
+      ((unsigned int *)(v4))[2506] = 0; /*0x5bc1d8*/
+      ((unsigned int *)(v4))[2507] = 80; /*0x5bc1de*/
+      ((unsigned int *)(v4))[2508] = 25; /*0x5bc1e8*/
       v6 = 0; /*0x5bc1f2*/
       v7 = v4 + 500; /*0x5bc1f4*/
       do /*0x5bc219*/

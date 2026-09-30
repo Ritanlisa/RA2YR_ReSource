@@ -745,7 +745,7 @@ int FileClass::BufferedReader( BufferIOFileClass * aP1, DWORD nNumberOfBytesToRe
   int v16; // [esp+14h] [ebp-4h]
 
   v16 = 0; /*0x4322ab*/
-  if ( !(*(unsigned __int8 (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 24))(this) && (*(int (**)(CCFileClass *, int))(*(unsigned int *)&this->FileClass + 28))(this, 1) )
+  if ( !(*(uint8_t (**)(CCFileClass *))(*(unsigned int *)&this->FileClass + 24))(this) && (*(int (**)(CCFileClass *, int))(*(unsigned int *)&this->FileClass + 28))(this, 1) )
     && (*(int (**)(int, int))(*(unsigned int *)this + 28))(this, 1) )
   {
     *(unsigned int *)(this + 80) = FileClass::Seek((int *)this, 0, 1u); /*0x4322cd*/
@@ -8002,7 +8002,7 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
       case 65: /*0x4ab37b*/
         goto LABEL_85;
       case 50: /*0x4ab37b*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab3d5*/
       case 57: /*0x4ab37b*/
         goto LABEL_59;
@@ -8028,7 +8028,7 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
       default:
         goto LABEL_92;
     }
-    int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+    int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
   }
   else
   {
@@ -8037,22 +8037,22 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
     {
       case 0: /*0x4ab453*/
 LABEL_55:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab446*/
       case 1: /*0x4ab453*/
       case 53: /*0x4ab453*/
 LABEL_73:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab5ca*/
       case 2: /*0x4ab453*/
       case 8: /*0x4ab453*/
       case 10: /*0x4ab453*/
       case 34: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab56a*/
       case 3: /*0x4ab453*/
       case 51: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab59a*/
       case 4: /*0x4ab453*/
         if ( !v56 /*0x4ab51b*/
@@ -8066,41 +8066,41 @@ LABEL_73:
         {
           goto LABEL_68; /*0x4ab523*/
         }
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab53a*/
       case 5: /*0x4ab453*/
 LABEL_68:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab552*/
       case 6: /*0x4ab453*/
       case 7: /*0x4ab453*/
       case 60: /*0x4ab453*/
 LABEL_61:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab4cf*/
       case 9: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab612*/
       case 11: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab642*/
       case 12: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab62a*/
       case 13: /*0x4ab453*/
 LABEL_70:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab582*/
       case 14: /*0x4ab453*/
       case 31: /*0x4ab453*/
 LABEL_48:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab3cb*/
       case 15: /*0x4ab453*/
       case 54: /*0x4ab453*/
       case 55: /*0x4ab453*/
       case 63: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab5e2*/
       case 16: /*0x4ab453*/
       case 26: /*0x4ab453*/
@@ -8116,11 +8116,11 @@ LABEL_48:
       case 49: /*0x4ab453*/
       case 50: /*0x4ab453*/
 LABEL_57:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab46f*/
       case 19: /*0x4ab453*/
 LABEL_79:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab65a*/
       case 25: /*0x4ab453*/
 LABEL_47:
@@ -8132,43 +8132,43 @@ LABEL_47:
       case 27: /*0x4ab453*/
         return result;
       case 28: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab4b7*/
       case 29: /*0x4ab453*/
 LABEL_58:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab487*/
       case 30: /*0x4ab453*/
 LABEL_46:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab397*/
       case 36: /*0x4ab453*/
 LABEL_80:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab672*/
       case 37: /*0x4ab453*/
 LABEL_83:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab6ba*/
       case 38: /*0x4ab453*/
       case 39: /*0x4ab453*/
 LABEL_84:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab6d2*/
       case 40: /*0x4ab453*/
       case 64: /*0x4ab453*/
 LABEL_85:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab6ea*/
       case 52: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab5b2*/
       case 56: /*0x4ab453*/
 LABEL_59:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab49f*/
       case 59: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab762*/
       case 61: /*0x4ab453*/
       case 62: /*0x4ab453*/
@@ -8180,34 +8180,34 @@ LABEL_91:
         break; /*0x4ab77e*/
       case 65: /*0x4ab453*/
 LABEL_86:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab702*/
       case 66: /*0x4ab453*/
 LABEL_87:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab71a*/
       case 67: /*0x4ab453*/
 LABEL_88:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab732*/
       case 68: /*0x4ab453*/
 LABEL_81:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab68a*/
       case 69: /*0x4ab453*/
 LABEL_82:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab6a2*/
       case 70: /*0x4ab453*/
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab5fa*/
       case 71: /*0x4ab453*/
 LABEL_89:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab74a*/
       default:
 LABEL_92:
-        int TacticalClass::HandlePlayerAction(DisplayClass *this, __int16 *a2, char a3, void *a4, int a5, int a6)
+        int TacticalClass::HandlePlayerAction(DisplayClass *this, int16_t *a2, char a3, void *a4, int a5, int a6)
         break; /*0x4ab796*/
     }
   }
@@ -8433,7 +8433,7 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
                                 (INIClass *)&g_abs_81FFE4,
                                 (uint8_t *)&unk_818658,
                                 0);
-  void ScenarioClass::LoadMapData(DisplayClass *this, unsigned __int8 ***a2)
+  void ScenarioClass::LoadMapData(DisplayClass *this, uint8_t ***a2)
   Multiplayer::ShowProgress(&g_abs_A8B238, 63); /*0x4ad011*/
   Event::Dispatch(); /*0x4ad016*/
   v9 = g_abs_A8B230->random[0]; /*0x4ad026*/
@@ -21953,7 +21953,7 @@ int RadarClass::drawRadarEvents(unsigned int * a2) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x58af96*/
       return 0; /*0x58af96*/
     v4 = *((unsigned int *)this + 5); /*0x58af98*/
-    if ( v4 <= 0 || !(*((unsigned __int8 (**)(RadarClass *, int, unsigned int))this->RadarClass_field_0x0 + 2))( this, (int)RadarClass_field_0x8 + v4, 0) )
+    if ( v4 <= 0 || !(*((uint8_t (**)(RadarClass *, int, unsigned int))this->RadarClass_field_0x0 + 2))( this, (int)RadarClass_field_0x8 + v4, 0) )
       return 0; /*0x58afaf*/
   }
   v6 = *((unsigned int *)this + 4); /*0x58afb5*/

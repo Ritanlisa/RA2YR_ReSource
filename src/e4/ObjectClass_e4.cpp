@@ -33,7 +33,7 @@ namespace gamemd {
 int ObjectClass::processPointerInvalid()
 {
 
-  return (*((unsigned int *)this + 80) >> 8) & 1; /*0x48361c*/
+  return (*((unsigned int *, unsigned int a3, unsigned int a5)this + 80) >> 8) & 1; /*0x48361c*/
 
 }
 } // namespace gamemd
@@ -96,10 +96,10 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
 
   if ( *((unsigned char *)this + 664) ) /*0x4d7d58*/
     return 0; /*0x4d7d64*/
-  char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, __int16 *a3, __int16 *a4, void **a5)
+  char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, int16_t *a3, int16_t *a4, void **a5)
     return 0; /*0x4d7d8d*/
   v7 = (RadarClass *)aP2; /*0x4d7d9a*/
-  ( this, a3, 0, a5)
+  (this, a3, 0, a5, void * a1, void * a2, void * a4)
   if ( !LayerClass::IsWithinUsableArea(&stru_87C374.__pad_14B0[8132], (IUnknown *)v7, (TechnoClass *)1) && v8 != 2 ) /*0x4d7dbf*/
     return 0; /*0x4d7dc1*/
   switch ( v8 ) /*0x4d7de0*/
@@ -178,7 +178,7 @@ LABEL_52:
       result = 1; /*0x4d8237*/
       break; /*0x4d8239*/
     case 3: /*0x4d7de0*/
-      char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, __int16 *a3, __int16 *a4, void **a5)
+      char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, int16_t *a3, int16_t *a4, void **a5)
         return 0; /*0x4d8155*/
       v28 = *(unsigned int *)this; /*0x4d815b*/
       v29 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)v7); /*0x4d8165*/
@@ -196,7 +196,7 @@ LABEL_52:
       }
       else
       {
-        char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, __int16 *a3, __int16 *a4, void **a5)
+        char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, int16_t *a3, int16_t *a4, void **a5)
         return 1; /*0x4d80e0*/
       }
     case 6: /*0x4d7de0*/
@@ -205,7 +205,7 @@ LABEL_52:
       (*(void (**)(unsigned char *, int, unsigned int, void *, unsigned int))(v14 + 888))(this, 10, 0, v15, 0); /*0x4d7ea4*/
       return 1; /*0x4d7eb2*/
     case 9: /*0x4d7de0*/
-      char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, __int16 *a3, __int16 *a4, void **a5)
+      char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, int16_t *a3, int16_t *a4, void **a5)
         return 0; /*0x4d811c*/
       v26 = *(unsigned int *)this; /*0x4d8122*/
       v27 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)v7); /*0x4d812c*/
@@ -217,7 +217,7 @@ LABEL_52:
       (*(void (**)(unsigned char *, int, unsigned int, void *, unsigned int))(v30 + 888))(this, 17, 0, v31, 0); /*0x4d8198*/
       return 1; /*0x4d81a6*/
     case 26: /*0x4d7de0*/
-      if ( !(*(unsigned __int8 (**)(TechnoClass *))(this->vtable0 + 156))(this) && !(*(unsigned __int8 (**)(TechnoClass *))(this->vtable0 + 816))(this) || !(*(unsigned __int8 (**)(TechnoClass *))(this->vtable0 + 160))(this) )
+      if ( !(*(uint8_t (**)(TechnoClass *))(this->vtable0 + 156))(this) && !(*(uint8_t (**)(TechnoClass *))(this->vtable0 + 816))(this) || !(*(uint8_t (**)(TechnoClass *))(this->vtable0 + 160))(this) )
         && !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)this + 816))(this)
         || !(*(uint8_t (**)(unsigned char *))(*(unsigned int *)this + 160))(this) )
       {
@@ -245,7 +245,7 @@ LABEL_52:
       v22 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&v42); /*0x4d8225*/
       goto LABEL_51; /*0x4d8225*/
     case 51: /*0x4d7de0*/
-      char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, __int16 *a3, __int16 *a4, void **a5)
+      char ObjectClass::SpawnInfantry(TechnoClass *this, int a2, int16_t *a3, int16_t *a4, void **a5)
         return 0; /*0x4d7df3*/
       PlacementCell = (FootClass **)ObjectClass::FindPlacementCell((FootClass *)&v40, (int)v7, 0, v39, _8, v41); /*0x4d7dff*/
       v10 = *(unsigned int *)this; /*0x4d7e06*/

@@ -223,7 +223,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
 {
   int *v8; // esi
   int v9; // ebp
-  void * v10;
+  int v10;
   int v11; // ebx
   int v12; // ebp
   int *Viewport; // eax

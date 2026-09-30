@@ -368,7 +368,7 @@ int VoxelAnimType::LoadAnim()
   }
   int VoxelAnimType::LoadAnim(char *this)
   {
-    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 40 || !(unsigned __int8)HouseClass::HasPower((HouseClass *)this) || *((unsigned int *)this + 13140) )
+    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) != 40 || !(uint8_t)HouseClass::HasPower((HouseClass *)this) || *((unsigned int *)this + 13140) )
       || !HouseClass::HasPower(this)
       || *((unsigned char *)this + 3285) )
     {
@@ -556,7 +556,7 @@ LABEL_92:
 LABEL_93:
   int VoxelAnimType::LoadAnim(char *this)
   {
-    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40 && (unsigned __int8)HouseClass::HasPower((HouseClass *)this) && !*((unsigned int *)this + 13140) )
+    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40 && (uint8_t)HouseClass::HasPower((HouseClass *)this) && !*((unsigned int *)this + 13140) )
       && HouseClass::HasPower(this)
       && !*((unsigned char *)this + 3285) )
     {
@@ -648,7 +648,7 @@ LABEL_123:
       RA2_OPDEL(v43); /*0x5f8a9c*/
       *((unsigned int *)this + 45) = 0; /*0x5f8aa4*/
     }
-    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40 && (unsigned __int8)HouseClass::HasPower((HouseClass *)this) && !*((unsigned int *)this + 13140) )
+    if ( (*(int (**)(char *))(*(unsigned int *)this + 44))(this) == 40 && (uint8_t)HouseClass::HasPower((HouseClass *)this) && !*((unsigned int *)this + 13140) )
       && HouseClass::HasPower(this)
       && !*((unsigned char *)this + 3285) )
     {

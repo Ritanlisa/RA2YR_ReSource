@@ -24,7 +24,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   int16_t *v7; // ecx
   int v8; // eax
   unsigned int *v9; // ebp
-  int * v10;
+  unsigned int v10;
   unsigned int v11; // edx
   unsigned int v12; // edi
   int v13; // ecx
@@ -32,7 +32,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   unsigned int v15; // eax
   float v16; // [esp+8h] [ebp-Ch]
   int16_t *v17; // [esp+Ch] [ebp-8h]
-  unsigned int v18;
+  int * v18;
 
   v2 = (int *)(0);
   v3 = (int *)(*((unsigned int *)this + 61));

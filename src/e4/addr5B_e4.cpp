@@ -66,6 +66,7 @@
 #include "e4/classes/E4Recv_5A1C70_e4.hpp"
 #include "e4/classes/E4Recv_5D2650_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {

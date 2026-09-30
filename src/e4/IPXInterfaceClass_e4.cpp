@@ -357,7 +357,7 @@ void * IPXInterfaceClass::bindSocket()
   *((unsigned int *)this + 64532) = 0; /*0x7b1a88*/
   *((unsigned int *)this + 64533) = 0; /*0x7b1a8e*/
   *((unsigned int *)this + 1) = 576; /*0x7b1a94*/
-  Debug::Log(); /*0x7b1a9b*/
+  this->Debug::Log(); /*0x7b1a9b*/
   return this; /*0x7b1aa5*/
 
 }
@@ -513,7 +513,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
   v5 = (UDPInterfaceClass *)AudioQueue::AllocBuffer((unsigned int *)this, (WinsockInterfaceClass *)aP3); /*0x7b24f4*/
   qmemcpy(&v5[4], a1, a3); /*0x7b2505*/
   v5[2].Socket = a3; /*0x7b250e*/
-  __int16 IPXInterfaceClass::Connect(WinsockInterfaceClass *this, const void *a2, unsigned int a3, char a4)
+  int16_t IPXInterfaceClass::Connect(WinsockInterfaceClass *this, const void *a2, unsigned int a3, char a4)
   v5[2].Initialized = 1; /*0x7b251d*/
   if ( (unsigned char)aP3 ) /*0x7b2523*/
   {
@@ -545,7 +545,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
     }
     v10 = *((unsigned int *)this + 64539); /*0x7b25a9*/
   }
-  __int16 IPXInterfaceClass::Connect(WinsockInterfaceClass *this, const void *a2, unsigned int a3, char a4)
+  int16_t IPXInterfaceClass::Connect(WinsockInterfaceClass *this, const void *a2, unsigned int a3, char a4)
   SendMessageA((HWND)g_hWnd, v15, 0, 2); /*0x7b25c3*/
   return EventQueue::Process(g_abs_87F770); /*0x7b25d4*/
 

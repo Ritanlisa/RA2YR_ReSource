@@ -11,6 +11,7 @@
 #include "e4/classes/DamageArea_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x5BD0D0
 namespace gamemd {

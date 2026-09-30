@@ -18,7 +18,7 @@ AudioController * * CCFileClass::Close()
 {
 
   char result; // al
-  int v3; // eax
+  AudioController ** v3;
 
   if ( !*((unsigned char *)this + 41) ) /*0x4325c3*/
     return ((int (*)(void))FileClass::CloseHandle)(); /*0x432607*/
@@ -28,7 +28,7 @@ AudioController * * CCFileClass::Close()
   {
     if ( *((unsigned int *)this + 20) ) /*0x4325d6*/
     {
-      v3 = (gamemd::AudioController **)(*(unsigned int *)this);
+      v3 = (int)((gamemd::AudioController **)(*(unsigned int *)this));
       *((unsigned char *)this + 41) = 0; /*0x4325e1*/
       result = (*(int (**)(unsigned char *))(v3 + 52))(this); /*0x4325e5*/
       *((unsigned char *)this + 41) = 1; /*0x4325e8*/

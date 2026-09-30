@@ -126,7 +126,7 @@ MixFileClass * SessionClass::Load()
   unsigned int *v4; // eax
   void *PlayerSide; // eax
   int v6; // esi
-  unsigned int v7;
+  char * v7;
 
   if ( *((unsigned int *)this + 2)
     || ((Debug::Log_0(g_abs_8298D0), (v2 = RA2_OPNEW(0x28u)) == 0)
@@ -154,7 +154,7 @@ MixFileClass * SessionClass::Load()
         {
           if ( v6 ) /*0x72b40c*/
           {
-            v7 = (char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)(g_abs_844BB4[0])))))));
+            v7 = (unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)(g_abs_844BB4[0]))))))));
             if ( v6 != 1 ) /*0x72b433*/
               v7 = g_abs_844BB8; /*0x72b435*/
             LoadPaletteSimple(v7, &g_abs_B0FB84, &g_abs_B0FB88); /*0x72b43b*/

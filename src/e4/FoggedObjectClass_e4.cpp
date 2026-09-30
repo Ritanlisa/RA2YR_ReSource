@@ -174,6 +174,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
 
   int v5; // eax
   char *v6; // eax
@@ -186,7 +187,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   int v13; // edx
   int v14; // eax
   int v15; // edi
-  int v16; // ebp
+  AbstractClass * v16;
   AbstractClass *v17; // ebx
   int i; // eax
   unsigned int *v19; // ecx
@@ -216,7 +217,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   *(unsigned int *)(this + 12) = &vt_FoggedObjectClass; /*0x4d0cc6*/
   v6 = (char *)Coord::To_Cell(&g_abs_87F7E8, aP1); /*0x4d0ccd*/
   v7 = (unsigned int)(aP1->field_4);
-  v8 = aP1->field_8; /*0x4d0cd7*/
+  v8 = (unsigned int)(aP1->field_8);
   this[0] = aP1->field_0; /*0x4d0cda*/
   this[1] = v7; /*0x4d0cde*/
   v24 = v8; /*0x4d0ce2*/
@@ -260,7 +261,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     goto LABEL_15; /*0x4d0e1a*/
   if ( *(unsigned int *)&g_abs_89F690 ) /*0x4d0e22*/
   {
-    v16 = (gamemd::AbstractClass *)(*(unsigned int *)&g_abs_89F690);
+    v16 = (int)((gamemd::AbstractClass *)(*(unsigned int *)&g_abs_89F690));
     if ( *(int *)&g_abs_89F690 < 0 ) /*0x4d0e2f*/
       return (FoggedObjectClass *)this; /*0x4d0e2f*/
   }

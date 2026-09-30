@@ -176,8 +176,8 @@ LABEL_33:
     v16 = (CampaignScore *)&g_abs_87F8E4; /*0x7b7587*/
     goto LABEL_35; /*0x7b758c*/
   }
-  v3 = (gamemd::AbstractClass **)((GameSetup *)this);
-  v16 = (CampaignScore *)v5; /*0x7b7592*/
+  v3 = (gamemd::GameSetup *)((gamemd::AbstractClass **)((GameSetup *)this));
+  v16 = (gamemd::AbstractClass **)((CampaignScore *)v5);
 LABEL_35:
   if ( *(unsigned int *)v3->__pad_0 ) /*0x7b7594*/
     RA2_OPDEL(*(void **)v3->__pad_0); /*0x7b759b*/

@@ -116,12 +116,12 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   int v14; // eax
   int v15; // esi
   void *v16; // eax
-  int * v18;
+  unsigned int v18;
   int v19; // [esp+2Ch] [ebp-14h]
   char v20[4]; // [esp+30h] [ebp-10h] BYREF
   unsigned int v21[3]; // [esp+34h] [ebp-Ch] BYREF
   unsigned int v22; // [esp+44h] [ebp+4h]
-v18 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(0))))))))))));
+v18 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(0)))))))))))));
   v19 = 0; /*0x415b29*/
   v5 = dword_817A58; /*0x415b2d*/
   do /*0x415bab*/
@@ -232,8 +232,8 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject( IUnknown * aP1, IUnknown
   int v17; // eax
   char v18[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  v3 = (gamemd::AircraftTypeClass *)(a3);
-  v4 = aP1; /*0x417ccb*/
+  v3 = (IUnknown *)((gamemd::AircraftTypeClass *)(a3));
+  v4 = (int)(aP1);
   result = InfantryClass::GetCursorOverObject(this, aP1, (char)a3); /*0x417cd3*/
   v7 = result; /*0x417cd8*/
   if ( result == 8 ) /*0x417cdd*/
@@ -850,7 +850,7 @@ int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
   if ( !(uint8_t)House::IsHumanPlayer(*(void **)((char *)this + 540)) ) /*0x417f89*/
     return 0; /*0x417f92*/
   v6 = FootClass::HandleCursorWithCheck((int *)this, a1, aP2, aP3); /*0x417faf*/
-  int AircraftClass::CanEnterCell(AircraftClass *this, __int16 *a2, char a3, char a4)
+  int AircraftClass::CanEnterCell(AircraftClass *this, int16_t *a2, char a3, char a4)
     return 0; /*0x417fc7*/
   return v6; /*0x417f94*/
 

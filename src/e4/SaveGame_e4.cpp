@@ -964,18 +964,18 @@ int SaveGame::LoadMainGameState()
   int v7; // edx
   int v8; // edi
   int v9; // eax
-  wchar_t *v10; // [esp+A0h] [ebp-4h] BYREF
+  unsigned int v10;
 
-  ( this, &stru_A8EB00.?[404], 4, 0)
+  ( this, &(unsigned int *)((char *)&stru_A8EB00 + 404), 4, 0)
   if ( result >= 0 )
   {
     ( this, &dword_A83D4C, 4, 0)
     if ( result >= 0 )
     {
-      ( this, &stru_A8EB00.?[416], 4, 0)
+      ( this, &(unsigned int *)((char *)&stru_A8EB00 + 416), 4, 0)
       if ( result >= 0 )
       {
-        v3 = *this; /*0x67f82f*/
+        v3 = (wchar_t *)(*this);
         v10 = g_abs_A8ECC8; /*0x67f83b*/
         result = (*(int (**)(int *, wchar_t **, int, unsigned int))(v3 + 16))(this, &v10, 4, 0); /*0x67f83f*/
         if ( result >= 0 )
@@ -996,8 +996,7 @@ LABEL_8:
                 v6 = 0; /*0x67f8bf*/
                 if ( (int)v10 <= 0 )
                 {
-LABEL_13:
-                  v7 = *this; /*0x67f8ea*/
+LABEL_13: v7 = (int)(*this);
                   v10 = (wchar_t *)dword_8B41B8; /*0x67f8fc*/
                   result = (*(int (**)(int *, wchar_t **, int, unsigned int))(v7 + 16))(this, &v10, 4, 0); /*0x67f900*/
                   if ( result >= 0 )
@@ -1132,7 +1131,7 @@ int SaveGame::LoadVeinholeData()
   int v16; // [esp+9Ch] [ebp-8h] BYREF
   int v17; // [esp+A0h] [ebp-4h] BYREF
 
-  v2 = *this; /*0x74ed74*/
+  v2 = (int)(*this);
   v13 = g_abs_B1D2A0; /*0x74ed7a*/
   if ( (*(int (**)(int *, int *, int, unsigned int))(v2 + 16))(this, &v13, 4, 0) < 0 ) /*0x74ed83*/
     return 0; /*0x74ed8e*/
@@ -1147,7 +1146,7 @@ int SaveGame::LoadVeinholeData()
   {
     while ( 1 ) /*0x74edd6*/
     {
-      v7 = *this; /*0x74edd6*/
+      v7 = (int)(*this);
       v16 = *((unsigned int *)g_abs_B1D294 + v6); /*0x74ede5*/
       if ( (*(int (**)(int *, int *, int, unsigned int))(v7 + 16))(this, &v16, 4, 0) < 0 /*0x74ee50*/
         || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int *)this + 16))(
@@ -1176,7 +1175,7 @@ int SaveGame::LoadVeinholeData()
       {
         for ( i = 0; i < *(unsigned int *)(v9 + 4); ++i ) /*0x74ee93*/
         {
-          v12 = *this; /*0x74ee98*/
+          v12 = (int)(*this);
           v17 = (*(unsigned int *)(*(unsigned int *)(v9 + 8) + 4 * i) - v10) >> 3; /*0x74eeac*/
           if ( (*(int (**)(int *, int *, int, unsigned int))(v12 + 16))(this, &v17, 4, 0) < 0 ) /*0x74eeb5*/
             break; /*0x74eeb5*/

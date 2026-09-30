@@ -195,7 +195,7 @@ void * * LoadingScreen::LoadSHPs()
   g_abs_B0FA8C = (void **)(LoadFileSHP(g_abs_844D24, (bool *)&g_abs_B0FCA9));
   g_abs_B0FA48 = (void **)(LoadFileSHP(g_abs_844D28, (bool *)&g_abs_B0FCAA));
   g_abs_B0FA3C = (void **)(LoadFileSHP(g_abs_844D2C, (bool *)&g_abs_B0FCAB));
-  g_abs_B0FA90 = LoadFileSHP(g_abs_844D30, (bool *)&g_abs_B0FCAC); /*0x72fb91*/
+  g_abs_B0FA90 = (void **)(LoadFileSHP(g_abs_844D30, (bool *)&g_abs_B0FCAC));
   g_abs_B0FAA8 = LoadFileSHP(g_abs_844D34, (bool *)&g_abs_B0FCAD); /*0x72fba6*/
   result = LoadFileSHP(g_abs_844D38, (bool *)&g_abs_B0FCAE); /*0x72fbab*/
   g_abs_B0FABC = result; /*0x72fbb0*/

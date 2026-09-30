@@ -284,7 +284,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
   int v5; // esi
   CCINIClass *v6; // edx
   int v7; // eax
-  int v8; // edx
+  unsigned int * v8;
   int v9; // eax
   unsigned int *v10; // edx
   unsigned int *v11; // ecx
@@ -371,8 +371,8 @@ LABEL_13:
       return result->vtable0; /*0x6ac6af*/
     v7 = 1; /*0x6ac6b1*/
   }
-  v8 = (unsigned int *)(997 * v7);
-  v9 = 0; /*0x6ac6e6*/
+  v8 = (int)((unsigned int *)(997 * v7));
+  v9 = (unsigned int *)(0);
   v10 = this + v8 + 1361; /*0x6ac6e8*/
   v11 = v10 + 22; /*0x6ac6ef*/
   while ( *v11 != v5 ) /*0x6ac6f4*/

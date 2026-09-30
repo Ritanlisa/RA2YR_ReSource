@@ -27,6 +27,11 @@
 namespace gamemd {
 MixFileClass * * MixFile::LoadAll()
 {
+    unsigned int v32 = 0;  /* G37 hoist */
+    unsigned int v29 = 0;  /* G37 hoist */
+    unsigned int v17 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
 
   unsigned int *v0; // eax
   char v1; // bl

@@ -241,7 +241,7 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x538796*/
       return 0; /*0x538796*/
     v4 = *((unsigned int *)this + 5); /*0x538798*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, DynamicVector_field_0x8 + v4, 0) )
+    if ( v4 <= 0 || !(*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, DynamicVector_field_0x8 + v4, 0) )
       return 0; /*0x5387af*/
   }
   v6 = *((unsigned int *)this + 4); /*0x5387b5*/
@@ -500,7 +500,7 @@ char DynamicVector::Add(DynamicVector * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x6c6416*/
       return 0; /*0x6c6416*/
     v4 = *((unsigned int *)this + 5); /*0x6c6418*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, DynamicVector_field_0x8 + v4, 0) )
+    if ( v4 <= 0 || !(*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, DynamicVector_field_0x8 + v4, 0) )
       return 0; /*0x6c642f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x6c6435*/

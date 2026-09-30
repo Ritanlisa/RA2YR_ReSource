@@ -396,10 +396,10 @@ int Cell::IsGroundTypeRange()
   if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x4865e2*/
     return 1; /*0x4865e4*/
   return v1 >= dword_AA0738 && v1 < dword_AA0738 + 14 /*0x48663a*/
-      || v1 >= (int)(unk_AA073C) && v1 < unk_AA073C + 4
+      || v1 >= (int)(unk_AA073C) && v1 < (int)(unk_AA073C) + 4
       || v1 >= dword_ABB110 && v1 < dword_ABB110 + 4
-      || v1 >= (int)(unk_AA1050) && v1 < unk_AA1050 + 4
-      || v1 >= (int)(unk_AA10A0) && v1 < unk_AA10A0 + 4;
+      || v1 >= (int)(unk_AA1050) && v1 < (int)(unk_AA1050) + 4
+      || v1 >= (int)(unk_AA10A0) && v1 < (int)(unk_AA10A0) + 4;
 
 }
 }
@@ -449,7 +449,7 @@ void Cell::IsShore()
   int v1; // eax
 
   v1 = *((char *)this + 14); /*0x4867b0*/
-  return v1 == (int)(unk_AA0E18) || v1 >= unk_AA0748 && v1 < unk_AA0748 + 16; /*0x4867d0*/
+  return v1 == (int)(unk_AA0E18) || v1 >= (int)(unk_AA0748) && v1 < unk_AA0748 + 16; /*0x4867d0*/
 
 }
 }
@@ -707,13 +707,13 @@ Coord * * Cell::IsValidDestination(short * a2)
         return 0; /*0x4dcf19*/
     }
   }
-  bool Cell::IsValidDestination(Cell *this, __int16 *a2)
+  bool Cell::IsValidDestination(Cell *this, int16_t *a2)
   IDA_LOWORD(v17) = *v8 / 256; /*0x4dcf4a*/
   v9 = *(unsigned int *)this; /*0x4dcf5b*/
   IDA_HIWORD(v17) = v8[1] / 256; /*0x4dcf60*/
   v14 = v17; /*0x4dcf69*/
   v10 = (*(int (**)(unsigned char *))(v9 + 188))(this); /*0x4dcf6f*/
-  bool Cell::IsValidDestination(Cell *this, __int16 *a2)
+  bool Cell::IsValidDestination(Cell *this, int16_t *a2)
   if ( !MapSeed::CheckTileMatch(&g_abs_87F7E8, (int16_t *)&v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
   v12 = CellCoord::To_CellObj(&g_abs_87F7E8, a2); /*0x4dcfa1*/

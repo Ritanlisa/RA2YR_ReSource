@@ -318,8 +318,8 @@ ScenarioClass * * Tactical::CalculateTacticalLighting(int * a1, IUnknown * aP2, 
   {
     *a1 = (int)((gamemd::ScenarioClass **)(0x10000));
     aP2->field_0 = (gamemd::ScenarioClass **)(0);
-    *a3 = (gamemd::ScenarioClass **)(1000);
-    *a4 = 1000; /*0x48464c*/
+    *a3 = (int)((gamemd::ScenarioClass **)(1000));
+    *a4 = (gamemd::ScenarioClass **)(1000);
     aP5->field_0 = 1000; /*0x484656*/
     *a6 = 1000; /*0x484660*/
     *(unsigned int *)a8 = 1000; /*0x484666*/

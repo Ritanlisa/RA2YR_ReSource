@@ -440,7 +440,7 @@ int SuperClass::Lose()
   *((unsigned char *)this + 109) = 0; /*0x6cb7bd*/
   v3 = this; /*0x6cb7ca*/
   v1 = (*(int (**)(int *, unsigned char **))(g_abs_A83D50 + 16))(&g_abs_A83D50, &v3); /*0x6cb7d4*/
-  if ( v1 != -1 && v1 < (int)(g_abs_A83D60) && v1 < --g_abs_A83D60 ) /*0x6cb7ef*/
+  if ( v1 != -1 && v1 < (int)(g_abs_A83D60) && v1 < (int)(--g_abs_A83D60) ) /*0x6cb7ef*/
   {
     do /*0x6cb807*/
     {

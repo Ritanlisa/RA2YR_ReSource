@@ -88,7 +88,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
 
   int v11; // eax
   int result; // eax
-  unsigned int * v13;
+  unsigned int v13;
   uint16_t v15; // ax
   int v16; // [esp+20h] [ebp+14h]
   int v17; // [esp+24h] [ebp+18h]

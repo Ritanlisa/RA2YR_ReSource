@@ -21274,7 +21274,7 @@ char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
     if ( !*((unsigned char *)this + 13) && v4 ) /*0x50eb86*/
       return 0; /*0x50eb86*/
     v5 = *((unsigned int *)this + 5); /*0x50eb88*/
-    if ( CapacityIncrement <= 0 || !(*(unsigned __int8 (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
+    if ( CapacityIncrement <= 0 || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
       return 0; /*0x50eb9f*/
   }
   v7 = *((unsigned int *)this + 4); /*0x50eba5*/
@@ -23416,7 +23416,7 @@ char VectorClass_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x513306*/
       return 0; /*0x513306*/
     v4 = *((unsigned int *)this + 5); /*0x513308*/
-    if ( CapacityIncrement <= 0 || !(*(unsigned __int8 (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
+    if ( CapacityIncrement <= 0 || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
       return 0; /*0x51331f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x513325*/
@@ -33316,7 +33316,7 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x691176*/
       return 0; /*0x691176*/
     v4 = *((unsigned int *)this + 5); /*0x691178*/
-    if ( CapacityIncrement <= 0 || !(*(unsigned __int8 (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
+    if ( CapacityIncrement <= 0 || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
       return 0; /*0x69118f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x691195*/

@@ -42,10 +42,10 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   int v21; // eax
   int v22; // edx
   int v23; // ebx
-  int v24; // esi
+  char * v24;
   char * v25;
   RadarClass *v26; // ecx
-  int v27; // edx
+  char * v27;
   bool v28; // cc
   RadarClass *v29; // edi
   IUnknown *v30; // ebx
@@ -194,7 +194,7 @@ LABEL_41:
     (*(void (**)(RadarClass *, int))(**(unsigned int **)((char *)this + 4636) + 36))(aP1, v17); /*0x65604d*/
   }
 LABEL_45: v22 = (int)(*((unsigned int *)this + 1319));
-  v23 = *((unsigned int *)this + 1320); /*0x656095*/
+  v23 = (char *)(*((unsigned int *)this + 1320));
   v24 = (char *)this + 4620; /*0x6560a0*/
   v25 = v22 + aP1->field_0; /*0x6560a6*/
   v26 = (RadarClass *)((char *)aP1->field_4 + v23); /*0x6560a8*/
@@ -208,14 +208,14 @@ LABEL_45: v22 = (int)(*((unsigned int *)this + 1319));
   else
   {
     v27 = *(unsigned int *)v24; /*0x6560c2*/
-    v28 = *(unsigned int *)v24 <= v25; /*0x6560c5*/
+    v28 = *(unsigned int *)v24 <= (unsigned int)(v25); /*0x6560c5*/
     v29 = *(RadarClass **)(v24 + 4); /*0x6560c7*/
     v30 = *(IUnknown **)(v24 + 8); /*0x6560ca*/
     GroundHeight = v30; /*0x6560cd*/
     v39 = *(IUnknown **)(v24 + 12); /*0x6560d4*/
     if ( !v28 ) /*0x6560d8*/
     {
-      v30 = (IUnknown *)((char *)v30 + v27 - v25); /*0x6560dc*/
+      v30 = (int)((IUnknown *)((char *)v30 + v27 - v25));
       v27 = v25; /*0x6560de*/
       GroundHeight = v30; /*0x6560e0*/
     }
@@ -225,7 +225,7 @@ LABEL_45: v22 = (int)(*((unsigned int *)this + 1319));
       v29 = v26; /*0x6560f0*/
       v39 = v31; /*0x6560f2*/
     }
-    if ( (int)v30 + v27 < v25 + 1 ) /*0x6560fd*/
+    if ( (int)v30 + v27 < (int)(v25) + 1 ) /*0x6560fd*/
       GroundHeight = (IUnknown *)(v25 - v27 + 2); /*0x656104*/
     v32 = v39; /*0x656108*/
     if ( (int)v29 + (int)v39 < (int)&v26->field_0 + 1 ) /*0x656114*/
@@ -472,7 +472,7 @@ bool FogOfWar_Get(IUnknown * aP0)
     if ( v6 >= 0x40000 || (NeighbourContent = *(unsigned int **)(dword_87F924 + 4 * v6)) == 0 ) /*0x5865a9*/
     {
       dword_ABDC74 = (unsigned int *)(v12);
-      NeighbourContent = unk_ABDC50; /*0x5865b4*/
+      NeighbourContent = (unsigned int *)(unk_ABDC50);
     }
   }
   return (int)((unsigned int *)(NeighbourContent))[79] > 0; /*0x5865c5*/

@@ -645,7 +645,7 @@ int CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
     }
   }
   v9 = ((unsigned int *)(v6))[14] - g_TerrainBridgeIndex + 1; /*0x56fd4c*/
-  if ( v9 == (int)(unk_AA1548) || v9 == unk_AA0740 ) /*0x56fd5b*/
+  if ( v9 == (int)(unk_AA1548) || v9 == (int)(unk_AA0740) ) /*0x56fd5b*/
   {
     IDA_LOBYTE(v9) = ((Cell *)((IUnknown *)v31))->UpdateTileType((IUnknown *)1, 0); /*0x570036*/
   }
@@ -1252,7 +1252,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v13 = g_CellClassArray; /*0x572f03*/
+        v13 = (int)(g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x572f08*/
       }
       CellClass::UpdateAnimations((int)v13); /*0x572f0d*/
@@ -1264,7 +1264,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v16 = g_CellClassArray; /*0x572f50*/
+        v16 = (unsigned int *)(g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x572f55*/
       }
       CellClass::UpdateAnimations((int)v16); /*0x572f5a*/

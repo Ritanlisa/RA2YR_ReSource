@@ -19,6 +19,8 @@
 #include "e4/classes/ListBox_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/LightSourceClass_e4.hpp"
 
 // 0x539EB0
 namespace gamemd {
@@ -109,7 +111,7 @@ void LightningStorm::Strike(IUnknown * aP0)
 
   unsigned int *v1; // esi
   int v2; // eax
-  int v3; // ecx
+  unsigned char * v3;
   int result; // eax
   CoordStruct *v5; // esi
   void **v6; // eax
@@ -117,7 +119,7 @@ void LightningStorm::Strike(IUnknown * aP0)
   AnimClass *v8; // eax
   CoordStruct aP2; // [esp+4h] [ebp-Ch] BYREF
 
-  v1 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP0); /*0x53a159*/
+  v1 = (int)(CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP0));
   v2 = (*(int (**)(unsigned int))(***(unsigned int ***)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 732) + 156))(**(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 732)); /*0x53a165*/
   v3 = ((v1[80] & 0x100) != 0 ? unk_A9FA84 : 0)
      + Coord::ScaleToScreenY((void *)(*(int16_t *)(v2 + 4) / 2))
@@ -132,7 +134,7 @@ void LightningStorm::Strike(IUnknown * aP0)
                          + 4
                          * ((unsigned int)Random::State((unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 536))
                           % *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 716)));
-    v6 = (void **)RA2_OPNEW(0x1C8u); /*0x53a216*/
+    v6 = (unsigned int)((void **)RA2_OPNEW(0x1C8u));
     if ( v6 ) /*0x53a220*/
       v7 = AnimClass::ctor(v6, v5, &aP2, 0, (CoordStruct *)1, (void *)0x600, 0, 0); /*0x53a23c*/
     else
@@ -148,7 +150,7 @@ void LightningStorm::Strike(IUnknown * aP0)
       v8 = (unsigned int)((AnimClass *)dword_A9FA70++);
       *((unsigned int *)unk_A9FA64 + (unsigned int)v8) = v7; /*0x53a294*/
     }
-    result = dword_A9F9D8; /*0x53a297*/
+    result = (unsigned int)(dword_A9F9D8);
     if ( dword_A9F9E0 < dword_A9F9D8 /*0x53a2d3*/
       || (unk_A9F9DD || !dword_A9F9D8)
       && dword_A9F9E4 > 0
@@ -212,7 +214,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v34[2] = v6; /*0x53a33b*/
   v7 = *(void **)(g_abs_8871E0->? /*0x53a363*/
                 + 4 * ((unsigned int)Random::State((unsigned int *)g_abs_A8B230 + 134) % g_abs_8871E0->?));
-  v8 = (void **)RA2_OPNEW(0x1C8u); /*0x53a366*/
+  v8 = (unsigned char *)((void **)RA2_OPNEW(0x1C8u));
   if ( v8 ) /*0x53a370*/
     v9 = AnimClass::ctor(v8, v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
   else
@@ -229,7 +231,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v28 = *((char *)v3 + 283); /*0x53a413*/
   v11 = (void **)(v28 * unk_A9FA90 + ((v3[80] & 0x100) != 0 ? unk_A9FA84 : 0));
   v31 = (gamemd::RulesClass *)((int)((gamemd::RulesClass *)(((int16_t)v27 << 8) + 128)));
-  v32 = (IDA_SHIWORD(v27) << 8) + 128; /*0x53a441*/
+  v32 = (unsigned int)((IDA_SHIWORD(v27) << 8) + 128);
   v33 = v11; /*0x53a445*/
   if ( v31 != (gamemd::RulesClass *)(unk_A9FA30) || __PAIR64__((unsigned int)v11, (IDA_SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
   {

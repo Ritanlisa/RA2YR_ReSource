@@ -711,7 +711,7 @@ double sub_621150(int a1)
 namespace gamemd {
 void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9)
 {
-  unsigned int * v9;
+  unsigned int v9;
   unsigned int * v12;
   int v13; // esi
   int v14; // eax

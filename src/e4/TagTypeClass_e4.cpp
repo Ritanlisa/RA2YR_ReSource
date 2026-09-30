@@ -61,7 +61,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
          *(unsigned int *)&g_abs_B077F8 + *(unsigned int *)&g_abs_B077F8,
          0) )
   {
-    v3 = (unsigned int)((AbstractTypeClass *)(*(unsigned int *)&g_abs_B077F8)++);
+    v3 = (gamemd::AbstractTypeClass *)((unsigned int)((AbstractTypeClass *)(*(unsigned int *)&g_abs_B077F8)++));
     *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * (unsigned int)v3) = this; /*0x6e5c3a*/
   }
   if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x6e5c71*/
@@ -87,7 +87,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   unsigned int *v2; // ecx
   unsigned int *v3; // esi
   int v4; // esi
-  unsigned int * v5;
+  unsigned int v5;
   unsigned int *v6; // ecx
   int v7; // eax
   int v8; // eax

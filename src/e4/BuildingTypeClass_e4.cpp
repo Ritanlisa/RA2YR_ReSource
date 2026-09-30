@@ -513,7 +513,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
   int v9; // [esp+10h] [ebp-204h]
   char Buffer[512]; // [esp+14h] [ebp-200h] BYREF
 
-  v2 = (unsigned char *)(v1);
+  v2 = (gamemd::ObjectTypeClass *)((unsigned char *)(v1));
   ProcessDataCCFileClass(); /*0x45e97c*/
   unk_89DDC4 = SearchMIXFile(aPoweroffShp, 0); /*0x45e994*/
   aP2 = SearchMIXFile(aWrenchShp, 0); /*0x45e99e*/

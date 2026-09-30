@@ -88,8 +88,8 @@ int TeamTypeClass::Construct()
          (unsigned int)(g_abs_A83E38)+ g_abs_A83E44,
          0) )
   {
-    v3 = (int)((unsigned int)(g_abs_A83E40++));
-    *((unsigned int *)g_abs_A83E34 + v3) = this; /*0x4c9989*/
+    v3 = (gamemd::TeamTypeClass *)((int)((unsigned int)(g_abs_A83E40++)));
+    *((unsigned int *)(unsigned int)(g_abs_A83E34)+ v3) = this; /*0x4c9989*/
   }
   v4 = (unsigned int)(g_abs_A8ED84);
   *((unsigned int *)this + 14) = 0; /*0x4c9996*/
@@ -105,8 +105,8 @@ int TeamTypeClass::Construct()
          (unsigned int)(g_abs_B0F728)+ g_abs_B0F734,
          0) )
   {
-    v5 = (int)((unsigned int)(g_abs_B0F730++));
-    *((unsigned int *)g_abs_B0F724 + v5) = this; /*0x4c99f8*/
+    v5 = (gamemd::TeamTypeClass *)((int)((unsigned int)(g_abs_B0F730++)));
+    *((unsigned int *)(unsigned int)(g_abs_B0F724)+ v5) = this; /*0x4c99f8*/
   }
   return (int)((int)((int)(this)));
 

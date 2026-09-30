@@ -315,7 +315,7 @@ void CaptureManagerClass::CaptureUnit(int a2)
              (char *)v14 + v15,
              0) )
       {
-        v16 = *((unsigned int *)this + 13); /*0x471e1f*/
+        v16 = (int *)(*((unsigned int *)this + 13));
         v17 = *((unsigned int *)this + 10); /*0x471e22*/
         *((unsigned int *)this + 13) = v16 + 1; /*0x471e28*/
         *(unsigned int *)(v17 + 4 * v16) = v12; /*0x471e2b*/

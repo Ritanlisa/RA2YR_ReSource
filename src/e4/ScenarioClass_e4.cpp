@@ -136,7 +136,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   v6 = *(unsigned int *)(v4 + 24); /*0x5cc344*/
   if ( *(unsigned int *)(v4 + 16) != -1 ) /*0x5cc34a*/
   {
-        v6 = this->Timer::GetTicks() - *(unsigned int *)((unsigned int)(a1)+ 16);
+        v6 = ((Timer *)0)->GetTicks() - *(unsigned int *)((unsigned int)(a1)+ 16);
     if ( v7 >= v6 ) /*0x5cc359*/
       goto LABEL_6; /*0x5cc359*/
     v6 -= v7; /*0x5cc35b*/
@@ -153,7 +153,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   }
   LABEL_6:
   v8 = *(unsigned int *)(v5 + 36); /*0x5cc365*/
-    *(unsigned int *)((unsigned int)(a1)+ 16) = this->Timer::GetTicks();
+    *(unsigned int *)((unsigned int)(a1)+ 16) = ((Timer *)0)->GetTicks();
   *(unsigned int *)(v5 + 20) = v30; /*0x5cc378*/
   v9 = *(unsigned int *)(v5 + 64); /*0x5cc37b*/
   *(unsigned int *)(v5 + 24) = v8; /*0x5cc381*/
@@ -447,14 +447,14 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   v3 = Source; /*0x683ab8*/
   if ( (!Source || !strlen(Source->field_0)) && a3 != -1 ) /*0x683ade*/
   {
-    if ( g_abs_A8EA70 == 1 ) /*0x683ae7*/
+    if ( g_abs_A8EA70 == (unsigned char [1])(1) ) /*0x683ae7*/
       v3 = (AnimClass *)&g_abs_A83E48; /*0x683ae9*/
     else
       v3 = (AnimClass *)(*((unsigned int *)g_CampaignTypeArray + a3) + 156); /*0x683af8*/
   }
   *((unsigned int *)g_abs_A8B230 + 3379) = a3; /*0x683b0a*/
   this->Debug::Log(); /*0x683b10*/
-  Debug::Log(); /*0x683b21*/
+  this->Debug::Log(); /*0x683b21*/
   strcpy((char *)g_abs_A8B230 + 4700, v3->field_0); /*0x683b47*/
   _strupr((char *)g_abs_A8B230 + 4700); /*0x683b5d*/
   SetSoundWarning(-1); /*0x683b68*/
@@ -466,7 +466,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
     Field = *(unsigned int *)(*((unsigned int *)g_CampaignTypeArray + v4) + 152); /*0x683b8f*/
     goto LABEL_13; /*0x683b95*/
   }
-  if ( g_abs_A8B254 != -1 ) /*0x683b9f*/
+  if ( g_abs_A8B254 != (unsigned char [1])(-1) ) /*0x683b9f*/
   {
     v6 = *(int **)(g_abs_A8B8CC + 4 * g_abs_A8B254); /*0x683ba7*/
     v7 = Game::CheckForGameCD((void *)0x3C); /*0x683baf*/

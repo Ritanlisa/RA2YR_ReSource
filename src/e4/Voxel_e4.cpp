@@ -3114,7 +3114,7 @@ int Voxel::freeSectionMemory(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x763346*/
       return 0; /*0x763346*/
     v4 = *((unsigned int *)this + 5); /*0x763348*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(Voxel *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, Voxel_field_0x8 + v4, 0) )
+    if ( v4 <= 0 || !(*(uint8_t (**)(Voxel *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, Voxel_field_0x8 + v4, 0) )
       return 0; /*0x76335f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x763365*/

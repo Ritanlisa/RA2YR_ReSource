@@ -1592,6 +1592,7 @@ int Rules::ReadMiscINI()
     unsigned int v258 = 0;  /* G37 hoist */
     unsigned int v258 = 0;  /* G37 hoist */
     unsigned int v258 = 0;  /* G37 hoist */
+    unsigned int v258 = 0;  /* G37 hoist */
       v181 = BuildingDamageSound;
     }
     this->BuildingDamageSound = v181;

@@ -58,6 +58,8 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
 
@@ -22710,7 +22712,7 @@ char Gap2Recv_68C260::DynamicVector_PushBack(void* aP1) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x68c276*/
       return 0; /*0x68c276*/
     v4 = *((unsigned int *)this + 5); /*0x68c278*/
-    if ( abstractFlags <= 0 || !(*((unsigned __int8 (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
+    if ( abstractFlags <= 0 || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
       return 0; /*0x68c28f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x68c295*/
@@ -28037,7 +28039,7 @@ char Gap2Recv_6F25E0::Team_Helper_6F25E0(void* a2) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x6f25f6*/
       return 0; /*0x6f25f6*/
     v4 = *((unsigned int *)this + 5); /*0x6f25f8*/
-    if ( abstractFlags <= 0 || !(*((unsigned __int8 (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
+    if ( abstractFlags <= 0 || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
       return 0; /*0x6f260f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x6f2615*/
@@ -28209,7 +28211,7 @@ int Gap2Recv_6FD800::SpreadRadiationAreaEffect(InfantryClass * aP1) {
   int v29; // [esp+5Ch] [ebp-10h]
   int v30[3]; // [esp+60h] [ebp-Ch] BYREF
 
-  int SpreadRadiationAreaEffect(ObjectClass *this, __int16 a2)
+  int SpreadRadiationAreaEffect(ObjectClass *this, int16_t a2)
   v17 = 0; /*0x6fd818*/
   v27 = *(unsigned int *)v2; /*0x6fd822*/
   v28 = *(IUnknown **)(v2 + 4); /*0x6fd829*/
@@ -30096,7 +30098,7 @@ char Gap2Recv_734390::SelectFactionThemeMusic_Helper_734390(void* a2) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x7343a6*/
       return 0; /*0x7343a6*/
     v4 = *((unsigned int *)this + 5); /*0x7343a8*/
-    if ( abstractFlags <= 0 || !(*((unsigned __int8 (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
+    if ( abstractFlags <= 0 || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
       return 0; /*0x7343bf*/
   }
   v6 = *((unsigned int *)this + 4); /*0x7343c5*/
@@ -32437,7 +32439,7 @@ char Gap2Recv_766EE0::System_Init_766EE0(int aP1) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x766ef6*/
       return 0; /*0x766ef6*/
     v4 = *((unsigned int *)this + 5); /*0x766ef8*/
-    if ( abstractFlags <= 0 || !(*((unsigned __int8 (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
+    if ( abstractFlags <= 0 || !(*((uint8_t (**)(ObjectClass *, int, unsigned int))this->AbstractClass + 2))( this, (int)vtable2 + abstractFlags, 0) )
       return 0; /*0x766f0f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x766f15*/

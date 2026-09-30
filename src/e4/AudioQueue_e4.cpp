@@ -503,7 +503,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
   v9[24] = a7; /*0x7b23f8*/
   qmemcpy(v9, a3, a5); /*0x7b23fb*/
   *((unsigned short *)v9 + 13) = a8; /*0x7b2409*/
-  __int16 AudioQueue::WriteBuffer( WinsockInterfaceClass *this, const void *a2, unsigned int a3, const void *a4, unsigned int a5, char a6, char a7, __int16 a8)
+  int16_t AudioQueue::WriteBuffer( WinsockInterfaceClass *this, const void *a2, unsigned int a3, const void *a4, unsigned int a5, char a6, char a7, int16_t a8)
   if ( (unsigned char)aP5 ) /*0x7b241a*/
   {
     v10 = *((unsigned int *)this + 16); /*0x7b241c*/
@@ -534,7 +534,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
     }
     v14 = *((unsigned int *)this + 64539); /*0x7b24a0*/
   }
-  __int16 AudioQueue::WriteBuffer( WinsockInterfaceClass *this, const void *a2, unsigned int a3, const void *a4, unsigned int a5, char a6, char a7, __int16 a8)
+  int16_t AudioQueue::WriteBuffer( WinsockInterfaceClass *this, const void *a2, unsigned int a3, const void *a4, unsigned int a5, char a6, char a7, int16_t a8)
   SendMessageA((HWND)g_hWnd, v19, 0, 2); /*0x7b24b9*/
   return EventQueue::Process(g_abs_87F770); /*0x7b24ca*/
 

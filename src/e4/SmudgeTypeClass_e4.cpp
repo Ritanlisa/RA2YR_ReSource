@@ -122,6 +122,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
 
   int v7; // ebx
   int v8; // edx
@@ -132,7 +133,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   int v13; // [esp+8h] [ebp-8h] BYREF
   int v14; // [esp+Ch] [ebp-4h]
 
-  void SmudgeTypeClass::vt_entry_A0(SmudgeTypeClass *this, int *a2, int *a3, int a4, int a5, __int16 *a6)
+  void SmudgeTypeClass::vt_entry_A0(SmudgeTypeClass *this, int *a2, int *a3, int a4, int a5, int16_t *a6)
   if ( v7 ) /*0x6b5603*/
   {
     v8 = a2[1]; /*0x6b5614*/

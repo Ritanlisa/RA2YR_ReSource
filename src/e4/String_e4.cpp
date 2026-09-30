@@ -317,8 +317,8 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
 LABEL_33: v20 = (const char *)(&g_abs_889F64);
     goto LABEL_35; /*0x7b59ba*/
   }
-  v3 = (gamemd::AbstractClass **)((void **)this);
-  v20 = v4; /*0x7b59c0*/
+  v3 = (void **)((gamemd::AbstractClass **)((void **)this));
+  v20 = (gamemd::AbstractClass **)(v4);
 LABEL_35:
   if ( *v3 ) /*0x7b59c2*/
     RA2_OPDEL(*v3); /*0x7b59c9*/
@@ -343,7 +343,7 @@ namespace gamemd {
 AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 {
 
-  int v4; // esi
+  AbstractClass ** v4;
   signed int v7; // ecx
   signed int v8; // ecx
   signed int v9; // ecx
@@ -361,7 +361,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   int v21; // [esp+14h] [ebp+4h]
   char *Str; // [esp+18h] [ebp+8h]
 
-  v4 = (gamemd::AbstractClass **)(a2);
+  v4 = (int)((gamemd::AbstractClass **)(a2));
   if ( a2 < 0 ) /*0x7b5f1c*/
     return -1; /*0x7b5f21*/
   while ( 1 )
