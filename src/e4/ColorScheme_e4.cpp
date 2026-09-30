@@ -24,14 +24,14 @@ int ColorScheme::Destructor()
   *((unsigned int *)this + 195) = 0; /*0x68c905*/
   v4 = this; /*0x68c91b*/
   result = (*(int (**)(int *, int *))(g_abs_B054D0 + 16))(&g_abs_B054D0, &v4); /*0x68c91f*/
-  if ( result != -1 && result < g_abs_B054E0 && result < --g_abs_B054E0 ) /*0x68c93b*/
+  if ( result != -1 && result < (int)((int))((int))(g_abs_B054E0) && (int)(result) < --g_abs_B054E0 ) /*0x68c93b*/
   {
     do /*0x68c953*/
     {
       ++result; /*0x68c943*/
       *((unsigned int *)g_abs_B054D4 + result - 1) = *((unsigned int *)g_abs_B054D4 + result); /*0x68c947*/
     }
-    while ( result < g_abs_B054E0 ); /*0x68c953*/
+    while ( result < (int)((int))((int))(g_abs_B054E0) ); /*0x68c953*/
   }
   return result; /*0x68c925*/
 

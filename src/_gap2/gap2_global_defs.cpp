@@ -36,6 +36,12 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v8 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
+    unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
 
@@ -87,7 +93,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
       do /*0x40317d*/
       {
         v9 = (int *)*(unsigned int *)(v8); /*0x4030de*/
-        if ( (((unsigned int *)(v8))[41] & 1) != 0 && v8[90] ) /*0x4030ee*/
+        if ( (((unsigned int *)(v8))[41] & 1) != 0 && ((unsigned int *)(v8))[90] ) /*0x4030ee*/
         {
           if ( (Audio::InitChannels((char *)v8 + 16), active) /*0x403158*/
             || AudioChannel::IsActive((unsigned char *)v8 + 16)

@@ -65,7 +65,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
   int result; // eax
   int j; // eax
 
-  for ( i = 0; i < g_abs_87F6A8; *((unsigned int *)g_abs_87F69C + i - 1) = 0 ) /*0x549c8a*/
+  for ( i = 0; i < (int)((int))((int))(g_abs_87F6A8); *((unsigned int *)g_abs_87F69C + i - 1) = 0 ) /*0x549c8a*/
   {
     v3 = (void (***)(unsigned int, int))*((unsigned int *)g_abs_87F69C + i); /*0x549c91*/
     if ( v3 ) /*0x549c96*/
@@ -88,7 +88,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       a1[3] = (int)&vt_IsometricTileTypeClass; /*0x549d16*/
     }
     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, a1 + 175); /*0x549d2a*/
-    for ( j = 0; j < g_abs_87F6A8; *((unsigned int *)g_abs_87F69C + j - 1) = 0 ) /*0x549d39*/
+    for ( j = 0; j < (int)((int))((int))(g_abs_87F6A8); *((unsigned int *)g_abs_87F69C + j - 1) = 0 ) /*0x549d39*/
       ++j; /*0x549d41*/
     TerrainClass::InitTheatre(a1); /*0x549d56*/
     return 0; /*0x549d5b*/

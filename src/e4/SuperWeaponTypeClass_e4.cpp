@@ -629,7 +629,7 @@ int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
   if ( a3
     && (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6
     && (v4 = (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3),
-        (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(v4 == 6 ? a3 + 0x21C : 540), HouseClass_Player)) )
+        (uint8_t)HouseClass::IsAlliedWith(*(void **)(v4 == 6 ? a3 + 0x21C : 540), HouseClass_Player)) )
   {
     return *((unsigned int *)this + 47); /*0x6cefd3*/
   }

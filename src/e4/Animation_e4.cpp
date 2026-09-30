@@ -245,7 +245,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   int v10; // eax
   int attachedTag; // eax
   void *nextObject; // eax
-  int objectTypeFlags; // edx
+  ObjectClass * objectTypeFlags;
   Selection_WorldDominationTour *v14; // eax
   ObjectClass *j; // edi
   int v16; // ecx
@@ -267,10 +267,10 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   while ( 1 ) /*0x770574*/
   {
     v6 = (gamemd::ObjectClass *)((gamemd::Animation *)(*(ObjectClass **)this->__pad_0));
-    String::Assign((char **)&aP2, &stru_830620.__pad_579C[33740]); /*0x77057f*/
+    ((String *)((char **)&aP2))->Assign(&stru_830620.__pad_579C[33740]); /*0x77057f*/
     INIClass::ReadTokenizedPair((char **)v5, v4, v3, v6, 0, (ObjectClass *)&aP2); /*0x770590*/
     DeleteAndZero((void **)&aP2); /*0x770599*/
-    String::Assign((char **)&a1, &stru_830620.__pad_579C[33732]); /*0x7705a7*/
+    ((String *)((char **)&a1))->Assign(&stru_830620.__pad_579C[33732]); /*0x7705a7*/
     INIClass::ReadTokenizedPair((char **)v5, v4, v3, v6, 1, (ObjectClass *)&a1); /*0x7705b8*/
     DeleteAndZero((void **)&a1); /*0x7705c1*/
     String::Assign((char **)&v23, aDraw); /*0x7705cf*/
@@ -313,8 +313,8 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
       }
     }
     nextObject = (gamemd::ObjectClass *)(v22[5].nextObject);
-    objectTypeFlags = (gamemd::ObjectClass *)(v22[5].objectTypeFlags);
-    v22[5].nextObject = (char *)nextObject + 1; /*0x7706d9*/
+    objectTypeFlags = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(v22[5].objectTypeFlags)));
+    v22[5].nextObject = (gamemd::ObjectClass *)((char *)nextObject + 1);
     *(unsigned int *)(objectTypeFlags + 4 * (unsigned int)nextObject) = v25; /*0x7706e0*/
   }
   DeleteAndZero((void **)&aP2); /*0x770702*/
@@ -353,7 +353,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
     }
     v20 = (unsigned int)(v22[5].ambientSoundController[3]);
     v21 = (unsigned int)(v22[5].ambientSoundController[0]);
-    v22[5].ambientSoundController[3] = v20 + 1; /*0x7707f6*/
+    v22[5].ambientSoundController[3] = (unsigned int)(v20 + 1);
     *(unsigned int *)(v21 + 4 * v20) = v18; /*0x7707f9*/
   }
   DeleteAndZero((void **)&aP2); /*0x77081b*/

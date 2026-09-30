@@ -73,7 +73,7 @@ char MouseClass::LoadCursors()
 
   char result; // al
 
-  result = g_abs_B0FBE0; /*0x72ddb0*/
+  result = (char)(g_abs_B0FBE0);
   if ( !g_abs_B0FBE0 ) /*0x72ddb7*/
   {
     AssetClass::ReleaseAndReload(); /*0x72ddbd*/

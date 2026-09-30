@@ -34,7 +34,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   double v16; // st7
   double v17; // st7
   double v18; // st7
-  int v19; // edx
+  IUnknown * v19;
   double v20; // st7
   int v21; // eax
   double v22; // st7
@@ -142,7 +142,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     }
     v81 = (double *)((IUnknown *)((double *)((int16_t)v71 - 0x3FFF)));
     v18 = (IUnknown *)(Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(int)v81 * -0.00009587672516830327)));
-    v19 = (int16_t)v71; /*0x5b2259*/
+    v19 = (IUnknown *)((int)((IUnknown *)((int16_t)v71)));
     *(double *)v13->vtable0 = v18 * *(double *)v13->vtable0; /*0x5b225e*/
     v81 = (double *)(v19 - 0x3FFF); /*0x5b2266*/
     v20 = Math::ArcTan2((IUnknown *)COERCE_UNSIGNED_INT64((double)(v19 - 0x3FFF) * -0.00009587672516830327)); /*0x5b2277*/
@@ -264,7 +264,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
     if ( !(unsigned char)aP4 ) /*0x5b28a1*/
     {
       IDA_LOWORD(v83[0]) = 256; /*0x5b28b6*/
-      eax47 = (int16_t *)Movement::Check(a1,(unsigned short *)(&v81), v83); /*0x5b28bd*/
+      eax47 = (int16_t *)((Movement *)(a1))->Check((unsigned short *)(&v81), v83); /*0x5b28bd*/
       v70 = (BuildingTypeClass *)Movement::DivideAndStoreScaled(eax47, (int *)v82, 2); /*0x5b28cd*/
       eax47a = Vector::ToFacingMath(v86, v80); /*0x5b28d6*/
       Movement::CompareAbsCoords((int16_t *)&v71, eax47a, (int16_t *)v70->vtable0); /*0x5b28e0*/
@@ -274,12 +274,12 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   v59 = (IUnknown *)(*(double *)&v48->uniqueId);
   *(unsigned long long *)aP1.__pad_0 = *(unsigned long long *)v48->vtable0; /*0x5b2645*/
   ecx20 = *(unsigned int *)&v48-((unsigned int *)(>vtable0))[12]; /*0x5b2657*/
-  *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[8] = *(unsigned int *)&v48->vtable0[8]; /*0x5b265a*/
+  *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[8] = *(unsigned int *)&v48-((unsigned int *)(>vtable0))[8]; /*0x5b265a*/
   *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[12] = ecx20; /*0x5b265e*/
   edi20a = Math::RoundToInt(v59); /*0x5b266b*/
   *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[4] = Math::RoundToInt(v59); /*0x5b2672*/
   v62 = Math::RoundToInt(v59); /*0x5b2676*/
-    v60 = Coord::Subtract((IUnknown *)(/*0x5b2695*/           v82),           (IUnknown *)(6 * edi20a),           (IUnknown *)(6 * *(unsigned int *)&aP1.__pad_0[4]),           (IUnknown *)(6 * v62));
+    v60 = ((Coord *)((IUnknown *)(/*0x5b2695*/           v82)))->Subtract((IUnknown *)(6 * edi20a), (IUnknown *)(6 * *(unsigned int *)&((unsigned int *)(aP1.__pad_0))[4]), (IUnknown *)(6 * v62));
   v61 = (IUnknown *)(Coord::Subtract( /*0x5b26b9*/ v80, (IUnknown *)(*v12 + v60->field_0), (IUnknown *)(v12[1] + v60->field_4), (IUnknown *)(v12[2] + v60->field_8)));
   *(unsigned int *)aP1.__pad_0 = v61->field_0; /*0x5b26c0*/
   *(unsigned int *)&aP1.__pad_0[4] = v61->field_4; /*0x5b26cc*/

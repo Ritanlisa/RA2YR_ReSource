@@ -12,6 +12,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4391C0
 namespace gamemd {
@@ -211,7 +212,7 @@ void SaveGame::Start(LPSTREAM pStm)
     }
     while ( ++v3 < (int)v60 );
   }
-  MouseClass::DrawCursor((int *)&g_abs_87F7E8, pStm);
+  ((MouseClass *)((int *)&g_abs_87F7E8))->DrawCursor(pStm);
   v4 = *(unsigned int *)pStm->__pad_0;
   pPStm = *(LPPERSISTSTREAM *)&g_abs_89F690;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v4 + 16))(pStm, &pPStm, 4, 0) < 0 )
@@ -968,7 +969,7 @@ int SaveGame::LoadMainGameState()
   result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int *)this + 16))(this, &g_abs_A8ED78, 4, 0); /*0x67f7f1*/
   if ( result >= 0 )
   {
-    result = (*(int (**)(int *, #375 **, int, unsigned int))(*(unsigned int *)this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
+    result = (*(int (**)(int *, void **, int, unsigned int))(*(unsigned int *)this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
     if ( result >= 0 )
     {
       result = (*(int (**)(int *, wchar_t **, int, unsigned int))(*(unsigned int *)this + 16))(this, &g_abs_A8ED84, 4, 0); /*0x67f81f*/

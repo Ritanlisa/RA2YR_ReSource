@@ -34,7 +34,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
-  v1 = (int)((char *)(0));
+  v1 = (char *)((int)((char *)(0)));
   v9 = (char *)(this);
   INIClass::ClearSection((int)this, (int)g_abs_81732C, 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
@@ -42,9 +42,9 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   {
     for ( i = 0; i < 512; ++i ) /*0x6b4df0*/
     {
-      v8[0] = i; /*0x6b4df6*/
-      v8[1] = v1; /*0x6b4e01*/
-      v3 = CellCoord::To_CellObj(&g_abs_87F7E8, v8); /*0x6b4e0b*/
+      v8[0] = (int16_t)(i);
+      v8[1] = (int16_t)(v1);
+      v3 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, v8));
       v4 = v3[18]; /*0x6b4e0d*/
       if ( v4 != -1 && !*((unsigned char *)v3 + 287) ) /*0x6b4e15*/
       {
@@ -57,7 +57,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     }
     ++v1; /*0x6b4e87*/
   }
-  while ( v1 < 512 ); /*0x6b4e8e*/
+  while ( v1 < (char *)(512) ); /*0x6b4e8e*/
   return v4; /*0x6b4e94*/
 
 }

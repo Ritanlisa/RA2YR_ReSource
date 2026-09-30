@@ -53,9 +53,9 @@ int Mouse::SetBounds(void* aP1)
   }
   else
   {
-    if ( (g_abs_89F690 & 1) == 0 ) /*0x4a8c5c*/
+    if ( ((unsigned int)(g_abs_89F690)& 1) == 0 ) /*0x4a8c5c*/
     {
-      g_abs_89F690 |= 1u; /*0x4a8c68*/
+      (unsigned int)(g_abs_89F690)|= 1u; /*0x4a8c68*/
       atexit(nullsub_10); /*0x4a8c6e*/
     }
     qmemcpy(&g_abs_89F690, v5, 0x1E0u); /*0x4a8c85*/
@@ -108,7 +108,7 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   }
   *((unsigned char *)&g_MatrixTransformState + 1229) = 1; /*0x5bdce4*/
   v6 = (MPCooperative *)g_abs_82D030[7 * (unsigned int)aP1]; /*0x5bdceb*/
-  Ticks = (CoordStruct *)Timer::GetTicks(); /*0x5bdcf2*/
+  Ticks = (CoordStruct *)this->Timer::GetTicks(); /*0x5bdcf2*/
   Y_low = 0; /*0x5bdcfb*/
   *(&g_MatrixTransformState + 292) = Ticks; /*0x5bdcfd*/
   *(&g_MatrixTransformState + 293) = v14; /*0x5bdd02*/
@@ -147,10 +147,10 @@ HWND Mouse::ReleaseCapture()
 
   HWND result; // eax
 
-  DisplayClass::ExitMode(); /*0x6938c3*/
+  this->DisplayClass::ExitMode(); /*0x6938c3*/
   *((unsigned char *)this + 21850) = 0; /*0x6938c8*/
   result = GetCapture(); /*0x6938cf*/
-  if ( result == g_hWnd ) /*0x6938de*/
+  if ( result == (HWND)(g_hWnd) ) /*0x6938de*/
     return (HWND)ReleaseCapture(); /*0x6938e0*/
   return result; /*0x6938db*/
 
@@ -233,7 +233,7 @@ HWND Mouse::HideWindow()
 
   HWND result; // eax
 
-  result = g_abs_ABF240; /*0x5bc400*/
+  result = (HWND)(g_abs_ABF240);
   g_abs_ABF239 = 0; /*0x5bc409*/
   if ( g_abs_ABF240 ) /*0x5bc40f*/
   {

@@ -49,7 +49,7 @@ struct BinkMovie {
     unsigned int *  Open(char * FullPath, int a3);  // 0x4326C0
     int Stop();  // 0x432700
     AbstractClass * *  InitFromFile(void * FullPath);  // 0x432750
-    int  Pause(unsigned __int8 a2);  // 0x432C30
+    int  Pause(uint8_t a2);  // 0x432C30
     // dup-decl removed: BOOL IsAtEnd();  // 0x432C50
     int Play();  // 0x432C70
     int  RenderLoop(void * aP1, int a3, int a4);  // 0x432E40

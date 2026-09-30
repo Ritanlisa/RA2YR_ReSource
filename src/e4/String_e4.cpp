@@ -85,22 +85,22 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   *((unsigned int *)this + 3) = 0; /*0x5d0398*/
   unknown_libname_73(&v10); /*0x5d039b*/
   v3 = (ObjectClass *)String::Tokenize((const char **)aP1, 0, &g_abs_817F70, (ObjectClass *)&v10); /*0x5d03ba*/
-  if ( String::Length((const char **)&v10) ) /*0x5d03bc*/
+  if ( ((String *)((const char **)&v10))->Length() ) /*0x5d03bc*/
     String::Reassign((char **)this, (AbstractClass *)&v10); /*0x5d03cc*/
   v4 = (ObjectClass *)String::Tokenize((const char **)aP1, (int)v3, &g_abs_817F70, (ObjectClass *)&v10); /*0x5d03e7*/
-  if ( String::Length((const char **)&v10) ) /*0x5d03e9*/
+  if ( ((String *)((const char **)&v10))->Length() ) /*0x5d03e9*/
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&v10); /*0x5d03f6*/
     *((unsigned int *)this + 1) = v5; /*0x5d03fb*/
   }
   v6 = (ObjectClass *)String::Tokenize((const char **)aP1, (int)v4, &g_abs_817F70, (ObjectClass *)&v10); /*0x5d0414*/
-  if ( String::Length((const char **)&v10) ) /*0x5d0416*/
+  if ( ((String *)((const char **)&v10))->Length() ) /*0x5d0416*/
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&v10); /*0x5d0423*/
     *((unsigned int *)this + 2) = v7; /*0x5d0428*/
   }
   String::Tokenize((const char **)aP1, (int)v6, &g_abs_817F70, (ObjectClass *)&v10); /*0x5d0438*/
-  if ( String::Length((const char **)&v10) ) /*0x5d0441*/
+  if ( ((String *)((const char **)&v10))->Length() ) /*0x5d0441*/
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&v10); /*0x5d044e*/
     *((unsigned int *)this + 3) = v8; /*0x5d0453*/
@@ -231,8 +231,8 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   char *v28; // [esp+24h] [ebp+8h]
 
   v3 = (void **)((const char *)((void **)this));
-  v4 = (const char *)(0);
-  v5 = *this; /*0x7b57ae*/
+  v4 = (char *)((const char *)(0));
+  v5 = (const char *)(*this);
   if ( !*this ) /*0x7b57ae*/
     v5 = &g_abs_889F64; /*0x7b57b4*/
   if ( !v5 ) /*0x7b57bc*/
@@ -313,9 +313,8 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   }
   if ( !v4 ) /*0x7b59af*/
   {
-    v3 = (void **)this; /*0x7b59b1*/
-LABEL_33:
-    v20 = &g_abs_889F64; /*0x7b59b5*/
+    v3 = (const char *)((void **)this);
+LABEL_33: v20 = (const char *)(&g_abs_889F64);
     goto LABEL_35; /*0x7b59ba*/
   }
   v3 = (void **)this; /*0x7b59bc*/

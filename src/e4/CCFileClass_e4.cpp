@@ -114,7 +114,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
   int v10; // eax
   int v11; // eax
 
-  v1 = g_abs_B077B0; /*0x69e324*/
+  v1 = (unsigned int *)(g_abs_B077B0);
   if ( g_abs_B077B0 ) /*0x69e330*/
   {
     do /*0x69e3a1*/
@@ -155,11 +155,11 @@ void CCFileClass::ProcessStream(unsigned int a1)
   {
     if ( *(unsigned short *)g_abs_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-      v7 = (char *)g_abs_B077B4 + 16; /*0x69e3b6*/
+      v7 = (unsigned char *)((char *)g_abs_B077B4 + 16);
       if ( *((unsigned char *)g_abs_B077B4 + 16) ) /*0x69e3b3*/
       {
-        v8 = (void *)*((unsigned int *)g_abs_B077B4 + 3); /*0x69e3bd*/
-        v9 = (char *)g_abs_B077B4 + 12; /*0x69e3c0*/
+        v8 = (unsigned int *)((void *)*((unsigned int *)g_abs_B077B4 + 3));
+        v9 = (unsigned int *)((char *)g_abs_B077B4 + 12);
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/

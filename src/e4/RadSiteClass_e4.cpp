@@ -20,7 +20,7 @@ RadSiteClass::RadSiteClass()
 {
     unsigned int v2 = 0;  /* G37 hoist */
 
-  #72 *v2; // edx
+  void *v2; // edx
   int v3; // eax
 
   ((AbstractClass *)((int)this))->Constructor(); /*0x65b1e3*/
@@ -47,13 +47,13 @@ RadSiteClass::RadSiteClass()
   *((unsigned int *)this + 3) = &vt_RadSiteClass; /*0x65b23c*/
   if ( g_abs_B04BE0 < g_abs_B04BD8 /*0x65b277*/
     || (g_abs_B04BDD || !g_abs_B04BD8)
-    && g_abs_B04BE4 > 0
+    && g_abs_B04BE4 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B04BD0 + 8))(
          &g_abs_B04BD0,
-         g_abs_B04BD8 + g_abs_B04BE4,
+         (unsigned int)(g_abs_B04BD8)+ g_abs_B04BE4,
          0) )
   {
-    v3 = g_abs_B04BE0++; /*0x65b284*/
+    v3 = (int)((unsigned int)(g_abs_B04BE0++));
     *((unsigned int *)g_abs_B04BD4 + v3) = this; /*0x65b293*/
   }
   return this; /*0x65b298*/
@@ -88,7 +88,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
   AbstractClass *Prefix_0; // edi
   IUnknown *v3; // edx
 
-  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x65b3e1*/
+  Prefix_0 = (AbstractClass *)((AbstractClass *)(aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x65b3e1*/
   if ( (int)Prefix_0 >= 0 ) /*0x65b3e5*/
   {
     if ( aP0 ) /*0x65b3e9*/
@@ -101,8 +101,8 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       aP0[1].nextArrayIndex = 0; /*0x65b40f*/
       *(unsigned int *)aP0->__pad_0 = &vt_RadSiteClass; /*0x65b416*/
       *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_RadSiteClass; /*0x65b41c*/
-      *(unsigned int *)&aP0->__pad_0[8] = &vt_RadSiteClass; /*0x65b423*/
-      *(unsigned int *)&aP0->__pad_0[12] = &vt_RadSiteClass; /*0x65b42a*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_RadSiteClass; /*0x65b423*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_RadSiteClass; /*0x65b42a*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x65b43a*/
   }
@@ -116,7 +116,7 @@ namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x65b464*/
+  return ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x65b464*/
 
 }
 } // namespace gamemd

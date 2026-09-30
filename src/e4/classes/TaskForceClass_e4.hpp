@@ -80,7 +80,7 @@ struct TaskForceClass {
     CCINIClass *  LoadFromINI(char * a1, int a2);  // 0x6E8220
     TaskForceClass *  ExecuteAction(void ** Block, char a2);  // 0x6E87F0
     int  LoadTaskForce(void * aP0, int aP1);  // 0x6E86A0
-    char  GetUnitCount(unsigned __int8 *** aP1);  // 0x6E8420
+    char  GetUnitCount(uint8_t *** aP1);  // 0x6E8420
     char  GetUnitType(char * a2);  // 0x6E8510
     int  LoadTask(int * a2);  // 0x6E8750
     ObjectClass * Check();  // 0x4C4F90

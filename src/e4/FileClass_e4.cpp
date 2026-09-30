@@ -143,7 +143,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
     else
     {
       aP1 = (gamemd::BufferIOFileClass *)((int)((BufferIOFileClass *)((char *)aP1 + NumberOfBytesRead)));
-      v7 = (int)((AbstractClass *)((char *)v7 - NumberOfBytesRead));
+      v7 = (gamemd::AbstractClass *)((int)((AbstractClass *)((char *)v7 - NumberOfBytesRead)));
       v4 += NumberOfBytesRead; /*0x65cd6f*/
       nNumberOfBytesToRead = v4; /*0x65cd78*/
       if ( byte_B04BEC ) /*0x65cd7c*/

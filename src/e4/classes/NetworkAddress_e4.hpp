@@ -11,7 +11,7 @@ struct NetworkAddress {
     unsigned int u32_4;  // 0x4
     unsigned short pad_06;  // 0x6
 // --- flat members (END) ---
-    unsigned int * Assign(unsigned int * a1, void * aP2, __int16 a4);
+    unsigned int * Assign(unsigned int * a1, void * aP2, int16_t a4);
 };
 
 } // namespace gamemd

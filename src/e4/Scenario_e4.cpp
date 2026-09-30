@@ -65,7 +65,7 @@ int Scenario::ReadTeams()
   char *v25; // eax
   bool v26; // bl
   char *v27; // eax
-  int v28; // eax
+  void * v28;
   TechnoClass *v29; // esi
   void *v30; // eax
   int v31; // eax
@@ -86,7 +86,7 @@ int Scenario::ReadTeams()
   unsigned int *v46; // ebp
   CCINIClass *v47; // ebx
   AbstractClass *v48; // edi
-  int v49; // eax
+  void * v49;
   BuildingClass *v50; // eax
   int v51; // edx
   unsigned int *Value; // eax
@@ -212,10 +212,10 @@ int Scenario::ReadTeams()
                                        (AbstractClass *)v65);
                 if ( v29 ) /*0x44fb2b*/
                 {
-                  v30 = (void *)ObjectTypeClass::FindByName(v16); /*0x44fb33*/
+                  v30 = (void *)((ObjectTypeClass *)(v16))->FindByName(); /*0x44fb33*/
                   if ( v30 ) /*0x44fb3a*/
                   {
-                    v31 = TeamClass::FindOrCreate(v30); /*0x44fb3e*/
+                    v31 = ((TeamClass *)(v30))->FindOrCreate(); /*0x44fb3e*/
                     if ( v31 ) /*0x44fb45*/
                       ObjectClass::SetReference(v29, v31); /*0x44fb4a*/
                   }
@@ -278,7 +278,7 @@ int Scenario::ReadTeams()
                           IDA_LOBYTE(v39) = *(unsigned char *)(v43 + 3278); /*0x44fcec*/
                           HouseClass::UpdateProduction((int)v29->focus, v44, v39, 0); /*0x44fcfc*/
                         }
-                        if ( (uint8_t)House::IsHumanPlayer((#375 *)v29->focus) ) /*0x44fd07*/
+                        if ( (uint8_t)House::IsHumanPlayer((void *)v29->focus) ) /*0x44fd07*/
                           VoxClass::FindAndPlay(aEvaBuildingonl, -1, -1); /*0x44fd1a*/
                       }
                     }
@@ -298,10 +298,10 @@ int Scenario::ReadTeams()
                       {
                         if ( *v46 != -1 ) /*0x44fd66*/
                         {
-                          v48 = (AbstractClass *)*((unsigned int *)g_TriggerTypeCount + *v46); /*0x44fd73*/
-                          v49 = RA2_OPNEW(0x720u); /*0x44fd76*/
+                          v48 = (unsigned int)((AbstractClass *)*((unsigned int *)g_TriggerTypeCount + *v46));
+                          v49 = (int)((unsigned int)(RA2_OPNEW(0x720u)));
                           if ( v49 ) /*0x44fd80*/
-                            v50 = BuildingClass::Construct(v49, v48, (AbstractClass *)v65); /*0x44fd8a*/
+                            v50 = ((BuildingClass *)(v49))->Construct(v48, (AbstractClass *)v65); /*0x44fd8a*/
                           else
                             v50 = 0; /*0x44fd91*/
                           v75[0] = v64; /*0x44fd9b*/
@@ -319,12 +319,12 @@ int Scenario::ReadTeams()
                       && (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v29->__pad_0 + 1020))(v29)
                       && v29[1].customSound_controller[4] )
                     {
-                      Value = ProgressTimer::GetValue(&v29->target_laser_timer[2], (IUnknown *)&v76); /*0x44fdf6*/
+                      Value = (unsigned int *)(ProgressTimer::GetValue(&v29->target_laser_timer[2], (IUnknown *)&v76));
                       v53 = v29[1].customSound_controller[4]; /*0x44fdfd*/
                       v54 = ((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F; /*0x44fe09*/
                       if ( v53 ) /*0x44fe0e*/
                       {
-                        *(unsigned int *)(v53 + 172) = dword_7F4890[v54]; /*0x44fe17*/
+                        *(unsigned int *)(v53 + 172) = ((unsigned int *)(dword_7F4890))[v54]; /*0x44fe17*/
                         *(unsigned int *)(v53 + 196) = 0; /*0x44fe1d*/
                       }
                     }
@@ -339,8 +339,8 @@ int Scenario::ReadTeams()
           }
         }
       }
-      result = v71; /*0x44fe36*/
-      v3 = (CCINIClass *)++v68; /*0x44fe3a*/
+      result = (gamemd::CCINIClass *)(v71);
+      v3 = (gamemd::CCINIClass *)((CCINIClass *)++v68);
       if ( v68 >= v71 ) /*0x44fe41*/
         break; /*0x44fe41*/
       v1 = this; /*0x44f866*/
@@ -390,7 +390,7 @@ namespace gamemd {
 int Scenario::ProcessSidebarUnits()
 {
 
-  int result; // eax
+  unsigned char * result;
   unsigned int *v3; // esi
   int v4; // ebx
   int v5; // esi
@@ -402,7 +402,7 @@ int Scenario::ProcessSidebarUnits()
   int i; // [esp+Ch] [ebp-8h]
   char v12[4]; // [esp+10h] [ebp-4h] BYREF
 
-  result = g_abs_A8EC88 - 1; /*0x50d619*/
+  result = (int)(g_abs_A8EC88 - 1);
   for ( i = g_abs_A8EC88 - 1; i >= 0; --i ) /*0x50d622*/
   {
     v3 = (unsigned int *)*((unsigned int *)g_abs_A8EC7C + result); /*0x50d631*/

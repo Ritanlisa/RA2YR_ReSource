@@ -242,7 +242,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
           v21 = GetDlgItem(hDlg, 1325); /*0x4e2212*/
           if ( v21 ) /*0x4e2216*/
           {
-                        IsSoundEnabled = Audio::IsSoundEnabled();
+                        IsSoundEnabled = this->Audio::IsSoundEnabled();
             EnableWindow(v21, IsSoundEnabled); /*0x4e2223*/
             return 0; /*0x4e222f*/
           }
@@ -1432,7 +1432,7 @@ void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
     }
     else
     {
-      result = FillComboBoxAllianceSlots(v4, v13); /*0x4e56db*/
+      result = (int)(FillComboBoxAllianceSlots(v4, v13));
     }
   }
   return result; /*0x4e56f3*/

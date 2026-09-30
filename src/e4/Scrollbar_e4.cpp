@@ -7,6 +7,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ScrollClass_e4.hpp"
 
 // 0x6205D0
 namespace gamemd {

@@ -153,7 +153,7 @@ AbstractClass * * DSurface::CreatePrimary()
   void * v2;
   void * v3;
   void *v4; // edi
-  int v5; // ebp
+  int v5;
   unsigned int *v6; // esi
   int v7; // eax
   int v8; // eax
@@ -198,29 +198,29 @@ AbstractClass * * DSurface::CreatePrimary()
     *(unsigned int *)((unsigned int)(v2)+ 28) = 0; /*0x4ba811*/
     *(unsigned int *)v2 = &DSurface_Vtable; /*0x4ba814*/
     v4 = (void *)RA2_OPNEW(108); /*0x4ba822*/
-    *(unsigned int *)(v3 + 32) = v4; /*0x4ba82b*/
+    *(unsigned int *)((unsigned int)(v3)+ 32) = v4; /*0x4ba82b*/
     v5 = v3; /*0x4ba82e*/
     memset(v4, 0, 0x6Cu); /*0x4ba830*/
-    **(unsigned int **)(v3 + 32) = 108; /*0x4ba835*/
+    **(unsigned int **)((unsigned int)(v3)+ 32) = 108; /*0x4ba835*/
   }
   else
   {
     v5 = 0; /*0x4ba83d*/
   }
-  *(unsigned int *)(*(unsigned int *)(v5 + 32) + 4) = 1; /*0x4ba84d*/
-  *(unsigned int *)(*(unsigned int *)(v5 + 32) + 104) = 512; /*0x4ba85b*/
+  *(unsigned int *)(*(unsigned int *)((unsigned int)(v5)+ 32) + 4) = 1; /*0x4ba84d*/
+  *(unsigned int *)(*(unsigned int *)((unsigned int)(v5)+ 32) + 104) = 512; /*0x4ba85b*/
   if ( this ) /*0x4ba862*/
   {
-    *(unsigned int *)(*(unsigned int *)(v5 + 32) + 104) |= 0x18u; /*0x4ba86d*/
-    *(unsigned int *)(*(unsigned int *)(v5 + 32) + 4) |= 0x20u; /*0x4ba879*/
-    *(unsigned int *)(*(unsigned int *)(v5 + 32) + 20) = this != 0; /*0x4ba87f*/
+    *(unsigned int *)(*(unsigned int *)((unsigned int)(v5)+ 32) + 104) |= 0x18u; /*0x4ba86d*/
+    *(unsigned int *)(*(unsigned int *)((unsigned int)(v5)+ 32) + 4) |= 0x20u; /*0x4ba879*/
+    *(unsigned int *)(*(unsigned int *)((unsigned int)(v5)+ 32) + 20) = this != 0; /*0x4ba87f*/
   }
   this->Debug::Log(); /*0x4ba887*/
-  v6 = (unsigned int *)(v5 + 28); /*0x4ba897*/
+  v6 = (unsigned int *)((unsigned int)(v5)+ 28); /*0x4ba897*/
   v7 = (*(int (**)(unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)g_abs_87F7E8[33323] + 24))( /*0x4ba8a1*/
          g_abs_87F7E8[33323],
-         *(unsigned int *)(v5 + 32),
-         v5 + 28,
+         *(unsigned int *)((unsigned int)(v5)+ 32),
+         (unsigned int)(v5)+ 28,
          0);
   if ( !v7 ) /*0x4ba8a8*/
   {
@@ -239,19 +239,19 @@ AbstractClass * * DSurface::CreatePrimary()
         *this = BackBuffer; /*0x4ba8ff*/
       }
     }
-    memset(*(void **)(v5 + 32), 0, 0x6Cu); /*0x4ba90b*/
-    **(unsigned int **)(v5 + 32) = 108; /*0x4ba910*/
-    if ( (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)*v6 + 88))(*v6, *(unsigned int *)(v5 + 32)) ) /*0x4ba91f*/
+    memset(*(void **)((unsigned int)(v5)+ 32), 0, 0x6Cu); /*0x4ba90b*/
+    **(unsigned int **)((unsigned int)(v5)+ 32) = 108; /*0x4ba910*/
+    if ( (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)*v6 + 88))(*v6, *(unsigned int *)((unsigned int)(v5)+ 32)) ) /*0x4ba91f*/
       this->Debug::Log(); /*0x4ba92b*/
-    v11 = *(unsigned int **)(v5 + 32); /*0x4ba933*/
-    *(unsigned int *)(v5 + 16) = (unsigned int)(v11[21] + 7) >> 3; /*0x4ba948*/
+    v11 = *(unsigned int **)((unsigned int)(v5)+ 32); /*0x4ba933*/
+    *(unsigned int *)((unsigned int)(v5)+ 16) = (unsigned int)(v11[21] + 7) >> 3; /*0x4ba948*/
     v12 = (v11[26] & 0x4000) != 0; /*0x4ba951*/
-    *(unsigned char *)(v5 + 24) = 1; /*0x4ba954*/
-    *(unsigned char *)(v5 + 25) = v12; /*0x4ba958*/
-    *(unsigned int *)(v5 + 4) = v11[3]; /*0x4ba95e*/
+    *(unsigned char *)((unsigned int)(v5)+ 24) = 1; /*0x4ba954*/
+    *(unsigned char *)((unsigned int)(v5)+ 25) = v12; /*0x4ba958*/
+    *(unsigned int *)((unsigned int)(v5)+ 4) = v11[3]; /*0x4ba95e*/
     v13 = v11[2]; /*0x4ba961*/
     v14 = *v6; /*0x4ba964*/
-    *(unsigned int *)(v5 + 8) = v13; /*0x4ba966*/
+    *(unsigned int *)((unsigned int)(v5)+ 8) = v13; /*0x4ba966*/
     g_abs_87F7E8[33325] = v14; /*0x4ba969*/
     if ( !(*(int (**)(unsigned int, unsigned int, unsigned int *, unsigned int))(*(unsigned int *)g_abs_87F7E8[33323] + 16))( /*0x4ba976*/
             g_abs_87F7E8[33323],
@@ -264,7 +264,7 @@ AbstractClass * * DSurface::CreatePrimary()
       if ( !(*(int (**)(unsigned int, unsigned int, int))(v15 + 32))(g_abs_87F7E8[34169], 0, v16) ) /*0x4ba994*/
         (*(void (**)(unsigned int, unsigned int))(*(unsigned int *)*v6 + 112))(*v6, g_abs_87F7E8[34169]); /*0x4ba9a7*/
     }
-    qmemcpy(&g_abs_87F7E8[33880], (const void *)(*(unsigned int *)(v5 + 32) + 72), 0x20u); /*0x4ba9ba*/
+    qmemcpy(&g_abs_87F7E8[33880], (const void *)(*(unsigned (unsigned int)(int)*)((unsigned int)(v5)+ 32) + 72), 0x20u); /*0x4ba9ba*/
     if ( (*(int (**)(int))(*(unsigned int *)v5 + 112))(v5) != 2 ) /*0x4ba9c7*/
       goto LABEL_60; /*0x4ba9c7*/
     v17 = g_abs_87F7E8[33884]; /*0x4ba9cd*/
@@ -357,7 +357,7 @@ AbstractClass * * DSurface::CreatePrimary()
         if ( v22 == 2 && g_abs_87F7E8[34170] == 11 && g_abs_87F7E8[34171] == 3 ) /*0x4babd2*/
         {
           g_DDraw_PixelFormat = 2; /*0x4babd9*/
-          Debug::Log(); /*0x4babdf*/
+          this->this->this->Debug::Log(); /*0x4babdf*/
           return (unsigned int *)v5; /*0x4babf0*/
         }
         goto LABEL_60; /*0x4babd2*/
@@ -367,7 +367,7 @@ AbstractClass * * DSurface::CreatePrimary()
         if ( g_abs_87F7E8[34171] == 3 ) /*0x4bab72*/
         {
           g_DDraw_PixelFormat = 0; /*0x4bab7d*/
-          Debug::Log(); /*0x4bab87*/
+          this->this->this->Debug::Log(); /*0x4bab87*/
           return (unsigned int *)v5; /*0x4bab98*/
         }
         goto LABEL_60; /*0x4bab72*/
@@ -375,7 +375,7 @@ AbstractClass * * DSurface::CreatePrimary()
       if ( g_abs_87F7E8[34170] != 11 || g_abs_87F7E8[34171] != 2 ) /*0x4bac05*/
       {
 LABEL_60:
-        Debug::Log(); /*0x4bac11*/
+        this->this->this->Debug::Log(); /*0x4bac11*/
         return (unsigned int *)v5; /*0x4bac27*/
       }
     }
@@ -391,7 +391,7 @@ LABEL_60:
     goto LABEL_60; /*0x4bac07*/
   }
   DDraw::LogError(v7, 1); /*0x4bac2f*/
-  Debug::Log(); /*0x4bac3a*/
+  this->this->this->Debug::Log(); /*0x4bac3a*/
   if ( v5 ) /*0x4bac44*/
     (**(void (***)(int, int))v5)(v5, 1); /*0x4bac4d*/
   return 0; /*0x4bab91*/
@@ -418,7 +418,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
   *this = &DSurface_Vtable; /*0x4bac86*/
   if ( a2 ) /*0x4bac8c*/
   {
-    v3 = RA2_OPNEW(0x6Cu); /*0x4bac96*/
+    v3 = (unsigned int)(RA2_OPNEW(0x6Cu));
     *((unsigned int *)this + 8) = v3; /*0x4bac9f*/
     memset(v3, 0, 0x6Cu); /*0x4baca2*/
     *(unsigned int *)*((unsigned int *)this + 8) = 108; /*0x4bacaa*/
@@ -431,7 +431,7 @@ unsigned int * DSurface::CreateBackBuffer(int a2)
       *((unsigned int *)this + 2) = v4[2]; /*0x4bace6*/
     }
   }
-  return this; /*0x4baceb*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd
@@ -466,7 +466,7 @@ int DSurface::RestoreIfLost()
     v4 = *((char *)this + 3); /*0x4bb049*/
     if ( v4 > 0 ) /*0x4bb04e*/
     {
-      v5 = *this; /*0x4bb050*/
+      v5 = (int)(*this);
       *((char *)this + 3) = 0; /*0x4bb058*/
       (*(void (**)(int *, unsigned int, unsigned int))(v5 + 92))(this, 0, 0); /*0x4bb05b*/
       ++*((char *)this + 3); /*0x4bb064*/

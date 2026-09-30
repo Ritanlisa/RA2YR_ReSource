@@ -62,7 +62,7 @@ int CommandClass::BuildBar()
   int v39; // [esp+10h] [ebp-14h]
   int v40; // [esp+14h] [ebp-10h]
   int v41; // [esp+18h] [ebp-Ch]
-  char *v42; // [esp+1Ch] [ebp-8h]
+  unsigned int v42;
 
   v2 = (int *)&g_abs_B0C1C0; /*0x6d1207*/
   do /*0x6d1224*/

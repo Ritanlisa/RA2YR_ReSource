@@ -197,7 +197,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
       dword_A8B8BC = 0; /*0x652347*/
       byte_A8E9A0 = 0; /*0x652351*/
       if ( dword_B04874 ) /*0x652358*/
-                Mouse::HideWindow();
+                this->Mouse::HideWindow();
       if ( ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x652366*/
       {
         byte_B0BD78 = 1; /*0x65236a*/
@@ -1314,7 +1314,7 @@ WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
     if ( !wcslen(v2) ) /*0x6ca40f*/
       return 1; /*0x6ca48f*/
   }
-    this->Debug::Log();
+    ((Debug *)0)->Log();
   return 0; /*0x6ca440*/
 }
 }
@@ -1494,7 +1494,7 @@ AbstractClass * * sub_63B0A0()
   {
     v6 = *(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * i); /*0x63b12d*/
     if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(v6 + 540), (void *)dword_A83D4C) ) /*0x63b136*/
-      ScriptAction::ProcessIdleAction((ScriptAction *)v6); /*0x63b141*/
+      ((ScriptAction *)((ScriptAction *)v6))->ProcessIdleAction(); /*0x63b141*/
   }
 }
 }

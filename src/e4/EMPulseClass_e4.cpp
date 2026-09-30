@@ -35,13 +35,13 @@ EMPulseClass * EMPulseClass::CopyTo( void * a2, char a3)
   AbstractClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)this->__pad_0 = &vt_EMPulseClass; /*0x4c5ac4*/
-  *(unsigned int *)&this->__pad_0[4] = &vt_EMPulseClass; /*0x4c5aca*/
-  *(unsigned int *)&this->__pad_0[8] = &vt_EMPulseClass; /*0x4c5ad1*/
-  *(unsigned int *)&this->__pad_0[12] = &vt_EMPulseClass; /*0x4c5ad8*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_0))[4] = &vt_EMPulseClass; /*0x4c5aca*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_0))[8] = &vt_EMPulseClass; /*0x4c5ad1*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_0))[12] = &vt_EMPulseClass; /*0x4c5ad8*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius((int)this); /*0x4c5ae8*/
   IDA_LOBYTE(this) = 1; /*0x4c5aed*/
-  AbstractClass::AnnounceExpiredPointer(this, this); /*0x4c5af1*/
+  ((AbstractClass *)(this))->AnnounceExpiredPointer(this); /*0x4c5af1*/
   v6 = this; /*0x4c5b06*/
   v4 = (*(int (**)(char *, AbstractClass **))(*(unsigned int *)&stru_89E138.__pad_566C[204] + 16))( /*0x4c5b0a*/
          &stru_89E138.__pad_566C[204],
@@ -58,7 +58,7 @@ EMPulseClass * EMPulseClass::CopyTo( void * a2, char a3)
     }
   }
   AbstractClass::DTOR(this); /*0x4c5b41*/
-  if ( (this & 1) != 0 ) /*0x4c5b4b*/
+  if ( ((unsigned int)(this)& 1) != 0 ) /*0x4c5b4b*/
     RA2_OPDEL(this); /*0x4c5b4e*/
   return (EMPulseClass *)this; /*0x4c5b58*/
 

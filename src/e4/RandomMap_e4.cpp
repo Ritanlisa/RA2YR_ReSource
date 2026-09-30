@@ -4003,7 +4003,7 @@ AbstractClass * * RandomMap::SetupTheater(char a2)
   int v62; // eax
   int v63; // eax
   wchar_t *StringCSF; // eax
-  #376 *v66; // [esp+18h] [ebp-B0h]
+  void *v66; // [esp+18h] [ebp-B0h]
   bool v67; // [esp+27h] [ebp-A1h]
   float v68; // [esp+28h] [ebp-A0h]
   int v69; // [esp+28h] [ebp-A0h]

@@ -17,11 +17,11 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   int v4; // edx
   void **v5; // [esp+4h] [ebp-Ch] BYREF
   char *v6; // [esp+8h] [ebp-8h]
-  int v7; // [esp+Ch] [ebp-4h]
+  void ** v7;
 
   v6 = (char *)((void **)((unsigned char *)this + 24));
-  v7 = (void **)(0);
-  v5 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x765397*/
+  v7 = (void **)((int)((void **)(0)));
+  v5 = (void **)(&vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict);
   if ( ((Campaign_WorldDominationTour_24 *)(&v5))->AddRef() ) /*0x76539f*/
   {
     do /*0x7653db*/
@@ -34,8 +34,8 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   }
   v4 = (unsigned int)(v7);
   a2[1] = (unsigned int)(v6);
-  a2[2] = v4; /*0x7653f2*/
-  *a2 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x7653f5*/
+  a2[2] = (unsigned int)(v4);
+  *a2 = (unsigned int)(&vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict);
   return a2; /*0x7653ee*/
 
 }

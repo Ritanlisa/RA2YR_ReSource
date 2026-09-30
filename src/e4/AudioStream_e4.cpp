@@ -16,6 +16,7 @@
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x401910
 namespace gamemd {
@@ -449,7 +450,7 @@ int AudioStream::ReadSamples(const void * a2)
 
   unsigned int *v2; // ebx
   int v3; // edx
-  unsigned int *v5; // ecx
+  unsigned int v5;
   unsigned short *v6; // ebx
   unsigned int v7; // edi
   int v8; // ebp
@@ -498,7 +499,7 @@ int AudioStream::ReadSamples(const void * a2)
       {
         if ( *v2 == 1 ) /*0x4a347f*/
         {
-          v5 = g_abs_887644; /*0x4a3485*/
+          v5 = (unsigned int *)(g_abs_887644);
           if ( g_abs_887644 ) /*0x4a348d*/
           {
             if ( g_abs_87E8A4 ) /*0x4a3499*/
@@ -542,7 +543,7 @@ int AudioStream::ReadSamples(const void * a2)
                   }
                   else
                   {
-                    v5 = g_abs_887644; /*0x4a3540*/
+                    v5 = (unsigned int *)(g_abs_887644);
                   }
                   ++v7; /*0x4a3539*/
                 }

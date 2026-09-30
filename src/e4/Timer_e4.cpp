@@ -27,7 +27,7 @@ int Timer::StartDouble(double a2)
 {
 
   int v3; // eax
-  wchar_t *v4; // ecx
+  unsigned int v4;
   int v6; // [esp+8h] [ebp-Ch]
 
   if ( *((unsigned char *)this + 24) || (IDA_LOBYTE(v3) = *((unsigned char *)this + 25), (unsigned char)v3) ) /*0x4a5252*/
@@ -90,7 +90,7 @@ DWORD * Timer::PumpMessages()
   *(this + 197) = v2; /*0x54f74b*/
   if ( (v2 + 1) % 256 == v2 ) /*0x54f766*/
   {
-    result = *(this + 198); /*0x54f77b*/
+    result = (int)(*(this + 198));
     *(this + 197) = result; /*0x54f781*/
   }
   else

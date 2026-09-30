@@ -501,7 +501,7 @@ struct ScenarioClass {
     ScenarioClass * * CopyStartPositions();
     void* * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     char ClearFlag();
-    char MissionStubReturnZero2(void * aP0);
+    char MissionStubReturnZero2(MPCooperative * aP0);
     char MissionStubReturnZero4(int a1);
     char StubReturnFalse();
     char StubReturnFalse10();
@@ -543,11 +543,12 @@ struct ScenarioClass {
     static double GetLocalStateByID(...);  // C2597 interim stub
     static double Get_Waypoint_Location(...);  // C2597 interim stub
      double Load(...);  // C2597 interim stub
-    static double SaveLoad_Prefix(...);  // C2597 interim stub
+     double SaveLoad_Prefix(...);  // C2597 interim stub
     static double SaveLoad_Prefix_0(...);  // C2597 interim stub
     static double ShowMissionBriefing(...);  // C2597 interim stub
     static double UpdateLighting(...);  // C2597 interim stub
     static double CheckExists(...);  // C2597 interim stub
+    static double InitTimer(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

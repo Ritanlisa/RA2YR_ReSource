@@ -110,7 +110,7 @@ LABEL_11:
     if ( (HouseClass_Player.__pad_5568[23364] & 1) == 0 ) /*0x4f12be*/
     {
       HouseClass_Player.__pad_5568[23364] |= 1u; /*0x4f12ca*/
-      *(unsigned int *)&HouseClass_Player.__pad_5568[23420] = Timer::GetTicks(); /*0x4f12da*/
+      *(unsigned int *)&HouseClass_Player.__pad_5568[23420] = this->Timer::GetTicks(); /*0x4f12da*/
       *(unsigned int *)&HouseClass_Player.__pad_5568[23428] = 0; /*0x4f12df*/
       atexit(nullsub_14); /*0x4f12e9*/
     }
@@ -236,7 +236,7 @@ LABEL_39:
             *(unsigned int *)&HouseClass_Player.__pad_5568[23436] = v26[0]; /*0x4f15a4*/
             *(unsigned int *)&HouseClass_Player.__pad_5568[23440] = v26[1]; /*0x4f15b0*/
             *(unsigned int *)&HouseClass_Player.__pad_5568[23444] = v26[2]; /*0x4f15b6*/
-            v21 = EventClass::Add2(v33, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0x24u, v19); /*0x4f15c6*/
+            v21 = ((EventClass *)(v33))->Add2(*(AnimClass **)(HouseClass_Player.field_0 + 48), 0x24u, v19); /*0x4f15c6*/
             OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v21); /*0x4f15d1*/
             this->Debug::Log(); /*0x4f15dc*/
           }
@@ -254,7 +254,7 @@ LABEL_39:
             *(unsigned int *)&HouseClass_Player.__pad_5568[23420] = v27[0]; /*0x4f164e*/
             *(unsigned int *)&HouseClass_Player.__pad_5568[23424] = v27[1]; /*0x4f1658*/
             *(unsigned int *)&HouseClass_Player.__pad_5568[23428] = v27[2]; /*0x4f165e*/
-            v24 = EventClass::Add2(v32, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0xDu, (IUnknown *)v22); /*0x4f166f*/
+            v24 = ((EventClass *)(v32))->Add2(*(AnimClass **)(HouseClass_Player.field_0 + 48), 0xDu, (IUnknown *)v22); /*0x4f166f*/
             OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v24); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
@@ -381,7 +381,7 @@ char Options::Screen_Dialog()
     {
       do /*0x55fcca*/
       {
-        qmemcpy(&dword_A8ED54[47175], &g_abs_87F7E8[539870], 0xB8u); /*0x55fcb1*/
+        qmemcpy(&((unsigned int *)(dword_A8ED54))[47175], &g_abs_87F7E8[539870], 0xB8u); /*0x55fcb1*/
         dwNewLong = -1; /*0x55fcbd*/
         Dialog = (void *)CreateDialog(0); /*0x55fcc1*/
         v1 = Dialog; /*0x55fcc6*/
@@ -391,7 +391,7 @@ char Options::Screen_Dialog()
       Dialog::Show(v1); /*0x55fcd8*/
       while ( dwNewLong < 0 ) /*0x55fce3*/
       {
-        if ( Dialog::PumpMessages() == 1 ) /*0x55fcec*/
+        if ( this->Dialog::PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
         IDA_LOBYTE(v2) = 0; /*0x55fcee*/
         ScreenSaver::Process(v2); /*0x55fcf0*/
@@ -410,7 +410,7 @@ char Options::Screen_Dialog()
         Dialog::Show(v4); /*0x55fd5d*/
         while ( v9 < 0 ) /*0x55fd68*/
         {
-          if ( Dialog::PumpMessages() == 1 ) /*0x55fd71*/
+          if ( this->Dialog::PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
           IDA_LOBYTE(v5) = 0; /*0x55fd73*/
           ScreenSaver::Process(v5); /*0x55fd75*/
@@ -441,14 +441,14 @@ int Options::DeleteAndZero()
   v2 = 0; /*0x6244e4*/
   if ( *this <= 0 ) /*0x6244e9*/
   {
-    *this = 0; /*0x62451b*/
+    *(unsigned int *)this = 0; /*0x62451b*/
   }
   else
   {
     v3 = 0; /*0x6244ed*/
     do /*0x62450e*/
     {
-      v4 = *((char *)this + 2) + v3; /*0x6244f4*/
+      v4 = (int)(*((char *)this + 2) + v3);
       DeleteAndZero::Alt((void **)(v4 + 8)); /*0x6244f9*/
       DeleteAndZero::Alt((void **)(v4 + 4)); /*0x624501*/
       result = *this; /*0x624506*/
@@ -456,7 +456,7 @@ int Options::DeleteAndZero()
       v3 += 24; /*0x624509*/
     }
     while ( v2 < *this ); /*0x62450e*/
-    *this = 0; /*0x624511*/
+    *(unsigned int *)this = 0; /*0x624511*/
   }
   return result; /*0x624518*/
 
@@ -474,7 +474,7 @@ void Options::EnsureCapacity()
   const void *v7; // esi
   int v8; // [esp+8h] [ebp-4h]
 
-  v2 = *this; /*0x6248a5*/
+  v2 = (int)(*this);
   v3 = *((char *)this + 1); /*0x6248a8*/
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
@@ -505,7 +505,7 @@ int Options::GrowBuffer()
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *this; /*0x6253b4*/
+  v2 = (int)(*this);
   if ( *this < *((char *)this + 1) ) /*0x6253bb*/
     return 0; /*0x6253bd*/
   v4 = 2 * v2; /*0x6253c4*/

@@ -74,7 +74,7 @@ LABEL_5:
     if ( ++v3 >= *((unsigned int *)this + 25) ) /*0x5d0200*/
       goto LABEL_6; /*0x5d0200*/
   }
-  String::AssignFromPtr((char **)&a2, *(const char ***)(*((unsigned int *)this + 22) + 4 * v3)); /*0x5d01d1*/
+  ((String *)((char **)&a2))->AssignFromPtr(*(const char ***)(*((unsigned int *)this + 22) + 4 * v3)); /*0x5d01d1*/
   ((String *)(&a2))->ToLower(); /*0x5d01da*/
   if ( !((String *)((const char **)&v6))->Compare(&a2) ) /*0x5d01e8*/
   {
@@ -195,7 +195,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
       return 0; /*0x5d2618*/
     v7 = *((unsigned int *)this + 17); /*0x5d261a*/
     if ( v7 <= 0 /*0x5d262a*/
-      || !(*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 12) + 8))((char *)this + 48, v6 + v7, 0) )
+      || !(*(uint8_t ((int)(**))(int, int, unsigned int))(*((unsigned int *)this + 12) + 8))((char *)this + 48, v6 + v7, 0) )
     {
       return 0; /*0x5d264a*/
     }
@@ -218,7 +218,7 @@ void* E4Recv_5D2650::sub_5D2650(void * a2, int a3)
 
   if ( a2 ) /*0x5d265c*/
   {
-    if ( Audio::IsSoundEnabled() ) /*0x5d265e*/
+    if ( this->Audio::IsSoundEnabled() ) /*0x5d265e*/
     {
       v4 = 0; /*0x5d266a*/
       if ( (int)*((unsigned int *)this + 16) > 0 ) /*0x5d266e*/
@@ -292,7 +292,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         DisableIME(); /*0x5d455d*/
         if ( *(unsigned char *)(aP0 + 25) ) /*0x5d4562*/
         {
-          v8 = *(void (****)(unsigned int, int))(aP0 + 36); /*0x5d4569*/
+          v8 = *(void ((unsigned int)(****))(unsigned int, int))(aP0 + 36); /*0x5d4569*/
           *(unsigned char *)(aP0 + 25) = 0; /*0x5d456c*/
           if ( v8 ) /*0x5d4572*/
             (**v8)(v8, 1); /*0x5d4578*/
@@ -403,12 +403,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
           if ( *(unsigned char *)(aP0 + 24) ) /*0x5d4725*/
           {
             v20 = *(unsigned int *)(aP0 + 688) /*0x5d475f*/
-                - WideString::WordWrap(
-                    (wchar_t *)(aP0 + 364),
-                    (wchar_t *)(aP0 + 2 * *(unsigned int *)(aP0 + 692) + 40),
-                    *(unsigned int *)(aP0 + 700),
-                    *(unsigned int *)(aP0 + 704),
-                    1);
+                                - ((WideString *)((wchar_t *)(aP0 + 364)))->WordWrap((wchar_t *)(aP0 + 2 * *(unsigned int *)(aP0 + 692) + 40), *(unsigned int *)(aP0 + 700), (void *)(*(unsigned int *)(aP0 + 704)), 1);
             *(unsigned int *)(aP0 + 688) = v20; /*0x5d4768*/
             *(unsigned short *)(aP0 + 2 * v20 + 40) = v12; /*0x5d476e*/
             v21 = *(unsigned int *)(aP0 + 688) + 1; /*0x5d4779*/
@@ -426,7 +421,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     DisableIME(); /*0x5d47a1*/
     if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d47a6*/
       goto LABEL_77; /*0x5d47a6*/
-    v22 = *(void (****)(unsigned int, int))(aP0 + 36); /*0x5d47b1*/
+    v22 = *(void ((unsigned int)(****))(unsigned int, int))(aP0 + 36); /*0x5d47b1*/
     *(unsigned char *)(aP0 + 25) = 0; /*0x5d47b4*/
     if ( v22 ) /*0x5d47ba*/
       (**v22)(v22, 1); /*0x5d47c0*/
@@ -477,7 +472,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     DisableIME(); /*0x5d4857*/
     if ( !*(unsigned char *)(aP0 + 25) ) /*0x5d485c*/
       goto LABEL_77; /*0x5d485c*/
-    v30 = *(void (****)(unsigned int, int))(aP0 + 36); /*0x5d4863*/
+    v30 = *(void ((unsigned int)(****))(unsigned int, int))(aP0 + 36); /*0x5d4863*/
     *(unsigned char *)(aP0 + 25) = 0; /*0x5d4866*/
     if ( v30 ) /*0x5d486c*/
       (**v30)(v30, 1); /*0x5d4872*/
@@ -512,7 +507,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
   DisableIME(); /*0x5d48e9*/
   if ( *(unsigned char *)(aP0 + 25) ) /*0x5d48ee*/
   {
-    v35 = *(void (****)(unsigned int, int))(aP0 + 36); /*0x5d48f5*/
+    v35 = *(void ((unsigned int)(****))(unsigned int, int))(aP0 + 36); /*0x5d48f5*/
     *(unsigned char *)(aP0 + 25) = 0; /*0x5d48f8*/
     if ( v35 ) /*0x5d48fe*/
       (**v35)(v35, 1); /*0x5d4904*/
@@ -612,14 +607,14 @@ AbstractClass * * E4Recv_5D4F20::sub_5D4F20()
   int v1; // edi
 
   v1 = 0; /*0x5d4f29*/
-  if ( g_abs_ABFCA0 <= 0 ) /*0x5d4f2f*/
+  if ( g_abs_ABFCA0 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x5d4f2f*/
     return 0; /*0x5d4f87*/
   while ( 1 ) /*0x5d4f47*/
   {
     GetWindowTextA(*((HWND *)g_abs_ABFC94 + v1), g_abs_ABFCD0, 99); /*0x5d4f47*/
     if ( !strcmp(g_abs_ABFCD0, this) ) /*0x5d4f56*/
       break; /*0x5d4f56*/
-    if ( ++v1 >= g_abs_ABFCA0 ) /*0x5d4f85*/
+    if ( ++(int)((int))((int))(v1) >= g_abs_ABFCA0 ) /*0x5d4f85*/
       return 0; /*0x5d4f85*/
   }
   return *((unsigned int *)g_abs_ABFC94 + v1); /*0x5d4f87*/

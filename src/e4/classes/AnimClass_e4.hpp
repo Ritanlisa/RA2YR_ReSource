@@ -1199,7 +1199,7 @@ struct AnimClass {
     int ProcessFrame();
     int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
     void Destruct(void * a2);
-    void FreeRenderBuffer(void *a1 = 0);
+    void FreeRenderBuffer();
     void* Render(void * a2, void * aP5);
     static double SetField95(...);  // C2597 interim stub
 };

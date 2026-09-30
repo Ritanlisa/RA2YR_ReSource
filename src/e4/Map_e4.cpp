@@ -292,7 +292,7 @@ int E4Recv_5ADD10::Map_Delete()
   ((MSEngine *)(v8))->Construct(); /*0x5add1e*/
   Map_Delete_5CEDD0(v9); /*0x5add27*/
   unknown_libname_73(v10); /*0x5add33*/
-  v10[1] = Timer::GetTicks(); /*0x5add48*/
+  v10[1] = this->Timer::GetTicks(); /*0x5add48*/
   v10[3] = 0; /*0x5add50*/
   v8[0] = &vt_MapSelect; /*0x5add5b*/
   v3 = ((ScenarioClass *)(v8))->Load((ObjectClass *)this) == 0; /*0x5add71*/
@@ -491,7 +491,7 @@ void sub_55CF10()
   int v3; // eax
   Network *Ticks; // [esp+0h] [ebp-Ch]
 
-    this->Debug::Log();
+    ((Debug *)0)->Log();
   result = (char)dword_A8B238; /*0x55cf1d*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x55cf28*/
   {
@@ -505,19 +505,19 @@ void sub_55CF10()
         {
           NetworkEventQueueClass::WaitForResponse((NetworkEventQueueClass *)&stru_B052C0.__pad_0[16]); /*0x55cf53*/
           v2 = 480; /*0x55cf61*/
-                    Ticks = Timer::GetTicks();
+                    Ticks = this->Timer::GetTicks();
           while ( 1 ) /*0x55cf74*/
           {
             if ( Ticks != (Network *)-1 ) /*0x55cf79*/
             {
-                            v2 = Timer::GetTicks() - Ticks;
+                            v2 = this->Timer::GetTicks() - Ticks;
               if ( v3 >= 480 ) /*0x55cf8a*/
                 break; /*0x55cf8a*/
               v2 = 480 - v3; /*0x55cf8c*/
             }
             if ( !v2 ) /*0x55cf90*/
               break; /*0x55cf90*/
-                        this->Event::Dispatch();
+                        ((Event *)0)->Dispatch();
             if ( Process::WaitForExit((Process *)&stru_B052C0.__pad_0[16], 0xAu, 0) ) /*0x55cfa0*/
               break; /*0x55cfa0*/
             v2 = 480; /*0x55cf70*/
@@ -616,7 +616,7 @@ void sub_5C98A0()
         v16 = ((unsigned int *)(dword_A8D25C))[v4]; /*0x5c9a05*/
         ((unsigned int *)(dword_A8D25C))[v4] = v16 + v16 / 2 + Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, v16 / 2, v16); /*0x5c9a2a*/
       }
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       result = i; /*0x5c9a73*/
       v0 = v18; /*0x5c9a77*/
     }

@@ -9,6 +9,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x7BA8C0
 namespace gamemd {
@@ -475,7 +476,7 @@ XSurface * * XSurface::FillRectEx(unsigned int * a2, int * a3, int a4)
     return 0; /*0x7bb11f*/
   v51 = v16; /*0x7bb125*/
   v53 = (*(int (**)(void *))(*(unsigned int *)v4 + 116))(v4); /*0x7bb132*/
-  v17 = (unsigned int *)CellStruct::Copy(&v46); /*0x7bb139*/
+  v17 = (unsigned int *)((CellStruct *)(&v46))->Copy(); /*0x7bb139*/
   v18 = (*(int (**)(void *, unsigned int, unsigned int))(*(unsigned int *)v4 + 92))(v4, *v17, v17[1]); /*0x7bb154*/
   v48 = (char *)v18; /*0x7bb158*/
   if ( !v18 ) /*0x7bb15b*/
@@ -838,17 +839,17 @@ XSurface * XSurface::BlitPart( void ** a2, XSurface * a3, void ** arg8, void ** 
 {
 
   XSurface *v6; // edi
-  int v8; // ebx
-  int v9; // eax
+  void * v8;
+  void * v9;
   int v10; // edx
   XSurface aP2; // [esp+Ch] [ebp-40h] BYREF
   XSurface aP1; // [esp+1Ch] [ebp-30h] BYREF
   unsigned char v14[16]; // [esp+2Ch] [ebp-20h] BYREF
   unsigned char v15[16]; // [esp+3Ch] [ebp-10h] BYREF
 
-  v6 = (gamemd::XSurface *)((void *)(a3));
-  v8 = (void *)((*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)a3->__pad_0 + 120))(a3, v14));
-  v9 = (*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->__pad_0 + 120))(this, v15); /*0x7bbbb3*/
+  v6 = (gamemd::XSurface *)((void *)((gamemd::XSurface *)((void *)(a3))));
+  v8 = (void *)((int)((void *)((*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)a3->__pad_0 + 120))(a3, v14))));
+  v9 = (unsigned int)((void *)((*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->__pad_0 + 120))(this, v15)));
   *(unsigned int *)aP1.__pad_0 = *a2; /*0x7bbbbd*/
   aP1.Width = (int)a2[1]; /*0x7bbbc4*/
   aP1.Height = (int)a2[2]; /*0x7bbbcb*/

@@ -81,24 +81,24 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source)
   *((unsigned char *)this + 565) = 0; /*0x74aeb0*/
   if ( g_abs_B0F680 < g_abs_B0F678 /*0x74aeea*/
     || (g_abs_B0F67D || !g_abs_B0F678)
-    && g_abs_B0F684 > 0
+    && g_abs_B0F684 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F670 + 8))(
          &g_abs_B0F670,
-         g_abs_B0F678 + g_abs_B0F684,
+         (unsigned int)(g_abs_B0F678)+ g_abs_B0F684,
          0) )
   {
-    v3 = g_abs_B0F680++; /*0x74aef7*/
+    v3 = (int)(g_abs_B0F680++);
     *((unsigned int *)g_abs_B0F674 + v3) = this; /*0x74af06*/
   }
   if ( g_abs_A8EB38 < g_abs_A8EB30 /*0x74af3d*/
     || (g_abs_A8EB35 || !g_abs_A8EB30)
-    && g_abs_A8EB3C > 0
+    && g_abs_A8EB3C > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8EB28 + 8))(
          &g_abs_A8EB28,
-         g_abs_A8EB30 + g_abs_A8EB3C,
+         (unsigned int)(g_abs_A8EB30)+ g_abs_A8EB3C,
          0) )
   {
-    v4 = g_abs_A8EB38++; /*0x74af4a*/
+    v4 = (int)(g_abs_A8EB38++);
     *((unsigned int *)g_abs_A8EB2C + v4) = this; /*0x74af59*/
   }
   return this; /*0x74af5e*/
@@ -157,7 +157,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   unsigned int *v49; // [esp+10h] [ebp-288h]
   char v50; // [esp+15h] [ebp-283h]
   char v51; // [esp+16h] [ebp-282h]
-  char v52; // [esp+17h] [ebp-281h]
+  unsigned int * v52;
   char Destination[88]; // [esp+18h] [ebp-280h] BYREF
   char v54[12]; // [esp+70h] [ebp-228h] BYREF
   int v55; // [esp+7Ch] [ebp-21Ch]
@@ -225,15 +225,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   v17 = *(unsigned int **)((char *)this + 724); /*0x74b1e0*/
   *(double *)((char *)this + 712) = v16; /*0x74b1ea*/
   v42 = v17; /*0x74b1fb*/
-  if ( INIClass::GetString( /*0x74b207*/
-         a2,
-         (uint8_t **)((char *)this + 36),
-         (uint8_t *)g_INI_Key_Spawns,
-         (char *)&g_abs_87F7E8[10719],
-         Destination,
-         128) )
+    if ( INIClass::GetString( /*0x74b207*/          a2,(unsigned char *)((uint8_t **)((char *)this + 36)),          (uint8_t *)g_INI_Key_Spawns,          (char *)&g_abs_87F7E8[10719],          Destination,          128) )
   {
-    v18 = globalHelper_04BB20(Destination, (int)&g_abs_87F7E8[539856]); /*0x74b219*/
+    v18 = (unsigned int *)(globalHelper_04BB20(Destination, (int)&g_abs_87F7E8[539856]));
   }
   else
   {

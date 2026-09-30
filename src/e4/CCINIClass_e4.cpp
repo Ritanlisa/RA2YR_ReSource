@@ -24,9 +24,15 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
 
   CCINIClass *v2; // edi
-  int result; // eax
+  CCINIClass * result;
   CCINIClass *v5; // ebp
   CCINIClass *StringByIndex; // esi
   unsigned int *v7; // esi
@@ -65,7 +71,7 @@ LABEL_9:
         v9 = (unsigned int *)RA2_OPNEW(0x110u); /*0x41f378*/
         if ( v9 ) /*0x41f387*/
         {
-          v7 = AnimTypeClass::Construct2(v9, StringByIndex->__pad_0); /*0x41f391*/
+          v7 = (unsigned int)(AnimTypeClass::Construct2(v9, StringByIndex->__pad_0));
 LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
@@ -91,7 +97,7 @@ LABEL_13:
   if ( !v2 ) /*0x41f3c8*/
   {
     result = (unsigned int)(INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes_0));
-    v10 = 0; /*0x41f3dc*/
+    v10 = (unsigned int)(0);
     for ( i = result; (int)v10 < i; v10 = (CCINIClass *)((char *)v10 + 1) ) /*0x41f3e4*/
     {
       v11 = (CCINIClass *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes_0, v10); /*0x41f3f9*/
@@ -135,7 +141,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   int v7; // esi
   bool v8; // zf
   unsigned int v10[4]; // [esp+Ch] [ebp-A8h] BYREF
-  char v11; // [esp+1Ch] [ebp-98h]
+  unsigned char (*)[4] v11;
   int v12[3]; // [esp+20h] [ebp-94h] BYREF
   char v13; // [esp+2Ch] [ebp-88h]
   int v14; // [esp+44h] [ebp-70h]
@@ -147,10 +153,10 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   int v20; // [esp+5Ch] [ebp-58h]
   int v21[5]; // [esp+A0h] [ebp-14h] BYREF
 
-  v10[1] = 0; /*0x474213*/
-  v10[2] = 0; /*0x474217*/
-  v10[3] = a2; /*0x47421b*/
-  v11 = 0; /*0x47421f*/
+  v10[1] = (unsigned int)(0);
+  v10[2] = (unsigned int)(0);
+  v10[3] = (unsigned int)(a2);
+  v11 = (unsigned int)(0);
   v10[0] = &vt_FileStraw; /*0x474223*/
   File = INIClass::LoadFile(this, (int)v10, a4); /*0x474230*/
   *((unsigned char *)this + 64) = 0; /*0x474232*/
@@ -202,7 +208,7 @@ CCINIClass::CCINIClass()
   int v4; // ebx
   int v5; // edi
   int v6; // edi
-  int v7; // edi
+  unsigned int * v7;
 
   result = (unsigned int *)(this);
   v2 = (unsigned int *)this + 4; /*0x535b36*/
@@ -233,8 +239,8 @@ CCINIClass::CCINIClass()
   }
   v6 = (unsigned int)(v2[1]);
   v3[2] = (unsigned int)(v2);
-  v3[1] = v6; /*0x535b8c*/
-  v7 = v2[1]; /*0x535b8f*/
+  v3[1] = (unsigned int)(v6);
+  v7 = (unsigned int)(v2[1]);
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = v3; /*0x535b96*/
   v2[1] = v3; /*0x535b99*/
@@ -259,7 +265,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   CCINIClass *KeyCount; // ebx
   CCINIClass *i; // edi
   uint8_t *StringByIndex; // eax
-  AITriggerTypeClass *result; // eax
+  unsigned int result;
   int j; // edi
   unsigned int *v9; // ecx
   INIClass *v10; // edx
@@ -284,7 +290,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   result = g_abs_A8B210; /*0x41f4fa*/
   for ( j = 0; j < (int)g_abs_A8B210; ++j ) /*0x41f503*/
   {
-    v9 = *(unsigned int **)&g_abs_A8B204->__pad_0[4 * j]; /*0x41f50a*/
+    v9 = (gamemd::AITriggerTypeClass *)(*(unsigned int **)&g_abs_A8B204->__pad_0[4 * j]);
     if ( v9[39] == a2 ) /*0x41f513*/
       (*(void (**)(unsigned int *, char *))(*v9 + 104))(v9, a1); /*0x41f518*/
     result = g_abs_A8B210; /*0x41f51b*/
@@ -295,7 +301,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
     result = g_abs_A8B210; /*0x41f537*/
     for ( k = 0; k < (int)g_abs_A8B210; ++k ) /*0x41f540*/
     {
-      v12 = *(unsigned int *)&g_abs_A8B204->__pad_0[4 * k]; /*0x41f548*/
+      v12 = (gamemd::AITriggerTypeClass *)(*(unsigned int *)&g_abs_A8B204->__pad_0[4 * k]);
       IDA_LOBYTE(v10) = *(unsigned char *)(v12 + 164); /*0x41f54d*/
       INIClass::SetBool(a1, (INIClass *)aAitriggertypes_0, (char *)(v12 + 36), v10); /*0x41f55e*/
       result = g_abs_A8B210; /*0x41f563*/
@@ -311,7 +317,7 @@ namespace gamemd {
 IUnknown * CCINIClass::WriteHouses()
 {
 
-  IUnknown *result; // eax
+  unsigned int result;
   INIClass *i; // ebx
   int v4; // esi
   INIClass Source; // [esp+Ch] [ebp-40h] BYREF

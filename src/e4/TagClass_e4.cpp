@@ -138,7 +138,7 @@ LABEL_22:
             buildingType = v10->buildingType; /*0x6e506c*/
             if ( buildingType ) /*0x6e5071*/
             {
-              if ( buildingType[41] && TagClass::HasValidHouse(a1[9]) ) /*0x6e5080*/
+              if ( buildingType[41] && ((TagClass *)(a1[9]))->HasValidHouse() ) /*0x6e5080*/
               {
                 Owner = HouseClass::FindOwner(*(void **)(*(unsigned int *)(*((unsigned int *)a1[10] + 9) + 164) + 184)); /*0x6e509b*/
                 v14 = *(unsigned int *)(Owner + 636); /*0x6e50a0*/
@@ -351,7 +351,7 @@ int TagClass::ProcessTag(int * a2)
   int v4; // eax
   int v5; // eax
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x6e56e9*/
+  AbstractClass::ProcessPower((void *)this); /*0x6e56e9*/
   v3 = (*(int (**)(int))(*(unsigned int *)(*((unsigned int *)this + 9) + 4) + 16))(*((unsigned int *)this + 9) + 4); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
   v4 = *((unsigned int *)this + 10); /*0x6e5702*/
@@ -373,7 +373,7 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x6e573b*/
+  result = ((AbstractClass *)(aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x6e573b*/
   if ( result >= 0 ) /*0x6e5742*/
   {
     if ( aP0 ) /*0x6e5746*/
@@ -402,7 +402,7 @@ int TagClass::SaveTag(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6e57af*/
+  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6e57af*/
   if ( result >= 0 ) /*0x6e57b6*/
     return 0; /*0x6e57b8*/
   return result; /*0x6e57ba*/

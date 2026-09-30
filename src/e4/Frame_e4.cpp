@@ -13,6 +13,7 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
 
 // 0x4F4780
 namespace gamemd {
@@ -135,10 +136,10 @@ LABEL_18:
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = (int)(*a8);
-          v21 = a8[1]; /*0x4f48fb*/
-          v22 = a8[2]; /*0x4f48fe*/
-          Rect_8 = a8[3]; /*0x4f4904*/
+          v20 = (int)(*(unsigned int *)(a8));
+          v21 = (int)(a8[1]);
+          v22 = (int)(a8[2]);
+          Rect_8 = (int)(a8[3]);
           v49 = v20; /*0x4f4910*/
           Rect = __PAIR64__(v22, v21); /*0x4f4914*/
           if ( g_abs_87F7E8[7887] /*0x4f4934*/
@@ -177,7 +178,7 @@ LABEL_18:
             goto LABEL_51; /*0x4f49ff*/
           if ( g_abs_87F7E8[7904] ) /*0x4f4a09*/
           {
-            if ( (uint8_t)Frame::Init() ) /*0x4f4a0b*/
+            if ( (uint8_t)this->Frame::Init() ) /*0x4f4a0b*/
             {
               v13 = g_abs_87F7E8[2]; /*0x4f4a14*/
               v30 = 1; /*0x4f4a1a*/

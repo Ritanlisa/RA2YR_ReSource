@@ -16,6 +16,21 @@
 namespace gamemd {
 AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v12 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
@@ -25,7 +40,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   char *v6; // eax
   char *v7; // edi
   int v9; // ecx
-  int v10; // eax
+  unsigned int * v10;
   char *v11; // ebx
   unsigned int *v12; // edx
 
@@ -56,17 +71,17 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
           v9 = a2; /*0x5acd99*/
         if ( v9 > 0 ) /*0x5acd9d*/
         {
-          v10 = 0; /*0x5acd9f*/
+          v10 = (unsigned int)(0);
           do /*0x5acdc3*/
           {
-            v11 = &v7[v10]; /*0x5acda4*/
+            v11 = (unsigned int)(&v7[v10]);
             v12 = (unsigned int *)(v10 + *((unsigned int *)this + 1)); /*0x5acda7*/
             v10 += 16; /*0x5acda9*/
             --v9; /*0x5acdac*/
-            *(unsigned int *)v11 = *v12; /*0x5acdaf*/
-            *((unsigned int *)v11 + 1) = v12[1]; /*0x5acdb4*/
-            *((unsigned int *)v11 + 2) = v12[2]; /*0x5acdba*/
-            *((unsigned int *)v11 + 3) = v12[3]; /*0x5acdc0*/
+            *(unsigned int *)v11 = *(unsigned int *)(v12); /*0x5acdaf*/
+            *((unsigned int *)v11 + 1) = ((unsigned int *)(v12))[1]; /*0x5acdb4*/
+            *((unsigned int *)v11 + 2) = ((unsigned int *)(v12))[2]; /*0x5acdba*/
+            *((unsigned int *)v11 + 3) = ((unsigned int *)(v12))[3]; /*0x5acdc0*/
           }
           while ( v9 ); /*0x5acdc3*/
           v5 = a3; /*0x5acdc5*/
@@ -258,7 +273,7 @@ CampaignClass * MSEngine::Construct()
 namespace gamemd {
 CampaignClass * MSEngine::Destruct()
 {
-    unsigned int v13 = 0;  /* G37 hoist */
+    void * v13 = 0;
 
   int v2; // ebp
   int v3; // eax
@@ -267,7 +282,7 @@ CampaignClass * MSEngine::Destruct()
   int i; // edi
   void (***v7)(unsigned int, int); // ecx
   unsigned int *v8; // edi
-  int v9; // edx
+  unsigned char (*)[4] v9;
   unsigned int *v10; // esi
   unsigned char (*)[4] v11;
   unsigned char (*)[4] v12;

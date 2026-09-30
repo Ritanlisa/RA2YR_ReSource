@@ -9,6 +9,6 @@ struct E4Recv_4924C0 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
 // --- flat members (END) ---
-    void  sub_4924C0(int a2, unsigned __int8 * a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x4924C0
+    void  sub_4924C0(int a2, uint8_t * a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x4924C0
 };
 } // namespace gamemd

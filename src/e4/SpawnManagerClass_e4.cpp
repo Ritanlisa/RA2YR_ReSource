@@ -31,7 +31,7 @@ SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
   int v20; // [esp+14h] [ebp-8h]
   int i; // [esp+20h] [ebp+4h]
 
-  AbstractClass::Constructor((#373 *)this); /*0x6b6c99*/
+  AbstractClass::Constructor((void *)this); /*0x6b6c99*/
   SpawnControlVector::Constructor((unsigned int *)((char *)this + 56), 0, 0); /*0x6b6ca7*/
   *((unsigned int *)this + 14) = &DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b6cb0*/
   *((unsigned int *)this + 19) = 10; /*0x6b6cb6*/
@@ -147,7 +147,7 @@ void* SpawnManagerClass::Constructor()
   *((unsigned int *)this + 25) = 0; /*0x6b6f32*/
   if ( g_abs_B0B890 < g_abs_B0B888 /*0x6b6f69*/
     || (g_abs_B0B88D || !g_abs_B0B888)
-    && g_abs_B0B894 > 0
+    && g_abs_B0B894 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0B880 + 8))(
          &g_abs_B0B880,
          g_abs_B0B888 + g_abs_B0B894,
@@ -302,7 +302,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   int v13; // esi
   int v14; // eax
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x6b7de9*/
+  AbstractClass::ProcessPower((void *)this); /*0x6b7de9*/
   Power::TimerProcess(*((unsigned int *)this + 28)); /*0x6b7df4*/
   v3 = *((unsigned int *)this + 27); /*0x6b7df9*/
   if ( v3 ) /*0x6b7dfe*/

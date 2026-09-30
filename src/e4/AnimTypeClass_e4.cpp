@@ -60,13 +60,13 @@ unsigned int * AnimTypeClass::Construct2(char * Source)
   memset((unsigned int *)this + 57, 0, 0x20u); /*0x41e41c*/
   if ( g_abs_A8B210 < g_abs_A8B208 /*0x41e452*/
     || (g_abs_A8B20D || !g_abs_A8B208)
-    && g_abs_A8B214 > 0
+    && g_abs_A8B214 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8B200 + 8))(
          &g_abs_A8B200,
-         g_abs_A8B208 + g_abs_A8B214,
+         (unsigned int)(g_abs_A8B208)+ g_abs_A8B214,
          0) )
   {
-    v3 = g_abs_A8B210++; /*0x41e45f*/
+    v3 = (int)(g_abs_A8B210++);
     *((unsigned int *)g_abs_A8B204 + v3) = this; /*0x41e46e*/
   }
   return this; /*0x41e473*/

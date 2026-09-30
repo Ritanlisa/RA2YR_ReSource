@@ -263,11 +263,11 @@ namespace gamemd {
 int E4Recv_731130::sub_731130()
 {
 
-  int v1; // edi
+  unsigned char * v1;
   int v3; // esi
   char *v5; // ecx
 
-  v1 = g_abs_A8EC88 - 1; /*0x731138*/
+  v1 = (int)(g_abs_A8EC88 - 1);
   if ( g_abs_A8EC88 - 1 < 0 ) /*0x73113f*/
     return 1; /*0x7311a6*/
   while ( 1 )
@@ -275,14 +275,14 @@ int E4Recv_731130::sub_731130()
     v3 = *((unsigned int *)g_abs_A8EC7C + v1); /*0x731147*/
     if ( v3 && !*(unsigned char *)(v3 + 129) )
     {
-      if ( g_abs_A8B238[0] ? House::IsHumanPlayer(*(#375 **)(v3 + 540)) : *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493) )
+      if ( g_abs_A8B238[0] ? House::IsHumanPlayer(*(void **)(v3 + 540)) : *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493) )
       {
         v5 = *(char **)(v3 + 532); /*0x73117e*/
-        if ( v5 != this - 1 ) /*0x731189*/
+        if ( v5 != (char *)((char *))((char *))(this) - 1 ) /*0x731189*/
           goto LABEL_17; /*0x731189*/
         if ( !*(unsigned char *)(v3 + 131) ) /*0x731193*/
           return 0; /*0x731193*/
-        if ( v5 != this - 1 ) /*0x731197*/
+        if ( v5 != (char *)((char *))((char *))(this) - 1 ) /*0x731197*/
         {
 LABEL_17:
           if ( *(unsigned char *)(v3 + 131) ) /*0x731199*/

@@ -100,14 +100,14 @@ LABEL_9:
   {
     v5 = (int)(10);
   }
-  v6 = (int)(RA2_OPNEW(8 * (v4 + v5)));
+  v6 = (void *)((int)(RA2_OPNEW(8 * (v4 + v5))));
   if ( v6 ) /*0x53880e*/
   {
-    for ( i = 0; i < *((unsigned int *)this + 1); *(unsigned int *)(v8 + v6 + 4) = v9[1] ) /*0x53881c*/
+    for ( i = 0; i < *((unsigned int *)this + 1); *(unsigned int *)((unsigned int)(v8)+ (unsigned int)(v6)+ 4) = v9[1] ) /*0x53881c*/
     {
       v8 = 8 * i; /*0x538820*/
       v9 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x538829*/
-      *(unsigned int *)(v8 + v6) = *v9; /*0x53882e*/
+      *(unsigned int *)((unsigned int)(v8)+ v6) = *v9; /*0x53882e*/
     }
     RA2_OPDEL(*(void **)this); /*0x538842*/
     v10 = *((unsigned int *)this + 2); /*0x538847*/

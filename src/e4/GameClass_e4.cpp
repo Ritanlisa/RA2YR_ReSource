@@ -177,7 +177,7 @@ int GameClass::FrameLoop(int a2)
   DWORD Ticks; // [esp+10h] [ebp-18h]
   int v10; // [esp+18h] [ebp-10h]
 
-  Ticks = Timer::GetTicks(); /*0x5d2428*/
+  Ticks = this->Timer::GetTicks(); /*0x5d2428*/
   v10 = 1; /*0x5d242c*/
   do /*0x5d2511*/
   {
@@ -193,7 +193,7 @@ int GameClass::FrameLoop(int a2)
       {
         if ( Ticks != -1 ) /*0x5d2478*/
         {
-          v3 = Timer::GetTicks() - Ticks; /*0x5d2487*/
+          v3 = this->Timer::GetTicks() - Ticks; /*0x5d2487*/
           if ( v3 >= v10 ) /*0x5d248d*/
             v4 = 0; /*0x5d2493*/
           else
@@ -201,20 +201,20 @@ int GameClass::FrameLoop(int a2)
           v10 = v4; /*0x5d2495*/
         }
         DDraw::HandleSuspend(this); /*0x5d249f*/
-        Ticks = Timer::GetTicks(); /*0x5d24b3*/
+        Ticks = this->Timer::GetTicks(); /*0x5d24b3*/
       }
       Sleep(0); /*0x5d24b9*/
       v5 = v10; /*0x5d24bf*/
       if ( Ticks != -1 ) /*0x5d24c5*/
       {
-        v6 = Timer::GetTicks() - Ticks; /*0x5d24d0*/
+        v6 = this->Timer::GetTicks() - Ticks; /*0x5d24d0*/
         if ( v6 >= v10 ) /*0x5d24d6*/
           break; /*0x5d24d6*/
         v5 = v10 - v6; /*0x5d24d8*/
       }
     }
     while ( v5 > 0 ); /*0x5d24dc*/
-    Ticks = Timer::GetTicks(); /*0x5d24e2*/
+    Ticks = this->Timer::GetTicks(); /*0x5d24e2*/
     result = a2 - 1; /*0x5d2504*/
     v7 = a2 == 1; /*0x5d2504*/
     v10 = 1; /*0x5d2509*/
@@ -235,9 +235,9 @@ int GameClass::FindOpenSlot()
   int v4; // esi
   char v5; // al
 
-  v1 = g_abs_A8B8D8; /*0x5d6372*/
+  v1 = (int)(g_abs_A8B8D8);
   v2 = 0; /*0x5d6379*/
-  if ( g_abs_A8B8D8 <= 0 ) /*0x5d6380*/
+  if ( g_abs_A8B8D8 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x5d6380*/
     return -1; /*0x5d63cc*/
   while ( 1 ) /*0x5d6387*/
   {

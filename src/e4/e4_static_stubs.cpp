@@ -10,7 +10,6 @@ double ActionQueue::PushEntry(...) { return 0; }
 double AircraftTypeVector::Constructor(...) { return 0; }
 double AllocCallback::Dispatch(...) { return 0; }
 double AnimTypeVector::Constructor(...) { return 0; }
-double AudioChannel::DeactivatePlay(...) { return 0; }
 double AudioConfig::InitDefault(...) { return 0; }
 double AudioFile::GetCallback(...) { return 0; }
 double AudioFileClass::Release(...) { return 0; }
@@ -40,7 +39,9 @@ double Cliff::ProcessTransitions(...) { return 0; }
 double Conditions::CheckResult(...) { return 0; }
 double Conflict::GetOwnerHouse(...) { return 0; }
 double Coord2D::Add(...) { return 0; }
+double Coord2D::Coord2D_field_0x04(...) { return 0; }
 double Coord2D::Sub(...) { return 0; }
+double Coord2D::__pad_0(...) { return 0; }
 double CoordList::GetBounds(...) { return 0; }
 double CountdownTimer::UpdateDisplay(...) { return 0; }
 double CrateClass::ProcessPickup(...) { return 0; }
@@ -48,7 +49,9 @@ double DListNode::Init(...) { return 0; }
 double DListNode::InitEmpty(...) { return 0; }
 double DeleteAndZero::Alt(...) { return 0; }
 double DeleteAndZero::Alt2(...) { return 0; }
+double DeleteAndZero::NeedsSaveOrLink(...) { return 0; }
 double DeleteAndZero::OrFree(...) { return 0; }
+double DeleteAndZero::occupant(...) { return 0; }
 double DiskSpace::CheckAvailable(...) { return 0; }
 double DynamicArray::Resize(...) { return 0; }
 double DynamicVectorArray::Constructor(...) { return 0; }
@@ -58,6 +61,7 @@ double Field::Int_Set(...) { return 0; }
 double FileExtension::Constructor(...) { return 0; }
 double FileExtension::MapHandler(...) { return 0; }
 double FileFind::Close(...) { return 0; }
+double FileFind::CloseHandle(...) { return 0; }
 double FileStraw::Destructor(...) { return 0; }
 double FileStraw::Open(...) { return 0; }
 double FileTree::CleanupAll(...) { return 0; }
@@ -98,6 +102,8 @@ double MSShapeAnim::Constructor(...) { return 0; }
 double Matrix::Copy12Float(...) { return 0; }
 double Matrix::Scale(...) { return 0; }
 double Matrix2D::Rotate(...) { return 0; }
+double Matrix3x3::ApplyCol0(...) { return 0; }
+double Matrix3x3::ApplyCol1(...) { return 0; }
 double Matrix3x3::Multiply(...) { return 0; }
 double Matrix3x3::TransformPoint(...) { return 0; }
 double MessageListClass::AddMessage(...) { return 0; }
@@ -117,10 +123,10 @@ double ObjectClass::Init(...) { return 0; }
 double ObjectClass::IsCrushable(...) { return 0; }
 double ObjectClass::PreDraw(...) { return 0; }
 double ObjectClass::SetReference(...) { return 0; }
+double ObjectClass::StepCleanup(...) { return 0; }
 double ObjectClass::ctor(...) { return 0; }
 double ObjectPtr::RegisterForTracking(...) { return 0; }
 double OptionQueue::PushEntry(...) { return 0; }
-double OverlayClass::vftable(...) { return 0; }
 double OwnerDrawControl::InitVtable(...) { return 0; }
 double PacketQueue::ExtractEntry(...) { return 0; }
 double PacketQueue::ReleaseEntry(...) { return 0; }
@@ -130,11 +136,8 @@ double PhoneEditor::PopulateList(...) { return 0; }
 double PingPongBuffer::GetWriteOffset(...) { return 0; }
 double Pipe::Dtor(...) { return 0; }
 double Pipe::__pad_0(...) { return 0; }
-double PlayerProfile::vftable(...) { return 0; }
-double PlayerType::GetName(...) { return 0; }
 double PreviewClass::ReadPreview(...) { return 0; }
 double PriorityQueue::Add(...) { return 0; }
-double ProductionClass::StartTimer(...) { return 0; }
 double Property::GetField11(...) { return 0; }
 double Property::Set(...) { return 0; }
 double PtrVector::Destroy(...) { return 0; }
@@ -143,7 +146,6 @@ double Random::Range(...) { return 0; }
 double Random::State(...) { return 0; }
 double Rect_Point::Set(...) { return 0; }
 double ResultNode::CleanupList(...) { return 0; }
-double SHAPipe::vftable(...) { return 0; }
 double SafeDelete::Ptr(...) { return 0; }
 double SaveLoadDialog::DlgProc(...) { return 0; }
 double ScreenSaver::Process(...) { return 0; }
@@ -186,7 +188,6 @@ double VoxelSection::GetInfo(...) { return 0; }
 double WDTClass::GetCellType(...) { return 0; }
 double WDTObject::GetSize(...) { return 0; }
 double WinAPI::Wrapper(...) { return 0; }
-double WorldDominationTour::vftable(...) { return 0; }
 
 } // namespace gamemd
 // GENERATED static-varargs stubs for C2597 no-def methods
@@ -198,9 +199,18 @@ double WorldDominationTour::vftable(...) { return 0; }
 
 namespace gamemd {
 
-double AnimClass::SetField95(...) { return 0; }
-double TeamTypeClass::vftable(...) { return 0; }
-double UnitClass::Construct(...) { return 0; }
+double CommandClass::BinarySearchAction(...) { return 0; }
+double CommandClass::executeAction(...) { return 0; }
+double ConnectionClass::queueSendPacket(...) { return 0; }
+double FactoryClass::AbandonProduction(...) { return 0; }
+double FootClass::MissionMoveCarryallLand(...) { return 0; }
+double GameSetup::FormatToString(...) { return 0; }
+double IPXConnClass::initConnection(...) { return 0; }
+double ScenarioClass::InitTimer(...) { return 0; }
+double SideClass::AbstractClass(...) { return 0; }
+double Stream::CopyFromTemplate(...) { return 0; }
+double TacticalClass::SetView(...) { return 0; }
+double TacticalClass::initTacticalMap(...) { return 0; }
 
 } // namespace gamemd
 

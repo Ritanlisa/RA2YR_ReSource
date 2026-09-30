@@ -23,6 +23,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/FogOfWar_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x4D3590
 namespace gamemd {
@@ -108,9 +109,9 @@ void FootClass::Destroyed(int a2)
   unsigned char v4[4]; // [esp+4h] [ebp-4h] BYREF
 
   if ( (uint8_t)House::IsHumanPlayer(*((unsigned int *)this + 135)) /*0x4d98dd*/
-    && !*(unsigned char *)((*((int (**)(#375 **))*(unsigned int *)this + 132))(this) + 3412) )
+    && !*(unsigned char *)((*((int (**)(void **))*(unsigned int *)this + 132))(this) + 3412) )
   {
-    v3 = ((int64_t (*)(#375 **, unsigned char *))*((unsigned int *)*(unsigned int *)this + 440))(this, v4); /*0x4d98f0*/
+    v3 = ((int64_t (*)(void **, unsigned char *))*((unsigned int *)*(unsigned int *)this + 440))(this, v4); /*0x4d98f0*/
     if ( CreateTriggerClassIfFarEnough(7, IDA_SHIDWORD(v3), *(unsigned int *)v3) ) /*0x4d98fe*/
       VoxClass::FindAndPlay(aEvaUnitlost, -1); /*0x4d9911*/
   }
@@ -131,7 +132,7 @@ int FootClass::updateThreat()
   if ( v1 != -1 ) /*0x70f7ef*/
   {
     if ( (int)g_abs_A8ED84 - v1 < v2 ) /*0x70f7fb*/
-      return v2 == (unsigned int)g_abs_A8ED84 - v1; /*0x70f808*/
+      return v2 == (unsigned int, unsigned int a1, unsigned int a2, unsigned int a3)g_abs_A8ED84 - v1; /*0x70f808*/
     v2 = 0; /*0x70f809*/
   }
   return v2 == 0; /*0x70f808*/
@@ -141,7 +142,7 @@ int FootClass::updateThreat()
 
 // 0x710000
 namespace gamemd {
-AbstractClass * FootClass::FootClass_ImbueLocomotor()
+AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void * a3)
 {
 
   unsigned int *v6; // esi
@@ -171,12 +172,11 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor()
   int *v30; // [esp+6Ch] [ebp-10h]
   int v31; // [esp+70h] [ebp-Ch] BYREF
   int v32; // [esp+78h] [ebp-4h]
-
-  v6 = ppv; /*0x710006*/
+v6 = (unsigned int *)(ppv);
   v30 = a1; /*0x71000d*/
   if ( ppv )
   {
-    v7 = (unsigned int *)ppv[180]; /*0x710017*/
+    v7 = (unsigned int *)((unsigned int *)(ppv))[180]; /*0x710017*/
     if ( v7 ) /*0x71001f*/
       TaskManager::Update(v7); /*0x710021*/
     v8 = (unsigned int *)v6[421]; /*0x710026*/
@@ -254,7 +254,7 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor()
         WinAPI::Wrapper(v19); /*0x710224*/
       if ( !ppv ) /*0x71022f*/
         WinAPI::Wrapper(-2147467261); /*0x710236*/
-      (*(void (**)(unsigned int *, unsigned int *))(*ppv + 12))(ppv, v6); /*0x710243*/
+      (*(void (**)(unsigned int *, unsigned int *))(*(unsigned int *)((unsigned int *))((unsigned int *))(ppv) + 12))(ppv, v6); /*0x710243*/
       v29 = 0; /*0x71024a*/
       if ( ppv ) /*0x710250*/
       {

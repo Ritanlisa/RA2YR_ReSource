@@ -70,7 +70,7 @@ void TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, w
 
   v11 = v10; /*0x4b96aa*/
   v12 = v9; /*0x4b96b2*/
-  TextRenderer::GetInstance(); /*0x4b96c5*/
+  this->TextRenderer::GetInstance(); /*0x4b96c5*/
   swprintf( /*0x4b96dc*/
     (wchar_t *const)&stru_89E138.__pad_14B0[4744],
     (const size_t)&stru_820524.__pad_0[8],
@@ -150,7 +150,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   int Default; // edi
   int *v10; // ebp
   int v11; // eax
-  int v12; // ebp
+  AbstractClass * v12;
   int v13; // edi
   int *Viewport; // eax
   int v15; // kr04_4
@@ -176,11 +176,11 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
       Default = BuildingType::FindDefault(0); /*0x642ceb*/
       if ( Default ) /*0x642cef*/
       {
-        v8 = (int)((gamemd::AbstractClass *)((*(int (**)(int))(*(unsigned int *)Default + 124))(Default)));
+        v8 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)((*(int (**)(int))(*(unsigned int *)Default + 124))(Default))));
         Default = (*(int (**)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
-    Instance = (gamemd::AbstractClass *)(TextRenderer::GetInstance());
+    Instance = (gamemd::AbstractClass *)(this->TextRenderer::GetInstance());
     v10 = v22; /*0x642d14*/
     v24 = 15; /*0x642d18*/
     do /*0x642d3d*/
@@ -255,7 +255,7 @@ void * TextRenderer::MeasureBuilding2()
     v5 = Default; /*0x642f37*/
     if ( Default ) /*0x642f3b*/
     {
-      v2 = (int)((gamemd::AbstractClass *)((*(int (**)(int))(*(unsigned int *)Default + 124))(Default)));
+      v2 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)((*(int (**)(int))(*(unsigned int *)Default + 124))(Default))));
       v3 = (*(int (**)(int))(*(unsigned int *)v5 + 128))(v5); /*0x642f50*/
     }
   }

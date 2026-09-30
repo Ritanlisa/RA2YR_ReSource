@@ -98,15 +98,15 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_UnitTypeCount2 + k) + 52))( /*0x67c77a*/
       *((unsigned int *)g_UnitTypeCount2 + k),
       &v53);
-  for ( m = 0; m < g_abs_8B4118; ++m ) /*0x67c790*/
+  for ( m = 0; m < (int)((int))((int))(g_abs_8B4118); ++m ) /*0x67c790*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_8B410C + m) + 52))( /*0x67c7a2*/
       *((unsigned int *)g_abs_8B410C + m),
       &v53);
-  for ( n = 0; n < g_abs_A8E358; ++n ) /*0x67c7b8*/
+  for ( n = 0; n < (int)((int))((int))(g_abs_A8E358); ++n ) /*0x67c7b8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8E34C + n) + 52))( /*0x67c7ca*/
       *((unsigned int *)g_abs_A8E34C + n),
       &v53);
-  for ( ii = 0; ii < g_abs_A83DF8; ++ii ) /*0x67c7e0*/
+  for ( ii = 0; ii < (int)((int))((int))(g_abs_A83DF8); ++ii ) /*0x67c7e0*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A83DEC + ii) + 52))( /*0x67c7f2*/
       *((unsigned int *)g_abs_A83DEC + ii),
       &v53);
@@ -114,95 +114,95 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_TriggerTypeCount + jj) + 52))( /*0x67c81a*/
       *((unsigned int *)g_TriggerTypeCount + jj),
       &v53);
-  for ( kk = 0; kk < g_abs_A8EB50; ++kk ) /*0x67c830*/
+  for ( kk = 0; kk < (int)((int))((int))(g_abs_A8EB50); ++kk ) /*0x67c830*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8EB44 + kk) + 52))( /*0x67c842*/
       *((unsigned int *)g_abs_A8EB44 + kk),
       &v53);
-  for ( mm = 0; mm < g_abs_A8B228; ++mm ) /*0x67c858*/
+  for ( mm = 0; mm < (int)((int))((int))(g_abs_A8B228); ++mm ) /*0x67c858*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8B21C + mm) + 52))( /*0x67c86a*/
       *((unsigned int *)g_abs_A8B21C + mm),
       &v53);
-  for ( nn = 0; nn < g_abs_A8E3A0; ++nn ) /*0x67c880*/
+  for ( nn = 0; nn < (int)((int))((int))(g_abs_A8E3A0); ++nn ) /*0x67c880*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8E394 + nn) + 52))( /*0x67c892*/
       *((unsigned int *)g_abs_A8E394 + nn),
       &v53);
-  for ( i1 = 0; i1 < g_abs_A8B210; ++i1 ) /*0x67c8a8*/
+  for ( i1 = 0; i1 < (int)((int))((int))(g_abs_A8B210); ++i1 ) /*0x67c8a8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8B204 + i1) + 52))( /*0x67c8ba*/
       *((unsigned int *)g_abs_A8B204 + i1),
       &v53);
-  for ( i2 = 0; i2 < g_abs_A8E9B8; ++i2 ) /*0x67c8d0*/
+  for ( i2 = 0; i2 < (int)((int))((int))(g_abs_A8E9B8); ++i2 ) /*0x67c8d0*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8E9AC + i2) + 52))( /*0x67c8e2*/
       *((unsigned int *)g_abs_A8E9AC + i2),
       &v53);
-  for ( i3 = 0; i3 < g_abs_8B4160; ++i3 ) /*0x67c8f8*/
+  for ( i3 = 0; i3 < (int)((int))((int))(g_abs_8B4160); ++i3 ) /*0x67c8f8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_8B4154 + i3) + 52))( /*0x67c90a*/
       *((unsigned int *)g_abs_8B4154 + i3),
       &v53);
-  for ( i4 = 0; i4 < g_abs_A8E8E0; ++i4 ) /*0x67c920*/
+  for ( i4 = 0; i4 < (int)((int))((int))(g_abs_A8E8E0); ++i4 ) /*0x67c920*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8E8D4 + i4) + 52))( /*0x67c932*/
       *((unsigned int *)g_abs_A8E8D4 + i4),
       &v53);
-  for ( i5 = 0; i5 < g_abs_A8ECB0; ++i5 ) /*0x67c948*/
+  for ( i5 = 0; i5 < (int)((int))((int))(g_abs_A8ECB0); ++i5 ) /*0x67c948*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8ECA4 + i5) + 52))( /*0x67c95a*/
       *((unsigned int *)g_abs_A8ECA4 + i5),
       &v53);
-  for ( i6 = 0; i6 < g_abs_8B40F8; ++i6 ) /*0x67c970*/
+  for ( i6 = 0; i6 < (int)((int))((int))(g_abs_8B40F8); ++i6 ) /*0x67c970*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_8B40EC + i6) + 52))( /*0x67c982*/
       *((unsigned int *)g_abs_8B40EC + i6),
       &v53);
   for ( i7 = 0; i7 < dword_8B41D8; ++i7 ) /*0x67c998*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)unk_8B41CC + i7) + 52))(*((unsigned int *)unk_8B41CC + i7), &v53); /*0x67c9aa*/
-  for ( i8 = 0; i8 < g_abs_8872C0; ++i8 ) /*0x67c9c0*/
+  for ( i8 = 0; i8 < (int)((int))((int))(g_abs_8872C0); ++i8 ) /*0x67c9c0*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_8872B4 + i8) + 52))( /*0x67c9d2*/
       *((unsigned int *)g_abs_8872B4 + i8),
       &v53);
-  for ( i9 = 0; i9 < g_abs_B0E790; ++i9 ) /*0x67c9e8*/
+  for ( i9 = 0; i9 < (int)((int))((int))(g_abs_B0E790); ++i9 ) /*0x67c9e8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_B0E784 + i9) + 52))( /*0x67c9fa*/
       *((unsigned int *)g_abs_B0E784 + i9),
       &v53);
-  for ( i10 = 0; i10 < g_abs_B0E730; ++i10 ) /*0x67ca10*/
+  for ( i10 = 0; i10 < (int)((int))((int))(g_abs_B0E730); ++i10 ) /*0x67ca10*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_B0E724 + i10) + 52))( /*0x67ca22*/
       *((unsigned int *)g_abs_B0E724 + i10),
       &v53);
   for ( i11 = 0; i11 < dword_8B4188; ++i11 ) /*0x67ca38*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)unk_8B417C + i11) + 52))(*((unsigned int *)unk_8B417C + i11), &v53); /*0x67ca4a*/
-  for ( i12 = 0; i12 < g_abs_A8EAF8; ++i12 ) /*0x67ca60*/
+  for ( i12 = 0; i12 < (int)((int))((int))(g_abs_A8EAF8); ++i12 ) /*0x67ca60*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8EAEC + i12) + 52))( /*0x67ca72*/
       *((unsigned int *)g_abs_A8EAEC + i12),
       &v53);
-  for ( i13 = 0; i13 < g_abs_B0E668; ++i13 ) /*0x67ca88*/
+  for ( i13 = 0; i13 < (int)((int))((int))(g_abs_B0E668); ++i13 ) /*0x67ca88*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_B0E65C + i13) + 52))( /*0x67ca9a*/
       *((unsigned int *)g_abs_B0E65C + i13),
       &v53);
-  for ( i14 = 0; i14 < g_abs_B0F1B0; ++i14 ) /*0x67cab0*/
+  for ( i14 = 0; i14 < (int)((int))((int))(g_abs_B0F1B0); ++i14 ) /*0x67cab0*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_B0F1A4 + i14) + 52))( /*0x67cac2*/
       *((unsigned int *)g_abs_B0F1A4 + i14),
       &v53);
-  for ( i15 = 0; i15 < g_abs_A83E40; ++i15 ) /*0x67cad8*/
+  for ( i15 = 0; i15 < (int)((int))((int))(g_abs_A83E40); ++i15 ) /*0x67cad8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A83E34 + i15) + 52))( /*0x67caea*/
       *((unsigned int *)g_abs_A83E34 + i15),
       &v53);
-  for ( i16 = 0; i16 < g_abs_A8EB38; ++i16 ) /*0x67cb00*/
+  for ( i16 = 0; i16 < (int)((int))((int))(g_abs_A8EB38); ++i16 ) /*0x67cb00*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8EB2C + i16) + 52))( /*0x67cb12*/
       *((unsigned int *)g_abs_A8EB2C + i16),
       &v53);
-  for ( i17 = 0; i17 < g_abs_887398; ++i17 ) /*0x67cb28*/
+  for ( i17 = 0; i17 < (int)((int))((int))(g_abs_887398); ++i17 ) /*0x67cb28*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_88738C + i17) + 52))( /*0x67cb3a*/
       *((unsigned int *)g_abs_88738C + i17),
       &v53);
-  for ( i18 = 0; i18 < g_abs_8874D0; ++i18 ) /*0x67cb50*/
+  for ( i18 = 0; i18 < (int)((int))((int))(g_abs_8874D0); ++i18 ) /*0x67cb50*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_8874C4 + i18) + 52))( /*0x67cb62*/
       *((unsigned int *)g_abs_8874C4 + i18),
       &v53);
-  for ( i19 = 0; i19 < g_abs_887578; ++i19 ) /*0x67cb78*/
+  for ( i19 = 0; i19 < (int)((int))((int))(g_abs_887578); ++i19 ) /*0x67cb78*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_88756C + i19) + 52))( /*0x67cb8a*/
       *((unsigned int *)g_abs_88756C + i19),
       &v53);
-  for ( i20 = 0; i20 < g_abs_A83DA8; ++i20 ) /*0x67cba0*/
+  for ( i20 = 0; i20 < (int)((int))((int))(g_abs_A83DA8); ++i20 ) /*0x67cba0*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A83D9C + i20) + 52))( /*0x67cbb2*/
       *((unsigned int *)g_abs_A83D9C + i20),
       &v53);
-  for ( i21 = 0; i21 < g_abs_A83DD8; ++i21 ) /*0x67cbc8*/
+  for ( i21 = 0; i21 < (int)((int))((int))(g_abs_A83DD8); ++i21 ) /*0x67cbc8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A83DCC + i21) + 52))( /*0x67cbda*/
       *((unsigned int *)g_abs_A83DCC + i21),
       &v53);
@@ -210,7 +210,7 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A8020C + i22) + 52))( /*0x67cc02*/
       *((unsigned int *)dword_A8020C + i22),
       &v53);
-  for ( i23 = 0; i23 < g_abs_A83D78; ++i23 ) /*0x67cc18*/
+  for ( i23 = 0; i23 < (int)((int))((int))(g_abs_A83D78); ++i23 ) /*0x67cc18*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A83D6C + i23) + 52))( /*0x67cc2a*/
       *((unsigned int *)g_abs_A83D6C + i23),
       &v53);
@@ -218,7 +218,7 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83C84 + i24) + 52))( /*0x67cc52*/
       *((unsigned int *)dword_A83C84 + i24),
       &v53);
-  for ( i25 = 0; i25 < g_abs_A8ED50; ++i25 ) /*0x67cc68*/
+  for ( i25 = 0; i25 < (int)((int))((int))(g_abs_A8ED50); ++i25 ) /*0x67cc68*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8ED44 + i25) + 52))( /*0x67cc7a*/
       *((unsigned int *)g_abs_A8ED44 + i25),
       &v53);
@@ -226,11 +226,11 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_B7260C + i26) + 52))( /*0x67cca2*/
       *((unsigned int *)dword_B7260C + i26),
       &v53);
-  for ( i27 = 0; i27 < g_abs_A8EC28; ++i27 ) /*0x67ccb8*/
+  for ( i27 = 0; i27 < (int)((int))((int))(g_abs_A8EC28); ++i27 ) /*0x67ccb8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8EC1C + i27) + 52))( /*0x67ccca*/
       *((unsigned int *)g_abs_A8EC1C + i27),
       &v53);
-  for ( i28 = 0; i28 < g_abs_A83D90; ++i28 ) /*0x67cce0*/
+  for ( i28 = 0; i28 < (int)((int))((int))(g_abs_A83D90); ++i28 ) /*0x67cce0*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)&g_abs_A83D84->vtable0[4 * i28] + 52))( /*0x67ccf2*/
       *(unsigned int *)&g_abs_A83D84->vtable0[4 * i28],
       &v53);
@@ -240,23 +240,23 @@ unsigned int * Power::UpdateAll()
       &v53);
   for ( i30 = 0; i30 < dword_8B41A0; ++i30 ) /*0x67cd30*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)unk_8B4194 + i30) + 52))(*((unsigned int *)unk_8B4194 + i30), &v53); /*0x67cd42*/
-  for ( i31 = 0; i31 < g_abs_8B4148; ++i31 ) /*0x67cd58*/
+  for ( i31 = 0; i31 < (int)((int))((int))(g_abs_8B4148); ++i31 ) /*0x67cd58*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_8B413C + i31) + 52))( /*0x67cd6a*/
       *((unsigned int *)g_abs_8B413C + i31),
       &v53);
-  for ( i32 = 0; i32 < g_abs_8B4130; ++i32 ) /*0x67cd80*/
+  for ( i32 = 0; i32 < (int)((int))((int))(g_abs_8B4130); ++i32 ) /*0x67cd80*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_8B4124 + i32) + 52))( /*0x67cd92*/
       *((unsigned int *)g_abs_8B4124 + i32),
       &v53);
-  for ( i33 = 0; i33 < g_abs_B0F4F8; ++i33 ) /*0x67cda8*/
+  for ( i33 = 0; i33 < (int)((int))((int))(g_abs_B0F4F8); ++i33 ) /*0x67cda8*/
     (*(void (**)(unsigned int, int *))(**(unsigned int **)&g_abs_B0F4EC->__pad_0[4 * i33] + 52))( /*0x67cdba*/
       *(unsigned int *)&g_abs_B0F4EC->__pad_0[4 * i33],
       &v53);
-  for ( i34 = 0; i34 < g_abs_8A3880; ++i34 ) /*0x67cdd0*/
+  for ( i34 = 0; i34 < (int)((int))((int))(g_abs_8A3880); ++i34 ) /*0x67cdd0*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_8A3874 + i34) + 52))( /*0x67cde2*/
       *((unsigned int *)g_abs_8A3874 + i34),
       &v53);
-  for ( i35 = 0; i35 < g_abs_A8E340; ++i35 ) /*0x67cdf8*/
+  for ( i35 = 0; i35 < (int)((int))((int))(g_abs_A8E340); ++i35 ) /*0x67cdf8*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8E334 + i35) + 52))( /*0x67ce0a*/
       *((unsigned int *)g_abs_A8E334 + i35),
       &v53);
@@ -264,11 +264,11 @@ unsigned int * Power::UpdateAll()
     (*(void (**)(unsigned int, int *))(**((unsigned int **)dword_A83CBC + i36) + 52))( /*0x67ce32*/
       *((unsigned int *)dword_A83CBC + i36),
       &v53);
-  for ( i37 = 0; i37 < g_abs_A8E328; ++i37 ) /*0x67ce48*/
+  for ( i37 = 0; i37 < (int)((int))((int))(g_abs_A8E328); ++i37 ) /*0x67ce48*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8E31C + i37) + 52))( /*0x67ce5a*/
       *((unsigned int *)g_abs_A8E31C + i37),
       &v53);
-  for ( i38 = 0; i38 < g_abs_A8E998; ++i38 ) /*0x67ce70*/
+  for ( i38 = 0; i38 < (int)((int))((int))(g_abs_A8E998); ++i38 ) /*0x67ce70*/
     (*(void (**)(unsigned int, int *))(**((unsigned int **)g_abs_A8E98C + i38) + 52))( /*0x67ce82*/
       *((unsigned int *)g_abs_A8E98C + i38),
       &v53);
@@ -277,7 +277,7 @@ unsigned int * Power::UpdateAll()
   Power::TimerProcess((int)g_abs_A8ED84); /*0x67ceb0*/
   Power::TimerProcess((int)g_abs_A8ECC8); /*0x67cebf*/
   v50 = v54; /*0x67ceca*/
-  *this = v53; /*0x67cece*/
+  *(unsigned int *)this = v53; /*0x67cece*/
   v51 = v55; /*0x67ced0*/
   *((unsigned int *)this + 1) = v50; /*0x67ced5*/
   *((unsigned int *)this + 2) = v51; /*0x67cedb*/
@@ -399,7 +399,7 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
   Power::TimerProcess(v21); /*0x68bb9f*/
   v22 = *((unsigned int *)this + 391); /*0x68bbaa*/
   if ( *((unsigned int *)this + 389) != -1 ) /*0x68bbb3*/
-    v22 += Timer::GetTicks() - *((unsigned int *)this + 389); /*0x68bbc6*/
+    v22 += this->this->this->Timer::GetTicks() - *((unsigned int *)this + 389); /*0x68bbc6*/
   Power::TimerProcess(v22); /*0x68bbcb*/
   Power::TimerProcess(*((unsigned int *)this + 387)); /*0x68bbd9*/
   Power::TimerProcess(*((unsigned int *)this + 388)); /*0x68bbe7*/

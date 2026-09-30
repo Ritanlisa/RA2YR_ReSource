@@ -131,9 +131,9 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v5; // ecx
   int v6; // ecx
   int *v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // eax
+  int * v8;
+  int * v9;
+  int * v10;
   int *v11; // edx
   int v12; // eax
   int v13; // ebx
@@ -163,7 +163,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int * v37;
   int v38; // [esp+8h] [ebp-C8h]
   int v39; // [esp+8h] [ebp-C8h]
-  int * v40;
+  unsigned int v40;
   int * v41;
   int * v42;
   int * v43;
@@ -185,12 +185,12 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int *v59; // [esp+5Ch] [ebp-74h]
   int * v60;
   char **v61; // [esp+64h] [ebp-6Ch]
-  int v62; // [esp+68h] [ebp-68h] BYREF
-  int v63; // [esp+6Ch] [ebp-64h]
+  int * v62;
+  int * v63;
   int v64; // [esp+70h] [ebp-60h]
   unsigned int v65;
   int * v66;
-  int v67; // [esp+84h] [ebp-4Ch]
+  int * v67;
   int v68[4]; // [esp+88h] [ebp-48h] BYREF
   int * v69;
   int v70[4]; // [esp+A0h] [ebp-30h] BYREF
@@ -221,12 +221,12 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v68[0] = (int *)(*v7);
         v68[1] = (int *)(v7[1]);
         v68[2] = (int *)(v7[2]);
-        v8 = v3[1]; /*0x421008*/
-        v9 = v7[3]; /*0x42100b*/
-        v10 = *v3; /*0x42100e*/
-        v68[3] = v9; /*0x421010*/
-        v63 = v8; /*0x42101b*/
-        v62 = v10; /*0x42102e*/
+        v8 = (int *)(v3[1]);
+        v9 = (int *)(v7[3]);
+        v10 = (int *)(*v3);
+        v68[3] = (int *)(v9);
+        v63 = (int *)(v8);
+        v62 = (int *)(v10);
         v64 = 60; /*0x421032*/
         v65 = 30; /*0x42103d*/
         v11 = ClipRectIntersection(v71, v68, &v62, 0, 0); /*0x42104d*/
@@ -251,20 +251,20 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v66 = (int *)(FoundationSize[1]);
           v21 = (int *)(FoundationSize[2]);
           v67 = (int *)(FoundationSize[3]);
-          if ( v13 <= (int)(v58) + v66 ) /*0x4210dd*/
+          if ( v13 <= (int)((int))(v58) + v66 ) /*0x4210dd*/
             v41 = v58 + v66; /*0x4210df*/
           v60 = v41 - v58 - v66; /*0x4210fd*/
           v37 = v57 + v13; /*0x421118*/
-          if ( v57 + v13 >= (int)(v66) + v67 + v58 ) /*0x42111c*/
-            v37 = v66 + v67 + v58; /*0x42111e*/
+          if ( v57 + v13 >= (int)((int))(v66) + v67 + v58 ) /*0x42111c*/
+            v37 = (unsigned int)(v66)+ v67 + v58; /*0x42111e*/
           v40 = v55; /*0x42112b*/
           if ( v55 <= (int)((unsigned int)(v17)+ v20) ) /*0x42112f*/
             v40 = (unsigned int)(v17)+ v20; /*0x421131*/
           v22 = v40 - v17 - v20; /*0x421144*/
           v23 = v55 + v56; /*0x42114e*/
-          if ( v55 + v56 >= (int)((unsigned int)(v20)+ v17 + v21) ) /*0x421156*/
+          if ( v55 + v56 >= (int)((unsigned int)(v20)+ (unsigned int)(v17)+ v21) ) /*0x421156*/
           {
-            v42 = (int)((unsigned int)(v20)+ v17 + v21);
+            v42 = (int)((unsigned int)(v20)+ (unsigned int)(v17)+ v21);
             v23 = (int)(v42);
           }
           else
@@ -273,7 +273,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           }
           v47 = (int)(v40 + *((unsigned int *)dword_87E8A4 + 10) - v23);
           v43 = (int *)(60 - v56);
-          v48 = (int *)(v40 + v21 - v23);
+          v48 = (int *)((unsigned int)(v40)+ v21 - v23);
           v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
           SubFile = MixFileClass::GetSubFile(v61, 0); /*0x4211c9*/
           v25 = (unsigned short *)StreamClass::ReadAndSeek((int)dword_87E8A4, v40, v41 - dword_886FA4); /*0x4211d3*/
@@ -314,7 +314,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             v28 = (char *)((int)(v49));
             v38 = (unsigned int)(v37 - v41);
-            v29 = (unsigned int)((int *)((unsigned int)((int *)(v40))));
+            v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))));
             do /*0x4212ad*/
             {
               if ( v29 < (int *)((int))(v42) ) /*0x421239*/
@@ -723,10 +723,10 @@ int E4Recv_425670::ConstructionPositionTracker()
     *(unsigned int *)&this->MissionQueued = v2; /*0x42569c*/
     this->MissionStatus = 0; /*0x42569f*/
   }
-  v3 = (IUnknown *)&this->_pad_D8[52]; /*0x4256ad*/
+  v3 = (IUnknown *)&this-((unsigned int *)(>_pad_D8))[52]; /*0x4256ad*/
   if ( *(unsigned int *)&this->_pad_D8[52] == unk_89A178 /*0x4256d4*/
     && *(unsigned int *)&this->_pad_D8[56] == (unsigned int)qword_89A17C
-    && *(unsigned int *)&this->_pad_D8[60] == IDA_HIDWORD(qword_89A17C)
+    && *(unsigned int *)&this-((unsigned int *)(>_pad_D8))[60] == IDA_HIDWORD(qword_89A17C)
     || this->ProductionBlocked )
   {
     if ( !this->_pad_base[141] ) /*0x425b53*/

@@ -29,6 +29,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Animation_e4.hpp"
 
 // 0x4FCDC0
 namespace gamemd {
@@ -46,7 +47,7 @@ int TActionClass::executeBuildAction()
   }
   if ( *((unsigned int *)this + 166) == -1 ) /*0x4fcde3*/
   {
-    result = (char)g_abs_A8ED84; /*0x4fcde5*/
+    result = (unsigned int)((char)g_abs_A8ED84);
     *((unsigned int *)this + 166) = g_abs_A8ED84; /*0x4fcdea*/
   }
   return result; /*0x4fcddb*/
@@ -225,7 +226,7 @@ int TActionClass::executeRepairAction(int a2)
   result = a2; /*0x577c90*/
   if ( a2 ) /*0x577c99*/
     *(unsigned char *)(*(unsigned int *)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(a2 + 48)] + 577) = 0; /*0x577ca7*/
-  if ( (#375 *)a2 != HouseClass_Player ) /*0x577cb4*/
+  if ( (void *)a2 != HouseClass_Player ) /*0x577cb4*/
   {
     if ( a2 ) /*0x577cb8*/
       return result; /*0x577cb8*/
@@ -1124,7 +1125,7 @@ char TActionClass::RevealWaypointArea(int a2, int a3, int a4, IUnknown * aP4)
     (int *)&g_abs_87F7E8,
     &v8,
     *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 1580),
-    (#375 *)HouseClass_Player,
+    (void *)HouseClass_Player,
     0,
     0,
     0,
@@ -1137,7 +1138,7 @@ char TActionClass::RevealWaypointArea(int a2, int a3, int a4, IUnknown * aP4)
     (int *)&g_abs_87F7E8,
     &v8,
     *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 1580),
-    (#375 *)HouseClass_Player,
+    (void *)HouseClass_Player,
     0,
     0,
     0,
@@ -1183,13 +1184,13 @@ char TActionClass::RevealTileTypeAtWaypoint(int a2, int a3, int a4, IUnknown * a
       v15[0] = ((int16_t)(IDA_LOWORD(v8->field_0) - v10 / 2) << 8) + 128; /*0x6e1284*/
       v15[1] = ((int16_t)(v9 - v10 / 2) << 8) + 128; /*0x6e128f*/
       v15[2] = v10 * *(unsigned int *)&g_abs_B077F8; /*0x6e12a2*/
-      MapClass::RevealArea1((int *)&g_abs_87F7E8, v15, 2, (#375 *)HouseClass_Player, 0, 0, 0, 1, 0); /*0x6e12a6*/
+      MapClass::RevealArea1((int *)&g_abs_87F7E8, v15, 2, (void *)HouseClass_Player, 0, 0, 0, 1, 0); /*0x6e12a6*/
       v11 = v8->field_0; /*0x6e12b1*/
       v12 = IDA_HIWORD(v8->field_0) - v10 / 2; /*0x6e12be*/
       v16[2] = v10 * *(unsigned int *)&g_abs_B077F8; /*0x6e12d3*/
       v16[0] = ((int16_t)(v11 - v10 / 2) << 8) + 128; /*0x6e12ea*/
       v16[1] = (v12 << 8) + 128; /*0x6e12f5*/
-      MapClass::RevealArea1((int *)&g_abs_87F7E8, v16, 2, (#375 *)HouseClass_Player, 0, 0, 0, 1, 1); /*0x6e1301*/
+      MapClass::RevealArea1((int *)&g_abs_87F7E8, v16, 2, (void *)HouseClass_Player, 0, 0, 0, 1, 1); /*0x6e1301*/
     }
     v7 = (IUnknown *)MapClass::SpiralSearch(&g_abs_87F7E8); /*0x6e1310*/
   }
@@ -1362,7 +1363,7 @@ namespace gamemd {
 char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
 {
 
-  #374 *v6; // eax
+  void *v6; // eax
   IUnknown *v8; // [esp+4h] [ebp-14h] BYREF
   VoxelAnimClass *v9; // [esp+8h] [ebp-10h] BYREF
   int v10[2]; // [esp+Ch] [ebp-Ch] BYREF
@@ -1378,7 +1379,7 @@ char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
   {
     GroundHeight += *(unsigned int *)&g_abs_B077F8; /*0x6e25ba*/
   }
-  v6 = (#374 *)RA2_OPNEW(0x148u); /*0x6e25c3*/
+  v6 = (void *)RA2_OPNEW(0x148u); /*0x6e25c3*/
   if ( v6 ) /*0x6e25cd*/
     DamageAnimClass::Constructor( /*0x6e25e8*/
       v6,
@@ -1751,7 +1752,7 @@ int TActionClass::Validate(int a2)
   int v9; // eax
   int v10; // eax
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x6e3e59*/
+  AbstractClass::ProcessPower((void *)this); /*0x6e3e59*/
   v3 = *((unsigned int *)this + 10); /*0x6e3e5e*/
   if ( v3 ) /*0x6e3e63*/
   {

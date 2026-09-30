@@ -94,31 +94,31 @@ int Dialog::InitializeGameSettings()
     SendMessageA(v8, 0xF1u, (unsigned char)g_abs_A8B320 == 1, 0); /*0x5b5cc3*/
   v9 = GetDlgItem(*this, 1642); /*0x5b5ccd*/
   if ( v9 ) /*0x5b5cd1*/
-    SendMessageA(v9, 0xF1u, g_abs_A8B258 == 1, 0); /*0x5b5ce9*/
+    SendMessageA(v9, 0xF1u, g_abs_A8B258 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1), 0); /*0x5b5ce9*/
   v10 = GetDlgItem(*this, 1361); /*0x5b5cf3*/
   if ( v10 ) /*0x5b5cf7*/
-    SendMessageA(v10, 0xF1u, g_abs_A8B26C == 1, 0); /*0x5b5d0f*/
+    SendMessageA(v10, 0xF1u, g_abs_A8B26C == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1), 0); /*0x5b5d0f*/
   v11 = GetDlgItem(*this, 1358); /*0x5b5d19*/
   if ( v11 ) /*0x5b5d1d*/
-    SendMessageA(v11, 0xF1u, g_abs_A8B262 == 1, 0); /*0x5b5d35*/
+    SendMessageA(v11, 0xF1u, g_abs_A8B262 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1), 0); /*0x5b5d35*/
   v12 = GetDlgItem(*this, 1690); /*0x5b5d3f*/
   if ( v12 ) /*0x5b5d43*/
-    SendMessageA(v12, 0xF1u, g_abs_A8B263 == 1, 0); /*0x5b5d5b*/
+    SendMessageA(v12, 0xF1u, g_abs_A8B263 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1), 0); /*0x5b5d5b*/
   v13 = GetDlgItem(*this, 1693); /*0x5b5d65*/
   if ( v13 ) /*0x5b5d69*/
     SendMessageA(v13, 0xF1u, (unsigned char)g_abs_A8B264 == 1, 0); /*0x5b5d81*/
   v14 = GetDlgItem(*this, 1356); /*0x5b5d8b*/
   if ( v14 ) /*0x5b5d8f*/
-    SendMessageA(v14, 0xF1u, g_abs_A8B261 == 1, 0); /*0x5b5da7*/
+    SendMessageA(v14, 0xF1u, g_abs_A8B261 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1), 0); /*0x5b5da7*/
   v15 = GetDlgItem(*this, 1357); /*0x5b5db1*/
   if ( v15 ) /*0x5b5db5*/
-    SendMessageA(v15, 0xF1u, g_abs_A8B31F == 1, 0); /*0x5b5dcd*/
+    SendMessageA(v15, 0xF1u, g_abs_A8B31F == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1), 0); /*0x5b5dcd*/
   v16 = GetDlgItem(*this, 1572); /*0x5b5dd7*/
   if ( v16 ) /*0x5b5ddb*/
-    SendMessageA(v16, 0xF1u, g_abs_A8B260 == 1, 0); /*0x5b5df3*/
+    SendMessageA(v16, 0xF1u, g_abs_A8B260 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1), 0); /*0x5b5df3*/
   v17 = GetDlgItem(*this, 1430); /*0x5b5dfd*/
   if ( v17 ) /*0x5b5e01*/
-    SendMessageA(v17, 0xF1u, g_abs_A8B31D == 1, 0); /*0x5b5e19*/
+    SendMessageA(v17, 0xF1u, g_abs_A8B31D == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1), 0); /*0x5b5e19*/
   v18 = GetDlgItem(*this, 1448); /*0x5b5e23*/
   if ( v18 ) /*0x5b5e27*/
     SendMessageA(v18, 0x4B2u, 0, (LPARAM)&g_abs_A8B320 + 2); /*0x5b5e36*/
@@ -204,7 +204,7 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
         (*(void (**)(unsigned int))(*(unsigned int *)g_abs_87F7E8[8086] + 16))(g_abs_87F7E8[8086]); /*0x5d3616*/
       while ( dwNewLong < 0 ) /*0x5d362e*/
       {
-        if ( Dialog::PumpMessages() ) /*0x5d3630*/
+        if ( this->Dialog::PumpMessages() ) /*0x5d3630*/
           break; /*0x5d3637*/
         if ( !IDA_LOBYTE(g_abs_87F7E8[539758]) ) /*0x5d3640*/
         {
@@ -270,9 +270,9 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
 
   char v5; // bl
   int v6; // esi
-  #72 *StringCSF; // eax
-  #72 *v8; // ebp
-  #72 *v9; // eax
+  void *StringCSF; // eax
+  void *v8; // ebp
+  void *v9; // eax
   int MessageBox; // eax
   int v11; // ebp
   int v12; // ecx
@@ -281,31 +281,31 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   int hWnd; // [esp+30h] [ebp-F4h]
   char Source[240]; // [esp+34h] [ebp-F0h] BYREF
 
-  v5 = 1; /*0x5f2961*/
-  v6 = 3; /*0x5f2963*/
+  v5 = (int)(1);
+  v6 = (int)(3);
   this->Debug::Log(); /*0x5f2968*/
   if ( a4 == 1 ) /*0x5f2979*/
-    StringCSF = GetStringCSF((#72 *)aTxtModemConner, 0, g_Str_File_NullMgr_CPP, 1409); /*0x5f298c*/
+    StringCSF = GetStringCSF((void *)aTxtModemConner, 0, g_Str_File_NullMgr_CPP, 1409); /*0x5f298c*/
   else
-    StringCSF = GetStringCSF((#72 *)aTxtDialing, 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
+    StringCSF = GetStringCSF((void *)aTxtDialing, 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
   v8 = StringCSF; /*0x5f29ba*/
   IDA_LOBYTE(dword_A8ED54[51580]) = 0; /*0x5f29bc*/
-  v9 = GetStringCSF((#72 *)g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1415); /*0x5f29c3*/
-  MessageBox = CreateMessageBox(v8, v9, &dword_A8ED54[51580]); /*0x5f29cc*/
+  v9 = GetStringCSF((void *)g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1415); /*0x5f29c3*/
+  MessageBox = CreateMessageBox(v8, v9, &((unsigned int *)(dword_A8ED54))[51580]); /*0x5f29cc*/
   hWnd = MessageBox; /*0x5f29d3*/
   if ( !MessageBox ) /*0x5f29d7*/
     return v6; /*0x5f29d7*/
   Dialog::Show(MessageBox); /*0x5f29df*/
-  Debug::Log(); /*0x5f29e9*/
+  this->this->this->Debug::Log(); /*0x5f29e9*/
   (*(void (**)(int, int))(*(unsigned int *)dword_A8ED54[233459] + 8))(dword_A8ED54[233459], a3); /*0x5f2a01*/
-  Debug::Log(); /*0x5f2a09*/
+  this->this->this->Debug::Log(); /*0x5f2a09*/
   (*(void (**)(int, int, char *, int, int))(*(unsigned int *)dword_A8ED54[233459] + 20))( /*0x5f2a24*/
     dword_A8ED54[233459],
     60,
     Source,
     81,
     -1);
-  Debug::Log(); /*0x5f2a2c*/
+  this->this->this->Debug::Log(); /*0x5f2a2c*/
   (*(void (**)(int, int))(*(unsigned int *)dword_A8ED54[233459] + 24))(dword_A8ED54[233459], a2); /*0x5f2a44*/
   (*(void (**)(int, int (*)()))(*(unsigned int *)dword_A8ED54[233459] + 36))(dword_A8ED54[233459], PumpEventLoop); /*0x5f2a54*/
   IDA_LOBYTE(dword_A8ED54[51580]) = 0; /*0x5f2a57*/
@@ -1305,7 +1305,7 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
   const char **v28; // eax
   bool v29; // zf
   int v30; // esi
-  #72 *StringCSF; // [esp-4h] [ebp-AC4h]
+  void *StringCSF; // [esp-4h] [ebp-AC4h]
   int v33; // [esp+10h] [ebp-AB0h] BYREF
   int64_t v34; // [esp+14h] [ebp-AACh]
   const char **v35; // [esp+1Ch] [ebp-AA4h]
@@ -1589,7 +1589,7 @@ LABEL_71:
   ((void (*)(int, void *, int, int, unsigned char *))CallWindowProcA)(v30, hWnd, 13, 2048, lParam); /*0x6102f5*/
   if ( lParam[0] ) /*0x610302*/
   {
-    StringCSF = GetStringCSF((#72 *)lParam, 0, g_Str_File_ownrdraw_cpp, 7392); /*0x61031c*/
+    StringCSF = GetStringCSF((void *)lParam, 0, g_Str_File_ownrdraw_cpp, 7392); /*0x61031c*/
     GadgetClass::SetTooltip(v17, StringCSF); /*0x61031d*/
   }
   else
@@ -2644,9 +2644,9 @@ AbstractClass * * Dialog::BindGadgetData(int * a2, char * Block)
   int v8; // eax
   int ***v10; // eax
   bool v11; // zf
-  const #72 *v12; // esi
+  const void *v12; // esi
   int v13; // eax
-  #72 *v14; // eax
+  void *v14; // eax
   int v15; // edi
   int v16; // ebx
   unsigned int *i; // eax
@@ -2704,7 +2704,7 @@ AbstractClass * * Dialog::BindGadgetData(int * a2, char * Block)
       *((unsigned int *)Block + 15) = v37; /*0x624d55*/
       *((unsigned int *)Block + 10) = Blocka; /*0x624d5c*/
       *((unsigned int *)Block + 13) = v40; /*0x624d5f*/
-      v12 = (const #72 *)*((unsigned int *)v7 + 11); /*0x624d62*/
+      v12 = (const void *)*((unsigned int *)v7 + 11); /*0x624d62*/
       if ( Blocka ) /*0x624d67*/
       {
         RA2_OPDEL(Blocka); /*0x624d6a*/
@@ -2714,7 +2714,7 @@ AbstractClass * * Dialog::BindGadgetData(int * a2, char * Block)
       if ( v12 && *(unsigned short *)v12 ) /*0x624d81*/
       {
         v13 = wcslen(v12); /*0x624d88*/
-        v14 = (#72 *)RA2_OPNEW(2 * v13 + 2); /*0x624d92*/
+        v14 = (void *)RA2_OPNEW(2 * v13 + 2); /*0x624d92*/
         *((unsigned int *)Block + 10) = v14; /*0x624d99*/
         wcscpy(v14, v12); /*0x624d9c*/
         v10 = (int ***)v42; /*0x624da1*/
@@ -2810,7 +2810,7 @@ AbstractClass * * Dialog::BindGadgetData(int * a2, char * Block)
         *((unsigned int *)Block + 13) = v35; /*0x624f3d*/
         *((unsigned int *)Block + 10) = Blockc; /*0x624f40*/
         *((unsigned int *)Block + 15) = v41; /*0x624f47*/
-        GadgetClass::SetTooltip((void **)Block, *((#72 **)v32 + 11)); /*0x624f50*/
+        GadgetClass::SetTooltip((void **)Block, *((void **)v32 + 11)); /*0x624f50*/
         SymbolTable::Rebuild(Block, *(int ***)(v43 + 56)); /*0x624f62*/
         v7 = v36; /*0x624f67*/
         v32 = (char *)v43; /*0x624f6b*/
@@ -3079,7 +3079,7 @@ HWND Dialog::ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectC
 
   va_start(Format, BufferCount);
   memset(Buffer, 0, sizeof(Buffer)); /*0x5e2717*/
-  vswprintf((#72 *const)Buffer, BufferCount, (const #72 *const)Format); /*0x5e272a*/
+  vswprintf((void *const)Buffer, BufferCount, (const void *const)Format); /*0x5e272a*/
   result = (void *)Dialog::GetCurrent(); /*0x5e2732*/
   if ( result ) /*0x5e2739*/
   {
@@ -3121,7 +3121,7 @@ HWND Dialog::ShowStatusText(SessionClass * aP0, CampaignScore * aP1, CampaignSco
 
   va_start(Format, aP1);
   memset(Buffer, 0, sizeof(Buffer)); /*0x5e27a7*/
-  vswprintf((#72 *const)Buffer, aP1, (const #72 *const)Format); /*0x5e27ba*/
+  vswprintf((void *const)Buffer, aP1, (const void *const)Format); /*0x5e27ba*/
   result = Dialog::GetCurrent(); /*0x5e27c2*/
   if ( result ) /*0x5e27c9*/
   {

@@ -18,7 +18,7 @@ struct BlitTransXlatAlpha_ushort {
     int  Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x493930
     int  Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x493A60
     int  Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x493B90
-    int  AddRef(unsigned short * a2, unsigned __int8 * a3, int a4, int a5, int a6, unsigned __int16 * a7, int a8, int a9);  // 0x493DF0
+    int  AddRef(unsigned short * a2, uint8_t * a3, int a4, int a5, int a6, uint16_t * a7, int a8, int a9);  // 0x493DF0
     int  ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8);  // 0x493EA0
     int  BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);  // 0x493ED0
     int  GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);  // 0x493F00

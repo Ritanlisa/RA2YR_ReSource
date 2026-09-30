@@ -145,7 +145,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   {
     (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4785c6*/
   }
-  v15 = (int)((gamemd::AbstractClass **)(*((unsigned int *)this + 2)));
+  v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*((unsigned int *)this + 2))));
   if ( v15 < *((unsigned int *)this + 4) ) /*0x4785d1*/
     *((unsigned int *)this + 4) = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
@@ -692,14 +692,14 @@ ParticleTypeClass * ParticleTypeClass::ddtor(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x645971*/
   v7 = Block; /*0x645986*/
   v3 = (*(int (**)(int *, void ***))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v7); /*0x64598a*/
-  if ( v3 != -1 && v3 < g_abs_B0F680 && v3 < --g_abs_B0F680 ) /*0x6459a5*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_B0F680) && v3 < --g_abs_B0F680 ) /*0x6459a5*/
   {
     do /*0x6459bd*/
     {
       ++v3; /*0x6459ad*/
       *((unsigned int *)g_abs_B0F674 + v3 - 1) = *((unsigned int *)g_abs_B0F674 + v3); /*0x6459b1*/
     }
-    while ( v3 < g_abs_B0F680 ); /*0x6459bd*/
+    while ( v3 < (int)((int))((int))(g_abs_B0F680) ); /*0x6459bd*/
   }
   v7 = Block; /*0x6459cf*/
   v4 = (*(int (**)(int *, void ***))(g_abs_A83D98 + 16))(&g_abs_A83D98, &v7); /*0x6459d3*/

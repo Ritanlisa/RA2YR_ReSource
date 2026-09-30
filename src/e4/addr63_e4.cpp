@@ -255,7 +255,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
           do /*0x6305ea*/
           {
             v18 = (unsigned int)(*v48);
-            v19 = (char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)++v48))))))));
+            v19 = (unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)++v48)))))))))));
             if ( v48 >= (uint8_t *)&retaddr ) /*0x630571*/
             {
               (*(void (**)(int, unsigned char *, int))(a1->q024)(a1, v73, 2048); /*0x630584*/
@@ -647,7 +647,7 @@ AbstractClass * * E4Recv_631640::sub_631640()
       }
       *((unsigned char *)this + 8) = 1; /*0x6316a4*/
       PhoneEditor::PopulateList((HWND *)this); /*0x6316a8*/
-      if ( g_abs_A8DABC == -1 ) /*0x6316b4*/
+      if ( g_abs_A8DABC == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(-1) ) /*0x6316b4*/
       {
         v4 = GetDlgItem(*(HWND *)this, 1509); /*0x6316be*/
         if ( v4 ) /*0x6316c2*/
@@ -832,12 +832,12 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   unsigned int v22[4]; // [esp+54h] [ebp-10h] BYREF
 
   Viewport = (int *)(Display::GetViewport(v16));
-  v21[0] = *Viewport; /*0x635574*/
-  v21[1] = Viewport[1]; /*0x63557b*/
-  v21[2] = Viewport[2]; /*0x635582*/
-  v4 = Viewport[3]; /*0x635586*/
-  v5 = *((unsigned int *)this + 1); /*0x635589*/
-  v21[3] = v4; /*0x63558c*/
+  v21[0] = (unsigned int)((int *)(*Viewport));
+  v21[1] = (unsigned int)((int *)(Viewport[1]));
+  v21[2] = (unsigned int)((int *)(Viewport[2]));
+  v4 = (int *)(Viewport[3]);
+  v5 = (int *)(*((unsigned int *)this + 1));
+  v21[3] = (int *)(v4);
   ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(*(unsigned int *)v5 + 4)); /*0x635599*/
   v15[0] = *ScenarioClassActionCoords; /*0x6355a0*/
   v15[1] = ScenarioClassActionCoords[1]; /*0x6355a7*/
@@ -907,12 +907,12 @@ int E4Recv_635680::sub_635680(int a2)
   int v21[4]; // [esp+60h] [ebp-10h] BYREF
 
   Viewport = (int *)(Display::GetViewport(&v16));
-  v20[0] = *Viewport; /*0x635694*/
-  v20[1] = Viewport[1]; /*0x63569b*/
-  v20[2] = Viewport[2]; /*0x6356a2*/
-  v20[3] = Viewport[3]; /*0x6356b0*/
-  Coords = ScriptAction::GetCoords(this, v11); /*0x6356b4*/
-  v10[0] = *Coords; /*0x6356bb*/
+  v20[0] = (unsigned int)((int *)(*Viewport));
+  v20[1] = (unsigned int)((int *)(Viewport[1]));
+  v20[2] = (unsigned int)((int *)(Viewport[2]));
+  v20[3] = (int *)(Viewport[3]);
+  Coords = (int *)(ScriptAction::GetCoords(this, v11));
+  v10[0] = (int *)(*Coords);
   v10[1] = Coords[1]; /*0x6356c6*/
   v10[2] = Coords[2]; /*0x6356d1*/
   v5 = ToCoordPixel(&v9, v10); /*0x6356d5*/
@@ -972,8 +972,8 @@ int E4Recv_636F00::sub_636F00(int a2, int a3)
   unsigned int *v10; // eax
   unsigned char *v11; // esi
 
-  v3 = *((char *)this + 2); /*0x636f00*/
-  v4 = *this; /*0x636f08*/
+  v3 = (int)(*((char *)this + 2));
+  v4 = (int)(*this);
   v5 = *(unsigned int *)(v3 + 4 * a3); /*0x636f0b*/
   v6 = 0; /*0x636f0e*/
   v7 = *(unsigned int *)(v5 + 16); /*0x636f11*/
@@ -2770,7 +2770,7 @@ int E4Recv_63CF10::sub_63CF10()
 
   v1 = *((unsigned int *)this + 135); /*0x63cf10*/
   v2 = *(unsigned int *)(v1 + 48); /*0x63cf1a*/
-  if ( (uint8_t)House::IsHumanPlayer((#375 *)v1) && HouseClass_Player ) /*0x63cf2d*/
+  if ( (uint8_t)House::IsHumanPlayer((void *)v1) && HouseClass_Player ) /*0x63cf2d*/
     v2 = *((unsigned int *)HouseClass_Player + 12); /*0x63cf2f*/
   v3 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * v2] + 22265; /*0x63cf41*/
   v5 = *(unsigned short *)v3; /*0x63cf4a*/
@@ -2795,7 +2795,7 @@ int E4Recv_63CFC0::sub_63CFC0()
 
   v1 = *((unsigned int *)this + 135); /*0x63cfc0*/
   v2 = *(unsigned int *)(v1 + 48); /*0x63cfca*/
-  if ( (uint8_t)House::IsHumanPlayer((#375 *)v1) && HouseClass_Player ) /*0x63cfdd*/
+  if ( (uint8_t)House::IsHumanPlayer((void *)v1) && HouseClass_Player ) /*0x63cfdd*/
     v2 = *((unsigned int *)HouseClass_Player + 12); /*0x63cfdf*/
   v3 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * v2] + 22265; /*0x63cff1*/
   v5 = *(unsigned short *)v3; /*0x63cffa*/

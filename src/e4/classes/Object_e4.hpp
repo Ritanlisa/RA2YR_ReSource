@@ -92,7 +92,7 @@ struct Object {
 // --- flat members (END) ---
     int  FindClosestObjectCell(void * aP1, void * aP2, void * aP3);  // 0x47C3D0
     int  FindObjectCell(void * aP1, char aP2);  // 0x47C5A0
-    bool  IsAlliedWithObjectHouse(void * aP1);  // 0x4F9A90
+    int IsAlliedWithObjectHouse(IUnknown * aP1);  // 0x4F9A90
     bool  IsAlliedWithObjectSimpleHouse(unsigned char * a2);  // 0x4F9AF0
     unsigned int *  FindNearestObjectAtCell(unsigned int * a2);  // 0x56C210
     void*  SpawnAtCell(void * aP1, void * aP2, void * aP3);  // 0x5FC380

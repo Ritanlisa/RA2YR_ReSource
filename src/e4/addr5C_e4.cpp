@@ -1692,7 +1692,7 @@ void DivideBigInteger(unsigned int * a1, char * a2, int a3)
           v24 = 2 * a3; /*0x5c7b25*/
           do /*0x5c7b55*/
           {
-            v25 = *(unsigned short *)((char *)v23 + a2 - (char *)v32); /*0x5c7b2a*/
+            v25 = *(unsigned short *)((char *)(unsigned int)(v23)+ a2 - (char *)v32); /*0x5c7b2a*/
             v23 = (int *)((char *)v23 + 2); /*0x5c7b2e*/
             v26 = *((uint16_t *)v23 - 1) - v25 - v29; /*0x5c7b45*/
             *((unsigned short *)v23 - 1) = v26; /*0x5c7b47*/
@@ -1927,7 +1927,7 @@ void ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, 
     {
       if ( !*aP1 ) /*0x5c856c*/
       {
-        v10 = &aP1[v6 / 4u - 1]; /*0x5c8579*/
+        v10 = (unsigned int *)(&aP1[v6 / 4u - 1]);
         if ( !*v10 ) /*0x5c8575*/
         {
           do /*0x5c858c*/
@@ -1961,7 +1961,7 @@ void ModBigIntExp(unsigned int * a0, AbstractClass * aP1, char * a2, char * a3, 
     if ( v14 <= 1 ) /*0x5c85d1*/
       return -2; /*0x5c85e2*/
   }
-  v16 = &a3[v6 - 4]; /*0x5c85e9*/
+  v16 = (unsigned int *)(&a3[v6 - 4]);
   v17 = a5; /*0x5c85ed*/
   v18 = (char *)&aP1[v6 / 4u - 1]; /*0x5c85ef*/
   v19 = v16; /*0x5c85f3*/

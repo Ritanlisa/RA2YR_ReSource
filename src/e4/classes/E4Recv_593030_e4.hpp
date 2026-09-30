@@ -13,6 +13,6 @@ struct E4Recv_593030 {
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
 // --- flat members (END) ---
-    char  PlaceMapSeedCityBlockDiagonal(__int16 * a2, __int16 * a3, void * aP2);  // 0x593030
+    char  PlaceMapSeedCityBlockDiagonal(int16_t * a2, int16_t * a3, void * aP2);  // 0x593030
 };
 } // namespace gamemd

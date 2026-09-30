@@ -61,6 +61,7 @@
 #include "e4/classes/ScoreScreen_e4.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/E4Recv_7741C0_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x750920
 namespace gamemd {
@@ -295,7 +296,7 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
           0x40u) )
   {
   LABEL_2:
-        this->Debug::Log();
+        ((Debug *)0)->Log();
     return 0; /*0x751e23*/
   }
   return 1; /*0x751e1d*/
@@ -377,14 +378,14 @@ void ThemeClass_Update()
 
   if ( byte_A8ED64 ) /*0x752773*/
     return; /*0x752773*/
-    if ( !Audio::IsSoundEnabled() )
+    if ( !this->Audio::IsSoundEnabled() )
     return; /*0x752779*/
   if ( !g_InfantryDrawState ) /*0x75278e*/
     return; /*0x75278e*/
-    if ( this->Audio::IsSoundPlaying() )
+    if ( ((Audio *)0)->IsSoundPlaying() )
     return; /*0x752794*/
   v0 = qword_B1D4D0 + ThemeClass::GetValue(g_InfantryDrawState); /*0x7527b4*/
-    IDA_LODWORD(v1) = this->Audio::Callback();
+    IDA_LODWORD(v1) = ((Audio *)0)->Callback();
   if ( v1 <= v0 || dword_B1D428 ) /*0x7527dc*/
     return; /*0x7527dc*/
   if ( dword_B1D4C4 ) /*0x7527e9*/

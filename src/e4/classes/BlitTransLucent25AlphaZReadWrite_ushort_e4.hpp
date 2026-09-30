@@ -29,13 +29,13 @@ struct BlitTransLucent25AlphaZReadWrite_ushort {
 // --- flat members (END) ---
     BlitTransLucent25AlphaZReadWrite_ushort * Blit(unsigned int * Block, char a2);
     void* Constructor_RLEBlitter(char a2);
-    int Blit_RLE_Remap(int arg0, unsigned __int8 * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
+    int Blit_RLE_Remap(int arg0, uint8_t * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
     int CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
     int CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
     int CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
     std::locale::facet * Constructor_RLEBlitter_0(char a2);
     std::locale::facet * Constructor_RLEBlitter_1(char a2);
-    unsigned short * Blit_RLE_Lucent50(unsigned short * a1, unsigned __int8 * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
+    unsigned short * Blit_RLE_Lucent50(unsigned short * a1, uint8_t * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
 };
 
 } // namespace gamemd

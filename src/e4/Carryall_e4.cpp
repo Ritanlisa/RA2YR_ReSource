@@ -175,7 +175,7 @@ LABEL_44:
           this->Debug::Log(); /*0x41713f*/
           *((unsigned int *)this + 47) = (FootClass *)3; /*0x417147*/
         }
-        return 1; /*0x417151*/
+        return (gamemd::FootClass **)(1);
       }
       else
       {
@@ -198,7 +198,7 @@ LABEL_44:
           (*(void (**)(FootClass **, int))&(*this)->__pad_115[15])(this, 1); /*0x4171af*/
           *((unsigned int *)this + 47) = 0; /*0x4171b5*/
         }
-        return 1; /*0x417186*/
+        return (gamemd::FootClass **)(1);
       }
       else
       {

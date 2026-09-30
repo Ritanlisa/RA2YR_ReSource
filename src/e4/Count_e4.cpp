@@ -50,9 +50,9 @@ int Count::SetupAllCountriesLobby()
   int v10; // [esp+18h] [ebp-8h]
   HWND hWnd; // [esp+1Ch] [ebp-4h]
 
-  v1 = 0; /*0x46f6da*/
-  v2 = (wchar_t **)&g_abs_A8DA90; /*0x46f6dc*/
-  v10 = 0; /*0x46f6e2*/
+  v1 = (int *)(0);
+  v2 = (int *)((wchar_t **)&g_abs_A8DA90);
+  v10 = (int *)(0);
   v8 = &g_abs_A8DA90; /*0x46f6e6*/
   do /*0x46f7ff*/
   {
@@ -63,7 +63,7 @@ int Count::SetupAllCountriesLobby()
     {
       v5 = *v2; /*0x46f718*/
       v6 = -2; /*0x46f71c*/
-      if ( g_abs_A8B23C && (g_abs_A8B238 == 3 || g_abs_A8B238 == 4) ) /*0x46f730*/
+      if ( g_abs_A8B23C && (g_abs_A8B238 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) || g_abs_A8B238 == 4) ) /*0x46f730*/
         v6 = (*(int (**)(int))(*(unsigned int *)g_abs_A8B23C + 40))(g_abs_A8B23C); /*0x46f737*/
       if ( (uint8_t)((Player *)(v5))->IsObserver() ) /*0x46f73b*/
       {
@@ -77,7 +77,7 @@ int Count::SetupAllCountriesLobby()
       {
         PlayerSide = v6; /*0x46f760*/
       }
-      else if ( v5 == g_abs_AC11B0 ) /*0x46f76a*/
+      else if ( v5 == (wchar_t *)((wchar_t *))((wchar_t *))(g_abs_AC11B0) ) /*0x46f76a*/
       {
         PlayerSide = v6; /*0x46f76c*/
       }

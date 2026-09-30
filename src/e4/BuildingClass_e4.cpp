@@ -28,6 +28,8 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x453E20
 namespace gamemd {
@@ -249,7 +251,7 @@ int BuildingClass::AssignDestination_SyncLog()
 
   if ( *((unsigned int *)this + 43) != 19 ) /*0x455d5a*/
   {
-    if ( (*(uint8_t (**)(#377 *))(*(unsigned int *)this + 644))(this) /*0x455d73*/
+    if ( (*(uint8_t (**)(void *))(*(unsigned int *)this + 644))(this) /*0x455d73*/
       || *(unsigned char *)(*((unsigned int *)this + 328) + 5817) )
     {
       TechnoClass::SetFocus(this, aP1); /*0x455d80*/

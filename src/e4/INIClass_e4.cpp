@@ -41,9 +41,9 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   ObjectClass *v8; // eax
   ObjectClass *v9; // ecx
   ObjectClass *v10; // ecx
-  int v13; // ebp
+  ObjectClass ** v13;
   INIClass *v14; // edi
-  int v15; // edx
+  ObjectClass ** v15;
   unsigned int v17[3]; // [esp+Ch] [ebp-Ch] BYREF
   INIClass *aP1a; // [esp+1Ch] [ebp+4h]
 
@@ -67,8 +67,8 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   }
   v7 = (int)((gamemd::ObjectClass **)(*((unsigned int *)this + 11)));
   ecx7 = (gamemd::ObjectClass **)(*((unsigned int *)this + 10));
-  v17[0] = v5; /*0x526890*/
-  eax7 = System_Search(ecx7, v7, (int *)v17); /*0x526894*/
+  v17[0] = (int)(v5);
+  eax7 = (int)(System_Search(ecx7, v7, (int *)v17));
   if ( !eax7 ) /*0x52689b*/
     return 0; /*0x526938*/
   *((unsigned int *)this + 14) = eax7; /*0x5268a1*/
@@ -92,7 +92,7 @@ LABEL_9:
   while ( 1 ) /*0x5268ec*/
   {
     v14 = (gamemd::INIClass *)((gamemd::ObjectClass **)(*(INIClass **)(v13 + 8 * ((int)v10 / 2))));
-    v15 = (gamemd::ObjectClass **)(v13 + 8 * ((int)v10 / 2));
+    v15 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(v13 + 8 * ((int)v10 / 2))));
     if ( (int)v14 <= (int)aP1a ) /*0x5268f6*/
       break; /*0x5268f6*/
     v10 = (ObjectClass *)((int)v10 / 2); /*0x5268f8*/
@@ -102,7 +102,7 @@ LABEL_19:
   }
   if ( v14 != aP1a ) /*0x5268fc*/
   {
-    v13 = v15 + 8; /*0x5268fe*/
+    v13 = (gamemd::ObjectClass **)((int)(v15 + 8));
     v10 = (ObjectClass *)((char *)v10 - 1 - (int)v10 / 2); /*0x526906*/
     goto LABEL_19; /*0x526906*/
   }
@@ -363,8 +363,8 @@ INIClass::INIClass()
   }
   v6 = (unsigned int)(v2[1]);
   result[9] = (unsigned int)(v2);
-  result[8] = v6; /*0x535afc*/
-  v7 = v2[1]; /*0x535aff*/
+  result[8] = (unsigned int)(v6);
+  v7 = (unsigned int)(v2[1]);
   if ( v7 ) /*0x535b04*/
     *(unsigned int *)(v7 + 8) = v3; /*0x535b06*/
   v2[1] = v3; /*0x535b09*/

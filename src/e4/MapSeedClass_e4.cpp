@@ -19,6 +19,7 @@
 #include "e4/classes/MixFile_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x5A5B50
 namespace gamemd {
@@ -29,14 +30,14 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   MapSeedClass *v3; // ecx
   int v4; // edx
   void * v5;
-  int v6; // ebx
+  void * v6;
   int v7; // eax
   unsigned int v8; // eax
   int16_t v9; // ax
   void * uniqueId;
   int i; // esi
   unsigned int v12; // eax
-  int v13; // ebx
+  void * v13;
   char v14; // bl
   unsigned int v15; // eax
   int uniqueId_high; // ebx
@@ -56,21 +57,21 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   unsigned int v31[4]; // [esp+114h] [ebp-14h] BYREF
   char v32[4]; // [esp+124h] [ebp-4h] BYREF
 
-  v23.owningHouseIndex = (int)this; /*0x5a5b6a*/
-  v2 = (MapSeedClass **)globalHelper_0A7640(&v23.spawnStatus, aP1); /*0x5a5b6e*/
-  v3 = *v2; /*0x5a5b73*/
+  v23.owningHouseIndex = (gamemd::MapSeedClass **)((char)((int)this));
+  v2 = (char)((MapSeedClass **)globalHelper_0A7640(&v23.spawnStatus, aP1));
+  v3 = (char)(*v2);
   v23.ambientSoundController[0] = (int)*v2; /*0x5a5b75*/
   v4 = (int)v2[1]; /*0x5a5b79*/
   v23.ambientSoundController[1] = v4; /*0x5a5b7c*/
   v23.ambientSoundController[2] = (int)v2[2]; /*0x5a5b83*/
   v5 = (int)v2[3]; /*0x5a5b87*/
   v23.ambientSoundController[3] = v5; /*0x5a5b8d*/
-  if ( v5 > 5 ) /*0x5a5b91*/
+  if ( v5 > (void *)(5) ) /*0x5a5b91*/
   {
-    v6 = v5 - 2; /*0x5a5b9a*/
+    v6 = ((unsigned int)(void)*)((int)(v5 - 2));
     *(unsigned short *)&v23.__pad_0[6] = v4 + 2; /*0x5a5b9d*/
     *(unsigned short *)&v23.__pad_0[4] = (unsigned short)v3; /*0x5a5ba9*/
-    if ( v5 - 2 > 3 ) /*0x5a5bae*/
+    if ( (unsigned int)(v5)- 2 > 3 ) /*0x5a5bae*/
     {
       do /*0x5a5de6*/
       {
@@ -134,7 +135,7 @@ LABEL_11:
             uniqueId = v23.uniqueId; /*0x5a5d31*/
           }
           v23.customSound_controller[1] = (char)(SHIWORD(v23.uniqueId));
-          v23.customSound_controller[0] = uniqueId; /*0x5a5d56*/
+          v23.customSound_controller[0] = (char)(uniqueId);
           v23.customSound_controller[2] = 4; /*0x5a5d5a*/
           v23.customSound_controller[3] = 3; /*0x5a5d62*/
           if ( !IsAreaClearMap((MapClass *)v23.customSound_controller, 0, 0) ) /*0x5a5d6a*/
@@ -154,16 +155,16 @@ LABEL_11:
           else
 LABEL_18:
             PlaceMapSeedClassBuildings((ObjectClass *)dword_ABBEC4, (ObjectClass *)&v23.uniqueId, -1, -1); /*0x5a5dc6*/
-          v6 -= 10; /*0x5a5dcb*/
+          (unsigned int)(v6)-= 10; /*0x5a5dcb*/
           *(unsigned short *)&v23.__pad_0[6] += 10; /*0x5a5dce*/
         }
         else
         {
           *(unsigned short *)&v23.__pad_0[6] += 2; /*0x5a5ddb*/
-          v6 -= 2; /*0x5a5de1*/
+          (unsigned int)(v6)-= 2; /*0x5a5de1*/
         }
       }
-      while ( v6 > 3 ); /*0x5a5de6*/
+      while ( v6 > (void *)(3) ); /*0x5a5de6*/
       IDA_LOWORD(v3) = v23.ambientSoundController[0]; /*0x5a5dec*/
       IDA_LOWORD(v4) = v23.ambientSoundController[1]; /*0x5a5df0*/
       v5 = v23.ambientSoundController[3]; /*0x5a5df4*/
@@ -171,18 +172,18 @@ LABEL_18:
   }
   if ( v23.ambientSoundController[2] > 8 ) /*0x5a5e0a*/
   {
-    v13 = v5 - 5; /*0x5a5e10*/
+    v13 = ((unsigned int)(void)*)((int)(v5 - 5));
     *(unsigned int *)&v23.__pad_0[12] = v5 - 5; /*0x5a5e18*/
     *(unsigned short *)&v23.__pad_0[4] = (unsigned short)v3 + 5; /*0x5a5e1c*/
     *(unsigned short *)&v23.__pad_0[6] = v4; /*0x5a5e21*/
-    while ( v13 > 3 ) /*0x5a5e26*/
+    while ( v13 > (void *)(3) ) /*0x5a5e26*/
     {
       *(unsigned int *)a1 = *FindClearPlacementCell( /*0x5a5e4d*/
                          v32,
                          (MapSeedClass *)&v23.__pad_0[4],
                          (MapSeedClass *)v23.ambientSoundController,
                          4);
-      v5 = (int)((void *)(*globalHelper_0A7070((MapSeedClass *)&v23.estimatedHealth, a1, (MapSeedClass *)v23.ambientSoundController, 4)));
+      v5 = (void *)((int)((void *)(*globalHelper_0A7070((MapSeedClass *)&v23.estimatedHealth, a1, (MapSeedClass *)v23.ambientSoundController, 4))));
       v23.uniqueId = (void *)(v5);
       if ( v5 /*0x5a5ea1*/
         && ((IDA_LOWORD(v5) = *(unsigned short *)&v23.__pad_0[6], *(unsigned short *)&v23.__pad_0[4]) || *(unsigned short *)&v23.__pad_0[6])
@@ -239,7 +240,7 @@ LABEL_18:
                   PlaceMapSeedClassBuildings((ObjectClass *)(unk_AA0E20 + 3), &v23, -1, -1); /*0x5a61af*/
                   v21 = 0; /*0x5a61b4*/
                 }
-                if ( MapSeedClass::ValidateRectBounds((int *)&v23.isInLogic) ) /*0x5a61c0*/
+                if ( ((MapSeedClass *)((int *)&v23.isInLogic))->ValidateRectBounds() ) /*0x5a61c0*/
                 {
                   uniqueId_high = SHIWORD(v23.uniqueId); /*0x5a61cd*/
                   if ( SHIWORD(v23.uniqueId) - a1[1] < 4 ) /*0x5a61de*/

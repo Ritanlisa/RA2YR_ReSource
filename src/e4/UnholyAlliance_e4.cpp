@@ -48,7 +48,7 @@ AbstractClass * * UnholyAlliance_GetResult()
       if ( v5 ) /*0x5cb470*/
       {
         v6 = operator new(0x8E8u); /*0x5cb47e*/
-        if ( v6 && (v7 = (int *)UnitClass::Construct((int)v6, v5, v4)) != 0 ) /*0x5cb497*/
+        if ( v6 && (v7 = (int *)((UnitClass *)((int)v6))->Construct(v5, v4)) != 0 ) /*0x5cb497*/
         {
           CurrentOption = (unsigned short *)(HouseClass::GetCurrentOption(v4, &ppv));
           v9 = *CurrentOption + 3; /*0x5cb4b0*/

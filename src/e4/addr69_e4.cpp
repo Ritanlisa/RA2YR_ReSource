@@ -64,6 +64,8 @@
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x690400
 namespace gamemd {
@@ -111,7 +113,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
 namespace gamemd {
 CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
 {
-  int Flagged;
+  char * Flagged;
   char *v5; // eax
   int v6; // esi
   int v7; // eax
@@ -128,7 +130,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   int v19; // eax
   int v20; // esi
   int v21; // eax
-  int v22;
+  char * v22;
   char *v23; // eax
   int v24; // esi
   int v25; // eax
@@ -161,9 +163,9 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   v36 = 0; /*0x693b86*/
   Waypoint::InitInvalid(v39); /*0x693b8a*/
   Debug::Log(aGettingFileFro); /*0x693b94*/
-    Timer::GetTicks();
+    ((Timer *)0)->GetTicks();
   Debug::Log(aRequestingFile); /*0x693bb2*/
-    Ticks = Timer::GetTicks();
+    Ticks = ((Timer *)0)->GetTicks();
   if ( a2 == 1 || a2 == 2 ) /*0x693be4*/
   {
     memset(v41, 0, sizeof(v41)); /*0x693cd4*/
@@ -175,14 +177,14 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v8 = 3600; /*0x693d06*/
       if ( Ticks != -1 ) /*0x693d0d*/
       {
-                v9 = Timer::GetTicks() - Ticks;
+                v9 = ((Timer *)0)->GetTicks() - Ticks;
         if ( v9 >= 3600 ) /*0x693d1e*/
           break; /*0x693d1e*/
         v8 = 3600 - v9; /*0x693d20*/
       }
       if ( !v8 ) /*0x693d24*/
         break; /*0x693d24*/
-            this->Event::Dispatch();
+            ((Event *)0)->Dispatch();
     }
   }
   else
@@ -198,7 +200,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     }
     else
     {
-      Flagged = (char *)(((GameSettings *)0)->FindFlagged());
+      Flagged = (char *)((int)((char *)(((GameSettings *)0)->FindFlagged())));
       if ( Flagged ) /*0x693c50*/
       {
         v5 = (char *)(CharToWideString(Flagged + 36));
@@ -210,20 +212,20 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v6 = 3600; /*0x693c8a*/
       if ( Ticks != -1 ) /*0x693c91*/
       {
-                v7 = Timer::GetTicks() - Ticks;
+                v7 = ((Timer *)0)->GetTicks() - Ticks;
         if ( v7 >= 3600 ) /*0x693ca2*/
           break; /*0x693ca2*/
         v6 = 3600 - v7; /*0x693ca8*/
       }
       if ( !v6 ) /*0x693cac*/
         break; /*0x693cac*/
-            this->Event::Dispatch();
+            ((Event *)0)->Dispatch();
     }
   }
   v10 = 3600; /*0x693d39*/
   if ( Ticks != -1 ) /*0x693d44*/
   {
-        v11 = Timer::GetTicks() - Ticks;
+        v11 = ((Timer *)0)->GetTicks() - Ticks;
     if ( v11 >= 3600 ) /*0x693d55*/
     {
   LABEL_24:
@@ -234,7 +236,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   }
   if ( !v10 ) /*0x693d5b*/
     goto LABEL_24; /*0x693d5b*/
-    v33 = Timer::GetTicks();
+    v33 = ((Timer *)0)->GetTicks();
   if ( a2 == 1 || a2 == 2 ) /*0x693da8*/
   {
     while ( 1 ) /*0x693e97*/
@@ -245,7 +247,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v18 = 3600; /*0x693ec4*/
       if ( v33 != -1 ) /*0x693ecb*/
       {
-                v19 = Timer::GetTicks() - v33;
+                v19 = ((Timer *)0)->GetTicks() - v33;
         if ( v19 >= 3600 ) /*0x693edc*/
           goto LABEL_50; /*0x693edc*/
         v18 = 3600 - v19; /*0x693ede*/
@@ -267,7 +269,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
         v13 = NetworkID::Compare((int)v39, (int)&stru_A8BB1C); /*0x693dee*/
         if ( dword_A8B238 == 4 ) /*0x693df9*/
         {
-                    v14 = this->GameSettings::FindFlagged();
+                    v14 = ((GameSettings *)0)->FindFlagged();
           v13 = v14 && !_strcmpi(v14 + 36, v49); /*0x693e20*/
         }
         if ( v48 == 17 && v13 ) /*0x693e2d*/
@@ -276,7 +278,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v15 = 3600; /*0x693e33*/
       if ( v33 != -1 ) /*0x693e3a*/
       {
-                v16 = Timer::GetTicks() - v33;
+                v16 = ((Timer *)0)->GetTicks() - v33;
         if ( v16 >= 3600 ) /*0x693e4b*/
           goto LABEL_50; /*0x693e4b*/
         v15 = 3600 - v16; /*0x693e51*/
@@ -294,7 +296,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   v20 = 3600; /*0x693f33*/
   if ( v33 != -1 ) /*0x693f3e*/
   {
-        v21 = Timer::GetTicks() - v33;
+        v21 = ((Timer *)0)->GetTicks() - v33;
     if ( v21 >= 3600 ) /*0x693f4f*/
     {
   LABEL_54:
@@ -306,7 +308,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
   if ( !v20 ) /*0x693f55*/
     goto LABEL_54; /*0x693f55*/
   Debug::Log(aSendingFileInf); /*0x693f78*/
-    v34 = Timer::GetTicks();
+    v34 = ((Timer *)0)->GetTicks();
   if ( a2 == 1 || a2 == 2 ) /*0x693faa*/
   {
     memset(v41, 0, sizeof(v41)); /*0x6940b8*/
@@ -318,14 +320,14 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v26 = 3600; /*0x6940ea*/
       if ( v34 != -1 ) /*0x6940f1*/
       {
-                v27 = Timer::GetTicks() - v34;
+                v27 = ((Timer *)0)->GetTicks() - v34;
         if ( v27 >= 3600 ) /*0x694102*/
           break; /*0x694102*/
         v26 = 3600 - v27; /*0x694104*/
       }
       if ( !v26 ) /*0x694108*/
         break; /*0x694108*/
-            Event::Dispatch();
+            ((Event *)0)->Dispatch();
     }
   }
   else
@@ -337,7 +339,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     strcpy((char *)&v43[1], ToWideStringChar(*(char **)dword_A8DA78)); /*0x693ff7*/
     if ( dword_A8B238 == 4 ) /*0x694007*/
     {
-      v22 = (char *)(this->GameSettings::FindFlagged());
+      v22 = (char *)((int)((char *)(((GameSettings *)0)->FindFlagged())));
       if ( v22 ) /*0x694010*/
       {
         v23 = (char *)(CharToWideString(v22 + 36));
@@ -353,20 +355,20 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v24 = 3600; /*0x69406e*/
       if ( v34 != -1 ) /*0x694075*/
       {
-                v25 = Timer::GetTicks() - v34;
+                v25 = ((Timer *)0)->GetTicks() - v34;
         if ( v25 >= 3600 ) /*0x694086*/
           break; /*0x694086*/
         v24 = 3600 - v25; /*0x69408c*/
       }
       if ( !v24 ) /*0x694090*/
         break; /*0x694090*/
-            Event::Dispatch();
+            ((Event *)0)->Dispatch();
     }
   }
   v28 = 3600; /*0x69411d*/
   if ( v34 != -1 ) /*0x694128*/
   {
-        v29 = Timer::GetTicks() - v34;
+        v29 = ((Timer *)0)->GetTicks() - v34;
     if ( v29 >= 3600 ) /*0x694139*/
     {
   LABEL_78:
@@ -428,12 +430,12 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   LPCSTR v43[9]; // [esp+74h] [ebp-24h] BYREF
 
   nNumberOfBytesToWrite = a2; /*0x6941ae*/
-    v32.CampaignScore_field_0x04 = Timer::GetTicks();
+    v32.CampaignScore_field_0x04 = ((Timer *)0)->GetTicks();
   v35 = 0; /*0x6941bf*/
   Waypoint::InitInvalid((Waypoint *)v42); /*0x6941c7*/
   v23 = 0; /*0x6941cc*/
   v6 = (char *)RA2_OPNEW(0x1E7u); /*0x6941e1*/
-    Debug::Log();
+    ((Debug *)0)->Log();
   ((RawFileClass *)((BufferIOFileClass *)v43))->Construct(a1); /*0x6941f0*/
   if ( (uint8_t)FileClass::Open((RawFileClass *)v43, 0) ) /*0x6941fb*/
     FileClass::Delete((RawFileClass *)v43); /*0x694208*/
@@ -459,7 +461,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   v9 = a3; /*0x694307*/
   if ( a3 == 3 || (v10 = 10800, a3 != 4) ) /*0x69431b*/
     v10 = 3600; /*0x69431d*/
-    v32.CampaignScore_field_0x04 = Timer::GetTicks();
+    v32.CampaignScore_field_0x04 = this->Timer::GetTicks();
   v34 = v40; /*0x694333*/
   v35 = v10; /*0x69433f*/
   if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x694343*/
@@ -469,7 +471,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   }
   if ( a3 == 3 || (v11 = 10800, a3 != 4) ) /*0x69436f*/
     v11 = 3600; /*0x694371*/
-  Ticks = Timer::GetTicks(); /*0x694383*/
+  Ticks = this->Timer::GetTicks(); /*0x694383*/
   v34 = v40; /*0x694387*/
   v35 = v11; /*0x69438b*/
   v12 = 0; /*0x69438f*/

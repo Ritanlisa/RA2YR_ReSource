@@ -14,6 +14,8 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Session_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x6FC0B0
 namespace gamemd {
@@ -450,7 +452,7 @@ int TriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1); /*0x727bfb*/
+  result = ((AbstractClass *)((AbstractClass *)aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x727bfb*/
   if ( result >= 0 ) /*0x727c02*/
   {
     if ( aP0 ) /*0x727c06*/

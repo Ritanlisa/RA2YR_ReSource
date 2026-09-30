@@ -89,8 +89,8 @@ int Game::SendCampaignOptions()
     v14[43] = g_abs_A8EB68; /*0x46d4f6*/
     for ( i = 0; i < 8; ++i )
     {
-      v2 = *(&g_abs_A8DA90 + i); /*0x46d4fc*/
-      if ( !v2 || v2 == g_abs_AC119C || v2 == g_abs_AC11A0 ) /*0x46d515*/
+      v2 = (int)(*(&g_abs_A8DA90 + i));
+      if ( !v2 || v2 == (int)((int))((int))(g_abs_AC119C) || v2 == g_abs_AC11A0 ) /*0x46d515*/
       {
         *(unsigned int *)&v14[4 * i + 44] = -1; /*0x46d542*/
         *(unsigned int *)&v14[4 * i + 76] = -1; /*0x46d54a*/
@@ -98,8 +98,8 @@ int Game::SendCampaignOptions()
       }
       else
       {
-        Option = SessionClass::GetOption(v2); /*0x46d517*/
-        v4 = *(&g_abs_A8DA90 + i); /*0x46d51c*/
+        Option = (int)(SessionClass::GetOption(v2));
+        v4 = (int)(*(&g_abs_A8DA90 + i));
         *(unsigned int *)&v14[4 * i + 44] = Option; /*0x46d523*/
         PlayerSide = SessionClass::GetPlayerSide(v4); /*0x46d527*/
         v6 = *(&g_abs_A8DA90 + i); /*0x46d52c*/
@@ -141,7 +141,7 @@ int Game::SendCampaignOptions()
         if ( (unsigned char)result ) /*0x46d612*/
         {
           Network::SendToPlayer((int)g_abs_A8E9C0, (int)&v13, 455, 1, *v12); /*0x46d628*/
-          result = Network::ReceiveLoop(g_abs_A8E9C0); /*0x46d632*/
+          result = ((Network *)(g_abs_A8E9C0))->ReceiveLoop(); /*0x46d632*/
         }
       }
       ++v12; /*0x46d637*/
@@ -163,7 +163,7 @@ AbstractClass * * Game::DestroyAllObjects()
 
   ++g_abs_A8E7AC; /*0x53445f*/
   g_abs_B0F6A8 = 0; /*0x534465*/
-  AbstractClassVector::ddtor(&g_abs_B0F698); /*0x53446b*/
+  ((AbstractClassVector *)(&g_abs_B0F698))->ddtor(); /*0x53446b*/
   this->MixFileClass::CleanupCache(); /*0x534470*/
   for ( i = g_abs_B0E844; g_abs_B0E844; i = g_abs_B0E844 ) /*0x53447c*/
   {
@@ -1122,7 +1122,7 @@ CellStruct * * Game::SerializeGameSaveState()
   if ( result >= 0 )
   {
     ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, &g_abs_A8ED78); /*0x67f9e8*/
-    result = (*(int (**)(void *, #375 **, int, unsigned int))(*(unsigned int *)this + 12))(this, &HouseClass_Player, 4, 0); /*0x67f9f9*/
+    result = (*(int (**)(void *, void **, int, unsigned int))(*(unsigned int *)this + 12))(this, &HouseClass_Player, 4, 0); /*0x67f9f9*/
     if ( result >= 0 )
     {
       ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)&HouseClass_Player); /*0x67fa0e*/

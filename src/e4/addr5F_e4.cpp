@@ -34,6 +34,7 @@
 #include "e4/classes/E4Recv_5D4F20_e4.hpp"
 #include "e4/classes/E4Recv_5D2650_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/DropListClass_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {
@@ -58,14 +59,14 @@ char sub_5F0070()
     Stream::WriteBlock((int)&unk_A8EA70, (int)v4, 111, 0); /*0x5f00bd*/
     v1 = dword_887340; /*0x5f00c7*/
     if ( dword_887338 != -1 ) /*0x5f00d0*/
-            v1 += Timer::GetTicks() - g_abs_887338;
+            v1 += this->this->this->Timer::GetTicks() - g_abs_887338;
     while ( 1 ) /*0x5f00e4*/
     {
       IDA_LOBYTE(v0) = dword_887338; /*0x5f00e4*/
       v2 = dword_887340; /*0x5f00e9*/
       if ( dword_887338 != -1 ) /*0x5f00f2*/
       {
-                v0 = Timer::GetTicks() - g_abs_887338;
+                v0 = this->this->this->Timer::GetTicks() - g_abs_887338;
         v2 += v0; /*0x5f0104*/
       }
       if ( (unsigned int)(v2 - v1) >= 0x1E ) /*0x5f010b*/
@@ -171,7 +172,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   LPARAM v5; // esi
   AbstractClass ** v6;
   wchar_t *v7; // eax
-  HWND MessageBox; // eax
+  AbstractClass ** MessageBox;
   int v9; // esi
   TechnoTypeClass *v10; // ecx
   wchar_t *v11; // eax
@@ -183,23 +184,22 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   int v18; // [esp+6h] [ebp-10Ch]
   unsigned int v19;
   int Buffer; // [esp+1Ah] [ebp-F8h] BYREF
-  HWND v21; // [esp+1Eh] [ebp-F4h]
+  AbstractClass ** v21;
   HWND hWnd; // [esp+22h] [ebp-F0h]
   unsigned char Source[236]; // [esp+26h] [ebp-ECh] BYREF
-
-  v19 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((wchar_t *)((unsigned int)((wchar_t *)((char)((wchar_t *)(IDA_HIBYTE(a1)))))))))));
+v19 = (unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((wchar_t *)((unsigned int)((wchar_t *)((char)((wchar_t *)(IDA_HIBYTE(a1))))))))))))));
   v3 = (unsigned int)((gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(3))));
   if ( a3 == (void *)(1) ) /*0x5f2d00*/
     StringCSF = GetStringCSF((wchar_t *)aTxtModemConner_0, 0, g_Str_File_NullMgr_CPP, 1580); /*0x5f2d13*/
   else
     StringCSF = GetStringCSF(aTxtWaitingForC_0, 0, g_Str_File_NullMgr_CPP, 1582); /*0x5f2d26*/
   v5 = (LPARAM)StringCSF; /*0x5f2d30*/
-    this->Debug::Log();
-  v6 = (char)((gamemd::AbstractClass **)(1));
-  g_NetworkTestFlag = (wchar_t *)(0);
-  v7 = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1589); /*0x5f2d59*/
-  MessageBox = CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag); /*0x5f2d62*/
-  v21 = MessageBox; /*0x5f2d69*/
+    ((Debug *)0)->Log();
+  v6 = (gamemd::AbstractClass **)((int)((char)((gamemd::AbstractClass **)(1))));
+  g_NetworkTestFlag = (int)((wchar_t *)(0));
+  v7 = (wchar_t *)((gamemd::AbstractClass **)(GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1589)));
+  MessageBox = (gamemd::AbstractClass **)(CreateMessageBox(v5, (LPARAM)v7, (LONG)&g_NetworkTestFlag));
+  v21 = (HWND)((gamemd::AbstractClass **)(MessageBox));
   if ( !MessageBox ) /*0x5f2d6d*/
     return 3; /*0x5f3155*/
   Dialog::Show(MessageBox); /*0x5f2d76*/
@@ -211,10 +211,10 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   v9 = 3600; /*0x5f2d92*/
   while ( 1 )
   {
-        if ( this->Dialog::PumpMessages() == 1 || *((unsigned char *)&g_MatrixTransformState + 9524) )
+        if ( ((Dialog *)0)->PumpMessages() == 1 || *((unsigned char *)&g_MatrixTransformState + 9524) )
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)((int)((HWND)(6))));
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       v14 = (HWND)(g_ClipboardBuffer);
       if ( !g_ClipboardBuffer ) /*0x5f310a*/
         goto LABEL_36; /*0x5f310a*/
@@ -229,11 +229,11 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
            Source,
            81,
            v19 != 0 ? 15 : -1);
-        this->Debug::Log();
+        ((Debug *)0)->Log();
     if ( v9 == -1000 ) /*0x5f2dfb*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)((int)((HWND)(6))));
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       v14 = (HWND)(g_ClipboardBuffer);
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/
         goto LABEL_36; /*0x5f30d5*/
@@ -245,13 +245,13 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
     }
     _strupr(Source); /*0x5f2e06*/
     if ( strlen(Source) ) /*0x5f2e0f*/
-            this->Debug::Log();
+            ((Debug *)0)->Log();
     if ( !strncmp(Source, aRing, 4u) ) /*0x5f2e3c*/
     {
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       v11 = GetStringCSF(aTxtAnswering, 0, g_Str_File_NullMgr_CPP, 1647); /*0x5f2e66*/
       Network_Start(hWnd, (LPARAM)v11); /*0x5f2e71*/
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       WinModemClass::WriteSerial((int *)g_ClipboardBuffer, aAta, strlen(aAta)); /*0x5f2e9e*/
       v19 = 1; /*0x5f2ea7*/
       v9 = *(unsigned int *)(Buffer + 36); /*0x5f2eac*/
@@ -262,24 +262,24 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
       memset(byte_AC1288, 0, 0x50u); /*0x5f2ed8*/
       strncpy(byte_AC1288, Source, 0x4Fu); /*0x5f2ee4*/
       v3 = 0; /*0x5f2eed*/
-            this->Debug::Log();
+            ((Debug *)0)->Log();
     }
     else if ( !strncmp(Source, aBusy, 4u) ) /*0x5f2f0e*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)(2));
-            this->Debug::Log();
+            ((Debug *)0)->Log();
     }
     else if ( !strncmp(Source, aNoC, 4u) ) /*0x5f2f42*/
     {
       v3 = (unsigned int)((gamemd::AbstractClass **)(1));
-            this->Debug::Log();
+            ((Debug *)0)->Log();
     }
     else
     {
       if ( strncmp(Source, aErro, 4u) ) /*0x5f2f73*/
         goto LABEL_22; /*0x5f2f7d*/
       v3 = 3; /*0x5f2f83*/
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       v21 = (wchar_t *)((HWND)asc_82083C);
       v16 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullMgr_CPP, 1671));
       v12 = (int *)GetStringCSF(aTxtErrorError, 0, g_Str_File_NullMgr_CPP, 1671); /*0x5f2fcc*/
@@ -290,7 +290,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
     if ( v9 <= 0 ) /*0x5f2fdf*/
       break; /*0x5f2fdf*/
   LABEL_25:
-    if ( v6 != 1 ) /*0x5f2ff1*/
+    if ( v6 != (gamemd::AbstractClass **)(1) ) /*0x5f2ff1*/
       goto LABEL_36; /*0x5f2ff1*/
   }
   if ( !v19 ) /*0x5f2fe7*/
@@ -300,21 +300,21 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   }
   if ( (*(char (**)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer) >= 0 ) /*0x5f3009*/
   {
-        this->Debug::Log();
+        ((Debug *)0)->Log();
     if ( strlen(Source) ) /*0x5f3041*/
-            this->Debug::Log();
+            ((Debug *)0)->Log();
     v21 = (wchar_t *)((HWND)asc_82083C);
-    v17 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3086*/
+    v17 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullMgr_CPP, 1687));
     v13 = (int *)GetStringCSF(g_Str_TXT_ERROR_TIMEOUT, 0, g_Str_File_NullMgr_CPP, 1687); /*0x5f3098*/
     Dialog::ShowMessageBox(v13, v17, 0, 0, 0, v18); /*0x5f30a2*/
-        this->Debug::Log();
+        ((Debug *)0)->Log();
     v3 = 5; /*0x5f30b4*/
   }
   else
   {
     sprintf(byte_AC1288, "%s", aConnected); /*0x5f301a*/
     v3 = 0; /*0x5f3024*/
-        this->Debug::Log();
+        ((Debug *)0)->Log();
   }
   LABEL_36:
   (*(void (**)(HWND, unsigned int))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, 0); /*0x5f3129*/
@@ -330,7 +330,7 @@ void* sub_5F33B0()
   uint16_t v0; // ax
   int v1; // esi
 
-    this->Event::Dispatch();
+    ((Event *)0)->Dispatch();
   MessageLoop(); /*0x5f33b6*/
   v0 = EventQueue::Process(dword_87F770); /*0x5f33c1*/
   v1 = v0; /*0x5f33c9*/
@@ -431,7 +431,7 @@ char sub_5FBEF0()
     Dialog::Show(Dialog); /*0x5fbf21*/
     while ( dwNewLong < 0 ) /*0x5fbf2c*/
     {
-      if ( Dialog::PumpMessages() == 1 ) /*0x5fbf35*/
+      if ( ((Dialog *)0)->PumpMessages() == 1 ) /*0x5fbf35*/
         dwNewLong = 2; /*0x5fbf37*/
       if ( !byte_A8E9A0 ) /*0x5fbf46*/
       {
@@ -504,7 +504,7 @@ AbstractClass * * sub_5FDDF0()
   int v4; // eax
   int i; // edi
   BuildingClass *v6; // esi
-  void **v7; // [esp+Ch] [ebp-18h] BYREF
+  void* v7;
   void *Block; // [esp+10h] [ebp-14h]
   int v9; // [esp+14h] [ebp-10h]
   char v10; // [esp+18h] [ebp-Ch]

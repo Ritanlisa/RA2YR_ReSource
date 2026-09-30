@@ -14,17 +14,17 @@ int DialogQueue::PushEntry()
 
   int result; // eax
 
-  result = g_abs_ABFC98; /*0x5d4e70*/
+  result = (int)(g_abs_ABFC98);
   if ( g_abs_ABFCA0 < g_abs_ABFC98 /*0x5d4eac*/
     || (g_abs_ABFC9D || !g_abs_ABFC98)
-    && g_abs_ABFCA4 > 0
+    && g_abs_ABFCA4 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (result = (*(int (**)(int *, int, unsigned int))(g_abs_ABFC90 + 8))(
                    &g_abs_ABFC90,
-                   g_abs_ABFC98 + g_abs_ABFCA4,
+                   (unsigned int)(g_abs_ABFC98)+ g_abs_ABFCA4,
                    0),
         (unsigned char)result) )
   {
-    result = g_abs_ABFCA0++; /*0x5d4eb4*/
+    result = (int)((unsigned int)(g_abs_ABFCA0++));
     *((unsigned int *)g_abs_ABFC94 + result) = this; /*0x5d4ec3*/
   }
   return result; /*0x5d4ec6*/
@@ -41,14 +41,14 @@ int DialogQueue::RemoveEntry()
 
   v2 = this; /*0x5d4ed7*/
   result = (*(int (**)(int *, void **))(g_abs_ABFC90 + 16))(&g_abs_ABFC90, &v2); /*0x5d4ee5*/
-  if ( result != -1 && result < g_abs_ABFCA0 && result < --g_abs_ABFCA0 ) /*0x5d4f00*/
+  if ( result != -1 && result < (int)((int))((int))(g_abs_ABFCA0) && (int)(result) < --g_abs_ABFCA0 ) /*0x5d4f00*/
   {
     do /*0x5d4f18*/
     {
       ++result; /*0x5d4f08*/
       *((unsigned int *)g_abs_ABFC94 + result - 1) = *((unsigned int *)g_abs_ABFC94 + result); /*0x5d4f0c*/
     }
-    while ( result < g_abs_ABFCA0 ); /*0x5d4f18*/
+    while ( result < (int)((int))((int))(g_abs_ABFCA0) ); /*0x5d4f18*/
   }
   return result; /*0x5d4f1b*/
 

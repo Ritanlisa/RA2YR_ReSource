@@ -44,7 +44,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   {
     if ( !*v2 ) /*0x50219f*/
     {
-      v5 = (int)(RA2_OPNEW(0x40u));
+      v5 = (void *)((int)(RA2_OPNEW(0x40u)));
       if ( v5 ) /*0x5021b1*/
         v6 = WaypointPathClass::Construct((int)v5, v4); /*0x5021b6*/
       else
@@ -64,7 +64,7 @@ LABEL_13:
       v13 = *((char *)this + 131); /*0x502233*/
       if ( !*(this + v13 + 132) ) /*0x502239*/
       {
-        v14 = (int)(RA2_OPNEW(0x40u));
+        v14 = (void *)((int)(RA2_OPNEW(0x40u)));
         if ( v14 ) /*0x502250*/
           v15 = WaypointPathClass::Construct((int)v14, v13); /*0x502255*/
         else
@@ -81,7 +81,7 @@ LABEL_13:
     v11 = Element[1] / 256; /*0x5021f2*/
     if ( (uint16_t)(v10 / 256) == (unsigned short)v3 && (unsigned short)v11 == v18 ) /*0x5021ff*/
     {
-      result = (char)((gamemd::WaypointPathClass **)(v16));
+      result = (gamemd::WaypointPathClass **)((char)((gamemd::WaypointPathClass **)(v16)));
       if ( v16 != *((char *)this + 131) ) /*0x50220f*/
         return result; /*0x50227c*/
     }

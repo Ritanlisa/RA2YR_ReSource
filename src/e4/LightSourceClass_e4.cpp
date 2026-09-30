@@ -37,13 +37,13 @@ void LightSourceClass::Construct( int a2, int a3, int a4, int a5, int a6, int a7
   *(this + 3) = &vt_LightSourceClass; /*0x5547c1*/
   if ( g_abs_ABCA20 < g_abs_ABCA18 /*0x5547fd*/
     || (g_abs_ABCA1D || !g_abs_ABCA18)
-    && g_abs_ABCA24 > 0
+    && g_abs_ABCA24 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_ABCA10 + 8))(
          &g_abs_ABCA10,
-         g_abs_ABCA18 + g_abs_ABCA24,
+         (unsigned int)(g_abs_ABCA18)+ g_abs_ABCA24,
          0) )
   {
-    v10 = g_abs_ABCA20++; /*0x55480a*/
+    v10 = (int)(g_abs_ABCA20++);
     *((unsigned int *)g_abs_ABCA14 + v10) = this; /*0x554819*/
   }
   return this; /*0x55481e*/
@@ -58,7 +58,7 @@ void LightSourceClass::Constructor()
   int v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((#373 *)this); /*0x554833*/
+  AbstractClass::Constructor((void *)this); /*0x554833*/
   *(unsigned int *)(this + 36) = 0; /*0x55483d*/
   *(unsigned int *)(this + 40) = 0; /*0x554840*/
   *(unsigned int *)(this + 44) = 0; /*0x554843*/
@@ -75,13 +75,13 @@ void LightSourceClass::Constructor()
   *(unsigned int *)(this + 12) = &vt_LightSourceClass; /*0x55487d*/
   if ( g_abs_ABCA20 < g_abs_ABCA18 /*0x5548b6*/
     || (g_abs_ABCA1D || !g_abs_ABCA18)
-    && g_abs_ABCA24 > 0
+    && g_abs_ABCA24 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_ABCA10 + 8))(
          &g_abs_ABCA10,
-         g_abs_ABCA18 + g_abs_ABCA24,
+         (unsigned int)(g_abs_ABCA18)+ g_abs_ABCA24,
          0) )
   {
-    v3 = g_abs_ABCA20++; /*0x5548c3*/
+    v3 = (int)(g_abs_ABCA20++);
     *((unsigned int *)g_abs_ABCA14 + v3) = this; /*0x5548d2*/
   }
   return this; /*0x5548d7*/
@@ -93,7 +93,7 @@ namespace gamemd {
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
 
-  return AbstractClass::ProcessPower((#378 *)this); /*0x55507a*/
+  return AbstractClass::ProcessPower((void *)this); /*0x55507a*/
 
 }
 } // namespace gamemd
@@ -119,16 +119,16 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x5550cb*/
+  result = ((AbstractClass *)(aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x5550cb*/
   if ( result >= 0 ) /*0x5550d2*/
   {
     if ( aP0 ) /*0x5550d6*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x5550df*/
       *(unsigned int *)aP0->__pad_0 = &vt_LightSourceClass; /*0x5550e4*/
-      *(unsigned int *)&aP0->__pad_0[4] = &vt_LightSourceClass; /*0x5550ea*/
-      *(unsigned int *)&aP0->__pad_0[8] = &vt_LightSourceClass; /*0x5550f1*/
-      *(unsigned int *)&aP0->__pad_0[12] = &vt_LightSourceClass; /*0x5550f8*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_LightSourceClass; /*0x5550ea*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_LightSourceClass; /*0x5550f1*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_LightSourceClass; /*0x5550f8*/
     }
     return 0; /*0x5550ff*/
   }
@@ -143,7 +143,7 @@ int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x55511f*/
+  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x55511f*/
   if ( result >= 0 ) /*0x555126*/
     return 0; /*0x555128*/
   return result; /*0x55512a*/
@@ -198,7 +198,7 @@ LightSourceClass * LightSourceClass::CopyTo(void ** Block, char a2)
     TacticalClass::ScrollView(Block, 0); /*0x5551ce*/
   }
   AbstractClass::DTOR(Block); /*0x5551d5*/
-  if ( (Block & 1) != 0 ) /*0x5551df*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5551df*/
     RA2_OPDEL(Block); /*0x5551e2*/
   return (LightSourceClass *)Block; /*0x5551ec*/
 

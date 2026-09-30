@@ -53,7 +53,7 @@ void TauntCommandClass::Release()
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = (const wchar_t *)(*((unsigned int *)this + 1));
-  StringCSF = GetStringCSF(g_abs_827204, 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_abs_827204, 0, g_Str_File_Init_CPP, 6400));
   swprintf(&g_abs_A8F654, (const size_t)StringCSF, v3); /*0x5362f0*/
   return &g_abs_A8F654; /*0x5362fd*/
 

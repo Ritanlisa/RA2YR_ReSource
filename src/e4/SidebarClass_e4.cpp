@@ -81,7 +81,7 @@ int SidebarClass::InitPositions()
     g_abs_B0B4EC = g_abs_886F94 + 39; /*0x6a50ce*/
     g_abs_B0B4F8 = g_abs_886F94 + 69; /*0x6a50d6*/
   }
-  return g_abs_886F94 + 69; /*0x6a50db*/
+  return (int)((int)((int)(g_abs_886F94 + 69)));
 
 }
 } // namespace gamemd
@@ -115,16 +115,16 @@ int SidebarClass::CalcBounds(char a1)
   else if ( g_abs_A8EB7C ) /*0x6a5144*/
   {
     g_abs_886F94 = 158; /*0x6a515b*/
-    v1 = g_abs_886FA8 + g_abs_886FA0; /*0x6a5165*/
+    v1 = (unsigned int)(g_abs_886FA8)+ g_abs_886FA0; /*0x6a5165*/
     g_abs_886F98 = 168; /*0x6a5173*/
-    g_abs_886F90 = g_abs_886FA8 + g_abs_886FA0; /*0x6a5181*/
-    v2 = g_abs_886FAC + 32 + g_abs_886FA4 - 158; /*0x6a5187*/
+    g_abs_886F90 = (unsigned int)(g_abs_886FA8)+ g_abs_886FA0; /*0x6a5181*/
+    v2 = (unsigned int)(g_abs_886FAC)+ (unsigned int)(32)+ g_abs_886FA4 - 158; /*0x6a5187*/
     g_abs_886F9C = v2; /*0x6a518e*/
   }
   else
   {
-    v2 = g_abs_886F9C; /*0x6a51de*/
-    v1 = g_abs_886F90; /*0x6a51e3*/
+    v2 = (int)(g_abs_886F9C);
+    v1 = (int)(g_abs_886F90);
   }
   v6 = *((unsigned int *)g_abs_A8B230 + 3374); /*0x6a51ef*/
   g_abs_B0B500 = 50; /*0x6a51f5*/

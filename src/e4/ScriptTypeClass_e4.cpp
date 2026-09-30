@@ -11,6 +11,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ScrollClass_e4.hpp"
+#include "e4/classes/ScriptClass_e4.hpp"
 
 // 0x691D50
 namespace gamemd {
@@ -35,7 +37,7 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1); /*0x691d9b*/
+  result = ((AbstractClass *)((AbstractClass *)aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x691d9b*/
   if ( result >= 0 ) /*0x691da2*/
   {
     if ( aP0 ) /*0x691da6*/
@@ -60,7 +62,7 @@ int ScriptTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x691def*/
+  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x691def*/
   if ( result >= 0 ) /*0x691df6*/
     return 0; /*0x691df8*/
   return result; /*0x691dfa*/
@@ -135,10 +137,10 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
   INIClass *v10; // [esp-4h] [ebp-38h]
   char Buffer[32]; // [esp+14h] [ebp-20h] BYREF
 
-  KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&stru_830620.__pad_579C[53244]); /*0x6e8357*/
+  KeyCount = (CCINIClass *)((INIClass *)(a1))->GetKeyCount((INIClass *)&stru_830620.__pad_579C[53244]); /*0x6e8357*/
   for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)i + 1) ) /*0x6e835d*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (CCINIClass *)&stru_830620.__pad_579C[53244], i); /*0x6e8367*/
+    StringByIndex = (uint8_t *)((INIClass *)(a1))->GetStringByIndex((CCINIClass *)&stru_830620.__pad_579C[53244], i); /*0x6e8367*/
     INIClass::GetString( /*0x6e8380*/
       (uint8_t ***)a1,
       (INIClass *)&stru_830620.__pad_579C[53244],

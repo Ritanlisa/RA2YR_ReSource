@@ -44,7 +44,7 @@ namespace gamemd {
 void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
 {
   wchar_t *v3; // esi
-  wint_t * v4;
+  unsigned int v4;
   wint_t * v5;
   wchar_t *v6; // eax
   wint_t * v7;
@@ -60,7 +60,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
   v3 = (wchar_t *)((wint_t *)((wchar_t *)(a1)));
-  v4 = (unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd))))));
+  v4 = (wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd)))))))));
   v5 = (wint_t *)(wcslen(a1));
   v13 = 18; /*0x5e2842*/
   ScreenDialogToClient(hWnd, &Rect); /*0x5e284a*/
@@ -144,9 +144,9 @@ void sub_5E2AC0()
   wchar_t *v4; // eax
   int v5; // [esp+Ch] [ebp-4h] BYREF
 
-    if ( Dialog::GetCurrent() )
+    if ( this->Dialog::GetCurrent() )
   {
-        Current = Dialog::GetCurrent();
+        Current = this->Dialog::GetCurrent();
     DlgItem = GetDlgItem(Current, 1343); /*0x5e2ae6*/
     if ( DlgItem ) /*0x5e2aea*/
     {
@@ -297,9 +297,9 @@ AbstractClass * * InitSkirmishDialogControls(HWND hDlg, int a2)
   int v16; // [esp+1Ch] [ebp-Ch]
   unsigned int v17[2]; // [esp+20h] [ebp-8h] BYREF
 
-  v14 = g_abs_A8B270; /*0x5e3022*/
-  lParam = g_abs_A8B25C; /*0x5e3032*/
-  v12 = g_abs_A8B268; /*0x5e3038*/
+  v14 = (LPARAM)((int)(g_abs_A8B270));
+  lParam = (LPARAM)((int)(g_abs_A8B25C));
+  v12 = (int)(g_abs_A8B268);
   if ( a2 ) /*0x5e303c*/
   {
     ((ComPtr *)(&wParam))->Constructor(); /*0x5e3047*/
@@ -404,21 +404,21 @@ char Game_CheckSettingsChanged(char a1, char a2)
     }
     if ( a1 ) /*0x5e3364*/
       v2 = 1; /*0x5e3366*/
-    if ( dword_8316D8 != g_abs_A8B268 ) /*0x5e3375*/
+    if ( dword_8316D8 != (unsigned int)((unsigned int))((unsigned int))(g_abs_A8B268) ) /*0x5e3375*/
       v2 = 1; /*0x5e3377*/
-    if ( dword_8316DC != g_abs_A8B25C ) /*0x5e3386*/
+    if ( dword_8316DC != (unsigned int)((unsigned int))((unsigned int))(g_abs_A8B25C) ) /*0x5e3386*/
       v2 = 1; /*0x5e3388*/
-    if ( dword_8316E0 != g_abs_A8B270 ) /*0x5e3397*/
+    if ( dword_8316E0 != (unsigned int)((unsigned int))((unsigned int))(g_abs_A8B270) ) /*0x5e3397*/
       v2 = 1; /*0x5e3399*/
-    if ( byte_AC11BD != g_abs_A8B262 ) /*0x5e33a8*/
+    if ( byte_AC11BD != (int)((int))((int))(g_abs_A8B262) ) /*0x5e33a8*/
       v2 = 1; /*0x5e33aa*/
-    if ( byte_AC11BE != g_abs_A8B263 ) /*0x5e33b9*/
+    if ( byte_AC11BE != (int)((int))((int))(g_abs_A8B263) ) /*0x5e33b9*/
       v2 = 1; /*0x5e33bb*/
     if ( byte_AC11BF != (unsigned char)g_abs_A8B264 ) /*0x5e33ca*/
       v2 = 1; /*0x5e33cc*/
     if ( byte_AC11C0 != (unsigned char)dword_A8B320 ) /*0x5e33db*/
       v2 = 1; /*0x5e33dd*/
-    if ( byte_AC11C1 != g_abs_A8B261 ) /*0x5e33ec*/
+    if ( byte_AC11C1 != (int)((int))((int))(g_abs_A8B261) ) /*0x5e33ec*/
       v2 = 1; /*0x5e33ee*/
     word_AC1146 = 0; /*0x5e33fa*/
     if ( _wcsicmp(&word_AC10F0, (const wchar_t *)&dword_A8B320 + 1) ) /*0x5e3403*/
@@ -434,9 +434,9 @@ char Game_CheckSettingsChanged(char a1, char a2)
     result = byte_8316E4; /*0x5e3460*/
     if ( byte_8316E4 != (unsigned char)dword_A8BB08 || v2 ) /*0x5e3471*/
     {
-      dword_AC11B8 = time(0); /*0x5e348c*/
-      dword_8316D8 = g_abs_A8B268; /*0x5e3496*/
-      dword_8316DC = g_abs_A8B25C; /*0x5e34a2*/
+      dword_AC11B8 = (unsigned char)(time(0));
+      dword_8316D8 = (unsigned char)(g_abs_A8B268);
+      dword_8316DC = (unsigned char)(g_abs_A8B25C);
       dword_8316E0 = g_abs_A8B270; /*0x5e34ae*/
       byte_AC11BD = g_abs_A8B262; /*0x5e34b8*/
       byte_AC11BE = g_abs_A8B263; /*0x5e34c4*/

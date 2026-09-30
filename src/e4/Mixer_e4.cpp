@@ -21,7 +21,7 @@ int Mixer::ReleaseChannel()
   int *v3; // edi
   int v4; // eax
 
-  result = g_abs_87E2A0; /*0x406060*/
+  result = (int)(g_abs_87E2A0);
   if ( !g_abs_87E2A0 ) /*0x40606e*/
     goto LABEL_14; /*0x40606e*/
   if ( *(this + 3) != &g_abs_87E294 ) /*0x406077*/
@@ -66,7 +66,7 @@ int Mixer::RequestAllBuffers()
   int result; // eax
   int *i; // esi
 
-  result = g_abs_87E81C; /*0x4083d0*/
+  result = (int)(g_abs_87E81C);
   if ( g_abs_87E81C ) /*0x4083d8*/
   {
     result = AudioQueue::GetNext(g_abs_87E810); /*0x4083df*/

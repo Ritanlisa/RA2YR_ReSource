@@ -62,7 +62,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   this->Debug::Log(); /*0x479208*/
   if ( *(unsigned int *)&((unsigned int *)(v5))[1] == -1 ) /*0x479216*/
   {
-    v6 = (unsigned int)((IUnknown *)(dword_A83D14));
+    v6 = (IUnknown *)((unsigned int)((IUnknown *)(dword_A83D14)));
     if ( dword_A83D14 == (unsigned int)((IUnknown *))-1 ) /*0x479220*/
       v6 = dword_A83D18; /*0x479222*/
     v5[1] = (CD)v6; /*0x479227*/

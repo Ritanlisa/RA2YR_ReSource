@@ -6,6 +6,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/String_e4.hpp"
 
 // 0x69ACC0
 namespace gamemd {
@@ -66,8 +67,8 @@ char GameOption::CheckDuplicate()
 
   LPARAM *v0; // eax
 
-  v0 = &g_abs_A8DA90; /*0x5e9566*/
-  while ( *v0 != g_abs_AC11B4 ) /*0x5e956d*/
+  v0 = (LPARAM *)(&g_abs_A8DA90);
+  while ( *(LPARAM)((LPARAM))((LPARAM))(v0) != g_abs_AC11B4 ) /*0x5e956d*/
   {
     if ( (int)++v0 >= (int)&g_abs_A8DAB0 ) /*0x5e9577*/
       return 1; /*0x5e957b*/

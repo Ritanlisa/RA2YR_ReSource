@@ -55,13 +55,7 @@ int ThemeClass::ReadThemeEntry( uint8_t *** a2)
   if ( !INIClass::BinarySearchSection((int)a2, (INIClass *)this) ) /*0x720492*/
     return 0; /*0x720584*/
   v3 = (CCINIClass *)(this + 256); /*0x7204a6*/
-  INIClass::GetString( /*0x7204bf*/
-    a2,
-    (INIClass *)this,
-    (uint8_t *)&stru_830620.__pad_579C[59788],
-    (INIClass *)&g_abs_87F8E4,
-    (INIClass *)(this + 256),
-    256);
+    INIClass::GetString( /*0x7204bf*/     a2,(unsigned char *)((INIClass *)this),     (uint8_t *)&stru_830620.__pad_579C[59788],     (INIClass *)&g_abs_87F8E4,     (INIClass *)(this + 256),     256);
   while ( v3->__pad_0[0] == 36 || v3->__pad_0[0] == 35 ) /*0x7204cc*/
     v3 = (CCINIClass *)((char *)v3 + 1); /*0x7204ce*/
   strcpy((char *)(this + 256), v3->__pad_0); /*0x7204e9*/
@@ -126,13 +120,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v2, (uint8_t *)g_INI_Key_Themes, v5); /*0x7205d1*/
-    if ( INIClass::GetString( /*0x7205de*/
-           (uint8_t ***)v2,
-           (uint8_t **)g_INI_Key_Themes,
-           StringByIndex,
-           (char *)&g_abs_87F7E8[10719],
-           Destination,
-           32) )
+        if ( INIClass::GetString( /*0x7205de*/            (uint8_t ***)v2,(unsigned char *)((uint8_t **)g_INI_Key_Themes),            StringByIndex,            (char *)&g_abs_87F7E8[10719],            Destination,            32) )
     {
       if ( &v16 == (int *)-24 ) /*0x7205f1*/
         goto LABEL_10; /*0x7205f1*/
@@ -178,7 +166,7 @@ LABEL_10: v8 = (int)(RA2_OPNEW(656));
       }
       else
       {
-        v9 = *(char **)(*((unsigned int *)this + 6) + 4 * v7); /*0x7206ec*/
+        v9 = (unsigned int)(*(char **)(*((unsigned int *)this + 6) + 4 * v7));
       }
       ThemeClass::ReadThemeEntry((int)v9, (uint8_t ***)a2); /*0x7206f6*/
       v5 = i; /*0x7206fb*/
@@ -187,17 +175,17 @@ LABEL_10: v8 = (int)(RA2_OPNEW(656));
     }
     ++v5; /*0x720707*/
   }
-  result = Audio::GetEnabled(); /*0x720714*/
+  result = this->Audio::GetEnabled(); /*0x720714*/
   if ( result ) /*0x72071b*/
   {
-    Enabled = (unsigned int)(Audio::GetEnabled());
-    result = (unsigned int)(AudioStream::Constructor((uint64_t)(Enabled), 0x4E20u));
+    Enabled = (unsigned int)(this->Audio::GetEnabled());
+    result = (void *)((unsigned int)(AudioStream::Constructor((uint64_t)(Enabled), 0x4E20u)));
     *((unsigned int *)this + 11) = result; /*0x720732*/
     if ( result ) /*0x720735*/
     {
       SetAudioFileName((int)result, aMusicStream); /*0x72073e*/
-      AudioQueue::IsEmpty(*((unsigned int *)this + 11), g_abs_87E744); /*0x72074c*/
-      return (void *)AudioQueue::IsNotEmpty(*((unsigned int *)this + 11), g_abs_87E754); /*0x72075a*/
+      AudioQueue::IsEmpty(*((unsigned int *)this + 11),(int)(g_abs_87E744)); /*0x72074c*/
+      return (void *)AudioQueue::IsNotEmpty(*((unsigned int *)this + 11),(int)(g_abs_87E754)); /*0x72075a*/
     }
   }
   return result; /*0x72075f*/
@@ -215,7 +203,7 @@ int ThemeClass::ClearQueues()
   int *v3; // edi
   int k; // esi
 
-  result = g_abs_B1D4BC; /*0x752370*/
+  result = (int)(g_abs_B1D4BC);
   if ( g_abs_B1D4BC ) /*0x752377*/
   {
     if ( g_abs_B1D4B8 ) /*0x75238c*/

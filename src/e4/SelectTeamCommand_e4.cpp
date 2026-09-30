@@ -37,7 +37,7 @@ void SelectTeamCommand::Release()
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = (const wchar_t *)(*((unsigned int *)this + 1));
-  StringCSF = GetStringCSF(g_abs_8270E8, 0, g_Str_File_Init_CPP, 6292); /*0x536015*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_abs_8270E8, 0, g_Str_File_Init_CPP, 6292));
   swprintf(&g_abs_A8F654, (const size_t)StringCSF, v3); /*0x536020*/
   return &g_abs_A8F654; /*0x53602d*/
 

@@ -45,24 +45,24 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 3) = &vt_NeuronClass; /*0x43a389*/
   if ( g_abs_B0F5E8 < g_abs_B0F5E0 /*0x43a3c5*/
     || (g_abs_B0F5E5 || !g_abs_B0F5E0)
-    && g_abs_B0F5EC > 0
+    && g_abs_B0F5EC > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F5D8 + 8))(
          &g_abs_B0F5D8,
-         g_abs_B0F5E0 + g_abs_B0F5EC,
+         (unsigned int)(g_abs_B0F5E0)+ g_abs_B0F5EC,
          0) )
   {
-    v2 = g_abs_B0F5E8++; /*0x43a3d2*/
+    v2 = (int)(g_abs_B0F5E8++);
     *((unsigned int *)g_abs_B0F5DC + v2) = this; /*0x43a3e1*/
   }
   if ( g_abs_B0F680 < g_abs_B0F678 /*0x43a41b*/
     || (g_abs_B0F67D || !g_abs_B0F678)
-    && g_abs_B0F684 > 0
+    && g_abs_B0F684 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F670 + 8))(
          &g_abs_B0F670,
-         g_abs_B0F678 + g_abs_B0F684,
+         (unsigned int)(g_abs_B0F678)+ g_abs_B0F684,
          0) )
   {
-    v3 = g_abs_B0F680++; /*0x43a428*/
+    v3 = (int)(g_abs_B0F680++);
     *((unsigned int *)g_abs_B0F674 + v3) = this; /*0x43a437*/
   }
   return this; /*0x43a43c*/
@@ -76,34 +76,34 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   int v4; // eax
   unsigned int *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &vt_NeuronClass; /*0x43a9cd*/
+  *Block = (unsigned int)(&vt_NeuronClass);
   *(Block + 1) = &vt_NeuronClass; /*0x43a9d3*/
   *(Block + 2) = &vt_NeuronClass; /*0x43a9da*/
   *(Block + 3) = &vt_NeuronClass; /*0x43a9e1*/
   v6 = Block; /*0x43a9ef*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v6); /*0x43a9f3*/
-  if ( v3 != -1 && v3 < g_abs_B0F680 && v3 < --g_abs_B0F680 ) /*0x43aa0e*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_B0F680) && v3 < --g_abs_B0F680 ) /*0x43aa0e*/
   {
     do /*0x43aa26*/
     {
       ++v3; /*0x43aa16*/
       *((unsigned int *)g_abs_B0F674 + v3 - 1) = *((unsigned int *)g_abs_B0F674 + v3); /*0x43aa1a*/
     }
-    while ( v3 < g_abs_B0F680 ); /*0x43aa26*/
+    while ( v3 < (int)((int))((int))(g_abs_B0F680) ); /*0x43aa26*/
   }
   v6 = Block; /*0x43aa38*/
   v4 = (*(int (**)(int *, unsigned int **))(g_abs_B0F5D8 + 16))(&g_abs_B0F5D8, &v6); /*0x43aa3c*/
-  if ( v4 != -1 && v4 < g_abs_B0F5E8 && v4 < --g_abs_B0F5E8 ) /*0x43aa57*/
+  if ( v4 != -1 && v4 < (int)((int))((int))(g_abs_B0F5E8) && v4 < --g_abs_B0F5E8 ) /*0x43aa57*/
   {
     do /*0x43aa6f*/
     {
       ++v4; /*0x43aa5f*/
       *((unsigned int *)g_abs_B0F5DC + v4 - 1) = *((unsigned int *)g_abs_B0F5DC + v4); /*0x43aa63*/
     }
-    while ( v4 < g_abs_B0F5E8 ); /*0x43aa6f*/
+    while ( v4 < (int)((int))((int))(g_abs_B0F5E8) ); /*0x43aa6f*/
   }
   AbstractClass::DTOR(Block); /*0x43aa73*/
-  if ( (Block & 1) != 0 ) /*0x43aa7d*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x43aa7d*/
     RA2_OPDEL(Block); /*0x43aa80*/
   return (NeuronClass *)Block; /*0x43aa8a*/
 
@@ -261,8 +261,8 @@ VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x43acb3*/
-  *Block = &vt_VectorClass_NeuronClass; /*0x43acb6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_NeuronClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x43acc0*/
   {
     RA2_OPDEL(v3); /*0x43acc8*/
@@ -270,7 +270,7 @@ VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
   }
   *((unsigned char *)Block + 13) = 0; /*0x43acdb*/
   *(Block + 2) = 0; /*0x43ace1*/
-  if ( (Block & 1) != 0 ) /*0x43ace8*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x43ace8*/
     RA2_OPDEL(Block); /*0x43aceb*/
   return (VectorClass *)Block; /*0x43acf5*/
 

@@ -42,7 +42,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
 {
 
   void *result; // eax
-  unsigned int *v1; // ebx
+  unsigned int v1;
   int v2; // edi
   int * v3;
   int *v4; // esi
@@ -63,7 +63,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
       v5 = 1136; /*0x58bb71*/
       while ( 1 ) /*0x58bb8b*/
       {
-        if ( v3 < 1104 || v2 >= dword_ABED0C ) /*0x58bb93*/
+        if ( v3 < (int *)(1104) || v2 >= dword_ABED0C ) /*0x58bb93*/
         {
           v6 = 0; /*0x58bb9e*/
           v7 = 0; /*0x58bba0*/
@@ -76,7 +76,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
         v1[v3] = (unsigned int)((int *)(v6));
         ++v2; /*0x58bbab*/
         ++v5; /*0x58bbac*/
-        *(unsigned int *)((char *)g_abs_A8B230 + v3 * 4 + 4) = v7; /*0x58bbaf*/
+        *(unsigned int *)((char *)(unsigned int)(g_abs_A8B230)+ (unsigned int)(v3)* 4 + 4) = v7; /*0x58bbaf*/
         v3 += 2; /*0x58bbbd*/
         *(unsigned int *)((char *)g_abs_A8B230 + v5 * 4 - 4) = dword_ABE304[v5 - 1137]; /*0x58bbc0*/
         v1 = g_abs_A8B230; /*0x58bbc4*/
@@ -135,7 +135,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   v6 = *(unsigned int *)(v4 + 24); /*0x5cc344*/
   if ( *(unsigned int *)(v4 + 16) != -1 ) /*0x5cc34a*/
   {
-        v6 = Timer::GetTicks() - *(unsigned int *)((unsigned int)(a1)+ 16);
+        v6 = this->Timer::GetTicks() - *(unsigned int *)((unsigned int)(a1)+ 16);
     if ( v7 >= v6 ) /*0x5cc359*/
       goto LABEL_6; /*0x5cc359*/
     v6 -= v7; /*0x5cc35b*/
@@ -152,7 +152,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(ScenarioClass *aP0, voi
   }
   LABEL_6:
   v8 = *(unsigned int *)(v5 + 36); /*0x5cc365*/
-    *(unsigned int *)((unsigned int)(a1)+ 16) = Timer::GetTicks();
+    *(unsigned int *)((unsigned int)(a1)+ 16) = this->Timer::GetTicks();
   *(unsigned int *)(v5 + 20) = v30; /*0x5cc378*/
   v9 = *(unsigned int *)(v5 + 64); /*0x5cc37b*/
   *(unsigned int *)(v5 + 24) = v8; /*0x5cc381*/
@@ -309,10 +309,10 @@ namespace gamemd {
 TimerStruct * * ScenarioClass::Constructor()
 {
 
-  wchar_t *v2; // eax
-  wchar_t *v3; // ecx
-  wchar_t *v4; // eax
-  wchar_t *v5; // edx
+  unsigned int v2;
+  unsigned int v3;
+  unsigned int v4;
+  unsigned int v5;
   unsigned int *v6; // eax
   int v7; // ecx
   int v8; // esi
@@ -321,9 +321,9 @@ TimerStruct * * ScenarioClass::Constructor()
   unsigned char *v11; // edi
 
   SeedInitRNG((unsigned int *)((char *)this + 536), 0); /*0x6832cf*/
-  *((unsigned int *)this + 389) = Timer::GetTicks(); /*0x6832e5*/
+  *((unsigned int *)this + 389) = this->Timer::GetTicks(); /*0x6832e5*/
   *((unsigned int *)this + 391) = 0; /*0x6832eb*/
-  *((unsigned int *)this + 392) = Timer::GetTicks(); /*0x6832f6*/
+  *((unsigned int *)this + 392) = this->Timer::GetTicks(); /*0x6832f6*/
   *((unsigned int *)this + 394) = 0; /*0x6832fc*/
   v2 = g_abs_A8ED84; /*0x683302*/
   *((unsigned int *)this + 1148) = 0; /*0x683307*/

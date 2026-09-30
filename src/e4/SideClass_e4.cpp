@@ -12,6 +12,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Shroud_e4.hpp"
 
 // 0x679A10
 namespace gamemd {
@@ -137,6 +139,12 @@ int SideClass::Construct(CCINIClass * aP1)
 {
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   int v3; // eax
 
@@ -191,7 +199,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
   int v7; // eax
   int abstractFlags; // ecx
   int uniqueId; // eax
-  int v10; // edx
+  unsigned int * v10;
 
   v2 = (AbstractTypeClass *)a0; /*0x6a4782*/
   v3 = (AbstractClass *)aP1; /*0x6a4787*/
@@ -274,14 +282,14 @@ void * SideClass::Init(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6a4951*/
   v6 = Block; /*0x6a4966*/
   v3 = (*(int (**)(int *, void ***))(g_abs_8B4120 + 16))(&g_abs_8B4120, &v6); /*0x6a496a*/
-  if ( v3 != -1 && v3 < g_abs_8B4130 && v3 < --g_abs_8B4130 ) /*0x6a4985*/
+  if ( v3 != -1 && v3 < (int)(g_abs_8B4130) && v3 < --g_abs_8B4130 ) /*0x6a4985*/
   {
     do /*0x6a499d*/
     {
       ++v3; /*0x6a498d*/
-      *((unsigned int *)g_abs_8B4124 + v3 - 1) = *((unsigned int *)g_abs_8B4124 + v3); /*0x6a4991*/
+      *(int)(((unsigned int *)g_abs_8B4124 + v3 - 1)) = *((unsigned int *)g_abs_8B4124 + v3); /*0x6a4991*/
     }
-    while ( v3 < g_abs_8B4130 ); /*0x6a499d*/
+    while ( v3 < (int)(g_abs_8B4130) ); /*0x6a499d*/
   }
   v4 = *(Block + 39); /*0x6a499f*/
   *(Block + 38) = &vt_VectorClass_int; /*0x6a49a5*/

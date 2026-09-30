@@ -68,7 +68,7 @@ char * VocClass::GetSampleNameByIndex(int a1)
 
   char *v1; // ecx
 
-  if ( a1 < 0 || a1 >= g_abs_B1D388 ) /*0x75159a*/
+  if ( a1 < 0 || a1 >= (int)((int))((int))(g_abs_B1D388) ) /*0x75159a*/
     return g_abs_817474; /*0x7515b5*/
   v1 = (char *)**((unsigned int **)g_abs_B1D37C + a1); /*0x7515a4*/
   if ( v1 ) /*0x7515a8*/

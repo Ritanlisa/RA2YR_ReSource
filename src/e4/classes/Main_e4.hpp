@@ -39,6 +39,9 @@
 #ifdef CreateDialog
 #undef CreateDialog
 #endif
+#ifdef CreateDialog
+#undef CreateDialog
+#endif
 namespace gamemd {
 
 struct Main {

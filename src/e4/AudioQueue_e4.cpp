@@ -239,7 +239,7 @@ LABEL_4:
       return; /*0x77164e*/
     goto LABEL_5; /*0x77164e*/
   }
-  v3 = Timer::GetTicks() - *((unsigned int *)this + 235); /*0x771640*/
+  v3 = this->Timer::GetTicks() - *((unsigned int *)this + 235); /*0x771640*/
   if ( v3 < v2 ) /*0x771648*/
   {
     v2 -= v3; /*0x77164a*/

@@ -72,7 +72,7 @@ AbstractClass * File::LoadFont(char * Source)
 
   v2 = (unsigned int *)(0);
   v3 = (unsigned int *)(0);
-  v4 = RA2_OPNEW(0x6Cu); /*0x43399f*/
+  v4 = (unsigned int *)(RA2_OPNEW(0x6Cu));
   if ( v4 ) /*0x4339a9*/
   {
     v5 = (unsigned int *)(((CCFileClass *)(v4))->Construct(Source));
@@ -154,7 +154,7 @@ LABEL_35:
                       ++v2; /*0x433b61*/
                       v16 += 3; /*0x433b62*/
                     }
-                    while ( v2 < v15 ); /*0x433b67*/
+                    while ( v2 < (unsigned int *)(v15) ); /*0x433b67*/
                     v13 = v24; /*0x433b69*/
                   }
                   free(v13); /*0x433b6e*/
@@ -341,7 +341,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   char *v5; // esi
   u_short v6; // ax
   void * v7;
-  int v8; // ecx
+  u_short * v8;
   ObjectClass *v9; // ebx
   unsigned int *v10; // esi
   size_t v11; // ebp
@@ -366,9 +366,9 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   while ( 1 ) /*0x625b50*/
   {
     v7 = (void *)((unsigned int)(RA2_OPNEW(0x10u)));
-    v8 = (gamemd::u_short *)(*(unsigned int *)v5);
-    v9 = (ObjectClass *)v7; /*0x625b57*/
-    v10 = v5 + 8; /*0x625b5c*/
+    v8 = (gamemd::u_short *)((int)((gamemd::u_short *)(*(unsigned int *)v5)));
+    v9 = (gamemd::ObjectClass *)((unsigned int *)((ObjectClass *)v7));
+    v10 = (unsigned int)(v5 + 8);
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *(unsigned int *)((unsigned int)(v7)+ 4) = *(v10 - 1); /*0x625b64*/
     v11 = ntohs(*(unsigned short *)((unsigned int)(v7)+ 6)); /*0x625b78*/
@@ -424,10 +424,10 @@ AbstractClass * * File::ParseCSFString(char * Source)
   int v6; // ebp
   size_t v7; // eax
   int v8; // eax
-  wchar_t *v9; // ecx
+  unsigned int v9;
   int16_t v10; // dx
   int v11; // esi
-  wchar_t *v12; // ecx
+  unsigned int v12;
   unsigned short *v13; // edi
   size_t v14; // eax
   size_t v15; // eax
@@ -490,12 +490,12 @@ LABEL_42:
           v7 = Size; /*0x734b00*/
           if ( Size ) /*0x734b06*/
           {
-            CCFileClass::Read(v23, g_abs_B17F24, 2 * Size); /*0x734b15*/
+            ((CCFileClass *)(v23))->Read(g_abs_B17F24, 2 * Size); /*0x734b15*/
             v7 = Size; /*0x734b1a*/
           }
-          g_abs_B17F24[v7] = 0; /*0x734b1e*/
-          v8 = *(unsigned int *)g_abs_B17F24; /*0x734b26*/
-          v9 = g_abs_B17F24; /*0x734b2e*/
+          g_abs_B17F24[v7] = (wchar_t *)(0);
+          v8 = (wchar_t *)(*(unsigned int *)g_abs_B17F24);
+          v9 = (wchar_t *)(g_abs_B17F24);
           if ( g_abs_B17F24[0] ) /*0x734b33*/
           {
             do /*0x734b44*/
@@ -508,9 +508,9 @@ LABEL_42:
             while ( (unsigned short)v8 ); /*0x734b44*/
             IDA_LOWORD(v8) = g_abs_B17F24[0]; /*0x734b46*/
           }
-          v10 = 0; /*0x734b4b*/
-          v11 = 1; /*0x734b50*/
-          v12 = g_abs_B17F24; /*0x734b55*/
+          v10 = (unsigned short *)(0);
+          v11 = (unsigned short *)(1);
+          v12 = (unsigned short *)(g_abs_B17F24);
           v13 = g_abs_B17F24 + 2; /*0x734b5a*/
           if ( (unsigned short)v8 ) /*0x734b5f*/
           {

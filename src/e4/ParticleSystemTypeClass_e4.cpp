@@ -278,14 +278,14 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x644981*/
   v5 = Block; /*0x644996*/
   v3 = (*(int (**)(int *, void ***))(g_abs_A83D68 + 16))(&g_abs_A83D68, &v5); /*0x64499a*/
-  if ( v3 != -1 && v3 < g_abs_A83D78 && v3 < --g_abs_A83D78 ) /*0x6449b5*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_A83D78) && v3 < --g_abs_A83D78 ) /*0x6449b5*/
   {
     do /*0x6449cd*/
     {
       ++v3; /*0x6449bd*/
       *((unsigned int *)g_abs_A83D6C + v3 - 1) = *((unsigned int *)g_abs_A83D6C + v3); /*0x6449c1*/
     }
-    while ( v3 < g_abs_A83D78 ); /*0x6449cd*/
+    while ( v3 < (int)((int))((int))(g_abs_A83D78) ); /*0x6449cd*/
   }
   ObjectTypeClass::Destruct((int)Block); /*0x6449d1*/
   if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6449db*/

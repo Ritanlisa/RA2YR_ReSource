@@ -10,6 +10,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
 
 // 0x557AC0
 namespace gamemd {
@@ -211,7 +212,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
   CCINIClass *v8; // edx
   CCINIClass *v9; // esi
   int v10; // eax
-  int v11; // ebp
+  unsigned int v11;
   CCINIClass *v12; // edx
   CCINIClass *v13; // esi
   void *v14; // edi
@@ -245,7 +246,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
   v10 = (int)(*this);
   if ( *this >= *((char *)this + 1) ) /*0x7ad839*/
   {
-    v11 = (gamemd::ObjectClass *)(2 * v10);
+    v11 = (unsigned int)((gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(2 * v10))));
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
     v12 = (CCINIClass *)RA2_OPNEW(268 * v11); /*0x7ad85c*/

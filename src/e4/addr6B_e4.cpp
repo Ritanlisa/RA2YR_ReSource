@@ -1062,7 +1062,7 @@ void ProcessSlaveManagerTerrain()
           && !*(unsigned int *)(i + 228) )
         {
           v23 = v2; /*0x6b3981*/
-          if ( !Tactical::GetCellData((Tactical *)&v23)[69] ) /*0x6b398a*/
+          if ( !((Tactical *)((Tactical *)&v23))->GetCellData()[69] ) /*0x6b398a*/
           {
             v13 = *(unsigned int *)(i + 56); /*0x6b3995*/
             if ( v13 >= *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340) /*0x6b39b2*/

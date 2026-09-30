@@ -186,8 +186,8 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
         v6 = ((int (*)(int, int))GetDlgItem)(hWnd, 1821); /*0x531fcc*/
         ModuleInternalVersion = GetModuleInternalVersion((int)&g_abs_87F7E8[539966]); /*0x531fce*/
         CharToWideString(ModuleInternalVersion); /*0x531fd5*/
-        GetStringCSF((#72 *)aGuiVersion, 0, g_Str_File_Init_CPP, 5975); /*0x531fec*/
-        swprintf((#72 *const)lParam, &off_826960); /*0x531ffc*/
+        GetStringCSF((void *)aGuiVersion, 0, g_Str_File_Init_CPP, 5975); /*0x531fec*/
+        swprintf((void *const)lParam, &off_826960); /*0x531ffc*/
         ((void (*)(int, int, unsigned int, unsigned char *))SendMessageA)(v6, 1202, 0, lParam); /*0x532011*/
         return 0; /*0x532022*/
     }

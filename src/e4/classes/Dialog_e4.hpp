@@ -107,7 +107,7 @@ struct Dialog {
     int SideIDToIndex();  // 0x4E4EC0
     int OptionIDToIndex();  // 0x4E59A0
     int FindGameUI();  // 0x5E26C0
-    HWND ShowMessage(void * aP0, void * BufferCount, ObjectClass Format, ...);    // 0x5E2700
+    HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);    // 0x5E2700
     HWND ShowStatusText(void * aP0,  void* aP1,  void* aP2);    // 0x5E2790
     LRESULT ShowPlayerName();  // 0x5E2F60
     int MapPlayerIDToIndex();  // 0x5E9950

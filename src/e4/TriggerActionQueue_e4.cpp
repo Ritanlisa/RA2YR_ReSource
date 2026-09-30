@@ -15,8 +15,8 @@ int TriggerActionQueue::ProcessAll()
   int result; // eax
   int i; // esi
 
-  result = g_abs_B0E730; /*0x6e5820*/
-  for ( i = 0; i < g_abs_B0E730; ++i ) /*0x6e582d*/
+  result = (int)(g_abs_B0E730);
+  for ( i = 0; i < (int)((int))((int))(g_abs_B0E730); ++i ) /*0x6e582d*/
   {
     TriggerClass::NotifyLocalChanged(this); /*0x6e583b*/
     result = g_abs_B0E730; /*0x6e5840*/

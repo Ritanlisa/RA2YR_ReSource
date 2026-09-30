@@ -16,6 +16,7 @@
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ToolTipManager_e4.hpp"
+#include "e4/classes/Commands_e4.hpp"
 
 // 0x7A3D90
 namespace gamemd {
@@ -139,7 +140,7 @@ LABEL_16:
     if ( !g_WOL_ChannelList ) /*0x7a403c*/
       CloseDialog(v12, 0); /*0x7a4042*/
   }
-  Current = Dialog::GetCurrent(); /*0x7a4047*/
+  Current = this->Dialog::GetCurrent(); /*0x7a4047*/
   v14 = GetDlgItem(Current, 1344); /*0x7a4052*/
   if ( v14 ) /*0x7a4058*/
     SetFocus(v14); /*0x7a405b*/
@@ -155,7 +156,7 @@ int ComStreamClass::Release()
   LONG v1; // ebx
   char *Block; // [esp+14h] [ebp+4h]
 
-  v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ac834*/
+  v1 = (unsigned int)(InterlockedDecrement((volatile LONG *)Block + 1));
   if ( !v1 && Block ) /*0x7ac83c*/
   {
     *(unsigned int *)Block = &off_7F766C; /*0x7ac843*/
@@ -411,7 +412,7 @@ int ComStreamClass::Seek()
     if ( !g_WOL_ChannelList ) /*0x7a40bd*/
       CloseDialog(v1, 0); /*0x7a40c3*/
   }
-  Current = Dialog::GetCurrent(); /*0x7a40c8*/
+  Current = this->Dialog::GetCurrent(); /*0x7a40c8*/
   DlgItem = GetDlgItem(Current, 1344); /*0x7a40d3*/
   if ( DlgItem ) /*0x7a40db*/
     SetFocus(DlgItem); /*0x7a40de*/
@@ -436,7 +437,7 @@ int ComStreamClass::ddtor()
     }
     return 0; /*0x7a4114*/
   }
-  if ( g_abs_A8B244 != 3 && g_abs_A8B244 != 1 && g_abs_A8B244 != 2 ) /*0x7a413f*/
+  if ( g_abs_A8B244 != (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) && g_abs_A8B244 != (unsigned char [1])(1) && g_abs_A8B244 != 2 ) /*0x7a413f*/
   {
     if ( g_WOL_ProcessIdle ) /*0x7a4188*/
       DisplayRankingsWOL(0, 0); /*0x7a418e*/

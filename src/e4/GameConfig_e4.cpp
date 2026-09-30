@@ -43,7 +43,7 @@ char * GameConfig::ComputeCRC()
   int *v10; // [esp+10h] [ebp-104h]
   unsigned char v11[256]; // [esp+14h] [ebp-100h] BYREF
 
-  v0 = (unsigned int)((int *)(0));
+  v0 = (int *)((unsigned int)((int *)(0)));
   qmemcpy(v11, &word_ABE050, sizeof(v11)); /*0x5e84ea*/
   v1 = &dword_ABE010; /*0x5e84ec*/
   v10 = &dword_ABE010; /*0x5e84fd*/
@@ -51,7 +51,7 @@ char * GameConfig::ComputeCRC()
   memset(&word_ABE050, 0, 0x100u); /*0x5e8506*/
   do /*0x5e854a*/
   {
-    v3 = v0 >> 31; /*0x5e850a*/
+    v3 = (unsigned int)(v0)>> 31; /*0x5e850a*/
     if ( v2 < 4 ) /*0x5e8510*/
     {
       v5 = 0; /*0x5e8526*/
@@ -109,7 +109,7 @@ int GameConfig::ComputeHash()
   v1 = MultiplayerGameMode::ListGet(); /*0x679dac*/
   for ( i = 1; i <= v1; ++i ) /*0x679db7*/
   {
-    v3 = MultiplayerGameMode::Find((void *)i); /*0x679dbb*/
+    v3 = ((MultiplayerGameMode *)((void *)i))->Find(); /*0x679dbb*/
     if ( v3 ) /*0x679dc2*/
     {
       v4 = (int)(GameConfig::Constructor(v3));
@@ -164,9 +164,9 @@ void GameConfig::Constructor()
     {
       v2[1] = (unsigned int)(0);
       v2[2] = (unsigned int)(0);
-      v2[5] = 0; /*0x5d67e6*/
-      v2[6] = 0; /*0x5d67e9*/
-      v2[4] = &vt_GenericNode; /*0x5d67ec*/
+      v2[5] = (unsigned int)(0);
+      v2[6] = (unsigned int)(0);
+      v2[4] = (unsigned int)(&vt_GenericNode);
       GenericNode::Constructor(v2 + 7); /*0x5d67f2*/
       v3[3] = &vt_GenericList; /*0x5d67fa*/
       LinkedList::Prepend(v3 + 4, (int)(v3 + 7)); /*0x5d6801*/

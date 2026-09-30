@@ -48,7 +48,7 @@ int TeamClass::CheckCohesion()
   unsigned char v10[12]; // [esp+24h] [ebp-18h] BYREF
   unsigned char v11[12]; // [esp+30h] [ebp-Ch] BYREF
 
-  v2 = (*(int (**)(#374 *))(*(unsigned int *)this + 44))(this); /*0x4d9e78*/
+  v2 = (*(int (**)(void *))(*(unsigned int *)this + 44))(this); /*0x4d9e78*/
   if ( v2 > 0 /*0x4d9f52*/
     && v2 <= 2
     && Team::AllMembersValid((int *)this)
@@ -56,7 +56,7 @@ int TeamClass::CheckCohesion()
     && *(unsigned char *)(*(unsigned int *)(Array::Get(this, 0) + 1312) + 5801)
     && (v4 = Array::Get(this, 0),
         v5 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v4 + 72))(v4, v10),
-        v6 = (unsigned int *)(*(int (**)(#374 *, unsigned char *))(*(unsigned int *)this + 72))(this, v11),
+        v6 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this + 72))(this, v11),
         v9 = v6[2] - v5[2],
         v7 = Math::Sqrt(
                (double)(*v6 - *v5) * (double)(*v6 - *v5)
@@ -95,7 +95,7 @@ int TeamClass::DisbandTeam(int a2)
   result = a2; /*0x577bb0*/
   if ( a2 ) /*0x577bb9*/
     *(unsigned char *)(*(unsigned int *)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(a2 + 48)] + 577) = 0; /*0x577bc7*/
-  if ( (#375 *)a2 != HouseClass_Player ) /*0x577bd4*/
+  if ( (void *)a2 != (void *)(void *))(HouseClass_Player) ) /*0x577bd4*/
   {
     if ( a2 ) /*0x577bd8*/
       return result; /*0x577bd8*/
@@ -103,7 +103,7 @@ int TeamClass::DisbandTeam(int a2)
   }
   if ( !a2 ) /*0x577be2*/
 LABEL_7:
-    Debug::Log(); /*0x577be4*/
+    this->this->this->Debug::Log(); /*0x577be4*/
   v4 = *((unsigned int *)this + 61); /*0x577bf1*/
   *((unsigned int *)this + 67) = 1; /*0x577bf7*/
   *((unsigned int *)this + 68) = v4; /*0x577c01*/
@@ -152,7 +152,7 @@ int TeamClass::DeployUnit(int a2, int a3)
   }
   if ( a2 == *((unsigned int *)this + 10) ) /*0x62a286*/
   {
-    result = g_abs_A8ED5C; /*0x62a28c*/
+    result = (char)(g_abs_A8ED5C);
     if ( !g_abs_A8ED5C ) /*0x62a295*/
     {
       *((unsigned int *)this + 10) = 0; /*0x62a297*/
@@ -172,7 +172,7 @@ LABEL_12:
         v11 = v9[2]; /*0x62a30e*/
         ++g_abs_A8E7AC; /*0x62a311*/
         v17[2] = v11; /*0x62a31d*/
-        if ( v17[0] == g_abs_AC4948 && v10 == g_abs_AC494C && v11 == g_abs_AC4950 /*0x62a364*/
+        if ( v17[0] == (unsigned int)((unsigned int))((unsigned int))(g_abs_AC4948) && v10 == (int)(g_abs_AC494C) && v11 == g_abs_AC4950 /*0x62a364*/
           || (Value = ProgressTimer::GetValue((unsigned short *)(*((unsigned int *)this + 10) + 904), &a2),
               !(*(uint8_t (**)(unsigned int, unsigned int *, unsigned int))(**(unsigned int **)((char *)this + 36) + 216))(
                  *((unsigned int *)this + 9),
@@ -188,7 +188,7 @@ LABEL_12:
         {
           --g_abs_A8E7AC; /*0x62a379*/
           v13 = *((unsigned int *)this + 9); /*0x62a37f*/
-          if ( *(unsigned char *)(v13 + 1074) && (uint8_t)House::IsHumanPlayer(*(#375 **)(v13 + 540)) ) /*0x62a390*/
+          if ( *(unsigned char *)(v13 + 1074) && (uint8_t)House::IsHumanPlayer(*(void **)(v13 + 540)) ) /*0x62a390*/
           {
             *(unsigned char *)(*((unsigned int *)this + 9) + 1074) = 0; /*0x62a39c*/
             (*(void (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 332))(*((unsigned int *)this + 9)); /*0x62a3a7*/
@@ -253,7 +253,7 @@ int TeamClass::GetLeaderIndex()
 
   v1 = *((unsigned int *)this + 135); /*0x6339b0*/
   v2 = *(unsigned int *)(v1 + 48); /*0x6339b7*/
-  if ( (uint8_t)House::IsHumanPlayer((#375 *)v1) && HouseClass_Player ) /*0x6339ca*/
+  if ( (uint8_t)House::IsHumanPlayer((void *)v1) && HouseClass_Player ) /*0x6339ca*/
     return *((unsigned int *)HouseClass_Player + 12); /*0x6339cc*/
   else
     return v2; /*0x6339d1*/
@@ -324,7 +324,7 @@ LABEL_9:
       *(unsigned int *)(v10 + 112) = v11; /*0x63413e*/
       if ( !v11 ) /*0x634141*/
       {
-        Block = (TechnoClass *)Block; /*0x634145*/
+        Block = (unsigned int *)((TechnoClass *)Block);
         if ( Block ) /*0x634149*/
         {
           if ( !*((unsigned char *)Block + 28) ) /*0x63414b*/
@@ -435,9 +435,9 @@ int TeamClass::FindByMemberType(int a2)
         v7 = *(int **)(*((char *)this + 1) + 4 * v6); /*0x635a79*/
         if ( v7[2] == a2 ) /*0x635a83*/
         {
-          v5 = (unsigned int *)*v7; /*0x635a85*/
-          Type = BuildingClass::GetPlanningToken((unsigned int *)*v7); /*0x635a8e*/
-          v9 = *(unsigned int *)(Type + 4); /*0x635a90*/
+          v5 = (int *)((unsigned int *)*v7);
+          Type = (int *)(BuildingClass::GetPlanningToken((unsigned int *)*v7));
+          v9 = (int *)(*(unsigned int *)(Type + 4));
           v21 = this; /*0x635a97*/
           v10 = (*(int (**)(int, int **))(v9 + 16))(Type + 4, &v21); /*0x635a9f*/
           v11 = *(unsigned int *)(Type + 140); /*0x635aa2*/
@@ -445,7 +445,7 @@ int TeamClass::FindByMemberType(int a2)
           {
             v12 = v5[135]; /*0x635acb*/
             v13 = *(unsigned int *)(v12 + 48); /*0x635acd*/
-            if ( (uint8_t)House::IsHumanPlayer((#375 *)v12) && HouseClass_Player ) /*0x635ae0*/
+            if ( (uint8_t)House::IsHumanPlayer((void *)v12) && HouseClass_Player ) /*0x635ae0*/
               v13 = *((unsigned int *)HouseClass_Player + 12); /*0x635ae2*/
             v14 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * v13] + 22265; /*0x635af4*/
             *(unsigned short *)v22 = *(unsigned short *)v14; /*0x635afd*/
@@ -464,7 +464,7 @@ int TeamClass::FindByMemberType(int a2)
         return -1; /*0x635b52*/
       v17 = v5[135]; /*0x635b61*/
       v18 = *(unsigned int *)(v17 + 48); /*0x635b67*/
-      if ( (uint8_t)House::IsHumanPlayer((#375 *)v17) ) /*0x635b6a*/
+      if ( (uint8_t)House::IsHumanPlayer((void *)v17) ) /*0x635b6a*/
       {
         if ( HouseClass_Player ) /*0x635b7a*/
           v18 = *((unsigned int *)HouseClass_Player + 12); /*0x635b7c*/
@@ -527,7 +527,7 @@ int TeamClass::GetMember()
           {
             v7 = v4[135]; /*0x635c71*/
             v8 = *(unsigned int *)(v7 + 48); /*0x635c73*/
-            if ( (uint8_t)House::IsHumanPlayer((#375 *)v7) && HouseClass_Player ) /*0x635c86*/
+            if ( (uint8_t)House::IsHumanPlayer((void *)v7) && HouseClass_Player ) /*0x635c86*/
               v8 = *((unsigned int *)HouseClass_Player + 12); /*0x635c88*/
             v9 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * v8] + 22265; /*0x635c9b*/
             v15 = *(unsigned short *)v9; /*0x635ca4*/
@@ -545,7 +545,7 @@ int TeamClass::GetMember()
         return -1; /*0x635c5a*/
       v12 = v4[135]; /*0x635cf7*/
       v13 = *(unsigned int *)(v12 + 48); /*0x635cfd*/
-      if ( (uint8_t)House::IsHumanPlayer((#375 *)v12) ) /*0x635d00*/
+      if ( (uint8_t)House::IsHumanPlayer((void *)v12) ) /*0x635d00*/
       {
         if ( HouseClass_Player ) /*0x635d10*/
           v13 = *((unsigned int *)HouseClass_Player + 12); /*0x635d12*/
@@ -661,7 +661,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
     v18 = *(unsigned int *)this; /*0x63624c*/
     v11 = *(unsigned int *)(v18 + 540); /*0x636250*/
     v12 = *(unsigned int *)(v11 + 48); /*0x636256*/
-    if ( (uint8_t)House::IsHumanPlayer((#375 *)v11) && HouseClass_Player ) /*0x636269*/
+    if ( (uint8_t)House::IsHumanPlayer((void *)v11) && HouseClass_Player ) /*0x636269*/
       v12 = *((unsigned int *)HouseClass_Player + 12); /*0x63626b*/
     if ( v12 < 0x18 ) /*0x636270*/
       g_abs_AC4B84[v12] = (g_abs_AC4B84[v12] - 1) & ((g_abs_AC4B84[v12] - 1 < 0) - 1); /*0x63628a*/
@@ -1453,7 +1453,7 @@ LABEL_224:
   if ( esi1->TeamClass_field_7B || esi1->TeamClass_field_7F || !esi1->spawnCell || !esi1->unknown38 )
     TeamClass::FindClosestEnemy((int)esi1, (AbstractClass *)&esi1->spawnCell, (AbstractClass *)&esi1->unknown38);
   if ( (!esi1->TeamClass_field_7F || !esi1->unknown79 && *((unsigned char *)esi1->buildingType + 171))
-    && (!(uint8_t)House::IsCurrentPlayer((#375 *)esi1->owner) || !esi1->spawnStatus) )
+    && (!(uint8_t)House::IsCurrentPlayer((void *)esi1->owner) || !esi1->spawnStatus) )
   {
     jj = 0;
     v10 = *((unsigned int *)esi1->buildingType + 57);
@@ -2138,7 +2138,7 @@ int TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractCla
 {
 
   CellClass *v5; // eax
-  #375 *v7; // ecx
+  void *v7; // ecx
   TeamTypeClass *v8; // eax
   int v9; // eax
   int v10; // ebx
@@ -2161,7 +2161,7 @@ int TeamClass::LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractCla
     return 1; /*0x6ea88b*/
   if ( aP1->field_34 == *((unsigned int *)this + 28) ) /*0x6ea89b*/
   {
-    v7 = (#375 *)aP1->field_21C; /*0x6ea89d*/
+    v7 = (void *)aP1->field_21C; /*0x6ea89d*/
     if ( v7 ) /*0x6ea8a7*/
     {
       if ( !(uint8_t)House::IsCurrentPlayer(v7) ) /*0x6ea8a9*/
@@ -3154,7 +3154,7 @@ int TeamClass::PowerDrainUpdate(int * a2)
   int v24; // ecx
   int v25; // edx
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x6ec5a9*/
+  AbstractClass::ProcessPower((void *)this); /*0x6ec5a9*/
   v3 = (*(int (**)(int))(*(unsigned int *)(*((unsigned int *)this + 9) + 4) + 16))(*((unsigned int *)this + 9) + 4); /*0x6ec5b7*/
   Power::TimerProcess(v3); /*0x6ec5bd*/
   v4 = (*(int (**)(int))(*(unsigned int *)(*((unsigned int *)this + 11) + 4) + 16))(*((unsigned int *)this + 11) + 4); /*0x6ec5cb*/

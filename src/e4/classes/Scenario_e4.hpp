@@ -125,7 +125,7 @@ struct Scenario {
     void SetByte96();  // 0x642AD0
     HWND ClearScreen();  // 0x684240
     char LoadWithProgress();  // 0x684620
-    int  FindBuildingTypeByName(unsigned __int8 * a1, unsigned __int8 * a2, void * aP3);  // 0x4758F0
+    int  FindBuildingTypeByName(uint8_t * a1, uint8_t * a2, void * aP3);  // 0x4758F0
     void * ResetDisplayArrays();  // 0x5C9700
     int  SetDword32(int a2);  // 0x642B10
     int  SetDword30(int a2);  // 0x642DF0

@@ -152,6 +152,6 @@ struct AudioStream {
     int InitListAndCounters();  // 0x4028B0
     int UpdateTimers();  // 0x404FD0
     int UpdateCountdowners();  // 0x405040
-    char *  Constructor(unsigned __int64 a2);  // 0x407860
+    char *  Constructor(uint64_t a2);  // 0x407860
 };
 } // namespace gamemd

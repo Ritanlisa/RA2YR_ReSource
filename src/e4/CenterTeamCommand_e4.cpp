@@ -41,7 +41,7 @@ void CenterTeamCommand::Release()
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = (const wchar_t *)(*((unsigned int *)this + 1));
-  StringCSF = GetStringCSF(g_abs_8271B0, 0, g_Str_File_Init_CPP, 6361); /*0x5361f5*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_abs_8271B0, 0, g_Str_File_Init_CPP, 6361));
   swprintf(&g_abs_A8F654, (const size_t)StringCSF, v3); /*0x536200*/
   return &g_abs_A8F654; /*0x53620d*/
 

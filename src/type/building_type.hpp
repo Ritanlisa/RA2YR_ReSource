@@ -36,7 +36,7 @@ public:
 
     static DynamicVectorClass<BuildingTypeClass*>* Array;
     // design: static function, no direct binary match in IDA
-    static BuildingTypeClass* Find(const char* pID);
+     BuildingTypeClass* Find(const char* pID);
     static BuildingTypeClass* FindOrCreate(const char* pID);  // 0x4653C0 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x747370
 

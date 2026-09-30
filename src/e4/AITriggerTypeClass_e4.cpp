@@ -49,7 +49,7 @@ v3 = (unsigned int *)(this);
   v11 = 0; /*0x41eca5*/
   if ( HouseClass_Count <= 0 ) /*0x41ecaa*/
     return v11; /*0x41ecaa*/
-  while ( *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Array->__pad_0[4 * v4] + 52) + 188) != HouseTypeClass::Find(g_abs_818164) ) /*0x41eccc*/
+  while ( *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Array->__pad_0[4 * v4] + 52) + 188) != ((HouseTypeClass *)(g_abs_818164))->Find() ) /*0x41eccc*/
   {
     if ( ++v4 >= HouseClass_Count ) /*0x41ecd6*/
       return 0; /*0x41ece2*/
@@ -128,7 +128,7 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
   bool result; // al
   DynamicVector ** v9;
 
-  v9 = (char)((gamemd::DynamicVector **)(0));
+  v9 = (gamemd::DynamicVector **)((char)((gamemd::DynamicVector **)(0)));
   if ( !a2 ) /*0x41ee9f*/
     return v9; /*0x41efcb*/
   v4 = *((unsigned int *)this + 54); /*0x41eea6*/
@@ -659,23 +659,23 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(unsigned int * Block, char a2)
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &vt_AITriggerTypeClass; /*0x41fffd*/
+  *Block = (unsigned int)(&vt_AITriggerTypeClass);
   *(Block + 1) = &vt_AITriggerTypeClass; /*0x420003*/
   *(Block + 2) = &vt_AITriggerTypeClass; /*0x42000a*/
   *(Block + 3) = &vt_AITriggerTypeClass; /*0x420011*/
   v5 = Block; /*0x42001f*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_A8B200 + 16))(&g_abs_A8B200, &v5); /*0x420023*/
-  if ( v3 != -1 && v3 < g_abs_A8B210 && v3 < --g_abs_A8B210 ) /*0x42003e*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_A8B210) && v3 < --g_abs_A8B210 ) /*0x42003e*/
   {
     do /*0x420056*/
     {
       ++v3; /*0x420046*/
       *((unsigned int *)g_abs_A8B204 + v3 - 1) = *((unsigned int *)g_abs_A8B204 + v3); /*0x42004a*/
     }
-    while ( v3 < g_abs_A8B210 ); /*0x420056*/
+    while ( v3 < (int)((int))((int))(g_abs_A8B210) ); /*0x420056*/
   }
-  AbstractTypeClass::Dtor(Block); /*0x42005a*/
-  if ( (Block & 1) != 0 ) /*0x420064*/
+  ((AbstractTypeClass *)(Block))->Dtor(); /*0x42005a*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x420064*/
     OperatorDelete(Block); /*0x420067*/
   return (AITriggerTypeClass *)Block; /*0x420071*/
 

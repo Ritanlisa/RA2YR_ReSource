@@ -49,6 +49,7 @@
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/E4Recv_655890_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {
@@ -299,7 +300,7 @@ char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
          a7);
   if ( dword_A802C8 >= 128 ) /*0x646fdc*/
     return 0; /*0x647036*/
-  qmemcpy(&byte_A802D4[111 * dword_A802D0], v7, 0x6Fu); /*0x646ff8*/
+  qmemcpy(&((unsigned int *)(byte_A802D4))[111 * dword_A802D0], v7, 0x6Fu); /*0x646ff8*/
   dword_A83A54[dword_A802D0] = timeGetTime(); /*0x647009*/
   ++dword_A802C8; /*0x647020*/
   dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x647025*/
@@ -483,7 +484,7 @@ void RunNetworkGameLoop()
   int v33; // [esp+68h] [ebp-8h]
   int v34; // [esp+6Ch] [ebp-4h]
 
-    this->Debug::Log();
+    ((Debug *)0)->Log();
   if ( *(int *)&dword_A8B238 < 3 || *(int *)&dword_A8B238 > 4 ) /*0x648371*/
   {
     v13 = (gamemd::IPXManagerClass *)((void *)dword_A8EA74);
@@ -501,10 +502,10 @@ void RunNetworkGameLoop()
   IDA_LOWORD(dword_AFA400) = BuildNetworkEventPacket((int)v3, (int)v2, v1, (int)dword_A8B550, dword_AFA400) + dword_AFA400; /*0x6483c1*/
     TicksTimer = Timer::GetTicks();
   v22 = 15; /*0x6483d9*/
-    v22 = Timer::GetTicks();
+    v22 = ((Timer *)0)->GetTicks();
   v25 = 600; /*0x6483ee*/
-    v18 = Timer::GetTicks();
-    this->Debug::Log();
+    v18 = ((Timer *)0)->GetTicks();
+    ((Debug *)0)->Log();
   while ( 2 ) /*0x64840c*/
   {
     EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x64840c*/
@@ -523,23 +524,23 @@ void RunNetworkGameLoop()
       goto LABEL_9; /*0x648437*/
     }
   LABEL_10:
-        v25 = Timer::GetTicks();
+        v25 = ((Timer *)0)->GetTicks();
     v28 = 15; /*0x648458*/
     Ticks = v26; /*0x64845c*/
     v21 = v27; /*0x648460*/
     v22 = 15; /*0x648464*/
-        this->Debug::Log();
+        ((Debug *)0)->Log();
     SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64847e*/
   LABEL_11:
     (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648483*/
     v6 = v25; /*0x64848e*/
     if ( v23 != -1 ) /*0x648494*/
     {
-            v6 = Timer::GetTicks() - v22;
+            v6 = ((Timer *)0)->GetTicks() - v22;
       if ( v7 >= v6 ) /*0x6484a5*/
       {
   LABEL_33:
-                this->Debug::Log();
+                ((Debug *)0)->Log();
         return; /*0x648678*/
       }
       v6 -= v7; /*0x6484ab*/
@@ -564,12 +565,12 @@ void RunNetworkGameLoop()
             goto LABEL_23;
           case 4: /*0x648528*/
             (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648533*/
-                        v28 = Timer::GetTicks();
+                        v28 = ((Timer *)0)->GetTicks();
             Ticks = v29; /*0x648548*/
             v31 = 15; /*0x648550*/
             v22 = 15; /*0x648554*/
             v21 = v30; /*0x64855c*/
-                        v31 = Timer::GetTicks();
+                        v31 = ((Timer *)0)->GetTicks();
             v34 = 600; /*0x648572*/
             v23 = v32; /*0x648576*/
             v24 = v33; /*0x64857a*/
@@ -587,7 +588,7 @@ void RunNetworkGameLoop()
       v9 = v8++; /*0x648589*/
     }
     while ( v9 < 64 ); /*0x64858f*/
-        this->Event::Dispatch();
+        ((Event *)0)->Dispatch();
     if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) ) /*0x6485a1*/
     {
       InputManager_ProcessEvents::Vtable((GScreenClass *)&stru_87F5F0.__pad_58[416], &v16, &v18, &v17); /*0x6485b7*/
@@ -611,14 +612,14 @@ void RunNetworkGameLoop()
     }
     if ( v10 + dword_A8B554 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) ) /*0x64862a*/
     {
-            Debug::Log();
+            this->Debug::Log();
       v2 = v13; /*0x648643*/
       continue; /*0x64864a*/
     }
     break;
   }
-    Debug::Log();
-    Debug::Log();
+    this->Debug::Log();
+    this->Debug::Log();
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64869f*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486b2*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486c5*/

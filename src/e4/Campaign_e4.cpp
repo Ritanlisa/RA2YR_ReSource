@@ -166,7 +166,7 @@ LONG Campaign::Screen(char a1)
     while ( !dwNewLong ) /*0x60d3d7*/
     {
       MessageLoop(); /*0x60d3d9*/
-      if ( !g_abs_A8B238 || g_abs_A8B238 == 5 || g_abs_A8D60E || g_abs_A8DAB4 ) /*0x60d3fc*/
+      if ( !g_abs_A8B238 || g_abs_A8B238 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(5) || g_abs_A8D60E || g_abs_A8DAB4 ) /*0x60d3fc*/
       {
         Event::Dispatch(); /*0x60d412*/
       }

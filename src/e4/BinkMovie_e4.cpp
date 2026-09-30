@@ -141,9 +141,9 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
     *((unsigned int *)this + 10) = -1; /*0x432795*/
   }
   *((unsigned int *)this + 12) = 0; /*0x43279c*/
-  if ( Audio::IsSoundEnabled() ) /*0x43279f*/
+  if ( this->Audio::IsSoundEnabled() ) /*0x43279f*/
   {
-    v5 = Audio::GetDirectSound(); /*0x4327a8*/
+    v5 = this->Audio::GetDirectSound(); /*0x4327a8*/
     BinkSetSoundSystem(BinkOpenDirectSound, v5); /*0x4327b4*/
   }
   v6 = (char *)FullPath; /*0x4327ba*/
@@ -179,7 +179,7 @@ LABEL_15:
     *((unsigned int *)this + 9) = 0x3C /*0x4328b5*/
                            / (unsigned int)(*(unsigned int *)(*((unsigned int *)this + 1) + 20)
                                           / *(unsigned int *)(*((unsigned int *)this + 1) + 24));
-    v14 = (unsigned int *)BinkMovie::CreateSurfaceTracker(v6); /*0x4328b8*/
+    v14 = (unsigned int *)((BinkMovie *)(v6))->CreateSurfaceTracker(); /*0x4328b8*/
     v15 = *(int **)((char *)this + 4); /*0x4328bd*/
     *((unsigned int *)this + 8) = v14; /*0x4328c0*/
     v16 = 0; /*0x4328c3*/
@@ -191,7 +191,7 @@ LABEL_15:
     {
       if ( v14 && *v14 ) /*0x4328d9*/
       {
-        v20 = g_abs_88730C; /*0x4328e3*/
+        v20 = (int)(g_abs_88730C);
         *((unsigned int *)this + 3) = g_abs_88730C; /*0x4328e5*/
         v16 = ((*(int (**)(int))(*(unsigned int *)v20 + 124))(v20) - v17) / 2; /*0x4328f9*/
         v21 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 128))(*((unsigned int *)this + 3)); /*0x4328fb*/
@@ -287,7 +287,7 @@ void BinkMovie::IsAtEnd()
   int v1; // eax
   unsigned int v2; // edx
 
-  v1 = *(this + 1); /*0x432c50*/
+  v1 = (int)(*(this + 1));
   v2 = *(unsigned int *)(v1 + 12); /*0x432c54*/
   return v2 >= *(unsigned int *)(v1 + 8) || v2 < *(this + 12); /*0x432c5c*/
 
@@ -336,16 +336,13 @@ void BinkMovie::Play()
         if ( !*(this + 44) ) /*0x432d23*/
           Sleep(0x21u); /*0x432d2c*/
         v7 = *((unsigned int *)this + 3); /*0x432d32*/
-        if ( v7 == g_abs_887308 ) /*0x432d3d*/
+        if ( v7 == (int)((int))((int))(g_abs_887308) ) /*0x432d3d*/
         {
           GetClientRect(g_hWnd, &Rect); /*0x432d4a*/
           v4(g_hWnd, (LPPOINT)&Rect); /*0x432d58*/
-          BinkMovie::RenderLoop( /*0x432d74*/
-            *((unsigned int *)this + 3),
-            Rect.left + *((unsigned int *)this + 4),
-            Rect.top + *((unsigned int *)this + 5));
+                    BinkMovie::RenderLoop((void *)(/*0x432d74*/             *((unsigned int *)this + 3)),             Rect.left + *((unsigned int *)this + 4),             Rect.top + *((unsigned int *)this + 5));
         }
-        else if ( (uint8_t)BinkMovie::RenderLoop(v7, *((unsigned int *)this + 4), *((unsigned int *)this + 5)) ) /*0x432d89*/
+        else if ( (uint8_t)BinkMovie::RenderLoop((void *)(v7), *((unsigned int *)this + 4), *((unsigned int *)this + 5)) ) /*0x432d89*/
         {
           GetClientRect(g_hWnd, &v13); /*0x432d9e*/
           v4(g_hWnd, (LPPOINT)&v13); /*0x432dab*/

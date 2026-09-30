@@ -44,7 +44,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   int v19; // ebx
   int v20; // ebx
   int v21; // edi
-  const #72 *v22; // eax
+  const const void * v22;
   int v23; // eax
   int v24; // eax
   int v25; // eax
@@ -74,7 +74,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   int16_t v49; // ax
   int v50; // edi
   int v51; // edi
-  #72 *StringCSF; // eax
+  void *StringCSF; // eax
   int v53; // edx
   int v54; // esi
   char v55; // al
@@ -270,14 +270,14 @@ LABEL_127:
         return 1; /*0x5fbcc9*/
       }
       v51 = ((int (*)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fbb7c*/
-      StringCSF = GetStringCSF((#72 *)aErrorCannotrem, 0, g_Str_File_Options_CPP, 1012); /*0x5fbb8a*/
+      StringCSF = GetStringCSF((void *)aErrorCannotrem, 0, g_Str_File_Options_CPP, 1012); /*0x5fbb8a*/
     }
     else
     {
       v51 = ((int (*)(int, int))GetDlgItem)(hWnd, 1597); /*0x5fbb54*/
-      StringCSF = GetStringCSF((#72 *)aErrorCannotmap, 0, g_Str_File_Options_CPP, 1004); /*0x5fbb62*/
+      StringCSF = GetStringCSF((void *)aErrorCannotmap, 0, g_Str_File_Options_CPP, 1004); /*0x5fbb62*/
     }
-    ((void (*)(int, int, unsigned int, #72 *))SendMessageA)(v51, 1202, 0, StringCSF); /*0x5fbb98*/
+    ((void (*)(int, int, unsigned int, void *))SendMessageA)(v51, 1202, 0, StringCSF); /*0x5fbb98*/
     return 1; /*0x5fbba9*/
   }
   if ( a2 != 273 ) /*0x5fb37e*/
@@ -298,8 +298,8 @@ LABEL_127:
           do /*0x5fb5bf*/
           {
             v21 = *(unsigned int *)(((unsigned int *)(dword_87F5D8))[33] + 4 * v75); /*0x5fb575*/
-            v22 = (const #72 *)(*(int (**)(int))(*(unsigned int *)v21 + 12))(v21); /*0x5fb57d*/
-            if ( !_wcsicmp(v22, (const #72 *)lParam) ) /*0x5fb581*/
+            v22 = (const void *)(*(int (**)(int))(*(unsigned int *)v21 + 12))(v21); /*0x5fb57d*/
+            if ( !_wcsicmp(v22, (const void *)lParam) ) /*0x5fb581*/
             {
               v23 = (*(int (**)(int))(*(unsigned int *)v21 + 8))(v21); /*0x5fb591*/
               v24 = ((int (*)(int, int, unsigned int, int))SendMessageA)(v20, 1229, 0, v23); /*0x5fb59d*/
@@ -371,7 +371,7 @@ LABEL_16:
           v14 |= 8u; /*0x5fb483*/
         IDA_HIBYTE(v15) = v14; /*0x5fb48e*/
         IDA_LOBYTE(v15) = v74; /*0x5fb490*/
-        FormatHotkeyDisplayString(v15, (#72 *)lParam); /*0x5fb494*/
+        FormatHotkeyDisplayString(v15, (void *)lParam); /*0x5fb494*/
         ((void (*)(unsigned int, int, unsigned int, unsigned char *))SendMessageA)(v78, 1202, 0, lParam); /*0x5fb4ad*/
         v16 = ((int (*)(int, int))GetDlgItem)(hWnd, 1229); /*0x5fb4b5*/
         ((void (*)(int, int, unsigned int, unsigned int))SendMessageA)(v16, 1025, 0, 0); /*0x5fb4c1*/
@@ -395,9 +395,9 @@ LABEL_16:
     {
       if ( !IDA_HIWORD(a3) ) /*0x5fba05*/
       {
-        Debug::Log(); /*0x5fba13*/
+        this->Debug::Log(); /*0x5fba13*/
         CCFileClass::Construct(v79, aKeyboardmdIni); /*0x5fba24*/
-        FileClass::Delete((#56 *)v79); /*0x5fba2d*/
+        FileClass::Delete((void *)v79); /*0x5fba2d*/
         KeyboardConfig::LoadINI(); /*0x5fba32*/
         ((void (*)(int, int, unsigned int, unsigned int))SendMessageA)(hWnd, 1127, 0, 0); /*0x5fba41*/
         v79[0] = &vt_CCFileClass; /*0x5fba4b*/
@@ -421,19 +421,19 @@ LABEL_16:
       v84 = 0; /*0x5fb93a*/
       v79[0] = &CCINIClass_Vtable; /*0x5fb93f*/
       INIClass::ClearSection((int)v79, 0, 0); /*0x5fb947*/
-      v43 = dword_87F5D8[43]; /*0x5fb94c*/
-      for ( m = 0; m < dword_87F5D8[43]; ++m ) /*0x5fb955*/
+      v43 = ((unsigned int *)(dword_87F5D8))[43]; /*0x5fb94c*/
+      for ( m = 0; m < ((unsigned int *)(dword_87F5D8))[43]; ++m ) /*0x5fb955*/
       {
         if ( !IDA_LOBYTE(dword_87F5D8[45]) ) /*0x5fb95f*/
         {
           qsort((void *)dword_87F5D8[42], v43, 8, CompareFuncInt); /*0x5fb970*/
-          dword_87F5D8[46] = 0; /*0x5fb978*/
+          ((unsigned int *)(dword_87F5D8))[46] = 0; /*0x5fb978*/
           IDA_LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb97e*/
         }
-        v72 = *(unsigned int *)(dword_87F5D8[42] + 8 * m); /*0x5fb992*/
-        v45 = (char *)(*(int (**)(unsigned int))(**(unsigned int **)(dword_87F5D8[42] + 8 * m + 4) + 4))(*(unsigned int *)(dword_87F5D8[42] + 8 * m + 4)); /*0x5fb995*/
+        v72 = *(unsigned int *)(((unsigned int *)(dword_87F5D8))[42] + 8 * m); /*0x5fb992*/
+        v45 = (char *)(*(int (**)(unsigned int))(**(unsigned int **)(((unsigned int *)(dword_87F5D8))[42] + 8 * m + 4) + 4))(*(unsigned int *)(dword_87F5D8[42] + 8 * m + 4)); /*0x5fb995*/
         INIClass::SetInt((char *)v79, (uint8_t *)g_INI_Key_Hotkey, v45, v72, 0); /*0x5fb9a2*/
-        v43 = dword_87F5D8[43]; /*0x5fb9a7*/
+        v43 = ((unsigned int *)(dword_87F5D8))[43]; /*0x5fb9a7*/
       }
       RawFileClass::Construct(v87, (int)aKeyboardmdIni_0); /*0x5fb9bd*/
       INIClass::WriteDigest((char *)v79, (int)v87, 0); /*0x5fb9cf*/
@@ -489,8 +489,8 @@ LABEL_16:
     v31 |= 0x100u; /*0x5fb761*/
   if ( (v30 & 0x800) != 0 ) /*0x5fb76a*/
     v31 = 0; /*0x5fb76c*/
-  v32 = dword_87F5D8[43]; /*0x5fb76e*/
-  if ( !dword_87F5D8[43] ) /*0x5fb775*/
+  v32 = ((unsigned int *)(dword_87F5D8))[43]; /*0x5fb76e*/
+  if ( !((unsigned int *)(dword_87F5D8))[43] ) /*0x5fb775*/
     goto LABEL_81; /*0x5fb775*/
   v33 = (unsigned int *)dword_87F5D8[46]; /*0x5fb77b*/
   if ( !dword_87F5D8[46] || *(unsigned int *)dword_87F5D8[46] != v31 ) /*0x5fb787*/

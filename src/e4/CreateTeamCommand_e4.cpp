@@ -49,14 +49,14 @@ unsigned int * CreateTeamCommand::performAction_148()
 {
 
   int v1; // eax
-  IUnknown *result; // eax
+  unsigned int result;
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((int16_t *)g_abs_A8B230 + 6728) << 8) + 128; /*0x537378*/
-  v4[0] = (*((int16_t *)g_abs_A8B230 + 6727) << 8) + 128; /*0x53737d*/
-  v4[1] = v1; /*0x537386*/
+  v1 = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6728) << 8) + 128);
+  v4[0] = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6727) << 8) + 128);
+  v4[1] = (IUnknown *)(v1);
   GroundHeight = 0; /*0x53738a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53739d*/
   Tactical::SetTacticalPosition((int)g_abs_887324, v4); /*0x5373a6*/
@@ -76,14 +76,14 @@ unsigned int * CreateTeamCommand::performAction_153()
 {
 
   int v1; // eax
-  IUnknown *result; // eax
+  unsigned int result;
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((int16_t *)g_abs_A8B230 + 6730) << 8) + 128; /*0x537468*/
-  v4[0] = (*((int16_t *)g_abs_A8B230 + 6729) << 8) + 128; /*0x53746d*/
-  v4[1] = v1; /*0x537476*/
+  v1 = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6730) << 8) + 128);
+  v4[0] = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6729) << 8) + 128);
+  v4[1] = (IUnknown *)(v1);
   GroundHeight = 0; /*0x53747a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53748d*/
   Tactical::SetTacticalPosition((int)g_abs_887324, v4); /*0x537496*/
@@ -103,14 +103,14 @@ unsigned int * CreateTeamCommand::performAction_158()
 {
 
   int v1; // eax
-  IUnknown *result; // eax
+  unsigned int result;
   int v3; // [esp+0h] [ebp-10h] BYREF
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((int16_t *)g_abs_A8B230 + 6732) << 8) + 128; /*0x537558*/
-  v4[0] = (*((int16_t *)g_abs_A8B230 + 6731) << 8) + 128; /*0x53755d*/
-  v4[1] = v1; /*0x537566*/
+  v1 = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6732) << 8) + 128);
+  v4[0] = (IUnknown *)((*((int16_t *)g_abs_A8B230 + 6731) << 8) + 128);
+  v4[1] = (IUnknown *)(v1);
   GroundHeight = 0; /*0x53756a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53757d*/
   Tactical::SetTacticalPosition((int)g_abs_887324, v4); /*0x537586*/
@@ -246,9 +246,9 @@ int CreateTeamCommand::performAction_245(char a2, int a3)
     if ( *((unsigned int *)g_abs_A8B230 + 3374) ) /*0x6a6a60*/
       v6 = 18; /*0x6a6a6f*/
     v7 = (g_abs_886F9C - g_abs_B0B4F8 - v6 + g_abs_886F94 - 7) / 50; /*0x6a6aa4*/
-    if ( HouseClass_Player == (#375 *)g_abs_AC1198 ) /*0x6a6aae*/
+    if ( HouseClass_Player == (int)((int))((int))((void *))g_abs_AC1198 ) /*0x6a6aae*/
     {
-      if ( v4[17] + v7 / 2 < g_abs_884CF8 ) /*0x6a6ac2*/
+      if ( v4[17] + v7 / (unsigned int)((unsigned int))((unsigned int))(2) < g_abs_884CF8 ) /*0x6a6ac2*/
         goto LABEL_13; /*0x6a6ac2*/
     }
     else if ( 2 * (v7 + v4[17]) < v4[21] ) /*0x6a6ad2*/
@@ -273,16 +273,16 @@ void CreateTeamCommand::performAction_246()
   int v4; // esi
   int v5; // ecx
 
-  v1 = g_abs_A8EC88; /*0x731061*/
+  v1 = (int)(g_abs_A8EC88);
   for ( i = 0; i < v1; ++i )
   {
     v4 = *((unsigned int *)g_abs_A8EC7C + i); /*0x731077*/
     if ( v4 )
     {
       v5 = *(unsigned int *)(v4 + 540); /*0x731083*/
-      if ( g_abs_A8B238[0] ? House::IsHumanPlayer((#375 *)v5) : *(unsigned char *)(v5 + 493) )
+      if ( g_abs_A8B238[0] ? House::IsHumanPlayer((void *)v5) : *(unsigned char *)(v5 + 493) )
       {
-        if ( *(char **)(v4 + 532) == this - 1 ) /*0x7310a9*/
+        if ( *(char **)(v4 + 532) == (char *)((char *))((char *))(this) - 1 ) /*0x7310a9*/
           *(unsigned int *)(v4 + 532) = -1; /*0x7310ab*/
         if ( *(unsigned char *)(v4 + 131) ) /*0x7310b5*/
           *(unsigned int *)(v4 + 532) = this - 1; /*0x7310bf*/
@@ -343,8 +343,8 @@ wchar_t * CreateTeamCommand::Release()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *((unsigned int *)this + 1); /*0x535c45*/
-  StringCSF = GetStringCSF(g_abs_826F94, 0, g_Str_File_Init_CPP, 6165); /*0x535c55*/
+  v3 = (const wchar_t *)((wchar_t *)(*((unsigned int *)this + 1)));
+  StringCSF = (wchar_t *)(GetStringCSF(g_abs_826F94, 0, g_Str_File_Init_CPP, 6165));
   swprintf(&g_abs_A8F654, (const size_t)StringCSF, v3); /*0x535c60*/
   return &g_abs_A8F654; /*0x535c6d*/
 
@@ -369,8 +369,8 @@ wchar_t * CreateTeamCommand::Read()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *((unsigned int *)this + 1); /*0x535c95*/
-  StringCSF = GetStringCSF(g_abs_826FB0, 0, g_Str_File_Init_CPP, 6169); /*0x535ca5*/
+  v3 = (const wchar_t *)((wchar_t *)(*((unsigned int *)this + 1)));
+  StringCSF = (wchar_t *)(GetStringCSF(g_abs_826FB0, 0, g_Str_File_Init_CPP, 6169));
   swprintf(&g_abs_A8F654, (const size_t)StringCSF, v3); /*0x535cb0*/
   return &g_abs_A8F654; /*0x535cbd*/
 

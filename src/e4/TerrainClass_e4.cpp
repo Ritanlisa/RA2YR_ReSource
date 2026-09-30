@@ -311,9 +311,9 @@ LABEL_162:
         v61 = *(ScenarioClass **)&((unsigned int *)(HouseClass_Player))[29924];
       }
       v61->missionTimer_text_csf = &stru_87C374[46016];
-      ScriptAction::CopyStringField(Destination, &stru_87C374[56304]);
+      ScriptAction::CopyStringField(Destination, &((unsigned int *)(stru_87C374))[56304]);
   char v137[32]; // [esp+60h] [ebp-1F0h] BYREF
-      ScriptAction::CopyStructField((void *)(*(unsigned int *)&HouseClass_Player[29924] + 4600), v137, Destination);
+      ScriptAction::CopyStructField((void *)(*(unsigned int *)&((unsigned int *)(HouseClass_Player))[29924] + 4600), v137, Destination);
       ObjectClass::PreDraw(&stru_87C374[13428]);
       return 1;
     case 0x1C:
@@ -1206,7 +1206,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
   unsigned int *v2; // ebp
   unsigned int *v3; // esi
   int v4; // eax
-  #374 *v5; // ecx
+  void *v5; // ecx
   int v6; // edx
   int v7; // edi
   int v8; // eax
@@ -1303,7 +1303,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
   char v14[12]; // [esp+8h] [ebp-Ch] BYREF
 
   v3 = (IUnknown *)a1; /*0x71d008*/
-  if ( !(uint8_t)ObjectClass::Deploy((#374 *)this) ) /*0x71d012*/
+  if ( !(uint8_t)ObjectClass::Deploy((void *)this) ) /*0x71d012*/
     return 0; /*0x71d13e*/
   v4 = (IUnknown *)(v3->field_0 / 256); /*0x71d03e*/
   v5 = (IUnknown *)(v3->field_4 / 256); /*0x71d041*/

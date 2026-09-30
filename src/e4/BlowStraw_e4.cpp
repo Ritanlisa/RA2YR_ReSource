@@ -149,7 +149,7 @@ LABEL_6:
     }
     else if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d078a*/
     {
-      v11 = *(unsigned int *)&g_abs_B077F8[4 * *(unsigned int *)&g_abs_B077F8 + 16080]; /*0x6d078c*/
+      v11 = (char *)(*(unsigned int *)&g_abs_B077F8[4 * *(unsigned int *)&g_abs_B077F8 + 16080]);
       if ( v11 > 0x18 ) /*0x6d0795*/
         v12 = 0; /*0x6d07a9*/
       else
@@ -280,7 +280,7 @@ TabClass * BlowStraw_29::Read(char * Block, char a2)
   }
   while ( v4 ); /*0x5bea06*/
   RadarClass::Destruct(Block); /*0x5bea0a*/
-  if ( (Block & 1) != 0 ) /*0x5bea14*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5bea14*/
     RA2_OPDEL(Block); /*0x5bea17*/
   return (TabClass *)Block; /*0x5bea1f*/
 

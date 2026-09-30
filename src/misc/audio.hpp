@@ -65,7 +65,7 @@ public:
 
     // IDA 0x7514D0
     // wrapper: delegates to VocClass::FindIndex at 0x7514D0
-    static VocClass* Find(const char* pName);
+     VocClass* Find(const char* pName);
     // IDA 0x7514D0 (same address, Find calls FindIndex)
     static int32_t FindIndex(const char* pName);  // 0x7514D0
 
@@ -138,7 +138,7 @@ public:
 
     // IDA 0x753250
     // wrapper: delegates to VocClass::FindByName at 0x753250
-    static VoxClass* Find(const char* pName);
+     VoxClass* Find(const char* pName);
     // IDA 0x752CB0 wrapper (uses Array search)
     // wrapper: delegates to sub_752CB0 at 0x752CB0
     static int32_t FindIndex(const char* pName);

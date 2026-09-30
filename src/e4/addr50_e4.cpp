@@ -39,7 +39,7 @@ int E4Recv_501750::sub_501750(int a2)
   unsigned char v11[16]; // [esp+74h] [ebp-10h] BYREF
   char v12; // [esp+88h] [ebp+4h]
 
-  result = g_abs_A8E9A0; /*0x501750*/
+  result = (char)(g_abs_A8E9A0);
   if ( g_abs_A8E9A0 ) /*0x50175f*/
   {
     v4 = *((unsigned int *)this + 5353); /*0x501765*/

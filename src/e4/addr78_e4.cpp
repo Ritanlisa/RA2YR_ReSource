@@ -39,6 +39,7 @@
 #include "e4/classes/ScoreScreen_e4.hpp"
 #include "e4/classes/VocClass_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Compare_e4.hpp"
 
 // 0x780110
 namespace gamemd {
@@ -46,12 +47,24 @@ void WOL_ResetSystem()
 {
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v18 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v18 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v18 = 0;  /* G37 hoist */
@@ -63,13 +76,7 @@ void WOL_ResetSystem()
     unsigned int v18 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v18 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v18 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-  unsigned int *AccountInfoWOL; // eax
+  void * AccountInfoWOL;
   int v2; // esi
   unsigned int v3; // eax
   unsigned int v4; // ebp

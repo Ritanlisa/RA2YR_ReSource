@@ -59,8 +59,8 @@ int MoveFeedback::ProcessCommand()
     {
       v3 = 0; /*0x732826*/
     }
-    v5 = g_abs_A8EC88; /*0x732828*/
-    if ( g_abs_A8EC88 > 0 ) /*0x732830*/
+    v5 = (int)(g_abs_A8EC88);
+    if ( g_abs_A8EC88 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x732830*/
     {
       do /*0x732887*/
       {

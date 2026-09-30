@@ -481,7 +481,7 @@ void sub_4C2830()
     v3 = v2[8]; /*0x4c2856*/
     if ( v3 ) /*0x4c285b*/
     {
-      v4 = (unsigned int *)((int *)(*(int (**)(int, char *, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v3 + 176))( /*0x4c2888*/ v3, v20, v2[9], 0, 0, 0));
+      v4 = (int *)((unsigned int *)((int *)(*(int (**)(int, char *, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v3 + 176))( /*0x4c2888*/ v3, v20, v2[9], 0, 0, 0)));
       v5 = (int)((unsigned int *)(*v4));
       v6 = v4[1]; /*0x4c288e*/
       v7 = v4[2]; /*0x4c2891*/

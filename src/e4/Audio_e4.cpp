@@ -637,7 +637,7 @@ int Audio::LoadWAVFiles()
           {
             Struct::ZeroInit32(v9); /*0x72089b*/
             FileClass::Load(v10, 1); /*0x7208a6*/
-            if ( ParseWaveFileHeader((int)v10, v9, (#247 *)v8) ) /*0x7208b8*/
+            if ( ParseWaveFileHeader((int)v10, v9, (void *)v8) ) /*0x7208b8*/
             {
               v5 = (unsigned int *)(4 * i + *((unsigned int *)this + 6)); /*0x7208cc*/
               v6 = sub_408560((int)v9, v8[0]) / 0x3E8; /*0x7208dc*/

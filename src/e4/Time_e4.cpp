@@ -15,7 +15,7 @@ unsigned int Time::GetElapsedMS()
   unsigned int v1; // ecx
 
   Time = timeGetTime(); /*0x4e24a0*/
-  if ( Time > g_abs_8B3F14 ) /*0x4e24ae*/
+  if ( Time > (DWORD)((DWORD))((DWORD))(g_abs_8B3F14) ) /*0x4e24ae*/
     v1 = 3 * (Time - g_abs_8B3F14); /*0x4e24c5*/
   else
     v1 = 3 * (Time - g_abs_8B3F14 - 1); /*0x4e24b3*/

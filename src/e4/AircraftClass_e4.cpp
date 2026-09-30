@@ -104,7 +104,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
 {
 
   unsigned int v5;
-  int v6; // esi
+  int * v6;
   unsigned short *v7; // eax
   int v8; // esi
   int v9; // ecx
@@ -115,22 +115,22 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
   int v14; // eax
   int v15; // esi
   void *v16; // eax
-  int * v18;
+  unsigned int v18;
   int v19; // [esp+2Ch] [ebp-14h]
   char v20[4]; // [esp+30h] [ebp-10h] BYREF
   unsigned int v21[3]; // [esp+34h] [ebp-Ch] BYREF
   unsigned int v22; // [esp+44h] [ebp+4h]
 
-  v18 = (unsigned int)((int *)(0));
+  v18 = (int *)((unsigned int)((int *)((unsigned int)((int *)(0)))));
   v19 = 0; /*0x415b29*/
   v5 = dword_817A58; /*0x415b2d*/
   do /*0x415bab*/
   {
-    v6 = *(unsigned int *)(v5); /*0x415b34*/
-    v7 = (unsigned short *)(*(int (**)(unsigned int *, char *))(*(unsigned int *)this + 1760))(this, v20); /*0x415b3e*/
-    v8 = v6 & 7; /*0x415b44*/
-    v9 = 4 * v8 + 9041544; /*0x415b55*/
-    v10 = *v7 + IDA_LOWORD(g_abs_89F688[v8]); /*0x415b5c*/
+    v6 = (int *)(*(unsigned int *)(v5));
+    v7 = (int *)((unsigned short *)(*(int (**)(unsigned int *, char *))(*(unsigned int *)this + 1760))(this, v20));
+    v8 = (int *)((unsigned int)(v6)& 7);
+    v9 = (int *)(4 * v8 + 9041544);
+    v10 = (int *)(*v7 + IDA_LOWORD(g_abs_89F688[v8]));
     v11 = *a2; /*0x415b5f*/
     IDA_LOWORD(v22) = v10; /*0x415b6b*/
     IDA_HIWORD(v22) = v7[1] + *(unsigned short *)(v9 + 2); /*0x415b74*/
@@ -241,7 +241,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject( IUnknown * aP1, IUnknown
   if ( result == 26 && *(unsigned char *)(*(unsigned int *)&this->__pad_690[52] + 3597) ) /*0x417cf4*/
     v7 = 0; /*0x417cfe*/
   if ( *(unsigned char *)(*(unsigned int *)&this->__pad_690[52] + 3580) /*0x417d16*/
-    && (uint8_t)House::IsHumanPlayer((#375 *)this->field_21C) )
+    && (uint8_t)House::IsHumanPlayer((void *)this->field_21C) )
   {
     if ( v7 != 7 && v7 ) /*0x417d26*/
       goto LABEL_18; /*0x417d26*/
@@ -250,7 +250,7 @@ AircraftTypeClass * AircraftClass::GetCursorOverObject( IUnknown * aP1, IUnknown
       if ( !v4 /*0x417d56*/
         || (IDA_LOBYTE(a3) = v4->__pad_10[4] & 1, !(unsigned char)a3)
         || (v8 = (unsigned int *)(*(int (**)(IUnknown *))(v4->field_0 + 60))(v4),
-            Object::IsAlliedWithObjectHouse(v8, this)) )
+            ((Object *)(v8))->IsAlliedWithObjectHouse(this)) )
       {
         if ( !this->field_118 && (*(int (**)(IUnknown *))(v4->field_0 + 44))(v4) == 1 ) /*0x417d73*/
         {
@@ -281,7 +281,7 @@ LABEL_23:
   if ( v7 == 5 && !*(unsigned int *)(*(int (**)(IUnknown *, unsigned int))(this->field_0 + 1016))(this, 0) ) /*0x417def*/
     goto LABEL_23; /*0x417df2*/
 LABEL_24:
-  if ( (uint8_t)House::IsHumanPlayer((#375 *)this->field_21C) ) /*0x417dfc*/
+  if ( (uint8_t)House::IsHumanPlayer((void *)this->field_21C) ) /*0x417dfc*/
   {
     if ( v7 == 7 && (*(int (**)(IUnknown *))(v4->field_0 + 44))(v4) == 6 ) /*0x417e14*/
     {
@@ -315,7 +315,7 @@ LABEL_36:
     a3 = *(IUnknown **)(*(int (**)(IUnknown *, IUnknown **))(v4->field_0 + 440))(v4, &aP1); /*0x417eaa*/
     if ( a3 != *(IUnknown **)&g_abs_87F8E4 ) /*0x417eae*/
     {
-      v15 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&a3); /*0x417ecc*/
+      v15 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&a3));
       v16 = Cell::IsBridge(v15); /*0x417ed3*/
       if ( v16 ) /*0x417eda*/
       {
@@ -360,7 +360,7 @@ int AircraftClass::ValidateLandingCell(unsigned int * a2, int a3, int a4, int a5
   v8 = a2[57]; /*0x4196e4*/
   if ( (!v8 /*0x41974d*/
      || (*(unsigned char *)(v8 + 20) & 1) == 0
-     || (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(v8 + 540), *(#375 **)((char *)this + 540))
+     || (uint8_t)HouseClass::IsAlliedWith(*(void **)(v8 + 540), *(void **)((char *)this + 540))
      || *(unsigned int *)(v8 + 544) != 2
      && !g_abs_A8E7AC
      && ((*(int (**)(int))(*(unsigned int *)v8 + 44))(v8) != 6 || !*(unsigned char *)(*(unsigned int *)(v8 + 1312) + 3226)))
@@ -568,10 +568,10 @@ int AircraftClass::RevealSight(int a2, int a3)
 {
 
   int v4; // ebx
-  #375 *v5; // edx
+  void *v5; // edx
   int v6; // edx
   int v7; // eax
-  #375 *v8; // edx
+  void *v8; // edx
   int result; // eax
   int CrateImg; // ebx
   int v11; // edx
@@ -591,14 +591,14 @@ int AircraftClass::RevealSight(int a2, int a3)
 LABEL_4:
     v17 = *((char *)this + 39); /*0x41ae1f*/
     v18 = *((char *)this + 40); /*0x41ae40*/
-    v5 = (#375 *)*((char *)this + 135); /*0x41ae44*/
+    v5 = (void *)*((char *)this + 135); /*0x41ae44*/
     v19 = *((char *)this + 41); /*0x41ae4e*/
     MapClass::RevealArea1(&v17, v4, v5, a2, a3, 0, 1, 0); /*0x41ae5e*/
     v6 = *((char *)this + 40); /*0x41ae65*/
     v7 = *((char *)this + 41); /*0x41ae68*/
     v17 = *((char *)this + 39); /*0x41ae6d*/
     v18 = v6; /*0x41ae77*/
-    v8 = (#375 *)*((char *)this + 135); /*0x41ae7b*/
+    v8 = (void *)*((char *)this + 135); /*0x41ae7b*/
     v19 = v7; /*0x41ae84*/
     return MapClass::RevealArea1(&v17, v4, v8, a2, a3, 0, 1, 1); /*0x41aea1*/
   }
@@ -616,7 +616,7 @@ LABEL_4:
     MapClass::RevealArea1( /*0x41af1a*/
       &v17,
       CrateImg,
-      (#375 *)*((char *)this + 135),
+      (void *)*((char *)this + 135),
       0,
       0,
       1,
@@ -632,7 +632,7 @@ LABEL_4:
     return MapClass::RevealArea1( /*0x41af70*/
              &v17,
              CrateImg,
-             (#375 *)*((char *)this + 135),
+             (void *)*((char *)this + 135),
              0,
              0,
              1,
@@ -764,7 +764,7 @@ int AircraftClass::UpdateDocking(int a2)
       }
     default:
 LABEL_4:
-      result = MissionClass::SetState((#377 *)this); /*0x41ba33*/
+      result = MissionClass::SetState((void *)this); /*0x41ba33*/
       break; /*0x41ba34*/
   }
   return result; /*0x41ba39*/
@@ -801,7 +801,7 @@ int AircraftClass::OverrideMission_SyncLog(int a2, int a3, int a4)
       }
     default:
 LABEL_4:
-      result = FootClass::OverrideMission_SyncLog((#377 *)this, a2, a3, a4); /*0x41bb73*/
+      result = FootClass::OverrideMission_SyncLog((void *)this, a2, a3, a4); /*0x41bb73*/
       break; /*0x41bb7e*/
   }
   return result; /*0x41bb83*/
@@ -847,7 +847,7 @@ int AircraftClass::CanEnterCell(short * a1, IUnknown * aP2, InfantryClass * aP3)
 
   int v6; // edi
 
-  if ( !(uint8_t)House::IsHumanPlayer(*(#375 **)((char *)this + 540)) ) /*0x417f89*/
+  if ( !(uint8_t)House::IsHumanPlayer(*(void **)((char *)this + 540)) ) /*0x417f89*/
     return 0; /*0x417f92*/
   v6 = FootClass::HandleCursorWithCheck((int *)this, a1, aP2, aP3); /*0x417faf*/
   if ( v6 == 5 && !*(unsigned int *)(*(int (**)(int, unsigned int))(*(unsigned int *)this + 1016))(this, 0) ) /*0x417fc2*/

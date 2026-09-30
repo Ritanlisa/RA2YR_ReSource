@@ -235,14 +235,14 @@ char AircraftTypeClass::StubReturnFalse()
 int * AircraftTypeClass::CreateAircraft(int a1)
 {
 
-  if ( (g_abs_889F38 & 1) == 0 ) /*0x41cb7b*/
+  if ( ((unsigned int)(g_abs_889F38)& 1) == 0 ) /*0x41cb7b*/
   {
-    g_abs_889F38 |= 1u; /*0x41cb96*/
+    (unsigned int)(g_abs_889F38)|= 1u; /*0x41cb96*/
     g_abs_889F20 = 0; /*0x41cb9c*/
     g_abs_889F24 = 2147450879; /*0x41cbb4*/
     atexit(nullsub_85); /*0x41cbba*/
   }
-  return &g_abs_889F20; /*0x41cbc8*/
+  return (int *)((int *)((int *)(&g_abs_889F20)));
 
 }
 // 0x41CBE0

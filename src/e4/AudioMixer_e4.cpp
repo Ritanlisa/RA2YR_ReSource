@@ -184,7 +184,7 @@ int AudioMixer::Shutdown()
 {
 
   if ( g_abs_87E728 ) /*0x406e88*/
-    AudioQueue::StopAllVoices(g_abs_87E728, 1); /*0x406e8f*/
+    ((AudioQueue *)(g_abs_87E728))->StopAllVoices(1); /*0x406e8f*/
   return this->AudioStream::CleanupChannels();
 
 }
@@ -201,8 +201,8 @@ int AudioMixer::Pump()
   result = g_abs_B1D428; /*0x75362f*/
   if ( g_abs_B1D428 ) /*0x753636*/
   {
-    result = --g_abs_B1D428; /*0x75363d*/
-    if ( g_abs_B1D428 < 0 ) /*0x753643*/
+    result = (int)(--g_abs_B1D428);
+    if ( g_abs_B1D428 < (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x753643*/
       g_abs_B1D428 = 0; /*0x753645*/
   }
   return result; /*0x75364f*/

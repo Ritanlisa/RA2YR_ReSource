@@ -6,6 +6,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x5360B0
 namespace gamemd {
@@ -40,7 +41,7 @@ void AddTeamCommand::Release()
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = (const wchar_t *)(*((unsigned int *)this + 1));
-  StringCSF = GetStringCSF(g_abs_827148, 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_abs_827148, 0, g_Str_File_Init_CPP, 6326));
   swprintf(&g_abs_A8F654, (const size_t)StringCSF, v3); /*0x536110*/
   return &g_abs_A8F654; /*0x53611d*/
 

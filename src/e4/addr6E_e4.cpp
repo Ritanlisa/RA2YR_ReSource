@@ -186,7 +186,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   int v8[2]; // [esp+8h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+10h] [ebp-4h]
 
-  v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)); /*0x6e27ab*/
+  v6 = *(unsigned int *)((unsigned int *))((unsigned int *))(ScenarioClass)::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)); /*0x6e27ab*/
   GroundHeight = 0; /*0x6e27af*/
   v8[1] = (SHIWORD(v6) << 8) + 128; /*0x6e27d0*/
   v8[0] = ((int16_t)v6 << 8) + 128; /*0x6e27da*/
@@ -238,16 +238,16 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
 
   unsigned int *v5; // eax
   int v7; // [esp+0h] [ebp-10h] BYREF
-  int v8; // [esp+4h] [ebp-Ch] BYREF
+  unsigned int * v8;
   int v9; // [esp+8h] [ebp-8h]
-  int GroundHeight; // [esp+Ch] [ebp-4h]
+  unsigned int * GroundHeight;
 
-  v7 = (unsigned int *)(*ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)));
-  GroundHeight = (unsigned int *)(0);
-  v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
-  v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/
-  GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
-  v5 = RA2_OPNEW(0x14u); /*0x6e33d9*/
+  v7 = (unsigned int *)(*(unsigned int *)((unsigned int *))((unsigned int *))(ScenarioClass)::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)));
+  GroundHeight = (int)((unsigned int *)(0));
+  v9 = (unsigned int *)((SHIWORD(v7) << 8) + 128);
+  v8 = (int)((unsigned int *)(((int16_t)v7 << 8) + 128));
+  GroundHeight = (unsigned int *)(Cell::GetGroundHeight(&v8));
+  v5 = (unsigned int *)(RA2_OPNEW(0x14u));
   if ( v5 ) /*0x6e33e3*/
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
@@ -483,7 +483,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
         v12 = v9->owner; /*0x6eecb0*/
         IDA_HIWORD(v33) = v11[1] / 256; /*0x6eecb9*/
         v33 = v33; /*0x6eecc6*/
-        v10 = 0x7FFFFFFF - CellClass::GetTileData((int16_t *)&v33, v12); /*0x6eecdb*/
+        v10 = 0x7FFFFFFF - ((CellClass *)((int16_t *)&v33))->GetTileData(v12); /*0x6eecdb*/
         break; /*0x6eecdd*/
       case 1: /*0x6eec7c*/
         v13 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*v7 + 72))(v7, v51); /*0x6eeceb*/
@@ -491,7 +491,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
         v14 = v9->owner; /*0x6eed0f*/
         IDA_HIWORD(v34) = v13[1] / 256; /*0x6eed18*/
         v34 = v34; /*0x6eed25*/
-        TileData = CellClass::GetTileData((int16_t *)&v34, v14); /*0x6eed30*/
+        TileData = ((CellClass *)((int16_t *)&v34))->GetTileData(v14); /*0x6eed30*/
         goto LABEL_13; /*0x6eed35*/
       case 2: /*0x6eec7c*/
         v16 = v9 + 156; /*0x6eed46*/
@@ -558,7 +558,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
 {
 
   TechnoClass *v3; // esi
-  int v4; // ebp
+  unsigned int v4;
   TechnoClass *i; // ebx
   int v6; // edi
   unsigned int *focus; // edi
@@ -577,7 +577,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   char v20[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
   v3 = (gamemd::TechnoClass *)((int *)((TechnoClass *)*((char *)this + 21)));
-  v4 = (int *)(-1);
+  v4 = (unsigned int)((int *)(-1));
   v17 = this; /*0x6efc7f*/
   for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1].missionQueued ) /*0x6efc85*/
   {
@@ -585,9 +585,9 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
     if ( TechnoClass::IsDeployed((int)v3) /*0x6efcba*/
       && (IDA_BYTE1(v3[1].firepowerMultiplier[1])
        || (*(int (**)(TechnoClass *))(*(unsigned int *)v3->__pad_0 + 44))(v3) == 2)
-      && v6 > v4 )
+      && v6 > (int)(v4) )
     {
-      i = v3; /*0x6efcbc*/
+      i = (gamemd::TechnoClass *)((int *)(v3));
       v4 = v6; /*0x6efcbe*/
     }
   }
@@ -682,7 +682,7 @@ char E4Recv_6E0080::sub_6E0080(int a2, int a3, int a4, int a5)
   unsigned short *v9; // eax
   int v11; // [esp+8h] [ebp-4h] BYREF
 
-  v5 = *ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v11, *((char *)this + 17)); /*0x6e0097*/
+  v5 = *(unsigned int *)((unsigned int *))((unsigned int *))(ScenarioClass)::Get_Waypoint_Location((char *)g_abs_A8B230, &v11, *((char *)this + 17)); /*0x6e0097*/
   v6 = 0; /*0x6e009e*/
   v11 = v5; /*0x6e00a0*/
   if ( g_GameCleanupState <= 0 ) /*0x6e00a6*/
@@ -754,8 +754,8 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = g_abs_8871E0->?[5]; /*0x6e07a3*/
-  WorldCoords = Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v8, *((char *)this + 36)); /*0x6e07b5*/
+  v5 = (int *)(g_abs_8871E0->?[5]);
+  WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v8, *((char *)this + 36)));
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
 
@@ -771,8 +771,8 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = g_abs_8871E0->?[5]; /*0x6e0803*/
-  WorldCoords = Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v8, *((char *)this + 36)); /*0x6e0815*/
+  v5 = (int *)(g_abs_8871E0->?[5]);
+  WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v8, *((char *)this + 36)));
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
 
@@ -788,8 +788,8 @@ char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = g_abs_8871E0->?[5]; /*0x6e0863*/
-  WorldCoords = Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v8, *((char *)this + 36)); /*0x6e0875*/
+  v5 = (int *)(g_abs_8871E0->?[5]);
+  WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v8, *((char *)this + 36)));
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0896*/
   return 1; /*0x6e089d*/
 
@@ -804,7 +804,7 @@ char E4Recv_6E1180::sub_6E1180(int a2, int a3, int a4, int a5)
   int v6; // [esp+0h] [ebp-8h] BYREF
   int v7; // [esp+4h] [ebp-4h] BYREF
 
-  v6 = *ScenarioClass::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 36)); /*0x6e11a6*/
+  v6 = *(unsigned int *)((unsigned int *))((unsigned int *))(ScenarioClass)::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 36)); /*0x6e11a6*/
   MapClass::TriggerEVA((int16_t *)&v6); /*0x6e11aa*/
   return 1; /*0x6e11b1*/
 
@@ -831,11 +831,11 @@ char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
 
   if ( *((unsigned int *)this + 19) ) /*0x6e2a55*/
   {
-    v6 = g_abs_B0E730; /*0x6e2a5c*/
+    v6 = (int)(g_abs_B0E730);
     v7 = 0; /*0x6e2a62*/
-    if ( g_abs_B0E730 > 0 ) /*0x6e2a66*/
+    if ( g_abs_B0E730 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x6e2a66*/
     {
-      v8 = g_abs_B0E724; /*0x6e2a68*/
+      v8 = (unsigned int *)(g_abs_B0E724);
       do /*0x6e2a91*/
       {
         if ( *(unsigned int *)(v8[v7] + 36) == *((unsigned int *)this + 19) ) /*0x6e2a78*/

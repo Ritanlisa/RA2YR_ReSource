@@ -144,7 +144,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2)
           v11 = (int *)RA2_OPNEW(0x8E8u); /*0x74334d*/
           if ( v11 ) /*0x743357*/
           {
-            v12 = UnitClass::Construct(v11, *((unsigned int *)dword_A83CE4 + Index), v10); /*0x74336f*/
+            v12 = ((UnitClass *)(v11))->Construct(*((unsigned int *)dword_A83CE4 + Index), v10); /*0x74336f*/
             if ( v12 ) /*0x743373*/
             {
               v13 = strtok(0, Str); /*0x74337f*/
@@ -941,7 +941,7 @@ int InitializeVeinholeSystem(char a1)
   int n; // esi
   size_t v19; // [esp+10h] [ebp-8h]
 
-    v2 = this->Object::ComputeAllocationSize();
+    v2 = ((Object *)0)->ComputeAllocationSize();
   v19 = v2; /*0x74dea2*/
   if ( !a1 ) /*0x74dea6*/
   {
@@ -974,9 +974,9 @@ int InitializeVeinholeSystem(char a1)
         v7[1] = (unsigned int)(VeinholeShrinkRate);
         v7[4] = (unsigned int)(-1);
         *v7 = (unsigned int)(0);
-        v9 = RA2_OPNEW(4 * VeinholeShrinkRate + 4); /*0x74df5f*/
-        v10 = v7[1]; /*0x74df64*/
-        v7[2] = v9; /*0x74df67*/
+        v9 = (void *)((unsigned int)(RA2_OPNEW(4 * VeinholeShrinkRate + 4)));
+        v10 = (unsigned int)(v7[1]);
+        v7[2] = (unsigned int)(v9);
         v11 = 0; /*0x74df6d*/
         if ( v10 >= 0 ) /*0x74df71*/
         {

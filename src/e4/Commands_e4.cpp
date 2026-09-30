@@ -57,7 +57,7 @@ int32_t Commands::Execute()
 
   char result; // al
 
-  result = g_abs_A8B8B4; /*0x537a90*/
+  result = (char)(g_abs_A8B8B4);
   if ( g_abs_A8B8B4 ) /*0x537a97*/
   {
     result = g_abs_A8B8B5 == 0; /*0x537aa0*/

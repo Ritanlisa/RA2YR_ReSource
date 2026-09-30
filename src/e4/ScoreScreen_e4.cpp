@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
 
 // 0x690A10
 namespace gamemd {
@@ -109,7 +110,7 @@ void ScoreScreen::Constructor( ScoreAnimClass * aP1, int a3, int a4)
 
   *(this + 2) = a3; /*0x690f3b*/
   *(this + 1) = aP1; /*0x690f41*/
-  *(this + 3) = Timer::GetTicks(); /*0x690f4d*/
+  *(this + 3) = this->Timer::GetTicks(); /*0x690f4d*/
   *(this + 5) = 0; /*0x690f50*/
   *(this + 6) = a4; /*0x690f57*/
   *this = &vt_ScoreAnimClass; /*0x690f5a*/
@@ -169,7 +170,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   {
     if ( !(uint8_t)this->Audio::IsPlaying() ) /*0x77136a*/
     {
-      *((unsigned int *)this + 235) = Timer::GetTicks(); /*0x771386*/
+      *((unsigned int *)this + 235) = this->Timer::GetTicks(); /*0x771386*/
       *(void **)((char *)this + 944) = v24[2]; /*0x771390*/
       *((unsigned int *)this + 237) = a6; /*0x771393*/
     }

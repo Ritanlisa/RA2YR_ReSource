@@ -7,6 +7,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/BlitTransLucent25AlphaZReadWrite_ushort_e4.hpp"
 
 // 0x494920
 namespace gamemd {
@@ -87,7 +88,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
 
   int v11; // eax
   int result; // eax
-  unsigned int *v13; // ebp
+  unsigned int v13;
   uint16_t v15; // ax
   int v16; // [esp+20h] [ebp+14h]
   int v17; // [esp+24h] [ebp+18h]
@@ -99,7 +100,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
   v17 = result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
-    v13 = g_abs_887644; /*0x494bab*/
+    v13 = (unsigned int *)(g_abs_887644);
     v16 = a4; /*0x494bb1*/
     do /*0x494c31*/
     {
@@ -130,7 +131,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
 
   int v12; // eax
   int result; // eax
-  unsigned int *v14; // ebp
+  unsigned int v14;
   uint16_t v16; // ax
   int v17; // [esp+20h] [ebp+14h]
   int v18; // [esp+24h] [ebp+18h]
@@ -142,7 +143,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
   v18 = result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
-    v14 = g_abs_887644; /*0x494c8b*/
+    v14 = (unsigned int *)(g_abs_887644);
     v17 = a4; /*0x494c91*/
     do /*0x494d16*/
     {

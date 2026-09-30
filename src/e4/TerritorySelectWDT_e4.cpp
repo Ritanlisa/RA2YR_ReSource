@@ -47,7 +47,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   int *v17; // [esp+38h] [ebp-8h]
   int v18; // [esp+3Ch] [ebp-4h]
 
-  v2 = (int)((void **)(0));
+  v2 = (void **)((int)((void **)(0)));
   v12 = (void **)(this);
   if ( !dword_B72770 ) /*0x7665e4*/
     InitWDTGameOptions(); /*0x7665e6*/
@@ -64,7 +64,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
     ((ComPtr *)(&v14))->Constructor(); /*0x766637*/
     v14 = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x76663c*/
     ((ComPtr *)(&v14))->Set(*(unsigned int *)(v4 + 4)); /*0x766648*/
-    if ( (v2 & v15[2]) == 0 ) /*0x766654*/
+    if ( ((unsigned int)(v2)& v15[2]) == 0 ) /*0x766654*/
     {
       v5 = v12 + 8; /*0x76665c*/
       if ( !(*(int (**)(unsigned int *, char *))(*v15 + 12))(v15, v12 + 8) ) /*0x766660*/
@@ -77,7 +77,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
         WideString::Reassign_Alt(&v11, v6); /*0x766680*/
         DeleteAndZero::Alt(&v13); /*0x766689*/
         --v3; /*0x766692*/
-        v2 |= v15[2]; /*0x766693*/
+        (unsigned int)(v2)|= v15[2]; /*0x766693*/
       }
     }
     v14 = (void **)(&vt_rc_ptr_WorldDominationTour_GameOption);
@@ -94,7 +94,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
     ((ComPtr *)(&v14))->Constructor(); /*0x7666eb*/
     v14 = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x7666f0*/
     ((ComPtr *)(&v14))->Set(*(unsigned int *)(v7 + 4)); /*0x7666fc*/
-    if ( (v2 & v15[2]) == 0 ) /*0x766708*/
+    if ( ((unsigned int)(v2)& v15[2]) == 0 ) /*0x766708*/
     {
       v8 = v12 + 8; /*0x766710*/
       if ( (*(int (**)(unsigned int *, char *))(*v15 + 12))(v15, v12 + 8) != 2 ) /*0x76671a*/
@@ -107,7 +107,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
         WideString::Reassign_Alt(&v11, v9); /*0x766735*/
         DeleteAndZero::Alt(&v13); /*0x76673e*/
         --v3; /*0x766747*/
-        v2 |= v15[2]; /*0x766748*/
+        (unsigned int)(v2)|= v15[2]; /*0x766748*/
       }
     }
     v14 = (void **)(&vt_rc_ptr_WorldDominationTour_GameOption);
@@ -171,7 +171,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
     {
       if ( !(uint8_t)this->Audio::IsPlaying() ) /*0x77157c*/
       {
-        *((unsigned int *)this + 235) = Timer::GetTicks(); /*0x771598*/
+        *((unsigned int *)this + 235) = this->Timer::GetTicks(); /*0x771598*/
         *((unsigned int *)this + 236) = v17[2]; /*0x7715a2*/
         *((unsigned int *)this + 237) = a4; /*0x7715a5*/
       }

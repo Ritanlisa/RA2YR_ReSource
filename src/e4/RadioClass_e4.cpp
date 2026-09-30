@@ -45,7 +45,7 @@ int RadioClass::ProcessCmd()
 {
 
   if ( !*((unsigned char *)this + 129) ) /*0x65aa83*/
-    (*(void (**)(#374 *, int))(*(unsigned int *)this + 640))(this, 3); /*0x65aa91*/
+    (*(void (**)(void *, int))(*(unsigned int *)this + 640))(this, 3); /*0x65aa91*/
   return ObjectClass::Undeploy(this); /*0x65aa9e*/
 
 }
@@ -97,7 +97,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
 
   v3 = aP1; /*0x65ab81*/
   v4 = aP2; /*0x65ab87*/
-  result = BuildingClass::SaveLoad_Register((#374 *)this); /*0x65ab8d*/
+  result = BuildingClass::SaveLoad_Register((void *)this); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {
     p_attachedTag = (void **)(&v3[1].attachedTag);
@@ -238,7 +238,7 @@ int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
   TimerStruct *v7; // edx
   unsigned int *v8; // eax
 
-  Object::Unlink((#374 *)this); /*0x65aacf*/
+  Object::Unlink((void *)this); /*0x65aacf*/
   result = *(BaseClass **)((char *)this + 232); /*0x65aad4*/
   for ( i = 0; i < (int)result; ++i ) /*0x65aade*/
   {
@@ -266,7 +266,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
   int v4; // edx
   int v5; // ebx
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)a0, (ObjectTypeClass *)aP1, (ObjectTypeClass *)aP2); /*0x65ac52*/
+  result = ((AbstractClass *)((ObjectTypeClass *)a0))->SaveLoad_Prefix((ObjectTypeClass *)aP1, (ObjectTypeClass *)aP2); /*0x65ac52*/
   if ( result >= 0 ) /*0x65ac59*/
   {
     v4 = *(unsigned int *)aP1->__pad_0; /*0x65ac61*/

@@ -100,7 +100,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
     v7 = (void *)((int)(RA2_OPNEW(0x14u)));
     if ( v7 ) /*0x6af22d*/
     {
-      v8 = (unsigned int)(*(IUnknown **)&g_abs_A8D63C);
+      v8 = (IUnknown *)((unsigned int)(*(IUnknown **)&g_abs_A8D63C));
       *(unsigned int *)((unsigned int)(v7)+ 16) = 0; /*0x6af235*/
       *(unsigned int *)((unsigned int)(v7)+ 8) = v8; /*0x6af238*/
       v9 = (int *)v7; /*0x6af23b*/
@@ -194,13 +194,13 @@ void SlaveManagerClass::Constructor()
   *((unsigned int *)this + 24) = 0; /*0x6af3d7*/
   if ( g_abs_B0B600 < g_abs_B0B5F8 /*0x6af40c*/
     || (g_abs_B0B5FD || !g_abs_B0B5F8)
-    && g_abs_B0B604 > 0
+    && g_abs_B0B604 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0B5F0 + 8))(
          &g_abs_B0B5F0,
-         g_abs_B0B5F8 + g_abs_B0B604,
+         (unsigned int)(g_abs_B0B5F8)+ g_abs_B0B604,
          0) )
   {
-    v2 = g_abs_B0B600++; /*0x6af419*/
+    v2 = (int)(g_abs_B0B600++);
     *((unsigned int *)g_abs_B0B5F4 + v2) = this; /*0x6af428*/
   }
   return this; /*0x6af42d*/
@@ -217,7 +217,7 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   int v3; // ebp
   int v4; // eax
   void *v5; // eax
-  int v6; // [esp+8h] [ebp-4h] BYREF
+  SlaveManagerClass * v6;
 
   *(unsigned int *)this = &vt_SlaveManagerClass; /*0x6af4a5*/
   *((unsigned int *)this + 1) = &vt_SlaveManagerClass; /*0x6af4ab*/
@@ -228,21 +228,21 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
     if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x6af4c9*/
       RA2_OPDEL(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6af4d1*/
   }
-  v3 = *((unsigned int *)this + 16); /*0x6af4e5*/
+  v3 = (int)(*((unsigned int *)this + 16));
   (*(void (**)(int))(*((unsigned int *)this + 14) + 12))((char *)this + 56); /*0x6af4e8*/
   (*(void (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v3, 0); /*0x6af4f2*/
   v6 = this; /*0x6af505*/
   v4 = (*(int (**)(int *, int *))(g_abs_B0B5F0 + 16))(&g_abs_B0B5F0, &v6); /*0x6af509*/
-  if ( v4 != -1 && v4 < g_abs_B0B600 && v4 < --g_abs_B0B600 ) /*0x6af525*/
+  if ( v4 != -1 && v4 < (int)((int))((int))(g_abs_B0B600) && v4 < --g_abs_B0B600 ) /*0x6af525*/
   {
     do /*0x6af53d*/
     {
       ++v4; /*0x6af52d*/
       *((unsigned int *)g_abs_B0B5F4 + v4 - 1) = *((unsigned int *)g_abs_B0B5F4 + v4); /*0x6af531*/
     }
-    while ( v4 < g_abs_B0B600 ); /*0x6af53d*/
+    while ( v4 < (int)((int))((int))(g_abs_B0B600) ); /*0x6af53d*/
   }
-  v5 = *(void **)((char *)this + 60); /*0x6af53f*/
+  v5 = (unsigned int)(*(void **)((char *)this + 60));
   *((unsigned int *)this + 14) = &vt_VectorClass_SlaveManagerClass_SlaveControl; /*0x6af542*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6af54c*/
   {
@@ -781,7 +781,7 @@ int SlaveManagerClass::AssignTask(AbstractClass * aP1)
   int result; // eax
   int i; // esi
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x6b10fa*/
+  AbstractClass::ProcessPower((void *)this); /*0x6b10fa*/
   result = Power::TimerProcess(aP1); /*0x6b1105*/
   for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i ) /*0x6b110e*/
     result = Power::TimerProcess(aP1); /*0x6b111c*/

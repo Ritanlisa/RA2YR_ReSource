@@ -41,9 +41,9 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
     return 1; /*0x419b18*/
   if ( *((unsigned char *)*((unsigned int *)this + 433) + 3412) ) /*0x419b2b*/
   {
-    v15[0] = 0; /*0x419b44*/
-    v15[1] = 0; /*0x419b4c*/
-    v5 = CellCoord::To_CellObj(&g_abs_87F7E8, a2); /*0x419b54*/
+    v15[0] = (unsigned int *)(0);
+    v15[1] = (unsigned int *)(0);
+    v5 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, a2));
     ClosestObject = (unsigned int *)Object::FindClosestObjectCell(v5, v15, 0, 0); /*0x419b5b*/
     if ( ClosestObject ) /*0x419b62*/
     {
@@ -65,7 +65,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   }
   v14 = CellCoord::To_CellObj(&g_abs_87F7E8, a2); /*0x419bd1*/
   v9 = 0; /*0x419bda*/
-  if ( g_abs_8B3DD0 <= 0 ) /*0x419bde*/
+  if ( g_abs_8B3DD0 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x419bde*/
     return 1; /*0x419c6b*/
   while ( 1 ) /*0x419bea*/
   {
@@ -78,7 +78,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
       if ( v10[361] == v14 ) /*0x419c52*/
         break; /*0x419c52*/
     }
-    if ( ++v9 >= g_abs_8B3DD0 ) /*0x419c5c*/
+    if ( ++(int)((int))((int))(v9) >= g_abs_8B3DD0 ) /*0x419c5c*/
       return 1; /*0x419c5c*/
   }
   return 0; /*0x419c60*/
@@ -243,7 +243,7 @@ LABEL_25:
         || *(unsigned char *)(*(unsigned int *)&g_abs_87F8E4 + 6125)
         || v13
         && (TechnoClass::HasVoiceResponse((float *)v13->__pad_0, 3)
-         || *(unsigned int *)(v13[3].nextArrayIndex + 588) >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 5196)) )
+         || *(unsigned int *)(v13[(unsigned int)(3].nextArrayIndex)+ 588) >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 5196)) )
       {
         (*(void (**)(unsigned int, IUnknown *, int, int))(**((unsigned int **)Block + v9) + 372))( /*0x4817d3*/
           *((unsigned int *)Block + v9),
@@ -464,7 +464,7 @@ int Cell::IsBuildableAdvanced()
   if ( !Type::CheckAmbiguity(&g_abs_87F7E8, this, 1) ) /*0x486ffc*/
     return 1; /*0x487009*/
   v3 = *((unsigned int *)this + 14); /*0x48700a*/
-  if ( v3 >= 0 && v3 < g_abs_A8ED38 && !*(unsigned char *)(*((unsigned int *)g_abs_A8ED2C + v3) + 773) /*0x48703f*/
+  if ( v3 >= 0 && v3 < (int)((int))((int))(g_abs_A8ED38) && !*(unsigned char *)(*((unsigned int *)g_abs_A8ED2C + v3) + 773) /*0x48703f*/
     || *((unsigned char *)this + 284)
     || (*((unsigned int *)this + 80) & 0x500) != 0 )
   {
@@ -569,7 +569,7 @@ LABEL_10:
   }
 LABEL_12:
   aP1 = *(IUnknown **)((char *)this + 36); /*0x487aaa*/
-  Coord::Subtract(v17, (IUnknown *)(((int16_t)aP1 << 8) + 128), (IUnknown *)((SHIWORD(aP1) << 8) + 128), 0); /*0x487ad0*/
+  ((Coord *)(v17))->Subtract((IUnknown *)(((int16_t)aP1 << 8) + 128), (IUnknown *)((SHIWORD(aP1) << 8) + 128), 0); /*0x487ad0*/
   v16[0] = 128; /*0x487adc*/
   v16[1] = 128; /*0x487ae0*/
   v7 = (AbstractClass *)Isometric::InitTables(this, (IUnknown *)v16); /*0x487ae9*/

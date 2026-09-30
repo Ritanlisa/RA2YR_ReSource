@@ -37,7 +37,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::InfantryType;
 
     static DynamicVectorClass<InfantryTypeClass*>* Array;
-    static InfantryTypeClass* Find(const char* pID);  // 0x772FA0
+     InfantryTypeClass* Find(const char* pID);  // 0x772FA0
     // unmatched: no callgraph reference and no git history record
     static InfantryTypeClass* FindOrCreate(const char* pID);
     // wrapper: delegates to InfantryTypeClass::Find at 0x772FA0

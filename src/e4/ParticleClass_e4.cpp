@@ -38,7 +38,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   int v9; // esi
   unsigned int v10; // eax
   char v11; // cl
-  int v12; // eax
+  unsigned char * v12;
   int v13; // edx
   int v14; // ebx
   int v15; // ebp
@@ -72,9 +72,9 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         v5 = *(unsigned int *)(*((unsigned int *)this + 43) + 788); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
         {
-          v26[0] = *((unsigned int *)this + 39); /*0x62d036*/
-          v26[1] = *((unsigned int *)this + 40); /*0x62d048*/
-          v26[2] = *((unsigned int *)this + 41); /*0x62d054*/
+          v26[0] = (int)(*((unsigned int *)this + 39));
+          v26[1] = (int)(*((unsigned int *)this + 40));
+          v26[2] = (int)(*((unsigned int *)this + 41));
           Coord::To_Screen(g_abs_887324, v26, &v27); /*0x62d058*/
           v12 = g_abs_886FA4 + v28; /*0x62d06b*/
           v28 += g_abs_886FA4; /*0x62d071*/
@@ -136,7 +136,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
           {
             v9 = 10240; /*0x62cfb0*/
             v10 = (*(int (**)(void *))(*(unsigned int *)this + 488))(this); /*0x62cfb5*/
-            if ( g_abs_A8EB78 == 2 ) /*0x62cfc2*/
+            if ( g_abs_A8EB78 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(2) ) /*0x62cfc2*/
             {
               v11 = *((unsigned char *)this + 303); /*0x62cfc4*/
               if ( v11 == 25 ) /*0x62cfcd*/
@@ -246,9 +246,9 @@ namespace gamemd {
 int * ParticleClass::CheckDrawFlags(int a1)
 {
 
-  if ( (g_abs_AC4998 & 1) == 0 ) /*0x62d71b*/
+  if ( ((unsigned int)(g_abs_AC4998)& 1) == 0 ) /*0x62d71b*/
   {
-    g_abs_AC4998 |= 1u; /*0x62d739*/
+    (unsigned int)(g_abs_AC4998)|= 1u; /*0x62d739*/
     g_abs_AC49D0 = 2147450879; /*0x62d73f*/
     atexit(nullsub_214); /*0x62d744*/
   }
@@ -274,7 +274,7 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
 
   int result; // eax
 
-  result = BuildingClass::SaveLoad_Register((#374 *)this); /*0x62d7ab*/
+  result = BuildingClass::SaveLoad_Register((void *)this); /*0x62d7ab*/
   if ( result >= 0 ) /*0x62d7b2*/
   {
     if ( aP1 ) /*0x62d7b6*/
@@ -303,7 +303,7 @@ int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x62d820*/
+  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x62d820*/
   IDA_LOBYTE(aP0->ChargerBarrels[11]) = 1; /*0x62d825*/
   return result; /*0x62d82c*/
 

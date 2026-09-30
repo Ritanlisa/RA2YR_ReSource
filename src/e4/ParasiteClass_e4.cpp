@@ -28,7 +28,7 @@ namespace gamemd {
 void ParasiteClass::Constructor()
 {
 
-  wchar_t *v2; // ecx
+  unsigned int v2;
   int v3; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x629213*/
@@ -43,13 +43,13 @@ void ParasiteClass::Constructor()
   *((unsigned int *)this + 3) = &vt_ParasiteClass; /*0x629245*/
   if ( g_abs_AC4920 < g_abs_AC4918 /*0x62927e*/
     || (g_abs_AC491D || !g_abs_AC4918)
-    && g_abs_AC4924 > 0
+    && g_abs_AC4924 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_AC4910 + 8))(
          &g_abs_AC4910,
-         g_abs_AC4918 + g_abs_AC4924,
+         (unsigned int)(g_abs_AC4918)+ g_abs_AC4924,
          0) )
   {
-    v3 = g_abs_AC4920++; /*0x62928b*/
+    v3 = (int)(g_abs_AC4920++);
     *((unsigned int *)g_abs_AC4914 + v3) = this; /*0x62929a*/
   }
   return this; /*0x62929f*/
@@ -115,7 +115,7 @@ int ParasiteClass::Attach(int * a2)
   int v4; // eax
   int v5; // edx
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x6294d9*/
+  AbstractClass::ProcessPower((void *)this); /*0x6294d9*/
   v3 = *((unsigned int *)this + 17); /*0x6294de*/
   if ( v3 ) /*0x6294e3*/
   {
@@ -228,13 +228,13 @@ void ParasiteClass::DeploySquad()
                 *((unsigned int *)this + 17) = v14; /*0x62991c*/
                 if ( g_abs_B0F5C8 < g_abs_B0F5C0 /*0x629953*/
                   || (g_abs_B0F5C5 || !g_abs_B0F5C0)
-                  && g_abs_B0F5CC > 0
+                  && g_abs_B0F5CC > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
                   && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F5B8 + 8))(
                        &g_abs_B0F5B8,
-                       g_abs_B0F5CC + g_abs_B0F5C0,
+                       (unsigned int)(g_abs_B0F5CC)+ g_abs_B0F5C0,
                        0) )
                 {
-                  v15 = g_abs_B0F5C8++; /*0x629960*/
+                  v15 = (int)((unsigned int)(g_abs_B0F5C8++));
                   *((unsigned int *)g_abs_B0F5BC + v15) = this; /*0x62996f*/
                 }
               }

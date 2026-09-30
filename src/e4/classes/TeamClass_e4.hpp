@@ -111,7 +111,7 @@ struct TeamClass {
     int GetLeaderIndex();
     int GetMember(void *a1 = 0);
     int HasAnyMemberFlagged();
-    int LiberateMember_Start(void * aP1, unsigned int a3, void * aP3);
+    int LiberateMember_Start(IUnknown * aP1, unsigned int a3, AbstractClass * aP3);
     int PowerDrainUpdate(int * a2);
     int ProcessMemberPositions();
     int Reset(void * aP1);

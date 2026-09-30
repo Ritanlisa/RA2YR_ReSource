@@ -17,6 +17,7 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x67CEF0
 namespace gamemd {

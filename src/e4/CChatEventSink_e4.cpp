@@ -182,7 +182,7 @@ LABEL_43:
             String::Assign_Bool(&v32, v6 + 52); /*0x7aab0c*/
             CChatEventSink::EncodeString(39); /*0x7aab1f*/
             ((String *)((const char **)&v32))->ToLower(); /*0x7aab28*/
-            if ( g_abs_A8B238[0] == 4 && g_abs_A8B244 == 3 ) /*0x7aab41*/
+            if ( g_abs_A8B238[0] == 4 && g_abs_A8B244 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) ) /*0x7aab41*/
             {
               unknown_libname_73(&v37); /*0x7aab4b*/
               v16 = g_WOL_ChatPool; /*0x7aab50*/
@@ -368,7 +368,7 @@ LABEL_88:
       }
     }
     SetEvent(dword_B73690); /*0x7aaef2*/
-    if ( g_abs_A8B244 == 3 || g_abs_A8B244 == 1 || g_abs_A8B244 == 2 ) /*0x7aaf0a*/
+    if ( g_abs_A8B244 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) || g_abs_A8B244 == (unsigned char [1])(1) || g_abs_A8B244 == 2 ) /*0x7aaf0a*/
     {
       this->Debug::Log(); /*0x7aaf18*/
     }

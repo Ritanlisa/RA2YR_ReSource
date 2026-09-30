@@ -52,11 +52,11 @@ char TriggerClass::FindByEventType(char a1)
     {
       v4 = (unsigned int)(IDA_HIDWORD(g_abs_AC1CB8));
       v3 = (unsigned int)(DWORD2(g_abs_AC1CB8));
-      v2[1] = DWORD2(g_abs_AC1CB8); /*0x6109a1*/
-      v2[2] = v4; /*0x6109a9*/
-      v2[3] = 0; /*0x6109b1*/
-      *v2 = &XSurface_Vtable; /*0x6109b4*/
-      v2[4] = 2; /*0x6109ba*/
+      v2[1] = (unsigned int)(DWORD2(g_abs_AC1CB8));
+      v2[2] = (unsigned int)(v4);
+      v2[3] = (unsigned int)(0);
+      *v2 = (unsigned int)(&XSurface_Vtable);
+      v2[4] = (unsigned int)(2);
       Buffer::Init(v2 + 5, 0, 2 * v4 * v3); /*0x6109c1*/
       *v2 = &BSurface_Vtable; /*0x6109c6*/
       v5 = (int)v2; /*0x6109cc*/
@@ -77,9 +77,9 @@ char TriggerClass::FindByEventType(char a1)
       0,
       1);
   }
-  v8 = g_abs_AC1CB8; /*0x610a25*/
+  v8 = (unsigned int)(g_abs_AC1CB8);
   g_abs_AC1DD0 = 0; /*0x610a32*/
-  if ( g_abs_AC48B0 == -1 ) /*0x610a40*/
+  if ( g_abs_AC48B0 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(-1) ) /*0x610a40*/
     v6 = -1; /*0x610a42*/
   else
     v6 = ((int)(uint8_t)g_abs_AC48B0 >> g_abs_8A0DD4 << g_abs_8A0DD0) /*0x610a8d*/
@@ -136,8 +136,8 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
           Owner = HouseClass::FindOwner(*(void **)(*(unsigned int *)(*((unsigned int *)this + 9) + 164) + 180)),
           TEventClass::Execute(v8, (int)aP1, Owner, (int)aP2, (int *)((char *)this + 52), (int)&a5, v11)) )
     {
-      if ( TriggerClass::GetValue(v8) ) /*0x726551*/
-        *((unsigned int *)this + 11) = TriggerClass::GetValue(v8); /*0x726561*/
+      if ( ((TriggerClass *)(v8))->GetValue() ) /*0x726551*/
+        *((unsigned int *)this + 11) = ((TriggerClass *)(v8))->GetValue(); /*0x726561*/
       if ( a5 && TEventClass::GetStateA(v8) && TEventClass::GetStateB_SpyEvent(v8) ) /*0x726579*/
         *((unsigned int *)this + 16) |= 1 << v7; /*0x726582*/
     }
@@ -182,7 +182,7 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x72686b*/
+  result = ((AbstractClass *)(aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x72686b*/
   if ( result >= 0 ) /*0x726872*/
   {
     if ( aP0 ) /*0x726876*/
@@ -191,15 +191,15 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
       *(unsigned int *)aP0->__pad_0 = &vt_TriggerClass; /*0x726884*/
       *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_TriggerClass; /*0x72688a*/
       *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_TriggerClass; /*0x726891*/
-      *(unsigned int *)&aP0->__pad_0[12] = &vt_TriggerClass; /*0x726898*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_TriggerClass; /*0x726898*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x7268a8*/
     ObjectPtr::RegisterForTracking( /*0x7268b6*/
       (SwizzleManagerClass *)&((unsigned int *)(stru_B05488.__pad_579C))[5356],
-      (MouseClass *)&aP0[1].__pad_0[4]);
+      (MouseClass *)&aP0[((unsigned int *)(1].__pad_0))[4]);
     ObjectPtr::RegisterForTracking( /*0x7268c4*/
       (SwizzleManagerClass *)&((unsigned int *)(stru_B05488.__pad_579C))[5356],
-      (MouseClass *)&aP0[1].__pad_0[8]);
+      (MouseClass *)&aP0[((unsigned int *)(1].__pad_0))[8]);
     return 0; /*0x7268c9*/
   }
   return result; /*0x7268cb*/
@@ -214,7 +214,7 @@ int TriggerClass::SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x7268df*/
+  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x7268df*/
   if ( result >= 0 ) /*0x7268e6*/
     return 0; /*0x7268e8*/
   return result; /*0x7268ea*/

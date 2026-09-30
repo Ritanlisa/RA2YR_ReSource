@@ -37,6 +37,7 @@ struct ConnectionClass {
     int serviceSendQueue();
     unsigned int initQueue(unsigned int a2, void *a1 = 0);
     void dtor();
+     double queueSendPacket(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

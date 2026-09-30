@@ -276,7 +276,7 @@ LABEL_9:
       }
     }
   }
-  (*(void (**)(#377 *, int, unsigned int))(*(unsigned int *)this + 632))(this, 3, **((unsigned int **)this + 57)); /*0x65aa1f*/
+  (*(void (**)(void *, int, unsigned int))(*(unsigned int *)this + 632))(this, 3, **((unsigned int **)this + 57)); /*0x65aa1f*/
   v12 = 0; /*0x65aa34*/
 LABEL_20:
   v15 = *v1; /*0x65aa36*/

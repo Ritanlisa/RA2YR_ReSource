@@ -9,6 +9,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/String_e4.hpp"
 
 // 0x7228B0
 namespace gamemd {
@@ -23,7 +24,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   int16_t *v7; // ecx
   int v8; // eax
   unsigned int *v9; // ebp
-  unsigned int v10; // ebx
+  unsigned int v10;
   unsigned int v11; // edx
   unsigned int v12; // edi
   int v13; // ecx
@@ -31,7 +32,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   unsigned int v15; // eax
   float v16; // [esp+8h] [ebp-Ch]
   int16_t *v17; // [esp+Ch] [ebp-8h]
-  unsigned int v18; // [esp+10h] [ebp-4h]
+  int * v18;
 
   v2 = (int *)(0);
   v3 = (int *)(*((unsigned int *)this + 61));
@@ -48,16 +49,16 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   *v3 = 0; /*0x7228e0*/
   for ( i = this->Object::ComputeAllocationSize() - 1; i >= 0; *((unsigned char *)*((unsigned int *)this + 62) + i + 1) = 0 ) /*0x7228ec*/
     --i; /*0x7228f4*/
-  LayerClass::CellIteratorReset(&g_abs_87F7E8); /*0x722901*/
-  result = LayerClass::CellIteratorNext(&g_abs_87F7E8); /*0x72290b*/
+  ((LayerClass *)(&g_abs_87F7E8))->CellIteratorReset(); /*0x722901*/
+  result = ((LayerClass *)(&g_abs_87F7E8))->CellIteratorNext(); /*0x72290b*/
   for ( j = (unsigned int *)result; result; j = (unsigned int *)result ) /*0x722914*/
   {
     if ( (int *)BuildingClass::FindByCellHash(j) == *((unsigned int *)this + 38) /*0x722931*/
       && (uint8_t)BuildingClass::IsTiberiumSiloEligible(j) )
     {
       v7 = (int16_t *)((unsigned int)((int16_t *)(j + 9)));
-      v17 = (unsigned int)((int16_t *)(j + 9));
-      (*((unsigned int *)this + 63))[2 * (unsigned int)*((unsigned int *)this + 60)] = j[9]; /*0x722953*/
+      v17 = (int16_t *)((unsigned int)((int16_t *)(j + 9)));
+      (*((unsigned int *)this + 63))[2 * (unsigned int)*((unsigned int *)this + 60)] = ((unsigned int *)(j))[9]; /*0x722953*/
       (*((unsigned int *)this + 63))[2 * (unsigned int)*((unsigned int *)this + 60) + 1] = 0; /*0x722962*/
       v8 = (int)*((unsigned int *)this + 60); /*0x72296a*/
       v9 = *((unsigned int *)this + 61); /*0x722976*/
@@ -88,14 +89,14 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
         *(unsigned int *)(v9[2] + 4 * v11) = v10; /*0x7229d0*/
         v15 = v9[3]; /*0x7229d6*/
         ++*v9; /*0x7229dc*/
-        if ( v10 > v15 ) /*0x7229df*/
+        if ( v10 > (int *)(v15) ) /*0x7229df*/
           v9[3] = v10; /*0x7229e1*/
-        if ( v10 < v9[4] ) /*0x7229e7*/
+        if ( v10 < (int *)(v9[4]) ) /*0x7229e7*/
           v9[4] = v10; /*0x7229e9*/
       }
       *((unsigned char *)*((unsigned int *)this + 62) + Cell::PosToIndex(v7)) = 1; /*0x7229f7*/
     }
-    result = LayerClass::CellIteratorNext(&g_abs_87F7E8); /*0x722a00*/
+    result = ((LayerClass *)(&g_abs_87F7E8))->CellIteratorNext(); /*0x722a00*/
   }
   return result; /*0x722a11*/
 

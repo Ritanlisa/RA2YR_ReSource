@@ -579,13 +579,13 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   size_t v11; // ecx
   unsigned char *v12; // eax
   const char *v13; // edi
-  size_t v14; // esi
+  unsigned char * v14;
   char *v15; // eax
   char *v16; // ebp
   const char *v17; // esi
   size_t v18; // ecx
   unsigned char *v19; // eax
-  signed int v20; // [esp+14h] [ebp+4h]
+  unsigned char * v20;
 
   v5 = a2; /*0x7b60ec*/
   if ( *this ) /*0x7b60ea*/
@@ -602,7 +602,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
     ++v5; /*0x7b613e*/
   }
   v9 = (unsigned char *)(*this);
-  v20 = (unsigned char *)(v5);
+  v20 = (int)((unsigned char *)(v5));
   if ( (*this)[v5] == 13 && v9[v5 + 1] == 10 ) /*0x7b6152*/
     v20 = v5 + 1; /*0x7b6155*/
   v10 = &v9[a2]; /*0x7b615d*/
@@ -619,7 +619,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   if ( v10 ) /*0x7b619b*/
     strcpy((char *)*a3, v10); /*0x7b61b3*/
   v13 = (unsigned char *)(&g_abs_889F64);
-  v14 = (unsigned char *)(v20 - a2 + 1);
+  v14 = (size_t)((unsigned char *)(v20 - a2 + 1));
   if ( *a3 ) /*0x7b61c0*/
     v13 = (const char *)*a3; /*0x7b61ce*/
   v15 = (char *)RA2_OPNEW(v20 - a2 + 2); /*0x7b61d4*/
@@ -776,7 +776,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   const wchar_t *v6; // eax
   const wchar_t *v8; // eax
   const wchar_t *v9; // eax
-  int v10; // esi
+  const wchar_t * v10;
   const wchar_t *v11; // esi
   size_t v12; // eax
   unsigned short *v13; // eax
@@ -787,7 +787,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   const wchar_t *v18; // esi
   size_t v19; // eax
   unsigned short *v20; // eax
-  int v21; // [esp+10h] [ebp+4h]
+  const wchar_t * v21;
 
   v5 = (int)((const wchar_t *)(a2));
   v6 = (const wchar_t *)(*this);
@@ -800,15 +800,15 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     v8 = (const wchar_t *)(*this);
     if ( *this ) /*0x7b7c27*/
       v8 = (const wchar_t *)wcslen(*this); /*0x7b7c2e*/
-    if ( v5 >= (int)v8 || strchr(String2, (*this)[v5]) ) /*0x7b7c48*/
+    if ( v5 >= (const wchar_t *)((int))v8 || strchr(String2, (*this)[v5]) ) /*0x7b7c48*/
       break; /*0x7b7c48*/
     ++v5; /*0x7b7c54*/
   }
   v9 = (const wchar_t *)(*this);
-  v21 = v5; /*0x7b7c59*/
+  v21 = (const wchar_t *)((int)(v5));
   if ( (*this)[v5] == 13 ) /*0x7b7c62*/
   {
-    v10 = v5 + 1; /*0x7b7c64*/
+    v10 = (const wchar_t *)((int)(v5 + 1));
     if ( v9[v10] == 10 ) /*0x7b7c6a*/
       v21 = v10; /*0x7b7c6c*/
   }
@@ -826,7 +826,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   if ( v11 ) /*0x7b7cb6*/
     wcscpy((wchar_t *)*a3, v11); /*0x7b7cbc*/
   v14 = (unsigned short *)(v21 - a2 + 1);
-  v15 = (unsigned short *)(&g_abs_887734);
+  v15 = (const wchar_t *)((unsigned short *)(&g_abs_887734));
   if ( *a3 ) /*0x7b7cc8*/
     v15 = (const wchar_t *)*a3; /*0x7b7cd7*/
   v16 = (wchar_t *)RA2_OPNEW(2 * v14 + 2); /*0x7b7cde*/

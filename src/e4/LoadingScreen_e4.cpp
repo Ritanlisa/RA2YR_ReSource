@@ -167,26 +167,26 @@ void * * LoadingScreen::LoadSHPs()
 {
 
   void *SHP; // eax
-  char *v1; // ecx
+  unsigned int v1;
   void *result; // eax
 
   if ( *((unsigned int *)g_abs_A8B230 + 3374) == 2 ) /*0x72fa21*/
   {
-    g_abs_B0FA68 = LoadFileSHP(g_abs_844D48, (bool *)&g_abs_B0FCA5); /*0x72fa39*/
-    g_abs_B0FAC8 = LoadFileSHP(g_abs_844D3C, (bool *)&g_abs_B0FCA1); /*0x72fa4e*/
-    SHP = LoadFileSHP(g_abs_844D40, (bool *)&g_abs_B0FCA0); /*0x72fa53*/
+    g_abs_B0FA68 = (char *)(LoadFileSHP(g_abs_844D48, (bool *)&g_abs_B0FCA5));
+    g_abs_B0FAC8 = (char *)(LoadFileSHP(g_abs_844D3C, (bool *)&g_abs_B0FCA1));
+    SHP = (char *)(LoadFileSHP(g_abs_844D40, (bool *)&g_abs_B0FCA0));
     v1 = g_abs_844D44[0]; /*0x72fa58*/
   }
   else
   {
-    g_abs_B0FA68 = LoadFileSHP(g_abs_844D14, (bool *)&g_abs_B0FCA5); /*0x72fa80*/
-    g_abs_B0FAC8 = LoadFileSHP(g_abs_844D04, (bool *)&g_abs_B0FCA1); /*0x72fa95*/
-    SHP = LoadFileSHP(g_abs_844D00, (bool *)&g_abs_B0FCA0); /*0x72fa9a*/
+    g_abs_B0FA68 = (char *)(LoadFileSHP(g_abs_844D14, (bool *)&g_abs_B0FCA5));
+    g_abs_B0FAC8 = (char *)(LoadFileSHP(g_abs_844D04, (bool *)&g_abs_B0FCA1));
+    SHP = (char *)(LoadFileSHP(g_abs_844D00, (bool *)&g_abs_B0FCA0));
     v1 = g_abs_844D08; /*0x72fa9f*/
   }
-  g_abs_B0FAD4 = SHP; /*0x72fa5e*/
-  g_abs_B0FA50 = LoadFileSHP(v1, (bool *)&g_abs_B0FCA2); /*0x72fabf*/
-  g_abs_B0F9EC = LoadFileSHP(g_abs_844CFC, (bool *)&g_abs_B0FC9F); /*0x72fad4*/
+  g_abs_B0FAD4 = (void **)(SHP);
+  g_abs_B0FA50 = (void **)(LoadFileSHP(v1, (bool *)&g_abs_B0FCA2));
+  g_abs_B0F9EC = (void **)(LoadFileSHP(g_abs_844CFC, (bool *)&g_abs_B0FC9F));
   g_abs_B0FB08 = LoadFileSHP(g_abs_844D0C, (bool *)&g_abs_B0FCA3); /*0x72fae9*/
   g_abs_B0F9E0 = LoadFileSHP(g_abs_844D10, (bool *)&g_abs_B0FCA4); /*0x72fafe*/
   g_abs_B0FA70 = LoadFileSHP(g_abs_844D18, (bool *)&g_abs_B0FCA6); /*0x72fb13*/

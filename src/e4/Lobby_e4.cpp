@@ -61,8 +61,8 @@ int Lobby::InvalidatePlayerSlots(HWND hDlg)
     {
       v3 = 1901; /*0x4e5d6a*/
     }
-    if ( (g_abs_A8B238 == 3 || g_abs_A8B238 == 4) /*0x4e5df2*/
-      && ((v4 = *(&g_abs_A8DA90 + i), v4 == g_abs_AC11B4) || *(unsigned int *)(v4 + 107) == -1) )
+    if ( (g_abs_A8B238 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) || g_abs_A8B238 == 4) /*0x4e5df2*/
+      && ((v4 = *(&g_abs_A8DA90 + i), v4 == (int)((int))((int))(g_abs_AC11B4)) || *(unsigned int *)(v4 + 107) == -1) )
     {
       result = InitComboBoxNone(hDlg, v3); /*0x4e5dff*/
     }
@@ -172,9 +172,9 @@ LABEL_26:
   do
   {
     v34 = 0; /*0x5eb13d*/
-    if ( v36 == g_abs_8316A4 ) /*0x5eb142*/
+    if ( v36 == (int)((int))((int))(g_abs_8316A4) ) /*0x5eb142*/
     {
-      if ( g_abs_A8B254 == -1 ) /*0x5eb151*/
+      if ( g_abs_A8B254 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(-1) ) /*0x5eb151*/
       {
         PlayerCount = 8; /*0x5eb153*/
       }
@@ -201,14 +201,14 @@ LABEL_26:
       }
       if ( v36 > PlayerCount ) /*0x5eb1a5*/
       {
-        v5 = *(&g_abs_A8DA90 + v36); /*0x5eb1a7*/
-        if ( v5 != g_abs_AC119C /*0x5eb1d2*/
-          && (!v5 || v5 != g_abs_AC11A4 && v5 != g_abs_AC11A8 && v5 != g_abs_AC11AC) )
+        v5 = (int)(*(&g_abs_A8DA90 + v36));
+        if ( v5 != (int)((int))((int))(g_abs_AC119C) /*0x5eb1d2*/
+          && (!v5 || v5 != (int)((int))((int))(g_abs_AC11A4) && v5 != (int)((int))(g_abs_AC11A8) && v5 != g_abs_AC11AC) )
         {
           v34 = 1; /*0x5eb1d4*/
         }
       }
-      if ( v36 == g_abs_8316A4 && g_abs_A8B23C ) /*0x5eb1e9*/
+      if ( v36 == (int)((int))((int))(g_abs_8316A4) && g_abs_A8B23C ) /*0x5eb1e9*/
         (*(void (**)(int))(*(unsigned int *)g_abs_A8B23C + 188))(g_abs_A8B23C); /*0x5eb1ed*/
     }
     if ( v36 )
@@ -242,7 +242,7 @@ LABEL_26:
     {
       v6 = 1041; /*0x5eb1f7*/
     }
-    v7 = (HWND)(hDlg);
+    v7 = (gamemd::Lobby *)((HWND)(hDlg));
     DlgItem = GetDlgItem(hDlg, v6); /*0x5eb265*/
     v35 = !ShowWindow(DlgItem, 0); /*0x5eb27d*/
     SendDlgItemMessageA(v7, v6, 0x14Bu, 0, 0); /*0x5eb282*/
@@ -250,27 +250,27 @@ LABEL_26:
     v10 = v9; /*0x5eb29a*/
     if ( v9 == (wchar_t *)g_abs_AC119C ) /*0x5eb29c*/
     {
-      String = GetStringCSF(g_abs_831C80, 0, g_abs_8317D8, 5436); /*0x5eb2af*/
+      String = (wchar_t *)(GetStringCSF(g_abs_831C80, 0, g_abs_8317D8, 5436));
     }
     else if ( v9 == (wchar_t *)g_abs_AC11A0 ) /*0x5eb2ba*/
     {
-      String = GetStringCSF(g_abs_831C74, 0, g_abs_8317D8, 5438); /*0x5eb2cd*/
+      String = (wchar_t *)(GetStringCSF(g_abs_831C74, 0, g_abs_8317D8, 5438));
     }
     else if ( v9 == (wchar_t *)g_abs_AC11A4 ) /*0x5eb2d8*/
     {
-      String = GetStringCSF(g_abs_831C68, 0, g_abs_8317D8, 5440); /*0x5eb2eb*/
+      String = (wchar_t *)(GetStringCSF(g_abs_831C68, 0, g_abs_8317D8, 5440));
     }
     else if ( v9 == (wchar_t *)g_abs_AC11A8 ) /*0x5eb2f3*/
     {
-      String = GetStringCSF(g_abs_831C58, 0, g_abs_8317D8, 5442); /*0x5eb306*/
+      String = (wchar_t *)(GetStringCSF(g_abs_831C58, 0, g_abs_8317D8, 5442));
     }
     else if ( v9 == (wchar_t *)g_abs_AC11AC ) /*0x5eb30e*/
     {
-      String = GetStringCSF(g_abs_831C4C, 0, g_abs_8317D8, 5444); /*0x5eb321*/
+      String = (wchar_t *)(GetStringCSF(g_abs_831C4C, 0, g_abs_8317D8, 5444));
     }
-    else if ( v9 == g_abs_AC11B0 ) /*0x5eb329*/
+    else if ( v9 == (wchar_t *)((wchar_t *))((wchar_t *))(g_abs_AC11B0) ) /*0x5eb329*/
     {
-      String = GetStringCSF(g_abs_831C40, 0, g_abs_8317D8, 5446); /*0x5eb33c*/
+      String = (wchar_t *)(GetStringCSF(g_abs_831C40, 0, g_abs_8317D8, 5446));
     }
     else
     {
@@ -284,7 +284,7 @@ LABEL_79:
       && (v9 == (wchar_t *)g_abs_AC11A4 || v9 == (wchar_t *)g_abs_AC11A8 || v9 == (wchar_t *)g_abs_AC11AC)
       && !v33 )
     {
-      v10 = GetStringCSF(g_abs_831C80, 0, g_abs_8317D8, 5455); /*0x5eb398*/
+      v10 = (wchar_t *)(GetStringCSF(g_abs_831C80, 0, g_abs_8317D8, 5455));
     }
     WideString::Assign((wchar_t **)&v38, v10); /*0x5eb39f*/
     v12 = CharToWideString(g_abs_A8B380); /*0x5eb3a9*/
@@ -293,7 +293,7 @@ LABEL_79:
       if ( v9 /*0x5eb3fe*/
         && v9 != (wchar_t *)g_abs_AC119C
         && v9 != (wchar_t *)g_abs_AC11A0
-        && v9 != g_abs_AC11B0
+        && v9 != (wchar_t *)((wchar_t *))((wchar_t *))(g_abs_AC11B0)
         && v9 != (wchar_t *)g_abs_AC11B4
         && v9 != (wchar_t *)g_abs_AC11A4
         && v9 != (wchar_t *)g_abs_AC11A8
@@ -302,16 +302,16 @@ LABEL_79:
         v13 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v10); /*0x5eb409*/
         SendMessageA(DlgItem, 0x151u, v13, (LPARAM)v9); /*0x5eb413*/
       }
-      v14 = CharToWideString(g_abs_A8B380); /*0x5eb41a*/
+      v14 = (char *)(CharToWideString(g_abs_A8B380));
       v15 = wcscmp(v10, (const wchar_t *)v14); /*0x5eb421*/
       v16 = v36; /*0x5eb426*/
       if ( v15 ) /*0x5eb42f*/
       {
         if ( v36 < v37 ) /*0x5eb439*/
         {
-          if ( !v34 || v36 != g_abs_8316A4 ) /*0x5eb44d*/
+          if ( !v34 || v36 != (int)((int))((int))(g_abs_8316A4) ) /*0x5eb44d*/
             goto LABEL_111; /*0x5eb44d*/
-          if ( g_abs_A8B254 == -1 ) /*0x5eb458*/
+          if ( g_abs_A8B254 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(-1) ) /*0x5eb458*/
           {
             v17 = 8; /*0x5eb45a*/
           }
@@ -338,25 +338,24 @@ LABEL_79:
           }
           if ( v36 < v17 ) /*0x5eb4ac*/
           {
-LABEL_111:
-            v19 = GetStringCSF(g_abs_831C80, 0, g_abs_8317D8, 5479); /*0x5eb4bf*/
-            v20 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v19); /*0x5eb4cd*/
+LABEL_111: v19 = (wchar_t *)(GetStringCSF(g_abs_831C80, 0, g_abs_8317D8, 5479));
+            v20 = (wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v19));
             SendMessageA(DlgItem, 0x151u, v20, g_abs_AC119C); /*0x5eb4dd*/
           }
         }
         if ( v36 == g_abs_8316A4 ) /*0x5eb4e5*/
         {
-          v21 = GetStringCSF(g_abs_831C2C, 0, g_abs_8317D8, 5489); /*0x5eb4f8*/
-          v22 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v21); /*0x5eb506*/
+          v21 = (wchar_t *)(GetStringCSF(g_abs_831C2C, 0, g_abs_8317D8, 5489));
+          v22 = (wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v21));
           SendMessageA(DlgItem, 0x151u, v22, g_abs_AC11B4); /*0x5eb516*/
         }
-        v23 = GetStringCSF(g_abs_831C74, 0, g_abs_8317D8, 5496); /*0x5eb529*/
-        v24 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v23); /*0x5eb537*/
+        v23 = (wchar_t *)(GetStringCSF(g_abs_831C74, 0, g_abs_8317D8, 5496));
+        v24 = (wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v23));
         SendMessageA(DlgItem, 0x151u, v24, g_abs_AC11A0); /*0x5eb547*/
         if ( v33 && !v34 ) /*0x5eb55b*/
         {
-          v25 = GetStringCSF(g_abs_831C68, 0, g_abs_8317D8, 5504); /*0x5eb572*/
-          v26 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25); /*0x5eb580*/
+          v25 = (wchar_t *)(GetStringCSF(g_abs_831C68, 0, g_abs_8317D8, 5504));
+          v26 = (wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v25));
           SendMessageA(DlgItem, 0x151u, v26, g_abs_AC11A4); /*0x5eb590*/
           v27 = GetStringCSF(g_abs_831C58, 0, g_abs_8317D8, 5510); /*0x5eb5a3*/
           v28 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v27); /*0x5eb5b1*/
@@ -373,7 +372,7 @@ LABEL_111:
       SendMessageA(DlgItem, 0x151u, v31, (LPARAM)v9); /*0x5eb609*/
       v16 = v36; /*0x5eb60b*/
     }
-    v32 = WideString::GetOrEmpty_Alt((wchar_t **)&v38); /*0x5eb613*/
+    v32 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)&v38));
     SendMessageA(DlgItem, 0x4C0u, 0xFFFFFFFF, (LPARAM)v32); /*0x5eb621*/
     if ( !v35 ) /*0x5eb629*/
       ShowWindow(DlgItem, 5); /*0x5eb62e*/
@@ -463,15 +462,15 @@ void Lobby::SetupPlayerWidgets(HWND hDlg)
         v3 = 1746; /*0x5eba2c*/
         v4 = 1041; /*0x5eba31*/
       }
-      nIDDlgItem = GetResourceIDHardcodedCSF(v1); /*0x5ebabe*/
-      ResourceIDCSF = (HWND)GetResourceIDCSF(v1); /*0x5ebac9*/
-      ResourceID2CSF = (HWND)GetResourceID2CSF(v1); /*0x5ebad4*/
+      nIDDlgItem = (int)(GetResourceIDHardcodedCSF(v1));
+      ResourceIDCSF = (int)((HWND)GetResourceIDCSF(v1));
+      ResourceID2CSF = (int)((HWND)GetResourceID2CSF(v1));
       ResourceID3CSF = GetResourceID3CSF(v1); /*0x5ebadf*/
       ResourceID4CSF = GetResourceID4CSF(v1); /*0x5ebae3*/
       v6 = *(&g_abs_A8DA90 + (unsigned int)v1); /*0x5ebae8*/
       v18 = ResourceID4CSF; /*0x5ebaef*/
       v10 = v6 == g_abs_AC11B4 /*0x5ebb24*/
-         || v6
+         || (int)((int))((int))(v6)
          && v6 != g_abs_AC119C
          && v6 != g_abs_AC11A0
          && (wchar_t *)v6 != g_abs_AC11B0

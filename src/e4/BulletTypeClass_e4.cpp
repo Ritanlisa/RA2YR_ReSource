@@ -53,9 +53,9 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
       {
         v3[3] = (unsigned int)(0);
         v3[1] = (unsigned int)(v1 + 16);
-        v3[2] = v1 + 16; /*0x4654b6*/
-        *v3 = &XSurface_Vtable; /*0x4654b9*/
-        v3[4] = 1; /*0x4654bf*/
+        v3[2] = (unsigned int)(v1 + 16);
+        *v3 = (unsigned int)(&XSurface_Vtable);
+        v3[4] = (unsigned int)(1);
         Buffer::Init(v3 + 5, 0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/
         *v3 = &BSurface_Vtable; /*0x4654cb*/
         g_abs_87F7E8[31094] = v3; /*0x4654d1*/
@@ -111,7 +111,7 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
       Destination,
       60);
     v3 = (gamemd::BuildingTypeClass **)(Entity_Read(Destination));
-    if ( v3 >= 0 && v3 < g_abs_A8ED38 ) /*0x465d0d*/
+    if ( v3 >= 0 && v3 < (int)((int))((int))(g_abs_A8ED38) ) /*0x465d0d*/
       *(unsigned int *)(v2 + 3672) = *((unsigned int *)g_abs_A8ED2C + v3); /*0x465d18*/
     result = g_TriggerClassCount; /*0x465d1e*/
   }
@@ -191,8 +191,8 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
          dword_A83C88 + dword_A83C94,
          0) )
   {
-    v3 = g_BulletTypeInitState; /*0x46bd72*/
-    g_BulletTypeInitState = (BulletTypeClass *)((char *)g_BulletTypeInitState + 1); /*0x46bd75*/
+    v3 = (gamemd::BulletTypeClass *)((int)(g_BulletTypeInitState));
+    g_BulletTypeInitState = (int)((BulletTypeClass *)((char *)g_BulletTypeInitState + 1));
     *(unsigned int *)&dword_A83C84->__pad_0[4 * (unsigned int)v3] = this; /*0x46bd81*/
   }
   if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x46bdb8*/

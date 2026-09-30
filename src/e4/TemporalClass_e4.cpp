@@ -32,7 +32,7 @@ namespace gamemd {
 void TemporalClass::Constructor()
 {
 
-  wchar_t *v2; // eax
+  unsigned int v2;
   int v3; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
@@ -45,13 +45,13 @@ void TemporalClass::Constructor()
   *((unsigned int *)this + 3) = &vt_TemporalClass; /*0x71a47b*/
   if ( g_abs_B0EC70 < g_abs_B0EC68 /*0x71a4b7*/
     || (g_abs_B0EC6D || !g_abs_B0EC68)
-    && g_abs_B0EC74 > 0
+    && g_abs_B0EC74 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0EC60 + 8))(
          &g_abs_B0EC60,
-         g_abs_B0EC68 + g_abs_B0EC74,
+         (unsigned int)(g_abs_B0EC68)+ g_abs_B0EC74,
          0) )
   {
-    v3 = g_abs_B0EC70++; /*0x71a4c4*/
+    v3 = (int)(g_abs_B0EC70++);
     *((unsigned int *)g_abs_B0EC64 + v3) = this; /*0x71a4d3*/
   }
   return this; /*0x71a4d8*/
@@ -318,13 +318,13 @@ namespace gamemd {
 void TemporalClass::GetWarpPerStep( int a2)
 {
 
-  int WarpPerStep; // ebx
+  int * WarpPerStep;
   int *v4; // ecx
   int v5; // edi
   int v6; // eax
   int *v7; // eax
 
-  WarpPerStep = 0; /*0x71ab14*/
+  WarpPerStep = (int *)(0);
   if ( *(this + 17) && a2 <= 50 ) /*0x71ab25*/
     WarpPerStep = TemporalClass::GetWarpPerStep(a2 + 1); /*0x71ab2e*/
   v4 = *(this + 9); /*0x71ab30*/
@@ -345,23 +345,23 @@ void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &vt_TemporalClass; /*0x71b1bd*/
+  *Block = (unsigned int)(&vt_TemporalClass);
   *(Block + 1) = &vt_TemporalClass; /*0x71b1c3*/
   *(Block + 2) = &vt_TemporalClass; /*0x71b1ca*/
   *(Block + 3) = &vt_TemporalClass; /*0x71b1d1*/
   v5 = Block; /*0x71b1df*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_B0EC60 + 16))(&g_abs_B0EC60, &v5); /*0x71b1e3*/
-  if ( v3 != -1 && v3 < g_abs_B0EC70 && v3 < --g_abs_B0EC70 ) /*0x71b1fe*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_B0EC70) && v3 < --g_abs_B0EC70 ) /*0x71b1fe*/
   {
     do /*0x71b216*/
     {
       ++v3; /*0x71b206*/
       *((unsigned int *)g_abs_B0EC64 + v3 - 1) = *((unsigned int *)g_abs_B0EC64 + v3); /*0x71b20a*/
     }
-    while ( v3 < g_abs_B0EC70 ); /*0x71b216*/
+    while ( v3 < (int)((int))((int))(g_abs_B0EC70) ); /*0x71b216*/
   }
   AbstractClass::DTOR(Block); /*0x71b21a*/
-  if ( (Block & 1) != 0 ) /*0x71b224*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x71b224*/
     RA2_OPDEL(Block); /*0x71b227*/
   return (TemporalClass *)Block; /*0x71b231*/
 
@@ -373,7 +373,7 @@ namespace gamemd {
 int TemporalClass::SetTarget(AbstractClass * aP1)
 {
 
-  return AbstractClass::ProcessPower((#378 *)this); /*0x71a65a*/
+  return AbstractClass::ProcessPower((void *)this); /*0x71a65a*/
 
 }
 } // namespace gamemd

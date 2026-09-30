@@ -89,7 +89,7 @@ int WebBrowser::ShowDialog()
   unsigned int *v5; // eax
   int v6; // esi
   unsigned int *v7; // ebp
-  LONG dwNewLong; // [esp+1Ch] [ebp-28h] BYREF
+  unsigned int * dwNewLong;
   const char *v9; // [esp+20h] [ebp-24h]
   struct tagRECT Rect; // [esp+24h] [ebp-20h] BYREF
   int v11; // [esp+34h] [ebp-10h] BYREF
@@ -97,8 +97,8 @@ int WebBrowser::ShowDialog()
   int v13; // [esp+3Ch] [ebp-8h]
   int v14; // [esp+40h] [ebp-4h]
 
-  v1 = this; /*0x773e94*/
-  v9 = this; /*0x773e99*/
+  v1 = (const char *)(this);
+  v9 = (const char *)(this);
   if ( !this || !strlen(this) ) /*0x773eaa*/
     return (HWND)Debug::Log(aDowebpagedialo); /*0x774060*/
   Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
@@ -106,7 +106,7 @@ int WebBrowser::ShowDialog()
   v3 = result; /*0x773ed4*/
   if ( result ) /*0x773ed8*/
   {
-    dwNewLong = (unsigned int *)(0);
+    dwNewLong = (LONG)((unsigned int *)(0));
     SetWindowLongA(result, 8, (LONG)&dwNewLong); /*0x773eef*/
     IDA_LOBYTE(v4) = 1; /*0x773ef5*/
     SetDialogActiveFlag(v3, v4); /*0x773ef9*/
@@ -121,8 +121,8 @@ int WebBrowser::ShowDialog()
     if ( v5 ) /*0x773f68*/
     {
       v7 = (unsigned int)(v5 + 2);
-      v5[1] = 1; /*0x773f71*/
-      v5[2] = 0; /*0x773f7d*/
+      v5[1] = (unsigned int)(1);
+      v5[2] = (unsigned int)(0);
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
       *v5 = &vt_WebBrowser; /*0x773f95*/

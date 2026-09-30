@@ -677,7 +677,7 @@ Coord * * TechnoClass::RegisterKill()
   int v28; // [esp+14h] [ebp+4h]
 
   v27 = 0; /*0x702d46*/
-  v2 = (*(int (**)(#377 *))(*(unsigned int *)this + 132))(this); /*0x702d50*/
+  v2 = (*(int (**)(void *))(*(unsigned int *)this + 132))(this); /*0x702d50*/
   v3 = (*(int (**)(int, unsigned int))(*(unsigned int *)v2 + 132))(v2, *((unsigned int *)this + 135)); /*0x702d6b*/
   if ( *((unsigned char *)this + 144) ) /*0x702d6d*/
   {
@@ -694,7 +694,7 @@ Coord * * TechnoClass::RegisterKill()
     if ( v5 && v28 ) /*0x702dac*/
       TeamClass::Update_0(v5, 4, (AbstractClass *)this, *(IUnknown **)&g_abs_B077F8, 0, 0); /*0x702dbb*/
     if ( *((unsigned char *)this + 144) /*0x702dd6*/
-      && (*(int (**)(#377 *))(*(unsigned int *)this + 44))(this) != 1
+      && (*(int (**)(void *))(*(unsigned int *)this + 44))(this) != 1
       && *((unsigned char *)this + 144) )
     {
       v6 = (void **)*((unsigned int *)this + 13); /*0x702de0*/
@@ -714,7 +714,7 @@ Coord * * TechnoClass::RegisterKill()
       }
     }
   }
-  result = (*(int (**)(#377 *))(*(unsigned int *)this + 132))(this); /*0x702e48*/
+  result = (*(int (**)(void *))(*(unsigned int *)this + 132))(this); /*0x702e48*/
   if ( !*(unsigned char *)(result + 3231) )
   {
     if ( v28 )
@@ -770,7 +770,7 @@ Coord * * TechnoClass::RegisterKill()
       *(unsigned int *)(*((unsigned int *)this + 135) + 21644) = (*(int (**)(int))(*(unsigned int *)v28 + 56))(v28); /*0x703003*/
       *(unsigned int *)(*(unsigned int *)(v28 + 540) + 21736) += v3; /*0x70300f*/
     }
-    result = (*(int (**)(#377 *))(*(unsigned int *)this + 44))(this) - 1; /*0x70301c*/
+    result = (*(int (**)(void *))(*(unsigned int *)this + 44))(this) - 1; /*0x70301c*/
     switch ( result ) /*0x70302e*/
     {
       case 0: /*0x70302e*/
@@ -778,7 +778,7 @@ Coord * * TechnoClass::RegisterKill()
       case 1: /*0x70302e*/
         if ( !v28 ) /*0x7030d5*/
           goto LABEL_63; /*0x7030d5*/
-        if ( !*(unsigned char *)((*(int (**)(#377 *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x7030e5*/
+        if ( !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x7030e5*/
         {
           HouseClass::IncrementStat( /*0x703108*/
             (unsigned int *)(*(unsigned int *)(v28 + 540) + 9032),
@@ -788,7 +788,7 @@ Coord * * TechnoClass::RegisterKill()
 LABEL_55:
         if ( v28 ) /*0x703117*/
         {
-          if ( !v27 && !*(unsigned char *)((*(int (**)(#377 *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x70312f*/
+          if ( !v27 && !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x70312f*/
           {
             HouseClass::IncrementStat( /*0x703152*/
               (unsigned int *)(*(unsigned int *)(v28 + 540) + 11088),
@@ -796,7 +796,7 @@ LABEL_55:
             v27 = 1; /*0x703157*/
           }
 LABEL_59:
-          if ( v28 && !v27 && !*(unsigned char *)((*(int (**)(#377 *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x703175*/
+          if ( v28 && !v27 && !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x703175*/
             HouseClass::IncrementStat( /*0x703198*/
               (unsigned int *)(*(unsigned int *)(v28 + 540) + 13144),
               *(unsigned int *)(*((unsigned int *)this + 433) + 3576));
@@ -805,10 +805,10 @@ LABEL_63:
         ++*(unsigned int *)(*((unsigned int *)this + 135) + 21556); /*0x70319d*/
         if ( v28 ) /*0x7031b2*/
         {
-          if ( !*(unsigned char *)((*(int (**)(#377 *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x7031be*/
+          if ( !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x7031be*/
           {
             v18 = (unsigned int *)(*(unsigned int *)(v28 + 540) /*0x7031d5*/
-                           + 4 * (*(int (**)(#377 *))(*(unsigned int *)this + 56))(this)
+                           + 4 * (*(int (**)(void *))(*(unsigned int *)this + 56))(this)
                            + 21476);
             ++*v18; /*0x7031dc*/
           }
@@ -819,18 +819,18 @@ LABEL_67:
           result = RadarClass::SetFlag(&g_abs_87F7E8, 0); /*0x7031ec*/
         break; /*0x7031f3*/
       case 5: /*0x70302e*/
-        result = (*(int (**)(#377 *))(*(unsigned int *)this + 132))(this); /*0x703039*/
+        result = (*(int (**)(void *))(*(unsigned int *)this + 132))(this); /*0x703039*/
         if ( !*(unsigned char *)(result + 562) ) /*0x70303f*/
         {
           if ( *((unsigned int *)this + 335) != -1 ) /*0x703054*/
             ++*(unsigned int *)(*((unsigned int *)this + 135) + 21640); /*0x70305c*/
-          if ( v28 && !*(unsigned char *)((*(int (**)(#377 *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x703070*/
+          if ( v28 && !*(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3231) ) /*0x703070*/
           {
             HouseClass::IncrementStat( /*0x703093*/
               (unsigned int *)(*(unsigned int *)(v28 + 540) + 15200),
               *(unsigned int *)(*((unsigned int *)this + 328) + 3576));
             v17 = (unsigned int *)(*(unsigned int *)(v28 + 540) /*0x7030a5*/
-                           + 4 * (*(int (**)(#377 *))(*(unsigned int *)this + 56))(this)
+                           + 4 * (*(int (**)(void *))(*(unsigned int *)this + 56))(this)
                            + 21560);
             ++*v17; /*0x7030ac*/
           }
@@ -1112,7 +1112,7 @@ HouseClass * * TechnoClass::RenderTechnoSHP(int * a0, int * a1, int * a2, HouseC
   {
     v17 |= 4u; /*0x73b275*/
   }
-  if ( (uint8_t)House::IsHumanPlayer((#375 *)v12->focus) /*0x73b28b*/
+  if ( (uint8_t)House::IsHumanPlayer((void *)v12->focus) /*0x73b28b*/
     && (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v12->__pad_0 + 196))(v12) )
   {
     v17 = (*(int (**)(TechnoClass *, int))(*(unsigned int *)v12->__pad_0 + 1084))(v12, v17); /*0x73b2a0*/

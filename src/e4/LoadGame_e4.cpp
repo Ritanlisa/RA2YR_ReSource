@@ -32,19 +32,19 @@ namespace gamemd {
 int LoadGame::LoadTriggerEvents()
 {
 
-  int v1; // edx
+  unsigned int v1;
   int v2; // edi
-  unsigned int * v4;
+  unsigned int v4;
   void *v5; // esi
-  int v6; // eax
+  unsigned int * v6;
   int v7; // eax
   int v9; // esi
   unsigned int *v10; // eax
   unsigned int *v11; // eax
-  int v12; // [esp+20h] [ebp-8h] BYREF
+  unsigned int * v12;
   int v13; // [esp+24h] [ebp-4h] BYREF
 
-  v1 = g_TriggerEventState; /*0x660840*/
+  v1 = (unsigned int *)(g_TriggerEventState);
   v2 = g_TriggerEventState - 1; /*0x66084d*/
   if ( g_TriggerEventState - 1 >= 0 ) /*0x660856*/
   {
@@ -54,23 +54,23 @@ int LoadGame::LoadTriggerEvents()
       v5 = (void *)((unsigned int *)(v4))[v2]; /*0x66085e*/
       if ( v5 ) /*0x660863*/
       {
-        v12 = (unsigned int *)(((unsigned int *)(v4))[v2]);
-        v6 = (*(int (**)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v12); /*0x660879*/
-        if ( v6 != -1 ) /*0x66087f*/
+        v12 = (int)((unsigned int *)(((unsigned int *)(v4))[v2]));
+        v6 = (int)((unsigned int *)((*(int (**)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v12)));
+        if ( v6 != (unsigned int *)(-1) ) /*0x66087f*/
           LoadGame::RemoveItem(&dword_B04DA8, v6); /*0x660887*/
         RA2_OPDEL(v5); /*0x66088d*/
         v4 = g_TriggerPool; /*0x660892*/
         v1 = g_TriggerEventState; /*0x660898*/
       }
-      if ( v2 < v1 ) /*0x6608a3*/
+      if ( v2 < (int)(v1) ) /*0x6608a3*/
       {
         --v1; /*0x6608a5*/
         v7 = v2; /*0x6608a6*/
         for ( g_TriggerEventState = v1; v7 < g_TriggerEventState; ++v7 ) /*0x6608b0*/
         {
           ((unsigned int *)(v4))[v7] = (unsigned int *)(v4[v7 + 1]);
-          v1 = g_TriggerEventState; /*0x6608b9*/
-          v4 = g_TriggerPool; /*0x6608bf*/
+          v1 = (int)((unsigned int *)(g_TriggerEventState));
+          v4 = (unsigned int *)(g_TriggerPool);
         }
       }
       --v2; /*0x6608ca*/
@@ -230,9 +230,9 @@ void LoadGame::Start(LPSTREAM pStm)
     v68[2] = v6;
     v70[3] = v7;
     v69[2] = v6;
-    v67[3] = g_abs_886FBC;
-    v68[3] = g_abs_886FBC;
-    v69[3] = g_abs_886FBC;
+    v67[3] = (unsigned int)(g_abs_886FBC);
+    v68[3] = (unsigned int)(g_abs_886FBC);
+    v69[3] = (int)(g_abs_886FBC);
     v69[0] = 0;
     v69[1] = 0;
     AllocateSurfaceScreenSurfaces((int)&g_abs_886FB0, (int)v69, (int)v68, (int)v67, 0);

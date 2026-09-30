@@ -676,7 +676,7 @@ int Rules::ReadMiscINI()
     }
     *(unsigned int *)&v260[8] = 128;
     this->Dig = (unsigned int)(v51);
-    IonBlast = this->IonBlast;
+    IonBlast = (void *)(this->IonBlast);
     if ( !INIClass::GetString(
             v273,
             (INIClass *)&stru_830620.__pad_579C[16620],
@@ -688,8 +688,8 @@ int Rules::ReadMiscINI()
     {
       v53 = IonBlast;
     }
-    this->IonBlast = v53;
-    IonBeam = this->IonBeam;
+    this->IonBlast = (unsigned int)(v53);
+    IonBeam = (void *)(this->IonBeam);
     if ( !INIClass::GetString(
             v273,
             (INIClass *)&stru_830620.__pad_579C[16620],
@@ -702,8 +702,8 @@ int Rules::ReadMiscINI()
       v55 = IonBeam;
     }
     *(unsigned int *)&v260[8] = 128;
-    this->IonBeam = v55;
-    v56 = this->DamageFireTypes[0];
+    this->IonBeam = (unsigned int)(v55);
+    v56 = this-((unsigned int *)(>DamageFireTypes))[0];
     if ( !INIClass::GetString(
             v273,
             (INIClass *)&stru_830620.__pad_579C[16620],
@@ -716,7 +716,7 @@ int Rules::ReadMiscINI()
       v57 = v56;
     }
     *(unsigned int *)&v260[8] = 128;
-    this->DamageFireTypes[0] = v57;
+    this-((unsigned int *)(>DamageFireTypes))[0] = v57;
     ParadropRadius = this->ParadropRadius;
     if ( !INIClass::GetString(
             v273,
@@ -730,7 +730,7 @@ int Rules::ReadMiscINI()
       v59 = ParadropRadius;
     }
     this->ParadropRadius = v59;
-    v60 = this->ConditionRedSparkingProbability[1];
+    v60 = this-((unsigned int *)(>ConditionRedSparkingProbability))[1];
     if ( !INIClass::GetString(
             v273,
             (INIClass *)&stru_830620.__pad_579C[16620],
@@ -743,8 +743,8 @@ int Rules::ReadMiscINI()
       v61 = v60;
     }
     *(unsigned int *)&v260[8] = 128;
-    this->ConditionRedSparkingProbability[1] = v61;
-    v62 = this->ConditionYellowSparkingProbability[0];
+    this-((unsigned int *)(>ConditionRedSparkingProbability))[1] = v61;
+    v62 = this-((unsigned int *)(>ConditionYellowSparkingProbability))[0];
     if ( !INIClass::GetString(
             v273,
             (INIClass *)&stru_830620.__pad_579C[16620],
@@ -757,8 +757,8 @@ int Rules::ReadMiscINI()
       v63 = v62;
     }
     *(unsigned int *)&v260[8] = 128;
-    this->ConditionYellowSparkingProbability[0] = v63;
-    v64 = this->ZoomInFactor[0];
+    this-((unsigned int *)(>ConditionYellowSparkingProbability))[0] = v63;
+    v64 = this-((unsigned int *)(>ZoomInFactor))[0];
     if ( !INIClass::GetString(
             v273,
             (INIClass *)&stru_830620.__pad_579C[16620],
@@ -770,8 +770,8 @@ int Rules::ReadMiscINI()
     {
       v65 = v64;
     }
-    this->ZoomInFactor[0] = v65;
-    v66 = this->ZoomInFactor[1];
+    this-((unsigned int *)(>ZoomInFactor))[0] = v65;
+    v66 = this-((unsigned int *)(>ZoomInFactor))[1];
     if ( !INIClass::GetString(
             v273,
             (INIClass *)&stru_830620.__pad_579C[16620],
@@ -784,8 +784,8 @@ int Rules::ReadMiscINI()
       v67 = v66;
     }
     *(unsigned int *)&v260[8] = 128;
-    this->ZoomInFactor[1] = v67;
-    v68 = this->ConditionRedSparkingProbability[0];
+    this-((unsigned int *)(>ZoomInFactor))[1] = v67;
+    v68 = this-((unsigned int *)(>ConditionRedSparkingProbability))[0];
     if ( !INIClass::GetString(
             v273,
             (INIClass *)&stru_830620.__pad_579C[16620],
@@ -798,7 +798,7 @@ int Rules::ReadMiscINI()
       v69 = v68;
     }
     *(unsigned int *)&v260[8] = 128;
-    this->ConditionRedSparkingProbability[0] = v69;
+    this-((unsigned int *)(>ConditionRedSparkingProbability))[0] = v69;
     EnterGrinderSound = this->EnterGrinderSound;
     if ( !INIClass::GetString(
             v273,
@@ -1576,6 +1576,12 @@ int Rules::ReadMiscINI()
             *(int *)&v260[8])
       || (v181 = VocClass::FindIndex(aP1.headNode), v181 == -1) )
     {
+    unsigned int v258 = 0;  /* G37 hoist */
+    unsigned int v258 = 0;  /* G37 hoist */
+    unsigned int v258 = 0;  /* G37 hoist */
+    unsigned int v258 = 0;  /* G37 hoist */
+    unsigned int v258 = 0;  /* G37 hoist */
+    unsigned int v258 = 0;  /* G37 hoist */
     unsigned int v258 = 0;  /* G37 hoist */
     unsigned int v258 = 0;  /* G37 hoist */
       v181 = BuildingDamageSound;

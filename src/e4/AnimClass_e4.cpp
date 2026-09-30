@@ -26,6 +26,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Render_e4.hpp"
 
 // 0x4228E0
 namespace gamemd {
@@ -49,7 +50,7 @@ void AnimClass::Destruct( void * a2)
   *((unsigned int *)this + 1) = &vt_AnimClass; /*0x4228f1*/
   *((unsigned int *)this + 2) = &vt_AnimClass; /*0x4228f8*/
   *((unsigned int *)this + 3) = &off_7E3328; /*0x4228ff*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, this); /*0x422906*/
+  ((AbstractClass *)((AbstractClass *)this))->AnnounceExpiredPointer(this); /*0x422906*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x422914*/
   {
     v3 = (unsigned char *)*((unsigned int *)this + 51); /*0x42291a*/
@@ -61,7 +62,7 @@ void AnimClass::Destruct( void * a2)
         v4 = *(AudioController **)&HouseClass_Player.__pad_5568[22264]; /*0x422930*/
         do /*0x42294a*/
         {
-          if ( *(#374 **)v4->__pad_0 != this && *(unsigned char **)(*(unsigned int *)v4->__pad_0 + 204) == v3 ) /*0x422942*/
+          if ( *(void **)v4->__pad_0 != this && *(unsigned char **)(*(unsigned int *)v4->__pad_0 + 204) == v3 ) /*0x422942*/
             break; /*0x422942*/
           ++ecx3; /*0x422944*/
           v4 = (AudioController *)((char *)v4 + 4); /*0x422945*/
@@ -154,6 +155,39 @@ void AnimClass::Destruct( void * a2)
 namespace gamemd {
 void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 {
+    unsigned int v93 = 0;  /* G37 hoist */
+    unsigned int v92 = 0;  /* G37 hoist */
+    unsigned int v91 = 0;  /* G37 hoist */
+    unsigned int v90 = 0;  /* G37 hoist */
+    unsigned int v62 = 0;  /* G37 hoist */
+    unsigned int v44 = 0;  /* G37 hoist */
+    unsigned int v32 = 0;  /* G37 hoist */
+    unsigned int v25 = 0;  /* G37 hoist */
+    unsigned int v21 = 0;  /* G37 hoist */
+    unsigned int v20 = 0;  /* G37 hoist */
+    unsigned int v19 = 0;  /* G37 hoist */
+    unsigned int v93 = 0;  /* G37 hoist */
+    unsigned int v92 = 0;  /* G37 hoist */
+    unsigned int v91 = 0;  /* G37 hoist */
+    unsigned int v90 = 0;  /* G37 hoist */
+    unsigned int v62 = 0;  /* G37 hoist */
+    unsigned int v44 = 0;  /* G37 hoist */
+    unsigned int v32 = 0;  /* G37 hoist */
+    unsigned int v25 = 0;  /* G37 hoist */
+    unsigned int v21 = 0;  /* G37 hoist */
+    unsigned int v20 = 0;  /* G37 hoist */
+    unsigned int v19 = 0;  /* G37 hoist */
+    unsigned int v93 = 0;  /* G37 hoist */
+    unsigned int v92 = 0;  /* G37 hoist */
+    unsigned int v91 = 0;  /* G37 hoist */
+    unsigned int v90 = 0;  /* G37 hoist */
+    unsigned int v62 = 0;  /* G37 hoist */
+    unsigned int v44 = 0;  /* G37 hoist */
+    unsigned int v32 = 0;  /* G37 hoist */
+    unsigned int v25 = 0;  /* G37 hoist */
+    unsigned int v21 = 0;  /* G37 hoist */
+    unsigned int v20 = 0;  /* G37 hoist */
+    unsigned int v19 = 0;  /* G37 hoist */
 
   int v4; // edi
   int v5; // ebx
@@ -1019,11 +1053,11 @@ BuildingTypeClass * * AnimClass::drawFrame()
   int v182; // [esp+F8h] [ebp-Ch]
   BuildingClass *v183; // [esp+FCh] [ebp-8h]
   int v184; // [esp+100h] [ebp-4h]
-  #375 *v185; // [esp+108h] [ebp+4h]
+  void *v185; // [esp+108h] [ebp+4h]
   AbstractClass *aP1; // [esp+10Ch] [ebp+8h] BYREF
   HouseClass *v187; // [esp+110h] [ebp+Ch]
 
-  if ( v185 == *((#375 **)this + 135) )
+  if ( v185 == *((void **)this + 135) )
   {
     IDA_LOBYTE(result) = 0;
   }
@@ -1079,7 +1113,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
     *((unsigned char *)this + 979) = 0;
     if ( v16->LaserFencePost )
       BuildingClass::DemolishBridgeCheck((int *)this, 0);
-    if ( (uint8_t)House::IsHumanPlayer(*((#375 **)this + 135)) || (uint8_t)House::IsHumanPlayer(v185) )
+    if ( (uint8_t)House::IsHumanPlayer(*((void **)this + 135)) || (uint8_t)House::IsHumanPlayer(v185) )
     {
       if ( !*(unsigned char *)(*((unsigned int *)v185 + 13) + 422) && (unsigned char)aP1 )
       {
@@ -1088,7 +1122,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
           v17 = (AbstractClass *)*((unsigned int *)this + 135);
           if ( v17 != (AbstractClass *)v185 )
           {
-            if ( (uint8_t)House::IsHumanPlayer((#375 *)v17) )
+            if ( (uint8_t)House::IsHumanPlayer((void *)v17) )
               VoxClass::FindAndPlay(aEvaTechbuildin, -1, -1);
             if ( (uint8_t)House::IsHumanPlayer(v185) )
             {
@@ -1103,7 +1137,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
         }
         else
         {
-          v19 = ((int64_t (*)(#377 *, AbstractClass **))*(unsigned int *)(*(unsigned int *)this + 440))(this, &aP1);
+          v19 = ((int64_t (*)(void *, AbstractClass **))*(unsigned int *)(*(unsigned int *)this + 440))(this, &aP1);
           if ( CreateTriggerClassIfFarEnough((IUnknown *)0xA, IDA_SHIDWORD(v19), *(IUnknown **)v19) )
             VoxClass::FindAndPlay(aEvaBuildingcap, -1, -1);
         }
@@ -1134,7 +1168,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
       while ( v22 < 1428 );
     }
     if ( *(unsigned int *)&HouseClass_Player.__pad_5568[8068] == 4
-      && !*(unsigned char *)((*(int (**)(#377 *, int, int))(*(unsigned int *)this + 132))(this, v170, v171) + 3231) )
+      && !*(unsigned char *)((*(int (**)(void *, int, int))(*(unsigned int *)this + 132))(this, v170, v171) + 3231) )
     {
       HouseClass::IncrementStat((unsigned int *)v185 + 4314, *(unsigned int *)(*((unsigned int *)this + 328) + 3576));
     }
@@ -1154,10 +1188,10 @@ BuildingTypeClass * * AnimClass::drawFrame()
         {
           if ( (*(unsigned char *)(Member + 20) & 4) != 0 )
           {
-            if ( (*(int (**)(#377 *, int, int))(*(unsigned int *)this + 632))(this, 19, Member) == 1 )
+            if ( (*(int (**)(void *, int, int))(*(unsigned int *)this + 632))(this, 19, Member) == 1 )
             {
               if ( *(unsigned char *)(*((unsigned int *)this + 328) + 5821)
-                || (v27 = (unsigned int *)(*(int (**)(#377 *, int *, unsigned char *))(*(unsigned int *)this + 168))(
+                || (v27 = (unsigned int *)(*(int (**)(void *, int *, unsigned char *))(*(unsigned int *)this + 168))(
                                       this,
                                       v176,
                                       v26),
@@ -1174,7 +1208,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
                     v30 < 64) )
               {
                 v31 = v26[1048];
-                (*(void (**)(unsigned char *, #375 *, int))(*(unsigned int *)v26 + 980))(v26, v185, 1);
+                (*(void (**)(unsigned char *, void *, int))(*(unsigned int *)v26 + 980))(v26, v185, 1);
                 eax57 = (AbstractClass *)RA2_OPNEW(8u);
                 if ( eax57 )
                 {
@@ -1203,8 +1237,8 @@ BuildingTypeClass * * AnimClass::drawFrame()
           {
             v26 = 0;
           }
-          (*(void (**)(#377 *, int, unsigned char *))(*(unsigned int *)this + 632))(this, 23, v26);
-          (*(void (**)(#377 *, int, unsigned char *))(*(unsigned int *)this + 632))(this, 3, v26);
+          (*(void (**)(void *, int, unsigned char *))(*(unsigned int *)this + 632))(this, 23, v26);
+          (*(void (**)(void *, int, unsigned char *))(*(unsigned int *)this + 632))(this, 3, v26);
         }
 LABEL_66:
         ecx66 = *((unsigned int *)this + 58);
@@ -1500,16 +1534,16 @@ LABEL_80:
       vfptr0 = *(BuildingTypeClass **)this;
       *((unsigned char *)this + 128) = 1;
       *((unsigned char *)this + 1772) = 1;
-      (*(void (**)(#377 *, int))&vfptr0->DebrisTypes[252])(this, 1);
+      (*(void (**)(void *, int))&vfptr0->DebrisTypes[252])(this, 1);
     }
     if ( *(unsigned char *)(*((unsigned int *)this + 328) + 3281) )
-      (*(void (**)(#377 *))(*(unsigned int *)this + 1048))(this);
-    (*(void (**)(#377 *, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)this + 1164))(this, 0, 0, 0, 0);
+      (*(void (**)(void *))(*(unsigned int *)this + 1048))(this);
+    (*(void (**)(void *, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)this + 1164))(this, 0, 0, 0, 0);
     edi150 = v187;
     TechnoClass::ProcessCapture((int *)this, (int)v187, v187, 1);
     if ( *(unsigned char *)(*((unsigned int *)this + 328) + 5831) )
     {
-      if ( (*(uint8_t (**)(#377 *))(*(unsigned int *)this + 848))(this) )
+      if ( (*(uint8_t (**)(void *))(*(unsigned int *)this + 848))(this) )
       {
         v96 = (BuildingTypeClass *)*((unsigned int *)this + 328);
         if ( v96->CloakGenerator )
@@ -1523,18 +1557,18 @@ LABEL_80:
       }
     }
     if ( *(unsigned char *)(*((unsigned int *)this + 328) + 3281)
-      && (*(uint8_t (**)(#377 *))(*(unsigned int *)this + 848))(this) )
+      && (*(uint8_t (**)(void *))(*(unsigned int *)this + 848))(this) )
     {
-      (*(void (**)(#377 *))(*(unsigned int *)this + 1044))(this);
+      (*(void (**)(void *))(*(unsigned int *)this + 1044))(this);
     }
     AnimClass::updateAnimation((int)this, 0);
     v37[603].abstractFlags = (int)this;
     BuildingClass::CalcExitCoords((int *)v37->__pad_0);
     BuildingClass::CalcExitCoords(*((int **)this + 135));
     v98 = (AbstractClass *)*((unsigned int *)this + 135);
-    if ( (#377 *)v98[603].abstractFlags == this )
+    if ( (void *)v98[603].abstractFlags == this )
       v98[603].abstractFlags = 0;
-    if ( (uint8_t)House::IsHumanPlayer((#375 *)v37) && *(unsigned char *)(*((unsigned int *)this + 328) + 5817) )
+    if ( (uint8_t)House::IsHumanPlayer((void *)v37) && *(unsigned char *)(*((unsigned int *)this + 328) + 5817) )
     {
       *(unsigned int *)&stru_87C374.__pad_14B0[12648] = 0;
       *(unsigned int *)&stru_87C374.__pad_14B0[12652] = 0;
@@ -1544,7 +1578,7 @@ LABEL_80:
     BuildingClass::IncrementOccupantTypeCounter(*((unsigned int **)this + 135), (BuildingClass *)this);
     v99 = *(BuildingTypeClass **)this;
     *((unsigned char *)this + 1768) = 0;
-    (*(void (**)(#377 *, int))&v99->DebrisTypes[456])(this, 1);
+    (*(void (**)(void *, int))&v99->DebrisTypes[456])(this, 1);
     if ( *(unsigned char *)(*((unsigned int *)this + 328) + 5822) )
     {
       if ( !*(unsigned int *)&HouseClass_Player.__pad_5568[21752] )
@@ -1563,9 +1597,9 @@ LABEL_80:
         }
       }
     }
-    if ( (uint8_t)House::IsHumanPlayer(*((#375 **)this + 135)) )
+    if ( (uint8_t)House::IsHumanPlayer(*((void **)this + 135)) )
     {
-      (*(void (**)(#377 *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)this + 1160))(
+      (*(void (**)(void *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)this + 1160))(
         this,
         0,
         0,
@@ -1578,12 +1612,12 @@ LABEL_80:
     v102 = *((unsigned int *)this + 132);
     if ( (v102 & v101) != 0 )
       *((unsigned int *)this + 132) = v102 & ~v101;
-    v103 = (BuildingTypeClass *)(*(int (**)(#377 *))(*(unsigned int *)this + 484))(this);
-    eax175 = (*(int (**)(#377 *))(*(unsigned int *)this + 444))(this);
-    v104 = (BuildingTypeClass *)(*(int (**)(#377 *, unsigned int))(*(unsigned int *)this + 1124))(
+    v103 = (BuildingTypeClass *)(*(int (**)(void *))(*(unsigned int *)this + 484))(this);
+    eax175 = (*(int (**)(void *))(*(unsigned int *)this + 444))(this);
+    v104 = (BuildingTypeClass *)(*(int (**)(void *, unsigned int))(*(unsigned int *)this + 1124))(
                                   this,
                                   *(int16_t *)(eax175 + 266));
-    if ( (*(uint8_t (**)(#377 *))(*(unsigned int *)this + 352))(this)
+    if ( (*(uint8_t (**)(void *))(*(unsigned int *)this + 352))(this)
       || *((unsigned int *)this + 165) && *(unsigned int *)(*((unsigned int *)this + 165) + 80) == IsObjectTypeBuildingType((int)this) )
     {
       IDA_LOWORD(v104) = (uint16_t)Techno::StartInvulnerability(this, v104);
@@ -1819,7 +1853,7 @@ LABEL_183:
       v160 = (CCINIClass *)Block;
       do
       {
-        (*(void (**)(#377 *, int, unsigned int))(*(unsigned int *)this + 632))(
+        (*(void (**)(void *, int, unsigned int))(*(unsigned int *)this + 632))(
           this,
           2,
           **(unsigned int **)&v160->__pad_0[4 * edi266]);
@@ -1836,7 +1870,7 @@ LABEL_183:
     }
     if ( *(unsigned int *)&HouseClass_Player.__pad_5568[8068] )
     {
-      if ( !(uint8_t)House::IsCurrentPlayer((#375 *)v109) )
+      if ( !(uint8_t)House::IsCurrentPlayer((void *)v109) )
       {
         v162 = *((unsigned int *)this + 83);
         if ( v162 != v109 && !*(unsigned char *)(*(unsigned int *)(v162 + 52) + 422) )
@@ -1853,7 +1887,7 @@ LABEL_183:
             *(unsigned char *)(*((unsigned int *)this + 135) + 22392) = 1;
             *(unsigned char *)(*((unsigned int *)this + 135) + 22393) = 1;
           }
-          (*(void (**)(#377 *, int))(*(unsigned int *)this + 416))(this, 1);
+          (*(void (**)(void *, int))(*(unsigned int *)this + 416))(this, 1);
         }
       }
     }
@@ -1977,7 +2011,7 @@ int AnimClass::ProcessFrame()
   if ( v4 >= 0 ) /*0x76107b*/
     return ObjectClass::DetectCloaked(this); /*0x76108f*/
   else
-    return (*(int (**)(#374 *))(*(unsigned int *)this + 248))(this); /*0x761081*/
+    return (*(int (**)(void *))(*(unsigned int *)this + 248))(this); /*0x761081*/
 
 }
 // 0x4238D0

@@ -216,7 +216,7 @@ struct MPCooperative {
     int InitSession();  // 0x5C1CC0
     char Seek();  // 0x5C1DC0
     int Revert();  // 0x5C1FA0
-    char  StartGame(int a2, void ** a3, void * Block, int a5, __int16 a6, int a7, int a8, char * a9, char * a10);  // 0x5C2040
+    char  StartGame(int a2, void ** a3, void * Block, int a5, int16_t a6, int a7, int a8, char * a9, char * a10);  // 0x5C2040
     char  EndGame(int a2, int a3, int a4);  // 0x5C2100
     char ProcessTurn();  // 0x5C2680
     char SyncState();  // 0x5C2710
@@ -238,7 +238,7 @@ struct MPCooperative {
     unsigned int * startGame();  // 0x470C00
     char  Write(int a2);  // 0x5C1D80
     int checkVictory();  // 0x5C4670
-    char  spawnUnits(int a2, void * Block, int a4, __int16 a5, int a6, int a7, unsigned int * a8);  // 0x5C4E90
+    char  spawnUnits(int a2, void * Block, int a4, int16_t a5, int a6, int a7, unsigned int * a8);  // 0x5C4E90
     unsigned int * initGame();  // 0x46D330
     char  GetMovieScore(void * aP1);  // 0x49BCA0
     DynamicVector *  saveGameState(unsigned int * Block, char a2);  // 0x5C4FC0

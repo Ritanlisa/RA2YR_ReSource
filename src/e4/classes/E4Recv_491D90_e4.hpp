@@ -10,6 +10,6 @@ struct E4Recv_491D90 {
     unsigned int M4;  // 0x4
     unsigned int m_1;
 // --- flat members (END) ---
-    char  sub_491D90(unsigned __int8 * a1, unsigned __int8 * a2, void * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10);  // 0x491D90
+    char  sub_491D90(uint8_t * a1, uint8_t * a2, void * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10);  // 0x491D90
 };
 } // namespace gamemd

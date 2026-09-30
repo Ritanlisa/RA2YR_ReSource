@@ -54,17 +54,17 @@ char NullModem_TestConnection(void * a1)
   Dialog::Show(MessageBox); /*0x5f040f*/
   v5 = dword_887340; /*0x5f0419*/
   if ( dword_887338 != -1 ) /*0x5f0422*/
-        v5 += Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
+        v5 += this->Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
   v20 = v5; /*0x5f0438*/
   v6 = v5; /*0x5f043c*/
-    while ( this->Dialog::PumpMessages() != 1 && !*((unsigned char *)&g_MatrixTransformState + 9524) )
+    while ( ((Dialog *)0)->PumpMessages() != 1 && !*((unsigned char *)&g_MatrixTransformState + 9524) )
   {
     Stream::ReadPacket((int)&unk_A8EA70); /*0x5f045d*/
     v7 = dword_887338; /*0x5f0462*/
     v8 = dword_887340; /*0x5f0467*/
     if ( dword_887338 != -1 ) /*0x5f0470*/
     {
-            Ticks = Timer::GetTicks();
+            Ticks = this->Timer::GetTicks();
       v7 = dword_887338; /*0x5f047e*/
       v8 += Ticks - dword_887338; /*0x5f0485*/
     }
@@ -72,7 +72,7 @@ char NullModem_TestConnection(void * a1)
     {
       v10 = dword_887340; /*0x5f048e*/
       if ( v7 != -1 ) /*0x5f0497*/
-                v10 += Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
+                v10 += this->Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
       memset(v23, 0, sizeof(v23)); /*0x5f04bc*/
       v24 = 0; /*0x5f04be*/
       v6 = v10; /*0x5f04d1*/
@@ -84,7 +84,7 @@ char NullModem_TestConnection(void * a1)
     {
       v11 = dword_887340; /*0x5f0508*/
       if ( dword_887338 != -1 ) /*0x5f0511*/
-                v11 += Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
+                v11 += this->Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
       v20 = v11; /*0x5f052c*/
       if ( v25[0] == 100 ) /*0x5f0533*/
       {
@@ -102,13 +102,13 @@ char NullModem_TestConnection(void * a1)
         Stream::WriteBlock(&unk_A8EA70, (int)v23, 250, 1); /*0x5f057f*/
         v12 = dword_887340; /*0x5f0589*/
         if ( dword_887338 != -1 ) /*0x5f0594*/
-                    v12 += Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
+                    v12 += this->Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
         v6 = v12; /*0x5f05a8*/
         while ( 1 ) /*0x5f05af*/
         {
           v13 = dword_887340; /*0x5f05af*/
           if ( dword_887338 != -1 ) /*0x5f05b7*/
-                        v13 += Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
+                        v13 += this->Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
           if ( (unsigned int)(v13 - v12) >= 0x3C ) /*0x5f05d0*/
             break; /*0x5f05d0*/
           Stream::ReadPacket((int)&unk_A8EA70); /*0x5f05d7*/
@@ -119,7 +119,7 @@ char NullModem_TestConnection(void * a1)
     }
     v14 = dword_887340; /*0x5f05ea*/
     if ( dword_887338 != -1 ) /*0x5f05f3*/
-            v14 += Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
+            v14 += this->Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
     if ( (unsigned int)(v14 - v20) > 0x384 ) /*0x5f0611*/
       break; /*0x5f0611*/
     if ( v19 != (wchar_t *)(1) ) /*0x5f0618*/

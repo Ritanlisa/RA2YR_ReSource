@@ -15,6 +15,7 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
 
 // 0x6A0310
 namespace gamemd {
@@ -34,15 +35,15 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   *(unsigned int *)(a1 + 84) = a2; /*0x6a0323*/
   *(unsigned int *)(a1 + 88) = 0; /*0x6a0326*/
   v4 = g_abs_B077F8; /*0x6a032d*/
-  if ( a3 != g_abs_B077F8 || a4 != g_abs_B077FC ) /*0x6a0340*/
+  if ( a3 != (unsigned int)((unsigned int))((unsigned int))(g_abs_B077F8) || a4 != g_abs_B077FC ) /*0x6a0340*/
   {
     v5 = a1 - 4; /*0x6a0358*/
     v13 = a4; /*0x6a035b*/
     v6 = (unsigned int *)(a1 - 4 + 64); /*0x6a0363*/
     v12 = a3; /*0x6a036a*/
-    if ( *v6 != g_abs_B077F8 || __PAIR64__(*(unsigned int *)(a1 - 4 + 72), *(unsigned int *)(a1 + 64)) != g_abs_B077FC ) /*0x6a0375*/
+    if ( *(unsigned int)((unsigned int))((unsigned int))(v6) != g_abs_B077F8 || __PAIR64__(*(unsigned int *)(a1 - 4 + 72), *(unsigned int *)(a1 + 64)) != g_abs_B077FC ) /*0x6a0375*/
     {
-      *v6 = g_abs_B077F8; /*0x6a0386*/
+      *v6 = (unsigned int)((int)(g_abs_B077F8));
       *(unsigned int *)(a1 + 64) = g_abs_B077FC; /*0x6a038d*/
       v7 = IDA_HIDWORD(g_abs_B077FC); /*0x6a0390*/
       *(unsigned char *)(v5 + 99) = 0; /*0x6a0396*/
@@ -52,7 +53,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( __PAIR64__(a4, a3) != __PAIR64__(g_abs_B077FC, v4) /*0x6a03be*/
       || (IDA_LOBYTE(v4) = BYTE4(g_abs_B077FC), IDA_HIDWORD(a4) != IDA_HIDWORD(g_abs_B077FC)) )
     {
-      v8 = v13; /*0x6a03c4*/
+      v8 = (unsigned int *)(v13);
       *(unsigned char *)(v5 + 99) = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)(a1 + 64) = v8; /*0x6a03d0*/
@@ -119,7 +120,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   v23 = v6; /*0x6a3f75*/
   v24 = v7; /*0x6a3f79*/
   v25 = v8; /*0x6a3f7d*/
-  if ( v6 == g_abs_B077F8 && __PAIR64__(v8, v7) == g_abs_B077FC ) /*0x6a3f89*/
+  if ( v6 == (int)((int))((int))(g_abs_B077F8) && __PAIR64__(v8, v7) == g_abs_B077FC ) /*0x6a3f89*/
     return 0; /*0x6a3f89*/
   if ( !*(unsigned char *)(v4 + 92) ) /*0x6a3f97*/
   {
@@ -139,8 +140,8 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
           {
             v14 = (int *)(v13[1]);
             v20[0] = (int *)(*v13);
-            v20[1] = v14; /*0x6a3fff*/
-            v15 = WalkLocomotion::TransformCoords((unsigned int *)(v4 - 4), v21, v20, &a1); /*0x6a4011*/
+            v20[1] = (int *)(v14);
+            v15 = (int *)(WalkLocomotion::TransformCoords((unsigned int *)(v4 - 4), v21, v20, &a1));
             v16 = *v15; /*0x6a4016*/
             v17 = v15[1]; /*0x6a4018*/
             v18 = (unsigned int *)(*(unsigned int *)(v4 + 8) + 156); /*0x6a401e*/
@@ -149,7 +150,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
             v22 = v18[2]; /*0x6a4033*/
             if ( (uint16_t)(v16 / 256) == (uint16_t)(a2 / 256) /*0x6a409b*/
               && (uint16_t)(v17 / 256) == (uint16_t)(a3 / 256)
-              && (int)abs32(v22 - a4) <= g_abs_B07838 )
+              && (int)abs32(v22 - a4) <= (int)((int))((int))(g_abs_B07838) )
             {
               return 1; /*0x6a40a5*/
             }
@@ -160,7 +161,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   }
   return (uint16_t)(v23 / 256) == (uint16_t)(a2 / 256) /*0x6a411e*/
       && (uint16_t)(v24 / 256) == (uint16_t)(a3 / 256)
-      && (int)abs32(v25 - a4) <= g_abs_B07838;
+      && (int)abs32(v25 - a4) <= (int)((int))((int))(g_abs_B07838);
 
 }
 } // namespace gamemd

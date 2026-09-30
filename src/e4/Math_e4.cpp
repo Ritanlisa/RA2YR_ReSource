@@ -196,7 +196,7 @@ void Math::BuildRotationMatrix( float * a2, float a3)
   v16 = Math::ArcTan2(a3); /*0x5ae76f*/
   v5 = Math::SinCos(v3); /*0x5ae775*/
   v7 = *a2 * *a2; /*0x5ae787*/
-  *this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
+  *(unsigned int *)this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
   v8 = 1.0 - v16; /*0x5ae7a1*/
   *(this + 1) = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
   v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/

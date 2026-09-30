@@ -14,6 +14,7 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x466380
 namespace gamemd {
@@ -59,13 +60,13 @@ BulletClass::BulletClass()
   *((unsigned int *)this + 82) = 0; /*0x466462*/
   if ( g_abs_A8ED50 < g_abs_A8ED48 /*0x46649b*/
     || (g_abs_A8ED4D || !g_abs_A8ED48)
-    && g_abs_A8ED54 > 0
+    && g_abs_A8ED54 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8ED40 + 8))(
          &g_abs_A8ED40,
-         g_abs_A8ED48 + g_abs_A8ED54,
+         (unsigned int)(g_abs_A8ED48)+ g_abs_A8ED54,
          0) )
   {
-    v2 = g_abs_A8ED50++; /*0x4664a8*/
+    v2 = (int)((unsigned int)(g_abs_A8ED50++));
     *((unsigned int *)g_abs_A8ED44 + v2) = this; /*0x4664b7*/
   }
   return this; /*0x4664bc*/
@@ -80,7 +81,7 @@ BulletClass * * BulletClass::Dtor()
 
   int v2; // eax
   int v3; // eax
-  #374 *v5; // [esp+4h] [ebp-4h] BYREF
+  void *v5; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)this = &vt_BulletClass; /*0x466566*/
   *((unsigned int *)this + 1) = &vt_BulletClass; /*0x46656c*/
@@ -90,15 +91,15 @@ BulletClass * * BulletClass::Dtor()
   if ( *((unsigned char *)this + 344) ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
-    v2 = (*(int (**)(int *, #374 **))(g_abs_B0F5B8 + 16))(&g_abs_B0F5B8, &v5); /*0x4665a4*/
-    if ( v2 != -1 && v2 < g_abs_B0F5C8 && v2 < --g_abs_B0F5C8 ) /*0x4665bf*/
+    v2 = (*(int (**)(int *, void **))(g_abs_B0F5B8 + 16))(&g_abs_B0F5B8, &v5); /*0x4665a4*/
+    if ( v2 != -1 && v2 < (int)((int))((int))(g_abs_B0F5C8) && v2 < --g_abs_B0F5C8 ) /*0x4665bf*/
     {
       do /*0x4665d7*/
       {
         ++v2; /*0x4665c7*/
         *((unsigned int *)g_abs_B0F5BC + v2 - 1) = *((unsigned int *)g_abs_B0F5BC + v2); /*0x4665cb*/
       }
-      while ( v2 < g_abs_B0F5C8 ); /*0x4665d7*/
+      while ( v2 < (int)((int))((int))(g_abs_B0F5C8) ); /*0x4665d7*/
     }
   }
   if ( g_abs_A8E9A0 ) /*0x4665e0*/
@@ -107,15 +108,15 @@ BulletClass * * BulletClass::Dtor()
   *((unsigned int *)this + 44) = 0; /*0x4665f3*/
   *((unsigned int *)this + 85) = 0; /*0x4665fd*/
   v5 = this; /*0x466617*/
-  v3 = (*(int (**)(int *, #374 **))(g_abs_A8ED40 + 16))(&g_abs_A8ED40, &v5); /*0x46661b*/
-  if ( v3 != -1 && v3 < g_abs_A8ED50 && v3 < --g_abs_A8ED50 ) /*0x466636*/
+  v3 = (*(int (**)(int *, void **))(g_abs_A8ED40 + 16))(&g_abs_A8ED40, &v5); /*0x46661b*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_A8ED50) && v3 < --g_abs_A8ED50 ) /*0x466636*/
   {
     do /*0x46664e*/
     {
       ++v3; /*0x46663e*/
       *((unsigned int *)g_abs_A8ED44 + v3 - 1) = *((unsigned int *)g_abs_A8ED44 + v3); /*0x466642*/
     }
-    while ( v3 < g_abs_A8ED50 ); /*0x46664e*/
+    while ( v3 < (int)((int))((int))(g_abs_A8ED50) ); /*0x46664e*/
   }
   return ObjectClass::Dtor(this); /*0x466657*/
 
@@ -142,7 +143,7 @@ namespace gamemd {
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x46afc4*/
+  return ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x46afc4*/
 
 }
 } // namespace gamemd

@@ -100,7 +100,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
       {
         goto LABEL_20; /*0x4add1b*/
       }
-      if ( (uint8_t)House::IsHumanPlayer(*(#375 **)(v4 + 540)) ) /*0x4add27*/
+      if ( (uint8_t)House::IsHumanPlayer(*(void **)(v4 + 540)) ) /*0x4add27*/
         break; /*0x4add27*/
       if ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6 /*0x4addce*/
         && *(unsigned char *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 6119)
@@ -121,7 +121,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
       }
       else if ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6 /*0x4ade4c*/
              && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 1518)
-             && !(uint8_t)House::IsHumanPlayer(*(#375 **)(v4 + 540)) )
+             && !(uint8_t)House::IsHumanPlayer(*(void **)(v4 + 540)) )
       {
         (*(void (**)(int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v4 + 1160))( /*0x4ade68*/
           v4,
@@ -1919,13 +1919,13 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   IUnknown *v15; // eax
   unsigned short *v16; // eax
   char *v17; // eax
-  #375 *v18; // eax
-  #375 *v19; // eax
+  void *v18; // eax
+  void *v19; // eax
   int v20; // eax
   MouseClass *v21; // edi
   bool v22; // bl
   IUnknown *v23; // ecx
-  #375 *v24; // eax
+  void *v24; // eax
   int v25; // edx
   unsigned int *v26; // eax
   IUnknown *v27; // eax
@@ -2004,7 +2004,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   {
     if ( !v8 /*0x6927fb*/
       || !(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8)
-      || (v18 = (#375 *)(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8),
+      || (v18 = (void *)(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8),
           !(uint8_t)House::IsHumanPlayer(v18))
       || (v30 = (IUnknown *)10, !(*(uint8_t (**)(MouseClass *))(v8->field_0 + 148))(v8)) )
     {
@@ -2018,7 +2018,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     {
       if ( (*(int (**)(MouseClass *))(v8->field_0 + 60))(v8) ) /*0x69282e*/
       {
-        v19 = (#375 *)(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8); /*0x692839*/
+        v19 = (void *)(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8); /*0x692839*/
         if ( (uint8_t)House::IsHumanPlayer(v19) ) /*0x69283e*/
         {
           if ( (*(int (**)(MouseClass *))(v8->field_0 + 44))(v8) == 6 ) /*0x692851*/
@@ -2095,7 +2095,7 @@ LABEL_65:
     goto LABEL_81; /*0x6929c7*/
   if ( v8
     && (*(int (**)(MouseClass *))(v8->field_0 + 60))(v8)
-    && (v24 = (#375 *)(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8),
+    && (v24 = (void *)(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8),
         (uint8_t)House::IsHumanPlayer(v24))
     && (*(uint8_t (**)(MouseClass *))(v8->field_0 + 152))(v8) )
   {
@@ -2124,7 +2124,7 @@ LABEL_65:
         {
           v26 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], v14); /*0x692adc*/
           v30 = (IUnknown *)12; /*0x692af4*/
-          if ( (uint8_t)House::IsHumanPlayer(*(#375 **)&HouseClass_Array->__pad_0[4 * v26[20]]) ) /*0x692aed*/
+          if ( (uint8_t)House::IsHumanPlayer(*(void **)&HouseClass_Array->__pad_0[4 * v26[20]]) ) /*0x692aed*/
             goto LABEL_81; /*0x692afc*/
         }
       }

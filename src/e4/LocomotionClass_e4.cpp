@@ -22,7 +22,7 @@ namespace gamemd {
 int LocomotionClass::Initialize()
 {
 
-  wchar_t *v2; // ecx
+  unsigned int v2;
   int v3; // ecx
 
   LocomotionClass::Init((unsigned int *)this); /*0x4af543*/
@@ -62,15 +62,15 @@ namespace gamemd {
 void * LocomotionClass::UpdateAll()
 {
 
-  wchar_t *result; // eax
+  unsigned int result;
   int i; // esi
   unsigned int *v2; // ecx
 
-  result = (wchar_t *)g_abs_8A3880; /*0x4c54a0*/
+  result = (int)((wchar_t *)g_abs_8A3880);
   for ( i = g_abs_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
-    v2 = (unsigned int *)*((unsigned int *)g_abs_8A3874 + i); /*0x4c54b3*/
-    result = g_abs_A8ED84; /*0x4c54be*/
+    v2 = (wchar_t *)((unsigned int *)*((unsigned int *)g_abs_8A3874 + i));
+    result = (wchar_t *)(g_abs_A8ED84);
     if ( (int)g_abs_A8ED84 >= v2[11] + v2[12] ) /*0x4c54c5*/
     {
       if ( v2 ) /*0x4c54c9*/
@@ -230,8 +230,8 @@ namespace gamemd {
 LocomotionClass * LocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  LocomotionClass::Construct(Block); /*0x5172f3*/
-  if ( (Block & 1) != 0 ) /*0x5172fd*/
+  ((LocomotionClass *)(Block))->Construct(); /*0x5172f3*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5172fd*/
     RA2_OPDEL(Block); /*0x517300*/
   return (LocomotionClass *)Block; /*0x51730a*/
 

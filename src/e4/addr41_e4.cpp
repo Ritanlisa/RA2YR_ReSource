@@ -32,6 +32,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/E4Recv_425670_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {
@@ -65,7 +66,7 @@ int sub_4116A0(unsigned int a1)
         ((Debug *)0)->Log();
     return *(unsigned int *)(v3 + 32); /*0x4116df*/
   }
-    v5 = Time::GetElapsedMS() - *((unsigned int *)&g_abs_887794 + 47 * v2);
+    v5 = this->this->this->Time::GetElapsedMS() - *((unsigned int *)&g_abs_887794 + 47 * v2);
   v17 = *(unsigned int *)(v3 + 144); /*0x4116f4*/
   EnterCriticalSection((LPCRITICAL_SECTION)(v3 + 160)); /*0x4116ff*/
   v6 = *(unsigned int *)(v3 + 140); /*0x41170b*/
@@ -278,14 +279,14 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   int v6; // eax
   int v7; // edx
   unsigned int v8; // ecx
-  LPDIRECTSOUND DirectSound; // [esp+8h] [ebp-64h]
+  AbstractClass ** DirectSound;
   unsigned int v11[24]; // [esp+Ch] [ebp-60h] BYREF
 
-  DirectSound = (gamemd::AbstractClass **)(((Audio *)0)->GetDirectSound());
+  DirectSound = (gamemd::AbstractClass **)((LPDIRECTSOUND)((gamemd::AbstractClass **)(((Audio *)0)->GetDirectSound())));
     ((Debug *)0)->Log();
   GetCurrentThreadId(); /*0x411b3b*/
     ((Debug *)0)->Log();
-    if ( !Audio::IsSoundEnabled() )
+    if ( !((Audio *)0)->IsSoundEnabled() )
     return (gamemd::AbstractClass **)(-13);
   v3 = 0; /*0x411b5c*/
   v4 = byte_887778; /*0x411b5e*/
@@ -399,7 +400,7 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     *(unsigned int *)(v3 + 124) = v10; /*0x411f4a*/
     *(unsigned short *)(v3 + 122) = v9; /*0x411f4d*/
     *(unsigned int *)(v3 + 128) = v10 * v11; /*0x411f51*/
-        DirectSoundAudio = Audio::GetDirectSound();
+        DirectSoundAudio = ((Audio *)0)->GetDirectSound();
     DirectSoundAudio->lpVtbl->CreateSoundBuffer( /*0x411f63*/
       DirectSoundAudio,
       (LPCDSBUFFERDESC)(v3 + 100),
@@ -525,7 +526,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
     LeaveCriticalSection(lpCriticalSection); /*0x4120c1*/
     return -13; /*0x4120d3*/
   }
-  v12 = (char *)((unsigned int)((char *)((unsigned int)(a3))));
+  v12 = (char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)(a3))))));
   *(unsigned int *)(v5 + 4 * v10 + 80) = v4; /*0x4120d8*/
   *(unsigned int *)(v5 + 4 * v10 + 88) = v12; /*0x4120dc*/
   *(unsigned int *)(v5 + 4 * v10 + 72) = 1; /*0x4120e0*/
@@ -706,7 +707,7 @@ bool sub_413CD0(int a1)
 namespace gamemd {
 INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
 {
-  int result; // eax
+  INIClass ** result;
   int v4; // ecx
   uint8_t *StringByIndex; // eax
   char *v6; // eax
@@ -741,7 +742,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
   int i; // [esp+Ch] [ebp-A4h]
   int v37; // [esp+14h] [ebp-9Ch]
   int v38; // [esp+18h] [ebp-98h]
-  int v39; // [esp+20h] [ebp-90h]
+  INIClass ** v39;
   unsigned int v40[3]; // [esp+24h] [ebp-8Ch] BYREF
   char String[128]; // [esp+30h] [ebp-80h] BYREF
 
@@ -834,14 +835,14 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
             }
             else
             {
-              a2 = 1; /*0x41b402*/
+              a2 = (void *)(1);
               (*(void (**)(int))(*(unsigned int *)v12 + 32))(v12); /*0x41b406*/
             }
           }
         }
       }
     }
-    result = v39; /*0x41b40d*/
+    result = (gamemd::INIClass **)(v39);
     v4 = i + 1; /*0x41b411*/
   }
   return result; /*0x41b421*/

@@ -565,17 +565,17 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
   void **v6; // ebp
   void *v7; // eax
   void *v8; // esi
-  #72 *v9; // eax
+  void *v9; // eax
   void *ComboBoxSelectedRaw; // eax
-  #72 *ColorTooltip; // eax
+  void *ColorTooltip; // eax
   void *ComboBoxSelected; // eax
-  #72 *Name; // eax
+  void *Name; // eax
   int v14; // eax
   int v15; // eax
-  #72 *StringCSF; // eax
-  #72 *v17; // eax
-  #72 *v18; // eax
-  #72 *v19; // eax
+  void *StringCSF; // eax
+  void *v17; // eax
+  void *v18; // eax
+  void *v19; // eax
 
   result = BaseDialogProc(hDlg, a2, a3, a4); /*0x6ae40a*/
   if ( !result ) /*0x6ae411*/
@@ -605,19 +605,19 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
           switch ( v15 ) /*0x6ae604*/
           {
             case -1: /*0x6ae604*/
-              StringCSF = GetStringCSF((#72 *)aSttPlayernone, 0, g_Str_File_Skirmish_cpp, 135); /*0x6ae617*/
+              StringCSF = GetStringCSF((void *)aSttPlayernone, 0, g_Str_File_Skirmish_cpp, 135); /*0x6ae617*/
               WideString::Assign_Alt(v6, StringCSF); /*0x6ae61f*/
               return 1; /*0x6ae62d*/
             case 2: /*0x6ae604*/
-              v17 = GetStringCSF((#72 *)g_Str_STT_PlayerDumbAI, 0, g_Str_File_Skirmish_cpp, 137); /*0x6ae646*/
+              v17 = GetStringCSF((void *)g_Str_STT_PlayerDumbAI, 0, g_Str_File_Skirmish_cpp, 137); /*0x6ae646*/
               WideString::Assign_Alt(v6, v17); /*0x6ae64e*/
               return 1; /*0x6ae65c*/
             case 1: /*0x6ae604*/
-              v18 = GetStringCSF((#72 *)g_Str_STT_PlayerSmartAI, 0, g_Str_File_Skirmish_cpp, 139); /*0x6ae675*/
+              v18 = GetStringCSF((void *)g_Str_STT_PlayerSmartAI, 0, g_Str_File_Skirmish_cpp, 139); /*0x6ae675*/
               WideString::Assign_Alt(v6, v18); /*0x6ae67d*/
               return 1; /*0x6ae68b*/
             case 0: /*0x6ae604*/
-              v19 = GetStringCSF((#72 *)g_Str_STT_PlayerGeniusAI, 0, g_Str_File_Skirmish_cpp, 141); /*0x6ae6a3*/
+              v19 = GetStringCSF((void *)g_Str_STT_PlayerGeniusAI, 0, g_Str_File_Skirmish_cpp, 141); /*0x6ae6a3*/
               WideString::Assign_Alt(v6, v19); /*0x6ae6ab*/
               return 1; /*0x6ae6b9*/
           }

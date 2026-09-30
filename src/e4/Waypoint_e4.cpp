@@ -22,10 +22,10 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   unsigned int *v6; // ecx
   CampaignScore *v7; // edi
   unsigned int *Element; // esi
-  signed int v10; // [esp+10h] [ebp-4h]
+  char * v10;
 
-  v2 = (int)((char *)(0));
-  v10 = (char *)(0);
+  v2 = (char *)((int)((char *)(0)));
+  v10 = (char *)((int)((char *)(0)));
   for ( i = (unsigned char *)this + 528; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
@@ -37,13 +37,13 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
         v5 = 0; /*0x5023e2*/
       *(unsigned int *)i = v5; /*0x5023e4*/
     }
-    v6 = *(unsigned int **)i; /*0x5023e6*/
+    v6 = (int)(*(unsigned int **)i);
     v7 = 0; /*0x5023e8*/
     if ( *(int *)(*(unsigned int *)i + 56) > 0 ) /*0x5023ef*/
       break; /*0x5023ef*/
 LABEL_12:
     v10 = ++v2; /*0x502437*/
-    if ( v2 >= 12 ) /*0x50243b*/
+    if ( v2 >= (char *)(12) ) /*0x50243b*/
       return 0; /*0x50244c*/
   }
   while ( 1 ) /*0x5023f7*/
@@ -58,7 +58,7 @@ LABEL_12:
     v7 = (CampaignScore *)((char *)v7 + 1); /*0x502426*/
     if ( (int)v7 >= *(unsigned int *)(*(unsigned int *)i + 56) ) /*0x50242a*/
     {
-      v2 = v10; /*0x50242c*/
+      v2 = (char *)(v10);
       goto LABEL_12; /*0x50242c*/
     }
   }
@@ -104,10 +104,10 @@ int Waypoint::FindCell(unsigned int * a2)
      || (uint16_t)(i[1] / 256) != (uint16_t)(a2[1] / 256);
         i += 3 )
   {
-    if ( ++v3 >= v6 ) /*0x763ac5*/
+    if ( ++(int *)(v3) >= (int *)(v6) ) /*0x763ac5*/
       return 0; /*0x763ac5*/
   }
-  v7[9] = v3; /*0x763ad0*/
+  v7[9] = (int)(v3);
   return 1; /*0x763acd*/
 
 }

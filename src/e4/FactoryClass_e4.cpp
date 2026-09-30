@@ -40,7 +40,7 @@ int FactoryClass::UpdateProduction()
   int v6; // edi
   int v7; // eax
   int v8; // eax
-  #72 *v9; // eax
+  void *v9; // eax
   int v11; // [esp+10h] [ebp-8h]
 
   IDA_LOBYTE(Speed) = *((unsigned char *)this + 112); /*0x4c9b28*/
@@ -166,7 +166,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
     *((unsigned int *)this + 12) = v17; /*0x4c9d8e*/
     *((unsigned int *)this + 13) = 0; /*0x4c9d92*/
     *((unsigned int *)this + 9) = 0; /*0x4c9d95*/
-    *((unsigned int *)this + 22) = (*(int (**)(int, #375 *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
+    *((unsigned int *)this + 22) = (*(int (**)(int, void *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
     if ( !(uint8_t)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
     {
       v12 = *((unsigned int *)this + 22); /*0x4c9db1*/
@@ -198,8 +198,8 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   else
   {
     v5 = (int)(*((unsigned int *)this + 18));
-    v6 = *((unsigned int *)this + 20); /*0x4c9cf6*/
-    v7 = (char *)this + 64; /*0x4c9cf9*/
+    v6 = (int)(*((unsigned int *)this + 20));
+    v7 = (int)((char *)this + 64);
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)
@@ -244,7 +244,7 @@ namespace gamemd {
 int FactoryClass::StartProduction(char a2)
 {
 
-  wchar_t *v2; // eax
+  unsigned int v2;
   int v4; // [esp+4h] [ebp-8h]
 
   if ( *((unsigned char *)this + 112) ) /*0x4c9e60*/
@@ -551,27 +551,27 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x4ca791*/
   v7 = Block; /*0x4ca7a6*/
   v3 = (*(int (**)(int *, void ***))(g_abs_A83E30 + 16))(&g_abs_A83E30, &v7); /*0x4ca7aa*/
-  if ( v3 != -1 && v3 < g_abs_A83E40 && v3 < --g_abs_A83E40 ) /*0x4ca7c5*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_A83E40) && v3 < --g_abs_A83E40 ) /*0x4ca7c5*/
   {
     do /*0x4ca7dd*/
     {
       ++v3; /*0x4ca7cd*/
       *((unsigned int *)g_abs_A83E34 + v3 - 1) = *((unsigned int *)g_abs_A83E34 + v3); /*0x4ca7d1*/
     }
-    while ( v3 < g_abs_A83E40 ); /*0x4ca7dd*/
+    while ( v3 < (int)((int))((int))(g_abs_A83E40) ); /*0x4ca7dd*/
   }
   if ( g_abs_A8E9A0 ) /*0x4ca7e6*/
     FactoryClass::AbandonProduction((int)Block); /*0x4ca7ea*/
   v7 = Block; /*0x4ca7ff*/
   v4 = (*(int (**)(int *, void ***))(g_abs_B0F720 + 16))(&g_abs_B0F720, &v7); /*0x4ca803*/
-  if ( v4 != -1 && v4 < g_abs_B0F730 && v4 < --g_abs_B0F730 ) /*0x4ca81e*/
+  if ( v4 != -1 && v4 < (int)((int))((int))(g_abs_B0F730) && v4 < --g_abs_B0F730 ) /*0x4ca81e*/
   {
     do /*0x4ca836*/
     {
       ++v4; /*0x4ca826*/
       *((unsigned int *)g_abs_B0F724 + v4 - 1) = *((unsigned int *)g_abs_B0F724 + v4); /*0x4ca82a*/
     }
-    while ( v4 < g_abs_B0F730 ); /*0x4ca836*/
+    while ( v4 < (int)((int))((int))(g_abs_B0F730) ); /*0x4ca836*/
   }
   v5 = *(Block + 17); /*0x4ca838*/
   *(Block + 16) = &vt_VectorClass_TechnoTypeClass_const; /*0x4ca83b*/
@@ -583,7 +583,7 @@ void * FactoryClass::CopyTo(void ** Block, char a2)
   *((unsigned char *)Block + 77) = 0; /*0x4ca85f*/
   *(Block + 18) = 0; /*0x4ca863*/
   AbstractClass::DTOR(Block); /*0x4ca86a*/
-  if ( (Block & 1) != 0 ) /*0x4ca874*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4ca874*/
     RA2_OPDEL(Block); /*0x4ca877*/
   return (FactoryClass *)Block; /*0x4ca881*/
 
@@ -625,14 +625,14 @@ int FactoryClass::FinishProduction(int a2)
           IDA_LOBYTE(v4) = g_abs_AC4CA0; /*0x6350ba*/
           if ( g_abs_AC4CA8 < g_abs_AC4CA0 /*0x6350f4*/
             || (g_abs_AC4CA5 || !g_abs_AC4CA0)
-            && g_abs_AC4CAC > 0
+            && g_abs_AC4CAC > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
             && (IDA_LOBYTE(v4) = (*(int (**)(int *, int, unsigned int))(g_abs_AC4C98 + 8))(
                                &g_abs_AC4C98,
-                               g_abs_AC4CA0 + g_abs_AC4CAC,
+                               (unsigned int)(g_abs_AC4CA0)+ g_abs_AC4CAC,
                                0),
                 (unsigned char)v4) )
           {
-            v4 = g_abs_AC4CA8++; /*0x6350fc*/
+            v4 = (int)((unsigned int)(g_abs_AC4CA8++));
             *((unsigned int *)g_abs_AC4C9C + v4) = this; /*0x63510b*/
           }
         }

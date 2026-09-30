@@ -27,7 +27,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
 
   int v5; // eax
 
-  AbstractClass::Constructor((#373 *)this); /*0x4717d3*/
+  AbstractClass::Constructor((void *)this); /*0x4717d3*/
   *((unsigned char *)this + 48) = 1; /*0x4717e2*/
   *((unsigned int *)this + 10) = 0; /*0x4717e6*/
   *((unsigned int *)this + 11) = 0; /*0x4717e9*/
@@ -47,13 +47,13 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   *((unsigned int *)this + 17) = 0; /*0x471832*/
   if ( g_abs_89E100 < g_abs_89E0F8 /*0x471868*/
     || (g_abs_89E0FD || !g_abs_89E0F8)
-    && g_abs_89E104 > 0
+    && g_abs_89E104 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_89E0F0 + 8))(
          &g_abs_89E0F0,
-         g_abs_89E0F8 + g_abs_89E104,
+         (unsigned int)(g_abs_89E0F8)+ g_abs_89E104,
          0) )
   {
-    v5 = g_abs_89E100++; /*0x471875*/
+    v5 = (int)(g_abs_89E100++);
     *((unsigned int *)g_abs_89E0F4 + v5) = this; /*0x471884*/
   }
   return this; /*0x471889*/
@@ -276,7 +276,7 @@ void CaptureManagerClass::CaptureUnit(int a2)
   if ( !a2 ) /*0x471d4f*/
     return 0; /*0x471d54*/
   v5 = (*(unsigned char *)(a2 + 20) & 1) != 0 ? a2 : 0;
-  result = CaptureManagerClass::CanCapture((unsigned int *)(this), (unsigned int *)v5); /*0x471d6e*/
+  result = (char)(CaptureManagerClass::CanCapture((unsigned int *)(this), (unsigned int *)v5));
   if ( result )
   {
     if ( *((unsigned int *)this + 15) == 1 ) /*0x471d85*/
@@ -316,7 +316,7 @@ void CaptureManagerClass::CaptureUnit(int a2)
         *((unsigned int *)this + 13) = v16 + 1; /*0x471e28*/
         *(unsigned int *)(v17 + 4 * v16) = v12; /*0x471e2b*/
       }
-      v18 = v12 + 2; /*0x471e31*/
+      v18 = (unsigned int *)(v12 + 2);
       *(unsigned int *)(v5 + 704) = *((unsigned int *)this + 18); /*0x471e34*/
       v19 = *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 784); /*0x471e45*/
       *v18 = *(unsigned int *)&HouseClass_Player.__pad_5568[23248]; /*0x471e4b*/
@@ -994,7 +994,7 @@ int CaptureManagerClass::PowerDrainUpdate(int a2)
   int v4; // esi
   int v5; // eax
 
-  result = AbstractClass::ProcessPower((#378 *)this); /*0x4726f9*/
+  result = AbstractClass::ProcessPower((void *)this); /*0x4726f9*/
   v4 = *((unsigned int *)this + 18); /*0x4726fe*/
   if ( v4 ) /*0x472703*/
   {

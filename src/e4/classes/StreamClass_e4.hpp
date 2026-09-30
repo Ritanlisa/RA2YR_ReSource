@@ -26,7 +26,7 @@ struct StreamClass {
     int Set2(unsigned int * a2);
     int SetDirty(unsigned char * a1);
     int Vt32Thunk(int a1);
-    int WriteBytes(unsigned __int16 a2, char a3, int a4, int a5, int a6);
+    int WriteBytes(uint16_t a2, char a3, int a4, int a5, int a6);
     unsigned int ReadAndSeek(void * aP1, void * aP2);
 };
 

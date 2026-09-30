@@ -144,7 +144,7 @@ struct AbstractClass {
     unsigned int *  updateAnimationState(void * aP1, void * aP2);  // 0x5C5A30
     int IsNotNull();  // 0x5F5930
     int COMStub_79();  // 0x5F6C70
-    void ProcessData(unsigned int * a2, __int16 * a3);  // 0x6293E0
+    void ProcessData(unsigned int * a2, int16_t * a3);  // 0x6293E0
     DynamicVector *  getTeamIndex(unsigned int * Block, char a2);  // 0x645B10
     int checkTeamMembership();  // 0x65C2E0
     int  dispatchTeamEvent(int a2, int a3);  // 0x65C340
@@ -196,16 +196,16 @@ struct AbstractClass {
     void*  clearOverlayFlags(char a2);  // 0x499DA0
     void*  getHouseHandle(char a2);  // 0x4F4C00
     FileClass *  processAITrigger(unsigned int * Block, char a2);  // 0x65C610
-    int  SaveLoad_Prefix_0(void * aP0, void * aP1);  // 0x410380
+    int SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1);  // 0x410380
     unsigned int updateLayer();  // 0x425520
-    int GetType(__int16 * a2, int a3);  // 0x4CA160
+    int GetType(int16_t * a2, int a3);  // 0x4CA160
     int checkPassability();  // 0x50E370
     void resetTeamState();  // 0x65C540
     unsigned int * Copy8Bytes();  // 0x72A9C0
     int initVtableBase();  // 0x410100
     int  GetVtable3(void * aP0);  // 0x410220
     int  GenerateUniqueID(int a1);  // 0x410230
-    int  SaveLoad_Prefix(void * aP0, void * aP1, void * aP2);  // 0x410320
+    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2);  // 0x410320
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
     int COMStub_Return0_10();  // 0x410480

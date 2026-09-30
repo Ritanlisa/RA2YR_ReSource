@@ -42,19 +42,19 @@ int IPXManagerClass::send(int a2)
 {
 
   unsigned int * v2;
-  int result; // eax
+  unsigned int * result;
   unsigned int *i; // ecx
 
   v2 = (int)((unsigned int *)(*((char *)this + 17)));
-  result = (unsigned int *)(0);
+  result = (int)((unsigned int *)(0));
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
   for ( i = (char *)this + 10; *(unsigned int *)(*i + 100) != a2; ++i ) /*0x54104f*/
   {
-    if ( ++result >= v2 ) /*0x54105f*/
+    if ( ++result >= (unsigned int *)((int))(v2) ) /*0x54105f*/
       return -1; /*0x54105f*/
   }
-  return result; /*0x541064*/
+  return (int)(result);
 
 }
 } // namespace gamemd
@@ -107,7 +107,7 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)
 
   int v5; // eax
   int v6; // ecx
-  int v7; // eax
+  unsigned int * v7;
   int v8; // ecx
   int v9; // edx
   int a4; // edi
@@ -129,7 +129,7 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)
   while ( 1 ) /*0x54162b*/
   {
     v6 = (unsigned int *)(this->connTable[this->curConnIndex]);
-    v7 = (unsigned int *)((*(int (**)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3));
+    v7 = (int)((unsigned int *)((*(int (**)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3)));
     v8 = *((unsigned int *)this + 21); /*0x541634*/
     v9 = this-((unsigned int *)(>connTable))[v8++]; /*0x541637*/
     a4 = *(unsigned int *)(v9 + 100); /*0x54163c*/

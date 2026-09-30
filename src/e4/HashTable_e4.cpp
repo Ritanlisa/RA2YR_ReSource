@@ -623,10 +623,10 @@ int HashTable_flat::Find(const char * a1, ConvertClass * aP2)
   int v7; // esi
 
   String::Assign((char **)&a1, a1); /*0x6ba14c*/
-  if ( (g_abs_B077F8 & 1) == 0 ) /*0x6ba158*/
+  if ( ((unsigned int)(g_abs_B077F8)& 1) == 0 ) /*0x6ba158*/
   {
     *(unsigned int *)&g_abs_B077F8 = 0; /*0x6ba164*/
-    g_abs_B077F8 |= 1u; /*0x6ba16e*/
+    (unsigned int)(g_abs_B077F8)|= 1u; /*0x6ba16e*/
     atexit(nullsub_39); /*0x6ba174*/
   }
   *(unsigned int *)&g_abs_B077F8 = 0; /*0x6ba17c*/

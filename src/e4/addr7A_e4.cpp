@@ -195,7 +195,7 @@ void WOL_RequestMatch(void * a1)
   if ( v1 ) /*0x7a06b2*/
     CloseDialog(v1, 0); /*0x7a06b8*/
   g_NetworkLobbyState = 0; /*0x7a06bd*/
-    this->Network::Init();
+    ((Network *)0)->Init();
   if ( g_WOL_UserList.owningHouseIndex < 2 ) /*0x7a06cf*/
     goto LABEL_17; /*0x7a06cf*/
   for ( i = 0; i < (int)stru_B76AC4.?; ++i ) /*0x7a06de*/
@@ -208,7 +208,7 @@ void WOL_RequestMatch(void * a1)
   CollectWOLConnectionTokens(v28); /*0x7a072c*/
   memset(&v31[168], 0, 0x6Cu); /*0x7a074b*/
   v4 = -1; /*0x7a074d*/
-    this->Debug::Log();
+    ((Debug *)0)->Log();
   v5 = 0; /*0x7a075e*/
   if ( g_WOL_UserList.owningHouseIndex <= 0 ) /*0x7a0762*/
     goto LABEL_17; /*0x7a0762*/
@@ -318,7 +318,7 @@ void WOL_RequestMatch(void * a1)
     String::Append((String *)v31, (const char *)a1); /*0x7a0a77*/
   else
     String::Append((String *)v31, (const char *)&stru_82BA00.?); /*0x7a0a82*/
-  String::AssignFromPtr((String *)&v31[12], (const char **)&g_WindowManager.__pad_EC[684]); /*0x7a0a90*/
+  ((String *)((String *)&v31[12]))->AssignFromPtr((const char **)&g_WindowManager.__pad_EC[684]); /*0x7a0a90*/
   ((String *)((String *)&v31[12]))->ToLower(); /*0x7a0a99*/
   v15 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 /*0x7a0abd*/
                   + 4 * (dword_B76548(&v31[12]) & ((1 << IDA_SLOBYTE(g_WOL_ConnectionPool.HashMap_field_0x0C)) - 1)));
@@ -379,7 +379,7 @@ void WOL_RequestMatch(void * a1)
   DeleteAndZero((ObjectClass *)&v31[4]); /*0x7a0c72*/
   String::Append2((String *)v31, (char **)&v31[8]); /*0x7a0c80*/
   v26 = *(unsigned int *)ppv; /*0x7a0c8e*/
-  v27 = String::GetOrEmpty((String *)v31); /*0x7a0c90*/
+  v27 = ((String *)((String *)v31))->GetOrEmpty(); /*0x7a0c90*/
   (*(void (__stdcall **)(LPVOID, unsigned char *, char *))(v26 + 48))(ppv, &v31[60], v27); /*0x7a0ca2*/
   g_WOL_GameListState = 0; /*0x7a0ca5*/
   g_WOL_IdleHandler = 4; /*0x7a0cac*/
@@ -415,7 +415,7 @@ void E4Recv_7A0DD0::sub_7A0DD0()
       if ( (int)v3 >= (int)&g_abs_A8DAB0 ) /*0x7a0e26*/
         return; /*0x7a0e26*/
     }
-    GameUI = (HWND)Dialog::FindGameUI(); /*0x7a0e2d*/
+    GameUI = (HWND)this->Dialog::FindGameUI(); /*0x7a0e2d*/
     if ( GameUI ) /*0x7a0e34*/
       UpdateLobbyGraphicsWOL(GameUI, v2, -1); /*0x7a0e3c*/
   }
@@ -447,7 +447,7 @@ Coord * * WOL_ProcessPingRequests()
   result = g_NetworkLobbyState; /*0x7a1079*/
   if ( !g_NetworkLobbyState ) /*0x7a1080*/
   {
-        Debug::Log();
+        this->Debug::Log();
     result = (char)stru_B76AC4.?; /*0x7a109d*/
     if ( stru_B76AC4.? ) /*0x7a10a7*/
     {

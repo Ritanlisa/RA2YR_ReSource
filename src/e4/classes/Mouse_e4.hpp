@@ -38,8 +38,8 @@ struct Mouse {
     char  SetCursor(void * aP1, void * aP2);  // 0x5BDC80
     HWND ReleaseCapture();  // 0x6938C0
     AbstractClass * *  DrawCursor(void * aP1, void * aP2, int a4);  // 0x7B93F0
-    SHORT  GetKeyState(unsigned __int8 vKey);  // 0x53EC90
-    BOOL  IsButtonDown(unsigned __int8 a1);  // 0x54F5C0
+    SHORT  GetKeyState(uint8_t vKey);  // 0x53EC90
+    BOOL  IsButtonDown(uint8_t a1);  // 0x54F5C0
     HWND HideWindow();  // 0x5BC400
 };
 } // namespace gamemd

@@ -80,11 +80,11 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   if ( g_abs_A8DA84 && *(unsigned int *)(*(unsigned int *)g_abs_A8DA78 + 111) == a5 ) /*0x541192*/
     return 0; /*0x541192*/
   v7 = 1; /*0x541194*/
-  if ( g_abs_A8DA84 <= 1 ) /*0x54119b*/
+  if ( g_abs_A8DA84 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1) ) /*0x54119b*/
     return 0; /*0x54119b*/
   for ( i = g_abs_A8DA78 + 4; *(unsigned int *)(*(unsigned int *)i + 111) != a5; i += 4 ) /*0x54119d*/
   {
-    if ( ++v7 >= g_abs_A8DA84 ) /*0x5411ad*/
+    if ( ++(int)((int))((int))(v7) >= g_abs_A8DA84 ) /*0x5411ad*/
       return 0; /*0x5411ad*/
   }
   IDA_LOWORD(v5) = *((unsigned short *)&g_abs_A8E2B2 + v7); /*0x5411be*/
@@ -431,25 +431,25 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   sprintf(Buffer, DataGlobal_00829600, (const char *)&off_7E1BC6 + 112 * (unsigned int)a1);
   int v149[22]; // [esp+214h] [ebp-7FCh] BYREF
   ((CCFileClass *)(v149))->Construct(Buffer);
-  v10 = (unsigned int)(CCFileClass::GetSize(v149));
+  v10 = (void *)((unsigned int)(CCFileClass::GetSize(v149)));
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80420] = operator new(v10);
   signed int v11 = CCFileClass::GetSize(v149);
   ((CCFileClass *)(v149))->Read(*(CampaignScore **)&((unsigned int *)(g_NetworkPlayerBuffer))[80420], v11);
   unsigned int v148 =
   FileClass::SetFileName(v149, (IUnknown *)Buffer);
-  v12 = (unsigned int)(CCFileClass::GetSize(v149));
+  v12 = (void *)((unsigned int)(CCFileClass::GetSize(v149)));
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80424] = operator new(v12);
   signed int v13 = CCFileClass::GetSize(v149);
   ((CCFileClass *)(v149))->Read(*(CampaignScore **)&((unsigned int *)(g_NetworkPlayerBuffer))[80424], v13);
   v148 = (unsigned int)((void *)(51));
   FileClass::SetFileName(v149, (IUnknown *)Buffer);
-  v14 = (unsigned int)(CCFileClass::GetSize(v149));
+  v14 = (void *)((unsigned int)(CCFileClass::GetSize(v149)));
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80428] = operator new(v14);
   signed int v15 = CCFileClass::GetSize(v149);
   ((CCFileClass *)(v149))->Read(*(CampaignScore **)&((unsigned int *)(g_NetworkPlayerBuffer))[80428], v15);
   v148 = (unsigned int)((void *)(52));
   FileClass::SetFileName(v149, (IUnknown *)Buffer);
-  v16 = (unsigned int)(CCFileClass::GetSize(v149));
+  v16 = (void *)((unsigned int)(CCFileClass::GetSize(v149)));
   *(unsigned int *)&((unsigned int *)(g_NetworkPlayerBuffer))[80432] = operator new(v16);
   signed int v17 = CCFileClass::GetSize(v149);
   ((CCFileClass *)(v149))->Read(*(CampaignScore **)&((unsigned int *)(g_NetworkPlayerBuffer))[80432], v17);

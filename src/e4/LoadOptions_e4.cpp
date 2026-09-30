@@ -26,8 +26,8 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   HWND MessageBox; // edi
   char Saved; // bl
 
-  v1 = (*(int (**)(int))(*(unsigned int *)g_abs_887640 + 40))(g_abs_887640); /*0x559d81*/
-  StringCSF = GetStringCSF(aTxtLoading, 0, g_abs_829F5C, 1052); /*0x559d83*/
+  v1 = (wchar_t *)((*(int (**)(int))(*(unsigned int *)g_abs_887640 + 40))(g_abs_887640));
+  StringCSF = (wchar_t *)(GetStringCSF(aTxtLoading, 0, g_abs_829F5C, 1052));
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
   (*(void (**)(int))(*(unsigned int *)g_abs_887640 + 12))(g_abs_887640); /*0x559d9b*/
   if ( MessageBox ) /*0x559da0*/
@@ -52,12 +52,12 @@ namespace gamemd {
 char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
 {
 
-  #72 *StringCSF; // eax
+  void *StringCSF; // eax
   int MessageBox; // esi
   char v4; // bl
 
-  StringCSF = GetStringCSF((#72 *)aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107); /*0x559e55*/
-  MessageBox = CreateMessageBox(StringCSF, 0, 0); /*0x559e69*/
+  StringCSF = (void *)((int)(GetStringCSF((void *)aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107)));
+  MessageBox = (int)(CreateMessageBox(StringCSF, 0, 0));
   (*(void (**)(unsigned int))(*(unsigned int *)g_abs_87F7E8[8086] + 12))(g_abs_87F7E8[8086]); /*0x559e6d*/
   if ( MessageBox ) /*0x559e72*/
     Dialog::Show(MessageBox); /*0x559e76*/
@@ -130,7 +130,7 @@ char LoadOptions::Read(wchar_t * Destination, int a2)
   v3 = LoadOptions_Load(v2, (int)v8); /*0x559f27*/
   if ( !v3 ) /*0x559f2b*/
     return 0; /*0x55a03f*/
-  if ( ReadPointerFromECX3(v8) == g_abs_83D560 ) /*0x559f46*/
+  if ( ReadPointerFromECX3(v8) == (_T)((_T))((_T))(g_abs_83D560) ) /*0x559f46*/
   {
     v5 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)v8); /*0x559f60*/
     wcscpy(Destination, v5); /*0x559f67*/
@@ -206,7 +206,7 @@ LoadOptions * LoadOptions::QueryInterface(char * Block, char a2)
   int v3; // esi
   void *v4; // eax
 
-  v3 = 0; /*0x55a0d4*/
+  v3 = (unsigned int)(0);
   for ( *(unsigned int *)Block = &vt_LoadOptionsClass; v3 < *((unsigned int *)Block + 12); ++v3 ) /*0x55a0e1*/
     RA2_OPDEL(*(void **)(*((unsigned int *)Block + 9) + 4 * v3)); /*0x55a0ea*/
   (*(void (**)(char *))(*((unsigned int *)Block + 8) + 12))(Block + 32); /*0x55a102*/

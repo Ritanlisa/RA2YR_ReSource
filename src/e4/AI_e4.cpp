@@ -34,7 +34,7 @@ void AI_CreateMCV()
     v5 = (int *)RA2_OPNEW(0x8E8u); /*0x5d7069*/
     if ( v5 ) /*0x5d7073*/
     {
-      v6 = (unsigned int *)((int *)UnitClass::Construct(v5, v4, v3));
+      v6 = (unsigned int *)((int *)((UnitClass *)(v5))->Construct(v4, v3));
       v7 = v6; /*0x5d707e*/
       if ( v6 ) /*0x5d7082*/
       {

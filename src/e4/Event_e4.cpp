@@ -96,10 +96,10 @@ void sub_5E2FA0()
   int result; // eax
   HWND Current; // esi
 
-    result = this->Dialog::GetCurrentType();
+    result = ((Dialog *)0)->GetCurrentType();
   if ( result == 107 ) /*0x5e2faa*/
   {
-        Current = Dialog::GetCurrent();
+        Current = this->Dialog::GetCurrent();
     result = SendDlgItemMessageA(Current, 1771, 0x188u, 0, 0); /*0x5e2fc8*/
     if ( result != -1 ) /*0x5e2fcd*/
     {
@@ -157,7 +157,7 @@ void sub_5E95E0()
   LABEL_13:
   if ( Game_PlayerCount - v4 <= v5 ) /*0x5e9671*/
     return 0; /*0x5e9694*/
-    this->Debug::Log();
+    ((Debug *)0)->Log();
   return 1; /*0x5e9689*/
 }
 }
@@ -208,10 +208,10 @@ void sub_796960()
         qmemcpy(&v9[((unsigned int *)(0].__pad_0))[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
       *(unsigned int *)&v9[((unsigned int *)(0].__pad_0))[44] = 0; /*0x796a21*/
       ((Network *)(v1))->SyncPlayerList(); /*0x796a29*/
-      this->Event::Dispatch(); /*0x796a2e*/
+      ((Event *)0)->Dispatch(); /*0x796a2e*/
       Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x796a42*/
       Network::FormatAddress(&stru_A8BB1C, 0); /*0x796a4e*/
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       memset(v10, 0, sizeof(v10)); /*0x796a6f*/
       v11 = 0; /*0x796a79*/
       v12 = 0; /*0x796a7b*/
@@ -239,7 +239,7 @@ void sub_796960()
         }
       }
   LABEL_24:
-      IDA_LOBYTE(owningHouseIndex) = this->Event::Dispatch(); /*0x796b09*/
+      IDA_LOBYTE(owningHouseIndex) = ((Event *)0)->Dispatch(); /*0x796b09*/
     }
   }
   return owningHouseIndex; /*0x796ad4*/
@@ -296,7 +296,7 @@ int sub_7A0F40()
       }
       while ( v1 < v10 ); /*0x7a102a*/
     }
-        this->Debug::Log();
+        ((Debug *)0)->Log();
 // 0x5e3720
     return ((Network *)(Source))->SendOptionsGame(); /*0x7a1048*/
   }
@@ -332,7 +332,7 @@ void sub_786270()
     (*(void (__stdcall **)(LPVOID, unsigned int))(*(unsigned int *)ppv + 140))(ppv, *(unsigned int *)Data); /*0x786334*/
   if ( !g_UIPointerTable ) /*0x786341*/
     return 0; /*0x78637d*/
-    this->Debug::Log();
+    ((Debug *)0)->Log();
   (*(void (__stdcall **)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
     g_UIPointerTable,
     &g_WindowManager.__pad_70[28],

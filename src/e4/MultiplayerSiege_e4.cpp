@@ -31,11 +31,11 @@ void MultiplayerSiege::Read()
   if ( result ) /*0x5ca687*/
   {
     result = 1; /*0x5ca690*/
-    if ( g_abs_A8DA84 > 0 ) /*0x5ca697*/
+    if ( g_abs_A8DA84 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x5ca697*/
     {
       v1 = 1; /*0x5ca6a1*/
       for ( *(unsigned int *)(*(unsigned int *)g_abs_A8DA78 + 107) = 1; /*0x5ca6ae*/
-            v1 < g_abs_A8DA84;
+            v1 < (int)((int))((int))(g_abs_A8DA84);
             *(unsigned int *)(*(unsigned int *)(g_abs_A8DA78 + 4) + 107) = 2 )
       {
         ++v1; /*0x5ca6bc*/
@@ -69,7 +69,7 @@ int MultiplayerSiege::Write(void ** a1)
     v2 = 0; /*0x5ca6ef*/
     v3 = 0; /*0x5ca6f1*/
     v4 = 0; /*0x5ca6f3*/
-    if ( g_abs_A8DA84 <= 0 ) /*0x5ca6f7*/
+    if ( g_abs_A8DA84 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x5ca6f7*/
     {
 LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSiege_cpp, 65));
       WideString::Assign_Alt(a1, StringCSF); /*0x5ca73a*/
@@ -77,7 +77,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSi
     }
     else
     {
-      v5 = g_abs_A8DA78; /*0x5ca6f9*/
+      v5 = (int)(g_abs_A8DA78);
       do /*0x5ca71e*/
       {
         v6 = *(unsigned int *)(*(unsigned int *)v5 + 107); /*0x5ca701*/
@@ -108,7 +108,7 @@ LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSi
         ++v4; /*0x5ca718*/
         v5 += 4; /*0x5ca719*/
       }
-      while ( v4 < g_abs_A8DA84 ); /*0x5ca71e*/
+      while ( v4 < (int)((int))((int))(g_abs_A8DA84) ); /*0x5ca71e*/
       if ( !v2 ) /*0x5ca722*/
         goto LABEL_12; /*0x5ca722*/
       if ( v3 >= 1 ) /*0x5ca793*/
@@ -149,9 +149,9 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   ((Multiplayer *)(&v14))->FindStartPositions(); /*0x5ca811*/
   v3 = 0; /*0x5ca81c*/
   memset(v13, 0, sizeof(v13)); /*0x5ca824*/
-  if ( g_abs_A8DA84 > 0 ) /*0x5ca836*/
+  if ( g_abs_A8DA84 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x5ca836*/
   {
-    v4 = g_abs_A8DA78; /*0x5ca838*/
+    v4 = (int)(g_abs_A8DA78);
     do /*0x5ca848*/
     {
       if ( *(unsigned int *)(*(unsigned int *)v4 + 107) == 1 ) /*0x5ca840*/
@@ -159,9 +159,9 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
       ++v3; /*0x5ca842*/
       v4 += 4; /*0x5ca843*/
     }
-    while ( v3 < g_abs_A8DA84 ); /*0x5ca848*/
+    while ( v3 < (int)((int))((int))(g_abs_A8DA84) ); /*0x5ca848*/
   }
-  if ( v3 >= g_abs_A8DA84 ) /*0x5ca84c*/
+  if ( v3 >= (int)((int))((int))(g_abs_A8DA84) ) /*0x5ca84c*/
   {
     v5 = (void **)(Block);
     v14 = (void **)(&vt_VectorClass_Cell);
@@ -316,9 +316,9 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   unsigned int v12[3]; // [esp+14h] [ebp-Ch] BYREF
 
   v2 = 0; /*0x5caad2*/
-  if ( g_abs_A8DA84 > 0 ) /*0x5caadf*/
+  if ( g_abs_A8DA84 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x5caadf*/
   {
-    v3 = g_abs_A8DA78; /*0x5caae4*/
+    v3 = (int)(g_abs_A8DA78);
     do /*0x5caaf3*/
     {
       if ( *(unsigned int *)(*(unsigned int *)v3 + 111) == ppv[12] ) /*0x5caaeb*/
@@ -326,9 +326,9 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
       ++v2; /*0x5caaed*/
       v3 += 4; /*0x5caaee*/
     }
-    while ( v2 < g_abs_A8DA84 ); /*0x5caaf3*/
+    while ( v2 < (int)((int))((int))(g_abs_A8DA84) ); /*0x5caaf3*/
   }
-  if ( v2 >= g_abs_A8DA84 ) /*0x5caafb*/
+  if ( v2 >= (int)((int))((int))(g_abs_A8DA84) ) /*0x5caafb*/
   {
     AI::CreateMCV(ppv, a2); /*0x5cab03*/
     return 0; /*0x5cab11*/

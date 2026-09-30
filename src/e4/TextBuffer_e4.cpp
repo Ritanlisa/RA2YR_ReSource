@@ -11,6 +11,7 @@
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
 
 // 0x5BCC90
 namespace gamemd {
@@ -27,7 +28,7 @@ void TextBuffer::Init()
   v2 = (unsigned int *)(this + 2000);
   do /*0x5bccbe*/
   {
-    v3 = (unsigned char *)(this + v1);
+    v3 = (unsigned char *)((unsigned int)(this)+ v1);
     v4 = v2; /*0x5bcc9e*/
     v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/
@@ -42,7 +43,7 @@ void TextBuffer::Init()
     ++v1; /*0x5bccb7*/
     ++v2; /*0x5bccb8*/
   }
-  while ( v1 < 25 ); /*0x5bccbe*/
+  while ( v1 < (unsigned int *)(25) ); /*0x5bccbe*/
   *(this + 10036) = 1; /*0x5bccc8*/
   return Text::DrawRepeated(this, 0, 0, 80, 25); /*0x5bccd4*/
 

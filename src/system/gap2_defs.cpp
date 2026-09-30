@@ -4345,7 +4345,7 @@ int CellClass::CheckProperty() {
   if ( (*((unsigned int *)this + 80) & 0x100) != 0 ) /*0x48689d*/
   {
     v1 = g_abs_89E7B4; /*0x4868a1*/
-    v2 = (int *)(*(int (**)(#378 *, unsigned char *))(*(unsigned int *)this + 72))(this, v8); /*0x4868ad*/
+    v2 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this + 72))(this, v8); /*0x4868ad*/
     v3 = *v2; /*0x4868b0*/
     v4 = v2[1]; /*0x4868b2*/
     v5 = v1 + v2[2]; /*0x4868b8*/
@@ -4356,7 +4356,7 @@ int CellClass::CheckProperty() {
   }
   else
   {
-    v7 = (unsigned int *)(*(int (**)(#378 *, unsigned char *))(*(unsigned int *)this + 72))(this, v8); /*0x4868dc*/
+    v7 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this + 72))(this, v8); /*0x4868dc*/
     *v9 = *v7; /*0x4868e6*/
     v9[1] = v7[1]; /*0x4868eb*/
     v9[2] = v7[2]; /*0x4868f2*/
@@ -8368,7 +8368,7 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
   int v35; // ebp
   MouseClass *v36; // esi
   unsigned int *v37; // eax
-  #376 *v38; // [esp+Ch] [ebp-134h]
+  void *v38; // [esp+Ch] [ebp-134h]
   unsigned int v39[3]; // [esp+1Ch] [ebp-124h] BYREF
   int v40; // [esp+28h] [ebp-118h]
   int v41; // [esp+2Ch] [ebp-114h]
@@ -24494,7 +24494,7 @@ void FactoryClass::FindAvailable() {
     Block = (void *)*this; /*0x636073*/
     v9 = *((unsigned int *)Block + 135); /*0x636077*/
     v10 = *(unsigned int *)(v9 + 48); /*0x63607d*/
-    if ( (uint8_t)House::IsHumanPlayer((#375 *)v9) && HouseClass_Player ) /*0x636090*/
+    if ( (uint8_t)House::IsHumanPlayer((void *)v9) && HouseClass_Player ) /*0x636090*/
       v10 = *((unsigned int *)HouseClass_Player + 12); /*0x636092*/
     DecFactoryClassCounter(v10); /*0x636097*/
     VectorClass::EraseAt(&g_abs_AC4C40, (int)&Block); /*0x6360a6*/
@@ -24629,7 +24629,7 @@ int FactoryClass::CompleteCurrentItem(int a2) {
     Block = *(void **)this; /*0x636722*/
     v19 = *((unsigned int *)Block + 135); /*0x636726*/
     v20 = *(unsigned int *)(v19 + 48); /*0x63672c*/
-    if ( (uint8_t)House::IsHumanPlayer((#375 *)v19) && HouseClass_Player ) /*0x63673f*/
+    if ( (uint8_t)House::IsHumanPlayer((void *)v19) && HouseClass_Player ) /*0x63673f*/
       v20 = *((unsigned int *)HouseClass_Player + 12); /*0x636741*/
     if ( v20 < 0x18 ) /*0x636746*/
       g_abs_AC4B84[v20] = (g_abs_AC4B84[v20] - 1) & ((g_abs_AC4B84[v20] - 1 < 0) - 1); /*0x636760*/
@@ -26161,7 +26161,7 @@ int TacticalClass::UpdateObjects() {
     do /*0x65ad1c*/
     {
       if ( *(unsigned int *)(*((unsigned int *)this + 57) + 4 * v2) ) /*0x65acfb*/
-        (*(void (**)(#377 *, int, void *, unsigned int))(*(unsigned int *)this + 636))( /*0x65ad0d*/
+        (*(void (**)(void *, int, void *, unsigned int))(*(unsigned int *)this + 636))( /*0x65ad0d*/
           this,
           v4,
           &g_abs_A8EC30,
@@ -26856,8 +26856,8 @@ void* ScenarioClass::InitTimer() {
   int v18; // edx
   int v19; // edx
   int v20; // edx
-  #72 *result; // eax
-  #72 *StringCSF; // eax
+  void *result; // eax
+  void *StringCSF; // eax
   int v23; // [esp+10h] [ebp-30h]
   unsigned int v24[2]; // [esp+18h] [ebp-28h] BYREF
   char Destination[32]; // [esp+20h] [ebp-20h] BYREF
@@ -27037,11 +27037,11 @@ void* ScenarioClass::InitTimer() {
   (*(void (**)(int))(*((unsigned int *)this + 3381) + 12))((char *)this + 13524); /*0x683a4c*/
   (*(void (**)(int))(*((unsigned int *)this + 3388) + 12))((char *)this + 13552); /*0x683a5b*/
   (*(void (**)(int))(*((unsigned int *)this + 3395) + 12))((char *)this + 13580); /*0x683a6a*/
-  result = (#72 *)g_abs_87F7E8[536212]; /*0x683a6d*/
+  result = (void *)g_abs_87F7E8[536212]; /*0x683a6d*/
   if ( g_abs_87F7E8[536212] == 5 ) /*0x683a79*/
   {
-    StringCSF = GetStringCSF((#72 *)aGuiSkirmishgam, 0, g_Str_File_Scenario_CPP, 522); /*0x683a8c*/
-    return wcscpy((#72 *)(g_abs_87F7E8[536210] + 4960), StringCSF); /*0x683a9f*/
+    StringCSF = GetStringCSF((void *)aGuiSkirmishgam, 0, g_Str_File_Scenario_CPP, 522); /*0x683a8c*/
+    return wcscpy((void *)(g_abs_87F7E8[536210] + 4960), StringCSF); /*0x683a9f*/
   }
   return result; /*0x683a72*/
 
@@ -29813,7 +29813,7 @@ int RadarClass::DrawBlip(char a2, AbstractClass * aP2) {
         {
           if ( *(unsigned char *)(v11[328] + 5824) ) /*0x6d5a5c*/
           {
-            result = House::IsHumanPlayer((#375 *)v11[135]); /*0x6d5a6c*/
+            result = House::IsHumanPlayer((void *)v11[135]); /*0x6d5a6c*/
             if ( (unsigned char)result ) /*0x6d5a73*/
               break; /*0x6d5a73*/
           }
@@ -30047,7 +30047,7 @@ int ScenarioClass::UpdateCounters(int a2, int a3, int a4, int a5) {
   int Status; // eax
 
   SuperClass::StartTimer(*(unsigned int *)(*(unsigned int *)(a2 + 600) + 4 * *((char *)this + 36)), 1, 0, 0); /*0x6e1bed*/
-  if ( HouseClass_Player == (#375 *)a2 ) /*0x6e1bf8*/
+  if ( HouseClass_Player == (void *)a2 ) /*0x6e1bf8*/
   {
     SidebarClass::AddCameo((int *)&g_abs_87F7E8, 31, *((char *)this + 36)); /*0x6e1c08*/
     Status = HouseClass::GetStatus((void *)0x1F, 0); /*0x6e1c1a*/
@@ -30477,7 +30477,7 @@ int TacticalClass::SetObserverView() {
       v3 = *((unsigned int *)g_abs_A8EC7C + v2); /*0x731241*/
       if ( v3 && !*(unsigned char *)(v3 + 129) )
       {
-        if ( g_abs_A8B238[0] ? House::IsHumanPlayer(*(#375 **)(v3 + 540)) : *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493) )
+        if ( g_abs_A8B238[0] ? House::IsHumanPlayer(*(void **)(v3 + 540)) : *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493) )
         {
           v5 = *(char **)(v3 + 532); /*0x73127c*/
           if ( v5 != this - 1 ) /*0x731285*/
@@ -30510,7 +30510,7 @@ LABEL_32:
     if ( v8 && !*(unsigned char *)(v8 + 129) && *(char **)(v8 + 532) == this - 1 ) /*0x73130e*/
     {
       if ( g_abs_A8B238[0] ) /*0x731317*/
-        IsHumanPlayer = House::IsHumanPlayer(*(#375 **)(v8 + 540)); /*0x73132d*/
+        IsHumanPlayer = House::IsHumanPlayer(*(void **)(v8 + 540)); /*0x73132d*/
       else
         IsHumanPlayer = *(unsigned char *)(*(unsigned int *)(v8 + 540) + 493); /*0x73131f*/
       if ( IsHumanPlayer ) /*0x731334*/
@@ -30560,7 +30560,7 @@ int TacticalClass::ResetView() {
     if ( v3 && !*(unsigned char *)(v3 + 129) && *(char **)(v3 + 532) == this - 1 ) /*0x73144b*/
     {
       if ( g_abs_A8B238[0] ) /*0x731454*/
-        IsHumanPlayer = House::IsHumanPlayer(*(#375 **)(v3 + 540)); /*0x73146a*/
+        IsHumanPlayer = House::IsHumanPlayer(*(void **)(v3 + 540)); /*0x73146a*/
       else
         IsHumanPlayer = *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493); /*0x73145c*/
       if ( IsHumanPlayer && !*(unsigned char *)(v3 + 131) ) /*0x731473*/
@@ -31008,7 +31008,7 @@ LABEL_90:
             {
               *((unsigned int *)this + 47) = 2;
             }
-            else if ( (uint8_t)House::IsCurrentPlayer((#375 *)*((unsigned int *)this + 135))
+            else if ( (uint8_t)House::IsCurrentPlayer((void *)*((unsigned int *)this + 135))
                    || !*(unsigned int *)&HouseClass_Player.__pad_5568[8068] )
             {
               (*(void (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 488))(this, 5, 0);

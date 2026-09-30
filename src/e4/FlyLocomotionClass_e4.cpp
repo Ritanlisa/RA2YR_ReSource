@@ -90,7 +90,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   v14 = 0; /*0x4cfed7*/
   if ( !g_abs_A8B238[0] /*0x4cfeef*/
     || (v2 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 540), *(unsigned int *)(v2 + 22016) == -1)
-    || (v22 = 1, (uint8_t)House::IsCurrentPlayer((#375 *)v2)) )
+    || (v22 = 1, (uint8_t)House::IsCurrentPlayer((void *)v2)) )
   {
     v22 = 0; /*0x4cfefd*/
   }
@@ -105,7 +105,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
                                                                                     + 22016)] )
         continue; /*0x4cff5e*/
     }
-    else if ( (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(*(unsigned int *)(a1 + 8) + 540), *(#375 **)(v4 + 540)) ) /*0x4cff32*/
+    else if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(*(unsigned int *)(a1 + 8) + 540), *(void **)(v4 + 540)) ) /*0x4cff32*/
     {
       continue; /*0x4cff39*/
     }
@@ -119,7 +119,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3598)) )
     {
       if ( g_abs_A8B238[0] /*0x4d003d*/
-        && (uint8_t)House::IsCurrentPlayer(*(#375 **)(*(unsigned int *)(a1 + 8) + 540))
+        && (uint8_t)House::IsCurrentPlayer(*(void **)(*(unsigned int *)(a1 + 8) + 540))
         && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(v4 + 540) + 52) + 422)
         && ((*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 1
          || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6
@@ -133,8 +133,8 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         {
           continue; /*0x4d006e*/
         }
-        v5 = v14++; /*0x4d0074*/
-        v6 = Block; /*0x4d007b*/
+        v5 = (unsigned int *)(v14++);
+        v6 = (unsigned int *)(Block);
       }
       else
       {
@@ -145,8 +145,8 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         {
           continue; /*0x4d00b0*/
         }
-        v5 = v20++; /*0x4d00b6*/
-        v6 = v17; /*0x4d00bd*/
+        v5 = (unsigned int *)(v20++);
+        v6 = (unsigned int *)(v17);
       }
       v6[v5] = v4; /*0x4d00c1*/
     }
@@ -161,8 +161,8 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   else
   {
-    v7 = Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, v14 - 1); /*0x4d00e2*/
-    v8 = Block; /*0x4d00ea*/
+    v7 = (unsigned int *)(Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, v14 - 1));
+    v8 = (unsigned int *)(Block);
     v9 = **(unsigned int **)(a1 + 8); /*0x4d00ee*/
   }
   (*(void (**)(unsigned int))(v9 + 968))(v8[v7]); /*0x4d011b*/
@@ -173,7 +173,7 @@ LABEL_45:
     RA2_OPDEL(Block); /*0x4d0139*/
     Block = 0; /*0x4d0141*/
   }
-  v16 = &vt_VectorClass_ObjectClass; /*0x4d0149*/
+  v16 = (void **)(&vt_VectorClass_ObjectClass);
   v13 = 0; /*0x4d0150*/
   v12 = 0; /*0x4d0154*/
   if ( v17 ) /*0x4d0159*/
@@ -233,10 +233,10 @@ namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_FlyLocomotionClass; /*0x4d03a3*/
+  *Block = (unsigned int)(&vt_FlyLocomotionClass);
   *(Block + 1) = &vt_FlyLocomotionClass; /*0x4d03a9*/
-  LocomotionClass::Construct(Block); /*0x4d03b0*/
-  if ( (Block & 1) != 0 ) /*0x4d03ba*/
+  ((LocomotionClass *)(Block))->Construct(); /*0x4d03b0*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4d03ba*/
     RA2_OPDEL(Block); /*0x4d03bd*/
   return (FlyLocomotionClass *)Block; /*0x4d03c7*/
 

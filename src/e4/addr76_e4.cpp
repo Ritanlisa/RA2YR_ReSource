@@ -213,7 +213,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   if ( File::IsReady(v34, 0) )
   {
     v29[1] = (void *)((unsigned int)(0));
-    v29[2] = (unsigned int)(0);
+    v29[2] = (void *)((unsigned int)(0));
     GenericList::Constructor(v30); /*0x764dcf*/
     v30[0] = &vt_List_INIClass_INISection; /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/

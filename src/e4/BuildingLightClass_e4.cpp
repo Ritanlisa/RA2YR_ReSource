@@ -131,11 +131,11 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
 }
 // 0x4370C0
 namespace gamemd {
-BuildingLightClass * BuildingLightClass::SDDTOR(#374 * Block, char a2)
+BuildingLightClass * BuildingLightClass::SDDTOR(void * Block, char a2)
 {
 
   int v3; // eax
-  #374 *v5; // [esp+4h] [ebp-4h] BYREF
+  void *v5; // [esp+4h] [ebp-4h] BYREF
 
   *(unsigned int *)Block = &vt_BuildingLightClass; /*0x4370c4*/
   *((unsigned int *)Block + 1) = &vt_BuildingLightClass; /*0x4370ca*/
@@ -144,7 +144,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(#374 * Block, char a2)
   if ( (uint8_t)ObjectClass::Undeploy(Block) ) /*0x4370df*/
     VectorClass::RemoveItem((int *)&g_abs_87F778, (ObjectClass *)Block); /*0x4370ee*/
   v5 = Block; /*0x437103*/
-  v3 = (*(int (**)(char *, #374 **))(*(unsigned int *)&g_abs_89F690 + 16))( /*0x437107*/
+  v3 = (*(int (**)(char *, void **))(*(unsigned int *)&g_abs_89F690 + 16))( /*0x437107*/
          &g_abs_89F690,
          &v5);
   if ( v3 != -1 && v3 < *(int *)&g_abs_89F690 ) /*0x437117*/

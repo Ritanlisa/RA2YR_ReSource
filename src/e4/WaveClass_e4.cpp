@@ -122,14 +122,14 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x763221*/
   v6 = Block; /*0x763236*/
   v3 = (*(int (**)(int *, void ***))(g_abs_A8EC38 + 16))(&g_abs_A8EC38, &v6); /*0x76323a*/
-  if ( v3 != -1 && v3 < g_abs_A8EC48 && v3 < --g_abs_A8EC48 ) /*0x763255*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_A8EC48) && v3 < --g_abs_A8EC48 ) /*0x763255*/
   {
     do /*0x76326d*/
     {
       ++v3; /*0x76325d*/
       *((unsigned int *)g_abs_A8EC3C + v3 - 1) = *((unsigned int *)g_abs_A8EC3C + v3); /*0x763261*/
     }
-    while ( v3 < g_abs_A8EC48 ); /*0x76326d*/
+    while ( v3 < (int)((int))((int))(g_abs_A8EC48) ); /*0x76326d*/
   }
   (*((void (**)(void **))*(Block + 124) + 3))(Block + 124); /*0x76327e*/
   v4 = *(Block + 125); /*0x763281*/

@@ -45,21 +45,21 @@ ControlClass GadgetClass::Dtor()
   int v1; // eax
   int v2; // eax
 
-  *this = &vt_GadgetClass; /*0x4e1390*/
-  v1 = g_abs_8B3E90; /*0x4e1396*/
-  if ( this == (unsigned int *)g_abs_8B3E90 ) /*0x4e139f*/
+  *this = (int)(&vt_GadgetClass);
+  v1 = (int)(g_abs_8B3E90);
+  if ( this == (gamemd::GadgetClass *)((gamemd::GadgetClass *))((gamemd::GadgetClass *))((unsigned int *))g_abs_8B3E90 ) /*0x4e139f*/
   {
-    v2 = *(this + 8); /*0x4e13a1*/
+    v2 = (int)(*(this + 8));
     IDA_BYTE1(v2) &= ~1u; /*0x4e13a4*/
     *(this + 8) = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
     g_abs_8B3E90 = 0; /*0x4e13ac*/
   }
-  if ( this == (unsigned int *)g_abs_8B3E88 ) /*0x4e13ba*/
+  if ( this == (gamemd::GadgetClass *)((gamemd::GadgetClass *))((gamemd::GadgetClass *))((unsigned int *))g_abs_8B3E88 ) /*0x4e13ba*/
     g_abs_8B3E88 = 0; /*0x4e13bc*/
-  if ( this == (unsigned int *)g_abs_8B3E8C ) /*0x4e13cb*/
+  if ( this == (gamemd::GadgetClass *)((gamemd::GadgetClass *))((gamemd::GadgetClass *))((unsigned int *))g_abs_8B3E8C ) /*0x4e13cb*/
     g_abs_8B3E8C = 0; /*0x4e13cd*/
-  if ( this == (unsigned int *)v1 ) /*0x4e13d5*/
+  if ( this == (gamemd::GadgetClass *)((unsigned int *))v1 ) /*0x4e13d5*/
     g_abs_8B3E90 = 0; /*0x4e13d7*/
   return this->LinkClass::Destruct();
 
@@ -267,7 +267,7 @@ LABEL_12:
     if ( v11 ) /*0x60af0e*/
     {
 LABEL_85: v12 = (int)((gamemd::AbstractClass **)(192));
-LABEL_87: v15[50] = (gamemd::AbstractClass **)(v12);
+LABEL_87: v15[50] = (unsigned int)((gamemd::AbstractClass **)(v12));
       return 1; /*0x60af1d*/
     }
 LABEL_86:
@@ -280,7 +280,7 @@ LABEL_86:
 }
 // 0x623560
 namespace gamemd {
-AbstractClass * * GadgetClass::SetTooltip(#72 * String)
+AbstractClass * * GadgetClass::SetTooltip(void * String)
 {
 
   int v3; // eax
@@ -295,10 +295,10 @@ AbstractClass * * GadgetClass::SetTooltip(#72 * String)
   {
     if ( *(unsigned short *)String ) /*0x623583*/
     {
-      v3 = wcslen(String); /*0x62358a*/
-      v4 = (void *)RA2_OPNEW(2 * v3 + 2); /*0x623594*/
+      v3 = (unsigned int)(wcslen(String));
+      v4 = (unsigned int)((void *)RA2_OPNEW(2 * v3 + 2));
       *((unsigned int *)this + 10) = v4; /*0x62359b*/
-      wcscpy((#72 *)v4, String); /*0x62359e*/
+      wcscpy((void *)v4, String); /*0x62359e*/
     }
   }
 

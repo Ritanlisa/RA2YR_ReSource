@@ -1136,7 +1136,7 @@ struct RulesClass {
     void readMaximums();
     void readVehicleTypes();
     void* readAudioVisual();
-    static double SaveLoad_Prefix(...);  // C2597 interim stub
+     double SaveLoad_Prefix(...);  // C2597 interim stub
     static double SaveLoad_Prefix_0(...);  // C2597 interim stub
 };
 

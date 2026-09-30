@@ -327,6 +327,8 @@ struct TacticalClass {
     static double SetViewDimensions(...);  // C2597 interim stub
     static double BuildCommandBar(...);  // C2597 interim stub
     static double PixelToCellCheck(...);  // C2597 interim stub
+    static double SetView(...);  // C2597 interim stub
+    static double initTacticalMap(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

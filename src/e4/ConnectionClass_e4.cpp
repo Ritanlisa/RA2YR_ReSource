@@ -51,13 +51,13 @@ LABEL_9:
     this->Debug::Log(); /*0x48b795*/
     return 0; /*0x48b7a7*/
   }
-  v12 = 24 * v8; /*0x48b7ae*/
+  v12 = (int)(24 * v8);
   *(unsigned int *)&v9[v12] |= 1u; /*0x48b7b7*/
   *(unsigned int *)(v12 + *(this + 13)) &= ~2u; /*0x48b7c4*/
   *(unsigned int *)(*(this + 13) + v12) &= ~4u; /*0x48b7d2*/
   v13 = g_abs_887340; /*0x48b7d9*/
-  if ( g_abs_887338 != -1 ) /*0x48b7e2*/
-    v13 += Timer::GetTicks() - g_abs_887338; /*0x48b7f4*/
+  if ( g_abs_887338 != (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(-1) ) /*0x48b7e2*/
+    v13 += this->this->this->Timer::GetTicks() - g_abs_887338; /*0x48b7f4*/
   *(unsigned int *)(*(this + 13) + v12 + 4) = v13; /*0x48b7fb*/
   *(unsigned int *)(*(this + 13) + v12 + 8) = a3; /*0x48b806*/
   qmemcpy(*(void **)(*(this + 13) + v12 + 12), a2, a3); /*0x48b816*/
@@ -242,10 +242,9 @@ int ConnectionClass::receivePacket(int a2, int a3)
       v12 = *((unsigned int *)this + 17); /*0x48c18e*/
       if ( *(unsigned int *)(a2 + 4) <= v12 && v12 != -1 ) /*0x48c19b*/
       {
-LABEL_40:
-        v23 = *(unsigned int *)(a2 + 4); /*0x48c288*/
-        v25 = *((unsigned short *)this + 18); /*0x48c28f*/
-        v26 = 2; /*0x48c29c*/
+LABEL_40: v23 = (int)(*(unsigned int *)(a2 + 4));
+        v25 = (int)(*((unsigned short *)this + 18));
+        v26 = (int)(2);
         *(unsigned int *)&v27[1] = v23; /*0x48c2a1*/
         if ( g_abs_A8DBA0 ) /*0x48c2a5*/
           v27[0] = *(unsigned char *)(a2 + 3); /*0x48c2aa*/
@@ -426,7 +425,7 @@ int ConnectionClass::serviceSendQueue()
       {
         if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) ) /*0x48c40d*/
         {
-          v6 = g_abs_887340; /*0x48c419*/
+          v6 = (int)(g_abs_887340);
           if ( g_abs_887338 != -1 ) /*0x48c422*/
             v6 += Timer::GetTicks() - g_abs_887338; /*0x48c434*/
           ConnectionClass::initQueue(v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
@@ -447,13 +446,13 @@ int ConnectionClass::serviceSendQueue()
     v8 = Terrain::GetTileIndex((unsigned int *)*((char *)this + 1), v7); /*0x48c47e*/
     if ( (*(unsigned char *)v8 & 2) == 0 ) /*0x48c483*/
     {
-      v9 = g_abs_887340; /*0x48c48e*/
+      v9 = (int)(g_abs_887340);
       if ( g_abs_887338 != -1 ) /*0x48c497*/
         v9 += Timer::GetTicks() - g_abs_887338; /*0x48c4a9*/
       v10 = *(unsigned int *)(v8 + 8); /*0x48c4ab*/
       if ( v9 - v10 > *((char *)this + 10) ) /*0x48c4b7*/
       {
-        v11 = g_abs_A8EA0C; /*0x48c4bd*/
+        v11 = (int)(g_abs_A8EA0C);
         IDA_LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
         IDA_LOBYTE(v11) = this == (unsigned int *)g_abs_A8EA0C; /*0x48c4cb*/
         (*(void (**)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this + 36))( /*0x48c4e2*/

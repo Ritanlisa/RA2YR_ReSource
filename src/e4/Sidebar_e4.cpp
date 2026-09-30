@@ -26,6 +26,7 @@
 #include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x4FA350
 namespace gamemd {
@@ -54,8 +55,8 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
 
   if ( (int)aP2 >= 0 ) /*0x4fa35f*/
   {
-    v6 = (int)((IUnknown *)a1);
-    v8 = ((TechnoTypeClass *)((int)a1))->GetByTypeAndIndex((int)aP2); /*0x4fa375*/
+    v6 = (IUnknown *)((int)((IUnknown *)a1));
+    v8 = (int)(((TechnoTypeClass *)((int)a1))->GetByTypeAndIndex((int)aP2));
     if ( a1 == (void *)6 || a1 == (void *)7 ) /*0x4fa382*/
       v22 = *(unsigned int *)(v8 + 3592); /*0x4fa394*/
     else
@@ -213,7 +214,7 @@ LABEL_55:
       }
     }
   }
-  if ( FactoryClass::DemandProduction(v10, v9, (#375 *)this, a5) ) /*0x4fa5d1*/
+  if ( FactoryClass::DemandProduction(v10, v9, (void *)this, a5) ) /*0x4fa5d1*/
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
   if ( *(unsigned int *)(v10 + 80) || *(unsigned int *)(v10 + 88) ) /*0x4fa6d9*/
@@ -388,7 +389,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue(int * Block)
     Blocka = (void *)*Block; /*0x6363b1*/
     v8 = *((unsigned int *)Blocka + 135); /*0x6363b5*/
     v9 = *(unsigned int *)(v8 + 48); /*0x6363bb*/
-    if ( (uint8_t)House::IsHumanPlayer((#375 *)v8) && HouseClass_Player.field_0 ) /*0x6363ce*/
+    if ( (uint8_t)House::IsHumanPlayer((void *)v8) && HouseClass_Player.field_0 ) /*0x6363ce*/
       v9 = *(unsigned int *)(HouseClass_Player.field_0 + 48); /*0x6363d0*/
     DecFactoryClassCounter(v9); /*0x6363d5*/
     VectorClass::EraseAt((int *)&g_MatrixTransformState + 6028, (IUnknown *)&Blocka); /*0x6363e4*/

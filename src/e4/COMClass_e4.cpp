@@ -14,6 +14,7 @@
 #include "e4/classes/CChatEventSink_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/COM_e4.hpp"
 
 // 0x767010
 namespace gamemd {

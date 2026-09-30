@@ -96,7 +96,7 @@ int BombClass::Stat(int * a2)
   int v8; // eax
   int v9; // eax
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x438a99*/
+  AbstractClass::ProcessPower((void *)this); /*0x438a99*/
   v4 = *((unsigned int *)this + 10); /*0x438a9e*/
   if ( v4 ) /*0x438aa3*/
   {
@@ -202,7 +202,7 @@ namespace gamemd {
 int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
 
-  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x438be4*/
+  return ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x438be4*/
 
 }
 } // namespace gamemd

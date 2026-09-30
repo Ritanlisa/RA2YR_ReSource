@@ -72,11 +72,11 @@ void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass a
   ObjectClass *v5; // edi
   ObjectClass *v6; // [esp+10h] [ebp-4h] BYREF
 
-  String::Assign((char **)&v6, &stru_830620.__pad_579C[33740]); /*0x770e80*/
+  ((String *)((char **)&v6))->Assign(&stru_830620.__pad_579C[33740]); /*0x770e80*/
   v5 = *(ObjectClass **)aP3.__pad_0; /*0x770e85*/
   INIClass::ReadTokenizedPair(this, aP3, aP3, *(ObjectClass **)aP3.__pad_0, 0, (ObjectClass *)&v6); /*0x770e9d*/
   DeleteAndZero((void **)&v6); /*0x770ea6*/
-  String::Assign((char **)&aP3, &stru_830620.__pad_579C[33732]); /*0x770eb4*/
+  ((String *)((char **)&aP3))->Assign(&stru_830620.__pad_579C[33732]); /*0x770eb4*/
   INIClass::ReadTokenizedPair(this, aP3, aP3, v5, 1, &aP3); /*0x770ec5*/
   DeleteAndZero((void **)&aP3); /*0x770ece*/
   String::Assign((char **)&aP3, aDraw); /*0x770edc*/

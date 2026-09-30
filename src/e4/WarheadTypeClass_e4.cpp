@@ -86,7 +86,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
   {
     (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x52538e*/
   }
-  v7 = (int)((gamemd::AbstractClass **)(*((unsigned int *)this + 2)));
+  v7 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*((unsigned int *)this + 2))));
   if ( v7 < *((unsigned int *)this + 4) ) /*0x525399*/
     *((unsigned int *)this + 4) = v7; /*0x52539b*/
   return 1; /*0x52539e*/

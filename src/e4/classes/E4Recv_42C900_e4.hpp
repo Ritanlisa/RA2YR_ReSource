@@ -31,6 +31,6 @@ struct E4Recv_42C900 {
     unsigned int q4388;  // 0x4388
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
-    void *  FindPathWithRetry(void * aP1, __int16 * a2, int aP4, int a5, int a6, int aP3, int aP6);  // 0x42C900
+    void *  FindPathWithRetry(void * aP1, int16_t * a2, int aP4, int a5, int a6, int aP3, int aP6);  // 0x42C900
 };
 } // namespace gamemd

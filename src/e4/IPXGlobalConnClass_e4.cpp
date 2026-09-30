@@ -49,22 +49,22 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
       this->Debug::Log(); /*0x540170*/
       v6 = g_abs_887338; /*0x540175*/
       v7 = g_abs_887340; /*0x540186*/
-      if ( g_abs_887338 != -1 ) /*0x540188*/
+      if ( g_abs_887338 != (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(-1) ) /*0x540188*/
       {
-        Ticks = Timer::GetTicks(); /*0x54019a*/
-        v6 = g_abs_887338; /*0x54019c*/
+        Ticks = (int)(this->Timer::GetTicks());
+        v6 = (int)(g_abs_887338);
         v7 += Ticks - g_abs_887338; /*0x5401a3*/
       }
       if ( a2 + *(unsigned int *)(TileType + 4) >= v7 ) /*0x5401b0*/
       {
         if ( v6 != -1 ) /*0x54023d*/
-          Timer::GetTicks(); /*0x540244*/
+          this->Timer::GetTicks(); /*0x540244*/
         this->Debug::Log(); /*0x54026f*/
       }
       else
       {
         if ( v6 != -1 ) /*0x5401b9*/
-          Timer::GetTicks(); /*0x5401c0*/
+          this->Timer::GetTicks(); /*0x5401c0*/
         this->Debug::Log(); /*0x5401eb*/
         v9 = 0; /*0x5401fa*/
         v10 = *((unsigned int *)this + 53); /*0x5401ff*/

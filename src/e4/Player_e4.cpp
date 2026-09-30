@@ -85,7 +85,7 @@ void Player::FindByName(wchar_t * String2)
     return (wchar_t *)g_abs_AC11B4; /*0x5e8cbb*/
   v3 = g_abs_A8DA84; /*0x5e8cc5*/
   v4 = 0; /*0x5e8ccb*/
-  if ( g_abs_A8DA84 <= 0 ) /*0x5e8ccf*/
+  if ( g_abs_A8DA84 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x5e8ccf*/
     return 0; /*0x5e8ced*/
   while ( 1 ) /*0x5e8cd8*/
   {

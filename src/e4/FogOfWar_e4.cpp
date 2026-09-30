@@ -31,12 +31,12 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   IUnknown *v10; // ecx
   int v11; // eax
   int v12; // ebx
-  #375 **v13; // ebp
-  #375 *v14; // eax
+  void **v13; // ebp
+  void *v14; // eax
   uint16_t v15; // ax
   RadarClass *v16; // ebx
   int v17; // ebx
-  #375 *v18; // edx
+  void *v18; // edx
   int v19; // eax
   int v20; // ebx
   int v21; // eax
@@ -87,7 +87,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   v37[1] = ((int16_t)Math::RoundToInt(v8) << 8) + 128; /*0x655d2b*/
   GroundHeight = 0; /*0x655d2f*/
   GroundHeight = (IUnknown *)((Cell *)(v37))->GetGroundHeight(); /*0x655d38*/
-  if ( !g_hWnd || (aP1b = 1, !Cell::IsPassable(v37)) ) /*0x655d4f*/
+  if ( !g_hWnd || (aP1b = 1, !((Cell *)(v37))->IsPassable()) ) /*0x655d4f*/
     aP1b = 0; /*0x655d5d*/
   if ( !g_hWnd || (v34 = 1, !FogOfWar_Get(v37)) ) /*0x655d74*/
     v34 = 0; /*0x655d82*/
@@ -101,18 +101,18 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   v12 = v11 + 4; /*0x655dbd*/
   while ( 1 ) /*0x655dc4*/
   {
-    v13 = *(#375 ***)(v12 - 4); /*0x655dc4*/
-    if ( *(unsigned int *)v12 != aP1->field_0 || *(void **)(v12 + 4) != aP1->field_4 ) /*0x655dd7*/
+    v13 = (unsigned int)(*(void ***)(v12 - 4));
+    if ( *(unsigned int *)v12 != aP1->field_0 || *(void **)(v12 + 4) != (void *)(void *))(aP1->field_4) ) /*0x655dd7*/
       goto LABEL_25; /*0x655dd7*/
-    if ( (!aP1b || (uint8_t)House::IsHumanPlayer(v13[135])) /*0x655e10*/
-      && (!*(unsigned char *)((*((int (**)(#375 **))*v13 + 33))(v13) + 559)
+    if ( (!aP1b || (uint8_t)House::IsHumanPlayer(((unsigned int *)(v13))[135])) /*0x655e10*/
+      && (!*(unsigned char *)((*((int (**)(void **))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 33))(v13) + 559)
        || Object::IsAlliedWithObjectHouse(HouseClass_Player, (IUnknown *)v13)) )
     {
-      if ( !*(unsigned char *)((*((int (**)(#375 **))*v13 + 33))(v13) + 562) ) /*0x655e24*/
+      if ( !*(unsigned char *)((*((int (**)(void **))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 33))(v13) + 562) ) /*0x655e24*/
         break; /*0x655e24*/
-      if ( *(unsigned char *)((*((int (**)(#375 **))*v13 + 33))(v13) + 3227) ) /*0x655e3d*/
+      if ( *(unsigned char *)((*((int (**)(void **))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 33))(v13) + 3227) ) /*0x655e3d*/
         break; /*0x655e3d*/
-      v14 = v13[135]; /*0x655e4b*/
+      v14 = ((unsigned int *)(v13))[135]; /*0x655e4b*/
       if ( v14 ) /*0x655e53*/
       {
         if ( !*(unsigned char *)(*((unsigned int *)v14 + 13) + 422) ) /*0x655e58*/
@@ -154,11 +154,11 @@ LABEL_26:
     }
     goto LABEL_45; /*0x655f43*/
   }
-  v16 = (RadarClass *)v13[135]; /*0x655f50*/
+  v16 = (RadarClass *)((unsigned int *)(v13))[135]; /*0x655f50*/
   aP1c = v16; /*0x655f5b*/
-  if ( (*((uint8_t (**)(#375 **))*v13 + 49))(v13) ) /*0x655f5f*/
+  if ( (*((uint8_t (**)(void **))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 49))(v13) ) /*0x655f5f*/
   {
-    aP1c = (RadarClass *)(*((int (**)(#375 **, unsigned int))*v13 + 52))(v13, 0); /*0x655f76*/
+    aP1c = (RadarClass *)(*((int (**)(void **, unsigned int))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 52))(v13, 0); /*0x655f76*/
     v16 = aP1c; /*0x655f7a*/
   }
   if ( v16 ) /*0x655f7e*/
@@ -167,14 +167,14 @@ LABEL_26:
         | ((uint8_t)v16[1].__pad_16BB[2948] >> g_abs_89F690 << g_abs_89F690);
   else
     v17 = *(unsigned int *)(FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1) + 816); /*0x655fe5*/
-  v18 = v13[93]; /*0x655feb*/
-  v19 = (int)v13[95]; /*0x655ff1*/
-  if ( v18 == (#375 *)-1 ) /*0x655ffa*/
+  v18 = ((unsigned int *)(v13))[93]; /*0x655feb*/
+  v19 = (int)((unsigned int *)(v13))[95]; /*0x655ff1*/
+  if ( v18 == (void *)-1 ) /*0x655ffa*/
   {
 LABEL_37:
     if ( v19 <= 0 /*0x65603a*/
       || (v19 - 1) / *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 136) % 2 != 1
-      || v13[135] != (#375 *)HouseClass_Player )
+      || ((unsigned int *)(v13))[135] != (void *)HouseClass_Player )
     {
       goto LABEL_41; /*0x65603a*/
     }
@@ -222,7 +222,7 @@ LABEL_45:
     }
     if ( (int)v29 > (int)v26 ) /*0x6560e6*/
     {
-      v31 = (IUnknown *)((char *)v39 + (char *)v29 - (char *)v26); /*0x6560ee*/
+      v31 = (IUnknown *)(((unsigned int)(char)*)(unsigned int)(v39)+ (char *)v29 - (char *)v26); /*0x6560ee*/
       v29 = v26; /*0x6560f0*/
       v39 = v31; /*0x6560f2*/
     }

@@ -8,6 +8,7 @@
 #include "e4/classes/WDTState_4_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Voxel_e4.hpp"
+#include "e4/classes/VoxelPaletteClass_e4.hpp"
 
 // 0x7B7E40
 namespace gamemd {

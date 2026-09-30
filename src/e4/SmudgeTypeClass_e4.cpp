@@ -69,15 +69,15 @@ SmudgeTypeClass::SmudgeTypeClass(char * Source)
   v3 = g_abs_A8EC28; /*0x6b52e1*/
   if ( g_abs_A8EC28 < g_abs_A8EC20 /*0x6b5322*/
     || (g_abs_A8EC25 || !g_abs_A8EC20)
-    && g_abs_A8EC2C > 0
+    && g_abs_A8EC2C > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8EC18 + 8))(
                &g_abs_A8EC18,
-               g_abs_A8EC20 + g_abs_A8EC2C,
+               (unsigned int)(g_abs_A8EC20)+ g_abs_A8EC2C,
                0) == 0,
         v3 = g_abs_A8EC28,
         !v4) )
   {
-    g_abs_A8EC28 = v3 + 1; /*0x6b5327*/
+    g_abs_A8EC28 = (int)(v3 + 1);
     *((unsigned int *)g_abs_A8EC1C + v3) = this; /*0x6b5331*/
     v3 = g_abs_A8EC28; /*0x6b5334*/
   }
@@ -106,6 +106,12 @@ LABEL_11:
 // 0x6B55F0
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
     unsigned int v7 = 0;  /* G37 hoist */
 

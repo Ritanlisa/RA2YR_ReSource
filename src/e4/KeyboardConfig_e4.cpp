@@ -46,7 +46,7 @@ int KeyboardConfig::LoadINI()
   INIClass::INIClass(v8); /*0x533d2b*/
   v9 = 0; /*0x533d3b*/
   v8[0] = &CCINIClass_Vtable; /*0x533d3f*/
-  CCFileClass::Construct(v10, g_abs_827B88); /*0x533d47*/
+  ((CCFileClass *)(v10))->Construct(g_abs_827B88); /*0x533d47*/
   if ( CCINIClass::Load(v8, (int)v10, 0, 0) ) /*0x533d57*/
   {
     RA2_OPDEL(g_abs_87F680); /*0x533d6c*/
@@ -61,20 +61,20 @@ int KeyboardConfig::LoadINI()
       StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (uint8_t *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
       v2 = 0; /*0x533dd1*/
       Int_Overwrite = INIClass::ReadInt_Overwrite(g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
-      if ( g_abs_87F668 > 0 ) /*0x533dde*/
+      if ( g_abs_87F668 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/
                   (const char *)(*(int (**)(unsigned int))(**((unsigned int **)g_abs_87F65C + v2) + 4))(*((unsigned int *)g_abs_87F65C + v2)),
                   StringByIndex) )
         {
-          if ( ++v2 >= g_abs_87F668 ) /*0x533e29*/
+          if ( ++(int)((int))((int))(v2) >= g_abs_87F668 ) /*0x533e29*/
             goto LABEL_14; /*0x533e29*/
         }
         v3 = *((unsigned int *)g_abs_87F65C + v2); /*0x533e32*/
         if ( v3 && Int_Overwrite ) /*0x533e3f*/
         {
-          v4 = g_abs_87F688; /*0x533e47*/
-          if ( (int)(g_abs_87F684 + 1) <= g_abs_87F688 ) /*0x533e4f*/
+          v4 = (int)(g_abs_87F688);
+          if ( (int)(g_abs_87F684 + 1) <= (int)((int))((int))(g_abs_87F688) ) /*0x533e4f*/
             goto LABEL_13; /*0x533e4f*/
           if ( !g_abs_87F688 ) /*0x533e53*/
             v4 = 10; /*0x533e55*/

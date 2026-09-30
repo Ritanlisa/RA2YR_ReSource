@@ -120,7 +120,7 @@ int COMObject::GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1)
 
   int result; // eax
 
-  result = ObjectClass::GetSizeMax((#374 *)aP0); /*0x5f997a*/
+  result = ObjectClass::GetSizeMax((void *)aP0); /*0x5f997a*/
   if ( result >= 0 ) /*0x5f9981*/
     return 0; /*0x5f9983*/
   return result; /*0x5f9985*/

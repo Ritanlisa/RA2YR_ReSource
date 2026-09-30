@@ -11,6 +11,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/JumpjetLocomotionClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x47B3A0
 namespace gamemd {
@@ -22,11 +24,11 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
   int v5; // ecx
   double v6; // st7
 
-  v2 = g_abs_89E770; /*0x47b3a9*/
-  if ( (g_abs_89E770 & 1) == 0 ) /*0x47b3b3*/
+  v2 = (char)(g_abs_89E770);
+  if ( ((unsigned int)(g_abs_89E770)& 1) == 0 ) /*0x47b3b3*/
   {
-    v2 = g_abs_89E770 | 1; /*0x47b3bb*/
-    g_abs_89E770 |= 1u; /*0x47b3bd*/
+    v2 = (unsigned int)(g_abs_89E770)| 1; /*0x47b3bb*/
+    (unsigned int)(g_abs_89E770)|= 1u; /*0x47b3bd*/
     *(double *)&g_abs_89E720 = (double)g_abs_89E7C0; /*0x47b3c2*/
   }
   if ( (v2 & 2) == 0 ) /*0x47b3ca*/
@@ -37,9 +39,9 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
   }
   if ( (v2 & 4) == 0 ) /*0x47b3e7*/
   {
-    g_abs_89E770 = v2 | 4; /*0x47b3f5*/
-    g_abs_81C918[0] = g_abs_89E720; /*0x47b3ff*/
-    g_abs_81C940 = g_abs_89E720; /*0x47b40e*/
+    g_abs_89E770 = (uint64_t)(v2 | 4);
+    g_abs_81C918[0] = (unsigned char)((uint64_t)(g_abs_89E720));
+    g_abs_81C940 = (uint64_t)(g_abs_89E720);
     g_abs_81C960 = g_abs_89E720; /*0x47b41d*/
     g_abs_81C968 = g_abs_89E720; /*0x47b433*/
     g_abs_81C988 = g_abs_89E720; /*0x47b442*/
@@ -67,16 +69,16 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
     g_abs_81C97C = 0; /*0x47b52c*/
     g_abs_81C980 = 0; /*0x47b536*/
     g_abs_81C984 = -1074790400; /*0x47b540*/
-    g_abs_81C998 = 0; /*0x47b54a*/
-    g_abs_81C99C = 0; /*0x47b554*/
-    g_abs_81C9A0 = 0; /*0x47b55e*/
-    g_abs_81C9A4 = 1072693248; /*0x47b568*/
-    dword_81C9A8 = 0; /*0x47b572*/
-    dword_81C9AC = 1072693248; /*0x47b57c*/
-    dword_81C9C0 = 0; /*0x47b586*/
-    dword_81C9C4 = 0; /*0x47b590*/
-    dword_81C9C8 = 0; /*0x47b59a*/
-    dword_81C9CC = -1074790400; /*0x47b5a4*/
+    g_abs_81C998 = (uint64_t)(0);
+    g_abs_81C99C = (uint64_t)(0);
+    g_abs_81C9A0 = (uint64_t)(0);
+    g_abs_81C9A4 = (uint64_t)(1072693248);
+    dword_81C9A8 = (uint64_t)(0);
+    dword_81C9AC = (uint64_t)(1072693248);
+    dword_81C9C0 = (uint64_t)(0);
+    dword_81C9C4 = (uint64_t)(0);
+    dword_81C9C8 = (uint64_t)(0);
+    dword_81C9CC = (uint64_t)(-1074790400);
     dword_81C9D0 = 0; /*0x47b5ae*/
     dword_81C9D4 = 1072693248; /*0x47b5b8*/
     dword_81C9D8 = 0; /*0x47b5c2*/
@@ -127,16 +129,16 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
     dword_81CA9C = -1074790400; /*0x47b7ae*/
     dword_81CAB0 = 0; /*0x47b7b8*/
     dword_81CAB4 = 0; /*0x47b7c2*/
-    dword_81CAB8 = 0; /*0x47b7cc*/
-    dword_81CABC = 1072693248; /*0x47b7d6*/
-    dword_81CAC0 = 0; /*0x47b7e0*/
+    dword_81CAB8 = (uint64_t)(0);
+    dword_81CABC = (uint64_t)(1072693248);
+    dword_81CAC0 = (uint64_t)(0);
     dword_81CAC4 = -1074790400; /*0x47b7ea*/
-    qword_81CAD0 = g_abs_89E720; /*0x47b7fa*/
-    dword_81CAD8 = 0; /*0x47b805*/
+    qword_81CAD0 = (uint64_t)(g_abs_89E720);
+    dword_81CAD8 = (uint64_t)(0);
     dword_81CADC = 0; /*0x47b80f*/
-    dword_81CAE0 = 0; /*0x47b819*/
-    dword_81CAE4 = 1072693248; /*0x47b823*/
-    dword_81CAE8 = 0; /*0x47b82d*/
+    dword_81CAE0 = (uint64_t)(0);
+    dword_81CAE4 = (uint64_t)(1072693248);
+    dword_81CAE8 = (uint64_t)(0);
     dword_81CAEC = 1072693248; /*0x47b837*/
     dword_81CAF0 = 0; /*0x47b841*/
     dword_81CAF4 = 0; /*0x47b84b*/

@@ -20,8 +20,8 @@ void BSurface::Construct( int a2, int a3, int a4, int a5)
 {
 
   unsigned int * v6;
-  int v7; // ecx
-  int v8; // eax
+  unsigned int * v7;
+  unsigned int * v8;
   int v9; // edi
   unsigned int *v10; // edi
   int v11; // eax
@@ -35,8 +35,8 @@ void BSurface::Construct( int a2, int a3, int a4, int a5)
   int v19; // ecx
 
   v6 = (int)((unsigned int *)(a2));
-  v7 = (unsigned int *)(a4);
-  v8 = a5; /*0x410cef*/
+  v7 = (int)((unsigned int *)(a4));
+  v8 = (int)((unsigned int *)(a5));
   *(this + 11) = a5; /*0x410cf3*/
   *this = v6; /*0x410cf8*/
   v9 = a3; /*0x410cfa*/
@@ -50,11 +50,11 @@ void BSurface::Construct( int a2, int a3, int a4, int a5)
   {
     v11 = (unsigned int)(*(this + 10));
     v12 = (unsigned int)(*(this + 11));
-    v10[1] = v11; /*0x410d28*/
-    v10[2] = v12; /*0x410d30*/
-    v10[3] = 0; /*0x410d38*/
-    *v10 = &XSurface_Vtable; /*0x410d3b*/
-    v10[4] = 2; /*0x410d41*/
+    v10[1] = (unsigned int)(v11);
+    v10[2] = (unsigned int)(v12);
+    v10[3] = (unsigned int)(0);
+    *v10 = (unsigned int)(&XSurface_Vtable);
+    v10[4] = (unsigned int)(2);
     Buffer::Init(v10 + 5, 0, 2 * v12 * v11); /*0x410d48*/
     *v10 = &BSurface_Vtable; /*0x410d4d*/
     v13 = v10; /*0x410d53*/
@@ -63,8 +63,8 @@ void BSurface::Construct( int a2, int a3, int a4, int a5)
   {
     v13 = 0; /*0x410d57*/
   }
-  v14 = *(this + 10); /*0x410d5c*/
-  a5 = *(this + 11); /*0x410d5f*/
+  v14 = (int)(*(this + 10));
+  a5 = (int)(*(this + 11));
   *(this + 5) = v13; /*0x410d63*/
   a2 = 0; /*0x410d66*/
   a3 = 0; /*0x410d6a*/
@@ -225,8 +225,8 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
 {
 
   unsigned int * v6;
-  int v7; // ecx
-  int v8; // eax
+  unsigned int * v7;
+  unsigned int * v8;
   int v9; // edi
   unsigned int *v10; // edi
   int v11; // eax
@@ -240,8 +240,8 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   int v19; // ecx
 
   v6 = (int)((unsigned int *)(a2));
-  v7 = (unsigned int *)(a4);
-  v8 = a5; /*0x7bc97f*/
+  v7 = (int)((unsigned int *)(a4));
+  v8 = (int)((unsigned int *)(a5));
   *((unsigned int *)this + 11) = a5; /*0x7bc983*/
   *(unsigned int *)this = v6; /*0x7bc988*/
   v9 = a3; /*0x7bc98a*/

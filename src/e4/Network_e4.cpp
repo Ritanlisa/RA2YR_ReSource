@@ -41,6 +41,7 @@
 #include "e4/classes/NeuronClass_e4.hpp"
 #include "e4/classes/NetworkLobby_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
+#include "e4/classes/IPXManagerClass_e4.hpp"
 
 // 0x4311C0
 namespace gamemd {
@@ -109,7 +110,7 @@ LABEL_5:
         if ( (*(unsigned char *)(v9 + 12) & 1) != 0 /*0x4312a6*/
           && HouseClass::IsAllied(HouseClass_Player, v4)
           && (uint8_t)HouseClass::IsAlliedWith(
-                                *(#375 **)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(v9 + 272)],
+                                *(void **)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(v9 + 272)],
                                 HouseClass_Player)
           && !*(unsigned char *)(*(unsigned int *)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(v9 + 272)] + 501) )
         {
@@ -1548,7 +1549,7 @@ LABEL_33:
                             {
                               if ( SessionClass::IsValidHouse( /*0x541c36*/
                                      (int)&g_abs_A8B238,
-                                     *(#375 **)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(v22 + 111)]) )
+                                     *(void **)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(v22 + 111)]) )
                               {
                                 Network::FormatAddress((uint16_t *)&aP2, 0); /*0x541c49*/
                                 Network::FormatAddress((uint16_t *)(*((unsigned int *)this + 20) + 76), 0); /*0x541c57*/
@@ -1731,7 +1732,7 @@ LABEL_75:
                      *((unsigned int *)this + 20) + 76)
                 && SessionClass::IsValidHouse(
                      (int)&g_abs_A8B238,
-                     *(#375 **)&HouseClass_Array->__pad_0[4
+                     *(void **)&HouseClass_Array->__pad_0[4
                                                         * *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&g_abs_A8D63C
                                                                                 + 4 * i)
                                                                     + 111)]) )
@@ -2910,8 +2911,8 @@ int Network::CountDisconnectedHouses()
             if ( !*(unsigned char *)(v6 + 501) /*0x5e2c7d*/
               && !*(unsigned char *)(*(unsigned int *)(v6 + 52) + 422)
               && (void *)v6 != this
-              && (uint8_t)HouseClass::IsAlliedWith((#375 *)v3, *((#375 **)HouseClass_Array + v5))
-              && (uint8_t)HouseClass::IsAlliedWith((#375 *)v6, (#375 *)v3) )
+              && (uint8_t)HouseClass::IsAlliedWith((void *)v3, *((void **)HouseClass_Array + v5))
+              && (uint8_t)HouseClass::IsAlliedWith((void *)v6, (void *)v3) )
             {
               if ( v5 > v9 && !v4 ) /*0x5e2c8e*/
                 ++v8; /*0x5e2c90*/

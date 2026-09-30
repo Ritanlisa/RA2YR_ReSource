@@ -73,7 +73,7 @@ struct Terrain {
     int  GetTileType(void * aP1);  // 0x48B9E0
     void  PlaceCliffs(int a2, int a3, void * aP3);  // 0x568E40
     int ConnectivityGraph();  // 0x56C510
-    int  FloodFillConnectivity(unsigned __int8 * a1, void * aP2, void * aP3);  // 0x56CB90
+    int  FloodFillConnectivity(uint8_t * a1, void * aP2, void * aP3);  // 0x56CB90
     void  ProcessCellModification(void * aP1);  // 0x570050
     void  RecursiveModify(void * aP1);  // 0x573540
     char  CreateCrater(void * aP1);  // 0x576770

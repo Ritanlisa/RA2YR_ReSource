@@ -30,6 +30,12 @@ void NetworkClass::ExecutePlanningModeCmd()
 {
     unsigned int v3 = 0;  /* G37 hoist */
     unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   char v1; // al
   wchar_t *StringCSF; // eax
@@ -40,7 +46,7 @@ void NetworkClass::ExecutePlanningModeCmd()
   {
     if ( !g_abs_AC4C08 ) /*0x639fdd*/
     {
-      g_abs_AC4C08 = 1; /*0x639fe8*/
+      g_abs_AC4C08 = (wchar_t *)(1);
       StringCSF = GetStringCSF((wchar_t *)g_abs_836C34, 0, g_abs_836BD4, 3233); /*0x639ffb*/
 LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
@@ -51,7 +57,7 @@ LABEL_10:
   {
     if ( !g_abs_AC4C08 ) /*0x63a008*/
     {
-      g_abs_AC4C08 = 1; /*0x63a01f*/
+      g_abs_AC4C08 = (unsigned int)(1);
       v3 = GetStringCSF(g_abs_836C1C, 0, g_abs_836BD4, 3233); /*0x63a026*/
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
       PlayVocClass(g_abs_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
@@ -59,7 +65,7 @@ LABEL_10:
   }
   else if ( v1 == 7 && !g_abs_AC4C08 ) /*0x63a05c*/
   {
-    g_abs_AC4C08 = 1; /*0x63a063*/
+    g_abs_AC4C08 = (wchar_t *)(1);
     StringCSF = GetStringCSF(g_abs_836C00, 0, g_abs_836BD4, 3233); /*0x63a076*/
     goto LABEL_10; /*0x63a076*/
   }
@@ -122,7 +128,7 @@ AnimClass * * NetworkClass::UnregisterAsync()
   SOCKET result; // eax
 
   v2 = (HWND)(g_hWnd);
-  v3 = *((unsigned int *)this + 64539); /*0x7b1c59*/
+  v3 = (HWND)(*((unsigned int *)this + 64539));
   if ( v3 != -1 && g_hWnd ) /*0x7b1c66*/
   {
     WSAAsyncSelect(v3, g_hWnd, 0, 0); /*0x7b1c6e*/

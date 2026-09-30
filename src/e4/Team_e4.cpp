@@ -103,7 +103,7 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     v12 = a3; /*0x56122f*/
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x561234*/
     Dialog::Show(Dialog); /*0x56123c*/
-        Ticks = Timer::GetTicks();
+        Ticks = this->Timer::GetTicks();
     v23 = 600; /*0x561254*/
     while ( dwNewLong < 0 ) /*0x56125c*/
     {
@@ -114,7 +114,7 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
       v10 = v23; /*0x561278*/
       if ( Ticks != -1 ) /*0x56127f*/
       {
-                v10 = Timer::GetTicks() - Ticks;
+                v10 = this->Timer::GetTicks() - Ticks;
         if ( v11 >= v10 ) /*0x561290*/
           goto LABEL_9; /*0x561290*/
         v10 -= v11; /*0x561292*/
@@ -124,7 +124,7 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     unsigned int v21 = 0;  /* G37 hoist */
   LABEL_9:
         PostMessageA((HWND)Dialog, 0x111u, 0x6CAu, 0); /*0x561298*/
-                v21 = Timer::GetTicks();
+                v21 = this->Timer::GetTicks();
         v26 = 300; /*0x5612bd*/
         Ticks = v24; /*0x5612c1*/
         v22 = v25; /*0x5612c5*/
@@ -135,13 +135,13 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     if ( dwNewLong == 1 ) /*0x5612e4*/
     {
   LABEL_13:
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       g_DSurface_Hidden_2 = (int)((AudioStream *)g_DSurface_Hidden);
       return 1; /*0x561343*/
     }
     else
     {
-            this->Debug::Log();
+            ((Debug *)0)->Log();
       ChangeVideoMode(stru_A8EB00.ObjectTypeClass[33], stru_A8EB00.ObjectTypeClass[34]); /*0x56130c*/
       g_DSurface_Hidden_2 = (AudioStream *)g_DSurface_Hidden; /*0x56131b*/
       return 0; /*0x561317*/
@@ -391,35 +391,35 @@ void ** E4Recv_637640::sub_637640()
 
   v5 = (void **)(this);
   v1 = (*(int (**)(int *, void ***))(g_abs_AC4C98 + 16))(&g_abs_AC4C98, &v5); /*0x637655*/
-  if ( v1 != -1 && v1 < g_abs_AC4CA8 && v1 < --g_abs_AC4CA8 ) /*0x637670*/
+  if ( v1 != -1 && v1 < (int)((int))((int))(g_abs_AC4CA8) && v1 < --g_abs_AC4CA8 ) /*0x637670*/
   {
     do /*0x637688*/
     {
       ++v1; /*0x637678*/
       *((unsigned int *)g_abs_AC4C9C + v1 - 1) = *((unsigned int *)g_abs_AC4C9C + v1); /*0x63767c*/
     }
-    while ( v1 < g_abs_AC4CA8 ); /*0x637688*/
+    while ( v1 < (int)((int))((int))(g_abs_AC4CA8) ); /*0x637688*/
   }
   v2 = (*(int (**)(int *, void **))(g_abs_AC4B30 + 16))(&g_abs_AC4B30, &retaddr); /*0x63769a*/
-  if ( v2 != -1 && v2 < g_abs_AC4B40 && v2 < --g_abs_AC4B40 ) /*0x6376b5*/
+  if ( v2 != -1 && v2 < (int)((int))((int))(g_abs_AC4B40) && v2 < --g_abs_AC4B40 ) /*0x6376b5*/
   {
     do /*0x6376cd*/
     {
       ++v2; /*0x6376bd*/
       *((unsigned int *)g_abs_AC4B34 + v2 - 1) = *((unsigned int *)g_abs_AC4B34 + v2); /*0x6376c1*/
     }
-    while ( v2 < g_abs_AC4B40 ); /*0x6376cd*/
+    while ( v2 < (int)((int))((int))(g_abs_AC4B40) ); /*0x6376cd*/
   }
   v5 = &retaddr; /*0x6376d9*/
   v3 = (*(int (**)(int *))(g_abs_AC4C18 + 16))(&g_abs_AC4C18); /*0x6376df*/
-  if ( v3 != -1 && v3 < g_abs_AC4C28 && v3 < --g_abs_AC4C28 ) /*0x6376fa*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_AC4C28) && v3 < --g_abs_AC4C28 ) /*0x6376fa*/
   {
     do /*0x637712*/
     {
       ++v3; /*0x637702*/
       *((unsigned int *)g_abs_AC4C1C + v3 - 1) = *((unsigned int *)g_abs_AC4C1C + v3); /*0x637706*/
     }
-    while ( v3 < g_abs_AC4C28 ); /*0x637712*/
+    while ( v3 < (int)((int))((int))(g_abs_AC4C28) ); /*0x637712*/
   }
   result = v5; /*0x637714*/
   if ( (void **)g_abs_AC4CCC == v5 ) /*0x637722*/

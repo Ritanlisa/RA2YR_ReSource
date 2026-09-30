@@ -36,7 +36,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   result = (unsigned char *)(a3);
   if ( a3 == (int)(unk_A9F9F8) ) /*0x539ec3*/
   {
-    for ( ; !LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&a3); a3 = v12 ) /*0x539edd*/
+    for ( ; !((LayerClass *)(&g_abs_87F7E8))->CoordinatesLegal((int16_t *)&a3); a3 = v12 ) /*0x539edd*/
     {
       v7 = Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, g_abs_87F918); /*0x539f04*/
       IDA_LOWORD(v12) = Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, g_abs_87F914); /*0x539f1e*/
@@ -64,7 +64,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       for ( unk_A9FAB4 = 1; v8 < HouseClass_Count; ++v8 ) /*0x539fb0*/
       {
         if ( !unk_A9FACC /*0x539fc5*/
-          || !(uint8_t)HouseClass::IsAlliedWith(unk_A9FACC, *(#375 **)&HouseClass_Array->__pad_0[4 * v8]) )
+          || !(uint8_t)HouseClass::IsAlliedWith(unk_A9FACC, *(void **)&HouseClass_Array->__pad_0[4 * v8]) )
         {
           v9 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * v8]; /*0x539fd3*/
           if ( !*(unsigned char *)(v9 + 501) && !g_abs_A8B538 ) /*0x539fe7*/
@@ -76,7 +76,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       ScenarioClass::UpdateLighting(); /*0x53a009*/
       if ( IDA_LOBYTE(g_abs_8871E0[1].?) ) /*0x53a014*/
       {
-        v10 = 3; /*0x53a023*/
+        v10 = (wchar_t *)(3);
         if ( HouseClass_Player ) /*0x53a02a*/
           v10 = *((unsigned int *)HouseClass_Player + 22549); /*0x53a02c*/
         PlayVocClass(g_abs_8871E0->?[3], 0x2000, 1.0, 0); /*0x53a044*/
@@ -86,7 +86,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       return MapClass::MarkForRedraw(&g_abs_87F7E8, 1); /*0x53a082*/
     }
   }
-  return result; /*0x539f76*/
+  return (int)((int)((int)(result)));
 
 }
 }
@@ -95,7 +95,7 @@ namespace gamemd {
 int LightningStorm::IsActive()
 {
 
-  return unk_A9FAB4; /*0x53a105*/
+  return (int)((int)((int)(unk_A9FAB4)));
 
 }
 }
@@ -103,6 +103,9 @@ int LightningStorm::IsActive()
 namespace gamemd {
 void LightningStorm::Strike(IUnknown * aP0)
 {
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v5 = 0;  /* G37 hoist */
 
   unsigned int *v1; // esi
   int v2; // eax
@@ -200,7 +203,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void **v33; // [esp+30h] [ebp-10h]
   int v34[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  v3 = Coord::To_Cell(&g_abs_87F7E8, &a1); /*0x53a31a*/
+  v3 = (unsigned int *)(Coord::To_Cell(&g_abs_87F7E8, &a1));
   Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
   v5 = Coords[1]; /*0x53a328*/
   v6 = Coords[2]; /*0x53a32b*/

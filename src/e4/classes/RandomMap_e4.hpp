@@ -148,9 +148,9 @@ struct RandomMap {
     void CollectBorderCells();  // 0x58F0C0
     char  PlaceBuildings(int a2, int a3);  // 0x58F2C0
     char AllocateArea();  // 0x5905D0
-    char  CheckCellPlacement(__int16 * a1, void * a2, void * aP3);  // 0x590970
+    char  CheckCellPlacement(int16_t * a1, void * a2, void * aP3);  // 0x590970
     int  CheckNeighborhoodCompatibility(unsigned short * a1, void * aP2, int a4, void * aP4);  // 0x590FD0
-    char  CheckPlacementArea(__int16 * a2, __int16 * a3, void * aP2);  // 0x592440
+    char  CheckPlacementArea(int16_t * a2, int16_t * a3, void * aP2);  // 0x592440
     void CleanupRandomMapData();  // 0x5958E0
     LRESULT  SetupDialog(HWND hDlg);  // 0x596E50
     char  LoadInfo(void * Destination, int a2);  // 0x597D60
@@ -165,7 +165,7 @@ struct RandomMap {
     int  PlaceTerrain(int a2, void * aP2, void * aP3, int a5, void * aP5, double a7, char a8);  // 0x59BBC0
     char GrowTiberium();  // 0x59C580
     unsigned int *  CellListAlloc(int a2);  // 0x5A0700
-    char  SpreadArea(void * aP1, float a3, void * aP3, __int16 * a4, char a6);  // 0x5A08D0
+    char  SpreadArea(void * aP1, float a3, void * aP3, int16_t * a4, char a6);  // 0x5A08D0
     int PlaceRandomMapTiberium();  // 0x5A23A0
     int PlaceResources();  // 0x5A3AE0
     int GenerateRandomMapTerrain();  // 0x5A4280

@@ -39,11 +39,11 @@ int GadgetGrid::InsertItem(int a2)
     v6 = SHIWORD(v16); /*0x4134e5*/
   else
     v6 = 0; /*0x4134e1*/
-  v7 = v5 / (g_abs_87F914 / 20); /*0x413504*/
+  v7 = v5 / ((unsigned int)(g_abs_87F914)/ 20); /*0x413504*/
   v8 = 19; /*0x413506*/
   if ( v7 <= 19 ) /*0x41350e*/
     v8 = v7; /*0x413510*/
-  v9 = v6 / (g_abs_87F918 / 20); /*0x41352f*/
+  v9 = v6 / ((unsigned int)(g_abs_87F918)/ 20); /*0x41352f*/
   if ( v9 > 19 ) /*0x413534*/
     v9 = 19; /*0x413536*/
   v10 = 3 * (v8 + 20 * v9); /*0x413541*/
@@ -92,11 +92,11 @@ int GadgetGrid::RemoveItem(int a2)
     v4 = v13; /*0x41361c*/
   else
     v4 = 0; /*0x413618*/
-  v5 = v3 / (g_abs_87F914 / 20); /*0x41363b*/
+  v5 = v3 / ((unsigned int)(g_abs_87F914)/ 20); /*0x41363b*/
   v6 = 19; /*0x41363d*/
   if ( v5 <= 19 ) /*0x413645*/
     v6 = v5; /*0x413647*/
-  v7 = v4 / (g_abs_87F918 / 20); /*0x413666*/
+  v7 = v4 / ((unsigned int)(g_abs_87F918)/ 20); /*0x413666*/
   if ( v7 > 19 ) /*0x41366b*/
     v7 = 19; /*0x41366d*/
   v8 = *((unsigned int *)this + 120 * v7 + 6 * v6); /*0x413680*/

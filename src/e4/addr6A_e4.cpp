@@ -39,6 +39,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Count_e4.hpp"
+#include "e4/classes/E4Recv_690400_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {
@@ -193,8 +194,8 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
   v2 = 26; /*0x6a89f8*/
   if ( v10 ) /*0x6a89fd*/
     v2 = 18; /*0x6a89ff*/
-  v3 = (g_abs_886F9C - g_abs_B0B4F8 - v2 + g_abs_886F94 - 7) / 50; /*0x6a8a43*/
-  if ( HouseClass_Player == (#375 *)g_abs_AC1198 ) /*0x6a8a45*/
+  v3 = (g_abs_886F9C - (int)((int))((int))(g_abs_B0B4F8) - v2 + g_abs_886F94 - 7) / 50; /*0x6a8a43*/
+  if ( HouseClass_Player == (void *)g_abs_AC1198 ) /*0x6a8a45*/
     v3 = 1; /*0x6a8a47*/
   if ( a2 ) /*0x6a8a52*/
   {
@@ -213,10 +214,10 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     v5 = 26; /*0x6a8a85*/
     if ( v10 ) /*0x6a8a8a*/
       v5 = 18; /*0x6a8a8c*/
-    v6 = (g_abs_886F9C - g_abs_B0B4F8 - v5 + g_abs_886F94 - 7) / 50; /*0x6a8aaa*/
-    if ( HouseClass_Player == (#375 *)g_abs_AC1198 ) /*0x6a8aac*/
+    v6 = (g_abs_886F9C - (int)((int))((int))(g_abs_B0B4F8) - v5 + g_abs_886F94 - 7) / 50; /*0x6a8aaa*/
+    if ( HouseClass_Player == (void *)g_abs_AC1198 ) /*0x6a8aac*/
     {
-      v7 = v6; /*0x6a8ab7*/
+      v7 = (unsigned int *)(v6);
       v8 = this; /*0x6a8ab9*/
       if ( *((unsigned int *)this + 17) + v7 / 2 >= g_abs_884CF8 ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/
@@ -239,7 +240,7 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
 {
 
   int v2; // eax
-  int v3; // esi
+  unsigned char * v3;
   int v4; // ecx
   unsigned int v5; // eax
   int v6; // ebp
@@ -601,10 +602,10 @@ int TechnoClass::ProcessDeployAction()
       v3 = *((unsigned int *)this + 9); /*0x6afd7a*/
       if ( v3 ) /*0x6afd7f*/
       {
-        v2 = (SlaveManagerClass *)(*(int (**)(unsigned int))(*(unsigned int *)v3->__pad_0 + 44))(*((unsigned int *)this + 9)); /*0x6afd89*/
+        v2 = (int)((SlaveManagerClass *)(*(int (**)(unsigned int))(*(unsigned int *)v3->__pad_0 + 44))(*((unsigned int *)this + 9)));
         if ( v2 == (SlaveManagerClass *)6 ) /*0x6afd8f*/
         {
-          currentMission = v3->currentMission; /*0x6afd95*/
+          currentMission = (unsigned int)(v3->currentMission);
           if ( currentMission != 19 && currentMission != 18 ) /*0x6afda7*/
           {
             *((unsigned int *)this + 23) = (TechnoClass *)5; /*0x6afdad*/

@@ -15,7 +15,7 @@
 RocketLocomotionClass::RocketLocomotionClass()
 {
 
-  wchar_t *v2; // ecx
+  unsigned int v2;
 
   LocomotionClass::Init((unsigned int *)this); /*0x661ec3*/
   *((unsigned int *)this + 6) = dword_B04E38; /*0x661ed1*/
@@ -57,16 +57,16 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
 {
 
   int result; // eax
-  wchar_t *v3; // ecx
+  unsigned int v3;
 
   result = SwizzleManager::SaveLoad(a1, a2); /*0x66341b*/
   if ( result >= 0 ) /*0x663422*/
   {
     if ( a1 ) /*0x663426*/
     {
-      *a1 = (int)&vt_LocomotionClass; /*0x663428*/
-      a1[1] = (int)&vt_LocomotionClass; /*0x66342e*/
-      v3 = g_abs_A8ED84; /*0x663435*/
+      *a1 = (wchar_t *)((int)&vt_LocomotionClass);
+      a1[1] = (wchar_t *)((int)&vt_LocomotionClass);
+      v3 = (wchar_t *)(g_abs_A8ED84);
       a1[15] = 0; /*0x66343b*/
       a1[13] = (int)v3; /*0x663442*/
       *a1 = (int)&vt_RocketLocomotionClass; /*0x663445*/

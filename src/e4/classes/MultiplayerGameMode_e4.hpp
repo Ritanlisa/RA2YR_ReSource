@@ -30,7 +30,7 @@ struct MultiplayerGameMode {
     MultiplayerGameMode * QueryInterface(char * Block, char a2);
     unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3);
      double Construct(...);  // C2597 interim stub
-    static double Find(...);  // C2597 interim stub
+     double Find(...);  // C2597 interim stub
     static double ListGet(...);  // C2597 interim stub
      double Dtor(...);  // C2597 interim stub
 };

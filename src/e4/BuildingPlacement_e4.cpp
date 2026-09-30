@@ -42,7 +42,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   const void *v7; // eax
   unsigned int *v8; // eax
 
-  if ( (#375 *)this != HouseClass_Player ) /*0x4fb84c*/
+  if ( (void *)this != HouseClass_Player ) /*0x4fb84c*/
     return 0; /*0x4fb84c*/
   if ( g_abs_880990 ) /*0x4fb859*/
     return 0; /*0x4fb859*/

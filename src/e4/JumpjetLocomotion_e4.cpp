@@ -20,6 +20,7 @@
 #include "e4/classes/JumpjetLocomotionClass_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/KeyboardConfig_e4.hpp"
 
 // 0x4B0AD0
 namespace gamemd {
@@ -522,7 +523,7 @@ LABEL_37:
       IDA_LOWORD(v190) = *((unsigned short *)&g_abs_89F688 + 2 * v37) + (unsigned short)aP4;
       IDA_HIWORD(v190) = IDA_HIWORD(aP4) + *((unsigned short *)&g_abs_89F68A + 2 * v37);
       aP4 = v190;
-      v38 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&aP4);
+      v38 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&aP4));
       Coords = (ObjectClass *)CellClass::GetCoords(v38, (int *)&v193);
       v40 = (unsigned int *)(*((unsigned int *)this + 3) + 1384);
       *v40 = *(unsigned int *)Coords->__pad_0;
@@ -741,7 +742,7 @@ LABEL_80:
       }
     }
     v80 = *(MouseClass **)((char *)this + 12);
-    if ( !v80->__pad_74[28] )
+    if ( !v80-((unsigned int *)(>__pad_74))[28] )
       return 0;
     (*(void (**)(MouseClass *, int))(v80->field_0 + 292))(v80, 1);
     v81 = v70->field_44;
@@ -772,10 +773,10 @@ LABEL_80:
     }
 LABEL_107:
     v84 = *(MouseClass **)((char *)this + 12);
-    if ( !v84->__pad_74[28] )
+    if ( !v84-((unsigned int *)(>__pad_74))[28] )
       return 0;
-    v85 = v84->__pad_74[0];
-    v84->__pad_74[0] = 0;
+    v85 = v84-((unsigned int *)(>__pad_74))[0];
+    v84-((unsigned int *)(>__pad_74))[0] = 0;
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)((char *)this + 12) + 460))(*((unsigned int *)this + 3), 0);
     IDA_LOBYTE(v86) = 0;
     *(unsigned char *)(*((unsigned int *)this + 3) + 116) = v85;
@@ -786,8 +787,8 @@ LABEL_107:
     if ( v87 && *(int *)((char *)dword_7E7A34 + (unsigned int)v190) == v87 )
     {
       v88 = *(MouseClass **)((char *)this + 12);
-      aP3_156 = *(unsigned int *)&v88->__pad_74[40];
-      aP3_160 = *(unsigned int *)&v88->__pad_74[44];
+      aP3_156 = *(unsigned int *)&v88-((unsigned int *)(>__pad_74))[40];
+      aP3_160 = *(unsigned int *)&v88-((unsigned int *)(>__pad_74))[44];
       aP3_164 = *(unsigned int *)&v88->__pad_74[48];
       (*(void (**)(MouseClass *, int *))(v88->field_0 + 244))(v88, &aP3_156);
     }

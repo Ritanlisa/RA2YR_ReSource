@@ -17,7 +17,7 @@ public:
     static DynamicVectorClass<AbstractTypeClass*>* Array;
 
     // design: static function, no direct binary match in IDA
-    static AbstractTypeClass* Find(const char* pID);
+     AbstractTypeClass* Find(const char* pID);
     // unmatched: no callgraph reference and no git history record
     static AbstractTypeClass* FindOrCreate(const char* pID);
     // design: static function, no direct binary match in IDA

@@ -30,7 +30,7 @@ public:
 
     static DynamicVectorClass<WarheadTypeClass*>* Array;
     // design: static function, no direct binary match in IDA
-    static WarheadTypeClass* Find(const char* pID);
+     WarheadTypeClass* Find(const char* pID);
     static WarheadTypeClass* FindOrCreate(const char* pID);  // 0x75E3B0 (as FindOrCreate)
     // wrapper: delegates to WarheadTypeClass::FindOrCreate at 0x75E3B0
     static int FindIndex(const char* pID);

@@ -62,7 +62,7 @@ struct TacticalMap {
     unsigned int FillScanlinesOpaque(int a2, int a3, void * aP3, int a5);
     void MultiplyByScalar(void * aP1);
     void* RenderCell(char arg0, void * aP2, int a4, int a2);
-    static double Render(...);  // C2597 interim stub
+     double Render(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

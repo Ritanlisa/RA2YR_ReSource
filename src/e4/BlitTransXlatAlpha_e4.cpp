@@ -136,7 +136,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
 
   int v11; // eax
   int result; // eax
-  unsigned int *v14; // edi
+  unsigned int v14;
   uint8_t v16; // bl
   int v17; // [esp+20h] [ebp+18h]
 
@@ -146,7 +146,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   result = *((unsigned int *)this + 2) + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
-    v14 = g_abs_87E8A4; /*0x493e35*/
+    v14 = (unsigned int *)(g_abs_87E8A4);
     v17 = a4; /*0x493e3b*/
     do /*0x493e8e*/
     {

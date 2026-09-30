@@ -17,6 +17,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x5FF850
 namespace gamemd {
@@ -83,7 +84,7 @@ Coord * * BuildingLight::CalculateShading()
     if ( (unsigned char)v3 ) /*0x5ff892*/
     {
       if ( (**(unsigned int **)&HouseClass_Player.__pad_5568[8060] & 0x1000) == 0 /*0x5ff8b2*/
-        || (IDA_LOBYTE(v3) = Game::Stub3(this), !(unsigned char)v3) )
+        || (IDA_LOBYTE(v3) = ((Game *)(this))->Stub3(), !(unsigned char)v3) )
       {
         v52[0] = v47[0] - 128; /*0x5ff8c9*/
         a1[0] = *(unsigned int *)&stru_87C374.__pad_579C[21648]; /*0x5ff8d9*/
@@ -92,9 +93,9 @@ Coord * * BuildingLight::CalculateShading()
         a1[3] = *(unsigned int *)&stru_87C374.__pad_579C[21660]; /*0x5ff8f0*/
         v6 = (unsigned char)(stru_830620.__pad_14B0[v5 + 6844]);
         v52[1] = (unsigned char)(v47[1] - 64);
-        v37 = *(Tactical **)&stru_87C374.__pad_579C[22532]; /*0x5ff912*/
-        v52[2] = 255; /*0x5ff916*/
-        v52[3] = 127; /*0x5ff91e*/
+        v37 = (unsigned char)(*(Tactical **)&stru_87C374.__pad_579C[22532]);
+        v52[2] = (unsigned char)(255);
+        v52[3] = (unsigned char)(127);
         a1[2] = *(unsigned int *)&stru_87C374.__pad_579C[21656]; /*0x5ff925*/
         if ( v6 < 64 ) /*0x5ff92c*/
           v6 = v6 * *(unsigned int *)this->__pad_10 / 64; /*0x5ff93d*/

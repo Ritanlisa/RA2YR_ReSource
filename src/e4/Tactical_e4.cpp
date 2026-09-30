@@ -30,6 +30,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x42A6D0
 namespace gamemd {
@@ -41,12 +42,12 @@ void * Tactical::ConstructTacticalSurface()
   unsigned int *v4; // eax
   unsigned int *v5; // edi
   void *v6; // eax
-  int v7; // ecx
+  void * v7;
   int v8; // eax
   unsigned int *v9; // eax
   unsigned int *v10; // edi
   void *v11; // eax
-  int v12; // ecx
+  void * v12;
   int v13; // eax
   unsigned int *v14; // eax
   unsigned int *v15; // ecx
@@ -97,11 +98,11 @@ void * Tactical::ConstructTacticalSurface()
   {
     v4[3] = (unsigned int)(0);
     v4[4] = (unsigned int)(-1);
-    *v4 = 0; /*0x42a75e*/
-    v4[1] = 0x10000; /*0x42a760*/
-    v6 = RA2_OPNEW(0x40004u); /*0x42a767*/
-    v7 = v5[1]; /*0x42a76c*/
-    v5[2] = v6; /*0x42a76f*/
+    *v4 = (unsigned int)(0);
+    v4[1] = (unsigned int)(0x10000);
+    v6 = (void *)((unsigned int)(RA2_OPNEW(0x40004u)));
+    v7 = (void *)((unsigned int)(v5[1]));
+    v5[2] = (unsigned int)(v6);
     v8 = 0; /*0x42a775*/
     if ( v7 >= 0 ) /*0x42a779*/
     {
@@ -115,7 +116,7 @@ void * Tactical::ConstructTacticalSurface()
   }
   else
   {
-    v5 = 0; /*0x42a78c*/
+    v5 = (unsigned int)(0);
   }
   *((unsigned int *)this + 5) = v5; /*0x42a790*/
   v9 = RA2_OPNEW(0x14u); /*0x42a793*/
@@ -124,11 +125,11 @@ void * Tactical::ConstructTacticalSurface()
   {
     v9[3] = (unsigned int)(0);
     v9[4] = (unsigned int)(-1);
-    *v9 = 0; /*0x42a7b0*/
-    v9[1] = 10000; /*0x42a7b2*/
-    v11 = RA2_OPNEW(0x9C44u); /*0x42a7b9*/
-    v12 = v10[1]; /*0x42a7be*/
-    v10[2] = v11; /*0x42a7c1*/
+    *v9 = (unsigned int)(0);
+    v9[1] = (unsigned int)(10000);
+    v11 = (void *)((unsigned int)(RA2_OPNEW(0x9C44u)));
+    v12 = (void *)((unsigned int)(v10[1]));
+    v10[2] = (unsigned int)(v11);
     v13 = 0; /*0x42a7c7*/
     if ( v12 >= 0 ) /*0x42a7cb*/
     {
@@ -142,7 +143,7 @@ void * Tactical::ConstructTacticalSurface()
   }
   else
   {
-    v10 = 0; /*0x42a7de*/
+    v10 = (unsigned int)(0);
   }
   *((unsigned int *)this + 26) = v10; /*0x42a7e5*/
   v14 = RA2_OPNEW(0x100004u); /*0x42a7e8*/
@@ -163,7 +164,7 @@ void * Tactical::ConstructTacticalSurface()
   }
   else
   {
-    v14 = 0; /*0x42a812*/
+    v14 = (unsigned int)(0);
   }
   *((unsigned int *)this + 4) = v14; /*0x42a819*/
   v17 = RA2_OPNEW(0x180004u); /*0x42a81c*/
@@ -186,7 +187,7 @@ void * Tactical::ConstructTacticalSurface()
     while ( v18 <= *v19 ); /*0x42a859*/
   }
   *v19 = (int)((unsigned int *)(0));
-  v20 = (char *)((unsigned int *)*((unsigned int *)this + 26));
+  v20 = (unsigned int *)((char *)((unsigned int *)*((unsigned int *)this + 26)));
   for ( i = 0; i <= *v20; *(unsigned int *)(v20[2] + 4 * i - 4) = 0 ) /*0x42a864*/
     ++i; /*0x42a869*/
   *v20 = 0; /*0x42a874*/
@@ -1159,7 +1160,7 @@ int Tactical::UpdateUIVisibility()
   int result; // eax
   int v3; // eax
 
-  if ( HouseClass_Player == (#375 *)g_abs_AC1198 ) /*0x6a661d*/
+  if ( HouseClass_Player == (void *)g_abs_AC1198 ) /*0x6a661d*/
   {
     v3 = 26; /*0x6a66f8*/
     if ( *((unsigned int *)g_abs_A8B230 + 3374) ) /*0x6a66f0*/

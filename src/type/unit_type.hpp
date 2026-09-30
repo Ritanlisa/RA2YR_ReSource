@@ -14,7 +14,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::UnitType;
 
     static DynamicVectorClass<UnitTypeClass*>* Array;
-    static UnitTypeClass* Find(const char* pID);
+     UnitTypeClass* Find(const char* pID);
     static UnitTypeClass* FindOrCreate(const char* pID);  // 0x74B960 (as FindOrCreate)
     // wrapper: delegates to UnitTypeClass::FindOrCreate at 0x74B960
     static int FindIndex(const char* pID);

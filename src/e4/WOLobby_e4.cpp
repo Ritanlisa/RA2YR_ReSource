@@ -430,7 +430,7 @@ LABEL_320:
       GDlg::LoadLetterStrings();
       Lobby::InvalidatePlayerSlots(hDlg);
       RefreshLobbyPlayerSlots(0xFFFFFFFF);
-      v122 = g_abs_A8B2FC;
+      v122 = (int *)(g_abs_A8B2FC);
       do
       {
         *(v122 - 8) = -2;

@@ -48,7 +48,7 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   *((unsigned int *)this + 2) = a4; /*0x5cbd2c*/
   *((unsigned int *)this + 1) = aP2; /*0x5cbd32*/
   *((unsigned char *)this + 12) = 1; /*0x5cbd35*/
-  *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5cbd48*/
+  *((unsigned int *)this + 4) = this->Timer::GetTicks(); /*0x5cbd48*/
   *((unsigned int *)this + 6) = 0; /*0x5cbd4f*/
   *((unsigned int *)this + 8) = a5; /*0x5cbd52*/
   *((unsigned int *)this + 14) = a7; /*0x5cbd58*/
@@ -92,7 +92,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   MSShapeAnim *v18; // edi
   int v23; // eax
   void (***v24)(unsigned int, int); // ecx
-  int v25; // [esp+0h] [ebp-14Ch]
+  void ** v25;
   int *v26; // [esp+4h] [ebp-148h]
   int v27; // [esp+8h] [ebp-144h]
   void **v28; // [esp+10h] [ebp-13Ch] BYREF
@@ -103,7 +103,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
   int var128; // [esp+24h] [ebp-128h]
   void **v34; // [esp+28h] [ebp-124h] BYREF
   void ***v35; // [esp+2Ch] [ebp-120h]
-  int v36; // [esp+30h] [ebp-11Ch]
+  void ** v36;
   int v37; // [esp+34h] [ebp-118h] BYREF
   void **v38; // [esp+38h] [ebp-114h] BYREF
   void ***var110; // [esp+3Ch] [ebp-110h]
@@ -139,7 +139,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     ((void (*)(void ***))v28[2])(&v28); /*0x76d532*/
   }
   v26 = (int *)((void **)(a2));
-  v25 = (void **)(a3);
+  v25 = (void **)((int)((void **)(a3)));
   Trigger::checkCondition(&v47, 0, 0); /*0x76d54c*/
   v47 = &vt_DynamicVectorClass_MSAnim; /*0x76d561*/
   v52 = 10; /*0x76d565*/
@@ -193,7 +193,7 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
             && ((uint8_t (*)(void ***, int, unsigned int))v47[2])(&v47, v52 + v49, 0) )
           {
             v17 = (gamemd::MSShapeAnim *)((unsigned int)(v51));
-            v51 = (unsigned int)((MSShapeAnim *)((char *)v51 + 1));
+            v51 = (gamemd::MSShapeAnim *)((unsigned int)((MSShapeAnim *)((char *)v51 + 1)));
             *((unsigned int *)v48 + (unsigned int)v17) = v5; /*0x76d731*/
           }
           v5 = 0; /*0x76d734*/
@@ -240,10 +240,10 @@ void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char 
     ((void (*)(void ***))v31[2])(&v31); /*0x76d86c*/
   }
   v35 = (void **)(&v47);
-  v36 = (void **)(0);
-  v34 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d89b*/
-  var110 = &v41; /*0x76d89f*/
-  v33 = 0; /*0x76d8a3*/
+  v36 = (void **)((int)((void **)(0)));
+  v34 = (void **)(&vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim);
+  var110 = (void **)(&v41);
+  v33 = (gamemd::ObjectClass *)((void **)(0));
   v38 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d8a7*/
   if ( CampaignProperties_WorldDominationTour_22::AddRef(&v38) ) /*0x76d8ab*/
   {

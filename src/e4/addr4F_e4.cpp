@@ -89,7 +89,7 @@ int InGameUI_Open()
     Dialog::Show(v2); /*0x4f1150*/
     if ( !dwNewLong ) /*0x4f115b*/
     {
-            while ( this->Dialog::PumpMessages() != 1 )
+            while ( ((Dialog *)0)->PumpMessages() != 1 )
       {
         if ( dwNewLong ) /*0x4f116c*/
           goto LABEL_16; /*0x4f116c*/
@@ -119,7 +119,7 @@ long sub_4F1840()
     Dialog::Show(Dialog); /*0x4f1871*/
     if ( !dwNewLong ) /*0x4f187c*/
     {
-            while ( this->Dialog::PumpMessages() != 1 )
+            while ( ((Dialog *)0)->PumpMessages() != 1 )
       {
         if ( dwNewLong ) /*0x4f188d*/
           goto LABEL_7; /*0x4f188d*/
@@ -142,7 +142,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   HWND v7; // esi
   int v8; // edi
   wchar_t *v9; // eax
-  unsigned int v10;
+  HouseClass * v10;
   int v11; // edx
   wchar_t *v12; // eax
   unsigned int *WindowLongA; // eax
@@ -307,7 +307,7 @@ v38.abstractFlags = (void *)((unsigned int)((int)v3));
   DeleteAndZero(&v38); /*0x4f1d89*/
   DeleteAndZero((ObjectClass *)&v38.vtable3); /*0x4f1d92*/
   String::Concat2((String *)&v38.vtable2, (char **)&v38.nextArrayIndex, g_Str_File__PCX); /*0x4f1da5*/
-  String::Reassign((String *)((unsigned int)(v8)+ 76), (const char **)&v38.nextArrayIndex); /*0x4f1db1*/
+  ((String *)((String *)((unsigned int)(v8)+ 76)))->Reassign((const char **)&v38.nextArrayIndex); /*0x4f1db1*/
   Config = 0; /*0x4f1db6*/
   v38.occupant = 0; /*0x4f1dba*/
   v38.owningHouseIndex = 0; /*0x4f1dbe*/

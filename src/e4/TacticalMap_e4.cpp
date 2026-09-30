@@ -23,6 +23,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "app/cmdline.hpp"
+#include "e4/classes/ColorStruct_e4.hpp"
 
 // 0x484680
 namespace gamemd {
@@ -128,7 +129,7 @@ void TacticalMap::Redraw()
   int v6; // [esp+8h] [ebp-8h]
   bool v7; // [esp+Ch] [ebp-4h]
 
-  v1 = g_abs_887314; /*0x4f4489*/
+  v1 = (int)(g_abs_887314);
   g_abs_887314 = g_abs_88731C; /*0x4f4492*/
   (*(void (**)(int, int, unsigned int))(*(unsigned int *)g_abs_887640 + 64))(g_abs_887640, g_abs_88731C, 0); /*0x4f44a2*/
   v3 = *((unsigned int *)this + 3); /*0x4f44a5*/
@@ -149,7 +150,7 @@ void TacticalMap::Redraw()
   }
   if ( g_abs_A8EF54 ) /*0x4f454f*/
     (*(void (**)(int, unsigned int))(*(unsigned int *)g_abs_A8EF54 + 44))(g_abs_A8EF54, 0); /*0x4f4555*/
-  TacticalMap::DrawCursor(&g_abs_A8BC60); /*0x4f455d*/
+  ((TacticalMap *)(&g_abs_A8BC60))->DrawCursor(); /*0x4f455d*/
   v4 = g_abs_887368; /*0x4f4562*/
   if ( g_abs_887368 ) /*0x4f456a*/
     (*(void (**)(int, unsigned int))(*(unsigned int *)g_abs_887368 + 12))(g_abs_887368, 0); /*0x4f4570*/
@@ -238,7 +239,7 @@ void TacticalMap::Construct()
   float v4; // [esp+0h] [ebp-10h]
   float v5; // [esp+0h] [ebp-10h]
 
-  AbstractClass::Constructor((#373 *)this); /*0x6d1c25*/
+  AbstractClass::Constructor((void *)this); /*0x6d1c25*/
   *((unsigned int *)this + 42) = -1; /*0x6d1c2c*/
   *((unsigned char *)this + 172) = 0; /*0x6d1c36*/
   *((unsigned char *)this + 173) = 0; /*0x6d1c3c*/

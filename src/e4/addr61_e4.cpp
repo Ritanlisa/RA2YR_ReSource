@@ -40,6 +40,12 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
     unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
   void *v2; // eax
   void *v3; // eax
   unsigned int *v4; // ecx
@@ -402,7 +408,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   }
   else
   {
-    v9 = hWnd; /*0x612b15*/
+    v9 = (gamemd::AbstractClass **)(hWnd);
   }
   if ( Msg != 307 ) /*0x612b22*/
     return (HGDIOBJ)CallWindowProcA(v4, v9, Msg, (WPARAM)hdc, lParam); /*0x612b5b*/
@@ -634,7 +640,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
           }
         }
       }
-      return (gamemd::AbstractClass **)(0);
+      return (gamemd::AbstractClass **)((gamemd::AbstractClass **)(0));
     case 0x14u: /*0x61ecb4*/
       return 1; /*0x61ed5b*/
     case 0x85u: /*0x61ecb4*/

@@ -145,7 +145,7 @@ struct Network {
     int  Send(int a2, int a3, void * aP3, int a5);  // 0x541370
     int  SendPacketThunk(int a2, int a3, int a4, int a5, int a6, int a7);  // 0x5413B0
     char  receiveData(int a2);  // 0x5413F0
-    int  SendPacket(int a2, int a3, unsigned __int8 a4);  // 0x541410
+    int  SendPacket(int a2, int a3, uint8_t a4);  // 0x541410
     int  SendPacketThunk2(int a2, int a3, int a4, int a5);  // 0x541480
     void * ReceiveLoop(void *a1 = 0);  // 0x541820
     int GetQueueCount();  // 0x5422D0
@@ -157,20 +157,20 @@ struct Network {
     int SetupRematch();  // 0x5C46E0
     int dispatchEvent();  // 0x5D93D0
     int  ResolveAndConnect(unsigned char * a2);  // 0x5D9410
-    unsigned short  ResolveNetworkAddress(unsigned __int16 a2);  // 0x5DA0B0
+    unsigned short  ResolveNetworkAddress(uint16_t a2);  // 0x5DA0B0
     int processQueue();  // 0x5E2BA0
     int CountDisconnectedHouses();  // 0x5E2BE0
     char AddFrameEvent();  // 0x6471A0
     void QueueProcessingLoop(void *a1 = 0);  // 0x6475F0
     int syncGameState(void *a1 = 0);  // 0x64AC90
     int  ProcessEventList(int a1, int * a2, int a3);  // 0x64C380
-    char  RecordEvent(__int64 a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27);  // 0x6521C0
+    char  RecordEvent(int64_t a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, int a23, int a24, int a25, int a26, int a27);  // 0x6521C0
     int SendUnreachable(void *a1 = 0);  // 0x6523A0
     void validatePacket();  // 0x663910
     char SendMasterPlayerList();  // 0x6639D0
     wchar_t * ProcessAddressChange();  // 0x6640E0
     char *  processAcknowledgment(void * aP1);  // 0x6642A0
-    char *  reconnect(void * aP1, __int16 a3);  // 0x664400
+    char *  reconnect(void * aP1, int16_t a3);  // 0x664400
     unsigned int * processGameEvent(void *a1 = 0);  // 0x69B540
     void SyncPlayerList(void *a1 = 0);  // 0x792F10
     int finalizeSession();  // 0x7B2DB0

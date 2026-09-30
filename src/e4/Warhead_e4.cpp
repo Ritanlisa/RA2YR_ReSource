@@ -91,6 +91,7 @@ int Warhead::RemoveFromDamageList(int a2)
 namespace gamemd {
 int Warhead::ApplyDamage(ObjectClass * aP1)
 {
+    unsigned int v124 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
 
   int v3; // eax
@@ -308,7 +309,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
         v16 = (*(unsigned char *)(v15 + 20) & 2) != 0 ? v15 : 0;
       else
         v16 = 0;
-      v17 = v15 && (*(unsigned char *)(v15 + 20) & 1) != 0 && (uint8_t)House::IsHumanPlayer(*(#375 **)(v15 + 540));
+      v17 = v15 && (*(unsigned char *)(v15 + 20) & 1) != 0 && (uint8_t)House::IsHumanPlayer(*(void **)(v15 + 540));
       if ( v16 )
       {
         if ( *(unsigned char *)(v16 + 144) )
@@ -332,7 +333,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
              (int)&savedregs,
              *((unsigned int *)this + 67))
         && *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 532) != -1
-        && ((uint8_t)House::IsHumanPlayer(*(#375 **)(*((unsigned int *)this + 44) + 540)) || v17) )
+        && ((uint8_t)House::IsHumanPlayer(*(void **)(*((unsigned int *)this + 44) + 540)) || v17) )
       {
         v19 = v16 + 156;
         v141 = *(double *)v19;
@@ -346,7 +347,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
     v20 = *((unsigned int *)this + 67);
     if ( v20 )
       v20 = (*(unsigned char *)(v20 + 20) & 1) != 0 ? v20 : 0;
-    AbstractClass::Initialize(&g_abs_87F5D8, *((TechnoClass **)this + 44), (TechnoClass *)v20);
+    ((AbstractClass *)(&g_abs_87F5D8))->Initialize(*((TechnoClass **)this + 44), (TechnoClass *)v20);
   }
   else if ( v13[344] )
   {
@@ -742,7 +743,7 @@ LABEL_158:
               {
                 edi173 = (int *)(4 * (unsigned int)v139 + *(unsigned int *)(*((unsigned int *)this + 74) + 400));
                 v92 = (int *)(*(int (**)(char *, double *))(*(unsigned int *)this + 72))(this, &v141);
-                DamageAnimClass::Constructor((#374 *)v91, *edi173, v92, 0);
+                DamageAnimClass::Constructor((void *)v91, *edi173, v92, 0);
               }
               --v144;
             }

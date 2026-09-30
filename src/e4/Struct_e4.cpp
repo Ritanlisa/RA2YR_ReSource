@@ -10,6 +10,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/SuperClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x48B2A0
 namespace gamemd {

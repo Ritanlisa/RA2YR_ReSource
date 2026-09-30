@@ -298,7 +298,7 @@ namespace gamemd {
 unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 {
   unsigned int result; // eax
-  const int * v4;
+  const unsigned int v4;
 
   result = a3; /*0x510e10*/
   if ( a3 < 16 ) /*0x510e19*/
@@ -620,7 +620,7 @@ namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
 
-  *this = &vt_HoverLocomotionClass; /*0x513d00*/
+  *(unsigned int *)this = (unsigned int)(&vt_HoverLocomotionClass);
   *((unsigned int *)this + 1) = &vt_HoverLocomotionClass; /*0x513d06*/
   LocomotionClass::Construct(this); /*0x513d0d*/
 

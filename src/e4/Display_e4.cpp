@@ -29,11 +29,11 @@ int Display::GetViewport()
 
   int *result; // eax
   int v2; // ecx
-  int v3; // edx
-  int v4; // esi
+  unsigned char * v3;
+  unsigned char * v4;
 
   result = (int *)(this);
-  v2 = 0; /*0x72ad44*/
+  v2 = (int)(0);
   if ( !g_abs_A8EB7C && !g_abs_A8ED6B ) /*0x72ad5e*/
     v2 = 168; /*0x72ad60*/
   v3 = g_abs_886FB8 - 168; /*0x72ad67*/

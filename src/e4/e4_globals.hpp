@@ -1,6 +1,7 @@
 // E1: pseudo-body referenced globals missing from src (auto-generated)
 #pragma once
 #include <cstdint>
+#include "e4/e4_abs_decls.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_fwd_tree_e4.hpp"
 

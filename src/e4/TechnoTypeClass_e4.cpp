@@ -1054,7 +1054,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
   int v6; // esi
   float v7; // [esp+8h] [ebp-8h]
   float ThreatMultiplier; // [esp+Ch] [ebp-4h]
-  #375 *v9; // [esp+14h] [ebp+4h]
+  void *v9; // [esp+14h] [ebp+4h]
   float v10; // [esp+18h] [ebp+8h]
   int v11; // [esp+18h] [ebp+8h]
 
@@ -1071,7 +1071,7 @@ int TechnoTypeClass::ComputeValue(void * a2, float a3)
     }
     else
     {
-      v9 = (#375 *)(*(int (**)(TechnoTypeClass *))(*(unsigned int *)this->vtable0 + 172))(this); /*0x711fd7*/
+      v9 = (void *)(*(int (**)(TechnoTypeClass *))(*(unsigned int *)this->vtable0 + 172))(this); /*0x711fd7*/
       v6 = Math::RoundToInt((double)(int)v9 * ThreatMultiplier * v10); /*0x711fec*/
       if ( (uint8_t)House::IsCurrentPlayer(a2) ) /*0x711ff4*/
         return Math::RoundToInt((double)v6 * v7); /*0x71200a*/

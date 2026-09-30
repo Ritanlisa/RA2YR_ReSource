@@ -44,13 +44,13 @@ int TeamTypeClass::Construct()
     unsigned int v4 = 0;  /* G37 hoist */
     unsigned int v2 = 0;  /* G37 hoist */
 
-  #72 *v2; // eax
+  void *v2; // eax
   int v3; // eax
-  #72 *v4; // eax
+  void *v4; // eax
   int v5; // eax
   int v7; // [esp+Ch] [ebp-8h]
 
-  ((AbstractClass *)((#373 *)this))->Constructor(); /*0x4c98b7*/
+  ((AbstractClass *)((void *)this))->Constructor(); /*0x4c98b7*/
   *((unsigned int *)this + 9) = 0; /*0x4c98be*/
   *((unsigned char *)this + 40) = 0; /*0x4c98c1*/
   v2 = g_abs_A8ED84; /*0x4c98c4*/
@@ -81,16 +81,16 @@ int TeamTypeClass::Construct()
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x4c9934*/
   if ( g_abs_A83E40 < g_abs_A83E38 /*0x4c996d*/
     || (g_abs_A83E3D || !g_abs_A83E38)
-    && g_abs_A83E44 > 0
+    && g_abs_A83E44 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A83E30 + 8))(
          &g_abs_A83E30,
-         g_abs_A83E38 + g_abs_A83E44,
+         (unsigned int)(g_abs_A83E38)+ g_abs_A83E44,
          0) )
   {
-    v3 = g_abs_A83E40++; /*0x4c997a*/
+    v3 = (int)((unsigned int)(g_abs_A83E40++));
     *((unsigned int *)g_abs_A83E34 + v3) = this; /*0x4c9989*/
   }
-  v4 = g_abs_A8ED84; /*0x4c998c*/
+  v4 = (unsigned int)(g_abs_A8ED84);
   *((unsigned int *)this + 14) = 0; /*0x4c9996*/
   *((unsigned int *)this + 11) = v4; /*0x4c9999*/
   *((unsigned int *)this + 12) = v7; /*0x4c999f*/
@@ -98,16 +98,16 @@ int TeamTypeClass::Construct()
   *((unsigned int *)this + 9) = 0; /*0x4c99a5*/
   if ( g_abs_B0F730 < g_abs_B0F728 /*0x4c99dc*/
     || (g_abs_B0F72D || !g_abs_B0F728)
-    && g_abs_B0F734 > 0
+    && g_abs_B0F734 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F720 + 8))(
          &g_abs_B0F720,
-         g_abs_B0F728 + g_abs_B0F734,
+         (unsigned int)(g_abs_B0F728)+ g_abs_B0F734,
          0) )
   {
-    v5 = g_abs_B0F730++; /*0x4c99e9*/
+    v5 = (int)((unsigned int)(g_abs_B0F730++));
     *((unsigned int *)g_abs_B0F724 + v5) = this; /*0x4c99f8*/
   }
-  return this; /*0x4c99fd*/
+  return (int)((int)((int)(this)));
 
 }
 }
@@ -152,7 +152,7 @@ LABEL_6:
             v5 = dword_8B41D8,
             v6) )
       {
-        dword_8B41D8 = v5 + 1; /*0x691cf6*/
+        dword_8B41D8 = (unsigned int)(v5 + 1);
         *((unsigned int *)unk_8B41CC + v5) = v4; /*0x691d02*/
         v5 = dword_8B41D8; /*0x691d05*/
       }
@@ -237,8 +237,8 @@ int TeamTypeClass::DestroyAllInstances()
   int i; // esi
   unsigned int *v4; // ecx
 
-  result = g_abs_8B40F8; /*0x6f0a70*/
-  for ( i = 0; i < g_abs_8B40F8; ++i ) /*0x6f0a7d*/
+  result = (int)(g_abs_8B40F8);
+  for ( i = 0; i < (int)((int))((int))(g_abs_8B40F8); ++i ) /*0x6f0a7d*/
   {
     v4 = (unsigned int *)*((unsigned int *)g_abs_8B40EC + i); /*0x6f0a84*/
     if ( this == (void *)v4[9] ) /*0x6f0a8a*/
@@ -247,7 +247,7 @@ int TeamTypeClass::DestroyAllInstances()
         (*(void (**)(unsigned int *, int))(*v4 + 32))(v4, 1); /*0x6f0a94*/
       --i; /*0x6f0a97*/
     }
-    result = g_abs_8B40F8; /*0x6f0a98*/
+    result = (int)(g_abs_8B40F8);
   }
   return result; /*0x6f0aa2*/
 

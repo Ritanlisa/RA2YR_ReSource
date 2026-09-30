@@ -20,6 +20,8 @@
 namespace gamemd {
 void PsyDom::Fire()
 {
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v33 = 0;  /* G37 hoist */
 
   unsigned int *v0; // esi
   void *v1; // eax
@@ -124,7 +126,7 @@ void PsyDom::Fire()
         {
           if ( *(unsigned int *)&i->__pad_2B8[8] ) /*0x53b276*/
             CaptureManagerClass::FreeUnit(i, v24, v25, v26, v27, a5); /*0x53b287*/
-          (*(void (**)(IUnknown *, #375 *, int))(i->field_0 + 980))(i, unk_A9FAC8, 1); /*0x53b298*/
+          (*(void (**)(IUnknown *, void *, int))(i->field_0 + 980))(i, unk_A9FAC8, 1); /*0x53b298*/
           v13 = i->field_0; /*0x53b29e*/
           i->__pad_2B8[12] = 1; /*0x53b2a2*/
           v14 = *(unsigned int *)((*(int (**)(IUnknown *))(v13 + 132))(i) + 1548); /*0x53b2af*/
@@ -157,7 +159,7 @@ void PsyDom::Fire()
             && ((uint8_t (*)(void ***, int, unsigned int))v35[2])(&v35, v40 + v37, 0) )
           {
             v23 = (gamemd::AnimClass *)((unsigned int)(v39));
-            v39 = (unsigned int)((AnimClass *)((char *)v39 + 1));
+            v39 = (gamemd::AnimClass *)((unsigned int)((AnimClass *)((char *)v39 + 1)));
             *((unsigned int *)Block + (unsigned int)v23) = i; /*0x53b361*/
           }
         }

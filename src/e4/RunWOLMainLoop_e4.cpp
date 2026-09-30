@@ -23,6 +23,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/SHA1_e4.hpp"
 
 // 0x77E110
 namespace gamemd {
@@ -76,7 +77,7 @@ void sub_785EA0()
   DWORD k; // esi
   HWND v12; // eax
   HWND v13; // eax
-  HWND Current; // eax
+  HANDLE * Current;
   void *v15; // [esp+Ch] [ebp-4h] BYREF
 
   IDA_LOBYTE(stru_B77D80.HashTable_field_0x40) = 1; /*0x785eac*/
@@ -147,7 +148,7 @@ void sub_785EA0()
       if ( !stru_B77D80.HashTable_field_0x48 ) /*0x78604b*/
         CloseDialog(v13, 0); /*0x786051*/
     }
-    Current = (HANDLE *)((HWND)((Dialog *)0)->GetCurrent());
+    Current = (HANDLE *)((HWND)((HANDLE *)((HWND)((Dialog *)0)->GetCurrent())));
     result = (HANDLE *)((int)GetDlgItem(Current, 1344));
     if ( result ) /*0x786069*/
       return (int, unsigned int a2)SetFocus((HWND)result); /*0x78606c*/

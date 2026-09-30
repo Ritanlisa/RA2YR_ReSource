@@ -136,7 +136,7 @@ AbstractClass * Voxel::RenderFrame()
   v25[0] = (*(float *)&g_abs_B2D5E0 + *(float *)&g_abs_B2D948) * 0.5; /*0x754536*/
   v25[1] = (*(float *)&g_abs_B2D5E4 + *(float *)&g_abs_B2D94C) * 0.5; /*0x75454c*/
   v25[2] = (*(float *)&g_abs_B2D5E8 + *(float *)&g_abs_B2D950) * 0.5; /*0x754562*/
-  if ( g_abs_B2FB70 > 0 ) /*0x754566*/
+  if ( g_abs_B2FB70 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x754566*/
   {
     v2 = (char *)&unk_B3FF78; /*0x754568*/
     do /*0x754585*/
@@ -145,14 +145,14 @@ AbstractClass * Voxel::RenderFrame()
       ++v1; /*0x75457f*/
       v2 += 72; /*0x754580*/
     }
-    while ( v1 < g_abs_B2FB70 ); /*0x754585*/
+    while ( v1 < (int)((int))((int))(g_abs_B2FB70) ); /*0x754585*/
   }
-  v3 = g_abs_B2D820; /*0x754587*/
-  if ( g_abs_B2D820 > 0 ) /*0x75458f*/
+  v3 = (int)(g_abs_B2D820);
+  if ( g_abs_B2D820 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x75458f*/
   {
-    v4 = &g_abs_B2D824; /*0x754591*/
-    v5 = (char *)&g_abs_B2D958; /*0x754596*/
-    v6 = g_abs_B2D820; /*0x75459b*/
+    v4 = (unsigned int *)((int)(&g_abs_B2D824));
+    v5 = (int)((char *)&g_abs_B2D958);
+    v6 = (int)(g_abs_B2D820);
     do /*0x7545a8*/
     {
       *v4 = (unsigned int)(v5);
@@ -220,7 +220,7 @@ AbstractClass * Voxel::RenderFrame()
         ++v15; /*0x754641*/
         ++v16; /*0x754642*/
       }
-      while ( v15 < g_abs_B2D820 ); /*0x754647*/
+      while ( v15 < (int)((int))((int))(g_abs_B2D820) ); /*0x754647*/
     }
   }
   IDA_LODWORD(v17) = Math::RoundToInt(*(float *)&g_abs_B2D948 - *(float *)&g_abs_B2D5E0); /*0x754666*/
@@ -339,8 +339,8 @@ int Voxel::Projection_Setup()
   float v84; // [esp+E0h] [ebp-34h]
   char v85[48]; // [esp+E4h] [ebp-30h] BYREF
 
-  v84 = g_abs_B43F08; /*0x754cbe*/
-  v59 = g_abs_B44310; /*0x754cd0*/
+  v84 = (float)(g_abs_B43F08);
+  v59 = (float)(g_abs_B44310);
   *(float *)&v53 = 1.0; /*0x754ce4*/
   v54 = 0.0; /*0x754cec*/
   v55 = 0; /*0x754cf4*/

@@ -253,7 +253,7 @@ namespace gamemd {
 int WaypointPathClass::PowerDrainUpdate(int a2)
 {
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x763c09*/
+  AbstractClass::ProcessPower((void *)this); /*0x763c09*/
   Power::TimerProcess(*((unsigned int *)this + 9)); /*0x763c14*/
   return Power::TimerProcess(*((unsigned int *)this + 14)); /*0x763c24*/
 
@@ -286,7 +286,7 @@ int WaypointPathClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
   int v5; // ebp
   int i; // edi
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x763da3*/
+  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x763da3*/
   if ( result >= 0 ) /*0x763daa*/
   {
     v4 = *a1; /*0x763daf*/
@@ -376,7 +376,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(void ** Block, char a2)
   *((unsigned char *)Block + 53) = 0; /*0x763ec1*/
   *(Block + 12) = 0; /*0x763ec5*/
   AbstractClass::DTOR(Block); /*0x763ecc*/
-  if ( (Block & 1) != 0 ) /*0x763ed6*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x763ed6*/
     RA2_OPDEL(Block); /*0x763ed9*/
   return (WaypointPathClass *)Block; /*0x763ee3*/
 

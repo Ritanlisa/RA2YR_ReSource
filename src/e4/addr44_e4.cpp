@@ -38,9 +38,9 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
   {
     v3 = 0; /*0x44f739*/
   }
-  if ( (int16_t)v6 - g_abs_87F90C > g_abs_87F914 / 2 ) /*0x44f751*/
+  if ( (int16_t)v6 - g_abs_87F90C > (unsigned int)(g_abs_87F914)/ 2 ) /*0x44f751*/
     v3 = -v3; /*0x44f753*/
-  if ( (int16_t)v7 - g_abs_87F910 > g_abs_87F918 / 2 ) /*0x44f76b*/
+  if ( (int16_t)v7 - g_abs_87F910 > (unsigned int)(g_abs_87F918)/ 2 ) /*0x44f76b*/
     v4 = -v4; /*0x44f76d*/
   IDA_LOWORD(a2) = v6 + v3; /*0x44f77f*/
   IDA_HIWORD(a2) = v7 + v4; /*0x44f784*/

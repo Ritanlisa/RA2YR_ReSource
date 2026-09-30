@@ -48,15 +48,15 @@ void GameSettings::Read()
   char v20; // al
   unsigned short *v21; // eax
   bool v22; // zf
-  #72 *v23; // eax
-  #72 *v24; // eax
+  void *v23; // eax
+  void *v24; // eax
   int v25; // eax
   int v26; // eax
   uint16_t v27; // ax
   int v28; // ecx
-  #72 **v30; // [esp-4h] [ebp-1ACh]
+  void **v30; // [esp-4h] [ebp-1ACh]
   int v31; // [esp+4h] [ebp-1A4h]
-  #72 **v32; // [esp+8h] [ebp-1A0h]
+  void **v32; // [esp+8h] [ebp-1A0h]
   unsigned short String[200]; // [esp+18h] [ebp-190h] BYREF
 
   this->Debug::Log(); /*0x5fa636*/
@@ -247,8 +247,8 @@ void GameSettings::Read()
     &g_abs_87F7E8[7734],
     (uint8_t *)g_INI_Key_Network,
     (int)aNetid,
-    (#72 *)&g_abs_87F7E8[8147],
-    (#72 *)String,
+    (void *)&g_abs_87F7E8[8147],
+    (void *)String,
     200);
   if ( String[0] ) /*0x5fabcc*/
   {
@@ -262,11 +262,11 @@ void GameSettings::Read()
       ++v21; /*0x5fabe5*/
     }
     while ( *v21 ); /*0x5fabe8*/
-    v23 = wcstok((#72 *)String, (const #72 *)asc_82083C, v32); /*0x5fabf8*/
+    v23 = wcstok((void *)String, (const void *)asc_82083C, v32); /*0x5fabf8*/
     if ( v23 ) /*0x5fac02*/
     {
       *((unsigned int *)this + 19) = wcstol(v23, 0, 10) - 1; /*0x5fac16*/
-      v24 = wcstok(0, (const #72 *)asc_82083C, v30); /*0x5fac19*/
+      v24 = wcstok(0, (const void *)asc_82083C, v30); /*0x5fac19*/
       if ( v24 ) /*0x5fac23*/
         *((unsigned int *)this + 20) = wcstol(v24, 0, 10) - 1; /*0x5fac33*/
     }

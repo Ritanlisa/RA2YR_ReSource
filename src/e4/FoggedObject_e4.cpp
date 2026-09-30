@@ -39,20 +39,20 @@ int FoggedObject::DrawVector_Constructor( IUnknown * aP1, IUnknown * aP2)
     {
       if ( (int)&aP1[-1].__tail_1602E[1] >= 0 ) /*0x4d2e18*/
       {
-        v9 = (int)(v8 + 8);
+        v9 = ((unsigned int)(void)*)((int)(v8 + 8));
         v10 = aP1; /*0x4d2e1d*/
         do /*0x4d2e2d*/
         {
-          *(unsigned int *)(v9 - 8) = 0; /*0x4d2e1e*/
-          *(unsigned int *)(v9 - 4) = 0; /*0x4d2e21*/
+          *(unsigned int *)((unsigned int)(v9)- 8) = 0; /*0x4d2e1e*/
+          *(unsigned int *)((unsigned int)(v9)- 4) = 0; /*0x4d2e21*/
           *(unsigned char *)v9 = 0; /*0x4d2e24*/
-          *(unsigned int *)(v9 + 4) = 0; /*0x4d2e26*/
-          v9 += 16; /*0x4d2e29*/
+          *(unsigned int *)((unsigned int)(v9)+ 4) = 0; /*0x4d2e26*/
+          (unsigned int)(v9)+= 16; /*0x4d2e29*/
           v10 = (IUnknown *)((char *)v10 - 1); /*0x4d2e2c*/
         }
         while ( v10 ); /*0x4d2e2d*/
       }
-      v4 = (int)(v8);
+      v4 = (void *)((int)(v8));
     }
     *(this + 1) = v4; /*0x4d2e31*/
     *((unsigned char *)this + 13) = 1; /*0x4d2e34*/

@@ -31,7 +31,7 @@ char PlayerClass::AssignPlayerIndex()
 
   int i; // esi
 
-  for ( i = 0; i < g_abs_A8DA84; ++i ) /*0x5d62ca*/
+  for ( i = 0; i < (int)((int))((int))(g_abs_A8DA84); ++i ) /*0x5d62ca*/
   {
     if ( SessionClass::GetPlayerSide(*(unsigned int *)(g_abs_A8DA78 + 4 * i)) == -3 ) /*0x5d62dc*/
       *(unsigned int *)(*(unsigned int *)(g_abs_A8DA78 + 4 * i) + 107) = -1; /*0x5d62e7*/
@@ -47,7 +47,7 @@ namespace gamemd {
 bool PlayerClass::IsValidIndex(int a1)
 {
 
-  return a1 >= 0 && a1 < g_abs_A8DA84; /*0x5d8ca2*/
+  return a1 >= 0 && a1 < (int)((int))((int))(g_abs_A8DA84); /*0x5d8ca2*/
 
 }
 } // namespace gamemd

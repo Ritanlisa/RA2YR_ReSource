@@ -24,6 +24,18 @@
 namespace gamemd {
 int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v26 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v26 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v26 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v26 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
@@ -62,7 +74,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
     v8 = (unsigned int *)(RA2_OPNEW(0x18u));
-    v9 = v8; /*0x5a018e*/
+    v9 = (unsigned int)(v8);
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
@@ -82,7 +94,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     {
       while ( 2 ) /*0x5a01da*/
       {
-        v11 = 0; /*0x5a01da*/
+        v11 = (unsigned int)(0);
         v33 = 0; /*0x5a01dc*/
         while ( 1 ) /*0x5a01f3*/
         {

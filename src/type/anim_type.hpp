@@ -31,7 +31,7 @@ public:
 
     static DynamicVectorClass<AnimTypeClass*>* Array;
     // design: static function, no direct binary match in IDA
-    static AnimTypeClass* Find(const char* pID);
+     AnimTypeClass* Find(const char* pID);
     static AnimTypeClass* FindOrCreate(const char* pID);  // 0x428B80 (as FindOrCreate)
     static int FindIndex(const char* pID);  // 0x427CB0
 

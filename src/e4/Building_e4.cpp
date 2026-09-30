@@ -171,7 +171,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       if ( BuildingClass::IsCellPlaceable(this, (int16_t *)&v37) ) /*0x425f78*/
       {
         aP1->field_0 = (unsigned int)((v21 << 8) + 128);
-        aP1->field_4 = (void *)((v30 << 8) + 128); /*0x425fa2*/
+        aP1->field_4 = (unsigned int)((void *)((v30 << 8) + 128));
         aP1->field_8 = 0; /*0x425fa7*/
         return &aP1->field_0; /*0x425fb0*/
       }
@@ -180,7 +180,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       if ( BuildingClass::IsCellPlaceable(this, (int16_t *)&v37) ) /*0x425fd3*/
       {
         aP1->field_0 = (unsigned int)((v7 << 8) + 128);
-        aP1->field_4 = (void *)((v22 << 8) + 128); /*0x425ffa*/
+        aP1->field_4 = (unsigned int)((void *)((v22 << 8) + 128));
         aP1->field_8 = 0; /*0x425ffd*/
         return &aP1->field_0; /*0x426006*/
       }
@@ -209,10 +209,9 @@ LABEL_39:
       goto LABEL_39; /*0x42608e*/
   }
   v24 = (unsigned int)(SHIWORD(v32));
-  v23 = ((int16_t)v32 << 8) + 128; /*0x4260c5*/
-LABEL_41:
-  aP1->field_0 = v23; /*0x4260cb*/
-  aP1->field_4 = (void *)((v24 << 8) + 128); /*0x4260dd*/
+  v23 = (unsigned int)(((int16_t)v32 << 8) + 128);
+LABEL_41: aP1->field_0 = (unsigned int)(v23);
+  aP1->field_4 = (unsigned int)((void *)((v24 << 8) + 128));
   aP1->field_8 = 0; /*0x4260e0*/
   return &aP1->field_0; /*0x425faa*/
 
@@ -278,9 +277,9 @@ unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
   }
   else
   {
-    *a1 = g_abs_B077A0; /*0x69e835*/
-    a1[1] = g_abs_B077A4; /*0x69e83d*/
-    a1[2] = g_abs_B077A8; /*0x69e846*/
+    *a1 = (unsigned int)(g_abs_B077A0);
+    a1[1] = (unsigned int)(g_abs_B077A4);
+    a1[2] = (unsigned int)(g_abs_B077A8);
     a1[3] = g_abs_B077AC; /*0x69e84f*/
     return a1; /*0x69e829*/
   }

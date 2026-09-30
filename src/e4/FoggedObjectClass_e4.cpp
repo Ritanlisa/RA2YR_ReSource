@@ -131,13 +131,13 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   *((unsigned int *)this + 17) = v18; /*0x4d0b37*/
   if ( g_abs_8B3D20 < g_abs_8B3D18 /*0x4d0b6f*/
     || (g_abs_8B3D1D || !g_abs_8B3D18)
-    && g_abs_8B3D24 > 0
+    && g_abs_8B3D24 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
     && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_8B3D10 + 8))(
          &g_abs_8B3D10,
-         g_abs_8B3D24 + g_abs_8B3D18,
+         (unsigned int)(g_abs_8B3D24)+ g_abs_8B3D18,
          0) )
   {
-    v19 = g_abs_8B3D20++; /*0x4d0b7c*/
+    v19 = (int)((unsigned int)(g_abs_8B3D20++));
     *((unsigned int *)g_abs_8B3D14 + v19) = this; /*0x4d0b8b*/
   }
   v20 = (int16_t)(*((unsigned int *)this + 13) / 256); /*0x4d0bb4*/
@@ -145,7 +145,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   v22 = 74 * ((int16_t)(*((unsigned int *)this + 14) / 256) - ((v20 + (int16_t)(*((unsigned int *)this + 14) / 256)) << 9) - v20) /*0x4d0bd6*/
       - *((unsigned int *)this + 12)
       + 0x7FFFFFFF;
-  if ( (int)(g_abs_8B3CC4 + 1) <= g_abs_8B3CC8 ) /*0x4d0bdf*/
+  if ( (int)(g_abs_8B3CC4 + 1) <= (int)((int))((int))(g_abs_8B3CC8) ) /*0x4d0bdf*/
     goto LABEL_27; /*0x4d0bdf*/
   if ( !g_abs_8B3CC8 ) /*0x4d0be3*/
     v21 = 10; /*0x4d0be5*/
@@ -165,6 +165,9 @@ LABEL_27:
 namespace gamemd {
 AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a4)
 {
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v7 = 0;  /* G37 hoist */
 
   int v5; // eax
   char *v6; // eax
@@ -786,7 +789,7 @@ namespace gamemd {
 HouseClass * * FoggedObjectClass::PowerDrainUpdate(int a2)
 {
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x4d2819*/
+  AbstractClass::ProcessPower((void *)this); /*0x4d2819*/
   Power::TimerProcess(*((unsigned int *)this + 9)); /*0x4d2824*/
   Power::TimerProcess(*((unsigned int *)this + 11)); /*0x4d282f*/
   Power::TimerProcess(*((unsigned int *)this + 12)); /*0x4d283a*/

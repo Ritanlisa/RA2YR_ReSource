@@ -31,13 +31,15 @@
 #include "e4/classes/IsometricTileTypeClass_e4.hpp"
 #include "e4/classes/LCWPipe_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/KeyboardConfig_e4.hpp"
+#include "e4/classes/Isometric_e4.hpp"
 
 // 0x439B00
 namespace gamemd {
 void* JumpjetLocomotionClass::Update2()
 {
 
-  float *v1; // esi
+  void * v1;
   double v2; // st7
   float *v3; // ebp
   char *v4; // ebx
@@ -53,7 +55,7 @@ void* JumpjetLocomotionClass::Update2()
   unsigned int *v14; // edi
   double v15; // st7
   unsigned int *v16; // eax
-  int v17; // ebx
+  float * v17;
   int Byte284; // eax
   float *v19; // eax
   double v20; // st7
@@ -117,12 +119,12 @@ void* JumpjetLocomotionClass::Update2()
 
   v1 = (float *)((char *)((float *)this));
   v60 = (char *)(this);
-  v2 = *((double *)this + 2); /*0x439b17*/
-  v3 = (float *)(this + 24); /*0x439b1a*/
-  v58 = v2; /*0x439b22*/
-  v5 = *((float *)this + 11); /*0x439b28*/
-  v6 = *((float *)this + 7); /*0x439b2b*/
-  v63 = *((float *)this + 6); /*0x439b2e*/
+  v2 = (char *)(*((double *)this + 2));
+  v3 = (float *)((char *)((float *)(this + 24)));
+  v58 = (char *)(v2);
+  v5 = (char *)(*((float *)this + 11));
+  v6 = (char *)(*((float *)this + 7));
+  v63 = (char *)(*((float *)this + 6));
   v7 = v5 - *((double *)this + 1); /*0x439b32*/
   v8 = *((float *)this + 8); /*0x439b35*/
   v4 = this + 36; /*0x439b1d*/
@@ -146,8 +148,8 @@ void* JumpjetLocomotionClass::Update2()
     }
   }
   v46 = (int)(Math::RoundToInt(v3[2]));
-  v41 = Math::RoundToInt(v3[1]); /*0x439bad*/
-  v12 = Math::RoundToInt(*v3); /*0x439bae*/
+  v41 = (unsigned int *)(Math::RoundToInt(v3[1]));
+  v12 = (unsigned int *)(Math::RoundToInt(*v3));
   Coord3D::Set(v70, v12, v41, v46); /*0x439bb8*/
   Vector3::AddAssign(v4); /*0x439bc0*/
   v47 = Math::RoundToInt(v3[2]); /*0x439bd0*/
@@ -231,7 +233,7 @@ LABEL_30:
 LABEL_32:
   v3[2] = (float)(v61 - 20); /*0x439d5d*/
 LABEL_35:
-  Byte284 = CellClass::GetByte284(v69); /*0x439d91*/
+  Byte284 = ((CellClass *)(v69))->GetByte284(); /*0x439d91*/
   qmemcpy(v75, CopyAudioData(v77, Byte284), sizeof(v75)); /*0x439dc4*/
   v19 = InvertMatrix3x3Signs(v76, v75); /*0x439dcd*/
   v20 = *((float *)v4 + 1); /*0x439dd2*/
@@ -298,10 +300,9 @@ LABEL_35:
       *((float *)v4 + 2) = v37 * *((float *)v4 + 2); /*0x43a05a*/
     }
   }
-  v1 = (float *)((void *)((float *)v60));
-  v17 = (void *)(1);
-LABEL_43:
-  v38 = QuaternionMathMultiply(v73, v1 + 12, v1 + 16); /*0x43a066*/
+  v1 = (void *)((int)((float *)((void *)((float *)v60))));
+  v17 = (float *)((int)((float *)((void *)(1))));
+LABEL_43: v38 = (float *)((void *)(QuaternionMathMultiply(v73, (unsigned int)(v1)+ 12, (unsigned int)(v1)+ 16)));
   Float4::Copy(v1 + 12, v70, v38); /*0x43a080*/
   v39 = JumpjetLocomotionClass::ComputeVectorLengthMetric(v1); /*0x43a087*/
   result = 2; /*0x43a098*/
@@ -410,12 +411,12 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
   int inited; // ebp
   int v3; // esi
   int *v5; // eax
-  int v6; // [esp+Ch] [ebp-18h] BYREF
-  int v7; // [esp+10h] [ebp-14h]
+  AbstractClass ** v6;
+  AbstractClass ** v7;
   unsigned char v8[12]; // [esp+18h] [ebp-Ch] BYREF
 
-  v6 = 128; /*0x48508f*/
-  v7 = 128; /*0x485097*/
+  v6 = (gamemd::AbstractClass **)(128);
+  v7 = (gamemd::AbstractClass **)(128);
   inited = Isometric::InitTables((int)this, (IUnknown *)&v6); /*0x4850a3*/
   if ( g_abs_A8D63C && (v3 = *((unsigned int *)this + 57)) != 0 ) /*0x4850b6*/
   {
@@ -427,12 +428,12 @@ AbstractClass * * JumpjetLocomotionClass::FindClosestOccupiableCell()
     }
     v5 = (int *)((gamemd::AbstractClass **)((int *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)(v3 + 1312) + 124))(*(unsigned int *)(v3 + 1312), v8)));
     v6 = (gamemd::AbstractClass **)(*v5);
-    v7 = v5[1]; /*0x48511a*/
-    return v5[2] + inited; /*0x485121*/
+    v7 = (gamemd::AbstractClass **)(v5[1]);
+    return (gamemd::AbstractClass **)(v5[2] + inited);
   }
   else
   {
-LABEL_5: v6 = (int)((gamemd::AbstractClass **)(0));
+LABEL_5: v6 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(0)));
     v7 = (gamemd::AbstractClass **)(0);
     if ( Object::FindClosestObjectCell(this, (IUnknown *)&v6, 0, 0) ) /*0x4850e6*/
       inited += 85; /*0x4850ef*/
@@ -1733,7 +1734,7 @@ Coord * * JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
     v18 = a1[2]; /*0x54b07d*/
     if ( *(unsigned char *)(v18 + 131) ) /*0x54b080*/
     {
-      if ( *(#375 **)(v18 + 540) != HouseClass_Player ) /*0x54b09c*/
+      if ( *(void **)(v18 + 540) != HouseClass_Player ) /*0x54b09c*/
       {
         v19 = (int *)(v18 + 156); /*0x54b09e*/
         v27 = *v19; /*0x54b0a5*/
@@ -1748,14 +1749,14 @@ Coord * * JumpjetLocomotionClass::DispatchLocomotion(unsigned int * a1)
       }
     }
     v21 = a1[2]; /*0x54b112*/
-    if ( !*(unsigned char *)(v21 + 1051) && *(#375 **)(v21 + 540) != HouseClass_Player ) /*0x54b12d*/
+    if ( !*(unsigned char *)(v21 + 1051) && *(void **)(v21 + 540) != HouseClass_Player ) /*0x54b12d*/
     {
       v22 = (int *)(v21 + 156); /*0x54b12f*/
       v27 = *v22; /*0x54b136*/
       v28 = v22[1]; /*0x54b13d*/
       v29 = v22[2]; /*0x54b14e*/
       if ( !Cell::IsPassable(&v27) ) /*0x54b152*/
-        (*(void (**)(unsigned int, #375 *))(*(unsigned int *)a1[2] + 408))(a1[2], HouseClass_Player); /*0x54b166*/
+        (*(void (**)(unsigned int, void *))(*(unsigned int *)a1[2] + 408))(a1[2], HouseClass_Player); /*0x54b166*/
     }
   }
   if ( *(unsigned char *)(a1[2] + 144) ) /*0x54b16f*/

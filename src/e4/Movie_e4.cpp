@@ -39,9 +39,9 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
   int v12; // [esp+8h] [ebp-4h]
 
   if ( !g_abs_89F578 ) /*0x49cafc*/
-    CampaignClass::LoadFromINI((int)&g_abs_89F518); /*0x49cb03*/
+    ((CampaignClass *)((int)&g_abs_89F518))->LoadFromINI(); /*0x49cb03*/
   v3 = aP1; /*0x49cb08*/
-  if ( (int)aP1 < 0 || (int)aP1 >= g_abs_89F574 ) /*0x49cb1c*/
+  if ( (int)aP1 < 0 || (int)aP1 >= (int)((int))((int))(g_abs_89F574) ) /*0x49cb1c*/
     return 0; /*0x49cc46*/
   v4 = (TechnoTypeClass *)g_abs_89F570; /*0x49cb29*/
   *((unsigned char *)this + 108) = 1; /*0x49cb2f*/
@@ -307,7 +307,7 @@ int Movie::Update()
   int IsSoundEnabled; // eax
   int v3; // ecx
 
-  IsSoundEnabled = Audio::IsSoundEnabled(); /*0x7209d3*/
+  IsSoundEnabled = this->Audio::IsSoundEnabled(); /*0x7209d3*/
   if ( IsSoundEnabled ) /*0x7209da*/
   {
     IDA_LOBYTE(IsSoundEnabled) = g_abs_A8D63C; /*0x7209e0*/

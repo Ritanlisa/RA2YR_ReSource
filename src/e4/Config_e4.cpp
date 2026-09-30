@@ -19,7 +19,7 @@ void Config::SaveObserverMode()
 
   int v0[9]; // [esp+0h] [ebp-24h] BYREF
 
-  RawFileClass::Construct(v0, (int)g_abs_826444); /*0x5ee1bc*/
+  ((RawFileClass *)(v0))->Construct((int)g_abs_826444); /*0x5ee1bc*/
   INIClass::SetInt( /*0x5ee1d8*/
     (char *)&g_abs_8870C0,
     (uint8_t *)g_abs_82642C,

@@ -139,7 +139,7 @@ void WalkLocomotion::ProcessCollision( char a2)
   int v4; // edx
   bool v5; // al
   int v6; // esi
-  int v7; // eax
+  unsigned char * v7;
   unsigned int *v8; // esi
   int v9; // edx
   int v10; // esi
@@ -165,7 +165,7 @@ void WalkLocomotion::ProcessCollision( char a2)
   int v30; // edx
   int *v31; // esi
   TechnoClass *v32; // eax
-  int v33; // edx
+  TechnoClass * v33;
   int v34; // ebx
   int v35; // ecx
   MouseClass *v36; // eax
@@ -178,7 +178,7 @@ void WalkLocomotion::ProcessCollision( char a2)
   int v43; // ebx
   char *v45; // esi
   char * v46;
-  int v47; // edx
+  char * v47;
   int16_t v48; // cx
   int v49; // eax
   IUnknown *v50; // esi
@@ -338,10 +338,8 @@ void WalkLocomotion::ProcessCollision( char a2)
       *(unsigned int *)v182 = *(unsigned int *)(this + 52);
       *(unsigned int *)&v182[4] = *(unsigned int *)(this + 56);
       *(unsigned int *)&v182[8] = *(unsigned int *)(this + 60);
-      v6 = (*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)v182) + 80) & 0x100) != 0
-         ? g_abs_B077F8
-         : 0;
-      v7 = v6 + Cell::GetGroundHeight(v182);
+      v6 = (int)((*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)v182) + 80) & 0x100) != 0 ? g_abs_B077F8 : 0);
+      v7 = (int)(v6 + Cell::GetGroundHeight(v182));
       v8 = (unsigned int *)(*(unsigned int *)(this + 12) + 156);
       *(unsigned int *)&v182[8] = v7;
       v9 = v8[1];
@@ -457,15 +455,15 @@ LABEL_37:
     v31 = (int *)(this + 64);
     if ( *(unsigned int *)(this + 64) != g_abs_B077F8
       || *(unsigned int *)(this + 68) != g_abs_B077F8
-      || *(unsigned int *)(this + 72) != g_abs_B077F8 )
+      || *(unsigned int *)(this + 72) != (unsigned int)((unsigned int))((unsigned int))(g_abs_B077F8) )
     {
-      *v31 = g_abs_B077F8;
+      *v31 = (int)(g_abs_B077F8);
       *(unsigned int *)(this + 68) = g_abs_B077F8;
-      v32 = (TechnoClass *)g_abs_B077F8;
+      v32 = (int)((TechnoClass *)g_abs_B077F8);
       *(unsigned char *)(this + 99) = 0;
       *(unsigned int *)(this + 72) = v32;
     }
-    v33 = *(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(this + 12) + 444))(*(unsigned int *)(this + 12)) + 278);
+    v33 = (unsigned int)(*(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(this + 12) + 444))(*(unsigned int *)(this + 12)) + 278));
     if ( v33 >= 0 && v33 < *(int *)&g_abs_89F690 )
     {
       v34 = *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v33);
@@ -484,16 +482,16 @@ LABEL_37:
       *(unsigned short *)&aP3.__pad_0[8] = *((unsigned short *)&g_abs_89F688 + 2 * v37) + (unsigned short)aP4;
       *(unsigned short *)&aP3.__pad_0[10] = IDA_HIWORD(aP4) + *((unsigned short *)&g_abs_89F68A + 2 * v37);
       aP4 = *(ObjectClass **)&aP3.__pad_0[8];
-      v38 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&aP4);
+      v38 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&aP4));
       Coords = (ObjectClass *)CellClass::GetCoords(v38, (int *)&aP3.attachedBomb);
       v40 = (unsigned int *)(*(unsigned int *)(this + 12) + 1384);
       *v40 = *(unsigned int *)Coords->__pad_0;
       v40[1] = *(unsigned int *)&Coords->__pad_0[4];
       v40[2] = *(unsigned int *)&Coords->__pad_0[8];
-      v41 = (int)((void *)(*(unsigned int *)(this + 12) + 156));
+      v41 = (void *)((int)((void *)(*(unsigned int *)(this + 12) + 156)));
       aP3.nextArrayIndex = (void *)(*(unsigned int *)v41);
-      aP3.referenceCount = (void *)(*(unsigned int *)(v41 + 4));
-      aP3.NeedsSaveOrLink = *(void **)(v41 + 8);
+      aP3.referenceCount = (void *)(*(unsigned int *)((unsigned int)(v41)+ 4));
+      aP3.NeedsSaveOrLink = *(void **)((unsigned int)(v41)+ 8);
       GroundHeight = Cell::GetGroundHeight(&aP3.nextArrayIndex);
       aP4 = *(ObjectClass **)(v34 + 40);
       v43 = *(unsigned int *)(v34 + 448);
@@ -508,18 +506,18 @@ LABEL_37:
     }
     *(unsigned int *)(*(unsigned int *)(this + 12) + 1504) = -1;
     *(unsigned int *)(this + 88) = -1;
-    *v31 = g_abs_B077F8;
+    *v31 = (int)(g_abs_B077F8);
     *(unsigned int *)(this + 68) = g_abs_B077F8;
     *(unsigned int *)(this + 72) = g_abs_B077F8;
     if ( *v31 != g_abs_B077F8
       || *(unsigned int *)(this + 68) != g_abs_B077F8
-      || *(unsigned int *)(this + 72) != g_abs_B077F8 )
+      || *(int)((int))((int))((unsigned int *))(this + 72) != g_abs_B077F8 )
     {
-      *v31 = g_abs_B077F8;
+      *v31 = (int)(g_abs_B077F8);
       *(unsigned int *)(this + 68) = g_abs_B077F8;
       *(unsigned int *)(this + 72) = g_abs_B077F8;
       *(unsigned char *)(this + 99) = 0;
-      return 0;
+      return (unsigned int)(0);
     }
     return 0;
   }
@@ -529,7 +527,7 @@ LABEL_37:
   v46 = (char *)(*(unsigned char *)(this + 96));
   *(unsigned int *)&aP3.bombVisible = v45;
   if ( v46 )
-    v47 = v45[1];
+    v47 = (unsigned int)(v45[1]);
   else
     v47 = *v45;
   aP3.objectTypeFlags = 16 * v47;

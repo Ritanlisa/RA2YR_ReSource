@@ -231,7 +231,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     atexit(nullsub_167); /*0x56c32b*/
   }
   v5 = (int *)(&dword_ABD434);
-  v24 = &dword_ABD434; /*0x56c338*/
+  v24 = (int *)(&dword_ABD434);
   while ( 1 ) /*0x56c343*/
   {
     v6 = *(unsigned short *)v5; /*0x56c343*/
@@ -244,20 +244,20 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     v11 = v8 + v7; /*0x56c36a*/
     if ( v11 > v9 && v8 - v10 < v9 && v10 - v8 < v9 && v11 <= v9 + 2 * *((unsigned int *)this + 62) ) /*0x56c39c*/
     {
-      v12 = (int)(v8 + (v10 << 9));
-      if ( v12 >= 0x40000 || (v13 = *(unsigned int **)(*((unsigned int *)this + 79) + 4 * v12)) == 0 ) /*0x56c3c1*/
+      v12 = (unsigned int *)((int)(v8 + (v10 << 9)));
+      if ( v12 >= (unsigned int *)(0x40000) || (v13 = *(unsigned int **)(*((unsigned int *)this + 79) + 4 * v12)) == 0 ) /*0x56c3c1*/
       {
-        g_Map_GlobalCellIndex = (unsigned int *)(v23);
+        g_Map_GlobalCellIndex = (int)((unsigned int *)(v23));
         v13 = g_CellClassArray; /*0x56c3cc*/
       }
-      for ( i = (unsigned int *)v13[57]; i; i = (unsigned int *)i[12] ) /*0x56c3d1*/
+      for ( i = (unsigned int *)((unsigned int *)(v13))[57]; i; i = (unsigned int *)i[12] ) /*0x56c3d1*/
       {
         if ( (i[5] & 1) == 0 || *((unsigned char *)i + 1050) || i[136] != 2 ) /*0x56c3f6*/
         {
           if ( (*(int (**)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
           {
             v17 = (int *)((unsigned int *)(*(int (**)(unsigned int *, char *))(*i + 72))(i, v28));
-            v18 = Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
+            v18 = (int *)(Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]));
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18[1]; /*0x56c485*/
             v26[2] = v18[2]; /*0x56c490*/
@@ -419,7 +419,7 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
     IDA_HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
     v8 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP1); /*0x5fc497*/
     if ( !CellClass::FindInfantry(v8, 0) ) /*0x5fc4a0*/
-      ObjectClass::Deploy((#374 *)this); /*0x5fc4b1*/
+      ObjectClass::Deploy((void *)this); /*0x5fc4b1*/
     *(unsigned int *)&stru_830620.__pad_14B0[6380] = -1; /*0x5fc4b6*/
   }
   return (OverlayClass *)this; /*0x5fc4c2*/
@@ -458,7 +458,7 @@ void* Object::HandleAction(int * a2, int * a3)
   int16_t *v28; // [esp-4h] [ebp-2Ch]
   int v29; // [esp+10h] [ebp-18h]
   int v30; // [esp+14h] [ebp-14h] BYREF
-  int v31; // [esp+18h] [ebp-10h]
+  unsigned char * v31;
   int v32; // [esp+1Ch] [ebp-Ch] BYREF
   int v33; // [esp+20h] [ebp-8h]
   int v34; // [esp+24h] [ebp-4h]
@@ -471,24 +471,24 @@ void* Object::HandleAction(int * a2, int * a3)
   GroundHeight = Cell::GetGroundHeight(&v32); /*0x5fd9af*/
   v29 = ZCoordToScreenY(GroundHeight); /*0x5fd9c1*/
   v7 = 0; /*0x5fd9c5*/
-  if ( g_abs_A83D90 <= 0 ) /*0x5fd9c9*/
+  if ( g_abs_A83D90 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x5fd9c9*/
   {
 LABEL_5:
     v7 = -1; /*0x5fd9e3*/
   }
   else
   {
-    v8 = g_abs_A83D84; /*0x5fd9d1*/
+    v8 = (gamemd::BuildingTypeClass *)(g_abs_A83D84);
     while ( *(unsigned int *)v8->vtable0 != *((unsigned int *)this + 43) ) /*0x5fd9d9*/
     {
       ++v7; /*0x5fd9db*/
       v8 = (BuildingTypeClass *)((char *)v8 + 4); /*0x5fd9dc*/
-      if ( v7 >= g_abs_A83D90 ) /*0x5fd9e1*/
+      if ( v7 >= (int)((int))((int))(g_abs_A83D90) ) /*0x5fd9e1*/
         goto LABEL_5; /*0x5fd9e1*/
     }
   }
-  v9 = 0; /*0x5fd9ec*/
-  v10 = *(unsigned int *)&g_abs_A83D84->vtable0[4 * v7]; /*0x5fd9ee*/
+  v9 = (int)(0);
+  v10 = (int)(*(unsigned int *)&g_abs_A83D84->vtable0[4 * v7]);
   if ( *(unsigned char *)(v10 + 681) || *(unsigned char *)(v10 + 680) || *(unsigned int *)(v10 + 660) == 126 || *(unsigned char *)(v10 + 682) ) /*0x5fda0a*/
     v9 = -12; /*0x5fda12*/
   if ( *(unsigned int *)(v10 + 664) == 9 ) /*0x5fda1e*/
@@ -502,19 +502,19 @@ LABEL_5:
   if ( *(unsigned char *)(v12 + 681) ) /*0x5fda4c*/
   {
     v13 = 0; /*0x5fda5a*/
-    if ( g_abs_A83D90 <= 0 ) /*0x5fda5e*/
+    if ( g_abs_A83D90 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x5fda5e*/
     {
 LABEL_20:
       v13 = -1; /*0x5fda72*/
     }
     else
     {
-      v14 = g_abs_A83D84; /*0x5fda60*/
+      v14 = (gamemd::BuildingTypeClass *)(g_abs_A83D84);
       while ( *(unsigned int *)v14->vtable0 != v12 ) /*0x5fda68*/
       {
         ++v13; /*0x5fda6a*/
         v14 = (BuildingTypeClass *)((char *)v14 + 4); /*0x5fda6b*/
-        if ( v13 >= g_abs_A83D90 ) /*0x5fda70*/
+        if ( v13 >= (int)((int))((int))(g_abs_A83D90) ) /*0x5fda70*/
           goto LABEL_20; /*0x5fda70*/
       }
     }
@@ -594,8 +594,8 @@ LABEL_20:
       v26 = (int16_t *)Tactical::PixelToCell((int)g_abs_887324, &a2, &v30); /*0x5fdc21*/
       if ( LayerClass::CoordinatesLegal(&g_abs_87F7E8, v26) ) /*0x5fdc2c*/
       {
-        v28 = (int16_t *)Tactical::PixelToCell((int)g_abs_887324, &a2, &v30); /*0x5fdc4a*/
-        v25 = CellCoord::To_CellObj(&g_abs_87F7E8, v28); /*0x5fdc4b*/
+        v28 = (unsigned int *)((int16_t *)Tactical::PixelToCell((int)g_abs_887324, &a2, &v30));
+        v25 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, v28));
       }
       else
       {
@@ -659,7 +659,7 @@ void * Object::DrawObject(void ** Block, char a2)
     while ( v3 < g_abs_A8EC60 ); /*0x5fdfdd*/
   }
   if ( g_abs_A8E9A0 ) /*0x5fdfe6*/
-    ObjectClass::Undeploy((#374 *)Block); /*0x5fdfea*/
+    ObjectClass::Undeploy((void *)Block); /*0x5fdfea*/
   *(Block + 43) = 0; /*0x5fdff1*/
   ObjectClass::Dtor(Block); /*0x5fdffb*/
   if ( (Block & 1) != 0 ) /*0x5fe005*/
@@ -1694,7 +1694,7 @@ char Object::CheckState(IUnknown * aP1, int a3)
   if ( CellClass::FindInfantry(v5, 0) ) /*0x5fd2ba*/
     return 0; /*0x5fd2c4*/
   else
-    return ObjectClass::Deploy((#374 *)this); /*0x5fd2d2*/
+    return ObjectClass::Deploy((void *)this); /*0x5fd2d2*/
 
 }
 } // namespace gamemd
@@ -1706,7 +1706,7 @@ int Object::LoadObject(ObjectClass * aP1, int aP1a)
 
   ObjectClass *Register; // edi
 
-  Register = (ObjectClass *)BuildingClass::SaveLoad_Register((#374 *)this); /*0x5fd901*/
+  Register = (ObjectClass *)BuildingClass::SaveLoad_Register((void *)this); /*0x5fd901*/
   if ( (int)Register >= 0 ) /*0x5fd905*/
   {
     if ( aP1 ) /*0x5fd909*/

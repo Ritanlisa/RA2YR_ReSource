@@ -131,7 +131,7 @@ int Trigger_AllocateLog(int a1)
     {
       RA2_OPDEL(*(void **)(v3 + 820));
       *(unsigned int *)(v3 + 824) = (v14 + 0xFFFF) & 0xFFFF0000;
-      this->Debug::Log();
+      ((Debug *)0)->Log();
       *(unsigned int *)(v3 + 820) = operator new(*(unsigned int *)(v3 + 824));
     }
     int v15 = *(unsigned int *)(v3 + 820);
@@ -736,7 +736,7 @@ void ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
   int v1; // edi
   int v2; // esi
   int v3; // edi
-  #375 *v4; // esi
+  void *v4; // esi
   int v6; // [esp+10h] [ebp-8h]
   int v7; // [esp+14h] [ebp-4h]
 
@@ -751,11 +751,11 @@ void ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
       v3 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * v2]; /*0x658668*/
       if ( v3 ) /*0x65866d*/
       {
-        if ( (uint8_t)House::IsHumanPlayer(*(#375 **)&HouseClass_Array->__pad_0[4 * v2]) ) /*0x658671*/
+        if ( (uint8_t)House::IsHumanPlayer(*(void **)&HouseClass_Array->__pad_0[4 * v2]) ) /*0x658671*/
         {
           v6 = v2; /*0x65867a*/
 LABEL_6:
-          TabClass::DrawPower(hDlg, (void *)v2, (#375 *)v3); /*0x65868d*/
+          TabClass::DrawPower(hDlg, (void *)v2, (void *)v3); /*0x65868d*/
           goto LABEL_7; /*0x658692*/
         }
         if ( !*(unsigned char *)(*(unsigned int *)(v3 + 52) + 422) ) /*0x658683*/
@@ -769,8 +769,8 @@ LABEL_7:
       }
     }
   }
-  v4 = *(#375 **)HouseClass_Array->__pad_0; /*0x6586a4*/
-  TabClass::DrawPower(hDlg, 0, *(#375 **)&HouseClass_Array->__pad_0[4 * v1]); /*0x6586b4*/
+  v4 = *(void **)HouseClass_Array->__pad_0; /*0x6586a4*/
+  TabClass::DrawPower(hDlg, 0, *(void **)&HouseClass_Array->__pad_0[4 * v1]); /*0x6586b4*/
   return TabClass::DrawPower(hDlg, (void *)v1, v4); /*0x6586c3*/
 
 }
@@ -790,7 +790,7 @@ void sub_6586D0()
     SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x658703*/
     Dialog::Show(Dialog); /*0x65870b*/
     dwNewLong = 0; /*0x658710*/
-        while ( !Dialog::PumpMessages() )
+        while ( !this->this->this->Dialog::PumpMessages() )
     {
       if ( dwNewLong ) /*0x658727*/
         goto LABEL_7; /*0x658727*/

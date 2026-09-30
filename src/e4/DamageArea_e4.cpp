@@ -23,6 +23,8 @@
 #include "e4/classes/GenericNode_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4CD600
 namespace gamemd {
@@ -152,7 +154,7 @@ int DamageArea::ApplyScatter()
   {
     *((unsigned char *)this + 92) = 0;
   }
-  v4 = (int)((char *)this + 4);
+  v4 = (char *)((int)((char *)this + 4));
   if ( (*(uint8_t (**)(int))(*((unsigned int *)this + 1) + 96))((char *)this + 4)
     && *(unsigned int *)(*((unsigned int *)this + 3) + 108)
     || !(*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 456))(*((unsigned int *)this + 3)) )
@@ -317,9 +319,9 @@ LABEL_50:
 LABEL_114:
       v73 = *(int **)((char *)this + 12);
       if ( v73[27] > 0
-        && !*((unsigned char *)this + 81)
-        && (!*((unsigned char *)this + 80) || (*(int (**)(int *))(*v73 + 456))(v73) >= *((unsigned int *)this + 14) / 2)
-        && (*((unsigned int *)this + 7) != g_abs_8B3C78
+        && !*((unsigned char *)this + (unsigned int)((unsigned int))((unsigned int))(81))
+        && (!*((unsigned char *)this + (unsigned int)((unsigned int))((unsigned int))(80)) || (*(int (**)(int *))(*v73 + 456))(v73) >= *((unsigned int *)this + 14) / 2)
+        && (*((unsigned int *)this + 7) != (unsigned int)((unsigned int))((unsigned int))(g_abs_8B3C78)
          || *((unsigned int *)this + 8) != g_abs_8B3C7C
          || *((unsigned int *)this + 9) != g_abs_8B3C80) )
       {
@@ -514,9 +516,9 @@ LABEL_97:
       {
 LABEL_105:
         (*(void (**)(unsigned int, int))(**(unsigned int **)((char *)this + 12) + 460))(*((unsigned int *)this + 3), v54 + v61);
-        v62 = *(int **)((char *)this + 12);
+        v62 = *(int **)((char *)this + (unsigned int)((unsigned int))((unsigned int))(12));
         if ( v62[27] > 0
-          && (*((unsigned int *)this + 7) != g_abs_8B3C78
+          && (*((unsigned int *)this + 7) != (unsigned int)((unsigned int))((unsigned int))(g_abs_8B3C78)
            || *((unsigned int *)this + 8) != g_abs_8B3C7C
            || *((unsigned int *)this + 9) != g_abs_8B3C80)
           && ((*(int (**)(int *))(*v62 + 388))(v62) != 7
@@ -597,7 +599,7 @@ LABEL_105:
   {
     IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
     IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
-    v103 = IDA_LODWORD(v102);
+    v103 = (unsigned int *)(IDA_LODWORD(v102));
     TechnoClass::ComputeCombatDamage(v10, 0);
     v12 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v103);
     v13 = **(unsigned int **)((char *)this + 12);

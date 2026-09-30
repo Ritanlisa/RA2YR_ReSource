@@ -31,6 +31,10 @@ files = (glob.glob('src/e4/*.cpp') + glob.glob('src/_gap2/*.cpp')
          + glob.glob('src/system/gap2*.cpp'))
 for p in files:
     raw = open(p, encoding='utf-8', errors='replace').read()
+    # already-collapsed g_abs_X references count too (their externs may
+    # have been wiped by a battery regen of e4_globals_decls.hpp)
+    for rm in re.finditer(r'\bg_abs_([0-9A-Fa-f]+)\b', raw):
+        addrs.add(int(rm.group(1), 16))
     def _rep(m):
         a = int(m.group(1), 16)
         addrs.add(a)
@@ -42,8 +46,11 @@ for p in files:
         if APPLY:
             open(p, 'w', encoding='utf-8', newline='').write(new)
 
-# supply externs (idempotent block)
-DECL_H = 'src/e4/e4_globals_decls.hpp'
+# supply externs (idempotent block) — OWN header: gen_e4_globals_decls.py
+# regenerates e4_globals_decls.hpp every battery round and would wipe
+# foreign blocks; e4_abs_decls.hpp is ours alone.
+DECL_H = 'src/e4/e4_abs_decls.hpp'
+GH = 'src/e4/e4_globals.hpp'
 if addrs:
     txt = open(DECL_H, encoding='utf-8', errors='replace').read() if \
         os.path.exists(DECL_H) else \
@@ -58,6 +65,14 @@ if addrs:
         if APPLY:
             open(DECL_H, 'w', encoding='utf-8', newline='').write(txt)
         stats['externs'] = len(add)
+    # ensure the TU-visible chain includes our header
+    gtxt = open(GH, encoding='utf-8', errors='replace').read() if \
+        os.path.exists(GH) else ''
+    if APPLY and gtxt and 'e4_abs_decls.hpp' not in gtxt:
+        gtxt = gtxt.replace('#include <cstdint>',
+                            '#include <cstdint>\n#include "e4/e4_abs_decls.hpp"',
+                            1)
+        open(GH, 'w', encoding='utf-8', newline='').write(gtxt)
 print('files changed:', files_changed)
 print(stats)
 if not APPLY:

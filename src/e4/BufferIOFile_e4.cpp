@@ -16,7 +16,7 @@ namespace gamemd {
 int BufferIOFile::Constructor( char * Source)
 {
 
-  BufferIOFileClass::Constructor(this); /*0x47a9d3*/
+  ((BufferIOFileClass *)(this))->Constructor(); /*0x47a9d3*/
   *(this + 84) = 0; /*0x47a9df*/
   *(unsigned int *)this = &off_7E1668; /*0x47a9e3*/
   FileClass::OpenWithCDSearch(this, (IUnknown *)Source); /*0x47a9e9*/

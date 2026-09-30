@@ -56,7 +56,7 @@ void* CellStruct::Sub(void* aP1,  void* aP2)
   int16_t v4; // cx
   IUnknown *aP2a; // [esp+8h] [ebp+8h]
 
-  v3 = *this; /*0x588c60*/
+  v3 = (int16_t)(*this);
   v4 = *((unsigned short *)this + 1) - IDA_HIWORD(aP2->field_0); /*0x588c6e*/
   IDA_LOWORD(aP2a) = v3 - IDA_LOWORD(aP2->field_0); /*0x588c76*/
   IDA_HIWORD(aP2a) = v4; /*0x588c7b*/

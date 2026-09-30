@@ -206,7 +206,7 @@ LABEL_23:
               {
                 v32 = (char *)((unsigned int)(v86));
                 v33 = (unsigned int)((int16_t)v75);
-                v34 = v77; /*0x56deb2*/
+                v34 = (unsigned int)(v77);
                 *(unsigned int *)v86 = v75; /*0x56deb6*/
                 v86 = v32 + 4; /*0x56debb*/
                 v77 = v34 + 1; /*0x56dec9*/
@@ -265,7 +265,7 @@ LABEL_44:
               {
                 v41 = (char *)((unsigned int)(v86));
                 v42 = (unsigned int)((int16_t)v75);
-                v43 = v77; /*0x56e0c8*/
+                v43 = (unsigned int)(v77);
                 *(unsigned int *)v86 = v75; /*0x56e0cc*/
                 v86 = v41 + 4; /*0x56e0d1*/
                 v77 = v43 + 1; /*0x56e0df*/
@@ -370,11 +370,10 @@ LABEL_80:
           v17 = v80; /*0x56e3db*/
         }
         g_Map_GlobalCellIndex = (int)((IUnknown *)v79);
-        v56 = (unsigned int)((ObjectClass *)g_CellClassArray);
-LABEL_86:
-        v89.nextArrayIndex = (int16_t)(v78 + (unsigned short)v85); /*0x56e3ea*/
-        v89.referenceCount = (int16_t)(v45 + (unsigned short)v81); /*0x56e3ff*/
-        v89.NeedsSaveOrLink = aP8; /*0x56e40b*/
+        v56 = (gamemd::ObjectClass *)((unsigned int)((ObjectClass *)g_CellClassArray));
+LABEL_86: v89.nextArrayIndex = (unsigned int)((int16_t)(v78 + (unsigned short)v85));
+        v89.referenceCount = (unsigned int)((int16_t)(v45 + (unsigned short)v81));
+        v89.NeedsSaveOrLink = (unsigned int)(aP8);
         v90 = aP9; /*0x56e412*/
         if ( Type::CheckAmbiguity(v17, (int)v56, 1) ) /*0x56e419*/
         {
@@ -424,10 +423,10 @@ LABEL_123:
     aP2->field_0 = (int)g_MapSeedState; /*0x56e7aa*/
     return &aP2->field_0; /*0x56e79a*/
   }
-  v80 = (char *)(0);
-  v81 = 0; /*0x56e5c9*/
-  v61 = v96; /*0x56e5da*/
-  v62 = &((unsigned int *)(aP0a.__pad_0))[12]; /*0x56e5e1*/
+  v80 = (IUnknown *)((char *)(0));
+  v81 = (IUnknown *)((char *)(0));
+  v61 = (unsigned int *)((char *)(v96));
+  v62 = (char *)(&((unsigned int *)(aP0a.__pad_0))[12]);
   i = (Tactical *)v95; /*0x56e5e8*/
   v79 = (TagClass *)v77; /*0x56e5ec*/
   do /*0x56e67b*/
@@ -500,17 +499,17 @@ namespace gamemd {
 void * LayerClass::Reveal(int a2)
 {
 
-  #375 *result; // eax
+  void *result; // eax
   int v4; // eax
   int v5; // edx
   int v6; // ecx
   int v7; // esi
   char v8; // [esp+10h] [ebp+4h]
 
-  result = (#375 *)a2; /*0x577d90*/
+  result = (void *)a2; /*0x577d90*/
   if ( a2 ) /*0x577da2*/
     *(unsigned char *)(*(unsigned int *)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(a2 + 48)] + 577) = 1; /*0x577db0*/
-  if ( (#375 *)a2 == HouseClass_Player ) /*0x577dbc*/
+  if ( (void *)a2 == (void *)(void *))(HouseClass_Player) ) /*0x577dbc*/
   {
     if ( a2 ) /*0x577dca*/
       goto LABEL_8; /*0x577dca*/
@@ -519,7 +518,7 @@ void * LayerClass::Reveal(int a2)
   {
     return result; /*0x577dc0*/
   }
-  Debug::Log(); /*0x577dd1*/
+  this->this->this->Debug::Log(); /*0x577dd1*/
 LABEL_8:
   if ( g_abs_A8B238[0] != 3 && g_abs_A8B238[0] != 4 /*0x577df4*/
     || !g_abs_A8B23C
@@ -570,7 +569,7 @@ LABEL_23:
 LABEL_25:
     Radar::UpdateReveal(0, 0); /*0x577efc*/
     FogOfWar::Render((int **)&g_abs_87F7E8); /*0x577f0d*/
-    return (#375 *)MapClass::MarkForRedraw(&g_abs_87F7E8, 2); /*0x577f19*/
+    return (void *)MapClass::MarkForRedraw(&g_abs_87F7E8, 2); /*0x577f19*/
   }
   return result; /*0x577f1e*/
 

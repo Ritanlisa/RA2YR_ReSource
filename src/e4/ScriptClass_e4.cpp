@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x6915F0
 namespace gamemd {
@@ -31,7 +32,7 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x69163b*/
+  result = ((AbstractClass *)(aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x69163b*/
   if ( result >= 0 ) /*0x691642*/
   {
     if ( aP0 ) /*0x691646*/
@@ -57,7 +58,7 @@ int ScriptClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x69169f*/
+  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x69169f*/
   if ( result >= 0 ) /*0x6916a6*/
     return 0; /*0x6916a8*/
   return result; /*0x6916aa*/

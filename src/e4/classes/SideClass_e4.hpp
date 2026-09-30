@@ -82,6 +82,7 @@ struct SideClass {
     unsigned int * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     void * Init(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
     wchar_t * GetName();
+    static double AbstractClass(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

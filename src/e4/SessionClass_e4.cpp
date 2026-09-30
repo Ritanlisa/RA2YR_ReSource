@@ -75,8 +75,8 @@ int SessionClass::initInternet()
 
   int result; // eax
   void *v3; // ebp
-  int v4; // ebx
-  int v5; // edi
+  char * v4;
+  char * v5;
   char *v6; // eax
 
   if ( !*((unsigned char *)this + 4) ) /*0x540e73*/
@@ -84,9 +84,9 @@ int SessionClass::initInternet()
   v3 = RA2_OPNEW(0xB8u); /*0x540e89*/
   if ( v3 ) /*0x540e90*/
   {
-    v4 = (char *)(g_abs_A8DA78);
-    v5 = (char *)(*((unsigned int *)this + 5));
-    v6 = CharToWideString(aMulticast); /*0x540ea4*/
+    v4 = (int)((char *)(g_abs_A8DA78));
+    v5 = (char *)((int)((char *)(*((unsigned int *)this + 5))));
+    v6 = (char *)(CharToWideString(aMulticast));
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
                     v3,
                     v5,
@@ -125,7 +125,7 @@ MixFileClass * SessionClass::Load()
   unsigned int *v4; // eax
   void *PlayerSide; // eax
   int v6; // esi
-  char *v7; // ecx
+  unsigned int v7;
 
   if ( *((unsigned int *)this + 2)
     || ((Debug::Log_0(g_abs_8298D0), (v2 = RA2_OPNEW(0x28u)) == 0)
@@ -153,7 +153,7 @@ MixFileClass * SessionClass::Load()
         {
           if ( v6 ) /*0x72b40c*/
           {
-            v7 = g_abs_844BB4[0]; /*0x72b420*/
+            v7 = (char *)(g_abs_844BB4[0]);
             if ( v6 != 1 ) /*0x72b433*/
               v7 = g_abs_844BB8; /*0x72b435*/
             LoadPaletteSimple(v7, &g_abs_B0FB84, &g_abs_B0FB88); /*0x72b43b*/
@@ -767,7 +767,7 @@ AbstractClass * * SessionClass::BuildLobbyPlayerList()
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x663b94*/
   {
     v6 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * i]; /*0x663ba6*/
-    if ( (uint8_t)House::IsCurrentPlayer((#375 *)v6) && !*(unsigned char *)(v6 + 502) ) /*0x663bbc*/
+    if ( (uint8_t)House::IsCurrentPlayer((void *)v6) && !*(unsigned char *)(v6 + 502) ) /*0x663bbc*/
     {
       v7 = (char *)RA2_OPNEW(0x2Au); /*0x663bd8*/
       *v7 = i; /*0x663be2*/
@@ -1413,14 +1413,14 @@ LABEL_22:
 
 }
 // 0x697E70
-int  SessionClass::IsValidHouse( #375 * a2)
+int  SessionClass::IsValidHouse( void * a2)
 {
 
-  #375 *v2; // edi
+  void *v2; // edi
   int v3; // eax
   int v5; // ecx
   HouseClass *i; // edx
-  #375 *v7; // eax
+  void *v7; // eax
 
   v2 = a2; /*0x697e73*/
   if ( !a2 ) /*0x697e79*/
@@ -1438,7 +1438,7 @@ LABEL_9:
     return 0; /*0x697efd*/
   for ( i = HouseClass_Array; ; i = (HouseClass *)((char *)i + 4) ) /*0x697ed9*/
   {
-    v7 = *(#375 **)i->__pad_0; /*0x697edf*/
+    v7 = *(void **)i->__pad_0; /*0x697edf*/
     if ( *(unsigned char *)(*(unsigned int *)i->__pad_0 + 492) ) /*0x697ee1*/
     {
       if ( !*((unsigned char *)v7 + 501) ) /*0x697eeb*/

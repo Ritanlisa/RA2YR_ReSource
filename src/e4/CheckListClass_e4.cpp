@@ -18,7 +18,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
   ListClass *v8; // esi
   size_t *result; // eax
   int (__cdecl *)(...) ListClass_field_0x0C;
-  int Type; // ebx
+  wchar_t * Type;
   int v12; // ecx
   int v13; // eax
   int (__cdecl *)(...) ListClass_field_0x10;
@@ -35,7 +35,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
   result = (size_t *)(*(int (**)(void))(*(unsigned int *)v7->__pad_0 + 148))(); /*0x48852b*/
   if ( (int)this < (int)result )
   {
-    result = (size_t *)Array::GetClamped(v8, (int)this); /*0x488543*/
+    result = (size_t *)((Array *)(v8))->GetClamped((int)this); /*0x488543*/
     if ( result )
     {
       memset(&v22[1], 0, 198); /*0x488560*/
@@ -44,7 +44,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
       v22[1] = (int)(32);
       swprintf(&v22[2], v17, a2); /*0x488585*/
       ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
-            Type = (wchar_t *)this->BuildingAnim::GetType();
+            Type = (wchar_t *)((BuildingAnim *)0)->GetType();
       if ( a6 ) /*0x4885a7*/
       {
         ListClass_field_0x0C |= 0x2000u; /*0x4885b4*/

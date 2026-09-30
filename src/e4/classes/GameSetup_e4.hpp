@@ -21,8 +21,9 @@ struct GameSetup {
     unsigned int FormatToString;
     unsigned int q0104;
 // --- flat members (END) ---
-    AbstractClass * * WriteINI(void * aP1, unsigned __int8 * Block);
+    AbstractClass * * WriteINI(void * aP1, uint8_t * Block);
     int LookupDialogHash();
+    static double FormatToString(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

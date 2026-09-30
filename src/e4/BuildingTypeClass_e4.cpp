@@ -351,7 +351,7 @@ LABEL_11:
   {
     v14 = (unsigned int)(unk_89C8D4);
     *v12 = (unsigned int)(unk_89C8D0);
-    v12[1] = v14; /*0x45e46b*/
+    v12[1] = (unsigned int)(v14);
     v12 += 2; /*0x45e46e*/
     --v13; /*0x45e471*/
   }
@@ -362,7 +362,7 @@ LABEL_11:
   {
     v17 = (unsigned int)(unk_89C8D4);
     *v15 = (unsigned int)(unk_89C8D0);
-    v15[1] = v17; /*0x45e48d*/
+    v15[1] = (unsigned int)(v17);
     v15 += 2; /*0x45e490*/
     --v16; /*0x45e493*/
   }
@@ -485,11 +485,11 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     }
   }
   v4 = *(SHPStruct **)&a1[((unsigned int *)(167].__pad_0))[12]; /*0x45e707*/
-  *(unsigned int *)&a1[167].__pad_0[8] = &vt_VectorClass_TPoint3D_int; /*0x45e70d*/
+  *(unsigned int *)&a1[((unsigned int *)(167].__pad_0))[8] = &vt_VectorClass_TPoint3D_int; /*0x45e70d*/
   if ( v4 && IDA_BYTE1(a1[167].abstractFlags) ) /*0x45e71b*/
   {
     RA2_OPDEL(v4); /*0x45e724*/
-    *(unsigned int *)&a1[167].__pad_0[12] = 0; /*0x45e72c*/
+    *(unsigned int *)&a1[((unsigned int *)(167].__pad_0))[12] = 0; /*0x45e72c*/
   }
   IDA_BYTE1(a1[167].abstractFlags) = 0; /*0x45e734*/
   a1[167].uniqueId = 0; /*0x45e73a*/
@@ -524,11 +524,11 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
     do /*0x45eb42*/
     {
       v4 = (ObjectTypeClass *)*((unsigned int *)g_TriggerTypeCount + v3); /*0x45e9c1*/
-      if ( v9 <= SHIBYTE(v4[8].VoxelCaches[8]) ) /*0x45e9cd*/
-        v9 = SHIBYTE(v4[8].VoxelCaches[8]); /*0x45e9cf*/
+      if ( v9 <= SHIBYTE(v4[((unsigned int *)(8].VoxelCaches))[8]) ) /*0x45e9cd*/
+        v9 = SHIBYTE(v4[((unsigned int *)(8].VoxelCaches))[8]); /*0x45e9cf*/
       if ( v4->Theater ) /*0x45e9d3*/
       {
-        if ( v4[9].__pad_24[8] ) /*0x45e9df*/
+        if ( v4[((unsigned int *)(9].__pad_24))[8] ) /*0x45e9df*/
         {
           if ( v4->Image ) /*0x45ea23*/
           {
@@ -542,7 +542,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
           _makepath(Buffer, 0, 0, v4->ImageFile, (const char *)&off_7E1BC6 + 112 * (unsigned int)v2); /*0x45ea08*/
           v4->Image = (void *)SearchMIXFile(Buffer, 0); /*0x45ea1b*/
         }
-        if ( v4[9].__pad_24[9] ) /*0x45ea42*/
+        if ( v4[((unsigned int *)(9].__pad_24))[9] ) /*0x45ea42*/
         {
           if ( v4[5].ChargerBarrels[6] ) /*0x45ea86*/
           {
@@ -553,7 +553,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
         }
         else
         {
-          _makepath(Buffer, 0, 0, &v4[5].__pad_14D[43], (const char *)&off_7E1BC6 + 112 * (unsigned int)v2); /*0x45ea6b*/
+          _makepath(Buffer, 0, 0, &v4[((unsigned int *)(5].__pad_14D))[43], (const char *)&off_7E1BC6 + 112 * (unsigned int)v2); /*0x45ea6b*/
           v4[5].ChargerBarrels[6] = SearchMIXFile(Buffer, 0); /*0x45ea7e*/
         }
         v5 = v4[5].ChargerBarrels[6]; /*0x45eaa5*/
@@ -563,20 +563,20 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
           v7 = 1; /*0x45eab9*/
           if ( v6 ) /*0x45eabe*/
             v7 = 75 / v6; /*0x45eac6*/
-          *(unsigned int *)&v4[5].AlphaImageFile[13] = 0; /*0x45eac8*/
-          *(unsigned int *)&v4[5].AlphaImageFile[17] = v6; /*0x45eace*/
-          *(unsigned int *)&v4[5].AlphaImageFile[21] = v7; /*0x45ead4*/
+          *(unsigned int *)&v4[((unsigned int *)(5].AlphaImageFile))[13] = 0; /*0x45eac8*/
+          *(unsigned int *)&v4[((unsigned int *)(5].AlphaImageFile))[17] = v6; /*0x45eace*/
+          *(unsigned int *)&v4[((unsigned int *)(5].AlphaImageFile))[21] = v7; /*0x45ead4*/
         }
       }
       else if ( v4->NewTheater ) /*0x45eadc*/
       {
-        if ( v4[9].__pad_24[8] && v4->Image ) /*0x45eaec*/
+        if ( v4[((unsigned int *)(9].__pad_24))[8] && v4->Image ) /*0x45eaec*/
         {
           RA2_OPDEL(v4->Image); /*0x45eaf7*/
           v4->Image = 0; /*0x45eaff*/
           v4->ImageAllocated = 0; /*0x45eb05*/
         }
-        if ( v4[9].__pad_24[9] && v4[5].ChargerBarrels[6] ) /*0x45eb13*/
+        if ( v4[((unsigned int *)(9].__pad_24))[9] && v4[5].ChargerBarrels[6] ) /*0x45eb13*/
         {
           RA2_OPDEL((void *)v4[5].ChargerBarrels[6]); /*0x45eb1e*/
           v4[5].ChargerBarrels[6] = 0; /*0x45eb26*/
@@ -590,14 +590,14 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
     if ( v9 ) /*0x45eb4c*/
     {
       if ( dword_89DDC0 ) /*0x45eb56*/
-        (*(void (**)(unsigned int *, int))*dword_89DDC0)(dword_89DDC0, 1); /*0x45eb5c*/
+        (*(void (**)(unsigned int *, int))*(unsigned int *)(dword_89DDC0))(dword_89DDC0, 1); /*0x45eb5c*/
       v8 = (BuildingTypeClass *)RA2_OPNEW(0x20u); /*0x45eb65*/
       if ( v8 ) /*0x45eb6c*/
       {
-        *(unsigned int *)&v8->vtable0[12] = 0; /*0x45eb72*/
+        *(unsigned int *)&v8-((unsigned int *)(>vtable0))[12] = 0; /*0x45eb72*/
         *(unsigned int *)v8->vtable0 = &XSurface_Vtable; /*0x45eb78*/
-        *(unsigned int *)&v8->vtable0[4] = v9 + 16; /*0x45eb80*/
-        *(unsigned int *)&v8->vtable0[8] = v9 + 16; /*0x45eb8b*/
+        *(unsigned int *)&v8-((unsigned int *)(>vtable0))[4] = v9 + 16; /*0x45eb80*/
+        *(unsigned int *)&v8-((unsigned int *)(>vtable0))[8] = v9 + 16; /*0x45eb8b*/
         v8->uniqueId = 1; /*0x45eb8e*/
         Buffer::Init(&v8->abstractFlags, 0, (AbstractClass *)((v9 + 16) * (v9 + 16))); /*0x45eb95*/
         *(unsigned int *)v8->vtable0 = &BSurface_Vtable; /*0x45eb9a*/

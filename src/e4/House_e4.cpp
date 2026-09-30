@@ -28,6 +28,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x47D2B0
 namespace gamemd {
@@ -112,9 +113,7 @@ int House::AnnounceUpgrade( IUnknown * aP1)
     {
       v9 = *(unsigned int *)(this + 56); /*0x47d333*/
       if ( v9 != 0xFFFF && v9 < *(int *)&g_abs_A8D63C ) /*0x47d343*/
-        *(unsigned char *)(this + 284) = HouseClass::GetCameoTypeIndex( /*0x47d35e*/
-                                   *(void **)(*(unsigned int *)&g_abs_A8D63C + 4 * v9),
-                                   *(uint8_t *)(this + 282));
+                *(unsigned char *)(this + 284) = HouseClass::GetCameoTypeIndex((int)(/*0x47d35e*/                                    *(void **)(*(unsigned int *)&g_abs_A8D63C + 4 * v9)),                                    *(uint8_t *)(this + 282));
       if ( *(unsigned char *)(this + 284) && *(unsigned char *)(v7 + 681) ) /*0x47d36e*/
       {
         *(unsigned int *)(this + 68) = -1; /*0x47d378*/
@@ -178,12 +177,12 @@ LABEL_19:
       if ( MapFileData ) /*0x47d5c6*/
       {
 LABEL_40:
-        *(unsigned char *)(this + 284) = HouseClass::GetCameoTypeIndex((void *)v18, *(uint8_t *)(this + 282)); /*0x47d7fb*/
+        *(unsigned char *)(this + 284) = HouseClass::GetCameoTypeIndex((int)((void *)v18), *(uint8_t *)(this + 282)); /*0x47d7fb*/
         CellClass::DetermineTileType(this); /*0x47d813*/
         v27 = *(unsigned int *)(this + 68); /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
           goto LABEL_47; /*0x47d81e*/
-        if ( FindBuildingByTiberiumType(v27) != -1 ) /*0x47d828*/
+        if ( FindBuildingByTiberiumType((IUnknown *)(v27)) != -1 ) /*0x47d828*/
         {
           if ( *(unsigned char *)(this + 284) <= 4u ) /*0x47d831*/
           {
@@ -192,7 +191,7 @@ LABEL_40:
           }
           else
           {
-            *(unsigned int *)(this + 236) = House::LookupObject((void *)v18, *(uint8_t *)(this + 282)); /*0x47d843*/
+            *(unsigned int *)(this + 236) = House::LookupObject((int)((void *)v18), *(uint8_t *)(this + 282)); /*0x47d843*/
             *(unsigned int *)(this + 68) = -1; /*0x47d849*/
             *(unsigned char *)(this + 286) = 0; /*0x47d850*/
           }
@@ -200,7 +199,7 @@ LABEL_40:
         }
         if ( !*(unsigned char *)(*(unsigned int *)&g_abs_A83D84->__pad_0[4 * *(unsigned int *)(this + 68)] + 684) ) /*0x47d885*/
 LABEL_47:
-          *(unsigned int *)(this + 236) = House::LookupObject((void *)v18, *(uint8_t *)(this + 282)); /*0x47d8aa*/
+          *(unsigned int *)(this + 236) = House::LookupObject((int)((void *)v18), *(uint8_t *)(this + 282)); /*0x47d8aa*/
 LABEL_48:
         if ( *(unsigned int *)(this + 236) == 10 ) /*0x47d8b7*/
         {
@@ -217,7 +216,7 @@ LABEL_48:
               && v29 <= *(unsigned int *)&g_abs_A8D63C + 3
               || (v30 = dword_ABAD2C, v29 >= (int)dword_ABAD2C) && v29 <= (int)&dword_ABAD2C->__pad_0[3] )
             {
-              v31 = (TubeClass *)(v29 - (unsigned int)v30); /*0x47d91d*/
+              v31 = (gamemd::CCINIClass *)((TubeClass *)(v29 - (unsigned int)v30));
               if ( v29 - (unsigned int)v30 != -1 ) /*0x47d922*/
               {
                 v32 = (AbstractClass *)RA2_OPNEW(0x1C4u); /*0x47d929*/

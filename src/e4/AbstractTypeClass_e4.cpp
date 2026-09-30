@@ -12,6 +12,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x410800
 namespace gamemd {
@@ -102,14 +103,14 @@ int AbstractTypeClass::Dtor()
   *(this + 3) = &vt_AbstractTypeClass; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
   v2 = (*(int (**)(int *, unsigned int **))(g_abs_A8E968 + 16))(&g_abs_A8E968, &v4); /*0x4109f3*/
-  if ( v2 != -1 && v2 < g_abs_A8E978 && v2 < --g_abs_A8E978 ) /*0x410a0e*/
+  if ( v2 != -1 && v2 < (int)((int))((int))(g_abs_A8E978) && v2 < --g_abs_A8E978 ) /*0x410a0e*/
   {
     do /*0x410a26*/
     {
       ++v2; /*0x410a16*/
       *((unsigned int *)g_abs_A8E96C + v2 - 1) = *((unsigned int *)g_abs_A8E96C + v2); /*0x410a1a*/
     }
-    while ( v2 < g_abs_A8E978 ); /*0x410a26*/
+    while ( v2 < (int)((int))((int))(g_abs_A8E978) ); /*0x410a26*/
   }
   return AbstractClass::DTOR(this); /*0x410a2f*/
 
@@ -192,14 +193,14 @@ AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
   *(Block + 3) = &vt_AbstractTypeClass; /*0x410c51*/
   v5 = Block; /*0x410c5f*/
   v3 = (*(int (**)(int *, unsigned int **))(g_abs_A8E968 + 16))(&g_abs_A8E968, &v5); /*0x410c63*/
-  if ( v3 != -1 && v3 < g_abs_A8E978 && v3 < --g_abs_A8E978 ) /*0x410c7e*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_A8E978) && v3 < --g_abs_A8E978 ) /*0x410c7e*/
   {
     do /*0x410c96*/
     {
       ++v3; /*0x410c86*/
       *((unsigned int *)g_abs_A8E96C + v3 - 1) = *((unsigned int *)g_abs_A8E96C + v3); /*0x410c8a*/
     }
-    while ( v3 < g_abs_A8E978 ); /*0x410c96*/
+    while ( v3 < (int)((int))((int))(g_abs_A8E978) ); /*0x410c96*/
   }
   AbstractClass::DTOR(Block); /*0x410c9a*/
   if ( ((unsigned int)(Block)& 1) != 0 ) /*0x410ca4*/
@@ -259,7 +260,7 @@ namespace gamemd {
 int AbstractTypeClass::ProcessPower( AbstractClass * aP1)
 {
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x410be9*/
+  AbstractClass::ProcessPower((void *)this); /*0x410be9*/
   Checksum::AddString((unsigned int *)aP1, (AbstractClass *)this + 1); /*0x410bf4*/
   Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 100)); /*0x410bff*/
   return Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 61)); /*0x410c0f*/

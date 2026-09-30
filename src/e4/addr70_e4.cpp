@@ -36,6 +36,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
 {
     unsigned int v30 = 0;  /* G37 hoist */
     unsigned int v30 = 0;  /* G37 hoist */
+    unsigned int v30 = 0;  /* G37 hoist */
   int v9; // edx
   char v10; // bl
   int v11; // esi
@@ -62,7 +63,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   int v32; // [esp+38h] [ebp-74h]
   int v33[2]; // [esp+3Ch] [ebp-70h] BYREF
   int v34[2]; // [esp+44h] [ebp-68h] BYREF
-  unsigned int v35;
+  int * v35;
   unsigned int v36;
   unsigned int v37[2]; // [esp+54h] [ebp-58h] BYREF
   int v38[4]; // [esp+5Ch] [ebp-50h] BYREF
@@ -144,7 +145,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v19);
   }
   v20 = (unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green));
-  v35 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))));
+  v35 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))))))))));
   v36 = (unsigned int)((int *)((unsigned int)((int *)(-2))));
   v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
@@ -237,9 +238,9 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   int v38; // [esp+58h] [ebp-48h] BYREF
   int v39; // [esp+5Ch] [ebp-44h]
   int v40; // [esp+60h] [ebp-40h]
-  unsigned int v41;
-  void * v42;
-  void * v43;
+  void * v41;
+  unsigned int v42;
+  unsigned int v43;
   int v44[4]; // [esp+70h] [ebp-30h] BYREF
   unsigned int v45[4]; // [esp+80h] [ebp-20h] BYREF
   unsigned int v46[4]; // [esp+90h] [ebp-10h] BYREF
@@ -352,7 +353,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   IPersistStream v22; // esi
   int *v23; // eax
   BuildingClass * v24;
-  unsigned int v25;
+  BuildingClass * v25;
   BuildingClass * v26;
   BuildingClass * v27;
   int v28; // eax
@@ -542,7 +543,7 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
   VectorClass v30; // [esp+18h] [ebp-30h] BYREF
   int v31; // [esp+28h] [ebp-20h]
   int v32; // [esp+2Ch] [ebp-1Ch]
-  void **v33; // [esp+30h] [ebp-18h] BYREF
+  void* v33;
   void *v34; // [esp+34h] [ebp-14h]
   int v35; // [esp+38h] [ebp-10h]
   char v36; // [esp+3Dh] [ebp-Bh]

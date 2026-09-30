@@ -302,7 +302,7 @@ struct ObjectTypeClass {
     int DeserializeArrays();
     int FindByName(void *a1 = 0);
     int FreeLoaderBuffer();
-    int LoadCleanup(void * aP0, void * aP1);
+    int LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1);
     int LoadExtras(void * aP0, double _38C, unsigned char *** a2);
     int ReadBool3(void * aP1, unsigned char * a2, void * a4);
     int ReadDestroyAnim();

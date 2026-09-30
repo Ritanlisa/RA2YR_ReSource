@@ -231,7 +231,7 @@ LABEL_6:
   v28 = *(unsigned short *)&to.sa_data[8]; /*0x7b15e6*/
   if ( *(unsigned int *)to.sa_data == *((unsigned int *)this + 64703) ) /*0x7b15ef*/
   {
-    v13 = (int)((gamemd::u_short *)(3));
+    v13 = (gamemd::u_short *)((int)((gamemd::u_short *)(3)));
     v14 = (gamemd::u_short *)((unsigned int *)this + 129411);
     v15 = &v27; /*0x7b15fc*/
     v16 = 1; /*0x7b1600*/
@@ -273,7 +273,7 @@ LABEL_6:
     }
     return 0; /*0x7b1711*/
   }
-  Debug::Log(); /*0x7b1671*/
+  this->Debug::Log(); /*0x7b1671*/
   if ( !byte_B7801C ) /*0x7b1680*/
     byte_B7801C = 1; /*0x7b1682*/
   if ( IDA_BYTE2(v18->sectionHead[1]) ) /*0x7b1689*/

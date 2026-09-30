@@ -98,7 +98,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     *((unsigned int *)this + 12) = 1; /*0x438fca*/
     if ( *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 528) != -1 ) /*0x438fde*/
     {
-      if ( (uint8_t)House::IsHumanPlayer((#375 *)aP1->focus) ) /*0x438fe6*/
+      if ( (uint8_t)House::IsHumanPlayer((void *)aP1->focus) ) /*0x438fe6*/
       {
         v12[0] = aP2->location[0]; /*0x438ffc*/
         v12[1] = aP2->location[1]; /*0x439007*/

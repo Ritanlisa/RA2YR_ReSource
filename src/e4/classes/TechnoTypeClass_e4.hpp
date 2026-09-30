@@ -1092,7 +1092,7 @@ struct TechnoTypeClass {
     double ComputeBuildTime();
     int ComputeValue(void * a2, float a3);
     int ComputeValueSimple(float * a2);
-    int DTOR(void *a1 = 0);
+    int DTOR();
     int Dispatch(void * aP1, void *a2 = 0);
     int GetThreatMultiplier(void * aP1);
     int SaveLoadDataArray(void * aP1);

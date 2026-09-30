@@ -32,7 +32,7 @@ namespace gamemd {
 void * SuperClass::LaunchPsychicDominator(int a2)
 {
 
-  #381 *result; // eax
+  void *result; // eax
   void *v3; // esi
   void *v4; // eax
   int *v5; // eax
@@ -41,13 +41,13 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   int v8[3]; // [esp+4h] [ebp-18h] BYREF
   unsigned int v9[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  result = (#381 *)g_abs_87F7E8[7806]; /*0x53ae50*/
+  result = (void *)g_abs_87F7E8[7806]; /*0x53ae50*/
   if ( *(unsigned int *)(g_abs_87F7E8[7806] + 764) && *(unsigned int *)(g_abs_87F7E8[7806] + 768) ) /*0x53ae66*/
   {
     ((unsigned int *)(dword_A8ED54))[17245] = (int)this; /*0x53ae79*/
     ((unsigned int *)(dword_A8ED54))[17213] = a2; /*0x53ae7f*/
     v3 = *(void **)(g_abs_87F7E8[7806] + 764); /*0x53ae85*/
-    v4 = CellCoord::To_CellObj(g_abs_87F7E8, (int16_t *)&dword_A8ED54[17213]); /*0x53ae95*/
+    v4 = CellCoord::To_CellObj(g_abs_87F7E8, (int16_t *)&((unsigned int *)(dword_A8ED54))[17213]); /*0x53ae95*/
     v5 = (int *)(*(int (**)(void *, unsigned int *))(*(unsigned int *)v4 + 72))(v4, v9); /*0x53aea3*/
     v8[0] = *v5; /*0x53aea8*/
     v8[1] = v5[1]; /*0x53aeb4*/
@@ -59,10 +59,10 @@ void * SuperClass::LaunchPsychicDominator(int a2)
       ((unsigned int *)(dword_A8ED54))[17244] = 0; /*0x53aef1*/
     v7 = g_abs_87F7E8[536210] + 4680; /*0x53af06*/
     ((unsigned int *)(dword_A8ED54))[17243] = 1; /*0x53af0c*/
-    *(unsigned int *)(g_abs_87F7E8[536210] + 4680) = dword_A8ED54[12]; /*0x53af1b*/
+    *(unsigned int *)(g_abs_87F7E8[536210] + 4680) = ((unsigned int *)(dword_A8ED54))[12]; /*0x53af1b*/
     *(unsigned int *)(v7 + 4) = v9[1]; /*0x53af21*/
     *(unsigned int *)(v7 + 8) = 1; /*0x53af24*/
-    return (#381 *)ScenarioClass::UpdateLighting(); /*0x53af27*/
+    return (void *)ScenarioClass::UpdateLighting(); /*0x53af27*/
   }
   return result; /*0x53af2d*/
 
@@ -200,7 +200,7 @@ SuperClass * * SuperClass::CleanupMembers()
   int v6; // eax
   int v7; // eax
   int v8; // eax
-  int v9; // [esp+14h] [ebp-4h] BYREF
+  SuperClass * v9;
 
   v2 = *((unsigned int *)this + 26); /*0x6cb124*/
   *(unsigned int *)this = &vt_SuperClass; /*0x6cb127*/
@@ -226,14 +226,14 @@ SuperClass * * SuperClass::CleanupMembers()
   }
   v9 = this; /*0x6cb1bd*/
   v5 = (*(int (**)(int *, int *))(g_abs_A83D50 + 16))(&g_abs_A83D50, &v9); /*0x6cb1c1*/
-  if ( v5 != -1 && v5 < g_abs_A83D60 && v5 < --g_abs_A83D60 ) /*0x6cb1dc*/
+  if ( v5 != -1 && v5 < (int)((int))((int))(g_abs_A83D60) && v5 < --g_abs_A83D60 ) /*0x6cb1dc*/
   {
     do /*0x6cb1f4*/
     {
       ++v5; /*0x6cb1e4*/
       *((unsigned int *)g_abs_A83D54 + v5 - 1) = *((unsigned int *)g_abs_A83D54 + v5); /*0x6cb1e8*/
     }
-    while ( v5 < g_abs_A83D60 ); /*0x6cb1f4*/
+    while ( v5 < (int)((int))((int))(g_abs_A83D60) ); /*0x6cb1f4*/
   }
   v9 = this; /*0x6cb206*/
   v6 = (*(int (**)(int *, int *))(dword_A83CB8 + 16))(&dword_A83CB8, &v9); /*0x6cb20a*/
@@ -542,7 +542,7 @@ int SuperClass::ClickFire(int a2, short * a3)
   v4 = *((unsigned int *)this + 10); /*0x6cb92a*/
   if ( *(unsigned char *)(v4 + 229) ) /*0x6cb92d*/
   {
-    if ( (uint8_t)House::IsCurrentPlayer(*(#375 **)((char *)this + 44)) ) /*0x6cb93c*/
+    if ( (uint8_t)House::IsCurrentPlayer(*(void **)((char *)this + 44)) ) /*0x6cb93c*/
     {
       v5 = *((unsigned int *)this + 31); /*0x6cb949*/
       if ( v5 == 2 ) /*0x6cb94f*/
@@ -1253,7 +1253,7 @@ LABEL_254:
           *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 6044),
           *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 6036),
           *(unsigned int *)aP3,
-          *(#375 **)(ecx0 + 44));
+          *(void **)(ecx0 + 44));
         if ( !*(unsigned int *)&HouseClass_Player.__pad_5568[8836] )
           VoxClass::FindAndPlay(aEvaLightningst, -1, -1);
         if ( a4 )
@@ -1823,7 +1823,7 @@ LABEL_178:
       if ( *(unsigned char *)(ecx0 + 111) )
       {
         CreateTriggerClassIfFarEnough((IUnknown *)0xD, *(unsigned int *)aP3, *(IUnknown **)aP3);
-        SuperClass::LaunchPsychicDominator((#375 *)v4->field_2C, *(unsigned int *)aP3);
+        SuperClass::LaunchPsychicDominator((void *)v4->field_2C, *(unsigned int *)aP3);
         if ( !*(unsigned int *)&HouseClass_Player.__pad_5568[8836] )
           VoxClass::FindAndPlay(&stru_830620.__pad_579C[51144], -1, -1);
         v73 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], aP3);
@@ -2510,7 +2510,7 @@ int SuperClass::PowerDrainUpdate(int * a2)
   int result; // eax
   int v9; // eax
 
-  v3 = AbstractClass::ProcessPower((#378 *)this); /*0x6ce029*/
+  v3 = AbstractClass::ProcessPower((void *)this); /*0x6ce029*/
   IDA_LOBYTE(v3) = *((unsigned char *)this + 109); /*0x6ce02e*/
   Power::FlagProcess(a2, v3); /*0x6ce034*/
   IDA_LOBYTE(v4) = *((unsigned char *)this + 110); /*0x6ce039*/

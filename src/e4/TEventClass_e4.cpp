@@ -32,19 +32,19 @@ DynamicVector * TEventClass::Execute( int a2, int a3, int a4, int * a5, int a6, 
 
   int v8; // ecx
   int v9; // eax
-  int v10; // edi
+  unsigned char * v10;
   const char *v11; // edx
   char *v12; // ebp
   int v13; // edi
   int v14; // ebx
   int v15; // ebp
-  int v16; // esi
+  unsigned char * v16;
   int v18; // eax
-  int v19; // edi
+  unsigned char * v19;
   const char *v20; // edx
   char *v21; // ebp
   int v22; // edi
-  int v23; // esi
+  unsigned char * v23;
   int v24; // edx
   int v25; // eax
   int v26; // edx
@@ -142,9 +142,9 @@ LABEL_44:
           goto LABEL_8; /*0x71e9c9*/
         }
       }
-      v9 = v10; /*0x71e9cb*/
+      v9 = (int)(v10);
 LABEL_8:
-      if ( v9 >= g_abs_A8EB10 ) /*0x71e9d3*/
+      if ( v9 >= (int)((int))((int))(g_abs_A8EB10) ) /*0x71e9d3*/
         return 0; /*0x71e9d3*/
       if ( v9 < 0 ) /*0x71e9db*/
         return 0; /*0x71e9db*/
@@ -164,7 +164,7 @@ LABEL_8:
         if ( --v16 < 0 ) /*0x71ea22*/
           return 0; /*0x71ea2d*/
       }
-      return 1; /*0x71ea1b*/
+      return (int)(1);
     case 61: /*0x71e964*/
       v18 = -1; /*0x71ea36*/
       v19 = g_abs_A8EB10 - 1; /*0x71ea39*/
@@ -183,9 +183,9 @@ LABEL_8:
           goto LABEL_22; /*0x71ea8e*/
         }
       }
-      v18 = v19; /*0x71ea90*/
+      v18 = (int)(v19);
 LABEL_22:
-      if ( v18 >= g_abs_A8EB10 || v18 < 0 ) /*0x71eaa0*/
+      if ( v18 >= (int)((int))((int))(g_abs_A8EB10) || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/
       v22 = *((unsigned int *)g_abs_A8EB04 + v18); /*0x71eab2*/
       v23 = g_abs_A8EC88 - 1; /*0x71eab5*/
@@ -315,7 +315,7 @@ LABEL_22:
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v55, *(this + 13)); /*0x71eddb*/
+            WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v55, *(this + 13)));
             v32 = *WorldCoords; /*0x71ede0*/
             v33 = WorldCoords[1]; /*0x71ede6*/
             v34 = WorldCoords[2]; /*0x71edeb*/
@@ -378,7 +378,7 @@ LABEL_22:
               goto LABEL_122; /*0x71ef96*/
             return 0; /*0x71efa5*/
           case 19: /*0x71eea2*/
-            v48 = *(unsigned int *)(a3 + 620); /*0x71efeb*/
+            v48 = (int)(*(unsigned int *)(a3 + 620));
             goto LABEL_112; /*0x71efeb*/
           case 20: /*0x71eea2*/
             if ( *(unsigned int *)(a3 + 628) != *(this + 13) ) /*0x71f00e*/
@@ -400,12 +400,12 @@ LABEL_112:
           case 23: /*0x71eea2*/
             v40 = g_abs_8B40F8; /*0x71eea9*/
             v41 = 0; /*0x71eeaf*/
-            if ( g_abs_8B40F8 <= 0 ) /*0x71eeb3*/
+            if ( g_abs_8B40F8 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x71eeb3*/
               goto LABEL_91; /*0x71eeb3*/
             v42 = (char *)g_abs_8B40EC; /*0x71eeb8*/
             break; /*0x71eeb8*/
           case 32: /*0x71eea2*/
-            if ( !DynamicVector::GetOrGrow((unsigned int *)(a3 + 21840), *(this + 13)) ) /*0x71efb9*/
+            if ( !((DynamicVector *)((unsigned int *)(a3 + 21840)))->GetOrGrow(*(this + 13)) ) /*0x71efb9*/
               return 0; /*0x71efb9*/
             *(unsigned char *)a6 = 1; /*0x71efc3*/
             goto LABEL_122; /*0x71efc6*/
@@ -414,7 +414,7 @@ LABEL_112:
               goto LABEL_122; /*0x71ef2d*/
             return 0; /*0x71ef3c*/
           case 57: /*0x71eea2*/
-            if ( DynamicVector::GetOrGrow((unsigned int *)(a3 + 21840), *(this + 13)) ) /*0x71efd5*/
+            if ( ((DynamicVector *)((unsigned int *)(a3 + 21840)))->GetOrGrow(*(this + 13)) ) /*0x71efd5*/
               return 0; /*0x71efdc*/
             *(unsigned char *)a6 = 1; /*0x71efe6*/
             goto LABEL_122; /*0x71efe9*/
@@ -428,7 +428,7 @@ LABEL_112:
             break; /*0x71eecc*/
           ++v41; /*0x71eed6*/
           v42 += 4; /*0x71eed7*/
-          if ( v41 >= g_abs_8B40F8 ) /*0x71eedc*/
+          if ( v41 >= (int)((int))((int))(g_abs_8B40F8) ) /*0x71eedc*/
             goto LABEL_91; /*0x71eedc*/
         }
         *(unsigned char *)a6 = 1; /*0x71eee4*/
@@ -486,7 +486,7 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   int v2; // edx
   int v3; // eax
   int v4; // esi
-  const CHAR *v6; // [esp-10h] [ebp-18h]
+  const unsigned int v6;
   int v7; // [esp-Ch] [ebp-14h]
   int v8; // [esp-8h] [ebp-10h]
   int v9; // [esp-4h] [ebp-Ch]
@@ -563,9 +563,9 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   v4 = *((char *)this + 12); /*0x71f3fe*/
   if ( v4 ) /*0x71f403*/
   {
-    v9 = v4 + 36; /*0x71f408*/
-    v8 = 1; /*0x71f409*/
-    v7 = *((char *)this + 11); /*0x71f40b*/
+    v9 = (const CHAR *)(v4 + 36);
+    v8 = (const CHAR *)(1);
+    v7 = (const CHAR *)(*((char *)this + 11));
     v6 = g_abs_844714; /*0x71f40c*/
   }
   else
@@ -617,25 +617,25 @@ void * TEventClass::Fire(void ** Block, char a2)
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x71faa1*/
   v7 = Block; /*0x71fab6*/
   v3 = (*(int (**)(int *, void ***))(g_abs_B0F658 + 16))(&g_abs_B0F658, &v7); /*0x71faba*/
-  if ( v3 != -1 && v3 < g_abs_B0F668 && v3 < --g_abs_B0F668 ) /*0x71fad5*/
+  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_B0F668) && v3 < --g_abs_B0F668 ) /*0x71fad5*/
   {
     do /*0x71faed*/
     {
       ++v3; /*0x71fadd*/
       *((unsigned int *)g_abs_B0F65C + v3 - 1) = *((unsigned int *)g_abs_B0F65C + v3); /*0x71fae1*/
     }
-    while ( v3 < g_abs_B0F668 ); /*0x71faed*/
+    while ( v3 < (int)((int))((int))(g_abs_B0F668) ); /*0x71faed*/
   }
   v7 = Block; /*0x71faff*/
   v4 = (*(int (**)(int *, void ***))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v7); /*0x71fb03*/
-  if ( v4 != -1 && v4 < g_abs_B0F680 && v4 < --g_abs_B0F680 ) /*0x71fb1e*/
+  if ( v4 != -1 && v4 < (int)((int))((int))(g_abs_B0F680) && v4 < --g_abs_B0F680 ) /*0x71fb1e*/
   {
     do /*0x71fb36*/
     {
       ++v4; /*0x71fb26*/
       *((unsigned int *)g_abs_B0F674 + v4 - 1) = *((unsigned int *)g_abs_B0F674 + v4); /*0x71fb2a*/
     }
-    while ( v4 < g_abs_B0F680 ); /*0x71fb36*/
+    while ( v4 < (int)((int))((int))(g_abs_B0F680) ); /*0x71fb36*/
   }
   v7 = Block; /*0x71fb48*/
   v5 = (*(int (**)(int *, void ***))(g_abs_B0F1A0 + 16))(&g_abs_B0F1A0, &v7); /*0x71fb4c*/
@@ -665,7 +665,7 @@ int TEventClass::ProcessEvent(int a2)
   int v5; // eax
   int v6; // eax
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x71f829*/
+  AbstractClass::ProcessPower((void *)this); /*0x71f829*/
   v3 = *((unsigned int *)this + 10); /*0x71f82e*/
   if ( v3 ) /*0x71f833*/
   {

@@ -29,6 +29,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/MSFrameAnim_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/GameLoop_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x49B660
 namespace gamemd {
@@ -69,6 +71,16 @@ int MPCooperative::processTurn(char * a2, char * a3)
 namespace gamemd {
 int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
 {
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v15 = 0;  /* G37 hoist */
 
   int v6; // eax
   int v7; // ecx
@@ -77,9 +89,9 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
   int i; // ebx
   wchar_t *v11; // edi
   int v12; // eax
-  int v13; // ecx
-  int v14; // eax
-  int v15; // edx
+  wchar_t * v13;
+  wchar_t * v14;
+  wchar_t * v15;
   wchar_t *v16; // [esp+4h] [ebp-4h]
   wchar_t *v17; // [esp+Ch] [ebp+4h]
 
@@ -130,7 +142,7 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
       if ( v13 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)a2 + 8))(a2, v12 + v13, 0) ) /*0x49be03*/
         continue; /*0x49be03*/
     }
-    v14 = *(unsigned int *)(a2 + 16); /*0x49be0a*/
+    v14 = (wchar_t *)(*(unsigned int *)(a2 + 16));
     v15 = *(unsigned int *)(a2 + 4); /*0x49be0d*/
     *(unsigned int *)(a2 + 16) = v14 + 1; /*0x49be13*/
     *(unsigned int *)(v15 + 4 * v14) = v11; /*0x49be16*/
@@ -164,10 +176,10 @@ int MPCooperative::WriteCoopSaveINI()
   char v18; // [esp+4Ch] [ebp-154h]
   unsigned int v19[22]; // [esp+64h] [ebp-13Ch] BYREF
   unsigned char v20[12]; // [esp+BCh] [ebp-E4h] BYREF
-  int v21; // [esp+C8h] [ebp-D8h]
+  void ** v21;
   unsigned int v22[22]; // [esp+D0h] [ebp-D0h] BYREF
   unsigned char v23[12]; // [esp+128h] [ebp-78h] BYREF
-  int v24; // [esp+134h] [ebp-6Ch]
+  void ** v24;
   char v25[100]; // [esp+13Ch] [ebp-64h] BYREF
 
   v1 = (char *)(this);
@@ -295,6 +307,9 @@ void MPCooperative::MPCooperative_validateMove( int a2, int a3, int a4, int a5, 
 namespace gamemd {
 int MPCooperative::ReadCoopSaveINI()
 {
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
 
   char *v1; // edi
   char *v2; // ebx
@@ -309,10 +324,10 @@ int MPCooperative::ReadCoopSaveINI()
   int v12; // esi
   int v13; // eax
   char v14; // al
-  bool v15; // bl
+  unsigned char (*)[4] v15;
   unsigned int v16[22]; // [esp+Ch] [ebp-128h] BYREF
   unsigned char v17[12]; // [esp+64h] [ebp-D0h] BYREF
-  int v18; // [esp+70h] [ebp-C4h]
+  void ** v18;
   void *v19[3]; // [esp+78h] [ebp-BCh] BYREF
   unsigned int v20[7]; // [esp+84h] [ebp-B0h] BYREF
   unsigned int v21[6]; // [esp+A0h] [ebp-94h] BYREF
@@ -396,14 +411,14 @@ int MPCooperative::ReadCoopSaveINI()
         v14 = 0; /*0x49d2d6*/
       else
         v14 = v13 >= 10 ? v13 + 55 : v13 + 48;
-      g_abs_89ED18[v12] = v14; /*0x49d2d8*/
+      g_abs_89ED18[v12] = (unsigned int)(v14);
       v10 = v12 + 1; /*0x49d2e3*/
       g_abs_89ED18[v10] = EncodeDigitHex(*v9 & 0xF); /*0x49d2e9*/
     }
-    i = v9[1]; /*0x49d2f9*/
+    i = (unsigned int)(v9[1]);
     ++v10; /*0x49d2fc*/
   }
-  g_abs_89ED18[v10] = 0; /*0x49d30c*/
+  g_abs_89ED18[v10] = (unsigned int)(0);
   strcat(v23, g_abs_89ED18); /*0x49d331*/
   v15 = INIClass::BinarySearchSection((int)v19, (uint8_t *)v23) != 0; /*0x49d354*/
   HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/
@@ -1602,7 +1617,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   int i; // eax
   int v8; // ebx
   int v9; // edi
-  #375 *v10; // ecx
+  void *v10; // ecx
   int j; // eax
   int v12; // edx
   int v14; // eax
@@ -1623,7 +1638,7 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   {
     do /*0x5c2e2e*/
     {
-      v10 = *(#375 **)&HouseClass_Array->__pad_0[4 * v9]; /*0x5c2e15*/
+      v10 = *(void **)&HouseClass_Array->__pad_0[4 * v9]; /*0x5c2e15*/
       if ( v10 && (uint8_t)House::IsCurrentPlayer(v10) ) /*0x5c2e1c*/
         ++v8; /*0x5c2e25*/
       ++v9; /*0x5c2e2b*/

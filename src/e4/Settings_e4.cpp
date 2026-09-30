@@ -5,6 +5,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/String_e4.hpp"
 
 // 0x5E8760
 namespace gamemd {
@@ -13,7 +14,7 @@ BOOL Settings::CheckString()
 
   char *v0; // eax
 
-  v0 = CharToWideString(g_abs_A8B380); /*0x5e8765*/
+  v0 = (char *)(CharToWideString(g_abs_A8B380));
   return wcscmp((const wchar_t *)v0, &g_abs_A8D610) == 0; /*0x5e877d*/
 
 }

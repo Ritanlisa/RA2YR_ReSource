@@ -11,6 +11,7 @@
 #include "e4/classes/MixFile_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Multiplayer_e4.hpp"
 
 // 0x520AE0
 namespace gamemd {
@@ -230,7 +231,7 @@ char Mission::ProcessUnitMissionAI()
     if ( !(*(uint8_t (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x520f72*/
     {
       v2 = (int)(*((unsigned int *)this + 361));
-      v3 = *this; /*0x520f7f*/
+      v3 = (int)(*this);
       if ( v2 ) /*0x520f86*/
       {
         (*(void (**)(unsigned int *, int, int))(v3 + 1152))(this, v2, 1); /*0x520f97*/

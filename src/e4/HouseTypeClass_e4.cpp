@@ -379,7 +379,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
          128) )
   {
     InfantryTypeVector::Construct(&aP4.__pad_0[2], 0, 0); /*0x511d42*/
-    *(unsigned int *)&aP4.__pad_0[2] = &vt_TypeList_InfantryTypeClass_const; /*0x511d56*/
+    *(unsigned int *)&((unsigned int *)(aP4.__pad_0))[2] = &vt_TypeList_InfantryTypeClass_const; /*0x511d56*/
     for ( i = strtok(String[0].__pad_0, g_abs_817F70); i; i = strtok(0, g_abs_817F70) ) /*0x511d64*/
     {
       if ( !*i ) /*0x511d66*/
@@ -388,7 +388,7 @@ AbstractClass * HouseTypeClass::LoadFromINI( uint8_t *** aP1)
       if ( *(int *)((char *)&aP4.sectionCount + 2) ) /*0x511d78*/
         InfantryTypeVector::Add(&aP4.__pad_0[2], (InfantryTypeClass *)((char *)&aP4.sectionCount + 2)); /*0x511d83*/
     }
-    HouseTypeClass::readAllowedUnits(Destination, (InfantryTypeClass *)&aP4.__pad_0[2]); /*0x511da4*/
+    HouseTypeClass::readAllowedUnits(Destination, (InfantryTypeClass *)&((unsigned int *)(aP4.__pad_0))[2]); /*0x511da4*/
     *(unsigned int *)Destination = &vt_TypeList_InfantryTypeClass_const; /*0x511dad*/
     *(unsigned int *)&aP4.__pad_0[2] = &vt_VectorClass_InfantryTypeClass_const; /*0x511db1*/
     Vector::Cleanup((int)&aP4.__pad_0[2]); /*0x511db9*/

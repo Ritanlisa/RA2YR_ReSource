@@ -2,9 +2,6 @@
 // (gen_tree_full_e4.py) — namespace-isolated C2027 fix,
 // zero tree dependencies. Bodies access these via e4 TUs only.
 #pragma once
-#include "_gap2/gap2_global_decls.hpp"
-
-
 
 #include "e4/classes/_fwd_e4.hpp"
 
@@ -15,7 +12,6 @@ struct AircraftTypeVector;
 struct AllocCallback;
 struct AnimTypeVector;
 struct AssetClass;
-struct AudioChannel;
 struct AudioConfig;
 struct AudioFile;
 struct AudioFileClass;
@@ -31,6 +27,7 @@ struct BTree;
 struct BigInt;
 struct BitArray;
 struct BufferIO;
+struct BuildingLightQueue;
 struct BuildingLoadQueue;
 struct ButtonClass;
 struct CDTimerClass;
@@ -38,10 +35,12 @@ struct CampaignScore;
 struct CaptureManager;
 struct Char;
 struct ChatEvent;
+struct Checksum;
 struct Checksummer;
 struct Cliff;
 struct Conditions;
 struct Conflict;
+struct ControlClass;
 struct Coord2D;
 struct Coord3D;
 struct CoordList;
@@ -49,6 +48,7 @@ struct CountdownTimer;
 struct CrateClass;
 struct DListNode;
 struct DeleteAndZero;
+struct DialogControl_OwnerDraw;
 struct DiskSpace;
 struct DropPodLocomotionClass;
 struct DynamicArray;
@@ -72,9 +72,6 @@ struct GameOptions;
 struct GameResult;
 struct GameState;
 struct GenericList;
-struct GetCurrentProcessId;
-struct GetCurrentThread;
-struct GetCurrentThreadId;
 struct Hash;
 struct HashMap;
 struct IDXContainer;
@@ -82,11 +79,13 @@ struct INISectionList;
 struct InputManager_ProcessEvents;
 struct Int4;
 struct IsRandMap;
+struct KeywordType;
 struct Lightning;
 struct ListClass;
 struct Locomotor;
 struct MPCombatTeam;
 struct MSAnim;
+struct MSChoiceClass;
 struct MSShapeAnim;
 struct Matrix;
 struct Matrix2D;
@@ -101,9 +100,8 @@ struct NetworkEventQueueClass;
 struct NetworkID;
 struct ObjectClass;
 struct ObjectPtr;
-struct OleUninitialize;
 struct OptionQueue;
-struct OverlayClass;
+struct OreManagerClass;
 struct OwnerDrawControl;
 struct PacketQueue;
 struct PaletteManager;
@@ -111,11 +109,9 @@ struct Performance;
 struct PhoneEditor;
 struct PingPongBuffer;
 struct Pipe;
-struct PlayerProfile;
-struct PlayerType;
 struct PreviewClass;
 struct PriorityQueue;
-struct ProductionClass;
+struct ProgressAnim;
 struct Property;
 struct PtrVector;
 struct PushCommandClass;
@@ -123,10 +119,10 @@ struct Queue;
 struct Random;
 struct Rect_Point;
 struct ResultNode;
-struct SHAPipe;
+struct SHPClass;
 struct SafeDelete;
-struct SaveLoad;
 struct SaveLoadDialog;
+struct ScoreText;
 struct ScreenSaver;
 struct SerialPort;
 struct ShapeButton;
@@ -134,7 +130,7 @@ struct ShroudClass;
 struct SimpleDialogControl;
 struct SlaveControlVector;
 struct SpawnControlVector;
-struct State;
+struct SquadClass;
 struct StaticString;
 struct Straw;
 struct StringList;
@@ -144,11 +140,15 @@ struct StructTable;
 struct SwizzleManager;
 struct SyncDelayClass;
 struct TabCameoListClass;
+struct TagClassVector;
 struct Targeting;
+struct TaskManager;
 struct TechnoTypeVector;
 struct Text;
 struct TextGroup;
 struct TheatreClass;
+struct TileNode;
+struct TimerPool;
 struct ToolTipClass;
 struct Tooltip;
 struct Tree;
@@ -194,13 +194,6 @@ struct AnimTypeVector {
 struct AssetClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-};
-
-struct AudioChannel {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
 };
 
 struct AudioConfig {
@@ -289,6 +282,11 @@ struct BufferIO {
     unsigned char q008;  // 0x8
 };
 
+struct BuildingLightQueue {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
 struct BuildingLoadQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
@@ -336,6 +334,11 @@ struct ChatEvent {
     unsigned char q000;  // 0x0
 };
 
+struct Checksum {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
 struct Checksummer {
     void* vfptr;
     unsigned int crcValue;  // 0x0
@@ -363,6 +366,14 @@ struct Conflict {
     int Outcome;  // 0xC
     unsigned int referenceCount;  // 0x10
     unsigned int q014;  // 0x14
+};
+
+struct ControlClass {
+    void* vfptr;
+    void* vtable1;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
 };
 
 struct Coord2D {
@@ -406,6 +417,10 @@ struct DeleteAndZero {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+};
+
+struct DialogControl_OwnerDraw {
+    void* vfptr;
 };
 
 struct DiskSpace {
@@ -17770,21 +17785,6 @@ struct GenericList {
     void* vtable1;  // 0x0
 };
 
-struct GetCurrentProcessId {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-};
-
-struct GetCurrentThread {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-};
-
-struct GetCurrentThreadId {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-};
-
 struct Hash {
     void* vfptr;
     unsigned char q000;  // 0x0
@@ -17831,6 +17831,11 @@ struct IsRandMap {
     unsigned char q004;  // 0x4
 };
 
+struct KeywordType {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
 struct Lightning {
     void* vfptr;
     unsigned char q000;  // 0x0
@@ -17873,6 +17878,12 @@ struct MSAnim {
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+};
+
+struct MSChoiceClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
 };
 
 struct MSShapeAnim {
@@ -18073,96 +18084,14 @@ struct ObjectPtr {
     unsigned char q000;  // 0x0
 };
 
-struct OleUninitialize {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-};
-
 struct OptionQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
 };
 
-struct OverlayClass {
+struct OreManagerClass {
     void* vfptr;
-    void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
-    void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
-    unsigned int uniqueId;  // 0x10
-    unsigned int q011;  // 0x11
-    bool IsAllocated;  // 0x13
-    unsigned int abstractFlags;  // 0x14
-    unsigned int nextArrayIndex;  // 0x18
-    unsigned int q01A;  // 0x1A
-    int referenceCount;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned int q01E;  // 0x1E
-    unsigned char needsSave;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned int q027;  // 0x27
-    unsigned int q028;  // 0x28
-    bool q02B;  // 0x2B
-    unsigned int q02C;  // 0x2C
-    ObjectClass* nextObject;  // 0x30
-    unsigned char q031;  // 0x31
-    unsigned int alignmentPadding;  // 0x33
-    TagClass* attachedTag;  // 0x34
-    unsigned int q038;  // 0x38
-    unsigned char q03A;  // 0x3A
-    unsigned int q03B;  // 0x3B
-    unsigned int q03C;  // 0x3C
-    unsigned int q03D;  // 0x3D
-    unsigned int q040;  // 0x40
-    bool q042;  // 0x42
-    unsigned int q044;  // 0x44
-    unsigned int q048;  // 0x48
-    bool q04A;  // 0x4A
-    unsigned int q04C;  // 0x4C
-    unsigned char q04F;  // 0x4F
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned int q058;  // 0x58
-    unsigned int q05A;  // 0x5A
-    unsigned int q05C;  // 0x5C
-    unsigned int q060;  // 0x60
-    char customSound[4];  // 0x64
-    bool bombVisible;  // 0x68
-    unsigned int q06A;  // 0x6A
-    char health[4];  // 0x6C
-    char estimatedHealth[4];  // 0x70
-    bool isOnMap;  // 0x74
-    unsigned char alignmentPadding75;  // 0x75
-    unsigned int spawnStatus;  // 0x78
-    unsigned int visibilityFlags;  // 0x7C
-    unsigned int q080;  // 0x80
-    bool inOpenToppedTransport;  // 0x82
-    bool isSelected;  // 0x83
-    bool hasParachute;  // 0x84
-    unsigned char alignmentPadding85;  // 0x85
-    AnimClass* parachute;  // 0x88
-    unsigned int q08A;  // 0x8A
-    unsigned int q08B;  // 0x8B
-    void* q08C;  // 0x8C
-    bool isFallingDown;  // 0x8D
-    bool wasFallingDown;  // 0x8E
-    bool isBomb;  // 0x8F
-    bool isAliveFlag;  // 0x90
-    unsigned char alignmentPadding91;  // 0x91
-    unsigned int lastLayer;  // 0x94
-    bool isInLogic;  // 0x98
-    bool isVisible;  // 0x99
-    unsigned char alignmentPadding99;  // 0x9A
-    char location[4];  // 0x9C
-    unsigned int q0A0;  // 0xA0
-    unsigned char q0A1;  // 0xA1
-    unsigned char q0A3;  // 0xA3
-    unsigned int q0A4;  // 0xA4
-    unsigned int q0A8;  // 0xA8
-    unsigned char q0A9;  // 0xA9
-    unsigned char q0AA;  // 0xAA
-    unsigned int q0AB;  // 0xAB
-    OverlayTypeClass* Type;  // 0xAC
+    unsigned char q000;  // 0x0
 };
 
 struct OwnerDrawControl {
@@ -18209,16 +18138,6 @@ struct Pipe {
     bool q00E;  // 0xE
 };
 
-struct PlayerProfile {
-    void* vfptr;
-    void* vtable1;  // 0x0
-};
-
-struct PlayerType {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-};
-
 struct PreviewClass {
     void* vfptr;
     unsigned char q000;  // 0x0
@@ -18231,7 +18150,7 @@ struct PriorityQueue {
     unsigned char q004;  // 0x4
 };
 
-struct ProductionClass {
+struct ProgressAnim {
     void* vfptr;
     unsigned char q000;  // 0x0
 };
@@ -18275,160 +18194,9 @@ struct ResultNode {
     unsigned char q004;  // 0x4
 };
 
-struct SHAPipe {
+struct SHPClass {
     void* vfptr;
-    void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    bool q00A;  // 0xA
-    bool q00B;  // 0xB
-    unsigned char q00C;  // 0xC
-    bool q00D;  // 0xD
-    bool q00E;  // 0xE
-    bool q010;  // 0x10
-    bool q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    bool q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    bool q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    bool q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q068;  // 0x68
-    unsigned char q074;  // 0x74
-    bool q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned char q104;  // 0x104
-    unsigned char q110;  // 0x110
-    unsigned char q114;  // 0x114
-    unsigned char q11C;  // 0x11C
-    unsigned char q120;  // 0x120
-    bool q128;  // 0x128
-    unsigned char q12C;  // 0x12C
-    bool q130;  // 0x130
-    unsigned char q260;  // 0x260
-    unsigned char q26C;  // 0x26C
-    unsigned char q270;  // 0x270
-    unsigned char q278;  // 0x278
-    unsigned char q284;  // 0x284
-    unsigned char q288;  // 0x288
-    unsigned char q290;  // 0x290
-    unsigned char q300;  // 0x300
-    bool q304;  // 0x304
-    unsigned char q59C;  // 0x59C
-    unsigned char q5A0;  // 0x5A0
-    unsigned char q608;  // 0x608
-    unsigned char q614;  // 0x614
-    unsigned char q620;  // 0x620
-    unsigned char q624;  // 0x624
-    unsigned char q62C;  // 0x62C
-    unsigned char q630;  // 0x630
-    unsigned char q638;  // 0x638
-    unsigned char q644;  // 0x644
-    unsigned char q648;  // 0x648
-    unsigned char q650;  // 0x650
-    unsigned char q65C;  // 0x65C
-    unsigned char q660;  // 0x660
-    unsigned char q6CC;  // 0x6CC
-    unsigned char q768;  // 0x768
-    unsigned char q76C;  // 0x76C
-    unsigned char q774;  // 0x774
-    unsigned char q1440;  // 0x1440
-    unsigned char q149C;  // 0x149C
-    unsigned char q1538;  // 0x1538
-    unsigned char q1544;  // 0x1544
-    unsigned char q1550;  // 0x1550
-    unsigned char q155C;  // 0x155C
-    unsigned char q1568;  // 0x1568
-    unsigned char q1574;  // 0x1574
-    unsigned char q1580;  // 0x1580
-    unsigned char q1584;  // 0x1584
-    unsigned char q158C;  // 0x158C
-    unsigned char q1598;  // 0x1598
-    unsigned char q1604;  // 0x1604
-    unsigned char q1608;  // 0x1608
-    unsigned char q1610;  // 0x1610
-    unsigned char q161C;  // 0x161C
-    unsigned char q1628;  // 0x1628
-    bool q1634;  // 0x1634
-    unsigned char q1740;  // 0x1740
-    unsigned char q1900;  // 0x1900
-    unsigned char q1908;  // 0x1908
-    unsigned char q5174;  // 0x5174
-    unsigned char q5184;  // 0x5184
-    unsigned char q5444;  // 0x5444
-    unsigned char q5468;  // 0x5468
-    unsigned char q5480;  // 0x5480
-    unsigned char q5490;  // 0x5490
-    unsigned char q5504;  // 0x5504
-    unsigned char q5508;  // 0x5508
-    unsigned char q5510;  // 0x5510
-    unsigned char q5528;  // 0x5528
-    unsigned char q5640;  // 0x5640
-    unsigned char q5648;  // 0x5648
-    unsigned char q5654;  // 0x5654
-    unsigned char q5660;  // 0x5660
-    bool q5684;  // 0x5684
-    unsigned char q6294;  // 0x6294
-    unsigned char q6400;  // 0x6400
-    unsigned char q6408;  // 0x6408
-    unsigned char q20868;  // 0x20868
-    unsigned char q21110;  // 0x21110
-    unsigned char q21554;  // 0x21554
-    unsigned char q21590;  // 0x21590
-    unsigned char q21608;  // 0x21608
-    unsigned char q21648;  // 0x21648
-    unsigned char q21650;  // 0x21650
-    unsigned char q21764;  // 0x21764
-    unsigned char q21768;  // 0x21768
-    unsigned char q21794;  // 0x21794
-    unsigned char q21800;  // 0x21800
-    unsigned char q22070;  // 0x22070
-    unsigned char q22080;  // 0x22080
-    unsigned char q22088;  // 0x22088
-    unsigned char q22100;  // 0x22100
-    unsigned char q22118;  // 0x22118
-    unsigned char q22130;  // 0x22130
-    bool q22148;  // 0x22148
-    unsigned char q25600;  // 0x25600
-    unsigned char q25608;  // 0x25608
-    unsigned char q133224;  // 0x133224
-    unsigned char q135440;  // 0x135440
-    unsigned char q136754;  // 0x136754
-    unsigned char q136784;  // 0x136784
-    unsigned char q137060;  // 0x137060
-    unsigned char q137064;  // 0x137064
-    unsigned char q137078;  // 0x137078
-    unsigned char q137090;  // 0x137090
-    unsigned char q137108;  // 0x137108
-    unsigned char q139400;  // 0x139400
-    unsigned char q139520;  // 0x139520
-    unsigned char q139538;  // 0x139538
-    unsigned char q139544;  // 0x139544
-    unsigned char q139568;  // 0x139568
-    unsigned char q139590;  // 0x139590
-    unsigned char q141414;  // 0x141414
-    unsigned char q152118;  // 0x152118
-    unsigned char q153088;  // 0x153088
-    bool q153094;  // 0x153094
-    unsigned char q1271090;  // 0x1271090
-    unsigned char q1271138;  // 0x1271138
-    unsigned char q1271558;  // 0x1271558
-    unsigned char q1271570;  // 0x1271570
-    unsigned char q1271684;  // 0x1271684
-    unsigned char q1274000;  // 0x1274000
-    unsigned char q1274120;  // 0x1274120
-    unsigned char q1274390;  // 0x1274390
-    unsigned char q1282934;  // 0x1282934
-    unsigned char q1283360;  // 0x1283360
-    unsigned char q1283384;  // 0x1283384
-    bool q1283474;  // 0x1283474
+    unsigned char q000;  // 0x0
 };
 
 struct SafeDelete {
@@ -18437,16 +18205,17 @@ struct SafeDelete {
     unsigned char q004;  // 0x4
 };
 
-struct SaveLoad {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-};
-
 struct SaveLoadDialog {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+};
+
+struct ScoreText {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
 };
 
 struct ScreenSaver {
@@ -18485,28 +18254,10 @@ struct SpawnControlVector {
     unsigned char q000;  // 0x0
 };
 
-struct State {
+struct SquadClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    int Players;  // 0x4
-    int AIPlayers;  // 0x8
-    int GameSpeed;  // 0xC
-    int StartingCredits;  // 0x10
-    bool SuperWeapons;  // 0x14
-    bool BuildOffAlly;  // 0x15
-    bool FogOfWar;  // 0x16
-    bool MCVRedeploys;  // 0x17
-    bool AlliesAllowed;  // 0x18
-    bool ShortGame;  // 0x19
-    bool Crates;  // 0x1A
-    bool MultiEngineer;  // 0x1B
-    bool Bridies;  // 0x1C
-    unsigned char q01D;  // 0x1D
-    int ScenIndex;  // 0x20
-    int MapIndex;  // 0x24
-    int LastSave;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned int q034;  // 0x34
+    unsigned char q004;  // 0x4
 };
 
 struct StaticString {
@@ -18564,7 +18315,17 @@ struct TabCameoListClass {
     unsigned char q000;  // 0x0
 };
 
+struct TagClassVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
 struct Targeting {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TaskManager {
     void* vfptr;
     unsigned char q000;  // 0x0
 };
@@ -18586,6 +18347,16 @@ struct TextGroup {
 };
 
 struct TheatreClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TileNode {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TimerPool {
     void* vfptr;
     unsigned char q000;  // 0x0
 };

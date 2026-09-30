@@ -24,7 +24,7 @@ void Main::CreateDialog()
   dwNewLong = (unsigned int)(-1);
   this->Debug::Log(); /*0x4e1d25*/
   v2 = 3003; /*0x4e1d3b*/
-  if ( g_abs_A8E9A0 != 1 ) /*0x4e1d40*/
+  if ( g_abs_A8E9A0 != (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1) ) /*0x4e1d40*/
     v2 = 245; /*0x4e1d42*/
   Dialog = (HWND)CreateDialog(v2, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))GameOptionsDlgProc, 0); /*0x4e1d47*/
   *(unsigned int *)this = Dialog; /*0x4e1d4e*/

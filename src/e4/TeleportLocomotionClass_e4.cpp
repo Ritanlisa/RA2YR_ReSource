@@ -17,7 +17,7 @@
 TeleportLocomotionClass::TeleportLocomotionClass()
 {
 
-  wchar_t *v2; // ecx
+  unsigned int v2;
 
   LocomotionClass::Init((unsigned int *)this); /*0x718003*/
   *((unsigned int *)this + 7) = g_abs_B0EBF8; /*0x718011*/

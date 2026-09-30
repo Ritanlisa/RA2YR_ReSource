@@ -1026,7 +1026,7 @@ namespace gamemd {
 SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 {
 
-  #375 *v1; // eax
+  void *v1; // eax
   int result; // eax
 
   v1 = HouseClass_Player; /*0x712040*/

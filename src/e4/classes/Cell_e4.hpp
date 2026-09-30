@@ -133,10 +133,10 @@ struct Cell {
     // dup-member: unsigned int HasOccupierBit;
     unsigned int IsBridge;
 // --- flat members (END) ---
-    char  IsOccupied(__int16 * a2, char a3);  // 0x419B00
+    char  IsOccupied(int16_t * a2, char a3);  // 0x419B00
     int PosToIndex();  // 0x42B1C0
     char  CanPlaceBuilding(unsigned int * a2);  // 0x43B4C0
-    int  ApplyDamage(void * aP1, int a3, int a4, void * aP4);  // 0x481670
+    int ApplyDamage(IUnknown * aP1, int a3, int a4, IUnknown * aP4);  // 0x481670
     void *  GetNeighbourContent(unsigned int a2);  // 0x481810
     bool  IsBuildable(int a2, char a3, char a4, void * aP4, void * aP5, void * aP6, void * aP7);  // 0x4834A0
     BOOL IsValidHeight();  // 0x485060
@@ -151,13 +151,13 @@ struct Cell {
     long long GetTraversability();  // 0x487CB0
     int GetSlopeIndex();  // 0x487D50
     bool IsBridge2();  // 0x487DF0
-    bool  IsValidDestination(__int16 * a2);  // 0x4DCE80
+    bool  IsValidDestination(int16_t * a2);  // 0x4DCE80
     bool  Exists(void * aP1);  // 0x5657E0
     int  CoordToIndex(void * aP1);  // 0x56D430
     char  SetRadar(void * aP1);  // 0x56D460
     AbstractClass * *  UpdateTileType(void * aP0, void * aP1, int a3);  // 0x56E990
     ObjectClass * *  SetTileType(void * aP0, void * aP1, void * aP2, void * aP3, int a5);  // 0x56EB80
-    char  IsPassableAllied(void * aP0, void * aP1);  // 0x578AD0
+    int IsPassableAllied(IUnknown * aP0, IUnknown * aP1);  // 0x578AD0
     HouseClass * *  GetAdjacencyFlags(void * aP0);  // 0x579B70
     int  GetTerrainMask(void * aP1, int a3);  // 0x57B210
     Cell * Clear();  // 0x5A9940

@@ -131,7 +131,7 @@ public:
     static DynamicVectorClass<TechnoTypeClass*>* Array;
 
     // design: static function, no direct binary match in IDA
-    static TechnoTypeClass* Find(const char* pID);
+     TechnoTypeClass* Find(const char* pID);
     // design: static function, no direct binary match in IDA
     static int FindIndex(const char* pID);
 

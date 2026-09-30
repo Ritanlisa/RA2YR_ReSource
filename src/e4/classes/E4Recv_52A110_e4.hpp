@@ -11,6 +11,6 @@ struct E4Recv_52A110 {
     unsigned int M8;  // 0x8
     unsigned int owningHouseIndex;
 // --- flat members (END) ---
-    float *  sub_52A110(float * a2, unsigned __int8 * a3, float a4, float * a5);  // 0x52A110
+    float *  sub_52A110(float * a2, uint8_t * a3, float a4, float * a5);  // 0x52A110
 };
 } // namespace gamemd

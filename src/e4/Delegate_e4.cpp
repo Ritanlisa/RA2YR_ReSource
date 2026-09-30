@@ -267,7 +267,7 @@ GenericNode * Delegate::Constructor_GenericNode(GenericNode ** Block, char a2)
       v4 = *(Block + 2); /*0x52ae36*/
       if ( v4 ) /*0x52ae3b*/
       {
-        v4->Previous = (unsigned int)(v3);
+        v4->Previous = (gamemd::GenericNode *)((unsigned int)(v3));
         *(unsigned int *)(*(Block + 1))[1].__pad_0 = *(Block + 2); /*0x52ae46*/
         *(Block + 2) = 0; /*0x52ae49*/
         *(Block + 1) = 0; /*0x52ae4c*/

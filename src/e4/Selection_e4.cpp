@@ -8,6 +8,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x731D00
 namespace gamemd {

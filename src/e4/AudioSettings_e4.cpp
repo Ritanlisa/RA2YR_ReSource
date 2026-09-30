@@ -21,6 +21,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/RefCount_e4.hpp"
 
 // 0x5FA440
 namespace gamemd {
@@ -94,7 +96,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   int v46; // [esp+24h] [ebp-CCh]
   wchar_t lParam[100]; // [esp+28h] [ebp-C8h] BYREF
 
-  result = (int)((gamemd::AbstractClass **)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd)));
+  result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd))));
   if ( result ) /*0x6b6333*/
     return result; /*0x6b6333*/
   if ( a2 != 273 ) /*0x6b633f*/
@@ -126,7 +128,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     else if ( a2 == 1175 ) /*0x6b6354*/
     {
       g_abs_B0B800 = 0; /*0x6b635a*/
-      IsSoundEnabled = Audio::IsSoundEnabled(); /*0x6b6364*/
+      IsSoundEnabled = this->Audio::IsSoundEnabled(); /*0x6b6364*/
       bEnable = IsSoundEnabled; /*0x6b636c*/
       DlgItem = GetDlgItem(hDlg, 1327); /*0x6b6370*/
       v7 = DlgItem; /*0x6b637c*/
@@ -297,7 +299,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   {
     v40 = (double)SendMessageA(v33, 0x400u, 0, 0) * 0.1; /*0x6b68fd*/
     Options::SetScoreVolume((float *)g_abs_A8EB60, v40, 0); /*0x6b6900*/
-    if ( g_abs_A8EBA0 == 0.0 ) /*0x6b6916*/
+    if ( g_abs_A8EBA0 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0.0) ) /*0x6b6916*/
     {
       v34 = dword_A83D14; /*0x6b6918*/
       if ( dword_A83D14 == -1 ) /*0x6b6920*/

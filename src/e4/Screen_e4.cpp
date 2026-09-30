@@ -540,7 +540,7 @@ int Screen::TransitionLoop(int a2)
         if ( Ticks == -1
           || ((v5 = Timer::GetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5),
               v16 = v6,
-              g_abs_A8EA70 != 1) )
+              g_abs_A8EA70 != (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1)) )
         {
           for ( i = 0; i < (int)this->field_2C; ++i ) /*0x690292*/
           {

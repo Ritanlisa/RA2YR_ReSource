@@ -96,7 +96,7 @@ int Session::PrepareGame(HWND hWnd)
   v1 = (ObjectClass *)g_abs_AC1154; /*0x5e74e9*/
   if ( g_abs_AC1154 ) /*0x5e74f6*/
   {
-    ComPtr::Dtor(g_abs_AC1154); /*0x5e74fa*/
+    ((ComPtr *)(g_abs_AC1154))->Dtor(); /*0x5e74fa*/
     RA2_OPDEL(v1); /*0x5e7500*/
   }
   g_abs_AC1154 = 0; /*0x5e7513*/
@@ -115,14 +115,14 @@ int Session::PrepareGame(HWND hWnd)
       }
       memset(Str, 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
-      result = Timer::GetTicks(); /*0x5e7774*/
+      result = this->Timer::GetTicks(); /*0x5e7774*/
       v9 = 1800; /*0x5e7779*/
       v16 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
       {
         if ( v16 != -1 ) /*0x5e7793*/
         {
-          result = Timer::GetTicks() - v16; /*0x5e779e*/
+          result = this->Timer::GetTicks() - v16; /*0x5e779e*/
           if ( result >= 1800 ) /*0x5e77a4*/
             return result; /*0x5e77a4*/
           v9 = 1800 - result; /*0x5e77aa*/
@@ -136,7 +136,7 @@ int Session::PrepareGame(HWND hWnd)
           v11 = 1800; /*0x5e77de*/
           if ( v16 != -1 ) /*0x5e77e4*/
           {
-            result = Timer::GetTicks() - v16; /*0x5e77ef*/
+            result = this->Timer::GetTicks() - v16; /*0x5e77ef*/
             if ( result >= 1800 ) /*0x5e77f5*/
               break; /*0x5e77f5*/
             v11 = 1800 - result; /*0x5e77f7*/
@@ -182,7 +182,7 @@ int Session::PrepareGame(HWND hWnd)
         this->Debug::Log(); /*0x5e7677*/
         if ( !(unsigned char)g_abs_A8BB08 && strstr(Str, g_abs_831A88) && strstr(Str, g_abs_831A80) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
-        RawFileClass::Construct(v17, (int)&g_abs_A8B8E0); /*0x5e76c1*/
+        ((RawFileClass *)(v17))->Construct((int)&g_abs_A8B8E0); /*0x5e76c1*/
         if ( FileClass::Open(v17, 0) ) /*0x5e76cc*/
           v7 = 1; /*0x5e76d5*/
         RawFileClass::Dtor(v17); /*0x5e76db*/
@@ -192,7 +192,7 @@ LABEL_42:
           v12 = (ObjectClass *)g_abs_AC1154; /*0x5e7825*/
           if ( g_abs_AC1154 ) /*0x5e782d*/
           {
-            ComPtr::Dtor(g_abs_AC1154); /*0x5e7831*/
+            ((ComPtr *)(g_abs_AC1154))->Dtor(); /*0x5e7831*/
             RA2_OPDEL(v12); /*0x5e7837*/
             g_abs_AC1154 = 0; /*0x5e783f*/
           }
@@ -204,13 +204,13 @@ LABEL_42:
       v8 = (ObjectClass *)g_abs_AC1154; /*0x5e76fc*/
       if ( !g_abs_AC1154 ) /*0x5e7704*/
         return InvalidateRect(hWnd, 0, 0); /*0x5e7704*/
-      ComPtr::Dtor(g_abs_AC1154); /*0x5e770c*/
+      ((ComPtr *)(g_abs_AC1154))->Dtor(); /*0x5e770c*/
       RA2_OPDEL(v8); /*0x5e7712*/
       g_abs_AC1154 = 0; /*0x5e771a*/
       return InvalidateRect(hWnd, 0, 0); /*0x5e7733*/
     default:
 LABEL_44:
-      v13 = CCFileClass::Construct(Str, &g_abs_A8B8E0); /*0x5e7845*/
+      v13 = ((CCFileClass *)(Str))->Construct(&g_abs_A8B8E0); /*0x5e7845*/
       v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
       *(unsigned int *)Str = &vt_CCFileClass; /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
@@ -316,10 +316,10 @@ int Session::StartGame(HWND hWnd)
   v2 = (ObjectClass *)g_abs_AC1154; /*0x5ed38b*/
   if ( g_abs_AC1154 ) /*0x5ed393*/
   {
-    ComPtr::Dtor(g_abs_AC1154); /*0x5ed397*/
+    ((ComPtr *)(g_abs_AC1154))->Dtor(); /*0x5ed397*/
     RA2_OPDEL(v2); /*0x5ed39d*/
   }
-  v3 = RA2_OPNEW(4u); /*0x5ed3a7*/
+  v3 = (unsigned int *)(RA2_OPNEW(4u));
   if ( v3 ) /*0x5ed3b2*/
     v4 = (ObjectClass *)unknown_libname_27(v3); /*0x5ed3b6*/
   else

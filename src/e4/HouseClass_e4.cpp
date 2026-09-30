@@ -23,6 +23,7 @@
 namespace gamemd {
 void ** HouseClass::PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3)
 {
+    unsigned int v6 = 0;  /* G37 hoist */
 
   CoordStruct *v6; // edi
   void **v7; // eax
@@ -77,9 +78,9 @@ void HouseClass::ResetObjectOrders(char a1, int a2)
   int v3; // edi
   int v4; // esi
 
-  v2 = g_abs_A8EC88; /*0x4adee1*/
+  v2 = (int)(g_abs_A8EC88);
   v3 = 0; /*0x4adee8*/
-  if ( g_abs_A8EC88 > 0 ) /*0x4adeec*/
+  if ( g_abs_A8EC88 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x4adeec*/
   {
     while ( 1 ) /*0x4adefd*/
     {
@@ -90,11 +91,11 @@ void HouseClass::ResetObjectOrders(char a1, int a2)
       {
         goto LABEL_16; /*0x4adf28*/
       }
-      if ( (uint8_t)House::IsHumanPlayer(*(#375 **)(v4 + 540)) ) /*0x4adf34*/
+      if ( (uint8_t)House::IsHumanPlayer(*(void **)(v4 + 540)) ) /*0x4adf34*/
         break; /*0x4adf34*/
       if ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6 /*0x4adfa5*/
         && *((unsigned char *)g_abs_8871E0 + 6119)
-        && (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(v4 + 540), HouseClass_Player) )
+        && (uint8_t)HouseClass::IsAlliedWith(*(void **)(v4 + 540), HouseClass_Player) )
       {
         (*(void (**)(int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v4 + 1164))(v4, 0, a2, 0, 0); /*0x4adfb9*/
       }
@@ -125,12 +126,12 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
 
   int result; // eax
   int i; // ebp
-  #375 **v4; // esi
+  void **v4; // esi
 
-  result = g_abs_8A03A0; /*0x4adff0*/
-  for ( i = 0; i < g_abs_8A03A0; ++i ) /*0x4adffa*/
+  result = (int)(g_abs_8A03A0);
+  for ( i = 0; i < (int)((int))((int))(g_abs_8A03A0); ++i ) /*0x4adffa*/
   {
-    v4 = *(#375 ***)(g_abs_8A0394 + 4 * i); /*0x4ae010*/
+    v4 = *(void ***)(g_abs_8A0394 + 4 * i); /*0x4ae010*/
     if ( v4 /*0x4ae02b*/
       && ((unsigned char)v4[5] & 1) != 0
       && ((*((int (**)(unsigned int))*v4 + 11))(*(unsigned int *)(g_abs_8A0394 + 4 * i)) != 6 || !a1) )
@@ -138,16 +139,16 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
       if ( (uint8_t)House::IsHumanPlayer(v4[135]) ) /*0x4ae033*/
       {
         if ( *((unsigned char *)v4 + 1051) ) /*0x4ae03c*/
-          (*((void (**)(#375 **, unsigned int, int))*v4 + 72))(v4, 0, a2); /*0x4ae04d*/
+          (*((void (**)(void **, unsigned int, int))*v4 + 72))(v4, 0, a2); /*0x4ae04d*/
       }
-      else if ( (*((int (**)(#375 **))*v4 + 11))(v4) == 6 /*0x4ae07d*/
+      else if ( (*((int (**)(void **))*v4 + 11))(v4) == 6 /*0x4ae07d*/
              && IDA_HIBYTE(g_abs_8871E0[1].?[2])
              && (uint8_t)HouseClass::IsAlliedWith(v4[135], HouseClass_Player) )
       {
-        (*((void (**)(#375 **, int, unsigned int))*v4 + 72))(v4, a2, 0); /*0x4ae08d*/
+        (*((void (**)(void **, int, unsigned int))*v4 + 72))(v4, a2, 0); /*0x4ae08d*/
       }
     }
-    result = g_abs_8A03A0; /*0x4ae093*/
+    result = (int)(g_abs_8A03A0);
   }
   return result; /*0x4ae0a4*/
 
@@ -3126,7 +3127,7 @@ int HouseClass::UpdatePower()
       {
         if ( g_abs_A8B238[0] ) /*0x508cc5*/
         {
-          if ( (#375 *)this != HouseClass_Player ) /*0x508ce4*/
+          if ( (void *)this != HouseClass_Player ) /*0x508ce4*/
             goto LABEL_18; /*0x508ce4*/
         }
         else if ( !*((unsigned char *)this + 492) && !*((unsigned char *)this + 493) ) /*0x508cd5*/
@@ -3182,7 +3183,7 @@ namespace gamemd {
 void * HouseClass::CanTogglePower()
 {
 
-  #375 *result; // eax
+  void *result; // eax
   int v2; // eax
   int v3; // esi
   int v4; // edx
@@ -3195,7 +3196,7 @@ void * HouseClass::CanTogglePower()
 
   *((unsigned char *)this + 22393) = 0; /*0x508df0*/
   result = HouseClass_Player; /*0x508df7*/
-  if ( (#375 *)this == HouseClass_Player ) /*0x508e01*/
+  if ( (void *)this == HouseClass_Player ) /*0x508e01*/
   {
     v2 = *((unsigned int *)this + 174); /*0x508e07*/
     v3 = *((unsigned int *)this + 172); /*0x508e10*/
@@ -3209,9 +3210,9 @@ void * HouseClass::CanTogglePower()
     if ( v2 ) /*0x508e31*/
     {
 LABEL_30:
-      result = (#375 *)HouseClass::updateAlliedStatus(&g_abs_87F7E8); /*0x508f2f*/
+      result = (void *)HouseClass::updateAlliedStatus(&g_abs_87F7E8); /*0x508f2f*/
       if ( (unsigned char)result != (unsigned char)v10 ) /*0x508f43*/
-        return (#375 *)HouseClass::SetRadarVisibility(v10); /*0x508f4f*/
+        return (void *)HouseClass::SetRadarVisibility(v10); /*0x508f4f*/
       return result; /*0x508f4f*/
     }
 LABEL_6:
@@ -3608,7 +3609,7 @@ void HouseClass::LostPoweredCenter(int a2)
         {
           if ( g_abs_A8B238[0] ) /*0x50e163*/
           {
-            if ( (#375 *)this != HouseClass_Player ) /*0x50e186*/
+            if ( (void *)this != HouseClass_Player ) /*0x50e186*/
               return; /*0x50e186*/
             goto LABEL_16; /*0x50e186*/
           }
@@ -3816,7 +3817,7 @@ LABEL_34:
           *a1 -= v27; /*0x5d73f3*/
           if ( (**(unsigned int **)&HouseClass_Player.__pad_5568[8060] & 0x200) != 0 ) /*0x5d7400*/
             Timer::SetFlag(&v24[1].location[2], 1); /*0x5d740a*/
-          if ( (uint8_t)House::IsCurrentPlayer((#375 *)aP0) ) /*0x5d7411*/
+          if ( (uint8_t)House::IsCurrentPlayer((void *)aP0) ) /*0x5d7411*/
             (*(void (**)(ObjectClass *, int))(*(unsigned int *)v24->__pad_0 + 496))(v24, 5); /*0x5d7420*/
           else
             (*(void (**)(ObjectClass *, int))(*(unsigned int *)v24->__pad_0 + 496))(v24, 11); /*0x5d742e*/

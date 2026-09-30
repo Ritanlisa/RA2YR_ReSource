@@ -21,7 +21,7 @@ public:
 
     static DynamicVectorClass<BulletTypeClass*>* Array;
     // design: static function, no direct binary match in IDA
-    static BulletTypeClass* Find(const char* pID);
+     BulletTypeClass* Find(const char* pID);
     // unmatched: no callgraph reference and no git history record
     static BulletTypeClass* FindOrCreate(const char* pID);
     // design: static function, no direct binary match in IDA

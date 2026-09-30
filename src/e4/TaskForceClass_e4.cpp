@@ -21,6 +21,8 @@
 #include "e4/classes/Team_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/TauntCommandClass_e4.hpp"
 
 // 0x4C4EF0
 namespace gamemd {
@@ -125,7 +127,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   CCINIClass *v12; // [esp+10h] [ebp-1Ch]
   char Source[24]; // [esp+14h] [ebp-18h] BYREF
 
-  result = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)&stru_830620.__pad_579C[53244]); /*0x6e8230*/
+  result = (CCINIClass *)((INIClass *)(a1))->GetKeyCount((INIClass *)&stru_830620.__pad_579C[53244]); /*0x6e8230*/
   v5 = result; /*0x6e8235*/
   v6 = 0; /*0x6e8237*/
   v12 = result; /*0x6e823b*/
@@ -318,7 +320,7 @@ int TaskForceClass::SaveTaskForce(TechnoTypeClass * aP0, int * a1, int aP2)
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6e868f*/
+  result = ((AbstractClass *)((ObjectTypeClass *)aP0))->SaveLoad_Prefix((ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x6e868f*/
   if ( result >= 0 ) /*0x6e8696*/
     return 0; /*0x6e8698*/
   return result; /*0x6e869a*/
@@ -335,16 +337,16 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
   MouseClass *v3; // esi
   int v4; // edi
 
-  result = AbstractClass::SaveLoad_Prefix_0((AbstractClass *)aP0, (AbstractClass *)aP1); /*0x6e86ab*/
+  result = ((AbstractClass *)((AbstractClass *)aP0))->SaveLoad_Prefix_0((AbstractClass *)aP1); /*0x6e86ab*/
   if ( result >= 0 ) /*0x6e86b2*/
   {
     if ( aP0 ) /*0x6e86b6*/
     {
       AbstractTypeClass::Init((int)aP0, (AbstractTypeClass *)&aP1); /*0x6e86bf*/
       *(unsigned int *)aP0->__pad_0 = &vt_TaskForceClass; /*0x6e86c4*/
-      *(unsigned int *)&aP0->__pad_0[4] = &vt_TaskForceClass; /*0x6e86ca*/
-      *(unsigned int *)&aP0->__pad_0[8] = &vt_TaskForceClass; /*0x6e86d1*/
-      *(unsigned int *)&aP0->__pad_0[12] = &vt_TaskForceClass; /*0x6e86d8*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &vt_TaskForceClass; /*0x6e86ca*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &vt_TaskForceClass; /*0x6e86d1*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_TaskForceClass; /*0x6e86d8*/
     }
     v3 = (MouseClass *)&aP0[1].uniqueId; /*0x6e86e0*/
     v4 = 6; /*0x6e86e6*/

@@ -500,8 +500,8 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x478683*/
-  *Block = &vt_VectorClass_TechnoTypeClass; /*0x478686*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_TechnoTypeClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x478690*/
   {
     RA2_OPDEL(v3); /*0x478698*/
@@ -509,7 +509,7 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2)
   }
   *((unsigned char *)Block + 13) = 0; /*0x4786ab*/
   *(Block + 2) = 0; /*0x4786b1*/
-  if ( (Block & 1) != 0 ) /*0x4786b8*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4786b8*/
     RA2_OPDEL(Block); /*0x4786bb*/
   return (VectorClass *)Block; /*0x4786c5*/
 
@@ -525,7 +525,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
   int v5; // ecx
   int v6; // eax
 
-  if ( this == a2 ) /*0x47872a*/
+  if ( this == (gamemd::TypeList_flat *)(a2) ) /*0x47872a*/
     return this; /*0x47872a*/
   (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x47872e*/
   v3 = a2[2]; /*0x478731*/
@@ -536,7 +536,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
     *((unsigned char *)this + 13) = 0; /*0x478781*/
     return this; /*0x478785*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x478743*/
+  v4 = (unsigned int *)(RA2_OPNEW(4 * v3));
   *((unsigned int *)this + 1) = v4; /*0x47874b*/
   if ( !v4 ) /*0x478750*/
     return this; /*0x478750*/
@@ -573,7 +573,7 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
     *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x4787cd*/
     *((unsigned char *)this + 13) = 1; /*0x4787d0*/
   }
-  return this; /*0x4787bd*/
+  return (unsigned int *)(this);
 
 }
 // 0x5128A0

@@ -49,13 +49,13 @@ HWND E4Recv_696AE0::sub_696AE0()
             return result; /*0x696bb8*/
           if ( g_abs_A8DB5C < g_abs_A8DB54 /*0x696bf1*/
             || (g_abs_A8DB59 || !g_abs_A8DB54)
-            && g_abs_A8DB60 > 0
+            && g_abs_A8DB60 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
             && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8DB4C + 8))(
                  &g_abs_A8DB4C,
-                 g_abs_A8DB54 + g_abs_A8DB60,
+                 (unsigned int)(g_abs_A8DB54)+ g_abs_A8DB60,
                  0) )
           {
-            v7 = g_abs_A8DB5C++; /*0x696c02*/
+            v7 = (int)((unsigned int)(g_abs_A8DB5C++));
             *(unsigned int *)(g_abs_A8DB50 + 4 * v7) = v8; /*0x696c11*/
           }
         }
@@ -93,17 +93,17 @@ HWND E4Recv_696C40::sub_696C40()
       if ( result != HWND_MESSAGE|0x2 ) /*0x696c86*/
       {
         SendMessageA(v3, 0x182u, (WPARAM)result, 0); /*0x696c91*/
-        if ( v4 < g_abs_A8DB5C ) /*0x696c9b*/
+        if ( v4 < (LRESULT)((LRESULT))((LRESULT))(g_abs_A8DB5C) ) /*0x696c9b*/
         {
           v5 = v4; /*0x696c9e*/
-          if ( v4 < --g_abs_A8DB5C ) /*0x696ca8*/
+          if ( v4 < (LRESULT)((LRESULT))((LRESULT))(--g_abs_A8DB5C) ) /*0x696ca8*/
           {
             do /*0x696cc0*/
             {
               ++v5; /*0x696cb0*/
               *(unsigned int *)(g_abs_A8DB50 + 4 * v5 - 4) = *(unsigned int *)(g_abs_A8DB50 + 4 * v5); /*0x696cb4*/
             }
-            while ( v5 < g_abs_A8DB5C ); /*0x696cc0*/
+            while ( v5 < (int)((int))((int))(g_abs_A8DB5C) ); /*0x696cc0*/
           }
         }
         if ( v4 >= SendMessageA(v3, 0x18Bu, 0, 0) ) /*0x696cd0*/

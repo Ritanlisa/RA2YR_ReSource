@@ -21,6 +21,7 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
 
 // 0x5FE250
 OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)

@@ -678,6 +678,7 @@ struct FootClass {
     static double ProcessDeploy(...);  // C2597 interim stub
     static double AssignDestination(...);  // C2597 interim stub
     static double RemoveFromPointerArray(...);  // C2597 interim stub
+    static double MissionMoveCarryallLand(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

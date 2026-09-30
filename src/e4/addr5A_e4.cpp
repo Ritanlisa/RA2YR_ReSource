@@ -332,7 +332,7 @@ int ProcessRandomMapCellAdjacency()
     }
     v7[20 * v9 + 14 + 20 * v10] = v8; /*0x5a1c45*/
   LABEL_32:
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a1c49*/
+    result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x5a1c49*/
   }
   return result; /*0x5a1c60*/
 }
@@ -360,7 +360,7 @@ int E4Recv_5A1C70::sub_5A1C70()
   int v16; // [esp+8h] [ebp-8h] BYREF
   unsigned int *v17; // [esp+Ch] [ebp-4h]
 
-  v17 = this; /*0x5a1c7c*/
+  v17 = (unsigned int *)(this);
   if ( g_MapTileArray ) /*0x5a1c80*/
   {
     v1 = unk_89C2DC * unk_89C2DC; /*0x5a1c88*/
@@ -453,7 +453,7 @@ void GenerateTerrainHeightMapInternal()
   unsigned int v3;
   unsigned int * v4;
   unsigned int * v5;
-  int v6; // ecx
+  unsigned int * v6;
   unsigned int *v7; // eax
   int v8; // edx
   int v9; // esi
@@ -467,8 +467,8 @@ void GenerateTerrainHeightMapInternal()
   int v17; // [esp+8h] [ebp-8h]
   int v18; // [esp+Ch] [ebp-4h]
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x5a33f9*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a3403*/
+  ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x5a33f9*/
+  result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x5a3403*/
   for ( i = (int *)result; result; i = (int *)result ) /*0x5a340c*/
   {
     if ( CellClass::IsTerrainType(i) ) /*0x5a3417*/
@@ -485,7 +485,7 @@ void GenerateTerrainHeightMapInternal()
         IDA_HIWORD(v17) = IDA_HIWORD(v16) + v4; /*0x5a3455*/
         v16 = v17; /*0x5a345e*/
         v6 = IDA_SHIWORD(v17) + v5; /*0x5a3468*/
-        if ( v6 > v2 && v5 - IDA_SHIWORD(v17) < v2 && IDA_SHIWORD(v17) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/
+        if ( v6 > (unsigned int *)((int))(v2) && v5 - IDA_SHIWORD(v17) < v2 && IDA_SHIWORD(v17) - v5 < v2 && v6 <= dword_ABED08 ) /*0x5a3483*/
         {
           v7 = (unsigned int *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v16));
           if ( Cell::IsEmpty(v7) ) /*0x5a3496*/

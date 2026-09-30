@@ -31,8 +31,8 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
       StopThemeClass(1); /*0x7718be*/
       (*(void (**)(unsigned int *))(v3[240] + 12))(v3 + 240); /*0x7718cf*/
     }
-    Ticks = (DWORD *)(Timer::GetTicks());
-    v4 = v3 + 235; /*0x7718e1*/
+    Ticks = (DWORD *)(this->Timer::GetTicks());
+    v4 = (DWORD *)(v3 + 235);
     *v4 = Ticks; /*0x7718e7*/
     v4[1] = v6; /*0x7718e9*/
     v4[2] = 0; /*0x7718ec*/
@@ -53,7 +53,7 @@ signed int Territory_WorldDominationTour_8::Release()
   if ( result != -1 ) /*0x771909*/
   {
     v3 = *((unsigned int *)this + 6); /*0x77190c*/
-    result = Timer::GetTicks() - *((unsigned int *)this + 4); /*0x77191c*/
+    result = this->Timer::GetTicks() - *((unsigned int *)this + 4); /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
       *((unsigned int *)this + 6) = 0; /*0x771934*/
@@ -75,7 +75,7 @@ signed int Territory_WorldDominationTour_8::ddtor()
 {
 
   if ( *((unsigned int *)this + 4) == -1 ) /*0x771957*/
-    *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x771961*/
+    *((unsigned int *)this + 4) = this->Timer::GetTicks(); /*0x771961*/
 
 }
 } // namespace gamemd

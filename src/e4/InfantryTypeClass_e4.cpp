@@ -97,7 +97,7 @@ InfantryTypeClass * InfantryTypeClass::Constructor(ObjectClass * aP1)
         v3 = *(InfantryTypeClass **)&g_abs_A8D63C,
         !v4) )
   {
-    *(unsigned int *)&g_abs_A8D63C = &v3->vtable0[1]; /*0x52384a*/
+    *(unsigned int *)&g_abs_A8D63C = &v3-((unsigned int *)(>vtable0))[1]; /*0x52384a*/
     *(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * (unsigned int)v3) = this; /*0x523854*/
     v3 = *(InfantryTypeClass **)&g_abs_A8D63C; /*0x523857*/
   }

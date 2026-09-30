@@ -125,7 +125,7 @@ char Debug::Printf()
   char *Format; // [esp+108h] [ebp+8h]
   char ArgList; // [esp+10Ch] [ebp+Ch] BYREF
 
-  result = g_abs_ABF23A; /*0x5bd1f0*/
+  result = (char)(g_abs_ABF23A);
   if ( g_abs_ABF23A ) /*0x5bd1fd*/
   {
     vsprintf(Buffer, Format, &ArgList); /*0x5bd214*/

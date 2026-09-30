@@ -22,7 +22,7 @@ public:
     static constexpr AbstractType AbsID = AbstractType::ParticleType;
     static DynamicVectorClass<ParticleTypeClass*>* Array;
     // design: static function, no direct binary match in IDA
-    static ParticleTypeClass* Find(const char* pID);
+     ParticleTypeClass* Find(const char* pID);
     // unmatched: no callgraph reference and no git history record
     static ParticleTypeClass* FindOrCreate(const char* pID);
 

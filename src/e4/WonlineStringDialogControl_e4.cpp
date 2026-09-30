@@ -379,7 +379,7 @@ int WonlineStringDialogControl_28::ddtor(int a1)
 
   HWND Current; // eax
 
-  Current = Dialog::GetCurrent(); /*0x7ad449*/
+  Current = this->Dialog::GetCurrent(); /*0x7ad449*/
   SendMessageA(Current, 0x5F4u, 0, 0); /*0x7ad44f*/
   return 0; /*0x7ad457*/
 
@@ -393,7 +393,7 @@ int WonlineStringDialogControl_28::Read(int a1, LPARAM lParam)
 
   HWND Current; // eax
 
-  Current = Dialog::GetCurrent(); /*0x7ad46c*/
+  Current = this->Dialog::GetCurrent(); /*0x7ad46c*/
   SendMessageA(Current, 0x5F5u, 0, lParam); /*0x7ad472*/
   return 0; /*0x7ad47a*/
 
@@ -413,11 +413,11 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   wchar_t Buffer[200]; // [esp+8h] [ebp-190h] BYREF
 
   Buffer[0] = 0; /*0x7ad49d*/
-  Current = Dialog::GetCurrent(); /*0x7ad4b7*/
+  Current = this->Dialog::GetCurrent(); /*0x7ad4b7*/
   SendDlgItemMessageA(Current, 1478, 0x402u, 100 * (int)Format / a3, 0); /*0x7ad4bd*/
   if ( a5 <= 0 ) /*0x7ad4cc*/
   {
-    StringCSF = GetStringCSF(g_abs_84D730, 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
+    StringCSF = (wchar_t *)(GetStringCSF(g_abs_84D730, 0, g_Str_File_wonline_cpp, 5172));
     swprintf(Buffer, (const size_t)StringCSF, Format, a3); /*0x7ad515*/
   }
   else
@@ -427,7 +427,7 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   }
   if ( time(0) != dword_B77EA8 ) /*0x7ad52d*/
   {
-    v8 = Dialog::GetCurrent(); /*0x7ad538*/
+    v8 = this->Dialog::GetCurrent(); /*0x7ad538*/
     DlgItem = GetDlgItem(v8, 1480); /*0x7ad53e*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad551*/
     dword_B77EA8 = time(0); /*0x7ad561*/
@@ -459,7 +459,7 @@ int WonlineStringDialogControl_28::Draw(int a1, int a2)
     v5 = (wchar_t *)(GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195));
     swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
   }
-  Current = Dialog::GetCurrent(); /*0x7ad5e5*/
+  Current = this->Dialog::GetCurrent(); /*0x7ad5e5*/
   DlgItem = GetDlgItem(Current, 1480); /*0x7ad5eb*/
   SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad5fe*/
   return 0; /*0x7ad606*/

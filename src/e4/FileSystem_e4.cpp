@@ -56,7 +56,7 @@ int FileSystem::ProcessNextFileExtension()
   unsigned int *v29; // [esp+18h] [ebp-10h]
   int v30; // [esp+1Ch] [ebp-Ch]
 
-  v0 = g_abs_AC48F0; /*0x626da7*/
+  v0 = (unsigned int *)(g_abs_AC48F0);
   if ( !g_abs_AC48F0 ) /*0x626db1*/
   {
     v1 = (unsigned int *)(RA2_OPNEW(0x10u));
@@ -196,7 +196,7 @@ void FileSystem::InitPipShapes()
 
   if ( !g_abs_AC1478 ) /*0x5f76ba*/
   {
-    RawFileClass::Construct(v0, (int)g_abs_832AA8); /*0x5f76c5*/
+    ((RawFileClass *)(v0))->Construct((int)g_abs_832AA8); /*0x5f76c5*/
     g_abs_AC1478 = (int)CCFileClass::ReadEntireFile(v0); /*0x5f76da*/
     g_abs_AC1488 = g_abs_AC1478 != 0; /*0x5f76df*/
     if ( !g_abs_AC1478 ) /*0x5f76e5*/
@@ -205,7 +205,7 @@ void FileSystem::InitPipShapes()
   }
   if ( !g_abs_AC147C ) /*0x5f7708*/
   {
-    RawFileClass::Construct(v0, (int)g_abs_832A9C); /*0x5f7713*/
+    ((RawFileClass *)(v0))->Construct((int)g_abs_832A9C); /*0x5f7713*/
     g_abs_AC147C = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7728*/
     g_abs_AC1489 = g_abs_AC147C != 0; /*0x5f772d*/
     if ( !g_abs_AC147C ) /*0x5f7733*/
@@ -214,7 +214,7 @@ void FileSystem::InitPipShapes()
   }
   if ( !g_abs_AC1480 ) /*0x5f7756*/
   {
-    RawFileClass::Construct(v0, (int)g_abs_832A90); /*0x5f7761*/
+    ((RawFileClass *)(v0))->Construct((int)g_abs_832A90); /*0x5f7761*/
     g_abs_AC1480 = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7776*/
     g_abs_AC148A = g_abs_AC1480 != 0; /*0x5f777b*/
     if ( !g_abs_AC1480 ) /*0x5f7781*/
@@ -223,7 +223,7 @@ void FileSystem::InitPipShapes()
   }
   if ( !g_abs_AC1484 ) /*0x5f77a4*/
   {
-    RawFileClass::Construct(v0, (int)g_abs_832A80); /*0x5f77af*/
+    ((RawFileClass *)(v0))->Construct((int)g_abs_832A80); /*0x5f77af*/
     g_abs_AC1484 = (int)CCFileClass::ReadEntireFile(v0); /*0x5f77c4*/
     g_abs_AC148B = g_abs_AC1484 != 0; /*0x5f77c9*/
     if ( !g_abs_AC1484 ) /*0x5f77cf*/

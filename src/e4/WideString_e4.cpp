@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/WebBrowser_e4.hpp"
 
 // 0x5D4B20
 namespace gamemd {
@@ -590,15 +591,14 @@ char WideString::RemoveChar(wchar_t a2)
   int v7; // edi
   size_t v8; // eax
   wchar_t *v9; // edi
-
-  v3 = (char)((wchar_t *)(0));
+v3 = (wchar_t *)((unsigned int)((wchar_t *)((char)((wchar_t *)(0)))));
   if ( !*this ) /*0x7b6e26*/
     return 0; /*0x7b6e2d*/
   v5 = wcslen(*this); /*0x7b6e3f*/
   v6 = wcschr(*this, a2); /*0x7b6e45*/
   if ( v6 ) /*0x7b6e4f*/
   {
-    v3 = 1; /*0x7b6e51*/
+    v3 = (wchar_t *)(1);
     v7 = v5; /*0x7b6e53*/
     do /*0x7b6e88*/
     {

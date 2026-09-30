@@ -11,6 +11,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/SideClass_e4.hpp"
 
 // 0x654490
 namespace gamemd {
@@ -52,7 +53,7 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   {
     while ( 1 ) /*0x654567*/
     {
-      aP1 = (gamemd::RadarClass **)(*(MouseClass **)(v9 + 36));
+      aP1 = (gamemd::MouseClass *)((gamemd::RadarClass **)(*(MouseClass **)(v9 + 36)));
       if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&aP1, (TechnoClass *)1) ) /*0x65456b*/
         break; /*0x65456b*/
 LABEL_17:

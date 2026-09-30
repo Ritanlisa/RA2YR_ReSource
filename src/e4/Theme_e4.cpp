@@ -31,7 +31,7 @@ int Theme::QueueSong(IUnknown * aP1)
   IDA_LOBYTE(IsSoundEnabled) = g_abs_A8D63C; /*0x720b20*/
   if ( g_abs_A8D63C ) /*0x720b2a*/
   {
-    IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720b2c*/
+    IsSoundEnabled = this->Audio::IsSoundEnabled(); /*0x720b2c*/
     if ( IsSoundEnabled ) /*0x720b33*/
     {
       IDA_LOBYTE(IsSoundEnabled) = g_abs_A8D63C; /*0x720b35*/
@@ -77,7 +77,7 @@ int Theme::Stop(ObjectClass * aP1)
   IDA_LOBYTE(IsSoundEnabled) = g_abs_A8D63C; /*0x720ea0*/
   if ( g_abs_A8D63C ) /*0x720eaa*/
   {
-    IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720eb0*/
+    IsSoundEnabled = this->Audio::IsSoundEnabled(); /*0x720eb0*/
     if ( IsSoundEnabled ) /*0x720eb7*/
     {
       IDA_LOBYTE(IsSoundEnabled) = g_abs_A8D63C; /*0x720ebd*/
@@ -106,7 +106,7 @@ LABEL_14:
           if ( v6 ) /*0x720f44*/
             Audio::Release(v6); /*0x720f46*/
         }
-        *(_DWORD *)this = -1; /*0x720f4b*/
+        *(unsigned int *)this = -1; /*0x720f4b*/
         *((unsigned int *)this + 1) = -1; /*0x720f51*/
         *((unsigned int *)this + 2) = -1; /*0x720f58*/
       }

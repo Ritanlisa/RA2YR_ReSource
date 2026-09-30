@@ -13,6 +13,7 @@
 #include "core/ddraw_init.hpp"
 #include "core/ddraw_init.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CursorPositionCommandClass_e4.hpp"
 
 // 0x4A3370
 namespace gamemd {
@@ -77,7 +78,7 @@ int DDraw::CapabilityCheck()
     v3 = 5; /*0x4a3eb3*/
     if ( XSurface::GetPixel(v7, &v2) == 1 ) /*0x4a3ebf*/
     {
-      v0 = g_abs_81FD14; /*0x4a3ed0*/
+      v0 = (const char *)(g_abs_81FD14);
       if ( g_DDraw_UseHWBlit ) /*0x4a3ed5*/
         goto LABEL_7; /*0x4a3ed5*/
     }
@@ -86,7 +87,7 @@ int DDraw::CapabilityCheck()
       g_DDraw_UseHWBlit = 0; /*0x4a3ec1*/
     }
   }
-  v0 = g_abs_81FD0C; /*0x4a3ed7*/
+  v0 = (const char *)(g_abs_81FD0C);
 LABEL_7:
   Debug::Log_0(g_abs_81FD08, v0); /*0x4a3edc*/
   Debug::Log(g_abs_81FCE0); /*0x4a3eec*/
@@ -187,7 +188,7 @@ int DDraw::CleanupSurfaces()
     (*(void (**)(int))(*(unsigned int *)g_abs_8A0DF4 + 8))(g_abs_8A0DF4); /*0x4c1a6a*/
     g_abs_8A0DF4 = 0; /*0x4c1a6d*/
   }
-  result = g_abs_8A0E00; /*0x4c1a73*/
+  result = (int)(g_abs_8A0E00);
   if ( g_abs_8A0E00 ) /*0x4c1a7a*/
   {
     result = (*(int (**)(int))(*(unsigned int *)g_abs_8A0E00 + 8))(g_abs_8A0E00); /*0x4c1a7f*/
@@ -209,7 +210,7 @@ int DDraw::HandleSuspend()
   int v6; // ecx
 
   IDA_LOBYTE(v1) = g_abs_A8ED80; /*0x5d2530*/
-  if ( g_abs_A8ED80 != 1 ) /*0x5d253b*/
+  if ( g_abs_A8ED80 != (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(1) ) /*0x5d253b*/
   {
     Debug::Log(aMsenginePausin); /*0x5d2546*/
     for ( i = 0; i < *((unsigned int *)this + 10); ++i ) /*0x5d2555*/

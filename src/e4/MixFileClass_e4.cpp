@@ -26,7 +26,7 @@ void MixFileClass::CleanupCache()
   int v8; // eax
   int v9; // eax
 
-  v0 = g_abs_B077B0; /*0x69e213*/
+  v0 = (unsigned int *)(g_abs_B077B0);
   if ( g_abs_B077B0 ) /*0x69e21d*/
   {
     do /*0x69e289*/
@@ -67,11 +67,11 @@ void MixFileClass::CleanupCache()
   {
     if ( *(unsigned short *)g_abs_B077B4 == 0xFFFF ) /*0x69e299*/
     {
-      v5 = (char *)g_abs_B077B4 + 16; /*0x69e29f*/
+      v5 = (unsigned char *)((char *)g_abs_B077B4 + 16);
       if ( *((unsigned char *)g_abs_B077B4 + 16) ) /*0x69e29b*/
       {
-        v6 = (void *)*((unsigned int *)g_abs_B077B4 + 3); /*0x69e2a6*/
-        v7 = (char *)g_abs_B077B4 + 12; /*0x69e2a9*/
+        v6 = (unsigned int *)((void *)*((unsigned int *)g_abs_B077B4 + 3));
+        v7 = (unsigned int *)((char *)g_abs_B077B4 + 12);
         if ( v6 ) /*0x69e2ae*/
           MixFileClass::CacheNode_Dtor(v6, 1); /*0x69e2b2*/
         *v7 = 0; /*0x69e2b7*/

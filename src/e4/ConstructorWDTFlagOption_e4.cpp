@@ -18,7 +18,7 @@ void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0,
   ObjectClass *v8; // ecx
 
   v6 = (gamemd::ObjectClass *)((unsigned int)(aP5));
-  v8 = (unsigned int)((ObjectClass *)arg8);
+  v8 = (gamemd::ObjectClass *)((unsigned int)((ObjectClass *)arg8));
   *((unsigned int *)this + 2) = arg0; /*0x76782f*/
   *((unsigned int *)this + 3) = v8; /*0x767836*/
   this->GameOption_WorldDominationTour_field_0x04 = 0; /*0x76783d*/

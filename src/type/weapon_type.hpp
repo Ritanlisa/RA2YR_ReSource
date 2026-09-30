@@ -21,7 +21,7 @@ public:
 
     static DynamicVectorClass<WeaponTypeClass*>* Array;
     // design: static function, no direct binary match in IDA
-    static WeaponTypeClass* Find(const char* pID);
+     WeaponTypeClass* Find(const char* pID);
     // unmatched: no callgraph reference and no git history record
     static WeaponTypeClass* FindOrCreate(const char* pID);
     // design: static function, no direct binary match in IDA
