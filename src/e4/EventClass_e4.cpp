@@ -1045,7 +1045,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
   int result; // eax
   int *v5; // edx
 
-  // edx result = (*(int (**)(EventClass *, int))(this->EventClass_field_0x0 + 24))(this, a2);
+  result = (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 96))(this, a2); /*0x54228c*/
   if ( result != -1 && result < *((unsigned int *)this + 17) ) /*0x542297*/
   {
     v5 = (int *)(*(this + result + 10) + 76); /*0x5422a1*/
@@ -1235,7 +1235,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
     if ( a3 ) /*0x40b75c*/
       v4 = a3; /*0x40b772*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40b76e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40b76e*/
     *((unsigned char *)this + 12) = 1; /*0x40b776*/
     if ( v4 ) /*0x40b77a*/
     {
@@ -1248,7 +1248,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
           ++i; /*0x40b79e*/
         if ( *((unsigned char *)this + 13) ) /*0x40b7ab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40b7b6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40b7b6*/
           *((unsigned int *)this + 1) = 0; /*0x40b7be*/
         }
       }
@@ -1264,7 +1264,7 @@ char EventClass::processEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40b7e2*/
     return 1; /*0x40b7e8*/
   }
 
@@ -1287,7 +1287,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
     if ( a3 ) /*0x40b898*/
       v4 = a3; /*0x40b8ae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40b8aa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40b8aa*/
     *((unsigned char *)this + 12) = 1; /*0x40b8b2*/
     if ( !v4 ) /*0x40b8b6*/
       return 0; /*0x40b92a*/
@@ -1300,7 +1300,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
         ++i; /*0x40b8d1*/
       if ( *((unsigned char *)this + 13) ) /*0x40b8de*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x40b8e9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40b8e9*/
         *((unsigned int *)this + 1) = 0; /*0x40b8f1*/
       }
     }
@@ -1310,7 +1310,7 @@ char EventClass::validateEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVBombClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40b90e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x40b911*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40b919*/
@@ -1335,7 +1335,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
     if ( a3 ) /*0x40b9bc*/
       v4 = a3; /*0x40b9d2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40b9ce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40b9ce*/
     *((unsigned char *)this + 12) = 1; /*0x40b9d6*/
     if ( v4 ) /*0x40b9da*/
     {
@@ -1348,7 +1348,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
           ++i; /*0x40b9fe*/
         if ( *((unsigned char *)this + 13) ) /*0x40ba0b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40ba16*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40ba16*/
           *((unsigned int *)this + 1) = 0; /*0x40ba1e*/
         }
       }
@@ -1364,7 +1364,7 @@ char EventClass::dispatchEvent(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40ba42*/
     return 1; /*0x40ba48*/
   }
 
@@ -1387,7 +1387,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3)
     if ( a3 ) /*0x40baf8*/
       v4 = a3; /*0x40bb0e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40bb0a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40bb0a*/
     *((unsigned char *)this + 12) = 1; /*0x40bb12*/
     if ( !v4 ) /*0x40bb16*/
       return 0; /*0x40bb8a*/
@@ -1400,7 +1400,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3)
         ++i; /*0x40bb31*/
       if ( *((unsigned char *)this + 13) ) /*0x40bb3e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x40bb49*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40bb49*/
         *((unsigned int *)this + 1) = 0; /*0x40bb51*/
       }
     }
@@ -1410,7 +1410,7 @@ char EventClass::checkCondition(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40bb6e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x40bb71*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40bb79*/
@@ -1537,7 +1537,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
     if ( a3 ) /*0x40c428*/
       v4 = a3; /*0x40c43e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40c43a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40c43a*/
     *((unsigned char *)this + 12) = 1; /*0x40c442*/
     if ( !v4 ) /*0x40c446*/
       return 0; /*0x40c4ba*/
@@ -1550,7 +1550,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
         ++i; /*0x40c461*/
       if ( *((unsigned char *)this + 13) ) /*0x40c46e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x40c479*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40c479*/
         *((unsigned int *)this + 1) = 0; /*0x40c481*/
       }
     }
@@ -1560,7 +1560,7 @@ char EventClass::clearEvents(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVLightConvertClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40c49e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x40c4a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40c4a9*/

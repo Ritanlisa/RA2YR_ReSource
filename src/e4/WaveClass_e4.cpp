@@ -115,21 +115,21 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   void *v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (void *)(&vt_WaveClass);
-  *(Block + 1) = &vt_WaveClass; /*0x76320c*/
+  *Block = &WaveClass::`vftable'; /*0x763206*/
+  *(Block + 1) = &WaveClass::`vftable'; /*0x76320c*/
   *(Block + 2) = &vt_WaveClass; /*0x763213*/
   *(Block + 3) = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x763221*/
   v6 = Block; /*0x763236*/
-  v3 = (*(int (**)(int *, void ***))(g_abs_A8EC38 + 16))(&g_abs_A8EC38, &v6); /*0x76323a*/
-  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_A8EC48) && v3 < --g_abs_A8EC48 ) /*0x763255*/
+  v3 = (*(int (**)(int *, void ***))(MEMORY[0xA8EC38] + 16))(&MEMORY[0xA8EC38], &v6); /*0x76323a*/
+  if ( v3 != -1 && v3 < MEMORY[0xA8EC48] && v3 < --MEMORY[0xA8EC48] ) /*0x763255*/
   {
     do /*0x76326d*/
     {
       ++v3; /*0x76325d*/
-      *((unsigned int *)g_abs_A8EC3C + v3 - 1) = *((unsigned int *)g_abs_A8EC3C + v3); /*0x763261*/
+      *((unsigned int *)MEMORY[0xA8EC3C] + v3 - 1) = *((unsigned int *)MEMORY[0xA8EC3C] + v3); /*0x763261*/
     }
-    while ( v3 < (int)((int))((int))(g_abs_A8EC48) ); /*0x76326d*/
+    while ( v3 < MEMORY[0xA8EC48] ); /*0x76326d*/
   }
   (*((void (**)(void **))*(Block + 124) + 3))(Block + 124); /*0x76327e*/
   v4 = *(Block + 125); /*0x763281*/
@@ -142,7 +142,7 @@ WaveClass * WaveClass::ddtor(void ** Block, char a2)
   *((unsigned char *)Block + 509) = 0; /*0x7632a7*/
   *(Block + 126) = 0; /*0x7632ab*/
   ObjectClass::Dtor(Block); /*0x7632b2*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x7632be*/
+  if ( (a2 & 1) != 0 ) /*0x7632be*/
     OperatorDelete(Block); /*0x7632c1*/
   return (WaveClass *)Block; /*0x7632cb*/
 

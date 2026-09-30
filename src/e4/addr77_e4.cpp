@@ -137,17 +137,17 @@ HKEY E4Recv_7741C0::FindRegistrySubKey()
   {
     return 0; /*0x7742cf*/
   }
-  p_uniqueId = (int *)(&cbMaxSubKeyLen->uniqueId);
-  v5 = (CCINIClass *)RA2_OPNEW((size_t)&cbMaxSubKeyLen->uniqueId); /*0x77422c*/
-  lpClass = (LPSTR)RA2_OPNEW(cbMaxClassLen + 1); /*0x774235*/
+  p_uniqueId = &cbMaxSubKeyLen->uniqueId; /*0x77421f*/
+  v5 = (CCINIClass *)__2_YAPAXI_Z((size_t)&cbMaxSubKeyLen->uniqueId); /*0x77422c*/
+  lpClass = (LPSTR)__2_YAPAXI_Z(cbMaxClassLen + 1); /*0x774235*/
   ebp2 = 0; /*0x774240*/
   if ( !cSubKeys ) /*0x774244*/
   {
 LABEL_6:
     if ( v20 ) /*0x7742a7*/
       RegCloseKey((HKEY)this); /*0x7742aa*/
-    RA2_OPDEL(v5); /*0x7742b1*/
-    RA2_OPDEL(lpClass); /*0x7742bb*/
+    __3_YAXPAX_Z(v5); /*0x7742b1*/
+    __3_YAXPAX_Z(lpClass); /*0x7742bb*/
     return 0; /*0x7742bb*/
   }
   while ( 1 ) /*0x77425e*/
@@ -162,8 +162,8 @@ LABEL_6:
   }
   if ( v20 ) /*0x7742db*/
     RegCloseKey((HKEY)this); /*0x7742de*/
-  RA2_OPDEL(v5); /*0x7742e5*/
-  RA2_OPDEL(lpClass); /*0x7742ef*/
+  __3_YAXPAX_Z(v5); /*0x7742e5*/
+  __3_YAXPAX_Z(lpClass); /*0x7742ef*/
   return phkResult; /*0x7742c3*/
 
 }

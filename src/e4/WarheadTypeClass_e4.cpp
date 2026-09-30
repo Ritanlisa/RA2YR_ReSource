@@ -33,7 +33,7 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
   int Int_Overwrite; // eax
   int result; // eax
 
-  Int_Overwrite = (void *)(INIClass::ReadInt_Overwrite((int)this, a3, a3, -1));
+  Int_Overwrite = INIClass::ReadInt_Overwrite((int)this, a2, a3, -1); /*0x47481c*/
   if ( Int_Overwrite == -1 ) /*0x474824*/
     return a4; /*0x474826*/
   if ( Int_Overwrite >= 100 ) /*0x474830*/
@@ -53,7 +53,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
   unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
-  AbstractClass ** v7;
+  int v7; // eax
 
   if ( a2 ) /*0x52530c*/
   {
@@ -61,7 +61,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x525318*/
       v4 = a3; /*0x52532e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x52532a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x52532a*/
     *((unsigned char *)this + 12) = 1; /*0x525332*/
     if ( !v4 ) /*0x525336*/
       return 0; /*0x5253aa*/
@@ -74,7 +74,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
         ++i; /*0x525351*/
       if ( *((unsigned char *)this + 13) ) /*0x52535e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x525369*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x525369*/
         *((unsigned int *)this + 1) = 0; /*0x525371*/
       }
     }
@@ -84,9 +84,9 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    char WarheadTypeClass::Release(_DynamicVectorClass_PBVAnimTypeClass *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x52538e*/
   }
-  v7 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*((unsigned int *)this + 2))));
+  v7 = *((unsigned int *)this + 2); /*0x525391*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x525399*/
     *((unsigned int *)this + 4) = v7; /*0x52539b*/
   return 1; /*0x52539e*/
@@ -232,7 +232,7 @@ void * WarheadTypeClass::ReadParticleSystems(unsigned int * Block, char a2)
   int v8; // edx
   int v9; // ecx
 
-  *Block = (unsigned int)(&vt_GenericList);
+  *Block = &vt_GenericList; /*0x52afc6*/
   while ( 1 ) /*0x52afcc*/
   {
     v3 = *(Block + 2); /*0x52afcc*/
@@ -284,8 +284,8 @@ void * WarheadTypeClass::ReadParticleSystems(unsigned int * Block, char a2)
       }
     }
   }
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x52b061*/
-    RA2_OPDEL(Block); /*0x52b064*/
+  if ( (a2 & 1) != 0 ) /*0x52b061*/
+    __3_YAXPAX_Z(Block); /*0x52b064*/
   return (GenericList *)Block; /*0x52b06e*/
 
 }

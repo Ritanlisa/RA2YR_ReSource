@@ -13,17 +13,17 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(unsigned int * Block, char a
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_SmudgeTypeClass_const);
+  v3 = (void *)*(Block + 1); /*0x67c0b3*/
+  *Block = &vt_VectorClass_SmudgeTypeClass_const; /*0x67c0b6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x67c0c0*/
   {
-    RA2_OPDEL(v3); /*0x67c0c8*/
+    __3_YAXPAX_Z(v3); /*0x67c0c8*/
     *(Block + 1) = 0; /*0x67c0d0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x67c0db*/
   *(Block + 2) = 0; /*0x67c0e1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x67c0e8*/
-    RA2_OPDEL(Block); /*0x67c0eb*/
+  if ( (a2 & 1) != 0 ) /*0x67c0e8*/
+    __3_YAXPAX_Z(Block); /*0x67c0eb*/
   return (VectorClass *)Block; /*0x67c0f5*/
 
 }

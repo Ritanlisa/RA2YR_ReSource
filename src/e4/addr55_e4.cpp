@@ -62,9 +62,9 @@ LABEL_4:
       goto LABEL_7; /*0x5500a1*/
     goto LABEL_5; /*0x5500a1*/
   }
-  if ( (int)g_abs_A8ED84 - v2 < v3 ) /*0x55009b*/
+  if ( (int)MEMORY[0xA8ED84] - v2 < v3 ) /*0x55009b*/
   {
-    v3 -= (int)g_abs_A8ED84 - v2; /*0x55009d*/
+    v3 -= (int)MEMORY[0xA8ED84] - v2; /*0x55009d*/
     goto LABEL_4; /*0x55009d*/
   }
 LABEL_5:
@@ -75,7 +75,7 @@ LABEL_5:
     *((unsigned char *)Block + 4) = 1; /*0x5500b1*/
     *Block = v5; /*0x5500b5*/
     v6 = v8[2]; /*0x5500bd*/
-    *(Block + 2) = (ObjectClass *)g_abs_A8ED84; /*0x5500c1*/
+    *(Block + 2) = (ObjectClass *)MEMORY[0xA8ED84]; /*0x5500c1*/
     *(Block + 3) = (ObjectClass *)v6; /*0x5500c4*/
     *(Block + 4) = (ObjectClass *)v4; /*0x5500c7*/
     goto LABEL_8; /*0x5500ca*/
@@ -87,7 +87,7 @@ LABEL_8:
     *((unsigned char *)Block + 81) = *((unsigned char *)Block + 81) == 0; /*0x5500df*/
   if ( (int)*Block >= (int)*(Block + 19) && Block ) /*0x5500ed*/
   {
-    v8[0] = (unsigned int)(Block);
+    v8[0] = Block; /*0x5500fe*/
     v7 = (*(int (**)(int *, unsigned int *))(dword_ABC878 + 16))(&dword_ABC878, v8); /*0x550102*/
     if ( v7 != -1 && v7 < g_TimerPool && v7 < --g_TimerPool ) /*0x55011d*/
     {
@@ -98,7 +98,7 @@ LABEL_8:
       }
       while ( v7 < g_TimerPool ); /*0x550135*/
     }
-    RA2_OPDEL(Block); /*0x550138*/
+    __3_YAXPAX_Z(Block); /*0x550138*/
   }
 
 }
@@ -1291,10 +1291,10 @@ ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int
   if ( (a2 & 4) != 0 ) /*0x557b1e*/
   {
     if ( a4 == (unsigned int *)this + 22 ) /*0x557b25*/
-      if ( a4 == (unsigned int *)((char *)this + 88) ) (*(void (**)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 196))(this, 1);;
+      (*(void (**)(unsigned int *, int))(*(unsigned int *)this + 784))(this, 1); /*0x557b2b*/
     result = (unsigned char)this - 72; /*0x557b31*/
     if ( a4 == (unsigned int *)this + 46 ) /*0x557b39*/
-      if ( a4 == (unsigned int *)((char *)this + 184) ) result = (*(int (**)(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 196))(this, 0);
+      result = (*(int (**)(unsigned int *, unsigned int))(*(unsigned int *)this + 784))(this, 0); /*0x557b41*/
   }
   if ( a4 == (unsigned int *)this + 70 ) /*0x557b4f*/
   {

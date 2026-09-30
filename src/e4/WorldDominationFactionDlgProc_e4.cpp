@@ -19,7 +19,7 @@ int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
   int v9; // edx
   int v10; // ecx
 
-  int WorldDominationFactionDlgProc_Helper(ObjectClass *this, HWND hWnd, int *a3)
+  result = (*(int (**)(unsigned int *))(*(unsigned int *)this + 32))(this); /*0x7af546*/
   if ( !(unsigned char)result ) /*0x7af54b*/
   {
     v5 = 0; /*0x7af554*/

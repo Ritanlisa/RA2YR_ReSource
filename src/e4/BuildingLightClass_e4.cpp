@@ -63,7 +63,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   *((unsigned int *)this + 45) = 0; /*0x436c06*/
   if ( aP1 == (CCINIClass *)3 ) /*0x436c0c*/
   {
-    ( this, &nextArrayIndex)
+    v4 = *(unsigned int *)(*(int (**)(unsigned int *, unsigned int **))(*(unsigned int *)this + 1760))(this, &nextArrayIndex); /*0x436c21*/
     v5 = (ObjectClass *)v3->FollowingObject; /*0x436c23*/
     v25 = v4; /*0x436c29*/
     v19 = (TechnoClass *)&unk_98967F; /*0x436c2d*/
@@ -74,12 +74,12 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
     {
       v6 = -1; /*0x436c53*/
       v21 = -1; /*0x436c58*/
-      IDA_LOWORD(v18) = v25 + (unsigned short)v17; /*0x436c5c*/
+      LOWORD(v18) = v25 + (unsigned short)v17; /*0x436c5c*/
       do /*0x436d62*/
       {
-        IDA_HIWORD(v18) = v6 + IDA_HIWORD(v25); /*0x436c6c*/
+        HIWORD(v18) = v6 + HIWORD(v25); /*0x436c6c*/
         v23 = v18; /*0x436c7b*/
-        v7 = (TechnoClass *)*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v23) + 57); /*0x436c84*/
+        v7 = (TechnoClass *)*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23) + 57); /*0x436c84*/
         if ( v7 ) /*0x436c8c*/
         {
           while ( 1 ) /*0x436c98*/

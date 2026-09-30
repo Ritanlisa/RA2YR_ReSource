@@ -56,11 +56,11 @@ FootClass * * Carryall::MissionStateMachine()
   switch ( (unsigned int)*((unsigned int *)this + 47) ) /*0x416d64*/
   {
     case 0u: /*0x416d64*/
-      this->Debug::Log(); /*0x416d70*/
+      Debug::Log(); /*0x416d70*/
       v2 = *((unsigned int *)this + 361); /*0x416d75*/
       if ( !v2 ) /*0x416d80*/
       {
-        this->Debug::Log(); /*0x416d87*/
+        Debug::Log(); /*0x416d87*/
 LABEL_4:
         ((void (*)(FootClass **, unsigned int, int))(*this)->audioController4[2])(this, 0, 1); /*0x416d8f*/
         goto LABEL_5; /*0x416d97*/
@@ -80,7 +80,7 @@ LABEL_4:
       }
       if ( (*(int (**)(TechnoClass *))(*(unsigned int *)v6->__pad_0 + 44))(v6) != 1 ) /*0x416e31*/
         goto LABEL_18; /*0x416e31*/
-      this->Debug::Log(); /*0x416e3c*/
+      Debug::Log(); /*0x416e3c*/
       if ( (TechnoClass *)Team::GetMember(this, 0) != v6 ) /*0x416e4f*/
         (*(void (**)(FootClass **, int))&(*this)->__pad_26A[10])(this, 3); /*0x416e57*/
       if ( (*(int (**)(FootClass **, int, TechnoClass *))&(*this)->__pad_26A[14])(this, 2, v6) != 1 ) /*0x416e6d*/
@@ -88,7 +88,7 @@ LABEL_4:
         ((void (*)(FootClass **, unsigned int, int))(*this)->audioController4[1])(this, 0, 1); /*0x416f1e*/
         goto LABEL_4; /*0x416f24*/
       }
-      this->Debug::Log(); /*0x416e78*/
+      Debug::Log(); /*0x416e78*/
       if ( (*(int (**)(FootClass **, int))&(*this)->__pad_26A[10])(this, 36) == 1 ) /*0x416e8f*/
       {
         (*(void (**)(FootClass **, int))&(*this)->__pad_26A[10])(this, 7); /*0x416ec3*/
@@ -100,22 +100,23 @@ LABEL_18:
         if ( v10 ) /*0x416eec*/
           TeamClass::SelectMember(v10, (AbstractClass *)*((unsigned int *)this + 361)); /*0x416ef5*/
         *((unsigned int *)this + 47) = (FootClass *)1; /*0x416eff*/
-        this->Debug::Log(); /*0x416f09*/
+        Debug::Log(); /*0x416f09*/
       }
       else
       {
-        this->Debug::Log(); /*0x416e96*/
+        Debug::Log(); /*0x416e96*/
         (*(void (**)(FootClass **, int))&(*this)->__pad_26A[10])(this, 3); /*0x416ea4*/
         ((void (*)(FootClass **, unsigned int, int))(*this)->audioController4[2])(this, 0, 1); /*0x416eb2*/
       }
-LABEL_5: MissionControl = (gamemd::FootClass *)(MissionClass::GetMissionControl(this));
+LABEL_5:
+      MissionControl = MissionClass::GetMissionControl(this); /*0x416d9d*/
       v4 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dc2*/
       return v4 + Random::Range((unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 536), 0, (IUnknown *)2);
     case 1u: /*0x416d64*/
       v11 = *((unsigned int *)this + 361); /*0x416f29*/
       if ( v11 ) /*0x416f31*/
       {
-        v12 = (unsigned int *)((gamemd::FootClass **)((unsigned int *)(*(int (**)(FootClass *, unsigned char *))(*(unsigned int *)v11->__pad_0 + 72))(v11, v29)));
+        v12 = (unsigned int *)(*(int (**)(FootClass *, unsigned char *))(*(unsigned int *)v11->__pad_0 + 72))(v11, v29); /*0x416f54*/
         if ( !*((unsigned int *)this + 413) ) /*0x416f5f*/
           WinAPI::Wrapper(-2147467261); /*0x416f6e*/
         (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)(*((unsigned int *)this + 413))->__pad_0 + 68))( /*0x416f89*/
@@ -137,14 +138,14 @@ LABEL_5: MissionControl = (gamemd::FootClass *)(MissionClass::GetMissionControl(
         && (*(int (**)(FootClass *))(*(unsigned int *)v13->__pad_0 + 44))(v13) != 11
         && (FootClass *)Team::GetMember(this, 0) != *((unsigned int *)this + 361) )
       {
-        this->Debug::Log(); /*0x416fce*/
+        Debug::Log(); /*0x416fce*/
         *((unsigned int *)this + 47) = 0; /*0x416fd6*/
         return 1; /*0x416fe8*/
       }
-      v14 = (gamemd::FootClass *)(*((unsigned int *)this + 361));
+      v14 = *((unsigned int *)this + 361); /*0x416fe9*/
       if ( v14 /*0x417008*/
         && (*(int (**)(FootClass *))(*(unsigned int *)v14->__pad_0 + 44))(v14) == 11
-        && !((uint8_t (*)(FootClass **, unsigned int))(*this)->audioController7[3])(this, *((unsigned int *)this + 361)) )
+        && !((unsigned __int8 (*)(FootClass **, unsigned int))(*this)->audioController7[3])(this, *((unsigned int *)this + 361)) )
       {
         *((unsigned int *)this + 47) = 0; /*0x417012*/
         return 1; /*0x417024*/
@@ -153,7 +154,7 @@ LABEL_5: MissionControl = (gamemd::FootClass *)(MissionClass::GetMissionControl(
         WinAPI::Wrapper(-2147467261); /*0x417032*/
       if ( (*(int (**)(unsigned int))(*(unsigned int *)(*((unsigned int *)this + 413))->__pad_0 + 144))(*((unsigned int *)this + 413)) != 1 ) /*0x417049*/
         goto LABEL_44; /*0x417049*/
-      this->Debug::Log(); /*0x417054*/
+      Debug::Log(); /*0x417054*/
       v15 = *((unsigned int *)this + 361); /*0x417059*/
       if ( !v15 /*0x4170e9*/
         || (*(int (**)(FootClass *))(*(unsigned int *)v15->__pad_0 + 44))(v15) != 1
@@ -164,28 +165,28 @@ LABEL_5: MissionControl = (gamemd::FootClass *)(MissionClass::GetMissionControl(
             v19 = (*((unsigned int *)this + 361))->location[0],
             v20 = (*((unsigned int *)this + 361))->location[1],
             v30 = (*((unsigned int *)this + 361))->location[2],
-            (uint16_t)(v19 / 256) == (unsigned short)v18)
-        && (uint16_t)(v20 / 256) == (uint16_t)(v17 / 256) )
+            (unsigned __int16)(v19 / 256) == (unsigned short)v18)
+        && (unsigned __int16)(v20 / 256) == (unsigned __int16)(v17 / 256) )
       {
         *((unsigned char *)this + 1748) = 0; /*0x41710f*/
 LABEL_44:
         if ( !*((unsigned int *)this + 413) ) /*0x417116*/
           WinAPI::Wrapper(-2147467261); /*0x417125*/
-        if ( !(*(uint8_t (**)(unsigned int))(*(unsigned int *)(*((unsigned int *)this + 413))->__pad_0 + 16))(*((unsigned int *)this + 413)) ) /*0x417133*/
+        if ( !(*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)(*((unsigned int *)this + 413))->__pad_0 + 16))(*((unsigned int *)this + 413)) ) /*0x417133*/
         {
-          this->Debug::Log(); /*0x41713f*/
+          Debug::Log(); /*0x41713f*/
           *((unsigned int *)this + 47) = (FootClass *)3; /*0x417147*/
         }
-        return (gamemd::FootClass **)(1);
+        return 1; /*0x417151*/
       }
       else
       {
         *((unsigned int *)this + 47) = 0; /*0x4170f0*/
-        this->Debug::Log(); /*0x4170fa*/
+        Debug::Log(); /*0x4170fa*/
         return 1; /*0x417102*/
       }
     case 3u: /*0x416d64*/
-      this->Debug::Log(); /*0x417163*/
+      Debug::Log(); /*0x417163*/
       if ( *((unsigned int *)this + 70) ) /*0x417168*/
       {
         if ( *((unsigned int *)this + 320) ) /*0x417177*/
@@ -199,11 +200,11 @@ LABEL_44:
           (*(void (**)(FootClass **, int))&(*this)->__pad_115[15])(this, 1); /*0x4171af*/
           *((unsigned int *)this + 47) = 0; /*0x4171b5*/
         }
-        return (gamemd::FootClass **)(1);
+        return 1; /*0x417186*/
       }
       else
       {
-        this->Debug::Log(); /*0x4171cd*/
+        Debug::Log(); /*0x4171cd*/
         (*(void (**)(FootClass **, unsigned int))&(*this)->__pad_115[15])(this, 0); /*0x4171da*/
         v27[0] = *((unsigned int *)this + 39); /*0x4171ea*/
         v27[1] = *((unsigned int *)this + 40); /*0x4171f1*/
@@ -213,14 +214,14 @@ LABEL_44:
         v27[2] = v21; /*0x417201*/
         v28[1] = *((unsigned int *)this + 40); /*0x41720c*/
         v28[2] = v22; /*0x417216*/
-        v26 = IDA_BYTE1(*((unsigned int *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v27) + 80)) & 1; /*0x41722f*/
+        v26 = BYTE1(*((unsigned int *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v27) + 80)) & 1; /*0x41722f*/
         v23 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v28); /*0x417236*/
         Building = (IUnknown *)CellClass::FindBuilding(v23, v26); /*0x417242*/
         if ( Building /*0x417270*/
           && Building == (IUnknown *)Team::GetMember(this, 0)
-          && (this->Debug::Log(), (*(int (**)(FootClass **, int))&(*this)->__pad_26A[10])(this, 19) == 1) )
+          && (Debug::Log(), (*(int (**)(FootClass **, int))&(*this)->__pad_26A[10])(this, 19) == 1) )
         {
-          this->Debug::Log(); /*0x417277*/
+          Debug::Log(); /*0x417277*/
           (*(void (**)(IUnknown *))(Building->field_0 + 212))(Building); /*0x417283*/
           Building->__pad_8C[0] = 0; /*0x417290*/
           Building->__pad_3BC[104] = 1; /*0x417297*/

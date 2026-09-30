@@ -75,18 +75,18 @@ void SuperClass::Constructor()
 
   int v2; // eax
 
-  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6caec3*/
+  AbstractClass::Constructor((AbstractClass *)this); /*0x6caec3*/
   *((unsigned int *)this + 9) = -1; /*0x6caecd*/
   *((unsigned int *)this + 10) = 0; /*0x6caed0*/
   *((unsigned int *)this + 11) = 0; /*0x6caed3*/
-  *((unsigned int *)this + 12) = g_abs_A8ED84; /*0x6caedc*/
+  *((unsigned int *)this + 12) = MEMORY[0xA8ED84]; /*0x6caedc*/
   *((unsigned int *)this + 14) = 0; /*0x6caedf*/
   *((unsigned int *)this + 18) = 0; /*0x6caee2*/
   *((unsigned char *)this + 64) = 0; /*0x6caee5*/
   *((unsigned int *)this + 19) = 0; /*0x6caee8*/
   *((unsigned int *)this + 20) = -1; /*0x6caeeb*/
   *((unsigned char *)this + 96) = 1; /*0x6caeee*/
-  *(unsigned int *)((char *)this + 98) = g_abs_B0C000; /*0x6caef8*/
+  *(unsigned int *)((char *)this + 98) = MEMORY[0xB0C000]; /*0x6caef8*/
   *((unsigned int *)this + 26) = 0; /*0x6caefb*/
   *((unsigned char *)this + 108) = 0; /*0x6caefe*/
   *((unsigned char *)this + 109) = 0; /*0x6caf01*/
@@ -94,20 +94,20 @@ void SuperClass::Constructor()
   *((unsigned char *)this + 111) = 0; /*0x6caf07*/
   *((unsigned char *)this + 112) = 0; /*0x6caf0a*/
   *((unsigned int *)this + 31) = -1; /*0x6caf0d*/
-  *(unsigned int *)this = &vt_SuperClass; /*0x6caf10*/
-  *((unsigned int *)this + 1) = &vt_SuperClass; /*0x6caf16*/
-  *((unsigned int *)this + 2) = &vt_SuperClass; /*0x6caf1d*/
+  *(unsigned int *)this = &SuperClass::`vftable'; /*0x6caf10*/
+  *((unsigned int *)this + 1) = &SuperClass::`vftable'; /*0x6caf16*/
+  *((unsigned int *)this + 2) = &SuperClass::`vftable'; /*0x6caf1d*/
   *((unsigned int *)this + 3) = &vt_SuperClass; /*0x6caf24*/
-  *((unsigned int *)this + 15) = &g_abs_887734; /*0x6caf2b*/
+  *((unsigned int *)this + 15) = &MEMORY[0x887734]; /*0x6caf2b*/
   if ( dword_A83CC8 < dword_A83CC0 /*0x6caf64*/
     || (byte_A83CC5 || !dword_A83CC0)
     && dword_A83CCC > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(dword_A83CB8 + 8))(
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_A83CB8 + 8))(
          &dword_A83CB8,
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
-    v2 = (unsigned int)(dword_A83CC8++);
+    v2 = dword_A83CC8++; /*0x6caf71*/
     *((unsigned int *)dword_A83CBC + v2) = this; /*0x6caf80*/
   }
   return this; /*0x6caf85*/
@@ -304,7 +304,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
     *((unsigned char *)this + 110) = v5; /*0x6cb57d*/
     *((unsigned char *)this + 64) = 0; /*0x6cb580*/
     v7 = *(unsigned int *)(v6 + 96); /*0x6cb583*/
-    IDA_LOBYTE(aP1) = 0; /*0x6cb589*/
+    LOBYTE(aP1) = 0; /*0x6cb589*/
     *((unsigned int *)this + 15) = v7; /*0x6cb58d*/
     if ( !v5 && *((unsigned char *)this + 112) && *((unsigned char *)this + 96) ) /*0x6cb597*/
     {
@@ -318,22 +318,22 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       }
       else if ( *((unsigned int *)this + 12) == -1 ) /*0x6cb5a8*/
       {
-        *((unsigned int *)this + 12) = *(unsigned int *)&g_abs_A8D63C; /*0x6cb5af*/
+        *((unsigned int *)this + 12) = *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb5af*/
       }
       *((unsigned char *)this + 112) = 0; /*0x6cb5cf*/
     }
     if ( *(unsigned char *)(*((unsigned int *)this + 10) + 244) /*0x6cb61f*/
       && !*(unsigned char *)(*(unsigned int *)(*((unsigned int *)this + 11) + 52) + 422)
-      && (g_abs_A83D60 < g_abs_A83D58
-       || (g_abs_A83D5D || !g_abs_A83D58)
-       && g_abs_A83D64 > (unsigned char [1])(0)
-       && ((uint8_t (*)(DynamicVector **, int, unsigned int))g_abs_A83D50->field_8)(
-            &g_abs_A83D50,
-            (unsigned int)(g_abs_A83D58)+ g_abs_A83D64,
+      && (MEMORY[0xA83D60] < MEMORY[0xA83D58]
+       || (MEMORY[0xA83D5D] || !MEMORY[0xA83D58])
+       && MEMORY[0xA83D64] > 0
+       && ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))MEMORY[0xA83D50]->field_8)(
+            &MEMORY[0xA83D50],
+            MEMORY[0xA83D58] + MEMORY[0xA83D64],
             0)) )
     {
-      v8 = (int)(g_abs_A83D60++);
-      *(unsigned int *)&g_abs_A83D54->__pad_0[4 * v8] = this; /*0x6cb63b*/
+      v8 = MEMORY[0xA83D60]++; /*0x6cb62c*/
+      *(unsigned int *)&MEMORY[0xA83D54]->__pad_0[4 * v8] = this; /*0x6cb63b*/
     }
     v9 = *((unsigned int *)this + 10); /*0x6cb63e*/
     if ( *(unsigned char *)(v9 + 245) ) /*0x6cb641*/
@@ -343,15 +343,15 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       if ( v10 == -1 ) /*0x6cb656*/
         v10 = *(unsigned int *)(v9 + 176); /*0x6cb658*/
       v11 = (TerrainTypeClass *)((char *)this + 48); /*0x6cb664*/
-      *((unsigned int *)this + 12) = *(unsigned int *)&g_abs_A8D63C; /*0x6cb669*/
+      *((unsigned int *)this + 12) = *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6cb669*/
       *((unsigned int *)this + 13) = v22; /*0x6cb66f*/
       *((unsigned int *)this + 14) = v10; /*0x6cb672*/
       v12 = *(IUnknown **)((char *)this + 48); /*0x6cb675*/
       if ( v12 != (IUnknown *)-1 ) /*0x6cb67a*/
       {
         v13 = *((unsigned int *)this + 14); /*0x6cb680*/
-        v14 = *(unsigned int *)&g_abs_A8D63C - (unsigned int)v12; /*0x6cb68e*/
-        if ( *(unsigned int *)&g_abs_A8D63C - (int)v12 >= v13 ) /*0x6cb692*/
+        v14 = *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664] - (unsigned int)v12; /*0x6cb68e*/
+        if ( *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664] - (int)v12 >= v13 ) /*0x6cb692*/
         {
           *((unsigned int *)this + 14) = 0; /*0x6cb6a6*/
           *(unsigned int *)v11->__pad_0 = -1; /*0x6cb6a9*/
@@ -371,19 +371,19 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
         *(unsigned char *)(v15 + 405) = 0; /*0x6cb6bf*/
         *((unsigned int *)this + 26) = 0; /*0x6cb6cb*/
         aP1 = (IUnknown *)this; /*0x6cb6ce*/
-        VectorClass::RemoveAt((int *)&g_abs_B077F8, (int)&aP1); /*0x6cb6d2*/
+        VectorClass::RemoveAt((int *)&MEMORY[0xB077F8].__pad_579C[9764], (int)&aP1); /*0x6cb6d2*/
       }
       if ( *((unsigned char *)this + 108) ) /*0x6cb6d7*/
       {
         aP1 = (IUnknown *)this; /*0x6cb6e6*/
-        VectorClass::RemoveAt((int *)&g_abs_B077F8, (int)&aP1); /*0x6cb6ea*/
+        VectorClass::RemoveAt((int *)&MEMORY[0xB077F8].__pad_579C[9764], (int)&aP1); /*0x6cb6ea*/
         *((unsigned char *)this + 108) = 0; /*0x6cb6ef*/
       }
       if ( !*((unsigned char *)this + 109) /*0x6cb704*/
         || *((unsigned char *)this + 111)
         || *((unsigned char *)this + 112) && !*(unsigned char *)(*((unsigned int *)this + 10) + 237) )
       {
-        IDA_LOBYTE(aP1) = 0; /*0x6cb757*/
+        LOBYTE(aP1) = 0; /*0x6cb757*/
       }
       else
       {
@@ -399,7 +399,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
         *((unsigned int *)this + 14) = v18; /*0x6cb742*/
         if ( *(unsigned char *)(v19 + 229) ) /*0x6cb745*/
           *((unsigned int *)this + 31) = 0; /*0x6cb74d*/
-        IDA_LOBYTE(aP1) = 1; /*0x6cb750*/
+        LOBYTE(aP1) = 1; /*0x6cb750*/
       }
     }
     if ( (unsigned char)aP3 && *((unsigned char *)this + 109) ) /*0x6cb764*/
@@ -433,21 +433,21 @@ int SuperClass::Lose()
   int v1; // eax
   unsigned char *v3; // [esp+0h] [ebp-4h] BYREF
 
-  v3 = (unsigned char *)(this);
+  v3 = this; /*0x6cb7b0*/
   if ( !*((unsigned char *)this + 109) ) /*0x6cb7b1*/
     return 0; /*0x6cb80d*/
   *((unsigned char *)this + 111) = 0; /*0x6cb7ba*/
   *((unsigned char *)this + 109) = 0; /*0x6cb7bd*/
   v3 = this; /*0x6cb7ca*/
-  v1 = (*(int (**)(int *, unsigned char **))(g_abs_A83D50 + 16))(&g_abs_A83D50, &v3); /*0x6cb7d4*/
-  if ( v1 != -1 && v1 < (int)(g_abs_A83D60) && v1 < (int)(--g_abs_A83D60) ) /*0x6cb7ef*/
+  v1 = (*(int (**)(int *, unsigned char **))(MEMORY[0xA83D50] + 16))(&MEMORY[0xA83D50], &v3); /*0x6cb7d4*/
+  if ( v1 != -1 && v1 < MEMORY[0xA83D60] && v1 < --MEMORY[0xA83D60] ) /*0x6cb7ef*/
   {
     do /*0x6cb807*/
     {
       ++v1; /*0x6cb7f7*/
-      *((unsigned int *)g_abs_A83D54 + v1 - 1) = *((unsigned int *)g_abs_A83D54 + v1); /*0x6cb7fb*/
+      *((unsigned int *)MEMORY[0xA83D54] + v1 - 1) = *((unsigned int *)MEMORY[0xA83D54] + v1); /*0x6cb7fb*/
     }
-    while ( v1 < (int)(g_abs_A83D60) ); /*0x6cb807*/
+    while ( v1 < MEMORY[0xA83D60] ); /*0x6cb807*/
   }
   return 1; /*0x6cb80c*/
 

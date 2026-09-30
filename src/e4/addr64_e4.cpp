@@ -97,8 +97,8 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float *v10; // eax
   float *v11; // eax
   int v12; // edx
-  uint8_t v14; // c0
-  uint8_t v15; // c3
+  unsigned __int8 v14; // c0
+  unsigned __int8 v15; // c3
   int v17; // [esp+0h] [ebp-78h]
   int v18; // [esp+4h] [ebp-74h]
   int v19; // [esp+8h] [ebp-70h]
@@ -116,7 +116,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v31[4]; // [esp+58h] [ebp-20h] BYREF
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
-  v21 = (float)(*this);
+  v21 = *this; /*0x645d6f*/
   v22 = *((unsigned int *)this + 1); /*0x645d76*/
   v23 = *((unsigned int *)this + 2); /*0x645d7d*/
   v24 = *((unsigned int *)this + 3); /*0x645d88*/

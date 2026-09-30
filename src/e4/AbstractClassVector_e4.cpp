@@ -49,8 +49,8 @@ namespace gamemd {
 int AbstractClassVector::Construct( IUnknown * aP1, IUnknown * aP2)
 {
 
-  *(this + 1) = 0; /*0x4e0e8b*/
-  *(this + 2) = aP1; /*0x4e0e8e*/
+  *((unsigned int *)this + 1) = 0; /*0x4e0e8b*/
+  *((unsigned int *)this + 2) = aP1; /*0x4e0e8e*/
   *((unsigned char *)this + 12) = 1; /*0x4e0e91*/
   *((unsigned char *)this + 13) = 0; /*0x4e0e95*/
   *this = &vt_VectorClass_AbstractClass; /*0x4e0e98*/
@@ -58,13 +58,13 @@ int AbstractClassVector::Construct( IUnknown * aP1, IUnknown * aP2)
   {
     if ( aP2 ) /*0x4e0ea6*/
     {
-      *(this + 1) = aP2; /*0x4e0ea8*/
+      *((unsigned int *)this + 1) = aP2; /*0x4e0ea8*/
       return this; /*0x4e0eae*/
     }
-    *(this + 1) = RA2_OPNEW(4 * (unsigned int)aP1); /*0x4e0ebd*/
+    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x4e0ebd*/
     *((unsigned char *)this + 13) = 1; /*0x4e0ec0*/
   }
-  return (int)(this);
+  return this; /*0x4e0ead*/
 
 }
 } // namespace gamemd

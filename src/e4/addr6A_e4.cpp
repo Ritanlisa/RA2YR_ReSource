@@ -101,7 +101,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     v8 = v14[18] - v12; /*0x6a6ba3*/
 LABEL_18:
     v7[18] = v8; /*0x6a6c09*/
-    char sub_6A6AF0(ObjectClass *this, char a2, int a3)
+    (*(void (**)(unsigned int *, unsigned int))(*(unsigned int *)this + 224))(this, 0); /*0x6a6c14*/
     return 1; /*0x6a6c20*/
   }
   return 0; /*0x6a6c1d*/
@@ -186,16 +186,16 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
   int v3; // ecx
   int v5; // eax
   int v6; // eax
-  unsigned int * v7;
+  int v7; // kr04_4
   unsigned int *v8; // eax
   int v10; // [esp+4h] [ebp-4h]
 
-  v10 = *((unsigned int *)g_abs_A8B230 + 3374); /*0x6a89f2*/
+  v10 = *((unsigned int *)MEMORY[0xA8B230] + 3374); /*0x6a89f2*/
   v2 = 26; /*0x6a89f8*/
   if ( v10 ) /*0x6a89fd*/
     v2 = 18; /*0x6a89ff*/
-  v3 = (g_abs_886F9C - (int)((int))((int))(g_abs_B0B4F8) - v2 + g_abs_886F94 - 7) / 50; /*0x6a8a43*/
-  if ( HouseClass_Player == (int)((void *))g_abs_AC1198 ) /*0x6a8a45*/
+  v3 = (MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v2 + MEMORY[0x886F94] - 7) / 50; /*0x6a8a43*/
+  if ( HouseClass_Player == (#375 *)MEMORY[0xAC1198] ) /*0x6a8a45*/
     v3 = 1; /*0x6a8a47*/
   if ( a2 ) /*0x6a8a52*/
   {
@@ -214,12 +214,12 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     v5 = 26; /*0x6a8a85*/
     if ( v10 ) /*0x6a8a8a*/
       v5 = 18; /*0x6a8a8c*/
-    v6 = (g_abs_886F9C - (int)((int))((int))(g_abs_B0B4F8) - v5 + g_abs_886F94 - 7) / 50; /*0x6a8aaa*/
-    if ( HouseClass_Player == (int)((void *))g_abs_AC1198 ) /*0x6a8aac*/
+    v6 = (MEMORY[0x886F9C] - MEMORY[0xB0B4F8] - v5 + MEMORY[0x886F94] - 7) / 50; /*0x6a8aaa*/
+    if ( HouseClass_Player == (#375 *)MEMORY[0xAC1198] ) /*0x6a8aac*/
     {
-      v7 = (int)((unsigned int *)(v6));
-      v8 = (unsigned int *)(this);
-      if ( *((unsigned int *)this + 17) + (unsigned int)(v7)/ (unsigned int)(2) >= (unsigned int)(g_abs_884CF8) ) /*0x6a8ac4*/
+      v7 = v6; /*0x6a8ab7*/
+      v8 = this; /*0x6a8ab9*/
+      if ( *((unsigned int *)this + 17) + v7 / 2 >= MEMORY[0x884CF8] ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/
     }
     else
@@ -578,16 +578,16 @@ int TechnoClass::ProcessDeployAction()
   IUnknown *v15; // eax
   int v16; // edx
   double v17; // st7
-  int16_t v18; // di
-  int16_t *v19; // eax
+  __int16 v18; // di
+  __int16 *v19; // eax
   IUnknown *v20; // eax
   int v21; // edx
   double v22; // st7
   double v23; // st7
-  int16_t v24; // cx
+  __int16 v24; // cx
   int v25; // eax
   SlaveManagerClass *v27; // [esp+2Ch] [ebp-28h] BYREF
-  int16_t v28[2]; // [esp+30h] [ebp-24h] BYREF
+  __int16 v28[2]; // [esp+30h] [ebp-24h] BYREF
   int v29; // [esp+34h] [ebp-20h] BYREF
   int v30; // [esp+38h] [ebp-1Ch] BYREF
   int v31; // [esp+3Ch] [ebp-18h] BYREF
@@ -602,10 +602,10 @@ int TechnoClass::ProcessDeployAction()
       v3 = *((unsigned int *)this + 9); /*0x6afd7a*/
       if ( v3 ) /*0x6afd7f*/
       {
-        v2 = (gamemd::SlaveManagerClass *)((int)((SlaveManagerClass *)(*(int (**)(unsigned int))(*(unsigned int *)v3->__pad_0 + 44))(*((unsigned int *)this + 9))));
+        v2 = (SlaveManagerClass *)(*(int (**)(unsigned int))(*(unsigned int *)v3->__pad_0 + 44))(*((unsigned int *)this + 9)); /*0x6afd89*/
         if ( v2 == (SlaveManagerClass *)6 ) /*0x6afd8f*/
         {
-          currentMission = (unsigned int)(v3->currentMission);
+          currentMission = v3->currentMission; /*0x6afd95*/
           if ( currentMission != 19 && currentMission != 18 ) /*0x6afda7*/
           {
             *((unsigned int *)this + 23) = (TechnoClass *)5; /*0x6afdad*/
@@ -629,25 +629,25 @@ int TechnoClass::ProcessDeployAction()
                                                                                    + 824))(
                                       *((unsigned int *)this + 9),
                                       &v29,
-                                      *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 6024) / 256,
+                                      *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6024) / 256,
                                       1);
         *(unsigned int *)v28 = v2; /*0x6afe25*/
         v27 = v2; /*0x6afe29*/
-        if ( (unsigned short)v2 == *(unsigned short *)&g_abs_B077F8 /*0x6afe57*/
-          && v28[1] == *(unsigned short *)&g_abs_B077F8
+        if ( (unsigned short)v2 == *(unsigned short *)&MEMORY[0xB077F8].__pad_14B0[10512] /*0x6afe57*/
+          && v28[1] == *(unsigned short *)&MEMORY[0xB077F8].__pad_14B0[10514]
           || (v2 = (SlaveManagerClass *)*BuildingClass::FindPlacementCells2(this, (SlaveManagerClass *)&v30, v2),
               v27 = v2,
-              v2 == *(SlaveManagerClass **)&g_abs_B077F8) )
+              v2 == *(SlaveManagerClass **)&MEMORY[0xB077F8].__pad_14B0[10512]) )
         {
           *((unsigned int *)this + 23) = 0; /*0x6afe67*/
-          *((unsigned int *)this + 24) = *(TechnoClass **)&g_abs_A8D63C; /*0x6afe74*/
+          *((unsigned int *)this + 24) = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6afe74*/
         }
         else
         {
           v6 = *(unsigned int *)(*((unsigned int *)this + 9))->__pad_0; /*0x6afe87*/
-          v7 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v27); /*0x6afe8e*/
+          v7 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v27); /*0x6afe8e*/
           (*(void (**)(unsigned int, void *, int))(v6 + 1152))(*((unsigned int *)this + 9), v7, 1); /*0x6afe97*/
-          IDA_LOBYTE(v2) = (*(int (**)(unsigned int, int, unsigned int))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 488))( /*0x6afea6*/
+          LOBYTE(v2) = (*(int (**)(unsigned int, int, unsigned int))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 488))( /*0x6afea6*/
                          *((unsigned int *)this + 9),
                          2,
                          0);
@@ -665,7 +665,7 @@ int TechnoClass::ProcessDeployAction()
         v2 = *(SlaveManagerClass **)&v8[1].hasParachute; /*0x6afee9*/
         if ( !v2 ) /*0x6afef1*/
         {
-          IDA_LOBYTE(v2) = TechnoClass::Deploy((int *)v8->__pad_0); /*0x6afef9*/
+          LOBYTE(v2) = TechnoClass::Deploy((int *)v8->__pad_0); /*0x6afef9*/
           if ( (unsigned char)v2 ) /*0x6aff00*/
           {
             *((unsigned int *)this + 23) = (TechnoClass *)4; /*0x6aff02*/
@@ -673,7 +673,7 @@ int TechnoClass::ProcessDeployAction()
           }
           else
           {
-            v9 = *(IUnknown **)&g_abs_A8D63C; /*0x6aff16*/
+            v9 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff16*/
             *((unsigned int *)this + 23) = (TechnoClass *)3; /*0x6aff23*/
             *((unsigned int *)this + 20) = (TechnoClass *)v9; /*0x6aff2a*/
             v2 = v34; /*0x6aff2c*/
@@ -686,14 +686,14 @@ int TechnoClass::ProcessDeployAction()
       else
       {
         *((unsigned int *)this + 23) = 0; /*0x6afed3*/
-        *((unsigned int *)this + 24) = *(TechnoClass **)&g_abs_A8D63C; /*0x6afee0*/
+        *((unsigned int *)this + 24) = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6afee0*/
       }
       break; /*0x6afee8*/
     case 3u:
       v10 = *((unsigned int *)this + 9); /*0x6aff43*/
       if ( v10 && (*(int (**)(unsigned int))(*(unsigned int *)v10->__pad_0 + 44))(*((unsigned int *)this + 9)) == 1 ) /*0x6aff54*/
       {
-        IDA_LOBYTE(v2) = TechnoClass::Deploy((int *)v10->__pad_0); /*0x6aff6d*/
+        LOBYTE(v2) = TechnoClass::Deploy((int *)v10->__pad_0); /*0x6aff6d*/
         if ( !(unsigned char)v2 ) /*0x6aff74*/
           goto LABEL_53; /*0x6aff74*/
         *((unsigned int *)this + 23) = (TechnoClass *)4; /*0x6aff7a*/
@@ -702,8 +702,8 @@ int TechnoClass::ProcessDeployAction()
       else
       {
         *((unsigned int *)this + 23) = 0; /*0x6aff56*/
-        IDA_LOBYTE(v2) = g_abs_A8D63C; /*0x6aff5d*/
-        *((unsigned int *)this + 24) = *(TechnoClass **)&g_abs_A8D63C; /*0x6aff62*/
+        LOBYTE(v2) = MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff5d*/
+        *((unsigned int *)this + 24) = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6aff62*/
       }
       break; /*0x6aff6a*/
     case 4u:
@@ -747,8 +747,8 @@ int TechnoClass::ProcessDeployAction()
       if ( v14 && (*(int (**)(TechnoClass *))(*(unsigned int *)v14->__pad_0 + 44))(v14) == 1 ) /*0x6b004b*/
       {
         *((unsigned int *)this + 23) = 0; /*0x6b004d*/
-        IDA_LOBYTE(v2) = g_abs_A8D63C; /*0x6b0054*/
-        *((unsigned int *)this + 24) = *(TechnoClass **)&g_abs_A8D63C; /*0x6b0059*/
+        LOBYTE(v2) = MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0054*/
+        *((unsigned int *)this + 24) = *(TechnoClass **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6b0059*/
       }
       else
       {
@@ -756,41 +756,41 @@ int TechnoClass::ProcessDeployAction()
                                                                                       + 824))(
                                       *((unsigned int *)this + 9),
                                       &v29,
-                                      *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 6016) / 256,
+                                      *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6016) / 256,
                                       0);
         *(unsigned int *)v28 = v2; /*0x6b0096*/
-        if ( (unsigned short)v2 == *(unsigned short *)&g_abs_B077F8 /*0x6b00ac*/
-          && v28[1] == *(unsigned short *)&g_abs_B077F8 )
+        if ( (unsigned short)v2 == *(unsigned short *)&MEMORY[0xB077F8].__pad_14B0[10512] /*0x6b00ac*/
+          && v28[1] == *(unsigned short *)&MEMORY[0xB077F8].__pad_14B0[10514] )
         {
           v27 = *(SlaveManagerClass **)(*(int (**)(unsigned int, int *, int, int))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 /*0x6b00e7*/
                                                                                       + 824))(
                                          *((unsigned int *)this + 9),
                                          &v29,
-                                         *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 6024) / 256,
+                                         *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6024) / 256,
                                          1);
           *(unsigned int *)v28 = *BuildingClass::FindPlacementCells2(this, (SlaveManagerClass *)&v31, v27); /*0x6b0100*/
           v15 = CellStruct::Sub(v28, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b0104*/
-          v16 = IDA_SHIWORD(v15->field_0); /*0x6b0109*/
-          v29 = IDA_SLOWORD(v15->field_0); /*0x6b011b*/
+          v16 = SHIWORD(v15->field_0); /*0x6b0109*/
+          v29 = SLOWORD(v15->field_0); /*0x6b011b*/
           v17 = Math::Sqrt((double)v29 * (double)v29 + (double)v16 * (double)v16); /*0x6b0134*/
           v18 = Math::RoundToInt(v17); /*0x6b0144*/
-          v19 = (int16_t *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 440))( /*0x6b014d*/
+          v19 = (__int16 *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 440))( /*0x6b014d*/
                              *((unsigned int *)this + 9),
                              v33);
           v20 = CellStruct::Sub(v19, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b015f*/
-          v21 = IDA_SLOWORD(v20->field_0); /*0x6b0168*/
-          v29 = IDA_SHIWORD(v20->field_0); /*0x6b016b*/
+          v21 = SLOWORD(v20->field_0); /*0x6b0168*/
+          v29 = SHIWORD(v20->field_0); /*0x6b016b*/
           v22 = (double)v29; /*0x6b0172*/
           v29 = v21; /*0x6b0176*/
           v23 = Math::Sqrt((double)v21 * (double)v21 + v22 * v22); /*0x6b018f*/
           v24 = Math::RoundToInt(v23); /*0x6b01b8*/
-          v2 = (SlaveManagerClass *)(v18 + *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 6028) / 256); /*0x6b01bb*/
+          v2 = (SlaveManagerClass *)(v18 + *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6028) / 256); /*0x6b01bb*/
           if ( (int)v2 < v24 ) /*0x6b01bf*/
           {
             (*((unsigned int *)this + 9))->isVoiceOverride = 1; /*0x6b01c4*/
             v25 = (*(int (**)(unsigned int))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 444))(*((unsigned int *)this + 9)); /*0x6b01d0*/
             TechnoClass::SetFocus(*((unsigned int *)this + 9), v25); /*0x6b01da*/
-            IDA_LOBYTE(v2) = (*(int (**)(unsigned int, int, unsigned int))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 488))( /*0x6b01e8*/
+            LOBYTE(v2) = (*(int (**)(unsigned int, int, unsigned int))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 488))( /*0x6b01e8*/
                            *((unsigned int *)this + 9),
                            19,
                            0);
@@ -799,14 +799,14 @@ int TechnoClass::ProcessDeployAction()
           }
         }
         if ( *((unsigned int *)this + 23) != (TechnoClass *)6 ) /*0x6b0200*/
-          IDA_LOBYTE(v2) = FactoryClass::PlaceExitUnits(this); /*0x6b0204*/
+          LOBYTE(v2) = FactoryClass::PlaceExitUnits(this); /*0x6b0204*/
       }
       break; /*0x6b0061*/
     case 6u:
       v2 = (SlaveManagerClass *)(*(int (**)(unsigned int))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 44))(*((unsigned int *)this + 9)); /*0x6b0214*/
       if ( v2 == (SlaveManagerClass *)1 ) /*0x6b021a*/
       {
-        IDA_LOBYTE(v2) = (uint8_t)Event_Process_6B0490(this); /*0x6b021e*/
+        LOBYTE(v2) = (unsigned __int8)Event_Process_6B0490(this); /*0x6b021e*/
 LABEL_53:
         *((unsigned int *)this + 23) = (TechnoClass *)1; /*0x6b0223*/
         *((unsigned int *)this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6b022a*/

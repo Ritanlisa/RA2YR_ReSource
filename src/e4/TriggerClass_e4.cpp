@@ -28,7 +28,6 @@
 namespace gamemd {
 char TriggerClass::FindByEventType(char a1)
 {
-    unsigned int v8 = 0;  /* G37 hoist */
 
   unsigned int *v2; // esi
   int v3; // eax
@@ -38,25 +37,25 @@ char TriggerClass::FindByEventType(char a1)
   size_t v7; // eax
   __int128 v8; // [esp+28h] [ebp-20h] BYREF
   unsigned int v9[2]; // [esp+38h] [ebp-10h] BYREF
-  int64_t v10; // [esp+40h] [ebp-8h]
+  __int64 v10; // [esp+40h] [ebp-8h]
 
-  if ( !g_abs_AC1DCC ) /*0x61095d*/
+  if ( !MEMORY[0xAC1DCC] ) /*0x61095d*/
     return 0; /*0x61095f*/
   if ( a1 ) /*0x61096a*/
   {
-    if ( g_abs_AC1CC8 ) /*0x610978*/
-      (**(void (***)(int, int))g_abs_AC1CC8)(g_abs_AC1CC8, 1); /*0x61097e*/
-    g_abs_AC1CC8 = 0; /*0x610982*/
-    v2 = RA2_OPNEW(0x20u); /*0x61098d*/
+    if ( MEMORY[0xAC1CC8] ) /*0x610978*/
+      (**(void (***)(int, int))MEMORY[0xAC1CC8])(MEMORY[0xAC1CC8], 1); /*0x61097e*/
+    MEMORY[0xAC1CC8] = 0; /*0x610982*/
+    v2 = __2_YAPAXI_Z(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
-      v4 = (unsigned int)(IDA_HIDWORD(g_abs_AC1CB8));
-      v3 = (unsigned int)(DWORD2(g_abs_AC1CB8));
-      v2[1] = (unsigned int)(DWORD2(g_abs_AC1CB8));
-      v2[2] = (unsigned int)(v4);
-      v2[3] = (unsigned int)(0);
-      *v2 = (unsigned int)(&XSurface_Vtable);
-      v2[4] = (unsigned int)(2);
+      v4 = HIDWORD(MEMORY[0xAC1CB8]); /*0x61099b*/
+      v3 = DWORD2(MEMORY[0xAC1CB8]); /*0x61099b*/
+      v2[1] = DWORD2(MEMORY[0xAC1CB8]); /*0x6109a1*/
+      v2[2] = v4; /*0x6109a9*/
+      v2[3] = 0; /*0x6109b1*/
+      *v2 = &XSurface_Vtable; /*0x6109b4*/
+      v2[4] = 2; /*0x6109ba*/
       Buffer::Init(v2 + 5, 0, 2 * v4 * v3); /*0x6109c1*/
       *v2 = &BSurface_Vtable; /*0x6109c6*/
       v5 = (int)v2; /*0x6109cc*/
@@ -65,37 +64,37 @@ char TriggerClass::FindByEventType(char a1)
     {
       v5 = 0; /*0x6109d0*/
     }
-    g_abs_AC1CC8 = v5; /*0x6109ef*/
+    MEMORY[0xAC1CC8] = v5; /*0x6109ef*/
     v9[0] = 0; /*0x6109f5*/
     v9[1] = 0; /*0x6109f9*/
-    v10 = *((unsigned long long *)&g_abs_AC1CB8 + 1); /*0x6109fd*/
+    v10 = *((unsigned long long *)&MEMORY[0xAC1CB8] + 1); /*0x6109fd*/
     (*(void (**)(int, unsigned int *, int, __int128 *, unsigned int, int))(*(unsigned int *)v5 + 8))( /*0x610a08*/
       v5,
       v9,
-      g_abs_887308,
-      &g_abs_AC1CB8,
+      MEMORY[0x887308],
+      &MEMORY[0xAC1CB8],
       0,
       1);
   }
-  v8 = (unsigned int)(g_abs_AC1CB8);
-  g_abs_AC1DD0 = 0; /*0x610a32*/
-  if ( g_abs_AC48B0 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(-1) ) /*0x610a40*/
+  v8 = MEMORY[0xAC1CB8]; /*0x610a25*/
+  MEMORY[0xAC1DD0] = 0; /*0x610a32*/
+  if ( MEMORY[0xAC48B0] == -1 ) /*0x610a40*/
     v6 = -1; /*0x610a42*/
   else
-    v6 = ((int)(uint8_t)g_abs_AC48B0 >> g_abs_8A0DD4 << g_abs_8A0DD0) /*0x610a8d*/
-       | (IDA_BYTE1(g_abs_AC48B0) >> g_abs_8A0DE4 << g_abs_8A0DE0)
-       | (IDA_BYTE2(g_abs_AC48B0) >> g_abs_8A0DDC << g_abs_8A0DD8);
-  (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)g_abs_887308 + 92))(g_abs_887308, 0, 0); /*0x610a9d*/
-  (*(void (**)(int, __int128 *, int))(*(unsigned int *)g_abs_887308 + 20))(g_abs_887308, &v8, v6); /*0x610aae*/
-  (*(void (**)(int))(*(unsigned int *)g_abs_887308 + 96))(g_abs_887308); /*0x610ab9*/
-  Team_Find((int *)&v8, g_abs_887308, 8, 4); /*0x610aca*/
-  v7 = wcslen(g_abs_AC1CCC); /*0x610ae0*/
-  DrawTextRendererTextAligned(g_abs_AC18A4, 0, (int *)&v8, g_abs_AC1CCC, v7, 1, 1, g_abs_887308, 0); /*0x610afb*/
-  IDA_HIDWORD(v8) -= 2; /*0x610b1e*/
-  IDA_LODWORD(v8) = v8 + 1; /*0x610b2a*/
+    v6 = ((int)(unsigned __int8)MEMORY[0xAC48B0] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x610a8d*/
+       | (BYTE1(MEMORY[0xAC48B0]) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
+       | (BYTE2(MEMORY[0xAC48B0]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
+  (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)MEMORY[0x887308] + 92))(MEMORY[0x887308], 0, 0); /*0x610a9d*/
+  (*(void (**)(int, __int128 *, int))(*(unsigned int *)MEMORY[0x887308] + 20))(MEMORY[0x887308], &v8, v6); /*0x610aae*/
+  (*(void (**)(int))(*(unsigned int *)MEMORY[0x887308] + 96))(MEMORY[0x887308]); /*0x610ab9*/
+  Team_Find((int *)&v8, MEMORY[0x887308], 8, 4); /*0x610aca*/
+  v7 = wcslen(MEMORY[0xAC1CCC]); /*0x610ae0*/
+  DrawTextRendererTextAligned(MEMORY[0xAC18A4], 0, (int *)&v8, MEMORY[0xAC1CCC], v7, 1, 1, MEMORY[0x887308], 0); /*0x610afb*/
+  HIDWORD(v8) -= 2; /*0x610b1e*/
+  LODWORD(v8) = v8 + 1; /*0x610b2a*/
   ++DWORD1(v8); /*0x610b2e*/
   DWORD2(v8) -= 2; /*0x610b32*/
-  DrawDialogGradient((int *)g_abs_887308, (int *)&v8, 1, -1); /*0x610b36*/
+  DrawDialogGradient((int *)MEMORY[0x887308], (int *)&v8, 1, -1); /*0x610b36*/
   return 1; /*0x610961*/
 
 }

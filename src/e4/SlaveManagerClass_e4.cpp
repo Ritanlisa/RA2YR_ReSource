@@ -24,7 +24,7 @@ void SlaveManagerClass::Check()
   int result; // eax
 
   if ( *((unsigned int *)this + 43) != 10 ) /*0x522d07*/
-    // eax if ( *((unsigned int *)this + 43) != 10 ) return (*((int (**)(SlaveManagerClass *, int, unsigned int))this->AbstractClass + 122))(this, 10, 0);;
+    return (*(int (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 1952))(this, 10, 0); /*0x522d0f*/
   return result; /*0x522d15*/
 
 }
@@ -35,7 +35,7 @@ namespace gamemd {
 int SlaveManagerClass::VtableDispatch()
 {
 
-  int SlaveManagerClass::VtableDispatch(SlaveManagerClass *this)
+  return (*(int (**)(void *, int, unsigned int))(*(unsigned int *)this + 488))(this, 5, 0); /*0x522d2c*/
 
 }
 } // namespace ra2
@@ -45,7 +45,7 @@ namespace gamemd {
 int SlaveManagerClass::CheckIsOne()
 {
 
-  bool SlaveManagerClass::CheckIsOne(SlaveManagerClass *this)
+  return ((double (*)(void *))*(unsigned int *)(*(unsigned int *)this + 692))(this) == 1.0; /*0x522d47*/
 
 }
 } // namespace ra2
@@ -55,7 +55,7 @@ namespace gamemd {
 int SlaveManagerClass::IsMasterHarvester()
 {
 
-  bool SlaveManagerClass::IsMasterHarvester(SlaveManagerClass *this)
+  return (*(int (**)(void *))(*(unsigned int *)this + 388))(this) == 10; /*0x522fd2*/
 
 }
 } // namespace ra2
@@ -65,7 +65,7 @@ namespace gamemd {
 void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
 {
 
-  void * v7;
+  int v7; // eax
   IUnknown *v8; // ecx
   int *v9; // ebp
   int v10; // ebx
@@ -79,30 +79,30 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   int v19; // [esp+10h] [ebp-8h]
   TechnoClass *aP1a; // [esp+1Ch] [ebp+4h]
 
-  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6af1a8*/
+  AbstractClass::Constructor((AbstractClass *)this); /*0x6af1a8*/
   SlaveControlVector::Constructor((unsigned int *)((char *)this + 56), 0, 0); /*0x6af1b6*/
   *((unsigned int *)this + 14) = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af1c3*/
   *((unsigned int *)this + 19) = 10; /*0x6af1c9*/
   *((unsigned int *)this + 18) = 0; /*0x6af1d0*/
-  *((unsigned int *)this + 20) = *(unsigned int *)&g_abs_A8D63C; /*0x6af1d8*/
+  *((unsigned int *)this + 20) = *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af1d8*/
   *((unsigned int *)this + 22) = 0; /*0x6af1df*/
   *((unsigned int *)this + 9) = aP1; /*0x6af1e2*/
   *((unsigned int *)this + 10) = a3; /*0x6af1e9*/
-  *(unsigned int *)this = &vt_SlaveManagerClass; /*0x6af1f2*/
-  *((unsigned int *)this + 1) = &vt_SlaveManagerClass; /*0x6af1f8*/
-  *((unsigned int *)this + 2) = &vt_SlaveManagerClass; /*0x6af1ff*/
+  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af1f2*/
+  *((unsigned int *)this + 1) = &SlaveManagerClass::`vftable'; /*0x6af1f8*/
+  *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af1ff*/
   *((unsigned int *)this + 3) = &vt_SlaveManagerClass; /*0x6af206*/
   *((unsigned int *)this + 11) = a4; /*0x6af20d*/
   *((unsigned int *)this + 12) = a5; /*0x6af210*/
   *((unsigned int *)this + 13) = a6; /*0x6af213*/
   for ( aP1a = 0; (int)aP1a < *((unsigned int *)this + 11); aP1a = (TechnoClass *)((char *)aP1a + 1) ) /*0x6af21a*/
   {
-    v7 = (void *)((int)(RA2_OPNEW(0x14u)));
+    v7 = __2_YAPAXI_Z(0x14u); /*0x6af223*/
     if ( v7 ) /*0x6af22d*/
     {
-      v8 = (IUnknown *)((unsigned int)(*(IUnknown **)&g_abs_A8D63C));
-      *(unsigned int *)((unsigned int)(v7)+ 16) = 0; /*0x6af235*/
-      *(unsigned int *)((unsigned int)(v7)+ 8) = v8; /*0x6af238*/
+      v8 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af22f*/
+      *(unsigned int *)(v7 + 16) = 0; /*0x6af235*/
+      *(unsigned int *)(v7 + 8) = v8; /*0x6af238*/
       v9 = (int *)v7; /*0x6af23b*/
     }
     else
@@ -118,7 +118,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
       (*(void (**)(int))(*(unsigned int *)v12 + 212))(v12); /*0x6af265*/
       *(unsigned int *)(*v9 + 732) = *((unsigned int *)this + 9); /*0x6af274*/
       v9[1] = 0; /*0x6af27a*/
-      v9[2] = *(unsigned int *)&g_abs_A8D63C; /*0x6af284*/
+      v9[2] = *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af284*/
       v9[3] = v19; /*0x6af28a*/
       v9[4] = 0; /*0x6af28d*/
     }
@@ -129,7 +129,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
         continue; /*0x6af2a1*/
       v14 = *((unsigned int *)this + 19); /*0x6af2a3*/
       if ( v14 <= 0 /*0x6af2b2*/
-        || !(*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v13 + v14, 0) )
+        || !(*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v13 + v14, 0) )
       {
         continue; /*0x6af2b2*/
       }
@@ -139,21 +139,21 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
     *((unsigned int *)this + 18) = v15 + 1; /*0x6af2c2*/
     *(unsigned int *)(v16 + 4 * v15) = v9; /*0x6af2c5*/
   }
-  *((unsigned int *)this + 20) = *(unsigned int *)&g_abs_A8D63C; /*0x6af2e7*/
+  *((unsigned int *)this + 20) = *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af2e7*/
   *((unsigned int *)this + 21) = v19; /*0x6af2ee*/
   *((unsigned int *)this + 22) = 10; /*0x6af2f1*/
   *((unsigned int *)this + 23) = 0; /*0x6af2f4*/
   *((unsigned int *)this + 24) = 0; /*0x6af2f7*/
-  if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x6af32e*/
-    || (g_abs_B077F8 || !*(unsigned int *)&g_abs_B077F8)
-    && *(int *)&g_abs_B077F8 > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&g_abs_B077F8 + 8))(
-         &g_abs_B077F8,
-         *(unsigned int *)&g_abs_B077F8 + *(unsigned int *)&g_abs_B077F8,
+  if ( *(int *)&MEMORY[0xB077F8].__pad_14B0[10584] < *(int *)&MEMORY[0xB077F8].__pad_14B0[10576] /*0x6af32e*/
+    || (MEMORY[0xB077F8].__pad_14B0[10581] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10576])
+    && *(int *)&MEMORY[0xB077F8].__pad_14B0[10588] > 0
+    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10568] + 8))(
+         &MEMORY[0xB077F8].__pad_14B0[10568],
+         *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10576] + *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10588],
          0) )
   {
-    v17 = (*(unsigned int *)&g_abs_B077F8)++; /*0x6af33b*/
-    *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * v17) = this; /*0x6af34a*/
+    v17 = (*(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10584])++; /*0x6af33b*/
+    *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10572] + 4 * v17) = this; /*0x6af34a*/
   }
   return this; /*0x6af34f*/
 
@@ -168,7 +168,7 @@ void SlaveManagerClass::Constructor()
   int v2; // eax
   int v4; // [esp+8h] [ebp-8h]
 
-  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6af366*/
+  AbstractClass::Constructor((AbstractClass *)this); /*0x6af366*/
   *((unsigned int *)this + 15) = 0; /*0x6af371*/
   *((unsigned int *)this + 16) = 0; /*0x6af374*/
   *((unsigned char *)this + 68) = 1; /*0x6af377*/
@@ -176,32 +176,32 @@ void SlaveManagerClass::Constructor()
   *((unsigned int *)this + 14) = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af37e*/
   *((unsigned int *)this + 19) = 10; /*0x6af385*/
   *((unsigned int *)this + 18) = 0; /*0x6af38c*/
-  *((unsigned int *)this + 20) = g_abs_A8ED84; /*0x6af395*/
+  *((unsigned int *)this + 20) = MEMORY[0xA8ED84]; /*0x6af395*/
   *((unsigned int *)this + 22) = 0; /*0x6af398*/
-  *(unsigned int *)this = &vt_SlaveManagerClass; /*0x6af39b*/
-  *((unsigned int *)this + 1) = &vt_SlaveManagerClass; /*0x6af3a1*/
-  *((unsigned int *)this + 2) = &vt_SlaveManagerClass; /*0x6af3a8*/
+  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af39b*/
+  *((unsigned int *)this + 1) = &SlaveManagerClass::`vftable'; /*0x6af3a1*/
+  *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af3a8*/
   *((unsigned int *)this + 3) = &vt_SlaveManagerClass; /*0x6af3af*/
   *((unsigned int *)this + 9) = 0; /*0x6af3b6*/
   *((unsigned int *)this + 10) = 0; /*0x6af3b9*/
   *((unsigned int *)this + 11) = 0; /*0x6af3bc*/
   *((unsigned int *)this + 12) = 0; /*0x6af3bf*/
   *((unsigned int *)this + 13) = 0; /*0x6af3c2*/
-  *((unsigned int *)this + 20) = g_abs_A8ED84; /*0x6af3cb*/
+  *((unsigned int *)this + 20) = MEMORY[0xA8ED84]; /*0x6af3cb*/
   *((unsigned int *)this + 21) = v4; /*0x6af3ce*/
   *((unsigned int *)this + 22) = 0; /*0x6af3d1*/
   *((unsigned int *)this + 23) = 0; /*0x6af3d4*/
   *((unsigned int *)this + 24) = 0; /*0x6af3d7*/
-  if ( g_abs_B0B600 < g_abs_B0B5F8 /*0x6af40c*/
-    || (g_abs_B0B5FD || !g_abs_B0B5F8)
-    && g_abs_B0B604 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0B5F0 + 8))(
-         &g_abs_B0B5F0,
-         (unsigned int)(g_abs_B0B5F8)+ g_abs_B0B604,
+  if ( MEMORY[0xB0B600] < MEMORY[0xB0B5F8] /*0x6af40c*/
+    || (MEMORY[0xB0B5FD] || !MEMORY[0xB0B5F8])
+    && MEMORY[0xB0B604] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0B5F0] + 8))(
+         &MEMORY[0xB0B5F0],
+         MEMORY[0xB0B5F8] + MEMORY[0xB0B604],
          0) )
   {
-    v2 = (int)(g_abs_B0B600++);
-    *((unsigned int *)g_abs_B0B5F4 + v2) = this; /*0x6af428*/
+    v2 = MEMORY[0xB0B600]++; /*0x6af419*/
+    *((unsigned int *)MEMORY[0xB0B5F4] + v2) = this; /*0x6af428*/
   }
   return this; /*0x6af42d*/
 
@@ -217,36 +217,36 @@ void SlaveManagerClass::Constructor_SlaveManagerClass()
   int v3; // ebp
   int v4; // eax
   void *v5; // eax
-  SlaveManagerClass * v6;
+  int v6; // [esp+8h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &vt_SlaveManagerClass; /*0x6af4a5*/
-  *((unsigned int *)this + 1) = &vt_SlaveManagerClass; /*0x6af4ab*/
-  *((unsigned int *)this + 2) = &vt_SlaveManagerClass; /*0x6af4b2*/
+  *(unsigned int *)this = &SlaveManagerClass::`vftable'; /*0x6af4a5*/
+  *((unsigned int *)this + 1) = &SlaveManagerClass::`vftable'; /*0x6af4ab*/
+  *((unsigned int *)this + 2) = &SlaveManagerClass::`vftable'; /*0x6af4b2*/
   *((unsigned int *)this + 3) = &vt_SlaveManagerClass; /*0x6af4b9*/
   for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i ) /*0x6af4c4*/
   {
     if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x6af4c9*/
-      RA2_OPDEL(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6af4d1*/
+      __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6af4d1*/
   }
-  v3 = (int)(*((unsigned int *)this + 16));
+  v3 = *((unsigned int *)this + 16); /*0x6af4e5*/
   (*(void (**)(int))(*((unsigned int *)this + 14) + 12))((char *)this + 56); /*0x6af4e8*/
   (*(void (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v3, 0); /*0x6af4f2*/
   v6 = this; /*0x6af505*/
-  v4 = (*(int (**)(int *, int *))(g_abs_B0B5F0 + 16))(&g_abs_B0B5F0, &v6); /*0x6af509*/
-  if ( v4 != -1 && v4 < (int)((int))((int))(g_abs_B0B600) && v4 < --g_abs_B0B600 ) /*0x6af525*/
+  v4 = (*(int (**)(int *, int *))(MEMORY[0xB0B5F0] + 16))(&MEMORY[0xB0B5F0], &v6); /*0x6af509*/
+  if ( v4 != -1 && v4 < MEMORY[0xB0B600] && v4 < --MEMORY[0xB0B600] ) /*0x6af525*/
   {
     do /*0x6af53d*/
     {
       ++v4; /*0x6af52d*/
-      *((unsigned int *)g_abs_B0B5F4 + v4 - 1) = *((unsigned int *)g_abs_B0B5F4 + v4); /*0x6af531*/
+      *((unsigned int *)MEMORY[0xB0B5F4] + v4 - 1) = *((unsigned int *)MEMORY[0xB0B5F4] + v4); /*0x6af531*/
     }
-    while ( v4 < (int)((int))((int))(g_abs_B0B600) ); /*0x6af53d*/
+    while ( v4 < MEMORY[0xB0B600] ); /*0x6af53d*/
   }
-  v5 = (void *)((unsigned int)(*(void **)((char *)this + 60)));
+  v5 = *(void **)((char *)this + 60); /*0x6af53f*/
   *((unsigned int *)this + 14) = &vt_VectorClass_SlaveManagerClass_SlaveControl; /*0x6af542*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6af54c*/
   {
-    RA2_OPDEL(v5); /*0x6af554*/
+    __3_YAXPAX_Z(v5); /*0x6af554*/
     *((unsigned int *)this + 15) = 0; /*0x6af55c*/
   }
   *((unsigned char *)this + 69) = 0; /*0x6af565*/
@@ -1111,7 +1111,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b1608*/
       v4 = a3; /*0x6b161e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6b161a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b161a*/
     *((unsigned char *)this + 12) = 1; /*0x6b1622*/
     if ( !v4 ) /*0x6b1626*/
       return 0; /*0x6b169a*/
@@ -1124,7 +1124,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
         ++i; /*0x6b1641*/
       if ( *((unsigned char *)this + 13) ) /*0x6b164e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6b1659*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b1659*/
         *((unsigned int *)this + 1) = 0; /*0x6b1661*/
       }
     }
@@ -1134,7 +1134,7 @@ char SlaveManagerClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUSlaveControl_SlaveManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b167e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x6b1681*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b1689*/

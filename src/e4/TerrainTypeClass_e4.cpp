@@ -235,10 +235,10 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
   if ( !ObjectTypeClass::LoadFromINI((char *)this, (CCINIClass *)aP1) ) /*0x71debb*/
     return 0; /*0x71e0b5*/
   if ( *((unsigned int *)this + 40) == -1 ) /*0x71decf*/
-    *((unsigned int *)this + 40) = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 4420); /*0x71dedc*/
+    *((unsigned int *)this + 40) = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 4420); /*0x71dedc*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x71def6*/
                      (int)aP1,
-                     (uint8_t *)((char *)this + 36),
+                     (unsigned __int8 *)((char *)this + 36),
                      (CCINIClass *)&stru_830620.__pad_579C[59592],
                      *((unsigned char *)this + 692));
   *((unsigned char *)this + 692) = Bool_Overwrite; /*0x71defd*/
@@ -247,36 +247,87 @@ int TerrainTypeClass::LoadFromINI(unsigned char *** aP1)
     *((unsigned char *)this + 564) = 0; /*0x71df05*/
     *((unsigned char *)this + 561) = 1; /*0x71df0c*/
   }
-  v4 = INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)((char *)this + 36), &stru_81AE4C, *((unsigned char *)this + 688)); /*0x71df22*/
+  v4 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)((char *)this + 36), &stru_81AE4C, *((unsigned char *)this + 688)); /*0x71df22*/
   v5 = *((unsigned char *)this + 689); /*0x71df27*/
   *((unsigned char *)this + 688) = v4; /*0x71df2d*/
   v6 = INIClass::ReadBool_Overwrite( /*0x71df3c*/
          (int)aP1,
-         (uint8_t *)((char *)this + 36),
+         (unsigned __int8 *)((char *)this + 36),
          (CCINIClass *)&stru_830620.__pad_579C[59576],
          v5);
   aP3_4 = *((unsigned char *)this + 690); /*0x71df49*/
   *((unsigned char *)this + 689) = v6; /*0x71df50*/
   *((unsigned char *)this + 690) = INIClass::ReadBool_Overwrite( /*0x71df5b*/
                              (int)aP1,
-                             (uint8_t *)((char *)this + 36),
+                             (unsigned __int8 *)((char *)this + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[59564],
                              aP3_4);
   v7 = (Color *)INIClass::LookupEnum( /*0x71df79*/
-                  (uint8_t ***)&g_abs_87F8E4,
-                  (uint8_t *)((char *)this + 504),
-                  (uint8_t *)g_INI_Key_Foundation,
+                  (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+                  (unsigned __int8 *)((char *)this + 504),
+                  (unsigned __int8 *)g_INI_Key_Foundation,
                   *((unsigned int *)this + 166));
   v8 = 5 * (unsigned int)v7; /*0x71df7e*/
   *((unsigned int *)this + 166) = v7; /*0x71df81*/
-  IDA_LOBYTE(v7) = *((unsigned char *)this + 556); /*0x71df87*/
+  LOBYTE(v7) = *((unsigned char *)this + 556); /*0x71df87*/
   *((unsigned int *)this + 174) = 8 * v8 + 11595200; /*0x71df96*/
   if ( !(unsigned char)v7 ) /*0x71df9c*/
   {
     _makepath((char *)v23.headNode, 0, 0, (const char *)((char *)this + 504), Ext); /*0x71dfad*/
     *((unsigned int *)this + 41) = SearchMIXFile((char *)v23.headNode, 0); /*0x71dfc0*/
   }
-  } v11 = (MixFileClass *)(*((int (**)(TerrainTypeClass *))this->ObjectTypeClass + 39))(this);
+  v9 = (char **)(*(int (**)(int))(*(unsigned int *)this + 156))(this); /*0x71dfca*/
+  if ( v9 ) /*0x71dfd2*/
+  {
+    PixelData = MixFileClass::GetPixelData(v9, (int)&v23, 0); /*0x71dfdd*/
+    *((unsigned short *)this + 334) = *(unsigned short *)PixelData; /*0x71dfeb*/
+    *((unsigned char *)this + 670) = *(unsigned char *)(PixelData + 2); /*0x71dff5*/
+  }
+  Coord = INIClass::GetCoord( /*0x71e00c*/
+            aP1,
+            &v23,
+            (INIClass *)((char *)this + 36),
+            (Color *)&stru_830620.__pad_14B0[6744],
+            (Color *)((char *)this + 668));
+  v12 = *((unsigned char *)this + 691); /*0x71e014*/
+  *((unsigned short *)this + 334) = *(unsigned short *)Coord; /*0x71e01a*/
+  *((unsigned char *)this + 670) = *(unsigned char *)(Coord + 2); /*0x71e02a*/
+  v13 = INIClass::ReadBool_Overwrite( /*0x71e02d*/
+          (int)aP1,
+          (unsigned __int8 *)((char *)this + 36),
+          (CCINIClass *)&stru_830620.__pad_579C[59552],
+          v12);
+  aP3_4a = *(INIClass **)((char *)this + 672); /*0x71e03a*/
+  *((unsigned char *)this + 691) = v13; /*0x71e041*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x71e047*/
+                    (int)aP1,
+                    (unsigned __int8 *)((char *)this + 36),
+                    (CCINIClass *)&stru_830620.__pad_579C[59536],
+                    aP3_4a);
+  aP3 = *(float *)((char *)this + 676); /*0x71e04c*/
+  *((unsigned int *)this + 168) = Int_Overwrite; /*0x71e057*/
+  Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x71e066*/
+                       (int)aP1,
+                       (INIClass *)((char *)this + 36),
+                       (unsigned __int8 *)&stru_830620.__pad_579C[59512],
+                       (INIClass *)LODWORD(aP3));
+  v16 = *(CCINIClass **)((char *)this + 680); /*0x71e06b*/
+  *(float *)((char *)this + 676) = Double_Overwrite; /*0x71e073*/
+  v18 = INIClass::ReadInt_Overwrite( /*0x71e080*/
+          (int)aP1,
+          (unsigned __int8 *)((char *)this + 36),
+          (CCINIClass *)&stru_830620.__pad_579C[59488],
+          (INIClass *)v16);
+  v19 = *(INIClass **)((char *)this + 684); /*0x71e085*/
+  *((unsigned int *)this + 170) = v18; /*0x71e08b*/
+  *((unsigned int *)this + 171) = INIClass::ReadInt_Overwrite( /*0x71e0a0*/
+                              (int)aP1,
+                              (unsigned __int8 *)((char *)this + 36),
+                              (CCINIClass *)&stru_830620.__pad_579C[59468],
+                              v19);
+  return 1; /*0x71e0a7*/
+
+}
   if ( v9 ) /*0x71dfd2*/
   {
     PixelData = MixFileClass::GetPixelData(v9, (int)&v23, 0); /*0x71dfdd*/

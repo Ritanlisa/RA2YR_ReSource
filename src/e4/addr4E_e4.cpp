@@ -73,7 +73,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
     }
     else
     {
-      v6 = (unsigned int *)(RA2_OPNEW(8 * a2 + 4));
+      v6 = __2_YAPAXI_Z(8 * a2 + 4); /*0x4e0a55*/
       if ( v6 ) /*0x4e0a5f*/
       {
         *v6 = a2; /*0x4e0a64*/
@@ -100,7 +100,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
       *((unsigned char *)this + 13) = 1; /*0x4e0a86*/
     }
   }
-  *this = (unsigned int *)(&vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass);
+  *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/
   *((unsigned int *)this + 5) = 10; /*0x4e0a90*/
   *((unsigned int *)this + 4) = 0; /*0x4e0a97*/
   return this; /*0x4e0aa0*/
@@ -1936,7 +1936,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e925c*/
       v4 = a3; /*0x4e9272*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e926e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e926e*/
     *((unsigned char *)this + 12) = 1; /*0x4e9276*/
     if ( v4 ) /*0x4e927a*/
     {
@@ -1949,7 +1949,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
           ++i; /*0x4e929e*/
         if ( *((unsigned char *)this + 13) ) /*0x4e92ab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4e92b6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e92b6*/
           *((unsigned int *)this + 1) = 0; /*0x4e92be*/
         }
       }
@@ -1965,7 +1965,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e92e2*/
     return 1; /*0x4e92e8*/
   }
 
@@ -1986,7 +1986,7 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e9e4e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
     *((unsigned char *)this + 12) = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {
@@ -1999,7 +1999,7 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
           ++i; /*0x4e9e7e*/
         if ( *((unsigned char *)this + 13) ) /*0x4e9e8b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4e9e96*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9e96*/
           *((unsigned int *)this + 1) = 0; /*0x4e9e9e*/
         }
       }
@@ -2015,7 +2015,7 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVParticleClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9ec2*/
     return 1; /*0x4e9ec8*/
   }
 
@@ -2395,7 +2395,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   if ( v8 != *((unsigned int *)this + 13) ) /*0x4e2aa4*/
   {
     *((unsigned int *)this + 13) = v8; /*0x4e2aa6*/
-    int sub_4E2A50(GaugeClass *this, int a2, int a3, int a4, int a5, int a6)
+    (*(void (**)(int))(*(unsigned int *)this + 72))(this); /*0x4e2aad*/
   }
   *((unsigned char *)this + 45) = 1; /*0x4e2ab2*/
   *((unsigned char *)this + 46) = (int)aP4 > aP5; /*0x4e2ab9*/

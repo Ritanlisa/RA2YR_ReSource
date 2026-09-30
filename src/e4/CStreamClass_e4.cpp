@@ -325,7 +325,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a4b8c*/
       v4 = a3; /*0x4a4ba2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4a4b9e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a4b9e*/
     *((unsigned char *)this + 12) = 1; /*0x4a4ba6*/
     if ( v4 ) /*0x4a4baa*/
     {
@@ -338,7 +338,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
           ++i; /*0x4a4bce*/
         if ( *((unsigned char *)this + 13) ) /*0x4a4bdb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4a4be6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a4be6*/
           *((unsigned int *)this + 1) = 0; /*0x4a4bee*/
         }
       }
@@ -354,7 +354,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAU_DDSURFACEDESC *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4a4c12*/
     return 1; /*0x4a4c18*/
   }
 
@@ -422,17 +422,17 @@ VectorClass_flat * CStreamClass_16::QueryInterface(unsigned int * Block, char a2
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_DDSURFACEDESC);
+  v3 = (void *)*(Block + 1); /*0x4a4d93*/
+  *Block = &vt_VectorClass_DDSURFACEDESC; /*0x4a4d96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a4da0*/
   {
-    RA2_OPDEL(v3); /*0x4a4da8*/
+    __3_YAXPAX_Z(v3); /*0x4a4da8*/
     *(Block + 1) = 0; /*0x4a4db0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4a4dbb*/
   *(Block + 2) = 0; /*0x4a4dc1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4a4dc8*/
-    RA2_OPDEL(Block); /*0x4a4dcb*/
+  if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
+    __3_YAXPAX_Z(Block); /*0x4a4dcb*/
   return (VectorClass *)Block; /*0x4a4dd5*/
 
 }

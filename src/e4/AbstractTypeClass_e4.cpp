@@ -25,15 +25,15 @@ int AbstractTypeClass::Constructor( AbstractClass * aP1)
   char Destination[48]; // [esp+20h] [ebp-34h] BYREF
   char v8; // [esp+50h] [ebp-4h]
 
-  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x410809*/
-  v3 = (RandomStruct *)(this + 36); /*0x410812*/
-  *(unsigned char *)(this + 36) = 0; /*0x410817*/
-  *(unsigned char *)(this + 61) = 0; /*0x41081a*/
-  *(unsigned char *)(this + 100) = 0; /*0x41081e*/
-  *(unsigned int *)this = &vt_AbstractTypeClass; /*0x410822*/
-  *(unsigned int *)(this + 4) = &vt_AbstractTypeClass; /*0x410829*/
-  *(unsigned int *)(this + 8) = &vt_AbstractTypeClass; /*0x410830*/
-  *(unsigned int *)(this + 12) = &vt_AbstractTypeClass; /*0x410837*/
+  AbstractClass::Constructor((AbstractClass *)this); /*0x410809*/
+  v3 = (RandomStruct *)((char *)this + 36); /*0x410812*/
+  *((unsigned char *)this + 36) = 0; /*0x410817*/
+  *((unsigned char *)this + 61) = 0; /*0x41081a*/
+  *((unsigned char *)this + 100) = 0; /*0x41081e*/
+  *(unsigned int *)this = &AbstractTypeClass::`vftable'; /*0x410822*/
+  *((unsigned int *)this + 1) = &AbstractTypeClass::`vftable'; /*0x410829*/
+  *((unsigned int *)this + 2) = &AbstractTypeClass::`vftable'; /*0x410830*/
+  *((unsigned int *)this + 3) = &vt_AbstractTypeClass; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1->__pad_0, (IUnknown *)0x18); /*0x410895*/
@@ -56,28 +56,28 @@ int AbstractTypeClass::Constructor( AbstractClass * aP1)
   {
 LABEL_8:
     qmemcpy(v3, Destination, 0x18u); /*0x4108b5*/
-    *(unsigned char *)(this + 60) = Destination[24]; /*0x4108b7*/
+    *((unsigned char *)this + 60) = Destination[24]; /*0x4108b7*/
   }
 LABEL_9:
-  if ( this == (gamemd::AbstractTypeClass *)(-36) ) /*0x4108ba*/
+  if ( this == -36 ) /*0x4108ba*/
   {
     Destination[0] = 0; /*0x4108bc*/
   }
   else
   {
-    strncpy(Destination, (const char *)(this + 36), (IUnknown *)0x30); /*0x4108ca*/
+    strncpy(Destination, (const char *)((char *)this + 36), (IUnknown *)0x30); /*0x4108ca*/
     v8 = 0; /*0x4108d2*/
   }
-  if ( Destination != (char *)(this + 100) ) /*0x4108e0*/
+  if ( Destination != (char *)((char *)this + 100) ) /*0x4108e0*/
   {
-    qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x4108eb*/
-    *(unsigned char *)(this + 148) = v8; /*0x4108ed*/
+    qmemcpy((void *)((char *)this + 100), Destination, 0x30u); /*0x4108eb*/
+    *((unsigned char *)this + 148) = v8; /*0x4108ed*/
   }
-  *(unsigned int *)(this + 96) = &stru_87C374.__pad_579C[23588]; /*0x4108ee*/
+  *((unsigned int *)this + 24) = &stru_87C374.__pad_579C[23588]; /*0x4108ee*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22212] < *(int *)&HouseClass_Player.__pad_5568[22204] /*0x410929*/
     || (HouseClass_Player.__pad_5568[22209] || !*(unsigned int *)&HouseClass_Player.__pad_5568[22204])
     && *(int *)&HouseClass_Player.__pad_5568[22216] > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22196] + 8))(
+    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22196] + 8))(
          &HouseClass_Player.__pad_5568[22196],
          *(unsigned int *)&HouseClass_Player.__pad_5568[22204] + *(unsigned int *)&HouseClass_Player.__pad_5568[22216],
          0) )
@@ -85,7 +85,7 @@ LABEL_9:
     v4 = (*(unsigned int *)&HouseClass_Player.__pad_5568[22212])++; /*0x410936*/
     *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[22200] + 4 * v4) = this; /*0x410945*/
   }
-  return (int)(this);
+  return this; /*0x410948*/
 
 }
 } // namespace gamemd
@@ -97,20 +97,20 @@ int AbstractTypeClass::Dtor()
   int v2; // eax
   unsigned int *v4; // [esp+4h] [ebp-4h] BYREF
 
-  *this = (unsigned int *)(&vt_AbstractTypeClass);
-  *(this + 1) = &vt_AbstractTypeClass; /*0x4109d3*/
-  *(this + 2) = &vt_AbstractTypeClass; /*0x4109da*/
-  *(this + 3) = &vt_AbstractTypeClass; /*0x4109e1*/
+  *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
+  *((unsigned int *)this + 1) = &AbstractTypeClass::`vftable'; /*0x4109d3*/
+  *((unsigned int *)this + 2) = &AbstractTypeClass::`vftable'; /*0x4109da*/
+  *((unsigned int *)this + 3) = &vt_AbstractTypeClass; /*0x4109e1*/
   v4 = this; /*0x4109ef*/
-  v2 = (*(int (**)(int *, unsigned int **))(g_abs_A8E968 + 16))(&g_abs_A8E968, &v4); /*0x4109f3*/
-  if ( v2 != -1 && v2 < (int)((int))((int))(g_abs_A8E978) && v2 < --g_abs_A8E978 ) /*0x410a0e*/
+  v2 = (*(int (**)(int *, unsigned int **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v4); /*0x4109f3*/
+  if ( v2 != -1 && v2 < MEMORY[0xA8E978] && v2 < --MEMORY[0xA8E978] ) /*0x410a0e*/
   {
     do /*0x410a26*/
     {
       ++v2; /*0x410a16*/
-      *((unsigned int *)g_abs_A8E96C + v2 - 1) = *((unsigned int *)g_abs_A8E96C + v2); /*0x410a1a*/
+      *((unsigned int *)MEMORY[0xA8E96C] + v2 - 1) = *((unsigned int *)MEMORY[0xA8E96C] + v2); /*0x410a1a*/
     }
-    while ( v2 < (int)((int))((int))(g_abs_A8E978) ); /*0x410a26*/
+    while ( v2 < MEMORY[0xA8E978] ); /*0x410a26*/
   }
   return AbstractClass::DTOR(this); /*0x410a2f*/
 
@@ -187,23 +187,23 @@ AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (unsigned int)(&vt_AbstractTypeClass);
-  *(Block + 1) = &vt_AbstractTypeClass; /*0x410c43*/
-  *(Block + 2) = &vt_AbstractTypeClass; /*0x410c4a*/
+  *Block = &AbstractTypeClass::`vftable'; /*0x410c3d*/
+  *(Block + 1) = &AbstractTypeClass::`vftable'; /*0x410c43*/
+  *(Block + 2) = &AbstractTypeClass::`vftable'; /*0x410c4a*/
   *(Block + 3) = &vt_AbstractTypeClass; /*0x410c51*/
   v5 = Block; /*0x410c5f*/
-  v3 = (*(int (**)(int *, unsigned int **))(g_abs_A8E968 + 16))(&g_abs_A8E968, &v5); /*0x410c63*/
-  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_A8E978) && v3 < --g_abs_A8E978 ) /*0x410c7e*/
+  v3 = (*(int (**)(int *, unsigned int **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v5); /*0x410c63*/
+  if ( v3 != -1 && v3 < MEMORY[0xA8E978] && v3 < --MEMORY[0xA8E978] ) /*0x410c7e*/
   {
     do /*0x410c96*/
     {
       ++v3; /*0x410c86*/
-      *((unsigned int *)g_abs_A8E96C + v3 - 1) = *((unsigned int *)g_abs_A8E96C + v3); /*0x410c8a*/
+      *((unsigned int *)MEMORY[0xA8E96C] + v3 - 1) = *((unsigned int *)MEMORY[0xA8E96C] + v3); /*0x410c8a*/
     }
-    while ( v3 < (int)((int))((int))(g_abs_A8E978) ); /*0x410c96*/
+    while ( v3 < MEMORY[0xA8E978] ); /*0x410c96*/
   }
   AbstractClass::DTOR(Block); /*0x410c9a*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x410ca4*/
+  if ( (a2 & 1) != 0 ) /*0x410ca4*/
     OperatorDelete(Block); /*0x410ca7*/
   return (AbstractTypeClass *)Block; /*0x410cb1*/
 

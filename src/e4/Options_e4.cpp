@@ -33,7 +33,7 @@ namespace gamemd {
 int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 
-  CampaignScore ** result;
+  int result; // eax
   unsigned int v5; // edi
   wchar_t *v6; // edi
   HWND DlgItem; // eax
@@ -65,7 +65,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
   char v33[112]; // [esp+1B4h] [ebp-470h] BYREF
   CampaignScore Buffer[28]; // [esp+224h] [ebp-400h] BYREF
 
-  result = (gamemd::CampaignScore **)((int)(BaseDialogProc((SkirmishDialog *)hDlg, a2, a3, (unsigned int)a4)));
+  result = BaseDialogProc((SkirmishDialog *)hDlg, a2, a3, (unsigned int)a4); /*0x4f11dc*/
   if ( !result ) /*0x4f11e3*/
   {
     if ( a2 != 273 ) /*0x4f11ef*/
@@ -81,7 +81,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
       }
       if ( (unsigned short)a3 == 5 ) /*0x4f1220*/
       {
-        v5 = IDA_HIWORD(a3); /*0x4f1232*/
+        v5 = HIWORD(a3); /*0x4f1232*/
         if ( a4 == GetDlgItem(hDlg, 1321) ) /*0x4f1239*/
         {
           v6 = *(wchar_t **)&g_INI_Key_Grey.__pad_0[4 * v5 + 8]; /*0x4f123b*/
@@ -96,7 +96,7 @@ LABEL_11:
           v8 = DlgItem; /*0x4f1268*/
           if ( DlgItem ) /*0x4f126c*/
           {
-            StringCSF = (wchar_t *)(GetStringCSF(v6, 0, g_Str_File_GOptions_CPP, 196));
+            StringCSF = GetStringCSF(v6, 0, g_Str_File_GOptions_CPP, 196); /*0x4f1280*/
             SendMessageA(v8, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f128e*/
             return 0; /*0x4f12a0*/
           }
@@ -105,12 +105,12 @@ LABEL_11:
       }
       return 0; /*0x4f1253*/
     }
-    v10 = IDA_HIWORD(a3); /*0x4f12a8*/
+    v10 = HIWORD(a3); /*0x4f12a8*/
     WindowLongA = (unsigned int *)GetWindowLongA(hDlg, 8); /*0x4f12b1*/
     if ( (HouseClass_Player.__pad_5568[23364] & 1) == 0 ) /*0x4f12be*/
     {
       HouseClass_Player.__pad_5568[23364] |= 1u; /*0x4f12ca*/
-      *(unsigned int *)&HouseClass_Player.__pad_5568[23420] = this->Timer::GetTicks(); /*0x4f12da*/
+      *(unsigned int *)&HouseClass_Player.__pad_5568[23420] = Timer::GetTicks(); /*0x4f12da*/
       *(unsigned int *)&HouseClass_Player.__pad_5568[23428] = 0; /*0x4f12df*/
       atexit(nullsub_14); /*0x4f12e9*/
     }
@@ -120,9 +120,9 @@ LABEL_11:
       Timer::Init((DWORD *)&HouseClass_Player.__pad_5568[23436], 0); /*0x4f1308*/
       atexit(nullsub_13); /*0x4f1312*/
     }
-    if ( (uint16_t)a3 <= 0x521u ) /*0x4f1326*/
+    if ( (unsigned __int16)a3 <= 0x521u ) /*0x4f1326*/
     {
-      if ( (uint16_t)a3 == 1313 ) /*0x4f132c*/
+      if ( (unsigned __int16)a3 == 1313 ) /*0x4f132c*/
       {
         if ( !v10 ) /*0x4f14dc*/
         {
@@ -132,7 +132,7 @@ LABEL_11:
         }
         return 0; /*0x4f14dc*/
       }
-      if ( (uint16_t)a3 > 0x51Fu ) /*0x4f1338*/
+      if ( (unsigned __int16)a3 > 0x51Fu ) /*0x4f1338*/
       {
         if ( v10 ) /*0x4f1489*/
           return 0; /*0x4f1489*/
@@ -144,9 +144,9 @@ LABEL_11:
       }
       else
       {
-        if ( (uint16_t)a3 != 1311 ) /*0x4f133e*/
+        if ( (unsigned __int16)a3 != 1311 ) /*0x4f133e*/
         {
-          if ( (uint16_t)a3 == 1004 ) /*0x4f1346*/
+          if ( (unsigned __int16)a3 == 1004 ) /*0x4f1346*/
           {
             if ( !v10 ) /*0x4f13a1*/
             {
@@ -155,13 +155,13 @@ LABEL_11:
             }
             return 0; /*0x4f13a1*/
           }
-          if ( (uint16_t)a3 != 1310 || v10 ) /*0x4f1356*/
+          if ( (unsigned __int16)a3 != 1310 || v10 ) /*0x4f1356*/
             return 0; /*0x4f1356*/
           v12 = (void (*)(HWND, int))ShowWindow; /*0x4f135c*/
           ShowWindow(hDlg, 0); /*0x4f1364*/
           v13 = LoadOptions::LoadOptions(v29); /*0x4f136a*/
-          v14 = (uint8_t)LoadOptions::Run(v13); /*0x4f137a*/
-          ((LoadOptions *)(v29))->Cleanup(); /*0x4f137c*/
+          v14 = (unsigned __int8)LoadOptions::Run(v13); /*0x4f137a*/
+          LoadOptions::Cleanup(v29); /*0x4f137c*/
           if ( (unsigned char)v14 ) /*0x4f1383*/
           {
             *WindowLongA = 1310; /*0x4f138a*/
@@ -195,15 +195,15 @@ LABEL_39:
             (const size_t)&off_8240B4,
             (const wchar_t *const)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 5082),
             v25);
-        v16 = (unsigned int *)(LoadOptions::LoadOptions(v28));
+        v16 = LoadOptions::LoadOptions(v28); /*0x4f1469*/
         ShowSaveLoadDialog((int)v16, Buffer); /*0x4f1470*/
         v17 = v28; /*0x4f1475*/
       }
-      ((LoadOptions *)(v17))->Cleanup(); /*0x4f14b3*/
+      LoadOptions::Cleanup(v17); /*0x4f14b3*/
       Options::InitDialogControls(hDlg); /*0x4f14ba*/
       goto LABEL_39; /*0x4f14ba*/
     }
-    if ( (uint16_t)a3 == 1314 ) /*0x4f1508*/
+    if ( (unsigned __int16)a3 == 1314 ) /*0x4f1508*/
     {
       if ( !v10 ) /*0x4f16c2*/
       {
@@ -216,7 +216,7 @@ LABEL_39:
       }
       return 0; /*0x4f16ea*/
     }
-    if ( (uint16_t)a3 != 1653 && (uint16_t)a3 != 1670 || v10 ) /*0x4f1521*/
+    if ( (unsigned __int16)a3 != 1653 && (unsigned __int16)a3 != 1670 || v10 ) /*0x4f1521*/
       return 0; /*0x4f16f1*/
     if ( *(unsigned int *)&HouseClass_Player.__pad_5568[8068] == 4 && !*(unsigned int *)&HouseClass_Player.__pad_5568[8836] ) /*0x4f153b*/
     {
@@ -228,7 +228,7 @@ LABEL_39:
         {
           if ( Timer::GetRemainingMs((signed int *)&HouseClass_Player.__pad_5568[23436]) ) /*0x4f157e*/
           {
-            this->Debug::Log(); /*0x4f15eb*/
+            Debug::Log(); /*0x4f15eb*/
           }
           else
           {
@@ -236,9 +236,9 @@ LABEL_39:
             *(unsigned int *)&HouseClass_Player.__pad_5568[23436] = v26[0]; /*0x4f15a4*/
             *(unsigned int *)&HouseClass_Player.__pad_5568[23440] = v26[1]; /*0x4f15b0*/
             *(unsigned int *)&HouseClass_Player.__pad_5568[23444] = v26[2]; /*0x4f15b6*/
-            v21 = ((EventClass *)(v33))->Add2(*(AnimClass **)(HouseClass_Player.field_0 + 48), 0x24u, v19); /*0x4f15c6*/
+            v21 = EventClass::Add2(v33, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0x24u, v19); /*0x4f15c6*/
             OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v21); /*0x4f15d1*/
-            this->Debug::Log(); /*0x4f15dc*/
+            Debug::Log(); /*0x4f15dc*/
           }
         }
       }
@@ -254,19 +254,19 @@ LABEL_39:
             *(unsigned int *)&HouseClass_Player.__pad_5568[23420] = v27[0]; /*0x4f164e*/
             *(unsigned int *)&HouseClass_Player.__pad_5568[23424] = v27[1]; /*0x4f1658*/
             *(unsigned int *)&HouseClass_Player.__pad_5568[23428] = v27[2]; /*0x4f165e*/
-            v24 = ((EventClass *)(v32))->Add2(*(AnimClass **)(HouseClass_Player.field_0 + 48), 0xDu, (IUnknown *)v22); /*0x4f166f*/
+            v24 = EventClass::Add2(v32, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0xDu, (IUnknown *)v22); /*0x4f166f*/
             OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v24); /*0x4f167a*/
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
           }
-          this->Debug::Log(); /*0x4f169e*/
+          Debug::Log(); /*0x4f169e*/
         }
       }
     }
     *WindowLongA = 1; /*0x4f16ab*/
     return 0; /*0x4f16b4*/
   }
-  return (int)(result);
+  return result; /*0x4f120d*/
 
 }
 }
@@ -441,14 +441,14 @@ int Options::DeleteAndZero()
   v2 = 0; /*0x6244e4*/
   if ( *this <= 0 ) /*0x6244e9*/
   {
-    *(unsigned int *)this = 0; /*0x62451b*/
+    *this = 0; /*0x62451b*/
   }
   else
   {
     v3 = 0; /*0x6244ed*/
     do /*0x62450e*/
     {
-      v4 = (int)(*((char *)this + 2) + v3);
+      v4 = *((char *)this + 2) + v3; /*0x6244f4*/
       DeleteAndZero::Alt((void **)(v4 + 8)); /*0x6244f9*/
       DeleteAndZero::Alt((void **)(v4 + 4)); /*0x624501*/
       result = *this; /*0x624506*/
@@ -456,7 +456,7 @@ int Options::DeleteAndZero()
       v3 += 24; /*0x624509*/
     }
     while ( v2 < *this ); /*0x62450e*/
-    *(unsigned int *)this = 0; /*0x624511*/
+    *this = 0; /*0x624511*/
   }
   return result; /*0x624518*/
 
@@ -474,7 +474,7 @@ void Options::EnsureCapacity()
   const void *v7; // esi
   int v8; // [esp+8h] [ebp-4h]
 
-  v2 = (int)(*this);
+  v2 = *this; /*0x6248a5*/
   v3 = *((char *)this + 1); /*0x6248a8*/
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
@@ -483,12 +483,12 @@ void Options::EnsureCapacity()
     v5 = 10; /*0x6248c6*/
   if ( v5 >= v3 ) /*0x6248cd*/
     return 0; /*0x6248d0*/
-  v6 = RA2_OPNEW(24 * v5); /*0x6248dd*/
+  v6 = __2_YAPAXI_Z(24 * v5); /*0x6248dd*/
   v7 = (const void *)*((char *)this + 2); /*0x6248e2*/
   v8 = (int)v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
     qmemcpy(v6, v7, 24 * *this); /*0x624901*/
-  RA2_OPDEL((void *)*((char *)this + 2)); /*0x62490f*/
+  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x62490f*/
   *((char *)this + 2) = v8; /*0x62491b*/
   *((char *)this + 1) = v5; /*0x62491e*/
   return 1; /*0x6248b2*/
@@ -505,7 +505,7 @@ int Options::GrowBuffer()
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = (int)(*this);
+  v2 = *this; /*0x6253b4*/
   if ( *this < *((char *)this + 1) ) /*0x6253bb*/
     return 0; /*0x6253bd*/
   v4 = 2 * v2; /*0x6253c4*/
@@ -515,14 +515,14 @@ int Options::GrowBuffer()
     v6 = 10; /*0x6253d1*/
     v4 = 10; /*0x6253d9*/
   }
-  v5 = RA2_OPNEW(4 * v4); /*0x6253ec*/
+  v5 = __2_YAPAXI_Z(4 * v4); /*0x6253ec*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
   if ( *((char *)this + 2) ) /*0x625403*/
   {
     qmemcpy(v5, (const void *)*((char *)this + 2), 4 * *this); /*0x625418*/
     v4 = v6; /*0x625421*/
   }
-  RA2_OPDEL((void *)*((char *)this + 2)); /*0x625429*/
+  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x625429*/
   *((char *)this + 1) = v4; /*0x625431*/
   *((char *)this + 2) = (int)v5; /*0x625434*/
   return 1; /*0x6253bf*/
@@ -541,7 +541,7 @@ int Options::ReadOptionValue()
   const void *v7; // esi
   int v8; // [esp+8h] [ebp-4h]
 
-  v2 = (int)(*this);
+  v2 = *this; /*0x6254d5*/
   v3 = *((char *)this + 1); /*0x6254d8*/
   if ( 3 * v2 > v3 ) /*0x6254e0*/
     return 0; /*0x6254e3*/
@@ -550,12 +550,12 @@ int Options::ReadOptionValue()
     v5 = 10; /*0x6254f6*/
   if ( v5 >= v3 ) /*0x6254fd*/
     return 0; /*0x625500*/
-  v6 = RA2_OPNEW(20 * v5); /*0x62550d*/
+  v6 = __2_YAPAXI_Z(20 * v5); /*0x62550d*/
   v7 = (const void *)*((char *)this + 2); /*0x625512*/
   v8 = (int)v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
     qmemcpy(v6, v7, 20 * *this); /*0x625531*/
-  RA2_OPDEL((void *)*((char *)this + 2)); /*0x62553f*/
+  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x62553f*/
   *((char *)this + 2) = v8; /*0x62554b*/
   *((char *)this + 1) = v5; /*0x62554e*/
   return 1; /*0x6254e2*/

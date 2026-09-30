@@ -227,9 +227,10 @@ for p in files:
             want = Counter(a.lower() for a in ANCHOR.findall(dec)) if dec else None
             got = Counter(a.lower() for a in ANCHOR.findall('\n'.join(block)))
             # extras = duplicated anchors (statement-interleave damage);
-            # missing (with a non-empty body -- stubs carry none by design)
-            # = anchorless v6-restored lines / prior-epoch anchor loss.
-            damaged = bool(want and got and want != got)
+            # missing/EMPTY body with a non-empty cache = glue-corpse or
+            # anchorless v6-restored lines (stubs carry none by design but
+            # also carry no def-level glue).
+            damaged = bool(want and (not got or want != got))
             if dec and (ALL_DEFS or damaged):
                 sig_end = dec.find('{')
                 if sig_end > 0:

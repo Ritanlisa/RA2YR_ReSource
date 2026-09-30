@@ -33,10 +33,10 @@ int NetworkGameSetup::ReadRulesUnknown()
   if ( result ) /*0x5b9763*/
   {
     result = (HWND)SendMessageA(result, 0x400u, 0, 0); /*0x5b976f*/
-    g_abs_A8B278 = (LPARAM)result; /*0x5b9775*/
+    MEMORY[0xA8B278] = (LPARAM)result; /*0x5b9775*/
     *((unsigned char *)this + 9) = 1; /*0x5b977a*/
   }
-  return (int)(result);
+  return result; /*0x5b977e*/
 
 }
 } // namespace gamemd

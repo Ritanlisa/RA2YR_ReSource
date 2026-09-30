@@ -20,7 +20,6 @@
 namespace gamemd {
 MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
 {
-    unsigned int v13 = 0;  /* G37 hoist */
 
   IUnknown *result; // eax
   int v5; // ecx
@@ -31,21 +30,21 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   IUnknown *v10; // ecx
   int v11; // eax
   int v12; // ebx
-  void **v13; // ebp
-  void *v14; // eax
-  uint16_t v15; // ax
+  #375 **v13; // ebp
+  #375 *v14; // eax
+  unsigned __int16 v15; // ax
   RadarClass *v16; // ebx
   int v17; // ebx
-  void *v18; // edx
+  #375 *v18; // edx
   int v19; // eax
   int v20; // ebx
   int v21; // eax
   int v22; // edx
-  char * v23;
-  char * v24;
-  char * v25;
+  int v23; // ebx
+  int v24; // esi
+  int v25; // eax
   RadarClass *v26; // ecx
-  char * v27;
+  int v27; // edx
   bool v28; // cc
   RadarClass *v29; // edi
   IUnknown *v30; // ebx
@@ -63,7 +62,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   char aP1b; // [esp+44h] [ebp+4h]
   RadarClass *aP1c; // [esp+44h] [ebp+4h]
 
-  result = (IUnknown *)(HouseClass_Player);
+  result = HouseClass_Player; /*0x655c50*/
   if ( !HouseClass_Player ) /*0x655c62*/
     return (int)result; /*0x655c62*/
   result = (IUnknown *)(*(int (**)(unsigned int, char *))(**(unsigned int **)((char *)this + 4636) + 120))( /*0x655c75*/
@@ -83,16 +82,16 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   if ( (int)v6 >= (int)result ) /*0x655cb2*/
     return (int)result; /*0x655cb2*/
   v8 = (double)(int)aP1a / *(float *)((char *)this + 5256) - (double)*((int *)this + 1316); /*0x655cc2*/
-  v37[0] = ((int16_t)Math::RoundToInt(v8) << 8) + 128; /*0x655d1b*/
-  v37[1] = ((int16_t)Math::RoundToInt(v8) << 8) + 128; /*0x655d2b*/
+  v37[0] = ((__int16)Math::RoundToInt(v8) << 8) + 128; /*0x655d1b*/
+  v37[1] = ((__int16)Math::RoundToInt(v8) << 8) + 128; /*0x655d2b*/
   GroundHeight = 0; /*0x655d2f*/
-  GroundHeight = (IUnknown *)((Cell *)(v37))->GetGroundHeight(); /*0x655d38*/
-  if ( !g_hWnd || (aP1b = 1, !((Cell *)(v37))->IsPassable()) ) /*0x655d4f*/
+  GroundHeight = (IUnknown *)Cell::GetGroundHeight(v37); /*0x655d38*/
+  if ( !g_hWnd || (aP1b = 1, !Cell::IsPassable(v37)) ) /*0x655d4f*/
     aP1b = 0; /*0x655d5d*/
   if ( !g_hWnd || (v34 = 1, !FogOfWar_Get(v37)) ) /*0x655d74*/
     v34 = 0; /*0x655d82*/
   v35 = 0; /*0x655d8a*/
-  v9 = **(unsigned int **)((char *)this + 4696) + 24 * (uint8_t)(aP1->field_0 - 5 * (int)aP1->field_4); /*0x655da7*/
+  v9 = **(unsigned int **)((char *)this + 4696) + 24 * (unsigned __int8)(aP1->field_0 - 5 * (int)aP1->field_4); /*0x655da7*/
   v10 = *(IUnknown **)(v9 + 16); /*0x655daa*/
   v11 = *(unsigned int *)(v9 + 4); /*0x655dae*/
   v36 = v10; /*0x655db3*/
@@ -101,18 +100,18 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   v12 = v11 + 4; /*0x655dbd*/
   while ( 1 ) /*0x655dc4*/
   {
-    v13 = (unsigned int)(*(void ***)(v12 - 4));
-    if ( *(unsigned int *)v12 != aP1->field_0 || *(void **)(v12 + 4) != (void *)(void *))(aP1->field_4) ) /*0x655dd7*/
+    v13 = *(#375 ***)(v12 - 4); /*0x655dc4*/
+    if ( *(unsigned int *)v12 != aP1->field_0 || *(void **)(v12 + 4) != aP1->field_4 ) /*0x655dd7*/
       goto LABEL_25; /*0x655dd7*/
-    if ( (!aP1b || (uint8_t)House::IsHumanPlayer(((unsigned int *)(v13))[135])) /*0x655e10*/
-      && (!*(unsigned char *)((*((int (**)(void **))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 33))(v13) + 559)
+    if ( (!aP1b || (unsigned __int8)House::IsHumanPlayer(v13[135])) /*0x655e10*/
+      && (!*(unsigned char *)((*((int (**)(#375 **))*v13 + 33))(v13) + 559)
        || Object::IsAlliedWithObjectHouse(HouseClass_Player, (IUnknown *)v13)) )
     {
-      if ( !*(unsigned char *)((*((int (**)(void **))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 33))(v13) + 562) ) /*0x655e24*/
+      if ( !*(unsigned char *)((*((int (**)(#375 **))*v13 + 33))(v13) + 562) ) /*0x655e24*/
         break; /*0x655e24*/
-      if ( *(unsigned char *)((*((int (**)(void **))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 33))(v13) + 3227) ) /*0x655e3d*/
+      if ( *(unsigned char *)((*((int (**)(#375 **))*v13 + 33))(v13) + 3227) ) /*0x655e3d*/
         break; /*0x655e3d*/
-      v14 = ((unsigned int *)(v13))[135]; /*0x655e4b*/
+      v14 = v13[135]; /*0x655e4b*/
       if ( v14 ) /*0x655e53*/
       {
         if ( !*(unsigned char *)(*((unsigned int *)v14 + 13) + 422) ) /*0x655e58*/
@@ -136,9 +135,9 @@ LABEL_26:
       (*(void (**)(unsigned int, RadarClass *, unsigned int))(**(unsigned int **)((char *)this + 4636) + 36))( /*0x655f40*/
         *((unsigned int *)this + 1159),
         aP1,
-        ((unsigned int)((uint8_t)((uint8_t)(v15 >> g_abs_89F690) << g_abs_89F690) >> 1) >> g_abs_89F690 << g_abs_89F690)
-      | ((unsigned int)((uint8_t)((uint8_t)(v15 >> g_abs_89F690) << g_abs_89F690) >> 1) >> g_abs_89F690 << g_abs_89F690)
-      | ((unsigned int)((uint8_t)((uint8_t)(v15 >> g_abs_89F690) << g_abs_89F690) >> 1) >> g_abs_89F690 << g_abs_89F690));
+        ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]) >> 1) >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656])
+      | ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]) >> 1) >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
+      | ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]) >> 1) >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]));
     }
     else if ( aP1b ) /*0x65605e*/
     {
@@ -154,27 +153,27 @@ LABEL_26:
     }
     goto LABEL_45; /*0x655f43*/
   }
-  v16 = (RadarClass *)((unsigned int *)(v13))[135]; /*0x655f50*/
+  v16 = (RadarClass *)v13[135]; /*0x655f50*/
   aP1c = v16; /*0x655f5b*/
-  if ( (*((uint8_t (**)(void **))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 49))(v13) ) /*0x655f5f*/
+  if ( (*((unsigned __int8 (**)(#375 **))*v13 + 49))(v13) ) /*0x655f5f*/
   {
-    aP1c = (RadarClass *)(*((int (**)(void **, unsigned int))*(unsigned int *)((unsigned int *))((unsigned int *))(v13) + 52))(v13, 0); /*0x655f76*/
+    aP1c = (RadarClass *)(*((int (**)(#375 **, unsigned int))*v13 + 52))(v13, 0); /*0x655f76*/
     v16 = aP1c; /*0x655f7a*/
   }
   if ( v16 ) /*0x655f7e*/
-    v17 = ((uint8_t)aP1c[((unsigned int *)(1].__pad_16BB))[2946] >> g_abs_89F690 << g_abs_89F690) /*0x655fd2*/
-        | ((uint8_t)aP1c[((unsigned int *)(1].__pad_16BB))[2947] >> g_abs_89F690 << g_abs_89F690)
-        | ((uint8_t)v16[((unsigned int *)(1].__pad_16BB))[2948] >> g_abs_89F690 << g_abs_89F690);
+    v17 = ((unsigned __int8)aP1c[1].__pad_16BB[2946] >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x655fd2*/
+        | ((unsigned __int8)aP1c[1].__pad_16BB[2947] >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
+        | ((unsigned __int8)v16[1].__pad_16BB[2948] >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]);
   else
     v17 = *(unsigned int *)(FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1) + 816); /*0x655fe5*/
-  v18 = ((unsigned int *)(v13))[93]; /*0x655feb*/
-  v19 = (int)((unsigned int *)(v13))[95]; /*0x655ff1*/
-  if ( v18 == (void *)-1 ) /*0x655ffa*/
+  v18 = v13[93]; /*0x655feb*/
+  v19 = (int)v13[95]; /*0x655ff1*/
+  if ( v18 == (#375 *)-1 ) /*0x655ffa*/
   {
 LABEL_37:
     if ( v19 <= 0 /*0x65603a*/
-      || (v19 - 1) / *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 136) % 2 != 1
-      || ((unsigned int *)(v13))[135] != (unsigned int)((void *))HouseClass_Player )
+      || (v19 - 1) / *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 136) % 2 != 1
+      || v13[135] != (#375 *)HouseClass_Player )
     {
       goto LABEL_41; /*0x65603a*/
     }
@@ -185,47 +184,48 @@ LABEL_37:
   }
   else
   {
-    if ( *(unsigned int *)&g_abs_A8D63C - (int)v18 < v19 ) /*0x656006*/
+    if ( *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664] - (int)v18 < v19 ) /*0x656006*/
     {
-      v19 -= *(unsigned int *)&g_abs_A8D63C - (unsigned int)v18; /*0x656008*/
+      v19 -= *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664] - (unsigned int)v18; /*0x656008*/
       goto LABEL_37; /*0x656008*/
     }
 LABEL_41:
     (*(void (**)(RadarClass *, int))(**(unsigned int **)((char *)this + 4636) + 36))(aP1, v17); /*0x65604d*/
   }
-LABEL_45: v22 = (int)(*((unsigned int *)this + 1319));
-  v23 = (int)((char *)(*((unsigned int *)this + 1320)));
+LABEL_45:
+  v22 = *((unsigned int *)this + 1319); /*0x65608f*/
+  v23 = *((unsigned int *)this + 1320); /*0x656095*/
   v24 = (char *)this + 4620; /*0x6560a0*/
   v25 = v22 + aP1->field_0; /*0x6560a6*/
   v26 = (RadarClass *)((char *)aP1->field_4 + v23); /*0x6560a8*/
   if ( *(int *)(v24 + 8) <= 0 || *(int *)(v24 + 12) <= 0 ) /*0x6560be*/
   {
-    v27 = (char *)(v22 + aP1->field_0);
+    v27 = v22 + aP1->field_0; /*0x656125*/
     v29 = (RadarClass *)((char *)aP1->field_4 + v23); /*0x656127*/
     result = (IUnknown *)1; /*0x656129*/
     v33 = 1; /*0x65612b*/
   }
   else
   {
-    v27 = (char *)(*(unsigned int *)v24);
-    v28 = *(unsigned int *)v24 <= (unsigned int)(v25); /*0x6560c5*/
+    v27 = *(unsigned int *)v24; /*0x6560c2*/
+    v28 = *(unsigned int *)v24 <= v25; /*0x6560c5*/
     v29 = *(RadarClass **)(v24 + 4); /*0x6560c7*/
     v30 = *(IUnknown **)(v24 + 8); /*0x6560ca*/
     GroundHeight = v30; /*0x6560cd*/
     v39 = *(IUnknown **)(v24 + 12); /*0x6560d4*/
     if ( !v28 ) /*0x6560d8*/
     {
-      v30 = (int)((IUnknown *)((char *)(unsigned int)(v30)+ v27 - v25));
+      v30 = (IUnknown *)((char *)v30 + v27 - v25); /*0x6560dc*/
       v27 = v25; /*0x6560de*/
       GroundHeight = v30; /*0x6560e0*/
     }
     if ( (int)v29 > (int)v26 ) /*0x6560e6*/
     {
-      v31 = (IUnknown *)(((unsigned int)(char)*)(unsigned int)(v39)+ (char *)v29 - (char *)v26); /*0x6560ee*/
+      v31 = (IUnknown *)((char *)v39 + (char *)v29 - (char *)v26); /*0x6560ee*/
       v29 = v26; /*0x6560f0*/
       v39 = v31; /*0x6560f2*/
     }
-    if ( (int)v30 + v27 < (char *)((int))(v25) + 1 ) /*0x6560fd*/
+    if ( (int)v30 + v27 < v25 + 1 ) /*0x6560fd*/
       GroundHeight = (IUnknown *)(v25 - v27 + 2); /*0x656104*/
     v32 = v39; /*0x656108*/
     if ( (int)v29 + (int)v39 < (int)&v26->field_0 + 1 ) /*0x656114*/

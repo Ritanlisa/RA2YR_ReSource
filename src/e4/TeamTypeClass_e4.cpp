@@ -42,19 +42,17 @@
 namespace gamemd {
 int TeamTypeClass::Construct()
 {
-    unsigned int v4 = 0;  /* G37 hoist */
-    unsigned int v2 = 0;  /* G37 hoist */
 
-  void *v2; // eax
-  TeamTypeClass * v3;
-  void *v4; // eax
-  TeamTypeClass * v5;
+  #72 *v2; // eax
+  int v3; // eax
+  #72 *v4; // eax
+  int v5; // eax
   int v7; // [esp+Ch] [ebp-8h]
 
-  ((AbstractClass *)((void *)this))->Constructor(); /*0x4c98b7*/
+  AbstractClass::Constructor((#373 *)this); /*0x4c98b7*/
   *((unsigned int *)this + 9) = 0; /*0x4c98be*/
   *((unsigned char *)this + 40) = 0; /*0x4c98c1*/
-  v2 = (unsigned int)(g_abs_A8ED84);
+  v2 = MEMORY[0xA8ED84]; /*0x4c98c4*/
   *((unsigned int *)this + 13) = 0; /*0x4c98c9*/
   *((unsigned int *)this + 11) = v2; /*0x4c98cc*/
   *((unsigned int *)this + 14) = 0; /*0x4c98d4*/
@@ -75,40 +73,40 @@ int TeamTypeClass::Construct()
   *((unsigned int *)this + 26) = -1; /*0x4c990d*/
   *((unsigned int *)this + 27) = 0; /*0x4c9914*/
   *((unsigned char *)this + 112) = 0; /*0x4c9917*/
-  *(unsigned int *)this = &vt_FactoryClass; /*0x4c991a*/
-  *((unsigned int *)this + 1) = &vt_FactoryClass; /*0x4c9920*/
-  *((unsigned int *)this + 2) = &vt_FactoryClass; /*0x4c9926*/
-  *((unsigned int *)this + 3) = &vt_FactoryClass; /*0x4c992d*/
+  *(unsigned int *)this = &FactoryClass::`vftable'; /*0x4c991a*/
+  *((unsigned int *)this + 1) = &FactoryClass::`vftable'; /*0x4c9920*/
+  *((unsigned int *)this + 2) = &FactoryClass::`vftable'; /*0x4c9926*/
+  *((unsigned int *)this + 3) = &FactoryClass::`vftable'; /*0x4c992d*/
   AbstractClass::GenerateUniqueID((char *)this + 4); /*0x4c9934*/
-  if ( g_abs_A83E40 < g_abs_A83E38 /*0x4c996d*/
-    || (g_abs_A83E3D || !g_abs_A83E38)
-    && g_abs_A83E44 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A83E30 + 8))(
-         &g_abs_A83E30,
-         (unsigned int)(g_abs_A83E38)+ g_abs_A83E44,
+  if ( MEMORY[0xA83E40] < MEMORY[0xA83E38] /*0x4c996d*/
+    || (MEMORY[0xA83E3D] || !MEMORY[0xA83E38])
+    && MEMORY[0xA83E44] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA83E30] + 8))(
+         &MEMORY[0xA83E30],
+         MEMORY[0xA83E38] + MEMORY[0xA83E44],
          0) )
   {
-    v3 = (gamemd::TeamTypeClass *)((int)((unsigned int)(g_abs_A83E40++)));
-    *((unsigned int *)(unsigned int)(g_abs_A83E34)+ v3) = this; /*0x4c9989*/
+    v3 = MEMORY[0xA83E40]++; /*0x4c997a*/
+    *((unsigned int *)MEMORY[0xA83E34] + v3) = this; /*0x4c9989*/
   }
-  v4 = (unsigned int)(g_abs_A8ED84);
+  v4 = MEMORY[0xA8ED84]; /*0x4c998c*/
   *((unsigned int *)this + 14) = 0; /*0x4c9996*/
   *((unsigned int *)this + 11) = v4; /*0x4c9999*/
   *((unsigned int *)this + 12) = v7; /*0x4c999f*/
   *((unsigned int *)this + 13) = 0; /*0x4c99a2*/
   *((unsigned int *)this + 9) = 0; /*0x4c99a5*/
-  if ( g_abs_B0F730 < g_abs_B0F728 /*0x4c99dc*/
-    || (g_abs_B0F72D || !g_abs_B0F728)
-    && g_abs_B0F734 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F720 + 8))(
-         &g_abs_B0F720,
-         (unsigned int)(g_abs_B0F728)+ g_abs_B0F734,
+  if ( MEMORY[0xB0F730] < MEMORY[0xB0F728] /*0x4c99dc*/
+    || (MEMORY[0xB0F72D] || !MEMORY[0xB0F728])
+    && MEMORY[0xB0F734] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F720] + 8))(
+         &MEMORY[0xB0F720],
+         MEMORY[0xB0F728] + MEMORY[0xB0F734],
          0) )
   {
-    v5 = (gamemd::TeamTypeClass *)((int)((unsigned int)(g_abs_B0F730++)));
-    *((unsigned int *)(unsigned int)(g_abs_B0F724)+ v5) = this; /*0x4c99f8*/
+    v5 = MEMORY[0xB0F730]++; /*0x4c99e9*/
+    *((unsigned int *)MEMORY[0xB0F724] + v5) = this; /*0x4c99f8*/
   }
-  return (int)((int)((int)(this)));
+  return this; /*0x4c99fd*/
 
 }
 }
@@ -131,16 +129,16 @@ void * TeamTypeClass::CreateScriptType(AbstractClass * Source)
   if ( dword_8B41D8 <= 0 ) /*0x691c39*/
   {
 LABEL_6:
-    v3 = (INIClass *)RA2_OPNEW(0x234u); /*0x691c62*/
+    v3 = (INIClass *)__2_YAPAXI_Z(0x234u); /*0x691c62*/
     v4 = v3; /*0x691c6c*/
     if ( v3 ) /*0x691c73*/
     {
       AbstractTypeClass::Constructor((int)v3, Source); /*0x691c7c*/
       v4[2].sectionCount = 0; /*0x691c81*/
       *(unsigned int *)v4[2].__pad_20 = 0; /*0x691c8b*/
-      *(unsigned int *)v4->__pad_0 = &vt_ScriptTypeClass; /*0x691c95*/
-      v4->headNode[0] = (int)&vt_ScriptTypeClass; /*0x691c9b*/
-      v4->headNode[1] = (int)&vt_ScriptTypeClass; /*0x691ca2*/
+      *(unsigned int *)v4->__pad_0 = &ScriptTypeClass::`vftable'; /*0x691c95*/
+      v4->headNode[0] = (int)&ScriptTypeClass::`vftable'; /*0x691c9b*/
+      v4->headNode[1] = (int)&ScriptTypeClass::`vftable'; /*0x691ca2*/
       v4->headNode[2] = (int)&vt_ScriptTypeClass; /*0x691ca9*/
       v5 = dword_8B41D8; /*0x691cb0*/
       if ( dword_8B41D8 < dword_8B41D0 /*0x691cf1*/
@@ -153,7 +151,7 @@ LABEL_6:
             v5 = dword_8B41D8,
             v6) )
       {
-        dword_8B41D8 = (unsigned int)(v5 + 1);
+        dword_8B41D8 = v5 + 1; /*0x691cf6*/
         *((unsigned int *)unk_8B41CC + v5) = v4; /*0x691d02*/
         v5 = dword_8B41D8; /*0x691d05*/
       }
@@ -238,17 +236,17 @@ int TeamTypeClass::DestroyAllInstances()
   int i; // esi
   unsigned int *v4; // ecx
 
-  result = (int)(g_abs_8B40F8);
-  for ( i = 0; i < (int)((int))((int))(g_abs_8B40F8); ++i ) /*0x6f0a7d*/
+  result = MEMORY[0x8B40F8]; /*0x6f0a70*/
+  for ( i = 0; i < MEMORY[0x8B40F8]; ++i ) /*0x6f0a7d*/
   {
-    v4 = (unsigned int *)*((unsigned int *)g_abs_8B40EC + i); /*0x6f0a84*/
+    v4 = (unsigned int *)*((unsigned int *)MEMORY[0x8B40EC] + i); /*0x6f0a84*/
     if ( this == (void *)v4[9] ) /*0x6f0a8a*/
     {
       if ( v4 ) /*0x6f0a8e*/
         (*(void (**)(unsigned int *, int))(*v4 + 32))(v4, 1); /*0x6f0a94*/
       --i; /*0x6f0a97*/
     }
-    result = (int)(g_abs_8B40F8);
+    result = MEMORY[0x8B40F8]; /*0x6f0a98*/
   }
   return result; /*0x6f0aa2*/
 
@@ -1009,7 +1007,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
     }
     else
     {
-      v5 = (int *)RA2_OPNEW(8 * a2 + 4); /*0x6f2316*/
+      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x6f2316*/
       if ( v5 ) /*0x6f2320*/
       {
         *v5 = a2; /*0x6f2325*/
@@ -1057,7 +1055,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
         {
           v15 = *((unsigned int *)this + 1); /*0x6f23aa*/
           if ( v15 ) /*0x6f23af*/
-            RA2_OPDEL((void *)(v15 - 4)); /*0x6f23b9*/
+            __3_YAXPAX_Z((void *)(v15 - 4)); /*0x6f23b9*/
           *((unsigned int *)this + 1) = 0; /*0x6f23c1*/
         }
       }
@@ -1073,7 +1071,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6f23e5*/
     return 1; /*0x6f23eb*/
   }
 
@@ -1098,18 +1096,18 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
   void *v15; // ebp
   int v16; // eax
 
-  if ( a3 ) /*0x6f24bc*/
+  if ( a2 ) /*0x6f24bc*/
   {
     v4 = a3; /*0x6f24c2*/
     *((unsigned char *)this + 12) = 0; /*0x6f24c6*/
     if ( a3 ) /*0x6f24cc*/
     {
-      *a3 = a3; /*0x6f2507*/
+      *a3 = a2; /*0x6f2507*/
       v6 = a3 + 1; /*0x6f250c*/
-      if ( a3 - 1 >= 0 ) /*0x6f250f*/
+      if ( a2 - 1 >= 0 ) /*0x6f250f*/
       {
         v9 = a3 + 2; /*0x6f2511*/
-        v10 = a3; /*0x6f2514*/
+        v10 = a2; /*0x6f2514*/
         do /*0x6f251f*/
         {
           *v9 = 0; /*0x6f2515*/
@@ -1121,15 +1119,15 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
     }
     else
     {
-      v5 = (int *)RA2_OPNEW(8 * a3 + 4); /*0x6f24d6*/
+      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x6f24d6*/
       if ( v5 ) /*0x6f24e0*/
       {
-        *v5 = a3; /*0x6f24e5*/
+        *v5 = a2; /*0x6f24e5*/
         v6 = v5 + 1; /*0x6f24e9*/
-        if ( a3 - 1 >= 0 ) /*0x6f24ec*/
+        if ( a2 - 1 >= 0 ) /*0x6f24ec*/
         {
           v7 = v5 + 2; /*0x6f24ee*/
-          v8 = a3; /*0x6f24f1*/
+          v8 = a2; /*0x6f24f1*/
           do /*0x6f24fc*/
           {
             *v7 = 0; /*0x6f24f2*/
@@ -1150,8 +1148,8 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
     if ( *((unsigned int *)this + 1) ) /*0x6f252d*/
     {
       v11 = *((unsigned int *)this + 2); /*0x6f2534*/
-      if ( a3 < v11 ) /*0x6f2539*/
-        v11 = a3; /*0x6f253b*/
+      if ( a2 < v11 ) /*0x6f2539*/
+        v11 = a2; /*0x6f253b*/
       v12 = 0; /*0x6f253d*/
       if ( v11 > 0 ) /*0x6f2541*/
       {
@@ -1172,19 +1170,19 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a3)
         {
           v15 = (void *)(v14 - 4); /*0x6f2570*/
           Array::ForEachReverse(v14, 8, *(unsigned int *)(v14 - 4), (int (*)(int))nullsub_240); /*0x6f257c*/
-          RA2_OPDEL(v15); /*0x6f2582*/
+          __3_YAXPAX_Z(v15); /*0x6f2582*/
           v4 = a3; /*0x6f2587*/
         }
         *((unsigned int *)this + 1) = 0; /*0x6f258e*/
       }
     }
     *((unsigned int *)this + 1) = v6; /*0x6f2597*/
-    *((unsigned int *)this + 2) = a3; /*0x6f259f*/
+    *((unsigned int *)this + 2) = a2; /*0x6f259f*/
     *((unsigned char *)this + 13) = v4 == 0; /*0x6f25a2*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_DistributionObject_PAVAITriggerTypeClass_DiscreteDistributionClass_VAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6f25ab*/
   }
   v16 = *((unsigned int *)this + 2); /*0x6f25ae*/
   if ( v16 < *((unsigned int *)this + 4) ) /*0x6f25b6*/

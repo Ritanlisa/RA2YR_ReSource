@@ -2185,12 +2185,12 @@ void * RulesClass::readSuperWeaponTypes(int * a2)
 
   if ( this != a2 ) /*0x67a21a*/
   {
-    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this);;
+    (*(void (**)(int *))(*(unsigned int *)this + 12))(this); /*0x67a21e*/
     v3 = a2[2]; /*0x67a221*/
     *((char *)this + 2) = v3; /*0x67a226*/
     if ( v3 ) /*0x67a229*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x67a233*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a233*/
       *((char *)this + 1) = (int)v4; /*0x67a23b*/
       if ( v4 ) /*0x67a240*/
       {
@@ -2231,12 +2231,12 @@ void * RulesClass::readBuildingTypes(int * a2)
 
   if ( this != a2 ) /*0x67a31a*/
   {
-    (*(void (**)(RulesClass *))(this->DetailMinFrameRateNormal + 12))(this);;
+    (*(void (**)(int *))(*(unsigned int *)this + 12))(this); /*0x67a31e*/
     v3 = a2[2]; /*0x67a321*/
     *((char *)this + 2) = v3; /*0x67a326*/
     if ( v3 ) /*0x67a329*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x67a333*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a333*/
       *((char *)this + 1) = (int)v4; /*0x67a33b*/
       if ( v4 ) /*0x67a340*/
       {

@@ -85,7 +85,7 @@ namespace gamemd {
 int RLEBlitTransZRemapXlatAlpha_ushort::Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this + 4))( /*0x497b77*/
            this,
            a2,
            a3,
@@ -164,13 +164,13 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 3)));
-  *Block = (unsigned int)(&vt_RLEBlitTransZRemapXlatAlpha_unsigned_short);
+  v3 = (void *)*(Block + 3); /*0x49aa48*/
+  *Block = &vt_RLEBlitTransZRemapXlatAlpha_unsigned_short; /*0x49aa4b*/
   FractalNoise::Release(v3); /*0x49aa52*/
   *(Block + 3) = 0; /*0x49aa5b*/
   *Block = &vt_RLEBlitter; /*0x49aa64*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x49aa6a*/
-    RA2_OPDEL(Block); /*0x49aa6d*/
+  if ( (a2 & 1) != 0 ) /*0x49aa6a*/
+    __3_YAXPAX_Z(Block); /*0x49aa6d*/
   return (RLEBlitTransZRemapXlatAlpha_ushort *)Block; /*0x49aa77*/
 
 }

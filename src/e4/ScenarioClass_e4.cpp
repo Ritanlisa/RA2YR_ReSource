@@ -43,28 +43,28 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
 {
 
   void *result; // eax
-  unsigned int v1;
+  unsigned int *v1; // ebx
   int v2; // edi
-  int * v3;
+  int v3; // eax
   int *v4; // esi
   int v5; // ecx
   int v6; // edx
   int v7; // esi
 
-  result = g_abs_A8B230; /*0x58bb31*/
-  if ( g_abs_A8B230 ) /*0x58bb38*/
+  result = MEMORY[0xA8B230]; /*0x58bb31*/
+  if ( MEMORY[0xA8B230] ) /*0x58bb38*/
   {
-    *((unsigned int *)g_abs_A8B230 + 1103) = dword_ABED0C; /*0x58bb45*/
-    v1 = g_abs_A8B230; /*0x58bb4b*/
+    *((unsigned int *)MEMORY[0xA8B230] + 1103) = dword_ABED0C; /*0x58bb45*/
+    v1 = MEMORY[0xA8B230]; /*0x58bb4b*/
     v2 = 0; /*0x58bb52*/
-    if ( *((int *)g_abs_A8B230 + 1103) > 0 ) /*0x58bb5c*/
+    if ( *((int *)MEMORY[0xA8B230] + 1103) > 0 ) /*0x58bb5c*/
     {
-      v3 = (int *)(1104);
-      v4 = (int *)(&dword_ABE328 - 1104);
+      v3 = 1104; /*0x58bb60*/
+      v4 = &dword_ABE328 - 1104; /*0x58bb6a*/
       v5 = 1136; /*0x58bb71*/
       while ( 1 ) /*0x58bb8b*/
       {
-        if ( v3 < (int *)(1104) || v2 >= dword_ABED0C ) /*0x58bb93*/
+        if ( v3 < 1104 || v2 >= dword_ABED0C ) /*0x58bb93*/
         {
           v6 = 0; /*0x58bb9e*/
           v7 = 0; /*0x58bba0*/
@@ -74,25 +74,25 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
           v6 = v4[v3]; /*0x58bb95*/
           v7 = v4[v3 + 1]; /*0x58bb98*/
         }
-        v1[v3] = (unsigned int)((int *)(v6));
+        v1[v3] = v6; /*0x58bba2*/
         ++v2; /*0x58bbab*/
         ++v5; /*0x58bbac*/
-        *(unsigned int *)((char *)(unsigned int)(g_abs_A8B230)+ (unsigned int)(v3)* 4 + 4) = v7; /*0x58bbaf*/
+        *(unsigned int *)((char *)MEMORY[0xA8B230] + v3 * 4 + 4) = v7; /*0x58bbaf*/
         v3 += 2; /*0x58bbbd*/
-        *(unsigned int *)((char *)g_abs_A8B230 + v5 * 4 - 4) = dword_ABE304[v5 - 1137]; /*0x58bbc0*/
-        v1 = g_abs_A8B230; /*0x58bbc4*/
-        if ( v2 >= *((unsigned int *)g_abs_A8B230 + 1103) ) /*0x58bbd0*/
+        *(unsigned int *)((char *)MEMORY[0xA8B230] + v5 * 4 - 4) = dword_ABE304[v5 - 1137]; /*0x58bbc0*/
+        v1 = MEMORY[0xA8B230]; /*0x58bbc4*/
+        if ( v2 >= *((unsigned int *)MEMORY[0xA8B230] + 1103) ) /*0x58bbd0*/
           break; /*0x58bbd0*/
         v4 = &dword_ABE328 - 1104; /*0x58bb82*/
       }
     }
-    ((unsigned int *)(v1))[1099] = dword_ABDFD4; /*0x58bbda*/
-    *((unsigned int *)g_abs_A8B230 + 1100) = dword_ABDFD0; /*0x58bbed*/
-    *((unsigned int *)g_abs_A8B230 + 1101) = dword_ABEC90; /*0x58bbfe*/
+    v1[1099] = dword_ABDFD4; /*0x58bbda*/
+    *((unsigned int *)MEMORY[0xA8B230] + 1100) = dword_ABDFD0; /*0x58bbed*/
+    *((unsigned int *)MEMORY[0xA8B230] + 1101) = dword_ABEC90; /*0x58bbfe*/
     result = (void *)dword_ABECD0; /*0x58bc0a*/
-    *((unsigned int *)g_abs_A8B230 + 1102) = dword_ABECD0; /*0x58bc0f*/
+    *((unsigned int *)MEMORY[0xA8B230] + 1102) = dword_ABECD0; /*0x58bc0f*/
   }
-  return (gamemd::ScenarioClass **)(result);
+  return result; /*0x58bc16*/
 
 }
 }
@@ -294,13 +294,13 @@ int ScenarioClass::AssignStartPositions(char a1)
       if ( v3 != -2 ) /*0x5d6c1b*/
       {
         HouseClass::SetMapSeed(v2, *((unsigned int *)Block + v3)); /*0x5d6c25*/
-        *((unsigned int *)g_abs_A8B230 + v3 + 1120) = i; /*0x5d6c2f*/
+        *((unsigned int *)MEMORY[0xA8B230] + v3 + 1120) = i; /*0x5d6c2f*/
       }
     }
   }
-  v5 = (void **)(&vt_VectorClass_Cell);
+  v5 = &vt_VectorClass_Cell; /*0x5d6c45*/
   if ( Block && v7 ) /*0x5d6c58*/
-    RA2_OPDEL(Block); /*0x5d6c5b*/
+    __3_YAXPAX_Z(Block); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
 
 }
@@ -310,10 +310,10 @@ namespace gamemd {
 TimerStruct * * ScenarioClass::Constructor()
 {
 
-  unsigned int v2;
-  unsigned int v3;
-  unsigned int v4;
-  unsigned int v5;
+  wchar_t *v2; // eax
+  wchar_t *v3; // ecx
+  wchar_t *v4; // eax
+  wchar_t *v5; // edx
   unsigned int *v6; // eax
   int v7; // ecx
   int v8; // esi
@@ -322,28 +322,28 @@ TimerStruct * * ScenarioClass::Constructor()
   unsigned char *v11; // edi
 
   SeedInitRNG((unsigned int *)((char *)this + 536), 0); /*0x6832cf*/
-  *((unsigned int *)this + 389) = this->Timer::GetTicks(); /*0x6832e5*/
+  *((unsigned int *)this + 389) = Timer::GetTicks(); /*0x6832e5*/
   *((unsigned int *)this + 391) = 0; /*0x6832eb*/
-  *((unsigned int *)this + 392) = this->Timer::GetTicks(); /*0x6832f6*/
+  *((unsigned int *)this + 392) = Timer::GetTicks(); /*0x6832f6*/
   *((unsigned int *)this + 394) = 0; /*0x6832fc*/
-  v2 = g_abs_A8ED84; /*0x683302*/
+  v2 = MEMORY[0xA8ED84]; /*0x683302*/
   *((unsigned int *)this + 1148) = 0; /*0x683307*/
   *((unsigned int *)this + 1146) = v2; /*0x68330d*/
   *((unsigned char *)this + 4600) = 0; /*0x683313*/
-  v3 = g_abs_A8ED84; /*0x683319*/
+  v3 = MEMORY[0xA8ED84]; /*0x683319*/
   *((unsigned int *)this + 1160) = 0; /*0x68331f*/
   *((unsigned int *)this + 1158) = v3; /*0x683325*/
-  *((unsigned int *)this + 1161) = g_abs_A8ED84; /*0x683331*/
+  *((unsigned int *)this + 1161) = MEMORY[0xA8ED84]; /*0x683331*/
   *((unsigned int *)this + 1163) = 0; /*0x683337*/
-  v4 = (unsigned int)(g_abs_A8ED84);
+  v4 = MEMORY[0xA8ED84]; /*0x68333d*/
   *((unsigned int *)this + 1166) = 0; /*0x683342*/
   *((unsigned int *)this + 1164) = v4; /*0x683348*/
-  *((unsigned int *)this + 1167) = g_abs_A8ED84; /*0x683354*/
+  *((unsigned int *)this + 1167) = MEMORY[0xA8ED84]; /*0x683354*/
   *((unsigned int *)this + 1169) = 0; /*0x68335a*/
-  v5 = g_abs_A8ED84; /*0x683360*/
+  v5 = MEMORY[0xA8ED84]; /*0x683360*/
   *((unsigned int *)this + 1172) = 0; /*0x683366*/
   *((unsigned int *)this + 1170) = v5; /*0x68336c*/
-  *((unsigned int *)this + 3376) = g_abs_A8ED84; /*0x683381*/
+  *((unsigned int *)this + 3376) = MEMORY[0xA8ED84]; /*0x683381*/
   *((unsigned int *)this + 3378) = 0; /*0x683387*/
   TypeList::TechnoTypeConstructor((unsigned int *)((char *)this + 13524), 0, 0); /*0x68338d*/
   *((unsigned int *)this + 3385) = 0; /*0x683397*/
@@ -373,12 +373,12 @@ TimerStruct * * ScenarioClass::Constructor()
     --v7; /*0x683426*/
   }
   while ( v7 ); /*0x683427*/
-  wcscpy((wchar_t *)((char *)this + 4960), &g_abs_887734); /*0x683435*/
-  wcscpy((wchar_t *)((char *)this + 5082), &g_abs_887734); /*0x683446*/
-  strcpy((char *)((char *)this + 4700), &g_abs_889F64); /*0x683475*/
-  strcpy((char *)((char *)this + 7248), &g_abs_889F64); /*0x68349d*/
-  strcpy((char *)((char *)this + 5050), &g_abs_889F64); /*0x6834bf*/
-  wcscpy((wchar_t *)((char *)this + 5200), &g_abs_887734); /*0x6834cf*/
+  wcscpy((wchar_t *)((char *)this + 4960), &MEMORY[0x887734]); /*0x683435*/
+  wcscpy((wchar_t *)((char *)this + 5082), &MEMORY[0x887734]); /*0x683446*/
+  strcpy((char *)((char *)this + 4700), &MEMORY[0x889F64]); /*0x683475*/
+  strcpy((char *)((char *)this + 7248), &MEMORY[0x889F64]); /*0x68349d*/
+  strcpy((char *)((char *)this + 5050), &MEMORY[0x889F64]); /*0x6834bf*/
+  wcscpy((wchar_t *)((char *)this + 5200), &MEMORY[0x887734]); /*0x6834cf*/
   v8 = 0; /*0x6834d7*/
   v9 = (unsigned char *)((char *)this + 7344); /*0x6834d9*/
   do /*0x683502*/
@@ -447,28 +447,28 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   v3 = Source; /*0x683ab8*/
   if ( (!Source || !strlen(Source->field_0)) && a3 != -1 ) /*0x683ade*/
   {
-    if ( g_abs_A8EA70 == (unsigned char [1])(1) ) /*0x683ae7*/
-      v3 = (AnimClass *)&g_abs_A83E48; /*0x683ae9*/
+    if ( MEMORY[0xA8EA70].__pad_2EC[1] == 1 ) /*0x683ae7*/
+      v3 = (AnimClass *)&MEMORY[0xA83E48]; /*0x683ae9*/
     else
       v3 = (AnimClass *)(*((unsigned int *)g_CampaignTypeArray + a3) + 156); /*0x683af8*/
   }
-  *((unsigned int *)g_abs_A8B230 + 3379) = a3; /*0x683b0a*/
-  this->Debug::Log(); /*0x683b10*/
-  this->Debug::Log(); /*0x683b21*/
-  strcpy((char *)g_abs_A8B230 + 4700, v3->field_0); /*0x683b47*/
-  _strupr((char *)g_abs_A8B230 + 4700); /*0x683b5d*/
+  *((unsigned int *)MEMORY[0xA8B230] + 3379) = a3; /*0x683b0a*/
+  Debug::Log(); /*0x683b10*/
+  Debug::Log(); /*0x683b21*/
+  strcpy((char *)MEMORY[0xA8B230] + 4700, v3->field_0); /*0x683b47*/
+  _strupr((char *)MEMORY[0xA8B230] + 4700); /*0x683b5d*/
   SetSoundWarning(-1); /*0x683b68*/
-  if ( !g_abs_A8B238[0] ) /*0x683b73*/
+  if ( !MEMORY[0xA8B238][0] ) /*0x683b73*/
   {
-    v4 = *((unsigned int *)g_abs_A8B230 + 3379); /*0x683b7b*/
+    v4 = *((unsigned int *)MEMORY[0xA8B230] + 3379); /*0x683b7b*/
     if ( v4 == -1 ) /*0x683b84*/
       goto LABEL_14; /*0x683b84*/
     Field = *(unsigned int *)(*((unsigned int *)g_CampaignTypeArray + v4) + 152); /*0x683b8f*/
     goto LABEL_13; /*0x683b95*/
   }
-  if ( g_abs_A8B254 != (unsigned char [1])(-1) ) /*0x683b9f*/
+  if ( MEMORY[0xA8B254] != -1 ) /*0x683b9f*/
   {
-    v6 = *(int **)(g_abs_A8B8CC + 4 * g_abs_A8B254); /*0x683ba7*/
+    v6 = *(int **)(MEMORY[0xA8B8CC] + 4 * MEMORY[0xA8B254]); /*0x683ba7*/
     v7 = Game::CheckForGameCD((void *)0x3C); /*0x683baf*/
     if ( !ScenarioClass::CheckExists(v6, v7) ) /*0x683bb7*/
     {
@@ -477,16 +477,17 @@ LABEL_13:
       SetSoundWarning(Field); /*0x683bc9*/
     }
   }
-LABEL_14: v8 = (int)(++g_abs_A8DAB4);
-  if ( !(uint8_t)vt_CD(dword_81C1D0) ) /*0x683bf6*/
+LABEL_14:
+  v8 = ++MEMORY[0xA8DAB4]; /*0x683bce*/
+  if ( !(unsigned __int8)CD::`vftable'(dword_81C1D0) ) /*0x683bf6*/
   {
 LABEL_21:
-    if ( g_abs_A8B238[0] == 4 ) /*0x683d3c*/
-      ChatMessageWOL(0, &g_abs_887734); /*0x683d45*/
+    if ( MEMORY[0xA8B238][0] == 4 ) /*0x683d3c*/
+      ChatMessageWOL(0, &MEMORY[0x887734]); /*0x683d45*/
     return 0; /*0x683d56*/
   }
-  --g_abs_A8DAB4; /*0x683c03*/
-  (*(void (**)(int))(*(unsigned int *)g_abs_887640 + 12))(g_abs_887640); /*0x683c11*/
+  --MEMORY[0xA8DAB4]; /*0x683c03*/
+  (*(void (**)(int))(*(unsigned int *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x683c11*/
   v16[1] = 0; /*0x683c18*/
   v16[2] = 0; /*0x683c1c*/
   GenericList::Constructor(v17); /*0x683c20*/
@@ -501,15 +502,15 @@ LABEL_21:
   if ( CCINIClass::Load(v16, (int)v22, 1, 0) ) /*0x683c67*/
   {
     Bool = (Movie *)INIClass::GetBool( /*0x683c85*/
-                      (uint8_t ***)v16,
-                      (uint8_t *)g_abs_82BF9C,
-                      (uint8_t *)g_INI_Key_Intro,
+                      (unsigned __int8 ***)v16,
+                      (unsigned __int8 *)MEMORY[0x82BF9C],
+                      (unsigned __int8 *)g_INI_Key_Intro,
                       -1);
     if ( Bool != (Movie *)-1 /*0x683ca5*/
       || (Bool = (Movie *)INIClass::GetBool(
-                            (uint8_t ***)v16,
-                            (uint8_t *)g_abs_82BF9C,
-                            (uint8_t *)g_abs_83D8A8,
+                            (unsigned __int8 ***)v16,
+                            (unsigned __int8 *)MEMORY[0x82BF9C],
+                            (unsigned __int8 *)MEMORY[0x83D8A8],
                             -1),
           Bool != (Movie *)-1) )
     {
@@ -517,52 +518,52 @@ LABEL_21:
       Movie::PlayWrapper((int)Bool, (int)v3, v8, 1, 1, 1); /*0x683cbd*/
     }
   }
-  v22[0] = (unsigned int)(&vt_CCFileClass);
+  v22[0] = &vt_CCFileClass; /*0x683cc9*/
   v24 = 0; /*0x683cd1*/
   Vector::Clear((int)v23); /*0x683cd8*/
   v22[0] = &off_7E1668; /*0x683ce1*/
   BufferIOFileClass::Dtor(v22); /*0x683ce9*/
   HashTable::DestroyHashTableINIClass(v16); /*0x683cf2*/
-  this->Debug::Log(); /*0x683cfd*/
+  Debug::Log(); /*0x683cfd*/
   v10 = StringList::Find(&g_BuildingTypeClass_Count, aLoading); /*0x683d0f*/
   ThemeClass::Play(&g_BuildingTypeClass_Count, v10); /*0x683d1a*/
   if ( !Scenario::LoadWithProgress(v3) ) /*0x683d21*/
   {
-    (*(void (**)(int))(*(unsigned int *)g_abs_887640 + 16))(g_abs_887640); /*0x683d32*/
+    (*(void (**)(int))(*(unsigned int *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x683d32*/
     goto LABEL_21; /*0x683d32*/
   }
-  v12 = *((unsigned int *)g_abs_A8B230 + 1294); /*0x683d5e*/
+  v12 = *((unsigned int *)MEMORY[0xA8B230] + 1294); /*0x683d5e*/
   if ( v12 != -1 ) /*0x683d67*/
-    wsprintfA(v25, g_abs_83D888, *((const char **)g_abs_ABF394 + v12)); /*0x683d80*/
-  if ( *((int *)g_abs_A8B230 + 3380) > 0 ) /*0x683d95*/
+    wsprintfA(v25, MEMORY[0x83D888], *((const char **)MEMORY[0xABF394] + v12)); /*0x683d80*/
+  if ( *((int *)MEMORY[0xA8B230] + 3380) > 0 ) /*0x683d95*/
     LoadScreen::RenderLoop(); /*0x683d97*/
   if ( a2 ) /*0x683da0*/
-    Movie::PlayWrapper(*((unsigned int *)g_abs_A8B230 + 1297), (int)v3, v8, 1, 1, 1); /*0x683db6*/
-  if ( g_abs_886FB8 != *(unsigned int *)&g_abs_A8EA70 /*0x683dd6*/
-    || g_abs_886FBC != *(unsigned int *)&g_abs_A8EA70 )
+    Movie::PlayWrapper(*((unsigned int *)MEMORY[0xA8B230] + 1297), (int)v3, v8, 1, 1, 1); /*0x683db6*/
+  if ( MEMORY[0x886FB8] != *(unsigned int *)&MEMORY[0xA8EA70].field_D0[68] /*0x683dd6*/
+    || MEMORY[0x886FBC] != *(unsigned int *)&MEMORY[0xA8EA70].field_D0[72] )
   {
     Debug::Log(); /*0x683ddf*/
-    ChangeVideoMode(*(unsigned int *)&g_abs_A8EA70, *(unsigned int *)&g_abs_A8EA70); /*0x683df3*/
+    ChangeVideoMode(*(unsigned int *)&MEMORY[0xA8EA70].field_D0[68], *(unsigned int *)&MEMORY[0xA8EA70].field_D0[72]); /*0x683df3*/
   }
   LoadingScreen::FreeResources3(); /*0x683df8*/
-  AudioOptionsClass::ApplySettings((int)&g_abs_A8EA70); /*0x683e02*/
-  (*(void (**)(IUnknown *, unsigned int))(g_abs_88730C->field_0 + 24))(g_abs_88730C, 0); /*0x683e10*/
-  IDA_LOBYTE(v13) = 1; /*0x683e19*/
+  AudioOptionsClass::ApplySettings((int)&MEMORY[0xA8EA70].field_D0[32]); /*0x683e02*/
+  (*(void (**)(IUnknown *, unsigned int))(MEMORY[0x88730C]->field_0 + 24))(MEMORY[0x88730C], 0); /*0x683e10*/
+  LOBYTE(v13) = 1; /*0x683e19*/
   Frame::Present(v13, 0); /*0x683e1c*/
-  if ( *((unsigned int *)g_abs_A8B230 + 389) == -1 ) /*0x683e35*/
+  if ( *((unsigned int *)MEMORY[0xA8B230] + 389) == -1 ) /*0x683e35*/
   {
-    v14 = (DWORD *)((char *)g_abs_A8B230 + 1556); /*0x683e26*/
+    v14 = (DWORD *)((char *)MEMORY[0xA8B230] + 1556); /*0x683e26*/
     *v14 = Timer::GetTicks(); /*0x683e3f*/
   }
-  if ( *((unsigned int *)g_abs_A8B230 + 1820) == -1 ) /*0x683e50*/
+  if ( *((unsigned int *)MEMORY[0xA8B230] + 1820) == -1 ) /*0x683e50*/
     Theme::Stop(&g_BuildingTypeClass_Count, 1); /*0x683e66*/
   else
-    Theme::QueueSong((int)&g_BuildingTypeClass_Count, *((unsigned int *)g_abs_A8B230 + 1820)); /*0x683e58*/
+    Theme::QueueSong((int)&g_BuildingTypeClass_Count, *((unsigned int *)MEMORY[0xA8B230] + 1820)); /*0x683e58*/
   DisableIME(); /*0x683e6b*/
-  g_abs_A8EA70 = 1; /*0x683e75*/
-  g_abs_A8E378 = 1; /*0x683e7f*/
-  if ( g_abs_A8B238[0] == 4 ) /*0x683e86*/
-    ChatMessageWOL(0, &g_abs_887734); /*0x683e8f*/
+  MEMORY[0xA8EA70].__pad_2EC[0] = 1; /*0x683e75*/
+  MEMORY[0xA8E378] = 1; /*0x683e7f*/
+  if ( MEMORY[0xA8B238][0] == 4 ) /*0x683e86*/
+    ChatMessageWOL(0, &MEMORY[0x887734]); /*0x683e8f*/
   return 1; /*0x683d4a*/
 
 }

@@ -50,12 +50,12 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
   v25 = v14; /*0x7bb959*/
   while ( 1 ) /*0x7bb970*/
   {
-    a3 = (int)(v12 + v10);
-    a2 = (int)(v11 + v27);
-    v15 = (int)(v13 + v11);
-    v16 = (int)(*this);
-    v29[1] = (int)(v12 + v10);
-    v29[0] = (int)(v15);
+    a3 = v12 + v10; /*0x7bb970*/
+    a2 = v11 + v27; /*0x7bb974*/
+    v15 = v13 + v11; /*0x7bb978*/
+    v16 = *this; /*0x7bb97b*/
+    v29[1] = v12 + v10; /*0x7bb97d*/
+    v29[0] = v15; /*0x7bb985*/
     (*(void (**)(int *, int *, unsigned int *, int *, int))(v16 + 44))(this, &a5, v29, &a2, a9); /*0x7bb99b*/
     v17 = v12 + v11; /*0x7bb9a2*/
     v18 = -v12; /*0x7bb9a5*/

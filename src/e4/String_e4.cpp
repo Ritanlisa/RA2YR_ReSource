@@ -230,16 +230,16 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   char *v27; // [esp+18h] [ebp-4h]
   char *v28; // [esp+24h] [ebp+8h]
 
-  v3 = (void **)((const char *)((void **)this));
-  v4 = (char *)((const char *)(0));
-  v5 = (const char *)(*this);
+  v3 = (void **)this; /*0x7b57a6*/
+  v4 = 0; /*0x7b57a8*/
+  v5 = *this; /*0x7b57ae*/
   if ( !*this ) /*0x7b57ae*/
-    v5 = &g_abs_889F64; /*0x7b57b4*/
+    v5 = &MEMORY[0x889F64]; /*0x7b57b4*/
   if ( !v5 ) /*0x7b57bc*/
     goto LABEL_33; /*0x7b57bc*/
   while ( *v5 ) /*0x7b57c6*/
   {
-    v6 = (char *)(strstr(v5, SubStr));
+    v6 = strstr(v5, SubStr); /*0x7b57d2*/
     v27 = v6; /*0x7b57da*/
     if ( !v6 ) /*0x7b57e0*/
     {
@@ -249,7 +249,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
       v18 = v17; /*0x7b5931*/
       if ( v4 ) /*0x7b5934*/
         v18 = strlen(v4) + v17; /*0x7b5940*/
-      v19 = (char *)RA2_OPNEW(v18); /*0x7b5943*/
+      v19 = (char *)__2_YAPAXI_Z(v18); /*0x7b5943*/
       v4 = v19; /*0x7b594b*/
       if ( v16 ) /*0x7b594f*/
         strcpy(v19, v16); /*0x7b5967*/
@@ -257,7 +257,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
         *v19 = 0; /*0x7b5972*/
       strcat(v19, v5); /*0x7b5993*/
       if ( v28 ) /*0x7b59a2*/
-        RA2_OPDEL(v28); /*0x7b59a5*/
+        __3_YAXPAX_Z(v28); /*0x7b59a5*/
       break; /*0x7b59a5*/
     }
     v7 = v6 - v5; /*0x7b57e6*/
@@ -269,7 +269,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
       Block = v4; /*0x7b57f5*/
       if ( v4 ) /*0x7b57f9*/
         v9 = strlen(v4) + 1 + v7; /*0x7b5807*/
-      v10 = (char *)RA2_OPNEW(v9); /*0x7b580a*/
+      v10 = (char *)__2_YAPAXI_Z(v9); /*0x7b580a*/
       v4 = v10; /*0x7b5812*/
       if ( v8 ) /*0x7b5816*/
       {
@@ -282,7 +282,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
       }
       strncat(v10, v5, Count); /*0x7b5847*/
       if ( v8 ) /*0x7b5851*/
-        RA2_OPDEL(v8); /*0x7b5854*/
+        __3_YAXPAX_Z(v8); /*0x7b5854*/
     }
     v11 = a3; /*0x7b585c*/
     if ( a3 ) /*0x7b5862*/
@@ -292,7 +292,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
       v14 = v13; /*0x7b5878*/
       if ( v4 ) /*0x7b587b*/
         v14 = strlen(v4) + v13; /*0x7b5887*/
-      v15 = (char *)RA2_OPNEW(v14); /*0x7b588a*/
+      v15 = (char *)__2_YAPAXI_Z(v14); /*0x7b588a*/
       v4 = v15; /*0x7b5892*/
       if ( v12 ) /*0x7b5896*/
       {
@@ -305,7 +305,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
       }
       strcat(v15, v11); /*0x7b58de*/
       if ( v12 ) /*0x7b58e9*/
-        RA2_OPDEL(v12); /*0x7b58ec*/
+        __3_YAXPAX_Z(v12); /*0x7b58ec*/
     }
     v5 = &v27[strlen(SubStr)]; /*0x7b5908*/
     if ( !v5 ) /*0x7b590a*/
@@ -313,27 +313,28 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   }
   if ( !v4 ) /*0x7b59af*/
   {
-    v3 = (void **)((const char *)((void **)this));
-LABEL_33: v20 = (const char *)(&g_abs_889F64);
+    v3 = (void **)this; /*0x7b59b1*/
+LABEL_33:
+    v20 = &MEMORY[0x889F64]; /*0x7b59b5*/
     goto LABEL_35; /*0x7b59ba*/
   }
-  v3 = (void **)((gamemd::AbstractClass **)((void **)this));
-  v20 = (const char *)((gamemd::AbstractClass **)(v4));
+  v3 = (void **)this; /*0x7b59bc*/
+  v20 = v4; /*0x7b59c0*/
 LABEL_35:
   if ( *v3 ) /*0x7b59c2*/
-    RA2_OPDEL(*v3); /*0x7b59c9*/
+    __3_YAXPAX_Z(*v3); /*0x7b59c9*/
   *v3 = 0; /*0x7b59d3*/
   if ( v20 ) /*0x7b59d9*/
     v21 = strlen(v20) + 1; /*0x7b59e2*/
   else
     v21 = 1; /*0x7b59e8*/
-  v22 = (char *)RA2_OPNEW(v21); /*0x7b59ee*/
+  v22 = (char *)__2_YAPAXI_Z(v21); /*0x7b59ee*/
   *this = v22; /*0x7b59fc*/
   *v22 = 0; /*0x7b59fe*/
   if ( v20 ) /*0x7b5a01*/
     strcpy(*this, v20); /*0x7b5a1d*/
   if ( v4 ) /*0x7b5a29*/
-    RA2_OPDEL(v4); /*0x7b5a2c*/
+    __3_YAXPAX_Z(v4); /*0x7b5a2c*/
   return 1; /*0x7b5a34*/
 
 }
@@ -343,7 +344,7 @@ namespace gamemd {
 AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
 {
 
-  AbstractClass ** v4;
+  int v4; // esi
   signed int v7; // ecx
   signed int v8; // ecx
   signed int v9; // ecx
@@ -358,10 +359,10 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   ObjectClass *v18; // esi
   size_t v19; // ecx
   unsigned char *v20; // eax
-  AbstractClass ** v21;
+  int v21; // [esp+14h] [ebp+4h]
   char *Str; // [esp+18h] [ebp+8h]
 
-  v4 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(a2)));
+  v4 = a2; /*0x7b5f13*/
   if ( a2 < 0 ) /*0x7b5f1c*/
     return -1; /*0x7b5f21*/
   while ( 1 )
@@ -375,7 +376,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
     v8 = strlen(*this); /*0x7b5f6e*/
   else
     v8 = 0; /*0x7b5f61*/
-  if ( v4 >= (gamemd::AbstractClass **)(v8) ) /*0x7b5f71*/
+  if ( v4 >= v8 ) /*0x7b5f71*/
     return -1; /*0x7b5f76*/
   v21 = v4; /*0x7b5f7d*/
   while ( 1 )
@@ -389,44 +390,44 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   v11 = &(*this)[v21]; /*0x7b5fbd*/
   Str = v10; /*0x7b5fbf*/
   if ( *(unsigned int *)aP3->__pad_0 ) /*0x7b5fc3*/
-    RA2_OPDEL(*(void **)aP3->__pad_0); /*0x7b5fca*/
+    __3_YAXPAX_Z(*(void **)aP3->__pad_0); /*0x7b5fca*/
   *(unsigned int *)aP3->__pad_0 = 0; /*0x7b5fd4*/
   if ( v11 ) /*0x7b5fda*/
     v12 = strlen(v11) + 1; /*0x7b5fe3*/
   else
     v12 = 1; /*0x7b5fe9*/
-  v13 = (unsigned char *)RA2_OPNEW(v12); /*0x7b5fef*/
+  v13 = (unsigned char *)__2_YAPAXI_Z(v12); /*0x7b5fef*/
   *(unsigned int *)aP3->__pad_0 = v13; /*0x7b5ff7*/
   *v13 = 0; /*0x7b5ffb*/
   if ( v11 ) /*0x7b5ffe*/
     strcpy(*(char **)aP3->__pad_0, v11); /*0x7b6016*/
-  v14 = (ObjectClass *)&g_abs_87F8E4; /*0x7b6029*/
+  v14 = (ObjectClass *)&MEMORY[0x87F8E4].__pad_5568[20760]; /*0x7b6029*/
   v15 = (size_t)&v10[-v21 + 1]; /*0x7b602e*/
   if ( *(unsigned int *)aP3->__pad_0 ) /*0x7b6023*/
     v14 = *(ObjectClass **)aP3->__pad_0; /*0x7b6033*/
-  v16 = (char *)RA2_OPNEW((size_t)&v10[-v21 + 2]); /*0x7b6039*/
+  v16 = (char *)__2_YAPAXI_Z((size_t)&v10[-v21 + 2]); /*0x7b6039*/
   v17 = (ObjectClass *)v16; /*0x7b603e*/
   *v16 = 0; /*0x7b6045*/
   if ( v14 ) /*0x7b6049*/
     strncpy(v16, v14->__pad_0, v15); /*0x7b604e*/
   v17->__pad_0[v15] = 0; /*0x7b6056*/
-  v18 = (ObjectClass *)&g_abs_87F8E4; /*0x7b605a*/
+  v18 = (ObjectClass *)&MEMORY[0x87F8E4].__pad_5568[20760]; /*0x7b605a*/
   if ( v17 ) /*0x7b6061*/
     v18 = v17; /*0x7b6063*/
   if ( *(unsigned int *)aP3->__pad_0 ) /*0x7b6065*/
-    RA2_OPDEL(*(void **)aP3->__pad_0); /*0x7b606c*/
+    __3_YAXPAX_Z(*(void **)aP3->__pad_0); /*0x7b606c*/
   *(unsigned int *)aP3->__pad_0 = 0; /*0x7b6076*/
   if ( v18 ) /*0x7b607c*/
     v19 = strlen(v18->__pad_0) + 1; /*0x7b6085*/
   else
     v19 = 1; /*0x7b608b*/
-  v20 = (unsigned char *)RA2_OPNEW(v19); /*0x7b6091*/
+  v20 = (unsigned char *)__2_YAPAXI_Z(v19); /*0x7b6091*/
   *(unsigned int *)aP3->__pad_0 = v20; /*0x7b6099*/
   *v20 = 0; /*0x7b609d*/
   if ( v18 ) /*0x7b60a0*/
     strcpy(*(char **)aP3->__pad_0, v18->__pad_0); /*0x7b60b8*/
   if ( v17 ) /*0x7b60c3*/
-    RA2_OPDEL(v17); /*0x7b60c6*/
+    __3_YAXPAX_Z(v17); /*0x7b60c6*/
   return (int)(Str + 1); /*0x7b5f1e*/
 
 }
@@ -460,14 +461,14 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
     return -1; /*0x7b7a6f*/
   while ( 1 ) /*0x7b7a7a*/
   {
-    v7 = (const wchar_t *)(*this);
+    v7 = *this; /*0x7b7a7a*/
     if ( *this ) /*0x7b7a7a*/
       v7 = (const wchar_t *)wcslen(*this); /*0x7b7a81*/
     if ( v4 >= (int)v7 || !wcschr(Str, (*this)[v4]) ) /*0x7b7a95*/
       break; /*0x7b7a95*/
     ++v4; /*0x7b7aa1*/
   }
-  v8 = (const wchar_t *)(*this);
+  v8 = *this; /*0x7b7aa4*/
   if ( *this ) /*0x7b7aa4*/
     v8 = (const wchar_t *)wcslen(*this); /*0x7b7aab*/
   if ( v4 >= (int)v8 ) /*0x7b7ab5*/
@@ -482,49 +483,49 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
       break; /*0x7b7ade*/
     ++v4; /*0x7b7aea*/
   }
-  v11 = (const wchar_t *)(v4 - 1);
+  v11 = v4 - 1; /*0x7b7af3*/
   v23 = v4 - 1; /*0x7b7af8*/
   v12 = &(*this)[v9]; /*0x7b7afe*/
   if ( *a4 ) /*0x7b7af6*/
-    RA2_OPDEL(*a4); /*0x7b7b04*/
+    __3_YAXPAX_Z(*a4); /*0x7b7b04*/
   *a4 = 0; /*0x7b7b0e*/
   if ( v12 ) /*0x7b7b14*/
     v13 = wcslen(v12) + 1; /*0x7b7b1f*/
   else
     v13 = 1; /*0x7b7b22*/
-  v14 = RA2_OPNEW(2 * v13); /*0x7b7b2b*/
+  v14 = __2_YAPAXI_Z(2 * v13); /*0x7b7b2b*/
   *a4 = v14; /*0x7b7b33*/
   *v14 = 0; /*0x7b7b37*/
   if ( v12 ) /*0x7b7b3c*/
     wcscpy((wchar_t *)*a4, v12); /*0x7b7b42*/
   v15 = v11 - v9; /*0x7b7b4e*/
-  v16 = &g_abs_887734; /*0x7b7b50*/
+  v16 = &MEMORY[0x887734]; /*0x7b7b50*/
   v17 = v15 + 1; /*0x7b7b55*/
   if ( *a4 ) /*0x7b7b4a*/
     v16 = (const wchar_t *)*a4; /*0x7b7b5a*/
-  v18 = (wchar_t *)RA2_OPNEW(2 * v17 + 2); /*0x7b7b61*/
+  v18 = (wchar_t *)__2_YAPAXI_Z(2 * v17 + 2); /*0x7b7b61*/
   v19 = v18; /*0x7b7b66*/
   *v18 = 0; /*0x7b7b6d*/
   if ( v16 ) /*0x7b7b72*/
     wcsncpy(v18, v16, v17); /*0x7b7b77*/
   v19[v17] = 0; /*0x7b7b7f*/
-  v20 = &g_abs_887734; /*0x7b7b88*/
+  v20 = &MEMORY[0x887734]; /*0x7b7b88*/
   if ( v19 ) /*0x7b7b8d*/
     v20 = v19; /*0x7b7b8f*/
   if ( *a4 ) /*0x7b7b91*/
-    RA2_OPDEL(*a4); /*0x7b7b98*/
+    __3_YAXPAX_Z(*a4); /*0x7b7b98*/
   *a4 = 0; /*0x7b7ba2*/
   if ( v20 ) /*0x7b7ba8*/
     v21 = wcslen(v20) + 1; /*0x7b7bb3*/
   else
     v21 = 1; /*0x7b7bb6*/
-  v22 = RA2_OPNEW(2 * v21); /*0x7b7bbf*/
+  v22 = __2_YAPAXI_Z(2 * v21); /*0x7b7bbf*/
   *a4 = v22; /*0x7b7bc7*/
   *v22 = 0; /*0x7b7bcb*/
   if ( v20 ) /*0x7b7bd0*/
     wcscpy((wchar_t *)*a4, v20); /*0x7b7bd6*/
   if ( v19 ) /*0x7b7be0*/
-    RA2_OPDEL(v19); /*0x7b7be3*/
+    __3_YAXPAX_Z(v19); /*0x7b7be3*/
   return v23 + 1; /*0x7b7a6d*/
 
 }

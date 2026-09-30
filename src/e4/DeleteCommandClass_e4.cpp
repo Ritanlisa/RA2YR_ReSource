@@ -33,7 +33,7 @@ unsigned int * DeleteCommandClass::Constructor()
 char * DeleteCommandClass::AddRef()
 {
 
-  return (char *)(aDelete);
+  return aDelete; /*0x537f25*/
 
 }
 // 0x537F30
@@ -146,7 +146,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x53c57c*/
       v4 = a3; /*0x53c592*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x53c58e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x53c58e*/
     *((unsigned char *)this + 12) = 1; /*0x53c596*/
     if ( v4 ) /*0x53c59a*/
     {
@@ -159,7 +159,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
           ++i; /*0x53c5be*/
         if ( *((unsigned char *)this + 13) ) /*0x53c5cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x53c5d6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x53c5d6*/
           *((unsigned int *)this + 1) = 0; /*0x53c5de*/
         }
       }
@@ -175,7 +175,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x53c602*/
     return 1; /*0x53c608*/
   }
 
@@ -252,7 +252,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x53c6b8*/
       v4 = a3; /*0x53c6ce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x53c6ca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x53c6ca*/
     *((unsigned char *)this + 12) = 1; /*0x53c6d2*/
     if ( !v4 ) /*0x53c6d6*/
       return 0; /*0x53c74a*/
@@ -265,7 +265,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x53c6f1*/
       if ( *((unsigned char *)this + 13) ) /*0x53c6fe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x53c709*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x53c709*/
         *((unsigned int *)this + 1) = 0; /*0x53c711*/
       }
     }
@@ -275,7 +275,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x53c72e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x53c731*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x53c739*/
@@ -314,17 +314,17 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_AnimClass_const);
+  v3 = (void *)*(Block + 1); /*0x53c783*/
+  *Block = &vt_VectorClass_AnimClass_const; /*0x53c786*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x53c790*/
   {
-    RA2_OPDEL(v3); /*0x53c798*/
+    __3_YAXPAX_Z(v3); /*0x53c798*/
     *(Block + 1) = 0; /*0x53c7a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x53c7ab*/
   *(Block + 2) = 0; /*0x53c7b1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x53c7b8*/
-    RA2_OPDEL(Block); /*0x53c7bb*/
+  if ( (a2 & 1) != 0 ) /*0x53c7b8*/
+    __3_YAXPAX_Z(Block); /*0x53c7bb*/
   return (VectorClass *)Block; /*0x53c7c5*/
 
 }
@@ -337,17 +337,17 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_AnimClass_const);
+  v3 = (void *)*(Block + 1); /*0x53c7d3*/
+  *Block = &vt_VectorClass_AnimClass_const; /*0x53c7d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x53c7e0*/
   {
-    RA2_OPDEL(v3); /*0x53c7e8*/
+    __3_YAXPAX_Z(v3); /*0x53c7e8*/
     *(Block + 1) = 0; /*0x53c7f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x53c7fb*/
   *(Block + 2) = 0; /*0x53c801*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x53c808*/
-    RA2_OPDEL(Block); /*0x53c80b*/
+  if ( (a2 & 1) != 0 ) /*0x53c808*/
+    __3_YAXPAX_Z(Block); /*0x53c80b*/
   return (DynamicVector *)Block; /*0x53c815*/
 
 }

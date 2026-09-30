@@ -36,8 +36,8 @@ int UDPInterfaceClass::connect()
   result = *((unsigned char *)this + 258152); /*0x7b1b53*/
   if ( result ) /*0x7b1b5b*/
   {
-    (*(void (**)(UDPInterfaceClass *))(this->Socket + 4))(this);;
-    (*(void (**)(UDPInterfaceClass *))(this->Socket + 4))(this);;
+    (*(void (**)(unsigned char *))(*(unsigned int *)this + 32))(this); /*0x7b1b5f*/
+    (*(void (**)(unsigned char *))(*(unsigned int *)this + 4))(this); /*0x7b1b66*/
     result = WSACleanup(); /*0x7b1b69*/
     *((unsigned char *)this + 258152) = 0; /*0x7b1b6e*/
   }
@@ -610,7 +610,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
     if ( a3 ) /*0x7b44b8*/
       v4 = a3; /*0x7b44ce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x7b44ca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x7b44ca*/
     *((unsigned char *)this + 12) = 1; /*0x7b44d2*/
     if ( !v4 ) /*0x7b44d6*/
       return 0; /*0x7b454a*/
@@ -623,7 +623,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
         ++i; /*0x7b44f1*/
       if ( *((unsigned char *)this + 13) ) /*0x7b44fe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x7b4509*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x7b4509*/
         *((unsigned int *)this + 1) = 0; /*0x7b4511*/
       }
     }
@@ -633,7 +633,7 @@ AbstractClass * * UDPInterfaceClass::flush(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAE *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x7b452e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x7b4531*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x7b4539*/
@@ -777,7 +777,7 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
 {
 
   if ( a3 && Network::IsBroadcastAddr(a3) ) /*0x7b36ce*/
-    ( this, a2, a3, a6)
+    return (*(__int16 (**)(void *, WinsockInterfaceClass *, unsigned int, WinsockInterfaceClass *))(*(unsigned int *)this + 16))( /*0x7b36ea*/
              this,
              aP1,
              arg4,
@@ -887,7 +887,7 @@ int UDPInterfaceClass_Destru::Receive()
     v3 = (unsigned int *)this + 64704; /*0x7b38aa*/
     while ( 1 ) /*0x7b38b8*/
     {
-      v4 = (HWND)(*(int (**)(UDPInterfaceClass *, int))(this->Socket + 56))(this, -1);
+      v4 = (*(int (**)(SOCKET *, int))(*(unsigned int *)this + 224))(this, -1); /*0x7b38b8*/
       if ( WSAAsyncSelect(*v3, g_hWnd, v4, 3) == -1 ) /*0x7b38ce*/
         break; /*0x7b38ce*/
       ++v2; /*0x7b38d6*/
@@ -911,7 +911,7 @@ int UDPInterfaceClass_Destru::CheckStatus()
 {
 
   NetworkClass::UnregisterAsync(this); /*0x7b3903*/
-  int UDPInterfaceClass_Destru::CheckStatus(UDPInterfaceClass *this)
+  return (*(int (**)(SOCKET *))(*(unsigned int *)this + 448))(this); /*0x7b390f*/
 
 }
 // 0x7B3920

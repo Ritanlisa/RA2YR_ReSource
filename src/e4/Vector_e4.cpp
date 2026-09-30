@@ -117,20 +117,20 @@ int Vector::RemoveAt( AbstractClass * aP1)
   AbstractClass *v3; // eax
   int v4; // edx
 
-  v2 = (int)(*(this + 4));
+  v2 = *((unsigned int *)this + 4); /*0x45ae10*/
   v3 = aP1; /*0x45ae13*/
   if ( (int)aP1 >= v2 ) /*0x45ae19*/
     return 0; /*0x45ae3c*/
   v4 = v2 - 1; /*0x45ae1b*/
-  *(this + 4) = v4; /*0x45ae1e*/
+  *((unsigned int *)this + 4) = v4; /*0x45ae1e*/
   if ( (int)aP1 < v4 ) /*0x45ae21*/
   {
     do /*0x45ae34*/
     {
       v3 = (AbstractClass *)((char *)v3 + 1); /*0x45ae27*/
-      *(unsigned int *)(*(this + 1) + 4 * (unsigned int)v3 - 4) = *(unsigned int *)(*(this + 1) + 4 * (unsigned int)v3); /*0x45ae2b*/
+      *(unsigned int *)(*((unsigned int *)this + 1) + 4 * (unsigned int)v3 - 4) = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * (unsigned int)v3); /*0x45ae2b*/
     }
-    while ( (int)v3 < *(this + 4) ); /*0x45ae34*/
+    while ( (int)v3 < *((unsigned int *)this + 4) ); /*0x45ae34*/
   }
   return 1; /*0x45ae39*/
 
@@ -211,7 +211,7 @@ char Vector::Grow()
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = (int)(*this);
+  v2 = *this; /*0x7aeec4*/
   if ( *this < *((char *)this + 1) ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
   v4 = 2 * v2; /*0x7aeed4*/
@@ -221,14 +221,14 @@ char Vector::Grow()
     v6 = 10; /*0x7aeee1*/
     v4 = 10; /*0x7aeee9*/
   }
-  v5 = RA2_OPNEW(4 * v4); /*0x7aeefc*/
+  v5 = __2_YAPAXI_Z(4 * v4); /*0x7aeefc*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
   if ( *((char *)this + 2) ) /*0x7aef13*/
   {
     qmemcpy(v5, (const void *)*((char *)this + 2), 4 * *this); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
-  RA2_OPDEL((void *)*((char *)this + 2)); /*0x7aef39*/
+  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7aef39*/
   *((char *)this + 1) = v4; /*0x7aef41*/
   *((char *)this + 2) = (int)v5; /*0x7aef44*/
   return 1; /*0x7aeecf*/

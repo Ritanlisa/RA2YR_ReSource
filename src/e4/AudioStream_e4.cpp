@@ -453,7 +453,7 @@ int AudioStream::ReadSamples(const void * a2)
 
   unsigned int *v2; // ebx
   int v3; // edx
-  unsigned int v5;
+  unsigned int *v5; // ecx
   unsigned short *v6; // ebx
   unsigned int v7; // edi
   int v8; // ebp
@@ -466,13 +466,13 @@ int AudioStream::ReadSamples(const void * a2)
   unsigned int v16[27]; // [esp+30h] [ebp-D0h] BYREF
   unsigned int v17[25]; // [esp+9Ch] [ebp-64h] BYREF
 
-  v2 = (unsigned int *)(this);
+  v2 = this; /*0x4a33a7*/
   v3 = *((unsigned int *)this + 28); /*0x4a33ac*/
   if ( !v3 ) /*0x4a33b7*/
     return -1; /*0x4a33b7*/
   if ( *this == 2 )
   {
-    if ( !g_abs_8A0E08 || !*((unsigned int *)g_abs_8A0E08 + 28) ) /*0x4a33d8*/
+    if ( !MEMORY[0x8A0E08] || !*((unsigned int *)MEMORY[0x8A0E08] + 28) ) /*0x4a33d8*/
       return -1; /*0x4a33c6*/
     v15[2] = 256; /*0x4a33e7*/
     v15[3] = 256; /*0x4a33eb*/
@@ -483,7 +483,7 @@ int AudioStream::ReadSamples(const void * a2)
     return (*(int (**)(int, unsigned int, unsigned int, unsigned int *, int, unsigned int *))(*(unsigned int *)v3 + 20))( /*0x4a3427*/
              v3,
              0,
-             *((unsigned int *)g_abs_8A0E08 + 28),
+             *((unsigned int *)MEMORY[0x8A0E08] + 28),
              v15,
              512,
              v17);
@@ -502,25 +502,25 @@ int AudioStream::ReadSamples(const void * a2)
       {
         if ( *v2 == 1 ) /*0x4a347f*/
         {
-          v5 = (unsigned int *)(g_abs_887644);
-          if ( g_abs_887644 ) /*0x4a348d*/
+          v5 = MEMORY[0x887644]; /*0x4a3485*/
+          if ( MEMORY[0x887644] ) /*0x4a348d*/
           {
-            if ( g_abs_87E8A4 ) /*0x4a3499*/
+            if ( MEMORY[0x87E8A4] ) /*0x4a3499*/
             {
               v6 = (unsigned short *)v16[9]; /*0x4a34a6*/
               v7 = 0; /*0x4a34aa*/
               v8 = v16[4] >> 1; /*0x4a34ac*/
               v14 = v16[4] >> 1; /*0x4a34b0*/
-              v13 = *((unsigned int *)g_abs_887644 + 11); /*0x4a34b4*/
+              v13 = *((unsigned int *)MEMORY[0x887644] + 11); /*0x4a34b4*/
               if ( v13 ) /*0x4a34b8*/
               {
                 do /*0x4a353c*/
                 {
-                  SamplePosition = (unsigned short *)Audio::GetSamplePosition((int)v5, 0, v7 - ((unsigned int *)(v5))[1]); /*0x4a34d4*/
+                  SamplePosition = (unsigned short *)Audio::GetSamplePosition((int)v5, 0, v7 - v5[1]); /*0x4a34d4*/
                   v10 = (unsigned short *)StreamClass::ReadAndSeek( /*0x4a34df*/
-                                   (int)g_abs_87E8A4,
+                                   (int)MEMORY[0x87E8A4],
                                    0,
-                                   v7 - *((unsigned int *)g_abs_87E8A4 + 1));
+                                   v7 - *((unsigned int *)MEMORY[0x87E8A4] + 1));
                   if ( !SamplePosition || !v10 ) /*0x4a34ee*/
                     break; /*0x4a34ee*/
                   if ( v8 ) /*0x4a34f2*/
@@ -531,14 +531,14 @@ int AudioStream::ReadSamples(const void * a2)
                         *v6 = 0; /*0x4a3502*/
                       else
                         *v6 = *SamplePosition; /*0x4a34fd*/
-                      v5 = g_abs_887644; /*0x4a3507*/
+                      v5 = MEMORY[0x887644]; /*0x4a3507*/
                       v11 = SamplePosition + 1; /*0x4a350d*/
                       ++v6; /*0x4a3510*/
-                      if ( (unsigned int)(SamplePosition + 1) >= *((unsigned int *)g_abs_887644 + 7) ) /*0x4a3516*/
-                        v11 = (unsigned short *)((char *)v11 - *((unsigned int *)g_abs_887644 + 8)); /*0x4a3518*/
+                      if ( (unsigned int)(SamplePosition + 1) >= *((unsigned int *)MEMORY[0x887644] + 7) ) /*0x4a3516*/
+                        v11 = (unsigned short *)((char *)v11 - *((unsigned int *)MEMORY[0x887644] + 8)); /*0x4a3518*/
                       SamplePosition = v11; /*0x4a351b*/
-                      if ( (unsigned int)++v10 >= *((unsigned int *)g_abs_87E8A4 + 7) ) /*0x4a3529*/
-                        v10 = (unsigned short *)((char *)v10 - *((unsigned int *)g_abs_87E8A4 + 8)); /*0x4a352b*/
+                      if ( (unsigned int)++v10 >= *((unsigned int *)MEMORY[0x87E8A4] + 7) ) /*0x4a3529*/
+                        v10 = (unsigned short *)((char *)v10 - *((unsigned int *)MEMORY[0x87E8A4] + 8)); /*0x4a352b*/
                       --v8; /*0x4a352e*/
                     }
                     while ( v8 ); /*0x4a352f*/
@@ -546,13 +546,13 @@ int AudioStream::ReadSamples(const void * a2)
                   }
                   else
                   {
-                    v5 = (unsigned int *)(g_abs_887644);
+                    v5 = MEMORY[0x887644]; /*0x4a3540*/
                   }
                   ++v7; /*0x4a3539*/
                 }
                 while ( v7 < v13 ); /*0x4a353c*/
               }
-              v2 = (unsigned int *)(this);
+              v2 = this; /*0x4a356f*/
             }
           }
         }
@@ -571,7 +571,6 @@ int AudioStream::ReadSamples(const void * a2)
 namespace gamemd {
 MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, int a6, int a7, int a8)
 {
-    unsigned int v78 = 0;  /* G37 hoist */
 
   int *v8; // eax
   IUnknown **v9; // eax
@@ -606,7 +605,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   TacticalClass *v38; // edx
   int v39; // ecx
   int v40; // esi
-  uint16_t v41; // ax
+  unsigned __int16 v41; // ax
   unsigned short *v42; // eax
   int v43; // eax
   unsigned short *v44; // eax
@@ -614,12 +613,12 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   int v47; // eax
   TacticalClass *v48; // edx
   int v49; // esi
-  uint16_t v50; // ax
+  unsigned __int16 v50; // ax
   unsigned short *v51; // ecx
   unsigned short *v52; // ecx
   int v53; // edx
   int v54; // esi
-  uint16_t v55; // ax
+  unsigned __int16 v55; // ax
   unsigned int v56; // ecx
   unsigned int v57; // edi
   int v58; // esi
@@ -667,7 +666,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
 
   if ( a6 < 8 ) /*0x4bead5*/
     return 0; /*0x4bead5*/
-  v8 = (int *)(*(int (**)(AudioStream *, int *))(*(unsigned int *)this->__pad_0 + 120))(this, &v78);;
+  v8 = (int *)(*(int (**)(void *, MouseClass **))(*(unsigned int *)this + 120))(this, &v76); /*0x4beae2*/
   v9 = (IUnknown **)ClipRectIntersection(&v74, &aP1->field_0, v8, 0, 0); /*0x4beaf5*/
   v10 = *v9; /*0x4beafc*/
   v82 = *v9; /*0x4beafe*/
@@ -724,7 +723,6 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   }
   if ( aP1a != v20 || v79 != v21 ) /*0x4bec77*/
   {
-    unsigned int v101 = 0;  /* G37 hoist */
     v75 = v79 - v77; /*0x4bec8d*/
     v74 = (unsigned short *)((char *)aP1a - (char *)v76); /*0x4bec97*/
     v76 = (MouseClass *)((char *)v20 - (char *)v76); /*0x4bec9b*/
@@ -738,36 +736,36 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
     else
       aP2a = (IUnknown *)(v15 - v27); /*0x4becf1*/
   }
-  v101 = (*(int (**)(AudioStream *, int, int))(*(unsigned int *)this->__pad_0 + 92))(this, v80, v81);
-  v101 = (*(int (**)(AudioStream *, int, int))(*(unsigned int *)this->__pad_0 + 92))(this, v80, v81);
-  if ( !*(unsigned int *)&g_abs_87F8E4 ) /*0x4bed2e*/
+  (*(void (**)(void *))(*(unsigned int *)this + 112))(this); /*0x4bed0b*/
+  v99 = (*(int (**)(void *, MouseClass *, int))(*(unsigned int *)this + 92))(this, aP1a, v79); /*0x4bed25*/
+  if ( !*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] ) /*0x4bed2e*/
     return 0; /*0x4bed2e*/
-  v28 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 4); /*0x4bed38*/
+  v28 = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 4); /*0x4bed38*/
   v77 = v79; /*0x4bed3f*/
   SamplePosition = (unsigned short *)Audio::GetSamplePosition( /*0x4bed56*/
-                              *(int *)&g_abs_87F8E4,
+                              *(int *)&MEMORY[0x87F8E4].__pad_5568[10232],
                               aP1a,
                               (MouseClass *)(v79 - v28));
-  v30 = g_abs_87E8A4->field_4; /*0x4bed5c*/
+  v30 = MEMORY[0x87E8A4]->field_4; /*0x4bed5c*/
   v77 = v79; /*0x4bed5f*/
-  v31 = StreamClass::ReadAndSeek((int)g_abs_87E8A4, aP1a, (MouseClass *)(v79 - (unsigned int)v30)); /*0x4bed67*/
+  v31 = StreamClass::ReadAndSeek((int)MEMORY[0x87E8A4], aP1a, (MouseClass *)(v79 - (unsigned int)v30)); /*0x4bed67*/
   v32 = (unsigned short *)v31; /*0x4bed7a*/
-  IDA_LOWORD(v31) = *(unsigned short *)(*(unsigned int *)&g_abs_87F8E4 + 4) /*0x4bed87*/
-              + *(unsigned short *)(*(unsigned int *)&g_abs_87F8E4 + 36);
+  LOWORD(v31) = *(unsigned short *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 4) /*0x4bed87*/
+              + *(unsigned short *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 36);
   v65 = -1; /*0x4bed8b*/
   v100 = (int)aP2a + v31 - v79 - (unsigned int)v83; /*0x4bed99*/
-  v86 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 40); /*0x4beda3*/
+  v86 = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 40); /*0x4beda3*/
   if ( !v99 ) /*0x4bedb3*/
     return 0; /*0x4bf63e*/
   v33 = 256 - a6; /*0x4bedd0*/
-  v68 = (a6 * IDA_LOBYTE(aP4->field_0)) >> 8; /*0x4bedd8*/
-  v67 = (a6 * IDA_BYTE1(aP4->field_0)) >> 8; /*0x4bede7*/
-  v66 = (a6 * IDA_BYTE2(aP4->field_0)) >> 8; /*0x4bedfa*/
+  v68 = (a6 * LOBYTE(aP4->field_0)) >> 8; /*0x4bedd8*/
+  v67 = (a6 * BYTE1(aP4->field_0)) >> 8; /*0x4bede7*/
+  v66 = (a6 * BYTE2(aP4->field_0)) >> 8; /*0x4bedfa*/
   v34 = (char *)v80 - (char *)aP1a; /*0x4bee06*/
   v70 = (char *)v80 - (char *)aP1a; /*0x4bee0c*/
   v95 = v81 - v79; /*0x4bee19*/
   aP2b = (IUnknown *)((char *)aP3a - (char *)aP2a); /*0x4bee2b*/
-  v37 = (*(int (**)(AudioStream *))(*(unsigned int *)this->__pad_0 + 116))(this);;
+  v35 = (*(int (**)(void *))(*(unsigned int *)this + 116))(this); /*0x4bee32*/
   v64 = v35; /*0x4bee3c*/
   if ( v95 < 0 ) /*0x4bee42*/
   {
@@ -796,29 +794,29 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
         v73[0] = 0; /*0x4bf3e0*/
         do /*0x4bf620*/
         {
-          v54 = (uint16_t)*v32; /*0x4bf3f1*/
-          if ( (uint16_t)v100 < *SamplePosition && *v32 ) /*0x4bf3ec*/
+          v54 = (unsigned __int16)*v32; /*0x4bf3f1*/
+          if ( (unsigned __int16)v100 < *SamplePosition && *v32 ) /*0x4bf3ec*/
           {
             v55 = *(unsigned short *)(v53 + v99); /*0x4bf409*/
-            IDA_LOBYTE(v76) = (uint8_t)(v55 >> g_abs_89F690) << g_abs_89F690; /*0x4bf428*/
-            IDA_BYTE1(v76) = (uint8_t)(v55 >> g_abs_89F690) << g_abs_89F690; /*0x4bf439*/
-            IDA_BYTE2(v76) = (uint8_t)(v55 >> g_abs_89F690) << g_abs_89F690; /*0x4bf456*/
+            LOBYTE(v76) = (unsigned __int8)(v55 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bf428*/
+            BYTE1(v76) = (unsigned __int8)(v55 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bf439*/
+            BYTE2(v76) = (unsigned __int8)(v55 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bf456*/
             v53 = v73[0]; /*0x4bf4e1*/
-            *(unsigned short *)(v73[0] + v99) = ((v54 * (v68 + ((v33 * (uint8_t)v76) >> 8))) >> 7 >> g_abs_89F690 << g_abs_89F690) /*0x4bf4e5*/
-                                     | ((v54 * (v67 + ((v33 * IDA_BYTE1(v76)) >> 8))) >> 7 >> g_abs_89F690 << g_abs_89F690)
-                                     | ((v54 * (v66 + ((v33 * IDA_BYTE2(v76)) >> 8))) >> 7 >> g_abs_89F690 << g_abs_89F690);
+            *(unsigned short *)(v73[0] + v99) = ((v54 * (v68 + ((v33 * (unsigned __int8)v76) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4bf4e5*/
+                                     | ((v54 * (v67 + ((v33 * BYTE1(v76)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
+                                     | ((v54 * (v66 + ((v33 * BYTE2(v76)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]);
           }
           if ( (int)aP4c > 0 ) /*0x4bf4f2*/
           {
             ++SamplePosition; /*0x4bf4f9*/
             v53 += 2; /*0x4bf4fc*/
-            v56 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28); /*0x4bf4ff*/
+            v56 = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28); /*0x4bf4ff*/
             v73[0] = v53; /*0x4bf502*/
             if ( (unsigned int)SamplePosition >= v56 ) /*0x4bf508*/
               SamplePosition = (unsigned short *)((char *)SamplePosition /*0x4bf50a*/
-                                       - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32));
-            if ( (unsigned int)++v32 >= *(unsigned int *)&g_abs_87E8A4->__pad_18[4] ) /*0x4bf518*/
-              v32 = (unsigned short *)((char *)v32 - *(unsigned int *)&g_abs_87E8A4->__pad_18[8]); /*0x4bf51a*/
+                                       - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
+            if ( (unsigned int)++v32 >= *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[4] ) /*0x4bf518*/
+              v32 = (unsigned short *)((char *)v32 - *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf51a*/
             aP4c = (IUnknown *)((char *)aP4c - v96); /*0x4bf52d*/
           }
           if ( v62 > 0 ) /*0x4bf53a*/
@@ -833,32 +831,32 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
           if ( v86 <= 0 ) /*0x4bf5ab*/
           {
             v74 = (unsigned short *)v57; /*0x4bf5cd*/
-            if ( v57 >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 24) ) /*0x4bf5d4*/
+            if ( v57 >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 24) ) /*0x4bf5d4*/
               v58 = (int)v74; /*0x4bf5dd*/
             else
-              v58 = v57 + *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32); /*0x4bf5d9*/
+              v58 = v57 + *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32); /*0x4bf5d9*/
             SamplePosition = (unsigned short *)v58; /*0x4bf5e1*/
           }
           else
           {
             v74 = (unsigned short *)v57; /*0x4bf5b3*/
-            if ( v57 < *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x4bf5ba*/
+            if ( v57 < *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf5ba*/
               SamplePosition = v74; /*0x4bf5c1*/
             else
-              SamplePosition = (unsigned short *)(v57 - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32)); /*0x4bf5bc*/
+              SamplePosition = (unsigned short *)(v57 - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x4bf5bc*/
           }
           v32 += v86; /*0x4bf5e7*/
           v100 += v65; /*0x4bf5e9*/
           if ( v86 <= 0 ) /*0x4bf5f2*/
           {
             v59 = v32; /*0x4bf609*/
-            if ( (unsigned int)v32 < *(unsigned int *)g_abs_87E8A4->__pad_18 ) /*0x4bf60e*/
-              v59 = (unsigned short *)((char *)v32 + *(unsigned int *)&g_abs_87E8A4->__pad_18[8]); /*0x4bf613*/
+            if ( (unsigned int)v32 < *(unsigned int *)MEMORY[0x87E8A4]->__pad_18 ) /*0x4bf60e*/
+              v59 = (unsigned short *)((char *)v32 + *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf613*/
             v32 = v59; /*0x4bf615*/
           }
-          else if ( (unsigned int)v32 >= *(unsigned int *)&g_abs_87E8A4->__pad_18[4] ) /*0x4bf5fc*/
+          else if ( (unsigned int)v32 >= *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[4] ) /*0x4bf5fc*/
           {
-            v32 = (unsigned short *)((char *)v32 - *(unsigned int *)&g_abs_87E8A4->__pad_18[8]); /*0x4bf5fe*/
+            v32 = (unsigned short *)((char *)v32 - *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf5fe*/
           }
           --v72; /*0x4bf61c*/
         }
@@ -873,21 +871,21 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
       v73[0] = 0; /*0x4bf170*/
       if ( v34 > 0 ) /*0x4bf174*/
       {
-        v48 = (TacticalClass *)g_abs_87E8A4; /*0x4bf17a*/
+        v48 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf17a*/
         do /*0x4bf39a*/
         {
-          v49 = (uint16_t)*v32; /*0x4bf18d*/
-          if ( (uint16_t)v100 < *SamplePosition && *v32 ) /*0x4bf188*/
+          v49 = (unsigned __int16)*v32; /*0x4bf18d*/
+          if ( (unsigned __int16)v100 < *SamplePosition && *v32 ) /*0x4bf188*/
           {
             v50 = *(unsigned short *)(v99 + 2 * v47); /*0x4bf1ac*/
-            IDA_LOBYTE(v74) = (uint8_t)(v50 >> g_abs_89F690) << g_abs_89F690; /*0x4bf1c4*/
-            IDA_BYTE1(v74) = (uint8_t)(v50 >> g_abs_89F690) << g_abs_89F690; /*0x4bf1e5*/
-            IDA_BYTE2(v74) = (uint8_t)(v50 >> g_abs_89F690) << g_abs_89F690; /*0x4bf1f1*/
+            LOBYTE(v74) = (unsigned __int8)(v50 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bf1c4*/
+            BYTE1(v74) = (unsigned __int8)(v50 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bf1e5*/
+            BYTE2(v74) = (unsigned __int8)(v50 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bf1f1*/
             v47 = v73[0]; /*0x4bf27c*/
-            *(unsigned short *)(v99 + 2 * v73[0]) = ((v49 * (v68 + ((v33 * (uint8_t)v74) >> 8))) >> 7 >> g_abs_89F690 << g_abs_89F690) /*0x4bf280*/
-                                         | ((v49 * (v66 + ((v33 * IDA_BYTE2(v74)) >> 8))) >> 7 >> g_abs_89F690 << g_abs_89F690)
-                                         | ((v49 * (v67 + ((v33 * IDA_BYTE1(v74)) >> 8))) >> 7 >> g_abs_89F690 << g_abs_89F690);
-            v48 = (TacticalClass *)g_abs_87E8A4; /*0x4bf284*/
+            *(unsigned short *)(v99 + 2 * v73[0]) = ((v49 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4bf280*/
+                                         | ((v49 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
+                                         | ((v49 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672]);
+            v48 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf284*/
           }
           if ( (int)aP4b > 0 ) /*0x4bf293*/
           {
@@ -897,28 +895,28 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
             if ( v86 <= 0 ) /*0x4bf2cb*/
             {
               v51 = SamplePosition; /*0x4bf2e3*/
-              if ( (unsigned int)SamplePosition < *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 24) ) /*0x4bf2e8*/
-                v51 = (unsigned short *)((char *)SamplePosition + *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32)); /*0x4bf2ed*/
+              if ( (unsigned int)SamplePosition < *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 24) ) /*0x4bf2e8*/
+                v51 = (unsigned short *)((char *)SamplePosition + *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x4bf2ed*/
               SamplePosition = v51; /*0x4bf2ef*/
             }
-            else if ( (unsigned int)SamplePosition >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x4bf2d6*/
+            else if ( (unsigned int)SamplePosition >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf2d6*/
             {
               SamplePosition = (unsigned short *)((char *)SamplePosition /*0x4bf2d8*/
-                                       - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32));
+                                       - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
             }
-            v48 = (TacticalClass *)g_abs_87E8A4; /*0x4bf2f5*/
+            v48 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf2f5*/
             v100 += v65; /*0x4bf2fb*/
             v32 += v86; /*0x4bf309*/
             if ( v86 <= 0 ) /*0x4bf30d*/
             {
               v52 = v32; /*0x4bf31c*/
-              if ( (unsigned int)v32 < *(unsigned int *)g_abs_87E8A4->__pad_18 ) /*0x4bf320*/
-                v52 = (unsigned short *)((char *)v32 + *(unsigned int *)&g_abs_87E8A4->__pad_18[8]); /*0x4bf325*/
+              if ( (unsigned int)v32 < *(unsigned int *)MEMORY[0x87E8A4]->__pad_18 ) /*0x4bf320*/
+                v52 = (unsigned short *)((char *)v32 + *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf325*/
               v32 = v52; /*0x4bf327*/
             }
-            else if ( (unsigned int)v32 >= *(unsigned int *)&g_abs_87E8A4->__pad_18[4] ) /*0x4bf312*/
+            else if ( (unsigned int)v32 >= *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[4] ) /*0x4bf312*/
             {
-              v32 = (unsigned short *)((char *)v32 - *(unsigned int *)&g_abs_87E8A4->__pad_18[8]); /*0x4bf314*/
+              v32 = (unsigned short *)((char *)v32 - *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf314*/
             }
           }
           if ( v61 > 0 ) /*0x4bf32f*/
@@ -928,9 +926,9 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
           }
           aP4b = (IUnknown *)((char *)aP4b + v96); /*0x4bf360*/
           v61 += aP3b; /*0x4bf373*/
-          if ( (unsigned int)++SamplePosition >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x4bf37d*/
+          if ( (unsigned int)++SamplePosition >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf37d*/
             SamplePosition = (unsigned short *)((char *)SamplePosition /*0x4bf37f*/
-                                     - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32));
+                                     - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
           if ( (unsigned int)++v32 >= v48->referenceCount ) /*0x4bf38a*/
             v32 = (unsigned short *)((char *)v32 - (unsigned int)v48->NeedsSaveOrLink); /*0x4bf38c*/
           v73[0] = ++v47; /*0x4bf396*/
@@ -945,24 +943,24 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
     aP4a = (IUnknown *)(aP2c - v37); /*0x4beed6*/
     if ( v37 > 0 ) /*0x4beedd*/
     {
-      v38 = (TacticalClass *)g_abs_87E8A4; /*0x4beee3*/
+      v38 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4beee3*/
       v39 = 0; /*0x4beee9*/
       v71 = 0; /*0x4beeeb*/
       v73[0] = v37; /*0x4beeef*/
       while ( 1 ) /*0x4bef00*/
       {
-        v40 = (uint16_t)*v32; /*0x4bef00*/
-        if ( (uint16_t)v100 < *SamplePosition && *v32 ) /*0x4beefb*/
+        v40 = (unsigned __int16)*v32; /*0x4bef00*/
+        if ( (unsigned __int16)v100 < *SamplePosition && *v32 ) /*0x4beefb*/
         {
           v41 = *(unsigned short *)(v39 + v99); /*0x4bef18*/
-          IDA_LOBYTE(v74) = (uint8_t)(v41 >> g_abs_89F690) << g_abs_89F690; /*0x4bef37*/
-          IDA_BYTE1(v74) = (uint8_t)(v41 >> g_abs_89F690) << g_abs_89F690; /*0x4bef58*/
-          IDA_BYTE2(v74) = (uint8_t)(v41 >> g_abs_89F690) << g_abs_89F690; /*0x4bef68*/
+          LOBYTE(v74) = (unsigned __int8)(v41 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bef37*/
+          BYTE1(v74) = (unsigned __int8)(v41 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bef58*/
+          BYTE2(v74) = (unsigned __int8)(v41 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bef68*/
           v39 = v71; /*0x4befe7*/
-          *(unsigned short *)(v71 + v99) = ((v40 * (v68 + ((v33 * (uint8_t)v74) >> 8))) >> 7 >> g_abs_89F690 << g_abs_89F690) /*0x4beff4*/
-                                | ((v40 * (v66 + ((v33 * IDA_BYTE2(v74)) >> 8))) >> 7 >> g_abs_89F690 << g_abs_89F690)
-                                | ((v40 * (v67 + ((v33 * IDA_BYTE1(v74)) >> 8))) >> 7 >> g_abs_89F690 << g_abs_89F690);
-          v38 = (TacticalClass *)g_abs_87E8A4; /*0x4beff8*/
+          *(unsigned short *)(v71 + v99) = ((v40 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4beff4*/
+                                | ((v40 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
+                                | ((v40 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672]);
+          v38 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4beff8*/
         }
         if ( v60 <= 0 ) /*0x4bf004*/
         {
@@ -975,22 +973,22 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
         if ( v86 <= 0 ) /*0x4bf039*/
         {
           v42 = SamplePosition; /*0x4bf050*/
-          if ( (unsigned int)SamplePosition < *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 24) ) /*0x4bf055*/
-            v42 = (unsigned short *)((char *)SamplePosition + *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32)); /*0x4bf05a*/
+          if ( (unsigned int)SamplePosition < *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 24) ) /*0x4bf055*/
+            v42 = (unsigned short *)((char *)SamplePosition + *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x4bf05a*/
           SamplePosition = v42; /*0x4bf05c*/
         }
-        else if ( (unsigned int)SamplePosition >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x4bf043*/
+        else if ( (unsigned int)SamplePosition >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf043*/
         {
           SamplePosition = (unsigned short *)((char *)SamplePosition /*0x4bf045*/
-                                   - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32));
+                                   - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
         }
-        v38 = (TacticalClass *)g_abs_87E8A4; /*0x4bf065*/
+        v38 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf065*/
         v32 += v86; /*0x4bf06b*/
         if ( v86 <= 0 ) /*0x4bf06f*/
           break; /*0x4bf06f*/
-        if ( (unsigned int)v32 < *(unsigned int *)&g_abs_87E8A4->__pad_18[4] ) /*0x4bf074*/
+        if ( (unsigned int)v32 < *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[4] ) /*0x4bf074*/
           goto LABEL_43; /*0x4bf074*/
-        v32 = (unsigned short *)((char *)v32 - *(unsigned int *)&g_abs_87E8A4->__pad_18[8]); /*0x4bf07d*/
+        v32 = (unsigned short *)((char *)v32 - *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf07d*/
         v43 = v65 + v100; /*0x4bf086*/
 LABEL_45:
         if ( (int)aP4a > 0 ) /*0x4bf0b9*/
@@ -998,9 +996,9 @@ LABEL_45:
           ++SamplePosition; /*0x4bf0c1*/
           v39 += 2; /*0x4bf0c4*/
           v71 = v39; /*0x4bf0ca*/
-          if ( (unsigned int)SamplePosition >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x4bf0ce*/
+          if ( (unsigned int)SamplePosition >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4bf0ce*/
             SamplePosition = (unsigned short *)((char *)SamplePosition /*0x4bf0d0*/
-                                     - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32));
+                                     - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32));
           if ( (unsigned int)++v32 >= v38->referenceCount ) /*0x4bf0db*/
             v32 = (unsigned short *)((char *)v32 - (unsigned int)v38->NeedsSaveOrLink); /*0x4bf0dd*/
           aP4a = (IUnknown *)((char *)aP4a - aP3b); /*0x4bf0e7*/
@@ -1014,8 +1012,8 @@ LABEL_45:
           goto LABEL_52; /*0x4bf12c*/
       }
       v44 = v32; /*0x4bf08d*/
-      if ( (unsigned int)v32 < *(unsigned int *)g_abs_87E8A4->__pad_18 ) /*0x4bf091*/
-        v44 = (unsigned short *)((char *)v32 + *(unsigned int *)&g_abs_87E8A4->__pad_18[8]); /*0x4bf096*/
+      if ( (unsigned int)v32 < *(unsigned int *)MEMORY[0x87E8A4]->__pad_18 ) /*0x4bf091*/
+        v44 = (unsigned short *)((char *)v32 + *(unsigned int *)&MEMORY[0x87E8A4]->__pad_18[8]); /*0x4bf096*/
       v32 = v44; /*0x4bf098*/
 LABEL_43:
       v43 = v65 + v100; /*0x4bf09a*/
@@ -1023,7 +1021,7 @@ LABEL_43:
     }
   }
 LABEL_52:
-  LABEL_52: (*(void (**)(AudioStream *))(*(unsigned int *)this->__pad_0 + 96))(this);;
+  (*(void (**)(void *))(*(unsigned int *)this + 96))(this); /*0x4bf132*/
   return 1; /*0x4bf13b*/
 
 }

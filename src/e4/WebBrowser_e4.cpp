@@ -36,8 +36,8 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   BYTE Data[512]; // [esp+160h] [ebp-408h] BYREF
   wchar_t Destination[260]; // [esp+360h] [ebp-208h] BYREF
 
-  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_abs_849690, 0, 0x20019u, &phkResult) ) /*0x773628*/
-    return (char *)(0);
+  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, MEMORY[0x849690], 0, 0x20019u, &phkResult) ) /*0x773628*/
+    return 0; /*0x773628*/
   strcpy(ValueName, a2); /*0x77364f*/
   if ( !*((unsigned int *)this + 2) ) /*0x773653*/
     strcat(ValueName, stru_84968C); /*0x773684*/
@@ -46,14 +46,14 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   RegCloseKey(phkResult); /*0x7736c2*/
   if ( v3 ) /*0x7736ca*/
     return 0; /*0x7736ca*/
-  this->Debug::Log(); /*0x7736e5*/
+  Debug::Log(); /*0x7736e5*/
   if ( !*((unsigned int *)this + 2) ) /*0x7736f2*/
     return WebBrowser::OpenURL(Data); /*0x773843*/
   mbstowcs((wchar_t *)((char *)this + 12), (const char *)Data, 0x200u); /*0x773709*/
-  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_abs_84964C, 0, 0x20019u, &phkResult) ) /*0x773726*/
+  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, MEMORY[0x84964C], 0, 0x20019u, &phkResult) ) /*0x773726*/
     return 0; /*0x773726*/
   cbData = 260; /*0x77374a*/
-  v4 = RegQueryValueExA(phkResult, g_abs_849640, 0, &Type, v12, &cbData); /*0x773754*/
+  v4 = RegQueryValueExA(phkResult, MEMORY[0x849640], 0, &Type, v12, &cbData); /*0x773754*/
   RegCloseKey(phkResult); /*0x77375b*/
   if ( v4 ) /*0x773763*/
     return 0; /*0x773763*/
@@ -90,7 +90,7 @@ int WebBrowser::ShowDialog()
   unsigned int *v5; // eax
   int v6; // esi
   unsigned int *v7; // ebp
-  unsigned int * dwNewLong;
+  LONG dwNewLong; // [esp+1Ch] [ebp-28h] BYREF
   const char *v9; // [esp+20h] [ebp-24h]
   struct tagRECT Rect; // [esp+24h] [ebp-20h] BYREF
   int v11; // [esp+34h] [ebp-10h] BYREF
@@ -98,8 +98,8 @@ int WebBrowser::ShowDialog()
   int v13; // [esp+3Ch] [ebp-8h]
   int v14; // [esp+40h] [ebp-4h]
 
-  v1 = (const char *)(this);
-  v9 = (const char *)(this);
+  v1 = this; /*0x773e94*/
+  v9 = this; /*0x773e99*/
   if ( !this || !strlen(this) ) /*0x773eaa*/
     return (HWND)Debug::Log(aDowebpagedialo); /*0x774060*/
   Debug::Log("Creating WebBrowser Dialog for %s.\n", v1); /*0x773ebb*/
@@ -107,9 +107,9 @@ int WebBrowser::ShowDialog()
   v3 = result; /*0x773ed4*/
   if ( result ) /*0x773ed8*/
   {
-    dwNewLong = (LONG)((unsigned int *)(0));
+    dwNewLong = 0; /*0x773ee7*/
     SetWindowLongA(result, 8, (LONG)&dwNewLong); /*0x773eef*/
-    IDA_LOBYTE(v4) = 1; /*0x773ef5*/
+    LOBYTE(v4) = 1; /*0x773ef5*/
     SetDialogActiveFlag(v3, v4); /*0x773ef9*/
     Dialog::Show(v3); /*0x773f00*/
     GetClientRect(v3, &Rect); /*0x773f0b*/
@@ -117,13 +117,13 @@ int WebBrowser::ShowDialog()
     v13 = v11 + 800; /*0x773f39*/
     v12 = Rect.top + (Rect.bottom - Rect.top - 600) / 2; /*0x773f4f*/
     v14 = v12 + 600; /*0x773f58*/
-    v5 = RA2_OPNEW(0x414u); /*0x773f5c*/
+    v5 = __2_YAPAXI_Z(0x414u); /*0x773f5c*/
     v6 = (int)v5; /*0x773f61*/
     if ( v5 ) /*0x773f68*/
     {
-      v7 = (unsigned int)(v5 + 2);
-      v5[1] = (unsigned int)(1);
-      v5[2] = (unsigned int)(0);
+      v7 = v5 + 2; /*0x773f6e*/
+      v5[1] = 1; /*0x773f71*/
+      v5[2] = 0; /*0x773f7d*/
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
       *v5 = &vt_WebBrowser; /*0x773f95*/
@@ -146,17 +146,17 @@ int WebBrowser::ShowDialog()
     dword_B72D0C = v6; /*0x774007*/
     if ( v6 ) /*0x77400d*/
     {
-      if ( (uint8_t)WebBrowser::LoadURLFromRegistry(v1) && !dwNewLong ) /*0x774021*/
+      if ( (unsigned __int8)WebBrowser::LoadURLFromRegistry(v1) && !dwNewLong ) /*0x774021*/
       {
-        while ( !this->Dialog::PumpMessages() && !dwNewLong ) /*0x774032*/
+        while ( !Dialog::PumpMessages() && !dwNewLong ) /*0x774032*/
           ; /*0x774023*/
       }
       (*(void (**)(int))(*(unsigned int *)dword_B72D0C + 8))(dword_B72D0C); /*0x77403c*/
       dword_B72D0C = 0; /*0x77403f*/
     }
-    return (int)(Dialog::Destroy(v3));
+    return Dialog::Destroy(v3); /*0x77404b*/
   }
-  return (int)(result);
+  return result; /*0x774051*/
 
 }
 }
@@ -169,18 +169,18 @@ int WebBrowser::GoForward()
   char v4; // [esp+10h] [ebp+4h]
 
   *(unsigned int *)this->__pad_0 = &vt_WebBrowser; /*0x7740a8*/
-  this->Debug::Log(); /*0x7740ae*/
+  Debug::Log(); /*0x7740ae*/
   if ( this->field_8 ) /*0x7740b3*/
   {
-    this->Debug::Log(); /*0x7740c2*/
+    Debug::Log(); /*0x7740c2*/
     (*(void (**)(void *, WebBrowser *))(*(unsigned int *)this->field_8 + 24))(this->field_8, this); /*0x7740d1*/
     (*(void (**)(void *))(*(unsigned int *)this->field_8 + 16))(this->field_8); /*0x7740da*/
   }
-  v2 = (void *)(this->field_8);
+  v2 = this->field_8; /*0x7740dd*/
   if ( v2 ) /*0x7740e2*/
     (*(void (**)(void *))(*(unsigned int *)v2 + 8))(this->field_8); /*0x7740e7*/
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
-    RA2_OPDEL(this); /*0x7740f2*/
+    __3_YAXPAX_Z(this); /*0x7740f2*/
   return (int)this->__pad_0; /*0x7740fc*/
 
 }

@@ -56,11 +56,11 @@ namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&vt_MechLocomotionClass);
+  *Block = &MechLocomotionClass::`vftable'; /*0x5b1b53*/
   *(Block + 1) = &vt_MechLocomotionClass; /*0x5b1b59*/
   LocomotionClass::Construct(Block); /*0x5b1b60*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5b1b6a*/
-    RA2_OPDEL(Block); /*0x5b1b6d*/
+  if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
+    __3_YAXPAX_Z(Block); /*0x5b1b6d*/
   return (MechLocomotionClass *)Block; /*0x5b1b77*/
 
 }

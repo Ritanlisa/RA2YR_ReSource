@@ -91,17 +91,17 @@ ATOM DialogClass::RegisterWinClasses()
   WNDCLASSA WndClass; // [esp+0h] [ebp-28h] BYREF
 
   result = 1; /*0x60d456*/
-  if ( g_abs_AC48CC != 1 ) /*0x60d460*/
+  if ( MEMORY[0xAC48CC] != 1 ) /*0x60d460*/
   {
-    g_abs_AC48CC = (HINSTANCE)(1);
+    MEMORY[0xAC48CC] = 1; /*0x60d469*/
     WndClass.hInstance = g_hInstance; /*0x60d48a*/
     WndClass.style = 3; /*0x60d496*/
     WndClass.lpfnWndProc = GameScreen::DlgProc; /*0x60d49e*/
     WndClass.cbClsExtra = 0; /*0x60d4a6*/
     WndClass.cbWndExtra = 0; /*0x60d4aa*/
     memset(&WndClass.hIcon, 0, 12); /*0x60d4ae*/
-    WndClass.lpszMenuName = g_abs_8357A0; /*0x60d4ba*/
-    WndClass.lpszClassName = g_abs_8357A0; /*0x60d4be*/
+    WndClass.lpszMenuName = MEMORY[0x8357A0]; /*0x60d4ba*/
+    WndClass.lpszClassName = MEMORY[0x8357A0]; /*0x60d4be*/
     RegisterClassA(&WndClass); /*0x60d4c2*/
     WndClass.style = 131; /*0x60d4db*/
     WndClass.lpfnWndProc = sub_60D520; /*0x60d4e4*/
@@ -109,7 +109,7 @@ ATOM DialogClass::RegisterWinClasses()
     WndClass.cbWndExtra = 0; /*0x60d4f0*/
     WndClass.hInstance = g_hInstance; /*0x60d4f4*/
     memset(&WndClass.hIcon, 0, 16); /*0x60d4f8*/
-    WndClass.lpszClassName = g_abs_833720; /*0x60d508*/
+    WndClass.lpszClassName = MEMORY[0x833720]; /*0x60d508*/
     return RegisterClassA(&WndClass); /*0x60d510*/
   }
   return result; /*0x60d515*/

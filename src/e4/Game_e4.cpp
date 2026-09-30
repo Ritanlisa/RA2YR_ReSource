@@ -37,7 +37,7 @@ void Game::initScenario()
 
   if ( *((unsigned int *)this + 24) ) /*0x430983*/
   {
-    v2 = (void **)(this);
+    v2 = this; /*0x43098d*/
     v3 = 8; /*0x43098f*/
     do /*0x4309b5*/
     {
@@ -46,7 +46,7 @@ void Game::initScenario()
       {
         if ( *v2 ) /*0x430999*/
         {
-          RA2_OPDEL(*v2); /*0x4309a0*/
+          __3_YAXPAX_Z(*v2); /*0x4309a0*/
           *v2 = 0; /*0x4309a8*/
         }
         ++v2; /*0x4309ae*/
@@ -66,7 +66,7 @@ namespace gamemd {
 int Game::SendCampaignOptions()
 {
 
-  void * result;
+  int result; // eax
   int i; // esi
   int v2; // ecx
   int Option; // eax
@@ -83,16 +83,16 @@ int Game::SendCampaignOptions()
   char v14[452]; // [esp+Ch] [ebp-1C4h] BYREF
 
   v13 = 50; /*0x46d4bc*/
-  strcpy(v14, g_abs_A8B380); /*0x46d4cd*/
+  strcpy(v14, MEMORY[0xA8B380]); /*0x46d4cd*/
   result = Settings::CheckString(); /*0x46d4d6*/
   if ( (unsigned char)result )
   {
     Debug::Log(aSendingCampaig); /*0x46d4e8*/
-    v14[43] = g_abs_A8EB68; /*0x46d4f6*/
+    v14[43] = MEMORY[0xA8EB68]; /*0x46d4f6*/
     for ( i = 0; i < 8; ++i )
     {
-      v2 = (int)(*(&g_abs_A8DA90 + i));
-      if ( !v2 || v2 == (int)((int))((int))(g_abs_AC119C) || v2 == g_abs_AC11A0 ) /*0x46d515*/
+      v2 = *(&MEMORY[0xA8DA90] + i); /*0x46d4fc*/
+      if ( !v2 || v2 == MEMORY[0xAC119C] || v2 == MEMORY[0xAC11A0] ) /*0x46d515*/
       {
         *(unsigned int *)&v14[4 * i + 44] = -1; /*0x46d542*/
         *(unsigned int *)&v14[4 * i + 76] = -1; /*0x46d54a*/
@@ -100,15 +100,15 @@ int Game::SendCampaignOptions()
       }
       else
       {
-        Option = (int)(SessionClass::GetOption(v2));
-        v4 = (int)(*(&g_abs_A8DA90 + i));
+        Option = SessionClass::GetOption(v2); /*0x46d517*/
+        v4 = *(&MEMORY[0xA8DA90] + i); /*0x46d51c*/
         *(unsigned int *)&v14[4 * i + 44] = Option; /*0x46d523*/
         PlayerSide = SessionClass::GetPlayerSide(v4); /*0x46d527*/
-        v6 = *(&g_abs_A8DA90 + i); /*0x46d52c*/
+        v6 = *(&MEMORY[0xA8DA90] + i); /*0x46d52c*/
         *(unsigned int *)&v14[4 * i + 76] = PlayerSide; /*0x46d533*/
         *(unsigned int *)&v14[4 * i + 108] = SessionClass::GetPlayerColor(v6); /*0x46d53c*/
       }
-      v7 = ToWideStringChar((char *)*(&g_abs_A8DA90 + i)); /*0x46d561*/
+      v7 = ToWideStringChar((char *)*(&MEMORY[0xA8DA90] + i)); /*0x46d561*/
       Debug::Log(
         "Player %i %s: Start %i, Country %i, Color %i\n",
         i,
@@ -116,14 +116,14 @@ int Game::SendCampaignOptions()
         *(unsigned int *)&v14[4 * i + 44],
         *(unsigned int *)&v14[4 * i + 76],
         *(unsigned int *)&v14[4 * i + 108]);
-      v8 = (int)(g_abs_A8B2BC[i]);
-      v9 = (int)(g_abs_A8B27C[i]);
-      *(unsigned int *)&v14[4 * i + 140] = g_abs_A8B29C[i]; /*0x46d596*/
-      v10 = g_abs_A8B2DC[i]; /*0x46d59d*/
+      v8 = MEMORY[0xA8B2BC][i]; /*0x46d588*/
+      v9 = MEMORY[0xA8B27C][i]; /*0x46d58f*/
+      *(unsigned int *)&v14[4 * i + 140] = MEMORY[0xA8B29C][i]; /*0x46d596*/
+      v10 = MEMORY[0xA8B2DC][i]; /*0x46d59d*/
       *(unsigned int *)&v14[4 * i + 172] = v8; /*0x46d5a4*/
       *(unsigned int *)&v14[4 * i + 204] = v9; /*0x46d5ab*/
       *(unsigned int *)&v14[4 * i + 236] = v10; /*0x46d5b2*/
-      v11 = g_abs_A8B2FC[i]; /*0x46d5b9*/
+      v11 = MEMORY[0xA8B2FC][i]; /*0x46d5b9*/
       *(unsigned int *)&v14[4 * i + 268] = v11; /*0x46d5c0*/
       result = Debug::Log(
                  "AI %i: Difficulty %i, Country %i, Color %i, Start %i, Ally %i\n",
@@ -134,7 +134,7 @@ int Game::SendCampaignOptions()
                  *(unsigned int *)&v14[4 * i + 236],
                  v11);
     }
-    v12 = (wchar_t **)&g_abs_A8DA94; /*0x46d600*/
+    v12 = (wchar_t **)&MEMORY[0xA8DA94]; /*0x46d600*/
     do /*0x46d640*/
     {
       if ( *v12 ) /*0x46d605*/
@@ -142,15 +142,15 @@ int Game::SendCampaignOptions()
         result = IsKnownPointer(*v12); /*0x46d60b*/
         if ( (unsigned char)result ) /*0x46d612*/
         {
-          Network::SendToPlayer((int)g_abs_A8E9C0, (int)&v13, 455, 1, *v12); /*0x46d628*/
-          result = ((Network *)(g_abs_A8E9C0))->ReceiveLoop(); /*0x46d632*/
+          Network::SendToPlayer((int)MEMORY[0xA8E9C0], (int)&v13, 455, 1, *v12); /*0x46d628*/
+          result = Network::ReceiveLoop(MEMORY[0xA8E9C0]); /*0x46d632*/
         }
       }
       ++v12; /*0x46d637*/
     }
-    while ( (int)v12 < (int)&g_abs_A8DAB0 ); /*0x46d640*/
+    while ( (int)v12 < (int)&MEMORY[0xA8DAB0] ); /*0x46d640*/
   }
-  return (int)((int)(result));
+  return result; /*0x46d642*/
 
 }
 }
@@ -1120,48 +1120,48 @@ CellStruct * * Game::SerializeGameSaveState()
   int v13; // [esp+B8h] [ebp-8h] BYREF
   int v14; // [esp+BCh] [ebp-4h] BYREF
 
-  ( this, &(unsigned int *)((char *)&stru_A8EB00 + 404), 4, 0)
+  result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f9d3*/
   if ( result >= 0 )
   {
-    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, &g_abs_A8ED78); /*0x67f9e8*/
-    ( this, &dword_A83D4C, 4, 0)
+    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], &MEMORY[0xA8ED78]); /*0x67f9e8*/
+    result = (*(int (**)(void *, #375 **, int, unsigned int))(*(unsigned int *)this + 12))(this, &HouseClass_Player, 4, 0); /*0x67f9f9*/
     if ( result >= 0 )
     {
-      ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)&HouseClass_Player); /*0x67fa0e*/
-      ( this, &(unsigned int *)((char *)&stru_A8EB00 + 416), 4, 0)
+      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)&HouseClass_Player); /*0x67fa0e*/
+      result = (*(int (**)(void *, wchar_t **, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fa1f*/
                  this,
-                 &g_abs_A8ED84,
+                 &MEMORY[0xA8ED84],
                  4,
                  0);
       if ( result >= 0 )
       {
-        int Game::SerializeGameSaveState(Game *this)
+        result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0); /*0x67fa36*/
         if ( result >= 0 )
         {
           v3 = 0; /*0x67fa45*/
           if ( v13 <= 0 )
           {
 LABEL_14:
-            for ( i = 0; i < (int)g_abs_A8ECC8; ++i ) /*0x67face*/
-              ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)g_abs_A8ECBC + i); /*0x67fade*/
-            ( this, flt_89EA40, 432, 0)
+            for ( i = 0; i < (int)MEMORY[0xA8ECC8]; ++i ) /*0x67face*/
+              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0xA8ECBC] + i); /*0x67fade*/
+            result = (*(int (**)(void *, float *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fafc*/
                        this,
-                       g_abs_89EA40,
+                       MEMORY[0x89EA40],
                        432,
                        0);
             if ( result >= 0 )
             {
               SuperWeapon::SerializeSuperWeaponState(this); /*0x67fb09*/
-              ( this, &v13, 4, 0)
+              result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0); /*0x67fb1a*/
               if ( result >= 0 )
               {
                 v6 = 0; /*0x67fb29*/
                 if ( v13 <= 0 )
                 {
 LABEL_27:
-                  for ( j = 0; j < g_abs_8B40D8; ++j ) /*0x67fbb2*/
-                    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)g_abs_8B40CC + j); /*0x67fbc2*/
-                  ( this, &v13, 4, 0)
+                  for ( j = 0; j < MEMORY[0x8B40D8]; ++j ) /*0x67fbb2*/
+                    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0x8B40CC] + j); /*0x67fbc2*/
+                  result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0); /*0x67fbdd*/
                   if ( result >= 0 )
                   {
                     v9 = 0; /*0x67fbec*/
@@ -1169,45 +1169,45 @@ LABEL_27:
                     {
 LABEL_39:
                       for ( k = 0; k < dword_8B41B8; ++k ) /*0x67fc74*/
-                        ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)unk_8B41AC + k); /*0x67fc84*/
-                      ( this, dword_81DA8C, 76, 0)
+                        ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)unk_8B41AC + k); /*0x67fc84*/
+                      result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fc9f*/
                                  this,
                                  &dword_81DA8C,
                                  76,
                                  0);
                       if ( result >= 0 )
                       {
-                        ( this, dword_81DAD8, 76, 0)
+                        result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fcb2*/
                                    this,
                                    dword_81DAD8,
                                    76,
                                    0);
                         if ( result >= 0 )
                         {
-                          ( this, dbl_89EC28, 152, 0)
+                          result = (*(int (**)(void *, double *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fcc8*/
                                      this,
-                                     g_abs_89EC28,
+                                     MEMORY[0x89EC28],
                                      152,
                                      0);
                           if ( result >= 0 )
                           {
-                            ( this, byte_89ECC0, 19, 0)
+                            result = (*(int (**)(void *, char *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fcdb*/
                                        this,
-                                       g_abs_89ECC0,
+                                       MEMORY[0x89ECC0],
                                        19,
                                        0);
                             if ( result >= 0 )
                             {
-                              (*(unsigned int *)this->__pad_0 + 12)
+                              result = (*(int (**)(void *, void *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fcf1*/
                                          this,
-                                         &g_abs_A8E3A8,
+                                         &MEMORY[0xA8E3A8],
                                          1024,
                                          0);
                               if ( result >= 0 )
                               {
-                                ( this, &dword_B07784, 4, 0)
+                                v12 = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fd04*/
                                         this,
-                                        &g_abs_B07784,
+                                        &MEMORY[0xB07784],
                                         4,
                                         0);
                                 return v12 >= 0 ? 0 : v12;
@@ -1221,7 +1221,7 @@ LABEL_39:
                     {
                       while ( 1 ) /*0x67fbfe*/
                       {
-                        int Game::SerializeGameSaveState(Game *this)
+                        result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))( /*0x67fbfe*/
                                    this,
                                    &v14,
                                    4,
@@ -1231,7 +1231,7 @@ LABEL_39:
                         if ( dword_8B41B8 < unk_8B41B0 /*0x67fc3f*/
                           || (unk_8B41B5 || !unk_8B41B0)
                           && unk_8B41BC > 0
-                          && (*(uint8_t (**)(int *, int, unsigned int))(unk_8B41A8 + 8))(
+                          && (*(unsigned __int8 (**)(int *, int, unsigned int))(unk_8B41A8 + 8))(
                                &unk_8B41A8,
                                unk_8B41B0 + unk_8B41BC,
                                0) )
@@ -1249,19 +1249,19 @@ LABEL_39:
                 {
                   while ( 1 ) /*0x67fb3b*/
                   {
-                    result = (*(int (__stdcall **)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( this, &v14, 4, 0);
+                    result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v14, 4, 0); /*0x67fb3b*/
                     if ( result < 0 ) /*0x67fb40*/
                       break; /*0x67fb40*/
-                    if ( g_abs_8B40D8 < g_abs_8B40D0 /*0x67fb7d*/
-                      || (g_abs_8B40D5 || !g_abs_8B40D0)
-                      && g_abs_8B40DC > 0
-                      && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_8B40C8 + 8))(
-                           &g_abs_8B40C8,
-                           g_abs_8B40D0 + g_abs_8B40DC,
+                    if ( MEMORY[0x8B40D8] < MEMORY[0x8B40D0] /*0x67fb7d*/
+                      || (MEMORY[0x8B40D5] || !MEMORY[0x8B40D0])
+                      && MEMORY[0x8B40DC] > 0
+                      && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0x8B40C8] + 8))(
+                           &MEMORY[0x8B40C8],
+                           MEMORY[0x8B40D0] + MEMORY[0x8B40DC],
                            0) )
                     {
-                      v7 = g_abs_8B40D8++; /*0x67fb90*/
-                      *((unsigned int *)g_abs_8B40CC + v7) = v14; /*0x67fb9d*/
+                      v7 = MEMORY[0x8B40D8]++; /*0x67fb90*/
+                      *((unsigned int *)MEMORY[0x8B40CC] + v7) = v14; /*0x67fb9d*/
                     }
                     if ( ++v6 >= v13 ) /*0x67fba7*/
                       goto LABEL_27; /*0x67fba7*/
@@ -1274,20 +1274,20 @@ LABEL_39:
           {
             while ( 1 ) /*0x67fa57*/
             {
-              result = (*(int (__stdcall **)(Game *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))( this, &v14, 4, 0);
+              result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v14, 4, 0); /*0x67fa57*/
               if ( result < 0 ) /*0x67fa5c*/
                 break; /*0x67fa5c*/
-              if ( (int)g_abs_A8ECC8 < g_abs_A8ECC0 /*0x67fa99*/
-                || (g_abs_A8ECC5 || !g_abs_A8ECC0)
-                && g_abs_A8ECCC > 0
-                && (*(uint8_t (**)(ObjectClass **, int, unsigned int))&g_abs_A8ECB8->__pad_0[8])(
-                     &g_abs_A8ECB8,
-                     g_abs_A8ECC0 + g_abs_A8ECCC,
+              if ( (int)MEMORY[0xA8ECC8] < MEMORY[0xA8ECC0] /*0x67fa99*/
+                || (MEMORY[0xA8ECC5] || !MEMORY[0xA8ECC0])
+                && MEMORY[0xA8ECCC] > 0
+                && (*(unsigned __int8 (**)(ObjectClass **, int, unsigned int))&MEMORY[0xA8ECB8]->__pad_0[8])(
+                     &MEMORY[0xA8ECB8],
+                     MEMORY[0xA8ECC0] + MEMORY[0xA8ECCC],
                      0) )
               {
-                v4 = g_abs_A8ECC8; /*0x67faac*/
-                g_abs_A8ECC8 = (wchar_t *)((char *)g_abs_A8ECC8 + 1); /*0x67faaf*/
-                *((unsigned int *)g_abs_A8ECBC + (unsigned int)v4) = v14; /*0x67fab9*/
+                v4 = MEMORY[0xA8ECC8]; /*0x67faac*/
+                MEMORY[0xA8ECC8] = (wchar_t *)((char *)MEMORY[0xA8ECC8] + 1); /*0x67faaf*/
+                *((unsigned int *)MEMORY[0xA8ECBC] + (unsigned int)v4) = v14; /*0x67fab9*/
               }
               if ( ++v3 >= v13 ) /*0x67fac3*/
                 goto LABEL_14; /*0x67fac3*/

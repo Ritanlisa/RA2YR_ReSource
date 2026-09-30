@@ -32,19 +32,19 @@ DynamicVector * TEventClass::Execute( int a2, int a3, int a4, int * a5, int a6, 
 
   int v8; // ecx
   int v9; // eax
-  unsigned char * v10;
+  int v10; // edi
   const char *v11; // edx
   char *v12; // ebp
   int v13; // edi
   int v14; // ebx
   int v15; // ebp
-  unsigned char * v16;
+  int v16; // esi
   int v18; // eax
-  unsigned char * v19;
+  int v19; // edi
   const char *v20; // edx
   char *v21; // ebp
   int v22; // edi
-  unsigned char * v23;
+  int v23; // esi
   int v24; // edx
   int v25; // eax
   int v26; // edx
@@ -78,7 +78,7 @@ DynamicVector * TEventClass::Execute( int a2, int a3, int a4, int * a5, int a6, 
   unsigned int v55[3]; // [esp+20h] [ebp-18h] BYREF
   unsigned char v56[12]; // [esp+2Ch] [ebp-Ch] BYREF
 
-  v8 = (int)(*(this + 11));
+  v8 = *((unsigned int *)this + 11); /*0x71e94d*/
   switch ( v8 ) /*0x71e964*/
   {
     case 13: /*0x71e964*/
@@ -87,51 +87,51 @@ DynamicVector * TEventClass::Execute( int a2, int a3, int a4, int * a5, int a6, 
       v27 = a5[2]; /*0x71ec39*/
       if ( *a5 == -1 ) /*0x71ec3f*/
         goto LABEL_44; /*0x71ec3f*/
-      if ( (int)g_abs_A8ED84 - v26 < v27 ) /*0x71ec4b*/
+      if ( (int)MEMORY[0xA8ED84] - v26 < v27 ) /*0x71ec4b*/
       {
-        v27 -= (int)g_abs_A8ED84 - v26; /*0x71ec4d*/
+        v27 -= (int)MEMORY[0xA8ED84] - v26; /*0x71ec4d*/
 LABEL_44:
         if ( v27 ) /*0x71ec51*/
           return 0; /*0x71ec51*/
       }
       return 1; /*0x71ec60*/
     case 14: /*0x71e964*/
-      if ( *((unsigned int *)g_abs_A8B230 + 1146) == -1 ) /*0x71ebf6*/
+      if ( *((unsigned int *)MEMORY[0xA8B230] + 1146) == -1 ) /*0x71ebf6*/
         return 0; /*0x71ebf6*/
-      v24 = *((unsigned int *)g_abs_A8B230 + 1146); /*0x71ebfc*/
-      v25 = *((unsigned int *)g_abs_A8B230 + 1148); /*0x71ec02*/
+      v24 = *((unsigned int *)MEMORY[0xA8B230] + 1146); /*0x71ebfc*/
+      v25 = *((unsigned int *)MEMORY[0xA8B230] + 1148); /*0x71ec02*/
       if ( v24 == -1 ) /*0x71ec0b*/
         return !v25; /*0x71ec0b*/
-      if ( (int)g_abs_A8ED84 - v24 >= v25 ) /*0x71ec17*/
+      if ( (int)MEMORY[0xA8ED84] - v24 >= v25 ) /*0x71ec17*/
         return 1; /*0x71ec17*/
-      v25 -= (int)g_abs_A8ED84 - v24; /*0x71ec1d*/
+      v25 -= (int)MEMORY[0xA8ED84] - v24; /*0x71ec1d*/
       return !v25; /*0x71ec21*/
     case 27: /*0x71e964*/
-      ScenarioClass::GetGlobalStateByID(g_abs_A8B230, *(this + 13), &a6); /*0x71eb62*/
+      ScenarioClass::GetGlobalStateByID(MEMORY[0xA8B230], *((unsigned int *)this + 13), &a6); /*0x71eb62*/
       return a6; /*0x71eb72*/
     case 28: /*0x71e964*/
-      ScenarioClass::GetGlobalStateByID(g_abs_A8B230, *(this + 13), &a6); /*0x71eb84*/
+      ScenarioClass::GetGlobalStateByID(MEMORY[0xA8B230], *((unsigned int *)this + 13), &a6); /*0x71eb84*/
       return (unsigned char)a6 == 0; /*0x71eb9b*/
     case 36: /*0x71e964*/
-      ScenarioClass::GetLocalStateByID(g_abs_A8B230, *(this + 13), &a6); /*0x71ebad*/
+      ScenarioClass::GetLocalStateByID(MEMORY[0xA8B230], *((unsigned int *)this + 13), &a6); /*0x71ebad*/
       return a6; /*0x71ebbd*/
     case 37: /*0x71e964*/
-      ScenarioClass::GetLocalStateByID(g_abs_A8B230, *(this + 13), &a6); /*0x71ebcf*/
+      ScenarioClass::GetLocalStateByID(MEMORY[0xA8B230], *((unsigned int *)this + 13), &a6); /*0x71ebcf*/
       return (unsigned char)a6 == 0; /*0x71ebe6*/
     case 45: /*0x71e964*/
-      return *((unsigned int *)g_abs_A8B230 + 3403) <= *(this + 13); /*0x71eb03*/
+      return *((unsigned int *)MEMORY[0xA8B230] + 3403) <= *((unsigned int *)this + 13); /*0x71eb03*/
     case 46: /*0x71e964*/
-      return *((unsigned int *)g_abs_A8B230 + 3403) >= *(this + 13); /*0x71eb25*/
+      return *((unsigned int *)MEMORY[0xA8B230] + 3403) >= *((unsigned int *)this + 13); /*0x71eb25*/
     case 47: /*0x71e964*/
-      return *(this + 13) <= (int)g_abs_A8ED84 / 15; /*0x71eb50*/
+      return *((unsigned int *)this + 13) <= (int)MEMORY[0xA8ED84] / 15; /*0x71eb50*/
     case 60: /*0x71e964*/
       v9 = -1; /*0x71e971*/
-      v10 = g_abs_A8EB10 - 1; /*0x71e974*/
+      v10 = MEMORY[0xA8EB10] - 1; /*0x71e974*/
       a6 = -1; /*0x71e975*/
-      if ( g_abs_A8EB10 - 1 < 0 ) /*0x71e97b*/
+      if ( MEMORY[0xA8EB10] - 1 < 0 ) /*0x71e97b*/
         goto LABEL_8; /*0x71e97b*/
-      v11 = (const char *)(this + 14); /*0x71e982*/
-      v12 = (char *)g_abs_A8EB04 + 4 * v10; /*0x71e985*/
+      v11 = (const char *)((unsigned int *)this + 14); /*0x71e982*/
+      v12 = (char *)MEMORY[0xA8EB04] + 4 * v10; /*0x71e985*/
       while ( strcmp((const char *)(*(unsigned int *)v12 + 36), v11) ) /*0x71e9bb*/
       {
         --v10; /*0x71e9bd*/
@@ -142,21 +142,21 @@ LABEL_44:
           goto LABEL_8; /*0x71e9c9*/
         }
       }
-      v9 = (int)(v10);
+      v9 = v10; /*0x71e9cb*/
 LABEL_8:
-      if ( v9 >= (int)((int))((int))(g_abs_A8EB10) ) /*0x71e9d3*/
+      if ( v9 >= MEMORY[0xA8EB10] ) /*0x71e9d3*/
         return 0; /*0x71e9d3*/
       if ( v9 < 0 ) /*0x71e9db*/
         return 0; /*0x71e9db*/
       v13 = 0; /*0x71e9eb*/
-      v14 = *((unsigned int *)g_abs_A8EB04 + v9); /*0x71e9ed*/
-      v15 = *(this + 13); /*0x71e9f5*/
-      v16 = g_abs_A8EC88 - 1; /*0x71e9f8*/
-      if ( g_abs_A8EC88 - 1 < 0 ) /*0x71e9fd*/
+      v14 = *((unsigned int *)MEMORY[0xA8EB04] + v9); /*0x71e9ed*/
+      v15 = *((unsigned int *)this + 13); /*0x71e9f5*/
+      v16 = MEMORY[0xA8EC88] - 1; /*0x71e9f8*/
+      if ( MEMORY[0xA8EC88] - 1 < 0 ) /*0x71e9fd*/
         return 0; /*0x71e9fd*/
       while ( 1 ) /*0x71ea03*/
       {
-        if ( (*(int (**)(unsigned int))(**((unsigned int **)(unsigned int)(g_abs_A8EC7C)+ v16) + 132))(*((unsigned int *)g_abs_A8EC7C /*0x71ea16*/
+        if ( (*(int (**)(unsigned int))(**((unsigned int **)MEMORY[0xA8EC7C] + v16) + 132))(*((unsigned int *)MEMORY[0xA8EC7C] /*0x71ea16*/
                                                                                            + v16)) == v14 )
           ++v13; /*0x71ea18*/
         if ( v13 >= v15 ) /*0x71ea1b*/
@@ -164,15 +164,15 @@ LABEL_8:
         if ( --v16 < 0 ) /*0x71ea22*/
           return 0; /*0x71ea2d*/
       }
-      return (int)(1);
+      return 1; /*0x71ea1b*/
     case 61: /*0x71e964*/
       v18 = -1; /*0x71ea36*/
-      v19 = g_abs_A8EB10 - 1; /*0x71ea39*/
+      v19 = MEMORY[0xA8EB10] - 1; /*0x71ea39*/
       a6 = -1; /*0x71ea3a*/
-      if ( g_abs_A8EB10 - 1 < 0 ) /*0x71ea40*/
+      if ( MEMORY[0xA8EB10] - 1 < 0 ) /*0x71ea40*/
         goto LABEL_22; /*0x71ea40*/
-      v20 = (const char *)(this + 14); /*0x71ea47*/
-      v21 = (char *)g_abs_A8EB04 + 4 * v19; /*0x71ea4a*/
+      v20 = (const char *)((unsigned int *)this + 14); /*0x71ea47*/
+      v21 = (char *)MEMORY[0xA8EB04] + 4 * v19; /*0x71ea4a*/
       while ( strcmp((const char *)(*(unsigned int *)v21 + 36), v20) ) /*0x71ea80*/
       {
         --v19; /*0x71ea82*/
@@ -183,15 +183,15 @@ LABEL_8:
           goto LABEL_22; /*0x71ea8e*/
         }
       }
-      v18 = (int)(v19);
+      v18 = v19; /*0x71ea90*/
 LABEL_22:
-      if ( v18 >= (int)((int))((int))(g_abs_A8EB10) || v18 < 0 ) /*0x71eaa0*/
+      if ( v18 >= MEMORY[0xA8EB10] || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/
-      v22 = *((unsigned int *)g_abs_A8EB04 + v18); /*0x71eab2*/
-      v23 = g_abs_A8EC88 - 1; /*0x71eab5*/
-      if ( g_abs_A8EC88 - 1 < 0 ) /*0x71eaba*/
+      v22 = *((unsigned int *)MEMORY[0xA8EB04] + v18); /*0x71eab2*/
+      v23 = MEMORY[0xA8EC88] - 1; /*0x71eab5*/
+      if ( MEMORY[0xA8EC88] - 1 < 0 ) /*0x71eaba*/
         return 1; /*0x71eaba*/
-      while ( (*(int (**)(unsigned int))(**((unsigned int **)(unsigned int)(g_abs_A8EC7C)+ v23) + 132))(*((unsigned int *)g_abs_A8EC7C /*0x71ead2*/
+      while ( (*(int (**)(unsigned int))(**((unsigned int **)MEMORY[0xA8EC7C] + v23) + 132))(*((unsigned int *)MEMORY[0xA8EC7C] /*0x71ead2*/
                                                                                             + v23)) != v22 )
       {
         if ( --v23 < 0 ) /*0x71ead9*/
@@ -238,7 +238,7 @@ LABEL_22:
           case 53: /*0x71ec93*/
           case 54: /*0x71ec93*/
           case 59: /*0x71ec93*/
-            if ( a2 == v8 && !g_abs_A8ED6B ) /*0x71eca9*/
+            if ( a2 == v8 && !MEMORY[0xA8ED6B] ) /*0x71eca9*/
               break; /*0x71eca9*/
             return 0; /*0x71eca9*/
           default:
@@ -254,18 +254,18 @@ LABEL_22:
         case 59: /*0x71ecd6*/
           if ( a2 == v8 ) /*0x71f1bf*/
           {
-            v51 = (void *)*(this + 13); /*0x71f1c1*/
+            v51 = (void *)*((unsigned int *)this + 13); /*0x71f1c1*/
             if ( v51 == (void *)-1 || HouseClass::FindOwner(v51) ) /*0x71f1c9*/
             {
               if ( a4 ) /*0x71f1d8*/
               {
-                v52 = (void *)*(this + 13); /*0x71f1da*/
+                v52 = (void *)*((unsigned int *)this + 13); /*0x71f1da*/
                 if ( v52 == (void *)-1 /*0x71f1f5*/
                   || (v53 = (*(int (**)(int))(*(unsigned int *)a4 + 56))(a4),
                       v53 == *(unsigned int *)(HouseClass::FindOwner(v52) + 48)) )
                 {
                   *(unsigned char *)a6 = 1; /*0x71f1ff*/
-                  *(this + 21) = (*(int (**)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
+                  *((unsigned int *)this + 21) = (*(int (**)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
                   return 1; /*0x71f20f*/
                 }
               }
@@ -277,7 +277,7 @@ LABEL_22:
           {
             if ( a4 ) /*0x71ecef*/
             {
-              v28 = (void *)*(this + 13); /*0x71ecf5*/
+              v28 = (void *)*((unsigned int *)this + 13); /*0x71ecf5*/
               if ( v28 != (void *)-1 ) /*0x71ecfb*/
               {
                 if ( HouseClass::FindOwner(v28) ) /*0x71ed01*/
@@ -285,7 +285,7 @@ LABEL_22:
                   if ( (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1) ) /*0x71ed14*/
                   {
                     v29 = (*(int (**)(int, int))(*(unsigned int *)a4 + 208))(a4, 1); /*0x71ed31*/
-                    if ( *(unsigned int *)(v29 + 48) == *(unsigned int *)(HouseClass::FindOwner((void *)*(this + 13)) + 48) ) /*0x71ed40*/
+                    if ( *(unsigned int *)(v29 + 48) == *(unsigned int *)(HouseClass::FindOwner((void *)*((unsigned int *)this + 13)) + 48) ) /*0x71ed40*/
                     {
                       *(unsigned char *)a6 = 1; /*0x71ed4d*/
                       return 1; /*0x71ed56*/
@@ -303,8 +303,8 @@ LABEL_22:
             {
               v30 = (*(int (**)(int, int))(*(unsigned int *)a4 + 204))(a4, 1); /*0x71ed7c*/
               if ( (*(int (**)(int))(*(unsigned int *)v30 + 44))(v30) == 16 /*0x71eda2*/
-                && *(this + 13) != -1
-                && (*(int (**)(int))(*(unsigned int *)v30 + 64))(v30) == *(this + 13) )
+                && *((unsigned int *)this + 13) != -1
+                && (*(int (**)(int))(*(unsigned int *)v30 + 64))(v30) == *((unsigned int *)this + 13) )
               {
                 *(unsigned char *)a6 = 1; /*0x71edaf*/
                 return 1; /*0x71edb8*/
@@ -315,7 +315,7 @@ LABEL_22:
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v55, *(this + 13)));
+            WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v55, *((unsigned int *)this + 13)); /*0x71eddb*/
             v32 = *WorldCoords; /*0x71ede0*/
             v33 = WorldCoords[1]; /*0x71ede6*/
             v34 = WorldCoords[2]; /*0x71edeb*/
@@ -334,22 +334,22 @@ LABEL_22:
           }
           return 0; /*0x71edc6*/
       }
-      if ( v8 == 44 && (a2 != 44 || !a7 || *(this + 13) != *(unsigned int *)(*(unsigned int *)(a7 + 540) + 48)) ) /*0x71ee7c*/
+      if ( v8 == 44 && (a2 != 44 || !a7 || *((unsigned int *)this + 13) != *(unsigned int *)(*(unsigned int *)(a7 + 540) + 48)) ) /*0x71ee7c*/
         return 0; /*0x71ee7c*/
       if ( a3 ) /*0x71ee88*/
       {
         switch ( v8 ) /*0x71eea2*/
         {
           case 12: /*0x71eea2*/
-            if ( (*(int (**)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) >= *(this + 13) ) /*0x71ef0e*/
+            if ( (*(int (**)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) >= *((unsigned int *)this + 13) ) /*0x71ef0e*/
               goto LABEL_122; /*0x71ef0e*/
             return 0; /*0x71ef1d*/
           case 15: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 21640) >= *(this + 13) ) /*0x71f04a*/
+            if ( *(unsigned int *)(a3 + 21640) >= *((unsigned int *)this + 13) ) /*0x71f04a*/
               goto LABEL_122; /*0x71f04a*/
             return 0; /*0x71f055*/
           case 16: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 21556) >= *(this + 13) ) /*0x71f063*/
+            if ( *(unsigned int *)(a3 + 21556) >= *((unsigned int *)this + 13) ) /*0x71f063*/
               goto LABEL_122; /*0x71f063*/
             return 0; /*0x71f063*/
           case 17: /*0x71eea2*/
@@ -378,43 +378,43 @@ LABEL_22:
               goto LABEL_122; /*0x71ef96*/
             return 0; /*0x71efa5*/
           case 19: /*0x71eea2*/
-            v48 = (int)(*(unsigned int *)(a3 + 620));
+            v48 = *(unsigned int *)(a3 + 620); /*0x71efeb*/
             goto LABEL_112; /*0x71efeb*/
           case 20: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 628) != *(this + 13) ) /*0x71f00e*/
+            if ( *(unsigned int *)(a3 + 628) != *((unsigned int *)this + 13) ) /*0x71f00e*/
               return 0; /*0x71f00e*/
             *(unsigned char *)a6 = 1; /*0x71f018*/
             goto LABEL_122; /*0x71f01b*/
           case 21: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 624) != *(this + 13) ) /*0x71f028*/
+            if ( *(unsigned int *)(a3 + 624) != *((unsigned int *)this + 13) ) /*0x71f028*/
               return 0; /*0x71f028*/
             *(unsigned char *)a6 = 1; /*0x71f032*/
             goto LABEL_122; /*0x71f035*/
           case 22: /*0x71eea2*/
             v48 = *(unsigned int *)(a3 + 632); /*0x71f037*/
 LABEL_112:
-            if ( v48 != *(this + 13) ) /*0x71eff4*/
+            if ( v48 != *((unsigned int *)this + 13) ) /*0x71eff4*/
               return 0; /*0x71eff4*/
             *(unsigned char *)a6 = 1; /*0x71effe*/
             goto LABEL_122; /*0x71f001*/
           case 23: /*0x71eea2*/
-            v40 = g_abs_8B40F8; /*0x71eea9*/
+            v40 = MEMORY[0x8B40F8]; /*0x71eea9*/
             v41 = 0; /*0x71eeaf*/
-            if ( g_abs_8B40F8 <= (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x71eeb3*/
+            if ( MEMORY[0x8B40F8] <= 0 ) /*0x71eeb3*/
               goto LABEL_91; /*0x71eeb3*/
-            v42 = (char *)g_abs_8B40EC; /*0x71eeb8*/
+            v42 = (char *)MEMORY[0x8B40EC]; /*0x71eeb8*/
             break; /*0x71eeb8*/
           case 32: /*0x71eea2*/
-            if ( !((DynamicVector *)((unsigned int *)(a3 + 21840)))->GetOrGrow(*(this + 13)) ) /*0x71efb9*/
+            if ( !DynamicVector::GetOrGrow((unsigned int *)(a3 + 21840), *((unsigned int *)this + 13)) ) /*0x71efb9*/
               return 0; /*0x71efb9*/
             *(unsigned char *)a6 = 1; /*0x71efc3*/
             goto LABEL_122; /*0x71efc6*/
           case 52: /*0x71eea2*/
-            if ( (*(int (**)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) <= *(this + 13) ) /*0x71ef2d*/
+            if ( (*(int (**)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) <= *((unsigned int *)this + 13) ) /*0x71ef2d*/
               goto LABEL_122; /*0x71ef2d*/
             return 0; /*0x71ef3c*/
           case 57: /*0x71eea2*/
-            if ( ((DynamicVector *)((unsigned int *)(a3 + 21840)))->GetOrGrow(*(this + 13)) ) /*0x71efd5*/
+            if ( DynamicVector::GetOrGrow((unsigned int *)(a3 + 21840), *((unsigned int *)this + 13)) ) /*0x71efd5*/
               return 0; /*0x71efdc*/
             *(unsigned char *)a6 = 1; /*0x71efe6*/
             goto LABEL_122; /*0x71efe9*/
@@ -424,24 +424,24 @@ LABEL_112:
         while ( 1 ) /*0x71eebe*/
         {
           v43 = *(unsigned int *)v42; /*0x71eebe*/
-          if ( *(unsigned int *)(*(unsigned int *)v42 + 36) == *(this + 12) && !*(unsigned int *)(v43 + 84) && *(unsigned char *)(v43 + 130) ) /*0x71eecc*/
+          if ( *(unsigned int *)(*(unsigned int *)v42 + 36) == *((unsigned int *)this + 12) && !*(unsigned int *)(v43 + 84) && *(unsigned char *)(v43 + 130) ) /*0x71eecc*/
             break; /*0x71eecc*/
           ++v41; /*0x71eed6*/
           v42 += 4; /*0x71eed7*/
-          if ( v41 >= (int)((int))((int))(g_abs_8B40F8) ) /*0x71eedc*/
+          if ( v41 >= MEMORY[0x8B40F8] ) /*0x71eedc*/
             goto LABEL_91; /*0x71eedc*/
         }
         *(unsigned char *)a6 = 1; /*0x71eee4*/
-        v40 = g_abs_8B40F8; /*0x71eee7*/
+        v40 = MEMORY[0x8B40F8]; /*0x71eee7*/
 LABEL_91:
         if ( v41 == v40 ) /*0x71eeef*/
           return 0; /*0x71eefe*/
       }
 LABEL_122:
-      Owner = HouseClass::FindOwner((void *)*(this + 13)); /*0x71f069*/
+      Owner = HouseClass::FindOwner((void *)*((unsigned int *)this + 13)); /*0x71f069*/
       if ( Owner ) /*0x71f075*/
       {
-        switch ( *(this + 11) ) /*0x71f092*/
+        switch ( *((unsigned int *)this + 11) ) /*0x71f092*/
         {
           case 3: /*0x71f092*/
             return *(unsigned char *)(Owner + 580) != 0; /*0x71f0f8*/
@@ -486,10 +486,10 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   int v2; // edx
   int v3; // eax
   int v4; // esi
-  const unsigned int v6;
-  const const CHAR * v7;
-  const const CHAR * v8;
-  const CHAR * v9;
+  const CHAR *v6; // [esp-10h] [ebp-18h]
+  int v7; // [esp-Ch] [ebp-14h]
+  int v8; // [esp-8h] [ebp-10h]
+  int v9; // [esp-4h] [ebp-Ch]
 
   v2 = *((char *)this + 11); /*0x71f390*/
   switch ( v2 ) /*0x71f3a8*/
@@ -563,19 +563,19 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   v4 = *((char *)this + 12); /*0x71f3fe*/
   if ( v4 ) /*0x71f403*/
   {
-    v9 = (int)((const CHAR *)(v4 + 36));
-    v8 = (int)((const CHAR *)(1));
-    v7 = (int)((const CHAR *)(*((char *)this + 11)));
-    v6 = (const unsigned int)(g_abs_844714);
+    v9 = v4 + 36; /*0x71f408*/
+    v8 = 1; /*0x71f409*/
+    v7 = *((char *)this + 11); /*0x71f40b*/
+    v6 = MEMORY[0x844714]; /*0x71f40c*/
   }
   else
   {
     if ( v3 == 43 ) /*0x71f416*/
-      return wsprintfA((LPSTR)&a2[strlen(a2)], g_abs_8258DC, v2, 2, *((char *)this + 13), (char *)this + 14); /*0x71f443*/
+      return wsprintfA((LPSTR)&a2[strlen(a2)], MEMORY[0x8258DC], v2, 2, *((char *)this + 13), (char *)this + 14); /*0x71f443*/
     v9 = *((char *)this + 13); /*0x71f446*/
     v8 = 0; /*0x71f447*/
     v7 = *((char *)this + 11); /*0x71f449*/
-    v6 = g_abs_8189B0; /*0x71f44a*/
+    v6 = MEMORY[0x8189B0]; /*0x71f44a*/
   }
   return wsprintfA((LPSTR)&a2[strlen(a2)], v6, v7, v8, v9); /*0x71f441*/
 

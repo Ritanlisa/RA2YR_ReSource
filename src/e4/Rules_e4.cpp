@@ -3419,7 +3419,7 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
-  (*(void (**)(Rules *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x67a57e*/
   v3 = aP1->Capacity; /*0x67a581*/
   *((unsigned int *)this + 2) = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/
@@ -3431,7 +3431,7 @@ LABEL_8:
     *((unsigned int *)this + 5) = aP1[1].Items; /*0x67a5ea*/
     return this; /*0x67a5ed*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x67a593*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x67a593*/
   *((unsigned int *)this + 1) = v4; /*0x67a59b*/
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/

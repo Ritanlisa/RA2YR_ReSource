@@ -23,41 +23,41 @@ namespace gamemd {
 INIClass * * UnitTypeClass::ReadINIEntry()
 {
 
-  char * v1;
+  int v1; // ebp
   int i; // edi
   unsigned int *v3; // esi
   int v4; // eax
   int v5; // ebx
   int v7; // [esp+10h] [ebp-98h]
-  int16_t v8[2]; // [esp+14h] [ebp-94h] BYREF
+  __int16 v8[2]; // [esp+14h] [ebp-94h] BYREF
   char *v9; // [esp+18h] [ebp-90h]
   char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
-  v1 = (char *)((int)((char *)(0)));
-  v9 = (char *)(this);
-  INIClass::ClearSection((int)this, (int)g_abs_81732C, 0); /*0x6b4de7*/
+  v1 = 0; /*0x6b4dde*/
+  v9 = this; /*0x6b4de3*/
+  INIClass::ClearSection((int)this, (int)MEMORY[0x81732C], 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/
   {
     for ( i = 0; i < 512; ++i ) /*0x6b4df0*/
     {
-      v8[0] = (int16_t)(i);
-      v8[1] = (int16_t)(v1);
-      v3 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, v8));
+      v8[0] = i; /*0x6b4df6*/
+      v8[1] = v1; /*0x6b4e01*/
+      v3 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v8); /*0x6b4e0b*/
       v4 = v3[18]; /*0x6b4e0d*/
       if ( v4 != -1 && !*((unsigned char *)v3 + 287) ) /*0x6b4e15*/
       {
-        v5 = *((unsigned int *)g_abs_A8EC1C + v4); /*0x6b4e29*/
-        sprintf(Buffer, g_abs_817F6C, v7); /*0x6b4e37*/
-        sprintf(Source, g_abs_83FFFC, (const char *)(v5 + 36), i, v1, *((uint8_t *)v3 + 287)); /*0x6b4e55*/
-        IDA_LOBYTE(v4) = INIClass::SetString(v9, (uint8_t *)g_abs_81732C, Buffer, Source); /*0x6b4e71*/
+        v5 = *((unsigned int *)MEMORY[0xA8EC1C] + v4); /*0x6b4e29*/
+        sprintf(Buffer, MEMORY[0x817F6C], v7); /*0x6b4e37*/
+        sprintf(Source, MEMORY[0x83FFFC], (const char *)(v5 + 36), i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
+        LOBYTE(v4) = INIClass::SetString(v9, (unsigned __int8 *)MEMORY[0x81732C], Buffer, Source); /*0x6b4e71*/
         ++v7; /*0x6b4e76*/
       }
     }
     ++v1; /*0x6b4e87*/
   }
-  while ( v1 < (char *)(512) ); /*0x6b4e8e*/
+  while ( v1 < 512 ); /*0x6b4e8e*/
   return v4; /*0x6b4e94*/
 
 }
@@ -176,7 +176,7 @@ void UnitTypeClass::UnitTypeClass_CreateUnit(void * a2)
     v3 = 60; /*0x7475ac*/
     v2 = 60; /*0x7475b6*/
   }
-  *(unsigned int *)(a2) = (void *)(v3);
+  *a2 = v3; /*0x7475c2*/
   a2[1] = v3; /*0x7475c4*/
   a2[2] = v2; /*0x7475c7*/
   return a2; /*0x7475cd*/

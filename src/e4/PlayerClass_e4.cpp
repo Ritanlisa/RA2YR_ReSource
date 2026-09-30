@@ -14,10 +14,10 @@ int PlayerClass::SetHouse(int a2)
 
   char result; // al
 
-  // al result = (*(int (**)(MultiplayerTeam *, int))(*(unsigned int *)this->__pad_0 + 4))(this, a2);
+  result = (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 16))(this, a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
   {
-    *(unsigned int *)(*(unsigned int *)(g_abs_A8DA78 + 4 * a2) + 107) = *((unsigned int *)this + 2); /*0x5d8cd5*/
+    *(unsigned int *)(*(unsigned int *)(MEMORY[0xA8DA78] + 4 * a2) + 107) = *((unsigned int *)this + 2); /*0x5d8cd5*/
     return 1; /*0x5d8cd8*/
   }
   return result; /*0x5d8cc2*/

@@ -63,25 +63,25 @@ namespace gamemd {
 int SidebarClass::InitPositions()
 {
 
-  if ( *((unsigned int *)g_abs_A8B230 + 3374) ) /*0x6a5095*/
+  if ( *((unsigned int *)MEMORY[0xA8B230] + 3374) ) /*0x6a5095*/
   {
-    g_abs_B0B4E0 = g_abs_886F94 + 7; /*0x6a50f4*/
-    g_abs_B0B4EC = g_abs_886F94 + 39; /*0x6a50fc*/
-    g_abs_B0B4E4 = 52; /*0x6a5104*/
-    g_abs_B0B4F0 = 32; /*0x6a510e*/
-    g_abs_B0B4F8 = g_abs_886F94 + 69; /*0x6a5118*/
-    g_abs_B0B4FC = 64; /*0x6a511d*/
+    MEMORY[0xB0B4E0] = MEMORY[0x886F94] + 7; /*0x6a50f4*/
+    MEMORY[0xB0B4EC] = MEMORY[0x886F94] + 39; /*0x6a50fc*/
+    MEMORY[0xB0B4E4] = 52; /*0x6a5104*/
+    MEMORY[0xB0B4F0] = 32; /*0x6a510e*/
+    MEMORY[0xB0B4F8] = MEMORY[0x886F94] + 69; /*0x6a5118*/
+    MEMORY[0xB0B4FC] = 64; /*0x6a511d*/
   }
   else
   {
-    g_abs_B0B4E4 = 64; /*0x6a50a5*/
-    g_abs_B0B4F0 = 29; /*0x6a50af*/
-    g_abs_B0B4FC = 63; /*0x6a50b9*/
-    g_abs_B0B4E0 = g_abs_886F94 + 8; /*0x6a50c6*/
-    g_abs_B0B4EC = g_abs_886F94 + 39; /*0x6a50ce*/
-    g_abs_B0B4F8 = g_abs_886F94 + 69; /*0x6a50d6*/
+    MEMORY[0xB0B4E4] = 64; /*0x6a50a5*/
+    MEMORY[0xB0B4F0] = 29; /*0x6a50af*/
+    MEMORY[0xB0B4FC] = 63; /*0x6a50b9*/
+    MEMORY[0xB0B4E0] = MEMORY[0x886F94] + 8; /*0x6a50c6*/
+    MEMORY[0xB0B4EC] = MEMORY[0x886F94] + 39; /*0x6a50ce*/
+    MEMORY[0xB0B4F8] = MEMORY[0x886F94] + 69; /*0x6a50d6*/
   }
-  return (int)((int)((int)(g_abs_886F94 + 69)));
+  return MEMORY[0x886F94] + 69; /*0x6a50db*/
 
 }
 } // namespace gamemd
@@ -90,14 +90,14 @@ namespace gamemd {
 int SidebarClass::CalcBounds(char a1)
 {
 
-  unsigned char * v1;
-  unsigned char * v2;
+  int v1; // ebx
+  int v2; // eax
   unsigned int *v3; // eax
   int v4; // ecx
   int v5; // esi
   int v6; // esi
   int v7; // ecx
-  unsigned char * result;
+  int result; // eax
   unsigned char v9[16]; // [esp+8h] [ebp-10h] BYREF
 
   if ( a1 ) /*0x6a513b*/
@@ -106,69 +106,69 @@ int SidebarClass::CalcBounds(char a1)
     v4 = v3[1]; /*0x6a51a2*/
     v5 = v3[3]; /*0x6a51a8*/
     v1 = v3[2] + *v3; /*0x6a51ab*/
-    g_abs_886F98 = 168; /*0x6a51bb*/
-    g_abs_886F90 = v1; /*0x6a51c0*/
-    g_abs_886F94 = 158; /*0x6a51c6*/
+    MEMORY[0x886F98] = 168; /*0x6a51bb*/
+    MEMORY[0x886F90] = v1; /*0x6a51c0*/
+    MEMORY[0x886F94] = 158; /*0x6a51c6*/
     v2 = v5 + 32 + v4 - 158; /*0x6a51d0*/
-    g_abs_886F9C = v2; /*0x6a51d7*/
+    MEMORY[0x886F9C] = v2; /*0x6a51d7*/
   }
-  else if ( g_abs_A8EB7C ) /*0x6a5144*/
+  else if ( MEMORY[0xA8EB7C] ) /*0x6a5144*/
   {
-    g_abs_886F94 = (int)(158);
-    v1 = (int)((unsigned int)(g_abs_886FA8)+ g_abs_886FA0);
-    g_abs_886F98 = (int)(168);
-    g_abs_886F90 = (unsigned int)(g_abs_886FA8)+ g_abs_886FA0; /*0x6a5181*/
-    v2 = (unsigned int)(g_abs_886FAC)+ (unsigned int)(32)+ g_abs_886FA4 - 158; /*0x6a5187*/
-    g_abs_886F9C = v2; /*0x6a518e*/
+    MEMORY[0x886F94] = 158; /*0x6a515b*/
+    v1 = MEMORY[0x886FA8] + MEMORY[0x886FA0]; /*0x6a5165*/
+    MEMORY[0x886F98] = 168; /*0x6a5173*/
+    MEMORY[0x886F90] = MEMORY[0x886FA8] + MEMORY[0x886FA0]; /*0x6a5181*/
+    v2 = MEMORY[0x886FAC] + 32 + MEMORY[0x886FA4] - 158; /*0x6a5187*/
+    MEMORY[0x886F9C] = v2; /*0x6a518e*/
   }
   else
   {
-    v2 = (unsigned char *)((int)(g_abs_886F9C));
-    v1 = (unsigned char *)((int)(g_abs_886F90));
+    v2 = MEMORY[0x886F9C]; /*0x6a51de*/
+    v1 = MEMORY[0x886F90]; /*0x6a51e3*/
   }
-  v6 = *((unsigned int *)g_abs_A8B230 + 3374); /*0x6a51ef*/
-  g_abs_B0B500 = 50; /*0x6a51f5*/
+  v6 = *((unsigned int *)MEMORY[0xA8B230] + 3374); /*0x6a51ef*/
+  MEMORY[0xB0B500] = 50; /*0x6a51f5*/
   v7 = 26; /*0x6a5205*/
-  if ( *((unsigned int *)g_abs_A8B230 + 3374) ) /*0x6a51ff*/
+  if ( *((unsigned int *)MEMORY[0xA8B230] + 3374) ) /*0x6a51ff*/
     v7 = 18; /*0x6a520e*/
-  result = 50 * ((v2 - g_abs_B0B4F8 - v7 + g_abs_886F94 - 7) / 50); /*0x6a523f*/
-  g_abs_B0B504 = result; /*0x6a5243*/
+  result = 50 * ((v2 - MEMORY[0xB0B4F8] - v7 + MEMORY[0x886F94] - 7) / 50); /*0x6a523f*/
+  MEMORY[0xB0B504] = result; /*0x6a5243*/
   if ( v6 ) /*0x6a5248*/
   {
     if ( v6 == 1 ) /*0x6a5263*/
     {
-      g_abs_B0B50C = (unsigned int)(g_abs_B0B4F8)+ result + 7; /*0x6a5269*/
+      MEMORY[0xB0B50C] = MEMORY[0xB0B4F8] + result + 7; /*0x6a5269*/
     }
     else
     {
-      result += g_abs_B0B4F8 + 7; /*0x6a5271*/
-      g_abs_B0B50C = result; /*0x6a5275*/
+      result += MEMORY[0xB0B4F8] + 7; /*0x6a5271*/
+      MEMORY[0xB0B50C] = result; /*0x6a5275*/
     }
-    g_abs_B0B510 = 45; /*0x6a527a*/
+    MEMORY[0xB0B510] = 45; /*0x6a527a*/
   }
   else
   {
-    g_abs_B0B510 = 46; /*0x6a524e*/
-    g_abs_B0B50C = (unsigned int)(g_abs_B0B4F8)+ result + 7; /*0x6a5258*/
+    MEMORY[0xB0B510] = 46; /*0x6a524e*/
+    MEMORY[0xB0B50C] = MEMORY[0xB0B4F8] + result + 7; /*0x6a5258*/
   }
-  g_abs_B0B514 = 50; /*0x6a5287*/
-  g_abs_B0B4F4 = v1 + 22; /*0x6a5293*/
+  MEMORY[0xB0B514] = 50; /*0x6a5287*/
+  MEMORY[0xB0B4F4] = v1 + 22; /*0x6a5293*/
   if ( v6 ) /*0x6a529a*/
   {
     if ( v6 != 1 ) /*0x6a52c1*/
       result = v1 + 33; /*0x6a52e6*/
-    g_abs_B0B508 = v1 + 39; /*0x6a52cd*/
-    g_abs_B0B4DC = v1 + 33; /*0x6a52d3*/
-    g_abs_B0B4E8 = v1 + 20; /*0x6a52d9*/
+    MEMORY[0xB0B508] = v1 + 39; /*0x6a52cd*/
+    MEMORY[0xB0B4DC] = v1 + 33; /*0x6a52d3*/
+    MEMORY[0xB0B4E8] = v1 + 20; /*0x6a52d9*/
   }
   else
   {
-    g_abs_B0B508 = (int)(v1 + 39);
-    g_abs_B0B4DC = (int)(v1 + 20);
-    g_abs_B0B4E8 = (int)(v1 + 26);
-    return (int)(v1 + 26);
+    MEMORY[0xB0B508] = v1 + 39; /*0x6a52a6*/
+    MEMORY[0xB0B4DC] = v1 + 20; /*0x6a52ac*/
+    MEMORY[0xB0B4E8] = v1 + 26; /*0x6a52b2*/
+    return v1 + 26; /*0x6a529f*/
   }
-  return (int)(result);
+  return result; /*0x6a52a5*/
 
 }
 } // namespace gamemd
@@ -194,78 +194,78 @@ void * SidebarClass::LoadAssets()
 
   PowerClass::checkBlackout(); /*0x6a5849*/
   qmemcpy(v12, (const void *)UI_Load_72F4A0(), sizeof(v12)); /*0x6a5863*/
-  if ( g_abs_87F6CC ) /*0x6a586d*/
+  if ( MEMORY[0x87F6CC] ) /*0x6a586d*/
   {
-    (**(void (***)(int, int))g_abs_87F6CC)(g_abs_87F6CC, 1); /*0x6a5873*/
-    g_abs_87F6CC = 0; /*0x6a5875*/
+    (**(void (***)(int, int))MEMORY[0x87F6CC])(MEMORY[0x87F6CC], 1); /*0x6a5873*/
+    MEMORY[0x87F6CC] = 0; /*0x6a5875*/
   }
-  v0 = (unsigned int *)(RA2_OPNEW(0x188u));
+  v0 = __2_YAPAXI_Z(0x188u); /*0x6a5880*/
   if ( v0 ) /*0x6a588a*/
-    g_abs_87F6CC = (int)ConvertClass::Construct(v0, (int)v12, (int)v12, g_abs_887308, 1, 0); /*0x6a58ad*/
+    MEMORY[0x87F6CC] = (int)ConvertClass::Construct(v0, (int)v12, (int)v12, MEMORY[0x887308], 1, 0); /*0x6a58ad*/
   else
-    g_abs_87F6CC = 0; /*0x6a58b4*/
-  g_abs_B0B484 = LoadFileSHP(g_abs_83FA58, (bool *)&g_abs_B0B48F); /*0x6a58d4*/
+    MEMORY[0x87F6CC] = 0; /*0x6a58b4*/
+  MEMORY[0xB0B484] = LoadFileSHP(MEMORY[0x83FA58], (bool *)&MEMORY[0xB0B48F]); /*0x6a58d4*/
   v10 = 0; /*0x6a58d9*/
-  SHP = LoadFileSHP(g_abs_83FA4C, (bool *)&v10); /*0x6a58dd*/
-  ShapeButton::SetShape((int)g_abs_B07DF8, (int)SHP, 0, 0); /*0x6a58e8*/
-  ButtonClass::SetState(g_abs_B07DF8, v10); /*0x6a58f7*/
-  g_abs_B07E48 = g_abs_87F6CC; /*0x6a590c*/
-  v2 = LoadFileSHP(g_abs_83FA40, (bool *)&v10); /*0x6a5911*/
-  ShapeButton::SetShape((int)g_abs_B0B3A0, (int)v2, 0, 0); /*0x6a591c*/
-  ButtonClass::SetState(g_abs_B0B3A0, v10); /*0x6a592b*/
+  SHP = LoadFileSHP(MEMORY[0x83FA4C], (bool *)&v10); /*0x6a58dd*/
+  ShapeButton::SetShape((int)MEMORY[0xB07DF8], (int)SHP, 0, 0); /*0x6a58e8*/
+  ButtonClass::SetState(MEMORY[0xB07DF8], v10); /*0x6a58f7*/
+  MEMORY[0xB07E48] = MEMORY[0x87F6CC]; /*0x6a590c*/
+  v2 = LoadFileSHP(MEMORY[0x83FA40], (bool *)&v10); /*0x6a5911*/
+  ShapeButton::SetShape((int)MEMORY[0xB0B3A0], (int)v2, 0, 0); /*0x6a591c*/
+  ButtonClass::SetState(MEMORY[0xB0B3A0], v10); /*0x6a592b*/
   v3 = 0; /*0x6a5936*/
-  g_abs_B0B3F0 = g_abs_87F6CC; /*0x6a5938*/
-  v4 = (int *)&g_abs_B07C48; /*0x6a593e*/
+  MEMORY[0xB0B3F0] = MEMORY[0x87F6CC]; /*0x6a5938*/
+  v4 = (int *)&MEMORY[0xB07C48]; /*0x6a593e*/
   do /*0x6a598c*/
   {
-    sprintf(Buffer, g_abs_83FA34, v3); /*0x6a594e*/
+    sprintf(Buffer, MEMORY[0x83FA34], v3); /*0x6a594e*/
     v5 = LoadFileSHP(Buffer, (bool *)&v10); /*0x6a5960*/
     ShapeButton::SetShape((int)v4, (int)v5, 0, 0); /*0x6a5968*/
     ButtonClass::SetState(v4, v10); /*0x6a5974*/
     ++v3; /*0x6a597f*/
-    v4[20] = g_abs_87F6CC; /*0x6a5980*/
+    v4[20] = MEMORY[0x87F6CC]; /*0x6a5980*/
     v4 += 24; /*0x6a5983*/
   }
-  while ( (int)v4 < (int)&g_abs_B07DC8 ); /*0x6a598c*/
-  v6 = LoadFileSHP(g_abs_83FA28, (bool *)&v10); /*0x6a5999*/
-  ShapeButton::SetShape((int)g_abs_B0B328, (int)v6, 0, 0); /*0x6a59a4*/
-  ButtonClass::SetState(g_abs_B0B328, v10); /*0x6a59b3*/
-  g_abs_B0B378 = g_abs_87F6CC; /*0x6a59bf*/
-  v7 = LoadFileSHP(g_abs_83FA1C, (bool *)&v10); /*0x6a59cf*/
-  ShapeButton::SetShape((int)g_abs_B0B408, (int)v7, 0, 0); /*0x6a59da*/
-  ButtonClass::SetState(g_abs_B0B408, v10); /*0x6a59e9*/
-  g_abs_B0B458 = g_abs_87F6CC; /*0x6a59fd*/
-  g_abs_B0B468 = LoadFileSHP(g_abs_83FA10, (bool *)&g_abs_B0B488); /*0x6a5a11*/
-  g_abs_B0B46C = LoadFileSHP(g_abs_83FA04, (bool *)&g_abs_B0B489); /*0x6a5a25*/
-  g_abs_B0B470 = LoadFileSHP(g_abs_83F9F8, (bool *)&g_abs_B0B48A); /*0x6a5a39*/
-  g_abs_B0B474 = LoadFileSHP(g_abs_83F9EC, (bool *)&g_abs_B0B48B); /*0x6a5a43*/
+  while ( (int)v4 < (int)&MEMORY[0xB07DC8] ); /*0x6a598c*/
+  v6 = LoadFileSHP(MEMORY[0x83FA28], (bool *)&v10); /*0x6a5999*/
+  ShapeButton::SetShape((int)MEMORY[0xB0B328], (int)v6, 0, 0); /*0x6a59a4*/
+  ButtonClass::SetState(MEMORY[0xB0B328], v10); /*0x6a59b3*/
+  MEMORY[0xB0B378] = MEMORY[0x87F6CC]; /*0x6a59bf*/
+  v7 = LoadFileSHP(MEMORY[0x83FA1C], (bool *)&v10); /*0x6a59cf*/
+  ShapeButton::SetShape((int)MEMORY[0xB0B408], (int)v7, 0, 0); /*0x6a59da*/
+  ButtonClass::SetState(MEMORY[0xB0B408], v10); /*0x6a59e9*/
+  MEMORY[0xB0B458] = MEMORY[0x87F6CC]; /*0x6a59fd*/
+  MEMORY[0xB0B468] = LoadFileSHP(MEMORY[0x83FA10], (bool *)&MEMORY[0xB0B488]); /*0x6a5a11*/
+  MEMORY[0xB0B46C] = LoadFileSHP(MEMORY[0x83FA04], (bool *)&MEMORY[0xB0B489]); /*0x6a5a25*/
+  MEMORY[0xB0B470] = LoadFileSHP(MEMORY[0x83F9F8], (bool *)&MEMORY[0xB0B48A]); /*0x6a5a39*/
+  MEMORY[0xB0B474] = LoadFileSHP(MEMORY[0x83F9EC], (bool *)&MEMORY[0xB0B48B]); /*0x6a5a43*/
   qmemcpy(v13, (const void *)UI_Load_72F4E0(), sizeof(v13)); /*0x6a5a5b*/
-  if ( g_abs_87F6D0 ) /*0x6a5a65*/
+  if ( MEMORY[0x87F6D0] ) /*0x6a5a65*/
   {
-    (**(void (***)(int, int))g_abs_87F6D0)(g_abs_87F6D0, 1); /*0x6a5a6b*/
-    g_abs_87F6D0 = 0; /*0x6a5a6d*/
+    (**(void (***)(int, int))MEMORY[0x87F6D0])(MEMORY[0x87F6D0], 1); /*0x6a5a6b*/
+    MEMORY[0x87F6D0] = 0; /*0x6a5a6d*/
   }
-  v8 = (unsigned int *)(RA2_OPNEW(0x188u));
+  v8 = __2_YAPAXI_Z(0x188u); /*0x6a5a78*/
   if ( v8 ) /*0x6a5a82*/
-    g_abs_87F6D0 = (int)ConvertClass::Construct(v8, (int)v13, (int)v13, g_abs_887308, 1, 0); /*0x6a5aa5*/
+    MEMORY[0x87F6D0] = (int)ConvertClass::Construct(v8, (int)v13, (int)v13, MEMORY[0x887308], 1, 0); /*0x6a5aa5*/
   else
-    g_abs_87F6D0 = 0; /*0x6a5aac*/
-  g_abs_B0B490 = LoadFileSHP(g_abs_83F9E0, (bool *)&g_abs_B0B4CC); /*0x6a5acb*/
-  g_abs_B0B494 = LoadFileSHP(g_abs_83F9D4, (bool *)&g_abs_B0B4CD); /*0x6a5adf*/
-  g_abs_B0B498 = LoadFileSHP(g_abs_83F9C8, (bool *)&g_abs_B0B4CE); /*0x6a5af3*/
-  g_abs_B0B49C = LoadFileSHP(g_abs_83F9BC, (bool *)&g_abs_B0B4CF); /*0x6a5b07*/
-  g_abs_B0B4A0 = LoadFileSHP(g_abs_83F9B0, (bool *)&g_abs_B0B4D0); /*0x6a5b1b*/
-  g_abs_B0B4A4 = LoadFileSHP(g_abs_83F9A4, (bool *)&g_abs_B0B4D1); /*0x6a5b2f*/
-  g_abs_B0B4A8 = LoadFileSHP(g_abs_83F998, (bool *)&g_abs_B0B4D2); /*0x6a5b43*/
-  g_abs_B0B4AC = LoadFileSHP(g_abs_83F98C, (bool *)&g_abs_B0B4D3); /*0x6a5b57*/
-  g_abs_B0B4B0 = LoadFileSHP(g_abs_83F980, (bool *)&g_abs_B0B4D4); /*0x6a5b6b*/
-  g_abs_B0B4B4 = LoadFileSHP(g_abs_83F974, (bool *)&g_abs_B0B4D5); /*0x6a5b7f*/
-  g_abs_B0B4B8 = LoadFileSHP(g_abs_83F968, (bool *)&g_abs_B0B4D6); /*0x6a5b93*/
-  g_abs_B0B4BC = LoadFileSHP(g_abs_83F95C, (bool *)&g_abs_B0B4D7); /*0x6a5ba7*/
-  g_abs_B0B4C0 = LoadFileSHP(g_abs_83F950, (bool *)&g_abs_B0B4D8); /*0x6a5bbb*/
-  g_abs_B0B4C4 = LoadFileSHP(g_abs_83F944, (bool *)&g_abs_B0B4D9); /*0x6a5bcf*/
-  result = LoadFileSHP(g_abs_83F938, (bool *)&g_abs_B0B4DA); /*0x6a5bd4*/
-  g_abs_B0B4C8 = result; /*0x6a5bdb*/
+    MEMORY[0x87F6D0] = 0; /*0x6a5aac*/
+  MEMORY[0xB0B490] = LoadFileSHP(MEMORY[0x83F9E0], (bool *)&MEMORY[0xB0B4CC]); /*0x6a5acb*/
+  MEMORY[0xB0B494] = LoadFileSHP(MEMORY[0x83F9D4], (bool *)&MEMORY[0xB0B4CD]); /*0x6a5adf*/
+  MEMORY[0xB0B498] = LoadFileSHP(MEMORY[0x83F9C8], (bool *)&MEMORY[0xB0B4CE]); /*0x6a5af3*/
+  MEMORY[0xB0B49C] = LoadFileSHP(MEMORY[0x83F9BC], (bool *)&MEMORY[0xB0B4CF]); /*0x6a5b07*/
+  MEMORY[0xB0B4A0] = LoadFileSHP(MEMORY[0x83F9B0], (bool *)&MEMORY[0xB0B4D0]); /*0x6a5b1b*/
+  MEMORY[0xB0B4A4] = LoadFileSHP(MEMORY[0x83F9A4], (bool *)&MEMORY[0xB0B4D1]); /*0x6a5b2f*/
+  MEMORY[0xB0B4A8] = LoadFileSHP(MEMORY[0x83F998], (bool *)&MEMORY[0xB0B4D2]); /*0x6a5b43*/
+  MEMORY[0xB0B4AC] = LoadFileSHP(MEMORY[0x83F98C], (bool *)&MEMORY[0xB0B4D3]); /*0x6a5b57*/
+  MEMORY[0xB0B4B0] = LoadFileSHP(MEMORY[0x83F980], (bool *)&MEMORY[0xB0B4D4]); /*0x6a5b6b*/
+  MEMORY[0xB0B4B4] = LoadFileSHP(MEMORY[0x83F974], (bool *)&MEMORY[0xB0B4D5]); /*0x6a5b7f*/
+  MEMORY[0xB0B4B8] = LoadFileSHP(MEMORY[0x83F968], (bool *)&MEMORY[0xB0B4D6]); /*0x6a5b93*/
+  MEMORY[0xB0B4BC] = LoadFileSHP(MEMORY[0x83F95C], (bool *)&MEMORY[0xB0B4D7]); /*0x6a5ba7*/
+  MEMORY[0xB0B4C0] = LoadFileSHP(MEMORY[0x83F950], (bool *)&MEMORY[0xB0B4D8]); /*0x6a5bbb*/
+  MEMORY[0xB0B4C4] = LoadFileSHP(MEMORY[0x83F944], (bool *)&MEMORY[0xB0B4D9]); /*0x6a5bcf*/
+  result = LoadFileSHP(MEMORY[0x83F938], (bool *)&MEMORY[0xB0B4DA]); /*0x6a5bd4*/
+  MEMORY[0xB0B4C8] = result; /*0x6a5bdb*/
   return result; /*0x6a5bd9*/
 
 }

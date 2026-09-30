@@ -20,7 +20,7 @@ int BitTextClass::ParseFontData(char * Source)
   struct tagRECT *v3; // ebp
   unsigned int *Font; // eax
 
-  v3 = (tagRECT *)((unsigned int)((struct tagRECT *)((char *)this + 48)));
+  v3 = (struct tagRECT *)((char *)this + 48); /*0x43388a*/
   *(unsigned int *)this = &vt_BitFont; /*0x433895*/
   *((unsigned int *)this + 1) = 0; /*0x43389b*/
   *((unsigned short *)this + 18) = 0x7FFF; /*0x43389e*/
@@ -35,7 +35,7 @@ int BitTextClass::ParseFontData(char * Source)
   *((unsigned int *)this + 2) = 0; /*0x4338c3*/
   SetRect((LPRECT)((char *)this + 48), 0, 0, 0, 0); /*0x4338c6*/
   *((unsigned int *)this + 11) = 1; /*0x4338d0*/
-  Font = ((File *)(Source))->LoadFont(); /*0x4338d3*/
+  Font = File::LoadFont(Source); /*0x4338d3*/
   *((unsigned int *)this + 1) = Font; /*0x4338da*/
   if ( Font ) /*0x4338dd*/
   {
@@ -59,7 +59,7 @@ int BitTextClass::ParseFontData(char * Source)
     SetRect(v3, 0, 0, 0, 0); /*0x43392b*/
     *((unsigned int *)this + 11) = 1; /*0x433931*/
   }
-  return (int)(this);
+  return this; /*0x4338f4*/
 
 }
 } // namespace gamemd
@@ -68,18 +68,18 @@ namespace gamemd {
 void BitTextClass::LoadFont()
 {
 
-  void * v2;
+  int v2; // eax
 
-  *(unsigned int *)this = (int)(&vt_BitText);
-  v2 = RA2_OPNEW(68); /*0x434adb*/
+  *this = &BitText::`vftable'; /*0x434ad5*/
+  v2 = __2_YAPAXI_Z(68); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/
   {
-    g_abs_87F7E8[29498] = BitTextClass::ParseFontData(v2, aGameFnt); /*0x434af3*/
+    MEMORY[0x87F7E8][29498] = BitTextClass::ParseFontData(v2, aGameFnt); /*0x434af3*/
     return this; /*0x434af8*/
   }
   else
   {
-    g_abs_87F7E8[29498] = 0; /*0x434afe*/
+    MEMORY[0x87F7E8][29498] = 0; /*0x434afe*/
     return this; /*0x434afc*/
   }
 

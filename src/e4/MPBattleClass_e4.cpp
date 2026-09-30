@@ -42,7 +42,7 @@ unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * 
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  this->vfptr = (unsigned int)(&vt_MultiplayerBattle);
+  this->vfptr = &vt_MultiplayerBattle; /*0x5c0df8*/
   return &this->vfptr; /*0x5c0e00*/
 
 }
@@ -60,7 +60,7 @@ unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll 
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  this->vfptr = (unsigned int)(&vt_FreeForAll);
+  this->vfptr = &vt_FreeForAll; /*0x5c5d08*/
   return &this->vfptr; /*0x5c5d10*/
 
 }
@@ -78,8 +78,8 @@ unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerM
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = (unsigned int *)(&vt_MultiplayerManBattle);
-  return (unsigned int *)(this);
+  *this = &vt_MultiplayerManBattle; /*0x5c6178*/
+  return this; /*0x5c6180*/
 
 }
 } // namespace gamemd
@@ -96,8 +96,8 @@ unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = (unsigned int *)(&vt_Megawealth);
-  return (unsigned int *)(this);
+  *this = &vt_Megawealth; /*0x5c9408*/
+  return this; /*0x5c9410*/
 
 }
 } // namespace gamemd
@@ -114,8 +114,8 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = (unsigned int *)(&vt_MultiplayerSiege);
-  return (unsigned int *)(this);
+  *this = &vt_MultiplayerSiege; /*0x5ca658*/
+  return this; /*0x5ca660*/
 
 }
 } // namespace gamemd
@@ -269,15 +269,15 @@ unsigned int * MPBattleClass::MPUnholyAllianceClass( const wchar_t ** a1, Unholy
 {
 
   MultiplayerGameMode::Construct( /*0x5cb3c3*/
-    aP6,
-    (MultiplayerGameMode *)aP6,
-    (MultiplayerGameMode *)aP6,
-    (MultiplayerGameMode *)aP6,
-    (MultiplayerGameMode *)aP6,
-    (MultiplayerGameMode *)aP6,
+    this,
+    (MultiplayerGameMode *)a1,
+    (MultiplayerGameMode *)aP2,
+    (MultiplayerGameMode *)a3,
+    (MultiplayerGameMode *)aP4,
+    (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *aP6 = (unsigned int *)(&vt_UnholyAlliance);
-  return (unsigned int *)(aP6);
+  *this = &vt_UnholyAlliance; /*0x5cb3c8*/
+  return this; /*0x5cb3d0*/
 
 }
 // 0x5CB570

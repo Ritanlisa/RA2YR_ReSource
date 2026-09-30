@@ -55,7 +55,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = (unsigned int *)(RA2_OPNEW(8 * a2));
+      v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf5c7*/
       if ( v6 ) /*0x6cf5d1*/
       {
         v7 = v6; /*0x6cf5d6*/
@@ -101,7 +101,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x6cf64f*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6cf658*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6cf658*/
           *((unsigned int *)this + 1) = 0; /*0x6cf660*/
         }
       }
@@ -117,7 +117,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6cf684*/
     return 1; /*0x6cf68a*/
   }
 
@@ -164,7 +164,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = (unsigned int *)(RA2_OPNEW(8 * a2));
+      v6 = __2_YAPAXI_Z(8 * a2); /*0x6cf747*/
       if ( v6 ) /*0x6cf751*/
       {
         v7 = v6; /*0x6cf756*/
@@ -210,7 +210,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x6cf7ca*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6cf7d3*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6cf7d3*/
         *((unsigned int *)this + 1) = 0; /*0x6cf7db*/
       }
     }
@@ -220,7 +220,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_VSwizzlePointerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6cf7f8*/
   }
   v15 = *((unsigned int *)this + 2); /*0x6cf7fb*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x6cf803*/
@@ -429,17 +429,17 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_SwizzlePointerClass);
+  v3 = (void *)*(Block + 1); /*0x6cf853*/
+  *Block = &vt_VectorClass_SwizzlePointerClass; /*0x6cf856*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6cf860*/
   {
-    RA2_OPDEL(v3); /*0x6cf868*/
+    __3_YAXPAX_Z(v3); /*0x6cf868*/
     *(Block + 1) = 0; /*0x6cf870*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6cf87b*/
   *(Block + 2) = 0; /*0x6cf881*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6cf888*/
-    RA2_OPDEL(Block); /*0x6cf88b*/
+  if ( (a2 & 1) != 0 ) /*0x6cf888*/
+    __3_YAXPAX_Z(Block); /*0x6cf88b*/
   return (VectorClass *)Block; /*0x6cf895*/
 
 }
@@ -452,17 +452,17 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_SwizzlePointerClass);
+  v3 = (void *)*(Block + 1); /*0x6cf8a3*/
+  *Block = &vt_VectorClass_SwizzlePointerClass; /*0x6cf8a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6cf8b0*/
   {
-    RA2_OPDEL(v3); /*0x6cf8b8*/
+    __3_YAXPAX_Z(v3); /*0x6cf8b8*/
     *(Block + 1) = 0; /*0x6cf8c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6cf8cb*/
   *(Block + 2) = 0; /*0x6cf8d1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6cf8d8*/
-    RA2_OPDEL(Block); /*0x6cf8db*/
+  if ( (a2 & 1) != 0 ) /*0x6cf8d8*/
+    __3_YAXPAX_Z(Block); /*0x6cf8db*/
   return (DynamicVector *)Block; /*0x6cf8e5*/
 
 }

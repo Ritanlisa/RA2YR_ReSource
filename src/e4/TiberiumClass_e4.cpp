@@ -24,27 +24,6 @@
 namespace gamemd {
 int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v26 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v26 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v26 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v26 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
-    unsigned int v26 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v13 = 0;  /* G37 hoist */
 
   unsigned int *v8; // eax
   unsigned int *v9; // esi
@@ -52,7 +31,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   char v11; // dl
   unsigned short *v12; // eax
   unsigned short *v13; // edx
-  int16_t v14; // cx
+  __int16 v14; // cx
   int v15; // eax
   int v16; // edx
   char *v17; // esi
@@ -73,11 +52,11 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   int v33; // [esp+24h] [ebp-8h]
   int i; // [esp+28h] [ebp-4h]
 
-  v28 = (unsigned int *)((RandomMap *)(a1))->CellListAlloc(); /*0x5a0171*/
+  v28 = (unsigned int *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
-    v8 = (unsigned int *)(RA2_OPNEW(0x18u));
-    v9 = (unsigned int)(v8);
+    v8 = __2_YAPAXI_Z(0x18u); /*0x5a0189*/
+    v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
@@ -97,19 +76,19 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     {
       while ( 2 ) /*0x5a01da*/
       {
-        v11 = (unsigned int)(0);
-        v33 = (unsigned int)(0);
+        v11 = 0; /*0x5a01da*/
+        v33 = 0; /*0x5a01dc*/
         while ( 1 ) /*0x5a01f3*/
         {
           v12 = (unsigned short *)(v10[1] + 4 * v31); /*0x5a01f3*/
           v13 = (unsigned short *)(4 * (v11 & 7) + 9041544); /*0x5a01fe*/
-          v14 = *(unsigned int *)(v13) + *v12; /*0x5a0205*/
-          IDA_LOWORD(v13) = v12[1] + ((unsigned int *)(v13))[1]; /*0x5a020c*/
-          IDA_LOWORD(v32) = v14; /*0x5a0210*/
-          IDA_HIWORD(v32) = (unsigned short)v13; /*0x5a0215*/
+          v14 = *v13 + *v12; /*0x5a0205*/
+          LOWORD(v13) = v12[1] + v13[1]; /*0x5a020c*/
+          LOWORD(v32) = v14; /*0x5a0210*/
+          HIWORD(v32) = (unsigned short)v13; /*0x5a0215*/
           v30 = v32; /*0x5a021e*/
-          v15 = (int16_t)v13; /*0x5a0225*/
-          v16 = (int16_t)v13 + v14; /*0x5a0228*/
+          v15 = (__int16)v13; /*0x5a0225*/
+          v16 = (__int16)v13 + v14; /*0x5a0228*/
           if ( v16 > g_MapCellHeight_Value /*0x5a0285*/
             && v14 - v15 < g_MapCellHeight_Value
             && v15 - v14 < g_MapCellHeight_Value
@@ -122,7 +101,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
             v17 = (char *)g_MapTileArray + 80 * v14 + 80 * unk_89C2DC * v15; /*0x5a02a4*/
             v18 = *((unsigned int *)v17 + 14); /*0x5a02a8*/
             v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
-            v20 = (int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v30); /*0x5a02c6*/
+            v20 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v30); /*0x5a02c6*/
             v21 = v20; /*0x5a02cd*/
             if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
             {
@@ -130,7 +109,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
               if ( v29[4] < v22 /*0x5a0324*/
                 || (*((unsigned char *)v29 + 13) || !v22)
                 && (v23 = v29[5], v23 > 0)
-                && (*(uint8_t (**)(unsigned int *, int, unsigned int))(*v29 + 8))(v29, v22 + v23, 0) )
+                && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v29 + 8))(v29, v22 + v23, 0) )
               {
                 v24 = v29[4]; /*0x5a032b*/
                 v25 = v29[1]; /*0x5a032e*/
@@ -139,7 +118,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
               }
               *((unsigned int *)v17 + 14) = a1; /*0x5a0348*/
               if ( a7 && Cell::IsEmpty(v21) ) /*0x5a034f*/
-                *((unsigned char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v30) + 283) = a8; /*0x5a036b*/
+                *((unsigned char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v30) + 283) = a8; /*0x5a036b*/
             }
             else if ( v18 != a1 ) /*0x5a02f3*/
             {

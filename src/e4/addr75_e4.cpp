@@ -571,18 +571,18 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
   *((unsigned int *)this + 18) = 1; /*0x752ce8*/
   *((unsigned int *)this + 19) = 0; /*0x752cef*/
   *((unsigned int *)this + 20) = 2; /*0x752cf2*/
-  if ( g_abs_B1D4B0 < g_abs_B1D4A8 /*0x752d2e*/
-    || (g_abs_B1D4AD || !g_abs_B1D4A8)
-    && g_abs_B1D4B4 > (unsigned char [1])(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B1D4A0 + 8))(
-         &g_abs_B1D4A0,
-         (unsigned int)(g_abs_B1D4A8)+ g_abs_B1D4B4,
+  if ( MEMORY[0xB1D4B0] < MEMORY[0xB1D4A8] /*0x752d2e*/
+    || (MEMORY[0xB1D4AD] || !MEMORY[0xB1D4A8])
+    && MEMORY[0xB1D4B4] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB1D4A0] + 8))(
+         &MEMORY[0xB1D4A0],
+         MEMORY[0xB1D4A8] + MEMORY[0xB1D4B4],
          0) )
   {
-    v3 = (int)(g_abs_B1D4B0++);
-    *((unsigned int *)g_abs_B1D4A4 + v3) = this; /*0x752d4a*/
+    v3 = MEMORY[0xB1D4B0]++; /*0x752d3b*/
+    *((unsigned int *)MEMORY[0xB1D4A4] + v3) = this; /*0x752d4a*/
   }
-  return (int)(this);
+  return this; /*0x752d4d*/
 
 }
 }
@@ -595,7 +595,7 @@ int CCINIClass::InitFromINIEVA()
   unsigned int KeyCount; // eax
   signed int v3; // ebp
   int v4; // esi
-  uint8_t *StringByIndex; // eax
+  unsigned __int8 *StringByIndex; // eax
   int v6; // esi
   int v7; // ebp
   int v8; // eax
@@ -606,23 +606,23 @@ int CCINIClass::InitFromINIEVA()
   unsigned int v14; // [esp+18h] [ebp-CCh]
   char Destination[200]; // [esp+1Ch] [ebp-C8h] BYREF
 
-  v1 = (char *)(this);
+  v1 = this; /*0x75300a*/
   v13 = (int)this; /*0x753011*/
-  IDA_LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, (uint8_t *)g_INI_Key_DialogList) != 0; /*0x75301c*/
+  LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, (unsigned __int8 *)g_INI_Key_DialogList) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = (unsigned int)(INIClass::GetKeyCount(v1, (uint8_t *)g_INI_Key_DialogList));
+    KeyCount = INIClass::GetKeyCount(v1, (unsigned __int8 *)g_INI_Key_DialogList); /*0x753030*/
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
-      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v1, (uint8_t *)g_INI_Key_DialogList, v4); /*0x753060*/
+      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)g_INI_Key_DialogList, v4); /*0x753060*/
       KeyCount = INIClass::GetString( /*0x75306d*/
-                   (uint8_t ***)v1,
-                   (uint8_t **)g_INI_Key_DialogList,
+                   (unsigned __int8 ***)v1,
+                   (unsigned __int8 **)g_INI_Key_DialogList,
                    StringByIndex,
-                   (char *)&g_abs_87F7E8[10719],
+                   (char *)&MEMORY[0x87F7E8][10719],
                    Destination,
                    200);
       if ( KeyCount ) /*0x753074*/
@@ -639,7 +639,8 @@ int CCINIClass::InitFromINIEVA()
         }
         if ( v6 == -1 ) /*0x7530b7*/
         {
-LABEL_10: v7 = (int)(RA2_OPNEW(84));
+LABEL_10:
+          v7 = __2_YAPAXI_Z(84); /*0x7530bd*/
           if ( v7 ) /*0x7530cb*/
           {
             *(unsigned int *)(v7 + 40) = 1065353216; /*0x7530da*/
@@ -651,9 +652,9 @@ LABEL_10: v7 = (int)(RA2_OPNEW(84));
             *(unsigned int *)(v7 + 76) = 0; /*0x753109*/
             *(unsigned int *)(v7 + 80) = 2; /*0x75310c*/
             if ( dword_A8ED54[145879] < dword_A8ED54[145877] /*0x753146*/
-              || (IDA_BYTE1(dword_A8ED54[145878]) || !dword_A8ED54[145877])
+              || (BYTE1(dword_A8ED54[145878]) || !dword_A8ED54[145877])
               && dword_A8ED54[145880] > 0
-              && (*(uint8_t (**)(int *, int, unsigned int))(dword_A8ED54[145875] + 8))(
+              && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_A8ED54[145875] + 8))(
                    &dword_A8ED54[145875],
                    dword_A8ED54[145877] + dword_A8ED54[145880],
                    0) )
@@ -673,7 +674,7 @@ LABEL_10: v7 = (int)(RA2_OPNEW(84));
         {
           v9 = *(unsigned int *)(dword_A8ED54[145876] + 4 * v6); /*0x753177*/
         }
-        IDA_LOBYTE(KeyCount) = AudioEvent::LoadFromINI(v9, (uint8_t ***)v1); /*0x75317b*/
+        LOBYTE(KeyCount) = AudioEvent::LoadFromINI(v9, (unsigned __int8 ***)v1); /*0x75317b*/
         v4 = i; /*0x753180*/
         v3 = v14; /*0x753184*/
       }

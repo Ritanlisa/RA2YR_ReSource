@@ -39,19 +39,19 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   unsigned char v10[64]; // [esp+4h] [ebp-40h] BYREF
 
   v9 = Buffer; /*0x4c4f09*/
-  *(unsigned int *)this = 0; /*0x4c4f0a*/
+  *this = 0; /*0x4c4f0a*/
   *((unsigned int *)this + 1) = 0; /*0x4c4f10*/
-  sscanf(v9, g_abs_82085C, &Buffer, v10); /*0x4c4f17*/
+  sscanf(v9, MEMORY[0x82085C], &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/
   ExitCellByName = Factory::FindExitCellByName(v10); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
-    Index = ((BuildingTypeClass *)(v10))->FindIndex(); /*0x4c4f4c*/
+    Index = BuildingTypeClass::FindIndex(v10); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = (unsigned int *)(TypeClass::FindByName(v10));
+      v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
-        *((unsigned int *)this + 1) = *((unsigned int *)g_abs_A8B21C + v8); /*0x4c4f82*/
+        *((unsigned int *)this + 1) = *((unsigned int *)MEMORY[0xA8B21C] + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/
     }
     else
@@ -63,7 +63,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   }
   else
   {
-    v4 = *((unsigned int *)g_abs_A8E34C + ExitCellByName); /*0x4c4f39*/
+    v4 = *((unsigned int *)MEMORY[0xA8E34C] + ExitCellByName); /*0x4c4f39*/
     *((unsigned int *)this + 1) = v4; /*0x4c4f3e*/
     return this; /*0x4c4f3c*/
   }
@@ -194,25 +194,25 @@ void * TaskForceClass::ExecuteAction(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (void *)(&vt_TaskForceClass);
-  *(Block + 1) = &vt_TaskForceClass; /*0x6e87fc*/
-  *(Block + 2) = &vt_TaskForceClass; /*0x6e8803*/
+  *Block = &TaskForceClass::`vftable'; /*0x6e87f6*/
+  *(Block + 1) = &TaskForceClass::`vftable'; /*0x6e87fc*/
+  *(Block + 2) = &TaskForceClass::`vftable'; /*0x6e8803*/
   *(Block + 3) = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6e8811*/
   v5 = Block; /*0x6e8826*/
-  v3 = (*(int (**)(int *, void ***))(g_abs_A8E8D0 + 16))(&g_abs_A8E8D0, &v5); /*0x6e882a*/
-  if ( v3 != -1 && v3 < (int)((int))(g_abs_A8E8E0) && v3 < --g_abs_A8E8E0 ) /*0x6e8845*/
+  v3 = (*(int (**)(int *, void ***))(MEMORY[0xA8E8D0] + 16))(&MEMORY[0xA8E8D0], &v5); /*0x6e882a*/
+  if ( v3 != -1 && v3 < MEMORY[0xA8E8E0] && v3 < --MEMORY[0xA8E8E0] ) /*0x6e8845*/
   {
     do /*0x6e885d*/
     {
       ++v3; /*0x6e884d*/
-      *((unsigned int *)g_abs_A8E8D4 + v3 - 1) = *((unsigned int *)g_abs_A8E8D4 + v3); /*0x6e8851*/
+      *((unsigned int *)MEMORY[0xA8E8D4] + v3 - 1) = *((unsigned int *)MEMORY[0xA8E8D4] + v3); /*0x6e8851*/
     }
-    while ( v3 < (int)((int))(g_abs_A8E8E0) ); /*0x6e885d*/
+    while ( v3 < MEMORY[0xA8E8E0] ); /*0x6e885d*/
   }
-  ((AbstractTypeClass *)(Block))->Dtor(); /*0x6e8861*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6e886b*/
-    RA2_OPDEL(Block); /*0x6e886e*/
+  AbstractTypeClass::Dtor(Block); /*0x6e8861*/
+  if ( (a2 & 1) != 0 ) /*0x6e886b*/
+    __3_YAXPAX_Z(Block); /*0x6e886e*/
   return (TaskForceClass *)Block; /*0x6e8878*/
 
 }
@@ -294,21 +294,21 @@ char TaskForceClass::GetUnitType(char * a2)
   v4 = (unsigned int *)((char *)this + 164); /*0x6e8529*/
   do /*0x6e857d*/
   {
-    sprintf(Buffer, g_abs_817F6C, v3); /*0x6e853a*/
+    sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6e853a*/
     if ( v3 >= *((unsigned int *)this + 39) ) /*0x6e854a*/
     {
-      INIClass::ClearSection((int)a2, (char *)this + 36, (uint8_t *)Buffer); /*0x6e8571*/
+      INIClass::ClearSection((int)a2, (char *)this + 36, (unsigned __int8 *)Buffer); /*0x6e8571*/
     }
     else
     {
-      v5 = (char *)(TaskForceClass::Check(v4));
-      INIClass::SetString(a2, (uint8_t *)((char *)this + 36), Buffer, v5); /*0x6e855f*/
+      v5 = TaskForceClass::Check(v4); /*0x6e854e*/
+      INIClass::SetString(a2, (unsigned __int8 *)((char *)this + 36), Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
     v4 += 2; /*0x6e8577*/
   }
   while ( v3 < 6 ); /*0x6e857d*/
-  INIClass::SetInt(a2, (uint8_t *)((char *)this + 36), g_abs_842DC4, *((unsigned int *)this + 38), 0); /*0x6e8593*/
+  INIClass::SetInt(a2, (unsigned __int8 *)((char *)this + 36), MEMORY[0x842DC4], *((unsigned int *)this + 38), 0); /*0x6e8593*/
   return 1; /*0x6e859a*/
 
 }

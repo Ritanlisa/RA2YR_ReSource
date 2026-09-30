@@ -120,41 +120,41 @@ void* SpawnManagerClass::Constructor()
   int v2; // eax
   int v4; // [esp+10h] [ebp-8h]
 
-  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6b6ea8*/
+  AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
   SpawnControlVector::Constructor((unsigned int *)((char *)this + 56), 0, 0); /*0x6b6eb6*/
   *((unsigned int *)this + 14) = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6ebb*/
   *((unsigned int *)this + 19) = 10; /*0x6b6ec1*/
   *((unsigned int *)this + 18) = 0; /*0x6b6ec8*/
-  *((unsigned int *)this + 20) = g_abs_A8ED84; /*0x6b6ed4*/
+  *((unsigned int *)this + 20) = MEMORY[0xA8ED84]; /*0x6b6ed4*/
   *((unsigned int *)this + 22) = 0; /*0x6b6ed7*/
-  *((unsigned int *)this + 23) = g_abs_A8ED84; /*0x6b6ee0*/
+  *((unsigned int *)this + 23) = MEMORY[0xA8ED84]; /*0x6b6ee0*/
   *((unsigned int *)this + 25) = 0; /*0x6b6ee3*/
-  *(unsigned int *)this = &vt_SpawnManagerClass; /*0x6b6ee6*/
-  *((unsigned int *)this + 1) = &vt_SpawnManagerClass; /*0x6b6eec*/
-  *((unsigned int *)this + 2) = &vt_SpawnManagerClass; /*0x6b6ef3*/
+  *(unsigned int *)this = &SpawnManagerClass::`vftable'; /*0x6b6ee6*/
+  *((unsigned int *)this + 1) = &SpawnManagerClass::`vftable'; /*0x6b6eec*/
+  *((unsigned int *)this + 2) = &SpawnManagerClass::`vftable'; /*0x6b6ef3*/
   *((unsigned int *)this + 3) = &vt_SpawnManagerClass; /*0x6b6efa*/
   *((unsigned int *)this + 9) = 0; /*0x6b6f01*/
   *((unsigned int *)this + 10) = 0; /*0x6b6f04*/
   *((unsigned int *)this + 11) = 0; /*0x6b6f07*/
-  *((unsigned int *)this + 20) = g_abs_A8ED84; /*0x6b6f11*/
+  *((unsigned int *)this + 20) = MEMORY[0xA8ED84]; /*0x6b6f11*/
   *((unsigned int *)this + 21) = v4; /*0x6b6f14*/
   *((unsigned int *)this + 22) = 0; /*0x6b6f17*/
   *((unsigned int *)this + 26) = 0; /*0x6b6f1a*/
   *((unsigned int *)this + 27) = 0; /*0x6b6f1d*/
   *((unsigned int *)this + 28) = 0; /*0x6b6f20*/
-  *((unsigned int *)this + 23) = g_abs_A8ED84; /*0x6b6f28*/
+  *((unsigned int *)this + 23) = MEMORY[0xA8ED84]; /*0x6b6f28*/
   *((unsigned int *)this + 24) = v4; /*0x6b6f2f*/
   *((unsigned int *)this + 25) = 0; /*0x6b6f32*/
-  if ( g_abs_B0B890 < g_abs_B0B888 /*0x6b6f69*/
-    || (g_abs_B0B88D || !g_abs_B0B888)
-    && g_abs_B0B894 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0B880 + 8))(
-         &g_abs_B0B880,
-         (unsigned int)(g_abs_B0B888)+ g_abs_B0B894,
+  if ( MEMORY[0xB0B890] < MEMORY[0xB0B888] /*0x6b6f69*/
+    || (MEMORY[0xB0B88D] || !MEMORY[0xB0B888])
+    && MEMORY[0xB0B894] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0B880] + 8))(
+         &MEMORY[0xB0B880],
+         MEMORY[0xB0B888] + MEMORY[0xB0B894],
          0) )
   {
-    v2 = (int)(g_abs_B0B890++);
-    *((unsigned int *)g_abs_B0B884 + v2) = this; /*0x6b6f85*/
+    v2 = MEMORY[0xB0B890]++; /*0x6b6f76*/
+    *((unsigned int *)MEMORY[0xB0B884] + v2) = this; /*0x6b6f85*/
   }
   return this; /*0x6b6f8a*/
 
@@ -170,38 +170,38 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   int v3; // ebp
   int v4; // eax
   void *v5; // eax
-  SpawnManagerClass * v6;
+  int v6; // [esp+8h] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &vt_SpawnManagerClass; /*0x6b7015*/
-  *((unsigned int *)this + 1) = &vt_SpawnManagerClass; /*0x6b701b*/
-  *((unsigned int *)this + 2) = &vt_SpawnManagerClass; /*0x6b7022*/
+  *(unsigned int *)this = &SpawnManagerClass::`vftable'; /*0x6b7015*/
+  *((unsigned int *)this + 1) = &SpawnManagerClass::`vftable'; /*0x6b701b*/
+  *((unsigned int *)this + 2) = &SpawnManagerClass::`vftable'; /*0x6b7022*/
   *((unsigned int *)this + 3) = &vt_SpawnManagerClass; /*0x6b7029*/
-  if ( g_abs_A8E9A0 ) /*0x6b7037*/
+  if ( MEMORY[0xA8E9A0] ) /*0x6b7037*/
     TaskManager::Update((unsigned int *)this); /*0x6b7039*/
   for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i ) /*0x6b7042*/
   {
     if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x6b7047*/
-      RA2_OPDEL(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6b704f*/
+      __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6b704f*/
   }
-  v3 = (int)(*((unsigned int *)this + 16));
+  v3 = *((unsigned int *)this + 16); /*0x6b7063*/
   (*(void (**)(int))(*((unsigned int *)this + 14) + 12))((char *)this + 56); /*0x6b7066*/
   (*(void (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v3, 0); /*0x6b7070*/
   v6 = this; /*0x6b7083*/
-  v4 = (*(int (**)(int *, int *))(g_abs_B0B880 + 16))(&g_abs_B0B880, &v6); /*0x6b7087*/
-  if ( v4 != -1 && v4 < (int)(g_abs_B0B890) && v4 < (int)(--g_abs_B0B890) ) /*0x6b70a3*/
+  v4 = (*(int (**)(int *, int *))(MEMORY[0xB0B880] + 16))(&MEMORY[0xB0B880], &v6); /*0x6b7087*/
+  if ( v4 != -1 && v4 < MEMORY[0xB0B890] && v4 < --MEMORY[0xB0B890] ) /*0x6b70a3*/
   {
     do /*0x6b70bb*/
     {
       ++v4; /*0x6b70ab*/
-      *((unsigned int *)g_abs_B0B884 + v4 - 1) = *((unsigned int *)g_abs_B0B884 + v4); /*0x6b70af*/
+      *((unsigned int *)MEMORY[0xB0B884] + v4 - 1) = *((unsigned int *)MEMORY[0xB0B884] + v4); /*0x6b70af*/
     }
-    while ( v4 < (int)(g_abs_B0B890) ); /*0x6b70bb*/
+    while ( v4 < MEMORY[0xB0B890] ); /*0x6b70bb*/
   }
-  v5 = (void *)((unsigned int)(*(void **)((char *)this + 60)));
+  v5 = *(void **)((char *)this + 60); /*0x6b70bd*/
   *((unsigned int *)this + 14) = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b70c0*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6b70ca*/
   {
-    RA2_OPDEL(v5); /*0x6b70d2*/
+    __3_YAXPAX_Z(v5); /*0x6b70d2*/
     *((unsigned int *)this + 15) = 0; /*0x6b70da*/
   }
   *((unsigned char *)this + 69) = 0; /*0x6b70e3*/
@@ -676,7 +676,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b8418*/
       v4 = a3; /*0x6b842e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6b842a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b842a*/
     *((unsigned char *)this + 12) = 1; /*0x6b8432*/
     if ( !v4 ) /*0x6b8436*/
       return 0; /*0x6b84aa*/
@@ -689,7 +689,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
         ++i; /*0x6b8451*/
       if ( *((unsigned char *)this + 13) ) /*0x6b845e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6b8469*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b8469*/
         *((unsigned int *)this + 1) = 0; /*0x6b8471*/
       }
     }
@@ -699,7 +699,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b848e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x6b8491*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b8499*/

@@ -32,8 +32,8 @@ HWND E4Recv_696AE0::sub_696AE0()
     {
       v5 = (char *)((char *)this + 8); /*0x696b21*/
       SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)v5); /*0x696b30*/
-      SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_abs_889F64); /*0x696b3f*/
-      ((String *)(v5))->Trim(); /*0x696b43*/
+      SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&MEMORY[0x889F64]); /*0x696b3f*/
+      String::Trim(v5); /*0x696b43*/
       result = 0; /*0x696b4d*/
       if ( strlen(v5) ) /*0x696b4f*/
       {
@@ -41,22 +41,22 @@ HWND E4Recv_696AE0::sub_696AE0()
         v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)v5); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
-          v8 = (char *)RA2_OPNEW(0x29u); /*0x696b8c*/
+          v8 = (char *)__2_YAPAXI_Z(0x29u); /*0x696b8c*/
           strcpy(v8, v5); /*0x696ba2*/
           result = (HWND)SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
           v6 = (LRESULT)result; /*0x696bb3*/
           if ( result == HWND_MESSAGE|0x2 ) /*0x696bb8*/
             return result; /*0x696bb8*/
-          if ( g_abs_A8DB5C < g_abs_A8DB54 /*0x696bf1*/
-            || (g_abs_A8DB59 || !g_abs_A8DB54)
-            && g_abs_A8DB60 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-            && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8DB4C + 8))(
-                 &g_abs_A8DB4C,
-                 (unsigned int)(g_abs_A8DB54)+ g_abs_A8DB60,
+          if ( MEMORY[0xA8DB5C] < MEMORY[0xA8DB54] /*0x696bf1*/
+            || (MEMORY[0xA8DB59] || !MEMORY[0xA8DB54])
+            && MEMORY[0xA8DB60] > 0
+            && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8DB4C] + 8))(
+                 &MEMORY[0xA8DB4C],
+                 MEMORY[0xA8DB54] + MEMORY[0xA8DB60],
                  0) )
           {
-            v7 = (int)((unsigned int)(g_abs_A8DB5C++));
-            *(unsigned int *)(g_abs_A8DB50 + 4 * v7) = v8; /*0x696c11*/
+            v7 = MEMORY[0xA8DB5C]++; /*0x696c02*/
+            *(unsigned int *)(MEMORY[0xA8DB50] + 4 * v7) = v8; /*0x696c11*/
           }
         }
         SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/

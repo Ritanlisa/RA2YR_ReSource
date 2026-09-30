@@ -14,18 +14,18 @@ int DialogQueue::PushEntry()
 
   int result; // eax
 
-  result = (int)(g_abs_ABFC98);
-  if ( g_abs_ABFCA0 < g_abs_ABFC98 /*0x5d4eac*/
-    || (g_abs_ABFC9D || !g_abs_ABFC98)
-    && g_abs_ABFCA4 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (result = (*(int (**)(int *, int, unsigned int))(g_abs_ABFC90 + 8))(
-                   &g_abs_ABFC90,
-                   (unsigned int)(g_abs_ABFC98)+ g_abs_ABFCA4,
+  result = MEMORY[0xABFC98]; /*0x5d4e70*/
+  if ( MEMORY[0xABFCA0] < MEMORY[0xABFC98] /*0x5d4eac*/
+    || (MEMORY[0xABFC9D] || !MEMORY[0xABFC98])
+    && MEMORY[0xABFCA4] > 0
+    && (result = (*(int (**)(int *, int, unsigned int))(MEMORY[0xABFC90] + 8))(
+                   &MEMORY[0xABFC90],
+                   MEMORY[0xABFC98] + MEMORY[0xABFCA4],
                    0),
         (unsigned char)result) )
   {
-    result = (int)((unsigned int)(g_abs_ABFCA0++));
-    *((unsigned int *)g_abs_ABFC94 + result) = this; /*0x5d4ec3*/
+    result = MEMORY[0xABFCA0]++; /*0x5d4eb4*/
+    *((unsigned int *)MEMORY[0xABFC94] + result) = this; /*0x5d4ec3*/
   }
   return result; /*0x5d4ec6*/
 

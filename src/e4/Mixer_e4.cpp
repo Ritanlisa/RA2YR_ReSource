@@ -21,16 +21,16 @@ int Mixer::ReleaseChannel()
   int *v3; // edi
   int v4; // eax
 
-  result = (int)(g_abs_87E2A0);
-  if ( !g_abs_87E2A0 ) /*0x40606e*/
+  result = MEMORY[0x87E2A0]; /*0x406060*/
+  if ( !MEMORY[0x87E2A0] ) /*0x40606e*/
     goto LABEL_14; /*0x40606e*/
-  if ( *(this + 3) != &g_abs_87E294 ) /*0x406077*/
+  if ( *((unsigned int *)this + 3) != &MEMORY[0x87E294] ) /*0x406077*/
     goto LABEL_14; /*0x406077*/
   v3 = *this; /*0x406079*/
   if ( !*this ) /*0x406079*/
     goto LABEL_14; /*0x40607d*/
   result = v3[9]; /*0x40607f*/
-  if ( *(this + 2) == (int *)result && *(this + 1) == (int *)v3[78] ) /*0x406094*/
+  if ( *((unsigned int *)this + 2) == (int *)result && *((unsigned int *)this + 1) == (int *)v3[78] ) /*0x406094*/
   {
     if ( (*(unsigned char *)(result + 16) & 1) == 0 || *(unsigned int *)(result + 76) ) /*0x40609c*/
       goto LABEL_14; /*0x40609f*/
@@ -42,18 +42,18 @@ int Mixer::ReleaseChannel()
         AudioFile::GetCallback(v3[44]); /*0x4060bb*/
         v3[6] |= 0x60u; /*0x4060c6*/
         result = AudioStream::Stop(v3[44]); /*0x4060cf*/
-        *(unsigned int *)this = 0; /*0x4060d4*/
-        *(this + 2) = 0; /*0x4060d6*/
+        *this = 0; /*0x4060d4*/
+        *((unsigned int *)this + 2) = 0; /*0x4060d6*/
         return result; /*0x4060dc*/
       }
       result = v3[6]; /*0x4060dd*/
-      IDA_LOBYTE(result) = result | 0x60; /*0x4060e0*/
+      LOBYTE(result) = result | 0x60; /*0x4060e0*/
       v3[6] = result; /*0x4060e2*/
     }
   }
-  *(unsigned int *)this = 0; /*0x4060e5*/
+  *this = 0; /*0x4060e5*/
 LABEL_14:
-  *(this + 2) = 0; /*0x4060e7*/
+  *((unsigned int *)this + 2) = 0; /*0x4060e7*/
   return result; /*0x4060d9*/
 
 }
@@ -66,10 +66,10 @@ int Mixer::RequestAllBuffers()
   int result; // eax
   int *i; // esi
 
-  result = (int)(g_abs_87E81C);
-  if ( g_abs_87E81C ) /*0x4083d8*/
+  result = MEMORY[0x87E81C]; /*0x4083d0*/
+  if ( MEMORY[0x87E81C] ) /*0x4083d8*/
   {
-    result = AudioQueue::GetNext(g_abs_87E810); /*0x4083df*/
+    result = AudioQueue::GetNext(MEMORY[0x87E810]); /*0x4083df*/
     for ( i = (int *)result; result; i = (int *)result ) /*0x4083e8*/
     {
       RequestBufferMixer((unsigned int *)(i[5] + 16), 0x4000); /*0x4083f5*/

@@ -683,11 +683,11 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
   v2 = 0; /*0x4d4fc9*/
   while ( 1 ) /*0x4d4fd4*/
   {
-    unsigned int *sub_4D4FC0(ObjectClass *this)
-    IDA_LOWORD(v9) = IDA_LOWORD(g_abs_89F688[v2 & 7]) + *v3; /*0x4d4ff8*/
-    IDA_HIWORD(v9) = v3[1] + IDA_HIWORD(g_abs_89F688[v2 & 7]); /*0x4d4ffe*/
+    v3 = (unsigned short *)(*(int (**)(void *, char *))(*(unsigned int *)this + 440))(this, v11); /*0x4d4fd4*/
+    LOWORD(v9) = LOWORD(MEMORY[0x89F688][v2 & 7]) + *v3; /*0x4d4ff8*/
+    HIWORD(v9) = v3[1] + HIWORD(MEMORY[0x89F688][v2 & 7]); /*0x4d4ffe*/
     v10 = v9; /*0x4d500c*/
-    v4 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v10); /*0x4d5010*/
+    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v10); /*0x4d5010*/
     v5 = Cell::IsBridge(v4); /*0x4d5017*/
     v6 = v5; /*0x4d501c*/
     if ( v5 ) /*0x4d5020*/
@@ -695,7 +695,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
       if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
       {
         v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
-        unsigned int *sub_4D4FC0(ObjectClass *this)
+        if ( v7 == (*(int (**)(void *))(*(unsigned int *)this + 60))(this) ) /*0x4d5044*/
           break; /*0x4d5044*/
       }
     }

@@ -385,49 +385,49 @@ void ** E4Recv_637640::sub_637640()
   int v1; // eax
   int v2; // eax
   int v3; // eax
-  void **result; // eax
-  void **v5; // [esp+Ch] [ebp-4h] BYREF
-  void *retaddr; // [esp+10h] [ebp+0h] BYREF
+  _UNKNOWN **result; // eax
+  _UNKNOWN **v5; // [esp+Ch] [ebp-4h] BYREF
+  _UNKNOWN *retaddr; // [esp+10h] [ebp+0h] BYREF
 
-  v5 = (void **)(this);
-  v1 = (*(int (**)(int *, void ***))(g_abs_AC4C98 + 16))(&g_abs_AC4C98, &v5); /*0x637655*/
-  if ( v1 != -1 && v1 < (int)((int))((int))(g_abs_AC4CA8) && v1 < --g_abs_AC4CA8 ) /*0x637670*/
+  v5 = this; /*0x637647*/
+  v1 = (*(int (**)(int *, _UNKNOWN ***))(MEMORY[0xAC4C98] + 16))(&MEMORY[0xAC4C98], &v5); /*0x637655*/
+  if ( v1 != -1 && v1 < MEMORY[0xAC4CA8] && v1 < --MEMORY[0xAC4CA8] ) /*0x637670*/
   {
     do /*0x637688*/
     {
       ++v1; /*0x637678*/
-      *((unsigned int *)g_abs_AC4C9C + v1 - 1) = *((unsigned int *)g_abs_AC4C9C + v1); /*0x63767c*/
+      *((unsigned int *)MEMORY[0xAC4C9C] + v1 - 1) = *((unsigned int *)MEMORY[0xAC4C9C] + v1); /*0x63767c*/
     }
-    while ( v1 < (int)((int))((int))(g_abs_AC4CA8) ); /*0x637688*/
+    while ( v1 < MEMORY[0xAC4CA8] ); /*0x637688*/
   }
-  v2 = (*(int (**)(int *, void **))(g_abs_AC4B30 + 16))(&g_abs_AC4B30, &retaddr); /*0x63769a*/
-  if ( v2 != -1 && v2 < (int)((int))((int))(g_abs_AC4B40) && v2 < --g_abs_AC4B40 ) /*0x6376b5*/
+  v2 = (*(int (**)(int *, _UNKNOWN **))(MEMORY[0xAC4B30] + 16))(&MEMORY[0xAC4B30], &retaddr); /*0x63769a*/
+  if ( v2 != -1 && v2 < MEMORY[0xAC4B40] && v2 < --MEMORY[0xAC4B40] ) /*0x6376b5*/
   {
     do /*0x6376cd*/
     {
       ++v2; /*0x6376bd*/
-      *((unsigned int *)g_abs_AC4B34 + v2 - 1) = *((unsigned int *)g_abs_AC4B34 + v2); /*0x6376c1*/
+      *((unsigned int *)MEMORY[0xAC4B34] + v2 - 1) = *((unsigned int *)MEMORY[0xAC4B34] + v2); /*0x6376c1*/
     }
-    while ( v2 < (int)((int))((int))(g_abs_AC4B40) ); /*0x6376cd*/
+    while ( v2 < MEMORY[0xAC4B40] ); /*0x6376cd*/
   }
   v5 = &retaddr; /*0x6376d9*/
-  v3 = (*(int (**)(int *))(g_abs_AC4C18 + 16))(&g_abs_AC4C18); /*0x6376df*/
-  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_AC4C28) && v3 < --g_abs_AC4C28 ) /*0x6376fa*/
+  v3 = (*(int (**)(int *))(MEMORY[0xAC4C18] + 16))(&MEMORY[0xAC4C18]); /*0x6376df*/
+  if ( v3 != -1 && v3 < MEMORY[0xAC4C28] && v3 < --MEMORY[0xAC4C28] ) /*0x6376fa*/
   {
     do /*0x637712*/
     {
       ++v3; /*0x637702*/
-      *((unsigned int *)g_abs_AC4C1C + v3 - 1) = *((unsigned int *)g_abs_AC4C1C + v3); /*0x637706*/
+      *((unsigned int *)MEMORY[0xAC4C1C] + v3 - 1) = *((unsigned int *)MEMORY[0xAC4C1C] + v3); /*0x637706*/
     }
-    while ( v3 < (int)((int))((int))(g_abs_AC4C28) ); /*0x637712*/
+    while ( v3 < MEMORY[0xAC4C28] ); /*0x637712*/
   }
   result = v5; /*0x637714*/
-  if ( (void **)g_abs_AC4CCC == v5 ) /*0x637722*/
-    g_abs_AC4CCC = 0; /*0x637724*/
-  if ( (void **)g_abs_AC4C38 == v5 ) /*0x637730*/
-    g_abs_AC4C38 = 0; /*0x637732*/
-  if ( (void **)g_abs_AC4BF0 == v5 ) /*0x63773e*/
-    g_abs_AC4BF0 = 0; /*0x637740*/
+  if ( (_UNKNOWN **)MEMORY[0xAC4CCC] == v5 ) /*0x637722*/
+    MEMORY[0xAC4CCC] = 0; /*0x637724*/
+  if ( (_UNKNOWN **)MEMORY[0xAC4C38] == v5 ) /*0x637730*/
+    MEMORY[0xAC4C38] = 0; /*0x637732*/
+  if ( (_UNKNOWN **)MEMORY[0xAC4BF0] == v5 ) /*0x63773e*/
+    MEMORY[0xAC4BF0] = 0; /*0x637740*/
   return result; /*0x637747*/
 
 }
@@ -489,11 +489,11 @@ int Team::AllMembersValid()
   int v2; // eax
   unsigned int *i; // ecx
 
-  v1 = (int)(*(this + 58));
+  v1 = *((char *)this + 58); /*0x65ae30*/
   v2 = 0; /*0x65ae36*/
   if ( v1 <= 0 ) /*0x65ae3a*/
     return 0; /*0x65ae4f*/
-  for ( i = (unsigned int *)*(this + 57); !*i; ++i ) /*0x65ae3c*/
+  for ( i = (unsigned int *)*((char *)this + 57); !*i; ++i ) /*0x65ae3c*/
   {
     if ( ++v2 >= v1 ) /*0x65ae4d*/
       return 0; /*0x65ae4d*/

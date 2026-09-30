@@ -146,11 +146,11 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
 {
 
   unsigned int *FoundationSize; // eax
-  AbstractClass * v8;
+  int v8; // ebx
   int Default; // edi
   int *v10; // ebp
   int v11; // eax
-  AbstractClass * v12;
+  int v12; // ebp
   int v13; // edi
   int *Viewport; // eax
   int v15; // kr04_4
@@ -160,7 +160,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   int v20; // [esp+Ch] [ebp-34h]
   int v21; // [esp+18h] [ebp-28h]
   int v22[7]; // [esp+20h] [ebp-20h] BYREF
-  int16_t v23; // [esp+3Eh] [ebp-2h]
+  __int16 v23; // [esp+3Eh] [ebp-2h]
   int v24; // [esp+44h] [ebp+4h]
 
   if ( a2 == -1 && aP2 == (ProgressScreenClass *)-1 ) /*0x642c9a*/
@@ -176,16 +176,16 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
       Default = BuildingType::FindDefault(0); /*0x642ceb*/
       if ( Default ) /*0x642cef*/
       {
-        v8 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)((*(int (**)(int))(*(unsigned int *)Default + 124))(Default))));
+        v8 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642cfc*/
         Default = (*(int (**)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
-    Instance = (gamemd::AbstractClass *)(this->TextRenderer::GetInstance());
+    Instance = TextRenderer::GetInstance(); /*0x642d10*/
     v10 = v22; /*0x642d14*/
     v24 = 15; /*0x642d18*/
     do /*0x642d3d*/
     {
-      *(unsigned short *)v10 = *(unsigned short *)CharToWideString(g_abs_8258C0); /*0x642d2d*/
+      *(unsigned short *)v10 = *(unsigned short *)CharToWideString(MEMORY[0x8258C0]); /*0x642d2d*/
       v10 = (int *)((char *)v10 + 2); /*0x642d35*/
       --v24; /*0x642d39*/
     }
@@ -211,7 +211,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
     *((unsigned int *)this + 26) = a2; /*0x642dc4*/
     *((unsigned int *)this + 27) = aP2; /*0x642dc7*/
   }
-  *(unsigned int *)&this-((unsigned int *)(>__pad_4C))[4] = aP3; /*0x642dd6*/
+  *(unsigned int *)&this->__pad_4C[4] = aP3; /*0x642dd6*/
   *((unsigned char *)this + 112) = (unsigned char)aP4; /*0x642dd9*/
   *((unsigned char *)this + 113) = a6; /*0x642ddc*/
   return a6; /*0x642ddf*/
@@ -224,7 +224,7 @@ void * TextRenderer::MeasureBuilding2()
 {
 
   unsigned int *FoundationSize; // eax
-  AbstractClass * v2;
+  int v2; // ebp
   int v3; // edi
   int Default; // eax
   int v5; // esi
@@ -237,14 +237,14 @@ void * TextRenderer::MeasureBuilding2()
   int v12; // [esp+10h] [ebp-34h]
   CampaignScore *v16; // [esp+1Ch] [ebp-28h]
   unsigned int v14[7]; // [esp+24h] [ebp-20h] BYREF
-  int16_t v15; // [esp+42h] [ebp-2h]
+  __int16 v15; // [esp+42h] [ebp-2h]
   unsigned int *arg0; // [esp+48h] [ebp+4h]
   int *v17; // [esp+4Ch] [ebp+8h]
   int v18; // [esp+50h] [ebp+Ch]
   char v19; // [esp+54h] [ebp+10h]
   int v20; // [esp+54h] [ebp+10h]
 
-  FoundationSize = ((Building *)(v14))->GetFoundationSize(0); /*0x642f01*/
+  FoundationSize = Building::GetFoundationSize(v14, 0); /*0x642f01*/
   v2 = 0; /*0x642f08*/
   v3 = 0; /*0x642f0e*/
   v16 = (CampaignScore *)FoundationSize[2]; /*0x642f1a*/
@@ -255,16 +255,16 @@ void * TextRenderer::MeasureBuilding2()
     v5 = Default; /*0x642f37*/
     if ( Default ) /*0x642f3b*/
     {
-      v2 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)((*(int (**)(int))(*(unsigned int *)Default + 124))(Default))));
+      v2 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642f44*/
       v3 = (*(int (**)(int))(*(unsigned int *)v5 + 128))(v5); /*0x642f50*/
     }
   }
-  Instance = (gamemd::AbstractClass *)(TextRenderer::GetInstance());
+  Instance = TextRenderer::GetInstance(); /*0x642f5c*/
   v10 = (CampaignScore *)v14; /*0x642f5e*/
   v20 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
-    *(unsigned short *)v10->__pad_0 = *(unsigned short *)CharToWideString(g_abs_8258C0); /*0x642f7b*/
+    *(unsigned short *)v10->__pad_0 = *(unsigned short *)CharToWideString(MEMORY[0x8258C0]); /*0x642f7b*/
     v10 = (CampaignScore *)((char *)v10 + 2); /*0x642f7e*/
     --v20; /*0x642f82*/
   }

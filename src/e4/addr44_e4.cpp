@@ -22,11 +22,11 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
   int v6; // esi
   int v7; // ecx
   unsigned char v9[12]; // [esp+14h] [ebp-Ch] BYREF
-  int a2; // [esp+28h] [ebp+8h]
+  int v10; // [esp+28h] [ebp+8h]
 
   v3 = 6; /*0x44f6ed*/
   v4 = 5; /*0x44f6f2*/
-  unsigned int *sub_44F6E0(ObjectClass *this, unsigned int *a2, int a3)
+  v5 = (unsigned int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this + 72))(this, v9); /*0x44f6f7*/
   v6 = *v5 / 256; /*0x44f71b*/
   v7 = v5[1] / 256; /*0x44f71e*/
   if ( a3 ) /*0x44f72e*/
@@ -38,13 +38,13 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
   {
     v3 = 0; /*0x44f739*/
   }
-  if ( (int16_t)v6 - g_abs_87F90C > (unsigned int)(g_abs_87F914)/ 2 ) /*0x44f751*/
+  if ( (__int16)v6 - MEMORY[0x87F90C] > MEMORY[0x87F914] / 2 ) /*0x44f751*/
     v3 = -v3; /*0x44f753*/
-  if ( (int16_t)v7 - g_abs_87F910 > (unsigned int)(g_abs_87F918)/ 2 ) /*0x44f76b*/
+  if ( (__int16)v7 - MEMORY[0x87F910] > MEMORY[0x87F918] / 2 ) /*0x44f76b*/
     v4 = -v4; /*0x44f76d*/
-  IDA_LOWORD(a2) = v6 + v3; /*0x44f77f*/
-  IDA_HIWORD(a2) = v7 + v4; /*0x44f784*/
-  *a2 = a2; /*0x44f78f*/
+  LOWORD(v10) = v6 + v3; /*0x44f77f*/
+  HIWORD(v10) = v7 + v4; /*0x44f784*/
+  *a2 = v10; /*0x44f78f*/
   return a2; /*0x44f78d*/
 
 }

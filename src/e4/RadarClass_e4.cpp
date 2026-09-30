@@ -38,12 +38,12 @@ CampaignClass * RadarClass::Destruct()
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
-    v4 = (void *)((unsigned int)((void *)*((unsigned int *)v2 - 5)));
+    v4 = (void *)*((unsigned int *)v2 - 5); /*0x652c2b*/
     v2 -= 24; /*0x652c2e*/
     *(unsigned int *)v2 = &vt_VectorClass_Point2D; /*0x652c33*/
     if ( v4 && v2[13] ) /*0x652c3b*/
     {
-      RA2_OPDEL(v4); /*0x652c41*/
+      __3_YAXPAX_Z(v4); /*0x652c41*/
       *((unsigned int *)v2 + 1) = 0; /*0x652c49*/
     }
     --v3; /*0x652c4c*/
@@ -55,7 +55,7 @@ CampaignClass * RadarClass::Destruct()
   *((unsigned int *)this + 1175) = &vt_VectorClass_Point2D; /*0x652c5b*/
   if ( v5 && *((unsigned char *)this + 4713) ) /*0x652c69*/
   {
-    RA2_OPDEL(v5); /*0x652c72*/
+    __3_YAXPAX_Z(v5); /*0x652c72*/
     *((unsigned int *)this + 1176) = 0; /*0x652c7a*/
   }
   *((unsigned char *)this + 4713) = 0; /*0x652c80*/
@@ -64,12 +64,12 @@ CampaignClass * RadarClass::Destruct()
   *((unsigned int *)this + 1161) = &vt_VectorClass_Cell; /*0x652c92*/
   if ( v6 && *((unsigned char *)this + 4657) ) /*0x652ca0*/
   {
-    RA2_OPDEL(v6); /*0x652ca9*/
+    __3_YAXPAX_Z(v6); /*0x652ca9*/
     *((unsigned int *)this + 1162) = 0; /*0x652cb1*/
   }
   *((unsigned char *)this + 4657) = 0; /*0x652cb9*/
   *((unsigned int *)this + 1163) = 0; /*0x652cbf*/
-  return ((MapClass *)(this))->Destruct(); /*0x652cca*/
+  return MapClass::Destruct(this); /*0x652cca*/
 
 }
 }

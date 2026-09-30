@@ -136,8 +136,8 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
 
   int v11; // eax
   int result; // eax
-  unsigned int * v14;
-  uint8_t v16; // bl
+  unsigned int *v14; // edi
+  unsigned __int8 v16; // bl
   int v17; // [esp+20h] [ebp+18h]
 
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
@@ -146,20 +146,20 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   result = *((unsigned int *)this + 2) + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
-    v14 = (unsigned int *)(g_abs_87E8A4);
+    v14 = MEMORY[0x87E8A4]; /*0x493e35*/
     v17 = a4; /*0x493e3b*/
     do /*0x493e8e*/
     {
       v16 = *a3++; /*0x493e43*/
       if ( v16 ) /*0x493e4c*/
       {
-        *a2 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * (v16 | *(uint16_t *)(result + 2 * *a7))); /*0x493e6c*/
-        v14 = g_abs_87E8A4; /*0x493e6f*/
+        *a2 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * (v16 | *(unsigned __int16 *)(result + 2 * *a7))); /*0x493e6c*/
+        v14 = MEMORY[0x87E8A4]; /*0x493e6f*/
       }
       ++a7; /*0x493e78*/
       ++a2; /*0x493e7b*/
-      if ( (unsigned int)a7 >= ((unsigned int *)(v14))[7] ) /*0x493e80*/
-        a7 = (uint16_t *)((char *)a7 - ((unsigned int *)(v14))[8]); /*0x493e82*/
+      if ( (unsigned int)a7 >= v14[7] ) /*0x493e80*/
+        a7 = (unsigned __int16 *)((char *)a7 - v14[8]); /*0x493e82*/
       --v17; /*0x493e8a*/
     }
     while ( v17 ); /*0x493e8e*/
@@ -173,7 +173,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x493eca*/
            this,
            a2,
            a3,
@@ -192,7 +192,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x493efa*/
            this,
            a2,
            a3,
@@ -210,7 +210,7 @@ namespace gamemd {
 int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x493f2a*/
            this,
            a2,
            a3,
@@ -449,13 +449,13 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 2)));
-  *Block = (unsigned int)(&vt_BlitTransXlatAlpha_unsigned_short);
+  v3 = (void *)*(Block + 2); /*0x49a248*/
+  *Block = &vt_BlitTransXlatAlpha_unsigned_short; /*0x49a24b*/
   FractalNoise::Release(v3); /*0x49a252*/
   *(Block + 2) = 0; /*0x49a25b*/
   *Block = &vt_Blitter; /*0x49a264*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x49a26a*/
-    RA2_OPDEL(Block); /*0x49a26d*/
+  if ( (a2 & 1) != 0 ) /*0x49a26a*/
+    __3_YAXPAX_Z(Block); /*0x49a26d*/
   return (BlitTransXlatAlpha_ushort *)Block; /*0x49a277*/
 
 }

@@ -22,7 +22,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x5ac43a*/
     goto LABEL_8; /*0x5ac43a*/
-  (*(void (**)(DynamicVector *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x5ac43e*/
   v3 = aP1->Capacity; /*0x5ac441*/
   *((unsigned int *)this + 2) = v3; /*0x5ac446*/
   if ( !v3 ) /*0x5ac449*/
@@ -34,7 +34,7 @@ LABEL_8:
     *((unsigned int *)this + 5) = aP1[1].Items; /*0x5ac4aa*/
     return this; /*0x5ac4ad*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x5ac453*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x5ac453*/
   *((unsigned int *)this + 1) = v4; /*0x5ac45b*/
   if ( !v4 ) /*0x5ac460*/
     goto LABEL_8; /*0x5ac460*/
@@ -186,7 +186,7 @@ int DynamicVector::GetOrGrow(DynamicVector * aP1)
   v3 = *((unsigned int *)this + 2); /*0x49fae9*/
   if ( (int)aP1 < v3 ) /*0x49faee*/
     return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * (unsigned int)aP1); /*0x49fb26*/
-  ( this, a2 + 10, 0)
+  if ( (*(unsigned __int8 (**)(unsigned int *, char *, unsigned int))(*(unsigned int *)this + 32))(this, (char *)&aP1->field_8 + 2, 0) ) /*0x49fafa*/
   {
     for ( i = v3; i < *((unsigned int *)this + 2); *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) = 0 ) /*0x49fb08*/
       ++i; /*0x49fb0d*/
@@ -241,7 +241,7 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x538796*/
       return 0; /*0x538796*/
     v4 = *((unsigned int *)this + 5); /*0x538798*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, DynamicVector_field_0x8 + v4, 0) )
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x5387a8*/
       return 0; /*0x5387af*/
   }
   v6 = *((unsigned int *)this + 4); /*0x5387b5*/
@@ -500,7 +500,7 @@ char DynamicVector::Add(DynamicVector * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x6c6416*/
       return 0; /*0x6c6416*/
     v4 = *((unsigned int *)this + 5); /*0x6c6418*/
-    if ( v4 <= 0 || !(*(uint8_t (**)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, DynamicVector_field_0x8 + v4, 0) )
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x6c6428*/
       return 0; /*0x6c642f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x6c6435*/

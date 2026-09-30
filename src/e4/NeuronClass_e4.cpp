@@ -39,32 +39,32 @@ NeuronClass::NeuronClass()
   *((unsigned int *)this + 9) = 0; /*0x43a358*/
   *((unsigned int *)this + 10) = 0; /*0x43a35f*/
   *((unsigned int *)this + 11) = 0; /*0x43a366*/
-  *((unsigned int *)this + 12) = g_abs_A8ED84; /*0x43a372*/
-  *(unsigned int *)this = &vt_NeuronClass; /*0x43a375*/
-  *((unsigned int *)this + 1) = &vt_NeuronClass; /*0x43a37b*/
-  *((unsigned int *)this + 2) = &vt_NeuronClass; /*0x43a382*/
+  *((unsigned int *)this + 12) = MEMORY[0xA8ED84]; /*0x43a372*/
+  *(unsigned int *)this = &NeuronClass::`vftable'; /*0x43a375*/
+  *((unsigned int *)this + 1) = &NeuronClass::`vftable'; /*0x43a37b*/
+  *((unsigned int *)this + 2) = &NeuronClass::`vftable'; /*0x43a382*/
   *((unsigned int *)this + 3) = &vt_NeuronClass; /*0x43a389*/
-  if ( g_abs_B0F5E8 < g_abs_B0F5E0 /*0x43a3c5*/
-    || (g_abs_B0F5E5 || !g_abs_B0F5E0)
-    && g_abs_B0F5EC > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F5D8 + 8))(
-         &g_abs_B0F5D8,
-         (unsigned int)(g_abs_B0F5E0)+ g_abs_B0F5EC,
+  if ( MEMORY[0xB0F5E8] < MEMORY[0xB0F5E0] /*0x43a3c5*/
+    || (MEMORY[0xB0F5E5] || !MEMORY[0xB0F5E0])
+    && MEMORY[0xB0F5EC] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F5D8] + 8))(
+         &MEMORY[0xB0F5D8],
+         MEMORY[0xB0F5E0] + MEMORY[0xB0F5EC],
          0) )
   {
-    v2 = (int)(g_abs_B0F5E8++);
-    *((unsigned int *)g_abs_B0F5DC + v2) = this; /*0x43a3e1*/
+    v2 = MEMORY[0xB0F5E8]++; /*0x43a3d2*/
+    *((unsigned int *)MEMORY[0xB0F5DC] + v2) = this; /*0x43a3e1*/
   }
-  if ( g_abs_B0F680 < g_abs_B0F678 /*0x43a41b*/
-    || (g_abs_B0F67D || !g_abs_B0F678)
-    && g_abs_B0F684 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F670 + 8))(
-         &g_abs_B0F670,
-         (unsigned int)(g_abs_B0F678)+ g_abs_B0F684,
+  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678] /*0x43a41b*/
+    || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
+    && MEMORY[0xB0F684] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F670] + 8))(
+         &MEMORY[0xB0F670],
+         MEMORY[0xB0F678] + MEMORY[0xB0F684],
          0) )
   {
-    v3 = (int)(g_abs_B0F680++);
-    *((unsigned int *)g_abs_B0F674 + v3) = this; /*0x43a437*/
+    v3 = MEMORY[0xB0F680]++; /*0x43a428*/
+    *((unsigned int *)MEMORY[0xB0F674] + v3) = this; /*0x43a437*/
   }
   return this; /*0x43a43c*/
 
@@ -77,35 +77,35 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
   int v4; // eax
   unsigned int *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (unsigned int)(&vt_NeuronClass);
-  *(Block + 1) = &vt_NeuronClass; /*0x43a9d3*/
-  *(Block + 2) = &vt_NeuronClass; /*0x43a9da*/
+  *Block = &NeuronClass::`vftable'; /*0x43a9cd*/
+  *(Block + 1) = &NeuronClass::`vftable'; /*0x43a9d3*/
+  *(Block + 2) = &NeuronClass::`vftable'; /*0x43a9da*/
   *(Block + 3) = &vt_NeuronClass; /*0x43a9e1*/
   v6 = Block; /*0x43a9ef*/
-  v3 = (*(int (**)(int *, unsigned int **))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v6); /*0x43a9f3*/
-  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_B0F680) && v3 < --g_abs_B0F680 ) /*0x43aa0e*/
+  v3 = (*(int (**)(int *, unsigned int **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x43a9f3*/
+  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x43aa0e*/
   {
     do /*0x43aa26*/
     {
       ++v3; /*0x43aa16*/
-      *((unsigned int *)g_abs_B0F674 + v3 - 1) = *((unsigned int *)g_abs_B0F674 + v3); /*0x43aa1a*/
+      *((unsigned int *)MEMORY[0xB0F674] + v3 - 1) = *((unsigned int *)MEMORY[0xB0F674] + v3); /*0x43aa1a*/
     }
-    while ( v3 < (int)((int))((int))(g_abs_B0F680) ); /*0x43aa26*/
+    while ( v3 < MEMORY[0xB0F680] ); /*0x43aa26*/
   }
   v6 = Block; /*0x43aa38*/
-  v4 = (*(int (**)(int *, unsigned int **))(g_abs_B0F5D8 + 16))(&g_abs_B0F5D8, &v6); /*0x43aa3c*/
-  if ( v4 != -1 && v4 < (int)((int))((int))(g_abs_B0F5E8) && v4 < --g_abs_B0F5E8 ) /*0x43aa57*/
+  v4 = (*(int (**)(int *, unsigned int **))(MEMORY[0xB0F5D8] + 16))(&MEMORY[0xB0F5D8], &v6); /*0x43aa3c*/
+  if ( v4 != -1 && v4 < MEMORY[0xB0F5E8] && v4 < --MEMORY[0xB0F5E8] ) /*0x43aa57*/
   {
     do /*0x43aa6f*/
     {
       ++v4; /*0x43aa5f*/
-      *((unsigned int *)g_abs_B0F5DC + v4 - 1) = *((unsigned int *)g_abs_B0F5DC + v4); /*0x43aa63*/
+      *((unsigned int *)MEMORY[0xB0F5DC] + v4 - 1) = *((unsigned int *)MEMORY[0xB0F5DC] + v4); /*0x43aa63*/
     }
-    while ( v4 < (int)((int))((int))(g_abs_B0F5E8) ); /*0x43aa6f*/
+    while ( v4 < MEMORY[0xB0F5E8] ); /*0x43aa6f*/
   }
   AbstractClass::DTOR(Block); /*0x43aa73*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x43aa7d*/
-    RA2_OPDEL(Block); /*0x43aa80*/
+  if ( (a2 & 1) != 0 ) /*0x43aa7d*/
+    __3_YAXPAX_Z(Block); /*0x43aa80*/
   return (NeuronClass *)Block; /*0x43aa8a*/
 
 }
@@ -165,7 +165,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x43ab8c*/
       v4 = a3; /*0x43aba2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x43ab9e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x43ab9e*/
     *((unsigned char *)this + 12) = 1; /*0x43aba6*/
     if ( v4 ) /*0x43abaa*/
     {
@@ -178,7 +178,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
           ++i; /*0x43abce*/
         if ( *((unsigned char *)this + 13) ) /*0x43abdb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x43abe6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x43abe6*/
           *((unsigned int *)this + 1) = 0; /*0x43abee*/
         }
       }
@@ -194,7 +194,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVNeuronClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x43ac12*/
     return 1; /*0x43ac18*/
   }
 
@@ -262,17 +262,17 @@ VectorClass_flat * NeuronClass_25::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_NeuronClass);
+  v3 = (void *)*(Block + 1); /*0x43acb3*/
+  *Block = &vt_VectorClass_NeuronClass; /*0x43acb6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x43acc0*/
   {
-    RA2_OPDEL(v3); /*0x43acc8*/
+    __3_YAXPAX_Z(v3); /*0x43acc8*/
     *(Block + 1) = 0; /*0x43acd0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x43acdb*/
   *(Block + 2) = 0; /*0x43ace1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x43ace8*/
-    RA2_OPDEL(Block); /*0x43aceb*/
+  if ( (a2 & 1) != 0 ) /*0x43ace8*/
+    __3_YAXPAX_Z(Block); /*0x43aceb*/
   return (VectorClass *)Block; /*0x43acf5*/
 
 }

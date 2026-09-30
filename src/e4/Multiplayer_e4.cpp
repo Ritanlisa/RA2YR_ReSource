@@ -225,7 +225,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x68c2bb*/
     return this; /*0x68c2bb*/
-  (*(void (**)(Multiplayer *))(*(unsigned int *)this + 12))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x68c2bf*/
   v3 = *(unsigned int *)&aP1->__pad_0[8]; /*0x68c2c2*/
   *((unsigned int *)this + 2) = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
@@ -234,7 +234,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
     *((unsigned char *)this + 13) = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x68c2d4*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   *((unsigned int *)this + 1) = v4; /*0x68c2eb*/

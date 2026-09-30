@@ -2766,7 +2766,7 @@ namespace gamemd {
 int E4Recv_491300::sub_491300(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49132a*/
            this,
            a2,
            a3,
@@ -2785,7 +2785,7 @@ namespace gamemd {
 int E4Recv_491330::sub_491330(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49135a*/
            this,
            a2,
            a3,
@@ -2804,7 +2804,7 @@ namespace gamemd {
 int E4Recv_491360::sub_491360(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49138a*/
            this,
            a2,
            a3,
@@ -3052,7 +3052,7 @@ namespace gamemd {
 int E4Recv_4918A0::sub_4918A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this + 4))( /*0x4918d7*/
            this,
            a2,
            a3,
@@ -3297,7 +3297,7 @@ namespace gamemd {
 int E4Recv_491C10::sub_491C10(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this + 4))( /*0x491c47*/
            this,
            a2,
            a3,
@@ -3496,7 +3496,7 @@ namespace gamemd {
 int E4Recv_492500::sub_492500(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49252a*/
            this,
            a2,
            a3,
@@ -3515,7 +3515,7 @@ namespace gamemd {
 int E4Recv_492530::sub_492530(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49255a*/
            this,
            a2,
            a3,
@@ -3534,7 +3534,7 @@ namespace gamemd {
 int E4Recv_492560::sub_492560(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49258a*/
            this,
            a2,
            a3,
@@ -3672,7 +3672,7 @@ namespace gamemd {
 int E4Recv_4926B0::sub_4926B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4926da*/
            this,
            a2,
            a3,
@@ -3691,7 +3691,7 @@ namespace gamemd {
 int E4Recv_4926E0::sub_4926E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49270a*/
            this,
            a2,
            a3,
@@ -3710,7 +3710,7 @@ namespace gamemd {
 int E4Recv_492710::sub_492710(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49273a*/
            this,
            a2,
            a3,
@@ -3766,7 +3766,7 @@ namespace gamemd {
 int E4Recv_4927A0::sub_4927A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4927ca*/
            this,
            a2,
            a3,
@@ -3785,7 +3785,7 @@ namespace gamemd {
 int E4Recv_4927D0::sub_4927D0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4927fa*/
            this,
            a2,
            a3,
@@ -3804,7 +3804,7 @@ namespace gamemd {
 int E4Recv_492800::sub_492800(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49282a*/
            this,
            a2,
            a3,
@@ -3852,7 +3852,7 @@ namespace gamemd {
 int E4Recv_492890::sub_492890(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4928ba*/
            this,
            a2,
            a3,
@@ -3871,7 +3871,7 @@ namespace gamemd {
 int E4Recv_4928C0::sub_4928C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4928ea*/
            this,
            a2,
            a3,
@@ -3890,7 +3890,7 @@ namespace gamemd {
 int E4Recv_4928F0::sub_4928F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49291a*/
            this,
            a2,
            a3,
@@ -3940,7 +3940,7 @@ namespace gamemd {
 int E4Recv_492980::sub_492980(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4929aa*/
            this,
            a2,
            a3,
@@ -3959,7 +3959,7 @@ namespace gamemd {
 int E4Recv_4929B0::sub_4929B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4929da*/
            this,
            a2,
            a3,
@@ -3978,7 +3978,7 @@ namespace gamemd {
 int E4Recv_4929E0::sub_4929E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  (*(unsigned int *)this->__pad_0 + 4)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x492a0a*/
            this,
            a2,
            a3,
@@ -4126,7 +4126,7 @@ namespace gamemd {
 int E4Recv_492B70::sub_492B70(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x492b9a*/
            this,
            a2,
            a3,
@@ -4145,7 +4145,7 @@ namespace gamemd {
 int E4Recv_492BA0::sub_492BA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x492bca*/
            this,
            a2,
            a3,
@@ -4164,7 +4164,7 @@ namespace gamemd {
 int E4Recv_492BD0::sub_492BD0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x492bfa*/
            this,
            a2,
            a3,
@@ -5077,7 +5077,7 @@ namespace gamemd {
 int E4Recv_493680::sub_493680(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4936aa*/
            this,
            a2,
            a3,
@@ -5096,7 +5096,7 @@ namespace gamemd {
 int E4Recv_4936B0::sub_4936B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4936da*/
            this,
            a2,
            a3,
@@ -5115,7 +5115,7 @@ namespace gamemd {
 int E4Recv_4936E0::sub_4936E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49370a*/
            this,
            a2,
            a3,
@@ -5448,7 +5448,7 @@ namespace gamemd {
 int E4Recv_496690::sub_496690(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this + 4))( /*0x4966c7*/
            this,
            a2,
            a3,

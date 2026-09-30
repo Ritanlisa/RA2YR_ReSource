@@ -97,7 +97,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a7ddc*/
       v4 = a3; /*0x4a7df2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4a7dee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a7dee*/
     *((unsigned char *)this + 12) = 1; /*0x4a7df6*/
     if ( v4 ) /*0x4a7dfa*/
     {
@@ -110,7 +110,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
           ++i; /*0x4a7e1e*/
         if ( *((unsigned char *)this + 13) ) /*0x4a7e2b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4a7e36*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a7e36*/
           *((unsigned int *)this + 1) = 0; /*0x4a7e3e*/
         }
       }
@@ -126,7 +126,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4a7e62*/
     return 1; /*0x4a7e68*/
   }
 
@@ -203,7 +203,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a7f18*/
       v4 = a3; /*0x4a7f2e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4a7f2a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a7f2a*/
     *((unsigned char *)this + 12) = 1; /*0x4a7f32*/
     if ( !v4 ) /*0x4a7f36*/
       return 0; /*0x4a7faa*/
@@ -216,7 +216,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4a7f51*/
       if ( *((unsigned char *)this + 13) ) /*0x4a7f5e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4a7f69*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a7f69*/
         *((unsigned int *)this + 1) = 0; /*0x4a7f71*/
       }
     }
@@ -226,7 +226,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVDiskLaserClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4a7f8e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4a7f91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4a7f99*/
@@ -265,17 +265,17 @@ VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_DiskLaserClass);
+  v3 = (void *)*(Block + 1); /*0x4a8033*/
+  *Block = &vt_VectorClass_DiskLaserClass; /*0x4a8036*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a8040*/
   {
-    RA2_OPDEL(v3); /*0x4a8048*/
+    __3_YAXPAX_Z(v3); /*0x4a8048*/
     *(Block + 1) = 0; /*0x4a8050*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4a805b*/
   *(Block + 2) = 0; /*0x4a8061*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4a8068*/
-    RA2_OPDEL(Block); /*0x4a806b*/
+  if ( (a2 & 1) != 0 ) /*0x4a8068*/
+    __3_YAXPAX_Z(Block); /*0x4a806b*/
   return (VectorClass *)Block; /*0x4a8075*/
 
 }
@@ -288,17 +288,17 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigne
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_DiskLaserClass);
+  v3 = (void *)*(Block + 1); /*0x4a8083*/
+  *Block = &vt_VectorClass_DiskLaserClass; /*0x4a8086*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a8090*/
   {
-    RA2_OPDEL(v3); /*0x4a8098*/
+    __3_YAXPAX_Z(v3); /*0x4a8098*/
     *(Block + 1) = 0; /*0x4a80a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4a80ab*/
   *(Block + 2) = 0; /*0x4a80b1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4a80b8*/
-    RA2_OPDEL(Block); /*0x4a80bb*/
+  if ( (a2 & 1) != 0 ) /*0x4a80b8*/
+    __3_YAXPAX_Z(Block); /*0x4a80bb*/
   return (DynamicVector *)Block; /*0x4a80c5*/
 
 }

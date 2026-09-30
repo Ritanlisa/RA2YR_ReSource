@@ -21,7 +21,7 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
   DWORD *v4; // esi
   DWORD v6; // [esp+4h] [ebp-8h]
 
-  IDA_LOBYTE(Ticks) = a2; /*0x7718a0*/
+  LOBYTE(Ticks) = a2; /*0x7718a0*/
   *((unsigned char *)this + 12) = a2; /*0x7718a9*/
   if ( !a2 ) /*0x7718ac*/
   {
@@ -31,8 +31,8 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
       StopThemeClass(1); /*0x7718be*/
       (*(void (**)(unsigned int *))(v3[240] + 12))(v3 + 240); /*0x7718cf*/
     }
-    Ticks = (DWORD *)(this->Timer::GetTicks());
-    v4 = (DWORD *)(v3 + 235);
+    Ticks = Timer::GetTicks(); /*0x7718d6*/
+    v4 = v3 + 235; /*0x7718e1*/
     *v4 = Ticks; /*0x7718e7*/
     v4[1] = v6; /*0x7718e9*/
     v4[2] = 0; /*0x7718ec*/
@@ -113,10 +113,10 @@ namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&vt_WorldDominationTour_Voices_Anim);
+  *Block = &vt_WorldDominationTour_Voices_Anim; /*0x771a33*/
   VtableStub::5CB6C0(Block); /*0x771a39*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x771a43*/
-    RA2_OPDEL(Block); /*0x771a46*/
+  if ( (a2 & 1) != 0 ) /*0x771a43*/
+    __3_YAXPAX_Z(Block); /*0x771a46*/
   return Block; /*0x771a50*/
 
 }

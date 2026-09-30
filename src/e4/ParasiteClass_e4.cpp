@@ -28,29 +28,29 @@ namespace gamemd {
 void ParasiteClass::Constructor()
 {
 
-  unsigned int v2;
+  wchar_t *v2; // ecx
   int v3; // eax
 
-  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x629213*/
-  *((unsigned int *)this + 11) = g_abs_A8ED84; /*0x62921f*/
+  AbstractClass::Constructor((AbstractClass *)this); /*0x629213*/
+  *((unsigned int *)this + 11) = MEMORY[0xA8ED84]; /*0x62921f*/
   *((unsigned int *)this + 13) = 0; /*0x629222*/
-  v2 = g_abs_A8ED84; /*0x629225*/
+  v2 = MEMORY[0xA8ED84]; /*0x629225*/
   *((unsigned int *)this + 16) = 0; /*0x62922b*/
   *((unsigned int *)this + 14) = v2; /*0x62922e*/
-  *(unsigned int *)this = &vt_ParasiteClass; /*0x629231*/
-  *((unsigned int *)this + 1) = &vt_ParasiteClass; /*0x629237*/
-  *((unsigned int *)this + 2) = &vt_ParasiteClass; /*0x62923e*/
+  *(unsigned int *)this = &ParasiteClass::`vftable'; /*0x629231*/
+  *((unsigned int *)this + 1) = &ParasiteClass::`vftable'; /*0x629237*/
+  *((unsigned int *)this + 2) = &ParasiteClass::`vftable'; /*0x62923e*/
   *((unsigned int *)this + 3) = &vt_ParasiteClass; /*0x629245*/
-  if ( g_abs_AC4920 < g_abs_AC4918 /*0x62927e*/
-    || (g_abs_AC491D || !g_abs_AC4918)
-    && g_abs_AC4924 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_AC4910 + 8))(
-         &g_abs_AC4910,
-         (unsigned int)(g_abs_AC4918)+ g_abs_AC4924,
+  if ( MEMORY[0xAC4920] < MEMORY[0xAC4918] /*0x62927e*/
+    || (MEMORY[0xAC491D] || !MEMORY[0xAC4918])
+    && MEMORY[0xAC4924] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xAC4910] + 8))(
+         &MEMORY[0xAC4910],
+         MEMORY[0xAC4918] + MEMORY[0xAC4924],
          0) )
   {
-    v3 = (int)(g_abs_AC4920++);
-    *((unsigned int *)g_abs_AC4914 + v3) = this; /*0x62929a*/
+    v3 = MEMORY[0xAC4920]++; /*0x62928b*/
+    *((unsigned int *)MEMORY[0xAC4914] + v3) = this; /*0x62929a*/
   }
   return this; /*0x62929f*/
 
@@ -206,36 +206,36 @@ void ParasiteClass::DeploySquad()
   {
     v9 = *(unsigned int *)(v4 + 368); /*0x629898*/
     v10 = (unsigned int *)(*((unsigned int *)this + 10) + 1696); /*0x62989e*/
-    *v10 = g_abs_A8ED84; /*0x6298a4*/
+    *v10 = MEMORY[0xA8ED84]; /*0x6298a4*/
     v10[1] = v54; /*0x6298aa*/
     v10[2] = v9; /*0x6298ad*/
     switch ( *((unsigned int *)this + 18) ) /*0x6298bc*/
     {
       case 0: /*0x6298bc*/
         *(unsigned int *)(*((unsigned int *)this + 10) + 808) = 0; /*0x6298c6*/
-        Index = AnimTypeClass::FindIndex(g_abs_83665C); /*0x6298d1*/
+        Index = AnimTypeClass::FindIndex(MEMORY[0x83665C]); /*0x6298d1*/
         if ( Index != -1 ) /*0x6298d9*/
         {
-          v12 = (void *)*((unsigned int *)g_abs_8B4154 + Index); /*0x6298e5*/
+          v12 = (void *)*((unsigned int *)MEMORY[0x8B4154] + Index); /*0x6298e5*/
           if ( v12 ) /*0x6298ea*/
           {
-            v13 = (void **)RA2_OPNEW(0x1C8u); /*0x6298f5*/
+            v13 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6298f5*/
             if ( v13 ) /*0x6298ff*/
             {
               v14 = AnimClass::ctor(v13, v12, &v50, 0, 1, (void *)0x600, 0, 0); /*0x629913*/
               if ( v14 ) /*0x62991a*/
               {
                 *((unsigned int *)this + 17) = v14; /*0x62991c*/
-                if ( g_abs_B0F5C8 < g_abs_B0F5C0 /*0x629953*/
-                  || (g_abs_B0F5C5 || !g_abs_B0F5C0)
-                  && g_abs_B0F5CC > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-                  && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F5B8 + 8))(
-                       &g_abs_B0F5B8,
-                       (unsigned int)(g_abs_B0F5CC)+ g_abs_B0F5C0,
+                if ( MEMORY[0xB0F5C8] < MEMORY[0xB0F5C0] /*0x629953*/
+                  || (MEMORY[0xB0F5C5] || !MEMORY[0xB0F5C0])
+                  && MEMORY[0xB0F5CC] > 0
+                  && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F5B8] + 8))(
+                       &MEMORY[0xB0F5B8],
+                       MEMORY[0xB0F5CC] + MEMORY[0xB0F5C0],
                        0) )
                 {
-                  v15 = (int)((unsigned int)(g_abs_B0F5C8++));
-                  *((unsigned int *)g_abs_B0F5BC + v15) = this; /*0x62996f*/
+                  v15 = MEMORY[0xB0F5C8]++; /*0x629960*/
+                  *((unsigned int *)MEMORY[0xB0F5BC] + v15) = this; /*0x62996f*/
                 }
               }
             }
@@ -249,7 +249,7 @@ void ParasiteClass::DeploySquad()
       case 1: /*0x6298bc*/
         if ( BuildingClass::AnimController((int *)this) ) /*0x62998d*/
         {
-          v16 = Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, 1); /*0x6299a9*/
+          v16 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, 1); /*0x6299a9*/
           *((unsigned int *)this + 20) = 0; /*0x6299b7*/
           *((unsigned int *)this + 18) = 3 - (v16 != 0); /*0x6299ba*/
           *((unsigned int *)this + 19) = 0; /*0x6299bd*/
@@ -274,8 +274,8 @@ LABEL_20:
         goto LABEL_47; /*0x629a4c*/
       case 4: /*0x6298bc*/
         *(unsigned int *)(*((unsigned int *)this + 10) + 808) = 0; /*0x629a59*/
-        v17 = *((unsigned int *)g_abs_8871E0 + 756); /*0x629a67*/
-        v41 = -((double)(*(int16_t *)ProgressTimer::GetValue((unsigned short *)(*((unsigned int *)this + 10) + 904), &v45) - 0x3FFF) /*0x629a91*/
+        v17 = *((unsigned int *)MEMORY[0x8871E0] + 756); /*0x629a67*/
+        v41 = -((double)(*(__int16 *)ProgressTimer::GetValue((unsigned short *)(*((unsigned int *)this + 10) + 904), &v45) - 0x3FFF) /*0x629a91*/
               * -0.00009587672516830327);
         v49 = Math::ArcTan2(v41); /*0x629aa4*/
         v48 = Math::SinCos(v41); /*0x629aaf*/
@@ -283,7 +283,7 @@ LABEL_20:
         {
           v46 = 64.0; /*0x629ac8*/
           v47 = (double)i * 128.0 - 128.0; /*0x629aea*/
-          if ( Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, 1) ) /*0x629aee*/
+          if ( Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, 1) ) /*0x629aee*/
             v18 = -64.0; /*0x629af7*/
           else
             v18 = v46; /*0x629aff*/
@@ -292,13 +292,13 @@ LABEL_20:
           v53 = v19 + v50; /*0x629b44*/
           v54 = v51 + v20; /*0x629b48*/
           v55 = v52; /*0x629b4c*/
-          v21 = (void **)RA2_OPNEW(0x1C8u); /*0x629b55*/
+          v21 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x629b55*/
           if ( v21 ) /*0x629b5c*/
           {
-            v22 = Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, v17 - 1); /*0x629b6f*/
+            v22 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, v17 - 1); /*0x629b6f*/
             AnimClass::ctor( /*0x629b97*/
               v21,
-              *(void **)(*((unsigned int *)g_abs_8871E0 + 753) + 4 * v22),
+              *(void **)(*((unsigned int *)MEMORY[0x8871E0] + 753) + 4 * v22),
               &v53,
               (void *)2,
               1,
@@ -341,21 +341,21 @@ LABEL_20:
           }
           if ( *((unsigned char *)this + 84) ) /*0x629ca1*/
           {
-            v43[0] = (unsigned int)(this);
-            v30 = (*(int (**)(int *, unsigned int *))(g_abs_B0F5B8 + 16))(&g_abs_B0F5B8, v43); /*0x629cbc*/
-            if ( v30 != -1 && v30 < (int)(g_abs_B0F5C8) && v30 < (int)(--g_abs_B0F5C8) ) /*0x629cd7*/
+            v43[0] = this; /*0x629cb8*/
+            v30 = (*(int (**)(int *, unsigned int *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], v43); /*0x629cbc*/
+            if ( v30 != -1 && v30 < MEMORY[0xB0F5C8] && v30 < --MEMORY[0xB0F5C8] ) /*0x629cd7*/
             {
               do /*0x629cef*/
               {
                 ++v30; /*0x629cdf*/
-                *((unsigned int *)g_abs_B0F5BC + v30 - 1) = *((unsigned int *)g_abs_B0F5BC + v30); /*0x629ce3*/
+                *((unsigned int *)MEMORY[0xB0F5BC] + v30 - 1) = *((unsigned int *)MEMORY[0xB0F5BC] + v30); /*0x629ce3*/
               }
-              while ( v30 < (int)(g_abs_B0F5C8) ); /*0x629cef*/
+              while ( v30 < MEMORY[0xB0F5C8] ); /*0x629cef*/
             }
             *((unsigned char *)this + 84) = 0; /*0x629cf1*/
           }
           v31 = (unsigned int *)(*((unsigned int *)this + 9) + 1696); /*0x629cff*/
-          *v31 = g_abs_A8ED84; /*0x629d05*/
+          *v31 = MEMORY[0xA8ED84]; /*0x629d05*/
           v31[1] = v54; /*0x629d0b*/
           v31[2] = 0; /*0x629d0e*/
         }
@@ -374,7 +374,7 @@ LABEL_20:
             0);
           if ( *((unsigned int *)this + 10) ) /*0x629d41*/
           {
-            v33 = Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, 1); /*0x629d58*/
+            v33 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, 1); /*0x629d58*/
             *((unsigned int *)this + 20) = 0; /*0x629d66*/
             *((unsigned int *)this + 18) = 3 - (v33 != 0); /*0x629d69*/
             *((unsigned int *)this + 19) = 0; /*0x629d6c*/
@@ -395,15 +395,15 @@ LABEL_20:
             if ( *((unsigned char *)this + 84) ) /*0x629e0e*/
             {
               v43[1] = this; /*0x629e25*/
-              v38 = (*(int (**)(int *, unsigned int *))(g_abs_B0F5B8 + 16))(&g_abs_B0F5B8, &v43[1]); /*0x629e29*/
-              if ( v38 != -1 && v38 < g_abs_B0F5C8 && v38 < --g_abs_B0F5C8 ) /*0x629e44*/
+              v38 = (*(int (**)(int *, unsigned int *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v43[1]); /*0x629e29*/
+              if ( v38 != -1 && v38 < MEMORY[0xB0F5C8] && v38 < --MEMORY[0xB0F5C8] ) /*0x629e44*/
               {
                 do /*0x629e5c*/
                 {
                   ++v38; /*0x629e4c*/
-                  *((unsigned int *)g_abs_B0F5BC + v38 - 1) = *((unsigned int *)g_abs_B0F5BC + v38); /*0x629e50*/
+                  *((unsigned int *)MEMORY[0xB0F5BC] + v38 - 1) = *((unsigned int *)MEMORY[0xB0F5BC] + v38); /*0x629e50*/
                 }
-                while ( v38 < g_abs_B0F5C8 ); /*0x629e5c*/
+                while ( v38 < MEMORY[0xB0F5C8] ); /*0x629e5c*/
               }
               *((unsigned char *)this + 84) = 0; /*0x629e5e*/
             }
@@ -423,7 +423,7 @@ LABEL_47:
                   BuildingClass::AimTurret(v34, *(unsigned char **)((char *)this + 40)); /*0x629dc4*/
                   v34[53] = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 484))(*((unsigned int *)this + 9)); /*0x629dd6*/
                   if ( v36 ) /*0x629ddc*/
-                    v34[63] = *(int16_t *)(v36 + 266); /*0x629de5*/
+                    v34[63] = *(__int16 *)(v36 + 266); /*0x629de5*/
                 }
               }
             }
@@ -443,7 +443,7 @@ LABEL_47:
     {
       v7 = v54; /*0x629874*/
       v8 = (unsigned int *)(v6 + 1696); /*0x62987a*/
-      *v8 = g_abs_A8ED84; /*0x629880*/
+      *v8 = MEMORY[0xA8ED84]; /*0x629880*/
       v8[1] = v7; /*0x629882*/
       v8[2] = 0; /*0x629885*/
     }

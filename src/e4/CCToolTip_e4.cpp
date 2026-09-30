@@ -16,10 +16,10 @@ namespace gamemd {
 CCToolTip * CCToolTip::QueryInterface(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&vt_CCToolTip);
+  *Block = &vt_CCToolTip; /*0x7784a3*/
   ToolTipClass::updateString(Block); /*0x7784a9*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x7784b3*/
-    RA2_OPDEL(Block); /*0x7784b6*/
+  if ( (a2 & 1) != 0 ) /*0x7784b3*/
+    __3_YAXPAX_Z(Block); /*0x7784b6*/
   return (CCToolTip *)Block; /*0x7784c0*/
 
 }

@@ -37,7 +37,7 @@ namespace gamemd {
 AbstractClass * File::LoadFont(char * Source)
 {
 
-  unsigned int * v2;
+  unsigned int v2; // ebp
   unsigned int *v3; // esi
   unsigned int *v4; // eax
   unsigned int *v5; // eax
@@ -70,25 +70,25 @@ AbstractClass * File::LoadFont(char * Source)
   int v33; // [esp+6Ch] [ebp-8h]
   int v34; // [esp+70h] [ebp-4h]
 
-  v2 = (unsigned int *)(0);
-  v3 = (unsigned int *)(0);
-  v4 = (unsigned int *)(RA2_OPNEW(0x6Cu));
+  v2 = 0; /*0x43399b*/
+  v3 = 0; /*0x43399d*/
+  v4 = __2_YAPAXI_Z(0x6Cu); /*0x43399f*/
   if ( v4 ) /*0x4339a9*/
   {
-    v5 = (unsigned int *)(((CCFileClass *)(v4))->Construct(Source));
+    v5 = CCFileClass::Construct(v4, Source); /*0x4339b2*/
     v6 = v5; /*0x4339b7*/
     if ( v5 ) /*0x4339bb*/
     {
-      if ( !(*(uint8_t (**)(unsigned int *, unsigned int))(*v5 + 20))(v5, 0) /*0x4339f0*/
+      if ( !(*(unsigned __int8 (**)(unsigned int *, unsigned int))(*v5 + 20))(v5, 0) /*0x4339f0*/
         || !(*(int (**)(unsigned int *, int))(*v6 + 28))(v6, 1)
-        || (v3 = RA2_OPNEW(0x24u)) == 0 )
+        || (v3 = __2_YAPAXI_Z(0x24u)) == 0 )
       {
 LABEL_35:
         (*(void (**)(unsigned int *, int))*v6)(v6, 1); /*0x433bee*/
         return v3; /*0x433bf4*/
       }
       memset(v3, 0, 0x24u); /*0x433a04*/
-      v7 = RA2_OPNEW(0x20000u); /*0x433a0b*/
+      v7 = __2_YAPAXI_Z(0x20000u); /*0x433a0b*/
       v3[6] = v7; /*0x433a12*/
       if ( v7 ) /*0x433a15*/
       {
@@ -139,7 +139,7 @@ LABEL_35:
                       v17 = (int)*(v16 - 1); /*0x433b39*/
                       if ( v17 <= (int)*v16 ) /*0x433b42*/
                       {
-                        IDA_LOWORD(v13) = *((unsigned short *)v16 - 4); /*0x433b3c*/
+                        LOWORD(v13) = *((unsigned short *)v16 - 4); /*0x433b3c*/
                         v18 = (char *)v13 + 1; /*0x433b44*/
                         do /*0x433b5b*/
                         {
@@ -154,7 +154,7 @@ LABEL_35:
                       ++v2; /*0x433b61*/
                       v16 += 3; /*0x433b62*/
                     }
-                    while ( v2 < (unsigned int *)(v15) ); /*0x433b67*/
+                    while ( v2 < v15 ); /*0x433b67*/
                     v13 = v24; /*0x433b69*/
                   }
                   free(v13); /*0x433b6e*/
@@ -172,7 +172,7 @@ LABEL_24:
                     --v21; /*0x433ba3*/
                   }
                   while ( v21 ); /*0x433ba4*/
-                  v22 = RA2_OPNEW(v20); /*0x433ba7*/
+                  v22 = __2_YAPAXI_Z(v20); /*0x433ba7*/
                   v3[7] = v22; /*0x433bb1*/
                   if ( v22 && (*(int (**)(unsigned int *, void *, size_t))(*v6 + 36))(v6, v22, v20) == v20 ) /*0x433bc1*/
                     goto LABEL_35; /*0x433bc1*/
@@ -183,10 +183,10 @@ LABEL_24:
         }
       }
       if ( v3[6] ) /*0x433bc3*/
-        RA2_OPDEL((void *)v3[6]); /*0x433bcb*/
+        __3_YAXPAX_Z((void *)v3[6]); /*0x433bcb*/
       if ( v3[7] ) /*0x433bd3*/
-        RA2_OPDEL((void *)v3[7]); /*0x433bdb*/
-      RA2_OPDEL(v3); /*0x433be4*/
+        __3_YAXPAX_Z((void *)v3[7]); /*0x433bdb*/
+      __3_YAXPAX_Z(v3); /*0x433be4*/
       v3 = 0; /*0x433bec*/
       goto LABEL_35; /*0x433bec*/
     }
@@ -265,7 +265,7 @@ AbstractClass * * File::ParseFileHVA(int a2)
   unsigned char v15[48]; // [esp+38h] [ebp-60h] BYREF
 
   if ( *((unsigned int *)this + 3) ) /*0x5bd5c9*/
-    RA2_OPDEL(*(void **)((char *)this + 12)); /*0x5bd5d3*/
+    __3_YAXPAX_Z(*(void **)((char *)this + 12)); /*0x5bd5d3*/
   v3 = a2; /*0x5bd5db*/
   *((unsigned int *)this + 3) = 0; /*0x5bd5e2*/
   result = (*(int (**)(int, int))(*(unsigned int *)a2 + 28))(a2, 1); /*0x5bd5eb*/
@@ -277,8 +277,8 @@ AbstractClass * * File::ParseFileHVA(int a2)
     *((unsigned int *)this + 1) = v14; /*0x5bd617*/
     *((unsigned int *)this + 2) = v6; /*0x5bd61a*/
     if ( v5 ) /*0x5bd61d*/
-      RA2_OPDEL(v5); /*0x5bd620*/
-    v7 = RA2_OPNEW(48 * *((unsigned int *)this + 1) * *((unsigned int *)this + 2)); /*0x5bd636*/
+      __3_YAXPAX_Z(v5); /*0x5bd620*/
+    v7 = __2_YAPAXI_Z(48 * *((unsigned int *)this + 1) * *((unsigned int *)this + 2)); /*0x5bd636*/
     if ( !v7 ) /*0x5bd640*/
       v7 = 0; /*0x5bd649*/
     *((unsigned int *)this + 3) = v7; /*0x5bd64d*/
@@ -309,7 +309,7 @@ LABEL_14:
         }
         (*(void (**)(int))(*(unsigned int *)v3 + 52))(v3); /*0x5bd704*/
         if ( *((unsigned int *)this + 3) ) /*0x5bd707*/
-          RA2_OPDEL(*(void **)((char *)this + 12)); /*0x5bd70f*/
+          __3_YAXPAX_Z(*(void **)((char *)this + 12)); /*0x5bd70f*/
         *((unsigned int *)this + 3) = 0; /*0x5bd719*/
         return 0; /*0x5bd721*/
       }
@@ -327,7 +327,7 @@ LABEL_15:
       return 0; /*0x5bd65f*/
     }
   }
-  return (gamemd::AbstractClass **)(result);
+  return result; /*0x5bd5f2*/
 
 }
 }
@@ -340,8 +340,8 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   u_short v4; // ax
   char *v5; // esi
   u_short v6; // ax
-  void * v7;
-  u_short * v8;
+  int v7; // eax
+  int v8; // ecx
   ObjectClass *v9; // ebx
   unsigned int *v10; // esi
   size_t v11; // ebp
@@ -351,10 +351,10 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   int v15; // [esp+8h] [ebp-8h]
   ObjectClass *aP1a; // [esp+14h] [ebp+4h]
 
-  v3 = (gamemd::u_short)(*(unsigned short *)aP1->__pad_0);
-  *this = (gamemd::u_short)(*(unsigned short *)aP1->__pad_0);
-  *this = (gamemd::File **)(ntohs(v3));
-  v4 = (gamemd::File **)(*(unsigned short *)&aP1->__pad_0[2]);
+  v3 = *(unsigned short *)aP1->__pad_0; /*0x625b02*/
+  *this = *(unsigned short *)aP1->__pad_0; /*0x625b05*/
+  *this = ntohs(v3); /*0x625b11*/
+  v4 = *(unsigned short *)&aP1->__pad_0[2]; /*0x625b17*/
   *((unsigned int *)this + 1) = v4; /*0x625b1a*/
   v5 = &aP1->__pad_0[4]; /*0x625b1f*/
   *((unsigned int *)this + 1) = ntohs(v4); /*0x625b27*/
@@ -365,14 +365,14 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
     return this; /*0x625bf4*/
   while ( 1 ) /*0x625b50*/
   {
-    v7 = (void *)((unsigned int)(RA2_OPNEW(0x10u)));
-    v8 = (gamemd::u_short *)((int)((gamemd::u_short *)(*(unsigned int *)v5)));
-    v9 = (gamemd::ObjectClass *)((unsigned int *)((ObjectClass *)v7));
-    v10 = (unsigned int)(v5 + 8);
+    v7 = __2_YAPAXI_Z(0x10u); /*0x625b50*/
+    v8 = *(unsigned int *)v5; /*0x625b55*/
+    v9 = (ObjectClass *)v7; /*0x625b57*/
+    v10 = v5 + 8; /*0x625b5c*/
     *(unsigned int *)v7 = v8; /*0x625b5f*/
-    *(unsigned int *)((unsigned int)(v7)+ 4) = *(v10 - 1); /*0x625b64*/
-    v11 = ntohs(*(unsigned short *)((unsigned int)(v7)+ 6)); /*0x625b78*/
-    v12 = (void *)RA2_OPNEW(v11); /*0x625b7f*/
+    *(unsigned int *)(v7 + 4) = *(v10 - 1); /*0x625b64*/
+    v11 = ntohs(*(unsigned short *)(v7 + 6)); /*0x625b78*/
+    v12 = (void *)__2_YAPAXI_Z(v11); /*0x625b7f*/
     *(unsigned int *)&v9->__pad_0[8] = v12; /*0x625b8a*/
     qmemcpy(v12, v10, v11); /*0x625b90*/
     v13 = -(ntohs(*(unsigned short *)&v9->__pad_0[6]) & 3) & 3; /*0x625baf*/
@@ -386,7 +386,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
       break; /*0x625be4*/
     v5 = (char *)aP1a; /*0x625b4a*/
   }
-  return (gamemd::File **)(result);
+  return result; /*0x625bec*/
 
 }
 }
@@ -423,11 +423,11 @@ AbstractClass * * File::ParseCSFString(char * Source)
   int v5; // eax
   int v6; // ebp
   size_t v7; // eax
-  wchar_t * v8;
-  unsigned int v9;
-  wchar_t * v10;
-  unsigned int v11;
-  unsigned short * v12;
+  int v8; // eax
+  wchar_t *v9; // ecx
+  __int16 v10; // dx
+  int v11; // esi
+  wchar_t *v12; // ecx
   unsigned short *v13; // edi
   size_t v14; // eax
   size_t v15; // eax
@@ -442,11 +442,11 @@ AbstractClass * * File::ParseCSFString(char * Source)
   int v25; // [esp+8Ch] [ebp-20h]
   char Buffer[24]; // [esp+94h] [ebp-18h] BYREF
 
-  ((CCFileClass *)(v23))->Construct(Source); /*0x73499f*/
+  CCFileClass::Construct(v23, Source); /*0x73499f*/
   v19 = 0; /*0x7349ab*/
-  if ( CCFileClass::Open(v23, 0) && ((FileClass *)(v23))->Load(1) && ((CCFileClass *)(v23))->Read(Buffer, 24) == 24 ) /*0x7349e5*/
+  if ( CCFileClass::Open(v23, 0) && FileClass::Load(v23, 1) && CCFileClass::Read(v23, Buffer, 24) == 24 ) /*0x7349e5*/
   {
-    if ( ((CCFileClass *)(v23))->Read(&v18, 4) != 4 ) /*0x7349fe*/
+    if ( CCFileClass::Read(v23, &v18, 4) != 4 ) /*0x7349fe*/
     {
 LABEL_42:
       v23[0] = (int)&vt_CCFileClass; /*0x734cad*/
@@ -460,18 +460,18 @@ LABEL_42:
     v21 = 0; /*0x734a06*/
     while ( v18 == 1279413280 ) /*0x734a12*/
     {
-      ((CCFileClass *)(v23))->Read(&v20, 4); /*0x734a23*/
-      ((CCFileClass *)(v23))->Read(&Size, 4); /*0x734a33*/
+      CCFileClass::Read(v23, &v20, 4); /*0x734a23*/
+      CCFileClass::Read(v23, &Size, 4); /*0x734a33*/
       v2 = Size; /*0x734a38*/
       if ( Size ) /*0x734a3e*/
       {
-        ((CCFileClass *)(v23))->Read(unk_B1BF38, Size); /*0x734a4a*/
+        CCFileClass::Read(v23, unk_B1BF38, Size); /*0x734a4a*/
         v2 = Size; /*0x734a4f*/
       }
-      v3 = (char *)((unsigned char *)((char *)dword_B1CF74));
-      unk_B1BF38[v2] = (unsigned char *)(0);
+      v3 = (char *)dword_B1CF74; /*0x734a53*/
+      unk_B1BF38[v2] = 0; /*0x734a59*/
       strcpy(&v3[v1], unk_B1BF38); /*0x734a7b*/
-      if ( (int)Size > (int)(unk_B1CF58) ) /*0x734a90*/
+      if ( (int)Size > unk_B1CF58 ) /*0x734a90*/
         unk_B1CF58 = Size; /*0x734a92*/
       v4 = v19; /*0x734a9d*/
       v22 = 0; /*0x734aa1*/
@@ -483,84 +483,84 @@ LABEL_42:
         v6 = 4 * v4; /*0x734ac3*/
         do /*0x734c79*/
         {
-          ((CCFileClass *)(v23))->Read(&v18, 4); /*0x734ad5*/
+          CCFileClass::Read(v23, &v18, 4); /*0x734ad5*/
           if ( v18 != 1398034976 && v18 != 1398035031 ) /*0x734aea*/
             goto LABEL_43; /*0x734aea*/
-          ((CCFileClass *)(v23))->Read(&Size, 4); /*0x734afb*/
+          CCFileClass::Read(v23, &Size, 4); /*0x734afb*/
           v7 = Size; /*0x734b00*/
           if ( Size ) /*0x734b06*/
           {
-            ((CCFileClass *)(v23))->Read(g_abs_B17F24, 2 * Size); /*0x734b15*/
+            CCFileClass::Read(v23, MEMORY[0xB17F24], 2 * Size); /*0x734b15*/
             v7 = Size; /*0x734b1a*/
           }
-          g_abs_B17F24[v7] = (unsigned char)((wchar_t *)(0));
-          v8 = (wchar_t *)((int)((wchar_t *)(*(unsigned int *)g_abs_B17F24)));
-          v9 = (unsigned int)((wchar_t *)(g_abs_B17F24));
-          if ( g_abs_B17F24[0] ) /*0x734b33*/
+          MEMORY[0xB17F24][v7] = 0; /*0x734b1e*/
+          v8 = *(unsigned int *)MEMORY[0xB17F24]; /*0x734b26*/
+          v9 = MEMORY[0xB17F24]; /*0x734b2e*/
+          if ( MEMORY[0xB17F24][0] ) /*0x734b33*/
           {
             do /*0x734b44*/
             {
-              v8 = (wchar_t *)((unsigned int)(~v8));
-              *(unsigned int *)(v9) = v8; /*0x734b37*/
-              IDA_LOWORD(v8) = ((unsigned int *)(v9))[1]; /*0x734b3a*/
+              v8 = ~v8; /*0x734b35*/
+              *v9 = v8; /*0x734b37*/
+              LOWORD(v8) = v9[1]; /*0x734b3a*/
               ++v9; /*0x734b3e*/
             }
             while ( (unsigned short)v8 ); /*0x734b44*/
-            IDA_LOWORD(v8) = g_abs_B17F24[0]; /*0x734b46*/
+            LOWORD(v8) = MEMORY[0xB17F24][0]; /*0x734b46*/
           }
-          v10 = (wchar_t *)((int16_t)((unsigned short *)(0)));
-          v11 = (int)((unsigned short *)(1));
-          v12 = (unsigned short *)(g_abs_B17F24);
-          v13 = (unsigned short *)(g_abs_B17F24 + 2);
+          v10 = 0; /*0x734b4b*/
+          v11 = 1; /*0x734b50*/
+          v12 = MEMORY[0xB17F24]; /*0x734b55*/
+          v13 = MEMORY[0xB17F24] + 2; /*0x734b5a*/
           if ( (unsigned short)v8 ) /*0x734b5f*/
           {
             while ( 1 ) /*0x734b61*/
             {
               if ( (unsigned short)v8 == 32 ) /*0x734b65*/
               {
-                if ( v10 == (unsigned short *)((unsigned short *))(32) || v11 ) /*0x734b6e*/
+                if ( v10 == 32 || v11 ) /*0x734b6e*/
                   goto LABEL_31; /*0x734b6e*/
               }
               else if ( (unsigned short)v8 == 10 || (unsigned short)v8 == 9 ) /*0x734b7c*/
               {
-                if ( v10 == (unsigned short *)((unsigned short *))(32) ) /*0x734b8e*/
+                if ( v10 == 32 ) /*0x734b8e*/
                   --v12; /*0x734b90*/
-                *(unsigned int *)(v12) = v8; /*0x734b93*/
+                *v12 = v8; /*0x734b93*/
                 v11 = 1; /*0x734b96*/
                 v10 = v8; /*0x734b9b*/
                 ++v12; /*0x734b9d*/
                 goto LABEL_31; /*0x734b9d*/
               }
-              *(unsigned int *)(v12)++ = v8; /*0x734b7e*/
+              *v12++ = v8; /*0x734b7e*/
               v10 = v8; /*0x734b84*/
               v11 = 0; /*0x734b86*/
 LABEL_31:
-              IDA_LOWORD(v8) = *v13++; /*0x734ba0*/
+              LOWORD(v8) = *v13++; /*0x734ba0*/
               if ( !(unsigned short)v8 ) /*0x734ba9*/
               {
-                if ( v10 == (unsigned short *)((unsigned short *))(32) ) /*0x734baf*/
+                if ( v10 == 32 ) /*0x734baf*/
                   --v12; /*0x734bb1*/
                 break; /*0x734bb1*/
               }
             }
           }
-          *(unsigned int *)(v12) = 0; /*0x734bb4*/
-          v14 = wcslen(g_abs_B17F24); /*0x734bbc*/
-          *(unsigned int *)((char *)unk_B1CF78 + v6) = RA2_OPNEW(2 * v14 + 2); /*0x734bd6*/
-          wcscpy(*(wchar_t **)((char *)unk_B1CF78 + v6), g_abs_B17F24); /*0x734be3*/
+          *v12 = 0; /*0x734bb4*/
+          v14 = wcslen(MEMORY[0xB17F24]); /*0x734bbc*/
+          *(unsigned int *)((char *)unk_B1CF78 + v6) = __2_YAPAXI_Z(2 * v14 + 2); /*0x734bd6*/
+          wcscpy(*(wchar_t **)((char *)unk_B1CF78 + v6), MEMORY[0xB17F24]); /*0x734be3*/
           if ( v18 == 1398035031 ) /*0x734bf4*/
           {
-            ((CCFileClass *)(v23))->Read(&Size, 4); /*0x734c01*/
+            CCFileClass::Read(v23, &Size, 4); /*0x734c01*/
             v15 = Size; /*0x734c06*/
             if ( Size ) /*0x734c0c*/
             {
-              ((CCFileClass *)(v23))->Read(unk_B1BF38, Size); /*0x734c18*/
+              CCFileClass::Read(v23, unk_B1BF38, Size); /*0x734c18*/
               v15 = Size; /*0x734c1d*/
             }
             unk_B1BF38[v15] = 0; /*0x734c23*/
             if ( v15 ) /*0x734c29*/
             {
-              *(unsigned int *)((char *)unk_B1CF7C + v6) = RA2_OPNEW(v15 + 1); /*0x734c43*/
+              *(unsigned int *)((char *)unk_B1CF7C + v6) = __2_YAPAXI_Z(v15 + 1); /*0x734c43*/
               strcpy(*(char **)((char *)unk_B1CF7C + v6), unk_B1BF38); /*0x734c5e*/
             }
           }
@@ -574,7 +574,7 @@ LABEL_31:
       v1 += 40; /*0x734c87*/
       v21 = v1; /*0x734c97*/
       v19 += v5; /*0x734c9b*/
-      if ( ((CCFileClass *)(v23))->Read(&v18, 4) != 4 ) /*0x734ca7*/
+      if ( CCFileClass::Read(v23, &v18, 4) != 4 ) /*0x734ca7*/
         goto LABEL_42; /*0x734ca7*/
     }
   }

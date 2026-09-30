@@ -22,36 +22,9 @@
 namespace gamemd {
 int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
 
   CCINIClass *v2; // edi
-  CCINIClass * result;
+  int result; // eax
   CCINIClass *v5; // ebp
   CCINIClass *StringByIndex; // esi
   unsigned int *v7; // esi
@@ -61,14 +34,14 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   CCINIClass *v11; // edi
   int v12; // esi
   int v13; // esi
-  CCINIClass * v14;
+  int v14; // [esp+10h] [ebp-8h]
   int i; // [esp+10h] [ebp-8h]
 
-  v2 = (gamemd::CCINIClass *)((int)(a2));
-  result = (int)(INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes));
+  v2 = a2; /*0x41f2ec*/
+  result = INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes); /*0x41f2f5*/
   v5 = 0; /*0x41f2fa*/
   v14 = result; /*0x41f2fe*/
-  while ( (int)v5 < (int)(v14) ) /*0x41f302*/
+  while ( (int)v5 < v14 ) /*0x41f302*/
   {
     StringByIndex = (CCINIClass *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, v5); /*0x41f317*/
     if ( _strcmpi((char *)&stru_817460.sectionHead[1], StringByIndex->__pad_0) ) /*0x41f31f*/
@@ -76,21 +49,21 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
       if ( _strcmpi(g_Str_none, StringByIndex->__pad_0) ) /*0x41f335*/
       {
         v8 = 0; /*0x41f34a*/
-        if ( (int)g_abs_A8B210 > 0 ) /*0x41f34e*/
+        if ( (int)MEMORY[0xA8B210] > 0 ) /*0x41f34e*/
         {
-          while ( _strcmpi((char *)(*(unsigned int *)&g_abs_A8B204->__pad_0[4 * v8] + 36), StringByIndex->__pad_0) ) /*0x41f368*/
+          while ( _strcmpi((char *)(*(unsigned int *)&MEMORY[0xA8B204]->__pad_0[4 * v8] + 36), StringByIndex->__pad_0) ) /*0x41f368*/
           {
-            if ( ++v8 >= (int)g_abs_A8B210 ) /*0x41f376*/
+            if ( ++v8 >= (int)MEMORY[0xA8B210] ) /*0x41f376*/
               goto LABEL_9; /*0x41f376*/
           }
-          v7 = *(unsigned int **)&g_abs_A8B204->__pad_0[4 * v8]; /*0x41f431*/
+          v7 = *(unsigned int **)&MEMORY[0xA8B204]->__pad_0[4 * v8]; /*0x41f431*/
           goto LABEL_11; /*0x41f434*/
         }
 LABEL_9:
-        v9 = (unsigned int *)RA2_OPNEW(0x110u); /*0x41f378*/
+        v9 = (unsigned int *)__2_YAPAXI_Z(0x110u); /*0x41f378*/
         if ( v9 ) /*0x41f387*/
         {
-          v7 = (unsigned int)(AnimTypeClass::Construct2(v9, StringByIndex->__pad_0));
+          v7 = AnimTypeClass::Construct2(v9, StringByIndex->__pad_0); /*0x41f391*/
 LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
@@ -106,7 +79,8 @@ LABEL_11:
     {
       v7 = 0; /*0x41f32b*/
     }
-LABEL_13: v2 = (gamemd::CCINIClass *)(a2);
+LABEL_13:
+    v2 = a2; /*0x41f3a9*/
     if ( a2 == (CCINIClass *)1 ) /*0x41f3b0*/
       *((unsigned char *)v7 + 164) = 1; /*0x41f3b2*/
     result = v14; /*0x41f3b9*/
@@ -114,25 +88,26 @@ LABEL_13: v2 = (gamemd::CCINIClass *)(a2);
   }
   if ( !v2 ) /*0x41f3c8*/
   {
-    result = (unsigned int)(INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes_0));
-    v10 = (int)((unsigned int)(0));
+    result = INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes_0); /*0x41f3d7*/
+    v10 = 0; /*0x41f3dc*/
     for ( i = result; (int)v10 < i; v10 = (CCINIClass *)((char *)v10 + 1) ) /*0x41f3e4*/
     {
       v11 = (CCINIClass *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes_0, v10); /*0x41f3f9*/
       v12 = 0; /*0x41f400*/
-      if ( (int)g_abs_A8B210 > 0 ) /*0x41f404*/
+      if ( (int)MEMORY[0xA8B210] > 0 ) /*0x41f404*/
       {
-        while ( _strcmpi((char *)(*(unsigned int *)&g_abs_A8B204->__pad_0[4 * v12] + 36), v11->__pad_0) ) /*0x41f41d*/
+        while ( _strcmpi((char *)(*(unsigned int *)&MEMORY[0xA8B204]->__pad_0[4 * v12] + 36), v11->__pad_0) ) /*0x41f41d*/
         {
-          if ( ++v12 >= (int)g_abs_A8B210 ) /*0x41f427*/
+          if ( ++v12 >= (int)MEMORY[0xA8B210] ) /*0x41f427*/
             goto LABEL_28; /*0x41f427*/
         }
-        v13 = *(unsigned int *)&g_abs_A8B204->__pad_0[4 * v12]; /*0x41f43f*/
+        v13 = *(unsigned int *)&MEMORY[0xA8B204]->__pad_0[4 * v12]; /*0x41f43f*/
         if ( v13 ) /*0x41f444*/
-          *(unsigned char *)(v13 + 164) = INIClass::ReadBool_Overwrite((int)a1, (uint8_t *)aAitriggertypes_0, v11, 0) /*0x41f46c*/
-                               || g_abs_A8B238;
+          *(unsigned char *)(v13 + 164) = INIClass::ReadBool_Overwrite((int)a1, (unsigned __int8 *)aAitriggertypes_0, v11, 0) /*0x41f46c*/
+                               || MEMORY[0xA8B238];
       }
-LABEL_28: result = (gamemd::CCINIClass *)(i);
+LABEL_28:
+      result = i; /*0x41f473*/
     }
   }
   return result; /*0x41f480*/
@@ -158,7 +133,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   int v7; // esi
   bool v8; // zf
   unsigned int v10[4]; // [esp+Ch] [ebp-A8h] BYREF
-  unsigned char (*)[4] v11;
+  char v11; // [esp+1Ch] [ebp-98h]
   int v12[3]; // [esp+20h] [ebp-94h] BYREF
   char v13; // [esp+2Ch] [ebp-88h]
   int v14; // [esp+44h] [ebp-70h]
@@ -170,11 +145,11 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   int v20; // [esp+5Ch] [ebp-58h]
   int v21[5]; // [esp+A0h] [ebp-14h] BYREF
 
-  v10[1] = (unsigned int)(0);
-  v10[2] = (unsigned int)(0);
-  v10[3] = (unsigned int)(a2);
-  v11 = (unsigned int)(0);
-  v10[0] = (unsigned int)(&vt_FileStraw);
+  v10[1] = 0; /*0x474213*/
+  v10[2] = 0; /*0x474217*/
+  v10[3] = a2; /*0x47421b*/
+  v11 = 0; /*0x47421f*/
+  v10[0] = &FileStraw::`vftable'; /*0x474223*/
   File = INIClass::LoadFile(this, (int)v10, a4); /*0x474230*/
   *((unsigned char *)this + 64) = 0; /*0x474232*/
   if ( !File || !a3 ) /*0x474244*/
@@ -198,7 +173,7 @@ MultiplayerGameMode * * CCINIClass::Load(int a2, char a3, char a4)
   v16 = -1732584194; /*0x4742ad*/
   v17 = 271733878; /*0x4742b5*/
   v18 = -1009589776; /*0x4742bd*/
-  v12[0] = (int)&vt_SHAPipe; /*0x4742c5*/
+  v12[0] = (int)&SHAPipe::`vftable'; /*0x4742c5*/
   INIClass::WriteToString(this, (int)v12); /*0x4742cd*/
   SHA1::ComputeThunk(v12, (unsigned char *)this + 65); /*0x4742da*/
   *((unsigned char *)this + 64) = 1; /*0x4742e3*/
@@ -225,20 +200,20 @@ CCINIClass::CCINIClass()
   int v4; // ebx
   int v5; // edi
   int v6; // edi
-  unsigned int * v7;
+  int v7; // edi
 
-  result = (unsigned int *)(this);
+  result = this; /*0x535b30*/
   v2 = (unsigned int *)this + 4; /*0x535b36*/
   v3 = (unsigned int *)this + 7; /*0x535b39*/
   result[1] = 0; /*0x535b3c*/
   result[2] = 0; /*0x535b3f*/
   v2[1] = 0; /*0x535b42*/
   v2[2] = 0; /*0x535b45*/
-  *v2 = &vt_GenericNode; /*0x535b48*/
+  *v2 = &GenericNode::`vftable'; /*0x535b48*/
   v3[1] = 0; /*0x535b4e*/
   v3[2] = 0; /*0x535b51*/
-  *v3 = &vt_GenericNode; /*0x535b54*/
-  result[3] = &vt_GenericList; /*0x535b5d*/
+  *v3 = &GenericNode::`vftable'; /*0x535b54*/
+  result[3] = &GenericList::`vftable'; /*0x535b5d*/
   if ( v3 ) /*0x535b64*/
   {
     v4 = v3[1]; /*0x535b66*/
@@ -254,10 +229,10 @@ CCINIClass::CCINIClass()
       }
     }
   }
-  v6 = (unsigned int)(v2[1]);
-  v3[2] = (unsigned int)(v2);
-  v3[1] = (unsigned int)(v6);
-  v7 = (unsigned int)(v2[1]);
+  v6 = v2[1]; /*0x535b86*/
+  v3[2] = v2; /*0x535b89*/
+  v3[1] = v6; /*0x535b8c*/
+  v7 = v2[1]; /*0x535b8f*/
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = v3; /*0x535b96*/
   v2[1] = v3; /*0x535b99*/
@@ -281,8 +256,8 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
 
   CCINIClass *KeyCount; // ebx
   CCINIClass *i; // edi
-  uint8_t *StringByIndex; // eax
-  unsigned int result;
+  unsigned __int8 *StringByIndex; // eax
+  AITriggerTypeClass *result; // eax
   int j; // edi
   unsigned int *v9; // ecx
   INIClass *v10; // edx
@@ -293,38 +268,38 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes); /*0x41f4a6*/
   for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)i + 1) ) /*0x41f4ac*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, i); /*0x41f4b8*/
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, i); /*0x41f4b8*/
     INIClass::GetString( /*0x41f4d2*/
-      (uint8_t ***)a1,
+      (unsigned __int8 ***)a1,
       (INIClass *)aAitriggertypes,
       StringByIndex,
-      (INIClass *)&g_abs_87F8E4,
+      (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
       (INIClass *)Destination,
       32);
     INIClass::ClearSection((int)a1, (INIClass *)Destination, 0); /*0x41f4e0*/
   }
   INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes, 0); /*0x41f4f5*/
-  result = g_abs_A8B210; /*0x41f4fa*/
-  for ( j = 0; j < (int)g_abs_A8B210; ++j ) /*0x41f503*/
+  result = MEMORY[0xA8B210]; /*0x41f4fa*/
+  for ( j = 0; j < (int)MEMORY[0xA8B210]; ++j ) /*0x41f503*/
   {
-    v9 = (gamemd::AITriggerTypeClass *)(*(unsigned int **)&g_abs_A8B204->__pad_0[4 * j]);
+    v9 = *(unsigned int **)&MEMORY[0xA8B204]->__pad_0[4 * j]; /*0x41f50a*/
     if ( v9[39] == a2 ) /*0x41f513*/
       (*(void (**)(unsigned int *, char *))(*v9 + 104))(v9, a1); /*0x41f518*/
-    result = g_abs_A8B210; /*0x41f51b*/
+    result = MEMORY[0xA8B210]; /*0x41f51b*/
   }
   if ( !a2 ) /*0x41f527*/
   {
     INIClass::ClearSection((int)a1, (INIClass *)aAitriggertypes_0, 0); /*0x41f532*/
-    result = g_abs_A8B210; /*0x41f537*/
-    for ( k = 0; k < (int)g_abs_A8B210; ++k ) /*0x41f540*/
+    result = MEMORY[0xA8B210]; /*0x41f537*/
+    for ( k = 0; k < (int)MEMORY[0xA8B210]; ++k ) /*0x41f540*/
     {
-      v12 = (gamemd::AITriggerTypeClass *)(*(unsigned int *)&g_abs_A8B204->__pad_0[4 * k]);
-      IDA_LOBYTE(v10) = *(unsigned char *)(v12 + 164); /*0x41f54d*/
+      v12 = *(unsigned int *)&MEMORY[0xA8B204]->__pad_0[4 * k]; /*0x41f548*/
+      LOBYTE(v10) = *(unsigned char *)(v12 + 164); /*0x41f54d*/
       INIClass::SetBool(a1, (INIClass *)aAitriggertypes_0, (char *)(v12 + 36), v10); /*0x41f55e*/
-      result = g_abs_A8B210; /*0x41f563*/
+      result = MEMORY[0xA8B210]; /*0x41f563*/
     }
   }
-  return (gamemd::AITriggerTypeClass *)((gamemd::AITriggerTypeClass *)(result));
+  return result; /*0x41f56d*/
 
 }
 } // namespace gamemd

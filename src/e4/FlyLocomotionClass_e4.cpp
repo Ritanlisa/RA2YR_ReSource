@@ -59,7 +59,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   int v2; // ecx
   int i; // edi
   int v4; // esi
-  unsigned int * v5;
+  int v5; // eax
   unsigned int *v6; // ecx
   int v7; // eax
   unsigned int *v8; // esi
@@ -80,23 +80,23 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 
   if ( *(unsigned int *)(*(unsigned int *)(a1 + 8) + 692) ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
-  ((ObjectVector *)(&v16))->Construct(0, 0); /*0x4cfea2*/
+  ObjectVector::Construct(&v16, 0, 0); /*0x4cfea2*/
   v16 = &vt_DynamicVectorClass_ObjectClass; /*0x4cfeb7*/
   v21 = 10; /*0x4cfebb*/
   v20 = 0; /*0x4cfebf*/
-  ((ObjectVector *)(&v10))->Construct(0, 0); /*0x4cfec3*/
+  ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
   v10 = &vt_DynamicVectorClass_ObjectClass; /*0x4cfecd*/
   v15 = 10; /*0x4cfed3*/
   v14 = 0; /*0x4cfed7*/
-  if ( !g_abs_A8B238[0] /*0x4cfeef*/
+  if ( !MEMORY[0xA8B238][0] /*0x4cfeef*/
     || (v2 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 540), *(unsigned int *)(v2 + 22016) == -1)
-    || (v22 = 1, (uint8_t)House::IsCurrentPlayer((void *)v2)) )
+    || (v22 = 1, (unsigned __int8)House::IsCurrentPlayer((#375 *)v2)) )
   {
     v22 = 0; /*0x4cfefd*/
   }
-  for ( i = g_abs_A8EC88 - 1; i >= 0; --i ) /*0x4cff0c*/
+  for ( i = MEMORY[0xA8EC88] - 1; i >= 0; --i ) /*0x4cff0c*/
   {
-    v4 = *((unsigned int *)g_abs_A8EC7C + i); /*0x4cff17*/
+    v4 = *((unsigned int *)MEMORY[0xA8EC7C] + i); /*0x4cff17*/
     if ( v22 ) /*0x4cff20*/
     {
       if ( *(unsigned int *)(v4 + 540) != *(unsigned int *)&HouseClass_Array->__pad_0[4 /*0x4cff5e*/
@@ -105,7 +105,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
                                                                                     + 22016)] )
         continue; /*0x4cff5e*/
     }
-    else if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(*(unsigned int *)(a1 + 8) + 540), *(void **)(v4 + 540)) ) /*0x4cff32*/
+    else if ( (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(*(unsigned int *)(a1 + 8) + 540), *(#375 **)(v4 + 540)) ) /*0x4cff32*/
     {
       continue; /*0x4cff39*/
     }
@@ -114,12 +114,12 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
       && *(unsigned char *)(v4 + 144)
       && !*(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 3226)
       && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 561)
-      && ((*(unsigned int *)g_abs_A8B230 & 0x800) == 0
+      && ((*(unsigned int *)MEMORY[0xA8B230] & 0x800) == 0
        || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) != 1
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3598)) )
     {
-      if ( g_abs_A8B238[0] /*0x4d003d*/
-        && (uint8_t)House::IsCurrentPlayer(*(void **)(*(unsigned int *)(a1 + 8) + 540))
+      if ( MEMORY[0xA8B238][0] /*0x4d003d*/
+        && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(*(unsigned int *)(a1 + 8) + 540))
         && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(v4 + 540) + 52) + 422)
         && ((*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 1
          || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6
@@ -129,24 +129,24 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         if ( v14 >= v12 /*0x4d0069*/
           && (!v13 && v12
            || v15 <= 0
-           || !((uint8_t (*)(void ***, int, unsigned int))v10[2])(&v10, v15 + v12, 0)) )
+           || !((unsigned __int8 (*)(void ***, int, unsigned int))v10[2])(&v10, v15 + v12, 0)) )
         {
           continue; /*0x4d006e*/
         }
-        v5 = (int)((unsigned int *)(v14++));
-        v6 = (unsigned int *)(Block);
+        v5 = v14++; /*0x4d0074*/
+        v6 = Block; /*0x4d007b*/
       }
       else
       {
         if ( v20 >= v18 /*0x4d00ab*/
           && (!v19 && v18
            || v21 <= 0
-           || !((uint8_t (*)(void ***, int, unsigned int))v16[2])(&v16, v21 + v18, 0)) )
+           || !((unsigned __int8 (*)(void ***, int, unsigned int))v16[2])(&v16, v21 + v18, 0)) )
         {
           continue; /*0x4d00b0*/
         }
-        v5 = (int)((unsigned int *)(v20++));
-        v6 = (unsigned int *)(v17);
+        v5 = v20++; /*0x4d00b6*/
+        v6 = v17; /*0x4d00bd*/
       }
       v6[v5] = v4; /*0x4d00c1*/
     }
@@ -155,14 +155,14 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   {
     if ( v20 <= 0 ) /*0x4d00f8*/
       goto LABEL_45; /*0x4d00f8*/
-    v7 = Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, v20 - 1); /*0x4d0109*/
+    v7 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, v20 - 1); /*0x4d0109*/
     v8 = v17; /*0x4d0111*/
     v9 = **(unsigned int **)(a1 + 8); /*0x4d0115*/
   }
   else
   {
-    v7 = (unsigned int *)(Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, v14 - 1));
-    v8 = (unsigned int *)(Block);
+    v7 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, v14 - 1); /*0x4d00e2*/
+    v8 = Block; /*0x4d00ea*/
     v9 = **(unsigned int **)(a1 + 8); /*0x4d00ee*/
   }
   (*(void (**)(unsigned int))(v9 + 968))(v8[v7]); /*0x4d011b*/
@@ -170,16 +170,16 @@ LABEL_45:
   v10 = &vt_VectorClass_ObjectClass; /*0x4d0121*/
   if ( Block && v13 ) /*0x4d0136*/
   {
-    RA2_OPDEL(Block); /*0x4d0139*/
+    __3_YAXPAX_Z(Block); /*0x4d0139*/
     Block = 0; /*0x4d0141*/
   }
-  v16 = (void **)(&vt_VectorClass_ObjectClass);
+  v16 = &vt_VectorClass_ObjectClass; /*0x4d0149*/
   v13 = 0; /*0x4d0150*/
   v12 = 0; /*0x4d0154*/
   if ( v17 ) /*0x4d0159*/
   {
     if ( v19 ) /*0x4d015f*/
-      RA2_OPDEL(v17); /*0x4d0162*/
+      __3_YAXPAX_Z(v17); /*0x4d0162*/
   }
 
 }
@@ -233,11 +233,11 @@ namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&vt_FlyLocomotionClass);
+  *Block = &FlyLocomotionClass::`vftable'; /*0x4d03a3*/
   *(Block + 1) = &vt_FlyLocomotionClass; /*0x4d03a9*/
-  ((LocomotionClass *)(Block))->Construct(); /*0x4d03b0*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4d03ba*/
-    RA2_OPDEL(Block); /*0x4d03bd*/
+  LocomotionClass::Construct(Block); /*0x4d03b0*/
+  if ( (a2 & 1) != 0 ) /*0x4d03ba*/
+    __3_YAXPAX_Z(Block); /*0x4d03bd*/
   return (FlyLocomotionClass *)Block; /*0x4d03c7*/
 
 }

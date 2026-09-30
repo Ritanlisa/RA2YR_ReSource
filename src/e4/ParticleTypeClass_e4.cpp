@@ -58,7 +58,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   int v12; // eax
   int v13; // edx
   char *v14; // ebx
-  AbstractClass ** v15;
+  int v15; // eax
 
   v3 = a2; /*0x4784f2*/
   if ( a2 ) /*0x4784fe*/
@@ -69,7 +69,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
       {
-        v9 = (unsigned char *)(a3 + 2);
+        v9 = a3 + 2; /*0x478548*/
         v10 = a2; /*0x47854b*/
         do /*0x478558*/
         {
@@ -84,12 +84,12 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(3 * a2); /*0x478514*/
+      v6 = (char *)__2_YAPAXI_Z(3 * a2); /*0x478514*/
       if ( v6 ) /*0x47851e*/
       {
         if ( a2 - 1 >= 0 ) /*0x478525*/
         {
-          v7 = (unsigned char *)(v6 + 2);
+          v7 = v6 + 2; /*0x478527*/
           v8 = a2; /*0x47852a*/
           do /*0x478537*/
           {
@@ -133,7 +133,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x478598*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4785a1*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4785a1*/
         *((unsigned int *)this + 1) = 0; /*0x4785a9*/
       }
     }
@@ -143,9 +143,9 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   }
   else
   {
-    char ParticleTypeClass::Release(_DynamicVectorClass_VRGBClass *this, int a2, char *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4785c6*/
   }
-  v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*((unsigned int *)this + 2))));
+  v15 = *((unsigned int *)this + 2); /*0x4785c9*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x4785d1*/
     *((unsigned int *)this + 4) = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
@@ -167,9 +167,9 @@ void ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   int v10; // edx
   int v11; // edi
 
-  if ( this == (gamemd::ParticleTypeClass *)(a2) ) /*0x4788ec*/
+  if ( this == a2 ) /*0x4788ec*/
     return this; /*0x4788ec*/
-  (*((void (**)(ParticleTypeClass *))this->ArrayIndex + 3))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x4788f4*/
   v3 = a2[2]; /*0x4788f7*/
   *((unsigned int *)this + 2) = v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/
@@ -178,12 +178,12 @@ void ParticleTypeClass::EnsureCapacity(unsigned int * a2)
     *((unsigned char *)this + 13) = 0; /*0x478977*/
     return this; /*0x47897a*/
   }
-  v4 = (char *)RA2_OPNEW(3 * v3); /*0x478907*/
+  v4 = (char *)__2_YAPAXI_Z(3 * v3); /*0x478907*/
   if ( v4 ) /*0x478911*/
   {
     if ( v3 - 1 >= 0 ) /*0x478918*/
     {
-      v5 = (unsigned char *)(v4 + 2);
+      v5 = v4 + 2; /*0x47891a*/
       v6 = v3; /*0x47891d*/
       do /*0x47892a*/
       {
@@ -767,12 +767,12 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(3 * a2); /*0x645abc*/
+      v6 = (char *)__2_YAPAXI_Z(3 * a2); /*0x645abc*/
       if ( v6 ) /*0x645ac6*/
       {
         if ( a2 - 1 >= 0 ) /*0x645acd*/
         {
-          v7 = (unsigned char *)(v6 + 2);
+          v7 = v6 + 2; /*0x645acf*/
           v8 = a2; /*0x645ad2*/
           do /*0x645adf*/
           {
@@ -793,7 +793,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
       *((unsigned char *)this + 13) = 1; /*0x645ae8*/
     }
   }
-  *this = (unsigned int *)(&vt_DynamicVectorClass_RGBClass);
+  *this = &vt_DynamicVectorClass_RGBClass; /*0x645aec*/
   *((unsigned int *)this + 5) = 10; /*0x645af2*/
   *((unsigned int *)this + 4) = 0; /*0x645af9*/
   return this; /*0x645afe*/
@@ -820,17 +820,17 @@ TypeList_flat * ParticleTypeClass::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
+  v3 = (void *)*(Block + 1); /*0x477ac3*/
   *Block = &vt_VectorClass_RGBClass; /*0x477ac6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477ad0*/
   {
-    RA2_OPDEL(v3); /*0x477ad8*/
+    __3_YAXPAX_Z(v3); /*0x477ad8*/
     *(Block + 1) = 0; /*0x477ae0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x477aeb*/
   *(Block + 2) = 0; /*0x477af1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x477af8*/
-    RA2_OPDEL(Block); /*0x477afb*/
+  if ( (a2 & 1) != 0 ) /*0x477af8*/
+    __3_YAXPAX_Z(Block); /*0x477afb*/
   return (TypeList *)Block; /*0x477b05*/
 
 }

@@ -39,7 +39,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   ScrollClass *v8; // eax
   int v9; // eax
   int v10; // eax
-  char * v11;
+  unsigned int v11; // eax
   char *v12; // eax
   char *v13; // edi
   int i; // edi
@@ -53,46 +53,46 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   v5 = *((char *)this + 5456); /*0x6d0691*/
   if ( v4 != -1 ) /*0x6d069a*/
   {
-    if ( *(unsigned int *)&g_abs_A8D63C - v4 >= v5 ) /*0x6d06a6*/
+    if ( *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664] - v4 >= v5 ) /*0x6d06a6*/
       goto LABEL_6; /*0x6d06a6*/
-    v5 -= *(unsigned int *)&g_abs_A8D63C - v4; /*0x6d06a8*/
+    v5 -= *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664] - v4; /*0x6d06a8*/
   }
   if ( v5 == 1 ) /*0x6d06ac*/
   {
-    v6 = (int)(*this);
+    v6 = *this; /*0x6d06ae*/
     *((unsigned char *)this + 21829) = 1; /*0x6d06b4*/
     (*(void (**)(int *, unsigned int))(v6 + 56))(this, 0); /*0x6d06ba*/
   }
 LABEL_6:
-  v7 = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4); /*0x6d06bd*/
-  if ( *a2 >= **(unsigned int **)&g_abs_B077F8 /*0x6d06dd*/
-    && *a2 < **(unsigned int **)&g_abs_B077F8 + *(unsigned int *)&g_abs_87F8E4 )
+  v7 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[11460] + 4); /*0x6d06bd*/
+  if ( *a2 >= **(unsigned int **)&MEMORY[0xB077F8].__pad_579C[11460] /*0x6d06dd*/
+    && *a2 < **(unsigned int **)&MEMORY[0xB077F8].__pad_579C[11460] + *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8540] )
   {
     v8 = (ScrollClass *)a2[1]; /*0x6d06df*/
     if ( (int)v8 >= v7 && (int)v8 < v7 + 30 ) /*0x6d06f2*/
-      Mouse::SetCursor((int)&g_abs_87F7E8, 0, 0); /*0x6d06fd*/
+      Mouse::SetCursor((int)&MEMORY[0x87F7E8], 0, 0); /*0x6d06fd*/
   }
   v9 = aP1->field_0; /*0x6d0706*/
   if ( aP1->field_0 < 32982 || v9 >= 33007 ) /*0x6d0718*/
   {
     if ( v9 == 33008 ) /*0x6d0842*/
     {
-      PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 408), 0x2000, 1.0, 0); /*0x6d0860*/
+      PlayVocClass(*(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 408), 0x2000, 1.0, 0); /*0x6d0860*/
       if ( *((unsigned char *)this + 21828) ) /*0x6d0865*/
       {
         SidebarUpdateAll(this); /*0x6d0875*/
-        (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CCB0);
+        (*(void (**)(int *, char *))(*(unsigned int *)this + 52))(this, &MEMORY[0xB077F8].__pad_5498[32]); /*0x6d0883*/
         for ( i = 0; i < 25; ++i ) /*0x6d0886*/
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
           if ( FontClassEntry ) /*0x6d0891*/
-            HashTable::Remove(*(int **)&g_abs_87F8E4, *((unsigned int *)FontClassEntry + 9)); /*0x6d089d*/
+            HashTable::Remove(*(int **)&MEMORY[0x87F8E4].__pad_5568[9500], *((unsigned int *)FontClassEntry + 9)); /*0x6d089d*/
         }
-        HashTable::Remove(*(int **)&g_abs_87F8E4, 240); /*0x6d08b3*/
+        HashTable::Remove(*(int **)&MEMORY[0x87F8E4].__pad_5568[9500], 240); /*0x6d08b3*/
         v16 = *this; /*0x6d08b8*/
         *((unsigned char *)this + 21828) = 0; /*0x6d08c1*/
-        (*(void (**)(int *, char *))(v16 + 48))(this, &g_abs_B077F8); /*0x6d08c8*/
-        PushCommandClass::Execute(&g_abs_B077F8, (int)&stru_830620.__pad_579C[51836]); /*0x6d08d5*/
+        (*(void (**)(int *, char *))(v16 + 48))(this, &MEMORY[0xB077F8].__pad_53E0[104]); /*0x6d08c8*/
+        PushCommandClass::Execute(&MEMORY[0xB077F8].__pad_53E0[104], (int)&stru_830620.__pad_579C[51836]); /*0x6d08d5*/
         v17 = *this; /*0x6d08da*/
         *((unsigned char *)this + 21829) = 1; /*0x6d08e0*/
         (*(void (**)(int *, unsigned int))(v17 + 56))(this, 0); /*0x6d08e6*/
@@ -100,13 +100,13 @@ LABEL_6:
     }
     else if ( v9 == 33009 ) /*0x6d08f3*/
     {
-      if ( !g_abs_A8B538 ) /*0x6d08fc*/
+      if ( !MEMORY[0xA8B538] ) /*0x6d08fc*/
       {
-        PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 404), 0x2000, 1.0, 0); /*0x6d091a*/
+        PlayVocClass(*(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 404), 0x2000, 1.0, 0); /*0x6d091a*/
         if ( !*((unsigned char *)this + 21828) ) /*0x6d091f*/
         {
-          (*(void (**)(TabClass *, GadgetClass *))(this->TabClass_field_0x0 + 52))(this, &stru_B0CC40);;
-          HashTable::Remove(*(int **)&g_abs_87F8E4, 241); /*0x6d0940*/
+          (*(void (**)(int *, char *))(*(unsigned int *)this + 52))(this, &MEMORY[0xB077F8].__pad_53E0[104]); /*0x6d0932*/
+          HashTable::Remove(*(int **)&MEMORY[0x87F8E4].__pad_5568[9500], 241); /*0x6d0940*/
           *((unsigned char *)this + 21828) = 1; /*0x6d0947*/
           CommandClass::BuildBar(this); /*0x6d094d*/
           v18 = *this; /*0x6d0952*/
@@ -117,60 +117,60 @@ LABEL_6:
     }
     else if ( v9 >= 49366 && v9 < 49391 ) /*0x6d096f*/
     {
-      IDA_BYTE1(v9) &= 0x3Fu; /*0x6d0977*/
+      BYTE1(v9) &= 0x3Fu; /*0x6d0977*/
       v19 = v9 - 214; /*0x6d097a*/
-      if ( v19 >= *(int *)&g_abs_B077F8 && v19 <= *(int *)&g_abs_B077F8 ) /*0x6d0989*/
-        SidebarClearReferences((char *)(v19 - *(unsigned int *)&g_abs_B077F8 + 1)); /*0x6d0990*/
+      if ( v19 >= *(int *)&MEMORY[0xB077F8].__pad_53E0[72] && v19 <= *(int *)&MEMORY[0xB077F8].__pad_5498[152] ) /*0x6d0989*/
+        SidebarClearReferences((char *)(v19 - *(unsigned int *)&MEMORY[0xB077F8].__pad_53E0[72] + 1)); /*0x6d0990*/
     }
   }
   else
   {
-    IDA_BYTE1(v9) &= ~0x80u; /*0x6d0724*/
+    BYTE1(v9) &= ~0x80u; /*0x6d0724*/
     v10 = v9 - 214; /*0x6d0727*/
-    if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d072e*/
+    if ( v10 == *(unsigned int *)&MEMORY[0xB077F8].__pad_5498[148] ) /*0x6d072e*/
     {
       BlowStraw_29_Get(); /*0x6d0730*/
     }
-    else if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d0740*/
+    else if ( v10 == *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[16020] ) /*0x6d0740*/
     {
       UI_Create_731A30(); /*0x6d0742*/
     }
-    else if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d0752*/
+    else if ( v10 == *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[13584] ) /*0x6d0752*/
     {
       UI_Create_730F30(); /*0x6d0754*/
     }
-    else if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d0764*/
+    else if ( v10 == *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[15992] ) /*0x6d0764*/
     {
       ProcessSelectionExperience(); /*0x6d0766*/
     }
-    else if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d0776*/
+    else if ( v10 == *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[16064] ) /*0x6d0776*/
     {
       GetFactoryData(); /*0x6d0778*/
     }
-    else if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d078a*/
+    else if ( v10 == *(unsigned int *)&MEMORY[0xB077F8].__pad_53E0[68] ) /*0x6d078a*/
     {
-      v11 = (char *)((unsigned int)((char *)(*(unsigned int *)&g_abs_B077F8[4 * *(unsigned int *)&g_abs_B077F8 + 16080])));
-      if ( v11 > (char *)((char *))(0x18) ) /*0x6d0795*/
+      v11 = *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[4 * *(unsigned int *)&MEMORY[0xB077F8].__pad_53E0[68] + 16080]; /*0x6d078c*/
+      if ( v11 > 0x18 ) /*0x6d0795*/
         v12 = 0; /*0x6d07a9*/
       else
-        v12 = &g_abs_B077F8; /*0x6d07a2*/
+        v12 = &MEMORY[0xB077F8].__pad_14B0[96 * v11 + 13592]; /*0x6d07a2*/
       if ( v12[45] ) /*0x6d07ab*/
         UI_Create_731A50(1); /*0x6d07b4*/
       else
         UI_Create_731A70(1); /*0x6d07be*/
     }
-    else if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d07ce*/
+    else if ( v10 == *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[16068] ) /*0x6d07ce*/
     {
       UI_Create_730EA0(); /*0x6d07d0*/
     }
-    else if ( v10 < *(int *)&g_abs_B077F8 || v10 > *(int *)&g_abs_B077F8 ) /*0x6d07ea*/
+    else if ( v10 < *(int *)&MEMORY[0xB077F8].__pad_53E0[72] || v10 > *(int *)&MEMORY[0xB077F8].__pad_5498[152] ) /*0x6d07ea*/
     {
-      if ( v10 == *(unsigned int *)&g_abs_B077F8 ) /*0x6d082d*/
+      if ( v10 == *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[16016] ) /*0x6d082d*/
         SelectAllOfType(); /*0x6d0833*/
     }
     else
     {
-      v13 = (char *)(v10 - *(unsigned int *)&g_abs_B077F8 + 1); /*0x6d07ef*/
+      v13 = (char *)(v10 - *(unsigned int *)&MEMORY[0xB077F8].__pad_53E0[72] + 1); /*0x6d07ef*/
       if ( SidebarCountAvailableUnits(v13) ) /*0x6d07f3*/
       {
         if ( SidebarHasAvailableUnit(v13) ) /*0x6d0808*/

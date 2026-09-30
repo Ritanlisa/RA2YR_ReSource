@@ -270,50 +270,50 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
 
   char v5; // bl
   int v6; // esi
-  void *StringCSF; // eax
-  void *v8; // ebp
-  void *v9; // eax
+  #72 *StringCSF; // eax
+  #72 *v8; // ebp
+  #72 *v9; // eax
   int MessageBox; // eax
   int v11; // ebp
   int v12; // ecx
-  int16_t Buffer; // [esp+2Ch] [ebp-F8h] BYREF
+  __int16 Buffer; // [esp+2Ch] [ebp-F8h] BYREF
   char v15; // [esp+2Eh] [ebp-F6h]
   int hWnd; // [esp+30h] [ebp-F4h]
   char Source[240]; // [esp+34h] [ebp-F0h] BYREF
 
-  v5 = (int)(1);
-  v6 = (int)(3);
-  this->Debug::Log(); /*0x5f2968*/
+  v5 = 1; /*0x5f2961*/
+  v6 = 3; /*0x5f2963*/
+  Debug::Log(); /*0x5f2968*/
   if ( a4 == 1 ) /*0x5f2979*/
-    StringCSF = GetStringCSF((void *)aTxtModemConner, 0, g_Str_File_NullMgr_CPP, 1409); /*0x5f298c*/
+    StringCSF = GetStringCSF((#72 *)aTxtModemConner, 0, g_Str_File_NullMgr_CPP, 1409); /*0x5f298c*/
   else
-    StringCSF = GetStringCSF((void *)aTxtDialing, 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
+    StringCSF = GetStringCSF((#72 *)aTxtDialing, 0, g_Str_File_NullMgr_CPP, 1411); /*0x5f299f*/
   v8 = StringCSF; /*0x5f29ba*/
-  IDA_LOBYTE(dword_A8ED54[51580]) = 0; /*0x5f29bc*/
-  v9 = GetStringCSF((void *)g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1415); /*0x5f29c3*/
-  MessageBox = CreateMessageBox(v8, v9, &((unsigned int *)(dword_A8ED54))[51580]); /*0x5f29cc*/
+  LOBYTE(dword_A8ED54[51580]) = 0; /*0x5f29bc*/
+  v9 = GetStringCSF((#72 *)g_Str_TXT_CANCEL, 0, g_Str_File_NullMgr_CPP, 1415); /*0x5f29c3*/
+  MessageBox = CreateMessageBox(v8, v9, &dword_A8ED54[51580]); /*0x5f29cc*/
   hWnd = MessageBox; /*0x5f29d3*/
   if ( !MessageBox ) /*0x5f29d7*/
     return v6; /*0x5f29d7*/
   Dialog::Show(MessageBox); /*0x5f29df*/
-  this->this->this->Debug::Log(); /*0x5f29e9*/
+  Debug::Log(); /*0x5f29e9*/
   (*(void (**)(int, int))(*(unsigned int *)dword_A8ED54[233459] + 8))(dword_A8ED54[233459], a3); /*0x5f2a01*/
-  this->this->this->Debug::Log(); /*0x5f2a09*/
+  Debug::Log(); /*0x5f2a09*/
   (*(void (**)(int, int, char *, int, int))(*(unsigned int *)dword_A8ED54[233459] + 20))( /*0x5f2a24*/
     dword_A8ED54[233459],
     60,
     Source,
     81,
     -1);
-  this->this->this->Debug::Log(); /*0x5f2a2c*/
+  Debug::Log(); /*0x5f2a2c*/
   (*(void (**)(int, int))(*(unsigned int *)dword_A8ED54[233459] + 24))(dword_A8ED54[233459], a2); /*0x5f2a44*/
   (*(void (**)(int, int (*)()))(*(unsigned int *)dword_A8ED54[233459] + 36))(dword_A8ED54[233459], PumpEventLoop); /*0x5f2a54*/
-  IDA_LOBYTE(dword_A8ED54[51580]) = 0; /*0x5f2a57*/
+  LOBYTE(dword_A8ED54[51580]) = 0; /*0x5f2a57*/
   v11 = *((char *)this + 9); /*0x5f2a5e*/
-  this->Debug::Log(); /*0x5f2a66*/
+  Debug::Log(); /*0x5f2a66*/
   while ( 1 ) /*0x5f2a6e*/
   {
-    if ( Dialog::PumpMessages() == 1 || IDA_LOBYTE(dword_A8ED54[51580]) ) /*0x5f2a82*/
+    if ( Dialog::PumpMessages() == 1 || LOBYTE(dword_A8ED54[51580]) ) /*0x5f2a82*/
     {
       v6 = 6; /*0x5f2c78*/
       if ( dword_A8ED54[233459] ) /*0x5f2c7f*/
@@ -324,10 +324,10 @@ LABEL_34:
         WinModemClass::WriteSerial(&Buffer, 2); /*0x5f2c99*/
       }
 LABEL_35:
-      this->Debug::Log(); /*0x5f2c9e*/
+      Debug::Log(); /*0x5f2c9e*/
       goto LABEL_36; /*0x5f2ca3*/
     }
-    IDA_LOBYTE(v12) = 0; /*0x5f2a88*/
+    LOBYTE(v12) = 0; /*0x5f2a88*/
     ScreenSaver::Process(v12); /*0x5f2a8a*/
     memset(Source, 0, sizeof(Source)); /*0x5f2a9c*/
     v11 = (*(int (**)(int, int, char *, int, int))(*(unsigned int *)dword_A8ED54[233459] + 20))( /*0x5f2ab1*/
@@ -345,7 +345,7 @@ LABEL_35:
     }
     _strupr(Source); /*0x5f2ac4*/
     if ( strlen(Source) ) /*0x5f2acd*/
-      this->Debug::Log(); /*0x5f2ae6*/
+      Debug::Log(); /*0x5f2ae6*/
     if ( strstr(Source, off_8327D8) ) /*0x5f2af8*/
     {
       memset(&dword_A8ED54[51533], 0, 0x50u); /*0x5f2b12*/
@@ -394,7 +394,7 @@ LABEL_23:
   v6 = 5; /*0x5f2c6b*/
 LABEL_36:
   (*(void (**)(int, unsigned int))(*(unsigned int *)dword_A8ED54[233459] + 36))(dword_A8ED54[233459], 0); /*0x5f2cab*/
-  IDA_LOBYTE(dword_A8ED54[51580]) = 0; /*0x5f2cbc*/
+  LOBYTE(dword_A8ED54[51580]) = 0; /*0x5f2cbc*/
   Dialog::Destroy(hWnd); /*0x5f2cc3*/
   return v6; /*0x5f2cca*/
 

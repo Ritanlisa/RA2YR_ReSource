@@ -14,7 +14,7 @@ namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)this + 4))( /*0x496167*/
            this,
            a2,
            a3,
@@ -236,13 +236,13 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(unsigned int
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 2)));
-  *Block = (unsigned int)(&vt_BlitTransLucent25Alpha_unsigned_short);
+  v3 = (void *)*(Block + 2); /*0x49a348*/
+  *Block = &vt_BlitTransLucent25Alpha_unsigned_short; /*0x49a34b*/
   FractalNoise::Release(v3); /*0x49a352*/
   *(Block + 2) = 0; /*0x49a35b*/
   *Block = &vt_Blitter; /*0x49a364*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x49a36a*/
-    RA2_OPDEL(Block); /*0x49a36d*/
+  if ( (a2 & 1) != 0 ) /*0x49a36a*/
+    __3_YAXPAX_Z(Block); /*0x49a36d*/
   return (BlitTransLucent25Alpha_ushort *)Block; /*0x49a377*/
 
 }
@@ -266,13 +266,13 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 2)));
-  *Block = (unsigned int)(&vt_BlitTransLucent25AlphaZReadWrite_unsigned_short);
+  v3 = (void *)*(Block + 2); /*0x49a728*/
+  *Block = &vt_BlitTransLucent25AlphaZReadWrite_unsigned_short; /*0x49a72b*/
   FractalNoise::Release(v3); /*0x49a732*/
   *(Block + 2) = 0; /*0x49a73b*/
   *Block = &vt_Blitter; /*0x49a744*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x49a74a*/
-    RA2_OPDEL(Block); /*0x49a74d*/
+  if ( (a2 & 1) != 0 ) /*0x49a74a*/
+    __3_YAXPAX_Z(Block); /*0x49a74d*/
   return (BlitTransLucent25AlphaZReadWrite_ushort *)Block; /*0x49a757*/
 
 }

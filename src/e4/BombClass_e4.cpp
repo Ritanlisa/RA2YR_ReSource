@@ -126,9 +126,9 @@ namespace gamemd {
 int BombClass::InitPool()
 {
 
-  unk_89C66C = (unsigned char *)(0);
-  dword_89C670 = (unsigned char *)(0);
-  unk_89C674 = (unsigned char *)(1);
+  unk_89C66C = 0; /*0x438557*/
+  dword_89C670 = 0; /*0x43855c*/
+  unk_89C674 = 1; /*0x438561*/
   unk_89C675 = 0; /*0x438568*/
   dword_89C668 = (int)&vt_DynamicVectorClass_BombClass; /*0x43856d*/
   dword_89C67C = 10; /*0x438577*/
@@ -215,9 +215,9 @@ BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (unsigned int)(&vt_BombClass);
-  *(Block + 1) = &vt_BombClass; /*0x4393fd*/
-  *(Block + 2) = &vt_BombClass; /*0x439404*/
+  *Block = &BombClass::`vftable'; /*0x4393f7*/
+  *(Block + 1) = &BombClass::`vftable'; /*0x4393fd*/
+  *(Block + 2) = &BombClass::`vftable'; /*0x439404*/
   *(Block + 3) = &vt_BombClass; /*0x43940b*/
   AudioFileClass::Release(Block + 15); /*0x439412*/
   v5 = Block; /*0x439427*/
@@ -232,8 +232,8 @@ BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
   AbstractClass::DTOR(Block); /*0x439462*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x43946c*/
-    RA2_OPDEL(Block); /*0x43946f*/
+  if ( (a2 & 1) != 0 ) /*0x43946c*/
+    __3_YAXPAX_Z(Block); /*0x43946f*/
   return (BombClass *)Block; /*0x439479*/
 
 }

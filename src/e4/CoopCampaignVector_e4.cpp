@@ -28,17 +28,17 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(unsigned int * Block, char
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_CoopCampaignClass);
+  v3 = (void *)*(Block + 1); /*0x5c5943*/
+  *Block = &vt_VectorClass_CoopCampaignClass; /*0x5c5946*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c5950*/
   {
-    RA2_OPDEL(v3); /*0x5c5958*/
+    __3_YAXPAX_Z(v3); /*0x5c5958*/
     *(Block + 1) = 0; /*0x5c5960*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5c596b*/
   *(Block + 2) = 0; /*0x5c5971*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5c5978*/
-    RA2_OPDEL(Block); /*0x5c597b*/
+  if ( (a2 & 1) != 0 ) /*0x5c5978*/
+    __3_YAXPAX_Z(Block); /*0x5c597b*/
   return (VectorClass *)Block; /*0x5c5985*/
 
 }

@@ -46,67 +46,67 @@ int KeyboardConfig::LoadINI()
   INIClass::INIClass(v8); /*0x533d2b*/
   v9 = 0; /*0x533d3b*/
   v8[0] = &CCINIClass_Vtable; /*0x533d3f*/
-  ((CCFileClass *)(v10))->Construct(g_abs_827B88); /*0x533d47*/
+  CCFileClass::Construct(v10, MEMORY[0x827B88]); /*0x533d47*/
   if ( CCINIClass::Load(v8, (int)v10, 0, 0) ) /*0x533d57*/
   {
-    RA2_OPDEL(g_abs_87F680); /*0x533d6c*/
+    __3_YAXPAX_Z(MEMORY[0x87F680]); /*0x533d6c*/
     v0 = 0; /*0x533d74*/
-    g_abs_87F680 = 0; /*0x533d7a*/
-    g_abs_87F684 = 0; /*0x533d85*/
-    g_abs_87F688 = 0; /*0x533d8b*/
-    g_abs_87F68C = 0; /*0x533d91*/
-    g_abs_87F690 = 0; /*0x533d97*/
-    for ( i = 0; i < (int)(INIClass)::GetKeyCount((char *)v8, (uint8_t *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
+    MEMORY[0x87F680] = 0; /*0x533d7a*/
+    MEMORY[0x87F684] = 0; /*0x533d85*/
+    MEMORY[0x87F688] = 0; /*0x533d8b*/
+    MEMORY[0x87F68C] = 0; /*0x533d91*/
+    MEMORY[0x87F690] = 0; /*0x533d97*/
+    for ( i = 0; i < INIClass::GetKeyCount((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
     {
-      StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (uint8_t *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
+      StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
       v2 = 0; /*0x533dd1*/
       Int_Overwrite = INIClass::ReadInt_Overwrite(g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
-      if ( g_abs_87F668 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x533dde*/
+      if ( MEMORY[0x87F668] > 0 ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/
-                  (const char *)(*(int (**)(unsigned int))(**((unsigned int **)g_abs_87F65C + v2) + 4))(*((unsigned int *)g_abs_87F65C + v2)),
+                  (const char *)(*(int (**)(unsigned int))(**((unsigned int **)MEMORY[0x87F65C] + v2) + 4))(*((unsigned int *)MEMORY[0x87F65C] + v2)),
                   StringByIndex) )
         {
-          if ( ++(int)((int))((int))(v2) >= g_abs_87F668 ) /*0x533e29*/
+          if ( ++v2 >= MEMORY[0x87F668] ) /*0x533e29*/
             goto LABEL_14; /*0x533e29*/
         }
-        v3 = *((unsigned int *)g_abs_87F65C + v2); /*0x533e32*/
+        v3 = *((unsigned int *)MEMORY[0x87F65C] + v2); /*0x533e32*/
         if ( v3 && Int_Overwrite ) /*0x533e3f*/
         {
-          v4 = (int)(g_abs_87F688);
-          if ( (int)(g_abs_87F684 + 1) <= (int)((int))((int))(g_abs_87F688) ) /*0x533e4f*/
+          v4 = MEMORY[0x87F688]; /*0x533e47*/
+          if ( (int)(MEMORY[0x87F684] + 1) <= MEMORY[0x87F688] ) /*0x533e4f*/
             goto LABEL_13; /*0x533e4f*/
-          if ( !g_abs_87F688 ) /*0x533e53*/
+          if ( !MEMORY[0x87F688] ) /*0x533e53*/
             v4 = 10; /*0x533e55*/
-          if ( (uint8_t)KeyboardConfig::ReleaseBuffer(v4) ) /*0x533e60*/
+          if ( (unsigned __int8)KeyboardConfig::ReleaseBuffer(v4) ) /*0x533e60*/
           {
 LABEL_13:
-            *((unsigned int *)g_abs_87F680 + 2 * g_abs_87F684) = Int_Overwrite; /*0x533e74*/
-            *((unsigned int *)g_abs_87F680 + 2 * g_abs_87F684 + 1) = v3; /*0x533e83*/
-            g_abs_87F68C = 0; /*0x533e8d*/
-            ++g_abs_87F684; /*0x533e93*/
+            *((unsigned int *)MEMORY[0x87F680] + 2 * MEMORY[0x87F684]) = Int_Overwrite; /*0x533e74*/
+            *((unsigned int *)MEMORY[0x87F680] + 2 * MEMORY[0x87F684] + 1) = v3; /*0x533e83*/
+            MEMORY[0x87F68C] = 0; /*0x533e8d*/
+            ++MEMORY[0x87F684]; /*0x533e93*/
           }
         }
       }
 LABEL_14:
       ++i; /*0x533e98*/
     }
-    v10[0] = (unsigned int)(&vt_CCFileClass);
-    v12 = (unsigned int)(0);
+    v10[0] = &vt_CCFileClass; /*0x533ec0*/
+    v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
     v10[0] = &off_7E1668; /*0x533ed8*/
-    ((BufferIOFileClass *)(v10))->Dtor(); /*0x533ee0*/
+    BufferIOFileClass::Dtor(v10); /*0x533ee0*/
     HashTable::DestroyHashTableINIClass(v8); /*0x533ee9*/
     return 1; /*0x533eee*/
   }
   else
   {
-    this->Debug::Log(); /*0x533efe*/
+    Debug::Log(); /*0x533efe*/
     v10[0] = &vt_CCFileClass; /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
     v10[0] = &off_7E1668; /*0x533f25*/
-    ((BufferIOFileClass *)(v10))->Dtor(); /*0x533f2d*/
+    BufferIOFileClass::Dtor(v10); /*0x533f2d*/
     HashTable::DestroyHashTableINIClass(v8); /*0x533f36*/
     return 0; /*0x533f3b*/
   }

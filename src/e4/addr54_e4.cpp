@@ -1834,7 +1834,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
   int v29; // [esp+28h] [ebp+10h]
 
   memset(*a3, 0, a5 * a4); /*0x549859*/
-  char sub_549830(ObjectClass *this, int a2, void **a3, int a4, int a5)
+  v6 = (unsigned int *)(*(int (**)(void *))(*(unsigned int *)this + 156))(this); /*0x549866*/
   v7 = v6; /*0x54986c*/
   if ( v6 ) /*0x549870*/
   {
@@ -1842,7 +1842,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
     v8 = v6[v27 + 4]; /*0x549887*/
     if ( !v8 ) /*0x54988d*/
       return 0; /*0x54988d*/
-    char sub_549830(ObjectClass *this, int a2, void **a3, int a4, int a5)
+    v9 = (unsigned int *)(*(int (**)(void *))(*(unsigned int *)this + 156))(this); /*0x549897*/
     v10 = v9; /*0x54989d*/
     if ( v9 ) /*0x5498a1*/
     {

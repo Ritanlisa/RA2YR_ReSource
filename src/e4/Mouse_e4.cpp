@@ -235,12 +235,12 @@ HWND Mouse::HideWindow()
 
   HWND result; // eax
 
-  result = (HWND)(g_abs_ABF240);
-  g_abs_ABF239 = 0; /*0x5bc409*/
-  if ( g_abs_ABF240 ) /*0x5bc40f*/
+  result = MEMORY[0xABF240]; /*0x5bc400*/
+  MEMORY[0xABF239] = 0; /*0x5bc409*/
+  if ( MEMORY[0xABF240] ) /*0x5bc40f*/
   {
-    g_abs_ABF23A = 0; /*0x5bc413*/
-    return (HWND)ShowWindow(g_abs_ABF240, 0); /*0x5bc419*/
+    MEMORY[0xABF23A] = 0; /*0x5bc413*/
+    return (HWND)ShowWindow(MEMORY[0xABF240], 0); /*0x5bc419*/
   }
   return result; /*0x5bc41f*/
 

@@ -47,11 +47,11 @@ int ComStreamClass::Write()
   char v23; // [esp+20h] [ebp-2804h]
   wchar_t v24[5120]; // [esp+24h] [ebp-2800h] BYREF
   int v25; // [esp+282Ch] [ebp+8h]
-  uint8_t *v26; // [esp+2830h] [ebp+Ch]
+  unsigned __int8 *v26; // [esp+2830h] [ebp+Ch]
   CCINIClass *lParam; // [esp+2834h] [ebp+10h]
   CCINIClass *aP1; // [esp+2838h] [ebp+14h]
 
-  this->Debug::Log(); /*0x7a3da1*/
+  Debug::Log(); /*0x7a3da1*/
   dword_B77DF0 = v25; /*0x7a3dba*/
   if ( v25 ) /*0x7a3dbf*/
     goto LABEL_16; /*0x7a3dbf*/
@@ -65,7 +65,7 @@ int ComStreamClass::Write()
   if ( Flag::IsNot2(&v22) ) /*0x7a3e07*/
   {
     ChannelWOL = FindChannelWOL(lParam->__pad_0, (int)aP1, 1u, *(unsigned int *)(v20 + 16)); /*0x7a3e2d*/
-    SaveConfigWOL((int)&g_abs_A8B238); /*0x7a3e31*/
+    SaveConfigWOL((int)&MEMORY[0xA8B238]); /*0x7a3e31*/
   }
   v17 = 1; /*0x7a3e3b*/
   v16 = 0; /*0x7a3e40*/
@@ -90,9 +90,9 @@ int ComStreamClass::Write()
       String::Assign_Alt((void **)&g_WebBrowser, lParam); /*0x7a3eeb*/
       String::Assign_Alt((void **)&g_WebBrowserConfig, aP1); /*0x7a3efd*/
       v7 = (CCINIClass *)GetDlgItem(v1, 1836); /*0x7a3f0f*/
-      v4 = ((String *)(&g_WebBrowserConfig))->GetOrEmpty_Alt(); /*0x7a3f11*/
+      v4 = String::GetOrEmpty_Alt(&g_WebBrowserConfig); /*0x7a3f11*/
       SendMessageA((HWND)v7, 0x4B4u, 0, (LPARAM)v4); /*0x7a3f1f*/
-      IDA_LOBYTE(dword_84A238) = 1; /*0x7a3f29*/
+      LOBYTE(dword_84A238) = 1; /*0x7a3f29*/
       v5 = GetDlgItem(v1, 1337); /*0x7a3f30*/
       v6 = (void (*)(HWND, BOOL))EnableWindow; /*0x7a3f32*/
       EnableWindow(v5, 1); /*0x7a3f39*/
@@ -127,20 +127,20 @@ LABEL_16:
   if ( v26 ) /*0x7a3fed*/
   {
     BulkCharToWide(v24, v26, -1); /*0x7a3ff5*/
-    ShowDialogConfirm(v24, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7a4007*/
+    ShowDialogConfirm(v24, 0, (unsigned __int8 (*)(void))GameLoop::Thunk, 0); /*0x7a4007*/
   }
   else
   {
-    ShowDialogConfirm(aUnknownStatus, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x7a4017*/
+    ShowDialogConfirm(aUnknownStatus, 0, (unsigned __int8 (*)(void))GameLoop::Thunk, 0); /*0x7a4017*/
   }
   v12 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a4021*/
   if ( v12 ) /*0x7a4028*/
   {
-    g_WOL_ChannelList = (int)((MPCooperative *)((unsigned int)g_WOL_ChannelList & 0xFFFFFEFF));
+    g_WOL_ChannelList = (MPCooperative *)((unsigned int)g_WOL_ChannelList & 0xFFFFFEFF); /*0x7a4036*/
     if ( !g_WOL_ChannelList ) /*0x7a403c*/
       CloseDialog(v12, 0); /*0x7a4042*/
   }
-  Current = this->Dialog::GetCurrent(); /*0x7a4047*/
+  Current = Dialog::GetCurrent(); /*0x7a4047*/
   v14 = GetDlgItem(Current, 1344); /*0x7a4052*/
   if ( v14 ) /*0x7a4058*/
     SetFocus(v14); /*0x7a405b*/
@@ -156,14 +156,14 @@ int ComStreamClass::Release()
   LONG v1; // ebx
   char *Block; // [esp+14h] [ebp+4h]
 
-  v1 = (unsigned int)(InterlockedDecrement((volatile LONG *)Block + 1));
+  v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ac834*/
   if ( !v1 && Block ) /*0x7ac83c*/
   {
     *(unsigned int *)Block = &off_7F766C; /*0x7ac843*/
     *((unsigned int *)Block + 1) = 1; /*0x7ac849*/
     InterlockedDecrement(&Addend); /*0x7ac84f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ac855*/
-    RA2_OPDEL(Block); /*0x7ac85c*/
+    __3_YAXPAX_Z(Block); /*0x7ac85c*/
   }
   return v1; /*0x7ac864*/
 
@@ -174,7 +174,7 @@ namespace gamemd {
 int ComStreamClass::QueryInterface()
 {
 
-  void **v1; // esi
+  _UNKNOWN **v1; // esi
   int result; // eax
   unsigned int *v3; // eax
   BOOL v4; // ebp
@@ -197,7 +197,7 @@ int ComStreamClass::QueryInterface()
   }
   while ( 1 ) /*0x7ac8dd*/
   {
-    v3 = (unsigned int *)(*v1);
+    v3 = *v1; /*0x7ac8dd*/
     v4 = *v1 == 0; /*0x7ac8e6*/
     if ( !*v1 || *v3 == *v9 && v3[1] == v9[1] && v3[2] == v9[2] && v3[3] == v9[3] ) /*0x7ac910*/
       break; /*0x7ac910*/
@@ -248,13 +248,13 @@ AbstractClass * * ComStreamClass::readData()
     *((unsigned int *)this + 2) = 2 * v2; /*0x7ae0fd*/
     v13 = v3; /*0x7ae100*/
     *((unsigned int *)this + 3) = v4; /*0x7ae108*/
-    v5 = RA2_OPNEW(8 * v2); /*0x7ae113*/
+    v5 = __2_YAPAXI_Z(8 * v2); /*0x7ae113*/
     v6 = 4 * *((unsigned int *)this + 2); /*0x7ae118*/
     *this = v5; /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
     if ( v2 > 0 ) /*0x7ae12f*/
     {
-      v7 = (int *)(v3);
+      v7 = v3; /*0x7ae131*/
       v8 = v2; /*0x7ae133*/
       do /*0x7ae167*/
       {
@@ -278,7 +278,7 @@ AbstractClass * * ComStreamClass::readData()
       while ( v8 ); /*0x7ae167*/
       v3 = v13; /*0x7ae169*/
     }
-    RA2_OPDEL(v3); /*0x7ae16e*/
+    __3_YAXPAX_Z(v3); /*0x7ae16e*/
   }
 
 }
@@ -398,21 +398,21 @@ int ComStreamClass::Seek()
   CampaignScore *v6; // [esp+Ch] [ebp+Ch]
   int v7; // [esp+10h] [ebp+10h]
 
-  this->Debug::Log(); /*0x7a4075*/
+  Debug::Log(); /*0x7a4075*/
   dword_B77DF4 = v5; /*0x7a4083*/
   if ( !v5 ) /*0x7a4088*/
   {
-    dword_B77E60 = (unsigned int)(v6);
+    dword_B77E60 = v6; /*0x7a4092*/
     dword_B77E64 = v7; /*0x7a4097*/
   }
   v1 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a40a2*/
   if ( v1 ) /*0x7a40a9*/
   {
-    g_WOL_ChannelList = (int)((MPCooperative *)((unsigned int)g_WOL_ChannelList & 0xFFFFFEFF));
+    g_WOL_ChannelList = (MPCooperative *)((unsigned int)g_WOL_ChannelList & 0xFFFFFEFF); /*0x7a40b7*/
     if ( !g_WOL_ChannelList ) /*0x7a40bd*/
       CloseDialog(v1, 0); /*0x7a40c3*/
   }
-  Current = this->Dialog::GetCurrent(); /*0x7a40c8*/
+  Current = Dialog::GetCurrent(); /*0x7a40c8*/
   DlgItem = GetDlgItem(Current, 1344); /*0x7a40d3*/
   if ( DlgItem ) /*0x7a40db*/
     SetFocus(DlgItem); /*0x7a40de*/
@@ -432,18 +432,18 @@ int ComStreamClass::ddtor()
   {
     if ( !v2 && v3 < 0x3E8 ) /*0x7a4114*/
     {
-      dword_B77CE0 = (unsigned int)((ObjectClass *)((char *)dword_B77CE0 + 1));
+      dword_B77CE0 = (ObjectClass *)((char *)dword_B77CE0 + 1); /*0x7a4123*/
       return 0; /*0x7a412a*/
     }
     return 0; /*0x7a4114*/
   }
-  if ( g_abs_A8B244 != (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) && g_abs_A8B244 != (unsigned char [1])((unsigned char [1]))(1) && g_abs_A8B244 != 2 ) /*0x7a413f*/
+  if ( MEMORY[0xA8B244] != 3 && MEMORY[0xA8B244] != 1 && MEMORY[0xA8B244] != 2 ) /*0x7a413f*/
   {
     if ( g_WOL_ProcessIdle ) /*0x7a4188*/
       DisplayRankingsWOL(0, 0); /*0x7a418e*/
     return 0; /*0x7a418e*/
   }
-  this->Debug::Log(); /*0x7a4146*/
+  Debug::Log(); /*0x7a4146*/
   if ( ++dword_B736F4 < (int)g_WOL_LoginPool ) /*0x7a4161*/
     return 0; /*0x7a4193*/
   if ( g_WOL_IdleHandler == 4 || g_WOL_IdleHandler == 5 ) /*0x7a4170*/

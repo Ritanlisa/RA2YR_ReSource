@@ -119,32 +119,32 @@ int WinsockInterface::Init()
   }
   else
   {
-    if ( dword_A8ED54[238803] > 0 && !IDA_LOBYTE(dword_A8ED54[238802]) ) /*0x7b1e2d*/
+    if ( dword_A8ED54[238803] > 0 && !LOBYTE(dword_A8ED54[238802]) ) /*0x7b1e2d*/
     {
-      IDA_LOBYTE(dword_A8ED54[238802]) = 1; /*0x7b1e41*/
+      LOBYTE(dword_A8ED54[238802]) = 1; /*0x7b1e41*/
       ((void (*)(int, char *, char *, unsigned int))MessageBoxA)(dword_A8ED54[233983], aWarningPacketL, Caption, 0); /*0x7b1e48*/
     }
-    v3 = (unsigned short *)RA2_OPNEW(1424); /*0x7b1e53*/
+    v3 = (unsigned short *)__2_YAPAXI_Z(1424); /*0x7b1e53*/
     v4 = *this; /*0x7b1e58*/
     v5 = v3; /*0x7b1e5a*/
     v11 = v3; /*0x7b1e61*/
     *((unsigned int *)this + 64539) = -1; /*0x7b1e65*/
     (*(void (**)(unsigned int *))(v4 + 20))(this); /*0x7b1e6f*/
-    (*(void (**)(WinsockInterface *))(*(unsigned int *)this->__pad_0 + 24))(this);;
+    (*(void (**)(unsigned int *))(*(unsigned int *)this + 96))(this); /*0x7b1e76*/
     Debug::Log(); /*0x7b1e7e*/
     if ( WSAStartup(257, v5) ) /*0x7b1e8c*/
     {
       Debug::Log(); /*0x7b1e9b*/
-      RA2_OPDEL(v5); /*0x7b1ea1*/
+      __3_YAXPAX_Z(v5); /*0x7b1ea1*/
       return 0; /*0x7b1ea9*/
     }
     else
     {
       Debug::Log(); /*0x7b1eb9*/
-      if ( (uint8_t)*v5 != 1 || (((uint16_t)*v5 ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
+      if ( (unsigned __int8)*v5 != 1 || (((unsigned __int16)*v5 ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
       {
         Debug::Log(); /*0x7b1fad*/
-        RA2_OPDEL(v5); /*0x7b1fb3*/
+        __3_YAXPAX_Z(v5); /*0x7b1fb3*/
         return 0; /*0x7b1fbb*/
       }
       else
@@ -180,7 +180,7 @@ int WinsockInterface::Init()
           }
         }
         *((unsigned char *)this + 258152) = 1; /*0x7b1f7e*/
-        RA2_OPDEL(v5); /*0x7b1f85*/
+        __3_YAXPAX_Z(v5); /*0x7b1f85*/
         return 1; /*0x7b1f8d*/
       }
     }

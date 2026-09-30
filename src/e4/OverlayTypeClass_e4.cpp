@@ -503,11 +503,11 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
   int v5; // eax
   int v6[2]; // [esp+8h] [ebp-8h] BYREF
 
-  v4 = g_abs_886FA4 + a2[1] + 15; /*0x5fe5c1*/
-  v6[0] = g_abs_886FA0 + *a2 + 30; /*0x5fe5c4*/
+  v4 = MEMORY[0x886FA4] + a2[1] + 15; /*0x5fe5c1*/
+  v6[0] = MEMORY[0x886FA0] + *a2 + 30; /*0x5fe5c4*/
   v6[1] = v4; /*0x5fe5c8*/
-  v5 = (*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this);
-  DrawToSurfaceSHP(g_abs_887314, g_abs_87F6B8, v5, a4, v6, a3, 1536, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x5fe606*/
+  v5 = (*(int (**)(void *))(*(unsigned int *)this + 156))(this); /*0x5fe5f3*/
+  DrawToSurfaceSHP(MEMORY[0x887314], MEMORY[0x87F6B8], v5, a4, v6, a3, 1536, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x5fe606*/
 
 }
 // 0x5FEA30
@@ -582,9 +582,9 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   int v7; // eax
   char v8; // cl
   int PixelData; // ecx
-  int16_t v11; // [esp+4h] [ebp-4h]
+  __int16 v11; // [esp+4h] [ebp-4h]
 
-  // [esp+4h] [ebp-4h] v4 = (MixFileClass *)(*((int (**)(OverlayTypeClass *))this->ObjectTypeClass + 39))(this);
+  v4 = (char **)(*(int (**)(int *))(*(unsigned int *)this + 156))(this); /*0x5fed06*/
   if ( v4 || (v5 = *((char *)this + 167)) != 0 && (v4 = (char **)(*(int (**)(int))(*(unsigned int *)v5 + 156))(v5)) != 0 ) /*0x5fed28*/
   {
     v6 = *((char *)this + 165); /*0x5fed2e*/
@@ -599,9 +599,9 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
     {
       v7 = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5fed5d*/
       v11 = *(unsigned short *)v7; /*0x5fed67*/
-      v8 = IDA_HIBYTE(*(unsigned short *)v7); /*0x5fed6f*/
-      IDA_BYTE1(a3) = *(unsigned char *)(v7 + 2); /*0x5fed73*/
-      IDA_LOBYTE(a3) = v11; /*0x5fed7b*/
+      v8 = HIBYTE(*(unsigned short *)v7); /*0x5fed6f*/
+      BYTE1(a3) = *(unsigned char *)(v7 + 2); /*0x5fed73*/
+      LOBYTE(a3) = v11; /*0x5fed7b*/
       *(unsigned short *)a2 = a3; /*0x5fed86*/
       *(unsigned char *)(a2 + 2) = v8; /*0x5fed8a*/
       return a2; /*0x5fed77*/

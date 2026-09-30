@@ -41,20 +41,20 @@ namespace gamemd {
 int IPXManagerClass::send(int a2)
 {
 
-  unsigned int * v2;
-  unsigned int * result;
+  int v2; // edx
+  int result; // eax
   unsigned int *i; // ecx
 
-  v2 = (int)((unsigned int *)(*((char *)this + 17)));
-  result = (int)((unsigned int *)(0));
+  v2 = *((char *)this + 17); /*0x541040*/
+  result = 0; /*0x541043*/
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
   for ( i = (char *)this + 10; *(unsigned int *)(*i + 100) != a2; ++i ) /*0x54104f*/
   {
-    if ( ++result >= (unsigned int *)((int))(v2) ) /*0x54105f*/
+    if ( ++result >= v2 ) /*0x54105f*/
       return -1; /*0x54105f*/
   }
-  return (int)(result);
+  return result; /*0x541064*/
 
 }
 } // namespace gamemd
@@ -107,10 +107,10 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)
 
   int v5; // eax
   int v6; // ecx
-  unsigned int * v7;
+  int v7; // eax
   int v8; // ecx
   int v9; // edx
-  int a4; // edi
+  int v10; // edi
   int v11; // edx
   int v13; // [esp+10h] [ebp-4h]
 
@@ -128,11 +128,11 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)
     return 0; /*0x541661*/
   while ( 1 ) /*0x54162b*/
   {
-    v6 = (unsigned int *)(this->connTable[this->curConnIndex]);
-    v7 = (int)((unsigned int *)((*(int (**)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3)));
+    v6 = this->connTable[this->curConnIndex]; /*0x54162b*/
+    v7 = (*(int (**)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3); /*0x541631*/
     v8 = *((unsigned int *)this + 21); /*0x541634*/
-    v9 = this-((unsigned int *)(>connTable))[v8++]; /*0x541637*/
-    a4 = *(unsigned int *)(v9 + 100); /*0x54163c*/
+    v9 = this->connTable[v8++]; /*0x541637*/
+    v10 = *(unsigned int *)(v9 + 100); /*0x54163c*/
     v11 = *((unsigned int *)this + 17); /*0x54163f*/
     *((unsigned int *)this + 21) = v8; /*0x541644*/
     if ( v8 >= v11 ) /*0x541647*/
@@ -142,7 +142,7 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)
     if ( ++v13 >= v11 ) /*0x54165f*/
       return 0; /*0x54165f*/
   }
-  *a4 = (unsigned int)(a4);
+  *a4 = v10; /*0x54166f*/
   return 1; /*0x541661*/
 
 }

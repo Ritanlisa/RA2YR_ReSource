@@ -35,7 +35,7 @@ float Float::SubtractClamped( BuildingTypeClass * aP1, IUnknown * aP2)
   }
   else
   {
-    result = (double)(*(this + (unsigned int)aP2));
+    result = *(this + (unsigned int)aP2); /*0x6c96c2*/
     v4 = result - result; /*0x6c96c8*/
   }
   *(this + (unsigned int)aP2) = v4; /*0x6c96ca*/

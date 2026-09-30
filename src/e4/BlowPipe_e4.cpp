@@ -172,7 +172,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e36c*/
       v4 = a3; /*0x63e382*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63e37e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e37e*/
     *((unsigned char *)this + 12) = 1; /*0x63e386*/
     if ( v4 ) /*0x63e38a*/
     {
@@ -185,7 +185,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x63e3ae*/
         if ( *((unsigned char *)this + 13) ) /*0x63e3bb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x63e3c6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e3c6*/
           *((unsigned int *)this + 1) = 0; /*0x63e3ce*/
         }
       }
@@ -201,7 +201,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e3f2*/
     return 1; /*0x63e3f8*/
   }
 
@@ -278,7 +278,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e4a8*/
       v4 = a3; /*0x63e4be*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63e4ba*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e4ba*/
     *((unsigned char *)this + 12) = 1; /*0x63e4c2*/
     if ( !v4 ) /*0x63e4c6*/
       return 0; /*0x63e53a*/
@@ -291,7 +291,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
         ++i; /*0x63e4e1*/
       if ( *((unsigned char *)this + 13) ) /*0x63e4ee*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x63e4f9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e4f9*/
         *((unsigned int *)this + 1) = 0; /*0x63e501*/
       }
     }
@@ -301,7 +301,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVPlanningNodeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e51e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x63e521*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63e529*/
@@ -379,7 +379,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e6ac*/
       v4 = a3; /*0x63e6c2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63e6be*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e6be*/
     *((unsigned char *)this + 12) = 1; /*0x63e6c6*/
     if ( v4 ) /*0x63e6ca*/
     {
@@ -392,7 +392,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
           ++i; /*0x63e6ee*/
         if ( *((unsigned char *)this + 13) ) /*0x63e6fb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x63e706*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e706*/
           *((unsigned int *)this + 1) = 0; /*0x63e70e*/
         }
       }
@@ -408,7 +408,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e732*/
     return 1; /*0x63e738*/
   }
 
@@ -485,7 +485,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e7e8*/
       v4 = a3; /*0x63e7fe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63e7fa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e7fa*/
     *((unsigned char *)this + 12) = 1; /*0x63e802*/
     if ( !v4 ) /*0x63e806*/
       return 0; /*0x63e87a*/
@@ -498,7 +498,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x63e821*/
       if ( *((unsigned char *)this + 13) ) /*0x63e82e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x63e839*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e839*/
         *((unsigned int *)this + 1) = 0; /*0x63e841*/
       }
     }
@@ -508,7 +508,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e85e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x63e861*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63e869*/
@@ -556,7 +556,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x63eae8*/
       v4 = a3; /*0x63eafe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63eafa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63eafa*/
     *((unsigned char *)this + 12) = 1; /*0x63eb02*/
     if ( !v4 ) /*0x63eb06*/
       return 0; /*0x63eb7a*/
@@ -569,7 +569,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x63eb21*/
       if ( *((unsigned char *)this + 13) ) /*0x63eb2e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x63eb39*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63eb39*/
         *((unsigned int *)this + 1) = 0; /*0x63eb41*/
       }
     }
@@ -579,7 +579,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVPlanningTokenClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63eb5e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x63eb61*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63eb69*/
@@ -619,17 +619,17 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_PlanningNodeClass);
+  v3 = (void *)*(Block + 1); /*0x63ed93*/
+  *Block = &vt_VectorClass_PlanningNodeClass; /*0x63ed96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63eda0*/
   {
-    RA2_OPDEL(v3); /*0x63eda8*/
+    __3_YAXPAX_Z(v3); /*0x63eda8*/
     *(Block + 1) = 0; /*0x63edb0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63edbb*/
   *(Block + 2) = 0; /*0x63edc1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63edc8*/
-    RA2_OPDEL(Block); /*0x63edcb*/
+  if ( (a2 & 1) != 0 ) /*0x63edc8*/
+    __3_YAXPAX_Z(Block); /*0x63edcb*/
   return (VectorClass *)Block; /*0x63edd5*/
 
 }
@@ -642,17 +642,17 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_PlanningNodeClass);
+  v3 = (void *)*(Block + 1); /*0x63ede3*/
+  *Block = &vt_VectorClass_PlanningNodeClass; /*0x63ede6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63edf0*/
   {
-    RA2_OPDEL(v3); /*0x63edf8*/
+    __3_YAXPAX_Z(v3); /*0x63edf8*/
     *(Block + 1) = 0; /*0x63ee00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63ee0b*/
   *(Block + 2) = 0; /*0x63ee11*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63ee18*/
-    RA2_OPDEL(Block); /*0x63ee1b*/
+  if ( (a2 & 1) != 0 ) /*0x63ee18*/
+    __3_YAXPAX_Z(Block); /*0x63ee1b*/
   return (DynamicVector *)Block; /*0x63ee25*/
 
 }
@@ -665,17 +665,17 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_EventClass);
+  v3 = (void *)*(Block + 1); /*0x63ee33*/
+  *Block = &vt_VectorClass_EventClass; /*0x63ee36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ee40*/
   {
-    RA2_OPDEL(v3); /*0x63ee48*/
+    __3_YAXPAX_Z(v3); /*0x63ee48*/
     *(Block + 1) = 0; /*0x63ee50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63ee5b*/
   *(Block + 2) = 0; /*0x63ee61*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63ee68*/
-    RA2_OPDEL(Block); /*0x63ee6b*/
+  if ( (a2 & 1) != 0 ) /*0x63ee68*/
+    __3_YAXPAX_Z(Block); /*0x63ee6b*/
   return (VectorClass *)Block; /*0x63ee75*/
 
 }
@@ -688,17 +688,17 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_EventClass);
+  v3 = (void *)*(Block + 1); /*0x63ee83*/
+  *Block = &vt_VectorClass_EventClass; /*0x63ee86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ee90*/
   {
-    RA2_OPDEL(v3); /*0x63ee98*/
+    __3_YAXPAX_Z(v3); /*0x63ee98*/
     *(Block + 1) = 0; /*0x63eea0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63eeab*/
   *(Block + 2) = 0; /*0x63eeb1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63eeb8*/
-    RA2_OPDEL(Block); /*0x63eebb*/
+  if ( (a2 & 1) != 0 ) /*0x63eeb8*/
+    __3_YAXPAX_Z(Block); /*0x63eebb*/
   return (DynamicVector *)Block; /*0x63eec5*/
 
 }
@@ -711,17 +711,17 @@ DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_PlanningTokenClass);
+  v3 = (void *)*(Block + 1); /*0x63ef23*/
+  *Block = &vt_VectorClass_PlanningTokenClass; /*0x63ef26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ef30*/
   {
-    RA2_OPDEL(v3); /*0x63ef38*/
+    __3_YAXPAX_Z(v3); /*0x63ef38*/
     *(Block + 1) = 0; /*0x63ef40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63ef4b*/
   *(Block + 2) = 0; /*0x63ef51*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63ef58*/
-    RA2_OPDEL(Block); /*0x63ef5b*/
+  if ( (a2 & 1) != 0 ) /*0x63ef58*/
+    __3_YAXPAX_Z(Block); /*0x63ef5b*/
   return (DynamicVector *)Block; /*0x63ef65*/
 
 }

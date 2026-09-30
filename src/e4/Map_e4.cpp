@@ -289,26 +289,26 @@ int E4Recv_5ADD10::Map_Delete()
   char v9[120]; // [esp+5Ch] [ebp-8Ch] BYREF
   int v10[5]; // [esp+D4h] [ebp-14h] BYREF
 
-  ((MSEngine *)(v8))->Construct(); /*0x5add1e*/
+  MSEngine::Construct(v8); /*0x5add1e*/
   Map_Delete_5CEDD0(v9); /*0x5add27*/
   unknown_libname_73(v10); /*0x5add33*/
-  v10[1] = this->Timer::GetTicks(); /*0x5add48*/
+  v10[1] = Timer::GetTicks(); /*0x5add48*/
   v10[3] = 0; /*0x5add50*/
   v8[0] = &vt_MapSelect; /*0x5add5b*/
-  v3 = ((ScenarioClass *)(v8))->Load((ObjectClass *)this) == 0; /*0x5add71*/
+  v3 = ScenarioClass::Load(v8, (ObjectClass *)this) == 0; /*0x5add71*/
   DeleteAndZero((int)v10); /*0x5add74*/
   MSEngine::Destructor((int)v9); /*0x5add7d*/
-  ((MSEngine *)(v8))->Destruct(); /*0x5add86*/
+  MSEngine::Destruct(v8); /*0x5add86*/
   if ( v3 )
   {
-    StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, &stru_82C090.onBridge, 134));
+    StringCSF = GetStringCSF(g_Str_TXT_OK, 0, &stru_82C090.onBridge, 134); /*0x5addba*/
     v4 = GetStringCSF((wchar_t *)&stru_82C090.spawnStatus, 0, &stru_82C090.onBridge, 134); /*0x5addc5*/
     Dialog::ShowMessageBox((int)v4, StringCSF, 0, 0, 0, v7); /*0x5addcf*/
     return 0; /*0x5addd4*/
   }
   else
   {
-    this->Debug::Log(); /*0x5addf6*/
+    Debug::Log(); /*0x5addf6*/
     return strlen((const char *)((char *)this + 4700)) != 0 ? (char *)this + 4700 : 0;
   }
 
@@ -1512,7 +1512,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
   v3 = a2; /*0x769e33*/
   if ( !a2 ) /*0x769e3d*/
   {
-    (*(void (**)(_VectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x769f3d*/
     return 1; /*0x769f43*/
   }
   *((unsigned char *)this + 12) = 0; /*0x769e47*/
@@ -1536,7 +1536,7 @@ int Map_WorldDominationTour_20::Release(int a2, unsigned int * a3)
   }
   else
   {
-    v5 = RA2_OPNEW(8 * a2 + 4); /*0x769e57*/
+    v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x769e57*/
     if ( !v5 ) /*0x769e61*/
     {
       v8 = 0; /*0x769e8f*/
@@ -1671,7 +1671,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(12 * a2); /*0x76a417*/
+      v6 = (char *)__2_YAPAXI_Z(12 * a2); /*0x76a417*/
       if ( v6 ) /*0x76a421*/
       {
         if ( a2 - 1 >= 0 ) /*0x76a428*/
@@ -1721,7 +1721,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x76a4a8*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x76a4b1*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x76a4b1*/
           *((unsigned int *)this + 1) = 0; /*0x76a4b9*/
         }
       }
@@ -1737,7 +1737,7 @@ AbstractClass * * Map_WorldDominationTour_43::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_VCentroid_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x76a4dd*/
     return 1; /*0x76a4e3*/
   }
 
@@ -2646,7 +2646,7 @@ char Map_WorldDominationTour_28::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x76a18c*/
       v4 = a3; /*0x76a1a2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x76a19e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x76a19e*/
     *((unsigned char *)this + 12) = 1; /*0x76a1a6*/
     if ( v4 ) /*0x76a1aa*/
     {
@@ -2659,7 +2659,7 @@ char Map_WorldDominationTour_28::Release(int a2, unsigned int * a3)
           ++i; /*0x76a1ce*/
         if ( *((unsigned char *)this + 13) ) /*0x76a1db*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x76a1e6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x76a1e6*/
           *((unsigned int *)this + 1) = 0; /*0x76a1ee*/
         }
       }
@@ -2675,7 +2675,7 @@ char Map_WorldDominationTour_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x76a212*/
     return 1; /*0x76a218*/
   }
 

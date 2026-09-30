@@ -17,8 +17,8 @@ int Bounds::Subtract(IUnknown * aP1, unsigned int * a2)
   int v6; // ecx
   int v7; // edx
 
-  v3 = (int)(*((char *)this + 1));
-  v4 = (int)(*this);
+  v3 = *((char *)this + 1); /*0x487ee0*/
+  v4 = *this; /*0x487ee3*/
   v5 = *((char *)this + 2); /*0x487ef1*/
   v6 = *((char *)this + 3); /*0x487ef4*/
   v7 = v3 - a2[1]; /*0x487ef7*/

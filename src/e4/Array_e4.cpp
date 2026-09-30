@@ -69,20 +69,20 @@ int Array::RemoveAt( int a2)
   int v3; // eax
   int v4; // edx
 
-  v2 = (int)(*(this + 4));
+  v2 = *((unsigned int *)this + 4); /*0x63e590*/
   v3 = a2; /*0x63e593*/
   if ( a2 >= v2 ) /*0x63e599*/
     return 0; /*0x63e5bc*/
   v4 = v2 - 1; /*0x63e59b*/
-  *(this + 4) = v4; /*0x63e59e*/
+  *((unsigned int *)this + 4) = v4; /*0x63e59e*/
   if ( a2 < v4 ) /*0x63e5a1*/
   {
     do /*0x63e5b4*/
     {
       ++v3; /*0x63e5a7*/
-      *(unsigned int *)(*(this + 1) + 4 * v3 - 4) = *(unsigned int *)(*(this + 1) + 4 * v3); /*0x63e5ab*/
+      *(unsigned int *)(*((unsigned int *)this + 1) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * v3); /*0x63e5ab*/
     }
-    while ( v3 < *(this + 4) ); /*0x63e5b4*/
+    while ( v3 < *((unsigned int *)this + 4) ); /*0x63e5b4*/
   }
   return 1; /*0x63e5b9*/
 
@@ -106,11 +106,11 @@ int Array::ContainsValue( IUnknown * aP1)
   int v3; // edx
   IUnknown **i; // ecx
 
-  v2 = (int)(*(this + 58));
+  v2 = *((char *)this + 58); /*0x65adf1*/
   v3 = 0; /*0x65adf7*/
   if ( v2 <= 0 ) /*0x65adfc*/
     return 0; /*0x65ae1a*/
-  for ( i = (IUnknown **)*(this + 57); *i && *i != aP1; ++i ) /*0x65adfe*/
+  for ( i = (IUnknown **)*((char *)this + 57); *i && *i != aP1; ++i ) /*0x65adfe*/
   {
     if ( ++v3 >= v2 ) /*0x65ae18*/
       return 0; /*0x65ae18*/
@@ -130,7 +130,7 @@ int Array::Zero()
   result = 0; /*0x7490d6*/
   if ( (int)*((unsigned int *)this + 512) > 0 ) /*0x7490da*/
   {
-    v2 = (unsigned int *)(this);
+    v2 = this; /*0x7490dd*/
     do /*0x7490f1*/
     {
       *v2 = 0; /*0x7490df*/
@@ -153,7 +153,7 @@ void Array::ByteSwap()
 
   if ( *((unsigned int *)this + 513) && (v2 = 0, (int)*((unsigned int *)this + 512) > 0) ) /*0x749169*/
   {
-    v3 = (gamemd::u_long *)(this);
+    v3 = this; /*0x74916c*/
     do /*0x749184*/
     {
       *v3 = ntohl(*v3); /*0x749176*/
@@ -205,57 +205,57 @@ namespace gamemd {
 AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
 {
 
-  ObjectClass * v4;
-  int aP2; // ecx
+  int v4; // esi
+  int v5; // ecx
   int v6; // eax
   int v7; // ebp
   CCINIClass *v8; // edx
   CCINIClass *v9; // esi
   int v10; // eax
-  unsigned int v11;
+  int v11; // ebp
   CCINIClass *v12; // edx
   CCINIClass *v13; // esi
   void *v14; // edi
   int v16; // [esp+Ch] [ebp-4h]
   int v17; // [esp+Ch] [ebp-4h]
 
-  v4 = (gamemd::ObjectClass *)((int)aP2);
-  aP2 = (gamemd::ObjectClass *)(*this);
-  if ( (int)aP2 > (int)(aP2) ) /*0x7ad79e*/
+  v4 = (int)aP2; /*0x7ad795*/
+  v5 = *this; /*0x7ad799*/
+  if ( (int)aP2 > v5 ) /*0x7ad79e*/
   {
-    aP2 = (gamemd::ObjectClass *)((int)((ObjectClass *)aP2));
-    v4 = aP2; /*0x7ad7a4*/
+    aP2 = (ObjectClass *)v5; /*0x7ad7a0*/
+    v4 = v5; /*0x7ad7a4*/
   }
   v6 = *((char *)this + 1); /*0x7ad7a6*/
-  if ( v4 >= (gamemd::ObjectClass *)(v6) && aP2 >= (gamemd::ObjectClass *)(v6) ) /*0x7ad7b4*/
+  if ( v4 >= v6 && v5 >= v6 ) /*0x7ad7b4*/
   {
-    v7 = (gamemd::ObjectClass *)(2 * aP2);
-    if ( 2 * aP2 < 10 ) /*0x7ad7bc*/
+    v7 = 2 * v5; /*0x7ad7b6*/
+    if ( 2 * v5 < 10 ) /*0x7ad7bc*/
       v7 = 10; /*0x7ad7be*/
-    v8 = (CCINIClass *)RA2_OPNEW(268 * v7); /*0x7ad7d7*/
+    v8 = (CCINIClass *)__2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
     memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
     v16 = (int)v8; /*0x7ad7ec*/
     v9 = (CCINIClass *)*((char *)this + 2); /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
       qmemcpy(v8, v9, 268 * *this); /*0x7ad80f*/
-    RA2_OPDEL((void *)*((char *)this + 2)); /*0x7ad81c*/
+    __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7ad81c*/
     v4 = (int)aP2; /*0x7ad825*/
     *((char *)this + 2) = v16; /*0x7ad82c*/
     *((char *)this + 1) = v7; /*0x7ad82f*/
   }
-  v10 = (int)(*this);
+  v10 = *this; /*0x7ad832*/
   if ( *this >= *((char *)this + 1) ) /*0x7ad839*/
   {
-    v11 = (unsigned int)((gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(2 * v10))));
+    v11 = 2 * v10; /*0x7ad83b*/
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
-    v12 = (CCINIClass *)RA2_OPNEW(268 * v11); /*0x7ad85c*/
+    v12 = (CCINIClass *)__2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
     memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
     v17 = (int)v12; /*0x7ad871*/
     v13 = (CCINIClass *)*((char *)this + 2); /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
       qmemcpy(v12, v13, 268 * *this); /*0x7ad894*/
-    RA2_OPDEL((void *)*((char *)this + 2)); /*0x7ad8a1*/
+    __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7ad8a1*/
     v4 = (int)aP2; /*0x7ad8aa*/
     *((char *)this + 2) = v17; /*0x7ad8b1*/
     *((char *)this + 1) = v11; /*0x7ad8b4*/

@@ -86,7 +86,7 @@ void Debug::AccumFlags()
   int i; // edi
   int v3; // eax
 
-  v1 = (int)(*(this + 40));
+  v1 = *((unsigned int *)this + 40); /*0x6e61f1*/
   for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
   {
     v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/
@@ -127,8 +127,8 @@ char Debug::Printf()
   char *Format; // [esp+108h] [ebp+8h]
   char ArgList; // [esp+10Ch] [ebp+Ch] BYREF
 
-  result = (char)(g_abs_ABF23A);
-  if ( g_abs_ABF23A ) /*0x5bd1fd*/
+  result = MEMORY[0xABF23A]; /*0x5bd1f0*/
+  if ( MEMORY[0xABF23A] ) /*0x5bd1fd*/
   {
     vsprintf(Buffer, Format, &ArgList); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/

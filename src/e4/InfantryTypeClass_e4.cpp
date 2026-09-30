@@ -179,16 +179,10 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 namespace gamemd {
 int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
-    unsigned int v12 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v12 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
-    unsigned int v12 = 0;  /* G37 hoist */
-    unsigned int v10 = 0;  /* G37 hoist */
 
-  void * v4;
+  int v4; // eax
   InfantryClass *v5; // esi
-  unsigned int * v6;
+  int v6; // eax
   unsigned int *v7; // eax
   int *v8; // eax
   int v9; // ecx
@@ -197,16 +191,16 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   unsigned int v13[3]; // [esp+10h] [ebp-18h] BYREF
   int a1[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v4 = (void *)((int)(RA2_OPNEW(0x6F0u)));
+  v4 = __2_YAPAXI_Z(0x6F0u); /*0x523b4b*/
   if ( v4 ) /*0x523b55*/
   {
     v5 = (InfantryClass *)InfantryClass::Construct(v4, this, ppv); /*0x523b68*/
     if ( v5 ) /*0x523b6c*/
     {
-      v6 = (int)((unsigned int *)(a2[1] << 8));
-      ((unsigned int *)(v12))[0] = (unsigned int *)((*a2 << 8) + 128);
-      ((unsigned int *)(v12))[1] = v6 + 128; /*0x523b9b*/
-      ((unsigned int *)(v12))[2] = 0; /*0x523bb1*/
+      v6 = a2[1] << 8; /*0x523b85*/
+      v12[0] = (*a2 << 8) + 128; /*0x523b93*/
+      v12[1] = v6 + 128; /*0x523b9b*/
+      v12[2] = 0; /*0x523bb1*/
       v7 = Coord::To_Cell(&stru_87C374.__pad_14B0[8132], (IUnknown *)v12); /*0x523bb9*/
       v8 = ObjectPlacement::CalcPosition(v7, a1, (IUnknown *)v12, 0, 0, 0); /*0x523bc0*/
       v13[0] = *v8; /*0x523bcf*/
@@ -773,7 +767,7 @@ unsigned int * InfantryTypeClass::CopyDataArray(DynamicVector * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x524f2a*/
     goto LABEL_8; /*0x524f2a*/
-  (*((void (**)(InfantryTypeClass *))this->TechnoTypeClass + 3))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x524f2e*/
   v3 = aP1->field_8; /*0x524f31*/
   *((unsigned int *)this + 2) = v3; /*0x524f36*/
   if ( !v3 ) /*0x524f39*/
@@ -785,7 +779,7 @@ LABEL_8:
     *((unsigned int *)this + 5) = *(unsigned int *)aP1->__pad_14; /*0x524f9a*/
     return this; /*0x524f9d*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x524f43*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x524f43*/
   *((unsigned int *)this + 1) = v4; /*0x524f4b*/
   if ( !v4 ) /*0x524f50*/
     goto LABEL_8; /*0x524f50*/

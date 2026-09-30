@@ -34,7 +34,7 @@ BuildingTypeClass * Techno::StartInvulnerability(BuildingTypeClass * aP1)
 
   BuildingTypeClass *v1; // eax
 
-  v1 = (gamemd::BuildingTypeClass *)(TechnoClass::InvulnerabilityIntensity_SetContext(this, aP1));
+  v1 = TechnoClass::InvulnerabilityIntensity_SetContext(this, aP1); /*0x70e368*/
   return TechnoClass::CalcFlashAlpha(this, v1); /*0x70e375*/
 
 }

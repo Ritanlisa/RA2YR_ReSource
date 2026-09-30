@@ -39,18 +39,18 @@ namespace gamemd {
 unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
 
-  uint8_t v3; // bl
-  uint8_t v4; // al
-  uint8_t v5; // bl
-  uint8_t result; // al
+  unsigned __int8 v3; // bl
+  unsigned __int8 v4; // al
+  unsigned __int8 v5; // bl
+  unsigned __int8 result; // al
 
-  v3 = (uint8_t)(*((unsigned char *)this + 1));
+  v3 = *((unsigned char *)this + 1); /*0x517394*/
   *((unsigned char *)this + 2) += a2 * (a3[2] - *((unsigned char *)this + 2)) / 256; /*0x517397*/
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
   v5 = *this; /*0x5173ba*/
   *((unsigned char *)this + 1) = v4; /*0x5173bc*/
   result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
-  *(unsigned int *)this = result; /*0x5173e1*/
+  *this = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 
 }
@@ -620,7 +620,7 @@ namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
 
-  *(unsigned int *)this = (unsigned int)(&vt_HoverLocomotionClass);
+  *this = &HoverLocomotionClass::`vftable'; /*0x513d00*/
   *((unsigned int *)this + 1) = &vt_HoverLocomotionClass; /*0x513d06*/
   LocomotionClass::Construct(this); /*0x513d0d*/
 

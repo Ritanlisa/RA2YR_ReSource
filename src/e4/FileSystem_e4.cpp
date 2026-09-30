@@ -56,15 +56,15 @@ int FileSystem::ProcessNextFileExtension()
   unsigned int *v29; // [esp+18h] [ebp-10h]
   int v30; // [esp+1Ch] [ebp-Ch]
 
-  v0 = (unsigned int *)(g_abs_AC48F0);
-  if ( !g_abs_AC48F0 ) /*0x626db1*/
+  v0 = MEMORY[0xAC48F0]; /*0x626da7*/
+  if ( !MEMORY[0xAC48F0] ) /*0x626db1*/
   {
-    v1 = (unsigned int *)(RA2_OPNEW(0x10u));
+    v1 = __2_YAPAXI_Z(0x10u); /*0x626db9*/
     v0 = v1; /*0x626dbe*/
     if ( v1 ) /*0x626dc5*/
     {
-      *v1 = (unsigned int *)(-1);
-      v2 = (unsigned int *)(RA2_OPNEW(0x18u));
+      *v1 = -1; /*0x626dc9*/
+      v2 = __2_YAPAXI_Z(0x18u); /*0x626dcf*/
       v3 = v2; /*0x626dd4*/
       if ( v2 ) /*0x626ddb*/
       {
@@ -77,13 +77,13 @@ int FileSystem::ProcessNextFileExtension()
       {
         v3 = 0; /*0x626df8*/
       }
-      v0[1] = (unsigned int)(v3);
-      if ( RA2_OPNEW(0x18u) ) /*0x626dff*/
+      v0[1] = v3; /*0x626dfc*/
+      if ( __2_YAPAXI_Z(0x18u) ) /*0x626dff*/
         v4 = FileExtension::Constructor(0, 0); /*0x626e0f*/
       else
         v4 = 0; /*0x626e16*/
       v0[2] = v4; /*0x626e1a*/
-      v5 = (int *)RA2_OPNEW(0x10u); /*0x626e1d*/
+      v5 = (int *)__2_YAPAXI_Z(0x10u); /*0x626e1d*/
       if ( v5 ) /*0x626e27*/
         v0[3] = DynamicVectorArray::Constructor(v5, 10, 31, (int)HashStringMod31); /*0x626e39*/
       else
@@ -93,7 +93,7 @@ int FileSystem::ProcessNextFileExtension()
     {
       v0 = 0; /*0x626e45*/
     }
-    g_abs_AC48F0 = v0; /*0x626e47*/
+    MEMORY[0xAC48F0] = v0; /*0x626e47*/
   }
   v6 = (unsigned int *)v0[3]; /*0x626e4d*/
   v7 = 0; /*0x626e50*/
@@ -122,7 +122,7 @@ LABEL_19:
     }
     if ( v10 ) /*0x626ec0*/
     {
-      v13 = *((unsigned int *)g_abs_AC48F0 + 3); /*0x626ece*/
+      v13 = *((unsigned int *)MEMORY[0xAC48F0] + 3); /*0x626ece*/
       v14 = *(unsigned int *)v13 + 24 * ((*(int (**)(char *))(v13 + 4))(v10) % *(unsigned int *)(v13 + 8)); /*0x626ee1*/
       v15 = *(unsigned int *)(v14 + 16) - 1; /*0x626ee4*/
       v28 = v14; /*0x626ee5*/
@@ -145,7 +145,7 @@ LABEL_19:
         {
           do /*0x626fd6*/
           {
-            v19 = (unsigned int *)*((unsigned int *)g_abs_AC48F0 + 3); /*0x626f63*/
+            v19 = (unsigned int *)*((unsigned int *)MEMORY[0xAC48F0] + 3); /*0x626f63*/
             ++v27; /*0x626f66*/
             v29 = v19; /*0x626f6a*/
             if ( v30 >= v19[2] ) /*0x626f71*/

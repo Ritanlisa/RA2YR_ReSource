@@ -1080,8 +1080,8 @@ LABEL_43:
 TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
 {
 
-  uint16_t v8; // bp
-  uint16_t v9; // bx
+  unsigned __int16 v8; // bp
+  unsigned __int16 v9; // bx
   int v11; // edx
   unsigned int v12; // ebx
   unsigned int *v13; // eax
@@ -1094,7 +1094,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   int v20; // ebp
   int v21; // ecx
   int v22; // ebp
-  uint16_t v23; // ax
+  unsigned __int16 v23; // ax
   int v24; // eax
   int eax24a; // eax
   AbstractClass *v25; // [esp-1Ch] [ebp-7Ch]
@@ -1113,13 +1113,13 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   int v39; // [esp+4Ch] [ebp-14h]
   int v40; // [esp+50h] [ebp-10h]
   unsigned int v41[3]; // [esp+54h] [ebp-Ch] BYREF
-  int16_t *a1b; // [esp+64h] [ebp+4h]
+  __int16 *a1b; // [esp+64h] [ebp+4h]
   int a1a; // [esp+64h] [ebp+4h]
   int *aP4a; // [esp+70h] [ebp+10h]
 
   v8 = a1[3]; /*0x70748e*/
   v9 = a1[2]; /*0x707492*/
-  a1b = (int16_t *)*((unsigned int *)a1 + 2); /*0x7074a2*/
+  a1b = (__int16 *)*((unsigned int *)a1 + 2); /*0x7074a2*/
   Surface::Construct(&v36, (ObjectClass *)v9, (IUnknown *)v8); /*0x7074a6*/
   v39 = 0; /*0x7074b8*/
   v36 = &XSurface_Vtable; /*0x7074c0*/
@@ -1129,9 +1129,9 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   v36 = &BSurface_Vtable; /*0x7074dd*/
   v12 = (unsigned int)aP4 & 0xFFFFFFEF; /*0x7074e5*/
   if ( (*(int (**)(unsigned char *))(v11 + 44))(this) == 1 && *((unsigned char *)this + 1747) ) /*0x7074f0*/
-    v13 = *(unsigned int **)&g_abs_B077F8; /*0x7074fa*/
+    v13 = *(unsigned int **)&MEMORY[0xB077F8].__pad_579C[65964]; /*0x7074fa*/
   else
-    else v13 = (LightConvertClass *)(*(int (**)(Surface *))(*(unsigned int *)this->__pad_0 + 484))(this);;
+    v13 = (unsigned int *)(*(int (**)(unsigned char *))(*(unsigned int *)this + 484))(this); /*0x707505*/
   aP4a = (int *)LightConvertClass::SelectRLEBlitter(v13, (IUnknown *)v12); /*0x707516*/
   a1a = 0; /*0x70751a*/
   if ( (v12 & 8) != 0 ) /*0x707522*/
@@ -1139,34 +1139,34 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v14 = (*(int (**)(unsigned char *))(*((unsigned int *)this + 1) + 16))((unsigned char *)this + 4); /*0x707534*/
     a1a = (int)(v14 + Math::RoundToInt(*((float *)this + 147))) % 400; /*0x707545*/
   }
-  void Surface::BlitTechnoTo(Surface *this, int16_t *a2, unsigned int *a3, unsigned int *a4, int a5, int a6, int a7)
+  if ( (*(int (**)(unsigned char *))(*(unsigned int *)this + 44))(this) == 1 ) /*0x707557*/
   {
     eax8 = (TechnoClass *)(*(unsigned int *)aP2->__pad_0 + *a1); /*0x70756b*/
     v15 = (TechnoClass *)(*(unsigned int *)&aP2->__pad_0[4] + a1[1]); /*0x707571*/
-    v17 = (uint16_t)a1[3]; /*0x707575*/
-    ecx8 = (uint16_t)a1[2]; /*0x70757b*/
+    v17 = (unsigned __int16)a1[3]; /*0x707575*/
+    ecx8 = (unsigned __int16)a1[2]; /*0x70757b*/
     v32 = v15; /*0x70757f*/
-    v34 = (uint16_t)v17; /*0x707585*/
-    if ( *(int *)&g_abs_B077F8 > 0 && *(int *)&g_abs_B077F8 > 0 ) /*0x707597*/
+    v34 = (unsigned __int16)v17; /*0x707585*/
+    if ( *(int *)&MEMORY[0xB077F8].__pad_579C[65588] > 0 && *(int *)&MEMORY[0xB077F8].__pad_579C[65592] > 0 ) /*0x707597*/
     {
       if ( ecx8 <= 0 || v17 <= 0 ) /*0x7075a7*/
       {
-        eax8 = *(TechnoClass **)&g_abs_B077F8; /*0x70764e*/
-        v15 = *(TechnoClass **)&g_abs_B077F8; /*0x707653*/
-        ecx8 = *(unsigned int *)&g_abs_B077F8; /*0x707659*/
-        v17 = *(unsigned int *)&g_abs_B077F8; /*0x70765f*/
+        eax8 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65580]; /*0x70764e*/
+        v15 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65584]; /*0x707653*/
+        ecx8 = *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[65588]; /*0x707659*/
+        v17 = *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[65592]; /*0x70765f*/
       }
       else
       {
-        v18 = *(TechnoClass **)&g_abs_B077F8; /*0x7075b3*/
-        v27 = *(TechnoClass **)&g_abs_B077F8; /*0x7075b9*/
-        v29 = *(unsigned int *)&g_abs_B077F8; /*0x7075c3*/
-        v26 = *(TechnoClass **)&g_abs_B077F8; /*0x7075cf*/
-        v30 = *(unsigned int *)&g_abs_B077F8; /*0x7075d3*/
-        if ( *(int *)&g_abs_B077F8 > (int)eax8 ) /*0x7075d7*/
+        v18 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65580]; /*0x7075b3*/
+        v27 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65584]; /*0x7075b9*/
+        v29 = *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[65588]; /*0x7075c3*/
+        v26 = *(TechnoClass **)&MEMORY[0xB077F8].__pad_579C[65580]; /*0x7075cf*/
+        v30 = *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[65592]; /*0x7075d3*/
+        if ( *(int *)&MEMORY[0xB077F8].__pad_579C[65580] > (int)eax8 ) /*0x7075d7*/
         {
           v18 = eax8; /*0x7075e1*/
-          v29 += *(unsigned int *)&g_abs_B077F8 - (unsigned int)eax8; /*0x7075e3*/
+          v29 += *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[65580] - (unsigned int)eax8; /*0x7075e3*/
           v26 = eax8; /*0x7075e7*/
         }
         if ( (int)v27 > (int)v15 ) /*0x7075f1*/
@@ -1186,10 +1186,10 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
         eax8 = v18; /*0x70764a*/
       }
     }
-    *(unsigned int *)&g_abs_B077F8 = eax8; /*0x707661*/
-    *(unsigned int *)&g_abs_B077F8 = v15; /*0x707666*/
-    *(unsigned int *)&g_abs_B077F8 = ecx8; /*0x70766c*/
-    *(unsigned int *)&g_abs_B077F8 = v17; /*0x707672*/
+    *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[65580] = eax8; /*0x707661*/
+    *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[65584] = v15; /*0x707666*/
+    *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[65588] = ecx8; /*0x70766c*/
+    *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[65592] = v17; /*0x707672*/
   }
   if ( aP4a ) /*0x70767e*/
   {
@@ -1208,11 +1208,11 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v35[1] = v22 + a1[1]; /*0x7076ce*/
     v35[2] = v23; /*0x7076d2*/
     v24 = *(unsigned int *)this; /*0x7076e3*/
-    v35[3] = (uint16_t)a1[3]; /*0x7076e5*/
+    v35[3] = (unsigned __int16)a1[3]; /*0x7076e5*/
     v25 = (AbstractClass *)(*(int (**)(unsigned char *))(v24 + 752))(this); /*0x707703*/
-    v26 = (*(int (**)(Surface *))(*(unsigned int *)this->__pad_0 + 748))(this);
+    eax24a = (*(int (**)(unsigned char *))(*(unsigned int *)this + 748))(this); /*0x707706*/
     BlitterRLEBlitSHP( /*0x707736*/
-      *(int *)&g_abs_87F8E4,
+      *(int *)&MEMORY[0x87F8E4].__pad_5568[9416],
       (int *)aP3->__pad_0,
       v35,
       (int)&v36,

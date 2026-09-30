@@ -151,11 +151,11 @@ int Color::RGBFromFloat(IUnknown * aP1, float a3)
   int v6; // eax
   int v8; // [esp+4h] [ebp-8h]
 
-  v3 = (int)(1.0 - a3);
-  v5 = (int)(Math::RoundToInt(v3));
-  v8 = (int)(Math::RoundToInt(v3));
+  v3 = 1.0 - a3; /*0x75f547*/
+  v5 = Math::RoundToInt(v3); /*0x75f56d*/
+  v8 = Math::RoundToInt(v3); /*0x75f582*/
   v6 = Math::RoundToInt(v3); /*0x75f591*/
-  *(unsigned int *)this = v5; /*0x75f59e*/
+  *this = v5; /*0x75f59e*/
   *((unsigned int *)this + 1) = v8; /*0x75f5a0*/
   *((unsigned int *)this + 2) = v6; /*0x75f5a3*/
   return this; /*0x75f5ac*/

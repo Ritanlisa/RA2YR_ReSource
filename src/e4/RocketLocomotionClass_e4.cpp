@@ -57,19 +57,19 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
 {
 
   int result; // eax
-  unsigned int v3;
+  wchar_t *v3; // ecx
 
   result = SwizzleManager::SaveLoad(a1, a2); /*0x66341b*/
   if ( result >= 0 ) /*0x663422*/
   {
     if ( a1 ) /*0x663426*/
     {
-      *a1 = (int)((wchar_t *)((int)&vt_LocomotionClass));
-      a1[1] = (int)((wchar_t *)((int)&vt_LocomotionClass));
-      v3 = (unsigned int)((wchar_t *)(g_abs_A8ED84));
+      *a1 = (int)&LocomotionClass::`vftable'; /*0x663428*/
+      a1[1] = (int)&vt_LocomotionClass; /*0x66342e*/
+      v3 = MEMORY[0xA8ED84]; /*0x663435*/
       a1[15] = 0; /*0x66343b*/
       a1[13] = (int)v3; /*0x663442*/
-      *a1 = (int)&vt_RocketLocomotionClass; /*0x663445*/
+      *a1 = (int)&RocketLocomotionClass::`vftable'; /*0x663445*/
       a1[1] = (int)&vt_RocketLocomotionClass; /*0x66344b*/
     }
   }
@@ -184,7 +184,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x66486c*/
       v4 = a3; /*0x664882*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x66487e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x66487e*/
     *((unsigned char *)this + 12) = 1; /*0x664886*/
     if ( v4 ) /*0x66488a*/
     {
@@ -197,7 +197,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x6648ae*/
         if ( *((unsigned char *)this + 13) ) /*0x6648bb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6648c6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6648c6*/
           *((unsigned int *)this + 1) = 0; /*0x6648ce*/
         }
       }
@@ -213,7 +213,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6648f2*/
     return 1; /*0x6648f8*/
   }
 
@@ -290,7 +290,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6649a8*/
       v4 = a3; /*0x6649be*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6649ba*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6649ba*/
     *((unsigned char *)this + 12) = 1; /*0x6649c2*/
     if ( !v4 ) /*0x6649c6*/
       return 0; /*0x664a3a*/
@@ -303,7 +303,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
         ++i; /*0x6649e1*/
       if ( *((unsigned char *)this + 13) ) /*0x6649ee*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6649f9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6649f9*/
         *((unsigned int *)this + 1) = 0; /*0x664a01*/
       }
     }
@@ -313,7 +313,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUConnectionListStruct_OwnerTalkClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x664a1e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x664a21*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x664a29*/
@@ -352,17 +352,17 @@ void RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_OwnerTalkClass_ConnectionListStruct);
+  v3 = (void *)*(Block + 1); /*0x664a73*/
+  *Block = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x664a76*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x664a80*/
   {
-    RA2_OPDEL(v3); /*0x664a88*/
+    __3_YAXPAX_Z(v3); /*0x664a88*/
     *(Block + 1) = 0; /*0x664a90*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x664a9b*/
   *(Block + 2) = 0; /*0x664aa1*/
   if ( (a2 & 1) != 0 ) /*0x664aa8*/
-    RA2_OPDEL(Block); /*0x664aab*/
+    __3_YAXPAX_Z(Block); /*0x664aab*/
   return (VectorClass *)Block; /*0x664ab5*/
 
 }
@@ -375,17 +375,17 @@ DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, c
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_OwnerTalkClass_ConnectionListStruct);
+  v3 = (void *)*(Block + 1); /*0x664ac3*/
+  *Block = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x664ac6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x664ad0*/
   {
-    RA2_OPDEL(v3); /*0x664ad8*/
+    __3_YAXPAX_Z(v3); /*0x664ad8*/
     *(Block + 1) = 0; /*0x664ae0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x664aeb*/
   *(Block + 2) = 0; /*0x664af1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x664af8*/
-    RA2_OPDEL(Block); /*0x664afb*/
+  if ( (a2 & 1) != 0 ) /*0x664af8*/
+    __3_YAXPAX_Z(Block); /*0x664afb*/
   return (DynamicVector *)Block; /*0x664b05*/
 
 }

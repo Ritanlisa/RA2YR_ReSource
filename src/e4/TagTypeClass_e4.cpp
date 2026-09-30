@@ -34,11 +34,11 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 38) = -1; /*0x6e5b78*/
   *((unsigned int *)this + 39) = 0; /*0x6e5b82*/
   *((unsigned int *)this + 40) = 0; /*0x6e5b88*/
-  *(unsigned int *)this = &vt_TagTypeClass; /*0x6e5b8e*/
-  *((unsigned int *)this + 1) = &vt_TagTypeClass; /*0x6e5b95*/
-  *((unsigned int *)this + 2) = &vt_TagTypeClass; /*0x6e5b9c*/
+  *(unsigned int *)this = &TagTypeClass::`vftable'; /*0x6e5b8e*/
+  *((unsigned int *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5b95*/
+  *((unsigned int *)this + 2) = &TagTypeClass::`vftable'; /*0x6e5b9c*/
   *((unsigned int *)this + 3) = &vt_TagTypeClass; /*0x6e5ba3*/
-  if ( this == (gamemd::TagTypeClass *)((char *))-36 ) /*0x6e5baa*/
+  if ( this == (char *)-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
   }
@@ -47,35 +47,35 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
     strncpy(Destination, (unsigned char *)this + 36, 0x30u); /*0x6e5bba*/
     v7 = 0; /*0x6e5bc2*/
   }
-  if ( Destination != (char [48])((unsigned char *))this + 100 ) /*0x6e5bd0*/
+  if ( Destination != (unsigned char *)this + 100 ) /*0x6e5bd0*/
   {
     qmemcpy((unsigned char *)this + 100, Destination, 0x30u); /*0x6e5bdc*/
     *((unsigned char *)this + 148) = v7; /*0x6e5bde*/
   }
-  *((unsigned int *)this + 38) = *(unsigned int *)&g_abs_B077F8; /*0x6e5be6*/
-  if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x6e5c1e*/
-    || (g_abs_B077F8 || !*(unsigned int *)&g_abs_B077F8)
-    && *(int *)&g_abs_B077F8 > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&g_abs_B077F8 + 8))(
-         &g_abs_B077F8,
-         *(unsigned int *)&g_abs_B077F8 + *(unsigned int *)&g_abs_B077F8,
+  *((unsigned int *)this + 38) = *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6140]; /*0x6e5be6*/
+  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[6140] < *(int *)&MEMORY[0xB077F8].__pad_579C[6132] /*0x6e5c1e*/
+    || (MEMORY[0xB077F8].__pad_579C[6137] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6132])
+    && *(int *)&MEMORY[0xB077F8].__pad_579C[6144] > 0
+    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6124] + 8))(
+         &MEMORY[0xB077F8].__pad_579C[6124],
+         *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6132] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6144],
          0) )
   {
-    v3 = (gamemd::AbstractTypeClass *)((unsigned int)((AbstractTypeClass *)(*(unsigned int *)&g_abs_B077F8)++));
-    *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * (unsigned int)v3) = this; /*0x6e5c3a*/
+    v3 = (AbstractTypeClass *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6140])++; /*0x6e5c2b*/
+    *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6128] + 4 * (unsigned int)v3) = this; /*0x6e5c3a*/
   }
-  if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x6e5c71*/
-    || (g_abs_B077F8 || !*(unsigned int *)&g_abs_B077F8)
-    && *(int *)&g_abs_B077F8 > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&g_abs_B077F8 + 8))(
-         &g_abs_B077F8,
-         *(unsigned int *)&g_abs_B077F8 + *(unsigned int *)&g_abs_B077F8,
+  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x6e5c71*/
+    || (MEMORY[0xB077F8].__pad_579C[9961] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956])
+    && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
+    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
+         &MEMORY[0xB077F8].__pad_579C[9948],
+         *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9968],
          0) )
   {
-    v4 = (*(unsigned int *)&g_abs_B077F8)++; /*0x6e5c7e*/
-    *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * v4) = this; /*0x6e5c8d*/
+    v4 = (*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x6e5c7e*/
+    *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v4) = this; /*0x6e5c8d*/
   }
-  return (gamemd::AbstractTypeClass *)(this);
+  return this; /*0x6e5c92*/
 
 }
 }
@@ -87,15 +87,15 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   unsigned int *v2; // ecx
   unsigned int *v3; // esi
   int v4; // esi
-  unsigned int * v5;
+  unsigned int *v5; // eax
   unsigned int *v6; // ecx
   int v7; // eax
   int v8; // eax
-  TagTypeClass * v10;
+  int v10; // [esp+Ch] [ebp-4h] BYREF
 
-  *(unsigned int *)this = &vt_TagTypeClass; /*0x6e5ca7*/
-  *((unsigned int *)this + 1) = &vt_TagTypeClass; /*0x6e5cad*/
-  *((unsigned int *)this + 2) = &vt_TagTypeClass; /*0x6e5cb4*/
+  *(unsigned int *)this = &TagTypeClass::`vftable'; /*0x6e5ca7*/
+  *((unsigned int *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5cad*/
+  *((unsigned int *)this + 2) = &TagTypeClass::`vftable'; /*0x6e5cb4*/
   *((unsigned int *)this + 3) = &vt_TagTypeClass; /*0x6e5cbb*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x6e5cc2*/
   v2 = *(unsigned int **)((char *)this + 160); /*0x6e5cc7*/
@@ -113,48 +113,48 @@ AbstractClass * * TagTypeClass::CleanupMembers()
     while ( v3 ); /*0x6e5cfa*/
   }
   v4 = 0; /*0x6e5d01*/
-  if ( g_abs_B0E730 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x6e5d05*/
+  if ( MEMORY[0xB0E730] > 0 ) /*0x6e5d05*/
   {
-    v5 = (unsigned int *)(g_abs_B0E724);
+    v5 = MEMORY[0xB0E724]; /*0x6e5d07*/
     do /*0x6e5d2e*/
     {
-      v6 = (unsigned int *)((unsigned int *)(v5))[v4]; /*0x6e5d0c*/
-      if ( v6[9] == (unsigned int)(this) ) /*0x6e5d12*/
+      v6 = (unsigned int *)v5[v4]; /*0x6e5d0c*/
+      if ( v6[9] == this ) /*0x6e5d12*/
       {
         if ( v6 ) /*0x6e5d16*/
         {
           (*(void (**)(unsigned int *, int))(*v6 + 32))(v6, 1); /*0x6e5d1c*/
-          v5 = g_abs_B0E724; /*0x6e5d1f*/
+          v5 = MEMORY[0xB0E724]; /*0x6e5d1f*/
         }
         --v4; /*0x6e5d24*/
       }
       ++v4; /*0x6e5d2b*/
     }
-    while ( v4 < (int)((int))((int))(g_abs_B0E730) ); /*0x6e5d2e*/
+    while ( v4 < MEMORY[0xB0E730] ); /*0x6e5d2e*/
   }
-  v10 = (gamemd::TagTypeClass *)((int)(this));
-  v7 = (*(int (**)(int *, int *))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v10); /*0x6e5d44*/
-  if ( v7 != -1 && v7 < (int)((int))((int))(g_abs_B0F680) && v7 < --g_abs_B0F680 ) /*0x6e5d5f*/
+  v10 = this; /*0x6e5d40*/
+  v7 = (*(int (**)(int *, int *))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v10); /*0x6e5d44*/
+  if ( v7 != -1 && v7 < MEMORY[0xB0F680] && v7 < --MEMORY[0xB0F680] ) /*0x6e5d5f*/
   {
     do /*0x6e5d77*/
     {
       ++v7; /*0x6e5d67*/
-      *((unsigned int *)g_abs_B0F674 + v7 - 1) = *((unsigned int *)g_abs_B0F674 + v7); /*0x6e5d6b*/
+      *((unsigned int *)MEMORY[0xB0F674] + v7 - 1) = *((unsigned int *)MEMORY[0xB0F674] + v7); /*0x6e5d6b*/
     }
-    while ( v7 < (int)((int))((int))(g_abs_B0F680) ); /*0x6e5d77*/
+    while ( v7 < MEMORY[0xB0F680] ); /*0x6e5d77*/
   }
   v10 = this; /*0x6e5d89*/
-  v8 = (*(int (**)(int *, int *))(g_abs_B0E780 + 16))(&g_abs_B0E780, &v10); /*0x6e5d8d*/
-  if ( v8 != -1 && v8 < (int)((int))((int))(g_abs_B0E790) && v8 < --g_abs_B0E790 ) /*0x6e5da8*/
+  v8 = (*(int (**)(int *, int *))(MEMORY[0xB0E780] + 16))(&MEMORY[0xB0E780], &v10); /*0x6e5d8d*/
+  if ( v8 != -1 && v8 < MEMORY[0xB0E790] && v8 < --MEMORY[0xB0E790] ) /*0x6e5da8*/
   {
     do /*0x6e5dc0*/
     {
       ++v8; /*0x6e5db0*/
-      *((unsigned int *)g_abs_B0E784 + v8 - 1) = *((unsigned int *)g_abs_B0E784 + v8); /*0x6e5db4*/
+      *((unsigned int *)MEMORY[0xB0E784] + v8 - 1) = *((unsigned int *)MEMORY[0xB0E784] + v8); /*0x6e5db4*/
     }
-    while ( v8 < (int)((int))((int))(g_abs_B0E790) ); /*0x6e5dc0*/
+    while ( v8 < MEMORY[0xB0E790] ); /*0x6e5dc0*/
   }
-  return (gamemd::AbstractClass **)(((AbstractTypeClass *)((unsigned int *)this))->Dtor());
+  return AbstractTypeClass::Dtor((unsigned int *)this); /*0x6e5dc9*/
 
 }
 }
@@ -181,7 +181,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
 {
 
   char *v3; // eax
-  TriggerTypeClass ** v4;
+  char *v4; // eax
   char Destination[48]; // [esp+8h] [ebp-B4h] BYREF
   char v7; // [esp+38h] [ebp-84h]
   char String[128]; // [esp+3Ch] [ebp-80h] BYREF
@@ -189,15 +189,15 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   INIClass::ResetSection(a2); /*0x6e6093*/
   if ( !INIClass::GetString( /*0x6e60b4*/
           a2,
-          (uint8_t *)g_abs_842C3C,
-          (uint8_t *)((char *)this + 36),
-          &g_abs_889F64,
+          (unsigned __int8 *)MEMORY[0x842C3C],
+          (unsigned __int8 *)((char *)this + 36),
+          &MEMORY[0x889F64],
           String,
           128) )
     return 0; /*0x6e6151*/
-  strtok(String, g_abs_817F70); /*0x6e60cb*/
+  strtok(String, MEMORY[0x817F70]); /*0x6e60cb*/
   *((unsigned int *)this + 39) = atoi(String); /*0x6e60e1*/
-  v3 = strtok(0, g_abs_817F70); /*0x6e60e7*/
+  v3 = strtok(0, MEMORY[0x817F70]); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
     strncpy(Destination, v3, 0x30u); /*0x6e6101*/
@@ -212,7 +212,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
     qmemcpy((void *)((char *)this + 100), Destination, 0x30u); /*0x6e6123*/
     *((unsigned char *)this + 148) = v7; /*0x6e6125*/
   }
-  v4 = (gamemd::TriggerTypeClass **)((void *)(strtok(0, g_abs_817F70)));
+  v4 = strtok(0, MEMORY[0x817F70]); /*0x6e612d*/
   *((unsigned int *)this + 40) = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
   return 1; /*0x6e6143*/
 

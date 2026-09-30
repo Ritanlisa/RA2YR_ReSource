@@ -53,7 +53,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(16 * a2); /*0x658b35*/
+      v6 = (char *)__2_YAPAXI_Z(16 * a2); /*0x658b35*/
       if ( v6 ) /*0x658b3f*/
       {
         if ( a2 - 1 >= 0 ) /*0x658b46*/
@@ -104,7 +104,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x658bc7*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x658bd0*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x658bd0*/
         *((unsigned int *)this + 1) = 0; /*0x658bd8*/
       }
     }
@@ -114,7 +114,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_U_HashObject_URadarTrackingStruct_PAVTechnoClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x658bf5*/
   }
   v15 = *((unsigned int *)this + 2); /*0x658bf8*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x658c00*/

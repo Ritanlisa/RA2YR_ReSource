@@ -12,8 +12,8 @@ namespace gamemd {
 int ObjectVector::Construct( IUnknown * aP1, IUnknown * aP2)
 {
 
-  *(this + 1) = 0; /*0x4d044b*/
-  *(this + 2) = aP1; /*0x4d044e*/
+  *((unsigned int *)this + 1) = 0; /*0x4d044b*/
+  *((unsigned int *)this + 2) = aP1; /*0x4d044e*/
   *((unsigned char *)this + 12) = 1; /*0x4d0451*/
   *((unsigned char *)this + 13) = 0; /*0x4d0455*/
   *this = &vt_VectorClass_ObjectClass; /*0x4d0458*/
@@ -21,13 +21,13 @@ int ObjectVector::Construct( IUnknown * aP1, IUnknown * aP2)
   {
     if ( aP2 ) /*0x4d0466*/
     {
-      *(this + 1) = aP2; /*0x4d0468*/
+      *((unsigned int *)this + 1) = aP2; /*0x4d0468*/
       return this; /*0x4d046e*/
     }
-    *(this + 1) = RA2_OPNEW(4 * (unsigned int)aP1); /*0x4d047d*/
+    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x4d047d*/
     *((unsigned char *)this + 13) = 1; /*0x4d0480*/
   }
-  return (int)(this);
+  return this; /*0x4d046d*/
 
 }
 } // namespace gamemd

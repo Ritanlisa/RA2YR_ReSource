@@ -11,7 +11,7 @@ namespace gamemd {
 char * AnimFile::Stub()
 {
 
-  return (char *)((unsigned char *)this + 1292);
+  return (unsigned char *)this + 1292; /*0x427296*/
 
 }
 } // namespace gamemd

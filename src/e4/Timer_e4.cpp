@@ -51,8 +51,8 @@ namespace gamemd {
 DWORD * Timer::Init( DWORD a2)
 {
 
-  *this = (DWORD *)(Timer::GetTicks());
-  *((unsigned int *)this + 2) = this; /*0x4f1b11*/
+  *this = Timer::GetTicks(); /*0x4f1b0b*/
+  *((unsigned int *)this + 2) = a2; /*0x4f1b11*/
   return this; /*0x4f1b16*/
 
 }
@@ -84,19 +84,19 @@ DWORD * Timer::PumpMessages()
   int v2; // eax
   int result; // eax
 
-  if ( (*(this + 198) + 1) % 256 != *(this + 197) ) /*0x54f73e*/
+  if ( (*((char *)this + 198) + 1) % 256 != *((char *)this + 197) ) /*0x54f73e*/
     MessageLoop(); /*0x54f740*/
-  v2 = *(this + 198); /*0x54f745*/
-  *(this + 197) = v2; /*0x54f74b*/
+  v2 = *((char *)this + 198); /*0x54f745*/
+  *((char *)this + 197) = v2; /*0x54f74b*/
   if ( (v2 + 1) % 256 == v2 ) /*0x54f766*/
   {
-    result = (int)(*(this + 198));
-    *(this + 197) = result; /*0x54f781*/
+    result = *((char *)this + 198); /*0x54f77b*/
+    *((char *)this + 197) = result; /*0x54f781*/
   }
   else
   {
-    result = (int)(MessageLoop());
-    *(this + 197) = *(this + 198); /*0x54f773*/
+    result = MessageLoop(); /*0x54f768*/
+    *((char *)this + 197) = *((char *)this + 198); /*0x54f773*/
   }
   return result; /*0x54f779*/
 

@@ -362,20 +362,20 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
   v3 = *((char *)this + 4); /*0x4b6ab4*/
   if ( v3 <= 0 || a2 < 0 || a2 >= v3 ) /*0x4b6acd*/
     return 0; /*0x4b6b72*/
-  v4 = *((unsigned int *)g_abs_A8B230 + 3385); /*0x4b6adb*/
+  v4 = *((unsigned int *)MEMORY[0xA8B230] + 3385); /*0x4b6adb*/
   if ( v4 ) /*0x4b6ae3*/
   {
     v5 = 0; /*0x4b6ae5*/
     if ( v4 > 0 ) /*0x4b6ae9*/
     {
-      while ( *(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3382) + 4 * v5) != *(this + a2 + 5) /*0x4b6b05*/
-           || *(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3389) + 4 * v5) == -1 )
+      while ( *(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3382) + 4 * v5) != *(this + a2 + 5) /*0x4b6b05*/
+           || *(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3389) + 4 * v5) == -1 )
       {
-        if ( ++v5 >= *((unsigned int *)g_abs_A8B230 + 3385) ) /*0x4b6b10*/
+        if ( ++v5 >= *((unsigned int *)MEMORY[0xA8B230] + 3385) ) /*0x4b6b10*/
           goto LABEL_12; /*0x4b6b10*/
       }
       if ( v5 != -1 ) /*0x4b6b17*/
-        --*(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3396) + 4 * v5); /*0x4b6b22*/
+        --*(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3396) + 4 * v5); /*0x4b6b22*/
     }
   }
 LABEL_12:
@@ -385,7 +385,7 @@ LABEL_12:
   v8 = a2; /*0x4b6b42*/
   if ( a2 < v7 ) /*0x4b6b44*/
   {
-    v9 = (int *)(this + a2 + 5);
+    v9 = this + a2 + 5; /*0x4b6b46*/
     do /*0x4b6b57*/
     {
       ++v8; /*0x4b6b4b*/
@@ -850,7 +850,7 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
 
   if ( this == a2 ) /*0x4b583a*/
     return this; /*0x4b583a*/
-  unsigned int *sub_4B5830(ObjectClass *this, unsigned int *a2)
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x4b583e*/
   v3 = a2[2]; /*0x4b5841*/
   *((unsigned int *)this + 2) = v3; /*0x4b5846*/
   if ( !v3 ) /*0x4b5849*/
@@ -859,7 +859,7 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
     *((unsigned char *)this + 13) = 0; /*0x4b5891*/
     return this; /*0x4b5895*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x4b5853*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x4b5853*/
   *((unsigned int *)this + 1) = v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
     return this; /*0x4b5860*/

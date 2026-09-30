@@ -29,15 +29,15 @@ int Display::GetViewport()
 
   int *result; // eax
   int v2; // ecx
-  unsigned char * v3;
-  unsigned char * v4;
+  int v3; // edx
+  int v4; // esi
 
-  result = (int *)(this);
-  v2 = (int)(0);
-  if ( !g_abs_A8EB7C && !g_abs_A8ED6B ) /*0x72ad5e*/
+  result = this; /*0x72ad29*/
+  v2 = 0; /*0x72ad44*/
+  if ( !MEMORY[0xA8EB7C] && !MEMORY[0xA8ED6B] ) /*0x72ad5e*/
     v2 = 168; /*0x72ad60*/
-  v3 = g_abs_886FB8 - 168; /*0x72ad67*/
-  v4 = g_abs_886FBC - 32; /*0x72ad6d*/
+  v3 = MEMORY[0x886FB8] - 168; /*0x72ad67*/
+  v4 = MEMORY[0x886FBC] - 32; /*0x72ad6d*/
   *result = v2; /*0x72ad70*/
   result[1] = 0; /*0x72ad72*/
   result[2] = v3; /*0x72ad76*/

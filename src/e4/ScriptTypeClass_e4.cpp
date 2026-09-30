@@ -98,9 +98,9 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (void *)(&vt_ScriptTypeClass);
-  *(Block + 1) = &vt_ScriptTypeClass; /*0x691fac*/
-  *(Block + 2) = &vt_ScriptTypeClass; /*0x691fb3*/
+  *Block = &ScriptTypeClass::`vftable'; /*0x691fa6*/
+  *(Block + 1) = &ScriptTypeClass::`vftable'; /*0x691fac*/
+  *(Block + 2) = &ScriptTypeClass::`vftable'; /*0x691fb3*/
   *(Block + 3) = &vt_ScriptTypeClass; /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x691fc1*/
   v5 = Block; /*0x691fd6*/
@@ -114,9 +114,9 @@ ScriptTypeClass * ScriptTypeClass::ddtor(void ** Block, char a2)
     }
     while ( v3 < dword_8B41D8 ); /*0x69200d*/
   }
-  ((AbstractTypeClass *)(Block))->Dtor(); /*0x692011*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x69201b*/
-    RA2_OPDEL(Block); /*0x69201e*/
+  AbstractTypeClass::Dtor(Block); /*0x692011*/
+  if ( (a2 & 1) != 0 ) /*0x69201b*/
+    __3_YAXPAX_Z(Block); /*0x69201e*/
   return (ScriptTypeClass *)Block; /*0x692028*/
 
 }

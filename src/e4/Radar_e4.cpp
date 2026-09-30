@@ -1299,12 +1299,12 @@ void * Radar::CopyDataArray(int * a2)
 
   if ( this != a2 ) /*0x58abdc*/
   {
-    (*(void (**)(Radar *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(int *))(*(unsigned int *)this + 12))(this); /*0x58abe0*/
     v3 = a2[2]; /*0x58abe3*/
     *((char *)this + 2) = v3; /*0x58abea*/
     if ( v3 ) /*0x58abed*/
     {
-      v4 = (char *)RA2_OPNEW(8 * v3); /*0x58abf7*/
+      v4 = (char *)__2_YAPAXI_Z(8 * v3); /*0x58abf7*/
       if ( v4 ) /*0x58ac01*/
       {
         v5 = v4; /*0x58ac06*/

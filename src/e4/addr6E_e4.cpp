@@ -238,16 +238,16 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
 
   unsigned int *v5; // eax
   int v7; // [esp+0h] [ebp-10h] BYREF
-  unsigned int * v8;
-  unsigned int * v9;
-  unsigned int * GroundHeight;
+  int v8; // [esp+4h] [ebp-Ch] BYREF
+  int v9; // [esp+8h] [ebp-8h]
+  int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v7 = (unsigned int *)(*(unsigned int *)((unsigned int *))((unsigned int *))(ScenarioClass)::Get_Waypoint_Location((char *)g_abs_A8B230, &v7, *((char *)this + 17)));
-  GroundHeight = (int)((unsigned int *)(0));
-  v9 = (int)((unsigned int *)((IDA_SHIWORD(v7) << 8) + 128));
-  v8 = (int)((unsigned int *)(((int16_t)v7 << 8) + 128));
-  GroundHeight = (unsigned int *)(Cell::GetGroundHeight(&v8));
-  v5 = (unsigned int *)(RA2_OPNEW(0x14u));
+  v7 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v7, *((char *)this + 17)); /*0x6e339b*/
+  GroundHeight = 0; /*0x6e339f*/
+  v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
+  v8 = ((__int16)v7 << 8) + 128; /*0x6e33ca*/
+  GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
+  v5 = __2_YAPAXI_Z(0x14u); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
@@ -558,7 +558,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
 {
 
   TechnoClass *v3; // esi
-  unsigned int v4;
+  int v4; // ebp
   TechnoClass *i; // ebx
   int v6; // edi
   unsigned int *focus; // edi
@@ -576,18 +576,18 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   int DefaultTimer; // [esp+18h] [ebp-10h]
   char v20[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v3 = (gamemd::TechnoClass *)((int *)((TechnoClass *)*((char *)this + 21)));
-  v4 = (unsigned int)((int *)(-1));
-  v17 = (int *)(this);
+  v3 = (TechnoClass *)*((char *)this + 21); /*0x6efc76*/
+  v4 = -1; /*0x6efc79*/
+  v17 = this; /*0x6efc7f*/
   for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1].missionQueued ) /*0x6efc85*/
   {
     v6 = *(unsigned int *)((*(int (**)(TechnoClass *))(*(unsigned int *)v3->__pad_0 + 132))(v3) + 1532); /*0x6efc91*/
     if ( TechnoClass::IsDeployed((int)v3) /*0x6efcba*/
-      && (IDA_BYTE1(v3[1].firepowerMultiplier[1])
+      && (BYTE1(v3[1].firepowerMultiplier[1])
        || (*(int (**)(TechnoClass *))(*(unsigned int *)v3->__pad_0 + 44))(v3) == 2)
-      && v6 > (int)(v4) )
+      && v6 > v4 )
     {
-      i = (gamemd::TechnoClass *)((int *)(v3));
+      i = v3; /*0x6efcbc*/
       v4 = v6; /*0x6efcbe*/
     }
   }
@@ -596,7 +596,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
     *((unsigned char *)v17 + 128) = 1; /*0x6efcd5*/
     return; /*0x6efce0*/
   }
-  focus = (unsigned int *)(i->focus);
+  focus = i->focus; /*0x6efce3*/
   v8 = 0; /*0x6efce9*/
   v9 = focus[153]; /*0x6efcf0*/
   if ( v9 <= 0 ) /*0x6efcf8*/
@@ -620,8 +620,8 @@ LABEL_16:
   {
     v12 = v17; /*0x6efd61*/
     v13 = (unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)v17[13] + 72))(v17[13], v20); /*0x6efd6f*/
-    IDA_LOWORD(v18) = *v13 / 256; /*0x6efd82*/
-    IDA_HIWORD(v18) = v13[1] / 256; /*0x6efd9a*/
+    LOWORD(v18) = *v13 / 256; /*0x6efd82*/
+    HIWORD(v18) = v13[1] / 256; /*0x6efd9a*/
     v14 = *(unsigned int *)(v11 + 40); /*0x6efda3*/
     v17 = (int *)v18; /*0x6efda6*/
     SuperWeapon::FireSuperWeaponHouseClass(focus, *(AbstractClass **)(v14 + 180), (AbstractClass *)&v17); /*0x6efdb4*/
@@ -632,9 +632,9 @@ LABEL_16:
   v16 = *(unsigned int *)(v11 + 56); /*0x6efdcc*/
   if ( v15 == -1 ) /*0x6efdd2*/
     goto LABEL_23; /*0x6efdd2*/
-  if ( *(unsigned int *)&g_abs_A8D63C - v15 < v16 ) /*0x6efddd*/
+  if ( *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664] - v15 < v16 ) /*0x6efddd*/
   {
-    v16 -= *(unsigned int *)&g_abs_A8D63C - v15; /*0x6efddf*/
+    v16 -= *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664] - v15; /*0x6efddf*/
 LABEL_23:
     v18 = v16; /*0x6efde1*/
     goto LABEL_24; /*0x6efde1*/
@@ -644,7 +644,7 @@ LABEL_24:
   DefaultTimer = Super::GetDefaultTimer((unsigned int *)v11); /*0x6efde5*/
   if ( *(unsigned char *)(v11 + 109) ) /*0x6efdf0*/
   {
-    if ( 1.0 - *(float *)(*(unsigned int *)&g_abs_87F8E4 + 3440) < (double)v18 / (double)DefaultTimer ) /*0x6efe1c*/
+    if ( 1.0 - *(float *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3440) < (double)v18 / (double)DefaultTimer ) /*0x6efe1c*/
       *((unsigned char *)v17 + 128) = 1; /*0x6efe25*/
   }
   else
@@ -754,8 +754,8 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = (int *)(g_abs_8871E0->?[5]);
-  WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v8, *((char *)this + 36)));
+  v5 = MEMORY[0x8871E0]->?[5]; /*0x6e07a3*/
+  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e07b5*/
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
 
@@ -771,8 +771,8 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = (int *)(g_abs_8871E0->?[5]);
-  WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v8, *((char *)this + 36)));
+  v5 = MEMORY[0x8871E0]->?[5]; /*0x6e0803*/
+  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e0815*/
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
 
@@ -788,8 +788,8 @@ char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = (int *)(g_abs_8871E0->?[5]);
-  WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_abs_A8B230, v8, *((char *)this + 36)));
+  v5 = MEMORY[0x8871E0]->?[5]; /*0x6e0863*/
+  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e0875*/
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0896*/
   return 1; /*0x6e089d*/
 
@@ -826,25 +826,25 @@ char E4Recv_6E2A50::sub_6E2A50(int a2, int a3, int a4, int a5)
 
   int v6; // edi
   int v7; // esi
-  unsigned int * v8;
+  unsigned int *v8; // eax
   int v9; // ecx
 
   if ( *((unsigned int *)this + 19) ) /*0x6e2a55*/
   {
-    v6 = (int)(g_abs_B0E730);
+    v6 = MEMORY[0xB0E730]; /*0x6e2a5c*/
     v7 = 0; /*0x6e2a62*/
-    if ( g_abs_B0E730 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0) ) /*0x6e2a66*/
+    if ( MEMORY[0xB0E730] > 0 ) /*0x6e2a66*/
     {
-      v8 = (unsigned int *)(g_abs_B0E724);
+      v8 = MEMORY[0xB0E724]; /*0x6e2a68*/
       do /*0x6e2a91*/
       {
-        if ( *(unsigned int *)(((unsigned int *)(v8))[v7] + 36) == *((unsigned int *)this + 19) ) /*0x6e2a78*/
+        if ( *(unsigned int *)(v8[v7] + 36) == *((unsigned int *)this + 19) ) /*0x6e2a78*/
         {
-          v9 = ((unsigned int *)(v8))[v7]; /*0x6e2a7a*/
+          v9 = v8[v7]; /*0x6e2a7a*/
           if ( v9 ) /*0x6e2a7f*/
           {
             (*(void (**)(int, int))(*(unsigned int *)v9 + 32))(v9, 1); /*0x6e2a85*/
-            v8 = g_abs_B0E724; /*0x6e2a88*/
+            v8 = MEMORY[0xB0E724]; /*0x6e2a88*/
           }
           --v7; /*0x6e2a8d*/
         }

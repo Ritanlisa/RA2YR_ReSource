@@ -579,13 +579,13 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   size_t v11; // ecx
   unsigned char *v12; // eax
   const char *v13; // edi
-  unsigned char * v14;
+  size_t v14; // esi
   char *v15; // eax
   char *v16; // ebp
   const char *v17; // esi
   size_t v18; // ecx
   unsigned char *v19; // eax
-  unsigned char * v20;
+  signed int v20; // [esp+14h] [ebp+4h]
 
   v5 = a2; /*0x7b60ec*/
   if ( *this ) /*0x7b60ea*/
@@ -601,50 +601,50 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
       break; /*0x7b6132*/
     ++v5; /*0x7b613e*/
   }
-  v9 = (unsigned char *)(*this);
-  v20 = (int)((unsigned char *)(v5));
+  v9 = *this; /*0x7b6141*/
+  v20 = v5; /*0x7b6143*/
   if ( (*this)[v5] == 13 && v9[v5 + 1] == 10 ) /*0x7b6152*/
     v20 = v5 + 1; /*0x7b6155*/
   v10 = &v9[a2]; /*0x7b615d*/
   if ( *a3 ) /*0x7b6160*/
-    RA2_OPDEL(*a3); /*0x7b6167*/
+    __3_YAXPAX_Z(*a3); /*0x7b6167*/
   *a3 = 0; /*0x7b6171*/
   if ( v10 ) /*0x7b6177*/
     v11 = strlen(v10) + 1; /*0x7b6180*/
   else
     v11 = 1; /*0x7b6186*/
-  v12 = RA2_OPNEW(v11); /*0x7b618c*/
+  v12 = __2_YAPAXI_Z(v11); /*0x7b618c*/
   *a3 = v12; /*0x7b6194*/
   *v12 = 0; /*0x7b6198*/
   if ( v10 ) /*0x7b619b*/
     strcpy((char *)*a3, v10); /*0x7b61b3*/
-  v13 = (unsigned char *)(&g_abs_889F64);
-  v14 = (size_t)((unsigned char *)(v20 - a2 + 1));
+  v13 = &MEMORY[0x889F64]; /*0x7b61c4*/
+  v14 = v20 - a2 + 1; /*0x7b61c9*/
   if ( *a3 ) /*0x7b61c0*/
     v13 = (const char *)*a3; /*0x7b61ce*/
-  v15 = (char *)RA2_OPNEW(v20 - a2 + 2); /*0x7b61d4*/
+  v15 = (char *)__2_YAPAXI_Z(v20 - a2 + 2); /*0x7b61d4*/
   v16 = v15; /*0x7b61d9*/
   *v15 = 0; /*0x7b61e0*/
   if ( v13 ) /*0x7b61e4*/
     strncpy(v15, v13, v14); /*0x7b61e9*/
   v16[v14] = 0; /*0x7b61f1*/
-  v17 = &g_abs_889F64; /*0x7b61f5*/
+  v17 = &MEMORY[0x889F64]; /*0x7b61f5*/
   if ( v16 ) /*0x7b61fc*/
     v17 = v16; /*0x7b61fe*/
   if ( *a3 ) /*0x7b6200*/
-    RA2_OPDEL(*a3); /*0x7b6207*/
+    __3_YAXPAX_Z(*a3); /*0x7b6207*/
   *a3 = 0; /*0x7b6211*/
   if ( v17 ) /*0x7b6217*/
     v18 = strlen(v17) + 1; /*0x7b6220*/
   else
     v18 = 1; /*0x7b6226*/
-  v19 = RA2_OPNEW(v18); /*0x7b622c*/
+  v19 = __2_YAPAXI_Z(v18); /*0x7b622c*/
   *a3 = v19; /*0x7b6234*/
   *v19 = 0; /*0x7b6238*/
   if ( v17 ) /*0x7b623b*/
     strcpy((char *)*a3, v17); /*0x7b6253*/
   if ( v16 ) /*0x7b625e*/
-    RA2_OPDEL(v16); /*0x7b6261*/
+    __3_YAXPAX_Z(v16); /*0x7b6261*/
   return v20 + 1; /*0x7b6104*/
 
 }
@@ -772,86 +772,86 @@ namespace gamemd {
 AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
 {
 
-  const wchar_t * v5;
+  int v5; // esi
   const wchar_t *v6; // eax
   const wchar_t *v8; // eax
   const wchar_t *v9; // eax
-  const wchar_t * v10;
+  int v10; // esi
   const wchar_t *v11; // esi
   size_t v12; // eax
   unsigned short *v13; // eax
-  unsigned short * v14;
+  size_t v14; // esi
   const wchar_t *v15; // ebp
   wchar_t *v16; // eax
   wchar_t *v17; // ebx
   const wchar_t *v18; // esi
   size_t v19; // eax
   unsigned short *v20; // eax
-  const wchar_t * v21;
+  int v21; // [esp+10h] [ebp+4h]
 
-  v5 = (int)((const wchar_t *)(a2));
-  v6 = (const wchar_t *)(*this);
+  v5 = a2; /*0x7b7c09*/
+  v6 = *this; /*0x7b7c0b*/
   if ( *this ) /*0x7b7c0b*/
     v6 = (const wchar_t *)wcslen(*this); /*0x7b7c12*/
   if ( a2 >= (int)v6 ) /*0x7b7c1c*/
     return -1; /*0x7b7c20*/
   while ( 1 ) /*0x7b7c27*/
   {
-    v8 = (const wchar_t *)(*this);
+    v8 = *this; /*0x7b7c27*/
     if ( *this ) /*0x7b7c27*/
       v8 = (const wchar_t *)wcslen(*this); /*0x7b7c2e*/
-    if ( v5 >= (const wchar_t *)((int))v8 || strchr(String2, (*this)[v5]) ) /*0x7b7c48*/
+    if ( v5 >= (int)v8 || strchr(String2, (*this)[v5]) ) /*0x7b7c48*/
       break; /*0x7b7c48*/
     ++v5; /*0x7b7c54*/
   }
-  v9 = (const wchar_t *)(*this);
-  v21 = (const wchar_t *)((int)(v5));
+  v9 = *this; /*0x7b7c57*/
+  v21 = v5; /*0x7b7c59*/
   if ( (*this)[v5] == 13 ) /*0x7b7c62*/
   {
-    v10 = (const wchar_t *)((int)(v5 + 1));
+    v10 = v5 + 1; /*0x7b7c64*/
     if ( v9[v10] == 10 ) /*0x7b7c6a*/
       v21 = v10; /*0x7b7c6c*/
   }
-  v11 = (const wchar_t *)((unsigned short *)(&v9[a2]));
+  v11 = &v9[a2]; /*0x7b7c74*/
   if ( *a3 ) /*0x7b7c77*/
-    RA2_OPDEL(*a3); /*0x7b7c7e*/
+    __3_YAXPAX_Z(*a3); /*0x7b7c7e*/
   *a3 = 0; /*0x7b7c88*/
   if ( v11 ) /*0x7b7c8e*/
     v12 = wcslen(v11) + 1; /*0x7b7c99*/
   else
     v12 = 1; /*0x7b7c9c*/
-  v13 = RA2_OPNEW(2 * v12); /*0x7b7ca5*/
+  v13 = __2_YAPAXI_Z(2 * v12); /*0x7b7ca5*/
   *a3 = v13; /*0x7b7cad*/
   *v13 = 0; /*0x7b7cb1*/
   if ( v11 ) /*0x7b7cb6*/
     wcscpy((wchar_t *)*a3, v11); /*0x7b7cbc*/
-  v14 = (unsigned short *)(v21 - a2 + 1);
-  v15 = (const wchar_t *)((unsigned short *)(&g_abs_887734));
+  v14 = v21 - a2 + 1; /*0x7b7ccd*/
+  v15 = &MEMORY[0x887734]; /*0x7b7cce*/
   if ( *a3 ) /*0x7b7cc8*/
     v15 = (const wchar_t *)*a3; /*0x7b7cd7*/
-  v16 = (wchar_t *)RA2_OPNEW(2 * v14 + 2); /*0x7b7cde*/
+  v16 = (wchar_t *)__2_YAPAXI_Z(2 * v14 + 2); /*0x7b7cde*/
   v17 = v16; /*0x7b7ce3*/
   *v16 = 0; /*0x7b7cea*/
   if ( v15 ) /*0x7b7cef*/
     wcsncpy(v16, v15, v14); /*0x7b7cf4*/
   v17[v14] = 0; /*0x7b7cfc*/
-  v18 = &g_abs_887734; /*0x7b7d05*/
+  v18 = &MEMORY[0x887734]; /*0x7b7d05*/
   if ( v17 ) /*0x7b7d0a*/
     v18 = v17; /*0x7b7d0c*/
   if ( *a3 ) /*0x7b7d0e*/
-    RA2_OPDEL(*a3); /*0x7b7d15*/
+    __3_YAXPAX_Z(*a3); /*0x7b7d15*/
   *a3 = 0; /*0x7b7d1f*/
   if ( v18 ) /*0x7b7d25*/
     v19 = wcslen(v18) + 1; /*0x7b7d30*/
   else
     v19 = 1; /*0x7b7d33*/
-  v20 = RA2_OPNEW(2 * v19); /*0x7b7d3c*/
+  v20 = __2_YAPAXI_Z(2 * v19); /*0x7b7d3c*/
   *a3 = v20; /*0x7b7d44*/
   *v20 = 0; /*0x7b7d48*/
   if ( v18 ) /*0x7b7d4d*/
     wcscpy((wchar_t *)*a3, v18); /*0x7b7d53*/
   if ( v17 ) /*0x7b7d5d*/
-    RA2_OPDEL(v17); /*0x7b7d60*/
+    __3_YAXPAX_Z(v17); /*0x7b7d60*/
   return v21 + 1; /*0x7b7c1e*/
 
 }
@@ -882,7 +882,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
   unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b954c*/
-    this->Debug::Log(); /*0x7b955d*/
+    Debug::Log(); /*0x7b955d*/
   if ( BSurface::CreateTripleBuffer(this) && *((unsigned int *)this + 9) ) /*0x7b9574*/
   {
     v2 = 0; /*0x7b9585*/
@@ -892,8 +892,8 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     if ( *((unsigned int *)this + 1) ) /*0x7b957f*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b95a8*/
-        this->Debug::Log(); /*0x7b95b9*/
-      FoundationSize = ((Building *)(v21))->GetFoundationSize(*((unsigned int *)this + 2)); /*0x7b95cd*/
+        Debug::Log(); /*0x7b95b9*/
+      FoundationSize = Building::GetFoundationSize(v21, *((unsigned int *)this + 2)); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
       v8 = *((unsigned int *)this + 5); /*0x7b95d4*/
       v9 = FoundationSize[1]; /*0x7b95d7*/
@@ -906,7 +906,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       ReleaseMutex(hMutex); /*0x7b95fc*/
       v5 = v20; /*0x7b9602*/
     }
-    v12 = (unsigned int)(v2 + *((unsigned int *)this + 11));
+    v12 = v2 + *((unsigned int *)this + 11); /*0x7b960c*/
     *((unsigned int *)this + 18) = v2; /*0x7b9610*/
     v18[0] = v12; /*0x7b9616*/
     v13 = *(ObjectClass **)((char *)this + 48); /*0x7b961a*/
@@ -3145,7 +3145,7 @@ int E4Recv_7B9DF0::sub_7B9DF0(LONG * a2, LONG * a3)
   y = Point.y; /*0x7b9e09*/
   *a2 = Point.x; /*0x7b9e0d*/
   *a3 = y; /*0x7b9e15*/
-  int sub_7B9DF0(ObjectClass *this, LONG *a2, LONG *a3)
+  return (*(int (**)(void *, LONG *, LONG *))(*(unsigned int *)this + 68))(this, a2, a3); /*0x7b9e1e*/
 
 }
 } // namespace gamemd
@@ -3263,7 +3263,7 @@ namespace gamemd {
 int E4Recv_7BC6C0::sub_7BC6C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc6ea*/
            this,
            a2,
            a3,
@@ -3282,7 +3282,7 @@ namespace gamemd {
 int E4Recv_7BC6F0::sub_7BC6F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc71a*/
            this,
            a2,
            a3,
@@ -3301,7 +3301,7 @@ namespace gamemd {
 int E4Recv_7BC720::sub_7BC720(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc74a*/
            this,
            a2,
            a3,
@@ -3413,7 +3413,7 @@ namespace gamemd {
 int E4Recv_7BC8C0::sub_7BC8C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc8ea*/
            this,
            a2,
            a3,
@@ -3432,7 +3432,7 @@ namespace gamemd {
 int E4Recv_7BC8F0::sub_7BC8F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc91a*/
            this,
            a2,
            a3,
@@ -3451,7 +3451,7 @@ namespace gamemd {
 int E4Recv_7BC920::sub_7BC920(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  ( this, a2, a3, a4, a5, a6, a7, a8, 0)
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x7bc94a*/
            this,
            a2,
            a3,

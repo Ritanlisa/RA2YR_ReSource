@@ -416,7 +416,7 @@ int CChatEventSink::GrowBuffer()
   const void *v7; // esi
   int v8; // [esp+8h] [ebp-4h]
 
-  v2 = (int)(*this);
+  v2 = *this; /*0x7ad935*/
   v3 = *((char *)this + 1); /*0x7ad938*/
   if ( 3 * v2 > v3 ) /*0x7ad940*/
     return 0; /*0x7ad943*/
@@ -425,12 +425,12 @@ int CChatEventSink::GrowBuffer()
     v5 = 10; /*0x7ad956*/
   if ( v5 >= v3 ) /*0x7ad95d*/
     return 0; /*0x7ad960*/
-  v6 = RA2_OPNEW(268 * v5); /*0x7ad974*/
+  v6 = __2_YAPAXI_Z(268 * v5); /*0x7ad974*/
   v7 = (const void *)*((char *)this + 2); /*0x7ad979*/
   v8 = (int)v6; /*0x7ad981*/
   if ( v7 ) /*0x7ad985*/
     qmemcpy(v6, v7, 268 * *this); /*0x7ad99f*/
-  RA2_OPDEL((void *)*((char *)this + 2)); /*0x7ad9ad*/
+  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7ad9ad*/
   *((char *)this + 2) = v8; /*0x7ad9b9*/
   *((char *)this + 1) = v5; /*0x7ad9bc*/
   return 1; /*0x7ad942*/
@@ -448,19 +448,19 @@ int CChatEventSink::ProcessChatEvent()
   const void *v6; // esi
   int v7; // [esp+4h] [ebp-4h]
 
-  v2 = (int)(*this);
+  v2 = *this; /*0x7aed44*/
   if ( *this < *((char *)this + 1) ) /*0x7aed4b*/
     return 0; /*0x7aed4d*/
   v4 = 2 * v2; /*0x7aed53*/
   if ( 2 * v2 < 10 ) /*0x7aed5b*/
     v4 = 10; /*0x7aed5d*/
-  v5 = RA2_OPNEW(248 * v4); /*0x7aed72*/
+  v5 = __2_YAPAXI_Z(248 * v4); /*0x7aed72*/
   memset(v5, 0, 4 * ((unsigned int)(248 * v4) >> 2)); /*0x7aed7d*/
   v7 = (int)v5; /*0x7aed87*/
   v6 = (const void *)*((char *)this + 2); /*0x7aed8d*/
   if ( v6 ) /*0x7aed92*/
     qmemcpy(v5, v6, 248 * *this); /*0x7aeda7*/
-  RA2_OPDEL((void *)*((char *)this + 2)); /*0x7aedb4*/
+  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7aedb4*/
   *((char *)this + 1) = v4; /*0x7aedc0*/
   *((char *)this + 2) = v7; /*0x7aedc3*/
   return 1; /*0x7aed4f*/
@@ -536,12 +536,12 @@ void CChatEventSink::EnsureCapacity(int a2)
       v8 = 10; /*0x7aee36*/
     if ( v8 < v7 ) /*0x7aee3d*/
     {
-      v9 = (void *)((unsigned int)(RA2_OPNEW(4 * v8)));
-      v10 = (const void *)((unsigned int)((const void *)*((unsigned int *)this + 2)));
-      v11 = (unsigned int)(v9);
+      v9 = __2_YAPAXI_Z(4 * v8); /*0x7aee47*/
+      v10 = (const void *)*((unsigned int *)this + 2); /*0x7aee4c*/
+      v11 = v9; /*0x7aee54*/
       if ( v10 ) /*0x7aee58*/
         qmemcpy(v9, v10, 4 * *(unsigned int *)this); /*0x7aee66*/
-      RA2_OPDEL(*((void **)this + 2)); /*0x7aee73*/
+      __3_YAXPAX_Z(*((void **)this + 2)); /*0x7aee73*/
       *((unsigned int *)this + 2) = v11; /*0x7aee7f*/
       *((unsigned int *)this + 1) = v8; /*0x7aee82*/
     }

@@ -263,26 +263,26 @@ namespace gamemd {
 int E4Recv_731130::sub_731130()
 {
 
-  unsigned char * v1;
+  int v1; // edi
   int v3; // esi
   char *v5; // ecx
 
-  v1 = (unsigned char *)((int)(g_abs_A8EC88 - 1));
-  if ( g_abs_A8EC88 - 1 < 0 ) /*0x73113f*/
+  v1 = MEMORY[0xA8EC88] - 1; /*0x731138*/
+  if ( MEMORY[0xA8EC88] - 1 < 0 ) /*0x73113f*/
     return 1; /*0x7311a6*/
   while ( 1 )
   {
-    v3 = *((unsigned int *)(unsigned int)(g_abs_A8EC7C)+ v1); /*0x731147*/
+    v3 = *((unsigned int *)MEMORY[0xA8EC7C] + v1); /*0x731147*/
     if ( v3 && !*(unsigned char *)(v3 + 129) )
     {
-      if ( g_abs_A8B238[0] ? House::IsHumanPlayer(*(void **)(v3 + 540)) : *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493) )
+      if ( MEMORY[0xA8B238][0] ? House::IsHumanPlayer(*(#375 **)(v3 + 540)) : *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493) )
       {
         v5 = *(char **)(v3 + 532); /*0x73117e*/
-        if ( v5 != (char *)((char *))((char *))(this) - 1 ) /*0x731189*/
+        if ( v5 != this - 1 ) /*0x731189*/
           goto LABEL_17; /*0x731189*/
         if ( !*(unsigned char *)(v3 + 131) ) /*0x731193*/
           return 0; /*0x731193*/
-        if ( v5 != (char *)((char *))((char *))(this) - 1 ) /*0x731197*/
+        if ( v5 != this - 1 ) /*0x731197*/
         {
 LABEL_17:
           if ( *(unsigned char *)(v3 + 131) ) /*0x731199*/
@@ -2121,9 +2121,9 @@ namespace gamemd {
 BOOL E4Recv_7325C0::sub_7325C0()
 {
 
-  BOOL sub_7325C0(ObjectClass *this)
+  return (*(int (**)(void *))(*(unsigned int *)this + 44))(this) != 6 /*0x7325f4*/
       && *(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3516)
-      && (*(uint8_t (**)(void *))(*(unsigned int *)this + 316))(this);
+      && (*(unsigned __int8 (**)(void *))(*(unsigned int *)this + 316))(this);
 
 }
 } // namespace gamemd
@@ -2506,18 +2506,18 @@ char E4Recv_736C10::sub_736C10()
   int v2; // eax
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  char sub_736C10(TechnoClass *this)
+  if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 1552))(this) != 5 ) /*0x736c21*/
     return 0; /*0x736c21*/
   v4[0] = *((unsigned int *)this + 39); /*0x736c2f*/
   v4[1] = *((unsigned int *)this + 40); /*0x736c3b*/
   v4[2] = *((unsigned int *)this + 41); /*0x736c42*/
-  if ( Tactical::IsCellVisible(&g_abs_87F7E8, v4) || !*((unsigned char *)this + 981) ) /*0x736c54*/
+  if ( Tactical::IsCellVisible(&MEMORY[0x87F7E8], v4) || !*((unsigned char *)this + 981) ) /*0x736c54*/
     return 0; /*0x736c8a*/
   v2 = *((unsigned int *)this + 373); /*0x736c5e*/
   if ( v2 ) /*0x736c66*/
     *(unsigned char *)(v2 + 130) = 1; /*0x736c68*/
-  char sub_736C10(TechnoClass *this)
-  char sub_736C10(TechnoClass *this)
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 3712))(this); /*0x736c73*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 992))(this); /*0x736c7d*/
   return 1; /*0x736c85*/
 
 }

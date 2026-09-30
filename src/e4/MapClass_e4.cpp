@@ -3422,7 +3422,7 @@ int MapClass::AllocateCellDataBuffer(int a2, char * a3)
   v3 = a2; /*0x589373*/
   if ( !a2 ) /*0x58937f*/
   {
-    result = (*(int (**)(void *))(*(unsigned int *)this + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x589492*/
     return 1; /*0x589498*/
   }
   v5 = a3; /*0x589385*/
@@ -3450,7 +3450,7 @@ int MapClass::AllocateCellDataBuffer(int a2, char * a3)
   }
   else
   {
-    v5 = (char *)RA2_OPNEW(16 * a2); /*0x589396*/
+    v5 = (char *)__2_YAPAXI_Z(16 * a2); /*0x589396*/
     if ( !v5 ) /*0x5893a0*/
     {
       v8 = 0; /*0x5893cd*/
@@ -3504,7 +3504,7 @@ LABEL_14:
     }
     if ( *((unsigned char *)this + 13) ) /*0x58945c*/
     {
-      RA2_OPDEL(*((void **)this + 1)); /*0x589465*/
+      __3_YAXPAX_Z(*((void **)this + 1)); /*0x589465*/
       *((unsigned int *)this + 1) = 0; /*0x58946d*/
     }
   }
@@ -3538,7 +3538,7 @@ AbstractClass * * MapClass::AllocateMapDataBuffer(int a2, int * a3)
   v3 = a2; /*0x589a67*/
   if ( !a2 ) /*0x589a6f*/
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x589ba0*/
     goto LABEL_28; /*0x589ba0*/
   }
   *((unsigned char *)this + 12) = 0; /*0x589a79*/
@@ -3561,7 +3561,7 @@ AbstractClass * * MapClass::AllocateMapDataBuffer(int a2, int * a3)
   }
   else
   {
-    v5 = (int *)RA2_OPNEW(36 * a2 + 4); /*0x589a8c*/
+    v5 = (int *)__2_YAPAXI_Z(36 * a2 + 4); /*0x589a8c*/
     if ( v5 ) /*0x589a96*/
     {
       *v5 = a2; /*0x589a98*/
@@ -4162,15 +4162,15 @@ unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2)
   int v12; // [esp+14h] [ebp-10h] BYREF
   unsigned char v13[12]; // [esp+18h] [ebp-Ch] BYREF
 
-  unsigned int *MapClass_FindPlacementCells_Alt(char *this, unsigned int *a2, int a3)
+  v4 = *(unsigned int *)((*(int (**)(char *))(*(unsigned int *)this + 132))(this) + 1660); /*0x7035a1*/
   if ( v4 == 4 ) /*0x7035aa*/
     v4 = 1; /*0x7035ac*/
   if ( aP2 ) /*0x7035b9*/
     v5 = (unsigned int *)(*(int (**)(IUnknown *, unsigned char *))(aP2->field_0 + 72))(aP2, v13); /*0x7035c2*/
   else
-    unsigned int *MapClass_FindPlacementCells_Alt(char *this, unsigned int *a2, int a3)
-  IDA_LOWORD(aP2) = *v5 / 256; /*0x7035d5*/
-  IDA_HIWORD(aP2) = v5[1] / 256; /*0x7035e9*/
+    v5 = (unsigned int *)(*(int (**)(char *, unsigned char *))(*(unsigned int *)this + 72))(this, v13); /*0x7035fd*/
+  LOWORD(aP2) = *v5 / 256; /*0x7035d5*/
+  HIWORD(aP2) = v5[1] / 256; /*0x7035e9*/
   v6 = *(unsigned int *)this; /*0x70362d*/
   v11 = aP2; /*0x70362f*/
   eax6 = (*(int (**)(char *))(v6 + 132))(this); /*0x703635*/
@@ -4181,26 +4181,26 @@ unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2)
   }
   else
   {
-    IDA_LOBYTE(eax6) = *((unsigned char *)this + 140); /*0x703646*/
-    TileIndex = MapClass::GetTileIndex(&g_abs_87F7E8, (IUnknown *)&v11, (IUnknown *)v7, (IUnknown *)eax6); /*0x703658*/
+    LOBYTE(eax6) = *((unsigned char *)this + 140); /*0x703646*/
+    TileIndex = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (IUnknown *)&v11, (IUnknown *)v7, (IUnknown *)eax6); /*0x703658*/
   }
   aP2 = 0; /*0x703663*/
   aP1->field_0 = *LayerClass::Pathfinding_Find( /*0x7036aa*/
-                    &g_abs_87F7E8,
-                    (uint8_t)*((unsigned char *)this + 140),
+                    &MEMORY[0x87F7E8],
+                    (unsigned __int8)*((unsigned char *)this + 140),
                     &v12,
-                    (int16_t *)&v11,
+                    (__int16 *)&v11,
                     v4,
                     TileIndex,
                     (int)v7,
-                    (uint8_t)*((unsigned char *)this + 140),
+                    (unsigned __int8)*((unsigned char *)this + 140),
                     1,
                     1,
                     0,
                     0,
                     0,
                     1,
-                    (int16_t *)&aP2,
+                    (__int16 *)&aP2,
                     0,
                     0);
   return &aP1->field_0; /*0x7036a7*/
@@ -4293,19 +4293,19 @@ int MapClass::ProcessVisibilityFlags()
   int k; // ebp
   int m; // edi
   unsigned int *v8; // eax
-  int16_t v10; // [esp+10h] [ebp-8h] BYREF
-  int16_t v11; // [esp+12h] [ebp-6h]
-  int16_t v12[2]; // [esp+14h] [ebp-4h] BYREF
+  __int16 v10; // [esp+10h] [ebp-8h] BYREF
+  __int16 v11; // [esp+12h] [ebp-6h]
+  __int16 v12[2]; // [esp+14h] [ebp-4h] BYREF
 
   for ( i = 0; i < 512; ++i ) /*0x4acac9*/
   {
     for ( j = 0; (int)j < 512; j = (MouseClass *)((char *)j + 1) ) /*0x4acad0*/
     {
-      v10 = (int16_t)j; /*0x4acad9*/
+      v10 = (__int16)j; /*0x4acad9*/
       v11 = i; /*0x4acade*/
       if ( LayerClass::CoordinatesLegal(this, (IUnknown *)&v10) ) /*0x4acae3*/
       {
-        v12[0] = (int16_t)j; /*0x4acaf0*/
+        v12[0] = (__int16)j; /*0x4acaf0*/
         v12[1] = i; /*0x4acaf8*/
         v4 = CellCoord::To_CellObj(this, v12); /*0x4acafd*/
         v5 = v4[75]; /*0x4acb02*/
@@ -4330,7 +4330,7 @@ int MapClass::ProcessVisibilityFlags()
     }
   }
   HouseClass::RevealShroudForAllies(0, 0); /*0x4acb9c*/
-  int MapClass::ProcessVisibilityFlags(MapClass *this)
+  return (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 224))(this, 1); /*0x4acbaa*/
 
 }
 // 0x4ACBC0
@@ -4768,7 +4768,7 @@ char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
     if ( a3 ) /*0x589cfc*/
       v4 = a3; /*0x589d12*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x589d0e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x589d0e*/
     *((unsigned char *)this + 12) = 1; /*0x589d16*/
     if ( v4 ) /*0x589d1a*/
     {
@@ -4781,7 +4781,7 @@ char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
           ++i; /*0x589d3e*/
         if ( *((unsigned char *)this + 13) ) /*0x589d4b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x589d56*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x589d56*/
           *((unsigned int *)this + 1) = 0; /*0x589d5e*/
         }
       }
@@ -4797,7 +4797,7 @@ char MapClass::InitCellVe_vt02(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x589d82*/
     return 1; /*0x589d88*/
   }
 

@@ -17,19 +17,19 @@ bool __fastcall GUID::Compare( int a2)
   int v5; // ecx
   unsigned short *v6; // esi
   bool v7; // zf
-  unsigned short * v8;
+  int v8; // ecx
   unsigned short *v9; // edi
   unsigned short *v10; // esi
   bool v11; // zf
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/
     return *((unsigned int *)this + 1) == *(unsigned int *)(a2 + 4) && *(unsigned short *)this == *(unsigned short *)a2; /*0x53ef1b*/
-  if ( (*this || *(this + 1) || *(this + 2) || *(this + 3)) /*0x53eed8*/
+  if ( (*this || *((unsigned char *)this + 1) || *((unsigned char *)this + 2) || *((unsigned char *)this + 3)) /*0x53eed8*/
     && (*(unsigned char *)a2 || *(unsigned char *)(a2 + 1) || *(unsigned char *)(a2 + 2) || *(unsigned char *)(a2 + 3)) )
   {
-    v8 = (int)((unsigned short *)(3));
+    v8 = 3; /*0x53eef8*/
     v9 = (unsigned short *)(a2 + 4); /*0x53eefd*/
-    v10 = this + 4; /*0x53ef00*/
+    v10 = (unsigned char *)this + 4; /*0x53ef00*/
     v11 = 1; /*0x53ef03*/
     do /*0x53ef05*/
     {
@@ -43,7 +43,7 @@ bool __fastcall GUID::Compare( int a2)
   }
   v4 = (unsigned short *)(a2 + 4); /*0x53eedf*/
   v5 = 3; /*0x53eee2*/
-  v6 = this + 4; /*0x53eee7*/
+  v6 = (unsigned char *)this + 4; /*0x53eee7*/
   v7 = 1; /*0x53eeea*/
   do /*0x53eeec*/
   {

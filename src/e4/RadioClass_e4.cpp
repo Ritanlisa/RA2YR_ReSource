@@ -45,7 +45,7 @@ int RadioClass::ProcessCmd()
 {
 
   if ( !*((unsigned char *)this + 129) ) /*0x65aa83*/
-    if ( !this->? ) (*((void (**)(RadioClass *, int))this->MissionClass + 160))(this, 3);;
+    (*(void (**)(#374 *, int))(*(unsigned int *)this + 640))(this, 3); /*0x65aa91*/
   return ObjectClass::Undeploy(this); /*0x65aa9e*/
 
 }
@@ -97,16 +97,16 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
 
   v3 = aP1; /*0x65ab81*/
   v4 = aP2; /*0x65ab87*/
-  result = BuildingClass::SaveLoad_Register((void *)this); /*0x65ab8d*/
+  result = BuildingClass::SaveLoad_Register((#374 *)this); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {
-    p_attachedTag = (void **)(&v3[1].attachedTag);
+    p_attachedTag = &v3[1].attachedTag; /*0x65ab9a*/
     if ( v3 != (ObjectClass *)-224 ) /*0x65aba2*/
     {
       v3[1].attachedBomb = 0; /*0x65aba4*/
       v3[1].ambientSoundController[0] = 0; /*0x65abab*/
-      IDA_LOBYTE(v3[1].ambientSoundController[1]) = 1; /*0x65abb2*/
-      IDA_BYTE1(v3[1].ambientSoundController[1]) = 0; /*0x65abb6*/
+      LOBYTE(v3[1].ambientSoundController[1]) = 1; /*0x65abb2*/
+      BYTE1(v3[1].ambientSoundController[1]) = 0; /*0x65abb6*/
       *p_attachedTag = &vt_VectorClass_TechnoClass; /*0x65abba*/
     }
     result = (*(int (**)(ObjectClass *, ObjectClass **, int, unsigned int))(*(unsigned int *)v4->__pad_0 + 12))( /*0x65abcc*/
@@ -126,7 +126,7 @@ LABEL_8:
         if ( (int)v8 > 0 ) /*0x65ac18*/
         {
           do /*0x65ac33*/
-            ObjectPtr::RegisterForTracking((int)&g_abs_B077F8, (int *)v3[1].attachedBomb + v9++); /*0x65ac29*/
+            ObjectPtr::RegisterForTracking((int)&MEMORY[0xB077F8].__pad_14B0[13416], (int *)v3[1].attachedBomb + v9++); /*0x65ac29*/
           while ( v9 < (int)aP2 ); /*0x65ac33*/
         }
         return 0; /*0x65ac35*/

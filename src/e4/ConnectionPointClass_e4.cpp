@@ -126,7 +126,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4a12ae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a12ae*/
     *((unsigned char *)this + 12) = 1; /*0x4a12b6*/
     if ( v4 ) /*0x4a12ba*/
     {
@@ -139,7 +139,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
           ++i; /*0x4a12de*/
         if ( *((unsigned char *)this + 13) ) /*0x4a12eb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4a12f6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a12f6*/
           *((unsigned int *)this + 1) = 0; /*0x4a12fe*/
         }
       }
@@ -155,7 +155,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4a1322*/
     return 1; /*0x4a1328*/
   }
 

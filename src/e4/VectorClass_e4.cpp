@@ -276,7 +276,7 @@ LABEL_9:
       }
     }
   }
-  ( this, 3, *(unsigned int *)this->radioLinks[1])
+  (*(void (**)(#377 *, int, unsigned int))(*(unsigned int *)this + 632))(this, 3, **((unsigned int **)this + 57)); /*0x65aa1f*/
   v12 = 0; /*0x65aa34*/
 LABEL_20:
   v15 = *v1; /*0x65aa36*/
@@ -326,7 +326,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v4 = RA2_OPNEW(4 * a2); /*0x42f716*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x42f716*/
       if ( v4 ) /*0x42f720*/
         v5 = v4; /*0x42f725*/
       else
@@ -344,7 +344,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
           ++i; /*0x42f764*/
         if ( *((unsigned char *)this + 13) ) /*0x42f771*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x42f77c*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x42f77c*/
           *((unsigned int *)this + 1) = 0; /*0x42f784*/
         }
       }
@@ -360,7 +360,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_VCell *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x42f7a8*/
     return 1; /*0x42f7ae*/
   }
 
@@ -383,18 +383,18 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   int v14; // edx
   int v15; // eax
 
-  if ( a3 ) /*0x4e084c*/
+  if ( a2 ) /*0x4e084c*/
   {
     v4 = a3; /*0x4e0852*/
     *((unsigned char *)this + 12) = 0; /*0x4e0856*/
     if ( a3 ) /*0x4e085c*/
     {
-      *a3 = a3; /*0x4e0897*/
+      *a3 = a2; /*0x4e0897*/
       v6 = a3 + 1; /*0x4e089b*/
-      if ( a3 - 1 >= 0 ) /*0x4e089e*/
+      if ( a2 - 1 >= 0 ) /*0x4e089e*/
       {
         v9 = a3 + 2; /*0x4e08a0*/
-        v10 = a3; /*0x4e08a3*/
+        v10 = a2; /*0x4e08a3*/
         do /*0x4e08ae*/
         {
           *v9 = 0; /*0x4e08a4*/
@@ -406,15 +406,15 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     }
     else
     {
-      v5 = (int *)RA2_OPNEW(8 * a3 + 4); /*0x4e0866*/
+      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0866*/
       if ( v5 ) /*0x4e0870*/
       {
-        *v5 = a3; /*0x4e0875*/
+        *v5 = a2; /*0x4e0875*/
         v6 = v5 + 1; /*0x4e0879*/
-        if ( a3 - 1 >= 0 ) /*0x4e087c*/
+        if ( a2 - 1 >= 0 ) /*0x4e087c*/
         {
           v7 = v5 + 2; /*0x4e087e*/
-          v8 = a3; /*0x4e0881*/
+          v8 = a2; /*0x4e0881*/
           do /*0x4e088c*/
           {
             *v7 = 0; /*0x4e0882*/
@@ -435,8 +435,8 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       if ( *((unsigned int *)this + 1) ) /*0x4e08c1*/
       {
         v12 = *((unsigned int *)this + 2); /*0x4e08c8*/
-        if ( a3 < v12 ) /*0x4e08cd*/
-          v12 = a3; /*0x4e08cf*/
+        if ( a2 < v12 ) /*0x4e08cd*/
+          v12 = a2; /*0x4e08cf*/
         v13 = 0; /*0x4e08d1*/
         if ( v12 > 0 ) /*0x4e08d5*/
         {
@@ -454,12 +454,12 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         {
           v15 = *((unsigned int *)this + 1); /*0x4e08fa*/
           if ( v15 ) /*0x4e08ff*/
-            RA2_OPDEL((void *)(v15 - 4)); /*0x4e0909*/
+            __3_YAXPAX_Z((void *)(v15 - 4)); /*0x4e0909*/
           *((unsigned int *)this + 1) = 0; /*0x4e0911*/
         }
       }
       *((unsigned int *)this + 1) = v6; /*0x4e091a*/
-      *((unsigned int *)this + 2) = a3; /*0x4e0922*/
+      *((unsigned int *)this + 2) = a2; /*0x4e0922*/
       *((unsigned char *)this + 13) = v4 == 0; /*0x4e0925*/
       return 1; /*0x4e092b*/
     }
@@ -470,7 +470,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   }
   else
   {
-    (*(void (**)(_VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e0935*/
     return 1; /*0x4e093b*/
   }
 
@@ -495,18 +495,18 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   void *v15; // ebp
   int v16; // eax
 
-  if ( a3 ) /*0x4e0b1c*/
+  if ( a2 ) /*0x4e0b1c*/
   {
     v4 = a3; /*0x4e0b22*/
     *((unsigned char *)this + 12) = 0; /*0x4e0b26*/
     if ( a3 ) /*0x4e0b2c*/
     {
-      *a3 = a3; /*0x4e0b67*/
+      *a3 = a2; /*0x4e0b67*/
       v6 = a3 + 1; /*0x4e0b6c*/
-      if ( a3 - 1 >= 0 ) /*0x4e0b6f*/
+      if ( a2 - 1 >= 0 ) /*0x4e0b6f*/
       {
         v9 = a3 + 2; /*0x4e0b71*/
-        v10 = a3; /*0x4e0b74*/
+        v10 = a2; /*0x4e0b74*/
         do /*0x4e0b7f*/
         {
           *v9 = 0; /*0x4e0b75*/
@@ -518,15 +518,15 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     }
     else
     {
-      v5 = (int *)RA2_OPNEW(8 * a3 + 4); /*0x4e0b36*/
+      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0b36*/
       if ( v5 ) /*0x4e0b40*/
       {
-        *v5 = a3; /*0x4e0b45*/
+        *v5 = a2; /*0x4e0b45*/
         v6 = v5 + 1; /*0x4e0b49*/
-        if ( a3 - 1 >= 0 ) /*0x4e0b4c*/
+        if ( a2 - 1 >= 0 ) /*0x4e0b4c*/
         {
           v7 = v5 + 2; /*0x4e0b4e*/
-          v8 = a3; /*0x4e0b51*/
+          v8 = a2; /*0x4e0b51*/
           do /*0x4e0b5c*/
           {
             *v7 = 0; /*0x4e0b52*/
@@ -547,8 +547,8 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     if ( *((unsigned int *)this + 1) ) /*0x4e0b8d*/
     {
       v11 = *((unsigned int *)this + 2); /*0x4e0b94*/
-      if ( a3 < v11 ) /*0x4e0b99*/
-        v11 = a3; /*0x4e0b9b*/
+      if ( a2 < v11 ) /*0x4e0b99*/
+        v11 = a2; /*0x4e0b9b*/
       v12 = 0; /*0x4e0b9d*/
       if ( v11 > 0 ) /*0x4e0ba1*/
       {
@@ -569,19 +569,19 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         {
           v15 = (void *)(v14 - 4); /*0x4e0bd0*/
           Array::ForEachReverse(v14, 8, *(unsigned int *)(v14 - 4), (int (*)(int))nullsub_138); /*0x4e0bdc*/
-          RA2_OPDEL(v15); /*0x4e0be2*/
+          __3_YAXPAX_Z(v15); /*0x4e0be2*/
           v4 = a3; /*0x4e0be7*/
         }
         *((unsigned int *)this + 1) = 0; /*0x4e0bee*/
       }
     }
     *((unsigned int *)this + 1) = v6; /*0x4e0bf7*/
-    *((unsigned int *)this + 2) = a3; /*0x4e0bff*/
+    *((unsigned int *)this + 2) = a2; /*0x4e0bff*/
     *((unsigned char *)this + 13) = v4 == 0; /*0x4e0c02*/
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e0c0b*/
   }
   v16 = *((unsigned int *)this + 2); /*0x4e0c0e*/
   if ( v16 < *((unsigned int *)this + 4) ) /*0x4e0c16*/
@@ -626,7 +626,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
     if ( a3 ) /*0x5ad028*/
       v4 = a3; /*0x5ad03e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5ad03a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5ad03a*/
     *((unsigned char *)this + 12) = 1; /*0x5ad042*/
     if ( !v4 ) /*0x5ad046*/
       return 0; /*0x5ad0ba*/
@@ -639,7 +639,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
         ++i; /*0x5ad061*/
       if ( *((unsigned char *)this + 13) ) /*0x5ad06e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5ad079*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ad079*/
         *((unsigned int *)this + 1) = 0; /*0x5ad081*/
       }
     }
@@ -649,7 +649,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVCellClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ad09e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5ad0a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5ad0a9*/
@@ -1045,7 +1045,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2
     if ( a3 ) /*0x50f53c*/
       v4 = a3; /*0x50f552*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x50f54e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f54e*/
     *((unsigned char *)this + 12) = 1; /*0x50f556*/
     if ( v4 ) /*0x50f55a*/
     {
@@ -1058,7 +1058,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2
           ++i; /*0x50f57e*/
         if ( *((unsigned char *)this + 13) ) /*0x50f58b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x50f596*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f596*/
           *((unsigned int *)this + 1) = 0; /*0x50f59e*/
         }
       }
@@ -1074,7 +1074,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUBuildChoiceClass_HouseClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f5c2*/
     return 1; /*0x50f5c8*/
   }
 
@@ -1096,7 +1096,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
     if ( a3 ) /*0x50f678*/
       v4 = a3; /*0x50f68e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x50f68a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f68a*/
     *((unsigned char *)this + 12) = 1; /*0x50f692*/
     if ( !v4 ) /*0x50f696*/
       return 0; /*0x50f70a*/
@@ -1109,7 +1109,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
         ++i; /*0x50f6b1*/
       if ( *((unsigned char *)this + 13) ) /*0x50f6be*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x50f6c9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f6c9*/
         *((unsigned int *)this + 1) = 0; /*0x50f6d1*/
       }
     }
@@ -1119,7 +1119,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
   }
   else
   {
-    (*(void (**)(VectorClass_ptr_BuildChoiceClass_int_ouseClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f6ee*/
   }
   v7 = *((unsigned int *)this + 2); /*0x50f6f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x50f6f9*/
@@ -1168,7 +1168,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
     }
     else
     {
-      v6 = (AbstractClass *)RA2_OPNEW(260 * (unsigned int)aP1); /*0x628921*/
+      v6 = (AbstractClass *)__2_YAPAXI_Z(260 * (unsigned int)aP1); /*0x628921*/
       if ( v6 ) /*0x628928*/
       {
         v7 = v6; /*0x62892d*/
@@ -1217,7 +1217,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
         }
         if ( *((unsigned char *)this + 13) ) /*0x6289ea*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6289f5*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6289f5*/
           *((unsigned int *)this + 1) = 0; /*0x6289fd*/
         }
       }
@@ -1233,7 +1233,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
   }
   else
   {
-    (*(void (**)(_VectorClass_U_HashObject_VHashString_PAVSchemeNode *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x628a2d*/
     return 1; /*0x628a33*/
   }
 
@@ -1296,7 +1296,7 @@ AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned 
     if ( a3 ) /*0x63e0ac*/
       v4 = a3; /*0x63e0c2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63e0be*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e0be*/
     *((unsigned char *)this + 12) = 1; /*0x63e0c6*/
     if ( v4 ) /*0x63e0ca*/
     {
@@ -1309,7 +1309,7 @@ AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned 
           ++i; /*0x63e0ee*/
         if ( *((unsigned char *)this + 13) ) /*0x63e0fb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x63e106*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e106*/
           *((unsigned int *)this + 1) = 0; /*0x63e10e*/
         }
       }
@@ -1325,7 +1325,7 @@ AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned 
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVPlanningBranchClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e132*/
     return 1; /*0x63e138*/
   }
 
@@ -1349,7 +1349,7 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
   v3 = a2; /*0x76b8c3*/
   if ( !a2 ) /*0x76b8cd*/
   {
-    (*(void (**)(_VectorClass_V_rc_ptr_VWDTTerritory *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x76b9cd*/
     return 1; /*0x76b9d3*/
   }
   *((unsigned char *)this + 12) = 0; /*0x76b8d7*/
@@ -1373,7 +1373,7 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
   }
   else
   {
-    v5 = RA2_OPNEW(8 * a2 + 4); /*0x76b8e7*/
+    v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x76b8e7*/
     if ( !v5 ) /*0x76b8f1*/
     {
       v8 = 0; /*0x76b91f*/
@@ -1439,7 +1439,7 @@ AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d8488*/
       v4 = a3; /*0x5d849e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d849a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d849a*/
     *((unsigned char *)this + 12) = 1; /*0x5d84a2*/
     if ( !v4 ) /*0x5d84a6*/
       return 0; /*0x5d851a*/
@@ -1452,7 +1452,7 @@ AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
         ++i; /*0x5d84c1*/
       if ( *((unsigned char *)this + 13) ) /*0x5d84ce*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d84d9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d84d9*/
         *((unsigned int *)this + 1) = 0; /*0x5d84e1*/
       }
     }
@@ -1462,7 +1462,7 @@ AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVMultiplayerTeam *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d84fe*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5d8501*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d8509*/
@@ -1487,7 +1487,7 @@ AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3
     if ( a3 ) /*0x5d8748*/
       v4 = a3; /*0x5d875e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d875a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d875a*/
     *((unsigned char *)this + 12) = 1; /*0x5d8762*/
     if ( !v4 ) /*0x5d8766*/
       return 0; /*0x5d87da*/
@@ -1500,7 +1500,7 @@ AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3
         ++i; /*0x5d8781*/
       if ( *((unsigned char *)this + 13) ) /*0x5d878e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d8799*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d8799*/
         *((unsigned int *)this + 1) = 0; /*0x5d87a1*/
       }
     }
@@ -1510,7 +1510,7 @@ AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVMultiplayerGameMode *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d87be*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5d87c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d87c9*/
@@ -1534,7 +1534,7 @@ AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3
     if ( a3 ) /*0x5d85ac*/
       v4 = a3; /*0x5d85c2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d85be*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d85be*/
     *((unsigned char *)this + 12) = 1; /*0x5d85c6*/
     if ( v4 ) /*0x5d85ca*/
     {
@@ -1547,7 +1547,7 @@ AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3
           ++i; /*0x5d85ee*/
         if ( *((unsigned char *)this + 13) ) /*0x5d85fb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d8606*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d8606*/
           *((unsigned int *)this + 1) = 0; /*0x5d860e*/
         }
       }
@@ -1563,7 +1563,7 @@ AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMultiplayerGameMode *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d8632*/
     return 1; /*0x5d8638*/
   }
 
@@ -1585,7 +1585,7 @@ AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e9858*/
       v4 = a3; /*0x4e986e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e986a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e986a*/
     *((unsigned char *)this + 12) = 1; /*0x4e9872*/
     if ( !v4 ) /*0x4e9876*/
       return 0; /*0x4e98ea*/
@@ -1598,7 +1598,7 @@ AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
         ++i; /*0x4e9891*/
       if ( *((unsigned char *)this + 13) ) /*0x4e989e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4e98a9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e98a9*/
         *((unsigned int *)this + 1) = 0; /*0x4e98b1*/
       }
     }
@@ -1608,7 +1608,7 @@ AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVSuperClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e98ce*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4e98d1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4e98d9*/
@@ -1637,7 +1637,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
   v3 = aP1; /*0x6dc855*/
   if ( !aP1 ) /*0x6dc85d*/
   {
-    (*(void (**)(VectorClass_UDirtyAreaStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6dc94a*/
     goto LABEL_26; /*0x6dc94a*/
   }
   v5 = a2; /*0x6dc863*/
@@ -1659,7 +1659,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
     }
     goto LABEL_13; /*0x6dc8d8*/
   }
-  v5 = (char *)RA2_OPNEW(20 * (unsigned int)aP1); /*0x6dc87b*/
+  v5 = (char *)__2_YAPAXI_Z(20 * (unsigned int)aP1); /*0x6dc87b*/
   v15 = v5; /*0x6dc882*/
   if ( v5 ) /*0x6dc886*/
   {
@@ -1706,7 +1706,7 @@ LABEL_14:
     }
     if ( *((unsigned char *)this + 13) ) /*0x6dc915*/
     {
-      RA2_OPDEL(*((void **)this + 1)); /*0x6dc920*/
+      __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dc920*/
       *((unsigned int *)this + 1) = 0; /*0x6dc928*/
     }
   }
@@ -1740,7 +1740,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
   v3 = a2; /*0x6b44a2*/
   if ( !a2 ) /*0x6b44ae*/
   {
-    (*(void (**)(_VectorClass_UUndoInfoStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b4591*/
     return 1; /*0x6b4597*/
   }
   v5 = a3; /*0x6b44b4*/
@@ -1764,7 +1764,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
   }
   else
   {
-    v5 = RA2_OPNEW(12 * a2); /*0x6b44c7*/
+    v5 = __2_YAPAXI_Z(12 * a2); /*0x6b44c7*/
     if ( !v5 ) /*0x6b44d1*/
     {
       v8 = 0; /*0x6b44ef*/
@@ -1813,7 +1813,7 @@ LABEL_14:
     }
     if ( *((unsigned char *)this + 13) ) /*0x6b455c*/
     {
-      RA2_OPDEL(*((void **)this + 1)); /*0x6b4565*/
+      __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b4565*/
       *((unsigned int *)this + 1) = 0; /*0x6b456d*/
     }
   }
@@ -1844,7 +1844,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
   v3 = a2; /*0x6b4652*/
   if ( !a2 ) /*0x6b465e*/
   {
-    (*(void (**)(_DynamicVectorClass_UUndoInfoStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b4731*/
     goto LABEL_26; /*0x6b4731*/
   }
   v5 = a3; /*0x6b4664*/
@@ -1867,7 +1867,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
     }
     goto LABEL_13; /*0x6b46bd*/
   }
-  v5 = RA2_OPNEW(12 * a2); /*0x6b4677*/
+  v5 = __2_YAPAXI_Z(12 * a2); /*0x6b4677*/
   if ( v5 ) /*0x6b4681*/
   {
     v6 = v5; /*0x6b4686*/
@@ -1916,7 +1916,7 @@ LABEL_14:
     }
     if ( *((unsigned char *)this + 13) ) /*0x6b4703*/
     {
-      RA2_OPDEL(*((void **)this + 1)); /*0x6b470c*/
+      __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b470c*/
       *((unsigned int *)this + 1) = 0; /*0x6b4714*/
     }
   }
@@ -2014,7 +2014,7 @@ char VectorClass_flat::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(8 * a2); /*0x40b1a7*/
+      v6 = (char *)__2_YAPAXI_Z(8 * a2); /*0x40b1a7*/
       if ( v6 ) /*0x40b1b1*/
       {
         v7 = v6; /*0x40b1b6*/
@@ -2060,7 +2060,7 @@ char VectorClass_flat::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x40b22f*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40b238*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40b238*/
           *((unsigned int *)this + 1) = 0; /*0x40b240*/
         }
       }
@@ -2076,7 +2076,7 @@ char VectorClass_flat::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(void *))(*(unsigned int *)this + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40b264*/
     return 1; /*0x40b26a*/
   }
 
@@ -2397,7 +2397,7 @@ char VectorClass_cptr_CommandClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40bf0c*/
       v4 = a3; /*0x40bf22*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40bf1e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40bf1e*/
     *((unsigned char *)this + 12) = 1; /*0x40bf26*/
     if ( v4 ) /*0x40bf2a*/
     {
@@ -2410,7 +2410,7 @@ char VectorClass_cptr_CommandClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40bf4e*/
         if ( *((unsigned char *)this + 13) ) /*0x40bf5b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40bf66*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40bf66*/
           *((unsigned int *)this + 1) = 0; /*0x40bf6e*/
         }
       }
@@ -2426,7 +2426,7 @@ char VectorClass_cptr_CommandClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40bf92*/
     return 1; /*0x40bf98*/
   }
 
@@ -2563,7 +2563,7 @@ char VectorClass_ptr_LightConvertClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40c2ec*/
       v4 = a3; /*0x40c302*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40c2fe*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40c2fe*/
     *((unsigned char *)this + 12) = 1; /*0x40c306*/
     if ( v4 ) /*0x40c30a*/
     {
@@ -2576,7 +2576,7 @@ char VectorClass_ptr_LightConvertClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40c32e*/
         if ( *((unsigned char *)this + 13) ) /*0x40c33b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40c346*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40c346*/
           *((unsigned int *)this + 1) = 0; /*0x40c34e*/
         }
       }
@@ -2592,7 +2592,7 @@ char VectorClass_ptr_LightConvertClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVLightConvertClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40c372*/
     return 1; /*0x40c378*/
   }
 
@@ -2811,7 +2811,7 @@ char VectorClass_ptr_IsometricTileClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40c8dc*/
       v4 = a3; /*0x40c8f2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40c8ee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40c8ee*/
     *((unsigned char *)this + 12) = 1; /*0x40c8f6*/
     if ( v4 ) /*0x40c8fa*/
     {
@@ -2824,7 +2824,7 @@ char VectorClass_ptr_IsometricTileClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40c91e*/
         if ( *((unsigned char *)this + 13) ) /*0x40c92b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40c936*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40c936*/
           *((unsigned int *)this + 1) = 0; /*0x40c93e*/
         }
       }
@@ -2840,7 +2840,7 @@ char VectorClass_ptr_IsometricTileClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVIsometricTileClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40c962*/
     return 1; /*0x40c968*/
   }
 
@@ -2917,7 +2917,7 @@ char VectorClass_ptr_IsometricTileClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40ca18*/
       v4 = a3; /*0x40ca2e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40ca2a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40ca2a*/
     *((unsigned char *)this + 12) = 1; /*0x40ca32*/
     if ( !v4 ) /*0x40ca36*/
       return 0; /*0x40caaa*/
@@ -2930,7 +2930,7 @@ char VectorClass_ptr_IsometricTileClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40ca51*/
       if ( *((unsigned char *)this + 13) ) /*0x40ca5e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x40ca69*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40ca69*/
         *((unsigned int *)this + 1) = 0; /*0x40ca71*/
       }
     }
@@ -2940,7 +2940,7 @@ char VectorClass_ptr_IsometricTileClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVIsometricTileClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40ca8e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x40ca91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40ca99*/
@@ -3171,7 +3171,7 @@ char VectorClass_ptr_MixFileClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40d5fc*/
       v4 = a3; /*0x40d612*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40d60e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40d60e*/
     *((unsigned char *)this + 12) = 1; /*0x40d616*/
     if ( v4 ) /*0x40d61a*/
     {
@@ -3184,7 +3184,7 @@ char VectorClass_ptr_MixFileClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40d63e*/
         if ( *((unsigned char *)this + 13) ) /*0x40d64b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40d656*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40d656*/
           *((unsigned int *)this + 1) = 0; /*0x40d65e*/
         }
       }
@@ -3200,7 +3200,7 @@ char VectorClass_ptr_MixFileClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMixFileClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40d682*/
     return 1; /*0x40d688*/
   }
 
@@ -3373,7 +3373,7 @@ char VectorClass_ptr_ScriptClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40e8ac*/
       v4 = a3; /*0x40e8c2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40e8be*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40e8be*/
     *((unsigned char *)this + 12) = 1; /*0x40e8c6*/
     if ( v4 ) /*0x40e8ca*/
     {
@@ -3386,7 +3386,7 @@ char VectorClass_ptr_ScriptClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40e8ee*/
         if ( *((unsigned char *)this + 13) ) /*0x40e8fb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40e906*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40e906*/
           *((unsigned int *)this + 1) = 0; /*0x40e90e*/
         }
       }
@@ -3402,7 +3402,7 @@ char VectorClass_ptr_ScriptClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVScriptClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40e932*/
     return 1; /*0x40e938*/
   }
 
@@ -3479,7 +3479,7 @@ char VectorClass_ptr_ScriptClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40e9e8*/
       v4 = a3; /*0x40e9fe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40e9fa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40e9fa*/
     *((unsigned char *)this + 12) = 1; /*0x40ea02*/
     if ( !v4 ) /*0x40ea06*/
       return 0; /*0x40ea7a*/
@@ -3492,7 +3492,7 @@ char VectorClass_ptr_ScriptClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40ea21*/
       if ( *((unsigned char *)this + 13) ) /*0x40ea2e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x40ea39*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40ea39*/
         *((unsigned int *)this + 1) = 0; /*0x40ea41*/
       }
     }
@@ -3502,7 +3502,7 @@ char VectorClass_ptr_ScriptClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVScriptClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40ea5e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x40ea61*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40ea69*/
@@ -3670,7 +3670,7 @@ char VectorClass_ptr_VoxelAnimClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40ef7c*/
       v4 = a3; /*0x40ef92*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40ef8e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40ef8e*/
     *((unsigned char *)this + 12) = 1; /*0x40ef96*/
     if ( v4 ) /*0x40ef9a*/
     {
@@ -3683,7 +3683,7 @@ char VectorClass_ptr_VoxelAnimClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40efbe*/
         if ( *((unsigned char *)this + 13) ) /*0x40efcb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40efd6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40efd6*/
           *((unsigned int *)this + 1) = 0; /*0x40efde*/
         }
       }
@@ -3699,7 +3699,7 @@ char VectorClass_ptr_VoxelAnimClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVVoxelAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40f002*/
     return 1; /*0x40f008*/
   }
 
@@ -3776,7 +3776,7 @@ char VectorClass_ptr_VoxelAnimClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40f0b8*/
       v4 = a3; /*0x40f0ce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40f0ca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40f0ca*/
     *((unsigned char *)this + 12) = 1; /*0x40f0d2*/
     if ( !v4 ) /*0x40f0d6*/
       return 0; /*0x40f14a*/
@@ -3789,7 +3789,7 @@ char VectorClass_ptr_VoxelAnimClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40f0f1*/
       if ( *((unsigned char *)this + 13) ) /*0x40f0fe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x40f109*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40f109*/
         *((unsigned int *)this + 1) = 0; /*0x40f111*/
       }
     }
@@ -3799,7 +3799,7 @@ char VectorClass_ptr_VoxelAnimClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVVoxelAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40f12e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x40f131*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40f139*/
@@ -3967,7 +3967,7 @@ char VectorClass_ptr_WarheadTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40f69c*/
       v4 = a3; /*0x40f6b2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40f6ae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40f6ae*/
     *((unsigned char *)this + 12) = 1; /*0x40f6b6*/
     if ( v4 ) /*0x40f6ba*/
     {
@@ -3980,7 +3980,7 @@ char VectorClass_ptr_WarheadTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40f6de*/
         if ( *((unsigned char *)this + 13) ) /*0x40f6eb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40f6f6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40f6f6*/
           *((unsigned int *)this + 1) = 0; /*0x40f6fe*/
         }
       }
@@ -3996,7 +3996,7 @@ char VectorClass_ptr_WarheadTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVWarheadTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40f722*/
     return 1; /*0x40f728*/
   }
 
@@ -4073,7 +4073,7 @@ char VectorClass_ptr_WarheadTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40f7d8*/
       v4 = a3; /*0x40f7ee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40f7ea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40f7ea*/
     *((unsigned char *)this + 12) = 1; /*0x40f7f2*/
     if ( !v4 ) /*0x40f7f6*/
       return 0; /*0x40f86a*/
@@ -4086,7 +4086,7 @@ char VectorClass_ptr_WarheadTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40f811*/
       if ( *((unsigned char *)this + 13) ) /*0x40f81e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x40f829*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40f829*/
         *((unsigned int *)this + 1) = 0; /*0x40f831*/
       }
     }
@@ -4096,7 +4096,7 @@ char VectorClass_ptr_WarheadTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVWarheadTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40f84e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x40f851*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40f859*/
@@ -4264,7 +4264,7 @@ char VectorClass_ptr_WeaponTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40fc6c*/
       v4 = a3; /*0x40fc82*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40fc7e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40fc7e*/
     *((unsigned char *)this + 12) = 1; /*0x40fc86*/
     if ( v4 ) /*0x40fc8a*/
     {
@@ -4277,7 +4277,7 @@ char VectorClass_ptr_WeaponTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40fcae*/
         if ( *((unsigned char *)this + 13) ) /*0x40fcbb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x40fcc6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40fcc6*/
           *((unsigned int *)this + 1) = 0; /*0x40fcce*/
         }
       }
@@ -4293,7 +4293,7 @@ char VectorClass_ptr_WeaponTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVWeaponTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40fcf2*/
     return 1; /*0x40fcf8*/
   }
 
@@ -4370,7 +4370,7 @@ char VectorClass_ptr_WeaponTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40fda8*/
       v4 = a3; /*0x40fdbe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x40fdba*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x40fdba*/
     *((unsigned char *)this + 12) = 1; /*0x40fdc2*/
     if ( !v4 ) /*0x40fdc6*/
       return 0; /*0x40fe3a*/
@@ -4383,7 +4383,7 @@ char VectorClass_ptr_WeaponTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40fde1*/
       if ( *((unsigned char *)this + 13) ) /*0x40fdee*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x40fdf9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40fdf9*/
         *((unsigned int *)this + 1) = 0; /*0x40fe01*/
       }
     }
@@ -4393,7 +4393,7 @@ char VectorClass_ptr_WeaponTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVWeaponTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x40fe1e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x40fe21*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x40fe29*/
@@ -4561,7 +4561,7 @@ char VectorClass_ptr_AirstrikeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x41de9c*/
       v4 = a3; /*0x41deb2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x41deae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x41deae*/
     *((unsigned char *)this + 12) = 1; /*0x41deb6*/
     if ( v4 ) /*0x41deba*/
     {
@@ -4574,7 +4574,7 @@ char VectorClass_ptr_AirstrikeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x41dede*/
         if ( *((unsigned char *)this + 13) ) /*0x41deeb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x41def6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x41def6*/
           *((unsigned int *)this + 1) = 0; /*0x41defe*/
         }
       }
@@ -4590,7 +4590,7 @@ char VectorClass_ptr_AirstrikeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAirstrikeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x41df22*/
     return 1; /*0x41df28*/
   }
 
@@ -4667,7 +4667,7 @@ char VectorClass_ptr_AirstrikeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x41dfd8*/
       v4 = a3; /*0x41dfee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x41dfea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x41dfea*/
     *((unsigned char *)this + 12) = 1; /*0x41dff2*/
     if ( !v4 ) /*0x41dff6*/
       return 0; /*0x41e06a*/
@@ -4680,7 +4680,7 @@ char VectorClass_ptr_AirstrikeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x41e011*/
       if ( *((unsigned char *)this + 13) ) /*0x41e01e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x41e029*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x41e029*/
         *((unsigned int *)this + 1) = 0; /*0x41e031*/
       }
     }
@@ -4690,7 +4690,7 @@ char VectorClass_ptr_AirstrikeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVAirstrikeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x41e04e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x41e051*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x41e059*/
@@ -4858,7 +4858,7 @@ char VectorClass_ptr_AlphaShapeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4218bc*/
       v4 = a3; /*0x4218d2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4218ce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4218ce*/
     *((unsigned char *)this + 12) = 1; /*0x4218d6*/
     if ( v4 ) /*0x4218da*/
     {
@@ -4871,7 +4871,7 @@ char VectorClass_ptr_AlphaShapeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4218fe*/
         if ( *((unsigned char *)this + 13) ) /*0x42190b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x421916*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x421916*/
           *((unsigned int *)this + 1) = 0; /*0x42191e*/
         }
       }
@@ -4887,7 +4887,7 @@ char VectorClass_ptr_AlphaShapeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAlphaShapeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x421942*/
     return 1; /*0x421948*/
   }
 
@@ -4964,7 +4964,7 @@ char VectorClass_ptr_AlphaShapeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4219f8*/
       v4 = a3; /*0x421a0e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x421a0a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x421a0a*/
     *((unsigned char *)this + 12) = 1; /*0x421a12*/
     if ( !v4 ) /*0x421a16*/
       return 0; /*0x421a8a*/
@@ -4977,7 +4977,7 @@ char VectorClass_ptr_AlphaShapeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x421a31*/
       if ( *((unsigned char *)this + 13) ) /*0x421a3e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x421a49*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x421a49*/
         *((unsigned int *)this + 1) = 0; /*0x421a51*/
       }
     }
@@ -4987,7 +4987,7 @@ char VectorClass_ptr_AlphaShapeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(VectorClass_ptr_AlphaShapeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x421a6e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x421a71*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x421a79*/
@@ -5155,7 +5155,7 @@ char VectorClass_ushort::Remove(int a2, unsigned short * a3)
     if ( a3 ) /*0x42d90c*/
       v4 = a3; /*0x42d91f*/
     else
-      v4 = RA2_OPNEW(2 * a2); /*0x42d91b*/
+      v4 = __2_YAPAXI_Z(2 * a2); /*0x42d91b*/
     *((unsigned char *)this + 12) = 1; /*0x42d923*/
     if ( v4 ) /*0x42d927*/
     {
@@ -5168,7 +5168,7 @@ char VectorClass_ushort::Remove(int a2, unsigned short * a3)
           ++i; /*0x42d94b*/
         if ( *((unsigned char *)this + 13) ) /*0x42d95a*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x42d965*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x42d965*/
           *((unsigned int *)this + 1) = 0; /*0x42d96d*/
         }
       }
@@ -5184,7 +5184,7 @@ char VectorClass_ushort::Remove(int a2, unsigned short * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_G *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x42d991*/
     return 1; /*0x42d997*/
   }
 
@@ -5261,7 +5261,7 @@ char VectorClass_ushort::SetCapacity(int a2, unsigned short * a3)
     if ( a3 ) /*0x42da48*/
       v4 = a3; /*0x42da5b*/
     else
-      v4 = RA2_OPNEW(2 * a2); /*0x42da57*/
+      v4 = __2_YAPAXI_Z(2 * a2); /*0x42da57*/
     *((unsigned char *)this + 12) = 1; /*0x42da5f*/
     if ( !v4 ) /*0x42da63*/
       return 0; /*0x42dad9*/
@@ -5274,7 +5274,7 @@ char VectorClass_ushort::SetCapacity(int a2, unsigned short * a3)
         ++i; /*0x42da7e*/
       if ( *((unsigned char *)this + 13) ) /*0x42da8d*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x42da98*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x42da98*/
         *((unsigned int *)this + 1) = 0; /*0x42daa0*/
       }
     }
@@ -5284,7 +5284,7 @@ char VectorClass_ushort::SetCapacity(int a2, unsigned short * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_G *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x42dabd*/
   }
   v7 = *((unsigned int *)this + 2); /*0x42dac0*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x42dac8*/
@@ -5420,7 +5420,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
     }
     else
     {
-      v4 = RA2_OPNEW(4 * a2); /*0x42f886*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x42f886*/
       if ( v4 ) /*0x42f890*/
         v5 = v4; /*0x42f895*/
       else
@@ -5438,7 +5438,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
         ++i; /*0x42f8cb*/
       if ( *((unsigned char *)this + 13) ) /*0x42f8d8*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x42f8e3*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x42f8e3*/
         *((unsigned int *)this + 1) = 0; /*0x42f8eb*/
       }
     }
@@ -5448,7 +5448,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
   }
   else
   {
-    char VectorClass_ResizeEx(void *this, int a2, unsigned int *a3)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x42f908*/
   }
   v8 = *((unsigned int *)this + 2); /*0x42f90b*/
   if ( v8 < *((unsigned int *)this + 4) ) /*0x42f913*/
@@ -5672,7 +5672,7 @@ char VectorClass_ptr_FoggedObjectClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a698*/
       v4 = a3; /*0x45a6ae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x45a6aa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x45a6aa*/
     *((unsigned char *)this + 12) = 1; /*0x45a6b2*/
     if ( !v4 ) /*0x45a6b6*/
       return 0; /*0x45a72a*/
@@ -5685,7 +5685,7 @@ char VectorClass_ptr_FoggedObjectClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x45a6d1*/
       if ( *((unsigned char *)this + 13) ) /*0x45a6de*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x45a6e9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a6e9*/
         *((unsigned int *)this + 1) = 0; /*0x45a6f1*/
       }
     }
@@ -5695,7 +5695,7 @@ char VectorClass_ptr_FoggedObjectClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVFoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a70e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x45a711*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x45a719*/
@@ -5774,7 +5774,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a7bc*/
       v4 = a3; /*0x45a7d2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x45a7ce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x45a7ce*/
     *((unsigned char *)this + 12) = 1; /*0x45a7d6*/
     if ( v4 ) /*0x45a7da*/
     {
@@ -5787,7 +5787,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
           ++i; /*0x45a7fe*/
         if ( *((unsigned char *)this + 13) ) /*0x45a80b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x45a816*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a816*/
           *((unsigned int *)this + 1) = 0; /*0x45a81e*/
         }
       }
@@ -5803,7 +5803,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVReestablish *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a842*/
     return 1; /*0x45a848*/
   }
 
@@ -5880,7 +5880,7 @@ char VectorClass_ptr_Reestablish::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a8f8*/
       v4 = a3; /*0x45a90e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x45a90a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x45a90a*/
     *((unsigned char *)this + 12) = 1; /*0x45a912*/
     if ( !v4 ) /*0x45a916*/
       return 0; /*0x45a98a*/
@@ -5893,7 +5893,7 @@ char VectorClass_ptr_Reestablish::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x45a931*/
       if ( *((unsigned char *)this + 13) ) /*0x45a93e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x45a949*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a949*/
         *((unsigned int *)this + 1) = 0; /*0x45a951*/
       }
     }
@@ -5903,7 +5903,7 @@ char VectorClass_ptr_Reestablish::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVReestablish *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a96e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x45a971*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x45a979*/
@@ -6020,7 +6020,7 @@ char VectorClass_ptr_FoggedObjectClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x45ab6c*/
       v4 = a3; /*0x45ab82*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x45ab7e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x45ab7e*/
     *((unsigned char *)this + 12) = 1; /*0x45ab86*/
     if ( v4 ) /*0x45ab8a*/
     {
@@ -6033,7 +6033,7 @@ char VectorClass_ptr_FoggedObjectClass::Release(int a2, unsigned int * a3)
           ++i; /*0x45abae*/
         if ( *((unsigned char *)this + 13) ) /*0x45abbb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x45abc6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x45abc6*/
           *((unsigned int *)this + 1) = 0; /*0x45abce*/
         }
       }
@@ -6049,7 +6049,7 @@ char VectorClass_ptr_FoggedObjectClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVFoggedObjectClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45abf2*/
     return 1; /*0x45abf8*/
   }
 
@@ -6303,7 +6303,7 @@ char VectorClass_TPoint3D_int::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(12 * a2); /*0x465e96*/
+      v6 = (char *)__2_YAPAXI_Z(12 * a2); /*0x465e96*/
       if ( v6 ) /*0x465ea0*/
         v7 = v6; /*0x465ea5*/
       else
@@ -6336,7 +6336,7 @@ char VectorClass_TPoint3D_int::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x465f08*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x465f13*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x465f13*/
           *((unsigned int *)this + 1) = 0; /*0x465f1b*/
         }
       }
@@ -6352,7 +6352,7 @@ char VectorClass_TPoint3D_int::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_V_TPoint3D_H *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x465f40*/
     return 1; /*0x465f46*/
   }
 
@@ -6525,7 +6525,7 @@ char VectorClass_ptr_BulletClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x46b6bc*/
       v4 = a3; /*0x46b6d2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x46b6ce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x46b6ce*/
     *((unsigned char *)this + 12) = 1; /*0x46b6d6*/
     if ( v4 ) /*0x46b6da*/
     {
@@ -6538,7 +6538,7 @@ char VectorClass_ptr_BulletClass::Release(int a2, unsigned int * a3)
           ++i; /*0x46b6fe*/
         if ( *((unsigned char *)this + 13) ) /*0x46b70b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x46b716*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x46b716*/
           *((unsigned int *)this + 1) = 0; /*0x46b71e*/
         }
       }
@@ -6554,7 +6554,7 @@ char VectorClass_ptr_BulletClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVBulletClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x46b742*/
     return 1; /*0x46b748*/
   }
 
@@ -6631,7 +6631,7 @@ char VectorClass_ptr_BulletClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x46b7f8*/
       v4 = a3; /*0x46b80e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x46b80a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x46b80a*/
     *((unsigned char *)this + 12) = 1; /*0x46b812*/
     if ( !v4 ) /*0x46b816*/
       return 0; /*0x46b88a*/
@@ -6644,7 +6644,7 @@ char VectorClass_ptr_BulletClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x46b831*/
       if ( *((unsigned char *)this + 13) ) /*0x46b83e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x46b849*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x46b849*/
         *((unsigned int *)this + 1) = 0; /*0x46b851*/
       }
     }
@@ -6654,7 +6654,7 @@ char VectorClass_ptr_BulletClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(VectorClass_ptr_BulletClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x46b86e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x46b871*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x46b879*/
@@ -6842,7 +6842,7 @@ char VectorClass_ptr_CaptureManagerClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x472dfc*/
       v4 = a3; /*0x472e12*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x472e0e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x472e0e*/
     *((unsigned char *)this + 12) = 1; /*0x472e16*/
     if ( v4 ) /*0x472e1a*/
     {
@@ -6855,7 +6855,7 @@ char VectorClass_ptr_CaptureManagerClass::Release(int a2, unsigned int * a3)
           ++i; /*0x472e3e*/
         if ( *((unsigned char *)this + 13) ) /*0x472e4b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x472e56*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x472e56*/
           *((unsigned int *)this + 1) = 0; /*0x472e5e*/
         }
       }
@@ -6871,7 +6871,7 @@ char VectorClass_ptr_CaptureManagerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVCaptureManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x472e82*/
     return 1; /*0x472e88*/
   }
 
@@ -6948,7 +6948,7 @@ char VectorClass_ptr_CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x472f38*/
       v4 = a3; /*0x472f4e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x472f4a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x472f4a*/
     *((unsigned char *)this + 12) = 1; /*0x472f52*/
     if ( !v4 ) /*0x472f56*/
       return 0; /*0x472fca*/
@@ -6961,7 +6961,7 @@ char VectorClass_ptr_CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x472f71*/
       if ( *((unsigned char *)this + 13) ) /*0x472f7e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x472f89*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x472f89*/
         *((unsigned int *)this + 1) = 0; /*0x472f91*/
       }
     }
@@ -6971,7 +6971,7 @@ char VectorClass_ptr_CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVCaptureManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x472fae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x472fb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x472fb9*/
@@ -7154,7 +7154,7 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
     if ( a3 ) /*0x477c8c*/
       v4 = a3; /*0x477ca2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x477c9e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x477c9e*/
     *((unsigned char *)this + 12) = 1; /*0x477ca6*/
     if ( v4 ) /*0x477caa*/
     {
@@ -7167,7 +7167,7 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
           ++i; /*0x477cce*/
         if ( *((unsigned char *)this + 13) ) /*0x477cdb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x477ce6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x477ce6*/
           *((unsigned int *)this + 1) = 0; /*0x477cee*/
         }
       }
@@ -7183,7 +7183,7 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_H *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x477d12*/
     return 1; /*0x477d18*/
   }
 
@@ -7248,7 +7248,7 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3)
     if ( a3 ) /*0x477e28*/
       v4 = a3; /*0x477e3e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x477e3a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x477e3a*/
     *((unsigned char *)this + 12) = 1; /*0x477e42*/
     if ( !v4 ) /*0x477e46*/
       return 0; /*0x477eba*/
@@ -7261,7 +7261,7 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3)
         ++i; /*0x477e61*/
       if ( *((unsigned char *)this + 13) ) /*0x477e6e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x477e79*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x477e79*/
         *((unsigned int *)this + 1) = 0; /*0x477e81*/
       }
     }
@@ -7271,7 +7271,7 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_H *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x477e9e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x477ea1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x477ea9*/
@@ -7388,7 +7388,7 @@ char VectorClass_ptr_DamageGroup::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x48adcc*/
       v4 = a3; /*0x48ade2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x48adde*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x48adde*/
     *((unsigned char *)this + 12) = 1; /*0x48ade6*/
     if ( v4 ) /*0x48adea*/
     {
@@ -7401,7 +7401,7 @@ char VectorClass_ptr_DamageGroup::Remove(int a2, unsigned int * a3)
           ++i; /*0x48ae0e*/
         if ( *((unsigned char *)this + 13) ) /*0x48ae1b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x48ae26*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x48ae26*/
           *((unsigned int *)this + 1) = 0; /*0x48ae2e*/
         }
       }
@@ -7417,7 +7417,7 @@ char VectorClass_ptr_DamageGroup::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUDamageGroup *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x48ae52*/
     return 1; /*0x48ae58*/
   }
 
@@ -7494,7 +7494,7 @@ char VectorClass_ptr_DamageGroup::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x48af08*/
       v4 = a3; /*0x48af1e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x48af1a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x48af1a*/
     *((unsigned char *)this + 12) = 1; /*0x48af22*/
     if ( !v4 ) /*0x48af26*/
       return 0; /*0x48af9a*/
@@ -7507,7 +7507,7 @@ char VectorClass_ptr_DamageGroup::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x48af41*/
       if ( *((unsigned char *)this + 13) ) /*0x48af4e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x48af59*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x48af59*/
         *((unsigned int *)this + 1) = 0; /*0x48af61*/
       }
     }
@@ -7517,7 +7517,7 @@ char VectorClass_ptr_DamageGroup::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUDamageGroup *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x48af7e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x48af81*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x48af89*/
@@ -7685,7 +7685,7 @@ char VectorClass_ptr_ConvertClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x49aedc*/
       v4 = a3; /*0x49aef2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x49aeee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x49aeee*/
     *((unsigned char *)this + 12) = 1; /*0x49aef6*/
     if ( v4 ) /*0x49aefa*/
     {
@@ -7698,7 +7698,7 @@ char VectorClass_ptr_ConvertClass::Release(int a2, unsigned int * a3)
           ++i; /*0x49af1e*/
         if ( *((unsigned char *)this + 13) ) /*0x49af2b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x49af36*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x49af36*/
           *((unsigned int *)this + 1) = 0; /*0x49af3e*/
         }
       }
@@ -7714,7 +7714,7 @@ char VectorClass_ptr_ConvertClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVConvertClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x49af62*/
     return 1; /*0x49af68*/
   }
 
@@ -7791,7 +7791,7 @@ char VectorClass_ptr_ConvertClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x49b018*/
       v4 = a3; /*0x49b02e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x49b02a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x49b02a*/
     *((unsigned char *)this + 12) = 1; /*0x49b032*/
     if ( !v4 ) /*0x49b036*/
       return 0; /*0x49b0aa*/
@@ -7804,7 +7804,7 @@ char VectorClass_ptr_ConvertClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x49b051*/
       if ( *((unsigned char *)this + 13) ) /*0x49b05e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x49b069*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x49b069*/
         *((unsigned int *)this + 1) = 0; /*0x49b071*/
       }
     }
@@ -7814,7 +7814,7 @@ char VectorClass_ptr_ConvertClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVConvertClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x49b08e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x49b091*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x49b099*/
@@ -8025,7 +8025,7 @@ char VectorClass_UtagCONNECTDATA::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a0ffc*/
       v5 = a3; /*0x4a1012*/
     else
-      v5 = RA2_OPNEW(8 * a2); /*0x4a100e*/
+      v5 = __2_YAPAXI_Z(8 * a2); /*0x4a100e*/
     *((unsigned char *)this + 12) = 1; /*0x4a1016*/
     if ( v5 ) /*0x4a101a*/
     {
@@ -8049,7 +8049,7 @@ char VectorClass_UtagCONNECTDATA::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x4a1057*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4a1062*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a1062*/
           *((unsigned int *)this + 1) = 0; /*0x4a106a*/
         }
       }
@@ -8065,7 +8065,7 @@ char VectorClass_UtagCONNECTDATA::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_UtagCONNECTDATA *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4a108e*/
     return 1; /*0x4a1094*/
   }
 
@@ -8142,7 +8142,7 @@ char VectorClass_UtagCONNECTDATA::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a115c*/
       v5 = a3; /*0x4a1172*/
     else
-      v5 = RA2_OPNEW(8 * a2); /*0x4a116e*/
+      v5 = __2_YAPAXI_Z(8 * a2); /*0x4a116e*/
     *((unsigned char *)this + 12) = 1; /*0x4a1176*/
     if ( !v5 ) /*0x4a117a*/
       return 0; /*0x4a11fa*/
@@ -8166,7 +8166,7 @@ char VectorClass_UtagCONNECTDATA::SetCapacity(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x4a11ae*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4a11b9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a11b9*/
         *((unsigned int *)this + 1) = 0; /*0x4a11c1*/
       }
     }
@@ -8176,7 +8176,7 @@ char VectorClass_UtagCONNECTDATA::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_UtagCONNECTDATA *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4a11de*/
   }
   v9 = *((unsigned int *)this + 2); /*0x4a11e1*/
   if ( v9 < *((unsigned int *)this + 4) ) /*0x4a11e9*/
@@ -8336,7 +8336,7 @@ char VectorClass_ptr_CrossDissolveEffect::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4b9cfc*/
       v4 = a3; /*0x4b9d12*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4b9d0e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4b9d0e*/
     *((unsigned char *)this + 12) = 1; /*0x4b9d16*/
     if ( v4 ) /*0x4b9d1a*/
     {
@@ -8349,7 +8349,7 @@ char VectorClass_ptr_CrossDissolveEffect::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x4b9d3e*/
         if ( *((unsigned char *)this + 13) ) /*0x4b9d4b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4b9d56*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4b9d56*/
           *((unsigned int *)this + 1) = 0; /*0x4b9d5e*/
         }
       }
@@ -8365,7 +8365,7 @@ char VectorClass_ptr_CrossDissolveEffect::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(VectorClass_ptr_CrossDissolveEffect *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4b9d82*/
     return 1; /*0x4b9d88*/
   }
 
@@ -8472,7 +8472,7 @@ char VectorClass_ptr_CrossDissolveEffect::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x4b9f5c*/
       v4 = a3; /*0x4b9f72*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4b9f6e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4b9f6e*/
     *((unsigned char *)this + 12) = 1; /*0x4b9f76*/
     if ( v4 ) /*0x4b9f7a*/
     {
@@ -8485,7 +8485,7 @@ char VectorClass_ptr_CrossDissolveEffect::Remove(int a2, unsigned int * a3)
           ++i; /*0x4b9f9e*/
         if ( *((unsigned char *)this + 13) ) /*0x4b9fab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4b9fb6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4b9fb6*/
           *((unsigned int *)this + 1) = 0; /*0x4b9fbe*/
         }
       }
@@ -8501,7 +8501,7 @@ char VectorClass_ptr_CrossDissolveEffect::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUCrossDissolveEffect *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4b9fe2*/
     return 1; /*0x4b9fe8*/
   }
 
@@ -8697,7 +8697,7 @@ char VectorClass_ptr_EBolt::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c2cfc*/
       v4 = a3; /*0x4c2d12*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4c2d0e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c2d0e*/
     *((unsigned char *)this + 12) = 1; /*0x4c2d16*/
     if ( v4 ) /*0x4c2d1a*/
     {
@@ -8710,7 +8710,7 @@ char VectorClass_ptr_EBolt::Release(int a2, unsigned int * a3)
           ++i; /*0x4c2d3e*/
         if ( *((unsigned char *)this + 13) ) /*0x4c2d4b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4c2d56*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c2d56*/
           *((unsigned int *)this + 1) = 0; /*0x4c2d5e*/
         }
       }
@@ -8726,7 +8726,7 @@ char VectorClass_ptr_EBolt::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVEBolt *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c2d82*/
     return 1; /*0x4c2d88*/
   }
 
@@ -8803,7 +8803,7 @@ char VectorClass_ptr_EBolt::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c2e38*/
       v4 = a3; /*0x4c2e4e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4c2e4a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c2e4a*/
     *((unsigned char *)this + 12) = 1; /*0x4c2e52*/
     if ( !v4 ) /*0x4c2e56*/
       return 0; /*0x4c2eca*/
@@ -8816,7 +8816,7 @@ char VectorClass_ptr_EBolt::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4c2e71*/
       if ( *((unsigned char *)this + 13) ) /*0x4c2e7e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4c2e89*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c2e89*/
         *((unsigned int *)this + 1) = 0; /*0x4c2e91*/
       }
     }
@@ -8826,7 +8826,7 @@ char VectorClass_ptr_EBolt::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVEBolt *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c2eae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4c2eb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4c2eb9*/
@@ -8994,7 +8994,7 @@ char VectorClass_ptr_EgoClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c4a5c*/
       v4 = a3; /*0x4c4a72*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4c4a6e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c4a6e*/
     *((unsigned char *)this + 12) = 1; /*0x4c4a76*/
     if ( v4 ) /*0x4c4a7a*/
     {
@@ -9007,7 +9007,7 @@ char VectorClass_ptr_EgoClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4c4a9e*/
         if ( *((unsigned char *)this + 13) ) /*0x4c4aab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4c4ab6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c4ab6*/
           *((unsigned int *)this + 1) = 0; /*0x4c4abe*/
         }
       }
@@ -9023,7 +9023,7 @@ char VectorClass_ptr_EgoClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVEgoClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c4ae2*/
     return 1; /*0x4c4ae8*/
   }
 
@@ -9100,7 +9100,7 @@ char VectorClass_ptr_EgoClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c4b98*/
       v4 = a3; /*0x4c4bae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4c4baa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c4baa*/
     *((unsigned char *)this + 12) = 1; /*0x4c4bb2*/
     if ( !v4 ) /*0x4c4bb6*/
       return 0; /*0x4c4c2a*/
@@ -9113,7 +9113,7 @@ char VectorClass_ptr_EgoClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4c4bd1*/
       if ( *((unsigned char *)this + 13) ) /*0x4c4bde*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4c4be9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c4be9*/
         *((unsigned int *)this + 1) = 0; /*0x4c4bf1*/
       }
     }
@@ -9123,7 +9123,7 @@ char VectorClass_ptr_EgoClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVEgoClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c4c0e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4c4c11*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4c4c19*/
@@ -9291,7 +9291,7 @@ char VectorClass_ptr_EMPulseClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c5c1c*/
       v4 = a3; /*0x4c5c32*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4c5c2e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c5c2e*/
     *((unsigned char *)this + 12) = 1; /*0x4c5c36*/
     if ( v4 ) /*0x4c5c3a*/
     {
@@ -9304,7 +9304,7 @@ char VectorClass_ptr_EMPulseClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4c5c5e*/
         if ( *((unsigned char *)this + 13) ) /*0x4c5c6b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4c5c76*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c5c76*/
           *((unsigned int *)this + 1) = 0; /*0x4c5c7e*/
         }
       }
@@ -9320,7 +9320,7 @@ char VectorClass_ptr_EMPulseClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVEMPulseClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c5ca2*/
     return 1; /*0x4c5ca8*/
   }
 
@@ -9397,7 +9397,7 @@ char VectorClass_ptr_EMPulseClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c5d58*/
       v4 = a3; /*0x4c5d6e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4c5d6a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c5d6a*/
     *((unsigned char *)this + 12) = 1; /*0x4c5d72*/
     if ( !v4 ) /*0x4c5d76*/
       return 0; /*0x4c5dea*/
@@ -9410,7 +9410,7 @@ char VectorClass_ptr_EMPulseClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4c5d91*/
       if ( *((unsigned char *)this + 13) ) /*0x4c5d9e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4c5da9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c5da9*/
         *((unsigned int *)this + 1) = 0; /*0x4c5db1*/
       }
     }
@@ -9420,7 +9420,7 @@ char VectorClass_ptr_EMPulseClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVEMPulseClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4c5dce*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4c5dd1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4c5dd9*/
@@ -11292,7 +11292,7 @@ char VectorClass_Building::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e94bc*/
       v4 = a3; /*0x4e94d2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e94ce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e94ce*/
     *((unsigned char *)this + 12) = 1; /*0x4e94d6*/
     if ( v4 ) /*0x4e94da*/
     {
@@ -11305,7 +11305,7 @@ char VectorClass_Building::Release(int a2, unsigned int * a3)
           ++i; /*0x4e94fe*/
         if ( *((unsigned char *)this + 13) ) /*0x4e950b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4e9516*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9516*/
           *((unsigned int *)this + 1) = 0; /*0x4e951e*/
         }
       }
@@ -11321,7 +11321,7 @@ char VectorClass_Building::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVBuildingClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9542*/
     return 1; /*0x4e9548*/
   }
 
@@ -11428,7 +11428,7 @@ char VectorClass_ptr_SuperClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e971c*/
       v4 = a3; /*0x4e9732*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e972e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e972e*/
     *((unsigned char *)this + 12) = 1; /*0x4e9736*/
     if ( v4 ) /*0x4e973a*/
     {
@@ -11441,7 +11441,7 @@ char VectorClass_ptr_SuperClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4e975e*/
         if ( *((unsigned char *)this + 13) ) /*0x4e976b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4e9776*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9776*/
           *((unsigned int *)this + 1) = 0; /*0x4e977e*/
         }
       }
@@ -11457,7 +11457,7 @@ char VectorClass_ptr_SuperClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVSuperClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e97a2*/
     return 1; /*0x4e97a8*/
   }
 
@@ -11587,7 +11587,7 @@ char VectorClass_ptr_AITriggerTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e997c*/
       v4 = a3; /*0x4e9992*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e998e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e998e*/
     *((unsigned char *)this + 12) = 1; /*0x4e9996*/
     if ( v4 ) /*0x4e999a*/
     {
@@ -11600,7 +11600,7 @@ char VectorClass_ptr_AITriggerTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4e99be*/
         if ( *((unsigned char *)this + 13) ) /*0x4e99cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4e99d6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e99d6*/
           *((unsigned int *)this + 1) = 0; /*0x4e99de*/
         }
       }
@@ -11616,7 +11616,7 @@ char VectorClass_ptr_AITriggerTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9a02*/
     return 1; /*0x4e9a08*/
   }
 
@@ -11693,7 +11693,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e9ab8*/
       v4 = a3; /*0x4e9ace*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e9aca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9aca*/
     *((unsigned char *)this + 12) = 1; /*0x4e9ad2*/
     if ( !v4 ) /*0x4e9ad6*/
       return 0; /*0x4e9b4a*/
@@ -11706,7 +11706,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4e9af1*/
       if ( *((unsigned char *)this + 13) ) /*0x4e9afe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4e9b09*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9b09*/
         *((unsigned int *)this + 1) = 0; /*0x4e9b11*/
       }
     }
@@ -11716,7 +11716,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVAITriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9b2e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4e9b31*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4e9b39*/
@@ -11795,7 +11795,7 @@ char VectorClass_ptr_BuildingLightClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e9bdc*/
       v4 = a3; /*0x4e9bf2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e9bee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9bee*/
     *((unsigned char *)this + 12) = 1; /*0x4e9bf6*/
     if ( v4 ) /*0x4e9bfa*/
     {
@@ -11808,7 +11808,7 @@ char VectorClass_ptr_BuildingLightClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4e9c1e*/
         if ( *((unsigned char *)this + 13) ) /*0x4e9c2b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4e9c36*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9c36*/
           *((unsigned int *)this + 1) = 0; /*0x4e9c3e*/
         }
       }
@@ -11824,7 +11824,7 @@ char VectorClass_ptr_BuildingLightClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVBuildingLightClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9c62*/
     return 1; /*0x4e9c68*/
   }
 
@@ -11901,7 +11901,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e9d18*/
       v4 = a3; /*0x4e9d2e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e9d2a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9d2a*/
     *((unsigned char *)this + 12) = 1; /*0x4e9d32*/
     if ( !v4 ) /*0x4e9d36*/
       return 0; /*0x4e9daa*/
@@ -11914,7 +11914,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4e9d51*/
       if ( *((unsigned char *)this + 13) ) /*0x4e9d5e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4e9d69*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9d69*/
         *((unsigned int *)this + 1) = 0; /*0x4e9d71*/
       }
     }
@@ -11924,7 +11924,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVBuildingLightClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9d8e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4e9d91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4e9d99*/
@@ -12003,7 +12003,7 @@ char VectorClass_ptr_TeamClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea09c*/
       v4 = a3; /*0x4ea0b2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ea0ae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea0ae*/
     *((unsigned char *)this + 12) = 1; /*0x4ea0b6*/
     if ( v4 ) /*0x4ea0ba*/
     {
@@ -12016,7 +12016,7 @@ char VectorClass_ptr_TeamClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ea0de*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea0eb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ea0f6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea0f6*/
           *((unsigned int *)this + 1) = 0; /*0x4ea0fe*/
         }
       }
@@ -12032,7 +12032,7 @@ char VectorClass_ptr_TeamClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTeamClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea122*/
     return 1; /*0x4ea128*/
   }
 
@@ -12109,7 +12109,7 @@ char VectorClass_ptr_TeamClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea1d8*/
       v4 = a3; /*0x4ea1ee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ea1ea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea1ea*/
     *((unsigned char *)this + 12) = 1; /*0x4ea1f2*/
     if ( !v4 ) /*0x4ea1f6*/
       return 0; /*0x4ea26a*/
@@ -12122,7 +12122,7 @@ char VectorClass_ptr_TeamClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ea211*/
       if ( *((unsigned char *)this + 13) ) /*0x4ea21e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ea229*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea229*/
         *((unsigned int *)this + 1) = 0; /*0x4ea231*/
       }
     }
@@ -12132,7 +12132,7 @@ char VectorClass_ptr_TeamClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTeamClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea24e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ea251*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ea259*/
@@ -12211,7 +12211,7 @@ char VectorClass_ptr_ThemeControl::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea2fc*/
       v4 = a3; /*0x4ea312*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ea30e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea30e*/
     *((unsigned char *)this + 12) = 1; /*0x4ea316*/
     if ( v4 ) /*0x4ea31a*/
     {
@@ -12224,7 +12224,7 @@ char VectorClass_ptr_ThemeControl::Remove(int a2, unsigned int * a3)
           ++i; /*0x4ea33e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea34b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ea356*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea356*/
           *((unsigned int *)this + 1) = 0; /*0x4ea35e*/
         }
       }
@@ -12240,7 +12240,7 @@ char VectorClass_ptr_ThemeControl::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUThemeControl *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea382*/
     return 1; /*0x4ea388*/
   }
 
@@ -12347,7 +12347,7 @@ char VectorClass_ptr_TriggerClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea47c*/
       v4 = a3; /*0x4ea492*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ea48e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea48e*/
     *((unsigned char *)this + 12) = 1; /*0x4ea496*/
     if ( v4 ) /*0x4ea49a*/
     {
@@ -12360,7 +12360,7 @@ char VectorClass_ptr_TriggerClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ea4be*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea4cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ea4d6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea4d6*/
           *((unsigned int *)this + 1) = 0; /*0x4ea4de*/
         }
       }
@@ -12376,7 +12376,7 @@ char VectorClass_ptr_TriggerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTriggerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea502*/
     return 1; /*0x4ea508*/
   }
 
@@ -12453,7 +12453,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_0(int a2, unsigned int * a3
     if ( a3 ) /*0x4ea5b8*/
       v4 = a3; /*0x4ea5ce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ea5ca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea5ca*/
     *((unsigned char *)this + 12) = 1; /*0x4ea5d2*/
     if ( !v4 ) /*0x4ea5d6*/
       return 0; /*0x4ea64a*/
@@ -12466,7 +12466,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_0(int a2, unsigned int * a3
         ++i; /*0x4ea5f1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ea5fe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ea609*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea609*/
         *((unsigned int *)this + 1) = 0; /*0x4ea611*/
       }
     }
@@ -12476,7 +12476,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_0(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTriggerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea62e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ea631*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ea639*/
@@ -12555,7 +12555,7 @@ char VectorClass_ptr_TriggerTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea6dc*/
       v4 = a3; /*0x4ea6f2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ea6ee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea6ee*/
     *((unsigned char *)this + 12) = 1; /*0x4ea6f6*/
     if ( v4 ) /*0x4ea6fa*/
     {
@@ -12568,7 +12568,7 @@ char VectorClass_ptr_TriggerTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ea71e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea72b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ea736*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea736*/
           *((unsigned int *)this + 1) = 0; /*0x4ea73e*/
         }
       }
@@ -12584,7 +12584,7 @@ char VectorClass_ptr_TriggerTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea762*/
     return 1; /*0x4ea768*/
   }
 
@@ -12661,7 +12661,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3
     if ( a3 ) /*0x4ea818*/
       v4 = a3; /*0x4ea82e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ea82a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea82a*/
     *((unsigned char *)this + 12) = 1; /*0x4ea832*/
     if ( !v4 ) /*0x4ea836*/
       return 0; /*0x4ea8aa*/
@@ -12674,7 +12674,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3
         ++i; /*0x4ea851*/
       if ( *((unsigned char *)this + 13) ) /*0x4ea85e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ea869*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea869*/
         *((unsigned int *)this + 1) = 0; /*0x4ea871*/
       }
     }
@@ -12684,7 +12684,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTriggerTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea88e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ea891*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ea899*/
@@ -12763,7 +12763,7 @@ char VectorClass_ptr_TubeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea93c*/
       v4 = a3; /*0x4ea952*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ea94e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea94e*/
     *((unsigned char *)this + 12) = 1; /*0x4ea956*/
     if ( v4 ) /*0x4ea95a*/
     {
@@ -12776,7 +12776,7 @@ char VectorClass_ptr_TubeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ea97e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea98b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ea996*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea996*/
           *((unsigned int *)this + 1) = 0; /*0x4ea99e*/
         }
       }
@@ -12792,7 +12792,7 @@ char VectorClass_ptr_TubeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTubeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ea9c2*/
     return 1; /*0x4ea9c8*/
   }
 
@@ -12869,7 +12869,7 @@ char VectorClass_ptr_TubeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eaa78*/
       v4 = a3; /*0x4eaa8e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eaa8a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eaa8a*/
     *((unsigned char *)this + 12) = 1; /*0x4eaa92*/
     if ( !v4 ) /*0x4eaa96*/
       return 0; /*0x4eab0a*/
@@ -12882,7 +12882,7 @@ char VectorClass_ptr_TubeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4eaab1*/
       if ( *((unsigned char *)this + 13) ) /*0x4eaabe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4eaac9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eaac9*/
         *((unsigned int *)this + 1) = 0; /*0x4eaad1*/
       }
     }
@@ -12892,7 +12892,7 @@ char VectorClass_ptr_TubeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTubeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eaaee*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4eaaf1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eaaf9*/
@@ -12971,7 +12971,7 @@ char VectorClass_ptr_ParticleSystemClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eab9c*/
       v4 = a3; /*0x4eabb2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eabae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eabae*/
     *((unsigned char *)this + 12) = 1; /*0x4eabb6*/
     if ( v4 ) /*0x4eabba*/
     {
@@ -12984,7 +12984,7 @@ char VectorClass_ptr_ParticleSystemClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eabde*/
         if ( *((unsigned char *)this + 13) ) /*0x4eabeb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4eabf6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eabf6*/
           *((unsigned int *)this + 1) = 0; /*0x4eabfe*/
         }
       }
@@ -13000,7 +13000,7 @@ char VectorClass_ptr_ParticleSystemClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVParticleSystemClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eac22*/
     return 1; /*0x4eac28*/
   }
 
@@ -13077,7 +13077,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity_0(int a2, unsigned int * a3
     if ( a3 ) /*0x4eacd8*/
       v4 = a3; /*0x4eacee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eacea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eacea*/
     *((unsigned char *)this + 12) = 1; /*0x4eacf2*/
     if ( !v4 ) /*0x4eacf6*/
       return 0; /*0x4ead6a*/
@@ -13090,7 +13090,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity_0(int a2, unsigned int * a3
         ++i; /*0x4ead11*/
       if ( *((unsigned char *)this + 13) ) /*0x4ead1e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ead29*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ead29*/
         *((unsigned int *)this + 1) = 0; /*0x4ead31*/
       }
     }
@@ -13100,7 +13100,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity_0(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVParticleSystemClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ead4e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ead51*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ead59*/
@@ -13179,7 +13179,7 @@ char VectorClass_ptr_WaveClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eadfc*/
       v4 = a3; /*0x4eae12*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eae0e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eae0e*/
     *((unsigned char *)this + 12) = 1; /*0x4eae16*/
     if ( v4 ) /*0x4eae1a*/
     {
@@ -13192,7 +13192,7 @@ char VectorClass_ptr_WaveClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eae3e*/
         if ( *((unsigned char *)this + 13) ) /*0x4eae4b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4eae56*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eae56*/
           *((unsigned int *)this + 1) = 0; /*0x4eae5e*/
         }
       }
@@ -13208,7 +13208,7 @@ char VectorClass_ptr_WaveClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVWaveClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eae82*/
     return 1; /*0x4eae88*/
   }
 
@@ -13285,7 +13285,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eaf38*/
       v4 = a3; /*0x4eaf4e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eaf4a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eaf4a*/
     *((unsigned char *)this + 12) = 1; /*0x4eaf52*/
     if ( !v4 ) /*0x4eaf56*/
       return 0; /*0x4eafca*/
@@ -13298,7 +13298,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4eaf71*/
       if ( *((unsigned char *)this + 13) ) /*0x4eaf7e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4eaf89*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eaf89*/
         *((unsigned int *)this + 1) = 0; /*0x4eaf91*/
       }
     }
@@ -13308,7 +13308,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVWaveClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eafae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4eafb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eafb9*/
@@ -13387,7 +13387,7 @@ char VectorClass_ptr_OverlayClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb05c*/
       v4 = a3; /*0x4eb072*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eb06e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb06e*/
     *((unsigned char *)this + 12) = 1; /*0x4eb076*/
     if ( v4 ) /*0x4eb07a*/
     {
@@ -13400,7 +13400,7 @@ char VectorClass_ptr_OverlayClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eb09e*/
         if ( *((unsigned char *)this + 13) ) /*0x4eb0ab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4eb0b6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb0b6*/
           *((unsigned int *)this + 1) = 0; /*0x4eb0be*/
         }
       }
@@ -13416,7 +13416,7 @@ char VectorClass_ptr_OverlayClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVOverlayClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eb0e2*/
     return 1; /*0x4eb0e8*/
   }
 
@@ -13493,7 +13493,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb198*/
       v4 = a3; /*0x4eb1ae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eb1aa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb1aa*/
     *((unsigned char *)this + 12) = 1; /*0x4eb1b2*/
     if ( !v4 ) /*0x4eb1b6*/
       return 0; /*0x4eb22a*/
@@ -13506,7 +13506,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4eb1d1*/
       if ( *((unsigned char *)this + 13) ) /*0x4eb1de*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4eb1e9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb1e9*/
         *((unsigned int *)this + 1) = 0; /*0x4eb1f1*/
       }
     }
@@ -13516,7 +13516,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVOverlayClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eb20e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4eb211*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eb219*/
@@ -13595,7 +13595,7 @@ char VectorClass_ptr_AircraftClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb77c*/
       v4 = a3; /*0x4eb792*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eb78e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb78e*/
     *((unsigned char *)this + 12) = 1; /*0x4eb796*/
     if ( v4 ) /*0x4eb79a*/
     {
@@ -13608,7 +13608,7 @@ char VectorClass_ptr_AircraftClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eb7be*/
         if ( *((unsigned char *)this + 13) ) /*0x4eb7cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4eb7d6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb7d6*/
           *((unsigned int *)this + 1) = 0; /*0x4eb7de*/
         }
       }
@@ -13624,7 +13624,7 @@ char VectorClass_ptr_AircraftClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAircraftClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eb802*/
     return 1; /*0x4eb808*/
   }
 
@@ -13731,7 +13731,7 @@ char VectorClass_ptr_UnitClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb9dc*/
       v4 = a3; /*0x4eb9f2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eb9ee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb9ee*/
     *((unsigned char *)this + 12) = 1; /*0x4eb9f6*/
     if ( v4 ) /*0x4eb9fa*/
     {
@@ -13744,7 +13744,7 @@ char VectorClass_ptr_UnitClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eba1e*/
         if ( *((unsigned char *)this + 13) ) /*0x4eba2b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4eba36*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eba36*/
           *((unsigned int *)this + 1) = 0; /*0x4eba3e*/
         }
       }
@@ -13760,7 +13760,7 @@ char VectorClass_ptr_UnitClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVUnitClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eba62*/
     return 1; /*0x4eba68*/
   }
 
@@ -13837,7 +13837,7 @@ char VectorClass_ptr_UnitClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebb18*/
       v4 = a3; /*0x4ebb2e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ebb2a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebb2a*/
     *((unsigned char *)this + 12) = 1; /*0x4ebb32*/
     if ( !v4 ) /*0x4ebb36*/
       return 0; /*0x4ebbaa*/
@@ -13850,7 +13850,7 @@ char VectorClass_ptr_UnitClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ebb51*/
       if ( *((unsigned char *)this + 13) ) /*0x4ebb5e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ebb69*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebb69*/
         *((unsigned int *)this + 1) = 0; /*0x4ebb71*/
       }
     }
@@ -13860,7 +13860,7 @@ char VectorClass_ptr_UnitClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVUnitClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ebb8e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ebb91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ebb99*/
@@ -13939,7 +13939,7 @@ char VectorClass_ptr_HouseClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebc3c*/
       v4 = a3; /*0x4ebc52*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ebc4e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebc4e*/
     *((unsigned char *)this + 12) = 1; /*0x4ebc56*/
     if ( v4 ) /*0x4ebc5a*/
     {
@@ -13952,7 +13952,7 @@ char VectorClass_ptr_HouseClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ebc7e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ebc8b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ebc96*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebc96*/
           *((unsigned int *)this + 1) = 0; /*0x4ebc9e*/
         }
       }
@@ -13968,7 +13968,7 @@ char VectorClass_ptr_HouseClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVHouseClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ebcc2*/
     return 1; /*0x4ebcc8*/
   }
 
@@ -14045,7 +14045,7 @@ char VectorClass_ptr_UnitClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebd78*/
       v4 = a3; /*0x4ebd8e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ebd8a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebd8a*/
     *((unsigned char *)this + 12) = 1; /*0x4ebd92*/
     if ( !v4 ) /*0x4ebd96*/
       return 0; /*0x4ebe0a*/
@@ -14058,7 +14058,7 @@ char VectorClass_ptr_UnitClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ebdb1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ebdbe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ebdc9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebdc9*/
         *((unsigned int *)this + 1) = 0; /*0x4ebdd1*/
       }
     }
@@ -14068,7 +14068,7 @@ char VectorClass_ptr_UnitClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVHouseClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ebdee*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ebdf1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ebdf9*/
@@ -14147,7 +14147,7 @@ char VectorClass_ptr_AnimClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebe9c*/
       v4 = a3; /*0x4ebeb2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ebeae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebeae*/
     *((unsigned char *)this + 12) = 1; /*0x4ebeb6*/
     if ( v4 ) /*0x4ebeba*/
     {
@@ -14160,7 +14160,7 @@ char VectorClass_ptr_AnimClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ebede*/
         if ( *((unsigned char *)this + 13) ) /*0x4ebeeb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ebef6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebef6*/
           *((unsigned int *)this + 1) = 0; /*0x4ebefe*/
         }
       }
@@ -14176,7 +14176,7 @@ char VectorClass_ptr_AnimClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ebf22*/
     return 1; /*0x4ebf28*/
   }
 
@@ -14250,7 +14250,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebfd8*/
       v4 = a3; /*0x4ebfee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ebfea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebfea*/
     *((unsigned char *)this + 12) = 1; /*0x4ebff2*/
     if ( !v4 ) /*0x4ebff6*/
       return 0; /*0x4ec06a*/
@@ -14263,7 +14263,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ec011*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec01e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ec029*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec029*/
         *((unsigned int *)this + 1) = 0; /*0x4ec031*/
       }
     }
@@ -14273,7 +14273,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVAnimClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec04e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec051*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec059*/
@@ -14352,7 +14352,7 @@ char VectorClass_ptr_FactoryClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec0fc*/
       v4 = a3; /*0x4ec112*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ec10e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec10e*/
     *((unsigned char *)this + 12) = 1; /*0x4ec116*/
     if ( v4 ) /*0x4ec11a*/
     {
@@ -14365,7 +14365,7 @@ char VectorClass_ptr_FactoryClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ec13e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ec14b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ec156*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec156*/
           *((unsigned int *)this + 1) = 0; /*0x4ec15e*/
         }
       }
@@ -14381,7 +14381,7 @@ char VectorClass_ptr_FactoryClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVFactoryClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec182*/
     return 1; /*0x4ec188*/
   }
 
@@ -14458,7 +14458,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec238*/
       v4 = a3; /*0x4ec24e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ec24a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec24a*/
     *((unsigned char *)this + 12) = 1; /*0x4ec252*/
     if ( !v4 ) /*0x4ec256*/
       return 0; /*0x4ec2ca*/
@@ -14471,7 +14471,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4ec271*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec27e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ec289*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec289*/
         *((unsigned int *)this + 1) = 0; /*0x4ec291*/
       }
     }
@@ -14481,7 +14481,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVFactoryClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec2ae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec2b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec2b9*/
@@ -14560,7 +14560,7 @@ char VectorClass_ptr_CampaignClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec35c*/
       v4 = a3; /*0x4ec372*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ec36e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec36e*/
     *((unsigned char *)this + 12) = 1; /*0x4ec376*/
     if ( v4 ) /*0x4ec37a*/
     {
@@ -14573,7 +14573,7 @@ char VectorClass_ptr_CampaignClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ec39e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ec3ab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ec3b6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec3b6*/
           *((unsigned int *)this + 1) = 0; /*0x4ec3be*/
         }
       }
@@ -14589,7 +14589,7 @@ char VectorClass_ptr_CampaignClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVCampaignClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec3e2*/
     return 1; /*0x4ec3e8*/
   }
 
@@ -14666,7 +14666,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec498*/
       v4 = a3; /*0x4ec4ae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ec4aa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec4aa*/
     *((unsigned char *)this + 12) = 1; /*0x4ec4b2*/
     if ( !v4 ) /*0x4ec4b6*/
       return 0; /*0x4ec52a*/
@@ -14679,7 +14679,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ec4d1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec4de*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ec4e9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec4e9*/
         *((unsigned int *)this + 1) = 0; /*0x4ec4f1*/
       }
     }
@@ -14689,7 +14689,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVCampaignClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec50e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec511*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec519*/
@@ -14768,7 +14768,7 @@ char VectorClass_ptr_SideClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec5bc*/
       v4 = a3; /*0x4ec5d2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ec5ce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec5ce*/
     *((unsigned char *)this + 12) = 1; /*0x4ec5d6*/
     if ( v4 ) /*0x4ec5da*/
     {
@@ -14781,7 +14781,7 @@ char VectorClass_ptr_SideClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ec5fe*/
         if ( *((unsigned char *)this + 13) ) /*0x4ec60b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ec616*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec616*/
           *((unsigned int *)this + 1) = 0; /*0x4ec61e*/
         }
       }
@@ -14797,7 +14797,7 @@ char VectorClass_ptr_SideClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVSideClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec642*/
     return 1; /*0x4ec648*/
   }
 
@@ -14874,7 +14874,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec6f8*/
       v4 = a3; /*0x4ec70e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ec70a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec70a*/
     *((unsigned char *)this + 12) = 1; /*0x4ec712*/
     if ( !v4 ) /*0x4ec716*/
       return 0; /*0x4ec78a*/
@@ -14887,7 +14887,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ec731*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec73e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ec749*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec749*/
         *((unsigned int *)this + 1) = 0; /*0x4ec751*/
       }
     }
@@ -14897,7 +14897,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVSideClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec76e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec771*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec779*/
@@ -14976,7 +14976,7 @@ char VectorClass_ptr_HouseTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec81c*/
       v4 = a3; /*0x4ec832*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ec82e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec82e*/
     *((unsigned char *)this + 12) = 1; /*0x4ec836*/
     if ( v4 ) /*0x4ec83a*/
     {
@@ -14989,7 +14989,7 @@ char VectorClass_ptr_HouseTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ec85e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ec86b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ec876*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec876*/
           *((unsigned int *)this + 1) = 0; /*0x4ec87e*/
         }
       }
@@ -15005,7 +15005,7 @@ char VectorClass_ptr_HouseTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVHouseTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec8a2*/
     return 1; /*0x4ec8a8*/
   }
 
@@ -15082,7 +15082,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec958*/
       v4 = a3; /*0x4ec96e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ec96a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec96a*/
     *((unsigned char *)this + 12) = 1; /*0x4ec972*/
     if ( !v4 ) /*0x4ec976*/
       return 0; /*0x4ec9ea*/
@@ -15095,7 +15095,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ec991*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec99e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ec9a9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec9a9*/
         *((unsigned int *)this + 1) = 0; /*0x4ec9b1*/
       }
     }
@@ -15105,7 +15105,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVHouseTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ec9ce*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ec9d1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ec9d9*/
@@ -15184,7 +15184,7 @@ char VectorClass_ptr_TaskForceClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eca7c*/
       v4 = a3; /*0x4eca92*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eca8e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eca8e*/
     *((unsigned char *)this + 12) = 1; /*0x4eca96*/
     if ( v4 ) /*0x4eca9a*/
     {
@@ -15197,7 +15197,7 @@ char VectorClass_ptr_TaskForceClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ecabe*/
         if ( *((unsigned char *)this + 13) ) /*0x4ecacb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ecad6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ecad6*/
           *((unsigned int *)this + 1) = 0; /*0x4ecade*/
         }
       }
@@ -15213,7 +15213,7 @@ char VectorClass_ptr_TaskForceClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTaskForceClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ecb02*/
     return 1; /*0x4ecb08*/
   }
 
@@ -15290,7 +15290,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ecbb8*/
       v4 = a3; /*0x4ecbce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ecbca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ecbca*/
     *((unsigned char *)this + 12) = 1; /*0x4ecbd2*/
     if ( !v4 ) /*0x4ecbd6*/
       return 0; /*0x4ecc4a*/
@@ -15303,7 +15303,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ecbf1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ecbfe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ecc09*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ecc09*/
         *((unsigned int *)this + 1) = 0; /*0x4ecc11*/
       }
     }
@@ -15313,7 +15313,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTaskForceClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ecc2e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ecc31*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ecc39*/
@@ -15392,7 +15392,7 @@ char VectorClass_ptr_TeamTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eccdc*/
       v4 = a3; /*0x4eccf2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eccee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eccee*/
     *((unsigned char *)this + 12) = 1; /*0x4eccf6*/
     if ( v4 ) /*0x4eccfa*/
     {
@@ -15405,7 +15405,7 @@ char VectorClass_ptr_TeamTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ecd1e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ecd2b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ecd36*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ecd36*/
           *((unsigned int *)this + 1) = 0; /*0x4ecd3e*/
         }
       }
@@ -15421,7 +15421,7 @@ char VectorClass_ptr_TeamTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTeamTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ecd62*/
     return 1; /*0x4ecd68*/
   }
 
@@ -15498,7 +15498,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ece18*/
       v4 = a3; /*0x4ece2e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ece2a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ece2a*/
     *((unsigned char *)this + 12) = 1; /*0x4ece32*/
     if ( !v4 ) /*0x4ece36*/
       return 0; /*0x4eceaa*/
@@ -15511,7 +15511,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4ece51*/
       if ( *((unsigned char *)this + 13) ) /*0x4ece5e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ece69*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ece69*/
         *((unsigned int *)this + 1) = 0; /*0x4ece71*/
       }
     }
@@ -15521,7 +15521,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTeamTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ece8e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ece91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ece99*/
@@ -15600,7 +15600,7 @@ char VectorClass_ptr_ScriptTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ecf3c*/
       v4 = a3; /*0x4ecf52*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ecf4e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ecf4e*/
     *((unsigned char *)this + 12) = 1; /*0x4ecf56*/
     if ( v4 ) /*0x4ecf5a*/
     {
@@ -15613,7 +15613,7 @@ char VectorClass_ptr_ScriptTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ecf7e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ecf8b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ecf96*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ecf96*/
           *((unsigned int *)this + 1) = 0; /*0x4ecf9e*/
         }
       }
@@ -15629,7 +15629,7 @@ char VectorClass_ptr_ScriptTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVScriptTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ecfc2*/
     return 1; /*0x4ecfc8*/
   }
 
@@ -15706,7 +15706,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed078*/
       v4 = a3; /*0x4ed08e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ed08a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed08a*/
     *((unsigned char *)this + 12) = 1; /*0x4ed092*/
     if ( !v4 ) /*0x4ed096*/
       return 0; /*0x4ed10a*/
@@ -15719,7 +15719,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ed0b1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ed0be*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ed0c9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed0c9*/
         *((unsigned int *)this + 1) = 0; /*0x4ed0d1*/
       }
     }
@@ -15729,7 +15729,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVScriptTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed0ee*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ed0f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ed0f9*/
@@ -15808,7 +15808,7 @@ char VectorClass_ptr_OverlayTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed19c*/
       v4 = a3; /*0x4ed1b2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ed1ae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed1ae*/
     *((unsigned char *)this + 12) = 1; /*0x4ed1b6*/
     if ( v4 ) /*0x4ed1ba*/
     {
@@ -15821,7 +15821,7 @@ char VectorClass_ptr_OverlayTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ed1de*/
         if ( *((unsigned char *)this + 13) ) /*0x4ed1eb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ed1f6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed1f6*/
           *((unsigned int *)this + 1) = 0; /*0x4ed1fe*/
         }
       }
@@ -15837,7 +15837,7 @@ char VectorClass_ptr_OverlayTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVOverlayTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed222*/
     return 1; /*0x4ed228*/
   }
 
@@ -15914,7 +15914,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed2d8*/
       v4 = a3; /*0x4ed2ee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ed2ea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed2ea*/
     *((unsigned char *)this + 12) = 1; /*0x4ed2f2*/
     if ( !v4 ) /*0x4ed2f6*/
       return 0; /*0x4ed36a*/
@@ -15927,7 +15927,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ed311*/
       if ( *((unsigned char *)this + 13) ) /*0x4ed31e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ed329*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed329*/
         *((unsigned int *)this + 1) = 0; /*0x4ed331*/
       }
     }
@@ -15937,7 +15937,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVOverlayTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed34e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ed351*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ed359*/
@@ -16016,7 +16016,7 @@ char VectorClass_ptr_SmudgeTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed3fc*/
       v4 = a3; /*0x4ed412*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ed40e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed40e*/
     *((unsigned char *)this + 12) = 1; /*0x4ed416*/
     if ( v4 ) /*0x4ed41a*/
     {
@@ -16029,7 +16029,7 @@ char VectorClass_ptr_SmudgeTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ed43e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ed44b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ed456*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed456*/
           *((unsigned int *)this + 1) = 0; /*0x4ed45e*/
         }
       }
@@ -16045,7 +16045,7 @@ char VectorClass_ptr_SmudgeTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVSmudgeTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed482*/
     return 1; /*0x4ed488*/
   }
 
@@ -16122,7 +16122,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed538*/
       v4 = a3; /*0x4ed54e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ed54a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed54a*/
     *((unsigned char *)this + 12) = 1; /*0x4ed552*/
     if ( !v4 ) /*0x4ed556*/
       return 0; /*0x4ed5ca*/
@@ -16135,7 +16135,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ed571*/
       if ( *((unsigned char *)this + 13) ) /*0x4ed57e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ed589*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed589*/
         *((unsigned int *)this + 1) = 0; /*0x4ed591*/
       }
     }
@@ -16145,7 +16145,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVSmudgeTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed5ae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ed5b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ed5b9*/
@@ -16224,7 +16224,7 @@ char VectorClass_ptr_TerrainTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed65c*/
       v4 = a3; /*0x4ed672*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ed66e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed66e*/
     *((unsigned char *)this + 12) = 1; /*0x4ed676*/
     if ( v4 ) /*0x4ed67a*/
     {
@@ -16237,7 +16237,7 @@ char VectorClass_ptr_TerrainTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ed69e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ed6ab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ed6b6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed6b6*/
           *((unsigned int *)this + 1) = 0; /*0x4ed6be*/
         }
       }
@@ -16253,7 +16253,7 @@ char VectorClass_ptr_TerrainTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed6e2*/
     return 1; /*0x4ed6e8*/
   }
 
@@ -16330,7 +16330,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed798*/
       v4 = a3; /*0x4ed7ae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ed7aa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed7aa*/
     *((unsigned char *)this + 12) = 1; /*0x4ed7b2*/
     if ( !v4 ) /*0x4ed7b6*/
       return 0; /*0x4ed82a*/
@@ -16343,7 +16343,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ed7d1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ed7de*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ed7e9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed7e9*/
         *((unsigned int *)this + 1) = 0; /*0x4ed7f1*/
       }
     }
@@ -16353,7 +16353,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed80e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ed811*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ed819*/
@@ -16432,7 +16432,7 @@ char VectorClass_ptr_BuildingTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed8bc*/
       v4 = a3; /*0x4ed8d2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ed8ce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed8ce*/
     *((unsigned char *)this + 12) = 1; /*0x4ed8d6*/
     if ( v4 ) /*0x4ed8da*/
     {
@@ -16445,7 +16445,7 @@ char VectorClass_ptr_BuildingTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ed8fe*/
         if ( *((unsigned char *)this + 13) ) /*0x4ed90b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ed916*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed916*/
           *((unsigned int *)this + 1) = 0; /*0x4ed91e*/
         }
       }
@@ -16461,7 +16461,7 @@ char VectorClass_ptr_BuildingTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVBuildingTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ed942*/
     return 1; /*0x4ed948*/
   }
 
@@ -16535,7 +16535,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed9f8*/
       v4 = a3; /*0x4eda0e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eda0a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eda0a*/
     *((unsigned char *)this + 12) = 1; /*0x4eda12*/
     if ( !v4 ) /*0x4eda16*/
       return 0; /*0x4eda8a*/
@@ -16548,7 +16548,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4eda31*/
       if ( *((unsigned char *)this + 13) ) /*0x4eda3e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4eda49*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eda49*/
         *((unsigned int *)this + 1) = 0; /*0x4eda51*/
       }
     }
@@ -16558,7 +16558,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVBuildingTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eda6e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4eda71*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eda79*/
@@ -16637,7 +16637,7 @@ char VectorClass_ptr_AircraftTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edb1c*/
       v4 = a3; /*0x4edb32*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4edb2e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edb2e*/
     *((unsigned char *)this + 12) = 1; /*0x4edb36*/
     if ( v4 ) /*0x4edb3a*/
     {
@@ -16650,7 +16650,7 @@ char VectorClass_ptr_AircraftTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4edb5e*/
         if ( *((unsigned char *)this + 13) ) /*0x4edb6b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4edb76*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4edb76*/
           *((unsigned int *)this + 1) = 0; /*0x4edb7e*/
         }
       }
@@ -16666,7 +16666,7 @@ char VectorClass_ptr_AircraftTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAircraftTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4edba2*/
     return 1; /*0x4edba8*/
   }
 
@@ -16743,7 +16743,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edc58*/
       v4 = a3; /*0x4edc6e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4edc6a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edc6a*/
     *((unsigned char *)this + 12) = 1; /*0x4edc72*/
     if ( !v4 ) /*0x4edc76*/
       return 0; /*0x4edcea*/
@@ -16756,7 +16756,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4edc91*/
       if ( *((unsigned char *)this + 13) ) /*0x4edc9e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4edca9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4edca9*/
         *((unsigned int *)this + 1) = 0; /*0x4edcb1*/
       }
     }
@@ -16766,7 +16766,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVAircraftTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4edcce*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4edcd1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4edcd9*/
@@ -16845,7 +16845,7 @@ char VectorClass_ptr_UnitTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edd7c*/
       v4 = a3; /*0x4edd92*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4edd8e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edd8e*/
     *((unsigned char *)this + 12) = 1; /*0x4edd96*/
     if ( v4 ) /*0x4edd9a*/
     {
@@ -16858,7 +16858,7 @@ char VectorClass_ptr_UnitTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eddbe*/
         if ( *((unsigned char *)this + 13) ) /*0x4eddcb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4eddd6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eddd6*/
           *((unsigned int *)this + 1) = 0; /*0x4eddde*/
         }
       }
@@ -16874,7 +16874,7 @@ char VectorClass_ptr_UnitTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVUnitTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ede02*/
     return 1; /*0x4ede08*/
   }
 
@@ -16951,7 +16951,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edeb8*/
       v4 = a3; /*0x4edece*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4edeca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edeca*/
     *((unsigned char *)this + 12) = 1; /*0x4eded2*/
     if ( !v4 ) /*0x4eded6*/
       return 0; /*0x4edf4a*/
@@ -16964,7 +16964,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4edef1*/
       if ( *((unsigned char *)this + 13) ) /*0x4edefe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4edf09*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4edf09*/
         *((unsigned int *)this + 1) = 0; /*0x4edf11*/
       }
     }
@@ -16974,7 +16974,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVUnitTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4edf2e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4edf31*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4edf39*/
@@ -17053,7 +17053,7 @@ char VectorClass_ptr_AnimTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edfdc*/
       v4 = a3; /*0x4edff2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4edfee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edfee*/
     *((unsigned char *)this + 12) = 1; /*0x4edff6*/
     if ( v4 ) /*0x4edffa*/
     {
@@ -17066,7 +17066,7 @@ char VectorClass_ptr_AnimTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee01e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee02b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ee036*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee036*/
           *((unsigned int *)this + 1) = 0; /*0x4ee03e*/
         }
       }
@@ -17082,7 +17082,7 @@ char VectorClass_ptr_AnimTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee062*/
     return 1; /*0x4ee068*/
   }
 
@@ -17159,7 +17159,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee118*/
       v4 = a3; /*0x4ee12e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ee12a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee12a*/
     *((unsigned char *)this + 12) = 1; /*0x4ee132*/
     if ( !v4 ) /*0x4ee136*/
       return 0; /*0x4ee1aa*/
@@ -17172,7 +17172,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ee151*/
       if ( *((unsigned char *)this + 13) ) /*0x4ee15e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ee169*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee169*/
         *((unsigned int *)this + 1) = 0; /*0x4ee171*/
       }
     }
@@ -17182,7 +17182,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee18e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ee191*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ee199*/
@@ -17261,7 +17261,7 @@ char VectorClass_ptr_InfantryTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee23c*/
       v4 = a3; /*0x4ee252*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ee24e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee24e*/
     *((unsigned char *)this + 12) = 1; /*0x4ee256*/
     if ( v4 ) /*0x4ee25a*/
     {
@@ -17274,7 +17274,7 @@ char VectorClass_ptr_InfantryTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee27e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee28b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ee296*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee296*/
           *((unsigned int *)this + 1) = 0; /*0x4ee29e*/
         }
       }
@@ -17290,7 +17290,7 @@ char VectorClass_ptr_InfantryTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVInfantryTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee2c2*/
     return 1; /*0x4ee2c8*/
   }
 
@@ -17367,7 +17367,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee378*/
       v4 = a3; /*0x4ee38e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ee38a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee38a*/
     *((unsigned char *)this + 12) = 1; /*0x4ee392*/
     if ( !v4 ) /*0x4ee396*/
       return 0; /*0x4ee40a*/
@@ -17380,7 +17380,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ee3b1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ee3be*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ee3c9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee3c9*/
         *((unsigned int *)this + 1) = 0; /*0x4ee3d1*/
       }
     }
@@ -17390,7 +17390,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVInfantryTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee3ee*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ee3f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ee3f9*/
@@ -17469,7 +17469,7 @@ char VectorClass_ptr_BulletTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee49c*/
       v4 = a3; /*0x4ee4b2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ee4ae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee4ae*/
     *((unsigned char *)this + 12) = 1; /*0x4ee4b6*/
     if ( v4 ) /*0x4ee4ba*/
     {
@@ -17482,7 +17482,7 @@ char VectorClass_ptr_BulletTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee4de*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee4eb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ee4f6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee4f6*/
           *((unsigned int *)this + 1) = 0; /*0x4ee4fe*/
         }
       }
@@ -17498,7 +17498,7 @@ char VectorClass_ptr_BulletTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVBulletTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee522*/
     return 1; /*0x4ee528*/
   }
 
@@ -17575,7 +17575,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee5d8*/
       v4 = a3; /*0x4ee5ee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ee5ea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee5ea*/
     *((unsigned char *)this + 12) = 1; /*0x4ee5f2*/
     if ( !v4 ) /*0x4ee5f6*/
       return 0; /*0x4ee66a*/
@@ -17588,7 +17588,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4ee611*/
       if ( *((unsigned char *)this + 13) ) /*0x4ee61e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ee629*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee629*/
         *((unsigned int *)this + 1) = 0; /*0x4ee631*/
       }
     }
@@ -17598,7 +17598,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVBulletTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee64e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ee651*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ee659*/
@@ -17677,7 +17677,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee6fc*/
       v4 = a3; /*0x4ee712*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ee70e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee70e*/
     *((unsigned char *)this + 12) = 1; /*0x4ee716*/
     if ( v4 ) /*0x4ee71a*/
     {
@@ -17690,7 +17690,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee73e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee74b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ee756*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee756*/
           *((unsigned int *)this + 1) = 0; /*0x4ee75e*/
         }
       }
@@ -17706,7 +17706,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVVoxelAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee782*/
     return 1; /*0x4ee788*/
   }
 
@@ -17783,7 +17783,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee838*/
       v4 = a3; /*0x4ee84e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ee84a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee84a*/
     *((unsigned char *)this + 12) = 1; /*0x4ee852*/
     if ( !v4 ) /*0x4ee856*/
       return 0; /*0x4ee8ca*/
@@ -17796,7 +17796,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ee871*/
       if ( *((unsigned char *)this + 13) ) /*0x4ee87e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ee889*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee889*/
         *((unsigned int *)this + 1) = 0; /*0x4ee891*/
       }
     }
@@ -17806,7 +17806,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVVoxelAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee8ae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ee8b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ee8b9*/
@@ -17885,7 +17885,7 @@ char VectorClass_ptr_IsometricTileTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee95c*/
       v4 = a3; /*0x4ee972*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ee96e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee96e*/
     *((unsigned char *)this + 12) = 1; /*0x4ee976*/
     if ( v4 ) /*0x4ee97a*/
     {
@@ -17898,7 +17898,7 @@ char VectorClass_ptr_IsometricTileTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee99e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee9ab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ee9b6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee9b6*/
           *((unsigned int *)this + 1) = 0; /*0x4ee9be*/
         }
       }
@@ -17914,7 +17914,7 @@ char VectorClass_ptr_IsometricTileTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVIsometricTileTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ee9e2*/
     return 1; /*0x4ee9e8*/
   }
 
@@ -17991,7 +17991,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity_0(int a2, unsigned int * a3
     if ( a3 ) /*0x4eea98*/
       v4 = a3; /*0x4eeaae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eeaaa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eeaaa*/
     *((unsigned char *)this + 12) = 1; /*0x4eeab2*/
     if ( !v4 ) /*0x4eeab6*/
       return 0; /*0x4eeb2a*/
@@ -18004,7 +18004,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity_0(int a2, unsigned int * a3
         ++i; /*0x4eead1*/
       if ( *((unsigned char *)this + 13) ) /*0x4eeade*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4eeae9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eeae9*/
         *((unsigned int *)this + 1) = 0; /*0x4eeaf1*/
       }
     }
@@ -18014,7 +18014,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity_0(int a2, unsigned int * a3
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVIsometricTileTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eeb0e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4eeb11*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eeb19*/
@@ -18093,7 +18093,7 @@ char VectorClass_ptr_ParticleTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eebbc*/
       v4 = a3; /*0x4eebd2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eebce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eebce*/
     *((unsigned char *)this + 12) = 1; /*0x4eebd6*/
     if ( v4 ) /*0x4eebda*/
     {
@@ -18106,7 +18106,7 @@ char VectorClass_ptr_ParticleTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eebfe*/
         if ( *((unsigned char *)this + 13) ) /*0x4eec0b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4eec16*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eec16*/
           *((unsigned int *)this + 1) = 0; /*0x4eec1e*/
         }
       }
@@ -18122,7 +18122,7 @@ char VectorClass_ptr_ParticleTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVParticleTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eec42*/
     return 1; /*0x4eec48*/
   }
 
@@ -18199,7 +18199,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eecf8*/
       v4 = a3; /*0x4eed0e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eed0a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eed0a*/
     *((unsigned char *)this + 12) = 1; /*0x4eed12*/
     if ( !v4 ) /*0x4eed16*/
       return 0; /*0x4eed8a*/
@@ -18212,7 +18212,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4eed31*/
       if ( *((unsigned char *)this + 13) ) /*0x4eed3e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4eed49*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eed49*/
         *((unsigned int *)this + 1) = 0; /*0x4eed51*/
       }
     }
@@ -18222,7 +18222,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVParticleTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eed6e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4eed71*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eed79*/
@@ -18301,7 +18301,7 @@ char VectorClass_ptr_ParticleSystemTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eee1c*/
       v4 = a3; /*0x4eee32*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eee2e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eee2e*/
     *((unsigned char *)this + 12) = 1; /*0x4eee36*/
     if ( v4 ) /*0x4eee3a*/
     {
@@ -18314,7 +18314,7 @@ char VectorClass_ptr_ParticleSystemTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eee5e*/
         if ( *((unsigned char *)this + 13) ) /*0x4eee6b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4eee76*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eee76*/
           *((unsigned int *)this + 1) = 0; /*0x4eee7e*/
         }
       }
@@ -18330,7 +18330,7 @@ char VectorClass_ptr_ParticleSystemTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eeea2*/
     return 1; /*0x4eeea8*/
   }
 
@@ -18407,7 +18407,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eef58*/
       v4 = a3; /*0x4eef6e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4eef6a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eef6a*/
     *((unsigned char *)this + 12) = 1; /*0x4eef72*/
     if ( !v4 ) /*0x4eef76*/
       return 0; /*0x4eefea*/
@@ -18420,7 +18420,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4eef91*/
       if ( *((unsigned char *)this + 13) ) /*0x4eef9e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4eefa9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eefa9*/
         *((unsigned int *)this + 1) = 0; /*0x4eefb1*/
       }
     }
@@ -18430,7 +18430,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4eefce*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4eefd1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4eefd9*/
@@ -18509,7 +18509,7 @@ char VectorClass_ptr_SuperWeaponTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ef07c*/
       v4 = a3; /*0x4ef092*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ef08e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ef08e*/
     *((unsigned char *)this + 12) = 1; /*0x4ef096*/
     if ( v4 ) /*0x4ef09a*/
     {
@@ -18522,7 +18522,7 @@ char VectorClass_ptr_SuperWeaponTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ef0be*/
         if ( *((unsigned char *)this + 13) ) /*0x4ef0cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ef0d6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef0d6*/
           *((unsigned int *)this + 1) = 0; /*0x4ef0de*/
         }
       }
@@ -18538,7 +18538,7 @@ char VectorClass_ptr_SuperWeaponTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVSuperWeaponTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ef102*/
     return 1; /*0x4ef108*/
   }
 
@@ -18615,7 +18615,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ef1b8*/
       v4 = a3; /*0x4ef1ce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ef1ca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ef1ca*/
     *((unsigned char *)this + 12) = 1; /*0x4ef1d2*/
     if ( !v4 ) /*0x4ef1d6*/
       return 0; /*0x4ef24a*/
@@ -18628,7 +18628,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4ef1f1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ef1fe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ef209*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef209*/
         *((unsigned int *)this + 1) = 0; /*0x4ef211*/
       }
     }
@@ -18638,7 +18638,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVSuperWeaponTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ef22e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ef231*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ef239*/
@@ -18717,7 +18717,7 @@ char VectorClass_ptr_AbstractTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ef2dc*/
       v4 = a3; /*0x4ef2f2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ef2ee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ef2ee*/
     *((unsigned char *)this + 12) = 1; /*0x4ef2f6*/
     if ( v4 ) /*0x4ef2fa*/
     {
@@ -18730,7 +18730,7 @@ char VectorClass_ptr_AbstractTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ef31e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ef32b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ef336*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef336*/
           *((unsigned int *)this + 1) = 0; /*0x4ef33e*/
         }
       }
@@ -18746,7 +18746,7 @@ char VectorClass_ptr_AbstractTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVAbstractTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ef362*/
     return 1; /*0x4ef368*/
   }
 
@@ -18823,7 +18823,7 @@ char VectorClass_ptr_SuperClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ef418*/
       v4 = a3; /*0x4ef42e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ef42a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ef42a*/
     *((unsigned char *)this + 12) = 1; /*0x4ef432*/
     if ( !v4 ) /*0x4ef436*/
       return 0; /*0x4ef4aa*/
@@ -18836,7 +18836,7 @@ char VectorClass_ptr_SuperClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ef451*/
       if ( *((unsigned char *)this + 13) ) /*0x4ef45e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x4ef469*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef469*/
         *((unsigned int *)this + 1) = 0; /*0x4ef471*/
       }
     }
@@ -18846,7 +18846,7 @@ char VectorClass_ptr_SuperClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVAbstractTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ef48e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x4ef491*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x4ef499*/
@@ -21162,7 +21162,7 @@ char VectorClass_BuildingType::Set(int a2, unsigned int * a3)
     if ( a3 ) /*0x50e96c*/
       v4 = a3; /*0x50e982*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x50e97e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x50e97e*/
     *((unsigned char *)this + 12) = 1; /*0x50e986*/
     if ( v4 ) /*0x50e98a*/
     {
@@ -21175,7 +21175,7 @@ char VectorClass_BuildingType::Set(int a2, unsigned int * a3)
           ++i; /*0x50e9ae*/
         if ( *((unsigned char *)this + 13) ) /*0x50e9bb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x50e9c6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50e9c6*/
           *((unsigned int *)this + 1) = 0; /*0x50e9ce*/
         }
       }
@@ -21191,7 +21191,7 @@ char VectorClass_BuildingType::Set(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVBuildingTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50e9f2*/
     return 1; /*0x50e9f8*/
   }
 
@@ -21274,7 +21274,7 @@ char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
     if ( !*((unsigned char *)this + 13) && v4 ) /*0x50eb86*/
       return 0; /*0x50eb86*/
     v5 = *((unsigned int *)this + 5); /*0x50eb88*/
-    if ( CapacityIncrement <= 0 || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
+    if ( v5 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v4 + v5, 0) ) /*0x50eb98*/
       return 0; /*0x50eb9f*/
   }
   v7 = *((unsigned int *)this + 4); /*0x50eba5*/
@@ -21338,7 +21338,7 @@ char VectorClass_UAngerStruct___16::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x50ec7c*/
       v4 = a3; /*0x50ec92*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x50ec8e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x50ec8e*/
     *((unsigned char *)this + 12) = 1; /*0x50ec96*/
     if ( v4 ) /*0x50ec9a*/
     {
@@ -21351,7 +21351,7 @@ char VectorClass_UAngerStruct___16::Release(int a2, unsigned int * a3)
           ++i; /*0x50ecbe*/
         if ( *((unsigned char *)this + 13) ) /*0x50eccb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x50ecd6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50ecd6*/
           *((unsigned int *)this + 1) = 0; /*0x50ecde*/
         }
       }
@@ -21367,7 +21367,7 @@ char VectorClass_UAngerStruct___16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUStartingTechnoStruct_HouseClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50ed02*/
     return 1; /*0x50ed08*/
   }
 
@@ -21444,7 +21444,7 @@ char VectorClass_UAngerStruct::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x50edb8*/
       v4 = a3; /*0x50edce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x50edca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x50edca*/
     *((unsigned char *)this + 12) = 1; /*0x50edd2*/
     if ( !v4 ) /*0x50edd6*/
       return 0; /*0x50ee4a*/
@@ -21457,7 +21457,7 @@ char VectorClass_UAngerStruct::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x50edf1*/
       if ( *((unsigned char *)this + 13) ) /*0x50edfe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x50ee09*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50ee09*/
         *((unsigned int *)this + 1) = 0; /*0x50ee11*/
       }
     }
@@ -21467,7 +21467,7 @@ char VectorClass_UAngerStruct::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUStartingTechnoStruct_HouseClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50ee2e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x50ee31*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x50ee39*/
@@ -21576,7 +21576,7 @@ char VectorClass_UAngerStruct::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = RA2_OPNEW(8 * a2); /*0x50ef07*/
+      v6 = __2_YAPAXI_Z(8 * a2); /*0x50ef07*/
       if ( v6 ) /*0x50ef11*/
       {
         v7 = v6; /*0x50ef16*/
@@ -21622,7 +21622,7 @@ char VectorClass_UAngerStruct::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x50ef8f*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x50ef98*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50ef98*/
           *((unsigned int *)this + 1) = 0; /*0x50efa0*/
         }
       }
@@ -21638,7 +21638,7 @@ char VectorClass_UAngerStruct::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_UAngerStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50efc4*/
     return 1; /*0x50efca*/
   }
 
@@ -21740,7 +21740,7 @@ char VectorClass_UAngerStruct::SetCapacity_0(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = RA2_OPNEW(8 * a2); /*0x50f097*/
+      v6 = __2_YAPAXI_Z(8 * a2); /*0x50f097*/
       if ( v6 ) /*0x50f0a1*/
       {
         v7 = v6; /*0x50f0a6*/
@@ -21786,7 +21786,7 @@ char VectorClass_UAngerStruct::SetCapacity_0(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x50f11a*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x50f123*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f123*/
         *((unsigned int *)this + 1) = 0; /*0x50f12b*/
       }
     }
@@ -21796,7 +21796,7 @@ char VectorClass_UAngerStruct::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_UAngerStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f148*/
   }
   v15 = *((unsigned int *)this + 2); /*0x50f14b*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x50f153*/
@@ -21905,7 +21905,7 @@ char VectorClass_UScoutStruct::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(8 * a2); /*0x50f237*/
+      v6 = (char *)__2_YAPAXI_Z(8 * a2); /*0x50f237*/
       if ( v6 ) /*0x50f241*/
       {
         v7 = v6; /*0x50f246*/
@@ -21951,7 +21951,7 @@ char VectorClass_UScoutStruct::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x50f2bf*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x50f2c8*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f2c8*/
           *((unsigned int *)this + 1) = 0; /*0x50f2d0*/
         }
       }
@@ -21967,7 +21967,7 @@ char VectorClass_UScoutStruct::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_UScoutStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f2f4*/
     return 1; /*0x50f2fa*/
   }
 
@@ -22182,7 +22182,7 @@ char VectorClass_BuildingType::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x50f79c*/
       v4 = a3; /*0x50f7b2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x50f7ae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f7ae*/
     *((unsigned char *)this + 12) = 1; /*0x50f7b6*/
     if ( v4 ) /*0x50f7ba*/
     {
@@ -22195,7 +22195,7 @@ char VectorClass_BuildingType::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x50f7de*/
         if ( *((unsigned char *)this + 13) ) /*0x50f7eb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x50f7f6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f7f6*/
           *((unsigned int *)this + 1) = 0; /*0x50f7fe*/
         }
       }
@@ -22211,7 +22211,7 @@ char VectorClass_BuildingType::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVTeamTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f822*/
     return 1; /*0x50f828*/
   }
 
@@ -22285,7 +22285,7 @@ char VectorClass_BuildingType::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x50f8d8*/
       v4 = a3; /*0x50f8ee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x50f8ea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f8ea*/
     *((unsigned char *)this + 12) = 1; /*0x50f8f2*/
     if ( !v4 ) /*0x50f8f6*/
       return 0; /*0x50f96a*/
@@ -22298,7 +22298,7 @@ char VectorClass_BuildingType::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x50f911*/
       if ( *((unsigned char *)this + 13) ) /*0x50f91e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x50f929*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f929*/
         *((unsigned int *)this + 1) = 0; /*0x50f931*/
       }
     }
@@ -22308,7 +22308,7 @@ char VectorClass_BuildingType::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVTeamTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50f94e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x50f951*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x50f959*/
@@ -22381,7 +22381,7 @@ char VectorClass__N::Remove(signed int Size, char * a3)
     if ( a3 ) /*0x50f9fc*/
       v4 = a3; /*0x50fa0b*/
     else
-      v4 = (char *)RA2_OPNEW(Size); /*0x50fa07*/
+      v4 = (char *)__2_YAPAXI_Z(Size); /*0x50fa07*/
     *((unsigned char *)this + 12) = 1; /*0x50fa0f*/
     if ( v4 ) /*0x50fa13*/
     {
@@ -22394,7 +22394,7 @@ char VectorClass__N::Remove(signed int Size, char * a3)
           ++i; /*0x50fa37*/
         if ( *((unsigned char *)this + 13) ) /*0x50fa44*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x50fa4f*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50fa4f*/
           *((unsigned int *)this + 1) = 0; /*0x50fa57*/
         }
       }
@@ -22410,7 +22410,7 @@ char VectorClass__N::Remove(signed int Size, char * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass__N *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50fa7b*/
     return 1; /*0x50fa81*/
   }
 
@@ -22488,7 +22488,7 @@ char VectorClass__N::SetCapacity(signed int Size, char * a3)
     if ( a3 ) /*0x50fb38*/
       v4 = a3; /*0x50fb47*/
     else
-      v4 = (char *)RA2_OPNEW(Size); /*0x50fb43*/
+      v4 = (char *)__2_YAPAXI_Z(Size); /*0x50fb43*/
     *((unsigned char *)this + 12) = 1; /*0x50fb4b*/
     if ( !v4 ) /*0x50fb4f*/
       return 0; /*0x50fbc3*/
@@ -22501,7 +22501,7 @@ char VectorClass__N::SetCapacity(signed int Size, char * a3)
         ++i; /*0x50fb6a*/
       if ( *((unsigned char *)this + 13) ) /*0x50fb77*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x50fb82*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50fb82*/
         *((unsigned int *)this + 1) = 0; /*0x50fb8a*/
       }
     }
@@ -22511,7 +22511,7 @@ char VectorClass__N::SetCapacity(signed int Size, char * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass__N *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50fba7*/
   }
   v7 = *((unsigned int *)this + 2); /*0x50fbaa*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x50fbb2*/
@@ -22598,18 +22598,18 @@ char VectorClass__N_18::Remove(int a2, int * a3)
   int v14; // edx
   int v15; // eax
 
-  if ( a3 ) /*0x50fc6c*/
+  if ( a2 ) /*0x50fc6c*/
   {
     v4 = a3; /*0x50fc72*/
     *((unsigned char *)this + 12) = 0; /*0x50fc76*/
     if ( a3 ) /*0x50fc7c*/
     {
-      *a3 = a3; /*0x50fcb7*/
+      *a3 = a2; /*0x50fcb7*/
       v6 = a3 + 1; /*0x50fcbb*/
-      if ( a3 - 1 >= 0 ) /*0x50fcbe*/
+      if ( a2 - 1 >= 0 ) /*0x50fcbe*/
       {
         v9 = a3 + 2; /*0x50fcc0*/
-        v10 = a3; /*0x50fcc3*/
+        v10 = a2; /*0x50fcc3*/
         do /*0x50fcce*/
         {
           *v9 = 0; /*0x50fcc4*/
@@ -22621,15 +22621,15 @@ char VectorClass__N_18::Remove(int a2, int * a3)
     }
     else
     {
-      v5 = (int *)RA2_OPNEW(8 * a3 + 4); /*0x50fc86*/
+      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x50fc86*/
       if ( v5 ) /*0x50fc90*/
       {
-        *v5 = a3; /*0x50fc95*/
+        *v5 = a2; /*0x50fc95*/
         v6 = v5 + 1; /*0x50fc99*/
-        if ( a3 - 1 >= 0 ) /*0x50fc9c*/
+        if ( a2 - 1 >= 0 ) /*0x50fc9c*/
         {
           v7 = v5 + 2; /*0x50fc9e*/
-          v8 = a3; /*0x50fca1*/
+          v8 = a2; /*0x50fca1*/
           do /*0x50fcac*/
           {
             *v7 = 0; /*0x50fca2*/
@@ -22650,8 +22650,8 @@ char VectorClass__N_18::Remove(int a2, int * a3)
       if ( *((unsigned int *)this + 1) ) /*0x50fce1*/
       {
         v12 = *((unsigned int *)this + 2); /*0x50fce8*/
-        if ( a3 < v12 ) /*0x50fced*/
-          v12 = a3; /*0x50fcef*/
+        if ( a2 < v12 ) /*0x50fced*/
+          v12 = a2; /*0x50fcef*/
         v13 = 0; /*0x50fcf1*/
         if ( v12 > 0 ) /*0x50fcf5*/
         {
@@ -22669,12 +22669,12 @@ char VectorClass__N_18::Remove(int a2, int * a3)
         {
           v15 = *((unsigned int *)this + 1); /*0x50fd1a*/
           if ( v15 ) /*0x50fd1f*/
-            RA2_OPDEL((void *)(v15 - 4)); /*0x50fd29*/
+            __3_YAXPAX_Z((void *)(v15 - 4)); /*0x50fd29*/
           *((unsigned int *)this + 1) = 0; /*0x50fd31*/
         }
       }
       *((unsigned int *)this + 1) = v6; /*0x50fd3a*/
-      *((unsigned int *)this + 2) = a3; /*0x50fd42*/
+      *((unsigned int *)this + 2) = a2; /*0x50fd42*/
       *((unsigned char *)this + 13) = v4 == 0; /*0x50fd45*/
       return 1; /*0x50fd4b*/
     }
@@ -22685,7 +22685,7 @@ char VectorClass__N_18::Remove(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50fd55*/
     return 1; /*0x50fd5b*/
   }
 
@@ -22791,7 +22791,7 @@ char VectorClass__N_18::SetCapacity(int a2, int * a3)
     }
     else
     {
-      v5 = (int *)RA2_OPNEW(8 * a2 + 4); /*0x50fe46*/
+      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x50fe46*/
       if ( v5 ) /*0x50fe50*/
       {
         *v5 = a2; /*0x50fe55*/
@@ -22842,7 +22842,7 @@ char VectorClass__N_18::SetCapacity(int a2, int * a3)
         {
           v15 = (void *)(v14 - 4); /*0x50fee0*/
           Array::ForEachReverse(v14, 8, *(unsigned int *)(v14 - 4), (int (*)(int))nullsub_145); /*0x50feec*/
-          RA2_OPDEL(v15); /*0x50fef2*/
+          __3_YAXPAX_Z(v15); /*0x50fef2*/
           v4 = a3; /*0x50fef7*/
         }
         *((unsigned int *)this + 1) = 0; /*0x50fefe*/
@@ -22854,7 +22854,7 @@ char VectorClass__N_18::SetCapacity(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_DistributionObject_PAVBuildingTypeClass_DiscreteDistributionClass_VBuildingTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x50ff1b*/
   }
   v16 = *((unsigned int *)this + 2); /*0x50ff1e*/
   if ( v16 < *((unsigned int *)this + 4) ) /*0x50ff26*/
@@ -23374,7 +23374,7 @@ unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x512faa*/
     return this; /*0x512faa*/
-  (*((void (**)(VectorClass *))this->vtable0 + 3))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x512fae*/
   v3 = *(unsigned int *)&aP1->__pad_0[8]; /*0x512fb1*/
   *((unsigned int *)this + 2) = v3; /*0x512fb6*/
   if ( !v3 ) /*0x512fb9*/
@@ -23383,7 +23383,7 @@ unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
     *((unsigned char *)this + 13) = 0; /*0x513001*/
     return this; /*0x513005*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x512fc3*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x512fc3*/
   *((unsigned int *)this + 1) = v4; /*0x512fcb*/
   if ( !v4 ) /*0x512fd0*/
     return this; /*0x512fd0*/
@@ -23416,7 +23416,7 @@ char VectorClass_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x513306*/
       return 0; /*0x513306*/
     v4 = *((unsigned int *)this + 5); /*0x513308*/
-    if ( CapacityIncrement <= 0 || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, char *, unsigned int))(*(unsigned int *)this + 32))(this, (char *)v3 + v4, 0) ) /*0x513318*/
       return 0; /*0x51331f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x513325*/
@@ -23533,7 +23533,7 @@ char VectorClass_ptr_CCINIClass::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x53857c*/
       v4 = a3; /*0x538592*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x53858e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x53858e*/
     *((unsigned char *)this + 12) = 1; /*0x538596*/
     if ( v4 ) /*0x53859a*/
     {
@@ -23546,7 +23546,7 @@ char VectorClass_ptr_CCINIClass::Remove(int a2, unsigned int * a3)
           ++i; /*0x5385be*/
         if ( *((unsigned char *)this + 13) ) /*0x5385cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5385d6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5385d6*/
           *((unsigned int *)this + 1) = 0; /*0x5385de*/
         }
       }
@@ -23562,7 +23562,7 @@ char VectorClass_ptr_CCINIClass::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVCCINIClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x538602*/
     return 1; /*0x538608*/
   }
 
@@ -23735,7 +23735,7 @@ char VectorClass_ptr_IonBlastClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x53dafc*/
       v4 = a3; /*0x53db12*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x53db0e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x53db0e*/
     *((unsigned char *)this + 12) = 1; /*0x53db16*/
     if ( v4 ) /*0x53db1a*/
     {
@@ -23748,7 +23748,7 @@ char VectorClass_ptr_IonBlastClass::Release(int a2, unsigned int * a3)
           ++i; /*0x53db3e*/
         if ( *((unsigned char *)this + 13) ) /*0x53db4b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x53db56*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x53db56*/
           *((unsigned int *)this + 1) = 0; /*0x53db5e*/
         }
       }
@@ -23764,7 +23764,7 @@ char VectorClass_ptr_IonBlastClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVIonBlastClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x53db82*/
     return 1; /*0x53db88*/
   }
 
@@ -23841,7 +23841,7 @@ char VectorClass_ptr_IonBlastClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x53dc38*/
       v4 = a3; /*0x53dc4e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x53dc4a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x53dc4a*/
     *((unsigned char *)this + 12) = 1; /*0x53dc52*/
     if ( !v4 ) /*0x53dc56*/
       return 0; /*0x53dcca*/
@@ -23854,7 +23854,7 @@ char VectorClass_ptr_IonBlastClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x53dc71*/
       if ( *((unsigned char *)this + 13) ) /*0x53dc7e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x53dc89*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x53dc89*/
         *((unsigned int *)this + 1) = 0; /*0x53dc91*/
       }
     }
@@ -23864,7 +23864,7 @@ char VectorClass_ptr_IonBlastClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVIonBlastClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x53dcae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x53dcb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x53dcb9*/
@@ -24042,7 +24042,7 @@ char VectorClass_PAG::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x54a2ac*/
       v4 = a3; /*0x54a2c2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x54a2be*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x54a2be*/
     *((unsigned char *)this + 12) = 1; /*0x54a2c6*/
     if ( v4 ) /*0x54a2ca*/
     {
@@ -24055,7 +24055,7 @@ char VectorClass_PAG::Release(int a2, unsigned int * a3)
           ++i; /*0x54a2ee*/
         if ( *((unsigned char *)this + 13) ) /*0x54a2fb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x54a306*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a306*/
           *((unsigned int *)this + 1) = 0; /*0x54a30e*/
         }
       }
@@ -24071,7 +24071,7 @@ char VectorClass_PAG::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAG *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x54a332*/
     return 1; /*0x54a338*/
   }
 
@@ -24178,7 +24178,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Release(int a2, 
     if ( a3 ) /*0x54a50c*/
       v4 = a3; /*0x54a522*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x54a51e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x54a51e*/
     *((unsigned char *)this + 12) = 1; /*0x54a526*/
     if ( v4 ) /*0x54a52a*/
     {
@@ -24191,7 +24191,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Release(int a2, 
           ++i; /*0x54a54e*/
         if ( *((unsigned char *)this + 13) ) /*0x54a55b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x54a566*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a566*/
           *((unsigned int *)this + 1) = 0; /*0x54a56e*/
         }
       }
@@ -24207,7 +24207,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Release(int a2, 
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUTileInsertType_IsometricTileTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x54a592*/
     return 1; /*0x54a598*/
   }
 
@@ -24284,7 +24284,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::SetCapacity(int 
     if ( a3 ) /*0x54a648*/
       v4 = a3; /*0x54a65e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x54a65a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x54a65a*/
     *((unsigned char *)this + 12) = 1; /*0x54a662*/
     if ( !v4 ) /*0x54a666*/
       return 0; /*0x54a6da*/
@@ -24297,7 +24297,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::SetCapacity(int 
         ++i; /*0x54a681*/
       if ( *((unsigned char *)this + 13) ) /*0x54a68e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x54a699*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a699*/
         *((unsigned int *)this + 1) = 0; /*0x54a6a1*/
       }
     }
@@ -24307,7 +24307,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::SetCapacity(int 
   }
   else
   {
-    (*(unsigned int *)this->__pad_0 + 12)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x54a6be*/
   }
   v7 = *((unsigned int *)this + 2); /*0x54a6c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x54a6c9*/
@@ -24498,7 +24498,7 @@ char VectorClass_ptr_LaserDrawClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x55138c*/
       v4 = a3; /*0x5513a2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x55139e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x55139e*/
     *((unsigned char *)this + 12) = 1; /*0x5513a6*/
     if ( v4 ) /*0x5513aa*/
     {
@@ -24511,7 +24511,7 @@ char VectorClass_ptr_LaserDrawClass::Release(int a2, unsigned int * a3)
           ++i; /*0x5513ce*/
         if ( *((unsigned char *)this + 13) ) /*0x5513db*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5513e6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5513e6*/
           *((unsigned int *)this + 1) = 0; /*0x5513ee*/
         }
       }
@@ -24527,7 +24527,7 @@ char VectorClass_ptr_LaserDrawClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVLaserDrawClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x551412*/
     return 1; /*0x551418*/
   }
 
@@ -24604,7 +24604,7 @@ char VectorClass_ptr_LaserDrawClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5514c8*/
       v4 = a3; /*0x5514de*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5514da*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5514da*/
     *((unsigned char *)this + 12) = 1; /*0x5514e2*/
     if ( !v4 ) /*0x5514e6*/
       return 0; /*0x55155a*/
@@ -24617,7 +24617,7 @@ char VectorClass_ptr_LaserDrawClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x551501*/
       if ( *((unsigned char *)this + 13) ) /*0x55150e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x551519*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x551519*/
         *((unsigned int *)this + 1) = 0; /*0x551521*/
       }
     }
@@ -24627,7 +24627,7 @@ char VectorClass_ptr_LaserDrawClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVLaserDrawClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x55153e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x551541*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x551549*/
@@ -24838,7 +24838,7 @@ char VectorClass_ptr_LightSourceClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x55531c*/
       v4 = a3; /*0x555332*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x55532e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x55532e*/
     *((unsigned char *)this + 12) = 1; /*0x555336*/
     if ( v4 ) /*0x55533a*/
     {
@@ -24851,7 +24851,7 @@ char VectorClass_ptr_LightSourceClass::Release(int a2, unsigned int * a3)
           ++i; /*0x55535e*/
         if ( *((unsigned char *)this + 13) ) /*0x55536b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x555376*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x555376*/
           *((unsigned int *)this + 1) = 0; /*0x55537e*/
         }
       }
@@ -24867,7 +24867,7 @@ char VectorClass_ptr_LightSourceClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVLightSourceClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5553a2*/
     return 1; /*0x5553a8*/
   }
 
@@ -24944,7 +24944,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x555458*/
       v4 = a3; /*0x55546e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x55546a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x55546a*/
     *((unsigned char *)this + 12) = 1; /*0x555472*/
     if ( !v4 ) /*0x555476*/
       return 0; /*0x5554ea*/
@@ -24957,7 +24957,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x555491*/
       if ( *((unsigned char *)this + 13) ) /*0x55549e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5554a9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5554a9*/
         *((unsigned int *)this + 1) = 0; /*0x5554b1*/
       }
     }
@@ -24967,7 +24967,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVLightSourceClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5554ce*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5554d1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5554d9*/
@@ -25046,7 +25046,7 @@ char VectorClass_ptr_PendingCellClass_LightSourceClass::Release(int a2, unsigned
     if ( a3 ) /*0x55557c*/
       v4 = a3; /*0x555592*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x55558e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x55558e*/
     *((unsigned char *)this + 12) = 1; /*0x555596*/
     if ( v4 ) /*0x55559a*/
     {
@@ -25059,7 +25059,7 @@ char VectorClass_ptr_PendingCellClass_LightSourceClass::Release(int a2, unsigned
           ++i; /*0x5555be*/
         if ( *((unsigned char *)this + 13) ) /*0x5555cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5555d6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5555d6*/
           *((unsigned int *)this + 1) = 0; /*0x5555de*/
         }
       }
@@ -25075,7 +25075,7 @@ char VectorClass_ptr_PendingCellClass_LightSourceClass::Release(int a2, unsigned
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVPendingCellClass_LightSourceClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x555602*/
     return 1; /*0x555608*/
   }
 
@@ -25152,7 +25152,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x5556b8*/
       v4 = a3; /*0x5556ce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5556ca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5556ca*/
     *((unsigned char *)this + 12) = 1; /*0x5556d2*/
     if ( !v4 ) /*0x5556d6*/
       return 0; /*0x55574a*/
@@ -25165,7 +25165,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x5556f1*/
       if ( *((unsigned char *)this + 13) ) /*0x5556fe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x555709*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x555709*/
         *((unsigned int *)this + 1) = 0; /*0x555711*/
       }
     }
@@ -25175,7 +25175,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVPendingCellClass_LightSourceClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x55572e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x555731*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x555739*/
@@ -25356,7 +25356,7 @@ char VectorClass_ptr_LineTrail::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x556f6c*/
       v4 = a3; /*0x556f82*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x556f7e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x556f7e*/
     *((unsigned char *)this + 12) = 1; /*0x556f86*/
     if ( v4 ) /*0x556f8a*/
     {
@@ -25369,7 +25369,7 @@ char VectorClass_ptr_LineTrail::Release(int a2, unsigned int * a3)
           ++i; /*0x556fae*/
         if ( *((unsigned char *)this + 13) ) /*0x556fbb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x556fc6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x556fc6*/
           *((unsigned int *)this + 1) = 0; /*0x556fce*/
         }
       }
@@ -25385,7 +25385,7 @@ char VectorClass_ptr_LineTrail::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVLineTrail *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x556ff2*/
     return 1; /*0x556ff8*/
   }
 
@@ -25525,7 +25525,7 @@ char VectorClass_PBG::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x55829c*/
       v4 = a3; /*0x5582b2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5582ae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5582ae*/
     *((unsigned char *)this + 12) = 1; /*0x5582b6*/
     if ( v4 ) /*0x5582ba*/
     {
@@ -25538,7 +25538,7 @@ char VectorClass_PBG::Release(int a2, unsigned int * a3)
           ++i; /*0x5582de*/
         if ( *((unsigned char *)this + 13) ) /*0x5582eb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5582f6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5582f6*/
           *((unsigned int *)this + 1) = 0; /*0x5582fe*/
         }
       }
@@ -25554,7 +25554,7 @@ char VectorClass_PBG::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBG *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x558322*/
     return 1; /*0x558328*/
   }
 
@@ -25650,7 +25650,7 @@ int VectorClass_flat::RemoveItem(ObjectClass * aP1)
   result = aP1; /*0x55bae0*/
   if ( aP1->isInLogic ) /*0x55bae7*/
   {
-    v4 = (*(int (**)(DynamicVectorClass *, int *))(this->vtable0 + 16))(this, &a2);
+    v4 = (*(int (**)(int *, ObjectClass **))(*(unsigned int *)this + 16))(this, &aP1); /*0x55bafa*/
     if ( v4 != -1 ) /*0x55bb00*/
     {
       v5 = *((char *)this + 4); /*0x55bb02*/
@@ -26007,7 +26007,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
     }
     else
     {
-      v5 = (int *)RA2_OPNEW(36 * a2 + 4); /*0x589771*/
+      v5 = (int *)__2_YAPAXI_Z(36 * a2 + 4); /*0x589771*/
       if ( v5 ) /*0x58977b*/
       {
         *v5 = a2; /*0x58977d*/
@@ -26092,7 +26092,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
                 {
                   if ( *(unsigned char *)(v18 + 13) ) /*0x5898e7*/
                   {
-                    RA2_OPDEL(v19); /*0x5898ed*/
+                    __3_YAXPAX_Z(v19); /*0x5898ed*/
                     *(unsigned int *)(v18 + 4) = 0; /*0x5898f5*/
                   }
                 }
@@ -26103,7 +26103,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
               while ( v25 ); /*0x589907*/
               v15 = v24; /*0x589909*/
             }
-            RA2_OPDEL(v15); /*0x58990e*/
+            __3_YAXPAX_Z(v15); /*0x58990e*/
           }
           *((unsigned int *)v4 + 1) = 0; /*0x589916*/
         }
@@ -26121,7 +26121,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_USubzoneTrackingStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x589942*/
     return 1; /*0x589948*/
   }
 
@@ -26267,7 +26267,7 @@ char VectorClass_W4PassabilityType::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x589f0c*/
       v4 = a3; /*0x589f22*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x589f1e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x589f1e*/
     *((unsigned char *)this + 12) = 1; /*0x589f26*/
     if ( v4 ) /*0x589f2a*/
     {
@@ -26280,7 +26280,7 @@ char VectorClass_W4PassabilityType::Release(int a2, unsigned int * a3)
           ++i; /*0x589f4e*/
         if ( *((unsigned char *)this + 13) ) /*0x589f5b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x589f66*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x589f66*/
           *((unsigned int *)this + 1) = 0; /*0x589f6e*/
         }
       }
@@ -26296,7 +26296,7 @@ char VectorClass_W4PassabilityType::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_W4PassabilityType *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x589f92*/
     return 1; /*0x589f98*/
   }
 
@@ -26373,7 +26373,7 @@ char VectorClass_W4PassabilityType::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x58a048*/
       v4 = a3; /*0x58a05e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x58a05a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x58a05a*/
     *((unsigned char *)this + 12) = 1; /*0x58a062*/
     if ( !v4 ) /*0x58a066*/
       return 0; /*0x58a0da*/
@@ -26386,7 +26386,7 @@ char VectorClass_W4PassabilityType::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x58a081*/
       if ( *((unsigned char *)this + 13) ) /*0x58a08e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x58a099*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a099*/
         *((unsigned int *)this + 1) = 0; /*0x58a0a1*/
       }
     }
@@ -26396,7 +26396,7 @@ char VectorClass_W4PassabilityType::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_W4PassabilityType *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a0be*/
   }
   v7 = *((unsigned int *)this + 2); /*0x58a0c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x58a0c9*/
@@ -26483,7 +26483,7 @@ char VectorClass_W4PassabilityType::SetCapacity_0(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = RA2_OPNEW(8 * a2); /*0x58a176*/
+      v5 = __2_YAPAXI_Z(8 * a2); /*0x58a176*/
       if ( v5 ) /*0x58a180*/
         v6 = v5; /*0x58a185*/
       else
@@ -26512,7 +26512,7 @@ char VectorClass_W4PassabilityType::SetCapacity_0(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x58a1d4*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x58a1df*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a1df*/
         *((unsigned int *)this + 1) = 0; /*0x58a1e7*/
       }
     }
@@ -26522,7 +26522,7 @@ char VectorClass_W4PassabilityType::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_U_HashObject_II *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a204*/
   }
   v10 = *((unsigned int *)this + 2); /*0x58a207*/
   if ( v10 < *((unsigned int *)this + 4) ) /*0x58a20f*/
@@ -26627,7 +26627,7 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(12 * a2); /*0x58a2c7*/
+      v6 = (char *)__2_YAPAXI_Z(12 * a2); /*0x58a2c7*/
       if ( v6 ) /*0x58a2d1*/
       {
         if ( a2 - 1 >= 0 ) /*0x58a2d8*/
@@ -26676,7 +26676,7 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x58a347*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x58a350*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a350*/
         *((unsigned int *)this + 1) = 0; /*0x58a358*/
       }
     }
@@ -26686,7 +26686,7 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_U_HashObject_IUSubzoneConnectionStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a375*/
   }
   v15 = *((unsigned int *)this + 2); /*0x58a378*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x58a380*/
@@ -26861,7 +26861,7 @@ char VectorClass_UHashObject_uint_uint::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = RA2_OPNEW(8 * a2); /*0x58a706*/
+      v5 = __2_YAPAXI_Z(8 * a2); /*0x58a706*/
       if ( v5 ) /*0x58a710*/
         v6 = v5; /*0x58a715*/
       else
@@ -26890,7 +26890,7 @@ char VectorClass_UHashObject_uint_uint::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x58a76d*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x58a778*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a778*/
           *((unsigned int *)this + 1) = 0; /*0x58a780*/
         }
       }
@@ -26906,7 +26906,7 @@ char VectorClass_UHashObject_uint_uint::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_U_HashObject_II *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a7a4*/
     return 1; /*0x58a7aa*/
   }
 
@@ -27070,7 +27070,7 @@ char VectorClass_UHashObject_uint_SubzoneConn::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(12 * a2); /*0x58a917*/
+      v6 = (char *)__2_YAPAXI_Z(12 * a2); /*0x58a917*/
       if ( v6 ) /*0x58a921*/
       {
         if ( a2 - 1 >= 0 ) /*0x58a928*/
@@ -27119,7 +27119,7 @@ char VectorClass_UHashObject_uint_SubzoneConn::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x58a9a0*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x58a9a9*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a9a9*/
           *((unsigned int *)this + 1) = 0; /*0x58a9b1*/
         }
       }
@@ -27135,7 +27135,7 @@ char VectorClass_UHashObject_uint_SubzoneConn::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_U_HashObject_IUSubzoneConnectionStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x58a9d5*/
     return 1; /*0x58a9db*/
   }
 
@@ -27368,7 +27368,7 @@ unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2
 
   if ( this == a2 ) /*0x58ad1c*/
     return this; /*0x58ad1c*/
-  (*(void (**)(VectorClass_USubzoneTrackingStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x58ad20*/
   v3 = a2[2]; /*0x58ad23*/
   *((unsigned int *)this + 2) = v3; /*0x58ad2a*/
   if ( !v3 ) /*0x58ad2d*/
@@ -27377,7 +27377,7 @@ unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2
     *((unsigned char *)this + 13) = 0; /*0x58ad98*/
     return this; /*0x58ad9b*/
   }
-  v4 = (char *)RA2_OPNEW(8 * v3); /*0x58ad37*/
+  v4 = (char *)__2_YAPAXI_Z(8 * v3); /*0x58ad37*/
   if ( v4 ) /*0x58ad41*/
   {
     v5 = v4; /*0x58ad46*/
@@ -27552,7 +27552,7 @@ char VectorClass_ptr_MapRegionClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5ac6fc*/
       v4 = a3; /*0x5ac712*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5ac70e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5ac70e*/
     *((unsigned char *)this + 12) = 1; /*0x5ac716*/
     if ( v4 ) /*0x5ac71a*/
     {
@@ -27565,7 +27565,7 @@ char VectorClass_ptr_MapRegionClass::Release(int a2, unsigned int * a3)
           ++i; /*0x5ac73e*/
         if ( *((unsigned char *)this + 13) ) /*0x5ac74b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5ac756*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ac756*/
           *((unsigned int *)this + 1) = 0; /*0x5ac75e*/
         }
       }
@@ -27581,7 +27581,7 @@ char VectorClass_ptr_MapRegionClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMapRegionClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ac782*/
     return 1; /*0x5ac788*/
   }
 
@@ -27658,7 +27658,7 @@ char VectorClass_ptr_MapRegionClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5ac838*/
       v4 = a3; /*0x5ac84e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5ac84a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5ac84a*/
     *((unsigned char *)this + 12) = 1; /*0x5ac852*/
     if ( !v4 ) /*0x5ac856*/
       return 0; /*0x5ac8ca*/
@@ -27671,7 +27671,7 @@ char VectorClass_ptr_MapRegionClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5ac871*/
       if ( *((unsigned char *)this + 13) ) /*0x5ac87e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5ac889*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ac889*/
         *((unsigned int *)this + 1) = 0; /*0x5ac891*/
       }
     }
@@ -27681,7 +27681,7 @@ char VectorClass_ptr_MapRegionClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(VectorClass_ptr_MapRegionClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ac8ae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5ac8b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5ac8b9*/
@@ -27762,7 +27762,7 @@ char VectorClass_N::Release(int a2, unsigned int * a3)
     v5 = a3; /*0x5ad141*/
     *((unsigned char *)this + 12) = 0; /*0x5ad145*/
     if ( !a3 ) /*0x5ad14b*/
-      v5 = RA2_OPNEW(8 * a2); /*0x5ad15d*/
+      v5 = __2_YAPAXI_Z(8 * a2); /*0x5ad15d*/
     *((unsigned char *)this + 12) = 1; /*0x5ad161*/
     if ( v5 ) /*0x5ad165*/
     {
@@ -27786,7 +27786,7 @@ char VectorClass_N::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x5ad1a1*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5ad1ac*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ad1ac*/
           *((unsigned int *)this + 1) = 0; /*0x5ad1b4*/
         }
       }
@@ -27802,7 +27802,7 @@ char VectorClass_N::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_N *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ad1db*/
     return 1; /*0x5ad1e0*/
   }
 
@@ -27881,7 +27881,7 @@ char VectorClass_N::SetCapacity(int a2, unsigned int * a3)
     v5 = a3; /*0x5ad2a1*/
     *((unsigned char *)this + 12) = 0; /*0x5ad2a5*/
     if ( !a3 ) /*0x5ad2ab*/
-      v5 = RA2_OPNEW(8 * a2); /*0x5ad2bd*/
+      v5 = __2_YAPAXI_Z(8 * a2); /*0x5ad2bd*/
     *((unsigned char *)this + 12) = 1; /*0x5ad2c1*/
     if ( !v5 ) /*0x5ad2c5*/
       return 0; /*0x5ad347*/
@@ -27905,7 +27905,7 @@ char VectorClass_N::SetCapacity(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x5ad2f9*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5ad304*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ad304*/
         *((unsigned int *)this + 1) = 0; /*0x5ad30c*/
       }
     }
@@ -27915,7 +27915,7 @@ char VectorClass_N::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_N *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5ad32d*/
   }
   v9 = *((unsigned int *)this + 2); /*0x5ad330*/
   if ( v9 < *((unsigned int *)this + 4) ) /*0x5ad338*/
@@ -28143,7 +28143,7 @@ char VectorClass_Point2D::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = RA2_OPNEW(8 * a2); /*0x5d0876*/
+      v5 = __2_YAPAXI_Z(8 * a2); /*0x5d0876*/
       if ( v5 ) /*0x5d0880*/
         v6 = v5; /*0x5d0885*/
       else
@@ -28172,7 +28172,7 @@ char VectorClass_Point2D::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x5d08dd*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d08e8*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d08e8*/
           *((unsigned int *)this + 1) = 0; /*0x5d08f0*/
         }
       }
@@ -28188,7 +28188,7 @@ char VectorClass_Point2D::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_VPoint2D *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d0914*/
     return 1; /*0x5d091a*/
   }
 
@@ -28295,7 +28295,7 @@ char VectorClass_ptr_MSTextEntry::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d0b3c*/
       v4 = a3; /*0x5d0b52*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d0b4e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d0b4e*/
     *((unsigned char *)this + 12) = 1; /*0x5d0b56*/
     if ( v4 ) /*0x5d0b5a*/
     {
@@ -28308,7 +28308,7 @@ char VectorClass_ptr_MSTextEntry::Release(int a2, unsigned int * a3)
           ++i; /*0x5d0b7e*/
         if ( *((unsigned char *)this + 13) ) /*0x5d0b8b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d0b96*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0b96*/
           *((unsigned int *)this + 1) = 0; /*0x5d0b9e*/
         }
       }
@@ -28324,7 +28324,7 @@ char VectorClass_ptr_MSTextEntry::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMSTextEntry *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d0bc2*/
     return 1; /*0x5d0bc8*/
   }
 
@@ -28431,7 +28431,7 @@ char VectorClass_ptr_MapSelection::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d0d9c*/
       v4 = a3; /*0x5d0db2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d0dae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d0dae*/
     *((unsigned char *)this + 12) = 1; /*0x5d0db6*/
     if ( v4 ) /*0x5d0dba*/
     {
@@ -28444,7 +28444,7 @@ char VectorClass_ptr_MapSelection::Release(int a2, unsigned int * a3)
           ++i; /*0x5d0dde*/
         if ( *((unsigned char *)this + 13) ) /*0x5d0deb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d0df6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0df6*/
           *((unsigned int *)this + 1) = 0; /*0x5d0dfe*/
         }
       }
@@ -28460,7 +28460,7 @@ char VectorClass_ptr_MapSelection::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMapSelection *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d0e22*/
     return 1; /*0x5d0e28*/
   }
 
@@ -28567,7 +28567,7 @@ char VectorClass_ptr_MSSfxEntry::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d14bc*/
       v4 = a3; /*0x5d14d2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d14ce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d14ce*/
     *((unsigned char *)this + 12) = 1; /*0x5d14d6*/
     if ( v4 ) /*0x5d14da*/
     {
@@ -28580,7 +28580,7 @@ char VectorClass_ptr_MSSfxEntry::Release(int a2, unsigned int * a3)
           ++i; /*0x5d14fe*/
         if ( *((unsigned char *)this + 13) ) /*0x5d150b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d1516*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d1516*/
           *((unsigned int *)this + 1) = 0; /*0x5d151e*/
         }
       }
@@ -28596,7 +28596,7 @@ char VectorClass_ptr_MSSfxEntry::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMSSfxEntry *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d1542*/
     return 1; /*0x5d1548*/
   }
 
@@ -28871,7 +28871,7 @@ char VectorClass_ptr_MSSfx::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d283c*/
       v4 = a3; /*0x5d2852*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d284e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d284e*/
     *((unsigned char *)this + 12) = 1; /*0x5d2856*/
     if ( v4 ) /*0x5d285a*/
     {
@@ -28884,7 +28884,7 @@ char VectorClass_ptr_MSSfx::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x5d287e*/
         if ( *((unsigned char *)this + 13) ) /*0x5d288b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d2896*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d2896*/
           *((unsigned int *)this + 1) = 0; /*0x5d289e*/
         }
       }
@@ -28900,7 +28900,7 @@ char VectorClass_ptr_MSSfx::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMSAnim *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d28c2*/
     return 1; /*0x5d28c8*/
   }
 
@@ -28939,7 +28939,7 @@ char VectorClass_ptr_MSSfx::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d2978*/
       v4 = a3; /*0x5d298e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d298a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d298a*/
     *((unsigned char *)this + 12) = 1; /*0x5d2992*/
     if ( !v4 ) /*0x5d2996*/
       return 0; /*0x5d2a0a*/
@@ -28952,7 +28952,7 @@ char VectorClass_ptr_MSSfx::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x5d29b1*/
       if ( *((unsigned char *)this + 13) ) /*0x5d29be*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d29c9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d29c9*/
         *((unsigned int *)this + 1) = 0; /*0x5d29d1*/
       }
     }
@@ -28962,7 +28962,7 @@ char VectorClass_ptr_MSSfx::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVMSAnim *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d29ee*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5d29f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d29f9*/
@@ -29041,7 +29041,7 @@ char VectorClass_ptr_MSSfx::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d2a9c*/
       v4 = a3; /*0x5d2ab2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d2aae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d2aae*/
     *((unsigned char *)this + 12) = 1; /*0x5d2ab6*/
     if ( v4 ) /*0x5d2aba*/
     {
@@ -29054,7 +29054,7 @@ char VectorClass_ptr_MSSfx::Release(int a2, unsigned int * a3)
           ++i; /*0x5d2ade*/
         if ( *((unsigned char *)this + 13) ) /*0x5d2aeb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d2af6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d2af6*/
           *((unsigned int *)this + 1) = 0; /*0x5d2afe*/
         }
       }
@@ -29070,7 +29070,7 @@ char VectorClass_ptr_MSSfx::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMSSfx *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d2b22*/
     return 1; /*0x5d2b28*/
   }
 
@@ -29147,7 +29147,7 @@ char VectorClass_Point2D::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d2bd8*/
       v4 = a3; /*0x5d2bee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d2bea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d2bea*/
     *((unsigned char *)this + 12) = 1; /*0x5d2bf2*/
     if ( !v4 ) /*0x5d2bf6*/
       return 0; /*0x5d2c6a*/
@@ -29160,7 +29160,7 @@ char VectorClass_Point2D::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5d2c11*/
       if ( *((unsigned char *)this + 13) ) /*0x5d2c1e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d2c29*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d2c29*/
         *((unsigned int *)this + 1) = 0; /*0x5d2c31*/
       }
     }
@@ -29170,7 +29170,7 @@ char VectorClass_Point2D::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVMSSfx *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d2c4e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5d2c51*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d2c59*/
@@ -29363,7 +29363,7 @@ char VectorClass_UAcceleratorTracker::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = RA2_OPNEW(8 * a2); /*0x5d5437*/
+      v6 = __2_YAPAXI_Z(8 * a2); /*0x5d5437*/
       if ( v6 ) /*0x5d5441*/
       {
         v7 = v6; /*0x5d5446*/
@@ -29409,7 +29409,7 @@ char VectorClass_UAcceleratorTracker::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x5d54bf*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d54c8*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d54c8*/
           *((unsigned int *)this + 1) = 0; /*0x5d54d0*/
         }
       }
@@ -29425,7 +29425,7 @@ char VectorClass_UAcceleratorTracker::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_UAcceleratorTracker *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d54f4*/
     return 1; /*0x5d54fa*/
   }
 
@@ -29565,7 +29565,7 @@ char VectorClass_ptr_MultiplayerTeam::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d834c*/
       v4 = a3; /*0x5d8362*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d835e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d835e*/
     *((unsigned char *)this + 12) = 1; /*0x5d8366*/
     if ( v4 ) /*0x5d836a*/
     {
@@ -29578,7 +29578,7 @@ char VectorClass_ptr_MultiplayerTeam::Release(int a2, unsigned int * a3)
           ++i; /*0x5d838e*/
         if ( *((unsigned char *)this + 13) ) /*0x5d839b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d83a6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d83a6*/
           *((unsigned int *)this + 1) = 0; /*0x5d83ae*/
         }
       }
@@ -29594,7 +29594,7 @@ char VectorClass_ptr_MultiplayerTeam::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMultiplayerTeam *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d83d2*/
     return 1; /*0x5d83d8*/
   }
 
@@ -29780,7 +29780,7 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
     if ( a3 ) /*0x5eec6c*/
       v4 = a3; /*0x5eec82*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5eec7e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5eec7e*/
     *((unsigned char *)this + 12) = 1; /*0x5eec86*/
     if ( v4 ) /*0x5eec8a*/
     {
@@ -29793,7 +29793,7 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
           ++i; /*0x5eecae*/
         if ( *((unsigned char *)this + 13) ) /*0x5eecbb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5eecc6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5eecc6*/
           *((unsigned int *)this + 1) = 0; /*0x5eecce*/
         }
       }
@@ -29809,7 +29809,7 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVMultiMission *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5eecf2*/
     return 1; /*0x5eecf8*/
   }
 
@@ -29883,7 +29883,7 @@ char VectorClass_cptr_MultiMission::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5eeda8*/
       v4 = a3; /*0x5eedbe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5eedba*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5eedba*/
     *((unsigned char *)this + 12) = 1; /*0x5eedc2*/
     if ( !v4 ) /*0x5eedc6*/
       return 0; /*0x5eee3a*/
@@ -29896,7 +29896,7 @@ char VectorClass_cptr_MultiMission::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5eede1*/
       if ( *((unsigned char *)this + 13) ) /*0x5eedee*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5eedf9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5eedf9*/
         *((unsigned int *)this + 1) = 0; /*0x5eee01*/
       }
     }
@@ -29906,7 +29906,7 @@ char VectorClass_cptr_MultiMission::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVMultiMission *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5eee1e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5eee21*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5eee29*/
@@ -30131,7 +30131,7 @@ char VectorClass_ptr_ObjectTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5f9bdc*/
       v4 = a3; /*0x5f9bf2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5f9bee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5f9bee*/
     *((unsigned char *)this + 12) = 1; /*0x5f9bf6*/
     if ( v4 ) /*0x5f9bfa*/
     {
@@ -30144,7 +30144,7 @@ char VectorClass_ptr_ObjectTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x5f9c1e*/
         if ( *((unsigned char *)this + 13) ) /*0x5f9c2b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5f9c36*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5f9c36*/
           *((unsigned int *)this + 1) = 0; /*0x5f9c3e*/
         }
       }
@@ -30160,7 +30160,7 @@ char VectorClass_ptr_ObjectTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVObjectTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5f9c62*/
     return 1; /*0x5f9c68*/
   }
 
@@ -30237,7 +30237,7 @@ char VectorClass_ptr_ObjectTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5f9d18*/
       v4 = a3; /*0x5f9d2e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5f9d2a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5f9d2a*/
     *((unsigned char *)this + 12) = 1; /*0x5f9d32*/
     if ( !v4 ) /*0x5f9d36*/
       return 0; /*0x5f9daa*/
@@ -30250,7 +30250,7 @@ char VectorClass_ptr_ObjectTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5f9d51*/
       if ( *((unsigned char *)this + 13) ) /*0x5f9d5e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5f9d69*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5f9d69*/
         *((unsigned int *)this + 1) = 0; /*0x5f9d71*/
       }
     }
@@ -30260,7 +30260,7 @@ char VectorClass_ptr_ObjectTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVObjectTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5f9d8e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5f9d91*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5f9d99*/
@@ -30425,7 +30425,7 @@ char VectorClass_ptr_SpotLightClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x60007c*/
       v4 = a3; /*0x600092*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x60008e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x60008e*/
     *((unsigned char *)this + 12) = 1; /*0x600096*/
     if ( v4 ) /*0x60009a*/
     {
@@ -30438,7 +30438,7 @@ char VectorClass_ptr_SpotLightClass::Release(int a2, unsigned int * a3)
           ++i; /*0x6000be*/
         if ( *((unsigned char *)this + 13) ) /*0x6000cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6000d6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6000d6*/
           *((unsigned int *)this + 1) = 0; /*0x6000de*/
         }
       }
@@ -30454,7 +30454,7 @@ char VectorClass_ptr_SpotLightClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVSpotLightClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x600102*/
     return 1; /*0x600108*/
   }
 
@@ -30531,7 +30531,7 @@ char VectorClass_ptr_SpotLightClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6001b8*/
       v4 = a3; /*0x6001ce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6001ca*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6001ca*/
     *((unsigned char *)this + 12) = 1; /*0x6001d2*/
     if ( !v4 ) /*0x6001d6*/
       return 0; /*0x60024a*/
@@ -30544,7 +30544,7 @@ char VectorClass_ptr_SpotLightClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6001f1*/
       if ( *((unsigned char *)this + 13) ) /*0x6001fe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x600209*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x600209*/
         *((unsigned int *)this + 1) = 0; /*0x600211*/
       }
     }
@@ -30554,7 +30554,7 @@ char VectorClass_ptr_SpotLightClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVSpotLightClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x60022e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x600231*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x600239*/
@@ -30689,7 +30689,7 @@ char VectorClass_ptr_ColorScheme::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x627e6c*/
       v4 = a3; /*0x627e82*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x627e7e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x627e7e*/
     *((unsigned char *)this + 12) = 1; /*0x627e86*/
     if ( v4 ) /*0x627e8a*/
     {
@@ -30702,7 +30702,7 @@ char VectorClass_ptr_ColorScheme::Release(int a2, unsigned int * a3)
           ++i; /*0x627eae*/
         if ( *((unsigned char *)this + 13) ) /*0x627ebb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x627ec6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x627ec6*/
           *((unsigned int *)this + 1) = 0; /*0x627ece*/
         }
       }
@@ -30718,7 +30718,7 @@ char VectorClass_ptr_ColorScheme::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVColorScheme *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x627ef2*/
     return 1; /*0x627ef8*/
   }
 
@@ -30820,7 +30820,7 @@ char VectorClass_ptr_ColorScheme::SetCapacity(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(3 * a2); /*0x628304*/
+      v6 = (char *)__2_YAPAXI_Z(3 * a2); /*0x628304*/
       if ( v6 ) /*0x62830e*/
       {
         if ( a2 - 1 >= 0 ) /*0x628315*/
@@ -30869,7 +30869,7 @@ char VectorClass_ptr_ColorScheme::SetCapacity(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x628391*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x62839a*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x62839a*/
           *((unsigned int *)this + 1) = 0; /*0x6283a2*/
         }
       }
@@ -30885,7 +30885,7 @@ char VectorClass_ptr_ColorScheme::SetCapacity(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_VHSVClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6283c6*/
     return 1; /*0x6283cc*/
   }
 
@@ -31198,7 +31198,7 @@ char VectorClass_ptr_ParasiteClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x62b12c*/
       v4 = a3; /*0x62b142*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x62b13e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x62b13e*/
     *((unsigned char *)this + 12) = 1; /*0x62b146*/
     if ( v4 ) /*0x62b14a*/
     {
@@ -31211,7 +31211,7 @@ char VectorClass_ptr_ParasiteClass::Release(int a2, unsigned int * a3)
           ++i; /*0x62b16e*/
         if ( *((unsigned char *)this + 13) ) /*0x62b17b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x62b186*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x62b186*/
           *((unsigned int *)this + 1) = 0; /*0x62b18e*/
         }
       }
@@ -31227,7 +31227,7 @@ char VectorClass_ptr_ParasiteClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVParasiteClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x62b1b2*/
     return 1; /*0x62b1b8*/
   }
 
@@ -31304,7 +31304,7 @@ char VectorClass_ptr_ParasiteClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x62b268*/
       v4 = a3; /*0x62b27e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x62b27a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x62b27a*/
     *((unsigned char *)this + 12) = 1; /*0x62b282*/
     if ( !v4 ) /*0x62b286*/
       return 0; /*0x62b2fa*/
@@ -31317,7 +31317,7 @@ char VectorClass_ptr_ParasiteClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x62b2a1*/
       if ( *((unsigned char *)this + 13) ) /*0x62b2ae*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x62b2b9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x62b2b9*/
         *((unsigned int *)this + 1) = 0; /*0x62b2c1*/
       }
     }
@@ -31327,7 +31327,7 @@ char VectorClass_ptr_ParasiteClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVParasiteClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x62b2de*/
   }
   v7 = *((unsigned int *)this + 2); /*0x62b2e1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x62b2e9*/
@@ -31573,7 +31573,7 @@ char VectorClass_ptr_PlanningMemberClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x63dd9c*/
       v4 = a3; /*0x63ddb2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63ddae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63ddae*/
     *((unsigned char *)this + 12) = 1; /*0x63ddb6*/
     if ( v4 ) /*0x63ddba*/
     {
@@ -31586,7 +31586,7 @@ char VectorClass_ptr_PlanningMemberClass::Release(int a2, unsigned int * a3)
           ++i; /*0x63ddde*/
         if ( *((unsigned char *)this + 13) ) /*0x63ddeb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x63ddf6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63ddf6*/
           *((unsigned int *)this + 1) = 0; /*0x63ddfe*/
         }
       }
@@ -31602,7 +31602,7 @@ char VectorClass_ptr_PlanningMemberClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVPlanningMemberClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63de22*/
     return 1; /*0x63de28*/
   }
 
@@ -31679,7 +31679,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x63df38*/
       v4 = a3; /*0x63df4e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63df4a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63df4a*/
     *((unsigned char *)this + 12) = 1; /*0x63df52*/
     if ( !v4 ) /*0x63df56*/
       return 0; /*0x63dfca*/
@@ -31692,7 +31692,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x63df71*/
       if ( *((unsigned char *)this + 13) ) /*0x63df7e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x63df89*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63df89*/
         *((unsigned int *)this + 1) = 0; /*0x63df91*/
       }
     }
@@ -31702,7 +31702,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVPlanningMemberClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63dfae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x63dfb1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63dfb9*/
@@ -31833,7 +31833,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity_0(int a2, unsigned int * a
     if ( a3 ) /*0x63e248*/
       v4 = a3; /*0x63e25e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63e25a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e25a*/
     *((unsigned char *)this + 12) = 1; /*0x63e262*/
     if ( !v4 ) /*0x63e266*/
       return 0; /*0x63e2da*/
@@ -31846,7 +31846,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity_0(int a2, unsigned int * a
         ++i; /*0x63e281*/
       if ( *((unsigned char *)this + 13) ) /*0x63e28e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x63e299*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e299*/
         *((unsigned int *)this + 1) = 0; /*0x63e2a1*/
       }
     }
@@ -31856,7 +31856,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity_0(int a2, unsigned int * a
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVPlanningBranchClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63e2be*/
   }
   v7 = *((unsigned int *)this + 2); /*0x63e2c1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x63e2c9*/
@@ -31922,7 +31922,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1)
   int v4; // ecx
   int v5; // ecx
 
-  // glued-defhead: int VectorClass::EraseAt(DynamicVectorClass *this, int a2)
+  v3 = (*(int (**)(int *, IUnknown *))(*(unsigned int *)this + 16))(this, aP1); /*0x63e90c*/
   if ( v3 == -1 ) /*0x63e912*/
     return 0; /*0x63e912*/
   v4 = *((char *)this + 4); /*0x63e914*/
@@ -31980,7 +31980,7 @@ char VectorClass_ptr_PlanningTokenClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e9ac*/
       v4 = a3; /*0x63e9c2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x63e9be*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e9be*/
     *((unsigned char *)this + 12) = 1; /*0x63e9c6*/
     if ( v4 ) /*0x63e9ca*/
     {
@@ -31993,7 +31993,7 @@ char VectorClass_ptr_PlanningTokenClass::Release(int a2, unsigned int * a3)
           ++i; /*0x63e9ee*/
         if ( *((unsigned char *)this + 13) ) /*0x63e9fb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x63ea06*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63ea06*/
           *((unsigned int *)this + 1) = 0; /*0x63ea0e*/
         }
       }
@@ -32009,7 +32009,7 @@ char VectorClass_ptr_PlanningTokenClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVPlanningTokenClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x63ea32*/
     return 1; /*0x63ea38*/
   }
 
@@ -32305,7 +32305,7 @@ char VectorClass_ptr_RadBeam::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x65a29c*/
       v4 = a3; /*0x65a2b2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x65a2ae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x65a2ae*/
     *((unsigned char *)this + 12) = 1; /*0x65a2b6*/
     if ( v4 ) /*0x65a2ba*/
     {
@@ -32318,7 +32318,7 @@ char VectorClass_ptr_RadBeam::Release(int a2, unsigned int * a3)
           ++i; /*0x65a2de*/
         if ( *((unsigned char *)this + 13) ) /*0x65a2eb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x65a2f6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x65a2f6*/
           *((unsigned int *)this + 1) = 0; /*0x65a2fe*/
         }
       }
@@ -32334,7 +32334,7 @@ char VectorClass_ptr_RadBeam::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVRadBeam *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x65a322*/
     return 1; /*0x65a328*/
   }
 
@@ -32411,7 +32411,7 @@ char VectorClass_ptr_RadBeam::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x65a3d8*/
       v4 = a3; /*0x65a3ee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x65a3ea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x65a3ea*/
     *((unsigned char *)this + 12) = 1; /*0x65a3f2*/
     if ( !v4 ) /*0x65a3f6*/
       return 0; /*0x65a46a*/
@@ -32424,7 +32424,7 @@ char VectorClass_ptr_RadBeam::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x65a411*/
       if ( *((unsigned char *)this + 13) ) /*0x65a41e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x65a429*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x65a429*/
         *((unsigned int *)this + 1) = 0; /*0x65a431*/
       }
     }
@@ -32434,7 +32434,7 @@ char VectorClass_ptr_RadBeam::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVRadBeam *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x65a44e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x65a451*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x65a459*/
@@ -32602,7 +32602,7 @@ char VectorClass_ptr_RadSiteClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x65bfac*/
       v4 = a3; /*0x65bfc2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x65bfbe*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x65bfbe*/
     *((unsigned char *)this + 12) = 1; /*0x65bfc6*/
     if ( v4 ) /*0x65bfca*/
     {
@@ -32615,7 +32615,7 @@ char VectorClass_ptr_RadSiteClass::Release(int a2, unsigned int * a3)
           ++i; /*0x65bfee*/
         if ( *((unsigned char *)this + 13) ) /*0x65bffb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x65c006*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x65c006*/
           *((unsigned int *)this + 1) = 0; /*0x65c00e*/
         }
       }
@@ -32631,7 +32631,7 @@ char VectorClass_ptr_RadSiteClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVRadSiteClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x65c032*/
     return 1; /*0x65c038*/
   }
 
@@ -32708,7 +32708,7 @@ char VectorClass_ptr_RadSiteClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x65c0e8*/
       v4 = a3; /*0x65c0fe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x65c0fa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x65c0fa*/
     *((unsigned char *)this + 12) = 1; /*0x65c102*/
     if ( !v4 ) /*0x65c106*/
       return 0; /*0x65c17a*/
@@ -32721,7 +32721,7 @@ char VectorClass_ptr_RadSiteClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x65c121*/
       if ( *((unsigned char *)this + 13) ) /*0x65c12e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x65c139*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x65c139*/
         *((unsigned int *)this + 1) = 0; /*0x65c141*/
       }
     }
@@ -32731,7 +32731,7 @@ char VectorClass_ptr_RadSiteClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVRadSiteClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x65c15e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x65c161*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x65c169*/
@@ -32899,7 +32899,7 @@ char VectorClass_ptr_RadarEventClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x660d3c*/
       v4 = a3; /*0x660d52*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x660d4e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x660d4e*/
     *((unsigned char *)this + 12) = 1; /*0x660d56*/
     if ( v4 ) /*0x660d5a*/
     {
@@ -32912,7 +32912,7 @@ char VectorClass_ptr_RadarEventClass::Release(int a2, unsigned int * a3)
           ++i; /*0x660d7e*/
         if ( *((unsigned char *)this + 13) ) /*0x660d8b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x660d96*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x660d96*/
           *((unsigned int *)this + 1) = 0; /*0x660d9e*/
         }
       }
@@ -32928,7 +32928,7 @@ char VectorClass_ptr_RadarEventClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVRadarEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x660dc2*/
     return 1; /*0x660dc8*/
   }
 
@@ -33005,7 +33005,7 @@ char VectorClass_ptr_RadarEventClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x660e78*/
       v4 = a3; /*0x660e8e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x660e8a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x660e8a*/
     *((unsigned char *)this + 12) = 1; /*0x660e92*/
     if ( !v4 ) /*0x660e96*/
       return 0; /*0x660f0a*/
@@ -33018,7 +33018,7 @@ char VectorClass_ptr_RadarEventClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x660eb1*/
       if ( *((unsigned char *)this + 13) ) /*0x660ebe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x660ec9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x660ec9*/
         *((unsigned int *)this + 1) = 0; /*0x660ed1*/
       }
     }
@@ -33028,7 +33028,7 @@ char VectorClass_ptr_RadarEventClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(VectorClass_ptr_RadarEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x660eee*/
   }
   v7 = *((unsigned int *)this + 2); /*0x660ef1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x660ef9*/
@@ -33185,7 +33185,7 @@ unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67aa8a*/
     return this; /*0x67aa8a*/
-  (*((void (**)(VectorClass *))this->vtable0 + 3))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x67aa8e*/
   v3 = aP1->field_8; /*0x67aa91*/
   *((unsigned int *)this + 2) = v3; /*0x67aa96*/
   if ( !v3 ) /*0x67aa99*/
@@ -33194,7 +33194,7 @@ unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
     *((unsigned char *)this + 13) = 0; /*0x67aae1*/
     return this; /*0x67aae5*/
   }
-  v4 = RA2_OPNEW(4 * (unsigned int)v3); /*0x67aaa3*/
+  v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x67aaa3*/
   *((unsigned int *)this + 1) = v4; /*0x67aaab*/
   if ( !v4 ) /*0x67aab0*/
     return this; /*0x67aab0*/
@@ -33223,7 +33223,7 @@ unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67ae0a*/
     return this; /*0x67ae0a*/
-  (*((void (**)(VectorClass *))this->vtable0 + 3))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x67ae0e*/
   v3 = aP1->headNode[1]; /*0x67ae11*/
   *((unsigned int *)this + 2) = v3; /*0x67ae16*/
   if ( !v3 ) /*0x67ae19*/
@@ -33232,7 +33232,7 @@ unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
     *((unsigned char *)this + 13) = 0; /*0x67ae61*/
     return this; /*0x67ae65*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x67ae23*/
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x67ae23*/
   *((unsigned int *)this + 1) = v4; /*0x67ae2b*/
   if ( !v4 ) /*0x67ae30*/
     return this; /*0x67ae30*/
@@ -33316,7 +33316,7 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x691176*/
       return 0; /*0x691176*/
     v4 = *((unsigned int *)this + 5); /*0x691178*/
-    if ( CapacityIncrement <= 0 || !(*(uint8_t (**)(DynamicVectorClass *, int, unsigned int))(this->vtable0 + 8))( this, Capacity + CapacityIncrement, 0) )
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x691188*/
       return 0; /*0x69118f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x691195*/
@@ -33536,7 +33536,7 @@ char VectorClass_Wstring::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = RA2_OPNEW(4 * a2 + 4); /*0x69c9e7*/
+      v5 = __2_YAPAXI_Z(4 * a2 + 4); /*0x69c9e7*/
       if ( v5 ) /*0x69c9f1*/
       {
         *v5 = a2; /*0x69c9f3*/
@@ -33588,7 +33588,7 @@ char VectorClass_Wstring::Release(int a2, unsigned int * a3)
               while ( v16 ); /*0x69cab7*/
               v13 = v19; /*0x69cab9*/
             }
-            RA2_OPDEL(v13); /*0x69cabe*/
+            __3_YAXPAX_Z(v13); /*0x69cabe*/
           }
           *((unsigned int *)this + 1) = 0; /*0x69cac6*/
         }
@@ -33606,7 +33606,7 @@ char VectorClass_Wstring::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_VWstring *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x69caf3*/
     return 1; /*0x69caf9*/
   }
 
@@ -33732,7 +33732,7 @@ char VectorClass_ptr_MultiMission::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x69cd9c*/
       v4 = a3; /*0x69cdb2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x69cdae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x69cdae*/
     *((unsigned char *)this + 12) = 1; /*0x69cdb6*/
     if ( v4 ) /*0x69cdba*/
     {
@@ -33745,7 +33745,7 @@ char VectorClass_ptr_MultiMission::Release(int a2, unsigned int * a3)
           ++i; /*0x69cdde*/
         if ( *((unsigned char *)this + 13) ) /*0x69cdeb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x69cdf6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x69cdf6*/
           *((unsigned int *)this + 1) = 0; /*0x69cdfe*/
         }
       }
@@ -33761,7 +33761,7 @@ char VectorClass_ptr_MultiMission::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMultiMission *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69ce22*/
     return 1; /*0x69ce28*/
   }
 
@@ -33838,7 +33838,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x69ced8*/
       v4 = a3; /*0x69ceee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x69ceea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x69ceea*/
     *((unsigned char *)this + 12) = 1; /*0x69cef2*/
     if ( !v4 ) /*0x69cef6*/
       return 0; /*0x69cf6a*/
@@ -33851,7 +33851,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x69cf11*/
       if ( *((unsigned char *)this + 13) ) /*0x69cf1e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x69cf29*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x69cf29*/
         *((unsigned int *)this + 1) = 0; /*0x69cf31*/
       }
     }
@@ -33861,7 +33861,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVMultiMission *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69cf4e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x69cf51*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x69cf59*/
@@ -33940,7 +33940,7 @@ char VectorClass_ptr_GlobalPacketType::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x69cffc*/
       v4 = a3; /*0x69d012*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x69d00e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x69d00e*/
     *((unsigned char *)this + 12) = 1; /*0x69d016*/
     if ( v4 ) /*0x69d01a*/
     {
@@ -33953,7 +33953,7 @@ char VectorClass_ptr_GlobalPacketType::Release(int a2, unsigned int * a3)
           ++i; /*0x69d03e*/
         if ( *((unsigned char *)this + 13) ) /*0x69d04b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x69d056*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x69d056*/
           *((unsigned int *)this + 1) = 0; /*0x69d05e*/
         }
       }
@@ -33969,7 +33969,7 @@ char VectorClass_ptr_GlobalPacketType::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUGlobalPacketType *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69d082*/
     return 1; /*0x69d088*/
   }
 
@@ -34046,7 +34046,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x69d138*/
       v4 = a3; /*0x69d14e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x69d14a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x69d14a*/
     *((unsigned char *)this + 12) = 1; /*0x69d152*/
     if ( !v4 ) /*0x69d156*/
       return 0; /*0x69d1ca*/
@@ -34059,7 +34059,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x69d171*/
       if ( *((unsigned char *)this + 13) ) /*0x69d17e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x69d189*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x69d189*/
         *((unsigned int *)this + 1) = 0; /*0x69d191*/
       }
     }
@@ -34069,7 +34069,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUGlobalPacketType *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69d1ae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x69d1b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x69d1b9*/
@@ -34148,7 +34148,7 @@ char VectorClass_ptr_PhoneEntryClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x69d25c*/
       v4 = a3; /*0x69d272*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x69d26e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x69d26e*/
     *((unsigned char *)this + 12) = 1; /*0x69d276*/
     if ( v4 ) /*0x69d27a*/
     {
@@ -34161,7 +34161,7 @@ char VectorClass_ptr_PhoneEntryClass::Release(int a2, unsigned int * a3)
           ++i; /*0x69d29e*/
         if ( *((unsigned char *)this + 13) ) /*0x69d2ab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x69d2b6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x69d2b6*/
           *((unsigned int *)this + 1) = 0; /*0x69d2be*/
         }
       }
@@ -34177,7 +34177,7 @@ char VectorClass_ptr_PhoneEntryClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVPhoneEntryClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69d2e2*/
     return 1; /*0x69d2e8*/
   }
 
@@ -34254,7 +34254,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x69d398*/
       v4 = a3; /*0x69d3ae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x69d3aa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x69d3aa*/
     *((unsigned char *)this + 12) = 1; /*0x69d3b2*/
     if ( !v4 ) /*0x69d3b6*/
       return 0; /*0x69d42a*/
@@ -34267,7 +34267,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x69d3d1*/
       if ( *((unsigned char *)this + 13) ) /*0x69d3de*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x69d3e9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x69d3e9*/
         *((unsigned int *)this + 1) = 0; /*0x69d3f1*/
       }
     }
@@ -34277,7 +34277,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(VectorClass_ptr_GlobalPacketType *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x69d40e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x69d411*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x69d419*/
@@ -34649,7 +34649,7 @@ char VectorClass_ptr_SlaveManagerClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b172c*/
       v4 = a3; /*0x6b1742*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6b173e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b173e*/
     *((unsigned char *)this + 12) = 1; /*0x6b1746*/
     if ( v4 ) /*0x6b174a*/
     {
@@ -34662,7 +34662,7 @@ char VectorClass_ptr_SlaveManagerClass::Release(int a2, unsigned int * a3)
           ++i; /*0x6b176e*/
         if ( *((unsigned char *)this + 13) ) /*0x6b177b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6b1786*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b1786*/
           *((unsigned int *)this + 1) = 0; /*0x6b178e*/
         }
       }
@@ -34678,7 +34678,7 @@ char VectorClass_ptr_SlaveManagerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVSlaveManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b17b2*/
     return 1; /*0x6b17b8*/
   }
 
@@ -34755,7 +34755,7 @@ char VectorClass_ptr_SlaveManagerClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b1868*/
       v4 = a3; /*0x6b187e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6b187a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b187a*/
     *((unsigned char *)this + 12) = 1; /*0x6b1882*/
     if ( !v4 ) /*0x6b1886*/
       return 0; /*0x6b18fa*/
@@ -34768,7 +34768,7 @@ char VectorClass_ptr_SlaveManagerClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6b18a1*/
       if ( *((unsigned char *)this + 13) ) /*0x6b18ae*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6b18b9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b18b9*/
         *((unsigned int *)this + 1) = 0; /*0x6b18c1*/
       }
     }
@@ -34778,7 +34778,7 @@ char VectorClass_ptr_SlaveManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVSlaveManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b18de*/
   }
   v7 = *((unsigned int *)this + 2); /*0x6b18e1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b18e9*/
@@ -35154,7 +35154,7 @@ char VectorClass_ptr_SpawnManagerClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b853c*/
       v4 = a3; /*0x6b8552*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6b854e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b854e*/
     *((unsigned char *)this + 12) = 1; /*0x6b8556*/
     if ( v4 ) /*0x6b855a*/
     {
@@ -35167,7 +35167,7 @@ char VectorClass_ptr_SpawnManagerClass::Release(int a2, unsigned int * a3)
           ++i; /*0x6b857e*/
         if ( *((unsigned char *)this + 13) ) /*0x6b858b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6b8596*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b8596*/
           *((unsigned int *)this + 1) = 0; /*0x6b859e*/
         }
       }
@@ -35183,7 +35183,7 @@ char VectorClass_ptr_SpawnManagerClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVSpawnManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b85c2*/
     return 1; /*0x6b85c8*/
   }
 
@@ -35260,7 +35260,7 @@ char VectorClass_ptr_SpawnManagerClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b8678*/
       v4 = a3; /*0x6b868e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6b868a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b868a*/
     *((unsigned char *)this + 12) = 1; /*0x6b8692*/
     if ( !v4 ) /*0x6b8696*/
       return 0; /*0x6b870a*/
@@ -35273,7 +35273,7 @@ char VectorClass_ptr_SpawnManagerClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6b86b1*/
       if ( *((unsigned char *)this + 13) ) /*0x6b86be*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6b86c9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b86c9*/
         *((unsigned int *)this + 1) = 0; /*0x6b86d1*/
       }
     }
@@ -35283,7 +35283,7 @@ char VectorClass_ptr_SpawnManagerClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVSpawnManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6b86ee*/
   }
   v7 = *((unsigned int *)this + 2); /*0x6b86f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6b86f9*/
@@ -36095,7 +36095,7 @@ char VectorClass_K::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6c622c*/
       v4 = a3; /*0x6c6242*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6c623e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6c623e*/
     *((unsigned char *)this + 12) = 1; /*0x6c6246*/
     if ( v4 ) /*0x6c624a*/
     {
@@ -36108,7 +36108,7 @@ char VectorClass_K::Release(int a2, unsigned int * a3)
           ++i; /*0x6c626e*/
         if ( *((unsigned char *)this + 13) ) /*0x6c627b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6c6286*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6c6286*/
           *((unsigned int *)this + 1) = 0; /*0x6c628e*/
         }
       }
@@ -36124,7 +36124,7 @@ char VectorClass_K::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_K *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6c62b2*/
     return 1; /*0x6c62b8*/
   }
 
@@ -36201,7 +36201,7 @@ char VectorClass_K::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6c6368*/
       v4 = a3; /*0x6c637e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6c637a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6c637a*/
     *((unsigned char *)this + 12) = 1; /*0x6c6382*/
     if ( !v4 ) /*0x6c6386*/
       return 0; /*0x6c63fa*/
@@ -36214,7 +36214,7 @@ char VectorClass_K::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6c63a1*/
       if ( *((unsigned char *)this + 13) ) /*0x6c63ae*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6c63b9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6c63b9*/
         *((unsigned int *)this + 1) = 0; /*0x6c63c1*/
       }
     }
@@ -36224,7 +36224,7 @@ char VectorClass_K::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_K *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6c63de*/
   }
   v7 = *((unsigned int *)this + 2); /*0x6c63e1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6c63e9*/
@@ -36393,7 +36393,7 @@ char VectorClass_ptr_SubTitle::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6ca878*/
       v4 = a3; /*0x6ca88e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6ca88a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6ca88a*/
     *((unsigned char *)this + 12) = 1; /*0x6ca892*/
     if ( !v4 ) /*0x6ca896*/
       return 0; /*0x6ca90a*/
@@ -36406,7 +36406,7 @@ char VectorClass_ptr_SubTitle::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6ca8b1*/
       if ( *((unsigned char *)this + 13) ) /*0x6ca8be*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6ca8c9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6ca8c9*/
         *((unsigned int *)this + 1) = 0; /*0x6ca8d1*/
       }
     }
@@ -36416,7 +36416,7 @@ char VectorClass_ptr_SubTitle::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVSubTitle *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6ca8ee*/
   }
   v7 = *((unsigned int *)this + 2); /*0x6ca8f1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6ca8f9*/
@@ -36487,7 +36487,7 @@ char VectorClass_ptr_SubTitle::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6caa2c*/
       v4 = a3; /*0x6caa42*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6caa3e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6caa3e*/
     *((unsigned char *)this + 12) = 1; /*0x6caa46*/
     if ( v4 ) /*0x6caa4a*/
     {
@@ -36500,7 +36500,7 @@ char VectorClass_ptr_SubTitle::Release(int a2, unsigned int * a3)
           ++i; /*0x6caa6e*/
         if ( *((unsigned char *)this + 13) ) /*0x6caa7b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6caa86*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6caa86*/
           *((unsigned int *)this + 1) = 0; /*0x6caa8e*/
         }
       }
@@ -36516,7 +36516,7 @@ char VectorClass_ptr_SubTitle::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVSubTitle *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6caab2*/
     return 1; /*0x6caab8*/
   }
 
@@ -36608,7 +36608,7 @@ char VectorClass_flat::RemoveAt(int a2)
   int v4; // ecx
   int v5; // ecx
 
-  // glued-defhead: int VectorClass::RemoveAt(DynamicVectorClass *this, int a2)
+  v3 = (*(int (**)(int *, int))(*(unsigned int *)this + 16))(this, a2); /*0x6ce2dc*/
   if ( v3 == -1 ) /*0x6ce2e2*/
     return 0; /*0x6ce2e2*/
   v4 = *((char *)this + 4); /*0x6ce2e4*/
@@ -36799,7 +36799,7 @@ char VectorClass_UDirtyAreaStruct::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(20 * a2); /*0x6dc687*/
+      v6 = (char *)__2_YAPAXI_Z(20 * a2); /*0x6dc687*/
       if ( v6 ) /*0x6dc691*/
       {
         if ( a2 - 1 >= 0 ) /*0x6dc698*/
@@ -36850,7 +36850,7 @@ char VectorClass_UDirtyAreaStruct::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x6dc72e*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6dc737*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dc737*/
           *((unsigned int *)this + 1) = 0; /*0x6dc73f*/
         }
       }
@@ -36866,7 +36866,7 @@ char VectorClass_UDirtyAreaStruct::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_UDirtyAreaStruct *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6dc765*/
     return 1; /*0x6dc76b*/
   }
 
@@ -37008,7 +37008,7 @@ char VectorClass_UDirtyAreaStruct___16::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6dca2c*/
       v4 = a3; /*0x6dca42*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6dca3e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6dca3e*/
     *((unsigned char *)this + 12) = 1; /*0x6dca46*/
     if ( v4 ) /*0x6dca4a*/
     {
@@ -37021,7 +37021,7 @@ char VectorClass_UDirtyAreaStruct___16::Release(int a2, unsigned int * a3)
           ++i; /*0x6dca6e*/
         if ( *((unsigned char *)this + 13) ) /*0x6dca7b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6dca86*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dca86*/
           *((unsigned int *)this + 1) = 0; /*0x6dca8e*/
         }
       }
@@ -37037,7 +37037,7 @@ char VectorClass_UDirtyAreaStruct___16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVShadowControlClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6dcab2*/
     return 1; /*0x6dcab8*/
   }
 
@@ -37114,7 +37114,7 @@ char VectorClass_UDirtyAreaStruct::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x6dcb68*/
       v4 = a3; /*0x6dcb7e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6dcb7a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6dcb7a*/
     *((unsigned char *)this + 12) = 1; /*0x6dcb82*/
     if ( !v4 ) /*0x6dcb86*/
       return 0; /*0x6dcbfa*/
@@ -37127,7 +37127,7 @@ char VectorClass_UDirtyAreaStruct::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x6dcba1*/
       if ( *((unsigned char *)this + 13) ) /*0x6dcbae*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6dcbb9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dcbb9*/
         *((unsigned int *)this + 1) = 0; /*0x6dcbc1*/
       }
     }
@@ -37137,7 +37137,7 @@ char VectorClass_UDirtyAreaStruct::SetCapacity_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVShadowControlClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6dcbde*/
   }
   v7 = *((unsigned int *)this + 2); /*0x6dcbe1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6dcbe9*/
@@ -37351,7 +37351,7 @@ char VectorClass_ptr_TagTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6e659c*/
       v4 = a3; /*0x6e65b2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6e65ae*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6e65ae*/
     *((unsigned char *)this + 12) = 1; /*0x6e65b6*/
     if ( v4 ) /*0x6e65ba*/
     {
@@ -37364,7 +37364,7 @@ char VectorClass_ptr_TagTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x6e65de*/
         if ( *((unsigned char *)this + 13) ) /*0x6e65eb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x6e65f6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6e65f6*/
           *((unsigned int *)this + 1) = 0; /*0x6e65fe*/
         }
       }
@@ -37380,7 +37380,7 @@ char VectorClass_ptr_TagTypeClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTagTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6e6622*/
     return 1; /*0x6e6628*/
   }
 
@@ -37457,7 +37457,7 @@ char VectorClass_ptr_TagTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6e66d8*/
       v4 = a3; /*0x6e66ee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x6e66ea*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x6e66ea*/
     *((unsigned char *)this + 12) = 1; /*0x6e66f2*/
     if ( !v4 ) /*0x6e66f6*/
       return 0; /*0x6e676a*/
@@ -37470,7 +37470,7 @@ char VectorClass_ptr_TagTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6e6711*/
       if ( *((unsigned char *)this + 13) ) /*0x6e671e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x6e6729*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6e6729*/
         *((unsigned int *)this + 1) = 0; /*0x6e6731*/
       }
     }
@@ -37480,7 +37480,7 @@ char VectorClass_ptr_TagTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTagTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x6e674e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x6e6751*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x6e6759*/
@@ -37699,7 +37699,7 @@ char VectorClass_ptr_TemporalClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x71b2fc*/
       v4 = a3; /*0x71b312*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x71b30e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x71b30e*/
     *((unsigned char *)this + 12) = 1; /*0x71b316*/
     if ( v4 ) /*0x71b31a*/
     {
@@ -37712,7 +37712,7 @@ char VectorClass_ptr_TemporalClass::Release(int a2, unsigned int * a3)
           ++i; /*0x71b33e*/
         if ( *((unsigned char *)this + 13) ) /*0x71b34b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x71b356*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x71b356*/
           *((unsigned int *)this + 1) = 0; /*0x71b35e*/
         }
       }
@@ -37728,7 +37728,7 @@ char VectorClass_ptr_TemporalClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTemporalClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x71b382*/
     return 1; /*0x71b388*/
   }
 
@@ -37805,7 +37805,7 @@ char VectorClass_ptr_TemporalClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x71b438*/
       v4 = a3; /*0x71b44e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x71b44a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x71b44a*/
     *((unsigned char *)this + 12) = 1; /*0x71b452*/
     if ( !v4 ) /*0x71b456*/
       return 0; /*0x71b4ca*/
@@ -37818,7 +37818,7 @@ char VectorClass_ptr_TemporalClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x71b471*/
       if ( *((unsigned char *)this + 13) ) /*0x71b47e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x71b489*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x71b489*/
         *((unsigned int *)this + 1) = 0; /*0x71b491*/
       }
     }
@@ -37828,7 +37828,7 @@ char VectorClass_ptr_TemporalClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTemporalClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x71b4ae*/
   }
   v7 = *((unsigned int *)this + 2); /*0x71b4b1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x71b4b9*/
@@ -37996,7 +37996,7 @@ char VectorClass_ptr_TEventClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x71fc5c*/
       v4 = a3; /*0x71fc72*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x71fc6e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x71fc6e*/
     *((unsigned char *)this + 12) = 1; /*0x71fc76*/
     if ( v4 ) /*0x71fc7a*/
     {
@@ -38009,7 +38009,7 @@ char VectorClass_ptr_TEventClass::Release(int a2, unsigned int * a3)
           ++i; /*0x71fc9e*/
         if ( *((unsigned char *)this + 13) ) /*0x71fcab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x71fcb6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x71fcb6*/
           *((unsigned int *)this + 1) = 0; /*0x71fcbe*/
         }
       }
@@ -38025,7 +38025,7 @@ char VectorClass_ptr_TEventClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x71fce2*/
     return 1; /*0x71fce8*/
   }
 
@@ -38102,7 +38102,7 @@ char VectorClass_ptr_TEventClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x71fd98*/
       v4 = a3; /*0x71fdae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x71fdaa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x71fdaa*/
     *((unsigned char *)this + 12) = 1; /*0x71fdb2*/
     if ( !v4 ) /*0x71fdb6*/
       return 0; /*0x71fe2a*/
@@ -38115,7 +38115,7 @@ char VectorClass_ptr_TEventClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x71fdd1*/
       if ( *((unsigned char *)this + 13) ) /*0x71fdde*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x71fde9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x71fde9*/
         *((unsigned int *)this + 1) = 0; /*0x71fdf1*/
       }
     }
@@ -38125,7 +38125,7 @@ char VectorClass_ptr_TEventClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTEventClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x71fe0e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x71fe11*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x71fe19*/
@@ -38253,7 +38253,7 @@ char VectorClass_ptr_ThemeControl::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x721318*/
       v4 = a3; /*0x72132e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x72132a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x72132a*/
     *((unsigned char *)this + 12) = 1; /*0x721332*/
     if ( !v4 ) /*0x721336*/
       return 0; /*0x7213aa*/
@@ -38266,7 +38266,7 @@ char VectorClass_ptr_ThemeControl::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x721351*/
       if ( *((unsigned char *)this + 13) ) /*0x72135e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x721369*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x721369*/
         *((unsigned int *)this + 1) = 0; /*0x721371*/
       }
     }
@@ -38276,7 +38276,7 @@ char VectorClass_ptr_ThemeControl::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUThemeControl *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x72138e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x721391*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x721399*/
@@ -38421,7 +38421,7 @@ char VectorClass_ptr_TiberiumClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x7237ec*/
       v4 = a3; /*0x723802*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x7237fe*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x7237fe*/
     *((unsigned char *)this + 12) = 1; /*0x723806*/
     if ( v4 ) /*0x72380a*/
     {
@@ -38434,7 +38434,7 @@ char VectorClass_ptr_TiberiumClass::Release(int a2, unsigned int * a3)
           ++i; /*0x72382e*/
         if ( *((unsigned char *)this + 13) ) /*0x72383b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x723846*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x723846*/
           *((unsigned int *)this + 1) = 0; /*0x72384e*/
         }
       }
@@ -38450,7 +38450,7 @@ char VectorClass_ptr_TiberiumClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTiberiumClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x723872*/
     return 1; /*0x723878*/
   }
 
@@ -38527,7 +38527,7 @@ char VectorClass_ptr_TiberiumClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x723928*/
       v4 = a3; /*0x72393e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x72393a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x72393a*/
     *((unsigned char *)this + 12) = 1; /*0x723942*/
     if ( !v4 ) /*0x723946*/
       return 0; /*0x7239ba*/
@@ -38540,7 +38540,7 @@ char VectorClass_ptr_TiberiumClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x723961*/
       if ( *((unsigned char *)this + 13) ) /*0x72396e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x723979*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x723979*/
         *((unsigned int *)this + 1) = 0; /*0x723981*/
       }
     }
@@ -38550,7 +38550,7 @@ char VectorClass_ptr_TiberiumClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVTiberiumClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x72399e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x7239a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x7239a9*/
@@ -38702,7 +38702,7 @@ char VectorClass_E::Release(signed int Size, char * a3)
     if ( a3 ) /*0x74c04c*/
       v4 = a3; /*0x74c05b*/
     else
-      v4 = (char *)RA2_OPNEW(Size); /*0x74c057*/
+      v4 = (char *)__2_YAPAXI_Z(Size); /*0x74c057*/
     *((unsigned char *)this + 12) = 1; /*0x74c05f*/
     if ( v4 ) /*0x74c063*/
     {
@@ -38715,7 +38715,7 @@ char VectorClass_E::Release(signed int Size, char * a3)
           ++i; /*0x74c087*/
         if ( *((unsigned char *)this + 13) ) /*0x74c094*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x74c09f*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x74c09f*/
           *((unsigned int *)this + 1) = 0; /*0x74c0a7*/
         }
       }
@@ -38731,7 +38731,7 @@ char VectorClass_E::Release(signed int Size, char * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_E *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x74c0cb*/
     return 1; /*0x74c0d1*/
   }
 
@@ -38882,7 +38882,7 @@ char VectorClass_ptr_VocClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x75198c*/
       v4 = a3; /*0x7519a2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x75199e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x75199e*/
     *((unsigned char *)this + 12) = 1; /*0x7519a6*/
     if ( v4 ) /*0x7519aa*/
     {
@@ -38895,7 +38895,7 @@ char VectorClass_ptr_VocClass::Release(int a2, unsigned int * a3)
           ++i; /*0x7519ce*/
         if ( *((unsigned char *)this + 13) ) /*0x7519db*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x7519e6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x7519e6*/
           *((unsigned int *)this + 1) = 0; /*0x7519ee*/
         }
       }
@@ -38911,7 +38911,7 @@ char VectorClass_ptr_VocClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVVocClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x751a12*/
     return 1; /*0x751a18*/
   }
 
@@ -38988,7 +38988,7 @@ char VectorClass_ptr_VocClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x751ac8*/
       v4 = a3; /*0x751ade*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x751ada*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x751ada*/
     *((unsigned char *)this + 12) = 1; /*0x751ae2*/
     if ( !v4 ) /*0x751ae6*/
       return 0; /*0x751b5a*/
@@ -39001,7 +39001,7 @@ char VectorClass_ptr_VocClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x751b01*/
       if ( *((unsigned char *)this + 13) ) /*0x751b0e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x751b19*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x751b19*/
         *((unsigned int *)this + 1) = 0; /*0x751b21*/
       }
     }
@@ -39011,7 +39011,7 @@ char VectorClass_ptr_VocClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVVocClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x751b3e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x751b41*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x751b49*/
@@ -39146,7 +39146,7 @@ char VectorClass_ptr_VoxClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x75370c*/
       v4 = a3; /*0x753722*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x75371e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x75371e*/
     *((unsigned char *)this + 12) = 1; /*0x753726*/
     if ( v4 ) /*0x75372a*/
     {
@@ -39159,7 +39159,7 @@ char VectorClass_ptr_VoxClass::Release(int a2, unsigned int * a3)
           ++i; /*0x75374e*/
         if ( *((unsigned char *)this + 13) ) /*0x75375b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x753766*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x753766*/
           *((unsigned int *)this + 1) = 0; /*0x75376e*/
         }
       }
@@ -39175,7 +39175,7 @@ char VectorClass_ptr_VoxClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVVoxClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x753792*/
     return 1; /*0x753798*/
   }
 
@@ -39348,7 +39348,7 @@ char VectorClass_ptr_MovieHandle::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x75a4ec*/
       v4 = a3; /*0x75a502*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x75a4fe*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x75a4fe*/
     *((unsigned char *)this + 12) = 1; /*0x75a506*/
     if ( v4 ) /*0x75a50a*/
     {
@@ -39361,7 +39361,7 @@ char VectorClass_ptr_MovieHandle::Release(int a2, unsigned int * a3)
           ++i; /*0x75a52e*/
         if ( *((unsigned char *)this + 13) ) /*0x75a53b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x75a546*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x75a546*/
           *((unsigned int *)this + 1) = 0; /*0x75a54e*/
         }
       }
@@ -39377,7 +39377,7 @@ char VectorClass_ptr_MovieHandle::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVMovieHandle *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x75a572*/
     return 1; /*0x75a578*/
   }
 
@@ -39454,7 +39454,7 @@ char VectorClass_ptr_MovieHandle::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x75a628*/
       v4 = a3; /*0x75a63e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x75a63a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x75a63a*/
     *((unsigned char *)this + 12) = 1; /*0x75a642*/
     if ( !v4 ) /*0x75a646*/
       return 0; /*0x75a6ba*/
@@ -39467,7 +39467,7 @@ char VectorClass_ptr_MovieHandle::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x75a661*/
       if ( *((unsigned char *)this + 13) ) /*0x75a66e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x75a679*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x75a679*/
         *((unsigned int *)this + 1) = 0; /*0x75a681*/
       }
     }
@@ -39477,7 +39477,7 @@ char VectorClass_ptr_MovieHandle::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVMovieHandle *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x75a69e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x75a6a1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x75a6a9*/
@@ -39645,7 +39645,7 @@ char VectorClass_ptr_WaypointPathClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x7644bc*/
       v4 = a3; /*0x7644d2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x7644ce*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x7644ce*/
     *((unsigned char *)this + 12) = 1; /*0x7644d6*/
     if ( v4 ) /*0x7644da*/
     {
@@ -39658,7 +39658,7 @@ char VectorClass_ptr_WaypointPathClass::Release(int a2, unsigned int * a3)
           ++i; /*0x7644fe*/
         if ( *((unsigned char *)this + 13) ) /*0x76450b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x764516*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x764516*/
           *((unsigned int *)this + 1) = 0; /*0x76451e*/
         }
       }
@@ -39674,7 +39674,7 @@ char VectorClass_ptr_WaypointPathClass::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVWaypointPathClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x764542*/
     return 1; /*0x764548*/
   }
 
@@ -39751,7 +39751,7 @@ char VectorClass_ptr_WaypointPathClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x7645f8*/
       v4 = a3; /*0x76460e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x76460a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x76460a*/
     *((unsigned char *)this + 12) = 1; /*0x764612*/
     if ( !v4 ) /*0x764616*/
       return 0; /*0x76468a*/
@@ -39764,7 +39764,7 @@ char VectorClass_ptr_WaypointPathClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x764631*/
       if ( *((unsigned char *)this + 13) ) /*0x76463e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x764649*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x764649*/
         *((unsigned int *)this + 1) = 0; /*0x764651*/
       }
     }
@@ -39774,7 +39774,7 @@ char VectorClass_ptr_WaypointPathClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAVWaypointPathClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x76466e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x764671*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x764679*/
@@ -40379,7 +40379,7 @@ char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release(int a2, un
     if ( a3 ) /*0x7b28fc*/
       v4 = a3; /*0x7b2912*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x7b290e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x7b290e*/
     *((unsigned char *)this + 12) = 1; /*0x7b2916*/
     if ( v4 ) /*0x7b291a*/
     {
@@ -40392,7 +40392,7 @@ char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release(int a2, un
           ++i; /*0x7b293e*/
         if ( *((unsigned char *)this + 13) ) /*0x7b294b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x7b2956*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x7b2956*/
           *((unsigned int *)this + 1) = 0; /*0x7b295e*/
         }
       }
@@ -40408,7 +40408,7 @@ char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release(int a2, un
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUWinsockBufferType_WinsockInterfaceClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x7b2982*/
     return 1; /*0x7b2988*/
   }
 
@@ -40548,7 +40548,7 @@ char VectorClass_PAE::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x7b437c*/
       v4 = a3; /*0x7b4392*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x7b438e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x7b438e*/
     *((unsigned char *)this + 12) = 1; /*0x7b4396*/
     if ( v4 ) /*0x7b439a*/
     {
@@ -40561,7 +40561,7 @@ char VectorClass_PAE::Release(int a2, unsigned int * a3)
           ++i; /*0x7b43be*/
         if ( *((unsigned char *)this + 13) ) /*0x7b43cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x7b43d6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x7b43d6*/
           *((unsigned int *)this + 1) = 0; /*0x7b43de*/
         }
       }
@@ -40577,7 +40577,7 @@ char VectorClass_PAE::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAE *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x7b4402*/
     return 1; /*0x7b4408*/
   }
 

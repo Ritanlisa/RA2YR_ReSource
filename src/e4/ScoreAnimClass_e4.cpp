@@ -12,9 +12,9 @@ namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&vt_ScoreAnimClass);
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x69100f*/
-    RA2_OPDEL(Block); /*0x691012*/
+  *Block = &vt_ScoreAnimClass; /*0x691009*/
+  if ( (a2 & 1) != 0 ) /*0x69100f*/
+    __3_YAXPAX_Z(Block); /*0x691012*/
   return Block; /*0x69101c*/
 
 }
@@ -24,9 +24,9 @@ namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(unsigned int * Block, char a2)
 {
 
-  *Block = (unsigned int)(&vt_ScoreAnimClass);
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x69102f*/
-    RA2_OPDEL(Block); /*0x691032*/
+  *Block = &vt_ScoreAnimClass; /*0x691029*/
+  if ( (a2 & 1) != 0 ) /*0x69102f*/
+    __3_YAXPAX_Z(Block); /*0x691032*/
   return Block; /*0x69103c*/
 
 }
@@ -39,27 +39,27 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(unsigned int * Block, 
   void *v3; // eax
   char *v4; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 3)));
-  *Block = (unsigned int)(&vt_ScoreFontClass);
+  v3 = (void *)*(Block + 3); /*0x6910a6*/
+  *Block = &vt_ScoreFontClass; /*0x6910a9*/
   if ( v3 && *((unsigned char *)Block + 16) == 1 ) /*0x6910b7*/
   {
-    RA2_OPDEL(v3); /*0x6910ba*/
+    __3_YAXPAX_Z(v3); /*0x6910ba*/
     *(Block + 3) = 0; /*0x6910c2*/
     *((unsigned char *)Block + 16) = 0; /*0x6910c5*/
   }
-  if ( !--g_abs_B0558C ) /*0x6910d3*/
+  if ( !--MEMORY[0xB0558C] ) /*0x6910d3*/
   {
-    v4 = (char *)(&g_abs_B05594);
+    v4 = &MEMORY[0xB05594]; /*0x6910d5*/
     do /*0x6910e7*/
     {
       *((unsigned int *)v4 - 1) = 0; /*0x6910da*/
       *v4 = 0; /*0x6910dd*/
       v4 += 8; /*0x6910df*/
     }
-    while ( (int)v4 < (int)((char *)&g_abs_B055A8 + 4) ); /*0x6910e7*/
+    while ( (int)v4 < (int)((char *)&MEMORY[0xB055A8] + 4) ); /*0x6910e7*/
   }
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6910ee*/
-    RA2_OPDEL(Block); /*0x6910f1*/
+  if ( (a2 & 1) != 0 ) /*0x6910ee*/
+    __3_YAXPAX_Z(Block); /*0x6910f1*/
   return Block; /*0x6910fb*/
 
 }

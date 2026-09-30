@@ -46,28 +46,28 @@ AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
   int v21; // [esp+20h] [ebp-4h]
 
   v3 = aP1; /*0x4b0ad0*/
-  if ( aP1->field_0 != *(unsigned int *)&g_abs_89F690 /*0x4b0afe*/
-    || aP1->field_4 != *(unsigned int *)&g_abs_89F690
-    || (v5 = aP1->field_8, v5 != *(unsigned int *)&g_abs_89F690) )
+  if ( aP1->field_0 != *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[772] /*0x4b0afe*/
+    || aP1->field_4 != *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[776]
+    || (v5 = aP1->field_8, v5 != *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[780]) )
   {
-    IDA_LOBYTE(v5) = *(unsigned char *)(this + 96); /*0x4b0b04*/
+    LOBYTE(v5) = *((unsigned char *)this + 96); /*0x4b0b04*/
     v6 = aP3; /*0x4b0b07*/
     if ( !(unsigned char)v5 ) /*0x4b0b0d*/
     {
-      v5 = *(unsigned int *)(this + 88); /*0x4b0b13*/
+      v5 = *((unsigned int *)this + 22); /*0x4b0b13*/
       if ( v5 != -1 ) /*0x4b0b19*/
       {
         v5 = byte_7E7B28[12 * v5]; /*0x4b0b22*/
         if ( v5 ) /*0x4b0b2c*/
         {
           v7 = 4 * v5; /*0x4b0b32*/
-          v8 = ((unsigned int *)(dword_7E7A28))[v7]; /*0x4b0b35*/
-          v5 = ((unsigned int *)(dword_7E7A34))[v7]; /*0x4b0b3b*/
+          v8 = dword_7E7A28[v7]; /*0x4b0b35*/
+          v5 = dword_7E7A34[v7]; /*0x4b0b3b*/
           if ( v5 > -1 ) /*0x4b0b44*/
           {
             v9 = (unsigned int *)(v8 + 12 * v5); /*0x4b0b4d*/
             aP3 = v9[2]; /*0x4b0b53*/
-            if ( *(unsigned int *)(this + 92) < v5 ) /*0x4b0b5c*/
+            if ( *((unsigned int *)this + 23) < v5 ) /*0x4b0b5c*/
             {
               v10 = v9[1]; /*0x4b0b64*/
               v18[0] = *v9; /*0x4b0b67*/
@@ -81,25 +81,25 @@ AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
               v12 = *(unsigned int *)(v5 + 4); /*0x4b0b89*/
               if ( !v6 ) /*0x4b0b8c*/
               {
-                v13 = (*(int (**)(unsigned int))(**(unsigned int **)(this + 12) + 464))(*(unsigned int *)(this + 12)); /*0x4b0b93*/
-                v14 = *(unsigned int *)(this + 12); /*0x4b0b99*/
+                v13 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 464))(*((unsigned int *)this + 3)); /*0x4b0b93*/
+                v14 = *((unsigned int *)this + 3); /*0x4b0b99*/
                 v19 = v11; /*0x4b0b9c*/
                 v20 = v12; /*0x4b0ba0*/
                 v21 = v13; /*0x4b0ba4*/
                 (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))(v14, &v19); /*0x4b0baf*/
-                IDA_LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)(this + 12) + 244))( /*0x4b0bbf*/
-                               *(unsigned int *)(this + 12),
+                LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x4b0bbf*/
+                               *((unsigned int *)this + 3),
                                aP1);
-                return (gamemd::AbstractClass *)(v5);
+                return v5; /*0x4b0bcc*/
               }
               if ( v6 == 1 || v6 == 3 ) /*0x4b0bd7*/
               {
-                v15 = (*(int (**)(unsigned int))(**(unsigned int **)(this + 12) + 464))(*(unsigned int *)(this + 12)); /*0x4b0bde*/
-                v16 = *(unsigned int *)(this + 12); /*0x4b0be4*/
+                v15 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 464))(*((unsigned int *)this + 3)); /*0x4b0bde*/
+                v16 = *((unsigned int *)this + 3); /*0x4b0be4*/
                 v21 = v15; /*0x4b0be7*/
                 v19 = v11; /*0x4b0beb*/
                 v20 = v12; /*0x4b0bef*/
-                IDA_LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))(v16, &v19); /*0x4b0bfa*/
+                LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))(v16, &v19); /*0x4b0bfa*/
               }
               v3 = aP1; /*0x4b0c00*/
             }
@@ -110,18 +110,18 @@ AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
     if ( v6 ) /*0x4b0c06*/
     {
       if ( v6 == 1 || v6 == 3 ) /*0x4b0c26*/
-        IDA_LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)(this + 12) + 240))( /*0x4b0c2e*/
-                       *(unsigned int *)(this + 12),
+        LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 240))( /*0x4b0c2e*/
+                       *((unsigned int *)this + 3),
                        v3);
     }
     else
     {
-      IDA_LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)(this + 12) + 244))( /*0x4b0c0e*/
-                     *(unsigned int *)(this + 12),
+      LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x4b0c0e*/
+                     *((unsigned int *)this + 3),
                      v3);
     }
   }
-  return (gamemd::AbstractClass *)(v5);
+  return v5; /*0x4b0bc5*/
 
 }
 }

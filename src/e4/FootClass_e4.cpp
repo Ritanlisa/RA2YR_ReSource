@@ -42,34 +42,34 @@ AbstractClass * FootClass::Destruct()
   void *v11; // [esp+8h] [ebp-4h] BYREF
 
   v2 = *((unsigned int *)this + 373); /*0x4d3597*/
-  *(unsigned int *)this = &vt_FootClass; /*0x4d359d*/
-  *((unsigned int *)this + 1) = &vt_FootClass; /*0x4d35a5*/
-  *((unsigned int *)this + 2) = &vt_FootClass; /*0x4d35ac*/
+  *(unsigned int *)this = &FootClass::`vftable'; /*0x4d359d*/
+  *((unsigned int *)this + 1) = &FootClass::`vftable'; /*0x4d35a5*/
+  *((unsigned int *)this + 2) = &FootClass::`vftable'; /*0x4d35ac*/
   *((unsigned int *)this + 3) = &vt_FootClass; /*0x4d35b3*/
-  if ( v2 && g_abs_A8D63C ) /*0x4d35c2*/
+  if ( v2 && MEMORY[0xA8D63C].__pad_1258[268] ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(v2, (IUnknown *)this, 0xFFFFFFFF, 0); /*0x4d35c8*/
   v11 = this; /*0x4d35dd*/
-  v3 = (*(int (**)(char *, void **))(*(unsigned int *)&g_abs_89F690 + 16))( /*0x4d35e1*/
-         &g_abs_89F690,
+  v3 = (*(int (**)(char *, void **))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[61332] + 16))( /*0x4d35e1*/
+         &MEMORY[0x89F690].__pad_579C[61332],
          &v11);
   if ( v3 != -1 ) /*0x4d35e7*/
-    FootClass::RemoveFromPointerArray(&g_abs_89F690, v3); /*0x4d35ef*/
+    FootClass::RemoveFromPointerArray(&MEMORY[0x89F690].__pad_579C[61332], v3); /*0x4d35ef*/
   v11 = this; /*0x4d3604*/
-  v4 = (*(int (**)(char *, void **))(*(unsigned int *)&g_abs_B077F8 + 16))( /*0x4d3608*/
-         &g_abs_B077F8,
+  v4 = (*(int (**)(char *, void **))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9796] + 16))( /*0x4d3608*/
+         &MEMORY[0xB077F8].__pad_579C[9796],
          &v11);
   if ( v4 != -1 ) /*0x4d360e*/
-    DynamicVector::RemoveItem(&g_abs_B077F8, v4); /*0x4d3616*/
+    DynamicVector::RemoveItem(&MEMORY[0xB077F8].__pad_579C[9796], v4); /*0x4d3616*/
   v5 = (AbstractClass *)*((unsigned int *)this + 423); /*0x4d361b*/
   if ( v5 ) /*0x4d3623*/
   {
     (*(void (**)(AbstractClass *, int))(*(unsigned int *)v5->__pad_0 + 32))(v5, 1); /*0x4d3629*/
     *((unsigned int *)this + 423) = 0; /*0x4d362c*/
   }
-  if ( *((unsigned short *)this + 690) != *(unsigned short *)&g_abs_89F690 /*0x4d3653*/
-    || *((unsigned short *)this + 691) != *(unsigned short *)&g_abs_89F690 )
+  if ( *((unsigned short *)this + 690) != *(unsigned short *)&MEMORY[0x89F690].__pad_579C[61276] /*0x4d3653*/
+    || *((unsigned short *)this + 691) != *(unsigned short *)&MEMORY[0x89F690].__pad_579C[61278] )
   {
-    v6 = (unsigned int *)(CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)this + 690));
+    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)this + 690); /*0x4d365b*/
     if ( (void *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
@@ -82,7 +82,7 @@ AbstractClass * FootClass::Destruct()
   *((unsigned int *)this + 363) = &vt_VectorClass_AbstractClass; /*0x4d36a0*/
   if ( v8 && *((unsigned char *)this + 1465) ) /*0x4d36a8*/
   {
-    RA2_OPDEL(v8); /*0x4d36b1*/
+    __3_YAXPAX_Z(v8); /*0x4d36b1*/
     *((unsigned int *)this + 364) = 0; /*0x4d36b9*/
   }
   *((unsigned char *)this + 1465) = 0; /*0x4d36bf*/
@@ -91,7 +91,7 @@ AbstractClass * FootClass::Destruct()
   *((unsigned int *)this + 354) = &vt_VectorClass_AbstractClass; /*0x4d36d1*/
   if ( v9 && *((unsigned char *)this + 1429) ) /*0x4d36dc*/
   {
-    RA2_OPDEL(v9); /*0x4d36e5*/
+    __3_YAXPAX_Z(v9); /*0x4d36e5*/
     *((unsigned int *)this + 355) = 0; /*0x4d36ed*/
   }
   *((unsigned char *)this + 1429) = 0; /*0x4d36f5*/
@@ -173,11 +173,12 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
   int *v30; // [esp+6Ch] [ebp-10h]
   int v31; // [esp+70h] [ebp-Ch] BYREF
   int v32; // [esp+78h] [ebp-4h]
-v6 = (unsigned int *)(ppv);
-  v30 = (int *)(a1);
+
+  v6 = ppv; /*0x710006*/
+  v30 = a1; /*0x71000d*/
   if ( ppv )
   {
-    v7 = (unsigned int *)((unsigned int *)(ppv))[180]; /*0x710017*/
+    v7 = (unsigned int *)ppv[180]; /*0x710017*/
     if ( v7 ) /*0x71001f*/
       TaskManager::Update(v7); /*0x710021*/
     v8 = (unsigned int *)v6[421]; /*0x710026*/
@@ -195,11 +196,11 @@ v6 = (unsigned int *)(ppv);
     if ( *(unsigned char *)((*(int (**)(unsigned int *))(*v6 + 132))(v6) + 1516)
       && v27
       && !v6[172]
-      && (*(uint8_t (**)(int))(*(unsigned int *)v27 + 28))(v27) )
+      && (*(unsigned __int8 (**)(int))(*(unsigned int *)v27 + 28))(v27) )
     {
       if ( !v27 ) /*0x7100d6*/
         WinAPI::Wrapper(-2147467261); /*0x7100dd*/
-      v12 = (*(uint8_t (**)(int))(*(unsigned int *)v27 + 20))(v27) == 0; /*0x7100ec*/
+      v12 = (*(unsigned __int8 (**)(int))(*(unsigned int *)v27 + 20))(v27) == 0; /*0x7100ec*/
       v13 = *v10; /*0x7100ee*/
       if ( v12 ) /*0x7100f0*/
       {
@@ -226,14 +227,14 @@ v6 = (unsigned int *)(ppv);
         WinAPI::Wrapper(-2147467261); /*0x710163*/
       (*(void (**)(unsigned int, unsigned int))(*(unsigned int *)*v10 + 156))(*v10, 0); /*0x71016f*/
       v12 = *v10 == 0; /*0x710189*/
-      v32 = g_abs_B0EA98; /*0x71018b*/
+      v32 = MEMORY[0xB0EA98]; /*0x71018b*/
       if ( v12 ) /*0x71018f*/
         WinAPI::Wrapper(-2147467261); /*0x710196*/
       (*(void (**)(unsigned int, int, int, int, int))(*(unsigned int *)*v10 + 112))( /*0x7101b3*/
         *v10,
         -1,
-        g_abs_B0EA90,
-        g_abs_B0EA94,
+        MEMORY[0xB0EA90],
+        MEMORY[0xB0EA94],
         v32);
       v15 = *v6; /*0x7101b6*/
       v16 = (*(int (**)(unsigned int *, int *))(*v6 + 72))(v6, &v31); /*0x7101bf*/
@@ -255,7 +256,7 @@ v6 = (unsigned int *)(ppv);
         WinAPI::Wrapper(v19); /*0x710224*/
       if ( !ppv ) /*0x71022f*/
         WinAPI::Wrapper(-2147467261); /*0x710236*/
-      (*(void (**)(unsigned int *, unsigned int *))(*(unsigned int *)((unsigned int *))((unsigned int *))(ppv) + 12))(ppv, v6); /*0x710243*/
+      (*(void (**)(unsigned int *, unsigned int *))(*ppv + 12))(ppv, v6); /*0x710243*/
       v29 = 0; /*0x71024a*/
       if ( ppv ) /*0x710250*/
       {
@@ -277,7 +278,7 @@ v6 = (unsigned int *)(ppv);
           WinAPI::Wrapper(-2147467261); /*0x7102cb*/
         (*(void (**)(int, unsigned int))(*(unsigned int *)v28 + 12))(v28, *v10); /*0x7102d8*/
         v22 = *v10; /*0x7102db*/
-        if ( (unsigned int *)*v10 != (unsigned int *)((unsigned int *))(ppv) ) /*0x7102e3*/
+        if ( (unsigned int *)*v10 != ppv ) /*0x7102e3*/
         {
           *v10 = ppv; /*0x7102e7*/
           SuperClass::SetFieldX(v6 + 413); /*0x7102e9*/
@@ -305,7 +306,7 @@ v6 = (unsigned int *)(ppv);
         }
       }
       if ( ppv ) /*0x7103e1*/
-        (*(void (**)(unsigned int *))(*(unsigned int *)(ppv) + 8))(ppv); /*0x7103e6*/
+        (*(void (**)(unsigned int *))(*ppv + 8))(ppv); /*0x7103e6*/
       if ( v28 ) /*0x7103ef*/
         (*(void (**)(int))(*(unsigned int *)v28 + 8))(v28); /*0x7103f4*/
     }

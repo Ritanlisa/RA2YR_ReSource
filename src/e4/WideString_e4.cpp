@@ -104,13 +104,13 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
   v5 = 0; /*0x7b73fa*/
   if ( !*this ) /*0x7b73f8*/
   {
-    v4 = (const wchar_t *)&g_abs_87F8E4; /*0x7b7404*/
-    if ( &g_abs_87F8E4 == (MouseClass *)-32336 ) /*0x7b740b*/
+    v4 = (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472]; /*0x7b7404*/
+    if ( &MEMORY[0x87F8E4] == (MouseClass *)-32336 ) /*0x7b740b*/
       goto LABEL_33; /*0x7b740b*/
   }
   while ( *v4 ) /*0x7b7416*/
   {
-    v6 = (wchar_t *)(wcsstr(v4, (const wchar_t *)aP1));
+    v6 = wcsstr(v4, (const wchar_t *)aP1); /*0x7b7422*/
     v22 = v6; /*0x7b742a*/
     if ( !v6 ) /*0x7b7430*/
     {
@@ -120,7 +120,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
         v14 = wcslen(v4) + 1; /*0x7b7530*/
         if ( v5 ) /*0x7b7533*/
           v14 += wcslen((const wchar_t *)v5); /*0x7b753e*/
-        v15 = (CCINIClass *)RA2_OPNEW(4 * v14); /*0x7b7548*/
+        v15 = (CCINIClass *)__2_YAPAXI_Z(4 * v14); /*0x7b7548*/
         v5 = v15; /*0x7b7550*/
         if ( v13 ) /*0x7b7554*/
           wcscpy((wchar_t *)v15, (const wchar_t *)v13); /*0x7b7558*/
@@ -128,7 +128,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
           *(unsigned short *)v15->__pad_0 = 0; /*0x7b7562*/
         wcscat((wchar_t *)v5, v4); /*0x7b7569*/
         if ( v13 ) /*0x7b7573*/
-          RA2_OPDEL(v13); /*0x7b7576*/
+          __3_YAXPAX_Z(v13); /*0x7b7576*/
       }
       break; /*0x7b7576*/
     }
@@ -139,7 +139,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
       v20 = v7 + 1; /*0x7b7443*/
       if ( v5 ) /*0x7b7447*/
         v20 += wcslen((const wchar_t *)v5); /*0x7b7458*/
-      v9 = (CCINIClass *)RA2_OPNEW(4 * v20); /*0x7b7468*/
+      v9 = (CCINIClass *)__2_YAPAXI_Z(4 * v20); /*0x7b7468*/
       v5 = v9; /*0x7b7470*/
       if ( v8 ) /*0x7b7474*/
         wcscpy((wchar_t *)v9, (const wchar_t *)v8); /*0x7b7478*/
@@ -147,7 +147,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
         *(unsigned short *)v9->__pad_0 = 0; /*0x7b7482*/
       wcsncat((wchar_t *)v5, v4, v7); /*0x7b748a*/
       if ( v8 ) /*0x7b7494*/
-        RA2_OPDEL(v8); /*0x7b7497*/
+        __3_YAXPAX_Z(v8); /*0x7b7497*/
     }
     if ( String ) /*0x7b74a5*/
     {
@@ -155,7 +155,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
       v11 = wcslen(String) + 1; /*0x7b74b4*/
       if ( v5 ) /*0x7b74b7*/
         v11 += wcslen((const wchar_t *)v5); /*0x7b74c2*/
-      v12 = (CCINIClass *)RA2_OPNEW(4 * v11); /*0x7b74cc*/
+      v12 = (CCINIClass *)__2_YAPAXI_Z(4 * v11); /*0x7b74cc*/
       v5 = v12; /*0x7b74d4*/
       if ( v10 ) /*0x7b74d8*/
         wcscpy((wchar_t *)v12, (const wchar_t *)v10); /*0x7b74dc*/
@@ -163,7 +163,7 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
         *(unsigned short *)v12->__pad_0 = 0; /*0x7b74e6*/
       wcscat((wchar_t *)v5, String); /*0x7b74ed*/
       if ( v10 ) /*0x7b74f7*/
-        RA2_OPDEL(v10); /*0x7b74fa*/
+        __3_YAXPAX_Z(v10); /*0x7b74fa*/
     }
     v4 = &v22[wcslen((const wchar_t *)aP1)]; /*0x7b7513*/
     if ( !v4 ) /*0x7b7518*/
@@ -173,26 +173,26 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
   {
     v3 = (GameSetup *)this; /*0x7b7583*/
 LABEL_33:
-    v16 = (CampaignScore *)&g_abs_87F8E4; /*0x7b7587*/
+    v16 = (CampaignScore *)&MEMORY[0x87F8E4].__pad_5568[10472]; /*0x7b7587*/
     goto LABEL_35; /*0x7b758c*/
   }
-  v3 = (gamemd::GameSetup *)((gamemd::AbstractClass **)((GameSetup *)this));
-  v16 = (gamemd::CampaignScore *)((gamemd::AbstractClass **)((CampaignScore *)v5));
+  v3 = (GameSetup *)this; /*0x7b758e*/
+  v16 = (CampaignScore *)v5; /*0x7b7592*/
 LABEL_35:
   if ( *(unsigned int *)v3->__pad_0 ) /*0x7b7594*/
-    RA2_OPDEL(*(void **)v3->__pad_0); /*0x7b759b*/
+    __3_YAXPAX_Z(*(void **)v3->__pad_0); /*0x7b759b*/
   *(unsigned int *)v3->__pad_0 = 0; /*0x7b75a5*/
   if ( v16 ) /*0x7b75ab*/
     v17 = wcslen((const wchar_t *)v16) + 1; /*0x7b75b6*/
   else
     v17 = 1; /*0x7b75b9*/
-  v18 = (unsigned short *)RA2_OPNEW(2 * v17); /*0x7b75c1*/
+  v18 = (unsigned short *)__2_YAPAXI_Z(2 * v17); /*0x7b75c1*/
   *(unsigned int *)v3->__pad_0 = v18; /*0x7b75c9*/
   *v18 = 0; /*0x7b75cd*/
   if ( v16 ) /*0x7b75d2*/
     wcscpy(*(wchar_t **)v3->__pad_0, (const wchar_t *)v16); /*0x7b75d8*/
   if ( v5 ) /*0x7b75e2*/
-    RA2_OPDEL(v5); /*0x7b75e5*/
+    __3_YAXPAX_Z(v5); /*0x7b75e5*/
   return 1; /*0x7b75ed*/
 
 }
@@ -306,15 +306,15 @@ int WideString::AssignFromPtr( const wchar_t ** a2)
   size_t v3; // eax
   wchar_t *v4; // eax
 
-  *(unsigned int *)this = 0; /*0x7b6728*/
+  *this = 0; /*0x7b6728*/
   if ( *a2 ) /*0x7b672e*/
   {
     v3 = wcslen(*a2); /*0x7b6735*/
-    v4 = (wchar_t *)RA2_OPNEW(2 * v3 + 2); /*0x7b673f*/
+    v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x7b673f*/
     *this = v4; /*0x7b6744*/
     wcscpy(v4, *a2); /*0x7b674a*/
   }
-  return (int)(this);
+  return this; /*0x7b6754*/
 
 }
 } // namespace gamemd
@@ -357,23 +357,23 @@ int WideString::Reassign_Alt(const wchar_t ** a2)
   v3 = (const wchar_t *)*this; /*0x7b68e8*/
   if ( (*this || *a2) && (!v3 || !*a2 || wcscmp(v3, *a2)) ) /*0x7b68ff*/
   {
-    v4 = (wchar_t *)((unsigned short *)((wchar_t *)*a2));
+    v4 = (wchar_t *)*a2; /*0x7b690b*/
     if ( !*a2 ) /*0x7b690b*/
-      v4 = &g_abs_887734; /*0x7b6911*/
+      v4 = &MEMORY[0x887734]; /*0x7b6911*/
     if ( *this ) /*0x7b6916*/
-      RA2_OPDEL(*this); /*0x7b691d*/
-    *(unsigned int *)this = 0; /*0x7b6927*/
+      __3_YAXPAX_Z(*this); /*0x7b691d*/
+    *this = 0; /*0x7b6927*/
     if ( v4 ) /*0x7b692d*/
       v5 = wcslen(v4) + 1; /*0x7b6938*/
     else
       v5 = 1; /*0x7b693b*/
-    v6 = RA2_OPNEW(2 * v5); /*0x7b6943*/
+    v6 = __2_YAPAXI_Z(2 * v5); /*0x7b6943*/
     *this = v6; /*0x7b694b*/
     *v6 = 0; /*0x7b694f*/
     if ( v4 ) /*0x7b6954*/
       wcscpy((wchar_t *)*this, v4); /*0x7b695a*/
   }
-  return (int)(this);
+  return this; /*0x7b6964*/
 
 }
 } // namespace gamemd
@@ -393,7 +393,7 @@ wchar_t ** WideString::Append2(CampaignScore * aP1)
     v4 = wcslen((const wchar_t *)aP1) + 1; /*0x7b6afb*/
     if ( v3 ) /*0x7b6afe*/
       v4 += wcslen((const wchar_t *)v3); /*0x7b6b09*/
-    v5 = (wchar_t *)RA2_OPNEW(4 * v4); /*0x7b6b13*/
+    v5 = (wchar_t *)__2_YAPAXI_Z(4 * v4); /*0x7b6b13*/
     *this = v5; /*0x7b6b1b*/
     if ( v3 ) /*0x7b6b20*/
       wcscpy(v5, (const wchar_t *)v3); /*0x7b6b24*/
@@ -401,9 +401,9 @@ wchar_t ** WideString::Append2(CampaignScore * aP1)
       *v5 = 0; /*0x7b6b2e*/
     wcscat(*this, (const wchar_t *)aP1); /*0x7b6b37*/
     if ( v3 ) /*0x7b6b41*/
-      RA2_OPDEL(v3); /*0x7b6b44*/
+      __3_YAXPAX_Z(v3); /*0x7b6b44*/
   }
-  return (wchar_t **)(this);
+  return this; /*0x7b6b4c*/
 
 }
 } // namespace gamemd
@@ -420,13 +420,13 @@ wchar_t ** WideString::Append(CampaignScore * aP1)
 
   v2 = *(const wchar_t **)aP1->__pad_0; /*0x7b6b67*/
   if ( *(unsigned int *)aP1->__pad_0 /*0x7b6b76*/
-    || (v2 = (const wchar_t *)&g_abs_87F8E4, &g_abs_87F8E4 != (MouseClass *)-32336) )
+    || (v2 = (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472], &MEMORY[0x87F8E4] != (MouseClass *)-32336) )
   {
     v4 = (CampaignScore *)*this; /*0x7b6b78*/
     v5 = wcslen(v2) + 1; /*0x7b6b86*/
     if ( v4 ) /*0x7b6b89*/
       v5 += wcslen((const wchar_t *)v4); /*0x7b6b94*/
-    v6 = (wchar_t *)RA2_OPNEW(4 * v5); /*0x7b6b9e*/
+    v6 = (wchar_t *)__2_YAPAXI_Z(4 * v5); /*0x7b6b9e*/
     *this = v6; /*0x7b6ba6*/
     if ( v4 ) /*0x7b6bab*/
       wcscpy(v6, (const wchar_t *)v4); /*0x7b6baf*/
@@ -434,9 +434,9 @@ wchar_t ** WideString::Append(CampaignScore * aP1)
       *v6 = 0; /*0x7b6bb9*/
     wcscat(*this, v2); /*0x7b6bc2*/
     if ( v4 ) /*0x7b6bcc*/
-      RA2_OPDEL(v4); /*0x7b6bcf*/
+      __3_YAXPAX_Z(v4); /*0x7b6bcf*/
   }
-  return (wchar_t **)(this);
+  return this; /*0x7b6bd7*/
 
 }
 } // namespace gamemd
@@ -585,20 +585,21 @@ namespace gamemd {
 char WideString::RemoveChar(wchar_t a2)
 {
 
-  wchar_t * v3;
+  char v3; // bl
   size_t v5; // edi
   wchar_t *v6; // eax
   int v7; // edi
   size_t v8; // eax
   wchar_t *v9; // edi
-v3 = (wchar_t *)((unsigned int)((wchar_t *)((char)((wchar_t *)(0)))));
+
+  v3 = 0; /*0x7b6e24*/
   if ( !*this ) /*0x7b6e26*/
     return 0; /*0x7b6e2d*/
   v5 = wcslen(*this); /*0x7b6e3f*/
   v6 = wcschr(*this, a2); /*0x7b6e45*/
   if ( v6 ) /*0x7b6e4f*/
   {
-    v3 = (wchar_t *)(1);
+    v3 = 1; /*0x7b6e51*/
     v7 = v5; /*0x7b6e53*/
     do /*0x7b6e88*/
     {
@@ -608,12 +609,12 @@ v3 = (wchar_t *)((unsigned int)((wchar_t *)((char)((wchar_t *)(0)))));
     }
     while ( v6 ); /*0x7b6e88*/
     v8 = wcslen(*this); /*0x7b6e8d*/
-    v9 = (wchar_t *)RA2_OPNEW(2 * v8 + 2); /*0x7b6e9c*/
+    v9 = (wchar_t *)__2_YAPAXI_Z(2 * v8 + 2); /*0x7b6e9c*/
     wcscpy(v9, *this); /*0x7b6ea2*/
-    RA2_OPDEL((void *)*this); /*0x7b6eaa*/
+    __3_YAXPAX_Z((void *)*this); /*0x7b6eaa*/
     *this = v9; /*0x7b6eb2*/
   }
-  return (char)(v3);
+  return v3; /*0x7b6e2c*/
 
 }
 } // namespace gamemd
@@ -668,7 +669,7 @@ int WideString::Length()
 
   const wchar_t *result; // eax
 
-  result = (const wchar_t *)(*this);
+  result = *this; /*0x7b71b0*/
   if ( *this ) /*0x7b71b0*/
     return (const wchar_t *)wcslen(*this); /*0x7b71b8*/
   return result; /*0x7b71b6*/

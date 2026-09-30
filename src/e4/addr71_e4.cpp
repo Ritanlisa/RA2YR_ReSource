@@ -62,16 +62,16 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   char v22; // [esp+31h] [ebp-5h]
   int v23; // [esp+32h] [ebp-4h] BYREF
 
-  for ( i = (unsigned int *)*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, &a2) + 57); i; i = (unsigned int *)i[12] ) /*0x7187bf*/
+  for ( i = (unsigned int *)*((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 57); i; i = (unsigned int *)i[12] ) /*0x7187bf*/
   {
-    if ( (*(uint8_t (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
+    if ( (*(unsigned __int8 (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
     {
       v23 = *(unsigned int *)((*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)) + 160); /*0x7187e7*/
       (*(void (**)(unsigned int, int *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))(**((unsigned int *)this + 3) + 364))( /*0x718804*/
         *((unsigned int *)this + 3),
         &v23,
         0,
-        g_abs_8871E0->?[5],
+        MEMORY[0x8871E0]->?[5],
         0,
         1,
         0,
@@ -80,8 +80,8 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   }
   v22 = 0; /*0x718814*/
   if ( *(unsigned char *)((*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)) + 3278) /*0x71885d*/
-    && ((*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, &a2) + 80) & 0x100) != 0
-     || *((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, &a2) + 59) == 1) )
+    && ((*((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 80) & 0x100) != 0
+     || *((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 59) == 1) )
   {
     v22 = 1; /*0x71885f*/
   }
@@ -92,39 +92,39 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     if ( *(unsigned char *)((*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)) + 1040) ) /*0x718887*/
     {
       v7 = (*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)); /*0x718896*/
-      v6 = (uint8_t)((HouseClass *)(v7))->GainedPoweredCenter() != 0; /*0x7188af*/
+      v6 = (unsigned __int8)HouseClass::GainedPoweredCenter(v7) != 0; /*0x7188af*/
     }
   }
-  IDA_LOWORD(v23) = a2 / 256; /*0x7188c1*/
-  IDA_HIWORD(v23) = a3 / 256; /*0x7188da*/
-  if ( *((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v23) + 59) != 2 /*0x718962*/
+  LOWORD(v23) = a2 / 256; /*0x7188c1*/
+  HIWORD(v23) = a3 / 256; /*0x7188da*/
+  if ( *((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23) + 59) != 2 /*0x718962*/
     || v6
     || *(unsigned char *)((*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)) + 3278)
     || (*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 44))(*((unsigned int *)this + 3)) == 15
-    || (*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, &a2) + 80) & 0x100) != 0
-    || *((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, &a2) + 59) == 1 )
+    || (*((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 80) & 0x100) != 0
+    || *((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 59) == 1 )
   {
-    v13 = (int *)(*((unsigned int *)this + 3));
-    IDA_LOWORD(v23) = a2 / 256; /*0x718a14*/
-    IDA_HIWORD(v23) = a3 / 256; /*0x718a2f*/
+    v13 = *((unsigned int *)this + 3); /*0x718a01*/
+    LOWORD(v23) = a2 / 256; /*0x718a14*/
+    HIWORD(v23) = a3 / 256; /*0x718a2f*/
     v14 = *v13; /*0x718a3c*/
-    v15 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v23); /*0x718a46*/
+    v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23); /*0x718a46*/
     if ( (*(int (**)(unsigned int, void *, int, int, unsigned int, int))(v14 + 428))(*((unsigned int *)this + 3), v15, -1, -1, 0, 1) == 7 /*0x718a60*/
-      || (IDA_LOBYTE(v12) = v22) != 0 )
+      || (LOBYTE(v12) = v22) != 0 )
     {
-      IDA_LOWORD(v23) = a2 / 256; /*0x718a80*/
-      IDA_HIWORD(v23) = a3 / 256; /*0x718a95*/
-      v16 = (int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v23); /*0x718aa2*/
+      LOWORD(v23) = a2 / 256; /*0x718a80*/
+      HIWORD(v23) = a3 / 256; /*0x718a95*/
+      v16 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23); /*0x718aa2*/
       if ( !Cell::IsGroundTypeRange(v16) || (*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 44))(*((unsigned int *)this + 3)) == 15 ) /*0x718abd*/
       {
         v19 = (*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)); /*0x718b23*/
         v20 = (int)*((unsigned int *)this + 3); /*0x718b2f*/
         v23 = *(unsigned int *)(v19 + 160); /*0x718b32*/
-        IDA_LOBYTE(v12) = (*(int (**)(int, int *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v20 + 364))( /*0x718b53*/
+        LOBYTE(v12) = (*(int (**)(int, int *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v20 + 364))( /*0x718b53*/
                         v20,
                         &v23,
                         0,
-                        g_abs_8871E0->?[5],
+                        MEMORY[0x8871E0]->?[5],
                         0,
                         1,
                         0,
@@ -165,13 +165,13 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     v11 = *((unsigned int *)this + 3); /*0x7189be*/
     if ( v11[266] ) /*0x7189c1*/
     {
-      IDA_LOBYTE(v12) = (*(int (**)(unsigned int *, unsigned int))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
+      LOBYTE(v12) = (*(int (**)(unsigned int *, unsigned int))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
     }
     else
     {
       v12 = (unsigned int *)v11[267]; /*0x7189dd*/
       if ( v12 ) /*0x7189e5*/
-        IDA_LOBYTE(v12) = (*(int (**)(unsigned int *, unsigned int))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
+        LOBYTE(v12) = (*(int (**)(unsigned int *, unsigned int))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
     }
   }
   return (char)v12; /*0x7189d4*/

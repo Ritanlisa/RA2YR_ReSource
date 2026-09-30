@@ -67,11 +67,11 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source)
   *((unsigned int *)this + 190) = 0; /*0x74ae59*/
   *((unsigned int *)this + 191) = 0; /*0x74ae5f*/
   *((unsigned char *)this + 768) = 0; /*0x74ae65*/
-  *this = &vt_VoxelAnimTypeClass; /*0x74ae6b*/
-  *((unsigned int *)this + 1) = &vt_VoxelAnimTypeClass; /*0x74ae71*/
-  *((unsigned int *)this + 2) = &vt_VoxelAnimTypeClass; /*0x74ae77*/
-  *((unsigned int *)this + 3) = &vt_VoxelAnimTypeClass; /*0x74ae7e*/
-  ((AbstractClass *)((int)((unsigned int *)this + 1)))->GenerateUniqueID(); /*0x74ae85*/
+  *this = &VoxelAnimTypeClass::`vftable'; /*0x74ae6b*/
+  *((unsigned int *)this + 1) = &VoxelAnimTypeClass::`vftable'; /*0x74ae71*/
+  *((unsigned int *)this + 2) = &VoxelAnimTypeClass::`vftable'; /*0x74ae77*/
+  *((unsigned int *)this + 3) = &VoxelAnimTypeClass::`vftable'; /*0x74ae7e*/
+  AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x74ae85*/
   *((unsigned char *)this + 561) = 0; /*0x74ae8c*/
   *((unsigned char *)this + 564) = 1; /*0x74ae92*/
   *((unsigned char *)this + 559) = 1; /*0x74ae98*/
@@ -79,27 +79,27 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::Constructor(char * Source)
   *((unsigned char *)this + 562) = 1; /*0x74aea4*/
   *((unsigned char *)this + 563) = 1; /*0x74aeaa*/
   *((unsigned char *)this + 565) = 0; /*0x74aeb0*/
-  if ( g_abs_B0F680 < g_abs_B0F678 /*0x74aeea*/
-    || (g_abs_B0F67D || !g_abs_B0F678)
-    && g_abs_B0F684 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F670 + 8))(
-         &g_abs_B0F670,
-         (unsigned int)(g_abs_B0F678)+ g_abs_B0F684,
+  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678] /*0x74aeea*/
+    || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
+    && MEMORY[0xB0F684] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F670] + 8))(
+         &MEMORY[0xB0F670],
+         MEMORY[0xB0F678] + MEMORY[0xB0F684],
          0) )
   {
-    v3 = (int)(g_abs_B0F680++);
-    *((unsigned int *)g_abs_B0F674 + v3) = this; /*0x74af06*/
+    v3 = MEMORY[0xB0F680]++; /*0x74aef7*/
+    *((unsigned int *)MEMORY[0xB0F674] + v3) = this; /*0x74af06*/
   }
-  if ( g_abs_A8EB38 < g_abs_A8EB30 /*0x74af3d*/
-    || (g_abs_A8EB35 || !g_abs_A8EB30)
-    && g_abs_A8EB3C > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8EB28 + 8))(
-         &g_abs_A8EB28,
-         (unsigned int)(g_abs_A8EB30)+ g_abs_A8EB3C,
+  if ( MEMORY[0xA8EB38] < MEMORY[0xA8EB30] /*0x74af3d*/
+    || (MEMORY[0xA8EB35] || !MEMORY[0xA8EB30])
+    && MEMORY[0xA8EB3C] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8EB28] + 8))(
+         &MEMORY[0xA8EB28],
+         MEMORY[0xA8EB30] + MEMORY[0xA8EB3C],
          0) )
   {
-    v4 = (int)(g_abs_A8EB38++);
-    *((unsigned int *)g_abs_A8EB2C + v4) = this; /*0x74af59*/
+    v4 = MEMORY[0xA8EB38]++; /*0x74af4a*/
+    *((unsigned int *)MEMORY[0xA8EB2C] + v4) = this; /*0x74af59*/
   }
   return this; /*0x74af5e*/
 
@@ -157,7 +157,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   unsigned int *v49; // [esp+10h] [ebp-288h]
   char v50; // [esp+15h] [ebp-283h]
   char v51; // [esp+16h] [ebp-282h]
-  unsigned int * v52;
+  char v52; // [esp+17h] [ebp-281h]
   char Destination[88]; // [esp+18h] [ebp-280h] BYREF
   char v54[12]; // [esp+70h] [ebp-228h] BYREF
   int v55; // [esp+7Ch] [ebp-21Ch]
@@ -168,66 +168,72 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
     return 0; /*0x74b614*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x74b08d*/
                      a2,
-                     (uint8_t *)((char *)this + 36),
-                     (uint8_t *)g_INI_Key_Normalized,
+                     (unsigned __int8 *)((char *)this + 36),
+                     (unsigned __int8 *)g_INI_Key_Normalized,
                      *((unsigned char *)this + 660));
   v5 = *((unsigned char *)this + 661); /*0x74b092*/
   *((unsigned char *)this + 660) = Bool_Overwrite; /*0x74b098*/
-  v6 = INIClass::ReadBool_Overwrite(a2, (uint8_t *)((char *)this + 36), (uint8_t *)aTranslucent, v5); /*0x74b0a7*/
+  v6 = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)((char *)this + 36), (unsigned __int8 *)aTranslucent, v5); /*0x74b0a7*/
   v41 = *((unsigned char *)this + 768); /*0x74b0b4*/
   *((unsigned char *)this + 661) = v6; /*0x74b0bb*/
   *((unsigned char *)this + 768) = INIClass::ReadBool_Overwrite( /*0x74b0c6*/
                              a2,
-                             (uint8_t *)((char *)this + 36),
-                             (uint8_t *)aIstiberium,
+                             (unsigned __int8 *)((char *)this + 36),
+                             (unsigned __int8 *)aIstiberium,
                              v41);
   v7 = INIClass::ReadBool_Overwrite( /*0x74b0db*/
          a2,
-         (uint8_t *)((char *)this + 36),
-         (uint8_t *)aIsmeteor,
+         (unsigned __int8 *)((char *)this + 36),
+         (unsigned __int8 *)aIsmeteor,
          *((unsigned char *)this + 720));
   v39 = *(double *)((char *)this + 672); /*0x74b0ed*/
   *((unsigned char *)this + 720) = v7; /*0x74b0f6*/
   *(double *)((char *)this + 672) = INIClass::ReadDouble_Overwrite( /*0x74b101*/
                               (int)a2,
-                              (uint8_t *)((char *)this + 36),
-                              (uint8_t *)g_INI_Key_Elasticity,
+                              (unsigned __int8 *)((char *)this + 36),
+                              (unsigned __int8 *)g_INI_Key_Elasticity,
                               v39);
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x74b116*/
                        (int)a2,
-                       (uint8_t *)((char *)this + 36),
-                       (uint8_t *)aMinangularvelo,
+                       (unsigned __int8 *)((char *)this + 36),
+                       (unsigned __int8 *)aMinangularvelo,
                        -1.0);
   if ( Double_Overwrite != 0.0 ) /*0x74b126*/
     *(double *)((char *)this + 680) = Double_Overwrite * 0.01745277777777778; /*0x74b12e*/
-  v9 = INIClass::ReadDouble_Overwrite((int)a2, (uint8_t *)((char *)this + 36), (uint8_t *)aMaxangularvelo, -1.0); /*0x74b147*/
+  v9 = INIClass::ReadDouble_Overwrite((int)a2, (unsigned __int8 *)((char *)this + 36), (unsigned __int8 *)aMaxangularvelo, -1.0); /*0x74b147*/
   if ( v9 != 0.0 ) /*0x74b157*/
     *(double *)((char *)this + 688) = v9 * 0.01745277777777778; /*0x74b15f*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x74b178*/
                     (int)a2,
-                    (uint8_t *)((char *)this + 36),
-                    (uint8_t *)aDuration,
+                    (unsigned __int8 *)((char *)this + 36),
+                    (unsigned __int8 *)aDuration,
                     *((unsigned int *)this + 167));
   v40 = *(double *)((char *)this + 696); /*0x74b18a*/
   *((unsigned int *)this + 167) = Int_Overwrite; /*0x74b193*/
-  v11 = INIClass::ReadDouble_Overwrite((int)a2, (uint8_t *)((char *)this + 36), (uint8_t *)aMinzvel, v40); /*0x74b199*/
+  v11 = INIClass::ReadDouble_Overwrite((int)a2, (unsigned __int8 *)((char *)this + 36), (unsigned __int8 *)aMinzvel, v40); /*0x74b199*/
   v12 = *((unsigned int *)this + 177); /*0x74b19e*/
   v13 = *((unsigned int *)this + 176); /*0x74b1a4*/
   *(double *)((char *)this + 696) = v11; /*0x74b1aa*/
   v14 = INIClass::ReadDouble_Overwrite( /*0x74b1ba*/
           (int)a2,
-          (uint8_t *)((char *)this + 36),
-          (uint8_t *)aMaxzvel,
+          (unsigned __int8 *)((char *)this + 36),
+          (unsigned __int8 *)aMaxzvel,
           COERCE_DOUBLE(__PAIR64__(v12, v13)));
   v15 = *(double *)((char *)this + 712); /*0x74b1c5*/
   *(double *)((char *)this + 704) = v14; /*0x74b1cb*/
-  v16 = INIClass::ReadDouble_Overwrite((int)a2, (uint8_t *)((char *)this + 36), (uint8_t *)aMaxxyvel, v15); /*0x74b1db*/
+  v16 = INIClass::ReadDouble_Overwrite((int)a2, (unsigned __int8 *)((char *)this + 36), (unsigned __int8 *)aMaxxyvel, v15); /*0x74b1db*/
   v17 = *(unsigned int **)((char *)this + 724); /*0x74b1e0*/
   *(double *)((char *)this + 712) = v16; /*0x74b1ea*/
   v42 = v17; /*0x74b1fb*/
-    if ( INIClass::GetString( /*0x74b207*/          a2,(unsigned char *)((uint8_t **)((char *)this + 36)),          (uint8_t *)g_INI_Key_Spawns,          (char *)&g_abs_87F7E8[10719],          Destination,          128) )
+  if ( INIClass::GetString( /*0x74b207*/
+         a2,
+         (unsigned __int8 **)((char *)this + 36),
+         (unsigned __int8 *)g_INI_Key_Spawns,
+         (char *)&MEMORY[0x87F7E8][10719],
+         Destination,
+         128) )
   {
-    v18 = (unsigned int *)(globalHelper_04BB20(Destination, (int)&g_abs_87F7E8[539856]));
+    v18 = globalHelper_04BB20(Destination, (int)&MEMORY[0x87F7E8][539856]); /*0x74b219*/
   }
   else
   {
@@ -236,25 +242,25 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   *((unsigned int *)this + 181) = v18; /*0x74b224*/
   *((unsigned int *)this + 182) = INIClass::ReadInt_Overwrite( /*0x74b248*/
                               (int)a2,
-                              (uint8_t *)((char *)this + 36),
-                              (uint8_t *)aSpawncount,
+                              (unsigned __int8 *)((char *)this + 36),
+                              (unsigned __int8 *)aSpawncount,
                               *((unsigned int *)this + 182));
-  v52 = INIClass::ReadBool_Overwrite(a2, (uint8_t *)((char *)this + 36), (uint8_t *)aSharebodydata, 0); /*0x74b25d*/
-  v51 = INIClass::ReadBool_Overwrite(a2, (uint8_t *)((char *)this + 36), (uint8_t *)aShareturretdat, 0); /*0x74b270*/
-  v50 = INIClass::ReadBool_Overwrite(a2, (uint8_t *)((char *)this + 36), (uint8_t *)aSharebarreldat, 0); /*0x74b27f*/
+  v52 = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)((char *)this + 36), (unsigned __int8 *)aSharebodydata, 0); /*0x74b25d*/
+  v51 = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)((char *)this + 36), (unsigned __int8 *)aShareturretdat, 0); /*0x74b270*/
+  v50 = INIClass::ReadBool_Overwrite(a2, (unsigned __int8 *)((char *)this + 36), (unsigned __int8 *)aSharebarreldat, 0); /*0x74b27f*/
   v19 = INIClass::ReadInt_Overwrite( /*0x74b28c*/
           (int)a2,
-          (uint8_t *)((char *)this + 36),
-          (uint8_t *)aVoxelindex,
+          (unsigned __int8 *)((char *)this + 36),
+          (unsigned __int8 *)aVoxelindex,
           *((unsigned int *)this + 166));
   v20 = *((unsigned int *)this + 183); /*0x74b291*/
   *((unsigned int *)this + 166) = v19; /*0x74b297*/
   v43 = v20; /*0x74b2b4*/
   if ( !INIClass::GetString( /*0x74b2cd*/
           a2,
-          (uint8_t **)((char *)this + 36),
-          (uint8_t *)g_INI_Key_StartSound,
-          (char *)&g_abs_87F7E8[10719],
+          (unsigned __int8 **)((char *)this + 36),
+          (unsigned __int8 *)g_INI_Key_StartSound,
+          (char *)&MEMORY[0x87F7E8][10719],
           Destination,
           128)
     || (Index = VocClass::FindIndex(Destination), Index == -1) )
@@ -265,9 +271,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   *((unsigned int *)this + 183) = Index; /*0x74b2f4*/
   if ( !INIClass::GetString( /*0x74b30f*/
           a2,
-          (uint8_t **)((char *)this + 36),
-          (uint8_t *)g_INI_Key_StopSound,
-          (char *)&g_abs_87F7E8[10719],
+          (unsigned __int8 **)((char *)this + 36),
+          (unsigned __int8 *)g_INI_Key_StopSound,
+          (char *)&MEMORY[0x87F7E8][10719],
           Destination,
           128)
     || (v22 = VocClass::FindIndex(Destination), v22 == -1) )
@@ -278,9 +284,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   v45 = *(unsigned int **)((char *)this + 740); /*0x74b338*/
   if ( INIClass::GetString( /*0x74b33c*/
          a2,
-         (uint8_t **)((char *)this + 36),
-         (uint8_t *)aBounceanim,
-         (char *)&g_abs_87F7E8[10719],
+         (unsigned __int8 **)((char *)this + 36),
+         (unsigned __int8 *)aBounceanim,
+         (char *)&MEMORY[0x87F7E8][10719],
          Destination,
          128) )
   {
@@ -295,9 +301,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   v46 = v24; /*0x74b377*/
   if ( INIClass::GetString( /*0x74b37b*/
          a2,
-         (uint8_t **)((char *)this + 36),
-         (uint8_t *)aExpireanim,
-         (char *)&g_abs_87F7E8[10719],
+         (unsigned __int8 **)((char *)this + 36),
+         (unsigned __int8 *)aExpireanim,
+         (char *)&MEMORY[0x87F7E8][10719],
          Destination,
          128) )
   {
@@ -311,9 +317,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   *((unsigned int *)this + 186) = v25; /*0x74b3b4*/
   if ( INIClass::GetString( /*0x74b3ba*/
          a2,
-         (uint8_t **)((char *)this + 36),
-         (uint8_t *)aTraileranim,
-         (char *)&g_abs_87F7E8[10719],
+         (unsigned __int8 **)((char *)this + 36),
+         (unsigned __int8 *)aTraileranim,
+         (char *)&MEMORY[0x87F7E8][10719],
          Destination,
          128) )
   {
@@ -326,20 +332,20 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   *((unsigned int *)this + 187) = v26; /*0x74b3d2*/
   v27 = INIClass::ReadInt_Overwrite( /*0x74b3e7*/
           (int)a2,
-          (uint8_t *)((char *)this + 36),
-          (uint8_t *)g_INI_Key_Damage,
+          (unsigned __int8 *)((char *)this + 36),
+          (unsigned __int8 *)g_INI_Key_Damage,
           *((unsigned int *)this + 188));
   v28 = *((unsigned int *)this + 189); /*0x74b3ec*/
   *((unsigned int *)this + 188) = v27; /*0x74b3f2*/
-  v29 = INIClass::ReadInt_Overwrite((int)a2, (uint8_t *)((char *)this + 36), (uint8_t *)aDamageradius, v28); /*0x74b401*/
+  v29 = INIClass::ReadInt_Overwrite((int)a2, (unsigned __int8 *)((char *)this + 36), (unsigned __int8 *)aDamageradius, v28); /*0x74b401*/
   v30 = *((unsigned int *)this + 190); /*0x74b406*/
   *((unsigned int *)this + 189) = v29; /*0x74b40c*/
   v48 = v30; /*0x74b429*/
   if ( INIClass::GetString( /*0x74b42d*/
          a2,
-         (uint8_t **)((char *)this + 36),
-         (uint8_t *)g_INI_Key_Warhead,
-         (char *)&g_abs_87F7E8[10719],
+         (unsigned __int8 **)((char *)this + 36),
+         (unsigned __int8 *)g_INI_Key_Warhead,
+         (char *)&MEMORY[0x87F7E8][10719],
          Destination,
          128) )
   {
@@ -353,9 +359,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   *((unsigned int *)this + 190) = v31; /*0x74b466*/
   if ( INIClass::GetString( /*0x74b46c*/
          a2,
-         (uint8_t **)((char *)this + 36),
-         (uint8_t *)aAttachedsystem,
-         (char *)&g_abs_87F7E8[10719],
+         (unsigned __int8 **)((char *)this + 36),
+         (unsigned __int8 *)aAttachedsystem,
+         (char *)&MEMORY[0x87F7E8][10719],
          Destination,
          128) )
   {
@@ -370,7 +376,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   *((unsigned char *)this + 662) = v33; /*0x74b4ad*/
   if ( v33 ) /*0x74b4b3*/
   {
-    TechnoType = (unsigned int *)INIEntry::GetTechnoType(a2, (uint8_t *)((char *)this + 36), (uint8_t *)aSharesource); /*0x74b4c1*/
+    TechnoType = (unsigned int *)INIEntry::GetTechnoType(a2, (unsigned __int8 *)((char *)this + 36), (unsigned __int8 *)aSharesource); /*0x74b4c1*/
     if ( !TechnoType ) /*0x74b4ca*/
     {
       *((unsigned int *)this + 44) = 0; /*0x74b555*/
@@ -399,24 +405,24 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   else
   {
     _makepath(Buffer, 0, 0, (const char *)((char *)this + 504), g_Str_File__VXL); /*0x74b584*/
-    ((CCFileClass *)(Destination))->Construct(Buffer); /*0x74b598*/
+    CCFileClass::Construct(Destination, Buffer); /*0x74b598*/
     v36 = *(void **)((char *)this + 176); /*0x74b59d*/
     if ( v36 ) /*0x74b5a5*/
     {
-      ((WaveClass *)(*((unsigned int *)this + 44)))->Destroy(); /*0x74b5a9*/
-      RA2_OPDEL(v36); /*0x74b5af*/
+      WaveClass::Destroy(*((unsigned int *)this + 44)); /*0x74b5a9*/
+      __3_YAXPAX_Z(v36); /*0x74b5af*/
     }
-    v37 = (unsigned int *)RA2_OPNEW(28); /*0x74b5b9*/
+    v37 = (unsigned int *)__2_YAPAXI_Z(28); /*0x74b5b9*/
     if ( v37 ) /*0x74b5c3*/
       FileVXL = File::LoadFileVXL(v37, (int)Destination, 0); /*0x74b5ce*/
     else
       FileVXL = 0; /*0x74b5d5*/
     *((unsigned int *)this + 44) = FileVXL; /*0x74b5db*/
-    *(unsigned int *)Destination = &vt_CCFileClass; /*0x74b5e1*/
+    *(unsigned int *)Destination = &CCFileClass::`vftable'; /*0x74b5e1*/
     v55 = 0; /*0x74b5e9*/
     Vector::Clear((int)v54); /*0x74b5f1*/
     *(unsigned int *)Destination = &off_7E1668; /*0x74b5fa*/
-    ((BufferIOFileClass *)(Destination))->Dtor(); /*0x74b602*/
+    BufferIOFileClass::Dtor(Destination); /*0x74b602*/
   }
   return 1; /*0x74b4f2*/
 

@@ -17,8 +17,8 @@ int NetworkAddress::Assign( unsigned int * a1, IUnknown * aP2, int16_t a4)
   unsigned int *result; // eax
   int *v5; // ecx
 
-  result = (unsigned int *)((int *)(a1));
-  v5 = (int *)(a1 + 1);
+  result = this; /*0x53ece4*/
+  v5 = (unsigned int *)this + 1; /*0x53ece9*/
   *v5 = aP2->field_0; /*0x53ecec*/
   *((unsigned short *)v5 + 2) = aP2->field_4; /*0x53ecf4*/
   if ( dword_828140 == 1 ) /*0x53ed01*/

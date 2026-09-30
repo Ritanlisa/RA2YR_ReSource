@@ -190,10 +190,10 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   int v11; // [esp+Ch] [ebp-8h] BYREF
   int v12; // [esp+10h] [ebp-4h] BYREF
 
-  v3 = (gamemd::CampaignClass **)(0);
+  v3 = 0; /*0x5c17c3*/
   v10 = *((char *)this + 207); /*0x5c17c5*/
   v11 = 0; /*0x5c17cb*/
-  Movie::GetSection((int)&g_abs_89F518, v10, &v12); /*0x5c17cf*/
+  Movie::GetSection((int)&MEMORY[0x89F518], v10, &v12); /*0x5c17cf*/
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
     return 1; /*0x5c17e4*/
@@ -225,22 +225,22 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   }
   else if ( a2 == -3 ) /*0x5c1847*/
   {
-    return (gamemd::CampaignClass **)(1);
+    return 1; /*0x5c1851*/
   }
   v8 = 0; /*0x5c1857*/
   v9 = *(unsigned int *)(*(unsigned int *)(v4 + 20) + 4 * v7); /*0x5c1859*/
   if ( *(int *)(v9 + 16) > 0 ) /*0x5c185f*/
   {
-    while ( ((SideClass *)(*(void **)(*(unsigned int *)(v9 + 4) + 4 * v8)))->FindByName() != a2 ) /*0x5c186e*/
+    while ( SideClass::FindByName(*(void **)(*(unsigned int *)(v9 + 4) + 4 * v8)) != a2 ) /*0x5c186e*/
     {
       ++v8; /*0x5c1878*/
       v9 = *(unsigned int *)(*(unsigned int *)(v12 + 20) + 4 * v11); /*0x5c187c*/
       if ( v8 >= *(unsigned int *)(v9 + 16) ) /*0x5c1882*/
         return 0; /*0x5c188c*/
     }
-    return (gamemd::CampaignClass **)(1);
+    return 1; /*0x5c188f*/
   }
-  return (gamemd::CampaignClass **)(v3);
+  return v3; /*0x5c17dc*/
 
 }
 }
@@ -253,8 +253,8 @@ BOOL E4Recv_5C60D0::ShowConfirmDialog(unsigned short * lParam)
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
   int v6; // [esp+0h] [ebp-8h]
 
-  StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108));
-  v3 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108));
+  StringCSF = GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108); /*0x5c60fa*/
+  v3 = GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
   return Dialog::ShowMessageBox((int)lParam, v3, (Movie *)StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 
 }

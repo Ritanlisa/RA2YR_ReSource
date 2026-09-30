@@ -27,7 +27,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x512f36*/
       return 0; /*0x512f36*/
     v4 = *((unsigned int *)this + 5); /*0x512f38*/
-    if ( InfantryTypeVector_field_0x14 <= 0 || !(*(uint8_t (**)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( this, InfantryTypeVector_field_0x08 + InfantryTypeVector_field_0x14, 0) )
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x512f48*/
       return 0; /*0x512f4f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x512f55*/
@@ -55,10 +55,10 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
       *((unsigned int *)this + 1) = a3; /*0x513918*/
       return this; /*0x51391e*/
     }
-    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x51392d*/
+    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x51392d*/
     *((unsigned char *)this + 13) = 1; /*0x513930*/
   }
-  return (unsigned int *)(this);
+  return this; /*0x51391d*/
 
 }
 } // namespace gamemd
@@ -79,10 +79,10 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
       *((unsigned int *)this + 1) = a3; /*0x5d89c8*/
       return this; /*0x5d89ce*/
     }
-    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x5d89dd*/
+    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x5d89dd*/
     *((unsigned char *)this + 13) = 1; /*0x5d89e0*/
   }
-  return (unsigned int *)(this);
+  return this; /*0x5d89cd*/
 
 }
 } // namespace gamemd

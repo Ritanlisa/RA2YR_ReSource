@@ -32,7 +32,7 @@ int ToolTipManager::ddtor(char a2)
     ToolTipClass::initString((wchar_t *)this); /*0x724b8b*/
   result = *((unsigned int *)this + 1); /*0x724b90*/
   if ( result ) /*0x724b95*/
-    ( this, &this->DisplayTimer[1])
+    return (*(int (**)(int, int))(*(unsigned int *)this + 16))(this, (char *)this + 24); /*0x724b9f*/
   return result; /*0x724ba2*/
 
 }
@@ -62,17 +62,17 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_ToolTip_const);
+  v3 = (void *)*(Block + 1); /*0x724f43*/
+  *Block = &vt_VectorClass_ToolTip_const; /*0x724f46*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x724f50*/
   {
-    RA2_OPDEL(v3); /*0x724f58*/
+    __3_YAXPAX_Z(v3); /*0x724f58*/
     *(Block + 1) = 0; /*0x724f60*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x724f6b*/
   *(Block + 2) = 0; /*0x724f71*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x724f78*/
-    RA2_OPDEL(Block); /*0x724f7b*/
+  if ( (a2 & 1) != 0 ) /*0x724f78*/
+    __3_YAXPAX_Z(Block); /*0x724f7b*/
   return (DynamicVector *)Block; /*0x724f85*/
 
 }

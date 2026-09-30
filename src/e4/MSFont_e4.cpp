@@ -53,7 +53,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = (unsigned int *)(RA2_OPNEW(8 * a2));
+      v6 = __2_YAPAXI_Z(8 * a2); /*0x5d55c7*/
       if ( v6 ) /*0x5d55d1*/
       {
         v7 = v6; /*0x5d55d6*/
@@ -99,7 +99,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x5d564a*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d5653*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5653*/
         *((unsigned int *)this + 1) = 0; /*0x5d565b*/
       }
     }
@@ -109,7 +109,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_UAcceleratorTracker *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d5678*/
   }
   v15 = *((unsigned int *)this + 2); /*0x5d567b*/
   if ( v15 < *((unsigned int *)this + 4) ) /*0x5d5683*/
@@ -250,7 +250,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d51ac*/
       v4 = a3; /*0x5d51c2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d51be*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d51be*/
     *((unsigned char *)this + 12) = 1; /*0x5d51c6*/
     if ( v4 ) /*0x5d51ca*/
     {
@@ -263,7 +263,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
           ++i; /*0x5d51ee*/
         if ( *((unsigned char *)this + 13) ) /*0x5d51fb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d5206*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5206*/
           *((unsigned int *)this + 1) = 0; /*0x5d520e*/
         }
       }
@@ -279,7 +279,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d5232*/
     return 1; /*0x5d5238*/
   }
 
@@ -356,7 +356,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d52e8*/
       v4 = a3; /*0x5d52fe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d52fa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d52fa*/
     *((unsigned char *)this + 12) = 1; /*0x5d5302*/
     if ( !v4 ) /*0x5d5306*/
       return 0; /*0x5d537a*/
@@ -369,7 +369,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5d5321*/
       if ( *((unsigned char *)this + 13) ) /*0x5d532e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d5339*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5339*/
         *((unsigned int *)this + 1) = 0; /*0x5d5341*/
       }
     }
@@ -379,7 +379,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x5d535e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x5d5361*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x5d5369*/
@@ -440,17 +440,17 @@ VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_HWND);
+  v3 = (void *)*(Block + 1); /*0x5d56e3*/
+  *Block = &vt_VectorClass_HWND; /*0x5d56e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d56f0*/
   {
-    RA2_OPDEL(v3); /*0x5d56f8*/
+    __3_YAXPAX_Z(v3); /*0x5d56f8*/
     *(Block + 1) = 0; /*0x5d5700*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d570b*/
   *(Block + 2) = 0; /*0x5d5711*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5d5718*/
-    RA2_OPDEL(Block); /*0x5d571b*/
+  if ( (a2 & 1) != 0 ) /*0x5d5718*/
+    __3_YAXPAX_Z(Block); /*0x5d571b*/
   return (VectorClass *)Block; /*0x5d5725*/
 
 }
@@ -463,17 +463,17 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Bloc
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_HWND);
+  v3 = (void *)*(Block + 1); /*0x5d5733*/
+  *Block = &vt_VectorClass_HWND; /*0x5d5736*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d5740*/
   {
-    RA2_OPDEL(v3); /*0x5d5748*/
+    __3_YAXPAX_Z(v3); /*0x5d5748*/
     *(Block + 1) = 0; /*0x5d5750*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d575b*/
   *(Block + 2) = 0; /*0x5d5761*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5d5768*/
-    RA2_OPDEL(Block); /*0x5d576b*/
+  if ( (a2 & 1) != 0 ) /*0x5d5768*/
+    __3_YAXPAX_Z(Block); /*0x5d576b*/
   return (DynamicVector *)Block; /*0x5d5775*/
 
 }
@@ -486,17 +486,17 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned 
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_AcceleratorTracker);
+  v3 = (void *)*(Block + 1); /*0x5d57d3*/
+  *Block = &vt_VectorClass_AcceleratorTracker; /*0x5d57d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d57e0*/
   {
-    RA2_OPDEL(v3); /*0x5d57e8*/
+    __3_YAXPAX_Z(v3); /*0x5d57e8*/
     *(Block + 1) = 0; /*0x5d57f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d57fb*/
   *(Block + 2) = 0; /*0x5d5801*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5d5808*/
-    RA2_OPDEL(Block); /*0x5d580b*/
+  if ( (a2 & 1) != 0 ) /*0x5d5808*/
+    __3_YAXPAX_Z(Block); /*0x5d580b*/
   return (DynamicVector *)Block; /*0x5d5815*/
 
 }

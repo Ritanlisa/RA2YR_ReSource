@@ -72,7 +72,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
 
   int v4; // eax
   int v5; // ebx
-  void * v6;
+  int v6; // edi
   int i; // ecx
   int v8; // eax
   unsigned int *v9; // edx
@@ -98,18 +98,18 @@ LABEL_9:
   }
   else
   {
-    v5 = (int)(10);
+    v5 = 10; /*0x5387e6*/
   }
-  v6 = (void *)((int)(RA2_OPNEW(8 * (v4 + v5))));
+  v6 = __2_YAPAXI_Z(8 * (v4 + v5)); /*0x538807*/
   if ( v6 ) /*0x53880e*/
   {
-    for ( i = 0; i < *((unsigned int *)this + 1); *(unsigned int *)((unsigned int)(v8)+ (unsigned int)(v6)+ 4) = v9[1] ) /*0x53881c*/
+    for ( i = 0; i < *((unsigned int *)this + 1); *(unsigned int *)(v8 + v6 + 4) = v9[1] ) /*0x53881c*/
     {
       v8 = 8 * i; /*0x538820*/
       v9 = (unsigned int *)(*(unsigned int *)this + 8 * i++); /*0x538829*/
-      *(unsigned int *)((unsigned int)(v8)+ v6) = *v9; /*0x53882e*/
+      *(unsigned int *)(v8 + v6) = *v9; /*0x53882e*/
     }
-    RA2_OPDEL(*(void **)this); /*0x538842*/
+    __3_YAXPAX_Z(*(void **)this); /*0x538842*/
     v10 = *((unsigned int *)this + 2); /*0x538847*/
     *(unsigned int *)this = v6; /*0x53884f*/
     *((unsigned int *)this + 2) = v5 + v10; /*0x538851*/
@@ -135,7 +135,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   int v11; // edi
   int v12; // eax
   ObjectClass *v13; // edi
-  ObjectClass ** v14;
+  int v14; // eax
   int v15; // [esp+10h] [ebp-8h]
 
   v3 = *((unsigned int *)this + 1); /*0x5388a9*/
@@ -165,7 +165,7 @@ LABEL_9:
   }
   if ( v6 != v15 ) /*0x538907*/
   {
-    v5 = (unsigned int *)(v7 + 8);
+    v5 = v7 + 8; /*0x538909*/
     v4 += -1 - v4 / 2; /*0x538911*/
     goto LABEL_9; /*0x538911*/
   }
@@ -180,8 +180,8 @@ LABEL_9:
     v12 = *(unsigned int *)this + 8 * i++; /*0x538940*/
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
-  v13 = (gamemd::ObjectClass **)(*(ObjectClass **)this);
-  v14 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 1) - 1)));
+  v13 = *(ObjectClass **)this; /*0x538957*/
+  v14 = *((unsigned int *)this + 1) - 1; /*0x538959*/
   *((unsigned int *)this + 1) = v14; /*0x53895c*/
   *(unsigned int *)&v13->__pad_0[8 * v14] = 0; /*0x53895f*/
   *(unsigned int *)&v13->__pad_0[8 * v14 + 4] = 0; /*0x538962*/
@@ -233,7 +233,7 @@ LABEL_12:
   }
   if ( v9 != v7 ) /*0x5389ee*/
   {
-    v8 = (unsigned int *)(v10 + 8);
+    v8 = v10 + 8; /*0x5389f0*/
     v6 += -1 - v6 / 2; /*0x5389f8*/
     goto LABEL_12; /*0x5389f8*/
   }

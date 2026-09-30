@@ -56,30 +56,30 @@ SmudgeTypeClass::SmudgeTypeClass(char * Source)
   *((unsigned int *)this + 167) = 1; /*0x6b5287*/
   *((unsigned char *)this + 672) = 0; /*0x6b528d*/
   *((unsigned char *)this + 673) = 0; /*0x6b5294*/
-  *(unsigned int *)this = &vt_SmudgeTypeClass; /*0x6b529b*/
-  *((unsigned int *)this + 1) = &vt_SmudgeTypeClass; /*0x6b52a1*/
-  *((unsigned int *)this + 2) = &vt_SmudgeTypeClass; /*0x6b52a7*/
-  *((unsigned int *)this + 3) = &vt_SmudgeTypeClass; /*0x6b52ae*/
+  *(unsigned int *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
+  *((unsigned int *)this + 1) = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
+  *((unsigned int *)this + 2) = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
+  *((unsigned int *)this + 3) = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x6b52b5*/
   *(unsigned short *)((unsigned char *)this + 559) = 1; /*0x6b52ba*/
   *((unsigned char *)this + 561) = 0; /*0x6b52c7*/
   *((unsigned char *)this + 562) = 1; /*0x6b52ce*/
   *((unsigned char *)this + 563) = 1; /*0x6b52d4*/
   *((unsigned char *)this + 565) = 0; /*0x6b52da*/
-  v3 = g_abs_A8EC28; /*0x6b52e1*/
-  if ( g_abs_A8EC28 < g_abs_A8EC20 /*0x6b5322*/
-    || (g_abs_A8EC25 || !g_abs_A8EC20)
-    && g_abs_A8EC2C > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8EC18 + 8))(
-               &g_abs_A8EC18,
-               (unsigned int)(g_abs_A8EC20)+ g_abs_A8EC2C,
+  v3 = MEMORY[0xA8EC28]; /*0x6b52e1*/
+  if ( MEMORY[0xA8EC28] < MEMORY[0xA8EC20] /*0x6b5322*/
+    || (MEMORY[0xA8EC25] || !MEMORY[0xA8EC20])
+    && MEMORY[0xA8EC2C] > 0
+    && (v4 = (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8EC18] + 8))(
+               &MEMORY[0xA8EC18],
+               MEMORY[0xA8EC20] + MEMORY[0xA8EC2C],
                0) == 0,
-        v3 = g_abs_A8EC28,
+        v3 = MEMORY[0xA8EC28],
         !v4) )
   {
-    g_abs_A8EC28 = (int)(v3 + 1);
-    *((unsigned int *)g_abs_A8EC1C + v3) = this; /*0x6b5331*/
-    v3 = g_abs_A8EC28; /*0x6b5334*/
+    MEMORY[0xA8EC28] = v3 + 1; /*0x6b5327*/
+    *((unsigned int *)MEMORY[0xA8EC1C] + v3) = this; /*0x6b5331*/
+    v3 = MEMORY[0xA8EC28]; /*0x6b5334*/
   }
   v5 = 0; /*0x6b5339*/
   if ( v3 <= 0 ) /*0x6b533d*/
@@ -90,7 +90,7 @@ LABEL_11:
   }
   else
   {
-    v6 = (void **)g_abs_A8EC1C; /*0x6b533f*/
+    v6 = (void **)MEMORY[0xA8EC1C]; /*0x6b533f*/
     while ( *v6 != this ) /*0x6b5347*/
     {
       ++v5; /*0x6b5349*/
@@ -106,24 +106,6 @@ LABEL_11:
 // 0x6B55F0
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
-    unsigned int v7 = 0;  /* G37 hoist */
 
   int v7; // ebx
   int v8; // edx
@@ -134,7 +116,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   int v13; // [esp+8h] [ebp-8h] BYREF
   int v14; // [esp+Ch] [ebp-4h]
 
-  // [esp+Ch] [ebp-4h] v7 = (*((int (**)(SmudgeTypeClass *))this->ObjectTypeClass + 39))(this);
+  v7 = (*(int (**)(unsigned int *))(*(unsigned int *)this + 624))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
     v8 = a2[1]; /*0x6b5614*/
@@ -146,10 +128,10 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
       v14 += -15 * (a4 / v9 + a4 % v9); /*0x6b5659*/
       v13 += 60 * (a4 / v9 - a4 % v9) / 2; /*0x6b5661*/
     }
-    v10 = CellCoord::To_CellObj(&g_abs_87F7E8, a6); /*0x6b5674*/
-    v12 = *((int16_t *)v10 + 134); /*0x6b568a*/
+    v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], a6); /*0x6b5674*/
+    v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
-    DrawToSurfaceSHP(g_abs_887314, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
+    DrawToSurfaceSHP(MEMORY[0x887314], v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
 
 }

@@ -114,7 +114,7 @@ char * E4Recv_724000::sub_724000(int a2)
   char *v3; // ecx
   int v4; // edx
 
-  v3 = (char *)((unsigned char *)this + 564);
+  v3 = (unsigned char *)this + 564; /*0x72400a*/
   *((unsigned int *)this + 1) = 0; /*0x724010*/
   *((unsigned int *)this + 2) = a2; /*0x724013*/
   *((unsigned char *)this + 12) = 0; /*0x724016*/
@@ -135,7 +135,7 @@ char * E4Recv_724000::sub_724000(int a2)
   v4 = *(unsigned int *)v3; /*0x724068*/
   *(unsigned int *)this = &vt_ToolTipManager; /*0x72406a*/
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
-  RA2_OPDEL(*((void **)this + 147)); /*0x72407a*/
+  __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
   *((unsigned int *)this + 147) = 0; /*0x724082*/
   *((unsigned int *)this + 148) = 0; /*0x724088*/
   *((unsigned int *)this + 149) = 0; /*0x72408e*/

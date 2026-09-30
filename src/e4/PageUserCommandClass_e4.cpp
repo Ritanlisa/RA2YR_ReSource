@@ -33,7 +33,7 @@ PageUserCommandClass::PageUserCommandClass()
 char * PageUserCommandClass::AddRef()
 {
 
-  return (char *)((char *)((char *)(g_abs_827A7C)));
+  return MEMORY[0x827A7C]; /*0x537de5*/
 
 }
 // 0x537DF0

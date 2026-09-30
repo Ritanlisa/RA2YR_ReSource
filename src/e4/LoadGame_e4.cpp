@@ -32,52 +32,78 @@ namespace gamemd {
 int LoadGame::LoadTriggerEvents()
 {
 
-  unsigned int * v1;
+  int v1; // edx
   int v2; // edi
-  unsigned int * v4;
+  unsigned int *v4; // ecx
   void *v5; // esi
-  unsigned int * v6;
+  int v6; // eax
   int v7; // eax
   int v9; // esi
   unsigned int *v10; // eax
   unsigned int *v11; // eax
-  unsigned int * v12;
+  int v12; // [esp+20h] [ebp-8h] BYREF
   int v13; // [esp+24h] [ebp-4h] BYREF
 
-  v1 = (unsigned int *)(g_TriggerEventState);
+  v1 = g_TriggerEventState; /*0x660840*/
   v2 = g_TriggerEventState - 1; /*0x66084d*/
   if ( g_TriggerEventState - 1 >= 0 ) /*0x660856*/
   {
-    v4 = (unsigned int *)(g_TriggerPool);
+    v4 = g_TriggerPool; /*0x660858*/
     do /*0x6608cb*/
     {
-      v5 = (void *)((unsigned int *)(v4))[v2]; /*0x66085e*/
+      v5 = (void *)v4[v2]; /*0x66085e*/
       if ( v5 ) /*0x660863*/
       {
-        v12 = (int)((unsigned int *)(((unsigned int *)(v4))[v2]));
-        v6 = (int)((unsigned int *)((*(int (**)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v12)));
-        if ( v6 != (unsigned int *)(-1) ) /*0x66087f*/
+        v12 = v4[v2]; /*0x660875*/
+        v6 = (*(int (**)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v12); /*0x660879*/
+        if ( v6 != -1 ) /*0x66087f*/
           LoadGame::RemoveItem(&dword_B04DA8, v6); /*0x660887*/
-        RA2_OPDEL(v5); /*0x66088d*/
+        __3_YAXPAX_Z(v5); /*0x66088d*/
         v4 = g_TriggerPool; /*0x660892*/
         v1 = g_TriggerEventState; /*0x660898*/
       }
-      if ( v2 < (int)(v1) ) /*0x6608a3*/
+      if ( v2 < v1 ) /*0x6608a3*/
       {
         --v1; /*0x6608a5*/
         v7 = v2; /*0x6608a6*/
         for ( g_TriggerEventState = v1; v7 < g_TriggerEventState; ++v7 ) /*0x6608b0*/
         {
-          ((unsigned int *)(v4))[v7] = (unsigned int *)(v4[v7 + 1]);
-          v1 = (int)((unsigned int *)(g_TriggerEventState));
-          v4 = (unsigned int *)(g_TriggerPool);
+          v4[v7] = v4[v7 + 1]; /*0x6608b6*/
+          v1 = g_TriggerEventState; /*0x6608b9*/
+          v4 = g_TriggerPool; /*0x6608bf*/
         }
       }
       --v2; /*0x6608ca*/
     }
     while ( v2 >= 0 ); /*0x6608cb*/
   }
-  } if ( (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v13, 4, 0) < 0 ) return 0;
+  if ( (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
+    return 0; /*0x6608e8*/
+  v9 = 0; /*0x6608ed*/
+  if ( v13 > 0 ) /*0x6608f1*/
+  {
+    while ( 1 ) /*0x6608f5*/
+    {
+      v10 = __2_YAPAXI_Z(0x40u); /*0x6608f5*/
+      if ( v10 ) /*0x6608ff*/
+      {
+        v12 = 0; /*0x660901*/
+        v11 = Team_Load_65FB80(v10, -1, 0); /*0x660914*/
+      }
+      else
+      {
+        v11 = 0; /*0x66091b*/
+      }
+      if ( (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v11, 64, 0) < 0 ) /*0x660929*/
+        break; /*0x660929*/
+      if ( ++v9 >= v13 ) /*0x660932*/
+        return (*(int (**)(void *, __int16 *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
+    }
+    return 0; /*0x660929*/
+  }
+  return (*(int (**)(void *, __int16 *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
+
+}
     return 0; /*0x6608e8*/
   v9 = 0; /*0x6608ed*/
   if ( v13 > 0 ) /*0x6608f1*/
@@ -114,20 +140,20 @@ void LoadGame::RemoveItem( int a2)
   int v3; // eax
   int v4; // edx
 
-  v2 = (int)(*(this + 4));
+  v2 = *((unsigned int *)this + 4); /*0x660f10*/
   v3 = a2; /*0x660f13*/
   if ( a2 >= v2 ) /*0x660f19*/
     return 0; /*0x660f3c*/
   v4 = v2 - 1; /*0x660f1b*/
-  *(this + 4) = v4; /*0x660f1e*/
+  *((unsigned int *)this + 4) = v4; /*0x660f1e*/
   if ( a2 < v4 ) /*0x660f21*/
   {
     do /*0x660f34*/
     {
       ++v3; /*0x660f27*/
-      *(unsigned int *)(*(this + 1) + 4 * v3 - 4) = *(unsigned int *)(*(this + 1) + 4 * v3); /*0x660f2b*/
+      *(unsigned int *)(*((unsigned int *)this + 1) + 4 * v3 - 4) = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * v3); /*0x660f2b*/
     }
-    while ( v3 < *(this + 4) ); /*0x660f34*/
+    while ( v3 < *((unsigned int *)this + 4) ); /*0x660f34*/
   }
   return 1; /*0x660f39*/
 
@@ -1138,30 +1164,30 @@ int LoadGame::LoadMagicAndAudio()
   int v3; // [esp+30h] [ebp-10h] BYREF
   unsigned int v4[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  if ( g_abs_B1D4C4 ) /*0x7533fd*/
+  if ( MEMORY[0xB1D4C4] ) /*0x7533fd*/
   {
-    *(unsigned int *)(g_abs_B1D4C4 + 80) = 2; /*0x7533ff*/
-    g_abs_B1D4C4 = 0; /*0x753406*/
+    *(unsigned int *)(MEMORY[0xB1D4C4] + 80) = 2; /*0x7533ff*/
+    MEMORY[0xB1D4C4] = 0; /*0x753406*/
   }
-  if ( g_abs_B1D4CC ) /*0x753418*/
-    Audio::Release(g_abs_B1D4CC); /*0x75341a*/
+  if ( MEMORY[0xB1D4CC] ) /*0x753418*/
+    Audio::Release(MEMORY[0xB1D4CC]); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
-  result = (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0);
+  result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x753430*/
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
   {
-    result = (*(int (__stdcall **)(LoadGame *, int *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 12))(this, &v3, 4, 0);
+    result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x753455*/
     if ( result >= 0 ) /*0x75345a*/
     {
       while ( v3 != 1450145861 ) /*0x753466*/
       {
         if ( v3 != 1450145865 ) /*0x75346e*/
           return -2147467259; /*0x7534cb*/
-        ( this, v4, 12, 0)
+        result = (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v4, 12, 0); /*0x75347c*/
         if ( result >= 0 ) /*0x753481*/
         {
-          if ( g_abs_B1D4CC && v4[0] >= 0 && v4[0] < g_abs_B1D4B0 ) /*0x75349a*/
-            Audio_Load(*((unsigned int *)g_abs_B1D4A4 + v4[0]), v4[1], v4[2]); /*0x7534ae*/
-          ( this, &v3, 4, 0)
+          if ( MEMORY[0xB1D4CC] && v4[0] >= 0 && v4[0] < MEMORY[0xB1D4B0] ) /*0x75349a*/
+            Audio_Load(*((unsigned int *)MEMORY[0xB1D4A4] + v4[0]), v4[1], v4[2]); /*0x7534ae*/
+          result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x7534bf*/
           if ( result >= 0 ) /*0x7534c4*/
             continue; /*0x7534c4*/
         }

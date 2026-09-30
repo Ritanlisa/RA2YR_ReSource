@@ -106,12 +106,12 @@ namespace gamemd {
 AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
 {
 
-  void *v2; // edx
+  #375 *v2; // edx
   int v3; // eax
-  void **v4; // edi
+  #375 **v4; // edi
   int v5; // eax
-  void *v6; // ecx
-  void *v7; // edi
+  #375 *v6; // ecx
+  #375 *v7; // edi
   void *v8; // eax
   char *MissionControl; // eax
   int v10; // esi
@@ -119,71 +119,71 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
   int v13; // [esp+Ch] [ebp-10h] BYREF
   unsigned int v14[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  if ( *(unsigned char *)((*((int (**)(void **))*a1 + 33))(a1) + 1748) /*0x4d5392*/
+  if ( *(unsigned char *)((*((int (**)(#375 **))*a1 + 33))(a1) + 1748) /*0x4d5392*/
     || (v14[0] = a1[39],
         v2 = *a1,
         v14[1] = a1[40],
         v14[2] = a1[41],
-        !(*((uint8_t (**)(void **, unsigned int *, unsigned int))v2 + 231))(a1, v14, 0)) )
+        !(*((unsigned __int8 (**)(#375 **, unsigned int *, unsigned int))v2 + 231))(a1, v14, 0)) )
   {
-    if ( (uint8_t)House::IsCurrentPlayer(a1[135]) || g_abs_A8B238[0] ) /*0x4d5504*/
+    if ( (unsigned __int8)House::IsCurrentPlayer(a1[135]) || MEMORY[0xA8B238][0] ) /*0x4d5504*/
     {
-      (*((void (**)(void **))*a1 + 286))(a1); /*0x4d557c*/
+      (*((void (**)(#375 **))*a1 + 286))(a1); /*0x4d557c*/
     }
     else
     {
-      v12 = (int)(g_abs_8B3D88);
+      v12 = MEMORY[0x8B3D88]; /*0x4d5510*/
       v12 = *HouseClass::GetCurrentOption(HouseClass_Player, &v13); /*0x4d5529*/
-      if ( v12 != (int)((int))((int))(g_abs_8B3D88) ) /*0x4d552d*/
+      if ( v12 != MEMORY[0x8B3D88] ) /*0x4d552d*/
       {
         if ( a1[182] ) /*0x4d553d*/
           ((void (*)(void))FactoryClass::ResetProductionTimers)(); /*0x4d5547*/
         v7 = *a1; /*0x4d554c*/
-        v8 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v12); /*0x4d555a*/
-        (*((void (**)(void **, void *, int))v7 + 288))(a1, v8, 1); /*0x4d5562*/
-        (*((void (**)(void **, int, int))*a1 + 122))(a1, 2, 1); /*0x4d5570*/
+        v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x4d555a*/
+        (*((void (**)(#375 **, void *, int))v7 + 288))(a1, v8, 1); /*0x4d5562*/
+        (*((void (**)(#375 **, int, int))*a1 + 122))(a1, 2, 1); /*0x4d5570*/
       }
     }
     goto LABEL_25; /*0x4d5576*/
   }
-  v3 = (*((int (**)(void **))*a1 + 11))(a1); /*0x4d53a4*/
+  v3 = (*((int (**)(#375 **))*a1 + 11))(a1); /*0x4d53a4*/
   v4 = v3 == 15 ? a1 : 0;
   if ( !v4 ) /*0x4d53b4*/
   {
-    (*((void (**)(void **, unsigned int))*a1 + 335))(a1, 0); /*0x4d54e3*/
+    (*((void (**)(#375 **, unsigned int))*a1 + 335))(a1, 0); /*0x4d54e3*/
     goto LABEL_25; /*0x4d54e9*/
   }
-  v5 = (int)*(v3 == 15 ? a1 + 432 : (void **)1728);
+  v5 = (int)*(v3 == 15 ? a1 + 432 : (#375 **)1728);
   if ( *(unsigned char *)(v5 + 3779) && !*(unsigned char *)(v5 + 3778) && !TechnoClass::HasVoiceResponse((float *)v4, 14) ) /*0x4d53df*/
   {
 LABEL_14:
-    (*((void (**)(void **, void *, int))*a1 + 288))(a1, a1[173], 1); /*0x4d547c*/
-    (*((void (**)(void **, int, unsigned int))*a1 + 122))(a1, 8, 0); /*0x4d5497*/
-    if ( !(*((uint8_t (**)(void **))*a1 + 128))(a1) ) /*0x4d54a9*/
+    (*((void (**)(#375 **, #375 *, int))*a1 + 288))(a1, a1[173], 1); /*0x4d547c*/
+    (*((void (**)(#375 **, int, unsigned int))*a1 + 122))(a1, 8, 0); /*0x4d5497*/
+    if ( !(*((unsigned __int8 (**)(#375 **))*a1 + 128))(a1) ) /*0x4d54a9*/
       goto LABEL_25; /*0x4d54a9*/
     goto LABEL_12; /*0x4d54a9*/
   }
   if ( !*((unsigned char *)v4[432] + 3778) && !TechnoClass::HasVoiceResponse((float *)v4, 14) /*0x4d5428*/
     || (v6 = a1[173]) == 0
-    || (*(int (**)(void *))(*(unsigned int *)v6 + 44))(v6) != 6 )
+    || (*(int (**)(#375 *))(*(unsigned int *)v6 + 44))(v6) != 6 )
   {
     if ( !*((unsigned char *)v4[432] + 3782) ) /*0x4d547a*/
     {
-      (*((void (**)(void **, unsigned int, int))*a1 + 288))(a1, 0, 1); /*0x4d54c6*/
-      (*((void (**)(void **, unsigned int))*a1 + 335))(a1, 0); /*0x4d54d2*/
+      (*((void (**)(#375 **, unsigned int, int))*a1 + 288))(a1, 0, 1); /*0x4d54c6*/
+      (*((void (**)(#375 **, unsigned int))*a1 + 335))(a1, 0); /*0x4d54d2*/
       goto LABEL_25; /*0x4d54d8*/
     }
     goto LABEL_14; /*0x4d547a*/
   }
-  (*((void (**)(void **, void *, int))*a1 + 288))(a1, a1[173], 1); /*0x4d5437*/
-  (*((void (**)(void **, int, unsigned int))*a1 + 122))(a1, 17, 0); /*0x4d5445*/
-  if ( (*((uint8_t (**)(void **))*a1 + 128))(a1) ) /*0x4d544f*/
+  (*((void (**)(#375 **, #375 *, int))*a1 + 288))(a1, a1[173], 1); /*0x4d5437*/
+  (*((void (**)(#375 **, int, unsigned int))*a1 + 122))(a1, 17, 0); /*0x4d5445*/
+  if ( (*((unsigned __int8 (**)(#375 **))*a1 + 128))(a1) ) /*0x4d544f*/
 LABEL_12:
-    (*((void (**)(void **))*a1 + 123))(a1); /*0x4d545d*/
+    (*((void (**)(#375 **))*a1 + 123))(a1); /*0x4d545d*/
 LABEL_25:
   MissionControl = MissionClass::GetMissionControl(a1); /*0x4d5582*/
   v10 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d55a7*/
-  return v10 + Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, 2); /*0x4d55b0*/
+  return v10 + Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, 2); /*0x4d55b0*/
 
 }
 }

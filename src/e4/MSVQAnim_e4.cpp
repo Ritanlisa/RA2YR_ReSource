@@ -17,22 +17,22 @@ namespace gamemd {
 void * MSVQAnim::GetFrameRect(int * a2)
 {
 
-  int * v3;
+  int v3; // eax
   int *v4; // ecx
 
-  if ( ((unsigned int)(g_abs_ABFB98)& 1) == 0 ) /*0x5cd2a0*/
+  if ( (MEMORY[0xABFB98] & 1) == 0 ) /*0x5cd2a0*/
   {
-    g_abs_ABFBA0 = 0; /*0x5cd2ab*/
-    (unsigned int)(g_abs_ABFB98)|= 1u; /*0x5cd2b1*/
-    g_abs_ABFBA4 = 0; /*0x5cd2b7*/
-    g_abs_ABFBA8 = 0; /*0x5cd2bd*/
-    g_abs_ABFBAC = 0; /*0x5cd2c3*/
+    MEMORY[0xABFBA0] = 0; /*0x5cd2ab*/
+    MEMORY[0xABFB98] |= 1u; /*0x5cd2b1*/
+    MEMORY[0xABFBA4] = 0; /*0x5cd2b7*/
+    MEMORY[0xABFBA8] = 0; /*0x5cd2bd*/
+    MEMORY[0xABFBAC] = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
-  v3 = (int *)(*((unsigned int *)this + 7));
+  v3 = *((unsigned int *)this + 7); /*0x5cd2d1*/
   v4 = (int *)(v3 + 52); /*0x5cd2d6*/
   if ( !v3 ) /*0x5cd2d9*/
-    v4 = &g_abs_ABFBA0; /*0x5cd2db*/
+    v4 = &MEMORY[0xABFBA0]; /*0x5cd2db*/
   *a2 = *v4; /*0x5cd2e9*/
   a2[1] = v4[1]; /*0x5cd2ee*/
   a2[2] = v4[2]; /*0x5cd2f4*/

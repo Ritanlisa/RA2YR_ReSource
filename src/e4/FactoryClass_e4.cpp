@@ -140,7 +140,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 
   int v5; // ecx
   int v6; // eax
-  int v7;
+  int v7; // esi
   int v8; // eax
   int v9; // eax
   int v10; // edx
@@ -161,13 +161,13 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   {
     *((unsigned char *)this + 93) = 1; /*0x4c9d6e*/
     *((unsigned char *)this + 112) = 1; /*0x4c9d72*/
-    *((unsigned int *)this + 11) = g_abs_A8ED84; /*0x4c9d85*/
+    *((unsigned int *)this + 11) = MEMORY[0xA8ED84]; /*0x4c9d85*/
     *((unsigned int *)this + 14) = 0; /*0x4c9d8b*/
     *((unsigned int *)this + 12) = v17; /*0x4c9d8e*/
     *((unsigned int *)this + 13) = 0; /*0x4c9d92*/
     *((unsigned int *)this + 9) = 0; /*0x4c9d95*/
-    *((unsigned int *)this + 22) = (*(int (**)(int, void *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
-    if ( !(uint8_t)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
+    *((unsigned int *)this + 22) = (*(int (**)(int, #375 *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
+    if ( !(unsigned __int8)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
     {
       v12 = *((unsigned int *)this + 22); /*0x4c9db1*/
       if ( v12 ) /*0x4c9db6*/
@@ -188,22 +188,22 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
     }
     return *((unsigned int *)this + 22) != 0; /*0x4c9dfc*/
   }
-  else if ( *((unsigned int *)this + 20) >= g_abs_8871E0->BaseUnderAttackSound /*0x4c9cea*/
+  else if ( *((unsigned int *)this + 20) >= MEMORY[0x8871E0]->BaseUnderAttackSound /*0x4c9cea*/
          || HouseClass::ShouldDisableCameo(*(unsigned int **)((char *)this + 108), a2) )
   {
-    if ( (uint8_t)House::IsHumanPlayer(a3) ) /*0x4c9d3f*/
-      PlayVocClass(g_abs_8871E0->?[3], 0x2000, 1.0, 0); /*0x4c9d5f*/
+    if ( (unsigned __int8)House::IsHumanPlayer(a3) ) /*0x4c9d3f*/
+      PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x4c9d5f*/
     return 0; /*0x4c9d65*/
   }
   else
   {
-    v5 = (int)(*((unsigned int *)this + 18));
-    v6 = (int)(*((unsigned int *)this + 20));
-    v7 = (int)((char *)this + 64);
+    v5 = *((unsigned int *)this + 18); /*0x4c9cf3*/
+    v6 = *((unsigned int *)this + 20); /*0x4c9cf6*/
+    v7 = (char *)this + 64; /*0x4c9cf9*/
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)
-      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))(v7, v5 + v8, 0) )
+      && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))(v7, v5 + v8, 0) )
     {
       v9 = *(unsigned int *)(v7 + 16); /*0x4c9d22*/
       v10 = *(unsigned int *)(v7 + 4); /*0x4c9d25*/
@@ -618,22 +618,22 @@ int FactoryClass::FinishProduction(int a2)
     {
       if ( this ) /*0x6350ad*/
       {
-        IDA_LOBYTE(v4) = *((unsigned char *)this + 28); /*0x6350af*/
+        LOBYTE(v4) = *((unsigned char *)this + 28); /*0x6350af*/
         if ( !(unsigned char)v4 ) /*0x6350b4*/
         {
           *((unsigned char *)this + 28) = 1; /*0x6350b6*/
-          IDA_LOBYTE(v4) = g_abs_AC4CA0; /*0x6350ba*/
-          if ( g_abs_AC4CA8 < g_abs_AC4CA0 /*0x6350f4*/
-            || (g_abs_AC4CA5 || !g_abs_AC4CA0)
-            && g_abs_AC4CAC > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-            && (IDA_LOBYTE(v4) = (*(int (**)(int *, int, unsigned int))(g_abs_AC4C98 + 8))(
-                               &g_abs_AC4C98,
-                               (unsigned int)(g_abs_AC4CA0)+ g_abs_AC4CAC,
+          LOBYTE(v4) = MEMORY[0xAC4CA0]; /*0x6350ba*/
+          if ( MEMORY[0xAC4CA8] < MEMORY[0xAC4CA0] /*0x6350f4*/
+            || (MEMORY[0xAC4CA5] || !MEMORY[0xAC4CA0])
+            && MEMORY[0xAC4CAC] > 0
+            && (LOBYTE(v4) = (*(int (**)(int *, int, unsigned int))(MEMORY[0xAC4C98] + 8))(
+                               &MEMORY[0xAC4C98],
+                               MEMORY[0xAC4CA0] + MEMORY[0xAC4CAC],
                                0),
                 (unsigned char)v4) )
           {
-            v4 = (int)((unsigned int)(g_abs_AC4CA8++));
-            *((unsigned int *)g_abs_AC4C9C + v4) = this; /*0x63510b*/
+            v4 = MEMORY[0xAC4CA8]++; /*0x6350fc*/
+            *((unsigned int *)MEMORY[0xAC4C9C] + v4) = this; /*0x63510b*/
           }
         }
       }
@@ -791,7 +791,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ca94c*/
       v4 = a3; /*0x4ca962*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4ca95e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ca95e*/
     *((unsigned char *)this + 12) = 1; /*0x4ca966*/
     if ( v4 ) /*0x4ca96a*/
     {
@@ -804,7 +804,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
           ++i; /*0x4ca98e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ca99b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4ca9a6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ca9a6*/
           *((unsigned int *)this + 1) = 0; /*0x4ca9ae*/
         }
       }
@@ -820,7 +820,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4ca9d2*/
     return 1; /*0x4ca9d8*/
   }
 
@@ -888,17 +888,17 @@ VectorClass_flat * FactoryClass_33::QueryInterface(unsigned int * Block, char a2
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_TechnoTypeClass_const);
+  v3 = (void *)*(Block + 1); /*0x4cab53*/
+  *Block = &vt_VectorClass_TechnoTypeClass_const; /*0x4cab56*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4cab60*/
   {
-    RA2_OPDEL(v3); /*0x4cab68*/
+    __3_YAXPAX_Z(v3); /*0x4cab68*/
     *(Block + 1) = 0; /*0x4cab70*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4cab7b*/
   *(Block + 2) = 0; /*0x4cab81*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4cab88*/
-    RA2_OPDEL(Block); /*0x4cab8b*/
+  if ( (a2 & 1) != 0 ) /*0x4cab88*/
+    __3_YAXPAX_Z(Block); /*0x4cab8b*/
   return (VectorClass *)Block; /*0x4cab95*/
 
 }

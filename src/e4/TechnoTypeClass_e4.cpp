@@ -41,7 +41,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
       break; /*0x48dcef*/
     case 2: /*0x48dce0*/
     case 3: /*0x48dce0*/
-      result = *((unsigned int *)g_abs_A8B21C + a2); /*0x48dd09*/
+      result = *((unsigned int *)MEMORY[0xA8B21C] + a2); /*0x48dd09*/
       break; /*0x48dd0c*/
     case 6: /*0x48dce0*/
     case 7: /*0x48dce0*/
@@ -49,13 +49,13 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
       break; /*0x48dcf9*/
     case 15: /*0x48dce0*/
     case 16: /*0x48dce0*/
-      result = *((unsigned int *)g_abs_A8E34C + a2); /*0x48dcff*/
+      result = *((unsigned int *)MEMORY[0xA8E34C] + a2); /*0x48dcff*/
       break; /*0x48dd02*/
     default:
       result = 0; /*0x48dd0d*/
       break; /*0x48dd0d*/
   }
-  return (gamemd::AbstractClass **)(result);
+  return result; /*0x48dcef*/
 
 }
 } // namespace gamemd
@@ -165,9 +165,9 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
   *((unsigned char *)this + 245) = 1; /*0x6f07eb*/
   *((unsigned char *)this + 246) = 0; /*0x6f07f1*/
   *((unsigned char *)this + 247) = 0; /*0x6f07f7*/
-  *this = &vt_TeamTypeClass; /*0x6f07fd*/
-  *((unsigned int *)this + 1) = &vt_TeamTypeClass; /*0x6f0803*/
-  *((unsigned int *)this + 2) = &vt_TeamTypeClass; /*0x6f080a*/
+  *this = &TeamTypeClass::`vftable'; /*0x6f07fd*/
+  *((unsigned int *)this + 1) = &TeamTypeClass::`vftable'; /*0x6f0803*/
+  *((unsigned int *)this + 2) = &TeamTypeClass::`vftable'; /*0x6f080a*/
   *((unsigned int *)this + 3) = &vt_TeamTypeClass; /*0x6f0811*/
   v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036]; /*0x6f0818*/
   if ( *(int *)&HouseClass_Player.__pad_5568[23036] < *(int *)&HouseClass_Player.__pad_5568[23028] /*0x6f0857*/
@@ -180,7 +180,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
         v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036],
         v4) )
   {
-    *(unsigned int *)&HouseClass_Player.__pad_5568[23036] = &v3-((unsigned int *)(>__pad_0))[1]; /*0x6f085c*/
+    *(unsigned int *)&HouseClass_Player.__pad_5568[23036] = &v3->__pad_0[1]; /*0x6f085c*/
     *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[23024] + 4 * (unsigned int)v3) = this; /*0x6f0868*/
     v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036]; /*0x6f086b*/
   }
@@ -205,7 +205,7 @@ LABEL_11:
   if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x6f08c5*/
     || (stru_B05488.__pad_579C[19033] || !*(unsigned int *)&stru_B05488.__pad_579C[19028])
     && *(int *)&stru_B05488.__pad_579C[19040] > 0
-    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19020] + 8))(
+    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19020] + 8))(
          &stru_B05488.__pad_579C[19020],
          *(unsigned int *)&stru_B05488.__pad_579C[19028] + *(unsigned int *)&stru_B05488.__pad_579C[19040],
          0) )
@@ -213,7 +213,7 @@ LABEL_11:
     v7 = (*(unsigned int *)&stru_B05488.__pad_579C[19036])++; /*0x6f08d2*/
     *(unsigned int *)(*(unsigned int *)&stru_B05488.__pad_579C[19024] + 4 * v7) = this; /*0x6f08e1*/
   }
-  return (unsigned int *)(this);
+  return this; /*0x6f08e6*/
 
 }
 } // namespace gamemd
@@ -472,9 +472,9 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   *((unsigned int *)this + 436) = -1; /*0x71119e*/
   *((unsigned char *)this + 1748) = 0; /*0x7111a4*/
   *((unsigned char *)this + 1749) = 1; /*0x7111ac*/
-  if ( &g_abs_889F64 ) /*0x7111b9*/
+  if ( &MEMORY[0x889F64] ) /*0x7111b9*/
   {
-    strncpy((unsigned char *)this + 1750, &g_abs_889F64, 0x18u); /*0x7111c7*/
+    strncpy((unsigned char *)this + 1750, &MEMORY[0x889F64], 0x18u); /*0x7111c7*/
     *((unsigned char *)this + 1774) = 0; /*0x7111cf*/
   }
   else
@@ -483,9 +483,9 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   }
   *((unsigned int *)this + 444) = 0; /*0x7111da*/
   *((unsigned char *)this + 1780) = 0; /*0x7111e2*/
-  if ( &g_abs_889F64 ) /*0x7111ee*/
+  if ( &MEMORY[0x889F64] ) /*0x7111ee*/
   {
-    strncpy((unsigned char *)this + 1781, &g_abs_889F64, 0x18u); /*0x7111fc*/
+    strncpy((unsigned char *)this + 1781, &MEMORY[0x889F64], 0x18u); /*0x7111fc*/
     *((unsigned char *)this + 1805) = 0; /*0x711204*/
   }
   else
@@ -667,9 +667,9 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   *((unsigned int *)this + 882) = 10; /*0x711674*/
   *((unsigned int *)this + 883) = 0; /*0x71167a*/
   *((unsigned int *)this + 892) = 0; /*0x711680*/
-  *(unsigned int *)this = &vt_TechnoTypeClass; /*0x711686*/
-  *((unsigned int *)this + 1) = &vt_TechnoTypeClass; /*0x71168c*/
-  *((unsigned int *)this + 2) = &vt_TechnoTypeClass; /*0x711693*/
+  *(unsigned int *)this = &TechnoTypeClass::`vftable'; /*0x711686*/
+  *((unsigned int *)this + 1) = &TechnoTypeClass::`vftable'; /*0x71168c*/
+  *((unsigned int *)this + 2) = &TechnoTypeClass::`vftable'; /*0x711693*/
   *((unsigned int *)this + 3) = &vt_TechnoTypeClass; /*0x71169a*/
   *((unsigned char *)this + 3536) = 0; /*0x7116a7*/
   *((unsigned char *)this + 564) = 1; /*0x7116ad*/
@@ -734,27 +734,27 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   }
   while ( v14 ); /*0x71177f*/
   memset((unsigned char *)this + 2068, 0xFFu, 0x48u); /*0x71178e*/
-  if ( g_abs_B0F680 < g_abs_B0F678 /*0x7117c3*/
-    || (g_abs_B0F67D || !g_abs_B0F678)
-    && g_abs_B0F684 > (unsigned char [1])(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0F670 + 8))(
-         &g_abs_B0F670,
-         (unsigned int)(g_abs_B0F684)+ g_abs_B0F678,
+  if ( MEMORY[0xB0F680] < MEMORY[0xB0F678] /*0x7117c3*/
+    || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
+    && MEMORY[0xB0F684] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F670] + 8))(
+         &MEMORY[0xB0F670],
+         MEMORY[0xB0F684] + MEMORY[0xB0F678],
          0) )
   {
-    v15 = (unsigned int)(g_abs_B0F680++);
-    *((unsigned int *)g_abs_B0F674 + v15) = this; /*0x7117df*/
+    v15 = MEMORY[0xB0F680]++; /*0x7117d0*/
+    *((unsigned int *)MEMORY[0xB0F674] + v15) = this; /*0x7117df*/
   }
-  if ( g_abs_A8EB10 < g_abs_A8EB08 /*0x711816*/
-    || (g_abs_A8EB0D || !g_abs_A8EB08)
-    && g_abs_A8EB14 > (unsigned char [1])(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8EB00 + 8))(
-         &g_abs_A8EB00,
-         (unsigned int)(g_abs_A8EB14)+ g_abs_A8EB08,
+  if ( MEMORY[0xA8EB10] < MEMORY[0xA8EB08] /*0x711816*/
+    || (MEMORY[0xA8EB0D] || !MEMORY[0xA8EB08])
+    && MEMORY[0xA8EB14] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8EB00] + 8))(
+         &MEMORY[0xA8EB00],
+         MEMORY[0xA8EB14] + MEMORY[0xA8EB08],
          0) )
   {
-    v16 = (unsigned int)(g_abs_A8EB10++);
-    *((unsigned int *)g_abs_A8EB04 + v16) = this; /*0x711832*/
+    v16 = MEMORY[0xA8EB10]++; /*0x711823*/
+    *((unsigned int *)MEMORY[0xA8EB04] + v16) = this; /*0x711832*/
   }
   return this; /*0x711837*/
 

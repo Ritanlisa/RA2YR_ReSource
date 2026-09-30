@@ -20,8 +20,8 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
   int v7; // ecx
   int v8; // ebp
 
-  v3 = (unsigned int)(*(Block + 1));
-  *Block = (unsigned int)(&vt_VectorClass_Wstring);
+  v3 = *(Block + 1); /*0x69d523*/
+  *Block = &vt_VectorClass_Wstring; /*0x69d526*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d530*/
   {
     v4 = *(unsigned int *)(v3 - 4); /*0x69d53b*/
@@ -38,13 +38,13 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
       }
       while ( v8 ); /*0x69d558*/
     }
-    RA2_OPDEL(v5); /*0x69d55c*/
+    __3_YAXPAX_Z(v5); /*0x69d55c*/
     *(Block + 1) = 0; /*0x69d566*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x69d571*/
   *(Block + 2) = 0; /*0x69d577*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x69d57e*/
-    RA2_OPDEL(Block); /*0x69d581*/
+  if ( (a2 & 1) != 0 ) /*0x69d57e*/
+    __3_YAXPAX_Z(Block); /*0x69d581*/
   return (DynamicVector *)Block; /*0x69d58b*/
 
 }

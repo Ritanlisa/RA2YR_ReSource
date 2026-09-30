@@ -66,7 +66,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = RA2_OPNEW(8 * a2 + 4); /*0x76a007*/
+      v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x76a007*/
       if ( v5 ) /*0x76a011*/
       {
         *v5 = a2; /*0x76a013*/
@@ -113,7 +113,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(unsigned char *))(*(unsigned int *)this + 12))(this); /*0x76a0d9*/
   }
   v12 = *((unsigned int *)this + 2); /*0x76a0dc*/
   if ( v12 < *((unsigned int *)this + 4) ) /*0x76a0e4*/
@@ -310,7 +310,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
     if ( a3 ) /*0x76a2c8*/
       v4 = a3; /*0x76a2de*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x76a2da*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x76a2da*/
     *((unsigned char *)this + 12) = 1; /*0x76a2e2*/
     if ( !v4 ) /*0x76a2e6*/
       return 0; /*0x76a35a*/
@@ -323,7 +323,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
         ++i; /*0x76a301*/
       if ( *((unsigned char *)this + 13) ) /*0x76a30e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x76a319*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x76a319*/
         *((unsigned int *)this + 1) = 0; /*0x76a321*/
       }
     }
@@ -333,7 +333,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
   }
   else
   {
-    (*(unsigned int *)this->__pad_0 + 12)
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x76a33e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x76a341*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x76a349*/

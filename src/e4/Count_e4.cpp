@@ -18,19 +18,19 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   int result; // eax
   int v3; // edx
 
-  v1 = (int)(*((unsigned int *)this + 7) - 1);
+  v1 = *((unsigned int *)this + 7) - 1; /*0x408e73*/
   *((unsigned int *)this + 7) = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
     *((unsigned int *)this + 7) = 0; /*0x408e7b*/
   result = *this; /*0x408e82*/
-  // glued-defhead: int Count::DecrementRefCountsAudio(Count *this)
-  // glued-defhead: int Count::DecrementRefCountsAudio(Count *this)
+  v3 = *(unsigned int *)(*(unsigned int *)this + 608) - 1; /*0x408e8a*/
+  *(unsigned int *)(*(unsigned int *)this + 608) = v3; /*0x408e8d*/
   if ( v3 < 0 ) /*0x408e93*/
   {
-    result = (int)(*this);
-    int Count::DecrementRefCountsAudio(Count *this)
+    result = *this; /*0x408e95*/
+    *(unsigned int *)(*(unsigned int *)this + 608) = 0; /*0x408e97*/
   }
-  return (gamemd::AbstractClass **)(result);
+  return result; /*0x408ea1*/
 
 }
 } // namespace gamemd
@@ -47,13 +47,13 @@ int Count::SetupAllCountriesLobby()
   int v6; // edi
   int PlayerSide; // esi
   int *v8; // [esp+10h] [ebp-10h]
-  int * v10;
+  int v10; // [esp+18h] [ebp-8h]
   HWND hWnd; // [esp+1Ch] [ebp-4h]
 
-  v1 = (int *)(0);
-  v2 = (wchar_t **)((int *)((wchar_t **)&g_abs_A8DA90));
-  v10 = (int *)(0);
-  v8 = (int *)(&g_abs_A8DA90);
+  v1 = 0; /*0x46f6da*/
+  v2 = (wchar_t **)&MEMORY[0xA8DA90]; /*0x46f6dc*/
+  v10 = 0; /*0x46f6e2*/
+  v8 = &MEMORY[0xA8DA90]; /*0x46f6e6*/
   do /*0x46f7ff*/
   {
     ResourceID2 = GetResourceID2CSF(v1); /*0x46f6ef*/
@@ -63,25 +63,25 @@ int Count::SetupAllCountriesLobby()
     {
       v5 = *v2; /*0x46f718*/
       v6 = -2; /*0x46f71c*/
-      if ( g_abs_A8B23C && (g_abs_A8B238 == (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(3) || g_abs_A8B238 == 4) ) /*0x46f730*/
-        v6 = (*(int (**)(int))(*(unsigned int *)g_abs_A8B23C + 40))(g_abs_A8B23C); /*0x46f737*/
-      if ( (uint8_t)((Player *)(v5))->IsObserver() ) /*0x46f73b*/
+      if ( MEMORY[0xA8B23C] && (MEMORY[0xA8B238] == 3 || MEMORY[0xA8B238] == 4) ) /*0x46f730*/
+        v6 = (*(int (**)(int))(*(unsigned int *)MEMORY[0xA8B23C] + 40))(MEMORY[0xA8B23C]); /*0x46f737*/
+      if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
       }
-      else if ( v5 == (wchar_t *)g_abs_AC119C ) /*0x46f752*/
+      else if ( v5 == (wchar_t *)MEMORY[0xAC119C] ) /*0x46f752*/
       {
         PlayerSide = v6; /*0x46f754*/
       }
-      else if ( v5 == (wchar_t *)g_abs_AC11A0 ) /*0x46f75e*/
+      else if ( v5 == (wchar_t *)MEMORY[0xAC11A0] ) /*0x46f75e*/
       {
         PlayerSide = v6; /*0x46f760*/
       }
-      else if ( v5 == (wchar_t *)((wchar_t *))((wchar_t *))(g_abs_AC11B0) ) /*0x46f76a*/
+      else if ( v5 == MEMORY[0xAC11B0] ) /*0x46f76a*/
       {
         PlayerSide = v6; /*0x46f76c*/
       }
-      else if ( v5 == (wchar_t *)g_abs_AC11B4 ) /*0x46f776*/
+      else if ( v5 == (wchar_t *)MEMORY[0xAC11B4] ) /*0x46f776*/
       {
         PlayerSide = -3; /*0x46f778*/
       }
@@ -89,13 +89,13 @@ int Count::SetupAllCountriesLobby()
       {
         PlayerSide = SessionClass::GetPlayerSide((int)v5); /*0x46f786*/
       }
-      if ( g_abs_A8B23C /*0x46f795*/
-        && !(*(uint8_t (**)(int, int))(*(unsigned int *)g_abs_A8B23C + 28))(
-              g_abs_A8B23C,
+      if ( MEMORY[0xA8B23C] /*0x46f795*/
+        && !(*(unsigned __int8 (**)(int, int))(*(unsigned int *)MEMORY[0xA8B23C] + 28))(
+              MEMORY[0xA8B23C],
               PlayerSide) )
       {
         PlayerSide = v6; /*0x46f79e*/
-        if ( (uint8_t)((Player *)(v5))->IsObserver() ) /*0x46f7a0*/
+        if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f7a0*/
         {
           *(v8 - 2557) = v6; /*0x46f7ad*/
         }
@@ -112,7 +112,7 @@ int Count::SetupAllCountriesLobby()
     v1 = (void *)++v10; /*0x46f7f0*/
     v8 = (int *)v2; /*0x46f7fb*/
   }
-  while ( (int)v2 < (int)&g_abs_A8DAB0 ); /*0x46f7ff*/
+  while ( (int)v2 < (int)&MEMORY[0xA8DAB0] ); /*0x46f7ff*/
   return result; /*0x46f805*/
 
 }

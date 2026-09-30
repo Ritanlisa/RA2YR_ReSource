@@ -67,10 +67,10 @@ char GameOption::CheckDuplicate()
 
   LPARAM *v0; // eax
 
-  v0 = (LPARAM *)(&g_abs_A8DA90);
-  while ( *(unsigned int *)((LPARAM))((LPARAM))((LPARAM))(v0) != g_abs_AC11B4 ) /*0x5e956d*/
+  v0 = &MEMORY[0xA8DA90]; /*0x5e9566*/
+  while ( *v0 != MEMORY[0xAC11B4] ) /*0x5e956d*/
   {
-    if ( (int)++v0 >= (int)&g_abs_A8DAB0 ) /*0x5e9577*/
+    if ( (int)++v0 >= (int)&MEMORY[0xA8DAB0] ) /*0x5e9577*/
       return 1; /*0x5e957b*/
   }
   return 0; /*0x5e957b*/

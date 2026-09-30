@@ -202,18 +202,18 @@ char E4Recv_6D1570::sub_6D1570()
   unsigned int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
   char v3; // [esp+1Ch] [ebp-4h]
 
-  result = (unsigned int)((*(int (**)(void *, unsigned int *))(*(unsigned int *)this + 48))(this, g_abs_B0CC40));
-  if ( g_abs_B0CC40 ) /*0x6d1584*/
+  result = (*(int (**)(void *, unsigned int *))(*(unsigned int *)this + 48))(this, MEMORY[0xB0CC40]); /*0x6d157a*/
+  if ( MEMORY[0xB0CC40] ) /*0x6d1584*/
   {
-    v2[2] = (unsigned int)(g_abs_B0CC50);
-    v2[1] = (unsigned int)(g_abs_B0CC4C);
-    v2[4] = (unsigned int)(g_abs_B0CC58);
-    v3 = (unsigned int)(0);
-    v2[0] = (unsigned int)(g_abs_B0CC64);
-    v2[5] = (unsigned int)(g_abs_842838);
-    v2[3] = (unsigned int)(g_abs_B0CC54);
-    HashTable::Remove((int *)g_abs_887368, g_abs_B0CC64); /*0x6d15cb*/
-    return CommandClass::AddAction(g_abs_887368, (int)v2); /*0x6d15db*/
+    v2[2] = MEMORY[0xB0CC50]; /*0x6d1597*/
+    v2[1] = MEMORY[0xB0CC4C]; /*0x6d15a1*/
+    v2[4] = MEMORY[0xB0CC58]; /*0x6d15ab*/
+    v3 = 0; /*0x6d15b6*/
+    v2[0] = MEMORY[0xB0CC64]; /*0x6d15bb*/
+    v2[5] = MEMORY[0x842838]; /*0x6d15bf*/
+    v2[3] = MEMORY[0xB0CC54]; /*0x6d15c7*/
+    HashTable::Remove((int *)MEMORY[0x887368], MEMORY[0xB0CC64]); /*0x6d15cb*/
+    return CommandClass::AddAction(MEMORY[0x887368], (int)v2); /*0x6d15db*/
   }
   return result; /*0x6d15e0*/
 
@@ -465,11 +465,11 @@ namespace gamemd {
 void E4Recv_6D1E80::sub_6D1E80()
 {
 
-  *(unsigned int *)this = (unsigned int)(&vt_Tactical);
-  *((unsigned int *)this + 1) = &vt_Tactical; /*0x6d1e86*/
-  *((unsigned int *)this + 2) = &vt_Tactical; /*0x6d1e8d*/
+  *this = &Tactical::`vftable'; /*0x6d1e80*/
+  *((unsigned int *)this + 1) = &Tactical::`vftable'; /*0x6d1e86*/
+  *((unsigned int *)this + 2) = &Tactical::`vftable'; /*0x6d1e8d*/
   *((unsigned int *)this + 3) = &vt_Tactical; /*0x6d1e94*/
-  g_abs_887324 = 0; /*0x6d1e9b*/
+  MEMORY[0x887324] = 0; /*0x6d1e9b*/
   AbstractClass::DTOR(this); /*0x6d1ea5*/
 
 }

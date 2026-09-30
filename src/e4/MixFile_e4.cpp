@@ -27,13 +27,6 @@
 namespace gamemd {
 MixFileClass * * MixFile::LoadAll()
 {
-    unsigned int v38 = 0;  /* G37 hoist */
-    unsigned int v35 = 0;  /* G37 hoist */
-    unsigned int v32 = 0;  /* G37 hoist */
-    unsigned int v29 = 0;  /* G37 hoist */
-    unsigned int v17 = 0;  /* G37 hoist */
-    unsigned int v14 = 0;  /* G37 hoist */
-    unsigned int v11 = 0;  /* G37 hoist */
 
   unsigned int *v0; // eax
   char v1; // bl
@@ -45,34 +38,34 @@ MixFileClass * * MixFile::LoadAll()
   unsigned int *v8; // eax
   unsigned int *v9; // eax
   unsigned int *v10; // eax
-  unsigned char (*)[4] v11;
+  char v11; // bl
   unsigned int *v12; // eax
   unsigned int *v13; // eax
-  unsigned char (*)[4] v14;
+  char v14; // bl
   unsigned int *v15; // eax
   unsigned int *v16; // eax
-  unsigned char (*)[4] v17;
+  char v17; // bl
   unsigned int *v18; // eax
   int v19; // esi
   unsigned int *v20; // eax
   unsigned int *v21; // eax
   unsigned int *v22; // esi
-  unsigned int * v23;
+  int v23; // eax
   unsigned int *v24; // eax
   unsigned int *v25; // eax
   unsigned int *v26; // esi
-  unsigned int * v27;
+  int v27; // eax
   unsigned int *v28; // eax
-  unsigned char (*)[4] v29;
+  char v29; // bl
   unsigned int *v30; // eax
   unsigned int *v31; // eax
-  unsigned char (*)[4] v32;
+  char v32; // bl
   unsigned int *v33; // eax
   unsigned int *v34; // eax
-  unsigned char (*)[4] v35;
+  char v35; // bl
   unsigned int *v36; // eax
   unsigned int *v37; // eax
-  unsigned char (*)[4] v38;
+  char v38; // bl
   unsigned int *v39; // eax
   unsigned int *v40; // eax
   char v41; // bl
@@ -110,142 +103,142 @@ MixFileClass * * MixFile::LoadAll()
   int v73[9]; // [esp+A8h] [ebp-128h] BYREF
   char Buffer[260]; // [esp+CCh] [ebp-104h] BYREF
 
-  v0 = (unsigned int)(((CCFileClass *)(v69))->Construct(aConqmdMix));
-  v1 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v0 + 20))(v0, 0));
-  v69[0] = (unsigned int)(&vt_CCFileClass);
-  v71 = (unsigned int)(0);
+  v0 = CCFileClass::Construct(v69, aConqmdMix); /*0x530473*/
+  v1 = (*(int (**)(unsigned int *, unsigned int))(*v0 + 20))(v0, 0); /*0x53048b*/
+  v69[0] = &CCFileClass::`vftable'; /*0x53048d*/
+  v71 = 0; /*0x530491*/
   Vector::Clear((int)v70); /*0x530495*/
   v69[0] = &off_7E1668; /*0x5304a3*/
-  ((BufferIOFileClass *)(v69))->Dtor(); /*0x5304a7*/
+  BufferIOFileClass::Dtor(v69); /*0x5304a7*/
   if ( v1 ) /*0x5304ae*/
   {
-    v2 = (unsigned int *)RA2_OPNEW(40); /*0x5304b2*/
+    v2 = (unsigned int *)__2_YAPAXI_Z(40); /*0x5304b2*/
     if ( v2 ) /*0x5304bc*/
-      g_abs_87F7E8[5524] = MixFileClass::FromFile(v2, aConqmdMix, (int)&g_abs_87F7E8[7270]); /*0x5304cf*/
+      MEMORY[0x87F7E8][5524] = MixFileClass::FromFile(v2, aConqmdMix, (int)&MEMORY[0x87F7E8][7270]); /*0x5304cf*/
     else
-      g_abs_87F7E8[5524] = 0; /*0x5304d6*/
+      MEMORY[0x87F7E8][5524] = 0; /*0x5304d6*/
   }
-  this->Debug::Log_0(); /*0x5304e1*/
-  if ( !g_abs_87F7E8[5524] ) /*0x5304f0*/
+  Debug::Log_0(); /*0x5304e1*/
+  if ( !MEMORY[0x87F7E8][5524] ) /*0x5304f0*/
     return 0; /*0x5304fe*/
-  if ( g_abs_87F7E8[5516] ) /*0x530507*/
-    (**(void (***)(unsigned int, int))g_abs_87F7E8[5516])(g_abs_87F7E8[5516], 1); /*0x53050d*/
-  v4 = (unsigned int *)RA2_OPNEW(40); /*0x530511*/
+  if ( MEMORY[0x87F7E8][5516] ) /*0x530507*/
+    (**(void (***)(unsigned int, int))MEMORY[0x87F7E8][5516])(MEMORY[0x87F7E8][5516], 1); /*0x53050d*/
+  v4 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530511*/
   if ( v4 ) /*0x53051b*/
-    v5 = MixFileClass::FromFile(v4, aGenermdMix, (int)&g_abs_87F7E8[7270]); /*0x530529*/
+    v5 = MixFileClass::FromFile(v4, aGenermdMix, (int)&MEMORY[0x87F7E8][7270]); /*0x530529*/
   else
     v5 = 0; /*0x530530*/
-  g_abs_87F7E8[5516] = v5; /*0x530535*/
+  MEMORY[0x87F7E8][5516] = v5; /*0x530535*/
   ReturnTrue(0); /*0x53053a*/
-  if ( g_abs_87F7E8[5515] ) /*0x530547*/
-    (**(void (***)(unsigned int, int))g_abs_87F7E8[5515])(g_abs_87F7E8[5515], 1); /*0x53054d*/
-  v6 = (unsigned int *)RA2_OPNEW(40); /*0x530551*/
+  if ( MEMORY[0x87F7E8][5515] ) /*0x530547*/
+    (**(void (***)(unsigned int, int))MEMORY[0x87F7E8][5515])(MEMORY[0x87F7E8][5515], 1); /*0x53054d*/
+  v6 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530551*/
   if ( v6 ) /*0x53055b*/
-    v7 = (unsigned int)(MixFileClass::FromFile(v6, aGenericMix, (int)&g_abs_87F7E8[7270]));
+    v7 = MixFileClass::FromFile(v6, aGenericMix, (int)&MEMORY[0x87F7E8][7270]); /*0x530569*/
   else
     v7 = 0; /*0x530570*/
-  g_abs_87F7E8[5515] = (unsigned int)(v7);
+  MEMORY[0x87F7E8][5515] = v7; /*0x530575*/
   ReturnTrue(0); /*0x53057a*/
-  if ( g_abs_87F7E8[5520] ) /*0x530587*/
-    (**(void (***)(unsigned int, int))g_abs_87F7E8[5520])(g_abs_87F7E8[5520], 1); /*0x53058d*/
-  v8 = (unsigned int *)RA2_OPNEW(40); /*0x530591*/
+  if ( MEMORY[0x87F7E8][5520] ) /*0x530587*/
+    (**(void (***)(unsigned int, int))MEMORY[0x87F7E8][5520])(MEMORY[0x87F7E8][5520], 1); /*0x53058d*/
+  v8 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530591*/
   if ( v8 ) /*0x53059b*/
-    g_abs_87F7E8[5520] = MixFileClass::FromFile(v8, aIsogenmdMix, (int)&g_abs_87F7E8[7270]); /*0x5305ae*/
+    MEMORY[0x87F7E8][5520] = MixFileClass::FromFile(v8, aIsogenmdMix, (int)&MEMORY[0x87F7E8][7270]); /*0x5305ae*/
   else
-    g_abs_87F7E8[5520] = 0; /*0x5305b5*/
-  if ( g_abs_87F7E8[5519] ) /*0x5305c3*/
-    (**(void (***)(unsigned int, int))g_abs_87F7E8[5519])(g_abs_87F7E8[5519], 1); /*0x5305c9*/
-  v9 = (unsigned int *)RA2_OPNEW(40); /*0x5305cd*/
+    MEMORY[0x87F7E8][5520] = 0; /*0x5305b5*/
+  if ( MEMORY[0x87F7E8][5519] ) /*0x5305c3*/
+    (**(void (***)(unsigned int, int))MEMORY[0x87F7E8][5519])(MEMORY[0x87F7E8][5519], 1); /*0x5305c9*/
+  v9 = (unsigned int *)__2_YAPAXI_Z(40); /*0x5305cd*/
   if ( v9 ) /*0x5305d7*/
-    g_abs_87F7E8[5519] = MixFileClass::FromFile(v9, aIsogenMix, (int)&g_abs_87F7E8[7270]); /*0x5305ea*/
+    MEMORY[0x87F7E8][5519] = MixFileClass::FromFile(v9, aIsogenMix, (int)&MEMORY[0x87F7E8][7270]); /*0x5305ea*/
   else
-    g_abs_87F7E8[5519] = 0; /*0x5305f1*/
-  v10 = ((CCFileClass *)(v69))->Construct(aConquerMix); /*0x530600*/
+    MEMORY[0x87F7E8][5519] = 0; /*0x5305f1*/
+  v10 = CCFileClass::Construct(v69, aConquerMix); /*0x530600*/
   v11 = (*(int (**)(unsigned int *, unsigned int))(*v10 + 20))(v10, 0); /*0x530611*/
-  v69[0] = &vt_CCFileClass; /*0x530613*/
+  v69[0] = &CCFileClass::`vftable'; /*0x530613*/
   v71 = 0; /*0x530617*/
   Vector::Clear((int)v70); /*0x53061b*/
   v69[0] = &off_7E1668; /*0x530624*/
-  ((BufferIOFileClass *)(v69))->Dtor(); /*0x530628*/
+  BufferIOFileClass::Dtor(v69); /*0x530628*/
   if ( v11 ) /*0x53062f*/
   {
-    v12 = (unsigned int *)RA2_OPNEW(40); /*0x530633*/
+    v12 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530633*/
     if ( v12 ) /*0x53063d*/
-      g_abs_87F7E8[5525] = MixFileClass::FromFile(v12, aConquerMix, (int)&g_abs_87F7E8[7270]); /*0x530650*/
+      MEMORY[0x87F7E8][5525] = MixFileClass::FromFile(v12, aConquerMix, (int)&MEMORY[0x87F7E8][7270]); /*0x530650*/
     else
-      g_abs_87F7E8[5525] = 0; /*0x530657*/
+      MEMORY[0x87F7E8][5525] = 0; /*0x530657*/
   }
-  this->Debug::Log_0(); /*0x530662*/
-  if ( !g_abs_87F7E8[5525] ) /*0x530671*/
+  Debug::Log_0(); /*0x530662*/
+  if ( !MEMORY[0x87F7E8][5525] ) /*0x530671*/
     return 0; /*0x53067f*/
   v13 = CCFileClass::Construct(v69, aCameomdMix); /*0x530689*/
   v14 = (*(int (**)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x53069a*/
-  v69[0] = &vt_CCFileClass; /*0x53069c*/
+  v69[0] = &CCFileClass::`vftable'; /*0x53069c*/
   v71 = 0; /*0x5306a0*/
   Vector::Clear((int)v70); /*0x5306a4*/
   v69[0] = &off_7E1668; /*0x5306ad*/
-  ((BufferIOFileClass *)(v69))->Dtor(); /*0x5306b1*/
+  BufferIOFileClass::Dtor(v69); /*0x5306b1*/
   if ( v14 ) /*0x5306b8*/
   {
-    v15 = (unsigned int *)RA2_OPNEW(40); /*0x5306bc*/
+    v15 = (unsigned int *)__2_YAPAXI_Z(40); /*0x5306bc*/
     if ( v15 ) /*0x5306c6*/
-      g_abs_87F7E8[5526] = MixFileClass::FromFile(v15, aCameomdMix, (int)&g_abs_87F7E8[7270]); /*0x5306d9*/
+      MEMORY[0x87F7E8][5526] = MixFileClass::FromFile(v15, aCameomdMix, (int)&MEMORY[0x87F7E8][7270]); /*0x5306d9*/
     else
-      g_abs_87F7E8[5526] = 0; /*0x5306e0*/
+      MEMORY[0x87F7E8][5526] = 0; /*0x5306e0*/
   }
-  this->Debug::Log_0(); /*0x5306eb*/
-  if ( !g_abs_87F7E8[5526] ) /*0x5306fa*/
+  Debug::Log_0(); /*0x5306eb*/
+  if ( !MEMORY[0x87F7E8][5526] ) /*0x5306fa*/
     return 0; /*0x530708*/
   v16 = CCFileClass::Construct(v69, aCameoMix); /*0x530712*/
   v17 = (*(int (**)(unsigned int *, unsigned int))(*v16 + 20))(v16, 0); /*0x530723*/
-  v69[0] = &vt_CCFileClass; /*0x530725*/
+  v69[0] = &CCFileClass::`vftable'; /*0x530725*/
   v71 = 0; /*0x530729*/
   Vector::Clear((int)v70); /*0x53072d*/
   v69[0] = &off_7E1668; /*0x530736*/
-  ((BufferIOFileClass *)(v69))->Dtor(); /*0x53073a*/
+  BufferIOFileClass::Dtor(v69); /*0x53073a*/
   if ( v17 ) /*0x530741*/
   {
-    v18 = (unsigned int *)RA2_OPNEW(40); /*0x530745*/
+    v18 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530745*/
     if ( v18 ) /*0x53074f*/
-      g_abs_87F7E8[5527] = MixFileClass::FromFile(v18, aCameoMix, (int)&g_abs_87F7E8[7270]); /*0x530762*/
+      MEMORY[0x87F7E8][5527] = MixFileClass::FromFile(v18, aCameoMix, (int)&MEMORY[0x87F7E8][7270]); /*0x530762*/
     else
-      g_abs_87F7E8[5527] = 0; /*0x530769*/
+      MEMORY[0x87F7E8][5527] = 0; /*0x530769*/
   }
-  this->Debug::Log_0(); /*0x530774*/
-  if ( !g_abs_87F7E8[5527] ) /*0x530783*/
+  Debug::Log_0(); /*0x530774*/
+  if ( !MEMORY[0x87F7E8][5527] ) /*0x530783*/
     return 0; /*0x530791*/
   v19 = Game::CheckForGameCD((void *)0x3C) + 1; /*0x5307a3*/
   v72 = v19; /*0x5307a6*/
-  if ( IDA_LOBYTE(g_abs_87F7E8[31470]) == 1 ) /*0x5307aa*/
+  if ( LOBYTE(MEMORY[0x87F7E8][31470]) == 1 ) /*0x5307aa*/
   {
     strcpy(Buffer, aMapsmdMix); /*0x5307d0*/
     if ( FileClass::FindFirstWithCD(Buffer) == 1 ) /*0x5307e7*/
     {
-      this->Debug::Log_0(); /*0x5307fa*/
-      v20 = (unsigned int *)RA2_OPNEW(40); /*0x530801*/
+      Debug::Log_0(); /*0x5307fa*/
+      v20 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530801*/
       if ( v20 ) /*0x53080b*/
-        g_abs_87F7E8[5534] = MixFileClass::FromFile(v20, Buffer, (int)&g_abs_87F7E8[7270]); /*0x530821*/
+        MEMORY[0x87F7E8][5534] = MixFileClass::FromFile(v20, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x530821*/
       else
-        g_abs_87F7E8[5534] = 0; /*0x530828*/
+        MEMORY[0x87F7E8][5534] = 0; /*0x530828*/
       while ( FileFind::Next(Buffer) == 1 ) /*0x53083c*/
       {
-        this->Debug::Log_0(); /*0x53084f*/
-        v21 = (unsigned int *)RA2_OPNEW(40); /*0x530856*/
+        Debug::Log_0(); /*0x53084f*/
+        v21 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530856*/
         if ( v21 ) /*0x530860*/
         {
-          v22 = (unsigned int *)(MixFileClass::FromFile(v21, Buffer, (int)&g_abs_87F7E8[7270]));
+          v22 = MixFileClass::FromFile(v21, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x530876*/
           if ( v22 ) /*0x53087a*/
           {
-            if ( g_abs_87F7E8[5492] < g_abs_87F7E8[5490] /*0x5308b2*/
-              || (IDA_BYTE1(g_abs_87F7E8[5491]) || !g_abs_87F7E8[5490])
-              && g_abs_87F7E8[5493] > 0
-              && (*(uint8_t (**)(unsigned int *, int, unsigned int))(g_abs_87F7E8[5488] + 8))(
-                   &g_abs_87F7E8[5488],
-                   g_abs_87F7E8[5493] + g_abs_87F7E8[5490],
+            if ( MEMORY[0x87F7E8][5492] < MEMORY[0x87F7E8][5490] /*0x5308b2*/
+              || (BYTE1(MEMORY[0x87F7E8][5491]) || !MEMORY[0x87F7E8][5490])
+              && MEMORY[0x87F7E8][5493] > 0
+              && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5488] + 8))(
+                   &MEMORY[0x87F7E8][5488],
+                   MEMORY[0x87F7E8][5493] + MEMORY[0x87F7E8][5490],
                    0) )
             {
-              v23 = (unsigned int)(g_abs_87F7E8[5492]++);
-              *(unsigned int *)(g_abs_87F7E8[5489] + 4 * v23) = v22; /*0x5308ce*/
+              v23 = MEMORY[0x87F7E8][5492]++; /*0x5308bf*/
+              *(unsigned int *)(MEMORY[0x87F7E8][5489] + 4 * v23) = v22; /*0x5308ce*/
             }
           }
         }
@@ -257,31 +250,31 @@ LABEL_60:
     strcpy(Buffer, aMapsMix); /*0x53090f*/
     if ( FileClass::FindFirstWithCD(Buffer) == 1 ) /*0x530926*/
     {
-      this->this->this->Debug::Log_0(); /*0x530939*/
-      v24 = (unsigned int *)RA2_OPNEW(40); /*0x530940*/
+      Debug::Log_0(); /*0x530939*/
+      v24 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530940*/
       if ( v24 ) /*0x53094a*/
-        g_abs_87F7E8[5535] = MixFileClass::FromFile(v24, Buffer, (int)&g_abs_87F7E8[7270]); /*0x530960*/
+        MEMORY[0x87F7E8][5535] = MixFileClass::FromFile(v24, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x530960*/
       else
-        g_abs_87F7E8[5535] = 0; /*0x530967*/
+        MEMORY[0x87F7E8][5535] = 0; /*0x530967*/
       while ( FileFind::Next(Buffer) == 1 ) /*0x53097b*/
       {
-        this->this->this->Debug::Log_0(); /*0x53098e*/
-        v25 = (unsigned int *)RA2_OPNEW(40); /*0x530995*/
+        Debug::Log_0(); /*0x53098e*/
+        v25 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530995*/
         if ( v25 ) /*0x53099f*/
         {
-          v26 = (unsigned int *)(MixFileClass::FromFile(v25, Buffer, (int)&g_abs_87F7E8[7270]));
+          v26 = MixFileClass::FromFile(v25, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x5309b5*/
           if ( v26 ) /*0x5309b9*/
           {
-            if ( g_abs_87F7E8[5492] < g_abs_87F7E8[5490] /*0x5309f1*/
-              || (IDA_BYTE1(g_abs_87F7E8[5491]) || !g_abs_87F7E8[5490])
-              && g_abs_87F7E8[5493] > 0
-              && (*(uint8_t (**)(unsigned int *, int, unsigned int))(g_abs_87F7E8[5488] + 8))(
-                   &g_abs_87F7E8[5488],
-                   g_abs_87F7E8[5493] + g_abs_87F7E8[5490],
+            if ( MEMORY[0x87F7E8][5492] < MEMORY[0x87F7E8][5490] /*0x5309f1*/
+              || (BYTE1(MEMORY[0x87F7E8][5491]) || !MEMORY[0x87F7E8][5490])
+              && MEMORY[0x87F7E8][5493] > 0
+              && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5488] + 8))(
+                   &MEMORY[0x87F7E8][5488],
+                   MEMORY[0x87F7E8][5493] + MEMORY[0x87F7E8][5490],
                    0) )
             {
-              v27 = (unsigned int)(g_abs_87F7E8[5492]++);
-              *(unsigned int *)(g_abs_87F7E8[5489] + 4 * v27) = v26; /*0x530a0d*/
+              v27 = MEMORY[0x87F7E8][5492]++; /*0x5309fe*/
+              *(unsigned int *)(MEMORY[0x87F7E8][5489] + 4 * v27) = v26; /*0x530a0d*/
             }
           }
         }
@@ -292,103 +285,103 @@ LABEL_60:
   else
   {
     sprintf(Buffer, "MAPSMD%02d.MIX", v19); /*0x530a3c*/
-    v28 = ((CCFileClass *)(v69))->Construct(Buffer); /*0x530a50*/
+    v28 = CCFileClass::Construct(v69, Buffer); /*0x530a50*/
     v29 = (*(int (**)(unsigned int *, unsigned int))(*v28 + 20))(v28, 0); /*0x530a61*/
-    v69[0] = &vt_CCFileClass; /*0x530a63*/
+    v69[0] = &CCFileClass::`vftable'; /*0x530a63*/
     v71 = 0; /*0x530a67*/
     Vector::Clear((int)v70); /*0x530a6b*/
     v69[0] = &off_7E1668; /*0x530a74*/
-    ((BufferIOFileClass *)(v69))->Dtor(); /*0x530a7c*/
+    BufferIOFileClass::Dtor(v69); /*0x530a7c*/
     if ( v29 ) /*0x530a83*/
     {
-      v30 = (unsigned int *)RA2_OPNEW(40); /*0x530a87*/
+      v30 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530a87*/
       if ( v30 ) /*0x530a91*/
-        g_abs_87F7E8[5534] = MixFileClass::FromFile(v30, Buffer, (int)&g_abs_87F7E8[7270]); /*0x530aa7*/
+        MEMORY[0x87F7E8][5534] = MixFileClass::FromFile(v30, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x530aa7*/
       else
-        g_abs_87F7E8[5534] = 0; /*0x530aae*/
+        MEMORY[0x87F7E8][5534] = 0; /*0x530aae*/
     }
-    this->this->this->Debug::Log_0(); /*0x530ac1*/
+    Debug::Log_0(); /*0x530ac1*/
     sprintf(Buffer, "MAPS%02d.MIX", v19); /*0x530ad4*/
-    v31 = ((CCFileClass *)(v69))->Construct(Buffer); /*0x530ae8*/
+    v31 = CCFileClass::Construct(v69, Buffer); /*0x530ae8*/
     v32 = (*(int (**)(unsigned int *, unsigned int))(*v31 + 20))(v31, 0); /*0x530af9*/
-    v69[0] = &vt_CCFileClass; /*0x530afb*/
+    v69[0] = &CCFileClass::`vftable'; /*0x530afb*/
     v71 = 0; /*0x530aff*/
     Vector::Clear((int)v70); /*0x530b03*/
     v69[0] = &off_7E1668; /*0x530b0c*/
-    ((BufferIOFileClass *)(v69))->Dtor(); /*0x530b14*/
+    BufferIOFileClass::Dtor(v69); /*0x530b14*/
     if ( v32 ) /*0x530b1b*/
     {
-      v33 = (unsigned int *)RA2_OPNEW(40); /*0x530b1f*/
+      v33 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530b1f*/
       if ( v33 ) /*0x530b29*/
-        g_abs_87F7E8[5535] = MixFileClass::FromFile(v33, Buffer, (int)&g_abs_87F7E8[7270]); /*0x530b3f*/
+        MEMORY[0x87F7E8][5535] = MixFileClass::FromFile(v33, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x530b3f*/
       else
-        g_abs_87F7E8[5535] = 0; /*0x530b46*/
+        MEMORY[0x87F7E8][5535] = 0; /*0x530b46*/
     }
-    this->this->this->Debug::Log_0(); /*0x530b59*/
+    Debug::Log_0(); /*0x530b59*/
   }
 LABEL_85:
-  if ( !g_abs_87F7E8[5534] ) /*0x530b67*/
+  if ( !MEMORY[0x87F7E8][5534] ) /*0x530b67*/
     return 0; /*0x530b75*/
   v34 = CCFileClass::Construct(v69, g_Str_File_MULTIMD_MIX); /*0x530b7f*/
   v35 = (*(int (**)(unsigned int *, unsigned int))(*v34 + 20))(v34, 0); /*0x530b95*/
-  v69[0] = &vt_CCFileClass; /*0x530b97*/
+  v69[0] = &CCFileClass::`vftable'; /*0x530b97*/
   v71 = 0; /*0x530b9b*/
   Vector::Clear((int)v70); /*0x530b9f*/
   v69[0] = &off_7E1668; /*0x530bad*/
-  ((BufferIOFileClass *)(v69))->Dtor(); /*0x530bb1*/
+  BufferIOFileClass::Dtor(v69); /*0x530bb1*/
   if ( v35 ) /*0x530bb8*/
   {
-    v36 = (unsigned int *)RA2_OPNEW(40); /*0x530bbc*/
+    v36 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530bbc*/
     if ( v36 ) /*0x530bc6*/
-      g_abs_87F7E8[5500] = MixFileClass::FromFile(v36, g_Str_File_MULTIMD_MIX, (int)&g_abs_87F7E8[7270]); /*0x530bd9*/
+      MEMORY[0x87F7E8][5500] = MixFileClass::FromFile(v36, g_Str_File_MULTIMD_MIX, (int)&MEMORY[0x87F7E8][7270]); /*0x530bd9*/
     else
-      g_abs_87F7E8[5500] = 0; /*0x530be0*/
+      MEMORY[0x87F7E8][5500] = 0; /*0x530be0*/
   }
-  this->this->this->Debug::Log_0(); /*0x530beb*/
-  if ( !g_abs_87F7E8[5500] ) /*0x530bfa*/
+  Debug::Log_0(); /*0x530beb*/
+  if ( !MEMORY[0x87F7E8][5500] ) /*0x530bfa*/
     return 0; /*0x530c08*/
   v37 = CCFileClass::Construct(v69, g_Str_File_THEMEMD_MIX); /*0x530c12*/
   v38 = (*(int (**)(unsigned int *, unsigned int))(*v37 + 20))(v37, 0); /*0x530c23*/
-  v69[0] = &vt_CCFileClass; /*0x530c25*/
+  v69[0] = &CCFileClass::`vftable'; /*0x530c25*/
   v71 = 0; /*0x530c29*/
   Vector::Clear((int)v70); /*0x530c2d*/
   v69[0] = &off_7E1668; /*0x530c36*/
-  ((BufferIOFileClass *)(v69))->Dtor(); /*0x530c3a*/
+  BufferIOFileClass::Dtor(v69); /*0x530c3a*/
   if ( v38 ) /*0x530c41*/
   {
-    this->this->this->Debug::Log(); /*0x530c48*/
-    v39 = (unsigned int *)RA2_OPNEW(40); /*0x530c4f*/
+    Debug::Log(); /*0x530c48*/
+    v39 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530c4f*/
     if ( v39 ) /*0x530c59*/
     {
-      g_abs_87E738 = MixFileClass::FromFile(v39, g_Str_File_THEMEMD_MIX, (int)&g_abs_87F7E8[7270]); /*0x530c70*/
+      MEMORY[0x87E738] = MixFileClass::FromFile(v39, g_Str_File_THEMEMD_MIX, (int)&MEMORY[0x87F7E8][7270]); /*0x530c70*/
       goto LABEL_100; /*0x530c75*/
     }
   }
   else
   {
-    v40 = (unsigned int)(CCFileClass::Construct(v69, g_Str_File_THEME_MIX));
-    v41 = (unsigned int)((*(int (**)(unsigned int *, unsigned int))(*v40 + 20))(v40, 0));
-    v69[0] = (unsigned int)(&vt_CCFileClass);
-    v71 = (unsigned int)(0);
+    v40 = CCFileClass::Construct(v69, g_Str_File_THEME_MIX); /*0x530c80*/
+    v41 = (*(int (**)(unsigned int *, unsigned int))(*v40 + 20))(v40, 0); /*0x530c91*/
+    v69[0] = &CCFileClass::`vftable'; /*0x530c93*/
+    v71 = 0; /*0x530c97*/
     Vector::Clear((int)v70); /*0x530c9b*/
     v69[0] = &off_7E1668; /*0x530ca4*/
-    ((BufferIOFileClass *)(v69))->Dtor(); /*0x530ca8*/
+    BufferIOFileClass::Dtor(v69); /*0x530ca8*/
     if ( !v41 ) /*0x530caf*/
       goto LABEL_100; /*0x530caf*/
-    this->this->Debug::Log(); /*0x530cb6*/
-    v42 = (unsigned int *)RA2_OPNEW(40); /*0x530cbd*/
+    Debug::Log(); /*0x530cb6*/
+    v42 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530cbd*/
     if ( v42 ) /*0x530cc7*/
     {
-      g_abs_87E738 = MixFileClass::FromFile(v42, g_Str_File_THEME_MIX, (int)&g_abs_87F7E8[7270]); /*0x530cda*/
+      MEMORY[0x87E738] = MixFileClass::FromFile(v42, g_Str_File_THEME_MIX, (int)&MEMORY[0x87F7E8][7270]); /*0x530cda*/
       goto LABEL_100; /*0x530cdf*/
     }
   }
-  g_abs_87E738 = 0; /*0x530ce1*/
+  MEMORY[0x87E738] = 0; /*0x530ce1*/
 LABEL_100:
-  this->Debug::Log_0(); /*0x530ce7*/
-  IDA_LOBYTE(g_abs_87F7E8[539939]) = 1; /*0x530cf9*/
-  Audio::LoadWAVFiles(&g_abs_87F7E8[528714]); /*0x530d00*/
-  if ( IDA_LOBYTE(g_abs_87F7E8[31470]) == 1 ) /*0x530d0c*/
+  Debug::Log_0(); /*0x530ce7*/
+  LOBYTE(MEMORY[0x87F7E8][539939]) = 1; /*0x530cf9*/
+  Audio::LoadWAVFiles(&MEMORY[0x87F7E8][528714]); /*0x530d00*/
+  if ( LOBYTE(MEMORY[0x87F7E8][31470]) == 1 ) /*0x530d0c*/
   {
     strcpy(Buffer, g_Str_File_MOVMD__MIX); /*0x530d37*/
     v43 = RawFileClass::Construct(v73, (int)aMovies01Mix); /*0x530d47*/
@@ -424,30 +417,30 @@ LABEL_100:
     if ( FileClass::FindFirstWithCD(Buffer) == 1 ) /*0x530f41*/
     {
       Debug::Log_0(); /*0x530f54*/
-      v55 = (unsigned int *)RA2_OPNEW(40); /*0x530f5b*/
+      v55 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530f5b*/
       if ( v55 ) /*0x530f65*/
-        g_abs_87F7E8[5521] = MixFileClass::FromFile(v55, Buffer, (int)&g_abs_87F7E8[7270]); /*0x530f7b*/
+        MEMORY[0x87F7E8][5521] = MixFileClass::FromFile(v55, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x530f7b*/
       else
-        g_abs_87F7E8[5521] = 0; /*0x530f82*/
+        MEMORY[0x87F7E8][5521] = 0; /*0x530f82*/
       while ( FileFind::Next(Buffer) == 1 ) /*0x530f96*/
       {
         Debug::Log_0(); /*0x530fa9*/
-        v56 = (unsigned int *)RA2_OPNEW(40); /*0x530fb0*/
+        v56 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530fb0*/
         if ( v56 ) /*0x530fba*/
         {
-          v57 = MixFileClass::FromFile(v56, Buffer, (int)&g_abs_87F7E8[7270]); /*0x530fd0*/
+          v57 = MixFileClass::FromFile(v56, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x530fd0*/
           if ( v57 ) /*0x530fd4*/
           {
-            if ( g_abs_87F7E8[5506] < g_abs_87F7E8[5504] /*0x53100c*/
-              || (IDA_BYTE1(g_abs_87F7E8[5505]) || !g_abs_87F7E8[5504])
-              && g_abs_87F7E8[5507] > 0
-              && (*(uint8_t (**)(unsigned int *, int, unsigned int))(g_abs_87F7E8[5502] + 8))(
-                   &g_abs_87F7E8[5502],
-                   g_abs_87F7E8[5504] + g_abs_87F7E8[5507],
+            if ( MEMORY[0x87F7E8][5506] < MEMORY[0x87F7E8][5504] /*0x53100c*/
+              || (BYTE1(MEMORY[0x87F7E8][5505]) || !MEMORY[0x87F7E8][5504])
+              && MEMORY[0x87F7E8][5507] > 0
+              && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5502] + 8))(
+                   &MEMORY[0x87F7E8][5502],
+                   MEMORY[0x87F7E8][5504] + MEMORY[0x87F7E8][5507],
                    0) )
             {
-              v58 = g_abs_87F7E8[5506]++; /*0x531019*/
-              *(unsigned int *)(g_abs_87F7E8[5503] + 4 * v58) = v57; /*0x531028*/
+              v58 = MEMORY[0x87F7E8][5506]++; /*0x531019*/
+              *(unsigned int *)(MEMORY[0x87F7E8][5503] + 4 * v58) = v57; /*0x531028*/
             }
           }
         }
@@ -457,50 +450,50 @@ LABEL_100:
     {
       strcpy(Buffer, aMoviesMix); /*0x531069*/
       Debug::Log_0(); /*0x53107f*/
-      v59 = (unsigned int *)RA2_OPNEW(40); /*0x531086*/
+      v59 = (unsigned int *)__2_YAPAXI_Z(40); /*0x531086*/
       if ( v59 ) /*0x531090*/
-        g_abs_87F7E8[5521] = MixFileClass::FromFile(v59, Buffer, (int)&g_abs_87F7E8[7270]); /*0x5310a6*/
+        MEMORY[0x87F7E8][5521] = MixFileClass::FromFile(v59, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x5310a6*/
       else
-        g_abs_87F7E8[5521] = 0; /*0x5310ad*/
+        MEMORY[0x87F7E8][5521] = 0; /*0x5310ad*/
       while ( FileFind::Next(Buffer) == 1 ) /*0x5310c1*/
       {
         Debug::Log_0(); /*0x5310d4*/
-        v60 = (unsigned int *)RA2_OPNEW(40); /*0x5310db*/
+        v60 = (unsigned int *)__2_YAPAXI_Z(40); /*0x5310db*/
         if ( v60 ) /*0x5310e5*/
         {
-          v61 = MixFileClass::FromFile(v60, Buffer, (int)&g_abs_87F7E8[7270]); /*0x5310fb*/
+          v61 = MixFileClass::FromFile(v60, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x5310fb*/
           if ( v61 ) /*0x5310ff*/
           {
-            if ( g_abs_87F7E8[5506] < g_abs_87F7E8[5504] /*0x531137*/
-              || (IDA_BYTE1(g_abs_87F7E8[5505]) || !g_abs_87F7E8[5504])
-              && g_abs_87F7E8[5507] > 0
-              && (*(uint8_t (**)(unsigned int *, int, unsigned int))(g_abs_87F7E8[5502] + 8))(
-                   &g_abs_87F7E8[5502],
-                   g_abs_87F7E8[5504] + g_abs_87F7E8[5507],
+            if ( MEMORY[0x87F7E8][5506] < MEMORY[0x87F7E8][5504] /*0x531137*/
+              || (BYTE1(MEMORY[0x87F7E8][5505]) || !MEMORY[0x87F7E8][5504])
+              && MEMORY[0x87F7E8][5507] > 0
+              && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5502] + 8))(
+                   &MEMORY[0x87F7E8][5502],
+                   MEMORY[0x87F7E8][5504] + MEMORY[0x87F7E8][5507],
                    0) )
             {
-              v62 = g_abs_87F7E8[5506]++; /*0x531144*/
-              *(unsigned int *)(g_abs_87F7E8[5503] + 4 * v62) = v61; /*0x531153*/
+              v62 = MEMORY[0x87F7E8][5506]++; /*0x531144*/
+              *(unsigned int *)(MEMORY[0x87F7E8][5503] + 4 * v62) = v61; /*0x531153*/
             }
           }
         }
       }
     }
     FileFind::CloseHandle(); /*0x53103f*/
-    return g_abs_87F7E8[5521] != 0; /*0x531044*/
+    return MEMORY[0x87F7E8][5521] != 0; /*0x531044*/
   }
   v63 = v72; /*0x531174*/
   sprintf(Buffer, "MOVMD%02d.MIX", v72); /*0x531186*/
   v64 = CCFileClass::Construct(v69, Buffer); /*0x53119a*/
   v65 = (*(int (**)(unsigned int *, unsigned int))(*v64 + 20))(v64, 0); /*0x5311ab*/
-  v69[0] = &vt_CCFileClass; /*0x5311ad*/
+  v69[0] = &CCFileClass::`vftable'; /*0x5311ad*/
   v71 = 0; /*0x5311b5*/
   Vector::Clear((int)v70); /*0x5311b9*/
   v69[0] = &off_7E1668; /*0x5311c2*/
   BufferIOFileClass::Dtor(v69); /*0x5311c6*/
   if ( v65 ) /*0x5311cd*/
   {
-    v66 = (unsigned int *)RA2_OPNEW(40); /*0x5311d1*/
+    v66 = (unsigned int *)__2_YAPAXI_Z(40); /*0x5311d1*/
     if ( v66 ) /*0x5311db*/
       goto LABEL_147; /*0x5311db*/
     goto LABEL_148; /*0x5311db*/
@@ -508,26 +501,26 @@ LABEL_100:
   sprintf(Buffer, "MOVIES%02d.MIX", v63); /*0x5311f1*/
   v67 = CCFileClass::Construct(v69, Buffer); /*0x531205*/
   v68 = (*(int (**)(unsigned int *, unsigned int))(*v67 + 20))(v67, 0); /*0x531216*/
-  v69[0] = &vt_CCFileClass; /*0x531218*/
+  v69[0] = &CCFileClass::`vftable'; /*0x531218*/
   v71 = 0; /*0x531220*/
   Vector::Clear((int)v70); /*0x531224*/
   v69[0] = &off_7E1668; /*0x53122d*/
   BufferIOFileClass::Dtor(v69); /*0x531231*/
   if ( v68 ) /*0x531238*/
   {
-    v66 = (unsigned int *)RA2_OPNEW(40); /*0x53123c*/
+    v66 = (unsigned int *)__2_YAPAXI_Z(40); /*0x53123c*/
     if ( v66 ) /*0x531246*/
     {
 LABEL_147:
-      g_abs_87F7E8[5521] = MixFileClass::FromFile(v66, Buffer, (int)&g_abs_87F7E8[7270]); /*0x531248*/
+      MEMORY[0x87F7E8][5521] = MixFileClass::FromFile(v66, Buffer, (int)&MEMORY[0x87F7E8][7270]); /*0x531248*/
       goto LABEL_149; /*0x531261*/
     }
 LABEL_148:
-    g_abs_87F7E8[5521] = 0; /*0x531263*/
+    MEMORY[0x87F7E8][5521] = 0; /*0x531263*/
   }
 LABEL_149:
   Debug::Log_0(); /*0x531269*/
-  return g_abs_87F7E8[5521] != 0; /*0x5304f2*/
+  return MEMORY[0x87F7E8][5521] != 0; /*0x5304f2*/
 
 }
 }

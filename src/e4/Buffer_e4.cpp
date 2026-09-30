@@ -451,19 +451,19 @@ namespace gamemd {
 DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2)
 {
 
-  unsigned char (*)[4] v3;
+  void *v3; // eax
 
-  v3 = (unsigned int)((void *)*(Block + 1));
-  *Block = (unsigned int)(&vt_VectorClass_ObjectClass);
+  v3 = (void *)*(Block + 1); /*0x488033*/
+  *Block = &vt_VectorClass_ObjectClass; /*0x488036*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x488040*/
   {
-    RA2_OPDEL(v3); /*0x488048*/
+    __3_YAXPAX_Z(v3); /*0x488048*/
     *(Block + 1) = 0; /*0x488050*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x48805b*/
-  *(unsigned int *)(((unsigned int)(Block)+ 2)) = 0; /*0x488061*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x488068*/
-    RA2_OPDEL(Block); /*0x48806b*/
+  *(Block + 2) = 0; /*0x488061*/
+  if ( (a2 & 1) != 0 ) /*0x488068*/
+    __3_YAXPAX_Z(Block); /*0x48806b*/
   return (DynamicVector *)Block; /*0x488075*/
 
 }
@@ -500,17 +500,17 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   unsigned char *v16; // [esp+28h] [ebp+8h]
 
   v4 = (AbstractClass *)*((unsigned int *)this + 2); /*0x6c89e9*/
-  if ( (unsigned int)&v4-((unsigned int *)(>__pad_0))[12] > *((unsigned int *)this + 1) + *this ) /*0x6c89f9*/
+  if ( (unsigned int)&v4->__pad_0[12] > *((unsigned int *)this + 1) + *this ) /*0x6c89f9*/
     return 0; /*0x6c89f9*/
   v15 = (AbstractClass *)*((unsigned int *)this + 2); /*0x6c89fd*/
-  *((unsigned int *)this + 2) = &v4-((unsigned int *)(>__pad_0))[12]; /*0x6c8a01*/
+  *((unsigned int *)this + 2) = &v4->__pad_0[12]; /*0x6c8a01*/
   if ( !v4 ) /*0x6c8a04*/
     return 0; /*0x6c8a06*/
   *(unsigned short *)v4->__pad_0 = *(unsigned short *)a3; /*0x6c8a19*/
-  *(unsigned short *)&v4-((unsigned int *)(>__pad_0))[2] = *(unsigned short *)(a3 + 4); /*0x6c8a20*/
-  *(unsigned short *)&v4-((unsigned int *)(>__pad_0))[4] = *(unsigned short *)(a3 + 16); /*0x6c8a28*/
-  *(unsigned short *)&v4-((unsigned int *)(>__pad_0))[6] = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
-  *(unsigned int *)&v4-((unsigned int *)(>__pad_0))[8] = *((unsigned int *)this + 2); /*0x6c8a3f*/
+  *(unsigned short *)&v4->__pad_0[2] = *(unsigned short *)(a3 + 4); /*0x6c8a20*/
+  *(unsigned short *)&v4->__pad_0[4] = *(unsigned short *)(a3 + 16); /*0x6c8a28*/
+  *(unsigned short *)&v4->__pad_0[6] = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
+  *(unsigned int *)&v4->__pad_0[8] = *((unsigned int *)this + 2); /*0x6c8a3f*/
   v7 = CellStruct::Copy((int *)(a3 + 8), (IUnknown *)&v14); /*0x6c8a42*/
   v8 = aP1; /*0x6c8a49*/
   v16 = (unsigned char *)(*(int (**)(AbstractClass *, unsigned int, unsigned int))(*(unsigned int *)aP1->__pad_0 + 92))( /*0x6c8a61*/
@@ -523,14 +523,14 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   {
     while ( 1 ) /*0x6c8a8a*/
     {
-      v10 = (unsigned int)(Map_Append(v16, (int)&g_abs_B077F8, *(unsigned int *)(a3 + 16)));
-      v11 = (unsigned int)((char *)*((unsigned int *)this + 2));
+      v10 = Map_Append(v16, (int)&MEMORY[0xB077F8].__pad_14B0[12584], *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
+      v11 = (char *)*((unsigned int *)this + 2); /*0x6c8a8f*/
       if ( (unsigned int)&v11[v10] > *((unsigned int *)this + 1) + *this || (*((unsigned int *)this + 2) = &v11[v10], !v11) ) /*0x6c8aa4*/
       {
         (*(void (**)(AbstractClass *))(*(unsigned int *)v8->__pad_0 + 96))(v8); /*0x6c8ae6*/
         return 0; /*0x6c8af2*/
       }
-      qmemcpy(v11, &g_abs_B077F8, v10); /*0x6c8ab0*/
+      qmemcpy(v11, &MEMORY[0xB077F8].__pad_14B0[12584], v10); /*0x6c8ab0*/
       v13 = *(unsigned int *)aP1->__pad_0; /*0x6c8ac2*/
       v12 = ++v14; /*0x6c8ac1*/
       v16 += (*(int (**)(AbstractClass *))(v13 + 116))(aP1); /*0x6c8ad6*/

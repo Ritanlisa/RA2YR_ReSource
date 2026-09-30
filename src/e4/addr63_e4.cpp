@@ -607,16 +607,16 @@ AbstractClass * * E4Recv_631300::sub_631300()
     if ( (int)result > 0 ) /*0x631330*/
     {
       result = (HWND)SendMessageA(v3, 0x188u, 0, 0); /*0x63133c*/
-      g_abs_A8DABC = (WPARAM)result; /*0x631341*/
+      MEMORY[0xA8DABC] = (WPARAM)result; /*0x631341*/
       if ( (int)result > -1 ) /*0x631346*/
       {
-        DlgItem = (gamemd::AbstractClass **)(GetDlgItem(*this, 1509));
-        SendMessageA(DlgItem, 0x4B4u, 0, *((unsigned int *)g_abs_A8DB38 + g_abs_A8DABC) + 154); /*0x631371*/
+        DlgItem = GetDlgItem(*this, 1509); /*0x631358*/
+        SendMessageA(DlgItem, 0x4B4u, 0, *((unsigned int *)MEMORY[0xA8DB38] + MEMORY[0xA8DABC]) + 154); /*0x631371*/
         return SetFocus(DlgItem); /*0x631374*/
       }
     }
   }
-  return (gamemd::AbstractClass **)(result);
+  return result; /*0x63137a*/
 
 }
 }
@@ -811,8 +811,8 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
 {
 
   int *Viewport; // eax
-  int * v4;
-  int * v5;
+  int v4; // edx
+  int v5; // eax
   unsigned int *ScenarioClassActionCoords; // eax
   int *v7; // eax
   unsigned int *v8; // eax
@@ -831,18 +831,18 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   unsigned int v21[4]; // [esp+44h] [ebp-20h] BYREF
   unsigned int v22[4]; // [esp+54h] [ebp-10h] BYREF
 
-  Viewport = (int *)(Display::GetViewport(v16));
-  v21[0] = (unsigned int)((int *)(*Viewport));
-  v21[1] = (unsigned int)((int *)(Viewport[1]));
-  v21[2] = (unsigned int)((int *)(Viewport[2]));
-  v4 = (int *)(Viewport[3]);
-  v5 = (int *)(*((unsigned int *)this + 1));
-  v21[3] = (unsigned int)((int *)(v4));
-  ScenarioClassActionCoords = (int *)(GetScenarioClassActionCoords(v16, *(unsigned char **)(*(unsigned int *)v5 + 4)));
-  v15[0] = (unsigned int)((int *)(*ScenarioClassActionCoords));
-  v15[1] = (unsigned int)((int *)(ScenarioClassActionCoords[1]));
-  v15[2] = (unsigned int)((int *)(ScenarioClassActionCoords[2]));
-  v7 = (int *)(ToCoordPixel(&v14, v15));
+  Viewport = Display::GetViewport(v16); /*0x63556d*/
+  v21[0] = *Viewport; /*0x635574*/
+  v21[1] = Viewport[1]; /*0x63557b*/
+  v21[2] = Viewport[2]; /*0x635582*/
+  v4 = Viewport[3]; /*0x635586*/
+  v5 = *((unsigned int *)this + 1); /*0x635589*/
+  v21[3] = v4; /*0x63558c*/
+  ScenarioClassActionCoords = GetScenarioClassActionCoords(v16, *(unsigned char **)(*(unsigned int *)v5 + 4)); /*0x635599*/
+  v15[0] = *ScenarioClassActionCoords; /*0x6355a0*/
+  v15[1] = ScenarioClassActionCoords[1]; /*0x6355a7*/
+  v15[2] = ScenarioClassActionCoords[2]; /*0x6355b2*/
+  v7 = ToCoordPixel(&v14, v15); /*0x6355ba*/
   v8 = ComputeBounds(v22, 8, *v7, v7[1]); /*0x6355cf*/
   v9 = 3; /*0x6355d6*/
   v10 = v8[1] - 4; /*0x6355e8*/
@@ -854,8 +854,8 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   v19 = v11; /*0x635607*/
   do /*0x63566d*/
   {
-    result = (*(int (**)(int, unsigned int *, int *, int))(*(unsigned int *)g_abs_88731C + 84))( /*0x635620*/
-               g_abs_88731C,
+    result = (*(int (**)(int, unsigned int *, int *, int))(*(unsigned int *)MEMORY[0x88731C] + 84))( /*0x635620*/
+               MEMORY[0x88731C],
                v21,
                &v17,
                a2);
@@ -906,17 +906,17 @@ int E4Recv_635680::sub_635680(int a2)
   unsigned int v20[4]; // [esp+50h] [ebp-20h] BYREF
   int v21[4]; // [esp+60h] [ebp-10h] BYREF
 
-  Viewport = (int *)(Display::GetViewport(&v16));
-  v20[0] = (unsigned int)((int *)(*Viewport));
-  v20[1] = (unsigned int)((int *)(Viewport[1]));
-  v20[2] = (unsigned int)((int *)(Viewport[2]));
-  v20[3] = (unsigned int)((int *)(Viewport[3]));
-  Coords = (unsigned int *)((int *)(ScriptAction::GetCoords(this, v11)));
-  v10[0] = (unsigned int)((int *)(*Coords));
-  v10[1] = (unsigned int)((int *)(Coords[1]));
-  v10[2] = (unsigned int)((int *)(Coords[2]));
-  v5 = (int *)(ToCoordPixel(&v9, v10));
-  v6 = (int *)(ComputeBounds(v21, 8, *v5, v5[1]));
+  Viewport = Display::GetViewport(&v16); /*0x63568d*/
+  v20[0] = *Viewport; /*0x635694*/
+  v20[1] = Viewport[1]; /*0x63569b*/
+  v20[2] = Viewport[2]; /*0x6356a2*/
+  v20[3] = Viewport[3]; /*0x6356b0*/
+  Coords = ScriptAction::GetCoords(this, v11); /*0x6356b4*/
+  v10[0] = *Coords; /*0x6356bb*/
+  v10[1] = Coords[1]; /*0x6356c6*/
+  v10[2] = Coords[2]; /*0x6356d1*/
+  v5 = ToCoordPixel(&v9, v10); /*0x6356d5*/
+  v6 = ComputeBounds(v21, 8, *v5, v5[1]); /*0x6356ea*/
   v16 = *v6; /*0x6356f1*/
   v17 = v6[1]; /*0x6356f8*/
   v18 = v6[2]; /*0x6356ff*/
@@ -930,8 +930,8 @@ int E4Recv_635680::sub_635680(int a2)
   v7 = 3; /*0x63574c*/
   do /*0x6357b8*/
   {
-    result = (*(int (**)(int, unsigned int *, int *, int))(*(unsigned int *)g_abs_88731C + 84))( /*0x63576b*/
-               g_abs_88731C,
+    result = (*(int (**)(int, unsigned int *, int *, int))(*(unsigned int *)MEMORY[0x88731C] + 84))( /*0x63576b*/
+               MEMORY[0x88731C],
                v20,
                &v12,
                a2);
@@ -972,8 +972,8 @@ int E4Recv_636F00::sub_636F00(int a2, int a3)
   unsigned int *v10; // eax
   unsigned char *v11; // esi
 
-  v3 = (int)(*((char *)this + 2));
-  v4 = (int)(*this);
+  v3 = *((char *)this + 2); /*0x636f00*/
+  v4 = *this; /*0x636f08*/
   v5 = *(unsigned int *)(v3 + 4 * a3); /*0x636f0b*/
   v6 = 0; /*0x636f0e*/
   v7 = *(unsigned int *)(v5 + 16); /*0x636f11*/
@@ -3468,7 +3468,7 @@ int E4Recv_632D60::sub_632D60(int a2)
 
   if ( !a2 ) /*0x632d6a*/
   {
-    int sub_632D60(ObjectClass *this, int a2)
+    result = (*(int (**)(unsigned char *))(*(unsigned int *)this + 4))(this); /*0x632d6e*/
     *((unsigned char *)this + 12) = 0; /*0x632d71*/
   }
   *((unsigned int *)this + 14) = a2; /*0x632d77*/

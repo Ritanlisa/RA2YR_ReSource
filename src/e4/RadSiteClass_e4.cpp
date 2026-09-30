@@ -19,16 +19,15 @@
 namespace gamemd {
 RadSiteClass::RadSiteClass()
 {
-    unsigned int v2 = 0;  /* G37 hoist */
 
-  void *v2; // edx
-  RadSiteClass * v3;
+  #72 *v2; // edx
+  int v3; // eax
 
-  ((AbstractClass *)((int)this))->Constructor(); /*0x65b1e3*/
+  AbstractClass::Constructor((int)this); /*0x65b1e3*/
   *((unsigned int *)this + 9) = 0; /*0x65b1ea*/
-  *((unsigned int *)this + 10) = g_abs_A8ED84; /*0x65b1f3*/
+  *((unsigned int *)this + 10) = MEMORY[0xA8ED84]; /*0x65b1f3*/
   *((unsigned int *)this + 12) = 0; /*0x65b1f6*/
-  v2 = g_abs_A8ED84; /*0x65b1f9*/
+  v2 = MEMORY[0xA8ED84]; /*0x65b1f9*/
   *((unsigned int *)this + 15) = 0; /*0x65b1ff*/
   *((unsigned int *)this + 13) = v2; /*0x65b202*/
   *((unsigned short *)this + 32) = 0; /*0x65b205*/
@@ -42,20 +41,20 @@ RadSiteClass::RadSiteClass()
   *((unsigned int *)this + 26) = 0; /*0x65b21f*/
   *((unsigned int *)this + 27) = 0; /*0x65b222*/
   *((unsigned int *)this + 28) = 0; /*0x65b225*/
-  *this = &vt_RadSiteClass; /*0x65b228*/
-  *((unsigned int *)this + 1) = &vt_RadSiteClass; /*0x65b22e*/
-  *((unsigned int *)this + 2) = &vt_RadSiteClass; /*0x65b235*/
-  *((unsigned int *)this + 3) = &vt_RadSiteClass; /*0x65b23c*/
-  if ( g_abs_B04BE0 < g_abs_B04BD8 /*0x65b277*/
-    || (g_abs_B04BDD || !g_abs_B04BD8)
-    && g_abs_B04BE4 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B04BD0 + 8))(
-         &g_abs_B04BD0,
-         (unsigned int)(g_abs_B04BD8)+ g_abs_B04BE4,
+  *this = &RadSiteClass::`vftable'; /*0x65b228*/
+  *((unsigned int *)this + 1) = &RadSiteClass::`vftable'; /*0x65b22e*/
+  *((unsigned int *)this + 2) = &RadSiteClass::`vftable'; /*0x65b235*/
+  *((unsigned int *)this + 3) = &RadSiteClass::`vftable'; /*0x65b23c*/
+  if ( MEMORY[0xB04BE0] < MEMORY[0xB04BD8] /*0x65b277*/
+    || (MEMORY[0xB04BDD] || !MEMORY[0xB04BD8])
+    && MEMORY[0xB04BE4] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB04BD0] + 8))(
+         &MEMORY[0xB04BD0],
+         MEMORY[0xB04BD8] + MEMORY[0xB04BE4],
          0) )
   {
-    v3 = (gamemd::RadSiteClass *)((int)((unsigned int)(g_abs_B04BE0++)));
-    *((unsigned int *)(unsigned int)(g_abs_B04BD4)+ v3) = this; /*0x65b293*/
+    v3 = MEMORY[0xB04BE0]++; /*0x65b284*/
+    *((unsigned int *)MEMORY[0xB04BD4] + v3) = this; /*0x65b293*/
   }
   return this; /*0x65b298*/
 

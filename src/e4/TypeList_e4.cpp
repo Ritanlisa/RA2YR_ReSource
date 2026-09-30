@@ -112,7 +112,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a1dc*/
       v4 = a3; /*0x45a1f2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x45a1ee*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x45a1ee*/
     *((unsigned char *)this + 12) = 1; /*0x45a1f6*/
     if ( v4 ) /*0x45a1fa*/
     {
@@ -125,7 +125,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
           ++i; /*0x45a21e*/
         if ( *((unsigned char *)this + 13) ) /*0x45a22b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x45a236*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a236*/
           *((unsigned int *)this + 1) = 0; /*0x45a23e*/
         }
       }
@@ -141,7 +141,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a262*/
     return 1; /*0x45a268*/
   }
 
@@ -202,7 +202,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a318*/
       v4 = a3; /*0x45a32e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x45a32a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x45a32a*/
     *((unsigned char *)this + 12) = 1; /*0x45a332*/
     if ( !v4 ) /*0x45a336*/
       return 0; /*0x45a3aa*/
@@ -215,7 +215,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
         ++i; /*0x45a351*/
       if ( *((unsigned char *)this + 13) ) /*0x45a35e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x45a369*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a369*/
         *((unsigned int *)this + 1) = 0; /*0x45a371*/
       }
     }
@@ -225,7 +225,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVParticleSystemTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x45a38e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x45a391*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x45a399*/
@@ -403,7 +403,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x47801c*/
       v4 = a3; /*0x478032*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x47802e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x47802e*/
     *((unsigned char *)this + 12) = 1; /*0x478036*/
     if ( v4 ) /*0x47803a*/
     {
@@ -416,7 +416,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
           ++i; /*0x47805e*/
         if ( *((unsigned char *)this + 13) ) /*0x47806b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x478076*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x478076*/
           *((unsigned int *)this + 1) = 0; /*0x47807e*/
         }
       }
@@ -432,7 +432,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PAVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4780a2*/
     return 1; /*0x4780a8*/
   }
 
@@ -500,17 +500,17 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_TechnoTypeClass);
+  v3 = (void *)*(Block + 1); /*0x478683*/
+  *Block = &vt_VectorClass_TechnoTypeClass; /*0x478686*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x478690*/
   {
-    RA2_OPDEL(v3); /*0x478698*/
+    __3_YAXPAX_Z(v3); /*0x478698*/
     *(Block + 1) = 0; /*0x4786a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4786ab*/
   *(Block + 2) = 0; /*0x4786b1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4786b8*/
-    RA2_OPDEL(Block); /*0x4786bb*/
+  if ( (a2 & 1) != 0 ) /*0x4786b8*/
+    __3_YAXPAX_Z(Block); /*0x4786bb*/
   return (VectorClass *)Block; /*0x4786c5*/
 
 }
@@ -525,9 +525,9 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
   int v5; // ecx
   int v6; // eax
 
-  if ( this == (gamemd::TypeList_flat *)(a2) ) /*0x47872a*/
+  if ( this == a2 ) /*0x47872a*/
     return this; /*0x47872a*/
-  (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this);;
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x47872e*/
   v3 = a2[2]; /*0x478731*/
   *((unsigned int *)this + 2) = v3; /*0x478736*/
   if ( !v3 ) /*0x478739*/
@@ -536,7 +536,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
     *((unsigned char *)this + 13) = 0; /*0x478781*/
     return this; /*0x478785*/
   }
-  v4 = (unsigned int *)(RA2_OPNEW(4 * v3));
+  v4 = __2_YAPAXI_Z(4 * v3); /*0x478743*/
   *((unsigned int *)this + 1) = v4; /*0x47874b*/
   if ( !v4 ) /*0x478750*/
     return this; /*0x478750*/
@@ -570,10 +570,10 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
       *((unsigned int *)this + 1) = a3; /*0x4787b8*/
       return this; /*0x4787be*/
     }
-    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x4787cd*/
+    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x4787cd*/
     *((unsigned char *)this + 13) = 1; /*0x4787d0*/
   }
-  return (unsigned int *)(this);
+  return this; /*0x4787bd*/
 
 }
 // 0x5128A0
@@ -626,17 +626,17 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_InfantryTypeClass_const);
+  v3 = (void *)*(Block + 1); /*0x5129f3*/
+  *Block = &vt_VectorClass_InfantryTypeClass_const; /*0x5129f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512a00*/
   {
-    RA2_OPDEL(v3); /*0x512a08*/
+    __3_YAXPAX_Z(v3); /*0x512a08*/
     *(Block + 1) = 0; /*0x512a10*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x512a1b*/
   *(Block + 2) = 0; /*0x512a21*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x512a28*/
-    RA2_OPDEL(Block); /*0x512a2b*/
+  if ( (a2 & 1) != 0 ) /*0x512a28*/
+    __3_YAXPAX_Z(Block); /*0x512a2b*/
   return (TypeList *)Block; /*0x512a35*/
 
 }
@@ -680,17 +680,17 @@ DynamicVector * TypeList_Infantry::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_InfantryTypeClass_const);
+  v3 = (void *)*(Block + 1); /*0x512e23*/
+  *Block = &vt_VectorClass_InfantryTypeClass_const; /*0x512e26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512e30*/
   {
-    RA2_OPDEL(v3); /*0x512e38*/
+    __3_YAXPAX_Z(v3); /*0x512e38*/
     *(Block + 1) = 0; /*0x512e40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x512e4b*/
   *(Block + 2) = 0; /*0x512e51*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x512e58*/
-    RA2_OPDEL(Block); /*0x512e5b*/
+  if ( (a2 & 1) != 0 ) /*0x512e58*/
+    __3_YAXPAX_Z(Block); /*0x512e5b*/
   return (DynamicVector *)Block; /*0x512e65*/
 
 }
@@ -712,7 +712,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x512e88*/
       v4 = a3; /*0x512e9e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x512e9a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x512e9a*/
     *((unsigned char *)this + 12) = 1; /*0x512ea2*/
     if ( !v4 ) /*0x512ea6*/
       return 0; /*0x512f1a*/
@@ -725,7 +725,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
         ++i; /*0x512ec1*/
       if ( *((unsigned char *)this + 13) ) /*0x512ece*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x512ed9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x512ed9*/
         *((unsigned int *)this + 1) = 0; /*0x512ee1*/
       }
     }
@@ -735,7 +735,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVInfantryTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x512efe*/
   }
   v7 = *((unsigned int *)this + 2); /*0x512f01*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x512f09*/
@@ -1078,12 +1078,12 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
 
   if ( this != (int *)aP1 ) /*0x67a11a*/
   {
-    (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this);;
+    (*(void (**)(int *))(*(unsigned int *)this + 12))(this); /*0x67a11e*/
     v3 = aP1->Capacity; /*0x67a121*/
     *((char *)this + 2) = v3; /*0x67a126*/
     if ( v3 ) /*0x67a129*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x67a133*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a133*/
       *((char *)this + 1) = v4; /*0x67a13b*/
       if ( v4 ) /*0x67a140*/
       {
@@ -1124,12 +1124,12 @@ int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
 
   if ( this != (int *)aP1 ) /*0x67a29a*/
   {
-    (*((void (**)(TypeList *))this->DynamicVectorClass + 3))(this);;
+    (*(void (**)(int *))(*(unsigned int *)this + 12))(this); /*0x67a29e*/
     v3 = aP1->headNode[1]; /*0x67a2a1*/
     *((char *)this + 2) = v3; /*0x67a2a6*/
     if ( v3 ) /*0x67a2a9*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x67a2b3*/
+      v4 = __2_YAPAXI_Z(4 * v3); /*0x67a2b3*/
       *((char *)this + 1) = v4; /*0x67a2bb*/
       if ( v4 ) /*0x67a2c0*/
       {
@@ -1456,7 +1456,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x67ab4c*/
       v4 = a3; /*0x67ab62*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67ab5e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x67ab5e*/
     *((unsigned char *)this + 12) = 1; /*0x67ab66*/
     if ( v4 ) /*0x67ab6a*/
     {
@@ -1469,7 +1469,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x67ab8e*/
         if ( *((unsigned char *)this + 13) ) /*0x67ab9b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x67aba6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x67aba6*/
           *((unsigned int *)this + 1) = 0; /*0x67abae*/
         }
       }
@@ -1485,7 +1485,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67abd2*/
     return 1; /*0x67abd8*/
   }
 
@@ -1546,7 +1546,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x67ace8*/
       v4 = a3; /*0x67acfe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67acfa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x67acfa*/
     *((unsigned char *)this + 12) = 1; /*0x67ad02*/
     if ( !v4 ) /*0x67ad06*/
       return 0; /*0x67ad7a*/
@@ -1559,7 +1559,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
         ++i; /*0x67ad21*/
       if ( *((unsigned char *)this + 13) ) /*0x67ad2e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x67ad39*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x67ad39*/
         *((unsigned int *)this + 1) = 0; /*0x67ad41*/
       }
     }
@@ -1569,7 +1569,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVVoxelAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67ad5e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x67ad61*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x67ad69*/
@@ -1645,7 +1645,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x67b068*/
       v4 = a3; /*0x67b07e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67b07a*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x67b07a*/
     *((unsigned char *)this + 12) = 1; /*0x67b082*/
     if ( !v4 ) /*0x67b086*/
       return 0; /*0x67b0fa*/
@@ -1658,7 +1658,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
         ++i; /*0x67b0a1*/
       if ( *((unsigned char *)this + 13) ) /*0x67b0ae*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x67b0b9*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x67b0b9*/
         *((unsigned int *)this + 1) = 0; /*0x67b0c1*/
       }
     }
@@ -1668,7 +1668,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVSmudgeTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67b0de*/
   }
   v7 = *((unsigned int *)this + 2); /*0x67b0e1*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x67b0e9*/
@@ -1745,7 +1745,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x67b24c*/
       v4 = a3; /*0x67b262*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67b25e*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x67b25e*/
     *((unsigned char *)this + 12) = 1; /*0x67b266*/
     if ( v4 ) /*0x67b26a*/
     {
@@ -1758,7 +1758,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x67b28e*/
         if ( *((unsigned char *)this + 13) ) /*0x67b29b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x67b2a6*/
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x67b2a6*/
           *((unsigned int *)this + 1) = 0; /*0x67b2ae*/
         }
       }
@@ -1774,7 +1774,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_VectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67b2d2*/
     return 1; /*0x67b2d8*/
   }
 
@@ -1851,7 +1851,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x67b3e8*/
       v4 = a3; /*0x67b3fe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67b3fa*/
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x67b3fa*/
     *((unsigned char *)this + 12) = 1; /*0x67b402*/
     if ( !v4 ) /*0x67b406*/
       return 0; /*0x67b47a*/
@@ -1864,7 +1864,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
         ++i; /*0x67b421*/
       if ( *((unsigned char *)this + 13) ) /*0x67b42e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x67b439*/
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x67b439*/
         *((unsigned int *)this + 1) = 0; /*0x67b441*/
       }
     }
@@ -1874,7 +1874,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (**)(_DynamicVectorClass_PBVTerrainTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this);;
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x67b45e*/
   }
   v7 = *((unsigned int *)this + 2); /*0x67b461*/
   if ( v7 < *((unsigned int *)this + 4) ) /*0x67b469*/
@@ -2115,7 +2115,7 @@ char TypeList_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x717ce6*/
       return 0; /*0x717ce6*/
     v4 = *((unsigned int *)this + 5); /*0x717ce8*/
-    if ( CapacityIncrement <= 0 || !(*((uint8_t (**)(TypeList *, int, unsigned int))this->DynamicVectorClass + 2))( this, Capacity + CapacityIncrement, 0) )
+    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x717cf8*/
       return 0; /*0x717cff*/
   }
   v6 = *((unsigned int *)this + 4); /*0x717d05*/

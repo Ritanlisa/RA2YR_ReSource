@@ -62,17 +62,17 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(uns
 
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
-  *Block = (unsigned int)(&vt_VectorClass_MSAnim);
+  v3 = (void *)*(Block + 1); /*0x5d2ca3*/
+  *Block = &vt_VectorClass_MSAnim; /*0x5d2ca6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d2cb0*/
   {
-    RA2_OPDEL(v3); /*0x5d2cb8*/
+    __3_YAXPAX_Z(v3); /*0x5d2cb8*/
     *(Block + 1) = 0; /*0x5d2cc0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d2ccb*/
   *(Block + 2) = 0; /*0x5d2cd1*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5d2cd8*/
-    RA2_OPDEL(Block); /*0x5d2cdb*/
+  if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
+    __3_YAXPAX_Z(Block); /*0x5d2cdb*/
   return (VectorClass *)Block; /*0x5d2ce5*/
 
 }

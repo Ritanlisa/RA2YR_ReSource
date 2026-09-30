@@ -20,31 +20,31 @@ void LightSourceClass::Construct( int a2, int a3, int a4, int a5, int a6, int a7
 
   int v10; // eax
 
-  ((AbstractClass *)((int)this))->Constructor(); /*0x554763*/
-  *(this + 10) = a7; /*0x554774*/
-  *(this + 9) = a6; /*0x554777*/
-  *(this + 11) = a8; /*0x55477e*/
-  *(this + 12) = a9; /*0x554788*/
-  *(this + 13) = 2; /*0x55478f*/
-  *(this + 14) = a2; /*0x554796*/
+  AbstractClass::Constructor((int)this); /*0x554763*/
+  *((unsigned int *)this + 10) = a7; /*0x554774*/
+  *((unsigned int *)this + 9) = a6; /*0x554777*/
+  *((unsigned int *)this + 11) = a8; /*0x55477e*/
+  *((unsigned int *)this + 12) = a9; /*0x554788*/
+  *((unsigned int *)this + 13) = 2; /*0x55478f*/
+  *((unsigned int *)this + 14) = a2; /*0x554796*/
   *((unsigned char *)this + 72) = 0; /*0x55479c*/
-  *this = &vt_LightSourceClass; /*0x5547a0*/
-  *(this + 15) = a3; /*0x5547a6*/
-  *(this + 17) = a5; /*0x5547ad*/
-  *(this + 1) = &vt_LightSourceClass; /*0x5547b0*/
-  *(this + 16) = a4; /*0x5547b7*/
-  *(this + 2) = &vt_LightSourceClass; /*0x5547ba*/
-  *(this + 3) = &vt_LightSourceClass; /*0x5547c1*/
-  if ( g_abs_ABCA20 < g_abs_ABCA18 /*0x5547fd*/
-    || (g_abs_ABCA1D || !g_abs_ABCA18)
-    && g_abs_ABCA24 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_ABCA10 + 8))(
-         &g_abs_ABCA10,
-         (unsigned int)(g_abs_ABCA18)+ g_abs_ABCA24,
+  *this = &LightSourceClass::`vftable'; /*0x5547a0*/
+  *((unsigned int *)this + 15) = a3; /*0x5547a6*/
+  *((unsigned int *)this + 17) = a5; /*0x5547ad*/
+  *((unsigned int *)this + 1) = &LightSourceClass::`vftable'; /*0x5547b0*/
+  *((unsigned int *)this + 16) = a4; /*0x5547b7*/
+  *((unsigned int *)this + 2) = &LightSourceClass::`vftable'; /*0x5547ba*/
+  *((unsigned int *)this + 3) = &LightSourceClass::`vftable'; /*0x5547c1*/
+  if ( MEMORY[0xABCA20] < MEMORY[0xABCA18] /*0x5547fd*/
+    || (MEMORY[0xABCA1D] || !MEMORY[0xABCA18])
+    && MEMORY[0xABCA24] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xABCA10] + 8))(
+         &MEMORY[0xABCA10],
+         MEMORY[0xABCA18] + MEMORY[0xABCA24],
          0) )
   {
-    v10 = (int)(g_abs_ABCA20++);
-    *((unsigned int *)g_abs_ABCA14 + v10) = this; /*0x554819*/
+    v10 = MEMORY[0xABCA20]++; /*0x55480a*/
+    *((unsigned int *)MEMORY[0xABCA14] + v10) = this; /*0x554819*/
   }
   return this; /*0x55481e*/
 
@@ -58,31 +58,31 @@ void LightSourceClass::Constructor()
   int v2; // edx
   int v3; // eax
 
-  ((AbstractClass *)((void *)this))->Constructor(); /*0x554833*/
-  *(unsigned int *)(this + 36) = 0; /*0x55483d*/
-  *(unsigned int *)(this + 40) = 0; /*0x554840*/
-  *(unsigned int *)(this + 44) = 0; /*0x554843*/
-  *(unsigned int *)(this + 48) = 0; /*0x554846*/
-  *(unsigned int *)(this + 56) = g_abs_ABCA00; /*0x55484f*/
-  *(unsigned int *)(this + 60) = g_abs_ABCA04; /*0x554857*/
-  v2 = g_abs_ABCA08; /*0x55485a*/
-  *(unsigned int *)(this + 68) = 0; /*0x554860*/
-  *(unsigned char *)(this + 72) = 0; /*0x554863*/
-  *(unsigned int *)(this + 64) = v2; /*0x554866*/
-  *(unsigned int *)this = &vt_LightSourceClass; /*0x554869*/
-  *(unsigned int *)(this + 4) = &vt_LightSourceClass; /*0x55486f*/
-  *(unsigned int *)(this + 8) = &vt_LightSourceClass; /*0x554876*/
-  *(unsigned int *)(this + 12) = &vt_LightSourceClass; /*0x55487d*/
-  if ( g_abs_ABCA20 < g_abs_ABCA18 /*0x5548b6*/
-    || (g_abs_ABCA1D || !g_abs_ABCA18)
-    && g_abs_ABCA24 > (unsigned char [1])((unsigned char [1]))((unsigned char [1]))(0)
-    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_ABCA10 + 8))(
-         &g_abs_ABCA10,
-         (unsigned int)(g_abs_ABCA18)+ g_abs_ABCA24,
+  AbstractClass::Constructor((#373 *)this); /*0x554833*/
+  *((unsigned int *)this + 9) = 0; /*0x55483d*/
+  *((unsigned int *)this + 10) = 0; /*0x554840*/
+  *((unsigned int *)this + 11) = 0; /*0x554843*/
+  *((unsigned int *)this + 12) = 0; /*0x554846*/
+  *((unsigned int *)this + 14) = MEMORY[0xABCA00]; /*0x55484f*/
+  *((unsigned int *)this + 15) = MEMORY[0xABCA04]; /*0x554857*/
+  v2 = MEMORY[0xABCA08]; /*0x55485a*/
+  *((unsigned int *)this + 17) = 0; /*0x554860*/
+  *((unsigned char *)this + 72) = 0; /*0x554863*/
+  *((unsigned int *)this + 16) = v2; /*0x554866*/
+  *(unsigned int *)this = &LightSourceClass::`vftable'; /*0x554869*/
+  *((unsigned int *)this + 1) = &LightSourceClass::`vftable'; /*0x55486f*/
+  *((unsigned int *)this + 2) = &LightSourceClass::`vftable'; /*0x554876*/
+  *((unsigned int *)this + 3) = &LightSourceClass::`vftable'; /*0x55487d*/
+  if ( MEMORY[0xABCA20] < MEMORY[0xABCA18] /*0x5548b6*/
+    || (MEMORY[0xABCA1D] || !MEMORY[0xABCA18])
+    && MEMORY[0xABCA24] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xABCA10] + 8))(
+         &MEMORY[0xABCA10],
+         MEMORY[0xABCA18] + MEMORY[0xABCA24],
          0) )
   {
-    v3 = (int)(g_abs_ABCA20++);
-    *((unsigned int *)g_abs_ABCA14 + v3) = this; /*0x5548d2*/
+    v3 = MEMORY[0xABCA20]++; /*0x5548c3*/
+    *((unsigned int *)MEMORY[0xABCA14] + v3) = this; /*0x5548d2*/
   }
   return this; /*0x5548d7*/
 

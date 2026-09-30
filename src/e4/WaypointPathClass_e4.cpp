@@ -32,19 +32,19 @@ void WaypointPathClass::Init()
   *((unsigned int *)this + 10) = &vt_DynamicVectorClass_WaypointClass; /*0x76374e*/
   *((unsigned int *)this + 15) = 10; /*0x763755*/
   *((unsigned int *)this + 14) = 0; /*0x76375c*/
-  *(unsigned int *)this = &vt_WaypointPathClass; /*0x76375f*/
-  *((unsigned int *)this + 1) = &vt_WaypointPathClass; /*0x763765*/
-  *((unsigned int *)this + 2) = &vt_WaypointPathClass; /*0x76376c*/
+  *(unsigned int *)this = &WaypointPathClass::`vftable'; /*0x76375f*/
+  *((unsigned int *)this + 1) = &WaypointPathClass::`vftable'; /*0x763765*/
+  *((unsigned int *)this + 2) = &WaypointPathClass::`vftable'; /*0x76376c*/
   *((unsigned int *)this + 3) = &vt_WaypointPathClass; /*0x763773*/
   if ( dword_B72618 < dword_B72610 /*0x7637ac*/
     || (byte_B72615 || !dword_B72610)
     && dword_B7261C > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(dword_B72608 + 8))(
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_B72608 + 8))(
          &dword_B72608,
          dword_B72610 + dword_B7261C,
          0) )
   {
-    v2 = (unsigned int)(dword_B72618++);
+    v2 = dword_B72618++; /*0x7637b9*/
     *((unsigned int *)dword_B7260C + v2) = this; /*0x7637c8*/
   }
   return this; /*0x7637cd*/
@@ -188,8 +188,8 @@ void WaypointPathClass::computePath( int a2, unsigned int * a3)
   unsigned int *v9; // eax
   int v10; // ecx
 
-  *(this + 1) = 0; /*0x76476d*/
-  *(this + 2) = a2; /*0x764770*/
+  *((unsigned int *)this + 1) = 0; /*0x76476d*/
+  *((unsigned int *)this + 2) = a2; /*0x764770*/
   *((unsigned char *)this + 12) = 1; /*0x764773*/
   *((unsigned char *)this + 13) = 0; /*0x764777*/
   *this = &vt_VectorClass_WaypointClass; /*0x76477a*/
@@ -197,7 +197,7 @@ void WaypointPathClass::computePath( int a2, unsigned int * a3)
     return this; /*0x764780*/
   if ( !a3 ) /*0x764788*/
   {
-    v7 = (unsigned int *)(RA2_OPNEW(12 * a2 + 4));
+    v7 = __2_YAPAXI_Z(12 * a2 + 4); /*0x7647bd*/
     if ( v7 ) /*0x7647c7*/
     {
       v8 = v7 + 1; /*0x7647cc*/
@@ -215,7 +215,7 @@ void WaypointPathClass::computePath( int a2, unsigned int * a3)
           --v10; /*0x7647e3*/
         }
         while ( v10 ); /*0x7647e4*/
-        *(this + 1) = v8; /*0x7647e6*/
+        *((unsigned int *)this + 1) = v8; /*0x7647e6*/
         *((unsigned char *)this + 13) = 1; /*0x7647e9*/
         return this; /*0x7647f2*/
       }
@@ -224,7 +224,7 @@ void WaypointPathClass::computePath( int a2, unsigned int * a3)
     {
       v8 = 0; /*0x7647f5*/
     }
-    *(this + 1) = v8; /*0x7647f7*/
+    *((unsigned int *)this + 1) = v8; /*0x7647f7*/
     *((unsigned char *)this + 13) = 1; /*0x7647fa*/
     return this; /*0x7647fe*/
   }
@@ -243,7 +243,7 @@ void WaypointPathClass::computePath( int a2, unsigned int * a3)
     }
     while ( v5 ); /*0x7647a5*/
   }
-  *(this + 1) = a3 + 1; /*0x7647a7*/
+  *((unsigned int *)this + 1) = a3 + 1; /*0x7647a7*/
   return this; /*0x7647ac*/
 
 }

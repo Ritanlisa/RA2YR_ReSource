@@ -67,34 +67,34 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(unsigned int * Block, char a2)
   int v4; // eax
   unsigned int *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = (unsigned int)(&vt_AlphaShapeClass);
-  *(Block + 1) = &vt_AlphaShapeClass; /*0x421743*/
-  *(Block + 2) = &vt_AlphaShapeClass; /*0x42174a*/
+  *Block = &AlphaShapeClass::`vftable'; /*0x42173d*/
+  *(Block + 1) = &AlphaShapeClass::`vftable'; /*0x421743*/
+  *(Block + 2) = &AlphaShapeClass::`vftable'; /*0x42174a*/
   *(Block + 3) = &vt_AlphaShapeClass; /*0x421751*/
   v6 = Block; /*0x42175f*/
-  v3 = (*(int (**)(int *, unsigned int **))(g_abs_88A0F0 + 16))(&g_abs_88A0F0, &v6); /*0x421763*/
-  if ( v3 != -1 && v3 < (int)((int))((int))(g_abs_88A100) && v3 < --g_abs_88A100 ) /*0x42177e*/
+  v3 = (*(int (**)(int *, unsigned int **))(MEMORY[0x88A0F0] + 16))(&MEMORY[0x88A0F0], &v6); /*0x421763*/
+  if ( v3 != -1 && v3 < MEMORY[0x88A100] && v3 < --MEMORY[0x88A100] ) /*0x42177e*/
   {
     do /*0x421796*/
     {
       ++v3; /*0x421786*/
-      *((unsigned int *)g_abs_88A0F4 + v3 - 1) = *((unsigned int *)g_abs_88A0F4 + v3); /*0x42178a*/
+      *((unsigned int *)MEMORY[0x88A0F4] + v3 - 1) = *((unsigned int *)MEMORY[0x88A0F4] + v3); /*0x42178a*/
     }
-    while ( v3 < (int)((int))((int))(g_abs_88A100) ); /*0x421796*/
+    while ( v3 < MEMORY[0x88A100] ); /*0x421796*/
   }
   v6 = Block; /*0x4217a8*/
-  v4 = (*(int (**)(int *, unsigned int **))(g_abs_B0F720 + 16))(&g_abs_B0F720, &v6); /*0x4217ac*/
-  if ( v4 != -1 && v4 < (int)((int))((int))(g_abs_B0F730) && v4 < --g_abs_B0F730 ) /*0x4217c7*/
+  v4 = (*(int (**)(int *, unsigned int **))(MEMORY[0xB0F720] + 16))(&MEMORY[0xB0F720], &v6); /*0x4217ac*/
+  if ( v4 != -1 && v4 < MEMORY[0xB0F730] && v4 < --MEMORY[0xB0F730] ) /*0x4217c7*/
   {
     do /*0x4217df*/
     {
       ++v4; /*0x4217cf*/
-      *((unsigned int *)g_abs_B0F724 + v4 - 1) = *((unsigned int *)g_abs_B0F724 + v4); /*0x4217d3*/
+      *((unsigned int *)MEMORY[0xB0F724] + v4 - 1) = *((unsigned int *)MEMORY[0xB0F724] + v4); /*0x4217d3*/
     }
-    while ( v4 < (int)((int))((int))(g_abs_B0F730) ); /*0x4217df*/
+    while ( v4 < MEMORY[0xB0F730] ); /*0x4217df*/
   }
   AbstractClass::DTOR(Block); /*0x4217e3*/
-  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4217ed*/
+  if ( (a2 & 1) != 0 ) /*0x4217ed*/
     OperatorDelete(Block); /*0x4217f0*/
   return (AlphaShapeClass *)Block; /*0x4217fa*/
 

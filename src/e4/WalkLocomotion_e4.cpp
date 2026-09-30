@@ -52,11 +52,11 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
   int v21; // [esp+20h] [ebp-4h]
 
   v3 = aP1; /*0x6a01a0*/
-  if ( aP1->field_0 != g_abs_B077F8 /*0x6a01ce*/
-    || aP1->field_4 != g_abs_B077F8
-    || (v5 = aP1->field_8, v5 != g_abs_B077F8) )
+  if ( aP1->field_0 != MEMORY[0xB077F8].field_0 /*0x6a01ce*/
+    || aP1->field_4 != MEMORY[0xB077F8].field_4
+    || (v5 = aP1->field_8, v5 != MEMORY[0xB077F8].field_8) )
   {
-    IDA_LOBYTE(v5) = *((unsigned char *)this + 96); /*0x6a01d4*/
+    LOBYTE(v5) = *((unsigned char *)this + 96); /*0x6a01d4*/
     v6 = aP3; /*0x6a01d7*/
     if ( !(unsigned char)v5 ) /*0x6a01dd*/
     {
@@ -67,8 +67,8 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
         if ( v5 ) /*0x6a01fc*/
         {
           v7 = 4 * v5; /*0x6a0202*/
-          v8 = ((unsigned int *)(dword_7F2960))[v7]; /*0x6a0205*/
-          v5 = ((unsigned int *)(dword_7F296C))[v7]; /*0x6a020b*/
+          v8 = dword_7F2960[v7]; /*0x6a0205*/
+          v5 = dword_7F296C[v7]; /*0x6a020b*/
           if ( v5 > -1 ) /*0x6a0214*/
           {
             v9 = (unsigned int *)(v8 + 12 * v5); /*0x6a021d*/
@@ -93,10 +93,10 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
                 v20 = v12; /*0x6a0270*/
                 v21 = v13; /*0x6a0274*/
                 (*(void (**)(int, int *))(*(unsigned int *)v14 + 244))(v14, &v19); /*0x6a027f*/
-                IDA_LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x6a028f*/
+                LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x6a028f*/
                                *((unsigned int *)this + 3),
                                aP1);
-                return (gamemd::AbstractClass **)(v5);
+                return v5; /*0x6a029c*/
               }
               if ( v6 == 1 || v6 == 3 ) /*0x6a02a7*/
               {
@@ -105,7 +105,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
                 v21 = v15; /*0x6a02b7*/
                 v19 = v11; /*0x6a02bb*/
                 v20 = v12; /*0x6a02bf*/
-                IDA_LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))(v16, &v19); /*0x6a02ca*/
+                LOBYTE(v5) = (*(int (**)(int, int *))(*(unsigned int *)v16 + 240))(v16, &v19); /*0x6a02ca*/
               }
               v3 = aP1; /*0x6a02d0*/
             }
@@ -116,18 +116,18 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
     if ( v6 ) /*0x6a02d6*/
     {
       if ( v6 == 1 || v6 == 3 ) /*0x6a02f6*/
-        IDA_LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 240))( /*0x6a02fe*/
+        LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 240))( /*0x6a02fe*/
                        *((unsigned int *)this + 3),
                        v3);
     }
     else
     {
-      IDA_LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x6a02de*/
+      LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x6a02de*/
                      *((unsigned int *)this + 3),
                      v3);
     }
   }
-  return (gamemd::AbstractClass **)(v5);
+  return v5; /*0x6a0295*/
 
 }
 }
