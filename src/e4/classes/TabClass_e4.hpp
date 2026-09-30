@@ -51,8 +51,9 @@ struct TabClass {
     unsigned int TabClass_field_0x4;
     unsigned int TabClass_field_0x8;
     unsigned int TabClass_field_0xC;
+    unsigned int field_0;
 // --- flat members (END) ---
-    int DrawPower(HWND hDlg, void * a1, AbstractClass * aP2);
+    int DrawPower(HWND hDlg, void * a1, void * aP2);
     unsigned int * initStripClass();
 };
 

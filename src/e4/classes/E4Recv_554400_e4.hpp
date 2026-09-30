@@ -12,6 +12,6 @@ struct E4Recv_554400 {
     unsigned int q150;  // 0x150
     unsigned int customSound_controller;
 // --- flat members (END) ---
-    char sub_554400(int a2,  int a3);    // 0x554400
+    char sub_554400(int a2, int a3);  // 0x554400
 };
 } // namespace gamemd

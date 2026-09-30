@@ -69,12 +69,12 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   if ( !v4[26] ) /*0x4af826*/
   {
     v12 = *(unsigned int *)v3->__pad_0; /*0x4af8c3*/
-    LOBYTE(a3) = 0; /*0x4af8cf*/
+    IDA_LOBYTE(a3) = 0; /*0x4af8cf*/
     (*(void (**)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x4af8d4*/
     return IPersistStream; /*0x4af8d8*/
   }
   v6 = *(unsigned int *)v3->__pad_0; /*0x4af82c*/
-  LOBYTE(a3) = 1; /*0x4af838*/
+  IDA_LOBYTE(a3) = 1; /*0x4af838*/
   (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x4af83d*/
   v7 = (int (***)(unsigned int, void *, int **))v4[26]; /*0x4af840*/
   pPStm = 0; /*0x4af843*/
@@ -129,7 +129,7 @@ int DriveLocomotionClass::StubReturn112()
 } // namespace gamemd
 // 0x4B4D00
 namespace gamemd {
-DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
+DriveLocomotionClass * DriveLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
 
   ILocomotion *v3; // eax
@@ -141,8 +141,8 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
   if ( v3 ) /*0x4b4d1c*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)v3 + 8))(v3); /*0x4b4d21*/
   LocomotionClass::Construct(Block); /*0x4b4d26*/
-  if ( (a2 & 1) != 0 ) /*0x4b4d30*/
-    __3_YAXPAX_Z(Block); /*0x4b4d33*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4b4d30*/
+    RA2_OPDEL(Block); /*0x4b4d33*/
   return (DriveLocomotionClass *)Block; /*0x4b4d3d*/
 
 }

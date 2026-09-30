@@ -50,12 +50,12 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   AbstractClass *v22; // edx
   unsigned int v23[4]; // [esp+10h] [ebp-10h] BYREF
 
-  LOBYTE(a2) = 1; /*0x6e4f63*/
+  IDA_LOBYTE(a2) = 1; /*0x6e4f63*/
   *a1 = &TagClass::`vftable'; /*0x6e4f69*/
   a1[1] = &TagClass::`vftable'; /*0x6e4f6f*/
   a1[2] = &TagClass::`vftable'; /*0x6e4f76*/
   a1[3] = &vt_TagClass; /*0x6e4f7d*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, a2); /*0x6e4f84*/
+  ((AbstractClass *)((AbstractClass *)a1))->AnnounceExpiredPointer(a2); /*0x6e4f84*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x6e4f90*/
   {
     if ( HouseClass_Player.__pad_5568[23208] ) /*0x6e4f9d*/
@@ -165,7 +165,7 @@ LABEL_22:
         goto LABEL_43; /*0x6e50df*/
       if ( !stru_B05488.__pad_579C[19073] && eax37 || *(int *)&stru_B05488.__pad_579C[19080] <= 0 ) /*0x6e50f7*/
         goto LABEL_45; /*0x6e50f7*/
-      if ( (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19060] + 8))( /*0x6e5109*/
+      if ( (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19060] + 8))( /*0x6e5109*/
              &stru_B05488.__pad_579C[19060],
              eax37 + *(unsigned int *)&stru_B05488.__pad_579C[19080],
              0) )
@@ -180,7 +180,7 @@ LABEL_45:
     }
     while ( v15 ); /*0x6e50d9*/
   }
-  v23[0] = a1; /*0x6e5134*/
+  v23[0] = (unsigned int)(a1);
   v19 = (*(int (**)(char *, unsigned int *))(*(unsigned int *)&stru_B05488.__pad_579C[19020] + 16))( /*0x6e5147*/
           &stru_B05488.__pad_579C[19020],
           v23);
@@ -195,7 +195,7 @@ LABEL_45:
       ++v19; /*0x6e516a*/
     }
   }
-  v23[0] = a1; /*0x6e518c*/
+  v23[0] = (unsigned int)(a1);
   v20 = (*(int (**)(char *, unsigned int *))(*(unsigned int *)&stru_B05488.__pad_579C[19172] + 16))( /*0x6e5190*/
           &stru_B05488.__pad_579C[19172],
           v23);
@@ -210,7 +210,7 @@ LABEL_45:
       ++v20; /*0x6e51b3*/
     }
   }
-  v23[0] = a1; /*0x6e51d5*/
+  v23[0] = (unsigned int)(a1);
   v21 = (*(int (**)(char *, unsigned int *))(*(unsigned int *)&stru_B05488.__pad_579C[15100] + 16))( /*0x6e51d9*/
           &stru_B05488.__pad_579C[15100],
           v23);
@@ -225,8 +225,8 @@ LABEL_45:
       v22 = *(AbstractClass **)(*(unsigned int *)&stru_B05488.__pad_579C[15104] + 4 * v21); /*0x6e51fd*/
     }
   }
-  LOBYTE(v22) = 1; /*0x6e520e*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, v22); /*0x6e5212*/
+  IDA_LOBYTE(v22) = 1; /*0x6e520e*/
+  ((AbstractClass *)((AbstractClass *)a1))->AnnounceExpiredPointer(v22); /*0x6e5212*/
   AbstractClass::DTOR(a1); /*0x6e5219*/
 
 }
@@ -360,7 +360,7 @@ int TagClass::ProcessTag(int * a2)
     v5 = (*(int (**)(int))(*(unsigned int *)(v4 + 4) + 16))(v4 + 4); /*0x6e5710*/
     v4 = Power::TimerProcess(v5); /*0x6e5716*/
   }
-  LOBYTE(v4) = *((unsigned char *)this + 52); /*0x6e571b*/
+  IDA_LOBYTE(v4) = *((unsigned char *)this + 52); /*0x6e571b*/
   return Power::FlagProcess(a2, v4); /*0x6e5726*/
 
 }
@@ -380,14 +380,14 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x6e574f*/
       *(unsigned int *)aP0->__pad_0 = &TagClass::`vftable'; /*0x6e5754*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TagClass::`vftable'; /*0x6e575a*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TagClass::`vftable'; /*0x6e5761*/
-      *(unsigned int *)&aP0->__pad_0[12] = &vt_TagClass; /*0x6e5768*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &TagClass::`vftable'; /*0x6e575a*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &TagClass::`vftable'; /*0x6e5761*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_TagClass; /*0x6e5768*/
     }
     ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x6e5778*/
     ObjectPtr::RegisterForTracking( /*0x6e5786*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP0[1].__pad_0[4]);
+      (MouseClass *)&aP0[((unsigned int *)(1].__pad_0))[4]);
     return 0; /*0x6e578b*/
   }
   return result; /*0x6e578d*/
@@ -432,12 +432,12 @@ int TagClass::StubReturn44()
 
 // 0x6E58B0
 namespace gamemd {
-TagClass * TagClass::ProcessTrigger(char a2)
+TagClass * TagClass::ProcessTrigger(void ** Block, char a2)
 {
 
   TagClass::Destructor(Block); /*0x6e58b3*/
-  if ( (a2 & 1) != 0 ) /*0x6e58bd*/
-    __3_YAXPAX_Z(Block); /*0x6e58c0*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6e58bd*/
+    RA2_OPDEL(Block); /*0x6e58c0*/
   return (TagClass *)Block; /*0x6e58ca*/
 
 }

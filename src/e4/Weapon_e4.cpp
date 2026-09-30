@@ -209,14 +209,14 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   v54 = (CCINIClass *)v7; /*0x70c6d3*/
   v8 = (double)v7; /*0x70c6d7*/
   v45 = 0; /*0x70c6e5*/
-  LOWORD(v46) = v7 / 256; /*0x70c6ed*/
+  IDA_LOWORD(v46) = v7 / 256; /*0x70c6ed*/
   v9 = aP2->field_4; /*0x70c6f2*/
   v71 = v8; /*0x70c6f5*/
   v64 = *(float *)&v9; /*0x70c6f9*/
   v72 = (float)v9; /*0x70c702*/
   v10 = aP2->field_0; /*0x70c711*/
   v73 = (float)aP2->field_8; /*0x70c713*/
-  HIWORD(v46) = v9 / 256; /*0x70c725*/
+  IDA_HIWORD(v46) = v9 / 256; /*0x70c725*/
   v69 = (float)(int)v66; /*0x70c72e*/
   v58 = v46; /*0x70c736*/
   v11 = aP2->field_4; /*0x70c73a*/
@@ -241,11 +241,11 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
     v61 = v12[2]; /*0x70c7c7*/
     if ( (CCINIClass *)__PAIR32__(v60 / 256, v59 / 256) != v58 ) /*0x70c7ec*/
     {
-      LOWORD(v54) = v59 / 256; /*0x70c7f9*/
-      HIWORD(v54) = v60 / 256; /*0x70c802*/
+      IDA_LOWORD(v54) = v59 / 256; /*0x70c7f9*/
+      IDA_HIWORD(v54) = v60 / 256; /*0x70c802*/
       v58 = v54; /*0x70c811*/
-      v13 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v58); /*0x70c815*/
-      if ( (v13[80] & 0x100) != 0 && v61 >= *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[7072] * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
+      v13 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v58); /*0x70c815*/
+      if ( (v13[80] & 0x100) != 0 && v61 >= *(unsigned int *)&g_abs_B077F8 * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
         v14 = v13[58]; /*0x70c83e*/
       else
         v14 = v13[57]; /*0x70c846*/
@@ -255,8 +255,8 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
           goto LABEL_31; /*0x70c858*/
         if ( (InfantryClass *)v14 == aP3 ) /*0x70c860*/
           v45 = 1; /*0x70c862*/
-        HIBYTE(v63) = *(unsigned char *)(v14 + 20) & 1; /*0x70c874*/
-        if ( !HIBYTE(v63) ) /*0x70c878*/
+        IDA_HIBYTE(v63) = *(unsigned char *)(v14 + 20) & 1; /*0x70c874*/
+        if ( !IDA_HIBYTE(v63) ) /*0x70c878*/
           goto LABEL_31; /*0x70c878*/
         v15 = *(unsigned int *)v14; /*0x70c87e*/
         v62 = 0.0; /*0x70c882*/
@@ -287,7 +287,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
           v23 = Math::Sqrt(v68 * v68 + v81 * v81 + v69 * v69); /*0x70c9c3*/
           v24 = fabs(v64 / v23); /*0x70c9cf*/
         }
-        if ( v24 >= (double)*(int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1172) /*0x70c9f0*/
+        if ( v24 >= (double)*(int *)(*(unsigned int *)&g_abs_87F8E4 + 1172) /*0x70c9f0*/
           && (InfantryClass *)v14 != aP3 )
         {
           goto LABEL_31; /*0x70c9f0*/
@@ -313,9 +313,9 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
 LABEL_24:
         if ( v52 >= v50 ) /*0x70ca1d*/
         {
-          if ( !BYTE1(v51) && v50 /*0x70ca40*/
+          if ( !IDA_BYTE1(v51) && v50 /*0x70ca40*/
             || v53 <= 0
-            || !((unsigned __int8 (*)(void ***, int, unsigned int))v48[2])(&v48, v53 + v50, 0) )
+            || !((uint8_t (*)(void ***, int, unsigned int))v48[2])(&v48, v53 + v50, 0) )
           {
             goto LABEL_31; /*0x70ca45*/
           }
@@ -353,9 +353,9 @@ LABEL_31:
 LABEL_48:
         if ( v52 < v50 ) /*0x70cb70*/
           goto LABEL_54; /*0x70cb70*/
-        if ( (BYTE1(v51) || !v50) && v53 > 0 ) /*0x70cb84*/
+        if ( (IDA_BYTE1(v51) || !v50) && v53 > 0 ) /*0x70cb84*/
         {
-          if ( ((unsigned __int8 (*)(void ***, int, unsigned int))v48[2])(&v48, v53 + v50, 0) ) /*0x70cb93*/
+          if ( ((uint8_t (*)(void ***, int, unsigned int))v48[2])(&v48, v53 + v50, 0) ) /*0x70cb93*/
           {
             v29 = v52; /*0x70cb9a*/
 LABEL_54:
@@ -389,9 +389,9 @@ LABEL_55:
       if ( (*(int (**)(InfantryClass *))(*(unsigned int *)aP3->__pad_0 + 44))(aP3) == 11 /*0x70cc05*/
         && CellClass::IsActiveOrNext(aP3) )
       {
-        v40 = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6092); /*0x70cc1e*/
-        if ( Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x63) < v40 ) /*0x70cc31*/
-          LayerClass::DestroyCliff((int *)&MEMORY[0x87F7E8], v41, (int)aP3); /*0x70cc39*/
+        v40 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 6092); /*0x70cc1e*/
+        if ( Random::Range(&g_abs_A8B230->random[1], 0, (IUnknown *)0x63) < v40 ) /*0x70cc31*/
+          LayerClass::DestroyCliff((int *)&g_abs_87F7E8, v41, (int)aP3); /*0x70cc39*/
       }
       v42 = v66; /*0x70cc45*/
       v48 = &vt_VectorClass_ObjectClass; /*0x70cc4b*/
@@ -401,20 +401,20 @@ LABEL_55:
       a1[2] = v43; /*0x70cc5c*/
       if ( Block ) /*0x70cc65*/
       {
-        if ( BYTE1(v51) ) /*0x70cc6d*/
-          __3_YAXPAX_Z(Block); /*0x70cc70*/
+        if ( IDA_BYTE1(v51) ) /*0x70cc6d*/
+          RA2_OPDEL(Block); /*0x70cc70*/
       }
       return a1; /*0x70cc78*/
     }
   }
-  v32 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v59); /*0x70cae2*/
+  v32 = Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)&v59); /*0x70cae2*/
   if ( CellClass::IsActiveOrNext(v32) ) /*0x70cae9*/
   {
-    v33 = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6092); /*0x70cb01*/
-    if ( Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x63) < v33 ) /*0x70cb14*/
+    v33 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 6092); /*0x70cb01*/
+    if ( Random::Range(&g_abs_A8B230->random[1], 0, (IUnknown *)0x63) < v33 ) /*0x70cb14*/
     {
-      v34 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v59); /*0x70cb20*/
-      LayerClass::DestroyCliff((int *)&MEMORY[0x87F7E8], v35, (int)v34); /*0x70cb2b*/
+      v34 = Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)&v59); /*0x70cb20*/
+      LayerClass::DestroyCliff((int *)&g_abs_87F7E8, v35, (int)v34); /*0x70cb2b*/
     }
   }
   v36 = (CCINIClass *)v60; /*0x70cb37*/

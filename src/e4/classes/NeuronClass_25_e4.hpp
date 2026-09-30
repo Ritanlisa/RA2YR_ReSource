@@ -16,12 +16,12 @@ struct NeuronClass_25 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    int Update(int a2, void *a4 = 0, void *a3 = 0, void *a1 = 0);  // 0x43AB20
+    int Update(int a2);  // 0x43AB20
     char AddRef(int a2);  // 0x43AB30
-    char Release(int a2,  unsigned int * a3);    // 0x43AB70
-    void ddtor(void *a1 = 0);  // 0x43AC20
+    char Release(int a2, unsigned int * a3);  // 0x43AB70
+    void ddtor();  // 0x43AC20
     int Activate(unsigned int * a2);  // 0x43AC50
-    VectorClass_flat * QueryInterface(char a2);  // 0x43ACB0
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x43ACB0
     unsigned int Fire(int a2);  // 0x43AC90
 };
 } // namespace gamemd

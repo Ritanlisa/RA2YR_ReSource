@@ -46,6 +46,7 @@
 #include "e4/classes/E4Recv_4DB8A0_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/JumpjetLocomotion_e4.hpp"
 
 // 0x4C1440
 namespace gamemd {
@@ -427,9 +428,9 @@ int E4Recv_4C2790::sub_4C2790()
 
   if ( *((unsigned int *)this + 10) )
   {
-    Coord::To_Screen(*(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9432], (unsigned int *)this, (IUnknown *)v4); /*0x4c27aa*/
-    Coord::To_Screen(*(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9432], (unsigned int *)((char *)this + 12), (IUnknown *)v3); /*0x4c27be*/
-    if ( ClipLine(v4, v3, (int *)&MEMORY[0x87F8E4].__pad_5568[8532]) )
+    Coord::To_Screen(*(unsigned int **)&g_abs_87F8E4, (unsigned int *)this, (IUnknown *)v4); /*0x4c27aa*/
+    Coord::To_Screen(*(unsigned int **)&g_abs_87F8E4, (unsigned int *)((char *)this + 12), (IUnknown *)v3); /*0x4c27be*/
+    if ( ClipLine(v4, v3, (int *)&g_abs_87F8E4) )
       Lightning::Draw(
         (unsigned int *)this,
         *(unsigned int *)this,
@@ -480,13 +481,7 @@ void sub_4C2830()
     v3 = v2[8]; /*0x4c2856*/
     if ( v3 ) /*0x4c285b*/
     {
-      v4 = (int *)(*(int (**)(int, char *, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v3 + 176))( /*0x4c2888*/
-                    v3,
-                    v20,
-                    v2[9],
-                    0,
-                    0,
-                    0);
+      v4 = (unsigned int *)((int *)(*(int (**)(int, char *, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v3 + 176))( /*0x4c2888*/ v3, v20, v2[9], 0, 0, 0));
       v5 = (int)((unsigned int *)(*v4));
       v6 = v4[1]; /*0x4c288e*/
       v7 = v4[2]; /*0x4c2891*/
@@ -654,12 +649,12 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
   TextRenderer::GetInstance(); /*0x4c3dd9*/
   Text::MeasureWidth(*this, 0); /*0x4c3de5*/
   v3 = *((char *)this + 2); /*0x4c3def*/
-  v5[2] = MEMORY[0x8A00A4]; /*0x4c3df8*/
+  v5[2] = g_abs_8A00A4; /*0x4c3df8*/
   v5[0] = 0; /*0x4c3e09*/
   v5[1] = v3; /*0x4c3e12*/
   v5[3] = 18; /*0x4c3e16*/
-  return (*(int (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)MEMORY[0x887314] + 8))( /*0x4c3e28*/
-           MEMORY[0x887314],
+  return (*(int (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_abs_887314 + 8))( /*0x4c3e28*/
+           g_abs_887314,
            v5,
            a2,
            v5,
@@ -695,7 +690,7 @@ void DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
   if ( a2 == 16 ) /*0x4c83f5*/
   {
     EndDialog(hDlg, 1153); /*0x4c845c*/
-    Object::RemoveObjectArray(hDlg); /*0x4c8464*/
+    ((Object *)(hDlg))->RemoveObjectArray(); /*0x4c8464*/
     return 0; /*0x4c846c*/
   }
   if ( a2 != 272 ) /*0x4c83fc*/
@@ -712,18 +707,18 @@ void DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
 }
 // 0x4C95D0
 namespace gamemd {
-unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a3, unsigned short * a3)
+unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a2, unsigned short * a3)
 {
 
-  __int16 v3; // bx
+  int16_t v3; // bx
   int v4; // esi
   int v5; // eax
   int v6; // esi
-  __int64 v7; // rax
+  int64_t v7; // rax
   int v8; // eax
   int v9; // edx
   int v10; // ecx
-  __int16 v11; // cx
+  int16_t v11; // cx
   int v12; // ecx
   int v14; // [esp+Ch] [ebp-4h]
 
@@ -734,42 +729,42 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a3, unsigned short * a3)
   v5 = *((unsigned int *)this + 4); /*0x4c95e0*/
   if ( v4 != -1 ) /*0x4c95ec*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v4 >= v5 ) /*0x4c95f4*/
+    if ( (int)g_abs_A8ED84 - v4 >= v5 ) /*0x4c95f4*/
     {
 LABEL_14:
       v12 = *(unsigned int *)this; /*0x4c964f*/
       goto LABEL_15; /*0x4c964f*/
     }
-    v5 -= (int)MEMORY[0xA8ED84] - v4; /*0x4c95f6*/
+    v5 -= (int)g_abs_A8ED84 - v4; /*0x4c95f6*/
   }
   if ( !v5 ) /*0x4c95fa*/
     goto LABEL_14; /*0x4c95fa*/
-  v6 = (__int16)(*this - *((unsigned short *)this + 2)); /*0x4c9606*/
-  v7 = (__int16)(*this - *((unsigned short *)this + 2)); /*0x4c960b*/
-  v8 = (int)((HIDWORD(v7) ^ v7) - HIDWORD(v7)) / v3; /*0x4c9611*/
+  v6 = (int16_t)(*this - *((unsigned short *)this + 2)); /*0x4c9606*/
+  v7 = (int16_t)(*this - *((unsigned short *)this + 2)); /*0x4c960b*/
+  v8 = (int)((IDA_HIDWORD(v7) ^ v7) - IDA_HIDWORD(v7)) / v3; /*0x4c9611*/
   v14 = *(unsigned int *)this; /*0x4c9615*/
-  if ( (__int16)v8 > 0 ) /*0x4c961c*/
+  if ( (int16_t)v8 > 0 ) /*0x4c961c*/
   {
     v9 = *((unsigned int *)this + 4); /*0x4c961e*/
     v10 = *((unsigned int *)this + 2); /*0x4c9621*/
     if ( v10 != -1 ) /*0x4c9627*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v10 >= v9 ) /*0x4c962f*/
+      if ( (int)g_abs_A8ED84 - v10 >= v9 ) /*0x4c962f*/
       {
         v11 = 0; /*0x4c964b*/
         goto LABEL_11; /*0x4c964d*/
       }
-      LOWORD(v9) = v9 - ((unsigned short)MEMORY[0xA8ED84] - v10); /*0x4c9631*/
+      IDA_LOWORD(v9) = v9 - ((unsigned short)g_abs_A8ED84 - v10); /*0x4c9631*/
     }
     v11 = v9; /*0x4c9633*/
 LABEL_11:
-    LOWORD(v14) = v14 - v11 * (v6 / (__int16)v8); /*0x4c9635*/
+    IDA_LOWORD(v14) = v14 - v11 * (v6 / (int16_t)v8); /*0x4c9635*/
   }
-  LOWORD(v12) = v14; /*0x4c9645*/
+  IDA_LOWORD(v12) = v14; /*0x4c9645*/
 LABEL_15:
-  LOWORD(a3) = *a3 - v12; /*0x4c9651*/
-  *a3 = a3; /*0x4c966b*/
-  return a3; /*0x4c9655*/
+  IDA_LOWORD(a2) = *a2 - v12; /*0x4c9651*/
+  *a2 = a2; /*0x4c966b*/
+  return a2; /*0x4c9655*/
 
 }
 }
@@ -824,22 +819,22 @@ void sub_4CB4C0()
 }
 // 0x4CB580
 namespace gamemd {
-AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
+AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Destination, char * Source, int a3)
 {
 
   int *v4; // eax
   unsigned int v5; // edx
   int *v6; // edi
 
-  strncpy(Destination, Source, (IUnknown *)4); /*0x4cb58d*/
+  strncpy(Destination, Destination, (IUnknown *)4); /*0x4cb58d*/
   *((unsigned short *)Destination + 2) = 1; /*0x4cb598*/
   *((unsigned short *)Destination + 3) = 1; /*0x4cb59c*/
-  v4 = (int *)__2_YAPAXI_Z(1u); /*0x4cb5a0*/
-  v5 = *((unsigned __int16 *)Destination + 3); /*0x4cb5b1*/
+  v4 = (int *)RA2_OPNEW(1u); /*0x4cb5a0*/
+  v5 = *((uint16_t *)Destination + 3); /*0x4cb5b1*/
   *((unsigned int *)Destination + 2) = v4; /*0x4cb5b3*/
-  qmemcpy(v4, &a3, 4 * (v5 >> 2)); /*0x4cb5b9*/
+  qmemcpy(v4, &Source, 4 * (v5 >> 2)); /*0x4cb5b9*/
   v6 = &v4[v5 >> 2]; /*0x4cb5b9*/
-  qmemcpy(v6, &a3 + (v5 >> 2), v5 & 3); /*0x4cb5c5*/
+  qmemcpy(v6, &Source + (v5 >> 2), v5 & 3); /*0x4cb5c5*/
   *((unsigned int *)Destination + 3) = 0; /*0x4cb5c8*/
   return (ObjectClass *)Destination; /*0x4cb5c7*/
 
@@ -847,22 +842,22 @@ AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
 }
 // 0x4CB640
 namespace gamemd {
-void * E4Recv_4CB640::sub_4CB640(RandomStruct * aP1, int a3)
+void * E4Recv_4CB640::sub_4CB640(char * Destination, RandomStruct * aP1, int a3)
 {
 
   int *v4; // eax
   unsigned int v5; // edx
   int *v6; // edi
 
-  strncpy(Destination, (const char *)aP1, (IUnknown *)4); /*0x4cb64d*/
+  strncpy(Destination, (const char *)Destination, (IUnknown *)4); /*0x4cb64d*/
   *((unsigned short *)Destination + 2) = 3; /*0x4cb654*/
   *((unsigned short *)Destination + 3) = 2; /*0x4cb65a*/
-  v4 = (int *)__2_YAPAXI_Z(2u); /*0x4cb660*/
-  v5 = *((unsigned __int16 *)Destination + 3); /*0x4cb671*/
+  v4 = (int *)RA2_OPNEW(2u); /*0x4cb660*/
+  v5 = *((uint16_t *)Destination + 3); /*0x4cb671*/
   *((unsigned int *)Destination + 2) = v4; /*0x4cb673*/
-  qmemcpy(v4, &a3, 4 * (v5 >> 2)); /*0x4cb679*/
+  qmemcpy(v4, &aP1, 4 * (v5 >> 2)); /*0x4cb679*/
   v6 = &v4[v5 >> 2]; /*0x4cb679*/
-  qmemcpy(v6, &a3 + (v5 >> 2), v5 & 3); /*0x4cb685*/
+  qmemcpy(v6, &aP1 + (v5 >> 2), v5 & 3); /*0x4cb685*/
   *((unsigned int *)Destination + 3) = 0; /*0x4cb688*/
   return (ObjectClass *)Destination; /*0x4cb687*/
 
@@ -870,22 +865,22 @@ void * E4Recv_4CB640::sub_4CB640(RandomStruct * aP1, int a3)
 }
 // 0x4CB6A0
 namespace gamemd {
-void * E4Recv_4CB6A0::sub_4CB6A0(RandomStruct * aP1, int a3)
+void * E4Recv_4CB6A0::sub_4CB6A0(char * Destination, RandomStruct * aP1, int a3)
 {
 
   int *v4; // eax
   unsigned int v5; // edx
   int *v6; // edi
 
-  strncpy(Destination, (const char *)aP1, (IUnknown *)4); /*0x4cb6ad*/
+  strncpy(Destination, (const char *)Destination, (IUnknown *)4); /*0x4cb6ad*/
   *((unsigned short *)Destination + 2) = 4; /*0x4cb6b4*/
   *((unsigned short *)Destination + 3) = 2; /*0x4cb6ba*/
-  v4 = (int *)__2_YAPAXI_Z(2u); /*0x4cb6c0*/
-  v5 = *((unsigned __int16 *)Destination + 3); /*0x4cb6d1*/
+  v4 = (int *)RA2_OPNEW(2u); /*0x4cb6c0*/
+  v5 = *((uint16_t *)Destination + 3); /*0x4cb6d1*/
   *((unsigned int *)Destination + 2) = v4; /*0x4cb6d3*/
-  qmemcpy(v4, &a3, 4 * (v5 >> 2)); /*0x4cb6d9*/
+  qmemcpy(v4, &aP1, 4 * (v5 >> 2)); /*0x4cb6d9*/
   v6 = &v4[v5 >> 2]; /*0x4cb6d9*/
-  qmemcpy(v6, &a3 + (v5 >> 2), v5 & 3); /*0x4cb6e5*/
+  qmemcpy(v6, &aP1 + (v5 >> 2), v5 & 3); /*0x4cb6e5*/
   *((unsigned int *)Destination + 3) = 0; /*0x4cb6e8*/
   return (ObjectClass *)Destination; /*0x4cb6e7*/
 
@@ -1389,9 +1384,9 @@ unsigned int * E4Recv_4C2B40::sub_4C2B40(unsigned int * a2)
   }
   else
   {
-    *a2 = MEMORY[0x8A0E50]; /*0x4c2ba6*/
-    a2[1] = MEMORY[0x8A0E54]; /*0x4c2baf*/
-    a2[2] = MEMORY[0x8A0E58]; /*0x4c2bb8*/
+    *a2 = g_abs_8A0E50; /*0x4c2ba6*/
+    a2[1] = g_abs_8A0E54; /*0x4c2baf*/
+    a2[2] = g_abs_8A0E58; /*0x4c2bb8*/
     return a2; /*0x4c2b97*/
   }
 
@@ -1431,14 +1426,14 @@ int * E4Recv_4C2FC0::sub_4C2FC0(DropListClass * aP1, ControlClass * aP2, int a4,
 
   ControlClass::Construct(this, (ControlClass *)aP1, aP5, aP6, aP7, (ControlClass *)a9, 1, 0); /*0x4c2fe5*/
   v11 = aP4; /*0x4c2ff6*/
-  BYTE1(v11) = BYTE1(aP4) & 0xFE; /*0x4c2ff8*/
+  IDA_BYTE1(v11) = IDA_BYTE1(aP4) & 0xFE; /*0x4c2ff8*/
   *((char *)this + 11) = (int)v11; /*0x4c2ffc*/
   *this = (int)&vt_EditClass; /*0x4c3004*/
   *((char *)this + 12) = a10; /*0x4c300a*/
   *((char *)this + 13) = (int)aP2; /*0x4c300d*/
   *((char *)this + 14) = a4 - 1; /*0x4c3010*/
   *((char *)this + 15) = wcslen((const wchar_t *)aP2); /*0x4c3018*/
-  (*(void (**)(int *))(*(unsigned int **)this + 72))(this); /*0x4c3022*/
+  (*(void (**)(int *))(*(unsigned int *)this + 72))(this); /*0x4c3022*/
   *((char *)this + 16) = BuildingAnim::GetType(); /*0x4c302d*/
   if ( aP7 == (ControlClass *)-1 || a9 == -1 ) /*0x4c3035*/
   {
@@ -1822,7 +1817,7 @@ wchar_t ** E4Recv_4C3C90::sub_4C3C90(wchar_t * a2, wchar_t * a3, wchar_t * Strin
   *((unsigned int *)this + 2) = a3; /*0x4c3ca8*/
   *((unsigned int *)this + 3) = a5; /*0x4c3cab*/
   v6 = wcslen(String); /*0x4c3cae*/
-  v7 = (wchar_t *)__2_YAPAXI_Z(2 * v6 + 2); /*0x4c3cb8*/
+  v7 = (wchar_t *)RA2_OPNEW(2 * v6 + 2); /*0x4c3cb8*/
   *this = v7; /*0x4c3cbf*/
   wcscpy(v7, String); /*0x4c3cc1*/
   return this; /*0x4c3ccb*/
@@ -2494,25 +2489,25 @@ char * AnimClass::sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int
   Debug::Log(); /*0x4c68e8*/
   if ( a2 < 0 ) /*0x4c68f6*/
   {
-    BYTE2(this->field_0) = -1; /*0x4c6952*/
-    LOBYTE(this->field_0) = 0; /*0x4c6956*/
-    *(int *)((char *)&this->field_0 + 3) = *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6961*/
+    IDA_BYTE2(this->field_0) = -1; /*0x4c6952*/
+    IDA_LOBYTE(this->field_0) = 0; /*0x4c6956*/
+    *(int *)((char *)&this->field_0 + 3) = *(unsigned int *)&g_abs_A8D63C; /*0x4c6961*/
     return (char *)this; /*0x4c695f*/
   }
   else
   {
-    BYTE2(this->field_0) = a2; /*0x4c6900*/
-    LOBYTE(this->field_0) = 5; /*0x4c6906*/
+    IDA_BYTE2(this->field_0) = a2; /*0x4c6900*/
+    IDA_LOBYTE(this->field_0) = 5; /*0x4c6906*/
     *(void **)((char *)&this->field_4 + 3) = (void *)a3; /*0x4c6909*/
-    HIBYTE(this->field_8) = (unsigned char)aP3; /*0x4c690e*/
+    IDA_HIBYTE(this->field_8) = (unsigned char)aP3; /*0x4c690e*/
     this->__pad_C[0] = (char)aP4; /*0x4c6919*/
     *(unsigned int *)&this->__pad_C[1] = a6; /*0x4c6920*/
     this->__pad_C[5] = a7; /*0x4c6926*/
     *(unsigned int *)&this->__pad_C[6] = a8; /*0x4c6930*/
     *(unsigned int *)&this->__pad_18[3] = a11; /*0x4c6937*/
-    BYTE2(this->field_14) = a9; /*0x4c693a*/
+    IDA_BYTE2(this->field_14) = a9; /*0x4c693a*/
     *(int *)((char *)&this->field_14 + 3) = a10; /*0x4c6941*/
-    *(int *)((char *)&this->field_0 + 3) = *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x4c6949*/
+    *(int *)((char *)&this->field_0 + 3) = *(unsigned int *)&g_abs_A8D63C; /*0x4c6949*/
     return (char *)this; /*0x4c694c*/
   }
 
@@ -2529,7 +2524,7 @@ char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6a48*/
     *this = 0; /*0x4c6a4c*/
-    *(unsigned int *)((unsigned char *)this + 3) = MEMORY[0xA8ED84]; /*0x4c6a57*/
+    *(unsigned int *)((unsigned char *)this + 3) = g_abs_A8ED84; /*0x4c6a57*/
     return this; /*0x4c6a55*/
   }
   else
@@ -2541,7 +2536,7 @@ char * E4Recv_4C69E0::sub_4C69E0(int a2, char a3, int a4, unsigned short * a5)
     *(unsigned int *)((unsigned char *)this + 15) = 0; /*0x4c6a23*/
     *(unsigned short *)((unsigned char *)this + 19) = *a5; /*0x4c6a2d*/
     *(unsigned short *)((unsigned char *)this + 21) = a5[1]; /*0x4c6a35*/
-    *(unsigned int *)((unsigned char *)this + 3) = MEMORY[0xA8ED84]; /*0x4c6a3e*/
+    *(unsigned int *)((unsigned char *)this + 3) = g_abs_A8ED84; /*0x4c6a3e*/
     return this; /*0x4c6a41*/
   }
 
@@ -2558,7 +2553,7 @@ char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short
   {
     *((unsigned char *)this + 2) = -1; /*0x4c6ac8*/
     *this = 0; /*0x4c6acc*/
-    *(unsigned int *)((unsigned char *)this + 3) = MEMORY[0xA8ED84]; /*0x4c6ad7*/
+    *(unsigned int *)((unsigned char *)this + 3) = g_abs_A8ED84; /*0x4c6ad7*/
     return this; /*0x4c6ad5*/
   }
   else
@@ -2570,7 +2565,7 @@ char * E4Recv_4C6A60::sub_4C6A60(int a2, char a3, int a4, int a5, unsigned short
     *(unsigned int *)((unsigned char *)this + 15) = 0; /*0x4c6aa3*/
     *(unsigned short *)((unsigned char *)this + 19) = *a6; /*0x4c6aad*/
     *(unsigned short *)((unsigned char *)this + 21) = a6[1]; /*0x4c6ab5*/
-    *(unsigned int *)((unsigned char *)this + 3) = MEMORY[0xA8ED84]; /*0x4c6abe*/
+    *(unsigned int *)((unsigned char *)this + 3) = g_abs_A8ED84; /*0x4c6abe*/
     return this; /*0x4c6ac1*/
   }
 
@@ -2595,7 +2590,7 @@ char * E4Recv_4C6BE0::sub_4C6BE0(int a2, char a3, int a4, int a5)
     *(unsigned int *)((unsigned char *)this + 7) = a4; /*0x4c6c19*/
     *(unsigned int *)((unsigned char *)this + 11) = a5; /*0x4c6c1c*/
   }
-  *(unsigned int *)((unsigned char *)this + 3) = MEMORY[0xA8ED84]; /*0x4c6c27*/
+  *(unsigned int *)((unsigned char *)this + 3) = g_abs_A8ED84; /*0x4c6c27*/
   return this; /*0x4c6c2a*/
 
 }

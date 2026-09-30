@@ -45,63 +45,63 @@ void SyncDelay::Start()
   int v23; // [esp+10h] [ebp-14h] BYREF
   unsigned int v24[4]; // [esp+14h] [ebp-10h] BYREF
 
-  v0 = MEMORY[0x887348]; /*0x55e160*/
-  v1 = MEMORY[0x887350]; /*0x55e171*/
-  if ( MEMORY[0x887348] != -1 ) /*0x55e179*/
+  v0 = g_abs_887348; /*0x55e160*/
+  v1 = g_abs_887350; /*0x55e171*/
+  if ( g_abs_887348 != -1 ) /*0x55e179*/
   {
     Ticks = Timer::GetTicks(); /*0x55e180*/
-    v0 = MEMORY[0x887348]; /*0x55e185*/
-    v3 = Ticks - MEMORY[0x887348]; /*0x55e18b*/
+    v0 = g_abs_887348; /*0x55e185*/
+    v3 = Ticks - g_abs_887348; /*0x55e18b*/
     if ( v3 >= v1 ) /*0x55e18f*/
       v1 = 0; /*0x55e195*/
     else
       v1 -= v3; /*0x55e191*/
   }
-  MEMORY[0xA8E314] += v1; /*0x55e1a7*/
-  if ( MEMORY[0xA8B238][0] && MEMORY[0xA8B238][0] != 5 ) /*0x55e1b6*/
+  g_abs_A8E314 += v1; /*0x55e1a7*/
+  if ( g_abs_A8B238[0] && g_abs_A8B238[0] != 5 ) /*0x55e1b6*/
   {
     while ( 1 ) /*0x55e1c7*/
     {
-      v4 = MEMORY[0x887330]; /*0x55e1c7*/
-      if ( MEMORY[0x887328] != -1 ) /*0x55e1cf*/
+      v4 = g_abs_887330; /*0x55e1c7*/
+      if ( g_abs_887328 != -1 ) /*0x55e1cf*/
       {
-        v5 = timeGetTime() - MEMORY[0x887328]; /*0x55e1db*/
+        v5 = timeGetTime() - g_abs_887328; /*0x55e1db*/
         if ( v5 >= v4 ) /*0x55e1e3*/
           goto LABEL_38; /*0x55e1e3*/
         v4 -= v5; /*0x55e1e9*/
       }
       if ( !v4 ) /*0x55e1ed*/
         goto LABEL_38; /*0x55e1ed*/
-      Event::Dispatch(); /*0x55e1f3*/
-      if ( !MEMORY[0xA8EDA0] && MEMORY[0xA8ED80] == 1 ) /*0x55e20b*/
+      this->Event::Dispatch(); /*0x55e1f3*/
+      if ( !g_abs_A8EDA0 && g_abs_A8ED80 == 1 ) /*0x55e20b*/
         break; /*0x55e20b*/
 LABEL_23:
       Sleep(0); /*0x55e2ac*/
     }
-    v6 = MEMORY[0x887330]; /*0x55e216*/
+    v6 = g_abs_887330; /*0x55e216*/
     v22 = 0; /*0x55e21e*/
-    if ( MEMORY[0x887328] != -1 ) /*0x55e222*/
+    if ( g_abs_887328 != -1 ) /*0x55e222*/
     {
-      v7 = timeGetTime() - MEMORY[0x887328]; /*0x55e22e*/
+      v7 = timeGetTime() - g_abs_887328; /*0x55e22e*/
       if ( v7 >= v6 ) /*0x55e236*/
         goto LABEL_18; /*0x55e236*/
       v6 -= v7; /*0x55e238*/
     }
     if ( v6 > 10 ) /*0x55e23d*/
     {
-      InputManager_ProcessEvents::Vtable((int *)&MEMORY[0x87F7E8], &v22, v24, &v23); /*0x55e253*/
+      InputManager_ProcessEvents::Vtable((int *)&g_abs_87F7E8, &v22, v24, &v23); /*0x55e253*/
       SyncDelayClass::ProcessNetworkSync(&v22); /*0x55e25c*/
-      ((void (*)(LPPERSISTSTREAM))MEMORY[0x887324]->__tail_0[2].GetSizeMax)(MEMORY[0x887324]); /*0x55e269*/
-      TacticalMap::Redraw(&MEMORY[0x87F7E8]); /*0x55e271*/
+      ((void (*)(LPPERSISTSTREAM))g_abs_887324->__tail_0[2].GetSizeMax)(g_abs_887324); /*0x55e269*/
+      TacticalMap::Redraw(&g_abs_87F7E8); /*0x55e271*/
       goto LABEL_19; /*0x55e276*/
     }
 LABEL_18:
     Sleep(0); /*0x55e278*/
 LABEL_19:
-    v8 = MEMORY[0x887330]; /*0x55e27b*/
-    if ( MEMORY[0x887328] != -1 ) /*0x55e288*/
+    v8 = g_abs_887330; /*0x55e27b*/
+    if ( g_abs_887328 != -1 ) /*0x55e288*/
     {
-      v9 = timeGetTime() - MEMORY[0x887328]; /*0x55e294*/
+      v9 = timeGetTime() - g_abs_887328; /*0x55e294*/
       if ( v9 >= v8 ) /*0x55e29c*/
         goto LABEL_38; /*0x55e29c*/
       v8 -= v9; /*0x55e2a2*/
@@ -110,41 +110,41 @@ LABEL_19:
       goto LABEL_38; /*0x55e2a6*/
     goto LABEL_23; /*0x55e2a6*/
   }
-  v10 = MEMORY[0x887350]; /*0x55e2b4*/
+  v10 = g_abs_887350; /*0x55e2b4*/
   if ( v0 != -1 ) /*0x55e2bc*/
   {
-    v11 = Timer::GetTicks() - MEMORY[0x887348]; /*0x55e2c8*/
+    v11 = Timer::GetTicks() - g_abs_887348; /*0x55e2c8*/
     if ( v11 >= v10 ) /*0x55e2d0*/
       goto LABEL_38; /*0x55e2d0*/
     v10 -= v11; /*0x55e2d2*/
   }
   if ( v10 ) /*0x55e2d6*/
   {
-    DDraw::WaitForIdle(); /*0x55e2d8*/
+    this->DDraw::WaitForIdle(); /*0x55e2d8*/
     while ( 1 ) /*0x55e317*/
     {
       while ( 1 ) /*0x55e2e3*/
       {
-        v12 = MEMORY[0x887348]; /*0x55e2e3*/
-        v13 = MEMORY[0x887350]; /*0x55e2e9*/
-        if ( MEMORY[0x887348] != -1 ) /*0x55e2f1*/
+        v12 = g_abs_887348; /*0x55e2e3*/
+        v13 = g_abs_887350; /*0x55e2e9*/
+        if ( g_abs_887348 != -1 ) /*0x55e2f1*/
         {
           v14 = Timer::GetTicks(); /*0x55e2f8*/
-          v12 = MEMORY[0x887348]; /*0x55e2fd*/
-          v15 = v14 - MEMORY[0x887348]; /*0x55e303*/
+          v12 = g_abs_887348; /*0x55e2fd*/
+          v15 = v14 - g_abs_887348; /*0x55e303*/
           if ( v15 >= v13 ) /*0x55e307*/
             goto LABEL_38; /*0x55e307*/
           v13 -= v15; /*0x55e309*/
         }
         if ( !v13 ) /*0x55e30d*/
           goto LABEL_38; /*0x55e30d*/
-        v16 = MEMORY[0x887350]; /*0x55e30f*/
+        v16 = g_abs_887350; /*0x55e30f*/
         if ( v12 != -1 ) /*0x55e317*/
           break; /*0x55e317*/
 LABEL_37:
         Sleep(v16); /*0x55e336*/
       }
-      v17 = Timer::GetTicks() - MEMORY[0x887348]; /*0x55e323*/
+      v17 = Timer::GetTicks() - g_abs_887348; /*0x55e323*/
       if ( v17 >= v16 ) /*0x55e32b*/
       {
         v16 = 0; /*0x55e334*/
@@ -176,9 +176,8 @@ LABEL_43:
     v19 -= result; /*0x55e395*/
     goto LABEL_43; /*0x55e395*/
   }
-LABEL_44:
-  v20 = dword_ABCD40 + g_FrameCounter_Total; /*0x55e39b*/
-  v21 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total) <= 0x7FFFFFFF; /*0x55e3af*/
+LABEL_44: v20 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total);
+  v21 = (unsigned int)((unsigned int)(dword_ABCD40 + g_FrameCounter_Total) <= 0x7FFFFFFF);
   dword_ABCD44 = (wchar_t *)dword_ABCD40; /*0x55e3b5*/
   dword_ABCD40 = 0; /*0x55e3ba*/
   g_FrameCounter_Total = v20; /*0x55e3c0*/
@@ -198,7 +197,7 @@ LABEL_44:
 } // namespace gamemd
 // 0x55F6C0
 namespace gamemd {
-void SyncDelay::Check()
+void SyncDelay::Check( unsigned int * a2)
 {
 
   unsigned int *v2; // eax

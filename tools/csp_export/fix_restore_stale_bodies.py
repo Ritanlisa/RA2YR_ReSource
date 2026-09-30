@@ -161,8 +161,10 @@ def this_elem_of(pseudo):
 
 
 def scale_this_arith(stmt, elem='unsigned int'):
+    vt_factor = 1 if elem == 'char' else 4
     stmt = _VT_THIS_WALK.sub(
-        lambda m: '*(unsigned int **)this + %d' % int(m.group(1)), stmt)
+        lambda m: '*(unsigned int *)this + %d' % (int(m.group(1)) * vt_factor),
+        stmt)
     stmt = _BARE_THIS_DEREF.sub(
         lambda m: '*((%s *)this + %d)' % (elem, int(m.group(1))), stmt)
     stmt = _BARE_THIS_PLUS.sub(

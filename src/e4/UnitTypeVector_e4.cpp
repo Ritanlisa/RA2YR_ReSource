@@ -24,10 +24,10 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
       *((unsigned int *)this + 1) = a3; /*0x513968*/
       return this; /*0x51396e*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x51397d*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x51397d*/
     *((unsigned char *)this + 13) = 1; /*0x513980*/
   }
-  return this; /*0x51396d*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd
@@ -48,10 +48,10 @@ unsigned int * UnitTypeVector::Construct2(int a2, int a3)
       *((unsigned int *)this + 1) = a3; /*0x5d8978*/
       return this; /*0x5d897e*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x5d898d*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x5d898d*/
     *((unsigned char *)this + 13) = 1; /*0x5d8990*/
   }
-  return this; /*0x5d897d*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd

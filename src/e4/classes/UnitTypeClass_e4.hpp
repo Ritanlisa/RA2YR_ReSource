@@ -1017,9 +1017,11 @@ struct UnitTypeClass {
     unsigned char qE62;  // 0xE62
     void* qE68;  // 0xE68
     unsigned char qE6C;  // 0xE6C
+    unsigned int UnitTypeClass_ConstructUnit;
+    unsigned int UnitTypeClass_CreateUnit;
 // --- flat members (END) ---
     INIClass * * ReadINIEntry();
-    UnitTypeClass(INIClass * aP1);
+    UnitTypeClass(void * aP1);
     UnitTypeClass * ddtor(char a2);
     VoxelAnimTypeClass * * FindOrCreate(void *a1 = 0);
     int * GetDimensions(int * a2);
@@ -1030,7 +1032,7 @@ struct UnitTypeClass {
     int GetTypeIdentifier();
     int LoadFromINI2(int a1, int a2);
     int PowerDrainUpdate(int * a2);
-    int SaveToINI(void * a0, TechnoTypeClass * aP1, int a3);
+    int SaveToINI(void * a0, void * aP1, int a3);
     int j__do_always_noconv_codecvt_base_std__MBE_NXZ_19_0();
     unsigned int * ClampToGroundHeight(unsigned int * a1, int * a2);
     unsigned int * GetDefaultDimensions(unsigned int * a1);

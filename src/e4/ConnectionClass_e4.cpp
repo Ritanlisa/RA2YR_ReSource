@@ -17,7 +17,7 @@
 
 // 0x48B750
 namespace gamemd {
-int ConnectionClass::allocPacketSlot(void* a1, void* a2, void* a3)
+int ConnectionClass::allocPacketSlot( const void * a2, signed int a3, const void * a4, signed int a5)
 {
 
   int v6; // edx
@@ -29,13 +29,13 @@ int ConnectionClass::allocPacketSlot(void* a1, void* a2, void* a3)
   int v14; // eax
   int v15; // [esp+14h] [ebp+8h]
 
-  v6 = *(a1 + 2); /*0x48b755*/
-  if ( *(a1 + 14) == v6 || a3 > *(a1 + 3) ) /*0x48b768*/
+  v6 = (int)(*(this + 2));
+  if ( *(this + 14) == v6 || a3 > *(this + 3) ) /*0x48b768*/
     return 0; /*0x48b768*/
   v8 = 0; /*0x48b76a*/
   if ( v6 <= 0 ) /*0x48b772*/
     goto LABEL_9; /*0x48b772*/
-  v9 = (unsigned char *)*(a1 + 13); /*0x48b774*/
+  v9 = (unsigned char *)*(this + 13); /*0x48b774*/
   v10 = v9; /*0x48b777*/
   while ( (*v10 & 1) != 0 ) /*0x48b77c*/
   {
@@ -48,39 +48,39 @@ int ConnectionClass::allocPacketSlot(void* a1, void* a2, void* a3)
   if ( v8 == -1 ) /*0x48b793*/
   {
 LABEL_9:
-    Debug::Log(); /*0x48b795*/
+    this->Debug::Log(); /*0x48b795*/
     return 0; /*0x48b7a7*/
   }
   v12 = 24 * v8; /*0x48b7ae*/
   *(unsigned int *)&v9[v12] |= 1u; /*0x48b7b7*/
-  *(unsigned int *)(v12 + *(a1 + 13)) &= ~2u; /*0x48b7c4*/
-  *(unsigned int *)(*(a1 + 13) + v12) &= ~4u; /*0x48b7d2*/
-  v13 = MEMORY[0x887340]; /*0x48b7d9*/
-  if ( MEMORY[0x887338] != -1 ) /*0x48b7e2*/
-    v13 += Timer::GetTicks() - MEMORY[0x887338]; /*0x48b7f4*/
-  *(unsigned int *)(*(a1 + 13) + v12 + 4) = v13; /*0x48b7fb*/
-  *(unsigned int *)(*(a1 + 13) + v12 + 8) = a3; /*0x48b806*/
-  qmemcpy(*(void **)(*(a1 + 13) + v12 + 12), a2, a3); /*0x48b816*/
-  if ( a4 && a5 > 0 && a5 <= *(a1 + 4) ) /*0x48b832*/
+  *(unsigned int *)(v12 + *(this + 13)) &= ~2u; /*0x48b7c4*/
+  *(unsigned int *)(*(this + 13) + v12) &= ~4u; /*0x48b7d2*/
+  v13 = g_abs_887340; /*0x48b7d9*/
+  if ( g_abs_887338 != -1 ) /*0x48b7e2*/
+    v13 += Timer::GetTicks() - g_abs_887338; /*0x48b7f4*/
+  *(unsigned int *)(*(this + 13) + v12 + 4) = v13; /*0x48b7fb*/
+  *(unsigned int *)(*(this + 13) + v12 + 8) = a3; /*0x48b806*/
+  qmemcpy(*(void **)(*(this + 13) + v12 + 12), a2, a3); /*0x48b816*/
+  if ( a4 && a5 > 0 && a5 <= *(this + 4) ) /*0x48b832*/
   {
-    qmemcpy(*(void **)(*(a1 + 13) + v12 + 20), a4, a5); /*0x48b842*/
-    *(unsigned int *)(*(a1 + 13) + v12 + 16) = a5; /*0x48b84e*/
+    qmemcpy(*(void **)(*(this + 13) + v12 + 20), a4, a5); /*0x48b842*/
+    *(unsigned int *)(*(this + 13) + v12 + 16) = a5; /*0x48b84e*/
   }
   else
   {
-    *(unsigned int *)(*(a1 + 13) + v12 + 16) = 0; /*0x48b857*/
+    *(unsigned int *)(*(this + 13) + v12 + 16) = 0; /*0x48b857*/
   }
-  *(unsigned int *)(*(a1 + 16) + 4 * *(a1 + 14)) = v15; /*0x48b86a*/
-  v14 = *(a1 + 15) + 1; /*0x48b874*/
-  ++*(a1 + 14); /*0x48b875*/
-  *(a1 + 15) = v14; /*0x48b878*/
+  *(unsigned int *)(*(this + 16) + 4 * *(this + 14)) = v15; /*0x48b86a*/
+  v14 = *(this + 15) + 1; /*0x48b874*/
+  ++*(this + 14); /*0x48b875*/
+  *(this + 15) = v14; /*0x48b878*/
   return 1; /*0x48b7a2*/
 
 }
 } // namespace gamemd
 // 0x48BA10
 namespace gamemd {
-int ConnectionClass::initQueue(void* a1, void* a2, void* a3)
+int ConnectionClass::initQueue( unsigned int a2)
 {
 
   int v2; // eax
@@ -90,25 +90,25 @@ int ConnectionClass::initQueue(void* a1, void* a2, void* a3)
   unsigned int v6; // eax
   unsigned int result; // eax
 
-  v2 = *(a1 + 6); /*0x48ba10*/
+  v2 = *(this + 6); /*0x48ba10*/
   if ( v2 == 256 ) /*0x48ba1c*/
   {
-    v3 = a2 - *(a1 + 7) + *(a1 + 5); /*0x48ba2c*/
-    *(a1 + 5) = v3; /*0x48ba2e*/
-    v4 = ((unsigned __int8)v3 > 0x7Fu) + (v3 >> 8); /*0x48ba46*/
+    v3 = a2 - *(this + 7) + *(this + 5); /*0x48ba2c*/
+    *(this + 5) = v3; /*0x48ba2e*/
+    v4 = ((uint8_t)v3 > 0x7Fu) + (v3 >> 8); /*0x48ba46*/
   }
   else
   {
     v5 = v2 + 1; /*0x48ba4e*/
-    v6 = a2 + *(a1 + 5); /*0x48ba56*/
-    *(a1 + 6) = v5; /*0x48ba58*/
-    *(a1 + 5) = v6; /*0x48ba5b*/
+    v6 = a2 + *(this + 5); /*0x48ba56*/
+    *(this + 6) = v5; /*0x48ba58*/
+    *(this + 5) = v6; /*0x48ba5b*/
     v4 = v6 / v5; /*0x48ba5e*/
   }
-  *(a1 + 7) = v4; /*0x48ba60*/
-  result = *(a1 + 8); /*0x48ba63*/
+  *(this + 7) = v4; /*0x48ba60*/
+  result = *(this + 8); /*0x48ba63*/
   if ( a2 > result ) /*0x48ba68*/
-    *(a1 + 8) = a2; /*0x48ba6a*/
+    *(this + 8) = a2; /*0x48ba6a*/
   return result; /*0x48ba6d*/
 
 }
@@ -123,7 +123,7 @@ void ConnectionClass::dtor()
 
   v2 = (void *)*((unsigned int *)this + 8); /*0x48bee3*/
   *this = &vt_ConnectionClass; /*0x48bee6*/
-  __3_YAXPAX_Z(v2); /*0x48beed*/
+  RA2_OPDEL(v2); /*0x48beed*/
   v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 1); /*0x48bef2*/
   if ( v3 ) /*0x48befb*/
     (**v3)(v3, 1); /*0x48bf01*/
@@ -140,26 +140,26 @@ AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, Ani
   {
     *(unsigned char *)(*((unsigned int *)this + 8) + 2) = 0; /*0x48bf59*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 4) = *((unsigned int *)this + 16); /*0x48bf63*/
-    Debug::Log(); /*0x48bf6f*/
+    this->Debug::Log(); /*0x48bf6f*/
   }
   else
   {
     *(unsigned char *)(*((unsigned int *)this + 8) + 2) = 1; /*0x48bf7c*/
     *(unsigned int *)(*((unsigned int *)this + 8) + 4) = *((unsigned int *)this + 15); /*0x48bf86*/
   }
-  if ( MEMORY[0xA8B238] == (CellStruct *)4 && MEMORY[0xA8D63C].__pad_524[64] ) /*0x48bf99*/
+  if ( g_abs_A8B238 == (CellStruct *)4 && g_abs_A8D63C ) /*0x48bf99*/
     *(unsigned char *)(*((unsigned int *)this + 8) + 3) = (unsigned char)aP4; /*0x48bfa2*/
   if ( *((unsigned int *)this + 7) < (int)aP2 ) /*0x48bfae*/
   {
-    Debug::Log(); /*0x48bfb6*/
-    Debug::Log(); /*0x48bfc1*/
+    this->Debug::Log(); /*0x48bfb6*/
+    this->Debug::Log(); /*0x48bfc1*/
     return 0; /*0x48bfcd*/
   }
   qmemcpy((void *)(*((unsigned int *)this + 8) + 14), aP1, (unsigned int)aP2); /*0x48bfe5*/
   if ( !ConnectionClass::queueSendPacket( /*0x48c006*/
           *(int **)((char *)this + 4),
           *(const void **)((char *)this + 32),
-          (signed int)&aP2->__pad_C[2],
+          (signed int)&aP2-((unsigned int *)(>__pad_C))[2],
           0,
           0,
           0) )
@@ -197,7 +197,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
   int v22; // eax
   int v23; // eax
   int v24; // eax
-  __int16 v25; // [esp+10h] [ebp-10h] BYREF
+  int16_t v25; // [esp+10h] [ebp-10h] BYREF
   char v26; // [esp+12h] [ebp-Eh]
   unsigned char v27[13]; // [esp+13h] [ebp-Dh]
 
@@ -225,7 +225,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
         }
         else
         {
-          Debug::Log(); /*0x48c12d*/
+          this->Debug::Log(); /*0x48c12d*/
           ++*((unsigned int *)this + 5); /*0x48c139*/
           return 0; /*0x48c13f*/
         }
@@ -233,7 +233,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
       else
       {
         ++*((unsigned int *)this + 5); /*0x48c0f4*/
-        Debug::Log(); /*0x48c0f7*/
+        this->Debug::Log(); /*0x48c0f7*/
         return 0; /*0x48c0ff*/
       }
     }
@@ -247,14 +247,14 @@ LABEL_40:
         v25 = *((unsigned short *)this + 18); /*0x48c28f*/
         v26 = 2; /*0x48c29c*/
         *(unsigned int *)&v27[1] = v23; /*0x48c2a1*/
-        if ( MEMORY[0xA8DBA0] ) /*0x48c2a5*/
+        if ( g_abs_A8DBA0 ) /*0x48c2a5*/
           v27[0] = *(unsigned char *)(a2 + 3); /*0x48c2aa*/
         else
           v27[0] = 0; /*0x48c2b0*/
-        Debug::Log(); /*0x48c2c6*/
-        v24 = MEMORY[0xA8EA0C]; /*0x48c2cb*/
-        LOBYTE(v24) = this == (unsigned int *)MEMORY[0xA8EA0C]; /*0x48c2d7*/
-        (*(void (**)(unsigned int *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int **)this + 36))( /*0x48c2ea*/
+        this->Debug::Log(); /*0x48c2c6*/
+        v24 = g_abs_A8EA0C; /*0x48c2cb*/
+        IDA_LOBYTE(v24) = this == (unsigned int *)g_abs_A8EA0C; /*0x48c2d7*/
+        (*(void (**)(unsigned int *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this + 144))( /*0x48c2ea*/
           this,
           &v25,
           14,
@@ -315,10 +315,10 @@ LABEL_40:
         goto LABEL_40; /*0x48c257*/
       }
     }
-    Debug::Log(); /*0x48c301*/
+    this->Debug::Log(); /*0x48c301*/
     return 0; /*0x48c309*/
   }
-  Debug::Log(); /*0x48c079*/
+  this->Debug::Log(); /*0x48c079*/
   v6 = (unsigned int *)*((unsigned int *)this + 1); /*0x48c07e*/
   v7 = 0; /*0x48c084*/
   if ( (int)v6[10] > 0 ) /*0x48c08b*/
@@ -426,9 +426,9 @@ int ConnectionClass::serviceSendQueue()
       {
         if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) ) /*0x48c40d*/
         {
-          v6 = MEMORY[0x887340]; /*0x48c419*/
-          if ( MEMORY[0x887338] != -1 ) /*0x48c422*/
-            v6 += Timer::GetTicks() - MEMORY[0x887338]; /*0x48c434*/
+          v6 = g_abs_887340; /*0x48c419*/
+          if ( g_abs_887338 != -1 ) /*0x48c422*/
+            v6 += Timer::GetTicks() - g_abs_887338; /*0x48c434*/
           ConnectionClass::initQueue(v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
         }
         PacketQueue::ExtractEntry(0, 0, v2--, 0, 0, 0); /*0x48c452*/
@@ -447,16 +447,16 @@ int ConnectionClass::serviceSendQueue()
     v8 = Terrain::GetTileIndex((unsigned int *)*((char *)this + 1), v7); /*0x48c47e*/
     if ( (*(unsigned char *)v8 & 2) == 0 ) /*0x48c483*/
     {
-      v9 = MEMORY[0x887340]; /*0x48c48e*/
-      if ( MEMORY[0x887338] != -1 ) /*0x48c497*/
-        v9 += Timer::GetTicks() - MEMORY[0x887338]; /*0x48c4a9*/
+      v9 = g_abs_887340; /*0x48c48e*/
+      if ( g_abs_887338 != -1 ) /*0x48c497*/
+        v9 += Timer::GetTicks() - g_abs_887338; /*0x48c4a9*/
       v10 = *(unsigned int *)(v8 + 8); /*0x48c4ab*/
       if ( v9 - v10 > *((char *)this + 10) ) /*0x48c4b7*/
       {
-        v11 = MEMORY[0xA8EA0C]; /*0x48c4bd*/
-        LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
-        LOBYTE(v11) = this == (unsigned int *)MEMORY[0xA8EA0C]; /*0x48c4cb*/
-        (*(void (**)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int **)this + 36))( /*0x48c4e2*/
+        v11 = g_abs_A8EA0C; /*0x48c4bd*/
+        IDA_LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
+        IDA_LOBYTE(v11) = this == (unsigned int *)g_abs_A8EA0C; /*0x48c4cb*/
+        (*(void (**)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this + 36))( /*0x48c4e2*/
           this,
           *(unsigned int *)(v8 + 20),
           *(unsigned int *)(v8 + 16),
@@ -477,7 +477,7 @@ int ConnectionClass::serviceSendQueue()
           if ( *(unsigned char *)(v13 + 2) == 1 ) /*0x48c4f9*/
           {
             v14 = *(unsigned int *)v8; /*0x48c4fb*/
-            LOBYTE(v14) = *(unsigned int *)v8 | 2; /*0x48c4fd*/
+            IDA_LOBYTE(v14) = *(unsigned int *)v8 | 2; /*0x48c4fd*/
             *(unsigned int *)v8 = v14; /*0x48c4ff*/
           }
         }
@@ -488,7 +488,7 @@ int ConnectionClass::serviceSendQueue()
         {
           v17 = *(unsigned int *)v8; /*0x48c51b*/
           v21 = 1; /*0x48c51d*/
-          LOBYTE(v17) = *(unsigned int *)v8 | 4; /*0x48c525*/
+          IDA_LOBYTE(v17) = *(unsigned int *)v8 | 4; /*0x48c525*/
           *(unsigned int *)v8 = v17; /*0x48c527*/
         }
         v18 = *((char *)this + 12); /*0x48c529*/
@@ -496,7 +496,7 @@ int ConnectionClass::serviceSendQueue()
         {
           v19 = *(unsigned int *)v8; /*0x48c53d*/
           v21 = 1; /*0x48c53f*/
-          LOBYTE(v19) = *(unsigned int *)v8 | 4; /*0x48c547*/
+          IDA_LOBYTE(v19) = *(unsigned int *)v8 | 4; /*0x48c547*/
           *(unsigned int *)v8 = v19; /*0x48c549*/
         }
       }
@@ -506,7 +506,7 @@ int ConnectionClass::serviceSendQueue()
   while ( v7 < v22 ); /*0x48c552*/
   if ( !v21 ) /*0x48c55e*/
     return 1; /*0x48c57a*/
-  Debug::Log(); /*0x48c565*/
+  this->Debug::Log(); /*0x48c565*/
   return 0; /*0x48c56f*/
 
 }

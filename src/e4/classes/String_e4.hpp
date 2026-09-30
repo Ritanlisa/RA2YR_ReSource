@@ -36,49 +36,49 @@ struct String {
     void* ptr_88;
     void* ptr_4;
     void* ptr_8;
-    unsigned int NotEquals;
 // --- flat members (END) ---
-    void AssignWideToChar(CampaignScore * aP1,  CampaignScore * aP2);    // 0x49B760
-    char * AllocAndCopy(RandomStruct * aP1,  IUnknown * aP2);    // 0x4CB5E0
-    void Release(void *a1 = 0);  // 0x5BD5A0
-    int SplitComma(ObjectClass * aP1);  // 0x5D0380
+    void AssignWideToChar(void * aP1,  void * aP2);    // 0x49B760
+    char * AllocAndCopy(void * aP1,  void * aP2);    // 0x4CB5E0
+    int Release();  // 0x5BD5A0
+    int SplitComma(void * aP1);  // 0x5D0380
     int NormalizeNewlines();  // 0x5F3350
     int To_Waypoint();  // 0x763690
-    void TrimLeft(ObjectClass * aP1);  // 0x7B51D0
+    void TrimLeft(void * aP1);  // 0x7B51D0
     unsigned int Length(void *a1 = 0);  // 0x7B54B0
     char Replace(char * SubStr,  const char * a3);    // 0x7B57A0
-    int Tokenize(int a2,  ObjectClass * aP2,  ObjectClass * aP3);    // 0x7B5F10
+    int Tokenize(int a2,  void * aP2,  void * aP3);    // 0x7B5F10
     int Tokenize2(int a2,  wchar_t * Str,  void ** a4);    // 0x7B7A60
     ObjectClass * FormatDword(void *a1 = 0);  // 0x777B30
     ObjectClass * CopyConstant(void *a1 = 0);  // 0x777B60
-    char * CopyUpper(ObjectClass * aP1);  // 0x4F4C30
+    char * CopyUpper(void * aP1);  // 0x4F4C30
     char * Copy(const char * a2);  // 0x4F4C70
     char * CopyChecked(const char * a2);  // 0x4F4CB0
-    bool Equals(ObjectClass * aP1);  // 0x4F4CE0
-    unsigned int ComputeHash();  // 0x5E2620
+    bool Equals(void * aP1);  // 0x4F4CE0
+    unsigned int ComputeHash(int a2);  // 0x5E2620
     char * Trim(void *a1 = 0);  // 0x727CF0
     char ** Assign(const char * a2, void *a1 = 0);  // 0x7B4630
     char ** AssignFromPtr(const char ** a2, void *a1 = 0);  // 0x7B4690
-    bool Equals_Alt(const char * a2, void *a1 = 0);  // 0x7B4710
-    bool Compare(const char ** a2, void *a1 = 0);  // 0x7B4780
-    void ** Assign_Alt(CCINIClass * aP1);  // 0x7B48D0
-    char ** Reassign(AbstractClass * aP1);  // 0x7B4940
-    const char ** Append(CCINIClass * aP1);  // 0x7B4C20
-    const char ** Append2(IUnknown * aP1);  // 0x7B4CD0
+    bool Equals_Alt(const char * a2);  // 0x7B4710
+    bool Compare(const char ** a2);  // 0x7B4780
+    void ** Assign_Alt(void * aP1);  // 0x7B48D0
+    char ** Reassign(void * aP1);  // 0x7B4940
+    const char ** Append(void * aP1);  // 0x7B4C20
+    const char ** Append2(void * aP1);  // 0x7B4CD0
     char ** Concat2(char ** a2, const char * a3, void *a1 = 0);    // 0x7B4DA0
-    char ** Concat(char ** a1,  IUnknown * aP2);    // 0x7B4ED0
-    char Erase(MPCooperative * aP1,  int a3);    // 0x7B5020
-    void TrimRight(ObjectClass * aP1);  // 0x7B5230
+    char ** Concat(char ** a1,  void * aP2);    // 0x7B4ED0
+    char Erase(void * aP1,  int a3);    // 0x7B5020
+    void TrimRight(void * aP1);  // 0x7B5230
     char * GetOrEmpty(void *a1 = 0);  // 0x7B5400
     char * GetOrEmpty_Alt(void *a1 = 0);  // 0x7B5440
-    char Assign_Bool(const char * a2, void *a1 = 0);  // 0x7B5A40
+    char Assign_Bool(const char * a2);  // 0x7B5A40
     void ToLower(void *a1 = 0);  // 0x7B5B30
-    char ** ToLowerCopy(ObjectClass * aP1);  // 0x7B5B80
+    char ** ToLowerCopy(void * aP1);  // 0x7B5B80
     char CopyTruncated(size_t Count);  // 0x7B5D70
     char TruncateTo(size_t Count);  // 0x7B78D0
-    int Wrapper5to4(CampaignScore * aP0,  int a2,  int a3,  int a4);    // 0x7CCA19
-    bool Equals(ObjectClass * aP1);  // def-aligned
-    bool Equals(ObjectClass * aP1);  // def-aligned
-    bool Equals(ObjectClass * aP1);  // def-aligned
+    int Wrapper5to4(void * aP0,  int a2,  int a3,  int a4);    // 0x7CCA19
+    bool Equals(void * aP1);  // def-aligned
+    bool Equals(void * aP1);  // def-aligned
+    bool Equals(void * aP1);  // def-aligned
+    bool NotEquals(const char * a2);  // def-aligned
 };
 } // namespace gamemd

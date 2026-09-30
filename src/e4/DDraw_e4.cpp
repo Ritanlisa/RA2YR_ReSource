@@ -12,6 +12,7 @@
 #include "core/ddraw_init.hpp"
 #include "core/ddraw_init.hpp"
 #include "core/ddraw_init.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x4A3370
 namespace gamemd {
@@ -60,7 +61,7 @@ int DDraw::CapabilityCheck()
   int v7[9]; // [esp+28h] [ebp-24h] BYREF
 
   DSurface::Construct((char *)v7, 64, 64, 0, 0); /*0x4a3e51*/
-  Debug::Log(MEMORY[0x81FD18]); /*0x4a3e5b*/
+  Debug::Log(g_abs_81FD18); /*0x4a3e5b*/
   g_DDraw_UseHWBlit = 1; /*0x4a3e67*/
   XSurface::Fill(v7, 0); /*0x4a3e6f*/
   v2 = 5; /*0x4a3e82*/
@@ -76,7 +77,7 @@ int DDraw::CapabilityCheck()
     v3 = 5; /*0x4a3eb3*/
     if ( XSurface::GetPixel(v7, &v2) == 1 ) /*0x4a3ebf*/
     {
-      v0 = MEMORY[0x81FD14]; /*0x4a3ed0*/
+      v0 = g_abs_81FD14; /*0x4a3ed0*/
       if ( g_DDraw_UseHWBlit ) /*0x4a3ed5*/
         goto LABEL_7; /*0x4a3ed5*/
     }
@@ -85,10 +86,10 @@ int DDraw::CapabilityCheck()
       g_DDraw_UseHWBlit = 0; /*0x4a3ec1*/
     }
   }
-  v0 = MEMORY[0x81FD0C]; /*0x4a3ed7*/
+  v0 = g_abs_81FD0C; /*0x4a3ed7*/
 LABEL_7:
-  Debug::Log_0(MEMORY[0x81FD08], v0); /*0x4a3edc*/
-  Debug::Log(MEMORY[0x81FCE0]); /*0x4a3eec*/
+  Debug::Log_0(g_abs_81FD08, v0); /*0x4a3edc*/
+  Debug::Log(g_abs_81FCE0); /*0x4a3eec*/
   g_DDraw_AllowOverlayBlit = 1; /*0x4a3ef8*/
   XSurface::Fill(v7, 0); /*0x4a3f00*/
   v2 = 0; /*0x4a3f13*/
@@ -107,14 +108,14 @@ LABEL_7:
   v3 = 5; /*0x4a3f78*/
   if ( XSurface::GetPixel(v7, &v2) ) /*0x4a3f7c*/
   {
-    Debug::Log_0(MEMORY[0x81FCD4]); /*0x4a3f8a*/
+    Debug::Log_0(g_abs_81FCD4); /*0x4a3f8a*/
     g_DDraw_AllowOverlayBlit = 0; /*0x4a3f96*/
   }
   else
   {
-    Debug::Log_0(MEMORY[0x81FCD0]); /*0x4a3fac*/
+    Debug::Log_0(g_abs_81FCD0); /*0x4a3fac*/
   }
-  return DSurface::Destroy(v7); /*0x4a3fa1*/
+  return ((DSurface *)(v7))->Destroy(); /*0x4a3fa1*/
 
 }
 } // namespace gamemd
@@ -126,7 +127,7 @@ void DDraw::WaitForIdle()
   int result; // eax
 
   do /*0x4a4846*/
-    result = (*(int (**)(int, int))(*(unsigned int *)MEMORY[0x8A009C] + 52))(MEMORY[0x8A009C], 2); /*0x4a483a*/
+    result = (*(int (**)(int, int))(*(unsigned int *)g_abs_8A009C + 52))(g_abs_8A009C, 2); /*0x4a483a*/
   while ( result && result != -2005532222 ); /*0x4a4846*/
   return result; /*0x4a4848*/
 
@@ -143,54 +144,54 @@ int DDraw::CleanupSurfaces()
   void *v3; // esi
   int result; // eax
 
-  v0 = MEMORY[0x8A0E10]; /*0x4c19b1*/
-  if ( MEMORY[0x8A0E10] ) /*0x4c19bc*/
+  v0 = g_abs_8A0E10; /*0x4c19b1*/
+  if ( g_abs_8A0E10 ) /*0x4c19bc*/
   {
-    DDraw::Init(MEMORY[0x8A0E10]); /*0x4c19c0*/
-    __3_YAXPAX_Z(v0); /*0x4c19c6*/
-    MEMORY[0x8A0E10] = 0; /*0x4c19ce*/
+    DDraw::Init(g_abs_8A0E10); /*0x4c19c0*/
+    RA2_OPDEL(v0); /*0x4c19c6*/
+    g_abs_8A0E10 = 0; /*0x4c19ce*/
   }
-  v1 = MEMORY[0x8A0E0C]; /*0x4c19d4*/
-  if ( MEMORY[0x8A0E0C] ) /*0x4c19dc*/
+  v1 = g_abs_8A0E0C; /*0x4c19d4*/
+  if ( g_abs_8A0E0C ) /*0x4c19dc*/
   {
-    DDraw::ReleaseSurfaces(MEMORY[0x8A0E0C]); /*0x4c19e0*/
-    __3_YAXPAX_Z(v1); /*0x4c19e6*/
-    MEMORY[0x8A0E0C] = 0; /*0x4c19ee*/
+    DDraw::ReleaseSurfaces(g_abs_8A0E0C); /*0x4c19e0*/
+    RA2_OPDEL(v1); /*0x4c19e6*/
+    g_abs_8A0E0C = 0; /*0x4c19ee*/
   }
-  v2 = MEMORY[0x8A0E08]; /*0x4c19f4*/
-  if ( MEMORY[0x8A0E08] ) /*0x4c19fc*/
+  v2 = g_abs_8A0E08; /*0x4c19f4*/
+  if ( g_abs_8A0E08 ) /*0x4c19fc*/
   {
-    DDraw::ReleaseSurfaces(MEMORY[0x8A0E08]); /*0x4c1a00*/
-    __3_YAXPAX_Z(v2); /*0x4c1a06*/
-    MEMORY[0x8A0E08] = 0; /*0x4c1a0e*/
+    DDraw::ReleaseSurfaces(g_abs_8A0E08); /*0x4c1a00*/
+    RA2_OPDEL(v2); /*0x4c1a06*/
+    g_abs_8A0E08 = 0; /*0x4c1a0e*/
   }
-  v3 = MEMORY[0x8A0E04]; /*0x4c1a14*/
-  if ( MEMORY[0x8A0E04] ) /*0x4c1a1c*/
+  v3 = g_abs_8A0E04; /*0x4c1a14*/
+  if ( g_abs_8A0E04 ) /*0x4c1a1c*/
   {
-    DDraw::ReleaseSurfaces(MEMORY[0x8A0E04]); /*0x4c1a20*/
-    __3_YAXPAX_Z(v3); /*0x4c1a26*/
-    MEMORY[0x8A0E04] = 0; /*0x4c1a2e*/
+    DDraw::ReleaseSurfaces(g_abs_8A0E04); /*0x4c1a20*/
+    RA2_OPDEL(v3); /*0x4c1a26*/
+    g_abs_8A0E04 = 0; /*0x4c1a2e*/
   }
-  if ( MEMORY[0x8A0DFC] ) /*0x4c1a3b*/
+  if ( g_abs_8A0DFC ) /*0x4c1a3b*/
   {
-    (*(void (**)(int))(*(unsigned int *)MEMORY[0x8A0DFC] + 8))(MEMORY[0x8A0DFC]); /*0x4c1a40*/
-    MEMORY[0x8A0DFC] = 0; /*0x4c1a43*/
+    (*(void (**)(int))(*(unsigned int *)g_abs_8A0DFC + 8))(g_abs_8A0DFC); /*0x4c1a40*/
+    g_abs_8A0DFC = 0; /*0x4c1a43*/
   }
-  if ( MEMORY[0x8A0DF8] ) /*0x4c1a50*/
+  if ( g_abs_8A0DF8 ) /*0x4c1a50*/
   {
-    (*(void (**)(int))(*(unsigned int *)MEMORY[0x8A0DF8] + 8))(MEMORY[0x8A0DF8]); /*0x4c1a55*/
-    MEMORY[0x8A0DF8] = 0; /*0x4c1a58*/
+    (*(void (**)(int))(*(unsigned int *)g_abs_8A0DF8 + 8))(g_abs_8A0DF8); /*0x4c1a55*/
+    g_abs_8A0DF8 = 0; /*0x4c1a58*/
   }
-  if ( MEMORY[0x8A0DF4] ) /*0x4c1a65*/
+  if ( g_abs_8A0DF4 ) /*0x4c1a65*/
   {
-    (*(void (**)(int))(*(unsigned int *)MEMORY[0x8A0DF4] + 8))(MEMORY[0x8A0DF4]); /*0x4c1a6a*/
-    MEMORY[0x8A0DF4] = 0; /*0x4c1a6d*/
+    (*(void (**)(int))(*(unsigned int *)g_abs_8A0DF4 + 8))(g_abs_8A0DF4); /*0x4c1a6a*/
+    g_abs_8A0DF4 = 0; /*0x4c1a6d*/
   }
-  result = MEMORY[0x8A0E00]; /*0x4c1a73*/
-  if ( MEMORY[0x8A0E00] ) /*0x4c1a7a*/
+  result = g_abs_8A0E00; /*0x4c1a73*/
+  if ( g_abs_8A0E00 ) /*0x4c1a7a*/
   {
-    result = (*(int (**)(int))(*(unsigned int *)MEMORY[0x8A0E00] + 8))(MEMORY[0x8A0E00]); /*0x4c1a7f*/
-    MEMORY[0x8A0E00] = 0; /*0x4c1a82*/
+    result = (*(int (**)(int))(*(unsigned int *)g_abs_8A0E00 + 8))(g_abs_8A0E00); /*0x4c1a7f*/
+    g_abs_8A0E00 = 0; /*0x4c1a82*/
   }
   return result; /*0x4c1a88*/
 
@@ -207,8 +208,8 @@ int DDraw::HandleSuspend()
   int j; // edi
   int v6; // ecx
 
-  LOBYTE(v1) = MEMORY[0xA8ED80]; /*0x5d2530*/
-  if ( MEMORY[0xA8ED80] != 1 ) /*0x5d253b*/
+  IDA_LOBYTE(v1) = g_abs_A8ED80; /*0x5d2530*/
+  if ( g_abs_A8ED80 != 1 ) /*0x5d253b*/
   {
     Debug::Log(aMsenginePausin); /*0x5d2546*/
     for ( i = 0; i < *((unsigned int *)this + 10); ++i ) /*0x5d2555*/
@@ -216,7 +217,7 @@ int DDraw::HandleSuspend()
       v4 = *(unsigned int *)(*((unsigned int *)this + 7) + 4 * i); /*0x5d255a*/
       (*(void (**)(int))(*(unsigned int *)v4 + 8))(v4); /*0x5d255f*/
     }
-    while ( !MEMORY[0xA8ED80] ) /*0x5d2571*/
+    while ( !g_abs_A8ED80 ) /*0x5d2571*/
     {
       Debug::Log(aMsengineSleepi); /*0x5d257e*/
       Sleep(0x1F4u); /*0x5d258b*/
@@ -278,44 +279,44 @@ char DDraw::CheckCapabilities()
   CHAR Text[80]; // [esp+Ch] [ebp-18Ch] BYREF
   unsigned int v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
 
-  if ( MEMORY[0x8A0094] ) /*0x4a462e*/
+  if ( g_abs_8A0094 ) /*0x4a462e*/
   {
     memset(v4, 0, sizeof(v4)); /*0x4a4645*/
     v4[0] = 316; /*0x4a464b*/
-    v1 = MEMORY[0x8A0094]->lpVtbl->GetCaps(MEMORY[0x8A0094], (LPDDCAPS)v4, 0); /*0x4a4659*/
+    v1 = g_abs_8A0094->lpVtbl->GetCaps(g_abs_8A0094, (LPDDCAPS)v4, 0); /*0x4a4659*/
     if ( v1 ) /*0x4a465f*/
     {
-      if ( MEMORY[0x8A00B0] ) /*0x4a4669*/
+      if ( g_abs_8A00B0 ) /*0x4a4669*/
       {
-        MEMORY[0x8A00B0](v1); /*0x4a466d*/
+        g_abs_8A00B0(v1); /*0x4a466d*/
       }
       else
       {
         sprintf(Text, g_Str_Trace_DDRAW_DLL_Error_code____08X, v1); /*0x4a4683*/
         MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u); /*0x4a469e*/
       }
-      LOBYTE(v0) = 0; /*0x4a466f*/
+      IDA_LOBYTE(v0) = 0; /*0x4a466f*/
     }
     else
     {
       v0 = (v4[1] & 0x40) != 0; /*0x4a46b8*/
       if ( SLOBYTE(v4[1]) < 0 ) /*0x4a46c0*/
-        LOBYTE(v0) = v0 | 2; /*0x4a46c2*/
+        IDA_LOBYTE(v0) = v0 | 2; /*0x4a46c2*/
       if ( (v4[1] & 0x10000) != 0 ) /*0x4a46ca*/
-        LOBYTE(v0) = v0 | 4; /*0x4a46cc*/
+        IDA_LOBYTE(v0) = v0 | 4; /*0x4a46cc*/
       if ( (v4[1] & 0x8000000) != 0 ) /*0x4a46d4*/
-        LOBYTE(v0) = v0 | 8; /*0x4a46d6*/
+        IDA_LOBYTE(v0) = v0 | 8; /*0x4a46d6*/
       if ( (v4[1] & 0x4000000) != 0 ) /*0x4a46de*/
-        LOBYTE(v0) = v0 | 0x10; /*0x4a46e0*/
+        IDA_LOBYTE(v0) = v0 | 0x10; /*0x4a46e0*/
       if ( (v4[1] & 0x2000000) != 0 ) /*0x4a46e8*/
-        LOBYTE(v0) = v0 | 0x20; /*0x4a46ea*/
+        IDA_LOBYTE(v0) = v0 | 0x20; /*0x4a46ea*/
       if ( (v4[1] & 0x200) != 0 ) /*0x4a46ef*/
-        LOBYTE(v0) = v0 | 0x40; /*0x4a46f1*/
+        IDA_LOBYTE(v0) = v0 | 0x40; /*0x4a46f1*/
     }
   }
   else
   {
-    LOBYTE(v0) = 0; /*0x4a4630*/
+    IDA_LOBYTE(v0) = 0; /*0x4a4630*/
   }
   return v0; /*0x4a4632*/
 

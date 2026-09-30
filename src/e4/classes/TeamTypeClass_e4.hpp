@@ -80,30 +80,32 @@ struct TeamTypeClass {
     unsigned char u8_B1;
     unsigned int q0B4;
     unsigned char u8_B3;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     AbstractClass * * FindOrCreateTaskForce();
-    AbstractClass * * GetMaxCount(CCINIClass * aP1);
+    AbstractClass * * GetMaxCount(void * aP1);
     AbstractClass * * LoadFromINI(unsigned char *** aP1);
     TeamTypeClass * ReadScriptData(char * a1, int a2);
     TeamTypeClass * ddtor(char a2);
     int Check(int a2, void *a3 = 0, void *a1 = 0);
-    int Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Construct();
     int DestroyAllInstances(void *a1 = 0);
     int FindByName(void *a1 = 0);
     int FindFirstInstance();
-    int FlashAllInstances(AnimClass * aP1);
+    int FlashAllInstances(void * aP1);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetGroup();
     int GetObjectSize();
     int GetTeam(int a2, int a3);
     int GetTypeIdentifier();
-    int LoadTypeData(AbstractTypeClass * aP0, int aP1);
+    int LoadTypeData(void * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
-    int ProcessTaskForce(void *a1 = 0);
-    int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
+    int ProcessTaskForce();
+    int SaveToINI(void * aP0, int * a1, int aP2);
     unsigned int * GetTransportWaypoint(unsigned int * a2);
     void * CreateScriptType();
+    static double vftable(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

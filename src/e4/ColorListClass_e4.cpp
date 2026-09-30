@@ -38,13 +38,13 @@ int ColorListClass::Clear(unsigned int a2)
   else
   {
     *((char *)this + 91) = a2; /*0x557f4c*/
-    (*(void (**)(int *))(*(unsigned int **)this + 72))(this); /*0x557f56*/
+    (*(void (**)(int *))(*(unsigned int *)this + 72))(this); /*0x557f56*/
     if ( *((char *)this + 91) < *((char *)this + 92) ) /*0x557f67*/
-      (*(void (**)(int *, unsigned int))(*(unsigned int **)this + 192))(this, *((char *)this + 91)); /*0x557f6e*/
+      (*(void (**)(int *, unsigned int))(*(unsigned int *)this + 192))(this, *((char *)this + 91)); /*0x557f6e*/
     v4 = *((char *)this + 20); /*0x557f74*/
     result = *((char *)this + 91); /*0x557f7d*/
     if ( result >= v4 + *((char *)this + 92) ) /*0x557f87*/
-      return (*(int (**)(int *, int))(*(unsigned int **)this + 192))(this, result - v4 + 1); /*0x557f91*/
+      return (*(int (**)(int *, int))(*(unsigned int *)this + 192))(this, result - v4 + 1); /*0x557f91*/
   }
   return result; /*0x557f97*/
 
@@ -65,7 +65,7 @@ void ColorListClass::RemoveColor(wchar_t * String2)
       if ( ++v3 >= *((unsigned int *)this + 17) ) /*0x558044*/
         return; /*0x558044*/
     }
-    (*(void (**)(unsigned int *, int))(*(unsigned int **)this + 184))(this, v3); /*0x558051*/
+    (*(void (**)(unsigned int *, int))(*(unsigned int *)this + 736))(this, v3); /*0x558051*/
   }
 
 }
@@ -81,7 +81,7 @@ int ColorListClass::GetColor(int a2)
 } // namespace gamemd
 // 0x488F00
 namespace gamemd {
-ColorListClass * ColorListClass::QueryInterface(char a2)
+ColorListClass * ColorListClass::QueryInterface(char * Block, char a2)
 {
 
   int v3; // eax
@@ -97,14 +97,14 @@ ColorListClass * ColorListClass::QueryInterface(char a2)
   *(unsigned int *)v4 = &vt_VectorClass_int; /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
-    __3_YAXPAX_Z(v5); /*0x488f37*/
+    RA2_OPDEL(v5); /*0x488f37*/
     *((unsigned int *)v4 + 1) = 0; /*0x488f3f*/
   }
   v4[13] = 0; /*0x488f44*/
   *((unsigned int *)v4 + 2) = 0; /*0x488f47*/
   ListClass::Destruct(Block); /*0x488f4a*/
-  if ( (a2 & 1) != 0 ) /*0x488f54*/
-    __3_YAXPAX_Z(Block); /*0x488f57*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x488f54*/
+    RA2_OPDEL(Block); /*0x488f57*/
   return (ColorListClass *)Block; /*0x488f61*/
 
 }

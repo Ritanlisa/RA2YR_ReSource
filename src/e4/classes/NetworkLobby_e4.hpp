@@ -60,23 +60,23 @@ struct NetworkLobby {
     unsigned int Timer;
     unsigned int Event;
 // --- flat members (END) ---
-    int MessageList_Append(int a2,  int a3,  void* aP3,  char a5,  int a6);    // 0x5D4210
+    int MessageList_Append(int a2, int a3, void * aP3, char a5, int a6);  // 0x5D4210
     char CreateGame();  // 0x5DC350
-    INT_PTR DlgProc(HWND hDlg,  UINT a2,  WPARAM nIDDlgItem,  unsigned int lParam);    // 0x5DE520
-    void SetupPlayers();  // 0x5E8EA0
+    INT_PTRDlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lParam);  // 0x5DE520
+    void SetupPlayers(void * Source);  // 0x5E8EA0
     int AssignPlayerSlot();  // 0x5E9240
-    int InitLobbyDropdowns();  // 0x5E9E00
-    HWND * Dispatch(void *a1 = 0, void *a2 = 0);  // 0x5EA2A0
-    char SetupPlayerSlotControls();  // 0x5EB660
+    int InitLobbyDropdowns(void * hDlg);  // 0x5E9E00
+    HWND * Dispatch();  // 0x5EA2A0
+    char SetupPlayerSlotControls(int hDlg);  // 0x5EB660
     char FillOptionCombo();  // 0x5EE3A0
     char CheckLobbyConditions();  // 0x5E9290
     wchar_t * DeleteAndZero();  // 0x5EDFC0
     int GetPlayerCount(char a1);  // 0x5DA080
-    char ValidateSerialNumber(void *a1 = 0);  // 0x5DC170
-    BOOL IsValidPlayerName();  // 0x5E9470
+    char ValidateSerialNumber();  // 0x5DC170
+    BOOLIsValidPlayerName();  // 0x5E9470
     bool CheckMinPlayers();  // 0x5E9510
     char CheckPlayerNameValid();  // 0x5E96A0
     char CheckPlayerNames();  // 0x5E9720
-    void UpdateLabels();  // 0x5EE6A0
+    void UpdateLabels(int hDlg);  // 0x5EE6A0
 };
 } // namespace gamemd

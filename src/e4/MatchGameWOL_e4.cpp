@@ -36,11 +36,11 @@ void sub_7A19E0()
   {
     for ( i = *((unsigned int *)stru_B77D80 + (dword_B77D98(&v12) & ((1 << dword_B77D8C) - 1))); i; i = *(unsigned int *)(i + 112) ) /*0x7a1a4b*/
     {
-      if ( String::Compare((const char **)i, (const char **)&v12) ) /*0x7a1a54*/
+      if ( ((String *)((const char **)i))->Compare((const char **)&v12) ) /*0x7a1a54*/
         break; /*0x7a1a5b*/
     }
   }
-  v2 = String::GetOrEmpty((char **)&stru_B76AC4); /*0x7a1a6a*/
+  v2 = ((String *)((char **)&stru_B76AC4))->GetOrEmpty(); /*0x7a1a6a*/
   String::Assign((char **)&v13, v2); /*0x7a1a74*/
   v3 = dword_B77900; /*0x7a1a79*/
   v4 = 0; /*0x7a1a7e*/
@@ -57,7 +57,7 @@ void sub_7A19E0()
     {
       if ( v6 >= 0 && v5 < v3 ) /*0x7a1a8e*/
         v4 = (char *)dword_B77908 + v6; /*0x7a1a96*/
-      v7 = String::GetOrEmpty_Alt((char **)&v13); /*0x7a1aa1*/
+      v7 = ((String *)((char **)&v13))->GetOrEmpty_Alt(); /*0x7a1aa1*/
       if ( !_strcmpi(v7, v4 + 36) ) /*0x7a1aa7*/
         break; /*0x7a1aa7*/
       v3 = dword_B77900; /*0x7a1ab3*/

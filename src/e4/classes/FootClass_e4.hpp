@@ -653,7 +653,6 @@ struct FootClass {
     bool FootClass_field_6BE;  // 0x6BE
     bool FootClass_field_6BF;  // 0x6BF
     unsigned int FootClass_field_abstract_array_5AC;
-    unsigned int RemoveFromPointerArray;
     unsigned int __pad_58C;
     unsigned int __pad_5B0;
     unsigned int currentJumpjetMapCoords;
@@ -663,6 +662,8 @@ struct FootClass {
     unsigned int unknownAbstractArray588;
     unsigned int Capacity;
     unsigned int FindAITarget;
+    unsigned int __pad_0;
+    unsigned int MissionMoveCarryallLand;
 // --- flat members (END) ---
     AbstractClass * * Destruct(void *a1 = 0);
     int updateThreat();
@@ -674,6 +675,7 @@ struct FootClass {
     static double SetField(...);  // C2597 interim stub
     static double ProcessDeploy(...);  // C2597 interim stub
     static double AssignDestination(...);  // C2597 interim stub
+    static double RemoveFromPointerArray(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

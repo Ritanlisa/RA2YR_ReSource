@@ -15,6 +15,6 @@ struct E4Recv_6A6AF0 {
     unsigned int AbstractClass;
 // --- flat members (END) ---
     int Vf56(int,  ...);    // G6 vtable slot dispatch
-    char sub_6A6AF0(ObjectClass * aP1,  int a3);    // 0x6A6AF0
+    char sub_6A6AF0(void * aP1,  int a3);    // 0x6A6AF0
 };
 } // namespace gamemd

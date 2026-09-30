@@ -19,16 +19,16 @@ struct FileClass {
     unsigned int OpenWithCDSearch;
 // --- flat members (END) ---
     char Stub(int a1);
-    int Close(void *a1 = 0);
-    int GetState(void *a1 = 0);
-    int Open(int a2, void *a3 = 0, void *a1 = 0);
-    int Read(BufferIOFileClass * aP1, AbstractClass * aP2);
-    int Seek(LONG lDistanceToMove, DWORD dwMoveMethod);
-    int SetFileName(void* aP1);
+    int Close();
+    int GetState();
+    int Open(int a2);
+    int Read(void * aP1, void * aP2);
+    int Seek(int lDistanceToMove, int dwMoveMethod);
+    int SetFileName(void * aP1);
     int SetState();
     int StubReturnFalse();
-    int Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite);
-    unsigned int * loc_401950(char a2);
+    int Write(void * aP1, int nNumberOfBytesToWrite);
+    unsigned int * loc_401950();
      double Load(...);  // C2597 interim stub
 };
 

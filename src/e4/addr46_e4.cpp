@@ -1107,7 +1107,7 @@ namespace gamemd {
 char E4Recv_46D490::sub_46D490()
 {
 
-  return *((unsigned char *)&MEMORY[0x89E000] + (unsigned int)this); /*0x46d496*/
+  return *((unsigned char *)&g_abs_89E000 + (unsigned int)this); /*0x46d496*/
 
 }
 } // namespace gamemd
@@ -1160,7 +1160,7 @@ int Lobby_GetPlayerColor(int a1)
 
   v2 = (wchar_t *)*(&dword_A8DA90 + a1); /*0x46f814*/
   if ( Player::IsObserver(v2) ) /*0x46f81d*/
-    return MEMORY[0xA8B2BC][a1]; /*0x46f826*/
+    return g_abs_A8B2BC[a1]; /*0x46f826*/
   if ( v2 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x46f836*/
     return -2; /*0x46f839*/
   if ( v2 == (wchar_t *)g_Lobby_PlayerCount ) /*0x46f846*/
@@ -1182,7 +1182,7 @@ int HouseClass_GetSideIndex(int a1)
 
   v2 = (wchar_t *)*(&dword_A8DA90 + a1); /*0x46f884*/
   if ( Player::IsObserver(v2) ) /*0x46f88d*/
-    return MEMORY[0xA8B2DC][a1]; /*0x46f896*/
+    return g_abs_A8B2DC[a1]; /*0x46f896*/
   if ( v2 == (wchar_t *)g_HouseClass_ObserverFlags ) /*0x46f8a6*/
     return -2; /*0x46f8a9*/
   if ( v2 == (wchar_t *)g_Lobby_PlayerCount ) /*0x46f8b6*/

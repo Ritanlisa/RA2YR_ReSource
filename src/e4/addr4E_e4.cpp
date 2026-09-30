@@ -73,7 +73,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2 + 4); /*0x4e0a55*/
+      v6 = (unsigned int *)(RA2_OPNEW(8 * a2 + 4));
       if ( v6 ) /*0x4e0a5f*/
       {
         *v6 = a2; /*0x4e0a64*/
@@ -100,7 +100,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
       *((unsigned char *)this + 13) = 1; /*0x4e0a86*/
     }
   }
-  *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/
+  *this = (unsigned int *)(&vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass);
   *((unsigned int *)this + 5) = 10; /*0x4e0a90*/
   *((unsigned int *)this + 4) = 0; /*0x4e0a97*/
   return this; /*0x4e0aa0*/
@@ -1936,7 +1936,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e925c*/
       v4 = a3; /*0x4e9272*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e926e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e926e*/
     *((unsigned char *)this + 12) = 1; /*0x4e9276*/
     if ( v4 ) /*0x4e927a*/
     {
@@ -1949,7 +1949,7 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
           ++i; /*0x4e929e*/
         if ( *((unsigned char *)this + 13) ) /*0x4e92ab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e92b6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4e92b6*/
           *((unsigned int *)this + 1) = 0; /*0x4e92be*/
         }
       }
@@ -1986,7 +1986,7 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e9e4e*/
     *((unsigned char *)this + 12) = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {
@@ -1999,7 +1999,7 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
           ++i; /*0x4e9e7e*/
         if ( *((unsigned char *)this + 13) ) /*0x4e9e8b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9e96*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4e9e96*/
           *((unsigned int *)this + 1) = 0; /*0x4e9e9e*/
         }
       }
@@ -2028,7 +2028,7 @@ void _VectorClass_PAVParticleClass::ParticleSystemClass__vt_03_()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4e9edd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4e9ee3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4e9ee3*/
     *((unsigned int *)this + 1) = 0; /*0x4e9eeb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e9eee*/
@@ -2046,7 +2046,7 @@ void nullsub_138()
 
 // 0x4E0D30
 namespace gamemd {
-unsigned int * FoggedObjectClass_42::loc_4E0D30(char a2)
+unsigned int * FoggedObjectClass_42::loc_4E0D30(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -2055,13 +2055,13 @@ unsigned int * FoggedObjectClass_42::loc_4E0D30(char a2)
   *Block = &vt_VectorClass_FootClass; /*0x4e0ce6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4e0cf0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4e0cf8*/
+    RA2_OPDEL(v3); /*0x4e0cf8*/
     *(Block + 1) = 0; /*0x4e0d00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4e0d0b*/
   *(Block + 2) = 0; /*0x4e0d11*/
-  if ( (a2 & 1) != 0 ) /*0x4e0d18*/
-    __3_YAXPAX_Z(Block); /*0x4e0d1b*/
+  if ( (Block & 1) != 0 ) /*0x4e0d18*/
+    RA2_OPDEL(Block); /*0x4e0d1b*/
   return (VectorClass *)Block; /*0x4e0d25*/
 
 }
@@ -4878,7 +4878,7 @@ void HouseClass::vt_03_()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4e92fd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4e9303*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4e9303*/
     *((unsigned int *)this + 1) = 0; /*0x4e930b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e930e*/
@@ -4965,7 +4965,7 @@ unsigned int ParticleSystemClass::vt_05_(int a2)
 
 // 0x4EF4E0
 namespace gamemd {
-VectorClass_flat * HouseClass::vt_00_(char a2)
+VectorClass_flat * HouseClass::vt_00_(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -4974,13 +4974,13 @@ VectorClass_flat * HouseClass::vt_00_(char a2)
   *Block = &vt_VectorClass_TagClass; /*0x4ef4e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef4f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef4f8*/
+    RA2_OPDEL(v3); /*0x4ef4f8*/
     *(Block + 1) = 0; /*0x4ef500*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef50b*/
   *(Block + 2) = 0; /*0x4ef511*/
-  if ( (a2 & 1) != 0 ) /*0x4ef518*/
-    __3_YAXPAX_Z(Block); /*0x4ef51b*/
+  if ( (Block & 1) != 0 ) /*0x4ef518*/
+    RA2_OPDEL(Block); /*0x4ef51b*/
   return (VectorClass *)Block; /*0x4ef525*/
 
 }
@@ -4988,7 +4988,7 @@ VectorClass_flat * HouseClass::vt_00_(char a2)
 
 // 0x4EF800
 namespace gamemd {
-VectorClass_flat * ParticleSystemClass::vt_00_(char a2)
+VectorClass_flat * ParticleSystemClass::vt_00_(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -4997,13 +4997,13 @@ VectorClass_flat * ParticleSystemClass::vt_00_(char a2)
   *Block = &vt_VectorClass_ParticleClass; /*0x4ef806*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef810*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef818*/
+    RA2_OPDEL(v3); /*0x4ef818*/
     *(Block + 1) = 0; /*0x4ef820*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef82b*/
   *(Block + 2) = 0; /*0x4ef831*/
-  if ( (a2 & 1) != 0 ) /*0x4ef838*/
-    __3_YAXPAX_Z(Block); /*0x4ef83b*/
+  if ( (Block & 1) != 0 ) /*0x4ef838*/
+    RA2_OPDEL(Block); /*0x4ef83b*/
   return (VectorClass *)Block; /*0x4ef845*/
 
 }

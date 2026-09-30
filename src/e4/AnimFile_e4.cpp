@@ -11,13 +11,13 @@ namespace gamemd {
 char * AnimFile::Stub()
 {
 
-  return (unsigned char *)this + 1292; /*0x427296*/
+  return (char *)((unsigned char *)this + 1292);
 
 }
 } // namespace gamemd
 // 0x4272A0
 namespace gamemd {
-AnimFile * AnimFile::QueryInterface(char a2)
+AnimFile * AnimFile::QueryInterface(void * Block, char a2)
 {
 
   char v3; // al
@@ -39,13 +39,13 @@ AnimFile * AnimFile::QueryInterface(char a2)
   }
   if ( *((unsigned int *)Block + 900) ) /*0x4272e3*/
   {
-    __3_YAXPAX_Z(*((void **)Block + 900)); /*0x4272ee*/
+    RA2_OPDEL(*((void **)Block + 900)); /*0x4272ee*/
     *((unsigned int *)Block + 900) = 0; /*0x4272f6*/
   }
   *((unsigned char *)Block + 136) = 0; /*0x427300*/
   *(unsigned int *)Block = &vt_Animate; /*0x427308*/
-  if ( (a2 & 1) != 0 ) /*0x42730e*/
-    __3_YAXPAX_Z(Block); /*0x427311*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x42730e*/
+    RA2_OPDEL(Block); /*0x427311*/
   return (AnimFile *)Block; /*0x42731b*/
 
 }

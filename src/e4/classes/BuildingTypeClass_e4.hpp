@@ -1562,8 +1562,9 @@ struct BuildingTypeClass {
     unsigned char u8_14F0;
     unsigned int q8604;
     unsigned int q8608;
+    unsigned int vtable0;
 // --- flat members (END) ---
-    AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
+    AbstractClass * * CleanupMembers(void * a1, void * a2);
     AbstractClass * * FindOrCreateAlt();
     AbstractClass * * LoadRepairAnimations();
     AbstractClass * * SaveLoad_Prefix();
@@ -1573,32 +1574,32 @@ struct BuildingTypeClass {
     ParticleTypeClass * * FindOrCreateEx(void *a1 = 0);
     bool CanPlacePath(unsigned short *a2, int a3);
     char Enqueue(int a2, void *a1 = 0);
-    int CheckPlacementArea(ObjectClass * aP1, ObjectClass * aP2);
+    int CheckPlacementArea(void * aP1, void * aP2);
     int ConstructFull(char * Source);
-    int FindAnimByName(INIClass * aP1, unsigned char * a2, AnimTypeClass * aP3);
+    int FindAnimByName(void * aP1, unsigned char * a2, void * aP3);
     int FindIndex(void *a1 = 0);
     int FindIndexByName(void *a1 = 0);
     int GetAuxField();
     int GetClassIdentifier();
     int GetMaxPips();
     int GetObjectSize();
-    int GetPowerOutput(ObjectClass * aP1);
+    int GetPowerOutput(void * aP1);
     int GetTypeIdentifier();
     int IsPlacementValid(void* aP1, void* aP2);
     int ProcessData(unsigned int * a2, short * a3);
     int SaveLoad_Prefix_0();
     int UpdatePower();
     int ddtor(void *a1 = 0);
-    size_t Dequeue(BuildingClass * aP1);
-    unsigned int * Construct(AbstractClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    size_t Dequeue(void * aP1);
+    unsigned int * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int * GetSizeInLeptons(unsigned int * a2);
     unsigned int * GetUpgradeOffset(unsigned int * a2);
-    unsigned int * loadBuildingProperty_b_545E520(ObjectTypeClass * aP1);
+    unsigned int * loadBuildingProperty_b_545E520(void * aP1);
     unsigned int * loadBuildingProperty_b_5478850(int a2, int a3);
     void IsPowered();
     void LoadVoxel();
-    void* LoadAnimations(ObjectTypeClass * aP1);
-    void* ProcessPower(AbstractClass * aP1, void *a1 = 0);
+    void* LoadAnimations(void * aP1);
+    void* ProcessPower(void * aP1, void *a1 = 0);
 };
 
 } // namespace gamemd

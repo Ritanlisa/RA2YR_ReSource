@@ -515,7 +515,7 @@ char E4Recv_6F03F0::sub_6F03F0()
 
   int *v1; // esi
 
-  v1 = *((unsigned int *)this + 21); /*0x6f03f2*/
+  v1 = (int *)(*((unsigned int *)this + 21));
   if ( !v1 ) /*0x6f03f9*/
     return 0; /*0x6f0423*/
   while ( *(int *)((*(int (**)(int *))(*v1 + 132))(v1) + 1668) > 0 && v1[191] <= 0 ) /*0x6f0417*/
@@ -832,7 +832,7 @@ void sub_6F2AD0()
 namespace gamemd {
 int sub_6F2AF0()
 {
-    MEMORY[0xB0EA70] = Timer::GetTicks();
+    g_abs_B0EA70 = Timer::GetTicks();
   dword_B0EA78 = 0; /*0x6f2b04*/
   return atexit(sub_6F2B20); /*0x6f2b14*/
 }
@@ -857,7 +857,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   int * v8;
   int * v9;
   int * v10;
-  int v11; // eax
+  int * v11;
   int *v12; // eax
   int v13; // ecx
   int v14; // edx
@@ -882,8 +882,8 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   v10 = (int *)(a2[1]);
   v21[0] = (unsigned int)((int *)(v7));
   v11 = (int *)(*a2);
-  v22 = v9; /*0x6f5f5f*/
-  v12 = Coord::Subtract(v26, (3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1[2]) / 4); /*0x6f5fa0*/
+  v22 = (int *)(v9);
+  v12 = (int *)(Coord::Subtract(v26, (3 * v11 + *a1) / 4, (3 * v10 + v6) / 4, (3 * a2[2] + a1[2]) / 4));
   v13 = v12[1]; /*0x6f5fa9*/
   v14 = v12[2]; /*0x6f5fac*/
   v23 = *v12; /*0x6f5faf*/

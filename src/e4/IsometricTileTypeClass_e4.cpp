@@ -19,7 +19,7 @@
 
 // 0x549B70
 namespace gamemd {
-void IsometricTileTypeClass::ProcessPower()
+void IsometricTileTypeClass::ProcessPower( int * a2)
 {
 
   int v3; // eax
@@ -44,9 +44,9 @@ void IsometricTileTypeClass::ProcessPower()
   Power::TimerProcess(*(unsigned int *)(this + 724)); /*0x549c05*/
   Power::TimerProcess(*(unsigned int *)(this + 728)); /*0x549c13*/
   Power::TimerProcess(*(unsigned int *)(this + 732)); /*0x549c21*/
-  LOBYTE(v5) = *(unsigned char *)(this + 736); /*0x549c26*/
+  IDA_LOBYTE(v5) = *(unsigned char *)(this + 736); /*0x549c26*/
   v6 = Power::FlagProcess(a2, v5); /*0x549c2f*/
-  LOBYTE(v6) = *(unsigned char *)(this + 737); /*0x549c34*/
+  IDA_LOBYTE(v6) = *(unsigned char *)(this + 737); /*0x549c34*/
   Power::FlagProcess(a2, v6); /*0x549c3d*/
   Power::TimerProcess(*(unsigned int *)(this + 740)); /*0x549c4b*/
   Power::TimerProcess(*(unsigned int *)(this + 744)); /*0x549c59*/
@@ -65,9 +65,9 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
   int result; // eax
   int j; // eax
 
-  for ( i = 0; i < MEMORY[0x87F6A8]; *((unsigned int *)MEMORY[0x87F69C] + i - 1) = 0 ) /*0x549c8a*/
+  for ( i = 0; i < g_abs_87F6A8; *((unsigned int *)g_abs_87F69C + i - 1) = 0 ) /*0x549c8a*/
   {
-    v3 = (void (***)(unsigned int, int))*((unsigned int *)MEMORY[0x87F69C] + i); /*0x549c91*/
+    v3 = (void (***)(unsigned int, int))*((unsigned int *)g_abs_87F69C + i); /*0x549c91*/
     if ( v3 ) /*0x549c96*/
       (**v3)(v3, 1); /*0x549c9c*/
     ++i; /*0x549ca3*/
@@ -87,19 +87,19 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       a1[2] = (int)&IsometricTileTypeClass::`vftable'; /*0x549d0f*/
       a1[3] = (int)&vt_IsometricTileTypeClass; /*0x549d16*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], a1 + 175); /*0x549d2a*/
-    for ( j = 0; j < MEMORY[0x87F6A8]; *((unsigned int *)MEMORY[0x87F69C] + j - 1) = 0 ) /*0x549d39*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, a1 + 175); /*0x549d2a*/
+    for ( j = 0; j < g_abs_87F6A8; *((unsigned int *)g_abs_87F69C + j - 1) = 0 ) /*0x549d39*/
       ++j; /*0x549d41*/
     TerrainClass::InitTheatre(a1); /*0x549d56*/
     return 0; /*0x549d5b*/
   }
-  return result; /*0x549d5d*/
+  return (gamemd::AbstractClass **)(result);
 
 }
 } // namespace gamemd
 // 0x549DD0
 namespace gamemd {
-void IsometricTileTypeClass::GetTileIndex()
+void IsometricTileTypeClass::GetTileIndex( int a2, int a3)
 {
 
   int result; // eax
@@ -107,7 +107,7 @@ void IsometricTileTypeClass::GetTileIndex()
   if ( *(this + 175) == a2 ) /*0x549ddc*/
     *(this + 175) = 0; /*0x549dde*/
   result = *(this + 178); /*0x549de8*/
-  if ( result != -1 && *((unsigned int *)MEMORY[0x8B4154] + result) == a2 ) /*0x549e02*/
+  if ( result != -1 && *((unsigned int *)g_abs_8B4154 + result) == a2 ) /*0x549e02*/
     *(this + 178) = -1; /*0x549e04*/
   return result; /*0x549e0e*/
 
@@ -129,7 +129,7 @@ int IsometricTileTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * a
 
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x549d7f*/
+  result = ((AbstractClass *)(aP0))->SaveLoad_PrefixWrapper(aP1, (TechnoTypeClass *)aP2); /*0x549d7f*/
   if ( result >= 0 ) /*0x549d86*/
     return 0; /*0x549d88*/
   return result; /*0x549d8a*/
@@ -171,12 +171,12 @@ int IsometricTileTypeClass::GetObjectSize()
 } // namespace gamemd
 // 0x54A170
 namespace gamemd {
-IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2)
+IsometricTileTypeClass * IsometricTileTypeClass::ddtor(void * Block, char a2)
 {
 
   IsometricTileTypeClass::CleanupMembers((int)Block); /*0x54a173*/
-  if ( (a2 & 1) != 0 ) /*0x54a17d*/
-    __3_YAXPAX_Z(Block); /*0x54a180*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x54a17d*/
+    RA2_OPDEL(Block); /*0x54a180*/
   return (IsometricTileTypeClass *)Block; /*0x54a18a*/
 
 }
@@ -192,7 +192,7 @@ void IsometricTileTypeClass::ClearBuffer()
   *((unsigned int *)this + 4) = 0; /*0x54a199*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x54a1a0*/
   {
-    __3_YAXPAX_Z(v2); /*0x54a1a6*/
+    RA2_OPDEL(v2); /*0x54a1a6*/
     *((unsigned int *)this + 1) = 0; /*0x54a1ae*/
   }
   *((unsigned char *)this + 13) = 0; /*0x54a1b1*/
@@ -228,7 +228,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x54a3e8*/
       v4 = a3; /*0x54a3fe*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x54a3fa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x54a3fa*/
     *((unsigned char *)this + 12) = 1; /*0x54a402*/
     if ( !v4 ) /*0x54a406*/
       return 0; /*0x54a47a*/
@@ -241,7 +241,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x54a421*/
       if ( *((unsigned char *)this + 13) ) /*0x54a42e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a439*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x54a439*/
         *((unsigned int *)this + 1) = 0; /*0x54a441*/
       }
     }
@@ -284,22 +284,22 @@ int IsometricTileTypeClass::FindItem(unsigned int * a2)
 } // namespace gamemd
 // 0x54A760
 namespace gamemd {
-DynamicVector * IsometricTileTypeClass::Constructor(char a2)
+DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x54a763*/
-  *Block = &vt_VectorClass_unsigned_short; /*0x54a766*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_unsigned_short);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x54a770*/
   {
-    __3_YAXPAX_Z(v3); /*0x54a778*/
+    RA2_OPDEL(v3); /*0x54a778*/
     *(Block + 1) = 0; /*0x54a780*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x54a78b*/
   *(Block + 2) = 0; /*0x54a791*/
-  if ( (a2 & 1) != 0 ) /*0x54a798*/
-    __3_YAXPAX_Z(Block); /*0x54a79b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x54a798*/
+    RA2_OPDEL(Block); /*0x54a79b*/
   return (DynamicVector *)Block; /*0x54a7a5*/
 
 }
@@ -321,7 +321,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
       *((unsigned int *)this + 1) = a3; /*0x54a878*/
       return this; /*0x54a87e*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x54a88d*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x54a88d*/
     *((unsigned char *)this + 13) = 1; /*0x54a890*/
   }
   return this; /*0x54a87d*/

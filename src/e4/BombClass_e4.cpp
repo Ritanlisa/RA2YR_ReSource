@@ -36,11 +36,11 @@ int BombClass::AbstractClass()
   *((unsigned int *)this + 11) = 0; /*0x4385ff*/
   *((unsigned char *)this + 88) = 0; /*0x438602*/
   AudioController::Init((unsigned int *)((char *)this + 60)); /*0x438605*/
-  *((unsigned int *)this + 20) = MEMORY[0x8871E0]->ZoomInFactor; /*0x438615*/
+  *((unsigned int *)this + 20) = g_abs_8871E0->ZoomInFactor; /*0x438615*/
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (unk_89C675 || !dword_89C670)
     && dword_89C67C > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_89C668 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_89C668 + 8))(
          &dword_89C668,
          dword_89C670 + dword_89C67C,
          0) )
@@ -62,8 +62,8 @@ void * BombClass::GetCurrentFrame()
 
   if ( *((unsigned int *)this + 12) == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
-  v2 = 2 * (((int)MEMORY[0xA8ED84] - *((unsigned int *)this + 13)) / (MEMORY[0x8871E0]->?[1] / 6)); /*0x438a4c*/
-  if ( (int)MEMORY[0xA8ED84] % (2 * MEMORY[0x8871E0]->?[3]) >= MEMORY[0x8871E0]->?[3] ) /*0x438a53*/
+  v2 = 2 * (((int)g_abs_A8ED84 - *((unsigned int *)this + 13)) / (g_abs_8871E0->?[1] / 6)); /*0x438a4c*/
+  if ( (int)g_abs_A8ED84 % (2 * g_abs_8871E0->?[3]) >= g_abs_8871E0->?[3] ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
     return __0Iostream_init_QAE_XZ_1((Iostream_init *)v2); /*0x438a59*/
@@ -78,7 +78,7 @@ namespace gamemd {
 int BombClass::TimeToExplode()
 {
 
-  return !*((unsigned int *)this + 12) && (int)MEMORY[0xA8ED84] > *((unsigned int *)this + 14) && !*((unsigned char *)this + 88); /*0x438a8c*/
+  return !*((unsigned int *)this + 12) && (int)g_abs_A8ED84 > *((unsigned int *)this + 14) && !*((unsigned char *)this + 88); /*0x438a8c*/
 
 }
 } // namespace ra2
@@ -115,7 +115,7 @@ int BombClass::Stat(int * a2)
     v9 = (*(int (**)(int))(*(unsigned int *)(v8 + 4) + 16))(v8 + 4); /*0x438ade*/
     Power::TimerProcess(v9); /*0x438ae4*/
   }
-  LOBYTE(v3) = *((unsigned char *)this + 88); /*0x438ae9*/
+  IDA_LOBYTE(v3) = *((unsigned char *)this + 88); /*0x438ae9*/
   return Power::FlagProcess(a2, v3); /*0x438af4*/
 
 }
@@ -209,13 +209,13 @@ int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 
 // 0x4393F0
 namespace gamemd {
-BombClass * BombClass::CopyTo(char a2)
+BombClass * BombClass::CopyTo(unsigned int * Block, char a2)
 {
 
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &BombClass::`vftable'; /*0x4393f7*/
+  *Block = (unsigned int)(&BombClass::`vftable');
   *(Block + 1) = &BombClass::`vftable'; /*0x4393fd*/
   *(Block + 2) = &BombClass::`vftable'; /*0x439404*/
   *(Block + 3) = &vt_BombClass; /*0x43940b*/
@@ -232,8 +232,8 @@ BombClass * BombClass::CopyTo(char a2)
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
   AbstractClass::DTOR(Block); /*0x439462*/
-  if ( (a2 & 1) != 0 ) /*0x43946c*/
-    __3_YAXPAX_Z(Block); /*0x43946f*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x43946c*/
+    RA2_OPDEL(Block); /*0x43946f*/
   return (BombClass *)Block; /*0x439479*/
 
 }

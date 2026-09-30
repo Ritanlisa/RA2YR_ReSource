@@ -36,22 +36,24 @@ struct INIClass {
     unsigned int vtable0;
     unsigned int ReadDifficultyModifiers;
     unsigned int unknown38;
+    unsigned int INISection;
+    unsigned int Debug;
+    unsigned int Event;
     unsigned int ReadInt_Overwrite;
     unsigned int SetInt;
     unsigned int SetString;
-    unsigned int WriteToString;
 // --- flat members (END) ---
-    INIClass * ReadCoord(double aP1, int a2, INIClass * aP2, int a4);
-    ObjectClass * * BinarySearchSection(INIClass * aP1);
-    void* * GetKeyCount(INIClass * aP1);
+    INIClass * ReadCoord(double aP1, int a2, void * aP2, int a4);
+    ObjectClass * * BinarySearchSection(void * aP1);
+    void* * GetKeyCount(void * aP1);
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
-    int GetBool(INIClass * aP1, unsigned char * a2, int a4);
-    int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2);
-    int ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3);
+    int GetBool(void * aP1, unsigned char * a2, int a4);
+    int GetStringByIndex(void * aP1, void * aP2);
+    int ReadInt(void * aP1, void * aP2, void * aP3);
     int WOLobby_Play();
     int sub_44FE60();
     INIClass();
-    unsigned int GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count);
+    unsigned int GetString(void * aP1, unsigned char * a2, void * aP3, void * aP4, int Count);
     void SetGameOptionsPing();
     static double ClearSection(...);  // C2597 interim stub
     static double GetBase64Data(...);  // C2597 interim stub
@@ -73,6 +75,7 @@ struct INIClass {
     static double SetIntFormat(...);  // C2597 interim stub
     static double ReadTokenizedPair(...);  // C2597 interim stub
     static double SaveToPipe(...);  // C2597 interim stub
+    static double WriteToString(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

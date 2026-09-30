@@ -17,7 +17,7 @@
 
 // 0x767010
 namespace gamemd {
-void * COMClass::lockServer(char a2)
+void * COMClass::lockServer(rc_ptr_base * Block, char a2)
 {
 
   int v3; // eax
@@ -26,7 +26,7 @@ void * COMClass::lockServer(char a2)
   int v6; // eax
   int v7; // edi
 
-  if ( (a2 & 2) != 0 ) /*0x76701b*/
+  if ( ((unsigned int)(Block)& 2) != 0 ) /*0x76701b*/
   {
     v3 = *((unsigned int *)Block - 1); /*0x76701d*/
     v4 = Block - 1; /*0x767021*/
@@ -44,16 +44,16 @@ void * COMClass::lockServer(char a2)
       }
       while ( v7 ); /*0x76703f*/
     }
-    if ( (a2 & 1) != 0 ) /*0x767045*/
-      __3_YAXPAX_Z(v4); /*0x767048*/
+    if ( ((unsigned int)(Block)& 1) != 0 ) /*0x767045*/
+      RA2_OPDEL(v4); /*0x767048*/
     return v4; /*0x767050*/
   }
   else
   {
     Block->vfptr = &vt_rc_ptr_WorldDominationTour_GameOption; /*0x76705a*/
     ComPtr::Release(Block); /*0x767060*/
-    if ( (a2 & 1) != 0 ) /*0x767068*/
-      __3_YAXPAX_Z(Block); /*0x76706b*/
+    if ( ((unsigned int)(Block)& 1) != 0 ) /*0x767068*/
+      RA2_OPDEL(Block); /*0x76706b*/
     return Block; /*0x767073*/
   }
 
@@ -61,12 +61,12 @@ void * COMClass::lockServer(char a2)
 } // namespace gamemd
 // 0x7669F0
 namespace gamemd {
-VectorCursor * COMClass::disconnectPoint(char a2)
+VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption; /*0x7669f9*/
-  if ( (a2 & 1) != 0 ) /*0x7669ff*/
-    __3_YAXPAX_Z(Block); /*0x766a02*/
+  *Block = (unsigned int)(&vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption);
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x7669ff*/
+    RA2_OPDEL(Block); /*0x766a02*/
   return (VectorCursor *)Block; /*0x766a0c*/
 
 }

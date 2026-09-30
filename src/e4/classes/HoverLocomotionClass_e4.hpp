@@ -49,7 +49,7 @@ struct HoverLocomotionClass {
     unsigned char q071;  // 0x71
     unsigned int LocomotionClass;
 // --- flat members (END) ---
-    HoverLocomotionClass * ProcessMove(char a2);
+    HoverLocomotionClass * ProcessMove(unsigned int * Block, char a2);
     int BeginMove(int a1, int * a2);
     int StubReturn120();
     int ddtor(int a1, unsigned int * a2);

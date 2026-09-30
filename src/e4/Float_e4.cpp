@@ -22,23 +22,23 @@ float Float::Accumulate(float value, int index)
 } // namespace gamemd
 // 0x6C96B0
 namespace gamemd {
-float Float::SubtractClamped(float a, float b, float min)
+float Float::SubtractClamped( BuildingTypeClass * aP1, IUnknown * aP2)
 {
 
   double result; // st7
   double v4; // st6
 
-  if ( *(a + (unsigned int)min) >= (double)*(float *)&b ) /*0x6c96c0*/
+  if ( *(this + (unsigned int)aP2) >= (double)*(float *)&aP1 ) /*0x6c96c0*/
   {
-    result = *(float *)&b; /*0x6c96d0*/
-    v4 = *(a + (unsigned int)min) - *(float *)&b; /*0x6c96d7*/
+    result = *(float *)&aP1; /*0x6c96d0*/
+    v4 = *(this + (unsigned int)aP2) - *(float *)&aP1; /*0x6c96d7*/
   }
   else
   {
-    result = *(a + (unsigned int)min); /*0x6c96c2*/
+    result = (double)(*(this + (unsigned int)aP2));
     v4 = result - result; /*0x6c96c8*/
   }
-  *(a + (unsigned int)min) = v4; /*0x6c96ca*/
+  *(this + (unsigned int)aP2) = v4; /*0x6c96ca*/
   return result; /*0x6c96cd*/
 
 }

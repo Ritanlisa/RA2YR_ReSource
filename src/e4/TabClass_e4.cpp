@@ -20,7 +20,7 @@ namespace gamemd {
 unsigned int * TabClass::initStripClass()
 {
 
-  *this = 0; /*0x4a2354*/
+  *(unsigned int *)this = (unsigned int *)(0);
   *((unsigned int *)this + 1) = 0; /*0x4a2356*/
   *((unsigned char *)this + 8) = 0; /*0x4a2359*/
   *((unsigned char *)this + 9) = 0; /*0x4a235c*/
@@ -46,7 +46,7 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
   int uniqueId; // edx
   HWND Default; // eax
   wchar_t *v13; // eax
-  unsigned __int8 IsAlliedWith; // al
+  uint8_t IsAlliedWith; // al
   HWND eax18; // eax
   IUnknown *v15; // edi
   const wchar_t *v17; // eax
@@ -58,8 +58,8 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
   HWND v24; // eax
   CampaignScore *v25; // [esp+0h] [ebp-E8h]
   wchar_t *hWnd; // [esp+10h] [ebp-D8h] BYREF
-  __int16 v27; // [esp+14h] [ebp-D4h]
-  unsigned __int8 v28; // [esp+16h] [ebp-D2h]
+  int16_t v27; // [esp+14h] [ebp-D4h]
+  uint8_t v28; // [esp+16h] [ebp-D2h]
   int nIDDlgItem; // [esp+1Ch] [ebp-CCh]
   wchar_t lParam[100]; // [esp+20h] [ebp-C8h] BYREF
 
@@ -74,7 +74,7 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
     {
       BuildingAnimByName = FindBuildingAnimByName((AbstractClass *)&stru_830620.__pad_579C[4368], 1); /*0x6583a1*/
     }
-    else if ( BYTE1(aP2[13].NeedsSaveOrLink) ) /*0x6583a8*/
+    else if ( IDA_BYTE1(aP2[13].NeedsSaveOrLink) ) /*0x6583a8*/
     {
       BuildingAnimByName = FindBuildingAnimByName(&g_INI_Key_Grey, 1); /*0x6583bc*/
     }
@@ -82,10 +82,10 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
     {
       BuildingAnimByName = *(unsigned int *)(stru_B05488.field_4C + 4 * aP2[2505].uniqueId); /*0x6583cf*/
     }
-    v6 = Color::ConvertToRGB((unsigned __int8 *)(BuildingAnimByName + 776), (int)&hWnd); /*0x6583dd*/
+    v6 = Color::ConvertToRGB((uint8_t *)(BuildingAnimByName + 776), (int)&hWnd); /*0x6583dd*/
     v27 = *(unsigned short *)v6; /*0x6583e6*/
     v28 = *(unsigned char *)(v6 + 2); /*0x6583ee*/
-    v7 = (unsigned __int8)v27 | ((HIBYTE(v27) | (v28 << 8)) << 8); /*0x65841f*/
+    v7 = (uint8_t)v27 | ((IDA_HIBYTE(v27) | (v28 << 8)) << 8); /*0x65841f*/
     DlgItem = GetDlgItem(hDlg, v4); /*0x65842e*/
     SendMessageA(DlgItem, 0x498u, 0, v7); /*0x658438*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)lParam); /*0x658447*/
@@ -106,16 +106,16 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
         EnableWindow((HWND)v13, 0); /*0x6584c5*/
         v13 = hWnd; /*0x6584cb*/
       }
-      if ( BYTE1(aP2[13].NeedsSaveOrLink) ) /*0x6584cf*/
+      if ( IDA_BYTE1(aP2[13].NeedsSaveOrLink) ) /*0x6584cf*/
       {
         ShowWindow((HWND)v13, 0); /*0x6584dc*/
       }
       else
       {
-        LOBYTE(v27) = HouseClass::IsAlliedWith((void *)HouseClass_Player.field_0, (IUnknown *)aP2); /*0x6584f4*/
-        SendMessageA((HWND)hWnd, 0xF1u, (unsigned __int8)v27, 0); /*0x65850b*/
+        IDA_LOBYTE(v27) = HouseClass::IsAlliedWith((void *)HouseClass_Player.field_0, (IUnknown *)aP2); /*0x6584f4*/
+        SendMessageA((HWND)hWnd, 0xF1u, (uint8_t)v27, 0); /*0x65850b*/
       }
-      IsAlliedWith = HouseClass::IsAlliedWith(aP2, (IUnknown *)HouseClass_Player.field_0); /*0x658515*/
+      IsAlliedWith = ((HouseClass *)(aP2))->IsAlliedWith((IUnknown *)HouseClass_Player.field_0); /*0x658515*/
       globalHelper_003DD0((HWND)hWnd, IsAlliedWith); /*0x658520*/
     }
     if ( aP2[16].__pad_0[8] ) /*0x658525*/

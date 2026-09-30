@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_6C6B00 {
     void* vfptr;  // minimal E2 declaration
-    unsigned int * Audio_Read_6C6B00(AbstractClass * aP1);  // 0x6C6B00
+    unsigned int * Audio_Read_6C6B00(void * aP1);  // 0x6C6B00
 };
 } // namespace gamemd

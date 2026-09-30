@@ -24,12 +24,12 @@
 
 // 0x41E350
 namespace gamemd {
-unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
+unsigned int * AnimTypeClass::Construct2(char * Source)
 {
 
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int)this, aP1); /*0x41e359*/
+  AbstractTypeClass::Constructor((int)this, Source); /*0x41e359*/
   *((unsigned int *)this + 38) = -1; /*0x41e363*/
   *((unsigned int *)this + 42) = -1; /*0x41e369*/
   *((unsigned int *)this + 46) = 0; /*0x41e374*/
@@ -58,16 +58,16 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
   *((unsigned int *)this + 2) = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
   *((unsigned int *)this + 3) = &AITriggerTypeClass::`vftable'; /*0x41e415*/
   memset((unsigned int *)this + 57, 0, 0x20u); /*0x41e41c*/
-  if ( MEMORY[0xA8B210] < MEMORY[0xA8B208] /*0x41e452*/
-    || (MEMORY[0xA8B20D] || !MEMORY[0xA8B208])
-    && MEMORY[0xA8B214] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8B200] + 8))(
-         &MEMORY[0xA8B200],
-         MEMORY[0xA8B208] + MEMORY[0xA8B214],
+  if ( g_abs_A8B210 < g_abs_A8B208 /*0x41e452*/
+    || (g_abs_A8B20D || !g_abs_A8B208)
+    && g_abs_A8B214 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8B200 + 8))(
+         &g_abs_A8B200,
+         g_abs_A8B208 + g_abs_A8B214,
          0) )
   {
-    v3 = MEMORY[0xA8B210]++; /*0x41e45f*/
-    *((unsigned int *)MEMORY[0xA8B204] + v3) = this; /*0x41e46e*/
+    v3 = g_abs_A8B210++; /*0x41e45f*/
+    *((unsigned int *)g_abs_A8B204 + v3) = this; /*0x41e46e*/
   }
   return this; /*0x41e473*/
 
@@ -75,7 +75,7 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
 }
 // 0x427530
 namespace gamemd {
-AnimTypeClass * AnimTypeClass::Construct(char* a1)
+AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
 {
 
   AnimTypeClass *v3; // eax
@@ -83,7 +83,7 @@ AnimTypeClass * AnimTypeClass::Construct(char* a1)
   int v5; // eax
   ObjectClass *v6; // ecx
 
-  ObjectTypeClass::ConstructFull((int)this, a1); /*0x42753a*/
+  ObjectTypeClass::ConstructFull((int)this, aP1); /*0x42753a*/
   *((unsigned int *)this + 165) = -1; /*0x427544*/
   *((unsigned int *)this + 166) = 0; /*0x42754a*/
   *((unsigned int *)this + 167) = 0; /*0x427550*/
@@ -173,42 +173,42 @@ AnimTypeClass * AnimTypeClass::Construct(char* a1)
   *((unsigned char *)this + 562) = 1; /*0x42776a*/
   *((unsigned char *)this + 563) = 1; /*0x427771*/
   *((unsigned char *)this + 565) = 0; /*0x427778*/
-  if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] < *(int *)&MEMORY[0x89F690].__pad_579C[62252] /*0x4277b0*/
-    || (MEMORY[0x89F690].__pad_579C[62257] || !*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62252])
-    && *(int *)&MEMORY[0x89F690].__pad_579C[62264] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62244] + 8))(
-         &MEMORY[0x89F690].__pad_579C[62244],
-         *(unsigned int *)&MEMORY[0x89F690].__pad_579C[62252] + *(unsigned int *)&MEMORY[0x89F690].__pad_579C[62264],
+  if ( *(int *)&g_abs_89F690 < *(int *)&g_abs_89F690 /*0x4277b0*/
+    || (g_abs_89F690 || !*(unsigned int *)&g_abs_89F690)
+    && *(int *)&g_abs_89F690 > 0
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&g_abs_89F690 + 8))(
+         &g_abs_89F690,
+         *(unsigned int *)&g_abs_89F690 + *(unsigned int *)&g_abs_89F690,
          0) )
   {
-    v3 = (AnimTypeClass *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62260])++; /*0x4277bd*/
-    *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * (unsigned int)v3) = this; /*0x4277cc*/
+    v3 = (AnimTypeClass *)(*(unsigned int *)&g_abs_89F690)++; /*0x4277bd*/
+    *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * (unsigned int)v3) = this; /*0x4277cc*/
   }
-  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x427803*/
-    || (MEMORY[0xB077F8].__pad_579C[9961] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956])
-    && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
-         &MEMORY[0xB077F8].__pad_579C[9948],
-         *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9968],
+  if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x427803*/
+    || (g_abs_B077F8 || !*(unsigned int *)&g_abs_B077F8)
+    && *(int *)&g_abs_B077F8 > 0
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&g_abs_B077F8 + 8))(
+         &g_abs_B077F8,
+         *(unsigned int *)&g_abs_B077F8 + *(unsigned int *)&g_abs_B077F8,
          0) )
   {
-    v4 = (*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x427810*/
-    *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v4) = this; /*0x42781f*/
+    v4 = (*(unsigned int *)&g_abs_B077F8)++; /*0x427810*/
+    *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * v4) = this; /*0x42781f*/
   }
   v5 = 0; /*0x427828*/
-  if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] <= 0 ) /*0x42782c*/
+  if ( *(int *)&g_abs_89F690 <= 0 ) /*0x42782c*/
   {
 LABEL_17:
     v5 = -1; /*0x427840*/
   }
   else
   {
-    v6 = *(ObjectClass **)&MEMORY[0x89F690].__pad_579C[62248]; /*0x42782e*/
+    v6 = *(ObjectClass **)&g_abs_89F690; /*0x42782e*/
     while ( *(unsigned int **)v6->__pad_0 != this ) /*0x427836*/
     {
       ++v5; /*0x427838*/
       v6 = (ObjectClass *)((char *)v6 + 4); /*0x427839*/
-      if ( v5 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] ) /*0x42783e*/
+      if ( v5 >= *(int *)&g_abs_89F690 ) /*0x42783e*/
         goto LABEL_17; /*0x42783e*/
     }
   }
@@ -231,18 +231,18 @@ void* AnimTypeClass::GetWarhead(int a2)
   char v9; // dl
   char Buffer[512]; // [esp+4h] [ebp-200h] BYREF
 
-  LOBYTE(v3) = *((unsigned char *)this + 862); /*0x427b59*/
+  IDA_LOBYTE(v3) = *((unsigned char *)this + 862); /*0x427b59*/
   if ( !(unsigned char)v3 ) /*0x427b61*/
   {
     if ( *((unsigned char *)this + 556) ) /*0x427b67*/
     {
-      LOBYTE(v3) = ObjectTypeClass::Load2DArt((char *)this); /*0x427b71*/
+      IDA_LOBYTE(v3) = ObjectTypeClass::Load2DArt((char *)this); /*0x427b71*/
     }
     else
     {
       if ( *((unsigned int *)this + 41) && *((unsigned char *)this + 168) ) /*0x427b85*/
       {
-        __3_YAXPAX_Z(*(void **)((char *)this + 164)); /*0x427b90*/
+        RA2_OPDEL(*(void **)((char *)this + 164)); /*0x427b90*/
         *((unsigned char *)this + 168) = 0; /*0x427b98*/
       }
       v4 = *((unsigned char *)this + 504); /*0x427b9f*/
@@ -269,7 +269,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     *((unsigned char *)this + 676) = 1; /*0x427c22*/
     if ( !v7 ) /*0x427c2b*/
     {
-      v8 = *(__int16 *)(v6 + 6); /*0x427c2d*/
+      v8 = *(int16_t *)(v6 + 6); /*0x427c2d*/
       v9 = *((unsigned char *)this + 882); /*0x427c31*/
       *((unsigned int *)this + 176) = v8; /*0x427c37*/
       if ( v9 ) /*0x427c3f*/
@@ -277,10 +277,10 @@ void* AnimTypeClass::GetWarhead(int a2)
     }
     if ( !*((unsigned int *)this + 175) ) /*0x427c4c*/
       *((unsigned int *)this + 175) = *((unsigned int *)this + 176); /*0x427c5c*/
-    *((unsigned int *)this + 166) = *(__int16 *)(v6 + 6) / 2; /*0x427c6b*/
+    *((unsigned int *)this + 166) = *(int16_t *)(v6 + 6) / 2; /*0x427c6b*/
     *((unsigned int *)this + 167) = -1; /*0x427c74*/
     *((unsigned int *)this + 168) = -1; /*0x427c7a*/
-    LOBYTE(v3) = -1; /*0x427c71*/
+    IDA_LOBYTE(v3) = -1; /*0x427c71*/
   }
   return v3; /*0x427c80*/
 
@@ -288,7 +288,7 @@ void* AnimTypeClass::GetWarhead(int a2)
 }
 // 0x427D00
 namespace gamemd {
-int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1, void * a3)
+int AnimTypeClass::LoadFromINI( uint8_t *** a2)
 {
 
   char Bool_Overwrite; // al
@@ -364,120 +364,120 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1, void * a3)
   INIClass Source[2]; // [esp+18h] [ebp-A0h] BYREF
   char Destination[32]; // [esp+98h] [ebp-20h] BYREF
 
-  INIClass::ResetSection(a1);
-  if ( !ObjectTypeClass::LoadFromINI((char *)a1, (CCINIClass *)a1) )
+  INIClass::ResetSection(a2);
+  if ( !ObjectTypeClass::LoadFromINI((char *)a2, (CCINIClass *)a2) )
     return 0;
   Bool_Overwrite = INIClass::ReadBool_Overwrite(
-                     (int)a1,
-                     (unsigned __int8 *)(a1 + 36),
+                     (int)a2,
+                     (uint8_t *)(a2 + 36),
                      &unk_818660,
-                     *(unsigned char *)(a1 + 882));
-  if ( Bool_Overwrite != *(unsigned char *)(a1 + 882) )
+                     *(unsigned char *)(a2 + 882));
+  if ( Bool_Overwrite != *(unsigned char *)(a2 + 882) )
   {
-    *(unsigned char *)(a1 + 882) = Bool_Overwrite;
+    *(unsigned char *)(a2 + 882) = Bool_Overwrite;
     if ( Bool_Overwrite )
-      *(int *)(a1 + 704) /= 2;
+      *(int *)(a2 + 704) /= 2;
     else
-      *(unsigned int *)(a1 + 704) *= 2;
-    v5 = *(unsigned int *)(a1 + 704);
-    if ( *(unsigned int *)(a1 + 700) > v5 )
-      *(unsigned int *)(a1 + 700) = v5;
+      *(unsigned int *)(a2 + 704) *= 2;
+    v5 = *(unsigned int *)(a2 + 704);
+    if ( *(unsigned int *)(a2 + 700) > v5 )
+      *(unsigned int *)(a2 + 700) = v5;
   }
-  if ( *(unsigned char *)(a1 + 504) )
+  if ( *(unsigned char *)(a2 + 504) )
   {
-    if ( !*(unsigned int *)(a1 + 164) )
+    if ( !*(unsigned int *)(a2 + 164) )
     {
-      *(unsigned char *)(a1 + 556) = INIClass::ReadBool_Overwrite(
-                                 (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-                                 (unsigned __int8 *)(a1 + 36),
+      *(unsigned char *)(a2 + 556) = INIClass::ReadBool_Overwrite(
+                                 (int)&g_abs_87F8E4,
+                                 (uint8_t *)(a2 + 36),
                                  &unk_818658,
-                                 *(unsigned char *)(a1 + 556));
-      *(unsigned char *)(a1 + 567) = INIClass::ReadBool_Overwrite(
-                                 (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-                                 (unsigned __int8 *)(a1 + 36),
+                                 *(unsigned char *)(a2 + 556));
+      *(unsigned char *)(a2 + 567) = INIClass::ReadBool_Overwrite(
+                                 (int)&g_abs_87F8E4,
+                                 (uint8_t *)(a2 + 36),
                                  &unk_81864C,
-                                 *(unsigned char *)(a1 + 567));
+                                 *(unsigned char *)(a2 + 567));
     }
-    (*(void (**)(int, int))(*(unsigned int *)a1 + 160))(a1, -1);
+    (*(void (**)(int, int))(*(unsigned int *)a2 + 160))(a2, -1);
   }
-  *(unsigned int *)(a1 + 868) = AnimTypeClass::ReadINIString(
-                              a1,
-                              (unsigned __int8 *)(a1 + 36),
+  *(unsigned int *)(a2 + 868) = AnimTypeClass::ReadINIString(
+                              a2,
+                              (uint8_t *)(a2 + 36),
                               byte_818644,
-                              *(unsigned int *)(a1 + 868));
-  *(unsigned char *)(a1 + 865) = INIClass::ReadBool_Overwrite(
-                             (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-                             (unsigned __int8 *)(a1 + 36),
+                              *(unsigned int *)(a2 + 868));
+  *(unsigned char *)(a2 + 865) = INIClass::ReadBool_Overwrite(
+                             (int)&g_abs_87F8E4,
+                             (uint8_t *)(a2 + 36),
                              &unk_818638,
-                             *(unsigned char *)(a1 + 865));
-  *(unsigned char *)(a1 + 872) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 865));
+  *(unsigned char *)(a2 + 872) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              &unk_81862C,
-                             *(unsigned char *)(a1 + 872));
-  *(unsigned char *)(a1 + 873) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 872));
+  *(unsigned char *)(a2 + 873) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              &unk_818624,
-                             *(unsigned char *)(a1 + 873));
-  *(unsigned char *)(a1 + 876) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 873));
+  *(unsigned char *)(a2 + 876) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              &unk_81861C,
-                             *(unsigned char *)(a1 + 876));
-  *(unsigned char *)(a1 + 866) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 876));
+  *(unsigned char *)(a2 + 866) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              &unk_818610,
-                             *(unsigned char *)(a1 + 866));
-  *(unsigned char *)(a1 + 874) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 866));
+  *(unsigned char *)(a2 + 874) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              &unk_818604,
-                             *(unsigned char *)(a1 + 874));
-  *(unsigned char *)(a1 + 875) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 874));
+  *(unsigned char *)(a2 + 875) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              &unk_8185FC,
-                             *(unsigned char *)(a1 + 875));
-  *(unsigned char *)(a1 + 877) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 875));
+  *(unsigned char *)(a2 + 877) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              &unk_8185F4,
-                             *(unsigned char *)(a1 + 877));
-  *(unsigned char *)(a1 + 878) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 877));
+  *(unsigned char *)(a2 + 878) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              (CCINIClass *)stru_81859C.__pad_48,
-                             *(unsigned char *)(a1 + 878));
-  *(unsigned char *)(a1 + 879) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 878));
+  *(unsigned char *)(a2 + 879) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              &stru_816E3C,
-                             *(unsigned char *)(a1 + 879));
-  *(unsigned char *)(a1 + 880) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 879));
+  *(unsigned char *)(a2 + 880) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              (CCINIClass *)&stru_81859C.INIClass_field_3C,
-                             *(unsigned char *)(a1 + 880));
-  *(unsigned char *)(a1 + 881) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 880));
+  *(unsigned char *)(a2 + 881) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              (CCINIClass *)&stru_81859C.needsSave_flag,
-                             *(unsigned char *)(a1 + 881));
-  *(unsigned char *)(a1 + 883) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 881));
+  *(unsigned char *)(a2 + 883) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              (CCINIClass *)&stru_81859C.__pad_20[8],
-                             *(unsigned char *)(a1 + 883));
-  *(unsigned char *)(a1 + 855) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 883));
+  *(unsigned char *)(a2 + 855) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              (CCINIClass *)stru_81859C.sectionHead,
-                             *(unsigned char *)(a1 + 855));
+                             *(unsigned char *)(a2 + 855));
   Int_Overwrite = INIClass::ReadInt_Overwrite(
-                    (int)a1,
-                    (unsigned __int8 *)(a1 + 36),
+                    (int)a2,
+                    (uint8_t *)(a2 + 36),
                     (CCINIClass *)&stru_81859C.headNode[1],
                     (INIClass *)0xFFFFFFFF);
   if ( Int_Overwrite != -1 )
@@ -486,151 +486,151 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1, void * a3)
       v7 = 0;
     else
       v7 = 900 / Int_Overwrite;
-    *(unsigned int *)(a1 + 688) = v7;
+    *(unsigned int *)(a2 + 688) = v7;
   }
-  *(double *)(a1 + 680) = INIClass::ReadDouble_Overwrite(
-                              (int)a1,
-                              (INIClass *)(a1 + 36),
-                              (unsigned __int8 *)&stru_81859C,
-                              (INIClass *)*(unsigned int *)(a1 + 680));
-  *(unsigned int *)(a1 + 692) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+  *(double *)(a2 + 680) = INIClass::ReadDouble_Overwrite(
+                              (int)a2,
+                              (INIClass *)(a2 + 36),
+                              (uint8_t *)&stru_81859C,
+                              (INIClass *)*(unsigned int *)(a2 + 680));
+  *(unsigned int *)(a2 + 692) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_818594,
-                              *(INIClass **)(a1 + 692));
-  *(unsigned int *)(a1 + 704) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+                              *(INIClass **)(a2 + 692));
+  *(unsigned int *)(a2 + 704) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_818590,
-                              *(INIClass **)(a1 + 704));
-  *(unsigned int *)(a1 + 696) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+                              *(INIClass **)(a2 + 704));
+  *(unsigned int *)(a2 + 696) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_818584,
-                              *(INIClass **)(a1 + 696));
-  *(unsigned int *)(a1 + 700) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+                              *(INIClass **)(a2 + 696));
+  *(unsigned int *)(a2 + 700) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_81857C,
-                              *(INIClass **)(a1 + 700));
-  *(unsigned int *)(a1 + 708) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+                              *(INIClass **)(a2 + 700));
+  *(unsigned int *)(a2 + 708) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_818570,
-                              *(INIClass **)(a1 + 708));
-  v8 = *(AnimTypeClass **)(a1 + 712);
+                              *(INIClass **)(a2 + 708));
+  v8 = *(AnimTypeClass **)(a2 + 712);
   if ( INIClass::GetString(
-         a1,
-         (INIClass *)(a1 + 36),
+         a2,
+         (INIClass *)(a2 + 36),
          &unk_818568,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&g_abs_87F8E4,
          Source,
          128) )
   {
-    v9 = globalHelper_028F70(Source[0].__pad_0, (int)&MEMORY[0x89F690].__pad_579C[62244]);
+    v9 = globalHelper_028F70(Source[0].__pad_0, (int)&g_abs_89F690);
   }
   else
   {
     v9 = v8;
   }
-  *(unsigned int *)(a1 + 712) = v9;
-  *(unsigned int *)(a1 + 724) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+  *(unsigned int *)(a2 + 712) = v9;
+  *(unsigned int *)(a2 + 724) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_81855C,
-                              *(INIClass **)(a1 + 724));
-  *(unsigned int *)(a1 + 728) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+                              *(INIClass **)(a2 + 724));
+  *(unsigned int *)(a2 + 728) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_818544,
-                              *(INIClass **)(a1 + 728));
-  v10 = *(unsigned int *)(a1 + 736);
-  v70 = *(ObjectClass **)(a1 + 732);
+                              *(INIClass **)(a2 + 728));
+  v10 = *(unsigned int *)(a2 + 736);
+  v70 = *(ObjectClass **)(a2 + 732);
   aP4_4 = v10;
-  v11 = INIClass::ReadPoint2D_Overwrite(a1, &aP1, (INIClass *)(a1 + 36), &unk_818534, (RandomStruct *)&v70);
+  v11 = INIClass::ReadPoint2D_Overwrite(a2, &aP1, (INIClass *)(a2 + 36), &unk_818534, (RandomStruct *)&v70);
   v12 = (RandomStruct *)*v11;
   v13 = v11[1];
-  *(unsigned int *)(a1 + 732) = v12;
-  *(unsigned int *)(a1 + 736) = v13;
-  *(unsigned int *)(a1 + 748) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+  *(unsigned int *)(a2 + 732) = v12;
+  *(unsigned int *)(a2 + 736) = v13;
+  *(unsigned int *)(a2 + 748) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_818524,
-                              *(INIClass **)(a1 + 748));
-  *(unsigned char *)(a1 + 856) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                              *(INIClass **)(a2 + 748));
+  *(unsigned char *)(a2 + 856) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              (CCINIClass *)&stru_8184C8.unknown50,
-                             *(unsigned char *)(a1 + 856));
-  *(unsigned char *)(a1 + 857) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 856));
+  *(unsigned char *)(a2 + 857) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              (CCINIClass *)&stru_8184C8.__pad_41[3],
-                             *(unsigned char *)(a1 + 857));
-  *(unsigned int *)(a1 + 832) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+                             *(unsigned char *)(a2 + 857));
+  *(unsigned int *)(a2 + 832) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               (CCINIClass *)&stru_8184C8.unknown38,
-                              *(INIClass **)(a1 + 832));
+                              *(INIClass **)(a2 + 832));
   Double_Overwrite = INIClass::ReadDouble_Overwrite(
-                       (int)a1,
-                       (INIClass *)(a1 + 36),
-                       (unsigned __int8 *)&stru_8184C8.INIClass_field_2C,
-                       (INIClass *)*(unsigned int *)(a1 + 784));
-  v15 = *(INIClass **)(a1 + 808);
-  *(double *)(a1 + 784) = Double_Overwrite;
-  v16 = INIClass::ReadDouble_Overwrite((int)a1, (INIClass *)(a1 + 36), (unsigned __int8 *)stru_8184C8.__pad_20, v15);
-  edx20a = *(INIClass **)(a1 + 792);
-  *(double *)(a1 + 808) = v16;
+                       (int)a2,
+                       (INIClass *)(a2 + 36),
+                       (uint8_t *)&stru_8184C8.INIClass_field_2C,
+                       (INIClass *)*(unsigned int *)(a2 + 784));
+  v15 = *(INIClass **)(a2 + 808);
+  *(double *)(a2 + 784) = Double_Overwrite;
+  v16 = INIClass::ReadDouble_Overwrite((int)a2, (INIClass *)(a2 + 36), (uint8_t *)stru_8184C8.__pad_20, v15);
+  edx20a = *(INIClass **)(a2 + 792);
+  *(double *)(a2 + 808) = v16;
   v18 = INIClass::ReadDouble_Overwrite(
-          (int)a1,
-          (INIClass *)(a1 + 36),
-          (unsigned __int8 *)&stru_8184C8.sectionHead[2],
+          (int)a2,
+          (INIClass *)(a2 + 36),
+          (uint8_t *)&stru_8184C8.sectionHead[2],
           edx20a);
-  v17 = *(CCINIClass **)(a1 + 844);
-  *(double *)(a1 + 792) = v18;
+  v17 = *(CCINIClass **)(a2 + 844);
+  *(double *)(a2 + 792) = v18;
   v20 = INIClass::ReadInt_Overwrite(
-          (int)a1,
-          (unsigned __int8 *)(a1 + 36),
+          (int)a2,
+          (uint8_t *)(a2 + 36),
           (CCINIClass *)&stru_8184C8.headNode[1],
           (INIClass *)v17);
-  v21 = *(AnimTypeClass **)(a1 + 752);
-  *(unsigned int *)(a1 + 844) = v20;
+  v21 = *(AnimTypeClass **)(a2 + 752);
+  *(unsigned int *)(a2 + 844) = v20;
   if ( INIClass::GetString(
-         a1,
-         (INIClass *)(a1 + 36),
-         (unsigned __int8 *)&stru_8184C8,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         a2,
+         (INIClass *)(a2 + 36),
+         (uint8_t *)&stru_8184C8,
+         (INIClass *)&g_abs_87F8E4,
          Source,
          128) )
   {
-    v22 = globalHelper_028F70(Source[0].__pad_0, (int)&MEMORY[0x89F690].__pad_579C[62244]);
+    v22 = globalHelper_028F70(Source[0].__pad_0, (int)&g_abs_89F690);
   }
   else
   {
     v22 = v21;
   }
-  v65 = *(RandomStruct **)(a1 + 756);
-  *(unsigned int *)(a1 + 752) = v22;
-  *(unsigned int *)(a1 + 756) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+  v65 = *(RandomStruct **)(a2 + 756);
+  *(unsigned int *)(a2 + 752) = v22;
+  *(unsigned int *)(a2 + 756) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_8184BC,
                               (INIClass *)v65);
-  v23 = INIClass::ReadBool_Overwrite((int)a1, (unsigned __int8 *)(a1 + 36), &unk_8184B0, *(unsigned char *)(a1 + 854));
-  v24 = *(unsigned char *)(a1 + 853);
-  *(unsigned char *)(a1 + 854) = v23;
-  v25 = INIClass::ReadBool_Overwrite((int)a1, (unsigned __int8 *)(a1 + 36), &unk_8184A8, v24);
-  v64 = *(RandomStruct **)(a1 + 828);
-  *(unsigned char *)(a1 + 853) = v25;
-  v26 = INIClass::ReadInt_Overwrite((int)a1, (unsigned __int8 *)(a1 + 36), &unk_818490, (INIClass *)v64);
-  v27 = *(OverlayTypeClass **)(a1 + 824);
-  *(unsigned int *)(a1 + 828) = v26;
+  v23 = INIClass::ReadBool_Overwrite((int)a2, (uint8_t *)(a2 + 36), &unk_8184B0, *(unsigned char *)(a2 + 854));
+  v24 = *(unsigned char *)(a2 + 853);
+  *(unsigned char *)(a2 + 854) = v23;
+  v25 = INIClass::ReadBool_Overwrite((int)a2, (uint8_t *)(a2 + 36), &unk_8184A8, v24);
+  v64 = *(RandomStruct **)(a2 + 828);
+  *(unsigned char *)(a2 + 853) = v25;
+  v26 = INIClass::ReadInt_Overwrite((int)a2, (uint8_t *)(a2 + 36), &unk_818490, (INIClass *)v64);
+  v27 = *(OverlayTypeClass **)(a2 + 824);
+  *(unsigned int *)(a2 + 828) = v26;
   if ( INIClass::GetString(
-         a1,
-         (INIClass *)(a1 + 36),
+         a2,
+         (INIClass *)(a2 + 36),
          &unk_81847C,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&g_abs_87F8E4,
          Source,
          128) )
   {
@@ -640,108 +640,108 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1, void * a3)
   {
     v28 = v27;
   }
-  v29 = *(unsigned char *)(a1 + 864);
-  *(unsigned int *)(a1 + 824) = v28;
+  v29 = *(unsigned char *)(a2 + 864);
+  *(unsigned int *)(a2 + 824) = v28;
   v30 = INIClass::ReadBool_Overwrite(
-          (int)a1,
-          (unsigned __int8 *)(a1 + 36),
+          (int)a2,
+          (uint8_t *)(a2 + 36),
           (CCINIClass *)&stru_818424.__pad_41[3],
           v29);
-  _FFFFFFF4a = *(unsigned char *)(a1 + 884);
-  *(unsigned char *)(a1 + 864) = v30;
-  *(unsigned char *)(a1 + 884) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+  _FFFFFFF4a = *(unsigned char *)(a2 + 884);
+  *(unsigned char *)(a2 + 864) = v30;
+  *(unsigned char *)(a2 + 884) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              (CCINIClass *)&stru_818424.needsSave_flag,
                              _FFFFFFF4a);
   v31 = INIClass::ReadBool_Overwrite(
-          (int)a1,
-          (unsigned __int8 *)(a1 + 36),
+          (int)a2,
+          (uint8_t *)(a2 + 36),
           (CCINIClass *)&stru_818424.__pad_20[4],
-          *(unsigned char *)(a1 + 852));
-  v32 = *(INIClass **)(a1 + 848);
-  *(unsigned char *)(a1 + 852) = v31;
+          *(unsigned char *)(a2 + 852));
+  v32 = *(INIClass **)(a2 + 848);
+  *(unsigned char *)(a2 + 852) = v31;
   v33 = INIClass::ReadInt_Overwrite(
-          (int)a1,
-          (unsigned __int8 *)(a1 + 36),
+          (int)a2,
+          (uint8_t *)(a2 + 36),
           (CCINIClass *)&stru_818424.sectionHead[1],
           v32);
-  v66 = *(RandomStruct **)(a1 + 836);
-  *(unsigned int *)(a1 + 848) = v33;
-  *(unsigned int *)(a1 + 836) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+  v66 = *(RandomStruct **)(a2 + 836);
+  *(unsigned int *)(a2 + 848) = v33;
+  *(unsigned int *)(a2 + 836) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               (CCINIClass *)&stru_818424.headNode[1],
                               (INIClass *)v66);
-  v34 = INIClass::ReadInt_Overwrite((int)a1, (unsigned __int8 *)(a1 + 36), &stru_818424, *(INIClass **)(a1 + 840));
-  v35 = *(unsigned int *)(a1 + 760);
-  *(unsigned int *)(a1 + 840) = v34;
+  v34 = INIClass::ReadInt_Overwrite((int)a2, (uint8_t *)(a2 + 36), &stru_818424, *(INIClass **)(a2 + 840));
+  v35 = *(unsigned int *)(a2 + 760);
+  *(unsigned int *)(a2 + 840) = v34;
   if ( !INIClass::GetString(
-          a1,
-          (INIClass *)(a1 + 36),
+          a2,
+          (INIClass *)(a2 + 36),
           &unk_818418,
-          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)&g_abs_87F8E4,
           Source,
           128)
     || (Index = VocClass::FindIndex(Source), Index == -1) )
   {
     Index = v35;
   }
-  *(unsigned int *)(a1 + 760) = Index;
+  *(unsigned int *)(a2 + 760) = Index;
   if ( Index == -1 )
   {
     if ( !INIClass::GetString(
-            a1,
-            (INIClass *)(a1 + 36),
+            a2,
+            (INIClass *)(a2 + 36),
             &unk_818410,
-            (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+            (INIClass *)&g_abs_87F8E4,
             Source,
             128)
       || (v37 = VocClass::FindIndex(Source), v37 == -1) )
     {
       v37 = -1;
     }
-    *(unsigned int *)(a1 + 760) = v37;
+    *(unsigned int *)(a2 + 760) = v37;
   }
-  v38 = *(unsigned int *)(a1 + 764);
+  v38 = *(unsigned int *)(a2 + 764);
   if ( !INIClass::GetString(
-          a1,
-          (INIClass *)(a1 + 36),
+          a2,
+          (INIClass *)(a2 + 36),
           &unk_818404,
-          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)&g_abs_87F8E4,
           Source,
           128)
     || (v39 = VocClass::FindIndex(Source), v39 == -1) )
   {
     v39 = v38;
   }
-  v40 = *(AnimTypeClass **)(a1 + 768);
-  *(unsigned int *)(a1 + 764) = v39;
+  v40 = *(AnimTypeClass **)(a2 + 768);
+  *(unsigned int *)(a2 + 764) = v39;
   if ( INIClass::GetString(
-         a1,
-         (INIClass *)(a1 + 36),
+         a2,
+         (INIClass *)(a2 + 36),
          &unk_8183F8,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&g_abs_87F8E4,
          Source,
          128) )
   {
     if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source[0].__pad_0) || !_strcmpi(g_Str_none, Source[0].__pad_0) )
       goto LABEL_46;
     ebp40 = 0;
-    if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] > 0 )
+    if ( *(int *)&g_abs_89F690 > 0 )
     {
       while ( _strcmpi(
-                (char *)(*(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp40) + 36),
+                (char *)(*(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * ebp40) + 36),
                 Source[0].__pad_0) )
       {
-        if ( ++ebp40 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] )
+        if ( ++ebp40 >= *(int *)&g_abs_89F690 )
           goto LABEL_43;
       }
-      v41 = *(AnimTypeClass **)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp40);
+      v41 = *(AnimTypeClass **)(*(unsigned int *)&g_abs_89F690 + 4 * ebp40);
       goto LABEL_47;
     }
 LABEL_43:
-    v42 = (unsigned int *)__2_YAPAXI_Z(0x378u);
+    v42 = (unsigned int *)RA2_OPNEW(0x378u);
     if ( v42 )
       v41 = (AnimTypeClass *)AnimTypeClass::Construct(v42, (AbstractClass *)Source);
     else
@@ -750,13 +750,13 @@ LABEL_46:
 LABEL_47:
     v40 = v41;
   }
-  *(unsigned int *)(a1 + 768) = v40;
-  v44 = *(AnimTypeClass **)(a1 + 772);
+  *(unsigned int *)(a2 + 768) = v40;
+  v44 = *(AnimTypeClass **)(a2 + 772);
   if ( !INIClass::GetString(
-          a1,
-          (INIClass *)(a1 + 36),
+          a2,
+          (INIClass *)(a2 + 36),
           &unk_8183EC,
-          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (INIClass *)&g_abs_87F8E4,
           Source,
           128) )
   {
@@ -770,10 +770,10 @@ LABEL_57:
     goto LABEL_59;
   }
   ebp51 = 0;
-  if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] <= 0 )
+  if ( *(int *)&g_abs_89F690 <= 0 )
   {
 LABEL_54:
-    v46 = (unsigned int *)__2_YAPAXI_Z(0x378u);
+    v46 = (unsigned int *)RA2_OPNEW(0x378u);
     if ( v46 )
     {
       v45 = (AnimTypeClass *)AnimTypeClass::Construct(v46, (AbstractClass *)Source);
@@ -782,41 +782,41 @@ LABEL_54:
     goto LABEL_57;
   }
   while ( _strcmpi(
-            (char *)(*(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp51) + 36),
+            (char *)(*(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * ebp51) + 36),
             Source[0].__pad_0) )
   {
-    if ( ++ebp51 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] )
+    if ( ++ebp51 >= *(int *)&g_abs_89F690 )
       goto LABEL_54;
   }
-  v45 = *(AnimTypeClass **)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp51);
+  v45 = *(AnimTypeClass **)(*(unsigned int *)&g_abs_89F690 + 4 * ebp51);
 LABEL_59:
-  v48 = *(AnimTypeClass **)(a1 + 776);
-  *(unsigned int *)(a1 + 772) = v45;
+  v48 = *(AnimTypeClass **)(a2 + 776);
+  *(unsigned int *)(a2 + 772) = v45;
   if ( INIClass::GetString(
-         a1,
-         (INIClass *)(a1 + 36),
+         a2,
+         (INIClass *)(a2 + 36),
          &unk_8183E0,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&g_abs_87F8E4,
          Source,
          128) )
   {
     if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source[0].__pad_0) || !_strcmpi(g_Str_none, Source[0].__pad_0) )
       goto LABEL_68;
     ebp62 = 0;
-    if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] > 0 )
+    if ( *(int *)&g_abs_89F690 > 0 )
     {
       while ( _strcmpi(
-                (char *)(*(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp62) + 36),
+                (char *)(*(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * ebp62) + 36),
                 Source[0].__pad_0) )
       {
-        if ( ++ebp62 >= *(int *)&MEMORY[0x89F690].__pad_579C[62260] )
+        if ( ++ebp62 >= *(int *)&g_abs_89F690 )
           goto LABEL_65;
       }
-      v49 = *(AnimTypeClass **)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * ebp62);
+      v49 = *(AnimTypeClass **)(*(unsigned int *)&g_abs_89F690 + 4 * ebp62);
       goto LABEL_70;
     }
 LABEL_65:
-    v50 = (unsigned int *)__2_YAPAXI_Z(0x378u);
+    v50 = (unsigned int *)RA2_OPNEW(0x378u);
     if ( v50 )
       v49 = (AnimTypeClass *)AnimTypeClass::Construct(v50, (AbstractClass *)Source);
     else
@@ -828,21 +828,21 @@ LABEL_68:
     v49 = v48;
   }
 LABEL_70:
-  v67 = *(RandomStruct **)(a1 + 780);
-  *(unsigned int *)(a1 + 776) = v49;
-  *(unsigned int *)(a1 + 780) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+  v67 = *(RandomStruct **)(a2 + 780);
+  *(unsigned int *)(a2 + 776) = v49;
+  *(unsigned int *)(a2 + 780) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               &unk_8183CC,
                               (INIClass *)v67);
-  v52 = INIClass::ReadInt_Overwrite((int)a1, (unsigned __int8 *)(a1 + 36), &unk_8183BC, *(INIClass **)(a1 + 820));
-  v53 = *(unsigned int *)(a1 + 816);
-  *(unsigned int *)(a1 + 820) = v52;
+  v52 = INIClass::ReadInt_Overwrite((int)a2, (uint8_t *)(a2 + 36), &unk_8183BC, *(INIClass **)(a2 + 820));
+  v53 = *(unsigned int *)(a2 + 816);
+  *(unsigned int *)(a2 + 820) = v52;
   if ( INIClass::GetString(
-         a1,
-         (INIClass *)(a1 + 36),
+         a2,
+         (INIClass *)(a2 + 36),
          &unk_8183B4,
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (INIClass *)&g_abs_87F8E4,
          Source,
          128) )
   {
@@ -852,46 +852,46 @@ LABEL_70:
   {
     v54 = v53;
   }
-  _FFFFFFF4b = *(unsigned char *)(a1 + 858);
-  *(unsigned int *)(a1 + 816) = v54;
-  *(unsigned char *)(a1 + 858) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+  _FFFFFFF4b = *(unsigned char *)(a2 + 858);
+  *(unsigned int *)(a2 + 816) = v54;
+  *(unsigned char *)(a2 + 858) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              &unk_8183AC,
                              _FFFFFFF4b);
   v55 = INIClass::ReadBool_Overwrite(
-          (int)a1,
-          (unsigned __int8 *)(a1 + 36),
+          (int)a2,
+          (uint8_t *)(a2 + 36),
           (CCINIClass *)&aP3.unknown50,
-          *(unsigned char *)(a1 + 859));
-  v56 = *(unsigned char *)(a1 + 860);
-  *(unsigned char *)(a1 + 859) = v55;
-  v57 = INIClass::ReadBool_Overwrite((int)a1, (unsigned __int8 *)(a1 + 36), (CCINIClass *)&aP3.INIClass_field_3C, v56);
-  v71 = *(unsigned char *)(a1 + 861);
-  *(unsigned char *)(a1 + 860) = v57;
-  *(unsigned char *)(a1 + 861) = INIClass::ReadBool_Overwrite(
-                             (int)a1,
-                             (unsigned __int8 *)(a1 + 36),
+          *(unsigned char *)(a2 + 859));
+  v56 = *(unsigned char *)(a2 + 860);
+  *(unsigned char *)(a2 + 859) = v55;
+  v57 = INIClass::ReadBool_Overwrite((int)a2, (uint8_t *)(a2 + 36), (CCINIClass *)&aP3.INIClass_field_3C, v56);
+  v71 = *(unsigned char *)(a2 + 861);
+  *(unsigned char *)(a2 + 860) = v57;
+  *(unsigned char *)(a2 + 861) = INIClass::ReadBool_Overwrite(
+                             (int)a2,
+                             (uint8_t *)(a2 + 36),
                              (CCINIClass *)&aP3.INIClass_field_2C,
                              v71);
   if ( INIClass::GetString(
-         a1,
-         (INIClass *)(a1 + 36),
-         (unsigned __int8 *)&aP3.sectionCount,
+         a2,
+         (INIClass *)(a2 + 36),
+         (uint8_t *)&aP3.sectionCount,
          0,
          (INIClass *)Destination,
          32) )
   {
-    *(unsigned int *)(a1 + 716) = BuildingTypeClass::FindOrCreateEx(Destination);
+    *(unsigned int *)(a2 + 716) = BuildingTypeClass::FindOrCreateEx(Destination);
   }
-  *(unsigned int *)(a1 + 720) = INIClass::ReadInt_Overwrite(
-                              (int)a1,
-                              (unsigned __int8 *)(a1 + 36),
+  *(unsigned int *)(a2 + 720) = INIClass::ReadInt_Overwrite(
+                              (int)a2,
+                              (uint8_t *)(a2 + 36),
                               (CCINIClass *)&aP3.headNode[2],
-                              *(INIClass **)(a1 + 720));
+                              *(INIClass **)(a2 + 720));
   v70 = (ObjectClass *)-1;
   aP4_4 = -1;
-  v58 = INIClass::ReadPoint2D_Overwrite(a1, &aP1, (INIClass *)(a1 + 36), &aP3, (RandomStruct *)&v70);
+  v58 = INIClass::ReadPoint2D_Overwrite(a2, &aP1, (INIClass *)(a2 + 36), &aP3, (RandomStruct *)&v70);
   v59 = *v58;
   v60 = v58[1];
   if ( *v58 != -1 )
@@ -900,7 +900,7 @@ LABEL_70:
       eax77 = 0;
     else
       eax77 = 900 / v59;
-    *(unsigned int *)(a1 + 740) = eax77;
+    *(unsigned int *)(a2 + 740) = eax77;
   }
   if ( v60 != -1 )
   {
@@ -908,13 +908,13 @@ LABEL_70:
       v62 = 0;
     else
       v62 = 900 / v60;
-    *(unsigned int *)(a1 + 744) = v62;
+    *(unsigned int *)(a2 + 744) = v62;
   }
-  if ( *(int *)(a1 + 744) < 0 )
-    *(unsigned int *)(a1 + 744) = 0;
-  v61 = *(RandomStruct **)(a1 + 744);
-  if ( *(unsigned int *)(a1 + 740) > (int)v61 )
-    *(unsigned int *)(a1 + 740) = v61;
+  if ( *(int *)(a2 + 744) < 0 )
+    *(unsigned int *)(a2 + 744) = 0;
+  v61 = *(RandomStruct **)(a2 + 744);
+  if ( *(unsigned int *)(a2 + 740) > (int)v61 )
+    *(unsigned int *)(a2 + 740) = v61;
   return 1;
 
 }
@@ -941,13 +941,13 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 712)); /*0x428866*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 772)); /*0x428877*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 776)); /*0x428888*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 768)); /*0x428899*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 752)); /*0x4288aa*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 816)); /*0x4288bb*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(a1 + 824)); /*0x4288cc*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(a1 + 712)); /*0x428866*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(a1 + 772)); /*0x428877*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(a1 + 776)); /*0x428888*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(a1 + 768)); /*0x428899*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(a1 + 752)); /*0x4288aa*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(a1 + 816)); /*0x4288bb*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(a1 + 824)); /*0x4288cc*/
     if ( !*(unsigned char *)(a1 + 862) ) /*0x4288d1*/
     {
       if ( *(unsigned char *)(a1 + 556) ) /*0x4288db*/
@@ -957,12 +957,12 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
           0,
           0,
           (const char *)(a1 + 36),
-          (const char *)&off_7E1BC6 + 112 * *((unsigned int *)MEMORY[0xA8B230] + 1174));
+          (const char *)&off_7E1BC6 + 112 * *((unsigned int *)g_abs_A8B230 + 1174));
         *(unsigned int *)(a1 + 164) = SearchMIXFile(Buffer, 1); /*0x428923*/
         return 0; /*0x428932*/
       }
       if ( *(unsigned char *)(a1 + 567) ) /*0x428935*/
-        (*(void (**)(int, unsigned int))(*(unsigned int *)a1 + 160))(a1, *((unsigned int *)MEMORY[0xA8B230] + 1174)); /*0x42894f*/
+        (*(void (**)(int, unsigned int))(*(unsigned int *)a1 + 160))(a1, *((unsigned int *)g_abs_A8B230 + 1174)); /*0x42894f*/
     }
     return 0; /*0x428955*/
   }
@@ -990,29 +990,29 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x4289d9*/
   Power::TimerProcess(*((unsigned int *)this + 217)); /*0x4289e7*/
-  LOBYTE(v3) = *((unsigned char *)this + 866); /*0x4289ec*/
+  IDA_LOBYTE(v3) = *((unsigned char *)this + 866); /*0x4289ec*/
   Power::FlagProcess(a2, v3); /*0x4289f5*/
-  LOBYTE(v4) = *((unsigned char *)this + 873); /*0x4289fa*/
+  IDA_LOBYTE(v4) = *((unsigned char *)this + 873); /*0x4289fa*/
   v5 = Power::FlagProcess(a2, v4); /*0x428a03*/
-  LOBYTE(v5) = *((unsigned char *)this + 874); /*0x428a08*/
+  IDA_LOBYTE(v5) = *((unsigned char *)this + 874); /*0x428a08*/
   Power::FlagProcess(a2, v5); /*0x428a11*/
-  LOBYTE(v6) = *((unsigned char *)this + 875); /*0x428a16*/
+  IDA_LOBYTE(v6) = *((unsigned char *)this + 875); /*0x428a16*/
   Power::FlagProcess(a2, v6); /*0x428a1f*/
-  LOBYTE(v7) = *((unsigned char *)this + 876); /*0x428a24*/
+  IDA_LOBYTE(v7) = *((unsigned char *)this + 876); /*0x428a24*/
   v8 = Power::FlagProcess(a2, v7); /*0x428a2d*/
-  LOBYTE(v8) = *((unsigned char *)this + 877); /*0x428a32*/
+  IDA_LOBYTE(v8) = *((unsigned char *)this + 877); /*0x428a32*/
   Power::FlagProcess(a2, v8); /*0x428a3b*/
-  LOBYTE(v9) = *((unsigned char *)this + 879); /*0x428a40*/
+  IDA_LOBYTE(v9) = *((unsigned char *)this + 879); /*0x428a40*/
   Power::FlagProcess(a2, v9); /*0x428a49*/
-  LOBYTE(v10) = *((unsigned char *)this + 880); /*0x428a4e*/
+  IDA_LOBYTE(v10) = *((unsigned char *)this + 880); /*0x428a4e*/
   v11 = Power::FlagProcess(a2, v10); /*0x428a57*/
-  LOBYTE(v11) = *((unsigned char *)this + 881); /*0x428a5c*/
+  IDA_LOBYTE(v11) = *((unsigned char *)this + 881); /*0x428a5c*/
   Power::FlagProcess(a2, v11); /*0x428a65*/
-  LOBYTE(v12) = *((unsigned char *)this + 882); /*0x428a6a*/
+  IDA_LOBYTE(v12) = *((unsigned char *)this + 882); /*0x428a6a*/
   Power::FlagProcess(a2, v12); /*0x428a73*/
   Power::TimerProcess(*((unsigned int *)this + 166)); /*0x428a81*/
   Checksummer::Add_double((unsigned int *)a2, *((unsigned int *)this + 170), *((unsigned int *)this + 171)); /*0x428a96*/
-  LOBYTE(v13) = *((unsigned char *)this + 855); /*0x428a9b*/
+  IDA_LOBYTE(v13) = *((unsigned char *)this + 855); /*0x428a9b*/
   Power::FlagProcess(a2, v13); /*0x428aa4*/
   Power::TimerProcess(*((unsigned int *)this + 172)); /*0x428ab2*/
   Power::TimerProcess(*((unsigned int *)this + 173)); /*0x428ac0*/
@@ -1027,14 +1027,14 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(*((unsigned int *)this + 183)); /*0x428b3e*/
   Power::TimerProcess(*((unsigned int *)this + 184)); /*0x428b4c*/
   Power::TimerProcess(*((unsigned int *)this + 187)); /*0x428b5a*/
-  LOBYTE(v14) = *((unsigned char *)this + 859); /*0x428b5f*/
+  IDA_LOBYTE(v14) = *((unsigned char *)this + 859); /*0x428b5f*/
   return Power::FlagProcess(a2, v14); /*0x428b6d*/
 
 }
 }
 // 0x428B80
 namespace gamemd {
-AnimTypeClass * * AnimTypeClass::FindOrCreate()
+AnimTypeClass * * AnimTypeClass::FindOrCreate(AbstractClass * Source)
 {
 
   int v2; // esi
@@ -1046,7 +1046,7 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate()
   if ( *(int *)&stru_89E138.__pad_1600D[27] <= 0 ) /*0x428bb1*/
   {
 LABEL_6:
-    v3 = (unsigned int *)__2_YAPAXI_Z(0x378u); /*0x428bd6*/
+    v3 = (unsigned int *)RA2_OPNEW(0x378u); /*0x428bd6*/
     if ( v3 ) /*0x428be5*/
       return (AnimTypeClass *)AnimTypeClass::Construct(v3, Source); /*0x428bf1*/
     return 0; /*0x428be5*/
@@ -1088,11 +1088,11 @@ int AnimTypeClass::GetDamage()
     _makepath(Buffer, 0, 0, v3, Ext); /*0x428c8b*/
     if ( *((unsigned char *)this + 556) ) /*0x428c90*/
     {
-      _makepath(Buffer, 0, 0, (unsigned char *)this + 36, (const char *)&off_7E1BC6 + 112 * *((unsigned int *)MEMORY[0xA8B230] + 1174)); /*0x428ccc*/
+      _makepath(Buffer, 0, 0, (unsigned char *)this + 36, (const char *)&off_7E1BC6 + 112 * *((unsigned int *)g_abs_A8B230 + 1174)); /*0x428ccc*/
     }
     else if ( *((unsigned char *)this + 567) ) /*0x428cd6*/
     {
-      TheaterObjectTypeClassSpecificID(Buffer, *((unsigned int *)MEMORY[0xA8B230] + 1174)); /*0x428cf3*/
+      TheaterObjectTypeClassSpecificID(Buffer, *((unsigned int *)g_abs_A8B230 + 1174)); /*0x428cf3*/
     }
     CCFileClass::Construct(v7, Buffer); /*0x428d04*/
     EntireFile = CCFileClass::ReadEntireFile(v7); /*0x428d0d*/
@@ -1115,7 +1115,7 @@ int AnimTypeClass::GetDamage()
       v10[0] = &off_7E1668; /*0x428d7f*/
       BufferIOFileClass::Dtor(v10); /*0x428d87*/
     }
-    (*(void (**)(char *, unsigned int))(*(unsigned int *)this + 160))(this, *((unsigned int *)MEMORY[0xA8B230] + 1174)); /*0x428d9c*/
+    (*(void (**)(char *, unsigned int))(*(unsigned int *)this + 160))(this, *((unsigned int *)g_abs_A8B230 + 1174)); /*0x428d9c*/
     v6 = *((unsigned int *)this + 41); /*0x428da2*/
     v7[0] = &vt_CCFileClass; /*0x428dac*/
     v9 = 0; /*0x428db4*/
@@ -1130,7 +1130,7 @@ int AnimTypeClass::GetDamage()
 }
 // 0x428EA0
 namespace gamemd {
-AnimTypeClass * AnimTypeClass::ddtor(char a2)
+AnimTypeClass * AnimTypeClass::ddtor(unsigned int * Block, char a2)
 {
 
   int v3; // eax
@@ -1142,29 +1142,29 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
   *(Block + 2) = &AnimTypeClass::`vftable'; /*0x428eba*/
   *(Block + 3) = &vt_AnimTypeClass; /*0x428ec1*/
   v6 = Block; /*0x428ecf*/
-  v3 = (*(int (**)(int *, unsigned int **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x428ed3*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0F680] && v3 < --MEMORY[0xB0F680] ) /*0x428eee*/
+  v3 = (*(int (**)(int *, unsigned int **))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v6); /*0x428ed3*/
+  if ( v3 != -1 && v3 < g_abs_B0F680 && v3 < --g_abs_B0F680 ) /*0x428eee*/
   {
     do /*0x428f06*/
     {
       ++v3; /*0x428ef6*/
-      *((unsigned int *)MEMORY[0xB0F674] + v3 - 1) = *((unsigned int *)MEMORY[0xB0F674] + v3); /*0x428efa*/
+      *((unsigned int *)g_abs_B0F674 + v3 - 1) = *((unsigned int *)g_abs_B0F674 + v3); /*0x428efa*/
     }
-    while ( v3 < MEMORY[0xB0F680] ); /*0x428f06*/
+    while ( v3 < g_abs_B0F680 ); /*0x428f06*/
   }
   v6 = Block; /*0x428f18*/
-  v4 = (*(int (**)(int *, unsigned int **))(MEMORY[0x8B4150] + 16))(&MEMORY[0x8B4150], &v6); /*0x428f1c*/
-  if ( v4 != -1 && v4 < MEMORY[0x8B4160] && v4 < --MEMORY[0x8B4160] ) /*0x428f37*/
+  v4 = (*(int (**)(int *, unsigned int **))(g_abs_8B4150 + 16))(&g_abs_8B4150, &v6); /*0x428f1c*/
+  if ( v4 != -1 && v4 < g_abs_8B4160 && v4 < --g_abs_8B4160 ) /*0x428f37*/
   {
     do /*0x428f4f*/
     {
       ++v4; /*0x428f3f*/
-      *((unsigned int *)MEMORY[0x8B4154] + v4 - 1) = *((unsigned int *)MEMORY[0x8B4154] + v4); /*0x428f43*/
+      *((unsigned int *)g_abs_8B4154 + v4 - 1) = *((unsigned int *)g_abs_8B4154 + v4); /*0x428f43*/
     }
-    while ( v4 < MEMORY[0x8B4160] ); /*0x428f4f*/
+    while ( v4 < g_abs_8B4160 ); /*0x428f4f*/
   }
   ObjectTypeClass::Destruct((int)Block); /*0x428f53*/
-  if ( (a2 & 1) != 0 ) /*0x428f5d*/
+  if ( (Block & 1) != 0 ) /*0x428f5d*/
     OperatorDelete(Block); /*0x428f60*/
   return (AnimTypeClass *)Block; /*0x428f6a*/
 
@@ -1202,20 +1202,20 @@ char AnimTypeClass::GetLoopCount(int a2)
   int v2; // eax
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
-  LOBYTE(v2) = MEMORY[0xA8ED6B]; /*0x427a80*/
-  if ( MEMORY[0xA8ED6B] || a2 != dword_822CF8 ) /*0x427aa0*/
+  IDA_LOBYTE(v2) = g_abs_A8ED6B; /*0x427a80*/
+  if ( g_abs_A8ED6B || a2 != dword_822CF8 ) /*0x427aa0*/
   {
     if ( !*((unsigned char *)this + 556) || *((unsigned char *)this + 862) ) /*0x427ab0*/
     {
-      LOBYTE(v2) = *((unsigned char *)this + 567); /*0x427b2b*/
+      IDA_LOBYTE(v2) = *((unsigned char *)this + 567); /*0x427b2b*/
       if ( (unsigned char)v2 ) /*0x427b33*/
-        LOBYTE(v2) = (*(int (**)(void *, int))(*(unsigned int *)this + 160))(this, a2); /*0x427b3a*/
+        IDA_LOBYTE(v2) = (*(int (**)(void *, int))(*(unsigned int *)this + 160))(this, a2); /*0x427b3a*/
     }
     else
     {
       if ( *((unsigned int *)this + 41) && *((unsigned char *)this + 168) ) /*0x427ac4*/
       {
-        __3_YAXPAX_Z(*((void **)this + 41)); /*0x427acf*/
+        RA2_OPDEL(*((void **)this + 41)); /*0x427acf*/
         *((unsigned char *)this + 168) = 0; /*0x427ad7*/
       }
       *((unsigned int *)this + 41) = 0; /*0x427af6*/

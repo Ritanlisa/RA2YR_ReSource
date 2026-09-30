@@ -18,7 +18,7 @@ namespace gamemd {
 void LinkClass::Destroy()
 {
 
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 84))(this); /*0x4e1485*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 336))(this); /*0x4e1485*/
   return LinkedList::RemoveNode(this); /*0x4e148f*/
 
 }
@@ -35,7 +35,7 @@ void LinkClass::Destruct()
 
   *this = &vt_LinkClass; /*0x5565a5*/
   Prev = LinkedList::FindPrev(this); /*0x5565b1*/
-  result = (*(int (**)(unsigned int *))(*(unsigned int **)this + 28))(this); /*0x5565b7*/
+  result = (*(int (**)(unsigned int *))(*(unsigned int *)this + 112))(this); /*0x5565b7*/
   v4 = *((unsigned int *)this + 2); /*0x5565ba*/
   if ( v4 ) /*0x5565c1*/
     *(unsigned int *)(v4 + 4) = *((unsigned int *)this + 1); /*0x5565c6*/
@@ -52,12 +52,12 @@ void LinkClass::Destruct()
 } // namespace gamemd
 // 0x4E1AD0
 namespace gamemd {
-LinkClass * LinkClass::Destru_vt00(char a2)
+LinkClass * LinkClass::Destru_vt00(unsigned int * Block, char a2)
 {
 
   LinkClass::Destruct(Block); /*0x4e1ad3*/
-  if ( (a2 & 1) != 0 ) /*0x4e1add*/
-    __3_YAXPAX_Z(Block); /*0x4e1ae0*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4e1add*/
+    RA2_OPDEL(Block); /*0x4e1ae0*/
   return (LinkClass *)Block; /*0x4e1aea*/
 
 }

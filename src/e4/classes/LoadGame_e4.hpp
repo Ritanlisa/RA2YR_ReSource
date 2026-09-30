@@ -20,7 +20,6 @@ struct LoadGame {
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
-    unsigned int LoadBlock68;
     unsigned int LoadGame_field_0x04;
     unsigned int LoadGame_field_0x10;
     unsigned int __pad_0;
@@ -29,9 +28,10 @@ struct LoadGame {
     int LoadMagicAndAudio();
     int LoadPointArray(int a2);
     int LoadTriggerEvents();
-    int RemoveItem(int a2, void *a1 = 0);
+    void RemoveItem(int a2);
     int RestoreAudioState();
     int Start(void *a1 = 0);
+    static double LoadBlock68(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

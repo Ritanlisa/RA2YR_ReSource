@@ -15,7 +15,7 @@
 
 // 0x410800
 namespace gamemd {
-int AbstractTypeClass::Constructor(char* a1, void* a2, void* a3, void* a4)
+int AbstractTypeClass::Constructor( AbstractClass * aP1)
 {
 
   RandomStruct *v3; // ebx
@@ -24,24 +24,24 @@ int AbstractTypeClass::Constructor(char* a1, void* a2, void* a3, void* a4)
   char Destination[48]; // [esp+20h] [ebp-34h] BYREF
   char v8; // [esp+50h] [ebp-4h]
 
-  AbstractClass::Constructor((AbstractClass *)a1); /*0x410809*/
-  v3 = (RandomStruct *)(a1 + 36); /*0x410812*/
-  *(unsigned char *)(a1 + 36) = 0; /*0x410817*/
-  *(unsigned char *)(a1 + 61) = 0; /*0x41081a*/
-  *(unsigned char *)(a1 + 100) = 0; /*0x41081e*/
-  *(unsigned int *)a1 = &AbstractTypeClass::`vftable'; /*0x410822*/
-  *(unsigned int *)(a1 + 4) = &AbstractTypeClass::`vftable'; /*0x410829*/
-  *(unsigned int *)(a1 + 8) = &AbstractTypeClass::`vftable'; /*0x410830*/
-  *(unsigned int *)(a1 + 12) = &vt_AbstractTypeClass; /*0x410837*/
-  if ( a2 ) /*0x41083e*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x410809*/
+  v3 = (RandomStruct *)(this + 36); /*0x410812*/
+  *(unsigned char *)(this + 36) = 0; /*0x410817*/
+  *(unsigned char *)(this + 61) = 0; /*0x41081a*/
+  *(unsigned char *)(this + 100) = 0; /*0x41081e*/
+  *(unsigned int *)this = &AbstractTypeClass::`vftable'; /*0x410822*/
+  *(unsigned int *)(this + 4) = &AbstractTypeClass::`vftable'; /*0x410829*/
+  *(unsigned int *)(this + 8) = &AbstractTypeClass::`vftable'; /*0x410830*/
+  *(unsigned int *)(this + 12) = &vt_AbstractTypeClass; /*0x410837*/
+  if ( aP1 ) /*0x41083e*/
   {
-    strncpy(Destination, a2->__pad_0, (IUnknown *)0x18); /*0x410895*/
+    strncpy(Destination, aP1->__pad_0, (IUnknown *)0x18); /*0x410895*/
     Destination[24] = 0; /*0x4108a3*/
     if ( Destination == (char *)v3 ) /*0x4108a8*/
       goto LABEL_9; /*0x4108a8*/
     goto LABEL_8; /*0x4108a8*/
   }
-  sprintf(Buffer, &stru_817828, (INIClass *)a1); /*0x41084b*/
+  sprintf(Buffer, &stru_817828, (INIClass *)this); /*0x41084b*/
   if ( Buffer ) /*0x410859*/
   {
     strncpy(Destination, Buffer, (IUnknown *)0x18); /*0x41086d*/
@@ -55,63 +55,63 @@ int AbstractTypeClass::Constructor(char* a1, void* a2, void* a3, void* a4)
   {
 LABEL_8:
     qmemcpy(v3, Destination, 0x18u); /*0x4108b5*/
-    *(unsigned char *)(a1 + 60) = Destination[24]; /*0x4108b7*/
+    *(unsigned char *)(this + 60) = Destination[24]; /*0x4108b7*/
   }
 LABEL_9:
-  if ( a1 == -36 ) /*0x4108ba*/
+  if ( this == (gamemd::AbstractTypeClass *)(-36) ) /*0x4108ba*/
   {
     Destination[0] = 0; /*0x4108bc*/
   }
   else
   {
-    strncpy(Destination, (const char *)(a1 + 36), (IUnknown *)0x30); /*0x4108ca*/
+    strncpy(Destination, (const char *)(this + 36), (IUnknown *)0x30); /*0x4108ca*/
     v8 = 0; /*0x4108d2*/
   }
-  if ( Destination != (char *)(a1 + 100) ) /*0x4108e0*/
+  if ( Destination != (char *)(this + 100) ) /*0x4108e0*/
   {
-    qmemcpy((void *)(a1 + 100), Destination, 0x30u); /*0x4108eb*/
-    *(unsigned char *)(a1 + 148) = v8; /*0x4108ed*/
+    qmemcpy((void *)(this + 100), Destination, 0x30u); /*0x4108eb*/
+    *(unsigned char *)(this + 148) = v8; /*0x4108ed*/
   }
-  *(unsigned int *)(a1 + 96) = &stru_87C374.__pad_579C[23588]; /*0x4108ee*/
+  *(unsigned int *)(this + 96) = &stru_87C374.__pad_579C[23588]; /*0x4108ee*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22212] < *(int *)&HouseClass_Player.__pad_5568[22204] /*0x410929*/
     || (HouseClass_Player.__pad_5568[22209] || !*(unsigned int *)&HouseClass_Player.__pad_5568[22204])
     && *(int *)&HouseClass_Player.__pad_5568[22216] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22196] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22196] + 8))(
          &HouseClass_Player.__pad_5568[22196],
          *(unsigned int *)&HouseClass_Player.__pad_5568[22204] + *(unsigned int *)&HouseClass_Player.__pad_5568[22216],
          0) )
   {
     v4 = (*(unsigned int *)&HouseClass_Player.__pad_5568[22212])++; /*0x410936*/
-    *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[22200] + 4 * v4) = a1; /*0x410945*/
+    *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[22200] + 4 * v4) = this; /*0x410945*/
   }
-  return a1; /*0x410948*/
+  return (int)(this);
 
 }
 } // namespace gamemd
 // 0x4109C0
 namespace gamemd {
-int AbstractTypeClass::Dtor(char* a1, void* a2, void* a3, void* a4)
+int AbstractTypeClass::Dtor()
 {
 
   int v2; // eax
   unsigned int *v4; // [esp+4h] [ebp-4h] BYREF
 
-  *a1 = &AbstractTypeClass::`vftable'; /*0x4109cd*/
-  *(a1 + 1) = &AbstractTypeClass::`vftable'; /*0x4109d3*/
-  *(a1 + 2) = &AbstractTypeClass::`vftable'; /*0x4109da*/
-  *(a1 + 3) = &vt_AbstractTypeClass; /*0x4109e1*/
-  v4 = a1; /*0x4109ef*/
-  v2 = (*(int (**)(int *, unsigned int **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v4); /*0x4109f3*/
-  if ( v2 != -1 && v2 < MEMORY[0xA8E978] && v2 < --MEMORY[0xA8E978] ) /*0x410a0e*/
+  *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
+  *(this + 1) = &AbstractTypeClass::`vftable'; /*0x4109d3*/
+  *(this + 2) = &AbstractTypeClass::`vftable'; /*0x4109da*/
+  *(this + 3) = &vt_AbstractTypeClass; /*0x4109e1*/
+  v4 = this; /*0x4109ef*/
+  v2 = (*(int (**)(int *, unsigned int **))(g_abs_A8E968 + 16))(&g_abs_A8E968, &v4); /*0x4109f3*/
+  if ( v2 != -1 && v2 < g_abs_A8E978 && v2 < --g_abs_A8E978 ) /*0x410a0e*/
   {
     do /*0x410a26*/
     {
       ++v2; /*0x410a16*/
-      *((unsigned int *)MEMORY[0xA8E96C] + v2 - 1) = *((unsigned int *)MEMORY[0xA8E96C] + v2); /*0x410a1a*/
+      *((unsigned int *)g_abs_A8E96C + v2 - 1) = *((unsigned int *)g_abs_A8E96C + v2); /*0x410a1a*/
     }
-    while ( v2 < MEMORY[0xA8E978] ); /*0x410a26*/
+    while ( v2 < g_abs_A8E978 ); /*0x410a26*/
   }
-  return AbstractClass::DTOR(a1); /*0x410a2f*/
+  return AbstractClass::DTOR(this); /*0x410a2f*/
 
 }
 } // namespace gamemd
@@ -131,9 +131,9 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
     return 0; /*0x410b7f*/
   v3 = (CCINIClass *)((char *)this + 100); /*0x410a91*/
   INIClass::GetString( /*0x410aa0*/
-    (unsigned __int8 ***)aP1,
+    (uint8_t ***)aP1,
     (INIClass *)((char *)this + 36),
-    (unsigned __int8 *)&MEMORY[0x81784C].headNode[1],
+    (uint8_t *)&g_abs_81784C,
     (INIClass *)((char *)this + 100),
     Source,
     49);
@@ -144,7 +144,7 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
   }
   else
   {
-    Destination[0] = (unsigned __int8)Source; /*0x410aad*/
+    Destination[0] = (uint8_t)Source; /*0x410aad*/
   }
   if ( Destination != (char *)v3 ) /*0x410ad2*/
   {
@@ -153,9 +153,9 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
   }
   v4 = (char *)((char *)this + 61); /*0x410aeb*/
   INIClass::GetString( /*0x410afb*/
-    (unsigned __int8 ***)aP1,
+    (uint8_t ***)aP1,
     (INIClass *)((char *)this + 36),
-    (unsigned __int8 *)&MEMORY[0x81784C],
+    (uint8_t *)&g_abs_81784C,
     (INIClass *)((char *)this + 61),
     Source,
     32);
@@ -166,43 +166,43 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
   }
   else
   {
-    Destination[0] = (unsigned __int8)Source; /*0x410b08*/
+    Destination[0] = (uint8_t)Source; /*0x410b08*/
   }
   if ( Destination != v4 ) /*0x410b2d*/
     qmemcpy(v4, Destination, 0x20u); /*0x410b3a*/
   if ( *v4 ) /*0x410b3c*/
-    *((unsigned int *)this + 24) = GetStringCSF((wchar_t *)((char *)this + 61), 0, MEMORY[0x817830], 215); /*0x410b58*/
+    *((unsigned int *)this + 24) = GetStringCSF((wchar_t *)((char *)this + 61), 0, g_abs_817830, 215); /*0x410b58*/
   else
-    *((unsigned int *)this + 24) = &MEMORY[0x87F8E4].__pad_5568[10472]; /*0x410b69*/
+    *((unsigned int *)this + 24) = &g_abs_87F8E4; /*0x410b69*/
   return 1; /*0x410b57*/
 
 }
 } // namespace gamemd
 // 0x410C30
 namespace gamemd {
-AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
+AbstractTypeClass * AbstractTypeClass::ddtor(unsigned int * Block, char a2)
 {
 
   int v3; // eax
   unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &AbstractTypeClass::`vftable'; /*0x410c3d*/
+  *Block = (unsigned int)(&AbstractTypeClass::`vftable');
   *(Block + 1) = &AbstractTypeClass::`vftable'; /*0x410c43*/
   *(Block + 2) = &AbstractTypeClass::`vftable'; /*0x410c4a*/
   *(Block + 3) = &vt_AbstractTypeClass; /*0x410c51*/
   v5 = Block; /*0x410c5f*/
-  v3 = (*(int (**)(int *, unsigned int **))(MEMORY[0xA8E968] + 16))(&MEMORY[0xA8E968], &v5); /*0x410c63*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8E978] && v3 < --MEMORY[0xA8E978] ) /*0x410c7e*/
+  v3 = (*(int (**)(int *, unsigned int **))(g_abs_A8E968 + 16))(&g_abs_A8E968, &v5); /*0x410c63*/
+  if ( v3 != -1 && v3 < g_abs_A8E978 && v3 < --g_abs_A8E978 ) /*0x410c7e*/
   {
     do /*0x410c96*/
     {
       ++v3; /*0x410c86*/
-      *((unsigned int *)MEMORY[0xA8E96C] + v3 - 1) = *((unsigned int *)MEMORY[0xA8E96C] + v3); /*0x410c8a*/
+      *((unsigned int *)g_abs_A8E96C + v3 - 1) = *((unsigned int *)g_abs_A8E96C + v3); /*0x410c8a*/
     }
-    while ( v3 < MEMORY[0xA8E978] ); /*0x410c96*/
+    while ( v3 < g_abs_A8E978 ); /*0x410c96*/
   }
   AbstractClass::DTOR(Block); /*0x410c9a*/
-  if ( (a2 & 1) != 0 ) /*0x410ca4*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x410ca4*/
     OperatorDelete(Block); /*0x410ca7*/
   return (AbstractTypeClass *)Block; /*0x410cb1*/
 
@@ -210,22 +210,22 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
 } // namespace gamemd
 // 0x410960
 namespace gamemd {
-int AbstractTypeClass::Init(char* a1, void* a2, void* a3, void* a4)
+int AbstractTypeClass::Init( AbstractTypeClass * aP1)
 {
 
   char v3; // al
 
-  AbstractClass::InitVtables((unsigned int *)a1, (int)a2); /*0x410968*/
-  v3 = *(unsigned char *)(a1 + 61); /*0x41096d*/
-  *(unsigned int *)a1 = &AbstractTypeClass::`vftable'; /*0x410975*/
-  *(unsigned int *)(a1 + 4) = &AbstractTypeClass::`vftable'; /*0x41097b*/
-  *(unsigned int *)(a1 + 8) = &AbstractTypeClass::`vftable'; /*0x410982*/
-  *(unsigned int *)(a1 + 12) = &vt_AbstractTypeClass; /*0x410989*/
+  AbstractClass::InitVtables((unsigned int *)this, (int)aP1); /*0x410968*/
+  v3 = *(unsigned char *)(this + 61); /*0x41096d*/
+  *(unsigned int *)this = &AbstractTypeClass::`vftable'; /*0x410975*/
+  *(unsigned int *)(this + 4) = &AbstractTypeClass::`vftable'; /*0x41097b*/
+  *(unsigned int *)(this + 8) = &AbstractTypeClass::`vftable'; /*0x410982*/
+  *(unsigned int *)(this + 12) = &vt_AbstractTypeClass; /*0x410989*/
   if ( v3 ) /*0x410990*/
-    *(unsigned int *)(a1 + 96) = GetStringCSF((wchar_t *)(a1 + 61), 0, MEMORY[0x817830], 127); /*0x4109a0*/
+    *(unsigned int *)(this + 96) = GetStringCSF((wchar_t *)(this + 61), 0, g_abs_817830, 127); /*0x4109a0*/
   else
-    *(unsigned int *)(a1 + 96) = &MEMORY[0x87F8E4].__pad_5568[10472]; /*0x4109a9*/
-  return a1; /*0x4109a5*/
+    *(unsigned int *)(this + 96) = &g_abs_87F8E4; /*0x4109a9*/
+  return this; /*0x4109a5*/
 
 }
 } // namespace gamemd
@@ -256,13 +256,13 @@ char AbstractTypeClass::WriteINI(CCINIClass * aP1)
 } // namespace gamemd
 // 0x410BE0
 namespace gamemd {
-int AbstractTypeClass::ProcessPower(char* a1, void* a2, void* a3, void* a4)
+int AbstractTypeClass::ProcessPower( AbstractClass * aP1)
 {
 
-  AbstractClass::ProcessPower((#378 *)a1); /*0x410be9*/
-  Checksum::AddString((unsigned int *)a2, (AbstractClass *)a1 + 1); /*0x410bf4*/
-  Checksum::AddString((unsigned int *)a2, (AbstractClass *)(a1 + 100)); /*0x410bff*/
-  return Checksum::AddString((unsigned int *)a2, (AbstractClass *)(a1 + 61)); /*0x410c0f*/
+  AbstractClass::ProcessPower((#378 *)this); /*0x410be9*/
+  Checksum::AddString((unsigned int *)aP1, (AbstractClass *)this + 1); /*0x410bf4*/
+  Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 100)); /*0x410bff*/
+  return Checksum::AddString((unsigned int *)aP1, (AbstractClass *)(this + 61)); /*0x410c0f*/
 
 }
 } // namespace gamemd

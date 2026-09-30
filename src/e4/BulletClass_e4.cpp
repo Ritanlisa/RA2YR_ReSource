@@ -57,16 +57,16 @@ BulletClass::BulletClass()
   *((unsigned int *)this + 80) = 0; /*0x466456*/
   *((unsigned int *)this + 81) = 0; /*0x46645c*/
   *((unsigned int *)this + 82) = 0; /*0x466462*/
-  if ( MEMORY[0xA8ED50] < MEMORY[0xA8ED48] /*0x46649b*/
-    || (MEMORY[0xA8ED4D] || !MEMORY[0xA8ED48])
-    && MEMORY[0xA8ED54] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8ED40] + 8))(
-         &MEMORY[0xA8ED40],
-         MEMORY[0xA8ED48] + MEMORY[0xA8ED54],
+  if ( g_abs_A8ED50 < g_abs_A8ED48 /*0x46649b*/
+    || (g_abs_A8ED4D || !g_abs_A8ED48)
+    && g_abs_A8ED54 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8ED40 + 8))(
+         &g_abs_A8ED40,
+         g_abs_A8ED48 + g_abs_A8ED54,
          0) )
   {
-    v2 = MEMORY[0xA8ED50]++; /*0x4664a8*/
-    *((unsigned int *)MEMORY[0xA8ED44] + v2) = this; /*0x4664b7*/
+    v2 = g_abs_A8ED50++; /*0x4664a8*/
+    *((unsigned int *)g_abs_A8ED44 + v2) = this; /*0x4664b7*/
   }
   return this; /*0x4664bc*/
 
@@ -76,6 +76,7 @@ BulletClass::BulletClass()
 namespace gamemd {
 BulletClass * * BulletClass::Dtor()
 {
+    unsigned int v5 = 0;  /* G37 hoist */
 
   int v2; // eax
   int v3; // eax
@@ -89,32 +90,32 @@ BulletClass * * BulletClass::Dtor()
   if ( *((unsigned char *)this + 344) ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
-    v2 = (*(int (**)(int *, #374 **))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v5); /*0x4665a4*/
-    if ( v2 != -1 && v2 < MEMORY[0xB0F5C8] && v2 < --MEMORY[0xB0F5C8] ) /*0x4665bf*/
+    v2 = (*(int (**)(int *, #374 **))(g_abs_B0F5B8 + 16))(&g_abs_B0F5B8, &v5); /*0x4665a4*/
+    if ( v2 != -1 && v2 < g_abs_B0F5C8 && v2 < --g_abs_B0F5C8 ) /*0x4665bf*/
     {
       do /*0x4665d7*/
       {
         ++v2; /*0x4665c7*/
-        *((unsigned int *)MEMORY[0xB0F5BC] + v2 - 1) = *((unsigned int *)MEMORY[0xB0F5BC] + v2); /*0x4665cb*/
+        *((unsigned int *)g_abs_B0F5BC + v2 - 1) = *((unsigned int *)g_abs_B0F5BC + v2); /*0x4665cb*/
       }
-      while ( v2 < MEMORY[0xB0F5C8] ); /*0x4665d7*/
+      while ( v2 < g_abs_B0F5C8 ); /*0x4665d7*/
     }
   }
-  if ( MEMORY[0xA8E9A0] ) /*0x4665e0*/
+  if ( g_abs_A8E9A0 ) /*0x4665e0*/
     ObjectClass::Undeploy(this); /*0x4665e4*/
   *((unsigned int *)this + 43) = 0; /*0x4665e9*/
   *((unsigned int *)this + 44) = 0; /*0x4665f3*/
   *((unsigned int *)this + 85) = 0; /*0x4665fd*/
   v5 = this; /*0x466617*/
-  v3 = (*(int (**)(int *, #374 **))(MEMORY[0xA8ED40] + 16))(&MEMORY[0xA8ED40], &v5); /*0x46661b*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8ED50] && v3 < --MEMORY[0xA8ED50] ) /*0x466636*/
+  v3 = (*(int (**)(int *, #374 **))(g_abs_A8ED40 + 16))(&g_abs_A8ED40, &v5); /*0x46661b*/
+  if ( v3 != -1 && v3 < g_abs_A8ED50 && v3 < --g_abs_A8ED50 ) /*0x466636*/
   {
     do /*0x46664e*/
     {
       ++v3; /*0x46663e*/
-      *((unsigned int *)MEMORY[0xA8ED44] + v3 - 1) = *((unsigned int *)MEMORY[0xA8ED44] + v3); /*0x466642*/
+      *((unsigned int *)g_abs_A8ED44 + v3 - 1) = *((unsigned int *)g_abs_A8ED44 + v3); /*0x466642*/
     }
-    while ( v3 < MEMORY[0xA8ED50] ); /*0x46664e*/
+    while ( v3 < g_abs_A8ED50 ); /*0x46664e*/
   }
   return ObjectClass::Dtor(this); /*0x466657*/
 
@@ -152,7 +153,7 @@ LONG BulletClass::CheckTargetValidity(int a1)
 {
 
   ++g_BulletClassPool; /*0x46afdf*/
-  return InterlockedIncrement((volatile LONG *)(a1 + 28)); /*0x46afeb*/
+  return InterlockedIncrement((volatile LONG *, unsigned int a1)(a1 + 28)); /*0x46afeb*/
 
 }
 } // namespace gamemd

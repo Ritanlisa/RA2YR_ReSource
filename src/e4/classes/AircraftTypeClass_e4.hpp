@@ -898,8 +898,8 @@ struct AircraftTypeClass {
     bool qE0E;  // 0xE0E
     unsigned char qE0F;  // 0xE0F
 // --- flat members (END) ---
-    AircraftTypeClass(ObjectClass * aP1);
-    AircraftClass * ConstructAircraft(AbstractClass * ppv);
+    AircraftTypeClass(void * aP1);
+    AircraftClass * ConstructAircraft(void * ppv);
     AircraftTypeClass * ddtor(char a2);
     char GetDimensions(int a1, int a2);
     char StubReturnFalse();
@@ -909,9 +909,9 @@ struct AircraftTypeClass {
     int GetGameplayValue();
     int GetObjectSize();
     int GetTypeIdentifier();
-    int LoadFromINI(ObjectTypeClass * aP0, int aP1);
+    int LoadFromINI(void * aP0, int aP1);
     int PowerDrainUpdate(int * a2);
-    int SaveToINI(void * a0, TechnoTypeClass * aP1, int a3);
+    int SaveToINI(void * a0, void * aP1, int a3);
 };
 
 } // namespace gamemd

@@ -27,10 +27,10 @@ void PowerClass::checkLowPower()
 {
 
   RadarClass::Destru_vt50(); /*0x63f7e0*/
-  if ( MEMORY[0xAC4E78] ) /*0x63f7ec*/
+  if ( g_abs_AC4E78 ) /*0x63f7ec*/
   {
-    __3_YAXPAX_Z(MEMORY[0xAC4E74]); /*0x63f7f4*/
-    MEMORY[0xAC4E78] = 0; /*0x63f7fc*/
+    RA2_OPDEL(g_abs_AC4E74); /*0x63f7f4*/
+    g_abs_AC4E78 = 0; /*0x63f7fc*/
   }
 
 }

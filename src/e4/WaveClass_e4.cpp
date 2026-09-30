@@ -43,7 +43,7 @@ int WaveClass::LoadWaveData(int a2, int a3)
 
   v3 = a3; /*0x75f652*/
   v4 = a2; /*0x75f659*/
-  Register = BuildingClass::SaveLoad_Register(this); /*0x75f664*/
+  Register = ((BuildingClass *)(this))->SaveLoad_Register(); /*0x75f664*/
   if ( Register >= 0 )
   {
     if ( v4 ) /*0x75f672*/
@@ -59,8 +59,8 @@ int WaveClass::LoadWaveData(int a2, int a3)
       *(unsigned int *)(v4 + 12) = &off_7F6BC8; /*0x75f6b8*/
     }
     *(unsigned int *)(v4 + 332) = *(unsigned int *)(v4 + 176) == 3 ? v4 + 384 : v4 + 336;
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v4 + 172)); /*0x75f6ee*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v4 + 468)); /*0x75f6ff*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v4 + 172)); /*0x75f6ee*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v4 + 468)); /*0x75f6ff*/
     Register = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a2, 4, 0); /*0x75f712*/
     if ( Register >= 0 ) /*0x75f716*/
     {
@@ -73,7 +73,7 @@ LABEL_17:
         if ( v6 > 0 ) /*0x75f79d*/
         {
           do /*0x75f7b8*/
-            ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(unsigned int *)(v4 + 500) + 4 * v11++)); /*0x75f7ae*/
+            ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(*(unsigned int *)(v4 + 500) + 4 * v11++)); /*0x75f7ae*/
           while ( v11 < a2 ); /*0x75f7b8*/
         }
       }
@@ -88,7 +88,7 @@ LABEL_17:
           if ( *(unsigned int *)(v4 + 512) < v7 /*0x75f76e*/
             || (*(unsigned char *)(v4 + 509) || !v7)
             && (v8 = *(unsigned int *)(v4 + 516), v8 > 0)
-            && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)(v4 + 496) + 8))(v4 + 496, v7 + v8, 0) )
+            && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(v4 + 496) + 8))(v4 + 496, v7 + v8, 0) )
           {
             v9 = *(unsigned int *)(v4 + 512); /*0x75f775*/
             v10 = *(unsigned int *)(v4 + 500); /*0x75f778*/
@@ -108,28 +108,28 @@ LABEL_17:
 }
 // 0x763200
 namespace gamemd {
-WaveClass * WaveClass::ddtor(char a2)
+WaveClass * WaveClass::ddtor(void ** Block, char a2)
 {
 
   int v3; // eax
   void *v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &WaveClass::`vftable'; /*0x763206*/
+  *Block = (void *)(&WaveClass::`vftable');
   *(Block + 1) = &WaveClass::`vftable'; /*0x76320c*/
   *(Block + 2) = &vt_WaveClass; /*0x763213*/
   *(Block + 3) = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x763221*/
   v6 = Block; /*0x763236*/
-  v3 = (*(int (**)(int *, void ***))(MEMORY[0xA8EC38] + 16))(&MEMORY[0xA8EC38], &v6); /*0x76323a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8EC48] && v3 < --MEMORY[0xA8EC48] ) /*0x763255*/
+  v3 = (*(int (**)(int *, void ***))(g_abs_A8EC38 + 16))(&g_abs_A8EC38, &v6); /*0x76323a*/
+  if ( v3 != -1 && v3 < g_abs_A8EC48 && v3 < --g_abs_A8EC48 ) /*0x763255*/
   {
     do /*0x76326d*/
     {
       ++v3; /*0x76325d*/
-      *((unsigned int *)MEMORY[0xA8EC3C] + v3 - 1) = *((unsigned int *)MEMORY[0xA8EC3C] + v3); /*0x763261*/
+      *((unsigned int *)g_abs_A8EC3C + v3 - 1) = *((unsigned int *)g_abs_A8EC3C + v3); /*0x763261*/
     }
-    while ( v3 < MEMORY[0xA8EC48] ); /*0x76326d*/
+    while ( v3 < g_abs_A8EC48 ); /*0x76326d*/
   }
   (*((void (**)(void **))*(Block + 124) + 3))(Block + 124); /*0x76327e*/
   v4 = *(Block + 125); /*0x763281*/
@@ -142,7 +142,7 @@ WaveClass * WaveClass::ddtor(char a2)
   *((unsigned char *)Block + 509) = 0; /*0x7632a7*/
   *(Block + 126) = 0; /*0x7632ab*/
   ObjectClass::Dtor(Block); /*0x7632b2*/
-  if ( (a2 & 1) != 0 ) /*0x7632be*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x7632be*/
     OperatorDelete(Block); /*0x7632c1*/
   return (WaveClass *)Block; /*0x7632cb*/
 
@@ -172,9 +172,9 @@ char WaveClass::DamageArea(ObjectClass * aP1)
   if ( v3 ) /*0x75f340*/
   {
     v4 = aP1; /*0x75f346*/
-    LOWORD(aP1) = *(unsigned int *)aP1->__pad_0 / 256; /*0x75f359*/
-    HIWORD(aP1) = *(unsigned int *)&v4->__pad_0[4] / 256; /*0x75f372*/
-    v5 = (char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&aP1); /*0x75f391*/
+    IDA_LOWORD(aP1) = *(unsigned int *)aP1->__pad_0 / 256; /*0x75f359*/
+    IDA_HIWORD(aP1) = *(unsigned int *)&v4->__pad_0[4] / 256; /*0x75f372*/
+    v5 = (char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&aP1); /*0x75f391*/
     v6 = (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)*((char *)this + 117) + 1016))(*((char *)this + 117), 0); /*0x75f395*/
     v7 = *(unsigned int *)v6; /*0x75f39b*/
     v15 = *(unsigned int *)(*(unsigned int *)v6 + 172); /*0x75f3a9*/
@@ -200,7 +200,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     v10 = *((unsigned int *)v5 + 17); /*0x75f439*/
     if ( v10 != -1 ) /*0x75f43f*/
     {
-      v11 = *(unsigned int *)&MEMORY[0xA83D84]->__pad_0[4 * v10]; /*0x75f447*/
+      v11 = *(unsigned int *)&g_abs_A83D84->__pad_0[4 * v10]; /*0x75f447*/
       if ( *(unsigned char *)(v11 + 689) ) /*0x75f44a*/
       {
         aP1 = (ObjectClass *)*((unsigned int *)v5 + 9); /*0x75f45b*/
@@ -209,13 +209,13 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       if ( *(unsigned char *)(v11 + 680) ) /*0x75f464*/
         BuildingClass::SellEffects((int)v5, *(TechnoClass **)(v7 + 152)); /*0x75f477*/
     }
-    LOBYTE(v3) = CellClass::IsActiveOrNext(v5); /*0x75f47e*/
+    IDA_LOBYTE(v3) = CellClass::IsActiveOrNext(v5); /*0x75f47e*/
     if ( (unsigned char)v3 ) /*0x75f486*/
     {
-      v12 = *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6092); /*0x75f497*/
-      v3 = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x63); /*0x75f4a3*/
+      v12 = *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 6092); /*0x75f497*/
+      v3 = Random::Range(&g_abs_A8B230->random[1], 0, (IUnknown *)0x63); /*0x75f4a3*/
       if ( v3 < v12 ) /*0x75f4aa*/
-        LOBYTE(v3) = LayerClass::DestroyCliff((int *)&MEMORY[0x87F7E8], v13, (int)v5); /*0x75f4b2*/
+        IDA_LOBYTE(v3) = LayerClass::DestroyCliff((int *)&g_abs_87F7E8, v13, (int)v5); /*0x75f4b2*/
     }
   }
   return v3; /*0x75f4b7*/

@@ -43,7 +43,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   {
     unknown_libname_73(v4); /*0x770289*/
     Array::ForEach(v5, 24, 6, (int (*)(int))sub_7719E0); /*0x770298*/
-    String::Assign_Alt(v4, &MEMORY[0x889F64]); /*0x7702a4*/
+    String::Assign_Alt(v4, &g_abs_889F64); /*0x7702a4*/
     v4 += 37; /*0x7702a9*/
     v5 += 148; /*0x7702af*/
     --v3; /*0x7702b5*/
@@ -71,22 +71,22 @@ void * WinsockInterface::ProcessPacket(int a2)
   *((unsigned int *)this + 244) = 0; /*0x770324*/
   *((unsigned int *)this + 246) = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
-  String::Assign((char **)&a2, MEMORY[0x8491C4]); /*0x77033b*/
+  String::Assign((char **)&a2, g_abs_8491C4); /*0x77033b*/
   String::Reassign((char **)this + 1, (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
-  String::Assign((char **)&a2, MEMORY[0x8491BC]); /*0x77035f*/
+  String::Assign((char **)&a2, g_abs_8491BC); /*0x77035f*/
   String::Reassign((char **)this + 38, (const char **)&a2); /*0x77036f*/
   DeleteAndZero((void **)&a2); /*0x770378*/
-  String::Assign((char **)&a2, MEMORY[0x8491B4]); /*0x770386*/
+  String::Assign((char **)&a2, g_abs_8491B4); /*0x770386*/
   String::Reassign((char **)this + 75, (const char **)&a2); /*0x770396*/
   DeleteAndZero((void **)&a2); /*0x77039f*/
   String::Assign((char **)&a2, stru_8489C0); /*0x7703ad*/
   String::Reassign((char **)this + 112, (const char **)&a2); /*0x7703bd*/
   DeleteAndZero((void **)&a2); /*0x7703c6*/
-  String::Assign((char **)&a2, MEMORY[0x8491AC]); /*0x7703d4*/
+  String::Assign((char **)&a2, g_abs_8491AC); /*0x7703d4*/
   String::Reassign((char **)this + 149, (const char **)&a2); /*0x7703e4*/
   DeleteAndZero((void **)&a2); /*0x7703ed*/
-  String::Assign((char **)&a2, MEMORY[0x8491A0]); /*0x7703fb*/
+  String::Assign((char **)&a2, g_abs_8491A0); /*0x7703fb*/
   String::Reassign((char **)this + 186, (const char **)&a2); /*0x77040b*/
   DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/
@@ -119,32 +119,32 @@ int WinsockInterface::Init()
   }
   else
   {
-    if ( dword_A8ED54[238803] > 0 && !LOBYTE(dword_A8ED54[238802]) ) /*0x7b1e2d*/
+    if ( dword_A8ED54[238803] > 0 && !IDA_LOBYTE(dword_A8ED54[238802]) ) /*0x7b1e2d*/
     {
-      LOBYTE(dword_A8ED54[238802]) = 1; /*0x7b1e41*/
+      IDA_LOBYTE(dword_A8ED54[238802]) = 1; /*0x7b1e41*/
       ((void (*)(int, char *, char *, unsigned int))MessageBoxA)(dword_A8ED54[233983], aWarningPacketL, Caption, 0); /*0x7b1e48*/
     }
-    v3 = (unsigned short *)__2_YAPAXI_Z(1424); /*0x7b1e53*/
+    v3 = (unsigned short *)RA2_OPNEW(1424); /*0x7b1e53*/
     v4 = *this; /*0x7b1e58*/
     v5 = v3; /*0x7b1e5a*/
     v11 = v3; /*0x7b1e61*/
     *((unsigned int *)this + 64539) = -1; /*0x7b1e65*/
     (*(void (**)(unsigned int *))(v4 + 20))(this); /*0x7b1e6f*/
-    (*(void (**)(unsigned int *))(*(unsigned int **)this + 24))(this); /*0x7b1e76*/
+    (*(void (**)(unsigned int *))(*(unsigned int *)this + 96))(this); /*0x7b1e76*/
     Debug::Log(); /*0x7b1e7e*/
     if ( WSAStartup(257, v5) ) /*0x7b1e8c*/
     {
       Debug::Log(); /*0x7b1e9b*/
-      __3_YAXPAX_Z(v5); /*0x7b1ea1*/
+      RA2_OPDEL(v5); /*0x7b1ea1*/
       return 0; /*0x7b1ea9*/
     }
     else
     {
       Debug::Log(); /*0x7b1eb9*/
-      if ( (unsigned __int8)*v5 != 1 || (((unsigned __int16)*v5 ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
+      if ( (uint8_t)*v5 != 1 || (((uint16_t)*v5 ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
       {
         Debug::Log(); /*0x7b1fad*/
-        __3_YAXPAX_Z(v5); /*0x7b1fb3*/
+        RA2_OPDEL(v5); /*0x7b1fb3*/
         return 0; /*0x7b1fbb*/
       }
       else
@@ -180,7 +180,7 @@ int WinsockInterface::Init()
           }
         }
         *((unsigned char *)this + 258152) = 1; /*0x7b1f7e*/
-        __3_YAXPAX_Z(v5); /*0x7b1f85*/
+        RA2_OPDEL(v5); /*0x7b1f85*/
         return 1; /*0x7b1f8d*/
       }
     }

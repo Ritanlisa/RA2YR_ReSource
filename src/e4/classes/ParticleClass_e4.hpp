@@ -50,7 +50,7 @@ struct ParticleClass {
     unsigned int u32_68;  // 0x68
     unsigned int q06A;  // 0x6A
     unsigned int u32_6C;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    unsigned int estimatedHealth;  // 0x70
     unsigned int u32_74;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int spawnStatus;  // 0x78
@@ -550,14 +550,16 @@ struct ParticleClass {
     unsigned int q0185;
     unsigned int q0186;
     unsigned int vtable49;
+    unsigned int __pad_E4;
+    unsigned int field_AC;
 // --- flat members (END) ---
     int * CheckDrawFlags(int a1);
-    int CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2);
+    int CheckCollisionFlags(void * aP0, int * a1, int aP2);
     int CheckStateFlag();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
-    int LoadParticleData(ObjectClass * aP1, int aP1a);
+    int LoadParticleData(void * aP1, int aP1a);
     void AdjustHeight();
     void DrawParticle(int * a2, int * a3);
 };

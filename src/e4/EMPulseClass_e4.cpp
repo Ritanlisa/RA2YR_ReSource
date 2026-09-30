@@ -28,21 +28,21 @@ int EMPulseClass::StubReturn55()
 } // namespace gamemd
 // 0x4C5AC0
 namespace gamemd {
-EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
+EMPulseClass * EMPulseClass::CopyTo(void * this, void * a2, char a3)
 {
 
   int v4; // eax
   AbstractClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)a3->__pad_0 = &EMPulseClass::`vftable'; /*0x4c5ac4*/
-  *(unsigned int *)&a3->__pad_0[4] = &EMPulseClass::`vftable'; /*0x4c5aca*/
-  *(unsigned int *)&a3->__pad_0[8] = &EMPulseClass::`vftable'; /*0x4c5ad1*/
-  *(unsigned int *)&a3->__pad_0[12] = &vt_EMPulseClass; /*0x4c5ad8*/
+  *(unsigned int *)this->__pad_0 = &EMPulseClass::`vftable'; /*0x4c5ac4*/
+  *(unsigned int *)&this->__pad_0[4] = &EMPulseClass::`vftable'; /*0x4c5aca*/
+  *(unsigned int *)&this->__pad_0[8] = &EMPulseClass::`vftable'; /*0x4c5ad1*/
+  *(unsigned int *)&this->__pad_0[12] = &vt_EMPulseClass; /*0x4c5ad8*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x4c5ae6*/
-    EMPulseClass::IterateCellsInRadius((int)a3); /*0x4c5ae8*/
-  LOBYTE(a3) = 1; /*0x4c5aed*/
-  AbstractClass::AnnounceExpiredPointer(a3, a3); /*0x4c5af1*/
-  v6 = a3; /*0x4c5b06*/
+    EMPulseClass::IterateCellsInRadius((int)this); /*0x4c5ae8*/
+  IDA_LOBYTE(this) = 1; /*0x4c5aed*/
+  AbstractClass::AnnounceExpiredPointer(this, this); /*0x4c5af1*/
+  v6 = this; /*0x4c5b06*/
   v4 = (*(int (**)(char *, AbstractClass **))(*(unsigned int *)&stru_89E138.__pad_566C[204] + 16))( /*0x4c5b0a*/
          &stru_89E138.__pad_566C[204],
          &v6);
@@ -57,10 +57,10 @@ EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
       ++v4; /*0x4c5b2d*/
     }
   }
-  AbstractClass::DTOR(a3); /*0x4c5b41*/
-  if ( (a3 & 1) != 0 ) /*0x4c5b4b*/
-    __3_YAXPAX_Z(a3); /*0x4c5b4e*/
-  return (EMPulseClass *)a3; /*0x4c5b58*/
+  AbstractClass::DTOR(this); /*0x4c5b41*/
+  if ( (this & 1) != 0 ) /*0x4c5b4b*/
+    RA2_OPDEL(this); /*0x4c5b4e*/
+  return (EMPulseClass *)this; /*0x4c5b58*/
 
 }
 } // namespace gamemd

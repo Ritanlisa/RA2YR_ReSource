@@ -34,7 +34,7 @@ int LoadGame::LoadTriggerEvents()
 
   int v1; // edx
   int v2; // edi
-  unsigned int *v4; // ecx
+  unsigned int * v4;
   void *v5; // esi
   int v6; // eax
   int v7; // eax
@@ -48,17 +48,17 @@ int LoadGame::LoadTriggerEvents()
   v2 = g_TriggerEventState - 1; /*0x66084d*/
   if ( g_TriggerEventState - 1 >= 0 ) /*0x660856*/
   {
-    v4 = g_TriggerPool; /*0x660858*/
+    v4 = (unsigned int *)(g_TriggerPool);
     do /*0x6608cb*/
     {
-      v5 = (void *)v4[v2]; /*0x66085e*/
+      v5 = (void *)((unsigned int *)(v4))[v2]; /*0x66085e*/
       if ( v5 ) /*0x660863*/
       {
-        v12 = v4[v2]; /*0x660875*/
+        v12 = (unsigned int *)(((unsigned int *)(v4))[v2]);
         v6 = (*(int (**)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v12); /*0x660879*/
         if ( v6 != -1 ) /*0x66087f*/
           LoadGame::RemoveItem(&dword_B04DA8, v6); /*0x660887*/
-        __3_YAXPAX_Z(v5); /*0x66088d*/
+        RA2_OPDEL(v5); /*0x66088d*/
         v4 = g_TriggerPool; /*0x660892*/
         v1 = g_TriggerEventState; /*0x660898*/
       }
@@ -68,7 +68,7 @@ int LoadGame::LoadTriggerEvents()
         v7 = v2; /*0x6608a6*/
         for ( g_TriggerEventState = v1; v7 < g_TriggerEventState; ++v7 ) /*0x6608b0*/
         {
-          v4[v7] = v4[v7 + 1]; /*0x6608b6*/
+          ((unsigned int *)(v4))[v7] = (unsigned int *)(v4[v7 + 1]);
           v1 = g_TriggerEventState; /*0x6608b9*/
           v4 = g_TriggerPool; /*0x6608bf*/
         }
@@ -84,7 +84,7 @@ int LoadGame::LoadTriggerEvents()
   {
     while ( 1 ) /*0x6608f5*/
     {
-      v10 = __2_YAPAXI_Z(0x40u); /*0x6608f5*/
+      v10 = (unsigned int *)(RA2_OPNEW(0x40u));
       if ( v10 ) /*0x6608ff*/
       {
         v12 = 0; /*0x660901*/
@@ -97,24 +97,24 @@ int LoadGame::LoadTriggerEvents()
       if ( (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v11, 64, 0) < 0 ) /*0x660929*/
         break; /*0x660929*/
       if ( ++v9 >= v13 ) /*0x660932*/
-        return (*(int (**)(void *, __int16 *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
+        return (*(int (**)(void *, int16_t *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
     }
     return 0; /*0x660929*/
   }
-  return (*(int (**)(void *, __int16 *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
+  return (*(int (**)(void *, int16_t *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
 
 }
 } // namespace gamemd
 // 0x660F10
 namespace gamemd {
-void LoadGame::RemoveItem()
+void LoadGame::RemoveItem( int a2)
 {
 
   int v2; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x660f10*/
+  v2 = (int)(*(this + 4));
   v3 = a2; /*0x660f13*/
   if ( a2 >= v2 ) /*0x660f19*/
     return 0; /*0x660f3c*/
@@ -135,7 +135,7 @@ void LoadGame::RemoveItem()
 } // namespace gamemd
 // 0x67E730
 namespace gamemd {
-void LoadGame::Start()
+void LoadGame::Start(LPSTREAM pStm)
 {
 
   char result; // al
@@ -209,9 +209,9 @@ void LoadGame::Start()
   int v70[4]; // [esp+36Ch] [ebp-10h] BYREF
 
   ResetScenario();
-  ScenarioClass::SaveLoad_Prefix_0((int)MEMORY[0xA8B230], (int)pStm);
-  MEMORY[0xA8ED9C] = *((unsigned char *)MEMORY[0xA8B230] + 13730);
-  result = MixFile::LoadSide(*((unsigned int *)MEMORY[0xA8B230] + 3374));
+  ScenarioClass::SaveLoad_Prefix_0((int)g_abs_A8B230, (int)pStm);
+  g_abs_A8ED9C = *((unsigned char *)g_abs_A8B230 + 13730);
+  result = MixFile::LoadSide(*((unsigned int *)g_abs_A8B230 + 3374));
   if ( result )
   {
     Viewport = Display::GetViewport(v69);
@@ -230,16 +230,16 @@ void LoadGame::Start()
     v68[2] = v6;
     v70[3] = v7;
     v69[2] = v6;
-    v67[3] = MEMORY[0x886FBC];
-    v68[3] = MEMORY[0x886FBC];
-    v69[3] = MEMORY[0x886FBC];
+    v67[3] = g_abs_886FBC;
+    v68[3] = g_abs_886FBC;
+    v69[3] = g_abs_886FBC;
     v69[0] = 0;
     v69[1] = 0;
-    AllocateSurfaceScreenSurfaces((int)&MEMORY[0x886FB0], (int)v69, (int)v68, (int)v67, 0);
+    AllocateSurfaceScreenSurfaces((int)&g_abs_886FB0, (int)v69, (int)v68, (int)v67, 0);
     TacticalClass::SetViewDimensions(v70);
-    LoadGame::LoadBlock68(&MEMORY[0x8A38E0], (int)pStm);
-    LoadTheaterClassMIX(*((unsigned int *)MEMORY[0xA8B230] + 1174));
-    RulesClass::SaveLoad_Prefix_0(&MEMORY[0x8871E0]->DetailMinFrameRateNormal, (int)pStm);
+    LoadGame::LoadBlock68(&g_abs_8A38E0, (int)pStm);
+    LoadTheaterClassMIX(*((unsigned int *)g_abs_A8B230 + 1174));
+    RulesClass::SaveLoad_Prefix_0(&g_abs_8871E0->DetailMinFrameRateNormal, (int)pStm);
     if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
       return 0;
     v8 = 0;
@@ -253,7 +253,7 @@ void LoadGame::Start()
       return 0;
     }
 LABEL_6:
-    MouseClass::LoadGameAssets(&MEMORY[0x87F7E8].field_0, pStm);
+    MouseClass::LoadGameAssets(&g_abs_87F7E8, pStm);
     if ( (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0) < 0 )
       return 0;
     v9 = 0;
@@ -269,12 +269,12 @@ LABEL_6:
 LABEL_10:
     if ( Game::SerializeGameSaveState(pStm) < 0 )
       return 0;
-    MapClass::BuildSubzones(&MEMORY[0x87F7E8]);
-    LayerClass::Load(&MEMORY[0x87F778], pStm);
-    if ( MEMORY[0x887324] )
+    MapClass::BuildSubzones(&g_abs_87F7E8);
+    LayerClass::Load(&g_abs_87F778, pStm);
+    if ( g_abs_887324 )
     {
-      (*(void (**)(LPPERSISTSTREAM, int))(*(unsigned int *)MEMORY[0x887324] + 32))(MEMORY[0x887324], 1);
-      MEMORY[0x887324] = 0;
+      (*(void (**)(LPPERSISTSTREAM, int))(*(unsigned int *)g_abs_887324 + 32))(g_abs_887324, 1);
+      g_abs_887324 = 0;
     }
     if ( OleLoadFromStream(pStm, &IID_IUnknown, &v66) < 0 )
       return 0;
@@ -850,8 +850,8 @@ LABEL_188:
       return 0;
     }
 LABEL_192:
-    MEMORY[0xA83D60] = 0;
-    VectorClass_ptr_SuperClass::Remove((int)&MEMORY[0xA83D50]);
+    g_abs_A83D60 = 0;
+    VectorClass_ptr_SuperClass::Remove((int)&g_abs_A83D50);
     v54 = (*(int (**)(LPSTREAM, int *, int, unsigned int))(*(unsigned int *)pStm->__pad_0 + 12))(pStm, &v64, 4, 0);
     if ( v54 < 0 )
       return 0;
@@ -867,16 +867,16 @@ LABEL_192:
                 0);
         if ( v54 < 0 )
           break;
-        if ( MEMORY[0xA83D60] < MEMORY[0xA83D58]
-          || (MEMORY[0xA83D5D] || !MEMORY[0xA83D58])
-          && MEMORY[0xA83D64] > 0
-          && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA83D50] + 8))(
-               &MEMORY[0xA83D50],
-               MEMORY[0xA83D64] + MEMORY[0xA83D58],
+        if ( g_abs_A83D60 < g_abs_A83D58
+          || (g_abs_A83D5D || !g_abs_A83D58)
+          && g_abs_A83D64 > 0
+          && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A83D50 + 8))(
+               &g_abs_A83D50,
+               g_abs_A83D64 + g_abs_A83D58,
                0) )
         {
-          v56 = MEMORY[0xA83D60]++;
-          *((unsigned int *)MEMORY[0xA83D54] + v56) = ppvObj;
+          v56 = g_abs_A83D60++;
+          *((unsigned int *)g_abs_A83D54 + v56) = ppvObj;
         }
         v57 = v64;
         if ( ++v55 >= v64 )
@@ -888,7 +888,7 @@ LABEL_205:
       if ( v57 > 0 )
       {
         do
-          ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)MEMORY[0xA83D54] + v58++);
+          ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)g_abs_A83D54 + v58++);
         while ( v58 < v64 );
       }
     }
@@ -914,7 +914,7 @@ LABEL_205:
         if ( unk_8B41F0 < unk_8B41E8
           || (unk_8B41ED || !unk_8B41E8)
           && unk_8B41F4 > 0
-          && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_8B41E0 + 8))(
+          && (*(uint8_t (**)(int *, int, unsigned int))(dword_8B41E0 + 8))(
                &dword_8B41E0,
                unk_8B41F4 + unk_8B41E8,
                0) )
@@ -932,7 +932,7 @@ LABEL_222:
       if ( v62 > 0 )
       {
         do
-          ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)unk_8B41E4 + v63++);
+          ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)unk_8B41E4 + v63++);
         while ( v63 < v64 );
       }
     }
@@ -968,23 +968,23 @@ LABEL_222:
           return 0;
         if ( Stream::ReadOLEObjects(pStm) < 0 )
           return 0;
-        LoadGame::ClearAllSlots(MEMORY[0x887888]);
-        if ( LoadGame::LoadIteratedData((char *)MEMORY[0x887888], (int)pStm) < 0 )
+        LoadGame::ClearAllSlots(g_abs_887888);
+        if ( LoadGame::LoadIteratedData((char *)g_abs_887888, (int)pStm) < 0 )
           return 0;
         LoadGame::CleanupArray(&g_MissionQueueFrame);
         if ( LoadGame::LoadPointArray(&g_MissionQueueFrame, (int)pStm) < 0 )
           return 0;
-        Stream::FlushAndReset(&MEMORY[0x87F5D8]);
-        if ( LoadGame::DeserializePointerArrays(&MEMORY[0x87F5D8], (int)pStm) < 0 )
+        Stream::FlushAndReset(&g_abs_87F5D8);
+        if ( LoadGame::DeserializePointerArrays(&g_abs_87F5D8, (int)pStm) < 0 )
           return 0;
         if ( Stream::ReadOLEObjects(pStm) < 0 )
           return 0;
         if ( Stream::ReadOLEObjects(pStm) < 0 )
           return 0;
-        if ( MEMORY[0xA8B238][0] == 5 )
+        if ( g_abs_A8B238[0] == 5 )
         {
           Debug::Log();
-          if ( !LoadGame::LoadBlock300(MEMORY[0xA8B250], (int)pStm) )
+          if ( !LoadGame::LoadBlock300(g_abs_A8B250, (int)pStm) )
           {
             Debug::Log();
             return 0;
@@ -996,9 +996,9 @@ LABEL_222:
           return 0;
         if ( LoadGame_Start((int)pStm) < 0 )
           return 0;
-        MapClass::MarkForRedraw(&MEMORY[0x87F7E8], 2);
-        if ( !MEMORY[0xA8B238][0] )
-          MEMORY[0xABCE08] = 1;
+        MapClass::MarkForRedraw(&g_abs_87F7E8, 2);
+        if ( !g_abs_A8B238[0] )
+          g_abs_ABCE08 = 1;
         return 1;
       }
     }
@@ -1057,7 +1057,7 @@ int LoadGame::RestoreAudioState()
   unsigned int v18[4]; // [esp+40h] [ebp-10h] BYREF
 
   v1 = this; /*0x751717*/
-  Next = (int *)AudioQueue::GetNext(MEMORY[0xB1D320]); /*0x751727*/
+  Next = (int *)AudioQueue::GetNext(g_abs_B1D320); /*0x751727*/
   if ( Next ) /*0x75172b*/
   {
     do /*0x751763*/
@@ -1065,9 +1065,9 @@ int LoadGame::RestoreAudioState()
       NextAlt = AudioQueue::GetNextAlt(Next); /*0x751737*/
       AudioController::Stop(Next + 3); /*0x751739*/
       LinkedList::Init((unsigned int **)Next); /*0x751740*/
-      PushFrontLinkedListAlt(MEMORY[0xB1D3A4], (int)Next); /*0x75174d*/
+      PushFrontLinkedListAlt(g_abs_B1D3A4, (int)Next); /*0x75174d*/
       Next = (int *)NextAlt; /*0x751758*/
-      --MEMORY[0xB1D3A8]; /*0x75175d*/
+      --g_abs_B1D3A8; /*0x75175d*/
     }
     while ( NextAlt ); /*0x751763*/
   }
@@ -1084,9 +1084,9 @@ int LoadGame::RestoreAudioState()
         v16 = result; /*0x7517a6*/
         if ( result < 0 ) /*0x7517aa*/
           break; /*0x7517aa*/
-        if ( v18[0] != -1 && v18[0] < MEMORY[0xB1D388] && v18[0] >= 0 ) /*0x7517cb*/
+        if ( v18[0] != -1 && v18[0] < g_abs_B1D388 && v18[0] >= 0 ) /*0x7517cb*/
         {
-          v5 = **((unsigned int **)MEMORY[0xB1D37C] + v18[0]); /*0x7517da*/
+          v5 = **((unsigned int **)g_abs_B1D37C + v18[0]); /*0x7517da*/
           if ( v5 ) /*0x7517de*/
           {
             if ( AudioMixer::SetVolume(v5) ) /*0x7517e4*/
@@ -1097,7 +1097,7 @@ int LoadGame::RestoreAudioState()
               v15 = v18[0]; /*0x751807*/
               if ( v18[0] >= 0 ) /*0x75180b*/
               {
-                v8 = LinkedList::Next((int **)MEMORY[0xB1D3A4]); /*0x751813*/
+                v8 = LinkedList::Next((int **)g_abs_B1D3A4); /*0x751813*/
                 v9 = v8; /*0x751818*/
                 if ( v8 ) /*0x75181c*/
                 {
@@ -1110,10 +1110,10 @@ int LoadGame::RestoreAudioState()
                   v9[9] = v7; /*0x751843*/
                   v9[10] = v10; /*0x751846*/
                   StartAudioControllerAt(v15, (int)(v9 + 8), (int)(v9 + 3)); /*0x75184d*/
-                  InsertAfterDListNode((int)MEMORY[0xB1D320], v9); /*0x751859*/
-                  v11 = ++MEMORY[0xB1D3A8]; /*0x751869*/
-                  if ( MEMORY[0xB1D3A8] > MEMORY[0xB1D3AC] ) /*0x751871*/
-                    MEMORY[0xB1D3AC] = v11; /*0x751873*/
+                  InsertAfterDListNode((int)g_abs_B1D320, v9); /*0x751859*/
+                  v11 = ++g_abs_B1D3A8; /*0x751869*/
+                  if ( g_abs_B1D3A8 > g_abs_B1D3AC ) /*0x751871*/
+                    g_abs_B1D3AC = v11; /*0x751873*/
                   v1 = this; /*0x751878*/
                 }
               }
@@ -1138,13 +1138,13 @@ int LoadGame::LoadMagicAndAudio()
   int v3; // [esp+30h] [ebp-10h] BYREF
   unsigned int v4[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  if ( MEMORY[0xB1D4C4] ) /*0x7533fd*/
+  if ( g_abs_B1D4C4 ) /*0x7533fd*/
   {
-    *(unsigned int *)(MEMORY[0xB1D4C4] + 80) = 2; /*0x7533ff*/
-    MEMORY[0xB1D4C4] = 0; /*0x753406*/
+    *(unsigned int *)(g_abs_B1D4C4 + 80) = 2; /*0x7533ff*/
+    g_abs_B1D4C4 = 0; /*0x753406*/
   }
-  if ( MEMORY[0xB1D4CC] ) /*0x753418*/
-    Audio::Release(MEMORY[0xB1D4CC]); /*0x75341a*/
+  if ( g_abs_B1D4CC ) /*0x753418*/
+    Audio::Release(g_abs_B1D4CC); /*0x75341a*/
   ThemeClass::ClearQueues(); /*0x75341f*/
   result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x753430*/
   if ( result >= 0 && v3 == 1450145875 ) /*0x753443*/
@@ -1159,8 +1159,8 @@ int LoadGame::LoadMagicAndAudio()
         result = (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v4, 12, 0); /*0x75347c*/
         if ( result >= 0 ) /*0x753481*/
         {
-          if ( MEMORY[0xB1D4CC] && v4[0] >= 0 && v4[0] < MEMORY[0xB1D4B0] ) /*0x75349a*/
-            Audio_Load(*((unsigned int *)MEMORY[0xB1D4A4] + v4[0]), v4[1], v4[2]); /*0x7534ae*/
+          if ( g_abs_B1D4CC && v4[0] >= 0 && v4[0] < g_abs_B1D4B0 ) /*0x75349a*/
+            Audio_Load(*((unsigned int *)g_abs_B1D4A4 + v4[0]), v4[1], v4[2]); /*0x7534ae*/
           result = (*(int (**)(void *, int *, int, unsigned int))(*(unsigned int *)this + 12))(this, &v3, 4, 0); /*0x7534bf*/
           if ( result >= 0 ) /*0x7534c4*/
             continue; /*0x7534c4*/
@@ -1196,12 +1196,12 @@ int LoadGame::LoadPointArray(int a2)
     v13 = 0; /*0x54e7dd*/
     while ( v13 < v11 ) /*0x54e7e7*/
     {
-      v4 = (int *)__2_YAPAXI_Z(8u); /*0x54e7fa*/
+      v4 = (int *)RA2_OPNEW(8u); /*0x54e7fa*/
       v3 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 12))(a2, v4, 8, 0); /*0x54e805*/
       if ( v3 < 0 ) /*0x54e809*/
         break; /*0x54e809*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4); /*0x54e811*/
-      ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v4 + 1); /*0x54e81f*/
+      ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v4); /*0x54e811*/
+      ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v4 + 1); /*0x54e81f*/
       v5 = v12[5]; /*0x54e828*/
       v6 = v12 + 3; /*0x54e82b*/
       if ( v12[7] >= v5 ) /*0x54e833*/
@@ -1209,7 +1209,7 @@ int LoadGame::LoadPointArray(int a2)
         if ( !*((unsigned char *)v12 + 25) && v5 ) /*0x54e83e*/
           continue; /*0x54e83e*/
         v7 = v12[8]; /*0x54e840*/
-        if ( v7 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v6 + 8))(v12 + 3, v5 + v7, 0) ) /*0x54e850*/
+        if ( v7 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*v6 + 8))(v12 + 3, v5 + v7, 0) ) /*0x54e850*/
           continue; /*0x54e850*/
       }
       v8 = v6[4]; /*0x54e857*/

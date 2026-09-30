@@ -27,7 +27,7 @@ struct MechLocomotionClass {
     unsigned int q033;  // 0x33
     unsigned int LocomotionClass;
 // --- flat members (END) ---
-    MechLocomotionClass * ProcessMove(char a2);
+    MechLocomotionClass * ProcessMove(unsigned int * Block, char a2);
     int BeginMove(int * a1, int * a2);
     int StubReturn52();
     int ddtor(int a1, unsigned int * a2);

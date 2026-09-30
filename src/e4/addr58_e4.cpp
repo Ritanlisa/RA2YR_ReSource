@@ -193,11 +193,11 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
   v18 = &vt_DynamicVectorClass_int; /*0x583af1*/
   v23 = 10; /*0x583af9*/
   v22 = 0; /*0x583b05*/
-  *(unsigned int *)&MEMORY[0x87F8E4].__pad_18[8] = (char *)MEMORY[0x87F8E4].field_4 + MEMORY[0x87F8E4].field_0 + 1; /*0x583b0d*/
-  *(unsigned int *)&MEMORY[0x87F8E4].__pad_18[12] = (char *)MEMORY[0x87F8E4].field_4 /*0x583b22*/
-                                            + MEMORY[0x87F8DC]
-                                            - MEMORY[0x87F8E4].field_0;
-  for ( i = MapClass::SpiralSearch(&MEMORY[0x87F7E8]); i; i = MapClass::SpiralSearch(&MEMORY[0x87F7E8]) ) /*0x583b2f*/
+  *(unsigned int *)&g_abs_87F8E4 = (char *)g_abs_87F8E4 + g_abs_87F8E4 + 1; /*0x583b0d*/
+  *(unsigned int *)&g_abs_87F8E4 = (char *)g_abs_87F8E4 /*0x583b22*/
+                                            + g_abs_87F8DC
+                                            - g_abs_87F8E4;
+  for ( i = MapClass::SpiralSearch(&g_abs_87F7E8); i; i = MapClass::SpiralSearch(&g_abs_87F7E8) ) /*0x583b2f*/
   {
     if ( i[19] == 4 ) /*0x583b39*/
     {
@@ -224,7 +224,7 @@ LABEL_15:
                 goto LABEL_16; /*0x583bb6*/
               v6 = v22; /*0x583b6b*/
             }
-            if ( ((unsigned __int8 (*)(void ***, int, unsigned int))v18[2])(&v18, v23 + v9, 0) ) /*0x583b94*/
+            if ( ((uint8_t (*)(void ***, int, unsigned int))v18[2])(&v18, v23 + v9, 0) ) /*0x583b94*/
             {
 LABEL_13:
               v10 = v22++; /*0x583b9b*/
@@ -263,7 +263,7 @@ LABEL_16:
   {
     v18 = &vt_VectorClass_int; /*0x583c31*/
     if ( v11 && v21 ) /*0x583c41*/
-      __3_YAXPAX_Z(v11); /*0x583c44*/
+      RA2_OPDEL(v11); /*0x583c44*/
     return 0; /*0x583c4f*/
   }
   else
@@ -273,7 +273,7 @@ LABEL_16:
     if ( v11 ) /*0x583c10*/
     {
       if ( v21 ) /*0x583c18*/
-        __3_YAXPAX_Z(v11); /*0x583c1b*/
+        RA2_OPDEL(v11); /*0x583c1b*/
     }
     return v16; /*0x583c23*/
   }
@@ -737,7 +737,7 @@ void unknown::ddtor()
   *((unsigned int *)this + 4) = 0; /*0x588ce9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x588cf0*/
   {
-    __3_YAXPAX_Z(v2); /*0x588cf6*/
+    RA2_OPDEL(v2); /*0x588cf6*/
     *((unsigned int *)this + 1) = 0; /*0x588cfe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x588d01*/
@@ -745,7 +745,7 @@ void unknown::ddtor()
 
 }
 // 0x5896A0
-int  unknown::Read()
+int  unknown::Read( unsigned short * a2)
 {
 
   int v2; // esi
@@ -1815,7 +1815,7 @@ unsigned int * E4Recv_58BE20::sub_58BE20()
   unsigned int v3; // eax
   unsigned short *v4; // ecx
   int v5; // ecx
-  __int64 v7; // [esp+14h] [ebp-10h]
+  int64_t v7; // [esp+14h] [ebp-10h]
 
   v2 = unk_89C2DC * unk_89C2DC - 1; /*0x58be30*/
   do /*0x58be88*/
@@ -1847,8 +1847,8 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
   unsigned short *v5; // ecx
   unsigned int *v6; // eax
   int v8; // [esp+10h] [ebp-1Ch] BYREF
-  __int64 v9; // [esp+14h] [ebp-18h]
-  __int64 v10; // [esp+1Ch] [ebp-10h]
+  int64_t v9; // [esp+14h] [ebp-18h]
+  int64_t v10; // [esp+1Ch] [ebp-10h]
   double v11; // [esp+24h] [ebp-8h]
 
   v2 = 0; /*0x58beab*/
@@ -1876,7 +1876,7 @@ unsigned int * E4Recv_58BEA0::sub_58BEA0()
       *this = 0; /*0x58bf51*/
       return this; /*0x58bf5c*/
     }
-    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v8); /*0x58bf2d*/
+    v6 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v8); /*0x58bf2d*/
   }
   while ( !Cell::IsEmpty(v6) ); /*0x58bf34*/
   *this = v8; /*0x58bf62*/
@@ -1956,7 +1956,7 @@ unsigned int * E4Recv_58C320::sub_58C320(unsigned int * a2)
   unsigned int v4; // eax
   char *v5; // ecx
   int v6; // ecx
-  __int64 v8; // [esp+18h] [ebp-10h]
+  int64_t v8; // [esp+18h] [ebp-10h]
 
   v2 = unk_89C2DC * unk_89C2DC; /*0x58c32e*/
   do /*0x58c38f*/
@@ -1979,17 +1979,17 @@ unsigned int * E4Recv_58C320::sub_58C320(unsigned int * a2)
 
 // 0x58C3B0
 namespace gamemd {
-unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * v6)
+unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * a2)
 {
 
   int v3; // ebx
   unsigned int v4; // eax
   char *v5; // ecx
-  unsigned int *v6; // eax
+  unsigned int *a2; // eax
   int v8; // [esp+10h] [ebp-20h]
   int v9; // [esp+14h] [ebp-1Ch] BYREF
-  __int64 v10; // [esp+18h] [ebp-18h]
-  __int64 v11; // [esp+20h] [ebp-10h]
+  int64_t v10; // [esp+18h] [ebp-18h]
+  int64_t v11; // [esp+20h] [ebp-10h]
   double v12; // [esp+28h] [ebp-8h]
 
   v8 = 0; /*0x58c3bb*/
@@ -2012,14 +2012,14 @@ unsigned int * E4Recv_58C3B0::sub_58C3B0(unsigned int * v6)
     v9 = *((unsigned int *)g_MapTileArray + 20 * v4); /*0x58c432*/
     if ( ++v8 > 200 ) /*0x58c444*/
     {
-      *v6 = 0; /*0x58c47a*/
-      return v6; /*0x58c480*/
+      *a2 = 0; /*0x58c47a*/
+      return a2; /*0x58c480*/
     }
-    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v9); /*0x58c450*/
+    a2 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v9); /*0x58c450*/
   }
-  while ( !Cell::IsEmpty(v6) ); /*0x58c457*/
-  *v6 = v9; /*0x58c48e*/
-  return v6; /*0x58c477*/
+  while ( !Cell::IsEmpty(a2) ); /*0x58c457*/
+  *a2 = v9; /*0x58c48e*/
+  return a2; /*0x58c477*/
 
 }
 } // namespace gamemd
@@ -2034,7 +2034,7 @@ unsigned int * E4Recv_58C4A0::sub_58C4A0(ObjectClass * aP1)
   unsigned int v4; // eax
   unsigned int *v5; // eax
   Random *v7; // [esp+10h] [ebp-20h]
-  __int64 v9; // [esp+20h] [ebp-10h]
+  int64_t v9; // [esp+20h] [ebp-10h]
 
   v2 = g_MapTileArray; /*0x58c4b3*/
   v7 = (Random *)(unk_89C2DC * unk_89C2DC); /*0x58c4bd*/
@@ -2159,7 +2159,7 @@ int E4Recv_58D120::sub_58D120(int a2, int a3)
         *(unsigned int *)((char *)g_MapTileArray + v5 + 56) = a2; /*0x58d155*/
         *((unsigned char *)g_MapTileArray + v5 + 75) = 0; /*0x58d15e*/
         a3 = *(unsigned int *)((char *)g_MapTileArray + v5); /*0x58d176*/
-        v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a3); /*0x58d17a*/
+        v6 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&a3); /*0x58d17a*/
         v6[14] = 0; /*0x58d182*/
         *((unsigned char *)v6 + 282) = 0; /*0x58d185*/
         if ( v4 != -1 ) /*0x58d18c*/

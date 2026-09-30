@@ -49,8 +49,8 @@ struct TEventClass {
     int CheckConditions(int a2, int a3);
     int PrepareSaveToINI(const char * a2);
     int ProcessEvent(int a2);
-    int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
+    int SaveLoad_Prefix(void * aP0, int aP1);
+    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
     int Stub();
     int StubReturn48();
     int StubReturn88();

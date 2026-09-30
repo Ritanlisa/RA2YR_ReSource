@@ -53,11 +53,11 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 } // namespace gamemd
 // 0x4F43F0
 namespace gamemd {
-bool COMObject::IsSameType(int a1)
+bool COMObject::IsSameType(GScreenClass * aP0)
 {
 
-  return *(unsigned int *)&HouseClass_Player.__pad_5568[23712] == (*(int (**)(GScreenClass *))(a1->parent_gap[0] /*0x4f4408*/
-                                                                                                  + 24))(a1);
+  return *(unsigned int *)&HouseClass_Player.__pad_5568[23712] == (*(int (**)(GScreenClass *))(aP0->parent_gap[0] /*0x4f4408*/
+                                                                                                  + 24))(aP0);
 
 }
 } // namespace gamemd
@@ -129,7 +129,7 @@ int COMObject::GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1)
 } // namespace gamemd
 // 0x6C0050
 namespace gamemd {
-bool COMObject::QueryInterface2(int a1)
+bool COMObject::QueryInterface2()
 {
 
   int v2; // [esp+8h] [ebp+4h]

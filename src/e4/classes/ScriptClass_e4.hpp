@@ -25,8 +25,8 @@ struct ScriptClass {
     bool q02B;  // 0x2B
     char idxCurrentLine[4];  // 0x2C
 // --- flat members (END) ---
-    int LoadState(AbstractClass * aP0, int aP1);
-    int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);
+    int LoadState(void * aP0, int aP1);
+    int SaveState(void * aP0, int * a1, int aP2);
     int StubReturn26();
     int StubReturn48();
     int ddtor(int a1, unsigned int * a2);

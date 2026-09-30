@@ -31,7 +31,7 @@ namespace gamemd {
 void ScreenCaptureCommandClass::ddtor()
 {
 
-  return GetStringCSF(MEMORY[0x826FEC], 0, g_Str_File_Init_CPP, 8071); /*0x537b76*/
+  return GetStringCSF(g_abs_826FEC, 0, g_Str_File_Init_CPP, 8071); /*0x537b76*/
 
 }
 } // namespace gamemd

@@ -10,7 +10,7 @@ struct MultiplayerManBattle {
     void* vtable1;  // 0x0
     unsigned int MultiplayerManBattle_field_00;
 // --- flat members (END) ---
-    MultiplayerManBattle * QueryInterface(char a2);
+    MultiplayerManBattle * QueryInterface(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

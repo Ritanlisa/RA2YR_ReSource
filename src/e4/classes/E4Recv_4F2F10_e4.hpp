@@ -35,6 +35,6 @@ struct E4Recv_4F2F10 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    int * sub_4F2F10(GraphicMenuAnimItem * aP1,  unsigned int * a2,  GraphicMenuAnimItem * aP3,  int * a4,  GraphicMenuAnimItem * aP5,  char ** a6,  GraphicMenuAnimItem * aP7,  GraphicMenuAnimItem * aP8);    // 0x4F2F10
+    int * sub_4F2F10(void * aP1,  unsigned int * a2,  void * aP3,  int * a4,  void * aP5,  char ** a6,  void * aP7,  void * aP8);    // 0x4F2F10
 };
 } // namespace gamemd

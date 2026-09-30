@@ -329,7 +329,7 @@ void sub_72AC40()
   if ( g_BuildingLoadQueue_Array.__pad_F70[1072] ) /*0x72ac54*/
   {
     g_BuildingLoadQueue_Array.__pad_F70[1072] = 0; /*0x72ac5a*/
-        LoadingScreen::DestroyFileTrees();
+        this->LoadingScreen::DestroyFileTrees();
     LoadingScreen::CleanupObjects(v1); /*0x72ac65*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1120]); /*0x72ac70*/
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1120] = 0; /*0x72ac7b*/
@@ -351,7 +351,7 @@ void sub_72AC40()
   }
   FileTree::CleanupAll(); /*0x72acff*/
   LoadingScreen::FreeResources(v1); /*0x72ad04*/
-    LoadingScreen::FreeResources2();
+    this->LoadingScreen::FreeResources2();
   g_BuildingLoadQueue_Array.__pad_F70[1116] = 0; /*0x72ad0e*/
 }
 } // namespace gamemd

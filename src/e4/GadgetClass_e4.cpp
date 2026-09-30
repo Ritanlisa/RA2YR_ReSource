@@ -14,60 +14,60 @@
 
 // 0x4E12F0
 namespace gamemd {
-ControlClass GadgetClass::Construct(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7, void* a8, void* a9)
+ControlClass GadgetClass::Construct( int a2, int a3, int a4, int a5, int a6, char a7)
 {
 
   unsigned int *result; // eax
 
-  result = a1; /*0x4e12f4*/
-  *(a1 + 4) = a3; /*0x4e12fb*/
-  *(a1 + 3) = a2; /*0x4e1302*/
-  *(a1 + 6) = a5; /*0x4e1309*/
-  *(a1 + 5) = a4; /*0x4e1312*/
-  *(a1 + 1) = 0; /*0x4e1319*/
-  *(a1 + 2) = 0; /*0x4e131c*/
-  *((unsigned char *)a1 + 28) = 0; /*0x4e131f*/
-  *((unsigned char *)a1 + 30) = 0; /*0x4e1322*/
-  *((unsigned char *)a1 + 29) = a7; /*0x4e1327*/
-  *(a1 + 8) = a6; /*0x4e132a*/
-  *a1 = &GadgetClass::`vftable'; /*0x4e132d*/
+  result = this; /*0x4e12f4*/
+  *(this + 4) = a3; /*0x4e12fb*/
+  *(this + 3) = a2; /*0x4e1302*/
+  *(this + 6) = a5; /*0x4e1309*/
+  *(this + 5) = a4; /*0x4e1312*/
+  *(this + 1) = 0; /*0x4e1319*/
+  *(this + 2) = 0; /*0x4e131c*/
+  *((unsigned char *)this + 28) = 0; /*0x4e131f*/
+  *((unsigned char *)this + 30) = 0; /*0x4e1322*/
+  *((unsigned char *)this + 29) = a7; /*0x4e1327*/
+  *(this + 8) = a6; /*0x4e132a*/
+  *this = &GadgetClass::`vftable'; /*0x4e132d*/
   if ( a7 ) /*0x4e1334*/
-    *(a1 + 8) = a6 | 5; /*0x4e1339*/
+    *(this + 8) = a6 | 5; /*0x4e1339*/
   return result; /*0x4e1333*/
 
 }
 }
 // 0x4E1390
 namespace gamemd {
-ControlClass GadgetClass::Dtor(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7, void* a8, void* a9)
+ControlClass GadgetClass::Dtor()
 {
 
   int v1; // eax
   int v2; // eax
 
-  *a1 = &GadgetClass::`vftable'; /*0x4e1390*/
-  v1 = MEMORY[0x8B3E90]; /*0x4e1396*/
-  if ( a1 == (unsigned int *)MEMORY[0x8B3E90] ) /*0x4e139f*/
+  *this = &GadgetClass::`vftable'; /*0x4e1390*/
+  v1 = g_abs_8B3E90; /*0x4e1396*/
+  if ( this == (unsigned int *)g_abs_8B3E90 ) /*0x4e139f*/
   {
-    v2 = *(a1 + 8); /*0x4e13a1*/
-    BYTE1(v2) &= ~1u; /*0x4e13a4*/
-    *(a1 + 8) = v2; /*0x4e13a7*/
+    v2 = *(this + 8); /*0x4e13a1*/
+    IDA_BYTE1(v2) &= ~1u; /*0x4e13a4*/
+    *(this + 8) = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
-    MEMORY[0x8B3E90] = 0; /*0x4e13ac*/
+    g_abs_8B3E90 = 0; /*0x4e13ac*/
   }
-  if ( a1 == (unsigned int *)MEMORY[0x8B3E88] ) /*0x4e13ba*/
-    MEMORY[0x8B3E88] = 0; /*0x4e13bc*/
-  if ( a1 == (unsigned int *)MEMORY[0x8B3E8C] ) /*0x4e13cb*/
-    MEMORY[0x8B3E8C] = 0; /*0x4e13cd*/
-  if ( a1 == (unsigned int *)v1 ) /*0x4e13d5*/
-    MEMORY[0x8B3E90] = 0; /*0x4e13d7*/
-  return LinkClass::Destruct();
+  if ( this == (unsigned int *)g_abs_8B3E88 ) /*0x4e13ba*/
+    g_abs_8B3E88 = 0; /*0x4e13bc*/
+  if ( this == (unsigned int *)g_abs_8B3E8C ) /*0x4e13cb*/
+    g_abs_8B3E8C = 0; /*0x4e13cd*/
+  if ( this == (unsigned int *)v1 ) /*0x4e13d5*/
+    g_abs_8B3E90 = 0; /*0x4e13d7*/
+  return this->LinkClass::Destruct();
 
 }
 }
 // 0x557920
 namespace gamemd {
-ControlClass GadgetClass::DrawBuildingPlacement(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7, void* a8, void* a9)
+ControlClass GadgetClass::DrawBuildingPlacement( ControlClass * aP1)
 {
 
   int v3; // ecx
@@ -77,38 +77,38 @@ ControlClass GadgetClass::DrawBuildingPlacement(void* a1, void* a2, void* a3, vo
   int v7; // eax
   int v9[4]; // [esp+10h] [ebp-10h] BYREF
 
-  if ( !GadgetClass::ClearState((unsigned char *)a1, a2) ) /*0x55792e*/
+  if ( !GadgetClass::ClearState((unsigned char *)this, aP1) ) /*0x55792e*/
     return 0; /*0x557a0b*/
-  (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[10228] + 32))( /*0x557965*/
-    *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10228],
-    *(unsigned int *)(a1 + 12),
-    *(unsigned int *)(a1 + 16),
-    *(unsigned int *)(a1 + 20),
-    *(unsigned int *)(a1 + 24));
-  v3 = *(unsigned int *)(a1 + 20); /*0x55796b*/
-  v4 = *(unsigned int *)(a1 + 16); /*0x55796e*/
-  v9[0] = *(unsigned int *)(a1 + 12); /*0x557971*/
-  v5 = *(unsigned int *)(a1 + 24); /*0x557975*/
+  (*(void (**)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(**(unsigned int **)&g_abs_87F8E4 + 32))( /*0x557965*/
+    *(unsigned int *)&g_abs_87F8E4,
+    *(unsigned int *)(this + 12),
+    *(unsigned int *)(this + 16),
+    *(unsigned int *)(this + 20),
+    *(unsigned int *)(this + 24));
+  v3 = *(unsigned int *)(this + 20); /*0x55796b*/
+  v4 = *(unsigned int *)(this + 16); /*0x55796e*/
+  v9[0] = *(unsigned int *)(this + 12); /*0x557971*/
+  v5 = *(unsigned int *)(this + 24); /*0x557975*/
   v9[2] = v3; /*0x557978*/
   v9[3] = v5; /*0x55797c*/
   v9[1] = v4; /*0x55798b*/
   DrawBuildingTilesSHP(v9, 4, 1); /*0x55798f*/
-  if ( *(unsigned int *)(a1 + 68) ) /*0x557994*/
+  if ( *(unsigned int *)(this + 68) ) /*0x557994*/
   {
-    for ( i = 0; i < *(unsigned int *)(a1 + 80); ++i ) /*0x5579a2*/
+    for ( i = 0; i < *(unsigned int *)(this + 80); ++i ) /*0x5579a2*/
     {
-      v7 = i + *(unsigned int *)(a1 + 368); /*0x5579ad*/
-      if ( *(unsigned int *)(a1 + 68) > v7 ) /*0x5579b1*/
-        (*(void (**)(int, int, int, int, int, bool))(*(unsigned int *)a1 + 200))( /*0x5579e0*/
-          a1,
+      v7 = i + *(unsigned int *)(this + 368); /*0x5579ad*/
+      if ( *(unsigned int *)(this + 68) > v7 ) /*0x5579b1*/
+        (*(void (**)(int, int, int, int, int, bool))(*(unsigned int *)this + 200))( /*0x5579e0*/
+          this,
           v7,
-          *(unsigned int *)(a1 + 12) + 1,
-          i * *(unsigned int *)(a1 + 76) + *(unsigned int *)(a1 + 16) + 1,
-          *(unsigned int *)(a1 + 20) - 2,
-          v7 == *(unsigned int *)(a1 + 364));
+          *(unsigned int *)(this + 12) + 1,
+          i * *(unsigned int *)(this + 76) + *(unsigned int *)(this + 16) + 1,
+          *(unsigned int *)(this + 20) - 2,
+          v7 == *(unsigned int *)(this + 364));
     }
   }
-  (*(void (**)(unsigned int))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[10228] + 36))(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10228]); /*0x5579f6*/
+  (*(void (**)(unsigned int))(**(unsigned int **)&g_abs_87F8E4 + 36))(*(unsigned int *)&g_abs_87F8E4); /*0x5579f6*/
   return 1; /*0x5579fe*/
 
 }
@@ -140,9 +140,9 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
   v3 = 0; /*0x60aace*/
   v14 = hWnd; /*0x60aad0*/
   v15 = 0; /*0x60aad6*/
-  if ( MEMORY[0xAC1B04] ) /*0x60aada*/
+  if ( g_abs_AC1B04 ) /*0x60aada*/
   {
-    v4 = (HWND *)*((unsigned int *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v14) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60aafb*/
+    v4 = (HWND *)*((unsigned int *)g_abs_AC1B00 + (g_abs_AC1B18(&v14) & ((1 << g_abs_AC1B0C) - 1))); /*0x60aafb*/
     if ( v4 ) /*0x60ab00*/
     {
       while ( *v4 != v14 ) /*0x60ab08*/
@@ -151,17 +151,17 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
         if ( !v4 ) /*0x60ab12*/
           goto LABEL_7; /*0x60ab12*/
       }
-      v3 = v4 + 1; /*0x60ab1a*/
-      v15 = v4 + 1; /*0x60ab1d*/
+      v3 = (unsigned int *)(v4 + 1);
+      v15 = (unsigned int *)(v4 + 1);
     }
   }
 LABEL_7:
   if ( v3 ) /*0x60ab23*/
   {
     v14 = Parent; /*0x60ab2e*/
-    if ( !MEMORY[0xAC1B04] ) /*0x60ab34*/
+    if ( !g_abs_AC1B04 ) /*0x60ab34*/
       goto LABEL_12; /*0x60ab34*/
-    v5 = (HWND *)*((unsigned int *)MEMORY[0xAC1B00] + HashTable::ComputeHash((int)&MEMORY[0xAC1B00], (int)&v14)); /*0x60ab4b*/
+    v5 = (HWND *)*((unsigned int *)g_abs_AC1B00 + HashTable::ComputeHash((int)&g_abs_AC1B00, (int)&v14)); /*0x60ab4b*/
     if ( !v5 ) /*0x60ab50*/
       goto LABEL_12; /*0x60ab50*/
     while ( *v5 != v14 ) /*0x60ab58*/
@@ -170,7 +170,7 @@ LABEL_7:
       if ( !v5 ) /*0x60ab66*/
         goto LABEL_12; /*0x60ab66*/
     }
-    v9 = v5 + 1; /*0x60acaf*/
+    v9 = (unsigned int *)(v5 + 1);
     if ( v9 ) /*0x60acb4*/
       v6 = v9[27]; /*0x60acba*/
     else
@@ -223,7 +223,7 @@ LABEL_12:
     v18 = Parent; /*0x60ad12*/
     v15[55] = v8; /*0x60ad16*/
     v14 = 0; /*0x60ad26*/
-    HashTable::Get(&MEMORY[0xAC1B00], &v18, &v14); /*0x60ad2e*/
+    HashTable::Get(&g_abs_AC1B00, &v18, &v14); /*0x60ad2e*/
     if ( !v14 ) /*0x60ad39*/
       goto LABEL_86; /*0x60ad39*/
     v10 = *((unsigned int *)v14 + 27); /*0x60ad3f*/
@@ -252,37 +252,35 @@ LABEL_12:
     *((unsigned int *)v14 + 44) = 2; /*0x60adcf*/
     v17 = hWnd; /*0x60ade4*/
     GetClassNameA(hWnd, ClassName, 128); /*0x60ade8*/
-    if ( !strcmp(ClassName, MEMORY[0x833728]) || !strcmp(ClassName, MEMORY[0x833720]) ) /*0x60ae37*/
+    if ( !strcmp(ClassName, g_abs_833728) || !strcmp(ClassName, g_abs_833720) ) /*0x60ae37*/
       goto LABEL_85; /*0x60ae5c*/
-    if ( !strcmp(ClassName, MEMORY[0x833718]) && (v16 = 0, HashTable::Get(&MEMORY[0xAC1B00], &v17, &v16)) ) /*0x60aeab*/
+    if ( !strcmp(ClassName, g_abs_833718) && (v16 = 0, HashTable::Get(&g_abs_AC1B00, &v17, &v16)) ) /*0x60aeab*/
     {
       v11 = *(unsigned int *)(v16 + 104) == 1; /*0x60aebc*/
     }
     else
     {
-      if ( strcmp(ClassName, MEMORY[0x83370C]) ) /*0x60aed0*/
+      if ( strcmp(ClassName, g_abs_83370C) ) /*0x60aed0*/
         goto LABEL_86; /*0x60aef5*/
       v11 = (GetWindowLongA(v17, -16) & 3) != 3; /*0x60af09*/
     }
     if ( v11 ) /*0x60af0e*/
     {
-LABEL_85:
-      v12 = 192; /*0x60af10*/
-LABEL_87:
-      v15[50] = v12; /*0x60af19*/
+LABEL_85: v12 = (int)((gamemd::AbstractClass **)(192));
+LABEL_87: v15[50] = (gamemd::AbstractClass **)(v12);
       return 1; /*0x60af1d*/
     }
 LABEL_86:
     v12 = 0; /*0x60af17*/
     goto LABEL_87; /*0x60af17*/
   }
-  return 1; /*0x60af23*/
+  return (gamemd::AbstractClass **)(1);
 
 }
 }
 // 0x623560
 namespace gamemd {
-AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
+AbstractClass * * GadgetClass::SetTooltip(#72 * String)
 {
 
   int v3; // eax
@@ -290,17 +288,17 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
 
   if ( *((unsigned int *)this + 10) ) /*0x623564*/
   {
-    __3_YAXPAX_Z(*((unsigned int *)this + 10)); /*0x62356c*/
+    RA2_OPDEL(*((unsigned int *)this + 10)); /*0x62356c*/
     *((unsigned int *)this + 10) = 0; /*0x623574*/
   }
-  if ( aP1 ) /*0x623581*/
+  if ( String ) /*0x623581*/
   {
-    if ( *(unsigned short *)aP1 ) /*0x623583*/
+    if ( *(unsigned short *)String ) /*0x623583*/
     {
-      v3 = wcslen(aP1); /*0x62358a*/
-      v4 = (void *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
+      v3 = wcslen(String); /*0x62358a*/
+      v4 = (void *)RA2_OPNEW(2 * v3 + 2); /*0x623594*/
       *((unsigned int *)this + 10) = v4; /*0x62359b*/
-      wcscpy((#72 *)v4, aP1); /*0x62359e*/
+      wcscpy((#72 *)v4, String); /*0x62359e*/
     }
   }
 
@@ -308,13 +306,13 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
 }
 // 0x723EA0
 namespace gamemd {
-ControlClass GadgetClass::Show(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7, void* a8, void* a9)
+ControlClass GadgetClass::Show()
 {
 
   int v1; // eax
 
-  v1 = *(unsigned int *)a1; /*0x723ea0*/
-  *(a1 + 45) = 1; /*0x723ea2*/
+  v1 = *(unsigned int *)this; /*0x723ea0*/
+  *(this + 45) = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
 
 }

@@ -13,6 +13,7 @@
 #include "e4/classes/HouseTypeClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x517070
 namespace gamemd {
@@ -36,7 +37,7 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
 
   int v2; // edi
 
-  v2 = SwizzleManager::SaveLoad((int *)a1, a2); /*0x5170c1*/
+  v2 = (unsigned int)(SwizzleManager::SaveLoad((int *)a1, a2));
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
     *(unsigned int *)a1 = &LocomotionClass::`vftable'; /*0x5170ce*/
@@ -60,14 +61,13 @@ int HoverLocomotionClass::StubReturn120()
 } // namespace gamemd
 // 0x5172C0
 namespace gamemd {
-HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
+HoverLocomotionClass * HoverLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
-
-  *Block = &HoverLocomotionClass::`vftable'; /*0x5172c3*/
+*Block = (unsigned int)(&HoverLocomotionClass::`vftable');
   *(Block + 1) = &vt_HoverLocomotionClass; /*0x5172c9*/
   LocomotionClass::Construct(Block); /*0x5172d0*/
-  if ( (a2 & 1) != 0 ) /*0x5172da*/
-    __3_YAXPAX_Z(Block); /*0x5172dd*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5172da*/
+    RA2_OPDEL(Block); /*0x5172dd*/
   return (HoverLocomotionClass *)Block; /*0x5172e7*/
 
 }

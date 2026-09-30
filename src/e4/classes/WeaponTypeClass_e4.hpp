@@ -194,7 +194,7 @@ struct WeaponTypeClass {
     unsigned int Burst;
 // --- flat members (END) ---
     WeaponTypeClass * ddtor(char a2);
-    char ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a4);
+    char ReadTrajectoryData(void * aP1, char * a2, int a4);
     char ReadVeteranData(unsigned char * a2, char * a3, int a4, int * Block, int a6, short a7, int a8, int a9, int a10);
     int CalculateSpeed(void *a1 = 0);
     int Destructor(void *a1 = 0);
@@ -203,8 +203,8 @@ struct WeaponTypeClass {
     int GetTypeIdentifier();
     int Process(void *a1 = 0);
     int ProcessPower(int * a2, void *a1 = 0);
-    unsigned int * Constructor(ObjectClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    unsigned int * loadWeaponProperties(AbstractTypeClass * aP1);
+    unsigned int * Constructor(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    unsigned int * loadWeaponProperties(void * aP1);
     void * Create();
 };
 

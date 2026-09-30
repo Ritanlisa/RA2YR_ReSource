@@ -134,11 +134,11 @@ struct TiberiumClass {
 // --- flat members (END) ---
     AbstractClass * * SaveLoad_Prefix(int a1, int a2);
     int LoadFromINI(unsigned char *** aP1);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
+    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
     int StubReturn296();
     int StubReturn46();
     int ddtor(int a1, unsigned int * a2);
-    TiberiumClass(ObjectClass * aP1);
+    TiberiumClass(void * aP1);
     int Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8);  // def-aligned
     static double Grow(...);  // C2597 interim stub
 };

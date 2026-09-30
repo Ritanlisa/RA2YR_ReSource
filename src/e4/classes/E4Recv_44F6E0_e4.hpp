@@ -21,6 +21,6 @@ struct E4Recv_44F6E0 {
     unsigned int AbstractClass;
 // --- flat members (END) ---
     int Vf72(int,  ...);    // G6 vtable slot dispatch
-    unsigned int * sub_44F6E0(unsigned int * a2,  int a3);    // 0x44F6E0
+    unsigned int * sub_44F6E0(unsigned int * a2, int a3);  // 0x44F6E0
 };
 } // namespace gamemd

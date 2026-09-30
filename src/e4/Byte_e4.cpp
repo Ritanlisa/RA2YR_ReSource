@@ -8,11 +8,11 @@
 
 // 0x4F4C20
 namespace gamemd {
-void Byte::Zero(void* ptr, int32_t count)
+void Byte::Zero()
 {
 
-  *ptr = 0; /*0x4f4c22*/
-  return ptr; /*0x4f4c25*/
+  *(unsigned int *)this = 0; /*0x4f4c22*/
+  return this; /*0x4f4c25*/
 
 }
 } // namespace gamemd

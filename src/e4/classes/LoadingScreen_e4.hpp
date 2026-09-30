@@ -24,15 +24,15 @@ struct LoadingScreen {
     unsigned char q038;  // 0x38
     unsigned char q03C;  // 0x3C
 // --- flat members (END) ---
-    char * GetBackgroundImage(ScenarioClass * aP1);
-    char * GetOverlayImage(ScenarioClass * aP1);
+    char * GetBackgroundImage(void * aP1);
+    char * GetOverlayImage(void * aP1);
     char FreeResources3();
-    char Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
-    int FreeResources(void *a1 = 0);
+    char Init();
+    int FreeResources();
     int GetColorScheme();
-    int ReleaseAnimObjects();
+    int ReleaseAnimObjects(char * Source);
     void * * LoadSHPs();
-    void CleanupObjects(void *a1 = 0);
+    void CleanupObjects();
     void DestroyFileTrees();
     void FreeResources2();
 };

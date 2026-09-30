@@ -24,14 +24,14 @@ void Struct::ClearAllMemberFlags()
   int v6; // esi
   unsigned int *v7; // edi
 
-  v1 = *(unsigned int *)&this->__pad_0[4]; /*0x48b2a0*/
+  v1 = *(unsigned int *)&this-((unsigned int *)(>__pad_0))[4]; /*0x48b2a0*/
   v2 = 0; /*0x48b2a7*/
-  *(unsigned int *)&this->__pad_28[4] = 0; /*0x48b2ac*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_28))[4] = 0; /*0x48b2ac*/
   *((unsigned int *)this + 15) = 0; /*0x48b2af*/
   *(unsigned int *)this->__pad_14 = 0; /*0x48b2b2*/
-  *(unsigned int *)&this->__pad_14[4] = 0; /*0x48b2b5*/
-  *(unsigned int *)&this->__pad_14[8] = 0; /*0x48b2b8*/
-  *(unsigned int *)&this->__pad_14[12] = 0; /*0x48b2bb*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_14))[4] = 0; /*0x48b2b5*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_14))[8] = 0; /*0x48b2b8*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_14))[12] = 0; /*0x48b2bb*/
   *(unsigned int *)this->__pad_28 = 0; /*0x48b2be*/
   *((unsigned int *)this + 14) = 0; /*0x48b2c1*/
   if ( v1 > 0 ) /*0x48b2c4*/
@@ -51,9 +51,9 @@ void Struct::ClearAllMemberFlags()
       *(unsigned int *)(v3 + this->field_24 - 20) = 0; /*0x48b308*/
       *(unsigned int *)(v3 + this->field_24 - 12) = 0; /*0x48b30f*/
       *(unsigned short *)(v3 + this->field_24 - 4) = 0; /*0x48b316*/
-      *(unsigned int *)(*(unsigned int *)&this->__pad_28[8] + 4 * v2 - 4) = 0; /*0x48b31e*/
+      *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>__pad_28))[8] + 4 * v2 - 4) = 0; /*0x48b31e*/
     }
-    while ( v2 < *(unsigned int *)&this->__pad_0[4] ); /*0x48b327*/
+    while ( v2 < *(unsigned int *)&this-((unsigned int *)(>__pad_0))[4] ); /*0x48b327*/
   }
   result = this->field_8; /*0x48b329*/
   v6 = 0; /*0x48b32c*/
@@ -108,7 +108,7 @@ namespace gamemd {
 unsigned char * Struct::Zero3()
 {
 
-  *this = 0; /*0x4b9bd4*/
+  *(unsigned int *)this = (unsigned char *)(0);
   *((unsigned char *)this + 1) = 0; /*0x4b9bd6*/
   *((unsigned char *)this + 2) = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/
@@ -149,7 +149,7 @@ unsigned int * Struct::InitTriple256(unsigned int * a1)
 
   int v1; // esi
 
-  v1 = 2 * MEMORY[0xAC1474]; /*0x5f75ec*/
+  v1 = 2 * g_abs_AC1474; /*0x5f75ec*/
   *a1 = 256; /*0x5f75f7*/
   a1[1] = 256; /*0x5f75f9*/
   a1[2] = v1; /*0x5f75fc*/

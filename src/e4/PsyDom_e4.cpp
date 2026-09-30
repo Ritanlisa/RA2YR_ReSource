@@ -63,7 +63,7 @@ void PsyDom::Fire()
   AnimClass *v39; // [esp+5Ch] [ebp-8h]
   int v40; // [esp+60h] [ebp-4h]
 
-  v0 = (unsigned int *)__2_YAPAXI_Z(0x14u); /*0x53b08e*/
+  v0 = (unsigned int *)RA2_OPNEW(0x14u); /*0x53b08e*/
   if ( v0 ) /*0x53b097*/
   {
     v1 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], &word_A9FA48); /*0x53b0a3*/
@@ -78,7 +78,7 @@ void PsyDom::Fire()
   v4 = *(CoordStruct **)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 768); /*0x53b0e6*/
   v5 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], &word_A9FA48); /*0x53b0f1*/
   aP2 = *(CoordStruct *)(*(int (**)(void *, CoordStruct *))(*(unsigned int *)v5 + 72))(v5, &v33); /*0x53b104*/
-  v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53b11b*/
+  v6 = (void **)RA2_OPNEW(0x1C8u); /*0x53b11b*/
   if ( v6 ) /*0x53b125*/
     unk_A9FAC4 = AnimClass::ctor(v6, v4, &aP2, 0, (CoordStruct *)1, (void *)0x600, 0, 0); /*0x53b13e*/
   else
@@ -90,37 +90,37 @@ void PsyDom::Fire()
     *(ObjectClass **)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 760),
     1,
     (int)unk_A9FACC);
-  v7 = *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 776); /*0x53b176*/
+  v7 = (void **)(*(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 776));
   if ( v7 >= 10 ) /*0x53b17f*/
     v7 = 10; /*0x53b181*/
-  v8 = (AnimClass *)dword_7ED3D0[v7]; /*0x53b186*/
+  v8 = (AnimClass *)((unsigned int *)(dword_7ED3D0))[v7]; /*0x53b186*/
   EventClass::resetEvent(&v35, 0, 0); /*0x53b193*/
   v35 = &vt_DynamicVectorClass_TechnoClass; /*0x53b19a*/
   v40 = 10; /*0x53b1a2*/
   v39 = 0; /*0x53b1aa*/
   if ( (int)v8 > 0 )
   {
-    v9 = dword_ABD490; /*0x53b1b4*/
+    v9 = (int *)(dword_ABD490);
     v29 = v8; /*0x53b1b9*/
     do
     {
-      v10 = *v9; /*0x53b1bd*/
-      HIWORD(v30) = HIWORD(*v9); /*0x53b1c6*/
-      HIWORD(a5) = unk_A9FA4A + HIWORD(v30); /*0x53b1dd*/
-      LOWORD(a5) = word_A9FA48 + v10; /*0x53b1e2*/
+      v10 = (unsigned short)(*v9);
+      IDA_HIWORD(v30) = IDA_HIWORD(*v9); /*0x53b1c6*/
+      IDA_HIWORD(a5) = unk_A9FA4A + IDA_HIWORD(v30); /*0x53b1dd*/
+      IDA_LOWORD(a5) = word_A9FA48 + v10; /*0x53b1e2*/
       v30 = a5; /*0x53b1f7*/
       v31[0] = 0; /*0x53b1fb*/
       v31[1] = 0; /*0x53b1ff*/
-      v11 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&v30); /*0x53b203*/
+      v11 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&v30); /*0x53b203*/
       for ( i = (IUnknown *)Object::FindClosestObjectCell(v11, (IUnknown *)v31, 0, 0);
             i;
             i = (*(unsigned char *)(v22 + 20) & 1) != 0 ? (IUnknown *)v22 : 0 )
       {
         if ( (*(int (**)(IUnknown *))(i->field_0 + 44))(i) != 6 /*0x53b26b*/
           && !*(unsigned char *)((*(int (**)(IUnknown *))(i->field_0 + 132))(i) + 3381)
-          && !(*(unsigned __int8 (**)(IUnknown *))(i->field_0 + 352))(i)
+          && !(*(uint8_t (**)(IUnknown *))(i->field_0 + 352))(i)
           && !*(unsigned char *)((*(int (**)(IUnknown *))(i->field_0 + 132))(i) + 3434)
-          && !(*(unsigned __int8 (**)(IUnknown *))(i->field_0 + 84))(i) )
+          && !(*(uint8_t (**)(IUnknown *))(i->field_0 + 84))(i) )
         {
           if ( *(unsigned int *)&i->__pad_2B8[8] ) /*0x53b276*/
             CaptureManagerClass::FreeUnit(i, v24, v25, v26, v27, a5); /*0x53b287*/
@@ -135,7 +135,7 @@ void PsyDom::Fire()
           v33.X = v16; /*0x53b2d0*/
           v33.Y = v17; /*0x53b2d4*/
           v33.Z = v14 + v18; /*0x53b2d8*/
-          v19 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53b2dc*/
+          v19 = (void **)RA2_OPNEW(0x1C8u); /*0x53b2dc*/
           if ( v19 ) /*0x53b2e6*/
             v20 = AnimClass::ctor( /*0x53b306*/
                     v19,
@@ -152,12 +152,12 @@ void PsyDom::Fire()
           if ( v20 ) /*0x53b317*/
             BuildingClass::AimTurret(v20, i); /*0x53b31c*/
           if ( (int)v39 < v37 /*0x53b34b*/
-            || (BYTE1(v38) || !v37)
+            || (IDA_BYTE1(v38) || !v37)
             && v40 > 0
-            && ((unsigned __int8 (*)(void ***, int, unsigned int))v35[2])(&v35, v40 + v37, 0) )
+            && ((uint8_t (*)(void ***, int, unsigned int))v35[2])(&v35, v40 + v37, 0) )
           {
-            v23 = v39; /*0x53b356*/
-            v39 = (AnimClass *)((char *)v39 + 1); /*0x53b359*/
+            v23 = (gamemd::AnimClass *)((unsigned int)(v39));
+            v39 = (unsigned int)((AnimClass *)((char *)v39 + 1));
             *((unsigned int *)Block + (unsigned int)v23) = i; /*0x53b361*/
           }
         }
@@ -170,16 +170,16 @@ void PsyDom::Fire()
     }
     while ( v29 );
   }
-  if ( !(unsigned __int8)House::IsCurrentPlayer(unk_A9FAC8) ) /*0x53b39d*/
+  if ( !(uint8_t)House::IsCurrentPlayer(unk_A9FAC8) ) /*0x53b39d*/
   {
     for ( j = (int)&v39[-1].field_16054 + 3; j >= 0; --j ) /*0x53b3af*/
       (*(void (**)(unsigned int, int, unsigned int))(**((unsigned int **)Block + j) + 488))(*((unsigned int *)Block + j), 15, 0); /*0x53b3bd*/
   }
-  v35 = &vt_VectorClass_TechnoClass; /*0x53b3ca*/
+  v35 = (void **)(&vt_VectorClass_TechnoClass);
   if ( Block ) /*0x53b3d4*/
   {
-    if ( BYTE1(v38) ) /*0x53b3da*/
-      __3_YAXPAX_Z(Block); /*0x53b3dd*/
+    if ( IDA_BYTE1(v38) ) /*0x53b3da*/
+      RA2_OPDEL(Block); /*0x53b3dd*/
   }
 
 }

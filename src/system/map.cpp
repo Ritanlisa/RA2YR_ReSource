@@ -720,13 +720,13 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
       result = --v46; /*0x567d79*/
       if ( !v46 ) /*0x567d82*/
         return result; /*0x567d82*/
-      IDA_LOWORD(v17) = v50; /*0x567b2a*/
+      IDA_LOWORD(v17, unsigned int a4) = v50; /*0x567b2a*/
     }
   }
   return result; /*0x567d88*/
 }
 // 0x567da0
-CoordStruct* MapClass::RevealArea2(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr)
+CoordStruct* MapClass::RevealArea2(CoordStruct* out, const CoordStruct& start, const CoordStruct& end, const HouseClass* house = nullptr, void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int v5; // eax
   int v6; // ecx
@@ -775,7 +775,7 @@ CoordStruct* MapClass::RevealArea2(CoordStruct* out, const CoordStruct& start, c
     a3 = (void *)(8);
     v6 = 8; /*0x567de9*/
   LABEL_9:
-    v7 = ((unsigned int *)(dword_7ED3D0))[v5] - ((unsigned int *)(dword_7ED3CC))[v6]; /*0x567ded*/
+    v7 = ((unsigned int *, unsigned int a3, unsigned int a5)(dword_7ED3D0))[v5] - ((unsigned int *)(dword_7ED3CC))[v6]; /*0x567ded*/
     goto LABEL_10; /*0x567dfb*/
   }
   if ( a3 ) /*0x567efd*/
@@ -791,7 +791,7 @@ CoordStruct* MapClass::RevealArea2(CoordStruct* out, const CoordStruct& start, c
     v11 = (int)(a2[2]);
     v12 = ZCoordToScreenY(v11); /*0x567e1f*/
     v13 = ((((unsigned int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567e3e*/
-          + ((int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
+          + ((int, void * a1, void * a2, void * a3, void * a4, void * a5)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
         + v9;
     v14 = ZCoordToScreenY(v11); /*0x567e40*/
     v15 = (int)(((uint64_t)(2004318071LL * v14) >> 32) - v14) >> 4; /*0x567e52*/

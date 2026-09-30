@@ -29,36 +29,36 @@ namespace gamemd {
 ScenarioClass * * TacticalMap::ComputeScreenTint()
 {
 
-  __int16 v2; // dx
-  __int16 v3; // ax
-  __int16 v4; // dx
-  __int16 v5; // ax
+  int16_t v2; // dx
+  int16_t v3; // ax
+  int16_t v4; // dx
+  int16_t v5; // ax
   bool v6; // zf
-  __int16 v7; // ax
+  int16_t v7; // ax
   int v8; // eax
   int v9; // ecx
   int v10; // eax
-  __int16 v11; // cx
+  int16_t v11; // cx
   int v12; // eax
-  __int16 v13; // dx
-  __int16 v14; // cx
-  __int16 v15; // ax
-  __int16 v16; // ax
+  int16_t v13; // dx
+  int16_t v14; // cx
+  int16_t v15; // ax
+  int16_t v16; // ax
 
-  v2 = *((unsigned short *)this + 132) + (__int16)(1000 * *((unsigned short *)MEMORY[0xA8B230] + 6806)) / 100; /*0x4846ab*/
+  v2 = *((unsigned short *)this + 132) + (int16_t)(1000 * *((unsigned short *)g_abs_A8B230 + 6806)) / 100; /*0x4846ab*/
   *((unsigned short *)this + 133) = v2; /*0x4846b2*/
   *((unsigned short *)this + 135) = v2; /*0x4846b9*/
   if ( LightningStorm::IsActive() ) /*0x4846c0*/
   {
     v3 = *((char *)this + 283); /*0x4846cf*/
-    *((unsigned short *)this + 133) += v3 * *((unsigned short *)MEMORY[0xA8B230] + 6830) - *((unsigned short *)MEMORY[0xA8B230] + 6828); /*0x4846ec*/
-    v4 = (v3 + 4) * *((unsigned short *)MEMORY[0xA8B230] + 6830) - *((unsigned short *)MEMORY[0xA8B230] + 6828); /*0x484703*/
+    *((unsigned short *)this + 133) += v3 * *((unsigned short *)g_abs_A8B230 + 6830) - *((unsigned short *)g_abs_A8B230 + 6828); /*0x4846ec*/
+    v4 = (v3 + 4) * *((unsigned short *)g_abs_A8B230 + 6830) - *((unsigned short *)g_abs_A8B230 + 6828); /*0x484703*/
   }
   else if ( PsyDom::IsActive() ) /*0x48470f*/
   {
     v5 = *((char *)this + 283); /*0x48471e*/
-    *((unsigned short *)this + 133) += v5 * *((unsigned short *)MEMORY[0xA8B230] + 6856) - *((unsigned short *)MEMORY[0xA8B230] + 6854); /*0x48473b*/
-    v4 = (v5 + 4) * *((unsigned short *)MEMORY[0xA8B230] + 6856) - *((unsigned short *)MEMORY[0xA8B230] + 6854); /*0x484752*/
+    *((unsigned short *)this + 133) += v5 * *((unsigned short *)g_abs_A8B230 + 6856) - *((unsigned short *)g_abs_A8B230 + 6854); /*0x48473b*/
+    v4 = (v5 + 4) * *((unsigned short *)g_abs_A8B230 + 6856) - *((unsigned short *)g_abs_A8B230 + 6854); /*0x484752*/
   }
   else
   {
@@ -66,20 +66,20 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
     v7 = *((char *)this + 283); /*0x484768*/
     if ( v6 ) /*0x484770*/
     {
-      *((unsigned short *)this + 133) += v7 * *((unsigned short *)MEMORY[0xA8B230] + 6818) - *((unsigned short *)MEMORY[0xA8B230] + 6816); /*0x4847bc*/
-      v4 = (v7 + 4) * *((unsigned short *)MEMORY[0xA8B230] + 6818) - *((unsigned short *)MEMORY[0xA8B230] + 6816); /*0x4847d3*/
+      *((unsigned short *)this + 133) += v7 * *((unsigned short *)g_abs_A8B230 + 6818) - *((unsigned short *)g_abs_A8B230 + 6816); /*0x4847bc*/
+      v4 = (v7 + 4) * *((unsigned short *)g_abs_A8B230 + 6818) - *((unsigned short *)g_abs_A8B230 + 6816); /*0x4847d3*/
     }
     else
     {
-      *((unsigned short *)this + 133) += v7 * *((unsigned short *)MEMORY[0xA8B230] + 6842) - *((unsigned short *)MEMORY[0xA8B230] + 6840); /*0x484787*/
-      v4 = (v7 + 4) * *((unsigned short *)MEMORY[0xA8B230] + 6842) - *((unsigned short *)MEMORY[0xA8B230] + 6840); /*0x48479e*/
+      *((unsigned short *)this + 133) += v7 * *((unsigned short *)g_abs_A8B230 + 6842) - *((unsigned short *)g_abs_A8B230 + 6840); /*0x484787*/
+      v4 = (v7 + 4) * *((unsigned short *)g_abs_A8B230 + 6842) - *((unsigned short *)g_abs_A8B230 + 6840); /*0x48479e*/
     }
   }
-  v8 = *(__int16 *)((char *)this + 266); /*0x4847da*/
+  v8 = *(int16_t *)((char *)this + 266); /*0x4847da*/
   v9 = *((unsigned int *)this + 65); /*0x4847e1*/
   *((unsigned short *)this + 135) += v4; /*0x4847e7*/
   *((unsigned short *)this + 134) = (unsigned int)(v9 * v8) >> 16; /*0x4847f4*/
-  v10 = v9 * *(__int16 *)((char *)this + 270); /*0x484802*/
+  v10 = v9 * *(int16_t *)((char *)this + 270); /*0x484802*/
   v11 = *((unsigned short *)this + 133); /*0x484805*/
   v12 = v10 >> 16; /*0x48480c*/
   *((unsigned short *)this + 135) = v12; /*0x484814*/
@@ -91,7 +91,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
     v13 = 2000; /*0x48483d*/
   *((unsigned short *)this + 134) = v13; /*0x484846*/
   v14 = v12; /*0x48484d*/
-  if ( (__int16)v12 >= 2000 ) /*0x484850*/
+  if ( (int16_t)v12 >= 2000 ) /*0x484850*/
     v14 = 2000; /*0x484852*/
   v15 = *((unsigned short *)this + 133); /*0x484857*/
   *((unsigned short *)this + 135) = v14; /*0x48485e*/
@@ -128,39 +128,39 @@ void TacticalMap::Redraw()
   int v6; // [esp+8h] [ebp-8h]
   bool v7; // [esp+Ch] [ebp-4h]
 
-  v1 = MEMORY[0x887314]; /*0x4f4489*/
-  MEMORY[0x887314] = MEMORY[0x88731C]; /*0x4f4492*/
-  (*(void (**)(int, int, unsigned int))(*(unsigned int *)MEMORY[0x887640] + 64))(MEMORY[0x887640], MEMORY[0x88731C], 0); /*0x4f44a2*/
+  v1 = g_abs_887314; /*0x4f4489*/
+  g_abs_887314 = g_abs_88731C; /*0x4f4492*/
+  (*(void (**)(int, int, unsigned int))(*(unsigned int *)g_abs_887640 + 64))(g_abs_887640, g_abs_88731C, 0); /*0x4f44a2*/
   v3 = *((unsigned int *)this + 3); /*0x4f44a5*/
   *((unsigned int *)this + 3) = 0; /*0x4f44a8*/
-  LOBYTE(v6) = v3 != 0; /*0x4f44b7*/
+  IDA_LOBYTE(v6) = v3 != 0; /*0x4f44b7*/
   v7 = v3 == 2; /*0x4f44be*/
-  if ( !(unsigned __int8)UI_Helper() ) /*0x4f44c2*/
+  if ( !(uint8_t)UI_Helper() ) /*0x4f44c2*/
   {
-    TacticalMap::Render((int)MEMORY[0x887324], MEMORY[0x88731C], v6, 0); /*0x4f44df*/
-    TacticalMap::Render((int)MEMORY[0x887324], MEMORY[0x88731C], v6, 1); /*0x4f44f4*/
-    (*(void (**)(unsigned int *, bool))(*(unsigned int **)this + 64))(this, v7); /*0x4f4502*/
-    TacticalMap::Render((int)MEMORY[0x887324], MEMORY[0x88731C], v6, 2); /*0x4f4515*/
+    TacticalMap::Render((int)g_abs_887324, g_abs_88731C, v6, 0); /*0x4f44df*/
+    TacticalMap::Render((int)g_abs_887324, g_abs_88731C, v6, 1); /*0x4f44f4*/
+    (*(void (**)(unsigned int *, bool))(*(unsigned int *)this + 256))(this, v7); /*0x4f4502*/
+    TacticalMap::Render((int)g_abs_887324, g_abs_88731C, v6, 2); /*0x4f4515*/
   }
-  if ( MEMORY[0xB0B519] && !MEMORY[0xA8ED6B] ) /*0x4f452b*/
+  if ( g_abs_B0B519 && !g_abs_A8ED6B ) /*0x4f452b*/
   {
-    (*(void (**)(int, int, int))(*(unsigned int *)MEMORY[0x887640] + 64))(MEMORY[0x887640], MEMORY[0x887300], 1); /*0x4f453d*/
-    MEMORY[0xB0B519] = 0; /*0x4f4540*/
+    (*(void (**)(int, int, int))(*(unsigned int *)g_abs_887640 + 64))(g_abs_887640, g_abs_887300, 1); /*0x4f453d*/
+    g_abs_B0B519 = 0; /*0x4f4540*/
   }
-  if ( MEMORY[0xA8EF54] ) /*0x4f454f*/
-    (*(void (**)(int, unsigned int))(*(unsigned int *)MEMORY[0xA8EF54] + 44))(MEMORY[0xA8EF54], 0); /*0x4f4555*/
-  TacticalMap::DrawCursor(&MEMORY[0xA8BC60]); /*0x4f455d*/
-  v4 = MEMORY[0x887368]; /*0x4f4562*/
-  if ( MEMORY[0x887368] ) /*0x4f456a*/
-    (*(void (**)(int, unsigned int))(*(unsigned int *)MEMORY[0x887368] + 12))(MEMORY[0x887368], 0); /*0x4f4570*/
-  if ( MEMORY[0xA8B8B4] ) /*0x4f457a*/
+  if ( g_abs_A8EF54 ) /*0x4f454f*/
+    (*(void (**)(int, unsigned int))(*(unsigned int *)g_abs_A8EF54 + 44))(g_abs_A8EF54, 0); /*0x4f4555*/
+  TacticalMap::DrawCursor(&g_abs_A8BC60); /*0x4f455d*/
+  v4 = g_abs_887368; /*0x4f4562*/
+  if ( g_abs_887368 ) /*0x4f456a*/
+    (*(void (**)(int, unsigned int))(*(unsigned int *)g_abs_887368 + 12))(g_abs_887368, 0); /*0x4f4570*/
+  if ( g_abs_A8B8B4 ) /*0x4f457a*/
   {
-    LOBYTE(v4) = 0; /*0x4f457c*/
+    IDA_LOBYTE(v4) = 0; /*0x4f457c*/
     DrawHUD(v4); /*0x4f457e*/
   }
-  (*(void (**)(int, int, unsigned int))(*(unsigned int *)MEMORY[0x887640] + 60))(MEMORY[0x887640], MEMORY[0x88731C], 0); /*0x4f4593*/
-  result = (*(int (**)(unsigned int *))(*(unsigned int **)this + 68))(this); /*0x4f459a*/
-  MEMORY[0x887314] = v1; /*0x4f459d*/
+  (*(void (**)(int, int, unsigned int))(*(unsigned int *)g_abs_887640 + 60))(g_abs_887640, g_abs_88731C, 0); /*0x4f4593*/
+  result = (*(int (**)(unsigned int *))(*(unsigned int *)this + 272))(this); /*0x4f459a*/
+  g_abs_887314 = v1; /*0x4f459d*/
   return result; /*0x4f45a3*/
 
 }
@@ -203,28 +203,28 @@ void TacticalMap::DrawCursor()
   result = *((unsigned char *)this + 25); /*0x5d49b4*/
   if ( result ) /*0x5d49b9*/
   {
-    (*(void (**)(int))(*(unsigned int *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x5d49c8*/
+    (*(void (**)(int))(*(unsigned int *)g_abs_887640 + 12))(g_abs_887640); /*0x5d49c8*/
     (*(void (**)(unsigned int, int))(*(unsigned int *)*((unsigned int *)this + 9) + 108))(*((unsigned int *)this + 9), 1); /*0x5d49d2*/
     TextRenderer::GetInstance(); /*0x5d49db*/
     v3 = Text::MeasureWidth(*(unsigned int *)(*((unsigned int *)this + 9) + 48), 0); /*0x5d49f8*/
     if ( *((unsigned short *)this + 348) /*0x5d4a1b*/
       && *((unsigned int *)this + 172) - *((unsigned int *)this + 173) < *((unsigned int *)this + 4) - 1
-      && (*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 9) + 88))(*((unsigned int *)this + 9)) )
+      && (*(uint8_t (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 9) + 88))(*((unsigned int *)this + 9)) )
     {
-      LOWORD(v9) = *((unsigned short *)this + 348); /*0x5d4a29*/
+      IDA_LOWORD(v9) = *((unsigned short *)this + 348); /*0x5d4a29*/
       v4 = (unsigned int *)*((unsigned int *)this + 9); /*0x5d4a2e*/
       v5 = v4[3]; /*0x5d4a31*/
       v10[1] = v4[4]; /*0x5d4a39*/
       v10[0] = v3 + v5; /*0x5d4a3d*/
       v8 = v4[11]; /*0x5d4a4c*/
-      v7 = *((unsigned int *)MEMORY[0xB054D4] + v4[13]); /*0x5d4a56*/
-      v6 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)MEMORY[0x887314] + 120))(MEMORY[0x887314], v12); /*0x5d4a65*/
-      TextRenderer::DrawText(&v11, (size_t)&v9, MEMORY[0x887314], v6, (int)v10, v7, 0, v8); /*0x5d4a79*/
+      v7 = *((unsigned int *)g_abs_B054D4 + v4[13]); /*0x5d4a56*/
+      v6 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)g_abs_887314 + 120))(g_abs_887314, v12); /*0x5d4a65*/
+      TextRenderer::DrawText(&v11, (size_t)&v9, g_abs_887314, v6, (int)v10, v7, 0, v8); /*0x5d4a79*/
     }
-    result = (*(int (**)(int))(*(unsigned int *)MEMORY[0x887640] + 16))(MEMORY[0x887640]); /*0x5d4a89*/
+    result = (*(int (**)(int))(*(unsigned int *)g_abs_887640 + 16))(g_abs_887640); /*0x5d4a89*/
   }
   if ( *this ) /*0x5d4a8d*/
-    return (*(int (**)(unsigned int, int))(*(unsigned int *)*(unsigned int **)this + 44))(*this, 1); /*0x5d4a98*/
+    return (*(int (**)(unsigned int, int))(*(unsigned int *)*(unsigned int *)this + 176))(*this, 1); /*0x5d4a98*/
   return result; /*0x5d4a8f*/
 
 }
@@ -302,7 +302,7 @@ void TacticalMap::Construct()
   *((unsigned int *)this + 898) = 0; /*0x6d1e08*/
   *((unsigned int *)this + 899) = 1065353216; /*0x6d1e0e*/
   *((unsigned int *)this + 900) = 0; /*0x6d1e18*/
-  MEMORY[0x87F7E8][7887] = this; /*0x6d1e1e*/
+  g_abs_87F7E8[7887] = this; /*0x6d1e1e*/
   return this; /*0x6d1e26*/
 
 }
@@ -343,27 +343,27 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
 
   if ( !arg0 ) /*0x6d2b6f*/
   {
-    if ( *(unsigned int *)&MEMORY[0xB077F8].__pad_566C[36] ) /*0x6d2b7d*/
+    if ( *(unsigned int *)&g_abs_B077F8 ) /*0x6d2b7d*/
     {
-      v6 = *(unsigned int *)&MEMORY[0xB077F8].__pad_566C[36] - 1; /*0x6d2b83*/
-      v24 = (IUnknown *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_566C[36] - 1); /*0x6d2b86*/
-      if ( *(unsigned int *)&MEMORY[0xB077F8].__pad_566C[36] - 1 >= 0 ) /*0x6d2b8a*/
+      v6 = *(unsigned int *)&g_abs_B077F8 - 1; /*0x6d2b83*/
+      v24 = (IUnknown *)(*(unsigned int *)&g_abs_B077F8 - 1); /*0x6d2b86*/
+      if ( *(unsigned int *)&g_abs_B077F8 - 1 >= 0 ) /*0x6d2b8a*/
       {
         v7 = 20 * v6; /*0x6d2b93*/
         do /*0x6d2cfd*/
         {
-          *(unsigned int *)&aP1.__pad_0[8] = *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_566C[24] + v7); /*0x6d2ba2*/
-          *(unsigned int *)&aP1.__pad_0[12] = *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_566C[24] + v7 + 4); /*0x6d2ba9*/
-          aP1.uniqueId = *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_566C[24] + v7 + 8); /*0x6d2bb0*/
-          aP1.abstractFlags = *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_566C[24] + v7 + 12); /*0x6d2bbd*/
+          *(unsigned int *)&aP1.__pad_0[8] = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7); /*0x6d2ba2*/
+          *(unsigned int *)&aP1.__pad_0[12] = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7 + 4); /*0x6d2ba9*/
+          aP1.uniqueId = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7 + 8); /*0x6d2bb0*/
+          aP1.abstractFlags = *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7 + 12); /*0x6d2bbd*/
           *(unsigned int *)&aP1.__pad_0[8] += aP2; /*0x6d2bc7*/
           *(unsigned int *)&aP1.__pad_0[12] += a4; /*0x6d2bd0*/
-          v26 = *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8536]; /*0x6d2bda*/
-          v29 = *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8536]; /*0x6d2bde*/
-          v25 = *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8532]; /*0x6d2be7*/
-          v28 = *(ObjectClass **)&MEMORY[0x87F8E4].__pad_5568[8532]; /*0x6d2beb*/
-          v23 = *(AbstractClass **)&MEMORY[0x87F8E4].__pad_5568[8544]; /*0x6d2bf5*/
-          v22 = *(AbstractClass **)&MEMORY[0x87F8E4].__pad_5568[8540]; /*0x6d2bfa*/
+          v26 = *(unsigned int *)&g_abs_87F8E4; /*0x6d2bda*/
+          v29 = *(unsigned int *)&g_abs_87F8E4; /*0x6d2bde*/
+          v25 = *(unsigned int *)&g_abs_87F8E4; /*0x6d2be7*/
+          v28 = *(ObjectClass **)&g_abs_87F8E4; /*0x6d2beb*/
+          v23 = *(AbstractClass **)&g_abs_87F8E4; /*0x6d2bf5*/
+          v22 = *(AbstractClass **)&g_abs_87F8E4; /*0x6d2bfa*/
           v8 = (IUnknown *)Coord2D::Sub(&v28, &aP1, (IUnknown *)&v25); /*0x6d2c05*/
           v9 = Rect::Construct(v32, v8, v22, v23); /*0x6d2c0f*/
           aP1.nextArrayIndex = *(unsigned int *)v9->__pad_0; /*0x6d2c18*/
@@ -375,7 +375,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           *(unsigned int *)&aP1.__pad_0[12] = v10[1]; /*0x6d2c50*/
           aP1.uniqueId = v10[2]; /*0x6d2c57*/
           aP1.abstractFlags = v10[3]; /*0x6d2c64*/
-          v11 = (unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_566C[24] + v7); /*0x6d2c68*/
+          v11 = (unsigned int *)(*(unsigned int *)&g_abs_B077F8 + v7); /*0x6d2c68*/
           *v11 = *(unsigned int *)&aP1.__pad_0[8]; /*0x6d2c6b*/
           v11[1] = *(unsigned int *)&aP1.__pad_0[12]; /*0x6d2c72*/
           v11[2] = aP1.uniqueId; /*0x6d2c79*/
@@ -383,28 +383,28 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           if ( aP1.uniqueId > 0 && aP1.abstractFlags > 0 ) /*0x6d2c91*/
           {
             TacticalMap::FillScanlinesOpaque( /*0x6d2cee*/
-              *(int *)&MEMORY[0x87F8E4].__pad_5568[10232],
+              *(int *)&g_abs_87F8E4,
               *(int *)&aP1.__pad_0[8],
               *(int *)&aP1.__pad_0[12],
               aP1.uniqueId,
               aP1.abstractFlags);
           }
-          else if ( v6 < *(int *)&MEMORY[0xB077F8].__pad_566C[36] ) /*0x6d2c9a*/
+          else if ( v6 < *(int *)&g_abs_B077F8 ) /*0x6d2c9a*/
           {
             v12 = v6; /*0x6d2c9d*/
-            --*(unsigned int *)&MEMORY[0xB077F8].__pad_566C[36]; /*0x6d2ca1*/
-            if ( v6 < *(int *)&MEMORY[0xB077F8].__pad_566C[36] ) /*0x6d2ca6*/
+            --*(unsigned int *)&g_abs_B077F8; /*0x6d2ca1*/
+            if ( v6 < *(int *)&g_abs_B077F8 ) /*0x6d2ca6*/
             {
               v13 = v7; /*0x6d2ca8*/
               do /*0x6d2cc8*/
               {
                 ++v12; /*0x6d2cb0*/
-                v14 = (const void *)(v13 + *(unsigned int *)&MEMORY[0xB077F8].__pad_566C[24] + 20); /*0x6d2cb1*/
-                v15 = (void *)(v13 + *(unsigned int *)&MEMORY[0xB077F8].__pad_566C[24]); /*0x6d2cb5*/
+                v14 = (const void *)(v13 + *(unsigned int *)&g_abs_B077F8 + 20); /*0x6d2cb1*/
+                v15 = (void *)(v13 + *(unsigned int *)&g_abs_B077F8); /*0x6d2cb5*/
                 v13 += 20; /*0x6d2cbd*/
                 qmemcpy(v15, v14, 0x14u); /*0x6d2cc0*/
               }
-              while ( v12 < *(int *)&MEMORY[0xB077F8].__pad_566C[36] ); /*0x6d2cc8*/
+              while ( v12 < *(int *)&g_abs_B077F8 ); /*0x6d2cc8*/
               v6 = (int)v24; /*0x6d2cca*/
             }
           }
@@ -429,8 +429,8 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
       v27 = 0; /*0x6d2d59*/
       v20 = Coord::To_ScreenRaw((int *)aP1.__pad_0, &v25); /*0x6d2d61*/
       v21 = v20[1] - *((unsigned int *)this + 45); /*0x6d2d81*/
-      v28 = (ObjectClass *)(*v20 - *((unsigned int *)this + 44) + *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8532] - 30); /*0x6d2d8d*/
-      v29 = *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8536] + v21 - 15; /*0x6d2d9c*/
+      v28 = (ObjectClass *)(*v20 - *((unsigned int *)this + 44) + *(unsigned int *)&g_abs_87F8E4 - 30); /*0x6d2d8d*/
+      v29 = *(unsigned int *)&g_abs_87F8E4 + v21 - 15; /*0x6d2d9c*/
       if ( g_hWnd ) /*0x6d2da0*/
         DSurface::Process(*(unsigned int *)v18->__pad_0, (IUnknown *)&v28, (int *)a2); /*0x6d2db1*/
       result = *((unsigned int *)this + 56); /*0x6d2db6*/
@@ -445,7 +445,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
 } // namespace gamemd
 // 0x6D3D10
 namespace gamemd {
-AbstractClass * * TacticalMap::TacticalMap_Render()
+AbstractClass * * TacticalMap::TacticalMap_Render( int a2)
 {
 
   int v2; // ebx
@@ -503,7 +503,7 @@ AbstractClass * * TacticalMap::TacticalMap_Render()
   int *v54; // edi
   unsigned int *v55; // eax
   int v56; // ecx
-  __int64 v57; // rax
+  int64_t v57; // rax
   int v58; // esi
   int v59; // eax
   int v60; // esi
@@ -556,16 +556,16 @@ AbstractClass * * TacticalMap::TacticalMap_Render()
   char v107[12]; // [esp+FCh] [ebp-18h] BYREF
   char v108[12]; // [esp+108h] [ebp-Ch] BYREF
 
-  v2 = MEMORY[0x886FA8]; /*0x6d8db7*/
+  v2 = g_abs_886FA8; /*0x6d8db7*/
   v3 = *(unsigned int *)(this + 176); /*0x6d8dc4*/
   v4 = *(unsigned int *)(this + 180); /*0x6d8dd5*/
-  v77 = v3 + MEMORY[0x886FA8] / 2; /*0x6d8ddb*/
-  v73 = MEMORY[0x886FAC]; /*0x6d8de5*/
+  v77 = v3 + g_abs_886FA8 / 2; /*0x6d8ddb*/
+  v73 = g_abs_886FAC; /*0x6d8de5*/
   v5 = (float *)(this + 3556); /*0x6d8deb*/
   v79 = (float)v77; /*0x6d8df1*/
-  v78 = v4 - MEMORY[0x886FAC]; /*0x6d8df5*/
+  v78 = v4 - g_abs_886FAC; /*0x6d8df5*/
   v81 = 0; /*0x6d8e08*/
-  v80 = (float)(v4 - MEMORY[0x886FAC]); /*0x6d8e10*/
+  v80 = (float)(v4 - g_abs_886FAC); /*0x6d8e10*/
   v6 = TransformMatrix3x4Point(v95, (float *)(this + 3556), &v79); /*0x6d8e14*/
   v79 = *v6; /*0x6d8e1b*/
   v80 = v6[1]; /*0x6d8e26*/
@@ -604,11 +604,11 @@ AbstractClass * * TacticalMap::TacticalMap_Render()
     v85 = 0; /*0x6d8f1c*/
     v14 = 24 * v13; /*0x6d8f24*/
     v75 = 24 * v13; /*0x6d8f27*/
-    if ( MEMORY[0x8A0370][6 * v13] > 0 ) /*0x6d8f33*/
+    if ( g_abs_8A0370[6 * v13] > 0 ) /*0x6d8f33*/
     {
       while ( 1 ) /*0x6d8f43*/
       {
-        v15 = *(int **)(*(int *)((char *)MEMORY[0x8A0364] + v14) + 4 * v85); /*0x6d8f43*/
+        v15 = *(int **)(*(int *)((char *)g_abs_8A0364 + v14) + 4 * v85); /*0x6d8f43*/
         *((unsigned char *)v15 + 153) = 0; /*0x6d8f48*/
         if ( v15 ) /*0x6d8f4f*/
         {
@@ -628,25 +628,25 @@ AbstractClass * * TacticalMap::TacticalMap_Render()
             if ( v17 >= v12 + v94 ) /*0x6d8fac*/
               goto LABEL_53; /*0x6d8fac*/
             (*(void (**)(int *, char *, unsigned int))(*v15 + 76))(v15, v107, 0); /*0x6d8fc0*/
-            if ( (*(unsigned int *)MEMORY[0xA8B230] & 0x1000) != 0 ) /*0x6d8fce*/
+            if ( (*(unsigned int *)g_abs_A8B230 & 0x1000) != 0 ) /*0x6d8fce*/
             {
               if ( Game::Stub3((int)&v86) ) /*0x6d8fda*/
                 goto LABEL_53; /*0x6d8fe1*/
             }
             v18 = (unsigned int *)(*(int (**)(int *, char *))(*v15 + 72))(v15, v104); /*0x6d8ff3*/
-            v19 = MEMORY[0x887324]; /*0x6d8ff6*/
+            v19 = g_abs_887324; /*0x6d8ff6*/
             v20 = Coord::To_ScreenRaw(&v103, v18); /*0x6d9007*/
             v77 = *v20; /*0x6d9010*/
             v78 = v20[1]; /*0x6d9017*/
             v21 = v78 - (unsigned int)v19[45].__tail_0; /*0x6d9029*/
             v77 -= (int)v19[44].__tail_0; /*0x6d9030*/
             v78 = v21; /*0x6d9034*/
-            if ( v77 >= -360 && v77 <= MEMORY[0xB0CE30] + 360 && v21 >= -180 && v21 <= MEMORY[0xB0CE34] + 180 ) /*0x6d906a*/
+            if ( v77 >= -360 && v77 <= g_abs_B0CE30 + 360 && v21 >= -180 && v21 <= g_abs_B0CE34 + 180 ) /*0x6d906a*/
             {
               v22 = *v15; /*0x6d9070*/
               *((unsigned char *)v15 + 153) = 1; /*0x6d907e*/
-              (*(void (**)(int *, int *, int *))(v22 + 268))(v15, &v77, &MEMORY[0x886FA0]); /*0x6d9085*/
-              (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &MEMORY[0x886FA0], a2, 0); /*0x6d909e*/
+              (*(void (**)(int *, int *, int *))(v22 + 268))(v15, &v77, &g_abs_886FA0); /*0x6d9085*/
+              (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &g_abs_886FA0, a2, 0); /*0x6d909e*/
             }
             goto LABEL_52; /*0x6d90a4*/
           }
@@ -662,12 +662,12 @@ AbstractClass * * TacticalMap::TacticalMap_Render()
               v25 = *v15; /*0x6d90fd*/
               *((unsigned char *)v15 + 153) = 1; /*0x6d9111*/
               v26 = (unsigned int *)(*(int (**)(int *, char *))(v25 + 72))(v15, v106); /*0x6d9118*/
-              if ( Coord::To_Screen(MEMORY[0x887324], v26, v99) ) /*0x6d9122*/
+              if ( Coord::To_Screen(g_abs_887324, v26, v99) ) /*0x6d9122*/
               {
-                (*(void (**)(int *, int *, int *))(*v15 + 268))(v15, v99, &MEMORY[0x886FA0]); /*0x6d913c*/
-                (*(void (**)(int *, int *, int *))(*v15 + 272))(v15, v99, &MEMORY[0x886FA0]); /*0x6d9153*/
+                (*(void (**)(int *, int *, int *))(*v15 + 268))(v15, v99, &g_abs_886FA0); /*0x6d913c*/
+                (*(void (**)(int *, int *, int *))(*v15 + 272))(v15, v99, &g_abs_886FA0); /*0x6d9153*/
               }
-              (*(void (**)(int *, int *, int, int))(*v15 + 260))(v15, &MEMORY[0x886FA0], a2, 1); /*0x6d916c*/
+              (*(void (**)(int *, int *, int, int))(*v15 + 260))(v15, &g_abs_886FA0, a2, 1); /*0x6d916c*/
             }
             goto LABEL_53; /*0x6d9172*/
           }
@@ -689,7 +689,7 @@ AbstractClass * * TacticalMap::TacticalMap_Render()
               || !*(unsigned char *)(v15[50] + 884)
               || (v32 = (*(int (**)(int *, char *))(*v15 + 72))(v15, v105), !Game::Stub3(v32)) )
             {
-              (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &MEMORY[0x886FA0], a2, 0); /*0x6d921f*/
+              (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &g_abs_886FA0, a2, 0); /*0x6d921f*/
             }
           }
           goto LABEL_53; /*0x6d921f*/
@@ -707,7 +707,7 @@ AbstractClass * * TacticalMap::TacticalMap_Render()
             {
               v35 = *v15; /*0x6d92ac*/
               *((unsigned char *)v15 + 153) = 1; /*0x6d92ae*/
-              (*(void (**)(int *, int *, int, unsigned int))(v35 + 260))(v15, &MEMORY[0x886FA0], a2, 0); /*0x6d92b7*/
+              (*(void (**)(int *, int *, int, unsigned int))(v35 + 260))(v15, &g_abs_886FA0, a2, 0); /*0x6d92b7*/
             }
           }
           goto LABEL_53; /*0x6d92b7*/
@@ -720,7 +720,7 @@ AbstractClass * * TacticalMap::TacticalMap_Render()
         if ( v36 >= v11 && v36 < v11 + v93 && v37 >= v12 && v37 < v12 + v94 ) /*0x6d92fe*/
         {
           v38 = (int *)(*(int (**)(int *, unsigned char *))(*v15 + 72))(v15, v101); /*0x6d9310*/
-          v39 = MEMORY[0x887324]; /*0x6d9313*/
+          v39 = g_abs_887324; /*0x6d9313*/
           v40 = v38; /*0x6d9319*/
           v41 = IsoCoord::ToPixel(v95, *v38, v38[1]); /*0x6d932b*/
           v42 = *v41; /*0x6d932d*/
@@ -735,12 +735,12 @@ AbstractClass * * TacticalMap::TacticalMap_Render()
           v97[0] = v39[44].__tail_0; /*0x6d9383*/
           v97[1] = lpVtbl; /*0x6d938a*/
           Vector2::Subtract(&v91, v97); /*0x6d9391*/
-          if ( v91 >= -360 && v91 <= MEMORY[0xB0CE30] + 360 && v92 >= -180 && v92 <= MEMORY[0xB0CE34] + 180 ) /*0x6d93ca*/
+          if ( v91 >= -360 && v91 <= g_abs_B0CE30 + 360 && v92 >= -180 && v92 <= g_abs_B0CE34 + 180 ) /*0x6d93ca*/
           {
             v48 = *v15; /*0x6d93cc*/
             *((unsigned char *)v15 + 153) = 1; /*0x6d93da*/
-            (*(void (**)(int *, int *, int *))(v48 + 268))(v15, &v91, &MEMORY[0x886FA0]); /*0x6d93e1*/
-            (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &MEMORY[0x886FA0], a2, 0); /*0x6d93fa*/
+            (*(void (**)(int *, int *, int *))(v48 + 268))(v15, &v91, &g_abs_886FA0); /*0x6d93e1*/
+            (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &g_abs_886FA0, a2, 0); /*0x6d93fa*/
           }
           v14 = v75; /*0x6d9400*/
           v11 = v83; /*0x6d9404*/
@@ -748,7 +748,7 @@ LABEL_52:
           v12 = v84; /*0x6d9408*/
         }
 LABEL_53:
-        v49 = *(int *)((char *)MEMORY[0x8A0370] + v14); /*0x6d940c*/
+        v49 = *(int *)((char *)g_abs_8A0370 + v14); /*0x6d940c*/
         if ( ++v85 >= v49 ) /*0x6d941d*/
         {
           v13 = (int)v82; /*0x6d9423*/
@@ -760,15 +760,15 @@ LABEL_53:
     {
       v50 = 0; /*0x6d9436*/
       v76 = 0; /*0x6d943a*/
-      if ( MEMORY[0xA8EB50] > 0 ) /*0x6d943e*/
+      if ( g_abs_A8EB50 > 0 ) /*0x6d943e*/
       {
         do /*0x6d9597*/
         {
-          v51 = (unsigned char *)*((unsigned int *)MEMORY[0xA8EB44] + v50); /*0x6d944a*/
+          v51 = (unsigned char *)*((unsigned int *)g_abs_A8EB44 + v50); /*0x6d944a*/
           if ( v51[116] && v51[153] ) /*0x6d9458*/
           {
             v52 = (int *)(*(int (**)(unsigned char *, unsigned char *))(*(unsigned int *)v51 + 172))(v51, v102); /*0x6d9472*/
-            v53 = MEMORY[0x887324]; /*0x6d9478*/
+            v53 = g_abs_887324; /*0x6d9478*/
             v54 = v52; /*0x6d947e*/
             v55 = IsoCoord::ToPixel(&v79, *v52, v52[1]); /*0x6d948b*/
             v56 = v55[1]; /*0x6d9494*/
@@ -782,12 +782,12 @@ LABEL_53:
             v61 = v90 - (unsigned int)v53[45].__tail_0; /*0x6d94db*/
             v89 = v60; /*0x6d94e3*/
             v90 = v61; /*0x6d94e7*/
-            if ( v60 >= -360 && v60 <= MEMORY[0xB0CE30] + 360 && v61 >= -180 && v61 <= MEMORY[0xB0CE34] + 180 ) /*0x6d9516*/
+            if ( v60 >= -360 && v60 <= g_abs_B0CE30 + 360 && v61 >= -180 && v61 <= g_abs_B0CE34 + 180 ) /*0x6d9516*/
             {
-              v98[2] = MEMORY[0x886FA8]; /*0x6d952a*/
-              v98[0] = MEMORY[0x886FA0]; /*0x6d9539*/
-              v98[1] = MEMORY[0x886FA4]; /*0x6d9540*/
-              v98[3] = MEMORY[0x886FAC]; /*0x6d9547*/
+              v98[2] = g_abs_886FA8; /*0x6d952a*/
+              v98[0] = g_abs_886FA0; /*0x6d9539*/
+              v98[1] = g_abs_886FA4; /*0x6d9540*/
+              v98[3] = g_abs_886FAC; /*0x6d9547*/
               BuildingClass::DrawVisible(&v89, v98); /*0x6d957a*/
             }
             v11 = v83; /*0x6d957f*/
@@ -795,15 +795,15 @@ LABEL_53:
           }
           v50 = ++v76; /*0x6d9590*/
         }
-        while ( v76 < MEMORY[0xA8EB50] ); /*0x6d9597*/
+        while ( v76 < g_abs_A8EB50 ); /*0x6d9597*/
         v13 = (int)v82; /*0x6d959d*/
       }
     }
     v82 = (int *)++v13; /*0x6d95a5*/
   }
   while ( v13 < 5 ); /*0x6d95a9*/
-  v62 = MEMORY[0x8A0364]; /*0x6d95af*/
-  v82 = MEMORY[0x8A0364]; /*0x6d95b4*/
+  v62 = g_abs_8A0364; /*0x6d95af*/
+  v82 = g_abs_8A0364; /*0x6d95b4*/
   do /*0x6d97b5*/
   {
     result = 0; /*0x6d95bb*/
@@ -822,8 +822,8 @@ LABEL_53:
             {
               if ( (*(unsigned char *)(v64 + 20) & 4) == 0 /*0x6d965d*/
                 || ((*(void (**)(int, unsigned char *, unsigned int))(*(unsigned int *)v64 + 76))(v64, v102, 0), !g_hWnd)
-                || MEMORY[0xA8ED6B]
-                || (*(unsigned int *)MEMORY[0xA8B230] & 0x1000) == 0
+                || g_abs_A8ED6B
+                || (*(unsigned int *)g_abs_A8B230 & 0x1000) == 0
                 || (v95[0] = *(float *)(v64 + 156),
                     v95[1] = *(float *)(v64 + 160),
                     v95[2] = *(float *)(v64 + 164),
@@ -833,18 +833,18 @@ LABEL_53:
                 v66 = *v65; /*0x6d9683*/
                 v96 = v65[1]; /*0x6d9689*/
                 v89 = v65[2]; /*0x6d9697*/
-                LODWORD(v79) = -60 * v96 / 2 + 60 * v66 / 2; /*0x6d96d0*/
-                v67 = SLODWORD(v79) / 256; /*0x6d96f7*/
+                IDA_LODWORD(v79) = -60 * v96 / 2 + 60 * v66 / 2; /*0x6d96d0*/
+                v67 = IDA_SLODWORD(v79) / 256; /*0x6d96f7*/
                 v68 = (30 * v96 / 2 + 30 * v66 / 2) / 256; /*0x6d96fa*/
-                v69 = Math::RoundToInt((double)v89 * MEMORY[0xB0CD48] + (double)(v89 >= 728) + 0.5); /*0x6d9721*/
+                v69 = Math::RoundToInt((double)v89 * g_abs_B0CD48 + (double)(v89 >= 728) + 0.5); /*0x6d9721*/
                 v77 = v67; /*0x6d972d*/
                 v78 = v68 - v69; /*0x6d9731*/
-                v70 = v67 - (unsigned int)MEMORY[0x887324][44].__tail_0; /*0x6d9741*/
-                v71 = v68 - v69 - (unsigned int)MEMORY[0x887324][45].__tail_0; /*0x6d9743*/
+                v70 = v67 - (unsigned int)g_abs_887324[44].__tail_0; /*0x6d9741*/
+                v71 = v68 - v69 - (unsigned int)g_abs_887324[45].__tail_0; /*0x6d9743*/
                 v77 = v70; /*0x6d974b*/
                 v78 = v71; /*0x6d974f*/
-                if ( v70 >= -360 && v70 <= MEMORY[0xB0CE30] + 360 && v71 >= -180 && v71 <= MEMORY[0xB0CE34] + 180 ) /*0x6d9779*/
-                  (*(void (**)(int, int *, int *))(*(unsigned int *)v64 + 272))(v64, &v77, &MEMORY[0x886FA0]); /*0x6d9789*/
+                if ( v70 >= -360 && v70 <= g_abs_B0CE30 + 360 && v71 >= -180 && v71 <= g_abs_B0CE34 + 180 ) /*0x6d9779*/
+                  (*(void (**)(int, int *, int *))(*(unsigned int *)v64 + 272))(v64, &v77, &g_abs_886FA0); /*0x6d9789*/
               }
             }
           }
@@ -859,7 +859,7 @@ LABEL_53:
     v62 += 6; /*0x6d97a8*/
     v82 = v62; /*0x6d97b1*/
   }
-  while ( (int)v62 < (int)((int *)&MEMORY[0x8A03D8] + 1) ); /*0x6d97b5*/
+  while ( (int)v62 < (int)((int *)&g_abs_8A03D8 + 1) ); /*0x6d97b5*/
   return result; /*0x6d97bb*/
 
 }
@@ -924,7 +924,7 @@ int TacticalMap::RenderAllObjects(int a2)
   int *v54; // edi
   unsigned int *v55; // eax
   int v56; // ecx
-  __int64 v57; // rax
+  int64_t v57; // rax
   int v58; // esi
   int v59; // eax
   int v60; // esi
@@ -977,16 +977,16 @@ int TacticalMap::RenderAllObjects(int a2)
   char v107[12]; // [esp+FCh] [ebp-18h] BYREF
   char v108[12]; // [esp+108h] [ebp-Ch] BYREF
 
-  v2 = MEMORY[0x886FA8]; /*0x6d8db7*/
+  v2 = g_abs_886FA8; /*0x6d8db7*/
   v3 = *((unsigned int *)this + 44); /*0x6d8dc4*/
   v4 = *((unsigned int *)this + 45); /*0x6d8dd5*/
-  v77 = v3 + MEMORY[0x886FA8] / 2; /*0x6d8ddb*/
-  v73 = MEMORY[0x886FAC]; /*0x6d8de5*/
+  v77 = v3 + g_abs_886FA8 / 2; /*0x6d8ddb*/
+  v73 = g_abs_886FAC; /*0x6d8de5*/
   v5 = (float *)((char *)this + 3556); /*0x6d8deb*/
   v79 = (float)v77; /*0x6d8df1*/
-  v78 = v4 - MEMORY[0x886FAC]; /*0x6d8df5*/
+  v78 = v4 - g_abs_886FAC; /*0x6d8df5*/
   v81 = 0; /*0x6d8e08*/
-  v80 = (float)(v4 - MEMORY[0x886FAC]); /*0x6d8e10*/
+  v80 = (float)(v4 - g_abs_886FAC); /*0x6d8e10*/
   v6 = TransformMatrix3x4Point(v95, (float *)((char *)this + 3556), &v79); /*0x6d8e14*/
   v79 = *v6; /*0x6d8e1b*/
   v80 = v6[1]; /*0x6d8e26*/
@@ -1025,11 +1025,11 @@ int TacticalMap::RenderAllObjects(int a2)
     v85 = 0; /*0x6d8f1c*/
     v14 = 24 * v13; /*0x6d8f24*/
     v75 = 24 * v13; /*0x6d8f27*/
-    if ( MEMORY[0x8A0370][6 * v13] > 0 ) /*0x6d8f33*/
+    if ( g_abs_8A0370[6 * v13] > 0 ) /*0x6d8f33*/
     {
       while ( 1 ) /*0x6d8f43*/
       {
-        v15 = *(int **)(*(int *)((char *)MEMORY[0x8A0364] + v14) + 4 * v85); /*0x6d8f43*/
+        v15 = *(int **)(*(int *)((char *)g_abs_8A0364 + v14) + 4 * v85); /*0x6d8f43*/
         *((unsigned char *)v15 + 153) = 0; /*0x6d8f48*/
         if ( v15 ) /*0x6d8f4f*/
         {
@@ -1049,25 +1049,25 @@ int TacticalMap::RenderAllObjects(int a2)
             if ( v17 >= v12 + v94 ) /*0x6d8fac*/
               goto LABEL_53; /*0x6d8fac*/
             (*(void (**)(int *, char *, unsigned int))(*v15 + 76))(v15, v107, 0); /*0x6d8fc0*/
-            if ( (*(unsigned int *)MEMORY[0xA8B230] & 0x1000) != 0 ) /*0x6d8fce*/
+            if ( (*(unsigned int *)g_abs_A8B230 & 0x1000) != 0 ) /*0x6d8fce*/
             {
               if ( Game::Stub3((int)&v86) ) /*0x6d8fda*/
                 goto LABEL_53; /*0x6d8fe1*/
             }
             v18 = (unsigned int *)(*(int (**)(int *, char *))(*v15 + 72))(v15, v104); /*0x6d8ff3*/
-            v19 = MEMORY[0x887324]; /*0x6d8ff6*/
+            v19 = g_abs_887324; /*0x6d8ff6*/
             v20 = Coord::To_ScreenRaw(&v103, v18); /*0x6d9007*/
             v77 = *v20; /*0x6d9010*/
             v78 = v20[1]; /*0x6d9017*/
             v21 = v78 - (unsigned int)v19[45].__tail_0; /*0x6d9029*/
             v77 -= (int)v19[44].__tail_0; /*0x6d9030*/
             v78 = v21; /*0x6d9034*/
-            if ( v77 >= -360 && v77 <= MEMORY[0xB0CE30] + 360 && v21 >= -180 && v21 <= MEMORY[0xB0CE34] + 180 ) /*0x6d906a*/
+            if ( v77 >= -360 && v77 <= g_abs_B0CE30 + 360 && v21 >= -180 && v21 <= g_abs_B0CE34 + 180 ) /*0x6d906a*/
             {
               v22 = *v15; /*0x6d9070*/
               *((unsigned char *)v15 + 153) = 1; /*0x6d907e*/
-              (*(void (**)(int *, int *, int *))(v22 + 268))(v15, &v77, &MEMORY[0x886FA0]); /*0x6d9085*/
-              (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &MEMORY[0x886FA0], a2, 0); /*0x6d909e*/
+              (*(void (**)(int *, int *, int *))(v22 + 268))(v15, &v77, &g_abs_886FA0); /*0x6d9085*/
+              (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &g_abs_886FA0, a2, 0); /*0x6d909e*/
             }
             goto LABEL_52; /*0x6d90a4*/
           }
@@ -1083,12 +1083,12 @@ int TacticalMap::RenderAllObjects(int a2)
               v25 = *v15; /*0x6d90fd*/
               *((unsigned char *)v15 + 153) = 1; /*0x6d9111*/
               v26 = (unsigned int *)(*(int (**)(int *, char *))(v25 + 72))(v15, v106); /*0x6d9118*/
-              if ( Coord::To_Screen(MEMORY[0x887324], v26, v99) ) /*0x6d9122*/
+              if ( Coord::To_Screen(g_abs_887324, v26, v99) ) /*0x6d9122*/
               {
-                (*(void (**)(int *, int *, int *))(*v15 + 268))(v15, v99, &MEMORY[0x886FA0]); /*0x6d913c*/
-                (*(void (**)(int *, int *, int *))(*v15 + 272))(v15, v99, &MEMORY[0x886FA0]); /*0x6d9153*/
+                (*(void (**)(int *, int *, int *))(*v15 + 268))(v15, v99, &g_abs_886FA0); /*0x6d913c*/
+                (*(void (**)(int *, int *, int *))(*v15 + 272))(v15, v99, &g_abs_886FA0); /*0x6d9153*/
               }
-              (*(void (**)(int *, int *, int, int))(*v15 + 260))(v15, &MEMORY[0x886FA0], a2, 1); /*0x6d916c*/
+              (*(void (**)(int *, int *, int, int))(*v15 + 260))(v15, &g_abs_886FA0, a2, 1); /*0x6d916c*/
             }
             goto LABEL_53; /*0x6d9172*/
           }
@@ -1110,7 +1110,7 @@ int TacticalMap::RenderAllObjects(int a2)
               || !*(unsigned char *)(v15[50] + 884)
               || (v32 = (*(int (**)(int *, char *))(*v15 + 72))(v15, v105), !Game::Stub3(v32)) )
             {
-              (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &MEMORY[0x886FA0], a2, 0); /*0x6d921f*/
+              (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &g_abs_886FA0, a2, 0); /*0x6d921f*/
             }
           }
           goto LABEL_53; /*0x6d921f*/
@@ -1128,7 +1128,7 @@ int TacticalMap::RenderAllObjects(int a2)
             {
               v35 = *v15; /*0x6d92ac*/
               *((unsigned char *)v15 + 153) = 1; /*0x6d92ae*/
-              (*(void (**)(int *, int *, int, unsigned int))(v35 + 260))(v15, &MEMORY[0x886FA0], a2, 0); /*0x6d92b7*/
+              (*(void (**)(int *, int *, int, unsigned int))(v35 + 260))(v15, &g_abs_886FA0, a2, 0); /*0x6d92b7*/
             }
           }
           goto LABEL_53; /*0x6d92b7*/
@@ -1141,7 +1141,7 @@ int TacticalMap::RenderAllObjects(int a2)
         if ( v36 >= v11 && v36 < v11 + v93 && v37 >= v12 && v37 < v12 + v94 ) /*0x6d92fe*/
         {
           v38 = (int *)(*(int (**)(int *, unsigned char *))(*v15 + 72))(v15, v101); /*0x6d9310*/
-          v39 = MEMORY[0x887324]; /*0x6d9313*/
+          v39 = g_abs_887324; /*0x6d9313*/
           v40 = v38; /*0x6d9319*/
           v41 = IsoCoord::ToPixel(v95, *v38, v38[1]); /*0x6d932b*/
           v42 = *v41; /*0x6d932d*/
@@ -1156,12 +1156,12 @@ int TacticalMap::RenderAllObjects(int a2)
           v97[0] = v39[44].__tail_0; /*0x6d9383*/
           v97[1] = lpVtbl; /*0x6d938a*/
           Vector2::Subtract(&v91, v97); /*0x6d9391*/
-          if ( v91 >= -360 && v91 <= MEMORY[0xB0CE30] + 360 && v92 >= -180 && v92 <= MEMORY[0xB0CE34] + 180 ) /*0x6d93ca*/
+          if ( v91 >= -360 && v91 <= g_abs_B0CE30 + 360 && v92 >= -180 && v92 <= g_abs_B0CE34 + 180 ) /*0x6d93ca*/
           {
             v48 = *v15; /*0x6d93cc*/
             *((unsigned char *)v15 + 153) = 1; /*0x6d93da*/
-            (*(void (**)(int *, int *, int *))(v48 + 268))(v15, &v91, &MEMORY[0x886FA0]); /*0x6d93e1*/
-            (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &MEMORY[0x886FA0], a2, 0); /*0x6d93fa*/
+            (*(void (**)(int *, int *, int *))(v48 + 268))(v15, &v91, &g_abs_886FA0); /*0x6d93e1*/
+            (*(void (**)(int *, int *, int, unsigned int))(*v15 + 260))(v15, &g_abs_886FA0, a2, 0); /*0x6d93fa*/
           }
           v14 = v75; /*0x6d9400*/
           v11 = v83; /*0x6d9404*/
@@ -1169,7 +1169,7 @@ LABEL_52:
           v12 = v84; /*0x6d9408*/
         }
 LABEL_53:
-        v49 = *(int *)((char *)MEMORY[0x8A0370] + v14); /*0x6d940c*/
+        v49 = *(int *)((char *)g_abs_8A0370 + v14); /*0x6d940c*/
         if ( ++v85 >= v49 ) /*0x6d941d*/
         {
           v13 = (int)v82; /*0x6d9423*/
@@ -1181,15 +1181,15 @@ LABEL_53:
     {
       v50 = 0; /*0x6d9436*/
       v76 = 0; /*0x6d943a*/
-      if ( MEMORY[0xA8EB50] > 0 ) /*0x6d943e*/
+      if ( g_abs_A8EB50 > 0 ) /*0x6d943e*/
       {
         do /*0x6d9597*/
         {
-          v51 = (unsigned char *)*((unsigned int *)MEMORY[0xA8EB44] + v50); /*0x6d944a*/
+          v51 = (unsigned char *)*((unsigned int *)g_abs_A8EB44 + v50); /*0x6d944a*/
           if ( v51[116] && v51[153] ) /*0x6d9458*/
           {
             v52 = (int *)(*(int (**)(unsigned char *, unsigned char *))(*(unsigned int *)v51 + 172))(v51, v102); /*0x6d9472*/
-            v53 = MEMORY[0x887324]; /*0x6d9478*/
+            v53 = g_abs_887324; /*0x6d9478*/
             v54 = v52; /*0x6d947e*/
             v55 = IsoCoord::ToPixel(&v79, *v52, v52[1]); /*0x6d948b*/
             v56 = v55[1]; /*0x6d9494*/
@@ -1203,12 +1203,12 @@ LABEL_53:
             v61 = v90 - (unsigned int)v53[45].__tail_0; /*0x6d94db*/
             v89 = v60; /*0x6d94e3*/
             v90 = v61; /*0x6d94e7*/
-            if ( v60 >= -360 && v60 <= MEMORY[0xB0CE30] + 360 && v61 >= -180 && v61 <= MEMORY[0xB0CE34] + 180 ) /*0x6d9516*/
+            if ( v60 >= -360 && v60 <= g_abs_B0CE30 + 360 && v61 >= -180 && v61 <= g_abs_B0CE34 + 180 ) /*0x6d9516*/
             {
-              v98[2] = MEMORY[0x886FA8]; /*0x6d952a*/
-              v98[0] = MEMORY[0x886FA0]; /*0x6d9539*/
-              v98[1] = MEMORY[0x886FA4]; /*0x6d9540*/
-              v98[3] = MEMORY[0x886FAC]; /*0x6d9547*/
+              v98[2] = g_abs_886FA8; /*0x6d952a*/
+              v98[0] = g_abs_886FA0; /*0x6d9539*/
+              v98[1] = g_abs_886FA4; /*0x6d9540*/
+              v98[3] = g_abs_886FAC; /*0x6d9547*/
               BuildingClass::DrawVisible(&v89, v98); /*0x6d957a*/
             }
             v11 = v83; /*0x6d957f*/
@@ -1216,15 +1216,15 @@ LABEL_53:
           }
           v50 = ++v76; /*0x6d9590*/
         }
-        while ( v76 < MEMORY[0xA8EB50] ); /*0x6d9597*/
+        while ( v76 < g_abs_A8EB50 ); /*0x6d9597*/
         v13 = (int)v82; /*0x6d959d*/
       }
     }
     v82 = (int *)++v13; /*0x6d95a5*/
   }
   while ( v13 < 5 ); /*0x6d95a9*/
-  v62 = MEMORY[0x8A0364]; /*0x6d95af*/
-  v82 = MEMORY[0x8A0364]; /*0x6d95b4*/
+  v62 = g_abs_8A0364; /*0x6d95af*/
+  v82 = g_abs_8A0364; /*0x6d95b4*/
   do /*0x6d97b5*/
   {
     result = 0; /*0x6d95bb*/
@@ -1243,8 +1243,8 @@ LABEL_53:
             {
               if ( (*(unsigned char *)(v64 + 20) & 4) == 0 /*0x6d965d*/
                 || ((*(void (**)(int, unsigned char *, unsigned int))(*(unsigned int *)v64 + 76))(v64, v102, 0), !g_hWnd)
-                || MEMORY[0xA8ED6B]
-                || (*(unsigned int *)MEMORY[0xA8B230] & 0x1000) == 0
+                || g_abs_A8ED6B
+                || (*(unsigned int *)g_abs_A8B230 & 0x1000) == 0
                 || (v95[0] = *(float *)(v64 + 156),
                     v95[1] = *(float *)(v64 + 160),
                     v95[2] = *(float *)(v64 + 164),
@@ -1254,18 +1254,18 @@ LABEL_53:
                 v66 = *v65; /*0x6d9683*/
                 v96 = v65[1]; /*0x6d9689*/
                 v89 = v65[2]; /*0x6d9697*/
-                LODWORD(v79) = -60 * v96 / 2 + 60 * v66 / 2; /*0x6d96d0*/
-                v67 = SLODWORD(v79) / 256; /*0x6d96f7*/
+                IDA_LODWORD(v79) = -60 * v96 / 2 + 60 * v66 / 2; /*0x6d96d0*/
+                v67 = IDA_SLODWORD(v79) / 256; /*0x6d96f7*/
                 v68 = (30 * v96 / 2 + 30 * v66 / 2) / 256; /*0x6d96fa*/
-                v69 = Math::RoundToInt((double)v89 * MEMORY[0xB0CD48] + (double)(v89 >= 728) + 0.5); /*0x6d9721*/
+                v69 = Math::RoundToInt((double)v89 * g_abs_B0CD48 + (double)(v89 >= 728) + 0.5); /*0x6d9721*/
                 v77 = v67; /*0x6d972d*/
                 v78 = v68 - v69; /*0x6d9731*/
-                v70 = v67 - (unsigned int)MEMORY[0x887324][44].__tail_0; /*0x6d9741*/
-                v71 = v68 - v69 - (unsigned int)MEMORY[0x887324][45].__tail_0; /*0x6d9743*/
+                v70 = v67 - (unsigned int)g_abs_887324[44].__tail_0; /*0x6d9741*/
+                v71 = v68 - v69 - (unsigned int)g_abs_887324[45].__tail_0; /*0x6d9743*/
                 v77 = v70; /*0x6d974b*/
                 v78 = v71; /*0x6d974f*/
-                if ( v70 >= -360 && v70 <= MEMORY[0xB0CE30] + 360 && v71 >= -180 && v71 <= MEMORY[0xB0CE34] + 180 ) /*0x6d9779*/
-                  (*(void (**)(int, int *, int *))(*(unsigned int *)v64 + 272))(v64, &v77, &MEMORY[0x886FA0]); /*0x6d9789*/
+                if ( v70 >= -360 && v70 <= g_abs_B0CE30 + 360 && v71 >= -180 && v71 <= g_abs_B0CE34 + 180 ) /*0x6d9779*/
+                  (*(void (**)(int, int *, int *))(*(unsigned int *)v64 + 272))(v64, &v77, &g_abs_886FA0); /*0x6d9789*/
               }
             }
           }
@@ -1280,7 +1280,7 @@ LABEL_53:
     v62 += 6; /*0x6d97a8*/
     v82 = v62; /*0x6d97b1*/
   }
-  while ( (int)v62 < (int)((int *)&MEMORY[0x8A03D8] + 1) ); /*0x6d97b5*/
+  while ( (int)v62 < (int)((int *)&g_abs_8A03D8 + 1) ); /*0x6d97b5*/
   return result; /*0x6d97bb*/
 
 }
@@ -1318,17 +1318,17 @@ int TacticalMap::DrawOccupiedRegion()
       v5 = v7; /*0x6da1c8*/
     }
     v8 = v3 - v2 + 1; /*0x6da1ce*/
-    if ( *(unsigned int *)(MEMORY[0x87F6C4] + 4) == 1 ) /*0x6da1dc*/
-      v9 = *(unsigned __int8 *)(*(unsigned int *)(MEMORY[0x87F6C4] + 372) + 15); /*0x6da1ea*/
+    if ( *(unsigned int *)(g_abs_87F6C4 + 4) == 1 ) /*0x6da1dc*/
+      v9 = *(uint8_t *)(*(unsigned int *)(g_abs_87F6C4 + 372) + 15); /*0x6da1ea*/
     else
-      v9 = *(unsigned __int16 *)(*(unsigned int *)(MEMORY[0x87F6C4] + 372) + 30); /*0x6da1f7*/
+      v9 = *(uint16_t *)(*(unsigned int *)(g_abs_87F6C4 + 372) + 30); /*0x6da1f7*/
     v10[2] = v8; /*0x6da201*/
     v10[0] = v2; /*0x6da209*/
     v10[1] = v4; /*0x6da20d*/
     v10[3] = v5 - v4 + 1; /*0x6da211*/
-    return (*(int (**)(int, int *, unsigned int *, int))(*(unsigned int *)MEMORY[0x887314] + 84))( /*0x6da21e*/
-             MEMORY[0x887314],
-             &MEMORY[0x886FA0],
+    return (*(int (**)(int, int *, unsigned int *, int))(*(unsigned int *)g_abs_887314 + 84))( /*0x6da21e*/
+             g_abs_887314,
+             &g_abs_886FA0,
              v10,
              v9);
   }
@@ -1392,7 +1392,7 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3,
           v5 = (TacticalMap *)this; /*0x7bd10b*/
           v20 = &v19[4 * v21]; /*0x7bd10f*/
         }
-        if ( ((unsigned __int8)v18 & 1) != 0 && v20 ) /*0x7bd11a*/
+        if ( ((uint8_t)v18 & 1) != 0 && v20 ) /*0x7bd11a*/
           *(unsigned short *)v20 = -1; /*0x7bd11c*/
       }
       else
@@ -1420,7 +1420,7 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3,
         v15 = *(unsigned short **)((char *)this + 24); /*0x7bd061*/
         v25 = v14; /*0x7bd064*/
         v24 = v15; /*0x7bd06b*/
-        if ( ((unsigned __int8)v15 & 2) != 0 && v14 ) /*0x7bd073*/
+        if ( ((uint8_t)v15 & 2) != 0 && v14 ) /*0x7bd073*/
         {
           *v15++ = -1; /*0x7bd075*/
           --v14; /*0x7bd07d*/
@@ -1433,7 +1433,7 @@ unsigned int TacticalMap::FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3,
         {
           memset(v15, 0xFFu, 4 * v17); /*0x7bd098*/
           v16 = &v24[2 * v17]; /*0x7bd09e*/
-          LOBYTE(v14) = v25; /*0x7bd0a1*/
+          IDA_LOBYTE(v14) = v25; /*0x7bd0a1*/
         }
         if ( (v14 & 1) != 0 && v16 ) /*0x7bd0ab*/
           *v16 = -1; /*0x7bd0ad*/

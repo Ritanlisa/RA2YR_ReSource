@@ -16,11 +16,11 @@ int LCWPipe::Dtor()
   void *v3; // ecx
 
   v2 = (void *)*((char *)this + 5); /*0x552063*/
-  *this = (int)&vt_LCWPipe; /*0x552066*/
-  __3_YAXPAX_Z(v2); /*0x55206d*/
+  *(unsigned int *)this = (int)&vt_LCWPipe; /*0x552066*/
+  RA2_OPDEL(v2); /*0x55206d*/
   v3 = (void *)*((char *)this + 6); /*0x552072*/
   *((char *)this + 5) = 0; /*0x552075*/
-  __3_YAXPAX_Z(v3); /*0x55207d*/
+  RA2_OPDEL(v3); /*0x55207d*/
   *((char *)this + 6) = 0; /*0x552087*/
   return Pipe::Dtor(this); /*0x552093*/
 

@@ -216,7 +216,7 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
   if ( !a2 ) /*0x750d4d*/
     return result; /*0x750d4d*/
   v5 = (VocClass *)AudioSource::Get(a2); /*0x750d5e*/
-  v6 = VocClass::Check((VocClass *)a2); /*0x750d60*/
+  v6 = ((VocClass *)((VocClass *)a2))->Check(); /*0x750d60*/
   v7 = (AudioPool *)v6; /*0x750d65*/
   if ( !v6 ) /*0x750d69*/
     goto LABEL_15; /*0x750d69*/
@@ -225,14 +225,14 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
   {
     if ( v5 ) /*0x750e01*/
     {
-      VocClass::Release(v5); /*0x750e05*/
+      ((VocClass *)(v5))->Release(); /*0x750e05*/
       v5 = 0; /*0x750e0a*/
     }
     goto LABEL_15; /*0x750e0a*/
   }
   if ( !v5 ) /*0x750d8e*/
   {
-    if ( AudioMixer::SetVolume((AudioMixer *)v7) && VocClass_VoicesEnabled ) /*0x750da2*/
+    if ( ((AudioMixer *)((AudioMixer *)v7))->SetVolume() && VocClass_VoicesEnabled ) /*0x750da2*/
     {
       v9 = AudioPool::ProcessQueue(v7); /*0x750da6*/
       v5 = (VocClass *)v9; /*0x750dab*/
@@ -295,7 +295,7 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
           0x40u) )
   {
   LABEL_2:
-        Debug::Log();
+        this->Debug::Log();
     return 0; /*0x751e23*/
   }
   return 1; /*0x751e1d*/
@@ -381,10 +381,10 @@ void ThemeClass_Update()
     return; /*0x752779*/
   if ( !g_InfantryDrawState ) /*0x75278e*/
     return; /*0x75278e*/
-    if ( Audio::IsSoundPlaying() )
+    if ( this->Audio::IsSoundPlaying() )
     return; /*0x752794*/
   v0 = qword_B1D4D0 + ThemeClass::GetValue(g_InfantryDrawState); /*0x7527b4*/
-    LODWORD(v1) = Audio::Callback();
+    IDA_LODWORD(v1) = this->Audio::Callback();
   if ( v1 <= v0 || dword_B1D428 ) /*0x7527dc*/
     return; /*0x7527dc*/
   if ( dword_B1D4C4 ) /*0x7527e9*/
@@ -569,16 +569,16 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
   *((unsigned int *)this + 18) = 1; /*0x752ce8*/
   *((unsigned int *)this + 19) = 0; /*0x752cef*/
   *((unsigned int *)this + 20) = 2; /*0x752cf2*/
-  if ( MEMORY[0xB1D4B0] < MEMORY[0xB1D4A8] /*0x752d2e*/
-    || (MEMORY[0xB1D4AD] || !MEMORY[0xB1D4A8])
-    && MEMORY[0xB1D4B4] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB1D4A0] + 8))(
-         &MEMORY[0xB1D4A0],
-         MEMORY[0xB1D4A8] + MEMORY[0xB1D4B4],
+  if ( g_abs_B1D4B0 < g_abs_B1D4A8 /*0x752d2e*/
+    || (g_abs_B1D4AD || !g_abs_B1D4A8)
+    && g_abs_B1D4B4 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B1D4A0 + 8))(
+         &g_abs_B1D4A0,
+         g_abs_B1D4A8 + g_abs_B1D4B4,
          0) )
   {
-    v3 = MEMORY[0xB1D4B0]++; /*0x752d3b*/
-    *((unsigned int *)MEMORY[0xB1D4A4] + v3) = this; /*0x752d4a*/
+    v3 = g_abs_B1D4B0++; /*0x752d3b*/
+    *((unsigned int *)g_abs_B1D4A4 + v3) = this; /*0x752d4a*/
   }
   return this; /*0x752d4d*/
 
@@ -593,7 +593,7 @@ int CCINIClass::InitFromINIEVA()
   unsigned int KeyCount; // eax
   signed int v3; // ebp
   int v4; // esi
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int v6; // esi
   int v7; // ebp
   int v8; // eax
@@ -606,21 +606,21 @@ int CCINIClass::InitFromINIEVA()
 
   v1 = this; /*0x75300a*/
   v13 = (int)this; /*0x753011*/
-  LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, (unsigned __int8 *)g_INI_Key_DialogList) != 0; /*0x75301c*/
+  IDA_LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, (uint8_t *)g_INI_Key_DialogList) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = INIClass::GetKeyCount(v1, (unsigned __int8 *)g_INI_Key_DialogList); /*0x753030*/
+    KeyCount = INIClass::GetKeyCount(v1, (uint8_t *)g_INI_Key_DialogList); /*0x753030*/
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
     for ( i = 0; v4 < v3; i = v4 ) /*0x753043*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1, (unsigned __int8 *)g_INI_Key_DialogList, v4); /*0x753060*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v1, (uint8_t *)g_INI_Key_DialogList, v4); /*0x753060*/
       KeyCount = INIClass::GetString( /*0x75306d*/
-                   (unsigned __int8 ***)v1,
-                   (unsigned __int8 **)g_INI_Key_DialogList,
+                   (uint8_t ***)v1,
+                   (uint8_t **)g_INI_Key_DialogList,
                    StringByIndex,
-                   (char *)&MEMORY[0x87F7E8][10719],
+                   (char *)&g_abs_87F7E8[10719],
                    Destination,
                    200);
       if ( KeyCount ) /*0x753074*/
@@ -638,7 +638,7 @@ int CCINIClass::InitFromINIEVA()
         if ( v6 == -1 ) /*0x7530b7*/
         {
 LABEL_10:
-          v7 = __2_YAPAXI_Z(84); /*0x7530bd*/
+          v7 = RA2_OPNEW(84); /*0x7530bd*/
           if ( v7 ) /*0x7530cb*/
           {
             *(unsigned int *)(v7 + 40) = 1065353216; /*0x7530da*/
@@ -650,9 +650,9 @@ LABEL_10:
             *(unsigned int *)(v7 + 76) = 0; /*0x753109*/
             *(unsigned int *)(v7 + 80) = 2; /*0x75310c*/
             if ( dword_A8ED54[145879] < dword_A8ED54[145877] /*0x753146*/
-              || (BYTE1(dword_A8ED54[145878]) || !dword_A8ED54[145877])
+              || (IDA_BYTE1(dword_A8ED54[145878]) || !dword_A8ED54[145877])
               && dword_A8ED54[145880] > 0
-              && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_A8ED54[145875] + 8))(
+              && (*(uint8_t (**)(int *, int, unsigned int))(dword_A8ED54[145875] + 8))(
                    &dword_A8ED54[145875],
                    dword_A8ED54[145877] + dword_A8ED54[145880],
                    0) )
@@ -672,7 +672,7 @@ LABEL_10:
         {
           v9 = *(unsigned int *)(dword_A8ED54[145876] + 4 * v6); /*0x753177*/
         }
-        LOBYTE(KeyCount) = AudioEvent::LoadFromINI(v9, (unsigned __int8 ***)v1); /*0x75317b*/
+        IDA_LOBYTE(KeyCount) = AudioEvent::LoadFromINI(v9, (uint8_t ***)v1); /*0x75317b*/
         v4 = i; /*0x753180*/
         v3 = v14; /*0x753184*/
       }
@@ -694,31 +694,31 @@ int E4Recv_7531A0::EVA_LoadINI()
   void *v4; // [esp+0h] [ebp-4h] BYREF
 
   v4 = this; /*0x7531a0*/
-  if ( MEMORY[0xB1D4C4] ) /*0x7531a8*/
+  if ( g_abs_B1D4C4 ) /*0x7531a8*/
   {
-    *(unsigned int *)(MEMORY[0xB1D4C4] + 80) = 2; /*0x7531aa*/
-    MEMORY[0xB1D4C4] = 0; /*0x7531b1*/
+    *(unsigned int *)(g_abs_B1D4C4 + 80) = 2; /*0x7531aa*/
+    g_abs_B1D4C4 = 0; /*0x7531b1*/
   }
-  if ( MEMORY[0xB1D4CC] ) /*0x7531c3*/
-    Audio::Release(MEMORY[0xB1D4CC]); /*0x7531c5*/
+  if ( g_abs_B1D4CC ) /*0x7531c3*/
+    Audio::Release(g_abs_B1D4CC); /*0x7531c5*/
   ThemeClass::ClearQueues(v4); /*0x7531ca*/
-  for ( result = MEMORY[0xB1D4B0]; MEMORY[0xB1D4B0] > 0; result = MEMORY[0xB1D4B0] ) /*0x7531d6*/
+  for ( result = g_abs_B1D4B0; g_abs_B1D4B0 > 0; result = g_abs_B1D4B0 ) /*0x7531d6*/
   {
-    v2 = *(void **)MEMORY[0xB1D4A4]; /*0x7531de*/
-    if ( *(unsigned int *)MEMORY[0xB1D4A4] ) /*0x7531de*/
+    v2 = *(void **)g_abs_B1D4A4; /*0x7531de*/
+    if ( *(unsigned int *)g_abs_B1D4A4 ) /*0x7531de*/
     {
-      v4 = *(void **)MEMORY[0xB1D4A4]; /*0x7531f4*/
-      v3 = (*(int (**)(int *, void **))(MEMORY[0xB1D4A0] + 16))(&MEMORY[0xB1D4A0], &v4); /*0x7531f8*/
-      if ( v3 != -1 && v3 < MEMORY[0xB1D4B0] && v3 < --MEMORY[0xB1D4B0] ) /*0x753213*/
+      v4 = *(void **)g_abs_B1D4A4; /*0x7531f4*/
+      v3 = (*(int (**)(int *, void **))(g_abs_B1D4A0 + 16))(&g_abs_B1D4A0, &v4); /*0x7531f8*/
+      if ( v3 != -1 && v3 < g_abs_B1D4B0 && v3 < --g_abs_B1D4B0 ) /*0x753213*/
       {
         do /*0x75322b*/
         {
           ++v3; /*0x75321b*/
-          *((unsigned int *)MEMORY[0xB1D4A4] + v3 - 1) = *((unsigned int *)MEMORY[0xB1D4A4] + v3); /*0x75321f*/
+          *((unsigned int *)g_abs_B1D4A4 + v3 - 1) = *((unsigned int *)g_abs_B1D4A4 + v3); /*0x75321f*/
         }
-        while ( v3 < MEMORY[0xB1D4B0] ); /*0x75322b*/
+        while ( v3 < g_abs_B1D4B0 ); /*0x75322b*/
       }
-      __3_YAXPAX_Z(v2); /*0x75322e*/
+      RA2_OPDEL(v2); /*0x75322e*/
     }
   }
   return result; /*0x753241*/
@@ -3517,7 +3517,7 @@ namespace gamemd {
 char E4Recv_758E10::sub_758E10(float a2, float a3, float a4)
 {
 
-  unsigned __int8 *v4; // ecx
+  uint8_t *v4; // ecx
   char v5; // bl
   int i; // edx
   double v7; // st6
@@ -3525,7 +3525,7 @@ char E4Recv_758E10::sub_758E10(float a2, float a3, float a4)
   double v9; // st4
   float v11; // [esp+4h] [ebp-8h]
 
-  v4 = (unsigned __int8 *)*((unsigned int *)this + 4); /*0x758e13*/
+  v4 = (uint8_t *)*((unsigned int *)this + 4); /*0x758e13*/
   v5 = 0; /*0x758e17*/
   v11 = 100000.0; /*0x758e19*/
   for ( i = 0; i < 256; ++i ) /*0x758e21*/

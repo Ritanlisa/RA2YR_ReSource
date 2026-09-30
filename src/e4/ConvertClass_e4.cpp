@@ -13,7 +13,7 @@
 
 // 0x48E740
 namespace gamemd {
-unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass * aP3, ObjectClass * aP4, ConvertClass * aP5)
+unsigned int * ConvertClass::Construct(char * a2, char * a3, int a4, int a5, char a6)
 {
 
   int v7; // eax
@@ -21,7 +21,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   bool v9; // cc
   unsigned char *v10; // eax
   int v11; // eax
-  __int16 v12; // cx
+  int16_t v12; // cx
   int v13; // eax
   unsigned char *v14; // eax
   unsigned char *v15; // edi
@@ -30,19 +30,19 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   int i; // ebp
   int j; // ebp
   int v20; // eax
-  unsigned __int8 v21; // cl
+  uint8_t v21; // cl
   int v22; // eax
   int v23; // ecx
   int v24; // eax
   int v25; // edi
   int v26; // eax
   unsigned char v28[4]; // [esp+Ch] [ebp-14h] BYREF
-  __int16 v29; // [esp+10h] [ebp-10h] BYREF
+  int16_t v29; // [esp+10h] [ebp-10h] BYREF
   char v30; // [esp+12h] [ebp-Eh]
   int v31; // [esp+14h] [ebp-Ch]
   int v32; // [esp+1Ah] [ebp-6h]
 
-  *((char *)this + 1) = (*(int (**)(int))(*(unsigned int *)aP3 + 112))(aP3); /*0x48e753*/
+  *((char *)this + 1) = (*(int (**)(int))(*(unsigned int *)a4 + 112))(a4); /*0x48e753*/
   *((char *)this + 2) = 0; /*0x48e756*/
   *((char *)this + 3) = 0; /*0x48e759*/
   *((char *)this + 4) = 0; /*0x48e75c*/
@@ -114,9 +114,9 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   *((char *)this + 70) = 0; /*0x48e894*/
   *((char *)this + 71) = 0; /*0x48e89a*/
   *((char *)this + 72) = 0; /*0x48e8a0*/
-  v7 = aP4; /*0x48e8a6*/
+  v7 = a5; /*0x48e8a6*/
   v8 = 1; /*0x48e8aa*/
-  v9 = aP4 < 1; /*0x48e8af*/
+  v9 = a5 < 1; /*0x48e8af*/
   *((char *)this + 73) = 0; /*0x48e8b1*/
   *((char *)this + 74) = 0; /*0x48e8b7*/
   *((char *)this + 75) = 0; /*0x48e8bd*/
@@ -145,24 +145,24 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
     *((char *)this + 91) = 1; /*0x48e943*/
   if ( *((char *)this + 1) == 1 ) /*0x48e94f*/
   {
-    v10 = (unsigned char *)__2_YAPAXI_Z(256); /*0x48e95a*/
+    v10 = (unsigned char *)RA2_OPNEW(256); /*0x48e95a*/
     *((char *)this + 94) = (int)v10; /*0x48e95f*/
     *v10 = 0; /*0x48e968*/
     do /*0x48e9df*/
     {
-      v11 = ComputeColorSaturation((unsigned int)&aP1[2 * (v8 % 256) + v8 % 256], (int)&aP1[2 * (v8 % 256)], (int)&aP4); /*0x48e98b*/
+      v11 = ComputeColorSaturation((unsigned int)&a2[2 * (v8 % 256) + v8 % 256], (int)&a2[2 * (v8 % 256)], (int)&a5); /*0x48e98b*/
       v12 = *(unsigned short *)v11; /*0x48e990*/
-      LOBYTE(v11) = *(unsigned char *)(v11 + 2); /*0x48e993*/
+      IDA_LOBYTE(v11) = *(unsigned char *)(v11 + 2); /*0x48e993*/
       v29 = v12; /*0x48e996*/
-      v30 = (unsigned __int8)v11 >> 1; /*0x48e9a5*/
-      v13 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)v28); /*0x48e9ae*/
-      LOWORD(aP3) = *(unsigned short *)v13; /*0x48e9b6*/
-      BYTE2(aP3) = *(unsigned char *)(v13 + 2); /*0x48e9c5*/
+      v30 = (uint8_t)v11 >> 1; /*0x48e9a5*/
+      v13 = Color::ConvertToRGB((uint8_t *)&v29, (int)v28); /*0x48e9ae*/
+      IDA_LOWORD(a4) = *(unsigned short *)v13; /*0x48e9b6*/
+      IDA_BYTE2(a4) = *(unsigned char *)(v13 + 2); /*0x48e9c5*/
       ++v8; /*0x48e9d4*/
-      *(unsigned char *)(*((char *)this + 94) + v8 - 1) = Palette::FindClosestColor(aP1, (int)&aP3); /*0x48e9db*/
+      *(unsigned char *)(*((char *)this + 94) + v8 - 1) = Palette::FindClosestColor(a2, (int)&a4); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
-    v14 = (unsigned char *)__2_YAPAXI_Z(*((char *)this + 91) << 8); /*0x48e9eb*/
+    v14 = (unsigned char *)RA2_OPNEW(*((char *)this + 91) << 8); /*0x48e9eb*/
     *((char *)this + 92) = (int)v14; /*0x48e9f0*/
     v15 = v14; /*0x48e9f6*/
     v16 = *((char *)this + 91); /*0x48e9f8*/
@@ -172,7 +172,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
       *v15 = 0; /*0x48ea18*/
       v17 = v15 + 1; /*0x48ea1a*/
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
-        *v17++ = Palette::FindClosestColor(a3, (int)&aP1[2 * (i % 256) + i % 256]); /*0x48ea40*/
+        *v17++ = Palette::FindClosestColor(a3, (int)&a2[2 * (i % 256) + i % 256]); /*0x48ea40*/
     }
     else
     {
@@ -184,16 +184,16 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
           *v15++ = 0; /*0x48ea5d*/
           for ( j = 1; j < 256; ++j ) /*0x48ea60*/
           {
-            v20 = ComputeColorSaturation((unsigned int)&aP1[2 * (j % 256) + j % 256], (int)aP1, (int)&aP4); /*0x48ea85*/
+            v20 = ComputeColorSaturation((unsigned int)&a2[2 * (j % 256) + j % 256], (int)a2, (int)&a5); /*0x48ea85*/
             v21 = *(unsigned char *)(v20 + 2); /*0x48ea8f*/
             v29 = *(unsigned short *)v20; /*0x48ea92*/
-            LOBYTE(v32) = v21; /*0x48ea97*/
+            IDA_LOBYTE(v32) = v21; /*0x48ea97*/
             v30 = v21; /*0x48eaa4*/
             v30 = 2 * v31 * v21 / (*((char *)this + 91) - 1); /*0x48eac2*/
-            v22 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)v28); /*0x48eac6*/
-            LOWORD(aP3) = *(unsigned short *)v22; /*0x48eace*/
-            BYTE2(aP3) = *(unsigned char *)(v22 + 2); /*0x48eadf*/
-            *v15++ = Palette::FindClosestColor(a3, (int)&aP3); /*0x48eae8*/
+            v22 = Color::ConvertToRGB((uint8_t *)&v29, (int)v28); /*0x48eac6*/
+            IDA_LOWORD(a4) = *(unsigned short *)v22; /*0x48eace*/
+            IDA_BYTE2(a4) = *(unsigned char *)(v22 + 2); /*0x48eadf*/
+            *v15++ = Palette::FindClosestColor(a3, (int)&a4); /*0x48eae8*/
           }
           v23 = *((char *)this + 91) - 1; /*0x48eb03*/
           ++v31; /*0x48eb06*/
@@ -204,27 +204,27 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   }
   else
   {
-    v24 = __2_YAPAXI_Z(*((char *)this + 91) << 9); /*0x48eb1c*/
+    v24 = RA2_OPNEW(*((char *)this + 91) << 9); /*0x48eb1c*/
     v25 = *((char *)this + 91); /*0x48eb21*/
     *((char *)this + 92) = v24; /*0x48eb2a*/
     *((char *)this + 93) = v24 + ((v25 - 1) >> 1 << 9); /*0x48eb3a*/
-    if ( !aP5 ) /*0x48eb46*/
-      DSurface::BlitStretch(v24, v25, (int)aP1); /*0x48eb51*/
-    *((char *)this + 96) = LOWORD(MEMORY[0x87F7E8][34176]); /*0x48eb60*/
-    *((char *)this + 97) = HIWORD(MEMORY[0x87F7E8][34176]); /*0x48eb6d*/
+    if ( !a6 ) /*0x48eb46*/
+      DSurface::BlitStretch(v24, v25, (int)a2); /*0x48eb51*/
+    *((char *)this + 96) = IDA_LOWORD(g_abs_87F7E8[34176]); /*0x48eb60*/
+    *((char *)this + 97) = IDA_HIWORD(g_abs_87F7E8[34176]); /*0x48eb6d*/
   }
-  if ( !aP5 ) /*0x48eb7a*/
+  if ( !a6 ) /*0x48eb7a*/
     ConvertClass::InitTables((int)this); /*0x48eb7e*/
-  if ( MEMORY[0x87F7E8][32072] < MEMORY[0x87F7E8][32070] /*0x48ebb7*/
-    || (BYTE1(MEMORY[0x87F7E8][32071]) || !MEMORY[0x87F7E8][32070])
-    && MEMORY[0x87F7E8][32073] > 0
-    && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][32068] + 8))(
-         &MEMORY[0x87F7E8][32068],
-         MEMORY[0x87F7E8][32073] + MEMORY[0x87F7E8][32070],
+  if ( g_abs_87F7E8[32072] < g_abs_87F7E8[32070] /*0x48ebb7*/
+    || (IDA_BYTE1(g_abs_87F7E8[32071]) || !g_abs_87F7E8[32070])
+    && g_abs_87F7E8[32073] > 0
+    && (*(uint8_t (**)(unsigned int *, int, unsigned int))(g_abs_87F7E8[32068] + 8))(
+         &g_abs_87F7E8[32068],
+         g_abs_87F7E8[32073] + g_abs_87F7E8[32070],
          0) )
   {
-    v26 = MEMORY[0x87F7E8][32072]++; /*0x48ebc4*/
-    *(unsigned int *)(MEMORY[0x87F7E8][32069] + 4 * v26) = this; /*0x48ebd3*/
+    v26 = g_abs_87F7E8[32072]++; /*0x48ebc4*/
+    *(unsigned int *)(g_abs_87F7E8[32069] + 4 * v26) = this; /*0x48ebd3*/
   }
   return this; /*0x48ebd8*/
 

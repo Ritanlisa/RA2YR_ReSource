@@ -34,7 +34,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   int *v2; // ecx
   int v3; // esi
   double v4; // st7
-  __int64 v5; // rax
+  int64_t v5; // rax
   double v6; // st7
   int v7; // eax
   int v8; // ecx
@@ -57,7 +57,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   unsigned int v26; // eax
   void **v27; // edi
   void *WarheadVersusMultiplier; // eax
-  __int64 VeteranSpeed; // [esp-8h] [ebp-48h]
+  int64_t VeteranSpeed; // [esp-8h] [ebp-48h]
   void *v30; // [esp-8h] [ebp-48h]
   void *v31; // [esp-8h] [ebp-48h]
   double v32; // [esp+10h] [ebp-30h] BYREF
@@ -78,9 +78,9 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   v38[1] = v36; /*0x4b5b9e*/
   v38[2] = v3; /*0x4b5ba2*/
   VeteranCombat_high = (*(int (**)(int *))(*v2 + 456))(v2) / 10 + 2; /*0x4b5bc9*/
-  if ( SHIDWORD(MEMORY[0x8871E0]->DropPodHeight) > VeteranCombat_high ) /*0x4b5bd5*/
-    VeteranCombat_high = HIDWORD(MEMORY[0x8871E0]->DropPodHeight); /*0x4b5bd7*/
-  VeteranSpeed = MEMORY[0x8871E0]->DropPodAngle; /*0x4b5bf3*/
+  if ( IDA_SHIDWORD(g_abs_8871E0->DropPodHeight) > VeteranCombat_high ) /*0x4b5bd5*/
+    VeteranCombat_high = IDA_HIDWORD(g_abs_8871E0->DropPodHeight); /*0x4b5bd7*/
+  VeteranSpeed = g_abs_8871E0->DropPodAngle; /*0x4b5bf3*/
   if ( *(unsigned char *)(a1 + 24) ) /*0x4b5bdb*/
   {
     v32 = (double)VeteranCombat_high; /*0x4b5bf4*/
@@ -93,7 +93,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     v4 = *(double *)v33 - Math::ArcTan2(*(double *)&VeteranSpeed) * v32; /*0x4b5c34*/
   }
   v35 = Math::RoundToInt(v4); /*0x4b5c41*/
-  v5 = MEMORY[0x8871E0]->DropPodAngle; /*0x4b5c50*/
+  v5 = g_abs_8871E0->DropPodAngle; /*0x4b5c50*/
   *(double *)v33 = (double)v37; /*0x4b5c56*/
   v6 = Math::SinCos(*(double *)&v5); /*0x4b5c5c*/
   v7 = Math::RoundToInt(*(double *)v33 - v6 * v32); /*0x4b5c6c*/
@@ -104,22 +104,22 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   if ( v9 > 0 ) /*0x4b5c87*/
   {
     (*(void (**)(int *, int *))(*v10 + 436))(v10, &v35); /*0x4b5eaa*/
-    VeteranRatio_high = (unsigned int *)HIDWORD(MEMORY[0x8871E0]->MissileSafetyAltitude); /*0x4b5eb6*/
+    VeteranRatio_high = (unsigned int *)IDA_HIDWORD(g_abs_8871E0->MissileSafetyAltitude); /*0x4b5eb6*/
     if ( VeteranRatio_high ) /*0x4b5ebe*/
     {
-      if ( !((int)MEMORY[0xA8ED84] % 6) ) /*0x4b5ecf*/
+      if ( !((int)g_abs_A8ED84 % 6) ) /*0x4b5ecf*/
       {
-        v20 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5edf*/
+        v20 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5edf*/
         if ( v20 ) /*0x4b5ee6*/
         {
           Index = AnimTypeClass::FindIndex(&unk_820320); /*0x4b5eed*/
-          AnimClass::ctor(v20, *((void **)MEMORY[0x8B4154] + Index), v38, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
+          AnimClass::ctor(v20, *((void **)g_abs_8B4154 + Index), v38, 0, 1, (void *)0x600, 0, 0); /*0x4b5f0f*/
         }
       }
-      if ( !((int)MEMORY[0xA8ED84] % 3) ) /*0x4b5f1f*/
+      if ( !((int)g_abs_A8ED84 % 3) ) /*0x4b5f1f*/
       {
         v32 = 0.0; /*0x4b5f39*/
-        v22 = Coord::To_Cell(&MEMORY[0x87F7E8], (unsigned int *)(a1 + 28)); /*0x4b5f41*/
+        v22 = Coord::To_Cell(&g_abs_87F7E8, (unsigned int *)(a1 + 28)); /*0x4b5f41*/
         ClosestObjectCell = Object::FindClosestObjectCell(v22, &v32, 0, 0); /*0x4b5f48*/
         if ( !Object::IsAlliedWithObjectHouse(*(unsigned int **)(*(unsigned int *)(a1 + 8) + 540), ClosestObjectCell) ) /*0x4b5f57*/
         {
@@ -128,10 +128,10 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           v33[0] = *v24; /*0x4b5f7a*/
           v33[1] = v24[1]; /*0x4b5f86*/
           v34 = v24[2]; /*0x4b5f8d*/
-          v26 = Random::State(MEMORY[0x886B88]); /*0x4b5f91*/
+          v26 = Random::State(g_abs_886B88); /*0x4b5f91*/
           StartAudioControllerAt(*(unsigned int *)(VeteranRatio_high[48] + 4 * (v26 % v25)), (int)&v35, 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v33, 2 * VeteranRatio_high[41], *(unsigned int **)(a1 + 8), VeteranRatio_high[43], 1, 0); /*0x4b5fc7*/
-          v27 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/
+          v27 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5fd6*/
           if ( v27 ) /*0x4b5fdd*/
           {
             v31 = (void *)Return::HRESULT_Fail(v33[0], v33[1], v34); /*0x4b5ffe*/
@@ -161,37 +161,37 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       (*(void (**)(unsigned int))(*(unsigned int *)*v12 + 8))(*v12); /*0x4b5cdd*/
     *v12 = 0; /*0x4b5ce3*/
     (*(void (**)(int, unsigned int *))(*(unsigned int *)(a1 + 20) + 16))(a1 + 20, v12); /*0x4b5cee*/
-    if ( (*(unsigned __int8 (**)(int *, int *, unsigned int))(*v10 + 216))(v10, &v35, 0) ) /*0x4b5cfc*/
+    if ( (*(uint8_t (**)(int *, int *, unsigned int))(*v10 + 216))(v10, &v35, 0) ) /*0x4b5cfc*/
     {
-      v16 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/
+      v16 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5dae*/
       if ( v16 ) /*0x4b5db8*/
-        AnimClass::ctor(v16, (void *)MEMORY[0x8871E0]->FlashFrameTime, &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5dd8*/
+        AnimClass::ctor(v16, (void *)g_abs_8871E0->FlashFrameTime, &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5dd8*/
       if ( *(unsigned char *)(a1 + 24) ) /*0x4b5ddd*/
       {
-        v17 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5de9*/
+        v17 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5de9*/
         if ( v17 ) /*0x4b5df3*/
-          AnimClass::ctor(v17, *(void **)(MEMORY[0x8871E0]->GUITabSound[3] + 4), &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e16*/
+          AnimClass::ctor(v17, *(void **)(g_abs_8871E0->GUITabSound[3] + 4), &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e16*/
       }
       else
       {
-        v18 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5e18*/
+        v18 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5e18*/
         if ( v18 ) /*0x4b5e22*/
-          AnimClass::ctor(v18, *(void **)MEMORY[0x8871E0]->GUITabSound[3], &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e47*/
+          AnimClass::ctor(v18, *(void **)g_abs_8871E0->GUITabSound[3], &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e47*/
       }
       (*(void (**)(int *, int))(*v10 + 292))(v10, 1); /*0x4b5e52*/
       (*(void (**)(int *, unsigned int))(*v10 + 460))(v10, 0); /*0x4b5e5e*/
       (*(void (**)(int *, unsigned int, int))(*v10 + 1156))(v10, 0, 1); /*0x4b5e6c*/
       (*(void (**)(int *))(*v10 + 492))(v10); /*0x4b5e76*/
-      (*(void (**)(int *, int *, unsigned int, unsigned int))(*v10 + 372))(v10, &MEMORY[0x8A0820], 0, 0); /*0x4b5e89*/
+      (*(void (**)(int *, int *, unsigned int, unsigned int))(*v10 + 372))(v10, &g_abs_8A0820, 0, 0); /*0x4b5e89*/
     }
     else
     {
-      PlaySoundEffectAt(&v35, 100, *(unsigned int **)(a1 + 8), MEMORY[0x8871E0]->?[5], 1, 0); /*0x4b5d28*/
-      v13 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5d37*/
+      PlaySoundEffectAt(&v35, 100, *(unsigned int **)(a1 + 8), g_abs_8871E0->?[5], 1, 0); /*0x4b5d28*/
+      v13 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5d37*/
       if ( v13 ) /*0x4b5d3e*/
       {
         v30 = (void *)Return::HRESULT_Fail(v35, v36, v37); /*0x4b5d64*/
-        v14 = (void *)GetWarheadVersusMultiplier(100, MEMORY[0x8871E0]->?[5], 0, &v35); /*0x4b5d8a*/
+        v14 = (void *)GetWarheadVersusMultiplier(100, g_abs_8871E0->?[5], 0, &v35); /*0x4b5d8a*/
         AnimClass::ctor(v13, v14, &v35, 0, 1, (void *)0x2600, v30, 0); /*0x4b5d92*/
         (*(void (**)(int))(*(unsigned int *)v11 + 8))(a1 - 4); /*0x4b5d9a*/
         return 1; /*0x4b5da6*/
@@ -269,7 +269,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
     if ( v4[11] ) /*0x4b62de*/
     {
       v6 = *(unsigned int *)v3->__pad_0; /*0x4b62e9*/
-      LOBYTE(a3) = 1; /*0x4b62f5*/
+      IDA_LOBYTE(a3) = 1; /*0x4b62f5*/
       (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x4b62fa*/
       v7 = (int (***)(unsigned int, void *, int **))v4[11]; /*0x4b62fd*/
       pPStm = 0; /*0x4b6300*/
@@ -299,7 +299,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
     else
     {
       v11 = *(unsigned int *)v3->__pad_0; /*0x4b6381*/
-      LOBYTE(a3) = 0; /*0x4b638d*/
+      IDA_LOBYTE(a3) = 0; /*0x4b638d*/
       return (*(HRESULT (**)(IStream *, int *, int, unsigned int))(v11 + 16))(v3, &a3, 1, 0); /*0x4b6392*/
     }
   }
@@ -314,7 +314,7 @@ int DropPodLocomotionClass::StubReturn48()
 
 }
 // 0x4B66F0
-DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
+DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
 
   ILocomotion *v3; // eax
@@ -326,8 +326,8 @@ DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
   if ( v3 ) /*0x4b670c*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)v3 + 8))(v3); /*0x4b6711*/
   LocomotionClass::Construct(Block); /*0x4b6716*/
-  if ( (a2 & 1) != 0 ) /*0x4b6720*/
-    __3_YAXPAX_Z(Block); /*0x4b6723*/
+  if ( (Block & 1) != 0 ) /*0x4b6720*/
+    RA2_OPDEL(Block); /*0x4b6723*/
   return (DropPodLocomotionClass *)Block; /*0x4b672d*/
 
 }

@@ -396,7 +396,7 @@ AbstractClass * * SlaveManager_InitGrid()
             if ( !(uint8_t)MapSeed::IsCellInBounds(&v40) /*0x6b2e21*/
               || v24[17] != -1
               || v24[57]
-              || (*(unsigned int *)v32 = v24[9], Tactical::GetCellData((Tactical *)v32)[69])
+              || (*(unsigned int *)v32 = v24[9], ((Tactical *)((Tactical *)v32))->GetCellData()[69])
               || (v25 = v24[14], v25 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340))
               && v25 != 0xFFFF
               && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v25) + 736) )
@@ -4440,7 +4440,7 @@ unsigned int * E4Recv_6B0A90::sub_6B0A90(int a2)
   v2[1] = 6; /*0x6b0ab3*/
   v3 = *((unsigned int *)this + 12); /*0x6b0ac0*/
   result = v2 + 2; /*0x6b0ac3*/
-  *result = MEMORY[0xA8ED84]; /*0x6b0ac6*/
+  *result = g_abs_A8ED84; /*0x6b0ac6*/
   result[1] = v5; /*0x6b0acc*/
   result[2] = v3; /*0x6b0acf*/
   return result; /*0x6b0ad2*/
@@ -4468,7 +4468,7 @@ long long E4Recv_6B1EE0::sub_6B1EE0()
   int v2; // ebx
   double v3; // st7
   int v4; // edi
-  __int64 result; // rax
+  int64_t result; // rax
 
   if ( *((unsigned char *)this + 46) ) /*0x6b1ee6*/
     v2 = *((unsigned int *)this + 5); /*0x6b1eed*/
@@ -5299,10 +5299,10 @@ namespace gamemd {
 int E4Recv_6B93E0::sub_6B93E0()
 {
 
-  unsigned __int8 *v1; // ecx
+  uint8_t *v1; // ecx
   int v2; // ebp
   int v3; // edi
-  unsigned __int8 v4; // bl
+  uint8_t v4; // bl
   int v5; // eax
   int result; // eax
 
@@ -5312,7 +5312,7 @@ int E4Recv_6B93E0::sub_6B93E0()
   {
     v3 = *v1; /*0x6b93f7*/
     v4 = *(v1 - 2); /*0x6b93fe*/
-    LOBYTE(v5) = -1; /*0x6b9415*/
+    IDA_LOBYTE(v5) = -1; /*0x6b9415*/
     if ( 15 * *(v1 - 1) / 10 <= 255 ) /*0x6b9422*/
       v5 = 15 * *(v1 - 1) / 10; /*0x6b9424*/
     *(v1 - 2) = v5; /*0x6b9426*/
@@ -5362,7 +5362,7 @@ unsigned int * E4Recv_6B9450::sub_6B9450()
   *((unsigned int *)this + 1) = 0; /*0x6b949e*/
   *((unsigned char *)this + 20) = 0; /*0x6b94a1*/
   *((unsigned int *)this + 2) = v4; /*0x6b94a4*/
-  v5 = __2_YAPAXI_Z(4 * v4); /*0x6b94b3*/
+  v5 = RA2_OPNEW(4 * v4); /*0x6b94b3*/
   v6 = 4 * *((unsigned int *)this + 2); /*0x6b94b8*/
   *this = v5; /*0x6b94bf*/
   memset(v5, 0, v6); /*0x6b94c4*/
@@ -5639,7 +5639,7 @@ int sub_6BB760()
 
 // 0x6BEC50
 namespace gamemd {
-void  __noreturn E4Recv_6BEC50::ExitProgram()
+void  __noreturn E4Recv_6BEC50::ExitProgram(void * Code)
 {
 
   exit((int)Code); /*0x6bec51*/

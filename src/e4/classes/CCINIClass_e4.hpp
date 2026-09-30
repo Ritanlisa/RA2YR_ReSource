@@ -35,15 +35,18 @@ struct CCINIClass {
     unsigned int __pad_41;
     unsigned int v3;
     unsigned int v4;
+    unsigned int __pad_0;
+    unsigned int headNode;
+    unsigned int sectionHead;
 // --- flat members (END) ---
     AITriggerTypeClass * ReadInfantryTypeList(char * a1, int a2);
     void* WriteHouses();
-    MultiplayerGameMode * * Load(MultiplayerGameMode * aP1, char a3, char aP2);
+    // dup-decl removed: // dup-decl removed: MultiplayerGameMode * * Load(int a2, char a3, char a4);
     int GetDB();
     int InitFromINIEVA();
-    int ReadTypeList(char * a1, CCINIClass * a2);
-    CCINIClass();
-     int Load(CCINIClass* self, void* file, int a3, int a4);  // load INI from file
+    int ReadTypeList(char * a1, void * a2);
+CCINIClass();
+     int Load(int a2, char a3, char a4);  // load INI from file
 };
 
 } // namespace gamemd

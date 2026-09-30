@@ -14,6 +14,7 @@
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/E4Recv_7ACB90_e4.hpp"
 
 // 0x439110
 namespace gamemd {
@@ -25,8 +26,7 @@ int Stream::FlushAndReset()
   int v3; // edi
   int v4; // eax
   int v5; // edi
-
-  v1 = this; /*0x439111*/
+v1 = (unsigned int *)((int)(this));
   v2 = *this; /*0x439114*/
   v3 = *((unsigned int *)this + 2); /*0x439116*/
   *((unsigned int *)this + 12) = 45; /*0x439119*/
@@ -135,19 +135,19 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
   if ( !TestBitArray(1) ) /*0x7592b7*/
   {
     v9 = *((unsigned int *)this + 110); /*0x7592c0*/
-    LOBYTE(v9) = v9 | 4; /*0x7592c6*/
+    IDA_LOBYTE(v9) = v9 | 4; /*0x7592c6*/
     *((unsigned int *)this + 110) = v9; /*0x7592c8*/
   }
   if ( TestBitArray(10) ) /*0x7592d3*/
   {
     v10 = *((unsigned int *)this + 110); /*0x7592dc*/
-    LOBYTE(v10) = v10 | 0x40; /*0x7592e2*/
+    IDA_LOBYTE(v10) = v10 | 0x40; /*0x7592e2*/
     *((unsigned int *)this + 110) = v10; /*0x7592e4*/
   }
   if ( TestBitArray(12) ) /*0x7592ef*/
   {
     v11 = *((unsigned int *)this + 110); /*0x7592f8*/
-    LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
+    IDA_LOBYTE(v11) = v11 | 0x80; /*0x7592fe*/
     *((unsigned int *)this + 110) = v11; /*0x759300*/
   }
   v12 = *((unsigned int *)this + 111) | 8; /*0x75930c*/
@@ -155,29 +155,29 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
   v13 = v12; /*0x75931e*/
   if ( (*((unsigned char *)this + 1324) & 2) != 0 ) /*0x759320*/
   {
-    LOBYTE(v13) = v12 | 0x20; /*0x759322*/
+    IDA_LOBYTE(v13) = v12 | 0x20; /*0x759322*/
     *((unsigned int *)this + 111) = v13; /*0x759324*/
     if ( (*((unsigned char *)this + 1324) & 4) == 0 ) /*0x759333*/
       goto LABEL_14; /*0x759333*/
-    BYTE1(v13) = BYTE1(v12) | 1; /*0x759335*/
+    IDA_BYTE1(v13) = IDA_BYTE1(v12) | 1; /*0x759335*/
   }
   else
   {
-    LOBYTE(v13) = v12 & 0xDF; /*0x75933a*/
+    IDA_LOBYTE(v13) = v12 & 0xDF; /*0x75933a*/
   }
   *((unsigned int *)this + 111) = v13; /*0x75933c*/
 LABEL_14:
   v14 = TestBitArray(17); /*0x759342*/
   v15 = *((unsigned int *)this + 111); /*0x75934e*/
   if ( v14 ) /*0x759354*/
-    LOBYTE(v15) = v15 | 4; /*0x759356*/
+    IDA_LOBYTE(v15) = v15 | 4; /*0x759356*/
   else
-    LOBYTE(v15) = v15 & 0xFB; /*0x75935a*/
+    IDA_LOBYTE(v15) = v15 & 0xFB; /*0x75935a*/
   *((unsigned int *)this + 111) = v15; /*0x759361*/
   v14 = TestBitArray(3); /*0x75936c*/
   v16 = *((unsigned int *)this + 111); /*0x75936e*/
   if ( v14 ) /*0x759374*/
-    LOBYTE(v16) = v16 & 0xFE; /*0x759376*/
+    IDA_LOBYTE(v16) = v16 & 0xFE; /*0x759376*/
   else
     v16 |= 1u; /*0x75937a*/
   *((unsigned int *)this + 111) = v16; /*0x759383*/
@@ -209,7 +209,7 @@ LABEL_14:
   {
     *((unsigned int *)this + 98) = sub_4116A0; /*0x759435*/
     *((unsigned int *)this + 108) = 60; /*0x75943f*/
-    *((unsigned int *)this + 127) = *(unsigned __int16 *)&MEMORY[0xA8D63C].__pad_14B0[188]; /*0x759455*/
+    *((unsigned int *)this + 127) = *(uint16_t *)&g_abs_A8D63C; /*0x759455*/
   }
   *((unsigned int *)this + 100) = ManageMultimediaTimer; /*0x759463*/
   *((unsigned int *)this + 117) = 0x2000; /*0x75946d*/

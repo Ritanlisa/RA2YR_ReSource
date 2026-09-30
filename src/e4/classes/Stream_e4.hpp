@@ -46,12 +46,13 @@ struct Stream {
     unsigned int u32_544;
     unsigned int u32_548;
     unsigned int u32_54C;
+    unsigned int CopyFromTemplate;
 // --- flat members (END) ---
     int FlushAndReset();
     int GetChecked();
     int ReadIntArray(int a2);
-    int WriteIntArray(TechnoTypeClass * aP1);
-    void * InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8);
+    int WriteIntArray(void * aP1);
+    void * InitializeBinkAudio(void * a1, void * aP2, int a4, int a5, void * aP5, int a7, int a8);
 };
 
 } // namespace gamemd

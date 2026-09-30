@@ -25,14 +25,12 @@ struct LinkedList_flat {
     unsigned int Debug;
     unsigned int PushFront;
 // --- flat members (END) ---
-AbstractClass * * LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4, void * a1, void * a2);
+AbstractClass * * LoadScenarioMixFiles(void * aP0, int aP2, int a3, int a4);
 LinkClass * * Append(int a2);
 LinkClass * * InsertAfter(int a2);
 int * Next();
-int Contains(IUnknown * aP1);
-int Init(void int Init();t Prepend(int a2);
-int RemoveNode();
-unsigned int * Attach(int a2);
+int Contains(void * aP1);
+int Init();t Prepend(int a2);igned int * Attach(int a2);
 unsigned int * FindNext();
 unsigned int * FindPrev();
 void * MoveNode(void * a2);

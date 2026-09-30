@@ -9,7 +9,7 @@ struct Time {
 // --- flat members (BEGIN) ---
     char Time_field_00[4];  // 0x0
 // --- flat members (END) ---
-    int FormatDate();
+    int FormatDate(char * Buffer);
     unsigned int GetElapsedMS();
 };
 

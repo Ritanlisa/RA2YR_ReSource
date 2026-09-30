@@ -167,7 +167,7 @@ void sub_594190(int * a1, int a2)
               {
                 v2 = a1; /*0x594298*/
   LABEL_19:
-                v10[283] = MEMORY[0x10]; /*0x59429c*/
+                v10[283] = g_abs_10; /*0x59429c*/
                 v5 = dword_ABED04; /*0x5942a7*/
               }
               else
@@ -432,7 +432,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
                    + 56) == -1
       && !*(unsigned int *)(i + 76)
 // 0x56d230
-      && MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], (int16_t *)(i + 36), v4, 0) == v5 )
+      && MapClass::GetTileIndex( IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)&stru_87F5F0.__pad_58[416], (int16_t *)(i + 36), v4, 0) == v5 )
     {
       FloodFillRandomMapTerrain(i, v4, v5); /*0x594c32*/
     }
@@ -1188,7 +1188,7 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
   int v8; // eax
   unsigned char *v9; // eax
   int v10; // [esp+8h] [ebp-Ch]
-  __int16 v11[2]; // [esp+Ch] [ebp-8h] BYREF
+  int16_t v11[2]; // [esp+Ch] [ebp-8h] BYREF
   unsigned int *v12; // [esp+10h] [ebp-4h]
 
   v2 = a2; /*0x5942f5*/
@@ -1204,19 +1204,19 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
       v6 = *v2; /*0x594319*/
       if ( *v2 < *v2 + v2[2] ) /*0x594323*/
       {
-        v7 = (__int16)v3; /*0x594329*/
+        v7 = (int16_t)v3; /*0x594329*/
         do /*0x5943b3*/
         {
           v11[0] = v6; /*0x59432f*/
           v11[1] = v3; /*0x594334*/
-          v8 = v7 + (__int16)v6; /*0x594339*/
+          v8 = v7 + (int16_t)v6; /*0x594339*/
           if ( v8 > v5 ) /*0x59433e*/
           {
-            if ( (__int16)v6 - v7 < v5 && v7 - (__int16)v6 < v5 && v8 <= g_MapCellCount ) /*0x594356*/
+            if ( (int16_t)v6 - v7 < v5 && v7 - (int16_t)v6 < v5 && v8 <= g_MapCellCount ) /*0x594356*/
             {
               if ( g_MapTileArray ) /*0x594360*/
-                *((unsigned int *)g_MapTileArray + 20 * (__int16)v6 + 20 * unk_89C2DC * v7 + 14) = v12[2]; /*0x59437a*/
-              v9 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v11); /*0x594388*/
+                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v6 + 20 * unk_89C2DC * v7 + 14) = v12[2]; /*0x59437a*/
+              v9 = CellCoord::To_CellObj(&g_abs_87F7E8, v11); /*0x594388*/
               v9[283] = *((unsigned char *)v12 + 16); /*0x594394*/
               v5 = g_MapCellHeight_Value; /*0x59439a*/
             }

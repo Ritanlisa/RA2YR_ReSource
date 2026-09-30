@@ -115,8 +115,8 @@ int sub_59B6D0()
   signed int j; // esi
   unsigned int *NeighbourContent; // edi
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x59b6d6*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59b6e0*/
+  ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x59b6d6*/
+  result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x59b6e0*/
   for ( i = (int *)result; result; i = (int *)result ) /*0x59b6e9*/
   {
     if ( CellClass::IsTerrainType(i) ) /*0x59b6ef*/
@@ -128,7 +128,7 @@ int sub_59B6D0()
           NeighbourContent[14] = dword_AA0E18; /*0x59b714*/
       }
     }
-    result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x59b724*/
+    result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x59b724*/
   }
   return result; /*0x59b731*/
 }
@@ -141,8 +141,8 @@ int sub_59C530()
   int result; // eax
   int v1; // ecx
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x59c536*/
-  for ( result = LayerClass::CellIteratorNext(&dword_87F7E8); result; result = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x59c549*/
+  ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x59c536*/
+  for ( result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); result; result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext() ) /*0x59c549*/
   {
     v1 = *(unsigned int *)(result + 56); /*0x59c54b*/
     if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x59c55d*/
@@ -164,8 +164,8 @@ char sub_5A1F60()
 
   v0 = 1; /*0x5a1f68*/
   Mouse::SetBounds((int)&dword_87F7E8, 0); /*0x5a1f6a*/
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x5a1f74*/
-  for ( i = LayerClass::CellIteratorNext(&dword_87F7E8); i; i = LayerClass::CellIteratorNext(&dword_87F7E8) ) /*0x5a1f85*/
+  ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x5a1f74*/
+  for ( i = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); i; i = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext() ) /*0x5a1f85*/
   {
     if ( !v0 ) /*0x5a1f89*/
       break; /*0x5a1f89*/
@@ -182,13 +182,13 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 
   int v2; // eax
 
-  LocomotionClass::Init((unsigned int *)this); /*0x5afef3*/
+  ((LocomotionClass *)((unsigned int *)this))->Init(); /*0x5afef3*/
   *((unsigned int *)this + 6) = g_MatrixTransformState; /*0x5aff01*/
-  *((unsigned int *)this + 7) = MEMORY[0xABEE14]; /*0x5aff0a*/
-  *((unsigned int *)this + 8) = MEMORY[0xABEE18]; /*0x5aff16*/
+  *((unsigned int *)this + 7) = g_abs_ABEE14; /*0x5aff0a*/
+  *((unsigned int *)this + 8) = g_abs_ABEE18; /*0x5aff16*/
   *((unsigned int *)this + 9) = g_MatrixTransformState; /*0x5aff1e*/
-  *((unsigned int *)this + 10) = MEMORY[0xABEE14]; /*0x5aff26*/
-  v2 = MEMORY[0xABEE18]; /*0x5aff29*/
+  *((unsigned int *)this + 10) = g_abs_ABEE14; /*0x5aff26*/
+  v2 = g_abs_ABEE18; /*0x5aff29*/
   *((unsigned char *)this + 48) = 0; /*0x5aff2e*/
   *(unsigned int *)this = &MechLocomotionClass::`vftable'; /*0x5aff32*/
   *((unsigned int *)this + 11) = v2; /*0x5aff38*/
@@ -220,7 +220,7 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 
   if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
 // 0x4653c0
-    return BuildingTypeClass::FindOrCreate(Destination); /*0x67bd0b*/
+    return (gamemd::BuildingTypeClass *)(((BuildingTypeClass *)(Destination))->FindOrCreate());
   else
     return a4; /*0x67bd19*/
 }
@@ -234,7 +234,7 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 
   if ( INIClass::GetString((INIClass *)a1, edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd9e*/
 // 0x71e2a0
-    return TerrainTypeClass::FindOrCreate(Destination); /*0x67bdab*/
+    return (gamemd::TerrainTypeClass *)(((TerrainTypeClass *)(Destination))->FindOrCreate());
   else
     return a4; /*0x67bdb9*/
 }
@@ -296,12 +296,12 @@ namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
 
-  LocomotionClass::Init((unsigned int *)this); /*0x728a03*/
+  ((LocomotionClass *)((unsigned int *)this))->Init(); /*0x728a03*/
   *((unsigned int *)this + 6) = 0; /*0x728a0d*/
-  *((unsigned int *)this + 7) = MEMORY[0xB0F910]; /*0x728a16*/
-  *((unsigned int *)this + 8) = MEMORY[0xB0F914]; /*0x728a1e*/
-  *((unsigned int *)this + 9) = MEMORY[0xB0F918]; /*0x728a27*/
-  *((unsigned int *)this + 10) = MEMORY[0xA8ED84]; /*0x728a30*/
+  *((unsigned int *)this + 7) = g_abs_B0F910; /*0x728a16*/
+  *((unsigned int *)this + 8) = g_abs_B0F914; /*0x728a1e*/
+  *((unsigned int *)this + 9) = g_abs_B0F918; /*0x728a27*/
+  *((unsigned int *)this + 10) = g_abs_A8ED84; /*0x728a30*/
   *((unsigned int *)this + 12) = 0; /*0x728a33*/
   *((unsigned int *)this + 13) = 0; /*0x728a36*/
   *((unsigned char *)this + 56) = 0; /*0x728a39*/

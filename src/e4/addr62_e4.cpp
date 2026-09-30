@@ -963,11 +963,11 @@ unsigned int * E4Recv_6223C0::DestroyDialog()
   void (***v3)(unsigned int, int); // ecx
   void *v4; // [esp+4h] [ebp-4h] BYREF
 
-  result = (unsigned int *)MEMORY[0xAC1B04]; /*0x6223c1*/
+  result = (unsigned int *)g_abs_AC1B04; /*0x6223c1*/
   v4 = this; /*0x6223c9*/
-  if ( MEMORY[0xAC1B04] ) /*0x6223cd*/
+  if ( g_abs_AC1B04 ) /*0x6223cd*/
   {
-    result = (unsigned int *)*((unsigned int *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v4) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x6223ee*/
+    result = (unsigned int *)*((unsigned int *)g_abs_AC1B00 + (g_abs_AC1B18(&v4) & ((1 << g_abs_AC1B0C) - 1))); /*0x6223ee*/
     if ( result ) /*0x6223f3*/
     {
       while ( (void *)*result != v4 ) /*0x6223fb*/
@@ -984,7 +984,7 @@ unsigned int * E4Recv_6223C0::DestroyDialog()
         {
           (**v3)(v3, 1); /*0x622420*/
           v2[4] = 0; /*0x622422*/
-          return (unsigned int *)--MEMORY[0xAC48B4]; /*0x62242e*/
+          return (unsigned int *)--g_abs_AC48B4; /*0x62242e*/
         }
       }
     }
@@ -1522,13 +1522,13 @@ unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
   v6 = (const wchar_t *)a2[10]; /*0x62375b*/
   if ( v4 ) /*0x623760*/
   {
-    __3_YAXPAX_Z(v4); /*0x623763*/
+    RA2_OPDEL(v4); /*0x623763*/
     *((unsigned int *)this + 10) = 0; /*0x62376b*/
   }
   if ( v6 && *v6 ) /*0x623772*/
   {
     v7 = wcslen(v6); /*0x623778*/
-    v8 = (wchar_t *)__2_YAPAXI_Z(2 * v7 + 2); /*0x623782*/
+    v8 = (wchar_t *)RA2_OPNEW(2 * v7 + 2); /*0x623782*/
     *((unsigned int *)this + 10) = v8; /*0x623789*/
     wcscpy(v8, v6); /*0x62378c*/
   }
@@ -1548,14 +1548,14 @@ unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
       *v12 = *v11; /*0x6237be*/
     else
       *((unsigned int *)this + 13) = *v11; /*0x6237c4*/
-    __3_YAXPAX_Z(v11); /*0x6237c8*/
+    RA2_OPDEL(v11); /*0x6237c8*/
 LABEL_15:
     ; /*0x6237d0*/
   }
   for ( ; i; i = (int **)*i ) /*0x6237d9*/
   {
     v13 = wcslen((const wchar_t *)i[2]); /*0x6237df*/
-    v14 = (char *)__2_YAPAXI_Z(2 * v13 + 18); /*0x6237e9*/
+    v14 = (char *)RA2_OPNEW(2 * v13 + 18); /*0x6237e9*/
     if ( v14 ) /*0x6237f3*/
     {
       *((unsigned int *)v14 + 2) = v14 + 16; /*0x6237f8*/
@@ -1887,7 +1887,7 @@ void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
 }
 // 0x6242B0
 namespace gamemd {
-int E4Recv_6242B0::sub_6242B0()
+int E4Recv_6242B0::sub_6242B0(HWND hWnd)
 {
 
   int v2; // eax
@@ -1897,27 +1897,27 @@ int E4Recv_6242B0::sub_6242B0()
 
   hWnda = hWnd; /*0x6242c4*/
   GetClassNameA(hWnd, ClassName, 128); /*0x6242c8*/
-  if ( !strcmp(ClassName, MEMORY[0x833728]) ) /*0x6242df*/
+  if ( !strcmp(ClassName, g_abs_833728) ) /*0x6242df*/
     return 1; /*0x62430a*/
-  if ( !strcmp(ClassName, MEMORY[0x833720]) ) /*0x624325*/
+  if ( !strcmp(ClassName, g_abs_833720) ) /*0x624325*/
     return 1; /*0x624350*/
-  if ( !strcmp(ClassName, MEMORY[0x833718]) /*0x6243c1*/
-    && MEMORY[0xAC1B04]
-    && (v2 = *((unsigned int *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&hWnda) & ((1 << MEMORY[0xAC1B0C]) - 1)))) != 0 )
+  if ( !strcmp(ClassName, g_abs_833718) /*0x6243c1*/
+    && g_abs_AC1B04
+    && (v2 = *((unsigned int *)g_abs_AC1B00 + (g_abs_AC1B18(&hWnda) & ((1 << g_abs_AC1B0C) - 1)))) != 0 )
   {
     v3 = hWnda; /*0x6243c3*/
     while ( *(HWND *)v2 != hWnda ) /*0x6243c9*/
     {
       v2 = *(unsigned int *)(v2 + 516); /*0x6243cb*/
       if ( !v2 ) /*0x6243d3*/
-        return !strcmp(ClassName, MEMORY[0x83370C]) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x6243d3*/
+        return !strcmp(ClassName, g_abs_83370C) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x6243d3*/
     }
     return *(unsigned int *)(v2 + 108) == 1; /*0x6243e8*/
   }
   else
   {
     v3 = hWnda; /*0x6243f2*/
-    return !strcmp(ClassName, MEMORY[0x83370C]) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x624445*/
+    return !strcmp(ClassName, g_abs_83370C) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x624445*/
   }
 
 }
@@ -2065,7 +2065,7 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
   char *v21; // [esp+214h] [ebp-4h]
 
   v17 = MIXFile::Load(this, a2); /*0x6278de*/
-  v3 = (char *)__2_YAPAXI_Z(0x104u); /*0x6278e7*/
+  v3 = (char *)RA2_OPNEW(0x104u); /*0x6278e7*/
   if ( v3 ) /*0x6278ee*/
   {
     strcpy(v3, a2); /*0x627906*/
@@ -2090,15 +2090,15 @@ LABEL_8:
     v12 = *(unsigned int *)(v8 + 8); /*0x62798f*/
     v21 = v18; /*0x627992*/
     if ( *(unsigned int *)(v8 + 16) < v12 /*0x6279c0*/
-      || ((LOBYTE(v11) = *(unsigned char *)(v8 + 13), (unsigned char)v11) || !v12)
+      || ((IDA_LOBYTE(v11) = *(unsigned char *)(v8 + 13), (unsigned char)v11) || !v12)
       && (v11 = *(unsigned int *)(v8 + 20), v11 > 0)
-      && (LOBYTE(v11) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v8 + 8))(v8, v12 + v11, 0), (unsigned char)v11) )
+      && (IDA_LOBYTE(v11) = (*(int (**)(int, int, unsigned int))(*(unsigned int *)v8 + 8))(v8, v12 + v11, 0), (unsigned char)v11) )
     {
       v13 = 65 * *(unsigned int *)(v8 + 16); /*0x6279cd*/
       v14 = *(unsigned int *)(v8 + 4); /*0x6279cf*/
       ++*(unsigned int *)(v8 + 16); /*0x6279d2*/
       v15 = v14 + 4 * v13; /*0x6279dc*/
-      LOBYTE(v11) = (unsigned __int8)String::CopyChecked((char *)v15, v20); /*0x6279e2*/
+      IDA_LOBYTE(v11) = (uint8_t)String::CopyChecked((char *)v15, v20); /*0x6279e2*/
       *(unsigned int *)(v15 + 256) = v21; /*0x6279ee*/
     }
   }
@@ -2107,7 +2107,7 @@ LABEL_8:
     v10 = 260 * v9; /*0x627955*/
     while ( 1 ) /*0x627962*/
     {
-      LOBYTE(v11) = String::Equals((const char *)(v10 + *(unsigned int *)(v8 + 4)), String); /*0x627962*/
+      IDA_LOBYTE(v11) = String::Equals((const char *)(v10 + *(unsigned int *)(v8 + 4)), String); /*0x627962*/
       if ( (unsigned char)v11 ) /*0x627969*/
         break; /*0x627969*/
       --v9; /*0x62796f*/
@@ -2180,7 +2180,7 @@ LABEL_5:
       if ( v15 ) /*0x627aba*/
       {
         ColorScheme::Destructor(*(unsigned int *)(v14 + 4 * i)); /*0x627abe*/
-        __3_YAXPAX_Z(v15); /*0x627ac4*/
+        RA2_OPDEL(v15); /*0x627ac4*/
       }
     }
     v16 = *(ObjectClass **)(v9 + 256); /*0x627ad1*/
@@ -2219,15 +2219,15 @@ void E4Recv_629530::sub_629530()
   if ( *((unsigned char *)this + 84) ) /*0x629552*/
   {
     v4 = this; /*0x629567*/
-    v3 = (*(int (**)(int *, int *))(MEMORY[0xB0F5B8] + 16))(&MEMORY[0xB0F5B8], &v4); /*0x62956b*/
-    if ( v3 != -1 && v3 < MEMORY[0xB0F5C8] && v3 < --MEMORY[0xB0F5C8] ) /*0x629586*/
+    v3 = (*(int (**)(int *, int *))(g_abs_B0F5B8 + 16))(&g_abs_B0F5B8, &v4); /*0x62956b*/
+    if ( v3 != -1 && v3 < g_abs_B0F5C8 && v3 < --g_abs_B0F5C8 ) /*0x629586*/
     {
       do /*0x62959e*/
       {
         ++v3; /*0x62958e*/
-        *((unsigned int *)MEMORY[0xB0F5BC] + v3 - 1) = *((unsigned int *)MEMORY[0xB0F5BC] + v3); /*0x629592*/
+        *((unsigned int *)g_abs_B0F5BC + v3 - 1) = *((unsigned int *)g_abs_B0F5BC + v3); /*0x629592*/
       }
-      while ( v3 < MEMORY[0xB0F5C8] ); /*0x62959e*/
+      while ( v3 < g_abs_B0F5C8 ); /*0x62959e*/
     }
     *((unsigned char *)this + 84) = 0; /*0x6295a0*/
   }
@@ -2320,12 +2320,12 @@ AbstractClass * * DestructParticleSystemClass(ParticleSystemClass * aP0, int a2)
     while ( v10 < g_AlphaShapePool ); /*0x62e23c*/
   }
     v11 = (CCINIClass *)v5->TargetCoords[0];
-    if ( v11 && BYTE1(v5->TargetCoords[2]) )
+    if ( v11 && IDA_BYTE1(v5->TargetCoords[2]) )
   {
     RA2_OPDEL(v11); /*0x62e25b*/
         v5->TargetCoords[0] = 0;
   }
-    BYTE1(v5->TargetCoords[2]) = 0;
+    IDA_BYTE1(v5->TargetCoords[2]) = 0;
     v5->TargetCoords[1] = 0;
 // 0x5f3b80
   return ObjectClass::Dtor(); /*0x62e27c*/
@@ -2488,16 +2488,16 @@ void E4Recv_6235B0::sub_6235B0(wchar_t * Format)
 
   if ( *((unsigned int *)this + 10) ) /*0x6235b4*/
   {
-    __3_YAXPAX_Z(*((unsigned int *)this + 10)); /*0x6235bc*/
+    RA2_OPDEL(*((unsigned int *)this + 10)); /*0x6235bc*/
     *((unsigned int *)this + 10) = 0; /*0x6235c4*/
   }
   if ( Format ) /*0x6235d1*/
   {
     if ( *(unsigned char *)Format ) /*0x6235d3*/
     {
-      v3 = (wchar_t *)__2_YAPAXI_Z(2 * strlen((const char *)Format) + 2); /*0x6235ea*/
+      v3 = (wchar_t *)RA2_OPNEW(2 * strlen((const char *)Format) + 2); /*0x6235ea*/
       *((unsigned int *)this + 10) = v3; /*0x6235f6*/
-      swprintf(v3, (const size_t)MEMORY[0x835874], Format); /*0x6235f9*/
+      swprintf(v3, (const size_t)g_abs_835874, Format); /*0x6235f9*/
     }
   }
 
@@ -2671,7 +2671,7 @@ unsigned char E4Recv_6260F0::sub_6260F0(ObjectClass * aP1)
 {
 
   int v3; // edi
-  unsigned __int8 result; // al
+  uint8_t result; // al
 
   v3 = 256; /*0x6260f9*/
   do /*0x62610f*/
@@ -2692,7 +2692,7 @@ unsigned char E4Recv_626170::sub_626170(ObjectClass * aP1, int a3)
 {
 
   int i; // esi
-  unsigned __int8 result; // al
+  uint8_t result; // al
 
   for ( i = 0; i < 256; ++i ) /*0x62617c*/
   {
@@ -2711,13 +2711,13 @@ unsigned char E4Recv_6261B0::sub_6261B0(ObjectClass * aP1, int a3, int a4)
 {
 
   int i; // esi
-  unsigned __int8 result; // al
+  uint8_t result; // al
 
   for ( i = 0; i < 256; ++i ) /*0x6261bc*/
   {
     result = a4; /*0x6261c0*/
     if ( *(unsigned char *)(i + a4) ) /*0x6261c4*/
-      result = Color::Lerp(this, aP1, (unsigned __int8 *)(a3 + 2 * (i % 256) + i % 256)); /*0x6261e3*/
+      result = Color::Lerp(this, aP1, (uint8_t *)(a3 + 2 * (i % 256) + i % 256)); /*0x6261e3*/
     this += 3; /*0x6261e9*/
   }
   return result; /*0x6261f4*/
@@ -2760,7 +2760,7 @@ void E4Recv_626290::sub_626290()
       if ( v6 ) /*0x6262b7*/
       {
         ColorScheme::Destructor(*(unsigned int *)(v5 + 4 * i)); /*0x6262bb*/
-        __3_YAXPAX_Z(v6); /*0x6262c1*/
+        RA2_OPDEL(v6); /*0x6262c1*/
       }
     }
     v7 = (void (***)(unsigned int, int))*((unsigned int *)this + 64); /*0x6262cf*/
@@ -2795,7 +2795,7 @@ int E4Recv_6262F0::sub_6262F0(int a2)
       if ( v7 ) /*0x626317*/
       {
         ColorScheme::Destructor(*(unsigned int *)(v6 + 4 * i)); /*0x62631b*/
-        __3_YAXPAX_Z(v7); /*0x626321*/
+        RA2_OPDEL(v7); /*0x626321*/
       }
     }
     v8 = (void (***)(unsigned int, int))*((unsigned int *)this + 64); /*0x62632f*/
@@ -2900,7 +2900,7 @@ unsigned int * E4Recv_628B00::sub_628B00(int a2, unsigned char * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(260 * a2); /*0x628b5f*/
+      v6 = RA2_OPNEW(260 * a2); /*0x628b5f*/
       if ( v6 ) /*0x628b66*/
       {
         v7 = v6; /*0x628b6b*/

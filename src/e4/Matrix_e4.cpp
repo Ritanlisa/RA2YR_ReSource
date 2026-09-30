@@ -10,21 +10,21 @@
 
 // 0x5AE860
 namespace gamemd {
-int Matrix3x4::Identity(void* a1, void* a2)
+int Matrix3x4::Identity()
 {
 
-  *a1 = 1065353216; /*0x5ae867*/
-  *(a1 + 1) = 0; /*0x5ae869*/
-  *(a1 + 2) = 0; /*0x5ae86c*/
-  *(a1 + 3) = 0; /*0x5ae86f*/
-  *(a1 + 4) = 0; /*0x5ae872*/
-  *(a1 + 5) = 1065353216; /*0x5ae875*/
-  *(a1 + 6) = 0; /*0x5ae878*/
-  *(a1 + 7) = 0; /*0x5ae87b*/
-  *(a1 + 8) = 0; /*0x5ae87e*/
-  *(a1 + 9) = 0; /*0x5ae881*/
-  *(a1 + 10) = 1065353216; /*0x5ae884*/
-  *(a1 + 11) = 0; /*0x5ae887*/
+  *this = 1065353216; /*0x5ae867*/
+  *(this + 1) = 0; /*0x5ae869*/
+  *(this + 2) = 0; /*0x5ae86c*/
+  *(this + 3) = 0; /*0x5ae86f*/
+  *(this + 4) = 0; /*0x5ae872*/
+  *(this + 5) = 1065353216; /*0x5ae875*/
+  *(this + 6) = 0; /*0x5ae878*/
+  *(this + 7) = 0; /*0x5ae87b*/
+  *(this + 8) = 0; /*0x5ae87e*/
+  *(this + 9) = 0; /*0x5ae881*/
+  *(this + 10) = 1065353216; /*0x5ae884*/
+  *(this + 11) = 0; /*0x5ae887*/
   return 0; /*0x5ae88a*/
 
 }
@@ -56,12 +56,12 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   AbstractClass *aP2a; // [esp+28h] [ebp+8h]
 
   aP2a = *(AbstractClass **)aP2->__pad_0; /*0x6d2372*/
-  if ( (int)aP2a >= *(int *)&MEMORY[0xB077F8].__pad_5554[228] /*0x6d2386*/
-    || (v8 = *(unsigned int *)&aP2->__pad_0[4], v8 >= *(int *)&MEMORY[0xB077F8].__pad_5554[232]) )
+  if ( (int)aP2a >= *(int *)&g_abs_B077F8 /*0x6d2386*/
+    || (v8 = *(unsigned int *)&aP2->__pad_0[4], v8 >= *(int *)&g_abs_B077F8) )
   {
-    *(unsigned int *)aP1->__pad_0 = *(unsigned int *)&MEMORY[0xB077F8].__pad_5554[188]; /*0x6d2404*/
-    *(unsigned int *)&aP1->__pad_0[4] = *(unsigned int *)&MEMORY[0xB077F8].__pad_5554[192]; /*0x6d240c*/
-    *(unsigned int *)&aP1->__pad_0[8] = *(unsigned int *)&MEMORY[0xB077F8].__pad_5554[196]; /*0x6d2415*/
+    *(unsigned int *)aP1->__pad_0 = *(unsigned int *)&g_abs_B077F8; /*0x6d2404*/
+    *(unsigned int *)&aP1->__pad_0[4] = *(unsigned int *)&g_abs_B077F8; /*0x6d240c*/
+    *(unsigned int *)&aP1->__pad_0[8] = *(unsigned int *)&g_abs_B077F8; /*0x6d2415*/
     return aP1->__pad_0; /*0x6d23f7*/
   }
   else

@@ -9,7 +9,7 @@
 
 // 0x63DC20
 namespace gamemd {
-void BlowPipe_31::ddtor(void *a1 = 0)
+void BlowPipe_31::ddtor()
 {
 
   void *v2; // eax
@@ -18,7 +18,7 @@ void BlowPipe_31::ddtor(void *a1 = 0)
   *((unsigned int *)this + 4) = 0; /*0x63dc29*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x63dc30*/
   {
-    __3_YAXPAX_Z(v2); /*0x63dc36*/
+    RA2_OPDEL(v2); /*0x63dc36*/
     *((unsigned int *)this + 1) = 0; /*0x63dc3e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63dc41*/
@@ -42,17 +42,17 @@ unsigned int BlowPipe_31::Write(int a2)
 
 // 0x63DC70
 namespace gamemd {
-int BlowPipe_31::Seek(int a2, void *a1 = 0)
+int BlowPipe_31::Seek( int a2)
 {
 
-  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * a2); /*0x63dc7a*/
+  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * this); /*0x63dc7a*/
 
 }
 } // namespace gamemd
 
 // 0x63DC80
 namespace gamemd {
-void BlowPipe_23::Clear(void *a1 = 0)
+void BlowPipe_23::Clear()
 {
 
   void *v2; // eax
@@ -61,7 +61,7 @@ void BlowPipe_23::Clear(void *a1 = 0)
   *((unsigned int *)this + 4) = 0; /*0x63dc89*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x63dc90*/
   {
-    __3_YAXPAX_Z(v2); /*0x63dc96*/
+    RA2_OPDEL(v2); /*0x63dc96*/
     *((unsigned int *)this + 1) = 0; /*0x63dc9e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63dca1*/
@@ -85,10 +85,10 @@ unsigned int BlowPipe_23::GetCount(int a2)
 
 // 0x63DCD0
 namespace gamemd {
-int BlowPipe_23::Seek(int a2, void *a1 = 0)
+int BlowPipe_23::Seek( int a2)
 {
 
-  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * a2); /*0x63dcda*/
+  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * this); /*0x63dcda*/
 
 }
 } // namespace gamemd
@@ -104,7 +104,7 @@ void BlowPipe_23::Clear_0()
   *((unsigned int *)this + 4) = 0; /*0x63dce9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x63dcf0*/
   {
-    __3_YAXPAX_Z(v2); /*0x63dcf6*/
+    RA2_OPDEL(v2); /*0x63dcf6*/
     *((unsigned int *)this + 1) = 0; /*0x63dcfe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63dd01*/
@@ -172,7 +172,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e36c*/
       v4 = a3; /*0x63e382*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e37e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63e37e*/
     *((unsigned char *)this + 12) = 1; /*0x63e386*/
     if ( v4 ) /*0x63e38a*/
     {
@@ -185,7 +185,7 @@ char BlowPipe_23::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x63e3ae*/
         if ( *((unsigned char *)this + 13) ) /*0x63e3bb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e3c6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x63e3c6*/
           *((unsigned int *)this + 1) = 0; /*0x63e3ce*/
         }
       }
@@ -215,7 +215,7 @@ void BlowPipe_23::Clear_1()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x63e40d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x63e413*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x63e413*/
     *((unsigned int *)this + 1) = 0; /*0x63e41b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63e41e*/
@@ -278,7 +278,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e4a8*/
       v4 = a3; /*0x63e4be*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e4ba*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63e4ba*/
     *((unsigned char *)this + 12) = 1; /*0x63e4c2*/
     if ( !v4 ) /*0x63e4c6*/
       return 0; /*0x63e53a*/
@@ -291,7 +291,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
         ++i; /*0x63e4e1*/
       if ( *((unsigned char *)this + 13) ) /*0x63e4ee*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e4f9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x63e4f9*/
         *((unsigned int *)this + 1) = 0; /*0x63e501*/
       }
     }
@@ -313,7 +313,7 @@ char BlowPipe_31::Release(int a2, unsigned int * a3)
 
 // 0x63E620
 namespace gamemd {
-int BlowPipe_31::Read(int a2, void *a1 = 0)
+int BlowPipe_31::Read( unsigned int * a2)
 {
 
   int v2; // edx
@@ -324,7 +324,7 @@ int BlowPipe_31::Read(int a2, void *a1 = 0)
   result = 0; /*0x63e623*/
   if ( v2 <= 0 ) /*0x63e628*/
     return -1; /*0x63e63f*/
-  for ( i = (unsigned int *)*((char *)this + 1); *i != *a2; ++i ) /*0x63e62e*/
+  for ( i = (unsigned int *)*((char *)this + 1); *i != *this; ++i ) /*0x63e62e*/
   {
     if ( ++result >= v2 ) /*0x63e63d*/
       return -1; /*0x63e63d*/
@@ -379,7 +379,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e6ac*/
       v4 = a3; /*0x63e6c2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e6be*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63e6be*/
     *((unsigned char *)this + 12) = 1; /*0x63e6c6*/
     if ( v4 ) /*0x63e6ca*/
     {
@@ -392,7 +392,7 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
           ++i; /*0x63e6ee*/
         if ( *((unsigned char *)this + 13) ) /*0x63e6fb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e706*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x63e706*/
           *((unsigned int *)this + 1) = 0; /*0x63e70e*/
         }
       }
@@ -417,12 +417,12 @@ char BlowPipe_23::Release(int a2, unsigned int * a3)
 
 // 0x63E740
 namespace gamemd {
-void BlowPipe_23::ddtor(void *a1 = 0)
+void BlowPipe_23::ddtor()
 {
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x63e74d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x63e753*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x63e753*/
     *((unsigned int *)this + 1) = 0; /*0x63e75b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63e75e*/
@@ -433,7 +433,7 @@ void BlowPipe_23::ddtor(void *a1 = 0)
 
 // 0x63E770
 namespace gamemd {
-int BlowPipe_23::Read(int a2, void *a1 = 0)
+int BlowPipe_23::Read( unsigned int * a2)
 {
 
   int result; // eax
@@ -446,7 +446,7 @@ int BlowPipe_23::Read(int a2, void *a1 = 0)
   result = 0; /*0x63e781*/
   if ( v3 <= 0 ) /*0x63e785*/
     return -1; /*0x63e79c*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x63e78b*/
+  for ( i = *(unsigned int **)((char *)this + 4); *i != *this; ++i ) /*0x63e78b*/
   {
     if ( ++result >= v3 ) /*0x63e79a*/
       return -1; /*0x63e79a*/
@@ -485,7 +485,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e7e8*/
       v4 = a3; /*0x63e7fe*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e7fa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63e7fa*/
     *((unsigned char *)this + 12) = 1; /*0x63e802*/
     if ( !v4 ) /*0x63e806*/
       return 0; /*0x63e87a*/
@@ -498,7 +498,7 @@ char BlowPipe_23::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x63e821*/
       if ( *((unsigned char *)this + 13) ) /*0x63e82e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e839*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x63e839*/
         *((unsigned int *)this + 1) = 0; /*0x63e841*/
       }
     }
@@ -556,7 +556,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x63eae8*/
       v4 = a3; /*0x63eafe*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63eafa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63eafa*/
     *((unsigned char *)this + 12) = 1; /*0x63eb02*/
     if ( !v4 ) /*0x63eb06*/
       return 0; /*0x63eb7a*/
@@ -569,7 +569,7 @@ char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x63eb21*/
       if ( *((unsigned char *)this + 13) ) /*0x63eb2e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63eb39*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x63eb39*/
         *((unsigned int *)this + 1) = 0; /*0x63eb41*/
       }
     }
@@ -614,22 +614,22 @@ int BlowPipe_23::FindItemIndex_1(unsigned int * a2)
 
 // 0x63ED90
 namespace gamemd {
-VectorClass_flat * BlowPipe_23::Destructor(char a2)
+VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ed93*/
-  *Block = &vt_VectorClass_PlanningNodeClass; /*0x63ed96*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_PlanningNodeClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63eda0*/
   {
-    __3_YAXPAX_Z(v3); /*0x63eda8*/
+    RA2_OPDEL(v3); /*0x63eda8*/
     *(Block + 1) = 0; /*0x63edb0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63edbb*/
   *(Block + 2) = 0; /*0x63edc1*/
-  if ( (a2 & 1) != 0 ) /*0x63edc8*/
-    __3_YAXPAX_Z(Block); /*0x63edcb*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63edc8*/
+    RA2_OPDEL(Block); /*0x63edcb*/
   return (VectorClass *)Block; /*0x63edd5*/
 
 }
@@ -637,22 +637,22 @@ VectorClass_flat * BlowPipe_23::Destructor(char a2)
 
 // 0x63EDE0
 namespace gamemd {
-DynamicVector * BlowPipe_31::QueryInterface(char a2)
+DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ede3*/
-  *Block = &vt_VectorClass_PlanningNodeClass; /*0x63ede6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_PlanningNodeClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63edf0*/
   {
-    __3_YAXPAX_Z(v3); /*0x63edf8*/
+    RA2_OPDEL(v3); /*0x63edf8*/
     *(Block + 1) = 0; /*0x63ee00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63ee0b*/
   *(Block + 2) = 0; /*0x63ee11*/
-  if ( (a2 & 1) != 0 ) /*0x63ee18*/
-    __3_YAXPAX_Z(Block); /*0x63ee1b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63ee18*/
+    RA2_OPDEL(Block); /*0x63ee1b*/
   return (DynamicVector *)Block; /*0x63ee25*/
 
 }
@@ -660,22 +660,22 @@ DynamicVector * BlowPipe_31::QueryInterface(char a2)
 
 // 0x63EE30
 namespace gamemd {
-VectorClass_flat * BlowPipe_23::QueryInterface(char a2)
+VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ee33*/
-  *Block = &vt_VectorClass_EventClass; /*0x63ee36*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_EventClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ee40*/
   {
-    __3_YAXPAX_Z(v3); /*0x63ee48*/
+    RA2_OPDEL(v3); /*0x63ee48*/
     *(Block + 1) = 0; /*0x63ee50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63ee5b*/
   *(Block + 2) = 0; /*0x63ee61*/
-  if ( (a2 & 1) != 0 ) /*0x63ee68*/
-    __3_YAXPAX_Z(Block); /*0x63ee6b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63ee68*/
+    RA2_OPDEL(Block); /*0x63ee6b*/
   return (VectorClass *)Block; /*0x63ee75*/
 
 }
@@ -683,22 +683,22 @@ VectorClass_flat * BlowPipe_23::QueryInterface(char a2)
 
 // 0x63EE80
 namespace gamemd {
-DynamicVector * BlowPipe_23::Destructor_0(char a2)
+DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ee83*/
-  *Block = &vt_VectorClass_EventClass; /*0x63ee86*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_EventClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ee90*/
   {
-    __3_YAXPAX_Z(v3); /*0x63ee98*/
+    RA2_OPDEL(v3); /*0x63ee98*/
     *(Block + 1) = 0; /*0x63eea0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63eeab*/
   *(Block + 2) = 0; /*0x63eeb1*/
-  if ( (a2 & 1) != 0 ) /*0x63eeb8*/
-    __3_YAXPAX_Z(Block); /*0x63eebb*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63eeb8*/
+    RA2_OPDEL(Block); /*0x63eebb*/
   return (DynamicVector *)Block; /*0x63eec5*/
 
 }
@@ -706,22 +706,22 @@ DynamicVector * BlowPipe_23::Destructor_0(char a2)
 
 // 0x63EF20
 namespace gamemd {
-DynamicVector * BlowPipe_23::Destructor_1(char a2)
+DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ef23*/
-  *Block = &vt_VectorClass_PlanningTokenClass; /*0x63ef26*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_PlanningTokenClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ef30*/
   {
-    __3_YAXPAX_Z(v3); /*0x63ef38*/
+    RA2_OPDEL(v3); /*0x63ef38*/
     *(Block + 1) = 0; /*0x63ef40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63ef4b*/
   *(Block + 2) = 0; /*0x63ef51*/
-  if ( (a2 & 1) != 0 ) /*0x63ef58*/
-    __3_YAXPAX_Z(Block); /*0x63ef5b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x63ef58*/
+    RA2_OPDEL(Block); /*0x63ef5b*/
   return (DynamicVector *)Block; /*0x63ef65*/
 
 }

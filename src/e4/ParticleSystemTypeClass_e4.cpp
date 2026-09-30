@@ -72,31 +72,31 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   INIClass::GetString( /*0x64430f*/
     aP1,
     (INIClass *)((char *)this + 36),
-    (unsigned __int8 *)&stru_830620.__pad_579C[4852],
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (uint8_t *)&stru_830620.__pad_579C[4852],
+    (INIClass *)&g_abs_87F8E4,
     (INIClass *)&var54.sectionHead[1],
     64);
   v3 = BuildingTypeClass::FindOrCreateEx((char *)&var54.sectionHead[1]); /*0x644318*/
   v4 = *((unsigned char *)this + 664); /*0x64431d*/
   *((unsigned int *)this + 165) = v3; /*0x644323*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)((char *)this + 36), &stru_8184C8, v4); /*0x644332*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)((char *)this + 36), &stru_8184C8, v4); /*0x644332*/
   aP3_4 = *(INIClass **)((char *)this + 668); /*0x64433f*/
   *((unsigned char *)this + 664) = Bool_Overwrite; /*0x644346*/
   *((unsigned int *)this + 167) = INIClass::ReadInt_Overwrite( /*0x644351*/
                               (int)aP1,
-                              (unsigned __int8 *)((char *)this + 36),
+                              (uint8_t *)((char *)this + 36),
                               (CCINIClass *)&stru_830620.__pad_579C[4840],
                               aP3_4);
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644366*/
                     (int)aP1,
-                    (unsigned __int8 *)((char *)this + 36),
+                    (uint8_t *)((char *)this + 36),
                     (CCINIClass *)&stru_830620.__pad_579C[4828],
                     *(INIClass **)((char *)this + 676));
   v7 = *(CCINIClass **)((char *)this + 680); /*0x64436b*/
   *((unsigned int *)this + 169) = Int_Overwrite; /*0x644371*/
   v8 = INIClass::ReadInt_Overwrite( /*0x644380*/
          (int)aP1,
-         (unsigned __int8 *)((char *)this + 36),
+         (uint8_t *)((char *)this + 36),
          (CCINIClass *)&stru_830620.__pad_579C[4816],
          (INIClass *)v7);
   v9 = *(float *)((char *)this + 672); /*0x644385*/
@@ -104,30 +104,30 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   *(float *)((char *)this + 672) = INIClass::ReadDouble_Overwrite( /*0x6443a4*/
                              (int)aP1,
                              (INIClass *)((char *)this + 36),
-                             (unsigned __int8 *)&stru_830620.__pad_579C[4804],
-                             (INIClass *)LODWORD(v9));
+                             (uint8_t *)&stru_830620.__pad_579C[4804],
+                             (INIClass *)IDA_LODWORD(v9));
   *(float *)((char *)this + 684) = INIClass::ReadDouble_Overwrite( /*0x6443c3*/
                              (int)aP1,
                              (INIClass *)((char *)this + 36),
-                             (unsigned __int8 *)&stru_830620.__pad_579C[4792],
+                             (uint8_t *)&stru_830620.__pad_579C[4792],
                              (INIClass *)COERCE_UNSIGNED_INT64(*(float *)((char *)this + 684)));
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x6443dd*/
                        (int)aP1,
                        (INIClass *)((char *)this + 36),
-                       (unsigned __int8 *)&stru_830620.__pad_579C[4768],
+                       (uint8_t *)&stru_830620.__pad_579C[4768],
                        (INIClass *)COERCE_UNSIGNED_INT64(*(float *)((char *)this + 688)));
   v11 = *(CCINIClass **)((char *)this + 696); /*0x6443e2*/
   *(float *)((char *)this + 688) = Double_Overwrite; /*0x6443ea*/
   *((unsigned int *)this + 174) = INIClass::ReadInt_Overwrite( /*0x6443fc*/
                               (int)aP1,
-                              (unsigned __int8 *)((char *)this + 36),
+                              (uint8_t *)((char *)this + 36),
                               (CCINIClass *)&stru_830620.__pad_579C[4756],
                               (INIClass *)v11);
   INIClass::GetString( /*0x644416*/
     aP1,
     (INIClass *)((char *)this + 36),
-    (unsigned __int8 *)&stru_830620.__pad_579C[4744],
-    (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+    (uint8_t *)&stru_830620.__pad_579C[4744],
+    (INIClass *)&g_abs_87F8E4,
     (INIClass *)&var54.sectionHead[1],
     64);
   var54.headNode[0] = 0; /*0x64441b*/
@@ -151,7 +151,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                  aP1,
                  (float *)&var54.headNode[1],
                  (CCINIClass *)((char *)this + 36),
-                 (unsigned __int8 *)&stru_830620.__pad_579C[4728],
+                 (uint8_t *)&stru_830620.__pad_579C[4728],
                  (float *)((char *)this + 700));
   *(float *)((char *)this + 700) = *XYZFromINI; /*0x644482*/
   *(float *)((char *)this + 704) = XYZFromINI[1]; /*0x64448b*/
@@ -160,48 +160,48 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   v15 = INIClass::ReadDouble_Overwrite( /*0x6444b0*/
           (int)aP1,
           (INIClass *)((char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[4708],
+          (uint8_t *)&stru_830620.__pad_579C[4708],
           aP3);
   v16 = *(INIClass **)((char *)this + 720); /*0x6444bb*/
   *(double *)((char *)this + 712) = v15; /*0x6444c1*/
   v17 = INIClass::ReadDouble_Overwrite( /*0x6444d1*/
           (int)aP1,
           (INIClass *)((char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[4688],
+          (uint8_t *)&stru_830620.__pad_579C[4688],
           v16);
   v18 = *(INIClass **)((char *)this + 728); /*0x6444dc*/
   *(double *)((char *)this + 720) = v17; /*0x6444e2*/
   v19 = INIClass::ReadDouble_Overwrite( /*0x6444f2*/
           (int)aP1,
           (INIClass *)((char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[4672],
+          (uint8_t *)&stru_830620.__pad_579C[4672],
           v18);
   v20 = *(INIClass **)((char *)this + 736); /*0x6444fd*/
   *(double *)((char *)this + 728) = v19; /*0x644503*/
   v21 = INIClass::ReadDouble_Overwrite( /*0x644513*/
           (int)aP1,
           (INIClass *)((char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[4640],
+          (uint8_t *)&stru_830620.__pad_579C[4640],
           v20);
   v22 = *(INIClass **)((char *)this + 744); /*0x64451e*/
   *(double *)((char *)this + 736) = v21; /*0x644524*/
   v23 = INIClass::ReadDouble_Overwrite( /*0x644534*/
           (int)aP1,
           (INIClass *)((char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[4608],
+          (uint8_t *)&stru_830620.__pad_579C[4608],
           v22);
   v24 = *(INIClass **)((char *)this + 752); /*0x64453f*/
   *(double *)((char *)this + 744) = v23; /*0x644545*/
   v25 = INIClass::ReadDouble_Overwrite( /*0x644555*/
           (int)aP1,
           (INIClass *)((char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[4576],
+          (uint8_t *)&stru_830620.__pad_579C[4576],
           v24);
   v26 = *((unsigned char *)this + 779); /*0x64455a*/
   *(double *)((char *)this + 752) = v25; /*0x644562*/
   *((unsigned char *)this + 779) = INIClass::ReadBool_Overwrite( /*0x644574*/
                              (int)aP1,
-                             (unsigned __int8 *)((char *)this + 36),
+                             (uint8_t *)((char *)this + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[4568],
                              v26);
   Coord = INIClass::GetCoord( /*0x64458e*/
@@ -215,19 +215,19 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   *((unsigned char *)this + 778) = *(unsigned char *)(Coord + 2); /*0x6445af*/
   v29 = INIClass::ReadInt_Overwrite( /*0x6445b5*/
           (int)aP1,
-          (unsigned __int8 *)((char *)this + 36),
+          (uint8_t *)((char *)this + 36),
           (CCINIClass *)&stru_830620.__pad_579C[4536],
           (INIClass *)v31);
   aP3_4a = *(INIClass **)((char *)this + 772); /*0x6445c2*/
   *((unsigned int *)this + 192) = v29; /*0x6445c9*/
   *((unsigned int *)this + 193) = INIClass::ReadInt_Overwrite( /*0x6445d4*/
                               (int)aP1,
-                              (unsigned __int8 *)((char *)this + 36),
+                              (uint8_t *)((char *)this + 36),
                               (CCINIClass *)&stru_830620.__pad_579C[4524],
                               aP3_4a);
   v30 = INIClass::ReadBool_Overwrite( /*0x6445e9*/
           (int)aP1,
-          (unsigned __int8 *)((char *)this + 36),
+          (uint8_t *)((char *)this + 36),
           (CCINIClass *)&stru_830620.__pad_579C[4508],
           *((unsigned char *)this + 780));
   aP3a = *(INIClass **)((char *)this + 760); /*0x6445fb*/
@@ -235,9 +235,9 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
   *(double *)((char *)this + 760) = INIClass::ReadDouble_Overwrite( /*0x64460f*/
                               (int)aP1,
                               (INIClass *)((char *)this + 36),
-                              (unsigned __int8 *)&stru_830620.__pad_579C[4484],
+                              (uint8_t *)&stru_830620.__pad_579C[4484],
                               aP3a);
-  return 1; /*0x644617*/
+  return (void *)(1);
 
 }
 }
@@ -250,7 +250,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 
   AbstractTypeClass::ProcessPower((char *)this, a2); /*0x644709*/
   Power::TimerProcess(*((unsigned int *)this + 165)); /*0x644717*/
-  LOBYTE(v3) = *((unsigned char *)this + 664); /*0x64471c*/
+  IDA_LOBYTE(v3) = *((unsigned char *)this + 664); /*0x64471c*/
   Power::FlagProcess(a2, v3); /*0x644725*/
   Power::TimerProcess(*((unsigned int *)this + 167)); /*0x644733*/
   Checksummer::Add_float((unsigned int *)a2, *((unsigned int *)this + 168)); /*0x644741*/
@@ -265,30 +265,30 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 }
 // 0x644960
 namespace gamemd {
-ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
+ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(void ** Block, char a2)
 {
 
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &ParticleSystemTypeClass::`vftable'; /*0x644966*/
+  *Block = (void *)(&ParticleSystemTypeClass::`vftable');
   *(Block + 1) = &ParticleSystemTypeClass::`vftable'; /*0x64496c*/
   *(Block + 2) = &ParticleSystemTypeClass::`vftable'; /*0x644973*/
   *(Block + 3) = &vt_ParticleSystemTypeClass; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x644981*/
   v5 = Block; /*0x644996*/
-  v3 = (*(int (**)(int *, void ***))(MEMORY[0xA83D68] + 16))(&MEMORY[0xA83D68], &v5); /*0x64499a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA83D78] && v3 < --MEMORY[0xA83D78] ) /*0x6449b5*/
+  v3 = (*(int (**)(int *, void ***))(g_abs_A83D68 + 16))(&g_abs_A83D68, &v5); /*0x64499a*/
+  if ( v3 != -1 && v3 < g_abs_A83D78 && v3 < --g_abs_A83D78 ) /*0x6449b5*/
   {
     do /*0x6449cd*/
     {
       ++v3; /*0x6449bd*/
-      *((unsigned int *)MEMORY[0xA83D6C] + v3 - 1) = *((unsigned int *)MEMORY[0xA83D6C] + v3); /*0x6449c1*/
+      *((unsigned int *)g_abs_A83D6C + v3 - 1) = *((unsigned int *)g_abs_A83D6C + v3); /*0x6449c1*/
     }
-    while ( v3 < MEMORY[0xA83D78] ); /*0x6449cd*/
+    while ( v3 < g_abs_A83D78 ); /*0x6449cd*/
   }
   ObjectTypeClass::Destruct((int)Block); /*0x6449d1*/
-  if ( (a2 & 1) != 0 ) /*0x6449db*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6449db*/
     OperatorDelete(Block); /*0x6449de*/
   return (ParticleSystemTypeClass *)Block; /*0x6449e8*/
 
@@ -297,7 +297,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
 
 // 0x476340
 namespace gamemd {
-float * ParticleSystemTypeClass::ReadXYZFromINI(float * a1, CCINIClass * aP2, unsigned char * a3, float * a4)
+float * ParticleSystemTypeClass::ReadXYZFromINI(float * a2, uint8_t * a3, uint8_t * a4, float * a5)
 {
 
   char *v5; // eax
@@ -309,7 +309,7 @@ float * ParticleSystemTypeClass::ReadXYZFromINI(float * a1, CCINIClass * aP2, un
   float v12; // [esp+Ch] [ebp-204h]
   char String[512]; // [esp+10h] [ebp-200h] BYREF
 
-  if ( INIClass::GetString(this, aP2, a3, &MEMORY[0x889F64], String, 512) ) /*0x476383*/
+  if ( INIClass::GetString(this, a5, a5, &g_abs_889F64, String, 512) ) /*0x476383*/
   {
     v5 = strtok(String, Delimiter); /*0x476396*/
     v10 = atof(v5); /*0x4763a1*/
@@ -318,17 +318,17 @@ float * ParticleSystemTypeClass::ReadXYZFromINI(float * a1, CCINIClass * aP2, un
     v7 = strtok(0, Delimiter); /*0x4763c2*/
     v8 = atof(v7); /*0x4763c8*/
     v12 = v8; /*0x4763d8*/
-    *a1 = v10; /*0x4763e1*/
-    a1[1] = v11; /*0x4763e8*/
-    a1[2] = v12; /*0x4763ef*/
-    return a1; /*0x4763cd*/
+    *a2 = v10; /*0x4763e1*/
+    a2[1] = v11; /*0x4763e8*/
+    a2[2] = v12; /*0x4763ef*/
+    return a2; /*0x4763cd*/
   }
   else
   {
-    *a1 = *a4; /*0x476406*/
-    a1[1] = a4[1]; /*0x47640b*/
-    a1[2] = a4[2]; /*0x476412*/
-    return a1; /*0x4763fb*/
+    *a2 = *a5; /*0x476406*/
+    a2[1] = a5[1]; /*0x47640b*/
+    a2[2] = a5[2]; /*0x476412*/
+    return a2; /*0x4763fb*/
   }
 
 }
@@ -355,13 +355,13 @@ namespace gamemd {
 int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
 
-  if ( ObjectTypeClass::LoadCleanup((IUnknown *)aP0, (ObjectTypeClass *)aP1) >= 0 && aP0 ) /*0x6447f6*/
+  if ( ((ObjectTypeClass *)((IUnknown *)aP0))->LoadCleanup((ObjectTypeClass *)aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
-    ObjectTypeClass::Construct(aP0, (ObjectTypeClass *)&aP1); /*0x6447ff*/
+    ((ObjectTypeClass *)(aP0))->Construct((ObjectTypeClass *)&aP1); /*0x6447ff*/
     *(unsigned int *)aP0->__pad_0 = &ParticleSystemTypeClass::`vftable'; /*0x644804*/
-    *(unsigned int *)&aP0->__pad_0[4] = &ParticleSystemTypeClass::`vftable'; /*0x64480a*/
-    *(unsigned int *)&aP0->__pad_0[8] = &ParticleSystemTypeClass::`vftable'; /*0x644811*/
-    *(unsigned int *)&aP0->__pad_0[12] = &vt_ParticleSystemTypeClass; /*0x644818*/
+    *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &ParticleSystemTypeClass::`vftable'; /*0x64480a*/
+    *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &ParticleSystemTypeClass::`vftable'; /*0x644811*/
+    *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_ParticleSystemTypeClass; /*0x644818*/
   }
   return 0; /*0x644821*/
 
@@ -373,7 +373,7 @@ namespace gamemd {
 int ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
 
-  AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, (TechnoTypeClass *)aP2); /*0x64483f*/
+  ((AbstractClass *)(aP0))->SaveLoad_PrefixWrapper(aP1, (TechnoTypeClass *)aP2); /*0x64483f*/
   return 0; /*0x644846*/
 
 }

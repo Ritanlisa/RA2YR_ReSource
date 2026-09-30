@@ -20,7 +20,7 @@
 
 // 0x690A10
 namespace gamemd {
-void ScoreScreen::LoadScoreFont()
+void ScoreScreen::LoadScoreFont( ScoreFontClass * aP1)
 {
 
   IUnknown *v3; // edx
@@ -36,7 +36,7 @@ void ScoreScreen::LoadScoreFont()
   *this = &vt_ScoreFontClass; /*0x690a25*/
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   v3 = (IUnknown *)++*(unsigned int *)&stru_B05488.__pad_FC[8]; /*0x690a3b*/
-  LOBYTE(v3) = 0; /*0x690a42*/
+  IDA_LOBYTE(v3) = 0; /*0x690a42*/
   *this = &vt_ScoreFullFontClass; /*0x690a44*/
   *((unsigned char *)this + 16) = 0; /*0x690a4a*/
   v4 = SearchMIXFile((char *)&stru_830620.field_44, v3); /*0x690a4d*/
@@ -47,7 +47,7 @@ void ScoreScreen::LoadScoreFont()
     *(this + 3) = CCFileClass::ReadEntireFile(v6); /*0x690a74*/
     *((unsigned char *)this + 16) = 1; /*0x690a77*/
     CCFileClass::Reset(v6); /*0x690a7b*/
-    Debug::Log(); /*0x690a85*/
+    this->Debug::Log(); /*0x690a85*/
     v6[0] = &vt_CCFileClass; /*0x690a91*/
     v8 = 0; /*0x690a99*/
     Vector::Clear((int)v7); /*0x690a9d*/
@@ -77,18 +77,18 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   *((unsigned int *)this + 5) = 0; /*0x690af2*/
   *this = &vt_ScoreFontClass; /*0x690af5*/
   ScoreScreen::LoadAudio(); /*0x690afb*/
-  ++MEMORY[0xB0558C]; /*0x690b0c*/
+  ++g_abs_B0558C; /*0x690b0c*/
   *this = &vt_ScoreBigFontClass; /*0x690b14*/
   *((unsigned char *)this + 16) = 0; /*0x690b1a*/
-  v3 = SearchMIXFile(MEMORY[0x83E6DC], 0); /*0x690b1d*/
+  v3 = SearchMIXFile(g_abs_83E6DC, 0); /*0x690b1d*/
   *((unsigned int *)this + 3) = v3; /*0x690b24*/
   if ( !v3 ) /*0x690b27*/
   {
-    CCFileClass::Construct(v5, MEMORY[0x83E6DC]); /*0x690b32*/
+    CCFileClass::Construct(v5, g_abs_83E6DC); /*0x690b32*/
     *((unsigned int *)this + 3) = CCFileClass::ReadEntireFile(v5); /*0x690b44*/
     *((unsigned char *)this + 16) = 1; /*0x690b47*/
     CCFileClass::Reset(v5); /*0x690b4b*/
-    Debug::Log(); /*0x690b55*/
+    this->Debug::Log(); /*0x690b55*/
     v5[0] = &vt_CCFileClass; /*0x690b61*/
     v7 = 0; /*0x690b69*/
     Vector::Clear((int)v6); /*0x690b6d*/
@@ -104,7 +104,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
 } // namespace gamemd
 // 0x690F30
 namespace gamemd {
-void ScoreScreen::Constructor()
+void ScoreScreen::Constructor( ScoreAnimClass * aP1, int a3, int a4)
 {
 
   *(this + 2) = a3; /*0x690f3b*/
@@ -128,9 +128,9 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   int v10; // eax
   int v11; // esi
   int v12; // edx
-  int v13; // ebx
+  char * v13;
   int v14; // ecx
-  int v15; // esi
+  char * v15;
   int v16; // eax
   int v17; // eax
   int v18; // ebp
@@ -167,18 +167,18 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   v13 = 48 * a3 + (char *)this + 148 * a2; /*0x771352*/
   if ( Map_Remove(*(unsigned int *)this, v13 + 8, v24) )
   {
-    if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77136a*/
+    if ( !(uint8_t)this->Audio::IsPlaying() ) /*0x77136a*/
     {
       *((unsigned int *)this + 235) = Timer::GetTicks(); /*0x771386*/
       *(void **)((char *)this + 944) = v24[2]; /*0x771390*/
       *((unsigned int *)this + 237) = a6; /*0x771393*/
     }
-    v14 = *((unsigned int *)this + 242); /*0x771396*/
+    v14 = (int)(*((unsigned int *)this + 242));
     v15 = (char *)this + 960; /*0x7713a2*/
     if ( *((unsigned int *)this + 244) < v14 /*0x7713c7*/
       || (*((unsigned char *)this + 973) || !v14)
       && (v16 = *((unsigned int *)this + 245), v16 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))((char *)this + 960, v14 + v16, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))((char *)this + 960, v14 + v16, 0) )
     {
       v17 = *((unsigned int *)this + 244); /*0x7713ce*/
       *((unsigned int *)this + 244) = v17 + 1; /*0x7713d9*/
@@ -193,14 +193,14 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
       v19 = *(unsigned int *)(v13 + 48); /*0x77140c*/
       if ( v19 > 0 )
       {
-        v20 = v19 == 1 ? 0 : Random::Range(&MEMORY[0x87F8E4].__pad_5568[7484], 0, (IUnknown *)(v19 - 1));
+        v20 = v19 == 1 ? 0 : Random::Range(&g_abs_87F8E4, 0, (IUnknown *)(v19 - 1));
         if ( Map_Remove_770CE0(v18, *(unsigned int *)(*(unsigned int *)(v13 + 36) + 4 * v20), (char **)v24) ) /*0x77143b*/
         {
           v21 = *((unsigned int *)this + 242); /*0x771444*/
           if ( *((unsigned int *)this + 244) < v21 /*0x771469*/
             || (*((unsigned char *)this + 973) || !v21)
             && (v22 = *((unsigned int *)this + 245), v22 > 0)
-            && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))((char *)this + 960, v21 + v22, 0) )
+            && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))((char *)this + 960, v21 + v22, 0) )
           {
             v23 = *((unsigned int *)this + 244); /*0x771470*/
             *((unsigned int *)this + 244) = v23 + 1; /*0x77147b*/

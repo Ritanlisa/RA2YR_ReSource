@@ -14,32 +14,32 @@
 
 // 0x4D2DB0
 namespace gamemd {
-int FoggedObject::DrawVector_Constructor(void* a1)
+int FoggedObject::DrawVector_Constructor( IUnknown * aP1, IUnknown * aP2)
 {
 
-  int v4; // ebx
+  void * v4;
   int *v5; // eax
   IUnknown *v6; // ecx
-  int v8; // eax
-  int v9; // ecx
+  void * v8;
+  void * v9;
   IUnknown *v10; // edx
 
   v4 = 0; /*0x4d2db9*/
-  *(a1 + 1) = 0; /*0x4d2dbd*/
-  *(a1 + 2) = aP1; /*0x4d2dc0*/
-  *((unsigned char *)a1 + 12) = 1; /*0x4d2dc3*/
-  *((unsigned char *)a1 + 13) = 0; /*0x4d2dc7*/
-  *a1 = &vt_VectorClass_FoggedObjectClass_DrawRecord; /*0x4d2dca*/
+  *(this + 1) = 0; /*0x4d2dbd*/
+  *(this + 2) = aP1; /*0x4d2dc0*/
+  *((unsigned char *)this + 12) = 1; /*0x4d2dc3*/
+  *((unsigned char *)this + 13) = 0; /*0x4d2dc7*/
+  *this = &vt_VectorClass_FoggedObjectClass_DrawRecord; /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
-    return a1; /*0x4d2e38*/
+    return this; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
-    v8 = __2_YAPAXI_Z(16 * (unsigned int)aP1); /*0x4d2e07*/
+    v8 = (void *)((int)(RA2_OPNEW(16 * (unsigned int)aP1)));
     if ( v8 ) /*0x4d2e11*/
     {
       if ( (int)&aP1[-1].__tail_1602E[1] >= 0 ) /*0x4d2e18*/
       {
-        v9 = v8 + 8; /*0x4d2e1a*/
+        v9 = (int)(v8 + 8);
         v10 = aP1; /*0x4d2e1d*/
         do /*0x4d2e2d*/
         {
@@ -52,11 +52,11 @@ int FoggedObject::DrawVector_Constructor(void* a1)
         }
         while ( v10 ); /*0x4d2e2d*/
       }
-      v4 = v8; /*0x4d2e2f*/
+      v4 = (int)(v8);
     }
-    *(a1 + 1) = v4; /*0x4d2e31*/
-    *((unsigned char *)a1 + 13) = 1; /*0x4d2e34*/
-    return a1; /*0x4d2e34*/
+    *(this + 1) = v4; /*0x4d2e31*/
+    *((unsigned char *)this + 13) = 1; /*0x4d2e34*/
+    return this; /*0x4d2e34*/
   }
   if ( (int)&aP1[-1].__tail_1602E[1] >= 0 ) /*0x4d2ddf*/
   {
@@ -73,13 +73,13 @@ int FoggedObject::DrawVector_Constructor(void* a1)
     }
     while ( v6 ); /*0x4d2df4*/
   }
-  *(a1 + 1) = aP2; /*0x4d2df6*/
-  return a1; /*0x4d2dfb*/
+  *(this + 1) = aP2; /*0x4d2df6*/
+  return this; /*0x4d2dfb*/
 
 }
 }
 // 0x4D2D10
-VectorClass_flat * FoggedObject_DrawVector::QueryInterface(char a2)
+VectorClass_flat * FoggedObject_DrawVector::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -88,13 +88,13 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(char a2)
   *Block = &vt_VectorClass_FoggedObjectClass_DrawRecord; /*0x4d2d16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4d2d20*/
   {
-    __3_YAXPAX_Z(v3); /*0x4d2d28*/
+    RA2_OPDEL(v3); /*0x4d2d28*/
     *(Block + 1) = 0; /*0x4d2d30*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4d2d3b*/
   *(Block + 2) = 0; /*0x4d2d41*/
-  if ( (a2 & 1) != 0 ) /*0x4d2d48*/
-    __3_YAXPAX_Z(Block); /*0x4d2d4b*/
+  if ( (Block & 1) != 0 ) /*0x4d2d48*/
+    RA2_OPDEL(Block); /*0x4d2d4b*/
   return (VectorClass *)Block; /*0x4d2d55*/
 
 }

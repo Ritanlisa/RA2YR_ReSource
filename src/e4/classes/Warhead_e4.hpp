@@ -107,7 +107,7 @@ struct Warhead {
     unsigned int u32_C2;
     unsigned int u32_128;
 // --- flat members (END) ---
-    int ApplyDamage(ObjectClass * aP1);
+    int ApplyDamage(void * aP1);
     int ApplyPostDamageEffects();
     int GetWarheadSound(int a2);
     int ProcessDamageArea();

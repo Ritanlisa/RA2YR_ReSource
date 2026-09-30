@@ -47,6 +47,6 @@ struct E4Recv_7087C0 {
     int Vf684(int,  ...);    // G6 vtable slot dispatch
     int Vf740(int,  ...);    // G6 vtable slot dispatch
     int Vf956(int,  ...);    // G6 vtable slot dispatch
-    bool ValidateAttackTarget(TechnoClass * aP1,  int a3);    // 0x7087C0
+    bool ValidateAttackTarget(void * aP1,  int a3);    // 0x7087C0
 };
 } // namespace gamemd

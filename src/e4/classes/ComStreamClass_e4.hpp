@@ -30,6 +30,7 @@ struct ComStreamClass {
     unsigned int ComStreamClass_field_0x18;
     unsigned int ComStreamClass_field_0x30;
     unsigned int __pad_0;
+    unsigned int Debug;
 // --- flat members (END) ---
     AbstractClass * * readData();
     LONG AddRef(void *a1 = 0);

@@ -50,7 +50,7 @@ char Credits::Screen()
       if ( !strlen((const char *)&FindFileData[152]) ) /*0x52cbe3*/
         v1 = (char *)&FindFileData[22]; /*0x52cbea*/
       CCFileClass::Construct(v11, v1); /*0x52cbf6*/
-      v2 = (unsigned int *)__2_YAPAXI_Z(88); /*0x52cbfd*/
+      v2 = (unsigned int *)RA2_OPNEW(88); /*0x52cbfd*/
       v3 = v2; /*0x52cc02*/
       if ( v2 ) /*0x52cc09*/
       {
@@ -93,7 +93,7 @@ char Credits::Screen()
   {
 LABEL_15:
     CCFileClass::Construct(v11, aBattlemdIni_0); /*0x52ccd6*/
-    v6 = (unsigned int *)__2_YAPAXI_Z(88); /*0x52ccdd*/
+    v6 = (unsigned int *)RA2_OPNEW(88); /*0x52ccdd*/
     v7 = v6; /*0x52cce2*/
     if ( v6 ) /*0x52cce9*/
     {

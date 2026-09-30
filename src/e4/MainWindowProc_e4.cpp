@@ -24,9 +24,9 @@ AbstractClass * * sub_777420()
   HWND Current; // eax
   HWND v5; // eax
 
-    Debug::Log();
+    this->Debug::Log();
   sub_407040(v1); /*0x77742d*/
-    Debug::Log();
+    this->Debug::Log();
   if ( stru_887598.lineTrailer && byte_B73560 == 1 && !stru_A8EB00.?[391] ) /*0x77746d*/
     (*(void (**)(void))(*(unsigned int *)stru_887598.lineTrailer + 24))(); /*0x777471*/
   if ( !g_DDraw_Initialized ) /*0x77747c*/
@@ -34,10 +34,10 @@ AbstractClass * * sub_777420()
     if ( DSurface_Alternate ) /*0x77748a*/
       DSurface::RestoreIfLost(DSurface_Alternate); /*0x77748c*/
     if ( g_DSurface_Hidden ) /*0x777499*/
-      DSurface::RestoreIfLost((DSurface *)g_DSurface_Hidden); /*0x77749b*/
+      ((DSurface *)((DSurface *)g_DSurface_Hidden))->RestoreIfLost(); /*0x77749b*/
     if ( DSurface_Composite /*0x7774c7*/
 // 0x4bb000
-      && DSurface::RestoreIfLost((DSurface *)DSurface_Composite)
+      && ((DSurface *)((DSurface *)DSurface_Composite))->RestoreIfLost()
       && (!stru_A8EB00.?[376] || *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) > 16) )
     {
       (*(void (**)(AudioStream *, unsigned int))(*(unsigned int *)DSurface_Composite->__pad_0 + 24))( /*0x7774d3*/
@@ -74,10 +74,11 @@ AbstractClass * * sub_777420()
   MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x77757c*/
   InvalidateRect(g_hWnd, 0, 0); /*0x77758c*/
   IDA_LOBYTE(v2) = 0; /*0x777592*/
-  AsyncIO::Read(v2); /*0x777594*/
+  ((AsyncIO *)(v2))->Read(); /*0x777594*/
     result = Dialog::GetCurrent();
   if ( result ) /*0x7775a1*/
   {
+    unsigned int v4 = 0;  /* G37 hoist */
         Current = Dialog::GetCurrent();
     SetActiveWindow(Current); /*0x7775a9*/
         v4 = Dialog::GetCurrent();
@@ -113,7 +114,7 @@ char * E4Recv_724000::sub_724000(int a2)
   char *v3; // ecx
   int v4; // edx
 
-  v3 = (unsigned char *)this + 564; /*0x72400a*/
+  v3 = (char *)((unsigned char *)this + 564);
   *((unsigned int *)this + 1) = 0; /*0x724010*/
   *((unsigned int *)this + 2) = a2; /*0x724013*/
   *((unsigned char *)this + 12) = 0; /*0x724016*/
@@ -134,7 +135,7 @@ char * E4Recv_724000::sub_724000(int a2)
   v4 = *(unsigned int *)v3; /*0x724068*/
   *(unsigned int *)this = &vt_ToolTipManager; /*0x72406a*/
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
-  __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
+  RA2_OPDEL(*((void **)this + 147)); /*0x72407a*/
   *((unsigned int *)this + 147) = 0; /*0x724082*/
   *((unsigned int *)this + 148) = 0; /*0x724088*/
   *((unsigned int *)this + 149) = 0; /*0x72408e*/

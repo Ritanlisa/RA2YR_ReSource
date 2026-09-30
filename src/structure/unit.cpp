@@ -444,7 +444,7 @@ retn    8
 
 // IDA: 0x7192F0 (Deploy, 2302B)
 // 0x7192f0
-int UnitClass::Deploy()
+int UnitClass::Deploy(void * a1)
 {
     unsigned int v54 = 0;  /* G37 hoist */
     unsigned int v52 = 0;  /* G37 hoist */
@@ -575,7 +575,7 @@ int UnitClass::Deploy()
             &v56,
             0,
             1,
-            (void *)0x600,
+            (void *, unsigned int a1)0x600,
             0,
             0);
         }

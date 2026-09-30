@@ -36,19 +36,19 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   unsigned char v10[64]; // [esp+4h] [ebp-40h] BYREF
 
   v9 = Buffer; /*0x4c4f09*/
-  *this = 0; /*0x4c4f0a*/
+  *(unsigned int *)this = 0; /*0x4c4f0a*/
   *((unsigned int *)this + 1) = 0; /*0x4c4f10*/
-  sscanf(v9, MEMORY[0x82085C], &Buffer, v10); /*0x4c4f17*/
+  sscanf(v9, g_abs_82085C, &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/
   ExitCellByName = Factory::FindExitCellByName(v10); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
-    Index = BuildingTypeClass::FindIndex(v10); /*0x4c4f4c*/
+    Index = ((BuildingTypeClass *)(v10))->FindIndex(); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
+      v8 = (unsigned int *)(TypeClass::FindByName(v10));
       if ( v8 != -1 ) /*0x4c4f77*/
-        *((unsigned int *)this + 1) = *((unsigned int *)MEMORY[0xA8B21C] + v8); /*0x4c4f82*/
+        *((unsigned int *)this + 1) = *((unsigned int *)g_abs_A8B21C + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/
     }
     else
@@ -60,7 +60,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   }
   else
   {
-    v4 = *((unsigned int *)MEMORY[0xA8E34C] + ExitCellByName); /*0x4c4f39*/
+    v4 = *((unsigned int *)g_abs_A8E34C + ExitCellByName); /*0x4c4f39*/
     *((unsigned int *)this + 1) = v4; /*0x4c4f3e*/
     return this; /*0x4c4f3c*/
   }
@@ -69,14 +69,14 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
 }
 // 0x6E7E80
 namespace gamemd {
-int TaskForceClass::Construct(char* a1)
+int TaskForceClass::Construct(ObjectClass * aP1)
 {
 
   TaskForceClass *v3; // eax
   ObjectTypeClass *v4; // eax
   int v5; // ecx
 
-  AbstractTypeClass::Constructor((int)this, (AbstractClass *)a1); /*0x6e7e8a*/
+  AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e7e8a*/
   *((unsigned int *)this + 38) = -1; /*0x6e7e8f*/
   *((unsigned int *)this + 39) = 0; /*0x6e7e99*/
   *((unsigned int *)this + 40) = 0; /*0x6e7ea3*/
@@ -87,7 +87,7 @@ int TaskForceClass::Construct(char* a1)
   if ( *(int *)&HouseClass_Player.__pad_5568[22060] < *(int *)&HouseClass_Player.__pad_5568[22052] /*0x6e7f05*/
     || (HouseClass_Player.__pad_5568[22057] || !*(unsigned int *)&HouseClass_Player.__pad_5568[22052])
     && *(int *)&HouseClass_Player.__pad_5568[22064] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22044] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22044] + 8))(
          &HouseClass_Player.__pad_5568[22044],
          *(unsigned int *)&HouseClass_Player.__pad_5568[22052] + *(unsigned int *)&HouseClass_Player.__pad_5568[22064],
          0) )
@@ -100,7 +100,7 @@ int TaskForceClass::Construct(char* a1)
   do /*0x6e7f38*/
   {
     *(unsigned int *)v4->__pad_0 = 0; /*0x6e7f2f*/
-    *(unsigned int *)&v4->__pad_0[4] = 0; /*0x6e7f31*/
+    *(unsigned int *)&v4-((unsigned int *)(>__pad_0))[4] = 0; /*0x6e7f31*/
     v4 = (ObjectTypeClass *)((char *)v4 + 8); /*0x6e7f34*/
     --v5; /*0x6e7f37*/
   }
@@ -117,7 +117,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   CCINIClass *result; // eax
   CCINIClass *v5; // esi
   CCINIClass *v6; // ebx
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int v8; // esi
   unsigned int *v9; // eax
   TaskForceClass *v10; // esi
@@ -133,15 +133,15 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   {
     while ( 1 ) /*0x6e824d*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex( /*0x6e824d*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex( /*0x6e824d*/
                                            a1,
                                            (CCINIClass *)&stru_830620.__pad_579C[53244],
                                            v6);
       result = (CCINIClass *)INIClass::GetString( /*0x6e8266*/
-                               (unsigned __int8 ***)a1,
+                               (uint8_t ***)a1,
                                (INIClass *)&stru_830620.__pad_579C[53244],
                                StringByIndex,
-                               (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+                               (INIClass *)&g_abs_87F8E4,
                                (INIClass *)Source,
                                24);
       if ( (int)result > 0 ) /*0x6e826d*/
@@ -154,18 +154,18 @@ LABEL_13:
     if ( !_strcmpi((char *)&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e8293*/
       goto LABEL_11; /*0x6e8293*/
     v8 = 0; /*0x6e82a4*/
-    if ( *(int *)&MEMORY[0xA8D63C].__pad_1258[76] > 0 ) /*0x6e82a8*/
+    if ( *(int *)&g_abs_A8D63C > 0 ) /*0x6e82a8*/
     {
-      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_1258[64] + 4 * v8) + 36), Source) ) /*0x6e82c6*/
+      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * v8) + 36), Source) ) /*0x6e82c6*/
       {
-        if ( ++v8 >= *(int *)&MEMORY[0xA8D63C].__pad_1258[76] ) /*0x6e82d0*/
+        if ( ++v8 >= *(int *)&g_abs_A8D63C ) /*0x6e82d0*/
           goto LABEL_8; /*0x6e82d0*/
       }
-      v10 = *(TaskForceClass **)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_1258[64] + 4 * v8); /*0x6e82f9*/
+      v10 = *(TaskForceClass **)(*(unsigned int *)&g_abs_A8D63C + 4 * v8); /*0x6e82f9*/
       goto LABEL_12; /*0x6e82fc*/
     }
 LABEL_8:
-    v9 = (unsigned int *)__2_YAPAXI_Z(0xD4u); /*0x6e82d7*/
+    v9 = (unsigned int *)RA2_OPNEW(0xD4u); /*0x6e82d7*/
     if ( v9 ) /*0x6e82e1*/
       v10 = (TaskForceClass *)TaskForceClass::Construct(v9, Source); /*0x6e82ef*/
     else
@@ -173,7 +173,7 @@ LABEL_11:
       v10 = 0; /*0x6e82fe*/
 LABEL_12:
     v11 = sub_412610(Source); /*0x6e8300*/
-    SwizzleManagerClass::Here_I_Am((int)&MEMORY[0xB077F8].__pad_14B0[13416], v11, (int)v10); /*0x6e8310*/
+    SwizzleManagerClass::Here_I_Am((int)&g_abs_B077F8, v11, (int)v10); /*0x6e8310*/
     result = (CCINIClass *)(*(int (**)(TaskForceClass *, char *))(*(unsigned int *)v10->__pad_0 + 100))(v10, a1); /*0x6e831a*/
     *(unsigned int *)v10->__pad_A0 = a2; /*0x6e831d*/
     v5 = v12; /*0x6e8323*/
@@ -185,41 +185,41 @@ LABEL_12:
 }
 // 0x6E87F0
 namespace gamemd {
-void * TaskForceClass::ExecuteAction(char a2)
+void * TaskForceClass::ExecuteAction(void ** Block, char a2)
 {
 
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &TaskForceClass::`vftable'; /*0x6e87f6*/
+  *Block = (void *)(&TaskForceClass::`vftable');
   *(Block + 1) = &TaskForceClass::`vftable'; /*0x6e87fc*/
   *(Block + 2) = &TaskForceClass::`vftable'; /*0x6e8803*/
   *(Block + 3) = &vt_TaskForceClass; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6e8811*/
   v5 = Block; /*0x6e8826*/
-  v3 = (*(int (**)(int *, void ***))(MEMORY[0xA8E8D0] + 16))(&MEMORY[0xA8E8D0], &v5); /*0x6e882a*/
-  if ( v3 != -1 && v3 < MEMORY[0xA8E8E0] && v3 < --MEMORY[0xA8E8E0] ) /*0x6e8845*/
+  v3 = (*(int (**)(int *, void ***))(g_abs_A8E8D0 + 16))(&g_abs_A8E8D0, &v5); /*0x6e882a*/
+  if ( v3 != -1 && v3 < g_abs_A8E8E0 && v3 < --g_abs_A8E8E0 ) /*0x6e8845*/
   {
     do /*0x6e885d*/
     {
       ++v3; /*0x6e884d*/
-      *((unsigned int *)MEMORY[0xA8E8D4] + v3 - 1) = *((unsigned int *)MEMORY[0xA8E8D4] + v3); /*0x6e8851*/
+      *((unsigned int *)g_abs_A8E8D4 + v3 - 1) = *((unsigned int *)g_abs_A8E8D4 + v3); /*0x6e8851*/
     }
-    while ( v3 < MEMORY[0xA8E8E0] ); /*0x6e885d*/
+    while ( v3 < g_abs_A8E8E0 ); /*0x6e885d*/
   }
-  AbstractTypeClass::Dtor(Block); /*0x6e8861*/
-  if ( (a2 & 1) != 0 ) /*0x6e886b*/
-    __3_YAXPAX_Z(Block); /*0x6e886e*/
+  ((AbstractTypeClass *)(Block))->Dtor(); /*0x6e8861*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6e886b*/
+    RA2_OPDEL(Block); /*0x6e886e*/
   return (TaskForceClass *)Block; /*0x6e8878*/
 
 }
 }
 // 0x4C4F90
 namespace gamemd {
-int TaskForceClass::Check(char* a1)
+int TaskForceClass::Check()
 {
 
-  sprintf((char *const)&stru_89E138.field_5668, (ObjectClass *)&stru_82083C.CampaignScore_field_0x20, (INIClass *)*a1); /*0x4c4fa4*/
+  sprintf((char *const)&stru_89E138.field_5668, (ObjectClass *)&stru_82083C.CampaignScore_field_0x20, (INIClass *)*this); /*0x4c4fa4*/
   return (ObjectClass *)&stru_89E138.field_5668; /*0x4c4fb1*/
 
 }
@@ -245,12 +245,12 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   *((unsigned int *)this + 39) = 0; /*0x6e844f*/
   do /*0x6e84cb*/
   {
-    sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6e8460*/
+    sprintf(Buffer, g_abs_817F6C, v3); /*0x6e8460*/
     if ( (int)INIClass::GetString( /*0x6e8486*/
                 aP1,
                 (INIClass *)((char *)this + 36),
-                (unsigned __int8 *)Buffer,
-                (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+                (uint8_t *)Buffer,
+                (INIClass *)&g_abs_87F8E4,
                 Destination,
                 128) > 0 )
     {
@@ -260,14 +260,14 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
       *(unsigned int *)((char *)this + 8 * (unsigned int)v5 + 168) = v4[1]; /*0x6e84a8*/
       v6 = *(INIClass **)((char *)this + 156); /*0x6e84af*/
       if ( *(unsigned int *)((char *)this + 8 * (unsigned int)v6 + 168) ) /*0x6e84b5*/
-        *((unsigned int *)this + 39) = &v6->__pad_0[1]; /*0x6e84c1*/
+        *((unsigned int *)this + 39) = &v6-((unsigned int *)(>__pad_0))[1]; /*0x6e84c1*/
     }
     v3 = (INIClass *)((char *)v3 + 1); /*0x6e84c7*/
   }
   while ( (int)v3 < 6 ); /*0x6e84cb*/
   *((unsigned int *)this + 38) = INIClass::ReadInt_Overwrite( /*0x6e84e2*/
                               (int)aP1,
-                              (unsigned __int8 *)((char *)this + 36),
+                              (uint8_t *)((char *)this + 36),
                               (CCINIClass *)&stru_830620.__pad_579C[53256],
                               *(INIClass **)((char *)this + 152));
   return 1; /*0x6e84e9*/
@@ -291,21 +291,21 @@ char TaskForceClass::GetUnitType(char * a2)
   v4 = (unsigned int *)((char *)this + 164); /*0x6e8529*/
   do /*0x6e857d*/
   {
-    sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6e853a*/
+    sprintf(Buffer, g_abs_817F6C, v3); /*0x6e853a*/
     if ( v3 >= *((unsigned int *)this + 39) ) /*0x6e854a*/
     {
-      INIClass::ClearSection((int)a2, (char *)this + 36, (unsigned __int8 *)Buffer); /*0x6e8571*/
+      INIClass::ClearSection((int)a2, (char *)this + 36, (uint8_t *)Buffer); /*0x6e8571*/
     }
     else
     {
-      v5 = TaskForceClass::Check(v4); /*0x6e854e*/
-      INIClass::SetString(a2, (unsigned __int8 *)((char *)this + 36), Buffer, v5); /*0x6e855f*/
+      v5 = (char *)(TaskForceClass::Check(v4));
+      INIClass::SetString(a2, (uint8_t *)((char *)this + 36), Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
     v4 += 2; /*0x6e8577*/
   }
   while ( v3 < 6 ); /*0x6e857d*/
-  INIClass::SetInt(a2, (unsigned __int8 *)((char *)this + 36), MEMORY[0x842DC4], *((unsigned int *)this + 38), 0); /*0x6e8593*/
+  INIClass::SetInt(a2, (uint8_t *)((char *)this + 36), g_abs_842DC4, *((unsigned int *)this + 38), 0); /*0x6e8593*/
   return 1; /*0x6e859a*/
 
 }

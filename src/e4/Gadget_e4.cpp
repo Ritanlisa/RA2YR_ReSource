@@ -13,7 +13,7 @@ unsigned int * Gadget::InitProperties()
 
   unknown_libname_74((unsigned int *)this + 1); /*0x600636*/
   unknown_libname_74((unsigned int *)this + 2); /*0x60063e*/
-  *this = 0; /*0x600646*/
+  *(unsigned int *)this = 0; /*0x600646*/
   *((unsigned int *)this + 3) = -1; /*0x60064c*/
   *((unsigned int *)this + 5) = -1; /*0x60064f*/
   *((unsigned int *)this + 4) = 0; /*0x600652*/

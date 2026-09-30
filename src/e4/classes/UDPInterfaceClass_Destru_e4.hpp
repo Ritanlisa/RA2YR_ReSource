@@ -28,7 +28,7 @@ struct UDPInterfaceClass_Destru {
     int CheckStatus();
     int GetStatistics(int a2);
     int Receive();
-    short ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8);
+    short ddtor(void * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, void * aP5, char a7, short a8);
     void Reset(unsigned int * a2, short a3);
 };
 

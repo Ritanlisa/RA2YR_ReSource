@@ -14,7 +14,7 @@
 
 // 0x5E8DC0
 namespace gamemd {
-void Player::BuildListString()
+void Player::BuildListString(wchar_t * Destination)
 {
 
   SessionClass *v2; // edi
@@ -62,34 +62,34 @@ void Player::BuildListString()
 } // namespace gamemd
 // 0x5E8BF0
 namespace gamemd {
-void Player::FindByName()
+void Player::FindByName(wchar_t * String2)
 {
 
   int v3; // ebp
   int v4; // esi
   const wchar_t *v5; // edi
 
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC119C], String2) ) /*0x5e8bfd*/
-    return (wchar_t *)MEMORY[0xAC119C]; /*0x5e8c09*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A0], String2) ) /*0x5e8c1b*/
-    return (wchar_t *)MEMORY[0xAC11A0]; /*0x5e8c27*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A4], String2) ) /*0x5e8c39*/
-    return (wchar_t *)MEMORY[0xAC11A4]; /*0x5e8c45*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11A8], String2) ) /*0x5e8c56*/
-    return (wchar_t *)MEMORY[0xAC11A8]; /*0x5e8c62*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11AC], String2) ) /*0x5e8c74*/
-    return (wchar_t *)MEMORY[0xAC11AC]; /*0x5e8c80*/
-  if ( !wcscmp(MEMORY[0xAC11B0], String2) ) /*0x5e8c92*/
-    return MEMORY[0xAC11B0]; /*0x5e8c9e*/
-  if ( !wcscmp((const wchar_t *)MEMORY[0xAC11B4], String2) ) /*0x5e8caf*/
-    return (wchar_t *)MEMORY[0xAC11B4]; /*0x5e8cbb*/
-  v3 = MEMORY[0xA8DA84]; /*0x5e8cc5*/
+  if ( !wcscmp((const wchar_t *)g_abs_AC119C, String2) ) /*0x5e8bfd*/
+    return (wchar_t *)g_abs_AC119C; /*0x5e8c09*/
+  if ( !wcscmp((const wchar_t *)g_abs_AC11A0, String2) ) /*0x5e8c1b*/
+    return (wchar_t *)g_abs_AC11A0; /*0x5e8c27*/
+  if ( !wcscmp((const wchar_t *)g_abs_AC11A4, String2) ) /*0x5e8c39*/
+    return (wchar_t *)g_abs_AC11A4; /*0x5e8c45*/
+  if ( !wcscmp((const wchar_t *)g_abs_AC11A8, String2) ) /*0x5e8c56*/
+    return (wchar_t *)g_abs_AC11A8; /*0x5e8c62*/
+  if ( !wcscmp((const wchar_t *)g_abs_AC11AC, String2) ) /*0x5e8c74*/
+    return (wchar_t *)g_abs_AC11AC; /*0x5e8c80*/
+  if ( !wcscmp(g_abs_AC11B0, String2) ) /*0x5e8c92*/
+    return g_abs_AC11B0; /*0x5e8c9e*/
+  if ( !wcscmp((const wchar_t *)g_abs_AC11B4, String2) ) /*0x5e8caf*/
+    return (wchar_t *)g_abs_AC11B4; /*0x5e8cbb*/
+  v3 = g_abs_A8DA84; /*0x5e8cc5*/
   v4 = 0; /*0x5e8ccb*/
-  if ( MEMORY[0xA8DA84] <= 0 ) /*0x5e8ccf*/
+  if ( g_abs_A8DA84 <= 0 ) /*0x5e8ccf*/
     return 0; /*0x5e8ced*/
   while ( 1 ) /*0x5e8cd8*/
   {
-    v5 = *(const wchar_t **)(MEMORY[0xA8DA78] + 4 * v4); /*0x5e8cd8*/
+    v5 = *(const wchar_t **)(g_abs_A8DA78 + 4 * v4); /*0x5e8cd8*/
     if ( !wcscmp(v5, String2) ) /*0x5e8cdc*/
       break; /*0x5e8cdc*/
     if ( ++v4 >= v3 ) /*0x5e8ceb*/
@@ -105,9 +105,9 @@ void Player::IsObserver()
 {
 
   return this /*0x5e9461*/
-      && (this == (void *)dword_A8ED54[51476]
-       || this == (void *)dword_A8ED54[51477]
-       || this == (void *)dword_A8ED54[51478]);
+      && (this == (void *)((unsigned int *)(dword_A8ED54))[51476]
+       || this == (void *)((unsigned int *)(dword_A8ED54))[51477]
+       || this == (void *)((unsigned int *)(dword_A8ED54))[51478]);
 
 }
 } // namespace gamemd

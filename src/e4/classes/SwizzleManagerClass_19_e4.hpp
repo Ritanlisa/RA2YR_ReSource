@@ -18,17 +18,17 @@ struct SwizzleManagerClass_19 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    char Release(int a2,  unsigned int * a3);    // 0x6CF5A0
-    char SetCapacity(int a2,  unsigned int * a3);    // 0x6CF720
-    void ClearBuffer(void *a1 = 0);  // 0x6CF4F0
-    unsigned int * Lookup(unsigned int * a2,  int a3);    // 0x6CF540
-    char AddRef(int a2);  // 0x6CF560
-    void ddtor(void *a1 = 0);  // 0x6CF690
-    int Init(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);  // 0x6CF6C0
+    char Release(int a2, unsigned int * a3);  // 0x6CF5A0
+    char SetCapacity(int a2, unsigned int * a3);  // 0x6CF720
+    void ClearBuffer();  // 0x6CF4F0
+    unsigned int * Lookup(int a1, int a2, int a3, int a4);  // 0x6CF540
+    char AddRef(int a1);  // 0x6CF560
+    void ddtor();  // 0x6CF690
+    int Init(unsigned int * a2);  // 0x6CF6C0
     int FindItem(unsigned int * a2);  // 0x6CF820
-    VectorClass_flat * QueryInterface(char a2);  // 0x6CF850
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x6CF850
     DynamicVector * Constructor_VectorClass_SwizzlePointerClass_(char a2);  // 0x6CF8A0
     unsigned int PointerToIndex(int a2);  // 0x6CF520
-    unsigned int Add(int a2);  // 0x6CF700
+    unsigned int Add(void * aP0, void * aP1, unsigned int * a2);  // 0x6CF700
 };
 } // namespace gamemd

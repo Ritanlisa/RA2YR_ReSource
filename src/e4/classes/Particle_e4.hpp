@@ -43,6 +43,6 @@ struct Particle {
     void* q154;  // 0x154
     void* q158;  // 0x158
 // --- flat members (END) ---
-    int Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, TechnoClass * aP4, InfantryClass * aP5, int a7, AbstractClass * aP7);    // 0x4664C0
+    int Init(void * aP1, void * aP2, void * aP3, void * aP4, void * aP5, int a7, void * aP7);  // 0x4664C0
 };
 } // namespace gamemd

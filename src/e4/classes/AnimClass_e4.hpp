@@ -1179,6 +1179,11 @@ struct AnimClass {
     unsigned int AnimClass_field_0xD4;
     unsigned int __pad_178;
     unsigned int AnimClass_field_0xFC;
+    unsigned int __pad_C;
+    unsigned int field_0;
+    unsigned int field_16054;
+    unsigned int field_4;
+    unsigned int field_8;
     unsigned int ctor;
 // --- flat members (END) ---
     BuildingTypeClass * * drawFrame(void *a1 = 0);
@@ -1190,10 +1195,11 @@ struct AnimClass {
     int MissionStubReturnZero();
     int MissionStubReturnZero2(int a1, unsigned int * a2);
     int ProcessFrame();
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
-    void Destruct(AbstractClass * a2);
+    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
+    void Destruct(void * a2);
     void FreeRenderBuffer(void *a1 = 0);
-    void* Render(ConvertClass * a2, ConvertClass * aP5);
+    void* Render(void * a2, void * aP5);
+    static double SetField95(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

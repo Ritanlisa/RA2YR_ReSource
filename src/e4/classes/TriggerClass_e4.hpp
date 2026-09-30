@@ -42,9 +42,9 @@ struct TriggerClass {
 // --- flat members (END) ---
     char FindByEventType(char a1);
     int GetValue(void *a1 = 0);
-    int LoadTrigger(AbstractClass * aP0, int aP1);
-    int RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6);
-    int SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2);
+    int LoadTrigger(void * aP0, int aP1);
+    int RegisterEvent(void * aP1, void * aP2, char a4, char a5, int a6);
+    int SaveTrigger(void * aP0, int * a1, int aP2);
     int StubReturn38();
     int StubReturn72();
     int ddtor(int a1, unsigned int * a2);

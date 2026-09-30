@@ -326,7 +326,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x42f716*/
+      v4 = RA2_OPNEW(4 * a2); /*0x42f716*/
       if ( v4 ) /*0x42f720*/
         v5 = v4; /*0x42f725*/
       else
@@ -344,7 +344,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
           ++i; /*0x42f764*/
         if ( *((unsigned char *)this + 13) ) /*0x42f771*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x42f77c*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x42f77c*/
           *((unsigned int *)this + 1) = 0; /*0x42f784*/
         }
       }
@@ -368,7 +368,7 @@ AbstractClass * * VectorClass_Cell::Release(int a2, unsigned int * a3)
 }
 // 0x4E0840
 namespace gamemd {
-AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a2)
+AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Release(int a2, int * a3)
 {
 
   int *v4; // ebx
@@ -383,18 +383,18 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   int v14; // edx
   int v15; // eax
 
-  if ( a2 ) /*0x4e084c*/
+  if ( a3 ) /*0x4e084c*/
   {
-    v4 = a2; /*0x4e0852*/
+    v4 = a3; /*0x4e0852*/
     *((unsigned char *)this + 12) = 0; /*0x4e0856*/
-    if ( a2 ) /*0x4e085c*/
+    if ( a3 ) /*0x4e085c*/
     {
-      *a2 = a2; /*0x4e0897*/
-      v6 = a2 + 1; /*0x4e089b*/
-      if ( a2 - 1 >= 0 ) /*0x4e089e*/
+      *a3 = a3; /*0x4e0897*/
+      v6 = a3 + 1; /*0x4e089b*/
+      if ( a3 - 1 >= 0 ) /*0x4e089e*/
       {
-        v9 = a2 + 2; /*0x4e08a0*/
-        v10 = a2; /*0x4e08a3*/
+        v9 = a3 + 2; /*0x4e08a0*/
+        v10 = a3; /*0x4e08a3*/
         do /*0x4e08ae*/
         {
           *v9 = 0; /*0x4e08a4*/
@@ -406,15 +406,15 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     }
     else
     {
-      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0866*/
+      v5 = (int *)RA2_OPNEW(8 * a3 + 4); /*0x4e0866*/
       if ( v5 ) /*0x4e0870*/
       {
-        *v5 = a2; /*0x4e0875*/
+        *v5 = a3; /*0x4e0875*/
         v6 = v5 + 1; /*0x4e0879*/
-        if ( a2 - 1 >= 0 ) /*0x4e087c*/
+        if ( a3 - 1 >= 0 ) /*0x4e087c*/
         {
           v7 = v5 + 2; /*0x4e087e*/
-          v8 = a2; /*0x4e0881*/
+          v8 = a3; /*0x4e0881*/
           do /*0x4e088c*/
           {
             *v7 = 0; /*0x4e0882*/
@@ -435,8 +435,8 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       if ( *((unsigned int *)this + 1) ) /*0x4e08c1*/
       {
         v12 = *((unsigned int *)this + 2); /*0x4e08c8*/
-        if ( a2 < v12 ) /*0x4e08cd*/
-          v12 = a2; /*0x4e08cf*/
+        if ( a3 < v12 ) /*0x4e08cd*/
+          v12 = a3; /*0x4e08cf*/
         v13 = 0; /*0x4e08d1*/
         if ( v12 > 0 ) /*0x4e08d5*/
         {
@@ -448,18 +448,18 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
             v6[2 * v13 - 1] = *(unsigned int *)(v14 + 8 * v13 - 4); /*0x4e08e9*/
           }
           while ( v13 < v12 ); /*0x4e08ed*/
-          v4 = a2; /*0x4e08ef*/
+          v4 = a3; /*0x4e08ef*/
         }
         if ( *((unsigned char *)this + 13) ) /*0x4e08f3*/
         {
           v15 = *((unsigned int *)this + 1); /*0x4e08fa*/
           if ( v15 ) /*0x4e08ff*/
-            __3_YAXPAX_Z((void *)(v15 - 4)); /*0x4e0909*/
+            RA2_OPDEL((void *)(v15 - 4)); /*0x4e0909*/
           *((unsigned int *)this + 1) = 0; /*0x4e0911*/
         }
       }
       *((unsigned int *)this + 1) = v6; /*0x4e091a*/
-      *((unsigned int *)this + 2) = a2; /*0x4e0922*/
+      *((unsigned int *)this + 2) = a3; /*0x4e0922*/
       *((unsigned char *)this + 13) = v4 == 0; /*0x4e0925*/
       return 1; /*0x4e092b*/
     }
@@ -478,7 +478,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
 }
 // 0x4E0B10
 namespace gamemd {
-AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a2)
+AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::SetCapacity(int a2, int * a3)
 {
 
   int *v4; // ebp
@@ -495,18 +495,18 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
   void *v15; // ebp
   int v16; // eax
 
-  if ( a2 ) /*0x4e0b1c*/
+  if ( a3 ) /*0x4e0b1c*/
   {
-    v4 = a2; /*0x4e0b22*/
+    v4 = a3; /*0x4e0b22*/
     *((unsigned char *)this + 12) = 0; /*0x4e0b26*/
-    if ( a2 ) /*0x4e0b2c*/
+    if ( a3 ) /*0x4e0b2c*/
     {
-      *a2 = a2; /*0x4e0b67*/
-      v6 = a2 + 1; /*0x4e0b6c*/
-      if ( a2 - 1 >= 0 ) /*0x4e0b6f*/
+      *a3 = a3; /*0x4e0b67*/
+      v6 = a3 + 1; /*0x4e0b6c*/
+      if ( a3 - 1 >= 0 ) /*0x4e0b6f*/
       {
-        v9 = a2 + 2; /*0x4e0b71*/
-        v10 = a2; /*0x4e0b74*/
+        v9 = a3 + 2; /*0x4e0b71*/
+        v10 = a3; /*0x4e0b74*/
         do /*0x4e0b7f*/
         {
           *v9 = 0; /*0x4e0b75*/
@@ -518,15 +518,15 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     }
     else
     {
-      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x4e0b36*/
+      v5 = (int *)RA2_OPNEW(8 * a3 + 4); /*0x4e0b36*/
       if ( v5 ) /*0x4e0b40*/
       {
-        *v5 = a2; /*0x4e0b45*/
+        *v5 = a3; /*0x4e0b45*/
         v6 = v5 + 1; /*0x4e0b49*/
-        if ( a2 - 1 >= 0 ) /*0x4e0b4c*/
+        if ( a3 - 1 >= 0 ) /*0x4e0b4c*/
         {
           v7 = v5 + 2; /*0x4e0b4e*/
-          v8 = a2; /*0x4e0b51*/
+          v8 = a3; /*0x4e0b51*/
           do /*0x4e0b5c*/
           {
             *v7 = 0; /*0x4e0b52*/
@@ -547,8 +547,8 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     if ( *((unsigned int *)this + 1) ) /*0x4e0b8d*/
     {
       v11 = *((unsigned int *)this + 2); /*0x4e0b94*/
-      if ( a2 < v11 ) /*0x4e0b99*/
-        v11 = a2; /*0x4e0b9b*/
+      if ( a3 < v11 ) /*0x4e0b99*/
+        v11 = a3; /*0x4e0b9b*/
       v12 = 0; /*0x4e0b9d*/
       if ( v11 > 0 ) /*0x4e0ba1*/
       {
@@ -560,7 +560,7 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
           v6[2 * v12 - 1] = *(unsigned int *)(v13 + 8 * v12 - 4); /*0x4e0bb5*/
         }
         while ( v12 < v11 ); /*0x4e0bb9*/
-        v4 = a2; /*0x4e0bbb*/
+        v4 = a3; /*0x4e0bbb*/
       }
       if ( *((unsigned char *)this + 13) ) /*0x4e0bbf*/
       {
@@ -569,14 +569,14 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
         {
           v15 = (void *)(v14 - 4); /*0x4e0bd0*/
           Array::ForEachReverse(v14, 8, *(unsigned int *)(v14 - 4), (int (*)(int))nullsub_138); /*0x4e0bdc*/
-          __3_YAXPAX_Z(v15); /*0x4e0be2*/
-          v4 = a2; /*0x4e0be7*/
+          RA2_OPDEL(v15); /*0x4e0be2*/
+          v4 = a3; /*0x4e0be7*/
         }
         *((unsigned int *)this + 1) = 0; /*0x4e0bee*/
       }
     }
     *((unsigned int *)this + 1) = v6; /*0x4e0bf7*/
-    *((unsigned int *)this + 2) = a2; /*0x4e0bff*/
+    *((unsigned int *)this + 2) = a3; /*0x4e0bff*/
     *((unsigned char *)this + 13) = v4 == 0; /*0x4e0c02*/
   }
   else
@@ -600,9 +600,9 @@ unsigned int * VectorClass_K_8::Constructor()
   *((unsigned char *)this + 16) = 0; /*0x4a2830*/
   *((unsigned char *)this + 17) = 0; /*0x4a2833*/
   *((unsigned int *)this + 5) = 0; /*0x4a2836*/
-  *((unsigned int *)this + 6) = __2_YAPAXI_Z(0x10000u); /*0x4a2843*/
-  *((unsigned int *)this + 7) = __2_YAPAXI_Z(0x10000u); /*0x4a2850*/
-  *((unsigned int *)this + 8) = __2_YAPAXI_Z(0x10000u); /*0x4a285b*/
+  *((unsigned int *)this + 6) = RA2_OPNEW(0x10000u); /*0x4a2843*/
+  *((unsigned int *)this + 7) = RA2_OPNEW(0x10000u); /*0x4a2850*/
+  *((unsigned int *)this + 8) = RA2_OPNEW(0x10000u); /*0x4a285b*/
   *this = &CStreamClass::`vftable'; /*0x4a285e*/
   *((unsigned int *)this + 1) = &vt_CStreamClass; /*0x4a2864*/
   *((unsigned int *)this + 9) = 0xFFFF; /*0x4a286b*/
@@ -626,7 +626,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
     if ( a3 ) /*0x5ad028*/
       v4 = a3; /*0x5ad03e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5ad03a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5ad03a*/
     *((unsigned char *)this + 12) = 1; /*0x5ad042*/
     if ( !v4 ) /*0x5ad046*/
       return 0; /*0x5ad0ba*/
@@ -639,7 +639,7 @@ AbstractClass * * VectorClass_Ptr::ResizeAndCopy(int a2, unsigned int * a3)
         ++i; /*0x5ad061*/
       if ( *((unsigned char *)this + 13) ) /*0x5ad06e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ad079*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5ad079*/
         *((unsigned int *)this + 1) = 0; /*0x5ad081*/
       }
     }
@@ -686,7 +686,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
     v3[2] = EnumConnectionPointsClass_field_0x08; /*0x4a0c59*/
     if ( EnumConnectionPointsClass_field_0x08 ) /*0x4a0c5c*/
     {
-      v5 = __2_YAPAXI_Z(4 * EnumConnectionPointsClass_field_0x08); /*0x4a0c62*/
+      v5 = RA2_OPNEW(4 * EnumConnectionPointsClass_field_0x08); /*0x4a0c62*/
       v3[1] = v5; /*0x4a0c6c*/
       if ( v5 ) /*0x4a0c6f*/
       {
@@ -734,16 +734,16 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity(int a1, int a2)
 
   v2 = 0; /*0x4f6a27*/
   v3 = 0; /*0x4f6a29*/
-  if ( MEMORY[0xA8EC88] <= 0 ) /*0x4f6a2d*/
+  if ( g_abs_A8EC88 <= 0 ) /*0x4f6a2d*/
     return 0; /*0x4f6a71*/
   do /*0x4f6a66*/
   {
-    v4 = (unsigned int *)*((unsigned int *)MEMORY[0xA8EC7C] + v3); /*0x4f6a42*/
+    v4 = (unsigned int *)*((unsigned int *)g_abs_A8EC7C + v3); /*0x4f6a42*/
     if ( v4[135] == a1 - 36 && *(unsigned int *)((*(int (**)(unsigned int *))(*v4 + 132))(v4) + 956) == a2 ) /*0x4f6a5b*/
       ++v2; /*0x4f6a5d*/
     ++v3; /*0x4f6a63*/
   }
-  while ( v3 < MEMORY[0xA8EC88] ); /*0x4f6a66*/
+  while ( v3 < g_abs_A8EC88 ); /*0x4f6a66*/
   return v2; /*0x4f6a6c*/
 
 }
@@ -759,16 +759,16 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_0(int a1, int a2
 
   v2 = 0; /*0x4f6a87*/
   v3 = 0; /*0x4f6a89*/
-  if ( MEMORY[0xA8EC88] <= 0 ) /*0x4f6a8d*/
+  if ( g_abs_A8EC88 <= 0 ) /*0x4f6a8d*/
     return 0; /*0x4f6ad1*/
   do /*0x4f6ac6*/
   {
-    v4 = (unsigned int *)*((unsigned int *)MEMORY[0xA8EC7C] + v3); /*0x4f6aa2*/
+    v4 = (unsigned int *)*((unsigned int *)g_abs_A8EC7C + v3); /*0x4f6aa2*/
     if ( v4[135] == a1 - 40 && *(unsigned int *)((*(int (**)(unsigned int *))(*v4 + 132))(v4) + 956) == a2 ) /*0x4f6abb*/
       ++v2; /*0x4f6abd*/
     ++v3; /*0x4f6ac3*/
   }
-  while ( v3 < MEMORY[0xA8EC88] ); /*0x4f6ac6*/
+  while ( v3 < g_abs_A8EC88 ); /*0x4f6ac6*/
   return v2; /*0x4f6acc*/
 
 }
@@ -785,17 +785,17 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_1(int a1, int a2
 
   v2 = 0; /*0x4f6ae7*/
   v3 = 0; /*0x4f6ae9*/
-  if ( MEMORY[0xA8EC88] <= 0 ) /*0x4f6aed*/
+  if ( g_abs_A8EC88 <= 0 ) /*0x4f6aed*/
     return 0; /*0x4f6b44*/
   do /*0x4f6b39*/
   {
-    v4 = (unsigned int *)*((unsigned int *)MEMORY[0xA8EC7C] + v3); /*0x4f6afe*/
+    v4 = (unsigned int *)*((unsigned int *)g_abs_A8EC7C + v3); /*0x4f6afe*/
     v5 = (unsigned int *)(*(int (**)(unsigned int *))(*v4 + 132))(v4); /*0x4f6b05*/
     if ( v4[135] == a1 - 36 && v5[239] == a2 ) /*0x4f6b1f*/
       v2 += v5[412] + v5[413]; /*0x4f6b2f*/
     ++v3; /*0x4f6b36*/
   }
-  while ( v3 < MEMORY[0xA8EC88] ); /*0x4f6b39*/
+  while ( v3 < g_abs_A8EC88 ); /*0x4f6b39*/
   return v2; /*0x4f6b3f*/
 
 }
@@ -812,17 +812,17 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_2(int a1, int a2
 
   v2 = 0; /*0x4f6b57*/
   v3 = 0; /*0x4f6b59*/
-  if ( MEMORY[0xA8EC88] <= 0 ) /*0x4f6b5d*/
+  if ( g_abs_A8EC88 <= 0 ) /*0x4f6b5d*/
     return 0; /*0x4f6bb4*/
   do /*0x4f6ba9*/
   {
-    v4 = (unsigned int *)*((unsigned int *)MEMORY[0xA8EC7C] + v3); /*0x4f6b6e*/
+    v4 = (unsigned int *)*((unsigned int *)g_abs_A8EC7C + v3); /*0x4f6b6e*/
     v5 = (unsigned int *)(*(int (**)(unsigned int *))(*v4 + 132))(v4); /*0x4f6b75*/
     if ( v4[135] == a1 - 40 && v5[239] == a2 ) /*0x4f6b8f*/
       v2 += v5[412] + v5[413]; /*0x4f6b9f*/
     ++v3; /*0x4f6ba6*/
   }
-  while ( v3 < MEMORY[0xA8EC88] ); /*0x4f6ba9*/
+  while ( v3 < g_abs_A8EC88 ); /*0x4f6ba9*/
   return v2; /*0x4f6baf*/
 
 }
@@ -849,47 +849,47 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_3(int
   int v17; // [esp+18h] [ebp-10h]
   unsigned char v18[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = MEMORY[0xA8EF98]; /*0x4f6bcf*/
-  if ( *(unsigned int *)(a1 + 21616) == MEMORY[0xA8EF98] ) /*0x4f6bdd*/
+  v2 = g_abs_A8EF98; /*0x4f6bcf*/
+  if ( *(unsigned int *)(a1 + 21616) == g_abs_A8EF98 ) /*0x4f6bdd*/
     v3 = *(unsigned int *)(a1 + 21612); /*0x4f6be8*/
   else
     v3 = *(unsigned int *)(a1 + 21616); /*0x4f6bf0*/
   v13 = v3; /*0x4f6bfd*/
-  if ( v3 == MEMORY[0xA8EF98] ) /*0x4f6c01*/
+  if ( v3 == g_abs_A8EF98 ) /*0x4f6c01*/
   {
-    v4 = MEMORY[0xA8EFF8]; /*0x4f6c10*/
-    v16 = MEMORY[0xA8EFFC]; /*0x4f6c15*/
-    v17 = MEMORY[0xA8F000]; /*0x4f6c1f*/
+    v4 = g_abs_A8EFF8; /*0x4f6c10*/
+    v16 = g_abs_A8EFFC; /*0x4f6c15*/
+    v17 = g_abs_A8F000; /*0x4f6c1f*/
   }
   else
   {
-    v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v13); /*0x4f6c2f*/
+    v5 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v13); /*0x4f6c2f*/
     v6 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v18); /*0x4f6c40*/
     v4 = *v6; /*0x4f6c49*/
     v16 = v6[1]; /*0x4f6c4e*/
     v17 = v6[2]; /*0x4f6c5b*/
-    v2 = MEMORY[0xA8EF98]; /*0x4f6c5b*/
+    v2 = g_abs_A8EF98; /*0x4f6c5b*/
   }
-  v7 = *(unsigned short *)(a1 + 21616) == (unsigned __int16)v2; /*0x4f6c6b*/
-  LOWORD(v13) = v4 / 256; /*0x4f6c72*/
-  if ( v7 && *(unsigned short *)(a1 + 21618) == HIWORD(v2) ) /*0x4f6c80*/
+  v7 = *(unsigned short *)(a1 + 21616) == (uint16_t)v2; /*0x4f6c6b*/
+  IDA_LOWORD(v13) = v4 / 256; /*0x4f6c72*/
+  if ( v7 && *(unsigned short *)(a1 + 21618) == IDA_HIWORD(v2) ) /*0x4f6c80*/
     v8 = *(unsigned int *)(a1 + 21612); /*0x4f6c82*/
   else
     v8 = *(unsigned int *)(a1 + 21616); /*0x4f6c8a*/
   v14 = v8; /*0x4f6c97*/
   if ( v8 == v2 ) /*0x4f6c9b*/
   {
-    v15 = MEMORY[0xA8EFF8]; /*0x4f6caf*/
-    v9 = MEMORY[0xA8EFFC]; /*0x4f6cb3*/
+    v15 = g_abs_A8EFF8; /*0x4f6caf*/
+    v9 = g_abs_A8EFFC; /*0x4f6cb3*/
   }
   else
   {
-    v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14); /*0x4f6cc4*/
+    v10 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v14); /*0x4f6cc4*/
     v11 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v10 + 72))(v10, v18); /*0x4f6cd5*/
     v15 = *v11; /*0x4f6cd9*/
     v9 = v11[1]; /*0x4f6cdd*/
   }
-  HIWORD(v13) = v9 / 256; /*0x4f6cf4*/
+  IDA_HIWORD(v13) = v9 / 256; /*0x4f6cf4*/
   *a2 = v13; /*0x4f6d02*/
   return a2; /*0x4f6cea*/
 
@@ -917,47 +917,47 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_4(int
   int v17; // [esp+18h] [ebp-10h]
   unsigned char v18[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = MEMORY[0xA8EF98]; /*0x4f6d1f*/
-  if ( *(unsigned int *)(a1 + 21612) == MEMORY[0xA8EF98] ) /*0x4f6d2d*/
+  v2 = g_abs_A8EF98; /*0x4f6d1f*/
+  if ( *(unsigned int *)(a1 + 21612) == g_abs_A8EF98 ) /*0x4f6d2d*/
     v3 = *(unsigned int *)(a1 + 21608); /*0x4f6d38*/
   else
     v3 = *(unsigned int *)(a1 + 21612); /*0x4f6d40*/
   v13 = v3; /*0x4f6d4d*/
-  if ( v3 == MEMORY[0xA8EF98] ) /*0x4f6d51*/
+  if ( v3 == g_abs_A8EF98 ) /*0x4f6d51*/
   {
-    v4 = MEMORY[0xA8EFF8]; /*0x4f6d60*/
-    v16 = MEMORY[0xA8EFFC]; /*0x4f6d65*/
-    v17 = MEMORY[0xA8F000]; /*0x4f6d6f*/
+    v4 = g_abs_A8EFF8; /*0x4f6d60*/
+    v16 = g_abs_A8EFFC; /*0x4f6d65*/
+    v17 = g_abs_A8F000; /*0x4f6d6f*/
   }
   else
   {
-    v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v13); /*0x4f6d7f*/
+    v5 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v13); /*0x4f6d7f*/
     v6 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v18); /*0x4f6d90*/
     v4 = *v6; /*0x4f6d99*/
     v16 = v6[1]; /*0x4f6d9e*/
     v17 = v6[2]; /*0x4f6dab*/
-    v2 = MEMORY[0xA8EF98]; /*0x4f6dab*/
+    v2 = g_abs_A8EF98; /*0x4f6dab*/
   }
-  v7 = *(unsigned short *)(a1 + 21612) == (unsigned __int16)v2; /*0x4f6dbb*/
-  LOWORD(v13) = v4 / 256; /*0x4f6dc2*/
-  if ( v7 && *(unsigned short *)(a1 + 21614) == HIWORD(v2) ) /*0x4f6dd0*/
+  v7 = *(unsigned short *)(a1 + 21612) == (uint16_t)v2; /*0x4f6dbb*/
+  IDA_LOWORD(v13) = v4 / 256; /*0x4f6dc2*/
+  if ( v7 && *(unsigned short *)(a1 + 21614) == IDA_HIWORD(v2) ) /*0x4f6dd0*/
     v8 = *(unsigned int *)(a1 + 21608); /*0x4f6dd2*/
   else
     v8 = *(unsigned int *)(a1 + 21612); /*0x4f6dda*/
   v14 = v8; /*0x4f6de7*/
   if ( v8 == v2 ) /*0x4f6deb*/
   {
-    v15 = MEMORY[0xA8EFF8]; /*0x4f6dff*/
-    v9 = MEMORY[0xA8EFFC]; /*0x4f6e03*/
+    v15 = g_abs_A8EFF8; /*0x4f6dff*/
+    v9 = g_abs_A8EFFC; /*0x4f6e03*/
   }
   else
   {
-    v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14); /*0x4f6e14*/
+    v10 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v14); /*0x4f6e14*/
     v11 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v10 + 72))(v10, v18); /*0x4f6e25*/
     v15 = *v11; /*0x4f6e29*/
     v9 = v11[1]; /*0x4f6e2d*/
   }
-  HIWORD(v13) = v9 / 256; /*0x4f6e44*/
+  IDA_HIWORD(v13) = v9 / 256; /*0x4f6e44*/
   *a2 = v13; /*0x4f6e52*/
   return a2; /*0x4f6e3a*/
 
@@ -975,8 +975,8 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
   int v5; // ecx
   int v7; // [esp+8h] [ebp-4h] BYREF
 
-  v1 = MEMORY[0xA8EC88] - 1; /*0x501409*/
-  if ( MEMORY[0xA8EC88] - 1 < 0 ) /*0x50140e*/
+  v1 = g_abs_A8EC88 - 1; /*0x501409*/
+  if ( g_abs_A8EC88 - 1 < 0 ) /*0x50140e*/
   {
     *(unsigned char *)(a1 + 549) = 1; /*0x501532*/
     return 0; /*0x50152f*/
@@ -985,11 +985,11 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
   {
     do /*0x50150f*/
     {
-      v2 = (int *)*((unsigned int *)MEMORY[0xA8EC7C] + v1); /*0x501423*/
+      v2 = (int *)*((unsigned int *)g_abs_A8EC7C + v1); /*0x501423*/
       if ( a1 - 36 == v2[135] && *((unsigned char *)v2 + 116) && !*((unsigned char *)v2 + 129) ) /*0x50143d*/
       {
         if ( *((unsigned char *)v2 + 708) /*0x50146d*/
-          && *(unsigned char *)((*(int (**)(unsigned int))(*v2 + 132))(*((unsigned int *)MEMORY[0xA8EC7C] + v1)) + 562)
+          && *(unsigned char *)((*(int (**)(unsigned int))(*v2 + 132))(*((unsigned int *)g_abs_A8EC7C + v1)) + 562)
           && !*(unsigned char *)(a1 + 456) )
         {
           v3 = (*(int (**)(int *))(*v2 + 132))(v2); /*0x50147b*/
@@ -999,7 +999,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_5(int a1)
             v2,
             &v7,
             0,
-            MEMORY[0x8871E0]->?[5],
+            g_abs_8871E0->?[5],
             0,
             1,
             1,
@@ -1045,7 +1045,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2
     if ( a3 ) /*0x50f53c*/
       v4 = a3; /*0x50f552*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f54e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x50f54e*/
     *((unsigned char *)this + 12) = 1; /*0x50f556*/
     if ( v4 ) /*0x50f55a*/
     {
@@ -1058,7 +1058,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Release(int a2
           ++i; /*0x50f57e*/
         if ( *((unsigned char *)this + 13) ) /*0x50f58b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f596*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x50f596*/
           *((unsigned int *)this + 1) = 0; /*0x50f59e*/
         }
       }
@@ -1096,7 +1096,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
     if ( a3 ) /*0x50f678*/
       v4 = a3; /*0x50f68e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f68a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x50f68a*/
     *((unsigned char *)this + 12) = 1; /*0x50f692*/
     if ( !v4 ) /*0x50f696*/
       return 0; /*0x50f70a*/
@@ -1109,7 +1109,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
         ++i; /*0x50f6b1*/
       if ( *((unsigned char *)this + 13) ) /*0x50f6be*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f6c9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x50f6c9*/
         *((unsigned int *)this + 1) = 0; /*0x50f6d1*/
       }
     }
@@ -1168,7 +1168,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
     }
     else
     {
-      v6 = (AbstractClass *)__2_YAPAXI_Z(260 * (unsigned int)aP1); /*0x628921*/
+      v6 = (AbstractClass *)RA2_OPNEW(260 * (unsigned int)aP1); /*0x628921*/
       if ( v6 ) /*0x628928*/
       {
         v7 = v6; /*0x62892d*/
@@ -1217,7 +1217,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
         }
         if ( *((unsigned char *)this + 13) ) /*0x6289ea*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6289f5*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6289f5*/
           *((unsigned int *)this + 1) = 0; /*0x6289fd*/
         }
       }
@@ -1241,7 +1241,7 @@ AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, u
 }
 // 0x491210
 namespace gamemd {
-void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(char a2)
+void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(void ** Block, char a2)
 {
 
   void *v3; // ecx
@@ -1250,24 +1250,24 @@ void * VectorClass_ptr_ConvertClass::Constructor_ConvertClass(char a2)
 
   *Block = &vt_ConvertClass; /*0x491214*/
   COMClass::RegisterAll(Block); /*0x49121a*/
-  __3_YAXPAX_Z(*(Block + 92)); /*0x491226*/
+  RA2_OPDEL(*(Block + 92)); /*0x491226*/
   v3 = *(Block + 94); /*0x49122b*/
   *(Block + 92) = 0; /*0x491231*/
-  __3_YAXPAX_Z(v3); /*0x49123c*/
+  RA2_OPDEL(v3); /*0x49123c*/
   *(Block + 94) = 0; /*0x491244*/
   v6 = Block; /*0x49125d*/
-  v4 = (*(int (**)(int *, void ***))(MEMORY[0x89ECF8] + 16))(&MEMORY[0x89ECF8], &v6); /*0x491261*/
-  if ( v4 != -1 && v4 < MEMORY[0x89ED08] && v4 < --MEMORY[0x89ED08] ) /*0x49127c*/
+  v4 = (*(int (**)(int *, void ***))(g_abs_89ECF8 + 16))(&g_abs_89ECF8, &v6); /*0x491261*/
+  if ( v4 != -1 && v4 < g_abs_89ED08 && v4 < --g_abs_89ED08 ) /*0x49127c*/
   {
     do /*0x491294*/
     {
       ++v4; /*0x491284*/
-      *((unsigned int *)MEMORY[0x89ECFC] + v4 - 1) = *((unsigned int *)MEMORY[0x89ECFC] + v4); /*0x491288*/
+      *((unsigned int *)g_abs_89ECFC + v4 - 1) = *((unsigned int *)g_abs_89ECFC + v4); /*0x491288*/
     }
-    while ( v4 < MEMORY[0x89ED08] ); /*0x491294*/
+    while ( v4 < g_abs_89ED08 ); /*0x491294*/
   }
-  if ( (a2 & 1) != 0 ) /*0x49129b*/
-    __3_YAXPAX_Z(Block); /*0x49129e*/
+  if ( (Block & 1) != 0 ) /*0x49129b*/
+    RA2_OPDEL(Block); /*0x49129e*/
   return (ConvertClass *)Block; /*0x4912a8*/
 
 }
@@ -1296,7 +1296,7 @@ AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned 
     if ( a3 ) /*0x63e0ac*/
       v4 = a3; /*0x63e0c2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e0be*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63e0be*/
     *((unsigned char *)this + 12) = 1; /*0x63e0c6*/
     if ( v4 ) /*0x63e0ca*/
     {
@@ -1309,7 +1309,7 @@ AbstractClass * * VectorClass_ptr_PlanningBranchClass::Release(int a2, unsigned 
           ++i; /*0x63e0ee*/
         if ( *((unsigned char *)this + 13) ) /*0x63e0fb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e106*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x63e106*/
           *((unsigned int *)this + 1) = 0; /*0x63e10e*/
         }
       }
@@ -1373,7 +1373,7 @@ int VectorClass_rc_ptr_WDTTerritory::Release(int a2, unsigned int * a3)
   }
   else
   {
-    v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x76b8e7*/
+    v5 = RA2_OPNEW(8 * a2 + 4); /*0x76b8e7*/
     if ( !v5 ) /*0x76b8f1*/
     {
       v8 = 0; /*0x76b91f*/
@@ -1439,7 +1439,7 @@ AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d8488*/
       v4 = a3; /*0x5d849e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d849a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d849a*/
     *((unsigned char *)this + 12) = 1; /*0x5d84a2*/
     if ( !v4 ) /*0x5d84a6*/
       return 0; /*0x5d851a*/
@@ -1452,7 +1452,7 @@ AbstractClass * * VectorClass_Scenario::ResizeAndCopy(int a2, unsigned int * a3)
         ++i; /*0x5d84c1*/
       if ( *((unsigned char *)this + 13) ) /*0x5d84ce*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d84d9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5d84d9*/
         *((unsigned int *)this + 1) = 0; /*0x5d84e1*/
       }
     }
@@ -1487,7 +1487,7 @@ AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3
     if ( a3 ) /*0x5d8748*/
       v4 = a3; /*0x5d875e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d875a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d875a*/
     *((unsigned char *)this + 12) = 1; /*0x5d8762*/
     if ( !v4 ) /*0x5d8766*/
       return 0; /*0x5d87da*/
@@ -1500,7 +1500,7 @@ AbstractClass * * VectorClass_Scenario2::ResizeAndCopy(int a2, unsigned int * a3
         ++i; /*0x5d8781*/
       if ( *((unsigned char *)this + 13) ) /*0x5d878e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d8799*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5d8799*/
         *((unsigned int *)this + 1) = 0; /*0x5d87a1*/
       }
     }
@@ -1534,7 +1534,7 @@ AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3
     if ( a3 ) /*0x5d85ac*/
       v4 = a3; /*0x5d85c2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d85be*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d85be*/
     *((unsigned char *)this + 12) = 1; /*0x5d85c6*/
     if ( v4 ) /*0x5d85ca*/
     {
@@ -1547,7 +1547,7 @@ AbstractClass * * VectorClass_Scenario3::ResizeAndCopy(int a2, unsigned int * a3
           ++i; /*0x5d85ee*/
         if ( *((unsigned char *)this + 13) ) /*0x5d85fb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d8606*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d8606*/
           *((unsigned int *)this + 1) = 0; /*0x5d860e*/
         }
       }
@@ -1585,7 +1585,7 @@ AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e9858*/
       v4 = a3; /*0x4e986e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e986a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e986a*/
     *((unsigned char *)this + 12) = 1; /*0x4e9872*/
     if ( !v4 ) /*0x4e9876*/
       return 0; /*0x4e98ea*/
@@ -1598,7 +1598,7 @@ AbstractClass * * VectorClass_SuperPtr::ResizeAndCopy(int a2, unsigned int * a3)
         ++i; /*0x4e9891*/
       if ( *((unsigned char *)this + 13) ) /*0x4e989e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e98a9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4e98a9*/
         *((unsigned int *)this + 1) = 0; /*0x4e98b1*/
       }
     }
@@ -1659,7 +1659,7 @@ AbstractClass * * VectorClass_UDirtyAreaStruct::SetCapacity(CCINIClass * aP1, ch
     }
     goto LABEL_13; /*0x6dc8d8*/
   }
-  v5 = (char *)__2_YAPAXI_Z(20 * (unsigned int)aP1); /*0x6dc87b*/
+  v5 = (char *)RA2_OPNEW(20 * (unsigned int)aP1); /*0x6dc87b*/
   v15 = v5; /*0x6dc882*/
   if ( v5 ) /*0x6dc886*/
   {
@@ -1706,7 +1706,7 @@ LABEL_14:
     }
     if ( *((unsigned char *)this + 13) ) /*0x6dc915*/
     {
-      __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dc920*/
+      RA2_OPDEL(*((void **)this + 1)); /*0x6dc920*/
       *((unsigned int *)this + 1) = 0; /*0x6dc928*/
     }
   }
@@ -1764,7 +1764,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::Release(int a2, unsigned int * a3
   }
   else
   {
-    v5 = __2_YAPAXI_Z(12 * a2); /*0x6b44c7*/
+    v5 = RA2_OPNEW(12 * a2); /*0x6b44c7*/
     if ( !v5 ) /*0x6b44d1*/
     {
       v8 = 0; /*0x6b44ef*/
@@ -1813,7 +1813,7 @@ LABEL_14:
     }
     if ( *((unsigned char *)this + 13) ) /*0x6b455c*/
     {
-      __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b4565*/
+      RA2_OPDEL(*((void **)this + 1)); /*0x6b4565*/
       *((unsigned int *)this + 1) = 0; /*0x6b456d*/
     }
   }
@@ -1867,7 +1867,7 @@ AbstractClass * * VectorClass_UUndoInfoStruct::SetCapacity(int a2, unsigned int 
     }
     goto LABEL_13; /*0x6b46bd*/
   }
-  v5 = __2_YAPAXI_Z(12 * a2); /*0x6b4677*/
+  v5 = RA2_OPNEW(12 * a2); /*0x6b4677*/
   if ( v5 ) /*0x6b4681*/
   {
     v6 = v5; /*0x6b4686*/
@@ -1916,7 +1916,7 @@ LABEL_14:
     }
     if ( *((unsigned char *)this + 13) ) /*0x6b4703*/
     {
-      __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b470c*/
+      RA2_OPDEL(*((void **)this + 1)); /*0x6b470c*/
       *((unsigned int *)this + 1) = 0; /*0x6b4714*/
     }
   }
@@ -1932,42 +1932,42 @@ LABEL_26:
 }
 }
 // 0x40B120
-int VectorClass_flat::Clear(int v4, int a3)
+int VectorClass_flat::Clear(int a2, int a3)
 {
 
   int v3; // eax
-  int v4; // edx
+  int a2; // edx
   int v5; // ecx
 
   v3 = *((unsigned int *)this + 1); /*0x40b120*/
-  v4 = *(unsigned int *)(v3 + 8 * a3); /*0x40b127*/
+  a2 = *(unsigned int *)(v3 + 8 * a3); /*0x40b127*/
   v5 = v3 + 8 * a3; /*0x40b12a*/
-  *(unsigned int *)v4 = v4; /*0x40b131*/
-  *(unsigned char *)(v4 + 4) = *(unsigned char *)(v5 + 4); /*0x40b136*/
-  return v4; /*0x40b139*/
+  *(unsigned int *)a2 = a2; /*0x40b131*/
+  *(unsigned char *)(a2 + 4) = *(unsigned char *)(v5 + 4); /*0x40b136*/
+  return a2; /*0x40b139*/
 
 }
 // 0x40B140
-char VectorClass_flat::AddRef(int v4)
+char VectorClass_flat::AddRef(int a2)
 {
 
   int v2; // esi
   int v3; // edx
-  unsigned int *v4; // eax
+  unsigned int *a2; // eax
   int v5; // ecx
 
   v2 = *((char *)this + 2); /*0x40b142*/
-  if ( v2 == *(unsigned int *)(v4 + 8) ) /*0x40b14d*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x40b14d*/
   {
     v3 = 0; /*0x40b14f*/
     if ( v2 <= 0 ) /*0x40b153*/
       return 1; /*0x40b173*/
-    v4 = (unsigned int *)*((char *)this + 1); /*0x40b155*/
-    v5 = *(unsigned int *)(v4 + 4) - (unsigned int)v4; /*0x40b15b*/
-    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x40b164*/
+    a2 = (unsigned int *)*((char *)this + 1); /*0x40b155*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)a2; /*0x40b15b*/
+    while ( *a2 == *(unsigned int *)((char *)a2 + v5) ) /*0x40b164*/
     {
       ++v3; /*0x40b166*/
-      v4 += 2; /*0x40b167*/
+      a2 += 2; /*0x40b167*/
       if ( v3 >= v2 ) /*0x40b16c*/
         return 1; /*0x40b16c*/
     }
@@ -2014,7 +2014,7 @@ char VectorClass_flat::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(8 * a2); /*0x40b1a7*/
+      v6 = (char *)RA2_OPNEW(8 * a2); /*0x40b1a7*/
       if ( v6 ) /*0x40b1b1*/
       {
         v7 = v6; /*0x40b1b6*/
@@ -2060,7 +2060,7 @@ char VectorClass_flat::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x40b22f*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40b238*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x40b238*/
           *((unsigned int *)this + 1) = 0; /*0x40b240*/
         }
       }
@@ -2087,7 +2087,7 @@ void VectorClass_flat::Cleanup5()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40b27d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40b283*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40b283*/
     *((unsigned int *)this + 1) = 0; /*0x40b28b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40b28e*/
@@ -2095,7 +2095,7 @@ void VectorClass_flat::Cleanup5()
 
 }
 // 0x40B2A0
-int  VectorClass_flat::GetSize()
+int  VectorClass_flat::GetSize( unsigned int * a2)
 {
 
   int result; // eax
@@ -2127,7 +2127,7 @@ unsigned int VectorClass_flat::GetCapacity(int a2)
 
 }
 // 0x40B300
-VectorClass_flat *  VectorClass_flat::QueryInterface(char a2)
+VectorClass_flat *  VectorClass_flat::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -2136,13 +2136,13 @@ VectorClass_flat *  VectorClass_flat::QueryInterface(char a2)
   *Block = &vt_VectorClass_SubzoneConnectionStruct; /*0x40b306*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40b310*/
   {
-    __3_YAXPAX_Z(v3); /*0x40b318*/
+    RA2_OPDEL(v3); /*0x40b318*/
     *(Block + 1) = 0; /*0x40b320*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40b32b*/
   *(Block + 2) = 0; /*0x40b331*/
-  if ( (a2 & 1) != 0 ) /*0x40b338*/
-    __3_YAXPAX_Z(Block); /*0x40b33b*/
+  if ( (Block & 1) != 0 ) /*0x40b338*/
+    RA2_OPDEL(Block); /*0x40b33b*/
   return (VectorClass *)Block; /*0x40b345*/
 
 }
@@ -2194,7 +2194,7 @@ void VectorClass_ptr_BombClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40b7fd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40b803*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40b803*/
     *((unsigned int *)this + 1) = 0; /*0x40b80b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40b80e*/
@@ -2248,7 +2248,7 @@ void VectorClass_Techno::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40ba5d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40ba63*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40ba63*/
     *((unsigned int *)this + 1) = 0; /*0x40ba6b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40ba6e*/
@@ -2306,13 +2306,13 @@ VectorClass_flat * VectorClass_ptr_BombClass::QueryInterface(unsigned int * Bloc
   *Block = &vt_VectorClass_BombClass; /*0x40bbc6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40bbd0*/
   {
-    __3_YAXPAX_Z(v3); /*0x40bbd8*/
+    RA2_OPDEL(v3); /*0x40bbd8*/
     *(Block + 1) = 0; /*0x40bbe0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40bbeb*/
   *(Block + 2) = 0; /*0x40bbf1*/
   if ( (a2 & 1) != 0 ) /*0x40bbf8*/
-    __3_YAXPAX_Z(Block); /*0x40bbfb*/
+    RA2_OPDEL(Block); /*0x40bbfb*/
   return (VectorClass *)Block; /*0x40bc05*/
 
 }
@@ -2329,13 +2329,13 @@ VectorClass_flat * VectorClass_BombClass::QueryInterface(unsigned int * Block, c
   *Block = &vt_VectorClass_TechnoClass; /*0x40bc66*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40bc70*/
   {
-    __3_YAXPAX_Z(v3); /*0x40bc78*/
+    RA2_OPDEL(v3); /*0x40bc78*/
     *(Block + 1) = 0; /*0x40bc80*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40bc8b*/
   *(Block + 2) = 0; /*0x40bc91*/
   if ( (a2 & 1) != 0 ) /*0x40bc98*/
-    __3_YAXPAX_Z(Block); /*0x40bc9b*/
+    RA2_OPDEL(Block); /*0x40bc9b*/
   return (VectorClass *)Block; /*0x40bca5*/
 
 }
@@ -2397,7 +2397,7 @@ char VectorClass_cptr_CommandClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40bf0c*/
       v4 = a3; /*0x40bf22*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40bf1e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40bf1e*/
     *((unsigned char *)this + 12) = 1; /*0x40bf26*/
     if ( v4 ) /*0x40bf2a*/
     {
@@ -2410,7 +2410,7 @@ char VectorClass_cptr_CommandClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40bf4e*/
         if ( *((unsigned char *)this + 13) ) /*0x40bf5b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40bf66*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x40bf66*/
           *((unsigned int *)this + 1) = 0; /*0x40bf6e*/
         }
       }
@@ -2440,7 +2440,7 @@ void VectorClass_cptr_CommandClass::SetAt()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40bfad*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40bfb3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40bfb3*/
     *((unsigned int *)this + 1) = 0; /*0x40bfbb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40bfbe*/
@@ -2498,7 +2498,7 @@ void VectorClass_ptr_LightConvertClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x40c239*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x40c240*/
   {
-    __3_YAXPAX_Z(v2); /*0x40c246*/
+    RA2_OPDEL(v2); /*0x40c246*/
     *((unsigned int *)this + 1) = 0; /*0x40c24e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40c251*/
@@ -2563,7 +2563,7 @@ char VectorClass_ptr_LightConvertClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40c2ec*/
       v4 = a3; /*0x40c302*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40c2fe*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40c2fe*/
     *((unsigned char *)this + 12) = 1; /*0x40c306*/
     if ( v4 ) /*0x40c30a*/
     {
@@ -2576,7 +2576,7 @@ char VectorClass_ptr_LightConvertClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40c32e*/
         if ( *((unsigned char *)this + 13) ) /*0x40c33b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40c346*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x40c346*/
           *((unsigned int *)this + 1) = 0; /*0x40c34e*/
         }
       }
@@ -2606,7 +2606,7 @@ void VectorClass_ptr_LightConvertClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40c38d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40c393*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40c393*/
     *((unsigned int *)this + 1) = 0; /*0x40c39b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40c39e*/
@@ -2687,13 +2687,13 @@ VectorClass_flat * VectorClass_ptr_LightConvertClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_LightConvertClass; /*0x40c4f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40c500*/
   {
-    __3_YAXPAX_Z(v3); /*0x40c508*/
+    RA2_OPDEL(v3); /*0x40c508*/
     *(Block + 1) = 0; /*0x40c510*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40c51b*/
   *(Block + 2) = 0; /*0x40c521*/
   if ( (a2 & 1) != 0 ) /*0x40c528*/
-    __3_YAXPAX_Z(Block); /*0x40c52b*/
+    RA2_OPDEL(Block); /*0x40c52b*/
   return (VectorClass *)Block; /*0x40c535*/
 
 }
@@ -2701,7 +2701,7 @@ VectorClass_flat * VectorClass_ptr_LightConvertClass::QueryInterface(unsigned in
 
 // 0x40C540
 namespace gamemd {
-DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_LightConvertClass___(char a2)
+DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_LightConvertClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -2710,13 +2710,13 @@ DynamicVector * VectorClass_ptr_LightConvertClass::Constructor_VectorClass_Light
   *Block = &vt_VectorClass_LightConvertClass; /*0x40c546*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40c550*/
   {
-    __3_YAXPAX_Z(v3); /*0x40c558*/
+    RA2_OPDEL(v3); /*0x40c558*/
     *(Block + 1) = 0; /*0x40c560*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40c56b*/
   *(Block + 2) = 0; /*0x40c571*/
-  if ( (a2 & 1) != 0 ) /*0x40c578*/
-    __3_YAXPAX_Z(Block); /*0x40c57b*/
+  if ( (Block & 1) != 0 ) /*0x40c578*/
+    RA2_OPDEL(Block); /*0x40c57b*/
   return (DynamicVector *)Block; /*0x40c585*/
 
 }
@@ -2733,7 +2733,7 @@ void VectorClass_ptr_IsometricTileClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x40c829*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x40c830*/
   {
-    __3_YAXPAX_Z(v2); /*0x40c836*/
+    RA2_OPDEL(v2); /*0x40c836*/
     *((unsigned int *)this + 1) = 0; /*0x40c83e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40c841*/
@@ -2811,7 +2811,7 @@ char VectorClass_ptr_IsometricTileClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40c8dc*/
       v4 = a3; /*0x40c8f2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40c8ee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40c8ee*/
     *((unsigned char *)this + 12) = 1; /*0x40c8f6*/
     if ( v4 ) /*0x40c8fa*/
     {
@@ -2824,7 +2824,7 @@ char VectorClass_ptr_IsometricTileClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40c91e*/
         if ( *((unsigned char *)this + 13) ) /*0x40c92b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40c936*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x40c936*/
           *((unsigned int *)this + 1) = 0; /*0x40c93e*/
         }
       }
@@ -2854,7 +2854,7 @@ void VectorClass_ptr_IsometricTileClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40c97d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40c983*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40c983*/
     *((unsigned int *)this + 1) = 0; /*0x40c98b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40c98e*/
@@ -2917,7 +2917,7 @@ char VectorClass_ptr_IsometricTileClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40ca18*/
       v4 = a3; /*0x40ca2e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40ca2a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40ca2a*/
     *((unsigned char *)this + 12) = 1; /*0x40ca32*/
     if ( !v4 ) /*0x40ca36*/
       return 0; /*0x40caaa*/
@@ -2930,7 +2930,7 @@ char VectorClass_ptr_IsometricTileClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40ca51*/
       if ( *((unsigned char *)this + 13) ) /*0x40ca5e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40ca69*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x40ca69*/
         *((unsigned int *)this + 1) = 0; /*0x40ca71*/
       }
     }
@@ -2984,13 +2984,13 @@ VectorClass_flat * VectorClass_ptr_IsometricTileClass::QueryInterface(unsigned i
   *Block = &vt_VectorClass_IsometricTileClass; /*0x40cae6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40caf0*/
   {
-    __3_YAXPAX_Z(v3); /*0x40caf8*/
+    RA2_OPDEL(v3); /*0x40caf8*/
     *(Block + 1) = 0; /*0x40cb00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40cb0b*/
   *(Block + 2) = 0; /*0x40cb11*/
   if ( (a2 & 1) != 0 ) /*0x40cb18*/
-    __3_YAXPAX_Z(Block); /*0x40cb1b*/
+    RA2_OPDEL(Block); /*0x40cb1b*/
   return (VectorClass *)Block; /*0x40cb25*/
 
 }
@@ -2998,7 +2998,7 @@ VectorClass_flat * VectorClass_ptr_IsometricTileClass::QueryInterface(unsigned i
 
 // 0x40CB30
 namespace gamemd {
-DynamicVector * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_IsometricTileClass___(char a2)
+DynamicVector * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_IsometricTileClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -3007,13 +3007,13 @@ DynamicVector * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_Isom
   *Block = &vt_VectorClass_IsometricTileClass; /*0x40cb36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40cb40*/
   {
-    __3_YAXPAX_Z(v3); /*0x40cb48*/
+    RA2_OPDEL(v3); /*0x40cb48*/
     *(Block + 1) = 0; /*0x40cb50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40cb5b*/
   *(Block + 2) = 0; /*0x40cb61*/
-  if ( (a2 & 1) != 0 ) /*0x40cb68*/
-    __3_YAXPAX_Z(Block); /*0x40cb6b*/
+  if ( (Block & 1) != 0 ) /*0x40cb68*/
+    RA2_OPDEL(Block); /*0x40cb6b*/
   return (DynamicVector *)Block; /*0x40cb75*/
 
 }
@@ -3031,7 +3031,7 @@ int VectorClass_ptr_IsometricTileClass::GetItem()
 
 // 0x40CC20
 namespace gamemd {
-LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectClass___(char a2)
+LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -3040,13 +3040,13 @@ LogicClass * VectorClass_ptr_IsometricTileClass::Constructor_VectorClass_ObjectC
   *Block = &vt_VectorClass_ObjectClass; /*0x40cc26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40cc30*/
   {
-    __3_YAXPAX_Z(v3); /*0x40cc38*/
+    RA2_OPDEL(v3); /*0x40cc38*/
     *(Block + 1) = 0; /*0x40cc40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40cc4b*/
   *(Block + 2) = 0; /*0x40cc51*/
-  if ( (a2 & 1) != 0 ) /*0x40cc58*/
-    __3_YAXPAX_Z(Block); /*0x40cc5b*/
+  if ( (Block & 1) != 0 ) /*0x40cc58*/
+    RA2_OPDEL(Block); /*0x40cc5b*/
   return (LogicClass *)Block; /*0x40cc65*/
 
 }
@@ -3063,7 +3063,7 @@ void VectorClass_ptr_IsometricTileClass::TryFreeAndClear()
   *((unsigned int *)this + 4) = 0; /*0x40cc79*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x40cc80*/
   {
-    __3_YAXPAX_Z(v2); /*0x40cc86*/
+    RA2_OPDEL(v2); /*0x40cc86*/
     *((unsigned int *)this + 1) = 0; /*0x40cc8e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40cc91*/
@@ -3171,7 +3171,7 @@ char VectorClass_ptr_MixFileClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40d5fc*/
       v4 = a3; /*0x40d612*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40d60e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40d60e*/
     *((unsigned char *)this + 12) = 1; /*0x40d616*/
     if ( v4 ) /*0x40d61a*/
     {
@@ -3184,7 +3184,7 @@ char VectorClass_ptr_MixFileClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40d63e*/
         if ( *((unsigned char *)this + 13) ) /*0x40d64b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40d656*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x40d656*/
           *((unsigned int *)this + 1) = 0; /*0x40d65e*/
         }
       }
@@ -3214,7 +3214,7 @@ void VectorClass_ptr_MixFileClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40d69d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40d6a3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40d6a3*/
     *((unsigned int *)this + 1) = 0; /*0x40d6ab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40d6ae*/
@@ -3272,13 +3272,13 @@ VectorClass_flat * VectorClass_ptr_MixFileClass::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_MixFileClass; /*0x40d806*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40d810*/
   {
-    __3_YAXPAX_Z(v3); /*0x40d818*/
+    RA2_OPDEL(v3); /*0x40d818*/
     *(Block + 1) = 0; /*0x40d820*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40d82b*/
   *(Block + 2) = 0; /*0x40d831*/
   if ( (a2 & 1) != 0 ) /*0x40d838*/
-    __3_YAXPAX_Z(Block); /*0x40d83b*/
+    RA2_OPDEL(Block); /*0x40d83b*/
   return (VectorClass *)Block; /*0x40d845*/
 
 }
@@ -3295,7 +3295,7 @@ void VectorClass_ptr_ScriptClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x40e7f9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x40e800*/
   {
-    __3_YAXPAX_Z(v2); /*0x40e806*/
+    RA2_OPDEL(v2); /*0x40e806*/
     *((unsigned int *)this + 1) = 0; /*0x40e80e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40e811*/
@@ -3373,7 +3373,7 @@ char VectorClass_ptr_ScriptClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40e8ac*/
       v4 = a3; /*0x40e8c2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40e8be*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40e8be*/
     *((unsigned char *)this + 12) = 1; /*0x40e8c6*/
     if ( v4 ) /*0x40e8ca*/
     {
@@ -3386,7 +3386,7 @@ char VectorClass_ptr_ScriptClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40e8ee*/
         if ( *((unsigned char *)this + 13) ) /*0x40e8fb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40e906*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x40e906*/
           *((unsigned int *)this + 1) = 0; /*0x40e90e*/
         }
       }
@@ -3416,7 +3416,7 @@ void VectorClass_ptr_ScriptClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40e94d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40e953*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40e953*/
     *((unsigned int *)this + 1) = 0; /*0x40e95b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40e95e*/
@@ -3479,7 +3479,7 @@ char VectorClass_ptr_ScriptClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40e9e8*/
       v4 = a3; /*0x40e9fe*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40e9fa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40e9fa*/
     *((unsigned char *)this + 12) = 1; /*0x40ea02*/
     if ( !v4 ) /*0x40ea06*/
       return 0; /*0x40ea7a*/
@@ -3492,7 +3492,7 @@ char VectorClass_ptr_ScriptClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40ea21*/
       if ( *((unsigned char *)this + 13) ) /*0x40ea2e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40ea39*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x40ea39*/
         *((unsigned int *)this + 1) = 0; /*0x40ea41*/
       }
     }
@@ -3546,13 +3546,13 @@ VectorClass_flat * VectorClass_ptr_ScriptClass::QueryInterface(unsigned int * Bl
   *Block = &vt_VectorClass_ScriptClass; /*0x40eab6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40eac0*/
   {
-    __3_YAXPAX_Z(v3); /*0x40eac8*/
+    RA2_OPDEL(v3); /*0x40eac8*/
     *(Block + 1) = 0; /*0x40ead0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40eadb*/
   *(Block + 2) = 0; /*0x40eae1*/
   if ( (a2 & 1) != 0 ) /*0x40eae8*/
-    __3_YAXPAX_Z(Block); /*0x40eaeb*/
+    RA2_OPDEL(Block); /*0x40eaeb*/
   return (VectorClass *)Block; /*0x40eaf5*/
 
 }
@@ -3569,13 +3569,13 @@ DynamicVector * VectorClass_ptr_ScriptClass::Constructor_VectorClass_ScriptClass
   *Block = &vt_VectorClass_ScriptClass; /*0x40eb06*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40eb10*/
   {
-    __3_YAXPAX_Z(v3); /*0x40eb18*/
+    RA2_OPDEL(v3); /*0x40eb18*/
     *(Block + 1) = 0; /*0x40eb20*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40eb2b*/
   *(Block + 2) = 0; /*0x40eb31*/
   if ( (a2 & 1) != 0 ) /*0x40eb38*/
-    __3_YAXPAX_Z(Block); /*0x40eb3b*/
+    RA2_OPDEL(Block); /*0x40eb3b*/
   return (DynamicVector *)Block; /*0x40eb45*/
 
 }
@@ -3592,7 +3592,7 @@ void VectorClass_ptr_VoxelAnimClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x40eec9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x40eed0*/
   {
-    __3_YAXPAX_Z(v2); /*0x40eed6*/
+    RA2_OPDEL(v2); /*0x40eed6*/
     *((unsigned int *)this + 1) = 0; /*0x40eede*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40eee1*/
@@ -3670,7 +3670,7 @@ char VectorClass_ptr_VoxelAnimClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40ef7c*/
       v4 = a3; /*0x40ef92*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40ef8e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40ef8e*/
     *((unsigned char *)this + 12) = 1; /*0x40ef96*/
     if ( v4 ) /*0x40ef9a*/
     {
@@ -3683,7 +3683,7 @@ char VectorClass_ptr_VoxelAnimClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40efbe*/
         if ( *((unsigned char *)this + 13) ) /*0x40efcb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40efd6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x40efd6*/
           *((unsigned int *)this + 1) = 0; /*0x40efde*/
         }
       }
@@ -3713,7 +3713,7 @@ void VectorClass_ptr_VoxelAnimClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40f01d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40f023*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40f023*/
     *((unsigned int *)this + 1) = 0; /*0x40f02b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40f02e*/
@@ -3776,7 +3776,7 @@ char VectorClass_ptr_VoxelAnimClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40f0b8*/
       v4 = a3; /*0x40f0ce*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40f0ca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40f0ca*/
     *((unsigned char *)this + 12) = 1; /*0x40f0d2*/
     if ( !v4 ) /*0x40f0d6*/
       return 0; /*0x40f14a*/
@@ -3789,7 +3789,7 @@ char VectorClass_ptr_VoxelAnimClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40f0f1*/
       if ( *((unsigned char *)this + 13) ) /*0x40f0fe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40f109*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x40f109*/
         *((unsigned int *)this + 1) = 0; /*0x40f111*/
       }
     }
@@ -3843,13 +3843,13 @@ VectorClass_flat * VectorClass_ptr_VoxelAnimClass::QueryInterface(unsigned int *
   *Block = &vt_VectorClass_VoxelAnimClass; /*0x40f186*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40f190*/
   {
-    __3_YAXPAX_Z(v3); /*0x40f198*/
+    RA2_OPDEL(v3); /*0x40f198*/
     *(Block + 1) = 0; /*0x40f1a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40f1ab*/
   *(Block + 2) = 0; /*0x40f1b1*/
   if ( (a2 & 1) != 0 ) /*0x40f1b8*/
-    __3_YAXPAX_Z(Block); /*0x40f1bb*/
+    RA2_OPDEL(Block); /*0x40f1bb*/
   return (VectorClass *)Block; /*0x40f1c5*/
 
 }
@@ -3857,7 +3857,7 @@ VectorClass_flat * VectorClass_ptr_VoxelAnimClass::QueryInterface(unsigned int *
 
 // 0x40F1D0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAnimClass___(char a2)
+DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAnimClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -3866,13 +3866,13 @@ DynamicVector * VectorClass_ptr_VoxelAnimClass::Constructor_VectorClass_VoxelAni
   *Block = &vt_VectorClass_VoxelAnimClass; /*0x40f1d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40f1e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x40f1e8*/
+    RA2_OPDEL(v3); /*0x40f1e8*/
     *(Block + 1) = 0; /*0x40f1f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40f1fb*/
   *(Block + 2) = 0; /*0x40f201*/
-  if ( (a2 & 1) != 0 ) /*0x40f208*/
-    __3_YAXPAX_Z(Block); /*0x40f20b*/
+  if ( (Block & 1) != 0 ) /*0x40f208*/
+    RA2_OPDEL(Block); /*0x40f20b*/
   return (DynamicVector *)Block; /*0x40f215*/
 
 }
@@ -3889,7 +3889,7 @@ void VectorClass_ptr_WarheadTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x40f5e9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x40f5f0*/
   {
-    __3_YAXPAX_Z(v2); /*0x40f5f6*/
+    RA2_OPDEL(v2); /*0x40f5f6*/
     *((unsigned int *)this + 1) = 0; /*0x40f5fe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40f601*/
@@ -3967,7 +3967,7 @@ char VectorClass_ptr_WarheadTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40f69c*/
       v4 = a3; /*0x40f6b2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40f6ae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40f6ae*/
     *((unsigned char *)this + 12) = 1; /*0x40f6b6*/
     if ( v4 ) /*0x40f6ba*/
     {
@@ -3980,7 +3980,7 @@ char VectorClass_ptr_WarheadTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40f6de*/
         if ( *((unsigned char *)this + 13) ) /*0x40f6eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40f6f6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x40f6f6*/
           *((unsigned int *)this + 1) = 0; /*0x40f6fe*/
         }
       }
@@ -4010,7 +4010,7 @@ void VectorClass_ptr_WarheadTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40f73d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40f743*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40f743*/
     *((unsigned int *)this + 1) = 0; /*0x40f74b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40f74e*/
@@ -4073,7 +4073,7 @@ char VectorClass_ptr_WarheadTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40f7d8*/
       v4 = a3; /*0x40f7ee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40f7ea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40f7ea*/
     *((unsigned char *)this + 12) = 1; /*0x40f7f2*/
     if ( !v4 ) /*0x40f7f6*/
       return 0; /*0x40f86a*/
@@ -4086,7 +4086,7 @@ char VectorClass_ptr_WarheadTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40f811*/
       if ( *((unsigned char *)this + 13) ) /*0x40f81e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40f829*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x40f829*/
         *((unsigned int *)this + 1) = 0; /*0x40f831*/
       }
     }
@@ -4140,13 +4140,13 @@ VectorClass_flat * VectorClass_ptr_WarheadTypeClass::QueryInterface(unsigned int
   *Block = &vt_VectorClass_WarheadTypeClass; /*0x40f8a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40f8b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x40f8b8*/
+    RA2_OPDEL(v3); /*0x40f8b8*/
     *(Block + 1) = 0; /*0x40f8c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40f8cb*/
   *(Block + 2) = 0; /*0x40f8d1*/
   if ( (a2 & 1) != 0 ) /*0x40f8d8*/
-    __3_YAXPAX_Z(Block); /*0x40f8db*/
+    RA2_OPDEL(Block); /*0x40f8db*/
   return (VectorClass *)Block; /*0x40f8e5*/
 
 }
@@ -4154,7 +4154,7 @@ VectorClass_flat * VectorClass_ptr_WarheadTypeClass::QueryInterface(unsigned int
 
 // 0x40F8F0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_WarheadTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_WarheadTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -4163,13 +4163,13 @@ DynamicVector * VectorClass_ptr_WarheadTypeClass::Constructor_VectorClass_Warhea
   *Block = &vt_VectorClass_WarheadTypeClass; /*0x40f8f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40f900*/
   {
-    __3_YAXPAX_Z(v3); /*0x40f908*/
+    RA2_OPDEL(v3); /*0x40f908*/
     *(Block + 1) = 0; /*0x40f910*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40f91b*/
   *(Block + 2) = 0; /*0x40f921*/
-  if ( (a2 & 1) != 0 ) /*0x40f928*/
-    __3_YAXPAX_Z(Block); /*0x40f92b*/
+  if ( (Block & 1) != 0 ) /*0x40f928*/
+    RA2_OPDEL(Block); /*0x40f92b*/
   return (DynamicVector *)Block; /*0x40f935*/
 
 }
@@ -4186,7 +4186,7 @@ void VectorClass_ptr_WeaponTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x40fbb9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x40fbc0*/
   {
-    __3_YAXPAX_Z(v2); /*0x40fbc6*/
+    RA2_OPDEL(v2); /*0x40fbc6*/
     *((unsigned int *)this + 1) = 0; /*0x40fbce*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40fbd1*/
@@ -4264,7 +4264,7 @@ char VectorClass_ptr_WeaponTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x40fc6c*/
       v4 = a3; /*0x40fc82*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40fc7e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40fc7e*/
     *((unsigned char *)this + 12) = 1; /*0x40fc86*/
     if ( v4 ) /*0x40fc8a*/
     {
@@ -4277,7 +4277,7 @@ char VectorClass_ptr_WeaponTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x40fcae*/
         if ( *((unsigned char *)this + 13) ) /*0x40fcbb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x40fcc6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x40fcc6*/
           *((unsigned int *)this + 1) = 0; /*0x40fcce*/
         }
       }
@@ -4307,7 +4307,7 @@ void VectorClass_ptr_WeaponTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x40fd0d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x40fd13*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x40fd13*/
     *((unsigned int *)this + 1) = 0; /*0x40fd1b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x40fd1e*/
@@ -4370,7 +4370,7 @@ char VectorClass_ptr_WeaponTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40fda8*/
       v4 = a3; /*0x40fdbe*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x40fdba*/
+      v4 = RA2_OPNEW(4 * a2); /*0x40fdba*/
     *((unsigned char *)this + 12) = 1; /*0x40fdc2*/
     if ( !v4 ) /*0x40fdc6*/
       return 0; /*0x40fe3a*/
@@ -4383,7 +4383,7 @@ char VectorClass_ptr_WeaponTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x40fde1*/
       if ( *((unsigned char *)this + 13) ) /*0x40fdee*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x40fdf9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x40fdf9*/
         *((unsigned int *)this + 1) = 0; /*0x40fe01*/
       }
     }
@@ -4437,13 +4437,13 @@ VectorClass_flat * VectorClass_ptr_WeaponTypeClass::QueryInterface(unsigned int 
   *Block = &vt_VectorClass_WeaponTypeClass; /*0x40fe76*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40fe80*/
   {
-    __3_YAXPAX_Z(v3); /*0x40fe88*/
+    RA2_OPDEL(v3); /*0x40fe88*/
     *(Block + 1) = 0; /*0x40fe90*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40fe9b*/
   *(Block + 2) = 0; /*0x40fea1*/
   if ( (a2 & 1) != 0 ) /*0x40fea8*/
-    __3_YAXPAX_Z(Block); /*0x40feab*/
+    RA2_OPDEL(Block); /*0x40feab*/
   return (VectorClass *)Block; /*0x40feb5*/
 
 }
@@ -4451,7 +4451,7 @@ VectorClass_flat * VectorClass_ptr_WeaponTypeClass::QueryInterface(unsigned int 
 
 // 0x40FEC0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -4460,13 +4460,13 @@ DynamicVector * VectorClass_ptr_WeaponTypeClass::Constructor_VectorClass_WeaponT
   *Block = &vt_VectorClass_WeaponTypeClass; /*0x40fec6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40fed0*/
   {
-    __3_YAXPAX_Z(v3); /*0x40fed8*/
+    RA2_OPDEL(v3); /*0x40fed8*/
     *(Block + 1) = 0; /*0x40fee0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x40feeb*/
   *(Block + 2) = 0; /*0x40fef1*/
-  if ( (a2 & 1) != 0 ) /*0x40fef8*/
-    __3_YAXPAX_Z(Block); /*0x40fefb*/
+  if ( (Block & 1) != 0 ) /*0x40fef8*/
+    RA2_OPDEL(Block); /*0x40fefb*/
   return (DynamicVector *)Block; /*0x40ff05*/
 
 }
@@ -4483,7 +4483,7 @@ void VectorClass_ptr_AirstrikeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x41dde9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x41ddf0*/
   {
-    __3_YAXPAX_Z(v2); /*0x41ddf6*/
+    RA2_OPDEL(v2); /*0x41ddf6*/
     *((unsigned int *)this + 1) = 0; /*0x41ddfe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x41de01*/
@@ -4561,7 +4561,7 @@ char VectorClass_ptr_AirstrikeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x41de9c*/
       v4 = a3; /*0x41deb2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x41deae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x41deae*/
     *((unsigned char *)this + 12) = 1; /*0x41deb6*/
     if ( v4 ) /*0x41deba*/
     {
@@ -4574,7 +4574,7 @@ char VectorClass_ptr_AirstrikeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x41dede*/
         if ( *((unsigned char *)this + 13) ) /*0x41deeb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x41def6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x41def6*/
           *((unsigned int *)this + 1) = 0; /*0x41defe*/
         }
       }
@@ -4604,7 +4604,7 @@ void VectorClass_ptr_AirstrikeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x41df3d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x41df43*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x41df43*/
     *((unsigned int *)this + 1) = 0; /*0x41df4b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x41df4e*/
@@ -4667,7 +4667,7 @@ char VectorClass_ptr_AirstrikeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x41dfd8*/
       v4 = a3; /*0x41dfee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x41dfea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x41dfea*/
     *((unsigned char *)this + 12) = 1; /*0x41dff2*/
     if ( !v4 ) /*0x41dff6*/
       return 0; /*0x41e06a*/
@@ -4680,7 +4680,7 @@ char VectorClass_ptr_AirstrikeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x41e011*/
       if ( *((unsigned char *)this + 13) ) /*0x41e01e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x41e029*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x41e029*/
         *((unsigned int *)this + 1) = 0; /*0x41e031*/
       }
     }
@@ -4734,13 +4734,13 @@ VectorClass_flat * VectorClass_ptr_AirstrikeClass::QueryInterface(unsigned int *
   *Block = &vt_VectorClass_AirstrikeClass; /*0x41e0a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x41e0b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x41e0b8*/
+    RA2_OPDEL(v3); /*0x41e0b8*/
     *(Block + 1) = 0; /*0x41e0c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x41e0cb*/
   *(Block + 2) = 0; /*0x41e0d1*/
   if ( (a2 & 1) != 0 ) /*0x41e0d8*/
-    __3_YAXPAX_Z(Block); /*0x41e0db*/
+    RA2_OPDEL(Block); /*0x41e0db*/
   return (VectorClass *)Block; /*0x41e0e5*/
 
 }
@@ -4748,7 +4748,7 @@ VectorClass_flat * VectorClass_ptr_AirstrikeClass::QueryInterface(unsigned int *
 
 // 0x41E0F0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_AirstrikeClass___(char a2)
+DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_AirstrikeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -4757,13 +4757,13 @@ DynamicVector * VectorClass_ptr_AirstrikeClass::Constructor_VectorClass_Airstrik
   *Block = &vt_VectorClass_AirstrikeClass; /*0x41e0f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x41e100*/
   {
-    __3_YAXPAX_Z(v3); /*0x41e108*/
+    RA2_OPDEL(v3); /*0x41e108*/
     *(Block + 1) = 0; /*0x41e110*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x41e11b*/
   *(Block + 2) = 0; /*0x41e121*/
-  if ( (a2 & 1) != 0 ) /*0x41e128*/
-    __3_YAXPAX_Z(Block); /*0x41e12b*/
+  if ( (Block & 1) != 0 ) /*0x41e128*/
+    RA2_OPDEL(Block); /*0x41e12b*/
   return (DynamicVector *)Block; /*0x41e135*/
 
 }
@@ -4780,7 +4780,7 @@ void VectorClass_ptr_AlphaShapeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x421809*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x421810*/
   {
-    __3_YAXPAX_Z(v2); /*0x421816*/
+    RA2_OPDEL(v2); /*0x421816*/
     *((unsigned int *)this + 1) = 0; /*0x42181e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x421821*/
@@ -4858,7 +4858,7 @@ char VectorClass_ptr_AlphaShapeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4218bc*/
       v4 = a3; /*0x4218d2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4218ce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4218ce*/
     *((unsigned char *)this + 12) = 1; /*0x4218d6*/
     if ( v4 ) /*0x4218da*/
     {
@@ -4871,7 +4871,7 @@ char VectorClass_ptr_AlphaShapeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4218fe*/
         if ( *((unsigned char *)this + 13) ) /*0x42190b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x421916*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x421916*/
           *((unsigned int *)this + 1) = 0; /*0x42191e*/
         }
       }
@@ -4901,7 +4901,7 @@ void VectorClass_ptr_AlphaShapeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x42195d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x421963*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x421963*/
     *((unsigned int *)this + 1) = 0; /*0x42196b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x42196e*/
@@ -4964,7 +4964,7 @@ char VectorClass_ptr_AlphaShapeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4219f8*/
       v4 = a3; /*0x421a0e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x421a0a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x421a0a*/
     *((unsigned char *)this + 12) = 1; /*0x421a12*/
     if ( !v4 ) /*0x421a16*/
       return 0; /*0x421a8a*/
@@ -4977,7 +4977,7 @@ char VectorClass_ptr_AlphaShapeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x421a31*/
       if ( *((unsigned char *)this + 13) ) /*0x421a3e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x421a49*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x421a49*/
         *((unsigned int *)this + 1) = 0; /*0x421a51*/
       }
     }
@@ -5031,13 +5031,13 @@ VectorClass_flat * VectorClass_ptr_AlphaShapeClass::QueryInterface(unsigned int 
   *Block = &vt_VectorClass_AlphaShapeClass; /*0x421ac6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x421ad0*/
   {
-    __3_YAXPAX_Z(v3); /*0x421ad8*/
+    RA2_OPDEL(v3); /*0x421ad8*/
     *(Block + 1) = 0; /*0x421ae0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x421aeb*/
   *(Block + 2) = 0; /*0x421af1*/
   if ( (a2 & 1) != 0 ) /*0x421af8*/
-    __3_YAXPAX_Z(Block); /*0x421afb*/
+    RA2_OPDEL(Block); /*0x421afb*/
   return (VectorClass *)Block; /*0x421b05*/
 
 }
@@ -5054,13 +5054,13 @@ unsigned int * VectorClass_ptr_AlphaShapeClass::loc_421B10(unsigned int * Block,
   *Block = &vt_VectorClass_AlphaShapeClass; /*0x421b16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x421b20*/
   {
-    __3_YAXPAX_Z(v3); /*0x421b28*/
+    RA2_OPDEL(v3); /*0x421b28*/
     *(Block + 1) = 0; /*0x421b30*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x421b3b*/
   *(Block + 2) = 0; /*0x421b41*/
   if ( (a2 & 1) != 0 ) /*0x421b48*/
-    __3_YAXPAX_Z(Block); /*0x421b4b*/
+    RA2_OPDEL(Block); /*0x421b4b*/
   return Block; /*0x421b55*/
 
 }
@@ -5077,7 +5077,7 @@ void VectorClass_ushort::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x42d5a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x42d5b0*/
   {
-    __3_YAXPAX_Z(v2); /*0x42d5b6*/
+    RA2_OPDEL(v2); /*0x42d5b6*/
     *((unsigned int *)this + 1) = 0; /*0x42d5be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x42d5c1*/
@@ -5155,7 +5155,7 @@ char VectorClass_ushort::Remove(int a2, unsigned short * a3)
     if ( a3 ) /*0x42d90c*/
       v4 = a3; /*0x42d91f*/
     else
-      v4 = __2_YAPAXI_Z(2 * a2); /*0x42d91b*/
+      v4 = RA2_OPNEW(2 * a2); /*0x42d91b*/
     *((unsigned char *)this + 12) = 1; /*0x42d923*/
     if ( v4 ) /*0x42d927*/
     {
@@ -5168,7 +5168,7 @@ char VectorClass_ushort::Remove(int a2, unsigned short * a3)
           ++i; /*0x42d94b*/
         if ( *((unsigned char *)this + 13) ) /*0x42d95a*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x42d965*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x42d965*/
           *((unsigned int *)this + 1) = 0; /*0x42d96d*/
         }
       }
@@ -5198,7 +5198,7 @@ void VectorClass_ushort::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x42d9ad*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x42d9b3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x42d9b3*/
     *((unsigned int *)this + 1) = 0; /*0x42d9bb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x42d9be*/
@@ -5261,7 +5261,7 @@ char VectorClass_ushort::SetCapacity(int a2, unsigned short * a3)
     if ( a3 ) /*0x42da48*/
       v4 = a3; /*0x42da5b*/
     else
-      v4 = __2_YAPAXI_Z(2 * a2); /*0x42da57*/
+      v4 = RA2_OPNEW(2 * a2); /*0x42da57*/
     *((unsigned char *)this + 12) = 1; /*0x42da5f*/
     if ( !v4 ) /*0x42da63*/
       return 0; /*0x42dad9*/
@@ -5274,7 +5274,7 @@ char VectorClass_ushort::SetCapacity(int a2, unsigned short * a3)
         ++i; /*0x42da7e*/
       if ( *((unsigned char *)this + 13) ) /*0x42da8d*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x42da98*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x42da98*/
         *((unsigned int *)this + 1) = 0; /*0x42daa0*/
       }
     }
@@ -5328,13 +5328,13 @@ VectorClass_ushort * VectorClass_ushort::Add(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_unsigned_short_7E3824; /*0x42dbb6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x42dbc0*/
   {
-    __3_YAXPAX_Z(v3); /*0x42dbc8*/
+    RA2_OPDEL(v3); /*0x42dbc8*/
     *(Block + 1) = 0; /*0x42dbd0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x42dbdb*/
   *(Block + 2) = 0; /*0x42dbe1*/
   if ( (a2 & 1) != 0 ) /*0x42dbe8*/
-    __3_YAXPAX_Z(Block); /*0x42dbeb*/
+    RA2_OPDEL(Block); /*0x42dbeb*/
   return (VectorClass_ushort *)Block; /*0x42dbf5*/
 
 }
@@ -5351,13 +5351,13 @@ DynamicVector * VectorClass_ushort::Constructor(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_unsigned_short_7E3824; /*0x42dc06*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x42dc10*/
   {
-    __3_YAXPAX_Z(v3); /*0x42dc18*/
+    RA2_OPDEL(v3); /*0x42dc18*/
     *(Block + 1) = 0; /*0x42dc20*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x42dc2b*/
   *(Block + 2) = 0; /*0x42dc31*/
   if ( (a2 & 1) != 0 ) /*0x42dc38*/
-    __3_YAXPAX_Z(Block); /*0x42dc3b*/
+    RA2_OPDEL(Block); /*0x42dc3b*/
   return (DynamicVector *)Block; /*0x42dc45*/
 
 }
@@ -5420,7 +5420,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
     }
     else
     {
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x42f886*/
+      v4 = RA2_OPNEW(4 * a2); /*0x42f886*/
       if ( v4 ) /*0x42f890*/
         v5 = v4; /*0x42f895*/
       else
@@ -5438,7 +5438,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
         ++i; /*0x42f8cb*/
       if ( *((unsigned char *)this + 13) ) /*0x42f8d8*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x42f8e3*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x42f8e3*/
         *((unsigned int *)this + 1) = 0; /*0x42f8eb*/
       }
     }
@@ -5458,7 +5458,7 @@ char VectorClass_flat::ResizeEx(int a2, unsigned int * a3)
 }
 // 0x42FBA0
 namespace gamemd {
-VectorClass_flat *  VectorClass_Cell::QueryInterface(char a2)
+VectorClass_flat *  VectorClass_Cell::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -5467,13 +5467,13 @@ VectorClass_flat *  VectorClass_Cell::QueryInterface(char a2)
   *Block = &vt_VectorClass_Cell; /*0x42fba6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x42fbb0*/
   {
-    __3_YAXPAX_Z(v3); /*0x42fbb8*/
+    RA2_OPDEL(v3); /*0x42fbb8*/
     *(Block + 1) = 0; /*0x42fbc0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x42fbcb*/
   *(Block + 2) = 0; /*0x42fbd1*/
-  if ( (a2 & 1) != 0 ) /*0x42fbd8*/
-    __3_YAXPAX_Z(Block); /*0x42fbdb*/
+  if ( (Block & 1) != 0 ) /*0x42fbd8*/
+    RA2_OPDEL(Block); /*0x42fbdb*/
   return (VectorClass *)Block; /*0x42fbe5*/
 
 }
@@ -5497,7 +5497,7 @@ unsigned int * VectorClass_flat::CellConstructor(IUnknown * aP1, IUnknown * aP2)
       *((unsigned int *)this + 1) = aP2; /*0x42fcdd*/
       return this; /*0x42fce8*/
     }
-    v5 = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x42fcf3*/
+    v5 = RA2_OPNEW(4 * (unsigned int)aP1); /*0x42fcf3*/
     if ( v5 ) /*0x42fcfd*/
     {
       *((unsigned int *)this + 1) = v5; /*0x42fd00*/
@@ -5521,7 +5521,7 @@ void VectorClass_ptr_FoggedObjectClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x45a079*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x45a080*/
   {
-    __3_YAXPAX_Z(v2); /*0x45a086*/
+    RA2_OPDEL(v2); /*0x45a086*/
     *((unsigned int *)this + 1) = 0; /*0x45a08e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x45a091*/
@@ -5564,7 +5564,7 @@ void VectorClass_ptr_Reestablish::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x45a0d9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x45a0e0*/
   {
-    __3_YAXPAX_Z(v2); /*0x45a0e6*/
+    RA2_OPDEL(v2); /*0x45a0e6*/
     *((unsigned int *)this + 1) = 0; /*0x45a0ee*/
   }
   *((unsigned char *)this + 13) = 0; /*0x45a0f1*/
@@ -5602,7 +5602,7 @@ void VectorClass_flat::Cleanup()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x45a27d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x45a283*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x45a283*/
     *((unsigned int *)this + 1) = 0; /*0x45a28b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x45a28e*/
@@ -5616,7 +5616,7 @@ void VectorClass_ptr_InfantryClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x45a4dd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x45a4e3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x45a4e3*/
     *((unsigned int *)this + 1) = 0; /*0x45a4eb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x45a4ee*/
@@ -5672,7 +5672,7 @@ char VectorClass_ptr_FoggedObjectClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a698*/
       v4 = a3; /*0x45a6ae*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x45a6aa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x45a6aa*/
     *((unsigned char *)this + 12) = 1; /*0x45a6b2*/
     if ( !v4 ) /*0x45a6b6*/
       return 0; /*0x45a72a*/
@@ -5685,7 +5685,7 @@ char VectorClass_ptr_FoggedObjectClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x45a6d1*/
       if ( *((unsigned char *)this + 13) ) /*0x45a6de*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a6e9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x45a6e9*/
         *((unsigned int *)this + 1) = 0; /*0x45a6f1*/
       }
     }
@@ -5774,7 +5774,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a7bc*/
       v4 = a3; /*0x45a7d2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x45a7ce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x45a7ce*/
     *((unsigned char *)this + 12) = 1; /*0x45a7d6*/
     if ( v4 ) /*0x45a7da*/
     {
@@ -5787,7 +5787,7 @@ char VectorClass_ptr_Reestablish::Remove(int a2, unsigned int * a3)
           ++i; /*0x45a7fe*/
         if ( *((unsigned char *)this + 13) ) /*0x45a80b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a816*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x45a816*/
           *((unsigned int *)this + 1) = 0; /*0x45a81e*/
         }
       }
@@ -5817,7 +5817,7 @@ void VectorClass_ptr_Reestablish::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x45a85d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x45a863*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x45a863*/
     *((unsigned int *)this + 1) = 0; /*0x45a86b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x45a86e*/
@@ -5880,7 +5880,7 @@ char VectorClass_ptr_Reestablish::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a8f8*/
       v4 = a3; /*0x45a90e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x45a90a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x45a90a*/
     *((unsigned char *)this + 12) = 1; /*0x45a912*/
     if ( !v4 ) /*0x45a916*/
       return 0; /*0x45a98a*/
@@ -5893,7 +5893,7 @@ char VectorClass_ptr_Reestablish::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x45a931*/
       if ( *((unsigned char *)this + 13) ) /*0x45a93e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x45a949*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x45a949*/
         *((unsigned int *)this + 1) = 0; /*0x45a951*/
       }
     }
@@ -5947,13 +5947,13 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor(unsigned int * Block, c
   *Block = &vt_VectorClass_ParticleSystemTypeClass_const; /*0x45aa16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x45aa20*/
   {
-    __3_YAXPAX_Z(v3); /*0x45aa28*/
+    RA2_OPDEL(v3); /*0x45aa28*/
     *(Block + 1) = 0; /*0x45aa30*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x45aa3b*/
   *(Block + 2) = 0; /*0x45aa41*/
   if ( (a2 & 1) != 0 ) /*0x45aa48*/
-    __3_YAXPAX_Z(Block); /*0x45aa4b*/
+    RA2_OPDEL(Block); /*0x45aa4b*/
   return (DynamicVector *)Block; /*0x45aa55*/
 
 }
@@ -5970,13 +5970,13 @@ DynamicVector * VectorClass_InfantryPtr::Destruct(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_InfantryClass; /*0x45aab6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x45aac0*/
   {
-    __3_YAXPAX_Z(v3); /*0x45aac8*/
+    RA2_OPDEL(v3); /*0x45aac8*/
     *(Block + 1) = 0; /*0x45aad0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x45aadb*/
   *(Block + 2) = 0; /*0x45aae1*/
   if ( (a2 & 1) != 0 ) /*0x45aae8*/
-    __3_YAXPAX_Z(Block); /*0x45aaeb*/
+    RA2_OPDEL(Block); /*0x45aaeb*/
   return (DynamicVector *)Block; /*0x45aaf5*/
 
 }
@@ -5984,7 +5984,7 @@ DynamicVector * VectorClass_InfantryPtr::Destruct(unsigned int * Block, char a2)
 
 // 0x45AB00
 namespace gamemd {
-DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_FoggedObjectClass___(char a2)
+DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_FoggedObjectClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -5993,13 +5993,13 @@ DynamicVector * VectorClass_ptr_FoggedObjectClass::Constructor_VectorClass_Fogge
   *Block = &vt_VectorClass_FoggedObjectClass; /*0x45ab06*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x45ab10*/
   {
-    __3_YAXPAX_Z(v3); /*0x45ab18*/
+    RA2_OPDEL(v3); /*0x45ab18*/
     *(Block + 1) = 0; /*0x45ab20*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x45ab2b*/
   *(Block + 2) = 0; /*0x45ab31*/
-  if ( (a2 & 1) != 0 ) /*0x45ab38*/
-    __3_YAXPAX_Z(Block); /*0x45ab3b*/
+  if ( (Block & 1) != 0 ) /*0x45ab38*/
+    RA2_OPDEL(Block); /*0x45ab3b*/
   return (DynamicVector *)Block; /*0x45ab45*/
 
 }
@@ -6020,7 +6020,7 @@ char VectorClass_ptr_FoggedObjectClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x45ab6c*/
       v4 = a3; /*0x45ab82*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x45ab7e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x45ab7e*/
     *((unsigned char *)this + 12) = 1; /*0x45ab86*/
     if ( v4 ) /*0x45ab8a*/
     {
@@ -6033,7 +6033,7 @@ char VectorClass_ptr_FoggedObjectClass::Release(int a2, unsigned int * a3)
           ++i; /*0x45abae*/
         if ( *((unsigned char *)this + 13) ) /*0x45abbb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x45abc6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x45abc6*/
           *((unsigned int *)this + 1) = 0; /*0x45abce*/
         }
       }
@@ -6063,7 +6063,7 @@ void VectorClass_ptr_FoggedObjectClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x45ac0d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x45ac13*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x45ac13*/
     *((unsigned int *)this + 1) = 0; /*0x45ac1b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x45ac1e*/
@@ -6121,13 +6121,13 @@ VectorClass_flat * VectorClass_ptr_FoggedObjectClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_FoggedObjectClass; /*0x45ac96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x45aca0*/
   {
-    __3_YAXPAX_Z(v3); /*0x45aca8*/
+    RA2_OPDEL(v3); /*0x45aca8*/
     *(Block + 1) = 0; /*0x45acb0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x45acbb*/
   *(Block + 2) = 0; /*0x45acc1*/
   if ( (a2 & 1) != 0 ) /*0x45acc8*/
-    __3_YAXPAX_Z(Block); /*0x45accb*/
+    RA2_OPDEL(Block); /*0x45accb*/
   return (VectorClass *)Block; /*0x45acd5*/
 
 }
@@ -6144,13 +6144,13 @@ VectorClass_flat * VectorClass_ptr_Reestablish::Add(unsigned int * Block, char a
   *Block = &vt_VectorClass_Reestablish; /*0x45ace6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x45acf0*/
   {
-    __3_YAXPAX_Z(v3); /*0x45acf8*/
+    RA2_OPDEL(v3); /*0x45acf8*/
     *(Block + 1) = 0; /*0x45ad00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x45ad0b*/
   *(Block + 2) = 0; /*0x45ad11*/
   if ( (a2 & 1) != 0 ) /*0x45ad18*/
-    __3_YAXPAX_Z(Block); /*0x45ad1b*/
+    RA2_OPDEL(Block); /*0x45ad1b*/
   return (VectorClass *)Block; /*0x45ad25*/
 
 }
@@ -6167,13 +6167,13 @@ DynamicVector * VectorClass_ptr_Reestablish::Constructor_VectorClass_Reestablish
   *Block = &vt_VectorClass_Reestablish; /*0x45ad36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x45ad40*/
   {
-    __3_YAXPAX_Z(v3); /*0x45ad48*/
+    RA2_OPDEL(v3); /*0x45ad48*/
     *(Block + 1) = 0; /*0x45ad50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x45ad5b*/
   *(Block + 2) = 0; /*0x45ad61*/
   if ( (a2 & 1) != 0 ) /*0x45ad68*/
-    __3_YAXPAX_Z(Block); /*0x45ad6b*/
+    RA2_OPDEL(Block); /*0x45ad6b*/
   return (DynamicVector *)Block; /*0x45ad75*/
 
 }
@@ -6195,7 +6195,7 @@ unsigned int * VectorClass_flat::ConstructorWithVtable(TechnoTypeClass * aP1, Te
       *((unsigned int *)this + 1) = aP2; /*0x45ada8*/
       return this; /*0x45adae*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x45adbd*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * (unsigned int)aP1); /*0x45adbd*/
     *((unsigned char *)this + 13) = 1; /*0x45adc0*/
   }
   return this; /*0x45adad*/
@@ -6218,7 +6218,7 @@ unsigned int * VectorClass_ReestablishPtr::Construct(BuildingClass * aP1, Buildi
       *((unsigned int *)this + 1) = aP2; /*0x45ae78*/
       return this; /*0x45ae7e*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x45ae8d*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * (unsigned int)aP1); /*0x45ae8d*/
     *((unsigned char *)this + 13) = 1; /*0x45ae90*/
   }
   return this; /*0x45ae7d*/
@@ -6303,7 +6303,7 @@ char VectorClass_TPoint3D_int::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(12 * a2); /*0x465e96*/
+      v6 = (char *)RA2_OPNEW(12 * a2); /*0x465e96*/
       if ( v6 ) /*0x465ea0*/
         v7 = v6; /*0x465ea5*/
       else
@@ -6336,7 +6336,7 @@ char VectorClass_TPoint3D_int::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x465f08*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x465f13*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x465f13*/
           *((unsigned int *)this + 1) = 0; /*0x465f1b*/
         }
       }
@@ -6366,7 +6366,7 @@ void VectorClass_TPoint3D_int::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x465f5d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x465f63*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x465f63*/
     *((unsigned int *)this + 1) = 0; /*0x465f6b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x465f6e*/
@@ -6424,13 +6424,13 @@ VectorClass_flat * VectorClass_TPoint3D_int::QueryInterface(unsigned int * Block
   *Block = &vt_VectorClass_TPoint3D_int; /*0x466086*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x466090*/
   {
-    __3_YAXPAX_Z(v3); /*0x466098*/
+    RA2_OPDEL(v3); /*0x466098*/
     *(Block + 1) = 0; /*0x4660a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4660ab*/
   *(Block + 2) = 0; /*0x4660b1*/
   if ( (a2 & 1) != 0 ) /*0x4660b8*/
-    __3_YAXPAX_Z(Block); /*0x4660bb*/
+    RA2_OPDEL(Block); /*0x4660bb*/
   return (VectorClass *)Block; /*0x4660c5*/
 
 }
@@ -6447,7 +6447,7 @@ void VectorClass_ptr_BulletClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x46b5e9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x46b5f0*/
   {
-    __3_YAXPAX_Z(v2); /*0x46b5f6*/
+    RA2_OPDEL(v2); /*0x46b5f6*/
     *((unsigned int *)this + 1) = 0; /*0x46b5fe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x46b601*/
@@ -6525,7 +6525,7 @@ char VectorClass_ptr_BulletClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x46b6bc*/
       v4 = a3; /*0x46b6d2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x46b6ce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x46b6ce*/
     *((unsigned char *)this + 12) = 1; /*0x46b6d6*/
     if ( v4 ) /*0x46b6da*/
     {
@@ -6538,7 +6538,7 @@ char VectorClass_ptr_BulletClass::Release(int a2, unsigned int * a3)
           ++i; /*0x46b6fe*/
         if ( *((unsigned char *)this + 13) ) /*0x46b70b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x46b716*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x46b716*/
           *((unsigned int *)this + 1) = 0; /*0x46b71e*/
         }
       }
@@ -6568,7 +6568,7 @@ void VectorClass_ptr_BulletClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x46b75d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x46b763*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x46b763*/
     *((unsigned int *)this + 1) = 0; /*0x46b76b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x46b76e*/
@@ -6631,7 +6631,7 @@ char VectorClass_ptr_BulletClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x46b7f8*/
       v4 = a3; /*0x46b80e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x46b80a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x46b80a*/
     *((unsigned char *)this + 12) = 1; /*0x46b812*/
     if ( !v4 ) /*0x46b816*/
       return 0; /*0x46b88a*/
@@ -6644,7 +6644,7 @@ char VectorClass_ptr_BulletClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x46b831*/
       if ( *((unsigned char *)this + 13) ) /*0x46b83e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x46b849*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x46b849*/
         *((unsigned int *)this + 1) = 0; /*0x46b851*/
       }
     }
@@ -6698,13 +6698,13 @@ VectorClass_flat * VectorClass_ptr_BulletClass::QueryInterface(unsigned int * Bl
   *Block = &vt_VectorClass_BulletClass; /*0x46b8c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x46b8d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x46b8d8*/
+    RA2_OPDEL(v3); /*0x46b8d8*/
     *(Block + 1) = 0; /*0x46b8e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x46b8eb*/
   *(Block + 2) = 0; /*0x46b8f1*/
   if ( (a2 & 1) != 0 ) /*0x46b8f8*/
-    __3_YAXPAX_Z(Block); /*0x46b8fb*/
+    RA2_OPDEL(Block); /*0x46b8fb*/
   return (VectorClass *)Block; /*0x46b905*/
 
 }
@@ -6721,13 +6721,13 @@ unsigned int * VectorClass_ptr_BulletClass::loc_46B910(unsigned int * Block, cha
   *Block = &vt_VectorClass_BulletClass; /*0x46b916*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x46b920*/
   {
-    __3_YAXPAX_Z(v3); /*0x46b928*/
+    RA2_OPDEL(v3); /*0x46b928*/
     *(Block + 1) = 0; /*0x46b930*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x46b93b*/
   *(Block + 2) = 0; /*0x46b941*/
   if ( (a2 & 1) != 0 ) /*0x46b948*/
-    __3_YAXPAX_Z(Block); /*0x46b94b*/
+    RA2_OPDEL(Block); /*0x46b94b*/
   return Block; /*0x46b955*/
 
 }
@@ -6764,7 +6764,7 @@ void VectorClass_ptr_CaptureManagerClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x472ae9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x472af0*/
   {
-    __3_YAXPAX_Z(v2); /*0x472af6*/
+    RA2_OPDEL(v2); /*0x472af6*/
     *((unsigned int *)this + 1) = 0; /*0x472afe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x472b01*/
@@ -6842,7 +6842,7 @@ char VectorClass_ptr_CaptureManagerClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x472dfc*/
       v4 = a3; /*0x472e12*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x472e0e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x472e0e*/
     *((unsigned char *)this + 12) = 1; /*0x472e16*/
     if ( v4 ) /*0x472e1a*/
     {
@@ -6855,7 +6855,7 @@ char VectorClass_ptr_CaptureManagerClass::Release(int a2, unsigned int * a3)
           ++i; /*0x472e3e*/
         if ( *((unsigned char *)this + 13) ) /*0x472e4b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x472e56*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x472e56*/
           *((unsigned int *)this + 1) = 0; /*0x472e5e*/
         }
       }
@@ -6885,7 +6885,7 @@ void VectorClass_ptr_CaptureManagerClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x472e9d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x472ea3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x472ea3*/
     *((unsigned int *)this + 1) = 0; /*0x472eab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x472eae*/
@@ -6948,7 +6948,7 @@ char VectorClass_ptr_CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x472f38*/
       v4 = a3; /*0x472f4e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x472f4a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x472f4a*/
     *((unsigned char *)this + 12) = 1; /*0x472f52*/
     if ( !v4 ) /*0x472f56*/
       return 0; /*0x472fca*/
@@ -6961,7 +6961,7 @@ char VectorClass_ptr_CaptureManagerClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x472f71*/
       if ( *((unsigned char *)this + 13) ) /*0x472f7e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x472f89*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x472f89*/
         *((unsigned int *)this + 1) = 0; /*0x472f91*/
       }
     }
@@ -7015,13 +7015,13 @@ VectorClass_flat * VectorClass_ptr_CaptureManagerClass::QueryInterface(unsigned 
   *Block = &vt_VectorClass_CaptureManagerClass; /*0x4730a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4730b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4730b8*/
+    RA2_OPDEL(v3); /*0x4730b8*/
     *(Block + 1) = 0; /*0x4730c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4730cb*/
   *(Block + 2) = 0; /*0x4730d1*/
   if ( (a2 & 1) != 0 ) /*0x4730d8*/
-    __3_YAXPAX_Z(Block); /*0x4730db*/
+    RA2_OPDEL(Block); /*0x4730db*/
   return (VectorClass *)Block; /*0x4730e5*/
 
 }
@@ -7029,7 +7029,7 @@ VectorClass_flat * VectorClass_ptr_CaptureManagerClass::QueryInterface(unsigned 
 
 // 0x4730F0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_CaptureManagerClass___(char a2)
+DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_CaptureManagerClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -7038,13 +7038,13 @@ DynamicVector * VectorClass_ptr_CaptureManagerClass::Constructor_VectorClass_Cap
   *Block = &vt_VectorClass_CaptureManagerClass; /*0x4730f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x473100*/
   {
-    __3_YAXPAX_Z(v3); /*0x473108*/
+    RA2_OPDEL(v3); /*0x473108*/
     *(Block + 1) = 0; /*0x473110*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x47311b*/
   *(Block + 2) = 0; /*0x473121*/
-  if ( (a2 & 1) != 0 ) /*0x473128*/
-    __3_YAXPAX_Z(Block); /*0x47312b*/
+  if ( (Block & 1) != 0 ) /*0x473128*/
+    RA2_OPDEL(Block); /*0x47312b*/
   return (DynamicVector *)Block; /*0x473135*/
 
 }
@@ -7056,7 +7056,7 @@ int * VectorClass_flat::ScalarDtor(char a2)
 
   Pipe::Dtor((int *)this); /*0x477753*/
   if ( (a2 & 1) != 0 ) /*0x47775d*/
-    __3_YAXPAX_Z(this); /*0x477760*/
+    RA2_OPDEL(this); /*0x477760*/
   return (int *)this; /*0x47776a*/
 
 }
@@ -7081,7 +7081,7 @@ unsigned int * VectorClass_flat::Copy(VectorClass_flat * aP1)
     *((unsigned int *)this + 2) = v3; /*0x4777dd*/
     if ( v3 ) /*0x4777e0*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x4777e6*/
+      v4 = RA2_OPNEW(4 * v3); /*0x4777e6*/
       *((unsigned int *)this + 1) = v4; /*0x4777f0*/
       if ( v4 ) /*0x4777f3*/
       {
@@ -7134,7 +7134,7 @@ unsigned int * VectorClass_flat::Construct(int a2, int a3)
       *((unsigned int *)this + 1) = a3; /*0x477c08*/
       return this; /*0x477c0e*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x477c1d*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x477c1d*/
     *((unsigned char *)this + 13) = 1; /*0x477c20*/
   }
   return this; /*0x477c0d*/
@@ -7154,7 +7154,7 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
     if ( a3 ) /*0x477c8c*/
       v4 = a3; /*0x477ca2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x477c9e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x477c9e*/
     *((unsigned char *)this + 12) = 1; /*0x477ca6*/
     if ( v4 ) /*0x477caa*/
     {
@@ -7167,7 +7167,7 @@ char VectorClass_flat::vt02(int a2, unsigned int * a3)
           ++i; /*0x477cce*/
         if ( *((unsigned char *)this + 13) ) /*0x477cdb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x477ce6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x477ce6*/
           *((unsigned int *)this + 1) = 0; /*0x477cee*/
         }
       }
@@ -7194,7 +7194,7 @@ void VectorClass_flat::Destroy()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x477d2d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x477d33*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x477d33*/
     *((unsigned int *)this + 1) = 0; /*0x477d3b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x477d3e*/
@@ -7202,7 +7202,7 @@ void VectorClass_flat::Destroy()
 
 }
 // 0x477D50
-int  VectorClass_flat::vt04()
+int  VectorClass_flat::vt04( unsigned int * a2)
 {
 
   int result; // eax
@@ -7248,7 +7248,7 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3)
     if ( a3 ) /*0x477e28*/
       v4 = a3; /*0x477e3e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x477e3a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x477e3a*/
     *((unsigned char *)this + 12) = 1; /*0x477e42*/
     if ( !v4 ) /*0x477e46*/
       return 0; /*0x477eba*/
@@ -7261,7 +7261,7 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3)
         ++i; /*0x477e61*/
       if ( *((unsigned char *)this + 13) ) /*0x477e6e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x477e79*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x477e79*/
         *((unsigned int *)this + 1) = 0; /*0x477e81*/
       }
     }
@@ -7280,7 +7280,7 @@ char VectorClass_flat::Resize(int a2, unsigned int * a3)
 
 }
 // 0x478630
-VectorClass_flat *  VectorClass_flat::vt00(char a2)
+VectorClass_flat *  VectorClass_flat::vt00(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -7289,13 +7289,13 @@ VectorClass_flat *  VectorClass_flat::vt00(char a2)
   *Block = &vt_VectorClass_int; /*0x478636*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x478640*/
   {
-    __3_YAXPAX_Z(v3); /*0x478648*/
+    RA2_OPDEL(v3); /*0x478648*/
     *(Block + 1) = 0; /*0x478650*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x47865b*/
   *(Block + 2) = 0; /*0x478661*/
-  if ( (a2 & 1) != 0 ) /*0x478668*/
-    __3_YAXPAX_Z(Block); /*0x47866b*/
+  if ( (Block & 1) != 0 ) /*0x478668*/
+    RA2_OPDEL(Block); /*0x47866b*/
   return (VectorClass *)Block; /*0x478675*/
 
 }
@@ -7310,7 +7310,7 @@ void VectorClass_ptr_DamageGroup::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x48ad19*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x48ad20*/
   {
-    __3_YAXPAX_Z(v2); /*0x48ad26*/
+    RA2_OPDEL(v2); /*0x48ad26*/
     *((unsigned int *)this + 1) = 0; /*0x48ad2e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x48ad31*/
@@ -7388,7 +7388,7 @@ char VectorClass_ptr_DamageGroup::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x48adcc*/
       v4 = a3; /*0x48ade2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x48adde*/
+      v4 = RA2_OPNEW(4 * a2); /*0x48adde*/
     *((unsigned char *)this + 12) = 1; /*0x48ade6*/
     if ( v4 ) /*0x48adea*/
     {
@@ -7401,7 +7401,7 @@ char VectorClass_ptr_DamageGroup::Remove(int a2, unsigned int * a3)
           ++i; /*0x48ae0e*/
         if ( *((unsigned char *)this + 13) ) /*0x48ae1b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x48ae26*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x48ae26*/
           *((unsigned int *)this + 1) = 0; /*0x48ae2e*/
         }
       }
@@ -7431,7 +7431,7 @@ void VectorClass_ptr_DamageGroup::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x48ae6d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x48ae73*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x48ae73*/
     *((unsigned int *)this + 1) = 0; /*0x48ae7b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x48ae7e*/
@@ -7494,7 +7494,7 @@ char VectorClass_ptr_DamageGroup::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x48af08*/
       v4 = a3; /*0x48af1e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x48af1a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x48af1a*/
     *((unsigned char *)this + 12) = 1; /*0x48af22*/
     if ( !v4 ) /*0x48af26*/
       return 0; /*0x48af9a*/
@@ -7507,7 +7507,7 @@ char VectorClass_ptr_DamageGroup::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x48af41*/
       if ( *((unsigned char *)this + 13) ) /*0x48af4e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x48af59*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x48af59*/
         *((unsigned int *)this + 1) = 0; /*0x48af61*/
       }
     }
@@ -7561,13 +7561,13 @@ VectorClass_flat * VectorClass_ptr_DamageGroup::Add(unsigned int * Block, char a
   *Block = &vt_VectorClass_DamageGroup; /*0x48afd6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x48afe0*/
   {
-    __3_YAXPAX_Z(v3); /*0x48afe8*/
+    RA2_OPDEL(v3); /*0x48afe8*/
     *(Block + 1) = 0; /*0x48aff0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x48affb*/
   *(Block + 2) = 0; /*0x48b001*/
   if ( (a2 & 1) != 0 ) /*0x48b008*/
-    __3_YAXPAX_Z(Block); /*0x48b00b*/
+    RA2_OPDEL(Block); /*0x48b00b*/
   return (VectorClass *)Block; /*0x48b015*/
 
 }
@@ -7584,13 +7584,13 @@ DynamicVector * VectorClass_ptr_DamageGroup::Constructor_VectorClass_DamageGroup
   *Block = &vt_VectorClass_DamageGroup; /*0x48b026*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x48b030*/
   {
-    __3_YAXPAX_Z(v3); /*0x48b038*/
+    RA2_OPDEL(v3); /*0x48b038*/
     *(Block + 1) = 0; /*0x48b040*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x48b04b*/
   *(Block + 2) = 0; /*0x48b051*/
   if ( (a2 & 1) != 0 ) /*0x48b058*/
-    __3_YAXPAX_Z(Block); /*0x48b05b*/
+    RA2_OPDEL(Block); /*0x48b05b*/
   return (DynamicVector *)Block; /*0x48b065*/
 
 }
@@ -7607,7 +7607,7 @@ void VectorClass_ptr_ConvertClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x491399*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4913a0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4913a6*/
+    RA2_OPDEL(v2); /*0x4913a6*/
     *((unsigned int *)this + 1) = 0; /*0x4913ae*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4913b1*/
@@ -7685,7 +7685,7 @@ char VectorClass_ptr_ConvertClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x49aedc*/
       v4 = a3; /*0x49aef2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x49aeee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x49aeee*/
     *((unsigned char *)this + 12) = 1; /*0x49aef6*/
     if ( v4 ) /*0x49aefa*/
     {
@@ -7698,7 +7698,7 @@ char VectorClass_ptr_ConvertClass::Release(int a2, unsigned int * a3)
           ++i; /*0x49af1e*/
         if ( *((unsigned char *)this + 13) ) /*0x49af2b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x49af36*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x49af36*/
           *((unsigned int *)this + 1) = 0; /*0x49af3e*/
         }
       }
@@ -7728,7 +7728,7 @@ void VectorClass_ptr_ConvertClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x49af7d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x49af83*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x49af83*/
     *((unsigned int *)this + 1) = 0; /*0x49af8b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x49af8e*/
@@ -7791,7 +7791,7 @@ char VectorClass_ptr_ConvertClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x49b018*/
       v4 = a3; /*0x49b02e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x49b02a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x49b02a*/
     *((unsigned char *)this + 12) = 1; /*0x49b032*/
     if ( !v4 ) /*0x49b036*/
       return 0; /*0x49b0aa*/
@@ -7804,7 +7804,7 @@ char VectorClass_ptr_ConvertClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x49b051*/
       if ( *((unsigned char *)this + 13) ) /*0x49b05e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x49b069*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x49b069*/
         *((unsigned int *)this + 1) = 0; /*0x49b071*/
       }
     }
@@ -7858,13 +7858,13 @@ VectorClass_flat * VectorClass_ptr_ConvertClass::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_ConvertClass; /*0x49b0e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x49b0f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x49b0f8*/
+    RA2_OPDEL(v3); /*0x49b0f8*/
     *(Block + 1) = 0; /*0x49b100*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x49b10b*/
   *(Block + 2) = 0; /*0x49b111*/
   if ( (a2 & 1) != 0 ) /*0x49b118*/
-    __3_YAXPAX_Z(Block); /*0x49b11b*/
+    RA2_OPDEL(Block); /*0x49b11b*/
   return (VectorClass *)Block; /*0x49b125*/
 
 }
@@ -7881,13 +7881,13 @@ DynamicVector * VectorClass_ptr_ConvertClass::Constructor_VectorClass_ConvertCla
   *Block = &vt_VectorClass_ConvertClass; /*0x49b136*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x49b140*/
   {
-    __3_YAXPAX_Z(v3); /*0x49b148*/
+    RA2_OPDEL(v3); /*0x49b148*/
     *(Block + 1) = 0; /*0x49b150*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x49b15b*/
   *(Block + 2) = 0; /*0x49b161*/
   if ( (a2 & 1) != 0 ) /*0x49b168*/
-    __3_YAXPAX_Z(Block); /*0x49b16b*/
+    RA2_OPDEL(Block); /*0x49b16b*/
   return (DynamicVector *)Block; /*0x49b175*/
 
 }
@@ -7902,7 +7902,7 @@ int VectorClass_flat::GetCount()
 }
 // 0x4A0E10
 namespace gamemd {
-DynamicVector *  VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_(char a2)
+DynamicVector *  VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECTDATA_(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -7911,13 +7911,13 @@ DynamicVector *  VectorClass_UtagCONNECTDATA::Constructor_VectorClass_tagCONNECT
   *Block = &vt_VectorClass_tagCONNECTDATA; /*0x4a0e16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a0e20*/
   {
-    __3_YAXPAX_Z(v3); /*0x4a0e28*/
+    RA2_OPDEL(v3); /*0x4a0e28*/
     *(Block + 1) = 0; /*0x4a0e30*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4a0e3b*/
   *(Block + 2) = 0; /*0x4a0e41*/
-  if ( (a2 & 1) != 0 ) /*0x4a0e48*/
-    __3_YAXPAX_Z(Block); /*0x4a0e4b*/
+  if ( (Block & 1) != 0 ) /*0x4a0e48*/
+    RA2_OPDEL(Block); /*0x4a0e4b*/
   return (DynamicVector *)Block; /*0x4a0e55*/
 
 }
@@ -7934,7 +7934,7 @@ void VectorClass_UtagCONNECTDATA::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4a0eb9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4a0ec0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4a0ec6*/
+    RA2_OPDEL(v2); /*0x4a0ec6*/
     *((unsigned int *)this + 1) = 0; /*0x4a0ece*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4a0ed1*/
@@ -8025,7 +8025,7 @@ char VectorClass_UtagCONNECTDATA::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a0ffc*/
       v5 = a3; /*0x4a1012*/
     else
-      v5 = __2_YAPAXI_Z(8 * a2); /*0x4a100e*/
+      v5 = RA2_OPNEW(8 * a2); /*0x4a100e*/
     *((unsigned char *)this + 12) = 1; /*0x4a1016*/
     if ( v5 ) /*0x4a101a*/
     {
@@ -8049,7 +8049,7 @@ char VectorClass_UtagCONNECTDATA::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x4a1057*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a1062*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4a1062*/
           *((unsigned int *)this + 1) = 0; /*0x4a106a*/
         }
       }
@@ -8078,7 +8078,7 @@ void VectorClass_flat::ClearAndFree2()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4a10ad*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4a10b3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4a10b3*/
     *((unsigned int *)this + 1) = 0; /*0x4a10bb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4a10be*/
@@ -8087,7 +8087,7 @@ void VectorClass_flat::ClearAndFree2()
 }
 // 0x4A10D0
 namespace gamemd {
-int  VectorClass_UtagCONNECTDATA::GetSize()
+int  VectorClass_UtagCONNECTDATA::GetSize( unsigned int * a2)
 {
 
   int result; // eax
@@ -8142,7 +8142,7 @@ char VectorClass_UtagCONNECTDATA::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a115c*/
       v5 = a3; /*0x4a1172*/
     else
-      v5 = __2_YAPAXI_Z(8 * a2); /*0x4a116e*/
+      v5 = RA2_OPNEW(8 * a2); /*0x4a116e*/
     *((unsigned char *)this + 12) = 1; /*0x4a1176*/
     if ( !v5 ) /*0x4a117a*/
       return 0; /*0x4a11fa*/
@@ -8166,7 +8166,7 @@ char VectorClass_UtagCONNECTDATA::SetCapacity(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x4a11ae*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a11b9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4a11b9*/
         *((unsigned int *)this + 1) = 0; /*0x4a11c1*/
       }
     }
@@ -8215,7 +8215,7 @@ void VectorClass_flat::CleanupTyped()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4a133d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4a1343*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4a1343*/
     *((unsigned int *)this + 1) = 0; /*0x4a134b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4a134e*/
@@ -8224,7 +8224,7 @@ void VectorClass_flat::CleanupTyped()
 }
 // 0x4A14A0
 namespace gamemd {
-VectorClass_flat *  VectorClass_UtagCONNECTDATA::QueryInterface(char a2)
+VectorClass_flat *  VectorClass_UtagCONNECTDATA::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -8233,13 +8233,13 @@ VectorClass_flat *  VectorClass_UtagCONNECTDATA::QueryInterface(char a2)
   *Block = &vt_VectorClass_tagCONNECTDATA; /*0x4a14a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a14b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4a14b8*/
+    RA2_OPDEL(v3); /*0x4a14b8*/
     *(Block + 1) = 0; /*0x4a14c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4a14cb*/
   *(Block + 2) = 0; /*0x4a14d1*/
-  if ( (a2 & 1) != 0 ) /*0x4a14d8*/
-    __3_YAXPAX_Z(Block); /*0x4a14db*/
+  if ( (Block & 1) != 0 ) /*0x4a14d8*/
+    RA2_OPDEL(Block); /*0x4a14db*/
   return (VectorClass *)Block; /*0x4a14e5*/
 
 }
@@ -8260,7 +8260,7 @@ char VectorClass_flat::AppendCopy(DynamicVector * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x4a7ff6*/
       return 0; /*0x4a7ff6*/
     v4 = *((unsigned int *)this + 5); /*0x4a7ff8*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x4a8008*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x4a8008*/
       return 0; /*0x4a800f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x4a8015*/
@@ -8336,7 +8336,7 @@ char VectorClass_ptr_CrossDissolveEffect::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4b9cfc*/
       v4 = a3; /*0x4b9d12*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4b9d0e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4b9d0e*/
     *((unsigned char *)this + 12) = 1; /*0x4b9d16*/
     if ( v4 ) /*0x4b9d1a*/
     {
@@ -8349,7 +8349,7 @@ char VectorClass_ptr_CrossDissolveEffect::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x4b9d3e*/
         if ( *((unsigned char *)this + 13) ) /*0x4b9d4b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4b9d56*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4b9d56*/
           *((unsigned int *)this + 1) = 0; /*0x4b9d5e*/
         }
       }
@@ -8379,7 +8379,7 @@ void VectorClass_ptr_CrossDissolveEffect::Destroy()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4b9d9d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4b9da3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4b9da3*/
     *((unsigned int *)this + 1) = 0; /*0x4b9dab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4b9dae*/
@@ -8472,7 +8472,7 @@ char VectorClass_ptr_CrossDissolveEffect::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x4b9f5c*/
       v4 = a3; /*0x4b9f72*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4b9f6e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4b9f6e*/
     *((unsigned char *)this + 12) = 1; /*0x4b9f76*/
     if ( v4 ) /*0x4b9f7a*/
     {
@@ -8485,7 +8485,7 @@ char VectorClass_ptr_CrossDissolveEffect::Remove(int a2, unsigned int * a3)
           ++i; /*0x4b9f9e*/
         if ( *((unsigned char *)this + 13) ) /*0x4b9fab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4b9fb6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4b9fb6*/
           *((unsigned int *)this + 1) = 0; /*0x4b9fbe*/
         }
       }
@@ -8515,7 +8515,7 @@ void VectorClass_ptr_CrossDissolveEffect::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4b9ffd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ba003*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ba003*/
     *((unsigned int *)this + 1) = 0; /*0x4ba00b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ba00e*/
@@ -8573,13 +8573,13 @@ unsigned int * VectorClass_ptr_CrossDissolveEffect::loc_4BA1B0(unsigned int * Bl
   *Block = &off_7E8500; /*0x4ba1b6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ba1c0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ba1c8*/
+    RA2_OPDEL(v3); /*0x4ba1c8*/
     *(Block + 1) = 0; /*0x4ba1d0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ba1db*/
   *(Block + 2) = 0; /*0x4ba1e1*/
   if ( (a2 & 1) != 0 ) /*0x4ba1e8*/
-    __3_YAXPAX_Z(Block); /*0x4ba1eb*/
+    RA2_OPDEL(Block); /*0x4ba1eb*/
   return Block; /*0x4ba1f5*/
 
 }
@@ -8596,13 +8596,13 @@ VectorClass_flat * VectorClass_ptr_CrossDissolveEffect::Add(unsigned int * Block
   *Block = &vt_VectorClass_CrossDissolveEffect; /*0x4ba256*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ba260*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ba268*/
+    RA2_OPDEL(v3); /*0x4ba268*/
     *(Block + 1) = 0; /*0x4ba270*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ba27b*/
   *(Block + 2) = 0; /*0x4ba281*/
   if ( (a2 & 1) != 0 ) /*0x4ba288*/
-    __3_YAXPAX_Z(Block); /*0x4ba28b*/
+    RA2_OPDEL(Block); /*0x4ba28b*/
   return (VectorClass *)Block; /*0x4ba295*/
 
 }
@@ -8619,7 +8619,7 @@ void VectorClass_ptr_EBolt::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4c2c49*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4c2c50*/
   {
-    __3_YAXPAX_Z(v2); /*0x4c2c56*/
+    RA2_OPDEL(v2); /*0x4c2c56*/
     *((unsigned int *)this + 1) = 0; /*0x4c2c5e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4c2c61*/
@@ -8697,7 +8697,7 @@ char VectorClass_ptr_EBolt::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c2cfc*/
       v4 = a3; /*0x4c2d12*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c2d0e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4c2d0e*/
     *((unsigned char *)this + 12) = 1; /*0x4c2d16*/
     if ( v4 ) /*0x4c2d1a*/
     {
@@ -8710,7 +8710,7 @@ char VectorClass_ptr_EBolt::Release(int a2, unsigned int * a3)
           ++i; /*0x4c2d3e*/
         if ( *((unsigned char *)this + 13) ) /*0x4c2d4b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c2d56*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4c2d56*/
           *((unsigned int *)this + 1) = 0; /*0x4c2d5e*/
         }
       }
@@ -8740,7 +8740,7 @@ void VectorClass_ptr_EBolt::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4c2d9d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4c2da3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4c2da3*/
     *((unsigned int *)this + 1) = 0; /*0x4c2dab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4c2dae*/
@@ -8803,7 +8803,7 @@ char VectorClass_ptr_EBolt::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c2e38*/
       v4 = a3; /*0x4c2e4e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c2e4a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4c2e4a*/
     *((unsigned char *)this + 12) = 1; /*0x4c2e52*/
     if ( !v4 ) /*0x4c2e56*/
       return 0; /*0x4c2eca*/
@@ -8816,7 +8816,7 @@ char VectorClass_ptr_EBolt::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4c2e71*/
       if ( *((unsigned char *)this + 13) ) /*0x4c2e7e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c2e89*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4c2e89*/
         *((unsigned int *)this + 1) = 0; /*0x4c2e91*/
       }
     }
@@ -8870,13 +8870,13 @@ VectorClass_flat * VectorClass_ptr_EBolt::QueryInterface(unsigned int * Block, c
   *Block = &vt_VectorClass_EBolt; /*0x4c2f06*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4c2f10*/
   {
-    __3_YAXPAX_Z(v3); /*0x4c2f18*/
+    RA2_OPDEL(v3); /*0x4c2f18*/
     *(Block + 1) = 0; /*0x4c2f20*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4c2f2b*/
   *(Block + 2) = 0; /*0x4c2f31*/
   if ( (a2 & 1) != 0 ) /*0x4c2f38*/
-    __3_YAXPAX_Z(Block); /*0x4c2f3b*/
+    RA2_OPDEL(Block); /*0x4c2f3b*/
   return (VectorClass *)Block; /*0x4c2f45*/
 
 }
@@ -8893,13 +8893,13 @@ DynamicVector * VectorClass_ptr_EBolt::Constructor_VectorClass_EBolt___(unsigned
   *Block = &vt_VectorClass_EBolt; /*0x4c2f56*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4c2f60*/
   {
-    __3_YAXPAX_Z(v3); /*0x4c2f68*/
+    RA2_OPDEL(v3); /*0x4c2f68*/
     *(Block + 1) = 0; /*0x4c2f70*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4c2f7b*/
   *(Block + 2) = 0; /*0x4c2f81*/
   if ( (a2 & 1) != 0 ) /*0x4c2f88*/
-    __3_YAXPAX_Z(Block); /*0x4c2f8b*/
+    RA2_OPDEL(Block); /*0x4c2f8b*/
   return (DynamicVector *)Block; /*0x4c2f95*/
 
 }
@@ -8916,7 +8916,7 @@ void VectorClass_ptr_EgoClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4c49a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4c49b0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4c49b6*/
+    RA2_OPDEL(v2); /*0x4c49b6*/
     *((unsigned int *)this + 1) = 0; /*0x4c49be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4c49c1*/
@@ -8994,7 +8994,7 @@ char VectorClass_ptr_EgoClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c4a5c*/
       v4 = a3; /*0x4c4a72*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c4a6e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4c4a6e*/
     *((unsigned char *)this + 12) = 1; /*0x4c4a76*/
     if ( v4 ) /*0x4c4a7a*/
     {
@@ -9007,7 +9007,7 @@ char VectorClass_ptr_EgoClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4c4a9e*/
         if ( *((unsigned char *)this + 13) ) /*0x4c4aab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c4ab6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4c4ab6*/
           *((unsigned int *)this + 1) = 0; /*0x4c4abe*/
         }
       }
@@ -9037,7 +9037,7 @@ void VectorClass_ptr_EgoClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4c4afd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4c4b03*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4c4b03*/
     *((unsigned int *)this + 1) = 0; /*0x4c4b0b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4c4b0e*/
@@ -9100,7 +9100,7 @@ char VectorClass_ptr_EgoClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c4b98*/
       v4 = a3; /*0x4c4bae*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c4baa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4c4baa*/
     *((unsigned char *)this + 12) = 1; /*0x4c4bb2*/
     if ( !v4 ) /*0x4c4bb6*/
       return 0; /*0x4c4c2a*/
@@ -9113,7 +9113,7 @@ char VectorClass_ptr_EgoClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4c4bd1*/
       if ( *((unsigned char *)this + 13) ) /*0x4c4bde*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c4be9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4c4be9*/
         *((unsigned int *)this + 1) = 0; /*0x4c4bf1*/
       }
     }
@@ -9167,13 +9167,13 @@ VectorClass_flat * VectorClass_ptr_EgoClass::QueryInterface(unsigned int * Block
   *Block = &vt_VectorClass_EgoClass; /*0x4c4c66*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4c4c70*/
   {
-    __3_YAXPAX_Z(v3); /*0x4c4c78*/
+    RA2_OPDEL(v3); /*0x4c4c78*/
     *(Block + 1) = 0; /*0x4c4c80*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4c4c8b*/
   *(Block + 2) = 0; /*0x4c4c91*/
   if ( (a2 & 1) != 0 ) /*0x4c4c98*/
-    __3_YAXPAX_Z(Block); /*0x4c4c9b*/
+    RA2_OPDEL(Block); /*0x4c4c9b*/
   return (VectorClass *)Block; /*0x4c4ca5*/
 
 }
@@ -9190,13 +9190,13 @@ DynamicVector * VectorClass_ptr_EgoClass::Constructor_VectorClass_EgoClass___(un
   *Block = &vt_VectorClass_EgoClass; /*0x4c4cb6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4c4cc0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4c4cc8*/
+    RA2_OPDEL(v3); /*0x4c4cc8*/
     *(Block + 1) = 0; /*0x4c4cd0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4c4cdb*/
   *(Block + 2) = 0; /*0x4c4ce1*/
   if ( (a2 & 1) != 0 ) /*0x4c4ce8*/
-    __3_YAXPAX_Z(Block); /*0x4c4ceb*/
+    RA2_OPDEL(Block); /*0x4c4ceb*/
   return (DynamicVector *)Block; /*0x4c4cf5*/
 
 }
@@ -9213,7 +9213,7 @@ void VectorClass_ptr_EMPulseClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4c5b69*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4c5b70*/
   {
-    __3_YAXPAX_Z(v2); /*0x4c5b76*/
+    RA2_OPDEL(v2); /*0x4c5b76*/
     *((unsigned int *)this + 1) = 0; /*0x4c5b7e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4c5b81*/
@@ -9291,7 +9291,7 @@ char VectorClass_ptr_EMPulseClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c5c1c*/
       v4 = a3; /*0x4c5c32*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c5c2e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4c5c2e*/
     *((unsigned char *)this + 12) = 1; /*0x4c5c36*/
     if ( v4 ) /*0x4c5c3a*/
     {
@@ -9304,7 +9304,7 @@ char VectorClass_ptr_EMPulseClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4c5c5e*/
         if ( *((unsigned char *)this + 13) ) /*0x4c5c6b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c5c76*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4c5c76*/
           *((unsigned int *)this + 1) = 0; /*0x4c5c7e*/
         }
       }
@@ -9334,7 +9334,7 @@ void VectorClass_ptr_EMPulseClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4c5cbd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4c5cc3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4c5cc3*/
     *((unsigned int *)this + 1) = 0; /*0x4c5ccb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4c5cce*/
@@ -9397,7 +9397,7 @@ char VectorClass_ptr_EMPulseClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4c5d58*/
       v4 = a3; /*0x4c5d6e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4c5d6a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4c5d6a*/
     *((unsigned char *)this + 12) = 1; /*0x4c5d72*/
     if ( !v4 ) /*0x4c5d76*/
       return 0; /*0x4c5dea*/
@@ -9410,7 +9410,7 @@ char VectorClass_ptr_EMPulseClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4c5d91*/
       if ( *((unsigned char *)this + 13) ) /*0x4c5d9e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4c5da9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4c5da9*/
         *((unsigned int *)this + 1) = 0; /*0x4c5db1*/
       }
     }
@@ -9464,13 +9464,13 @@ VectorClass_flat * VectorClass_ptr_EMPulseClass::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_EMPulseClass; /*0x4c5e26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4c5e30*/
   {
-    __3_YAXPAX_Z(v3); /*0x4c5e38*/
+    RA2_OPDEL(v3); /*0x4c5e38*/
     *(Block + 1) = 0; /*0x4c5e40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4c5e4b*/
   *(Block + 2) = 0; /*0x4c5e51*/
   if ( (a2 & 1) != 0 ) /*0x4c5e58*/
-    __3_YAXPAX_Z(Block); /*0x4c5e5b*/
+    RA2_OPDEL(Block); /*0x4c5e5b*/
   return (VectorClass *)Block; /*0x4c5e65*/
 
 }
@@ -9487,13 +9487,13 @@ DynamicVector * VectorClass_ptr_EMPulseClass::Constructor_VectorClass_EMPulseCla
   *Block = &vt_VectorClass_EMPulseClass; /*0x4c5e76*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4c5e80*/
   {
-    __3_YAXPAX_Z(v3); /*0x4c5e88*/
+    RA2_OPDEL(v3); /*0x4c5e88*/
     *(Block + 1) = 0; /*0x4c5e90*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4c5e9b*/
   *(Block + 2) = 0; /*0x4c5ea1*/
   if ( (a2 & 1) != 0 ) /*0x4c5ea8*/
-    __3_YAXPAX_Z(Block); /*0x4c5eab*/
+    RA2_OPDEL(Block); /*0x4c5eab*/
   return (DynamicVector *)Block; /*0x4c5eb5*/
 
 }
@@ -9501,45 +9501,45 @@ DynamicVector * VectorClass_ptr_EMPulseClass::Constructor_VectorClass_EMPulseCla
 
 // 0x4E0250
 namespace gamemd {
-unsigned int * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Clear(unsigned int * v4, int a3)
+unsigned int * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Clear(unsigned int * a2, int a3)
 {
 
   int v3; // eax
-  int v4; // edx
+  int a2; // edx
   int v5; // ecx
 
   v3 = *((unsigned int *)this + 1); /*0x4e0250*/
-  v4 = *(unsigned int *)(v3 + 8 * a3); /*0x4e0257*/
+  a2 = *(unsigned int *)(v3 + 8 * a3); /*0x4e0257*/
   v5 = v3 + 8 * a3; /*0x4e025a*/
-  *v4 = v4; /*0x4e0261*/
-  v4[1] = *(unsigned int *)(v5 + 4); /*0x4e0266*/
-  return v4; /*0x4e0269*/
+  *a2 = a2; /*0x4e0261*/
+  a2[1] = *(unsigned int *)(v5 + 4); /*0x4e0266*/
+  return a2; /*0x4e0269*/
 
 }
 } // namespace gamemd
 
 // 0x4E07E0
 namespace gamemd {
-char VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::AddRef(int v4)
+char VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::AddRef(int a2)
 {
 
   int v2; // edi
   int v3; // esi
-  int v4; // edx
+  int a2; // edx
   unsigned int *v5; // eax
   unsigned int *v6; // ecx
   int v7; // edx
 
   v2 = *((char *)this + 2); /*0x4e07eb*/
-  if ( v2 == *(unsigned int *)(v4 + 8) ) /*0x4e07f0*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x4e07f0*/
   {
     v3 = 0; /*0x4e07f2*/
     if ( v2 <= 0 ) /*0x4e07f6*/
       return 1; /*0x4e0826*/
-    v4 = *(unsigned int *)(v4 + 4); /*0x4e07f8*/
+    a2 = *(unsigned int *)(a2 + 4); /*0x4e07f8*/
     v5 = (unsigned int *)*((char *)this + 1); /*0x4e07fb*/
-    v6 = (unsigned int *)(v4 + 4); /*0x4e07fe*/
-    v7 = v4 - (unsigned int)v5; /*0x4e0801*/
+    v6 = (unsigned int *)(a2 + 4); /*0x4e07fe*/
+    v7 = a2 - (unsigned int)v5; /*0x4e0801*/
     while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *v6 ) /*0x4e0813*/
     {
       ++v3; /*0x4e0815*/
@@ -9564,7 +9564,7 @@ void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Ce
   v2 = *((unsigned int *)this + 1); /*0x4e0956*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e095d*/
   {
-    __3_YAXPAX_Z((void *)(v2 - 4)); /*0x4e096e*/
+    RA2_OPDEL((void *)(v2 - 4)); /*0x4e096e*/
     *((unsigned int *)this + 1) = 0; /*0x4e0976*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e0979*/
@@ -9575,7 +9575,7 @@ void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Ce
 
 // 0x4E0990
 namespace gamemd {
-void _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize()
+void _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize( unsigned int * a2)
 {
 
   int result; // eax
@@ -9621,7 +9621,7 @@ void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Ce
   *((unsigned int *)this + 4) = 0; /*0x4e0ab9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e0ac0*/
   {
-    __3_YAXPAX_Z((void *)(v2 - 4)); /*0x4e0ad1*/
+    RA2_OPDEL((void *)(v2 - 4)); /*0x4e0ad1*/
     *((unsigned int *)this + 1) = 0; /*0x4e0ad9*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e0adc*/
@@ -9667,7 +9667,7 @@ int VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Cel
 }
 // 0x4E0D80
 namespace gamemd {
-VectorClass_flat * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::QueryInterface(char a2)
+VectorClass_flat * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::QueryInterface(unsigned int * Block, char a2)
 {
 
   int v3; // eax
@@ -9676,13 +9676,13 @@ VectorClass_flat * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistri
   *Block = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0d86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4e0d90*/
   {
-    __3_YAXPAX_Z((void *)(v3 - 4)); /*0x4e0da3*/
+    RA2_OPDEL((void *)(v3 - 4)); /*0x4e0da3*/
     *(Block + 1) = 0; /*0x4e0dab*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4e0db6*/
   *(Block + 2) = 0; /*0x4e0dbc*/
-  if ( (a2 & 1) != 0 ) /*0x4e0dc3*/
-    __3_YAXPAX_Z(Block); /*0x4e0dc6*/
+  if ( (Block & 1) != 0 ) /*0x4e0dc3*/
+    RA2_OPDEL(Block); /*0x4e0dc6*/
   return (VectorClass *)Block; /*0x4e0dd0*/
 
 }
@@ -9690,7 +9690,7 @@ VectorClass_flat * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistri
 
 // 0x4E0E20
 namespace gamemd {
-DynamicVector * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Constructor(char a2)
+DynamicVector * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass::Constructor(unsigned int * Block, char a2)
 {
 
   int v3; // eax
@@ -9699,13 +9699,13 @@ DynamicVector * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistribut
   *Block = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0e26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4e0e30*/
   {
-    __3_YAXPAX_Z((void *)(v3 - 4)); /*0x4e0e43*/
+    RA2_OPDEL((void *)(v3 - 4)); /*0x4e0e43*/
     *(Block + 1) = 0; /*0x4e0e4b*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4e0e56*/
   *(Block + 2) = 0; /*0x4e0e5c*/
-  if ( (a2 & 1) != 0 ) /*0x4e0e63*/
-    __3_YAXPAX_Z(Block); /*0x4e0e66*/
+  if ( (Block & 1) != 0 ) /*0x4e0e63*/
+    RA2_OPDEL(Block); /*0x4e0e66*/
   return (DynamicVector *)Block; /*0x4e0e70*/
 
 }
@@ -9732,7 +9732,7 @@ void VectorClass_ptr_SuperClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8359*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8360*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8366*/
+    RA2_OPDEL(v2); /*0x4e8366*/
     *((unsigned int *)this + 1) = 0; /*0x4e836e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8371*/
@@ -9775,7 +9775,7 @@ void VectorClass_ptr_AITriggerTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e83b9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e83c0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e83c6*/
+    RA2_OPDEL(v2); /*0x4e83c6*/
     *((unsigned int *)this + 1) = 0; /*0x4e83ce*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e83d1*/
@@ -9818,7 +9818,7 @@ void VectorClass_ptr_BuildingLightClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8419*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8420*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8426*/
+    RA2_OPDEL(v2); /*0x4e8426*/
     *((unsigned int *)this + 1) = 0; /*0x4e842e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8431*/
@@ -9861,7 +9861,7 @@ void VectorClass_ptr_TeamClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e84d9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e84e0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e84e6*/
+    RA2_OPDEL(v2); /*0x4e84e6*/
     *((unsigned int *)this + 1) = 0; /*0x4e84ee*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e84f1*/
@@ -9914,7 +9914,7 @@ void VectorClass_ptr_AITriggerTypeClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8549*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8550*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8556*/
+    RA2_OPDEL(v2); /*0x4e8556*/
     *((unsigned int *)this + 1) = 0; /*0x4e855e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8561*/
@@ -9957,7 +9957,7 @@ void VectorClass_ptr_AITriggerTypeClass::Destroy_1()
   *((unsigned int *)this + 4) = 0; /*0x4e85a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e85b0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e85b6*/
+    RA2_OPDEL(v2); /*0x4e85b6*/
     *((unsigned int *)this + 1) = 0; /*0x4e85be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e85c1*/
@@ -10000,7 +10000,7 @@ void VectorClass_ptr_TubeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8609*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8610*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8616*/
+    RA2_OPDEL(v2); /*0x4e8616*/
     *((unsigned int *)this + 1) = 0; /*0x4e861e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8621*/
@@ -10043,7 +10043,7 @@ void VectorClass_ptr_BuildingLightClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8669*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8670*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8676*/
+    RA2_OPDEL(v2); /*0x4e8676*/
     *((unsigned int *)this + 1) = 0; /*0x4e867e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8681*/
@@ -10086,7 +10086,7 @@ void VectorClass_ptr_TubeClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e86c9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e86d0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e86d6*/
+    RA2_OPDEL(v2); /*0x4e86d6*/
     *((unsigned int *)this + 1) = 0; /*0x4e86de*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e86e1*/
@@ -10129,7 +10129,7 @@ void VectorClass_ptr_TubeClass::Destroy_1()
   *((unsigned int *)this + 4) = 0; /*0x4e8729*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8730*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8736*/
+    RA2_OPDEL(v2); /*0x4e8736*/
     *((unsigned int *)this + 1) = 0; /*0x4e873e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8741*/
@@ -10182,7 +10182,7 @@ void VectorClass_ptr_UnitClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e88a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e88b0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e88b6*/
+    RA2_OPDEL(v2); /*0x4e88b6*/
     *((unsigned int *)this + 1) = 0; /*0x4e88be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e88c1*/
@@ -10225,7 +10225,7 @@ void VectorClass_ptr_UnitClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8909*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8910*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8916*/
+    RA2_OPDEL(v2); /*0x4e8916*/
     *((unsigned int *)this + 1) = 0; /*0x4e891e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8921*/
@@ -10268,7 +10268,7 @@ void VectorClass_ptr_TeamClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8969*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8970*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8976*/
+    RA2_OPDEL(v2); /*0x4e8976*/
     *((unsigned int *)this + 1) = 0; /*0x4e897e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8981*/
@@ -10311,7 +10311,7 @@ void VectorClass_ptr_TeamClass::Destroy_1()
   *((unsigned int *)this + 4) = 0; /*0x4e89c9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e89d0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e89d6*/
+    RA2_OPDEL(v2); /*0x4e89d6*/
     *((unsigned int *)this + 1) = 0; /*0x4e89de*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e89e1*/
@@ -10354,7 +10354,7 @@ void VectorClass_ptr_CampaignClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8a29*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8a30*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8a36*/
+    RA2_OPDEL(v2); /*0x4e8a36*/
     *((unsigned int *)this + 1) = 0; /*0x4e8a3e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8a41*/
@@ -10397,7 +10397,7 @@ void VectorClass_ptr_CampaignClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8a89*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8a90*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8a96*/
+    RA2_OPDEL(v2); /*0x4e8a96*/
     *((unsigned int *)this + 1) = 0; /*0x4e8a9e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8aa1*/
@@ -10440,7 +10440,7 @@ void VectorClass_ptr_HouseTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8ae9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8af0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8af6*/
+    RA2_OPDEL(v2); /*0x4e8af6*/
     *((unsigned int *)this + 1) = 0; /*0x4e8afe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8b01*/
@@ -10483,7 +10483,7 @@ void VectorClass_ptr_HouseTypeClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8b49*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8b50*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8b56*/
+    RA2_OPDEL(v2); /*0x4e8b56*/
     *((unsigned int *)this + 1) = 0; /*0x4e8b5e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8b61*/
@@ -10526,7 +10526,7 @@ void VectorClass_ptr_HouseTypeClass::Destroy_1()
   *((unsigned int *)this + 4) = 0; /*0x4e8ba9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8bb0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8bb6*/
+    RA2_OPDEL(v2); /*0x4e8bb6*/
     *((unsigned int *)this + 1) = 0; /*0x4e8bbe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8bc1*/
@@ -10569,7 +10569,7 @@ void VectorClass_ptr_ScriptTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8c09*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8c10*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8c16*/
+    RA2_OPDEL(v2); /*0x4e8c16*/
     *((unsigned int *)this + 1) = 0; /*0x4e8c1e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8c21*/
@@ -10612,7 +10612,7 @@ void VectorClass_ptr_ScriptTypeClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8c69*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8c70*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8c76*/
+    RA2_OPDEL(v2); /*0x4e8c76*/
     *((unsigned int *)this + 1) = 0; /*0x4e8c7e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8c81*/
@@ -10655,7 +10655,7 @@ void VectorClass_ptr_SmudgeTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8cc9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8cd0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8cd6*/
+    RA2_OPDEL(v2); /*0x4e8cd6*/
     *((unsigned int *)this + 1) = 0; /*0x4e8cde*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8ce1*/
@@ -10698,7 +10698,7 @@ void VectorClass_ptr_SmudgeTypeClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8d29*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8d30*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8d36*/
+    RA2_OPDEL(v2); /*0x4e8d36*/
     *((unsigned int *)this + 1) = 0; /*0x4e8d3e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8d41*/
@@ -10741,7 +10741,7 @@ void VectorClass_ptr_SmudgeTypeClass::Destroy_1()
   *((unsigned int *)this + 4) = 0; /*0x4e8d89*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8d90*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8d96*/
+    RA2_OPDEL(v2); /*0x4e8d96*/
     *((unsigned int *)this + 1) = 0; /*0x4e8d9e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8da1*/
@@ -10784,7 +10784,7 @@ void VectorClass_ptr_AircraftTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8de9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8df0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8df6*/
+    RA2_OPDEL(v2); /*0x4e8df6*/
     *((unsigned int *)this + 1) = 0; /*0x4e8dfe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8e01*/
@@ -10827,7 +10827,7 @@ void VectorClass_ptr_AircraftTypeClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8e49*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8e50*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8e56*/
+    RA2_OPDEL(v2); /*0x4e8e56*/
     *((unsigned int *)this + 1) = 0; /*0x4e8e5e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8e61*/
@@ -10870,7 +10870,7 @@ void VectorClass_ptr_AnimTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8ea9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8eb0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8eb6*/
+    RA2_OPDEL(v2); /*0x4e8eb6*/
     *((unsigned int *)this + 1) = 0; /*0x4e8ebe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8ec1*/
@@ -10913,7 +10913,7 @@ void VectorClass_ptr_AnimTypeClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e8f09*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8f10*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8f16*/
+    RA2_OPDEL(v2); /*0x4e8f16*/
     *((unsigned int *)this + 1) = 0; /*0x4e8f1e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8f21*/
@@ -10956,7 +10956,7 @@ void VectorClass_ptr_AnimTypeClass::Destroy_1()
   *((unsigned int *)this + 4) = 0; /*0x4e8f69*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8f70*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8f76*/
+    RA2_OPDEL(v2); /*0x4e8f76*/
     *((unsigned int *)this + 1) = 0; /*0x4e8f7e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8f81*/
@@ -10999,7 +10999,7 @@ void VectorClass_ptr_VoxelAnimTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e8fc9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8fd0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8fd6*/
+    RA2_OPDEL(v2); /*0x4e8fd6*/
     *((unsigned int *)this + 1) = 0; /*0x4e8fde*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8fe1*/
@@ -11042,7 +11042,7 @@ void VectorClass_ptr_VoxelAnimTypeClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e9029*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e9030*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e9036*/
+    RA2_OPDEL(v2); /*0x4e9036*/
     *((unsigned int *)this + 1) = 0; /*0x4e903e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e9041*/
@@ -11085,7 +11085,7 @@ void VectorClass_ptr_ParticleTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e9089*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e9090*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e9096*/
+    RA2_OPDEL(v2); /*0x4e9096*/
     *((unsigned int *)this + 1) = 0; /*0x4e909e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e90a1*/
@@ -11128,7 +11128,7 @@ void VectorClass_ptr_ParticleTypeClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e90e9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e90f0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e90f6*/
+    RA2_OPDEL(v2); /*0x4e90f6*/
     *((unsigned int *)this + 1) = 0; /*0x4e90fe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e9101*/
@@ -11171,7 +11171,7 @@ void VectorClass_ptr_ParticleTypeClass::Destroy_1()
   *((unsigned int *)this + 4) = 0; /*0x4e9149*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e9150*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e9156*/
+    RA2_OPDEL(v2); /*0x4e9156*/
     *((unsigned int *)this + 1) = 0; /*0x4e915e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e9161*/
@@ -11214,7 +11214,7 @@ void VectorClass_ptr_SuperClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x4e91a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e91b0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e91b6*/
+    RA2_OPDEL(v2); /*0x4e91b6*/
     *((unsigned int *)this + 1) = 0; /*0x4e91be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e91c1*/
@@ -11292,7 +11292,7 @@ char VectorClass_Building::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e94bc*/
       v4 = a3; /*0x4e94d2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e94ce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e94ce*/
     *((unsigned char *)this + 12) = 1; /*0x4e94d6*/
     if ( v4 ) /*0x4e94da*/
     {
@@ -11305,7 +11305,7 @@ char VectorClass_Building::Release(int a2, unsigned int * a3)
           ++i; /*0x4e94fe*/
         if ( *((unsigned char *)this + 13) ) /*0x4e950b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9516*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4e9516*/
           *((unsigned int *)this + 1) = 0; /*0x4e951e*/
         }
       }
@@ -11335,7 +11335,7 @@ void VectorClass_Building::Set()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4e955d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4e9563*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4e9563*/
     *((unsigned int *)this + 1) = 0; /*0x4e956b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e956e*/
@@ -11428,7 +11428,7 @@ char VectorClass_ptr_SuperClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e971c*/
       v4 = a3; /*0x4e9732*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e972e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e972e*/
     *((unsigned char *)this + 12) = 1; /*0x4e9736*/
     if ( v4 ) /*0x4e973a*/
     {
@@ -11441,7 +11441,7 @@ char VectorClass_ptr_SuperClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4e975e*/
         if ( *((unsigned char *)this + 13) ) /*0x4e976b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9776*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4e9776*/
           *((unsigned int *)this + 1) = 0; /*0x4e977e*/
         }
       }
@@ -11471,7 +11471,7 @@ void VectorClass_ptr_SuperClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4e97bd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4e97c3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4e97c3*/
     *((unsigned int *)this + 1) = 0; /*0x4e97cb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e97ce*/
@@ -11587,7 +11587,7 @@ char VectorClass_ptr_AITriggerTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e997c*/
       v4 = a3; /*0x4e9992*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e998e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e998e*/
     *((unsigned char *)this + 12) = 1; /*0x4e9996*/
     if ( v4 ) /*0x4e999a*/
     {
@@ -11600,7 +11600,7 @@ char VectorClass_ptr_AITriggerTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4e99be*/
         if ( *((unsigned char *)this + 13) ) /*0x4e99cb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e99d6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4e99d6*/
           *((unsigned int *)this + 1) = 0; /*0x4e99de*/
         }
       }
@@ -11630,7 +11630,7 @@ void VectorClass_ptr_AITriggerTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4e9a1d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4e9a23*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4e9a23*/
     *((unsigned int *)this + 1) = 0; /*0x4e9a2b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e9a2e*/
@@ -11693,7 +11693,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e9ab8*/
       v4 = a3; /*0x4e9ace*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9aca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e9aca*/
     *((unsigned char *)this + 12) = 1; /*0x4e9ad2*/
     if ( !v4 ) /*0x4e9ad6*/
       return 0; /*0x4e9b4a*/
@@ -11706,7 +11706,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4e9af1*/
       if ( *((unsigned char *)this + 13) ) /*0x4e9afe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9b09*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4e9b09*/
         *((unsigned int *)this + 1) = 0; /*0x4e9b11*/
       }
     }
@@ -11795,7 +11795,7 @@ char VectorClass_ptr_BuildingLightClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e9bdc*/
       v4 = a3; /*0x4e9bf2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9bee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e9bee*/
     *((unsigned char *)this + 12) = 1; /*0x4e9bf6*/
     if ( v4 ) /*0x4e9bfa*/
     {
@@ -11808,7 +11808,7 @@ char VectorClass_ptr_BuildingLightClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4e9c1e*/
         if ( *((unsigned char *)this + 13) ) /*0x4e9c2b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9c36*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4e9c36*/
           *((unsigned int *)this + 1) = 0; /*0x4e9c3e*/
         }
       }
@@ -11838,7 +11838,7 @@ void VectorClass_ptr_BuildingLightClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4e9c7d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4e9c83*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4e9c83*/
     *((unsigned int *)this + 1) = 0; /*0x4e9c8b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e9c8e*/
@@ -11901,7 +11901,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e9d18*/
       v4 = a3; /*0x4e9d2e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9d2a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e9d2a*/
     *((unsigned char *)this + 12) = 1; /*0x4e9d32*/
     if ( !v4 ) /*0x4e9d36*/
       return 0; /*0x4e9daa*/
@@ -11914,7 +11914,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4e9d51*/
       if ( *((unsigned char *)this + 13) ) /*0x4e9d5e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9d69*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4e9d69*/
         *((unsigned int *)this + 1) = 0; /*0x4e9d71*/
       }
     }
@@ -12003,7 +12003,7 @@ char VectorClass_ptr_TeamClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea09c*/
       v4 = a3; /*0x4ea0b2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea0ae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ea0ae*/
     *((unsigned char *)this + 12) = 1; /*0x4ea0b6*/
     if ( v4 ) /*0x4ea0ba*/
     {
@@ -12016,7 +12016,7 @@ char VectorClass_ptr_TeamClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ea0de*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea0eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea0f6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ea0f6*/
           *((unsigned int *)this + 1) = 0; /*0x4ea0fe*/
         }
       }
@@ -12046,7 +12046,7 @@ void VectorClass_ptr_TeamClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ea13d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ea143*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ea143*/
     *((unsigned int *)this + 1) = 0; /*0x4ea14b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ea14e*/
@@ -12109,7 +12109,7 @@ char VectorClass_ptr_TeamClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea1d8*/
       v4 = a3; /*0x4ea1ee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea1ea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ea1ea*/
     *((unsigned char *)this + 12) = 1; /*0x4ea1f2*/
     if ( !v4 ) /*0x4ea1f6*/
       return 0; /*0x4ea26a*/
@@ -12122,7 +12122,7 @@ char VectorClass_ptr_TeamClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ea211*/
       if ( *((unsigned char *)this + 13) ) /*0x4ea21e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea229*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ea229*/
         *((unsigned int *)this + 1) = 0; /*0x4ea231*/
       }
     }
@@ -12211,7 +12211,7 @@ char VectorClass_ptr_ThemeControl::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea2fc*/
       v4 = a3; /*0x4ea312*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea30e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ea30e*/
     *((unsigned char *)this + 12) = 1; /*0x4ea316*/
     if ( v4 ) /*0x4ea31a*/
     {
@@ -12224,7 +12224,7 @@ char VectorClass_ptr_ThemeControl::Remove(int a2, unsigned int * a3)
           ++i; /*0x4ea33e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea34b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea356*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ea356*/
           *((unsigned int *)this + 1) = 0; /*0x4ea35e*/
         }
       }
@@ -12254,7 +12254,7 @@ void VectorClass_ptr_ThemeControl::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ea39d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ea3a3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ea3a3*/
     *((unsigned int *)this + 1) = 0; /*0x4ea3ab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ea3ae*/
@@ -12347,7 +12347,7 @@ char VectorClass_ptr_TriggerClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea47c*/
       v4 = a3; /*0x4ea492*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea48e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ea48e*/
     *((unsigned char *)this + 12) = 1; /*0x4ea496*/
     if ( v4 ) /*0x4ea49a*/
     {
@@ -12360,7 +12360,7 @@ char VectorClass_ptr_TriggerClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ea4be*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea4cb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea4d6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ea4d6*/
           *((unsigned int *)this + 1) = 0; /*0x4ea4de*/
         }
       }
@@ -12390,7 +12390,7 @@ void VectorClass_ptr_TriggerClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ea51d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ea523*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ea523*/
     *((unsigned int *)this + 1) = 0; /*0x4ea52b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ea52e*/
@@ -12453,7 +12453,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_0(int a2, unsigned int * a3
     if ( a3 ) /*0x4ea5b8*/
       v4 = a3; /*0x4ea5ce*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea5ca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ea5ca*/
     *((unsigned char *)this + 12) = 1; /*0x4ea5d2*/
     if ( !v4 ) /*0x4ea5d6*/
       return 0; /*0x4ea64a*/
@@ -12466,7 +12466,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_0(int a2, unsigned int * a3
         ++i; /*0x4ea5f1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ea5fe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea609*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ea609*/
         *((unsigned int *)this + 1) = 0; /*0x4ea611*/
       }
     }
@@ -12555,7 +12555,7 @@ char VectorClass_ptr_TriggerTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea6dc*/
       v4 = a3; /*0x4ea6f2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea6ee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ea6ee*/
     *((unsigned char *)this + 12) = 1; /*0x4ea6f6*/
     if ( v4 ) /*0x4ea6fa*/
     {
@@ -12568,7 +12568,7 @@ char VectorClass_ptr_TriggerTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ea71e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea72b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea736*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ea736*/
           *((unsigned int *)this + 1) = 0; /*0x4ea73e*/
         }
       }
@@ -12598,7 +12598,7 @@ void VectorClass_ptr_TriggerTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ea77d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ea783*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ea783*/
     *((unsigned int *)this + 1) = 0; /*0x4ea78b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ea78e*/
@@ -12661,7 +12661,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3
     if ( a3 ) /*0x4ea818*/
       v4 = a3; /*0x4ea82e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea82a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ea82a*/
     *((unsigned char *)this + 12) = 1; /*0x4ea832*/
     if ( !v4 ) /*0x4ea836*/
       return 0; /*0x4ea8aa*/
@@ -12674,7 +12674,7 @@ char VectorClass_ptr_AITriggerTypeClass::SetCapacity_1(int a2, unsigned int * a3
         ++i; /*0x4ea851*/
       if ( *((unsigned char *)this + 13) ) /*0x4ea85e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea869*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ea869*/
         *((unsigned int *)this + 1) = 0; /*0x4ea871*/
       }
     }
@@ -12763,7 +12763,7 @@ char VectorClass_ptr_TubeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ea93c*/
       v4 = a3; /*0x4ea952*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ea94e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ea94e*/
     *((unsigned char *)this + 12) = 1; /*0x4ea956*/
     if ( v4 ) /*0x4ea95a*/
     {
@@ -12776,7 +12776,7 @@ char VectorClass_ptr_TubeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ea97e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ea98b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ea996*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ea996*/
           *((unsigned int *)this + 1) = 0; /*0x4ea99e*/
         }
       }
@@ -12806,7 +12806,7 @@ void VectorClass_ptr_TubeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ea9dd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ea9e3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ea9e3*/
     *((unsigned int *)this + 1) = 0; /*0x4ea9eb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ea9ee*/
@@ -12869,7 +12869,7 @@ char VectorClass_ptr_TubeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eaa78*/
       v4 = a3; /*0x4eaa8e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eaa8a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eaa8a*/
     *((unsigned char *)this + 12) = 1; /*0x4eaa92*/
     if ( !v4 ) /*0x4eaa96*/
       return 0; /*0x4eab0a*/
@@ -12882,7 +12882,7 @@ char VectorClass_ptr_TubeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4eaab1*/
       if ( *((unsigned char *)this + 13) ) /*0x4eaabe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eaac9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4eaac9*/
         *((unsigned int *)this + 1) = 0; /*0x4eaad1*/
       }
     }
@@ -12971,7 +12971,7 @@ char VectorClass_ptr_ParticleSystemClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eab9c*/
       v4 = a3; /*0x4eabb2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eabae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eabae*/
     *((unsigned char *)this + 12) = 1; /*0x4eabb6*/
     if ( v4 ) /*0x4eabba*/
     {
@@ -12984,7 +12984,7 @@ char VectorClass_ptr_ParticleSystemClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eabde*/
         if ( *((unsigned char *)this + 13) ) /*0x4eabeb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eabf6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eabf6*/
           *((unsigned int *)this + 1) = 0; /*0x4eabfe*/
         }
       }
@@ -13014,7 +13014,7 @@ void VectorClass_ptr_ParticleSystemClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4eac3d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eac43*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eac43*/
     *((unsigned int *)this + 1) = 0; /*0x4eac4b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eac4e*/
@@ -13077,7 +13077,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity_0(int a2, unsigned int * a3
     if ( a3 ) /*0x4eacd8*/
       v4 = a3; /*0x4eacee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eacea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eacea*/
     *((unsigned char *)this + 12) = 1; /*0x4eacf2*/
     if ( !v4 ) /*0x4eacf6*/
       return 0; /*0x4ead6a*/
@@ -13090,7 +13090,7 @@ char VectorClass_ptr_BuildingLightClass::SetCapacity_0(int a2, unsigned int * a3
         ++i; /*0x4ead11*/
       if ( *((unsigned char *)this + 13) ) /*0x4ead1e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ead29*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ead29*/
         *((unsigned int *)this + 1) = 0; /*0x4ead31*/
       }
     }
@@ -13179,7 +13179,7 @@ char VectorClass_ptr_WaveClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eadfc*/
       v4 = a3; /*0x4eae12*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eae0e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eae0e*/
     *((unsigned char *)this + 12) = 1; /*0x4eae16*/
     if ( v4 ) /*0x4eae1a*/
     {
@@ -13192,7 +13192,7 @@ char VectorClass_ptr_WaveClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eae3e*/
         if ( *((unsigned char *)this + 13) ) /*0x4eae4b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eae56*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eae56*/
           *((unsigned int *)this + 1) = 0; /*0x4eae5e*/
         }
       }
@@ -13222,7 +13222,7 @@ void VectorClass_ptr_WaveClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4eae9d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eaea3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eaea3*/
     *((unsigned int *)this + 1) = 0; /*0x4eaeab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eaeae*/
@@ -13285,7 +13285,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eaf38*/
       v4 = a3; /*0x4eaf4e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eaf4a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eaf4a*/
     *((unsigned char *)this + 12) = 1; /*0x4eaf52*/
     if ( !v4 ) /*0x4eaf56*/
       return 0; /*0x4eafca*/
@@ -13298,7 +13298,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4eaf71*/
       if ( *((unsigned char *)this + 13) ) /*0x4eaf7e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eaf89*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4eaf89*/
         *((unsigned int *)this + 1) = 0; /*0x4eaf91*/
       }
     }
@@ -13387,7 +13387,7 @@ char VectorClass_ptr_OverlayClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb05c*/
       v4 = a3; /*0x4eb072*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb06e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eb06e*/
     *((unsigned char *)this + 12) = 1; /*0x4eb076*/
     if ( v4 ) /*0x4eb07a*/
     {
@@ -13400,7 +13400,7 @@ char VectorClass_ptr_OverlayClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eb09e*/
         if ( *((unsigned char *)this + 13) ) /*0x4eb0ab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb0b6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eb0b6*/
           *((unsigned int *)this + 1) = 0; /*0x4eb0be*/
         }
       }
@@ -13430,7 +13430,7 @@ void VectorClass_ptr_OverlayClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4eb0fd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eb103*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eb103*/
     *((unsigned int *)this + 1) = 0; /*0x4eb10b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eb10e*/
@@ -13493,7 +13493,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb198*/
       v4 = a3; /*0x4eb1ae*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb1aa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eb1aa*/
     *((unsigned char *)this + 12) = 1; /*0x4eb1b2*/
     if ( !v4 ) /*0x4eb1b6*/
       return 0; /*0x4eb22a*/
@@ -13506,7 +13506,7 @@ char VectorClass_ptr_TubeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4eb1d1*/
       if ( *((unsigned char *)this + 13) ) /*0x4eb1de*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb1e9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4eb1e9*/
         *((unsigned int *)this + 1) = 0; /*0x4eb1f1*/
       }
     }
@@ -13595,7 +13595,7 @@ char VectorClass_ptr_AircraftClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb77c*/
       v4 = a3; /*0x4eb792*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb78e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eb78e*/
     *((unsigned char *)this + 12) = 1; /*0x4eb796*/
     if ( v4 ) /*0x4eb79a*/
     {
@@ -13608,7 +13608,7 @@ char VectorClass_ptr_AircraftClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eb7be*/
         if ( *((unsigned char *)this + 13) ) /*0x4eb7cb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb7d6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eb7d6*/
           *((unsigned int *)this + 1) = 0; /*0x4eb7de*/
         }
       }
@@ -13638,7 +13638,7 @@ void VectorClass_ptr_AircraftClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4eb81d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eb823*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eb823*/
     *((unsigned int *)this + 1) = 0; /*0x4eb82b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eb82e*/
@@ -13731,7 +13731,7 @@ char VectorClass_ptr_UnitClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb9dc*/
       v4 = a3; /*0x4eb9f2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb9ee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eb9ee*/
     *((unsigned char *)this + 12) = 1; /*0x4eb9f6*/
     if ( v4 ) /*0x4eb9fa*/
     {
@@ -13744,7 +13744,7 @@ char VectorClass_ptr_UnitClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eba1e*/
         if ( *((unsigned char *)this + 13) ) /*0x4eba2b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eba36*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eba36*/
           *((unsigned int *)this + 1) = 0; /*0x4eba3e*/
         }
       }
@@ -13774,7 +13774,7 @@ void VectorClass_ptr_UnitClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4eba7d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eba83*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eba83*/
     *((unsigned int *)this + 1) = 0; /*0x4eba8b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eba8e*/
@@ -13837,7 +13837,7 @@ char VectorClass_ptr_UnitClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebb18*/
       v4 = a3; /*0x4ebb2e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebb2a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ebb2a*/
     *((unsigned char *)this + 12) = 1; /*0x4ebb32*/
     if ( !v4 ) /*0x4ebb36*/
       return 0; /*0x4ebbaa*/
@@ -13850,7 +13850,7 @@ char VectorClass_ptr_UnitClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ebb51*/
       if ( *((unsigned char *)this + 13) ) /*0x4ebb5e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebb69*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ebb69*/
         *((unsigned int *)this + 1) = 0; /*0x4ebb71*/
       }
     }
@@ -13939,7 +13939,7 @@ char VectorClass_ptr_HouseClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebc3c*/
       v4 = a3; /*0x4ebc52*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebc4e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ebc4e*/
     *((unsigned char *)this + 12) = 1; /*0x4ebc56*/
     if ( v4 ) /*0x4ebc5a*/
     {
@@ -13952,7 +13952,7 @@ char VectorClass_ptr_HouseClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ebc7e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ebc8b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebc96*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ebc96*/
           *((unsigned int *)this + 1) = 0; /*0x4ebc9e*/
         }
       }
@@ -13982,7 +13982,7 @@ void VectorClass_ptr_HouseClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ebcdd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ebce3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ebce3*/
     *((unsigned int *)this + 1) = 0; /*0x4ebceb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ebcee*/
@@ -14045,7 +14045,7 @@ char VectorClass_ptr_UnitClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebd78*/
       v4 = a3; /*0x4ebd8e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebd8a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ebd8a*/
     *((unsigned char *)this + 12) = 1; /*0x4ebd92*/
     if ( !v4 ) /*0x4ebd96*/
       return 0; /*0x4ebe0a*/
@@ -14058,7 +14058,7 @@ char VectorClass_ptr_UnitClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ebdb1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ebdbe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebdc9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ebdc9*/
         *((unsigned int *)this + 1) = 0; /*0x4ebdd1*/
       }
     }
@@ -14147,7 +14147,7 @@ char VectorClass_ptr_AnimClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebe9c*/
       v4 = a3; /*0x4ebeb2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebeae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ebeae*/
     *((unsigned char *)this + 12) = 1; /*0x4ebeb6*/
     if ( v4 ) /*0x4ebeba*/
     {
@@ -14160,7 +14160,7 @@ char VectorClass_ptr_AnimClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ebede*/
         if ( *((unsigned char *)this + 13) ) /*0x4ebeeb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ebef6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ebef6*/
           *((unsigned int *)this + 1) = 0; /*0x4ebefe*/
         }
       }
@@ -14190,7 +14190,7 @@ void VectorClass_ptr_AnimClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ebf3d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ebf43*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ebf43*/
     *((unsigned int *)this + 1) = 0; /*0x4ebf4b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ebf4e*/
@@ -14250,7 +14250,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ebfd8*/
       v4 = a3; /*0x4ebfee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ebfea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ebfea*/
     *((unsigned char *)this + 12) = 1; /*0x4ebff2*/
     if ( !v4 ) /*0x4ebff6*/
       return 0; /*0x4ec06a*/
@@ -14263,7 +14263,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ec011*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec01e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec029*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ec029*/
         *((unsigned int *)this + 1) = 0; /*0x4ec031*/
       }
     }
@@ -14352,7 +14352,7 @@ char VectorClass_ptr_FactoryClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec0fc*/
       v4 = a3; /*0x4ec112*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec10e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ec10e*/
     *((unsigned char *)this + 12) = 1; /*0x4ec116*/
     if ( v4 ) /*0x4ec11a*/
     {
@@ -14365,7 +14365,7 @@ char VectorClass_ptr_FactoryClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ec13e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ec14b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec156*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ec156*/
           *((unsigned int *)this + 1) = 0; /*0x4ec15e*/
         }
       }
@@ -14395,7 +14395,7 @@ void VectorClass_ptr_FactoryClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ec19d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ec1a3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ec1a3*/
     *((unsigned int *)this + 1) = 0; /*0x4ec1ab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ec1ae*/
@@ -14458,7 +14458,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec238*/
       v4 = a3; /*0x4ec24e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec24a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ec24a*/
     *((unsigned char *)this + 12) = 1; /*0x4ec252*/
     if ( !v4 ) /*0x4ec256*/
       return 0; /*0x4ec2ca*/
@@ -14471,7 +14471,7 @@ char VectorClass_ptr_TeamClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4ec271*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec27e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec289*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ec289*/
         *((unsigned int *)this + 1) = 0; /*0x4ec291*/
       }
     }
@@ -14560,7 +14560,7 @@ char VectorClass_ptr_CampaignClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec35c*/
       v4 = a3; /*0x4ec372*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec36e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ec36e*/
     *((unsigned char *)this + 12) = 1; /*0x4ec376*/
     if ( v4 ) /*0x4ec37a*/
     {
@@ -14573,7 +14573,7 @@ char VectorClass_ptr_CampaignClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ec39e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ec3ab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec3b6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ec3b6*/
           *((unsigned int *)this + 1) = 0; /*0x4ec3be*/
         }
       }
@@ -14603,7 +14603,7 @@ void VectorClass_ptr_CampaignClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ec3fd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ec403*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ec403*/
     *((unsigned int *)this + 1) = 0; /*0x4ec40b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ec40e*/
@@ -14666,7 +14666,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec498*/
       v4 = a3; /*0x4ec4ae*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec4aa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ec4aa*/
     *((unsigned char *)this + 12) = 1; /*0x4ec4b2*/
     if ( !v4 ) /*0x4ec4b6*/
       return 0; /*0x4ec52a*/
@@ -14679,7 +14679,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ec4d1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec4de*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec4e9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ec4e9*/
         *((unsigned int *)this + 1) = 0; /*0x4ec4f1*/
       }
     }
@@ -14768,7 +14768,7 @@ char VectorClass_ptr_SideClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec5bc*/
       v4 = a3; /*0x4ec5d2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec5ce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ec5ce*/
     *((unsigned char *)this + 12) = 1; /*0x4ec5d6*/
     if ( v4 ) /*0x4ec5da*/
     {
@@ -14781,7 +14781,7 @@ char VectorClass_ptr_SideClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ec5fe*/
         if ( *((unsigned char *)this + 13) ) /*0x4ec60b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec616*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ec616*/
           *((unsigned int *)this + 1) = 0; /*0x4ec61e*/
         }
       }
@@ -14811,7 +14811,7 @@ void VectorClass_ptr_SideClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ec65d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ec663*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ec663*/
     *((unsigned int *)this + 1) = 0; /*0x4ec66b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ec66e*/
@@ -14874,7 +14874,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec6f8*/
       v4 = a3; /*0x4ec70e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec70a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ec70a*/
     *((unsigned char *)this + 12) = 1; /*0x4ec712*/
     if ( !v4 ) /*0x4ec716*/
       return 0; /*0x4ec78a*/
@@ -14887,7 +14887,7 @@ char VectorClass_ptr_CampaignClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ec731*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec73e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec749*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ec749*/
         *((unsigned int *)this + 1) = 0; /*0x4ec751*/
       }
     }
@@ -14976,7 +14976,7 @@ char VectorClass_ptr_HouseTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec81c*/
       v4 = a3; /*0x4ec832*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec82e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ec82e*/
     *((unsigned char *)this + 12) = 1; /*0x4ec836*/
     if ( v4 ) /*0x4ec83a*/
     {
@@ -14989,7 +14989,7 @@ char VectorClass_ptr_HouseTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ec85e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ec86b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec876*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ec876*/
           *((unsigned int *)this + 1) = 0; /*0x4ec87e*/
         }
       }
@@ -15019,7 +15019,7 @@ void VectorClass_ptr_HouseTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ec8bd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ec8c3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ec8c3*/
     *((unsigned int *)this + 1) = 0; /*0x4ec8cb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ec8ce*/
@@ -15082,7 +15082,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ec958*/
       v4 = a3; /*0x4ec96e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ec96a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ec96a*/
     *((unsigned char *)this + 12) = 1; /*0x4ec972*/
     if ( !v4 ) /*0x4ec976*/
       return 0; /*0x4ec9ea*/
@@ -15095,7 +15095,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ec991*/
       if ( *((unsigned char *)this + 13) ) /*0x4ec99e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ec9a9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ec9a9*/
         *((unsigned int *)this + 1) = 0; /*0x4ec9b1*/
       }
     }
@@ -15184,7 +15184,7 @@ char VectorClass_ptr_TaskForceClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eca7c*/
       v4 = a3; /*0x4eca92*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eca8e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eca8e*/
     *((unsigned char *)this + 12) = 1; /*0x4eca96*/
     if ( v4 ) /*0x4eca9a*/
     {
@@ -15197,7 +15197,7 @@ char VectorClass_ptr_TaskForceClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ecabe*/
         if ( *((unsigned char *)this + 13) ) /*0x4ecacb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ecad6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ecad6*/
           *((unsigned int *)this + 1) = 0; /*0x4ecade*/
         }
       }
@@ -15227,7 +15227,7 @@ void VectorClass_ptr_TaskForceClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ecb1d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ecb23*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ecb23*/
     *((unsigned int *)this + 1) = 0; /*0x4ecb2b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ecb2e*/
@@ -15290,7 +15290,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ecbb8*/
       v4 = a3; /*0x4ecbce*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ecbca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ecbca*/
     *((unsigned char *)this + 12) = 1; /*0x4ecbd2*/
     if ( !v4 ) /*0x4ecbd6*/
       return 0; /*0x4ecc4a*/
@@ -15303,7 +15303,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ecbf1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ecbfe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ecc09*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ecc09*/
         *((unsigned int *)this + 1) = 0; /*0x4ecc11*/
       }
     }
@@ -15392,7 +15392,7 @@ char VectorClass_ptr_TeamTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eccdc*/
       v4 = a3; /*0x4eccf2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eccee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eccee*/
     *((unsigned char *)this + 12) = 1; /*0x4eccf6*/
     if ( v4 ) /*0x4eccfa*/
     {
@@ -15405,7 +15405,7 @@ char VectorClass_ptr_TeamTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ecd1e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ecd2b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ecd36*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ecd36*/
           *((unsigned int *)this + 1) = 0; /*0x4ecd3e*/
         }
       }
@@ -15435,7 +15435,7 @@ void VectorClass_ptr_TeamTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ecd7d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ecd83*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ecd83*/
     *((unsigned int *)this + 1) = 0; /*0x4ecd8b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ecd8e*/
@@ -15498,7 +15498,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ece18*/
       v4 = a3; /*0x4ece2e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ece2a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ece2a*/
     *((unsigned char *)this + 12) = 1; /*0x4ece32*/
     if ( !v4 ) /*0x4ece36*/
       return 0; /*0x4eceaa*/
@@ -15511,7 +15511,7 @@ char VectorClass_ptr_HouseTypeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4ece51*/
       if ( *((unsigned char *)this + 13) ) /*0x4ece5e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ece69*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ece69*/
         *((unsigned int *)this + 1) = 0; /*0x4ece71*/
       }
     }
@@ -15600,7 +15600,7 @@ char VectorClass_ptr_ScriptTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ecf3c*/
       v4 = a3; /*0x4ecf52*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ecf4e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ecf4e*/
     *((unsigned char *)this + 12) = 1; /*0x4ecf56*/
     if ( v4 ) /*0x4ecf5a*/
     {
@@ -15613,7 +15613,7 @@ char VectorClass_ptr_ScriptTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ecf7e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ecf8b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ecf96*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ecf96*/
           *((unsigned int *)this + 1) = 0; /*0x4ecf9e*/
         }
       }
@@ -15643,7 +15643,7 @@ void VectorClass_ptr_ScriptTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ecfdd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ecfe3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ecfe3*/
     *((unsigned int *)this + 1) = 0; /*0x4ecfeb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ecfee*/
@@ -15706,7 +15706,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed078*/
       v4 = a3; /*0x4ed08e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed08a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ed08a*/
     *((unsigned char *)this + 12) = 1; /*0x4ed092*/
     if ( !v4 ) /*0x4ed096*/
       return 0; /*0x4ed10a*/
@@ -15719,7 +15719,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ed0b1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ed0be*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed0c9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ed0c9*/
         *((unsigned int *)this + 1) = 0; /*0x4ed0d1*/
       }
     }
@@ -15808,7 +15808,7 @@ char VectorClass_ptr_OverlayTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed19c*/
       v4 = a3; /*0x4ed1b2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed1ae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ed1ae*/
     *((unsigned char *)this + 12) = 1; /*0x4ed1b6*/
     if ( v4 ) /*0x4ed1ba*/
     {
@@ -15821,7 +15821,7 @@ char VectorClass_ptr_OverlayTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ed1de*/
         if ( *((unsigned char *)this + 13) ) /*0x4ed1eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed1f6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ed1f6*/
           *((unsigned int *)this + 1) = 0; /*0x4ed1fe*/
         }
       }
@@ -15851,7 +15851,7 @@ void VectorClass_ptr_OverlayTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ed23d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ed243*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ed243*/
     *((unsigned int *)this + 1) = 0; /*0x4ed24b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ed24e*/
@@ -15914,7 +15914,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed2d8*/
       v4 = a3; /*0x4ed2ee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed2ea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ed2ea*/
     *((unsigned char *)this + 12) = 1; /*0x4ed2f2*/
     if ( !v4 ) /*0x4ed2f6*/
       return 0; /*0x4ed36a*/
@@ -15927,7 +15927,7 @@ char VectorClass_ptr_ScriptTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ed311*/
       if ( *((unsigned char *)this + 13) ) /*0x4ed31e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed329*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ed329*/
         *((unsigned int *)this + 1) = 0; /*0x4ed331*/
       }
     }
@@ -16016,7 +16016,7 @@ char VectorClass_ptr_SmudgeTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed3fc*/
       v4 = a3; /*0x4ed412*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed40e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ed40e*/
     *((unsigned char *)this + 12) = 1; /*0x4ed416*/
     if ( v4 ) /*0x4ed41a*/
     {
@@ -16029,7 +16029,7 @@ char VectorClass_ptr_SmudgeTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ed43e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ed44b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed456*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ed456*/
           *((unsigned int *)this + 1) = 0; /*0x4ed45e*/
         }
       }
@@ -16059,7 +16059,7 @@ void VectorClass_ptr_SmudgeTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ed49d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ed4a3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ed4a3*/
     *((unsigned int *)this + 1) = 0; /*0x4ed4ab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ed4ae*/
@@ -16122,7 +16122,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed538*/
       v4 = a3; /*0x4ed54e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed54a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ed54a*/
     *((unsigned char *)this + 12) = 1; /*0x4ed552*/
     if ( !v4 ) /*0x4ed556*/
       return 0; /*0x4ed5ca*/
@@ -16135,7 +16135,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ed571*/
       if ( *((unsigned char *)this + 13) ) /*0x4ed57e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed589*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ed589*/
         *((unsigned int *)this + 1) = 0; /*0x4ed591*/
       }
     }
@@ -16224,7 +16224,7 @@ char VectorClass_ptr_TerrainTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed65c*/
       v4 = a3; /*0x4ed672*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed66e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ed66e*/
     *((unsigned char *)this + 12) = 1; /*0x4ed676*/
     if ( v4 ) /*0x4ed67a*/
     {
@@ -16237,7 +16237,7 @@ char VectorClass_ptr_TerrainTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ed69e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ed6ab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed6b6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ed6b6*/
           *((unsigned int *)this + 1) = 0; /*0x4ed6be*/
         }
       }
@@ -16267,7 +16267,7 @@ void VectorClass_ptr_TerrainTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ed6fd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ed703*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ed703*/
     *((unsigned int *)this + 1) = 0; /*0x4ed70b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ed70e*/
@@ -16330,7 +16330,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed798*/
       v4 = a3; /*0x4ed7ae*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed7aa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ed7aa*/
     *((unsigned char *)this + 12) = 1; /*0x4ed7b2*/
     if ( !v4 ) /*0x4ed7b6*/
       return 0; /*0x4ed82a*/
@@ -16343,7 +16343,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ed7d1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ed7de*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed7e9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ed7e9*/
         *((unsigned int *)this + 1) = 0; /*0x4ed7f1*/
       }
     }
@@ -16432,7 +16432,7 @@ char VectorClass_ptr_BuildingTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed8bc*/
       v4 = a3; /*0x4ed8d2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ed8ce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ed8ce*/
     *((unsigned char *)this + 12) = 1; /*0x4ed8d6*/
     if ( v4 ) /*0x4ed8da*/
     {
@@ -16445,7 +16445,7 @@ char VectorClass_ptr_BuildingTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ed8fe*/
         if ( *((unsigned char *)this + 13) ) /*0x4ed90b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ed916*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ed916*/
           *((unsigned int *)this + 1) = 0; /*0x4ed91e*/
         }
       }
@@ -16474,7 +16474,7 @@ void VectorClass_flat::Cleanup4()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ed95d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ed963*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ed963*/
     *((unsigned int *)this + 1) = 0; /*0x4ed96b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ed96e*/
@@ -16483,7 +16483,7 @@ void VectorClass_flat::Cleanup4()
 }
 // 0x4ED980
 namespace gamemd {
-int  VectorClass_ptr_BuildingTypeClass::GetSize()
+int  VectorClass_ptr_BuildingTypeClass::GetSize( unsigned int * a2)
 {
 
   int result; // eax
@@ -16535,7 +16535,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ed9f8*/
       v4 = a3; /*0x4eda0e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eda0a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eda0a*/
     *((unsigned char *)this + 12) = 1; /*0x4eda12*/
     if ( !v4 ) /*0x4eda16*/
       return 0; /*0x4eda8a*/
@@ -16548,7 +16548,7 @@ char VectorClass_ptr_SmudgeTypeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4eda31*/
       if ( *((unsigned char *)this + 13) ) /*0x4eda3e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eda49*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4eda49*/
         *((unsigned int *)this + 1) = 0; /*0x4eda51*/
       }
     }
@@ -16637,7 +16637,7 @@ char VectorClass_ptr_AircraftTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edb1c*/
       v4 = a3; /*0x4edb32*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edb2e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4edb2e*/
     *((unsigned char *)this + 12) = 1; /*0x4edb36*/
     if ( v4 ) /*0x4edb3a*/
     {
@@ -16650,7 +16650,7 @@ char VectorClass_ptr_AircraftTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4edb5e*/
         if ( *((unsigned char *)this + 13) ) /*0x4edb6b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4edb76*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4edb76*/
           *((unsigned int *)this + 1) = 0; /*0x4edb7e*/
         }
       }
@@ -16680,7 +16680,7 @@ void VectorClass_ptr_AircraftTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4edbbd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4edbc3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4edbc3*/
     *((unsigned int *)this + 1) = 0; /*0x4edbcb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4edbce*/
@@ -16743,7 +16743,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edc58*/
       v4 = a3; /*0x4edc6e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edc6a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4edc6a*/
     *((unsigned char *)this + 12) = 1; /*0x4edc72*/
     if ( !v4 ) /*0x4edc76*/
       return 0; /*0x4edcea*/
@@ -16756,7 +16756,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4edc91*/
       if ( *((unsigned char *)this + 13) ) /*0x4edc9e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4edca9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4edca9*/
         *((unsigned int *)this + 1) = 0; /*0x4edcb1*/
       }
     }
@@ -16845,7 +16845,7 @@ char VectorClass_ptr_UnitTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edd7c*/
       v4 = a3; /*0x4edd92*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edd8e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4edd8e*/
     *((unsigned char *)this + 12) = 1; /*0x4edd96*/
     if ( v4 ) /*0x4edd9a*/
     {
@@ -16858,7 +16858,7 @@ char VectorClass_ptr_UnitTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eddbe*/
         if ( *((unsigned char *)this + 13) ) /*0x4eddcb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eddd6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eddd6*/
           *((unsigned int *)this + 1) = 0; /*0x4eddde*/
         }
       }
@@ -16888,7 +16888,7 @@ void VectorClass_ptr_UnitTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ede1d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ede23*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ede23*/
     *((unsigned int *)this + 1) = 0; /*0x4ede2b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ede2e*/
@@ -16951,7 +16951,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edeb8*/
       v4 = a3; /*0x4edece*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edeca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4edeca*/
     *((unsigned char *)this + 12) = 1; /*0x4eded2*/
     if ( !v4 ) /*0x4eded6*/
       return 0; /*0x4edf4a*/
@@ -16964,7 +16964,7 @@ char VectorClass_ptr_AircraftTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4edef1*/
       if ( *((unsigned char *)this + 13) ) /*0x4edefe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4edf09*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4edf09*/
         *((unsigned int *)this + 1) = 0; /*0x4edf11*/
       }
     }
@@ -17053,7 +17053,7 @@ char VectorClass_ptr_AnimTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4edfdc*/
       v4 = a3; /*0x4edff2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4edfee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4edfee*/
     *((unsigned char *)this + 12) = 1; /*0x4edff6*/
     if ( v4 ) /*0x4edffa*/
     {
@@ -17066,7 +17066,7 @@ char VectorClass_ptr_AnimTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee01e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee02b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee036*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ee036*/
           *((unsigned int *)this + 1) = 0; /*0x4ee03e*/
         }
       }
@@ -17096,7 +17096,7 @@ void VectorClass_ptr_AnimTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ee07d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ee083*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ee083*/
     *((unsigned int *)this + 1) = 0; /*0x4ee08b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ee08e*/
@@ -17159,7 +17159,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee118*/
       v4 = a3; /*0x4ee12e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee12a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ee12a*/
     *((unsigned char *)this + 12) = 1; /*0x4ee132*/
     if ( !v4 ) /*0x4ee136*/
       return 0; /*0x4ee1aa*/
@@ -17172,7 +17172,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ee151*/
       if ( *((unsigned char *)this + 13) ) /*0x4ee15e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee169*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ee169*/
         *((unsigned int *)this + 1) = 0; /*0x4ee171*/
       }
     }
@@ -17261,7 +17261,7 @@ char VectorClass_ptr_InfantryTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee23c*/
       v4 = a3; /*0x4ee252*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee24e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ee24e*/
     *((unsigned char *)this + 12) = 1; /*0x4ee256*/
     if ( v4 ) /*0x4ee25a*/
     {
@@ -17274,7 +17274,7 @@ char VectorClass_ptr_InfantryTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee27e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee28b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee296*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ee296*/
           *((unsigned int *)this + 1) = 0; /*0x4ee29e*/
         }
       }
@@ -17304,7 +17304,7 @@ void VectorClass_ptr_InfantryTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ee2dd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ee2e3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ee2e3*/
     *((unsigned int *)this + 1) = 0; /*0x4ee2eb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ee2ee*/
@@ -17367,7 +17367,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee378*/
       v4 = a3; /*0x4ee38e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee38a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ee38a*/
     *((unsigned char *)this + 12) = 1; /*0x4ee392*/
     if ( !v4 ) /*0x4ee396*/
       return 0; /*0x4ee40a*/
@@ -17380,7 +17380,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4ee3b1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ee3be*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee3c9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ee3c9*/
         *((unsigned int *)this + 1) = 0; /*0x4ee3d1*/
       }
     }
@@ -17469,7 +17469,7 @@ char VectorClass_ptr_BulletTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee49c*/
       v4 = a3; /*0x4ee4b2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee4ae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ee4ae*/
     *((unsigned char *)this + 12) = 1; /*0x4ee4b6*/
     if ( v4 ) /*0x4ee4ba*/
     {
@@ -17482,7 +17482,7 @@ char VectorClass_ptr_BulletTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee4de*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee4eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee4f6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ee4f6*/
           *((unsigned int *)this + 1) = 0; /*0x4ee4fe*/
         }
       }
@@ -17512,7 +17512,7 @@ void VectorClass_ptr_BulletTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ee53d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ee543*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ee543*/
     *((unsigned int *)this + 1) = 0; /*0x4ee54b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ee54e*/
@@ -17575,7 +17575,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee5d8*/
       v4 = a3; /*0x4ee5ee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee5ea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ee5ea*/
     *((unsigned char *)this + 12) = 1; /*0x4ee5f2*/
     if ( !v4 ) /*0x4ee5f6*/
       return 0; /*0x4ee66a*/
@@ -17588,7 +17588,7 @@ char VectorClass_ptr_AnimTypeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4ee611*/
       if ( *((unsigned char *)this + 13) ) /*0x4ee61e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee629*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ee629*/
         *((unsigned int *)this + 1) = 0; /*0x4ee631*/
       }
     }
@@ -17677,7 +17677,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee6fc*/
       v4 = a3; /*0x4ee712*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee70e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ee70e*/
     *((unsigned char *)this + 12) = 1; /*0x4ee716*/
     if ( v4 ) /*0x4ee71a*/
     {
@@ -17690,7 +17690,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee73e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee74b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee756*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ee756*/
           *((unsigned int *)this + 1) = 0; /*0x4ee75e*/
         }
       }
@@ -17720,7 +17720,7 @@ void VectorClass_ptr_VoxelAnimTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ee79d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ee7a3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ee7a3*/
     *((unsigned int *)this + 1) = 0; /*0x4ee7ab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ee7ae*/
@@ -17783,7 +17783,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee838*/
       v4 = a3; /*0x4ee84e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee84a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ee84a*/
     *((unsigned char *)this + 12) = 1; /*0x4ee852*/
     if ( !v4 ) /*0x4ee856*/
       return 0; /*0x4ee8ca*/
@@ -17796,7 +17796,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ee871*/
       if ( *((unsigned char *)this + 13) ) /*0x4ee87e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee889*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ee889*/
         *((unsigned int *)this + 1) = 0; /*0x4ee891*/
       }
     }
@@ -17885,7 +17885,7 @@ char VectorClass_ptr_IsometricTileTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ee95c*/
       v4 = a3; /*0x4ee972*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ee96e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ee96e*/
     *((unsigned char *)this + 12) = 1; /*0x4ee976*/
     if ( v4 ) /*0x4ee97a*/
     {
@@ -17898,7 +17898,7 @@ char VectorClass_ptr_IsometricTileTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ee99e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ee9ab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ee9b6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ee9b6*/
           *((unsigned int *)this + 1) = 0; /*0x4ee9be*/
         }
       }
@@ -17928,7 +17928,7 @@ void VectorClass_ptr_IsometricTileTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ee9fd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eea03*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eea03*/
     *((unsigned int *)this + 1) = 0; /*0x4eea0b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eea0e*/
@@ -17991,7 +17991,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity_0(int a2, unsigned int * a3
     if ( a3 ) /*0x4eea98*/
       v4 = a3; /*0x4eeaae*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eeaaa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eeaaa*/
     *((unsigned char *)this + 12) = 1; /*0x4eeab2*/
     if ( !v4 ) /*0x4eeab6*/
       return 0; /*0x4eeb2a*/
@@ -18004,7 +18004,7 @@ char VectorClass_ptr_VoxelAnimTypeClass::SetCapacity_0(int a2, unsigned int * a3
         ++i; /*0x4eead1*/
       if ( *((unsigned char *)this + 13) ) /*0x4eeade*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eeae9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4eeae9*/
         *((unsigned int *)this + 1) = 0; /*0x4eeaf1*/
       }
     }
@@ -18093,7 +18093,7 @@ char VectorClass_ptr_ParticleTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eebbc*/
       v4 = a3; /*0x4eebd2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eebce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eebce*/
     *((unsigned char *)this + 12) = 1; /*0x4eebd6*/
     if ( v4 ) /*0x4eebda*/
     {
@@ -18106,7 +18106,7 @@ char VectorClass_ptr_ParticleTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eebfe*/
         if ( *((unsigned char *)this + 13) ) /*0x4eec0b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eec16*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eec16*/
           *((unsigned int *)this + 1) = 0; /*0x4eec1e*/
         }
       }
@@ -18136,7 +18136,7 @@ void VectorClass_ptr_ParticleTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4eec5d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eec63*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eec63*/
     *((unsigned int *)this + 1) = 0; /*0x4eec6b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eec6e*/
@@ -18199,7 +18199,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eecf8*/
       v4 = a3; /*0x4eed0e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eed0a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eed0a*/
     *((unsigned char *)this + 12) = 1; /*0x4eed12*/
     if ( !v4 ) /*0x4eed16*/
       return 0; /*0x4eed8a*/
@@ -18212,7 +18212,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4eed31*/
       if ( *((unsigned char *)this + 13) ) /*0x4eed3e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eed49*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4eed49*/
         *((unsigned int *)this + 1) = 0; /*0x4eed51*/
       }
     }
@@ -18301,7 +18301,7 @@ char VectorClass_ptr_ParticleSystemTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eee1c*/
       v4 = a3; /*0x4eee32*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eee2e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eee2e*/
     *((unsigned char *)this + 12) = 1; /*0x4eee36*/
     if ( v4 ) /*0x4eee3a*/
     {
@@ -18314,7 +18314,7 @@ char VectorClass_ptr_ParticleSystemTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4eee5e*/
         if ( *((unsigned char *)this + 13) ) /*0x4eee6b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eee76*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eee76*/
           *((unsigned int *)this + 1) = 0; /*0x4eee7e*/
         }
       }
@@ -18344,7 +18344,7 @@ void VectorClass_ptr_ParticleSystemTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4eeebd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eeec3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eeec3*/
     *((unsigned int *)this + 1) = 0; /*0x4eeecb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eeece*/
@@ -18407,7 +18407,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eef58*/
       v4 = a3; /*0x4eef6e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eef6a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eef6a*/
     *((unsigned char *)this + 12) = 1; /*0x4eef72*/
     if ( !v4 ) /*0x4eef76*/
       return 0; /*0x4eefea*/
@@ -18420,7 +18420,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x4eef91*/
       if ( *((unsigned char *)this + 13) ) /*0x4eef9e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eefa9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4eefa9*/
         *((unsigned int *)this + 1) = 0; /*0x4eefb1*/
       }
     }
@@ -18509,7 +18509,7 @@ char VectorClass_ptr_SuperWeaponTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ef07c*/
       v4 = a3; /*0x4ef092*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ef08e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ef08e*/
     *((unsigned char *)this + 12) = 1; /*0x4ef096*/
     if ( v4 ) /*0x4ef09a*/
     {
@@ -18522,7 +18522,7 @@ char VectorClass_ptr_SuperWeaponTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ef0be*/
         if ( *((unsigned char *)this + 13) ) /*0x4ef0cb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef0d6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ef0d6*/
           *((unsigned int *)this + 1) = 0; /*0x4ef0de*/
         }
       }
@@ -18552,7 +18552,7 @@ void VectorClass_ptr_SuperWeaponTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ef11d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ef123*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ef123*/
     *((unsigned int *)this + 1) = 0; /*0x4ef12b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ef12e*/
@@ -18615,7 +18615,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ef1b8*/
       v4 = a3; /*0x4ef1ce*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ef1ca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ef1ca*/
     *((unsigned char *)this + 12) = 1; /*0x4ef1d2*/
     if ( !v4 ) /*0x4ef1d6*/
       return 0; /*0x4ef24a*/
@@ -18628,7 +18628,7 @@ char VectorClass_ptr_ParticleTypeClass::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x4ef1f1*/
       if ( *((unsigned char *)this + 13) ) /*0x4ef1fe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef209*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ef209*/
         *((unsigned int *)this + 1) = 0; /*0x4ef211*/
       }
     }
@@ -18717,7 +18717,7 @@ char VectorClass_ptr_AbstractTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ef2dc*/
       v4 = a3; /*0x4ef2f2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ef2ee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ef2ee*/
     *((unsigned char *)this + 12) = 1; /*0x4ef2f6*/
     if ( v4 ) /*0x4ef2fa*/
     {
@@ -18730,7 +18730,7 @@ char VectorClass_ptr_AbstractTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x4ef31e*/
         if ( *((unsigned char *)this + 13) ) /*0x4ef32b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef336*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4ef336*/
           *((unsigned int *)this + 1) = 0; /*0x4ef33e*/
         }
       }
@@ -18760,7 +18760,7 @@ void VectorClass_ptr_AbstractTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4ef37d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4ef383*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4ef383*/
     *((unsigned int *)this + 1) = 0; /*0x4ef38b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4ef38e*/
@@ -18823,7 +18823,7 @@ char VectorClass_ptr_SuperClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4ef418*/
       v4 = a3; /*0x4ef42e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4ef42a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4ef42a*/
     *((unsigned char *)this + 12) = 1; /*0x4ef432*/
     if ( !v4 ) /*0x4ef436*/
       return 0; /*0x4ef4aa*/
@@ -18836,7 +18836,7 @@ char VectorClass_ptr_SuperClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4ef451*/
       if ( *((unsigned char *)this + 13) ) /*0x4ef45e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4ef469*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4ef469*/
         *((unsigned int *)this + 1) = 0; /*0x4ef471*/
       }
     }
@@ -18890,13 +18890,13 @@ VectorClass_flat * VectorClass_Building::QueryInterface(unsigned int * Block, ch
   *Block = &vt_VectorClass_BuildingClass; /*0x4ef586*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef590*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef598*/
+    RA2_OPDEL(v3); /*0x4ef598*/
     *(Block + 1) = 0; /*0x4ef5a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef5ab*/
   *(Block + 2) = 0; /*0x4ef5b1*/
   if ( (a2 & 1) != 0 ) /*0x4ef5b8*/
-    __3_YAXPAX_Z(Block); /*0x4ef5bb*/
+    RA2_OPDEL(Block); /*0x4ef5bb*/
   return (VectorClass *)Block; /*0x4ef5c5*/
 
 }
@@ -18913,13 +18913,13 @@ VectorClass_flat * VectorClass_ptr_SuperClass::QueryInterface(unsigned int * Blo
   *Block = &vt_VectorClass_SuperClass; /*0x4ef626*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef630*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef638*/
+    RA2_OPDEL(v3); /*0x4ef638*/
     *(Block + 1) = 0; /*0x4ef640*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef64b*/
   *(Block + 2) = 0; /*0x4ef651*/
   if ( (a2 & 1) != 0 ) /*0x4ef658*/
-    __3_YAXPAX_Z(Block); /*0x4ef65b*/
+    RA2_OPDEL(Block); /*0x4ef65b*/
   return (VectorClass *)Block; /*0x4ef665*/
 
 }
@@ -18936,13 +18936,13 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_SuperClass__
   *Block = &vt_VectorClass_SuperClass; /*0x4ef676*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef680*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef688*/
+    RA2_OPDEL(v3); /*0x4ef688*/
     *(Block + 1) = 0; /*0x4ef690*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef69b*/
   *(Block + 2) = 0; /*0x4ef6a1*/
   if ( (a2 & 1) != 0 ) /*0x4ef6a8*/
-    __3_YAXPAX_Z(Block); /*0x4ef6ab*/
+    RA2_OPDEL(Block); /*0x4ef6ab*/
   return (DynamicVector *)Block; /*0x4ef6b5*/
 
 }
@@ -18959,13 +18959,13 @@ VectorClass_flat * VectorClass_ptr_AITriggerTypeClass::QueryInterface(unsigned i
   *Block = &vt_VectorClass_AITriggerTypeClass; /*0x4ef6c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef6d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef6d8*/
+    RA2_OPDEL(v3); /*0x4ef6d8*/
     *(Block + 1) = 0; /*0x4ef6e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef6eb*/
   *(Block + 2) = 0; /*0x4ef6f1*/
   if ( (a2 & 1) != 0 ) /*0x4ef6f8*/
-    __3_YAXPAX_Z(Block); /*0x4ef6fb*/
+    RA2_OPDEL(Block); /*0x4ef6fb*/
   return (VectorClass *)Block; /*0x4ef705*/
 
 }
@@ -18973,7 +18973,7 @@ VectorClass_flat * VectorClass_ptr_AITriggerTypeClass::QueryInterface(unsigned i
 
 // 0x4EF710
 namespace gamemd {
-DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITriggerTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -18982,13 +18982,13 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_AITr
   *Block = &vt_VectorClass_AITriggerTypeClass; /*0x4ef716*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef720*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef728*/
+    RA2_OPDEL(v3); /*0x4ef728*/
     *(Block + 1) = 0; /*0x4ef730*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef73b*/
   *(Block + 2) = 0; /*0x4ef741*/
-  if ( (a2 & 1) != 0 ) /*0x4ef748*/
-    __3_YAXPAX_Z(Block); /*0x4ef74b*/
+  if ( (Block & 1) != 0 ) /*0x4ef748*/
+    RA2_OPDEL(Block); /*0x4ef74b*/
   return (DynamicVector *)Block; /*0x4ef755*/
 
 }
@@ -19005,13 +19005,13 @@ VectorClass_flat * VectorClass_ptr_BuildingLightClass::QueryInterface(unsigned i
   *Block = &vt_VectorClass_BuildingLightClass; /*0x4ef766*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef770*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef778*/
+    RA2_OPDEL(v3); /*0x4ef778*/
     *(Block + 1) = 0; /*0x4ef780*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef78b*/
   *(Block + 2) = 0; /*0x4ef791*/
   if ( (a2 & 1) != 0 ) /*0x4ef798*/
-    __3_YAXPAX_Z(Block); /*0x4ef79b*/
+    RA2_OPDEL(Block); /*0x4ef79b*/
   return (VectorClass *)Block; /*0x4ef7a5*/
 
 }
@@ -19019,7 +19019,7 @@ VectorClass_flat * VectorClass_ptr_BuildingLightClass::QueryInterface(unsigned i
 
 // 0x4EF7B0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_BuildingLightClass___(char a2)
+DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_BuildingLightClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19028,13 +19028,13 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Buil
   *Block = &vt_VectorClass_BuildingLightClass; /*0x4ef7b6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef7c0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef7c8*/
+    RA2_OPDEL(v3); /*0x4ef7c8*/
     *(Block + 1) = 0; /*0x4ef7d0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef7db*/
   *(Block + 2) = 0; /*0x4ef7e1*/
-  if ( (a2 & 1) != 0 ) /*0x4ef7e8*/
-    __3_YAXPAX_Z(Block); /*0x4ef7eb*/
+  if ( (Block & 1) != 0 ) /*0x4ef7e8*/
+    RA2_OPDEL(Block); /*0x4ef7eb*/
   return (DynamicVector *)Block; /*0x4ef7f5*/
 
 }
@@ -19051,13 +19051,13 @@ VectorClass_flat * VectorClass_ptr_TeamClass::QueryInterface(unsigned int * Bloc
   *Block = &vt_VectorClass_TeamClass; /*0x4ef8a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef8b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef8b8*/
+    RA2_OPDEL(v3); /*0x4ef8b8*/
     *(Block + 1) = 0; /*0x4ef8c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef8cb*/
   *(Block + 2) = 0; /*0x4ef8d1*/
   if ( (a2 & 1) != 0 ) /*0x4ef8d8*/
-    __3_YAXPAX_Z(Block); /*0x4ef8db*/
+    RA2_OPDEL(Block); /*0x4ef8db*/
   return (VectorClass *)Block; /*0x4ef8e5*/
 
 }
@@ -19074,13 +19074,13 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_TeamClass___(
   *Block = &vt_VectorClass_TeamClass; /*0x4ef8f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef900*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef908*/
+    RA2_OPDEL(v3); /*0x4ef908*/
     *(Block + 1) = 0; /*0x4ef910*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef91b*/
   *(Block + 2) = 0; /*0x4ef921*/
   if ( (a2 & 1) != 0 ) /*0x4ef928*/
-    __3_YAXPAX_Z(Block); /*0x4ef92b*/
+    RA2_OPDEL(Block); /*0x4ef92b*/
   return (DynamicVector *)Block; /*0x4ef935*/
 
 }
@@ -19097,13 +19097,13 @@ VectorClass_flat * VectorClass_ptr_ThemeControl::Add(unsigned int * Block, char 
   *Block = &vt_VectorClass_ThemeControl; /*0x4ef946*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef950*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef958*/
+    RA2_OPDEL(v3); /*0x4ef958*/
     *(Block + 1) = 0; /*0x4ef960*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef96b*/
   *(Block + 2) = 0; /*0x4ef971*/
   if ( (a2 & 1) != 0 ) /*0x4ef978*/
-    __3_YAXPAX_Z(Block); /*0x4ef97b*/
+    RA2_OPDEL(Block); /*0x4ef97b*/
   return (VectorClass *)Block; /*0x4ef985*/
 
 }
@@ -19120,13 +19120,13 @@ VectorClass_flat * VectorClass_ptr_TriggerClass::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_TriggerClass; /*0x4ef996*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef9a0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef9a8*/
+    RA2_OPDEL(v3); /*0x4ef9a8*/
     *(Block + 1) = 0; /*0x4ef9b0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef9bb*/
   *(Block + 2) = 0; /*0x4ef9c1*/
   if ( (a2 & 1) != 0 ) /*0x4ef9c8*/
-    __3_YAXPAX_Z(Block); /*0x4ef9cb*/
+    RA2_OPDEL(Block); /*0x4ef9cb*/
   return (VectorClass *)Block; /*0x4ef9d5*/
 
 }
@@ -19134,7 +19134,7 @@ VectorClass_flat * VectorClass_ptr_TriggerClass::QueryInterface(unsigned int * B
 
 // 0x4EF9E0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerClass___(char a2)
+DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19143,13 +19143,13 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
   *Block = &vt_VectorClass_TriggerClass; /*0x4ef9e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef9f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef9f8*/
+    RA2_OPDEL(v3); /*0x4ef9f8*/
     *(Block + 1) = 0; /*0x4efa00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efa0b*/
   *(Block + 2) = 0; /*0x4efa11*/
-  if ( (a2 & 1) != 0 ) /*0x4efa18*/
-    __3_YAXPAX_Z(Block); /*0x4efa1b*/
+  if ( (Block & 1) != 0 ) /*0x4efa18*/
+    RA2_OPDEL(Block); /*0x4efa1b*/
   return (DynamicVector *)Block; /*0x4efa25*/
 
 }
@@ -19166,13 +19166,13 @@ VectorClass_flat * VectorClass_ptr_TriggerTypeClass::QueryInterface(unsigned int
   *Block = &vt_VectorClass_TriggerTypeClass; /*0x4efa36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efa40*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efa48*/
+    RA2_OPDEL(v3); /*0x4efa48*/
     *(Block + 1) = 0; /*0x4efa50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efa5b*/
   *(Block + 2) = 0; /*0x4efa61*/
   if ( (a2 & 1) != 0 ) /*0x4efa68*/
-    __3_YAXPAX_Z(Block); /*0x4efa6b*/
+    RA2_OPDEL(Block); /*0x4efa6b*/
   return (VectorClass *)Block; /*0x4efa75*/
 
 }
@@ -19180,7 +19180,7 @@ VectorClass_flat * VectorClass_ptr_TriggerTypeClass::QueryInterface(unsigned int
 
 // 0x4EFA80
 namespace gamemd {
-DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_TriggerTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19189,13 +19189,13 @@ DynamicVector * VectorClass_ptr_AITriggerTypeClass::Constructor_VectorClass_Trig
   *Block = &vt_VectorClass_TriggerTypeClass; /*0x4efa86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efa90*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efa98*/
+    RA2_OPDEL(v3); /*0x4efa98*/
     *(Block + 1) = 0; /*0x4efaa0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efaab*/
   *(Block + 2) = 0; /*0x4efab1*/
-  if ( (a2 & 1) != 0 ) /*0x4efab8*/
-    __3_YAXPAX_Z(Block); /*0x4efabb*/
+  if ( (Block & 1) != 0 ) /*0x4efab8*/
+    RA2_OPDEL(Block); /*0x4efabb*/
   return (DynamicVector *)Block; /*0x4efac5*/
 
 }
@@ -19212,13 +19212,13 @@ VectorClass_flat * VectorClass_ptr_TubeClass::QueryInterface(unsigned int * Bloc
   *Block = &vt_VectorClass_TubeClass; /*0x4efad6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efae0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efae8*/
+    RA2_OPDEL(v3); /*0x4efae8*/
     *(Block + 1) = 0; /*0x4efaf0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efafb*/
   *(Block + 2) = 0; /*0x4efb01*/
   if ( (a2 & 1) != 0 ) /*0x4efb08*/
-    __3_YAXPAX_Z(Block); /*0x4efb0b*/
+    RA2_OPDEL(Block); /*0x4efb0b*/
   return (VectorClass *)Block; /*0x4efb15*/
 
 }
@@ -19235,13 +19235,13 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_TubeClass___(
   *Block = &vt_VectorClass_TubeClass; /*0x4efb26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efb30*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efb38*/
+    RA2_OPDEL(v3); /*0x4efb38*/
     *(Block + 1) = 0; /*0x4efb40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efb4b*/
   *(Block + 2) = 0; /*0x4efb51*/
   if ( (a2 & 1) != 0 ) /*0x4efb58*/
-    __3_YAXPAX_Z(Block); /*0x4efb5b*/
+    RA2_OPDEL(Block); /*0x4efb5b*/
   return (DynamicVector *)Block; /*0x4efb65*/
 
 }
@@ -19258,13 +19258,13 @@ VectorClass_flat * VectorClass_ptr_ParticleSystemClass::QueryInterface(unsigned 
   *Block = &vt_VectorClass_ParticleSystemClass; /*0x4efb76*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efb80*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efb88*/
+    RA2_OPDEL(v3); /*0x4efb88*/
     *(Block + 1) = 0; /*0x4efb90*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efb9b*/
   *(Block + 2) = 0; /*0x4efba1*/
   if ( (a2 & 1) != 0 ) /*0x4efba8*/
-    __3_YAXPAX_Z(Block); /*0x4efbab*/
+    RA2_OPDEL(Block); /*0x4efbab*/
   return (VectorClass *)Block; /*0x4efbb5*/
 
 }
@@ -19272,7 +19272,7 @@ VectorClass_flat * VectorClass_ptr_ParticleSystemClass::QueryInterface(unsigned 
 
 // 0x4EFBC0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_ParticleSystemClass___(char a2)
+DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_ParticleSystemClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19281,13 +19281,13 @@ DynamicVector * VectorClass_ptr_BuildingLightClass::Constructor_VectorClass_Part
   *Block = &vt_VectorClass_ParticleSystemClass; /*0x4efbc6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efbd0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efbd8*/
+    RA2_OPDEL(v3); /*0x4efbd8*/
     *(Block + 1) = 0; /*0x4efbe0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efbeb*/
   *(Block + 2) = 0; /*0x4efbf1*/
-  if ( (a2 & 1) != 0 ) /*0x4efbf8*/
-    __3_YAXPAX_Z(Block); /*0x4efbfb*/
+  if ( (Block & 1) != 0 ) /*0x4efbf8*/
+    RA2_OPDEL(Block); /*0x4efbfb*/
   return (DynamicVector *)Block; /*0x4efc05*/
 
 }
@@ -19304,13 +19304,13 @@ VectorClass_flat * VectorClass_ptr_WaveClass::QueryInterface(unsigned int * Bloc
   *Block = &vt_VectorClass_WaveClass; /*0x4efc16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efc20*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efc28*/
+    RA2_OPDEL(v3); /*0x4efc28*/
     *(Block + 1) = 0; /*0x4efc30*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efc3b*/
   *(Block + 2) = 0; /*0x4efc41*/
   if ( (a2 & 1) != 0 ) /*0x4efc48*/
-    __3_YAXPAX_Z(Block); /*0x4efc4b*/
+    RA2_OPDEL(Block); /*0x4efc4b*/
   return (VectorClass *)Block; /*0x4efc55*/
 
 }
@@ -19327,13 +19327,13 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_WaveClass___(
   *Block = &vt_VectorClass_WaveClass; /*0x4efc66*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efc70*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efc78*/
+    RA2_OPDEL(v3); /*0x4efc78*/
     *(Block + 1) = 0; /*0x4efc80*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efc8b*/
   *(Block + 2) = 0; /*0x4efc91*/
   if ( (a2 & 1) != 0 ) /*0x4efc98*/
-    __3_YAXPAX_Z(Block); /*0x4efc9b*/
+    RA2_OPDEL(Block); /*0x4efc9b*/
   return (DynamicVector *)Block; /*0x4efca5*/
 
 }
@@ -19350,13 +19350,13 @@ VectorClass_flat * VectorClass_ptr_OverlayClass::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_OverlayClass; /*0x4efcb6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efcc0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efcc8*/
+    RA2_OPDEL(v3); /*0x4efcc8*/
     *(Block + 1) = 0; /*0x4efcd0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efcdb*/
   *(Block + 2) = 0; /*0x4efce1*/
   if ( (a2 & 1) != 0 ) /*0x4efce8*/
-    __3_YAXPAX_Z(Block); /*0x4efceb*/
+    RA2_OPDEL(Block); /*0x4efceb*/
   return (VectorClass *)Block; /*0x4efcf5*/
 
 }
@@ -19373,13 +19373,13 @@ DynamicVector * VectorClass_ptr_TubeClass::Constructor_VectorClass_OverlayClass_
   *Block = &vt_VectorClass_OverlayClass; /*0x4efd06*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efd10*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efd18*/
+    RA2_OPDEL(v3); /*0x4efd18*/
     *(Block + 1) = 0; /*0x4efd20*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efd2b*/
   *(Block + 2) = 0; /*0x4efd31*/
   if ( (a2 & 1) != 0 ) /*0x4efd38*/
-    __3_YAXPAX_Z(Block); /*0x4efd3b*/
+    RA2_OPDEL(Block); /*0x4efd3b*/
   return (DynamicVector *)Block; /*0x4efd45*/
 
 }
@@ -19396,13 +19396,13 @@ VectorClass_flat * VectorClass_ptr_AircraftClass::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_AircraftClass; /*0x4efe96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efea0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efea8*/
+    RA2_OPDEL(v3); /*0x4efea8*/
     *(Block + 1) = 0; /*0x4efeb0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efebb*/
   *(Block + 2) = 0; /*0x4efec1*/
   if ( (a2 & 1) != 0 ) /*0x4efec8*/
-    __3_YAXPAX_Z(Block); /*0x4efecb*/
+    RA2_OPDEL(Block); /*0x4efecb*/
   return (VectorClass *)Block; /*0x4efed5*/
 
 }
@@ -19419,13 +19419,13 @@ VectorClass_flat * VectorClass_ptr_UnitClass::QueryInterface(unsigned int * Bloc
   *Block = &vt_VectorClass_UnitClass; /*0x4eff36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4eff40*/
   {
-    __3_YAXPAX_Z(v3); /*0x4eff48*/
+    RA2_OPDEL(v3); /*0x4eff48*/
     *(Block + 1) = 0; /*0x4eff50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4eff5b*/
   *(Block + 2) = 0; /*0x4eff61*/
   if ( (a2 & 1) != 0 ) /*0x4eff68*/
-    __3_YAXPAX_Z(Block); /*0x4eff6b*/
+    RA2_OPDEL(Block); /*0x4eff6b*/
   return (VectorClass *)Block; /*0x4eff75*/
 
 }
@@ -19442,13 +19442,13 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_UnitClass___(
   *Block = &vt_VectorClass_UnitClass; /*0x4eff86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4eff90*/
   {
-    __3_YAXPAX_Z(v3); /*0x4eff98*/
+    RA2_OPDEL(v3); /*0x4eff98*/
     *(Block + 1) = 0; /*0x4effa0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4effab*/
   *(Block + 2) = 0; /*0x4effb1*/
   if ( (a2 & 1) != 0 ) /*0x4effb8*/
-    __3_YAXPAX_Z(Block); /*0x4effbb*/
+    RA2_OPDEL(Block); /*0x4effbb*/
   return (DynamicVector *)Block; /*0x4effc5*/
 
 }
@@ -19465,13 +19465,13 @@ VectorClass_flat * VectorClass_ptr_HouseClass::QueryInterface(unsigned int * Blo
   *Block = &vt_VectorClass_HouseClass; /*0x4effd6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4effe0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4effe8*/
+    RA2_OPDEL(v3); /*0x4effe8*/
     *(Block + 1) = 0; /*0x4efff0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efffb*/
   *(Block + 2) = 0; /*0x4f0001*/
   if ( (a2 & 1) != 0 ) /*0x4f0008*/
-    __3_YAXPAX_Z(Block); /*0x4f000b*/
+    RA2_OPDEL(Block); /*0x4f000b*/
   return (VectorClass *)Block; /*0x4f0015*/
 
 }
@@ -19488,13 +19488,13 @@ DynamicVector * VectorClass_ptr_UnitClass::Constructor_VectorClass_HouseClass___
   *Block = &vt_VectorClass_HouseClass; /*0x4f0026*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0030*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0038*/
+    RA2_OPDEL(v3); /*0x4f0038*/
     *(Block + 1) = 0; /*0x4f0040*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f004b*/
   *(Block + 2) = 0; /*0x4f0051*/
   if ( (a2 & 1) != 0 ) /*0x4f0058*/
-    __3_YAXPAX_Z(Block); /*0x4f005b*/
+    RA2_OPDEL(Block); /*0x4f005b*/
   return (DynamicVector *)Block; /*0x4f0065*/
 
 }
@@ -19511,13 +19511,13 @@ VectorClass_flat * VectorClass_ptr_AnimClass::QueryInterface(unsigned int * Bloc
   *Block = &vt_VectorClass_AnimClass; /*0x4f0076*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0080*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0088*/
+    RA2_OPDEL(v3); /*0x4f0088*/
     *(Block + 1) = 0; /*0x4f0090*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f009b*/
   *(Block + 2) = 0; /*0x4f00a1*/
   if ( (a2 & 1) != 0 ) /*0x4f00a8*/
-    __3_YAXPAX_Z(Block); /*0x4f00ab*/
+    RA2_OPDEL(Block); /*0x4f00ab*/
   return (VectorClass *)Block; /*0x4f00b5*/
 
 }
@@ -19534,13 +19534,13 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_AnimClass___(
   *Block = &vt_VectorClass_AnimClass; /*0x4f00c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f00d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f00d8*/
+    RA2_OPDEL(v3); /*0x4f00d8*/
     *(Block + 1) = 0; /*0x4f00e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f00eb*/
   *(Block + 2) = 0; /*0x4f00f1*/
   if ( (a2 & 1) != 0 ) /*0x4f00f8*/
-    __3_YAXPAX_Z(Block); /*0x4f00fb*/
+    RA2_OPDEL(Block); /*0x4f00fb*/
   return (DynamicVector *)Block; /*0x4f0105*/
 
 }
@@ -19557,13 +19557,13 @@ VectorClass_flat * VectorClass_ptr_FactoryClass::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_FactoryClass; /*0x4f0116*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0120*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0128*/
+    RA2_OPDEL(v3); /*0x4f0128*/
     *(Block + 1) = 0; /*0x4f0130*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f013b*/
   *(Block + 2) = 0; /*0x4f0141*/
   if ( (a2 & 1) != 0 ) /*0x4f0148*/
-    __3_YAXPAX_Z(Block); /*0x4f014b*/
+    RA2_OPDEL(Block); /*0x4f014b*/
   return (VectorClass *)Block; /*0x4f0155*/
 
 }
@@ -19580,13 +19580,13 @@ DynamicVector * VectorClass_ptr_TeamClass::Constructor_VectorClass_FactoryClass_
   *Block = &vt_VectorClass_FactoryClass; /*0x4f0166*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0170*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0178*/
+    RA2_OPDEL(v3); /*0x4f0178*/
     *(Block + 1) = 0; /*0x4f0180*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f018b*/
   *(Block + 2) = 0; /*0x4f0191*/
   if ( (a2 & 1) != 0 ) /*0x4f0198*/
-    __3_YAXPAX_Z(Block); /*0x4f019b*/
+    RA2_OPDEL(Block); /*0x4f019b*/
   return (DynamicVector *)Block; /*0x4f01a5*/
 
 }
@@ -19603,13 +19603,13 @@ VectorClass_flat * VectorClass_ptr_CampaignClass::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_CampaignClass; /*0x4f01b6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f01c0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f01c8*/
+    RA2_OPDEL(v3); /*0x4f01c8*/
     *(Block + 1) = 0; /*0x4f01d0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f01db*/
   *(Block + 2) = 0; /*0x4f01e1*/
   if ( (a2 & 1) != 0 ) /*0x4f01e8*/
-    __3_YAXPAX_Z(Block); /*0x4f01eb*/
+    RA2_OPDEL(Block); /*0x4f01eb*/
   return (VectorClass *)Block; /*0x4f01f5*/
 
 }
@@ -19617,7 +19617,7 @@ VectorClass_flat * VectorClass_ptr_CampaignClass::QueryInterface(unsigned int * 
 
 // 0x4F0200
 namespace gamemd {
-DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignClass___(char a2)
+DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19626,13 +19626,13 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_CampaignC
   *Block = &vt_VectorClass_CampaignClass; /*0x4f0206*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0210*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0218*/
+    RA2_OPDEL(v3); /*0x4f0218*/
     *(Block + 1) = 0; /*0x4f0220*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f022b*/
   *(Block + 2) = 0; /*0x4f0231*/
-  if ( (a2 & 1) != 0 ) /*0x4f0238*/
-    __3_YAXPAX_Z(Block); /*0x4f023b*/
+  if ( (Block & 1) != 0 ) /*0x4f0238*/
+    RA2_OPDEL(Block); /*0x4f023b*/
   return (DynamicVector *)Block; /*0x4f0245*/
 
 }
@@ -19649,13 +19649,13 @@ VectorClass_flat * VectorClass_ptr_SideClass::QueryInterface(unsigned int * Bloc
   *Block = &vt_VectorClass_SideClass; /*0x4f0256*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0260*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0268*/
+    RA2_OPDEL(v3); /*0x4f0268*/
     *(Block + 1) = 0; /*0x4f0270*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f027b*/
   *(Block + 2) = 0; /*0x4f0281*/
   if ( (a2 & 1) != 0 ) /*0x4f0288*/
-    __3_YAXPAX_Z(Block); /*0x4f028b*/
+    RA2_OPDEL(Block); /*0x4f028b*/
   return (VectorClass *)Block; /*0x4f0295*/
 
 }
@@ -19672,13 +19672,13 @@ DynamicVector * VectorClass_ptr_CampaignClass::Constructor_VectorClass_SideClass
   *Block = &vt_VectorClass_SideClass; /*0x4f02a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f02b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f02b8*/
+    RA2_OPDEL(v3); /*0x4f02b8*/
     *(Block + 1) = 0; /*0x4f02c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f02cb*/
   *(Block + 2) = 0; /*0x4f02d1*/
   if ( (a2 & 1) != 0 ) /*0x4f02d8*/
-    __3_YAXPAX_Z(Block); /*0x4f02db*/
+    RA2_OPDEL(Block); /*0x4f02db*/
   return (DynamicVector *)Block; /*0x4f02e5*/
 
 }
@@ -19695,13 +19695,13 @@ VectorClass_flat * VectorClass_ptr_HouseTypeClass::QueryInterface(unsigned int *
   *Block = &vt_VectorClass_HouseTypeClass; /*0x4f02f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0300*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0308*/
+    RA2_OPDEL(v3); /*0x4f0308*/
     *(Block + 1) = 0; /*0x4f0310*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f031b*/
   *(Block + 2) = 0; /*0x4f0321*/
   if ( (a2 & 1) != 0 ) /*0x4f0328*/
-    __3_YAXPAX_Z(Block); /*0x4f032b*/
+    RA2_OPDEL(Block); /*0x4f032b*/
   return (VectorClass *)Block; /*0x4f0335*/
 
 }
@@ -19709,7 +19709,7 @@ VectorClass_flat * VectorClass_ptr_HouseTypeClass::QueryInterface(unsigned int *
 
 // 0x4F0340
 namespace gamemd {
-DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19718,13 +19718,13 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_HouseTyp
   *Block = &vt_VectorClass_HouseTypeClass; /*0x4f0346*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0350*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0358*/
+    RA2_OPDEL(v3); /*0x4f0358*/
     *(Block + 1) = 0; /*0x4f0360*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f036b*/
   *(Block + 2) = 0; /*0x4f0371*/
-  if ( (a2 & 1) != 0 ) /*0x4f0378*/
-    __3_YAXPAX_Z(Block); /*0x4f037b*/
+  if ( (Block & 1) != 0 ) /*0x4f0378*/
+    RA2_OPDEL(Block); /*0x4f037b*/
   return (DynamicVector *)Block; /*0x4f0385*/
 
 }
@@ -19741,13 +19741,13 @@ VectorClass_flat * VectorClass_ptr_TaskForceClass::QueryInterface(unsigned int *
   *Block = &vt_VectorClass_TaskForceClass; /*0x4f0396*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f03a0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f03a8*/
+    RA2_OPDEL(v3); /*0x4f03a8*/
     *(Block + 1) = 0; /*0x4f03b0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f03bb*/
   *(Block + 2) = 0; /*0x4f03c1*/
   if ( (a2 & 1) != 0 ) /*0x4f03c8*/
-    __3_YAXPAX_Z(Block); /*0x4f03cb*/
+    RA2_OPDEL(Block); /*0x4f03cb*/
   return (VectorClass *)Block; /*0x4f03d5*/
 
 }
@@ -19755,7 +19755,7 @@ VectorClass_flat * VectorClass_ptr_TaskForceClass::QueryInterface(unsigned int *
 
 // 0x4F03E0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForceClass___(char a2)
+DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForceClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19764,13 +19764,13 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TaskForc
   *Block = &vt_VectorClass_TaskForceClass; /*0x4f03e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f03f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f03f8*/
+    RA2_OPDEL(v3); /*0x4f03f8*/
     *(Block + 1) = 0; /*0x4f0400*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f040b*/
   *(Block + 2) = 0; /*0x4f0411*/
-  if ( (a2 & 1) != 0 ) /*0x4f0418*/
-    __3_YAXPAX_Z(Block); /*0x4f041b*/
+  if ( (Block & 1) != 0 ) /*0x4f0418*/
+    RA2_OPDEL(Block); /*0x4f041b*/
   return (DynamicVector *)Block; /*0x4f0425*/
 
 }
@@ -19787,13 +19787,13 @@ VectorClass_flat * VectorClass_ptr_TeamTypeClass::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_TeamTypeClass; /*0x4f0436*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0440*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0448*/
+    RA2_OPDEL(v3); /*0x4f0448*/
     *(Block + 1) = 0; /*0x4f0450*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f045b*/
   *(Block + 2) = 0; /*0x4f0461*/
   if ( (a2 & 1) != 0 ) /*0x4f0468*/
-    __3_YAXPAX_Z(Block); /*0x4f046b*/
+    RA2_OPDEL(Block); /*0x4f046b*/
   return (VectorClass *)Block; /*0x4f0475*/
 
 }
@@ -19801,7 +19801,7 @@ VectorClass_flat * VectorClass_ptr_TeamTypeClass::QueryInterface(unsigned int * 
 
 // 0x4F0480
 namespace gamemd {
-DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19810,13 +19810,13 @@ DynamicVector * VectorClass_ptr_HouseTypeClass::Constructor_VectorClass_TeamType
   *Block = &vt_VectorClass_TeamTypeClass; /*0x4f0486*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0490*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0498*/
+    RA2_OPDEL(v3); /*0x4f0498*/
     *(Block + 1) = 0; /*0x4f04a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f04ab*/
   *(Block + 2) = 0; /*0x4f04b1*/
-  if ( (a2 & 1) != 0 ) /*0x4f04b8*/
-    __3_YAXPAX_Z(Block); /*0x4f04bb*/
+  if ( (Block & 1) != 0 ) /*0x4f04b8*/
+    RA2_OPDEL(Block); /*0x4f04bb*/
   return (DynamicVector *)Block; /*0x4f04c5*/
 
 }
@@ -19833,13 +19833,13 @@ VectorClass_flat * VectorClass_ptr_ScriptTypeClass::QueryInterface(unsigned int 
   *Block = &vt_VectorClass_ScriptTypeClass; /*0x4f04d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f04e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f04e8*/
+    RA2_OPDEL(v3); /*0x4f04e8*/
     *(Block + 1) = 0; /*0x4f04f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f04fb*/
   *(Block + 2) = 0; /*0x4f0501*/
   if ( (a2 & 1) != 0 ) /*0x4f0508*/
-    __3_YAXPAX_Z(Block); /*0x4f050b*/
+    RA2_OPDEL(Block); /*0x4f050b*/
   return (VectorClass *)Block; /*0x4f0515*/
 
 }
@@ -19847,7 +19847,7 @@ VectorClass_flat * VectorClass_ptr_ScriptTypeClass::QueryInterface(unsigned int 
 
 // 0x4F0520
 namespace gamemd {
-DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19856,13 +19856,13 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_ScriptT
   *Block = &vt_VectorClass_ScriptTypeClass; /*0x4f0526*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0530*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0538*/
+    RA2_OPDEL(v3); /*0x4f0538*/
     *(Block + 1) = 0; /*0x4f0540*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f054b*/
   *(Block + 2) = 0; /*0x4f0551*/
-  if ( (a2 & 1) != 0 ) /*0x4f0558*/
-    __3_YAXPAX_Z(Block); /*0x4f055b*/
+  if ( (Block & 1) != 0 ) /*0x4f0558*/
+    RA2_OPDEL(Block); /*0x4f055b*/
   return (DynamicVector *)Block; /*0x4f0565*/
 
 }
@@ -19879,13 +19879,13 @@ VectorClass_flat * VectorClass_ptr_OverlayTypeClass::QueryInterface(unsigned int
   *Block = &vt_VectorClass_OverlayTypeClass; /*0x4f0576*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0580*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0588*/
+    RA2_OPDEL(v3); /*0x4f0588*/
     *(Block + 1) = 0; /*0x4f0590*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f059b*/
   *(Block + 2) = 0; /*0x4f05a1*/
   if ( (a2 & 1) != 0 ) /*0x4f05a8*/
-    __3_YAXPAX_Z(Block); /*0x4f05ab*/
+    RA2_OPDEL(Block); /*0x4f05ab*/
   return (VectorClass *)Block; /*0x4f05b5*/
 
 }
@@ -19893,7 +19893,7 @@ VectorClass_flat * VectorClass_ptr_OverlayTypeClass::QueryInterface(unsigned int
 
 // 0x4F05C0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_OverlayTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_OverlayTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19902,13 +19902,13 @@ DynamicVector * VectorClass_ptr_ScriptTypeClass::Constructor_VectorClass_Overlay
   *Block = &vt_VectorClass_OverlayTypeClass; /*0x4f05c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f05d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f05d8*/
+    RA2_OPDEL(v3); /*0x4f05d8*/
     *(Block + 1) = 0; /*0x4f05e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f05eb*/
   *(Block + 2) = 0; /*0x4f05f1*/
-  if ( (a2 & 1) != 0 ) /*0x4f05f8*/
-    __3_YAXPAX_Z(Block); /*0x4f05fb*/
+  if ( (Block & 1) != 0 ) /*0x4f05f8*/
+    RA2_OPDEL(Block); /*0x4f05fb*/
   return (DynamicVector *)Block; /*0x4f0605*/
 
 }
@@ -19925,13 +19925,13 @@ VectorClass_flat * VectorClass_ptr_SmudgeTypeClass::QueryInterface(unsigned int 
   *Block = &vt_VectorClass_SmudgeTypeClass; /*0x4f0616*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0620*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0628*/
+    RA2_OPDEL(v3); /*0x4f0628*/
     *(Block + 1) = 0; /*0x4f0630*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f063b*/
   *(Block + 2) = 0; /*0x4f0641*/
   if ( (a2 & 1) != 0 ) /*0x4f0648*/
-    __3_YAXPAX_Z(Block); /*0x4f064b*/
+    RA2_OPDEL(Block); /*0x4f064b*/
   return (VectorClass *)Block; /*0x4f0655*/
 
 }
@@ -19939,7 +19939,7 @@ VectorClass_flat * VectorClass_ptr_SmudgeTypeClass::QueryInterface(unsigned int 
 
 // 0x4F0660
 namespace gamemd {
-DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19948,13 +19948,13 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_SmudgeT
   *Block = &vt_VectorClass_SmudgeTypeClass; /*0x4f0666*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0670*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0678*/
+    RA2_OPDEL(v3); /*0x4f0678*/
     *(Block + 1) = 0; /*0x4f0680*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f068b*/
   *(Block + 2) = 0; /*0x4f0691*/
-  if ( (a2 & 1) != 0 ) /*0x4f0698*/
-    __3_YAXPAX_Z(Block); /*0x4f069b*/
+  if ( (Block & 1) != 0 ) /*0x4f0698*/
+    RA2_OPDEL(Block); /*0x4f069b*/
   return (DynamicVector *)Block; /*0x4f06a5*/
 
 }
@@ -19971,13 +19971,13 @@ VectorClass_flat * VectorClass_ptr_TerrainTypeClass::QueryInterface(unsigned int
   *Block = &vt_VectorClass_TerrainTypeClass; /*0x4f06b6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f06c0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f06c8*/
+    RA2_OPDEL(v3); /*0x4f06c8*/
     *(Block + 1) = 0; /*0x4f06d0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f06db*/
   *(Block + 2) = 0; /*0x4f06e1*/
   if ( (a2 & 1) != 0 ) /*0x4f06e8*/
-    __3_YAXPAX_Z(Block); /*0x4f06eb*/
+    RA2_OPDEL(Block); /*0x4f06eb*/
   return (VectorClass *)Block; /*0x4f06f5*/
 
 }
@@ -19985,7 +19985,7 @@ VectorClass_flat * VectorClass_ptr_TerrainTypeClass::QueryInterface(unsigned int
 
 // 0x4F0700
 namespace gamemd {
-DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_TerrainTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_TerrainTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -19994,13 +19994,13 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Terrain
   *Block = &vt_VectorClass_TerrainTypeClass; /*0x4f0706*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0710*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0718*/
+    RA2_OPDEL(v3); /*0x4f0718*/
     *(Block + 1) = 0; /*0x4f0720*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f072b*/
   *(Block + 2) = 0; /*0x4f0731*/
-  if ( (a2 & 1) != 0 ) /*0x4f0738*/
-    __3_YAXPAX_Z(Block); /*0x4f073b*/
+  if ( (Block & 1) != 0 ) /*0x4f0738*/
+    RA2_OPDEL(Block); /*0x4f073b*/
   return (DynamicVector *)Block; /*0x4f0745*/
 
 }
@@ -20017,13 +20017,13 @@ VectorClass_flat * VectorClass_ptr_BuildingTypeClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_BuildingTypeClass; /*0x4f0756*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0760*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0768*/
+    RA2_OPDEL(v3); /*0x4f0768*/
     *(Block + 1) = 0; /*0x4f0770*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f077b*/
   *(Block + 2) = 0; /*0x4f0781*/
   if ( (a2 & 1) != 0 ) /*0x4f0788*/
-    __3_YAXPAX_Z(Block); /*0x4f078b*/
+    RA2_OPDEL(Block); /*0x4f078b*/
   return (VectorClass *)Block; /*0x4f0795*/
 
 }
@@ -20031,7 +20031,7 @@ VectorClass_flat * VectorClass_ptr_BuildingTypeClass::QueryInterface(unsigned in
 
 // 0x4F07A0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_BuildingTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_BuildingTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20040,13 +20040,13 @@ DynamicVector * VectorClass_ptr_SmudgeTypeClass::Constructor_VectorClass_Buildin
   *Block = &vt_VectorClass_BuildingTypeClass; /*0x4f07a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f07b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f07b8*/
+    RA2_OPDEL(v3); /*0x4f07b8*/
     *(Block + 1) = 0; /*0x4f07c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f07cb*/
   *(Block + 2) = 0; /*0x4f07d1*/
-  if ( (a2 & 1) != 0 ) /*0x4f07d8*/
-    __3_YAXPAX_Z(Block); /*0x4f07db*/
+  if ( (Block & 1) != 0 ) /*0x4f07d8*/
+    RA2_OPDEL(Block); /*0x4f07db*/
   return (DynamicVector *)Block; /*0x4f07e5*/
 
 }
@@ -20063,13 +20063,13 @@ VectorClass_flat * VectorClass_ptr_AircraftTypeClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_AircraftTypeClass; /*0x4f07f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0800*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0808*/
+    RA2_OPDEL(v3); /*0x4f0808*/
     *(Block + 1) = 0; /*0x4f0810*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f081b*/
   *(Block + 2) = 0; /*0x4f0821*/
   if ( (a2 & 1) != 0 ) /*0x4f0828*/
-    __3_YAXPAX_Z(Block); /*0x4f082b*/
+    RA2_OPDEL(Block); /*0x4f082b*/
   return (VectorClass *)Block; /*0x4f0835*/
 
 }
@@ -20077,7 +20077,7 @@ VectorClass_flat * VectorClass_ptr_AircraftTypeClass::QueryInterface(unsigned in
 
 // 0x4F0840
 namespace gamemd {
-DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_AircraftTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_AircraftTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20086,13 +20086,13 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_Aircr
   *Block = &vt_VectorClass_AircraftTypeClass; /*0x4f0846*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0850*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0858*/
+    RA2_OPDEL(v3); /*0x4f0858*/
     *(Block + 1) = 0; /*0x4f0860*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f086b*/
   *(Block + 2) = 0; /*0x4f0871*/
-  if ( (a2 & 1) != 0 ) /*0x4f0878*/
-    __3_YAXPAX_Z(Block); /*0x4f087b*/
+  if ( (Block & 1) != 0 ) /*0x4f0878*/
+    RA2_OPDEL(Block); /*0x4f087b*/
   return (DynamicVector *)Block; /*0x4f0885*/
 
 }
@@ -20109,13 +20109,13 @@ VectorClass_flat * VectorClass_ptr_UnitTypeClass::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_UnitTypeClass; /*0x4f0896*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f08a0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f08a8*/
+    RA2_OPDEL(v3); /*0x4f08a8*/
     *(Block + 1) = 0; /*0x4f08b0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f08bb*/
   *(Block + 2) = 0; /*0x4f08c1*/
   if ( (a2 & 1) != 0 ) /*0x4f08c8*/
-    __3_YAXPAX_Z(Block); /*0x4f08cb*/
+    RA2_OPDEL(Block); /*0x4f08cb*/
   return (VectorClass *)Block; /*0x4f08d5*/
 
 }
@@ -20123,7 +20123,7 @@ VectorClass_flat * VectorClass_ptr_UnitTypeClass::QueryInterface(unsigned int * 
 
 // 0x4F08E0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20132,13 +20132,13 @@ DynamicVector * VectorClass_ptr_AircraftTypeClass::Constructor_VectorClass_UnitT
   *Block = &vt_VectorClass_UnitTypeClass; /*0x4f08e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f08f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f08f8*/
+    RA2_OPDEL(v3); /*0x4f08f8*/
     *(Block + 1) = 0; /*0x4f0900*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f090b*/
   *(Block + 2) = 0; /*0x4f0911*/
-  if ( (a2 & 1) != 0 ) /*0x4f0918*/
-    __3_YAXPAX_Z(Block); /*0x4f091b*/
+  if ( (Block & 1) != 0 ) /*0x4f0918*/
+    RA2_OPDEL(Block); /*0x4f091b*/
   return (DynamicVector *)Block; /*0x4f0925*/
 
 }
@@ -20155,13 +20155,13 @@ VectorClass_flat * VectorClass_ptr_AnimTypeClass::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_AnimTypeClass; /*0x4f0936*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0940*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0948*/
+    RA2_OPDEL(v3); /*0x4f0948*/
     *(Block + 1) = 0; /*0x4f0950*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f095b*/
   *(Block + 2) = 0; /*0x4f0961*/
   if ( (a2 & 1) != 0 ) /*0x4f0968*/
-    __3_YAXPAX_Z(Block); /*0x4f096b*/
+    RA2_OPDEL(Block); /*0x4f096b*/
   return (VectorClass *)Block; /*0x4f0975*/
 
 }
@@ -20169,7 +20169,7 @@ VectorClass_flat * VectorClass_ptr_AnimTypeClass::QueryInterface(unsigned int * 
 
 // 0x4F0980
 namespace gamemd {
-DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20178,13 +20178,13 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_AnimTypeC
   *Block = &vt_VectorClass_AnimTypeClass; /*0x4f0986*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0990*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0998*/
+    RA2_OPDEL(v3); /*0x4f0998*/
     *(Block + 1) = 0; /*0x4f09a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f09ab*/
   *(Block + 2) = 0; /*0x4f09b1*/
-  if ( (a2 & 1) != 0 ) /*0x4f09b8*/
-    __3_YAXPAX_Z(Block); /*0x4f09bb*/
+  if ( (Block & 1) != 0 ) /*0x4f09b8*/
+    RA2_OPDEL(Block); /*0x4f09bb*/
   return (DynamicVector *)Block; /*0x4f09c5*/
 
 }
@@ -20201,13 +20201,13 @@ VectorClass_flat * VectorClass_ptr_InfantryTypeClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_InfantryTypeClass; /*0x4f09d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f09e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f09e8*/
+    RA2_OPDEL(v3); /*0x4f09e8*/
     *(Block + 1) = 0; /*0x4f09f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f09fb*/
   *(Block + 2) = 0; /*0x4f0a01*/
   if ( (a2 & 1) != 0 ) /*0x4f0a08*/
-    __3_YAXPAX_Z(Block); /*0x4f0a0b*/
+    RA2_OPDEL(Block); /*0x4f0a0b*/
   return (VectorClass *)Block; /*0x4f0a15*/
 
 }
@@ -20215,7 +20215,7 @@ VectorClass_flat * VectorClass_ptr_InfantryTypeClass::QueryInterface(unsigned in
 
 // 0x4F0A20
 namespace gamemd {
-DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20224,13 +20224,13 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_InfantryT
   *Block = &vt_VectorClass_InfantryTypeClass; /*0x4f0a26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0a30*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0a38*/
+    RA2_OPDEL(v3); /*0x4f0a38*/
     *(Block + 1) = 0; /*0x4f0a40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0a4b*/
   *(Block + 2) = 0; /*0x4f0a51*/
-  if ( (a2 & 1) != 0 ) /*0x4f0a58*/
-    __3_YAXPAX_Z(Block); /*0x4f0a5b*/
+  if ( (Block & 1) != 0 ) /*0x4f0a58*/
+    RA2_OPDEL(Block); /*0x4f0a5b*/
   return (DynamicVector *)Block; /*0x4f0a65*/
 
 }
@@ -20247,13 +20247,13 @@ VectorClass_flat * VectorClass_ptr_BulletTypeClass::QueryInterface(unsigned int 
   *Block = &vt_VectorClass_BulletTypeClass; /*0x4f0a76*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0a80*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0a88*/
+    RA2_OPDEL(v3); /*0x4f0a88*/
     *(Block + 1) = 0; /*0x4f0a90*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0a9b*/
   *(Block + 2) = 0; /*0x4f0aa1*/
   if ( (a2 & 1) != 0 ) /*0x4f0aa8*/
-    __3_YAXPAX_Z(Block); /*0x4f0aab*/
+    RA2_OPDEL(Block); /*0x4f0aab*/
   return (VectorClass *)Block; /*0x4f0ab5*/
 
 }
@@ -20261,7 +20261,7 @@ VectorClass_flat * VectorClass_ptr_BulletTypeClass::QueryInterface(unsigned int 
 
 // 0x4F0AC0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20270,13 +20270,13 @@ DynamicVector * VectorClass_ptr_AnimTypeClass::Constructor_VectorClass_BulletTyp
   *Block = &vt_VectorClass_BulletTypeClass; /*0x4f0ac6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0ad0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0ad8*/
+    RA2_OPDEL(v3); /*0x4f0ad8*/
     *(Block + 1) = 0; /*0x4f0ae0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0aeb*/
   *(Block + 2) = 0; /*0x4f0af1*/
-  if ( (a2 & 1) != 0 ) /*0x4f0af8*/
-    __3_YAXPAX_Z(Block); /*0x4f0afb*/
+  if ( (Block & 1) != 0 ) /*0x4f0af8*/
+    RA2_OPDEL(Block); /*0x4f0afb*/
   return (DynamicVector *)Block; /*0x4f0b05*/
 
 }
@@ -20293,13 +20293,13 @@ VectorClass_flat * VectorClass_ptr_VoxelAnimTypeClass::QueryInterface(unsigned i
   *Block = &vt_VectorClass_VoxelAnimTypeClass; /*0x4f0b16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0b20*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0b28*/
+    RA2_OPDEL(v3); /*0x4f0b28*/
     *(Block + 1) = 0; /*0x4f0b30*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0b3b*/
   *(Block + 2) = 0; /*0x4f0b41*/
   if ( (a2 & 1) != 0 ) /*0x4f0b48*/
-    __3_YAXPAX_Z(Block); /*0x4f0b4b*/
+    RA2_OPDEL(Block); /*0x4f0b4b*/
   return (VectorClass *)Block; /*0x4f0b55*/
 
 }
@@ -20307,7 +20307,7 @@ VectorClass_flat * VectorClass_ptr_VoxelAnimTypeClass::QueryInterface(unsigned i
 
 // 0x4F0B60
 namespace gamemd {
-DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_VoxelAnimTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_VoxelAnimTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20316,13 +20316,13 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Voxe
   *Block = &vt_VectorClass_VoxelAnimTypeClass; /*0x4f0b66*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0b70*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0b78*/
+    RA2_OPDEL(v3); /*0x4f0b78*/
     *(Block + 1) = 0; /*0x4f0b80*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0b8b*/
   *(Block + 2) = 0; /*0x4f0b91*/
-  if ( (a2 & 1) != 0 ) /*0x4f0b98*/
-    __3_YAXPAX_Z(Block); /*0x4f0b9b*/
+  if ( (Block & 1) != 0 ) /*0x4f0b98*/
+    RA2_OPDEL(Block); /*0x4f0b9b*/
   return (DynamicVector *)Block; /*0x4f0ba5*/
 
 }
@@ -20339,13 +20339,13 @@ VectorClass_flat * VectorClass_ptr_IsometricTileTypeClass::QueryInterface(unsign
   *Block = &vt_VectorClass_IsometricTileTypeClass; /*0x4f0bb6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0bc0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0bc8*/
+    RA2_OPDEL(v3); /*0x4f0bc8*/
     *(Block + 1) = 0; /*0x4f0bd0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0bdb*/
   *(Block + 2) = 0; /*0x4f0be1*/
   if ( (a2 & 1) != 0 ) /*0x4f0be8*/
-    __3_YAXPAX_Z(Block); /*0x4f0beb*/
+    RA2_OPDEL(Block); /*0x4f0beb*/
   return (VectorClass *)Block; /*0x4f0bf5*/
 
 }
@@ -20353,7 +20353,7 @@ VectorClass_flat * VectorClass_ptr_IsometricTileTypeClass::QueryInterface(unsign
 
 // 0x4F0C00
 namespace gamemd {
-DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_IsometricTileTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_IsometricTileTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20362,13 +20362,13 @@ DynamicVector * VectorClass_ptr_VoxelAnimTypeClass::Constructor_VectorClass_Isom
   *Block = &vt_VectorClass_IsometricTileTypeClass; /*0x4f0c06*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0c10*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0c18*/
+    RA2_OPDEL(v3); /*0x4f0c18*/
     *(Block + 1) = 0; /*0x4f0c20*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0c2b*/
   *(Block + 2) = 0; /*0x4f0c31*/
-  if ( (a2 & 1) != 0 ) /*0x4f0c38*/
-    __3_YAXPAX_Z(Block); /*0x4f0c3b*/
+  if ( (Block & 1) != 0 ) /*0x4f0c38*/
+    RA2_OPDEL(Block); /*0x4f0c3b*/
   return (DynamicVector *)Block; /*0x4f0c45*/
 
 }
@@ -20385,13 +20385,13 @@ VectorClass_flat * VectorClass_ptr_ParticleTypeClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_ParticleTypeClass; /*0x4f0c56*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0c60*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0c68*/
+    RA2_OPDEL(v3); /*0x4f0c68*/
     *(Block + 1) = 0; /*0x4f0c70*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0c7b*/
   *(Block + 2) = 0; /*0x4f0c81*/
   if ( (a2 & 1) != 0 ) /*0x4f0c88*/
-    __3_YAXPAX_Z(Block); /*0x4f0c8b*/
+    RA2_OPDEL(Block); /*0x4f0c8b*/
   return (VectorClass *)Block; /*0x4f0c95*/
 
 }
@@ -20399,7 +20399,7 @@ VectorClass_flat * VectorClass_ptr_ParticleTypeClass::QueryInterface(unsigned in
 
 // 0x4F0CA0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_ParticleTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_ParticleTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20408,13 +20408,13 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
   *Block = &vt_VectorClass_ParticleTypeClass; /*0x4f0ca6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0cb0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0cb8*/
+    RA2_OPDEL(v3); /*0x4f0cb8*/
     *(Block + 1) = 0; /*0x4f0cc0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0ccb*/
   *(Block + 2) = 0; /*0x4f0cd1*/
-  if ( (a2 & 1) != 0 ) /*0x4f0cd8*/
-    __3_YAXPAX_Z(Block); /*0x4f0cdb*/
+  if ( (Block & 1) != 0 ) /*0x4f0cd8*/
+    RA2_OPDEL(Block); /*0x4f0cdb*/
   return (DynamicVector *)Block; /*0x4f0ce5*/
 
 }
@@ -20431,13 +20431,13 @@ VectorClass_flat * VectorClass_ptr_ParticleSystemTypeClass::QueryInterface(unsig
   *Block = &vt_VectorClass_ParticleSystemTypeClass; /*0x4f0cf6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0d00*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0d08*/
+    RA2_OPDEL(v3); /*0x4f0d08*/
     *(Block + 1) = 0; /*0x4f0d10*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0d1b*/
   *(Block + 2) = 0; /*0x4f0d21*/
   if ( (a2 & 1) != 0 ) /*0x4f0d28*/
-    __3_YAXPAX_Z(Block); /*0x4f0d2b*/
+    RA2_OPDEL(Block); /*0x4f0d2b*/
   return (VectorClass *)Block; /*0x4f0d35*/
 
 }
@@ -20445,7 +20445,7 @@ VectorClass_flat * VectorClass_ptr_ParticleSystemTypeClass::QueryInterface(unsig
 
 // 0x4F0D40
 namespace gamemd {
-DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_ParticleSystemTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_ParticleSystemTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20454,13 +20454,13 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Parti
   *Block = &vt_VectorClass_ParticleSystemTypeClass; /*0x4f0d46*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0d50*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0d58*/
+    RA2_OPDEL(v3); /*0x4f0d58*/
     *(Block + 1) = 0; /*0x4f0d60*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0d6b*/
   *(Block + 2) = 0; /*0x4f0d71*/
-  if ( (a2 & 1) != 0 ) /*0x4f0d78*/
-    __3_YAXPAX_Z(Block); /*0x4f0d7b*/
+  if ( (Block & 1) != 0 ) /*0x4f0d78*/
+    RA2_OPDEL(Block); /*0x4f0d7b*/
   return (DynamicVector *)Block; /*0x4f0d85*/
 
 }
@@ -20477,13 +20477,13 @@ VectorClass_flat * VectorClass_ptr_SuperWeaponTypeClass::QueryInterface(unsigned
   *Block = &vt_VectorClass_SuperWeaponTypeClass; /*0x4f0d96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0da0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0da8*/
+    RA2_OPDEL(v3); /*0x4f0da8*/
     *(Block + 1) = 0; /*0x4f0db0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0dbb*/
   *(Block + 2) = 0; /*0x4f0dc1*/
   if ( (a2 & 1) != 0 ) /*0x4f0dc8*/
-    __3_YAXPAX_Z(Block); /*0x4f0dcb*/
+    RA2_OPDEL(Block); /*0x4f0dcb*/
   return (VectorClass *)Block; /*0x4f0dd5*/
 
 }
@@ -20491,7 +20491,7 @@ VectorClass_flat * VectorClass_ptr_SuperWeaponTypeClass::QueryInterface(unsigned
 
 // 0x4F0DE0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_SuperWeaponTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_SuperWeaponTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20500,13 +20500,13 @@ DynamicVector * VectorClass_ptr_ParticleTypeClass::Constructor_VectorClass_Super
   *Block = &vt_VectorClass_SuperWeaponTypeClass; /*0x4f0de6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0df0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0df8*/
+    RA2_OPDEL(v3); /*0x4f0df8*/
     *(Block + 1) = 0; /*0x4f0e00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0e0b*/
   *(Block + 2) = 0; /*0x4f0e11*/
-  if ( (a2 & 1) != 0 ) /*0x4f0e18*/
-    __3_YAXPAX_Z(Block); /*0x4f0e1b*/
+  if ( (Block & 1) != 0 ) /*0x4f0e18*/
+    RA2_OPDEL(Block); /*0x4f0e1b*/
   return (DynamicVector *)Block; /*0x4f0e25*/
 
 }
@@ -20523,13 +20523,13 @@ VectorClass_flat * VectorClass_ptr_AbstractTypeClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_AbstractTypeClass; /*0x4f0e36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0e40*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0e48*/
+    RA2_OPDEL(v3); /*0x4f0e48*/
     *(Block + 1) = 0; /*0x4f0e50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0e5b*/
   *(Block + 2) = 0; /*0x4f0e61*/
   if ( (a2 & 1) != 0 ) /*0x4f0e68*/
-    __3_YAXPAX_Z(Block); /*0x4f0e6b*/
+    RA2_OPDEL(Block); /*0x4f0e6b*/
   return (VectorClass *)Block; /*0x4f0e75*/
 
 }
@@ -20537,7 +20537,7 @@ VectorClass_flat * VectorClass_ptr_AbstractTypeClass::QueryInterface(unsigned in
 
 // 0x4F0E80
 namespace gamemd {
-DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -20546,13 +20546,13 @@ DynamicVector * VectorClass_ptr_SuperClass::Constructor_VectorClass_AbstractType
   *Block = &vt_VectorClass_AbstractTypeClass; /*0x4f0e86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4f0e90*/
   {
-    __3_YAXPAX_Z(v3); /*0x4f0e98*/
+    RA2_OPDEL(v3); /*0x4f0e98*/
     *(Block + 1) = 0; /*0x4f0ea0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4f0eab*/
   *(Block + 2) = 0; /*0x4f0eb1*/
-  if ( (a2 & 1) != 0 ) /*0x4f0eb8*/
-    __3_YAXPAX_Z(Block); /*0x4f0ebb*/
+  if ( (Block & 1) != 0 ) /*0x4f0eb8*/
+    RA2_OPDEL(Block); /*0x4f0ebb*/
   return (DynamicVector *)Block; /*0x4f0ec5*/
 
 }
@@ -20687,7 +20687,7 @@ int VectorClass_ptr_BuildChoiceClass_int_ouseClass::StubReturnNullPointer(int a1
 
   if ( !a2 ) /*0x5024f8*/
     return -2147467261; /*0x5024fb*/
-  v3 = __2_YAPAXI_Z(0x24u); /*0x502506*/
+  v3 = RA2_OPNEW(0x24u); /*0x502506*/
   if ( !v3 ) /*0x502510*/
     return -2147024882; /*0x502510*/
   v4 = VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(v3, (unsigned int *)(a1 + 90168)); /*0x50251f*/
@@ -20743,7 +20743,7 @@ void VectorClass_UScoutStruct___33::ddtor()
   *((unsigned int *)this + 4) = 0; /*0x50e4a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x50e4b0*/
   {
-    __3_YAXPAX_Z(v2); /*0x50e4b6*/
+    RA2_OPDEL(v2); /*0x50e4b6*/
     *((unsigned int *)this + 1) = 0; /*0x50e4be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50e4c1*/
@@ -20786,7 +20786,7 @@ void VectorClass_UAngerStruct::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x50e509*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x50e510*/
   {
-    __3_YAXPAX_Z(v2); /*0x50e516*/
+    RA2_OPDEL(v2); /*0x50e516*/
     *((unsigned int *)this + 1) = 0; /*0x50e51e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50e521*/
@@ -20829,7 +20829,7 @@ void VectorClass_UAngerStruct::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x50e569*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x50e570*/
   {
-    __3_YAXPAX_Z(v2); /*0x50e576*/
+    RA2_OPDEL(v2); /*0x50e576*/
     *((unsigned int *)this + 1) = 0; /*0x50e57e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50e581*/
@@ -20853,38 +20853,38 @@ unsigned int VectorClass_UAngerStruct::GetItemIndex_0(int a2)
 
 // 0x50E5B0
 namespace gamemd {
-unsigned int * VectorClass_UAngerStruct::Clear(unsigned int * v4, int a3)
+unsigned int * VectorClass_UAngerStruct::Clear(unsigned int * a2, int a3)
 {
 
   int v3; // eax
-  int v4; // edx
+  int a2; // edx
   int v5; // ecx
 
   v3 = *((unsigned int *)this + 1); /*0x50e5b0*/
-  v4 = *(unsigned int *)(v3 + 8 * a3); /*0x50e5b7*/
+  a2 = *(unsigned int *)(v3 + 8 * a3); /*0x50e5b7*/
   v5 = v3 + 8 * a3; /*0x50e5ba*/
-  *v4 = v4; /*0x50e5c1*/
-  v4[1] = *(unsigned int *)(v5 + 4); /*0x50e5c6*/
-  return v4; /*0x50e5c9*/
+  *a2 = a2; /*0x50e5c1*/
+  a2[1] = *(unsigned int *)(v5 + 4); /*0x50e5c6*/
+  return a2; /*0x50e5c9*/
 
 }
 } // namespace gamemd
 
 // 0x50E620
 namespace gamemd {
-int VectorClass_UScoutStruct::Clear(int v4, int a3)
+int VectorClass_UScoutStruct::Clear(int a2, int a3)
 {
 
   int v3; // eax
-  int v4; // edx
+  int a2; // edx
   int v5; // ecx
 
   v3 = *((unsigned int *)this + 1); /*0x50e620*/
-  v4 = *(unsigned int *)(v3 + 8 * a3); /*0x50e627*/
+  a2 = *(unsigned int *)(v3 + 8 * a3); /*0x50e627*/
   v5 = v3 + 8 * a3; /*0x50e62a*/
-  *(unsigned int *)v4 = v4; /*0x50e631*/
-  *(unsigned char *)(v4 + 4) = *(unsigned char *)(v5 + 4); /*0x50e636*/
-  return v4; /*0x50e639*/
+  *(unsigned int *)a2 = a2; /*0x50e631*/
+  *(unsigned char *)(a2 + 4) = *(unsigned char *)(v5 + 4); /*0x50e636*/
+  return a2; /*0x50e639*/
 
 }
 } // namespace gamemd
@@ -20900,7 +20900,7 @@ void VectorClass_ptr_BuildChoiceClass_int_ouseClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x50e649*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x50e650*/
   {
-    __3_YAXPAX_Z(v2); /*0x50e656*/
+    RA2_OPDEL(v2); /*0x50e656*/
     *((unsigned int *)this + 1) = 0; /*0x50e65e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50e661*/
@@ -20943,7 +20943,7 @@ void VectorClass_BuildingType::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x50e6a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x50e6b0*/
   {
-    __3_YAXPAX_Z(v2); /*0x50e6b6*/
+    RA2_OPDEL(v2); /*0x50e6b6*/
     *((unsigned int *)this + 1) = 0; /*0x50e6be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50e6c1*/
@@ -20986,7 +20986,7 @@ void VectorClass__N::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x50e709*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x50e710*/
   {
-    __3_YAXPAX_Z(v2); /*0x50e716*/
+    RA2_OPDEL(v2); /*0x50e716*/
     *((unsigned int *)this + 1) = 0; /*0x50e71e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50e721*/
@@ -21029,7 +21029,7 @@ void VectorClass__N_18::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x50e769*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x50e770*/
   {
-    __3_YAXPAX_Z((void *)(v2 - 4)); /*0x50e781*/
+    RA2_OPDEL((void *)(v2 - 4)); /*0x50e781*/
     *((unsigned int *)this + 1) = 0; /*0x50e789*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50e78c*/
@@ -21053,19 +21053,19 @@ unsigned int VectorClass__N_18::GetItemIndex(int a2)
 
 // 0x50E7C0
 namespace gamemd {
-unsigned int * VectorClass__N_18::Clear(unsigned int * v4, int a3)
+unsigned int * VectorClass__N_18::Clear(unsigned int * a2, int a3)
 {
 
   int v3; // eax
-  int v4; // edx
+  int a2; // edx
   int v5; // ecx
 
   v3 = *((unsigned int *)this + 1); /*0x50e7c0*/
-  v4 = *(unsigned int *)(v3 + 8 * a3); /*0x50e7c7*/
+  a2 = *(unsigned int *)(v3 + 8 * a3); /*0x50e7c7*/
   v5 = v3 + 8 * a3; /*0x50e7ca*/
-  *v4 = v4; /*0x50e7d1*/
-  v4[1] = *(unsigned int *)(v5 + 4); /*0x50e7d6*/
-  return v4; /*0x50e7d9*/
+  *a2 = a2; /*0x50e7d1*/
+  a2[1] = *(unsigned int *)(v5 + 4); /*0x50e7d6*/
+  return a2; /*0x50e7d9*/
 
 }
 } // namespace gamemd
@@ -21081,13 +21081,13 @@ TypeList_flat * VectorClass_BuildingType::Constructor(unsigned int * Block, char
   *Block = &vt_VectorClass_TeamTypeClass_const; /*0x50e7e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x50e7f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x50e7f8*/
+    RA2_OPDEL(v3); /*0x50e7f8*/
     *(Block + 1) = 0; /*0x50e800*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x50e80b*/
   *(Block + 2) = 0; /*0x50e811*/
   if ( (a2 & 1) != 0 ) /*0x50e818*/
-    __3_YAXPAX_Z(Block); /*0x50e81b*/
+    RA2_OPDEL(Block); /*0x50e81b*/
   return (TypeList *)Block; /*0x50e825*/
 
 }
@@ -21104,13 +21104,13 @@ DynamicVector * VectorClass__N_18::Constructor(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_TeamTypeClass_const; /*0x50e8c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x50e8d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x50e8d8*/
+    RA2_OPDEL(v3); /*0x50e8d8*/
     *(Block + 1) = 0; /*0x50e8e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x50e8eb*/
   *(Block + 2) = 0; /*0x50e8f1*/
   if ( (a2 & 1) != 0 ) /*0x50e8f8*/
-    __3_YAXPAX_Z(Block); /*0x50e8fb*/
+    RA2_OPDEL(Block); /*0x50e8fb*/
   return (DynamicVector *)Block; /*0x50e905*/
 
 }
@@ -21162,7 +21162,7 @@ char VectorClass_BuildingType::Set(int a2, unsigned int * a3)
     if ( a3 ) /*0x50e96c*/
       v4 = a3; /*0x50e982*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x50e97e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x50e97e*/
     *((unsigned char *)this + 12) = 1; /*0x50e986*/
     if ( v4 ) /*0x50e98a*/
     {
@@ -21175,7 +21175,7 @@ char VectorClass_BuildingType::Set(int a2, unsigned int * a3)
           ++i; /*0x50e9ae*/
         if ( *((unsigned char *)this + 13) ) /*0x50e9bb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50e9c6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x50e9c6*/
           *((unsigned int *)this + 1) = 0; /*0x50e9ce*/
         }
       }
@@ -21274,7 +21274,7 @@ char VectorClass_flat::InsertAt(IUnknown * aP1, int a3)
     if ( !*((unsigned char *)this + 13) && v4 ) /*0x50eb86*/
       return 0; /*0x50eb86*/
     v5 = *((unsigned int *)this + 5); /*0x50eb88*/
-    if ( v5 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v4 + v5, 0) ) /*0x50eb98*/
+    if ( v5 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v4 + v5, 0) ) /*0x50eb98*/
       return 0; /*0x50eb9f*/
   }
   v7 = *((unsigned int *)this + 4); /*0x50eba5*/
@@ -21338,7 +21338,7 @@ char VectorClass_UAngerStruct___16::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x50ec7c*/
       v4 = a3; /*0x50ec92*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x50ec8e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x50ec8e*/
     *((unsigned char *)this + 12) = 1; /*0x50ec96*/
     if ( v4 ) /*0x50ec9a*/
     {
@@ -21351,7 +21351,7 @@ char VectorClass_UAngerStruct___16::Release(int a2, unsigned int * a3)
           ++i; /*0x50ecbe*/
         if ( *((unsigned char *)this + 13) ) /*0x50eccb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50ecd6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x50ecd6*/
           *((unsigned int *)this + 1) = 0; /*0x50ecde*/
         }
       }
@@ -21381,7 +21381,7 @@ void VectorClass_UAngerStruct___16::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x50ed1d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x50ed23*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x50ed23*/
     *((unsigned int *)this + 1) = 0; /*0x50ed2b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50ed2e*/
@@ -21444,7 +21444,7 @@ char VectorClass_UAngerStruct::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x50edb8*/
       v4 = a3; /*0x50edce*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x50edca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x50edca*/
     *((unsigned char *)this + 12) = 1; /*0x50edd2*/
     if ( !v4 ) /*0x50edd6*/
       return 0; /*0x50ee4a*/
@@ -21457,7 +21457,7 @@ char VectorClass_UAngerStruct::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x50edf1*/
       if ( *((unsigned char *)this + 13) ) /*0x50edfe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50ee09*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x50ee09*/
         *((unsigned int *)this + 1) = 0; /*0x50ee11*/
       }
     }
@@ -21576,7 +21576,7 @@ char VectorClass_UAngerStruct::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x50ef07*/
+      v6 = RA2_OPNEW(8 * a2); /*0x50ef07*/
       if ( v6 ) /*0x50ef11*/
       {
         v7 = v6; /*0x50ef16*/
@@ -21622,7 +21622,7 @@ char VectorClass_UAngerStruct::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x50ef8f*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50ef98*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x50ef98*/
           *((unsigned int *)this + 1) = 0; /*0x50efa0*/
         }
       }
@@ -21652,7 +21652,7 @@ void VectorClass_UAngerStruct::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x50efdd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x50efe3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x50efe3*/
     *((unsigned int *)this + 1) = 0; /*0x50efeb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50efee*/
@@ -21740,7 +21740,7 @@ char VectorClass_UAngerStruct::SetCapacity_0(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x50f097*/
+      v6 = RA2_OPNEW(8 * a2); /*0x50f097*/
       if ( v6 ) /*0x50f0a1*/
       {
         v7 = v6; /*0x50f0a6*/
@@ -21786,7 +21786,7 @@ char VectorClass_UAngerStruct::SetCapacity_0(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x50f11a*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f123*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x50f123*/
         *((unsigned int *)this + 1) = 0; /*0x50f12b*/
       }
     }
@@ -21905,7 +21905,7 @@ char VectorClass_UScoutStruct::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(8 * a2); /*0x50f237*/
+      v6 = (char *)RA2_OPNEW(8 * a2); /*0x50f237*/
       if ( v6 ) /*0x50f241*/
       {
         v7 = v6; /*0x50f246*/
@@ -21951,7 +21951,7 @@ char VectorClass_UScoutStruct::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x50f2bf*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f2c8*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x50f2c8*/
           *((unsigned int *)this + 1) = 0; /*0x50f2d0*/
         }
       }
@@ -21981,7 +21981,7 @@ void VectorClass_UScoutStruct::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x50f30d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x50f313*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x50f313*/
     *((unsigned int *)this + 1) = 0; /*0x50f31b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50f31e*/
@@ -22066,7 +22066,7 @@ void VectorClass_ptr_BuildChoiceClass_int_ouseClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x50f5dd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x50f5e3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x50f5e3*/
     *((unsigned int *)this + 1) = 0; /*0x50f5eb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50f5ee*/
@@ -22182,7 +22182,7 @@ char VectorClass_BuildingType::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x50f79c*/
       v4 = a3; /*0x50f7b2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f7ae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x50f7ae*/
     *((unsigned char *)this + 12) = 1; /*0x50f7b6*/
     if ( v4 ) /*0x50f7ba*/
     {
@@ -22195,7 +22195,7 @@ char VectorClass_BuildingType::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x50f7de*/
         if ( *((unsigned char *)this + 13) ) /*0x50f7eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f7f6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x50f7f6*/
           *((unsigned int *)this + 1) = 0; /*0x50f7fe*/
         }
       }
@@ -22224,7 +22224,7 @@ void VectorClass_flat::ClearAndFree3()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x50f83d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x50f843*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x50f843*/
     *((unsigned int *)this + 1) = 0; /*0x50f84b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50f84e*/
@@ -22233,7 +22233,7 @@ void VectorClass_flat::ClearAndFree3()
 }
 // 0x50F860
 namespace gamemd {
-int  VectorClass_BuildingType::FindItemIndex()
+int  VectorClass_BuildingType::FindItemIndex( unsigned int * a2)
 {
 
   int result; // eax
@@ -22285,7 +22285,7 @@ char VectorClass_BuildingType::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x50f8d8*/
       v4 = a3; /*0x50f8ee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x50f8ea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x50f8ea*/
     *((unsigned char *)this + 12) = 1; /*0x50f8f2*/
     if ( !v4 ) /*0x50f8f6*/
       return 0; /*0x50f96a*/
@@ -22298,7 +22298,7 @@ char VectorClass_BuildingType::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x50f911*/
       if ( *((unsigned char *)this + 13) ) /*0x50f91e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50f929*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x50f929*/
         *((unsigned int *)this + 1) = 0; /*0x50f931*/
       }
     }
@@ -22381,7 +22381,7 @@ char VectorClass__N::Remove(signed int Size, char * a3)
     if ( a3 ) /*0x50f9fc*/
       v4 = a3; /*0x50fa0b*/
     else
-      v4 = (char *)__2_YAPAXI_Z(Size); /*0x50fa07*/
+      v4 = (char *)RA2_OPNEW(Size); /*0x50fa07*/
     *((unsigned char *)this + 12) = 1; /*0x50fa0f*/
     if ( v4 ) /*0x50fa13*/
     {
@@ -22394,7 +22394,7 @@ char VectorClass__N::Remove(signed int Size, char * a3)
           ++i; /*0x50fa37*/
         if ( *((unsigned char *)this + 13) ) /*0x50fa44*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x50fa4f*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x50fa4f*/
           *((unsigned int *)this + 1) = 0; /*0x50fa57*/
         }
       }
@@ -22424,7 +22424,7 @@ void VectorClass__N::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x50fa9d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x50faa3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x50faa3*/
     *((unsigned int *)this + 1) = 0; /*0x50faab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50faae*/
@@ -22488,7 +22488,7 @@ char VectorClass__N::SetCapacity(signed int Size, char * a3)
     if ( a3 ) /*0x50fb38*/
       v4 = a3; /*0x50fb47*/
     else
-      v4 = (char *)__2_YAPAXI_Z(Size); /*0x50fb43*/
+      v4 = (char *)RA2_OPNEW(Size); /*0x50fb43*/
     *((unsigned char *)this + 12) = 1; /*0x50fb4b*/
     if ( !v4 ) /*0x50fb4f*/
       return 0; /*0x50fbc3*/
@@ -22501,7 +22501,7 @@ char VectorClass__N::SetCapacity(signed int Size, char * a3)
         ++i; /*0x50fb6a*/
       if ( *((unsigned char *)this + 13) ) /*0x50fb77*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x50fb82*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x50fb82*/
         *((unsigned int *)this + 1) = 0; /*0x50fb8a*/
       }
     }
@@ -22583,7 +22583,7 @@ char VectorClass__N_18::AddRef(int a2)
 
 // 0x50FC60
 namespace gamemd {
-char VectorClass__N_18::Remove(int a2, int * a2)
+char VectorClass__N_18::Remove(int a2, int * a3)
 {
 
   int *v4; // ebx
@@ -22598,18 +22598,18 @@ char VectorClass__N_18::Remove(int a2, int * a2)
   int v14; // edx
   int v15; // eax
 
-  if ( a2 ) /*0x50fc6c*/
+  if ( a3 ) /*0x50fc6c*/
   {
-    v4 = a2; /*0x50fc72*/
+    v4 = a3; /*0x50fc72*/
     *((unsigned char *)this + 12) = 0; /*0x50fc76*/
-    if ( a2 ) /*0x50fc7c*/
+    if ( a3 ) /*0x50fc7c*/
     {
-      *a2 = a2; /*0x50fcb7*/
-      v6 = a2 + 1; /*0x50fcbb*/
-      if ( a2 - 1 >= 0 ) /*0x50fcbe*/
+      *a3 = a3; /*0x50fcb7*/
+      v6 = a3 + 1; /*0x50fcbb*/
+      if ( a3 - 1 >= 0 ) /*0x50fcbe*/
       {
-        v9 = a2 + 2; /*0x50fcc0*/
-        v10 = a2; /*0x50fcc3*/
+        v9 = a3 + 2; /*0x50fcc0*/
+        v10 = a3; /*0x50fcc3*/
         do /*0x50fcce*/
         {
           *v9 = 0; /*0x50fcc4*/
@@ -22621,15 +22621,15 @@ char VectorClass__N_18::Remove(int a2, int * a2)
     }
     else
     {
-      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x50fc86*/
+      v5 = (int *)RA2_OPNEW(8 * a3 + 4); /*0x50fc86*/
       if ( v5 ) /*0x50fc90*/
       {
-        *v5 = a2; /*0x50fc95*/
+        *v5 = a3; /*0x50fc95*/
         v6 = v5 + 1; /*0x50fc99*/
-        if ( a2 - 1 >= 0 ) /*0x50fc9c*/
+        if ( a3 - 1 >= 0 ) /*0x50fc9c*/
         {
           v7 = v5 + 2; /*0x50fc9e*/
-          v8 = a2; /*0x50fca1*/
+          v8 = a3; /*0x50fca1*/
           do /*0x50fcac*/
           {
             *v7 = 0; /*0x50fca2*/
@@ -22650,8 +22650,8 @@ char VectorClass__N_18::Remove(int a2, int * a2)
       if ( *((unsigned int *)this + 1) ) /*0x50fce1*/
       {
         v12 = *((unsigned int *)this + 2); /*0x50fce8*/
-        if ( a2 < v12 ) /*0x50fced*/
-          v12 = a2; /*0x50fcef*/
+        if ( a3 < v12 ) /*0x50fced*/
+          v12 = a3; /*0x50fcef*/
         v13 = 0; /*0x50fcf1*/
         if ( v12 > 0 ) /*0x50fcf5*/
         {
@@ -22663,18 +22663,18 @@ char VectorClass__N_18::Remove(int a2, int * a2)
             v6[2 * v13 - 1] = *(unsigned int *)(v14 + 8 * v13 - 4); /*0x50fd09*/
           }
           while ( v13 < v12 ); /*0x50fd0d*/
-          v4 = a2; /*0x50fd0f*/
+          v4 = a3; /*0x50fd0f*/
         }
         if ( *((unsigned char *)this + 13) ) /*0x50fd13*/
         {
           v15 = *((unsigned int *)this + 1); /*0x50fd1a*/
           if ( v15 ) /*0x50fd1f*/
-            __3_YAXPAX_Z((void *)(v15 - 4)); /*0x50fd29*/
+            RA2_OPDEL((void *)(v15 - 4)); /*0x50fd29*/
           *((unsigned int *)this + 1) = 0; /*0x50fd31*/
         }
       }
       *((unsigned int *)this + 1) = v6; /*0x50fd3a*/
-      *((unsigned int *)this + 2) = a2; /*0x50fd42*/
+      *((unsigned int *)this + 2) = a3; /*0x50fd42*/
       *((unsigned char *)this + 13) = v4 == 0; /*0x50fd45*/
       return 1; /*0x50fd4b*/
     }
@@ -22702,7 +22702,7 @@ void VectorClass__N_18::ddtor()
   v2 = *((unsigned int *)this + 1); /*0x50fd76*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x50fd7d*/
   {
-    __3_YAXPAX_Z((void *)(v2 - 4)); /*0x50fd8e*/
+    RA2_OPDEL((void *)(v2 - 4)); /*0x50fd8e*/
     *((unsigned int *)this + 1) = 0; /*0x50fd96*/
   }
   *((unsigned char *)this + 13) = 0; /*0x50fd99*/
@@ -22791,7 +22791,7 @@ char VectorClass__N_18::SetCapacity(int a2, int * a3)
     }
     else
     {
-      v5 = (int *)__2_YAPAXI_Z(8 * a2 + 4); /*0x50fe46*/
+      v5 = (int *)RA2_OPNEW(8 * a2 + 4); /*0x50fe46*/
       if ( v5 ) /*0x50fe50*/
       {
         *v5 = a2; /*0x50fe55*/
@@ -22842,7 +22842,7 @@ char VectorClass__N_18::SetCapacity(int a2, int * a3)
         {
           v15 = (void *)(v14 - 4); /*0x50fee0*/
           Array::ForEachReverse(v14, 8, *(unsigned int *)(v14 - 4), (int (*)(int))nullsub_145); /*0x50feec*/
-          __3_YAXPAX_Z(v15); /*0x50fef2*/
+          RA2_OPDEL(v15); /*0x50fef2*/
           v4 = a3; /*0x50fef7*/
         }
         *((unsigned int *)this + 1) = 0; /*0x50fefe*/
@@ -22898,13 +22898,13 @@ VectorClass_flat * VectorClass_BuildingType::Get(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_BuildingTypeClass_const; /*0x50fff6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x510000*/
   {
-    __3_YAXPAX_Z(v3); /*0x510008*/
+    RA2_OPDEL(v3); /*0x510008*/
     *(Block + 1) = 0; /*0x510010*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x51001b*/
   *(Block + 2) = 0; /*0x510021*/
   if ( (a2 & 1) != 0 ) /*0x510028*/
-    __3_YAXPAX_Z(Block); /*0x51002b*/
+    RA2_OPDEL(Block); /*0x51002b*/
   return (VectorClass *)Block; /*0x510035*/
 
 }
@@ -22921,13 +22921,13 @@ DynamicVector * VectorClass_UScoutStruct___33::QueryInterface(unsigned int * Blo
   *Block = &vt_VectorClass_BuildingTypeClass_const; /*0x510046*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x510050*/
   {
-    __3_YAXPAX_Z(v3); /*0x510058*/
+    RA2_OPDEL(v3); /*0x510058*/
     *(Block + 1) = 0; /*0x510060*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x51006b*/
   *(Block + 2) = 0; /*0x510071*/
   if ( (a2 & 1) != 0 ) /*0x510078*/
-    __3_YAXPAX_Z(Block); /*0x51007b*/
+    RA2_OPDEL(Block); /*0x51007b*/
   return (DynamicVector *)Block; /*0x510085*/
 
 }
@@ -22944,13 +22944,13 @@ VectorClass_flat * VectorClass_UAngerStruct___16::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_HouseClass_StartingTechnoStruct; /*0x510096*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5100a0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5100a8*/
+    RA2_OPDEL(v3); /*0x5100a8*/
     *(Block + 1) = 0; /*0x5100b0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5100bb*/
   *(Block + 2) = 0; /*0x5100c1*/
   if ( (a2 & 1) != 0 ) /*0x5100c8*/
-    __3_YAXPAX_Z(Block); /*0x5100cb*/
+    RA2_OPDEL(Block); /*0x5100cb*/
   return (VectorClass *)Block; /*0x5100d5*/
 
 }
@@ -22967,13 +22967,13 @@ DynamicVector * VectorClass_UAngerStruct::Constructor(unsigned int * Block, char
   *Block = &vt_VectorClass_HouseClass_StartingTechnoStruct; /*0x5100e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5100f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5100f8*/
+    RA2_OPDEL(v3); /*0x5100f8*/
     *(Block + 1) = 0; /*0x510100*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x51010b*/
   *(Block + 2) = 0; /*0x510111*/
   if ( (a2 & 1) != 0 ) /*0x510118*/
-    __3_YAXPAX_Z(Block); /*0x51011b*/
+    RA2_OPDEL(Block); /*0x51011b*/
   return (DynamicVector *)Block; /*0x510125*/
 
 }
@@ -22990,13 +22990,13 @@ VectorClass_flat * VectorClass_UAngerStruct::QueryInterface(unsigned int * Block
   *Block = &vt_VectorClass_AngerStruct; /*0x510136*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x510140*/
   {
-    __3_YAXPAX_Z(v3); /*0x510148*/
+    RA2_OPDEL(v3); /*0x510148*/
     *(Block + 1) = 0; /*0x510150*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x51015b*/
   *(Block + 2) = 0; /*0x510161*/
   if ( (a2 & 1) != 0 ) /*0x510168*/
-    __3_YAXPAX_Z(Block); /*0x51016b*/
+    RA2_OPDEL(Block); /*0x51016b*/
   return (VectorClass *)Block; /*0x510175*/
 
 }
@@ -23013,13 +23013,13 @@ DynamicVector * VectorClass_UAngerStruct::Constructor_VectorClass_AngerStruct_(u
   *Block = &vt_VectorClass_AngerStruct; /*0x510186*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x510190*/
   {
-    __3_YAXPAX_Z(v3); /*0x510198*/
+    RA2_OPDEL(v3); /*0x510198*/
     *(Block + 1) = 0; /*0x5101a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5101ab*/
   *(Block + 2) = 0; /*0x5101b1*/
   if ( (a2 & 1) != 0 ) /*0x5101b8*/
-    __3_YAXPAX_Z(Block); /*0x5101bb*/
+    RA2_OPDEL(Block); /*0x5101bb*/
   return (DynamicVector *)Block; /*0x5101c5*/
 
 }
@@ -23036,13 +23036,13 @@ VectorClass_flat * VectorClass_UScoutStruct::QueryInterface(unsigned int * Block
   *Block = &vt_VectorClass_ScoutStruct; /*0x5101d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5101e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5101e8*/
+    RA2_OPDEL(v3); /*0x5101e8*/
     *(Block + 1) = 0; /*0x5101f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5101fb*/
   *(Block + 2) = 0; /*0x510201*/
   if ( (a2 & 1) != 0 ) /*0x510208*/
-    __3_YAXPAX_Z(Block); /*0x51020b*/
+    RA2_OPDEL(Block); /*0x51020b*/
   return (VectorClass *)Block; /*0x510215*/
 
 }
@@ -23059,13 +23059,13 @@ VectorClass_flat * VectorClass_ptr_BuildChoiceClass_int_ouseClass::QueryInterfac
   *Block = &vt_VectorClass_HouseClass_BuildChoiceClass; /*0x510276*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x510280*/
   {
-    __3_YAXPAX_Z(v3); /*0x510288*/
+    RA2_OPDEL(v3); /*0x510288*/
     *(Block + 1) = 0; /*0x510290*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x51029b*/
   *(Block + 2) = 0; /*0x5102a1*/
   if ( (a2 & 1) != 0 ) /*0x5102a8*/
-    __3_YAXPAX_Z(Block); /*0x5102ab*/
+    RA2_OPDEL(Block); /*0x5102ab*/
   return (VectorClass *)Block; /*0x5102b5*/
 
 }
@@ -23082,13 +23082,13 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::loc_5102C0(unsign
   *Block = &vt_VectorClass_HouseClass_BuildChoiceClass; /*0x5102c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5102d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5102d8*/
+    RA2_OPDEL(v3); /*0x5102d8*/
     *(Block + 1) = 0; /*0x5102e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5102eb*/
   *(Block + 2) = 0; /*0x5102f1*/
   if ( (a2 & 1) != 0 ) /*0x5102f8*/
-    __3_YAXPAX_Z(Block); /*0x5102fb*/
+    RA2_OPDEL(Block); /*0x5102fb*/
   return Block; /*0x510305*/
 
 }
@@ -23105,13 +23105,13 @@ VectorClass_flat * VectorClass_BuildingType::Constructor_0(unsigned int * Block,
   *Block = &vt_VectorClass_TeamTypeClass_const; /*0x510316*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x510320*/
   {
-    __3_YAXPAX_Z(v3); /*0x510328*/
+    RA2_OPDEL(v3); /*0x510328*/
     *(Block + 1) = 0; /*0x510330*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x51033b*/
   *(Block + 2) = 0; /*0x510341*/
   if ( (a2 & 1) != 0 ) /*0x510348*/
-    __3_YAXPAX_Z(Block); /*0x51034b*/
+    RA2_OPDEL(Block); /*0x51034b*/
   return (VectorClass *)Block; /*0x510355*/
 
 }
@@ -23128,13 +23128,13 @@ VectorClass_flat * VectorClass__N::Add(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_bool; /*0x510366*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x510370*/
   {
-    __3_YAXPAX_Z(v3); /*0x510378*/
+    RA2_OPDEL(v3); /*0x510378*/
     *(Block + 1) = 0; /*0x510380*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x51038b*/
   *(Block + 2) = 0; /*0x510391*/
   if ( (a2 & 1) != 0 ) /*0x510398*/
-    __3_YAXPAX_Z(Block); /*0x51039b*/
+    RA2_OPDEL(Block); /*0x51039b*/
   return (VectorClass *)Block; /*0x5103a5*/
 
 }
@@ -23151,13 +23151,13 @@ DynamicVector * VectorClass__N::Constructor_VectorClass_bool_(unsigned int * Blo
   *Block = &vt_VectorClass_bool; /*0x5103b6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5103c0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5103c8*/
+    RA2_OPDEL(v3); /*0x5103c8*/
     *(Block + 1) = 0; /*0x5103d0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5103db*/
   *(Block + 2) = 0; /*0x5103e1*/
   if ( (a2 & 1) != 0 ) /*0x5103e8*/
-    __3_YAXPAX_Z(Block); /*0x5103eb*/
+    RA2_OPDEL(Block); /*0x5103eb*/
   return (DynamicVector *)Block; /*0x5103f5*/
 
 }
@@ -23174,13 +23174,13 @@ VectorClass_flat * VectorClass__N_18::Add(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass; /*0x510406*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x510410*/
   {
-    __3_YAXPAX_Z((void *)(v3 - 4)); /*0x510423*/
+    RA2_OPDEL((void *)(v3 - 4)); /*0x510423*/
     *(Block + 1) = 0; /*0x51042b*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x510436*/
   *(Block + 2) = 0; /*0x51043c*/
   if ( (a2 & 1) != 0 ) /*0x510443*/
-    __3_YAXPAX_Z(Block); /*0x510446*/
+    RA2_OPDEL(Block); /*0x510446*/
   return (VectorClass *)Block; /*0x510450*/
 
 }
@@ -23197,13 +23197,13 @@ DynamicVector * VectorClass__N_18::Constructor_0(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_DiscreteDistributionClass_BuildingTypeClass_DistributionObject_BuildingTypeClass; /*0x5104a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5104b0*/
   {
-    __3_YAXPAX_Z((void *)(v3 - 4)); /*0x5104c3*/
+    RA2_OPDEL((void *)(v3 - 4)); /*0x5104c3*/
     *(Block + 1) = 0; /*0x5104cb*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5104d6*/
   *(Block + 2) = 0; /*0x5104dc*/
   if ( (a2 & 1) != 0 ) /*0x5104e3*/
-    __3_YAXPAX_Z(Block); /*0x5104e6*/
+    RA2_OPDEL(Block); /*0x5104e6*/
   return (DynamicVector *)Block; /*0x5104f0*/
 
 }
@@ -23225,7 +23225,7 @@ unsigned int * VectorClass_flat::BuildingConstructor(int a2, int a3)
       *((unsigned int *)this + 1) = a3; /*0x510578*/
       return this; /*0x51057e*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x51058d*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x51058d*/
     *((unsigned char *)this + 13) = 1; /*0x510590*/
   }
   return this; /*0x51057d*/
@@ -23247,7 +23247,7 @@ unsigned int * VectorClass_flat::BuildingTypeConstructor(TechnoTypeClass * aP1, 
       *((unsigned int *)this + 1) = aP2; /*0x5105c8*/
       return this; /*0x5105ce*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x5105dd*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * (unsigned int)aP1); /*0x5105dd*/
     *((unsigned char *)this + 13) = 1; /*0x5105e0*/
   }
   return this; /*0x5105cd*/
@@ -23374,7 +23374,7 @@ unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x512faa*/
     return this; /*0x512faa*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x512fae*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x512fae*/
   v3 = *(unsigned int *)&aP1->__pad_0[8]; /*0x512fb1*/
   *((unsigned int *)this + 2) = v3; /*0x512fb6*/
   if ( !v3 ) /*0x512fb9*/
@@ -23383,7 +23383,7 @@ unsigned int * VectorClass_flat::CopyConstructor(InfantryTypeClass * aP1)
     *((unsigned char *)this + 13) = 0; /*0x513001*/
     return this; /*0x513005*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x512fc3*/
+  v4 = RA2_OPNEW(4 * v3); /*0x512fc3*/
   *((unsigned int *)this + 1) = v4; /*0x512fcb*/
   if ( !v4 ) /*0x512fd0*/
     return this; /*0x512fd0*/
@@ -23416,7 +23416,7 @@ char VectorClass_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x513306*/
       return 0; /*0x513306*/
     v4 = *((unsigned int *)this + 5); /*0x513308*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, char *, unsigned int))(*(unsigned int **)this + 8))(this, (char *)v3 + v4, 0) ) /*0x513318*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, char *, unsigned int))(*(unsigned int *)this + 32))(this, (char *)v3 + v4, 0) ) /*0x513318*/
       return 0; /*0x51331f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x513325*/
@@ -23432,7 +23432,7 @@ void VectorClass_flat::ClearAndFree4()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5134dd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5134e3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5134e3*/
     *((unsigned int *)this + 1) = 0; /*0x5134eb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5134ee*/
@@ -23440,7 +23440,7 @@ void VectorClass_flat::ClearAndFree4()
 
 }
 // 0x525060
-unsigned int *  VectorClass_flat::CopyDefault()
+unsigned int *  VectorClass_flat::CopyDefault( VectorClass * aP1)
 {
 
   void *v3; // eax
@@ -23459,7 +23459,7 @@ unsigned int *  VectorClass_flat::CopyDefault()
     *((unsigned char *)this + 13) = 0; /*0x5250c1*/
     return this; /*0x5250c5*/
   }
-  v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x525083*/
+  v4 = RA2_OPNEW(4 * (unsigned int)v3); /*0x525083*/
   *(this + 1) = v4; /*0x52508b*/
   if ( !v4 ) /*0x525090*/
     return this; /*0x525090*/
@@ -23533,7 +23533,7 @@ char VectorClass_ptr_CCINIClass::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x53857c*/
       v4 = a3; /*0x538592*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x53858e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x53858e*/
     *((unsigned char *)this + 12) = 1; /*0x538596*/
     if ( v4 ) /*0x53859a*/
     {
@@ -23546,7 +23546,7 @@ char VectorClass_ptr_CCINIClass::Remove(int a2, unsigned int * a3)
           ++i; /*0x5385be*/
         if ( *((unsigned char *)this + 13) ) /*0x5385cb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5385d6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5385d6*/
           *((unsigned int *)this + 1) = 0; /*0x5385de*/
         }
       }
@@ -23576,7 +23576,7 @@ void VectorClass_ptr_CCINIClass::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x53861d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x538623*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x538623*/
     *((unsigned int *)this + 1) = 0; /*0x53862b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x53862e*/
@@ -23634,13 +23634,13 @@ VectorClass_flat * VectorClass_ptr_CCINIClass::Add(unsigned int * Block, char a2
   *Block = &vt_VectorClass_CCINIClass; /*0x538a96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x538aa0*/
   {
-    __3_YAXPAX_Z(v3); /*0x538aa8*/
+    RA2_OPDEL(v3); /*0x538aa8*/
     *(Block + 1) = 0; /*0x538ab0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x538abb*/
   *(Block + 2) = 0; /*0x538ac1*/
   if ( (a2 & 1) != 0 ) /*0x538ac8*/
-    __3_YAXPAX_Z(Block); /*0x538acb*/
+    RA2_OPDEL(Block); /*0x538acb*/
   return (VectorClass *)Block; /*0x538ad5*/
 
 }
@@ -23657,7 +23657,7 @@ void VectorClass_ptr_IonBlastClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x53da49*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x53da50*/
   {
-    __3_YAXPAX_Z(v2); /*0x53da56*/
+    RA2_OPDEL(v2); /*0x53da56*/
     *((unsigned int *)this + 1) = 0; /*0x53da5e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x53da61*/
@@ -23735,7 +23735,7 @@ char VectorClass_ptr_IonBlastClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x53dafc*/
       v4 = a3; /*0x53db12*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x53db0e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x53db0e*/
     *((unsigned char *)this + 12) = 1; /*0x53db16*/
     if ( v4 ) /*0x53db1a*/
     {
@@ -23748,7 +23748,7 @@ char VectorClass_ptr_IonBlastClass::Release(int a2, unsigned int * a3)
           ++i; /*0x53db3e*/
         if ( *((unsigned char *)this + 13) ) /*0x53db4b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x53db56*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x53db56*/
           *((unsigned int *)this + 1) = 0; /*0x53db5e*/
         }
       }
@@ -23778,7 +23778,7 @@ void VectorClass_ptr_IonBlastClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x53db9d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x53dba3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x53dba3*/
     *((unsigned int *)this + 1) = 0; /*0x53dbab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x53dbae*/
@@ -23841,7 +23841,7 @@ char VectorClass_ptr_IonBlastClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x53dc38*/
       v4 = a3; /*0x53dc4e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x53dc4a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x53dc4a*/
     *((unsigned char *)this + 12) = 1; /*0x53dc52*/
     if ( !v4 ) /*0x53dc56*/
       return 0; /*0x53dcca*/
@@ -23854,7 +23854,7 @@ char VectorClass_ptr_IonBlastClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x53dc71*/
       if ( *((unsigned char *)this + 13) ) /*0x53dc7e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x53dc89*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x53dc89*/
         *((unsigned int *)this + 1) = 0; /*0x53dc91*/
       }
     }
@@ -23908,13 +23908,13 @@ VectorClass_flat * VectorClass_ptr_IonBlastClass::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_IonBlastClass; /*0x53dd06*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x53dd10*/
   {
-    __3_YAXPAX_Z(v3); /*0x53dd18*/
+    RA2_OPDEL(v3); /*0x53dd18*/
     *(Block + 1) = 0; /*0x53dd20*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x53dd2b*/
   *(Block + 2) = 0; /*0x53dd31*/
   if ( (a2 & 1) != 0 ) /*0x53dd38*/
-    __3_YAXPAX_Z(Block); /*0x53dd3b*/
+    RA2_OPDEL(Block); /*0x53dd3b*/
   return (VectorClass *)Block; /*0x53dd45*/
 
 }
@@ -23922,7 +23922,7 @@ VectorClass_flat * VectorClass_ptr_IonBlastClass::QueryInterface(unsigned int * 
 
 // 0x53DD50
 namespace gamemd {
-DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastClass___(char a2)
+DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -23931,13 +23931,13 @@ DynamicVector * VectorClass_ptr_IonBlastClass::Constructor_VectorClass_IonBlastC
   *Block = &vt_VectorClass_IonBlastClass; /*0x53dd56*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x53dd60*/
   {
-    __3_YAXPAX_Z(v3); /*0x53dd68*/
+    RA2_OPDEL(v3); /*0x53dd68*/
     *(Block + 1) = 0; /*0x53dd70*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x53dd7b*/
   *(Block + 2) = 0; /*0x53dd81*/
-  if ( (a2 & 1) != 0 ) /*0x53dd88*/
-    __3_YAXPAX_Z(Block); /*0x53dd8b*/
+  if ( (Block & 1) != 0 ) /*0x53dd88*/
+    RA2_OPDEL(Block); /*0x53dd8b*/
   return (DynamicVector *)Block; /*0x53dd95*/
 
 }
@@ -23964,7 +23964,7 @@ void VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x54a1f9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x54a200*/
   {
-    __3_YAXPAX_Z(v2); /*0x54a206*/
+    RA2_OPDEL(v2); /*0x54a206*/
     *((unsigned int *)this + 1) = 0; /*0x54a20e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x54a211*/
@@ -24042,7 +24042,7 @@ char VectorClass_PAG::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x54a2ac*/
       v4 = a3; /*0x54a2c2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x54a2be*/
+      v4 = RA2_OPNEW(4 * a2); /*0x54a2be*/
     *((unsigned char *)this + 12) = 1; /*0x54a2c6*/
     if ( v4 ) /*0x54a2ca*/
     {
@@ -24055,7 +24055,7 @@ char VectorClass_PAG::Release(int a2, unsigned int * a3)
           ++i; /*0x54a2ee*/
         if ( *((unsigned char *)this + 13) ) /*0x54a2fb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a306*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x54a306*/
           *((unsigned int *)this + 1) = 0; /*0x54a30e*/
         }
       }
@@ -24085,7 +24085,7 @@ void VectorClass_PAG::Set()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x54a34d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x54a353*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x54a353*/
     *((unsigned int *)this + 1) = 0; /*0x54a35b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x54a35e*/
@@ -24178,7 +24178,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Release(int a2, 
     if ( a3 ) /*0x54a50c*/
       v4 = a3; /*0x54a522*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x54a51e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x54a51e*/
     *((unsigned char *)this + 12) = 1; /*0x54a526*/
     if ( v4 ) /*0x54a52a*/
     {
@@ -24191,7 +24191,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Release(int a2, 
           ++i; /*0x54a54e*/
         if ( *((unsigned char *)this + 13) ) /*0x54a55b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a566*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x54a566*/
           *((unsigned int *)this + 1) = 0; /*0x54a56e*/
         }
       }
@@ -24221,7 +24221,7 @@ void VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x54a5ad*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x54a5b3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x54a5b3*/
     *((unsigned int *)this + 1) = 0; /*0x54a5bb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x54a5be*/
@@ -24284,7 +24284,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::SetCapacity(int 
     if ( a3 ) /*0x54a648*/
       v4 = a3; /*0x54a65e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x54a65a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x54a65a*/
     *((unsigned char *)this + 12) = 1; /*0x54a662*/
     if ( !v4 ) /*0x54a666*/
       return 0; /*0x54a6da*/
@@ -24297,7 +24297,7 @@ char VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::SetCapacity(int 
         ++i; /*0x54a681*/
       if ( *((unsigned char *)this + 13) ) /*0x54a68e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x54a699*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x54a699*/
         *((unsigned int *)this + 1) = 0; /*0x54a6a1*/
       }
     }
@@ -24351,13 +24351,13 @@ VectorClass_flat * VectorClass_PAG::QueryInterface(unsigned int * Block, char a2
   *Block = &vt_VectorClass_unsigned_short; /*0x54a716*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x54a720*/
   {
-    __3_YAXPAX_Z(v3); /*0x54a728*/
+    RA2_OPDEL(v3); /*0x54a728*/
     *(Block + 1) = 0; /*0x54a730*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x54a73b*/
   *(Block + 2) = 0; /*0x54a741*/
   if ( (a2 & 1) != 0 ) /*0x54a748*/
-    __3_YAXPAX_Z(Block); /*0x54a74b*/
+    RA2_OPDEL(Block); /*0x54a74b*/
   return (VectorClass *)Block; /*0x54a755*/
 
 }
@@ -24365,7 +24365,7 @@ VectorClass_flat * VectorClass_PAG::QueryInterface(unsigned int * Block, char a2
 
 // 0x54A7B0
 namespace gamemd {
-VectorClass_flat * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::QueryInterface(char a2)
+VectorClass_flat * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -24374,13 +24374,13 @@ VectorClass_flat * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Qu
   *Block = &vt_VectorClass_IsometricTileTypeClass_TileInsertType; /*0x54a7b6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x54a7c0*/
   {
-    __3_YAXPAX_Z(v3); /*0x54a7c8*/
+    RA2_OPDEL(v3); /*0x54a7c8*/
     *(Block + 1) = 0; /*0x54a7d0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x54a7db*/
   *(Block + 2) = 0; /*0x54a7e1*/
-  if ( (a2 & 1) != 0 ) /*0x54a7e8*/
-    __3_YAXPAX_Z(Block); /*0x54a7eb*/
+  if ( (Block & 1) != 0 ) /*0x54a7e8*/
+    RA2_OPDEL(Block); /*0x54a7eb*/
   return (VectorClass *)Block; /*0x54a7f5*/
 
 }
@@ -24388,7 +24388,7 @@ VectorClass_flat * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Qu
 
 // 0x54A800
 namespace gamemd {
-DynamicVector * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Constructor(char a2)
+DynamicVector * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Constructor(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -24397,13 +24397,13 @@ DynamicVector * VectorClass_ptr_TileInsertType_uint_sometricTileTypeClass::Const
   *Block = &vt_VectorClass_IsometricTileTypeClass_TileInsertType; /*0x54a806*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x54a810*/
   {
-    __3_YAXPAX_Z(v3); /*0x54a818*/
+    RA2_OPDEL(v3); /*0x54a818*/
     *(Block + 1) = 0; /*0x54a820*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x54a82b*/
   *(Block + 2) = 0; /*0x54a831*/
-  if ( (a2 & 1) != 0 ) /*0x54a838*/
-    __3_YAXPAX_Z(Block); /*0x54a83b*/
+  if ( (Block & 1) != 0 ) /*0x54a838*/
+    RA2_OPDEL(Block); /*0x54a83b*/
   return (DynamicVector *)Block; /*0x54a845*/
 
 }
@@ -24420,7 +24420,7 @@ void VectorClass_ptr_LaserDrawClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x5512d9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5512e0*/
   {
-    __3_YAXPAX_Z(v2); /*0x5512e6*/
+    RA2_OPDEL(v2); /*0x5512e6*/
     *((unsigned int *)this + 1) = 0; /*0x5512ee*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5512f1*/
@@ -24498,7 +24498,7 @@ char VectorClass_ptr_LaserDrawClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x55138c*/
       v4 = a3; /*0x5513a2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x55139e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x55139e*/
     *((unsigned char *)this + 12) = 1; /*0x5513a6*/
     if ( v4 ) /*0x5513aa*/
     {
@@ -24511,7 +24511,7 @@ char VectorClass_ptr_LaserDrawClass::Release(int a2, unsigned int * a3)
           ++i; /*0x5513ce*/
         if ( *((unsigned char *)this + 13) ) /*0x5513db*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5513e6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5513e6*/
           *((unsigned int *)this + 1) = 0; /*0x5513ee*/
         }
       }
@@ -24541,7 +24541,7 @@ void VectorClass_ptr_LaserDrawClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x55142d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x551433*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x551433*/
     *((unsigned int *)this + 1) = 0; /*0x55143b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x55143e*/
@@ -24604,7 +24604,7 @@ char VectorClass_ptr_LaserDrawClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5514c8*/
       v4 = a3; /*0x5514de*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5514da*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5514da*/
     *((unsigned char *)this + 12) = 1; /*0x5514e2*/
     if ( !v4 ) /*0x5514e6*/
       return 0; /*0x55155a*/
@@ -24617,7 +24617,7 @@ char VectorClass_ptr_LaserDrawClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x551501*/
       if ( *((unsigned char *)this + 13) ) /*0x55150e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x551519*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x551519*/
         *((unsigned int *)this + 1) = 0; /*0x551521*/
       }
     }
@@ -24671,13 +24671,13 @@ VectorClass_flat * VectorClass_ptr_LaserDrawClass::QueryInterface(unsigned int *
   *Block = &vt_VectorClass_LaserDrawClass; /*0x551596*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5515a0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5515a8*/
+    RA2_OPDEL(v3); /*0x5515a8*/
     *(Block + 1) = 0; /*0x5515b0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5515bb*/
   *(Block + 2) = 0; /*0x5515c1*/
   if ( (a2 & 1) != 0 ) /*0x5515c8*/
-    __3_YAXPAX_Z(Block); /*0x5515cb*/
+    RA2_OPDEL(Block); /*0x5515cb*/
   return (VectorClass *)Block; /*0x5515d5*/
 
 }
@@ -24685,7 +24685,7 @@ VectorClass_flat * VectorClass_ptr_LaserDrawClass::QueryInterface(unsigned int *
 
 // 0x5515E0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDrawClass___(char a2)
+DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDrawClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -24694,13 +24694,13 @@ DynamicVector * VectorClass_ptr_LaserDrawClass::Constructor_VectorClass_LaserDra
   *Block = &vt_VectorClass_LaserDrawClass; /*0x5515e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5515f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5515f8*/
+    RA2_OPDEL(v3); /*0x5515f8*/
     *(Block + 1) = 0; /*0x551600*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x55160b*/
   *(Block + 2) = 0; /*0x551611*/
-  if ( (a2 & 1) != 0 ) /*0x551618*/
-    __3_YAXPAX_Z(Block); /*0x55161b*/
+  if ( (Block & 1) != 0 ) /*0x551618*/
+    RA2_OPDEL(Block); /*0x55161b*/
   return (DynamicVector *)Block; /*0x551625*/
 
 }
@@ -24717,7 +24717,7 @@ void VectorClass_ptr_LightSourceClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x555209*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x555210*/
   {
-    __3_YAXPAX_Z(v2); /*0x555216*/
+    RA2_OPDEL(v2); /*0x555216*/
     *((unsigned int *)this + 1) = 0; /*0x55521e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x555221*/
@@ -24760,7 +24760,7 @@ void VectorClass_ptr_LightSourceClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x555269*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x555270*/
   {
-    __3_YAXPAX_Z(v2); /*0x555276*/
+    RA2_OPDEL(v2); /*0x555276*/
     *((unsigned int *)this + 1) = 0; /*0x55527e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x555281*/
@@ -24838,7 +24838,7 @@ char VectorClass_ptr_LightSourceClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x55531c*/
       v4 = a3; /*0x555332*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x55532e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x55532e*/
     *((unsigned char *)this + 12) = 1; /*0x555336*/
     if ( v4 ) /*0x55533a*/
     {
@@ -24851,7 +24851,7 @@ char VectorClass_ptr_LightSourceClass::Release(int a2, unsigned int * a3)
           ++i; /*0x55535e*/
         if ( *((unsigned char *)this + 13) ) /*0x55536b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x555376*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x555376*/
           *((unsigned int *)this + 1) = 0; /*0x55537e*/
         }
       }
@@ -24881,7 +24881,7 @@ void VectorClass_ptr_LightSourceClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5553bd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5553c3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5553c3*/
     *((unsigned int *)this + 1) = 0; /*0x5553cb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5553ce*/
@@ -24944,7 +24944,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x555458*/
       v4 = a3; /*0x55546e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x55546a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x55546a*/
     *((unsigned char *)this + 12) = 1; /*0x555472*/
     if ( !v4 ) /*0x555476*/
       return 0; /*0x5554ea*/
@@ -24957,7 +24957,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x555491*/
       if ( *((unsigned char *)this + 13) ) /*0x55549e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5554a9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5554a9*/
         *((unsigned int *)this + 1) = 0; /*0x5554b1*/
       }
     }
@@ -25046,7 +25046,7 @@ char VectorClass_ptr_PendingCellClass_LightSourceClass::Release(int a2, unsigned
     if ( a3 ) /*0x55557c*/
       v4 = a3; /*0x555592*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x55558e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x55558e*/
     *((unsigned char *)this + 12) = 1; /*0x555596*/
     if ( v4 ) /*0x55559a*/
     {
@@ -25059,7 +25059,7 @@ char VectorClass_ptr_PendingCellClass_LightSourceClass::Release(int a2, unsigned
           ++i; /*0x5555be*/
         if ( *((unsigned char *)this + 13) ) /*0x5555cb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5555d6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5555d6*/
           *((unsigned int *)this + 1) = 0; /*0x5555de*/
         }
       }
@@ -25089,7 +25089,7 @@ void VectorClass_ptr_PendingCellClass_LightSourceClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x55561d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x555623*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x555623*/
     *((unsigned int *)this + 1) = 0; /*0x55562b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x55562e*/
@@ -25152,7 +25152,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x5556b8*/
       v4 = a3; /*0x5556ce*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5556ca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5556ca*/
     *((unsigned char *)this + 12) = 1; /*0x5556d2*/
     if ( !v4 ) /*0x5556d6*/
       return 0; /*0x55574a*/
@@ -25165,7 +25165,7 @@ char VectorClass_ptr_LightSourceClass::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x5556f1*/
       if ( *((unsigned char *)this + 13) ) /*0x5556fe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x555709*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x555709*/
         *((unsigned int *)this + 1) = 0; /*0x555711*/
       }
     }
@@ -25219,13 +25219,13 @@ VectorClass_flat * VectorClass_ptr_LightSourceClass::QueryInterface(unsigned int
   *Block = &vt_VectorClass_LightSourceClass; /*0x555786*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x555790*/
   {
-    __3_YAXPAX_Z(v3); /*0x555798*/
+    RA2_OPDEL(v3); /*0x555798*/
     *(Block + 1) = 0; /*0x5557a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5557ab*/
   *(Block + 2) = 0; /*0x5557b1*/
   if ( (a2 & 1) != 0 ) /*0x5557b8*/
-    __3_YAXPAX_Z(Block); /*0x5557bb*/
+    RA2_OPDEL(Block); /*0x5557bb*/
   return (VectorClass *)Block; /*0x5557c5*/
 
 }
@@ -25233,7 +25233,7 @@ VectorClass_flat * VectorClass_ptr_LightSourceClass::QueryInterface(unsigned int
 
 // 0x5557D0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightSourceClass___(char a2)
+DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightSourceClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -25242,13 +25242,13 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor_VectorClass_LightS
   *Block = &vt_VectorClass_LightSourceClass; /*0x5557d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5557e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5557e8*/
+    RA2_OPDEL(v3); /*0x5557e8*/
     *(Block + 1) = 0; /*0x5557f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5557fb*/
   *(Block + 2) = 0; /*0x555801*/
-  if ( (a2 & 1) != 0 ) /*0x555808*/
-    __3_YAXPAX_Z(Block); /*0x55580b*/
+  if ( (Block & 1) != 0 ) /*0x555808*/
+    RA2_OPDEL(Block); /*0x55580b*/
   return (DynamicVector *)Block; /*0x555815*/
 
 }
@@ -25265,13 +25265,13 @@ VectorClass_flat * VectorClass_ptr_PendingCellClass_LightSourceClass::QueryInter
   *Block = &vt_VectorClass_LightSourceClass_PendingCellClass; /*0x555826*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x555830*/
   {
-    __3_YAXPAX_Z(v3); /*0x555838*/
+    RA2_OPDEL(v3); /*0x555838*/
     *(Block + 1) = 0; /*0x555840*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x55584b*/
   *(Block + 2) = 0; /*0x555851*/
   if ( (a2 & 1) != 0 ) /*0x555858*/
-    __3_YAXPAX_Z(Block); /*0x55585b*/
+    RA2_OPDEL(Block); /*0x55585b*/
   return (VectorClass *)Block; /*0x555865*/
 
 }
@@ -25288,13 +25288,13 @@ DynamicVector * VectorClass_ptr_LightSourceClass::Constructor(unsigned int * Blo
   *Block = &vt_VectorClass_LightSourceClass_PendingCellClass; /*0x555876*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x555880*/
   {
-    __3_YAXPAX_Z(v3); /*0x555888*/
+    RA2_OPDEL(v3); /*0x555888*/
     *(Block + 1) = 0; /*0x555890*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x55589b*/
   *(Block + 2) = 0; /*0x5558a1*/
   if ( (a2 & 1) != 0 ) /*0x5558a8*/
-    __3_YAXPAX_Z(Block); /*0x5558ab*/
+    RA2_OPDEL(Block); /*0x5558ab*/
   return (DynamicVector *)Block; /*0x5558b5*/
 
 }
@@ -25356,7 +25356,7 @@ char VectorClass_ptr_LineTrail::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x556f6c*/
       v4 = a3; /*0x556f82*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x556f7e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x556f7e*/
     *((unsigned char *)this + 12) = 1; /*0x556f86*/
     if ( v4 ) /*0x556f8a*/
     {
@@ -25369,7 +25369,7 @@ char VectorClass_ptr_LineTrail::Release(int a2, unsigned int * a3)
           ++i; /*0x556fae*/
         if ( *((unsigned char *)this + 13) ) /*0x556fbb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x556fc6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x556fc6*/
           *((unsigned int *)this + 1) = 0; /*0x556fce*/
         }
       }
@@ -25399,7 +25399,7 @@ void VectorClass_ptr_LineTrail::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x55700d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x557013*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x557013*/
     *((unsigned int *)this + 1) = 0; /*0x55701b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x55701e*/
@@ -25457,13 +25457,13 @@ VectorClass_flat * VectorClass_ptr_LineTrail::QueryInterface(unsigned int * Bloc
   *Block = &vt_VectorClass_LineTrail; /*0x557176*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x557180*/
   {
-    __3_YAXPAX_Z(v3); /*0x557188*/
+    RA2_OPDEL(v3); /*0x557188*/
     *(Block + 1) = 0; /*0x557190*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x55719b*/
   *(Block + 2) = 0; /*0x5571a1*/
   if ( (a2 & 1) != 0 ) /*0x5571a8*/
-    __3_YAXPAX_Z(Block); /*0x5571ab*/
+    RA2_OPDEL(Block); /*0x5571ab*/
   return (VectorClass *)Block; /*0x5571b5*/
 
 }
@@ -25525,7 +25525,7 @@ char VectorClass_PBG::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x55829c*/
       v4 = a3; /*0x5582b2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5582ae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5582ae*/
     *((unsigned char *)this + 12) = 1; /*0x5582b6*/
     if ( v4 ) /*0x5582ba*/
     {
@@ -25538,7 +25538,7 @@ char VectorClass_PBG::Release(int a2, unsigned int * a3)
           ++i; /*0x5582de*/
         if ( *((unsigned char *)this + 13) ) /*0x5582eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5582f6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5582f6*/
           *((unsigned int *)this + 1) = 0; /*0x5582fe*/
         }
       }
@@ -25568,7 +25568,7 @@ void VectorClass_PBG::Set()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x55833d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x558343*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x558343*/
     *((unsigned int *)this + 1) = 0; /*0x55834b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x55834e*/
@@ -25626,13 +25626,13 @@ VectorClass_flat * VectorClass_PBG::QueryInterface(unsigned int * Block, char a2
   *Block = &vt_VectorClass_unsigned_short_const; /*0x5584a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5584b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5584b8*/
+    RA2_OPDEL(v3); /*0x5584b8*/
     *(Block + 1) = 0; /*0x5584c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5584cb*/
   *(Block + 2) = 0; /*0x5584d1*/
   if ( (a2 & 1) != 0 ) /*0x5584d8*/
-    __3_YAXPAX_Z(Block); /*0x5584db*/
+    RA2_OPDEL(Block); /*0x5584db*/
   return (VectorClass *)Block; /*0x5584e5*/
 
 }
@@ -25650,7 +25650,7 @@ int VectorClass_flat::RemoveItem(ObjectClass * aP1)
   result = aP1; /*0x55bae0*/
   if ( aP1->isInLogic ) /*0x55bae7*/
   {
-    v4 = (*(int (**)(int *, ObjectClass **))(*(unsigned int **)this + 16))(this, &aP1); /*0x55bafa*/
+    v4 = (*(int (**)(int *, ObjectClass **))(*(unsigned int *)this + 16))(this, &aP1); /*0x55bafa*/
     if ( v4 != -1 ) /*0x55bb00*/
     {
       v5 = *((char *)this + 4); /*0x55bb02*/
@@ -25677,7 +25677,7 @@ void VectorClass_flat::CleanupSubzone()
   *((unsigned int *)this + 4) = 0; /*0x588c99*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x588ca0*/
   {
-    __3_YAXPAX_Z(v2); /*0x588ca6*/
+    RA2_OPDEL(v2); /*0x588ca6*/
     *((unsigned int *)this + 1) = 0; /*0x588cae*/
   }
   *((unsigned char *)this + 13) = 0; /*0x588cb1*/
@@ -25712,7 +25712,7 @@ int VectorClass_USubzoneTrackingStruct::Clear(int a2, int a3)
     *(unsigned int *)(a2 + 8) = v4; /*0x588e4b*/
     if ( v4 ) /*0x588e4e*/
     {
-      v5 = (char *)__2_YAPAXI_Z(8 * v4); /*0x588e58*/
+      v5 = (char *)RA2_OPNEW(8 * v4); /*0x588e58*/
       if ( v5 ) /*0x588e62*/
       {
         v6 = v5; /*0x588e67*/
@@ -25781,7 +25781,7 @@ void VectorClass_W4PassabilityType::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x588f09*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x588f10*/
   {
-    __3_YAXPAX_Z(v2); /*0x588f16*/
+    RA2_OPDEL(v2); /*0x588f16*/
     *((unsigned int *)this + 1) = 0; /*0x588f1e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x588f21*/
@@ -25824,7 +25824,7 @@ void VectorClass_W4PassabilityType::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x588f69*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x588f70*/
   {
-    __3_YAXPAX_Z(v2); /*0x588f76*/
+    RA2_OPDEL(v2); /*0x588f76*/
     *((unsigned int *)this + 1) = 0; /*0x588f7e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x588f81*/
@@ -25876,7 +25876,7 @@ void VectorClass_W4PassabilityType::Destroy_1()
   *((unsigned int *)this + 4) = 0; /*0x588fd9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x588fe0*/
   {
-    __3_YAXPAX_Z(v2); /*0x588fe6*/
+    RA2_OPDEL(v2); /*0x588fe6*/
     *((unsigned int *)this + 1) = 0; /*0x588fee*/
   }
   *((unsigned char *)this + 13) = 0; /*0x588ff1*/
@@ -26007,7 +26007,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
     }
     else
     {
-      v5 = (int *)__2_YAPAXI_Z(36 * a2 + 4); /*0x589771*/
+      v5 = (int *)RA2_OPNEW(36 * a2 + 4); /*0x589771*/
       if ( v5 ) /*0x58977b*/
       {
         *v5 = a2; /*0x58977d*/
@@ -26092,7 +26092,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
                 {
                   if ( *(unsigned char *)(v18 + 13) ) /*0x5898e7*/
                   {
-                    __3_YAXPAX_Z(v19); /*0x5898ed*/
+                    RA2_OPDEL(v19); /*0x5898ed*/
                     *(unsigned int *)(v18 + 4) = 0; /*0x5898f5*/
                   }
                 }
@@ -26103,7 +26103,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
               while ( v25 ); /*0x589907*/
               v15 = v24; /*0x589909*/
             }
-            __3_YAXPAX_Z(v15); /*0x58990e*/
+            RA2_OPDEL(v15); /*0x58990e*/
           }
           *((unsigned int *)v4 + 1) = 0; /*0x589916*/
         }
@@ -26162,7 +26162,7 @@ void VectorClass_USubzoneTrackingStruct::ddtor()
         *(unsigned int *)v7 = &vt_VectorClass_SubzoneConnectionStruct; /*0x589997*/
         if ( v9 && *(unsigned char *)(v7 + 13) ) /*0x58999f*/
         {
-          __3_YAXPAX_Z(v9); /*0x5899a5*/
+          RA2_OPDEL(v9); /*0x5899a5*/
           *(unsigned int *)(v7 + 4) = 0; /*0x5899ad*/
         }
         --v8; /*0x5899b0*/
@@ -26172,7 +26172,7 @@ void VectorClass_USubzoneTrackingStruct::ddtor()
       while ( v8 ); /*0x5899b7*/
       v4 = v10; /*0x5899b9*/
     }
-    __3_YAXPAX_Z(v4); /*0x5899bf*/
+    RA2_OPDEL(v4); /*0x5899bf*/
     *((unsigned int *)this + 1) = 0; /*0x5899c8*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5899cb*/
@@ -26267,7 +26267,7 @@ char VectorClass_W4PassabilityType::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x589f0c*/
       v4 = a3; /*0x589f22*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x589f1e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x589f1e*/
     *((unsigned char *)this + 12) = 1; /*0x589f26*/
     if ( v4 ) /*0x589f2a*/
     {
@@ -26280,7 +26280,7 @@ char VectorClass_W4PassabilityType::Release(int a2, unsigned int * a3)
           ++i; /*0x589f4e*/
         if ( *((unsigned char *)this + 13) ) /*0x589f5b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x589f66*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x589f66*/
           *((unsigned int *)this + 1) = 0; /*0x589f6e*/
         }
       }
@@ -26310,7 +26310,7 @@ void VectorClass_W4PassabilityType::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x589fad*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x589fb3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x589fb3*/
     *((unsigned int *)this + 1) = 0; /*0x589fbb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x589fbe*/
@@ -26373,7 +26373,7 @@ char VectorClass_W4PassabilityType::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x58a048*/
       v4 = a3; /*0x58a05e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x58a05a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x58a05a*/
     *((unsigned char *)this + 12) = 1; /*0x58a062*/
     if ( !v4 ) /*0x58a066*/
       return 0; /*0x58a0da*/
@@ -26386,7 +26386,7 @@ char VectorClass_W4PassabilityType::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x58a081*/
       if ( *((unsigned char *)this + 13) ) /*0x58a08e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a099*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x58a099*/
         *((unsigned int *)this + 1) = 0; /*0x58a0a1*/
       }
     }
@@ -26483,7 +26483,7 @@ char VectorClass_W4PassabilityType::SetCapacity_0(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = __2_YAPAXI_Z(8 * a2); /*0x58a176*/
+      v5 = RA2_OPNEW(8 * a2); /*0x58a176*/
       if ( v5 ) /*0x58a180*/
         v6 = v5; /*0x58a185*/
       else
@@ -26512,7 +26512,7 @@ char VectorClass_W4PassabilityType::SetCapacity_0(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x58a1d4*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a1df*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x58a1df*/
         *((unsigned int *)this + 1) = 0; /*0x58a1e7*/
       }
     }
@@ -26627,7 +26627,7 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(12 * a2); /*0x58a2c7*/
+      v6 = (char *)RA2_OPNEW(12 * a2); /*0x58a2c7*/
       if ( v6 ) /*0x58a2d1*/
       {
         if ( a2 - 1 >= 0 ) /*0x58a2d8*/
@@ -26676,7 +26676,7 @@ char VectorClass_W4PassabilityType::SetCapacity_1(int a2, char * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x58a347*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a350*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x58a350*/
         *((unsigned int *)this + 1) = 0; /*0x58a358*/
       }
     }
@@ -26754,7 +26754,7 @@ VectorClass_flat * VectorClass_USubzoneTrackingStruct::QueryInterface(unsigned i
         *(unsigned int *)v8 = &vt_VectorClass_SubzoneConnectionStruct; /*0x58a4ad*/
         if ( v10 && *(unsigned char *)(v8 + 13) ) /*0x58a4b5*/
         {
-          __3_YAXPAX_Z(v10); /*0x58a4bb*/
+          RA2_OPDEL(v10); /*0x58a4bb*/
           *(unsigned int *)(v8 + 4) = 0; /*0x58a4c3*/
         }
         --v9; /*0x58a4c6*/
@@ -26764,13 +26764,13 @@ VectorClass_flat * VectorClass_USubzoneTrackingStruct::QueryInterface(unsigned i
       while ( v9 ); /*0x58a4cd*/
       v5 = v12; /*0x58a4cf*/
     }
-    __3_YAXPAX_Z(v5); /*0x58a4d5*/
+    RA2_OPDEL(v5); /*0x58a4d5*/
     *(Block + 1) = 0; /*0x58a4de*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x58a4e5*/
   *(Block + 2) = 0; /*0x58a4ea*/
   if ( (a2 & 1) != 0 ) /*0x58a4ed*/
-    __3_YAXPAX_Z(Block); /*0x58a4f0*/
+    RA2_OPDEL(Block); /*0x58a4f0*/
   return (VectorClass *)Block; /*0x58a4fa*/
 
 }
@@ -26807,7 +26807,7 @@ char * VectorClass_W4PassabilityType::Constructor(unsigned int * Block, char a2)
         *v7 = &vt_VectorClass_HashObject_unsigned_int_unsigned_int; /*0x58a65a*/
         if ( v9 && *((unsigned char *)v7 + 13) ) /*0x58a662*/
         {
-          __3_YAXPAX_Z(v9); /*0x58a668*/
+          RA2_OPDEL(v9); /*0x58a668*/
           v7[1] = 0; /*0x58a670*/
         }
         --v8; /*0x58a673*/
@@ -26817,7 +26817,7 @@ char * VectorClass_W4PassabilityType::Constructor(unsigned int * Block, char a2)
       while ( v8 ); /*0x58a67a*/
     }
     if ( (a2 & 1) != 0 ) /*0x58a682*/
-      __3_YAXPAX_Z(v4); /*0x58a685*/
+      RA2_OPDEL(v4); /*0x58a685*/
     return (char *)v4; /*0x58a68d*/
   }
   else
@@ -26826,13 +26826,13 @@ char * VectorClass_W4PassabilityType::Constructor(unsigned int * Block, char a2)
     *Block = &vt_VectorClass_HashObject_unsigned_int_unsigned_int; /*0x58a69c*/
     if ( v11 && *((unsigned char *)Block + 13) ) /*0x58a6a4*/
     {
-      __3_YAXPAX_Z(v11); /*0x58a6aa*/
+      RA2_OPDEL(v11); /*0x58a6aa*/
       *(Block + 1) = 0; /*0x58a6b2*/
     }
     *((unsigned char *)Block + 13) = 0; /*0x58a6b9*/
     *(Block + 2) = 0; /*0x58a6be*/
     if ( (a2 & 1) != 0 ) /*0x58a6c1*/
-      __3_YAXPAX_Z(Block); /*0x58a6c4*/
+      RA2_OPDEL(Block); /*0x58a6c4*/
     return (char *)Block; /*0x58a6cc*/
   }
 
@@ -26861,7 +26861,7 @@ char VectorClass_UHashObject_uint_uint::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = __2_YAPAXI_Z(8 * a2); /*0x58a706*/
+      v5 = RA2_OPNEW(8 * a2); /*0x58a706*/
       if ( v5 ) /*0x58a710*/
         v6 = v5; /*0x58a715*/
       else
@@ -26890,7 +26890,7 @@ char VectorClass_UHashObject_uint_uint::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x58a76d*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a778*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x58a778*/
           *((unsigned int *)this + 1) = 0; /*0x58a780*/
         }
       }
@@ -26920,7 +26920,7 @@ void VectorClass_UHashObject_uint_uint::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x58a7bd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x58a7c3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x58a7c3*/
     *((unsigned int *)this + 1) = 0; /*0x58a7cb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x58a7ce*/
@@ -26998,7 +26998,7 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
         *v7 = &vt_VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct; /*0x58a86a*/
         if ( v9 && *((unsigned char *)v7 + 13) ) /*0x58a872*/
         {
-          __3_YAXPAX_Z(v9); /*0x58a878*/
+          RA2_OPDEL(v9); /*0x58a878*/
           v7[1] = 0; /*0x58a880*/
         }
         --v8; /*0x58a883*/
@@ -27008,7 +27008,7 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
       while ( v8 ); /*0x58a88a*/
     }
     if ( (a2 & 1) != 0 ) /*0x58a892*/
-      __3_YAXPAX_Z(v4); /*0x58a895*/
+      RA2_OPDEL(v4); /*0x58a895*/
     return (char *)v4; /*0x58a89d*/
   }
   else
@@ -27017,13 +27017,13 @@ char * VectorClass_W4PassabilityType::Constructor_0(unsigned int * Block, char a
     *Block = &vt_VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct; /*0x58a8ac*/
     if ( v11 && *((unsigned char *)Block + 13) ) /*0x58a8b4*/
     {
-      __3_YAXPAX_Z(v11); /*0x58a8ba*/
+      RA2_OPDEL(v11); /*0x58a8ba*/
       *(Block + 1) = 0; /*0x58a8c2*/
     }
     *((unsigned char *)Block + 13) = 0; /*0x58a8c9*/
     *(Block + 2) = 0; /*0x58a8ce*/
     if ( (a2 & 1) != 0 ) /*0x58a8d1*/
-      __3_YAXPAX_Z(Block); /*0x58a8d4*/
+      RA2_OPDEL(Block); /*0x58a8d4*/
     return (char *)Block; /*0x58a8dc*/
   }
 
@@ -27070,7 +27070,7 @@ char VectorClass_UHashObject_uint_SubzoneConn::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(12 * a2); /*0x58a917*/
+      v6 = (char *)RA2_OPNEW(12 * a2); /*0x58a917*/
       if ( v6 ) /*0x58a921*/
       {
         if ( a2 - 1 >= 0 ) /*0x58a928*/
@@ -27119,7 +27119,7 @@ char VectorClass_UHashObject_uint_SubzoneConn::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x58a9a0*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x58a9a9*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x58a9a9*/
           *((unsigned int *)this + 1) = 0; /*0x58a9b1*/
         }
       }
@@ -27149,7 +27149,7 @@ void VectorClass_UHashObject_uint_SubzoneConn::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x58a9fd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x58aa03*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x58aa03*/
     *((unsigned int *)this + 1) = 0; /*0x58aa0b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x58aa0e*/
@@ -27207,13 +27207,13 @@ VectorClass_flat * VectorClass_W4PassabilityType::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_enum_PassabilityType; /*0x58aa96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x58aaa0*/
   {
-    __3_YAXPAX_Z(v3); /*0x58aaa8*/
+    RA2_OPDEL(v3); /*0x58aaa8*/
     *(Block + 1) = 0; /*0x58aab0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x58aabb*/
   *(Block + 2) = 0; /*0x58aac1*/
   if ( (a2 & 1) != 0 ) /*0x58aac8*/
-    __3_YAXPAX_Z(Block); /*0x58aacb*/
+    RA2_OPDEL(Block); /*0x58aacb*/
   return (VectorClass *)Block; /*0x58aad5*/
 
 }
@@ -27230,13 +27230,13 @@ DynamicVector * VectorClass_W4PassabilityType::Constructor_1(unsigned int * Bloc
   *Block = &vt_VectorClass_enum_PassabilityType; /*0x58aae6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x58aaf0*/
   {
-    __3_YAXPAX_Z(v3); /*0x58aaf8*/
+    RA2_OPDEL(v3); /*0x58aaf8*/
     *(Block + 1) = 0; /*0x58ab00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x58ab0b*/
   *(Block + 2) = 0; /*0x58ab11*/
   if ( (a2 & 1) != 0 ) /*0x58ab18*/
-    __3_YAXPAX_Z(Block); /*0x58ab1b*/
+    RA2_OPDEL(Block); /*0x58ab1b*/
   return (DynamicVector *)Block; /*0x58ab25*/
 
 }
@@ -27253,13 +27253,13 @@ VectorClass_flat * VectorClass_UHashObject_uint_uint::QueryInterface(unsigned in
   *Block = &vt_VectorClass_HashObject_unsigned_int_unsigned_int; /*0x58ab36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x58ab40*/
   {
-    __3_YAXPAX_Z(v3); /*0x58ab48*/
+    RA2_OPDEL(v3); /*0x58ab48*/
     *(Block + 1) = 0; /*0x58ab50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x58ab5b*/
   *(Block + 2) = 0; /*0x58ab61*/
   if ( (a2 & 1) != 0 ) /*0x58ab68*/
-    __3_YAXPAX_Z(Block); /*0x58ab6b*/
+    RA2_OPDEL(Block); /*0x58ab6b*/
   return (VectorClass *)Block; /*0x58ab75*/
 
 }
@@ -27276,13 +27276,13 @@ VectorClass_flat * VectorClass_UHashObject_uint_SubzoneConn::QueryInterface(unsi
   *Block = &vt_VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct; /*0x58ab86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x58ab90*/
   {
-    __3_YAXPAX_Z(v3); /*0x58ab98*/
+    RA2_OPDEL(v3); /*0x58ab98*/
     *(Block + 1) = 0; /*0x58aba0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x58abab*/
   *(Block + 2) = 0; /*0x58abb1*/
   if ( (a2 & 1) != 0 ) /*0x58abb8*/
-    __3_YAXPAX_Z(Block); /*0x58abbb*/
+    RA2_OPDEL(Block); /*0x58abbb*/
   return (VectorClass *)Block; /*0x58abc5*/
 
 }
@@ -27307,7 +27307,7 @@ unsigned int * VectorClass_flat::ConstructSubzone(int a2, int a3)
     return this; /*0x58ac90*/
   if ( !a3 ) /*0x58ac98*/
   {
-    v7 = (char *)__2_YAPAXI_Z(8 * a2); /*0x58acc2*/
+    v7 = (char *)RA2_OPNEW(8 * a2); /*0x58acc2*/
     if ( v7 ) /*0x58accc*/
     {
       v8 = v7; /*0x58acd1*/
@@ -27368,7 +27368,7 @@ unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2
 
   if ( this == a2 ) /*0x58ad1c*/
     return this; /*0x58ad1c*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x58ad20*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x58ad20*/
   v3 = a2[2]; /*0x58ad23*/
   *((unsigned int *)this + 2) = v3; /*0x58ad2a*/
   if ( !v3 ) /*0x58ad2d*/
@@ -27377,7 +27377,7 @@ unsigned int * VectorClass_USubzoneTrackingStruct::SetCapacity(unsigned int * a2
     *((unsigned char *)this + 13) = 0; /*0x58ad98*/
     return this; /*0x58ad9b*/
   }
-  v4 = (char *)__2_YAPAXI_Z(8 * v3); /*0x58ad37*/
+  v4 = (char *)RA2_OPNEW(8 * v3); /*0x58ad37*/
   if ( v4 ) /*0x58ad41*/
   {
     v5 = v4; /*0x58ad46*/
@@ -27431,7 +27431,7 @@ void VectorClass_ptr_MapRegionClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x5ac3a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5ac3b0*/
   {
-    __3_YAXPAX_Z(v2); /*0x5ac3b6*/
+    RA2_OPDEL(v2); /*0x5ac3b6*/
     *((unsigned int *)this + 1) = 0; /*0x5ac3be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5ac3c1*/
@@ -27474,7 +27474,7 @@ void VectorClass_N::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x5ac5f9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5ac600*/
   {
-    __3_YAXPAX_Z(v2); /*0x5ac606*/
+    RA2_OPDEL(v2); /*0x5ac606*/
     *((unsigned int *)this + 1) = 0; /*0x5ac60e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5ac611*/
@@ -27552,7 +27552,7 @@ char VectorClass_ptr_MapRegionClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5ac6fc*/
       v4 = a3; /*0x5ac712*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5ac70e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5ac70e*/
     *((unsigned char *)this + 12) = 1; /*0x5ac716*/
     if ( v4 ) /*0x5ac71a*/
     {
@@ -27565,7 +27565,7 @@ char VectorClass_ptr_MapRegionClass::Release(int a2, unsigned int * a3)
           ++i; /*0x5ac73e*/
         if ( *((unsigned char *)this + 13) ) /*0x5ac74b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ac756*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5ac756*/
           *((unsigned int *)this + 1) = 0; /*0x5ac75e*/
         }
       }
@@ -27595,7 +27595,7 @@ void VectorClass_ptr_MapRegionClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5ac79d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5ac7a3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5ac7a3*/
     *((unsigned int *)this + 1) = 0; /*0x5ac7ab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5ac7ae*/
@@ -27658,7 +27658,7 @@ char VectorClass_ptr_MapRegionClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5ac838*/
       v4 = a3; /*0x5ac84e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5ac84a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5ac84a*/
     *((unsigned char *)this + 12) = 1; /*0x5ac852*/
     if ( !v4 ) /*0x5ac856*/
       return 0; /*0x5ac8ca*/
@@ -27671,7 +27671,7 @@ char VectorClass_ptr_MapRegionClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5ac871*/
       if ( *((unsigned char *)this + 13) ) /*0x5ac87e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ac889*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5ac889*/
         *((unsigned int *)this + 1) = 0; /*0x5ac891*/
       }
     }
@@ -27762,7 +27762,7 @@ char VectorClass_N::Release(int a2, unsigned int * a3)
     v5 = a3; /*0x5ad141*/
     *((unsigned char *)this + 12) = 0; /*0x5ad145*/
     if ( !a3 ) /*0x5ad14b*/
-      v5 = __2_YAPAXI_Z(8 * a2); /*0x5ad15d*/
+      v5 = RA2_OPNEW(8 * a2); /*0x5ad15d*/
     *((unsigned char *)this + 12) = 1; /*0x5ad161*/
     if ( v5 ) /*0x5ad165*/
     {
@@ -27786,7 +27786,7 @@ char VectorClass_N::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x5ad1a1*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ad1ac*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5ad1ac*/
           *((unsigned int *)this + 1) = 0; /*0x5ad1b4*/
         }
       }
@@ -27816,7 +27816,7 @@ void VectorClass_N::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5ad1fd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5ad203*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5ad203*/
     *((unsigned int *)this + 1) = 0; /*0x5ad20b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5ad20e*/
@@ -27881,7 +27881,7 @@ char VectorClass_N::SetCapacity(int a2, unsigned int * a3)
     v5 = a3; /*0x5ad2a1*/
     *((unsigned char *)this + 12) = 0; /*0x5ad2a5*/
     if ( !a3 ) /*0x5ad2ab*/
-      v5 = __2_YAPAXI_Z(8 * a2); /*0x5ad2bd*/
+      v5 = RA2_OPNEW(8 * a2); /*0x5ad2bd*/
     *((unsigned char *)this + 12) = 1; /*0x5ad2c1*/
     if ( !v5 ) /*0x5ad2c5*/
       return 0; /*0x5ad347*/
@@ -27905,7 +27905,7 @@ char VectorClass_N::SetCapacity(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x5ad2f9*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5ad304*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5ad304*/
         *((unsigned int *)this + 1) = 0; /*0x5ad30c*/
       }
     }
@@ -27959,13 +27959,13 @@ VectorClass_flat * VectorClass_ptr_MapRegionClass::QueryInterface(unsigned int *
   *Block = &vt_VectorClass_MapRegionClass; /*0x5ad396*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad3a0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5ad3a8*/
+    RA2_OPDEL(v3); /*0x5ad3a8*/
     *(Block + 1) = 0; /*0x5ad3b0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5ad3bb*/
   *(Block + 2) = 0; /*0x5ad3c1*/
   if ( (a2 & 1) != 0 ) /*0x5ad3c8*/
-    __3_YAXPAX_Z(Block); /*0x5ad3cb*/
+    RA2_OPDEL(Block); /*0x5ad3cb*/
   return (VectorClass *)Block; /*0x5ad3d5*/
 
 }
@@ -27982,13 +27982,13 @@ unsigned int * VectorClass_ptr_MapRegionClass::loc_5AD3E0(unsigned int * Block, 
   *Block = &vt_VectorClass_MapRegionClass; /*0x5ad3e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad3f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5ad3f8*/
+    RA2_OPDEL(v3); /*0x5ad3f8*/
     *(Block + 1) = 0; /*0x5ad400*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5ad40b*/
   *(Block + 2) = 0; /*0x5ad411*/
   if ( (a2 & 1) != 0 ) /*0x5ad418*/
-    __3_YAXPAX_Z(Block); /*0x5ad41b*/
+    RA2_OPDEL(Block); /*0x5ad41b*/
   return Block; /*0x5ad425*/
 
 }
@@ -28005,13 +28005,13 @@ VectorClass_flat * VectorClass_N::QueryInterface(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_double; /*0x5ad5c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad5d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5ad5d8*/
+    RA2_OPDEL(v3); /*0x5ad5d8*/
     *(Block + 1) = 0; /*0x5ad5e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5ad5eb*/
   *(Block + 2) = 0; /*0x5ad5f1*/
   if ( (a2 & 1) != 0 ) /*0x5ad5f8*/
-    __3_YAXPAX_Z(Block); /*0x5ad5fb*/
+    RA2_OPDEL(Block); /*0x5ad5fb*/
   return (VectorClass *)Block; /*0x5ad605*/
 
 }
@@ -28028,13 +28028,13 @@ DynamicVector * VectorClass_N::Constructor_VectorClass_double_(unsigned int * Bl
   *Block = &vt_VectorClass_double; /*0x5ad616*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad620*/
   {
-    __3_YAXPAX_Z(v3); /*0x5ad628*/
+    RA2_OPDEL(v3); /*0x5ad628*/
     *(Block + 1) = 0; /*0x5ad630*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5ad63b*/
   *(Block + 2) = 0; /*0x5ad641*/
   if ( (a2 & 1) != 0 ) /*0x5ad648*/
-    __3_YAXPAX_Z(Block); /*0x5ad64b*/
+    RA2_OPDEL(Block); /*0x5ad64b*/
   return (DynamicVector *)Block; /*0x5ad655*/
 
 }
@@ -28143,7 +28143,7 @@ char VectorClass_Point2D::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = __2_YAPAXI_Z(8 * a2); /*0x5d0876*/
+      v5 = RA2_OPNEW(8 * a2); /*0x5d0876*/
       if ( v5 ) /*0x5d0880*/
         v6 = v5; /*0x5d0885*/
       else
@@ -28172,7 +28172,7 @@ char VectorClass_Point2D::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x5d08dd*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d08e8*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d08e8*/
           *((unsigned int *)this + 1) = 0; /*0x5d08f0*/
         }
       }
@@ -28202,7 +28202,7 @@ void VectorClass_Point2D::Set()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d092d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d0933*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d0933*/
     *((unsigned int *)this + 1) = 0; /*0x5d093b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d093e*/
@@ -28295,7 +28295,7 @@ char VectorClass_ptr_MSTextEntry::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d0b3c*/
       v4 = a3; /*0x5d0b52*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d0b4e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d0b4e*/
     *((unsigned char *)this + 12) = 1; /*0x5d0b56*/
     if ( v4 ) /*0x5d0b5a*/
     {
@@ -28308,7 +28308,7 @@ char VectorClass_ptr_MSTextEntry::Release(int a2, unsigned int * a3)
           ++i; /*0x5d0b7e*/
         if ( *((unsigned char *)this + 13) ) /*0x5d0b8b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0b96*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d0b96*/
           *((unsigned int *)this + 1) = 0; /*0x5d0b9e*/
         }
       }
@@ -28338,7 +28338,7 @@ void VectorClass_ptr_MSTextEntry::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d0bdd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d0be3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d0be3*/
     *((unsigned int *)this + 1) = 0; /*0x5d0beb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d0bee*/
@@ -28431,7 +28431,7 @@ char VectorClass_ptr_MapSelection::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d0d9c*/
       v4 = a3; /*0x5d0db2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d0dae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d0dae*/
     *((unsigned char *)this + 12) = 1; /*0x5d0db6*/
     if ( v4 ) /*0x5d0dba*/
     {
@@ -28444,7 +28444,7 @@ char VectorClass_ptr_MapSelection::Release(int a2, unsigned int * a3)
           ++i; /*0x5d0dde*/
         if ( *((unsigned char *)this + 13) ) /*0x5d0deb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d0df6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d0df6*/
           *((unsigned int *)this + 1) = 0; /*0x5d0dfe*/
         }
       }
@@ -28474,7 +28474,7 @@ void VectorClass_ptr_MapSelection::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d0e3d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d0e43*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d0e43*/
     *((unsigned int *)this + 1) = 0; /*0x5d0e4b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d0e4e*/
@@ -28567,7 +28567,7 @@ char VectorClass_ptr_MSSfxEntry::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d14bc*/
       v4 = a3; /*0x5d14d2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d14ce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d14ce*/
     *((unsigned char *)this + 12) = 1; /*0x5d14d6*/
     if ( v4 ) /*0x5d14da*/
     {
@@ -28580,7 +28580,7 @@ char VectorClass_ptr_MSSfxEntry::Release(int a2, unsigned int * a3)
           ++i; /*0x5d14fe*/
         if ( *((unsigned char *)this + 13) ) /*0x5d150b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d1516*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d1516*/
           *((unsigned int *)this + 1) = 0; /*0x5d151e*/
         }
       }
@@ -28610,7 +28610,7 @@ void VectorClass_ptr_MSSfxEntry::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d155d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d1563*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d1563*/
     *((unsigned int *)this + 1) = 0; /*0x5d156b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d156e*/
@@ -28668,13 +28668,13 @@ VectorClass_flat * VectorClass_Point2D::QueryInterface(unsigned int * Block, cha
   *Block = &vt_VectorClass_Point2D; /*0x5d16c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d16d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d16d8*/
+    RA2_OPDEL(v3); /*0x5d16d8*/
     *(Block + 1) = 0; /*0x5d16e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d16eb*/
   *(Block + 2) = 0; /*0x5d16f1*/
   if ( (a2 & 1) != 0 ) /*0x5d16f8*/
-    __3_YAXPAX_Z(Block); /*0x5d16fb*/
+    RA2_OPDEL(Block); /*0x5d16fb*/
   return (VectorClass *)Block; /*0x5d1705*/
 
 }
@@ -28691,13 +28691,13 @@ VectorClass_flat * VectorClass_ptr_MSTextEntry::QueryInterface(unsigned int * Bl
   *Block = &vt_VectorClass_MSTextEntry; /*0x5d1766*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d1770*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d1778*/
+    RA2_OPDEL(v3); /*0x5d1778*/
     *(Block + 1) = 0; /*0x5d1780*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d178b*/
   *(Block + 2) = 0; /*0x5d1791*/
   if ( (a2 & 1) != 0 ) /*0x5d1798*/
-    __3_YAXPAX_Z(Block); /*0x5d179b*/
+    RA2_OPDEL(Block); /*0x5d179b*/
   return (VectorClass *)Block; /*0x5d17a5*/
 
 }
@@ -28714,13 +28714,13 @@ VectorClass_flat * VectorClass_ptr_MapSelection::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_MapSelection; /*0x5d1806*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d1810*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d1818*/
+    RA2_OPDEL(v3); /*0x5d1818*/
     *(Block + 1) = 0; /*0x5d1820*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d182b*/
   *(Block + 2) = 0; /*0x5d1831*/
   if ( (a2 & 1) != 0 ) /*0x5d1838*/
-    __3_YAXPAX_Z(Block); /*0x5d183b*/
+    RA2_OPDEL(Block); /*0x5d183b*/
   return (VectorClass *)Block; /*0x5d1845*/
 
 }
@@ -28737,13 +28737,13 @@ VectorClass_flat * VectorClass_ptr_MSSfxEntry::QueryInterface(unsigned int * Blo
   *Block = &vt_VectorClass_MSSfxEntry; /*0x5d19e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d19f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d19f8*/
+    RA2_OPDEL(v3); /*0x5d19f8*/
     *(Block + 1) = 0; /*0x5d1a00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d1a0b*/
   *(Block + 2) = 0; /*0x5d1a11*/
   if ( (a2 & 1) != 0 ) /*0x5d1a18*/
-    __3_YAXPAX_Z(Block); /*0x5d1a1b*/
+    RA2_OPDEL(Block); /*0x5d1a1b*/
   return (VectorClass *)Block; /*0x5d1a25*/
 
 }
@@ -28760,7 +28760,7 @@ void VectorClass_ptr_MSSfx::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x5d2729*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5d2730*/
   {
-    __3_YAXPAX_Z(v2); /*0x5d2736*/
+    RA2_OPDEL(v2); /*0x5d2736*/
     *((unsigned int *)this + 1) = 0; /*0x5d273e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d2741*/
@@ -28793,7 +28793,7 @@ void VectorClass_Point2D::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x5d2789*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5d2790*/
   {
-    __3_YAXPAX_Z(v2); /*0x5d2796*/
+    RA2_OPDEL(v2); /*0x5d2796*/
     *((unsigned int *)this + 1) = 0; /*0x5d279e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d27a1*/
@@ -28871,7 +28871,7 @@ char VectorClass_ptr_MSSfx::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d283c*/
       v4 = a3; /*0x5d2852*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d284e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d284e*/
     *((unsigned char *)this + 12) = 1; /*0x5d2856*/
     if ( v4 ) /*0x5d285a*/
     {
@@ -28884,7 +28884,7 @@ char VectorClass_ptr_MSSfx::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x5d287e*/
         if ( *((unsigned char *)this + 13) ) /*0x5d288b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d2896*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d2896*/
           *((unsigned int *)this + 1) = 0; /*0x5d289e*/
         }
       }
@@ -28914,7 +28914,7 @@ void VectorClass_ptr_MSSfx::Destroy_0()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d28dd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d28e3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d28e3*/
     *((unsigned int *)this + 1) = 0; /*0x5d28eb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d28ee*/
@@ -28939,7 +28939,7 @@ char VectorClass_ptr_MSSfx::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d2978*/
       v4 = a3; /*0x5d298e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d298a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d298a*/
     *((unsigned char *)this + 12) = 1; /*0x5d2992*/
     if ( !v4 ) /*0x5d2996*/
       return 0; /*0x5d2a0a*/
@@ -28952,7 +28952,7 @@ char VectorClass_ptr_MSSfx::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x5d29b1*/
       if ( *((unsigned char *)this + 13) ) /*0x5d29be*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d29c9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5d29c9*/
         *((unsigned int *)this + 1) = 0; /*0x5d29d1*/
       }
     }
@@ -29041,7 +29041,7 @@ char VectorClass_ptr_MSSfx::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d2a9c*/
       v4 = a3; /*0x5d2ab2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d2aae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d2aae*/
     *((unsigned char *)this + 12) = 1; /*0x5d2ab6*/
     if ( v4 ) /*0x5d2aba*/
     {
@@ -29054,7 +29054,7 @@ char VectorClass_ptr_MSSfx::Release(int a2, unsigned int * a3)
           ++i; /*0x5d2ade*/
         if ( *((unsigned char *)this + 13) ) /*0x5d2aeb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d2af6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d2af6*/
           *((unsigned int *)this + 1) = 0; /*0x5d2afe*/
         }
       }
@@ -29084,7 +29084,7 @@ void VectorClass_ptr_MSSfx::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d2b3d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d2b43*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d2b43*/
     *((unsigned int *)this + 1) = 0; /*0x5d2b4b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d2b4e*/
@@ -29147,7 +29147,7 @@ char VectorClass_Point2D::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d2bd8*/
       v4 = a3; /*0x5d2bee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d2bea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d2bea*/
     *((unsigned char *)this + 12) = 1; /*0x5d2bf2*/
     if ( !v4 ) /*0x5d2bf6*/
       return 0; /*0x5d2c6a*/
@@ -29160,7 +29160,7 @@ char VectorClass_Point2D::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5d2c11*/
       if ( *((unsigned char *)this + 13) ) /*0x5d2c1e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d2c29*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5d2c29*/
         *((unsigned int *)this + 1) = 0; /*0x5d2c31*/
       }
     }
@@ -29214,13 +29214,13 @@ DynamicVector * VectorClass_ptr_MSSfx::Constructor_VectorClass_MSAnim___(unsigne
   *Block = &vt_VectorClass_MSAnim; /*0x5d2cf6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d2d00*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d2d08*/
+    RA2_OPDEL(v3); /*0x5d2d08*/
     *(Block + 1) = 0; /*0x5d2d10*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d2d1b*/
   *(Block + 2) = 0; /*0x5d2d21*/
   if ( (a2 & 1) != 0 ) /*0x5d2d28*/
-    __3_YAXPAX_Z(Block); /*0x5d2d2b*/
+    RA2_OPDEL(Block); /*0x5d2d2b*/
   return (DynamicVector *)Block; /*0x5d2d35*/
 
 }
@@ -29237,13 +29237,13 @@ VectorClass_flat * VectorClass_ptr_MSSfx::QueryInterface(unsigned int * Block, c
   *Block = &vt_VectorClass_MSSfx; /*0x5d2d46*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d2d50*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d2d58*/
+    RA2_OPDEL(v3); /*0x5d2d58*/
     *(Block + 1) = 0; /*0x5d2d60*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d2d6b*/
   *(Block + 2) = 0; /*0x5d2d71*/
   if ( (a2 & 1) != 0 ) /*0x5d2d78*/
-    __3_YAXPAX_Z(Block); /*0x5d2d7b*/
+    RA2_OPDEL(Block); /*0x5d2d7b*/
   return (VectorClass *)Block; /*0x5d2d85*/
 
 }
@@ -29260,13 +29260,13 @@ DynamicVector * VectorClass_Point2D::Constructor_VectorClass_MSSfx___(unsigned i
   *Block = &vt_VectorClass_MSSfx; /*0x5d2d96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d2da0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d2da8*/
+    RA2_OPDEL(v3); /*0x5d2da8*/
     *(Block + 1) = 0; /*0x5d2db0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d2dbb*/
   *(Block + 2) = 0; /*0x5d2dc1*/
   if ( (a2 & 1) != 0 ) /*0x5d2dc8*/
-    __3_YAXPAX_Z(Block); /*0x5d2dcb*/
+    RA2_OPDEL(Block); /*0x5d2dcb*/
   return (DynamicVector *)Block; /*0x5d2dd5*/
 
 }
@@ -29363,7 +29363,7 @@ char VectorClass_UAcceleratorTracker::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x5d5437*/
+      v6 = RA2_OPNEW(8 * a2); /*0x5d5437*/
       if ( v6 ) /*0x5d5441*/
       {
         v7 = v6; /*0x5d5446*/
@@ -29409,7 +29409,7 @@ char VectorClass_UAcceleratorTracker::Release(int a2, unsigned int * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x5d54bf*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d54c8*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d54c8*/
           *((unsigned int *)this + 1) = 0; /*0x5d54d0*/
         }
       }
@@ -29439,7 +29439,7 @@ void VectorClass_UAcceleratorTracker::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d550d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d5513*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d5513*/
     *((unsigned int *)this + 1) = 0; /*0x5d551b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d551e*/
@@ -29497,13 +29497,13 @@ VectorClass_flat * VectorClass_UAcceleratorTracker::QueryInterface(unsigned int 
   *Block = &vt_VectorClass_AcceleratorTracker; /*0x5d5786*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d5790*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d5798*/
+    RA2_OPDEL(v3); /*0x5d5798*/
     *(Block + 1) = 0; /*0x5d57a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d57ab*/
   *(Block + 2) = 0; /*0x5d57b1*/
   if ( (a2 & 1) != 0 ) /*0x5d57b8*/
-    __3_YAXPAX_Z(Block); /*0x5d57bb*/
+    RA2_OPDEL(Block); /*0x5d57bb*/
   return (VectorClass *)Block; /*0x5d57c5*/
 
 }
@@ -29565,7 +29565,7 @@ char VectorClass_ptr_MultiplayerTeam::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d834c*/
       v4 = a3; /*0x5d8362*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d835e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d835e*/
     *((unsigned char *)this + 12) = 1; /*0x5d8366*/
     if ( v4 ) /*0x5d836a*/
     {
@@ -29578,7 +29578,7 @@ char VectorClass_ptr_MultiplayerTeam::Release(int a2, unsigned int * a3)
           ++i; /*0x5d838e*/
         if ( *((unsigned char *)this + 13) ) /*0x5d839b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d83a6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d83a6*/
           *((unsigned int *)this + 1) = 0; /*0x5d83ae*/
         }
       }
@@ -29608,7 +29608,7 @@ void VectorClass_ptr_MultiplayerTeam::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d83ed*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d83f3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d83f3*/
     *((unsigned int *)this + 1) = 0; /*0x5d83fb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d83fe*/
@@ -29661,7 +29661,7 @@ void VectorClass_flat::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d864d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d8653*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d8653*/
     *((unsigned int *)this + 1) = 0; /*0x5d865b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d865e*/
@@ -29670,7 +29670,7 @@ void VectorClass_flat::ddtor()
 }
 // 0x5D8810
 namespace gamemd {
-VectorClass_flat *  VectorClass_ptr_MultiplayerTeam::QueryInterface(char a2)
+VectorClass_flat *  VectorClass_ptr_MultiplayerTeam::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -29679,13 +29679,13 @@ VectorClass_flat *  VectorClass_ptr_MultiplayerTeam::QueryInterface(char a2)
   *Block = &vt_VectorClass_MultiplayerTeam; /*0x5d8816*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d8820*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d8828*/
+    RA2_OPDEL(v3); /*0x5d8828*/
     *(Block + 1) = 0; /*0x5d8830*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d883b*/
   *(Block + 2) = 0; /*0x5d8841*/
-  if ( (a2 & 1) != 0 ) /*0x5d8848*/
-    __3_YAXPAX_Z(Block); /*0x5d884b*/
+  if ( (Block & 1) != 0 ) /*0x5d8848*/
+    RA2_OPDEL(Block); /*0x5d884b*/
   return (VectorClass *)Block; /*0x5d8855*/
 
 }
@@ -29702,7 +29702,7 @@ void VectorClass_cptr_MultiMission::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x5eebb9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5eebc0*/
   {
-    __3_YAXPAX_Z(v2); /*0x5eebc6*/
+    RA2_OPDEL(v2); /*0x5eebc6*/
     *((unsigned int *)this + 1) = 0; /*0x5eebce*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5eebd1*/
@@ -29780,7 +29780,7 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
     if ( a3 ) /*0x5eec6c*/
       v4 = a3; /*0x5eec82*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5eec7e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5eec7e*/
     *((unsigned char *)this + 12) = 1; /*0x5eec86*/
     if ( v4 ) /*0x5eec8a*/
     {
@@ -29793,7 +29793,7 @@ char VectorClass_cptr_MultiMission::SetAt(int a2, unsigned int * a3)
           ++i; /*0x5eecae*/
         if ( *((unsigned char *)this + 13) ) /*0x5eecbb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5eecc6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5eecc6*/
           *((unsigned int *)this + 1) = 0; /*0x5eecce*/
         }
       }
@@ -29822,7 +29822,7 @@ void VectorClass_flat::Cleanup3()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5eed0d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5eed13*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5eed13*/
     *((unsigned int *)this + 1) = 0; /*0x5eed1b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5eed1e*/
@@ -29831,7 +29831,7 @@ void VectorClass_flat::Cleanup3()
 }
 // 0x5EED30
 namespace gamemd {
-int  VectorClass_cptr_MultiMission::GetSize()
+int  VectorClass_cptr_MultiMission::GetSize( unsigned int * a2)
 {
 
   int result; // eax
@@ -29883,7 +29883,7 @@ char VectorClass_cptr_MultiMission::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5eeda8*/
       v4 = a3; /*0x5eedbe*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5eedba*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5eedba*/
     *((unsigned char *)this + 12) = 1; /*0x5eedc2*/
     if ( !v4 ) /*0x5eedc6*/
       return 0; /*0x5eee3a*/
@@ -29896,7 +29896,7 @@ char VectorClass_cptr_MultiMission::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5eede1*/
       if ( *((unsigned char *)this + 13) ) /*0x5eedee*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5eedf9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5eedf9*/
         *((unsigned int *)this + 1) = 0; /*0x5eee01*/
       }
     }
@@ -29950,13 +29950,13 @@ VectorClass_flat * VectorClass_cptr_MultiMission::GetAt(unsigned int * Block, ch
   *Block = &vt_VectorClass_MultiMission_const; /*0x5eeec6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5eeed0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5eeed8*/
+    RA2_OPDEL(v3); /*0x5eeed8*/
     *(Block + 1) = 0; /*0x5eeee0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5eeeeb*/
   *(Block + 2) = 0; /*0x5eeef1*/
   if ( (a2 & 1) != 0 ) /*0x5eeef8*/
-    __3_YAXPAX_Z(Block); /*0x5eeefb*/
+    RA2_OPDEL(Block); /*0x5eeefb*/
   return (VectorClass *)Block; /*0x5eef05*/
 
 }
@@ -29973,13 +29973,13 @@ DynamicVector * VectorClass_cptr_MultiMission::Constructor(unsigned int * Block,
   *Block = &vt_VectorClass_MultiMission_const; /*0x5eef16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5eef20*/
   {
-    __3_YAXPAX_Z(v3); /*0x5eef28*/
+    RA2_OPDEL(v3); /*0x5eef28*/
     *(Block + 1) = 0; /*0x5eef30*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5eef3b*/
   *(Block + 2) = 0; /*0x5eef41*/
   if ( (a2 & 1) != 0 ) /*0x5eef48*/
-    __3_YAXPAX_Z(Block); /*0x5eef4b*/
+    RA2_OPDEL(Block); /*0x5eef4b*/
   return (DynamicVector *)Block; /*0x5eef55*/
 
 }
@@ -30033,10 +30033,10 @@ unsigned int * VectorClass_cptr_MultiMission::j_vt00(char a2)
 
   v3 = (IPXConnClass *)this->field_50; /*0x5ef293*/
   *(unsigned int *)this->__pad_0 = &vt_NullModemConnClass; /*0x5ef296*/
-  __3_YAXPAX_Z(v3); /*0x5ef29d*/
+  RA2_OPDEL(v3); /*0x5ef29d*/
   ConnectionClass::dtor(this); /*0x5ef2a7*/
   if ( (a2 & 1) != 0 ) /*0x5ef2b1*/
-    __3_YAXPAX_Z(this); /*0x5ef2b4*/
+    RA2_OPDEL(this); /*0x5ef2b4*/
   return this->__pad_0; /*0x5ef2be*/
 
 }
@@ -30053,7 +30053,7 @@ void VectorClass_ptr_ObjectTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x5f9b09*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5f9b10*/
   {
-    __3_YAXPAX_Z(v2); /*0x5f9b16*/
+    RA2_OPDEL(v2); /*0x5f9b16*/
     *((unsigned int *)this + 1) = 0; /*0x5f9b1e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5f9b21*/
@@ -30131,7 +30131,7 @@ char VectorClass_ptr_ObjectTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5f9bdc*/
       v4 = a3; /*0x5f9bf2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5f9bee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5f9bee*/
     *((unsigned char *)this + 12) = 1; /*0x5f9bf6*/
     if ( v4 ) /*0x5f9bfa*/
     {
@@ -30144,7 +30144,7 @@ char VectorClass_ptr_ObjectTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x5f9c1e*/
         if ( *((unsigned char *)this + 13) ) /*0x5f9c2b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5f9c36*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5f9c36*/
           *((unsigned int *)this + 1) = 0; /*0x5f9c3e*/
         }
       }
@@ -30174,7 +30174,7 @@ void VectorClass_ptr_ObjectTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5f9c7d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5f9c83*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5f9c83*/
     *((unsigned int *)this + 1) = 0; /*0x5f9c8b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5f9c8e*/
@@ -30237,7 +30237,7 @@ char VectorClass_ptr_ObjectTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5f9d18*/
       v4 = a3; /*0x5f9d2e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5f9d2a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5f9d2a*/
     *((unsigned char *)this + 12) = 1; /*0x5f9d32*/
     if ( !v4 ) /*0x5f9d36*/
       return 0; /*0x5f9daa*/
@@ -30250,7 +30250,7 @@ char VectorClass_ptr_ObjectTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5f9d51*/
       if ( *((unsigned char *)this + 13) ) /*0x5f9d5e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5f9d69*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5f9d69*/
         *((unsigned int *)this + 1) = 0; /*0x5f9d71*/
       }
     }
@@ -30304,13 +30304,13 @@ VectorClass_flat * VectorClass_ptr_ObjectTypeClass::QueryInterface(unsigned int 
   *Block = &vt_VectorClass_ObjectTypeClass; /*0x5f9de6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5f9df0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5f9df8*/
+    RA2_OPDEL(v3); /*0x5f9df8*/
     *(Block + 1) = 0; /*0x5f9e00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5f9e0b*/
   *(Block + 2) = 0; /*0x5f9e11*/
   if ( (a2 & 1) != 0 ) /*0x5f9e18*/
-    __3_YAXPAX_Z(Block); /*0x5f9e1b*/
+    RA2_OPDEL(Block); /*0x5f9e1b*/
   return (VectorClass *)Block; /*0x5f9e25*/
 
 }
@@ -30318,7 +30318,7 @@ VectorClass_flat * VectorClass_ptr_ObjectTypeClass::QueryInterface(unsigned int 
 
 // 0x5F9E30
 namespace gamemd {
-DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectTypeClass___(char a2)
+DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectTypeClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -30327,13 +30327,13 @@ DynamicVector * VectorClass_ptr_ObjectTypeClass::Constructor_VectorClass_ObjectT
   *Block = &vt_VectorClass_ObjectTypeClass; /*0x5f9e36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5f9e40*/
   {
-    __3_YAXPAX_Z(v3); /*0x5f9e48*/
+    RA2_OPDEL(v3); /*0x5f9e48*/
     *(Block + 1) = 0; /*0x5f9e50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5f9e5b*/
   *(Block + 2) = 0; /*0x5f9e61*/
-  if ( (a2 & 1) != 0 ) /*0x5f9e68*/
-    __3_YAXPAX_Z(Block); /*0x5f9e6b*/
+  if ( (Block & 1) != 0 ) /*0x5f9e68*/
+    RA2_OPDEL(Block); /*0x5f9e6b*/
   return (DynamicVector *)Block; /*0x5f9e75*/
 
 }
@@ -30349,7 +30349,7 @@ void VectorClass_flat::Destructor()
   *((unsigned int *)this + 4) = 0; /*0x5fffc9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5fffd0*/
   {
-    __3_YAXPAX_Z(v2); /*0x5fffd6*/
+    RA2_OPDEL(v2); /*0x5fffd6*/
     *((unsigned int *)this + 1) = 0; /*0x5fffde*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5fffe1*/
@@ -30425,7 +30425,7 @@ char VectorClass_ptr_SpotLightClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x60007c*/
       v4 = a3; /*0x600092*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x60008e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x60008e*/
     *((unsigned char *)this + 12) = 1; /*0x600096*/
     if ( v4 ) /*0x60009a*/
     {
@@ -30438,7 +30438,7 @@ char VectorClass_ptr_SpotLightClass::Release(int a2, unsigned int * a3)
           ++i; /*0x6000be*/
         if ( *((unsigned char *)this + 13) ) /*0x6000cb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6000d6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6000d6*/
           *((unsigned int *)this + 1) = 0; /*0x6000de*/
         }
       }
@@ -30468,7 +30468,7 @@ void VectorClass_ptr_SpotLightClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x60011d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x600123*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x600123*/
     *((unsigned int *)this + 1) = 0; /*0x60012b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x60012e*/
@@ -30531,7 +30531,7 @@ char VectorClass_ptr_SpotLightClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6001b8*/
       v4 = a3; /*0x6001ce*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6001ca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6001ca*/
     *((unsigned char *)this + 12) = 1; /*0x6001d2*/
     if ( !v4 ) /*0x6001d6*/
       return 0; /*0x60024a*/
@@ -30544,7 +30544,7 @@ char VectorClass_ptr_SpotLightClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6001f1*/
       if ( *((unsigned char *)this + 13) ) /*0x6001fe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x600209*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x600209*/
         *((unsigned int *)this + 1) = 0; /*0x600211*/
       }
     }
@@ -30598,13 +30598,13 @@ VectorClass_flat * VectorClass_ptr_SpotLightClass::QueryInterface(unsigned int *
   *Block = &vt_VectorClass_SpotLightClass; /*0x600286*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x600290*/
   {
-    __3_YAXPAX_Z(v3); /*0x600298*/
+    RA2_OPDEL(v3); /*0x600298*/
     *(Block + 1) = 0; /*0x6002a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6002ab*/
   *(Block + 2) = 0; /*0x6002b1*/
   if ( (a2 & 1) != 0 ) /*0x6002b8*/
-    __3_YAXPAX_Z(Block); /*0x6002bb*/
+    RA2_OPDEL(Block); /*0x6002bb*/
   return (VectorClass *)Block; /*0x6002c5*/
 
 }
@@ -30612,7 +30612,7 @@ VectorClass_flat * VectorClass_ptr_SpotLightClass::QueryInterface(unsigned int *
 
 // 0x6002D0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLightClass___(char a2)
+DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLightClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -30621,13 +30621,13 @@ DynamicVector * VectorClass_ptr_SpotLightClass::Constructor_VectorClass_SpotLigh
   *Block = &vt_VectorClass_SpotLightClass; /*0x6002d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6002e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x6002e8*/
+    RA2_OPDEL(v3); /*0x6002e8*/
     *(Block + 1) = 0; /*0x6002f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6002fb*/
   *(Block + 2) = 0; /*0x600301*/
-  if ( (a2 & 1) != 0 ) /*0x600308*/
-    __3_YAXPAX_Z(Block); /*0x60030b*/
+  if ( (Block & 1) != 0 ) /*0x600308*/
+    RA2_OPDEL(Block); /*0x60030b*/
   return (DynamicVector *)Block; /*0x600315*/
 
 }
@@ -30689,7 +30689,7 @@ char VectorClass_ptr_ColorScheme::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x627e6c*/
       v4 = a3; /*0x627e82*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x627e7e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x627e7e*/
     *((unsigned char *)this + 12) = 1; /*0x627e86*/
     if ( v4 ) /*0x627e8a*/
     {
@@ -30702,7 +30702,7 @@ char VectorClass_ptr_ColorScheme::Release(int a2, unsigned int * a3)
           ++i; /*0x627eae*/
         if ( *((unsigned char *)this + 13) ) /*0x627ebb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x627ec6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x627ec6*/
           *((unsigned int *)this + 1) = 0; /*0x627ece*/
         }
       }
@@ -30732,7 +30732,7 @@ void VectorClass_ptr_ColorScheme::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x627f0d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x627f13*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x627f13*/
     *((unsigned int *)this + 1) = 0; /*0x627f1b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x627f1e*/
@@ -30820,7 +30820,7 @@ char VectorClass_ptr_ColorScheme::SetCapacity(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(3 * a2); /*0x628304*/
+      v6 = (char *)RA2_OPNEW(3 * a2); /*0x628304*/
       if ( v6 ) /*0x62830e*/
       {
         if ( a2 - 1 >= 0 ) /*0x628315*/
@@ -30869,7 +30869,7 @@ char VectorClass_ptr_ColorScheme::SetCapacity(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x628391*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x62839a*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x62839a*/
           *((unsigned int *)this + 1) = 0; /*0x6283a2*/
         }
       }
@@ -30899,7 +30899,7 @@ void VectorClass_ptr_ColorScheme::Destroy()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x6283ed*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x6283f3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x6283f3*/
     *((unsigned int *)this + 1) = 0; /*0x6283fb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6283fe*/
@@ -30946,13 +30946,13 @@ VectorClass_flat * VectorClass_ptr_ColorScheme::QueryInterface(unsigned int * Bl
   *Block = &vt_VectorClass_ColorScheme; /*0x6285f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x628600*/
   {
-    __3_YAXPAX_Z(v3); /*0x628608*/
+    RA2_OPDEL(v3); /*0x628608*/
     *(Block + 1) = 0; /*0x628610*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x62861b*/
   *(Block + 2) = 0; /*0x628621*/
   if ( (a2 & 1) != 0 ) /*0x628628*/
-    __3_YAXPAX_Z(Block); /*0x62862b*/
+    RA2_OPDEL(Block); /*0x62862b*/
   return (VectorClass *)Block; /*0x628635*/
 
 }
@@ -30969,13 +30969,13 @@ VectorClass_flat * VectorClass_ptr_ColorScheme::Constructor_VectorClass_HSVClass
   *Block = &vt_VectorClass_HSVClass; /*0x628766*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x628770*/
   {
-    __3_YAXPAX_Z(v3); /*0x628778*/
+    RA2_OPDEL(v3); /*0x628778*/
     *(Block + 1) = 0; /*0x628780*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x62878b*/
   *(Block + 2) = 0; /*0x628791*/
   if ( (a2 & 1) != 0 ) /*0x628798*/
-    __3_YAXPAX_Z(Block); /*0x62879b*/
+    RA2_OPDEL(Block); /*0x62879b*/
   return (VectorClass *)Block; /*0x6287a5*/
 
 }
@@ -30988,7 +30988,7 @@ void VectorClass_ptr_ColorScheme::Destroy_0()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x628a4d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x628a53*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x628a53*/
     *((unsigned int *)this + 1) = 0; /*0x628a5b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x628a5e*/
@@ -31045,7 +31045,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
     return this; /*0x628e70*/
   if ( !a3 ) /*0x628e18*/
   {
-    v8 = (char *)__2_YAPAXI_Z(3 * a2); /*0x628e42*/
+    v8 = (char *)RA2_OPNEW(3 * a2); /*0x628e42*/
     if ( v8 ) /*0x628e4c*/
     {
       if ( a2 - 1 >= 0 ) /*0x628e53*/
@@ -31088,7 +31088,7 @@ unsigned int * VectorClass_flat::ConstructHSV(int a2, int a3)
 }
 // 0x628E80
 namespace gamemd {
-VectorClass_flat *  VectorClass_ptr_ColorScheme::Constructor(char a2)
+VectorClass_flat *  VectorClass_ptr_ColorScheme::Constructor(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -31097,13 +31097,13 @@ VectorClass_flat *  VectorClass_ptr_ColorScheme::Constructor(char a2)
   *Block = &vt_VectorClass_HashObject_HashString_SchemeNode; /*0x628e86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x628e90*/
   {
-    __3_YAXPAX_Z(v3); /*0x628e98*/
+    RA2_OPDEL(v3); /*0x628e98*/
     *(Block + 1) = 0; /*0x628ea0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x628eab*/
   *(Block + 2) = 0; /*0x628eb1*/
-  if ( (a2 & 1) != 0 ) /*0x628eb8*/
-    __3_YAXPAX_Z(Block); /*0x628ebb*/
+  if ( (Block & 1) != 0 ) /*0x628eb8*/
+    RA2_OPDEL(Block); /*0x628ebb*/
   return (VectorClass *)Block; /*0x628ec5*/
 
 }
@@ -31120,7 +31120,7 @@ void VectorClass_ptr_ParasiteClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x62b079*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x62b080*/
   {
-    __3_YAXPAX_Z(v2); /*0x62b086*/
+    RA2_OPDEL(v2); /*0x62b086*/
     *((unsigned int *)this + 1) = 0; /*0x62b08e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x62b091*/
@@ -31198,7 +31198,7 @@ char VectorClass_ptr_ParasiteClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x62b12c*/
       v4 = a3; /*0x62b142*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x62b13e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x62b13e*/
     *((unsigned char *)this + 12) = 1; /*0x62b146*/
     if ( v4 ) /*0x62b14a*/
     {
@@ -31211,7 +31211,7 @@ char VectorClass_ptr_ParasiteClass::Release(int a2, unsigned int * a3)
           ++i; /*0x62b16e*/
         if ( *((unsigned char *)this + 13) ) /*0x62b17b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x62b186*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x62b186*/
           *((unsigned int *)this + 1) = 0; /*0x62b18e*/
         }
       }
@@ -31241,7 +31241,7 @@ void VectorClass_ptr_ParasiteClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x62b1cd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x62b1d3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x62b1d3*/
     *((unsigned int *)this + 1) = 0; /*0x62b1db*/
   }
   *((unsigned char *)this + 13) = 0; /*0x62b1de*/
@@ -31304,7 +31304,7 @@ char VectorClass_ptr_ParasiteClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x62b268*/
       v4 = a3; /*0x62b27e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x62b27a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x62b27a*/
     *((unsigned char *)this + 12) = 1; /*0x62b282*/
     if ( !v4 ) /*0x62b286*/
       return 0; /*0x62b2fa*/
@@ -31317,7 +31317,7 @@ char VectorClass_ptr_ParasiteClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x62b2a1*/
       if ( *((unsigned char *)this + 13) ) /*0x62b2ae*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x62b2b9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x62b2b9*/
         *((unsigned int *)this + 1) = 0; /*0x62b2c1*/
       }
     }
@@ -31371,13 +31371,13 @@ VectorClass_flat * VectorClass_ptr_ParasiteClass::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_ParasiteClass; /*0x62b336*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x62b340*/
   {
-    __3_YAXPAX_Z(v3); /*0x62b348*/
+    RA2_OPDEL(v3); /*0x62b348*/
     *(Block + 1) = 0; /*0x62b350*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x62b35b*/
   *(Block + 2) = 0; /*0x62b361*/
   if ( (a2 & 1) != 0 ) /*0x62b368*/
-    __3_YAXPAX_Z(Block); /*0x62b36b*/
+    RA2_OPDEL(Block); /*0x62b36b*/
   return (VectorClass *)Block; /*0x62b375*/
 
 }
@@ -31385,7 +31385,7 @@ VectorClass_flat * VectorClass_ptr_ParasiteClass::QueryInterface(unsigned int * 
 
 // 0x62B380
 namespace gamemd {
-DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteClass___(char a2)
+DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -31394,13 +31394,13 @@ DynamicVector * VectorClass_ptr_ParasiteClass::Constructor_VectorClass_ParasiteC
   *Block = &vt_VectorClass_ParasiteClass; /*0x62b386*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x62b390*/
   {
-    __3_YAXPAX_Z(v3); /*0x62b398*/
+    RA2_OPDEL(v3); /*0x62b398*/
     *(Block + 1) = 0; /*0x62b3a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x62b3ab*/
   *(Block + 2) = 0; /*0x62b3b1*/
-  if ( (a2 & 1) != 0 ) /*0x62b3b8*/
-    __3_YAXPAX_Z(Block); /*0x62b3bb*/
+  if ( (Block & 1) != 0 ) /*0x62b3b8*/
+    RA2_OPDEL(Block); /*0x62b3bb*/
   return (DynamicVector *)Block; /*0x62b3c5*/
 
 }
@@ -31421,7 +31421,7 @@ char VectorClass_flat::PushBackCopy(AbstractClass * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x630266*/
       return 0; /*0x630266*/
     v4 = *((unsigned int *)this + 5); /*0x630268*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x630278*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x630278*/
       return 0; /*0x63027f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x630285*/
@@ -31442,7 +31442,7 @@ void VectorClass_ptr_PlanningMemberClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x63db69*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x63db70*/
   {
-    __3_YAXPAX_Z(v2); /*0x63db76*/
+    RA2_OPDEL(v2); /*0x63db76*/
     *((unsigned int *)this + 1) = 0; /*0x63db7e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63db81*/
@@ -31485,7 +31485,7 @@ void VectorClass_ptr_PlanningMemberClass::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x63dbc9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x63dbd0*/
   {
-    __3_YAXPAX_Z(v2); /*0x63dbd6*/
+    RA2_OPDEL(v2); /*0x63dbd6*/
     *((unsigned int *)this + 1) = 0; /*0x63dbde*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63dbe1*/
@@ -31573,7 +31573,7 @@ char VectorClass_ptr_PlanningMemberClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x63dd9c*/
       v4 = a3; /*0x63ddb2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63ddae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63ddae*/
     *((unsigned char *)this + 12) = 1; /*0x63ddb6*/
     if ( v4 ) /*0x63ddba*/
     {
@@ -31586,7 +31586,7 @@ char VectorClass_ptr_PlanningMemberClass::Release(int a2, unsigned int * a3)
           ++i; /*0x63ddde*/
         if ( *((unsigned char *)this + 13) ) /*0x63ddeb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63ddf6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x63ddf6*/
           *((unsigned int *)this + 1) = 0; /*0x63ddfe*/
         }
       }
@@ -31616,7 +31616,7 @@ void VectorClass_ptr_PlanningMemberClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x63de3d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x63de43*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x63de43*/
     *((unsigned int *)this + 1) = 0; /*0x63de4b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63de4e*/
@@ -31679,7 +31679,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x63df38*/
       v4 = a3; /*0x63df4e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63df4a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63df4a*/
     *((unsigned char *)this + 12) = 1; /*0x63df52*/
     if ( !v4 ) /*0x63df56*/
       return 0; /*0x63dfca*/
@@ -31692,7 +31692,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x63df71*/
       if ( *((unsigned char *)this + 13) ) /*0x63df7e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63df89*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x63df89*/
         *((unsigned int *)this + 1) = 0; /*0x63df91*/
       }
     }
@@ -31772,7 +31772,7 @@ void VectorClass_flat::Cleanup2()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x63e14d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x63e153*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x63e153*/
     *((unsigned int *)this + 1) = 0; /*0x63e15b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63e15e*/
@@ -31781,7 +31781,7 @@ void VectorClass_flat::Cleanup2()
 }
 // 0x63E170
 namespace gamemd {
-int  VectorClass_ptr_PlanningBranchClass::GetSize()
+int  VectorClass_ptr_PlanningBranchClass::GetSize( unsigned int * a2)
 {
 
   int result; // eax
@@ -31833,7 +31833,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity_0(int a2, unsigned int * a
     if ( a3 ) /*0x63e248*/
       v4 = a3; /*0x63e25e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e25a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63e25a*/
     *((unsigned char *)this + 12) = 1; /*0x63e262*/
     if ( !v4 ) /*0x63e266*/
       return 0; /*0x63e2da*/
@@ -31846,7 +31846,7 @@ char VectorClass_ptr_PlanningMemberClass::SetCapacity_0(int a2, unsigned int * a
         ++i; /*0x63e281*/
       if ( *((unsigned char *)this + 13) ) /*0x63e28e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x63e299*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x63e299*/
         *((unsigned int *)this + 1) = 0; /*0x63e2a1*/
       }
     }
@@ -31904,7 +31904,7 @@ char VectorClass_flat::Append(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x63e556*/
       return 0; /*0x63e556*/
     v4 = *((unsigned int *)this + 5); /*0x63e558*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x63e568*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x63e568*/
       return 0; /*0x63e56f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x63e575*/
@@ -31922,7 +31922,7 @@ char VectorClass_flat::EraseAt(IUnknown * aP1)
   int v4; // ecx
   int v5; // ecx
 
-  v3 = (*(int (**)(int *, IUnknown *))(*(unsigned int **)this + 16))(this, aP1); /*0x63e90c*/
+  v3 = (*(int (**)(int *, IUnknown *))(*(unsigned int *)this + 16))(this, aP1); /*0x63e90c*/
   if ( v3 == -1 ) /*0x63e912*/
     return 0; /*0x63e912*/
   v4 = *((char *)this + 4); /*0x63e914*/
@@ -31980,7 +31980,7 @@ char VectorClass_ptr_PlanningTokenClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x63e9ac*/
       v4 = a3; /*0x63e9c2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x63e9be*/
+      v4 = RA2_OPNEW(4 * a2); /*0x63e9be*/
     *((unsigned char *)this + 12) = 1; /*0x63e9c6*/
     if ( v4 ) /*0x63e9ca*/
     {
@@ -31993,7 +31993,7 @@ char VectorClass_ptr_PlanningTokenClass::Release(int a2, unsigned int * a3)
           ++i; /*0x63e9ee*/
         if ( *((unsigned char *)this + 13) ) /*0x63e9fb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x63ea06*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x63ea06*/
           *((unsigned int *)this + 1) = 0; /*0x63ea0e*/
         }
       }
@@ -32023,7 +32023,7 @@ void VectorClass_ptr_PlanningTokenClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x63ea4d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x63ea53*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x63ea53*/
     *((unsigned int *)this + 1) = 0; /*0x63ea5b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x63ea5e*/
@@ -32081,13 +32081,13 @@ VectorClass_flat * VectorClass_ptr_PlanningMemberClass::QueryInterface(unsigned 
   *Block = &vt_VectorClass_PlanningMemberClass; /*0x63ec56*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ec60*/
   {
-    __3_YAXPAX_Z(v3); /*0x63ec68*/
+    RA2_OPDEL(v3); /*0x63ec68*/
     *(Block + 1) = 0; /*0x63ec70*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63ec7b*/
   *(Block + 2) = 0; /*0x63ec81*/
   if ( (a2 & 1) != 0 ) /*0x63ec88*/
-    __3_YAXPAX_Z(Block); /*0x63ec8b*/
+    RA2_OPDEL(Block); /*0x63ec8b*/
   return (VectorClass *)Block; /*0x63ec95*/
 
 }
@@ -32095,7 +32095,7 @@ VectorClass_flat * VectorClass_ptr_PlanningMemberClass::QueryInterface(unsigned 
 
 // 0x63ECA0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_PlanningMemberClass___(char a2)
+DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_PlanningMemberClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -32104,13 +32104,13 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
   *Block = &vt_VectorClass_PlanningMemberClass; /*0x63eca6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ecb0*/
   {
-    __3_YAXPAX_Z(v3); /*0x63ecb8*/
+    RA2_OPDEL(v3); /*0x63ecb8*/
     *(Block + 1) = 0; /*0x63ecc0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63eccb*/
   *(Block + 2) = 0; /*0x63ecd1*/
-  if ( (a2 & 1) != 0 ) /*0x63ecd8*/
-    __3_YAXPAX_Z(Block); /*0x63ecdb*/
+  if ( (Block & 1) != 0 ) /*0x63ecd8*/
+    RA2_OPDEL(Block); /*0x63ecdb*/
   return (DynamicVector *)Block; /*0x63ece5*/
 
 }
@@ -32127,13 +32127,13 @@ VectorClass_flat * VectorClass_ptr_PlanningBranchClass::QueryInterface(unsigned 
   *Block = &vt_VectorClass_PlanningBranchClass; /*0x63ecf6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ed00*/
   {
-    __3_YAXPAX_Z(v3); /*0x63ed08*/
+    RA2_OPDEL(v3); /*0x63ed08*/
     *(Block + 1) = 0; /*0x63ed10*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63ed1b*/
   *(Block + 2) = 0; /*0x63ed21*/
   if ( (a2 & 1) != 0 ) /*0x63ed28*/
-    __3_YAXPAX_Z(Block); /*0x63ed2b*/
+    RA2_OPDEL(Block); /*0x63ed2b*/
   return (VectorClass *)Block; /*0x63ed35*/
 
 }
@@ -32141,7 +32141,7 @@ VectorClass_flat * VectorClass_ptr_PlanningBranchClass::QueryInterface(unsigned 
 
 // 0x63ED40
 namespace gamemd {
-DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_PlanningBranchClass___(char a2)
+DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_PlanningBranchClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -32150,13 +32150,13 @@ DynamicVector * VectorClass_ptr_PlanningMemberClass::Constructor_VectorClass_Pla
   *Block = &vt_VectorClass_PlanningBranchClass; /*0x63ed46*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ed50*/
   {
-    __3_YAXPAX_Z(v3); /*0x63ed58*/
+    RA2_OPDEL(v3); /*0x63ed58*/
     *(Block + 1) = 0; /*0x63ed60*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63ed6b*/
   *(Block + 2) = 0; /*0x63ed71*/
-  if ( (a2 & 1) != 0 ) /*0x63ed78*/
-    __3_YAXPAX_Z(Block); /*0x63ed7b*/
+  if ( (Block & 1) != 0 ) /*0x63ed78*/
+    RA2_OPDEL(Block); /*0x63ed7b*/
   return (DynamicVector *)Block; /*0x63ed85*/
 
 }
@@ -32173,13 +32173,13 @@ VectorClass_flat * VectorClass_ptr_PlanningTokenClass::QueryInterface(unsigned i
   *Block = &vt_VectorClass_PlanningTokenClass; /*0x63eed6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63eee0*/
   {
-    __3_YAXPAX_Z(v3); /*0x63eee8*/
+    RA2_OPDEL(v3); /*0x63eee8*/
     *(Block + 1) = 0; /*0x63eef0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x63eefb*/
   *(Block + 2) = 0; /*0x63ef01*/
   if ( (a2 & 1) != 0 ) /*0x63ef08*/
-    __3_YAXPAX_Z(Block); /*0x63ef0b*/
+    RA2_OPDEL(Block); /*0x63ef0b*/
   return (VectorClass *)Block; /*0x63ef15*/
 
 }
@@ -32203,7 +32203,7 @@ unsigned int * VectorClass_flat::PointConstructor(MapClass * aP1, MapClass * aP2
       *((unsigned int *)this + 1) = aP2; /*0x658d8d*/
       return this; /*0x658d98*/
     }
-    v5 = __2_YAPAXI_Z(8 * (unsigned int)aP1); /*0x658da3*/
+    v5 = RA2_OPNEW(8 * (unsigned int)aP1); /*0x658da3*/
     if ( v5 ) /*0x658dad*/
     {
       *((unsigned int *)this + 1) = v5; /*0x658db0*/
@@ -32227,7 +32227,7 @@ void VectorClass_ptr_RadBeam::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x65a1e9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x65a1f0*/
   {
-    __3_YAXPAX_Z(v2); /*0x65a1f6*/
+    RA2_OPDEL(v2); /*0x65a1f6*/
     *((unsigned int *)this + 1) = 0; /*0x65a1fe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x65a201*/
@@ -32305,7 +32305,7 @@ char VectorClass_ptr_RadBeam::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x65a29c*/
       v4 = a3; /*0x65a2b2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x65a2ae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x65a2ae*/
     *((unsigned char *)this + 12) = 1; /*0x65a2b6*/
     if ( v4 ) /*0x65a2ba*/
     {
@@ -32318,7 +32318,7 @@ char VectorClass_ptr_RadBeam::Release(int a2, unsigned int * a3)
           ++i; /*0x65a2de*/
         if ( *((unsigned char *)this + 13) ) /*0x65a2eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x65a2f6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x65a2f6*/
           *((unsigned int *)this + 1) = 0; /*0x65a2fe*/
         }
       }
@@ -32348,7 +32348,7 @@ void VectorClass_ptr_RadBeam::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x65a33d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x65a343*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x65a343*/
     *((unsigned int *)this + 1) = 0; /*0x65a34b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x65a34e*/
@@ -32411,7 +32411,7 @@ char VectorClass_ptr_RadBeam::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x65a3d8*/
       v4 = a3; /*0x65a3ee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x65a3ea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x65a3ea*/
     *((unsigned char *)this + 12) = 1; /*0x65a3f2*/
     if ( !v4 ) /*0x65a3f6*/
       return 0; /*0x65a46a*/
@@ -32424,7 +32424,7 @@ char VectorClass_ptr_RadBeam::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x65a411*/
       if ( *((unsigned char *)this + 13) ) /*0x65a41e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x65a429*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x65a429*/
         *((unsigned int *)this + 1) = 0; /*0x65a431*/
       }
     }
@@ -32478,13 +32478,13 @@ VectorClass_flat * VectorClass_ptr_RadBeam::QueryInterface(unsigned int * Block,
   *Block = &vt_VectorClass_RadBeam; /*0x65a4a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x65a4b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x65a4b8*/
+    RA2_OPDEL(v3); /*0x65a4b8*/
     *(Block + 1) = 0; /*0x65a4c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x65a4cb*/
   *(Block + 2) = 0; /*0x65a4d1*/
   if ( (a2 & 1) != 0 ) /*0x65a4d8*/
-    __3_YAXPAX_Z(Block); /*0x65a4db*/
+    RA2_OPDEL(Block); /*0x65a4db*/
   return (VectorClass *)Block; /*0x65a4e5*/
 
 }
@@ -32501,13 +32501,13 @@ DynamicVector * VectorClass_ptr_RadBeam::Constructor_VectorClass_RadBeam___(unsi
   *Block = &vt_VectorClass_RadBeam; /*0x65a4f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x65a500*/
   {
-    __3_YAXPAX_Z(v3); /*0x65a508*/
+    RA2_OPDEL(v3); /*0x65a508*/
     *(Block + 1) = 0; /*0x65a510*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x65a51b*/
   *(Block + 2) = 0; /*0x65a521*/
   if ( (a2 & 1) != 0 ) /*0x65a528*/
-    __3_YAXPAX_Z(Block); /*0x65a52b*/
+    RA2_OPDEL(Block); /*0x65a52b*/
   return (DynamicVector *)Block; /*0x65a535*/
 
 }
@@ -32524,7 +32524,7 @@ void VectorClass_ptr_RadSiteClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x65bef9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x65bf00*/
   {
-    __3_YAXPAX_Z(v2); /*0x65bf06*/
+    RA2_OPDEL(v2); /*0x65bf06*/
     *((unsigned int *)this + 1) = 0; /*0x65bf0e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x65bf11*/
@@ -32602,7 +32602,7 @@ char VectorClass_ptr_RadSiteClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x65bfac*/
       v4 = a3; /*0x65bfc2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x65bfbe*/
+      v4 = RA2_OPNEW(4 * a2); /*0x65bfbe*/
     *((unsigned char *)this + 12) = 1; /*0x65bfc6*/
     if ( v4 ) /*0x65bfca*/
     {
@@ -32615,7 +32615,7 @@ char VectorClass_ptr_RadSiteClass::Release(int a2, unsigned int * a3)
           ++i; /*0x65bfee*/
         if ( *((unsigned char *)this + 13) ) /*0x65bffb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x65c006*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x65c006*/
           *((unsigned int *)this + 1) = 0; /*0x65c00e*/
         }
       }
@@ -32645,7 +32645,7 @@ void VectorClass_ptr_RadSiteClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x65c04d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x65c053*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x65c053*/
     *((unsigned int *)this + 1) = 0; /*0x65c05b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x65c05e*/
@@ -32708,7 +32708,7 @@ char VectorClass_ptr_RadSiteClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x65c0e8*/
       v4 = a3; /*0x65c0fe*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x65c0fa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x65c0fa*/
     *((unsigned char *)this + 12) = 1; /*0x65c102*/
     if ( !v4 ) /*0x65c106*/
       return 0; /*0x65c17a*/
@@ -32721,7 +32721,7 @@ char VectorClass_ptr_RadSiteClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x65c121*/
       if ( *((unsigned char *)this + 13) ) /*0x65c12e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x65c139*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x65c139*/
         *((unsigned int *)this + 1) = 0; /*0x65c141*/
       }
     }
@@ -32775,13 +32775,13 @@ VectorClass_flat * VectorClass_ptr_RadSiteClass::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_RadSiteClass; /*0x65c1b6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x65c1c0*/
   {
-    __3_YAXPAX_Z(v3); /*0x65c1c8*/
+    RA2_OPDEL(v3); /*0x65c1c8*/
     *(Block + 1) = 0; /*0x65c1d0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x65c1db*/
   *(Block + 2) = 0; /*0x65c1e1*/
   if ( (a2 & 1) != 0 ) /*0x65c1e8*/
-    __3_YAXPAX_Z(Block); /*0x65c1eb*/
+    RA2_OPDEL(Block); /*0x65c1eb*/
   return (VectorClass *)Block; /*0x65c1f5*/
 
 }
@@ -32798,13 +32798,13 @@ DynamicVector * VectorClass_ptr_RadSiteClass::Constructor_VectorClass_RadSiteCla
   *Block = &vt_VectorClass_RadSiteClass; /*0x65c206*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x65c210*/
   {
-    __3_YAXPAX_Z(v3); /*0x65c218*/
+    RA2_OPDEL(v3); /*0x65c218*/
     *(Block + 1) = 0; /*0x65c220*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x65c22b*/
   *(Block + 2) = 0; /*0x65c231*/
   if ( (a2 & 1) != 0 ) /*0x65c238*/
-    __3_YAXPAX_Z(Block); /*0x65c23b*/
+    RA2_OPDEL(Block); /*0x65c23b*/
   return (DynamicVector *)Block; /*0x65c245*/
 
 }
@@ -32821,7 +32821,7 @@ void VectorClass_ptr_RadarEventClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x660c89*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x660c90*/
   {
-    __3_YAXPAX_Z(v2); /*0x660c96*/
+    RA2_OPDEL(v2); /*0x660c96*/
     *((unsigned int *)this + 1) = 0; /*0x660c9e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x660ca1*/
@@ -32899,7 +32899,7 @@ char VectorClass_ptr_RadarEventClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x660d3c*/
       v4 = a3; /*0x660d52*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x660d4e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x660d4e*/
     *((unsigned char *)this + 12) = 1; /*0x660d56*/
     if ( v4 ) /*0x660d5a*/
     {
@@ -32912,7 +32912,7 @@ char VectorClass_ptr_RadarEventClass::Release(int a2, unsigned int * a3)
           ++i; /*0x660d7e*/
         if ( *((unsigned char *)this + 13) ) /*0x660d8b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x660d96*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x660d96*/
           *((unsigned int *)this + 1) = 0; /*0x660d9e*/
         }
       }
@@ -32942,7 +32942,7 @@ void VectorClass_ptr_RadarEventClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x660ddd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x660de3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x660de3*/
     *((unsigned int *)this + 1) = 0; /*0x660deb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x660dee*/
@@ -33005,7 +33005,7 @@ char VectorClass_ptr_RadarEventClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x660e78*/
       v4 = a3; /*0x660e8e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x660e8a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x660e8a*/
     *((unsigned char *)this + 12) = 1; /*0x660e92*/
     if ( !v4 ) /*0x660e96*/
       return 0; /*0x660f0a*/
@@ -33018,7 +33018,7 @@ char VectorClass_ptr_RadarEventClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x660eb1*/
       if ( *((unsigned char *)this + 13) ) /*0x660ebe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x660ec9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x660ec9*/
         *((unsigned int *)this + 1) = 0; /*0x660ed1*/
       }
     }
@@ -33072,13 +33072,13 @@ VectorClass_flat * VectorClass_ptr_RadarEventClass::QueryInterface(unsigned int 
   *Block = &vt_VectorClass_RadarEventClass; /*0x660f86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x660f90*/
   {
-    __3_YAXPAX_Z(v3); /*0x660f98*/
+    RA2_OPDEL(v3); /*0x660f98*/
     *(Block + 1) = 0; /*0x660fa0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x660fab*/
   *(Block + 2) = 0; /*0x660fb1*/
   if ( (a2 & 1) != 0 ) /*0x660fb8*/
-    __3_YAXPAX_Z(Block); /*0x660fbb*/
+    RA2_OPDEL(Block); /*0x660fbb*/
   return (VectorClass *)Block; /*0x660fc5*/
 
 }
@@ -33095,13 +33095,13 @@ unsigned int * VectorClass_ptr_RadarEventClass::loc_660FD0(unsigned int * Block,
   *Block = &vt_VectorClass_RadarEventClass; /*0x660fd6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x660fe0*/
   {
-    __3_YAXPAX_Z(v3); /*0x660fe8*/
+    RA2_OPDEL(v3); /*0x660fe8*/
     *(Block + 1) = 0; /*0x660ff0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x660ffb*/
   *(Block + 2) = 0; /*0x661001*/
   if ( (a2 & 1) != 0 ) /*0x661008*/
-    __3_YAXPAX_Z(Block); /*0x66100b*/
+    RA2_OPDEL(Block); /*0x66100b*/
   return Block; /*0x661015*/
 
 }
@@ -33117,7 +33117,7 @@ void VectorClass_flat::Dtor()
   *this = &VectorClass<int>::`vftable'; /*0x679f79*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x679f83*/
   {
-    __3_YAXPAX_Z(v2); /*0x679f89*/
+    RA2_OPDEL(v2); /*0x679f89*/
     *((unsigned int *)this + 1) = 0; /*0x679f91*/
   }
   *((unsigned char *)this + 13) = 0; /*0x679f94*/
@@ -33125,7 +33125,7 @@ void VectorClass_flat::Dtor()
 
 }
 // 0x67A630
-int  VectorClass_flat::LoadStream()
+int  VectorClass_flat::LoadStream( TechnoTypeClass * aP1)
 {
 
   int v3; // ecx
@@ -33185,7 +33185,7 @@ unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67aa8a*/
     return this; /*0x67aa8a*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x67aa8e*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x67aa8e*/
   v3 = aP1->field_8; /*0x67aa91*/
   *((unsigned int *)this + 2) = v3; /*0x67aa96*/
   if ( !v3 ) /*0x67aa99*/
@@ -33194,7 +33194,7 @@ unsigned int * VectorClass_flat::CopyAssign(VectorClass_flat * aP1)
     *((unsigned char *)this + 13) = 0; /*0x67aae1*/
     return this; /*0x67aae5*/
   }
-  v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x67aaa3*/
+  v4 = RA2_OPNEW(4 * (unsigned int)v3); /*0x67aaa3*/
   *((unsigned int *)this + 1) = v4; /*0x67aaab*/
   if ( !v4 ) /*0x67aab0*/
     return this; /*0x67aab0*/
@@ -33223,7 +33223,7 @@ unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x67ae0a*/
     return this; /*0x67ae0a*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x67ae0e*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x67ae0e*/
   v3 = aP1->headNode[1]; /*0x67ae11*/
   *((unsigned int *)this + 2) = v3; /*0x67ae16*/
   if ( !v3 ) /*0x67ae19*/
@@ -33232,7 +33232,7 @@ unsigned int * VectorClass_flat::CopySmudge(CCINIClass * aP1)
     *((unsigned char *)this + 13) = 0; /*0x67ae61*/
     return this; /*0x67ae65*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x67ae23*/
+  v4 = RA2_OPNEW(4 * v3); /*0x67ae23*/
   *((unsigned int *)this + 1) = v4; /*0x67ae2b*/
   if ( !v4 ) /*0x67ae30*/
     return this; /*0x67ae30*/
@@ -33256,7 +33256,7 @@ void VectorClass_flat::ClearAndFree()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x67af6d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x67af73*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x67af73*/
     *((unsigned int *)this + 1) = 0; /*0x67af7b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x67af7e*/
@@ -33264,7 +33264,7 @@ void VectorClass_flat::ClearAndFree()
 
 }
 // 0x67B180
-unsigned int *  VectorClass_flat::CopyBuilding()
+unsigned int *  VectorClass_flat::CopyBuilding( VectorClass * aP1)
 {
 
   void *v3; // eax
@@ -33283,7 +33283,7 @@ unsigned int *  VectorClass_flat::CopyBuilding()
     *((unsigned char *)this + 13) = 0; /*0x67b1e1*/
     return this; /*0x67b1e5*/
   }
-  v4 = __2_YAPAXI_Z(4 * (unsigned int)v3); /*0x67b1a3*/
+  v4 = RA2_OPNEW(4 * (unsigned int)v3); /*0x67b1a3*/
   *(this + 1) = v4; /*0x67b1ab*/
   if ( !v4 ) /*0x67b1b0*/
     return this; /*0x67b1b0*/
@@ -33316,7 +33316,7 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x691176*/
       return 0; /*0x691176*/
     v4 = *((unsigned int *)this + 5); /*0x691178*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int **)this + 8))(this, v3 + v4, 0) ) /*0x691188*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x691188*/
       return 0; /*0x69118f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x691195*/
@@ -33328,10 +33328,10 @@ char VectorClass_flat::PushBack2(unsigned int * a2)
 }
 // 0x69C580
 namespace gamemd {
-char **  VectorClass_Wstring::Clear(int a3)
+char **  VectorClass_Wstring::Clear( char ** a2, int a3)
 {
 
-  String::AssignFromPtr(a2, (const char **)(*(a3 + 1) + 4 * a3)); /*0x69c592*/
+  String::AssignFromPtr(a2, (const char **)(*(this + 1) + 4 * this)); /*0x69c592*/
   return a2; /*0x69c599*/
 
 }
@@ -33348,7 +33348,7 @@ void VectorClass_ptr_GlobalPacketType::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x69c5a9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x69c5b0*/
   {
-    __3_YAXPAX_Z(v2); /*0x69c5b6*/
+    RA2_OPDEL(v2); /*0x69c5b6*/
     *((unsigned int *)this + 1) = 0; /*0x69c5be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x69c5c1*/
@@ -33391,7 +33391,7 @@ void VectorClass_ptr_GlobalPacketType::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x69c609*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x69c610*/
   {
-    __3_YAXPAX_Z(v2); /*0x69c616*/
+    RA2_OPDEL(v2); /*0x69c616*/
     *((unsigned int *)this + 1) = 0; /*0x69c61e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x69c621*/
@@ -33434,7 +33434,7 @@ void VectorClass_ptr_GlobalPacketType::Destroy_1()
   *((unsigned int *)this + 4) = 0; /*0x69c669*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x69c670*/
   {
-    __3_YAXPAX_Z(v2); /*0x69c676*/
+    RA2_OPDEL(v2); /*0x69c676*/
     *((unsigned int *)this + 1) = 0; /*0x69c67e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x69c681*/
@@ -33536,7 +33536,7 @@ char VectorClass_Wstring::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = __2_YAPAXI_Z(4 * a2 + 4); /*0x69c9e7*/
+      v5 = RA2_OPNEW(4 * a2 + 4); /*0x69c9e7*/
       if ( v5 ) /*0x69c9f1*/
       {
         *v5 = a2; /*0x69c9f3*/
@@ -33588,7 +33588,7 @@ char VectorClass_Wstring::Release(int a2, unsigned int * a3)
               while ( v16 ); /*0x69cab7*/
               v13 = v19; /*0x69cab9*/
             }
-            __3_YAXPAX_Z(v13); /*0x69cabe*/
+            RA2_OPDEL(v13); /*0x69cabe*/
           }
           *((unsigned int *)this + 1) = 0; /*0x69cac6*/
         }
@@ -33642,7 +33642,7 @@ void VectorClass_Wstring::ddtor()
       }
       while ( v7 ); /*0x69cb34*/
     }
-    __3_YAXPAX_Z(v4); /*0x69cb38*/
+    RA2_OPDEL(v4); /*0x69cb38*/
     *((unsigned int *)this + 1) = 0; /*0x69cb44*/
   }
   *((unsigned char *)this + 13) = 0; /*0x69cb47*/
@@ -33732,7 +33732,7 @@ char VectorClass_ptr_MultiMission::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x69cd9c*/
       v4 = a3; /*0x69cdb2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x69cdae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x69cdae*/
     *((unsigned char *)this + 12) = 1; /*0x69cdb6*/
     if ( v4 ) /*0x69cdba*/
     {
@@ -33745,7 +33745,7 @@ char VectorClass_ptr_MultiMission::Release(int a2, unsigned int * a3)
           ++i; /*0x69cdde*/
         if ( *((unsigned char *)this + 13) ) /*0x69cdeb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x69cdf6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x69cdf6*/
           *((unsigned int *)this + 1) = 0; /*0x69cdfe*/
         }
       }
@@ -33775,7 +33775,7 @@ void VectorClass_ptr_MultiMission::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x69ce3d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x69ce43*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x69ce43*/
     *((unsigned int *)this + 1) = 0; /*0x69ce4b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x69ce4e*/
@@ -33838,7 +33838,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x69ced8*/
       v4 = a3; /*0x69ceee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x69ceea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x69ceea*/
     *((unsigned char *)this + 12) = 1; /*0x69cef2*/
     if ( !v4 ) /*0x69cef6*/
       return 0; /*0x69cf6a*/
@@ -33851,7 +33851,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x69cf11*/
       if ( *((unsigned char *)this + 13) ) /*0x69cf1e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x69cf29*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x69cf29*/
         *((unsigned int *)this + 1) = 0; /*0x69cf31*/
       }
     }
@@ -33940,7 +33940,7 @@ char VectorClass_ptr_GlobalPacketType::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x69cffc*/
       v4 = a3; /*0x69d012*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x69d00e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x69d00e*/
     *((unsigned char *)this + 12) = 1; /*0x69d016*/
     if ( v4 ) /*0x69d01a*/
     {
@@ -33953,7 +33953,7 @@ char VectorClass_ptr_GlobalPacketType::Release(int a2, unsigned int * a3)
           ++i; /*0x69d03e*/
         if ( *((unsigned char *)this + 13) ) /*0x69d04b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x69d056*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x69d056*/
           *((unsigned int *)this + 1) = 0; /*0x69d05e*/
         }
       }
@@ -33983,7 +33983,7 @@ void VectorClass_ptr_GlobalPacketType::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x69d09d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x69d0a3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x69d0a3*/
     *((unsigned int *)this + 1) = 0; /*0x69d0ab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x69d0ae*/
@@ -34046,7 +34046,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x69d138*/
       v4 = a3; /*0x69d14e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x69d14a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x69d14a*/
     *((unsigned char *)this + 12) = 1; /*0x69d152*/
     if ( !v4 ) /*0x69d156*/
       return 0; /*0x69d1ca*/
@@ -34059,7 +34059,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x69d171*/
       if ( *((unsigned char *)this + 13) ) /*0x69d17e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x69d189*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x69d189*/
         *((unsigned int *)this + 1) = 0; /*0x69d191*/
       }
     }
@@ -34148,7 +34148,7 @@ char VectorClass_ptr_PhoneEntryClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x69d25c*/
       v4 = a3; /*0x69d272*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x69d26e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x69d26e*/
     *((unsigned char *)this + 12) = 1; /*0x69d276*/
     if ( v4 ) /*0x69d27a*/
     {
@@ -34161,7 +34161,7 @@ char VectorClass_ptr_PhoneEntryClass::Release(int a2, unsigned int * a3)
           ++i; /*0x69d29e*/
         if ( *((unsigned char *)this + 13) ) /*0x69d2ab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x69d2b6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x69d2b6*/
           *((unsigned int *)this + 1) = 0; /*0x69d2be*/
         }
       }
@@ -34191,7 +34191,7 @@ void VectorClass_ptr_PhoneEntryClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x69d2fd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x69d303*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x69d303*/
     *((unsigned int *)this + 1) = 0; /*0x69d30b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x69d30e*/
@@ -34254,7 +34254,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x69d398*/
       v4 = a3; /*0x69d3ae*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x69d3aa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x69d3aa*/
     *((unsigned char *)this + 12) = 1; /*0x69d3b2*/
     if ( !v4 ) /*0x69d3b6*/
       return 0; /*0x69d42a*/
@@ -34267,7 +34267,7 @@ char VectorClass_ptr_GlobalPacketType::SetCapacity_1(int a2, unsigned int * a3)
         ++i; /*0x69d3d1*/
       if ( *((unsigned char *)this + 13) ) /*0x69d3de*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x69d3e9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x69d3e9*/
         *((unsigned int *)this + 1) = 0; /*0x69d3f1*/
       }
     }
@@ -34340,13 +34340,13 @@ VectorClass_flat * VectorClass_Wstring::QueryInterface(unsigned int * Block, cha
       }
       while ( v8 ); /*0x69d4e8*/
     }
-    __3_YAXPAX_Z(v5); /*0x69d4ec*/
+    RA2_OPDEL(v5); /*0x69d4ec*/
     *(Block + 1) = 0; /*0x69d4f6*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x69d501*/
   *(Block + 2) = 0; /*0x69d507*/
   if ( (a2 & 1) != 0 ) /*0x69d50e*/
-    __3_YAXPAX_Z(Block); /*0x69d511*/
+    RA2_OPDEL(Block); /*0x69d511*/
   return (VectorClass *)Block; /*0x69d51b*/
 
 }
@@ -34363,13 +34363,13 @@ VectorClass_flat * VectorClass_ptr_MultiMission::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_MultiMission; /*0x69d596*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d5a0*/
   {
-    __3_YAXPAX_Z(v3); /*0x69d5a8*/
+    RA2_OPDEL(v3); /*0x69d5a8*/
     *(Block + 1) = 0; /*0x69d5b0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x69d5bb*/
   *(Block + 2) = 0; /*0x69d5c1*/
   if ( (a2 & 1) != 0 ) /*0x69d5c8*/
-    __3_YAXPAX_Z(Block); /*0x69d5cb*/
+    RA2_OPDEL(Block); /*0x69d5cb*/
   return (VectorClass *)Block; /*0x69d5d5*/
 
 }
@@ -34377,7 +34377,7 @@ VectorClass_flat * VectorClass_ptr_MultiMission::QueryInterface(unsigned int * B
 
 // 0x69D5E0
 namespace gamemd {
-DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiMission___(char a2)
+DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiMission___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -34386,13 +34386,13 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_MultiM
   *Block = &vt_VectorClass_MultiMission; /*0x69d5e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d5f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x69d5f8*/
+    RA2_OPDEL(v3); /*0x69d5f8*/
     *(Block + 1) = 0; /*0x69d600*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x69d60b*/
   *(Block + 2) = 0; /*0x69d611*/
-  if ( (a2 & 1) != 0 ) /*0x69d618*/
-    __3_YAXPAX_Z(Block); /*0x69d61b*/
+  if ( (Block & 1) != 0 ) /*0x69d618*/
+    RA2_OPDEL(Block); /*0x69d61b*/
   return (DynamicVector *)Block; /*0x69d625*/
 
 }
@@ -34409,13 +34409,13 @@ VectorClass_flat * VectorClass_ptr_GlobalPacketType::QueryInterface(unsigned int
   *Block = &vt_VectorClass_GlobalPacketType; /*0x69d636*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d640*/
   {
-    __3_YAXPAX_Z(v3); /*0x69d648*/
+    RA2_OPDEL(v3); /*0x69d648*/
     *(Block + 1) = 0; /*0x69d650*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x69d65b*/
   *(Block + 2) = 0; /*0x69d661*/
   if ( (a2 & 1) != 0 ) /*0x69d668*/
-    __3_YAXPAX_Z(Block); /*0x69d66b*/
+    RA2_OPDEL(Block); /*0x69d66b*/
   return (VectorClass *)Block; /*0x69d675*/
 
 }
@@ -34423,7 +34423,7 @@ VectorClass_flat * VectorClass_ptr_GlobalPacketType::QueryInterface(unsigned int
 
 // 0x69D680
 namespace gamemd {
-DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_GlobalPacketType___(char a2)
+DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_GlobalPacketType___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -34432,13 +34432,13 @@ DynamicVector * VectorClass_ptr_GlobalPacketType::Constructor_VectorClass_Global
   *Block = &vt_VectorClass_GlobalPacketType; /*0x69d686*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d690*/
   {
-    __3_YAXPAX_Z(v3); /*0x69d698*/
+    RA2_OPDEL(v3); /*0x69d698*/
     *(Block + 1) = 0; /*0x69d6a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x69d6ab*/
   *(Block + 2) = 0; /*0x69d6b1*/
-  if ( (a2 & 1) != 0 ) /*0x69d6b8*/
-    __3_YAXPAX_Z(Block); /*0x69d6bb*/
+  if ( (Block & 1) != 0 ) /*0x69d6b8*/
+    RA2_OPDEL(Block); /*0x69d6bb*/
   return (DynamicVector *)Block; /*0x69d6c5*/
 
 }
@@ -34455,13 +34455,13 @@ VectorClass_flat * VectorClass_ptr_PhoneEntryClass::QueryInterface(unsigned int 
   *Block = &vt_VectorClass_PhoneEntryClass; /*0x69d6d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d6e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x69d6e8*/
+    RA2_OPDEL(v3); /*0x69d6e8*/
     *(Block + 1) = 0; /*0x69d6f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x69d6fb*/
   *(Block + 2) = 0; /*0x69d701*/
   if ( (a2 & 1) != 0 ) /*0x69d708*/
-    __3_YAXPAX_Z(Block); /*0x69d70b*/
+    RA2_OPDEL(Block); /*0x69d70b*/
   return (VectorClass *)Block; /*0x69d715*/
 
 }
@@ -34478,13 +34478,13 @@ unsigned int * VectorClass_ptr_GlobalPacketType::loc_69D720(unsigned int * Block
   *Block = &vt_VectorClass_PhoneEntryClass; /*0x69d726*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d730*/
   {
-    __3_YAXPAX_Z(v3); /*0x69d738*/
+    RA2_OPDEL(v3); /*0x69d738*/
     *(Block + 1) = 0; /*0x69d740*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x69d74b*/
   *(Block + 2) = 0; /*0x69d751*/
   if ( (a2 & 1) != 0 ) /*0x69d758*/
-    __3_YAXPAX_Z(Block); /*0x69d75b*/
+    RA2_OPDEL(Block); /*0x69d75b*/
   return Block; /*0x69d765*/
 
 }
@@ -34510,7 +34510,7 @@ unsigned int * VectorClass_flat::WstringConstructor(int a2, unsigned int * a3)
     return this; /*0x69d7e4*/
   if ( !a3 ) /*0x69d7ec*/
   {
-    v7 = __2_YAPAXI_Z(4 * a2 + 4); /*0x69d820*/
+    v7 = RA2_OPNEW(4 * a2 + 4); /*0x69d820*/
     if ( v7 ) /*0x69d82a*/
     {
       *v7 = a2; /*0x69d82c*/
@@ -34571,7 +34571,7 @@ void VectorClass_ptr_SlaveManagerClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x6b1419*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6b1420*/
   {
-    __3_YAXPAX_Z(v2); /*0x6b1426*/
+    RA2_OPDEL(v2); /*0x6b1426*/
     *((unsigned int *)this + 1) = 0; /*0x6b142e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6b1431*/
@@ -34649,7 +34649,7 @@ char VectorClass_ptr_SlaveManagerClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b172c*/
       v4 = a3; /*0x6b1742*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b173e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6b173e*/
     *((unsigned char *)this + 12) = 1; /*0x6b1746*/
     if ( v4 ) /*0x6b174a*/
     {
@@ -34662,7 +34662,7 @@ char VectorClass_ptr_SlaveManagerClass::Release(int a2, unsigned int * a3)
           ++i; /*0x6b176e*/
         if ( *((unsigned char *)this + 13) ) /*0x6b177b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b1786*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6b1786*/
           *((unsigned int *)this + 1) = 0; /*0x6b178e*/
         }
       }
@@ -34692,7 +34692,7 @@ void VectorClass_ptr_SlaveManagerClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x6b17cd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x6b17d3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x6b17d3*/
     *((unsigned int *)this + 1) = 0; /*0x6b17db*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6b17de*/
@@ -34755,7 +34755,7 @@ char VectorClass_ptr_SlaveManagerClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b1868*/
       v4 = a3; /*0x6b187e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b187a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6b187a*/
     *((unsigned char *)this + 12) = 1; /*0x6b1882*/
     if ( !v4 ) /*0x6b1886*/
       return 0; /*0x6b18fa*/
@@ -34768,7 +34768,7 @@ char VectorClass_ptr_SlaveManagerClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6b18a1*/
       if ( *((unsigned char *)this + 13) ) /*0x6b18ae*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b18b9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x6b18b9*/
         *((unsigned int *)this + 1) = 0; /*0x6b18c1*/
       }
     }
@@ -34822,13 +34822,13 @@ VectorClass_flat * VectorClass_ptr_SlaveManagerClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_SlaveManagerClass; /*0x6b19d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6b19e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x6b19e8*/
+    RA2_OPDEL(v3); /*0x6b19e8*/
     *(Block + 1) = 0; /*0x6b19f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6b19fb*/
   *(Block + 2) = 0; /*0x6b1a01*/
   if ( (a2 & 1) != 0 ) /*0x6b1a08*/
-    __3_YAXPAX_Z(Block); /*0x6b1a0b*/
+    RA2_OPDEL(Block); /*0x6b1a0b*/
   return (VectorClass *)Block; /*0x6b1a15*/
 
 }
@@ -34836,7 +34836,7 @@ VectorClass_flat * VectorClass_ptr_SlaveManagerClass::QueryInterface(unsigned in
 
 // 0x6B1A20
 namespace gamemd {
-DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_SlaveManagerClass___(char a2)
+DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_SlaveManagerClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -34845,13 +34845,13 @@ DynamicVector * VectorClass_ptr_SlaveManagerClass::Constructor_VectorClass_Slave
   *Block = &vt_VectorClass_SlaveManagerClass; /*0x6b1a26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6b1a30*/
   {
-    __3_YAXPAX_Z(v3); /*0x6b1a38*/
+    RA2_OPDEL(v3); /*0x6b1a38*/
     *(Block + 1) = 0; /*0x6b1a40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6b1a4b*/
   *(Block + 2) = 0; /*0x6b1a51*/
-  if ( (a2 & 1) != 0 ) /*0x6b1a58*/
-    __3_YAXPAX_Z(Block); /*0x6b1a5b*/
+  if ( (Block & 1) != 0 ) /*0x6b1a58*/
+    RA2_OPDEL(Block); /*0x6b1a5b*/
   return (DynamicVector *)Block; /*0x6b1a65*/
 
 }
@@ -34868,7 +34868,7 @@ void VectorClass_UUndoInfoStruct::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x6b43b9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6b43c0*/
   {
-    __3_YAXPAX_Z(v2); /*0x6b43c6*/
+    RA2_OPDEL(v2); /*0x6b43c6*/
     *((unsigned int *)this + 1) = 0; /*0x6b43ce*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6b43d1*/
@@ -34949,7 +34949,7 @@ void VectorClass_UUndoInfoStruct::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x6b45ad*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x6b45b3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x6b45b3*/
     *((unsigned int *)this + 1) = 0; /*0x6b45bb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6b45be*/
@@ -35030,13 +35030,13 @@ VectorClass_flat * VectorClass_UUndoInfoStruct::QueryInterface(unsigned int * Bl
   *Block = &vt_VectorClass_UndoInfoStruct; /*0x6b47a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6b47b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x6b47b8*/
+    RA2_OPDEL(v3); /*0x6b47b8*/
     *(Block + 1) = 0; /*0x6b47c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6b47cb*/
   *(Block + 2) = 0; /*0x6b47d1*/
   if ( (a2 & 1) != 0 ) /*0x6b47d8*/
-    __3_YAXPAX_Z(Block); /*0x6b47db*/
+    RA2_OPDEL(Block); /*0x6b47db*/
   return (VectorClass *)Block; /*0x6b47e5*/
 
 }
@@ -35053,13 +35053,13 @@ DynamicVector * VectorClass_UUndoInfoStruct::Constructor_VectorClass_UndoInfoStr
   *Block = &vt_VectorClass_UndoInfoStruct; /*0x6b47f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6b4800*/
   {
-    __3_YAXPAX_Z(v3); /*0x6b4808*/
+    RA2_OPDEL(v3); /*0x6b4808*/
     *(Block + 1) = 0; /*0x6b4810*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6b481b*/
   *(Block + 2) = 0; /*0x6b4821*/
   if ( (a2 & 1) != 0 ) /*0x6b4828*/
-    __3_YAXPAX_Z(Block); /*0x6b482b*/
+    RA2_OPDEL(Block); /*0x6b482b*/
   return (DynamicVector *)Block; /*0x6b4835*/
 
 }
@@ -35076,7 +35076,7 @@ void VectorClass_ptr_SpawnManagerClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x6b81c9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6b81d0*/
   {
-    __3_YAXPAX_Z(v2); /*0x6b81d6*/
+    RA2_OPDEL(v2); /*0x6b81d6*/
     *((unsigned int *)this + 1) = 0; /*0x6b81de*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6b81e1*/
@@ -35154,7 +35154,7 @@ char VectorClass_ptr_SpawnManagerClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b853c*/
       v4 = a3; /*0x6b8552*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b854e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6b854e*/
     *((unsigned char *)this + 12) = 1; /*0x6b8556*/
     if ( v4 ) /*0x6b855a*/
     {
@@ -35167,7 +35167,7 @@ char VectorClass_ptr_SpawnManagerClass::Release(int a2, unsigned int * a3)
           ++i; /*0x6b857e*/
         if ( *((unsigned char *)this + 13) ) /*0x6b858b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b8596*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6b8596*/
           *((unsigned int *)this + 1) = 0; /*0x6b859e*/
         }
       }
@@ -35197,7 +35197,7 @@ void VectorClass_ptr_SpawnManagerClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x6b85dd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x6b85e3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x6b85e3*/
     *((unsigned int *)this + 1) = 0; /*0x6b85eb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6b85ee*/
@@ -35260,7 +35260,7 @@ char VectorClass_ptr_SpawnManagerClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b8678*/
       v4 = a3; /*0x6b868e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b868a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6b868a*/
     *((unsigned char *)this + 12) = 1; /*0x6b8692*/
     if ( !v4 ) /*0x6b8696*/
       return 0; /*0x6b870a*/
@@ -35273,7 +35273,7 @@ char VectorClass_ptr_SpawnManagerClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6b86b1*/
       if ( *((unsigned char *)this + 13) ) /*0x6b86be*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b86c9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x6b86c9*/
         *((unsigned int *)this + 1) = 0; /*0x6b86d1*/
       }
     }
@@ -35327,13 +35327,13 @@ VectorClass_flat * VectorClass_ptr_SpawnManagerClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_SpawnManagerClass; /*0x6b87e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6b87f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x6b87f8*/
+    RA2_OPDEL(v3); /*0x6b87f8*/
     *(Block + 1) = 0; /*0x6b8800*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6b880b*/
   *(Block + 2) = 0; /*0x6b8811*/
   if ( (a2 & 1) != 0 ) /*0x6b8818*/
-    __3_YAXPAX_Z(Block); /*0x6b881b*/
+    RA2_OPDEL(Block); /*0x6b881b*/
   return (VectorClass *)Block; /*0x6b8825*/
 
 }
@@ -35341,7 +35341,7 @@ VectorClass_flat * VectorClass_ptr_SpawnManagerClass::QueryInterface(unsigned in
 
 // 0x6B8830
 namespace gamemd {
-DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_SpawnManagerClass___(char a2)
+DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_SpawnManagerClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -35350,13 +35350,13 @@ DynamicVector * VectorClass_ptr_SpawnManagerClass::Constructor_VectorClass_Spawn
   *Block = &vt_VectorClass_SpawnManagerClass; /*0x6b8836*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6b8840*/
   {
-    __3_YAXPAX_Z(v3); /*0x6b8848*/
+    RA2_OPDEL(v3); /*0x6b8848*/
     *(Block + 1) = 0; /*0x6b8850*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6b885b*/
   *(Block + 2) = 0; /*0x6b8861*/
-  if ( (a2 & 1) != 0 ) /*0x6b8868*/
-    __3_YAXPAX_Z(Block); /*0x6b886b*/
+  if ( (Block & 1) != 0 ) /*0x6b8868*/
+    RA2_OPDEL(Block); /*0x6b886b*/
   return (DynamicVector *)Block; /*0x6b8875*/
 
 }
@@ -35373,7 +35373,7 @@ void VectorClass_K::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x6bed59*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6bed60*/
   {
-    __3_YAXPAX_Z(v2); /*0x6bed66*/
+    RA2_OPDEL(v2); /*0x6bed66*/
     *((unsigned int *)this + 1) = 0; /*0x6bed6e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6bed71*/
@@ -35442,7 +35442,7 @@ LONG VectorClass_K_8::Release(volatile LONG * Block)
 
   v1 = InterlockedDecrement(Block + 1); /*0x6beef0*/
   if ( !v1 ) /*0x6beef4*/
-    __3_YAXPAX_Z((void *)Block); /*0x6beef7*/
+    RA2_OPDEL((void *)Block); /*0x6beef7*/
   return v1; /*0x6bef01*/
 
 }
@@ -35463,7 +35463,7 @@ int VectorClass_K_8::ddtor(int a1, int a2, int a3, unsigned int * a4)
   *a4 = 0; /*0x6bef28*/
   if ( a2 ) /*0x6bef30*/
     return -2147221232; /*0x6bef33*/
-  v5 = __2_YAPAXI_Z(0x2Cu); /*0x6bef3e*/
+  v5 = RA2_OPNEW(0x2Cu); /*0x6bef3e*/
   if ( !v5 ) /*0x6bef48*/
     return -2147024882; /*0x6bef48*/
   v6 = VectorClass_K_8::Constructor(v5); /*0x6bef4c*/
@@ -35534,7 +35534,7 @@ LONG VectorClass_K_14::Release(volatile LONG * Block)
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bf070*/
   if ( !v1 ) /*0x6bf074*/
-    __3_YAXPAX_Z((void *)Block); /*0x6bf077*/
+    RA2_OPDEL((void *)Block); /*0x6bf077*/
   return v1; /*0x6bf081*/
 
 }
@@ -35555,7 +35555,7 @@ int VectorClass_K_14::ddtor(int a1, int a2, int a3, unsigned int * a4)
   *a4 = 0; /*0x6bf0a8*/
   if ( a2 ) /*0x6bf0b0*/
     return -2147221232; /*0x6bf0b3*/
-  v5 = __2_YAPAXI_Z(0x240u); /*0x6bf0c1*/
+  v5 = RA2_OPNEW(0x240u); /*0x6bf0c1*/
   if ( !v5 ) /*0x6bf0cb*/
     return -2147024882; /*0x6bf0cb*/
   v6 = (int (***)(unsigned int, int, unsigned int *))VoxelAnimClass::Constructor((int)v5); /*0x6bf0cf*/
@@ -35626,7 +35626,7 @@ LONG VectorClass_K_20::Release(volatile LONG * Block)
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bf1f0*/
   if ( !v1 ) /*0x6bf1f4*/
-    __3_YAXPAX_Z((void *)Block); /*0x6bf1f7*/
+    RA2_OPDEL((void *)Block); /*0x6bf1f7*/
   return v1; /*0x6bf201*/
 
 }
@@ -35647,7 +35647,7 @@ int VectorClass_K_20::ddtor(int a1, int a2, int a3, unsigned int * a4)
   *a4 = 0; /*0x6bf228*/
   if ( a2 ) /*0x6bf230*/
     return -2147221232; /*0x6bf233*/
-  v5 = __2_YAPAXI_Z(0x2BCu); /*0x6bf241*/
+  v5 = RA2_OPNEW(0x2BCu); /*0x6bf241*/
   if ( !v5 ) /*0x6bf24b*/
     return -2147024882; /*0x6bf24b*/
   v6 = TerrainTypeClass::TerrainTypeClass(v5, 0); /*0x6bf251*/
@@ -35718,7 +35718,7 @@ LONG VectorClass_K_26::Release(volatile LONG * Block)
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bf370*/
   if ( !v1 ) /*0x6bf374*/
-    __3_YAXPAX_Z((void *)Block); /*0x6bf377*/
+    RA2_OPDEL((void *)Block); /*0x6bf377*/
   return v1; /*0x6bf381*/
 
 }
@@ -35739,7 +35739,7 @@ int VectorClass_K_26::ddtor(int a1, int a2, int a3, unsigned int * a4)
   *a4 = 0; /*0x6bf3a8*/
   if ( a2 ) /*0x6bf3b0*/
     return -2147221232; /*0x6bf3b3*/
-  v5 = __2_YAPAXI_Z(0xE0u); /*0x6bf3c1*/
+  v5 = RA2_OPNEW(0xE0u); /*0x6bf3c1*/
   if ( !v5 ) /*0x6bf3cb*/
     return -2147024882; /*0x6bf3cb*/
   v6 = (int (***)(unsigned int, int, unsigned int *))ObjectClass::ProcessFoggedState((int)v5); /*0x6bf3cf*/
@@ -35810,7 +35810,7 @@ LONG VectorClass_K_32::Release(volatile LONG * Block)
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bf4f0*/
   if ( !v1 ) /*0x6bf4f4*/
-    __3_YAXPAX_Z((void *)Block); /*0x6bf4f7*/
+    RA2_OPDEL((void *)Block); /*0x6bf4f7*/
   return v1; /*0x6bf501*/
 
 }
@@ -35831,7 +35831,7 @@ int VectorClass_K_32::ddtor(int a1, int a2, int a3, unsigned int * a4)
   *a4 = 0; /*0x6bf528*/
   if ( a2 ) /*0x6bf530*/
     return -2147221232; /*0x6bf533*/
-  v5 = __2_YAPAXI_Z(0x100u); /*0x6bf541*/
+  v5 = RA2_OPNEW(0x100u); /*0x6bf541*/
   if ( !v5 ) /*0x6bf54b*/
     return -2147024882; /*0x6bf54b*/
   v6 = (int (***)(unsigned int, int, unsigned int *))SuperWeaponTypeClass::SuperWeaponTypeClass((int)v5, 0); /*0x6bf551*/
@@ -35902,7 +35902,7 @@ LONG VectorClass_K_38::Release(volatile LONG * Block)
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bf670*/
   if ( !v1 ) /*0x6bf674*/
-    __3_YAXPAX_Z((void *)Block); /*0x6bf677*/
+    RA2_OPDEL((void *)Block); /*0x6bf677*/
   return v1; /*0x6bf681*/
 
 }
@@ -35923,7 +35923,7 @@ int VectorClass_K_38::ddtor(int a1, int a2, int a3, unsigned int * a4)
   *a4 = 0; /*0x6bf6a8*/
   if ( a2 ) /*0x6bf6b0*/
     return -2147221232; /*0x6bf6b3*/
-  v5 = __2_YAPAXI_Z(0x80u); /*0x6bf6c1*/
+  v5 = RA2_OPNEW(0x80u); /*0x6bf6c1*/
   if ( !v5 ) /*0x6bf6cb*/
     return -2147024882; /*0x6bf6cb*/
   v6 = (int (***)(unsigned int, int, unsigned int *))SuperClass::Constructor((int)v5); /*0x6bf6cf*/
@@ -35994,7 +35994,7 @@ LONG VectorClass_K_44::Release(volatile LONG * Block)
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bf7f0*/
   if ( !v1 ) /*0x6bf7f4*/
-    __3_YAXPAX_Z((void *)Block); /*0x6bf7f7*/
+    RA2_OPDEL((void *)Block); /*0x6bf7f7*/
   return v1; /*0x6bf801*/
 
 }
@@ -36015,7 +36015,7 @@ int VectorClass_K_44::ddtor(int a1, int a2, int a3, unsigned int * a4)
   *a4 = 0; /*0x6bf828*/
   if ( a2 ) /*0x6bf830*/
     return -2147221232; /*0x6bf833*/
-  v5 = __2_YAPAXI_Z(0xE18u); /*0x6bf841*/
+  v5 = RA2_OPNEW(0xE18u); /*0x6bf841*/
   if ( !v5 ) /*0x6bf84b*/
     return -2147024882; /*0x6bf84b*/
   v6 = (int (***)(unsigned int, int, unsigned int *))TacticalMap::Construct((int)v5); /*0x6bf84f*/
@@ -36095,7 +36095,7 @@ char VectorClass_K::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6c622c*/
       v4 = a3; /*0x6c6242*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6c623e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6c623e*/
     *((unsigned char *)this + 12) = 1; /*0x6c6246*/
     if ( v4 ) /*0x6c624a*/
     {
@@ -36108,7 +36108,7 @@ char VectorClass_K::Release(int a2, unsigned int * a3)
           ++i; /*0x6c626e*/
         if ( *((unsigned char *)this + 13) ) /*0x6c627b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6c6286*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6c6286*/
           *((unsigned int *)this + 1) = 0; /*0x6c628e*/
         }
       }
@@ -36138,7 +36138,7 @@ void VectorClass_K::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x6c62cd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x6c62d3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x6c62d3*/
     *((unsigned int *)this + 1) = 0; /*0x6c62db*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6c62de*/
@@ -36201,7 +36201,7 @@ char VectorClass_K::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6c6368*/
       v4 = a3; /*0x6c637e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6c637a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6c637a*/
     *((unsigned char *)this + 12) = 1; /*0x6c6382*/
     if ( !v4 ) /*0x6c6386*/
       return 0; /*0x6c63fa*/
@@ -36214,7 +36214,7 @@ char VectorClass_K::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6c63a1*/
       if ( *((unsigned char *)this + 13) ) /*0x6c63ae*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6c63b9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x6c63b9*/
         *((unsigned int *)this + 1) = 0; /*0x6c63c1*/
       }
     }
@@ -36268,13 +36268,13 @@ VectorClass_flat * VectorClass_K::QueryInterface(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_unsigned_long; /*0x6c6486*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6c6490*/
   {
-    __3_YAXPAX_Z(v3); /*0x6c6498*/
+    RA2_OPDEL(v3); /*0x6c6498*/
     *(Block + 1) = 0; /*0x6c64a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6c64ab*/
   *(Block + 2) = 0; /*0x6c64b1*/
   if ( (a2 & 1) != 0 ) /*0x6c64b8*/
-    __3_YAXPAX_Z(Block); /*0x6c64bb*/
+    RA2_OPDEL(Block); /*0x6c64bb*/
   return (VectorClass *)Block; /*0x6c64c5*/
 
 }
@@ -36291,13 +36291,13 @@ DynamicVector * VectorClass_K::Constructor(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_unsigned_long; /*0x6c64d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6c64e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x6c64e8*/
+    RA2_OPDEL(v3); /*0x6c64e8*/
     *(Block + 1) = 0; /*0x6c64f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6c64fb*/
   *(Block + 2) = 0; /*0x6c6501*/
   if ( (a2 & 1) != 0 ) /*0x6c6508*/
-    __3_YAXPAX_Z(Block); /*0x6c650b*/
+    RA2_OPDEL(Block); /*0x6c650b*/
   return (DynamicVector *)Block; /*0x6c6515*/
 
 }
@@ -36314,7 +36314,7 @@ void VectorClass_ptr_SubTitle::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x6ca7c9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6ca7d0*/
   {
-    __3_YAXPAX_Z(v2); /*0x6ca7d6*/
+    RA2_OPDEL(v2); /*0x6ca7d6*/
     *((unsigned int *)this + 1) = 0; /*0x6ca7de*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6ca7e1*/
@@ -36393,7 +36393,7 @@ char VectorClass_ptr_SubTitle::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6ca878*/
       v4 = a3; /*0x6ca88e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6ca88a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6ca88a*/
     *((unsigned char *)this + 12) = 1; /*0x6ca892*/
     if ( !v4 ) /*0x6ca896*/
       return 0; /*0x6ca90a*/
@@ -36406,7 +36406,7 @@ char VectorClass_ptr_SubTitle::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6ca8b1*/
       if ( *((unsigned char *)this + 13) ) /*0x6ca8be*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6ca8c9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x6ca8c9*/
         *((unsigned int *)this + 1) = 0; /*0x6ca8d1*/
       }
     }
@@ -36460,13 +36460,13 @@ DynamicVector * VectorClass_ptr_SubTitle::Constructor_VectorClass_SubTitle___(un
   *Block = &vt_VectorClass_SubTitle; /*0x6ca9c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6ca9d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x6ca9d8*/
+    RA2_OPDEL(v3); /*0x6ca9d8*/
     *(Block + 1) = 0; /*0x6ca9e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6ca9eb*/
   *(Block + 2) = 0; /*0x6ca9f1*/
   if ( (a2 & 1) != 0 ) /*0x6ca9f8*/
-    __3_YAXPAX_Z(Block); /*0x6ca9fb*/
+    RA2_OPDEL(Block); /*0x6ca9fb*/
   return (DynamicVector *)Block; /*0x6caa05*/
 
 }
@@ -36487,7 +36487,7 @@ char VectorClass_ptr_SubTitle::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6caa2c*/
       v4 = a3; /*0x6caa42*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6caa3e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6caa3e*/
     *((unsigned char *)this + 12) = 1; /*0x6caa46*/
     if ( v4 ) /*0x6caa4a*/
     {
@@ -36500,7 +36500,7 @@ char VectorClass_ptr_SubTitle::Release(int a2, unsigned int * a3)
           ++i; /*0x6caa6e*/
         if ( *((unsigned char *)this + 13) ) /*0x6caa7b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6caa86*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6caa86*/
           *((unsigned int *)this + 1) = 0; /*0x6caa8e*/
         }
       }
@@ -36530,7 +36530,7 @@ void VectorClass_ptr_SubTitle::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x6caacd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x6caad3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x6caad3*/
     *((unsigned int *)this + 1) = 0; /*0x6caadb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6caade*/
@@ -36588,13 +36588,13 @@ VectorClass_flat * VectorClass_ptr_SubTitle::QueryInterface(unsigned int * Block
   *Block = &vt_VectorClass_SubTitle; /*0x6cab56*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6cab60*/
   {
-    __3_YAXPAX_Z(v3); /*0x6cab68*/
+    RA2_OPDEL(v3); /*0x6cab68*/
     *(Block + 1) = 0; /*0x6cab70*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6cab7b*/
   *(Block + 2) = 0; /*0x6cab81*/
   if ( (a2 & 1) != 0 ) /*0x6cab88*/
-    __3_YAXPAX_Z(Block); /*0x6cab8b*/
+    RA2_OPDEL(Block); /*0x6cab8b*/
   return (VectorClass *)Block; /*0x6cab95*/
 
 }
@@ -36608,7 +36608,7 @@ char VectorClass_flat::RemoveAt(int a2)
   int v4; // ecx
   int v5; // ecx
 
-  v3 = (*(int (**)(int *, int))(*(unsigned int **)this + 16))(this, a2); /*0x6ce2dc*/
+  v3 = (*(int (**)(int *, int))(*(unsigned int *)this + 16))(this, a2); /*0x6ce2dc*/
   if ( v3 == -1 ) /*0x6ce2e2*/
     return 0; /*0x6ce2e2*/
   v4 = *((char *)this + 4); /*0x6ce2e4*/
@@ -36631,7 +36631,7 @@ void VectorClass_UDirtyAreaStruct::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x6dc4e9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6dc4f0*/
   {
-    __3_YAXPAX_Z(v2); /*0x6dc4f6*/
+    RA2_OPDEL(v2); /*0x6dc4f6*/
     *((unsigned int *)this + 1) = 0; /*0x6dc4fe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6dc501*/
@@ -36682,7 +36682,7 @@ void VectorClass_UDirtyAreaStruct::Destroy_0()
   *((unsigned int *)this + 4) = 0; /*0x6dc589*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6dc590*/
   {
-    __3_YAXPAX_Z(v2); /*0x6dc596*/
+    RA2_OPDEL(v2); /*0x6dc596*/
     *((unsigned int *)this + 1) = 0; /*0x6dc59e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6dc5a1*/
@@ -36799,7 +36799,7 @@ char VectorClass_UDirtyAreaStruct::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(20 * a2); /*0x6dc687*/
+      v6 = (char *)RA2_OPNEW(20 * a2); /*0x6dc687*/
       if ( v6 ) /*0x6dc691*/
       {
         if ( a2 - 1 >= 0 ) /*0x6dc698*/
@@ -36850,7 +36850,7 @@ char VectorClass_UDirtyAreaStruct::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x6dc72e*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dc737*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6dc737*/
           *((unsigned int *)this + 1) = 0; /*0x6dc73f*/
         }
       }
@@ -36880,7 +36880,7 @@ void VectorClass_UDirtyAreaStruct::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x6dc78d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x6dc793*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x6dc793*/
     *((unsigned int *)this + 1) = 0; /*0x6dc79b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6dc79e*/
@@ -37008,7 +37008,7 @@ char VectorClass_UDirtyAreaStruct___16::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6dca2c*/
       v4 = a3; /*0x6dca42*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6dca3e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6dca3e*/
     *((unsigned char *)this + 12) = 1; /*0x6dca46*/
     if ( v4 ) /*0x6dca4a*/
     {
@@ -37021,7 +37021,7 @@ char VectorClass_UDirtyAreaStruct___16::Release(int a2, unsigned int * a3)
           ++i; /*0x6dca6e*/
         if ( *((unsigned char *)this + 13) ) /*0x6dca7b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dca86*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6dca86*/
           *((unsigned int *)this + 1) = 0; /*0x6dca8e*/
         }
       }
@@ -37051,7 +37051,7 @@ void VectorClass_UDirtyAreaStruct___16::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x6dcacd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x6dcad3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x6dcad3*/
     *((unsigned int *)this + 1) = 0; /*0x6dcadb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6dcade*/
@@ -37114,7 +37114,7 @@ char VectorClass_UDirtyAreaStruct::SetCapacity_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x6dcb68*/
       v4 = a3; /*0x6dcb7e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6dcb7a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6dcb7a*/
     *((unsigned char *)this + 12) = 1; /*0x6dcb82*/
     if ( !v4 ) /*0x6dcb86*/
       return 0; /*0x6dcbfa*/
@@ -37127,7 +37127,7 @@ char VectorClass_UDirtyAreaStruct::SetCapacity_0(int a2, unsigned int * a3)
         ++i; /*0x6dcba1*/
       if ( *((unsigned char *)this + 13) ) /*0x6dcbae*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6dcbb9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x6dcbb9*/
         *((unsigned int *)this + 1) = 0; /*0x6dcbc1*/
       }
     }
@@ -37181,13 +37181,13 @@ VectorClass_flat * VectorClass_UDirtyAreaStruct::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_DirtyAreaStruct; /*0x6dcc36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6dcc40*/
   {
-    __3_YAXPAX_Z(v3); /*0x6dcc48*/
+    RA2_OPDEL(v3); /*0x6dcc48*/
     *(Block + 1) = 0; /*0x6dcc50*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6dcc5b*/
   *(Block + 2) = 0; /*0x6dcc61*/
   if ( (a2 & 1) != 0 ) /*0x6dcc68*/
-    __3_YAXPAX_Z(Block); /*0x6dcc6b*/
+    RA2_OPDEL(Block); /*0x6dcc6b*/
   return (VectorClass *)Block; /*0x6dcc75*/
 
 }
@@ -37204,13 +37204,13 @@ unsigned int * VectorClass_UDirtyAreaStruct::loc_6DCC80(unsigned int * Block, ch
   *Block = &vt_VectorClass_DirtyAreaStruct; /*0x6dcc86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6dcc90*/
   {
-    __3_YAXPAX_Z(v3); /*0x6dcc98*/
+    RA2_OPDEL(v3); /*0x6dcc98*/
     *(Block + 1) = 0; /*0x6dcca0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6dccab*/
   *(Block + 2) = 0; /*0x6dccb1*/
   if ( (a2 & 1) != 0 ) /*0x6dccb8*/
-    __3_YAXPAX_Z(Block); /*0x6dccbb*/
+    RA2_OPDEL(Block); /*0x6dccbb*/
   return Block; /*0x6dccc5*/
 
 }
@@ -37227,13 +37227,13 @@ VectorClass_flat * VectorClass_UDirtyAreaStruct___16::QueryInterface(unsigned in
   *Block = &vt_VectorClass_ShadowControlClass; /*0x6dccd6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6dcce0*/
   {
-    __3_YAXPAX_Z(v3); /*0x6dcce8*/
+    RA2_OPDEL(v3); /*0x6dcce8*/
     *(Block + 1) = 0; /*0x6dccf0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6dccfb*/
   *(Block + 2) = 0; /*0x6dcd01*/
   if ( (a2 & 1) != 0 ) /*0x6dcd08*/
-    __3_YAXPAX_Z(Block); /*0x6dcd0b*/
+    RA2_OPDEL(Block); /*0x6dcd0b*/
   return (VectorClass *)Block; /*0x6dcd15*/
 
 }
@@ -37241,7 +37241,7 @@ VectorClass_flat * VectorClass_UDirtyAreaStruct___16::QueryInterface(unsigned in
 
 // 0x6DCD20
 namespace gamemd {
-DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowControlClass___(char a2)
+DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowControlClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -37250,13 +37250,13 @@ DynamicVector * VectorClass_UDirtyAreaStruct::Constructor_VectorClass_ShadowCont
   *Block = &vt_VectorClass_ShadowControlClass; /*0x6dcd26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6dcd30*/
   {
-    __3_YAXPAX_Z(v3); /*0x6dcd38*/
+    RA2_OPDEL(v3); /*0x6dcd38*/
     *(Block + 1) = 0; /*0x6dcd40*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6dcd4b*/
   *(Block + 2) = 0; /*0x6dcd51*/
-  if ( (a2 & 1) != 0 ) /*0x6dcd58*/
-    __3_YAXPAX_Z(Block); /*0x6dcd5b*/
+  if ( (Block & 1) != 0 ) /*0x6dcd58*/
+    RA2_OPDEL(Block); /*0x6dcd5b*/
   return (DynamicVector *)Block; /*0x6dcd65*/
 
 }
@@ -37273,7 +37273,7 @@ void VectorClass_ptr_TagTypeClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x6e64e9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6e64f0*/
   {
-    __3_YAXPAX_Z(v2); /*0x6e64f6*/
+    RA2_OPDEL(v2); /*0x6e64f6*/
     *((unsigned int *)this + 1) = 0; /*0x6e64fe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6e6501*/
@@ -37351,7 +37351,7 @@ char VectorClass_ptr_TagTypeClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6e659c*/
       v4 = a3; /*0x6e65b2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6e65ae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6e65ae*/
     *((unsigned char *)this + 12) = 1; /*0x6e65b6*/
     if ( v4 ) /*0x6e65ba*/
     {
@@ -37364,7 +37364,7 @@ char VectorClass_ptr_TagTypeClass::Release(int a2, unsigned int * a3)
           ++i; /*0x6e65de*/
         if ( *((unsigned char *)this + 13) ) /*0x6e65eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6e65f6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6e65f6*/
           *((unsigned int *)this + 1) = 0; /*0x6e65fe*/
         }
       }
@@ -37394,7 +37394,7 @@ void VectorClass_ptr_TagTypeClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x6e663d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x6e6643*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x6e6643*/
     *((unsigned int *)this + 1) = 0; /*0x6e664b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6e664e*/
@@ -37457,7 +37457,7 @@ char VectorClass_ptr_TagTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x6e66d8*/
       v4 = a3; /*0x6e66ee*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6e66ea*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6e66ea*/
     *((unsigned char *)this + 12) = 1; /*0x6e66f2*/
     if ( !v4 ) /*0x6e66f6*/
       return 0; /*0x6e676a*/
@@ -37470,7 +37470,7 @@ char VectorClass_ptr_TagTypeClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x6e6711*/
       if ( *((unsigned char *)this + 13) ) /*0x6e671e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6e6729*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x6e6729*/
         *((unsigned int *)this + 1) = 0; /*0x6e6731*/
       }
     }
@@ -37524,13 +37524,13 @@ VectorClass_flat * VectorClass_ptr_TagTypeClass::QueryInterface(unsigned int * B
   *Block = &vt_VectorClass_TagTypeClass; /*0x6e67a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6e67b0*/
   {
-    __3_YAXPAX_Z(v3); /*0x6e67b8*/
+    RA2_OPDEL(v3); /*0x6e67b8*/
     *(Block + 1) = 0; /*0x6e67c0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6e67cb*/
   *(Block + 2) = 0; /*0x6e67d1*/
   if ( (a2 & 1) != 0 ) /*0x6e67d8*/
-    __3_YAXPAX_Z(Block); /*0x6e67db*/
+    RA2_OPDEL(Block); /*0x6e67db*/
   return (VectorClass *)Block; /*0x6e67e5*/
 
 }
@@ -37547,13 +37547,13 @@ DynamicVector * VectorClass_ptr_TagTypeClass::Constructor_VectorClass_TagTypeCla
   *Block = &vt_VectorClass_TagTypeClass; /*0x6e67f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6e6800*/
   {
-    __3_YAXPAX_Z(v3); /*0x6e6808*/
+    RA2_OPDEL(v3); /*0x6e6808*/
     *(Block + 1) = 0; /*0x6e6810*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6e681b*/
   *(Block + 2) = 0; /*0x6e6821*/
   if ( (a2 & 1) != 0 ) /*0x6e6828*/
-    __3_YAXPAX_Z(Block); /*0x6e682b*/
+    RA2_OPDEL(Block); /*0x6e682b*/
   return (DynamicVector *)Block; /*0x6e6835*/
 
 }
@@ -37580,7 +37580,7 @@ unsigned int * VectorClass_flat::CopyParticle(DynamicVector * aP1)
     *((unsigned int *)this + 2) = v3; /*0x717d4d*/
     if ( v3 ) /*0x717d50*/
     {
-      v4 = __2_YAPAXI_Z(4 * v3); /*0x717d56*/
+      v4 = RA2_OPNEW(4 * v3); /*0x717d56*/
       *((unsigned int *)this + 1) = v4; /*0x717d60*/
       if ( v4 ) /*0x717d63*/
       {
@@ -37621,7 +37621,7 @@ void VectorClass_ptr_TemporalClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x71b249*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x71b250*/
   {
-    __3_YAXPAX_Z(v2); /*0x71b256*/
+    RA2_OPDEL(v2); /*0x71b256*/
     *((unsigned int *)this + 1) = 0; /*0x71b25e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x71b261*/
@@ -37699,7 +37699,7 @@ char VectorClass_ptr_TemporalClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x71b2fc*/
       v4 = a3; /*0x71b312*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x71b30e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x71b30e*/
     *((unsigned char *)this + 12) = 1; /*0x71b316*/
     if ( v4 ) /*0x71b31a*/
     {
@@ -37712,7 +37712,7 @@ char VectorClass_ptr_TemporalClass::Release(int a2, unsigned int * a3)
           ++i; /*0x71b33e*/
         if ( *((unsigned char *)this + 13) ) /*0x71b34b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x71b356*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x71b356*/
           *((unsigned int *)this + 1) = 0; /*0x71b35e*/
         }
       }
@@ -37742,7 +37742,7 @@ void VectorClass_ptr_TemporalClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x71b39d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x71b3a3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x71b3a3*/
     *((unsigned int *)this + 1) = 0; /*0x71b3ab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x71b3ae*/
@@ -37805,7 +37805,7 @@ char VectorClass_ptr_TemporalClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x71b438*/
       v4 = a3; /*0x71b44e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x71b44a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x71b44a*/
     *((unsigned char *)this + 12) = 1; /*0x71b452*/
     if ( !v4 ) /*0x71b456*/
       return 0; /*0x71b4ca*/
@@ -37818,7 +37818,7 @@ char VectorClass_ptr_TemporalClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x71b471*/
       if ( *((unsigned char *)this + 13) ) /*0x71b47e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x71b489*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x71b489*/
         *((unsigned int *)this + 1) = 0; /*0x71b491*/
       }
     }
@@ -37872,13 +37872,13 @@ VectorClass_flat * VectorClass_ptr_TemporalClass::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_TemporalClass; /*0x71b506*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x71b510*/
   {
-    __3_YAXPAX_Z(v3); /*0x71b518*/
+    RA2_OPDEL(v3); /*0x71b518*/
     *(Block + 1) = 0; /*0x71b520*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x71b52b*/
   *(Block + 2) = 0; /*0x71b531*/
   if ( (a2 & 1) != 0 ) /*0x71b538*/
-    __3_YAXPAX_Z(Block); /*0x71b53b*/
+    RA2_OPDEL(Block); /*0x71b53b*/
   return (VectorClass *)Block; /*0x71b545*/
 
 }
@@ -37886,7 +37886,7 @@ VectorClass_flat * VectorClass_ptr_TemporalClass::QueryInterface(unsigned int * 
 
 // 0x71B550
 namespace gamemd {
-DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalClass___(char a2)
+DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -37895,13 +37895,13 @@ DynamicVector * VectorClass_ptr_TemporalClass::Constructor_VectorClass_TemporalC
   *Block = &vt_VectorClass_TemporalClass; /*0x71b556*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x71b560*/
   {
-    __3_YAXPAX_Z(v3); /*0x71b568*/
+    RA2_OPDEL(v3); /*0x71b568*/
     *(Block + 1) = 0; /*0x71b570*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x71b57b*/
   *(Block + 2) = 0; /*0x71b581*/
-  if ( (a2 & 1) != 0 ) /*0x71b588*/
-    __3_YAXPAX_Z(Block); /*0x71b58b*/
+  if ( (Block & 1) != 0 ) /*0x71b588*/
+    RA2_OPDEL(Block); /*0x71b58b*/
   return (DynamicVector *)Block; /*0x71b595*/
 
 }
@@ -37918,7 +37918,7 @@ void VectorClass_ptr_TEventClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x71fba9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x71fbb0*/
   {
-    __3_YAXPAX_Z(v2); /*0x71fbb6*/
+    RA2_OPDEL(v2); /*0x71fbb6*/
     *((unsigned int *)this + 1) = 0; /*0x71fbbe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x71fbc1*/
@@ -37996,7 +37996,7 @@ char VectorClass_ptr_TEventClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x71fc5c*/
       v4 = a3; /*0x71fc72*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x71fc6e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x71fc6e*/
     *((unsigned char *)this + 12) = 1; /*0x71fc76*/
     if ( v4 ) /*0x71fc7a*/
     {
@@ -38009,7 +38009,7 @@ char VectorClass_ptr_TEventClass::Release(int a2, unsigned int * a3)
           ++i; /*0x71fc9e*/
         if ( *((unsigned char *)this + 13) ) /*0x71fcab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x71fcb6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x71fcb6*/
           *((unsigned int *)this + 1) = 0; /*0x71fcbe*/
         }
       }
@@ -38039,7 +38039,7 @@ void VectorClass_ptr_TEventClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x71fcfd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x71fd03*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x71fd03*/
     *((unsigned int *)this + 1) = 0; /*0x71fd0b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x71fd0e*/
@@ -38102,7 +38102,7 @@ char VectorClass_ptr_TEventClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x71fd98*/
       v4 = a3; /*0x71fdae*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x71fdaa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x71fdaa*/
     *((unsigned char *)this + 12) = 1; /*0x71fdb2*/
     if ( !v4 ) /*0x71fdb6*/
       return 0; /*0x71fe2a*/
@@ -38115,7 +38115,7 @@ char VectorClass_ptr_TEventClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x71fdd1*/
       if ( *((unsigned char *)this + 13) ) /*0x71fdde*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x71fde9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x71fde9*/
         *((unsigned int *)this + 1) = 0; /*0x71fdf1*/
       }
     }
@@ -38169,13 +38169,13 @@ VectorClass_flat * VectorClass_ptr_TEventClass::QueryInterface(unsigned int * Bl
   *Block = &vt_VectorClass_TEventClass; /*0x71fe66*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x71fe70*/
   {
-    __3_YAXPAX_Z(v3); /*0x71fe78*/
+    RA2_OPDEL(v3); /*0x71fe78*/
     *(Block + 1) = 0; /*0x71fe80*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x71fe8b*/
   *(Block + 2) = 0; /*0x71fe91*/
   if ( (a2 & 1) != 0 ) /*0x71fe98*/
-    __3_YAXPAX_Z(Block); /*0x71fe9b*/
+    RA2_OPDEL(Block); /*0x71fe9b*/
   return (VectorClass *)Block; /*0x71fea5*/
 
 }
@@ -38192,13 +38192,13 @@ DynamicVector * VectorClass_ptr_TEventClass::Constructor_VectorClass_TEventClass
   *Block = &vt_VectorClass_TEventClass; /*0x71feb6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x71fec0*/
   {
-    __3_YAXPAX_Z(v3); /*0x71fec8*/
+    RA2_OPDEL(v3); /*0x71fec8*/
     *(Block + 1) = 0; /*0x71fed0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x71fedb*/
   *(Block + 2) = 0; /*0x71fee1*/
   if ( (a2 & 1) != 0 ) /*0x71fee8*/
-    __3_YAXPAX_Z(Block); /*0x71feeb*/
+    RA2_OPDEL(Block); /*0x71feeb*/
   return (DynamicVector *)Block; /*0x71fef5*/
 
 }
@@ -38215,7 +38215,7 @@ void VectorClass_ptr_ThemeControl::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x7212b9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x7212c0*/
   {
-    __3_YAXPAX_Z(v2); /*0x7212c6*/
+    RA2_OPDEL(v2); /*0x7212c6*/
     *((unsigned int *)this + 1) = 0; /*0x7212ce*/
   }
   *((unsigned char *)this + 13) = 0; /*0x7212d1*/
@@ -38253,7 +38253,7 @@ char VectorClass_ptr_ThemeControl::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x721318*/
       v4 = a3; /*0x72132e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x72132a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x72132a*/
     *((unsigned char *)this + 12) = 1; /*0x721332*/
     if ( !v4 ) /*0x721336*/
       return 0; /*0x7213aa*/
@@ -38266,7 +38266,7 @@ char VectorClass_ptr_ThemeControl::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x721351*/
       if ( *((unsigned char *)this + 13) ) /*0x72135e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x721369*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x721369*/
         *((unsigned int *)this + 1) = 0; /*0x721371*/
       }
     }
@@ -38320,13 +38320,13 @@ DynamicVector * VectorClass_ptr_ThemeControl::Constructor_VectorClass_ThemeContr
   *Block = &vt_VectorClass_ThemeControl; /*0x7213e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x7213f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x7213f8*/
+    RA2_OPDEL(v3); /*0x7213f8*/
     *(Block + 1) = 0; /*0x721400*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x72140b*/
   *(Block + 2) = 0; /*0x721411*/
   if ( (a2 & 1) != 0 ) /*0x721418*/
-    __3_YAXPAX_Z(Block); /*0x72141b*/
+    RA2_OPDEL(Block); /*0x72141b*/
   return (DynamicVector *)Block; /*0x721425*/
 
 }
@@ -38343,7 +38343,7 @@ void VectorClass_ptr_TiberiumClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x723739*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x723740*/
   {
-    __3_YAXPAX_Z(v2); /*0x723746*/
+    RA2_OPDEL(v2); /*0x723746*/
     *((unsigned int *)this + 1) = 0; /*0x72374e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x723751*/
@@ -38421,7 +38421,7 @@ char VectorClass_ptr_TiberiumClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x7237ec*/
       v4 = a3; /*0x723802*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x7237fe*/
+      v4 = RA2_OPNEW(4 * a2); /*0x7237fe*/
     *((unsigned char *)this + 12) = 1; /*0x723806*/
     if ( v4 ) /*0x72380a*/
     {
@@ -38434,7 +38434,7 @@ char VectorClass_ptr_TiberiumClass::Release(int a2, unsigned int * a3)
           ++i; /*0x72382e*/
         if ( *((unsigned char *)this + 13) ) /*0x72383b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x723846*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x723846*/
           *((unsigned int *)this + 1) = 0; /*0x72384e*/
         }
       }
@@ -38464,7 +38464,7 @@ void VectorClass_ptr_TiberiumClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x72388d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x723893*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x723893*/
     *((unsigned int *)this + 1) = 0; /*0x72389b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x72389e*/
@@ -38527,7 +38527,7 @@ char VectorClass_ptr_TiberiumClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x723928*/
       v4 = a3; /*0x72393e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x72393a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x72393a*/
     *((unsigned char *)this + 12) = 1; /*0x723942*/
     if ( !v4 ) /*0x723946*/
       return 0; /*0x7239ba*/
@@ -38540,7 +38540,7 @@ char VectorClass_ptr_TiberiumClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x723961*/
       if ( *((unsigned char *)this + 13) ) /*0x72396e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x723979*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x723979*/
         *((unsigned int *)this + 1) = 0; /*0x723981*/
       }
     }
@@ -38594,13 +38594,13 @@ VectorClass_flat * VectorClass_ptr_TiberiumClass::QueryInterface(unsigned int * 
   *Block = &vt_VectorClass_TiberiumClass; /*0x7239f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x723a00*/
   {
-    __3_YAXPAX_Z(v3); /*0x723a08*/
+    RA2_OPDEL(v3); /*0x723a08*/
     *(Block + 1) = 0; /*0x723a10*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x723a1b*/
   *(Block + 2) = 0; /*0x723a21*/
   if ( (a2 & 1) != 0 ) /*0x723a28*/
-    __3_YAXPAX_Z(Block); /*0x723a2b*/
+    RA2_OPDEL(Block); /*0x723a2b*/
   return (VectorClass *)Block; /*0x723a35*/
 
 }
@@ -38608,7 +38608,7 @@ VectorClass_flat * VectorClass_ptr_TiberiumClass::QueryInterface(unsigned int * 
 
 // 0x723A40
 namespace gamemd {
-DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumClass___(char a2)
+DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -38617,13 +38617,13 @@ DynamicVector * VectorClass_ptr_TiberiumClass::Constructor_VectorClass_TiberiumC
   *Block = &vt_VectorClass_TiberiumClass; /*0x723a46*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x723a50*/
   {
-    __3_YAXPAX_Z(v3); /*0x723a58*/
+    RA2_OPDEL(v3); /*0x723a58*/
     *(Block + 1) = 0; /*0x723a60*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x723a6b*/
   *(Block + 2) = 0; /*0x723a71*/
-  if ( (a2 & 1) != 0 ) /*0x723a78*/
-    __3_YAXPAX_Z(Block); /*0x723a7b*/
+  if ( (Block & 1) != 0 ) /*0x723a78*/
+    RA2_OPDEL(Block); /*0x723a7b*/
   return (DynamicVector *)Block; /*0x723a85*/
 
 }
@@ -38650,13 +38650,13 @@ VectorClass_flat * VectorClass_E::QueryInterface(unsigned int * Block, char a2)
   *Block = &vt_VectorClass_unsigned_char_7F65F4; /*0x74bfa6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x74bfb0*/
   {
-    __3_YAXPAX_Z(v3); /*0x74bfb8*/
+    RA2_OPDEL(v3); /*0x74bfb8*/
     *(Block + 1) = 0; /*0x74bfc0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x74bfcb*/
   *(Block + 2) = 0; /*0x74bfd1*/
   if ( (a2 & 1) != 0 ) /*0x74bfd8*/
-    __3_YAXPAX_Z(Block); /*0x74bfdb*/
+    RA2_OPDEL(Block); /*0x74bfdb*/
   return (VectorClass *)Block; /*0x74bfe5*/
 
 }
@@ -38702,7 +38702,7 @@ char VectorClass_E::Release(signed int Size, char * a3)
     if ( a3 ) /*0x74c04c*/
       v4 = a3; /*0x74c05b*/
     else
-      v4 = (char *)__2_YAPAXI_Z(Size); /*0x74c057*/
+      v4 = (char *)RA2_OPNEW(Size); /*0x74c057*/
     *((unsigned char *)this + 12) = 1; /*0x74c05f*/
     if ( v4 ) /*0x74c063*/
     {
@@ -38715,7 +38715,7 @@ char VectorClass_E::Release(signed int Size, char * a3)
           ++i; /*0x74c087*/
         if ( *((unsigned char *)this + 13) ) /*0x74c094*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x74c09f*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x74c09f*/
           *((unsigned int *)this + 1) = 0; /*0x74c0a7*/
         }
       }
@@ -38745,7 +38745,7 @@ void VectorClass_E::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x74c0ed*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x74c0f3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x74c0f3*/
     *((unsigned int *)this + 1) = 0; /*0x74c0fb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x74c0fe*/
@@ -38804,7 +38804,7 @@ void VectorClass_ptr_VocClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x7518d9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x7518e0*/
   {
-    __3_YAXPAX_Z(v2); /*0x7518e6*/
+    RA2_OPDEL(v2); /*0x7518e6*/
     *((unsigned int *)this + 1) = 0; /*0x7518ee*/
   }
   *((unsigned char *)this + 13) = 0; /*0x7518f1*/
@@ -38882,7 +38882,7 @@ char VectorClass_ptr_VocClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x75198c*/
       v4 = a3; /*0x7519a2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x75199e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x75199e*/
     *((unsigned char *)this + 12) = 1; /*0x7519a6*/
     if ( v4 ) /*0x7519aa*/
     {
@@ -38895,7 +38895,7 @@ char VectorClass_ptr_VocClass::Release(int a2, unsigned int * a3)
           ++i; /*0x7519ce*/
         if ( *((unsigned char *)this + 13) ) /*0x7519db*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x7519e6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x7519e6*/
           *((unsigned int *)this + 1) = 0; /*0x7519ee*/
         }
       }
@@ -38925,7 +38925,7 @@ void VectorClass_ptr_VocClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x751a2d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x751a33*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x751a33*/
     *((unsigned int *)this + 1) = 0; /*0x751a3b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x751a3e*/
@@ -38988,7 +38988,7 @@ char VectorClass_ptr_VocClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x751ac8*/
       v4 = a3; /*0x751ade*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x751ada*/
+      v4 = RA2_OPNEW(4 * a2); /*0x751ada*/
     *((unsigned char *)this + 12) = 1; /*0x751ae2*/
     if ( !v4 ) /*0x751ae6*/
       return 0; /*0x751b5a*/
@@ -39001,7 +39001,7 @@ char VectorClass_ptr_VocClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x751b01*/
       if ( *((unsigned char *)this + 13) ) /*0x751b0e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x751b19*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x751b19*/
         *((unsigned int *)this + 1) = 0; /*0x751b21*/
       }
     }
@@ -39055,13 +39055,13 @@ VectorClass_flat * VectorClass_ptr_VocClass::QueryInterface(unsigned int * Block
   *Block = &vt_VectorClass_VocClass; /*0x751b96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x751ba0*/
   {
-    __3_YAXPAX_Z(v3); /*0x751ba8*/
+    RA2_OPDEL(v3); /*0x751ba8*/
     *(Block + 1) = 0; /*0x751bb0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x751bbb*/
   *(Block + 2) = 0; /*0x751bc1*/
   if ( (a2 & 1) != 0 ) /*0x751bc8*/
-    __3_YAXPAX_Z(Block); /*0x751bcb*/
+    RA2_OPDEL(Block); /*0x751bcb*/
   return (VectorClass *)Block; /*0x751bd5*/
 
 }
@@ -39078,13 +39078,13 @@ DynamicVector * VectorClass_ptr_VocClass::Constructor_VectorClass_VocClass___(un
   *Block = &vt_VectorClass_VocClass; /*0x751be6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x751bf0*/
   {
-    __3_YAXPAX_Z(v3); /*0x751bf8*/
+    RA2_OPDEL(v3); /*0x751bf8*/
     *(Block + 1) = 0; /*0x751c00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x751c0b*/
   *(Block + 2) = 0; /*0x751c11*/
   if ( (a2 & 1) != 0 ) /*0x751c18*/
-    __3_YAXPAX_Z(Block); /*0x751c1b*/
+    RA2_OPDEL(Block); /*0x751c1b*/
   return (DynamicVector *)Block; /*0x751c25*/
 
 }
@@ -39146,7 +39146,7 @@ char VectorClass_ptr_VoxClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x75370c*/
       v4 = a3; /*0x753722*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x75371e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x75371e*/
     *((unsigned char *)this + 12) = 1; /*0x753726*/
     if ( v4 ) /*0x75372a*/
     {
@@ -39159,7 +39159,7 @@ char VectorClass_ptr_VoxClass::Release(int a2, unsigned int * a3)
           ++i; /*0x75374e*/
         if ( *((unsigned char *)this + 13) ) /*0x75375b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x753766*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x753766*/
           *((unsigned int *)this + 1) = 0; /*0x75376e*/
         }
       }
@@ -39189,7 +39189,7 @@ void VectorClass_ptr_VoxClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x7537ad*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x7537b3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x7537b3*/
     *((unsigned int *)this + 1) = 0; /*0x7537bb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x7537be*/
@@ -39247,13 +39247,13 @@ VectorClass_flat * VectorClass_ptr_VoxClass::QueryInterface(unsigned int * Block
   *Block = &vt_VectorClass_VoxClass; /*0x753916*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x753920*/
   {
-    __3_YAXPAX_Z(v3); /*0x753928*/
+    RA2_OPDEL(v3); /*0x753928*/
     *(Block + 1) = 0; /*0x753930*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x75393b*/
   *(Block + 2) = 0; /*0x753941*/
   if ( (a2 & 1) != 0 ) /*0x753948*/
-    __3_YAXPAX_Z(Block); /*0x75394b*/
+    RA2_OPDEL(Block); /*0x75394b*/
   return (VectorClass *)Block; /*0x753955*/
 
 }
@@ -39270,7 +39270,7 @@ void VectorClass_ptr_MovieHandle::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x75a439*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x75a440*/
   {
-    __3_YAXPAX_Z(v2); /*0x75a446*/
+    RA2_OPDEL(v2); /*0x75a446*/
     *((unsigned int *)this + 1) = 0; /*0x75a44e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x75a451*/
@@ -39348,7 +39348,7 @@ char VectorClass_ptr_MovieHandle::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x75a4ec*/
       v4 = a3; /*0x75a502*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x75a4fe*/
+      v4 = RA2_OPNEW(4 * a2); /*0x75a4fe*/
     *((unsigned char *)this + 12) = 1; /*0x75a506*/
     if ( v4 ) /*0x75a50a*/
     {
@@ -39361,7 +39361,7 @@ char VectorClass_ptr_MovieHandle::Release(int a2, unsigned int * a3)
           ++i; /*0x75a52e*/
         if ( *((unsigned char *)this + 13) ) /*0x75a53b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x75a546*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x75a546*/
           *((unsigned int *)this + 1) = 0; /*0x75a54e*/
         }
       }
@@ -39391,7 +39391,7 @@ void VectorClass_ptr_MovieHandle::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x75a58d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x75a593*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x75a593*/
     *((unsigned int *)this + 1) = 0; /*0x75a59b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x75a59e*/
@@ -39454,7 +39454,7 @@ char VectorClass_ptr_MovieHandle::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x75a628*/
       v4 = a3; /*0x75a63e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x75a63a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x75a63a*/
     *((unsigned char *)this + 12) = 1; /*0x75a642*/
     if ( !v4 ) /*0x75a646*/
       return 0; /*0x75a6ba*/
@@ -39467,7 +39467,7 @@ char VectorClass_ptr_MovieHandle::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x75a661*/
       if ( *((unsigned char *)this + 13) ) /*0x75a66e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x75a679*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x75a679*/
         *((unsigned int *)this + 1) = 0; /*0x75a681*/
       }
     }
@@ -39521,13 +39521,13 @@ VectorClass_flat * VectorClass_ptr_MovieHandle::QueryInterface(unsigned int * Bl
   *Block = &vt_VectorClass_MovieHandle; /*0x75a6f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x75a700*/
   {
-    __3_YAXPAX_Z(v3); /*0x75a708*/
+    RA2_OPDEL(v3); /*0x75a708*/
     *(Block + 1) = 0; /*0x75a710*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x75a71b*/
   *(Block + 2) = 0; /*0x75a721*/
   if ( (a2 & 1) != 0 ) /*0x75a728*/
-    __3_YAXPAX_Z(Block); /*0x75a72b*/
+    RA2_OPDEL(Block); /*0x75a72b*/
   return (VectorClass *)Block; /*0x75a735*/
 
 }
@@ -39544,13 +39544,13 @@ DynamicVector * VectorClass_ptr_MovieHandle::Constructor_VectorClass_MovieHandle
   *Block = &vt_VectorClass_MovieHandle; /*0x75a746*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x75a750*/
   {
-    __3_YAXPAX_Z(v3); /*0x75a758*/
+    RA2_OPDEL(v3); /*0x75a758*/
     *(Block + 1) = 0; /*0x75a760*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x75a76b*/
   *(Block + 2) = 0; /*0x75a771*/
   if ( (a2 & 1) != 0 ) /*0x75a778*/
-    __3_YAXPAX_Z(Block); /*0x75a77b*/
+    RA2_OPDEL(Block); /*0x75a77b*/
   return (DynamicVector *)Block; /*0x75a785*/
 
 }
@@ -39567,7 +39567,7 @@ void VectorClass_ptr_WaypointPathClass::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x763f99*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x763fa0*/
   {
-    __3_YAXPAX_Z(v2); /*0x763fa6*/
+    RA2_OPDEL(v2); /*0x763fa6*/
     *((unsigned int *)this + 1) = 0; /*0x763fae*/
   }
   *((unsigned char *)this + 13) = 0; /*0x763fb1*/
@@ -39645,7 +39645,7 @@ char VectorClass_ptr_WaypointPathClass::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x7644bc*/
       v4 = a3; /*0x7644d2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x7644ce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x7644ce*/
     *((unsigned char *)this + 12) = 1; /*0x7644d6*/
     if ( v4 ) /*0x7644da*/
     {
@@ -39658,7 +39658,7 @@ char VectorClass_ptr_WaypointPathClass::Release(int a2, unsigned int * a3)
           ++i; /*0x7644fe*/
         if ( *((unsigned char *)this + 13) ) /*0x76450b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x764516*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x764516*/
           *((unsigned int *)this + 1) = 0; /*0x76451e*/
         }
       }
@@ -39688,7 +39688,7 @@ void VectorClass_ptr_WaypointPathClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x76455d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x764563*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x764563*/
     *((unsigned int *)this + 1) = 0; /*0x76456b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x76456e*/
@@ -39751,7 +39751,7 @@ char VectorClass_ptr_WaypointPathClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x7645f8*/
       v4 = a3; /*0x76460e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x76460a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x76460a*/
     *((unsigned char *)this + 12) = 1; /*0x764612*/
     if ( !v4 ) /*0x764616*/
       return 0; /*0x76468a*/
@@ -39764,7 +39764,7 @@ char VectorClass_ptr_WaypointPathClass::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x764631*/
       if ( *((unsigned char *)this + 13) ) /*0x76463e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x764649*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x764649*/
         *((unsigned int *)this + 1) = 0; /*0x764651*/
       }
     }
@@ -39818,13 +39818,13 @@ VectorClass_flat * VectorClass_ptr_WaypointPathClass::QueryInterface(unsigned in
   *Block = &vt_VectorClass_WaypointPathClass; /*0x7646c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x7646d0*/
   {
-    __3_YAXPAX_Z(v3); /*0x7646d8*/
+    RA2_OPDEL(v3); /*0x7646d8*/
     *(Block + 1) = 0; /*0x7646e0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x7646eb*/
   *(Block + 2) = 0; /*0x7646f1*/
   if ( (a2 & 1) != 0 ) /*0x7646f8*/
-    __3_YAXPAX_Z(Block); /*0x7646fb*/
+    RA2_OPDEL(Block); /*0x7646fb*/
   return (VectorClass *)Block; /*0x764705*/
 
 }
@@ -39832,7 +39832,7 @@ VectorClass_flat * VectorClass_ptr_WaypointPathClass::QueryInterface(unsigned in
 
 // 0x764710
 namespace gamemd {
-DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_WaypointPathClass___(char a2)
+DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_WaypointPathClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -39841,13 +39841,13 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
   *Block = &vt_VectorClass_WaypointPathClass; /*0x764716*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x764720*/
   {
-    __3_YAXPAX_Z(v3); /*0x764728*/
+    RA2_OPDEL(v3); /*0x764728*/
     *(Block + 1) = 0; /*0x764730*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x76473b*/
   *(Block + 2) = 0; /*0x764741*/
-  if ( (a2 & 1) != 0 ) /*0x764748*/
-    __3_YAXPAX_Z(Block); /*0x76474b*/
+  if ( (Block & 1) != 0 ) /*0x764748*/
+    RA2_OPDEL(Block); /*0x76474b*/
   return (DynamicVector *)Block; /*0x764755*/
 
 }
@@ -39855,17 +39855,17 @@ DynamicVector * VectorClass_ptr_WaypointPathClass::Constructor_VectorClass_Waypo
 
 // 0x76B6C0
 namespace gamemd {
-unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(char a2)
+unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0( WDTState * aP1, int a3)
 {
 
   int v3; // eax
   int v5; // esi
   unsigned int *v7; // eax
   unsigned int *v8; // eax
-  __int16 v9; // cx
+  int16_t v9; // cx
   int v10; // esi
   char v11; // dl
-  __int16 v12; // ax
+  int16_t v12; // ax
   unsigned int v13; // eax
   char v14; // dl
   char v15; // dl
@@ -39937,45 +39937,45 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(char a2)
 
   v3 = a3; /*0x76b180*/
   v5 = 0; /*0x76b18c*/
-  *(unsigned int *)(a2 + 32) = 0; /*0x76b192*/
+  *(unsigned int *)(this + 32) = 0; /*0x76b192*/
   if ( a3 >= 28 ) /*0x76b195*/
   {
     while ( v5 + 28 <= v3 ) /*0x76b1ba*/
     {
-      v7 = (unsigned int *)__2_YAPAXI_Z(0x40u); /*0x76b1be*/
+      v7 = (unsigned int *)RA2_OPNEW(0x40u); /*0x76b1be*/
       if ( v7 ) /*0x76b1c8*/
         v8 = ParseWDTTerritories_Parse(v7); /*0x76b1cc*/
       else
         v8 = 0; /*0x76b1d3*/
       ParseWDTTerritories_Parse_76B790(&v79, (int)v8); /*0x76b1da*/
-      LOBYTE(v9) = 0; /*0x76b1e6*/
+      IDA_LOBYTE(v9) = 0; /*0x76b1e6*/
       v10 = v5 + 1; /*0x76b1e8*/
-      *(unsigned int *)(v80 + 8) = *(unsigned int *)(a2 + 32); /*0x76b1e9*/
-      HIBYTE(v9) = aP1->__pad_0[v10 - 1]; /*0x76b1ec*/
+      *(unsigned int *)(v80 + 8) = *(unsigned int *)(this + 32); /*0x76b1e9*/
+      IDA_HIBYTE(v9) = aP1->__pad_0[v10 - 1]; /*0x76b1ec*/
       *(unsigned short *)(v80 + 12) = v9; /*0x76b1f4*/
-      *(unsigned short *)(v80 + 12) += (unsigned __int8)aP1->__pad_0[v10]; /*0x76b201*/
+      *(unsigned short *)(v80 + 12) += (uint8_t)aP1->__pad_0[v10]; /*0x76b201*/
       v11 = aP1->__pad_0[v10 + 1]; /*0x76b205*/
       v10 += 2; /*0x76b211*/
       *(unsigned char *)(v80 + 14) = v11 + 0x80; /*0x76b212*/
-      LOBYTE(v12) = 0; /*0x76b21c*/
-      LOBYTE(v9) = aP1->__pad_0[v10++] + 0x80; /*0x76b21e*/
+      IDA_LOBYTE(v12) = 0; /*0x76b21c*/
+      IDA_LOBYTE(v9) = aP1->__pad_0[v10++] + 0x80; /*0x76b21e*/
       *(unsigned char *)(v80 + 15) = v9; /*0x76b222*/
-      HIBYTE(v12) = aP1->__pad_0[v10++]; /*0x76b229*/
+      IDA_HIBYTE(v12) = aP1->__pad_0[v10++]; /*0x76b229*/
       *(unsigned short *)(v80 + 16) = v12; /*0x76b22d*/
-      *(unsigned short *)(v80 + 16) += (unsigned __int8)aP1->__pad_0[v10]; /*0x76b23a*/
-      v13 = (unsigned __int8)aP1->__pad_0[++v10] - 128; /*0x76b248*/
+      *(unsigned short *)(v80 + 16) += (uint8_t)aP1->__pad_0[v10]; /*0x76b23a*/
+      v13 = (uint8_t)aP1->__pad_0[++v10] - 128; /*0x76b248*/
       ++v10; /*0x76b24d*/
       *(unsigned char *)(v80 + 28) = v13 & 0xF; /*0x76b253*/
       *(unsigned char *)(v80 + 29) = (v13 >> 4) & 0xF; /*0x76b25f*/
       v14 = aP1->__pad_0[v10++] + 0x80; /*0x76b269*/
       *(unsigned char *)(v80 + 30) = v14; /*0x76b26d*/
-      LOBYTE(v9) = aP1->__pad_0[v10++] + 0x80; /*0x76b277*/
+      IDA_LOBYTE(v9) = aP1->__pad_0[v10++] + 0x80; /*0x76b277*/
       *(unsigned char *)(v80 + 18) = v9; /*0x76b27b*/
-      LOBYTE(v13) = aP1->__pad_0[v10++] + 0x80; /*0x76b285*/
+      IDA_LOBYTE(v13) = aP1->__pad_0[v10++] + 0x80; /*0x76b285*/
       *(unsigned char *)(v80 + 19) = v13; /*0x76b288*/
       v15 = aP1->__pad_0[v10++] + 0x80; /*0x76b294*/
       *(unsigned char *)(v80 + 20) = v15; /*0x76b298*/
-      v16 = (unsigned __int8)aP1->__pad_0[v10] - 128; /*0x76b2a2*/
+      v16 = (uint8_t)aP1->__pad_0[v10] - 128; /*0x76b2a2*/
       v17 = v10 + 1; /*0x76b2a8*/
       *(unsigned int *)(v80 + 24) = v16; /*0x76b2a9*/
       if ( aP1->__pad_0[v17] <= 0x7Fu ) /*0x76b2b1*/
@@ -40122,37 +40122,37 @@ unsigned int * VectorClass_rc_ptr_WDTTerritory::loc_76B6C0(char a2)
         v64 = aP1->__pad_0[v63] + 0x80; /*0x76b598*/
       v65 = v63 + 1; /*0x76b5a8*/
       *(unsigned char *)(v80 + 54) = v64; /*0x76b5a9*/
-      v66 = (unsigned __int8)aP1->__pad_0[v65++] << 24; /*0x76b5b7*/
+      v66 = (uint8_t)aP1->__pad_0[v65++] << 24; /*0x76b5b7*/
       *(unsigned int *)(v80 + 60) = v66; /*0x76b5bb*/
-      v67 = ((unsigned __int8)aP1->__pad_0[v65++] << 16) + *(unsigned int *)(v80 + 60); /*0x76b5cb*/
+      v67 = ((uint8_t)aP1->__pad_0[v65++] << 16) + *(unsigned int *)(v80 + 60); /*0x76b5cb*/
       *(unsigned int *)(v80 + 60) = v67; /*0x76b5ce*/
-      v68 = ((unsigned __int8)aP1->__pad_0[v65++] << 8) + *(unsigned int *)(v80 + 60); /*0x76b5e0*/
+      v68 = ((uint8_t)aP1->__pad_0[v65++] << 8) + *(unsigned int *)(v80 + 60); /*0x76b5e0*/
       *(unsigned int *)(v80 + 60) = v68; /*0x76b5e3*/
-      v69 = (unsigned __int8)aP1->__pad_0[v65++] + *(unsigned int *)(v80 + 60); /*0x76b5f2*/
+      v69 = (uint8_t)aP1->__pad_0[v65++] + *(unsigned int *)(v80 + 60); /*0x76b5f2*/
       *(unsigned int *)(v80 + 60) = v69; /*0x76b5f5*/
-      v70 = (unsigned __int8)aP1->__pad_0[v65++] << 24; /*0x76b603*/
+      v70 = (uint8_t)aP1->__pad_0[v65++] << 24; /*0x76b603*/
       *(unsigned int *)(v80 + 56) = v70; /*0x76b607*/
-      v71 = ((unsigned __int8)aP1->__pad_0[v65++] << 16) + *(unsigned int *)(v80 + 56); /*0x76b617*/
+      v71 = ((uint8_t)aP1->__pad_0[v65++] << 16) + *(unsigned int *)(v80 + 56); /*0x76b617*/
       *(unsigned int *)(v80 + 56) = v71; /*0x76b61a*/
-      v72 = ((unsigned __int8)aP1->__pad_0[v65++] << 8) + *(unsigned int *)(v80 + 56); /*0x76b62c*/
+      v72 = ((uint8_t)aP1->__pad_0[v65++] << 8) + *(unsigned int *)(v80 + 56); /*0x76b62c*/
       *(unsigned int *)(v80 + 56) = v72; /*0x76b62f*/
-      v73 = (unsigned __int8)aP1->__pad_0[v65]; /*0x76b638*/
+      v73 = (uint8_t)aP1->__pad_0[v65]; /*0x76b638*/
       v5 = v65 + 1; /*0x76b640*/
       *(unsigned int *)(v80 + 56) += v73; /*0x76b641*/
-      v74 = *(unsigned int *)(a2 + 52); /*0x76b644*/
-      if ( *(unsigned int *)(a2 + 60) < v74 /*0x76b66c*/
-        || (*(unsigned char *)(a2 + 57) || !v74)
-        && (v75 = *(unsigned int *)(a2 + 64), v75 > 0)
-        && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)(a2 + 44) + 8))(a2 + 44, v75 + v74, 0) )
+      v74 = *(unsigned int *)(this + 52); /*0x76b644*/
+      if ( *(unsigned int *)(this + 60) < v74 /*0x76b66c*/
+        || (*(unsigned char *)(this + 57) || !v74)
+        && (v75 = *(unsigned int *)(this + 64), v75 > 0)
+        && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(this + 44) + 8))(this + 44, v75 + v74, 0) )
       {
-        v76 = *(unsigned int *)(a2 + 60); /*0x76b673*/
+        v76 = *(unsigned int *)(this + 60); /*0x76b673*/
         v78 = (WDTState *)v80; /*0x76b67a*/
-        *(unsigned int *)(a2 + 60) = v76 + 1; /*0x76b67e*/
-        ComPtr::Set((rc_ptr_base *)(*(unsigned int *)(a2 + 48) + 8 * v76), (int)v78); /*0x76b687*/
+        *(unsigned int *)(this + 60) = v76 + 1; /*0x76b67e*/
+        ComPtr::Set((rc_ptr_base *)(*(unsigned int *)(this + 48) + 8 * v76), (int)v78); /*0x76b687*/
       }
-      v77 = *(unsigned int *)(a2 + 32); /*0x76b68c*/
+      v77 = *(unsigned int *)(this + 32); /*0x76b68c*/
       v79.vfptr = &vt_rc_ptr_WDTTerritory; /*0x76b68f*/
-      *(unsigned int *)(a2 + 32) = v77 + 1; /*0x76b698*/
+      *(unsigned int *)(this + 32) = v77 + 1; /*0x76b698*/
       ComPtr::Release(&v79); /*0x76b69f*/
       if ( v5 >= a3 ) /*0x76b6a8*/
         return 1; /*0x76b6b1*/
@@ -40286,7 +40286,7 @@ VectorClass_flat * VectorClass_rc_ptr_WDTTerritory::QueryInterface(unsigned int 
   *((unsigned char *)Block + 13) = 0; /*0x76bbec*/
   *(Block + 2) = 0; /*0x76bbf2*/
   if ( (a2 & 1) != 0 ) /*0x76bbf9*/
-    __3_YAXPAX_Z(Block); /*0x76bbfc*/
+    RA2_OPDEL(Block); /*0x76bbfc*/
   return (VectorClass *)Block; /*0x76bc06*/
 
 }
@@ -40312,12 +40312,12 @@ char VectorClass_flat::Shrink()
     v5 = 10; /*0x7ae756*/
   if ( v5 >= v3 ) /*0x7ae75d*/
     return 0; /*0x7ae760*/
-  v6 = __2_YAPAXI_Z(4 * v5); /*0x7ae76e*/
+  v6 = RA2_OPNEW(4 * v5); /*0x7ae76e*/
   v7 = (const void *)*((char *)this + 2); /*0x7ae773*/
   v8 = (int)v6; /*0x7ae77b*/
   if ( v7 ) /*0x7ae77f*/
     qmemcpy(v6, v7, 4 * *this); /*0x7ae78f*/
-  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7ae79d*/
+  RA2_OPDEL((void *)*((char *)this + 2)); /*0x7ae79d*/
   *((char *)this + 2) = v8; /*0x7ae7a9*/
   *((char *)this + 1) = v5; /*0x7ae7ac*/
   return 1; /*0x7ae742*/
@@ -40379,7 +40379,7 @@ char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release(int a2, un
     if ( a3 ) /*0x7b28fc*/
       v4 = a3; /*0x7b2912*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x7b290e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x7b290e*/
     *((unsigned char *)this + 12) = 1; /*0x7b2916*/
     if ( v4 ) /*0x7b291a*/
     {
@@ -40392,7 +40392,7 @@ char VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Release(int a2, un
           ++i; /*0x7b293e*/
         if ( *((unsigned char *)this + 13) ) /*0x7b294b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x7b2956*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x7b2956*/
           *((unsigned int *)this + 1) = 0; /*0x7b295e*/
         }
       }
@@ -40422,7 +40422,7 @@ void VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Remove()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x7b299d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x7b29a3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x7b29a3*/
     *((unsigned int *)this + 1) = 0; /*0x7b29ab*/
   }
   *((unsigned char *)this + 13) = 0; /*0x7b29ae*/
@@ -40480,13 +40480,13 @@ VectorClass_flat * VectorClass_ptr_WinsockBufferType_WinsockInterfaceClass::Quer
   *Block = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b2b06*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x7b2b10*/
   {
-    __3_YAXPAX_Z(v3); /*0x7b2b18*/
+    RA2_OPDEL(v3); /*0x7b2b18*/
     *(Block + 1) = 0; /*0x7b2b20*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x7b2b2b*/
   *(Block + 2) = 0; /*0x7b2b31*/
   if ( (a2 & 1) != 0 ) /*0x7b2b38*/
-    __3_YAXPAX_Z(Block); /*0x7b2b3b*/
+    RA2_OPDEL(Block); /*0x7b2b3b*/
   return (VectorClass *)Block; /*0x7b2b45*/
 
 }
@@ -40548,7 +40548,7 @@ char VectorClass_PAE::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x7b437c*/
       v4 = a3; /*0x7b4392*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x7b438e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x7b438e*/
     *((unsigned char *)this + 12) = 1; /*0x7b4396*/
     if ( v4 ) /*0x7b439a*/
     {
@@ -40561,7 +40561,7 @@ char VectorClass_PAE::Release(int a2, unsigned int * a3)
           ++i; /*0x7b43be*/
         if ( *((unsigned char *)this + 13) ) /*0x7b43cb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x7b43d6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x7b43d6*/
           *((unsigned int *)this + 1) = 0; /*0x7b43de*/
         }
       }
@@ -40591,7 +40591,7 @@ void VectorClass_PAE::Set()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x7b441d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x7b4423*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x7b4423*/
     *((unsigned int *)this + 1) = 0; /*0x7b442b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x7b442e*/
@@ -40649,13 +40649,13 @@ VectorClass_flat * VectorClass_PAE::QueryInterface(unsigned int * Block, char a2
   *Block = &vt_VectorClass_unsigned_char; /*0x7b4586*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x7b4590*/
   {
-    __3_YAXPAX_Z(v3); /*0x7b4598*/
+    RA2_OPDEL(v3); /*0x7b4598*/
     *(Block + 1) = 0; /*0x7b45a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x7b45ab*/
   *(Block + 2) = 0; /*0x7b45b1*/
   if ( (a2 & 1) != 0 ) /*0x7b45b8*/
-    __3_YAXPAX_Z(Block); /*0x7b45bb*/
+    RA2_OPDEL(Block); /*0x7b45bb*/
   return (VectorClass *)Block; /*0x7b45c5*/
 
 }

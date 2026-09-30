@@ -500,7 +500,7 @@ struct ScenarioClass {
     ScenarioClass * * CopyStartPositions();
     void* * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     char ClearFlag();
-    char MissionStubReturnZero2(MPCooperative * aP0);
+    char MissionStubReturnZero2(void * aP0);
     char MissionStubReturnZero4(int a1);
     char StubReturnFalse();
     char StubReturnFalse10();
@@ -517,10 +517,10 @@ struct ScenarioClass {
     char saveGame();
     int AssignStartPositions(char a1);
     int CleanupTemporary();
-    int LoadScenarioAndStart(AnimClass * Source, char a2, int a3);
+    int LoadScenarioAndStart(void * Source, char a2, int a3);
     int MissionStubReturnZero();
     int MissionStubReturnZero3();
-    int ReadMapINI(CCINIClass * aP1);
+    int ReadMapINI(void * aP1);
     int StubReturnFalse11();
     int initTeams();
     unsigned char * ProcessIntroTimer();

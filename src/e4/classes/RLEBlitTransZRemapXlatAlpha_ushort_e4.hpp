@@ -24,13 +24,13 @@ struct RLEBlitTransZRemapXlatAlpha_ushort {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    RLEBlitTransZRemapXlatAlpha_ushort * QueryInterface(char a2);
+    RLEBlitTransZRemapXlatAlpha_ushort * QueryInterface(unsigned int * Block, char a2);
     int CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
     int Release(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12);
     std::locale::facet * Constructor_RLEBlitter(char a2);
     std::locale::facet * Constructor_RLEBlitter_0(char a2);
     std::locale::facet * Constructor_RLEBlitter_1(char a2);
-    unsigned short * AddRef(int arg0, unsigned char * a2, int a4, RLEBlitTransZRemapXlatAlpha_ushort * aP4, int a6, int _2C, unsigned short * a7, int a9, int a10, int a11);
+    unsigned short * AddRef(int arg0, unsigned __int8 * a2, int a4, void * aP4, int a6, int _2C, unsigned __int16 * a7, int a9, int a10, int a11);
 };
 
 } // namespace gamemd

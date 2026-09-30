@@ -20,17 +20,17 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   wchar_t *v2; // ecx
 
   LocomotionClass::Init((unsigned int *)this); /*0x718003*/
-  *((unsigned int *)this + 7) = MEMORY[0xB0EBF8]; /*0x718011*/
-  *((unsigned int *)this + 8) = MEMORY[0xB0EBFC]; /*0x71801a*/
-  *((unsigned int *)this + 9) = MEMORY[0xB0EC00]; /*0x718026*/
-  *((unsigned int *)this + 10) = MEMORY[0xB0EBF8]; /*0x71802e*/
-  *((unsigned int *)this + 11) = MEMORY[0xB0EBFC]; /*0x718036*/
-  *((unsigned int *)this + 12) = MEMORY[0xB0EC00]; /*0x71803e*/
+  *((unsigned int *)this + 7) = g_abs_B0EBF8; /*0x718011*/
+  *((unsigned int *)this + 8) = g_abs_B0EBFC; /*0x71801a*/
+  *((unsigned int *)this + 9) = g_abs_B0EC00; /*0x718026*/
+  *((unsigned int *)this + 10) = g_abs_B0EBF8; /*0x71802e*/
+  *((unsigned int *)this + 11) = g_abs_B0EBFC; /*0x718036*/
+  *((unsigned int *)this + 12) = g_abs_B0EC00; /*0x71803e*/
   *((unsigned char *)this + 52) = 0; /*0x718043*/
   *((unsigned char *)this + 53) = 0; /*0x718046*/
   *((unsigned char *)this + 54) = 0; /*0x718049*/
   *((unsigned int *)this + 14) = 0; /*0x71804c*/
-  v2 = MEMORY[0xA8ED84]; /*0x71804f*/
+  v2 = g_abs_A8ED84; /*0x71804f*/
   *((unsigned int *)this + 17) = 0; /*0x718055*/
   *((unsigned int *)this + 15) = v2; /*0x718058*/
   *((unsigned int *)this + 18) = 0; /*0x71805b*/

@@ -195,7 +195,7 @@ void WOL_RequestMatch(void * a1)
   if ( v1 ) /*0x7a06b2*/
     CloseDialog(v1, 0); /*0x7a06b8*/
   g_NetworkLobbyState = 0; /*0x7a06bd*/
-    Network::Init();
+    this->Network::Init();
   if ( g_WOL_UserList.owningHouseIndex < 2 ) /*0x7a06cf*/
     goto LABEL_17; /*0x7a06cf*/
   for ( i = 0; i < (int)stru_B76AC4.?; ++i ) /*0x7a06de*/
@@ -208,7 +208,7 @@ void WOL_RequestMatch(void * a1)
   CollectWOLConnectionTokens(v28); /*0x7a072c*/
   memset(&v31[168], 0, 0x6Cu); /*0x7a074b*/
   v4 = -1; /*0x7a074d*/
-    Debug::Log();
+    this->Debug::Log();
   v5 = 0; /*0x7a075e*/
   if ( g_WOL_UserList.owningHouseIndex <= 0 ) /*0x7a0762*/
     goto LABEL_17; /*0x7a0762*/
@@ -239,7 +239,7 @@ void WOL_RequestMatch(void * a1)
   *(unsigned int *)&v31[36] = 0; /*0x7a080c*/
   v31[40] = 0; /*0x7a0810*/
   ReadRegistryOptionsWOL((ObjectClass *)&v31[36]); /*0x7a0815*/
-  ComPtr::Constructor((ComPtr *)&v31[24]); /*0x7a081e*/
+  ((ComPtr *)((ComPtr *)&v31[24]))->Constructor(); /*0x7a081e*/
   *(unsigned int *)&v31[24] = (void*)&rc_ptr_PlayerProfile_vftable; /*0x7a082c*/
   if ( (uint8_t)Flag::IsNot2((Flag *)&v31[36]) ) /*0x7a0830*/
   {
@@ -259,7 +259,7 @@ void WOL_RequestMatch(void * a1)
     goto LABEL_35; /*0x7a0897*/
   String::Assign_Alt((String *)&v31[32], aMatchwdt); /*0x7a08a6*/
   matched = RequestMatchWOL_Helper(); /*0x7a08b4*/
-  ComPtr::Constructor((ComPtr *)&v31[16]); /*0x7a08b6*/
+  ((ComPtr *)((ComPtr *)&v31[16]))->Constructor(); /*0x7a08b6*/
   *(unsigned int *)&v31[16] = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7a08c4*/
   ((ComPtr *)((ComPtr *)&v31[16]))->Set(matched[1]); /*0x7a08cc*/
   if ( *(unsigned int *)&v31[20] ) /*0x7a08d7*/
@@ -319,7 +319,7 @@ void WOL_RequestMatch(void * a1)
   else
     String::Append((String *)v31, (const char *)&stru_82BA00.?); /*0x7a0a82*/
   String::AssignFromPtr((String *)&v31[12], (const char **)&g_WindowManager.__pad_EC[684]); /*0x7a0a90*/
-  String::ToLower((String *)&v31[12]); /*0x7a0a99*/
+  ((String *)((String *)&v31[12]))->ToLower(); /*0x7a0a99*/
   v15 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 /*0x7a0abd*/
                   + 4 * (dword_B76548(&v31[12]) & ((1 << IDA_SLOBYTE(g_WOL_ConnectionPool.HashMap_field_0x0C)) - 1)));
   if ( v15 ) /*0x7a0ac2*/
@@ -407,12 +407,12 @@ void E4Recv_7A0DD0::sub_7A0DD0()
   if ( this ) /*0x7a0dd8*/
   {
     v2 = 0; /*0x7a0dda*/
-    v3 = (char **)&MEMORY[0xA8DA90]; /*0x7a0ddc*/
+    v3 = (char **)&g_abs_A8DA90; /*0x7a0ddc*/
     while ( !*v3 || strcmp(ToWideStringChar(*v3), (unsigned char *)this + 36) ) /*0x7a0e1a*/
     {
       ++v3; /*0x7a0e1c*/
       ++v2; /*0x7a0e1f*/
-      if ( (int)v3 >= (int)&MEMORY[0xA8DAB0] ) /*0x7a0e26*/
+      if ( (int)v3 >= (int)&g_abs_A8DAB0 ) /*0x7a0e26*/
         return; /*0x7a0e26*/
     }
     GameUI = (HWND)Dialog::FindGameUI(); /*0x7a0e2d*/
@@ -1040,7 +1040,7 @@ Coord * * E4Recv_7A2830::sub_7A2830()
       if ( v3 >= (int)g_WOL_State ) /*0x7a288d*/
         return result; /*0x7a288d*/
     }
-    return (*(int (**)(LPVOID, unsigned int *))(*(unsigned int *)MEMORY[0xAC116C] + 84))(MEMORY[0xAC116C], v6); /*0x7a28a4*/
+    return (*(int (**)(LPVOID, unsigned int *))(*(unsigned int *)g_abs_AC116C + 84))(g_abs_AC116C, v6); /*0x7a28a4*/
   }
   return result; /*0x7a288f*/
 
@@ -1367,8 +1367,8 @@ AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
   unsigned int v6[4]; // [esp+Ch] [ebp-20h] BYREF
   unsigned char v7[16]; // [esp+1Ch] [ebp-10h] BYREF
 
-  result = MEMORY[0x887310]; /*0x7af640*/
-  if ( MEMORY[0x887310] ) /*0x7af64d*/
+  result = g_abs_887310; /*0x7af640*/
+  if ( g_abs_887310 ) /*0x7af64d*/
   {
     v4 = *((unsigned int *)this + 7); /*0x7af64f*/
     if ( v4 ) /*0x7af654*/
@@ -1378,9 +1378,9 @@ AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
       v6[1] = v5[1]; /*0x7af66b*/
       v6[2] = v5[2]; /*0x7af672*/
       v6[3] = v5[3]; /*0x7af67f*/
-      (*(void (**)(int, unsigned int *, unsigned int))(*(unsigned int *)MEMORY[0x887310] + 20))(MEMORY[0x887310], v6, 0); /*0x7af68a*/
-      return (*(int (**)(int, unsigned int *, unsigned int, unsigned int *, unsigned int, int))(*(unsigned int *)MEMORY[0x887310] + 8))( /*0x7af6a7*/
-               MEMORY[0x887310],
+      (*(void (**)(int, unsigned int *, unsigned int))(*(unsigned int *)g_abs_887310 + 20))(g_abs_887310, v6, 0); /*0x7af68a*/
+      return (*(int (**)(int, unsigned int *, unsigned int, unsigned int *, unsigned int, int))(*(unsigned int *)g_abs_887310 + 8))( /*0x7af6a7*/
+               g_abs_887310,
                v6,
                *((unsigned int *)this + 7),
                v6,
@@ -1816,7 +1816,7 @@ void INIClass::SetGameOptionsPing()
   Debug::Log(); /*0x7a0eaf*/
   for ( i = 0; i < 8; ++i ) /*0x7a0eb7*/
   {
-    v5 = (char *)*(&MEMORY[0xA8DA90] + i); /*0x7a0eb9*/
+    v5 = (char *)*(&g_abs_A8DA90 + i); /*0x7a0eb9*/
     if ( v5 ) /*0x7a0ec2*/
     {
       if ( !strcmp(ToWideStringChar(v5), this->__pad_0) ) /*0x7a0ed1*/
@@ -1955,7 +1955,7 @@ int sub_7A2600(HWND hWnd, unsigned int a2, int a3, char * a4)
     Dialog::DrawBackground(hWnd); /*0x7a265b*/
     Dialog::StopBink(hWnd); /*0x7a2662*/
     v5 = g_UIControlState; /*0x7a2667*/
-    if ( g_UIControlState || MEMORY[0xA8B254] == -1 && (v5 = dword_ABE154) != 0 ) /*0x7a2682*/
+    if ( g_UIControlState || g_abs_A8B254 == -1 && (v5 = dword_ABE154) != 0 ) /*0x7a2682*/
       Skirmish::RenderPreview(v5, hWnd); /*0x7a2685*/
     if ( LoadScreen::IsActive(dword_AC4F58) ) /*0x7a268f*/
       LoadScreen::Render((int)dword_AC4F58, a3, (int)a4, NAN); /*0x7a26a5*/

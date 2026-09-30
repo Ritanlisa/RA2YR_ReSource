@@ -520,12 +520,13 @@ struct TechnoClass {
     unsigned int vtable31;
     unsigned int vtable32;
     unsigned int queueUpToEnter;
+    unsigned int __pad_0;
     unsigned int EvaluateTarget;
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);
     BOOL updateWeaponCooldown(int a1);
     Coord * * RegisterKill();
-    HouseClass * * RenderTechnoSHP(int * a0, int * a1, int * a2, HouseClass * aP3, HouseClass * aP4, int a6, int a7, TechnoClass * aP7, TechnoClass * aP8, int a10, int a11);
+    HouseClass * * RenderTechnoSHP(int * a0, int * a1, int * a2, void * aP3, void * aP4, int a6, int a7, void * aP7, void * aP8, int a10, int a11);
     char ScanAdjacentCells();
     int COMStub_Return0_287();
     int DTOR(void *a1 = 0);
@@ -537,13 +538,13 @@ struct TechnoClass {
     int StubReturnFalse7();
     int StubReturnFalse8();
     int StubReturnFalse9();
-    int checkAmmo(AircraftClass * aP0);
+    int checkAmmo(void * aP0);
     int checkMovementRestrictions();
     int processPowerDrain();
-    TechnoClass(AbstractClass * aP1);
-    unsigned int * Update(BuildingClass * aP0, FootClass * aP1, void *a3 = 0, void *a1 = 0);
+    TechnoClass(void * aP1);
+    unsigned int * Update(void * aP0, void * aP1, void *a3 = 0, void *a1 = 0);
     void GetField(void *a1 = 0);
-    void updateSightRange(IUnknown * aP1, int a3);
+    void updateSightRange(void * aP1, int a3);
     static double GetTileAnimationData(...);  // C2597 interim stub
     static double InvulnerabilityIntensity_SetContext(...);  // C2597 interim stub
     static double MutateAll(...);  // C2597 interim stub

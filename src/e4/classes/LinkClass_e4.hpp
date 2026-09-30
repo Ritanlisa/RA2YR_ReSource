@@ -13,8 +13,8 @@ struct LinkClass {
     char LinkClass_field_0C[4];  // 0xC
     unsigned int __pad_0;
 // --- flat members (END) ---
-    LinkClass * Destru_vt00(char a2);
-    int Destroy(void *a1 = 0);
+    LinkClass * Destru_vt00(unsigned int * Block, char a2);
+    int Destroy();
     int Destruct(void *a1 = 0);
 };
 

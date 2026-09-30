@@ -11,20 +11,23 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x65B1E0
 namespace gamemd {
 RadSiteClass::RadSiteClass()
 {
+    unsigned int v2 = 0;  /* G37 hoist */
 
   #72 *v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((int)this); /*0x65b1e3*/
+  ((AbstractClass *)((int)this))->Constructor(); /*0x65b1e3*/
   *((unsigned int *)this + 9) = 0; /*0x65b1ea*/
-  *((unsigned int *)this + 10) = MEMORY[0xA8ED84]; /*0x65b1f3*/
+  *((unsigned int *)this + 10) = g_abs_A8ED84; /*0x65b1f3*/
   *((unsigned int *)this + 12) = 0; /*0x65b1f6*/
-  v2 = MEMORY[0xA8ED84]; /*0x65b1f9*/
+  v2 = g_abs_A8ED84; /*0x65b1f9*/
   *((unsigned int *)this + 15) = 0; /*0x65b1ff*/
   *((unsigned int *)this + 13) = v2; /*0x65b202*/
   *((unsigned short *)this + 32) = 0; /*0x65b205*/
@@ -42,16 +45,16 @@ RadSiteClass::RadSiteClass()
   *((unsigned int *)this + 1) = &RadSiteClass::`vftable'; /*0x65b22e*/
   *((unsigned int *)this + 2) = &RadSiteClass::`vftable'; /*0x65b235*/
   *((unsigned int *)this + 3) = &RadSiteClass::`vftable'; /*0x65b23c*/
-  if ( MEMORY[0xB04BE0] < MEMORY[0xB04BD8] /*0x65b277*/
-    || (MEMORY[0xB04BDD] || !MEMORY[0xB04BD8])
-    && MEMORY[0xB04BE4] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB04BD0] + 8))(
-         &MEMORY[0xB04BD0],
-         MEMORY[0xB04BD8] + MEMORY[0xB04BE4],
+  if ( g_abs_B04BE0 < g_abs_B04BD8 /*0x65b277*/
+    || (g_abs_B04BDD || !g_abs_B04BD8)
+    && g_abs_B04BE4 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B04BD0 + 8))(
+         &g_abs_B04BD0,
+         g_abs_B04BD8 + g_abs_B04BE4,
          0) )
   {
-    v3 = MEMORY[0xB04BE0]++; /*0x65b284*/
-    *((unsigned int *)MEMORY[0xB04BD4] + v3) = this; /*0x65b293*/
+    v3 = g_abs_B04BE0++; /*0x65b284*/
+    *((unsigned int *)g_abs_B04BD4 + v3) = this; /*0x65b293*/
   }
   return this; /*0x65b298*/
 
@@ -91,13 +94,13 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x65b3e9*/
     {
       AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x65b3f2*/
-      v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x65b3f7*/
-      *(unsigned int *)&aP0[1].__pad_0[12] = 0; /*0x65b3fd*/
-      *(unsigned int *)&aP0[1].__pad_0[4] = v3; /*0x65b404*/
+      v3 = *(IUnknown **)&((unsigned int *)(HouseClass_Player.__pad_5568))[23248]; /*0x65b3f7*/
+      *(unsigned int *)&aP0[((unsigned int *)(1].__pad_0))[12] = 0; /*0x65b3fd*/
+      *(unsigned int *)&aP0[((unsigned int *)(1].__pad_0))[4] = v3; /*0x65b404*/
       aP0[1].uniqueId = *(unsigned int *)&HouseClass_Player.__pad_5568[23248]; /*0x65b40c*/
       aP0[1].nextArrayIndex = 0; /*0x65b40f*/
       *(unsigned int *)aP0->__pad_0 = &RadSiteClass::`vftable'; /*0x65b416*/
-      *(unsigned int *)&aP0->__pad_0[4] = &RadSiteClass::`vftable'; /*0x65b41c*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &RadSiteClass::`vftable'; /*0x65b41c*/
       *(unsigned int *)&aP0->__pad_0[8] = &RadSiteClass::`vftable'; /*0x65b423*/
       *(unsigned int *)&aP0->__pad_0[12] = &vt_RadSiteClass; /*0x65b42a*/
     }

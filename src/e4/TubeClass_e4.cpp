@@ -21,11 +21,11 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x7281b6*/
     {
-      AbstractClass::Constructor(aP0); /*0x7281ba*/
+      ((AbstractClass *)(aP0))->Constructor(); /*0x7281ba*/
       *(unsigned int *)aP0->__pad_0 = &TubeClass::`vftable'; /*0x7281bf*/
-      *(unsigned int *)&aP0->__pad_0[4] = &TubeClass::`vftable'; /*0x7281c5*/
-      *(unsigned int *)&aP0->__pad_0[8] = &TubeClass::`vftable'; /*0x7281cc*/
-      *(unsigned int *)&aP0->__pad_0[12] = &vt_TubeClass; /*0x7281d3*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = &TubeClass::`vftable'; /*0x7281c5*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[8] = &TubeClass::`vftable'; /*0x7281cc*/
+      *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[12] = &vt_TubeClass; /*0x7281d3*/
     }
     return 0; /*0x7281da*/
   }

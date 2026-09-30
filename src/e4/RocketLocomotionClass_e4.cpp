@@ -21,10 +21,10 @@ RocketLocomotionClass::RocketLocomotionClass()
   *((unsigned int *)this + 6) = dword_B04E38; /*0x661ed1*/
   *((unsigned int *)this + 7) = dword_B04E3C; /*0x661eda*/
   *((unsigned int *)this + 8) = dword_B04E40; /*0x661ee3*/
-  *((unsigned int *)this + 9) = MEMORY[0xA8ED84]; /*0x661eee*/
+  *((unsigned int *)this + 9) = g_abs_A8ED84; /*0x661eee*/
   *((unsigned int *)this + 11) = 0; /*0x661ef1*/
   *((unsigned int *)this + 12) = 0; /*0x661ef4*/
-  v2 = MEMORY[0xA8ED84]; /*0x661ef7*/
+  v2 = g_abs_A8ED84; /*0x661ef7*/
   *((unsigned int *)this + 15) = 0; /*0x661efd*/
   *((unsigned int *)this + 13) = v2; /*0x661f00*/
   *((unsigned int *)this + 18) = 0; /*0x661f03*/
@@ -66,7 +66,7 @@ int RocketLocomotionClass::BeginMove(int * a1, int * a2)
     {
       *a1 = (int)&LocomotionClass::`vftable'; /*0x663428*/
       a1[1] = (int)&vt_LocomotionClass; /*0x66342e*/
-      v3 = MEMORY[0xA8ED84]; /*0x663435*/
+      v3 = g_abs_A8ED84; /*0x663435*/
       a1[15] = 0; /*0x66343b*/
       a1[13] = (int)v3; /*0x663442*/
       *a1 = (int)&RocketLocomotionClass::`vftable'; /*0x663445*/
@@ -84,20 +84,20 @@ int RocketLocomotionClass::StubReturn96()
 
 }
 // 0x6635C0
-RocketLocomotionClass * RocketLocomotionClass::ProcessMove(char a2)
+RocketLocomotionClass * RocketLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
   *Block = &RocketLocomotionClass::`vftable'; /*0x6635c3*/
   *(Block + 1) = &vt_RocketLocomotionClass; /*0x6635c9*/
   LocomotionClass::Construct(Block); /*0x6635d0*/
-  if ( (a2 & 1) != 0 ) /*0x6635da*/
-    __3_YAXPAX_Z(Block); /*0x6635dd*/
+  if ( (Block & 1) != 0 ) /*0x6635da*/
+    RA2_OPDEL(Block); /*0x6635dd*/
   return (RocketLocomotionClass *)Block; /*0x6635e7*/
 
 }
 // 0x6647B0
 namespace gamemd {
-void RocketLocomotionClass_17::ddtor(void *a1 = 0)
+void RocketLocomotionClass_17::ddtor()
 {
 
   void *v2; // eax
@@ -106,7 +106,7 @@ void RocketLocomotionClass_17::ddtor(void *a1 = 0)
   *((unsigned int *)this + 4) = 0; /*0x6647b9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6647c0*/
   {
-    __3_YAXPAX_Z(v2); /*0x6647c6*/
+    RA2_OPDEL(v2); /*0x6647c6*/
     *((unsigned int *)this + 1) = 0; /*0x6647ce*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6647d1*/
@@ -184,7 +184,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x66486c*/
       v4 = a3; /*0x664882*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x66487e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x66487e*/
     *((unsigned char *)this + 12) = 1; /*0x664886*/
     if ( v4 ) /*0x66488a*/
     {
@@ -197,7 +197,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
           ++i; /*0x6648ae*/
         if ( *((unsigned char *)this + 13) ) /*0x6648bb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x6648c6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x6648c6*/
           *((unsigned int *)this + 1) = 0; /*0x6648ce*/
         }
       }
@@ -222,12 +222,12 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 
 // 0x664900
 namespace gamemd {
-void RocketLocomotionClass_17::Destroy(void *a1 = 0)
+void RocketLocomotionClass_17::Destroy()
 {
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x66490d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x664913*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x664913*/
     *((unsigned int *)this + 1) = 0; /*0x66491b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x66491e*/
@@ -290,7 +290,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6649a8*/
       v4 = a3; /*0x6649be*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6649ba*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6649ba*/
     *((unsigned char *)this + 12) = 1; /*0x6649c2*/
     if ( !v4 ) /*0x6649c6*/
       return 0; /*0x664a3a*/
@@ -303,7 +303,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
         ++i; /*0x6649e1*/
       if ( *((unsigned char *)this + 13) ) /*0x6649ee*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6649f9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x6649f9*/
         *((unsigned int *)this + 1) = 0; /*0x664a01*/
       }
     }
@@ -347,22 +347,22 @@ int RocketLocomotionClass_17::Launch(unsigned int * a2)
 }
 // 0x664A70
 namespace gamemd {
-void RocketLocomotionClass_17::Constructor(void *a1 = 0)
+void RocketLocomotionClass_17::Constructor(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x664a73*/
-  *Block = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x664a76*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_OwnerTalkClass_ConnectionListStruct);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x664a80*/
   {
-    __3_YAXPAX_Z(v3); /*0x664a88*/
+    RA2_OPDEL(v3); /*0x664a88*/
     *(Block + 1) = 0; /*0x664a90*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x664a9b*/
   *(Block + 2) = 0; /*0x664aa1*/
   if ( (a2 & 1) != 0 ) /*0x664aa8*/
-    __3_YAXPAX_Z(Block); /*0x664aab*/
+    RA2_OPDEL(Block); /*0x664aab*/
   return (VectorClass *)Block; /*0x664ab5*/
 
 }
@@ -370,22 +370,22 @@ void RocketLocomotionClass_17::Constructor(void *a1 = 0)
 
 // 0x664AC0
 namespace gamemd {
-DynamicVector * RocketLocomotionClass_17::QueryInterface(char a2)
+DynamicVector * RocketLocomotionClass_17::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x664ac3*/
-  *Block = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x664ac6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_OwnerTalkClass_ConnectionListStruct);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x664ad0*/
   {
-    __3_YAXPAX_Z(v3); /*0x664ad8*/
+    RA2_OPDEL(v3); /*0x664ad8*/
     *(Block + 1) = 0; /*0x664ae0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x664aeb*/
   *(Block + 2) = 0; /*0x664af1*/
-  if ( (a2 & 1) != 0 ) /*0x664af8*/
-    __3_YAXPAX_Z(Block); /*0x664afb*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x664af8*/
+    RA2_OPDEL(Block); /*0x664afb*/
   return (DynamicVector *)Block; /*0x664b05*/
 
 }

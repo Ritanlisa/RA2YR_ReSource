@@ -10,7 +10,7 @@
 
 // 0x4A7D20
 namespace gamemd {
-void Dial8Class_48::ClearBuffer(void *a1 = 0)
+void Dial8Class_48::ClearBuffer()
 {
 
   void *v2; // eax
@@ -19,7 +19,7 @@ void Dial8Class_48::ClearBuffer(void *a1 = 0)
   *((unsigned int *)this + 4) = 0; /*0x4a7d29*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4a7d30*/
   {
-    __3_YAXPAX_Z(v2); /*0x4a7d36*/
+    RA2_OPDEL(v2); /*0x4a7d36*/
     *((unsigned int *)this + 1) = 0; /*0x4a7d3e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4a7d41*/
@@ -43,10 +43,10 @@ unsigned int Dial8Class_48::PointerToIndex(int a2)
 
 // 0x4A7D70
 namespace gamemd {
-int Dial8Class_48::Seek(int a2, void *a1 = 0)
+int Dial8Class_48::Seek( int a2)
 {
 
-  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * a2); /*0x4a7d7a*/
+  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * this); /*0x4a7d7a*/
 
 }
 } // namespace gamemd
@@ -97,7 +97,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a7ddc*/
       v4 = a3; /*0x4a7df2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a7dee*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4a7dee*/
     *((unsigned char *)this + 12) = 1; /*0x4a7df6*/
     if ( v4 ) /*0x4a7dfa*/
     {
@@ -110,7 +110,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
           ++i; /*0x4a7e1e*/
         if ( *((unsigned char *)this + 13) ) /*0x4a7e2b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a7e36*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4a7e36*/
           *((unsigned int *)this + 1) = 0; /*0x4a7e3e*/
         }
       }
@@ -135,12 +135,12 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
 
 // 0x4A7E70
 namespace gamemd {
-void Dial8Class_48::ddtor(void *a1 = 0)
+void Dial8Class_48::ddtor()
 {
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4a7e7d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4a7e83*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4a7e83*/
     *((unsigned int *)this + 1) = 0; /*0x4a7e8b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4a7e8e*/
@@ -151,7 +151,7 @@ void Dial8Class_48::ddtor(void *a1 = 0)
 
 // 0x4A7EA0
 namespace gamemd {
-int Dial8Class_48::Read(int a2, void *a1 = 0)
+int Dial8Class_48::Read( unsigned int * a2)
 {
 
   int result; // eax
@@ -164,7 +164,7 @@ int Dial8Class_48::Read(int a2, void *a1 = 0)
   result = 0; /*0x4a7eb1*/
   if ( v3 <= 0 ) /*0x4a7eb5*/
     return -1; /*0x4a7ecc*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x4a7ebb*/
+  for ( i = *(unsigned int **)((char *)this + 4); *i != *this; ++i ) /*0x4a7ebb*/
   {
     if ( ++result >= v3 ) /*0x4a7eca*/
       return -1; /*0x4a7eca*/
@@ -203,7 +203,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a7f18*/
       v4 = a3; /*0x4a7f2e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a7f2a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4a7f2a*/
     *((unsigned char *)this + 12) = 1; /*0x4a7f32*/
     if ( !v4 ) /*0x4a7f36*/
       return 0; /*0x4a7faa*/
@@ -216,7 +216,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4a7f51*/
       if ( *((unsigned char *)this + 13) ) /*0x4a7f5e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a7f69*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4a7f69*/
         *((unsigned int *)this + 1) = 0; /*0x4a7f71*/
       }
     }
@@ -260,22 +260,22 @@ int Dial8Class_48::FindItem(unsigned int * a2)
 }
 // 0x4A8030
 namespace gamemd {
-VectorClass_flat * Dial8Class_48::QueryInterface(char a2)
+VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a8033*/
-  *Block = &vt_VectorClass_DiskLaserClass; /*0x4a8036*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_DiskLaserClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a8040*/
   {
-    __3_YAXPAX_Z(v3); /*0x4a8048*/
+    RA2_OPDEL(v3); /*0x4a8048*/
     *(Block + 1) = 0; /*0x4a8050*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4a805b*/
   *(Block + 2) = 0; /*0x4a8061*/
-  if ( (a2 & 1) != 0 ) /*0x4a8068*/
-    __3_YAXPAX_Z(Block); /*0x4a806b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4a8068*/
+    RA2_OPDEL(Block); /*0x4a806b*/
   return (VectorClass *)Block; /*0x4a8075*/
 
 }
@@ -283,22 +283,22 @@ VectorClass_flat * Dial8Class_48::QueryInterface(char a2)
 
 // 0x4A8080
 namespace gamemd {
-DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(char a2)
+DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a8083*/
-  *Block = &vt_VectorClass_DiskLaserClass; /*0x4a8086*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_DiskLaserClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a8090*/
   {
-    __3_YAXPAX_Z(v3); /*0x4a8098*/
+    RA2_OPDEL(v3); /*0x4a8098*/
     *(Block + 1) = 0; /*0x4a80a0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4a80ab*/
   *(Block + 2) = 0; /*0x4a80b1*/
-  if ( (a2 & 1) != 0 ) /*0x4a80b8*/
-    __3_YAXPAX_Z(Block); /*0x4a80bb*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4a80b8*/
+    RA2_OPDEL(Block); /*0x4a80bb*/
   return (DynamicVector *)Block; /*0x4a80c5*/
 
 }

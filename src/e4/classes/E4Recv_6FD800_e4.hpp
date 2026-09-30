@@ -9,6 +9,6 @@ struct E4Recv_6FD800 {
     unsigned int vfptr;  // 0x0
 // --- flat members (END) ---
     int Vf72(int,  ...);    // G6 vtable slot dispatch
-    int SpreadRadiationAreaEffect(InfantryClass * aP1);  // 0x6FD800
+    int SpreadRadiationAreaEffect(void * aP1);  // 0x6FD800
 };
 } // namespace gamemd

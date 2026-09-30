@@ -15,7 +15,7 @@
 
 // 0x4A2CD0
 namespace gamemd {
-int CStreamClass::CopyStreamToBuffer()
+int CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int Size, size_t * a4)
 {
 
   IStream *v4; // ebp
@@ -54,7 +54,7 @@ int CStreamClass::CopyStreamToBuffer()
     *(unsigned int *)(a1 + 20) = v9; /*0x4a2d7d*/
     if ( v9 == 0x10000 ) /*0x4a2d80*/
     {
-      result = IStream::Read(*(IStream **)(a1 + 24), (void *)0x10000, v10); /*0x4a2d8d*/
+      result = ((IStream *)(*(IStream **)(a1 + 24)))->Read((void *)0x10000, v10); /*0x4a2d8d*/
       if ( result < 0 ) /*0x4a2d94*/
         return result; /*0x4a2d94*/
       *(unsigned int *)(a1 + 20) = 0; /*0x4a2d96*/
@@ -76,7 +76,7 @@ LABEL_23:
   }
   while ( 1 ) /*0x4a2db1*/
   {
-    result = IStream::Read(v4, (void *)0x10000, v10); /*0x4a2db1*/
+    result = ((IStream *)(v4))->Read((void *)0x10000, v10); /*0x4a2db1*/
     if ( result < 0 ) /*0x4a2db8*/
       return result; /*0x4a2ce2*/
     v6 -= 0x10000; /*0x4a2dba*/
@@ -270,10 +270,10 @@ LONG CStreamClass::IStreamRelease(int a1)
 }
 // 0x4A4B20
 namespace gamemd {
-int CStreamClass_16::Seek(int a2, void *a1 = 0)
+int CStreamClass_16::Seek( int a2)
 {
 
-  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * a2); /*0x4a4b2a*/
+  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * this); /*0x4a4b2a*/
 
 }
 } // namespace gamemd
@@ -324,7 +324,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a4b8c*/
       v4 = a3; /*0x4a4ba2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a4b9e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4a4b9e*/
     *((unsigned char *)this + 12) = 1; /*0x4a4ba6*/
     if ( v4 ) /*0x4a4baa*/
     {
@@ -337,7 +337,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
           ++i; /*0x4a4bce*/
         if ( *((unsigned char *)this + 13) ) /*0x4a4bdb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a4be6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4a4be6*/
           *((unsigned int *)this + 1) = 0; /*0x4a4bee*/
         }
       }
@@ -362,23 +362,23 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
 
 // 0x4A4C20
 namespace gamemd {
-int CStreamClass_16::ddtor(int a2, void *a1 = 0)
+int CStreamClass_16::ddtor()
 {
 
-  if ( *(unsigned int *)(a2 + 4) && *(unsigned char *)(a2 + 13) ) /*0x4a4c2d*/
+  if ( *(unsigned int *)(this + 4) && *(unsigned char *)(this + 13) ) /*0x4a4c2d*/
   {
-    __3_YAXPAX_Z(*(void **)(a2 + 4)); /*0x4a4c33*/
-    *(unsigned int *)(a2 + 4) = 0; /*0x4a4c3b*/
+    RA2_OPDEL(*(void **)(this + 4)); /*0x4a4c33*/
+    *(unsigned int *)(this + 4) = 0; /*0x4a4c3b*/
   }
-  *(unsigned char *)(a2 + 13) = 0; /*0x4a4c3e*/
-  *(unsigned int *)(a2 + 8) = 0; /*0x4a4c41*/
+  *(unsigned char *)(this + 13) = 0; /*0x4a4c3e*/
+  *(unsigned int *)(this + 8) = 0; /*0x4a4c41*/
 
 }
 } // namespace gamemd
 
 // 0x4A4C50
 namespace gamemd {
-int CStreamClass_16::Read(int a2, void *a1 = 0)
+int CStreamClass_16::Read( unsigned int * a2)
 {
 
   int result; // eax
@@ -391,7 +391,7 @@ int CStreamClass_16::Read(int a2, void *a1 = 0)
   result = 0; /*0x4a4c61*/
   if ( v3 <= 0 ) /*0x4a4c65*/
     return -1; /*0x4a4c7c*/
-  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x4a4c6b*/
+  for ( i = *(unsigned int **)((char *)this + 4); *i != *this; ++i ) /*0x4a4c6b*/
   {
     if ( ++result >= v3 ) /*0x4a4c7a*/
       return -1; /*0x4a4c7a*/
@@ -416,22 +416,22 @@ unsigned int CStreamClass_16::Write(int a2)
 
 // 0x4A4D90
 namespace gamemd {
-VectorClass_flat * CStreamClass_16::QueryInterface(char a2)
+VectorClass_flat * CStreamClass_16::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a4d93*/
-  *Block = &vt_VectorClass_DDSURFACEDESC; /*0x4a4d96*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_DDSURFACEDESC);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a4da0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4a4da8*/
+    RA2_OPDEL(v3); /*0x4a4da8*/
     *(Block + 1) = 0; /*0x4a4db0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4a4dbb*/
   *(Block + 2) = 0; /*0x4a4dc1*/
-  if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
-    __3_YAXPAX_Z(Block); /*0x4a4dcb*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x4a4dc8*/
+    RA2_OPDEL(Block); /*0x4a4dcb*/
   return (VectorClass *)Block; /*0x4a4dd5*/
 
 }

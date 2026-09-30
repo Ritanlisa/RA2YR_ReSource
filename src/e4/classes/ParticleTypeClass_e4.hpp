@@ -292,6 +292,7 @@ struct ParticleTypeClass {
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
+    unsigned int ParticleTypeClass_LoadFromINI;
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, char * a3);
     ParticleTypeClass * ddtor(char a2);
@@ -303,7 +304,7 @@ struct ParticleTypeClass {
     int Init(unsigned char * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
     int ProcessPower(int * a2, void *a1 = 0);
     int SaveLoad_Prefix(int a1, int a2);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int aP1, int aP2);
+    int SaveLoad_Prefix_0(void * aP0, int aP1, int aP2);
     int StubReturnFalse(int a1);
     unsigned int * Constructor(int a2, int a3, void *a1 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int * EnsureCapacity(unsigned int * a2, void *a1 = 0);

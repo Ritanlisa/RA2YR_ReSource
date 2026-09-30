@@ -138,9 +138,9 @@ AbstractClass * * ProcessSelectionExperience()
       {
         if ( (*(int (**)(unsigned int))(v6->vtable0 + 44))(*((unsigned int *)dword_A8ECBC + v5)) == 15 /*0x730baa*/
 // 0x5224e0
-          && TechnoClass::GetTypeFlag(v6) )
+          && TechnoClass::GetTypeFlag() )
         {
-          if ( !(uint8_t)TechnoClass::IsMission27to30(v6) ) /*0x730bbc*/
+          if ( !(uint8_t)TechnoClass::IsMission27to30(this) ) /*0x730bbc*/
             goto LABEL_17; /*0x730bbc*/
           IDA_LOBYTE(v1) = v13; /*0x730bbe*/
           v12 = 1; /*0x730bc2*/
@@ -267,15 +267,15 @@ int E4Recv_731130::sub_731130()
   int v3; // esi
   char *v5; // ecx
 
-  v1 = MEMORY[0xA8EC88] - 1; /*0x731138*/
-  if ( MEMORY[0xA8EC88] - 1 < 0 ) /*0x73113f*/
+  v1 = g_abs_A8EC88 - 1; /*0x731138*/
+  if ( g_abs_A8EC88 - 1 < 0 ) /*0x73113f*/
     return 1; /*0x7311a6*/
   while ( 1 )
   {
-    v3 = *((unsigned int *)MEMORY[0xA8EC7C] + v1); /*0x731147*/
+    v3 = *((unsigned int *)g_abs_A8EC7C + v1); /*0x731147*/
     if ( v3 && !*(unsigned char *)(v3 + 129) )
     {
-      if ( MEMORY[0xA8B238][0] ? House::IsHumanPlayer(*(#375 **)(v3 + 540)) : *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493) )
+      if ( g_abs_A8B238[0] ? House::IsHumanPlayer(*(#375 **)(v3 + 540)) : *(unsigned char *)(*(unsigned int *)(v3 + 540) + 493) )
       {
         v5 = *(char **)(v3 + 532); /*0x73117e*/
         if ( v5 != this - 1 ) /*0x731189*/
@@ -913,7 +913,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip()
       else if ( *(unsigned int *)&stru_830620.__pad_579C[63396] ) /*0x73340c*/
       {
         v4 = -(*(unsigned int *)&stru_830620.__pad_579C[63396] != 1); /*0x73341b*/
-        LOBYTE(v4) = v4 & 0xFE; /*0x73341d*/
+        IDA_LOBYTE(v4) = v4 & 0xFE; /*0x73341d*/
         v17 = v4 + 2; /*0x733422*/
       }
       else
@@ -940,7 +940,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip()
           (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x7333d0*/
         *(unsigned int *)&stru_B05488.__pad_579C[21064] = 0; /*0x7333d9*/
         *(unsigned int *)&stru_B05488.__pad_579C[21064] = GatherTechnoClassFiltered( /*0x7333e4*/
-                                                      (unsigned __int8 (__fastcall *)(int, int))TechnoClass::IsCapturableByPlayer,
+                                                      (uint8_t (__fastcall *)(int, int))TechnoClass::IsCapturableByPlayer,
                                                       0);
       }
       SuperWeaponClass::UpdateAll(); /*0x7333ef*/
@@ -992,7 +992,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip()
                                    (CampaignScore *)&stru_830620.__pad_579C[63452],
                                    1604);
     }
-    v10 = (unsigned int *)__2_YAPAXI_Z(0x18u); /*0x7334d2*/
+    v10 = (unsigned int *)RA2_OPNEW(0x18u); /*0x7334d2*/
     if ( v10 ) /*0x7334dc*/
       v11 = (VectorClass *)DynamicVector::Constructor_Techno(v10, 0, 0); /*0x7334e7*/
     else
@@ -1092,7 +1092,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
       else if ( *(unsigned int *)&stru_830620.__pad_579C[63400] ) /*0x73374c*/
       {
         v4 = -(*(unsigned int *)&stru_830620.__pad_579C[63400] != 1); /*0x73375b*/
-        LOBYTE(v4) = v4 & 0xFE; /*0x73375d*/
+        IDA_LOBYTE(v4) = v4 & 0xFE; /*0x73375d*/
         v17 = v4 + 2; /*0x733762*/
       }
       else
@@ -1119,7 +1119,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
           (*(void (**)(unsigned int *, int))*v3)(v3, 1); /*0x733710*/
         *(unsigned int *)&stru_B05488.__pad_579C[21064] = 0; /*0x733719*/
         *(unsigned int *)&stru_B05488.__pad_579C[21064] = GatherTechnoClassFiltered( /*0x733724*/
-                                                      (unsigned __int8 (__fastcall *)(int, int))TechnoClass::IsCapturableByPlayer,
+                                                      (uint8_t (__fastcall *)(int, int))TechnoClass::IsCapturableByPlayer,
                                                       0);
       }
       SuperWeaponClass::UpdateAll(); /*0x73372f*/
@@ -1171,7 +1171,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
                                    (CampaignScore *)&stru_830620.__pad_579C[63452],
                                    1678);
     }
-    v10 = (unsigned int *)__2_YAPAXI_Z(0x18u); /*0x733816*/
+    v10 = (unsigned int *)RA2_OPNEW(0x18u); /*0x733816*/
     if ( v10 ) /*0x733820*/
       v11 = (VectorClass *)DynamicVector::Constructor_Techno(v10, 0, 0); /*0x73382b*/
     else
@@ -1388,7 +1388,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
   int v18; // [esp+1Ch] [ebp-4h]
 
   v1 = this; /*0x733cd6*/
-  v2 = __2_YAPAXI_Z(0x18u); /*0x733cde*/
+  v2 = RA2_OPNEW(0x18u); /*0x733cde*/
   if ( v2 ) /*0x733cea*/
   {
     v2[1] = 0; /*0x733cec*/
@@ -1433,7 +1433,7 @@ LABEL_13:
       if ( v7 < v9 /*0x733dc5*/
         || (*((unsigned char *)v3 + 13) || !v9)
         && (v10 = v3[5], v10 > 0)
-        && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v3 + 8))(v3, v9 + v10, 0) )
+        && (*(uint8_t (**)(unsigned int *, int, unsigned int))(*v3 + 8))(v3, v9 + v10, 0) )
       {
         v11 = v3[4]; /*0x733dcc*/
         v12 = v3[1]; /*0x733dcf*/
@@ -2123,7 +2123,7 @@ BOOL E4Recv_7325C0::sub_7325C0()
 
   return (*(int (**)(void *))(*(unsigned int *)this + 44))(this) != 6 /*0x7325f4*/
       && *(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3516)
-      && (*(unsigned __int8 (**)(void *))(*(unsigned int *)this + 316))(this);
+      && (*(uint8_t (**)(void *))(*(unsigned int *)this + 316))(this);
 
 }
 } // namespace gamemd
@@ -2506,18 +2506,18 @@ char E4Recv_736C10::sub_736C10()
   int v2; // eax
   unsigned int v4[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  if ( (*(int (**)(unsigned int *))(*(unsigned int **)this + 388))(this) != 5 ) /*0x736c21*/
+  if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 1552))(this) != 5 ) /*0x736c21*/
     return 0; /*0x736c21*/
   v4[0] = *((unsigned int *)this + 39); /*0x736c2f*/
   v4[1] = *((unsigned int *)this + 40); /*0x736c3b*/
   v4[2] = *((unsigned int *)this + 41); /*0x736c42*/
-  if ( Tactical::IsCellVisible(&MEMORY[0x87F7E8], v4) || !*((unsigned char *)this + 981) ) /*0x736c54*/
+  if ( Tactical::IsCellVisible(&g_abs_87F7E8, v4) || !*((unsigned char *)this + 981) ) /*0x736c54*/
     return 0; /*0x736c8a*/
   v2 = *((unsigned int *)this + 373); /*0x736c5e*/
   if ( v2 ) /*0x736c66*/
     *(unsigned char *)(v2 + 130) = 1; /*0x736c68*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 928))(this); /*0x736c73*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 248))(this); /*0x736c7d*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 3712))(this); /*0x736c73*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 992))(this); /*0x736c7d*/
   return 1; /*0x736c85*/
 
 }

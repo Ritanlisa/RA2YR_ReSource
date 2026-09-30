@@ -190,10 +190,10 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   int v11; // [esp+Ch] [ebp-8h] BYREF
   int v12; // [esp+10h] [ebp-4h] BYREF
 
-  v3 = 0; /*0x5c17c3*/
+  v3 = (gamemd::CampaignClass **)(0);
   v10 = *((char *)this + 207); /*0x5c17c5*/
   v11 = 0; /*0x5c17cb*/
-  Movie::GetSection((int)&MEMORY[0x89F518], v10, &v12); /*0x5c17cf*/
+  Movie::GetSection((int)&g_abs_89F518, v10, &v12); /*0x5c17cf*/
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
     return 1; /*0x5c17e4*/
@@ -225,36 +225,36 @@ CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
   }
   else if ( a2 == -3 ) /*0x5c1847*/
   {
-    return 1; /*0x5c1851*/
+    return (gamemd::CampaignClass **)(1);
   }
   v8 = 0; /*0x5c1857*/
   v9 = *(unsigned int *)(*(unsigned int *)(v4 + 20) + 4 * v7); /*0x5c1859*/
   if ( *(int *)(v9 + 16) > 0 ) /*0x5c185f*/
   {
-    while ( SideClass::FindByName(*(void **)(*(unsigned int *)(v9 + 4) + 4 * v8)) != a2 ) /*0x5c186e*/
+    while ( ((SideClass *)(*(void **)(*(unsigned int *)(v9 + 4) + 4 * v8)))->FindByName() != a2 ) /*0x5c186e*/
     {
       ++v8; /*0x5c1878*/
       v9 = *(unsigned int *)(*(unsigned int *)(v12 + 20) + 4 * v11); /*0x5c187c*/
       if ( v8 >= *(unsigned int *)(v9 + 16) ) /*0x5c1882*/
         return 0; /*0x5c188c*/
     }
-    return 1; /*0x5c188f*/
+    return (gamemd::CampaignClass **)(1);
   }
-  return v3; /*0x5c17dc*/
+  return (gamemd::CampaignClass **)(v3);
 
 }
 }
 // 0x5C60D0
 namespace gamemd {
-BOOL E4Recv_5C60D0::ShowConfirmDialog()
+BOOL E4Recv_5C60D0::ShowConfirmDialog(unsigned short * lParam)
 {
 
   wchar_t *v3; // eax
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
   int v6; // [esp+0h] [ebp-8h]
 
-  StringCSF = GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108); /*0x5c60fa*/
-  v3 = GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108));
+  v3 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108));
   return Dialog::ShowMessageBox((int)lParam, v3, (Movie *)StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 
 }
@@ -3012,7 +3012,7 @@ LABEL_5:
   *((unsigned int *)this + 6) = v6; /*0x5ce112*/
   if ( *((unsigned int *)this + 8) >= (unsigned int)WideString::Length((const wchar_t **)((char *)this + 28)) ) /*0x5ce122*/
   {
-    v7 = Math::RoundToInt(MEMORY[0xA8EB98] * 64.0); /*0x5ce130*/
+    v7 = Math::RoundToInt(g_abs_A8EB98 * 64.0); /*0x5ce130*/
     sub_406670(aBleep1, v7); /*0x5ce13c*/
     return 1; /*0x5ce149*/
   }
@@ -3020,7 +3020,7 @@ LABEL_5:
     (*(void (**)(int, int, int, int, unsigned int, int))(*(unsigned int *)a2 + 8))( /*0x5ce173*/
       a2,
       (char *)this + 84,
-      MEMORY[0x887310],
+      g_abs_887310,
       (char *)this + 84,
       0,
       1);
@@ -3029,7 +3029,7 @@ LABEL_5:
     v9 += *((unsigned int *)this + 19); /*0x5ce180*/
   v18 = *((unsigned int *)this + 8); /*0x5ce18b*/
   v10 = v18 + 1; /*0x5ce18c*/
-  LOWORD(v11) = WideString::GetChar((const wchar_t **)((char *)this + 28), v18); /*0x5ce18d*/
+  IDA_LOWORD(v11) = WideString::GetChar((const wchar_t **)((char *)this + 28), v18); /*0x5ce18d*/
   v12 = v11; /*0x5ce192*/
   if ( (unsigned short)v11 != 10 ) /*0x5ce198*/
   {
@@ -3047,7 +3047,7 @@ LABEL_5:
         0);
       v9 += (*(int (**)(unsigned int, int))(**(unsigned int **)((char *)this + 52) + 4))(*((unsigned int *)this + 13), v12); /*0x5ce1c1*/
       v19 = v10++; /*0x5ce1c5*/
-      LOWORD(v13) = WideString::GetChar((const wchar_t **)((char *)this + 28), v19); /*0x5ce1ca*/
+      IDA_LOWORD(v13) = WideString::GetChar((const wchar_t **)((char *)this + 28), v19); /*0x5ce1ca*/
       v12 = v13; /*0x5ce1cf*/
     }
     while ( (unsigned short)v13 != 10 ); /*0x5ce1d5*/
@@ -3068,7 +3068,7 @@ LABEL_5:
     *((unsigned int *)this + 8) = v10; /*0x5ce217*/
     if ( (unsigned short)v12 == 10 ) /*0x5ce21a*/
     {
-      v16 = Math::RoundToInt(MEMORY[0xA8EB98] * 64.0); /*0x5ce228*/
+      v16 = Math::RoundToInt(g_abs_A8EB98 * 64.0); /*0x5ce228*/
       sub_406670(aBleep1, v16); /*0x5ce234*/
       *((unsigned int *)this + 20) += *(unsigned int *)(*((unsigned int *)this + 13) + 8); /*0x5ce244*/
     }
@@ -3976,13 +3976,13 @@ unsigned int E4Recv_5C8470::sub_5C8470()
 
   unsigned int result; // eax
 
-  result = ((((((unsigned __int16)MEMORY[0xABF5A0] * (unsigned int)(unsigned __int16)~*this) >> 1) /*0x5c84f0*/
-            + (((((unsigned __int16)MEMORY[0xABF6B4] * ((unsigned int)(unsigned __int16)~*(this - 2) + 1)) >> 1)
-              + (((unsigned __int16)~*(this - 1) * (unsigned int)(unsigned __int16)MEMORY[0xABF5A0] + 0x10000) >> 1)
+  result = ((((((uint16_t)g_abs_ABF5A0 * (unsigned int)(uint16_t)~*this) >> 1) /*0x5c84f0*/
+            + (((((uint16_t)g_abs_ABF6B4 * ((unsigned int)(uint16_t)~*(this - 2) + 1)) >> 1)
+              + (((uint16_t)~*(this - 1) * (unsigned int)(uint16_t)g_abs_ABF5A0 + 0x10000) >> 1)
               + 1) >> 16)
-            + (((unsigned __int16)~*(this - 1) * (unsigned int)(unsigned __int16)MEMORY[0xABF6B4]) >> 1)
+            + (((uint16_t)~*(this - 1) * (unsigned int)(uint16_t)g_abs_ABF6B4) >> 1)
             + 1) >> 14)
-          + 2 * (unsigned __int16)MEMORY[0xABF6B4] * (unsigned __int16)~*this) >> MEMORY[0xABF8C4];
+          + 2 * (uint16_t)g_abs_ABF6B4 * (uint16_t)~*this) >> g_abs_ABF8C4;
   if ( result >= 0xFFFF ) /*0x5c84f7*/
     return 0xFFFF; /*0x5c84f9*/
   return result; /*0x5c84ea*/
@@ -4693,7 +4693,7 @@ int E4Recv_5CD570::sub_5CD570(const wchar_t ** a2, int a3, int a4, int a5, int *
         if ( WideString::GetChar((const wchar_t **)((char *)this + 28), v11) == 10 ) /*0x5cd634*/
           break; /*0x5cd634*/
         v12 = **(unsigned int **)((char *)this + 52); /*0x5cd63c*/
-        LOWORD(v13) = WideString::GetChar((const wchar_t **)((char *)this + 28), v11++); /*0x5cd63e*/
+        IDA_LOWORD(v13) = WideString::GetChar((const wchar_t **)((char *)this + 28), v11++); /*0x5cd63e*/
         v17 += (*(int (**)(unsigned int, int))(v12 + 4))(*((unsigned int *)this + 13), v13); /*0x5cd651*/
       }
       while ( WideString::GetChar((const wchar_t **)((char *)this + 28), v11) ); /*0x5cd658*/
@@ -4759,7 +4759,7 @@ int E4Recv_5CE330::sub_5CE330(const wchar_t ** a2)
     if ( WideString::GetChar(a2, v4) == 10 ) /*0x5ce35c*/
       break; /*0x5ce35c*/
     v5 = **((unsigned int *)this + 13); /*0x5ce364*/
-    LOWORD(v6) = WideString::GetChar(a2, v4); /*0x5ce366*/
+    IDA_LOWORD(v6) = WideString::GetChar(a2, v4); /*0x5ce366*/
     v3 = (*(int (**)(unsigned int, int))(v5 + 4))(*((unsigned int *)this + 13), v6) + i; /*0x5ce378*/
     ++v4; /*0x5ce37a*/
   }
@@ -4812,7 +4812,7 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
       else
       {
         v15 = **(unsigned int **)((char *)this + 52); /*0x5ce44b*/
-        LOWORD(v10) = WideString::GetChar((const wchar_t **)((char *)this + 28), v9); /*0x5ce44f*/
+        IDA_LOWORD(v10) = WideString::GetChar((const wchar_t **)((char *)this + 28), v9); /*0x5ce44f*/
         (*(void (**)(unsigned int, int, int, int, int, int, int))(v15 + 16))( /*0x5ce461*/
           *((unsigned int *)this + 13),
           a2,
@@ -4822,7 +4822,7 @@ int E4Recv_5CE3A0::sub_5CE3A0(int a2, int * a3)
           2,
           1);
         v11 = **(unsigned int **)((char *)this + 52); /*0x5ce46b*/
-        LOWORD(v12) = WideString::GetChar((const wchar_t **)((char *)this + 28), v9); /*0x5ce46d*/
+        IDA_LOWORD(v12) = WideString::GetChar((const wchar_t **)((char *)this + 28), v9); /*0x5ce46d*/
         v13 = (*(int (**)(unsigned int, int))(v11 + 4))(*((unsigned int *)this + 13), v12); /*0x5ce476*/
         v7 = v18; /*0x5ce479*/
         v8 += v13; /*0x5ce47d*/

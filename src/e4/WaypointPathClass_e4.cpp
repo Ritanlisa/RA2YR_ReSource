@@ -39,7 +39,7 @@ void WaypointPathClass::Init()
   if ( dword_B72618 < dword_B72610 /*0x7637ac*/
     || (byte_B72615 || !dword_B72610)
     && dword_B7261C > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_B72608 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_B72608 + 8))(
          &dword_B72608,
          dword_B72610 + dword_B7261C,
          0) )
@@ -53,7 +53,7 @@ void WaypointPathClass::Init()
 }
 // 0x763810
 namespace gamemd {
-void WaypointPathClass::Construct()
+void WaypointPathClass::Construct( WaypointClass * aP1)
 {
 
   int v3; // eax
@@ -75,7 +75,7 @@ void WaypointPathClass::Construct()
     && (dword_B72618 < dword_B72610
      || (byte_B72615 || !dword_B72610)
      && dword_B7261C > 0
-     && ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))dword_B72608->field_8)(
+     && ((uint8_t (*)(DynamicVector **, int, unsigned int))dword_B72608->field_8)(
           &dword_B72608,
           dword_B72610 + dword_B7261C,
           0)) )
@@ -154,7 +154,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
           if ( v5[4] < v8 /*0x763d42*/
             || (*((unsigned char *)v5 + 13) || !v8)
             && (v9 = v5[5], v9 > 0)
-            && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v5 + 8))(v5, v8 + v9, 0) )
+            && (*(uint8_t (**)(unsigned int *, int, unsigned int))(*v5 + 8))(v5, v8 + v9, 0) )
           {
             v10 = v5[4]; /*0x763d49*/
             v11 = v10 + 1; /*0x763d4c*/
@@ -178,7 +178,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
 }
 // 0x764760
 namespace gamemd {
-void WaypointPathClass::computePath()
+void WaypointPathClass::computePath( int a2, unsigned int * a3)
 {
 
   unsigned int *v4; // eax
@@ -197,7 +197,7 @@ void WaypointPathClass::computePath()
     return this; /*0x764780*/
   if ( !a3 ) /*0x764788*/
   {
-    v7 = __2_YAPAXI_Z(12 * a2 + 4); /*0x7647bd*/
+    v7 = (unsigned int *)(RA2_OPNEW(12 * a2 + 4));
     if ( v7 ) /*0x7647c7*/
     {
       v8 = v7 + 1; /*0x7647cc*/
@@ -343,7 +343,7 @@ int WaypointPathClass::StubReturn51()
 
 // 0x763E20
 namespace gamemd {
-WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
+WaypointPathClass * WaypointPathClass::ProcessEvent(void ** Block, char a2)
 {
 
   int v3; // eax
@@ -370,14 +370,14 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   *(Block + 10) = &vt_VectorClass_WaypointClass; /*0x763e92*/
   if ( v4 && *((unsigned char *)Block + 53) ) /*0x763e9d*/
   {
-    __3_YAXPAX_Z((void *)(v4 - 4)); /*0x763eb0*/
+    RA2_OPDEL((void *)(v4 - 4)); /*0x763eb0*/
     *(Block + 11) = 0; /*0x763eb8*/
   }
   *((unsigned char *)Block + 53) = 0; /*0x763ec1*/
   *(Block + 12) = 0; /*0x763ec5*/
   AbstractClass::DTOR(Block); /*0x763ecc*/
-  if ( (a2 & 1) != 0 ) /*0x763ed6*/
-    __3_YAXPAX_Z(Block); /*0x763ed9*/
+  if ( (Block & 1) != 0 ) /*0x763ed6*/
+    RA2_OPDEL(Block); /*0x763ed9*/
   return (WaypointPathClass *)Block; /*0x763ee3*/
 
 }

@@ -19,18 +19,18 @@ struct MSFont_18 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    char SetCapacity8(int a2,  unsigned int * a3);    // 0x5D55A0
-    void ClearBuffer(void *a1 = 0);  // 0x5D5080
+    char SetCapacity8(int a2, unsigned int * a3);  // 0x5D55A0
+    void ClearBuffer();  // 0x5D5080
     int GetSize(int a2);  // 0x5D50D0
-    void Destroy(void *a1 = 0);  // 0x5D50E0
+    void Destroy();  // 0x5D50E0
     char AddRef(int a2);  // 0x5D5150
-    char Release(int a2,  unsigned int * a3);    // 0x5D5190
-    void ddtor(void *a1 = 0);  // 0x5D5240
+    char Release(int a2, unsigned int * a3);  // 0x5D5190
+    void ddtor();  // 0x5D5240
     int Create(unsigned int * a2);  // 0x5D5270
-    char SetCapacity(int a2,  unsigned int * a3);    // 0x5D52D0
+    char SetCapacity(int a2, unsigned int * a3);  // 0x5D52D0
     int FindItem(unsigned int * a2);  // 0x5D5380
     int FindPair8(unsigned int * a2);  // 0x5D56A0
-    VectorClass_flat * QueryInterface(char a2);  // 0x5D56E0
+    VectorClass_flat * QueryInterface(void * Block, char a2);  // 0x5D56E0
     DynamicVector * Constructor_VectorClass_HWND_____(char a2);  // 0x5D5730
     DynamicVector * Constructor_VectorClass_AcceleratorTracker_(char a2);  // 0x5D57D0
     unsigned int PointerToIndex(int a2);  // 0x5D50B0

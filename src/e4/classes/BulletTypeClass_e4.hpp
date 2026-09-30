@@ -288,10 +288,10 @@ struct BulletTypeClass {
     int GetWarhead(int a2, int a3);
     int ProcessImpact(int a1);
     int ProcessPower(int * a2, void *a1 = 0);
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
+    int SaveLoad_Prefix(void * aP0, int aP1);
+    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
     int StubReturnFalse(int a1);
-    unsigned char * Construct(ObjectClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    unsigned char * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int * GetROF(unsigned int * a1, int * a2);
 };
 

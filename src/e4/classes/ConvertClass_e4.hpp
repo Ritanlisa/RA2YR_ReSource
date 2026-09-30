@@ -109,9 +109,10 @@ struct ConvertClass {
     unsigned int __pad_174;
     unsigned int __pad_6;
     unsigned int u32_17C;
+    unsigned int field_2;
 // --- flat members (END) ---
     int ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8);
-    unsigned int * Construct(ConvertClass * aP1, int a3, ConvertClass * aP3, ObjectClass * aP4, ConvertClass * aP5);
+    unsigned int * Construct(void * aP1, int a3, void * aP3, void * aP4, void * aP5);
      double InitTables(...);  // C2597 interim stub
 };
 

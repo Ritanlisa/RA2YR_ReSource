@@ -26,8 +26,8 @@ void MixFileClass::CleanupCache()
   int v8; // eax
   int v9; // eax
 
-  v0 = MEMORY[0xB077B0]; /*0x69e213*/
-  if ( MEMORY[0xB077B0] ) /*0x69e21d*/
+  v0 = g_abs_B077B0; /*0x69e213*/
+  if ( g_abs_B077B0 ) /*0x69e21d*/
   {
     do /*0x69e289*/
     {
@@ -46,14 +46,14 @@ void MixFileClass::CleanupCache()
             if ( v3 ) /*0x69e250*/
               *(unsigned int *)(v3 + 24) = *((unsigned int *)v1 + 6); /*0x69e255*/
             else
-              MEMORY[0xB077B0] = (void *)*((unsigned int *)v1 + 6); /*0x69e25d*/
+              g_abs_B077B0 = (void *)*((unsigned int *)v1 + 6); /*0x69e25d*/
             if ( *((unsigned int *)v1 + 2) ) /*0x69e262*/
             {
               free(*((void **)v1 + 2)); /*0x69e26a*/
               *((unsigned int *)v1 + 2) = 0; /*0x69e272*/
             }
           }
-          __3_YAXPAX_Z(v1); /*0x69e276*/
+          RA2_OPDEL(v1); /*0x69e276*/
         }
         v0[3] = 0; /*0x69e27e*/
         *((unsigned char *)v0 + 16) = 0; /*0x69e281*/
@@ -62,16 +62,16 @@ void MixFileClass::CleanupCache()
     }
     while ( v0 ); /*0x69e289*/
   }
-  v4 = MEMORY[0xB077B4]; /*0x69e28b*/
-  if ( MEMORY[0xB077B4] ) /*0x69e293*/
+  v4 = g_abs_B077B4; /*0x69e28b*/
+  if ( g_abs_B077B4 ) /*0x69e293*/
   {
-    if ( *(unsigned short *)MEMORY[0xB077B4] == 0xFFFF ) /*0x69e299*/
+    if ( *(unsigned short *)g_abs_B077B4 == 0xFFFF ) /*0x69e299*/
     {
-      v5 = (char *)MEMORY[0xB077B4] + 16; /*0x69e29f*/
-      if ( *((unsigned char *)MEMORY[0xB077B4] + 16) ) /*0x69e29b*/
+      v5 = (char *)g_abs_B077B4 + 16; /*0x69e29f*/
+      if ( *((unsigned char *)g_abs_B077B4 + 16) ) /*0x69e29b*/
       {
-        v6 = (void *)*((unsigned int *)MEMORY[0xB077B4] + 3); /*0x69e2a6*/
-        v7 = (char *)MEMORY[0xB077B4] + 12; /*0x69e2a9*/
+        v6 = (void *)*((unsigned int *)g_abs_B077B4 + 3); /*0x69e2a6*/
+        v7 = (char *)g_abs_B077B4 + 12; /*0x69e2a9*/
         if ( v6 ) /*0x69e2ae*/
           MixFileClass::CacheNode_Dtor(v6, 1); /*0x69e2b2*/
         *v7 = 0; /*0x69e2b7*/
@@ -84,17 +84,17 @@ void MixFileClass::CleanupCache()
       if ( v9 ) /*0x69e2cf*/
         *(unsigned int *)(v9 + 24) = *((unsigned int *)v4 + 6); /*0x69e2d4*/
       else
-        MEMORY[0xB077B0] = (void *)*((unsigned int *)v4 + 6); /*0x69e2dc*/
+        g_abs_B077B0 = (void *)*((unsigned int *)v4 + 6); /*0x69e2dc*/
       if ( *((unsigned int *)v4 + 2) ) /*0x69e2e1*/
       {
         free(*((void **)v4 + 2)); /*0x69e2e9*/
         *((unsigned int *)v4 + 2) = 0; /*0x69e2f1*/
       }
     }
-    __3_YAXPAX_Z(v4); /*0x69e2f5*/
-    MEMORY[0xB077B4] = 0; /*0x69e2fd*/
-    MEMORY[0xB077B8] = 0; /*0x69e303*/
-    MEMORY[0xB077BC] = 0; /*0x69e309*/
+    RA2_OPDEL(v4); /*0x69e2f5*/
+    g_abs_B077B4 = 0; /*0x69e2fd*/
+    g_abs_B077B8 = 0; /*0x69e303*/
+    g_abs_B077BC = 0; /*0x69e309*/
   }
 
 }
@@ -110,8 +110,8 @@ void MixFileClass::DestroyCache()
   int v3; // eax
   int v4; // eax
 
-  v0 = MEMORY[0xB077B0]; /*0x69e182*/
-  if ( MEMORY[0xB077B0] ) /*0x69e18c*/
+  v0 = g_abs_B077B0; /*0x69e182*/
+  if ( g_abs_B077B0 ) /*0x69e18c*/
   {
     do /*0x69e1f9*/
     {
@@ -135,23 +135,23 @@ void MixFileClass::DestroyCache()
           if ( v4 ) /*0x69e1c7*/
             *(unsigned int *)(v4 + 24) = *((unsigned int *)v0 + 6); /*0x69e1cc*/
           else
-            MEMORY[0xB077B0] = (void *)*((unsigned int *)v0 + 6); /*0x69e1d4*/
+            g_abs_B077B0 = (void *)*((unsigned int *)v0 + 6); /*0x69e1d4*/
           if ( *((unsigned int *)v0 + 2) ) /*0x69e1d9*/
           {
             free(*((void **)v0 + 2)); /*0x69e1e1*/
             *((unsigned int *)v0 + 2) = 0; /*0x69e1e9*/
           }
         }
-        __3_YAXPAX_Z(v0); /*0x69e1ed*/
+        RA2_OPDEL(v0); /*0x69e1ed*/
       }
       v0 = v1; /*0x69e1f7*/
     }
     while ( v1 ); /*0x69e1f9*/
-    MEMORY[0xB077B0] = 0; /*0x69e1fc*/
+    g_abs_B077B0 = 0; /*0x69e1fc*/
   }
   else
   {
-    MEMORY[0xB077B0] = 0; /*0x69e205*/
+    g_abs_B077B0 = 0; /*0x69e205*/
   }
 
 }

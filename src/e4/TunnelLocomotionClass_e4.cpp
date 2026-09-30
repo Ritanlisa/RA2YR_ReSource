@@ -26,14 +26,14 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
   int TileIndexMapClass; // eax
   int v7; // eax
   int v8; // [esp+14h] [ebp-20h] BYREF
-  __int16 v9[2]; // [esp+18h] [ebp-1Ch] BYREF
-  __int16 v10[2]; // [esp+1Ch] [ebp-18h] BYREF
+  int16_t v9[2]; // [esp+18h] [ebp-1Ch] BYREF
+  int16_t v10[2]; // [esp+1Ch] [ebp-18h] BYREF
   unsigned char v11[4]; // [esp+20h] [ebp-14h] BYREF
   int v12; // [esp+24h] [ebp-10h] BYREF
   int v13; // [esp+28h] [ebp-Ch] BYREF
   int v14; // [esp+2Ch] [ebp-8h]
   int v15; // [esp+30h] [ebp-4h]
-  unsigned __int16 v16; // [esp+3Ah] [ebp+6h]
+  uint16_t v16; // [esp+3Ah] [ebp+6h]
 
   switch ( a1[5] ) /*0x728c17*/
   {
@@ -48,9 +48,9 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
     case 3: /*0x728c17*/
       a1[5] = 5; /*0x728dd0*/
 LABEL_11:
-      a1[6] = MEMORY[0xB0F910]; /*0x728de0*/
-      a1[7] = MEMORY[0xB0F914]; /*0x728df0*/
-      a1[8] = MEMORY[0xB0F918]; /*0x728df9*/
+      a1[6] = g_abs_B0F910; /*0x728de0*/
+      a1[7] = g_abs_B0F914; /*0x728df0*/
+      a1[8] = g_abs_B0F918; /*0x728df9*/
       break; /*0x728df9*/
     case 4: /*0x728c17*/
       v2 = a1 + 6; /*0x728c29*/
@@ -60,17 +60,17 @@ LABEL_11:
       v15 = v4; /*0x728c43*/
       v13 = v3 - a1[6]; /*0x728c4b*/
       v5 = Math::Sqrt((double)v13 * (double)v13 + (double)v14 * (double)v14); /*0x728c64*/
-      if ( (double)(int)Math::RoundToInt(v5) > MEMORY[0xB0F8F8] ) /*0x728c84*/
+      if ( (double)(int)Math::RoundToInt(v5) > g_abs_B0F8F8 ) /*0x728c84*/
       {
         v8 = *(unsigned int *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)a1[2] + 440))(a1[2], v11); /*0x728c9e*/
         v9[0] = 0; /*0x728cc4*/
         v9[1] = 0; /*0x728cc9*/
-        TileIndexMapClass = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v8, 0, 0); /*0x728cce*/
+        TileIndexMapClass = MapClass::GetTileIndex(&g_abs_87F7E8, (int16_t *)&v8, 0, 0); /*0x728cce*/
         v7 = *LayerClass::Pathfinding_Find( /*0x728cea*/
-                &MEMORY[0x87F7E8],
+                &g_abs_87F7E8,
                 (int)&v12,
                 &v12,
-                (__int16 *)&v8,
+                (int16_t *)&v8,
                 1,
                 TileIndexMapClass,
                 0,
@@ -84,18 +84,18 @@ LABEL_11:
                 v9,
                 0,
                 0);
-        v16 = HIWORD(v7); /*0x728cf3*/
-        if ( (unsigned short)v7 != (unsigned short)MEMORY[0xB0F8F0] ) /*0x728cf7*/
+        v16 = IDA_HIWORD(v7); /*0x728cf3*/
+        if ( (unsigned short)v7 != (unsigned short)g_abs_B0F8F0 ) /*0x728cf7*/
           goto LABEL_8; /*0x728cf7*/
-        if ( HIWORD(v7) == HIWORD(MEMORY[0xB0F8F0]) ) /*0x728d09*/
+        if ( IDA_HIWORD(v7) == IDA_HIWORD(g_abs_B0F8F0) ) /*0x728d09*/
         {
           v10[0] = 0; /*0x728d33*/
           v10[1] = 0; /*0x728d38*/
           v7 = *LayerClass::Pathfinding_Find( /*0x728d42*/
-                  &MEMORY[0x87F7E8],
+                  &g_abs_87F7E8,
                   (int)v10,
                   &v13,
-                  (__int16 *)&v8,
+                  (int16_t *)&v8,
                   1,
                   -1,
                   0,
@@ -109,27 +109,27 @@ LABEL_11:
                   v10,
                   0,
                   0);
-          v16 = HIWORD(v7); /*0x728d44*/
+          v16 = IDA_HIWORD(v7); /*0x728d44*/
         }
-        if ( __PAIR32__(v16, v7) == MEMORY[0xB0F8F0] ) /*0x728d4f*/
+        if ( __PAIR32__(v16, v7) == g_abs_B0F8F0 ) /*0x728d4f*/
         {
           (*(void (**)(int, unsigned int, int, unsigned int, int, int, unsigned int))(*(unsigned int *)a1[2] + 364))( /*0x728d7c*/
             a1[2] + 108,
             0,
-            MEMORY[0x8871E0]->?[5],
+            g_abs_8871E0->?[5],
             0,
             1,
             1,
             0);
-          *v2 = MEMORY[0xB0F910]; /*0x728d88*/
-          a1[7] = MEMORY[0xB0F914]; /*0x728d90*/
-          a1[8] = MEMORY[0xB0F918]; /*0x728d99*/
+          *v2 = g_abs_B0F910; /*0x728d88*/
+          a1[7] = g_abs_B0F914; /*0x728d90*/
+          a1[8] = g_abs_B0F918; /*0x728d99*/
         }
         else
         {
 LABEL_8:
-          *v2 = ((__int16)v7 << 8) + 128; /*0x728dbf*/
-          a1[7] = ((__int16)v16 << 8) + 128; /*0x728dc1*/
+          *v2 = ((int16_t)v7 << 8) + 128; /*0x728dbf*/
+          a1[7] = ((int16_t)v16 << 8) + 128; /*0x728dc1*/
           a1[8] = 0; /*0x728dc4*/
         }
       }
@@ -170,7 +170,7 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
     {
       *a1 = (int)&LocomotionClass::`vftable'; /*0x72a16a*/
       a1[1] = (int)&vt_LocomotionClass; /*0x72a170*/
-      v3 = MEMORY[0xA8ED84]; /*0x72a177*/
+      v3 = g_abs_A8ED84; /*0x72a177*/
       a1[12] = 0; /*0x72a17d*/
       a1[10] = (int)v3; /*0x72a180*/
       a1[13] = 0; /*0x72a183*/
@@ -193,12 +193,12 @@ int TunnelLocomotionClass::StubReturn60()
 } // namespace gamemd
 // 0x72A210
 namespace gamemd {
-TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(char a2)
+TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(unsigned int * Block, char a2)
 {
 
   LocomotionClass::Construct(Block); /*0x72a213*/
-  if ( (a2 & 1) != 0 ) /*0x72a21d*/
-    __3_YAXPAX_Z(Block); /*0x72a220*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x72a21d*/
+    RA2_OPDEL(Block); /*0x72a220*/
   return (TunnelLocomotionClass *)Block; /*0x72a22a*/
 
 }

@@ -18,9 +18,9 @@ struct XSurface {
     unsigned int q014;
     unsigned int vt_slot_116;
 // --- flat members (END) ---
-    XSurface * * Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigned int * a6, void ** a4, int a8);
-    XSurface * * BlitPart(void ** a2, XSurface * a3, void ** arg8, void ** a4, int a6, void *a1 = 0);
-    XSurface * * FillRectEx(XSurface * aP1, int * a2, XSurface * aP3);
+    XSurface * * Blit(int a2, void ** a3, void * arg8, int a5, unsigned int * a6, void ** a4, int a8);
+    XSurface * * BlitPart(void ** a2, void * a3, void ** arg8, void ** a4, int a6, void *a1 = 0);
+    XSurface * * FillRectEx(void * aP1, int * a2, void * aP3);
     XSurface * ScalarDtor(char a2);
     char DrawRectEx(int a2, unsigned int * a3, int a4);
     char StubReturnFalse();
@@ -31,7 +31,7 @@ struct XSurface {
     char entry_40_(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
     char entry_50_(int a1, int a2, int a3, int a4);
     char entry_68_(int a1, int a2);
-    int DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6);
+    int DrawDashedLine(int * a1, int * a2, void * aP3, int a5, int a6);
     int DrawEllipseOutline(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
     int Lock(int a2, int a3);
     int entry_4C_(int a1, int a2, int a3, int a4, int a5, int a6);

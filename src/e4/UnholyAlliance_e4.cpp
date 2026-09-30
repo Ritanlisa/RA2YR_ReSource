@@ -86,13 +86,13 @@ AbstractClass * * UnholyAlliance_GetResult()
 }
 }
 // 0x5CB540
-UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
+UnholyAlliance * UnholyAlliance::QueryInterface(unsigned int * Block, char a2)
 {
 
   *Block = &vt_UnholyAlliance; /*0x5cb543*/
   MultiplayerGameMode::Dtor(Block); /*0x5cb549*/
-  if ( (a2 & 1) != 0 ) /*0x5cb553*/
-    __3_YAXPAX_Z(Block); /*0x5cb556*/
+  if ( (Block & 1) != 0 ) /*0x5cb553*/
+    RA2_OPDEL(Block); /*0x5cb556*/
   return (UnholyAlliance *)Block; /*0x5cb560*/
 
 }
@@ -100,7 +100,7 @@ UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 char UnholyAlliance::Read()
 {
 
-  MEMORY[0xA8B258] = 1; /*0x5cb3f2*/
+  g_abs_A8B258 = 1; /*0x5cb3f2*/
   return 1; /*0x5cb3f7*/
 
 }
@@ -115,7 +115,7 @@ BOOL UnholyAlliance::Write(MPCooperative * aP0)
 char UnholyAlliance::Seek()
 {
 
-  MEMORY[0xA8B258] = 1; /*0x5cb432*/
+  g_abs_A8B258 = 1; /*0x5cb432*/
   return 1; /*0x5cb437*/
 
 }

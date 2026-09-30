@@ -16,11 +16,11 @@ int LCWStraw::Dtor()
   void *v3; // ecx
 
   v2 = (void *)*((char *)this + 5); /*0x552453*/
-  *this = (int)&vt_LCWStraw; /*0x552456*/
-  __3_YAXPAX_Z(v2); /*0x55245d*/
+  *(unsigned int *)this = (int)&vt_LCWStraw; /*0x552456*/
+  RA2_OPDEL(v2); /*0x55245d*/
   v3 = (void *)*((char *)this + 6); /*0x552462*/
   *((char *)this + 5) = 0; /*0x552465*/
-  __3_YAXPAX_Z(v3); /*0x55246d*/
+  RA2_OPDEL(v3); /*0x55246d*/
   *((char *)this + 6) = 0; /*0x552477*/
   return Straw::Dtor(this); /*0x552483*/
 

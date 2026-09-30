@@ -23,7 +23,7 @@ struct AnimFile {
     unsigned int u32_E0C;
     unsigned int u32_E10;
 // --- flat members (END) ---
-    AnimFile * QueryInterface(char a2);
+    AnimFile * QueryInterface(void * Block, char a2);
     char * Stub();
 };
 

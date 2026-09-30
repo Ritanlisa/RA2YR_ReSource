@@ -88,7 +88,7 @@ void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
       KillTimer(hWnd, 0x45u); /*0x792d24*/
       return 0; /*0x792d2d*/
     case 0xFu: /*0x792d16*/
-      Dialog::DrawBackground(hWnd); /*0x792d48*/
+      ((Dialog *)(hWnd))->DrawBackground(); /*0x792d48*/
       Dialog::StopBink(hWnd); /*0x792d4f*/
       ValidateRect(hWnd, 0); /*0x792d57*/
       return 0; /*0x792d60*/
@@ -155,7 +155,7 @@ void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
       switch ( a2 ) /*0x793297*/
       {
         case 0xFu: /*0x793297*/
-          Dialog::DrawBackground(hWnd); /*0x7932c1*/
+          ((Dialog *)(hWnd))->DrawBackground(); /*0x7932c1*/
           ValidateRect(hWnd, 0); /*0x7932c9*/
           return 0; /*0x7932d4*/
         case 0x14u: /*0x793297*/
@@ -255,16 +255,16 @@ AbstractClass * * HandleWOLForwardingError()
           case 0: /*0x79354a*/
             v6 = 1; /*0x793557*/
             ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x79355c*/
-                        Debug::Log();
-            v11 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]; /*0x793579*/
-            StringCSF = GetStringCSF((wchar_t *)aTxtTalkReporte, 0, g_Str_File_wonline_cpp, 18840); /*0x793589*/
+                        this->Debug::Log();
+            v11 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
+            StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)aTxtTalkReporte, 0, g_Str_File_wonline_cpp, 18840));
             goto LABEL_19; /*0x793589*/
           case 1: /*0x79354a*/
             v6 = 1; /*0x793591*/
             ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x793596*/
-                        Debug::Log();
-            v11 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]; /*0x7935b3*/
-            StringCSF = GetStringCSF(aTxtTalkLocalPr, 0, g_Str_File_wonline_cpp, 18850); /*0x7935c3*/
+                        this->Debug::Log();
+            v11 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
+            StringCSF = (wchar_t *)(GetStringCSF(aTxtTalkLocalPr, 0, g_Str_File_wonline_cpp, 18850));
   LABEL_19:
             swprintf(Buffer, (const size_t)StringCSF, v11); /*0x7935c8*/
             Dialog::ShowMessage(-1, (size_t)Buffer); /*0x7935df*/
@@ -273,23 +273,23 @@ AbstractClass * * HandleWOLForwardingError()
             v6 = 1; /*0x7935ee*/
             if ( v7 == v3 ) /*0x7935f0*/
             {
-                            Debug::Log();
-              v12 = GetStringCSF(aTxtTalkForward, 0, g_Str_File_wonline_cpp, 18861); /*0x79361b*/
+                            this->Debug::Log();
+              v12 = (wchar_t *)(GetStringCSF(aTxtTalkForward, 0, g_Str_File_wonline_cpp, 18861));
               Dialog::ShowMessage(-1, (size_t)v12); /*0x79361d*/
             }
             else
             {
               ToWideStringChar((char *)((unsigned int *)(dword_A8DA78))[v7]); /*0x79362a*/
-                            Debug::Log();
-              v13 = (const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]; /*0x79364b*/
-              v9 = GetStringCSF(aTxtTalkForward_0, 0, g_Str_File_wonline_cpp, 18864); /*0x793658*/
+                            this->Debug::Log();
+              v13 = (wchar_t *)((const wchar_t *)((unsigned int *)(dword_A8DA78))[v7]);
+              v9 = (wchar_t *)(GetStringCSF(aTxtTalkForward_0, 0, g_Str_File_wonline_cpp, 18864));
               swprintf(Buffer, (const size_t)v9, v13); /*0x793663*/
               Dialog::ShowMessage(-1, (size_t)Buffer); /*0x793674*/
             }
             break; /*0x79361d*/
           case 3: /*0x79354a*/
             v6 = 1; /*0x793683*/
-                        Debug::Log();
+                        this->Debug::Log();
             v14 = GetStringCSF(aTxtTalkHostAbo, 0, g_Str_File_wonline_cpp, 18875); /*0x7936a3*/
             Dialog::ShowMessage(-1, (size_t)v14); /*0x7936aa*/
             break; /*0x7936aa*/
@@ -325,7 +325,7 @@ int sub_793B30(char a1, const char * a2)
     strcpy(v4, a2); /*0x793b68*/
   else
     v4[0] = 0; /*0x793b76*/
-    Debug::Log();
+    this->Debug::Log();
   return (*(int (__stdcall **)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 60))(ppv, v3); /*0x793b9d*/
 }
 }
@@ -442,7 +442,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   Waypoint::InitInvalid(&v91); /*0x793d68*/
   v66 = 0; /*0x793d74*/
   v57 = 0; /*0x793d7f*/
-    Debug::Log();
+    this->Debug::Log();
   v62 = -1; /*0x793d93*/
   if ( dword_A8DA84 <= 0 ) /*0x793d9b*/
     goto LABEL_6; /*0x793d9b*/
@@ -460,9 +460,9 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   {
   LABEL_6:
     strcpy(&((unsigned int *)(v91.__pad_0))[12], "Z10"); /*0x793de5*/
-        Debug::Log();
+        this->Debug::Log();
     (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, &((unsigned int *)(v91.__pad_0))[12]); /*0x793e23*/
-        Debug::Log();
+        this->Debug::Log();
     return 0; /*0x793e41*/
   }
   v9 = (char *)&unk_A8E060; /*0x793e44*/
@@ -471,7 +471,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     v10 = ToWideStringChar((char *)dword_A8DA90[v3]); /*0x793e55*/
     if ( !_strcmpi(v9, v10) ) /*0x793e66*/
     {
-            Debug::Log();
+            this->Debug::Log();
       v56 = 0; /*0x793e82*/
       break; /*0x793e82*/
     }
@@ -4363,7 +4363,7 @@ bool WOL_FindBuddy()
 }
 // 0x79BF50
 namespace gamemd {
-int E4Recv_79BF50::sub_79BF50()
+int E4Recv_79BF50::sub_79BF50(HWND hDlg)
 {
 
   HWND DlgItem; // eax
@@ -4372,7 +4372,7 @@ int E4Recv_79BF50::sub_79BF50()
   HWND v5; // eax
   BOOL v7; // [esp-4h] [ebp-18h]
   BOOL BuddyWOL; // [esp-4h] [ebp-18h]
-  unsigned __int8 v9; // [esp+10h] [ebp-4h]
+  uint8_t v9; // [esp+10h] [ebp-4h]
 
   v7 = String::Length(&g_WOL_LoginObject) != 0; /*0x79bf6f*/
   DlgItem = GetDlgItem(hDlg, 1795); /*0x79bf76*/
@@ -6711,13 +6711,13 @@ int E4Recv_793CD0::sub_793CD0()
   DWORD *v2; // ecx
   DWORD v4; // [esp+4h] [ebp-8h]
 
-  MEMORY[0xA8E1A4][MEMORY[0xA8E224]] = (int)this; /*0x793cd8*/
+  g_abs_A8E1A4[g_abs_A8E224] = (int)this; /*0x793cd8*/
   Ticks = Timer::GetTicks(); /*0x793ce3*/
-  v2 = (DWORD *)(12 * MEMORY[0xA8E224] + 11067844); /*0x793cf6*/
+  v2 = (DWORD *)(12 * g_abs_A8E224 + 11067844); /*0x793cf6*/
   *v2 = Ticks; /*0x793cfd*/
   v2[1] = v4; /*0x793d03*/
   v2[2] = 1200; /*0x793d06*/
-  return ++MEMORY[0xA8E224]; /*0x793d14*/
+  return ++g_abs_A8E224; /*0x793d14*/
 
 }
 } // namespace gamemd

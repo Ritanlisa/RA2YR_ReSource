@@ -76,6 +76,6 @@ struct E4Recv_5F15C0 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int * sub_5F15C0(int a2,  int a3,  int a4,  short a5);    // 0x5F15C0
+    unsigned int * sub_5F15C0(int a2, int a3, int a4, __int16 a5);  // 0x5F15C0
 };
 } // namespace gamemd

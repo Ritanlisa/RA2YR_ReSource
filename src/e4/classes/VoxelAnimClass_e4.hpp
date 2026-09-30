@@ -51,7 +51,7 @@ struct VoxelAnimClass {
     char customSound[4];  // 0x64
     bool bombVisible;  // 0x68
     unsigned int q06A;  // 0x6A
-    char health[4];  // 0x6C
+    unsigned int health;  // 0x6C
     char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
@@ -682,7 +682,6 @@ struct VoxelAnimClass {
     unsigned int __pad_C;
     unsigned int VoxelAnimClass_field_0x140;
     unsigned int __pad_110;
-    unsigned int Dtor;
     unsigned int Undeploy;
 // --- flat members (END) ---
     AbstractClass * * GetFrameCount(int * a2);
@@ -695,8 +694,8 @@ struct VoxelAnimClass {
     int DrawVoxelFrame(int a2, int a3, int a4);
     int LoadFrame();
     int Reset();
-    int SaveLoad_Prefix(ObjectClass * aP1, int aP1a);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
+    int SaveLoad_Prefix(void * aP1, int aP1a);
+    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
     int StubReturn3();
     int StubReturn328();
     int StubReturn41();

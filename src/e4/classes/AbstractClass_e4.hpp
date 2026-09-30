@@ -71,10 +71,6 @@ struct AbstractClass {
     unsigned int spawns;
     unsigned int __pad_48;
     unsigned int spawnVectorCount;
-    unsigned int COMStub_AddRef;
-    unsigned int COMStub_Release;
-    unsigned int ProcessPower;
-    unsigned int QueryInterface;
     unsigned int q3D4;  // 0x3D4
     unsigned int q090;  // 0x90
     unsigned int q0C0;  // 0xC0
@@ -92,18 +88,23 @@ struct AbstractClass {
     unsigned int q008;  // 0x8
     unsigned int q098;  // 0x98
     unsigned int q0A0;  // 0xA0
+    unsigned int NeedsSaveOrLink;
+    unsigned int COMStub_AddRef;
+    unsigned int COMStub_Release;
+    unsigned int ProcessPower;
+    unsigned int QueryInterface;
 // --- flat members (END) ---
-    void Initialize(TechnoClass * aP1,  TechnoClass * aP2);    // 0x438E70
+    void Initialize(void * aP1, void * aP2);  // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0
     unsigned int * updateVisibilityState(char a2);  // 0x5D8030
     unsigned int * processFogReveal(char a2);  // 0x5D8050
     unsigned int * checkShroudState(char a2);  // 0x5D8070
     unsigned int * updateShroudMap(char a2);  // 0x5D8090
     void ClearTargetToMeClearManagerTarget(int a1);  // 0x70D4A0
-    AbstractClass * * AnnounceExpiredPointer(AbstractClass * aP0,  AbstractClass * aP1);    // 0x7258D0
+    AbstractClass * * AnnounceExpiredPointer(void * aP0, void * aP1);  // 0x7258D0
     int getMapCoords();  // 0x426A80
-    void DTOR(void *a1 = 0);  // 0x4101F0
-    MissionClass * getWeaponRange(char a2);  // 0x5B3A60
+    void DTOR();  // 0x4101F0
+    MissionClass * getWeaponRange(unsigned int * Block, char a2);  // 0x5B3A60
     DynamicVector * resetScriptState(char a2);  // 0x4CABA0
     void getMissionState();  // 0x4D2930
     unsigned int setMissionState(int a2);  // 0x4D2960
@@ -117,14 +118,14 @@ struct AbstractClass {
     int selectBestTarget(int a2);  // 0x50F4A0
     DynamicVector * updateThreatMap(char a2);  // 0x510220
     char ModifyCellTiles(int a2);  // 0x543330
-    int COMStub_5(ObjectClass * aP1,  int aP1a);    // 0x543990
+    int COMStub_5(void * aP1,  int aP1a);    // 0x543990
     int COMStub_54(int a2,  int a3);    // 0x543A10
     char COMStub_53();  // 0x543A40
-    IsometricTileClass * CreateInstance(char a2, void *a1 = 0);  // 0x543B10
-    void processStateTransition(AbstractClass * aP1);  // 0x54E590
-    int COMStub_125(int a2,  int a3,  TechnoClass * aP3);    // 0x5B3650
+    IsometricTileClass * CreateInstance();  // 0x543B10
+    void processStateTransition(void * aP1);  // 0x54E590
+    int COMStub_125(int a2,  int a3,  void * aP3);    // 0x5B3650
     char COMStub_126();  // 0x5B36B0
-    int COMStub_13(AbstractClass * aP1);  // 0x5B3970
+    int COMStub_13(void * aP1);  // 0x5B3970
     void* getWeaponSpeed(char a2);  // 0x5B46E0
     void checkLOS(char a2);  // 0x5C0280
     char computePathCost();  // 0x5C02C0
@@ -138,10 +139,10 @@ struct AbstractClass {
     int applyDamageEffects(unsigned int * a2);  // 0x5C0BF0
     unsigned int checkDamageThreshold(int a2);  // 0x5C0C30
     VectorClass_flat * processDeathEvent(char a2);  // 0x5C0D30
-    unsigned int * updateAnimationState(MultiplayerGameMode * aP1,  MultiplayerGameMode * aP2);    // 0x5C5A30
+    unsigned int * updateAnimationState(void * aP1,  void * aP2);    // 0x5C5A30
     int IsNotNull();  // 0x5F5930
     int COMStub_79();  // 0x5F6C70
-    void ProcessData();  // 0x6293E0
+    void ProcessData(unsigned int * a2, __int16 * a3);  // 0x6293E0
     DynamicVector * getTeamIndex(char a2);  // 0x645B10
     int checkTeamMembership();  // 0x65C2E0
     int dispatchTeamEvent(int a2,  int a3);    // 0x65C340
@@ -185,24 +186,24 @@ struct AbstractClass {
     char AllocateCoordArray(int a2,  int * a3);    // 0x7642E0
     int processSpecialEffect(unsigned int * a2);  // 0x764420
     int finalizeDestruction(void *a1 = 0);  // 0x7C35C0
-    ObjectClass * Render_Render_660730(ObjectClass ** a2);  // 0x660730
+    ObjectClass * Render_Render_660730(void ** a2);  // 0x660730
     Surface * getObjectValue(char a2);  // 0x4115D0
     void* getTileIndex(char a2);  // 0x499CC0
     void* setTileIndex(char a2);  // 0x499CE0
     void* getOverlayType(char a2);  // 0x499D00
     void* clearOverlayFlags(char a2);  // 0x499DA0
     void* getHouseHandle(char a2);  // 0x4F4C00
-    FileClass * processAITrigger(char a2);  // 0x65C610
-    int SaveLoad_Prefix_0(AbstractClass * aP0,  AbstractClass * aP1);    // 0x410380
+    FileClass * processAITrigger(unsigned int * Block, char a2);  // 0x65C610
+    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);  // 0x410380
     unsigned int updateLayer();  // 0x425520
-    int GetType();  // 0x4CA160
+    int GetType(__int16 * a2, int a3);  // 0x4CA160
     int checkPassability();  // 0x50E370
     void resetTeamState();  // 0x65C540
     unsigned int * Copy8Bytes();  // 0x72A9C0
     int initVtableBase();  // 0x410100
-    int GetVtable3(AbstractClass * aP0);  // 0x410220
+    int GetVtable3(void * aP0);  // 0x410220
     int GenerateUniqueID(int a1);  // 0x410230
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0_2, ObjectTypeClass * aP2);        // 0x410320
+    int SaveLoad_Prefix(unsigned int * a1, int a2);  // 0x410320
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
     int COMStub_Return0_10();  // 0x410480
@@ -234,17 +235,17 @@ struct AbstractClass {
     int COMStub_Return0_270();  // 0x459E60
     std::locale::facet * setOverlayFlags(char a2);  // 0x499D20
     unsigned int queueMission(int a2);  // 0x4E01C0
-    int saveToStream(int a1,  const void * a2,  unsigned int * a3);    // 0x510A20
+    int saveToStream(int a1, void * a2, unsigned int * a3);  // 0x510A20
     int loadFromStream(int a1);  // 0x510A30
     int computeSize(int a1);  // 0x510A40
-    int COMStub_6(TechnoTypeClass * aP0,  int * a1,  int aP2);    // 0x5439F0
+    int COMStub_6(void * aP0, int * a1, int aP2);  // 0x5439F0
     char validatePathNode();  // 0x5C02E0
-    unsigned int * processRevealArea(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  char a5,  int a6);    // 0x5D81F0
-    unsigned int * computeRevealRadius(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  char a5,  int a6);    // 0x5D8230
-    unsigned int * applyRevealToCell(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  char a5,  int a6);    // 0x5D8270
-    unsigned int * checkRevealCell(const wchar_t ** a1,  const wchar_t ** a2,  const char ** a3,  const char ** a4,  int a5,  int a6);    // 0x5D82B0
+    unsigned int * processRevealArea(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D81F0
+    unsigned int * computeRevealRadius(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D8230
+    unsigned int * applyRevealToCell(void * a1, void * a2, void * a3, void * a4, char a5, int a6);  // 0x5D8270
+    unsigned int * checkRevealCell(void * a1, void * a2, void * a3, void * a4, int a5, int a6);  // 0x5D82B0
     int COMStub_Return0_37();  // 0x5F42B0
-    int COMStub_Return0_38(void *a1 = 0);  // 0x5F42C0
+    int COMStub_Return0_38();  // 0x5F42C0
     int COMStub_Return0_39();  // 0x5F42D0
     int COMStub_Return0_40();  // 0x5F42E0
     int COMStub_Return0_56();  // 0x5F42F0
@@ -259,11 +260,11 @@ struct AbstractClass {
     int COMStub_Return0_93();  // 0x5F43A0
     int COMStub_Return0_104();  // 0x5F4400
     int COMStub_Return0_105();  // 0x5F6B50
-    int SaveLoad_PrefixWrapper(TechnoTypeClass * aP0,  ObjectTypeClass * aP1,  TechnoTypeClass * aP2);    // 0x5F9950
+    int SaveLoad_PrefixWrapper(void * aP0, void * aP1, void * aP2);  // 0x5F9950
     char processTeamOrder();  // 0x65C330
     int checkTeamObjective();  // 0x65C4A0
     int compareType(int a1);  // 0x487E50
-    char Stub1INoticeSink(int a1,  int a2);    // 0x410580
+    char Stub1INoticeSink(int a1, int a2);  // 0x410580
     void COM_Stub_Return0(int a1);  // 0x410590
     int COMStub_26();  // 0x4263A0
     int COMStub_107();  // 0x4264C0
@@ -271,7 +272,7 @@ struct AbstractClass {
     int getAltitude();  // 0x426580
     char releaseRef();  // 0x465910
     char finalRelease();  // 0x465920
-    void COMStub_Return0_69(Tactical * aP0,  AbstractClass * aP1);    // 0x4DB250
+    void COMStub_Return0_69(void * aP0, void * aP1);  // 0x4DB250
     int COMStub_Return0_34();  // 0x4E0130
     char getCurrentMission();  // 0x4E0140
     int computeMovementCost();  // 0x50E360

@@ -333,13 +333,13 @@ struct AnimTypeClass {
     int LoadFromINI(unsigned char *** a2);
     int LookupByName();
     int PowerDrainUpdate(int * a2);
-    int ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
+    int ReadINIString(void * aP1, unsigned char * a2, Layer a3);
+    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
     int StubReturnFalse(int a1);
     int Thunk_AnimTypeClass_sub_428E40();
     int Thunk_AnimTypeClass_sub_428E50();
-    unsigned int * Construct(AbstractClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    unsigned int * Construct2(ObjectClass * aP1);
+    unsigned int * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    unsigned int * Construct2(void * aP1);
     void* GetWarhead(int a2);
 };
 

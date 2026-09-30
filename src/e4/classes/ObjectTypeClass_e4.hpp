@@ -283,6 +283,7 @@ struct ObjectTypeClass {
     unsigned int u32_C84;
     unsigned int u32_D40;
     unsigned int u32_DC6;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();
@@ -290,32 +291,32 @@ struct ObjectTypeClass {
     ObjectTypeClass * Destru_vt08(char a2);
     void* * SelectArtOrAlt();
     void* * Destruct(void *a1 = 0);
-    char ReadBool(INIClass * Block, INIClass * aP2, int a4);
-    char ReadBool2(INIClass * Block, INIClass * aP2, short * a4);
-    char ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4);
-    char ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3);
-    int ConstructFull(AbstractClass * aP1);
-    int CreateInstance(CampaignScore * aP1, CampaignScore * aP2);
+    char ReadBool(void * Block, void * aP2, int a4);
+    char ReadBool2(void * Block, void * aP2, short * a4);
+    char ReadString(void * Block, void * aP2, unsigned char * a4);
+    char ReadTypeListINI(unsigned char * Block, char * a2, void * aP3);
+    int ConstructFull(void * aP1);
+    int CreateInstance(void * aP1, void * aP2);
     int DeserializeArrays();
     int FindByName(void *a1 = 0);
     int FreeLoaderBuffer();
-    int LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1);
-    int LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2);
-    int ReadBool3(INIClass * aP1, unsigned char * a2, void * a4);
+    int LoadCleanup(void * aP0, void * aP1);
+    int LoadExtras(void * aP0, double _38C, unsigned char *** a2);
+    int ReadBool3(void * aP1, unsigned char * a2, void * a4);
     int ReadDestroyAnim();
     int ReadDouble(unsigned char * a2, unsigned char * a3, int a4);
-    int ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4);
+    int ReadDouble2(void * aP1, unsigned char * a2, void * a4);
     int ReadInt(unsigned char * a2, unsigned char * a3, int a4);
     int ReadPrerequisite(unsigned char * a2, unsigned char * a3, int a4);
     int loadTypeMember_473980();
-    int loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3);
+    int loadTypeMember_476FC0(void * aP1, unsigned char * a2, void * aP3);
     int loadTypeMember_48DFF0();
-    int loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4);
-    int loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2, unsigned int a4);
-    int loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, int a4);
-    int loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3);
+    int loadTypeMember_5474940(void * aP1, unsigned char * a2, int a4);
+    int loadTypeMember_54749E0(void * aP1, unsigned char * a2, unsigned int a4);
+    int loadTypeMember_5474E40(void * aP1, unsigned char * a2, int a4);
+    int loadTypeMember_5477590(void * aP1, unsigned char * a2, void * aP3);
     int loadTypeMember_5717820();
-    int loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * aP2);
+    int loadTypeMember_57179D0(void * aP1, void * aP2);
     int loadTypeMember_5717A30(int a2);
     int loadTypeMember_5717A50(int a2);
     int loadTypeMember_5717A70();
@@ -324,9 +325,9 @@ struct ObjectTypeClass {
     int loadTypeMember_5717AB0(int a2);
     int loadTypeMember_5717AD0();
     unsigned char ** ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5);
-    unsigned int * CheckFlag(ObjectTypeClass * aP1);
-    unsigned int * Construct(ObjectTypeClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    unsigned int * Copy(unsigned int * a0, ObjectTypeClass * aP1);
+    unsigned int * CheckFlag(void * aP1);
+    unsigned int * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    unsigned int * Copy(unsigned int * a0, void * aP1);
     unsigned int * InitTripleTen(unsigned int * a1);
     unsigned int * loadTypeMember_5717C00(unsigned int * a2);
     unsigned int * vt_entry_7C(unsigned int * a1);
@@ -334,7 +335,7 @@ struct ObjectTypeClass {
     void ReleaseWaveAndString(void *a1 = 0);
     void SetRTTI71(void *a1 = 0);
     void UnloadPipsSHP();
-    void* LoadFromINI(CCINIClass * aP1);
+    void* LoadFromINI(void * aP1);
 };
 
 } // namespace gamemd

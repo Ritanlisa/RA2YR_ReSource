@@ -13,7 +13,7 @@
 
 // 0x5BD0D0
 namespace gamemd {
-void Debug::ScrollText(char* a1)
+void Debug::ScrollText(CellStruct * aP1)
 {
 
   char result; // al
@@ -38,16 +38,16 @@ void Debug::ScrollText(char* a1)
     aP2 = (IUnknown *)(*((unsigned int *)this + 2504) + *((unsigned int *)this + 2506)); /*0x5bd10e*/
     v6 = (IUnknown *)(v4 + *((unsigned int *)this + 2507)); /*0x5bd112*/
     *((unsigned char *)this + 10036) = 0; /*0x5bd119*/
-    v7 = (IUnknown *)((char *)v5 + strlen((const char *)a1)); /*0x5bd127*/
+    v7 = (IUnknown *)((char *)v5 + strlen((const char *)aP1)); /*0x5bd127*/
     if ( (int)v7 > (int)v6 ) /*0x5bd12b*/
       v7 = v6; /*0x5bd12d*/
     v8 = v5; /*0x5bd131*/
     if ( (int)v5 < (int)v7 ) /*0x5bd133*/
     {
       v12 = (char *)aP2 + 20 * (unsigned int)v5 + 5 * (unsigned int)v5 + this; /*0x5bd148*/
-      v9 = (char *)((char *)a1 - (char *)v5); /*0x5bd15c*/
+      v9 = (char *)((char *)aP1 - (char *)v5); /*0x5bd15c*/
       v11 = (unsigned int *)((char *)this + 4 * (unsigned int)&aP2->__pad_1D8[20 * (unsigned int)v5 + 28 + 5 * (unsigned int)v5]); /*0x5bd15e*/
-      for ( i = (char *)((char *)a1 - (char *)v5); ; v9 = i ) /*0x5bd162*/
+      for ( i = (char *)((char *)aP1 - (char *)v5); ; v9 = i ) /*0x5bd162*/
       {
         aP1a = *((unsigned char *)&v8->field_0 + (unsigned int)v9); /*0x5bd16f*/
         *v12 = Debug_Helper(aP1a); /*0x5bd187*/
@@ -77,14 +77,14 @@ void Debug::ScrollText(char* a1)
 }
 // 0x6E61F0
 namespace gamemd {
-void Debug::AccumFlags(char* a1)
+void Debug::AccumFlags()
 {
 
   int v1; // esi
   int i; // edi
   int v3; // eax
 
-  v1 = *(a1 + 40); /*0x6e61f1*/
+  v1 = (int)(*(this + 40));
   for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
   {
     v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/
@@ -96,7 +96,7 @@ void Debug::AccumFlags(char* a1)
 }
 // 0x4068E0
 namespace gamemd {
-void Debug::Log(char* a1)
+void Debug::Log()
 {
 
   ; /*0x4068e0*/
@@ -106,7 +106,7 @@ void Debug::Log(char* a1)
 
 // 0x4A4AC0
 namespace gamemd {
-void Debug::Log_0(char* a1)
+void Debug::Log_0()
 {
 
   ; /*0x4a4ac0*/
@@ -125,8 +125,8 @@ char Debug::Printf()
   char *Format; // [esp+108h] [ebp+8h]
   char ArgList; // [esp+10Ch] [ebp+Ch] BYREF
 
-  result = MEMORY[0xABF23A]; /*0x5bd1f0*/
-  if ( MEMORY[0xABF23A] ) /*0x5bd1fd*/
+  result = g_abs_ABF23A; /*0x5bd1f0*/
+  if ( g_abs_ABF23A ) /*0x5bd1fd*/
   {
     vsprintf(Buffer, Format, &ArgList); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/

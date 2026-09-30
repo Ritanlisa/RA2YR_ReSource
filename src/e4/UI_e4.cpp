@@ -1317,7 +1317,7 @@ int * E4Recv_643670::UI_Render_643670()
   int v7; // [esp+Ch] [ebp-38h] BYREF
   unsigned int v8[4]; // [esp+14h] [ebp-30h] BYREF
   unsigned char v9[30]; // [esp+24h] [ebp-20h] BYREF
-  __int16 v10; // [esp+42h] [ebp-2h]
+  int16_t v10; // [esp+42h] [ebp-2h]
   int v11; // [esp+48h] [ebp+4h] BYREF
   int v12; // [esp+4Ch] [ebp+8h]
   size_t v13; // [esp+50h] [ebp+Ch]
@@ -1329,7 +1329,7 @@ int * E4Recv_643670::UI_Render_643670()
   v3 = 15; /*0x643686*/
   do /*0x64369f*/
   {
-    *v2++ = *(unsigned short *)CharToWideString(MEMORY[0x8258C0]); /*0x643698*/
+    *v2++ = *(unsigned short *)CharToWideString(g_abs_8258C0); /*0x643698*/
     --v3; /*0x64369e*/
   }
   while ( v3 ); /*0x64369f*/
@@ -1342,7 +1342,7 @@ int * E4Recv_643670::UI_Render_643670()
   v8[3] = referenceCount + v12; /*0x6436d9*/
   v8[0] = 0; /*0x6436fa*/
   v8[1] = 0; /*0x6436fe*/
-  return TextRenderer::DrawText(&v7, v13, (int)MEMORY[0x88730C], v8, (int)&v11, v14, 0, 25); /*0x64370a*/
+  return TextRenderer::DrawText(&v7, v13, (int)g_abs_88730C, v8, (int)&v11, v14, 0, 25); /*0x64370a*/
 
 }
 } // namespace gamemd

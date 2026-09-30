@@ -32,8 +32,8 @@ HWND E4Recv_696AE0::sub_696AE0()
     {
       v5 = (char *)((char *)this + 8); /*0x696b21*/
       SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)v5); /*0x696b30*/
-      SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&MEMORY[0x889F64]); /*0x696b3f*/
-      String::Trim(v5); /*0x696b43*/
+      SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_abs_889F64); /*0x696b3f*/
+      ((String *)(v5))->Trim(); /*0x696b43*/
       result = 0; /*0x696b4d*/
       if ( strlen(v5) ) /*0x696b4f*/
       {
@@ -41,22 +41,22 @@ HWND E4Recv_696AE0::sub_696AE0()
         v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)v5); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
-          v8 = (char *)__2_YAPAXI_Z(0x29u); /*0x696b8c*/
+          v8 = (char *)RA2_OPNEW(0x29u); /*0x696b8c*/
           strcpy(v8, v5); /*0x696ba2*/
           result = (HWND)SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
           v6 = (LRESULT)result; /*0x696bb3*/
           if ( result == HWND_MESSAGE|0x2 ) /*0x696bb8*/
             return result; /*0x696bb8*/
-          if ( MEMORY[0xA8DB5C] < MEMORY[0xA8DB54] /*0x696bf1*/
-            || (MEMORY[0xA8DB59] || !MEMORY[0xA8DB54])
-            && MEMORY[0xA8DB60] > 0
-            && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8DB4C] + 8))(
-                 &MEMORY[0xA8DB4C],
-                 MEMORY[0xA8DB54] + MEMORY[0xA8DB60],
+          if ( g_abs_A8DB5C < g_abs_A8DB54 /*0x696bf1*/
+            || (g_abs_A8DB59 || !g_abs_A8DB54)
+            && g_abs_A8DB60 > 0
+            && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8DB4C + 8))(
+                 &g_abs_A8DB4C,
+                 g_abs_A8DB54 + g_abs_A8DB60,
                  0) )
           {
-            v7 = MEMORY[0xA8DB5C]++; /*0x696c02*/
-            *(unsigned int *)(MEMORY[0xA8DB50] + 4 * v7) = v8; /*0x696c11*/
+            v7 = g_abs_A8DB5C++; /*0x696c02*/
+            *(unsigned int *)(g_abs_A8DB50 + 4 * v7) = v8; /*0x696c11*/
           }
         }
         SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
@@ -93,17 +93,17 @@ HWND E4Recv_696C40::sub_696C40()
       if ( result != HWND_MESSAGE|0x2 ) /*0x696c86*/
       {
         SendMessageA(v3, 0x182u, (WPARAM)result, 0); /*0x696c91*/
-        if ( v4 < MEMORY[0xA8DB5C] ) /*0x696c9b*/
+        if ( v4 < g_abs_A8DB5C ) /*0x696c9b*/
         {
           v5 = v4; /*0x696c9e*/
-          if ( v4 < --MEMORY[0xA8DB5C] ) /*0x696ca8*/
+          if ( v4 < --g_abs_A8DB5C ) /*0x696ca8*/
           {
             do /*0x696cc0*/
             {
               ++v5; /*0x696cb0*/
-              *(unsigned int *)(MEMORY[0xA8DB50] + 4 * v5 - 4) = *(unsigned int *)(MEMORY[0xA8DB50] + 4 * v5); /*0x696cb4*/
+              *(unsigned int *)(g_abs_A8DB50 + 4 * v5 - 4) = *(unsigned int *)(g_abs_A8DB50 + 4 * v5); /*0x696cb4*/
             }
-            while ( v5 < MEMORY[0xA8DB5C] ); /*0x696cc0*/
+            while ( v5 < g_abs_A8DB5C ); /*0x696cc0*/
           }
         }
         if ( v4 >= SendMessageA(v3, 0x18Bu, 0, 0) ) /*0x696cd0*/

@@ -37,7 +37,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         v9 = a2; /*0x76bae1*/
         do /*0x76baf5*/
         {
-          ComPtr::Constructor(v8); /*0x76bae6*/
+          ((ComPtr *)(v8))->Constructor(); /*0x76bae6*/
           *v8 = &vt_rc_ptr_WDTTerritory; /*0x76baeb*/
           v8 += 2; /*0x76baf1*/
           --v9; /*0x76baf4*/
@@ -49,7 +49,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = __2_YAPAXI_Z(8 * a2 + 4); /*0x76ba97*/
+      v5 = (unsigned int *)(RA2_OPNEW(8 * a2 + 4));
       if ( v5 ) /*0x76baa1*/
       {
         *v5 = a2; /*0x76baa3*/
@@ -80,7 +80,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
       if ( a2 >= *((unsigned int *)this + 2) ) /*0x76bb11*/
         v3 = *((unsigned int *)this + 2); /*0x76bb13*/
       for ( i = 0; i < v3; ++i ) /*0x76bb19*/
-        ComPtr::Set(&v6[2 * i], *(unsigned int *)(*((unsigned int *)this + 1) + 8 * i + 4)); /*0x76bb26*/
+        ((ComPtr *)(&v6[2 * i]))->Set(*(unsigned int *)(*((unsigned int *)this + 1) + 8 * i + 4)); /*0x76bb26*/
       if ( *((unsigned char *)this + 13) ) /*0x76bb30*/
       {
         v11 = (void (***)(unsigned int, int))*((unsigned int *)this + 1); /*0x76bb37*/
@@ -107,7 +107,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 }
 // 0x76B710
 namespace gamemd {
-int WDTState_4::ddtor(void *a1 = 0)
+int WDTState_4::ddtor()
 {
 
   int (***v2)(unsigned int, int); // ecx
@@ -142,7 +142,7 @@ unsigned int WDTState_4::Write(int a2)
 
 // 0x76BB90
 namespace gamemd {
-int WDTState_4::Read(int a2, void *a1 = 0)
+int WDTState_4::Read( int a2)
 {
 
   int v2; // edx
@@ -153,7 +153,7 @@ int WDTState_4::Read(int a2, void *a1 = 0)
   result = 0; /*0x76bb93*/
   if ( v2 <= 0 ) /*0x76bb98*/
     return -1; /*0x76bbb3*/
-  for ( i = (unsigned int *)(*((char *)this + 1) + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76bba1*/
+  for ( i = (unsigned int *)(*((char *)this + 1) + 4); *i != *(unsigned int *)(this + 4); i += 2 ) /*0x76bba1*/
   {
     if ( ++result >= v2 ) /*0x76bbb1*/
       return -1; /*0x76bbb1*/
@@ -164,13 +164,13 @@ int WDTState_4::Read(int a2, void *a1 = 0)
 }
 // 0x76BC10
 namespace gamemd {
-DynamicVector * WDTState_4::QueryInterface(char a2)
+DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
 {
 
   void (***v3)(unsigned int, int); // ecx
 
-  v3 = (void (***)(unsigned int, int))*(Block + 1); /*0x76bc13*/
-  *Block = &vt_VectorClass_rc_ptr_WDTTerritory; /*0x76bc16*/
+  v3 = (unsigned int)((void (***)(unsigned int, int))*(Block + 1));
+  *Block = (unsigned int)(&vt_VectorClass_rc_ptr_WDTTerritory);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
@@ -178,8 +178,8 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
   }
   *((unsigned char *)Block + 13) = 0; /*0x76bc3c*/
   *(Block + 2) = 0; /*0x76bc42*/
-  if ( (a2 & 1) != 0 ) /*0x76bc49*/
-    __3_YAXPAX_Z(Block); /*0x76bc4c*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x76bc49*/
+    RA2_OPDEL(Block); /*0x76bc4c*/
   return (DynamicVector *)Block; /*0x76bc56*/
 
 }
@@ -187,12 +187,12 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
 
 // 0x76BC60
 namespace gamemd {
-int WDTState_4::Constructor(int a2, void *a1 = 0)
+int WDTState_4::Constructor()
 {
 
-  ComPtr::Constructor(a2); /*0x76bc63*/
-  *a2 = &vt_rc_ptr_WDTTerritory; /*0x76bc68*/
-  return a2; /*0x76bc70*/
+  ComPtr::Constructor(this); /*0x76bc63*/
+  *this = &vt_rc_ptr_WDTTerritory; /*0x76bc68*/
+  return this; /*0x76bc70*/
 
 }
 } // namespace gamemd

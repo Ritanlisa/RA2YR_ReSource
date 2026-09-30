@@ -273,8 +273,8 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   RA2_OPDEL(v53); /*0x6425ad*/
   RA2_OPDEL(v49); /*0x6425b7*/
   *(unsigned int *)a3 = v38; /*0x6425c9*/
-    Debug::Log();
-  DSurface::Destroy((DSurface *)&v61); /*0x6425d7*/
+    this->Debug::Log();
+  ((DSurface *)((DSurface *)&v61))->Destroy(); /*0x6425d7*/
   return (int)v39; /*0x64213f*/
 }
 }
@@ -345,7 +345,7 @@ unsigned char * Palette::ConvertIndices(int a2)
   v6 = (unsigned char *)this + 2; /*0x632c04*/
   do /*0x632c23*/
   {
-    LOWORD(v4) = *v5; /*0x632c07*/
+    IDA_LOWORD(v4) = *v5; /*0x632c07*/
     v4 = ShiftBigIntAndScan(v4, 64); /*0x632c14*/
     *v6 = v4; /*0x632c19*/
     ++v5; /*0x632c1c*/
@@ -357,19 +357,19 @@ unsigned char * Palette::ConvertIndices(int a2)
 
 }
 // 0x72B820
-int Palette::LoadFile()
+int Palette::LoadFile(char * Source)
 {
 
-  if ( MEMORY[0xB0FBA0] ) /*0x72b82b*/
+  if ( g_abs_B0FBA0 ) /*0x72b82b*/
   {
-    (**(void (***)(int, int))MEMORY[0xB0FBA0])(MEMORY[0xB0FBA0], 1); /*0x72b831*/
-    MEMORY[0xB0FBA0] = 0; /*0x72b833*/
+    (**(void (***)(int, int))g_abs_B0FBA0)(g_abs_B0FBA0, 1); /*0x72b831*/
+    g_abs_B0FBA0 = 0; /*0x72b833*/
   }
-  if ( MEMORY[0xB0FB9C] ) /*0x72b844*/
+  if ( g_abs_B0FB9C ) /*0x72b844*/
   {
-    __3_YAXPAX_Z(MEMORY[0xB0FB9C]); /*0x72b847*/
-    MEMORY[0xB0FB9C] = 0; /*0x72b84f*/
+    RA2_OPDEL(g_abs_B0FB9C); /*0x72b847*/
+    g_abs_B0FB9C = 0; /*0x72b84f*/
   }
-  return LoadPaletteSimple(Source, &MEMORY[0xB0FB9C], &MEMORY[0xB0FBA0]); /*0x72b86a*/
+  return LoadPaletteSimple(Source, &g_abs_B0FB9C, &g_abs_B0FBA0); /*0x72b86a*/
 
 }

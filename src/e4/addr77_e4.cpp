@@ -137,17 +137,17 @@ HKEY E4Recv_7741C0::FindRegistrySubKey()
   {
     return 0; /*0x7742cf*/
   }
-  p_uniqueId = &cbMaxSubKeyLen->uniqueId; /*0x77421f*/
-  v5 = (CCINIClass *)__2_YAPAXI_Z((size_t)&cbMaxSubKeyLen->uniqueId); /*0x77422c*/
-  lpClass = (LPSTR)__2_YAPAXI_Z(cbMaxClassLen + 1); /*0x774235*/
+  p_uniqueId = (int *)(&cbMaxSubKeyLen->uniqueId);
+  v5 = (CCINIClass *)RA2_OPNEW((size_t)&cbMaxSubKeyLen->uniqueId); /*0x77422c*/
+  lpClass = (LPSTR)RA2_OPNEW(cbMaxClassLen + 1); /*0x774235*/
   ebp2 = 0; /*0x774240*/
   if ( !cSubKeys ) /*0x774244*/
   {
 LABEL_6:
     if ( v20 ) /*0x7742a7*/
       RegCloseKey((HKEY)this); /*0x7742aa*/
-    __3_YAXPAX_Z(v5); /*0x7742b1*/
-    __3_YAXPAX_Z(lpClass); /*0x7742bb*/
+    RA2_OPDEL(v5); /*0x7742b1*/
+    RA2_OPDEL(lpClass); /*0x7742bb*/
     return 0; /*0x7742bb*/
   }
   while ( 1 ) /*0x77425e*/
@@ -162,8 +162,8 @@ LABEL_6:
   }
   if ( v20 ) /*0x7742db*/
     RegCloseKey((HKEY)this); /*0x7742de*/
-  __3_YAXPAX_Z(v5); /*0x7742e5*/
-  __3_YAXPAX_Z(lpClass); /*0x7742ef*/
+  RA2_OPDEL(v5); /*0x7742e5*/
+  RA2_OPDEL(lpClass); /*0x7742ef*/
   return phkResult; /*0x7742c3*/
 
 }
@@ -566,7 +566,7 @@ char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
 }
 // 0x776320
 namespace gamemd {
-int E4Recv_776320::sub_776320()
+int E4Recv_776320::sub_776320(LPARAM lParam)
 {
 
   int v2; // edx
@@ -966,7 +966,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
 }
 // 0x777BB0
 namespace gamemd {
-void * E4Recv_777BB0::sub_777BB0()
+void * E4Recv_777BB0::sub_777BB0(char * Buffer)
 {
 
   char *v2; // eax
@@ -3361,16 +3361,16 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
   v6 = StaticString::Factory(*this); /*0x77085e*/
   ConcatStringAlloc(&a2a, (const char **)v6, v16); /*0x770869*/
   unknown_libname_73(&v17); /*0x770872*/
-  String::Assign((char **)&aP4, &MEMORY[0x87F8E4].__pad_5568[20760]); /*0x770880*/
+  String::Assign((char **)&aP4, &g_abs_87F8E4); /*0x770880*/
   INIClass::ReadString((ObjectClass *)a1, (ObjectClass *)a2, (ObjectClass *)&a2a, (ReferenceCounted *)&aP4, (int)&v17); /*0x77089d*/
   DeleteAndZero((void **)&aP4); /*0x7708a6*/
   v7 = (int)*((unsigned int *)this + 6 * a4 + 223); /*0x7708b2*/
   v8 = (unsigned int *)this + 6 * a4 + 223; /*0x7708b9*/
   (*(void (**)(void **))(v7 + 12))(v8); /*0x7708c2*/
   unknown_libname_73(&aP4); /*0x7708c9*/
-  for ( i = String::Tokenize((const char **)&v17, 0, &MEMORY[0x817F70], (ObjectClass *)&aP4); /*0x7708e8*/
+  for ( i = String::Tokenize((const char **)&v17, 0, &g_abs_817F70, (ObjectClass *)&aP4); /*0x7708e8*/
         i != -1;
-        i = String::Tokenize((const char **)&v17, i, &MEMORY[0x817F70], (ObjectClass *)&aP4) )
+        i = String::Tokenize((const char **)&v17, i, &g_abs_817F70, (ObjectClass *)&aP4) )
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP4); /*0x7708ef*/
     v10 = v8[2]; /*0x7708f4*/
@@ -3380,7 +3380,7 @@ void E4Recv_770850::sub_770850(unsigned int * a1, char ** a2, int a4, ObjectClas
       if ( !*((unsigned char *)v8 + 13) && v10 ) /*0x770907*/
         continue; /*0x770907*/
       v13 = (int)v8[5]; /*0x770909*/
-      if ( v13 <= 0 || !(*((unsigned __int8 (**)(void **, int, unsigned int))*v8 + 2))(v8, (int)v10 + v13, 0) ) /*0x770919*/
+      if ( v13 <= 0 || !(*((uint8_t (**)(void **, int, unsigned int))*v8 + 2))(v8, (int)v10 + v13, 0) ) /*0x770919*/
         continue; /*0x770919*/
     }
     v14 = v8[4]; /*0x770920*/
@@ -3422,12 +3422,12 @@ char E4Recv_770970::sub_770970(int a2, int a3, void ** a4)
   if ( v7 == 1 ) /*0x7709ae*/
     v9 = 0; /*0x7709b0*/
   else
-    v9 = Random::Range(MEMORY[0x886B88], 0, v7 - 1); /*0x7709bd*/
+    v9 = Random::Range(g_abs_886B88, 0, v7 - 1); /*0x7709bd*/
   v10 = *(unsigned int *)(*(unsigned int *)(v6 + 4) + 4 * v9); /*0x7709ca*/
   if ( v5 == 3 ) /*0x7709cd*/
   {
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x7709d3*/
-    v12 = ProcessStringAndCopy((char **)&a2, MEMORY[0x8491FC], v11); /*0x7709e2*/
+    v12 = ProcessStringAndCopy((char **)&a2, g_abs_8491FC, v11); /*0x7709e2*/
     String::Reassign(v4, (const char **)v12); /*0x7709ea*/
     DeleteAndZero((void **)&a2); /*0x7709f3*/
     DeleteAndZero((void **)&a3); /*0x7709fc*/
@@ -3472,12 +3472,12 @@ char E4Recv_770A50::sub_770A50(int a2, int a3, void ** a4)
   if ( v7 == 1 ) /*0x770a8e*/
     v9 = 0; /*0x770a90*/
   else
-    v9 = Random::Range(MEMORY[0x886B88], 0, v7 - 1); /*0x770a9d*/
+    v9 = Random::Range(g_abs_886B88, 0, v7 - 1); /*0x770a9d*/
   v10 = *(unsigned int *)(*(unsigned int *)(v6 + 4) + 4 * v9); /*0x770aaa*/
   if ( v5 == 3 ) /*0x770aad*/
   {
     v11 = FormatStringInt((char **)&a3, v10, 2); /*0x770ab3*/
-    v12 = ProcessStringAndCopy((char **)&a2, MEMORY[0x8491FC], v11); /*0x770ac2*/
+    v12 = ProcessStringAndCopy((char **)&a2, g_abs_8491FC, v11); /*0x770ac2*/
     String::Reassign(v4, (const char **)v12); /*0x770aca*/
     DeleteAndZero((void **)&a2); /*0x770ad3*/
     DeleteAndZero((void **)&a3); /*0x770adc*/
@@ -3523,12 +3523,12 @@ char E4Recv_770B30::sub_770B30(int a2, void ** a3)
   if ( v6 == 1 ) /*0x770b66*/
     v8 = 0; /*0x770b68*/
   else
-    v8 = Random::Range(MEMORY[0x886B88], 0, v6 - 1); /*0x770b75*/
+    v8 = Random::Range(g_abs_886B88, 0, v6 - 1); /*0x770b75*/
   v9 = *(unsigned int *)(*(unsigned int *)(v5 + 4) + 4 * v8); /*0x770b82*/
   if ( v4 == 3 ) /*0x770b85*/
   {
     v10 = FormatStringInt((char **)&a3, v9, 2); /*0x770b8b*/
-    v11 = ProcessStringAndCopy((char **)&a2, MEMORY[0x8491FC], v10); /*0x770b9a*/
+    v11 = ProcessStringAndCopy((char **)&a2, g_abs_8491FC, v10); /*0x770b9a*/
     String::Reassign(v3, (const char **)v11); /*0x770ba2*/
     DeleteAndZero((void **)&a2); /*0x770bab*/
     DeleteAndZero((void **)&a3); /*0x770bb4*/
@@ -3608,12 +3608,12 @@ char E4Recv_770F10::sub_770F10(int a2, int a3, void ** a4)
   if ( v6 == 1 ) /*0x770f3e*/
     v8 = 0; /*0x770f40*/
   else
-    v8 = Random::Range(MEMORY[0x886B88], 0, v6 - 1); /*0x770f4d*/
+    v8 = Random::Range(g_abs_886B88, 0, v6 - 1); /*0x770f4d*/
   v9 = *(unsigned int *)(*(unsigned int *)(v5 + 4) + 4 * v8); /*0x770f57*/
   if ( a2 == 3 ) /*0x770f61*/
   {
     v10 = FormatStringInt((char **)&a4, v9, 2); /*0x770f67*/
-    v11 = ProcessStringAndCopy((char **)&a3, MEMORY[0x8491FC], v10); /*0x770f76*/
+    v11 = ProcessStringAndCopy((char **)&a3, g_abs_8491FC, v10); /*0x770f76*/
     String::Reassign(v4, (const char **)v11); /*0x770f7e*/
     DeleteAndZero((void **)&a3); /*0x770f87*/
     DeleteAndZero((void **)&a4); /*0x770f90*/
@@ -3656,12 +3656,12 @@ char E4Recv_770FE0::sub_770FE0(int a2, int a3, void ** a4)
   if ( v6 == 1 ) /*0x77100e*/
     v8 = 0; /*0x771010*/
   else
-    v8 = Random::Range(MEMORY[0x886B88], 0, v6 - 1); /*0x77101d*/
+    v8 = Random::Range(g_abs_886B88, 0, v6 - 1); /*0x77101d*/
   v9 = *(unsigned int *)(*(unsigned int *)(v5 + 4) + 4 * v8); /*0x771027*/
   if ( a2 == 3 ) /*0x771031*/
   {
     v10 = FormatStringInt((char **)&a4, v9, 2); /*0x771037*/
-    v11 = ProcessStringAndCopy((char **)&a3, MEMORY[0x8491FC], v10); /*0x771046*/
+    v11 = ProcessStringAndCopy((char **)&a3, g_abs_8491FC, v10); /*0x771046*/
     String::Reassign(v4, (const char **)v11); /*0x77104e*/
     DeleteAndZero((void **)&a3); /*0x771057*/
     DeleteAndZero((void **)&a4); /*0x771060*/
@@ -3813,7 +3813,7 @@ void E4Recv_771A00::sub_771A00()
   *(unsigned int *)this = &vt_VectorClass_unsigned_int; /*0x771a09*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x771a13*/
   {
-    __3_YAXPAX_Z(v2); /*0x771a19*/
+    RA2_OPDEL(v2); /*0x771a19*/
     *((unsigned int *)this + 1) = 0; /*0x771a21*/
   }
   *((unsigned char *)this + 13) = 0; /*0x771a24*/
@@ -4161,7 +4161,7 @@ BOOL E4Recv_7738A0::sub_7738A0(const char * cbData, LPBYTE lpData, const char * 
   HKEY phkResult; // [esp+8h] [ebp-44h] BYREF
   CHAR ValueName[64]; // [esp+Ch] [ebp-40h] BYREF
 
-  Value = RegOpenKeyExA(HKEY_LOCAL_MACHINE, MEMORY[0x849690], 0, 0x20019u, &phkResult); /*0x7738c3*/
+  Value = RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_abs_849690, 0, 0x20019u, &phkResult); /*0x7738c3*/
   if ( !Value ) /*0x7738c7*/
   {
     strcpy(ValueName, cbData); /*0x7738e8*/

@@ -36,9 +36,9 @@ struct Buffer {
     DynamicVector * Constructor_VectorClass_ObjectClass___(char a2);
     int * RotateBufferCrypto(int * a2, int a3);
     int AllocateCodecFrameBuffers();
-    int AppendCellData(AbstractClass * aP1, int a3);
-    unsigned int * Init(int a2, AbstractClass * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
-    void * FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4);
+    int AppendCellData(void * aP1, int a3);
+    unsigned int * Init(int a2, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);
+    void * FillCircularBufferScroll2(int a2, void * aP2, unsigned short a4);
 };
 
 } // namespace gamemd

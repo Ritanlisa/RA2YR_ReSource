@@ -5,9 +5,10 @@
 
 namespace gamemd {
 struct MixFile {
+    unsigned int Debug;
     void* vfptr;  // minimal E2 declaration
     bool LoadAll();  // 0x530460
-    char LoadSide(void *a1 = 0);  // 0x534FA0
-    unsigned int * Load(ObjectClass * aP1);  // 0x627590
+    char LoadSide();  // 0x534FA0
+    unsigned int * Load(void * aP1);  // 0x627590
 };
 } // namespace gamemd

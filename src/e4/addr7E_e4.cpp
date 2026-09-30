@@ -184,7 +184,7 @@ namespace gamemd {
 void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 {
   unsigned int v5;
-  unsigned int v6;
+  unsigned char * v6;
   unsigned char * v7;
   unsigned char * v8;
   char *v10; // [esp+Ch] [ebp-4h]

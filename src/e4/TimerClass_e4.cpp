@@ -6,6 +6,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x4C9480
 namespace gamemd {
@@ -15,15 +16,15 @@ int TimerClass::Active()
   int v1; // edx
   int v2; // eax
 
-  if ( *(__int16 *)((char *)this + 20) <= 0 ) /*0x4c9485*/
+  if ( *(int16_t *)((char *)this + 20) <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
   v1 = *((unsigned int *)this + 2); /*0x4c9487*/
   v2 = *((unsigned int *)this + 4); /*0x4c948a*/
   if ( v1 != -1 ) /*0x4c9490*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v1 >= v2 ) /*0x4c949c*/
+    if ( (int)g_abs_A8ED84 - v1 >= v2 ) /*0x4c949c*/
       return 0; /*0x4c949c*/
-    v2 -= (int)MEMORY[0xA8ED84] - v1; /*0x4c949e*/
+    v2 -= (int)g_abs_A8ED84 - v1; /*0x4c949e*/
   }
   return v2 != 0; /*0x4c94a9*/
 
@@ -36,11 +37,11 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
 
   char *v18; // ecx
   IUnknown *v19; // ecx
-  int v20; // eax
+  TimerClass * v20;
 
   *(unsigned int *)this = 0; /*0x54fe6a*/
   *((unsigned char *)this + 4) = 0; /*0x54fe6c*/
-  *((unsigned int *)this + 2) = *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54fe75*/
+  *((unsigned int *)this + 2) = *(unsigned int *)&g_abs_A8D63C; /*0x54fe75*/
   v18 = (unsigned char *)this + 36; /*0x54fe78*/
   *((unsigned int *)this + 4) = 0; /*0x54fe7b*/
   *(unsigned int *)v18 = a2; /*0x54fe83*/
@@ -72,27 +73,27 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   *((unsigned int *)this + 21) = a16; /*0x54fefe*/
   *((unsigned int *)this + 22) = a17; /*0x54ff05*/
   *(unsigned int *)this = 0; /*0x54ff08*/
-  v19 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x54ff0a*/
+  v19 = *(IUnknown **)&g_abs_A8D63C; /*0x54ff0a*/
   *((unsigned int *)this + 5) = 1; /*0x54ff10*/
   *((unsigned int *)this + 2) = v19; /*0x54ff13*/
   *((unsigned int *)this + 3) = a3; /*0x54ff1a*/
   *((unsigned int *)this + 4) = 1; /*0x54ff21*/
   *(unsigned short *)((unsigned char *)this + 65) = a10; /*0x54ff29*/
-  *((unsigned char *)this + 67) = BYTE2(a10); /*0x54ff32*/
+  *((unsigned char *)this + 67) = IDA_BYTE2(a10); /*0x54ff32*/
   *((unsigned short *)this + 34) = a11; /*0x54ff39*/
-  *((unsigned char *)this + 70) = BYTE2(a11); /*0x54ff42*/
+  *((unsigned char *)this + 70) = IDA_BYTE2(a11); /*0x54ff42*/
   *(unsigned short *)((unsigned char *)this + 71) = a12; /*0x54ff49*/
-  *((unsigned char *)this + 73) = BYTE2(a12); /*0x54ff4d*/
+  *((unsigned char *)this + 73) = IDA_BYTE2(a12); /*0x54ff4d*/
   if ( g_TimerPool < dword_ABC880 /*0x54ff85*/
     || (byte_ABC885 || !dword_ABC880)
     && dword_ABC88C > 0
-    && ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))dword_ABC878->field_8)(
+    && ((uint8_t (*)(DynamicVector **, int, unsigned int))dword_ABC878->field_8)(
          &dword_ABC878,
          dword_ABC880 + dword_ABC88C,
          0) )
   {
-    v20 = g_TimerPool++; /*0x54ff92*/
-    *((unsigned int *)dword_ABC87C + v20) = this; /*0x54ffa1*/
+    v20 = (gamemd::TimerClass *)((unsigned int)(g_TimerPool++));
+    *((unsigned int *)(unsigned int)(dword_ABC87C)+ v20) = this; /*0x54ffa1*/
   }
   return this; /*0x54ffa6*/
 

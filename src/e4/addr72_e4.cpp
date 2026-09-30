@@ -1757,19 +1757,19 @@ void E4Recv_722A20::sub_722A20()
     v4 = *(void ***)((char *)this + 244); /*0x722a49*/
     if ( v4 ) /*0x722a51*/
     {
-      __3_YAXPAX_Z(v4[2]); /*0x722a57*/
-      __3_YAXPAX_Z(v4); /*0x722a5d*/
+      RA2_OPDEL(v4[2]); /*0x722a57*/
+      RA2_OPDEL(v4); /*0x722a5d*/
     }
     *((unsigned int *)this + 61) = 0; /*0x722a65*/
   }
   if ( *((unsigned int *)this + 63) ) /*0x722a6c*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 252)); /*0x722a77*/
+    RA2_OPDEL(*(void **)((char *)this + 252)); /*0x722a77*/
     *((unsigned int *)this + 63) = 0; /*0x722a7f*/
   }
   if ( *((unsigned int *)this + 62) ) /*0x722a85*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 248)); /*0x722a90*/
+    RA2_OPDEL(*(void **)((char *)this + 248)); /*0x722a90*/
     *((unsigned int *)this + 62) = 0; /*0x722a98*/
   }
   *((unsigned int *)this + 60) = 0; /*0x722a9e*/
@@ -1795,19 +1795,19 @@ void E4Recv_723510::sub_723510()
     v4 = *(void ***)((char *)this + 272); /*0x723539*/
     if ( v4 ) /*0x723541*/
     {
-      __3_YAXPAX_Z(v4[2]); /*0x723547*/
-      __3_YAXPAX_Z(v4); /*0x72354d*/
+      RA2_OPDEL(v4[2]); /*0x723547*/
+      RA2_OPDEL(v4); /*0x72354d*/
     }
     *((unsigned int *)this + 68) = 0; /*0x723555*/
   }
   if ( *((unsigned int *)this + 70) ) /*0x72355c*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 280)); /*0x723567*/
+    RA2_OPDEL(*(void **)((char *)this + 280)); /*0x723567*/
     *((unsigned int *)this + 70) = 0; /*0x72356f*/
   }
   if ( *((unsigned int *)this + 69) ) /*0x723575*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 276)); /*0x723580*/
+    RA2_OPDEL(*(void **)((char *)this + 276)); /*0x723580*/
     *((unsigned int *)this + 69) = 0; /*0x723588*/
   }
   *((unsigned int *)this + 67) = 0; /*0x72358e*/
@@ -3055,11 +3055,11 @@ char E4Recv_728540::sub_728540(int a2)
   int *v3; // edx
   int v4; // eax
   int v5; // eax
-  __int16 v6; // cx
-  __int16 v8; // [esp+Eh] [ebp-2h]
+  int16_t v6; // cx
+  int16_t v8; // [esp+Eh] [ebp-2h]
 
   v2 = *((char *)this + 9); /*0x728547*/
-  v8 = HIWORD(v2); /*0x728551*/
+  v8 = IDA_HIWORD(v2); /*0x728551*/
   if ( v2 == *(unsigned int *)a2 ) /*0x728555*/
     return 1; /*0x728555*/
   v3 = (char *)this + 12; /*0x728565*/
@@ -3069,8 +3069,8 @@ char E4Recv_728540::sub_728540(int a2)
   {
     v4 = *v3++; /*0x72856d*/
     v5 = v4 & 7; /*0x728572*/
-    v6 = v8 + HIWORD(MEMORY[0x89F688][v5]); /*0x728588*/
-    LOWORD(v2) = v2 + LOWORD(MEMORY[0x89F688][v5]); /*0x72859d*/
+    v6 = v8 + IDA_HIWORD(g_abs_89F688[v5]); /*0x728588*/
+    IDA_LOWORD(v2) = v2 + IDA_LOWORD(g_abs_89F688[v5]); /*0x72859d*/
     v8 = v6; /*0x7285a1*/
     if ( (unsigned short)v2 == *(unsigned short *)a2 && v6 == *(unsigned short *)(a2 + 2) ) /*0x7285ab*/
       break; /*0x7285ab*/
@@ -3242,7 +3242,7 @@ int E4Recv_7294E0::sub_7294E0()
   else
   {
     v5 = (*(int (**)(unsigned int *))(*v2 + 1336))(v2); /*0x72951c*/
-    v3 = Math::RoundToInt((double)v5 * *(double *)&MEMORY[0x8871E0]->TunnelSpeed); /*0x729527*/
+    v3 = Math::RoundToInt((double)v5 * *(double *)&g_abs_8871E0->TunnelSpeed); /*0x729527*/
     if ( v3 <= 5 ) /*0x72952f*/
       v3 = 5; /*0x729531*/
     v7 -= v3; /*0x729542*/

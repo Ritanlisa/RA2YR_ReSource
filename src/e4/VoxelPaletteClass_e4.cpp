@@ -34,7 +34,7 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
     goto LABEL_5; /*0x758a5c*/
   v4 = v9[2]; /*0x758a62*/
   v5 = v9[1]; /*0x758a66*/
-  *this = v9[0]; /*0x758a6a*/
+  *(unsigned int *)this = v9[0]; /*0x758a6a*/
   v6 = v9[3]; /*0x758a6c*/
   *((unsigned int *)this + 2) = v4; /*0x758a70*/
   v7 = *((unsigned int *)this + 4); /*0x758a73*/
@@ -59,12 +59,12 @@ int VoxelPaletteClass::LoadFromFile()
   int v2; // esi
   unsigned int v4[8]; // [esp+4h] [ebp-20h] BYREF
 
-  VoxelPalette::Init(v4, (int)&MEMORY[0xB2FB78], (int)MEMORY[0xB41178]); /*0x753b84*/
+  VoxelPalette::Init(v4, (int)&g_abs_B2FB78, (int)g_abs_B41178); /*0x753b84*/
   v2 = VoxelPaletteClass::ConvertFromFile(v4, (int)this); /*0x753b93*/
-  MEMORY[0xB2FB74] = v4[0]; /*0x753ba1*/
-  MEMORY[0xB4317C] = v4[1]; /*0x753baa*/
-  MEMORY[0xB2FB58] = v4[2]; /*0x753bb4*/
-  MEMORY[0xB43178] = v4[3]; /*0x753bba*/
+  g_abs_B2FB74 = v4[0]; /*0x753ba1*/
+  g_abs_B4317C = v4[1]; /*0x753baa*/
+  g_abs_B2FB58 = v4[2]; /*0x753bb4*/
+  g_abs_B43178 = v4[3]; /*0x753bba*/
   VoxelPalette::Reset((int)v4); /*0x753bbf*/
   return v2; /*0x753bc6*/
 

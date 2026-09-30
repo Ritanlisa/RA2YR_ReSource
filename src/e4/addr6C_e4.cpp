@@ -1537,8 +1537,8 @@ LABEL_10:
     }
     if ( !v8 ) /*0x6ca28f*/
       return 0; /*0x6ca2f8*/
-    v9 = wcslen(MEMORY[0x842354]); /*0x6ca296*/
-    if ( !_wcsnicmp(v8, MEMORY[0x842354], v9) ) /*0x6ca2a2*/
+    v9 = wcslen(g_abs_842354); /*0x6ca296*/
+    if ( !_wcsnicmp(v8, g_abs_842354, v9) ) /*0x6ca2a2*/
     {
       v10 = wcschr(v8, 0x20u); /*0x6ca2b5*/
       v11 = v10; /*0x6ca2ba*/
@@ -1956,13 +1956,13 @@ void sub_6C6B60()
 
 // 0x6C8840
 namespace gamemd {
-rc_ptr * E4Recv_6C8840::sub_6C8840(char a2)
+rc_ptr * E4Recv_6C8840::sub_6C8840(unsigned int * Block, char a2)
 {
 
   *Block = &vt_rc_ptr_PlayerProfile; /*0x6c8843*/
   ComPtr::Release(Block); /*0x6c8849*/
-  if ( (a2 & 1) != 0 ) /*0x6c8853*/
-    __3_YAXPAX_Z(Block); /*0x6c8856*/
+  if ( (Block & 1) != 0 ) /*0x6c8853*/
+    RA2_OPDEL(Block); /*0x6c8856*/
   return (rc_ptr *)Block; /*0x6c8860*/
 
 }
@@ -1985,13 +1985,13 @@ char E4Recv_6C8900::sub_6C8900()
   v4 = 2 * v2; /*0x6c8913*/
   if ( 2 * v2 < 10 ) /*0x6c891b*/
     v4 = 10; /*0x6c891d*/
-  v5 = __2_YAPAXI_Z(32776 * v4); /*0x6c8932*/
+  v5 = RA2_OPNEW(32776 * v4); /*0x6c8932*/
   memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2)); /*0x6c893d*/
   v7 = (int)v5; /*0x6c8947*/
   v6 = (const void *)*((char *)this + 2); /*0x6c894d*/
   if ( v6 ) /*0x6c8952*/
     qmemcpy(v5, v6, 32776 * *this); /*0x6c8967*/
-  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x6c8974*/
+  RA2_OPDEL((void *)*((char *)this + 2)); /*0x6c8974*/
   *((char *)this + 1) = v4; /*0x6c8980*/
   *((char *)this + 2) = v7; /*0x6c8983*/
   return 1; /*0x6c890f*/
@@ -2019,7 +2019,7 @@ unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
   void *v3; // eax
 
   *this = Size; /*0x6c89b8*/
-  v3 = __2_YAPAXI_Z(Size); /*0x6c89ba*/
+  v3 = RA2_OPNEW(Size); /*0x6c89ba*/
   *((unsigned int *)this + 1) = v3; /*0x6c89c2*/
   *((unsigned int *)this + 2) = v3; /*0x6c89c5*/
   return this; /*0x6c89ca*/
@@ -2062,14 +2062,14 @@ int E4Recv_6C8B10::sub_6C8B10(int a2, int a3, short a4, short a5)
   {
     while ( 1 ) /*0x6c8bbb*/
     {
-      v10 = Map_Append(v14, (int)&MEMORY[0xB0BDD0], *(unsigned int *)(a3 + 8)); /*0x6c8bbb*/
+      v10 = Map_Append(v14, (int)&g_abs_B0BDD0, *(unsigned int *)(a3 + 8)); /*0x6c8bbb*/
       v11 = (char *)*((unsigned int *)this + 2); /*0x6c8bc0*/
       if ( (unsigned int)&v11[v10] > *((unsigned int *)this + 1) + *this || (*((unsigned int *)this + 2) = &v11[v10], !v11) ) /*0x6c8bd4*/
       {
         (*(void (**)(int))(*(unsigned int *)v9 + 96))(v9); /*0x6c8c16*/
         return 0; /*0x6c8c22*/
       }
-      qmemcpy(v11, &MEMORY[0xB0BDD0], v10); /*0x6c8be0*/
+      qmemcpy(v11, &g_abs_B0BDD0, v10); /*0x6c8be0*/
       ++v15; /*0x6c8bf4*/
       v14 += (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x6c8c06*/
       if ( v15 >= *(unsigned int *)(a3 + 12) ) /*0x6c8c0a*/
@@ -2484,11 +2484,11 @@ namespace gamemd {
 int E4Recv_6C9940::sub_6C9940(char a2, char a3, unsigned char a4)
 {
 
-  unsigned __int16 v4; // ax
+  uint16_t v4; // ax
   int result; // eax
 
-  HIBYTE(v4) = a2; /*0x6c9946*/
-  LOBYTE(v4) = a3; /*0x6c9950*/
+  IDA_HIBYTE(v4) = a2; /*0x6c9946*/
+  IDA_LOBYTE(v4) = a3; /*0x6c9950*/
   result = a4 | (v4 << 8); /*0x6c9957*/
   *((unsigned int *)this + 2) = result; /*0x6c9959*/
   return result; /*0x6c995c*/
@@ -2506,13 +2506,13 @@ void E4Recv_6C9960::sub_6C9960(wchar_t * String)
 
   if ( *((unsigned int *)this + 5) ) /*0x6c9964*/
   {
-    __3_YAXPAX_Z(*((unsigned int *)this + 5)); /*0x6c996c*/
+    RA2_OPDEL(*((unsigned int *)this + 5)); /*0x6c996c*/
     *((unsigned int *)this + 5) = 0; /*0x6c9974*/
   }
   if ( String ) /*0x6c9981*/
   {
     v3 = wcslen(String); /*0x6c9984*/
-    v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x6c998e*/
+    v4 = (wchar_t *)RA2_OPNEW(2 * v3 + 2); /*0x6c998e*/
     *((unsigned int *)this + 5) = v4; /*0x6c9996*/
     if ( v4 ) /*0x6c999b*/
       wcscpy(v4, String); /*0x6c999f*/
@@ -2564,7 +2564,7 @@ void ObjectClass::nullsub_40()
 
 // 0x6CA5A0
 namespace gamemd {
-unsigned int E4Recv_6CA5A0::sub_6CA5A0()
+unsigned int E4Recv_6CA5A0::sub_6CA5A0(wchar_t * Source)
 {
 
   ObjectClass *v1; // esi
@@ -2576,7 +2576,7 @@ unsigned int E4Recv_6CA5A0::sub_6CA5A0()
   ObjectClass *v7; // ebx
   ObjectClass *v8; // esi
   BlowStraw Destination; // [esp+10h] [ebp-18h] BYREF
-  __int16 v11; // [esp+26h] [ebp-2h]
+  int16_t v11; // [esp+26h] [ebp-2h]
 
   wcsncpy((wchar_t *)&Destination, Source, (DropListClass *)0xC); /*0x6ca5af*/
   v11 = 0; /*0x6ca5bb*/
@@ -3024,7 +3024,7 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
     return this; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/
   {
-    v7 = __2_YAPAXI_Z(8 * a2); /*0x6cf942*/
+    v7 = RA2_OPNEW(8 * a2); /*0x6cf942*/
     if ( v7 ) /*0x6cf94c*/
     {
       v8 = v7; /*0x6cf951*/
@@ -3328,7 +3328,7 @@ namespace gamemd {
 int E4Recv_6CFE10::sub_6CFE10()
 {
 
-  return (int)this - MEMORY[0xB0CC20] + 1; /*0x6cfe19*/
+  return (int)this - g_abs_B0CC20 + 1; /*0x6cfe19*/
 
 }
 } // namespace gamemd

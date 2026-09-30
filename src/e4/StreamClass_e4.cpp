@@ -55,24 +55,24 @@ int StreamClass::Set2(unsigned int * a2)
     {
       v5 = a2; /*0x45aedf*/
       if ( *this ) /*0x45aedc*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x45aeea*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 32))(*this); /*0x45aeea*/
       *this = v5; /*0x45aeed*/
       return v3; /*0x45aef0*/
     }
     else
     {
       if ( *this ) /*0x45aec3*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x45aecc*/
-      *this = 0; /*0x45aed1*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 32))(*this); /*0x45aecc*/
+      *(unsigned int *)this = 0; /*0x45aed1*/
       return v3; /*0x45aecf*/
     }
   }
   else
   {
-    v6 = *this; /*0x45aef7*/
+    v6 = (int)(*this);
     if ( *this ) /*0x45aef7*/
     {
-      *this = 0; /*0x45aefd*/
+      *(unsigned int *)this = 0; /*0x45aefd*/
       (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af06*/
     }
     return -2147467262; /*0x45af0e*/
@@ -82,38 +82,38 @@ int StreamClass::Set2(unsigned int * a2)
 } // namespace gamemd
 // 0x45AF20
 namespace gamemd {
-int StreamClass::Set(void* a1)
+int StreamClass::Set(IUnknown * aP1)
 {
 
   int v3; // edi
   IUnknown *v5; // ebx
   int v6; // eax
 
-  if ( a1->field_0 ) /*0x45af28*/
+  if ( aP1->field_0 ) /*0x45af28*/
   {
-    v3 = (**(int (***)(int, void *, IUnknown **))a1->field_0)(a1->field_0, &unk_819088, &a1); /*0x45af3d*/
+    v3 = (**(int (***)(int, void *, IUnknown **))aP1->field_0)(aP1->field_0, &unk_819088, &aP1); /*0x45af3d*/
     if ( v3 >= 0 ) /*0x45af41*/
     {
-      v5 = a1; /*0x45af5f*/
+      v5 = aP1; /*0x45af5f*/
       if ( *this ) /*0x45af5c*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x45af6a*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 32))(*this); /*0x45af6a*/
       *this = v5; /*0x45af6d*/
       return v3; /*0x45af70*/
     }
     else
     {
       if ( *this ) /*0x45af43*/
-        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int **)this + 8))(*this); /*0x45af4c*/
-      *this = 0; /*0x45af51*/
+        (*(void (**)(unsigned int))(*(unsigned int *)*(unsigned int *)this + 32))(*this); /*0x45af4c*/
+      *(unsigned int *)this = 0; /*0x45af51*/
       return v3; /*0x45af4f*/
     }
   }
   else
   {
-    v6 = *this; /*0x45af77*/
+    v6 = (int)(*this);
     if ( *this ) /*0x45af77*/
     {
-      *this = 0; /*0x45af7d*/
+      *(unsigned int *)this = 0; /*0x45af7d*/
       (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af86*/
     }
     return -2147467262; /*0x45af8e*/
@@ -144,8 +144,8 @@ namespace gamemd {
 int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
 
-  aP0->Owner = (void *)a2; /*0x55a718*/
-  *(unsigned int *)&aP0->__pad_0[4] = a2; /*0x55a71b*/
+  aP0->Owner = (unsigned int)((void *)a2);
+  *(unsigned int *)&aP0-((unsigned int *)(>__pad_0))[4] = a2; /*0x55a71b*/
   return 0; /*0x55a720*/
 
 }

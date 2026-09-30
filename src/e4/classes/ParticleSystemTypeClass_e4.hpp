@@ -291,12 +291,12 @@ struct ParticleSystemTypeClass {
 // --- flat members (END) ---
     ParticleSystemTypeClass * ddtor(char a2);
     char Stub(int a1, int a2);
-    float * ReadXYZFromINI(float * a1, CCINIClass * aP2, unsigned char * a3, float * a4);
+    float * ReadXYZFromINI(float * a1, void * aP2, unsigned char * a3, float * a4);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
+    int SaveLoad_Prefix(void * aP0, int aP1);
+    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
     int StubReturnFalse(int a1);
     void* GetType(unsigned char *** aP1);
     void* PowerDrainUpdate(int * a2);

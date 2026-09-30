@@ -13,7 +13,7 @@
 
 // 0x6B6C90
 namespace gamemd {
-SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, int a6)
+SpawnManagerClass::SpawnManagerClass(int a2, int a3, int a4, int a5, int a6)
 {
 
   int v7; // eax
@@ -36,13 +36,13 @@ SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, 
   *((unsigned int *)this + 14) = &DynamicVectorClass<SpawnManagerClass::SpawnControl *>::`vftable'; /*0x6b6cb0*/
   *((unsigned int *)this + 19) = 10; /*0x6b6cb6*/
   *((unsigned int *)this + 18) = 0; /*0x6b6cbd*/
-  v7 = dword_A8ED54[12]; /*0x6b6cc0*/
+  v7 = ((unsigned int *)(dword_A8ED54))[12]; /*0x6b6cc0*/
   *((unsigned int *)this + 22) = 0; /*0x6b6cc5*/
   *((unsigned int *)this + 20) = v7; /*0x6b6cc8*/
-  *((unsigned int *)this + 23) = dword_A8ED54[12]; /*0x6b6cd5*/
+  *((unsigned int *)this + 23) = ((unsigned int *)(dword_A8ED54))[12]; /*0x6b6cd5*/
   *((unsigned int *)this + 25) = 0; /*0x6b6cdc*/
   *((unsigned int *)this + 10) = a3; /*0x6b6cdf*/
-  *((unsigned int *)this + 9) = aP1; /*0x6b6ce6*/
+  *((unsigned int *)this + 9) = a2; /*0x6b6ce6*/
   *(unsigned int *)this = &SpawnManagerClass::`vftable'; /*0x6b6cef*/
   *((unsigned int *)this + 1) = &SpawnManagerClass::`vftable'; /*0x6b6cf5*/
   *((unsigned int *)this + 2) = &SpawnManagerClass::`vftable'; /*0x6b6cfc*/
@@ -52,10 +52,10 @@ SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, 
   *((unsigned int *)this + 13) = a6; /*0x6b6d10*/
   for ( i = 0; i < *((unsigned int *)this + 11); ++i ) /*0x6b6d17*/
   {
-    v8 = (int *)__2_YAPAXI_Z(24); /*0x6b6d24*/
+    v8 = (int *)RA2_OPNEW(24); /*0x6b6d24*/
     if ( !v8 ) /*0x6b6d2b*/
       break; /*0x6b6d2b*/
-    v9 = dword_A8ED54[12]; /*0x6b6d31*/
+    v9 = ((unsigned int *)(dword_A8ED54))[12]; /*0x6b6d31*/
     v8[4] = 0; /*0x6b6d36*/
     v8[2] = v9; /*0x6b6d39*/
     v10 = **(unsigned int **)((char *)this + 40); /*0x6b6d44*/
@@ -65,20 +65,20 @@ SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, 
     if ( v12 ) /*0x6b6d5a*/
     {
       v13 = *((unsigned int *)this + 10); /*0x6b6d66*/
-      v8[5] = v13 == *(unsigned int *)(MEMORY[0x87F7E8][7806] + 1248) /*0x6b6d86*/
-           || v13 == *(unsigned int *)(MEMORY[0x87F7E8][7806] + 1300)
-           || v13 == *(unsigned int *)(MEMORY[0x87F7E8][7806] + 1352);
+      v8[5] = v13 == *(unsigned int *)(g_abs_87F7E8[7806] + 1248) /*0x6b6d86*/
+           || v13 == *(unsigned int *)(g_abs_87F7E8[7806] + 1300)
+           || v13 == *(unsigned int *)(g_abs_87F7E8[7806] + 1352);
       (*(void (**)(int))(*(unsigned int *)v12 + 212))(v12); /*0x6b6d91*/
       *(unsigned int *)(*v8 + 724) = *((unsigned int *)this + 9); /*0x6b6da1*/
       v8[1] = 0; /*0x6b6da7*/
-      v8[2] = dword_A8ED54[12]; /*0x6b6db1*/
+      v8[2] = ((unsigned int *)(dword_A8ED54))[12]; /*0x6b6db1*/
       v8[3] = v20; /*0x6b6db4*/
       v8[4] = 0; /*0x6b6db7*/
       v14 = *((unsigned int *)this + 16); /*0x6b6dba*/
       if ( *((unsigned int *)this + 18) < v14 /*0x6b6dda*/
         || (*((unsigned char *)this + 69) || !v14)
         && (v15 = *((unsigned int *)this + 19), v15 > 0)
-        && (*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v14 + v15, 0) )
+        && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v14 + v15, 0) )
       {
         v16 = *((unsigned int *)this + 18); /*0x6b6de1*/
         v17 = *((unsigned int *)this + 15); /*0x6b6de4*/
@@ -87,19 +87,19 @@ SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, 
       }
     }
   }
-  *((unsigned int *)this + 20) = dword_A8ED54[12]; /*0x6b6e0d*/
+  *((unsigned int *)this + 20) = ((unsigned int *)(dword_A8ED54))[12]; /*0x6b6e0d*/
   *((unsigned int *)this + 21) = v20; /*0x6b6e19*/
   *((unsigned int *)this + 22) = 20; /*0x6b6e1c*/
   *((unsigned int *)this + 26) = 0; /*0x6b6e1f*/
   *((unsigned int *)this + 27) = 0; /*0x6b6e22*/
   *((unsigned int *)this + 28) = 0; /*0x6b6e25*/
-  *((unsigned int *)this + 23) = dword_A8ED54[12]; /*0x6b6e2f*/
+  *((unsigned int *)this + 23) = ((unsigned int *)(dword_A8ED54))[12]; /*0x6b6e2f*/
   *((unsigned int *)this + 24) = v20; /*0x6b6e32*/
   *((unsigned int *)this + 25) = 0; /*0x6b6e35*/
   if ( dword_A8ED54[127695] < dword_A8ED54[127693] /*0x6b6e69*/
-    || (BYTE1(dword_A8ED54[127694]) || !dword_A8ED54[127693])
+    || (IDA_BYTE1(dword_A8ED54[127694]) || !dword_A8ED54[127693])
     && dword_A8ED54[127696] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_A8ED54[127691] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_A8ED54[127691] + 8))(
          &dword_A8ED54[127691],
          dword_A8ED54[127693] + dword_A8ED54[127696],
          0) )
@@ -125,9 +125,9 @@ void* SpawnManagerClass::Constructor()
   *((unsigned int *)this + 14) = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6ebb*/
   *((unsigned int *)this + 19) = 10; /*0x6b6ec1*/
   *((unsigned int *)this + 18) = 0; /*0x6b6ec8*/
-  *((unsigned int *)this + 20) = MEMORY[0xA8ED84]; /*0x6b6ed4*/
+  *((unsigned int *)this + 20) = g_abs_A8ED84; /*0x6b6ed4*/
   *((unsigned int *)this + 22) = 0; /*0x6b6ed7*/
-  *((unsigned int *)this + 23) = MEMORY[0xA8ED84]; /*0x6b6ee0*/
+  *((unsigned int *)this + 23) = g_abs_A8ED84; /*0x6b6ee0*/
   *((unsigned int *)this + 25) = 0; /*0x6b6ee3*/
   *(unsigned int *)this = &SpawnManagerClass::`vftable'; /*0x6b6ee6*/
   *((unsigned int *)this + 1) = &SpawnManagerClass::`vftable'; /*0x6b6eec*/
@@ -136,25 +136,25 @@ void* SpawnManagerClass::Constructor()
   *((unsigned int *)this + 9) = 0; /*0x6b6f01*/
   *((unsigned int *)this + 10) = 0; /*0x6b6f04*/
   *((unsigned int *)this + 11) = 0; /*0x6b6f07*/
-  *((unsigned int *)this + 20) = MEMORY[0xA8ED84]; /*0x6b6f11*/
+  *((unsigned int *)this + 20) = g_abs_A8ED84; /*0x6b6f11*/
   *((unsigned int *)this + 21) = v4; /*0x6b6f14*/
   *((unsigned int *)this + 22) = 0; /*0x6b6f17*/
   *((unsigned int *)this + 26) = 0; /*0x6b6f1a*/
   *((unsigned int *)this + 27) = 0; /*0x6b6f1d*/
   *((unsigned int *)this + 28) = 0; /*0x6b6f20*/
-  *((unsigned int *)this + 23) = MEMORY[0xA8ED84]; /*0x6b6f28*/
+  *((unsigned int *)this + 23) = g_abs_A8ED84; /*0x6b6f28*/
   *((unsigned int *)this + 24) = v4; /*0x6b6f2f*/
   *((unsigned int *)this + 25) = 0; /*0x6b6f32*/
-  if ( MEMORY[0xB0B890] < MEMORY[0xB0B888] /*0x6b6f69*/
-    || (MEMORY[0xB0B88D] || !MEMORY[0xB0B888])
-    && MEMORY[0xB0B894] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0B880] + 8))(
-         &MEMORY[0xB0B880],
-         MEMORY[0xB0B888] + MEMORY[0xB0B894],
+  if ( g_abs_B0B890 < g_abs_B0B888 /*0x6b6f69*/
+    || (g_abs_B0B88D || !g_abs_B0B888)
+    && g_abs_B0B894 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0B880 + 8))(
+         &g_abs_B0B880,
+         g_abs_B0B888 + g_abs_B0B894,
          0) )
   {
-    v2 = MEMORY[0xB0B890]++; /*0x6b6f76*/
-    *((unsigned int *)MEMORY[0xB0B884] + v2) = this; /*0x6b6f85*/
+    v2 = g_abs_B0B890++; /*0x6b6f76*/
+    *((unsigned int *)g_abs_B0B884 + v2) = this; /*0x6b6f85*/
   }
   return this; /*0x6b6f8a*/
 
@@ -176,32 +176,32 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   *((unsigned int *)this + 1) = &SpawnManagerClass::`vftable'; /*0x6b701b*/
   *((unsigned int *)this + 2) = &SpawnManagerClass::`vftable'; /*0x6b7022*/
   *((unsigned int *)this + 3) = &vt_SpawnManagerClass; /*0x6b7029*/
-  if ( MEMORY[0xA8E9A0] ) /*0x6b7037*/
+  if ( g_abs_A8E9A0 ) /*0x6b7037*/
     TaskManager::Update((unsigned int *)this); /*0x6b7039*/
   for ( i = *((unsigned int *)this + 18) - 1; i >= 0; --i ) /*0x6b7042*/
   {
     if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x6b7047*/
-      __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6b704f*/
+      RA2_OPDEL(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6b704f*/
   }
   v3 = *((unsigned int *)this + 16); /*0x6b7063*/
   (*(void (**)(int))(*((unsigned int *)this + 14) + 12))((char *)this + 56); /*0x6b7066*/
   (*(void (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v3, 0); /*0x6b7070*/
   v6 = this; /*0x6b7083*/
-  v4 = (*(int (**)(int *, int *))(MEMORY[0xB0B880] + 16))(&MEMORY[0xB0B880], &v6); /*0x6b7087*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0B890] && v4 < --MEMORY[0xB0B890] ) /*0x6b70a3*/
+  v4 = (*(int (**)(int *, int *))(g_abs_B0B880 + 16))(&g_abs_B0B880, &v6); /*0x6b7087*/
+  if ( v4 != -1 && v4 < g_abs_B0B890 && v4 < --g_abs_B0B890 ) /*0x6b70a3*/
   {
     do /*0x6b70bb*/
     {
       ++v4; /*0x6b70ab*/
-      *((unsigned int *)MEMORY[0xB0B884] + v4 - 1) = *((unsigned int *)MEMORY[0xB0B884] + v4); /*0x6b70af*/
+      *((unsigned int *)g_abs_B0B884 + v4 - 1) = *((unsigned int *)g_abs_B0B884 + v4); /*0x6b70af*/
     }
-    while ( v4 < MEMORY[0xB0B890] ); /*0x6b70bb*/
+    while ( v4 < g_abs_B0B890 ); /*0x6b70bb*/
   }
   v5 = *(void **)((char *)this + 60); /*0x6b70bd*/
   *((unsigned int *)this + 14) = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b70c0*/
   if ( v5 && *((unsigned char *)this + 69) ) /*0x6b70ca*/
   {
-    __3_YAXPAX_Z(v5); /*0x6b70d2*/
+    RA2_OPDEL(v5); /*0x6b70d2*/
     *((unsigned int *)this + 15) = 0; /*0x6b70da*/
   }
   *((unsigned char *)this + 69) = 0; /*0x6b70e3*/
@@ -320,20 +320,20 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   v8 = *((unsigned int *)this + 25); /*0x6b7e2e*/
   if ( v7 != -1 ) /*0x6b7e34*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v7 >= v8 ) /*0x6b7e40*/
+    if ( (int)g_abs_A8ED84 - v7 >= v8 ) /*0x6b7e40*/
       v8 = 0; /*0x6b7e46*/
     else
-      v8 -= (int)MEMORY[0xA8ED84] - v7; /*0x6b7e42*/
+      v8 -= (int)g_abs_A8ED84 - v7; /*0x6b7e42*/
   }
   Power::TimerProcess(v8); /*0x6b7e4b*/
   v9 = *((unsigned int *)this + 20); /*0x6b7e50*/
   v10 = *((unsigned int *)this + 22); /*0x6b7e53*/
   if ( v9 != -1 ) /*0x6b7e59*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v9 >= v10 ) /*0x6b7e65*/
+    if ( (int)g_abs_A8ED84 - v9 >= v10 ) /*0x6b7e65*/
       v10 = 0; /*0x6b7e6b*/
     else
-      v10 -= (int)MEMORY[0xA8ED84] - v9; /*0x6b7e67*/
+      v10 -= (int)g_abs_A8ED84 - v9; /*0x6b7e67*/
   }
   Power::TimerProcess(v10); /*0x6b7e70*/
   Power::TimerProcess(*((unsigned int *)this + 18)); /*0x6b7e7b*/
@@ -431,7 +431,7 @@ LABEL_20:
       {
         while ( 1 ) /*0x6b7fc8*/
         {
-          v8 = (DynamicVector *)__2_YAPAXI_Z(0x18u); /*0x6b7fc8*/
+          v8 = (DynamicVector *)RA2_OPNEW(0x18u); /*0x6b7fc8*/
           if ( v8 ) /*0x6b7fd2*/
           {
             v9 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x6b7fd4*/
@@ -448,9 +448,9 @@ LABEL_20:
             break; /*0x6b7ff5*/
           referenceCount = v2[1].referenceCount; /*0x6b7ffb*/
           if ( *(unsigned int *)v2[2].__pad_0 < referenceCount /*0x6b8020*/
-            || (BYTE1(v2[1].NeedsSaveOrLink) || !referenceCount)
+            || (IDA_BYTE1(v2[1].NeedsSaveOrLink) || !referenceCount)
             && (v11 = *(unsigned int *)&v2[2].__pad_0[4], v11 > 0)
-            && (*(unsigned __int8 (**)(int *, int, unsigned int))(*(unsigned int *)v6->vtable0 + 8))(
+            && (*(uint8_t (**)(int *, int, unsigned int))(*(unsigned int *)v6->vtable0 + 8))(
                  &v2[1].abstractFlags,
                  referenceCount + v11,
                  0) )
@@ -545,12 +545,12 @@ int SpawnManagerClass::StubReturn65()
 
 // 0x6B8140
 namespace gamemd {
-SpawnManagerClass * SpawnManagerClass::ProcessEvent(char a2)
+SpawnManagerClass * SpawnManagerClass::ProcessEvent(void * Block, char a2)
 {
 
   SpawnManagerClass::Constructor_SpawnManagerClass((int)Block); /*0x6b8143*/
-  if ( (a2 & 1) != 0 ) /*0x6b814d*/
-    __3_YAXPAX_Z(Block); /*0x6b8150*/
+  if ( (Block & 1) != 0 ) /*0x6b814d*/
+    RA2_OPDEL(Block); /*0x6b8150*/
   return (SpawnManagerClass *)Block; /*0x6b815a*/
 
 }
@@ -567,7 +567,7 @@ void SpawnManagerClass_25::ddtor()
   *((unsigned int *)this + 4) = 0; /*0x6b8169*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x6b8170*/
   {
-    __3_YAXPAX_Z(v2); /*0x6b8176*/
+    RA2_OPDEL(v2); /*0x6b8176*/
     *((unsigned int *)this + 1) = 0; /*0x6b817e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6b8181*/
@@ -648,7 +648,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, Dynami
     }
     else
     {
-      *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x6b83dc*/
+      *((unsigned int *)this + 1) = RA2_OPNEW(4 * (unsigned int)aP1); /*0x6b83dc*/
       *((unsigned char *)this + 13) = 1; /*0x6b83df*/
     }
   }
@@ -676,7 +676,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x6b8418*/
       v4 = a3; /*0x6b842e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x6b842a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x6b842a*/
     *((unsigned char *)this + 12) = 1; /*0x6b8432*/
     if ( !v4 ) /*0x6b8436*/
       return 0; /*0x6b84aa*/
@@ -689,7 +689,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
         ++i; /*0x6b8451*/
       if ( *((unsigned char *)this + 13) ) /*0x6b845e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x6b8469*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x6b8469*/
         *((unsigned int *)this + 1) = 0; /*0x6b8471*/
       }
     }
@@ -733,7 +733,7 @@ int SpawnManagerClass_25::Spawn(unsigned int * a2)
 }
 // 0x6B8790
 namespace gamemd {
-DynamicVector * SpawnManagerClass_25::QueryInterface(char a2)
+DynamicVector * SpawnManagerClass_25::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -742,13 +742,13 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(char a2)
   *Block = &vt_VectorClass_SpawnManagerClass_SpawnControl; /*0x6b8796*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6b87a0*/
   {
-    __3_YAXPAX_Z(v3); /*0x6b87a8*/
+    RA2_OPDEL(v3); /*0x6b87a8*/
     *(Block + 1) = 0; /*0x6b87b0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x6b87bb*/
   *(Block + 2) = 0; /*0x6b87c1*/
-  if ( (a2 & 1) != 0 ) /*0x6b87c8*/
-    __3_YAXPAX_Z(Block); /*0x6b87cb*/
+  if ( (Block & 1) != 0 ) /*0x6b87c8*/
+    RA2_OPDEL(Block); /*0x6b87cb*/
   return (DynamicVector *)Block; /*0x6b87d5*/
 
 }

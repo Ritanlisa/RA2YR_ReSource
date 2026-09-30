@@ -9,14 +9,14 @@
 
 // 0x53DDA0
 namespace gamemd {
-void Explosion::RemoveItem()
+void Explosion::RemoveItem( int a2)
 {
 
   int v2; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x53dda0*/
+  v2 = (int)(*(this + 4));
   v3 = a2; /*0x53dda3*/
   if ( a2 >= v2 ) /*0x53dda9*/
     return 0; /*0x53ddcc*/

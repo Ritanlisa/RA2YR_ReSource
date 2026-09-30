@@ -9,7 +9,7 @@
 
 // 0x4025B0
 namespace gamemd {
-int Voice::Stop(__thiscall *__thiscall Voice_Stop(int this))( int)
+int Voice::Stop(__thiscall *__thiscall Voice_Stop())( int)
 {
 
   int (*result)(int); // eax

@@ -15,6 +15,6 @@ struct E4Recv_643720 {
     unsigned int q1608;  // 0x1608
     unsigned int q5640;  // 0x5640
 // --- flat members (END) ---
-    int RenderBuildingProductionButton(int a2,  ProgressScreenClass * aP2,  ProgressScreenClass * aP3,  int a5,  char a6);    // 0x643720
+    int RenderBuildingProductionButton(int a2,  void * aP2,  void * aP3,  int a5,  char a6);    // 0x643720
 };
 } // namespace gamemd

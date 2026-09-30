@@ -10,6 +10,7 @@
 #include "e4/classes/MSPCXAnim_42_e4.hpp"
 #include "e4/classes/MainMenu_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5CD290
 namespace gamemd {
@@ -19,19 +20,19 @@ void * MSVQAnim::GetFrameRect(int * a2)
   int v3; // eax
   int *v4; // ecx
 
-  if ( (MEMORY[0xABFB98] & 1) == 0 ) /*0x5cd2a0*/
+  if ( (g_abs_ABFB98 & 1) == 0 ) /*0x5cd2a0*/
   {
-    MEMORY[0xABFBA0] = 0; /*0x5cd2ab*/
-    MEMORY[0xABFB98] |= 1u; /*0x5cd2b1*/
-    MEMORY[0xABFBA4] = 0; /*0x5cd2b7*/
-    MEMORY[0xABFBA8] = 0; /*0x5cd2bd*/
-    MEMORY[0xABFBAC] = 0; /*0x5cd2c3*/
+    g_abs_ABFBA0 = 0; /*0x5cd2ab*/
+    g_abs_ABFB98 |= 1u; /*0x5cd2b1*/
+    g_abs_ABFBA4 = 0; /*0x5cd2b7*/
+    g_abs_ABFBA8 = 0; /*0x5cd2bd*/
+    g_abs_ABFBAC = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
   v3 = *((unsigned int *)this + 7); /*0x5cd2d1*/
   v4 = (int *)(v3 + 52); /*0x5cd2d6*/
   if ( !v3 ) /*0x5cd2d9*/
-    v4 = &MEMORY[0xABFBA0]; /*0x5cd2db*/
+    v4 = &g_abs_ABFBA0; /*0x5cd2db*/
   *a2 = *v4; /*0x5cd2e9*/
   a2[1] = v4[1]; /*0x5cd2ee*/
   a2[2] = v4[2]; /*0x5cd2f4*/
@@ -51,7 +52,7 @@ int MSVQAnim::Stub()
 } // namespace gamemd
 // 0x5CECB0
 namespace gamemd {
-MSVQAnim * MSVQAnim::QueryInterface(char a2)
+MSVQAnim * MSVQAnim::QueryInterface(ObjectClass ** Block, char a2)
 {
 
   void (***v3)(unsigned int, int); // ecx
@@ -70,12 +71,12 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
     if ( v5 ) /*0x5cecd8*/
     {
       BinkMovie::Cleanup(*(Block + 7)); /*0x5cecdc*/
-      __3_YAXPAX_Z(v5); /*0x5cece2*/
+      RA2_OPDEL(v5); /*0x5cece2*/
     }
   }
   *Block = (ObjectClass *)&vt_MSAnim; /*0x5cecee*/
-  if ( (a2 & 1) != 0 ) /*0x5cecf7*/
-    __3_YAXPAX_Z(Block); /*0x5cecfa*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5cecf7*/
+    RA2_OPDEL(Block); /*0x5cecfa*/
   return (MSVQAnim *)Block; /*0x5ced04*/
 
 }

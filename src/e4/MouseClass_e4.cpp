@@ -33,10 +33,10 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
 
   if ( a1 == 4551 ) /*0x6d1779*/
   {
-    v2 = MEMORY[0xB0CB78][MEMORY[0xB0CC1C]]; /*0x6d1780*/
+    v2 = g_abs_B0CB78[g_abs_B0CC1C]; /*0x6d1780*/
     if ( v2 <= 0x18 ) /*0x6d1789*/
     {
-      v3 = (char *)&MEMORY[0xB0C1C0] + 96 * v2; /*0x6d1796*/
+      v3 = (char *)&g_abs_B0C1C0 + 96 * v2; /*0x6d1796*/
       if ( v3 ) /*0x6d179e*/
       {
         if ( !v3[45] ) /*0x6d17a0*/
@@ -47,10 +47,10 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
   }
   else if ( a1 == 4552 ) /*0x6d17b6*/
   {
-    v5 = MEMORY[0xB0CB78][MEMORY[0xB0CC1C]]; /*0x6d17be*/
+    v5 = g_abs_B0CB78[g_abs_B0CC1C]; /*0x6d17be*/
     if ( v5 <= 0x18 ) /*0x6d17c7*/
     {
-      v6 = (char *)&MEMORY[0xB0C1C0] + 96 * v5; /*0x6d17d4*/
+      v6 = (char *)&g_abs_B0C1C0 + 96 * v5; /*0x6d17d4*/
       if ( v6 ) /*0x6d17dc*/
       {
         if ( v6[45] ) /*0x6d17de*/
@@ -73,25 +73,25 @@ char MouseClass::LoadCursors()
 
   char result; // al
 
-  result = MEMORY[0xB0FBE0]; /*0x72ddb0*/
-  if ( !MEMORY[0xB0FBE0] ) /*0x72ddb7*/
+  result = g_abs_B0FBE0; /*0x72ddb0*/
+  if ( !g_abs_B0FBE0 ) /*0x72ddb7*/
   {
     AssetClass::ReleaseAndReload(); /*0x72ddbd*/
-    MEMORY[0xB0FAC4] = LoadFileSHP(MEMORY[0x844CD4], (bool *)&MEMORY[0xB0FC95]); /*0x72dddd*/
-    MEMORY[0xB0F9DC] = LoadFileSHP(MEMORY[0x844CD8], (bool *)&MEMORY[0xB0FC96]); /*0x72ddf2*/
-    MEMORY[0xB0FAC0] = LoadFileSHP(MEMORY[0x844CDC], (bool *)&MEMORY[0xB0FC97]); /*0x72de07*/
-    MEMORY[0xB0FB50] = LoadFileSHP(MEMORY[0x844CE0], (bool *)&MEMORY[0xB0FC98]); /*0x72de1c*/
-    MEMORY[0xB0FA04] = LoadFileSHP(MEMORY[0x844CE4], (bool *)&MEMORY[0xB0FC99]); /*0x72de31*/
-    MEMORY[0xB0FAF8] = LoadFileSHP(MEMORY[0x844CE8], (bool *)&MEMORY[0xB0FC9A]); /*0x72de46*/
-    MEMORY[0xB0FA74] = LoadFileSHP(MEMORY[0x844CEC], (bool *)&MEMORY[0xB0FC9B]); /*0x72de5b*/
-    MEMORY[0xB0FA38] = LoadFileSHP(MEMORY[0x844CF0], (bool *)&MEMORY[0xB0FC9C]); /*0x72de70*/
-    MEMORY[0xB0FAE8] = LoadFileSHP(MEMORY[0x844CF4], (bool *)&MEMORY[0xB0FC9D]); /*0x72de85*/
-    MEMORY[0xB0FA54] = LoadFileSHP(MEMORY[0x844CF8], (bool *)&MEMORY[0xB0FC9E]); /*0x72de9f*/
-    LoadPaletteSimple(MEMORY[0x844BE4], &MEMORY[0xB0FBC8], &MEMORY[0xB0FBCC]); /*0x72dea4*/
-    LoadPaletteSimple(MEMORY[0x844BE8], &MEMORY[0xB0FBD0], &MEMORY[0xB0FBD4]); /*0x72deb9*/
-    LoadPaletteSimple(MEMORY[0x844BEC], &MEMORY[0xB0FBD8], &MEMORY[0xB0FBDC]); /*0x72dece*/
-    result = SetupMouseClassResources(MEMORY[0x8A00A4], MEMORY[0x8A00A8]); /*0x72dedf*/
-    MEMORY[0xB0FBE0] = 1; /*0x72dee4*/
+    g_abs_B0FAC4 = LoadFileSHP(g_abs_844CD4, (bool *)&g_abs_B0FC95); /*0x72dddd*/
+    g_abs_B0F9DC = LoadFileSHP(g_abs_844CD8, (bool *)&g_abs_B0FC96); /*0x72ddf2*/
+    g_abs_B0FAC0 = LoadFileSHP(g_abs_844CDC, (bool *)&g_abs_B0FC97); /*0x72de07*/
+    g_abs_B0FB50 = LoadFileSHP(g_abs_844CE0, (bool *)&g_abs_B0FC98); /*0x72de1c*/
+    g_abs_B0FA04 = LoadFileSHP(g_abs_844CE4, (bool *)&g_abs_B0FC99); /*0x72de31*/
+    g_abs_B0FAF8 = LoadFileSHP(g_abs_844CE8, (bool *)&g_abs_B0FC9A); /*0x72de46*/
+    g_abs_B0FA74 = LoadFileSHP(g_abs_844CEC, (bool *)&g_abs_B0FC9B); /*0x72de5b*/
+    g_abs_B0FA38 = LoadFileSHP(g_abs_844CF0, (bool *)&g_abs_B0FC9C); /*0x72de70*/
+    g_abs_B0FAE8 = LoadFileSHP(g_abs_844CF4, (bool *)&g_abs_B0FC9D); /*0x72de85*/
+    g_abs_B0FA54 = LoadFileSHP(g_abs_844CF8, (bool *)&g_abs_B0FC9E); /*0x72de9f*/
+    LoadPaletteSimple(g_abs_844BE4, &g_abs_B0FBC8, &g_abs_B0FBCC); /*0x72dea4*/
+    LoadPaletteSimple(g_abs_844BE8, &g_abs_B0FBD0, &g_abs_B0FBD4); /*0x72deb9*/
+    LoadPaletteSimple(g_abs_844BEC, &g_abs_B0FBD8, &g_abs_B0FBDC); /*0x72dece*/
+    result = SetupMouseClassResources(g_abs_8A00A4, g_abs_8A00A8); /*0x72dedf*/
+    g_abs_B0FBE0 = 1; /*0x72dee4*/
   }
   return result; /*0x72deeb*/
 

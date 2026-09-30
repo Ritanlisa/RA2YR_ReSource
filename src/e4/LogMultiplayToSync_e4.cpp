@@ -12,18 +12,19 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
 
 // 0x6516F0
 namespace gamemd {
 CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned char * a2, CellStruct * a3)
 {
-  int v3; // edx
+  CellStruct * v3;
   int v4; // ebx
   FILE *v5; // eax
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
   char *v9; // eax
-  unsigned int v10;
+  char * v10;
   char *Name; // eax
   unsigned int v12; // eax
   int i; // edi
@@ -77,12 +78,12 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   char Buffer[512]; // [esp+1B0h] [ebp-200h] BYREF
 
   a2 = (unsigned char *)((int)(a2));
-  v3 = *((unsigned int *)HouseClass_Player + 12); /*0x651709*/
+  v3 = (gamemd::CellStruct *)(*((unsigned int *)HouseClass_Player + 12));
   v56 = a1; /*0x65170c*/
   v4 = 828 * a1 + 11298400; /*0x65171e*/
   v59 = (unsigned int *)v4; /*0x65172d*/
   sprintf(Buffer, "SYNC%01d_%03d.TXT", v3, a1); /*0x651731*/
-    Debug::Log();
+    this->Debug::Log();
   v5 = fopen(Buffer, Mode); /*0x651755*/
   v5 = v5; /*0x65175a*/
   if ( v5 )
@@ -94,8 +95,8 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
     fprintf(v5, "Internal Version %s\n", ModuleInternalVersion); /*0x6517b5*/
     v62[0] = 0; /*0x6517c6*/
     Time::FormatDate(v62); /*0x6517cb*/
-    v52 = String::CopyConstant(Destination); /*0x6517f2*/
-    v9 = String::FormatDword(v64); /*0x6517f3*/
+    v52 = ((String *)(Destination))->CopyConstant(); /*0x6517f2*/
+    v9 = ((String *)(v64))->FormatDword(); /*0x6517f3*/
     fprintf(v5, "Release Build: %s by %s - %s\r\n", v9, v52, v62);
     v60 = (char *)((int)((char *)(5)));
     IDA_HIBYTE(v57) = 0; /*0x65181b*/
@@ -450,7 +451,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct * a1, unsigned c
   else
   {
     GetLastError(); /*0x651764*/
-        Debug::Log();
+        this->Debug::Log();
   }
 }
 }

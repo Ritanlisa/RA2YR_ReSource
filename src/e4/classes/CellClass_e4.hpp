@@ -149,10 +149,10 @@ struct CellClass {
     int CheckTilePassable2(void* aP0);
     int EnsureFileLoaded();
     int GetBridgeIndex();
-    int GetByte284(IUnknown * aP0);
+    int GetByte284(void * aP0);
     int GetOccupiedRatio();
-    int GetTileData(IUnknown * aP0, IUnknown * aP1);
-    int SpiralFindClosest(void* aP0, MouseClass * aP1, void* aP2);
+    int GetTileData(void * aP0, void * aP1);
+    int SpiralFindClosest(void* aP0, void * aP1, void* aP2);
     int StubReturn11();
     int StubReturn328();
     static double DetermineTileType(...);  // C2597 interim stub

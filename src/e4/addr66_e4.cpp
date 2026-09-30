@@ -824,18 +824,18 @@ namespace gamemd {
 AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
 {
 
-  unsigned __int8 *v4; // eax
+  uint8_t *v4; // eax
   int *v5; // esi
-  unsigned __int8 v6; // dl
-  unsigned __int8 v7; // al
+  uint8_t v6; // dl
+  uint8_t v7; // al
   int *v8; // eax
   int v9; // esi
   int v10; // edi
   int v11; // eax
-  unsigned __int8 v12; // [esp+4h] [ebp-584h] BYREF
-  unsigned __int8 v13; // [esp+5h] [ebp-583h]
-  unsigned __int8 v14; // [esp+6h] [ebp-582h]
-  unsigned __int8 v15; // [esp+7h] [ebp-581h]
+  uint8_t v12; // [esp+4h] [ebp-584h] BYREF
+  uint8_t v13; // [esp+5h] [ebp-583h]
+  uint8_t v14; // [esp+6h] [ebp-582h]
+  uint8_t v15; // [esp+7h] [ebp-581h]
   int v16; // [esp+8h] [ebp-580h]
   DWORD TicksTimer; // [esp+10h] [ebp-578h]
   int v18; // [esp+14h] [ebp-574h]
@@ -854,50 +854,50 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
   Waypoint::InitInvalid(v23); /*0x663dd2*/
   Debug::Log(); /*0x663ddc*/
   GetStartupInfoA(&StartupInfo); /*0x663de9*/
-  if ( !(*(int (**)(int))(*(unsigned int *)MEMORY[0x887628] + 72))(MEMORY[0x887628]) ) /*0x663df7*/
+  if ( !(*(int (**)(int))(*(unsigned int *)g_abs_887628 + 72))(g_abs_887628) ) /*0x663df7*/
     return 0; /*0x663e07*/
   if ( a2 ) /*0x663e15*/
   {
-    sprintf(CommandLine, MEMORY[0x839B84], *a2, a2[1], a2[2], a2[3]); /*0x663f0e*/
-    if ( *(unsigned int *)MEMORY[0xA8DA78] == -40 ) /*0x663f21*/
+    sprintf(CommandLine, g_abs_839B84, *a2, a2[1], a2[2], a2[3]); /*0x663f0e*/
+    if ( *(unsigned int *)g_abs_A8DA78 == -40 ) /*0x663f21*/
       goto LABEL_11; /*0x663f21*/
-    Network::CopyAddress((unsigned int *)(*(unsigned int *)MEMORY[0xA8DA78] + 40), &v20, (int)&v12); /*0x663f31*/
+    Network::CopyAddress((unsigned int *)(*(unsigned int *)g_abs_A8DA78 + 40), &v20, (int)&v12); /*0x663f31*/
     v6 = a2[2]; /*0x663f39*/
     v7 = *a2; /*0x663f3c*/
     v13 = a2[1]; /*0x663f3e*/
     v14 = v6; /*0x663f42*/
     v12 = v7; /*0x663f4a*/
     v15 = a2[3]; /*0x663f5e*/
-    NetworkID::Assign(&MEMORY[0xA8DBB0], &v20, (int)&v12, 0); /*0x663f62*/
-    Network::SetPort(&MEMORY[0xA8DBB0], *(unsigned short *)(*(unsigned int *)MEMORY[0xA8DA78] + 40)); /*0x663f78*/
-    LOWORD(MEMORY[0xA8DBBC]) = *(unsigned short *)(*(unsigned int *)MEMORY[0xA8DA78] + 40); /*0x663f88*/
-    v8 = (int *)(*(unsigned int *)MEMORY[0xA8DA78] + 40); /*0x663f91*/
-    MEMORY[0xA8DBA4] = *v8; /*0x663f96*/
-    MEMORY[0xA8DBA8] = v8[1]; /*0x663f9f*/
-    MEMORY[0xA8DBAC] = v8[2]; /*0x663fa8*/
+    NetworkID::Assign(&g_abs_A8DBB0, &v20, (int)&v12, 0); /*0x663f62*/
+    Network::SetPort(&g_abs_A8DBB0, *(unsigned short *)(*(unsigned int *)g_abs_A8DA78 + 40)); /*0x663f78*/
+    IDA_LOWORD(g_abs_A8DBBC) = *(unsigned short *)(*(unsigned int *)g_abs_A8DA78 + 40); /*0x663f88*/
+    v8 = (int *)(*(unsigned int *)g_abs_A8DA78 + 40); /*0x663f91*/
+    g_abs_A8DBA4 = *v8; /*0x663f96*/
+    g_abs_A8DBA8 = v8[1]; /*0x663f9f*/
+    g_abs_A8DBAC = v8[2]; /*0x663fa8*/
     goto LABEL_10; /*0x663fa8*/
   }
-  if ( !MEMORY[0xA8DA84] ) /*0x663e22*/
+  if ( !g_abs_A8DA84 ) /*0x663e22*/
   {
-    v4 = (unsigned __int8 *)(*(int (**)(int, unsigned int))(*(unsigned int *)MEMORY[0x887628] + 76))(MEMORY[0x887628], 0); /*0x663e2d*/
-    sprintf(CommandLine, MEMORY[0x839B84], *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
+    v4 = (uint8_t *)(*(int (**)(int, unsigned int))(*(unsigned int *)g_abs_887628 + 76))(g_abs_887628, 0); /*0x663e2d*/
+    sprintf(CommandLine, g_abs_839B84, *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
     goto LABEL_11; /*0x663e5c*/
   }
-  v5 = (int *)(*(unsigned int *)MEMORY[0xA8DA78] + 40); /*0x663e69*/
-  if ( *(unsigned int *)MEMORY[0xA8DA78] != -40 ) /*0x663e6c*/
+  v5 = (int *)(*(unsigned int *)g_abs_A8DA78 + 40); /*0x663e69*/
+  if ( *(unsigned int *)g_abs_A8DA78 != -40 ) /*0x663e6c*/
   {
     Network::CopyAddress(v5, &v20, (int)&v12); /*0x663e7e*/
-    sprintf(CommandLine, MEMORY[0x839B84], v12, v13, v14, v15); /*0x663ebb*/
-    MEMORY[0xA8DBB0] = *v5; /*0x663ec5*/
-    MEMORY[0xA8DBB4] = v5[1]; /*0x663ecd*/
-    MEMORY[0xA8DBB8] = v5[2]; /*0x663ed6*/
-    LOWORD(MEMORY[0xA8DBBC]) = 0; /*0x663edc*/
+    sprintf(CommandLine, g_abs_839B84, v12, v13, v14, v15); /*0x663ebb*/
+    g_abs_A8DBB0 = *v5; /*0x663ec5*/
+    g_abs_A8DBB4 = v5[1]; /*0x663ecd*/
+    g_abs_A8DBB8 = v5[2]; /*0x663ed6*/
+    IDA_LOWORD(g_abs_A8DBBC) = 0; /*0x663edc*/
 LABEL_10:
-    Network::FormatAddress((unsigned __int16 *)&MEMORY[0xA8DBB0], 0); /*0x663fad*/
+    Network::FormatAddress((uint16_t *)&g_abs_A8DBB0, 0); /*0x663fad*/
     Debug::Log(); /*0x663fbf*/
   }
 LABEL_11:
-  if ( CreateProcessA(MEMORY[0x8399EC], CommandLine, 0, 0, 0, 0x200u, 0, 0, &StartupInfo, &ProcessInformation) ) /*0x663fed*/
+  if ( CreateProcessA(g_abs_8399EC, CommandLine, 0, 0, 0, 0x200u, 0, 0, &StartupInfo, &ProcessInformation) ) /*0x663fed*/
   {
     *((unsigned int *)this + 7) = ProcessInformation.hProcess; /*0x664029*/
     Debug::Log(); /*0x66402c*/
@@ -954,7 +954,7 @@ int E4Recv_664750::sub_664750(char a2)
     v4[0] = 6; /*0x664780*/
     v4[1] = a2; /*0x664785*/
     Debug::Log(); /*0x664789*/
-    LOBYTE(v2) = Network::SendPacket((int)MEMORY[0xA8E9C0], (int)v4, 338, 1u); /*0x6647a2*/
+    IDA_LOBYTE(v2) = Network::SendPacket((int)g_abs_A8E9C0, (int)v4, 338, 1u); /*0x6647a2*/
   }
   return v2; /*0x66476f*/
 
@@ -1041,7 +1041,7 @@ int E4Recv_661960::sub_661960(short a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661995*/
     {
-      v3 = this + (unsigned __int8)(*((unsigned int *)this + 3) / 8) + 20; /*0x661991*/
+      v3 = this + (uint8_t)(*((unsigned int *)this + 3) / 8) + 20; /*0x661991*/
       *v3 ^= 1 << (*((unsigned int *)this + 3) & 7); /*0x66199e*/
     }
     v4 = *((unsigned int *)this + 3) + 1; /*0x6619a4*/
@@ -1049,7 +1049,7 @@ int E4Recv_661960::sub_661960(short a2)
     if ( v4 == 2048 ) /*0x6619ae*/
     {
       v5 = 0; /*0x6619b4*/
-      LOBYTE(v11[0]) = 0; /*0x6619b9*/
+      IDA_LOBYTE(v11[0]) = 0; /*0x6619b9*/
       v11[11] = 0; /*0x6619be*/
       v11[12] = 0; /*0x6619c2*/
       v11[6] = 1732584193; /*0x6619c6*/
@@ -1101,7 +1101,7 @@ int E4Recv_661A60::sub_661A60(int a2)
   {
     if ( (a2 & 1) != 0 ) /*0x661a95*/
     {
-      v3 = this + (unsigned __int8)(*((unsigned int *)this + 3) / 8) + 20; /*0x661a91*/
+      v3 = this + (uint8_t)(*((unsigned int *)this + 3) / 8) + 20; /*0x661a91*/
       *v3 ^= 1 << (*((unsigned int *)this + 3) & 7); /*0x661a9e*/
     }
     v4 = *((unsigned int *)this + 3) + 1; /*0x661aa4*/
@@ -1109,7 +1109,7 @@ int E4Recv_661A60::sub_661A60(int a2)
     if ( v4 == 2048 ) /*0x661aae*/
     {
       v5 = 0; /*0x661ab4*/
-      LOBYTE(v12[0]) = 0; /*0x661ab9*/
+      IDA_LOBYTE(v12[0]) = 0; /*0x661ab9*/
       v12[11] = 0; /*0x661abe*/
       v12[12] = 0; /*0x661ac2*/
       v12[6] = 1732584193; /*0x661ac6*/
@@ -1156,7 +1156,7 @@ void * E4Recv_661B70::sub_661B70()
   unsigned int v7[29]; // [esp+20h] [ebp-74h] BYREF
 
   v1 = (int)((unsigned char *)this + 20); /*0x661b7a*/
-  LOBYTE(v7[0]) = 0; /*0x661b7e*/
+  IDA_LOBYTE(v7[0]) = 0; /*0x661b7e*/
   v7[11] = 0; /*0x661b82*/
   v7[12] = 0; /*0x661b86*/
   v7[6] = 1732584193; /*0x661b8a*/
@@ -1575,7 +1575,7 @@ void E4Recv_663960::sub_663960()
 
   while ( *((unsigned int *)this + 4) ) /*0x663966*/
   {
-    __3_YAXPAX_Z(**((void ***)this + 1)); /*0x663971*/
+    RA2_OPDEL(**((void ***)this + 1)); /*0x663971*/
     v2 = *((unsigned int *)this + 4); /*0x663976*/
     if ( v2 > 0 ) /*0x66397e*/
     {
@@ -1593,7 +1593,7 @@ void E4Recv_663960::sub_663960()
   *(unsigned int *)this = &vt_VectorClass_OwnerTalkClass_ConnectionListStruct; /*0x6639a6*/
   if ( v5 && *((unsigned char *)this + 13) ) /*0x6639b0*/
   {
-    __3_YAXPAX_Z(v5); /*0x6639b6*/
+    RA2_OPDEL(v5); /*0x6639b6*/
     *((unsigned int *)this + 1) = 0; /*0x6639be*/
   }
   *((unsigned char *)this + 13) = 0; /*0x6639c1*/

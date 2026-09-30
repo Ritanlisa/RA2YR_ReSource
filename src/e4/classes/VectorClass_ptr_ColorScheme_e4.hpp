@@ -13,7 +13,7 @@ struct VectorClass_ptr_ColorScheme {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
 // --- flat members (END) ---
-    char SetCapacity_0(CCINIClass * aP1,  unsigned char * a2);    // 0x6288F0
+    char SetCapacity_0(void * aP1,  unsigned char * a2);    // 0x6288F0
     int Get(int a2, void *a1 = 0);  // 0x627D70
     char Add(int a2);  // 0x627E10
     char Release(int a2,  unsigned int * a3);    // 0x627E50

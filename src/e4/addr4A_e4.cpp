@@ -74,7 +74,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
 
   if ( !a2 ) /*0x4a019a*/
     return -2147467261; /*0x4a019d*/
-  v3 = __2_YAPAXI_Z(0x24u); /*0x4a01ad*/
+  v3 = RA2_OPNEW(0x24u); /*0x4a01ad*/
   if ( !v3 ) /*0x4a01b4*/
     return -2147024882; /*0x4a029d*/
   v3[2] = 0; /*0x4a01c8*/
@@ -89,7 +89,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
     v3[3] = v4; /*0x4a01ea*/
     if ( v4 ) /*0x4a01ed*/
     {
-      v5 = __2_YAPAXI_Z(8 * v4); /*0x4a01f7*/
+      v5 = RA2_OPNEW(8 * v4); /*0x4a01f7*/
       v3[2] = v5; /*0x4a0201*/
       if ( v5 ) /*0x4a0204*/
       {
@@ -163,7 +163,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
     *((unsigned int *)v3 + 2) = v4; /*0x4a02e3*/
     if ( v4 ) /*0x4a02e6*/
     {
-      v5 = __2_YAPAXI_Z(8 * v4); /*0x4a02ec*/
+      v5 = RA2_OPNEW(8 * v4); /*0x4a02ec*/
       *((unsigned int *)v3 + 1) = v5; /*0x4a02f6*/
       if ( v5 ) /*0x4a02f9*/
       {
@@ -234,7 +234,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
     *((unsigned int *)v3 + 2) = v4; /*0x4a03b6*/
     if ( v4 ) /*0x4a03b9*/
     {
-      v5 = __2_YAPAXI_Z(8 * v4); /*0x4a03c3*/
+      v5 = RA2_OPNEW(8 * v4); /*0x4a03c3*/
       *((unsigned int *)v3 + 1) = v5; /*0x4a03cd*/
       if ( v5 ) /*0x4a03d0*/
       {
@@ -291,7 +291,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 
   if ( !a2 ) /*0x4a0b2a*/
     return -2147467261; /*0x4a0b2d*/
-  v3 = __2_YAPAXI_Z(0x24u); /*0x4a0b3d*/
+  v3 = RA2_OPNEW(0x24u); /*0x4a0b3d*/
   if ( !v3 ) /*0x4a0b44*/
     return -2147024882; /*0x4a0c13*/
   v3[1] = a1[1]; /*0x4a0b59*/
@@ -308,7 +308,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
     v3[5] = v4; /*0x4a0b83*/
     if ( v4 ) /*0x4a0b86*/
     {
-      v5 = __2_YAPAXI_Z(4 * v4); /*0x4a0b90*/
+      v5 = RA2_OPNEW(4 * v4); /*0x4a0b90*/
       v3[4] = v5; /*0x4a0b9a*/
       if ( v5 ) /*0x4a0b9d*/
       {
@@ -539,9 +539,9 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
     *((char *)this + 2) = 71; /*0x4a32c7*/
     *((char *)this + 7) = 16; /*0x4a32ce*/
   }
-  if ( !MEMORY[0x8A0E00] /*0x4a32e5*/
-    || !(*(int (**)(int, int *, int *, unsigned int))(*(unsigned int *)MEMORY[0x8A0E00] + 24))(
-          MEMORY[0x8A0E00],
+  if ( !g_abs_8A0E00 /*0x4a32e5*/
+    || !(*(int (**)(int, int *, int *, unsigned int))(*(unsigned int *)g_abs_8A0E00 + 24))(
+          g_abs_8A0E00,
           (char *)this + 1,
           (char *)this + 28,
           0) )
@@ -1555,7 +1555,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   *((unsigned int *)this + 6) = 0; /*0x4a6866*/
   *((unsigned int *)this + 7) = 0; /*0x4a6869*/
   *((unsigned int *)this + 8) = 0; /*0x4a686c*/
-  v6 = __2_YAPAXI_Z(0x42Cu); /*0x4a686f*/
+  v6 = RA2_OPNEW(0x42Cu); /*0x4a686f*/
   *((unsigned int *)this + 1) = v6; /*0x4a6879*/
   if ( !v6 ) /*0x4a687c*/
     goto LABEL_12; /*0x4a687c*/
@@ -1589,7 +1589,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   v12 = *((unsigned int *)this + 4); /*0x4a6962*/
   *((unsigned int *)this + 5) = abs32(*(unsigned int *)(v11 + 8)); /*0x4a6965*/
   v13 = v12 + 3; /*0x4a6968*/
-  LOBYTE(v13) = (v12 + 3) & 0xFC; /*0x4a696b*/
+  IDA_LOBYTE(v13) = (v12 + 3) & 0xFC; /*0x4a696b*/
   *((unsigned int *)this + 7) = v13; /*0x4a696d*/
   if ( *(int *)(v11 + 8) <= 0 ) /*0x4a6975*/
   {
@@ -1602,7 +1602,7 @@ AbstractClass * * E4Recv_4A6840::sub_4A6840(HWND hWnd, int a3, int a4, int a5)
   }
   *((unsigned int *)this + 7) = v13; /*0x4a698e*/
   v14 = abs32(v13); /*0x4a6998*/
-  v15 = __2_YAPAXI_Z(0x20u); /*0x4a699f*/
+  v15 = RA2_OPNEW(0x20u); /*0x4a699f*/
   if ( v15 ) /*0x4a69a6*/
   {
     v16 = *((unsigned int *)this + 5); /*0x4a69a8*/
@@ -1905,7 +1905,7 @@ void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
               v17 = v15[135]; /*0x4a8fd7*/
               if ( *(unsigned int *)(v17 + 48) == a2 && *(unsigned char *)(v15[328] + 5455) ) /*0x4a8fec*/
                 v25 = 1; /*0x4a8ff5*/
-              if ( (unsigned char)MEMORY[0xA8B264] /*0x4a900e*/
+              if ( (unsigned char)g_abs_A8B264 /*0x4a900e*/
                 && (uint8_t)HouseClass::IsAlliedWith(
                                       (void *)v17,
                                       *(void **)&dword_A8022C->AbstractClass[4 * a2]) )
@@ -2724,10 +2724,10 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
     v5 = *((char *)this + 11); /*0x4af9d3*/
     if ( v4 != -1 ) /*0x4af9df*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v4 >= v5 ) /*0x4af9e7*/
+      if ( (int)g_abs_A8ED84 - v4 >= v5 ) /*0x4af9e7*/
         v5 = 0; /*0x4af9ed*/
       else
-        v5 -= (int)MEMORY[0xA8ED84] - v4; /*0x4af9e9*/
+        v5 -= (int)g_abs_A8ED84 - v4; /*0x4af9e9*/
     }
     if ( (double)(v3 - v5) / (double)*((char *)this + 12) < 1.0 ) /*0x4afa08*/
     {
@@ -2738,10 +2738,10 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
         v9 = *((char *)this + 11); /*0x4afa20*/
         if ( v8 != -1 ) /*0x4afa26*/
         {
-          if ( (int)MEMORY[0xA8ED84] - v8 >= v9 ) /*0x4afa2e*/
+          if ( (int)g_abs_A8ED84 - v8 >= v9 ) /*0x4afa2e*/
             v9 = 0; /*0x4afa34*/
           else
-            v9 -= (int)MEMORY[0xA8ED84] - v8; /*0x4afa30*/
+            v9 -= (int)g_abs_A8ED84 - v8; /*0x4afa30*/
         }
         v7 = (double)(v6 - v9) / (double)*((char *)this + 12); /*0x4afa40*/
       }
@@ -2789,7 +2789,7 @@ void E4Recv_4A0450::sub_4A0450()
   *v4 = &vt_VectorClass_tagCONNECTDATA; /*0x4a0488*/
   if ( v5 && *((unsigned char *)v4 + 13) ) /*0x4a0492*/
   {
-    __3_YAXPAX_Z(v5); /*0x4a0498*/
+    RA2_OPDEL(v5); /*0x4a0498*/
     v4[1] = 0; /*0x4a04a0*/
   }
   *((unsigned char *)v4 + 13) = 0; /*0x4a04a3*/
@@ -2818,7 +2818,7 @@ void E4Recv_4A08D0::sub_4A08D0()
   *v4 = &vt_VectorClass_tagCONNECTDATA; /*0x4a08f5*/
   if ( v5 && *((unsigned char *)v4 + 13) ) /*0x4a08fd*/
   {
-    __3_YAXPAX_Z(v5); /*0x4a0903*/
+    RA2_OPDEL(v5); /*0x4a0903*/
     v4[1] = 0; /*0x4a090b*/
   }
   *((unsigned char *)v4 + 13) = 0; /*0x4a090e*/
@@ -2855,7 +2855,7 @@ unsigned int * E4Recv_4A0CE0::sub_4A0CE0(unsigned int * a2)
     *((unsigned int *)this + 5) = v4; /*0x4a0d1f*/
     if ( v4 ) /*0x4a0d22*/
     {
-      v5 = __2_YAPAXI_Z(4 * v4); /*0x4a0d2c*/
+      v5 = RA2_OPNEW(4 * v4); /*0x4a0d2c*/
       *((unsigned int *)this + 4) = v5; /*0x4a0d36*/
       if ( v5 ) /*0x4a0d39*/
       {
@@ -2917,7 +2917,7 @@ void E4Recv_4A0DB0::sub_4A0DB0()
   *v4 = &vt_VectorClass_IConnectionPoint; /*0x4a0de8*/
   if ( v5 && *((unsigned char *)v4 + 13) ) /*0x4a0df2*/
   {
-    __3_YAXPAX_Z(v5); /*0x4a0df8*/
+    RA2_OPDEL(v5); /*0x4a0df8*/
     v4[1] = 0; /*0x4a0e00*/
   }
   *((unsigned char *)v4 + 13) = 0; /*0x4a0e03*/
@@ -3067,7 +3067,7 @@ namespace gamemd {
 int E4Recv_4A2030::sub_4A2030(Pipe * aP1, int aP2)
 {
 
-  Checksummer::Add_Buffer((char *)this + 3, (unsigned __int8 *)aP1, (IUnknown *)aP2); /*0x4a2042*/
+  Checksummer::Add_Buffer((char *)this + 3, (uint8_t *)aP1, (IUnknown *)aP2); /*0x4a2042*/
   return (int)Delegate::Dispatch(this, aP1, (Pipe *)aP2); /*0x4a2050*/
 
 }
@@ -3083,7 +3083,7 @@ int E4Recv_4A20B0::sub_4A20B0(Straw * aP1, int aP2)
   if ( !aP1 || aP2 < 1 ) /*0x4a20c3*/
     return 0; /*0x4a20e2*/
   v4 = (IUnknown *)Delegate::Invoke(this, (int)aP1, (Straw *)aP2); /*0x4a20cd*/
-  Checksummer::Add_Buffer((char *)this + 3, (unsigned __int8 *)aP1, v4); /*0x4a20d4*/
+  Checksummer::Add_Buffer((char *)this + 3, (uint8_t *)aP1, v4); /*0x4a20d4*/
   return (int)v4; /*0x4a20dc*/
 
 }
@@ -3253,13 +3253,13 @@ void E4Recv_4A2880::sub_4A2880()
       *((unsigned int *)this + 2) = 0; /*0x4a28f4*/
     }
   }
-  __3_YAXPAX_Z(*((void **)this + 8)); /*0x4a28fb*/
+  RA2_OPDEL(*((void **)this + 8)); /*0x4a28fb*/
   v3 = (void *)*((unsigned int *)this + 6); /*0x4a2900*/
   *((unsigned int *)this + 8) = 0; /*0x4a2903*/
-  __3_YAXPAX_Z(v3); /*0x4a2907*/
+  RA2_OPDEL(v3); /*0x4a2907*/
   v4 = (void *)*((unsigned int *)this + 7); /*0x4a290c*/
   *((unsigned int *)this + 6) = 0; /*0x4a290f*/
-  __3_YAXPAX_Z(v4); /*0x4a2913*/
+  RA2_OPDEL(v4); /*0x4a2913*/
   *((unsigned int *)this + 7) = 0; /*0x4a2918*/
   v5 = *((unsigned int *)this + 2); /*0x4a291b*/
   if ( v5 ) /*0x4a2923*/
@@ -3635,7 +3635,7 @@ unsigned int * E4Recv_4A4E30::sub_4A4E30(int a2, int a3)
       *((unsigned int *)this + 1) = a3; /*0x4a4e58*/
       return this; /*0x4a4e5e*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x4a4e6d*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x4a4e6d*/
     *((unsigned char *)this + 13) = 1; /*0x4a4e70*/
   }
   return this; /*0x4a4e5d*/
@@ -4377,7 +4377,7 @@ void nullsub_11()
 
 // 0x4AECD0
 namespace gamemd {
-int E4Recv_4AECD0::sub_4AECD0()
+int E4Recv_4AECD0::sub_4AECD0(LPCSTR lpLibFileName)
 {
 
   int v1; // esi
@@ -4404,7 +4404,7 @@ int E4Recv_4AECD0::sub_4AECD0()
       v9 = 0; /*0x4aed0f*/
       v10 = 0; /*0x4aed13*/
       if ( ((int (*)(int *))ProcAddress)(&v6) >= 0 ) /*0x4aed1b*/
-        v1 = (unsigned __int16)v8 | ((unsigned __int16)v7 << 16); /*0x4aed33*/
+        v1 = (uint16_t)v8 | ((uint16_t)v7 << 16); /*0x4aed33*/
     }
     FreeLibrary(v3); /*0x4aed36*/
   }
@@ -4577,8 +4577,8 @@ double E4Recv_4AFAA0::sub_4AFAA0()
   v4 = *((char *)this + 11); /*0x4afabd*/
   if ( v3 != -1 ) /*0x4afac3*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v3 < v4 ) /*0x4afacf*/
-      return (double)(v1 - (v4 - ((int)MEMORY[0xA8ED84] - v3))) / (double)v1; /*0x4afae5*/
+    if ( (int)g_abs_A8ED84 - v3 < v4 ) /*0x4afacf*/
+      return (double)(v1 - (v4 - ((int)g_abs_A8ED84 - v3))) / (double)v1; /*0x4afae5*/
     v4 = 0; /*0x4afae6*/
   }
   return (double)(v1 - v4) / (double)v1; /*0x4afab5*/
@@ -4601,7 +4601,7 @@ int E4Recv_4AFB00::sub_4AFB00(int a2)
     *((unsigned int *)this + 8) = result; /*0x4afb0e*/
     *((unsigned int *)this + 7) = a2; /*0x4afb11*/
     v3 = (unsigned int *)this + 9; /*0x4afb19*/
-    *v3 = MEMORY[0xA8ED84]; /*0x4afb22*/
+    *v3 = g_abs_A8ED84; /*0x4afb22*/
     v3[1] = v4; /*0x4afb2a*/
     v3[2] = 3; /*0x4afb2d*/
     v3[3] = 3; /*0x4afb30*/
@@ -4631,10 +4631,10 @@ BOOL E4Recv_4AFED0::sub_4AFED0()
     v4 = *((unsigned int *)this + 9); /*0x4afeeb*/
     if ( v4 != -1 ) /*0x4afef1*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v4 >= v3 ) /*0x4afefd*/
+      if ( (int)g_abs_A8ED84 - v4 >= v3 ) /*0x4afefd*/
         v3 = 0; /*0x4aff03*/
       else
-        v3 -= (int)MEMORY[0xA8ED84] - v4; /*0x4afeff*/
+        v3 -= (int)g_abs_A8ED84 - v4; /*0x4afeff*/
     }
     v2 = (double)(v1 - v3) / (double)(int)*((unsigned int *)this + 12); /*0x4aff10*/
   }

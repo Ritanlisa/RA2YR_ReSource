@@ -70,7 +70,7 @@ int sub_5EA9B0(int a1)
      || v1 == (wchar_t *)g_Lobby_PlayerSide
      || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return MEMORY[0xA8B2BC][a1]; /*0x5ea9d3*/
+    return g_abs_A8B2BC[a1]; /*0x5ea9d3*/
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5ea9f9*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
@@ -96,7 +96,7 @@ int sub_5EAA10(int a1)
      || v1 == (wchar_t *)g_Lobby_PlayerSide
      || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return MEMORY[0xA8B2DC][a1]; /*0x5eaa33*/
+    return g_abs_A8B2DC[a1]; /*0x5eaa33*/
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5eaa59*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
@@ -122,7 +122,7 @@ int sub_5EAA70(int a1)
      || v1 == (wchar_t *)g_Lobby_PlayerSide
      || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return MEMORY[0xA8B2FC][a1]; /*0x5eaa93*/
+    return g_abs_A8B2FC[a1]; /*0x5eaa93*/
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5eaab9*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount

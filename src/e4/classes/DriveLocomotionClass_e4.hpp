@@ -50,10 +50,12 @@ struct DriveLocomotionClass {
     unsigned int LocomotionClass;
     unsigned int Piggybackee;
     unsigned int __pad_18;
+    unsigned int BeginMove;
+    unsigned int LoadFromStream;
 // --- flat members (END) ---
-    DriveLocomotionClass * ProcessMove(char a2);
-    HRESULT BeginMove(int * a1, int * pStm);
-    HRESULT LoadFromStream(int * a1, int * pPStm, int a3);
+    DriveLocomotionClass * ProcessMove(void * Block, char a2);
+    HRESULTBeginMove(int * a1, int * pStm);
+    HRESULTLoadFromStream(int * a1, int * pPStm, int a3);
     int StubReturn112();
     int ddtor(int a1, unsigned int * a2);
 };

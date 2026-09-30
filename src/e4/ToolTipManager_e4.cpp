@@ -42,7 +42,7 @@ namespace gamemd {
 void ToolTipManager::read(int a1)
 {
 
-  Debug::Log(); /*0x724bbd*/
+  this->Debug::Log(); /*0x724bbd*/
 
 }
 } // namespace gamemd
@@ -57,22 +57,22 @@ int ToolTipManager::stubReturnFalse(int a1)
 } // namespace gamemd
 // 0x724F40
 namespace gamemd {
-DynamicVector * ToolTipManager_7::QueryInterface(char a2)
+DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x724f43*/
-  *Block = &vt_VectorClass_ToolTip_const; /*0x724f46*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_ToolTip_const);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x724f50*/
   {
-    __3_YAXPAX_Z(v3); /*0x724f58*/
+    RA2_OPDEL(v3); /*0x724f58*/
     *(Block + 1) = 0; /*0x724f60*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x724f6b*/
   *(Block + 2) = 0; /*0x724f71*/
-  if ( (a2 & 1) != 0 ) /*0x724f78*/
-    __3_YAXPAX_Z(Block); /*0x724f7b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x724f78*/
+    RA2_OPDEL(Block); /*0x724f7b*/
   return (DynamicVector *)Block; /*0x724f85*/
 
 }

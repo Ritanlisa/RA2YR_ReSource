@@ -679,22 +679,22 @@ struct SuperClass {
     unsigned int ChronoMapCoords;
 // --- flat members (END) ---
     AbstractClass * * Reset();
-    AbstractClass * * StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);
-    AbstractClass * * StopPreclickAnim(IUnknown * aP1);
+    AbstractClass * * StartTimer(void * aP1, void * aP2, void * aP3);
+    AbstractClass * * StopPreclickAnim(void * aP1);
     SuperClass * * CleanupMembers();
     bool ShouldDrawProgress();
     bool ShouldFlashTab();
     char CanFire();
     char SetOnHold(void* aP1);
     char SetReadiness(char a2);
-    int AnnounceReady(DynamicVector * aP1);
+    int AnnounceReady(void * aP1);
     int ClickFire(int a2, short * a3);
-    int Construct(int a2, CCINIClass * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Construct(int a2, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    int LoadFromStream(AbstractClass * aP0, int aP1);
+    int LoadFromStream(void * aP0, int aP1);
     int Lose();
     int PowerDrainUpdate(int * a2);
-    int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);
+    int SaveState(void * aP0, int * a1, int aP2);
     int SetCharge(int a2);
     int SetRechargeTime(int a2);
     int StubReturn128();
@@ -702,7 +702,7 @@ struct SuperClass {
     int ddtor(int a1, unsigned int * a2);
     long long ExecuteAction(unsigned int a2, int a3);
     void * LaunchPsychicDominator(int a2);
-    void ** CreateChronoAnim(AbstractClass * aP1, SuperClass * aP2, int a4);
+    void ** CreateChronoAnim(void * aP1, void * aP2, int a4);
     void Launch(int ecx0, int a2, short * aP3, char a4);
     void ResetRechargeTime();
     wchar_t * NameReadiness();

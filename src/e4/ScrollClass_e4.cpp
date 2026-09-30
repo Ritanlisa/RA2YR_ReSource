@@ -27,13 +27,13 @@ int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 } // namespace gamemd
 // 0x6938F0
 namespace gamemd {
-void ScrollClass::Read(int32_t* x, int32_t* y)
+void ScrollClass::Read(char * Block, char a2)
 {
 
   char *v3; // esi
   int v4; // edi
 
-  v3 = x + 21484; /*0x6938f5*/
+  v3 = Block + 21484; /*0x6938f5*/
   v4 = 4; /*0x6938fb*/
   do /*0x693916*/
   {
@@ -42,10 +42,10 @@ void ScrollClass::Read(int32_t* x, int32_t* y)
     --v4; /*0x693915*/
   }
   while ( v4 ); /*0x693916*/
-  RadarClass::Destruct(x); /*0x69391a*/
-  if ( (y & 1) != 0 ) /*0x693924*/
-    __3_YAXPAX_Z(x); /*0x693927*/
-  return (ScrollClass *)x; /*0x69392f*/
+  RadarClass::Destruct(Block); /*0x69391a*/
+  if ( (a2 & 1) != 0 ) /*0x693924*/
+    RA2_OPDEL(Block); /*0x693927*/
+  return (ScrollClass *)Block; /*0x69392f*/
 
 }
 } // namespace gamemd

@@ -68,6 +68,8 @@ void EnumConnectionPointsClass::ClearBuffer() {
     unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v2 = 0;  /* G37 hoist */
     unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
   void *v2; // eax
 
   v2 = *(void **)&this->m_1[3]; /*0x4a0f26*/
@@ -130,7 +132,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
     (*(void (**)(_DynamicVectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a144e*/
   }
   v7 = this->m_8; /*0x4a1451*/
-  if ( v7 < this->m_10 ) /*0x4a1459*/
+  if (v7 < this->m_10, unsigned int a2) /*0x4a1459*/
     this->m_10 = v7; /*0x4a145b*/
   return 1; /*0x4a145e*/
 }

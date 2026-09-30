@@ -17,6 +17,6 @@ struct E4Recv_76E750 {
     unsigned int q1600;  // 0x1600
     unsigned int q4228;  // 0x4228
 // --- flat members (END) ---
-    unsigned int * Team_Start_76E750(ScoreScreen * aP1);  // 0x76E750
+    unsigned int * Team_Start_76E750(void * aP1);  // 0x76E750
 };
 } // namespace gamemd

@@ -7,6 +7,6 @@ namespace gamemd {
 struct Display {
     void* vfptr;  // minimal E2 declaration
     long long CalculateDefaultSize();  // 0x5D5A20
-    int * GetViewport(void *a1 = 0);  // 0x72AD20
+    int * GetViewport();  // 0x72AD20
 };
 } // namespace gamemd

@@ -119,19 +119,20 @@ struct RadioClass {
     bool q0EB;  // 0xEB
     unsigned int q0EC;  // 0xEC
     bool q0ED;  // 0xED
-    unsigned int Constructor;
     unsigned int MissionClass;
     unsigned int Undeploy;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     int ExecuteAction(void* aP1, void* aP2);
     int FindLinkIndex(int a2);
     int HasFreeLink();
-    int LoadState(ObjectClass * aP1, ObjectClass * aP2);
-    int PowerDrainUpdate(AbstractClass * aP1);
+    int LoadState(void * aP1, void * aP2);
+    int PowerDrainUpdate(void * aP1);
     int ProcessCmd();
-    int SaveState(int * a0, RadioClass * aP1, int aP2);
+    int SaveState(int * a0, void * aP1, int aP2);
     unsigned int * Release(void *a1 = 0);
     void SetLinkCount(int a2);
+     double Constructor(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

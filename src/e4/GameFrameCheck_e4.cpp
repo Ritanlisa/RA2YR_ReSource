@@ -41,11 +41,11 @@ int sub_6863E0()
   int v7; // eax
   int v10; // [esp+0h] [ebp-18h]
 
-    MouseClass::LoadCursors();
+    this->MouseClass::LoadCursors();
   if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.ObjectTypeClass[35] /*0x686404*/
     && *(unsigned int *, void * a1, void * a2)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[36] )
   {
-        Debug::Log();
+        this->Debug::Log();
     ChangeVideoMode(stru_A8EB00.ObjectTypeClass[35], stru_A8EB00.ObjectTypeClass[36]); /*0x68641f*/
   }
   *((unsigned int *)((char *)&stru_A8EB00 + 376)) = 0; /*0x68642a*/
@@ -65,8 +65,8 @@ int sub_6863E0()
     Timer::GetTicks();
     v7 = Timer::GetTicks();
   Theme::Stop((Theme *)&unk_A83D10, 1); /*0x6864b4*/
-    AudioMixer::Shutdown();
-    AudioQueue::DrainAll();
+    this->AudioMixer::Shutdown();
+    this->AudioQueue::DrainAll();
   StopThemeClass(1); /*0x6864c5*/
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x6864ca*/
   Mission::SetAndCall((MouseClass *)&stru_87F5F0.__pad_58[416], 0, 0); /*0x6864d8*/
@@ -85,7 +85,7 @@ int sub_6863E0()
     }
     if ( v6 <= 0 ) /*0x68652d*/
       break; /*0x68652d*/
-        Event::Dispatch();
+        this->Event::Dispatch();
   }
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x686536*/
   if ( *(unsigned int *)&stru_88732C.__pad_1C[32] ) /*0x68654a*/
@@ -120,7 +120,7 @@ AbstractClass * * sub_686570()
     p_vtable2[2] = &v3[v4]; /*0x6865a7*/
   }
   ((unsigned int *)(dword_A8B230))[130].vtable3 = (void *)1; /*0x6865b0*/
-  AsyncIO::Shutdown(v9); /*0x6865ba*/
+  ((AsyncIO *)(v9))->Shutdown(); /*0x6865ba*/
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x6865c5*/
   (*(void (**)(void *, ObjectClass *, unsigned int))(*(unsigned int *)stru_887598.lineTrailer + 64))( /*0x6865d9*/
     stru_887598.lineTrailer,
@@ -134,21 +134,21 @@ AbstractClass * * sub_686570()
   Audio::WaitForCallback((Audio *)g_MixerState); /*0x686621*/
   v5 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68662b*/
   if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x686634*/
-        v4 += Timer::GetTicks() - MEMORY[0x887338];
+        v4 += Timer::GetTicks() - g_abs_887338;
   v6 = v5 + 300; /*0x686649*/
-    while ( (unsigned __int8)Audio::IsPlaying() )
+    while ( (uint8_t)this->Audio::IsPlaying() )
   {
     v7 = *(unsigned int *)&stru_88732C.__pad_6[14]; /*0x68665d*/
     if ( *(unsigned int *)&stru_88732C.__pad_6[6] != -1 ) /*0x686666*/
-            v6 += Timer::GetTicks() - MEMORY[0x887338];
+            v6 += Timer::GetTicks() - g_abs_887338;
     if ( v6 <= v7 ) /*0x68667c*/
       break; /*0x68667c*/
-        Event::Dispatch();
+        this->Event::Dispatch();
   }
   StopThemeClass(1); /*0x68668e*/
   ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr___tr1_std__A__YAXXZ(); /*0x686693*/
-    AudioMixer::Shutdown();
-    AudioQueue::DrainAll();
+    this->AudioMixer::Shutdown();
+    this->AudioQueue::DrainAll();
   EndBufferMixer((int *)g_MixerState, 0x4000); /*0x6866ad*/
   result = DSurface_ViewBounds.__pad_8[16]; /*0x6866b2*/
   if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[16] != stru_A8EB00.ObjectTypeClass[35] ) /*0x6866c0*/
@@ -156,7 +156,7 @@ AbstractClass * * sub_686570()
     result = stru_A8EB00.ObjectTypeClass[36]; /*0x6866c8*/
     if ( *(unsigned int *)&DSurface_ViewBounds.__pad_8[20] != stru_A8EB00.ObjectTypeClass[36] ) /*0x6866cf*/
     {
-            Debug::Log();
+            this->Debug::Log();
       result = ChangeVideoMode(stru_A8EB00.ObjectTypeClass[35], stru_A8EB00.ObjectTypeClass[36]); /*0x6866ea*/
     }
   }

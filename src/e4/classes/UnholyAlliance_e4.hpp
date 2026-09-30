@@ -10,10 +10,10 @@ struct UnholyAlliance {
     void* vtable1;  // 0x0
     char UnholyAlliance_field_04[4];  // 0x4
 // --- flat members (END) ---
-    BOOL Write(MPCooperative * aP0);
-    UnholyAlliance * QueryInterface(char a2);
-    char Read(void *a1 = 0, void *a2 = 0);
-    char Seek(void *a1 = 0, void *a2 = 0);
+    BOOLWrite(void * aP0);
+    UnholyAlliance * QueryInterface(unsigned int * Block, char a2);
+    char Read();
+    char Seek();
 };
 
 } // namespace gamemd

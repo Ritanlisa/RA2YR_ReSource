@@ -20,8 +20,8 @@ struct Theme {
     unsigned int ThemeClass;
 // --- flat members (END) ---
     int IsPlaying(void *a1 = 0);
-    int QueueSong(IUnknown * aP1);
-    int Stop(ObjectClass * aP1);
+    int QueueSong(void * aP1);
+    int Stop(void * aP1);
 };
 
 } // namespace gamemd

@@ -20,7 +20,7 @@ struct SwizzleManagerClass {
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
 // --- flat members (END) ---
-    int Add(SwizzleManagerClass * aP0, SwizzleManagerClass * aP1, unsigned int * a2);
+    int Add(void * aP0, void * aP1, unsigned int * a2);
     int AddRef(int a1);
     int Lookup(int a1, int a2, int a3, int a4);
     int Release(int a1);

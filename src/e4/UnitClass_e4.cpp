@@ -26,7 +26,7 @@ void UnitClass::ProcessIdleOrders()
       if ( *(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3432) ) /*0x6b7bd7*/
       {
         UnitClass::GetExitCell(v4, *((unsigned int *)this + 26)); /*0x6b7beb*/
-        g_MissionQueueFrame = (int)MEMORY[0xA8ED84]; /*0x6b7bfa*/
+        g_MissionQueueFrame = (int)g_abs_A8ED84; /*0x6b7bfa*/
         g_MissionQueueParam = v5; /*0x6b7bff*/
         g_MissionQueueType = 2; /*0x6b7c05*/
         UnitClass::ClearTargetRef(**(unsigned int **)(*((unsigned int *)this + 15) + 4 * i)); /*0x6b7c16*/

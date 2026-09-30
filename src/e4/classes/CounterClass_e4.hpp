@@ -13,7 +13,7 @@ struct CounterClass {
     unsigned int u32_8;
     unsigned int u32_D;
 // --- flat members (END) ---
-    CounterClass * QueryInterface(char a2);
+    CounterClass * QueryInterface(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

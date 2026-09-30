@@ -39,18 +39,18 @@ namespace gamemd {
 unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
 
-  unsigned __int8 v3; // bl
-  unsigned __int8 v4; // al
-  unsigned __int8 v5; // bl
-  unsigned __int8 result; // al
+  uint8_t v3; // bl
+  uint8_t v4; // al
+  uint8_t v5; // bl
+  uint8_t result; // al
 
-  v3 = *((unsigned char *)this + 1); /*0x517394*/
+  v3 = (uint8_t)(*((unsigned char *)this + 1));
   *((unsigned char *)this + 2) += a2 * (a3[2] - *((unsigned char *)this + 2)) / 256; /*0x517397*/
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
   v5 = *this; /*0x5173ba*/
   *((unsigned char *)this + 1) = v4; /*0x5173bc*/
   result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
-  *this = result; /*0x5173e1*/
+  *(unsigned int *)this = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 
 }
@@ -133,7 +133,7 @@ void SaveInfantryToINI(void * a1, void * a2, void * a3)
       controlGroup = v6->?; /*0x51ffef*/
       Field = FootClass::GetField(v6->?); /*0x52000b*/
       v16 = FromNameIndex((int)queuedMission); /*0x52001b*/
-      v12 = Input::OffsetToDirection(&v24); /*0x52001c*/
+      v12 = ((Input *)(&v24))->OffsetToDirection(); /*0x52001c*/
       v13 = (*((int (**)(BuildingClass *, char *, int, char *, unsigned int))v6->TechnoClass + 110))( /*0x52002b*/
               v6,
               Buffer,
@@ -641,9 +641,9 @@ int E4Recv_517110::sub_517110()
   unsigned char v8[4]; // [esp+8h] [ebp-4h] BYREF
 
   v5 = 1; /*0x51717d*/
-  if ( *((unsigned int *)this + 9) != *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[1684] /*0x517138*/
-    || *((unsigned int *)this + 10) != *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[1688]
-    || *((unsigned int *)this + 11) != *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[1692] )
+  if ( *((unsigned int *)this + 9) != *(unsigned int *)&g_abs_A8D63C /*0x517138*/
+    || *((unsigned int *)this + 10) != *(unsigned int *)&g_abs_A8D63C
+    || *((unsigned int *)this + 11) != *(unsigned int *)&g_abs_A8D63C )
   {
     v2 = *((unsigned int *)this + 9) / 256; /*0x517161*/
     v3 = *((unsigned int *)this + 10) / 256; /*0x517164*/
@@ -690,7 +690,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   CHAR SubKey[128]; // [esp+2Ch] [ebp-100h] BYREF
   CHAR v13[128]; // [esp+ACh] [ebp-80h] BYREF
 
-  strcpy(SubKey, MEMORY[0x8254E4]); /*0x5176ff*/
+  strcpy(SubKey, g_abs_8254E4); /*0x5176ff*/
   v5 = 0; /*0x51770a*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0xF003Fu, &phkResult) /*0x51774a*/
     && RegCreateKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, &dwDisposition) )
@@ -701,7 +701,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
   *((unsigned char *)this + 4) = 0; /*0x51779f*/
-  strcpy(v13, MEMORY[0x8254E4]); /*0x5177c0*/
+  strcpy(v13, g_abs_8254E4); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
   {

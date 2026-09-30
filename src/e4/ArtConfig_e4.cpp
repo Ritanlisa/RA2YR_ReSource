@@ -38,7 +38,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   CCFileClass::Construct2(v11, (char **)((char *)this + 32)); /*0x76fc74*/
   if ( CCFileClass::Open(v11, 0) ) /*0x76fc7f*/
   {
-    v8 = (void *)__2_YAPAXI_Z(0x4Cu); /*0x76fc8a*/
+    v8 = (void *)((unsigned int)((void *)RA2_OPNEW(0x4Cu)));
     if ( v8 ) /*0x76fc94*/
       v9 = (MSShapeAnim *)MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (MSShapeAnim *)&aP1->__pad_4[20], 1, 0, 0); /*0x76fcb6*/
     else
@@ -47,8 +47,8 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
     (*(void (**)(MSShapeAnim *, unsigned int))(*(unsigned int *)v9->__pad_0 + 4))(v9, 0); /*0x76fcc8*/
     PriorityQueue::Add(aP1, *(MSAnim **)((char *)this + 40)); /*0x76fcd6*/
   }
-  v11[0] = &vt_CCFileClass; /*0x76fcdf*/
-  v13 = 0; /*0x76fce7*/
+  v11[0] = (unsigned int)(&vt_CCFileClass);
+  v13 = (unsigned int)(0);
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = &off_7E1668; /*0x76fcf8*/
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/

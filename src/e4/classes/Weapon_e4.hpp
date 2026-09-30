@@ -9,7 +9,7 @@ struct Weapon {
 // --- flat members (BEGIN) ---
     char Weapon_field_00[4];  // 0x0
 // --- flat members (END) ---
-    AbstractClass * * DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4);
+    AbstractClass * * DestroyTerrain(int * a1, void * aP2, void * aP3, void * aP4);
 };
 
 } // namespace gamemd

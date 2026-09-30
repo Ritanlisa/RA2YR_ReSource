@@ -9,11 +9,13 @@ struct CellStruct {
     short X;  // 0x0
     short Y;  // 0x2
     unsigned int field_0;
+    unsigned int Equals;
+    unsigned int vfptr;
 // --- flat members (END) ---
-    void* Add(void* aP1,  void* aP2);    // 0x42D510
-    unsigned int * Copy(void* aP1);  // 0x437F30
-    BOOL Equals(unsigned short * a2);  // 0x50E470
-    void* Sub(void* aP1,  void* aP2);    // 0x588C60
-    unsigned short * Set(short a2, short a3, void *a1 = 0);    // 0x42D470
+    void* Add(void * aP1, void * aP2);  // 0x42D510
+    unsigned int * Copy(void * aP1);  // 0x437F30
+    BOOLEquals(unsigned short * a2);  // 0x50E470
+    void* Sub(void * aP1, void * aP2);  // 0x588C60
+    unsigned short * Set(__int16 a2, __int16 a3);  // 0x42D470
 };
 } // namespace gamemd

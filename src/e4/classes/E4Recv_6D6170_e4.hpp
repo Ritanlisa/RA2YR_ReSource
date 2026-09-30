@@ -11,6 +11,6 @@ struct E4Recv_6D6170 {
     unsigned int M3432;  // 0xD68
     unsigned int q3428;  // 0x3428
 // --- flat members (END) ---
-    void* RequestMapSnapshot(AbstractClass * aP1);  // 0x6D6170
+    void* RequestMapSnapshot(void * aP1);  // 0x6D6170
 };
 } // namespace gamemd

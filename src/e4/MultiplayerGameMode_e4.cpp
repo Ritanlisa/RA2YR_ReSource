@@ -34,16 +34,16 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
       *((unsigned int *)this + 1) = a3; /*0x5d8a18*/
       return this; /*0x5d8a1e*/
     }
-    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x5d8a2d*/
+    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x5d8a2d*/
     *((unsigned char *)this + 13) = 1; /*0x5d8a30*/
   }
-  return this; /*0x5d8a1d*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd
 // 0x5D7F20
 namespace gamemd {
-MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
+MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char * Block, char a2)
 {
 
   int v3; // edi
@@ -51,7 +51,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
   void (***v5)(unsigned int, int); // ecx
   void *v6; // eax
 
-  v3 = 0; /*0x5d7f24*/
+  v3 = (unsigned int)(0);
   for ( *(unsigned int *)Block = &vt_MultiplayerGameMode; v3 < *((unsigned int *)Block + 6); ++v3 ) /*0x5d7f31*/
   {
     v4 = *(void (****)(unsigned int, int))(*((unsigned int *)Block + 3) + 4 * v3); /*0x5d7f36*/
@@ -70,13 +70,13 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
   *((unsigned int *)Block + 2) = &vt_VectorClass_MultiplayerTeam; /*0x5d7f86*/
   if ( v6 && *(Block + 21) ) /*0x5d7f90*/
   {
-    __3_YAXPAX_Z(v6); /*0x5d7f98*/
+    RA2_OPDEL(v6); /*0x5d7f98*/
     *((unsigned int *)Block + 3) = 0; /*0x5d7fa0*/
   }
   *(Block + 21) = 0; /*0x5d7fab*/
   *((unsigned int *)Block + 4) = 0; /*0x5d7fb1*/
-  if ( (a2 & 1) != 0 ) /*0x5d7fb8*/
-    __3_YAXPAX_Z(Block); /*0x5d7fbb*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5d7fb8*/
+    RA2_OPDEL(Block); /*0x5d7fbb*/
   return (MultiplayerGameMode *)Block; /*0x5d7fc5*/
 
 }

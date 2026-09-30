@@ -161,8 +161,8 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
 char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int a6, int a7, int a8, int a9)
 {
 
-  if ( Block && HIBYTE(a5) ) /*0x5c0e9e*/
-    __3_YAXPAX_Z(Block); /*0x5c0ea1*/
+  if ( Block && IDA_HIBYTE(a5) ) /*0x5c0e9e*/
+    RA2_OPDEL(Block); /*0x5c0ea1*/
   return 0; /*0x5c0eab*/
 
 }
@@ -170,8 +170,8 @@ char Memory::FreeConditional(int a1, int a2, void * Block, int a4, short a5, int
 char Memory::FreeConditional2(int a1, void * Block, int a3, short a4, int a5, int a6, int a7)
 {
 
-  if ( Block && HIBYTE(a4) ) /*0x5c0fae*/
-    __3_YAXPAX_Z(Block); /*0x5c0fb1*/
+  if ( Block && IDA_HIBYTE(a4) ) /*0x5c0fae*/
+    RA2_OPDEL(Block); /*0x5c0fb1*/
   return 0; /*0x5c0fbb*/
 
 }

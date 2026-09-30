@@ -9,6 +9,6 @@ struct E4Recv_5CF830 {
     unsigned int vfptr;  // 0x0
 // --- flat members (END) ---
     int Vf16(int,  ...);    // G6 vtable slot dispatch
-    int Network_Load(ObjectClass * aP1);  // 0x5CF830
+    int Network_Load(void * aP1);  // 0x5CF830
 };
 } // namespace gamemd

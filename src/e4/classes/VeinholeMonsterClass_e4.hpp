@@ -31,7 +31,7 @@ struct VeinholeMonsterClass {
     int CheckStatus();
     int StubReturn264();
     int StubReturn63();
-    int Update(TechnoTypeClass * aP0, int * a1, int aP2, void *a2 = 0);
+    int Update(void * aP0, int * a1, int aP2, void *a2 = 0);
     int ddtor(int a1, unsigned int * a2);
 };
 

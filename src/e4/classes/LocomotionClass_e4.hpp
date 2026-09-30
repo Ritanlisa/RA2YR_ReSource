@@ -54,6 +54,7 @@ struct LocomotionClass {
     unsigned int unknown_91;
     unsigned int Powered;
     unsigned int RefCount;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     LocomotionClass * ProcessMove(char a2);
     int CheckBridgeBlock();

@@ -29,12 +29,13 @@ struct IPXGlobalConnClass {
     unsigned int u32_D4;
     unsigned int Debug;
     unsigned int Timer;
+    unsigned int __pad_0;
 // --- flat members (END) ---
-    HashTable_flat * * SetAddress(int a2, int arg4, int * a3, IPXGlobalConnClass * aP4, int a6, int aP3);
+    HashTable_flat * * SetAddress(int a2, int arg4, int * a3, void * aP4, int a6, int aP3);
     IPXGlobalConnClass * QueryInterface(char a2);
     int CheckStatus();
     int Connect(void * a2, signed int * a3);
-    int Release(const void * a1, AnimClass * aP2, int aP3, char aP4);
+    int Release(const void * a1, void * aP2, int aP3, char aP4);
     int Send(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     int SendPacket(int a2, short a3);
     int ddtor(int a2, int a3);

@@ -1207,7 +1207,7 @@ int E4Recv_6C4550::CreateTClassFactory_TunnelLocomotionClass()
 
 // 0x6C46D0
 namespace gamemd {
-int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass(void * a1, void * a2, void * a3)
+int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass()
 {
 
   int v2; // [esp+8h] [ebp+4h]
@@ -1229,7 +1229,7 @@ int E4Recv_6C46D0::CreateTClassFactory_WalkLocomotionClass(void * a1, void * a2,
 
 // 0x6C4850
 namespace gamemd {
-int E4Recv_6C4850::CreateTClassFactory_DropPodLocomotionClass(void * a1, void * a2, void * a3)
+int E4Recv_6C4850::CreateTClassFactory_DropPodLocomotionClass()
 {
 
   int v2; // [esp+8h] [ebp+4h]

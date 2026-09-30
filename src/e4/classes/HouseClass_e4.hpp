@@ -1826,7 +1826,7 @@ struct HouseClass {
     unsigned int CheckWinCondition;
     unsigned int FindOwner;
 // --- flat members (END) ---
-    AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
+    AbstractClass * * AIDecision(void * aP0, int * a1);
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
     AbstractClass * * FindStartPositions(void *a1 = 0);
     AbstractClass * * SaveLoad_Prefix(int a1, LPSTREAM pStm);
@@ -1834,16 +1834,16 @@ struct HouseClass {
     void* * UpdateAITryFireSW();
     VectorClass_flat * vt_00_(char a2);
     VectorCursor * vt_placeholder_07(char a2);
-    char DroppedFlag(UnitClass * aP1, int a3);
+    char DroppedFlag(void * aP1, int a3);
     char IonSensitivesShouldBeOffline();
-    char PickedUpFlag(ObjectClass * aP1, char a3);
+    char PickedUpFlag(void * aP1, char a3);
     char ReshroudMap();
     char Set(void *a1 = 0, void *a2 = 0, void *a3 = 0);
     char UpdateAllSilos(int a2, int a3);
-    double GiveTiberium_Storage(AbstractClass * aP1, BuildingClass * aP2);
+    double GiveTiberium_Storage(void * aP1, void * aP2);
     int COMStub_Ret1_1(int a1);
     int COMStub_Ret1_2(int a1);
-    int CanAlly(HouseClass * aP1);
+    int CanAlly(void * aP1);
     int CanDetect();
     int CreatePowerOutage(int a2);
     int CreateRadarOutage(int a2);
@@ -1860,11 +1860,11 @@ struct HouseClass {
     int IsAlliedWith(void* aP1);
     int IsCellOccupied(void* aP1, char a3);
     int MakeAlly(int a2, char a3);
-    int PrerequisitesForTechnoTypeAreListed(int a1, VectorClass_flat * aP1, TechnoTypeClass * aP2);
-    int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);
+    int PrerequisitesForTechnoTypeAreListed(int a1, void * aP1, void * aP2);
+    int QueryInterface(void * aP0, const void * a1, unsigned int * a2);
     int QueryInterface_Dispatch();
     int QueryInterface_Helper();
-    int RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned int * a2, int a4);
+    int RespawnStartingForces(void * aP0, void ** a1, unsigned int * a2, int a4);
     int RevealShroudForAllies(char a1, int a2);
     int SetPrimaryFactory(int a2);
     int UpdatePower();
@@ -1879,9 +1879,9 @@ struct HouseClass {
     unsigned int * vt_placeholder_10();
     unsigned int vt_05_(int a2);
     void * CanTogglePower();
-    void ** PsiWarn(InfantryClass * aP0, int a2, int arg0, void * a3);
+    void ** PsiWarn(void * aP0, int a2, int arg0, void * a3);
     void AcquiredThreatNode();
-    void Construct(CCINIClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     void LostPoweredCenter(int a2);
     void ResetObjectOrders(char a1, int a2);
     void vt_03_();

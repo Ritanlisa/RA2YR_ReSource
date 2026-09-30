@@ -21,7 +21,7 @@
 
 // 0x6E5B60
 namespace gamemd {
-AbstractTypeClass * TagTypeClass::Construct(char* a1)
+AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
 {
 
   AbstractTypeClass *v3; // eax
@@ -29,7 +29,7 @@ AbstractTypeClass * TagTypeClass::Construct(char* a1)
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
   char v7; // [esp+38h] [ebp-4h]
 
-  AbstractTypeClass::Constructor((int)this, (AbstractClass *)a1); /*0x6e5b6c*/
+  AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6e5b6c*/
   *((unsigned int *)this + 38) = -1; /*0x6e5b78*/
   *((unsigned int *)this + 39) = 0; /*0x6e5b82*/
   *((unsigned int *)this + 40) = 0; /*0x6e5b88*/
@@ -51,28 +51,28 @@ AbstractTypeClass * TagTypeClass::Construct(char* a1)
     qmemcpy((unsigned char *)this + 100, Destination, 0x30u); /*0x6e5bdc*/
     *((unsigned char *)this + 148) = v7; /*0x6e5bde*/
   }
-  *((unsigned int *)this + 38) = *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6140]; /*0x6e5be6*/
-  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[6140] < *(int *)&MEMORY[0xB077F8].__pad_579C[6132] /*0x6e5c1e*/
-    || (MEMORY[0xB077F8].__pad_579C[6137] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6132])
-    && *(int *)&MEMORY[0xB077F8].__pad_579C[6144] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6124] + 8))(
-         &MEMORY[0xB077F8].__pad_579C[6124],
-         *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6132] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6144],
+  *((unsigned int *)this + 38) = *(unsigned int *)&g_abs_B077F8; /*0x6e5be6*/
+  if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x6e5c1e*/
+    || (g_abs_B077F8 || !*(unsigned int *)&g_abs_B077F8)
+    && *(int *)&g_abs_B077F8 > 0
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&g_abs_B077F8 + 8))(
+         &g_abs_B077F8,
+         *(unsigned int *)&g_abs_B077F8 + *(unsigned int *)&g_abs_B077F8,
          0) )
   {
-    v3 = (AbstractTypeClass *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6140])++; /*0x6e5c2b*/
-    *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6128] + 4 * (unsigned int)v3) = this; /*0x6e5c3a*/
+    v3 = (AbstractTypeClass *)(*(unsigned int *)&g_abs_B077F8)++; /*0x6e5c2b*/
+    *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * (unsigned int)v3) = this; /*0x6e5c3a*/
   }
-  if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x6e5c71*/
-    || (MEMORY[0xB077F8].__pad_579C[9961] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956])
-    && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
-         &MEMORY[0xB077F8].__pad_579C[9948],
-         *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9968],
+  if ( *(int *)&g_abs_B077F8 < *(int *)&g_abs_B077F8 /*0x6e5c71*/
+    || (g_abs_B077F8 || !*(unsigned int *)&g_abs_B077F8)
+    && *(int *)&g_abs_B077F8 > 0
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&g_abs_B077F8 + 8))(
+         &g_abs_B077F8,
+         *(unsigned int *)&g_abs_B077F8 + *(unsigned int *)&g_abs_B077F8,
          0) )
   {
-    v4 = (*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x6e5c7e*/
-    *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v4) = this; /*0x6e5c8d*/
+    v4 = (*(unsigned int *)&g_abs_B077F8)++; /*0x6e5c7e*/
+    *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * v4) = this; /*0x6e5c8d*/
   }
   return this; /*0x6e5c92*/
 
@@ -90,7 +90,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   unsigned int *v6; // ecx
   int v7; // eax
   int v8; // eax
-  int v10; // [esp+Ch] [ebp-4h] BYREF
+  TagTypeClass * v10;
 
   *(unsigned int *)this = &TagTypeClass::`vftable'; /*0x6e5ca7*/
   *((unsigned int *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5cad*/
@@ -112,46 +112,46 @@ AbstractClass * * TagTypeClass::CleanupMembers()
     while ( v3 ); /*0x6e5cfa*/
   }
   v4 = 0; /*0x6e5d01*/
-  if ( MEMORY[0xB0E730] > 0 ) /*0x6e5d05*/
+  if ( g_abs_B0E730 > 0 ) /*0x6e5d05*/
   {
-    v5 = MEMORY[0xB0E724]; /*0x6e5d07*/
+    v5 = g_abs_B0E724; /*0x6e5d07*/
     do /*0x6e5d2e*/
     {
       v6 = (unsigned int *)v5[v4]; /*0x6e5d0c*/
-      if ( v6[9] == this ) /*0x6e5d12*/
+      if ( v6[9] == (unsigned int)(this) ) /*0x6e5d12*/
       {
         if ( v6 ) /*0x6e5d16*/
         {
           (*(void (**)(unsigned int *, int))(*v6 + 32))(v6, 1); /*0x6e5d1c*/
-          v5 = MEMORY[0xB0E724]; /*0x6e5d1f*/
+          v5 = g_abs_B0E724; /*0x6e5d1f*/
         }
         --v4; /*0x6e5d24*/
       }
       ++v4; /*0x6e5d2b*/
     }
-    while ( v4 < MEMORY[0xB0E730] ); /*0x6e5d2e*/
+    while ( v4 < g_abs_B0E730 ); /*0x6e5d2e*/
   }
-  v10 = this; /*0x6e5d40*/
-  v7 = (*(int (**)(int *, int *))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v10); /*0x6e5d44*/
-  if ( v7 != -1 && v7 < MEMORY[0xB0F680] && v7 < --MEMORY[0xB0F680] ) /*0x6e5d5f*/
+  v10 = (gamemd::TagTypeClass *)((int)(this));
+  v7 = (*(int (**)(int *, int *))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v10); /*0x6e5d44*/
+  if ( v7 != -1 && v7 < g_abs_B0F680 && v7 < --g_abs_B0F680 ) /*0x6e5d5f*/
   {
     do /*0x6e5d77*/
     {
       ++v7; /*0x6e5d67*/
-      *((unsigned int *)MEMORY[0xB0F674] + v7 - 1) = *((unsigned int *)MEMORY[0xB0F674] + v7); /*0x6e5d6b*/
+      *((unsigned int *)g_abs_B0F674 + v7 - 1) = *((unsigned int *)g_abs_B0F674 + v7); /*0x6e5d6b*/
     }
-    while ( v7 < MEMORY[0xB0F680] ); /*0x6e5d77*/
+    while ( v7 < g_abs_B0F680 ); /*0x6e5d77*/
   }
   v10 = this; /*0x6e5d89*/
-  v8 = (*(int (**)(int *, int *))(MEMORY[0xB0E780] + 16))(&MEMORY[0xB0E780], &v10); /*0x6e5d8d*/
-  if ( v8 != -1 && v8 < MEMORY[0xB0E790] && v8 < --MEMORY[0xB0E790] ) /*0x6e5da8*/
+  v8 = (*(int (**)(int *, int *))(g_abs_B0E780 + 16))(&g_abs_B0E780, &v10); /*0x6e5d8d*/
+  if ( v8 != -1 && v8 < g_abs_B0E790 && v8 < --g_abs_B0E790 ) /*0x6e5da8*/
   {
     do /*0x6e5dc0*/
     {
       ++v8; /*0x6e5db0*/
-      *((unsigned int *)MEMORY[0xB0E784] + v8 - 1) = *((unsigned int *)MEMORY[0xB0E784] + v8); /*0x6e5db4*/
+      *((unsigned int *)g_abs_B0E784 + v8 - 1) = *((unsigned int *)g_abs_B0E784 + v8); /*0x6e5db4*/
     }
-    while ( v8 < MEMORY[0xB0E790] ); /*0x6e5dc0*/
+    while ( v8 < g_abs_B0E790 ); /*0x6e5dc0*/
   }
   return AbstractTypeClass::Dtor((unsigned int *)this); /*0x6e5dc9*/
 
@@ -188,15 +188,15 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   INIClass::ResetSection(a2); /*0x6e6093*/
   if ( !INIClass::GetString( /*0x6e60b4*/
           a2,
-          (unsigned __int8 *)MEMORY[0x842C3C],
-          (unsigned __int8 *)((char *)this + 36),
-          &MEMORY[0x889F64],
+          (uint8_t *)g_abs_842C3C,
+          (uint8_t *)((char *)this + 36),
+          &g_abs_889F64,
           String,
           128) )
     return 0; /*0x6e6151*/
-  strtok(String, MEMORY[0x817F70]); /*0x6e60cb*/
+  strtok(String, g_abs_817F70); /*0x6e60cb*/
   *((unsigned int *)this + 39) = atoi(String); /*0x6e60e1*/
-  v3 = strtok(0, MEMORY[0x817F70]); /*0x6e60e7*/
+  v3 = strtok(0, g_abs_817F70); /*0x6e60e7*/
   if ( v3 ) /*0x6e60f1*/
   {
     strncpy(Destination, v3, 0x30u); /*0x6e6101*/
@@ -211,7 +211,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
     qmemcpy((void *)((char *)this + 100), Destination, 0x30u); /*0x6e6123*/
     *((unsigned char *)this + 148) = v7; /*0x6e6125*/
   }
-  v4 = strtok(0, MEMORY[0x817F70]); /*0x6e612d*/
+  v4 = strtok(0, g_abs_817F70); /*0x6e612d*/
   *((unsigned int *)this + 40) = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
   return 1; /*0x6e6143*/
 
@@ -227,34 +227,34 @@ int TagTypeClass::GetParameter(char * a2)
 
   v3 = *((unsigned int *)this + 40); /*0x6e6169*/
   if ( v3 ) /*0x6e6171*/
-    wsprintfA(Source, MEMORY[0x842CCC], *((unsigned int *)this + 39), (const char *)((char *)this + 100), (const char *)(v3 + 36)); /*0x6e61b4*/
+    wsprintfA(Source, g_abs_842CCC, *((unsigned int *)this + 39), (const char *)((char *)this + 100), (const char *)(v3 + 36)); /*0x6e61b4*/
   else
-    wsprintfA(Source, MEMORY[0x842CD8], (const char *)((char *)this + 100)); /*0x6e6181*/
-  INIClass::SetString(a2, (unsigned __int8 *)MEMORY[0x842C3C], (char *)((char *)this + 36), Source); /*0x6e6199*/
+    wsprintfA(Source, g_abs_842CD8, (const char *)((char *)this + 100)); /*0x6e6181*/
+  INIClass::SetString(a2, (uint8_t *)g_abs_842C3C, (char *)((char *)this + 36), Source); /*0x6e6199*/
   return 1; /*0x6e61db*/
 
 }
 }
 // 0x6E6310
 namespace gamemd {
-AbstractTypeClass * TagTypeClass::FindOrCreate(char* a1)
+AbstractTypeClass * TagTypeClass::FindOrCreate(ObjectClass * Source)
 {
 
   int v2; // esi
   char *v3; // eax
 
-  if ( !_strcmpi(&stru_817460.sectionHead[1], a1) || !_strcmpi(g_Str_none, a1) ) /*0x6e632c*/
+  if ( !_strcmpi(&stru_817460.sectionHead[1], Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e632c*/
     return 0; /*0x6e638f*/
   v2 = 0; /*0x6e633d*/
   if ( *(int *)&stru_B05488.__pad_579C[15212] <= 0 ) /*0x6e6341*/
   {
 LABEL_6:
-    v3 = (char *)__2_YAPAXI_Z(0xA4u); /*0x6e6366*/
+    v3 = (char *)RA2_OPNEW(0xA4u); /*0x6e6366*/
     if ( v3 ) /*0x6e6375*/
-      return TagTypeClass::Construct(v3, a1); /*0x6e6381*/
+      return TagTypeClass::Construct(v3, Source); /*0x6e6381*/
     return 0; /*0x6e6375*/
   }
-  while ( _strcmpi((const void *)(*(unsigned int *)(*(unsigned int *)&stru_B05488.__pad_579C[15200] + 4 * v2) + 36), a1) ) /*0x6e635a*/
+  while ( _strcmpi((const void *)(*(unsigned int *)(*(unsigned int *)&stru_B05488.__pad_579C[15200] + 4 * v2) + 36), Source) ) /*0x6e635a*/
   {
     if ( ++v2 >= *(int *)&stru_B05488.__pad_579C[15212] ) /*0x6e6364*/
       goto LABEL_6; /*0x6e6364*/
@@ -284,7 +284,7 @@ int TagTypeClass::GetAuxField()
 }
 // 0x727AA0
 namespace gamemd {
-TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType()
+TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType(ObjectClass * Source)
 {
 
   int v2; // esi
@@ -296,7 +296,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType()
   if ( dword_8B4188 <= 0 ) /*0x727ad1*/
   {
 LABEL_6:
-    v3 = (unsigned int *)__2_YAPAXI_Z(0xB4u); /*0x727af6*/
+    v3 = (unsigned int *)RA2_OPNEW(0xB4u); /*0x727af6*/
     if ( v3 ) /*0x727b05*/
       return (TriggerTypeClass *)TriggerTypeClass::Construct(v3, Source); /*0x727b11*/
     return 0; /*0x727b05*/
@@ -391,12 +391,12 @@ int TagTypeClass::GetObjectSize()
 
 // 0x6E64C0
 namespace gamemd {
-TagTypeClass * TagTypeClass::ddtor(char a2)
+TagTypeClass * TagTypeClass::ddtor(void * Block, char a2)
 {
 
   TagTypeClass::CleanupMembers((int)Block); /*0x6e64c3*/
-  if ( (a2 & 1) != 0 ) /*0x6e64cd*/
-    __3_YAXPAX_Z(Block); /*0x6e64d0*/
+  if ( (Block & 1) != 0 ) /*0x6e64cd*/
+    RA2_OPDEL(Block); /*0x6e64d0*/
   return (TagTypeClass *)Block; /*0x6e64da*/
 
 }

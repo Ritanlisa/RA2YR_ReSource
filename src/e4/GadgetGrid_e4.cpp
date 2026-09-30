@@ -10,7 +10,7 @@
 
 // 0x4134A0
 namespace gamemd {
-int GadgetGrid::InsertItem(ObjectClass * aP1)
+int GadgetGrid::InsertItem(int a2)
 {
 
   unsigned int *v4; // eax
@@ -27,23 +27,23 @@ int GadgetGrid::InsertItem(ObjectClass * aP1)
   char v15[4]; // [esp+Ch] [ebp-4h] BYREF
   int v16; // [esp+14h] [ebp+4h]
 
-  v4 = (unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)aP1 + 440))(aP1, v15); /*0x4134b3*/
+  v4 = (unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 440))(a2, v15); /*0x4134b3*/
   v5 = *v4; /*0x4134b9*/
   v16 = *v4; /*0x4134c0*/
-  (*(void (**)(int, unsigned int))(*(unsigned int *)aP1 + 760))(aP1, *v4); /*0x4134c4*/
+  (*(void (**)(int, unsigned int))(*(unsigned int *)a2 + 760))(a2, *v4); /*0x4134c4*/
   if ( (v5 & 0x8000u) == 0 ) /*0x4134cd*/
-    v5 = (__int16)v5; /*0x4134d3*/
+    v5 = (int16_t)v5; /*0x4134d3*/
   else
     v5 = 0; /*0x4134cf*/
   if ( v16 >= 0 ) /*0x4134df*/
     v6 = SHIWORD(v16); /*0x4134e5*/
   else
     v6 = 0; /*0x4134e1*/
-  v7 = v5 / (MEMORY[0x87F914] / 20); /*0x413504*/
+  v7 = v5 / (g_abs_87F914 / 20); /*0x413504*/
   v8 = 19; /*0x413506*/
   if ( v7 <= 19 ) /*0x41350e*/
     v8 = v7; /*0x413510*/
-  v9 = v6 / (MEMORY[0x87F918] / 20); /*0x41352f*/
+  v9 = v6 / (g_abs_87F918 / 20); /*0x41352f*/
   if ( v9 > 19 ) /*0x413534*/
     v9 = 19; /*0x413536*/
   v10 = 3 * (v8 + 20 * v9); /*0x413541*/
@@ -57,7 +57,7 @@ int GadgetGrid::InsertItem(ObjectClass * aP1)
     result = *((unsigned int *)v12 + 4); /*0x413576*/
     v14 = *((unsigned int *)v12 + 1); /*0x413579*/
     *((unsigned int *)v12 + 4) = result + 1; /*0x41357f*/
-    *(unsigned int *)(v14 + 4 * result) = aP1; /*0x413582*/
+    *(unsigned int *)(v14 + 4 * result) = a2; /*0x413582*/
   }
   return result; /*0x413585*/
 
@@ -65,7 +65,7 @@ int GadgetGrid::InsertItem(ObjectClass * aP1)
 } // namespace gamemd
 // 0x4135D0
 namespace gamemd {
-int GadgetGrid::RemoveItem(IUnknown * aP1)
+int GadgetGrid::RemoveItem(int a2)
 {
 
   int v3; // esi
@@ -78,30 +78,30 @@ int GadgetGrid::RemoveItem(IUnknown * aP1)
   int result; // eax
   int v11; // ecx
   int v12; // ecx
-  __int16 v13; // [esp+Ah] [ebp-6h]
+  int16_t v13; // [esp+Ah] [ebp-6h]
   char v14[4]; // [esp+Ch] [ebp-4h] BYREF
 
-  v3 = *(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)aP1 + 756))(aP1, v14); /*0x4135ec*/
-  v13 = HIWORD(v3); /*0x4135f4*/
-  (*(void (**)(int, int))(*(unsigned int *)aP1 + 760))(aP1, MEMORY[0x887850]); /*0x4135fb*/
+  v3 = *(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 756))(a2, v14); /*0x4135ec*/
+  v13 = IDA_HIWORD(v3); /*0x4135f4*/
+  (*(void (**)(int, int))(*(unsigned int *)a2 + 760))(a2, g_abs_887850); /*0x4135fb*/
   if ( (v3 & 0x8000u) == 0 ) /*0x413604*/
-    v3 = (__int16)v3; /*0x41360a*/
+    v3 = (int16_t)v3; /*0x41360a*/
   else
     v3 = 0; /*0x413606*/
   if ( v13 >= 0 ) /*0x413616*/
     v4 = v13; /*0x41361c*/
   else
     v4 = 0; /*0x413618*/
-  v5 = v3 / (MEMORY[0x87F914] / 20); /*0x41363b*/
+  v5 = v3 / (g_abs_87F914 / 20); /*0x41363b*/
   v6 = 19; /*0x41363d*/
   if ( v5 <= 19 ) /*0x413645*/
     v6 = v5; /*0x413647*/
-  v7 = v4 / (MEMORY[0x87F918] / 20); /*0x413666*/
+  v7 = v4 / (g_abs_87F918 / 20); /*0x413666*/
   if ( v7 > 19 ) /*0x41366b*/
     v7 = 19; /*0x41366d*/
   v8 = *((unsigned int *)this + 120 * v7 + 6 * v6); /*0x413680*/
   v9 = (char *)((unsigned int *)this + 120 * v7 + 6 * v6); /*0x413683*/
-  result = (*(int (**)(char *, int *))(v8 + 16))(v9, &aP1); /*0x413688*/
+  result = (*(int (**)(char *, int *))(v8 + 16))(v9, &a2); /*0x413688*/
   if ( result != -1 ) /*0x41368e*/
   {
     v11 = *((unsigned int *)v9 + 4); /*0x413690*/

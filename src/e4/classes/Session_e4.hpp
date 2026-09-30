@@ -90,10 +90,10 @@ struct Session {
     unsigned int Timer;
     unsigned int Event;
 // --- flat members (END) ---
-    int RemoveTeam(MSShapeAnim * aP1, void * a1, void * a2);  // 0x5D1D80
-    int PrepareGame(void *a1 = 0);  // 0x5E74E0
+    int RemoveTeam(void * aP1);  // 0x5D1D80
+    int PrepareGame(int hWnd);  // 0x5E74E0
     int GetPlayerOption();  // 0x69B700
-    int GetPlayerColor(void *a1 = 0);  // 0x69B720
-    int StartGame();  // 0x5ED370
+    int GetPlayerColor();  // 0x69B720
+    int StartGame(int hWnd);  // 0x5ED370
 };
 } // namespace gamemd

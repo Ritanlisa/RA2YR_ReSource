@@ -11,12 +11,12 @@ struct PageUserCommandClass {
     char PageUserCommandClass_field_00[4];  // 0x4
     char PageUserCommandClass_field_04[4];  // 0x8
 // --- flat members (END) ---
-    char * AddRef(void *a1 = 0);
+    char * AddRef();
     char Do(int a1);
-    PageUserCommandClass();
-    wchar_t * Read(void *a1 = 0, void *a2 = 0);
-    wchar_t * Release(void *a1 = 0);
-    wchar_t * ddtor(void *a1 = 0);
+PageUserCommandClass();
+    wchar_t * Read();
+    wchar_t * Release();
+    wchar_t * ddtor();
 };
 
 } // namespace gamemd

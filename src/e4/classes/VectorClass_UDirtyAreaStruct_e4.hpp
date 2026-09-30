@@ -14,7 +14,7 @@ struct VectorClass_UDirtyAreaStruct {
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
 // --- flat members (END) ---
-    char SetCapacity(CCINIClass * aP1,  char * a2);    // 0x6DC850
+    char SetCapacity(void * aP1,  char * a2);    // 0x6DC850
     DynamicVector * Constructor_VectorClass_ShadowControlClass___(char a2);  // 0x6DCD20
     void Destroy(void *a1 = 0);  // 0x6DC4E0
     unsigned int GetItemIndex(int a2);  // 0x6DC510

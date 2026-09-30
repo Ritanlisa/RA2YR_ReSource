@@ -97,9 +97,10 @@ struct Animation {
     unsigned int u32_1A04;
     unsigned int u32_1A08;
     unsigned int q020;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     BuildingClass * * UpdateBuildingAnimations();
-    ObjectClass * * LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2);
+    ObjectClass * * LoadSidebarAnimations(unsigned int * a1, void * aP2);
     int GetProgress();
     long long UpdateBobOffset();
 };

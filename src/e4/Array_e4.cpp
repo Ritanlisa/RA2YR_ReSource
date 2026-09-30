@@ -61,14 +61,14 @@ int Array::FindValue(IUnknown * aP1)
 }
 // 0x63E590
 namespace gamemd {
-int Array::RemoveAt()
+int Array::RemoveAt( int a2)
 {
 
   int v2; // edx
   int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x63e590*/
+  v2 = (int)(*(this + 4));
   v3 = a2; /*0x63e593*/
   if ( a2 >= v2 ) /*0x63e599*/
     return 0; /*0x63e5bc*/
@@ -89,7 +89,7 @@ int Array::RemoveAt()
 }
 // 0x65AD40
 namespace gamemd {
-int Array::Get()
+int Array::Get( int a2)
 {
 
   return *(unsigned int *)(*(this + 57) + 4 * a2); /*0x65ad4d*/
@@ -98,14 +98,14 @@ int Array::Get()
 }
 // 0x65ADF0
 namespace gamemd {
-int Array::ContainsValue()
+int Array::ContainsValue( IUnknown * aP1)
 {
 
   int v2; // esi
   int v3; // edx
   IUnknown **i; // ecx
 
-  v2 = *(this + 58); /*0x65adf1*/
+  v2 = (int)(*(this + 58));
   v3 = 0; /*0x65adf7*/
   if ( v2 <= 0 ) /*0x65adfc*/
     return 0; /*0x65ae1a*/
@@ -129,7 +129,7 @@ int Array::Zero()
   result = 0; /*0x7490d6*/
   if ( (int)*((unsigned int *)this + 512) > 0 ) /*0x7490da*/
   {
-    v2 = this; /*0x7490dd*/
+    v2 = (unsigned int *)(this);
     do /*0x7490f1*/
     {
       *v2 = 0; /*0x7490df*/
@@ -152,7 +152,7 @@ void Array::ByteSwap()
 
   if ( *((unsigned int *)this + 513) && (v2 = 0, (int)*((unsigned int *)this + 512) > 0) ) /*0x749169*/
   {
-    v3 = this; /*0x74916c*/
+    v3 = (gamemd::u_long *)(this);
     do /*0x749184*/
     {
       *v3 = ntohl(*v3); /*0x749176*/
@@ -171,7 +171,7 @@ void Array::ByteSwap()
 }
 // 0x763980
 namespace gamemd {
-int Array::GetElement()
+int Array::GetElement( CampaignScore * aP1)
 {
 
   if ( (int)aP1 < 0 || (int)aP1 >= *(this + 14) ) /*0x76398b*/
@@ -194,18 +194,18 @@ int Array::CleanupArrayWOL()
     DeleteAndZero((void **)(*((char *)this + 2) + 4 * i)); /*0x7acd41*/
     result = *this; /*0x7acd46*/
   }
-  *this = 0; /*0x7acd4d*/
+  *(unsigned int *)this = 0; /*0x7acd4d*/
   return result; /*0x7acd53*/
 
 }
 }
 // 0x7AD790
 namespace gamemd {
-AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
+AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
 {
 
-  int v4; // esi
-  int v5; // ecx
+  ObjectClass * v4;
+  int aP2; // ecx
   int v6; // eax
   int v7; // ebp
   CCINIClass *v8; // edx
@@ -218,44 +218,44 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
   int v16; // [esp+Ch] [ebp-4h]
   int v17; // [esp+Ch] [ebp-4h]
 
-  v4 = (int)v5; /*0x7ad795*/
-  v5 = *this; /*0x7ad799*/
-  if ( (int)v5 > v5 ) /*0x7ad79e*/
+  v4 = (gamemd::ObjectClass *)((int)aP2);
+  aP2 = (gamemd::ObjectClass *)(*this);
+  if ( (int)aP2 > (int)(aP2) ) /*0x7ad79e*/
   {
-    v5 = (ObjectClass *)v5; /*0x7ad7a0*/
-    v4 = v5; /*0x7ad7a4*/
+    aP2 = (gamemd::ObjectClass *)((int)((ObjectClass *)aP2));
+    v4 = aP2; /*0x7ad7a4*/
   }
   v6 = *((char *)this + 1); /*0x7ad7a6*/
-  if ( v4 >= v6 && v5 >= v6 ) /*0x7ad7b4*/
+  if ( v4 >= (gamemd::ObjectClass *)(v6) && aP2 >= (gamemd::ObjectClass *)(v6) ) /*0x7ad7b4*/
   {
-    v7 = 2 * v5; /*0x7ad7b6*/
-    if ( 2 * v5 < 10 ) /*0x7ad7bc*/
+    v7 = (gamemd::ObjectClass *)(2 * aP2);
+    if ( 2 * aP2 < 10 ) /*0x7ad7bc*/
       v7 = 10; /*0x7ad7be*/
-    v8 = (CCINIClass *)__2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
+    v8 = (CCINIClass *)RA2_OPNEW(268 * v7); /*0x7ad7d7*/
     memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
     v16 = (int)v8; /*0x7ad7ec*/
     v9 = (CCINIClass *)*((char *)this + 2); /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
       qmemcpy(v8, v9, 268 * *this); /*0x7ad80f*/
-    __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7ad81c*/
-    v4 = (int)v5; /*0x7ad825*/
+    RA2_OPDEL((void *)*((char *)this + 2)); /*0x7ad81c*/
+    v4 = (int)aP2; /*0x7ad825*/
     *((char *)this + 2) = v16; /*0x7ad82c*/
     *((char *)this + 1) = v7; /*0x7ad82f*/
   }
-  v10 = *this; /*0x7ad832*/
+  v10 = (int)(*this);
   if ( *this >= *((char *)this + 1) ) /*0x7ad839*/
   {
-    v11 = 2 * v10; /*0x7ad83b*/
+    v11 = (gamemd::ObjectClass *)(2 * v10);
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
-    v12 = (CCINIClass *)__2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
+    v12 = (CCINIClass *)RA2_OPNEW(268 * v11); /*0x7ad85c*/
     memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
     v17 = (int)v12; /*0x7ad871*/
     v13 = (CCINIClass *)*((char *)this + 2); /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
       qmemcpy(v12, v13, 268 * *this); /*0x7ad894*/
-    __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x7ad8a1*/
-    v4 = (int)v5; /*0x7ad8aa*/
+    RA2_OPDEL((void *)*((char *)this + 2)); /*0x7ad8a1*/
+    v4 = (int)aP2; /*0x7ad8aa*/
     *((char *)this + 2) = v17; /*0x7ad8b1*/
     *((char *)this + 1) = v11; /*0x7ad8b4*/
   }
@@ -271,20 +271,20 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
 }
 // 0x4068F0
 namespace gamemd {
-int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall *a4, void * a1, void * a3)(int) a4)
+int Array::ForEach(int a1, int a2, int a3, int (* a4)(int) a4)
 {
 
   int result; // eax
   int v6; // edi
 
-  result = aP2 - 1; /*0x4068f4*/
-  if ( aP2 - 1 >= 0 ) /*0x4068f5*/
+  result = a3 - 1; /*0x4068f4*/
+  if ( a3 - 1 >= 0 ) /*0x4068f5*/
   {
-    v6 = aP2; /*0x406907*/
+    v6 = a3; /*0x406907*/
     do /*0x406911*/
     {
-      result = a4(aP0); /*0x40690c*/
-      aP0 += a2; /*0x40690e*/
+      result = a4(a1); /*0x40690c*/
+      a1 += a2; /*0x40690e*/
       --v6; /*0x406910*/
     }
     while ( v6 ); /*0x406911*/
@@ -296,7 +296,7 @@ int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall 
 
 // 0x40AFD0
 namespace gamemd {
-int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4, void * a1)(int) a4)
+int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (* a4)(int) a4)
 {
 
   char *v4; // esi
@@ -333,9 +333,9 @@ int Array::Cleanup()
     for ( i = 0; i < *((unsigned int *)this + 16); ++i ) /*0x49b732*/
     {
       if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x49b737*/
-        __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x49b73f*/
+        RA2_OPDEL(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x49b73f*/
     }
-    __3_YAXPAX_Z(*(void **)((char *)this + 60)); /*0x49b753*/
+    RA2_OPDEL(*(void **)((char *)this + 60)); /*0x49b753*/
   }
 
 }

@@ -47,22 +47,22 @@ DiskLaserClass::DiskLaserClass()
   *((unsigned int *)this + 13) = 0; /*0x4a7a61*/
   *((unsigned int *)this + 14) = 0; /*0x4a7a64*/
   *((unsigned int *)this + 15) = 0; /*0x4a7a67*/
-  if ( MEMORY[0x8A0218] < MEMORY[0x8A0210] /*0x4a7a9e*/
-    || (MEMORY[0x8A0215] || !MEMORY[0x8A0210])
-    && MEMORY[0x8A021C] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0x8A0208] + 8))(
-         &MEMORY[0x8A0208],
-         MEMORY[0x8A0210] + MEMORY[0x8A021C],
+  if ( g_abs_8A0218 < g_abs_8A0210 /*0x4a7a9e*/
+    || (g_abs_8A0215 || !g_abs_8A0210)
+    && g_abs_8A021C > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_8A0208 + 8))(
+         &g_abs_8A0208,
+         g_abs_8A0210 + g_abs_8A021C,
          0) )
   {
-    v2 = MEMORY[0x8A0218]++; /*0x4a7aab*/
-    *((unsigned int *)MEMORY[0x8A020C] + v2) = this; /*0x4a7aba*/
+    v2 = g_abs_8A0218++; /*0x4a7aab*/
+    *((unsigned int *)g_abs_8A020C + v2) = this; /*0x4a7aba*/
   }
   return this; /*0x4a7abf*/
 
 }
 // 0x4A7C90
-void * DiskLaserClass::CopyTo(char a2)
+void * DiskLaserClass::CopyTo(unsigned int * Block, char a2)
 {
 
   int v3; // eax
@@ -73,46 +73,46 @@ void * DiskLaserClass::CopyTo(char a2)
   *(Block + 2) = &DiskLaserClass::`vftable'; /*0x4a7caa*/
   *(Block + 3) = &vt_DiskLaserClass; /*0x4a7cb1*/
   v5 = Block; /*0x4a7cbf*/
-  v3 = (*(int (**)(int *, unsigned int **))(MEMORY[0x8A0208] + 16))(&MEMORY[0x8A0208], &v5); /*0x4a7cc3*/
-  if ( v3 != -1 && v3 < MEMORY[0x8A0218] && v3 < --MEMORY[0x8A0218] ) /*0x4a7cde*/
+  v3 = (*(int (**)(int *, unsigned int **))(g_abs_8A0208 + 16))(&g_abs_8A0208, &v5); /*0x4a7cc3*/
+  if ( v3 != -1 && v3 < g_abs_8A0218 && v3 < --g_abs_8A0218 ) /*0x4a7cde*/
   {
     do /*0x4a7cf6*/
     {
       ++v3; /*0x4a7ce6*/
-      *((unsigned int *)MEMORY[0x8A020C] + v3 - 1) = *((unsigned int *)MEMORY[0x8A020C] + v3); /*0x4a7cea*/
+      *((unsigned int *)g_abs_8A020C + v3 - 1) = *((unsigned int *)g_abs_8A020C + v3); /*0x4a7cea*/
     }
-    while ( v3 < MEMORY[0x8A0218] ); /*0x4a7cf6*/
+    while ( v3 < g_abs_8A0218 ); /*0x4a7cf6*/
   }
   AbstractClass::DTOR(Block); /*0x4a7cfa*/
-  if ( (a2 & 1) != 0 ) /*0x4a7d04*/
-    __3_YAXPAX_Z(Block); /*0x4a7d07*/
+  if ( (Block & 1) != 0 ) /*0x4a7d04*/
+    RA2_OPDEL(Block); /*0x4a7d07*/
   return (DiskLaserClass *)Block; /*0x4a7d11*/
 
 }
 // 0x4A7B90
-int  DiskLaserClass::Write(int aP1)
+int  DiskLaserClass::Write(AbstractClass * aP0, int aP1)
 {
 
   AbstractClass *Prefix_0; // edi
 
-  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP1, (AbstractClass *)aP1); /*0x4a7ba1*/
+  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP0); /*0x4a7ba1*/
   if ( (int)Prefix_0 >= 0 ) /*0x4a7ba5*/
   {
-    if ( aP1 ) /*0x4a7ba9*/
+    if ( aP0 ) /*0x4a7ba9*/
     {
-      AbstractClass::InitVtables(aP1, (IUnknown *)&aP1); /*0x4a7bb2*/
-      *(unsigned int *)aP1->__pad_0 = &DiskLaserClass::`vftable'; /*0x4a7bb7*/
-      *(unsigned int *)&aP1->__pad_0[4] = &DiskLaserClass::`vftable'; /*0x4a7bbd*/
-      *(unsigned int *)&aP1->__pad_0[8] = &DiskLaserClass::`vftable'; /*0x4a7bc4*/
-      *(unsigned int *)&aP1->__pad_0[12] = &vt_DiskLaserClass; /*0x4a7bcb*/
+      AbstractClass::InitVtables(aP0, (IUnknown *)&aP0); /*0x4a7bb2*/
+      *(unsigned int *)aP0->__pad_0 = &DiskLaserClass::`vftable'; /*0x4a7bb7*/
+      *(unsigned int *)&aP0->__pad_0[4] = &DiskLaserClass::`vftable'; /*0x4a7bbd*/
+      *(unsigned int *)&aP0->__pad_0[8] = &DiskLaserClass::`vftable'; /*0x4a7bc4*/
+      *(unsigned int *)&aP0->__pad_0[12] = &vt_DiskLaserClass; /*0x4a7bcb*/
     }
-    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP1[1]); /*0x4a7bdb*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x4a7bdb*/
     ObjectPtr::RegisterForTracking( /*0x4a7be9*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP1[1].__pad_0[4]);
+      (MouseClass *)&aP0[1].__pad_0[4]);
     ObjectPtr::RegisterForTracking( /*0x4a7bf7*/
       (SwizzleManagerClass *)&stru_B05488.__pad_579C[5356],
-      (MouseClass *)&aP1[1].__pad_0[8]);
+      (MouseClass *)&aP0[1].__pad_0[8]);
   }
   return (int)Prefix_0->__pad_0; /*0x4a7bfe*/
 

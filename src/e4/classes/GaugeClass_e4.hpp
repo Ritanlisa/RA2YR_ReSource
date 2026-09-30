@@ -22,7 +22,7 @@ struct GaugeClass {
     unsigned int __pad_0;
     unsigned int u32_2D;
 // --- flat members (END) ---
-    GaugeClass * QueryInterface(char a2);
+    GaugeClass * QueryInterface(unsigned int * Block, char a2);
     int Draw(int a2);
     int Stub();
 };

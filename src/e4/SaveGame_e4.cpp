@@ -98,31 +98,31 @@ int SaveGame::SaveTriggerEvents()
   int v4; // edi
   int v5; // [esp+20h] [ebp-4h] BYREF
 
-  v2 = *this; /*0x6607e0*/
+  v2 = (int)(*this);
   v5 = g_TriggerEventState; /*0x6607e6*/
   if ( (*(int (**)(int *, int *, int, unsigned int))(v2 + 16))(this, &v5, 4, 0) < 0 ) /*0x6607ef*/
     return 0; /*0x6607f6*/
   v4 = 0; /*0x6607fb*/
   if ( v5 > 0 ) /*0x6607ff*/
   {
-    while ( (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int **)this + 16))( /*0x660817*/
+    while ( (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int *)this + 16))( /*0x660817*/
               this,
               *((unsigned int *)g_TriggerPool + v4),
               64,
               0) >= 0 )
     {
       if ( ++v4 >= v5 ) /*0x660820*/
-        return (*(int (**)(int *, __int16 *, int, unsigned int))(*(unsigned int **)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x660820*/
+        return (*(int (**)(int *, int16_t *, int, unsigned int))(*(unsigned int *)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x660820*/
     }
     return 0; /*0x660817*/
   }
-  return (*(int (**)(int *, __int16 *, int, unsigned int))(*(unsigned int **)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x6607f1*/
+  return (*(int (**)(int *, int16_t *, int, unsigned int))(*(unsigned int *)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x6607f1*/
 
 }
 }
 // 0x67D300
 namespace gamemd {
-void SaveGame::Start()
+void SaveGame::Start(LPSTREAM pStm)
 {
 
   int v2; // ecx
@@ -185,11 +185,11 @@ void SaveGame::Start()
   LPPERSISTSTREAM pPStm; // [esp+35Ch] [ebp-8h] BYREF
   LPPERSISTSTREAM v60; // [esp+360h] [ebp-4h] BYREF
 
-  ScenarioClass::SaveLoad_Prefix((DWORD *)MEMORY[0xA8B230], (int *)pStm->__pad_0);
-  SaveGame::SaveBlock68(&MEMORY[0x89F690].__pad_14B0[11680], (int)pStm);
-  RulesClass::SaveLoad_Prefix(*(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9108], (int *)pStm->__pad_0);
+  ScenarioClass::SaveLoad_Prefix((DWORD *)g_abs_A8B230, (int *)pStm->__pad_0);
+  SaveGame::SaveBlock68(&g_abs_89F690, (int)pStm);
+  RulesClass::SaveLoad_Prefix(*(unsigned int **)&g_abs_87F8E4, (int *)pStm->__pad_0);
   v2 = *(unsigned int *)pStm->__pad_0;
-  v60 = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62260];
+  v60 = *(LPPERSISTSTREAM *)&g_abs_89F690;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v2 + 16))(pStm, &v60, 4, 0) < 0 )
     return 0;
   v3 = 0;
@@ -198,9 +198,9 @@ void SaveGame::Start()
     do
     {
       pPStm = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62248]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_89F690
                                                                        + 4 * v3))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62248] + 4 * v3),
+             *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v3),
              &IID_IPersistStream,
              &pPStm) < 0
         || OleSaveToStream(pPStm, pStm) < 0
@@ -211,9 +211,9 @@ void SaveGame::Start()
     }
     while ( ++v3 < (int)v60 );
   }
-  MouseClass::DrawCursor((int *)&MEMORY[0x87F7E8], pStm);
+  MouseClass::DrawCursor((int *)&g_abs_87F7E8, pStm);
   v4 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62236];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_89F690;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v4 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v5 = 0;
@@ -222,9 +222,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62224]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_89F690
                                                                        + 4 * v5))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62224] + 4 * v5),
+             *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v5),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -237,8 +237,8 @@ void SaveGame::Start()
   }
   if ( SaveGame::LoadMainGameState((int *)pStm->__pad_0) < 0 )
     return 0;
-  LayerClass::Save(&MEMORY[0x87F778], (RadarClass *)pStm);
-  if ( OleSaveToStream(*(LPPERSISTSTREAM *)&MEMORY[0x87F8E4].__pad_5568[9432], pStm) < 0 )
+  LayerClass::Save(&g_abs_87F778, (RadarClass *)pStm);
+  if ( OleSaveToStream(*(LPPERSISTSTREAM *)&g_abs_87F8E4, pStm) < 0 )
     return 0;
   v7 = *(unsigned int *)pStm->__pad_0;
   pPStm = (LPPERSISTSTREAM)g_SuperWeaponTypeArray;
@@ -285,7 +285,7 @@ void SaveGame::Start()
     while ( ++v10 < (int)pPStm );
   }
   v11 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62188];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_89F690;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v11 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v12 = 0;
@@ -294,9 +294,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62176]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_89F690
                                                                        + 4 * v12))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62176] + 4 * v12),
+             *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v12),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -330,7 +330,7 @@ void SaveGame::Start()
     while ( ++v14 < (int)pPStm );
   }
   v15 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_BC0[348];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_A8D63C;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v15 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v16 = 0;
@@ -339,9 +339,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xA8D63C].__pad_BC0[336]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_A8D63C
                                                                        + 4 * v16))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_BC0[336] + 4 * v16),
+             *(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * v16),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -353,7 +353,7 @@ void SaveGame::Start()
     while ( ++v16 < (int)pPStm );
   }
   v17 = *(unsigned int *)pStm->__pad_0;
-  pPStm = (LPPERSISTSTREAM)MEMORY[0xA83DF8];
+  pPStm = (LPPERSISTSTREAM)g_abs_A83DF8;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v17 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v18 = 0;
@@ -362,8 +362,8 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))&MEMORY[0xA83DEC]->__pad_0[4 * v18])(
-             *(unsigned int *)&MEMORY[0xA83DEC]->__pad_0[4 * v18],
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))&g_abs_A83DEC->__pad_0[4 * v18])(
+             *(unsigned int *)&g_abs_A83DEC->__pad_0[4 * v18],
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -397,7 +397,7 @@ void SaveGame::Start()
     while ( ++v20 < (int)pPStm );
   }
   v21 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_14B0[100];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_A8D63C;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v21 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v22 = 0;
@@ -406,9 +406,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[88]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_A8D63C
                                                                        + 4 * v22))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[88] + 4 * v22),
+             *(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * v22),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -420,7 +420,7 @@ void SaveGame::Start()
     while ( ++v22 < (int)pPStm );
   }
   v23 = *(unsigned int *)pStm->__pad_0;
-  pPStm = (LPPERSISTSTREAM)MEMORY[0xA8B228];
+  pPStm = (LPPERSISTSTREAM)g_abs_A8B228;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v23 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v24 = 0;
@@ -429,8 +429,8 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))&MEMORY[0xA8B21C]->__pad_0[4 * v24])(
-             *(unsigned int *)&MEMORY[0xA8B21C]->__pad_0[4 * v24],
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))&g_abs_A8B21C->__pad_0[4 * v24])(
+             *(unsigned int *)&g_abs_A8B21C->__pad_0[4 * v24],
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -442,7 +442,7 @@ void SaveGame::Start()
     while ( ++v24 < (int)pPStm );
   }
   v25 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_BC0[420];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_A8D63C;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v25 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v26 = 0;
@@ -451,9 +451,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xA8D63C].__pad_BC0[408]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_A8D63C
                                                                        + 4 * v26))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_BC0[408] + 4 * v26),
+             *(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * v26),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -465,7 +465,7 @@ void SaveGame::Start()
     while ( ++v26 < (int)pPStm );
   }
   v27 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_1258[292];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_A8D63C;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v27 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v28 = 0;
@@ -474,9 +474,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xA8D63C].__pad_1258[280]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_A8D63C
                                                                        + 4 * v28))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_1258[280] + 4 * v28),
+             *(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * v28),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -488,7 +488,7 @@ void SaveGame::Start()
     while ( ++v28 < (int)pPStm );
   }
   v29 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_1258[76];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_A8D63C;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v29 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v30 = 0;
@@ -497,9 +497,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xA8D63C].__pad_1258[64]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_A8D63C
                                                                        + 4 * v30))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_1258[64] + 4 * v30),
+             *(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * v30),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -511,7 +511,7 @@ void SaveGame::Start()
     while ( ++v30 < (int)pPStm );
   }
   v31 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_14B0[452];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_A8D63C;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v31 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v32 = 0;
@@ -520,9 +520,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[440]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_A8D63C
                                                                        + 4 * v32))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[440] + 4 * v32),
+             *(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * v32),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -534,7 +534,7 @@ void SaveGame::Start()
     while ( ++v32 < (int)pPStm );
   }
   v33 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62156];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_89F690;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v33 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v34 = 0;
@@ -543,9 +543,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62144]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_89F690
                                                                        + 4 * v34))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62144] + 4 * v34),
+             *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v34),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -557,7 +557,7 @@ void SaveGame::Start()
     while ( ++v34 < (int)pPStm );
   }
   v35 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62380];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_89F690;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v35 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v36 = 0;
@@ -566,9 +566,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62368]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_89F690
                                                                        + 4 * v36))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62368] + 4 * v36),
+             *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v36),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -580,7 +580,7 @@ void SaveGame::Start()
     while ( ++v36 < (int)pPStm );
   }
   v37 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x87F8E4].__pad_5568[9332];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_87F8E4;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v37 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v38 = 0;
@@ -589,9 +589,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9320]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_87F8E4
                                                                        + 4 * v38))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9320] + 4 * v38),
+             *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 4 * v38),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -603,7 +603,7 @@ void SaveGame::Start()
     while ( ++v38 < (int)pPStm );
   }
   v39 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xB077F8].__pad_579C[6140];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_B077F8;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v39 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v40 = 0;
@@ -612,9 +612,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6128]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_B077F8
                                                                        + 4 * v40))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6128] + 4 * v40),
+             *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * v40),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -626,7 +626,7 @@ void SaveGame::Start()
     while ( ++v40 < (int)pPStm );
   }
   v41 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xB077F8].__pad_579C[6044];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_B077F8;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v41 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v42 = 0;
@@ -635,9 +635,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6032]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_B077F8
                                                                        + 4 * v42))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6032] + 4 * v42),
+             *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * v42),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -649,7 +649,7 @@ void SaveGame::Start()
     while ( ++v42 < (int)pPStm );
   }
   v43 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62300];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_89F690;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v43 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v44 = 0;
@@ -658,9 +658,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62288]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_89F690
                                                                        + 4 * v44))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62288] + 4 * v44),
+             *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v44),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -672,7 +672,7 @@ void SaveGame::Start()
     while ( ++v44 < (int)pPStm );
   }
   v45 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA8D63C].__pad_14B0[12];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_A8D63C;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v45 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v46 = 0;
@@ -681,8 +681,8 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)MEMORY[0xA8D63C].__pad_14B0 + 4 * v46))(
-             *(unsigned int *)(*(unsigned int *)MEMORY[0xA8D63C].__pad_14B0 + 4 * v46),
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)g_abs_A8D63C + 4 * v46))(
+             *(unsigned int *)(*(unsigned int *)g_abs_A8D63C + 4 * v46),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -694,14 +694,14 @@ void SaveGame::Start()
     while ( ++v46 < (int)pPStm );
   }
   v47 = *(unsigned int *)pStm->__pad_0;
-  pPStm = (LPPERSISTSTREAM)MEMORY[0xA8B210];
+  pPStm = (LPPERSISTSTREAM)g_abs_A8B210;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v47 + 16))(pStm, &pPStm, 4, 0) >= 0 )
   {
     for ( i = 0; i < (int)pPStm; ++i )
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))&MEMORY[0xA8B204]->__pad_0[4 * i])(
-             *(unsigned int *)&MEMORY[0xA8B204]->__pad_0[4 * i],
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))&g_abs_A8B204->__pad_0[4 * i])(
+             *(unsigned int *)&g_abs_A8B204->__pad_0[4 * i],
              &IID_IPersistStream,
              &v60) < 0 )
         break;
@@ -712,15 +712,15 @@ void SaveGame::Start()
     }
   }
   v49 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xB077F8].__pad_579C[5844];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_B077F8;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v49 + 16))(pStm, &pPStm, 4, 0) >= 0 )
   {
     for ( j = 0; j < (int)pPStm; ++j )
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[5832]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_B077F8
                                                                        + 4 * j))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[5832] + 4 * j),
+             *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * j),
              &IID_IPersistStream,
              &v60) < 0 )
         break;
@@ -731,7 +731,7 @@ void SaveGame::Start()
     }
   }
   v51 = *(unsigned int *)pStm->__pad_0;
-  pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xB077F8].__pad_579C[8732];
+  pPStm = *(LPPERSISTSTREAM *)&g_abs_B077F8;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v51 + 16))(pStm, &pPStm, 4, 0) < 0 )
     return 0;
   v52 = 0;
@@ -740,9 +740,9 @@ void SaveGame::Start()
     do
     {
       v60 = 0;
-      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[8720]
+      if ( (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(*(unsigned int *)&g_abs_B077F8
                                                                        + 4 * v52))(
-             *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[8720] + 4 * v52),
+             *(unsigned int *)(*(unsigned int *)&g_abs_B077F8 + 4 * v52),
              &IID_IPersistStream,
              &v60) < 0
         || OleSaveToStream(v60, pStm) < 0
@@ -753,50 +753,50 @@ void SaveGame::Start()
     }
     while ( ++v52 < (int)pPStm );
   }
-  if ( SaveGame_Start(pStm, (int)&MEMORY[0xA83E30]) < 0 )
+  if ( SaveGame_Start(pStm, (int)&g_abs_A83E30) < 0 )
     return 0;
-  if ( SaveGame_Start_67FE70(pStm, (int)&MEMORY[0xA8D63C].__pad_14B0[60]) < 0 )
+  if ( SaveGame_Start_67FE70(pStm, (int)&g_abs_A8D63C) < 0 )
     return 0;
-  if ( SaveGame_Start_67FEF0(pStm, (int)&MEMORY[0x87F8E4].__pad_5568[9532]) < 0 )
+  if ( SaveGame_Start_67FEF0(pStm, (int)&g_abs_87F8E4) < 0 )
     return 0;
-  if ( SaveGame_Start_67FF70(pStm, (int)&MEMORY[0x87F8E4].__pad_5568[9844]) < 0 )
+  if ( SaveGame_Start_67FF70(pStm, (int)&g_abs_87F8E4) < 0 )
     return 0;
-  if ( SaveGame_Start_67FFF0(pStm, (int)&MEMORY[0x87F8E4].__pad_5568[10012]) < 0 )
+  if ( SaveGame_Start_67FFF0(pStm, (int)&g_abs_87F8E4) < 0 )
     return 0;
-  if ( SaveGame_Start_680070(pStm, (int)&MEMORY[0xA83D98]) < 0 )
+  if ( SaveGame_Start_680070(pStm, (int)&g_abs_A83D98) < 0 )
     return 0;
-  if ( SaveGame_Start_6800F0(pStm, (int)&MEMORY[0xA83DC8]) < 0 )
+  if ( SaveGame_Start_6800F0(pStm, (int)&g_abs_A83DC8) < 0 )
     return 0;
-  if ( SaveGame_Start_680170(pStm, (int)&MEMORY[0xA83D68]) < 0 )
+  if ( SaveGame_Start_680170(pStm, (int)&g_abs_A83D68) < 0 )
     return 0;
   if ( SaveGame_Start_6801F0(pStm, (int)&dword_A80208) < 0 )
     return 0;
   if ( SaveGame_Start_680270(pStm, (int)&BulletTypeClass_Array) < 0 )
     return 0;
-  if ( SaveGame_Start_6802F0(pStm, (int)&MEMORY[0xA8D63C].__pad_14B0[596]) < 0 )
+  if ( SaveGame_Start_6802F0(pStm, (int)&g_abs_A8D63C) < 0 )
     return 0;
   if ( SaveGame_Start_680370(pStm, (int)&dword_B72608) < 0 )
     return 0;
-  if ( SaveGame_Start_6803F0(pStm, (int)&MEMORY[0xA8D63C].__pad_14B0[300]) < 0 )
+  if ( SaveGame_Start_6803F0(pStm, (int)&g_abs_A8D63C) < 0 )
     return 0;
-  if ( SaveGame_Start_680470(pStm, (int)&MEMORY[0xA83D80]) < 0 )
+  if ( SaveGame_Start_680470(pStm, (int)&g_abs_A83D80) < 0 )
     return 0;
   if ( SaveGame_Start_6804F0(pStm, (int)&dword_ABCA10) < 0 )
     return 0;
-  if ( SaveGame_Start_680570(pStm, (int)&MEMORY[0x89F690].__pad_579C[62308]) < 0 )
+  if ( SaveGame_Start_680570(pStm, (int)&g_abs_89F690) < 0 )
     return 0;
-  if ( SaveGame_Start_6805F0(pStm, (int)&MEMORY[0x89F690].__pad_579C[62196]) < 0 )
+  if ( SaveGame_Start_6805F0(pStm, (int)&g_abs_89F690) < 0 )
     return 0;
-  if ( SaveGame_Start_680670(pStm, (int)&MEMORY[0xB077F8].__pad_579C[9556]) < 0 )
+  if ( SaveGame_Start_680670(pStm, (int)&g_abs_B077F8) < 0 )
     return 0;
-  if ( SaveGame_Start_6806F0(pStm, (int)&MEMORY[0x89F690].__pad_14B0[11568]) < 0 )
+  if ( SaveGame_Start_6806F0(pStm, (int)&g_abs_89F690) < 0 )
     return 0;
-  if ( SaveGame_Start_680770(pStm, (int)&MEMORY[0xA8D63C].__pad_BC0[308]) < 0 )
+  if ( SaveGame_Start_680770(pStm, (int)&g_abs_A8D63C) < 0 )
     return 0;
   if ( SaveGame_Start_6807F0(pStm, (int)&dword_A83CB8) < 0 )
     return 0;
   v53 = *(unsigned int *)pStm->__pad_0;
-  v60 = (LPPERSISTSTREAM)MEMORY[0xA83D60];
+  v60 = (LPPERSISTSTREAM)g_abs_A83D60;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v53 + 16))(pStm, &v60, 4, 0) < 0 )
     return 0;
   v54 = 0;
@@ -805,14 +805,14 @@ void SaveGame::Start()
     do
     {
       v55 = *(unsigned int *)pStm->__pad_0;
-      pPStm = *(LPPERSISTSTREAM *)&MEMORY[0xA83D54]->__pad_0[4 * v54];
+      pPStm = *(LPPERSISTSTREAM *)&g_abs_A83D54->__pad_0[4 * v54];
       if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v55 + 16))(pStm, &pPStm, 4, 0) < 0 )
         return 0;
     }
     while ( ++v54 < (int)v60 );
   }
   v56 = *(unsigned int *)pStm->__pad_0;
-  v60 = *(LPPERSISTSTREAM *)&MEMORY[0x89F690].__pad_579C[62404];
+  v60 = *(LPPERSISTSTREAM *)&g_abs_89F690;
   if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v56 + 16))(pStm, &v60, 4, 0) < 0 )
     return 0;
   v57 = 0;
@@ -821,21 +821,21 @@ void SaveGame::Start()
     do
     {
       v58 = *(unsigned int *)pStm->__pad_0;
-      pPStm = *(LPPERSISTSTREAM *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62392] + 4 * v57);
+      pPStm = *(LPPERSISTSTREAM *)(*(unsigned int *)&g_abs_89F690 + 4 * v57);
       if ( (*(int (**)(LPSTREAM, LPPERSISTSTREAM *, int, unsigned int))(v58 + 16))(pStm, &pPStm, 4, 0) < 0 )
         return 0;
     }
     while ( ++v57 < (int)v60 );
   }
-  if ( SaveGame_Start_680870(pStm, (int)&MEMORY[0xA8D63C].__pad_BC0[284]) < 0 )
+  if ( SaveGame_Start_680870(pStm, (int)&g_abs_A8D63C) < 0 )
     return 0;
-  if ( SaveGame_Start_6808F0(pStm, (int)&MEMORY[0xA8D63C].__pad_1258[244]) < 0 )
+  if ( SaveGame_Start_6808F0(pStm, (int)&g_abs_A8D63C) < 0 )
     return 0;
-  if ( SaveGame_Start_680970(pStm, (int)&MEMORY[0x89F690].__pad_579C[61156]) < 0 )
+  if ( SaveGame_Start_680970(pStm, (int)&g_abs_89F690) < 0 )
     return 0;
-  if ( SaveGame_Start_6809F0(pStm, (int)&MEMORY[0x87F8E4].__pad_5568[21156]) < 0 )
+  if ( SaveGame_Start_6809F0(pStm, (int)&g_abs_87F8E4) < 0 )
     return 0;
-  if ( SaveGame_Start_680A70(pStm, (int)&MEMORY[0xA8D63C].__pad_14B0[332]) < 0 )
+  if ( SaveGame_Start_680A70(pStm, (int)&g_abs_A8D63C) < 0 )
     return 0;
   result = SaveGame::LoadVeinholeData((int *)pStm->__pad_0);
   if ( result )
@@ -845,34 +845,34 @@ void SaveGame::Start()
     {
       if ( SaveGame_Start_680AF0(pStm, (int)&dword_89E0F0) >= 0 )
       {
-        if ( SaveGame_Start_680B70(pStm, (int)&MEMORY[0x89F690].__pad_71C[1116]) >= 0 )
+        if ( SaveGame_Start_680B70(pStm, (int)&g_abs_89F690) >= 0 )
         {
           if ( SaveGame_Start_680BF0(pStm, (int)(&g_MatrixTransformState + 5824)) >= 0 )
           {
-            if ( SaveGame_Start_680C70(pStm, (int)&MEMORY[0xB077F8].__pad_579C[7372]) >= 0 )
+            if ( SaveGame_Start_680C70(pStm, (int)&g_abs_B077F8) >= 0 )
             {
-              if ( SaveGame_Start_680CF0(pStm, (int)&MEMORY[0x87F8E4].__pad_5568[20844]) >= 0 )
+              if ( SaveGame_Start_680CF0(pStm, (int)&g_abs_87F8E4) >= 0 )
               {
-                if ( SaveGame_Start_680D70(pStm, (int)&MEMORY[0xB077F8].__pad_14B0[11224]) >= 0 )
+                if ( SaveGame_Start_680D70(pStm, (int)&g_abs_B077F8) >= 0 )
                 {
-                  if ( SaveGame_Start_680DF0(pStm, (int)&MEMORY[0xB077F8].__pad_14B0[10568]) >= 0 )
+                  if ( SaveGame_Start_680DF0(pStm, (int)&g_abs_B077F8) >= 0 )
                   {
-                    if ( SaveGame::SaveIteratedData(&MEMORY[0x87F8E4].__pad_5568[10812], (int)pStm) >= 0 )
+                    if ( SaveGame::SaveIteratedData(&g_abs_87F8E4, (int)pStm) >= 0 )
                     {
                       if ( SaveGame::WriteDataArray(&g_MissionQueueFrame, (int *)pStm->__pad_0) >= 0 )
                       {
-                        if ( SaveGame::LoadArrayData(&MEMORY[0x87F5D8], (int *)pStm->__pad_0) >= 0 )
+                        if ( SaveGame::LoadArrayData(&g_abs_87F5D8, (int *)pStm->__pad_0) >= 0 )
                         {
                           if ( SaveGame_Start_680E70(pStm, (int)&dword_89C668) >= 0 )
                           {
                             if ( SaveGame_Start_680EF0(pStm, (int)&RadSiteClass_Array) >= 0 )
                             {
-                              if ( MEMORY[0xA8B238] != (CellStruct *)5 )
+                              if ( g_abs_A8B238 != (CellStruct *)5 )
                                 return SaveGame::SaveAudioQueueItems((int *)pStm->__pad_0) >= 0
                                     && SaveGame::WriteMagicHeader((int *)pStm->__pad_0) >= 0
                                     && SaveGame::VtableDispatch(&g_BuildingTypeClass_Count, (int)pStm) >= 0;
                               Debug::Log();
-                              if ( SaveGame::SaveAudioData(&MEMORY[0xA8B250], (int)pStm) )
+                              if ( SaveGame::SaveAudioData(&g_abs_A8B250, (int)pStm) )
                               {
                                 return SaveGame::SaveAudioQueueItems((int *)pStm->__pad_0) >= 0
                                     && SaveGame::WriteMagicHeader((int *)pStm->__pad_0) >= 0
@@ -965,17 +965,17 @@ int SaveGame::LoadMainGameState()
   int v9; // eax
   wchar_t *v10; // [esp+A0h] [ebp-4h] BYREF
 
-  result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))(this, &MEMORY[0xA8ED78], 4, 0); /*0x67f7f1*/
+  result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int *)this + 16))(this, &g_abs_A8ED78, 4, 0); /*0x67f7f1*/
   if ( result >= 0 )
   {
-    result = (*(int (**)(int *, #375 **, int, unsigned int))(*(unsigned int **)this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
+    result = (*(int (**)(int *, #375 **, int, unsigned int))(*(unsigned int *)this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
     if ( result >= 0 )
     {
-      result = (*(int (**)(int *, wchar_t **, int, unsigned int))(*(unsigned int **)this + 16))(this, &MEMORY[0xA8ED84], 4, 0); /*0x67f81f*/
+      result = (*(int (**)(int *, wchar_t **, int, unsigned int))(*(unsigned int *)this + 16))(this, &g_abs_A8ED84, 4, 0); /*0x67f81f*/
       if ( result >= 0 )
       {
         v3 = *this; /*0x67f82f*/
-        v10 = MEMORY[0xA8ECC8]; /*0x67f83b*/
+        v10 = g_abs_A8ECC8; /*0x67f83b*/
         result = (*(int (**)(int *, wchar_t **, int, unsigned int))(v3 + 16))(this, &v10, 4, 0); /*0x67f83f*/
         if ( result >= 0 )
         {
@@ -983,12 +983,12 @@ int SaveGame::LoadMainGameState()
           if ( (int)v10 <= 0 )
           {
 LABEL_8:
-            result = (*(int (**)(int *, float *, int, unsigned int))(*(unsigned int **)this + 16))(this, MEMORY[0x89EA40], 432, 0); /*0x67f879*/
+            result = (*(int (**)(int *, float *, int, unsigned int))(*(unsigned int *)this + 16))(this, g_abs_89EA40, 432, 0); /*0x67f879*/
             if ( result >= 0 )
             {
               SuperWeaponClass::LoadFromSaveStream(this); /*0x67f895*/
               v5 = *this; /*0x67f8a0*/
-              v10 = (wchar_t *)MEMORY[0x8B40D8]; /*0x67f8ac*/
+              v10 = (wchar_t *)g_abs_8B40D8; /*0x67f8ac*/
               result = (*(int (**)(int *, wchar_t **, int, unsigned int))(v5 + 16))(this, &v10, 4, 0); /*0x67f8b0*/
               if ( result >= 0 )
               {
@@ -1005,44 +1005,44 @@ LABEL_13:
                     if ( (int)v10 <= 0 )
                     {
 LABEL_17:
-                      result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f93a*/
+                      result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int *)this + 16))( /*0x67f93a*/
                                  this,
                                  &dword_81DA8C,
                                  76,
                                  0);
                       if ( result >= 0 )
                       {
-                        result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f959*/
+                        result = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int *)this + 16))( /*0x67f959*/
                                    this,
                                    dword_81DAD8,
                                    76,
                                    0);
                         if ( result >= 0 )
                         {
-                          result = (*(int (**)(int *, double *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f96f*/
+                          result = (*(int (**)(int *, double *, int, unsigned int))(*(unsigned int *)this + 16))( /*0x67f96f*/
                                      this,
-                                     MEMORY[0x89EC28],
+                                     g_abs_89EC28,
                                      152,
                                      0);
                           if ( result >= 0 )
                           {
-                            result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f982*/
+                            result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int *)this + 16))( /*0x67f982*/
                                        this,
-                                       MEMORY[0x89ECC0],
+                                       g_abs_89ECC0,
                                        19,
                                        0);
                             if ( result >= 0 )
                             {
-                              result = (*(int (**)(int *, void *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f998*/
+                              result = (*(int (**)(int *, void *, int, unsigned int))(*(unsigned int *)this + 16))( /*0x67f998*/
                                          this,
-                                         &MEMORY[0xA8E3A8],
+                                         &g_abs_A8E3A8,
                                          1024,
                                          0);
                               if ( result >= 0 )
                               {
-                                v9 = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f9ab*/
+                                v9 = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int *)this + 16))( /*0x67f9ab*/
                                        this,
-                                       &MEMORY[0xB07784],
+                                       &g_abs_B07784,
                                        4,
                                        0);
                                 return v9 >= 0 ? 0 : v9;
@@ -1056,7 +1056,7 @@ LABEL_17:
                     {
                       while ( 1 ) /*0x67f926*/
                       {
-                        result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f926*/
+                        result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int *)this + 16))( /*0x67f926*/
                                    this,
                                    (char *)unk_8B41AC + 4 * v8,
                                    4,
@@ -1073,9 +1073,9 @@ LABEL_17:
                 {
                   while ( 1 ) /*0x67f8d6*/
                   {
-                    result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f8d6*/
+                    result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int *)this + 16))( /*0x67f8d6*/
                                this,
-                               (char *)MEMORY[0x8B40CC] + 4 * v6,
+                               (char *)g_abs_8B40CC + 4 * v6,
                                4,
                                0);
                     if ( result < 0 ) /*0x67f8db*/
@@ -1091,9 +1091,9 @@ LABEL_17:
           {
             while ( 1 ) /*0x67f865*/
             {
-              result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int **)this + 16))( /*0x67f865*/
+              result = (*(int (**)(int *, char *, int, unsigned int))(*(unsigned int *)this + 16))( /*0x67f865*/
                          this,
-                         (char *)MEMORY[0xA8ECBC] + 4 * v4,
+                         (char *)g_abs_A8ECBC + 4 * v4,
                          4,
                          0);
               if ( result < 0 ) /*0x67f86a*/
@@ -1132,13 +1132,13 @@ int SaveGame::LoadVeinholeData()
   int v17; // [esp+A0h] [ebp-4h] BYREF
 
   v2 = *this; /*0x74ed74*/
-  v13 = MEMORY[0xB1D2A0]; /*0x74ed7a*/
+  v13 = g_abs_B1D2A0; /*0x74ed7a*/
   if ( (*(int (**)(int *, int *, int, unsigned int))(v2 + 16))(this, &v13, 4, 0) < 0 ) /*0x74ed83*/
     return 0; /*0x74ed8e*/
   v4 = Object::ComputeAllocationSize(); /*0x74ed9a*/
   v5 = *this; /*0x74ed9c*/
   v15 = v4; /*0x74eda3*/
-  if ( (*(int (**)(int *, void *, int, unsigned int))(v5 + 16))(this, MEMORY[0xB1D2F0], v4, 0) < 0 ) /*0x74edac*/
+  if ( (*(int (**)(int *, void *, int, unsigned int))(v5 + 16))(this, g_abs_B1D2F0, v4, 0) < 0 ) /*0x74edac*/
     return 0; /*0x74edac*/
   v6 = 0; /*0x74edbc*/
   v14 = 0; /*0x74edc0*/
@@ -1147,31 +1147,31 @@ int SaveGame::LoadVeinholeData()
     while ( 1 ) /*0x74edd6*/
     {
       v7 = *this; /*0x74edd6*/
-      v16 = *((unsigned int *)MEMORY[0xB1D294] + v6); /*0x74ede5*/
+      v16 = *((unsigned int *)g_abs_B1D294 + v6); /*0x74ede5*/
       if ( (*(int (**)(int *, int *, int, unsigned int))(v7 + 16))(this, &v16, 4, 0) < 0 /*0x74ee50*/
-        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int **)this + 16))(
+        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int *)this + 16))(
              this,
-             *((unsigned int *)MEMORY[0xB1D294] + v6),
+             *((unsigned int *)g_abs_B1D294 + v6),
              264,
              0) < 0
-        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int **)this + 16))(
+        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int *)this + 16))(
              this,
-             *(unsigned int *)(*((unsigned int *)MEMORY[0xB1D294] + v6) + 196),
+             *(unsigned int *)(*((unsigned int *)g_abs_B1D294 + v6) + 196),
              v4,
              0) < 0
-        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int **)this + 16))(
+        || (*(int (**)(int *, unsigned int, int, unsigned int))(*(unsigned int *)this + 16))(
              this,
-             *(unsigned int *)(*((unsigned int *)MEMORY[0xB1D294] + v6) + 180),
-             8 * MEMORY[0x8871E0]->AircraftFogReveal,
+             *(unsigned int *)(*((unsigned int *)g_abs_B1D294 + v6) + 180),
+             8 * g_abs_8871E0->AircraftFogReveal,
              0) < 0 )
       {
         break; /*0x74ee50*/
       }
-      v8 = *((unsigned int *)MEMORY[0xB1D294] + v6); /*0x74ee62*/
+      v8 = *((unsigned int *)g_abs_B1D294 + v6); /*0x74ee62*/
       v9 = *(unsigned int *)(v8 + 176); /*0x74ee65*/
       v10 = *(unsigned int *)(v8 + 180); /*0x74ee6b*/
-      if ( (*(int (**)(int *, int, int, unsigned int))(*(unsigned int **)this + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
-        && (*(int (**)(int *, int, int, unsigned int))(*(unsigned int **)this + 16))(this, v9 + 4, 4, 0) >= 0 )
+      if ( (*(int (**)(int *, int, int, unsigned int))(*(unsigned int *)this + 16))(this, v9, 4, 0) >= 0 /*0x74ee8a*/
+        && (*(int (**)(int *, int, int, unsigned int))(*(unsigned int *)this + 16))(this, v9 + 4, 4, 0) >= 0 )
       {
         for ( i = 0; i < *(unsigned int *)(v9 + 4); ++i ) /*0x74ee93*/
         {
@@ -1209,11 +1209,11 @@ int SaveGame::SaveAudioQueueItems()
   int v11; // [esp+10h] [ebp-14h] BYREF
   unsigned int v12[4]; // [esp+14h] [ebp-10h] BYREF
 
-  v11 = SaveGame::CountLinkedList(MEMORY[0xB1D320]); /*0x751637*/
-  v2 = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int **)this + 16))(this, &v11, 4, 0); /*0x751647*/
+  v11 = SaveGame::CountLinkedList(g_abs_B1D320); /*0x751637*/
+  v2 = (*(int (**)(int *, int *, int, unsigned int))(*(unsigned int *)this + 16))(this, &v11, 4, 0); /*0x751647*/
   if ( v2 >= 0 )
   {
-    for ( i = (int *)AudioQueue::GetNext(MEMORY[0xB1D320]); i; i = (int *)AudioQueue::GetNextAlt(i) )
+    for ( i = (int *)AudioQueue::GetNext(g_abs_B1D320); i; i = (int *)AudioQueue::GetNextAlt(i) )
     {
       v4 = -1; /*0x751665*/
       v12[0] = -1; /*0x751668*/
@@ -1224,7 +1224,7 @@ int SaveGame::SaveAudioQueueItems()
         if ( SampleName )
         {
           v4 = 0; /*0x751683*/
-          if ( MEMORY[0xB1D388] <= 0 )
+          if ( g_abs_B1D388 <= 0 )
           {
 LABEL_11:
             v4 = -1; /*0x7516bc*/
@@ -1233,11 +1233,11 @@ LABEL_11:
           {
             while ( 1 )
             {
-              v7 = (char *)**((unsigned int **)MEMORY[0xB1D37C] + v4); /*0x751692*/
-              v8 = v7 ? VocClass::GetSampleName(v7) : MEMORY[0x846574];
+              v7 = (char *)**((unsigned int **)g_abs_B1D37C + v4); /*0x751692*/
+              v8 = v7 ? VocClass::GetSampleName(v7) : g_abs_846574;
               if ( !_strcmpi(SampleName, v8) ) /*0x7516a6*/
                 break; /*0x7516a6*/
-              if ( ++v4 >= MEMORY[0xB1D388] ) /*0x7516ba*/
+              if ( ++v4 >= g_abs_B1D388 ) /*0x7516ba*/
                 goto LABEL_11; /*0x7516ba*/
             }
           }

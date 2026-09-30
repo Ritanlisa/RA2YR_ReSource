@@ -16,7 +16,7 @@ struct MSBitPrintAnim {
     unsigned int __pad_0;
     unsigned int q0088;
 // --- flat members (END) ---
-    MSBitPrintAnim * QueryInterface(char a2);
+    MSBitPrintAnim * QueryInterface(void ** Block, char a2);
 };
 
 } // namespace gamemd

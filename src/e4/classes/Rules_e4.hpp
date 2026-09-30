@@ -69,10 +69,35 @@ struct Rules {
     unsigned int UpgradeVeteranSound;
     unsigned int UpgradeEliteSound;
     unsigned int VoiceIFVRepair;
+    unsigned int ActivateSound;
+    unsigned int AirstrikeAttackVoice;
+    unsigned int BunkerWallsUpSound;
+    unsigned int DeactivateSound;
+    unsigned int Dig;
+    unsigned int EnterBioReactorSound;
+    unsigned int LeaveBioReactorSound;
+    unsigned int MasterMindOverloadDeathSound;
+    unsigned int MindClearedSound;
+    unsigned int SlaveMinerDeploySound;
+    unsigned int SlaveMinerUndeploySound;
+    unsigned int SlavesFreeSound;
+    unsigned int SpyPlaneCamera;
+    unsigned int SpyPlaneCameraFrames;
+    unsigned int AirstrikeAbortSound;
+    unsigned int ConditionRedSparkingProbability;
+    unsigned int ConditionYellowSparkingProbability;
+    unsigned int DamageFireTypes;
+    unsigned int EnterGrinderSound;
+    unsigned int IonBeam;
+    unsigned int IonBlast;
+    unsigned int LeaveGrinderSound;
+    unsigned int ParadropRadius;
+    unsigned int PsychicDominatorActivateSound;
+    unsigned int ZoomInFactor;
 // --- flat members (END) ---
     int ReadMiscINI();  // 0x6691E0
     int ReadCombatINI();  // 0x66BBB0
-    unsigned int * CopyDataArray(VectorClass_flat * aP1);  // 0x67A570
-    char * GetProductionTimeMult(void* aP1);  // 0x5FB2E0
+    unsigned int * CopyDataArray(void * aP1);  // 0x67A570
+    char * GetProductionTimeMult(void * aP1);  // 0x5FB2E0
 };
 } // namespace gamemd

@@ -310,14 +310,14 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
 
   if ( *((char *)this + 4) >= 5 ) /*0x4b69f1*/
     return 0; /*0x4b69f1*/
-  v2 = *((unsigned int *)MEMORY[0xA8B230] + 3385); /*0x4b6a01*/
+  v2 = *((unsigned int *)g_abs_A8B230 + 3385); /*0x4b6a01*/
   if ( v2 ) /*0x4b6a09*/
   {
     v4 = 0; /*0x4b6a10*/
     if ( v2 > 0 ) /*0x4b6a14*/
     {
-      while ( *(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3382) + 4 * v4) != a2 /*0x4b6a2c*/
-           || *(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3389) + 4 * v4) == -1 )
+      while ( *(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3382) + 4 * v4) != a2 /*0x4b6a2c*/
+           || *(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3389) + 4 * v4) == -1 )
       {
         if ( ++v4 >= v2 ) /*0x4b6a31*/
         {
@@ -327,7 +327,7 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
       }
       v3 = v4; /*0x4b6a3b*/
       if ( v4 == -1 /*0x4b6a53*/
-        || *(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3396) + 4 * v4) < *(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3389)
+        || *(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3396) + 4 * v4) < *(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3389)
                                                                                   + 4 * v4) )
       {
         goto LABEL_11; /*0x4b6a53*/
@@ -340,7 +340,7 @@ LABEL_11:
   *(this + (*((char *)this + 4))++ + 5) = a2; /*0x4b6a55*/
   *((char *)this + 10) += (*(int (**)(int))(*(unsigned int *)a2 + 172))(a2); /*0x4b6a74*/
   if ( v3 != -1 ) /*0x4b6a77*/
-    ++*(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3396) + 4 * v3); /*0x4b6a8b*/
+    ++*(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3396) + 4 * v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/
 
 }
@@ -362,20 +362,20 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
   v3 = *((char *)this + 4); /*0x4b6ab4*/
   if ( v3 <= 0 || a2 < 0 || a2 >= v3 ) /*0x4b6acd*/
     return 0; /*0x4b6b72*/
-  v4 = *((unsigned int *)MEMORY[0xA8B230] + 3385); /*0x4b6adb*/
+  v4 = *((unsigned int *)g_abs_A8B230 + 3385); /*0x4b6adb*/
   if ( v4 ) /*0x4b6ae3*/
   {
     v5 = 0; /*0x4b6ae5*/
     if ( v4 > 0 ) /*0x4b6ae9*/
     {
-      while ( *(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3382) + 4 * v5) != *(this + a2 + 5) /*0x4b6b05*/
-           || *(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3389) + 4 * v5) == -1 )
+      while ( *(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3382) + 4 * v5) != *(this + a2 + 5) /*0x4b6b05*/
+           || *(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3389) + 4 * v5) == -1 )
       {
-        if ( ++v5 >= *((unsigned int *)MEMORY[0xA8B230] + 3385) ) /*0x4b6b10*/
+        if ( ++v5 >= *((unsigned int *)g_abs_A8B230 + 3385) ) /*0x4b6b10*/
           goto LABEL_12; /*0x4b6b10*/
       }
       if ( v5 != -1 ) /*0x4b6b17*/
-        --*(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3396) + 4 * v5); /*0x4b6b22*/
+        --*(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3396) + 4 * v5); /*0x4b6b22*/
     }
   }
 LABEL_12:
@@ -385,7 +385,7 @@ LABEL_12:
   v8 = a2; /*0x4b6b42*/
   if ( a2 < v7 ) /*0x4b6b44*/
   {
-    v9 = this + a2 + 5; /*0x4b6b46*/
+    v9 = (int *)(this + a2 + 5);
     do /*0x4b6b57*/
     {
       ++v8; /*0x4b6b4b*/
@@ -409,14 +409,14 @@ int E4Recv_4B6BF0::sub_4B6BF0()
   int v1; // edx
   int result; // eax
 
-  v1 = *((unsigned int *)MEMORY[0xA8B230] + 3385); /*0x4b6bf9*/
+  v1 = *((unsigned int *)g_abs_A8B230 + 3385); /*0x4b6bf9*/
   if ( !v1 ) /*0x4b6c01*/
     return -1; /*0x4b6c01*/
   result = 0; /*0x4b6c03*/
   if ( v1 <= 0 ) /*0x4b6c07*/
     return -1; /*0x4b6c25*/
-  while ( *(void **)(*((unsigned int *)MEMORY[0xA8B230] + 3382) + 4 * result) != this /*0x4b6c1e*/
-       || *(unsigned int *)(*((unsigned int *)MEMORY[0xA8B230] + 3389) + 4 * result) == -1 )
+  while ( *(void **)(*((unsigned int *)g_abs_A8B230 + 3382) + 4 * result) != this /*0x4b6c1e*/
+       || *(unsigned int *)(*((unsigned int *)g_abs_A8B230 + 3389) + 4 * result) == -1 )
   {
     if ( ++result >= v1 ) /*0x4b6c23*/
       return -1; /*0x4b6c23*/
@@ -645,22 +645,22 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
   unsigned int *v7; // eax
   AbstractClass *v9; // [esp-4h] [ebp-10h]
 
-  v2 = *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0df1*/
+  v2 = *(unsigned int *)&g_abs_89F690; /*0x4b0df1*/
   v4 = (int *)((char *)this + 64); /*0x4b0dfd*/
-  if ( *((unsigned int *)this + 16) != *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[772] /*0x4b0e1c*/
-    || *((unsigned int *)this + 17) != *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[776]
-    || *((unsigned int *)this + 18) != *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[780] )
+  if ( *((unsigned int *)this + 16) != *(unsigned int *)&g_abs_89F690 /*0x4b0e1c*/
+    || *((unsigned int *)this + 17) != *(unsigned int *)&g_abs_89F690
+    || *((unsigned int *)this + 18) != *(unsigned int *)&g_abs_89F690 )
   {
-    *v4 = *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0e20*/
-    *((unsigned int *)this + 17) = *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0e28*/
-    v5 = *(TechnoClass **)&MEMORY[0x89F690].__pad_DFC[780]; /*0x4b0e2b*/
+    *v4 = *(unsigned int *)&g_abs_89F690; /*0x4b0e20*/
+    *((unsigned int *)this + 17) = *(unsigned int *)&g_abs_89F690; /*0x4b0e28*/
+    v5 = *(TechnoClass **)&g_abs_89F690; /*0x4b0e2b*/
     *((unsigned char *)this + 99) = 0; /*0x4b0e30*/
     *((unsigned int *)this + 18) = v5; /*0x4b0e34*/
-    v2 = *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0e37*/
+    v2 = *(unsigned int *)&g_abs_89F690; /*0x4b0e37*/
   }
   if ( aP1->field_0 != v2 /*0x4b0e5d*/
-    || aP1->field_4 != *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[776]
-    || aP1->field_8 != *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[780] )
+    || aP1->field_4 != *(unsigned int *)&g_abs_89F690
+    || aP1->field_8 != *(unsigned int *)&g_abs_89F690 )
   {
     *v4 = aP1->field_0; /*0x4b0e65*/
     *((unsigned int *)this + 17) = aP1->field_4; /*0x4b0e6a*/
@@ -668,7 +668,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
     *((unsigned char *)this + 99) = 1; /*0x4b0e70*/
     *((unsigned int *)this + 18) = v6; /*0x4b0e74*/
     v9 = *(AbstractClass **)((char *)this + 12); /*0x4b0e7a*/
-    v7 = Coord::To_Cell(&MEMORY[0x87F7E8], aP1); /*0x4b0e81*/
+    v7 = Coord::To_Cell(&g_abs_87F7E8, aP1); /*0x4b0e81*/
     if ( CrateClass::ProcessPickup(v7, v9) && !*(unsigned char *)(*((unsigned int *)this + 3) + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo(this, aP1, 1); /*0x4b0ea3*/
@@ -676,9 +676,9 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
     }
     if ( *(unsigned char *)(*((unsigned int *)this + 3) + 144) ) /*0x4b0eb3*/
     {
-      *v4 = *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[772]; /*0x4b0ec3*/
-      *((unsigned int *)this + 17) = *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[776]; /*0x4b0ecb*/
-      *((unsigned int *)this + 18) = *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[780]; /*0x4b0ed3*/
+      *v4 = *(unsigned int *)&g_abs_89F690; /*0x4b0ec3*/
+      *((unsigned int *)this + 17) = *(unsigned int *)&g_abs_89F690; /*0x4b0ecb*/
+      *((unsigned int *)this + 18) = *(unsigned int *)&g_abs_89F690; /*0x4b0ed3*/
       *((unsigned char *)this + 99) = 0; /*0x4b0ed6*/
     }
   }
@@ -723,8 +723,8 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
     (char *)this + 176,
     0,
     (int)aP5,
-    (int)&aP6->__pad_0[*(__int16 *)(a11 + 4)],
-    (ListClass *)&aP7->__pad_0[*(__int16 *)(a11 + 2)],
+    (int)&aP6->__pad_0[*(int16_t *)(a11 + 4)],
+    (ListClass *)&aP7->__pad_0[*(int16_t *)(a11 + 2)],
     a9,
     (ControlClass *)aP4,
     a10,
@@ -850,7 +850,7 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
 
   if ( this == a2 ) /*0x4b583a*/
     return this; /*0x4b583a*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x4b583e*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x4b583e*/
   v3 = a2[2]; /*0x4b5841*/
   *((unsigned int *)this + 2) = v3; /*0x4b5846*/
   if ( !v3 ) /*0x4b5849*/
@@ -859,7 +859,7 @@ unsigned int * E4Recv_4B5830::sub_4B5830(unsigned int * a2)
     *((unsigned char *)this + 13) = 0; /*0x4b5891*/
     return this; /*0x4b5895*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x4b5853*/
+  v4 = RA2_OPNEW(4 * v3); /*0x4b5853*/
   *((unsigned int *)this + 1) = v4; /*0x4b585b*/
   if ( !v4 ) /*0x4b5860*/
     return this; /*0x4b5860*/

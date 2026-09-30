@@ -8,7 +8,6 @@ namespace gamemd {
 struct Struct {
 // --- flat members (BEGIN) ---
     char Struct_field_00[4];  // 0x0
-    unsigned int Active;
     unsigned int LastPacketTime;
     unsigned int PacketsReceived;
     unsigned int PacketsSent;
@@ -32,8 +31,14 @@ struct Struct {
     unsigned int u32_4C;
     unsigned int u32_54;
     unsigned int u32_8;
+    unsigned int __pad_0;
+    unsigned int __pad_14;
+    unsigned int __pad_28;
+    unsigned int field_24;
+    unsigned int field_34;
+    unsigned int field_8;
 // --- flat members (END) ---
-    int ClearAllMemberFlags(void *a1 = 0);
+    int ClearAllMemberFlags();
     int ZeroInit32();
     int ZeroInitAndSetup();
     int ZeroInitAndSetup_0();

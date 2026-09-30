@@ -96,8 +96,8 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float *v10; // eax
   float *v11; // eax
   int v12; // edx
-  unsigned __int8 v14; // c0
-  unsigned __int8 v15; // c3
+  uint8_t v14; // c0
+  uint8_t v15; // c3
   int v17; // [esp+0h] [ebp-78h]
   int v18; // [esp+4h] [ebp-74h]
   int v19; // [esp+8h] [ebp-70h]
@@ -115,7 +115,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v31[4]; // [esp+58h] [ebp-20h] BYREF
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
-  v21 = *this; /*0x645d6f*/
+  v21 = (float)(*this);
   v22 = *((unsigned int *)this + 1); /*0x645d76*/
   v23 = *((unsigned int *)this + 2); /*0x645d7d*/
   v24 = *((unsigned int *)this + 3); /*0x645d88*/
@@ -436,7 +436,7 @@ AbstractClass * * ProcessNetworkEvents()
       case 2: /*0x6474d5*/
       case 3: /*0x6474d5*/
       case 4: /*0x6474d5*/
-        Network::QueueProcessingLoop((Network *)v6); /*0x6475c8*/
+        ((Network *)((Network *)v6))->QueueProcessingLoop(); /*0x6475c8*/
         break; /*0x6475c8*/
       default:
         return;
@@ -483,7 +483,7 @@ void RunNetworkGameLoop()
   int v33; // [esp+68h] [ebp-8h]
   int v34; // [esp+6Ch] [ebp-4h]
 
-    Debug::Log();
+    this->Debug::Log();
   if ( *(int *)&dword_A8B238 < 3 || *(int *)&dword_A8B238 > 4 ) /*0x648371*/
   {
     v13 = (gamemd::IPXManagerClass *)((void *)dword_A8EA74);
@@ -504,7 +504,7 @@ void RunNetworkGameLoop()
     v22 = Timer::GetTicks();
   v25 = 600; /*0x6483ee*/
     v18 = Timer::GetTicks();
-    Debug::Log();
+    this->Debug::Log();
   while ( 2 ) /*0x64840c*/
   {
     EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x64840c*/
@@ -528,7 +528,7 @@ void RunNetworkGameLoop()
     Ticks = v26; /*0x64845c*/
     v21 = v27; /*0x648460*/
     v22 = 15; /*0x648464*/
-        Debug::Log();
+        this->Debug::Log();
     SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x64847e*/
   LABEL_11:
     (*(void (**)(IPXManagerClass *))(v3->Socket + 4))(v3); /*0x648483*/
@@ -539,7 +539,7 @@ void RunNetworkGameLoop()
       if ( v7 >= v6 ) /*0x6484a5*/
       {
   LABEL_33:
-                Debug::Log();
+                this->Debug::Log();
         return; /*0x648678*/
       }
       v6 -= v7; /*0x6484ab*/
@@ -587,7 +587,7 @@ void RunNetworkGameLoop()
       v9 = v8++; /*0x648589*/
     }
     while ( v9 < 64 ); /*0x64858f*/
-        Event::Dispatch();
+        this->Event::Dispatch();
     if ( !*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 444) ) /*0x6485a1*/
     {
       InputManager_ProcessEvents::Vtable((GScreenClass *)&stru_87F5F0.__pad_58[416], &v16, &v18, &v17); /*0x6485b7*/
@@ -4799,7 +4799,7 @@ void nullsub_32()
 
 // 0x64AAA0
 namespace gamemd {
-LRESULT E4Recv_64AAA0::sub_64AAA0()
+LRESULT E4Recv_64AAA0::sub_64AAA0(HWND hWnd)
 {
 
   LRESULT v2; // esi

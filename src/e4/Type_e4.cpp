@@ -18,9 +18,9 @@ int Type::CheckAmbiguity(int a2, char a3)
   int v7; // esi
   bool result; // al
 
-  v3 = *(__int16 *)(a2 + 38); /*0x57854a*/
+  v3 = *(int16_t *)(a2 + 38); /*0x57854a*/
   v4 = 0; /*0x57854f*/
-  v5 = *(__int16 *)(a2 + 36); /*0x578552*/
+  v5 = *(int16_t *)(a2 + 36); /*0x578552*/
   if ( a3 ) /*0x578558*/
   {
     v4 = *(char *)(a2 + 283); /*0x578560*/

@@ -36,7 +36,7 @@ char IPersistStream::SetField(int a1)
   if ( a1 == -1 ) /*0x5b36e3*/
     return 1; /*0x5b36e5*/
   else
-    return MEMORY[0xA8E3AE][32 * a1]; /*0x5b36eb*/
+    return g_abs_A8E3AE[32 * a1]; /*0x5b36eb*/
 
 }
 } // namespace gamemd
@@ -78,7 +78,7 @@ namespace gamemd {
 int IPersistStream::GetSizeMax(int a0, RadioClass * aP1, int a3)
 {
 
-  RadioClass::SaveState((int *)a0, aP1, a3); /*0x70c25f*/
+  ((RadioClass *)((int *)a0))->SaveState(aP1, a3); /*0x70c25f*/
   return 0; /*0x70c266*/
 
 }

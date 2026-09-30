@@ -41,7 +41,7 @@
 
 // 0x451400
 namespace gamemd {
-char UpdateBuildingActiveAnim(int a1, int edx0)
+char UpdateBuildingActiveAnim(int a1, int edx0, void * a2)
 {
   int Strength; // eax
   int v4; // edi
@@ -59,8 +59,8 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
   unsigned int v18; // edx
   unsigned int v19; // ecx
   char UpgradeLevel; // al
-  BOOL v23; // edx
-  int v24; // eax
+  IUnknown * v23;
+  unsigned char * v24;
   int *v25; // ecx
   char v26[64]; // [esp+10h] [ebp-40h] BYREF
 
@@ -111,7 +111,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
     {
       if ( !*v13 ) /*0x4514b3*/
       {
-                v14 = *(unsigned int *)(a1 + 1312);
+                v14 = (gamemd::BuildingTypeClass *)(*(unsigned int *)(a1 + 1312));
         if ( (BuildingTypeClass *)((char *)v14 + v12 * 4) != (BuildingTypeClass *)-3916 ) /*0x4514c7*/
         {
           if ( IDA_LOBYTE(v14->BuildingAnim[v12 + 12]) ) /*0x4514c9*/
@@ -122,12 +122,13 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
       ++v11; /*0x4514e0*/
       ++v13; /*0x4514e1*/
     }
-    while ( v12 <= 102 ); /*0x4514ea*/
+    while (v12 <= 102, unsigned int a2); /*0x4514ea*/
     a1->? = 1; /*0x4514ec*/
   }
-    v15 = *(unsigned int *)(a1 + 1312);
+    v15 = (gamemd::BuildingTypeClass *)(*(unsigned int *)(a1 + 1312));
   if ( v15 == *(BuildingTypeClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2172) ) /*0x451505*/
   {
+    unsigned int v16 = 0;  /* G37 hoist */
         v16 = *(unsigned int *)(a1 + 1532);
     v17 = SuperWeaponToken + 1; /*0x451511*/
     if ( SuperWeaponToken + 1 > 2 ) /*0x451517*/
@@ -137,6 +138,8 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
       BuildingClass::ClearAnims(a1, 9); /*0x451535*/
       if ( v17 != -1 ) /*0x45153d*/
       {
+    unsigned int v21 = 0;  /* G37 hoist */
+    unsigned int v21 = 0;  /* G37 hoist */
                 strcpy(a2, (const char *)(*(unsigned int *)(a1 + 1312) + 504));
         v18 = strlen(asc_818D7C) + 1; /*0x45158c*/
         qmemcpy(&v26[strlen(v26)], asc_818D7C, v18); /*0x451599*/
@@ -167,7 +170,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
         fcomp qword ptr [eax+1700h]
         fnstsw ax
       }
-      v23 = (_EAX & 0x4100) != 0; /*0x451625*/
+      v23 = (BOOL)((_EAX & 0x4100) != 0);
             v23 = (IUnknown *)(*(char *)(a1 + 1794) - 1);
       if ( v23 ) /*0x45163c*/
                 v24 = (unsigned char *)(*(unsigned int *)(a1 + 1312) + 68 * (unsigned int)v23 + 3932);
@@ -922,7 +925,7 @@ int E4Recv_4517D0::sub_4517D0()
     v6 = *v12; /*0x45180c*/
     if ( *v12 ) /*0x45180c*/
     {
-      v7 = Matrix3x4::TransformCell((float *)MEMORY[0x887324], v17, &(*((unsigned int *)this + 328))[v3 + 991]); /*0x45182b*/
+      v7 = Matrix3x4::TransformCell((float *)g_abs_887324, v17, &(*((unsigned int *)this + 328))[v3 + 991]); /*0x45182b*/
       v8 = v13 + *v7; /*0x45183a*/
       v9 = v7[1]; /*0x45183c*/
       v10 = v7[2]; /*0x45183f*/
@@ -1006,7 +1009,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
   int v13; // [esp+24h] [ebp-8h]
   int v14; // [esp+28h] [ebp-4h]
 
-  v3 = (int *)(*(int (**)(unsigned int *, int *))(*(unsigned int **)this + 72))(this, &v12); /*0x4528b2*/
+  v3 = (int *)(*(int (**)(unsigned int *, int *))(*(unsigned int *)this + 288))(this, &v12); /*0x4528b2*/
   v4 = *v3; /*0x4528b5*/
   v5 = v3[1]; /*0x4528bb*/
   v6 = v3[2]; /*0x4528c0*/
@@ -1113,10 +1116,10 @@ char E4Recv_457A10::sub_457A10()
         *i != 0x7FFF || i[1] != 0x7FFF;
         i += 2 )
   {
-    LOWORD(v5) = v2 + *i; /*0x457a59*/
-    HIWORD(v5) = HIWORD(v2) + i[1]; /*0x457a66*/
+    IDA_LOWORD(v5) = v2 + *i; /*0x457a59*/
+    IDA_HIWORD(v5) = IDA_HIWORD(v2) + i[1]; /*0x457a66*/
     v6 = v5; /*0x457a6f*/
-    if ( (*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v6) + 80) & 0x400000) == 0 ) /*0x457a87*/
+    if ( (*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v6) + 80) & 0x400000) == 0 ) /*0x457a87*/
       return 0; /*0x457a96*/
   }
   return 1; /*0x457a8e*/

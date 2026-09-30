@@ -15,26 +15,26 @@
 
 // 0x65A750
 namespace gamemd {
-void RadioClass::Release(void* a1, void* a2, void* a3)
+void RadioClass::Release()
 {
 
-  RadioClass::Constructor((int)a1); /*0x65a753*/
-  *(a1 + 57) = 0; /*0x65a75a*/
-  *(a1 + 58) = 1; /*0x65a764*/
-  *((unsigned char *)a1 + 236) = 1; /*0x65a76e*/
-  *((unsigned char *)a1 + 237) = 0; /*0x65a775*/
-  *(a1 + 56) = &vt_VectorClass_TechnoClass; /*0x65a77c*/
-  *(a1 + 57) = __2_YAPAXI_Z(4u); /*0x65a78b*/
-  *((unsigned char *)a1 + 237) = 1; /*0x65a791*/
-  *a1 = &RadioClass::`vftable'; /*0x65a798*/
-  *(a1 + 1) = &RadioClass::`vftable'; /*0x65a79e*/
-  *(a1 + 2) = &RadioClass::`vftable'; /*0x65a7a5*/
-  *(a1 + 3) = &vt_RadioClass; /*0x65a7ac*/
-  *(unsigned int *)*(a1 + 57) = 0; /*0x65a7be*/
-  *(a1 + 53) = 0; /*0x65a7c4*/
-  *(a1 + 54) = 0; /*0x65a7ca*/
-  *(a1 + 55) = 0; /*0x65a7d2*/
-  return a1; /*0x65a7d8*/
+  RadioClass::Constructor((int)this); /*0x65a753*/
+  *(this + 57) = 0; /*0x65a75a*/
+  *(this + 58) = 1; /*0x65a764*/
+  *((unsigned char *)this + 236) = 1; /*0x65a76e*/
+  *((unsigned char *)this + 237) = 0; /*0x65a775*/
+  *(this + 56) = &vt_VectorClass_TechnoClass; /*0x65a77c*/
+  *(this + 57) = RA2_OPNEW(4u); /*0x65a78b*/
+  *((unsigned char *)this + 237) = 1; /*0x65a791*/
+  *this = &RadioClass::`vftable'; /*0x65a798*/
+  *(this + 1) = &RadioClass::`vftable'; /*0x65a79e*/
+  *(this + 2) = &RadioClass::`vftable'; /*0x65a7a5*/
+  *(this + 3) = &vt_RadioClass; /*0x65a7ac*/
+  *(unsigned int *)*(this + 57) = 0; /*0x65a7be*/
+  *(this + 53) = 0; /*0x65a7c4*/
+  *(this + 54) = 0; /*0x65a7ca*/
+  *(this + 55) = 0; /*0x65a7d2*/
+  return this; /*0x65a7d8*/
 
 }
 } // namespace ra2
@@ -100,13 +100,13 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
   result = BuildingClass::SaveLoad_Register((#374 *)this); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {
-    p_attachedTag = &v3[1].attachedTag; /*0x65ab9a*/
+    p_attachedTag = (void **)(&v3[1].attachedTag);
     if ( v3 != (ObjectClass *)-224 ) /*0x65aba2*/
     {
       v3[1].attachedBomb = 0; /*0x65aba4*/
       v3[1].ambientSoundController[0] = 0; /*0x65abab*/
-      LOBYTE(v3[1].ambientSoundController[1]) = 1; /*0x65abb2*/
-      BYTE1(v3[1].ambientSoundController[1]) = 0; /*0x65abb6*/
+      IDA_LOBYTE(v3[1].ambientSoundController[1]) = 1; /*0x65abb2*/
+      IDA_BYTE1(v3[1].ambientSoundController[1]) = 0; /*0x65abb6*/
       *p_attachedTag = &vt_VectorClass_TechnoClass; /*0x65abba*/
     }
     result = (*(int (**)(ObjectClass *, ObjectClass **, int, unsigned int))(*(unsigned int *)v4->__pad_0 + 12))( /*0x65abcc*/
@@ -126,7 +126,7 @@ LABEL_8:
         if ( (int)v8 > 0 ) /*0x65ac18*/
         {
           do /*0x65ac33*/
-            ObjectPtr::RegisterForTracking((int)&MEMORY[0xB077F8].__pad_14B0[13416], (int *)v3[1].attachedBomb + v9++); /*0x65ac29*/
+            ObjectPtr::RegisterForTracking((int)&g_abs_B077F8, (int *)v3[1].attachedBomb + v9++); /*0x65ac29*/
           while ( v9 < (int)aP2 ); /*0x65ac33*/
         }
         return 0; /*0x65ac35*/

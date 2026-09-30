@@ -63,7 +63,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   *((unsigned int *)this + 45) = 0; /*0x436c06*/
   if ( aP1 == (CCINIClass *)3 ) /*0x436c0c*/
   {
-    v4 = *(unsigned int *)(*(int (**)(unsigned int *, unsigned int **))(*(unsigned int **)this + 440))(this, &nextArrayIndex); /*0x436c21*/
+    v4 = *(unsigned int *)(*(int (**)(unsigned int *, unsigned int **))(*(unsigned int *)this + 1760))(this, &nextArrayIndex); /*0x436c21*/
     v5 = (ObjectClass *)v3->FollowingObject; /*0x436c23*/
     v25 = v4; /*0x436c29*/
     v19 = (TechnoClass *)&unk_98967F; /*0x436c2d*/
@@ -74,12 +74,12 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
     {
       v6 = -1; /*0x436c53*/
       v21 = -1; /*0x436c58*/
-      LOWORD(v18) = v25 + (unsigned short)v17; /*0x436c5c*/
+      IDA_LOWORD(v18) = v25 + (unsigned short)v17; /*0x436c5c*/
       do /*0x436d62*/
       {
-        HIWORD(v18) = v6 + HIWORD(v25); /*0x436c6c*/
+        IDA_HIWORD(v18) = v6 + IDA_HIWORD(v25); /*0x436c6c*/
         v23 = v18; /*0x436c7b*/
-        v7 = (TechnoClass *)*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23) + 57); /*0x436c84*/
+        v7 = (TechnoClass *)*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v23) + 57); /*0x436c84*/
         if ( v7 ) /*0x436c8c*/
         {
           while ( 1 ) /*0x436c98*/
@@ -131,7 +131,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
 }
 // 0x4370C0
 namespace gamemd {
-BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
+BuildingLightClass * BuildingLightClass::SDDTOR(#374 * Block, char a2)
 {
 
   int v3; // eax
@@ -141,25 +141,25 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
   *((unsigned int *)Block + 1) = &BuildingLightClass::`vftable'; /*0x4370ca*/
   *((unsigned int *)Block + 2) = &BuildingLightClass::`vftable'; /*0x4370d1*/
   *((unsigned int *)Block + 3) = &vt_BuildingLightClass; /*0x4370d8*/
-  if ( (unsigned __int8)ObjectClass::Undeploy(Block) ) /*0x4370df*/
-    VectorClass::RemoveItem((int *)&MEMORY[0x87F778], (ObjectClass *)Block); /*0x4370ee*/
+  if ( (uint8_t)ObjectClass::Undeploy(Block) ) /*0x4370df*/
+    VectorClass::RemoveItem((int *)&g_abs_87F778, (ObjectClass *)Block); /*0x4370ee*/
   v5 = Block; /*0x437103*/
-  v3 = (*(int (**)(char *, #374 **))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62308] + 16))( /*0x437107*/
-         &MEMORY[0x89F690].__pad_579C[62308],
+  v3 = (*(int (**)(char *, #374 **))(*(unsigned int *)&g_abs_89F690 + 16))( /*0x437107*/
+         &g_abs_89F690,
          &v5);
-  if ( v3 != -1 && v3 < *(int *)&MEMORY[0x89F690].__pad_579C[62324] ) /*0x437117*/
+  if ( v3 != -1 && v3 < *(int *)&g_abs_89F690 ) /*0x437117*/
   {
-    --*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62324]; /*0x43711c*/
+    --*(unsigned int *)&g_abs_89F690; /*0x43711c*/
     for ( ; /*0x437122*/
-          v3 < *(int *)&MEMORY[0x89F690].__pad_579C[62324];
-          *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62312] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62312]
+          v3 < *(int *)&g_abs_89F690;
+          *(unsigned int *)(*(unsigned int *)&g_abs_89F690 + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&g_abs_89F690
                                                                                                + 4 * v3) )
     {
       ++v3; /*0x43712a*/
     }
   }
   ObjectClass::Dtor(Block); /*0x43713e*/
-  if ( (a2 & 1) != 0 ) /*0x437148*/
+  if ( (Block & 1) != 0 ) /*0x437148*/
     OperatorDelete(Block); /*0x43714b*/
   return (BuildingLightClass *)Block; /*0x437155*/
 
@@ -218,12 +218,12 @@ signed int BuildingLightClass::UpdateOscillation()
     v9 = v6[1]; /*0x513d92*/
     v10 = v6[2]; /*0x513d95*/
     v11 = 8 * v7 + 9041624; /*0x513d98*/
-    v12 = v8 + MEMORY[0x89F6D8][2 * v7]; /*0x513dab*/
+    v12 = v8 + g_abs_89F6D8[2 * v7]; /*0x513dab*/
     v29 = v9 + *(unsigned int *)(v11 + 4); /*0x513dad*/
     v28 = v12; /*0x513dbb*/
     v30 = v10; /*0x513dbf*/
     if ( Cell::GetGroundHeight(&v28) > GroundHeight ) /*0x513dca*/
-      v26 = v24 - HIDWORD(MEMORY[0x8871E0]->ShakeScreen); /*0x513ddc*/
+      v26 = v24 - IDA_HIDWORD(g_abs_8871E0->ShakeScreen); /*0x513ddc*/
   }
   v25 = Math::RoundToInt((double)v24 + *(double *)((char *)this + 96)); /*0x513dec*/
   v13 = (*(int (**)(int))(*(unsigned int *)(*((unsigned int *)this + 3) + 4) + 16))(*((unsigned int *)this + 3) + 4); /*0x513df9*/
@@ -231,8 +231,8 @@ signed int BuildingLightClass::UpdateOscillation()
     v14 = 1.0; /*0x513e00*/
   else
     v14 = 1.1; /*0x513e08*/
-  v15 = (int)&MEMORY[0xA8ED84][v13]; /*0x513e20*/
-  v16 = v14 * *(double *)&MEMORY[0x8871E0]->HoverBob * 900.0; /*0x513e23*/
+  v15 = (int)&g_abs_A8ED84[v13]; /*0x513e20*/
+  v16 = v14 * *(double *)&g_abs_8871E0->HoverBob * 900.0; /*0x513e23*/
   v27 = v15 % (int)Math::RoundToInt(v16); /*0x513e3a*/
   v17 = Math::SinCos((double)v27 * 6.283185307179586 / v16); /*0x513e4f*/
   v18 = Math::RoundToInt(v17 + v17 + (double)v25); /*0x513e5d*/
@@ -248,28 +248,28 @@ signed int BuildingLightClass::UpdateOscillation()
   (*(void (**)(unsigned int, int))(**(unsigned int **)((char *)this + 12) + 460))(*((unsigned int *)this + 3), v18); /*0x513e7f*/
   result = *((unsigned int *)this + 3); /*0x513e85*/
   *(unsigned char *)(result + 116) = v20; /*0x513e8c*/
-  v22 = MEMORY[0x8871E0]; /*0x513e8f*/
-  if ( v26 < SHIDWORD(MEMORY[0x8871E0]->ShakeScreen) ) /*0x513e9b*/
+  v22 = g_abs_8871E0; /*0x513e8f*/
+  if ( v26 < IDA_SHIDWORD(g_abs_8871E0->ShakeScreen) ) /*0x513e9b*/
   {
     if ( StreamClass::GetDirty((char *)this + 4) ) /*0x513ea1*/
-      *(double *)((char *)this + 96) = ((double)SHIDWORD(MEMORY[0x8871E0]->ShakeScreen) /*0x513ec8*/
-                              + (double)SHIDWORD(MEMORY[0x8871E0]->ShakeScreen)
+      *(double *)((char *)this + 96) = ((double)IDA_SHIDWORD(g_abs_8871E0->ShakeScreen) /*0x513ec8*/
+                              + (double)IDA_SHIDWORD(g_abs_8871E0->ShakeScreen)
                               - (double)v26)
-                             / (double)SHIDWORD(MEMORY[0x8871E0]->ShakeScreen)
-                             * (double)MEMORY[0x8871E0][1].?
+                             / (double)IDA_SHIDWORD(g_abs_8871E0->ShakeScreen)
+                             * (double)g_abs_8871E0[1].?
                              + *(double *)((char *)this + 96);
-    v22 = MEMORY[0x8871E0]; /*0x513ecd*/
-    result = SHIDWORD(MEMORY[0x8871E0]->ShakeScreen) / 4; /*0x513edf*/
+    v22 = g_abs_8871E0; /*0x513ecd*/
+    result = IDA_SHIDWORD(g_abs_8871E0->ShakeScreen) / 4; /*0x513edf*/
     if ( v26 < result ) /*0x513ee4*/
     {
-      result = (unsigned int)((unsigned __int64)(1431655766LL * MEMORY[0x8871E0][1].?) >> 32) >> 31; /*0x513ef5*/
-      *(double *)((char *)this + 96) = (double)(MEMORY[0x8871E0][1].? / 3) + *(double *)((char *)this + 96); /*0x513f05*/
-      v22 = MEMORY[0x8871E0]; /*0x513f08*/
+      result = (unsigned int)((uint64_t)(1431655766LL * g_abs_8871E0[1].?) >> 32) >> 31; /*0x513ef5*/
+      *(double *)((char *)this + 96) = (double)(g_abs_8871E0[1].? / 3) + *(double *)((char *)this + 96); /*0x513f05*/
+      v22 = g_abs_8871E0; /*0x513f08*/
     }
   }
   v23 = *(double *)((char *)this + 96) - (double)v22[1].?; /*0x513f15*/
   *(double *)((char *)this + 96) = v23; /*0x513f18*/
-  *(double *)((char *)this + 96) = v23 * *(double *)&MEMORY[0x8871E0]->HoverDampen; /*0x513f27*/
+  *(double *)((char *)this + 96) = v23 * *(double *)&g_abs_8871E0->HoverDampen; /*0x513f27*/
   return result; /*0x513f2a*/
 
 }

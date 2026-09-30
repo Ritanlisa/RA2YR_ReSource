@@ -109,8 +109,8 @@ struct TerrainClass {
     void* q0D8;  // 0xD8
     void* q0DC;  // 0xDC
 // --- flat members (END) ---
-    AbstractClass * * ProcessSpawnAnim(unsigned int * a1, AbstractClass * aP2);
-    int CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2);
+    AbstractClass * * ProcessSpawnAnim(unsigned int * a1, void * aP2);
+    int CheckFrameUpdate(void * aP0, int * a1, int aP2);
     int MissionStubReturnZero();
     int MissionStubReturnZero2();
     int MissionStubReturnZero3(int a1, unsigned int * a2);

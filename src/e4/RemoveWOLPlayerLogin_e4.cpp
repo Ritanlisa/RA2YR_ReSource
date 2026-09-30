@@ -32,7 +32,7 @@ void E4Recv_7AE830::sub_7AE830()
     v13 = (int *)*this; /*0x7ae856*/
     *((unsigned int *)this + 2) = v2 >> 1; /*0x7ae85c*/
     *((unsigned int *)this + 3) = v4 - 1; /*0x7ae864*/
-    v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7ae86f*/
+    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x7ae86f*/
     v6 = 4 * *((unsigned int *)this + 2); /*0x7ae874*/
     *this = v5; /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
@@ -48,8 +48,8 @@ void E4Recv_7AE830::sub_7AE830()
           do /*0x7ae8bd*/
           {
             v10 = ((int (*)(int))*((unsigned int *)this + 6))(v9) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x7ae8a7*/
-            v11 = *(unsigned int *)(*(unsigned int **)this + 4 * v10); /*0x7ae8ab*/
-            *(unsigned int *)(*(unsigned int **)this + 4 * v10) = v9; /*0x7ae8b1*/
+            v11 = *(unsigned int *)(*(unsigned int *)this + 16 * v10); /*0x7ae8ab*/
+            *(unsigned int *)(*(unsigned int *)this + 16 * v10) = v9; /*0x7ae8b1*/
             v12 = *(unsigned int *)(v9 + 8); /*0x7ae8b3*/
             *(unsigned int *)(v9 + 8) = v11; /*0x7ae8b6*/
             v9 = v12; /*0x7ae8b9*/
@@ -62,7 +62,7 @@ void E4Recv_7AE830::sub_7AE830()
       while ( v8 ); /*0x7ae8c3*/
       v3 = v13; /*0x7ae8c5*/
     }
-    __3_YAXPAX_Z(v3); /*0x7ae8ca*/
+    RA2_OPDEL(v3); /*0x7ae8ca*/
   }
 
 }

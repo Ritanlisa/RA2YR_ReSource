@@ -14,6 +14,6 @@ struct E4Recv_6ED200 {
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char AssignTeamProductionFacilities(ScriptClass * aP1,  int a3);    // 0x6ED200
+    char AssignTeamProductionFacilities(void * aP1,  int a3);    // 0x6ED200
 };
 } // namespace gamemd

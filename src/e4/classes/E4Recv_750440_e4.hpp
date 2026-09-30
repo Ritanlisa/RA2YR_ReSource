@@ -6,6 +6,6 @@
 namespace gamemd {
 struct E4Recv_750440 {
     void* vfptr;  // minimal E2 declaration
-    char LoadVocFromINI(CCINIClass * aP1);  // 0x750440
+    char LoadVocFromINI(void * aP1);  // 0x750440
 };
 } // namespace gamemd

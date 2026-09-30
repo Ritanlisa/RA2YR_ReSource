@@ -182,24 +182,24 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   v61 = v10; /*0x68f14d*/
   v60 = (wchar_t *)v6; /*0x68f15a*/
   var24C = 4; /*0x68f15e*/
-  LOWORD(v58) = -18947; /*0x68f166*/
-  BYTE2(v58) = 28; /*0x68f170*/
+  IDA_LOWORD(v58) = -18947; /*0x68f166*/
+  IDA_BYTE2(v58) = 28; /*0x68f170*/
   (*(void (**)(int, wchar_t **, int *, int))(*(unsigned int *)v11 + 28))(v11, &v60, &v58, 25); /*0x68f17b*/
   v63 = v66; /*0x68f189*/
   v60 = (wchar_t *)(v6 + 4); /*0x68f18d*/
   v12 = *((char *)this + 2); /*0x68f191*/
   v61 = v77; /*0x68f19b*/
   var24C = 7; /*0x68f19f*/
-  LOWORD(v58) = -18947; /*0x68f1a7*/
-  BYTE2(v58) = 28; /*0x68f1b1*/
+  IDA_LOWORD(v58) = -18947; /*0x68f1a7*/
+  IDA_BYTE2(v58) = 28; /*0x68f1b1*/
   (*(void (**)(int, wchar_t **, int *, int))(*(unsigned int *)v12 + 28))(v12, &v60, &v58, 50); /*0x68f1bc*/
   v63 = v66; /*0x68f1ca*/
   v60 = (wchar_t *)(v6 + 11); /*0x68f1ce*/
   v13 = *((char *)this + 2); /*0x68f1d2*/
   v61 = v77; /*0x68f1dc*/
   var24C = 4; /*0x68f1e0*/
-  LOWORD(v58) = -18947; /*0x68f1e8*/
-  BYTE2(v58) = 28; /*0x68f1f2*/
+  IDA_LOWORD(v58) = -18947; /*0x68f1e8*/
+  IDA_BYTE2(v58) = 28; /*0x68f1f2*/
   (*(void (**)(int, wchar_t **, int *, int))(*(unsigned int *)v13 + 28))(v13, &v60, &v58, 25); /*0x68f1fd*/
   v62 = (wchar_t *)(v6 + 132); /*0x68f20a*/
   v60 = (wchar_t *)(v6 + 132); /*0x68f20e*/
@@ -208,24 +208,24 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   v78 = v7 - v64; /*0x68f21d*/
   v61 = v7 - v64; /*0x68f221*/
   var24C = 4; /*0x68f22c*/
-  LOWORD(v58) = 7418; /*0x68f234*/
-  BYTE2(v58) = 28; /*0x68f23d*/
+  IDA_LOWORD(v58) = 7418; /*0x68f234*/
+  IDA_BYTE2(v58) = 28; /*0x68f23d*/
   (*(void (**)(int, wchar_t **, int *, int))(*(unsigned int *)v14 + 28))(v14, &v60, &v58, 25); /*0x68f248*/
   v60 = (wchar_t *)(v6 + 136); /*0x68f255*/
   v61 = v78; /*0x68f259*/
   var24C = 7; /*0x68f25d*/
   v15 = *((char *)this + 2); /*0x68f269*/
   v63 = v64; /*0x68f26c*/
-  LOWORD(v58) = 7418; /*0x68f277*/
-  BYTE2(v58) = 28; /*0x68f280*/
+  IDA_LOWORD(v58) = 7418; /*0x68f277*/
+  IDA_BYTE2(v58) = 28; /*0x68f280*/
   (*(void (**)(int, wchar_t **, int *, int))(*(unsigned int *)v15 + 28))(v15, &v60, &v58, 50); /*0x68f28b*/
   v63 = v64; /*0x68f29c*/
   v60 = (wchar_t *)(v6 + 143); /*0x68f2a0*/
   v16 = *((char *)this + 2); /*0x68f2a4*/
   v61 = v78; /*0x68f2ae*/
   var24C = 4; /*0x68f2b2*/
-  LOWORD(v58) = 7418; /*0x68f2ba*/
-  BYTE2(v58) = 28; /*0x68f2c3*/
+  IDA_LOWORD(v58) = 7418; /*0x68f2ba*/
+  IDA_BYTE2(v58) = 28; /*0x68f2c3*/
   (*(void (**)(int, wchar_t **, int *, int))(*(unsigned int *)v16 + 28))(v16, &v60, &v58, 25); /*0x68f2ce*/
   v17 = (CampaignScore *)aP1; /*0x68f2d8*/
   v18 = 1; /*0x68f2df*/
@@ -514,40 +514,40 @@ int Screen::TransitionLoop(int a2)
     v17[2] = 640; /*0x6901db*/
     v17[3] = 400; /*0x6901e3*/
     Rect::Set(v19, v3, v4, 640, 400); /*0x6901eb*/
-    if ( MEMORY[0x887640] ) /*0x6901f8*/
-      (*(void (**)(int, IUnknown *, unsigned int))(*(unsigned int *)MEMORY[0x887640] + 60))( /*0x690205*/
-        MEMORY[0x887640],
-        MEMORY[0x88730C],
+    if ( g_abs_887640 ) /*0x6901f8*/
+      (*(void (**)(int, IUnknown *, unsigned int))(*(unsigned int *)g_abs_887640 + 60))( /*0x690205*/
+        g_abs_887640,
+        g_abs_88730C,
         0);
-    (*(void (**)(int, unsigned int *, IUnknown *, unsigned int *, unsigned int, int))(*(unsigned int *)MEMORY[0x887308] + 8))( /*0x690225*/
-      MEMORY[0x887308],
+    (*(void (**)(int, unsigned int *, IUnknown *, unsigned int *, unsigned int, int))(*(unsigned int *)g_abs_887308 + 8))( /*0x690225*/
+      g_abs_887308,
       v17,
-      MEMORY[0x88730C],
+      g_abs_88730C,
       v19,
       0,
       1);
-    if ( MEMORY[0x887640] ) /*0x690230*/
-      (*(void (**)(int, IUnknown *, unsigned int))(*(unsigned int *)MEMORY[0x887640] + 64))( /*0x69023d*/
-        MEMORY[0x887640],
-        MEMORY[0x88730C],
+    if ( g_abs_887640 ) /*0x690230*/
+      (*(void (**)(int, IUnknown *, unsigned int))(*(unsigned int *)g_abs_887640 + 64))( /*0x69023d*/
+        g_abs_887640,
+        g_abs_88730C,
         0);
     do
     {
       Event::Dispatch(); /*0x690240*/
       MessageLoop(); /*0x690245*/
-      if ( !MEMORY[0xA8EA70].__pad_310[0] )
+      if ( !g_abs_A8EA70 )
       {
         if ( Ticks == -1
           || ((v5 = Timer::GetTicks() - Ticks, v5 >= v16) ? (v6 = 0) : (v6 = v16 - v5),
               v16 = v6,
-              MEMORY[0xA8EA70].__pad_310[0] != 1) )
+              g_abs_A8EA70 != 1) )
         {
           for ( i = 0; i < (int)this->field_2C; ++i ) /*0x690292*/
           {
             v8 = *(unsigned int *)(*(unsigned int *)&this->__pad_18[8] + 4 * i); /*0x690297*/
             (*(void (**)(int))(*(unsigned int *)v8 + 4))(v8); /*0x69029c*/
           }
-          while ( !MEMORY[0xA8EA70].__pad_310[0] ) /*0x6902ae*/
+          while ( !g_abs_A8EA70 ) /*0x6902ae*/
           {
             Sleep(0x1F4u); /*0x6902b5*/
             MessageLoop(); /*0x6902b7*/
@@ -593,14 +593,14 @@ int Screen::CleanupTransitionObjects()
   char *v7; // ecx
   int v8; // eax
 
-  MEMORY[0xB05584] = 0; /*0x69036b*/
-  if ( MEMORY[0x8A00A0] ) /*0x690372*/
+  g_abs_B05584 = 0; /*0x69036b*/
+  if ( g_abs_8A00A0 ) /*0x690372*/
   {
-    MEMORY[0x8A00A0] = 0; /*0x69037a*/
-    (*(void (**)(IUnknown *, unsigned int))(MEMORY[0x88730C]->field_0 + 24))(MEMORY[0x88730C], 0); /*0x690385*/
-    (*(void (**)(IUnknown *, int, unsigned int, int))(MEMORY[0x88730C]->field_0 + 4))( /*0x69039a*/
-      MEMORY[0x88730C],
-      MEMORY[0x887310],
+    g_abs_8A00A0 = 0; /*0x69037a*/
+    (*(void (**)(IUnknown *, unsigned int))(g_abs_88730C->field_0 + 24))(g_abs_88730C, 0); /*0x690385*/
+    (*(void (**)(IUnknown *, int, unsigned int, int))(g_abs_88730C->field_0 + 4))( /*0x69039a*/
+      g_abs_88730C,
+      g_abs_887310,
       0,
       1);
   }
@@ -608,7 +608,7 @@ int Screen::CleanupTransitionObjects()
   for ( i = 0; i < result; ++i ) /*0x6903a4*/
   {
     v4 = *(unsigned int *)(*(unsigned int *)&this->__pad_18[8] + 4 * i); /*0x6903ad*/
-    if ( (*(unsigned __int8 (**)(int, void *))(*(unsigned int *)v4 + 12))(v4, this->field_8) == 1 ) /*0x6903b7*/
+    if ( (*(uint8_t (**)(int, void *))(*(unsigned int *)v4 + 12))(v4, this->field_8) == 1 ) /*0x6903b7*/
     {
       v5 = *(void (****)(unsigned int, int))(*(unsigned int *)&this->__pad_18[8] + 4 * i); /*0x6903bc*/
       if ( v5 ) /*0x6903c1*/

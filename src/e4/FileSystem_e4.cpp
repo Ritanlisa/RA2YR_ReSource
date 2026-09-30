@@ -56,15 +56,15 @@ int FileSystem::ProcessNextFileExtension()
   unsigned int *v29; // [esp+18h] [ebp-10h]
   int v30; // [esp+1Ch] [ebp-Ch]
 
-  v0 = MEMORY[0xAC48F0]; /*0x626da7*/
-  if ( !MEMORY[0xAC48F0] ) /*0x626db1*/
+  v0 = g_abs_AC48F0; /*0x626da7*/
+  if ( !g_abs_AC48F0 ) /*0x626db1*/
   {
-    v1 = __2_YAPAXI_Z(0x10u); /*0x626db9*/
+    v1 = (unsigned int *)(RA2_OPNEW(0x10u));
     v0 = v1; /*0x626dbe*/
     if ( v1 ) /*0x626dc5*/
     {
-      *v1 = -1; /*0x626dc9*/
-      v2 = __2_YAPAXI_Z(0x18u); /*0x626dcf*/
+      *v1 = (unsigned int *)(-1);
+      v2 = (unsigned int *)(RA2_OPNEW(0x18u));
       v3 = v2; /*0x626dd4*/
       if ( v2 ) /*0x626ddb*/
       {
@@ -77,13 +77,13 @@ int FileSystem::ProcessNextFileExtension()
       {
         v3 = 0; /*0x626df8*/
       }
-      v0[1] = v3; /*0x626dfc*/
-      if ( __2_YAPAXI_Z(0x18u) ) /*0x626dff*/
+      v0[1] = (unsigned int)(v3);
+      if ( RA2_OPNEW(0x18u) ) /*0x626dff*/
         v4 = FileExtension::Constructor(0, 0); /*0x626e0f*/
       else
         v4 = 0; /*0x626e16*/
       v0[2] = v4; /*0x626e1a*/
-      v5 = (int *)__2_YAPAXI_Z(0x10u); /*0x626e1d*/
+      v5 = (int *)RA2_OPNEW(0x10u); /*0x626e1d*/
       if ( v5 ) /*0x626e27*/
         v0[3] = DynamicVectorArray::Constructor(v5, 10, 31, (int)HashStringMod31); /*0x626e39*/
       else
@@ -93,7 +93,7 @@ int FileSystem::ProcessNextFileExtension()
     {
       v0 = 0; /*0x626e45*/
     }
-    MEMORY[0xAC48F0] = v0; /*0x626e47*/
+    g_abs_AC48F0 = v0; /*0x626e47*/
   }
   v6 = (unsigned int *)v0[3]; /*0x626e4d*/
   v7 = 0; /*0x626e50*/
@@ -122,7 +122,7 @@ LABEL_19:
     }
     if ( v10 ) /*0x626ec0*/
     {
-      v13 = *((unsigned int *)MEMORY[0xAC48F0] + 3); /*0x626ece*/
+      v13 = *((unsigned int *)g_abs_AC48F0 + 3); /*0x626ece*/
       v14 = *(unsigned int *)v13 + 24 * ((*(int (**)(char *))(v13 + 4))(v10) % *(unsigned int *)(v13 + 8)); /*0x626ee1*/
       v15 = *(unsigned int *)(v14 + 16) - 1; /*0x626ee4*/
       v28 = v14; /*0x626ee5*/
@@ -145,7 +145,7 @@ LABEL_19:
         {
           do /*0x626fd6*/
           {
-            v19 = (unsigned int *)*((unsigned int *)MEMORY[0xAC48F0] + 3); /*0x626f63*/
+            v19 = (unsigned int *)*((unsigned int *)g_abs_AC48F0 + 3); /*0x626f63*/
             ++v27; /*0x626f66*/
             v29 = v19; /*0x626f6a*/
             if ( v30 >= v19[2] ) /*0x626f71*/
@@ -194,40 +194,40 @@ void FileSystem::InitPipShapes()
 
   int v0[9]; // [esp+0h] [ebp-24h] BYREF
 
-  if ( !MEMORY[0xAC1478] ) /*0x5f76ba*/
+  if ( !g_abs_AC1478 ) /*0x5f76ba*/
   {
-    RawFileClass::Construct(v0, (int)MEMORY[0x832AA8]); /*0x5f76c5*/
-    MEMORY[0xAC1478] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f76da*/
-    MEMORY[0xAC1488] = MEMORY[0xAC1478] != 0; /*0x5f76df*/
-    if ( !MEMORY[0xAC1478] ) /*0x5f76e5*/
-      MEMORY[0xAC1478] = SearchMIXFile(MEMORY[0x832AA8], 0); /*0x5f76f3*/
+    RawFileClass::Construct(v0, (int)g_abs_832AA8); /*0x5f76c5*/
+    g_abs_AC1478 = (int)CCFileClass::ReadEntireFile(v0); /*0x5f76da*/
+    g_abs_AC1488 = g_abs_AC1478 != 0; /*0x5f76df*/
+    if ( !g_abs_AC1478 ) /*0x5f76e5*/
+      g_abs_AC1478 = SearchMIXFile(g_abs_832AA8, 0); /*0x5f76f3*/
     RawFileClass::Dtor(v0); /*0x5f76fc*/
   }
-  if ( !MEMORY[0xAC147C] ) /*0x5f7708*/
+  if ( !g_abs_AC147C ) /*0x5f7708*/
   {
-    RawFileClass::Construct(v0, (int)MEMORY[0x832A9C]); /*0x5f7713*/
-    MEMORY[0xAC147C] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7728*/
-    MEMORY[0xAC1489] = MEMORY[0xAC147C] != 0; /*0x5f772d*/
-    if ( !MEMORY[0xAC147C] ) /*0x5f7733*/
-      MEMORY[0xAC147C] = SearchMIXFile(MEMORY[0x832A9C], 0); /*0x5f7741*/
+    RawFileClass::Construct(v0, (int)g_abs_832A9C); /*0x5f7713*/
+    g_abs_AC147C = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7728*/
+    g_abs_AC1489 = g_abs_AC147C != 0; /*0x5f772d*/
+    if ( !g_abs_AC147C ) /*0x5f7733*/
+      g_abs_AC147C = SearchMIXFile(g_abs_832A9C, 0); /*0x5f7741*/
     RawFileClass::Dtor(v0); /*0x5f774a*/
   }
-  if ( !MEMORY[0xAC1480] ) /*0x5f7756*/
+  if ( !g_abs_AC1480 ) /*0x5f7756*/
   {
-    RawFileClass::Construct(v0, (int)MEMORY[0x832A90]); /*0x5f7761*/
-    MEMORY[0xAC1480] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7776*/
-    MEMORY[0xAC148A] = MEMORY[0xAC1480] != 0; /*0x5f777b*/
-    if ( !MEMORY[0xAC1480] ) /*0x5f7781*/
-      MEMORY[0xAC1480] = SearchMIXFile(MEMORY[0x832A90], 0); /*0x5f778f*/
+    RawFileClass::Construct(v0, (int)g_abs_832A90); /*0x5f7761*/
+    g_abs_AC1480 = (int)CCFileClass::ReadEntireFile(v0); /*0x5f7776*/
+    g_abs_AC148A = g_abs_AC1480 != 0; /*0x5f777b*/
+    if ( !g_abs_AC1480 ) /*0x5f7781*/
+      g_abs_AC1480 = SearchMIXFile(g_abs_832A90, 0); /*0x5f778f*/
     RawFileClass::Dtor(v0); /*0x5f7798*/
   }
-  if ( !MEMORY[0xAC1484] ) /*0x5f77a4*/
+  if ( !g_abs_AC1484 ) /*0x5f77a4*/
   {
-    RawFileClass::Construct(v0, (int)MEMORY[0x832A80]); /*0x5f77af*/
-    MEMORY[0xAC1484] = (int)CCFileClass::ReadEntireFile(v0); /*0x5f77c4*/
-    MEMORY[0xAC148B] = MEMORY[0xAC1484] != 0; /*0x5f77c9*/
-    if ( !MEMORY[0xAC1484] ) /*0x5f77cf*/
-      MEMORY[0xAC1484] = SearchMIXFile(MEMORY[0x832A80], 0); /*0x5f77dd*/
+    RawFileClass::Construct(v0, (int)g_abs_832A80); /*0x5f77af*/
+    g_abs_AC1484 = (int)CCFileClass::ReadEntireFile(v0); /*0x5f77c4*/
+    g_abs_AC148B = g_abs_AC1484 != 0; /*0x5f77c9*/
+    if ( !g_abs_AC1484 ) /*0x5f77cf*/
+      g_abs_AC1484 = SearchMIXFile(g_abs_832A80, 0); /*0x5f77dd*/
     RawFileClass::Dtor(v0); /*0x5f77e6*/
   }
 
@@ -242,51 +242,51 @@ void FileSystem::CleanupTrees()
   void *v1; // esi
   void *v2; // esi
 
-  if ( MEMORY[0xB0FBAC] ) /*0x72d35a*/
+  if ( g_abs_B0FBAC ) /*0x72d35a*/
   {
-    MEMORY[0xB0FBAC] = 0; /*0x72d368*/
-    if ( MEMORY[0xB0FC70] ) /*0x72d36e*/
+    g_abs_B0FBAC = 0; /*0x72d368*/
+    if ( g_abs_B0FC70 ) /*0x72d36e*/
     {
-      v0 = MEMORY[0xB0FB34]; /*0x72d370*/
-      if ( MEMORY[0xB0FB34] ) /*0x72d378*/
+      v0 = g_abs_B0FB34; /*0x72d370*/
+      if ( g_abs_B0FB34 ) /*0x72d378*/
       {
-        FileTreeNode::Destroy(MEMORY[0xB0FB34]); /*0x72d37c*/
-        __3_YAXPAX_Z(v0); /*0x72d382*/
+        FileTreeNode::Destroy(g_abs_B0FB34); /*0x72d37c*/
+        RA2_OPDEL(v0); /*0x72d382*/
       }
-      MEMORY[0xB0FC70] = 0; /*0x72d38a*/
+      g_abs_B0FC70 = 0; /*0x72d38a*/
     }
-    MEMORY[0xB0FB34] = 0; /*0x72d395*/
-    if ( MEMORY[0xB0FC71] ) /*0x72d39d*/
+    g_abs_B0FB34 = 0; /*0x72d395*/
+    if ( g_abs_B0FC71 ) /*0x72d39d*/
     {
-      v1 = MEMORY[0xB0FB00]; /*0x72d39f*/
-      if ( MEMORY[0xB0FB00] ) /*0x72d3a7*/
+      v1 = g_abs_B0FB00; /*0x72d39f*/
+      if ( g_abs_B0FB00 ) /*0x72d3a7*/
       {
-        FileTreeNode::Destroy(MEMORY[0xB0FB00]); /*0x72d3ab*/
-        __3_YAXPAX_Z(v1); /*0x72d3b1*/
+        FileTreeNode::Destroy(g_abs_B0FB00); /*0x72d3ab*/
+        RA2_OPDEL(v1); /*0x72d3b1*/
       }
-      MEMORY[0xB0FC71] = 0; /*0x72d3b9*/
+      g_abs_B0FC71 = 0; /*0x72d3b9*/
     }
-    MEMORY[0xB0FB00] = 0; /*0x72d3c4*/
-    if ( MEMORY[0xB0FC72] ) /*0x72d3cc*/
+    g_abs_B0FB00 = 0; /*0x72d3c4*/
+    if ( g_abs_B0FC72 ) /*0x72d3cc*/
     {
-      v2 = MEMORY[0xB0FB30]; /*0x72d3ce*/
-      if ( MEMORY[0xB0FB30] ) /*0x72d3d6*/
+      v2 = g_abs_B0FB30; /*0x72d3ce*/
+      if ( g_abs_B0FB30 ) /*0x72d3d6*/
       {
-        FileTreeNode::Destroy(MEMORY[0xB0FB30]); /*0x72d3da*/
-        __3_YAXPAX_Z(v2); /*0x72d3e0*/
+        FileTreeNode::Destroy(g_abs_B0FB30); /*0x72d3da*/
+        RA2_OPDEL(v2); /*0x72d3e0*/
       }
-      MEMORY[0xB0FC72] = 0; /*0x72d3e8*/
+      g_abs_B0FC72 = 0; /*0x72d3e8*/
     }
-    MEMORY[0xB0FB30] = 0; /*0x72d3f3*/
-    if ( MEMORY[0xB0FBA4] ) /*0x72d3fc*/
+    g_abs_B0FB30 = 0; /*0x72d3f3*/
+    if ( g_abs_B0FBA4 ) /*0x72d3fc*/
     {
-      __3_YAXPAX_Z(MEMORY[0xB0FBA4]); /*0x72d3ff*/
-      MEMORY[0xB0FBA4] = 0; /*0x72d407*/
+      RA2_OPDEL(g_abs_B0FBA4); /*0x72d3ff*/
+      g_abs_B0FBA4 = 0; /*0x72d407*/
     }
-    if ( MEMORY[0xB0FBA8] ) /*0x72d415*/
+    if ( g_abs_B0FBA8 ) /*0x72d415*/
     {
-      (**(void (***)(int, int))MEMORY[0xB0FBA8])(MEMORY[0xB0FBA8], 1); /*0x72d41b*/
-      MEMORY[0xB0FBA8] = 0; /*0x72d41d*/
+      (**(void (***)(int, int))g_abs_B0FBA8)(g_abs_B0FBA8, 1); /*0x72d41b*/
+      g_abs_B0FBA8 = 0; /*0x72d41d*/
     }
   }
 

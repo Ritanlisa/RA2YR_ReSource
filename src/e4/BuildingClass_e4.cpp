@@ -27,6 +27,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x453E20
 namespace gamemd {
@@ -71,24 +72,24 @@ void* BuildingClass::LoadFromStream()
   v1 = v33; /*0x453e25*/
   v2 = v33 + 4; /*0x453e2c*/
   v33 = (*(int (**)(int))(*(unsigned int *)(v33 + 4) + 16))(v33 + 4); /*0x453e3d*/
-  v3 = BuildingTypeClass::Dequeue((char **)&MEMORY[0xB0E840], &v33); /*0x453e41*/
+  v3 = BuildingTypeClass::Dequeue((char **)&g_abs_B0E840, &v33); /*0x453e41*/
   v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/
   {
-    v5 = (int)(v3 - (unsigned int)MEMORY[0xB0E840]) >> 3; /*0x453e52*/
+    v5 = (int)(v3 - (unsigned int)g_abs_B0E840) >> 3; /*0x453e52*/
     if ( v5 != -1 ) /*0x453e58*/
     {
       v6 = v5 + 1; /*0x453e5a*/
-      for ( i = MEMORY[0xB0E844]; v6 < (int)MEMORY[0xB0E844]; i = MEMORY[0xB0E844] ) /*0x453e64*/
+      for ( i = g_abs_B0E844; v6 < (int)g_abs_B0E844; i = g_abs_B0E844 ) /*0x453e64*/
       {
-        v8 = (unsigned int *)((char *)MEMORY[0xB0E840] + 8 * v6++); /*0x453e6c*/
+        v8 = (unsigned int *)((char *)g_abs_B0E840 + 8 * v6++); /*0x453e6c*/
         *(v8 - 2) = *v8; /*0x453e72*/
         *(v8 - 1) = v8[1]; /*0x453e78*/
       }
-      MEMORY[0xB0E844] = i - 1; /*0x453e8d*/
-      *((unsigned int *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844]) = 0; /*0x453e92*/
-      *((unsigned int *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844] + 1) = 0; /*0x453ea3*/
-      MEMORY[0xB0E850] = 0; /*0x453ea7*/
+      g_abs_B0E844 = i - 1; /*0x453e8d*/
+      *((unsigned int *)g_abs_B0E840 + 2 * g_abs_B0E844) = 0; /*0x453e92*/
+      *((unsigned int *)g_abs_B0E840 + 2 * g_abs_B0E844 + 1) = 0; /*0x453ea3*/
+      g_abs_B0E850 = 0; /*0x453ea7*/
     }
   }
   v9 = v34; /*0x453ead*/
@@ -99,28 +100,28 @@ void* BuildingClass::LoadFromStream()
     if ( v1 ) /*0x453ec6*/
       BuildingClass::ctor((unsigned int *)v1, (int)&v33); /*0x453ecf*/
     v11 = (*(int (**)(int))(*(unsigned int *)v2 + 16))(v2); /*0x453ee0*/
-    v12 = MEMORY[0xB0E848]; /*0x453ee2*/
-    if ( (int)(MEMORY[0xB0E844] + 1) <= MEMORY[0xB0E848] ) /*0x453eea*/
+    v12 = g_abs_B0E848; /*0x453ee2*/
+    if ( (int)(g_abs_B0E844 + 1) <= g_abs_B0E848 ) /*0x453eea*/
       goto LABEL_13; /*0x453eea*/
-    if ( !MEMORY[0xB0E848] ) /*0x453eee*/
+    if ( !g_abs_B0E848 ) /*0x453eee*/
       v12 = 10; /*0x453ef0*/
-    if ( BuildingTypeClass::Enqueue((int)&MEMORY[0xB0E840], v12) ) /*0x453efb*/
+    if ( BuildingTypeClass::Enqueue((int)&g_abs_B0E840, v12) ) /*0x453efb*/
     {
 LABEL_13:
-      *((unsigned int *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844]) = v11; /*0x453f0f*/
-      *((unsigned int *)MEMORY[0xB0E840] + 2 * MEMORY[0xB0E844] + 1) = v1; /*0x453f1e*/
-      MEMORY[0xB0E84C] = 0; /*0x453f28*/
-      ++MEMORY[0xB0E844]; /*0x453f2f*/
+      *((unsigned int *)g_abs_B0E840 + 2 * g_abs_B0E844) = v11; /*0x453f0f*/
+      *((unsigned int *)g_abs_B0E840 + 2 * g_abs_B0E844 + 1) = v1; /*0x453f1e*/
+      g_abs_B0E84C = 0; /*0x453f28*/
+      ++g_abs_B0E844; /*0x453f2f*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1312)); /*0x453f40*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1316)); /*0x453f51*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1344)); /*0x453f62*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1352)); /*0x453f73*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1356)); /*0x453f84*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1536)); /*0x453f95*/
-    AudioController::Init((unsigned int *)(v1 + 1696)); /*0x453fa0*/
-    AudioController::Init((unsigned int *)(v1 + 1716)); /*0x453fab*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v1 + 1780)); /*0x453fbc*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v1 + 1312)); /*0x453f40*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v1 + 1316)); /*0x453f51*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v1 + 1344)); /*0x453f62*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v1 + 1352)); /*0x453f73*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v1 + 1356)); /*0x453f84*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v1 + 1536)); /*0x453f95*/
+    ((AudioController *)((unsigned int *)(v1 + 1696)))->Init(); /*0x453fa0*/
+    ((AudioController *)((unsigned int *)(v1 + 1716)))->Init(); /*0x453fab*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v1 + 1780)); /*0x453fbc*/
     result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v34, 4, 0); /*0x453fcd*/
     if ( result >= 0 ) /*0x453fd2*/
     {
@@ -132,7 +133,7 @@ LABEL_24:
         if ( v13 > 0 ) /*0x454050*/
         {
           do /*0x45406b*/
-            ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(unsigned int *)(v1 + 1648) + 4 * v18++)); /*0x454061*/
+            ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(*(unsigned int *)(v1 + 1648) + 4 * v18++)); /*0x454061*/
           while ( v18 < v34 ); /*0x45406b*/
         }
         result = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v34, 4, 0); /*0x45407a*/
@@ -147,14 +148,14 @@ LABEL_36:
             if ( v19 > 0 ) /*0x4540ff*/
             {
               do /*0x45411a*/
-                ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(unsigned int *)(v1 + 1672) + 4 * v25++)); /*0x454110*/
+                ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(*(unsigned int *)(v1 + 1672) + 4 * v25++)); /*0x454110*/
               while ( v25 < v34 ); /*0x45411a*/
             }
             v26 = (int *)(v1 + 1372); /*0x45411c*/
             v27 = 21; /*0x454122*/
             do /*0x454136*/
             {
-              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v26++); /*0x45412d*/
+              ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v26++); /*0x45412d*/
               --v27; /*0x454135*/
             }
             while ( v27 ); /*0x454136*/
@@ -162,7 +163,7 @@ LABEL_36:
             v29 = 3; /*0x45413e*/
             do /*0x454152*/
             {
-              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v28++); /*0x454149*/
+              ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v28++); /*0x454149*/
               --v29; /*0x454151*/
             }
             while ( v29 ); /*0x454152*/
@@ -170,7 +171,7 @@ LABEL_36:
             v31 = 8; /*0x45415a*/
             do /*0x45416e*/
             {
-              ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v30++); /*0x454165*/
+              ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v30++); /*0x454165*/
               --v31; /*0x45416d*/
             }
             while ( v31 ); /*0x45416e*/
@@ -188,7 +189,7 @@ LABEL_36:
               if ( *(unsigned int *)(v1 + 1684) < v21 /*0x4540d8*/
                 || (*(unsigned char *)(v1 + 1681) || !v21)
                 && (v22 = *(unsigned int *)(v1 + 1688), v22 > 0)
-                && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)(v1 + 1668) + 8))(
+                && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(v1 + 1668) + 8))(
                      v1 + 1668,
                      v21 + v22,
                      0) )
@@ -216,7 +217,7 @@ LABEL_36:
           if ( *(unsigned int *)(v1 + 1660) < v14 /*0x454029*/
             || (*(unsigned char *)(v1 + 1657) || !v14)
             && (v15 = *(unsigned int *)(v1 + 1664), v15 > 0)
-            && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)(v1 + 1644) + 8))(
+            && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(v1 + 1644) + 8))(
                  v1 + 1644,
                  v14 + v15,
                  0) )
@@ -233,7 +234,7 @@ LABEL_36:
       }
     }
   }
-  return result; /*0x45417e*/
+  return (void *)(result);
 
 }
 }
@@ -248,7 +249,7 @@ int BuildingClass::AssignDestination_SyncLog()
 
   if ( *((unsigned int *)this + 43) != 19 ) /*0x455d5a*/
   {
-    if ( (*(unsigned __int8 (**)(#377 *))(*(unsigned int *)this + 644))(this) /*0x455d73*/
+    if ( (*(uint8_t (**)(#377 *))(*(unsigned int *)this + 644))(this) /*0x455d73*/
       || *(unsigned char *)(*((unsigned int *)this + 328) + 5817) )
     {
       TechnoClass::SetFocus(this, aP1); /*0x455d80*/
@@ -346,15 +347,15 @@ int BuildingClass::FindClosestForRepair2(int a1)
   char v16[12]; // [esp+38h] [ebp-18h] BYREF
   char v17[12]; // [esp+44h] [ebp-Ch] BYREF
 
-  v1 = MEMORY[0xA8EB50] - 1; /*0x4dfe0f*/
+  v1 = g_abs_A8EB50 - 1; /*0x4dfe0f*/
   v13 = 0; /*0x4dfe17*/
   v3 = 0x7FFFFFFF; /*0x4dfe1f*/
-  v12 = MEMORY[0xA8EB50] - 1; /*0x4dfe24*/
-  if ( MEMORY[0xA8EB50] - 1 < 0 ) /*0x4dfe28*/
+  v12 = g_abs_A8EB50 - 1; /*0x4dfe24*/
+  if ( g_abs_A8EB50 - 1 < 0 ) /*0x4dfe28*/
     goto LABEL_10; /*0x4dfe28*/
   do
   {
-    v4 = (unsigned int *)*((unsigned int *)MEMORY[0xA8EB44] + v1); /*0x4dfe36*/
+    v4 = (unsigned int *)*((unsigned int *)g_abs_A8EB44 + v1); /*0x4dfe36*/
     if ( a1 )
       v5 = (*(int (**)(int))(*(unsigned int *)a1 + 44))(a1) == 15 ? a1 : 0;
     else
@@ -442,7 +443,7 @@ LABEL_8:
     v10 = (unsigned int *)*((char *)this + 17); /*0x629793*/
     if ( v10 ) /*0x629798*/
     {
-      v10[45] = MEMORY[0xA8ED84]; /*0x6297af*/
+      v10[45] = g_abs_A8ED84; /*0x6297af*/
       v11 = v12[2]; /*0x6297b2*/
       v10[48] = 128; /*0x6297b7*/
       v10[46] = v11; /*0x6297bf*/
@@ -716,11 +717,11 @@ int BuildingClass::SaveLoad_Register()
   result = AbstractClass::SaveLoad_Prefix_0(v2, v3); /*0x5f5e8b*/
   if ( result >= 0 ) /*0x5f5e92*/
   {
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v2 + 12); /*0x5f5e9d*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v2 + 13); /*0x5f5eab*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v2 + 14); /*0x5f5eb9*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v2 + 6); /*0x5f5ec7*/
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], v2 + 34); /*0x5f5ed8*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v2 + 12); /*0x5f5e9d*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v2 + 13); /*0x5f5eab*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v2 + 14); /*0x5f5eb9*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v2 + 6); /*0x5f5ec7*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, v2 + 34); /*0x5f5ed8*/
     AudioController::Init(v2 + 15); /*0x5f5ee0*/
     AudioController::Init(v2 + 20); /*0x5f5ee8*/
     v2[42] = 0; /*0x5f5eed*/

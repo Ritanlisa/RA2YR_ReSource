@@ -26,7 +26,6 @@ struct NullModemClass {
     unsigned int u32_51;
     unsigned int u32_5C;
     unsigned int u32_68;
-    unsigned int Active;
     unsigned int PacketsSent;
     unsigned int Debug;
 // --- flat members (END) ---

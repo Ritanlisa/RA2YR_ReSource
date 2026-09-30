@@ -22,7 +22,7 @@ struct RawFileClass {
     unsigned int Write;
 // --- flat members (END) ---
     int Close(int a2, int a3);
-    void Dtor(void *a1 = 0);
+    void Dtor();
      double Construct(...);  // C2597 interim stub
 };
 

@@ -63,7 +63,7 @@ long MainMenu_Screen(void * a1, void * a2)
     }
     do /*0x531f04*/
     {
-            if ( (unsigned __int8)Dialog::PumpMessages() )
+            if ( (uint8_t)this->Dialog::PumpMessages() )
         dwNewLong = 7; /*0x531dbb*/
       if ( g_LoadScreenFlag ) /*0x531dca*/
       {
@@ -150,14 +150,14 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
         ((void (*)(int, int, unsigned int, unsigned int))SendMessageA)(v8, 1264, 0, 0); /*0x5320eb*/
         break;
       case 273: /*0x531fa1*/
-        if ( (unsigned __int16)a3 > 0x683u ) /*0x532033*/
+        if ( (uint16_t)a3 > 0x683u ) /*0x532033*/
         {
-          if ( (unsigned __int16)a3 == 1668 ) /*0x5320a6*/
+          if ( (uint16_t)a3 == 1668 ) /*0x5320a6*/
           {
             *v5 = 2; /*0x5320c2*/
             return 0; /*0x5320d2*/
           }
-          if ( (unsigned __int16)a3 == 1670 ) /*0x5320ab*/
+          if ( (uint16_t)a3 == 1670 ) /*0x5320ab*/
           {
             *v5 = 4; /*0x5320ae*/
             return 0; /*0x5320be*/
@@ -165,7 +165,7 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
         }
         else
         {
-          switch ( (unsigned __int16)a3 ) /*0x532035*/
+          switch ( (uint16_t)a3 ) /*0x532035*/
           {
             case 0x683u: /*0x532035*/
               *v5 = 1; /*0x53208d*/
@@ -184,7 +184,7 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
         break;
       case 1175: /*0x531fa1*/
         v6 = ((int (*)(int, int))GetDlgItem)(hWnd, 1821); /*0x531fcc*/
-        ModuleInternalVersion = GetModuleInternalVersion((int)&MEMORY[0x87F7E8][539966]); /*0x531fce*/
+        ModuleInternalVersion = GetModuleInternalVersion((int)&g_abs_87F7E8[539966]); /*0x531fce*/
         CharToWideString(ModuleInternalVersion); /*0x531fd5*/
         GetStringCSF((#72 *)aGuiVersion, 0, g_Str_File_Init_CPP, 5975); /*0x531fec*/
         swprintf((#72 *const)lParam, &off_826960); /*0x531ffc*/

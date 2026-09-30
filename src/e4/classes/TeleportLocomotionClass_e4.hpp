@@ -41,7 +41,7 @@ struct TeleportLocomotionClass {
     ILocomotion* Piggybackee;  // 0x48
     bool q04A;  // 0x4A
 // --- flat members (END) ---
-    TeleportLocomotionClass();
+TeleportLocomotionClass();
 };
 
 } // namespace gamemd

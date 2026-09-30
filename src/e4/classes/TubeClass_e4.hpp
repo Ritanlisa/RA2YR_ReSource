@@ -84,8 +84,8 @@ struct TubeClass {
     unsigned int q0C3;  // 0xC3
     char TubeClass_field_C4[4];  // 0xC4
 // --- flat members (END) ---
-    int LoadState(AbstractClass * aP0, int aP1);
-    int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);
+    int LoadState(void * aP0, int aP1);
+    int SaveState(void * aP0, int * a1, int aP2);
     int StubReturn452();
     int StubReturn53();
     int ddtor(int a1, unsigned int * a2);

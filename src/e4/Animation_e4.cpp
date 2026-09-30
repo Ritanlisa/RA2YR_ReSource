@@ -22,6 +22,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/BombClass_e4.hpp"
 
 // 0x4549B0
 namespace gamemd {
@@ -54,7 +55,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   TechnoClass *v25; // ebp
   int j; // edi
 
-  v2 = (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 848))(this) == 0; /*0x4549bd*/
+  v2 = (*(uint8_t (**)(int *))(*(unsigned int *)this + 848))(this) == 0; /*0x4549bd*/
   v3 = *((char *)this + 328); /*0x4549bf*/
   v4 = *(unsigned int *)(v3 + 1036); /*0x4549c5*/
   if ( !v2 ) /*0x4549cb*/
@@ -80,7 +81,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
       }
     }
     if ( v5[3281] && !*((unsigned char *)this + 617) ) /*0x454a4b*/
-      (*(void (**)(int *))(*(unsigned int **)this + 1044))(this); /*0x454a59*/
+      (*(void (**)(int *))(*(unsigned int *)this + 1044))(this); /*0x454a59*/
     v7 = *((char *)this + 328); /*0x454a5f*/
     if ( *(unsigned char *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
       BuildingClass::ProcessAnimationStates((int)this); /*0x454a7b*/
@@ -137,10 +138,10 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   {
     if ( *((unsigned char *)this + 617) ) /*0x454b9b*/
     {
-      (*(void (**)(int *))(*(unsigned int **)this + 1048))(this); /*0x454ba9*/
+      (*(void (**)(int *))(*(unsigned int *)this + 1048))(this); /*0x454ba9*/
       if ( *((unsigned char *)this + 616) ) /*0x454baf*/
       {
-        v17 = *((char *)this + 135); /*0x454bb9*/
+        v17 = (int)(*((char *)this + 135));
         *((unsigned char *)this + 616) = 0; /*0x454bbf*/
         *((unsigned char *)this + 1641) = 0; /*0x454bc6*/
         *(unsigned char *)(v17 + 22392) = 1; /*0x454bcd*/
@@ -221,8 +222,8 @@ int Animation::GetProgress()
   v4 = *((unsigned int *)this + 4); /*0x4a5314*/
   if ( v3 != -1 ) /*0x4a531a*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v3 < v4 ) /*0x4a5326*/
-      return (double)(v1 - (v4 - ((int)MEMORY[0xA8ED84] - v3))) / (double)v1; /*0x4a533c*/
+    if ( (int)g_abs_A8ED84 - v3 < v4 ) /*0x4a5326*/
+      return (double)(v1 - (v4 - ((int)g_abs_A8ED84 - v3))) / (double)v1; /*0x4a533c*/
     v4 = 0; /*0x4a533d*/
   }
   return (double)(v1 - v4) / (double)v1; /*0x4a530d*/
@@ -258,14 +259,14 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   ObjectClass *v24; // [esp+18h] [ebp-8h] BYREF
   int v25; // [esp+1Ch] [ebp-4h]
 
-  v3 = aP2; /*0x770554*/
-  v4 = (ObjectClass *)a1; /*0x770559*/
+  v3 = (gamemd::ObjectClass *)(aP2);
+  v4 = (gamemd::ObjectClass *)((ObjectClass *)a1);
   v22 = this; /*0x77055f*/
-  v5 = (ObjectClass *)&this->__pad_0[4]; /*0x770563*/
+  v5 = (ObjectClass *)&this-((unsigned int *)(>__pad_0))[4]; /*0x770563*/
   v24 = (ObjectClass *)6; /*0x770566*/
   while ( 1 ) /*0x770574*/
   {
-    v6 = *(ObjectClass **)this->__pad_0; /*0x770574*/
+    v6 = (gamemd::ObjectClass *)((gamemd::Animation *)(*(ObjectClass **)this->__pad_0));
     String::Assign((char **)&aP2, &stru_830620.__pad_579C[33740]); /*0x77057f*/
     INIClass::ReadTokenizedPair((char **)v5, v4, v3, v6, 0, (ObjectClass *)&aP2); /*0x770590*/
     DeleteAndZero((void **)&aP2); /*0x770599*/
@@ -285,25 +286,25 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   v7 = StaticString::Factory(*(void **)v22->__pad_0); /*0x77061c*/
   ConcatStringAlloc((char **)&v24, (const char **)v7, (char **)&v23); /*0x770627*/
   unknown_libname_73(&a1); /*0x770630*/
-  String::Assign((char **)&aP2, &MEMORY[0x87F8E4].__pad_5568[20760]); /*0x77063e*/
+  String::Assign((char **)&aP2, &g_abs_87F8E4); /*0x77063e*/
   INIClass::ReadString(v4, v3, (ObjectClass *)&v24, (ReferenceCounted *)&aP2, (int)&a1); /*0x770655*/
   DeleteAndZero((void **)&aP2); /*0x77065e*/
   (*((void (**)(void **))v22[5].NeedsSaveOrLink + 3))(&v22[5].NeedsSaveOrLink); /*0x770671*/
   unknown_libname_73(&aP2); /*0x770678*/
-  for ( i = (ObjectClass *)String::Tokenize((const char **)&a1, 0, &MEMORY[0x817F70], (ObjectClass *)&aP2); /*0x770697*/
+  for ( i = (ObjectClass *)String::Tokenize((const char **)&a1, 0, &g_abs_817F70, (ObjectClass *)&aP2); /*0x770697*/
         i != (ObjectClass *)-1;
-        i = (ObjectClass *)String::Tokenize((const char **)&a1, (int)i, &MEMORY[0x817F70], (ObjectClass *)&aP2) )
+        i = (ObjectClass *)String::Tokenize((const char **)&a1, (int)i, &g_abs_817F70, (ObjectClass *)&aP2) )
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2); /*0x77069d*/
     owningHouseIndex = v22[5].owningHouseIndex; /*0x7706a2*/
     v25 = v10; /*0x7706a5*/
     if ( (int)v22[5].nextObject >= owningHouseIndex ) /*0x7706ac*/
     {
-      if ( !BYTE1(v22[5].fallRate) && owningHouseIndex ) /*0x7706b7*/
+      if ( !IDA_BYTE1(v22[5].fallRate) && owningHouseIndex ) /*0x7706b7*/
         continue; /*0x7706b7*/
       attachedTag = (int)v22[5].attachedTag; /*0x7706b9*/
       if ( attachedTag <= 0 /*0x7706c9*/
-        || !(*((unsigned __int8 (**)(void **, int, unsigned int))v22[5].NeedsSaveOrLink + 2))(
+        || !(*((uint8_t (**)(void **, int, unsigned int))v22[5].NeedsSaveOrLink + 2))(
               &v22[5].NeedsSaveOrLink,
               owningHouseIndex + attachedTag,
               0) )
@@ -311,8 +312,8 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7706c9*/
       }
     }
-    nextObject = v22[5].nextObject; /*0x7706d0*/
-    objectTypeFlags = v22[5].objectTypeFlags; /*0x7706d3*/
+    nextObject = (gamemd::ObjectClass *)(v22[5].nextObject);
+    objectTypeFlags = (gamemd::ObjectClass *)(v22[5].objectTypeFlags);
     v22[5].nextObject = (char *)nextObject + 1; /*0x7706d9*/
     *(unsigned int *)(objectTypeFlags + 4 * (unsigned int)nextObject) = v25; /*0x7706e0*/
   }
@@ -324,25 +325,25 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   v14 = StaticString::Factory(*(void **)v22->__pad_0); /*0x77073b*/
   ConcatStringAlloc((char **)&v24, (const char **)v14, (char **)&v23); /*0x770746*/
   unknown_libname_73(&a1); /*0x77074f*/
-  String::Assign((char **)&aP2, &MEMORY[0x87F8E4].__pad_5568[20760]); /*0x77075d*/
+  String::Assign((char **)&aP2, &g_abs_87F8E4); /*0x77075d*/
   INIClass::ReadString(v4, v3, (ObjectClass *)&v24, (ReferenceCounted *)&aP2, (int)&a1); /*0x770774*/
   DeleteAndZero((void **)&aP2); /*0x77077d*/
   (*((void (**)(void **))v22[5].attachedBomb + 3))(&v22[5].attachedBomb); /*0x770790*/
   unknown_libname_73(&aP2); /*0x770797*/
-  for ( j = (ObjectClass *)String::Tokenize((const char **)&a1, 0, &MEMORY[0x817F70], (ObjectClass *)&aP2); /*0x7707b6*/
+  for ( j = (ObjectClass *)String::Tokenize((const char **)&a1, 0, &g_abs_817F70, (ObjectClass *)&aP2); /*0x7707b6*/
         j != (ObjectClass *)-1;
-        j = (ObjectClass *)String::Tokenize((const char **)&a1, (int)j, &MEMORY[0x817F70], (ObjectClass *)&aP2) )
+        j = (ObjectClass *)String::Tokenize((const char **)&a1, (int)j, &g_abs_817F70, (ObjectClass *)&aP2) )
   {
     __1_Timevec_std__QAE_XZ((std::_Timevec *)&aP2); /*0x7707bc*/
     v16 = v22[5].ambientSoundController[1]; /*0x7707c1*/
     v18 = v17; /*0x7707c4*/
     if ( v22[5].ambientSoundController[3] >= v16 ) /*0x7707c9*/
     {
-      if ( !BYTE1(v22[5].ambientSoundController[2]) && v16 ) /*0x7707d4*/
+      if ( !IDA_BYTE1(v22[5].ambientSoundController[2]) && v16 ) /*0x7707d4*/
         continue; /*0x7707d4*/
       v19 = v22[5].ambientSoundController[4]; /*0x7707d6*/
       if ( v19 <= 0 /*0x7707e6*/
-        || !(*((unsigned __int8 (**)(void **, int, unsigned int))v22[5].attachedBomb + 2))(
+        || !(*((uint8_t (**)(void **, int, unsigned int))v22[5].attachedBomb + 2))(
               &v22[5].attachedBomb,
               v16 + v19,
               0) )
@@ -350,8 +351,8 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7707e6*/
       }
     }
-    v20 = v22[5].ambientSoundController[3]; /*0x7707ed*/
-    v21 = v22[5].ambientSoundController[0]; /*0x7707f0*/
+    v20 = (unsigned int)(v22[5].ambientSoundController[3]);
+    v21 = (unsigned int)(v22[5].ambientSoundController[0]);
     v22[5].ambientSoundController[3] = v20 + 1; /*0x7707f6*/
     *(unsigned int *)(v21 + 4 * v20) = v18; /*0x7707f9*/
   }
@@ -368,9 +369,9 @@ long long Animation::UpdateBobOffset()
 {
 
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
-  v0 = Math::Sin(dbl_B04E00 - dbl_B04E28); /*0x661d92*/
+  v0 = ((Math *)(dbl_B04E00 - dbl_B04E28))->Sin(); /*0x661d92*/
   result = Math::RoundToInt(v0 * dbl_B04E20 * 0.5); /*0x661da6*/
   dword_B04E78 = result; /*0x661dab*/
   return result; /*0x661db0*/

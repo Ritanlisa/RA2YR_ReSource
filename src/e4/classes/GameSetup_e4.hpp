@@ -20,7 +20,7 @@ struct GameSetup {
     unsigned int FormatToString;
     unsigned int q0104;
 // --- flat members (END) ---
-    AbstractClass * * WriteINI(CCINIClass * aP1, unsigned char * Block);
+    AbstractClass * * WriteINI(void * aP1, unsigned __int8 * Block);
     int LookupDialogHash();
 };
 

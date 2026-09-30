@@ -39,7 +39,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   *((unsigned int *)this + 14) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1ae1*/
   if ( v3 && *((unsigned char *)this + 69) ) /*0x7b1aec*/
   {
-    __3_YAXPAX_Z(v3); /*0x7b1af2*/
+    RA2_OPDEL(v3); /*0x7b1af2*/
     *((unsigned int *)this + 15) = 0; /*0x7b1afa*/
   }
   *((unsigned char *)this + 69) = 0; /*0x7b1afd*/
@@ -48,7 +48,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   *((unsigned int *)this + 8) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b06*/
   if ( v4 && *((unsigned char *)this + 45) ) /*0x7b1b11*/
   {
-    __3_YAXPAX_Z(v4); /*0x7b1b17*/
+    RA2_OPDEL(v4); /*0x7b1b17*/
     *((unsigned int *)this + 9) = 0; /*0x7b1b1f*/
   }
   *((unsigned char *)this + 45) = 0; /*0x7b1b22*/
@@ -57,7 +57,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   *((unsigned int *)this + 2) = &vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b1b2b*/
   if ( v5 && *((unsigned char *)this + 21) ) /*0x7b1b36*/
   {
-    __3_YAXPAX_Z(v5); /*0x7b1b3c*/
+    RA2_OPDEL(v5); /*0x7b1b3c*/
     *((unsigned int *)this + 3) = 0; /*0x7b1b44*/
   }
   *((unsigned char *)this + 21) = 0; /*0x7b1b47*/
@@ -93,7 +93,7 @@ int WinsockInterfaceClass::Destru_vt16(int a1, int a2, int a3, int a4)
 
 }
 // 0x7B2780
-SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
+SOCKET * WinsockInterfaceClass::Destru_vt00(SOCKET * Block, char a2)
 {
 
   char v3; // al
@@ -114,7 +114,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   *(Block + 14) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b27b1*/
   if ( v4 && *((unsigned char *)Block + 69) ) /*0x7b27bc*/
   {
-    __3_YAXPAX_Z(v4); /*0x7b27c2*/
+    RA2_OPDEL(v4); /*0x7b27c2*/
     *(Block + 15) = 0; /*0x7b27ca*/
   }
   *((unsigned char *)Block + 69) = 0; /*0x7b27cd*/
@@ -123,7 +123,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   *(Block + 8) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b27d6*/
   if ( v5 && *((unsigned char *)Block + 45) ) /*0x7b27e1*/
   {
-    __3_YAXPAX_Z(v5); /*0x7b27e7*/
+    RA2_OPDEL(v5); /*0x7b27e7*/
     *(Block + 9) = 0; /*0x7b27ef*/
   }
   *((unsigned char *)Block + 45) = 0; /*0x7b27f2*/
@@ -132,13 +132,13 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   *(Block + 2) = (SOCKET)&vt_VectorClass_WinsockInterfaceClass_WinsockBufferType; /*0x7b27fb*/
   if ( v6 && *((unsigned char *)Block + 21) ) /*0x7b2806*/
   {
-    __3_YAXPAX_Z(v6); /*0x7b280c*/
+    RA2_OPDEL(v6); /*0x7b280c*/
     *(Block + 3) = 0; /*0x7b2814*/
   }
   *((unsigned char *)Block + 21) = 0; /*0x7b281b*/
   *(Block + 4) = 0; /*0x7b2820*/
-  if ( (a2 & 1) != 0 ) /*0x7b2823*/
-    __3_YAXPAX_Z(Block); /*0x7b2826*/
+  if ( (Block & 1) != 0 ) /*0x7b2823*/
+    RA2_OPDEL(Block); /*0x7b2826*/
   return Block; /*0x7b2830*/
 
 }

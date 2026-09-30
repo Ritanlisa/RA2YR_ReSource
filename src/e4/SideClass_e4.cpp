@@ -133,12 +133,14 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
 }
 // 0x6A4550
 namespace gamemd {
-int SideClass::Construct(char* a1)
+int SideClass::Construct(CCINIClass * aP1)
 {
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v3 = 0;  /* G37 hoist */
 
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int)this, (AbstractClass *)a1); /*0x6a4559*/
+  AbstractTypeClass::Constructor((int)this, (AbstractClass *)aP1); /*0x6a4559*/
   *((unsigned int *)this + 39) = 0; /*0x6a4563*/
   *((unsigned int *)this + 40) = 0; /*0x6a4569*/
   *((unsigned char *)this + 164) = 1; /*0x6a456f*/
@@ -152,9 +154,9 @@ int SideClass::Construct(char* a1)
   *((unsigned int *)this + 3) = &vt_SideClass; /*0x6a45aa*/
   AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x6a45b1*/
   if ( *(int *)stru_89E138.__pad_15FF8 < *(int *)&stru_89E138.__pad_579C[67668] /*0x6a45ea*/
-    || (BYTE1(stru_89E138.field_15FF4) || !*(unsigned int *)&stru_89E138.__pad_579C[67668])
+    || (IDA_BYTE1(stru_89E138.field_15FF4) || !*(unsigned int *)&stru_89E138.__pad_579C[67668])
     && *(int *)&stru_89E138.__pad_15FF8[4] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_89E138.__pad_579C[67660] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_89E138.__pad_579C[67660] + 8))(
          &stru_89E138.__pad_579C[67660],
          *(unsigned int *)&stru_89E138.__pad_579C[67668] + *(unsigned int *)&stru_89E138.__pad_15FF8[4],
          0) )
@@ -199,25 +201,25 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
     if ( v2 ) /*0x6a47a4*/
     {
       AbstractTypeClass::Init((int)v2, (AbstractTypeClass *)&aP1); /*0x6a47ad*/
-      *(unsigned int *)&v2[1].__pad_0[4] = 0; /*0x6a47b2*/
-      *(unsigned int *)&v2[1].__pad_0[8] = 0; /*0x6a47b8*/
-      v2[1].__pad_0[12] = 1; /*0x6a47be*/
-      v2[1].__pad_0[13] = 0; /*0x6a47c5*/
+      *(unsigned int *)&v2[((unsigned int *)(1].__pad_0))[4] = 0; /*0x6a47b2*/
+      *(unsigned int *)&v2[((unsigned int *)(1].__pad_0))[8] = 0; /*0x6a47b8*/
+      v2[((unsigned int *)(1].__pad_0))[12] = 1; /*0x6a47be*/
+      v2[((unsigned int *)(1].__pad_0))[13] = 0; /*0x6a47c5*/
       v2[1].abstractFlags = 10; /*0x6a47cb*/
       v2[1].uniqueId = 0; /*0x6a47d1*/
       *(unsigned int *)v2[1].__pad_0 = &vt_TypeList_int; /*0x6a47d7*/
       *(unsigned int *)v2->__pad_0 = &SideClass::`vftable'; /*0x6a47e1*/
-      *(unsigned int *)&v2->__pad_0[4] = &SideClass::`vftable'; /*0x6a47e7*/
-      *(unsigned int *)&v2->__pad_0[8] = &SideClass::`vftable'; /*0x6a47ee*/
-      *(unsigned int *)&v2->__pad_0[12] = &vt_SideClass; /*0x6a47f5*/
+      *(unsigned int *)&v2-((unsigned int *)(>__pad_0))[4] = &SideClass::`vftable'; /*0x6a47e7*/
+      *(unsigned int *)&v2-((unsigned int *)(>__pad_0))[8] = &SideClass::`vftable'; /*0x6a47ee*/
+      *(unsigned int *)&v2-((unsigned int *)(>__pad_0))[12] = &vt_SideClass; /*0x6a47f5*/
     }
     v5 = v2 + 1; /*0x6a47fc*/
     if ( v5 ) /*0x6a4804*/
     {
-      *(unsigned int *)&v5->__pad_0[4] = 0; /*0x6a4806*/
-      *(unsigned int *)&v5->__pad_0[8] = 0; /*0x6a4809*/
-      v5->__pad_0[12] = 1; /*0x6a480c*/
-      v5->__pad_0[13] = 0; /*0x6a4810*/
+      *(unsigned int *)&v5-((unsigned int *)(>__pad_0))[4] = 0; /*0x6a4806*/
+      *(unsigned int *)&v5-((unsigned int *)(>__pad_0))[8] = 0; /*0x6a4809*/
+      v5-((unsigned int *)(>__pad_0))[12] = 1; /*0x6a480c*/
+      v5-((unsigned int *)(>__pad_0))[13] = 0; /*0x6a4810*/
       v5->abstractFlags = 10; /*0x6a4813*/
       v5->uniqueId = 0; /*0x6a4816*/
       *(unsigned int *)v5->__pad_0 = &vt_TypeList_int; /*0x6a4819*/
@@ -230,14 +232,14 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
     for ( i = 0; i < (int)aP1; ++i ) /*0x6a4833*/
     {
       (*(void (**)(AbstractClass *, unsigned int **, int, unsigned int))(*(unsigned int *)v3->__pad_0 + 12))(v3, &a0, 4, 0); /*0x6a4840*/
-      v7 = *(unsigned int *)&v5->__pad_0[8]; /*0x6a4843*/
+      v7 = *(unsigned int *)&v5-((unsigned int *)(>__pad_0))[8]; /*0x6a4843*/
       if ( v5->uniqueId >= v7 ) /*0x6a484b*/
       {
-        if ( !v5->__pad_0[13] && v7 ) /*0x6a4854*/
+        if ( !v5-((unsigned int *)(>__pad_0))[13] && v7 ) /*0x6a4854*/
           continue; /*0x6a4854*/
         abstractFlags = v5->abstractFlags; /*0x6a4856*/
         if ( abstractFlags <= 0 /*0x6a4865*/
-          || !(*(unsigned __int8 (**)(AbstractTypeClass *, int, unsigned int))(*(unsigned int *)v5->__pad_0 + 8))(
+          || !(*(uint8_t (**)(AbstractTypeClass *, int, unsigned int))(*(unsigned int *)v5->__pad_0 + 8))(
                 v5,
                 v7 + abstractFlags,
                 0) )
@@ -245,8 +247,8 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
           continue; /*0x6a4865*/
         }
       }
-      uniqueId = v5->uniqueId; /*0x6a486c*/
-      v10 = *(unsigned int *)&v5->__pad_0[4]; /*0x6a486f*/
+      uniqueId = (unsigned int)(v5->uniqueId);
+      v10 = *(unsigned int *)&v5-((unsigned int *)(>__pad_0))[4]; /*0x6a486f*/
       v5->uniqueId = uniqueId + 1; /*0x6a4875*/
       *(unsigned int *)(v10 + 4 * uniqueId) = a0; /*0x6a487c*/
     }
@@ -258,41 +260,41 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
 }
 // 0x6A4930
 namespace gamemd {
-void * SideClass::Init(char a2)
+void * SideClass::Init(void ** Block, char a2)
 {
 
   int v3; // eax
   void *v4; // eax
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
-  *Block = &SideClass::`vftable'; /*0x6a4936*/
+  *Block = (void *)(&SideClass::`vftable');
   *(Block + 1) = &SideClass::`vftable'; /*0x6a493c*/
   *(Block + 2) = &SideClass::`vftable'; /*0x6a4943*/
   *(Block + 3) = &vt_SideClass; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(Block, 1); /*0x6a4951*/
   v6 = Block; /*0x6a4966*/
-  v3 = (*(int (**)(int *, void ***))(MEMORY[0x8B4120] + 16))(&MEMORY[0x8B4120], &v6); /*0x6a496a*/
-  if ( v3 != -1 && v3 < MEMORY[0x8B4130] && v3 < --MEMORY[0x8B4130] ) /*0x6a4985*/
+  v3 = (*(int (**)(int *, void ***))(g_abs_8B4120 + 16))(&g_abs_8B4120, &v6); /*0x6a496a*/
+  if ( v3 != -1 && v3 < g_abs_8B4130 && v3 < --g_abs_8B4130 ) /*0x6a4985*/
   {
     do /*0x6a499d*/
     {
       ++v3; /*0x6a498d*/
-      *((unsigned int *)MEMORY[0x8B4124] + v3 - 1) = *((unsigned int *)MEMORY[0x8B4124] + v3); /*0x6a4991*/
+      *((unsigned int *)g_abs_8B4124 + v3 - 1) = *((unsigned int *)g_abs_8B4124 + v3); /*0x6a4991*/
     }
-    while ( v3 < MEMORY[0x8B4130] ); /*0x6a499d*/
+    while ( v3 < g_abs_8B4130 ); /*0x6a499d*/
   }
   v4 = *(Block + 39); /*0x6a499f*/
   *(Block + 38) = &vt_VectorClass_int; /*0x6a49a5*/
   if ( v4 && *((unsigned char *)Block + 165) ) /*0x6a49b3*/
   {
-    __3_YAXPAX_Z(v4); /*0x6a49be*/
+    RA2_OPDEL(v4); /*0x6a49be*/
     *(Block + 39) = 0; /*0x6a49c6*/
   }
   *((unsigned char *)Block + 165) = 0; /*0x6a49d2*/
   *(Block + 40) = 0; /*0x6a49d9*/
   AbstractTypeClass::Dtor(Block); /*0x6a49e3*/
-  if ( (a2 & 1) != 0 ) /*0x6a49ed*/
-    __3_YAXPAX_Z(Block); /*0x6a49f0*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6a49ed*/
+    RA2_OPDEL(Block); /*0x6a49f0*/
   return (SideClass *)Block; /*0x6a49fa*/
 
 }

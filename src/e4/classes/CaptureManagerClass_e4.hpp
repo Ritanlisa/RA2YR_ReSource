@@ -48,17 +48,17 @@ struct CaptureManagerClass {
 // --- flat members (END) ---
     AbstractClass * * DecideUnitFate(void* aP1);
     AnimClass * * FreeUnit(void* aP0, int _28, void* a2, void* aP1, int _34, void** a5);
-    CaptureManagerClass(TechnoClass * aP1, int a3, char a4);
+    CaptureManagerClass(void * aP1, int a3, char a4);
     CaptureManagerClass * ddtor(char a2);
     DynamicVector * QueryInterface(char a2);
     ScenarioClass * * HandleOverload();
     TechnoClass * * LoadFromStream(int a1, int * a2);
     VectorClass_flat * Constructor_VectorClass_ControlNode___(char a2);
-    char AddMember(TechnoClass * aP1);
+    char AddMember(void * aP1);
     char AddRef(int a2);
     char Release(int a2, unsigned int * a3);
     char SetCapacity(int a2, unsigned int * a3);
-    int CanCapture(unsigned int * a2, void *a1 = 0);
+    void CanCapture(unsigned int * a2);
     int CannotControlAnyMore();
     int Capture(unsigned int * a2);
     int DrawLinks(int a1, ...);
@@ -70,7 +70,7 @@ struct CaptureManagerClass {
     int IsOverloading(bool * a2);
     int NeedsToDrawLinks();
     int PowerDrainUpdate(int a2);
-    int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);
+    int SaveToINI(void * aP0, int * a1, int aP2);
     unsigned int * Constructor_473140(int a2, int a3);
     unsigned int LoadTypeData(int a2);
     unsigned int PointerToIndex(int a2);

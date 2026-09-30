@@ -15,17 +15,17 @@ unsigned int Time::GetElapsedMS()
   unsigned int v1; // ecx
 
   Time = timeGetTime(); /*0x4e24a0*/
-  if ( Time > MEMORY[0x8B3F14] ) /*0x4e24ae*/
-    v1 = 3 * (Time - MEMORY[0x8B3F14]); /*0x4e24c5*/
+  if ( Time > g_abs_8B3F14 ) /*0x4e24ae*/
+    v1 = 3 * (Time - g_abs_8B3F14); /*0x4e24c5*/
   else
-    v1 = 3 * (Time - MEMORY[0x8B3F14] - 1); /*0x4e24b3*/
+    v1 = 3 * (Time - g_abs_8B3F14 - 1); /*0x4e24b3*/
   return v1 / 0x32; /*0x4e24c2*/
 
 }
 } // namespace gamemd
 // 0x777AC0
 namespace gamemd {
-int Time::FormatDate()
+int Time::FormatDate(char * Buffer)
 {
 
   int result; // eax

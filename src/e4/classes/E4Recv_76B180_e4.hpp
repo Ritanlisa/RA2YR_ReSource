@@ -40,6 +40,6 @@ struct E4Recv_76B180 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
-    char ParseWDTTerritories(WDTState * aP1,  int a3);    // 0x76B180
+    char ParseWDTTerritories(void * aP1,  int a3);    // 0x76B180
 };
 } // namespace gamemd

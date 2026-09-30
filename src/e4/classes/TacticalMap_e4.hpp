@@ -17,7 +17,6 @@ struct TacticalMap {
     unsigned char u8_19;  // 0x19
     char TacticalMap_field_1C[4];  // 0x1C
     unsigned int TacticalMap_field_20;  // 0x20
-    unsigned int Render;
     unsigned int TacticalMap_field_040;
     unsigned int Tactical_field_0xA8;
     unsigned int __pad_11F;
@@ -59,9 +58,10 @@ struct TacticalMap {
     int DrawOccupiedRegion();
     int Redraw(void *a1 = 0);
     int RenderAllObjects(int a2);
-    unsigned int FillScanlinesOpaque(int a2, int a3, TacticalMap * aP3, int a5);
-    void MultiplyByScalar(ObjectClass * aP1);
-    void* RenderCell(char arg0, AbstractClass * aP2, int a4, int a2);
+    unsigned int FillScanlinesOpaque(int a2, int a3, void * aP3, int a5);
+    void MultiplyByScalar(void * aP1);
+    void* RenderCell(char arg0, void * aP2, int a4, int a2);
+    static double Render(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

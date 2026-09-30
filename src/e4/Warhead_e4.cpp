@@ -43,7 +43,7 @@ int Warhead::GetWarheadSound(int a2)
     v3 = *((unsigned int *)this + 18); /*0x41d7f5*/
   else
     v3 = *((unsigned int *)this + 17); /*0x41d7fa*/
-  return !*((unsigned char *)this + 60) && v3 + *((unsigned int *)this + 16) <= (int)MEMORY[0xA8ED84] || a2 != *((unsigned int *)this + 20); /*0x41d814*/
+  return !*((unsigned char *)this + 60) && v3 + *((unsigned int *)this + 16) <= (int)g_abs_A8ED84 || a2 != *((unsigned int *)this + 20); /*0x41d814*/
 
 }
 } // namespace gamemd
@@ -74,9 +74,9 @@ int Warhead::RemoveFromDamageList(int a2)
   }
   v6 = v2[2]; /*0x45285d*/
   if ( v2[4] < v6 /*0x452887*/
-    || ((LOBYTE(v7) = *((unsigned char *)v2 + 13), (unsigned char)v7) || !v6)
+    || ((IDA_LOBYTE(v7) = *((unsigned char *)v2 + 13), (unsigned char)v7) || !v6)
     && (v7 = v2[5], v7 > 0)
-    && (LOBYTE(v7) = (*(int (**)(unsigned int *, int, unsigned int))(*v2 + 8))(v2, v6 + v7, 0), (unsigned char)v7) )
+    && (IDA_LOBYTE(v7) = (*(int (**)(unsigned int *, int, unsigned int))(*v2 + 8))(v2, v6 + v7, 0), (unsigned char)v7) )
   {
     v7 = v2[4]; /*0x452889*/
     v8 = v2[1]; /*0x45288c*/
@@ -91,6 +91,7 @@ int Warhead::RemoveFromDamageList(int a2)
 namespace gamemd {
 int Warhead::ApplyDamage(ObjectClass * aP1)
 {
+    unsigned int v9 = 0;  /* G37 hoist */
 
   int v3; // eax
   IUnknown *v4; // ecx
@@ -195,7 +196,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   TechnoClass *v104; // edx
   TechnoTypeClass *v105; // ebx
   char al187; // al
-  __int16 v106; // cx
+  int16_t v106; // cx
   double v107; // st7
   double v108; // st7
   int v109; // edx
@@ -204,7 +205,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   InfantryClass *v113; // ebx
   TechnoTypeClass *v114; // esi
   char al192; // al
-  __int16 v115; // cx
+  int16_t v115; // cx
   ObjectClass *v117; // edi
   unsigned int ebx192; // ebx
   double v118; // st7
@@ -216,8 +217,8 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   AnimClass *v125; // esi
   void *eax197; // eax
   float v127; // [esp+0h] [ebp-A8h]
-  __int64 Z; // [esp+0h] [ebp-A8h]
-  __int64 v129; // [esp+0h] [ebp-A8h]
+  int64_t Z; // [esp+0h] [ebp-A8h]
+  int64_t v129; // [esp+0h] [ebp-A8h]
   char v130; // [esp+17h] [ebp-91h]
   double v131; // [esp+18h] [ebp-90h]
   AbstractClass *NeighbourContent; // [esp+18h] [ebp-90h]
@@ -242,7 +243,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   CoordStruct aP2; // [esp+6Ch] [ebp-3Ch] BYREF
   TechnoTypeClass *v152; // [esp+78h] [ebp-30h]
   double var2C; // [esp+7Ch] [ebp-2Ch] BYREF
-  __int64 v154; // [esp+84h] [ebp-24h]
+  int64_t v154; // [esp+84h] [ebp-24h]
   InfantryClass *aP5; // [esp+8Ch] [ebp-1Ch]
   double v156; // [esp+90h] [ebp-18h] BYREF
   double v157; // [esp+98h] [ebp-10h]
@@ -254,15 +255,15 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   v3 = *((unsigned int *)this + 74);
   v4 = *(IUnknown **)(v3 + 380);
   if ( v4 || *(unsigned int *)(v3 + 384) )
-    MEMORY[0x87F7EC] = (TechnoTypeClass *)Random::Range(
-                                            &MEMORY[0x87F8E4].__pad_5568[7484],
+    g_abs_87F7EC = (TechnoTypeClass *)Random::Range(
+                                            &g_abs_87F8E4,
                                             v4,
                                             *(IUnknown **)(v3 + 384));
   v5 = *((unsigned int *)this + 74);
   v6 = *(IUnknown **)(v5 + 388);
   if ( v6 || *(unsigned int *)(v5 + 392) )
-    MEMORY[0x87F7F0] = (TechnoTypeClass *)Random::Range(
-                                            &MEMORY[0x87F8E4].__pad_5568[7484],
+    g_abs_87F7F0 = (TechnoTypeClass *)Random::Range(
+                                            &g_abs_87F8E4,
                                             v6,
                                             *(IUnknown **)(v5 + 392));
   v7 = *((unsigned int *)this + 76);
@@ -272,10 +273,10 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
     v8 = v153;
     if ( (int)v153 > 0 )
     {
-      LOWORD(v139) = *(unsigned int *)aP1->__pad_0 / 256;
-      HIWORD(v139) = *(unsigned int *)&aP1->__pad_0[4] / 256;
+      IDA_LOWORD(v139) = *(unsigned int *)aP1->__pad_0 / 256;
+      IDA_HIWORD(v139) = *(unsigned int *)&aP1->__pad_0[4] / 256;
       v140 = Math::RoundToInt(*(float *)(*(unsigned int *)(v7 + 172) + 292));
-      v9 = (Concurrency::details::SchedulerBase *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v139);
+      v9 = (Concurrency::details::SchedulerBase *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v139);
       NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ = (unsigned int *)_GetNumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ(v9);
       if ( NumberOfActiveVirtualProcessors_SchedulerBase_details_Concurrency__uint_BEIXZ )
       {
@@ -283,7 +284,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
       }
       else
       {
-        v11 = (unsigned int *)__2_YAPAXI_Z(0x74u);
+        v11 = (unsigned int *)RA2_OPNEW(0x74u);
         if ( v11 )
           v12 = (RadSiteClass *)RadSiteClass::RadSiteClass(v11);
         else
@@ -307,7 +308,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
         v16 = (*(unsigned char *)(v15 + 20) & 2) != 0 ? v15 : 0;
       else
         v16 = 0;
-      v17 = v15 && (*(unsigned char *)(v15 + 20) & 1) != 0 && (unsigned __int8)House::IsHumanPlayer(*(#375 **)(v15 + 540));
+      v17 = v15 && (*(unsigned char *)(v15 + 20) & 1) != 0 && (uint8_t)House::IsHumanPlayer(*(#375 **)(v15 + 540));
       if ( v16 )
       {
         if ( *(unsigned char *)(v16 + 144) )
@@ -330,13 +331,13 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
              *(unsigned int *)(*((unsigned int *)this + 44) + 700),
              (int)&savedregs,
              *((unsigned int *)this + 67))
-        && *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 532) != -1
-        && ((unsigned __int8)House::IsHumanPlayer(*(#375 **)(*((unsigned int *)this + 44) + 540)) || v17) )
+        && *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 532) != -1
+        && ((uint8_t)House::IsHumanPlayer(*(#375 **)(*((unsigned int *)this + 44) + 540)) || v17) )
       {
         v19 = v16 + 156;
         v141 = *(double *)v19;
-        LODWORD(v142) = *(unsigned int *)(v19 + 8);
-        StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 532), (int)&v141, 0);
+        IDA_LODWORD(v142) = *(unsigned int *)(v19 + 8);
+        StartAudioControllerAt(*(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 532), (int)&v141, 0);
       }
     }
   }
@@ -345,7 +346,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
     v20 = *((unsigned int *)this + 67);
     if ( v20 )
       v20 = (*(unsigned char *)(v20 + 20) & 1) != 0 ? v20 : 0;
-    AbstractClass::Initialize(&MEMORY[0x87F5D8], *((TechnoClass **)this + 44), (TechnoClass *)v20);
+    AbstractClass::Initialize(&g_abs_87F5D8, *((TechnoClass **)this + 44), (TechnoClass *)v20);
   }
   else if ( v13[344] )
   {
@@ -440,8 +441,8 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
                 : 0;
             v35 = v34 + 156;
             v141 = *(double *)v35;
-            LODWORD(v142) = *(unsigned int *)(v35 + 8);
-            v36 = Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v141);
+            IDA_LODWORD(v142) = *(unsigned int *)(v35 + 8);
+            v36 = Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)&v141);
             if ( Cell::IsBridge(v36) == (unsigned int *)Member )
               v143 = 1;
           }
@@ -461,7 +462,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
               v40 = *((unsigned int *)this + 67);
               if ( v40
                 && (*(unsigned char *)(v40 + 20) & 4) != 0
-                && !(*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)v40 + 352))(*((unsigned int *)this + 67))
+                && !(*(uint8_t (**)(unsigned int))(*(unsigned int *)v40 + 352))(*((unsigned int *)this + 67))
                 && ((v41 = *((unsigned int *)this + 67)) != 0 && (*(int (**)(int))(*(unsigned int *)v41 + 44))(v41) == 1
                  || (v42 = *((unsigned int *)this + 67)) != 0 && (*(int (**)(int))(*(unsigned int *)v42 + 44))(v42) == 2)
                 && !*(unsigned char *)(v40 + 1709)
@@ -516,10 +517,10 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
       v49 = (*(unsigned char *)(v48 + 20) & 1) != 0 ? (int *)v48 : 0;
     else
       v49 = 0;
-    if ( *((unsigned int *)this + 44) && v49 && !(*(unsigned __int8 (**)(int *))(*v49 + 352))(v49) )
+    if ( *((unsigned int *)this + 44) && v49 && !(*(uint8_t (**)(int *))(*v49 + 352))(v49) )
     {
       v140 = (*((unsigned int *)this + 27) * *((unsigned int *)this + 84)) >> 8;
-      v50 = (double)v140 * *(float *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 6324) / dbl_81AEF8;
+      v50 = (double)v140 * *(float *)(*(unsigned int *)&g_abs_87F8E4 + 6324) / dbl_81AEF8;
       if ( v50 >= 4.0 )
         v131 = 4.0;
       else
@@ -554,14 +555,14 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
       *((float *)&v141 + 1) = *((float *)&var2C + 1) * 10.0;
       *(float *)&v142 = v55 * 10.0;
       v56 = Math::RoundToInt(*(float *)&var2C * 10.0);
-      HIDWORD(var2C) = Math::RoundToInt(*((float *)&v141 + 1));
+      IDA_HIDWORD(var2C) = Math::RoundToInt(*((float *)&v141 + 1));
       v57 = Math::RoundToInt(*(float *)&v142);
       aP4[0] = (TechnoClass *)((char *)aP4[0] + v56);
-      aP4[1] = (TechnoClass *)((char *)aP4[1] + HIDWORD(var2C));
+      aP4[1] = (TechnoClass *)((char *)aP4[1] + IDA_HIDWORD(var2C));
       v58 = *v49;
       v149 += v57;
       v127 = v131;
-      (*(void (**)(int *, TechnoClass **, unsigned int, int))(v58 + 984))(v49, aP4, LODWORD(v127), 1);
+      (*(void (**)(int *, TechnoClass **, unsigned int, int))(v58 + 984))(v49, aP4, IDA_LODWORD(v127), 1);
       v49[170] = *((unsigned int *)this + 44);
       *(unsigned int *)(*((unsigned int *)this + 44) + 680) = v49;
     }
@@ -621,22 +622,22 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
   v69 = (RadSiteClass *)*((unsigned int *)this + 43);
   aP2.Y = v67;
   aP2.Z = v68;
-  if ( BYTE2(v69[6].abstractFlags) )
+  if ( IDA_BYTE2(v69[6].abstractFlags) )
     aP2 = *(CoordStruct *)RandomCoordScatter((int *)&v141, &aP2.X, 32, 0);
   v70 = -1;
   if ( (*(int (**)(char *))(*(unsigned int *)this + 456))(this) < 2 * unk_89DE70 )
   {
     v141 = *(double *)((unsigned char *)this + 156);
-    LODWORD(v142) = *((unsigned int *)this + 41);
-    v70 = *((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v141) + 59);
+    IDA_LODWORD(v142) = *((unsigned int *)this + 41);
+    v70 = *((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)&v141) + 59);
     if ( v70 == 2 && !v144 )
     {
       v71 = *((unsigned int *)this + 41);
       v72 = *((unsigned int *)this + 40);
-      LODWORD(v141) = *((unsigned int *)this + 39);
-      LODWORD(v142) = v71;
-      HIDWORD(v141) = v72;
-      v73 = (unsigned int *)*((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], (IUnknown *)&v141) + 57);
+      IDA_LODWORD(v141) = *((unsigned int *)this + 39);
+      IDA_LODWORD(v142) = v71;
+      IDA_HIDWORD(v141) = v72;
+      v73 = (unsigned int *)*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, (IUnknown *)&v141) + 57);
       if ( v73 )
       {
         if ( (*(int (**)(unsigned int *))(*v73 + 44))(v73) == 1 )
@@ -652,13 +653,13 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
     }
   }
   v140 = (int)((unsigned char *)this + 156);
-  LODWORD(v141) = *((unsigned int *)this + 39);
+  IDA_LODWORD(v141) = *((unsigned int *)this + 39);
   v75 = *((unsigned int *)this + 27);
-  HIDWORD(v141) = *((unsigned int *)this + 40);
+  IDA_HIDWORD(v141) = *((unsigned int *)this + 40);
   v76 = *((unsigned int *)this + 74);
-  LODWORD(v142) = *((unsigned int *)this + 41);
+  IDA_LODWORD(v142) = *((unsigned int *)this + 41);
   WarheadVersusMultiplier = (CoordStruct *)GetWarheadVersusMultiplier(v75, v76, v70, &v141);
-  LOBYTE(Instance) = v130;
+  IDA_LOBYTE(Instance) = v130;
   if ( *((unsigned char *)this + 224) )
   {
     if ( !v130 )
@@ -668,9 +669,9 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
       if ( v78[337] )
         v79 = 2;
       if ( v78[338] )
-        LOBYTE(v79) = v79 | 4;
+        IDA_LOBYTE(v79) = v79 | 4;
       if ( v78[339] )
-        LOBYTE(v79) = v79 | 8;
+        IDA_LOBYTE(v79) = v79 | 8;
       CreateSmokeEffectAt(*((unsigned int *)this + 27), (int)v78, aP2.X, aP2.Y, aP2.Z, 1, v79);
       goto LABEL_158;
     }
@@ -680,7 +681,7 @@ int Warhead::ApplyDamage(ObjectClass * aP1)
 LABEL_158:
     if ( WarheadVersusMultiplier )
     {
-      v81 = (AnimClass *)__2_YAPAXI_Z(0x1C8u);
+      v81 = (AnimClass *)RA2_OPNEW(0x1C8u);
       if ( !v81
         || (Z = (unsigned int)aP2.Z,
             eax160 = (void *)Return::HRESULT_Fail(aP2.X, aP2.Y, aP2.Z),
@@ -694,16 +695,16 @@ LABEL_158:
                eax160,
                SBYTE4(Z))) )
       {
-        if ( *((unsigned int *)this + 74) == *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 3980) )
+        if ( *((unsigned int *)this + 74) == *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 3980) )
         {
           v83 = (TechnoClass *)*((unsigned int *)this + 44);
           ecx162 = -1;
           if ( v83 )
             ecx162 = *(unsigned int *)(*((unsigned int *)v83->focus + 13) + 184);
-          LOWORD(v144) = aP2.X / 256;
-          HIWORD(v144) = aP2.Y / 256;
+          IDA_LOWORD(v144) = aP2.X / 256;
+          IDA_HIWORD(v144) = aP2.Y / 256;
           v153 = (InfantryClass *)v144;
-          sub_4251F0(ecx162, (__int16 *)&v153);
+          sub_4251F0(ecx162, (int16_t *)&v153);
         }
       }
     }
@@ -712,7 +713,7 @@ LABEL_158:
     if ( v85 > 0 )
     {
       v87 = (TechnoTypeClass *)Random::Range(
-                                 &MEMORY[0xA8B230]->random[1],
+                                 &g_abs_A8B230->random[1],
                                  *(IUnknown **)(v84 + 456),
                                  (IUnknown *)(v85 - 1));
       eax166 = *((unsigned int *)this + 74);
@@ -723,7 +724,7 @@ LABEL_158:
         v139 = 0;
         while ( (int)v87 > 0 )
         {
-          v89 = (int)abs32(Random::State(&MEMORY[0xA8B230]->random[1]))
+          v89 = (int)abs32(Random::State(&g_abs_A8B230->random[1]))
               % (*(unsigned int *)(4 * (unsigned int)v88 + *(unsigned int *)(eax166 + 428)) + 1);
           v152 = (TechnoTypeClass *)v89;
           if ( v89 >= (int)v87 )
@@ -736,7 +737,7 @@ LABEL_158:
             v144 = v89;
             do
             {
-              v91 = (VoxelAnimClass *)__2_YAPAXI_Z(0x148u);
+              v91 = (VoxelAnimClass *)RA2_OPNEW(0x148u);
               if ( v91 )
               {
                 edi173 = (int *)(4 * (unsigned int)v139 + *(unsigned int *)(*((unsigned int *)this + 74) + 400));
@@ -763,7 +764,7 @@ LABEL_158:
       {
         do
         {
-          v94 = (AnimClass *)__2_YAPAXI_Z(0x1C8u);
+          v94 = (AnimClass *)RA2_OPNEW(0x1C8u);
           if ( v94 )
           {
             eax181 = (unsigned int *)(*(int (**)(char *, double *))(*(unsigned int *)this + 72))(this, &var2C);
@@ -771,14 +772,14 @@ LABEL_158:
             v96 = eax181[1];
             v97 = eax181[2];
             v141 = COERCE_DOUBLE(__PAIR64__(v96, v95));
-            LODWORD(v142) = v97 + 20;
+            IDA_LODWORD(v142) = v97 + 20;
             v98 = Random::Range(
-                    &MEMORY[0xA8B230]->random[1],
+                    &g_abs_A8B230->random[1],
                     0,
-                    (IUnknown *)(*(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 332) - 1));
+                    (IUnknown *)(*(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 332) - 1));
             AnimClass::ctor(
               (void **)v94,
-              *(CoordStruct **)(*(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 320) + 4 * v98),
+              *(CoordStruct **)(*(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 320) + 4 * v98),
               (CoordStruct *)&v141,
               0,
               (CoordStruct *)1,
@@ -825,9 +826,9 @@ LABEL_158:
             0);
           if ( v105 )
           {
-            al187 = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x20);
-            LOBYTE(v106) = 0;
-            HIBYTE(v106) = al187;
+            al187 = Random::Range(&g_abs_A8B230->random[1], 0, (IUnknown *)0x20);
+            IDA_LOBYTE(v106) = 0;
+            IDA_HIBYTE(v106) = al187;
             *(double *)aP3 = (double)(*(unsigned int *)(v99 + 168) / 10);
             v133 = (double)(v106 - 0x3FFF) * -0.00009587672516830327;
             *(double *)aP4 = Math::SinCos(v133);
@@ -839,13 +840,13 @@ LABEL_158:
             var2C = v107 * v134 * *(double *)aP3;
             v156 = var2C;
             v108 = Math::SinCos(4.712436918747274);
-            LODWORD(v141) = *(unsigned int *)v140;
+            IDA_LODWORD(v141) = *(unsigned int *)v140;
             v109 = *(unsigned int *)(v140 + 4);
             v158 = v108 * *(double *)aP3;
             v110 = *(unsigned int *)(v140 + 8);
-            HIDWORD(v141) = v109;
+            IDA_HIDWORD(v141) = v109;
             v111 = *(unsigned int *)v105->vtable0;
-            LODWORD(v142) = v110;
+            IDA_LODWORD(v142) = v110;
             (*(void (**)(TechnoTypeClass *, double *, double *))(v111 + 496))(v105, &v141, &v156);
           }
           v101 = (unsigned int)v152;
@@ -861,7 +862,7 @@ LABEL_158:
       if ( Instance >= 0 )
       {
         v114 = (TechnoTypeClass *)ppv[1];
-        LOBYTE(Instance) = Particle::Init(
+        IDA_LOBYTE(Instance) = Particle::Init(
                              (int)ppv[1],
                              (AbstractClass *)v153,
                              v139,
@@ -872,13 +873,13 @@ LABEL_158:
                              0);
         if ( v114 )
         {
-          al192 = Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)0x20);
-          LOBYTE(v115) = 0;
-          HIBYTE(v115) = al192;
+          al192 = Random::Range(&g_abs_A8B230->random[1], 0, (IUnknown *)0x20);
+          IDA_LOBYTE(v115) = 0;
+          IDA_HIBYTE(v115) = al192;
           *(double *)aP3 = (double)(*(unsigned int *)(v99 + 168) / 10);
           v136 = (double)(v115 - 0x3FFF) * -0.00009587672516830327;
-          v117 = (ObjectClass *)HIDWORD(v136);
-          ebx192 = LODWORD(v136);
+          v117 = (ObjectClass *)IDA_HIDWORD(v136);
+          ebx192 = IDA_LODWORD(v136);
           v137 = Math::SinCos(v136);
           var90e = Math::ArcTan2(4.712436918747274) * v137 * *(double *)aP3;
           *(double *)aP4 = Math::ArcTan2(COERCE_DOUBLE(__PAIR64__((unsigned int)v117, ebx192)));
@@ -889,13 +890,13 @@ LABEL_158:
           v156 = v141;
           v119 = Math::SinCos(4.712436918747274);
           v120 = *(unsigned int *)(v140 + 4);
-          LODWORD(v141) = *(unsigned int *)v140;
+          IDA_LODWORD(v141) = *(unsigned int *)v140;
           v121 = *(unsigned int *)(v140 + 8);
           v122 = *(unsigned int *)v114->vtable0;
-          HIDWORD(v141) = v120;
+          IDA_HIDWORD(v141) = v120;
           v158 = v119 * *(double *)aP3;
-          LODWORD(v142) = v121;
-          LOBYTE(Instance) = (*(char (**)(TechnoTypeClass *, double *, double *))(v122 + 496))(
+          IDA_LODWORD(v142) = v121;
+          IDA_LOBYTE(Instance) = (*(char (**)(TechnoTypeClass *, double *, double *))(v122 + 496))(
                                v114,
                                &v141,
                                &v156);
@@ -904,16 +905,16 @@ LABEL_158:
     }
     return Instance;
   }
-  v124 = *(CoordStruct **)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 848);
+  v124 = *(CoordStruct **)(*(unsigned int *)&g_abs_87F8E4 + 848);
   if ( v124 )
   {
-    Instance = __2_YAPAXI_Z(0x1C8u);
+    Instance = RA2_OPNEW(0x1C8u);
     v125 = (AnimClass *)Instance;
     if ( Instance )
     {
       v129 = (unsigned int)aP2.Z;
       eax197 = (void *)Return::HRESULT_Fail(aP2.X, aP2.Y, aP2.Z);
-      LOBYTE(Instance) = (unsigned __int8)AnimClass::ctor(
+      IDA_LOBYTE(Instance) = (uint8_t)AnimClass::ctor(
                                             (void **)v125,
                                             v124,
                                             &aP2,
@@ -954,7 +955,7 @@ int Warhead::ApplyPostDamageEffects()
   int v19; // edx
   bool v20; // cc
   unsigned short *v21; // ebx
-  __int16 v22; // ax
+  int16_t v22; // ax
   unsigned char *v23; // ebp
   int v24; // eax
   char v25; // al
@@ -966,7 +967,7 @@ int Warhead::ApplyPostDamageEffects()
   int v31; // edx
   unsigned int *v32; // eax
   double v33; // st7
-  __int16 v34; // ax
+  int16_t v34; // ax
   double v35; // st7
   double v36; // st7
   double v37; // st7
@@ -978,8 +979,8 @@ int Warhead::ApplyPostDamageEffects()
   char v43; // al
   unsigned int *v44; // ecx
   int *v45; // ecx
-  __int16 v46; // ax
-  __int16 v47; // ax
+  int16_t v46; // ax
+  int16_t v47; // ax
   char v48; // dl
   int v49; // ecx
   int v50; // eax
@@ -990,7 +991,7 @@ int Warhead::ApplyPostDamageEffects()
   int v55; // edx
   unsigned int *v56; // eax
   double v57; // st7
-  __int16 v58; // bp
+  int16_t v58; // bp
   unsigned int v59; // ebp
   double v60; // st7
   double v61; // st7
@@ -1067,10 +1068,10 @@ int Warhead::ApplyPostDamageEffects()
       v76 = 3; /*0x46a340*/
     }
   }
-  result = (*(int (**)(int *))(*(unsigned int **)this + 444))(this); /*0x46a3da*/
+  result = (*(int (**)(int *))(*(unsigned int *)this + 444))(this); /*0x46a3da*/
   if ( *(unsigned int *)(result + 228) ) /*0x46a3e0*/
   {
-    v11 = (*(int (**)(int *))(*(unsigned int **)this + 444))(this); /*0x46a3f2*/
+    v11 = (*(int (**)(int *))(*(unsigned int *)this + 444))(this); /*0x46a3f2*/
     result = (*(int (**)(unsigned int))(**(unsigned int **)(v11 + 228) + 44))(*(unsigned int *)(v11 + 228)); /*0x46a400*/
     if ( result != 6 ) /*0x46a406*/
     {
@@ -1093,7 +1094,7 @@ int Warhead::ApplyPostDamageEffects()
         {
           v19 = *(v18 - 1); /*0x46a475*/
           v20 = v19 < *v18; /*0x46a478*/
-          LODWORD(v78) = *v18; /*0x46a47a*/
+          IDA_LODWORD(v78) = *v18; /*0x46a47a*/
           v100 = v19; /*0x46a47e*/
           if ( v20 ) /*0x46a485*/
           {
@@ -1101,11 +1102,11 @@ int Warhead::ApplyPostDamageEffects()
             v81 = v21; /*0x46a492*/
             do /*0x46a906*/
             {
-              v22 = HIWORD(v98) + v21[1]; /*0x46a4a5*/
-              LOWORD(v97) = v98 + *v21; /*0x46a4ad*/
-              HIWORD(v97) = v22; /*0x46a4b5*/
+              v22 = IDA_HIWORD(v98) + v21[1]; /*0x46a4a5*/
+              IDA_LOWORD(v97) = v98 + *v21; /*0x46a4ad*/
+              IDA_HIWORD(v97) = v22; /*0x46a4b5*/
               v82 = v97; /*0x46a4c8*/
-              v23 = (unsigned char *)*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v82) + 57); /*0x46a4d7*/
+              v23 = (unsigned char *)*((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v82) + 57); /*0x46a4d7*/
               if ( v23 ) /*0x46a4df*/
               {
                 v24 = *((char *)this + 44); /*0x46a4e5*/
@@ -1115,15 +1116,15 @@ int Warhead::ApplyPostDamageEffects()
                   v26 = *(unsigned int *)(v13 + 164); /*0x46a51b*/
                   v27 = *(unsigned int *)(v13 + 168); /*0x46a521*/
                   v102 = *(unsigned int *)(v13 + 172); /*0x46a527*/
-                  LOBYTE(v101) = v25; /*0x46a53b*/
+                  IDA_LOBYTE(v101) = v25; /*0x46a53b*/
                   v28 = *((char *)this + 44); /*0x46a542*/
-                  LODWORD(v88) = v26; /*0x46a551*/
-                  LODWORD(v77) = v28; /*0x46a555*/
+                  IDA_LODWORD(v88) = v26; /*0x46a551*/
+                  IDA_LODWORD(v77) = v28; /*0x46a555*/
                   ppv = 0; /*0x46a559*/
                   if ( CoCreateInstance(&rclsid, 0, 7u, &IID_IUnknown, &ppv) >= 0 ) /*0x46a56c*/
                   {
                     v82 = ppv; /*0x46a59d*/
-                    Particle::Init((int)ppv, v99, (int)v23, SLODWORD(v77), SLODWORD(v88), v102, v27, v101); /*0x46a5a1*/
+                    Particle::Init((int)ppv, v99, (int)v23, IDA_SLODWORD(v77), IDA_SLODWORD(v88), v102, v27, v101); /*0x46a5a1*/
                     if ( v82 ) /*0x46a5ac*/
                     {
                       v29 = (char *)this + 39; /*0x46a5b2*/
@@ -1136,11 +1137,11 @@ int Warhead::ApplyPostDamageEffects()
                       v31 = *(unsigned int *)v23; /*0x46a5ff*/
                       v95 = *((char *)this + 41); /*0x46a605*/
                       v32 = (unsigned int *)(*(int (**)(unsigned char *, unsigned char *))(v31 + 72))(v23, v103); /*0x46a614*/
-                      LODWORD(v77) = *v32; /*0x46a61c*/
-                      v33 = Math::CalcAngle((double)v94 - (double)(int)v32[1], (double)SLODWORD(v77) - (double)v93); /*0x46a63f*/
+                      IDA_LODWORD(v77) = *v32; /*0x46a61c*/
+                      v33 = Math::CalcAngle((double)v94 - (double)(int)v32[1], (double)IDA_SLODWORD(v77) - (double)v93); /*0x46a63f*/
                       v34 = Math::RoundToInt((v33 - 1.570796326794897) * -10430.06004058427); /*0x46a653*/
                       v35 = v73; /*0x46a658*/
-                      LOWORD(v87) = v34; /*0x46a662*/
+                      IDA_LOWORD(v87) = v34; /*0x46a662*/
                       if ( v73 == 0.0 ) /*0x46a66c*/
                       {
                         v35 = v74; /*0x46a66e*/
@@ -1149,14 +1150,14 @@ int Warhead::ApplyPostDamageEffects()
                       }
                       Function::Method_41C430(&v73); /*0x46a693*/
                       v88 = v35; /*0x46a69d*/
-                      LODWORD(v77) = SLOWORD(v87) - 0x3FFF; /*0x46a6a7*/
-                      v77 = (double)SLODWORD(v77) * -0.00009587672516830327; /*0x46a6b5*/
+                      IDA_LODWORD(v77) = SLOWORD(v87) - 0x3FFF; /*0x46a6a7*/
+                      v77 = (double)IDA_SLODWORD(v77) * -0.00009587672516830327; /*0x46a6b5*/
                       v73 = Math::ArcTan2(v77) * v35; /*0x46a6d6*/
                       v36 = -(Math::SinCos(v77) * v88); /*0x46a6ea*/
                       v74 = v36; /*0x46a6ec*/
                       Math::Hypotenuse2D(&v73); /*0x46a6f0*/
                       v37 = Math::CalcAngle(v75, v36); /*0x46a705*/
-                      v38 = (double)((__int16)Math::RoundToInt((v37 - 1.570796326794897) * -10430.06004058427) - 0x3FFF) /*0x46a732*/
+                      v38 = (double)((int16_t)Math::RoundToInt((v37 - 1.570796326794897) * -10430.06004058427) - 0x3FFF) /*0x46a732*/
                           * -0.00009587672516830327;
                       v77 = v38; /*0x46a738*/
                       Vector3::Magnitude(&v73); /*0x46a73c*/
@@ -1217,7 +1218,7 @@ int Warhead::ApplyPostDamageEffects()
                 }
               }
               v21 += 2; /*0x46a8f6*/
-              v20 = ++v100 < SLODWORD(v78); /*0x46a8f9*/
+              v20 = ++v100 < IDA_SLODWORD(v78); /*0x46a8f9*/
               v81 = v21; /*0x46a902*/
             }
             while ( v20 ); /*0x46a906*/
@@ -1236,48 +1237,48 @@ int Warhead::ApplyPostDamageEffects()
         v81 = (unsigned short *)(v76 - v16); /*0x46a93e*/
         do /*0x46adc7*/
         {
-          v76 = *(unsigned int *)(*(int (**)(int *, double *))(*(unsigned int **)this + 440))(this, &v88); /*0x46a962*/
-          v46 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, -2, 2); /*0x46a966*/
-          LOWORD(v76) = v46 + v76; /*0x46a971*/
-          v47 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, -2, 2); /*0x46a980*/
+          v76 = *(unsigned int *)(*(int (**)(int *, double *))(*(unsigned int *)this + 440))(this, &v88); /*0x46a962*/
+          v46 = Random::Range((unsigned int *)g_abs_A8B230 + 134, -2, 2); /*0x46a966*/
+          IDA_LOWORD(v76) = v46 + v76; /*0x46a971*/
+          v47 = Random::Range((unsigned int *)g_abs_A8B230 + 134, -2, 2); /*0x46a980*/
           v48 = *(unsigned char *)(v13 + 303); /*0x46a985*/
           v49 = *((char *)this + 44); /*0x46a98b*/
-          HIWORD(v76) += v47; /*0x46a991*/
+          IDA_HIWORD(v76) += v47; /*0x46a991*/
           v50 = *(unsigned int *)(v13 + 164); /*0x46a996*/
           v51 = *(unsigned int *)(v13 + 168); /*0x46a99c*/
           v52 = *(unsigned int *)(v13 + 172); /*0x46a9a2*/
-          LOBYTE(v83) = v48; /*0x46a9a8*/
-          LODWORD(v87) = v49; /*0x46a9b0*/
-          LODWORD(v78) = v50; /*0x46a9ba*/
-          LODWORD(v77) = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v76); /*0x46a9c3*/
+          IDA_LOBYTE(v83) = v48; /*0x46a9a8*/
+          IDA_LODWORD(v87) = v49; /*0x46a9b0*/
+          IDA_LODWORD(v78) = v50; /*0x46a9ba*/
+          IDA_LODWORD(v77) = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v76); /*0x46a9c3*/
           v79 = 0; /*0x46a9da*/
           if ( CoCreateInstance(&rclsid, 0, 7u, &IID_IUnknown, &v79) >= 0 ) /*0x46a9ea*/
           {
             v80 = (int)v79; /*0x46aa12*/
-            Particle::Init((int)v79, v99, SLODWORD(v77), SLODWORD(v87), SLODWORD(v78), v52, v51, v83); /*0x46aa16*/
+            Particle::Init((int)v79, v99, IDA_SLODWORD(v77), IDA_SLODWORD(v87), IDA_SLODWORD(v78), v52, v51, v83); /*0x46aa16*/
             if ( v80 ) /*0x46aa21*/
             {
               v73 = 0.0; /*0x46aa31*/
               v74 = 0.0; /*0x46aa41*/
               v75 = 0.0; /*0x46aa51*/
-              v53 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v76); /*0x46aa61*/
+              v53 = (int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v76); /*0x46aa61*/
               v54 = (char *)this + 39; /*0x46aa66*/
               v84 = *((char *)this + 39); /*0x46aa70*/
               v85 = *((char *)this + 40); /*0x46aa77*/
               v55 = *v53; /*0x46aa7b*/
               v86 = *((char *)this + 41); /*0x46aa80*/
               v56 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v55 + 72))(v53, v103); /*0x46aa8e*/
-              LODWORD(v78) = *v56; /*0x46aa96*/
-              v57 = Math::CalcAngle((double)v85 - (double)(int)v56[1], (double)SLODWORD(v78) - (double)v84); /*0x46aab3*/
+              IDA_LODWORD(v78) = *v56; /*0x46aa96*/
+              v57 = Math::CalcAngle((double)v85 - (double)(int)v56[1], (double)IDA_SLODWORD(v78) - (double)v84); /*0x46aab3*/
               v58 = Math::RoundToInt((v57 - 1.570796326794897) * -10430.06004058427); /*0x46aad6*/
               if ( v73 == 0.0 && v74 == 0.0 ) /*0x46aaef*/
                 v73 = 100.0; /*0x46aaf1*/
               v87 = Math::Sqrt(v74 * v74 + v73 * v73); /*0x46ab26*/
-              LODWORD(v78) = v58 - 0x3FFF; /*0x46ab2a*/
-              v78 = (double)SLODWORD(v78) * -0.00009587672516830327; /*0x46ab38*/
-              v59 = HIDWORD(v78); /*0x46ab3c*/
+              IDA_LODWORD(v78) = v58 - 0x3FFF; /*0x46ab2a*/
+              v78 = (double)IDA_SLODWORD(v78) * -0.00009587672516830327; /*0x46ab38*/
+              v59 = IDA_HIDWORD(v78); /*0x46ab3c*/
               v73 = Math::ArcTan2(v78) * v87; /*0x46ab55*/
-              v60 = -(Math::SinCos(COERCE_DOUBLE(__PAIR64__(v59, LODWORD(v78)))) * v87); /*0x46ab65*/
+              v60 = -(Math::SinCos(COERCE_DOUBLE(__PAIR64__(v59, IDA_LODWORD(v78)))) * v87); /*0x46ab65*/
               v74 = v60; /*0x46ab67*/
               v78 = (double)*(int *)(v13 + 168); /*0x46ab71*/
               if ( v73 == 0.0 && v60 == 0.0 && v75 == 0.0 ) /*0x46aba2*/
@@ -1289,14 +1290,14 @@ int Warhead::ApplyPostDamageEffects()
               v75 = v75 * v62; /*0x46ac00*/
               Math::Hypotenuse2D(&v73); /*0x46ac06*/
               v63 = Math::CalcAngle(v75, v62); /*0x46ac1b*/
-              LODWORD(v78) = (__int16)Math::RoundToInt((v63 - 1.570796326794897) * -10430.06004058427) - 0x3FFF; /*0x46ac3d*/
-              v78 = (double)SLODWORD(v78) * -0.00009587672516830327; /*0x46ac4b*/
+              IDA_LODWORD(v78) = (int16_t)Math::RoundToInt((v63 - 1.570796326794897) * -10430.06004058427) - 0x3FFF; /*0x46ac3d*/
+              v78 = (double)IDA_SLODWORD(v78) * -0.00009587672516830327; /*0x46ac4b*/
               v87 = Math::Sqrt(v74 * v74 + v75 * v75 + v73 * v73); /*0x46ac73*/
               if ( v78 != 0.0 ) /*0x46ac89*/
               {
-                v64 = HIDWORD(v78); /*0x46ac8b*/
+                v64 = IDA_HIDWORD(v78); /*0x46ac8b*/
                 v73 = v73 / Math::ArcTan2(v78); /*0x46aca4*/
-                v74 = v74 / Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v64, LODWORD(v78)))); /*0x46acb4*/
+                v74 = v74 / Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v64, IDA_LODWORD(v78)))); /*0x46acb4*/
               }
               v73 = Math::ArcTan2(0.7853262558535721) * v73; /*0x46acd5*/
               v74 = Math::ArcTan2(0.7853262558535721) * v74; /*0x46acec*/
@@ -1316,14 +1317,14 @@ int Warhead::ApplyPostDamageEffects()
               v95 = v69; /*0x46ad4d*/
               if ( v70 && *((char *)this + 44) ) /*0x46ad56*/
               {
-                v71 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v76); /*0x46ad75*/
+                v71 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v76); /*0x46ad75*/
                 TechnoClass::CreateFireEffect((unsigned int *)*((char *)this + 44), v71, 0, v13, &v93); /*0x46ad81*/
               }
               if ( *(unsigned char *)(v13 + 337) ) /*0x46ad86*/
               {
                 if ( *((char *)this + 44) ) /*0x46ad90*/
                 {
-                  v72 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v76); /*0x46adad*/
+                  v72 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v76); /*0x46adad*/
                   TechnoClass::CreateRadarBlip((int *)*((char *)this + 44), v72, v13, &v93); /*0x46adb9*/
                 }
               }
@@ -1375,25 +1376,25 @@ int Warhead::ProcessDamageArea()
   int v30; // [esp+30h] [ebp-10h]
   unsigned char v31[12]; // [esp+34h] [ebp-Ch] BYREF
 
-  v24 = *((unsigned int *)MEMORY[0x8871E0] + 1540); /*0x65b5a3*/
-  v25 = *((unsigned int *)MEMORY[0x8871E0] + 1541); /*0x65b5a7*/
-  *((unsigned int *)this + 10) = MEMORY[0xA8ED84]; /*0x65b5ab*/
+  v24 = *((unsigned int *)g_abs_8871E0 + 1540); /*0x65b5a3*/
+  v25 = *((unsigned int *)g_abs_8871E0 + 1541); /*0x65b5a7*/
+  *((unsigned int *)this + 10) = g_abs_A8ED84; /*0x65b5ab*/
   *((unsigned int *)this + 11) = v28; /*0x65b5b3*/
   *((unsigned int *)this + 12) = v24; /*0x65b5b9*/
-  *((unsigned int *)this + 13) = MEMORY[0xA8ED84]; /*0x65b5c2*/
+  *((unsigned int *)this + 13) = g_abs_A8ED84; /*0x65b5c2*/
   *((unsigned int *)this + 14) = v28; /*0x65b5c8*/
   *((unsigned int *)this + 15) = v25; /*0x65b5cb*/
-  v2 = (double *)MEMORY[0x8871E0]; /*0x65b5ce*/
-  v3 = *((unsigned __int8 *)MEMORY[0x8871E0] + 6194); /*0x65b5e2*/
-  v4 = *((unsigned __int8 *)MEMORY[0x8871E0] + 6193); /*0x65b5e8*/
-  v5 = *((unsigned __int8 *)MEMORY[0x8871E0] + 6192); /*0x65b5f5*/
-  if ( *((unsigned int *)MEMORY[0xA8B230] + 1174) == 1 ) /*0x65b5fb*/
+  v2 = (double *)g_abs_8871E0; /*0x65b5ce*/
+  v3 = *((uint8_t *)g_abs_8871E0 + 6194); /*0x65b5e2*/
+  v4 = *((uint8_t *)g_abs_8871E0 + 6193); /*0x65b5e8*/
+  v5 = *((uint8_t *)g_abs_8871E0 + 6192); /*0x65b5f5*/
+  if ( *((unsigned int *)g_abs_A8B230 + 1174) == 1 ) /*0x65b5fb*/
   {
     v3 = -128; /*0x65b5fd*/
     v5 = -128; /*0x65b602*/
   }
   v21 = 1000 * v5 / 255; /*0x65b62a*/
-  v6 = (double)*((int *)this + 19) * *((double *)MEMORY[0x8871E0] + 772); /*0x65b63e*/
+  v6 = (double)*((int *)this + 19) * *((double *)g_abs_8871E0 + 772); /*0x65b63e*/
   v26 = *((unsigned int *)this + 18); /*0x65b679*/
   v23 = 1000 * v3 / 255; /*0x65b684*/
   if ( v6 > 2000.0 ) /*0x65b68b*/
@@ -1421,7 +1422,7 @@ int Warhead::ProcessDamageArea()
   v15 = v13 / v25; /*0x65b73a*/
   *((unsigned int *)this + 25) = v15; /*0x65b741*/
   *((unsigned int *)this + 26) = v7 / v15; /*0x65b749*/
-  v16 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)((char *)this + 64)); /*0x65b750*/
+  v16 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)((char *)this + 64)); /*0x65b750*/
   v17 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)v16 + 72))(v16, v31); /*0x65b75e*/
   v27 = *v17; /*0x65b763*/
   v29 = v17[1]; /*0x65b76a*/
@@ -1433,7 +1434,7 @@ int Warhead::ProcessDamageArea()
   }
   else
   {
-    v18 = __2_YAPAXI_Z(0x4Cu); /*0x65b77e*/
+    v18 = RA2_OPNEW(0x4Cu); /*0x65b77e*/
     if ( v18 ) /*0x65b788*/
       v19 = LightSourceClass::Construct(v18, v27, v29, v30, v26, v7, v22, v10, v14); /*0x65b7b2*/
     else

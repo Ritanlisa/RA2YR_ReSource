@@ -27,7 +27,7 @@ namespace gamemd {
 unsigned int VoxelAnimClass::ProcessFrame()
 {
 
-  int v0; // esi
+  unsigned int * v0;
   unsigned int *v1; // edx
   int v2; // edi
   double v3; // st7
@@ -44,8 +44,8 @@ unsigned int VoxelAnimClass::ProcessFrame()
   float v14; // [esp+8h] [ebp-4h]
   float v15; // [esp+8h] [ebp-4h]
 
-  v0 = 0; /*0x4caf23*/
-  v1 = &unk_86D0BC; /*0x4caf25*/
+  v0 = (int)((unsigned int *)(0));
+  v1 = (unsigned int *)(&unk_86D0BC);
   v2 = 0x2000; /*0x4caf2a*/
   do /*0x4cb050*/
   {
@@ -59,14 +59,14 @@ unsigned int VoxelAnimClass::ProcessFrame()
       if ( v3 <= 0.0 ) /*0x4caf63*/
         v3 = v3 * -1.0; /*0x4caf65*/
       v12 = v3; /*0x4caf6b*/
-      v5 = (unsigned int)&unk_7FFFFF & LODWORD(v12); /*0x4caf75*/
-      v6 = (LODWORD(v12) >> 23) - 127; /*0x4caf7e*/
+      v5 = (unsigned int)&unk_7FFFFF & IDA_LODWORD(v12); /*0x4caf75*/
+      v6 = (IDA_LODWORD(v12) >> 23) - 127; /*0x4caf7e*/
       if ( (v6 & 1) != 0 ) /*0x4caf83*/
         v5 |= (unsigned int)&unk_800000; /*0x4caf85*/
-      v4 = COERCE_FLOAT(((((__int16)v6 >> 1) + 127) << 23) + dword_8650BC[v5 >> 10]); /*0x4cafa7*/
+      v4 = COERCE_FLOAT(((((int16_t)v6 >> 1) + 127) << 23) + dword_8650BC[v5 >> 10]); /*0x4cafa7*/
     }
     v13 = v4; /*0x4cafab*/
-    *(v1 - 0x2000) = (unsigned int)&unk_7FFFFF & LODWORD(v13); /*0x4cafc7*/
+    *(v1 - 0x2000) = (unsigned int)&unk_7FFFFF & IDA_LODWORD(v13); /*0x4cafc7*/
     v7 = COERCE_FLOAT((v0 | 0x100000) << 10); /*0x4cafcd*/
     if ( v7 == 0.0 ) /*0x4cafdc*/
     {
@@ -77,17 +77,17 @@ unsigned int VoxelAnimClass::ProcessFrame()
       if ( v7 <= 0.0 ) /*0x4caff3*/
         v7 = v7 * -1.0; /*0x4caff5*/
       v14 = v7; /*0x4caffb*/
-      v9 = (unsigned int)&unk_7FFFFF & LODWORD(v14); /*0x4cb005*/
-      v10 = (LODWORD(v14) >> 23) - 127; /*0x4cb00e*/
+      v9 = (unsigned int)&unk_7FFFFF & IDA_LODWORD(v14); /*0x4cb005*/
+      v10 = (IDA_LODWORD(v14) >> 23) - 127; /*0x4cb00e*/
       if ( (v10 & 1) != 0 ) /*0x4cb013*/
         v9 |= (unsigned int)&unk_800000; /*0x4cb015*/
-      v8 = COERCE_FLOAT(((((__int16)v10 >> 1) + 127) << 23) + dword_8650BC[v9 >> 10]); /*0x4cb037*/
+      v8 = COERCE_FLOAT(((((int16_t)v10 >> 1) + 127) << 23) + dword_8650BC[v9 >> 10]); /*0x4cb037*/
     }
     v15 = v8; /*0x4cb03b*/
     ++v1; /*0x4cb043*/
-    result = (unsigned int)&unk_7FFFFF & LODWORD(v15); /*0x4cb046*/
+    result = (unsigned int)&unk_7FFFFF & IDA_LODWORD(v15); /*0x4cb046*/
     ++v0; /*0x4cb04b*/
-    *(v1 - 1) = (unsigned int)&unk_7FFFFF & LODWORD(v15); /*0x4cb04c*/
+    *(v1 - 1) = (unsigned int)&unk_7FFFFF & IDA_LODWORD(v15); /*0x4cb04c*/
     --v2; /*0x4cb04f*/
   }
   while ( v2 ); /*0x4cb050*/
@@ -111,15 +111,15 @@ int VoxelAnimClass::CleanupMembers()
   *((unsigned int *)this + 3) = &vt_VoxelAnimClass; /*0x749a0a*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x749a11*/
   v6 = (VoxelAnimClass *)this; /*0x749a26*/
-  v2 = (*(int (**)(int *, VoxelAnimClass **))(MEMORY[0x887388] + 16))(&MEMORY[0x887388], &v6); /*0x749a2a*/
-  if ( v2 != -1 && v2 < MEMORY[0x887398] && v2 < --MEMORY[0x887398] ) /*0x749a45*/
+  v2 = (*(int (**)(int *, VoxelAnimClass **))(g_abs_887388 + 16))(&g_abs_887388, &v6); /*0x749a2a*/
+  if ( v2 != -1 && v2 < g_abs_887398 && v2 < --g_abs_887398 ) /*0x749a45*/
   {
     do /*0x749a5d*/
     {
       ++v2; /*0x749a4d*/
-      *((unsigned int *)MEMORY[0x88738C] + v2 - 1) = *((unsigned int *)MEMORY[0x88738C] + v2); /*0x749a51*/
+      *((unsigned int *)g_abs_88738C + v2 - 1) = *((unsigned int *)g_abs_88738C + v2); /*0x749a51*/
     }
-    while ( v2 < MEMORY[0x887398] ); /*0x749a5d*/
+    while ( v2 < g_abs_887398 ); /*0x749a5d*/
   }
   v3 = *((unsigned int *)this + 66); /*0x749a5f*/
   if ( v3 ) /*0x749a67*/
@@ -127,22 +127,22 @@ int VoxelAnimClass::CleanupMembers()
     (*(void (**)(int))(*(unsigned int *)v3 + 248))(v3); /*0x749a6b*/
     *((unsigned int *)this + 66) = 0; /*0x749a71*/
   }
-  if ( MEMORY[0xA8E9A0] ) /*0x749a82*/
+  if ( g_abs_A8E9A0 ) /*0x749a82*/
     ObjectClass::Undeploy(this); /*0x749a86*/
-  Mixer::ReleaseChannel((int **)this + 69); /*0x749a95*/
-  Mixer::ReleaseChannel((int **)this + 74); /*0x749aa2*/
+  ((Mixer *)((int **)this + 69))->ReleaseChannel(); /*0x749a95*/
+  ((Mixer *)((int **)this + 74))->ReleaseChannel(); /*0x749aa2*/
   AudioFileClass::Release((unsigned int *)this + 69); /*0x749aa9*/
   AudioFileClass::Release((unsigned int *)this + 74); /*0x749ab0*/
   v6 = (VoxelAnimClass *)this; /*0x749ac5*/
-  v4 = (*(int (**)(int *, VoxelAnimClass **))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v6); /*0x749ac9*/
-  if ( v4 != -1 && v4 < MEMORY[0xB0F680] && v4 < --MEMORY[0xB0F680] ) /*0x749ae6*/
+  v4 = (*(int (**)(int *, VoxelAnimClass **))(g_abs_B0F670 + 16))(&g_abs_B0F670, &v6); /*0x749ac9*/
+  if ( v4 != -1 && v4 < g_abs_B0F680 && v4 < --g_abs_B0F680 ) /*0x749ae6*/
   {
     do /*0x749afe*/
     {
       ++v4; /*0x749aee*/
-      *((unsigned int *)MEMORY[0xB0F674] + v4 - 1) = *((unsigned int *)MEMORY[0xB0F674] + v4); /*0x749af2*/
+      *((unsigned int *)g_abs_B0F674 + v4 - 1) = *((unsigned int *)g_abs_B0F674 + v4); /*0x749af2*/
     }
-    while ( v4 < MEMORY[0xB0F680] ); /*0x749afe*/
+    while ( v4 < g_abs_B0F680 ); /*0x749afe*/
   }
   *((unsigned int *)this + 65) = 0; /*0x749b02*/
   return ObjectClass::Dtor(this); /*0x749b11*/
@@ -162,7 +162,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   int v9; // edi
   int v10; // ecx
   int v11; // eax
-  __int16 *v12; // eax
+  int16_t *v12; // eax
   int v13; // ecx
   int v14; // eax
   unsigned int *v15; // esi
@@ -190,8 +190,8 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   float v38[12]; // [esp+50h] [ebp-60h] BYREF
   float v39[12]; // [esp+80h] [ebp-30h] BYREF
 
-  if ( (*(unsigned int *)MEMORY[0xA8B230] & 0x1000) == 0 /*0x749bb6*/
-    || (v25 = *((char *)this + 39), v26 = *((char *)this + 40), v27 = *((char *)this + 41), LOBYTE(v4) = Game::Stub3((int)&v25), !(unsigned char)v4) )
+  if ( (*(unsigned int *)g_abs_A8B230 & 0x1000) == 0 /*0x749bb6*/
+    || (v25 = *((char *)this + 39), v26 = *((char *)this + 40), v27 = *((char *)this + 41), IDA_LOBYTE(v4) = Game::Stub3((int)&v25), !(unsigned char)v4) )
   {
     v5 = a2[1]; /*0x749bcb*/
     v34 = *a2; /*0x749bd0*/
@@ -200,25 +200,25 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     v31 = *((char *)this + 40); /*0x749beb*/
     GroundHeight = *((char *)this + 41); /*0x749bf2*/
     GroundHeight = Cell::GetGroundHeight(&v30); /*0x749c05*/
-    if ( (*((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &v30) + 80) & 0x100) == 0 ) /*0x749c1b*/
+    if ( (*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, &v30) + 80) & 0x100) == 0 ) /*0x749c1b*/
       goto LABEL_6; /*0x749c1b*/
     v25 = *((char *)this + 39); /*0x749c1f*/
     v26 = *((char *)this + 40); /*0x749c26*/
-    if ( *((char *)this + 41) >= MEMORY[0xB1D1BC] + GroundHeight ) /*0x749c38*/
+    if ( *((char *)this + 41) >= g_abs_B1D1BC + GroundHeight ) /*0x749c38*/
     {
-      v33 = MEMORY[0xB1D1BC] + GroundHeight; /*0x749c3e*/
-      v27 = MEMORY[0xB1D1BC] + GroundHeight + 1; /*0x749c4a*/
+      v33 = g_abs_B1D1BC + GroundHeight; /*0x749c3e*/
+      v27 = g_abs_B1D1BC + GroundHeight + 1; /*0x749c4a*/
       v25 = v30; /*0x749c4e*/
       v26 = v31; /*0x749c5b*/
-      Coord::To_Screen(MEMORY[0x887324], &v25, v36); /*0x749c60*/
+      Coord::To_Screen(g_abs_887324, &v25, v36); /*0x749c60*/
     }
     else
     {
 LABEL_6:
       v33 = GroundHeight; /*0x749c62*/
-      Coord::To_Screen(MEMORY[0x887324], &v30, v36); /*0x749c76*/
+      Coord::To_Screen(g_abs_887324, &v30, v36); /*0x749c76*/
     }
-    LOBYTE(v4) = *((unsigned char *)this + 316); /*0x749c7b*/
+    IDA_LOBYTE(v4) = *((unsigned char *)this + 316); /*0x749c7b*/
     if ( !(unsigned char)v4 ) /*0x749c83*/
     {
       v4 = *((char *)this + 65); /*0x749c89*/
@@ -231,9 +231,9 @@ LABEL_6:
           v6,
           *(unsigned int *)(*((char *)this + 65) + 664),
           0,
-          MEMORY[0x887430],
+          g_abs_887430,
           v38,
-          (float *)&MEMORY[0x887420],
+          (float *)&g_abs_887420,
           0,
           0,
           0);
@@ -241,13 +241,13 @@ LABEL_6:
         v25 = v36[0] + v29; /*0x749d15*/
         v26 = v28 + v36[1]; /*0x749d26*/
         v22 = -4 - ZCoordToScreenY(v33); /*0x749d36*/
-        SHPFrame = (int *)BuildingClass::GetSHPFrame((unsigned int *)MEMORY[0x87F6B4], 8193); /*0x749d4e*/
+        SHPFrame = (int *)BuildingClass::GetSHPFrame((unsigned int *)g_abs_87F6B4, 8193); /*0x749d4e*/
         v7 = Miles::DriverGet(); /*0x749d5c*/
-        BlitterDrawSHP((int *)MEMORY[0x887314], MEMORY[0x87F6B4], v7, v37, &v25, a3, 0, SHPFrame, v22, 0, 1000, 0, 0); /*0x749d6e*/
+        BlitterDrawSHP((int *)g_abs_887314, g_abs_87F6B4, v7, v37, &v25, a3, 0, SHPFrame, v22, 0, 1000, 0, 0); /*0x749d6e*/
         qmemcpy(v38, VoxelAnimClass::QuaternionToMatrix((float *)this + 44, v39), sizeof(v38)); /*0x749d95*/
-        globalHelper_053C80(v6, 0, 0, v38, (float *)&MEMORY[0x887470]); /*0x749da3*/
+        globalHelper_053C80(v6, 0, 0, v38, (float *)&g_abs_887470); /*0x749da3*/
         Viewport::Clear(); /*0x749da8*/
-        v8 = MultiplyMatrix3x4(v39, MEMORY[0x887430], v38); /*0x749dbe*/
+        v8 = MultiplyMatrix3x4(v39, g_abs_887430, v38); /*0x749dbe*/
         TransformVoxelVertex(v6, *(unsigned int *)(*((char *)this + 65) + 664), 0, v8); /*0x749dd4*/
         InitializeAudioOcclusion(v37, &v29, &v28); /*0x749de6*/
         v9 = 10240; /*0x749df1*/
@@ -258,31 +258,31 @@ LABEL_6:
         v25 = *((char *)this + 39); /*0x749e17*/
         v27 = v10; /*0x749e1f*/
         v26 = v11; /*0x749e29*/
-        v12 = (__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v25); /*0x749e2d*/
+        v12 = (int16_t *)Coord::To_Cell(&g_abs_87F7E8, &v25); /*0x749e2d*/
         v13 = *((char *)this + 67); /*0x749e32*/
         v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
         {
-          v15 = *(unsigned int **)(*((unsigned int *)MEMORY[0xB054D4] + *(unsigned int *)(v13 + 90196)) + 780); /*0x749e52*/
+          v15 = *(unsigned int **)(*((unsigned int *)g_abs_B054D4 + *(unsigned int *)(v13 + 90196)) + 780); /*0x749e52*/
         }
         else if ( *(unsigned char *)(*((char *)this + 65) + 768) ) /*0x749e60*/
         {
-          v15 = (unsigned int *)MEMORY[0x87F6BC]; /*0x749e6a*/
+          v15 = (unsigned int *)g_abs_87F6BC; /*0x749e6a*/
         }
         else
         {
-          v15 = (unsigned int *)MEMORY[0x87F6B4]; /*0x749e72*/
+          v15 = (unsigned int *)g_abs_87F6B4; /*0x749e72*/
           v14 = 1000; /*0x749e78*/
         }
-        v25 = v29 + v34; /*0x749e8b*/
-        v24 = v14; /*0x749e97*/
+        v25 = (int)(v29 + v34);
+        v24 = (int)(v14);
         v16 = *this; /*0x749e98*/
         v26 = v28 + v35; /*0x749ea0*/
         v17 = (*(int (**)(int *))(v16 + 464))(this); /*0x749ea4*/
         v23 = -2 - ZCoordToScreenY(v17); /*0x749eb8*/
         v21 = (int *)BuildingClass::GetSHPFrame(v15, v9); /*0x749ec8*/
         v18 = Miles::DriverGet(); /*0x749ed6*/
-        LOBYTE(v4) = BlitterDrawSHP((int *)MEMORY[0x887314], (int)v15, v18, v37, &v25, a3, 0, v21, v23, 0, v24, 0, 0); /*0x749ee4*/
+        IDA_LOBYTE(v4) = BlitterDrawSHP((int *)g_abs_887314, (int)v15, v18, v37, &v25, a3, 0, v21, v23, 0, v24, 0, 0); /*0x749ee4*/
       }
     }
   }
@@ -357,9 +357,9 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
   }
   v6 = (*(int (**)(int))(*(unsigned int *)(*((unsigned int *)this + 67) + 4) + 16))(*((unsigned int *)this + 67) + 4); /*0x74aa8b*/
   Power::TimerProcess(v6); /*0x74aa91*/
-  LOBYTE(v7) = *((unsigned char *)this + 272); /*0x74aa96*/
+  IDA_LOBYTE(v7) = *((unsigned char *)this + 272); /*0x74aa96*/
   v8 = Power::FlagProcess(a2, v7); /*0x74aa9f*/
-  LOBYTE(v8) = *((unsigned char *)this + 316); /*0x74aaa4*/
+  IDA_LOBYTE(v8) = *((unsigned char *)this + 316); /*0x74aaa4*/
   Power::FlagProcess(a2, v8); /*0x74aaad*/
   return Power::TimerProcess(*((unsigned int *)this + 80)); /*0x74aac0*/
 
@@ -381,11 +381,11 @@ int VoxelAnimClass::Reset()
 
   LocomotionClass::Init((unsigned int *)this); /*0x75aa93*/
   *((unsigned int *)this + 7) = g_AsyncMovieState; /*0x75aaa1*/
-  *((unsigned int *)this + 8) = MEMORY[0xB45BEC]; /*0x75aaaa*/
-  *((unsigned int *)this + 9) = MEMORY[0xB45BF0]; /*0x75aab6*/
+  *((unsigned int *)this + 8) = g_abs_B45BEC; /*0x75aaaa*/
+  *((unsigned int *)this + 9) = g_abs_B45BF0; /*0x75aab6*/
   *((unsigned int *)this + 10) = g_AsyncMovieState; /*0x75aabe*/
-  *((unsigned int *)this + 11) = MEMORY[0xB45BEC]; /*0x75aac6*/
-  *((unsigned int *)this + 12) = MEMORY[0xB45BF0]; /*0x75aace*/
+  *((unsigned int *)this + 11) = g_abs_B45BEC; /*0x75aac6*/
+  *((unsigned int *)this + 12) = g_abs_B45BF0; /*0x75aace*/
   *((unsigned char *)this + 52) = 0; /*0x75aad3*/
   *((unsigned char *)this + 53) = 0; /*0x75aad6*/
   *((unsigned char *)this + 54) = 0; /*0x75aad9*/
@@ -426,7 +426,7 @@ int VoxelAnimClass::Constructor()
   *((unsigned char *)this + 508) = 1; /*0x75ec67*/
   *((unsigned char *)this + 509) = 0; /*0x75ec6e*/
   *((unsigned int *)this + 124) = &vt_VectorClass_CellClass; /*0x75ec74*/
-  *((unsigned int *)this + 125) = __2_YAPAXI_Z(0x14u); /*0x75ec83*/
+  *((unsigned int *)this + 125) = RA2_OPNEW(0x14u); /*0x75ec83*/
   *((unsigned char *)this + 509) = 1; /*0x75ec89*/
   *((unsigned int *)this + 124) = &vt_DynamicVectorClass_CellClass; /*0x75ec90*/
   *((unsigned int *)this + 129) = 10; /*0x75ec9a*/
@@ -435,16 +435,16 @@ int VoxelAnimClass::Constructor()
   *((unsigned int *)this + 1) = &WaveClass::`vftable'; /*0x75ecb0*/
   *((unsigned int *)this + 2) = &vt_WaveClass; /*0x75ecb7*/
   *((unsigned int *)this + 3) = &off_7F6BC8; /*0x75ecbe*/
-  if ( MEMORY[0xA8EC48] < MEMORY[0xA8EC40] /*0x75ecfb*/
-    || (MEMORY[0xA8EC45] || !MEMORY[0xA8EC40])
-    && MEMORY[0xA8EC4C] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8EC38] + 8))(
-         &MEMORY[0xA8EC38],
-         MEMORY[0xA8EC40] + MEMORY[0xA8EC4C],
+  if ( g_abs_A8EC48 < g_abs_A8EC40 /*0x75ecfb*/
+    || (g_abs_A8EC45 || !g_abs_A8EC40)
+    && g_abs_A8EC4C > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_A8EC38 + 8))(
+         &g_abs_A8EC38,
+         g_abs_A8EC40 + g_abs_A8EC4C,
          0) )
   {
-    v2 = MEMORY[0xA8EC48]++; /*0x75ed08*/
-    *((unsigned int *)MEMORY[0xA8EC3C] + v2) = this; /*0x75ed17*/
+    v2 = g_abs_A8EC48++; /*0x75ed08*/
+    *((unsigned int *)g_abs_A8EC3C + v2) = this; /*0x75ed17*/
   }
   if ( !byte_B725CC ) /*0x75ed20*/
     Voxel::InitDistanceTable(); /*0x75ed22*/
@@ -529,7 +529,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
   unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = (unsigned int *)(*(int (**)(#374 *, unsigned char *))(*(unsigned int *)this + 72))(this, v7); /*0x749b2f*/
-  if ( (*((unsigned char *)Coord::To_Cell(&MEMORY[0x87F7E8], v5) + 300) & 0x10) != 0 ) /*0x749b44*/
+  if ( (*((unsigned char *)Coord::To_Cell(&g_abs_87F7E8, v5) + 300) & 0x10) != 0 ) /*0x749b44*/
     *((unsigned char *)this + 128) = 1; /*0x749b46*/
   return ObjectClass::CalcDrawRect(this); /*0x749b60*/
 
@@ -604,12 +604,12 @@ int VoxelAnimClass::StubReturnFalse(int a1)
 
 // 0x74AB50
 namespace gamemd {
-VoxelAnimClass * VoxelAnimClass::DrawVoxel(char a2)
+VoxelAnimClass * VoxelAnimClass::DrawVoxel(#374 * Block, char a2)
 {
 
   VoxelAnimClass::CleanupMembers(Block); /*0x74ab53*/
-  if ( (a2 & 1) != 0 ) /*0x74ab5d*/
-    __3_YAXPAX_Z(Block); /*0x74ab60*/
+  if ( (Block & 1) != 0 ) /*0x74ab5d*/
+    RA2_OPDEL(Block); /*0x74ab60*/
   return (VoxelAnimClass *)Block; /*0x74ab6a*/
 
 }

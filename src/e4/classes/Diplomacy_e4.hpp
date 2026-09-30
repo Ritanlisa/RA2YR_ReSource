@@ -11,7 +11,7 @@ struct Diplomacy {
     char Diplomacy_field_04[4];  // 0x4
 // --- flat members (END) ---
     void* * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4);
-    char * GetField(BuildingTypeClass * aP1);
+    char * GetField(void * aP1);
 };
 
 } // namespace gamemd

@@ -24,6 +24,12 @@
 namespace gamemd {
 int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8)
 {
+    unsigned int v26 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
+    unsigned int v26 = 0;  /* G37 hoist */
+    unsigned int v14 = 0;  /* G37 hoist */
+    unsigned int v13 = 0;  /* G37 hoist */
 
   unsigned int *v8; // eax
   unsigned int *v9; // esi
@@ -31,7 +37,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   char v11; // dl
   unsigned short *v12; // eax
   unsigned short *v13; // edx
-  __int16 v14; // cx
+  int16_t v14; // cx
   int v15; // eax
   int v16; // edx
   char *v17; // esi
@@ -55,7 +61,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   v28 = (unsigned int *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
-    v8 = __2_YAPAXI_Z(0x18u); /*0x5a0189*/
+    v8 = (unsigned int *)(RA2_OPNEW(0x18u));
     v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
@@ -82,13 +88,13 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
         {
           v12 = (unsigned short *)(v10[1] + 4 * v31); /*0x5a01f3*/
           v13 = (unsigned short *)(4 * (v11 & 7) + 9041544); /*0x5a01fe*/
-          v14 = *v13 + *v12; /*0x5a0205*/
-          LOWORD(v13) = v12[1] + v13[1]; /*0x5a020c*/
-          LOWORD(v32) = v14; /*0x5a0210*/
-          HIWORD(v32) = (unsigned short)v13; /*0x5a0215*/
+          v14 = *(unsigned int *)(v13) + *v12; /*0x5a0205*/
+          IDA_LOWORD(v13) = v12[1] + ((unsigned int *)(v13))[1]; /*0x5a020c*/
+          IDA_LOWORD(v32) = v14; /*0x5a0210*/
+          IDA_HIWORD(v32) = (unsigned short)v13; /*0x5a0215*/
           v30 = v32; /*0x5a021e*/
-          v15 = (__int16)v13; /*0x5a0225*/
-          v16 = (__int16)v13 + v14; /*0x5a0228*/
+          v15 = (int16_t)v13; /*0x5a0225*/
+          v16 = (int16_t)v13 + v14; /*0x5a0228*/
           if ( v16 > g_MapCellHeight_Value /*0x5a0285*/
             && v14 - v15 < g_MapCellHeight_Value
             && v15 - v14 < g_MapCellHeight_Value
@@ -101,7 +107,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
             v17 = (char *)g_MapTileArray + 80 * v14 + 80 * unk_89C2DC * v15; /*0x5a02a4*/
             v18 = *((unsigned int *)v17 + 14); /*0x5a02a8*/
             v19 = a7 && v18 == a1 - 1; /*0x5a02b6*/
-            v20 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v30); /*0x5a02c6*/
+            v20 = (int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v30); /*0x5a02c6*/
             v21 = v20; /*0x5a02cd*/
             if ( (!v18 || v19) && (Cell::IsEmpty(v20) || v19 && Cell::IsGroundTypeRange(v21)) ) /*0x5a02e6*/
             {
@@ -109,7 +115,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
               if ( v29[4] < v22 /*0x5a0324*/
                 || (*((unsigned char *)v29 + 13) || !v22)
                 && (v23 = v29[5], v23 > 0)
-                && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*v29 + 8))(v29, v22 + v23, 0) )
+                && (*(uint8_t (**)(unsigned int *, int, unsigned int))(*v29 + 8))(v29, v22 + v23, 0) )
               {
                 v24 = v29[4]; /*0x5a032b*/
                 v25 = v29[1]; /*0x5a032e*/
@@ -118,7 +124,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
               }
               *((unsigned int *)v17 + 14) = a1; /*0x5a0348*/
               if ( a7 && Cell::IsEmpty(v21) ) /*0x5a034f*/
-                *((unsigned char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v30) + 283) = a8; /*0x5a036b*/
+                *((unsigned char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v30) + 283) = a8; /*0x5a036b*/
             }
             else if ( v18 != a1 ) /*0x5a02f3*/
             {
@@ -200,7 +206,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   if ( *(int *)&stru_B05488.__pad_579C[18644] < *(int *)&stru_B05488.__pad_579C[18636] /*0x7217fe*/
     || (stru_B05488.__pad_579C[18641] || !*(unsigned int *)&stru_B05488.__pad_579C[18636])
     && *(int *)&stru_B05488.__pad_579C[18648] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[18628] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[18628] + 8))(
          &stru_B05488.__pad_579C[18628],
          *(unsigned int *)&stru_B05488.__pad_579C[18636] + *(unsigned int *)&stru_B05488.__pad_579C[18648],
          0) )
@@ -212,7 +218,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x721857*/
     || (stru_B05488.__pad_579C[19033] || !*(unsigned int *)&stru_B05488.__pad_579C[19028])
     && *(int *)&stru_B05488.__pad_579C[19040] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19020] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19020] + 8))(
          &stru_B05488.__pad_579C[19020],
          *(unsigned int *)&stru_B05488.__pad_579C[19028] + *(unsigned int *)&stru_B05488.__pad_579C[19040],
          0) )
@@ -226,7 +232,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
 }
 // 0x721A50
 namespace gamemd {
-void TiberiumClass::LoadFromINI()
+void TiberiumClass::LoadFromINI( uint8_t *** aP1)
 {
 
   int Int_Overwrite; // eax
@@ -260,7 +266,7 @@ void TiberiumClass::LoadFromINI()
     return 0; /*0x721cea*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x721a8b*/
                     (int)aP1,
-                    (unsigned __int8 *)(this + 36),
+                    (uint8_t *)(this + 36),
                     (CCINIClass *)&stru_830620.__pad_579C[60264],
                     *(INIClass **)(this + 156));
   _FFFFFFF4 = *(INIClass **)(this + 160); /*0x721a9d*/
@@ -268,13 +274,13 @@ void TiberiumClass::LoadFromINI()
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x721aac*/
                        (int)aP1,
                        (INIClass *)(this + 36),
-                       (unsigned __int8 *)&stru_830620.__pad_579C[60244],
+                       (uint8_t *)&stru_830620.__pad_579C[60244],
                        _FFFFFFF4);
   v5 = *(CCINIClass **)(this + 168); /*0x721ab1*/
   *(double *)(this + 160) = Double_Overwrite; /*0x721ab9*/
   eax2a = INIClass::ReadInt_Overwrite( /*0x721ac6*/
             (int)aP1,
-            (unsigned __int8 *)(this + 36),
+            (uint8_t *)(this + 36),
             (CCINIClass *)&stru_830620.__pad_579C[60236],
             (INIClass *)v5);
   v19 = *(INIClass **)(this + 176); /*0x721ad8*/
@@ -282,40 +288,40 @@ void TiberiumClass::LoadFromINI()
   v8 = INIClass::ReadDouble_Overwrite( /*0x721ae7*/
          (int)aP1,
          (INIClass *)(this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[60216],
+         (uint8_t *)&stru_830620.__pad_579C[60216],
          v19);
   v7 = *(CCINIClass **)(this + 184); /*0x721aec*/
   *(double *)(this + 176) = v8; /*0x721af4*/
   v10 = INIClass::ReadInt_Overwrite( /*0x721b01*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (uint8_t *)(this + 36),
           (CCINIClass *)&stru_830620.__pad_579C[60208],
           (INIClass *)v7);
   v11 = *(INIClass **)(this + 188); /*0x721b06*/
   *(unsigned int *)(this + 184) = v10; /*0x721b0c*/
-  v12 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), &stru_81938C, v11); /*0x721b1b*/
+  v12 = INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)(this + 36), &stru_81938C, v11); /*0x721b1b*/
   v18 = *(DynamicVector **)(this + 192); /*0x721b28*/
   *(unsigned int *)(this + 188) = v12; /*0x721b2f*/
   *(unsigned int *)(this + 192) = BuildingTypeClass::FindAnimByName( /*0x721b3a*/
                               aP1,
-                              (unsigned __int8 *)(this + 36),
-                              (unsigned __int8 *)&stru_81B138,
+                              (uint8_t *)(this + 36),
+                              (uint8_t *)&stru_81B138,
                               (int)v18);
   if ( INIClass::GetString( /*0x721b57*/
          aP1,
          (INIClass *)(this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[60200],
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (uint8_t *)&stru_830620.__pad_579C[60200],
+         (INIClass *)&g_abs_87F8E4,
          String,
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor(v27, 0, 0); /*0x721b6c*/
     v27[0] = &vt_TypeList_AnimTypeClass_const; /*0x721b7b*/
-    for ( i = (AbstractClass *)strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); /*0x721b8d*/
+    for ( i = (AbstractClass *)strtok(String[0].__pad_0, g_abs_817F70); /*0x721b8d*/
           i;
-          i = (AbstractClass *)strtok(0, MEMORY[0x817F70].__pad_0) )
+          i = (AbstractClass *)strtok(0, g_abs_817F70) )
     {
-      if ( !i->__pad_0[0] ) /*0x721b8f*/
+      if ( !i-((unsigned int *)(>__pad_0))[0] ) /*0x721b8f*/
         break; /*0x721b92*/
       v21 = AnimTypeClass::FindOrCreate(i); /*0x721b9d*/
       if ( v21 ) /*0x721ba1*/
@@ -338,28 +344,28 @@ void TiberiumClass::LoadFromINI()
   *(unsigned int *)(this + 220) = v13; /*0x721c1e*/
   v22[0] = &vt_VectorClass_AnimTypeClass_const; /*0x721c21*/
   if ( v14 && v23 ) /*0x721c34*/
-    __3_YAXPAX_Z(v14); /*0x721c37*/
+    RA2_OPDEL(v14); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite( /*0x721c55*/
              (int)aP1,
-             (unsigned __int8 *)(this + 36),
+             (uint8_t *)(this + 36),
              &g_INI_Key_Image,
              (INIClass *)0xFFFFFFFF) )
   {
     case -1: /*0x721c55*/
       goto LABEL_19;
     case 2: /*0x721c55*/
-      *(unsigned int *)(this + 224) = MEMORY[0xA83D84][1].sectionHead[1]; /*0x721c69*/
+      *(unsigned int *)(this + 224) = g_abs_A83D84[1].sectionHead[1]; /*0x721c69*/
       *(unsigned int *)(this + 228) = 12; /*0x721c6f*/
       *(unsigned int *)(this + 232) = 12; /*0x721c75*/
       return 1; /*0x721c85*/
     case 3: /*0x721c55*/
-      *(unsigned int *)(this + 224) = *(unsigned int *)&MEMORY[0xA83D84][5].__pad_41[3]; /*0x721c94*/
+      *(unsigned int *)(this + 224) = *(unsigned int *)&g_abs_A83D84[5].__pad_41[3]; /*0x721c94*/
       goto LABEL_18; /*0x721c9a*/
     case 4: /*0x721c55*/
-      *(unsigned int *)(this + 224) = MEMORY[0xA83D84][6].INIClass_field_3C; /*0x721ca8*/
+      *(unsigned int *)(this + 224) = g_abs_A83D84[6].INIClass_field_3C; /*0x721ca8*/
       goto LABEL_18; /*0x721cae*/
     default:
-      *(unsigned int *)(this + 224) = MEMORY[0xA83D84][4].unknown38; /*0x721cbb*/
+      *(unsigned int *)(this + 224) = g_abs_A83D84[4].unknown38; /*0x721cbb*/
 LABEL_18:
       *(unsigned int *)(this + 236) = 8; /*0x721cc1*/
       *(unsigned int *)(this + 228) = 12; /*0x721cd0*/
@@ -405,12 +411,12 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
   }
   if ( *(unsigned int *)(v2 + 252) ) /*0x721ec3*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 252)); /*0x721ece*/
+    RA2_OPDEL(*(void **)(v2 + 252)); /*0x721ece*/
     *(unsigned int *)(v2 + 252) = 0; /*0x721ed6*/
   }
   if ( *(unsigned int *)(v2 + 248) ) /*0x721edc*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 248)); /*0x721ee7*/
+    RA2_OPDEL(*(void **)(v2 + 248)); /*0x721ee7*/
     *(unsigned int *)(v2 + 248) = 0; /*0x721eef*/
   }
   v7 = *(unsigned int **)(v2 + 272); /*0x721ef5*/
@@ -427,12 +433,12 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
   }
   if ( *(unsigned int *)(v2 + 280) ) /*0x721f34*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 280)); /*0x721f3f*/
+    RA2_OPDEL(*(void **)(v2 + 280)); /*0x721f3f*/
     *(unsigned int *)(v2 + 280) = 0; /*0x721f47*/
   }
   if ( *(unsigned int *)(v2 + 276) ) /*0x721f4d*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 276)); /*0x721f58*/
+    RA2_OPDEL(*(void **)(v2 + 276)); /*0x721f58*/
     *(unsigned int *)(v2 + 276) = 0; /*0x721f60*/
   }
   v10 = *(unsigned int *)(v2 + 196); /*0x721f66*/
@@ -454,7 +460,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       *(unsigned int *)(v2 + 8) = &TiberiumClass::`vftable'; /*0x721fd4*/
       *(unsigned int *)(v2 + 12) = &vt_TiberiumClass; /*0x721fdb*/
     }
-    ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(v2 + 224)); /*0x721fee*/
+    ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(v2 + 224)); /*0x721fee*/
     if ( v2 != -196 ) /*0x721ff5*/
       AnimTypeList::Constructor((unsigned int *)(v2 + 196)); /*0x721ff9*/
     (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v11 + 12))(v11, &a1, 4, 0); /*0x722009*/
@@ -474,7 +480,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     if ( *(int *)(v2 + 212) > 0 ) /*0x722045*/
     {
       do /*0x722064*/
-        ObjectPtr::RegisterForTracking((int)&MEMORY[0xB0C110], (int *)(*(unsigned int *)(v2 + 200) + 4 * v13++)); /*0x722056*/
+        ObjectPtr::RegisterForTracking((int)&g_abs_B0C110, (int *)(*(unsigned int *)(v2 + 200) + 4 * v13++)); /*0x722056*/
       while ( v13 < *(unsigned int *)(v2 + 212) ); /*0x722064*/
       result = 0; /*0x722066*/
     }

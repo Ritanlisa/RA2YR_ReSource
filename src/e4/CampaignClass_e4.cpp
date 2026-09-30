@@ -48,7 +48,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   if ( g_UnitTypeInitState < dword_A83D00 /*0x46cbcc*/
     || (byte_A83D05 || !dword_A83D00)
     && dword_A83D0C > 0
-    && ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))dword_A83CF8->field_8)(
+    && ((uint8_t (*)(DynamicVector **, int, unsigned int))dword_A83CF8->field_8)(
          &dword_A83CF8,
          dword_A83D00 + dword_A83D0C,
          0) )
@@ -57,7 +57,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
     *(unsigned int *)&g_CampaignTypeArray->__pad_0[4 * v3] = this; /*0x46cbe8*/
   }
   *((unsigned char *)this + 156) = 0; /*0x46cbf7*/
-  wcscpy((wchar_t *)((char *)this + 672), (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472]); /*0x46cbfe*/
+  wcscpy((wchar_t *)((char *)this + 672), (const wchar_t *)&g_abs_87F8E4); /*0x46cbfe*/
   return this; /*0x46cc08*/
 
 }
@@ -69,7 +69,7 @@ int CampaignClass::LoadFromINIList()
 
   int result; // eax
   CCINIClass *v3; // ebp
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int v5; // esi
   INIClass *v6; // esi
   int v7; // eax
@@ -80,12 +80,12 @@ int CampaignClass::LoadFromINIList()
   v3 = 0; /*0x46ce21*/
   for ( i = result; (int)v3 < i; v3 = (CCINIClass *)((char *)v3 + 1) ) /*0x46ce29*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(this, (CCINIClass *)&stru_81B1A4.needsSave_flag, v3); /*0x46ce48*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(this, (CCINIClass *)&stru_81B1A4.needsSave_flag, v3); /*0x46ce48*/
     INIClass::GetString( /*0x46ce55*/
-      (unsigned __int8 ***)this,
+      (uint8_t ***)this,
       (INIClass *)&stru_81B1A4.needsSave_flag,
       StringByIndex,
-      (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+      (INIClass *)&g_abs_87F8E4,
       (INIClass *)Source,
       32);
     v5 = 0; /*0x46ce5f*/
@@ -99,7 +99,7 @@ int CampaignClass::LoadFromINIList()
     if ( v5 == -1 ) /*0x46ce91*/
     {
 LABEL_7:
-      v6 = (INIClass *)__2_YAPAXI_Z(0x3A0u); /*0x46ce97*/
+      v6 = (INIClass *)RA2_OPNEW(0x3A0u); /*0x46ce97*/
       if ( v6 ) /*0x46cea8*/
       {
         AbstractTypeClass::Constructor((int)v6, (AbstractClass *)Source); /*0x46ceb5*/
@@ -112,7 +112,7 @@ LABEL_7:
         if ( g_UnitTypeInitState < dword_A83D00 /*0x46cf18*/
           || (byte_A83D05 || !dword_A83D00)
           && dword_A83D0C > 0
-          && ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))dword_A83CF8->field_8)(
+          && ((uint8_t (*)(DynamicVector **, int, unsigned int))dword_A83CF8->field_8)(
                &dword_A83CF8,
                dword_A83D00 + dword_A83D0C,
                0) )
@@ -120,8 +120,8 @@ LABEL_7:
           v7 = g_UnitTypeInitState++; /*0x46cf25*/
           *(unsigned int *)&g_CampaignTypeArray->__pad_0[4 * v7] = v6; /*0x46cf34*/
         }
-        LOBYTE(v6[2].sectionCount) = 0; /*0x46cf43*/
-        wcscpy((wchar_t *)v6[10].__pad_20, (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472]); /*0x46cf4a*/
+        IDA_LOBYTE(v6[2].sectionCount) = 0; /*0x46cf43*/
+        wcscpy((wchar_t *)v6[10].__pad_20, (const wchar_t *)&g_abs_87F8E4); /*0x46cf4a*/
       }
       else
       {
@@ -150,7 +150,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   int v7; // esi
   int v8; // eax
   char v9; // al
-  unsigned __int8 v10; // al
+  uint8_t v10; // al
   char v11; // al
   char v12; // al
   char *v13; // edi
@@ -189,14 +189,14 @@ AbstractClass * * CampaignClass::SaveProgress()
   if ( !*((unsigned char *)this + 28) ) /*0x49c5c1*/
     return 0; /*0x49c5c1*/
   v3 = *((unsigned int *)this + 17); /*0x49c5d4*/
-  if ( !MEMORY[0x89F578] ) /*0x49c5d9*/
-    CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c5e0*/
-  if ( v3 < 0 || v3 >= MEMORY[0x89F574] ) /*0x49c5f5*/
+  if ( !g_abs_89F578 ) /*0x49c5d9*/
+    CampaignClass::LoadFromINI((int)&g_abs_89F518); /*0x49c5e0*/
+  if ( v3 < 0 || v3 >= g_abs_89F574 ) /*0x49c5f5*/
     return 0; /*0x49cae5*/
-  v27 = MEMORY[0x89F570] + 76 * v3; /*0x49c60d*/
+  v27 = g_abs_89F570 + 76 * v3; /*0x49c60d*/
   if ( *((unsigned int *)this + 16) == *((unsigned int *)this + 14) ) /*0x49c616*/
     return 1; /*0x49c61b*/
-  CCFileClass::Construct(v36, MEMORY[0x81F0F8]); /*0x49c631*/
+  CCFileClass::Construct(v36, g_abs_81F0F8); /*0x49c631*/
   v28[1] = 0; /*0x49c63a*/
   v28[2] = 0; /*0x49c63e*/
   INISectionList::Constructor(v29); /*0x49c642*/
@@ -216,28 +216,28 @@ AbstractClass * * CampaignClass::SaveProgress()
         break; /*0x49c695*/
       if ( isalnum(*v6) )
       {
-        MEMORY[0x89ED18][v5] = *v6; /*0x49c703*/
+        g_abs_89ED18[v5] = *v6; /*0x49c703*/
       }
       else
       {
-        MEMORY[0x89ED18][v5] = 61; /*0x49c6a7*/
+        g_abs_89ED18[v5] = 61; /*0x49c6a7*/
         v7 = v5 + 1; /*0x49c6ae*/
         v8 = *v6 >> 4; /*0x49c6b2*/
         if ( (unsigned int)v8 >= 0x10 )
           v9 = 0; /*0x49c6c9*/
         else
           v9 = v8 >= 10 ? v8 + 55 : v8 + 48;
-        MEMORY[0x89ED18][v7] = v9; /*0x49c6cb*/
+        g_abs_89ED18[v7] = v9; /*0x49c6cb*/
         v5 = v7 + 1; /*0x49c6d3*/
         v10 = *v6 & 0xF; /*0x49c6d4*/
         if ( v10 > 0xFu )
         {
-          MEMORY[0x89ED18][v5] = 0; /*0x49c6f9*/
+          g_abs_89ED18[v5] = 0; /*0x49c6f9*/
         }
         else
         {
           v11 = (*v6 & 0xFu) >= 0xA ? v10 + 55 : v10 + 48;
-          MEMORY[0x89ED18][v5] = v11; /*0x49c6e5*/
+          g_abs_89ED18[v5] = v11; /*0x49c6e5*/
         }
       }
       v12 = v6[1]; /*0x49c709*/
@@ -246,8 +246,8 @@ AbstractClass * * CampaignClass::SaveProgress()
     }
     while ( v12 );
   }
-  MEMORY[0x89ED18][v5] = 0; /*0x49c720*/
-  strcpy(Block, MEMORY[0x89ED18]); /*0x49c73a*/
+  g_abs_89ED18[v5] = 0; /*0x49c720*/
+  strcpy(Block, g_abs_89ED18); /*0x49c73a*/
   v13 = (unsigned char *)this + 28; /*0x49c743*/
   v14 = 0; /*0x49c745*/
   for ( i = *v2; i; ++v13 )
@@ -256,51 +256,51 @@ AbstractClass * * CampaignClass::SaveProgress()
       break; /*0x49c753*/
     if ( isalnum(i) )
     {
-      MEMORY[0x89ED18][v14] = *v13; /*0x49c7a4*/
+      g_abs_89ED18[v14] = *v13; /*0x49c7a4*/
     }
     else
     {
-      MEMORY[0x89ED18][v14] = 61; /*0x49c765*/
+      g_abs_89ED18[v14] = 61; /*0x49c765*/
       v16 = v14 + 1; /*0x49c76c*/
       v17 = *v13 >> 4; /*0x49c770*/
       if ( (unsigned int)v17 >= 0x10 )
         v18 = 0; /*0x49c787*/
       else
         v18 = v17 >= 10 ? v17 + 55 : v17 + 48;
-      MEMORY[0x89ED18][v16] = v18; /*0x49c789*/
+      g_abs_89ED18[v16] = v18; /*0x49c789*/
       v14 = v16 + 1; /*0x49c794*/
-      MEMORY[0x89ED18][v14] = EncodeDigitHex(*v13 & 0xF); /*0x49c79a*/
+      g_abs_89ED18[v14] = EncodeDigitHex(*v13 & 0xF); /*0x49c79a*/
     }
     i = v13[1]; /*0x49c7aa*/
     ++v14; /*0x49c7ad*/
   }
-  MEMORY[0x89ED18][v14] = 0; /*0x49c7bd*/
-  strcat(Block, MEMORY[0x89ED18]); /*0x49c7df*/
+  g_abs_89ED18[v14] = 0; /*0x49c7bd*/
+  strcat(Block, g_abs_89ED18); /*0x49c7df*/
   CCFileClass::Construct3((int)v33); /*0x49c7ef*/
-  (*(void (**)(unsigned int *, char *))(v33[0] + 8))(v33, MEMORY[0x81F0F8]); /*0x49c807*/
+  (*(void (**)(unsigned int *, char *))(v33[0] + 8))(v33, g_abs_81F0F8); /*0x49c807*/
   (*(void (**)(unsigned int *, int))(v33[0] + 28))(v33, 2); /*0x49c81a*/
   INIClass::ClearSection((int)v28, (int)Block, 0); /*0x49c828*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F19C, *((unsigned int *)this + 14), 0); /*0x49c841*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F184, *((unsigned int *)this + 17), 0); /*0x49c85a*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, unk_81F19C, *((unsigned int *)this + 14), 0); /*0x49c841*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, unk_81F184, *((unsigned int *)this + 17), 0); /*0x49c85a*/
   for ( j = 0; /*0x49c863*/
         j < *(char *)(v27 + 8);
-        INIClass::SetString((char *)v28, (unsigned __int8 *)Block, Buffer, *(char **)(*((unsigned int *)this + 15) + 4 * j++)) )
+        INIClass::SetString((char *)v28, (uint8_t *)Block, Buffer, *(char **)(*((unsigned int *)this + 15) + 4 * j++)) )
   {
-    sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c87d*/
+    sprintf(Buffer, g_abs_81F114, j + 1); /*0x49c87d*/
   }
-  v20 = MEMORY[0xA8DA84]; /*0x49c8ac*/
-  if ( MEMORY[0xA8DA84] ) /*0x49c8b4*/
+  v20 = g_abs_A8DA84; /*0x49c8ac*/
+  if ( g_abs_A8DA84 ) /*0x49c8b4*/
   {
-    PlayerSide = (void *)SessionClass::GetPlayerSide(*(unsigned int *)MEMORY[0xA8DA78]); /*0x49c8be*/
-    INIClass::SetHouseName((char *)v28, (unsigned __int8 *)Block, unk_81F17C, PlayerSide); /*0x49c8d2*/
-    PlayerColor = SessionClass::GetPlayerColor(*(unsigned int *)MEMORY[0xA8DA78]); /*0x49c8e1*/
-    INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F174, PlayerColor, 0); /*0x49c8f5*/
-    v20 = MEMORY[0xA8DA84]; /*0x49c8fa*/
+    PlayerSide = (void *)SessionClass::GetPlayerSide(*(unsigned int *)g_abs_A8DA78); /*0x49c8be*/
+    INIClass::SetHouseName((char *)v28, (uint8_t *)Block, unk_81F17C, PlayerSide); /*0x49c8d2*/
+    PlayerColor = SessionClass::GetPlayerColor(*(unsigned int *)g_abs_A8DA78); /*0x49c8e1*/
+    INIClass::SetInt((char *)v28, (uint8_t *)Block, unk_81F174, PlayerColor, 0); /*0x49c8f5*/
+    v20 = g_abs_A8DA84; /*0x49c8fa*/
   }
   v23 = 1; /*0x49c900*/
   if ( v20 > 1 ) /*0x49c907*/
   {
-    v24 = &MEMORY[0xA8B2A0]; /*0x49c909*/
+    v24 = &g_abs_A8B2A0; /*0x49c909*/
     while ( *v24 != -1 ) /*0x49c911*/
     {
       ++v23; /*0x49c913*/
@@ -308,21 +308,21 @@ AbstractClass * * CampaignClass::SaveProgress()
       if ( v23 >= v20 ) /*0x49c919*/
         goto LABEL_47; /*0x49c919*/
     }
-    v25 = (void *)SessionClass::GetPlayerSide(*(unsigned int *)(MEMORY[0xA8DA78] + 4 * v23)); /*0x49c925*/
-    INIClass::SetHouseName((char *)v28, (unsigned __int8 *)Block, unk_81F16C, v25); /*0x49c939*/
-    v26 = SessionClass::GetPlayerColor(*(unsigned int *)(MEMORY[0xA8DA78] + 4 * v23)); /*0x49c949*/
-    INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F164, v26, 0); /*0x49c95d*/
+    v25 = (void *)SessionClass::GetPlayerSide(*(unsigned int *)(g_abs_A8DA78 + 4 * v23)); /*0x49c925*/
+    INIClass::SetHouseName((char *)v28, (uint8_t *)Block, unk_81F16C, v25); /*0x49c939*/
+    v26 = SessionClass::GetPlayerColor(*(unsigned int *)(g_abs_A8DA78 + 4 * v23)); /*0x49c949*/
+    INIClass::SetInt((char *)v28, (uint8_t *)Block, unk_81F164, v26, 0); /*0x49c95d*/
   }
 LABEL_47:
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F11C], *((unsigned int *)this + 26), 0); /*0x49c962*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F15C, *((unsigned int *)this + 18), 0); /*0x49c98f*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, unk_81F154, *((unsigned int *)this + 19), 0); /*0x49c9a8*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F14C], *((unsigned int *)this + 20), 0); /*0x49c9c1*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F144], *((unsigned int *)this + 21), 0); /*0x49c9da*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F13C], *((unsigned int *)this + 22), 0); /*0x49c9f3*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F134], *((unsigned int *)this + 23), 0); /*0x49ca0c*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F12C], *((unsigned int *)this + 24), 0); /*0x49ca25*/
-  INIClass::SetInt((char *)v28, (unsigned __int8 *)Block, MEMORY[0x81F124], *((unsigned int *)this + 25), 0); /*0x49ca3e*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, g_abs_81F11C, *((unsigned int *)this + 26), 0); /*0x49c962*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, unk_81F15C, *((unsigned int *)this + 18), 0); /*0x49c98f*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, unk_81F154, *((unsigned int *)this + 19), 0); /*0x49c9a8*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, g_abs_81F14C, *((unsigned int *)this + 20), 0); /*0x49c9c1*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, g_abs_81F144, *((unsigned int *)this + 21), 0); /*0x49c9da*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, g_abs_81F13C, *((unsigned int *)this + 22), 0); /*0x49c9f3*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, g_abs_81F134, *((unsigned int *)this + 23), 0); /*0x49ca0c*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, g_abs_81F12C, *((unsigned int *)this + 24), 0); /*0x49ca25*/
+  INIClass::SetInt((char *)v28, (uint8_t *)Block, g_abs_81F124, *((unsigned int *)this + 25), 0); /*0x49ca3e*/
   INIClass::WriteDigest(v28, (int)v33, 0); /*0x49ca51*/
   CCFileClass::Reset(v33); /*0x49ca5d*/
   v33[0] = &vt_CCFileClass; /*0x49ca67*/
@@ -419,7 +419,7 @@ int CampaignClass::StubReturn10()
 
 // 0x46D090
 namespace gamemd {
-CampaignClass * CampaignClass::DTOR(char a2)
+CampaignClass * CampaignClass::DTOR(void ** Block, char a2)
 {
 
   int v3; // eax
@@ -442,8 +442,8 @@ CampaignClass * CampaignClass::DTOR(char a2)
     while ( v3 < g_UnitTypeInitState ); /*0x46d0fd*/
   }
   AbstractTypeClass::Dtor(Block); /*0x46d101*/
-  if ( (a2 & 1) != 0 ) /*0x46d10b*/
-    __3_YAXPAX_Z(Block); /*0x46d10e*/
+  if ( (Block & 1) != 0 ) /*0x46d10b*/
+    RA2_OPDEL(Block); /*0x46d10e*/
   return (CampaignClass *)Block; /*0x46d118*/
 
 }

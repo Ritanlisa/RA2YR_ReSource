@@ -71,12 +71,12 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   if ( !v4[26] ) /*0x69ef36*/
   {
     v12 = *(unsigned int *)v3->__pad_0; /*0x69efd3*/
-    LOBYTE(a3) = 0; /*0x69efdf*/
+    IDA_LOBYTE(a3) = 0; /*0x69efdf*/
     (*(void (**)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x69efe4*/
     return IPersistStream; /*0x69efe8*/
   }
   v6 = *(unsigned int *)v3->__pad_0; /*0x69ef3c*/
-  LOBYTE(a3) = 1; /*0x69ef48*/
+  IDA_LOBYTE(a3) = 1; /*0x69ef48*/
   (*(void (**)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x69ef4d*/
   v7 = (int (***)(unsigned int, void *, int **))v4[26]; /*0x69ef50*/
   pPStm = 0; /*0x69ef53*/
@@ -131,7 +131,7 @@ int ShipLocomotionClass::StubReturn112()
 } // namespace gamemd
 // 0x6A42B0
 namespace gamemd {
-ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
+ShipLocomotionClass * ShipLocomotionClass::ProcessMove(ILocomotion ** Block, char a2)
 {
 
   ILocomotion *v3; // eax
@@ -143,8 +143,8 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
   if ( v3 ) /*0x6a42cc*/
     (*(void (**)(ILocomotion *))(*(unsigned int *)v3 + 8))(v3); /*0x6a42d1*/
   LocomotionClass::Construct(Block); /*0x6a42d6*/
-  if ( (a2 & 1) != 0 ) /*0x6a42e0*/
-    __3_YAXPAX_Z(Block); /*0x6a42e3*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x6a42e0*/
+    RA2_OPDEL(Block); /*0x6a42e3*/
   return (ShipLocomotionClass *)Block; /*0x6a42ed*/
 
 }

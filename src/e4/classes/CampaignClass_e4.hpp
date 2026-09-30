@@ -211,13 +211,13 @@ struct CampaignClass {
     unsigned int __pad_0;
 // --- flat members (END) ---
     AbstractClass * * SaveProgress();
-    CampaignClass(ObjectClass * aP1);
+    CampaignClass(void * aP1);
     CampaignClass * DTOR(char a2);
     int LoadFromINIList();
-    int Seek(TechnoTypeClass * aP0, int * a1, int aP2);
+    int Seek(void * aP0, int * a1, int aP2);
     int StubReturn10();
     int StubReturn928();
-    int Write(AbstractTypeClass * aP0, int aP1);
+    int Write(void * aP0, int aP1);
     int ddtor(int a1, unsigned int * a2);
      double LoadFromINI(...);  // C2597 interim stub
 };

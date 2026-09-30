@@ -73,7 +73,7 @@ int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2)
 int VeinholeMonsterClass::CheckStatus()
 {
 
-  return MEMORY[0x8871E0]->?; /*0x74ef0b*/
+  return g_abs_8871E0->?; /*0x74ef0b*/
 
 }
 // 0x74F2D0
@@ -104,12 +104,12 @@ int VeinholeMonsterClass::StubReturn264()
 
 }
 // 0x74F340
-VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(char a2)
+VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(void ** Block, char a2)
 {
 
   DestroyVeinholeMonster(Block); /*0x74f343*/
-  if ( (a2 & 1) != 0 ) /*0x74f34d*/
-    __3_YAXPAX_Z(Block); /*0x74f350*/
+  if ( (Block & 1) != 0 ) /*0x74f34d*/
+    RA2_OPDEL(Block); /*0x74f350*/
   return (VeinholeMonsterClass *)Block; /*0x74f35a*/
 
 }

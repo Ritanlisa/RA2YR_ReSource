@@ -29,22 +29,22 @@ int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 
 // 0x74F6A0
 namespace gamemd {
-unsigned int * IRTTITypeInfo::loc_74F6A0(char a2)
+unsigned int * IRTTITypeInfo::loc_74F6A0(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x74f653*/
-  *Block = &vt_VectorClass_VeinholeMonsterClass; /*0x74f656*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_VeinholeMonsterClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x74f660*/
   {
-    __3_YAXPAX_Z(v3); /*0x74f668*/
+    RA2_OPDEL(v3); /*0x74f668*/
     *(Block + 1) = 0; /*0x74f670*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x74f67b*/
   *(Block + 2) = 0; /*0x74f681*/
-  if ( (a2 & 1) != 0 ) /*0x74f688*/
-    __3_YAXPAX_Z(Block); /*0x74f68b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x74f688*/
+    RA2_OPDEL(Block); /*0x74f68b*/
   return (VectorClass *)Block; /*0x74f695*/
 
 }

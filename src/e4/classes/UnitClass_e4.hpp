@@ -758,6 +758,7 @@ struct UnitClass {
     unsigned int q0407;
 // --- flat members (END) ---
     void ProcessIdleOrders();
+     double Construct(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

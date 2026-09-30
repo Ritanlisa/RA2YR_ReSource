@@ -11,19 +11,19 @@
 
 // 0x53ECE0
 namespace gamemd {
-int NetworkAddress::Assign(void* a1, void* a2)
+int NetworkAddress::Assign( unsigned int * a1, IUnknown * aP2, int16_t a4)
 {
 
   unsigned int *result; // eax
   int *v5; // ecx
 
-  result = a2; /*0x53ece4*/
-  v5 = a2 + 1; /*0x53ece9*/
+  result = (unsigned int *)((int *)(a1));
+  v5 = (int *)(a1 + 1);
   *v5 = aP2->field_0; /*0x53ecec*/
   *((unsigned short *)v5 + 2) = aP2->field_4; /*0x53ecf4*/
   if ( dword_828140 == 1 ) /*0x53ed01*/
   {
-    *result = *a2; /*0x53ed09*/
+    *result = *a1; /*0x53ed09*/
   }
   else
   {

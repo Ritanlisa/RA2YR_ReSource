@@ -11,7 +11,7 @@ struct Selection {
     bool m_Flag;  // 0x4
     unsigned char pad_05;  // 0x5
 // --- flat members (END) ---
-    char GetFlag(void *a1 = 0);
+    char GetFlag();
     int ClearGlobals();
     void SetCurrent();
 };

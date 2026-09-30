@@ -18,7 +18,7 @@ struct MovementAI {
     unsigned int u32_100;
     unsigned int u32_E4;
 // --- flat members (END) ---
-    int Check(void *a1 = 0, void *a2 = 0, void *a3 = 0);
+    int Check();
     int IsPathMovementAllowed();
     int IsProgressAtEnd();
 };

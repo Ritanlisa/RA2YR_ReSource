@@ -10,10 +10,11 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
 
 // 0x4325C0
 namespace gamemd {
-AudioController * * CCFileClass::Close(void *a1 = 0)
+AudioController * * CCFileClass::Close()
 {
 
   char result; // al
@@ -71,7 +72,7 @@ void CCFileClass::GetFileSize()
   result = *((char *)this + 4); /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 24))(this) ) /*0x65d0e0*/
+    if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65d0e0*/
     {
       FileSize = GetFileSize((HANDLE)*((char *)this + 5), 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
@@ -85,10 +86,10 @@ void CCFileClass::GetFileSize()
         return result; /*0x65d11b*/
       }
     }
-    else if ( (*(int (**)(int *, int))(*(unsigned int **)this + 28))(this, 1) ) /*0x65d122*/
+    else if ( (*(int (**)(int *, int))(*(unsigned int *)this + 28))(this, 1) ) /*0x65d122*/
     {
-      FileSize = (*(int (**)(int *))(*(unsigned int **)this + 44))(this); /*0x65d130*/
-      (*(void (**)(int *))(*(unsigned int **)this + 52))(this); /*0x65d136*/
+      FileSize = (*(int (**)(int *))(*(unsigned int *)this + 44))(this); /*0x65d130*/
+      (*(void (**)(int *))(*(unsigned int *)this + 52))(this); /*0x65d136*/
     }
     result = FileSize - *((char *)this + 3); /*0x65d13e*/
     *((char *)this + 4) = result; /*0x65d140*/
@@ -113,8 +114,8 @@ void CCFileClass::ProcessStream(unsigned int a1)
   int v10; // eax
   int v11; // eax
 
-  v1 = MEMORY[0xB077B0]; /*0x69e324*/
-  if ( MEMORY[0xB077B0] ) /*0x69e330*/
+  v1 = g_abs_B077B0; /*0x69e324*/
+  if ( g_abs_B077B0 ) /*0x69e330*/
   {
     do /*0x69e3a1*/
     {
@@ -133,14 +134,14 @@ void CCFileClass::ProcessStream(unsigned int a1)
             if ( v5 ) /*0x69e368*/
               *(unsigned int *)(v5 + 24) = *((unsigned int *)v3 + 6); /*0x69e36d*/
             else
-              MEMORY[0xB077B0] = (void *)*((unsigned int *)v3 + 6); /*0x69e375*/
+              g_abs_B077B0 = (void *)*((unsigned int *)v3 + 6); /*0x69e375*/
             if ( *((unsigned int *)v3 + 2) ) /*0x69e37a*/
             {
               free(*((void **)v3 + 2)); /*0x69e382*/
               *((unsigned int *)v3 + 2) = 0; /*0x69e38a*/
             }
           }
-          __3_YAXPAX_Z(v3); /*0x69e38e*/
+          RA2_OPDEL(v3); /*0x69e38e*/
         }
         v1[3] = 0; /*0x69e396*/
         *((unsigned char *)v1 + 16) = 0; /*0x69e399*/
@@ -149,16 +150,16 @@ void CCFileClass::ProcessStream(unsigned int a1)
     }
     while ( v1 ); /*0x69e3a1*/
   }
-  v6 = MEMORY[0xB077B4]; /*0x69e3a3*/
-  if ( MEMORY[0xB077B4] ) /*0x69e3ab*/
+  v6 = g_abs_B077B4; /*0x69e3a3*/
+  if ( g_abs_B077B4 ) /*0x69e3ab*/
   {
-    if ( *(unsigned short *)MEMORY[0xB077B4] == 0xFFFF ) /*0x69e3b1*/
+    if ( *(unsigned short *)g_abs_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-      v7 = (char *)MEMORY[0xB077B4] + 16; /*0x69e3b6*/
-      if ( *((unsigned char *)MEMORY[0xB077B4] + 16) ) /*0x69e3b3*/
+      v7 = (char *)g_abs_B077B4 + 16; /*0x69e3b6*/
+      if ( *((unsigned char *)g_abs_B077B4 + 16) ) /*0x69e3b3*/
       {
-        v8 = (void *)*((unsigned int *)MEMORY[0xB077B4] + 3); /*0x69e3bd*/
-        v9 = (char *)MEMORY[0xB077B4] + 12; /*0x69e3c0*/
+        v8 = (void *)*((unsigned int *)g_abs_B077B4 + 3); /*0x69e3bd*/
+        v9 = (char *)g_abs_B077B4 + 12; /*0x69e3c0*/
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/
@@ -171,17 +172,17 @@ void CCFileClass::ProcessStream(unsigned int a1)
       if ( v11 ) /*0x69e3e5*/
         *(unsigned int *)(v11 + 24) = *((unsigned int *)v6 + 6); /*0x69e3ea*/
       else
-        MEMORY[0xB077B0] = (void *)*((unsigned int *)v6 + 6); /*0x69e3f2*/
+        g_abs_B077B0 = (void *)*((unsigned int *)v6 + 6); /*0x69e3f2*/
       if ( *((unsigned int *)v6 + 2) ) /*0x69e3f7*/
       {
         free(*((void **)v6 + 2)); /*0x69e3ff*/
         *((unsigned int *)v6 + 2) = 0; /*0x69e407*/
       }
     }
-    __3_YAXPAX_Z(v6); /*0x69e40b*/
-    MEMORY[0xB077B4] = 0; /*0x69e413*/
-    MEMORY[0xB077B8] = 0; /*0x69e419*/
-    MEMORY[0xB077BC] = 0; /*0x69e41f*/
+    RA2_OPDEL(v6); /*0x69e40b*/
+    g_abs_B077B4 = 0; /*0x69e413*/
+    g_abs_B077B8 = 0; /*0x69e419*/
+    g_abs_B077BC = 0; /*0x69e41f*/
   }
 
 }

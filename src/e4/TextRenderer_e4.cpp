@@ -20,10 +20,12 @@
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/ThemeManager_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4A60D0
 namespace gamemd {
-void * TextRenderer::GetInstance(void *a1 = 0)
+void * TextRenderer::GetInstance()
 {
 
   return aP0; /*0x4a60d5*/
@@ -32,7 +34,7 @@ void * TextRenderer::GetInstance(void *a1 = 0)
 }
 // 0x4B96A0
 namespace gamemd {
-void TextRenderer::RenderCentered(void* a1, void* a2, void* a3, void* a4, int a5)
+void TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
 {
 
   CampaignScore *v9; // edx
@@ -72,14 +74,14 @@ void TextRenderer::RenderCentered(void* a1, void* a2, void* a3, void* a4, int a5
   swprintf( /*0x4b96dc*/
     (wchar_t *const)&stru_89E138.__pad_14B0[4744],
     (const size_t)&stru_820524.__pad_0[8],
-    (const wchar_t *const)a4,
+    (const wchar_t *const)a3,
     v11);
   swprintf( /*0x4b96ed*/
     (wchar_t *const)&stru_89E138.__pad_14B0[4824],
     (const size_t)&stru_820524.__pad_0[8],
-    (const wchar_t *const)a4,
+    (const wchar_t *const)a3,
     v12);
-  if ( (unsigned char)a4 ) /*0x4b96f7*/
+  if ( (unsigned char)a3 ) /*0x4b96f7*/
   {
     v13 = (AbstractClass *)(*(unsigned int *)a2 - Text::MeasureWidth((CampaignScore *)&stru_89E138.__pad_14B0[4744], 0) / 2); /*0x4b971b*/
     v14 = *(unsigned int *)a2 - Text::MeasureWidth((CampaignScore *)&stru_89E138.__pad_14B0[4824], 0) / 2; /*0x4b972b*/
@@ -96,7 +98,7 @@ void TextRenderer::RenderCentered(void* a1, void* a2, void* a3, void* a4, int a5
     v16 = (int)&v13[3].__pad_0[-v14 + 2]; /*0x4b9750*/
     v13 = (AbstractClass *)v14; /*0x4b9752*/
   }
-  if ( (int)&v13->__pad_0[v16] < v14 + 110 ) /*0x4b9766*/
+  if ( (int)&v13-((unsigned int *)(>__pad_0))[v16] < v14 + 110 ) /*0x4b9766*/
     v16 = v14 - (unsigned int)v13 + 111; /*0x4b976d*/
   v35 = v13; /*0x4b9784*/
   v29 = v13; /*0x4b9788*/
@@ -122,7 +124,7 @@ void TextRenderer::RenderCentered(void* a1, void* a2, void* a3, void* a4, int a5
   v23 = (unsigned int *)(*(int (**)(unsigned int, char *, ObjectClass *, int, unsigned int, AbstractClass *))(**(unsigned int **)&stru_87C374.__pad_579C[22524] + 120))( /*0x4b985f*/
                     *(unsigned int *)&stru_87C374.__pad_579C[22524],
                     v39,
-                    a4,
+                    a3,
                     BuildingAnimByName,
                     0,
                     v27);
@@ -144,7 +146,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
 {
 
   unsigned int *FoundationSize; // eax
-  int v8; // ebx
+  AbstractClass * v8;
   int Default; // edi
   int *v10; // ebp
   int v11; // eax
@@ -158,7 +160,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   int v20; // [esp+Ch] [ebp-34h]
   int v21; // [esp+18h] [ebp-28h]
   int v22[7]; // [esp+20h] [ebp-20h] BYREF
-  __int16 v23; // [esp+3Eh] [ebp-2h]
+  int16_t v23; // [esp+3Eh] [ebp-2h]
   int v24; // [esp+44h] [ebp+4h]
 
   if ( a2 == -1 && aP2 == (ProgressScreenClass *)-1 ) /*0x642c9a*/
@@ -174,16 +176,16 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
       Default = BuildingType::FindDefault(0); /*0x642ceb*/
       if ( Default ) /*0x642cef*/
       {
-        v8 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642cfc*/
+        v8 = (int)((gamemd::AbstractClass *)((*(int (**)(int))(*(unsigned int *)Default + 124))(Default)));
         Default = (*(int (**)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
-    Instance = TextRenderer::GetInstance(); /*0x642d10*/
+    Instance = (gamemd::AbstractClass *)(TextRenderer::GetInstance());
     v10 = v22; /*0x642d14*/
     v24 = 15; /*0x642d18*/
     do /*0x642d3d*/
     {
-      *(unsigned short *)v10 = *(unsigned short *)CharToWideString(MEMORY[0x8258C0]); /*0x642d2d*/
+      *(unsigned short *)v10 = *(unsigned short *)CharToWideString(g_abs_8258C0); /*0x642d2d*/
       v10 = (int *)((char *)v10 + 2); /*0x642d35*/
       --v24; /*0x642d39*/
     }
@@ -209,7 +211,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
     *((unsigned int *)this + 26) = a2; /*0x642dc4*/
     *((unsigned int *)this + 27) = aP2; /*0x642dc7*/
   }
-  *(unsigned int *)&this->__pad_4C[4] = aP3; /*0x642dd6*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_4C))[4] = aP3; /*0x642dd6*/
   *((unsigned char *)this + 112) = (unsigned char)aP4; /*0x642dd9*/
   *((unsigned char *)this + 113) = a6; /*0x642ddc*/
   return a6; /*0x642ddf*/
@@ -218,11 +220,11 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
 }
 // 0x642EF0
 namespace gamemd {
-void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4)
+void * TextRenderer::MeasureBuilding2()
 {
 
   unsigned int *FoundationSize; // eax
-  int v2; // ebp
+  AbstractClass * v2;
   int v3; // edi
   int Default; // eax
   int v5; // esi
@@ -235,14 +237,14 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
   int v12; // [esp+10h] [ebp-34h]
   CampaignScore *v16; // [esp+1Ch] [ebp-28h]
   unsigned int v14[7]; // [esp+24h] [ebp-20h] BYREF
-  __int16 v15; // [esp+42h] [ebp-2h]
+  int16_t v15; // [esp+42h] [ebp-2h]
   unsigned int *arg0; // [esp+48h] [ebp+4h]
   int *v17; // [esp+4Ch] [ebp+8h]
   int v18; // [esp+50h] [ebp+Ch]
   char v19; // [esp+54h] [ebp+10h]
   int v20; // [esp+54h] [ebp+10h]
 
-  FoundationSize = Building::GetFoundationSize(v14, 0); /*0x642f01*/
+  FoundationSize = ((Building *)(v14))->GetFoundationSize(0); /*0x642f01*/
   v2 = 0; /*0x642f08*/
   v3 = 0; /*0x642f0e*/
   v16 = (CampaignScore *)FoundationSize[2]; /*0x642f1a*/
@@ -253,16 +255,16 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
     v5 = Default; /*0x642f37*/
     if ( Default ) /*0x642f3b*/
     {
-      v2 = (*(int (**)(int))(*(unsigned int *)Default + 124))(Default); /*0x642f44*/
+      v2 = (int)((gamemd::AbstractClass *)((*(int (**)(int))(*(unsigned int *)Default + 124))(Default)));
       v3 = (*(int (**)(int))(*(unsigned int *)v5 + 128))(v5); /*0x642f50*/
     }
   }
-  Instance = TextRenderer::GetInstance(); /*0x642f5c*/
+  Instance = (gamemd::AbstractClass *)(TextRenderer::GetInstance());
   v10 = (CampaignScore *)v14; /*0x642f5e*/
   v20 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
-    *(unsigned short *)v10->__pad_0 = *(unsigned short *)CharToWideString(MEMORY[0x8258C0]); /*0x642f7b*/
+    *(unsigned short *)v10->__pad_0 = *(unsigned short *)CharToWideString(g_abs_8258C0); /*0x642f7b*/
     v10 = (CampaignScore *)((char *)v10 + 2); /*0x642f7e*/
     --v20; /*0x642f82*/
   }
@@ -302,25 +304,25 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
       (wchar_t *const)&v12[0].nextArrayIndex,
       (CampaignScore *)BufferCount,
       (ObjectClass *)&aP8,
-      (SessionClass *)v12[0].uniqueId);
-    *(unsigned int *)&v12[0].__pad_0[12] = 1; /*0x4a6119*/
-    *(unsigned int *)&v12[0].__pad_0[8] = a8; /*0x4a611b*/
-    *(unsigned int *)&v12[0].__pad_0[4] = a7; /*0x4a6123*/
+      (SessionClass *)((unsigned int *)(v12))[0].uniqueId);
+    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[12] = 1; /*0x4a6119*/
+    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[8] = a8; /*0x4a611b*/
+    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[4] = a7; /*0x4a6123*/
     *(unsigned int *)v12[0].__pad_0 = a6; /*0x4a612b*/
     v9 = (wchar_t *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]); /*0x4a6143*/
     *(unsigned int *)aP0->__pad_0 = *(unsigned int *)v9; /*0x4a614e*/
-    *(unsigned int *)&aP0->field_2[2] = *((unsigned int *)v9 + 1); /*0x4a6153*/
+    *(unsigned int *)&aP0-((unsigned int *)(>field_2))[2] = *((unsigned int *)v9 + 1); /*0x4a6153*/
     return aP0->__pad_0; /*0x4a6145*/
   }
   else
   {
-    *(unsigned int *)&v12[0].__pad_0[12] = 1; /*0x4a6172*/
-    *(unsigned int *)&v12[0].__pad_0[8] = a8; /*0x4a6174*/
-    *(unsigned int *)&v12[0].__pad_0[4] = a7; /*0x4a617c*/
+    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[12] = 1; /*0x4a6172*/
+    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[8] = a8; /*0x4a6174*/
+    *(unsigned int *)&v12[((unsigned int *)(0].__pad_0))[4] = a7; /*0x4a617c*/
     *(unsigned int *)v12[0].__pad_0 = a6; /*0x4a6184*/
     v11 = (AbstractClass *)RenderTextLabel((int *)aP2->__pad_0, (AbstractClass *)aP3, (int *)a2, v12[0]); /*0x4a619a*/
     *(unsigned int *)aP0->__pad_0 = *(unsigned int *)v11->__pad_0; /*0x4a61a5*/
-    *(unsigned int *)&aP0->field_2[2] = *(unsigned int *)&v11->__pad_0[4]; /*0x4a61aa*/
+    *(unsigned int *)&aP0-((unsigned int *)(>field_2))[2] = *(unsigned int *)&v11->__pad_0[4]; /*0x4a61aa*/
     return aP0->__pad_0; /*0x4a619c*/
   }
 
@@ -329,12 +331,12 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
 
 // 0x727CD0
 namespace gamemd {
-TriggerTypeClass * TextRenderer::Destructor(char a2)
+TriggerTypeClass * TextRenderer::Destructor(void * Block, char a2)
 {
 
   TriggerClass::ProcessEvents((int)Block); /*0x727cd3*/
-  if ( (a2 & 1) != 0 ) /*0x727cdd*/
-    __3_YAXPAX_Z(Block); /*0x727ce0*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x727cdd*/
+    RA2_OPDEL(Block); /*0x727ce0*/
   return (TriggerTypeClass *)Block; /*0x727cea*/
 
 }

@@ -49,7 +49,7 @@ void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
   *((unsigned int *)this + 4) = 0; /*0x472a89*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x472a90*/
   {
-    __3_YAXPAX_Z(v2); /*0x472a96*/
+    RA2_OPDEL(v2); /*0x472a96*/
     *((unsigned int *)this + 1) = 0; /*0x472a9e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x472aa1*/
@@ -234,13 +234,13 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
   DWORD Buffer[2]; // [esp+8h] [ebp-10h] BYREF
   CHAR FileName[8]; // [esp+10h] [ebp-8h] BYREF
 
-  if ( MEMORY[0x887624] ) /*0x47974c*/
+  if ( g_abs_887624 ) /*0x47974c*/
   {
     sub_47A080(this, BytesReturned); /*0x479753*/
     return; /*0x47975d*/
   }
   v2 = (char)BytesReturned + 65; /*0x479769*/
-  sprintf((char *const)Buffer, MEMORY[0x81C4B4], v2); /*0x479773*/
+  sprintf((char *const)Buffer, g_abs_81C4B4, v2); /*0x479773*/
   v3 = GetDriveTypeA((LPCSTR)Buffer) - 2; /*0x479786*/
   if ( v3 ) /*0x479789*/
   {
@@ -270,7 +270,7 @@ LABEL_5:
       goto LABEL_18; /*0x479843*/
   }
   if ( !DeviceIoControl(FileA, 0x90020u, 0, 0, 0, 0, &BytesReturned, 0) /*0x4798c7*/
-    || (LOBYTE(BytesReturned) = 0, !DeviceIoControl(FileA, 0x2D4804u, &BytesReturned, 1u, 0, 0, Buffer, 0))
+    || (IDA_LOBYTE(BytesReturned) = 0, !DeviceIoControl(FileA, 0x2D4804u, &BytesReturned, 1u, 0, 0, Buffer, 0))
     || !DeviceIoControl(FileA, 0x2D4808u, 0, 0, 0, 0, &BytesReturned, 0) )
   {
     GetLastError(); /*0x4798d4*/
@@ -476,7 +476,7 @@ AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
   unsigned int InBuffer[7]; // [esp+14h] [ebp-1Ch] BYREF
 
   v2 = a2 + 1; /*0x47a098*/
-  LOBYTE(a2) = a2 + 1; /*0x47a0a3*/
+  IDA_LOBYTE(a2) = a2 + 1; /*0x47a0a3*/
   FileA = (AnimClass *)CreateFileA(g_Str_____vwin32, 0, 0, 0, 0, 0x4000000u, 0); /*0x47a0b3*/
   if ( !CDROM::LockVolume(this, FileA, a2, 0, 0) ) /*0x47a0ba*/
   {
@@ -2018,7 +2018,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   Pipe::Dtor((int *)v6.__pad_0); /*0x4745df*/
   INIClass::ReadBase64Data( /*0x4745ee*/
     (char *)this,
-    (unsigned __int8 *)&g_INI_Key_Digest,
+    (uint8_t *)&g_INI_Key_Digest,
     (ObjectClass *)((char *)this + 65),
     (ObjectClass *)0x14);
   v5 = (CCINIClass *)INIClass::WriteToString((unsigned int *)this, aP1); /*0x47460a*/
@@ -2341,7 +2341,7 @@ char ObjectClass::sub_47A1B0(DWORD BytesReturned)
 
   Debug::Log(); /*0x47a1bc*/
   Debug::Log(); /*0x47a1d6*/
-  LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a1e0*/
+  IDA_LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a1e0*/
   FileA = (AnimClass *)CreateFileA(g_Str_____vwin32, 0, 0, 0, 0, 0x4000000u, 0); /*0x47a203*/
   Debug::Log(); /*0x47a205*/
   if ( CDROM::LockVolume(this, FileA, BytesReturned, 0, 0) ) /*0x47a218*/
@@ -2382,7 +2382,7 @@ char ObjectClass::sub_47A2D0(DWORD BytesReturned)
 
   Debug::Log(); /*0x47a2dc*/
   Debug::Log(); /*0x47a2f6*/
-  LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a300*/
+  IDA_LOBYTE(BytesReturned) = BytesReturned + 1; /*0x47a300*/
   FileA = (AnimClass *)CreateFileA(g_Str_____vwin32, 0, 0, 0, 0, 0x4000000u, 0); /*0x47a323*/
   Debug::Log(); /*0x47a325*/
   if ( CDROM::LockVolume(this, FileA, BytesReturned, 0, 0) ) /*0x47a338*/

@@ -14,6 +14,6 @@ struct E4Recv_68C860 {
     unsigned int q1920;  // 0x1920
     unsigned int q1924;  // 0x1924
 // --- flat members (END) ---
-    int LoadTheaterClassMIX_Load(BlowStraw * aP1,  int a3,  int a4,  int a5,  int a6);    // 0x68C860
+    int LoadTheaterClassMIX_Load(void * aP1,  int a3,  int a4,  int a5,  int a6);    // 0x68C860
 };
 } // namespace gamemd

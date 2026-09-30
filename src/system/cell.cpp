@@ -193,7 +193,7 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 // Draws the cell at a given screen position.
 // 55 bytes: thin wrapper around DrawDispatch.
 // 0x48e5a0
-int CellClass::Draw(int a1, int a2) const
+int CellClass::Draw(int a1, int a2, void * a3) const
 {
   int v5; // eax
   int v6; // ecx
@@ -208,7 +208,7 @@ int CellClass::Draw(int a1, int a2) const
       if ( ((unsigned int)(a2)& 0x40) != 0 && (this->vtable3 & 0x10) != 0 ) /*0x48e5c6*/
       {
         IDA_BYTE1(v5) |= 0x40u; /*0x48e5c8*/
-        *(unsigned int *)(a3) = v5; /*0x48e5cb*/
+        *(unsigned int *, unsigned int a3)(a3) = v5; /*0x48e5cb*/
       }
     }
     else

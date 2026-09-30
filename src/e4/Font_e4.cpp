@@ -22,6 +22,7 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {
@@ -36,7 +37,7 @@ int Font::GetGlyphDataForChar(AbstractClass * aP1)
   result = 0; /*0x4346c3*/
   if ( v2 ) /*0x4346c7*/
   {
-    v4 = *(unsigned __int16 *)(v2->nextArrayIndex + 2 * (unsigned __int16)aP1); /*0x4346da*/
+    v4 = *(uint16_t *)(v2->nextArrayIndex + 2 * (uint16_t)aP1); /*0x4346da*/
     if ( (unsigned short)v4 ) /*0x4346e2*/
       return v2->referenceCount + (v4 - 1) * v2->abstractFlags; /*0x4346eb*/
   }
@@ -51,7 +52,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
 
   int v10; // edi
   AbstractClass *v11; // ebp
-  __int16 v12; // ax
+  int16_t v12; // ax
   int v13; // ebx
   ObjectClass *v14; // esi
   AbstractClass *v15; // edx
@@ -64,7 +65,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   ObjectClass *v22; // eax
   AbstractClass *v23; // ecx
   int referenceCount; // eax
-  unsigned __int8 *GlyphDataForChar; // eax
+  uint8_t *GlyphDataForChar; // eax
   int eax28; // eax
   AbstractClass *v26; // ecx
   int v28; // eax
@@ -82,7 +83,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   char *v41; // edi
   AbstractClass *v42; // ecx
   AbstractClass *v43; // eax
-  __int16 var30; // [esp+10h] [ebp-30h]
+  int16_t var30; // [esp+10h] [ebp-30h]
   AbstractClass *v44; // [esp+14h] [ebp-2Ch] BYREF
   AbstractClass *v45; // [esp+18h] [ebp-28h]
   AbstractClass *xLeft; // [esp+1Ch] [ebp-24h]
@@ -90,9 +91,9 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   AbstractClass *v49; // [esp+24h] [ebp-1Ch]
   AbstractClass *v50; // [esp+28h] [ebp-18h]
   int v51; // [esp+2Ch] [ebp-14h]
-  unsigned __int8 v52[8]; // [esp+30h] [ebp-10h] BYREF
-  unsigned __int8 v53[8]; // [esp+38h] [ebp-8h] BYREF
-  __int16 aP5a; // [esp+58h] [ebp+18h]
+  uint8_t v52[8]; // [esp+30h] [ebp-10h] BYREF
+  uint8_t v53[8]; // [esp+38h] [ebp-8h] BYREF
+  int16_t aP5a; // [esp+58h] [ebp+18h]
 
   v10 = 0; /*0x434cdb*/
   if ( !aP0 ) /*0x434cdf*/
@@ -104,11 +105,11 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   Field::Int_Set(aP0, (AbstractClass *)aP1a); /*0x434d04*/
   v12 = 0; /*0x434d0f*/
   v13 = 0; /*0x434d11*/
-  v14 = (ObjectClass *)*(unsigned __int16 *)aP0[1].__pad_0; /*0x434d13*/
-  HIWORD(v15) = HIWORD(aP2); /*0x434d17*/
+  v14 = (ObjectClass *)*(uint16_t *)aP0[1].__pad_0; /*0x434d13*/
+  IDA_HIWORD(v15) = IDA_HIWORD(aP2); /*0x434d17*/
   v16 = 0; /*0x434d19*/
   v48 = 0; /*0x434d1b*/
-  LOWORD(v15) = *(unsigned short *)aP2->__pad_0; /*0x434d1f*/
+  IDA_LOWORD(v15) = *(unsigned short *)aP2->__pad_0; /*0x434d1f*/
   v51 = 0; /*0x434d22*/
   v49 = 0; /*0x434d29*/
   v45 = 0; /*0x434d2d*/
@@ -116,12 +117,12 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   if ( (unsigned short)v15 ) /*0x434d35*/
   {
 LABEL_4:
-    switch ( (__int16)v50 ) /*0x434d59*/
+    switch ( (int16_t)v50 ) /*0x434d59*/
     {
       case 9: /*0x434d59*/
-        v10 = *(unsigned int *)&aP0[1].__pad_0[4] /*0x434ef7*/
+        v10 = *(unsigned int *)&aP0[((unsigned int *)(1].__pad_0))[4] /*0x434ef7*/
             + v10
-            - (*(unsigned int *)&aP0[1].__pad_0[4] + v10) % *(unsigned int *)&aP0[1].__pad_0[4];
+            - (*(unsigned int *)&aP0[((unsigned int *)(1].__pad_0))[4] + v10) % *(unsigned int *)&aP0[1].__pad_0[4];
         goto LABEL_55; /*0x434ef9*/
       case 10: /*0x434d59*/
       case 13: /*0x434d59*/
@@ -130,13 +131,13 @@ LABEL_4:
         v17 = 0; /*0x434d6e*/
         if ( (int)aP5 > v10 ) /*0x434d72*/
         {
-          if ( ((unsigned __int8)aP7 & 1) != 0 ) /*0x434d7b*/
+          if ( ((uint8_t)aP7 & 1) != 0 ) /*0x434d7b*/
           {
-            v17 = (int)&aP5->__pad_0[-v10] / 2; /*0x434d84*/
+            v17 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10] / 2; /*0x434d84*/
           }
-          else if ( ((unsigned __int8)aP7 & 2) != 0 ) /*0x434d8b*/
+          else if ( ((uint8_t)aP7 & 2) != 0 ) /*0x434d8b*/
           {
-            v17 = (int)&aP5->__pad_0[-v10]; /*0x434d8f*/
+            v17 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10]; /*0x434d8f*/
           }
         }
         xLeft = (AbstractClass *)(aP1a + v17); /*0x434d97*/
@@ -159,9 +160,9 @@ LABEL_4:
           {
             v22 = (ObjectClass *)Palette::6BitTo16Bit( /*0x434e2e*/
                                    &v44,
-                                   (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124],
-                                   (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140],
-                                   (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]);
+                                   (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124],
+                                   (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140],
+                                   (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]);
             *(unsigned short *)v52 = *(unsigned short *)v22->__pad_0; /*0x434e3b*/
             v52[2] = v22->__pad_0[2]; /*0x434e4c*/
             Color::Lerp(v52, (ObjectClass *)((unsigned int)v20 * (255 / (int)aP9)), &byte_A80220); /*0x434e59*/
@@ -170,7 +171,7 @@ LABEL_4:
 LABEL_18:
           if ( v21 == (ObjectClass *)-1 ) /*0x434e84*/
             goto LABEL_73; /*0x434e84*/
-          LOWORD(v18) = *(unsigned short *)v11->__pad_0; /*0x434e8e*/
+          IDA_LOWORD(v18) = *(unsigned short *)v11->__pad_0; /*0x434e8e*/
           v11 = (AbstractClass *)((char *)v11 + 2); /*0x434e9e*/
           xLeft = (AbstractClass *)FontClass::RenderGlyph((int)aP0, v18, xLeft, aP4, (AbstractClass *)v21); /*0x434ea6*/
           if ( v11 < aP2 ) /*0x434eb0*/
@@ -198,15 +199,15 @@ LABEL_23:
         goto LABEL_26; /*0x434f06*/
       default:
 LABEL_26:
-        GlyphDataForChar = (unsigned __int8 *)Font::GetGlyphDataForChar(aP0, v50); /*0x434f0a*/
+        GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar(aP0, v50); /*0x434f0a*/
         if ( !GlyphDataForChar ) /*0x434f1a*/
         {
-          GlyphDataForChar = (unsigned __int8 *)Font::GetGlyphDataForChar(aP0, (AbstractClass *)0x3F); /*0x434f22*/
+          GlyphDataForChar = (uint8_t *)Font::GetGlyphDataForChar(aP0, (AbstractClass *)0x3F); /*0x434f22*/
           if ( !GlyphDataForChar ) /*0x434f29*/
             goto LABEL_55; /*0x434f29*/
         }
         ++v13; /*0x434f37*/
-        eax28 = *GlyphDataForChar + *(unsigned int *)&aP0[1].__pad_0[8]; /*0x434f3b*/
+        eax28 = *GlyphDataForChar + *(unsigned int *)&aP0[((unsigned int *)(1].__pad_0))[8]; /*0x434f3b*/
         v10 += eax28; /*0x434f41*/
         if ( !aP5 || v10 <= (int)aP5 ) /*0x434f4d*/
           goto LABEL_55; /*0x434f4d*/
@@ -227,13 +228,13 @@ LABEL_26:
         v28 = 0; /*0x434f80*/
         if ( (int)aP5 > v10 ) /*0x434f84*/
         {
-          if ( ((unsigned __int8)aP7 & 1) != 0 ) /*0x434f8d*/
+          if ( ((uint8_t)aP7 & 1) != 0 ) /*0x434f8d*/
           {
-            v28 = (int)&aP5->__pad_0[-v10] / 2; /*0x434f96*/
+            v28 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10] / 2; /*0x434f96*/
           }
-          else if ( ((unsigned __int8)aP7 & 2) != 0 ) /*0x434f9d*/
+          else if ( ((uint8_t)aP7 & 2) != 0 ) /*0x434f9d*/
           {
-            v28 = (int)&aP5->__pad_0[-v10]; /*0x434fa1*/
+            v28 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10]; /*0x434fa1*/
           }
         }
         xLeft = (AbstractClass *)(aP1a + v28); /*0x434fa9*/
@@ -247,7 +248,7 @@ LABEL_26:
     }
     while ( 1 ) /*0x434fdc*/
     {
-      ecx43 = (AbstractClass *)&v29->__pad_0[1]; /*0x434fdc*/
+      ecx43 = (AbstractClass *)&v29-((unsigned int *)(>__pad_0))[1]; /*0x434fdc*/
       ++v32; /*0x434fdd*/
       --v31; /*0x434fde*/
       v45 = ecx43; /*0x434fdf*/
@@ -258,12 +259,12 @@ LABEL_26:
           break; /*0x434fef*/
         if ( v31 < (int)aP9 ) /*0x434ff9*/
         {
-          LOBYTE(var30) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x435028*/
-          HIBYTE(var30) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x435035*/
+          IDA_LOBYTE(var30) = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x435028*/
+          IDA_HIBYTE(var30) = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x435035*/
           *(unsigned short *)v53 = var30; /*0x43504b*/
-          v53[2] = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x435054*/
+          v53[2] = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x435054*/
           Color::Lerp(v53, (ObjectClass *)((unsigned int)v32 * (255 / (int)aP9)), &byte_A80220); /*0x435066*/
-          HIWORD(ecx43) = *(unsigned short *)&stru_89E138.__pad_14B0[6122]; /*0x4350b2*/
+          IDA_HIWORD(ecx43) = *(unsigned short *)&stru_89E138.__pad_14B0[6122]; /*0x4350b2*/
           v33 = (ObjectClass *)((v53[0] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]) /*0x4350ba*/
                               | (v53[2] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128])
                               | (v53[1] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]));
@@ -271,7 +272,7 @@ LABEL_26:
       }
       if ( v33 == (ObjectClass *)-1 ) /*0x4350bf*/
         break; /*0x4350bf*/
-      LOWORD(ecx43) = *(unsigned short *)v11->__pad_0; /*0x4350c9*/
+      IDA_LOWORD(ecx43) = *(unsigned short *)v11->__pad_0; /*0x4350c9*/
       v11 = (AbstractClass *)((char *)v11 + 2); /*0x4350d9*/
       xLeft = (AbstractClass *)FontClass::RenderGlyph((int)aP0, ecx43, xLeft, aP4, (AbstractClass *)v33); /*0x4350e1*/
       if ( v11 >= aP2 ) /*0x4350eb*/
@@ -296,10 +297,10 @@ LABEL_57:
         }
         aP4 = (AbstractClass *)((char *)aP4 + v35); /*0x435129*/
 LABEL_55:
-        v12 = (__int16)v50; /*0x43512d*/
-        v36 = (AbstractClass *)&aP2->__pad_0[2]; /*0x435135*/
+        v12 = (int16_t)v50; /*0x43512d*/
+        v36 = (AbstractClass *)&aP2-((unsigned int *)(>__pad_0))[2]; /*0x435135*/
         aP2 = v36; /*0x435138*/
-        LOWORD(v36) = *(unsigned short *)v36->__pad_0; /*0x43513c*/
+        IDA_LOWORD(v36) = *(unsigned short *)v36->__pad_0; /*0x43513c*/
         v50 = v36; /*0x435142*/
         if ( !(unsigned short)v36 ) /*0x435146*/
         {
@@ -318,13 +319,13 @@ LABEL_59:
     v38 = 0; /*0x435167*/
     if ( (int)aP5 > v10 ) /*0x43516f*/
     {
-      if ( ((unsigned __int8)aP7 & 1) != 0 ) /*0x435178*/
+      if ( ((uint8_t)aP7 & 1) != 0 ) /*0x435178*/
       {
-        v38 = (int)&aP5->__pad_0[-v10] / 2; /*0x435181*/
+        v38 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10] / 2; /*0x435181*/
       }
-      else if ( ((unsigned __int8)aP7 & 2) != 0 ) /*0x435188*/
+      else if ( ((uint8_t)aP7 & 2) != 0 ) /*0x435188*/
       {
-        v38 = (int)&aP5->__pad_0[-v10]; /*0x43518c*/
+        v38 = (int)&aP5-((unsigned int *)(>__pad_0))[-v10]; /*0x43518c*/
       }
     }
     xLeft = (AbstractClass *)(aP1a + v38); /*0x435194*/
@@ -335,7 +336,7 @@ LABEL_59:
       v41 = &aP9->__pad_0[(char *)v16 - (char *)aP8 + 1]; /*0x4351b5*/
       while ( 1 ) /*0x4351b9*/
       {
-        v42 = (AbstractClass *)&v16->__pad_0[1]; /*0x4351b9*/
+        v42 = (AbstractClass *)&v16-((unsigned int *)(>__pad_0))[1]; /*0x4351b9*/
         ++v41; /*0x4351ba*/
         --v40; /*0x4351bb*/
         v45 = v42; /*0x4351bc*/
@@ -346,12 +347,12 @@ LABEL_59:
             break; /*0x4351cc*/
           if ( (int)v40 < (int)aP9 ) /*0x4351d6*/
           {
-            LOBYTE(aP5a) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x435205*/
-            HIBYTE(aP5a) = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x435212*/
+            IDA_LOBYTE(aP5a) = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6120]) << stru_89E138.__pad_14B0[6124]; /*0x435205*/
+            IDA_HIBYTE(aP5a) = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6136]) << stru_89E138.__pad_14B0[6140]; /*0x435212*/
             *(unsigned short *)v53 = aP5a; /*0x435228*/
-            v53[2] = (unsigned __int8)((unsigned __int16)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x435231*/
+            v53[2] = (uint8_t)((uint16_t)v14 >> stru_89E138.__pad_14B0[6128]) << stru_89E138.__pad_14B0[6132]; /*0x435231*/
             Color::Lerp(v53, (ObjectClass *)((unsigned int)v41 * (255 / (int)aP9)), &byte_A80220); /*0x435243*/
-            HIWORD(v42) = *(unsigned short *)&stru_89E138.__pad_14B0[6122]; /*0x43528f*/
+            IDA_HIWORD(v42) = *(unsigned short *)&stru_89E138.__pad_14B0[6122]; /*0x43528f*/
             v43 = (AbstractClass *)((v53[0] >> stru_89E138.__pad_14B0[6124] << stru_89E138.__pad_14B0[6120]) /*0x435297*/
                                   | (v53[2] >> stru_89E138.__pad_14B0[6132] << stru_89E138.__pad_14B0[6128])
                                   | (v53[1] >> stru_89E138.__pad_14B0[6140] << stru_89E138.__pad_14B0[6136]));
@@ -359,7 +360,7 @@ LABEL_59:
         }
         if ( v43 == (AbstractClass *)-1 ) /*0x43529c*/
           break; /*0x43529c*/
-        LOWORD(v42) = *(unsigned short *)v11->__pad_0; /*0x4352a2*/
+        IDA_LOWORD(v42) = *(unsigned short *)v11->__pad_0; /*0x4352a2*/
         v11 = (AbstractClass *)((char *)v11 + 2); /*0x4352b2*/
         xLeft = (AbstractClass *)FontClass::RenderGlyph((int)aP0, v42, xLeft, aP4, v43); /*0x4352ba*/
         if ( v11 >= aP2 ) /*0x4352c4*/

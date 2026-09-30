@@ -20,6 +20,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/MovementAI_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {
@@ -27,13 +28,13 @@ int Mouse::SetBounds(void* aP1)
 {
 
   int result; // eax
-  __int16 v4; // cx
+  int16_t v4; // cx
   Tactical *v5; // esi
   bool v6; // zf
   int v7; // eax
-  __int16 v8; // cx
-  __int16 v9; // [esp+8h] [ebp-8h] BYREF
-  __int16 v10; // [esp+Ah] [ebp-6h]
+  int16_t v8; // cx
+  int16_t v9; // [esp+8h] [ebp-8h] BYREF
+  int16_t v10; // [esp+Ah] [ebp-6h]
 
   result = *((unsigned int *)this + 1119); /*0x4a8bf7*/
   if ( result ) /*0x4a8bff*/
@@ -41,35 +42,35 @@ int Mouse::SetBounds(void* aP1)
     v4 = *((unsigned short *)this + 2235) + *((unsigned short *)this + 2237); /*0x4a8c16*/
     v9 = *((unsigned short *)this + 2234) + *((unsigned short *)this + 2236); /*0x4a8c1f*/
     v10 = v4; /*0x4a8c24*/
-    LOBYTE(result) = MapClass::SetCellFlagsAlongPath((__int16 **)this, (IUnknown *)&v9, 0); /*0x4a8c38*/
+    IDA_LOBYTE(result) = MapClass::SetCellFlagsAlongPath((int16_t **)this, (IUnknown *)&v9, 0); /*0x4a8c38*/
   }
   v5 = (Tactical *)aP1; /*0x4a8c3d*/
   v6 = aP1 == 0; /*0x4a8c47*/
-  *((unsigned int *)this + 1118) = *(unsigned int *)&MEMORY[0x89F690].__pad_BC0[424]; /*0x4a8c49*/
+  *((unsigned int *)this + 1118) = *(unsigned int *)&g_abs_89F690; /*0x4a8c49*/
   if ( v6 ) /*0x4a8c4f*/
   {
     *((unsigned int *)this + 1119) = 0; /*0x4a8d1f*/
   }
   else
   {
-    if ( (MEMORY[0x89F690].__pad_DFC[396] & 1) == 0 ) /*0x4a8c5c*/
+    if ( (g_abs_89F690 & 1) == 0 ) /*0x4a8c5c*/
     {
-      MEMORY[0x89F690].__pad_DFC[396] |= 1u; /*0x4a8c68*/
+      g_abs_89F690 |= 1u; /*0x4a8c68*/
       atexit(nullsub_10); /*0x4a8c6e*/
     }
-    qmemcpy(&MEMORY[0x89F690].__pad_BC0[460], v5, 0x1E0u); /*0x4a8c85*/
-    *((unsigned int *)this + 1119) = &MEMORY[0x89F690].__pad_BC0[460]; /*0x4a8c8f*/
-    v7 = *CoordList::GetBounds(&aP1, (__int16 *)&MEMORY[0x89F690].__pad_BC0[460]); /*0x4a8c9e*/
+    qmemcpy(&g_abs_89F690, v5, 0x1E0u); /*0x4a8c85*/
+    *((unsigned int *)this + 1119) = &g_abs_89F690; /*0x4a8c8f*/
+    v7 = *CoordList::GetBounds(&aP1, (int16_t *)&g_abs_89F690); /*0x4a8c9e*/
     v9 = v7 - 1; /*0x4a8ca6*/
-    v10 = HIWORD(v7) - 1; /*0x4a8cab*/
-    LOWORD(aP1) = (__int16)(1 - v7) / 2; /*0x4a8cc4*/
-    HIWORD(aP1) = (__int16)(1 - HIWORD(v7)) / 2; /*0x4a8cd1*/
-    v8 = (__int16)aP1; /*0x4a8cd6*/
+    v10 = IDA_HIWORD(v7) - 1; /*0x4a8cab*/
+    IDA_LOWORD(aP1) = (int16_t)(1 - v7) / 2; /*0x4a8cc4*/
+    IDA_HIWORD(aP1) = (int16_t)(1 - IDA_HIWORD(v7)) / 2; /*0x4a8cd1*/
+    v8 = (int16_t)aP1; /*0x4a8cd6*/
     *((unsigned int *)this + 1118) = aP1; /*0x4a8cda*/
-    LOWORD(v7) = *((unsigned short *)this + 2237) + *((unsigned short *)this + 2235); /*0x4a8cee*/
-    LOWORD(aP1) = v8 + *((unsigned short *)this + 2234); /*0x4a8cf8*/
-    HIWORD(aP1) = v7; /*0x4a8cfd*/
-    LOBYTE(result) = MapClass::SetCellFlagsAlongPath((__int16 **)this, (IUnknown *)&aP1, (unsigned short *)1); /*0x4a8d11*/
+    IDA_LOWORD(v7) = *((unsigned short *)this + 2237) + *((unsigned short *)this + 2235); /*0x4a8cee*/
+    IDA_LOWORD(aP1) = v8 + *((unsigned short *)this + 2234); /*0x4a8cf8*/
+    IDA_HIWORD(aP1) = v7; /*0x4a8cfd*/
+    IDA_LOBYTE(result) = MapClass::SetCellFlagsAlongPath((int16_t **)this, (IUnknown *)&aP1, (unsigned short *)1); /*0x4a8d11*/
   }
   return result; /*0x4a8d17*/
 
@@ -83,7 +84,7 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   char v4; // bl
   MPCooperative *v6; // edi
   CoordStruct *Ticks; // eax
-  int Y_low; // ecx
+  CoordStruct * Y_low;
   int v9; // eax
   int v10; // ebx
   int X_high; // edi
@@ -91,10 +92,10 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   int v13; // [esp+10h] [ebp-Ch] BYREF
   CoordStruct *v14; // [esp+14h] [ebp-8h]
 
-  if ( MEMORY[0x82D034][7 * (unsigned int)aP1] == -1 ) /*0x5bdca6*/
+  if ( g_abs_82D034[7 * (unsigned int)aP1] == -1 ) /*0x5bdca6*/
   {
     v4 = 0; /*0x5bdca8*/
-    LOBYTE(aP2) = 0; /*0x5bdcaa*/
+    IDA_LOBYTE(aP2) = 0; /*0x5bdcaa*/
   }
   else
   {
@@ -106,30 +107,30 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
     return 0; /*0x5bdcda*/
   }
   *((unsigned char *)&g_MatrixTransformState + 1229) = 1; /*0x5bdce4*/
-  v6 = (MPCooperative *)MEMORY[0x82D030][7 * (unsigned int)aP1]; /*0x5bdceb*/
+  v6 = (MPCooperative *)g_abs_82D030[7 * (unsigned int)aP1]; /*0x5bdceb*/
   Ticks = (CoordStruct *)Timer::GetTicks(); /*0x5bdcf2*/
   Y_low = 0; /*0x5bdcfb*/
   *(&g_MatrixTransformState + 292) = Ticks; /*0x5bdcfd*/
   *(&g_MatrixTransformState + 293) = v14; /*0x5bdd02*/
   *(&g_MatrixTransformState + 294) = (CoordStruct *)v6; /*0x5bdd08*/
   *((unsigned int *)this + 5466) = 0; /*0x5bdd0e*/
-  if ( !v4 || (v9 = MEMORY[0x82D034][7 * (unsigned int)aP1], v9 == -1) ) /*0x5bdd1e*/
-    v9 = MEMORY[0x82D028][7 * (unsigned int)aP1]; /*0x5bdd20*/
-  v10 = MEMORY[0x82D03C][7 * (unsigned int)aP1]; /*0x5bdd22*/
+  if ( !v4 || (v9 = g_abs_82D034[7 * (unsigned int)aP1], v9 == -1) ) /*0x5bdd1e*/
+    v9 = g_abs_82D028[7 * (unsigned int)aP1]; /*0x5bdd20*/
+  v10 = g_abs_82D03C[7 * (unsigned int)aP1]; /*0x5bdd22*/
   X_high = 0; /*0x5bdd25*/
   if ( v10 == 12345 ) /*0x5bdd31*/
     X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X) / 2; /*0x5bdd42*/
   if ( v10 == 54321 ) /*0x5bdd50*/
     X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X); /*0x5bdd52*/
-  v12 = MEMORY[0x82D040][7 * (unsigned int)aP1]; /*0x5bdd56*/
+  v12 = g_abs_82D040[7 * (unsigned int)aP1]; /*0x5bdd56*/
   if ( v12 == 12345 ) /*0x5bdd5f*/
     Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y) / 2; /*0x5bdd6a*/
   if ( v12 == 54321 ) /*0x5bdd72*/
     Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y); /*0x5bdd74*/
   v14 = (CoordStruct *)Y_low; /*0x5bdd7c*/
   v13 = X_high; /*0x5bdd87*/
-  (*(void (**)(unsigned int, int *, unsigned int, int))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[10228] + 4))( /*0x5bdd93*/
-    *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10228],
+  (*(void (**)(unsigned int, int *, unsigned int, int))(**(unsigned int **)&g_abs_87F8E4 + 4))( /*0x5bdd93*/
+    *(unsigned int *)&g_abs_87F8E4,
     &v13,
     *(&g_MatrixTransformState + 289),
     v9);
@@ -141,7 +142,7 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
 }
 // 0x6938C0
 namespace gamemd {
-HWND Mouse::ReleaseCapture(void *a1 = 0)
+HWND Mouse::ReleaseCapture()
 {
 
   HWND result; // eax
@@ -174,7 +175,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   unsigned int v17[3]; // [esp+40h] [ebp-Ch] BYREF
 
   v5 = (char **)*((unsigned int *)this + 1); /*0x7b93f9*/
-  if ( v5 && aP1 && MEMORY[0x87F6C8] ) /*0x7b9418*/
+  if ( v5 && aP1 && g_abs_87F6C8 ) /*0x7b9418*/
   {
     v6 = *((unsigned int *)this + 20); /*0x7b942e*/
     v7 = *((unsigned int *)this + 21); /*0x7b9431*/
@@ -199,7 +200,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
 }
 // 0x53EC90
 namespace gamemd {
-SHORT Mouse::GetKeyState()
+SHORT Mouse::GetKeyState(uint8_t vKey)
 {
 
   if ( unk_AA0444 ) /*0x53ec97*/
@@ -215,12 +216,12 @@ namespace gamemd {
 BOOL Mouse::IsButtonDown(unsigned char a1)
 {
 
-  unsigned __int16 v1; // si
+  uint16_t v1; // si
 
   v1 = a1; /*0x54f5c5*/
   if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 ) /*0x54f5e2*/
     v1 = 2 - (a1 != 1); /*0x54f5eb*/
-  return (unsigned __int16)Mouse::GetKeyState(v1) != 0; /*0x54f600*/
+  return (uint16_t)Mouse::GetKeyState(v1) != 0; /*0x54f600*/
 
 }
 } // namespace gamemd
@@ -232,12 +233,12 @@ HWND Mouse::HideWindow()
 
   HWND result; // eax
 
-  result = MEMORY[0xABF240]; /*0x5bc400*/
-  MEMORY[0xABF239] = 0; /*0x5bc409*/
-  if ( MEMORY[0xABF240] ) /*0x5bc40f*/
+  result = g_abs_ABF240; /*0x5bc400*/
+  g_abs_ABF239 = 0; /*0x5bc409*/
+  if ( g_abs_ABF240 ) /*0x5bc40f*/
   {
-    MEMORY[0xABF23A] = 0; /*0x5bc413*/
-    return (HWND)ShowWindow(MEMORY[0xABF240], 0); /*0x5bc419*/
+    g_abs_ABF23A = 0; /*0x5bc413*/
+    return (HWND)ShowWindow(g_abs_ABF240, 0); /*0x5bc419*/
   }
   return result; /*0x5bc41f*/
 

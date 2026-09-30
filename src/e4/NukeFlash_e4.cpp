@@ -11,7 +11,7 @@ namespace gamemd {
 BOOL NukeFlash::IsActive()
 {
 
-  return unk_A9FABC == 1; /*0x53a11e*/
+  return unk_A9FABC == (unsigned char *)(1); /*0x53a11e*/
 
 }
 } // namespace gamemd
@@ -21,7 +21,7 @@ namespace gamemd {
 BOOL NukeFlash::ProcessEffect()
 {
 
-  return unk_A9FABC == 2; /*0x53a12e*/
+  return unk_A9FABC == (unsigned char *)(2); /*0x53a12e*/
 
 }
 } // namespace gamemd

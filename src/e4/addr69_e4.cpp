@@ -63,6 +63,7 @@
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x690400
 namespace gamemd {
@@ -88,19 +89,19 @@ AbstractClass * * E4Recv_690400::sub_690400()
   v6[1] = v3 + Rect.top; /*0x69045b*/
   v6[2] = 640; /*0x690467*/
   v5[2] = 640; /*0x69046b*/
-  if ( MEMORY[0x887640] ) /*0x69046f*/
-    (*(void (**)(int, int, unsigned int))(*(unsigned int *)MEMORY[0x887640] + 60))(MEMORY[0x887640], MEMORY[0x88730C], 0); /*0x69047c*/
-  result = (*(int (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)MEMORY[0x887308] + 8))( /*0x69049c*/
-             MEMORY[0x887308],
+  if ( g_abs_887640 ) /*0x69046f*/
+    (*(void (**)(int, int, unsigned int))(*(unsigned int *)g_abs_887640 + 60))(g_abs_887640, g_abs_88730C, 0); /*0x69047c*/
+  result = (*(int (**)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_abs_887308 + 8))( /*0x69049c*/
+             g_abs_887308,
              v6,
-             MEMORY[0x88730C],
+             g_abs_88730C,
              v5,
              0,
              1);
-  if ( MEMORY[0x887640] ) /*0x6904a7*/
-    return (*(int (**)(int, int, unsigned int))(*(unsigned int *)MEMORY[0x887640] + 64))( /*0x6904b4*/
-             MEMORY[0x887640],
-             MEMORY[0x88730C],
+  if ( g_abs_887640 ) /*0x6904a7*/
+    return (*(int (**)(int, int, unsigned int))(*(unsigned int *)g_abs_887640 + 64))( /*0x6904b4*/
+             g_abs_887640,
+             g_abs_88730C,
              0);
   return result; /*0x6904b7*/
 
@@ -181,7 +182,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       }
       if ( !v8 ) /*0x693d24*/
         break; /*0x693d24*/
-            Event::Dispatch();
+            this->Event::Dispatch();
     }
   }
   else
@@ -197,7 +198,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     }
     else
     {
-      Flagged = (char *)(this->GameSettings::FindFlagged());
+      Flagged = (char *)(((GameSettings *)0)->FindFlagged());
       if ( Flagged ) /*0x693c50*/
       {
         v5 = (char *)(CharToWideString(Flagged + 36));
@@ -216,7 +217,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       }
       if ( !v6 ) /*0x693cac*/
         break; /*0x693cac*/
-            Event::Dispatch();
+            this->Event::Dispatch();
     }
   }
   v10 = 3600; /*0x693d39*/
@@ -266,7 +267,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
         v13 = NetworkID::Compare((int)v39, (int)&stru_A8BB1C); /*0x693dee*/
         if ( dword_A8B238 == 4 ) /*0x693df9*/
         {
-                    v14 = GameSettings::FindFlagged();
+                    v14 = this->GameSettings::FindFlagged();
           v13 = v14 && !_strcmpi(v14 + 36, v49); /*0x693e20*/
         }
         if ( v48 == 17 && v13 ) /*0x693e2d*/
@@ -1498,7 +1499,7 @@ int E4Recv_69B690::sub_69B690()
 
   while ( 1 ) /*0x69b6aa*/
   {
-    result = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, 7); /*0x69b6aa*/
+    result = Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, 7); /*0x69b6aa*/
     if ( result == -2 ) /*0x69b6b1*/
       return result; /*0x69b6fa*/
     v3 = *((unsigned int *)this + 2579); /*0x69b6b3*/
@@ -1583,10 +1584,10 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
     v5 = *((char *)this + 11); /*0x69f0e3*/
     if ( v4 != -1 ) /*0x69f0ef*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v4 >= v5 ) /*0x69f0f7*/
+      if ( (int)g_abs_A8ED84 - v4 >= v5 ) /*0x69f0f7*/
         v5 = 0; /*0x69f0fd*/
       else
-        v5 -= (int)MEMORY[0xA8ED84] - v4; /*0x69f0f9*/
+        v5 -= (int)g_abs_A8ED84 - v4; /*0x69f0f9*/
     }
     if ( (double)(v3 - v5) / (double)*((char *)this + 12) < 1.0 ) /*0x69f118*/
     {
@@ -1597,10 +1598,10 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
         v9 = *((char *)this + 11); /*0x69f130*/
         if ( v8 != -1 ) /*0x69f136*/
         {
-          if ( (int)MEMORY[0xA8ED84] - v8 >= v9 ) /*0x69f13e*/
+          if ( (int)g_abs_A8ED84 - v8 >= v9 ) /*0x69f13e*/
             v9 = 0; /*0x69f144*/
           else
-            v9 -= (int)MEMORY[0xA8ED84] - v8; /*0x69f140*/
+            v9 -= (int)g_abs_A8ED84 - v8; /*0x69f140*/
         }
         v7 = (double)(v6 - v9) / (double)*((char *)this + 12); /*0x69f150*/
       }
@@ -1666,21 +1667,21 @@ char * E4Recv_6905F0::sub_6905F0()
   *this = &vt_ScoreFontClass; /*0x6905f9*/
   if ( v2 && *((unsigned char *)this + 16) == 1 ) /*0x690607*/
   {
-    __3_YAXPAX_Z(v2); /*0x69060a*/
+    RA2_OPDEL(v2); /*0x69060a*/
     *((unsigned int *)this + 3) = 0; /*0x690612*/
     *((unsigned char *)this + 16) = 0; /*0x690615*/
   }
-  result = (char *)--MEMORY[0xB0558C]; /*0x69061d*/
-  if ( !MEMORY[0xB0558C] ) /*0x690623*/
+  result = (char *)--g_abs_B0558C; /*0x69061d*/
+  if ( !g_abs_B0558C ) /*0x690623*/
   {
-    result = &MEMORY[0xB05594]; /*0x690625*/
+    result = &g_abs_B05594; /*0x690625*/
     do /*0x690637*/
     {
       *((unsigned int *)result - 1) = 0; /*0x69062a*/
       *result = 0; /*0x69062d*/
       result += 8; /*0x69062f*/
     }
-    while ( (int)result < (int)((char *)&MEMORY[0xB055A8] + 4) ); /*0x690637*/
+    while ( (int)result < (int)((char *)&g_abs_B055A8 + 4) ); /*0x690637*/
   }
   return result; /*0x690639*/
 
@@ -2745,8 +2746,8 @@ double E4Recv_69F1B0::sub_69F1B0()
   v4 = *((char *)this + 11); /*0x69f1cd*/
   if ( v3 != -1 ) /*0x69f1d3*/
   {
-    if ( (int)MEMORY[0xA8ED84] - v3 < v4 ) /*0x69f1df*/
-      return (double)(v1 - (v4 - ((int)MEMORY[0xA8ED84] - v3))) / (double)v1; /*0x69f1f5*/
+    if ( (int)g_abs_A8ED84 - v3 < v4 ) /*0x69f1df*/
+      return (double)(v1 - (v4 - ((int)g_abs_A8ED84 - v3))) / (double)v1; /*0x69f1f5*/
     v4 = 0; /*0x69f1f6*/
   }
   return (double)(v1 - v4) / (double)v1; /*0x69f1c5*/
@@ -2769,7 +2770,7 @@ int E4Recv_69F210::sub_69F210(int a2)
     *((unsigned int *)this + 8) = result; /*0x69f21e*/
     *((unsigned int *)this + 7) = a2; /*0x69f221*/
     v3 = (unsigned int *)this + 9; /*0x69f229*/
-    *v3 = MEMORY[0xA8ED84]; /*0x69f232*/
+    *v3 = g_abs_A8ED84; /*0x69f232*/
     v3[1] = v4; /*0x69f23a*/
     v3[2] = 3; /*0x69f23d*/
     v3[3] = 3; /*0x69f240*/
@@ -2799,10 +2800,10 @@ BOOL E4Recv_69F5E0::sub_69F5E0()
     v4 = *((unsigned int *)this + 9); /*0x69f5fb*/
     if ( v4 != -1 ) /*0x69f601*/
     {
-      if ( (int)MEMORY[0xA8ED84] - v4 >= v3 ) /*0x69f60d*/
+      if ( (int)g_abs_A8ED84 - v4 >= v3 ) /*0x69f60d*/
         v3 = 0; /*0x69f613*/
       else
-        v3 -= (int)MEMORY[0xA8ED84] - v4; /*0x69f60f*/
+        v3 -= (int)g_abs_A8ED84 - v4; /*0x69f60f*/
     }
     v2 = (double)(v1 - v3) / (double)(int)*((unsigned int *)this + 12); /*0x69f620*/
   }

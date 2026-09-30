@@ -105,7 +105,7 @@ int NullModemClass::CheckStatus()
 } // namespace gamemd
 // 0x5F3610
 namespace gamemd {
-void NullModemClass::GetAddress()
+void NullModemClass::GetAddress( int a2)
 {
 
   int v2; // eax
@@ -135,17 +135,17 @@ int NullModemClass::SetAddress(int a2)
 } // namespace gamemd
 // 0x5F3650
 namespace gamemd {
-void * NullModemClass::QueryInterface(char a2)
+void * NullModemClass::QueryInterface(void *** Block, char a2)
 {
 
   void **v3; // edi
 
-  v3 = *(Block + 13); /*0x5f3654*/
-  *Block = &vt_NullModemClass; /*0x5f3657*/
+  v3 = (void **)(*(Block + 13));
+  *Block = (void **)(&vt_NullModemClass);
   if ( v3 ) /*0x5f365f*/
   {
     FileFind::Close(v3); /*0x5f3663*/
-    __3_YAXPAX_Z(v3); /*0x5f3669*/
+    RA2_OPDEL(v3); /*0x5f3669*/
   }
   ObjectClass::FreeResources((int)Block); /*0x5f3673*/
   if ( *(Block + 16) != (void **)-1 ) /*0x5f3680*/
@@ -164,10 +164,9 @@ void * NullModemClass::QueryInterface(char a2)
     (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f36c3*/
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
-LABEL_10:
-  *Block = &vt_ConnManClass; /*0x5f36cf*/
-  if ( (a2 & 1) != 0 ) /*0x5f36db*/
-    __3_YAXPAX_Z(Block); /*0x5f36de*/
+LABEL_10: *Block = (void **)(&vt_ConnManClass);
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5f36db*/
+    RA2_OPDEL(Block); /*0x5f36de*/
   return (NullModemClass *)Block; /*0x5f36e8*/
 
 }
@@ -188,7 +187,7 @@ int NullModemClass::sendData()
   struct _COMSTAT Stat; // [esp+14h] [ebp-28h] BYREF
   struct _DCB DCB; // [esp+20h] [ebp-1Ch] BYREF
 
-  Debug::Log(); /*0x77467d*/
+  this->Debug::Log(); /*0x77467d*/
   PurgeComm(*(HANDLE *)((char *)this + 92), 0xFu); /*0x77468b*/
   ResetEvent(*(HANDLE *)((char *)this + 56)); /*0x77469b*/
   ResetEvent(*(HANDLE *)((char *)this + 76)); /*0x7746a1*/
@@ -205,13 +204,13 @@ int NullModemClass::sendData()
     *((unsigned int *)&DCB + 2) = *((unsigned int *)&DCB + 2) & 0xFFFF88C0 | 0x1011; /*0x7746ec*/
     if ( !SetCommState(v2, &DCB) ) /*0x7746f0*/
     {
-      Debug::Log(); /*0x774700*/
+      this->Debug::Log(); /*0x774700*/
       return 0; /*0x774710*/
     }
   }
   else
   {
-    Debug::Log(); /*0x774717*/
+    this->Debug::Log(); /*0x774717*/
   }
   GetCommMask(*(HANDLE *)((char *)this + 92), &EvtMask); /*0x774728*/
   (*(void (**)(int, int))(*(unsigned int *)this + 16))(this, 1); /*0x774734*/
@@ -219,7 +218,7 @@ int NullModemClass::sendData()
   if ( !EscapeCommFunction(*(HANDLE *)((char *)this + 92), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
-    Debug::Log(); /*0x77475b*/
+    this->Debug::Log(); /*0x77475b*/
   }
   if ( ClearCommError(*(HANDLE *)((char *)this + 92), &Errors, &Stat) ) /*0x774771*/
   {
@@ -249,7 +248,7 @@ int NullModemClass::receiveData()
   DWORD Errors; // [esp+Ch] [ebp-10h] BYREF
   struct _COMSTAT Stat; // [esp+10h] [ebp-Ch] BYREF
 
-  Debug::Log(); /*0x7747cd*/
+  this->Debug::Log(); /*0x7747cd*/
   PurgeComm(*(HANDLE *)((char *)this + 92), 0xFu); /*0x7747db*/
   ResetEvent(*(HANDLE *)((char *)this + 56)); /*0x7747eb*/
   ResetEvent(*(HANDLE *)((char *)this + 76)); /*0x7747f1*/
@@ -257,11 +256,11 @@ int NullModemClass::receiveData()
   *((unsigned char *)this + 80) = 0; /*0x774800*/
   *((unsigned char *)this + 81) = 0; /*0x774803*/
   if ( !SetCommState(v7, (LPDCB)((char *)this + 8300)) ) /*0x774806*/
-    Debug::Log(); /*0x774816*/
+    this->Debug::Log(); /*0x774816*/
   if ( !EscapeCommFunction(*(HANDLE *)((char *)this + 92), 3u) ) /*0x774824*/
   {
     GetLastError(); /*0x77482f*/
-    Debug::Log(); /*0x77483b*/
+    this->Debug::Log(); /*0x77483b*/
   }
   if ( ClearCommError(*(HANDLE *)((char *)this + 92), &Errors, &Stat) ) /*0x774851*/
   {
@@ -298,7 +297,7 @@ int NullModemClass::COMStub_Return0(int a1)
 } // namespace gamemd
 // 0x5F3530
 namespace gamemd {
-void NullModemClass::Send()
+void NullModemClass::Send(int a1)
 {
 
   return 0; /*0x5f3532*/

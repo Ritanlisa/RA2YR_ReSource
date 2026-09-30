@@ -130,28 +130,28 @@ struct Network {
     char * initConnection(int a2,  unsigned int * a3,  char a4);    // 0x4C6C50
     char SendOffer();  // 0x4FC980
     char Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);  // 0x52F3F0
-    short GetAddress(unsigned int * a1,  ObjectClass * aP2,  unsigned short * a3);    // 0x53ED60
+    short GetAddress(unsigned int * a1,  void * aP2,  unsigned short * a3);    // 0x53ED60
     char * CopyAddress(unsigned int * a2, int a3, void *a1 = 0);    // 0x53EDA0
     int IsBroadcastAddr(void *a1 = 0);  // 0x53EE00
-    bool processPacket(TechnoTypeClass * aP1);  // 0x53EF60
+    bool processPacket(void * aP1);  // 0x53EF60
     int SetConnectionParams(void* aP1,  int a3,  int a4,  void* aP4);    // 0x540C60
-    int sendData(AnimClass * aP1);  // 0x540F00
+    int sendData(void * aP1);  // 0x540F00
     int GetSendCount(void *a1 = 0);  // 0x540F90
-    int GetConnectionSpeed(CellStruct * aP1);  // 0x540FA0
+    int GetConnectionSpeed(void * aP1);  // 0x540FA0
     int GetClass(int a2);  // 0x540FC0
-    int FindPlayerByID(DynamicVector * aP1);  // 0x541000
+    int FindPlayerByID(void * aP1);  // 0x541000
     int SendMessage(int a2,  int a3,  int a4,  int a5,  int a6,  int a7);    // 0x5410F0
     AbstractClass * * SendToPlayer(int a2, int a3, int a4, wchar_t * String2);    // 0x541260
-    int Send(int a2, int a3, TechnoTypeClass * aP3, int a5, void *a1 = 0);    // 0x541370
+    int Send(int a2, int a3, void * aP3, int a5);    // 0x541370
     int SendPacketThunk(int a2,  int a3,  int a4,  int a5,  int a6,  int a7);    // 0x5413B0
     char receiveData(int a2);  // 0x5413F0
     int SendPacket(int a2,  int a3,  unsigned char a4);    // 0x541410
     int SendPacketThunk2(int a2,  int a3,  int a4,  int a5);    // 0x541480
     void * ReceiveLoop(void *a1 = 0);  // 0x541820
-    int GetQueueCount(void *a1 = 0);  // 0x5422D0
+    int GetQueueCount();  // 0x5422D0
     int GetLobbyStatus();  // 0x5424C0
     int updateLatency();  // 0x542500
-    unsigned int * SetPlayerCoords(IPXManagerClass * aP1);  // 0x543050
+    unsigned int * SetPlayerCoords(void * aP1);  // 0x543050
     int Disconnect();  // 0x543080
     int validateConnection(int a2,  int a3);    // 0x5BCC40
     int SetupRematch();  // 0x5C46E0
@@ -170,19 +170,19 @@ struct Network {
     char SendMasterPlayerList();  // 0x6639D0
     wchar_t * ProcessAddressChange();  // 0x6640E0
     char * processAcknowledgment(void* aP1);  // 0x6642A0
-    char * reconnect(DynamicVector * aP1,  short a3);    // 0x664400
+    char * reconnect(void * aP1,  short a3);    // 0x664400
     unsigned int * processGameEvent(void *a1 = 0);  // 0x69B540
     void SyncPlayerList(void *a1 = 0);  // 0x792F10
     int finalizeSession();  // 0x7B2DB0
     char * FormatAddress(void* aP1);  // 0x53F0E0
     int CleanupOnDisconnect();  // 0x5F0040
     int GetMaxPacketSize();  // 0x74FD20
-    short SetPort(IPXManagerClass * aP1);  // 0x53F200
+    short SetPort(void * aP1);  // 0x53F200
     int SendSettingsRequest();  // 0x5B5E90
-    char QueryAddress(IPXManagerClass * aP0,  int a2,  int a3,  char a4);    // 0x5D90E0
+    char QueryAddress(void * aP0,  int a2,  int a3,  char a4);    // 0x5D90E0
     short WaitForPacket(int a1,  int a2);    // 0x5D9220
-    bool sendGameEvent(Modem * aP0,  int _10,  unsigned int * a2);    // 0x6956D0
-    int CopyAddress_Small(IPXManagerClass * aP1);  // 0x53EDC0
+    bool sendGameEvent(void * aP0,  int _10,  unsigned int * a2);    // 0x6956D0
+    int CopyAddress_Small(void * aP1);  // 0x53EDC0
     int SendOptionsGame(void *a1 = 0);  // 0x5E3720
     int InitPlayerSlots();  // 0x5E8B60
     HWND handleTimeout();  // 0x5EFF70

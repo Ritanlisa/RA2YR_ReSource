@@ -30,7 +30,7 @@ int TClassFactory_CampaignClass::GetClassName()
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c0270*/
   if ( !v1 ) /*0x6c0274*/
-    __3_YAXPAX_Z((void *)Block); /*0x6c0277*/
+    RA2_OPDEL((void *)Block); /*0x6c0277*/
   return v1; /*0x6c0281*/
 
 }
@@ -45,17 +45,17 @@ int TClassFactory_MechLocomotionClass::GetClassName()
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c4d70*/
   if ( !v1 ) /*0x6c4d74*/
-    __3_YAXPAX_Z((void *)Block); /*0x6c4d77*/
+    RA2_OPDEL((void *)Block); /*0x6c4d77*/
   return v1; /*0x6c4d81*/
 
 }
 } // namespace gamemd
 // 0x6C0290
 namespace gamemd {
-int TClassFactory_CampaignClass::ddtor(void *a1 = 0)
+int TClassFactory_CampaignClass::ddtor()
 {
 
-  int v2; // eax
+  void * v2;
   CampaignClass *v6; // eax
   CampaignClass *v7; // esi
   int v5; // edi
@@ -68,7 +68,7 @@ int TClassFactory_CampaignClass::ddtor(void *a1 = 0)
   *v8 = 0; /*0x6c02a8*/
   if ( arg4 ) /*0x6c02b0*/
     return -2147221232; /*0x6c02b3*/
-  v2 = __2_YAPAXI_Z(0x3A0u); /*0x6c02c1*/
+  v2 = RA2_OPNEW(0x3A0u); /*0x6c02c1*/
   if ( !v2 ) /*0x6c02cb*/
     return -2147024882; /*0x6c02cb*/
   v6 = (CampaignClass *)CampaignClass::CampaignClass(v2, 0); /*0x6c02d1*/
@@ -84,7 +84,7 @@ int TClassFactory_CampaignClass::ddtor(void *a1 = 0)
 } // namespace gamemd
 // 0x6C0310
 namespace gamemd {
-int TClassFactory_CampaignClass::GetSize(int a1, int a2)
+int TClassFactory_CampaignClass::GetSize()
 {
 
   int v1; // ecx
@@ -104,7 +104,7 @@ int TClassFactory_CampaignClass::GetSize(int a1, int a2)
 } // namespace gamemd
 // 0x6C4D40
 namespace gamemd {
-LONG TClassFactory_MechLocomotionClass::AddRef(void * a1)
+LONG TClassFactory_MechLocomotionClass::AddRef()
 {
 
   int v2; // [esp+4h] [ebp+4h]
@@ -115,10 +115,10 @@ LONG TClassFactory_MechLocomotionClass::AddRef(void * a1)
 } // namespace gamemd
 // 0x6C4D90
 namespace gamemd {
-int TClassFactory_MechLocomotionClass::ddtor(void *a1 = 0)
+int TClassFactory_MechLocomotionClass::ddtor()
 {
 
-  int v2; // eax
+  void * v2;
   MechLocomotionClass *v6; // eax
   MechLocomotionClass *v7; // esi
   int v5; // edi
@@ -131,7 +131,7 @@ int TClassFactory_MechLocomotionClass::ddtor(void *a1 = 0)
   *v8 = 0; /*0x6c4da8*/
   if ( arg4 ) /*0x6c4db0*/
     return -2147221232; /*0x6c4db3*/
-  v2 = __2_YAPAXI_Z(0x34u); /*0x6c4dbe*/
+  v2 = RA2_OPNEW(0x34u); /*0x6c4dbe*/
   if ( !v2 ) /*0x6c4dc8*/
     return -2147024882; /*0x6c4dc8*/
   v6 = (MechLocomotionClass *)SmallFunc_5AFEF0(v2); /*0x6c4dcc*/
@@ -147,7 +147,7 @@ int TClassFactory_MechLocomotionClass::ddtor(void *a1 = 0)
 } // namespace gamemd
 // 0x6C4E10
 namespace gamemd {
-int TClassFactory_MechLocomotionClass::GetSize(int a1, int a2)
+int TClassFactory_MechLocomotionClass::GetSize()
 {
 
   int v1; // ecx

@@ -27,6 +27,6 @@ struct E4Recv_6EE800 {
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char SelectTeamMembers(ScriptClass * aP1,  int a3);    // 0x6EE800
+    char SelectTeamMembers(void * aP1,  int a3);    // 0x6EE800
 };
 } // namespace gamemd

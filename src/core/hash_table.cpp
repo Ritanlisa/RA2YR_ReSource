@@ -75,11 +75,11 @@ EditClass * * SHA1::Process(const void* data, uint32_t size)
       while ( v6 ); /*0x69d9bb*/
     }
     data = (const void *)((int)v5);
-    return (int)SHA1::ProcessBlock(this, (const void **)&data, &size); /*0x69d9cf*/
+    return (int, unsigned int a1, unsigned int a2)SHA1::ProcessBlock(this, (const void **)&data, &size); /*0x69d9cf*/
   }
 }
 // 0x69d9e0
-void SHA1::Compute(uint8_t digest[20])
+void SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
 {
   int v3; // edx
   int v4; // ebx
@@ -108,7 +108,7 @@ void SHA1::Compute(uint8_t digest[20])
   {
     if ( v3 + 1 < 64 ) /*0x69da38*/
       memset((char *)v13 + v3 + 1, 0, 63 - v3); /*0x69da4c*/
-    SHA1::Transform(v13, v12); /*0x69da61*/
+    SHA1::Transform(v13, v12, unsigned int a1); /*0x69da61*/
     v6 = 0; /*0x69da66*/
   }
   memset((char *)v13 + v6, 0, 64 - v6); /*0x69da7d*/
@@ -123,7 +123,7 @@ void SHA1::Compute(uint8_t digest[20])
   {
     v10 = *p_SHA1_field_0x04++; /*0x69dadf*/
     --v9; /*0x69db07*/
-    *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
+    *(p_SHA1_field_0x04 - 1, unsigned int a1, unsigned int a2) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
   while ( v9 ); /*0x69db0b*/
   a1->__pad_0[0] = 1; /*0x69db18*/
@@ -131,7 +131,7 @@ void SHA1::Compute(uint8_t digest[20])
   return 20; /*0x69db1e*/
 }
 // 0x69db30
-void SHA1::Transform()
+void SHA1::Transform(void * a1, void * a2)
 {
   int *v2; // ecx
   int v3; // esi
@@ -188,7 +188,7 @@ void SHA1::Transform()
     v10 = v6[6] ^ v6[11]; /*0x69db8c*/
     ++v6; /*0x69db8e*/
     --v7; /*0x69db9e*/
-    v6[13] = (2 * (v9 ^ v8 ^ v10)) | ((v9 ^ v8 ^ (unsigned int)v10) >> 31); /*0x69db9f*/
+    v6[13] = (2 * (v9 ^ v8 ^ v10, unsigned int a2)) | ((v9 ^ v8 ^ (unsigned int)v10) >> 31); /*0x69db9f*/
   }
   while ( v7 ); /*0x69dba2*/
   v11 = 0; /*0x69dbb4*/
@@ -235,7 +235,7 @@ void SHA1::Transform()
     v13 = (v12 >> 2) | (v12 << 30); /*0x69dc68*/
     v11 = v31 + 1; /*0x69dc6e*/
     v12 = v15; /*0x69dc72*/
-    v21 = (unsigned int)(v31 + 1) < 0x50; /*0x69dc74*/
+    v21 = (unsigned int, unsigned int a2)(v31 + 1) < 0x50; /*0x69dc74*/
     v15 = v20; /*0x69dc77*/
     ++v31; /*0x69dc79*/
     ++v29; /*0x69dc7d*/

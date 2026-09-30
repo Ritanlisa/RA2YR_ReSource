@@ -57,7 +57,7 @@ char NullModem_TestConnection(void * a1)
         v5 += Timer::GetTicks() - *(unsigned int *)&stru_87C374.__pad_579C[22568];
   v20 = v5; /*0x5f0438*/
   v6 = v5; /*0x5f043c*/
-    while ( Dialog::PumpMessages() != 1 && !*((unsigned char *)&g_MatrixTransformState + 9524) )
+    while ( this->Dialog::PumpMessages() != 1 && !*((unsigned char *)&g_MatrixTransformState + 9524) )
   {
     Stream::ReadPacket((int)&unk_A8EA70); /*0x5f045d*/
     v7 = dword_887338; /*0x5f0462*/

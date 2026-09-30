@@ -235,22 +235,22 @@ int WinMain::Constructor_VectorClass_Wstring_()
       *(unsigned int *)(v3 + 392) = &vt_VectorClass_enum_DiskID; /*0x69a226*/
       if ( v4 && *(unsigned char *)(v3 + 405) ) /*0x69a234*/
       {
-        __3_YAXPAX_Z(v4); /*0x69a23d*/
+        RA2_OPDEL(v4); /*0x69a23d*/
         *(unsigned int *)(v3 + 396) = 0; /*0x69a245*/
       }
       *(unsigned char *)(v3 + 405) = 0; /*0x69a24c*/
       *(unsigned int *)(v3 + 400) = 0; /*0x69a252*/
-      __3_YAXPAX_Z((void *)v3); /*0x69a258*/
+      RA2_OPDEL((void *)v3); /*0x69a258*/
     }
   }
   (*(void (**)(unsigned int *))(*((unsigned int *)this + 420) + 12))((unsigned int *)this + 420); /*0x69a277*/
   for ( j = 0; j < *((unsigned int *)this + 2633); ++j ) /*0x69a284*/
-    __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 2630) + 4 * j)); /*0x69a290*/
+    RA2_OPDEL(*(void **)(*((unsigned int *)this + 2630) + 4 * j)); /*0x69a290*/
   (*(void (**)(unsigned int *))(*((unsigned int *)this + 2629) + 12))((unsigned int *)this + 2629); /*0x69a2af*/
   for ( k = 0; k < *((unsigned int *)this + 2627); ++k ) /*0x69a2bc*/
   {
     if ( *(unsigned int *)(*((unsigned int *)this + 2624) + 4 * k) ) /*0x69a2c4*/
-      __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 2624) + 4 * k)); /*0x69a2cc*/
+      RA2_OPDEL(*(void **)(*((unsigned int *)this + 2624) + 4 * k)); /*0x69a2cc*/
   }
   return (*(int (**)(unsigned int *))(*((unsigned int *)this + 2623) + 12))((unsigned int *)this + 2623); /*0x69a2ee*/
 
@@ -270,7 +270,7 @@ unsigned int * WinMain::ShutdownCleanup()
   for ( i = (void **)unk_B1CF8C; unk_B1CF8C; i = (void **)unk_B1CF8C ) /*0x734d3b*/
   {
     unk_B1CF8C = *i; /*0x734d40*/
-    __3_YAXPAX_Z(i); /*0x734d46*/
+    RA2_OPDEL(i); /*0x734d46*/
   }
   v1 = (void **)unk_B1CF78; /*0x734d57*/
   unk_B1CF8C = 0; /*0x734d5d*/
@@ -280,11 +280,11 @@ unsigned int * WinMain::ShutdownCleanup()
     {
       if ( v1[j] ) /*0x734d72*/
       {
-        __3_YAXPAX_Z(v1[j]); /*0x734d7a*/
+        RA2_OPDEL(v1[j]); /*0x734d7a*/
         v1 = (void **)unk_B1CF78; /*0x734d7f*/
       }
     }
-    __3_YAXPAX_Z(v1); /*0x734d93*/
+    RA2_OPDEL(v1); /*0x734d93*/
     unk_B1CF78 = 0; /*0x734d9b*/
   }
   v3 = (void **)unk_B1CF7C; /*0x734da1*/
@@ -294,16 +294,16 @@ unsigned int * WinMain::ShutdownCleanup()
     {
       if ( v3[k] ) /*0x734db6*/
       {
-        __3_YAXPAX_Z(v3[k]); /*0x734dbe*/
+        RA2_OPDEL(v3[k]); /*0x734dbe*/
         v3 = (void **)unk_B1CF7C; /*0x734dc3*/
       }
     }
-    __3_YAXPAX_Z(v3); /*0x734dd7*/
+    RA2_OPDEL(v3); /*0x734dd7*/
     unk_B1CF7C = 0; /*0x734ddf*/
   }
   if ( dword_B1CF74 ) /*0x734dec*/
   {
-    __3_YAXPAX_Z(dword_B1CF74); /*0x734def*/
+    RA2_OPDEL(dword_B1CF74); /*0x734def*/
     dword_B1CF74 = 0; /*0x734df7*/
   }
   result = unk_B1CF88; /*0x734dfd*/
@@ -312,7 +312,7 @@ unsigned int * WinMain::ShutdownCleanup()
     do /*0x734e15*/
     {
       v6 = (unsigned int *)*result; /*0x734e06*/
-      __3_YAXPAX_Z(result); /*0x734e09*/
+      RA2_OPDEL(result); /*0x734e09*/
       result = v6; /*0x734e13*/
     }
     while ( v6 ); /*0x734e15*/
@@ -398,7 +398,7 @@ void* sub_7B84F0()
         {
           LastError = GetLastError(); /*0x7b8598*/
           FormatMessageA(0x1000u, 0, LastError, 0, Buffer, 0x400u, 0); /*0x7b85a5*/
-                    Debug::Log();
+                    this->Debug::Log();
           while ( !dword_B78140 ) /*0x7b85c4*/
             Sleep(0); /*0x7b85ce*/
           WaitForSingleObject(dword_B78154, 0x1388u); /*0x7b85e6*/
@@ -420,10 +420,10 @@ LSTATUS WinMain::CleanupResource()
 
   phkResult = (HKEY)this; /*0x49f8b0*/
   Debug::Log(); /*0x49f8b6*/
-  if ( MEMORY[0x89F75C] ) /*0x49f8c5*/
+  if ( g_abs_89F75C ) /*0x49f8c5*/
   {
-    UnmapViewOfFile(MEMORY[0x89F75C]); /*0x49f8c8*/
-    MEMORY[0x89F75C] = 0; /*0x49f8ce*/
+    UnmapViewOfFile(g_abs_89F75C); /*0x49f8c8*/
+    g_abs_89F75C = 0; /*0x49f8ce*/
   }
   result = RegOpenKeyExA(HKEY_CLASSES_ROOT, SubKey, 0, 0xF003Fu, &phkResult); /*0x49f8ee*/
   if ( !result ) /*0x49f8f6*/

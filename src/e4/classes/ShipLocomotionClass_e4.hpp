@@ -50,10 +50,12 @@ struct ShipLocomotionClass {
     unsigned int LocomotionClass;
     unsigned int Piggybackee;
     unsigned int __pad_18;
+    unsigned int BeginMove;
+    unsigned int LoadFromStream;
 // --- flat members (END) ---
-    HRESULT BeginMove(int * a1, int * pStm);
-    HRESULT LoadFromStream(int * a1, int * pPStm, int a3);
-    ShipLocomotionClass * ProcessMove(char a2);
+    HRESULTBeginMove(int * a1, int * pStm);
+    HRESULTLoadFromStream(int * a1, int * pPStm, int a3);
+    ShipLocomotionClass * ProcessMove(void * Block, char a2);
     int StubReturn112();
     int ddtor(int a1, unsigned int * a2);
 };

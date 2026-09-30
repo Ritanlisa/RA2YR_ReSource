@@ -73,7 +73,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/
     }
     v5 = (wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)((LPARAM)((wchar_t *)(*((unsigned int *)dword_ABFDA4 + v3))))))))));
-        if ( (*(unsigned char *)(v5 + 61) || MEMORY[0xA8B238][0] != 4 || !Network::IsMultiplayerActive())
+        if ( (*(unsigned char *)(v5 + 61) || g_abs_A8B238[0] != 4 || !Network::IsMultiplayerActive())
       && (*(unsigned char *)(v5 + 62) || ((unsigned int *)(dword_A8B238))[0] != 4 || !this->Network::IsLobbyFeature())
       && (g_MPCooperativeState
        || *(unsigned int *)(dword_A8DA90 + 107) != -1
@@ -169,9 +169,9 @@ LABEL_5:
       }
       return result; /*0x5e69b4*/
     }
-    if ( (unsigned __int16)hWnd <= 0x6C5u ) /*0x5e69c7*/
+    if ( (uint16_t)hWnd <= 0x6C5u ) /*0x5e69c7*/
     {
-      switch ( (unsigned __int16)hWnd ) /*0x5e69cd*/
+      switch ( (uint16_t)hWnd ) /*0x5e69cd*/
       {
         case 0x6C5u: /*0x5e69cd*/
           HandleMultiplayerMapSelection((HWND)aP0); /*0x5e6b67*/
@@ -215,7 +215,7 @@ LABEL_5:
             Session::PrepareGame((HWND)v8); /*0x5e6b17*/
           *(unsigned int *)&HouseClass_Player.__pad_5568[8096] = *(&g_MatrixTransformState + 2228); /*0x5e6b22*/
           LoadScenarioClassByIndex((int)*(&g_MatrixTransformState + 2228)); /*0x5e6b28*/
-          LOBYTE(v11) = HandleMultiplayerMapSelection((HWND)v8); /*0x5e6b38*/
+          IDA_LOBYTE(v11) = HandleMultiplayerMapSelection((HWND)v8); /*0x5e6b38*/
           Screen::Capture(1, 0, v11, ebp0); /*0x5e6b3a*/
           if ( !(unsigned char)v11 ) /*0x5e6b41*/
           {
@@ -231,7 +231,7 @@ LABEL_28:
       }
       return 0; /*0x5e69dd*/
     }
-    if ( (unsigned __int16)hWnd == 1771 && !*((unsigned char *)&g_MatrixTransformState + 9144) && (unsigned int)hWnd >> 16 == 1 ) /*0x5e6b96*/
+    if ( (uint16_t)hWnd == 1771 && !*((unsigned char *)&g_MatrixTransformState + 9144) && (unsigned int)hWnd >> 16 == 1 ) /*0x5e6b96*/
     {
       v16 = aP0; /*0x5e6b9c*/
       v17 = 0; /*0x5e6ba6*/
@@ -246,7 +246,7 @@ LABEL_28:
           if ( v20 ) /*0x5e6bfc*/
           {
             unknown_libname_74(&aP0); /*0x5e6c06*/
-            if ( (*(unsigned __int8 (**)(char *, SkirmishDialog **))(*(unsigned int *)v20 + 12))(v20, &aP0) ) /*0x5e6c14*/
+            if ( (*(uint8_t (**)(char *, SkirmishDialog **))(*(unsigned int *)v20 + 12))(v20, &aP0) ) /*0x5e6c14*/
             {
               (*(void (**)(char *))(*(unsigned int *)v20 + 16))(v20); /*0x5e6c23*/
               MultiMissionVector::Constructor(var18, 0, 0); /*0x5e6c2c*/
@@ -269,9 +269,9 @@ LABEL_28:
               (*(void (**)(char *, HWND, unsigned int *, unsigned int))(*(unsigned int *)v20 + 76))(v20, v21, var18, 0); /*0x5e6c9b*/
               var18[0] = &vt_VectorClass_MultiMission_const; /*0x5e6ca2*/
               VectorClass::Cleanup3((int)var18); /*0x5e6caa*/
-              LOBYTE(a4) = (*(int (**)(char *))(*(unsigned int *)v20 + 60))(v20); /*0x5e6cbc*/
+              IDA_LOBYTE(a4) = (*(int (**)(char *))(*(unsigned int *)v20 + 60))(v20); /*0x5e6cbc*/
               v22 = GetDlgItem((HWND)v16, 1411); /*0x5e6cc0*/
-              EnableWindow(v22, (unsigned __int8)a4); /*0x5e6cce*/
+              EnableWindow(v22, (uint8_t)a4); /*0x5e6cce*/
               if ( &g_MatrixTransformState != (CoordStruct **)-8376 ) /*0x5e6cdb*/
               {
                 v23 = 0; /*0x5e6cdd*/
@@ -359,9 +359,9 @@ LABEL_28:
       var18[0] = &vt_VectorClass_MultiMission_const; /*0x5e6f62*/
       VectorClass::Cleanup3((int)var18); /*0x5e6f6a*/
     }
-    LOBYTE(aP0) = (*(int (**)(int))(*(unsigned int *)First + 60))(First); /*0x5e6f7c*/
+    IDA_LOBYTE(aP0) = (*(int (**)(int))(*(unsigned int *)First + 60))(First); /*0x5e6f7c*/
     v41 = GetDlgItem((HWND)v38, 1411); /*0x5e6f80*/
-    EnableWindow(v41, (unsigned __int8)aP0); /*0x5e6f8e*/
+    EnableWindow(v41, (uint8_t)aP0); /*0x5e6f8e*/
     v40 = *(CCINIClass **)&HouseClass_Player.__pad_5568[8096]; /*0x5e6f94*/
     if ( *(unsigned int *)&HouseClass_Player.__pad_5568[8096] != -1 /*0x5e6fa8*/
       && *(int *)&HouseClass_Player.__pad_5568[8096] < *(int *)&HouseClass_Player.__pad_5568[9764] )
@@ -425,7 +425,7 @@ LABEL_28:
 
 }
 // 0x608260
-int SkirmishSetup::PlayButtonClickAnim()
+int SkirmishSetup::PlayButtonClickAnim(HWND hWnd)
 {
 
   HWND *v2; // eax
@@ -434,12 +434,12 @@ int SkirmishSetup::PlayButtonClickAnim()
   bool v6; // al
   HWND v7; // [esp+8h] [ebp-4h] BYREF
 
-  if ( SessionClass::GetGameSpeed(MEMORY[0xA8B238]) ) /*0x60826a*/
+  if ( SessionClass::GetGameSpeed(g_abs_A8B238) ) /*0x60826a*/
     return 0; /*0x60826a*/
   v7 = hWnd; /*0x608278*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60827e*/
+  if ( !g_abs_AC1B04 ) /*0x60827e*/
     return 0; /*0x60827e*/
-  v2 = (HWND *)*((unsigned int *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v7) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60829f*/
+  v2 = (HWND *)*((unsigned int *)g_abs_AC1B00 + (g_abs_AC1B18(&v7) & ((1 << g_abs_AC1B0C) - 1))); /*0x60829f*/
   if ( !v2 ) /*0x6082a4*/
     return 0; /*0x6082a4*/
   while ( *v2 != v7 ) /*0x6082ac*/
@@ -455,13 +455,13 @@ int SkirmishSetup::PlayButtonClickAnim()
   v6 = IsWindowVisible(hWnd); /*0x6082eb*/
   if ( !v5 || !v6 ) /*0x6082f4*/
     return 0; /*0x6082b8*/
-  PlayVocClass(MEMORY[0x8871E0]->VoiceIFVRepair, 0x2000, 1.0, 0); /*0x60830f*/
-  LOBYTE(v7) = IsWindowEnabled(hWnd); /*0x608329*/
+  PlayVocClass(g_abs_8871E0->VoiceIFVRepair, 0x2000, 1.0, 0); /*0x60830f*/
+  IDA_LOBYTE(v7) = IsWindowEnabled(hWnd); /*0x608329*/
   EnableWindow(hWnd, 0); /*0x60832d*/
   EnumChildWindows(hWnd, Dialog::MapControlToAction, 1); /*0x60833d*/
   RenderGadgetClassAnimation(hWnd, 1); /*0x608343*/
   EnumChildWindows(hWnd, Dialog::MapControlToAction, 0); /*0x608350*/
-  EnableWindow(hWnd, (unsigned __int8)v7); /*0x60835d*/
+  EnableWindow(hWnd, (uint8_t)v7); /*0x60835d*/
   InvalidateRect(hWnd, 0, 0); /*0x608364*/
   return 1; /*0x6082b8*/
 

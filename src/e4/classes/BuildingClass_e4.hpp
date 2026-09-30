@@ -695,11 +695,10 @@ struct BuildingClass {
     unsigned int __pad_6B8;
     unsigned int u32_898;
     unsigned int u32_8B4;
-    unsigned int UpdateFloatPosition;
     unsigned int ctor;
 // --- flat members (END) ---
     TechnoClass * ClearLimpetCheck();
-    int AllocAndCtor(BuildingClass * aP0, int aP2);
+    int AllocAndCtor(void * aP0, int aP2);
     int AnimController();
     int AssignDestination_SyncLog();
     int FindClosestForRepair(unsigned int * a1);
@@ -739,6 +738,7 @@ struct BuildingClass {
     static double GetProductionFrame(...);  // C2597 interim stub
     static double GetType(...);  // C2597 interim stub
     static double GetSHPFrame(...);  // C2597 interim stub
+    static double UpdateFloatPosition(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

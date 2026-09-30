@@ -2218,14 +2218,14 @@ AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
   int v3; // edi
   unsigned int v4; // esi
   int v5; // eax
-  unsigned __int8 v6; // cl
+  uint8_t v6; // cl
   int v7; // eax
   int v8; // ecx
-  __int16 result; // ax
+  int16_t result; // ax
   unsigned char v10[4]; // [esp+Ch] [ebp-18h] BYREF
   unsigned char v11[4]; // [esp+10h] [ebp-14h] BYREF
-  __int16 v12; // [esp+14h] [ebp-10h] BYREF
-  unsigned __int8 v13; // [esp+16h] [ebp-Eh]
+  int16_t v12; // [esp+14h] [ebp-10h] BYREF
+  uint8_t v13; // [esp+16h] [ebp-Eh]
   int v14; // [esp+18h] [ebp-Ch]
   int v15; // [esp+1Eh] [ebp-6h]
 
@@ -2236,17 +2236,17 @@ AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
     v5 = ComputeColorSaturation(v4, (int)v10, (int)v10); /*0x538e97*/
     v6 = *(unsigned char *)(v5 + 2); /*0x538ea1*/
     v12 = *(unsigned short *)v5; /*0x538ea4*/
-    LOBYTE(v15) = v6; /*0x538ea9*/
+    IDA_LOBYTE(v15) = v6; /*0x538ea9*/
     v13 = v6; /*0x538eb7*/
     v14 = v6; /*0x538ebb*/
     v7 = Math::RoundToInt((double)v6 * a2); /*0x538ec7*/
     if ( v7 >= 255 ) /*0x538ed1*/
       v7 = 255; /*0x538ed3*/
     v13 = v7 <= 0 ? 0 : v7;
-    v8 = Color::ConvertToRGB((unsigned __int8 *)&v12, (int)v11); /*0x538ef2*/
+    v8 = Color::ConvertToRGB((uint8_t *)&v12, (int)v11); /*0x538ef2*/
     ++v3; /*0x538ef4*/
     result = *(unsigned short *)v8; /*0x538efb*/
-    LOBYTE(v8) = *(unsigned char *)(v8 + 2); /*0x538efe*/
+    IDA_LOBYTE(v8) = *(unsigned char *)(v8 + 2); /*0x538efe*/
     *(unsigned short *)v4 = result; /*0x538f01*/
     *(unsigned char *)(v4 + 2) = v8; /*0x538f04*/
   }
@@ -2639,8 +2639,8 @@ AnimClass * * PsyDom::Update()
       break; /*0x53af63*/
     case 2: /*0x53af50*/
       v2 = *(unsigned int *)(unk_A9FAC4 + 172); /*0x53af6f*/
-      if ( (double)MEMORY[0x8871E0]->?[2] * 0.01 <= (double)v2 /*0x53afaa*/
-                                                  / (double)*(__int16 *)((*(int (**)(unsigned int))(**(unsigned int **)(unk_A9FAC4 + 200) + 156))(*(unsigned int *)(unk_A9FAC4 + 200))
+      if ( (double)g_abs_8871E0->?[2] * 0.01 <= (double)v2 /*0x53afaa*/
+                                                  / (double)*(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(unk_A9FAC4 + 200) + 156))(*(unsigned int *)(unk_A9FAC4 + 200))
                                                                        + 6) )
       {
         unk_A9FAC0 = 3; /*0x53afb0*/
@@ -2649,14 +2649,14 @@ AnimClass * * PsyDom::Update()
       break; /*0x53afc1*/
     case 3: /*0x53af50*/
       v0 = *(unsigned int *)(unk_A9FAC4 + 172); /*0x53afcd*/
-      if ( *(__int16 *)((*(int (**)(unsigned int))(**(unsigned int **)(unk_A9FAC4 + 200) + 156))(*(unsigned int *)(unk_A9FAC4 + 200)) /*0x53afe4*/
+      if ( *(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(unk_A9FAC4 + 200) + 156))(*(unsigned int *)(unk_A9FAC4 + 200)) /*0x53afe4*/
                       + 6)
          - v0 <= 10 )
         unk_A9FAC0 = 4; /*0x53afe6*/
       break; /*0x53aff2*/
     case 4: /*0x53af50*/
       v1 = *(unsigned int *)(unk_A9FAC4 + 172); /*0x53affe*/
-      if ( *(__int16 *)((*(int (**)(unsigned int))(**(unsigned int **)(unk_A9FAC4 + 200) + 156))(*(unsigned int *)(unk_A9FAC4 + 200)) /*0x53b015*/
+      if ( *(int16_t *)((*(int (**)(unsigned int))(**(unsigned int **)(unk_A9FAC4 + 200) + 156))(*(unsigned int *)(unk_A9FAC4 + 200)) /*0x53b015*/
                       + 6)
          - v1 <= 1 )
       {
@@ -2667,7 +2667,7 @@ AnimClass * * PsyDom::Update()
       }
       break; /*0x53b03e*/
     case 5: /*0x53af50*/
-      if ( *((unsigned int *)MEMORY[0xA8B230] + 3404) == *((unsigned int *)MEMORY[0xA8B230] + 3403) ) /*0x53b052*/
+      if ( *((unsigned int *)g_abs_A8B230 + 3404) == *((unsigned int *)g_abs_A8B230 + 3403) ) /*0x53b052*/
         unk_A9FAC0 = 0; /*0x53b054*/
       break; /*0x53b054*/
     default:
@@ -3595,7 +3595,7 @@ int sub_538C20()
 
 // 0x538C40
 namespace gamemd {
-int E4Recv_538C40::sub_538C40()
+int E4Recv_538C40::sub_538C40(char * Source)
 {
 
   int v2[22]; // [esp+0h] [ebp-6Ch] BYREF
@@ -3606,7 +3606,7 @@ int E4Recv_538C40::sub_538C40()
   if ( CCFileClass::Open(v2, 0) ) /*0x538c53*/
   {
     FileClass::Load(v2, 1); /*0x538c62*/
-    CCFileClass::Read(v2, MEMORY[0xA8F91C], 0x10000); /*0x538c75*/
+    CCFileClass::Read(v2, g_abs_A8F91C, 0x10000); /*0x538c75*/
     CCFileClass::Reset(v2); /*0x538c7e*/
     unk_A9F91C = 0; /*0x538c83*/
   }
@@ -3621,7 +3621,7 @@ int E4Recv_538C40::sub_538C40()
 
 // 0x538CC0
 namespace gamemd {
-int E4Recv_538CC0::sub_538CC0()
+int E4Recv_538CC0::sub_538CC0(char * Source)
 {
 
   int v2[22]; // [esp+0h] [ebp-6Ch] BYREF
@@ -3632,7 +3632,7 @@ int E4Recv_538CC0::sub_538CC0()
   if ( !CCFileClass::Open(v2, 0) ) /*0x538cd3*/
   {
     FileClass::Load(v2, 2); /*0x538ce2*/
-    FileClass::Write(v2, MEMORY[0xA8F91C], 0x10000u); /*0x538cf5*/
+    FileClass::Write(v2, g_abs_A8F91C, 0x10000u); /*0x538cf5*/
     CCFileClass::Reset(v2); /*0x538cfe*/
   }
   v2[0] = (int)&vt_CCFileClass; /*0x538d07*/

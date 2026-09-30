@@ -82,9 +82,9 @@ LABEL_34:
                 {
                   v16 = (int)aP0[4].vtable0; /*0x42eff9*/
                   if ( aP0[4].Capacity < v16 /*0x42f021*/
-                    || (BYTE1(aP0[4].Items) || !v16)
+                    || (IDA_BYTE1(aP0[4].Items) || !v16)
                     && (v17 = *(unsigned int *)&aP0[4].IsInitialized, v17 > 0)
-                    && (*(unsigned __int8 (**)(int *, int, unsigned int))(aP0[3].Capacity + 8))(
+                    && (*(uint8_t (**)(int *, int, unsigned int))(aP0[3].Capacity + 8))(
                          &aP0[3].Capacity,
                          v16 + v17,
                          0) )
@@ -108,7 +108,7 @@ LABEL_34:
               if ( (int)aP0[3].vtable0 < v11 /*0x42efa2*/
                 || (aP0[2].IsAllocated || !v11)
                 && (v12 = (int)aP0[3].Items, v12 > 0)
-                && (*((unsigned __int8 (**)(VectorClass *, int, unsigned int))aP0[2].vtable0 + 2))(
+                && (*((uint8_t (**)(VectorClass *, int, unsigned int))aP0[2].vtable0 + 2))(
                      aP0 + 2,
                      v11 + v12,
                      0) )
@@ -130,9 +130,9 @@ LABEL_34:
         {
           v5 = *(char **)&aP0->IsInitialized; /*0x42eeda*/
           if ( (int)aP0[1].Items < (int)v5 /*0x42ef02*/
-            || (BYTE1(aP0[1].vtable0) || !v5)
+            || (IDA_BYTE1(aP0[1].vtable0) || !v5)
             && (v6 = aP0[1].Capacity, v6 > 0)
-            && (*((unsigned __int8 (**)(void **, char *, unsigned int))aP0->Items + 2))(&aP0->Items, &v5[v6], 0) )
+            && (*((uint8_t (**)(void **, char *, unsigned int))aP0->Items + 2))(&aP0->Items, &v5[v6], 0) )
           {
             v7 = (int)aP0[1].Items; /*0x42ef09*/
             v8 = v22[0]; /*0x42ef0c*/

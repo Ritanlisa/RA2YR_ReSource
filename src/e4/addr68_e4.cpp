@@ -1498,10 +1498,10 @@ void GenerateScenarioUnits()
   a1 = a1; /*0x6886c0*/
   EventClass::resetEvent(&v60, 0, 0); /*0x6886cc*/
   v60 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x6886d6*/
-  ppv = (LPVOID)MEMORY[0xA8B270]; /*0x6886de*/
+  ppv = (LPVOID)g_abs_A8B270; /*0x6886de*/
   v65 = 10; /*0x6886e9*/
   v64 = 0; /*0x6886f1*/
-  if ( MEMORY[0xA8B258] ) /*0x6886f9*/
+  if ( g_abs_A8B258 ) /*0x6886f9*/
     ppv = (char *)ppv - 1; /*0x6886fb*/
   qmemcpy(v54, (char *)dword_A8B230 + 536, sizeof(v54)); /*0x68871d*/
   Debug::Log(); /*0x688724*/
@@ -1704,7 +1704,7 @@ void GenerateScenarioUnits()
           v58 = v26; /*0x688a24*/
         }
         HouseClass::SetMapSeed(ppv, v26); /*0x688b25*/
-        if ( MEMORY[0xA8B258] ) /*0x688b31*/
+        if ( g_abs_A8B258 ) /*0x688b31*/
         {
           v39 = RA2_OPNEW(0x8E8u); /*0x688b41*/
           ppv = ppv; /*0x688b51*/
@@ -2584,7 +2584,7 @@ long long E4Recv_68B8A0::sub_68B8A0()
   int v5; // [esp+4h] [ebp-14h]
   int v6; // [esp+8h] [ebp-10h]
   int v7; // [esp+Ch] [ebp-Ch] BYREF
-  __int64 v8; // [esp+10h] [ebp-8h] BYREF
+  int64_t v8; // [esp+10h] [ebp-8h] BYREF
 
   v5 = (int)this; /*0x68b8a3*/
   v6 = 0; /*0x68b8b3*/
@@ -2820,9 +2820,9 @@ int E4Recv_68F8A0::sub_68F8A0()
   char Buffer[20]; // [esp+14h] [ebp-14h] BYREF
 
   v2 = (*(int (**)(char *))(*((unsigned int *)HouseClass_Player + 9) + 24))((char *)HouseClass_Player + 36); /*0x68f8b3*/
-  sprintf(Buffer, MEMORY[0x817F6C], v2); /*0x68f8c1*/
+  sprintf(Buffer, g_abs_817F6C, v2); /*0x68f8c1*/
   v3 = strlen(Buffer) + 1; /*0x68f8d1*/
-  v4 = __2_YAPAXI_Z(0x2Cu); /*0x68f8e8*/
+  v4 = RA2_OPNEW(0x2Cu); /*0x68f8e8*/
   if ( v4 ) /*0x68f8ef*/
   {
     v5 = *((unsigned int *)this + 3); /*0x68f8f8*/
@@ -2847,7 +2847,7 @@ int E4Recv_68F8A0::sub_68F8A0()
   if ( *((unsigned int *)this + 11) < v7 /*0x68f95e*/
     || (*((unsigned char *)this + 41) || !v7)
     && (v9 = *((unsigned int *)this + 12), v9 > 0)
-    && (*(unsigned __int8 (**)(int, int, unsigned int))(*v8 + 8))((char *)this + 28, v7 + v9, 0) )
+    && (*(uint8_t (**)(int, int, unsigned int))(*v8 + 8))((char *)this + 28, v7 + v9, 0) )
   {
     v10 = *((unsigned int *)this + 11); /*0x68f965*/
     v11 = *((unsigned int *)this + 8); /*0x68f968*/
@@ -2871,7 +2871,7 @@ int E4Recv_68F8A0::sub_68F8A0()
 
 // 0x68FB10
 namespace gamemd {
-unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a7, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8)
+unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a2, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8)
 {
 
   wchar_t *v8; // eax
@@ -2889,15 +2889,15 @@ unsigned int * E4Recv_68FB10::sub_68FB10(unsigned int * a7, int a3, size_t Buffe
   swprintf(Buffer, BufferCount, v8, v16); /*0x68fb3d*/
   v10 = (unsigned int *)*((unsigned int *)this + 3); /*0x68fb42*/
   v11 = a8 - v10[2]; /*0x68fb5d*/
-  (*(void (**)(unsigned int *, int, wchar_t *, int, int, int))(*v10 + 12))(v10, a3, Buffer, a7, v11, 2); /*0x68fb6e*/
+  (*(void (**)(unsigned int *, int, wchar_t *, int, int, int))(*v10 + 12))(v10, a3, Buffer, a2, v11, 2); /*0x68fb6e*/
   v12 = (unsigned int *)*((unsigned int *)this + 3); /*0x68fb71*/
   v13 = v12[2]; /*0x68fb7b*/
   v14 = (*(int (**)(unsigned int *, wchar_t *))(*v12 + 8))(v12, Buffer); /*0x68fb7e*/
-  *a7 = a7; /*0x68fb8a*/
-  a7[1] = v11; /*0x68fb8c*/
-  a7[2] = v14; /*0x68fb8f*/
-  a7[3] = v13; /*0x68fb94*/
-  return a7; /*0x68fb97*/
+  *a2 = a2; /*0x68fb8a*/
+  a2[1] = v11; /*0x68fb8c*/
+  a2[2] = v14; /*0x68fb8f*/
+  a2[3] = v13; /*0x68fb94*/
+  return a2; /*0x68fb97*/
 
 }
 } // namespace gamemd

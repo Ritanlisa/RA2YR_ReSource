@@ -33,7 +33,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   WCHAR WideCharStr[64]; // [esp+6Ch] [ebp-474h] BYREF
   wchar_t v15[506]; // [esp+ECh] [ebp-3F4h] BYREF
 
-    Debug::Log();
+    this->Debug::Log();
   ppstgOpen = 0; /*0x67cf1b*/
   MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 64); /*0x67cf1f*/
   ComPtr::ReleaseSimple((int *)&ppstgOpen); /*0x67cf29*/
@@ -84,7 +84,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     WinAPI::Wrapper(-2147467261); /*0x67d120*/
   if ( (*(int (__stdcall **)(int, int))(*(unsigned int *)v9 + 12))(v9, v10) < 0 ) /*0x67d136*/
   {
-        Debug::Log();
+        this->Debug::Log();
     if ( v9 ) /*0x67d14b*/
       (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d150*/
     if ( v10 ) /*0x67d159*/
@@ -100,7 +100,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     if ( v6 < 0 && v6 != -2147467262 ) /*0x67d1a1*/
       WinAPI::Wrapper(v6); /*0x67d1a4*/
   }
-  v7 = SaveGame::Start(pStm); /*0x67d1b4*/
+  v7 = ((SaveGame *)(pStm))->Start(); /*0x67d1b4*/
   if ( !v9 ) /*0x67d1bc*/
     WinAPI::Wrapper(-2147467261); /*0x67d1c3*/
   if ( (*(int (__stdcall **)(int, unsigned int))(*(unsigned int *)v9 + 16))(v9, 0) < 0 ) /*0x67d1d5*/
@@ -133,7 +133,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
       ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d298*/
     return 0; /*0x67d2a7*/
   }
-    Debug::Log();
+    this->Debug::Log();
   if ( pStm ) /*0x67d2bf*/
     pStm->lpVtbl->Release(pStm); /*0x67d2c4*/
   if ( v9 ) /*0x67d2cd*/

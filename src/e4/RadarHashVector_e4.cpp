@@ -53,7 +53,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(16 * a2); /*0x658b35*/
+      v6 = (char *)RA2_OPNEW(16 * a2); /*0x658b35*/
       if ( v6 ) /*0x658b3f*/
       {
         if ( a2 - 1 >= 0 ) /*0x658b46*/
@@ -104,7 +104,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x658bc7*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x658bd0*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x658bd0*/
         *((unsigned int *)this + 1) = 0; /*0x658bd8*/
       }
     }
@@ -161,7 +161,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(16 * (unsigned int)aP1); /*0x658e2e*/
+      v6 = RA2_OPNEW(16 * (unsigned int)aP1); /*0x658e2e*/
       if ( v6 ) /*0x658e38*/
       {
         if ( (int)&aP1[-1].field_16C0 + 3 >= 0 ) /*0x658e3f*/
@@ -201,7 +201,7 @@ void RadarHashVector::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x658a7d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x658a83*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x658a83*/
     *((unsigned int *)this + 1) = 0; /*0x658a8b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x658a8e*/
@@ -269,7 +269,7 @@ int RadarHashVector::FindItemIndex(unsigned int * a2)
 } // namespace gamemd
 // 0x658C60
 namespace gamemd {
-char * RadarHashVector::Destructor(char a2)
+char * RadarHashVector::Destructor(unsigned int * Block, char a2)
 {
 
   int v3; // eax
@@ -281,7 +281,7 @@ char * RadarHashVector::Destructor(char a2)
   void *v9; // eax
   void *v11; // eax
 
-  if ( (a2 & 2) != 0 ) /*0x658c6a*/
+  if ( (Block & 2) != 0 ) /*0x658c6a*/
   {
     v3 = *(Block - 1); /*0x658c6c*/
     v4 = Block - 1; /*0x658c70*/
@@ -298,7 +298,7 @@ char * RadarHashVector::Destructor(char a2)
         *v7 = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658c8a*/
         if ( v9 && *((unsigned char *)v7 + 13) ) /*0x658c92*/
         {
-          __3_YAXPAX_Z(v9); /*0x658c98*/
+          RA2_OPDEL(v9); /*0x658c98*/
           v7[1] = 0; /*0x658ca0*/
         }
         --v8; /*0x658ca3*/
@@ -307,8 +307,8 @@ char * RadarHashVector::Destructor(char a2)
       }
       while ( v8 ); /*0x658caa*/
     }
-    if ( (a2 & 1) != 0 ) /*0x658cb2*/
-      __3_YAXPAX_Z(v4); /*0x658cb5*/
+    if ( (Block & 1) != 0 ) /*0x658cb2*/
+      RA2_OPDEL(v4); /*0x658cb5*/
     return (char *)v4; /*0x658cbd*/
   }
   else
@@ -317,13 +317,13 @@ char * RadarHashVector::Destructor(char a2)
     *Block = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658ccc*/
     if ( v11 && *((unsigned char *)Block + 13) ) /*0x658cd4*/
     {
-      __3_YAXPAX_Z(v11); /*0x658cda*/
+      RA2_OPDEL(v11); /*0x658cda*/
       *(Block + 1) = 0; /*0x658ce2*/
     }
     *((unsigned char *)Block + 13) = 0; /*0x658ce9*/
     *(Block + 2) = 0; /*0x658cee*/
-    if ( (a2 & 1) != 0 ) /*0x658cf1*/
-      __3_YAXPAX_Z(Block); /*0x658cf4*/
+    if ( (Block & 1) != 0 ) /*0x658cf1*/
+      RA2_OPDEL(Block); /*0x658cf4*/
     return (char *)Block; /*0x658cfc*/
   }
 
@@ -331,7 +331,7 @@ char * RadarHashVector::Destructor(char a2)
 } // namespace gamemd
 // 0x658D10
 namespace gamemd {
-VectorClass_flat * RadarHashVector::QueryInterface(char a2)
+VectorClass_flat * RadarHashVector::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -340,13 +340,13 @@ VectorClass_flat * RadarHashVector::QueryInterface(char a2)
   *Block = &vt_VectorClass_HashObject_RadarTrackingStruct_TechnoClass; /*0x658d16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x658d20*/
   {
-    __3_YAXPAX_Z(v3); /*0x658d28*/
+    RA2_OPDEL(v3); /*0x658d28*/
     *(Block + 1) = 0; /*0x658d30*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x658d3b*/
   *(Block + 2) = 0; /*0x658d41*/
-  if ( (a2 & 1) != 0 ) /*0x658d48*/
-    __3_YAXPAX_Z(Block); /*0x658d4b*/
+  if ( (Block & 1) != 0 ) /*0x658d48*/
+    RA2_OPDEL(Block); /*0x658d4b*/
   return (VectorClass *)Block; /*0x658d55*/
 
 }

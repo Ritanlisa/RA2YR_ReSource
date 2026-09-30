@@ -10,11 +10,15 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/LoadGame_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x5ACD30
 namespace gamemd {
 AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
+    unsigned int v3 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
 
   int v3; // ebx
   char *v5; // ebp
@@ -36,7 +40,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(16 * a2); /*0x5acd55*/
+      v6 = (char *)RA2_OPNEW(16 * a2); /*0x5acd55*/
       if ( v6 ) /*0x5acd5f*/
         v7 = v6; /*0x5acd64*/
       else
@@ -70,7 +74,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
         }
         if ( *((unsigned char *)this + 13) ) /*0x5acdcd*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5acdd8*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5acdd8*/
           *((unsigned int *)this + 1) = 0; /*0x5acde0*/
         }
       }
@@ -118,7 +122,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)__2_YAPAXI_Z(16 * a2); /*0x5acef5*/
+      v6 = (char *)RA2_OPNEW(16 * a2); /*0x5acef5*/
       if ( v6 ) /*0x5aceff*/
         v7 = v6; /*0x5acf04*/
       else
@@ -152,7 +156,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x5acf67*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5acf72*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5acf72*/
         *((unsigned int *)this + 1) = 0; /*0x5acf7a*/
       }
     }
@@ -185,7 +189,7 @@ CampaignClass * MSEngine::Destructor()
   *((unsigned int *)this + 17) = &vt_VectorClass_MSSfxEntry; /*0x5cee70*/
   if ( v2 && *((unsigned char *)this + 81) ) /*0x5cee79*/
   {
-    __3_YAXPAX_Z(v2); /*0x5cee7f*/
+    RA2_OPDEL(v2); /*0x5cee7f*/
     *((unsigned int *)this + 18) = 0; /*0x5cee87*/
   }
   *((unsigned char *)this + 81) = 0; /*0x5cee8a*/
@@ -194,7 +198,7 @@ CampaignClass * MSEngine::Destructor()
   *((unsigned int *)this + 11) = &vt_VectorClass_MSAnimEntry; /*0x5cee93*/
   if ( v3 && *((unsigned char *)this + 57) ) /*0x5cee9e*/
   {
-    __3_YAXPAX_Z(v3); /*0x5ceea4*/
+    RA2_OPDEL(v3); /*0x5ceea4*/
     *((unsigned int *)this + 12) = 0; /*0x5ceeac*/
   }
   *((unsigned char *)this + 57) = 0; /*0x5ceeb2*/
@@ -204,7 +208,7 @@ CampaignClass * MSEngine::Destructor()
   *(unsigned int *)this = &vt_VectorClass_MapStage; /*0x5ceec0*/
   if ( v4 && *((unsigned char *)this + 13) ) /*0x5ceeca*/
   {
-    __3_YAXPAX_Z(v4); /*0x5ceed0*/
+    RA2_OPDEL(v4); /*0x5ceed0*/
     *((unsigned int *)this + 1) = 0; /*0x5ceed8*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5ceedb*/
@@ -220,7 +224,7 @@ CampaignClass * MSEngine::Construct()
   char *v2; // ecx
   int v3; // edx
 
-  v2 = (char *)((unsigned int *)this + 2); /*0x5d1aa5*/
+  v2 = (unsigned int)((char *)((unsigned int *)this + 2));
   *((unsigned int *)v2 + 1) = 0; /*0x5d1ab2*/
   *((unsigned int *)v2 + 2) = 0; /*0x5d1ab5*/
   v2[12] = 1; /*0x5d1ab8*/
@@ -254,6 +258,7 @@ CampaignClass * MSEngine::Construct()
 namespace gamemd {
 CampaignClass * MSEngine::Destruct()
 {
+    unsigned int v13 = 0;  /* G37 hoist */
 
   int v2; // ebp
   int v3; // eax
@@ -264,9 +269,9 @@ CampaignClass * MSEngine::Destruct()
   unsigned int *v8; // edi
   int v9; // edx
   unsigned int *v10; // esi
-  void *v11; // eax
-  void *v12; // eax
-  void *v13; // eax
+  unsigned char (*)[4] v11;
+  unsigned char (*)[4] v12;
+  unsigned char (*)[4] v13;
 
   v2 = 0; /*0x5d1b37*/
   for ( *this = &vt_MSEngine; v2 < *((unsigned int *)this + 16); ++v2 ) /*0x5d1b45*/
@@ -276,7 +281,7 @@ CampaignClass * MSEngine::Destruct()
     if ( v4 ) /*0x5d1b4f*/
     {
       MSEngine::DestroyData(*(unsigned int *)(v3 + 4 * v2)); /*0x5d1b53*/
-      __3_YAXPAX_Z(v4); /*0x5d1b59*/
+      RA2_OPDEL(v4); /*0x5d1b59*/
     }
   }
   v5 = (unsigned int *)this + 12; /*0x5d1b6c*/
@@ -296,7 +301,7 @@ CampaignClass * MSEngine::Destruct()
   *v5 = &vt_VectorClass_MSSfx; /*0x5d1bae*/
   if ( v11 && *((unsigned char *)v5 + 13) ) /*0x5d1bb9*/
   {
-    __3_YAXPAX_Z(v11); /*0x5d1bbf*/
+    RA2_OPDEL(v11); /*0x5d1bbf*/
     v5[1] = 0; /*0x5d1bc7*/
   }
   *((unsigned char *)v5 + 13) = 0; /*0x5d1bca*/
@@ -305,7 +310,7 @@ CampaignClass * MSEngine::Destruct()
   *v8 = &vt_VectorClass_MSAnim; /*0x5d1bd3*/
   if ( v12 && *((unsigned char *)v8 + 13) ) /*0x5d1bdd*/
   {
-    __3_YAXPAX_Z(v12); /*0x5d1be3*/
+    RA2_OPDEL(v12); /*0x5d1be3*/
     v8[1] = 0; /*0x5d1beb*/
   }
   *((unsigned char *)v8 + 13) = 0; /*0x5d1bee*/
@@ -314,7 +319,7 @@ CampaignClass * MSEngine::Destruct()
   *v10 = &vt_VectorClass_TRect_int; /*0x5d1bf7*/
   if ( v13 && *((unsigned char *)v10 + 13) ) /*0x5d1c01*/
   {
-    __3_YAXPAX_Z(v13); /*0x5d1c07*/
+    RA2_OPDEL(v13); /*0x5d1c07*/
     v10[1] = 0; /*0x5d1c0f*/
   }
   *((unsigned char *)v10 + 13) = 0; /*0x5d1c12*/
@@ -359,7 +364,7 @@ CampaignClass * MSEngine::ClearBuffer()
   *((unsigned int *)this + 4) = 0; /*0x5ac529*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5ac530*/
   {
-    __3_YAXPAX_Z(v2); /*0x5ac536*/
+    RA2_OPDEL(v2); /*0x5ac536*/
     *((unsigned int *)this + 1) = 0; /*0x5ac53e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5ac541*/
@@ -441,7 +446,7 @@ CampaignClass * MSEngine::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5ace2d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5ace33*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5ace33*/
     *((unsigned int *)this + 1) = 0; /*0x5ace3b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5ace3e*/
@@ -452,7 +457,7 @@ CampaignClass * MSEngine::ddtor()
 
 // 0x5ACE50
 namespace gamemd {
-CampaignClass * MSEngine::Init()
+CampaignClass * MSEngine::Init( unsigned int * a2)
 {
 
   int result; // eax
@@ -512,22 +517,22 @@ int MSEngine::FindItem(unsigned int * a2)
 }
 // 0x5AD4D0
 namespace gamemd {
-VectorClass_flat * MSEngine::QueryInterface(char a2)
+VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
+  unsigned char (*)[4] v3;
 
-  v3 = (void *)*(Block + 1); /*0x5ad4d3*/
-  *Block = &vt_VectorClass_TRect_int; /*0x5ad4d6*/
+  v3 = (unsigned int)((void *)*(Block + 1));
+  *Block = (unsigned int)(&vt_VectorClass_TRect_int);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad4e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5ad4e8*/
+    RA2_OPDEL(v3); /*0x5ad4e8*/
     *(Block + 1) = 0; /*0x5ad4f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5ad4fb*/
-  *(Block + 2) = 0; /*0x5ad501*/
-  if ( (a2 & 1) != 0 ) /*0x5ad508*/
-    __3_YAXPAX_Z(Block); /*0x5ad50b*/
+  *(unsigned int *)(((unsigned int)(Block)+ 2)) = 0; /*0x5ad501*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5ad508*/
+    RA2_OPDEL(Block); /*0x5ad50b*/
   return (VectorClass *)Block; /*0x5ad515*/
 
 }
@@ -535,22 +540,22 @@ VectorClass_flat * MSEngine::QueryInterface(char a2)
 
 // 0x5AD520
 namespace gamemd {
-CampaignClass * MSEngine::Constructor()
+CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
+  unsigned char (*)[4] v3;
 
-  v3 = (void *)*(Block + 1); /*0x5ad523*/
-  *Block = &vt_VectorClass_TRect_int; /*0x5ad526*/
+  v3 = (unsigned int)((void *)*(Block + 1));
+  *Block = (unsigned int)(&vt_VectorClass_TRect_int);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad530*/
   {
-    __3_YAXPAX_Z(v3); /*0x5ad538*/
+    RA2_OPDEL(v3); /*0x5ad538*/
     *(Block + 1) = 0; /*0x5ad540*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5ad54b*/
   *(Block + 2) = 0; /*0x5ad551*/
   if ( (a2 & 1) != 0 ) /*0x5ad558*/
-    __3_YAXPAX_Z(Block); /*0x5ad55b*/
+    RA2_OPDEL(Block); /*0x5ad55b*/
   return (DynamicVector *)Block; /*0x5ad565*/
 
 }

@@ -44,6 +44,8 @@
 namespace gamemd {
 void WOL_ResetSystem()
 {
+    unsigned int v10 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v10 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
@@ -2523,8 +2525,8 @@ int E4Recv_786DC0::sub_786DC0()
   v2 = 1; /*0x786dd2*/
   while ( 1 ) /*0x786de5*/
   {
-    if ( !(*(int (**)(LPVOID, int, void **, const char **))(*(unsigned int *)MEMORY[0xAC116C] + 144))( /*0x786dea*/
-            MEMORY[0xAC116C],
+    if ( !(*(int (**)(LPVOID, int, void **, const char **))(*(unsigned int *)g_abs_AC116C + 144))( /*0x786dea*/
+            g_abs_AC116C,
             v2,
             &v6,
             &v7) )
@@ -2548,7 +2550,7 @@ int E4Recv_786DC0::sub_786DC0()
   }
   String::Assign_Alt((void **)&g_WebBrowser, (const char *)v6); /*0x786e40*/
   String::Assign_Alt((void **)&g_WebBrowserConfig, v7); /*0x786e4f*/
-  LOBYTE(dword_84A238) = 0; /*0x786e54*/
+  IDA_LOBYTE(dword_84A238) = 0; /*0x786e54*/
   return 1; /*0x786e2f*/
 
 }

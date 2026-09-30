@@ -260,20 +260,20 @@ struct TerrainTypeClass {
 // --- flat members (END) ---
     TerrainClass * GetTileIndex(int a2, void *a1 = 0, void *a3 = 0);
     TerrainTypeClass * * FindOrCreate(void *a1 = 0);
-    TerrainTypeClass * ddtor(AbstractClass *a2, char a3);
-    bool GetHeight(TerrainClass * aP2, int a3);
+    TerrainTypeClass * ddtor(void * a2, char a3);
+    bool GetHeight(void * aP2, int a3);
     int GetAuxField();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
-    int GetTileData(AnimClass * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6);
+    int GetTileData(void * aP1, void * a2, signed int * a3, unsigned int * a4, unsigned short * a5, unsigned int * a6);
     int GetTypeIdentifier();
     int LoadFromINI(unsigned char *** aP1);
     int PowerDrainUpdate(int * a2);
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
-    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6);
+    int SaveLoad_Prefix(void * aP0, int aP1);
+    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
+    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, void * aP4, char a6);
     unsigned int * GetWidth(unsigned int * a1, int * a2);
-    TerrainTypeClass(ObjectClass * aP1);
+    TerrainTypeClass(void * aP1);
 };
 
 } // namespace gamemd

@@ -1076,12 +1076,13 @@ struct TechnoTypeClass {
     unsigned int u32_DA8;
     unsigned int u32_1D84;
     unsigned int u32_1E42;
+    unsigned int vtable0;
 // --- flat members (END) ---
-    AbstractClass * * Construct(ObjectTypeClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    AbstractClass * * Construct(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);
-    DynamicVectorClass_flat * * SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
+    DynamicVectorClass_flat * * SaveLoad_Prefix(void * aP0, int aP1);
     TechnoTypeClass * ddtor(char a2);
-    VectorClass_flat * Constructor_1(ObjectTypeClass * aP1);
+    VectorClass_flat * Constructor_1(void * aP1);
     bool CanAttackMove_IgnoreWeapon();
     char RemoveItem(int a2, void *a1 = 0);
     char vt_entry_A0();
@@ -1089,13 +1090,13 @@ struct TechnoTypeClass {
     int ComputeValue(void * a2, float a3);
     int ComputeValueSimple(float * a2);
     int DTOR(void *a1 = 0);
-    int Dispatch(TechnoTypeClass * aP1, void *a2 = 0);
-    int GetThreatMultiplier(TechnoTypeClass * aP1);
-    int SaveLoadDataArray(TechnoTypeClass * aP1);
-    int SaveLoad_Prefix_0(void * a1, TechnoTypeClass * aP2, TechnoTypeClass * aP3);
+    int Dispatch(void * aP1, void *a2 = 0);
+    int GetThreatMultiplier(void * aP1);
+    int SaveLoadDataArray(void * aP1);
+    int SaveLoad_Prefix_0(void * a1, void * aP2, void * aP3);
     unsigned int * Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    unsigned int * Constructor_0(ObjectTypeClass * aP1, void *a2 = 0, void *a1 = 0);
-    unsigned int * LoadBase(ObjectClass * aP1);
+    unsigned int * Constructor_0(void * aP1, void *a2 = 0, void *a1 = 0);
+    unsigned int * LoadBase(void * aP1);
     void * ReadINI(char * Source, int a3);
     void* CanAttackMove_IgnoreWeapon_0();
     void* CanAttackMove_IgnoreWeapon_0_0();

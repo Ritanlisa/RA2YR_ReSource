@@ -12,7 +12,7 @@ struct GraphicMenuItem {
     unsigned int __pad_0;
     unsigned int u32_C;
 // --- flat members (END) ---
-    void Dtor(void *a1 = 0);
+    void Dtor();
 };
 
 } // namespace gamemd

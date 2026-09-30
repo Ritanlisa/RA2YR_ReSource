@@ -33,7 +33,7 @@ namespace gamemd {
 int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
 {
 
-  int result; // eax
+  CampaignScore ** result;
   unsigned int v5; // edi
   wchar_t *v6; // edi
   HWND DlgItem; // eax
@@ -65,7 +65,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
   char v33[112]; // [esp+1B4h] [ebp-470h] BYREF
   CampaignScore Buffer[28]; // [esp+224h] [ebp-400h] BYREF
 
-  result = BaseDialogProc((SkirmishDialog *)hDlg, a2, a3, (unsigned int)a4); /*0x4f11dc*/
+  result = (gamemd::CampaignScore **)((int)(BaseDialogProc((SkirmishDialog *)hDlg, a2, a3, (unsigned int)a4)));
   if ( !result ) /*0x4f11e3*/
   {
     if ( a2 != 273 ) /*0x4f11ef*/
@@ -81,7 +81,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
       }
       if ( (unsigned short)a3 == 5 ) /*0x4f1220*/
       {
-        v5 = HIWORD(a3); /*0x4f1232*/
+        v5 = IDA_HIWORD(a3); /*0x4f1232*/
         if ( a4 == GetDlgItem(hDlg, 1321) ) /*0x4f1239*/
         {
           v6 = *(wchar_t **)&g_INI_Key_Grey.__pad_0[4 * v5 + 8]; /*0x4f123b*/
@@ -96,7 +96,7 @@ LABEL_11:
           v8 = DlgItem; /*0x4f1268*/
           if ( DlgItem ) /*0x4f126c*/
           {
-            StringCSF = GetStringCSF(v6, 0, g_Str_File_GOptions_CPP, 196); /*0x4f1280*/
+            StringCSF = (wchar_t *)(GetStringCSF(v6, 0, g_Str_File_GOptions_CPP, 196));
             SendMessageA(v8, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f128e*/
             return 0; /*0x4f12a0*/
           }
@@ -105,7 +105,7 @@ LABEL_11:
       }
       return 0; /*0x4f1253*/
     }
-    v10 = HIWORD(a3); /*0x4f12a8*/
+    v10 = IDA_HIWORD(a3); /*0x4f12a8*/
     WindowLongA = (unsigned int *)GetWindowLongA(hDlg, 8); /*0x4f12b1*/
     if ( (HouseClass_Player.__pad_5568[23364] & 1) == 0 ) /*0x4f12be*/
     {
@@ -120,9 +120,9 @@ LABEL_11:
       Timer::Init((DWORD *)&HouseClass_Player.__pad_5568[23436], 0); /*0x4f1308*/
       atexit(nullsub_13); /*0x4f1312*/
     }
-    if ( (unsigned __int16)a3 <= 0x521u ) /*0x4f1326*/
+    if ( (uint16_t)a3 <= 0x521u ) /*0x4f1326*/
     {
-      if ( (unsigned __int16)a3 == 1313 ) /*0x4f132c*/
+      if ( (uint16_t)a3 == 1313 ) /*0x4f132c*/
       {
         if ( !v10 ) /*0x4f14dc*/
         {
@@ -132,7 +132,7 @@ LABEL_11:
         }
         return 0; /*0x4f14dc*/
       }
-      if ( (unsigned __int16)a3 > 0x51Fu ) /*0x4f1338*/
+      if ( (uint16_t)a3 > 0x51Fu ) /*0x4f1338*/
       {
         if ( v10 ) /*0x4f1489*/
           return 0; /*0x4f1489*/
@@ -144,9 +144,9 @@ LABEL_11:
       }
       else
       {
-        if ( (unsigned __int16)a3 != 1311 ) /*0x4f133e*/
+        if ( (uint16_t)a3 != 1311 ) /*0x4f133e*/
         {
-          if ( (unsigned __int16)a3 == 1004 ) /*0x4f1346*/
+          if ( (uint16_t)a3 == 1004 ) /*0x4f1346*/
           {
             if ( !v10 ) /*0x4f13a1*/
             {
@@ -155,13 +155,13 @@ LABEL_11:
             }
             return 0; /*0x4f13a1*/
           }
-          if ( (unsigned __int16)a3 != 1310 || v10 ) /*0x4f1356*/
+          if ( (uint16_t)a3 != 1310 || v10 ) /*0x4f1356*/
             return 0; /*0x4f1356*/
           v12 = (void (*)(HWND, int))ShowWindow; /*0x4f135c*/
           ShowWindow(hDlg, 0); /*0x4f1364*/
           v13 = LoadOptions::LoadOptions(v29); /*0x4f136a*/
-          v14 = (unsigned __int8)LoadOptions::Run(v13); /*0x4f137a*/
-          LoadOptions::Cleanup(v29); /*0x4f137c*/
+          v14 = (uint8_t)LoadOptions::Run(v13); /*0x4f137a*/
+          ((LoadOptions *)(v29))->Cleanup(); /*0x4f137c*/
           if ( (unsigned char)v14 ) /*0x4f1383*/
           {
             *WindowLongA = 1310; /*0x4f138a*/
@@ -195,15 +195,15 @@ LABEL_39:
             (const size_t)&off_8240B4,
             (const wchar_t *const)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 5082),
             v25);
-        v16 = LoadOptions::LoadOptions(v28); /*0x4f1469*/
+        v16 = (unsigned int *)(LoadOptions::LoadOptions(v28));
         ShowSaveLoadDialog((int)v16, Buffer); /*0x4f1470*/
         v17 = v28; /*0x4f1475*/
       }
-      LoadOptions::Cleanup(v17); /*0x4f14b3*/
+      ((LoadOptions *)(v17))->Cleanup(); /*0x4f14b3*/
       Options::InitDialogControls(hDlg); /*0x4f14ba*/
       goto LABEL_39; /*0x4f14ba*/
     }
-    if ( (unsigned __int16)a3 == 1314 ) /*0x4f1508*/
+    if ( (uint16_t)a3 == 1314 ) /*0x4f1508*/
     {
       if ( !v10 ) /*0x4f16c2*/
       {
@@ -216,7 +216,7 @@ LABEL_39:
       }
       return 0; /*0x4f16ea*/
     }
-    if ( (unsigned __int16)a3 != 1653 && (unsigned __int16)a3 != 1670 || v10 ) /*0x4f1521*/
+    if ( (uint16_t)a3 != 1653 && (uint16_t)a3 != 1670 || v10 ) /*0x4f1521*/
       return 0; /*0x4f16f1*/
     if ( *(unsigned int *)&HouseClass_Player.__pad_5568[8068] == 4 && !*(unsigned int *)&HouseClass_Player.__pad_5568[8836] ) /*0x4f153b*/
     {
@@ -228,7 +228,7 @@ LABEL_39:
         {
           if ( Timer::GetRemainingMs((signed int *)&HouseClass_Player.__pad_5568[23436]) ) /*0x4f157e*/
           {
-            Debug::Log(); /*0x4f15eb*/
+            this->Debug::Log(); /*0x4f15eb*/
           }
           else
           {
@@ -238,7 +238,7 @@ LABEL_39:
             *(unsigned int *)&HouseClass_Player.__pad_5568[23444] = v26[2]; /*0x4f15b6*/
             v21 = EventClass::Add2(v33, *(AnimClass **)(HouseClass_Player.field_0 + 48), 0x24u, v19); /*0x4f15c6*/
             OptionQueue::PushEntry(&Networking_LastEventIndex, (IUnknown *)v21); /*0x4f15d1*/
-            Debug::Log(); /*0x4f15dc*/
+            this->Debug::Log(); /*0x4f15dc*/
           }
         }
       }
@@ -259,20 +259,20 @@ LABEL_39:
             *WindowLongA = 1; /*0x4f1687*/
             return 0; /*0x4f1696*/
           }
-          Debug::Log(); /*0x4f169e*/
+          this->Debug::Log(); /*0x4f169e*/
         }
       }
     }
     *WindowLongA = 1; /*0x4f16ab*/
     return 0; /*0x4f16b4*/
   }
-  return result; /*0x4f120d*/
+  return (int)(result);
 
 }
 }
 // 0x558840
 namespace gamemd {
-void Options::PrepareSaveLoadDlg()
+void Options::PrepareSaveLoadDlg(const char ** dwNewLong)
 {
 
   *(dwNewLong + 1) = (const char *)3; /*0x558840*/
@@ -305,55 +305,55 @@ AbstractClass * * Options::Screen_Save()
   if ( v2 )
   {
     v3 = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v2, 1024, 0, 0) != 0 ? 2 : 0;
-    if ( MEMORY[0x87F7E8][539876] != v3 ) /*0x55fad9*/
+    if ( g_abs_87F7E8[539876] != v3 ) /*0x55fad9*/
     {
-      MEMORY[0x87F7E8][539876] = v3; /*0x55fae0*/
-      TacticalClass::Initialize(MEMORY[0x87F7E8]); /*0x55fae5*/
+      g_abs_87F7E8[539876] = v3; /*0x55fae0*/
+      TacticalClass::Initialize(g_abs_87F7E8); /*0x55fae5*/
     }
   }
   v4 = ((int (*)(void *, int))GetDlgItem)(this, 1295); /*0x55faf0*/
   if ( v4 ) /*0x55faf4*/
-    MEMORY[0x87F7E8][539871] = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v4, 1024, 0, 0); /*0x55fb02*/
+    g_abs_87F7E8[539871] = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v4, 1024, 0, 0); /*0x55fb02*/
   v5 = ((int (*)(void *, int))GetDlgItem)(this, 1537); /*0x55fb0d*/
   if ( v5 ) /*0x55fb11*/
   {
-    BYTE2(MEMORY[0x87F7E8][539877]) = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v5, 240, 0, 0) == 1; /*0x55fb25*/
-    SetGlobalFlag(SBYTE2(MEMORY[0x87F7E8][539877])); /*0x55fb2b*/
+    IDA_BYTE2(g_abs_87F7E8[539877]) = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v5, 240, 0, 0) == 1; /*0x55fb25*/
+    SetGlobalFlag(SBYTE2(g_abs_87F7E8[539877])); /*0x55fb2b*/
   }
   v6 = ((int (*)(void *, int))GetDlgItem)(this, 1540); /*0x55fb36*/
   if ( v6 ) /*0x55fb3a*/
-    HIBYTE(MEMORY[0x87F7E8][539877]) = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v6, 240, 0, 0) == 1; /*0x55fb4e*/
+    IDA_HIBYTE(g_abs_87F7E8[539877]) = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v6, 240, 0, 0) == 1; /*0x55fb4e*/
   v7 = ((int (*)(void *, int))GetDlgItem)(this, 1538); /*0x55fb59*/
   if ( v7 ) /*0x55fb5d*/
-    LOBYTE(MEMORY[0x87F7E8][539878]) = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v7, 240, 0, 0) == 1; /*0x55fb71*/
+    IDA_LOBYTE(g_abs_87F7E8[539878]) = ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v7, 240, 0, 0) == 1; /*0x55fb71*/
   v8 = ((int (*)(void *, int))GetDlgItem)(this, 1322); /*0x55fb7d*/
   if ( v8 ) /*0x55fb81*/
-    MEMORY[0x87F7E8][539874] = 6 - ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v8, 1024, 0, 0); /*0x55fb96*/
+    g_abs_87F7E8[539874] = 6 - ((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v8, 1024, 0, 0); /*0x55fb96*/
   v9 = ((int (*)(void *, int))GetDlgItem)(this, 1327); /*0x55fba2*/
   if ( v9 ) /*0x55fba6*/
   {
     v13 = (double)((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v9, 1024, 0, 0) * 0.1; /*0x55fbca*/
-    Audio::SetScoreVolume((float *)&MEMORY[0x87F7E8][539870], v13, 0); /*0x55fbcd*/
-    if ( *(float *)&MEMORY[0x87F7E8][539886] == 0.0 ) /*0x55fbe3*/
+    Audio::SetScoreVolume((float *)&g_abs_87F7E8[539870], v13, 0); /*0x55fbcd*/
+    if ( *(float *)&g_abs_87F7E8[539886] == 0.0 ) /*0x55fbe3*/
     {
-      v10 = MEMORY[0x87F7E8][528715]; /*0x55fbe5*/
-      if ( MEMORY[0x87F7E8][528715] == -1 ) /*0x55fbed*/
-        v10 = MEMORY[0x87F7E8][528716]; /*0x55fbef*/
-      Theme::QueueSong((int)&MEMORY[0x87F7E8][528714], v10); /*0x55fbfa*/
-      Theme::Stop(&MEMORY[0x87F7E8][528714], 0); /*0x55fc06*/
+      v10 = g_abs_87F7E8[528715]; /*0x55fbe5*/
+      if ( g_abs_87F7E8[528715] == -1 ) /*0x55fbed*/
+        v10 = g_abs_87F7E8[528716]; /*0x55fbef*/
+      Theme::QueueSong((int)&g_abs_87F7E8[528714], v10); /*0x55fbfa*/
+      Theme::Stop(&g_abs_87F7E8[528714], 0); /*0x55fc06*/
     }
   }
   v11 = ((int (*)(void *, int))GetDlgItem)(this, 1330); /*0x55fc11*/
   if ( v11 ) /*0x55fc15*/
   {
     v14 = (double)((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v11, 1024, 0, 0) * 0.1; /*0x55fc39*/
-    Audio::SetSoundVolume((float *)&MEMORY[0x87F7E8][539870], v14, 0); /*0x55fc3c*/
+    Audio::SetSoundVolume((float *)&g_abs_87F7E8[539870], v14, 0); /*0x55fc3c*/
   }
   v12 = ((int (*)(void *, int))GetDlgItem)(this, 1334); /*0x55fc47*/
   if ( v12 ) /*0x55fc4b*/
   {
     v15 = (double)((int (*)(int, int, unsigned int, unsigned int))SendMessageA)(v12, 1024, 0, 0) * 0.1; /*0x55fc6f*/
-    Audio::SetVoiceVolume((float *)&MEMORY[0x87F7E8][539870], v15, 0); /*0x55fc72*/
+    Audio::SetVoiceVolume((float *)&g_abs_87F7E8[539870], v15, 0); /*0x55fc72*/
   }
 
 }
@@ -373,15 +373,15 @@ char Options::Screen_Dialog()
   int dwNewLong; // [esp+14h] [ebp-8h] BYREF
   int v9; // [esp+18h] [ebp-4h] BYREF
 
-  v7 = MEMORY[0x87F7E8][539758]; /*0x55fc92*/
-  LOBYTE(MEMORY[0x87F7E8][539758]) = 0; /*0x55fc96*/
+  v7 = g_abs_87F7E8[539758]; /*0x55fc92*/
+  IDA_LOBYTE(g_abs_87F7E8[539758]) = 0; /*0x55fc96*/
   while ( 1 ) /*0x55fd14*/
   {
     while ( 1 ) /*0x55fcca*/
     {
       do /*0x55fcca*/
       {
-        qmemcpy(&dword_A8ED54[47175], &MEMORY[0x87F7E8][539870], 0xB8u); /*0x55fcb1*/
+        qmemcpy(&dword_A8ED54[47175], &g_abs_87F7E8[539870], 0xB8u); /*0x55fcb1*/
         dwNewLong = -1; /*0x55fcbd*/
         Dialog = (void *)CreateDialog(0); /*0x55fcc1*/
         v1 = Dialog; /*0x55fcc6*/
@@ -393,7 +393,7 @@ char Options::Screen_Dialog()
       {
         if ( Dialog::PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
-        LOBYTE(v2) = 0; /*0x55fcee*/
+        IDA_LOBYTE(v2) = 0; /*0x55fcee*/
         ScreenSaver::Process(v2); /*0x55fcf0*/
       }
       Options::Screen_Save(v1); /*0x55fcff*/
@@ -401,7 +401,7 @@ char Options::Screen_Dialog()
       if ( dwNewLong != 1485 ) /*0x55fd14*/
         break; /*0x55fd14*/
       v9 = -1; /*0x55fd2d*/
-      ScenarioClass::LoadNetworkConfig((int)&MEMORY[0x87F7E8][536212]); /*0x55fd31*/
+      ScenarioClass::LoadNetworkConfig((int)&g_abs_87F7E8[536212]); /*0x55fd31*/
       v3 = CreateDialog(0); /*0x55fd42*/
       v4 = v3; /*0x55fd47*/
       if ( v3 ) /*0x55fd4b*/
@@ -412,7 +412,7 @@ char Options::Screen_Dialog()
         {
           if ( Dialog::PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
-          LOBYTE(v5) = 0; /*0x55fd73*/
+          IDA_LOBYTE(v5) = 0; /*0x55fd73*/
           ScreenSaver::Process(v5); /*0x55fd75*/
         }
         Dialog::Destroy(v4); /*0x55fd84*/
@@ -422,8 +422,8 @@ char Options::Screen_Dialog()
       break; /*0x55fd1c*/
     ShowHotkeyOptionsDialog(); /*0x55fd1e*/
   }
-  ScenarioClass::SaveGameOptions((int)&MEMORY[0x87F7E8][539870]); /*0x55fd8e*/
-  LOBYTE(MEMORY[0x87F7E8][539758]) = v7; /*0x55fd9a*/
+  ScenarioClass::SaveGameOptions((int)&g_abs_87F7E8[539870]); /*0x55fd8e*/
+  IDA_LOBYTE(g_abs_87F7E8[539758]) = v7; /*0x55fd9a*/
   return v7; /*0x55fd97*/
 
 }
@@ -483,12 +483,12 @@ void Options::EnsureCapacity()
     v5 = 10; /*0x6248c6*/
   if ( v5 >= v3 ) /*0x6248cd*/
     return 0; /*0x6248d0*/
-  v6 = __2_YAPAXI_Z(24 * v5); /*0x6248dd*/
+  v6 = RA2_OPNEW(24 * v5); /*0x6248dd*/
   v7 = (const void *)*((char *)this + 2); /*0x6248e2*/
   v8 = (int)v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
     qmemcpy(v6, v7, 24 * *this); /*0x624901*/
-  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x62490f*/
+  RA2_OPDEL((void *)*((char *)this + 2)); /*0x62490f*/
   *((char *)this + 2) = v8; /*0x62491b*/
   *((char *)this + 1) = v5; /*0x62491e*/
   return 1; /*0x6248b2*/
@@ -515,14 +515,14 @@ int Options::GrowBuffer()
     v6 = 10; /*0x6253d1*/
     v4 = 10; /*0x6253d9*/
   }
-  v5 = __2_YAPAXI_Z(4 * v4); /*0x6253ec*/
+  v5 = RA2_OPNEW(4 * v4); /*0x6253ec*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
   if ( *((char *)this + 2) ) /*0x625403*/
   {
     qmemcpy(v5, (const void *)*((char *)this + 2), 4 * *this); /*0x625418*/
     v4 = v6; /*0x625421*/
   }
-  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x625429*/
+  RA2_OPDEL((void *)*((char *)this + 2)); /*0x625429*/
   *((char *)this + 1) = v4; /*0x625431*/
   *((char *)this + 2) = (int)v5; /*0x625434*/
   return 1; /*0x6253bf*/
@@ -550,12 +550,12 @@ int Options::ReadOptionValue()
     v5 = 10; /*0x6254f6*/
   if ( v5 >= v3 ) /*0x6254fd*/
     return 0; /*0x625500*/
-  v6 = __2_YAPAXI_Z(20 * v5); /*0x62550d*/
+  v6 = RA2_OPNEW(20 * v5); /*0x62550d*/
   v7 = (const void *)*((char *)this + 2); /*0x625512*/
   v8 = (int)v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
     qmemcpy(v6, v7, 20 * *this); /*0x625531*/
-  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x62553f*/
+  RA2_OPDEL((void *)*((char *)this + 2)); /*0x62553f*/
   *((char *)this + 2) = v8; /*0x62554b*/
   *((char *)this + 1) = v5; /*0x62554e*/
   return 1; /*0x6254e2*/
@@ -564,7 +564,7 @@ int Options::ReadOptionValue()
 }
 // 0x625560
 namespace gamemd {
-AbstractClass * * Options::DestroyComposite(char a2)
+AbstractClass * * Options::DestroyComposite(void * Block, char a2)
 {
 
   unsigned int *i; // ecx
@@ -574,7 +574,7 @@ AbstractClass * * Options::DestroyComposite(char a2)
 
   if ( *((unsigned int *)Block + 11) ) /*0x625563*/
   {
-    __3_YAXPAX_Z(*((void **)Block + 11)); /*0x62556b*/
+    RA2_OPDEL(*((void **)Block + 11)); /*0x62556b*/
     *((unsigned int *)Block + 11) = 0; /*0x625573*/
   }
   for ( i = (unsigned int *)*((unsigned int *)Block + 14); i; i = (unsigned int *)*((unsigned int *)Block + 14) ) /*0x62557f*/
@@ -592,7 +592,7 @@ AbstractClass * * Options::DestroyComposite(char a2)
       *v5 = *v4; /*0x6255a1*/
     else
       *((unsigned int *)Block + 14) = *v4; /*0x6255a7*/
-    __3_YAXPAX_Z(v4); /*0x6255ab*/
+    RA2_OPDEL(v4); /*0x6255ab*/
 LABEL_12:
     ; /*0x6255b3*/
   }
@@ -600,10 +600,10 @@ LABEL_12:
   if ( v6 ) /*0x6255c0*/
   {
     DeleteAndZero::Alt(*((void ***)Block + 16)); /*0x6255c4*/
-    __3_YAXPAX_Z(v6); /*0x6255ca*/
+    RA2_OPDEL(v6); /*0x6255ca*/
   }
-  if ( (a2 & 1) != 0 ) /*0x6255d9*/
-    __3_YAXPAX_Z(Block); /*0x6255dc*/
+  if ( (Block & 1) != 0 ) /*0x6255d9*/
+    RA2_OPDEL(Block); /*0x6255dc*/
   return Block; /*0x6255e6*/
 
 }
@@ -731,13 +731,13 @@ int Options::SaveOptionValue()
   v4 = 2 * v2; /*0x625a33*/
   if ( 2 * v2 < 10 ) /*0x625a3b*/
     v4 = 10; /*0x625a3d*/
-  v5 = __2_YAPAXI_Z(20 * v4); /*0x625a4f*/
+  v5 = RA2_OPNEW(20 * v4); /*0x625a4f*/
   memset(v5, 0, 4 * ((unsigned int)(20 * v4) >> 2)); /*0x625a5a*/
   v7 = (int)v5; /*0x625a64*/
   v6 = (const void *)*((char *)this + 2); /*0x625a6a*/
   if ( v6 ) /*0x625a6f*/
     qmemcpy(v5, v6, 20 * *this); /*0x625a80*/
-  __3_YAXPAX_Z((void *)*((char *)this + 2)); /*0x625a8d*/
+  RA2_OPDEL((void *)*((char *)this + 2)); /*0x625a8d*/
   *((char *)this + 1) = v4; /*0x625a99*/
   *((char *)this + 2) = v7; /*0x625a9c*/
   return 1; /*0x625a2f*/
@@ -746,7 +746,7 @@ int Options::SaveOptionValue()
 }
 // 0x4F1720
 namespace gamemd {
-HWND Options::InitDialogControls()
+HWND Options::InitDialogControls(HWND hDlg)
 {
 
   HWND result; // eax
@@ -756,11 +756,11 @@ HWND Options::InitDialogControls()
   IUnknown *v6; // esi
   const char **Options; // eax
   HWND DlgItem; // eax
-  unsigned __int8 v9; // [esp+10h] [ebp-3Ch]
+  uint8_t v9; // [esp+10h] [ebp-3Ch]
   unsigned int v10[14]; // [esp+14h] [ebp-38h] BYREF
 
-  result = (HWND)MEMORY[0xA8B238][0]; /*0x4f1720*/
-  if ( !MEMORY[0xA8B238][0] || MEMORY[0xA8B238][0] == 5 ) /*0x4f1739*/
+  result = (HWND)g_abs_A8B238[0]; /*0x4f1720*/
+  if ( !g_abs_A8B238[0] || g_abs_A8B238[0] == 5 ) /*0x4f1739*/
   {
     Options = (const char **)LoadOptions::LoadOptions(v10); /*0x4f17dd*/
     v9 = LoadOptions::Check(Options); /*0x4f17ed*/
@@ -772,16 +772,16 @@ HWND Options::InitDialogControls()
     if ( result ) /*0x4f1828*/
       return (HWND)EnableWindow(result, v9); /*0x4f1832*/
   }
-  else if ( MEMORY[0xA8B238][0] == 4 ) /*0x4f1742*/
+  else if ( g_abs_A8B238[0] == 4 ) /*0x4f1742*/
   {
-    result = (HWND)MEMORY[0xA8B538]; /*0x4f1748*/
-    if ( !MEMORY[0xA8B538] ) /*0x4f174f*/
+    result = (HWND)g_abs_A8B538; /*0x4f1748*/
+    if ( !g_abs_A8B538 ) /*0x4f174f*/
     {
       v3 = GetDlgItem(hDlg, 1007); /*0x4f175b*/
       v4 = (IUnknown *)v3; /*0x4f1767*/
       if ( v3 ) /*0x4f176b*/
       {
-        v5 = 3 - (unsigned int)MEMORY[0xA8DB9C]; /*0x4f1785*/
+        v5 = 3 - (unsigned int)g_abs_A8DB9C; /*0x4f1785*/
         SendMessageA(v3, 0x406u, 1u, 196608); /*0x4f1787*/
         SendMessageA((HWND)v4, 0x405u, 1u, v5); /*0x4f1792*/
       }
@@ -790,7 +790,7 @@ HWND Options::InitDialogControls()
       if ( result ) /*0x4f17a4*/
       {
         SendMessageA(result, 0x406u, 1u, 393216); /*0x4f17b7*/
-        return (HWND)SendMessageA((HWND)v6, 0x405u, 1u, 6 - *(unsigned int *)MEMORY[0xA8EB60]); /*0x4f17cf*/
+        return (HWND)SendMessageA((HWND)v6, 0x405u, 1u, 6 - *(unsigned int *)g_abs_A8EB60); /*0x4f17cf*/
       }
     }
   }
@@ -985,7 +985,7 @@ int Options::DialogProc(CCINIClass hWnd)
   char *v109; // esi
   int ebp223; // ebp
   HWND v111; // esi
-  unsigned __int16 v112; // ax
+  uint16_t v112; // ax
   ObjectClass *v116; // esi
   int v114; // ebp
   unsigned int *v115; // eax
@@ -1009,7 +1009,7 @@ int Options::DialogProc(CCINIClass hWnd)
   ObjectClass *v133; // eax
   unsigned int *v134; // eax
   HWND esi277; // esi
-  unsigned __int16 v136; // ax
+  uint16_t v136; // ax
   LRESULT v137; // eax
   int v138; // esi
   LRESULT v139; // ebx
@@ -1029,7 +1029,7 @@ int Options::DialogProc(CCINIClass hWnd)
   LRESULT esi322; // esi
   void (*v154)(HWND, UINT, WPARAM, LPARAM); // edi
   HWND v155; // esi
-  unsigned __int16 WindowLongA; // ax
+  uint16_t WindowLongA; // ax
   LRESULT v157; // ebx
   LRESULT v158; // esi
   int v159; // ecx
@@ -1058,16 +1058,16 @@ int Options::DialogProc(CCINIClass hWnd)
   CCINIClass *v185; // eax
   int *v183; // eax
   HWND esi374; // esi
-  unsigned __int16 ax374; // ax
-  unsigned __int16 v186; // ax
+  uint16_t ax374; // ax
+  uint16_t v186; // ax
   LRESULT (*v187)(HWND, UINT, WPARAM, LPARAM); // edi
   LRESULT v188; // ebx
   LRESULT v189; // eax
   LRESULT v190; // esi
-  __int16 v191; // bx
+  int16_t v191; // bx
   WPARAM v192; // edi
   HWND v193; // esi
-  unsigned __int16 v194; // ax
+  uint16_t v194; // ax
   int v195; // ebp
   unsigned int *v196; // eax
   int v197; // ecx
@@ -1285,7 +1285,7 @@ int Options::DialogProc(CCINIClass hWnd)
   unsigned int v409[4]; // [esp+11Ch] [ebp-2C20h] BYREF
   int v410[4]; // [esp+12Ch] [ebp-2C10h] BYREF
   wchar_t Destination[511]; // [esp+13Ch] [ebp-2C00h] BYREF
-  __int16 v412; // [esp+53Ah] [ebp-2802h]
+  int16_t v412; // [esp+53Ah] [ebp-2802h]
   unsigned short v413[5120]; // [esp+53Ch] [ebp-2800h] BYREF
 
   wParam = 1;
@@ -1580,12 +1580,12 @@ LABEL_279:
                         v75 = 10;
                       if ( v75 < ecx161 )
                       {
-                        v76 = (HWND)__2_YAPAXI_Z(4 * v75);
+                        v76 = (HWND)RA2_OPNEW(4 * v75);
                         v80 = *(CCINIClass **)(unknown38 + 8);
                         Parent = v76;
                         if ( v80 )
                           qmemcpy(v76, v80, 4 * *(unsigned int *)unknown38);
-                        __3_YAXPAX_Z(*(void **)(unknown38 + 8));
+                        RA2_OPDEL(*(void **)(unknown38 + 8));
                         *(unsigned int *)(unknown38 + 8) = Parent;
                         *(unsigned int *)(unknown38 + 4) = v75;
                       }
@@ -1620,12 +1620,12 @@ LABEL_279:
                         v83 = 10;
                       if ( v83 < ecx175 )
                       {
-                        v84 = (AbstractClass *)__2_YAPAXI_Z(4 * v83);
+                        v84 = (AbstractClass *)RA2_OPNEW(4 * v83);
                         v88 = *(CCINIClass **)(v78 + 8);
                         v377 = v84;
                         if ( v88 )
                           qmemcpy(v84, v88, 4 * *(unsigned int *)v78);
-                        __3_YAXPAX_Z(*(void **)(v78 + 8));
+                        RA2_OPDEL(*(void **)(v78 + 8));
                         *(unsigned int *)(v78 + 8) = v377;
                         *(unsigned int *)(v78 + 4) = v83;
                       }
@@ -1671,12 +1671,12 @@ LABEL_279:
                           v93 = 10;
                         if ( v93 < (int)v95 )
                         {
-                          v94 = (HWND)__2_YAPAXI_Z(24 * v93);
+                          v94 = (HWND)RA2_OPNEW(24 * v93);
                           v98 = v87[4];
                           Parent = v94;
                           if ( v98 )
                             qmemcpy(v94, v98, 24 * (unsigned int)v87[2]);
-                          __3_YAXPAX_Z(v87[4]);
+                          RA2_OPDEL(v87[4]);
                           v87[4] = (CCINIClass *)Parent;
                           v87[3] = (CCINIClass *)v93;
                         }
@@ -1704,15 +1704,15 @@ LABEL_202:
           if ( v99 )
           {
             *(unsigned int *)v99->__pad_0 = 0;
-            __3_YAXPAX_Z((void *)v99->headNode[1]);
-            __3_YAXPAX_Z(v99);
+            RA2_OPDEL((void *)v99->headNode[1]);
+            RA2_OPDEL(v99);
           }
           v100 = (CCINIClass *)v375[2].INIClass_field_3C;
           if ( v100 )
           {
             *(unsigned int *)v100->__pad_0 = 0;
-            __3_YAXPAX_Z((void *)v100->headNode[1]);
-            __3_YAXPAX_Z(v100);
+            RA2_OPDEL((void *)v100->headNode[1]);
+            RA2_OPDEL(v100);
           }
           v101 = (AbstractClass *)v375;
           edx206 = 0;
@@ -1790,7 +1790,7 @@ LABEL_202:
                     while ( v108 < *(unsigned int *)v109 );
                   }
                   *(unsigned int *)v109 = 0;
-                  __3_YAXPAX_Z(*((void **)v109 + 2));
+                  RA2_OPDEL(*((void **)v109 + 2));
                   v279 = (int)&v377->__pad_0[1] < *(unsigned int *)ebx206;
                   v377 = (AbstractClass *)((char *)v377 + 1);
                   var2D28 = (AbstractClass *)((char *)var2D28 + 20);
@@ -1798,8 +1798,8 @@ LABEL_202:
                 while ( v279 );
               }
               *(unsigned int *)ebx206 = 0;
-              __3_YAXPAX_Z(*((void **)ebx206 + 2));
-              __3_YAXPAX_Z(ebx206);
+              RA2_OPDEL(*((void **)ebx206 + 2));
+              RA2_OPDEL(ebx206);
               v101 = (AbstractClass *)v375;
             }
             v101[6].NeedsSaveOrLink = 0;
@@ -1835,7 +1835,7 @@ LABEL_202:
                 goto LABEL_668;
               v19 = (*(int (**)(int))(*(unsigned int *)v18 + 124))(v375->sectionHead[0]);
               v23 = (ObjectClass *)hWnd.headNode[2];
-              if ( LOWORD(hWnd.headNode[2]) == v19
+              if ( IDA_LOWORD(hWnd.headNode[2]) == v19
                 && (unsigned int)v23 >> 16 == (*(int (**)(int))(*(unsigned int *)v18 + 128))(v18) )
               {
                 goto LABEL_668;
@@ -1871,7 +1871,7 @@ LABEL_202:
               v26 = v375[2].sectionHead[2];
               v387 = (unsigned int *)v375[1].headNode[2];
               SetupDialogRenderBuffer(v407, *(HWND *)hWnd.__pad_0, v26);
-              DrawDialogGradient(*(int **)&MEMORY[0x87F8E4].__pad_5568[9412], v407, 2, -1);
+              DrawDialogGradient(*(int **)&g_abs_87F8E4, v407, 2, -1);
               if ( *(&g_MatrixTransformState + 5629) == (CoordStruct *)-1 )
               {
                 var2D28 = (AbstractClass *)-1;
@@ -1879,9 +1879,9 @@ LABEL_202:
               else
               {
                 v14 = GetWindowLongA;
-                var2D28 = (AbstractClass *)(((int)*((unsigned __int8 *)&(&g_MatrixTransformState)[469] + 4) >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656])
-                                          | (*((unsigned __int8 *)&(&g_MatrixTransformState)[469] + 5) >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
-                                          | (*((unsigned __int8 *)&(&g_MatrixTransformState)[469] + 6) >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]));
+                var2D28 = (AbstractClass *)(((int)*((uint8_t *)&(&g_MatrixTransformState)[469] + 4) >> g_abs_89F690 << g_abs_89F690)
+                                          | (*((uint8_t *)&(&g_MatrixTransformState)[469] + 5) >> g_abs_89F690 << g_abs_89F690)
+                                          | (*((uint8_t *)&(&g_MatrixTransformState)[469] + 6) >> g_abs_89F690 << g_abs_89F690));
               }
               if ( !GetUpdateRect(*(HWND *)hWnd.__pad_0, (LPRECT)&lParam, 0) )
                 goto LABEL_668;
@@ -1914,7 +1914,7 @@ LABEL_202:
                 *v15 = *v16;
               else
                 *(unsigned int *)&v375->needsSave_flag = *v16;
-              __3_YAXPAX_Z(v16);
+              RA2_OPDEL(v16);
 LABEL_39:
               v379 = (AbstractClass *)1;
               goto LABEL_668;
@@ -1922,7 +1922,7 @@ LABEL_39:
               DC = GetDC(*(HWND *)hWnd.__pad_0);
               GetTextMetricsA(DC, &lParam);
               ReleaseDC(*(HWND *)hWnd.__pad_0, DC);
-              SendMessageA(*(HWND *)hWnd.__pad_0, 0x1A0u, 0xFFFFFFFF, (unsigned __int16)(LOWORD(lParam.tmHeight) + 2));
+              SendMessageA(*(HWND *)hWnd.__pad_0, 0x1A0u, 0xFFFFFFFF, (uint16_t)(IDA_LOWORD(lParam.tmHeight) + 2));
               v375[5].unknown30 = hWnd.headNode[1];
               return 0;
             default:
@@ -1977,9 +1977,9 @@ LABEL_70:
                   v409[1] = v395 + aP2.referenceCount;
                   v409[3] = v397 - v395;
                   v409[2] = v396 - v394;
-                  (*(void (**)(unsigned int, unsigned int *, AbstractClass *))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9412]
+                  (*(void (**)(unsigned int, unsigned int *, AbstractClass *))(**(unsigned int **)&g_abs_87F8E4
                                                                             + 20))(
-                    *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9412],
+                    *(unsigned int *)&g_abs_87F8E4,
                     v409,
                     var2D28);
                 }
@@ -2109,10 +2109,10 @@ LABEL_135:
                             v410[1] = aP2.referenceCount + v395 + (v397 - v395 - v42) / 2;
                             Surface::BlitTransparent(
                               v410,
-                              *(int *)&MEMORY[0x87F8E4].__pad_5568[9412],
+                              *(int *)&g_abs_87F8E4,
                               *(unsigned int *)(v39 + 16),
-                              (255 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656])
-                            | (255 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]));
+                              (255 >> g_abs_89F690 << g_abs_89F690)
+                            | (255 >> g_abs_89F690 << g_abs_89F690));
                             goto LABEL_135;
                           }
                           if ( v43 == (CCINIClass *)3 )
@@ -2131,22 +2131,22 @@ LABEL_135:
                                   v50 = 0;
                                 else
                                   v50 = 192;
-                                v48 = v50 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672];
+                                v48 = v50 >> g_abs_89F690 << g_abs_89F690;
                                 v49 = 192;
                               }
                               else
                               {
-                                v48 = 192 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672];
+                                v48 = 192 >> g_abs_89F690 << g_abs_89F690;
                                 v49 = 0;
                               }
-                              v47 = (v49 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) | v48;
+                              v47 = (v49 >> g_abs_89F690 << g_abs_89F690) | v48;
                             }
                             else
                             {
-                              v47 = 192 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664];
+                              v47 = 192 >> g_abs_89F690 << g_abs_89F690;
                               v45 = 1000;
                             }
-                            UI_Helper_6217E0(v408, *(int *)&MEMORY[0x87F8E4].__pad_5568[9412], v47, (v45 << 16) / 1000);
+                            UI_Helper_6217E0(v408, *(int *)&g_abs_87F8E4, v47, (v45 << 16) / 1000);
                           }
                         }
                       }
@@ -2180,9 +2180,9 @@ LABEL_136:
                   v404.top = v395 + aP2.referenceCount;
                   v404.bottom = v397 - v395;
                   v404.right = v396 - v394;
-                  (*(void (**)(unsigned int, struct tagRECT *, AbstractClass *))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9412]
+                  (*(void (**)(unsigned int, struct tagRECT *, AbstractClass *))(**(unsigned int **)&g_abs_87F8E4
                                                                                     + 20))(
-                    *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9412],
+                    *(unsigned int *)&g_abs_87F8E4,
                     &v404,
                     var2D28);
                 }
@@ -2212,7 +2212,7 @@ LABEL_149:
       v114 = v375[2].INIClass_field_3C;
       if ( !v114 )
       {
-        v115 = (unsigned int *)__2_YAPAXI_Z(0xCu);
+        v115 = (unsigned int *)RA2_OPNEW(0xCu);
         if ( v115 )
         {
           *v115 = 0;
@@ -2256,12 +2256,12 @@ LABEL_149:
                 var2D28 = (AbstractClass *)(2 * (unsigned int)v124);
                 if ( 2 * (int)v124 < 10 )
                   var2D28 = (AbstractClass *)10;
-                v122 = (CCINIClass *)__2_YAPAXI_Z(4 * (unsigned int)var2D28);
+                v122 = (CCINIClass *)RA2_OPNEW(4 * (unsigned int)var2D28);
                 memset(v122, 0, 4 * ((unsigned int)(4 * (unsigned int)var2D28) >> 2));
                 v126 = *(CCINIClass **)(v114 + 8);
                 if ( v126 )
                   qmemcpy(v122, v126, 4 * *(unsigned int *)v114);
-                __3_YAXPAX_Z(*(void **)(v114 + 8));
+                RA2_OPDEL(*(void **)(v114 + 8));
                 v127 = var2D28;
                 v119 = Parent;
                 v116 = (ObjectClass *)v377;
@@ -2272,7 +2272,7 @@ LABEL_149:
               v120 = *(unsigned int *)(v114 + 4);
             }
             while ( (int)v119 > v120 );
-            v121 = (CCINIClass *)LODWORD(v385);
+            v121 = (CCINIClass *)IDA_LODWORD(v385);
           }
           for ( k = v121; (int)k < *(unsigned int *)v114; k = (CCINIClass *)((char *)k + 1) )
           {
@@ -2330,10 +2330,10 @@ LABEL_149:
       v136 = GetWindowLongA(*(HWND *)hWnd.__pad_0, -12);
       goto LABEL_394;
     }
-    v165 = HIWORD(hWnd.headNode[2]);
-    v166 = (CCINIClass *)LOWORD(hWnd.headNode[2]);
-    Parent = (HWND)LOWORD(hWnd.headNode[2]);
-    v377 = (AbstractClass *)HIWORD(hWnd.headNode[2]);
+    v165 = IDA_HIWORD(hWnd.headNode[2]);
+    v166 = (CCINIClass *)IDA_LOWORD(hWnd.headNode[2]);
+    Parent = (HWND)IDA_LOWORD(hWnd.headNode[2]);
+    v377 = (AbstractClass *)IDA_HIWORD(hWnd.headNode[2]);
     v167 = SendMessageA(*(HWND *)hWnd.__pad_0, 0x18Bu, 0, 0);
     if ( v165 >= 0 && v165 >= (int)v166 )
     {
@@ -2345,7 +2345,7 @@ LABEL_149:
       v168 = v375[2].INIClass_field_3C;
       if ( !v168 )
       {
-        v169 = (unsigned int *)__2_YAPAXI_Z(0xCu);
+        v169 = (unsigned int *)RA2_OPNEW(0xCu);
         if ( v169 )
         {
           v168 = (int)v169;
@@ -2378,12 +2378,12 @@ LABEL_149:
                 var2D28 = (AbstractClass *)(2 * (unsigned int)v176);
                 if ( 2 * (int)v176 < 10 )
                   var2D28 = (AbstractClass *)10;
-                ebx353 = (CCINIClass *)__2_YAPAXI_Z(4 * (unsigned int)var2D28);
+                ebx353 = (CCINIClass *)RA2_OPNEW(4 * (unsigned int)var2D28);
                 memset(ebx353, 0, 4 * ((unsigned int)(4 * (unsigned int)var2D28) >> 2));
                 v178 = *(CCINIClass **)(v168 + 8);
                 if ( v178 )
                   qmemcpy(ebx353, v178, 4 * *(unsigned int *)v168);
-                __3_YAXPAX_Z(*(void **)(v168 + 8));
+                RA2_OPDEL(*(void **)(v168 + 8));
                 v179 = var2D28;
                 v166 = (CCINIClass *)Parent;
                 *(unsigned int *)(v168 + 8) = ebx353;
@@ -2393,7 +2393,7 @@ LABEL_149:
               v172 = *(unsigned int *)(v168 + 4);
             }
             while ( v165 + 1 > v172 );
-            v174 = (CCINIClass *)LODWORD(v385);
+            v174 = (CCINIClass *)IDA_LODWORD(v385);
           }
           for ( m = v174; (int)m < *(unsigned int *)v168; m = (CCINIClass *)((char *)m + 1) )
           {
@@ -2447,7 +2447,7 @@ LABEL_149:
       case 0x4C4u:
       case 0x4C5u:
       case 0x4C6u:
-        BulkCharToWide(v413, (unsigned __int8 *)hWnd.headNode[2], 5120);
+        BulkCharToWide(v413, (uint8_t *)hWnd.headNode[2], 5120);
         hWnd.headNode[2] = (int)v413;
         goto LABEL_538;
       case 0x4C7u:
@@ -2519,7 +2519,7 @@ LABEL_552:
           v272 = (CCINIClass *)v386;
           v273 = strlen((const char *)hWnd.headNode[2]);
         }
-        v274 = (AbstractClass *)__2_YAPAXI_Z(2 * v273 + 18);
+        v274 = (AbstractClass *)RA2_OPNEW(2 * v273 + 18);
         if ( v274 )
         {
           *(unsigned int *)&v274->__pad_0[8] = &v274->uniqueId;
@@ -2531,7 +2531,7 @@ LABEL_552:
           if ( v275 )
             wcscpy(*(wchar_t **)&v274->__pad_0[8], (const wchar_t *)v271);
           else
-            BulkCharToWide(*(unsigned short **)&v274->__pad_0[8], (unsigned __int8 *)v271, -1);
+            BulkCharToWide(*(unsigned short **)&v274->__pad_0[8], (uint8_t *)v271, -1);
           v276 = (AbstractClass *)CallWindowProcA(
                                     lpPrevWndFunc,
                                     *(HWND *)hWnd.__pad_0,
@@ -2564,12 +2564,12 @@ LABEL_552:
                   var2D28 = (AbstractClass *)(2 * (unsigned int)v278);
                   if ( 2 * (int)v278 < 10 )
                     var2D28 = (AbstractClass *)10;
-                  v282 = (CCINIClass *)__2_YAPAXI_Z(4 * (unsigned int)var2D28);
+                  v282 = (CCINIClass *)RA2_OPNEW(4 * (unsigned int)var2D28);
                   memset(v282, 0, 4 * ((unsigned int)(4 * (unsigned int)var2D28) >> 2));
                   v283 = *(CCINIClass **)(v277 + 8);
                   if ( v283 )
                     qmemcpy(v282, v283, 4 * *(unsigned int *)v277);
-                  __3_YAXPAX_Z(*(void **)(v277 + 8));
+                  RA2_OPDEL(*(void **)(v277 + 8));
                   v284 = var2D28;
                   v272 = (CCINIClass *)v386;
                   v280 = (CCINIClass *)v377;
@@ -2609,12 +2609,12 @@ LABEL_552:
                   var2D28 = (AbstractClass *)(2 * (unsigned int)v287);
                   if ( 2 * (int)v287 < 10 )
                     var2D28 = (AbstractClass *)10;
-                  v291 = (CCINIClass *)__2_YAPAXI_Z(4 * (unsigned int)var2D28);
+                  v291 = (CCINIClass *)RA2_OPNEW(4 * (unsigned int)var2D28);
                   memset(v291, 0, 4 * ((unsigned int)(4 * (unsigned int)var2D28) >> 2));
                   v292 = *(CCINIClass **)(v286 + 8);
                   if ( v292 )
                     qmemcpy(v291, v292, 4 * *(unsigned int *)v286);
-                  __3_YAXPAX_Z(*(void **)(v286 + 8));
+                  RA2_OPDEL(*(void **)(v286 + 8));
                   v293 = var2D28;
                   v289 = (int)v377;
                   v272 = (CCINIClass *)v386;
@@ -2661,7 +2661,7 @@ LABEL_609:
                   v300 = (CCINIClass *)v386;
                   v301 = (int *)&v377->__pad_0[8];
                   v302 = -(v387 != 0);
-                  LOBYTE(v302) = v302 & 0xFC;
+                  IDA_LOBYTE(v302) = v302 & 0xFC;
                   lParam.tmHeight = v302 + 4;
                   v303 = *(CCINIClass **)&v377->__pad_0[8];
                   if ( (int)v386 > (int)v303 )
@@ -2672,12 +2672,12 @@ LABEL_609:
                     var2D28 = (AbstractClass *)(2 * (unsigned int)v303);
                     if ( 2 * (int)v303 < 10 )
                       var2D28 = (AbstractClass *)10;
-                    v389 = __2_YAPAXI_Z(24 * (unsigned int)var2D28);
+                    v389 = RA2_OPNEW(24 * (unsigned int)var2D28);
                     memset((void *)v389, 0, 4 * ((unsigned int)(24 * (unsigned int)var2D28) >> 2));
                     v305 = (CCINIClass *)v377->uniqueId;
                     if ( v305 )
                       qmemcpy((void *)v389, v305, 24 * *v301);
-                    __3_YAXPAX_Z((void *)v377->uniqueId);
+                    RA2_OPDEL((void *)v377->uniqueId);
                     v306 = var2D28;
                     v377->uniqueId = v389;
                     v301[1] = (int)v306;
@@ -2731,14 +2731,14 @@ LABEL_609:
               *(unsigned int *)v298->__pad_0 = *(unsigned int *)v299->__pad_0;
             else
               *(unsigned int *)&v375->needsSave_flag = *(unsigned int *)v299->__pad_0;
-            __3_YAXPAX_Z(v299);
+            RA2_OPDEL(v299);
           }
         }
         goto LABEL_668;
       case 0x4E8u:
-        v314 = HIWORD(hWnd.headNode[2]);
+        v314 = IDA_HIWORD(hWnd.headNode[2]);
         result = -1;
-        if ( LOWORD(hWnd.headNode[2]) < aP2.uniqueId && v314 < aP2.abstractFlags )
+        if ( IDA_LOWORD(hWnd.headNode[2]) < aP2.uniqueId && v314 < aP2.abstractFlags )
         {
           v315 = SendMessageA(*(HWND *)hWnd.__pad_0, 0x1A1u, 0, 0);
           v316 = SendMessageA(*(HWND *)hWnd.__pad_0, 0x18Bu, 0, 0);
@@ -2874,7 +2874,7 @@ LABEL_668:
         }
 LABEL_676:
         eax676 = v393;
-        v322 = (CCINIClass *)LODWORD(v385);
+        v322 = (CCINIClass *)IDA_LODWORD(v385);
         *(unsigned int *)(v393 + 8) = *(unsigned int *)hWnd.__pad_0;
         *(unsigned char *)(eax676 + 205) = 0;
         lParam.tmInternalLeading = (LONG)v322;
@@ -2916,15 +2916,15 @@ LABEL_743:
         if ( v365 )
         {
           *(unsigned int *)v365->__pad_0 = 0;
-          __3_YAXPAX_Z((void *)v365->headNode[1]);
-          __3_YAXPAX_Z(v365);
+          RA2_OPDEL((void *)v365->headNode[1]);
+          RA2_OPDEL(v365);
         }
         v366 = (CCINIClass *)v375[2].INIClass_field_3C;
         if ( v366 )
         {
           *(unsigned int *)v366->__pad_0 = 0;
-          __3_YAXPAX_Z((void *)v366->headNode[1]);
-          __3_YAXPAX_Z(v366);
+          RA2_OPDEL((void *)v366->headNode[1]);
+          RA2_OPDEL(v366);
         }
       }
       return (int)v367;
@@ -2945,7 +2945,7 @@ LABEL_743:
         if ( *(unsigned int *)v326->__pad_0 == wParam )
         {
           v327 = (CCINIClass *)v326->headNode[1];
-          __3_YAXPAX_Z(*((void **)&(*(&g_MatrixTransformState + 2894))->X + esi681));
+          RA2_OPDEL(*((void **)&(*(&g_MatrixTransformState + 2894))->X + esi681));
           v329 = v385;
           *(&(*(&g_MatrixTransformState + 2894))->X + esi681) = (int)v327;
           *(&g_MatrixTransformState + 2895) = (CoordStruct *)((char *)*(&g_MatrixTransformState + 2895) - 1);
@@ -2960,7 +2960,7 @@ LABEL_743:
                                                             *(&g_MatrixTransformState + 2897),
                                                             (unsigned int)*(&g_MatrixTransformState + 2896) >> 1)
                                                         - 0x100000000LL;
-            *(&g_MatrixTransformState + 2894) = (CoordStruct *)__2_YAPAXI_Z(4 * v332);
+            *(&g_MatrixTransformState + 2894) = (CoordStruct *)RA2_OPNEW(4 * v332);
             memset(*(&g_MatrixTransformState + 2894), 0, 4 * (unsigned int)*(&g_MatrixTransformState + 2896));
             if ( esi686 > 0 )
             {
@@ -2987,7 +2987,7 @@ LABEL_743:
               }
               while ( v334 );
             }
-            __3_YAXPAX_Z(v330);
+            RA2_OPDEL(v330);
           }
         }
         else
@@ -3004,7 +3004,7 @@ LABEL_743:
             }
             v326->headNode[1] = v337->headNode[1];
             *(&g_MatrixTransformState + 2895) = (CoordStruct *)((char *)*(&g_MatrixTransformState + 2895) - 1);
-            __3_YAXPAX_Z(v337);
+            RA2_OPDEL(v337);
           }
 LABEL_697:
           if ( v385 <= *((double *)&g_MatrixTransformState + 1451) )
@@ -3015,7 +3015,7 @@ LABEL_697:
     memset(Destination, 0, 0x200u);
     wcscpy(&Destination[52], L"\v");
     *(unsigned int *)&Destination[50] = aP0;
-    v340 = (unsigned int *)__2_YAPAXI_Z(4u);
+    v340 = (unsigned int *)RA2_OPNEW(4u);
     if ( v340 )
       v341 = unknown_libname_74(v340);
     else
@@ -3043,7 +3043,7 @@ LABEL_697:
           if ( v342 )
           {
             Dialog::CleanupTree((int)v342->headNode);
-            __3_YAXPAX_Z(v342);
+            RA2_OPDEL(v342);
           }
           v346 = v385;
           *(&(*(&g_MatrixTransformState + 2876))->X + esi703) = CCINIClass_field_4C;
@@ -3083,7 +3083,7 @@ LABEL_716:
     if ( *(unsigned int *)&Destination[30] )
     {
       DeleteAndZero::Alt(*(void ***)&Destination[30]);
-      __3_YAXPAX_Z(v347);
+      RA2_OPDEL(v347);
     }
     if ( *(&g_MatrixTransformState + 2733) )
     {
@@ -3099,7 +3099,7 @@ LABEL_716:
         if ( *(unsigned int *)v349->__pad_0 == wParam )
         {
           v350 = (CCINIClass *)v349->headNode[1];
-          __3_YAXPAX_Z(*((void **)&(*(&g_MatrixTransformState + 2732))->X + esi721));
+          RA2_OPDEL(*((void **)&(*(&g_MatrixTransformState + 2732))->X + esi721));
           v353 = v385;
           *(&(*(&g_MatrixTransformState + 2732))->X + esi721) = (int)v350;
           *(&g_MatrixTransformState + 2733) = (CoordStruct *)((char *)*(&g_MatrixTransformState + 2733) - 1);
@@ -3115,7 +3115,7 @@ LABEL_716:
                                                             *(&g_MatrixTransformState + 2735),
                                                             (unsigned int)*(&g_MatrixTransformState + 2734) >> 1)
                                                         - 0x100000000LL;
-            *(&g_MatrixTransformState + 2732) = (CoordStruct *)__2_YAPAXI_Z(4 * eax726);
+            *(&g_MatrixTransformState + 2732) = (CoordStruct *)RA2_OPNEW(4 * eax726);
             memset(*(&g_MatrixTransformState + 2732), 0, 4 * (unsigned int)*(&g_MatrixTransformState + 2734));
             if ( v355 > 0 )
             {
@@ -3143,7 +3143,7 @@ LABEL_716:
               while ( v358 );
               ebp726 = (CCINIClass *)Parent;
             }
-            __3_YAXPAX_Z(ebp726);
+            RA2_OPDEL(ebp726);
           }
         }
         else
@@ -3160,7 +3160,7 @@ LABEL_716:
             }
             v349->headNode[1] = v360->headNode[1];
             *(&g_MatrixTransformState + 2733) = (CoordStruct *)((char *)*(&g_MatrixTransformState + 2733) - 1);
-            __3_YAXPAX_Z(v360);
+            RA2_OPDEL(v360);
           }
 LABEL_738:
           if ( v385 <= *((double *)&g_MatrixTransformState + 1370) )
@@ -3170,7 +3170,7 @@ LABEL_738:
     }
     v364 = (void *)GetWindowLongA((HWND)wParam, -21);
     if ( v364 )
-      __3_YAXPAX_Z(v364);
+      RA2_OPDEL(v364);
     SetWindowLongA((HWND)wParam, -21, 0);
     Object::RemoveObjectArray((void *)wParam);
     edi742 = nWidth;
@@ -3223,7 +3223,7 @@ LABEL_738:
             edi480 = (int)&v236[-1].unknown54 + 3;
           v238 = 20 * edi480 + *(unsigned int *)(esi478 + 8) + 8;
           Options::DeleteAndZero((int *)v238);
-          __3_YAXPAX_Z(*(void **)(v238 + 8));
+          RA2_OPDEL(*(void **)(v238 + 8));
           memcpy(
             (void *)(*(unsigned int *)(esi478 + 8) + 20 * edi480),
             (const void *)(*(unsigned int *)(esi478 + 8) + 4 * (5 * edi480 + 5)),
@@ -3240,11 +3240,11 @@ LABEL_738:
           return -1;
         v241 = 0;
         v242 = 0;
-        v243 = (CCINIClass *)HIWORD(hWnd.headNode[1]);
+        v243 = (CCINIClass *)IDA_HIWORD(hWnd.headNode[1]);
         v246 = *(CCINIClass **)v240;
-        v245 = (unsigned int *)LOWORD(hWnd.headNode[1]);
-        LODWORD(v385) = HIWORD(hWnd.headNode[1]);
-        v387 = (unsigned int *)LOWORD(hWnd.headNode[1]);
+        v245 = (unsigned int *)IDA_LOWORD(hWnd.headNode[1]);
+        IDA_LODWORD(v385) = IDA_HIWORD(hWnd.headNode[1]);
+        v387 = (unsigned int *)IDA_LOWORD(hWnd.headNode[1]);
         if ( (int)v246 <= 0 )
           return -1;
         ecx499 = 0;
@@ -3257,7 +3257,7 @@ LABEL_738:
           return 0;
         v221 = 0;
         v222 = -1;
-        v223 = (signed int)HIWORD(hWnd.headNode[1]) / v220;
+        v223 = (signed int)IDA_HIWORD(hWnd.headNode[1]) / v220;
         v377 = 0;
         v224 = *(unsigned int *)&v375[2].ownsFile;
         v225 = 0;
@@ -3271,7 +3271,7 @@ LABEL_738:
         {
           if ( (int)var2D28 >= 0 && v225 < (int)v229 )
             v221 = &var2D28->__pad_0[*(unsigned int *)(j + 8)];
-          if ( *(unsigned int *)v221 <= (int)LOWORD(hWnd.headNode[1]) )
+          if ( *(unsigned int *)v221 <= (int)IDA_LOWORD(hWnd.headNode[1]) )
           {
             if ( *(unsigned int *)v221 <= (int)v377 )
             {
@@ -3320,7 +3320,7 @@ LABEL_738:
     {
       if ( ecx499 >= 0 && v242 < (int)v246 )
         v241 = ecx499 + *(unsigned int *)(v240 + 8);
-      if ( *(unsigned int *)v241 == LOWORD(hWnd.headNode[1]) )
+      if ( *(unsigned int *)v241 == IDA_LOWORD(hWnd.headNode[1]) )
         break;
       ++v242;
       ecx499 += 20;
@@ -3360,16 +3360,16 @@ LABEL_738:
               v253 = 2 * (unsigned int)v254;
               if ( 2 * (int)v254 < 10 )
                 v253 = 10;
-              v377 = (AbstractClass *)__2_YAPAXI_Z(24 * v253);
+              v377 = (AbstractClass *)RA2_OPNEW(24 * v253);
               memset(v377, 0, 4 * ((unsigned int)(24 * v253) >> 2));
               v256 = *(CCINIClass **)(v248 + 8);
               if ( v256 )
                 qmemcpy(v377, v256, 24 * *(unsigned int *)v248);
-              __3_YAXPAX_Z(*(void **)(v248 + 8));
+              RA2_OPDEL(*(void **)(v248 + 8));
               v252 = (CCINIClass *)Parent;
               *(unsigned int *)(v248 + 8) = v377;
               *(unsigned int *)(v248 + 4) = v253;
-              v243 = (CCINIClass *)LODWORD(v385);
+              v243 = (CCINIClass *)IDA_LODWORD(v385);
             }
             v251 = *(unsigned int *)(v248 + 4);
           }
@@ -3418,7 +3418,7 @@ LABEL_738:
     esi429 = *(unsigned int **)v375[2].__pad_48;
     if ( !esi429 )
     {
-      v210 = (unsigned int *)__2_YAPAXI_Z(0xCu);
+      v210 = (unsigned int *)RA2_OPNEW(0xCu);
       if ( v210 )
       {
         *v210 = 0;
@@ -3469,7 +3469,7 @@ LABEL_441:
         while ( v218 < lParam.tmDescent );
       }
       lParam.tmDescent = 0;
-      __3_YAXPAX_Z((void *)lParam.tmExternalLeading);
+      RA2_OPDEL((void *)lParam.tmExternalLeading);
     }
     else
     {
@@ -3499,14 +3499,14 @@ LABEL_441:
           *(HWND *)hWnd.__pad_0,
           0x1A0u,
           0xFFFFFFFF,
-          (unsigned __int16)(*(unsigned int *)(v375[1].headNode[2] + 28) + 2));
+          (uint16_t)(*(unsigned int *)(v375[1].headNode[2] + 28) + 2));
       }
       else if ( v7 == 1176 )
       {
         v195 = v375[2].unknown38;
         if ( !v195 )
         {
-          v196 = (unsigned int *)__2_YAPAXI_Z(0xCu);
+          v196 = (unsigned int *)RA2_OPNEW(0xCu);
           if ( v196 )
           {
             *v196 = 0;
@@ -3540,12 +3540,12 @@ LABEL_441:
                   var2D28 = (AbstractClass *)(2 * (unsigned int)v203);
                   if ( 2 * (int)v203 < 10 )
                     var2D28 = (AbstractClass *)10;
-                  ebx409 = (CCINIClass *)__2_YAPAXI_Z(4 * (unsigned int)var2D28);
+                  ebx409 = (CCINIClass *)RA2_OPNEW(4 * (unsigned int)var2D28);
                   memset(ebx409, 0, 4 * ((unsigned int)(4 * (unsigned int)var2D28) >> 2));
                   v205 = *(CCINIClass **)(v195 + 8);
                   if ( v205 )
                     qmemcpy(ebx409, v205, 4 * *(unsigned int *)v195);
-                  __3_YAXPAX_Z(*(void **)(v195 + 8));
+                  RA2_OPDEL(*(void **)(v195 + 8));
                   v206 = var2D28;
                   *(unsigned int *)(v195 + 8) = ebx409;
                   *(unsigned int *)(v195 + 4) = v206;
@@ -3620,7 +3620,7 @@ LABEL_394:
     v187 = SendMessageA;
     v188 = SendMessageA(*(HWND *)hWnd.__pad_0, 0x18Eu, 0, 0);
     v189 = SendMessageA(*(HWND *)hWnd.__pad_0, 0x1A1u, 0, 0);
-    v190 = v188 + (signed int)HIWORD(hWnd.headNode[2]) / v189;
+    v190 = v188 + (signed int)IDA_HIWORD(hWnd.headNode[2]) / v189;
     if ( v190 < SendMessageA(*(HWND *)hWnd.__pad_0, 0x18Bu, 0, 0) )
     {
       v191 = GetWindowLongA(*(HWND *)hWnd.__pad_0, -16);
@@ -3629,7 +3629,7 @@ LABEL_394:
       if ( (v191 & 8) != 0 )
       {
         v192 = SendMessageA(*(HWND *)hWnd.__pad_0, 0x187u, v190, 0) == 0;
-        PlayVocClass(*(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1804), 0x2000, 1.0, 0);
+        PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 1804), 0x2000, 1.0, 0);
         SendMessageA(*(HWND *)hWnd.__pad_0, 0x185u, v192, v190);
         v187 = SendMessageA;
         SendMessageA(*(HWND *)hWnd.__pad_0, 1181, 0, (LPARAM)Parent);
@@ -3638,7 +3638,7 @@ LABEL_394:
       {
         if ( (v191 & 0x4000) == 0 )
         {
-          PlayVocClass(*(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 1804), 0x2000, 1.0, 0);
+          PlayVocClass(*(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 1804), 0x2000, 1.0, 0);
           SendMessageA(*(HWND *)hWnd.__pad_0, 0x186u, v190, 0);
         }
         SendMessageA(*(HWND *)hWnd.__pad_0, 1181, 0, (LPARAM)Parent);

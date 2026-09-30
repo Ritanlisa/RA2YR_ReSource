@@ -168,7 +168,7 @@ struct HouseTypeClass {
     AbstractClass * * Dtor(void *a1 = 0);
     AbstractClass * * ProcessPower(int * a2, void *a1 = 0);
     HouseTypeClass * Destructor(char a2);
-    char readPowerPlants(TypeList_flat * aP1);
+    char readPowerPlants(void * aP1);
     int AddRef(int a1);
     int Find(void *a1 = 0);
     int GetClassIdentifier(int a1, unsigned int * a2);
@@ -179,19 +179,19 @@ struct HouseTypeClass {
     int Release(int a1);
     int SaveLoad_Prefix(unsigned int * i, int a2);
     int StubReturnFalse(int a1);
-    int loadCountryData(unsigned char * a2, unsigned char * a3, int a4, void *a1 = 0);
+    int loadCountryData(unsigned char * a2, unsigned char * a3, int a4);
     int readAiBuildLists(int a1);
     int readBaseDefenses(int a1, const void * a2, unsigned int * a3);
     int readLoadoutData(int a1);
-    unsigned int * loadVeteranWeapons(HouseTypeClass * aP1);
-    unsigned int * readAllowedUnits(InfantryTypeClass * aP1);
-    unsigned int * readBaseDefense(VectorClass_flat * aP1);
+    unsigned int * loadVeteranWeapons(void * aP1);
+    unsigned int * readAllowedUnits(void * aP1);
+    unsigned int * readBaseDefense(void * aP1);
     unsigned int * readDefaultAlly(int a2, int a3);
-    unsigned int * readParaDropTypes(VectorClass_flat * aP1);
-    unsigned int * readStartInfantry(InfantryTypeClass * aP1);
+    unsigned int * readParaDropTypes(void * aP1);
+    unsigned int * readStartInfantry(void * aP1);
     unsigned int * readStartUnit();
     unsigned int loadBuildLimits();
-    void * ReadCountryName(int a1, unsigned char *** edx0, INIClass * aP1, unsigned char * a2, unsigned int * a5);
+    void * ReadCountryName(int a1, unsigned char *** edx0, void * aP1, unsigned char * a2, unsigned int * a5);
     void* LoadFromINI(unsigned char *** aP1);
 };
 

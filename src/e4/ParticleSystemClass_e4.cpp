@@ -65,7 +65,7 @@ void ParticleSystemClass_32::ClearBuffer()
   *((unsigned int *)this + 4) = 0; /*0x4e82f9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8300*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8306*/
+    RA2_OPDEL(v2); /*0x4e8306*/
     *((unsigned int *)this + 1) = 0; /*0x4e830e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8311*/
@@ -98,7 +98,7 @@ void ParticleSystemClass::GetClassIdentifier()
   *((unsigned int *)this + 4) = 0; /*0x4e8479*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8480*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8486*/
+    RA2_OPDEL(v2); /*0x4e8486*/
     *((unsigned int *)this + 1) = 0; /*0x4e848e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8491*/
@@ -141,7 +141,7 @@ void ParticleSystemClass::initParticleArray()
   *((unsigned int *)this + 4) = 0; /*0x4e8789*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8790*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8796*/
+    RA2_OPDEL(v2); /*0x4e8796*/
     *((unsigned int *)this + 1) = 0; /*0x4e879e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e87a1*/
@@ -161,7 +161,7 @@ void ParticleSystemClass_32::Destroy()
   *((unsigned int *)this + 4) = 0; /*0x4e87e9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e87f0*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e87f6*/
+    RA2_OPDEL(v2); /*0x4e87f6*/
     *((unsigned int *)this + 1) = 0; /*0x4e87fe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8801*/
@@ -204,7 +204,7 @@ void ParticleSystemClass_32::ReleaseBuffer()
   *((unsigned int *)this + 4) = 0; /*0x4e8849*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x4e8850*/
   {
-    __3_YAXPAX_Z(v2); /*0x4e8856*/
+    RA2_OPDEL(v2); /*0x4e8856*/
     *((unsigned int *)this + 1) = 0; /*0x4e885e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4e8861*/
@@ -242,7 +242,7 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e95f8*/
       v4 = a3; /*0x4e960e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e960a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e960a*/
     *((unsigned char *)this + 12) = 1; /*0x4e9612*/
     if ( !v4 ) /*0x4e9616*/
       return 0; /*0x4e968a*/
@@ -255,7 +255,7 @@ char ParticleSystemClass_32::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x4e9631*/
       if ( *((unsigned char *)this + 13) ) /*0x4e963e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9649*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4e9649*/
         *((unsigned int *)this + 1) = 0; /*0x4e9651*/
       }
     }
@@ -343,7 +343,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb2bc*/
       v4 = a3; /*0x4eb2d2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb2ce*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eb2ce*/
     *((unsigned char *)this + 12) = 1; /*0x4eb2d6*/
     if ( v4 ) /*0x4eb2da*/
     {
@@ -356,7 +356,7 @@ char ParticleSystemClass_16::Release(int a2, unsigned int * a3)
           ++i; /*0x4eb2fe*/
         if ( *((unsigned char *)this + 13) ) /*0x4eb30b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb316*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eb316*/
           *((unsigned int *)this + 1) = 0; /*0x4eb31e*/
         }
       }
@@ -386,7 +386,7 @@ void ParticleSystemClass_16::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4eb35d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eb363*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eb363*/
     *((unsigned int *)this + 1) = 0; /*0x4eb36b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eb36e*/
@@ -479,7 +479,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb51c*/
       v4 = a3; /*0x4eb532*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb52e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eb52e*/
     *((unsigned char *)this + 12) = 1; /*0x4eb536*/
     if ( v4 ) /*0x4eb53a*/
     {
@@ -492,7 +492,7 @@ char ParticleSystemClass_32::Release(int a2, unsigned int * a3)
           ++i; /*0x4eb55e*/
         if ( *((unsigned char *)this + 13) ) /*0x4eb56b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb576*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4eb576*/
           *((unsigned int *)this + 1) = 0; /*0x4eb57e*/
         }
       }
@@ -522,7 +522,7 @@ void ParticleSystemClass_32::ddtor()
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4eb5bd*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4eb5c3*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x4eb5c3*/
     *((unsigned int *)this + 1) = 0; /*0x4eb5cb*/
   }
   *((unsigned char *)this + 13) = 0; /*0x4eb5ce*/
@@ -585,7 +585,7 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb658*/
       v4 = a3; /*0x4eb66e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb66a*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eb66a*/
     *((unsigned char *)this + 12) = 1; /*0x4eb672*/
     if ( !v4 ) /*0x4eb676*/
       return 0; /*0x4eb6ea*/
@@ -598,7 +598,7 @@ char ParticleSystemClass_32::CopyParticles2(int a2, unsigned int * a3)
         ++i; /*0x4eb691*/
       if ( *((unsigned char *)this + 13) ) /*0x4eb69e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb6a9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4eb6a9*/
         *((unsigned int *)this + 1) = 0; /*0x4eb6b1*/
       }
     }
@@ -656,7 +656,7 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
     if ( a3 ) /*0x4eb8b8*/
       v4 = a3; /*0x4eb8ce*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4eb8ca*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4eb8ca*/
     *((unsigned char *)this + 12) = 1; /*0x4eb8d2*/
     if ( !v4 ) /*0x4eb8d6*/
       return 0; /*0x4eb94a*/
@@ -669,7 +669,7 @@ char ParticleSystemClass_32_::ResizeDataArray(int a2, unsigned int * a3)
         ++i; /*0x4eb8f1*/
       if ( *((unsigned char *)this + 13) ) /*0x4eb8fe*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4eb909*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4eb909*/
         *((unsigned int *)this + 1) = 0; /*0x4eb911*/
       }
     }
@@ -714,7 +714,7 @@ int ParticleSystemClass_32_::FindElementByValue(unsigned int * a2)
 
 // 0x4EF5D0
 namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___(char a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -723,13 +723,13 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___
   *Block = &vt_VectorClass_BuildingClass; /*0x4ef5d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef5e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef5e8*/
+    RA2_OPDEL(v3); /*0x4ef5e8*/
     *(Block + 1) = 0; /*0x4ef5f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4ef5fb*/
   *(Block + 2) = 0; /*0x4ef601*/
-  if ( (a2 & 1) != 0 ) /*0x4ef608*/
-    __3_YAXPAX_Z(Block); /*0x4ef60b*/
+  if ( (Block & 1) != 0 ) /*0x4ef608*/
+    RA2_OPDEL(Block); /*0x4ef60b*/
   return (DynamicVector *)Block; /*0x4ef615*/
 
 }
@@ -737,7 +737,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___
 
 // 0x4EFD50
 namespace gamemd {
-VectorClass_flat * ParticleSystemClass_16::QueryInterface(char a2)
+VectorClass_flat * ParticleSystemClass_16::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -746,13 +746,13 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(char a2)
   *Block = &vt_VectorClass_SmudgeClass; /*0x4efd56*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efd60*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efd68*/
+    RA2_OPDEL(v3); /*0x4efd68*/
     *(Block + 1) = 0; /*0x4efd70*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efd7b*/
   *(Block + 2) = 0; /*0x4efd81*/
-  if ( (a2 & 1) != 0 ) /*0x4efd88*/
-    __3_YAXPAX_Z(Block); /*0x4efd8b*/
+  if ( (Block & 1) != 0 ) /*0x4efd88*/
+    RA2_OPDEL(Block); /*0x4efd8b*/
   return (VectorClass *)Block; /*0x4efd95*/
 
 }
@@ -760,7 +760,7 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(char a2)
 
 // 0x4EFDF0
 namespace gamemd {
-VectorClass_flat * ParticleSystemClass_32::QueryInterface(char a2)
+VectorClass_flat * ParticleSystemClass_32::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -769,13 +769,13 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(char a2)
   *Block = &vt_VectorClass_TerrainClass; /*0x4efdf6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efe00*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efe08*/
+    RA2_OPDEL(v3); /*0x4efe08*/
     *(Block + 1) = 0; /*0x4efe10*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efe1b*/
   *(Block + 2) = 0; /*0x4efe21*/
-  if ( (a2 & 1) != 0 ) /*0x4efe28*/
-    __3_YAXPAX_Z(Block); /*0x4efe2b*/
+  if ( (Block & 1) != 0 ) /*0x4efe28*/
+    RA2_OPDEL(Block); /*0x4efe2b*/
   return (VectorClass *)Block; /*0x4efe35*/
 
 }
@@ -783,7 +783,7 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(char a2)
 
 // 0x4EFE40
 namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(char a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -792,13 +792,13 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
   *Block = &vt_VectorClass_TerrainClass; /*0x4efe46*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efe50*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efe58*/
+    RA2_OPDEL(v3); /*0x4efe58*/
     *(Block + 1) = 0; /*0x4efe60*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4efe6b*/
   *(Block + 2) = 0; /*0x4efe71*/
-  if ( (a2 & 1) != 0 ) /*0x4efe78*/
-    __3_YAXPAX_Z(Block); /*0x4efe7b*/
+  if ( (Block & 1) != 0 ) /*0x4efe78*/
+    RA2_OPDEL(Block); /*0x4efe7b*/
   return (DynamicVector *)Block; /*0x4efe85*/
 
 }
@@ -806,7 +806,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
 
 // 0x4EFEE0
 namespace gamemd {
-DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___(char a2)
+DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -815,13 +815,13 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___
   *Block = &vt_VectorClass_AircraftClass; /*0x4efee6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4efef0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4efef8*/
+    RA2_OPDEL(v3); /*0x4efef8*/
     *(Block + 1) = 0; /*0x4eff00*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4eff0b*/
   *(Block + 2) = 0; /*0x4eff11*/
-  if ( (a2 & 1) != 0 ) /*0x4eff18*/
-    __3_YAXPAX_Z(Block); /*0x4eff1b*/
+  if ( (Block & 1) != 0 ) /*0x4eff18*/
+    RA2_OPDEL(Block); /*0x4eff1b*/
   return (DynamicVector *)Block; /*0x4eff25*/
 
 }

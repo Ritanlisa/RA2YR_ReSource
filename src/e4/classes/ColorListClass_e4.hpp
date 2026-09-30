@@ -31,11 +31,11 @@ struct ColorListClass {
     unsigned int u32_38;
     unsigned int u32_44;
 // --- flat members (END) ---
-    ColorListClass * QueryInterface(char a2);
+    ColorListClass * QueryInterface(char * Block, char a2);
     int Clear(unsigned int a2);
     int GetColor(int a2);
     int SetColor();
-    void RemoveColor(wchar_t * String2);
+    void RemoveColor(void * String2);
 };
 
 } // namespace gamemd

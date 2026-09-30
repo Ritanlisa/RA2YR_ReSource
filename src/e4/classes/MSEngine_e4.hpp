@@ -46,22 +46,22 @@ struct MSEngine {
     unsigned int SessionClass;
     unsigned int Timer;
 // --- flat members (END) ---
-    char Release(int a2,  char * a3);    // 0x5ACD30
-    char SetCapacity(int a2,  char * a3);    // 0x5ACED0
-    void Destructor(void *a1 = 0);  // 0x5CEE60
+    char Release(int a2, char * a3);  // 0x5ACD30
+    char SetCapacity(int a2, char * a3);  // 0x5ACED0
+    CampaignClass * Destructor();  // 0x5CEE60
     unsigned int * Construct(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x5D1AA0
     void Destruct(void *a1 = 0);  // 0x5D1B30
-    int ProcessEvents(MSVQAnim * aP1,  int a3);    // 0x5D1DF0
-    void ClearBuffer(void *a1 = 0);  // 0x5AC520
-    unsigned int * Shutdown(unsigned int * a2,  int a3);    // 0x5AC570
+    int ProcessEvents(void * aP1, int a3);  // 0x5D1DF0
+    void ClearBuffer();  // 0x5AC520
+    unsigned int * Shutdown(unsigned int * a2, int a3);  // 0x5AC570
     char AddRef(int a2);  // 0x5ACCC0
-    void ddtor(void *a1 = 0);  // 0x5ACE20
-    int Init(unsigned int * a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0, void *a6 = 0, void *a7 = 0);  // 0x5ACE50
+    void ddtor();  // 0x5ACE20
+    int Init(unsigned int * a2);  // 0x5ACE50
     int FindItem(unsigned int * a2);  // 0x5ACFC0
-    VectorClass_flat * QueryInterface(char a2);  // 0x5AD4D0
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x5AD4D0
     DynamicVector * Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x5AD520
     unsigned int PointerToIndex(int a2);  // 0x5AC550
     unsigned int Run(int a2);  // 0x5ACEB0
-    void DestroyData(void *a1 = 0);  // 0x5D5850
+    void DestroyData();  // 0x5D5850
 };
 } // namespace gamemd

@@ -15,22 +15,22 @@ namespace gamemd {
 unsigned int * Waypoint::FindByCell(IUnknown * aP1)
 {
 
-  signed int v2; // esi
+  char * v2;
   char *i; // ebx
-  int v4; // eax
+  void * v4;
   WaypointPathClass *v5; // eax
   unsigned int *v6; // ecx
   CampaignScore *v7; // edi
   unsigned int *Element; // esi
   signed int v10; // [esp+10h] [ebp-4h]
 
-  v2 = 0; /*0x5023b8*/
-  v10 = 0; /*0x5023bb*/
+  v2 = (int)((char *)(0));
+  v10 = (char *)(0);
   for ( i = (unsigned char *)this + 528; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
     {
-      v4 = __2_YAPAXI_Z(0x40u); /*0x5023cc*/
+      v4 = (void *)((unsigned int)(RA2_OPNEW(0x40u)));
       if ( v4 ) /*0x5023d6*/
         v5 = (WaypointPathClass *)WaypointPathClass::Construct(v4, v2); /*0x5023db*/
       else
@@ -49,8 +49,8 @@ LABEL_12:
   while ( 1 ) /*0x5023f7*/
   {
     Element = (unsigned int *)Array::GetElement(v6, v7); /*0x5023f7*/
-    if ( (unsigned __int16)(*Element / 256) == LOWORD(aP1->field_0) /*0x502422*/
-      && (unsigned __int16)(Element[1] / 256) == HIWORD(aP1->field_0) )
+    if ( (uint16_t)(*Element / 256) == IDA_LOWORD(aP1->field_0) /*0x502422*/
+      && (uint16_t)(Element[1] / 256) == IDA_HIWORD(aP1->field_0) )
     {
       return Element; /*0x502441*/
     }
@@ -70,7 +70,7 @@ namespace gamemd {
 void * Waypoint::InitInvalid()
 {
 
-  *this = -1; /*0x53ecb4*/
+  *(unsigned int *)this = -1; /*0x53ecb4*/
   *((unsigned char *)this + 1) = -1; /*0x53ecb6*/
   *((unsigned char *)this + 2) = -1; /*0x53ecb9*/
   *((unsigned char *)this + 3) = -1; /*0x53ecbc*/
@@ -89,19 +89,19 @@ namespace gamemd {
 int Waypoint::FindCell(unsigned int * a2)
 {
 
-  int v3; // ecx
+  int * v3;
   unsigned int *i; // edi
   int v6; // [esp+10h] [ebp-8h]
   int *v7; // [esp+14h] [ebp-4h]
 
-  v3 = 0; /*0x763a59*/
-  v7 = this; /*0x763a5b*/
+  v3 = (int *)(0);
+  v7 = (int *)(this);
   v6 = *((char *)this + 14); /*0x763a64*/
   if ( v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
   for ( i = (unsigned int *)*((char *)this + 11); /*0x763a6e*/
-        (unsigned __int16)(*i / 256) != (unsigned __int16)(*a2 / 256)
-     || (unsigned __int16)(i[1] / 256) != (unsigned __int16)(a2[1] / 256);
+        (uint16_t)(*i / 256) != (uint16_t)(*a2 / 256)
+     || (uint16_t)(i[1] / 256) != (uint16_t)(a2[1] / 256);
         i += 3 )
   {
     if ( ++v3 >= v6 ) /*0x763ac5*/
@@ -119,8 +119,8 @@ CHAR * Waypoint::To_String(CCINIClass * aP0)
 
   if ( aP0 == (CCINIClass *)-1 ) /*0x763613*/
   {
-    byte_B72654 = 0; /*0x763615*/
-    return &byte_B72654; /*0x76361c*/
+    byte_B72654 = (unsigned char)((CHAR *)(0));
+    return (CHAR *)(&byte_B72654);
   }
   else
   {

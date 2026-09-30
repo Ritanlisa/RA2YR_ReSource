@@ -25,7 +25,7 @@ ConnectionClass::ConnectionClass() noexcept
 
 // IDA 0x48B410 — queueSendPacket: store outgoing packet for sequential delivery
 // 0x48b410
-int ConnectionClass::queueSendPacket(void* a1, void* a2, void* a3)
+int ConnectionClass::queueSendPacket(void* a1, void* a2, void* a3, void * a4, void * a5, void * a6)
 {
   int PlayerIndex; // eax
   int v8; // esi
@@ -110,7 +110,7 @@ int ConnectionClass::connect()
   return 1; /*0x48c5e9*/
 }
 // 0x48be60
-bool IPXConnClass::initConnection()
+bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
     unsigned int v10 = 0;  /* G37 hoist */
   CommBufferClass *v10; // eax
@@ -130,7 +130,7 @@ bool IPXConnClass::initConnection()
   return a1; /*0x48bec7*/
 }
 // 0x69bc20
-bool IPXConnClass::closeConnection()
+bool IPXConnClass::closeConnection(void * a1, void * a2)
 {
   int v2; // eax
   unsigned int *i; // esi
@@ -146,7 +146,7 @@ bool IPXConnClass::closeConnection()
   return *((unsigned short *)a1 + v2 + 6205); /*0x69bc48*/
 }
 // 0x53f5d0
-bool IPXConnClass::send()
+bool IPXConnClass::send(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   return (*(int (__stdcall **)(int, int, int, unsigned int, int, unsigned int))(((unsigned int)(this->PacketsSent0))))( /*0x53f5ec*/
            a2,
@@ -157,7 +157,7 @@ bool IPXConnClass::send()
            0);
 }
 // 0x53f650
-bool IPXConnClass::receive()
+bool IPXConnClass::receive(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   int v9; // edi
   int v10; // ebp

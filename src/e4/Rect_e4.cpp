@@ -9,7 +9,7 @@
 
 // 0x487F40
 namespace gamemd {
-void Rect::Union(const Rect& other)
+void Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
 
   int *v3; // edx
@@ -29,16 +29,16 @@ void Rect::Union(const Rect& other)
   v15 = v4; /*0x487f4c*/
   if ( v3[2] <= 0 || v3[3] <= 0 ) /*0x487f5b*/
   {
-    *v4 = other->field_0; /*0x488012*/
-    v4[1] = other->field_4; /*0x488017*/
-    v4[2] = other->field_8; /*0x48801d*/
-    v4[3] = other->field_C; /*0x488023*/
+    *v4 = aP0->field_0; /*0x488012*/
+    v4[1] = aP0->field_4; /*0x488017*/
+    v4[2] = aP0->field_8; /*0x48801d*/
+    v4[3] = aP0->field_C; /*0x488023*/
     return (BOOL)v4; /*0x488026*/
   }
   else
   {
-    lprcDst = (LPRECT)other->field_8; /*0x487f6a*/
-    if ( (int)lprcDst <= 0 || (v14 = other->field_C, v14 <= 0) ) /*0x487f79*/
+    lprcDst = (LPRECT)aP0->field_8; /*0x487f6a*/
+    if ( (int)lprcDst <= 0 || (v14 = aP0->field_C, v14 <= 0) ) /*0x487f79*/
     {
       *v5 = *v3; /*0x487ff0*/
       v5[1] = v3[1]; /*0x487ff5*/
@@ -49,16 +49,16 @@ void Rect::Union(const Rect& other)
     else
     {
       v7 = *v3; /*0x487f7b*/
-      v8 = other->field_0; /*0x487f7d*/
+      v8 = aP0->field_0; /*0x487f7d*/
       v9 = v3[1]; /*0x487f80*/
       v10 = v3[2]; /*0x487f84*/
       v11 = v3[3]; /*0x487f87*/
-      if ( v7 > other->field_0 ) /*0x487f8c*/
+      if ( v7 > aP0->field_0 ) /*0x487f8c*/
       {
         v10 += v7 - v8; /*0x487f90*/
-        v7 = other->field_0; /*0x487f92*/
+        v7 = aP0->field_0; /*0x487f92*/
       }
-      v12 = other->field_4; /*0x487f94*/
+      v12 = aP0->field_4; /*0x487f94*/
       if ( v9 > v12 ) /*0x487f9d*/
       {
         v11 += v9 - v12; /*0x487fa1*/
@@ -80,27 +80,27 @@ void Rect::Union(const Rect& other)
 } // namespace gamemd
 // 0x42E410
 namespace gamemd {
-void Rect::Set(const Rect& other)
+void Rect::Set( IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
 {
 
-  *other = aP1; /*0x42e41a*/
-  *(other + 1) = aP2; /*0x42e420*/
-  *(other + 2) = aP3; /*0x42e427*/
-  *(other + 3) = aP4; /*0x42e42a*/
-  return (IUnknown *)other; /*0x42e42d*/
+  *this = aP1; /*0x42e41a*/
+  *(this + 1) = aP2; /*0x42e420*/
+  *(this + 2) = aP3; /*0x42e427*/
+  *(this + 3) = aP4; /*0x42e42a*/
+  return (IUnknown *)this; /*0x42e42d*/
 
 }
 } // namespace gamemd
 // 0x45A130
 namespace gamemd {
-void Rect::Construct(const Rect& other)
+void Rect::Construct( IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
 {
 
-  *other = aP1->field_0; /*0x45a138*/
-  *(other + 1) = aP1->field_4; /*0x45a141*/
-  *(other + 2) = aP2; /*0x45a148*/
-  *(other + 3) = aP3; /*0x45a14b*/
-  return (AbstractClass *)other; /*0x45a14e*/
+  *this = aP1->field_0; /*0x45a138*/
+  *(this + 1) = aP1->field_4; /*0x45a141*/
+  *(this + 2) = aP2; /*0x45a148*/
+  *(this + 3) = aP3; /*0x45a14b*/
+  return (AbstractClass *)this; /*0x45a14e*/
 
 }
 } // namespace gamemd

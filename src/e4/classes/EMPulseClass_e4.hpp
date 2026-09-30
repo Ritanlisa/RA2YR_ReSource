@@ -21,7 +21,7 @@ struct EMPulseClass {
     bool q01D;  // 0x1D
     unsigned int IterateCellsInRadius;
 // --- flat members (END) ---
-    EMPulseClass * CopyTo(AbstractClass * a2, char a3);
+    EMPulseClass * CopyTo(void * a2, char a3);
     int StubReturn52();
     int StubReturn55();
 };

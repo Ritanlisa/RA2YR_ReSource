@@ -18,12 +18,12 @@ bool CopyProtection::CheckLauncher()
   int v0; // esi
   bool v1; // bl
 
-  Debug::Log(); /*0x49f5c8*/
+  this->Debug::Log(); /*0x49f5c8*/
   v0 = ((int (*)(unsigned int, unsigned int, char *))CreateMutexA)(0, 0, Name); /*0x49f5df*/
   v1 = ((int (*)(void))GetLastError)() == 183; /*0x49f5ec*/
   if ( v0 ) /*0x49f5f5*/
     ((void (*)(int))CloseHandle)(v0); /*0x49f5f8*/
-  Debug::Log(); /*0x49f60d*/
+  this->Debug::Log(); /*0x49f60d*/
   return v1; /*0x49f617*/
 
 }
@@ -38,7 +38,7 @@ char CopyProtection::NotifyLauncher()
   unsigned int v2; // esi
   unsigned int Msg[7]; // [esp+10h] [ebp-1Ch] BYREF
 
-  Debug::Log(); /*0x49f62c*/
+  this->Debug::Log(); /*0x49f62c*/
   ((void (*)(unsigned int *, unsigned int, int, int, unsigned int))PeekMessageA)(Msg, 0, 1024, 1024, 0); /*0x49f647*/
   v0 = ((int (*)(void))timeGetTime)() + 60000; /*0x49f657*/
   if ( ((int (*)(void))timeGetTime)() < v0 ) /*0x49f661*/
@@ -54,8 +54,8 @@ char CopyProtection::NotifyLauncher()
     }
     ((void (*)(int))SetEvent)(v1); /*0x49f690*/
     ((void (*)(int))CloseHandle)(v1); /*0x49f697*/
-    Debug::Log(); /*0x49f6a2*/
-    Debug::Log(); /*0x49f6ac*/
+    this->Debug::Log(); /*0x49f6a2*/
+    this->Debug::Log(); /*0x49f6ac*/
     v2 = ((int (*)(void))timeGetTime)() + 10000; /*0x49f6b8*/
     if ( ((int (*)(void))timeGetTime)() <= v2 ) /*0x49f6c2*/
     {
@@ -66,19 +66,19 @@ char CopyProtection::NotifyLauncher()
         if ( ((int (*)(void))timeGetTime)() > v2 ) /*0x49f6f0*/
           goto LABEL_9; /*0x49f6f0*/
       }
-      MEMORY[0x87F7E8][32733] = ((int (*)(unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int))MapViewOfFileEx)( /*0x49f723*/
+      g_abs_87F7E8[32733] = ((int (*)(unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int))MapViewOfFileEx)( /*0x49f723*/
                                   Msg[3],
                                   983071,
                                   0,
                                   0,
                                   0,
                                   0);
-      if ( MEMORY[0x87F7E8][32733] ) /*0x49f728*/
+      if ( g_abs_87F7E8[32733] ) /*0x49f728*/
         return 1; /*0x49f72d*/
     }
   }
 LABEL_9:
-  Debug::Log(); /*0x49f6f2*/
+  this->Debug::Log(); /*0x49f6f2*/
   return 0; /*0x49f701*/
 
 }

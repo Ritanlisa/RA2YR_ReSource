@@ -22,6 +22,7 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/GenericNode_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x4CD600
 namespace gamemd {
@@ -30,7 +31,7 @@ int DamageArea::ApplyScatter()
 
   int v2; // edi
   unsigned int *v3; // eax
-  int v4; // edi
+  char * v4;
   int v5; // eax
   int v6; // ecx
   int v7; // ecx
@@ -123,7 +124,7 @@ int DamageArea::ApplyScatter()
   double v95; // st7
   char v96; // c0
   double v97; // st7
-  __int64 v98; // [esp+30h] [ebp-70h]
+  int64_t v98; // [esp+30h] [ebp-70h]
   char v99; // [esp+4Bh] [ebp-55h]
   int v100; // [esp+4Ch] [ebp-54h]
   double v101; // [esp+50h] [ebp-50h] BYREF
@@ -144,15 +145,15 @@ int DamageArea::ApplyScatter()
                     &v106);
   v3 = (unsigned int *)(*((unsigned int *)this + 3) + 1376);
   v103 = v2;
-  if ( v2 != *v3 && (*(unsigned __int8 (**)(int))(*((unsigned int *)this + 1) + 128))((char *)this + 4) )
-    Coord::ToGridIndex((char *)MEMORY[0x887888], *((unsigned int *)this + 3), *(unsigned int *)(*((unsigned int *)this + 3) + 1376), v2);
+  if ( v2 != *v3 && (*(uint8_t (**)(int))(*((unsigned int *)this + 1) + 128))((char *)this + 4) )
+    Coord::ToGridIndex((char *)g_abs_887888, *((unsigned int *)this + 3), *(unsigned int *)(*((unsigned int *)this + 3) + 1376), v2);
   if ( (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 388))(*((unsigned int *)this + 3)) == 7
     && *((unsigned char *)this + 92) )
   {
     *((unsigned char *)this + 92) = 0;
   }
-  v4 = (char *)this + 4;
-  if ( (*(unsigned __int8 (**)(int))(*((unsigned int *)this + 1) + 96))((char *)this + 4)
+  v4 = (int)((char *)this + 4);
+  if ( (*(uint8_t (**)(int))(*((unsigned int *)this + 1) + 96))((char *)this + 4)
     && *(unsigned int *)(*((unsigned int *)this + 3) + 108)
     || !(*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 456))(*((unsigned int *)this + 3)) )
   {
@@ -182,29 +183,29 @@ LABEL_34:
     v108 = *(double *)(v24 + 156);
     v109 = *(unsigned int *)(v24 + 164);
     v25 = *ProgressTimer::GetValue((unsigned short *)(v24 + 904), &v106);
-    LODWORD(v101) = (*(int (**)(int))(*(unsigned int *)v4 + 132))((char *)this + 4);
-    if ( SLODWORD(v101) > 0 )
+    IDA_LODWORD(v101) = (*(int (**)(int))(*(unsigned int *)v4 + 132))((char *)this + 4);
+    if ( IDA_SLODWORD(v101) > 0 )
     {
       v26 = v109;
-      v104 = (double)((__int16)v25 - 0x3FFF) * -0.00009587672516830327;
-      v27 = HIDWORD(v104);
-      v28 = LODWORD(v104);
-      v102 = (double)SHIDWORD(v108);
-      v101 = (double)SLODWORD(v101);
+      v104 = (double)((int16_t)v25 - 0x3FFF) * -0.00009587672516830327;
+      v27 = IDA_HIDWORD(v104);
+      v28 = IDA_LODWORD(v104);
+      v102 = (double)IDA_SHIDWORD(v108);
+      v101 = (double)IDA_SLODWORD(v101);
       v29 = Math::SinCos(v104);
-      LODWORD(v102) = Math::RoundToInt(v102 - v29 * v101);
+      IDA_LODWORD(v102) = Math::RoundToInt(v102 - v29 * v101);
       v30 = Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v27, v28)));
-      v31 = Math::RoundToInt(v30 * v101 + (double)SLODWORD(v108));
-      Coord::Subtract(&v104, v31, SLODWORD(v102), v26);
+      v31 = Math::RoundToInt(v30 * v101 + (double)IDA_SLODWORD(v108));
+      Coord::Subtract(&v104, v31, IDA_SLODWORD(v102), v26);
       v109 = v105;
       v108 = v104;
-      LODWORD(v102) = *(unsigned int *)CellStruct::Set(&v104, SLODWORD(v104) / 256, SHIDWORD(v104) / 256);
-      LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102);
+      IDA_LODWORD(v102) = *(unsigned int *)CellStruct::Set(&v104, IDA_SLODWORD(v104) / 256, IDA_SHIDWORD(v104) / 256);
+      LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v102);
     }
-    LOWORD(v102) = SLODWORD(v108) / 256;
-    WORD1(v102) = SHIDWORD(v108) / 256;
-    if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)
-      || !(*(unsigned __int8 (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 1244))(*((unsigned int *)this + 3)) )
+    IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+    IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
+    if ( LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v102)
+      || !(*(uint8_t (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 1244))(*((unsigned int *)this + 3)) )
     {
       goto LABEL_50;
     }
@@ -216,39 +217,39 @@ LABEL_34:
       if ( *(unsigned char *)(*(unsigned int *)(v34 + 1732) + 3595) )
         goto LABEL_50;
     }
-    LOWORD(v102) = SLODWORD(v108) / 256;
-    WORD1(v102) = SHIDWORD(v108) / 256;
-    LODWORD(v101) = LODWORD(v102);
-    v35 = (__int16)*(unsigned int *)DamageArea::CalcScatterOffset(&v106, &v101) >= MEMORY[0x87F914] / 2
-        ? LODWORD(v108) - 128
-        : LODWORD(v108) + 128;
-    LODWORD(v108) = v35;
-    LOWORD(v102) = v35 / 256;
-    WORD1(v102) = SHIDWORD(v108) / 256;
-    if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)
+    IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+    IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
+    IDA_LODWORD(v101) = IDA_LODWORD(v102);
+    v35 = (int16_t)*(unsigned int *)DamageArea::CalcScatterOffset(&v106, &v101) >= g_abs_87F914 / 2
+        ? IDA_LODWORD(v108) - 128
+        : IDA_LODWORD(v108) + 128;
+    IDA_LODWORD(v108) = v35;
+    IDA_LOWORD(v102) = v35 / 256;
+    IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
+    if ( LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v102)
       || (v36 = RandomCoordScatter(&v110, (int *)&v108, 64, 0),
           v108 = *(double *)v36,
           v109 = v36[2],
-          LOWORD(v102) = SLODWORD(v108) / 256,
-          WORD1(v102) = SHIDWORD(v108) / 256,
-          LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v102)) )
+          IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256,
+          IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256,
+          LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v102)) )
     {
 LABEL_50:
       (*(void (**)(unsigned int, double *))(**(unsigned int **)((char *)this + 12) + 436))(*((unsigned int *)this + 3), &v108);
     }
     v37 = *((unsigned int *)this + 3);
-    LODWORD(v101) = 0;
+    IDA_LODWORD(v101) = 0;
     v38 = (*(int (**)(int))(*(unsigned int *)v37 + 456))(v37);
     v39 = *((unsigned int *)this + 3);
-    if ( !*(unsigned char *)(v39 + 140) && v38 >= MEMORY[0x8B3CAC] )
+    if ( !*(unsigned char *)(v39 + 140) && v38 >= g_abs_8B3CAC )
     {
       v40 = v39 + 156;
       v106 = *(double *)v40;
       v107 = *(unsigned int *)(v40 + 8);
-      if ( (*((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &v106) + 80) & 0x100) != 0 )
+      if ( (*((unsigned int *)Coord::To_Cell(&g_abs_87F7E8, &v106) + 80) & 0x100) != 0 )
       {
-        v38 -= MEMORY[0x8B3CAC];
-        LODWORD(v101) = MEMORY[0x8B3CAC];
+        v38 -= g_abs_8B3CAC;
+        IDA_LODWORD(v101) = g_abs_8B3CAC;
       }
     }
     v41 = *((unsigned int *)this + 7);
@@ -256,15 +257,15 @@ LABEL_50:
     v112 = *((unsigned int *)this + 9);
     v43 = (unsigned int *)(*((unsigned int *)this + 3) + 156);
     v44 = *(unsigned int *)(*((unsigned int *)this + 3) + 160);
-    LODWORD(v106) = v41 - *v43;
+    IDA_LODWORD(v106) = v41 - *v43;
     v45 = v43[2];
-    HIDWORD(v106) = v42 - v44;
+    IDA_HIDWORD(v106) = v42 - v44;
     v112 = v45;
-    v46 = Math::Sqrt((double)(v42 - v44) * (double)(v42 - v44) + (double)SLODWORD(v106) * (double)SLODWORD(v106));
-    LODWORD(v102) = Math::RoundToInt(v46);
+    v46 = Math::Sqrt((double)(v42 - v44) * (double)(v42 - v44) + (double)IDA_SLODWORD(v106) * (double)IDA_SLODWORD(v106));
+    IDA_LODWORD(v102) = Math::RoundToInt(v46);
     if ( v38 >= *((unsigned int *)this + 14) || (v47 = *((unsigned int *)this + 3), *(int *)(v47 + 108) <= 0) )
     {
-      v54 = LODWORD(v101);
+      v54 = IDA_LODWORD(v101);
     }
     else
     {
@@ -275,8 +276,8 @@ LABEL_50:
         v49 = (**(int (***)(int, void *, double *))v47)(v47, &unk_822410, &v104);
         if ( v49 >= 0 )
         {
-          LODWORD(v106) = LODWORD(v104);
-          v50 = LODWORD(v104);
+          IDA_LODWORD(v106) = IDA_LODWORD(v104);
+          v50 = IDA_LODWORD(v104);
         }
         else
         {
@@ -302,10 +303,10 @@ LABEL_50:
         if ( v53 < v52 )
           v52 = v53;
       }
-      v54 = LODWORD(v101);
+      v54 = IDA_LODWORD(v101);
       (*(void (**)(unsigned int, int))(**(unsigned int **)((char *)this + 12) + 460))(
         *((unsigned int *)this + 3),
-        LODWORD(v101) + v38 + v52);
+        IDA_LODWORD(v101) + v38 + v52);
       *(unsigned char *)(*((unsigned int *)this + 3) + 140) = 0;
       if ( v100 )
         (*(void (**)(int))(*(unsigned int *)v100 + 8))(v100);
@@ -318,20 +319,20 @@ LABEL_114:
       if ( v73[27] > 0
         && !*((unsigned char *)this + 81)
         && (!*((unsigned char *)this + 80) || (*(int (**)(int *))(*v73 + 456))(v73) >= *((unsigned int *)this + 14) / 2)
-        && (*((unsigned int *)this + 7) != MEMORY[0x8B3C78]
-         || *((unsigned int *)this + 8) != MEMORY[0x8B3C7C]
-         || *((unsigned int *)this + 9) != MEMORY[0x8B3C80]) )
+        && (*((unsigned int *)this + 7) != g_abs_8B3C78
+         || *((unsigned int *)this + 8) != g_abs_8B3C7C
+         || *((unsigned int *)this + 9) != g_abs_8B3C80) )
       {
         v74 = *(int (****)(unsigned int, void *, double *))((char *)this + 12);
         v75 = 0;
         if ( v74 )
         {
           v76 = (**v74)(v74, &unk_822410, &v106);
-          v75 = v76 < 0 ? 0 : LODWORD(v106);
+          v75 = v76 < 0 ? 0 : IDA_LODWORD(v106);
           if ( v76 < 0 && v76 != -2147467262 )
             WinAPI::Wrapper(v76);
         }
-        if ( (unsigned __int8)DamageArea::CheckOccupancyEligibility(this) )
+        if ( (uint8_t)DamageArea::CheckOccupancyEligibility(this) )
         {
           if ( *(unsigned char *)((*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 132))(*((unsigned int *)this + 3)) + 3367) )
           {
@@ -348,14 +349,14 @@ LABEL_114:
           }
           else
           {
-            v77 = (double)SLODWORD(v102);
+            v77 = (double)IDA_SLODWORD(v102);
             v78 = v77 / (double)*(int *)(v103 + 760);
             if ( v78 > 1.0 )
               v78 = 1.0;
             *(double *)((char *)this + 64) = v78;
             if ( v78 < 0.1 )
             {
-              if ( SLODWORD(v102) <= 85 )
+              if ( IDA_SLODWORD(v102) <= 85 )
               {
                 v79 = *(double *)((char *)this + 72) * 0.5;
                 *((unsigned int *)this + 16) = 0;
@@ -370,7 +371,7 @@ LABEL_114:
             }
             if ( v77 < *(double *)((char *)this + 72) )
               *(double *)((char *)this + 72) = v77;
-            if ( *(double *)((char *)this + 64) == 0.0 && *(double *)((char *)this + 72) == 0.0 && SLODWORD(v102) > 0 )
+            if ( *(double *)((char *)this + 64) == 0.0 && *(double *)((char *)this + 72) == 0.0 && IDA_SLODWORD(v102) > 0 )
             {
               *((unsigned int *)this + 18) = -1717986918;
               *((unsigned int *)this + 19) = 1068079513;
@@ -389,12 +390,12 @@ LABEL_114:
       {
         if ( *(int *)(*((unsigned int *)this + 3) + 108) > 0 && *(double *)((char *)this + 72) > 0.0 && !*((unsigned char *)this + 80) )
         {
-          LODWORD(v106) = *(unsigned int *)(v103 + 760);
-          if ( SLODWORD(v102) < SLODWORD(v106) )
+          IDA_LODWORD(v106) = *(unsigned int *)(v103 + 760);
+          if ( IDA_SLODWORD(v102) < IDA_SLODWORD(v106) )
           {
             v80 = *(int **)((char *)this + 12);
             v81 = *v80;
-            v106 = 1.0 - ((double)SLODWORD(v102) - (double)SLODWORD(v106) * 0.6) / ((double)SLODWORD(v106) * 0.4);
+            v106 = 1.0 - ((double)IDA_SLODWORD(v102) - (double)IDA_SLODWORD(v106) * 0.6) / ((double)IDA_SLODWORD(v106) * 0.4);
             v82 = *(double *)((*(int (**)(int *))(v81 + 132))(v80) + 944);
             v83 = *v80;
             v104 = v82;
@@ -515,9 +516,9 @@ LABEL_105:
         (*(void (**)(unsigned int, int))(**(unsigned int **)((char *)this + 12) + 460))(*((unsigned int *)this + 3), v54 + v61);
         v62 = *(int **)((char *)this + 12);
         if ( v62[27] > 0
-          && (*((unsigned int *)this + 7) != MEMORY[0x8B3C78]
-           || *((unsigned int *)this + 8) != MEMORY[0x8B3C7C]
-           || *((unsigned int *)this + 9) != MEMORY[0x8B3C80])
+          && (*((unsigned int *)this + 7) != g_abs_8B3C78
+           || *((unsigned int *)this + 8) != g_abs_8B3C7C
+           || *((unsigned int *)this + 9) != g_abs_8B3C80)
           && ((*(int (**)(int *))(*v62 + 388))(v62) != 7
            || (v63 = *(unsigned int *)(*((unsigned int *)this + 3) + 1444)) == 0
            || (*(int (**)(int))(*(unsigned int *)v63 + 44))(v63) != 6
@@ -525,23 +526,23 @@ LABEL_105:
         {
           v64 = *((unsigned int *)this + 8);
           v65 = (unsigned int *)(*((unsigned int *)this + 3) + 156);
-          v110 = ((__int16)(*((unsigned int *)this + 7) / 256) << 8) + 128;
-          LODWORD(v106) = *v65;
-          v111 = ((__int16)(v64 / 256) << 8) + 128;
-          HIDWORD(v106) = v65[1];
-          v101 = (double)SLODWORD(v106);
+          v110 = ((int16_t)(*((unsigned int *)this + 7) / 256) << 8) + 128;
+          IDA_LODWORD(v106) = *v65;
+          v111 = ((int16_t)(v64 / 256) << 8) + 128;
+          IDA_HIDWORD(v106) = v65[1];
+          v101 = (double)IDA_SLODWORD(v106);
           v66 = v65[2];
-          v104 = (double)SHIDWORD(v106);
+          v104 = (double)IDA_SHIDWORD(v106);
           v67 = Math::CalcAngle(v104 - (double)v111, (double)v110 - v101);
-          v106 = (double)((__int16)Math::RoundToInt((v67 - 1.570796326794897) * -10430.06004058427) - 0x3FFF)
+          v106 = (double)((int16_t)Math::RoundToInt((v67 - 1.570796326794897) * -10430.06004058427) - 0x3FFF)
                * -0.00009587672516830327;
-          v68 = HIDWORD(v106);
-          v69 = LODWORD(v106);
+          v68 = IDA_HIDWORD(v106);
+          v69 = IDA_LODWORD(v106);
           v70 = Math::SinCos(v106);
-          LODWORD(v106) = Math::RoundToInt(v104 - v70 * 5.0);
+          IDA_LODWORD(v106) = Math::RoundToInt(v104 - v70 * 5.0);
           v71 = Math::ArcTan2(COERCE_DOUBLE(__PAIR64__(v68, v69)));
           v110 = Math::RoundToInt(v71 * 5.0 + v101);
-          v111 = LODWORD(v106);
+          v111 = IDA_LODWORD(v106);
           v72 = *((unsigned int *)this + 3);
           v112 = v66;
           (*(void (**)(int, int *))(*(unsigned int *)v72 + 436))(v72, &v110);
@@ -574,11 +575,11 @@ LABEL_105:
   v104 = v108;
   v109 = v105 - v9;
   Cell::GetGroundHeight(&v108);
-  Coord::To_Cell(&MEMORY[0x87F7E8], &v108);
-  LOWORD(v102) = SLODWORD(v108) / 256;
-  WORD1(v102) = SHIDWORD(v108) / 256;
-  v103 = LODWORD(v102);
-  if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&v103) )
+  Coord::To_Cell(&g_abs_87F7E8, &v108);
+  IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+  IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
+  v103 = IDA_LODWORD(v102);
+  if ( LayerClass::CoordinatesLegal(&g_abs_87F7E8, (int16_t *)&v103) )
   {
     RemoveTarget(*((unsigned int *)this + 3));
     (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)((char *)this + 12) + 292))(*((unsigned int *)this + 3), 0);
@@ -588,31 +589,31 @@ LABEL_105:
   }
   if ( (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 456))(*((unsigned int *)this + 3)) > 0 )
     goto LABEL_34;
-  GadgetGrid::RemoveItem(MEMORY[0x887888], *((unsigned int *)this + 3));
+  GadgetGrid::RemoveItem(g_abs_887888, *((unsigned int *)this + 3));
   (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)((char *)this + 12) + 460))(*((unsigned int *)this + 3), 0);
   v10 = *(int **)((char *)this + 12);
   v11 = v10[27];
   if ( !v11 )
   {
-    LOWORD(v102) = SLODWORD(v108) / 256;
-    WORD1(v102) = SHIDWORD(v108) / 256;
-    v103 = LODWORD(v102);
+    IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+    IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
+    v103 = IDA_LODWORD(v102);
     TechnoClass::ComputeCombatDamage(v10, 0);
-    v12 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v103);
+    v12 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v103);
     v13 = **(unsigned int **)((char *)this + 12);
     if ( v12[59] == 2 )
     {
       v14 = *(unsigned int *)((*(int (**)(void))(v13 + 132))() + 1340);
       if ( v14 != -1 )
         goto LABEL_23;
-      v14 = *((unsigned int *)MEMORY[0x8871E0] + 128);
+      v14 = *((unsigned int *)g_abs_8871E0 + 128);
     }
     else
     {
       v14 = *(unsigned int *)((*(int (**)(void))(v13 + 132))() + 1344);
       if ( v14 != -1 )
         goto LABEL_23;
-      v14 = *((unsigned int *)MEMORY[0x8871E0] + 129);
+      v14 = *((unsigned int *)g_abs_8871E0 + 129);
     }
     if ( v14 == -1 )
       return (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 248))(*((unsigned int *)this + 3));
@@ -626,25 +627,25 @@ LABEL_23:
   (*(void (**)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(*v10 + 364))(
     v10 + 27,
     0,
-    *((unsigned int *)MEMORY[0x8871E0] + 1002),
+    *((unsigned int *)g_abs_8871E0 + 1002),
     0,
     1,
     1,
     0);
-  LOWORD(v102) = SLODWORD(v108) / 256;
-  WORD1(v102) = SHIDWORD(v108) / 256;
-  LODWORD(v101) = LODWORD(v102);
-  v17 = (void **)__2_YAPAXI_Z(0x1C8u);
+  IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+  IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
+  IDA_LODWORD(v101) = IDA_LODWORD(v102);
+  v17 = (void **)RA2_OPNEW(0x1C8u);
   if ( v17 )
   {
-    v18 = *((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v101) + 59);
+    v18 = *((unsigned int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v101) + 59);
     v98 = v109;
-    LODWORD(v98) = Return::HRESULT_Fail(SLODWORD(v108), SHIDWORD(v108), v109);
-    VersusMultiplier = (void *)GetWarheadVersusMultiplier(v11, *((unsigned int *)MEMORY[0x8871E0] + 1002), v18, &v104);
+    IDA_LODWORD(v98) = Return::HRESULT_Fail(IDA_SLODWORD(v108), IDA_SHIDWORD(v108), v109);
+    VersusMultiplier = (void *)GetWarheadVersusMultiplier(v11, *((unsigned int *)g_abs_8871E0 + 1002), v18, &v104);
     AnimClass::ctor(v17, VersusMultiplier, (int *)&v108, 0, 1, (void *)0x2600, (void *)v98, SBYTE4(v98));
   }
-  CreateSmokeEffectAt(v11, *((unsigned int *)MEMORY[0x8871E0] + 1002), SLODWORD(v108), SHIDWORD(v108), v109, 0, 0);
-  return PlaySoundEffectAt(&v108, v11, 0, *((unsigned int *)MEMORY[0x8871E0] + 1002), 1, 0);
+  CreateSmokeEffectAt(v11, *((unsigned int *)g_abs_8871E0 + 1002), IDA_SLODWORD(v108), IDA_SHIDWORD(v108), v109, 0, 0);
+  return PlaySoundEffectAt(&v108, v11, 0, *((unsigned int *)g_abs_8871E0 + 1002), 1, 0);
 
 }
 } // namespace gamemd
@@ -731,17 +732,17 @@ LABEL_24:
 } // namespace gamemd
 // 0x565660
 namespace gamemd {
-unsigned int * DamageArea::CalcScatterOffset(unsigned int * v11, short * a3)
+unsigned int * DamageArea::CalcScatterOffset(unsigned int * a2, int16_t * a3)
 {
 
   int v3; // ebx
   int v4; // ebp
   int v5; // esi
-  __int16 v6; // di
+  int16_t v6; // di
   int v7; // eax
   int v8; // ecx
   int v9; // ecx
-  int v11; // [esp+20h] [ebp+8h]
+  int a2; // [esp+20h] [ebp+8h]
 
   v3 = *((unsigned int *)this + 61); /*0x565668*/
   v4 = *((unsigned int *)this + 63); /*0x56566f*/
@@ -753,10 +754,10 @@ unsigned int * DamageArea::CalcScatterOffset(unsigned int * v11, short * a3)
     v9 = v8 - v5 + 1; /*0x565691*/
   else
     v9 = v8 - v5; /*0x565694*/
-  LOWORD(v11) = v3 / 2 + (v9 >> 1) - v4; /*0x5656b1*/
-  HIWORD(v11) = v6 + v5 - v3 - v7; /*0x5656b6*/
-  *v11 = v11; /*0x5656c2*/
-  return v11; /*0x5656bf*/
+  IDA_LOWORD(a2) = v3 / 2 + (v9 >> 1) - v4; /*0x5656b1*/
+  IDA_HIWORD(a2) = v6 + v5 - v3 - v7; /*0x5656b6*/
+  *a2 = a2; /*0x5656c2*/
+  return a2; /*0x5656bf*/
 
 }
 } // namespace gamemd

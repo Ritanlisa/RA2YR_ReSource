@@ -222,17 +222,22 @@ struct WarheadTypeClass {
     unsigned int __pad_44;
     unsigned int __pad_FC;
     unsigned int __pad_104;
+    unsigned int __pad_10;
+    unsigned int __pad_4;
+    unsigned int field_0;
+    unsigned int field_2C;
+    unsigned int field_C;
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, unsigned int * a3);
     AbstractClass * * parseVerses();
-    CCINIClass * checkImmunity(TypeList_flat * aP1);
+    CCINIClass * checkImmunity(void * aP1);
     CampaignClass * * Destructor(char a2);
-    DynamicVector * calculateDamage(AbstractClass * aP1);
+    DynamicVector * calculateDamage(void * aP1);
     ParticleSystemTypeClass * * applyDamage();
     TypeList_flat * QueryInterface(char a2);
     WarheadTypeClass * parseAnimations(char a2);
     char AddRef(int a2);
-    int Construct(ObjectClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    void Construct(void * aP1);
     int FindOrCreate(void *a1 = 0);
     int GetDamage(int a2, int a3);
     int GetObjectSize();
@@ -243,7 +248,7 @@ struct WarheadTypeClass {
     int SaveToINI(int a2);
     unsigned int LoadTypeData(int a2);
     void * ReadParticleSystems(char a2);
-    void * loadWarheadINI(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3);
+    void * loadWarheadINI(void * aP1, unsigned char * a2, void * aP3);
     void * parseModifiers(char a2);
     void GetClassIdentifier();
     void* ProcessPower(int * a2, void *a1 = 0);

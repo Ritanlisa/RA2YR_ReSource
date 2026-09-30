@@ -20,7 +20,7 @@ struct ComPtr {
     unsigned int Release;
     unsigned int ReleaseSimple;
 // --- flat members (END) ---
-    int DestroyWrapper(int aP0, ObjectClass * aP1);
+    int DestroyWrapper(int aP0, void * aP1);
      double Constructor(...);  // C2597 interim stub
      double Dtor(...);  // C2597 interim stub
     static double Release_Alt(...);  // C2597 interim stub

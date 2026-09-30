@@ -14,20 +14,20 @@
 
 // 0x5BCC90
 namespace gamemd {
-void TextBuffer::Init(int32_t buffer)
+void TextBuffer::Init()
 {
 
-  int v1; // edi
+  unsigned int * v1;
   unsigned int *v2; // ebx
   unsigned char *v3; // edx
   unsigned int *v4; // eax
   int v5; // esi
 
-  v1 = 0; /*0x5bcc93*/
-  v2 = buffer + 2000; /*0x5bcc95*/
+  v1 = (int)((unsigned int *)(0));
+  v2 = (unsigned int *)(this + 2000);
   do /*0x5bccbe*/
   {
-    v3 = buffer + v1; /*0x5bcc9b*/
+    v3 = (unsigned char *)(this + v1);
     v4 = v2; /*0x5bcc9e*/
     v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/
@@ -43,8 +43,8 @@ void TextBuffer::Init(int32_t buffer)
     ++v2; /*0x5bccb8*/
   }
   while ( v1 < 25 ); /*0x5bccbe*/
-  *(buffer + 10036) = 1; /*0x5bccc8*/
-  return Text::DrawRepeated(buffer, 0, 0, 80, 25); /*0x5bccd4*/
+  *(this + 10036) = 1; /*0x5bccc8*/
+  return Text::DrawRepeated(this, 0, 0, 80, 25); /*0x5bccd4*/
 
 }
 } // namespace gamemd

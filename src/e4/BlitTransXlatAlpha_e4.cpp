@@ -22,16 +22,16 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
   result = a4; /*0x493930*/
   if ( a4 > 0 ) /*0x49393b*/
   {
-    v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493941*/
+    v11 = *(TacticalMap **)&g_abs_87F8E4; /*0x493941*/
     a5a = (unsigned short *)a4; /*0x493952*/
     do /*0x4939c4*/
     {
-      if ( argC < (unsigned __int16)*a5 && *a2 ) /*0x493967*/
+      if ( argC < (uint16_t)*a5 && *a2 ) /*0x493967*/
       {
         *a1 = 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*a1 >> 2)) /*0x493996*/
-            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a2) >> 2));
+            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a2) >> 2));
         *a5 = argC; /*0x493999*/
-        v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49399c*/
+        v11 = *(TacticalMap **)&g_abs_87F8E4; /*0x49399c*/
       }
       ++a1; /*0x4939a6*/
       ++a2; /*0x4939aa*/
@@ -63,17 +63,17 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
   if ( a4 > 0 ) /*0x493a6a*/
   {
     v12 = argC; /*0x493a76*/
-    v14 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493a80*/
+    v14 = *(TacticalMap **)&g_abs_87F8E4; /*0x493a80*/
     a5a = (unsigned short *)a4; /*0x493a86*/
     do /*0x493aee*/
     {
-      if ( v12 < (unsigned __int16)*a5 && *a2 ) /*0x493a97*/
+      if ( v12 < (uint16_t)*a5 && *a2 ) /*0x493a97*/
       {
         v12 = argC; /*0x493ac2*/
         *a1 = (*(unsigned short *)((unsigned int *)this + 2) & (*a1 >> 1)) /*0x493ac6*/
-            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a2) >> 1));
+            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a2) >> 1));
         *a5 = argC; /*0x493ac9*/
-        v14 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493acc*/
+        v14 = *(TacticalMap **)&g_abs_87F8E4; /*0x493acc*/
       }
       v15 = a5 + 1; /*0x493ad2*/
       ++a2; /*0x493ad8*/
@@ -103,16 +103,16 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
   result = a4; /*0x493b90*/
   if ( a4 > 0 ) /*0x493b9b*/
   {
-    v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493ba1*/
+    v11 = *(TacticalMap **)&g_abs_87F8E4; /*0x493ba1*/
     a5a = (unsigned short *)a4; /*0x493bb2*/
     do /*0x493c24*/
     {
-      if ( argC < (unsigned __int16)*a5 && *a2 ) /*0x493bc7*/
+      if ( argC < (uint16_t)*a5 && *a2 ) /*0x493bc7*/
       {
         *a1 = (*(unsigned short *)((unsigned int *)this + 2) & (*a1 >> 2)) /*0x493bf6*/
-            + 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a2) >> 2));
+            + 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a2) >> 2));
         *a5 = argC; /*0x493bf9*/
-        v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493bfc*/
+        v11 = *(TacticalMap **)&g_abs_87F8E4; /*0x493bfc*/
       }
       ++a1; /*0x493c06*/
       ++a2; /*0x493c0a*/
@@ -137,7 +137,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   int v11; // eax
   int result; // eax
   unsigned int *v14; // edi
-  unsigned __int8 v16; // bl
+  uint8_t v16; // bl
   int v17; // [esp+20h] [ebp+18h]
 
   v11 = (261 * (a8 <= 0 ? 0 : a8)) >> 11;
@@ -146,20 +146,20 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
   result = *((unsigned int *)this + 2) + (v11 << 9); /*0x493e25*/
   if ( a4 > 0 ) /*0x493e2d*/
   {
-    v14 = MEMORY[0x87E8A4]; /*0x493e35*/
+    v14 = g_abs_87E8A4; /*0x493e35*/
     v17 = a4; /*0x493e3b*/
     do /*0x493e8e*/
     {
       v16 = *a3++; /*0x493e43*/
       if ( v16 ) /*0x493e4c*/
       {
-        *a2 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * (v16 | *(unsigned __int16 *)(result + 2 * *a7))); /*0x493e6c*/
-        v14 = MEMORY[0x87E8A4]; /*0x493e6f*/
+        *a2 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * (v16 | *(uint16_t *)(result + 2 * *a7))); /*0x493e6c*/
+        v14 = g_abs_87E8A4; /*0x493e6f*/
       }
       ++a7; /*0x493e78*/
       ++a2; /*0x493e7b*/
       if ( (unsigned int)a7 >= v14[7] ) /*0x493e80*/
-        a7 = (unsigned __int16 *)((char *)a7 - v14[8]); /*0x493e82*/
+        a7 = (uint16_t *)((char *)a7 - v14[8]); /*0x493e82*/
       --v17; /*0x493e8a*/
     }
     while ( v17 ); /*0x493e8e*/
@@ -410,7 +410,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a1a9*/
   if ( (a2 & 1) != 0 ) /*0x49a1af*/
-    __3_YAXPAX_Z(this); /*0x49a1b2*/
+    RA2_OPDEL(this); /*0x49a1b2*/
   return this; /*0x49a1bc*/
 
 }
@@ -423,7 +423,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a1c9*/
   if ( (a2 & 1) != 0 ) /*0x49a1cf*/
-    __3_YAXPAX_Z(this); /*0x49a1d2*/
+    RA2_OPDEL(this); /*0x49a1d2*/
   return this; /*0x49a1dc*/
 
 }
@@ -436,7 +436,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a1e9*/
   if ( (a2 & 1) != 0 ) /*0x49a1ef*/
-    __3_YAXPAX_Z(this); /*0x49a1f2*/
+    RA2_OPDEL(this); /*0x49a1f2*/
   return this; /*0x49a1fc*/
 
 }
@@ -444,18 +444,18 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 
 // 0x49A240
 namespace gamemd {
-BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(char a2)
+BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 2); /*0x49a248*/
-  *Block = &vt_BlitTransXlatAlpha_unsigned_short; /*0x49a24b*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 2)));
+  *Block = (unsigned int)(&vt_BlitTransXlatAlpha_unsigned_short);
   FractalNoise::Release(v3); /*0x49a252*/
   *(Block + 2) = 0; /*0x49a25b*/
   *Block = &vt_Blitter; /*0x49a264*/
-  if ( (a2 & 1) != 0 ) /*0x49a26a*/
-    __3_YAXPAX_Z(Block); /*0x49a26d*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x49a26a*/
+    RA2_OPDEL(Block); /*0x49a26d*/
   return (BlitTransXlatAlpha_ushort *)Block; /*0x49a277*/
 
 }

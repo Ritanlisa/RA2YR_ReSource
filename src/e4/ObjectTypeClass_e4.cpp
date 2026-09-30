@@ -26,10 +26,11 @@
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
 
 // 0x46C790
 namespace gamemd {
-BulletTypeClass * ObjectTypeClass::FindOrCreate()
+BulletTypeClass * ObjectTypeClass::FindOrCreate(ObjectClass * Source)
 {
 
   int v2; // esi
@@ -41,7 +42,7 @@ BulletTypeClass * ObjectTypeClass::FindOrCreate()
   if ( (int)g_BulletTypeInitState <= 0 ) /*0x46c7c1*/
   {
 LABEL_6:
-    v3 = (unsigned char *)__2_YAPAXI_Z(0x2F8u); /*0x46c7e6*/
+    v3 = (unsigned char *)RA2_OPNEW(0x2F8u); /*0x46c7e6*/
     if ( v3 ) /*0x46c7f5*/
       return (BulletTypeClass *)BulletTypeClass::Construct(v3, Source); /*0x46c801*/
     return 0; /*0x46c7f5*/
@@ -91,7 +92,7 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
               this,
               (INIClass *)aP1,
               a2,
-              (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+              (INIClass *)&g_abs_87F8E4,
               (INIClass *)Destination,
               32) <= 0 )
     return a4; /*0x4749a4*/
@@ -124,7 +125,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   }
   else
   {
-    v4 = (char *)(*((unsigned int *)MEMORY[0xA8E334] + a4) + 36); /*0x474f65*/
+    v4 = (char *)(*((unsigned int *)g_abs_A8E334 + a4) + 36); /*0x474f65*/
   }
   INIClass::GetString(this, a2, a3, v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read(Destination); /*0x474f93*/
@@ -140,7 +141,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   int v4; // ecx
   unsigned int *v5; // eax
   int v6; // ecx
-  int v7; // eax
+  CoordStruct * v7;
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
 
@@ -232,13 +233,13 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   *((unsigned int *)this + 3) = &vt_ObjectTypeClass; /*0x5f7266*/
   if ( (char *)this + 36 != (char *)this + 504 ) /*0x5f726d*/
     qmemcpy((void *)((char *)this + 504), (const void *)((char *)this + 36), 0x19u); /*0x5f7274*/
-  if ( &MEMORY[0x87F8E4] == (MouseClass *)-42624 ) /*0x5f727e*/
+  if ( &g_abs_87F8E4 == (MouseClass *)-42624 ) /*0x5f727e*/
   {
     Destination[0] = 0; /*0x5f7280*/
   }
   else
   {
-    strncpy(Destination, &MEMORY[0x87F8E4].__pad_5568[20760], 0x18u); /*0x5f7292*/
+    strncpy(Destination, &g_abs_87F8E4, 0x18u); /*0x5f7292*/
     v10 = 0; /*0x5f729a*/
   }
   if ( Destination != (char *)((char *)this + 531) ) /*0x5f72aa*/
@@ -249,7 +250,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   if ( (int)*(&g_MatrixTransformState + 2438) < (int)*(&g_MatrixTransformState + 2436) /*0x5f72ee*/
     || (*((unsigned char *)&(&g_MatrixTransformState)[203] + 5) || !*(&g_MatrixTransformState + 2436))
     && (int)*(&g_MatrixTransformState + 2439) > 0
-    && ((unsigned __int8 (*)(CoordStruct **, char *, unsigned int))(*(&g_MatrixTransformState + 2434))->Z)(
+    && ((uint8_t (*)(CoordStruct **, char *, unsigned int))(*(&g_MatrixTransformState + 2434))->Z)(
          &g_MatrixTransformState + 2434,
          (char *)*(&g_MatrixTransformState + 2436) + (unsigned int)*(&g_MatrixTransformState + 2439),
          0) )
@@ -258,13 +259,13 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
     *(&g_MatrixTransformState + 2438) = (CoordStruct *)((char *)*(&g_MatrixTransformState + 2438) + 1); /*0x5f72fe*/
     *(&(*(&g_MatrixTransformState + 2435))->X + v7) = this; /*0x5f730a*/
   }
-  return this; /*0x5f730f*/
+  return (int)(this);
 
 }
 } // namespace gamemd
 // 0x5F7320
 namespace gamemd {
-BulletTypeClass * ObjectTypeClass::Construct()
+BulletTypeClass * ObjectTypeClass::Construct( ObjectTypeClass * aP1)
 {
 
   unsigned int *v3; // eax
@@ -339,42 +340,42 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   *((unsigned int *)this + 2) = &ObjectTypeClass::`vftable'; /*0x5f7418*/
   *((unsigned int *)this + 3) = &vt_ObjectTypeClass; /*0x5f741f*/
   v8 = this; /*0x5f7431*/
-  v2 = (*(int (**)(int *, int *))(MEMORY[0xAC1418] + 16))(&MEMORY[0xAC1418], &v8); /*0x5f7435*/
-  if ( v2 != -1 && v2 < MEMORY[0xAC1428] && v2 < --MEMORY[0xAC1428] ) /*0x5f7450*/
+  v2 = (*(int (**)(int *, int *))(g_abs_AC1418 + 16))(&g_abs_AC1418, &v8); /*0x5f7435*/
+  if ( v2 != -1 && v2 < g_abs_AC1428 && v2 < --g_abs_AC1428 ) /*0x5f7450*/
   {
     do /*0x5f7468*/
     {
       ++v2; /*0x5f7458*/
-      *((unsigned int *)MEMORY[0xAC141C] + v2 - 1) = *((unsigned int *)MEMORY[0xAC141C] + v2); /*0x5f745c*/
+      *((unsigned int *)g_abs_AC141C + v2 - 1) = *((unsigned int *)g_abs_AC141C + v2); /*0x5f745c*/
     }
-    while ( v2 < MEMORY[0xAC1428] ); /*0x5f7468*/
+    while ( v2 < g_abs_AC1428 ); /*0x5f7468*/
   }
   if ( *((unsigned char *)this + 168) && *((unsigned int *)this + 41) ) /*0x5f7476*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 164)); /*0x5f7481*/
+    RA2_OPDEL(*(void **)((char *)this + 164)); /*0x5f7481*/
     *((unsigned int *)this + 41) = 0; /*0x5f7489*/
     *((unsigned char *)this + 168) = 0; /*0x5f748f*/
   }
   ObjectTypeClass::CleanupWeapons((char *)this); /*0x5f7497*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 640)); /*0x5f74a3*/
+  RA2_OPDEL(*(void **)((char *)this + 640)); /*0x5f74a3*/
   *((unsigned int *)this + 160) = 0; /*0x5f74a8*/
   *((unsigned int *)this + 161) = 0; /*0x5f74ae*/
   *((unsigned int *)this + 162) = 0; /*0x5f74b4*/
   *((unsigned char *)this + 652) = 0; /*0x5f74ba*/
   *((unsigned int *)this + 164) = 0; /*0x5f74c0*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 620)); /*0x5f74cd*/
+  RA2_OPDEL(*(void **)((char *)this + 620)); /*0x5f74cd*/
   *((unsigned int *)this + 155) = 0; /*0x5f74d2*/
   *((unsigned int *)this + 156) = 0; /*0x5f74d8*/
   *((unsigned int *)this + 157) = 0; /*0x5f74de*/
   *((unsigned char *)this + 632) = 0; /*0x5f74e4*/
   *((unsigned int *)this + 159) = 0; /*0x5f74ea*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 600)); /*0x5f74f7*/
+  RA2_OPDEL(*(void **)((char *)this + 600)); /*0x5f74f7*/
   *((unsigned int *)this + 150) = 0; /*0x5f74fc*/
   *((unsigned int *)this + 151) = 0; /*0x5f7502*/
   *((unsigned int *)this + 152) = 0; /*0x5f7508*/
   *((unsigned char *)this + 612) = 0; /*0x5f750e*/
   *((unsigned int *)this + 154) = 0; /*0x5f7514*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 580)); /*0x5f7521*/
+  RA2_OPDEL(*(void **)((char *)this + 580)); /*0x5f7521*/
   *((unsigned int *)this + 145) = 0; /*0x5f7526*/
   *((unsigned int *)this + 146) = 0; /*0x5f752c*/
   *((unsigned int *)this + 147) = 0; /*0x5f7532*/
@@ -435,15 +436,15 @@ void ObjectTypeClass::UnloadPipsSHP()
   char *v22; // esi
   int v23; // edi
 
-  if ( MEMORY[0xAC1488] ) /*0x5f77fd*/
+  if ( g_abs_AC1488 ) /*0x5f77fd*/
   {
-    if ( MEMORY[0xAC1478] ) /*0x5f7807*/
+    if ( g_abs_AC1478 ) /*0x5f7807*/
     {
-      v0 = *(unsigned int *)(MEMORY[0xAC1478] - 4); /*0x5f7809*/
-      v1 = (void *)(MEMORY[0xAC1478] - 4); /*0x5f780c*/
+      v0 = *(unsigned int *)(g_abs_AC1478 - 4); /*0x5f7809*/
+      v1 = (void *)(g_abs_AC1478 - 4); /*0x5f780c*/
       v2 = 9 * v0; /*0x5f780f*/
       v3 = v0 - 1; /*0x5f7812*/
-      v4 = (char *)(MEMORY[0xAC1478] + 4 * v2); /*0x5f7813*/
+      v4 = (char *)(g_abs_AC1478 + 4 * v2); /*0x5f7813*/
       if ( v3 >= 0 ) /*0x5f7816*/
       {
         v5 = v3 + 1; /*0x5f7818*/
@@ -455,19 +456,19 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v5 ); /*0x5f7826*/
       }
-      __3_YAXPAX_Z(v1); /*0x5f7829*/
+      RA2_OPDEL(v1); /*0x5f7829*/
     }
-    MEMORY[0xAC1488] = 0; /*0x5f7831*/
+    g_abs_AC1488 = 0; /*0x5f7831*/
   }
-  if ( MEMORY[0xAC1489] ) /*0x5f783d*/
+  if ( g_abs_AC1489 ) /*0x5f783d*/
   {
-    if ( MEMORY[0xAC147C] ) /*0x5f7847*/
+    if ( g_abs_AC147C ) /*0x5f7847*/
     {
-      v6 = *(unsigned int *)(MEMORY[0xAC147C] - 4); /*0x5f7849*/
-      v7 = (void *)(MEMORY[0xAC147C] - 4); /*0x5f784c*/
+      v6 = *(unsigned int *)(g_abs_AC147C - 4); /*0x5f7849*/
+      v7 = (void *)(g_abs_AC147C - 4); /*0x5f784c*/
       v8 = 9 * v6; /*0x5f784f*/
       v9 = v6 - 1; /*0x5f7852*/
-      v10 = (char *)(MEMORY[0xAC147C] + 4 * v8); /*0x5f7853*/
+      v10 = (char *)(g_abs_AC147C + 4 * v8); /*0x5f7853*/
       if ( v9 >= 0 ) /*0x5f7856*/
       {
         v11 = v9 + 1; /*0x5f7858*/
@@ -479,19 +480,19 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v11 ); /*0x5f7866*/
       }
-      __3_YAXPAX_Z(v7); /*0x5f7869*/
+      RA2_OPDEL(v7); /*0x5f7869*/
     }
-    MEMORY[0xAC1489] = 0; /*0x5f7871*/
+    g_abs_AC1489 = 0; /*0x5f7871*/
   }
-  if ( MEMORY[0xAC148A] ) /*0x5f787d*/
+  if ( g_abs_AC148A ) /*0x5f787d*/
   {
-    if ( MEMORY[0xAC1480] ) /*0x5f7887*/
+    if ( g_abs_AC1480 ) /*0x5f7887*/
     {
-      v12 = *(unsigned int *)(MEMORY[0xAC1480] - 4); /*0x5f7889*/
-      v13 = (void *)(MEMORY[0xAC1480] - 4); /*0x5f788c*/
+      v12 = *(unsigned int *)(g_abs_AC1480 - 4); /*0x5f7889*/
+      v13 = (void *)(g_abs_AC1480 - 4); /*0x5f788c*/
       v14 = 9 * v12; /*0x5f788f*/
       v15 = v12 - 1; /*0x5f7892*/
-      v16 = (char *)(MEMORY[0xAC1480] + 4 * v14); /*0x5f7893*/
+      v16 = (char *)(g_abs_AC1480 + 4 * v14); /*0x5f7893*/
       if ( v15 >= 0 ) /*0x5f7896*/
       {
         v17 = v15 + 1; /*0x5f7898*/
@@ -503,19 +504,19 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v17 ); /*0x5f78a6*/
       }
-      __3_YAXPAX_Z(v13); /*0x5f78a9*/
+      RA2_OPDEL(v13); /*0x5f78a9*/
     }
-    MEMORY[0xAC148A] = 0; /*0x5f78b1*/
+    g_abs_AC148A = 0; /*0x5f78b1*/
   }
-  if ( MEMORY[0xAC148B] ) /*0x5f78bd*/
+  if ( g_abs_AC148B ) /*0x5f78bd*/
   {
-    if ( MEMORY[0xAC1484] ) /*0x5f78c7*/
+    if ( g_abs_AC1484 ) /*0x5f78c7*/
     {
-      v18 = *(unsigned int *)(MEMORY[0xAC1484] - 4); /*0x5f78c9*/
-      v19 = (void *)(MEMORY[0xAC1484] - 4); /*0x5f78cc*/
+      v18 = *(unsigned int *)(g_abs_AC1484 - 4); /*0x5f78c9*/
+      v19 = (void *)(g_abs_AC1484 - 4); /*0x5f78cc*/
       v20 = 9 * v18; /*0x5f78cf*/
       v21 = v18 - 1; /*0x5f78d2*/
-      v22 = (char *)(MEMORY[0xAC1484] + 4 * v20); /*0x5f78d3*/
+      v22 = (char *)(g_abs_AC1484 + 4 * v20); /*0x5f78d3*/
       if ( v21 >= 0 ) /*0x5f78d6*/
       {
         v23 = v21 + 1; /*0x5f78d8*/
@@ -527,9 +528,9 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v23 ); /*0x5f78e6*/
       }
-      __3_YAXPAX_Z(v19); /*0x5f78e9*/
+      RA2_OPDEL(v19); /*0x5f78e9*/
     }
-    MEMORY[0xAC148B] = 0; /*0x5f78f1*/
+    g_abs_AC148B = 0; /*0x5f78f1*/
   }
 
 }
@@ -548,19 +549,19 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   char v8; // dl
   int v9; // eax
   int result; // eax
-  __int16 v11; // cx
+  int16_t v11; // cx
   char Destination[24]; // [esp+8h] [ebp-220h] BYREF
   char v13; // [esp+20h] [ebp-208h]
   char Source; // [esp+24h] [ebp-204h] BYREF
   char v15; // [esp+25h] [ebp-203h]
   char Buffer[256]; // [esp+128h] [ebp-100h] BYREF
 
-  if ( *((unsigned char *)this + 529) && *((unsigned int *)MEMORY[0xA8B230] + 1174) == 1 && !*((unsigned char *)this + 168) ) /*0x5f9096*/
+  if ( *((unsigned char *)this + 529) && *((unsigned int *)g_abs_A8B230 + 1174) == 1 && !*((unsigned char *)this + 168) ) /*0x5f9096*/
   {
     if ( !*((unsigned char *)this + 530) ) /*0x5f90a0*/
     {
       v2 = (unsigned char *)this + 504; /*0x5f90ab*/
-      sprintf(Buffer, MEMORY[0x832AE8], (unsigned char *)this + 504); /*0x5f90bf*/
+      sprintf(Buffer, g_abs_832AE8, (unsigned char *)this + 504); /*0x5f90bf*/
       if ( Buffer ) /*0x5f90d0*/
       {
         strncpy(Destination, Buffer, 0x18u); /*0x5f90e7*/
@@ -585,11 +586,11 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   _makepath(&Source, 0, 0, (unsigned char *)this + 504, Ext); /*0x5f912e*/
   if ( *((unsigned char *)this + 556) ) /*0x5f9133*/
   {
-    _makepath(&Source, 0, 0, (unsigned char *)this + 504, (const char *)&off_7E1BC6 + 112 * *((unsigned int *)MEMORY[0xA8B230] + 1174)); /*0x5f9169*/
+    _makepath(&Source, 0, 0, (unsigned char *)this + 504, (const char *)&off_7E1BC6 + 112 * *((unsigned int *)g_abs_A8B230 + 1174)); /*0x5f9169*/
   }
   else if ( *((unsigned char *)this + 567) ) /*0x5f9173*/
   {
-    v3 = *((unsigned int *)MEMORY[0xA8B230] + 1174); /*0x5f9183*/
+    v3 = *((unsigned int *)g_abs_A8B230 + 1174); /*0x5f9183*/
     if ( v3 != -1 ) /*0x5f918c*/
     {
       v4 = Source; /*0x5f918e*/
@@ -603,7 +604,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
     }
   }
   if ( *((unsigned char *)this + 168) && *((unsigned int *)this + 41) ) /*0x5f91eb*/
-    __3_YAXPAX_Z(*((void **)this + 41)); /*0x5f91f6*/
+    RA2_OPDEL(*((void **)this + 41)); /*0x5f91f6*/
   v6 = *(unsigned int *)this; /*0x5f91fe*/
   *((unsigned int *)this + 41) = 0; /*0x5f9203*/
   *((unsigned char *)this + 168) = 0; /*0x5f920d*/
@@ -636,9 +637,9 @@ LABEL_41:
   if ( result ) /*0x5f9294*/
   {
     v11 = *(unsigned short *)(result + 2); /*0x5f9296*/
-    LOWORD(result) = *(unsigned short *)(result + 4); /*0x5f929a*/
-    if ( v11 <= (__int16)result ) /*0x5f92a1*/
-      result = (__int16)result; /*0x5f92a8*/
+    IDA_LOWORD(result) = *(unsigned short *)(result + 4); /*0x5f929a*/
+    if ( v11 <= (int16_t)result ) /*0x5f92a1*/
+      result = (int16_t)result; /*0x5f92a8*/
     else
       result = v11; /*0x5f92a3*/
     if ( result <= 8 ) /*0x5f92ae*/
@@ -692,26 +693,26 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
     return 0; /*0x5f969e*/
   strcpy((char *)v34.headNode, (unsigned char *)this + 504); /*0x5f931c*/
   INIClass::GetString( /*0x5f933b*/
-    (unsigned __int8 ***)aP1,
+    (uint8_t ***)aP1,
     (INIClass *)((unsigned char *)this + 36),
-    (unsigned __int8 *)&g_INI_Key_Image,
+    (uint8_t *)&g_INI_Key_Image,
     (INIClass *)v34.headNode,
     (INIClass *)((unsigned char *)this + 504),
     25);
   *(unsigned int *)v34.__pad_0 = strcpy((char *)v34.headNode, (unsigned char *)this + 531); /*0x5f9366*/
   INIClass::GetString( /*0x5f9386*/
-    (unsigned __int8 ***)aP1,
+    (uint8_t ***)aP1,
     (INIClass *)((unsigned char *)this + 36),
-    (unsigned __int8 *)&stru_830620.__pad_14B0[4400],
+    (uint8_t *)&stru_830620.__pad_14B0[4400],
     (INIClass *)v34.headNode,
     (INIClass *)((unsigned char *)this + 531),
     25);
   v3 = *((unsigned int *)this + 124); /*0x5f938b*/
   if ( INIClass::GetString( /*0x5f93a8*/
-         (unsigned __int8 ***)aP1,
+         (uint8_t ***)aP1,
          (INIClass *)((unsigned char *)this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_14B0[4388],
-         (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+         (uint8_t *)&stru_830620.__pad_14B0[4388],
+         (INIClass *)&g_abs_87F8E4,
          (INIClass *)v34.__pad_20,
          128) )
   {
@@ -722,10 +723,10 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   *((unsigned int *)this + 124) = v3; /*0x5f93d5*/
   v5 = *((unsigned int *)this + 125); /*0x5f93db*/
   if ( !INIClass::GetString( /*0x5f93f9*/
-          (unsigned __int8 ***)aP1,
+          (uint8_t ***)aP1,
           (INIClass *)((unsigned char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_14B0[4372],
-          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
+          (uint8_t *)&stru_830620.__pad_14B0[4372],
+          (INIClass *)&g_abs_87F8E4,
           (INIClass *)v34.__pad_20,
           128)
     || (v6 = VocClass::FindIndex(v34.__pad_20), v6 == -1) )
@@ -736,80 +737,80 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   *((unsigned int *)this + 125) = v6; /*0x5f9403*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5f9412*/
                      (int)aP1,
-                     (unsigned __int8 *)this + 36,
+                     (uint8_t *)this + 36,
                      (CCINIClass *)&stru_830620.__pad_14B0[4360],
                      v7);
   v27 = *((unsigned char *)this + 558); /*0x5f941f*/
   *((unsigned char *)this + 557) = Bool_Overwrite; /*0x5f9426*/
   *((unsigned char *)this + 558) = INIClass::ReadBool_Overwrite( /*0x5f9431*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4348],
                     v27);
   v9 = INIClass::ReadBool_Overwrite( /*0x5f9446*/
          (int)aP1,
-         (unsigned __int8 *)this + 36,
+         (uint8_t *)this + 36,
          (CCINIClass *)&stru_830620.__pad_14B0[4336],
          *((unsigned char *)this + 488));
   v10 = *((unsigned char *)this + 529); /*0x5f944b*/
   *((unsigned char *)this + 488) = v9; /*0x5f9451*/
   v11 = INIClass::ReadBool_Overwrite( /*0x5f9460*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4316],
           v10);
   v28 = *((unsigned char *)this + 559); /*0x5f946d*/
   *((unsigned char *)this + 529) = v11; /*0x5f9474*/
   *((unsigned char *)this + 559) = INIClass::ReadBool_Overwrite( /*0x5f947f*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4300],
                     v28);
   v12 = INIClass::ReadBool_Overwrite( /*0x5f9494*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4288],
           *((unsigned char *)this + 560));
   v13 = *((unsigned char *)this + 561); /*0x5f9499*/
   *((unsigned char *)this + 560) = v12; /*0x5f949f*/
   v14 = INIClass::ReadBool_Overwrite( /*0x5f94ae*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4276],
           v13);
   v29 = (CCINIClass *)*((unsigned int *)this + 39); /*0x5f94bb*/
   *((unsigned char *)this + 561) = v14; /*0x5f94c2*/
   *((unsigned int *)this + 39) = ArmorType::FindIndex( /*0x5f94cd*/
-                             (unsigned __int8 ***)aP1,
+                             (uint8_t ***)aP1,
                              (CCINIClass *)((unsigned char *)this + 36),
-                             (unsigned __int8 *)&g_INI_Key_Speed.headNode[1],
+                             (uint8_t *)&g_INI_Key_Speed.headNode[1],
                              (int)v29);
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5f94e2*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4264],
                     *((INIClass **)this + 40));
   v16 = *((unsigned char *)this + 563); /*0x5f94e7*/
   *((unsigned int *)this + 40) = Int_Overwrite; /*0x5f94ed*/
   v17 = INIClass::ReadBool_Overwrite( /*0x5f94fc*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4256],
           v16);
   v30 = *((unsigned char *)this + 562); /*0x5f9509*/
   *((unsigned char *)this + 563) = v17; /*0x5f9510*/
   *((unsigned char *)this + 562) = INIClass::ReadBool_Overwrite( /*0x5f951b*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4240],
                     v30);
   *((unsigned char *)this + 568) = INIClass::ReadBool_Overwrite( /*0x5f9549*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4220],
                     *((unsigned char *)this + 568));
   Coord = INIClass::GetCoord( /*0x5f954f*/
-            (unsigned __int8 ***)aP1,
+            (uint8_t ***)aP1,
             &v34,
             (INIClass *)((unsigned char *)this + 36),
             (Color *)&stru_830620.__pad_14B0[4208],
@@ -819,18 +820,18 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   *((unsigned char *)this + 154) = *(unsigned char *)(Coord + 2); /*0x5f956c*/
   v20 = INIClass::ReadBool_Overwrite( /*0x5f956f*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4188],
           v19);
   v31 = *((unsigned char *)this + 570); /*0x5f9580*/
   *((unsigned char *)this + 569) = v20; /*0x5f958c*/
   *((unsigned char *)this + 570) = INIClass::ReadBool_Overwrite( /*0x5f959d*/
-                    (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-                    (unsigned __int8 *)this + 504,
+                    (int)&g_abs_87F8E4,
+                    (uint8_t *)this + 504,
                     (CCINIClass *)&stru_830620.__pad_14B0[4172],
                     v31);
   v21 = INIClass::GetCoord( /*0x5f95b4*/
-          (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+          (uint8_t ***)&g_abs_87F8E4,
           &v34,
           (INIClass *)((unsigned char *)this + 504),
           (Color *)&stru_830620.__pad_14B0[4156],
@@ -839,27 +840,27 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   v32 = (CCINIClass *)*((unsigned int *)this + 144); /*0x5f95cd*/
   *((unsigned char *)this + 573) = *(unsigned char *)(v21 + 2); /*0x5f95d4*/
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
-          (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-          (unsigned __int8 *)this + 504,
+          (int)&g_abs_87F8E4,
+          (uint8_t *)this + 504,
           (CCINIClass *)&stru_830620.__pad_14B0[4132],
           (INIClass *)v32);
   v23 = *((unsigned char *)this + 556); /*0x5f95dc*/
   *((unsigned int *)this + 144) = v22; /*0x5f95e2*/
   v24 = INIClass::ReadBool_Overwrite( /*0x5f95f4*/
-          (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-          (unsigned __int8 *)this + 504,
+          (int)&g_abs_87F8E4,
+          (uint8_t *)this + 504,
           &unk_818658,
           v23);
   v33 = *((unsigned char *)this + 567); /*0x5f9604*/
   *((unsigned char *)this + 556) = v24; /*0x5f960b*/
   *((unsigned char *)this + 567) = INIClass::ReadBool_Overwrite( /*0x5f9616*/
-                    (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-                    (unsigned __int8 *)this + 504,
+                    (int)&g_abs_87F8E4,
+                    (uint8_t *)this + 504,
                     &unk_81864C,
                     v33);
   v25 = INIClass::ReadBool_Overwrite( /*0x5f962e*/
-          (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-          (unsigned __int8 *)this + 504,
+          (int)&g_abs_87F8E4,
+          (uint8_t *)this + 504,
           (CCINIClass *)&stru_830620.__pad_14B0[4124],
           *((unsigned char *)this + 566));
   *((unsigned char *)this + 566) = v25; /*0x5f9634*/
@@ -900,7 +901,7 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   IUnknown *v11; // edx
   char Buffer[260]; // [esp+10h] [ebp-104h] BYREF
 
-  __3_YAXPAX_Z(*(void **)&aP0->__pad_220[36]); /*0x5f973e*/
+  RA2_OPDEL(*(void **)&aP0->__pad_220[36]); /*0x5f973e*/
   *(unsigned int *)&aP0->__pad_220[36] = 0; /*0x5f974e*/
   *(unsigned int *)&aP0->__pad_220[40] = 0; /*0x5f9750*/
   *(unsigned int *)&aP0->__pad_220[44] = 0; /*0x5f9753*/
@@ -913,42 +914,42 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   if ( v2 ) /*0x5f977f*/
   {
     WaveClass::Destroy(*(unsigned int *)&aP0->__pad_A8[8]); /*0x5f9783*/
-    __3_YAXPAX_Z(v2); /*0x5f9789*/
+    RA2_OPDEL(v2); /*0x5f9789*/
   }
   v3 = *(void ***)&aP0->__pad_A8[12]; /*0x5f9791*/
   *(unsigned int *)&aP0->__pad_A8[8] = 0; /*0x5f9797*/
   if ( v3 ) /*0x5f979f*/
   {
     String::Release(v3); /*0x5f97a3*/
-    __3_YAXPAX_Z(v3); /*0x5f97a9*/
+    RA2_OPDEL(v3); /*0x5f97a9*/
   }
   v4 = *(void **)&aP0->__pad_A8[16]; /*0x5f97b1*/
   *(unsigned int *)&aP0->__pad_A8[12] = 0; /*0x5f97b7*/
   if ( v4 ) /*0x5f97bf*/
   {
     WaveClass::Destroy((int)v4); /*0x5f97c3*/
-    __3_YAXPAX_Z(v4); /*0x5f97c9*/
+    RA2_OPDEL(v4); /*0x5f97c9*/
   }
   v5 = *(void ***)&aP0->__pad_A8[20]; /*0x5f97d1*/
   *(unsigned int *)&aP0->__pad_A8[16] = 0; /*0x5f97d7*/
   if ( v5 ) /*0x5f97df*/
   {
     String::Release(v5); /*0x5f97e3*/
-    __3_YAXPAX_Z(v5); /*0x5f97e9*/
+    RA2_OPDEL(v5); /*0x5f97e9*/
   }
   v6 = *(void **)&aP0->__pad_A8[24]; /*0x5f97f1*/
   *(unsigned int *)&aP0->__pad_A8[20] = 0; /*0x5f97f7*/
   if ( v6 ) /*0x5f97ff*/
   {
     WaveClass::Destroy((int)v6); /*0x5f9803*/
-    __3_YAXPAX_Z(v6); /*0x5f9809*/
+    RA2_OPDEL(v6); /*0x5f9809*/
   }
   v7 = *(void ***)&aP0->__pad_A8[28]; /*0x5f9811*/
   *(unsigned int *)&aP0->__pad_A8[24] = 0; /*0x5f9817*/
   if ( v7 ) /*0x5f981f*/
   {
     String::Release(v7); /*0x5f9823*/
-    __3_YAXPAX_Z(v7); /*0x5f9829*/
+    RA2_OPDEL(v7); /*0x5f9829*/
   }
   *(unsigned int *)&aP0->__pad_A8[28] = 0; /*0x5f9833*/
   ObjectTypeClass::CleanupWeapons((char *)aP0); /*0x5f9839*/
@@ -1011,7 +1012,7 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
     if ( aP0->__pad_1D8[59] ) /*0x5f9906*/
     {
       _makepath(Buffer, 0, 0, (ObjectClass *)&aP0->__pad_1D8[59], Ext); /*0x5f9923*/
-      LOBYTE(v11) = 0; /*0x5f992b*/
+      IDA_LOBYTE(v11) = 0; /*0x5f992b*/
       *(unsigned int *)&aP0->__pad_A8[4] = SearchMIXFile(Buffer, v11); /*0x5f9936*/
     }
     return 0; /*0x5f993c*/
@@ -1033,7 +1034,7 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
     return *((unsigned int *)this + 444); /*0x7120bf*/
   if ( *((unsigned char *)HouseClass_Player + 703) ) /*0x71204c*/
   {
-    if ( (*(int (**)(unsigned int *))(*(unsigned int **)this + 44))(this) == 16 ) /*0x712060*/
+    if ( (*(int (**)(unsigned int *))(*(unsigned int *)this + 176))(this) == 16 ) /*0x712060*/
     {
       result = *((unsigned int *)this + 452); /*0x712062*/
       if ( result ) /*0x71206a*/
@@ -1046,8 +1047,8 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
   }
   if ( !v1 /*0x7120a1*/
     || !*((unsigned char *)v1 + 704)
-    || (*(int (**)(unsigned int *))(*(unsigned int **)this + 44))(this) != 40
-    && ((*(int (**)(unsigned int *))(*(unsigned int **)this + 44))(this) != 7 || !*((unsigned int *)this + 258)) )
+    || (*(int (**)(unsigned int *))(*(unsigned int *)this + 176))(this) != 40
+    && ((*(int (**)(unsigned int *))(*(unsigned int *)this + 176))(this) != 7 || !*((unsigned int *)this + 258)) )
   {
     return *((unsigned int *)this + 444); /*0x7120a1*/
   }
@@ -1485,52 +1486,52 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
     return 0;
   *(unsigned int *)(v4 + 1540) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[59236],
                              *(INIClass **)(v4 + 1540));
   *(unsigned int *)(v4 + 1536) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[59220],
                              *(INIClass **)(v4 + 1536));
   *(unsigned int *)(v4 + 1660) = ObjectTypeClass::loadTypeMember_476FC0(
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              (CCINIClass *)(v4 + 36),
-                             (unsigned __int8 *)&stru_830620.__pad_579C[59208],
+                             (uint8_t *)&stru_830620.__pad_579C[59208],
                              *(CCINIClass **)(v4 + 1660));
   *(unsigned char *)(v4 + 1828) = INIClass::ReadBool_Overwrite(
                             (int)&stru_87C374.__pad_579C[22128],
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[59196],
                             *(unsigned char *)(v4 + 1828));
   *(unsigned char *)(v4 + 3212) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[59184],
                             *(unsigned char *)(v4 + 3212));
   *(unsigned int *)(v4 + 660) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[59172],
                             *(INIClass **)(v4 + 660));
   *(unsigned int *)(v4 + 664) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[59160],
                             *(INIClass **)(v4 + 664));
   *(unsigned char *)(v4 + 3213) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[59144],
                             *(unsigned char *)(v4 + 3213));
   *(unsigned char *)(v4 + 3220) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[59136],
                             *(unsigned char *)(v4 + 3220));
   *(unsigned char *)(v4 + 3225) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[59124],
                             *(unsigned char *)(v4 + 3225));
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 1464);
@@ -1539,14 +1540,14 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1464) = INIClass::ReadCoord(*(double *)aP3, *(int *)&aP3[8], v414, v415);
   *(unsigned char *)(v4 + 3349) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_14B0[6796],
                             *(unsigned char *)(v4 + 3349));
   v5 = *(WeaponTypeClass **)(v4 + 3352);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[21344],
+         (uint8_t *)&stru_830620.__pad_579C[21344],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          String,
          128) )
@@ -1562,16 +1563,16 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(float *)(v4 + 3356) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[59084],
+                            (uint8_t *)&stru_830620.__pad_579C[59084],
                             *(INIClass **)&aP3[4]);
   *(unsigned int *)(v4 + 1560) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[27288],
                              *(INIClass **)(v4 + 1560));
   Bool_Overwrite = INIClass::ReadBool_Overwrite(
                      (int)aP0,
-                     (unsigned __int8 *)(v4 + 36),
+                     (uint8_t *)(v4 + 36),
                      (CCINIClass *)&stru_830620.__pad_579C[59072],
                      *(unsigned char *)(v4 + 3221));
   *(unsigned int *)&aP3[8] = -1074790400;
@@ -1582,7 +1583,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   Double_Overwrite = INIClass::ReadDouble_Overwrite(
                        (int)aP0,
                        *(INIClass **)&v412.IsInitialized,
-                       *(unsigned __int8 **)aP3,
+                       *(uint8_t **)aP3,
                        *(INIClass **)&aP3[4]);
   if ( Double_Overwrite != -1.0 )
     *(double *)(v4 + 944) = Double_Overwrite * 0.0174532925199433;
@@ -1590,7 +1591,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v9 = INIClass::ReadDouble_Overwrite(
          (int)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[59048],
+         (uint8_t *)&stru_830620.__pad_579C[59048],
          0);
   if ( v9 != -1.0 )
     *(double *)(v4 + 928) = v9 * 0.0174532925199433;
@@ -1599,13 +1600,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 936) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[59036],
+                            (uint8_t *)&stru_830620.__pad_579C[59036],
                             v10);
   GUID_Overwrite = (unsigned int *)INIClass::ReadGUID_Overwrite(
                                (int)aP0,
                                (int)aP2.sectionHead,
                                (INIClass *)(v4 + 36),
-                               (unsigned __int8 *)&stru_830620.__pad_579C[59024],
+                               (uint8_t *)&stru_830620.__pad_579C[59024],
                                *(unsigned int *)(v4 + 844),
                                *(unsigned int *)(v4 + 848),
                                *(unsigned int *)(v4 + 852),
@@ -1616,7 +1617,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 856) = GUID_Overwrite[3];
   *(unsigned int *)(v4 + 784) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[59008],
                             *(INIClass **)(v4 + 784));
   v12 = *(INIClass **)(v4 + 752);
@@ -1624,11 +1625,11 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 752) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[58980],
+                            (uint8_t *)&stru_830620.__pad_579C[58980],
                             v12);
   *(unsigned int *)(v4 + 760) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[58960],
                             *(INIClass **)(v4 + 760));
   v13 = *(INIClass **)(v4 + 768);
@@ -1636,61 +1637,61 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 768) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[58936],
+                            (uint8_t *)&stru_830620.__pad_579C[58936],
                             v13);
   v14 = *(INIClass **)(v4 + 776);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 780);
   *(double *)(v4 + 776) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[58916],
+                            (uint8_t *)&stru_830620.__pad_579C[58916],
                             v14);
   v15 = *(INIClass **)(v4 + 880);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 884);
   *(double *)(v4 + 880) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[58908],
+                            (uint8_t *)&stru_830620.__pad_579C[58908],
                             v15);
   v16 = *(INIClass **)(v4 + 888);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 892);
   *(double *)(v4 + 888) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[58892],
+                            (uint8_t *)&stru_830620.__pad_579C[58892],
                             v16);
   v17 = *(INIClass **)(v4 + 896);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 900);
   *(double *)(v4 + 896) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)g_INI_Key_Size,
+                            (uint8_t *)g_INI_Key_Size,
                             v17);
   v18 = *(INIClass **)(v4 + 904);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 908);
   *(double *)(v4 + 904) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[58880],
+                            (uint8_t *)&stru_830620.__pad_579C[58880],
                             v18);
   *(unsigned char *)(v4 + 912) = INIClass::ReadBool_Overwrite(
                            (int)aP0,
-                           (unsigned __int8 *)(v4 + 36),
+                           (uint8_t *)(v4 + 36),
                            (CCINIClass *)&stru_830620.__pad_579C[58868],
                            *(unsigned char *)(v4 + 912));
   *(unsigned int *)(v4 + 916) = ObjectTypeClass::loadTypeMember_5477590(
-                            (unsigned __int8 ***)aP0,
+                            (uint8_t ***)aP0,
                             (CCINIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[58860],
+                            (uint8_t *)&stru_830620.__pad_579C[58860],
                             *(CCINIClass **)(v4 + 916));
   *(unsigned int *)(v4 + 1468) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[58848],
                              *(INIClass **)(v4 + 1468));
   Int_Overwrite = INIClass::ReadInt_Overwrite(
                     (int)aP0,
-                    (unsigned __int8 *)(v4 + 36),
+                    (uint8_t *)(v4 + 36),
                     (CCINIClass *)&stru_830620.__pad_579C[58836],
                     *(INIClass **)(v4 + 1472));
   *(unsigned int *)(v4 + 1472) = Int_Overwrite;
@@ -1700,9 +1701,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   if ( *(unsigned int *)(v4 + 1468) < (int)v11 )
     *(unsigned int *)(v4 + 1468) = v11;
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[58824],
+         (uint8_t *)&stru_830620.__pad_579C[58824],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          String,
          128) )
@@ -1740,14 +1741,14 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)aP2.headNode[2] = &vt_TypeList_int;
   inited = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   aP2.headNode[2] = INIClass::ReadIntList(
-                      (unsigned __int8 ***)aP0,
+                      (uint8_t ***)aP0,
                       (int)aP2.sectionHead,
                       inited,
-                      (unsigned __int8 *)&stru_830620.__pad_579C[58808],
+                      (uint8_t *)&stru_830620.__pad_579C[58808],
                       (void **)v412.vtable0,
                       v412.Items,
                       v412.Capacity,
-                      *(__int16 *)&v412.IsInitialized,
+                      *(int16_t *)&v412.IsInitialized,
                       *(int *)aP3,
                       *(int *)&aP3[4],
                       *(int *)&aP3[8]);
@@ -1759,9 +1760,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
   VectorClass::Destroy((int)aP2.sectionHead);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[58796],
+         (uint8_t *)&stru_830620.__pad_579C[58796],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          String,
          128) )
@@ -1796,27 +1797,27 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   DynamicVectorClass::Destroy_Alt((int)aP2.sectionHead);
   *(unsigned char *)(v4 + 2054) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[58776],
                             *(unsigned char *)(v4 + 2054));
   *(unsigned int *)(v4 + 2056) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[58764],
                              *(INIClass **)(v4 + 2056));
   *(unsigned int *)(v4 + 2060) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[58752],
                              *(INIClass **)(v4 + 2060));
   *(unsigned char *)(v4 + 2064) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[58736],
                             *(unsigned char *)(v4 + 2064));
   al29 = INIClass::ReadBool_Overwrite(
            (int)aP0,
-           (unsigned __int8 *)(v4 + 36),
+           (uint8_t *)(v4 + 36),
            (CCINIClass *)&stru_830620.__pad_579C[58720],
            *(unsigned char *)(v4 + 2704));
   *(unsigned char *)(v4 + 2704) = al29;
@@ -1826,9 +1827,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
     {
       v34 = *(WeaponTypeClass **)(v4 + 2200);
       if ( INIClass::GetString(
-             (unsigned __int8 ***)aP0,
+             (uint8_t ***)aP0,
              (INIClass *)(v4 + 36),
-             (unsigned __int8 *)&stru_830620.__pad_579C[58684],
+             (uint8_t *)&stru_830620.__pad_579C[58684],
              (INIClass *)&stru_87C374.__pad_579C[33876],
              (INIClass *)&aP2.CCINIClass_field_4C,
              128) )
@@ -1846,9 +1847,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
       *(unsigned int *)(v4 + 2200) = eax42;
       v27 = *(CCINIClass **)(v4 + 2228);
       if ( INIClass::GetString(
-             (unsigned __int8 ***)aP0,
+             (uint8_t ***)aP0,
              (INIClass *)(v4 + 36),
-             *(unsigned __int8 **)&v412.IsInitialized,
+             *(uint8_t **)&v412.IsInitialized,
              *(INIClass **)aP3,
              *(INIClass **)&aP3[4],
              *(int *)&aP3[8]) )
@@ -1862,9 +1863,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
       *(unsigned int *)(v4 + 2228) = eax45;
       v29 = *(CCINIClass **)(v4 + 2708);
       if ( INIClass::GetString(
-             (unsigned __int8 ***)aP0,
+             (uint8_t ***)aP0,
              (INIClass *)(v4 + 36),
-             (unsigned __int8 *)&stru_830620.__pad_579C[58656],
+             (uint8_t *)&stru_830620.__pad_579C[58656],
              (INIClass *)&stru_87C374.__pad_579C[33876],
              (INIClass *)&aP2.CCINIClass_field_4C,
              128) )
@@ -1882,9 +1883,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
       *(unsigned int *)(v4 + 2708) = eax48;
       v31 = *(CCINIClass **)(v4 + 2736);
       if ( INIClass::GetString(
-             (unsigned __int8 ***)aP0,
+             (uint8_t ***)aP0,
              (INIClass *)(v4 + 36),
-             *(unsigned __int8 **)&v412.IsInitialized,
+             *(uint8_t **)&v412.IsInitialized,
              *(INIClass **)aP3,
              *(INIClass **)&aP3[4],
              *(int *)&aP3[8]) )
@@ -1908,9 +1909,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
       sprintf((char *const)aP2.sectionHead, (ObjectClass *)&stru_830620.__pad_579C[58692], (INIClass *)aP2.headNode[2]);
       *(unsigned int *)aP2.__pad_0 = v21[-6].sectionHead[1];
       if ( INIClass::GetString(
-             (unsigned __int8 ***)aP0,
+             (uint8_t ***)aP0,
              (INIClass *)(v4 + 36),
-             (unsigned __int8 *)&aP2.unknown30,
+             (uint8_t *)&aP2.unknown30,
              (INIClass *)&stru_87C374.__pad_579C[33876],
              String,
              128) )
@@ -1924,9 +1925,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
       v21[-6].sectionHead[1] = (int)eax33;
       *(unsigned int *)aP2.__pad_0 = *(unsigned int *)v21->__pad_0;
       if ( INIClass::GetString(
-             (unsigned __int8 ***)aP0,
+             (uint8_t ***)aP0,
              (INIClass *)(v4 + 36),
-             (unsigned __int8 *)aP2.sectionHead,
+             (uint8_t *)aP2.sectionHead,
              (INIClass *)&stru_87C374.__pad_579C[33876],
              (INIClass *)&aP2.CCINIClass_field_4C,
              128) )
@@ -1957,13 +1958,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v33 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v33,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58628],
+                             (uint8_t *)&stru_830620.__pad_579C[58628],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -1980,13 +1981,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v35 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v35,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58616],
+                             (uint8_t *)&stru_830620.__pad_579C[58616],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -2003,13 +2004,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v37 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v37,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58596],
+                             (uint8_t *)&stru_830620.__pad_579C[58596],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -2026,13 +2027,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v39 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v39,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58572],
+                             (uint8_t *)&stru_830620.__pad_579C[58572],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -2049,13 +2050,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v41 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v41,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58560],
+                             (uint8_t *)&stru_830620.__pad_579C[58560],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -2072,13 +2073,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v43 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v43,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58540],
+                             (uint8_t *)&stru_830620.__pad_579C[58540],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -2095,13 +2096,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v45 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v45,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58528],
+                             (uint8_t *)&stru_830620.__pad_579C[58528],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -2118,13 +2119,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v47 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v47,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58512],
+                             (uint8_t *)&stru_830620.__pad_579C[58512],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -2137,9 +2138,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   VectorClass::Destroy((int)aP2.sectionHead);
   v49 = *(CCINIClass **)(v4 + 1324);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[58500],
+         (uint8_t *)&stru_830620.__pad_579C[58500],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
@@ -2155,9 +2156,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1324) = v49;
   v60 = *(unsigned int *)(v4 + 1328);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2172,9 +2173,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1328) = v61;
   v62 = *(unsigned int *)(v4 + 1332);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2185,9 +2186,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1332) = v63;
   v64 = *(unsigned int *)(v4 + 1336);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[58464],
+          (uint8_t *)&stru_830620.__pad_579C[58464],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2202,9 +2203,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1336) = v65;
   v66 = *(unsigned int *)(v4 + 1340);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2219,9 +2220,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1340) = v67;
   v68 = *(unsigned int *)(v4 + 1344);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2232,9 +2233,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1344) = v69;
   v70 = *(unsigned int *)(v4 + 1348);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[58448],
+          (uint8_t *)&stru_830620.__pad_579C[58448],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2249,9 +2250,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1348) = v71;
   v72 = *(unsigned int *)(v4 + 1352);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2266,9 +2267,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1352) = v73;
   v74 = *(unsigned int *)(v4 + 1356);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2279,9 +2280,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1356) = v75;
   v76 = *(unsigned int *)(v4 + 1360);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[58416],
+          (uint8_t *)&stru_830620.__pad_579C[58416],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2296,9 +2297,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1360) = v77;
   v78 = *(unsigned int *)(v4 + 1364);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2313,9 +2314,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1364) = v79;
   v80 = *(unsigned int *)(v4 + 1368);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2326,9 +2327,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1368) = v81;
   v82 = *(unsigned int *)(v4 + 1372);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[58372],
+          (uint8_t *)&stru_830620.__pad_579C[58372],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2339,23 +2340,23 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1372) = v83;
   *(unsigned char *)(v4 + 3219) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[58360],
                             *(unsigned char *)(v4 + 3219));
   *(unsigned int *)(v4 + 2048) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[58352],
                              *(INIClass **)(v4 + 2048));
   *(unsigned int *)(v4 + 952) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[58340],
                             *(INIClass **)(v4 + 952));
   TypeMember_54749E0 = ObjectTypeClass::loadTypeMember_54749E0(
-                         (unsigned __int8 ***)aP0,
+                         (uint8_t ***)aP0,
                          (CCINIClass *)(v4 + 36),
-                         (unsigned __int8 *)&stru_830620.__pad_579C[58328],
+                         (uint8_t *)&stru_830620.__pad_579C[58328],
                          *(unsigned int *)(v4 + 956));
   *(unsigned int *)&aP3[8] = 128;
   *(unsigned int *)&aP3[4] = &aP2.CCINIClass_field_4C;
@@ -2364,9 +2365,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 956) = TypeMember_54749E0;
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)v412.Capacity,
-         *(unsigned __int8 **)&v412.IsInitialized,
+         *(uint8_t **)&v412.IsInitialized,
          *(INIClass **)aP3,
          *(INIClass **)&aP3[4],
          *(int *)&aP3[8]) )
@@ -2401,9 +2402,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   DynamicVectorClass::Destroy((int)aP2.sectionHead);
   v88 = *(BuildingTypeClass **)(v4 + 1028);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[58308],
+         (uint8_t *)&stru_830620.__pad_579C[58308],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
@@ -2417,9 +2418,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1028) = v89;
   v90 = *(UnitTypeClass **)(v4 + 1032);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[58292],
+         (uint8_t *)&stru_830620.__pad_579C[58292],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
@@ -2437,9 +2438,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1032) = Alt;
   v92 = *(UnitTypeClass **)(v4 + 1036);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         *(unsigned __int8 **)&v412.IsInitialized,
+         *(uint8_t **)&v412.IsInitialized,
          *(INIClass **)aP3,
          *(INIClass **)&aP3[4],
          *(int *)&aP3[8]) )
@@ -2453,17 +2454,17 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1036) = eax110;
   *(unsigned char *)(v4 + 1040) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[58268],
                             *(unsigned char *)(v4 + 1040));
   *(unsigned char *)(v4 + 3366) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[58252],
                             *(unsigned char *)(v4 + 3366));
   v94 = INIClass::ReadBool_Overwrite(
           (int)aP0,
-          (unsigned __int8 *)(v4 + 36),
+          (uint8_t *)(v4 + 36),
           (CCINIClass *)&stru_830620.__pad_579C[58236],
           *(unsigned char *)(v4 + 3364));
   aP3[8] = *(unsigned char *)(v4 + 3361);
@@ -2472,19 +2473,19 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned char *)(v4 + 3364) = v94;
   *(unsigned char *)(v4 + 3361) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   al112a = INIClass::ReadBool_Overwrite(
              (int)aP0,
-             (unsigned __int8 *)(v4 + 36),
+             (uint8_t *)(v4 + 36),
              (CCINIClass *)&stru_830620.__pad_579C[58204],
              *(unsigned char *)(v4 + 3362));
   v96 = *(unsigned char *)(v4 + 3233);
   *(unsigned char *)(v4 + 3362) = al112a;
   al112b = INIClass::ReadBool_Overwrite(
              (int)aP0,
-             (unsigned __int8 *)(v4 + 36),
+             (uint8_t *)(v4 + 36),
              (CCINIClass *)&stru_830620.__pad_579C[58196],
              v96);
   v98 = *(unsigned int *)(v4 + 1376);
@@ -2495,9 +2496,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned char *)(v4 + 3233) = al112b;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2508,9 +2509,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v100 = *(unsigned int *)(v4 + 1380);
   *(unsigned int *)(v4 + 1376) = v99;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[58156],
+          (uint8_t *)&stru_830620.__pad_579C[58156],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2526,9 +2527,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1380) = v101;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2543,13 +2544,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v95 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v95,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58124],
+                             (uint8_t *)&stru_830620.__pad_579C[58124],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -2559,21 +2560,21 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1288) = *(unsigned int *)(v105 + 20);
   *(unsigned int *)(v4 + 1292) = *(unsigned int *)(v105 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  if ( aP2.sectionHead[1] && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z((void *)aP2.sectionHead[1]);
+  if ( aP2.sectionHead[1] && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL((void *)aP2.sectionHead[1]);
   *(unsigned int *)aP2.__pad_0 = &v412;
   DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1296));
   **(unsigned int **)aP2.__pad_0 = &vt_TypeList_int;
   v97 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = GetINIClassIntList(
                              (int)aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v97,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[58112],
+                             (uint8_t *)&stru_830620.__pad_579C[58112],
                              (void **)v412.vtable0,
                              v412.Items,
                              v412.Capacity,
-                             *(__int16 *)&v412.IsInitialized,
+                             *(int16_t *)&v412.IsInitialized,
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
@@ -2585,13 +2586,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v109 = (void *)aP2.sectionHead[1];
   *(unsigned int *)(v4 + 1320) = v108;
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  if ( v109 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v109);
+  if ( v109 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v109);
   v110 = *(unsigned int *)(v4 + 1388);
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[58100],
+          (uint8_t *)&stru_830620.__pad_579C[58100],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2607,9 +2608,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1388) = v111;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2625,9 +2626,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1392) = v113;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2638,9 +2639,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v116 = *(unsigned int *)(v4 + 1400);
   *(unsigned int *)(v4 + 1396) = v115;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[19416],
+          (uint8_t *)&stru_830620.__pad_579C[19416],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2656,9 +2657,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1400) = v117;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2674,9 +2675,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1404) = v119;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2687,9 +2688,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v122 = *(unsigned int *)(v4 + 1412);
   *(unsigned int *)(v4 + 1408) = v121;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[58008],
+          (uint8_t *)&stru_830620.__pad_579C[58008],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2705,9 +2706,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1412) = v123;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2723,9 +2724,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1416) = v125;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2736,9 +2737,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v128 = *(unsigned int *)(v4 + 1424);
   *(unsigned int *)(v4 + 1420) = v127;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[57936],
+          (uint8_t *)&stru_830620.__pad_579C[57936],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2754,9 +2755,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1424) = v129;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2772,9 +2773,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1428) = v131;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2785,9 +2786,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v134 = *(unsigned int *)(v4 + 1436);
   *(unsigned int *)(v4 + 1432) = v133;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[18784],
+          (uint8_t *)&stru_830620.__pad_579C[18784],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2803,9 +2804,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1436) = v135;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2821,9 +2822,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1440) = v137;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2834,9 +2835,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v140 = *(unsigned int *)(v4 + 1448);
   *(unsigned int *)(v4 + 1444) = v139;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)(v4 + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[18720],
+          (uint8_t *)&stru_830620.__pad_579C[18720],
           (INIClass *)&stru_87C374.__pad_579C[33876],
           (INIClass *)&aP2.CCINIClass_field_4C,
           128)
@@ -2852,9 +2853,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1448) = v141;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2870,9 +2871,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1452) = v143;
   if ( !INIClass::GetString(
-          (unsigned __int8 ***)aP0,
+          (uint8_t ***)aP0,
           (INIClass *)v412.Capacity,
-          *(unsigned __int8 **)&v412.IsInitialized,
+          *(uint8_t **)&v412.IsInitialized,
           *(INIClass **)aP3,
           *(INIClass **)&aP3[4],
           *(int *)&aP3[8])
@@ -2882,9 +2883,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   }
   *(unsigned int *)(v4 + 1456) = v145;
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&g_INI_Key_Speed.needsSave_flag,
+         (uint8_t *)&g_INI_Key_Speed.needsSave_flag,
          (INIClass *)&stru_87C374.__pad_579C[33876],
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
@@ -2917,12 +2918,12 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1856) = v147;
   *(unsigned int *)(v4 + 1860) = v148;
   aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
-  if ( v149 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v149);
+  if ( v149 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v149);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[57908],
+         (uint8_t *)&stru_830620.__pad_579C[57908],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
@@ -2955,13 +2956,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1884) = v151;
   *(unsigned int *)(v4 + 1888) = v152;
   aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
-  if ( v153 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v153);
+  if ( v153 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v153);
   v154 = *(ParticleSystemTypeClass **)(v4 + 1892);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[57884],
+         (uint8_t *)&stru_830620.__pad_579C[57884],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
@@ -2980,9 +2981,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1892) = v155;
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)v412.Capacity,
-         *(unsigned __int8 **)&v412.IsInitialized,
+         *(uint8_t **)&v412.IsInitialized,
          *(INIClass **)aP3,
          *(INIClass **)&aP3[4],
          *(int *)&aP3[8]) )
@@ -2999,10 +3000,10 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&v412.IsInitialized = &aP2.unknown30;
   *(unsigned int *)(v4 + 1908) = v157;
   Coord2 = INIClass::GetCoord2(
-             (unsigned __int8 ***)aP0,
+             (uint8_t ***)aP0,
              *(int **)&v412.IsInitialized,
              *(CCINIClass **)aP3,
-             *(unsigned __int8 **)&aP3[4],
+             *(uint8_t **)&aP3[4],
              *(int **)&aP3[8]);
   v159 = *Coord2;
   *(unsigned int *)&aP3[8] = 128;
@@ -3016,9 +3017,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1904) = v161;
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)v412.Capacity,
-         *(unsigned __int8 **)&v412.IsInitialized,
+         *(uint8_t **)&v412.IsInitialized,
          *(INIClass **)aP3,
          *(INIClass **)&aP3[4],
          *(int *)&aP3[8]) )
@@ -3051,12 +3052,12 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1928) = v163;
   *(unsigned int *)(v4 + 1932) = v164;
   aP2.sectionHead[0] = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
-  if ( v165 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v165);
+  if ( v165 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v165);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[57784],
+         (uint8_t *)&stru_830620.__pad_579C[57784],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
@@ -3089,13 +3090,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1956) = v167;
   *(unsigned int *)(v4 + 1960) = v168;
   aP2.sectionHead[0] = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
-  if ( v169 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v169);
+  if ( v169 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v169);
   eax231 = INIClass::GetCoord2(
-             (unsigned __int8 ***)aP0,
+             (uint8_t ***)aP0,
              &aP2.unknown30,
              (CCINIClass *)(v4 + 36),
-             (unsigned __int8 *)&stru_830620.__pad_579C[57764],
+             (uint8_t *)&stru_830620.__pad_579C[57764],
              (int *)(v4 + 1968));
   *(unsigned int *)(v4 + 1968) = *eax231;
   *(unsigned int *)(v4 + 1972) = eax231[1];
@@ -3104,120 +3105,120 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[57744];
   *(unsigned int *)aP3 = v4 + 36;
   *(unsigned int *)(v4 + 1976) = edx231;
-  v172 = INIClass::ReadBool_Overwrite((int)aP0, *(unsigned __int8 **)aP3, *(CCINIClass **)&aP3[4], aP3[8]);
+  v172 = INIClass::ReadBool_Overwrite((int)aP0, *(uint8_t **)aP3, *(CCINIClass **)&aP3[4], aP3[8]);
   *(unsigned int *)&aP3[8] = v4 + 1984;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[57724];
   *(unsigned int *)aP3 = v4 + 36;
   *(unsigned int *)&v412.IsInitialized = &aP2.unknown30;
   *(unsigned char *)(v4 + 1980) = v172;
   eax231a = INIClass::GetCoord2(
-              (unsigned __int8 ***)aP0,
+              (uint8_t ***)aP0,
               *(int **)&v412.IsInitialized,
               *(CCINIClass **)aP3,
-              *(unsigned __int8 **)&aP3[4],
+              *(uint8_t **)&aP3[4],
               *(int **)&aP3[8]);
   *(unsigned int *)(v4 + 1984) = *eax231a;
   *(unsigned int *)(v4 + 1988) = eax231a[1];
   *(unsigned int *)(v4 + 1992) = eax231a[2];
   eax231b = INIClass::GetCoord2(
-              (unsigned __int8 ***)aP0,
+              (uint8_t ***)aP0,
               &aP2.unknown30,
               (CCINIClass *)(v4 + 36),
-              (unsigned __int8 *)&stru_830620.__pad_579C[57700],
+              (uint8_t *)&stru_830620.__pad_579C[57700],
               (int *)(v4 + 1996));
   *(unsigned int *)(v4 + 1996) = *eax231b;
   *(unsigned int *)(v4 + 2000) = eax231b[1];
   *(unsigned int *)(v4 + 2004) = eax231b[2];
   v175 = INIClass::GetCoord2(
-           (unsigned __int8 ***)aP0,
+           (uint8_t ***)aP0,
            &aP2.unknown30,
            (CCINIClass *)(v4 + 36),
-           (unsigned __int8 *)&stru_830620.__pad_579C[57676],
+           (uint8_t *)&stru_830620.__pad_579C[57676],
            (int *)(v4 + 2008));
   *(unsigned int *)(v4 + 2008) = *v175;
   *(unsigned int *)(v4 + 2012) = v175[1];
   *(unsigned int *)(v4 + 2016) = v175[2];
   v176 = INIClass::GetCoord2(
-           (unsigned __int8 ***)aP0,
+           (uint8_t ***)aP0,
            &aP2.unknown30,
            (CCINIClass *)(v4 + 36),
-           (unsigned __int8 *)&stru_830620.__pad_579C[57648],
+           (uint8_t *)&stru_830620.__pad_579C[57648],
            (int *)(v4 + 2020));
   *(unsigned int *)(v4 + 2020) = *v176;
   *(unsigned int *)(v4 + 2024) = v176[1];
   *(unsigned int *)(v4 + 2028) = v176[2];
   eax231e = INIClass::GetCoord2(
-              (unsigned __int8 ***)aP0,
+              (uint8_t ***)aP0,
               &aP2.unknown30,
               (CCINIClass *)(v4 + 36),
-              (unsigned __int8 *)&stru_830620.__pad_579C[57624],
+              (uint8_t *)&stru_830620.__pad_579C[57624],
               (int *)(v4 + 2032));
   *(unsigned int *)(v4 + 2032) = *eax231e;
   *(unsigned int *)(v4 + 2036) = eax231e[1];
   *(unsigned int *)(v4 + 2040) = eax231e[2];
   *(unsigned char *)(v4 + 3230) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57616],
                             *(unsigned char *)(v4 + 3230));
   *(unsigned char *)(v4 + 3231) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57604],
                             *(unsigned char *)(v4 + 3231));
   *(unsigned char *)(v4 + 3232) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57592],
                             *(unsigned char *)(v4 + 3232));
   *(unsigned char *)(v4 + 3280) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57580],
                             *(unsigned char *)(v4 + 3280));
   *(unsigned char *)(v4 + 3281) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57564],
                             *(unsigned char *)(v4 + 3281));
   *(unsigned char *)(v4 + 3282) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57544],
                             (INIClass *)*(char *)(v4 + 3282));
   *(unsigned char *)(v4 + 3283) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57520],
                             (INIClass *)*(char *)(v4 + 3283));
   *(unsigned char *)(v4 + 3284) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57508],
                             *(unsigned char *)(v4 + 3284));
   *(unsigned char *)(v4 + 3229) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57500],
                             *(unsigned char *)(v4 + 3229));
   *(unsigned char *)(v4 + 3285) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57488],
                             *(unsigned char *)(v4 + 3285));
   *(unsigned int *)(v4 + 3288) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[57472],
                              *(INIClass **)(v4 + 3288));
   *(unsigned int *)(v4 + 3340) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[57464],
                              *(INIClass **)(v4 + 3340));
   *(unsigned int *)(v4 + 3344) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[57452],
                              *(INIClass **)(v4 + 3344));
   if ( *(unsigned char *)(v4 + 3285) && *(int *)(v4 + 3288) > 1 )
@@ -3228,10 +3229,10 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
     {
       sprintf(aP2.__pad_0, (ObjectClass *)&stru_830620.__pad_579C[57444], (INIClass *)aP2.headNode[2]);
       sprintf((char *const)&aP2.unknown30, (ObjectClass *)&stru_830620.__pad_579C[57428], (INIClass *)aP2.headNode[2]);
-      *(v178 - 6) = (INIClass *)INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)(v4 + 36), &aP2, *(v178 - 6));
+      *(v178 - 6) = (INIClass *)INIClass::ReadInt_Overwrite((int)aP0, (uint8_t *)(v4 + 36), &aP2, *(v178 - 6));
       *v178 = (INIClass *)INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&aP2.unknown30,
                             *v178);
       v170 = *(CCINIClass **)(v4 + 3288);
@@ -3241,28 +3242,28 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
     while ( aP2.headNode[2] - 1 < (int)v170 );
   }
   *(unsigned int *)(v4 + 980) = ObjectTypeClass::loadTypeMember_5474940(
-                            (unsigned __int8 ***)aP0,
+                            (uint8_t ***)aP0,
                             (CCINIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[57416],
+                            (uint8_t *)&stru_830620.__pad_579C[57416],
                             *(unsigned int *)(v4 + 980));
   *(unsigned char *)(v4 + 984) = INIClass::ReadBool_Overwrite(
                            (int)aP0,
-                           (unsigned __int8 *)(v4 + 36),
+                           (uint8_t *)(v4 + 36),
                            (CCINIClass *)&stru_830620.__pad_579C[57400],
                            *(unsigned char *)(v4 + 984));
   *(unsigned int *)(v4 + 988) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57376],
                             *(INIClass **)(v4 + 988));
   *(unsigned int *)(v4 + 992) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57348],
                             *(INIClass **)(v4 + 992));
   *(unsigned int *)(v4 + 996) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57340],
                             *(INIClass **)(v4 + 996));
   *(unsigned int *)aP2.__pad_0 = &v412;
@@ -3271,9 +3272,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v171 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = LoadBuildingTypeClassPrerequisites(
                              aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v171,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[57324],
+                             (uint8_t *)&stru_830620.__pad_579C[57324],
                              v412);
   TypeList::Copy((unsigned int *)(v4 + 1592), *(unsigned int **)aP2.__pad_0);
   v181 = *(unsigned int *)aP2.__pad_0;
@@ -3281,8 +3282,8 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1612) = *(unsigned int *)(v181 + 20);
   *(unsigned int *)(v4 + 1616) = *(unsigned int *)(v181 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  if ( aP2.sectionHead[1] && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z((void *)aP2.sectionHead[1]);
+  if ( aP2.sectionHead[1] && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL((void *)aP2.sectionHead[1]);
   *(unsigned int *)aP2.__pad_0 = &v412;
   IntVector::Copy(&v412, (VectorClass *)(v4 + 1620));
   v173 = *(CCINIClass **)aP2.__pad_0;
@@ -3292,9 +3293,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v174 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)aP2.__pad_0 = LoadBuildingTypeClassPrerequisites(
                              aP2.sectionHead,
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v174,
-                             (unsigned __int8 *)&stru_830620.__pad_579C[57300],
+                             (uint8_t *)&stru_830620.__pad_579C[57300],
                              v412);
   TypeList::Copy((unsigned int *)(v4 + 1620), *(unsigned int **)aP2.__pad_0);
   v184 = *(unsigned int *)aP2.__pad_0;
@@ -3302,157 +3303,157 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1640) = *(unsigned int *)(v184 + 20);
   *(unsigned int *)(v4 + 1644) = *(unsigned int *)(v184 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  if ( aP2.sectionHead[1] && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z((void *)aP2.sectionHead[1]);
+  if ( aP2.sectionHead[1] && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL((void *)aP2.sectionHead[1]);
   *(unsigned int *)(v4 + 1512) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[57292],
                              *(INIClass **)(v4 + 1512));
   *(unsigned char *)(v4 + 3388) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57272],
                             *(unsigned char *)(v4 + 3388));
   *(unsigned char *)(v4 + 3389) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57252],
                             *(unsigned char *)(v4 + 3389));
   *(unsigned int *)(v4 + 1520) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[57236],
                              *(INIClass **)(v4 + 1520));
   *(unsigned int *)(v4 + 1524) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[57216],
                              *(INIClass **)(v4 + 1524));
   *(unsigned int *)(v4 + 1528) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[57204],
                              *(INIClass **)(v4 + 1528));
   *(unsigned int *)(v4 + 1532) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[57184],
                              *(INIClass **)(v4 + 1532));
   *(unsigned int *)(v4 + 1548) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[57160],
                              *(INIClass **)(v4 + 1548));
   *(double *)&aP3[4] = *(float *)(v4 + 1544);
   *(float *)(v4 + 1544) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[57140],
+                            (uint8_t *)&stru_830620.__pad_579C[57140],
                             *(INIClass **)&aP3[4]);
   *(unsigned char *)(v4 + 1518) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57128],
                             *(unsigned char *)(v4 + 1518));
   *(unsigned char *)(v4 + 1519) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57116],
                             *(unsigned char *)(v4 + 1519));
   *(unsigned char *)(v4 + 1508) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57104],
                             *(unsigned char *)(v4 + 1508));
   *(unsigned char *)(v4 + 1516) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57084],
                             *(unsigned char *)(v4 + 1516));
   *(unsigned char *)(v4 + 1517) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57064],
                             *(unsigned char *)(v4 + 1517));
   *(unsigned char *)(v4 + 3375) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57052],
                             *(unsigned char *)(v4 + 3375));
   *(unsigned char *)(v4 + 3376) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57036],
                             *(unsigned char *)(v4 + 3376));
   *(unsigned char *)(v4 + 3377) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57020],
                             *(unsigned char *)(v4 + 3377));
   *(unsigned char *)(v4 + 3378) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[57000],
                             *(unsigned char *)(v4 + 3378));
   *(unsigned char *)(v4 + 3481) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56980],
                             *(unsigned char *)(v4 + 3481));
   *(unsigned char *)(v4 + 3482) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56964],
                             *(unsigned char *)(v4 + 3482));
   *(unsigned char *)(v4 + 3379) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56944],
                             *(unsigned char *)(v4 + 3379));
   *(unsigned char *)(v4 + 3380) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56920],
                             *(unsigned char *)(v4 + 3380));
   *(unsigned char *)(v4 + 3483) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56896],
                             *(unsigned char *)(v4 + 3483));
   *(unsigned char *)(v4 + 3484) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56868],
                             *(unsigned char *)(v4 + 3484));
   *(unsigned char *)(v4 + 3485) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56840],
                             *(unsigned char *)(v4 + 3485));
   *(unsigned int *)(v4 + 3488) = INIClass::ParseFlagList(
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              (CCINIClass *)(v4 + 36),
-                             (unsigned __int8 *)&stru_830620.__pad_579C[56824],
+                             (uint8_t *)&stru_830620.__pad_579C[56824],
                              *(unsigned int *)(v4 + 3488));
   *(unsigned int *)(v4 + 3496) = INIClass::ParseFlagList(
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              (CCINIClass *)(v4 + 36),
-                             (unsigned __int8 *)&stru_830620.__pad_579C[56808],
+                             (uint8_t *)&stru_830620.__pad_579C[56808],
                              *(unsigned int *)(v4 + 3496));
   *(unsigned int *)(v4 + 3492) = INIClass::ParseFlagList(
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              (CCINIClass *)(v4 + 36),
-                             (unsigned __int8 *)&stru_830620.__pad_579C[56792],
+                             (uint8_t *)&stru_830620.__pad_579C[56792],
                              *(unsigned int *)(v4 + 3492));
   *(unsigned int *)(v4 + 1588) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              aTechlevel,
                              *(INIClass **)(v4 + 1588));
   *(unsigned int *)&aP3[8] = INIClass::ReadInt_Overwrite(
                          (int)aP0,
-                         (unsigned __int8 *)(v4 + 36),
+                         (uint8_t *)(v4 + 36),
                          (CCINIClass *)&stru_830620.__pad_579C[56776],
                          *(INIClass **)(v4 + 1564));
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56756];
@@ -3460,14 +3461,14 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1564) = *(unsigned int *)&aP3[8];
   *(unsigned int *)(v4 + 1568) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             *(unsigned __int8 **)aP3,
+                             *(uint8_t **)aP3,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   v177 = *(CCINIClass **)(v4 + 1572);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[56736],
+         (uint8_t *)&stru_830620.__pad_579C[56736],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
@@ -3481,9 +3482,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v412.Capacity = v4 + 36;
   *(unsigned int *)(v4 + 1572) = v177;
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)v412.Capacity,
-         *(unsigned __int8 **)&v412.IsInitialized,
+         *(uint8_t **)&v412.IsInitialized,
          *(INIClass **)aP3,
          *(INIClass **)&aP3[4],
          *(int *)&aP3[8]) )
@@ -3497,20 +3498,20 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1576) = v186;
   *(unsigned int *)&aP3[8] = INIClass::ReadInt_Overwrite(
                          (int)aP0,
-                         (unsigned __int8 *)(v4 + 36),
+                         (uint8_t *)(v4 + 36),
                          (CCINIClass *)&stru_830620.__pad_579C[56688],
                          *(INIClass **)(v4 + 1580));
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56660];
   *(unsigned int *)aP3 = v4 + 36;
   *(unsigned int *)(v4 + 1580) = *(unsigned int *)&aP3[8];
-  v187 = INIClass::ReadInt_Overwrite((int)aP0, *(unsigned __int8 **)aP3, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  v187 = INIClass::ReadInt_Overwrite((int)aP0, *(uint8_t **)aP3, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = -1;
   *(unsigned int *)&aP3[4] = &g_INI_Key_Speed;
   *(unsigned int *)aP3 = v4 + 36;
   *(unsigned int *)(v4 + 1584) = v187;
   eax246 = INIClass::ReadInt_Overwrite(
              (int)aP0,
-             *(unsigned __int8 **)aP3,
+             *(uint8_t **)aP3,
              *(CCINIClass **)&aP3[4],
              *(INIClass **)&aP3[8]);
   if ( eax246 != -1 )
@@ -3524,19 +3525,19 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   }
   *(unsigned int *)(v4 + 1552) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_825430.ownsFile,
                              *(INIClass **)(v4 + 1552));
   *(unsigned int *)(v4 + 1556) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56652],
                              *(INIClass **)(v4 + 1556));
   edi252 = *(UnitTypeClass **)(v4 + 1720);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[56636],
+         (uint8_t *)&stru_830620.__pad_579C[56636],
          (INIClass *)&stru_87C374.__pad_579C[33876],
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
@@ -3554,9 +3555,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1720) = v191;
   edi255 = *(AnimTypeClass **)(v4 + 1724);
   if ( INIClass::GetString(
-         (unsigned __int8 ***)aP0,
+         (uint8_t ***)aP0,
          (INIClass *)(v4 + 36),
-         *(unsigned __int8 **)&v412.IsInitialized,
+         *(uint8_t **)&v412.IsInitialized,
          *(INIClass **)aP3,
          *(INIClass **)&aP3[4],
          *(int *)&aP3[8]) )
@@ -3570,17 +3571,17 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1724) = eax256;
   *(unsigned int *)(v4 + 1664) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56624],
                              *(INIClass **)(v4 + 1664));
   *(unsigned int *)(v4 + 1668) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_81BBC8.sectionHead[2],
                              *(INIClass **)(v4 + 1668));
   *(unsigned int *)(v4 + 1672) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56616],
                              *(INIClass **)(v4 + 1672));
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 1676);
@@ -3589,177 +3590,177 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)(v4 + 1676) = INIClass::ReadCoord(*(double *)aP3, *(int *)&aP3[8], v414, v415);
   *(unsigned int *)(v4 + 1700) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56580],
                              *(INIClass **)(v4 + 1700));
   *(unsigned int *)(v4 + 1704) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56560],
                              *(INIClass **)(v4 + 1704));
   *(unsigned char *)(v4 + 1708) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56548],
                             *(unsigned char *)(v4 + 1708));
   *(unsigned char *)(v4 + 1709) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56532],
                             *(unsigned char *)(v4 + 1709));
   *(unsigned char *)(v4 + 1710) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56520],
                             *(unsigned char *)(v4 + 1710));
   *(unsigned char *)(v4 + 1711) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56504],
                             *(unsigned char *)(v4 + 1711));
   *(unsigned char *)(v4 + 1712) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56488],
                             *(unsigned char *)(v4 + 1712));
   *(unsigned int *)(v4 + 1688) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56480],
                              *(INIClass **)(v4 + 1688));
   *(unsigned int *)(v4 + 1692) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56468],
                              *(INIClass **)(v4 + 1692));
   *(unsigned int *)(v4 + 1696) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56452],
                              *(INIClass **)(v4 + 1696));
   *(unsigned char *)(v4 + 1713) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56428],
                             *(unsigned char *)(v4 + 1713));
   *(double *)&aP3[4] = *(float *)(v4 + 1716);
   *(float *)(v4 + 1716) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             (INIClass *)(v4 + 36),
-                            (unsigned __int8 *)&stru_830620.__pad_579C[56396],
+                            (uint8_t *)&stru_830620.__pad_579C[56396],
                             *(INIClass **)&aP3[4]);
   *(unsigned char *)(v4 + 1680) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56380],
                             *(unsigned char *)(v4 + 1680));
   *(unsigned char *)(v4 + 1681) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56368],
                             *(unsigned char *)(v4 + 1681));
   *(unsigned char *)(v4 + 1682) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56360],
                             *(unsigned char *)(v4 + 1682));
   *(unsigned char *)(v4 + 1683) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56352],
                             *(unsigned char *)(v4 + 1683));
   *(unsigned char *)(v4 + 1684) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56340],
                             *(unsigned char *)(v4 + 1684));
   *(unsigned char *)(v4 + 1685) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56328],
                             *(unsigned char *)(v4 + 1685));
   *(unsigned char *)(v4 + 1736) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56308],
                             *(unsigned char *)(v4 + 1736));
   eax258 = INIClass::ReadInt_Overwrite(
              (int)aP0,
-             (unsigned __int8 *)(v4 + 36),
+             (uint8_t *)(v4 + 36),
              (CCINIClass *)&stru_830620.__pad_579C[56300],
              *(INIClass **)(v4 + 1832));
   *(unsigned int *)(v4 + 1832) = eax258;
   *(unsigned int *)(v4 + 1652) = eax258;
   *(unsigned int *)(v4 + 1648) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56288],
                              *(INIClass **)(v4 + 1648));
   *(unsigned int *)(v4 + 1740) = INIClass::ParseFlagList(
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              (CCINIClass *)(v4 + 36),
-                             (unsigned __int8 *)&stru_830620.__pad_579C[56280],
+                             (uint8_t *)&stru_830620.__pad_579C[56280],
                              *(unsigned int *)(v4 + 1740));
   *(unsigned int *)(v4 + 1744) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)(v4 + 36),
+                             (uint8_t *)(v4 + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[56260],
                              *(INIClass **)(v4 + 1744));
   *(unsigned char *)(v4 + 3214) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56248],
                             *(unsigned char *)(v4 + 3214));
   *(unsigned char *)(v4 + 3277) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56240],
                             *(unsigned char *)(v4 + 3277));
   *(unsigned char *)(v4 + 2053) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56232],
                             *(unsigned char *)(v4 + 2053));
   *(unsigned char *)(v4 + 3278) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56224],
                             *(unsigned char *)(v4 + 3278));
   *(unsigned char *)(v4 + 3276) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56212],
                             *(unsigned char *)(v4 + 3276));
   *(unsigned char *)(v4 + 3226) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)(v4 + 36),
+                            (uint8_t *)(v4 + 36),
                             (CCINIClass *)&stru_830620.__pad_579C[56200],
                             *(unsigned char *)(v4 + 3226));
-  LOBYTE(ecx258) = *(unsigned char *)(v4 + 3227);
+  IDA_LOBYTE(ecx258) = *(unsigned char *)(v4 + 3227);
   *(unsigned int *)&aP3[8] = ecx258;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56184];
   v188 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3227) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v188,
+                            (uint8_t *)v188,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258) = *(unsigned char *)(v4 + 3348);
+  IDA_LOBYTE(edx258) = *(unsigned char *)(v4 + 3348);
   *(unsigned int *)&aP3[8] = edx258;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56172];
   v190 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3348) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v190,
+                            (uint8_t *)v190,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258a) = *(unsigned char *)(v4 + 3360);
+  IDA_LOBYTE(eax258a) = *(unsigned char *)(v4 + 3360);
   *(unsigned int *)&aP3[8] = eax258a;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56160];
   v192 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3360) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v192,
+                            (uint8_t *)v192,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 1820);
@@ -3767,7 +3768,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v193 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 1820) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v193,
+                             (uint8_t *)v193,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 1504);
@@ -3775,7 +3776,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v194 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 1504) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v194,
+                             (uint8_t *)v194,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 976);
@@ -3783,7 +3784,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v195 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 976) = INIClass::ReadInt_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v195,
+                            (uint8_t *)v195,
                             *(CCINIClass **)&aP3[4],
                             *(INIClass **)&aP3[8]);
   v204 = *(unsigned int *)(v4 + 968);
@@ -3794,170 +3795,170 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 968) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v196,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 1732);
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56120];
   v197 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 1732) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v197,
+                             (uint8_t *)v197,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(ecx258a) = *(unsigned char *)(v4 + 3223);
+  IDA_LOBYTE(ecx258a) = *(unsigned char *)(v4 + 3223);
   *(unsigned int *)&aP3[8] = ecx258a;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56108];
   v199 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3223) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v199,
+                            (uint8_t *)v199,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258b) = *(unsigned char *)(v4 + 3222);
+  IDA_LOBYTE(edx258b) = *(unsigned char *)(v4 + 3222);
   *(unsigned int *)&aP3[8] = edx258b;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56096];
   v201 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3222) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v201,
+                            (uint8_t *)v201,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258b) = *(unsigned char *)(v4 + 3218);
+  IDA_LOBYTE(eax258b) = *(unsigned char *)(v4 + 3218);
   *(unsigned int *)&aP3[8] = eax258b;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[28344];
   v203 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3218) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v203,
+                            (uint8_t *)v203,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258b) = *(unsigned char *)(v4 + 3217);
+  IDA_LOBYTE(ecx258b) = *(unsigned char *)(v4 + 3217);
   *(unsigned int *)&aP3[8] = ecx258b;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56080];
   v205 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3217) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v205,
+                            (uint8_t *)v205,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258c) = *(unsigned char *)(v4 + 1749);
+  IDA_LOBYTE(edx258c) = *(unsigned char *)(v4 + 1749);
   *(unsigned int *)&aP3[8] = edx258c;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56052];
   v207 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 1749) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v207,
+                            (uint8_t *)v207,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258c) = *(unsigned char *)(v4 + 1748);
+  IDA_LOBYTE(eax258c) = *(unsigned char *)(v4 + 1748);
   *(unsigned int *)&aP3[8] = eax258c;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56040];
   v209 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 1748) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v209,
+                            (uint8_t *)v209,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258c) = *(unsigned char *)(v4 + 3216);
+  IDA_LOBYTE(ecx258c) = *(unsigned char *)(v4 + 3216);
   *(unsigned int *)&aP3[8] = ecx258c;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56028];
   v211 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3216) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v211,
+                            (uint8_t *)v211,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258d) = *(unsigned char *)(v4 + 3367);
+  IDA_LOBYTE(edx258d) = *(unsigned char *)(v4 + 3367);
   *(unsigned int *)&aP3[8] = edx258d;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56012];
   v213 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3367) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v213,
+                            (uint8_t *)v213,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258d) = *(unsigned char *)(v4 + 3368);
+  IDA_LOBYTE(eax258d) = *(unsigned char *)(v4 + 3368);
   *(unsigned int *)&aP3[8] = eax258d;
   *(unsigned int *)&aP3[4] = &stru_81BB58;
   v215 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3368) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v215,
+                            (uint8_t *)v215,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258d) = *(unsigned char *)(v4 + 3369);
+  IDA_LOBYTE(ecx258d) = *(unsigned char *)(v4 + 3369);
   *(unsigned int *)&aP3[8] = ecx258d;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[56000];
   v217 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3369) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v217,
+                            (uint8_t *)v217,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258e) = *(unsigned char *)(v4 + 3370);
+  IDA_LOBYTE(edx258e) = *(unsigned char *)(v4 + 3370);
   *(unsigned int *)&aP3[8] = edx258e;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55980];
   v219 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3370) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v219,
+                            (uint8_t *)v219,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258e) = *(unsigned char *)(v4 + 3373);
+  IDA_LOBYTE(eax258e) = *(unsigned char *)(v4 + 3373);
   *(unsigned int *)&aP3[8] = eax258e;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[30492];
   v221 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3373) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v221,
+                            (uint8_t *)v221,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258e) = *(unsigned char *)(v4 + 3383);
+  IDA_LOBYTE(ecx258e) = *(unsigned char *)(v4 + 3383);
   *(unsigned int *)&aP3[8] = ecx258e;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55960];
   v223 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3383) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v223,
+                            (uint8_t *)v223,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258f) = *(unsigned char *)(v4 + 3433);
+  IDA_LOBYTE(edx258f) = *(unsigned char *)(v4 + 3433);
   *(unsigned int *)&aP3[8] = edx258f;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55948];
   v225 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3433) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v225,
+                            (uint8_t *)v225,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(v235) = *(unsigned char *)(v4 + 3434);
+  IDA_LOBYTE(v235) = *(unsigned char *)(v4 + 3434);
   *(unsigned int *)&aP3[8] = v235;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55932];
   v227 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3434) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v227,
+                            (uint8_t *)v227,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258f) = *(unsigned char *)(v4 + 3390);
+  IDA_LOBYTE(ecx258f) = *(unsigned char *)(v4 + 3390);
   *(unsigned int *)&aP3[8] = ecx258f;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55924];
   v229 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3390) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v229,
+                            (uint8_t *)v229,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3392);
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55912];
   v230 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
-  *(unsigned int *)(v4 + 3392) = GetINIClassInt((unsigned __int8 ***)aP0, v230, *(unsigned __int8 **)&aP3[4], *(int *)&aP3[8]);
+  *(unsigned int *)(v4 + 3392) = GetINIClassInt((uint8_t ***)aP0, v230, *(uint8_t **)&aP3[4], *(int *)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3400);
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55896];
   v231 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3400) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v231,
+                             (uint8_t *)v231,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3396);
@@ -3965,7 +3966,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v232 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3396) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v232,
+                             (uint8_t *)v232,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3404);
@@ -3973,7 +3974,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v233 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3404) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v233,
+                             (uint8_t *)v233,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3408);
@@ -3981,32 +3982,32 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v234 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3408) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v234,
+                             (uint8_t *)v234,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(ecx258g) = *(unsigned char *)(v4 + 3412);
+  IDA_LOBYTE(ecx258g) = *(unsigned char *)(v4 + 3412);
   *(unsigned int *)&aP3[8] = ecx258g;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55836];
   v236 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3412) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v236,
+                            (uint8_t *)v236,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3416);
   *(unsigned int *)&aP3[4] = &stru_8184C8;
   v237 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3416) = GetINIClassKeyword(
-                             (unsigned __int8 ***)aP0,
+                             (uint8_t ***)aP0,
                              v237,
-                             *(unsigned __int8 **)&aP3[4],
+                             *(uint8_t **)&aP3[4],
                              *(int *)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3424);
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55820];
   v238 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3424) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v238,
+                             (uint8_t *)v238,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3420);
@@ -4014,7 +4015,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v239 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3420) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v239,
+                             (uint8_t *)v239,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3428);
@@ -4022,98 +4023,98 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v240 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   eax258g = INIClass::ReadInt_Overwrite(
               (int)aP0,
-              (unsigned __int8 *)v240,
+              (uint8_t *)v240,
               *(CCINIClass **)&aP3[4],
               *(INIClass **)&aP3[8]);
   *(unsigned int *)(v4 + 3428) = eax258g;
-  LOBYTE(eax258g) = *(unsigned char *)(v4 + 3432);
+  IDA_LOBYTE(eax258g) = *(unsigned char *)(v4 + 3432);
   *(unsigned int *)&aP3[8] = eax258g;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55772];
   v242 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3432) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v242,
+                            (uint8_t *)v242,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258h) = *(unsigned char *)(v4 + 3385);
+  IDA_LOBYTE(ecx258h) = *(unsigned char *)(v4 + 3385);
   *(unsigned int *)&aP3[8] = ecx258h;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55752];
   v244 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3385) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v244,
+                            (uint8_t *)v244,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258g) = *(unsigned char *)(v4 + 3386);
+  IDA_LOBYTE(edx258g) = *(unsigned char *)(v4 + 3386);
   *(unsigned int *)&aP3[8] = edx258g;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55740];
   v246 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3386) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v246,
+                            (uint8_t *)v246,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258h) = *(unsigned char *)(v4 + 3384);
+  IDA_LOBYTE(eax258h) = *(unsigned char *)(v4 + 3384);
   *(unsigned int *)&aP3[8] = eax258h;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55724];
   v248 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3384) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v248,
+                            (uint8_t *)v248,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258i) = *(unsigned char *)(v4 + 3381);
+  IDA_LOBYTE(ecx258i) = *(unsigned char *)(v4 + 3381);
   *(unsigned int *)&aP3[8] = ecx258i;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55704];
   v250 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3381) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v250,
+                            (uint8_t *)v250,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258h) = *(unsigned char *)(v4 + 3382);
+  IDA_LOBYTE(edx258h) = *(unsigned char *)(v4 + 3382);
   *(unsigned int *)&aP3[8] = edx258h;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55680];
   v252 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3382) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v252,
+                            (uint8_t *)v252,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(v262) = *(unsigned char *)(v4 + 3478);
+  IDA_LOBYTE(v262) = *(unsigned char *)(v4 + 3478);
   *(unsigned int *)&aP3[8] = v262;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55660];
   v254 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3478) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v254,
+                            (uint8_t *)v254,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258j) = *(unsigned char *)(v4 + 3374);
+  IDA_LOBYTE(ecx258j) = *(unsigned char *)(v4 + 3374);
   *(unsigned int *)&aP3[8] = ecx258j;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55648];
   v256 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3374) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v256,
+                            (uint8_t *)v256,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258i) = *(unsigned char *)(v4 + 3479);
+  IDA_LOBYTE(edx258i) = *(unsigned char *)(v4 + 3479);
   *(unsigned int *)&aP3[8] = edx258i;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55640];
   v258 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3479) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v258,
+                            (uint8_t *)v258,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258j) = *(unsigned char *)(v4 + 3387);
+  IDA_LOBYTE(eax258j) = *(unsigned char *)(v4 + 3387);
   *(unsigned int *)&aP3[8] = eax258j;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55624];
   v260 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3387) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v260,
+                            (uint8_t *)v260,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3436);
@@ -4121,16 +4122,16 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v261 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3436) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v261,
+                             (uint8_t *)v261,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(v271) = *(unsigned char *)(v4 + 3480);
+  IDA_LOBYTE(v271) = *(unsigned char *)(v4 + 3480);
   *(unsigned int *)&aP3[8] = v271;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55588];
   v263 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3480) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v263,
+                            (uint8_t *)v263,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3440);
@@ -4138,7 +4139,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v264 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3440) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v264,
+                             (uint8_t *)v264,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3444);
@@ -4146,7 +4147,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v265 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3444) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v265,
+                             (uint8_t *)v265,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(double *)&aP3[4] = *(float *)(v4 + 3448);
@@ -4155,7 +4156,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(float *)(v4 + 3448) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v266,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
   *(double *)&aP3[4] = *(float *)(v4 + 3452);
   *(unsigned int *)aP3 = &stru_830620.__pad_579C[55524];
@@ -4163,14 +4164,14 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(float *)(v4 + 3452) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v267,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3456);
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55508];
   v268 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3456) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v268,
+                             (uint8_t *)v268,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(double *)&aP3[4] = *(float *)(v4 + 3460);
@@ -4179,7 +4180,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(float *)(v4 + 3460) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v269,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
   *(double *)&aP3[4] = *(float *)(v4 + 3464);
   *(unsigned int *)aP3 = &stru_830620.__pad_579C[55476];
@@ -4187,15 +4188,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(float *)(v4 + 3464) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v270,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
-  LOBYTE(v280) = *(unsigned char *)(v4 + 3468);
+  IDA_LOBYTE(v280) = *(unsigned char *)(v4 + 3468);
   *(unsigned int *)&aP3[8] = v280;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55456];
   v272 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3468) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v272,
+                            (uint8_t *)v272,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3472);
@@ -4203,52 +4204,52 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v273 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3472) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v273,
+                             (uint8_t *)v273,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(edx258k) = *(unsigned char *)(v4 + 3476);
+  IDA_LOBYTE(edx258k) = *(unsigned char *)(v4 + 3476);
   *(unsigned int *)&aP3[8] = edx258k;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55428];
   v275 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3476) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v275,
+                            (uint8_t *)v275,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(v285) = *(unsigned char *)(v4 + 3477);
+  IDA_LOBYTE(v285) = *(unsigned char *)(v4 + 3477);
   *(unsigned int *)&aP3[8] = v285;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55416];
   v277 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3477) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v277,
+                            (uint8_t *)v277,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(v287) = *(unsigned char *)(v4 + 1728);
+  IDA_LOBYTE(v287) = *(unsigned char *)(v4 + 1728);
   *(unsigned int *)&aP3[8] = v287;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55396];
   v279 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 1728) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v279,
+                            (uint8_t *)v279,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(v289) = *(unsigned char *)(v4 + 1729);
+  IDA_LOBYTE(v289) = *(unsigned char *)(v4 + 1729);
   *(unsigned int *)&aP3[8] = v289;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55368];
   v281 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 1729) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v281,
+                            (uint8_t *)v281,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(v291) = *(unsigned char *)(v4 + 3234);
+  IDA_LOBYTE(v291) = *(unsigned char *)(v4 + 3234);
   *(unsigned int *)&aP3[8] = v291;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55352];
   v283 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3234) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v283,
+                            (uint8_t *)v283,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned int *)&aP3[8] = ReadPointerFromECX4((void *)(v4 + 3236));
@@ -4256,7 +4257,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v284 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   eax258n = INIClass::ReadInt_Overwrite(
               (int)aP0,
-              (unsigned __int8 *)v284,
+              (uint8_t *)v284,
               *(CCINIClass **)&aP3[4],
               *(INIClass **)&aP3[8]);
   ObjectTypeClass::loadTypeMember_5717A30((unsigned int *)(v4 + 3236), eax258n);
@@ -4265,7 +4266,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v286 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   eax258o = INIClass::ReadInt_Overwrite(
               (int)aP0,
-              (unsigned __int8 *)v286,
+              (uint8_t *)v286,
               *(CCINIClass **)&aP3[4],
               *(INIClass **)&aP3[8]);
   ObjectTypeClass::loadTypeMember_5717A50((unsigned int *)(v4 + 3236), eax258o);
@@ -4274,27 +4275,27 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v288 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   eax258p = INIClass::ReadInt_Overwrite(
               (int)aP0,
-              (unsigned __int8 *)v288,
+              (uint8_t *)v288,
               *(CCINIClass **)&aP3[4],
               *(INIClass **)&aP3[8]);
   ObjectTypeClass::loadTypeMember_5717AB0((unsigned int *)(v4 + 3236), eax258p);
   *(unsigned int *)&aP3[8] = ObjectTypeClass::loadTypeMember_5717AA0((unsigned int *)(v4 + 3236));
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55272];
   v290 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
-  v300 = INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)v290, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  v300 = INIClass::ReadInt_Overwrite((int)aP0, (uint8_t *)v290, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
   ObjectTypeClass::loadTypeMember_5717A80((unsigned int *)(v4 + 3236), v300);
   qmemcpy((void *)(v4 + 3256), (const void *)(v4 + 3236), 0x14u);
   *(unsigned int *)&aP3[8] = ReadPointerFromECX4((void *)(v4 + 3236));
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55256];
   v292 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
-  v302 = INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)v292, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  v302 = INIClass::ReadInt_Overwrite((int)aP0, (uint8_t *)v292, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
   ObjectTypeClass::loadTypeMember_5717A30((unsigned int *)(v4 + 3256), v302);
   *(unsigned int *)&aP3[8] = ObjectTypeClass::loadTypeMember_5717A70((unsigned int *)(v4 + 3236));
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55232];
   v294 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   eax258s = INIClass::ReadInt_Overwrite(
               (int)aP0,
-              (unsigned __int8 *)v294,
+              (uint8_t *)v294,
               *(CCINIClass **)&aP3[4],
               *(INIClass **)&aP3[8]);
   ObjectTypeClass::loadTypeMember_5717A50((unsigned int *)(v4 + 3256), eax258s);
@@ -4303,31 +4304,31 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v296 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   eax258t = INIClass::ReadInt_Overwrite(
               (int)aP0,
-              (unsigned __int8 *)v296,
+              (uint8_t *)v296,
               *(CCINIClass **)&aP3[4],
               *(INIClass **)&aP3[8]);
   ObjectTypeClass::loadTypeMember_5717AB0((unsigned int *)(v4 + 3256), eax258t);
   *(unsigned int *)&aP3[8] = ObjectTypeClass::loadTypeMember_5717AA0((unsigned int *)(v4 + 3236));
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55192];
   v298 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
-  v308 = INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)v298, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  v308 = INIClass::ReadInt_Overwrite((int)aP0, (uint8_t *)v298, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
   ObjectTypeClass::loadTypeMember_5717A80((unsigned int *)(v4 + 3256), v308);
-  LOBYTE(ecx258l) = *(unsigned char *)(v4 + 3371);
+  IDA_LOBYTE(ecx258l) = *(unsigned char *)(v4 + 3371);
   *(unsigned int *)&aP3[8] = ecx258l;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55172];
   v301 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3371) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v301,
+                            (uint8_t *)v301,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258m) = *(unsigned char *)(v4 + 3517);
+  IDA_LOBYTE(edx258m) = *(unsigned char *)(v4 + 3517);
   *(unsigned int *)&aP3[8] = edx258m;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55160];
   v303 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3517) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v303,
+                            (uint8_t *)v303,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3520);
@@ -4335,7 +4336,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v304 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3520) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v304,
+                             (uint8_t *)v304,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3524);
@@ -4343,7 +4344,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v305 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3524) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v305,
+                             (uint8_t *)v305,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3528);
@@ -4351,22 +4352,22 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v306 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned int *)(v4 + 3528) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
-                             (unsigned __int8 *)v306,
+                             (uint8_t *)v306,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 3532);
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55100];
   v307 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
-  v317 = INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)v307, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
+  v317 = INIClass::ReadInt_Overwrite((int)aP0, (uint8_t *)v307, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = v4 + 668;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55080];
   *(unsigned int *)(v4 + 3532) = v317;
   v309 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   Abilities = (CCINIClass *)INIEntry::ReadAbilities(
-                              (unsigned __int8 ***)aP0,
+                              (uint8_t ***)aP0,
                               (CCINIClass *)&aP2.unknown30,
                               (CCINIClass *)v309,
-                              *(unsigned __int8 **)&aP3[4],
+                              *(uint8_t **)&aP3[4],
                               *(int *)&aP3[8]);
   ObjectTypeClass::loadTypeMember_57179D0((unsigned int *)(v4 + 668), (WeaponTypeClass *)aP2.sectionHead, Abilities);
   nullsub_86();
@@ -4375,10 +4376,10 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[55064];
   v311 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   v321 = (CCINIClass *)INIEntry::ReadAbilities(
-                         (unsigned __int8 ***)aP0,
+                         (uint8_t ***)aP0,
                          (CCINIClass *)&aP2.unknown30,
                          (CCINIClass *)v311,
-                         *(unsigned __int8 **)&aP3[4],
+                         *(uint8_t **)&aP3[4],
                          *(int *)&aP3[8]);
   ObjectTypeClass::loadTypeMember_57179D0((unsigned int *)(v4 + 686), (WeaponTypeClass *)aP2.sectionHead, v321);
   nullsub_86();
@@ -4401,7 +4402,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 712) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v314,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
   if ( *(double *)(v4 + 720) == 0.0 )
   {
@@ -4421,7 +4422,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 720) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v316,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
   if ( *(double *)(v4 + 728) == 0.0 )
   {
@@ -4441,7 +4442,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 728) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v318,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
   if ( *(double *)(v4 + 736) == 0.0 )
   {
@@ -4461,7 +4462,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 736) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v320,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
   if ( *(double *)(v4 + 744) == 0.0 )
   {
@@ -4481,7 +4482,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 744) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v322,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
   edx273 = *(unsigned int *)(v4 + 704);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 708);
@@ -4491,24 +4492,24 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(double *)(v4 + 704) = INIClass::ReadDouble_Overwrite(
                             (int)aP0,
                             v323,
-                            *(unsigned __int8 **)aP3,
+                            *(uint8_t **)aP3,
                             *(INIClass **)&aP3[4]);
-  LOBYTE(eax273) = *(unsigned char *)(v4 + 3516);
+  IDA_LOBYTE(eax273) = *(unsigned char *)(v4 + 3516);
   *(unsigned int *)&aP3[8] = eax273;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[54872];
   v325 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3516) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
-                            (unsigned __int8 *)v325,
+                            (uint8_t *)v325,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx273) = *(unsigned char *)(v4 + 3500);
+  IDA_LOBYTE(ecx273) = *(unsigned char *)(v4 + 3500);
   *(unsigned int *)&aP3[8] = ecx273;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[54860];
   v327 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(unsigned char *)(v4 + 3500) = INIClass::ReadBool_Overwrite(
                             (int)&stru_87C374.__pad_579C[22128],
-                            (unsigned __int8 *)v327,
+                            (uint8_t *)v327,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned char *)(v4 + 3228) = 0;
@@ -4520,13 +4521,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   _makepath(aP4.__pad_20, 0, 0, (ObjectClass *)v329, *(const char **)&aP3[8]);
   if ( *(unsigned char *)(v4 + 168) && *(unsigned int *)(v4 + 164) )
   {
-    __3_YAXPAX_Z(*(void **)(v4 + 164));
+    RA2_OPDEL(*(void **)(v4 + 164));
     *(unsigned int *)(v4 + 164) = 0;
     *(unsigned char *)(v4 + 168) = 0;
   }
   if ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) != 7 )
   {
-    LOBYTE(v340) = 0;
+    IDA_LOBYTE(v340) = 0;
     *(unsigned int *)(v4 + 164) = SearchMIXFile(aP4.__pad_20, v340);
   }
   *(unsigned int *)&aP3[8] = 32;
@@ -4535,9 +4536,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned int *)&v412.IsInitialized = &stru_824238.sectionCount;
   v330 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   INIClass::GetString(
-    (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+    (uint8_t ***)&stru_87C374.__pad_579C[22128],
     v330,
-    *(unsigned __int8 **)&v412.IsInitialized,
+    *(uint8_t **)&v412.IsInitialized,
     *(INIClass **)aP3,
     *(INIClass **)&aP3[4],
     *(int *)&aP3[8]);
@@ -4553,7 +4554,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v331 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   *(unsigned int *)(v4 + 1824) = INIClass::ReadInt_Overwrite(
                              (int)&stru_87C374.__pad_579C[22128],
-                             (unsigned __int8 *)v331,
+                             (uint8_t *)v331,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 1816);
@@ -4561,34 +4562,34 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v332 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   *(unsigned int *)(v4 + 1816) = INIClass::ReadInt_Overwrite(
                              (int)&stru_87C374.__pad_579C[22128],
-                             (unsigned __int8 *)v332,
+                             (uint8_t *)v332,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(v344) = *(unsigned char *)(v4 + 3279);
+  IDA_LOBYTE(v344) = *(unsigned char *)(v4 + 3279);
   *(unsigned int *)&aP3[8] = v344;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[54748];
   v334 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   *(unsigned char *)(v4 + 3279) = INIClass::ReadBool_Overwrite(
                             (int)&stru_87C374.__pad_579C[22128],
-                            (unsigned __int8 *)v334,
+                            (uint8_t *)v334,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(v346) = *(unsigned char *)(v4 + 3363);
+  IDA_LOBYTE(v346) = *(unsigned char *)(v4 + 3363);
   *(unsigned int *)&aP3[8] = v346;
   *(unsigned int *)&aP3[4] = &unk_818610;
   v336 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   *(unsigned char *)(v4 + 3363) = INIClass::ReadBool_Overwrite(
                             (int)&stru_87C374.__pad_579C[22128],
-                            (unsigned __int8 *)v336,
+                            (uint8_t *)v336,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax283) = *(unsigned char *)(v4 + 3365);
+  IDA_LOBYTE(eax283) = *(unsigned char *)(v4 + 3365);
   *(unsigned int *)&aP3[8] = eax283;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[54736];
   v338 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   *(unsigned char *)(v4 + 3365) = INIClass::ReadBool_Overwrite(
                             (int)&stru_87C374.__pad_579C[22128],
-                            (unsigned __int8 *)v338,
+                            (uint8_t *)v338,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 2044);
@@ -4596,25 +4597,25 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v339 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   *(unsigned int *)(v4 + 2044) = INIClass::ReadInt_Overwrite(
                              (int)&stru_87C374.__pad_579C[22128],
-                             (unsigned __int8 *)v339,
+                             (uint8_t *)v339,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(edx283b) = *(unsigned char *)(v4 + 3518);
+  IDA_LOBYTE(edx283b) = *(unsigned char *)(v4 + 3518);
   *(unsigned int *)&aP3[8] = edx283b;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[54704];
   v341 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   *(unsigned char *)(v4 + 3518) = INIClass::ReadBool_Overwrite(
                             (int)&stru_87C374.__pad_579C[22128],
-                            (unsigned __int8 *)v341,
+                            (uint8_t *)v341,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(v353) = *(unsigned char *)(v4 + 3519);
+  IDA_LOBYTE(v353) = *(unsigned char *)(v4 + 3519);
   *(unsigned int *)&aP3[8] = v353;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[54684];
   v343 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   al283 = INIClass::ReadBool_Overwrite(
             (int)&stru_87C374.__pad_579C[22128],
-            (unsigned __int8 *)v343,
+            (uint8_t *)v343,
             *(CCINIClass **)&aP3[4],
             aP3[8]);
   *(unsigned int *)&aP3[8] = 25;
@@ -4624,9 +4625,9 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(unsigned char *)(v4 + 3519) = al283;
   v345 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   INIClass::GetString(
-    (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+    (uint8_t ***)&stru_87C374.__pad_579C[22128],
     v345,
-    *(unsigned __int8 **)&v412.IsInitialized,
+    *(uint8_t **)&v412.IsInitialized,
     *(INIClass **)aP3,
     *(INIClass **)&aP3[4],
     *(int *)&aP3[8]);
@@ -4639,12 +4640,12 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   _makepath(aP4.__pad_20, 0, 0, (ObjectClass *)v347, *(const char **)&aP3[8]);
   if ( !*(unsigned int *)(v4 + 1776) )
   {
-    LOBYTE(v360) = 0;
+    IDA_LOBYTE(v360) = 0;
     *(unsigned int *)(v4 + 1776) = SearchMIXFile(aP4.__pad_20, v360);
 LABEL_286:
     if ( !*(unsigned int *)(v4 + 1776) )
     {
-      LOBYTE(edx283) = 0;
+      IDA_LOBYTE(edx283) = 0;
       *(unsigned int *)(v4 + 1776) = SearchMIXFile(g_Str_File_XXICON_SHP, edx283);
     }
   }
@@ -4654,9 +4655,9 @@ LABEL_286:
   *(unsigned int *)&v412.IsInitialized = &stru_830620.__pad_579C[54664];
   v348 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   INIClass::GetString(
-    (unsigned __int8 ***)&stru_87C374.__pad_579C[22128],
+    (uint8_t ***)&stru_87C374.__pad_579C[22128],
     v348,
-    *(unsigned __int8 **)&v412.IsInitialized,
+    *(uint8_t **)&v412.IsInitialized,
     *(INIClass **)aP3,
     *(INIClass **)&aP3[4],
     *(int *)&aP3[8]);
@@ -4669,7 +4670,7 @@ LABEL_286:
     _makepath(aP4.__pad_20, 0, 0, (ObjectClass *)v350, *(const char **)&aP3[8]);
     if ( !*(unsigned int *)(v4 + 1808) )
     {
-      LOBYTE(edx289) = 0;
+      IDA_LOBYTE(edx289) = 0;
       *(unsigned int *)(v4 + 1808) = SearchMIXFile(aP4.__pad_20, edx289);
     }
   }
@@ -4692,7 +4693,7 @@ LABEL_286:
         Point3D_Overwrite = INIClass::ReadPoint3D_Overwrite(
                               &stru_87C374.__pad_579C[22128],
                               (CCINIClass *)&aP2.unknown30,
-                              (unsigned __int8 *)v352,
+                              (uint8_t *)v352,
                               *(int *)&aP3[4],
                               *(unsigned int **)&aP3[8]);
         *(unsigned int *)v351->__pad_0 = *Point3D_Overwrite;
@@ -4704,7 +4705,7 @@ LABEL_286:
         v354 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
         *(unsigned int *)&v351->__pad_0[12] = INIClass::ReadInt_Overwrite(
                                           (int)&stru_87C374.__pad_579C[22128],
-                                          (unsigned __int8 *)v354,
+                                          (uint8_t *)v354,
                                           *(CCINIClass **)&aP3[4],
                                           *(INIClass **)&aP3[8]);
         sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54620], (INIClass *)aP2.sectionHead);
@@ -4713,23 +4714,23 @@ LABEL_286:
         v355 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
         v351->uniqueId = INIClass::ReadInt_Overwrite(
                            (int)&stru_87C374.__pad_579C[22128],
-                           (unsigned __int8 *)v355,
+                           (uint8_t *)v355,
                            *(CCINIClass **)&aP3[4],
                            *(INIClass **)&aP3[8]);
         sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54604], (INIClass *)aP2.sectionHead);
-        LOBYTE(edx294) = v351->abstractFlags;
+        IDA_LOBYTE(edx294) = v351->abstractFlags;
         *(unsigned int *)&aP3[8] = edx294;
         *(unsigned int *)&aP3[4] = String;
         v357 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
         al294 = INIClass::ReadBool_Overwrite(
                   (int)&stru_87C374.__pad_579C[22128],
-                  (unsigned __int8 *)v357,
+                  (uint8_t *)v357,
                   *(CCINIClass **)&aP3[4],
                   aP3[8]);
         *(unsigned int *)&aP3[8] = aP2.headNode[2];
         *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[58692];
         *(unsigned int *)aP3 = aP2.sectionHead;
-        LOBYTE(v351->abstractFlags) = al294;
+        IDA_LOBYTE(v351->abstractFlags) = al294;
         sprintf(*(char *const *)aP3, *(ObjectClass **)&aP3[4], *(INIClass **)&aP3[8]);
         sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54656], (INIClass *)aP2.sectionHead);
         *(unsigned int *)&aP3[8] = v351;
@@ -4738,7 +4739,7 @@ LABEL_286:
         v374 = INIClass::ReadPoint3D_Overwrite(
                  &stru_87C374.__pad_579C[22128],
                  &aP2,
-                 (unsigned __int8 *)v359,
+                 (uint8_t *)v359,
                  *(int *)&aP3[4],
                  *(unsigned int **)&aP3[8]);
         *(unsigned int *)&v351[1].CellRangefinding = *v374;
@@ -4750,7 +4751,7 @@ LABEL_286:
         v361 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
         *(unsigned int *)&v351[1].InfiniteMindControl = INIClass::ReadInt_Overwrite(
                                                     (int)&stru_87C374.__pad_579C[22128],
-                                                    (unsigned __int8 *)v361,
+                                                    (uint8_t *)v361,
                                                     *(CCINIClass **)&aP3[4],
                                                     *(INIClass **)&aP3[8]);
         sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54620], (INIClass *)aP2.sectionHead);
@@ -4759,17 +4760,17 @@ LABEL_286:
         v362 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
         *(unsigned int *)&v351[1].Suicide = INIClass::ReadInt_Overwrite(
                                         (int)&stru_87C374.__pad_579C[22128],
-                                        (unsigned __int8 *)v362,
+                                        (uint8_t *)v362,
                                         *(CCINIClass **)&aP3[4],
                                         *(INIClass **)&aP3[8]);
         sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620.__pad_579C[54604], (INIClass *)aP2.sectionHead);
-        LOBYTE(edx294a) = v351->abstractFlags;
+        IDA_LOBYTE(edx294a) = v351->abstractFlags;
         *(unsigned int *)&aP3[8] = edx294a;
         *(unsigned int *)&aP3[4] = String;
         v364 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
         v351[1].Charges = INIClass::ReadBool_Overwrite(
                             (int)&stru_87C374.__pad_579C[22128],
-                            (unsigned __int8 *)v364,
+                            (uint8_t *)v364,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
         v365 = *(CCINIClass **)(v4 + 2060);
@@ -4787,7 +4788,7 @@ LABEL_286:
     eax296 = INIClass::ReadPoint3D_Overwrite(
                &stru_87C374.__pad_579C[22128],
                (CCINIClass *)&aP2.unknown30,
-               (unsigned __int8 *)v366,
+               (uint8_t *)v366,
                *(int *)&aP3[4],
                *(unsigned int **)&aP3[8]);
     *(unsigned int *)(v4 + 2204) = *eax296;
@@ -4798,7 +4799,7 @@ LABEL_286:
     v368 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
     *(unsigned int *)(v4 + 2216) = INIClass::ReadInt_Overwrite(
                                (int)&stru_87C374.__pad_579C[22128],
-                               (unsigned __int8 *)v368,
+                               (uint8_t *)v368,
                                *(CCINIClass **)&aP3[4],
                                *(INIClass **)&aP3[8]);
     *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 2220);
@@ -4806,7 +4807,7 @@ LABEL_286:
     v369 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
     *(unsigned int *)(v4 + 2220) = INIClass::ReadInt_Overwrite(
                                (int)&stru_87C374.__pad_579C[22128],
-                               (unsigned __int8 *)v369,
+                               (uint8_t *)v369,
                                *(CCINIClass **)&aP3[4],
                                *(INIClass **)&aP3[8]);
     *(unsigned int *)&aP3[8] = v4 + 2232;
@@ -4815,7 +4816,7 @@ LABEL_286:
     v385 = INIClass::ReadPoint3D_Overwrite(
              &stru_87C374.__pad_579C[22128],
              (CCINIClass *)&aP2.unknown30,
-             (unsigned __int8 *)v370,
+             (uint8_t *)v370,
              *(int *)&aP3[4],
              *(unsigned int **)&aP3[8]);
     *(unsigned int *)(v4 + 2232) = *v385;
@@ -4826,7 +4827,7 @@ LABEL_286:
     v372 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
     *(unsigned int *)(v4 + 2244) = INIClass::ReadInt_Overwrite(
                                (int)&stru_87C374.__pad_579C[22128],
-                               (unsigned __int8 *)v372,
+                               (uint8_t *)v372,
                                *(CCINIClass **)&aP3[4],
                                *(INIClass **)&aP3[8]);
     *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 2248);
@@ -4834,7 +4835,7 @@ LABEL_286:
     v373 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
     eax296b = INIClass::ReadInt_Overwrite(
                 (int)&stru_87C374.__pad_579C[22128],
-                (unsigned __int8 *)v373,
+                (uint8_t *)v373,
                 *(CCINIClass **)&aP3[4],
                 *(INIClass **)&aP3[8]);
     *(unsigned int *)&aP3[8] = v4 + 2204;
@@ -4844,7 +4845,7 @@ LABEL_286:
     eax296c = INIClass::ReadPoint3D_Overwrite(
                 &stru_87C374.__pad_579C[22128],
                 (CCINIClass *)&aP2.unknown30,
-                (unsigned __int8 *)v375,
+                (uint8_t *)v375,
                 *(int *)&aP3[4],
                 *(unsigned int **)&aP3[8]);
     *(unsigned int *)(v4 + 2712) = *eax296c;
@@ -4855,7 +4856,7 @@ LABEL_286:
     v377 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
     *(unsigned int *)(v4 + 2724) = INIClass::ReadInt_Overwrite(
                                (int)&stru_87C374.__pad_579C[22128],
-                               (unsigned __int8 *)v377,
+                               (uint8_t *)v377,
                                *(CCINIClass **)&aP3[4],
                                *(INIClass **)&aP3[8]);
     *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 2220);
@@ -4863,7 +4864,7 @@ LABEL_286:
     v378 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
     *(unsigned int *)(v4 + 2728) = INIClass::ReadInt_Overwrite(
                                (int)&stru_87C374.__pad_579C[22128],
-                               (unsigned __int8 *)v378,
+                               (uint8_t *)v378,
                                *(CCINIClass **)&aP3[4],
                                *(INIClass **)&aP3[8]);
     *(unsigned int *)&aP3[8] = v4 + 2232;
@@ -4872,7 +4873,7 @@ LABEL_286:
     v394 = INIClass::ReadPoint3D_Overwrite(
              &stru_87C374.__pad_579C[22128],
              (CCINIClass *)&aP2.unknown30,
-             (unsigned __int8 *)v379,
+             (uint8_t *)v379,
              *(int *)&aP3[4],
              *(unsigned int **)&aP3[8]);
     *(unsigned int *)(v4 + 2740) = *v394;
@@ -4883,7 +4884,7 @@ LABEL_286:
     v381 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
     *(unsigned int *)(v4 + 2752) = INIClass::ReadInt_Overwrite(
                                (int)&stru_87C374.__pad_579C[22128],
-                               (unsigned __int8 *)v381,
+                               (uint8_t *)v381,
                                *(CCINIClass **)&aP3[4],
                                *(INIClass **)&aP3[8]);
     *(unsigned int *)&aP3[8] = *(unsigned int *)(v4 + 2248);
@@ -4891,7 +4892,7 @@ LABEL_286:
     v382 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
     *(unsigned int *)(v4 + 2756) = INIClass::ReadInt_Overwrite(
                                (int)&stru_87C374.__pad_579C[22128],
-                               (unsigned __int8 *)v382,
+                               (uint8_t *)v382,
                                *(CCINIClass **)&aP3[4],
                                *(INIClass **)&aP3[8]);
   }
@@ -4906,7 +4907,7 @@ LABEL_286:
     v399 = INIClass::ReadPoint3D_Overwrite(
              &stru_87C374.__pad_579C[22128],
              (CCINIClass *)&aP2.unknown30,
-             (unsigned __int8 *)v384,
+             (uint8_t *)v384,
              *(int *)&aP3[4],
              *(unsigned int **)&aP3[8]);
     v400 = aP2.headNode[2];
@@ -4918,13 +4919,13 @@ LABEL_286:
     aP2.headNode[2] = v401;
   }
   while ( (int)v392 < 5 );
-  LOBYTE(v401) = *(unsigned char *)(v4 + 2052);
+  IDA_LOBYTE(v401) = *(unsigned char *)(v4 + 2052);
   *(unsigned int *)&aP3[8] = v401;
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[54320];
   v388 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
   v403 = INIClass::ReadBool_Overwrite(
            (int)&stru_87C374.__pad_579C[22128],
-           (unsigned __int8 *)v388,
+           (uint8_t *)v388,
            *(CCINIClass **)&aP3[4],
            aP3[8]);
   *(unsigned int *)&aP3[8] = v4 + 3504;
@@ -4934,7 +4935,7 @@ LABEL_286:
   v405 = INIClass::ReadPoint3D_Overwrite(
            &stru_87C374.__pad_579C[22128],
            (CCINIClass *)&aP2.unknown30,
-           (unsigned __int8 *)v390,
+           (uint8_t *)v390,
            *(int *)&aP3[4],
            *(unsigned int **)&aP3[8]);
   *(unsigned int *)(v4 + 3504) = *v405;
@@ -4944,9 +4945,9 @@ LABEL_286:
   *(unsigned int *)&aP3[4] = &stru_830620.__pad_579C[54284];
   eax299c = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   TypeMember_5474E40 = ObjectTypeClass::loadTypeMember_5474E40(
-                         (unsigned __int8 ***)aP0,
+                         (uint8_t ***)aP0,
                          eax299c,
-                         *(unsigned __int8 **)&aP3[4],
+                         *(uint8_t **)&aP3[4],
                          *(int *)&aP3[8]);
   *(unsigned int *)(v4 + 1460) = TypeMember_5474E40;
   *(unsigned char *)(v4 + 3372) = TypeMember_5474E40 == 6;
@@ -4965,11 +4966,11 @@ LABEL_286:
     {
       Info = VoxelSection::GetInfo(*(unsigned int **)(v4 + 176), 0, 0);
       *(unsigned int *)&aP3[8] = 0;
-      v410 = *(unsigned __int8 *)(Info + 161);
+      v410 = *(uint8_t *)(Info + 161);
       *(unsigned int *)&aP3[4] = 0;
       *(unsigned int *)aP2.__pad_0 = v410;
       *(double *)(v4 + 864) = (double)v410 * 0.5 + 0.5;
-      *(unsigned int *)aP2.__pad_0 = *(unsigned __int8 *)(VoxelSection::GetInfo(
+      *(unsigned int *)aP2.__pad_0 = *(uint8_t *)(VoxelSection::GetInfo(
                                                       *(unsigned int **)(v4 + 176),
                                                       *(SomeVoxelCache **)&aP3[4],
                                                       *(SomeVoxelCache **)&aP3[8])
@@ -5061,7 +5062,7 @@ int ObjectTypeClass::loadTypeMember_5717820()
   int v2; // eax
   const char *v3; // ecx
 
-  LOBYTE(v2) = *((unsigned char *)this + 3536); /*0x717823*/
+  IDA_LOBYTE(v2) = *((unsigned char *)this + 3536); /*0x717823*/
   v3 = (const char *)((char *)this + 3536); /*0x717829*/
   if ( (unsigned char)v2 ) /*0x717831*/
   {
@@ -5084,7 +5085,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 
   if ( this == a2 ) /*0x717c0a*/
     return this; /*0x717c0a*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x717c0e*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x717c0e*/
   v3 = a2[2]; /*0x717c11*/
   *((unsigned int *)this + 2) = v3; /*0x717c16*/
   if ( !v3 ) /*0x717c19*/
@@ -5093,7 +5094,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
     *((unsigned char *)this + 13) = 0; /*0x717c61*/
     return this; /*0x717c65*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x717c23*/
+  v4 = RA2_OPNEW(4 * v3); /*0x717c23*/
   *((unsigned int *)this + 1) = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
     return this; /*0x717c30*/
@@ -5119,7 +5120,7 @@ unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 
   int v1; // esi
 
-  v1 = 2 * MEMORY[0x889F58]; /*0x41cbfc*/
+  v1 = 2 * g_abs_889F58; /*0x41cbfc*/
   *a1 = 256; /*0x41cc07*/
   a1[1] = 256; /*0x41cc09*/
   a1[2] = v1; /*0x41cc0c*/
@@ -5146,7 +5147,7 @@ char ObjectTypeClass::ReadBool(INIClass * Block, INIClass * aP2, int a4)
 
   char Buffer[32]; // [esp+4h] [ebp-20h] BYREF
 
-  sprintf(Buffer, MEMORY[0x817F6C], 360 * a4 / 256); /*0x4746ba*/
+  sprintf(Buffer, g_abs_817F6C, 360 * a4 / 256); /*0x4746ba*/
   return INIClass::SetString(this, Block, aP2, (INIClass *)Buffer); /*0x4746d8*/
 
 }
@@ -5158,7 +5159,7 @@ int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, in
 
   char String[32]; // [esp+0h] [ebp-20h] BYREF
 
-  if ( INIClass::GetString(this, a2, a3, &MEMORY[0x889F64], String, 32) ) /*0x4746f9*/
+  if ( INIClass::GetString(this, a2, a3, &g_abs_889F64, String, 32) ) /*0x4746f9*/
     return (atoi(String) << 8) / 360; /*0x474727*/
   else
     return a4; /*0x47472f*/
@@ -5172,10 +5173,10 @@ unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned ch
 
   char Buffer[64]; // [esp+0h] [ebp-40h] BYREF
 
-  if ( INIClass::GetString(this, a3, a4, &MEMORY[0x889F64], Buffer, 64) ) /*0x474759*/
+  if ( INIClass::GetString(this, a3, a4, &g_abs_889F64, Buffer, 64) ) /*0x474759*/
   {
-    sscanf(Buffer, MEMORY[0x81C000], &a4, &a3); /*0x474776*/
-    HIWORD(a4) = (unsigned short)a3; /*0x47478e*/
+    sscanf(Buffer, g_abs_81C000, &a4, &a3); /*0x474776*/
+    IDA_HIWORD(a4) = (unsigned short)a3; /*0x47478e*/
     *a2 = a4; /*0x47479a*/
     return a2; /*0x474785*/
   }
@@ -5220,7 +5221,7 @@ char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char
 
   INIClass Buffer; // [esp+4h] [ebp-40h] BYREF
 
-  sprintf(Buffer.__pad_0, (const char *const)&MEMORY[0x818994].sectionCount, *a4, a4[1], a4[2]); /*0x474d75*/
+  sprintf(Buffer.__pad_0, (const char *const)&g_abs_818994, *a4, a4[1], a4[2]); /*0x474d75*/
   return INIClass::SetString(this, Block, aP2, &Buffer); /*0x474d93*/
 
 }
@@ -5255,7 +5256,7 @@ int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
 
   char Destination[100]; // [esp+4h] [ebp-64h] BYREF
 
-  INIClass::GetString(this, a2, a3, &MEMORY[0x889F64], Destination, 100); /*0x474fba*/
+  INIClass::GetString(this, a2, a3, &g_abs_889F64, Destination, 100); /*0x474fba*/
   if ( strlen(Destination) ) /*0x474fc3*/
     return VocClass::FindByName(Destination); /*0x474fd4*/
   else
@@ -5303,7 +5304,7 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
   char v9; // [esp+10h] [ebp-208h]
   char *v10; // [esp+14h] [ebp-204h]
   unsigned char Source[509]; // [esp+18h] [ebp-200h] BYREF
-  __int16 v12; // [esp+215h] [ebp-3h]
+  int16_t v12; // [esp+215h] [ebp-3h]
   char v13; // [esp+217h] [ebp-1h]
 
   v10 = this; /*0x47624d*/
@@ -5318,7 +5319,7 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
     v5 = *(unsigned int *)&aP3->__pad_0[4]; /*0x4762b1*/
     v9 = 0; /*0x4762b4*/
     v6 = *(unsigned int *)(v5 + 4 * i); /*0x4762bc*/
-    v9 = HIBYTE(v6); /*0x4762c6*/
+    v9 = IDA_HIBYTE(v6); /*0x4762c6*/
     v8 = (CCINIClass *)(v6 & 0xFFFFFF); /*0x4762ce*/
     strcat(Source, (const char *)(System_Read_6E7330(&v8) + 36)); /*0x4762fa*/
   }
@@ -5353,8 +5354,8 @@ int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2
   INIClass String[2]; // [esp+8h] [ebp-80h] BYREF
 
   INIClass::GetString(this, (INIClass *)aP1, a2, *(&off_81BABC + (unsigned int)aP3), String, 128); /*0x4775c1*/
-  v4 = strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); /*0x4775d5*/
-  result = (ObjectClass *)_strcmpi(v4, MEMORY[0x817F64]); /*0x4775dd*/
+  v4 = strtok(String[0].__pad_0, g_abs_817F70); /*0x4775d5*/
+  result = (ObjectClass *)_strcmpi(v4, g_abs_817F64); /*0x4775dd*/
   if ( result ) /*0x4775e7*/
   {
     if ( _strcmpi(v4, (char *)&stru_81BB58.headNode[1]) ) /*0x4775fa*/
@@ -5423,14 +5424,14 @@ void ObjectTypeClass::ReleaseWaveAndString()
   if ( *this ) /*0x5f61a4*/
   {
     WaveClass::Destroy(*this); /*0x5f61ac*/
-    __3_YAXPAX_Z(v2); /*0x5f61b2*/
+    RA2_OPDEL(v2); /*0x5f61b2*/
   }
   v3 = (void **)*((char *)this + 1); /*0x5f61ba*/
   *this = 0; /*0x5f61bd*/
   if ( v3 ) /*0x5f61c5*/
   {
     String::Release(v3); /*0x5f61c9*/
-    __3_YAXPAX_Z(v3); /*0x5f61cf*/
+    RA2_OPDEL(v3); /*0x5f61cf*/
   }
   *((char *)this + 1) = 0; /*0x5f61d7*/
 
@@ -5468,28 +5469,28 @@ void ObjectTypeClass::CleanupWeapons()
     if ( v3 ) /*0x5f8096*/
     {
       WaveClass::Destroy(*((unsigned int *)v1 - 1)); /*0x5f809a*/
-      __3_YAXPAX_Z(v3); /*0x5f80a0*/
+      RA2_OPDEL(v3); /*0x5f80a0*/
       *((unsigned int *)v1 - 1) = 0; /*0x5f80a8*/
     }
     v4 = *(void ***)v1; /*0x5f80ab*/
     if ( *(unsigned int *)v1 ) /*0x5f80ab*/
     {
       String::Release(*(void ***)v1); /*0x5f80b3*/
-      __3_YAXPAX_Z(v4); /*0x5f80b9*/
+      RA2_OPDEL(v4); /*0x5f80b9*/
       *(unsigned int *)v1 = 0; /*0x5f80c1*/
     }
     v5 = (void *)*((unsigned int *)v1 + 35); /*0x5f80c3*/
     if ( v5 ) /*0x5f80cb*/
     {
       WaveClass::Destroy(*((unsigned int *)v1 + 35)); /*0x5f80cf*/
-      __3_YAXPAX_Z(v5); /*0x5f80d5*/
+      RA2_OPDEL(v5); /*0x5f80d5*/
       *((unsigned int *)v1 + 35) = 0; /*0x5f80dd*/
     }
     v6 = (void *)*((unsigned int *)v1 + 36); /*0x5f80e3*/
     if ( v6 ) /*0x5f80eb*/
     {
       String::Release(*((void ***)v1 + 36)); /*0x5f80ef*/
-      __3_YAXPAX_Z(v6); /*0x5f80f5*/
+      RA2_OPDEL(v6); /*0x5f80f5*/
       *((unsigned int *)v1 + 36) = 0; /*0x5f80fd*/
     }
     v1 += 8; /*0x5f8103*/
@@ -5501,12 +5502,12 @@ void ObjectTypeClass::CleanupWeapons()
 } // namespace gamemd
 // 0x5F9AE0
 namespace gamemd {
-ObjectTypeClass * ObjectTypeClass::Destru_vt08(char a2)
+ObjectTypeClass * ObjectTypeClass::Destru_vt08(void * Block, char a2)
 {
 
   ObjectTypeClass::Destruct((int)Block); /*0x5f9ae3*/
-  if ( (a2 & 1) != 0 ) /*0x5f9aed*/
-    __3_YAXPAX_Z(Block); /*0x5f9af0*/
+  if ( (Block & 1) != 0 ) /*0x5f9aed*/
+    RA2_OPDEL(Block); /*0x5f9af0*/
   return (ObjectTypeClass *)Block; /*0x5f9afa*/
 
 }
@@ -5516,7 +5517,7 @@ namespace gamemd {
 int ObjectTypeClass::FreeLoaderBuffer()
 {
 
-  __3_YAXPAX_Z(*(void **)this); /*0x5f9b66*/
+  RA2_OPDEL(*(void **)this); /*0x5f9b66*/
   *(unsigned int *)this = 0; /*0x5f9b70*/
   *((unsigned int *)this + 1) = 0; /*0x5f9b72*/
   *((unsigned int *)this + 2) = 0; /*0x5f9b75*/
@@ -5568,7 +5569,7 @@ int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * 
   *(unsigned int *)&aP1->__pad_0[4] = *((unsigned int *)this + 1); /*0x717a06*/
   *(unsigned int *)&aP1->__pad_0[8] = *((unsigned int *)this + 2); /*0x717a0c*/
   *(unsigned int *)&aP1->__pad_0[12] = *((unsigned int *)this + 3); /*0x717a12*/
-  LOWORD(aP1->uniqueId) = *((unsigned short *)this + 8); /*0x717a1a*/
+  IDA_LOWORD(aP1->uniqueId) = *((unsigned short *)this + 8); /*0x717a1a*/
   return (int)aP1->__pad_0; /*0x717a19*/
 
 }
@@ -5687,20 +5688,20 @@ int ObjectTypeClass::ReadDestroyAnim()
   char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
 
   INIClass::ClearSection((int)this, (INIClass *)aTerrain, 0); /*0x71cb9f*/
-  result = *(unsigned int *)&MEMORY[0xA8D63C].__pad_1258[260]; /*0x71cba4*/
-  for ( i = 0; i < *(int *)&MEMORY[0xA8D63C].__pad_1258[260]; ++i ) /*0x71cbad*/
+  result = *(unsigned int *)&g_abs_A8D63C; /*0x71cba4*/
+  for ( i = 0; i < *(int *)&g_abs_A8D63C; ++i ) /*0x71cbad*/
   {
-    v4 = *(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_1258[248] + 4 * i); /*0x71cbba*/
+    v4 = *(unsigned int *)(*(unsigned int *)&g_abs_A8D63C + 4 * i); /*0x71cbba*/
     if ( v4 && !*(unsigned char *)(v4 + 129) ) /*0x71cbc1*/
     {
       if ( *(unsigned char *)(v4 + 144) ) /*0x71cbcb*/
       {
         v5 = *(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)v4 + 440))(v4, v6); /*0x71cbe6*/
-        sprintf(Buffer, MEMORY[0x817F6C], (__int16)v5 + 1000 * SHIWORD(v5)); /*0x71cc09*/
+        sprintf(Buffer, g_abs_817F6C, (int16_t)v5 + 1000 * SHIWORD(v5)); /*0x71cc09*/
         INIClass::SetString(this, (INIClass *)aTerrain, (INIClass *)Buffer, (INIClass *)(*(unsigned int *)(v4 + 200) + 36)); /*0x71cc29*/
       }
     }
-    result = *(unsigned int *)&MEMORY[0xA8D63C].__pad_1258[260]; /*0x71cc2e*/
+    result = *(unsigned int *)&g_abs_A8D63C; /*0x71cc2e*/
   }
   return result; /*0x71cc3d*/
 

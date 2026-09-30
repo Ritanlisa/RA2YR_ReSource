@@ -38,7 +38,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
   unsigned short *result; // eax
   int v16; // edx
   int v17; // edi
-  unsigned __int8 v19; // dl
+  uint8_t v19; // dl
 
   v11 = a5; /*0x496250*/
   result = a1; /*0x496254*/
@@ -143,8 +143,8 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
   int v15; // ecx
   int v17; // edx
   int v18; // edi
-  unsigned __int8 v19; // dl
-  unsigned __int8 v20; // dl
+  uint8_t v19; // dl
+  uint8_t v20; // dl
 
   v11 = a5; /*0x496170*/
   result = arg0; /*0x496175*/
@@ -174,7 +174,7 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
     {
       result += 2; /*0x4961e4*/
       --v18; /*0x4961e7*/
-      *(unsigned short *)(result - 2) = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * *(unsigned __int8 *)(v19 + v15)); /*0x4961f2*/
+      *(unsigned short *)(result - 2) = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * *(uint8_t *)(v19 + v15)); /*0x4961f2*/
     }
     else
     {
@@ -231,18 +231,18 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4,
 } // namespace gamemd
 // 0x49A340
 namespace gamemd {
-BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
+BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 2); /*0x49a348*/
-  *Block = &vt_BlitTransLucent25Alpha_unsigned_short; /*0x49a34b*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 2)));
+  *Block = (unsigned int)(&vt_BlitTransLucent25Alpha_unsigned_short);
   FractalNoise::Release(v3); /*0x49a352*/
   *(Block + 2) = 0; /*0x49a35b*/
   *Block = &vt_Blitter; /*0x49a364*/
-  if ( (a2 & 1) != 0 ) /*0x49a36a*/
-    __3_YAXPAX_Z(Block); /*0x49a36d*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x49a36a*/
+    RA2_OPDEL(Block); /*0x49a36d*/
   return (BlitTransLucent25Alpha_ushort *)Block; /*0x49a377*/
 
 }
@@ -254,25 +254,25 @@ std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a389*/
   if ( (a2 & 1) != 0 ) /*0x49a38f*/
-    __3_YAXPAX_Z(this); /*0x49a392*/
+    RA2_OPDEL(this); /*0x49a392*/
   return this; /*0x49a39c*/
 
 }
 } // namespace gamemd
 // 0x49A720
 namespace gamemd {
-BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushort::Blit(char a2)
+BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushort::Blit(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 2); /*0x49a728*/
-  *Block = &vt_BlitTransLucent25AlphaZReadWrite_unsigned_short; /*0x49a72b*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 2)));
+  *Block = (unsigned int)(&vt_BlitTransLucent25AlphaZReadWrite_unsigned_short);
   FractalNoise::Release(v3); /*0x49a732*/
   *(Block + 2) = 0; /*0x49a73b*/
   *Block = &vt_Blitter; /*0x49a744*/
-  if ( (a2 & 1) != 0 ) /*0x49a74a*/
-    __3_YAXPAX_Z(Block); /*0x49a74d*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x49a74a*/
+    RA2_OPDEL(Block); /*0x49a74d*/
   return (BlitTransLucent25AlphaZReadWrite_ushort *)Block; /*0x49a757*/
 
 }
@@ -284,7 +284,7 @@ RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitt
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a769*/
   if ( (a2 & 1) != 0 ) /*0x49a76f*/
-    __3_YAXPAX_Z(this); /*0x49a772*/
+    RA2_OPDEL(this); /*0x49a772*/
   return (RLEBlitTransXlat *)this; /*0x49a77c*/
 
 }
@@ -296,7 +296,7 @@ std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBli
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a789*/
   if ( (a2 & 1) != 0 ) /*0x49a78f*/
-    __3_YAXPAX_Z(this); /*0x49a792*/
+    RA2_OPDEL(this); /*0x49a792*/
   return this; /*0x49a79c*/
 
 }
@@ -308,7 +308,7 @@ std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBli
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a7a9*/
   if ( (a2 & 1) != 0 ) /*0x49a7af*/
-    __3_YAXPAX_Z(this); /*0x49a7b2*/
+    RA2_OPDEL(this); /*0x49a7b2*/
   return this; /*0x49a7bc*/
 
 }

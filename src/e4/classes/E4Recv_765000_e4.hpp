@@ -34,6 +34,6 @@ struct E4Recv_765000 {
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    char * sub_765000(ScoreScreen * aP1);  // 0x765000
+    char * sub_765000(void * aP1);  // 0x765000
 };
 } // namespace gamemd

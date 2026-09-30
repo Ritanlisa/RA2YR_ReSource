@@ -38,12 +38,12 @@ struct TemporalClass {
 // --- flat members (END) ---
     char CanWarpTarget(unsigned int * a1);
     int Constructor(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    int GetWarpPerStep(int a2, void *a1 = 0);
-    int LoadTemporal(AbstractClass * aP0, int aP1);
-    int SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2);
-    int SetTarget(AbstractClass * aP1);
+    void GetWarpPerStep(int a2);
+    int LoadTemporal(void * aP0, int aP1);
+    int SaveTemporal(void * aP0, int * a1, int aP2);
+    int SetTarget(void * aP1);
     int ddtor(int a1, unsigned int * a2);
-    TemporalClass(TechnoClass * aP1);
+    TemporalClass(void * aP1);
     void * ProcessEvent(char a2);
     void ** ProcessTimeWarp();
 };

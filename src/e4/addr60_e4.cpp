@@ -430,7 +430,7 @@ void ValidateDialogEvent(int a1, HWND a2)
     if ( v4 != (void *)264 && v4 != (void *)3014 ) /*0x6010b3*/
     {
   LABEL_164:
-      Event::IsValidActionType(v4); /*0x601346*/
+      ((Event *)(v4))->IsValidActionType(); /*0x601346*/
       return 15; /*0x601348*/
     }
     if ( DlgCtrlID != 1746 /*0x601197*/
@@ -698,7 +698,7 @@ void CtlDialogColorHandler(int a1, HWND a2)
   {
     return 1; /*0x601cf5*/
   }
-  if ( !Event::IsValidActionType(v4) ) /*0x601cf9*/
+  if ( !((Event *)(v4))->IsValidActionType() ) /*0x601cf9*/
     return 1; /*0x601cf9*/
   result = 3; /*0x601d08*/
   if ( v6 != 1685 ) /*0x601d0d*/
@@ -904,7 +904,7 @@ void ValidateDialogControl(int a1, HWND a2)
         return 64; /*0x6023bc*/
       }
     }
-    if ( Event::IsValidActionType(v4) && v6 == 1685 ) /*0x6023ce*/
+    if ( ((Event *)(v4))->IsValidActionType() && v6 == 1685 ) /*0x6023ce*/
       return 16; /*0x6023ce*/
   }
   return 8; /*0x601fef*/
@@ -3761,8 +3761,8 @@ int SkirmishDialog::ResizeDialogAndEnum()
   LPARAM v3; // edi
 
   v3 = v1; /*0x60c4b7*/
-  MoveWindow((HWND)this, 0, 0, MEMORY[0x8A00A4], *(&MEMORY[0x8A00A4] + 1), 0); /*0x60c4ba*/
-  MEMORY[0xAC48A8] = (int)this; /*0x60c4c0*/
+  MoveWindow((HWND)this, 0, 0, g_abs_8A00A4, *(&g_abs_8A00A4 + 1), 0); /*0x60c4ba*/
+  g_abs_AC48A8 = (int)this; /*0x60c4c0*/
   return EnumChildWindows((HWND)this, (WNDENUMPROC)RepositionDialogControls, v3); /*0x60c4d3*/
 
 }
@@ -4182,7 +4182,7 @@ bool sub_60AA60(HWND hWnd, LPARAM a2)
 
 // 0x60B740
 namespace gamemd {
-BOOL E4Recv_60B740::sub_60B740()
+BOOL E4Recv_60B740::sub_60B740(HWND hWnd)
 {
 
   HWND Parent; // eax

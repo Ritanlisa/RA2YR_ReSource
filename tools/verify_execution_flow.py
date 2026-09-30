@@ -144,7 +144,7 @@ SKIP_NAMES = {
     "uint8_t", "uint16_t", "uint32_t", "uint64_t",
     "int8_t", "int16_t", "int32_t", "int64_t",
     "static_cast", "reinterpret_cast", "const_cast", "dynamic_cast",
-    "memcmp", "memset", "memcpy", "memmove", "strlen", "strcpy", "strcmp",
+    "RA2_OPNEW", "RA2_OPDEL", "memcmp", "memset", "memcpy", "memmove", "strlen", "strcpy", "strcmp",
     "strncpy", "strncmp", "malloc", "free", "calloc", "realloc",
     "__PAIR32__", "__PAIR64__", "abs", "fabs", "labs", "atan2", "sin", "cos",
     "tan", "sqrt", "pow", "floor", "ceil", "round", "ldexp", "frexp",

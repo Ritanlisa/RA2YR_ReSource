@@ -386,7 +386,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
               {
                 if ( lParam[0] != 13 ) /*0x5b4cb5*/
                 {
-                  WideString::Trim(lParam); /*0x5b4cc2*/
+                  ((WideString *)(lParam))->Trim(); /*0x5b4cc2*/
                   if ( &v16 != (int *)-312 ) /*0x5b4cd0*/
                   {
                     memset(v18, 0, sizeof(v18)); /*0x5b4ce5*/
@@ -465,7 +465,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
       if ( !v13 ) /*0x5b4e21*/
         return 0; /*0x5b4e21*/
       SendMessageA(v13, 0x4B3u, 0x15u, (LPARAM)v17); /*0x5b4e3a*/
-      WideString::Trim(v17); /*0x5b4e40*/
+      ((WideString *)(v17))->Trim(); /*0x5b4e40*/
       if ( IDA_HIWORD(a3) != 768 ) /*0x5b4e4a*/
         SendMessageA(v14, 0x4B2u, 0, (LPARAM)v17); /*0x5b4e59*/
       CopyWideToChar(unk_A8B380, (char *)v17, -1); /*0x5b4e66*/
@@ -561,7 +561,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
     || _strcmpi(&byte_A8BAE2, (char *)(aP0 + 176))
     || v9 != ((aP0->inOpenToppedTransport & 0x10) != 0)
     || dword_A8BB04 != *(unsigned int *)(aP0 + 158)
-    || !MEMORY[0xA8B322][0] )
+    || !g_abs_A8B322[0] )
   {
     Debug::Log(); /*0x5b6baf*/
     strcpy(byte_A8B8E0, (const char *)(aP0 + 163)); /*0x5b6bce*/
@@ -572,7 +572,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
     if ( !strcmp(byte_A8B8E0, &stru_82BA00.?) && v9 || (v10 = 0, dword_A8B8D8 <= 0) ) /*0x5b6c5d*/
     {
   LABEL_33:
-      wcscpy(MEMORY[0xA8B322], (const wchar_t *)(aP0 + 38)); /*0x5b6c86*/
+      wcscpy(g_abs_A8B322, (const wchar_t *)(aP0 + 38)); /*0x5b6c86*/
     }
     else
     {
@@ -584,7 +584,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
         if ( ++v10 >= dword_A8B8D8 ) /*0x5b6c84*/
           goto LABEL_33; /*0x5b6c84*/
       }
-      wcscpy(MEMORY[0xA8B322], (const wchar_t *)v11); /*0x5b6cc4*/
+      wcscpy(g_abs_A8B322, (const wchar_t *)v11); /*0x5b6cc4*/
     }
     g_UIControlState = g_UIControlState; /*0x5b6c94*/
     if ( g_UIControlState ) /*0x5b6c9f*/
@@ -2004,7 +2004,7 @@ char E4Recv_5B3E90::sub_5B3E90()
   if ( *(unsigned int *)(i + 36) ) /*0x5b3f14*/
   {
     if ( *(unsigned char *)(i + 18) ) /*0x5b3f1b*/
-      __3_YAXPAX_Z(*(void **)(i + 36)); /*0x5b3f23*/
+      RA2_OPDEL(*(void **)(i + 36)); /*0x5b3f23*/
   }
   *(unsigned int *)(i + 36) = 0; /*0x5b3f2b*/
   *(unsigned char *)(i + 18) = 0; /*0x5b3f32*/
@@ -2031,14 +2031,14 @@ void E4Recv_5B3F50::sub_5B3F50()
     free(v2); /*0x5b3f64*/
   if ( *((unsigned int *)this + 9) && *((unsigned char *)this + 18) ) /*0x5b3f73*/
   {
-    __3_YAXPAX_Z(*((void **)this + 9)); /*0x5b3f79*/
+    RA2_OPDEL(*((void **)this + 9)); /*0x5b3f79*/
     *((unsigned char *)this + 18) = 0; /*0x5b3f81*/
   }
   v3 = (void *)*((unsigned int *)this + 8); /*0x5b3f84*/
   *((unsigned int *)this + 9) = 0; /*0x5b3f87*/
   if ( v3 ) /*0x5b3f8c*/
   {
-    __3_YAXPAX_Z(v3); /*0x5b3f8f*/
+    RA2_OPDEL(v3); /*0x5b3f8f*/
     *((unsigned int *)this + 8) = 0; /*0x5b3f97*/
   }
   if ( this ) /*0x5b3f9c*/
@@ -2125,7 +2125,7 @@ void E4Recv_5B4400::sub_5B4400()
 {
 
   if ( *((unsigned int *)this + 9) && *((unsigned char *)this + 18) ) /*0x5b440d*/
-    __3_YAXPAX_Z(*(void **)((char *)this + 36)); /*0x5b4413*/
+    RA2_OPDEL(*(void **)((char *)this + 36)); /*0x5b4413*/
   *((unsigned int *)this + 9) = 0; /*0x5b441b*/
   *((unsigned char *)this + 18) = 0; /*0x5b441e*/
 
@@ -2284,7 +2284,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
   unsigned int v11[62]; // [esp+14h] [ebp-4FCh] BYREF
-  __int16 v12; // [esp+10Ch] [ebp-404h]
+  int16_t v12; // [esp+10Ch] [ebp-404h]
   wchar_t lParam[256]; // [esp+110h] [ebp-400h] BYREF
   wchar_t Buffer[256]; // [esp+310h] [ebp-200h] BYREF
 
@@ -2293,7 +2293,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
   if ( result ) /*0x5b57f0*/
   {
     SendMessageA(result, 0x4B3u, 0x100u, (LPARAM)lParam); /*0x5b580f*/
-    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&MEMORY[0x887734]); /*0x5b581e*/
+    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&g_abs_887734); /*0x5b581e*/
     result = (HWND)wcslen(lParam); /*0x5b5828*/
     if ( result ) /*0x5b5832*/
     {
@@ -2306,13 +2306,13 @@ HWND E4Recv_5B57D0::sub_5B57D0()
           memset(v11, 0, sizeof(v11)); /*0x5b5871*/
           v12 = 0; /*0x5b5873*/
           v11[0] = 104; /*0x5b587f*/
-          strcpy((char *)&v11[1], MEMORY[0xA8B380]); /*0x5b589d*/
-          LOBYTE(v11[6]) = MEMORY[0xA8B394]; /*0x5b58b2*/
+          strcpy((char *)&v11[1], g_abs_A8B380); /*0x5b589d*/
+          IDA_LOBYTE(v11[6]) = g_abs_A8B394; /*0x5b58b2*/
           wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam); /*0x5b58b6*/
-          Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v11, 250, 1); /*0x5b58cf*/
-          Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b58d9*/
-          v4 = CharToWideString(MEMORY[0xA8B380]); /*0x5b58e3*/
-          v5 = MEMORY[0xA8B394]; /*0x5b58ea*/
+          Stream::WriteBlock((int)&g_abs_A8EA70, (int)v11, 250, 1); /*0x5b58cf*/
+          Stream::ReadPacket((int)&g_abs_A8EA70); /*0x5b58d9*/
+          v4 = CharToWideString(g_abs_A8B380); /*0x5b58e3*/
+          v5 = g_abs_A8B394; /*0x5b58ea*/
           v8 = *this; /*0x5b58f5*/
           Format = (wchar_t *)v4; /*0x5b58f6*/
           result = GetDlgItem(v8, 1343); /*0x5b58fa*/
@@ -2322,7 +2322,7 @@ HWND E4Recv_5B57D0::sub_5B57D0()
             if ( v5 >= 8 ) /*0x5b5904*/
               v7 = Math::InitDegToRad; /*0x5b5914*/
             else
-              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))MEMORY[0x8316A8][v5]; /*0x5b590b*/
+              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))g_abs_8316A8[v5]; /*0x5b590b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b5934*/
             return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b5946*/
           }
@@ -2350,10 +2350,10 @@ char E4Recv_5B5960::sub_5B5960()
     DlgItem = (HWND)SendMessageA(DlgItem, 0x147u, 0, 0); /*0x5b5989*/
     if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x5b598e*/
     {
-      MEMORY[0xA8B3AC] = SendMessageA(v3, 0x150u, (WPARAM)DlgItem, 0); /*0x5b599b*/
+      g_abs_A8B3AC = SendMessageA(v3, 0x150u, (WPARAM)DlgItem, 0); /*0x5b599b*/
       *((unsigned char *)this + 9) = 1; /*0x5b59a2*/
       *((unsigned char *)this + 8) = 1; /*0x5b59a5*/
-      LOBYTE(DlgItem) = 1; /*0x5b59a0*/
+      IDA_LOBYTE(DlgItem) = 1; /*0x5b59a0*/
     }
   }
   return (char)DlgItem; /*0x5b59a8*/
@@ -2378,10 +2378,10 @@ char E4Recv_5B5A50::sub_5B5A50(char a2)
     WideString::Trim(lParam); /*0x5b5a85*/
     if ( !a2 ) /*0x5b5a90*/
       SendMessageA(v4, 0x4B2u, 0, (LPARAM)lParam); /*0x5b5a9f*/
-    CopyWideToChar(MEMORY[0xA8B380], (char *)lParam, -1); /*0x5b5aac*/
+    CopyWideToChar(g_abs_A8B380, (char *)lParam, -1); /*0x5b5aac*/
     *((unsigned char *)this + 9) = 1; /*0x5b5ab4*/
     *((unsigned char *)this + 8) = 1; /*0x5b5ab7*/
-    LOBYTE(DlgItem) = 1; /*0x5b5ab1*/
+    IDA_LOBYTE(DlgItem) = 1; /*0x5b5ab1*/
   }
   return (char)DlgItem; /*0x5b5aba*/
 
@@ -2399,7 +2399,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
   int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
   unsigned int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
-  __int16 v9; // [esp+10Ch] [ebp-204h]
+  int16_t v9; // [esp+10Ch] [ebp-204h]
   wchar_t Buffer[256]; // [esp+110h] [ebp-200h] BYREF
 
   if ( Source ) /*0x5b6db5*/
@@ -2407,13 +2407,13 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
     memset(v8, 0, sizeof(v8)); /*0x5b6dca*/
     v9 = 0; /*0x5b6dcc*/
     v8[0] = 104; /*0x5b6dd8*/
-    strcpy((char *)&v8[1], MEMORY[0xA8B380]); /*0x5b6df4*/
-    LOBYTE(v8[6]) = MEMORY[0xA8B394]; /*0x5b6e04*/
+    strcpy((char *)&v8[1], g_abs_A8B380); /*0x5b6df4*/
+    IDA_LOBYTE(v8[6]) = g_abs_A8B394; /*0x5b6e04*/
     wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5b6e08*/
-    Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v8, 250, 1); /*0x5b6e21*/
-    Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b6e2b*/
-    v3 = CharToWideString(MEMORY[0xA8B380]); /*0x5b6e35*/
-    v4 = MEMORY[0xA8B394]; /*0x5b6e3d*/
+    Stream::WriteBlock((int)&g_abs_A8EA70, (int)v8, 250, 1); /*0x5b6e21*/
+    Stream::ReadPacket((int)&g_abs_A8EA70); /*0x5b6e2b*/
+    v3 = CharToWideString(g_abs_A8B380); /*0x5b6e35*/
+    v4 = g_abs_A8B394; /*0x5b6e3d*/
     Format = (wchar_t *)v3; /*0x5b6e49*/
     DlgItem = GetDlgItem(*this, 1343); /*0x5b6e53*/
     if ( DlgItem ) /*0x5b6e57*/
@@ -2421,7 +2421,7 @@ void E4Recv_5B6DA0::sub_5B6DA0(wchar_t * Source)
       if ( v4 >= 8 ) /*0x5b6e5b*/
         v6 = Math::InitDegToRad; /*0x5b6e6b*/
       else
-        v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))MEMORY[0x8316A8][v4]; /*0x5b6e62*/
+        v6 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))g_abs_8316A8[v4]; /*0x5b6e62*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, Source); /*0x5b6e84*/
       DrawDialogText((LPARAM)v6, Buffer, DlgItem); /*0x5b6e96*/
     }
@@ -2636,7 +2636,7 @@ HWND E4Recv_5B9250::sub_5B9250()
   int v9; // [esp+0h] [ebp-510h] BYREF
   wchar_t *Format; // [esp+10h] [ebp-500h]
   unsigned int v11[62]; // [esp+14h] [ebp-4FCh] BYREF
-  __int16 v12; // [esp+10Ch] [ebp-404h]
+  int16_t v12; // [esp+10Ch] [ebp-404h]
   wchar_t lParam[256]; // [esp+110h] [ebp-400h] BYREF
   wchar_t Buffer[256]; // [esp+310h] [ebp-200h] BYREF
 
@@ -2646,7 +2646,7 @@ HWND E4Recv_5B9250::sub_5B9250()
   if ( result ) /*0x5b9280*/
   {
     SendMessageA(result, 0x4B3u, 0x100u, (LPARAM)lParam); /*0x5b929f*/
-    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&MEMORY[0x887734]); /*0x5b92ae*/
+    SendMessageA(v3, 0x4B2u, 0, (LPARAM)&g_abs_887734); /*0x5b92ae*/
     result = (HWND)wcslen(lParam); /*0x5b92b8*/
     if ( result ) /*0x5b92c2*/
     {
@@ -2659,13 +2659,13 @@ HWND E4Recv_5B9250::sub_5B9250()
           memset(v11, 0, sizeof(v11)); /*0x5b9301*/
           v12 = 0; /*0x5b9303*/
           v11[0] = 104; /*0x5b930f*/
-          strcpy((char *)&v11[1], MEMORY[0xA8B380]); /*0x5b932d*/
-          LOBYTE(v11[6]) = MEMORY[0xA8B394]; /*0x5b9342*/
+          strcpy((char *)&v11[1], g_abs_A8B380); /*0x5b932d*/
+          IDA_LOBYTE(v11[6]) = g_abs_A8B394; /*0x5b9342*/
           wcscpy((wchar_t *)((char *)&v11[6] + 1), lParam); /*0x5b9346*/
-          Stream::WriteBlock((int)&MEMORY[0xA8EA70], (int)v11, 250, 1); /*0x5b935f*/
-          Stream::ReadPacket((int)&MEMORY[0xA8EA70]); /*0x5b9369*/
-          v4 = CharToWideString(MEMORY[0xA8B380]); /*0x5b9373*/
-          v5 = MEMORY[0xA8B394]; /*0x5b937a*/
+          Stream::WriteBlock((int)&g_abs_A8EA70, (int)v11, 250, 1); /*0x5b935f*/
+          Stream::ReadPacket((int)&g_abs_A8EA70); /*0x5b9369*/
+          v4 = CharToWideString(g_abs_A8B380); /*0x5b9373*/
+          v5 = g_abs_A8B394; /*0x5b937a*/
           v8 = *this; /*0x5b9385*/
           Format = (wchar_t *)v4; /*0x5b9386*/
           result = GetDlgItem(v8, 1343); /*0x5b938a*/
@@ -2675,7 +2675,7 @@ HWND E4Recv_5B9250::sub_5B9250()
             if ( v5 >= 8 ) /*0x5b9394*/
               v7 = Math::InitDegToRad; /*0x5b93a4*/
             else
-              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))MEMORY[0x8316A8][v5]; /*0x5b939b*/
+              v7 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))g_abs_8316A8[v5]; /*0x5b939b*/
             swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, lParam); /*0x5b93c4*/
             return (HWND)DrawDialogText((LPARAM)v7, Buffer, v6); /*0x5b93d6*/
           }
@@ -2706,10 +2706,10 @@ char E4Recv_5B93F0::sub_5B93F0()
       DlgItem = (HWND)SendMessageA(v3, 0x150u, (WPARAM)DlgItem, 0); /*0x5b9429*/
       if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x5b942e*/
       {
-        MEMORY[0xA8B3AC] = (int)DlgItem; /*0x5b9430*/
+        g_abs_A8B3AC = (int)DlgItem; /*0x5b9430*/
         *((unsigned char *)this + 9) = 1; /*0x5b9437*/
         *((unsigned char *)this + 8) = 1; /*0x5b943a*/
-        LOBYTE(DlgItem) = 1; /*0x5b9435*/
+        IDA_LOBYTE(DlgItem) = 1; /*0x5b9435*/
       }
     }
   }
@@ -2733,13 +2733,13 @@ unsigned int E4Recv_5B9450::sub_5B9450()
     result = SendMessageA((HWND)result, 0x147u, 0, 0); /*0x5b9479*/
     if ( result != -1 ) /*0x5b947e*/
     {
-      MEMORY[0xA8B394] = result; /*0x5b9482*/
+      g_abs_A8B394 = result; /*0x5b9482*/
       *((unsigned char *)this + 9) = 1; /*0x5b9489*/
       *((unsigned char *)this + 8) = 1; /*0x5b948c*/
       if ( result >= 8 ) /*0x5b948f*/
         return SendMessageA(v3, 0x498u, 0, (LPARAM)Math::InitDegToRad); /*0x5b94ba*/
       else
-        return SendMessageA(v3, 0x498u, 0, MEMORY[0x8316A8][result]); /*0x5b94a6*/
+        return SendMessageA(v3, 0x498u, 0, g_abs_8316A8[result]); /*0x5b94a6*/
     }
   }
   return result; /*0x5b94a8*/
@@ -2764,10 +2764,10 @@ char E4Recv_5B94C0::sub_5B94C0(char a2)
     WideString::Trim(lParam); /*0x5b94f5*/
     if ( !a2 ) /*0x5b9500*/
       SendMessageA(v4, 0x4B2u, 0, (LPARAM)lParam); /*0x5b950f*/
-    strcpy(MEMORY[0xA8B380], ToWideStringChar((char *)lParam)); /*0x5b9533*/
+    strcpy(g_abs_A8B380, ToWideStringChar((char *)lParam)); /*0x5b9533*/
     *((unsigned char *)this + 9) = 1; /*0x5b953e*/
     *((unsigned char *)this + 8) = 1; /*0x5b9541*/
-    LOBYTE(DlgItem) = 1; /*0x5b9537*/
+    IDA_LOBYTE(DlgItem) = 1; /*0x5b9537*/
   }
   return (char)DlgItem; /*0x5b9545*/
 
@@ -2791,7 +2791,7 @@ void E4Recv_5BAA80::sub_5BAA80(wchar_t * Format, unsigned int a3, int a4)
       if ( a3 >= 8 ) /*0x5baab1*/
         v5 = Math::InitDegToRad; /*0x5baac1*/
       else
-        v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))MEMORY[0x8316A8][a3]; /*0x5baab8*/
+        v5 = (int (__usercall *)@<eax>(char@<cf>, char@<zf>))g_abs_8316A8[a3]; /*0x5baab8*/
       swprintf(Buffer, (const size_t)g_Str_Trace___s_, Format, a4); /*0x5baada*/
       DrawDialogText((LPARAM)v5, Buffer, DlgItem); /*0x5baae9*/
     }
@@ -3664,7 +3664,7 @@ int E4Recv_5BF360::sub_5BF360()
 
   if ( this ) /*0x5bf362*/
     return MessageListClass::AddMessage( /*0x5bf37e*/
-             MEMORY[0xA8BC60],
+             g_abs_A8BC60,
              0,
              0,
              *(wchar_t **)((char *)this + 20),

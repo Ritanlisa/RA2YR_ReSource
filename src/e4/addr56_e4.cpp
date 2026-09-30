@@ -507,10 +507,10 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
           v6 = *(unsigned int *)(v5 + 36); /*0x56af99*/
           Src = v6; /*0x56afa0*/
           v7 = *((char *)this + 61); /*0x56afa9*/
-          Src = SHIWORD(v6) + (__int16)v6; /*0x56afb7*/
+          Src = SHIWORD(v6) + (int16_t)v6; /*0x56afb7*/
           if ( Src > v7 /*0x56afea*/
-            && (__int16)v6 - SHIWORD(v6) < v7
-            && SHIWORD(v6) - (__int16)v6 < v7
+            && (int16_t)v6 - SHIWORD(v6) < v7
+            && SHIWORD(v6) - (int16_t)v6 < v7
             && Src <= v7 + 2 * *((char *)this + 62) )
           {
             Src = v6; /*0x56aff7*/
@@ -587,10 +587,10 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
           v6 = *(unsigned int *)(v5 + 36); /*0x56b2aa*/
           Src = v6; /*0x56b2b1*/
           v7 = *((char *)this + 61); /*0x56b2ba*/
-          Src = SHIWORD(v6) + (__int16)v6; /*0x56b2c8*/
+          Src = SHIWORD(v6) + (int16_t)v6; /*0x56b2c8*/
           if ( Src > v7 /*0x56b2fb*/
-            && (__int16)v6 - SHIWORD(v6) < v7
-            && SHIWORD(v6) - (__int16)v6 < v7
+            && (int16_t)v6 - SHIWORD(v6) < v7
+            && SHIWORD(v6) - (int16_t)v6 < v7
             && Src <= v7 + 2 * *((char *)this + 62) )
           {
             Src = v6; /*0x56b308*/
@@ -846,7 +846,7 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
   int v4; // esi
   int v5; // ecx
   int v6; // ecx
-  __int16 v7; // si
+  int16_t v7; // si
   int v9; // [esp+14h] [ebp+8h]
 
   v3 = *((unsigned int *)this + 61); /*0x565615*/
@@ -857,8 +857,8 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
   else
     v6 = v5 - v4; /*0x565630*/
   v7 = *a3 + v4 - v3; /*0x565639*/
-  LOWORD(v9) = v3 / 2 + (v6 >> 1); /*0x565645*/
-  HIWORD(v9) = v7; /*0x56564a*/
+  IDA_LOWORD(v9) = v3 / 2 + (v6 >> 1); /*0x565645*/
+  IDA_HIWORD(v9) = v7; /*0x56564a*/
   *a2 = v9; /*0x565655*/
   return a2; /*0x565653*/
 
@@ -867,7 +867,7 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
 
 // 0x56AE40
 namespace gamemd {
-int E4Recv_56AE40::sub_56AE40(int v9)
+int E4Recv_56AE40::sub_56AE40(int a2)
 {
 
   int v3; // edi
@@ -876,7 +876,7 @@ int E4Recv_56AE40::sub_56AE40(int v9)
   char *v6; // eax
   int j; // ebx
   int v8; // eax
-  char *v9; // eax
+  char *a2; // eax
   int k; // ebx
   int v11; // eax
   char *v12; // eax
@@ -884,7 +884,7 @@ int E4Recv_56AE40::sub_56AE40(int v9)
 
   v3 = 0; /*0x56ae48*/
   LCWPipe::Constructor(v14, 0, 0x2000); /*0x56ae54*/
-  Pipe::SetDelegate(v14, v9); /*0x56ae62*/
+  Pipe::SetDelegate(v14, a2); /*0x56ae62*/
   for ( i = 0; i < *((unsigned int *)this + 80); ++i ) /*0x56ae71*/
   {
     v5 = *(unsigned int *)(*((unsigned int *)this + 79) + 4 * i); /*0x56ae7b*/
@@ -898,10 +898,10 @@ int E4Recv_56AE40::sub_56AE40(int v9)
   {
     v8 = *(unsigned int *)(*((unsigned int *)this + 79) + 4 * j); /*0x56aeb7*/
     if ( v8 ) /*0x56aebc*/
-      v9 = LCW::Compress((int)v14, (char *)(v8 + 282), 1); /*0x56aec4*/
+      a2 = LCW::Compress((int)v14, (char *)(v8 + 282), 1); /*0x56aec4*/
     else
-      v9 = LCW::Compress((int)v14, (char *)&stru_ABDD6A, 1); /*0x56aecf*/
-    v3 += (int)v9; /*0x56aed4*/
+      a2 = LCW::Compress((int)v14, (char *)&stru_ABDD6A, 1); /*0x56aecf*/
+    v3 += (int)a2; /*0x56aed4*/
   }
   for ( k = 0; k < *((unsigned int *)this + 80); ++k ) /*0x56aeeb*/
   {
@@ -909,7 +909,7 @@ int E4Recv_56AE40::sub_56AE40(int v9)
     if ( v11 ) /*0x56aefa*/
       v12 = LCW::Compress((int)v14, (char *)(v11 + 283), 1); /*0x56af02*/
     else
-      v12 = LCW::Compress((int)v14, MEMORY[0xABDD6B], 1); /*0x56af0d*/
+      v12 = LCW::Compress((int)v14, g_abs_ABDD6B, 1); /*0x56af0d*/
     v3 += (int)v12; /*0x56af12*/
   }
   LCWPipe::Dtor(v14); /*0x56af23*/
@@ -952,8 +952,8 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
       {
         v6 = *(unsigned int *)(v5 + 36); /*0x56b12e*/
         v7 = *((unsigned int *)this + 61); /*0x56b131*/
-        HIWORD(a2) = HIWORD(v6); /*0x56b137*/
-        v8 = (__int16)v6; /*0x56b13b*/
+        IDA_HIWORD(a2) = IDA_HIWORD(v6); /*0x56b137*/
+        v8 = (int16_t)v6; /*0x56b13b*/
         v9 = SHIWORD(v6); /*0x56b13e*/
         a2 = (int *)(SHIWORD(a2) + v8); /*0x56b148*/
         if ( (int)a2 > v7 && v8 - v9 < v7 && v9 - v8 < v7 && (int)a2 <= v7 + 2 * v16[62] ) /*0x56b17b*/

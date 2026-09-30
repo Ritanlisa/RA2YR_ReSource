@@ -59,6 +59,24 @@ def enc_cache(a):
     return dec
 
 
+_SCALARS = ('int', 'char', 'void', 'bool', 'float', 'double', 'long',
+            'short', 'unsigned', 'signed', '__int8', '__int16', '__int32',
+            '__int64', 'uint8_t', 'uint16_t', 'uint32_t', 'uint64_t',
+            'int8_t', 'int16_t', 'int32_t', 'int64_t')
+
+
+def _safe_type(ptype):
+    """Class-typed params from cache signatures (`VectorClass *`) are not
+    necessarily declared in the target header's TU -> C2061. Downgrade any
+    non-scalar type to `void *` (pointer size/semantics preserved for the
+    corpus's raw usage; types carry no events)."""
+    base = ptype.replace('*', ' ').strip()
+    words = base.split()
+    if words and all(w in _SCALARS for w in words):
+        return ptype
+    return 'void *' if '*' in ptype else 'int'
+
+
 def cache_params_sig(sig_head):
     m = re.search(r'\(([^)]*)\)', sig_head)
     if not m:
@@ -78,7 +96,7 @@ def cache_params_sig(sig_head):
             ptype = tm.sub(rep, ptype)
         if not ptype or ptype == name:
             ptype = 'int'
-        params.append((ptype, name))
+        params.append((_safe_type(ptype), name))
     return params, ('__thiscall' in sig_head)
 
 
@@ -109,8 +127,13 @@ for p in files:
     header_decls = {}   # (cls, mth) -> new decl (lazy-applied to flat hpp)
     for i, ln in enumerate(lines):
         hm = DEF_HEAD.search(ln)
-        if not hm or '{' not in ln:
+        # opening brace: same line (gap2 style) or next line (e4 style)
+        if not hm:
             continue
+        if '{' not in ln:
+            nxt = lines[i + 1] if i + 1 < len(lines) else ''
+            if not nxt.lstrip().startswith('{'):
+                continue
         cls, mth = hm.group(2), hm.group(3)
         addr = None
         for k in (i - 1, i - 2):
@@ -133,6 +156,18 @@ for p in files:
         cur = [x for x in split_head_params(hm.group(4)) if x is not None]
         cur_n = [re.search(r'([A-Za-z_]\w*)\s*(?:\[|\s*=|$)', t).group(1)
                  for t in cur]
+        # an illegal literal-`this` parameter (written before the drop-this
+        # guard existed) is always removed from the corpus head
+        if cur_n and cur_n[0] == 'this':
+            cur = cur[1:]
+            cur_n = cur_n[1:]
+            cur_head = ln
+            ln = re.sub(r'\(\s*[\w\s\*&]*\bthis\s*,?', '(', ln, count=1)
+            ln = re.sub(r'\(\s*,', '(', ln, count=1)
+            hm = DEF_HEAD.search(ln) or hm
+            out[i] = ln
+            touched = True
+            stats['this-drop'] = stats.get('this-drop', 0) + 1
         src = params
         # drop the cache's leading param when it IS the this keyword AND the
         # corpus head has one fewer param (member def, implicit this).
@@ -141,8 +176,9 @@ for p in files:
         if (is_thiscall and params and params[0][1] == 'this'
                 and len(cur_n) == len(params) - 1):
             src = params[1:]
+        header_decls[(cls, mth)] = ', '.join('%s %s' % (t, n) for t, n in src)
         if [x[1] for x in src] == cur_n and len(src) == len(cur_n):
-            continue                   # already in sync
+            continue                   # head already in sync (decl still recorded)
         # body param rename: old head names -> cache names (word-boundary,
         # within this def's brace-matched span)
         new_param_str = ', '.join('%s %s' % (t, n) for t, n in src)
@@ -164,8 +200,6 @@ for p in files:
                 if re.search(r'\b%s\b' % re.escape(old), out[k]):
                     out[k] = re.sub(r'\b%s\b' % re.escape(old), new, out[k])
                     stats['body-rename'] = stats.get('body-rename', 0) + 1
-        header_decls[(cls, mth.lstrip('~'))] = '%s %s(%s);' % (
-            ln[:hm.start(1)].strip(), mth, new_param_str)
         if SAMPLE and shown[0] < 8:
             shown[0] += 1
             print('--- %s:%d' % (p, i + 1))
@@ -184,6 +218,16 @@ for p in files:
             hlines = htxt.split('\n')
             hchanged = False
             for hi, hl in enumerate(hlines):
+                # repair mangled decls from an earlier pass (`intRead(` ->
+                # `int Read(`: the type word fused with the method name)
+                hl2 = re.sub(
+                    r'^(\s*(?:unsigned\s+|unsigned|long\s+|short\s+)?)'
+                    r'(int|char|void|bool|double|float|long|short)'
+                    r'(?=[A-Za-z_])', r'\1\2 ', hl)
+                if hl2 != hl:
+                    hlines[hi] = hl2
+                    hchanged = True
+                hl = hl2
                 dm = re.search(r'[\w\s\*&]+\b(~?\w+)\s*\(', hl)
                 if not dm or 'class' in hl or 'struct' in hl:
                     continue
@@ -194,15 +238,27 @@ for p in files:
                         break
                 if not key:
                     continue
+                # duplicate-decl guard: if another line already declares
+                # the same method, drop THIS duplicate entirely (C2535)
+                twins = [x for x in hlines if x is not hl and not x.strip().startswith('//')
+                         and re.search(r'\b%s\s*\(' % re.escape(key[1]), x)]
+                if twins:
+                    hlines[hi] = '    // dup-decl removed: ' + hl.strip()
+                    hchanged = True
+                    stats['hdr-dup'] = stats.get('hdr-dup', 0) + 1
+                    continue
                 ret = hl[:dm.start(1)].rstrip()
                 # keep the address comment tail if present
                 tail = ''
                 ci = hl.find('//')
                 if ci >= 0:
                     tail = '  ' + hl[ci:].strip()
-                hlines[hi] = '%s %s' % (ret.rstrip(), header_decls[key].split(' ', 1)[1]) + tail
-                hchanged = True
-                stats['hdr-decl'] = stats.get('hdr-decl', 0) + 1
+                new_hl = '%s %s(%s);%s' % (ret.rstrip(), key[1],
+                                           header_decls[key], tail)
+                if new_hl != hl:
+                    hlines[hi] = new_hl
+                    hchanged = True
+                    stats['hdr-decl'] = stats.get('hdr-decl', 0) + 1
             if hchanged and APPLY:
                 open(hpp, 'w', encoding='utf-8',
                      newline='').write('\n'.join(hlines))
@@ -211,6 +267,32 @@ for p in files:
         files_changed += 1
         if APPLY:
             open(p, 'w', encoding='utf-8', newline='').write('\n'.join(out))
+# ---- corpus-wide header param-type sweep (idempotent) ------------------
+# Every flat-header decl param typed with an undeclared CLASS name
+# (`VectorClass *a2`) downgrades to `void *` -- C2061 family root fix.
+PARAM_TYPE = re.compile(
+    r'\b([A-Z][A-Za-z0-9_]*)\s*(\*+)\s*(?=[A-Za-z_]\w*\s*[,)])')
+hpp_changed = 0
+for hp in glob.glob('src/e4/classes/*.hpp'):
+    txt = open(hp, encoding='utf-8', errors='replace').read()
+    lines2 = txt.split('\n')
+    ch = False
+    for li, l2 in enumerate(lines2):
+        if '(' not in l2 or l2.strip().startswith('//'):
+            continue
+        def _t(m):
+            if m.group(1) in _SCALARS:
+                return m.group(0)
+            return 'void ' + m.group(2) + ' '
+        l3 = PARAM_TYPE.sub(_t, l2)
+        if l3 != l2:
+            lines2[li] = l3
+            ch = True
+    if ch and APPLY:
+        open(hp, 'w', encoding='utf-8', newline='').write('\n'.join(lines2))
+        hpp_changed += 1
+print('header type sweep:', hpp_changed)
+
 print('files changed:', files_changed)
 print(stats)
 if not APPLY:

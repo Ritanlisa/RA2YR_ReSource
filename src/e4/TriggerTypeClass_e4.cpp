@@ -57,11 +57,11 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
 
   if ( !aP2 || a0[183] ) /*0x6fc0c5*/
     return 5; /*0x6fc0c5*/
-  if ( (*(unsigned __int8 (**)(unsigned int *))(*a0 + 472))(a0) ) /*0x6fc0d5*/
+  if ( (*(uint8_t (**)(unsigned int *))(*a0 + 472))(a0) ) /*0x6fc0d5*/
     return 3; /*0x6fc0eb*/
   if ( (TechnoClass *)a0[171] == aP2 ) /*0x6fc0f4*/
     return 3; /*0x6fc102*/
-  if ( (*(unsigned __int8 (**)(unsigned int *))(*a0 + 468))(a0) /*0x6fc145*/
+  if ( (*(uint8_t (**)(unsigned int *))(*a0 + 468))(a0) /*0x6fc145*/
     || *((unsigned char *)a0 + 456)
     || *((unsigned char *)a0 + 973)
     || aP2 == (TechnoClass *)a0[115]
@@ -69,7 +69,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
   {
     return 5; /*0x6fc145*/
   }
-  if ( (*(unsigned __int8 (**)(unsigned int *))(*a0 + 476))(a0) ) /*0x6fc14f*/
+  if ( (*(uint8_t (**)(unsigned int *))(*a0 + 476))(a0) ) /*0x6fc14f*/
   {
     v7 = a0[157]; /*0x6fc159*/
     if ( v7 ) /*0x6fc161*/
@@ -95,27 +95,27 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
       && *(unsigned char *)((*(int (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 132))(v8) + 1684)
       || v8->__pad_26A[18]
       || !*(unsigned char *)(a0[135] + 492)
-      && (*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 352))(v8) )
+      && (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 352))(v8) )
     {
       return 5; /*0x6fc247*/
     }
     if ( (*(int (**)(TechnoClass *, int, unsigned int))(*(unsigned int *)v8->__pad_0 + 104))(v8, 1, a0[135]) == 5 /*0x6fc296*/
       && !Cell::IsPassableOffset(v10, *(IUnknown **)(a0[135] + 48))
       && (TechnoClass::GetValue(a0, (ObjectClass *)0xFFFFFFFF) > 0
-       || !(unsigned __int8)HouseClass::IsAlliedWith(v8->focus, (IUnknown *)a0[135])) )
+       || !(uint8_t)HouseClass::IsAlliedWith(v8->focus, (IUnknown *)a0[135])) )
     {
       return 6; /*0x6fc29d*/
     }
     if ( v8->__pad_3F7[33] /*0x6fc2cc*/
       && *(unsigned char *)((*(int (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 132))(v8) + 3434)
-      && !(*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 84))(v8) )
+      && !(*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 84))(v8) )
     {
       return 5; /*0x6fc2cc*/
     }
   }
   if ( *((unsigned char *)a0 + 141) ) /*0x6fc2d2*/
     return 5; /*0x6fc2d2*/
-  if ( (*(unsigned __int8 (**)(unsigned int *))(*a0 + 892))(a0) ) /*0x6fc2e4*/
+  if ( (*(uint8_t (**)(unsigned int *))(*a0 + 892))(a0) ) /*0x6fc2e4*/
   {
     if ( (*(int (**)(unsigned int *))(*a0 + 44))(a0) != 1 ) /*0x6fc2f8*/
       return 6; /*0x6fc2f8*/
@@ -187,7 +187,7 @@ LABEL_52:
     if ( !*((aP2->abstractFlags & 4) != 0 ? aP2[1].veterancy : (int *)1652) )
       WinAPI::Wrapper(-2147467261); /*0x6fc4cf*/
     v37 = (TechnoClass *)*((aP2->abstractFlags & 4) != 0 ? aP2[1].veterancy : (int *)1652);
-    if ( (*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)v37->__pad_0 + 128))(v37) ) /*0x6fc4dd*/
+    if ( (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v37->__pad_0 + 128))(v37) ) /*0x6fc4dd*/
       return 5; /*0x6fc4dd*/
   }
   v18 = *(unsigned int *)(v12 + 172); /*0x6fc4ef*/
@@ -223,7 +223,7 @@ LABEL_52:
     v20 = a0[71]; /*0x6fc599*/
     if ( v20 ) /*0x6fc5a1*/
     {
-      if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)v20 + 468))(v20) ) /*0x6fc5a5*/
+      if ( (*(uint8_t (**)(int))(*(unsigned int *)v20 + 468))(v20) ) /*0x6fc5a5*/
         return 5; /*0x6fc5a5*/
     }
   }
@@ -238,14 +238,14 @@ LABEL_52:
   }
   if ( v8 /*0x6fc5f8*/
     && *(unsigned int *)(v12 + 172)
-    && (*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 468))(v8)
+    && (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 468))(v8)
     && !*(unsigned char *)(*(unsigned int *)(v12 + 172) + 346) )
   {
     return 5; /*0x6fc600*/
   }
   if ( *(unsigned char *)(v12 + 305) ) /*0x6fc606*/
   {
-    if ( !TechnoClass::CheckTargetCell(a0) && !(*(unsigned __int8 (**)(unsigned int *))(*a0 + 896))(a0) ) /*0x6fc623*/
+    if ( !TechnoClass::CheckTargetCell(a0) && !(*(uint8_t (**)(unsigned int *))(*a0 + 896))(a0) ) /*0x6fc623*/
     {
       if ( !SpawnManagerClass::CountAliveSpawns((int *)a0[180]) ) /*0x6fc637*/
         return 3; /*0x6fc64c*/
@@ -264,7 +264,7 @@ LABEL_98:
   v22 = *(unsigned char **)(*(int (**)(unsigned int *, bool))(*a0 + 1016))(a0, a4 == 0); /*0x6fc69f*/
   if ( v22 && (v22[297] && a0[193] || v22[301] && a0[197] || v22[298] && a0[194] || v22[304] && a0[201]) ) /*0x6fc6f7*/
     return 6; /*0x6fc6ff*/
-  if ( (*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)aP2->__pad_0 + 84))(aP2)
+  if ( (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)aP2->__pad_0 + 84))(aP2)
     && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 676) )
   {
     return aP2 != (TechnoClass *)a0[171] ? 5 : 3;
@@ -279,7 +279,7 @@ LABEL_98:
   {
     v23 = *(unsigned int *)((*(int (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 444))(v8) + 236) == 2 /*0x6fc796*/
        || *(unsigned int *)((*(int (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 444))(v8) + 236) == 6;
-    if ( (*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 84))(v8) ) /*0x6fc79d*/
+    if ( (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 84))(v8) ) /*0x6fc79d*/
       v23 = 0; /*0x6fc7a4*/
     if ( v8->onBridge ) /*0x6fc7a6*/
     {
@@ -289,12 +289,12 @@ LABEL_98:
     {
       return 5; /*0x6fc7ca*/
     }
-    if ( !(*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)aP2->__pad_0 + 80))(aP2) || v23 ) /*0x6fc7e3*/
+    if ( !(*(uint8_t (**)(TechnoClass *))(*(unsigned int *)aP2->__pad_0 + 80))(aP2) || v23 ) /*0x6fc7e3*/
       goto LABEL_139; /*0x6fc7e3*/
   }
   else
   {
-    if ( !(*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)aP2->__pad_0 + 84))(aP2) /*0x6fc7fc*/
+    if ( !(*(uint8_t (**)(TechnoClass *))(*(unsigned int *)aP2->__pad_0 + 84))(aP2) /*0x6fc7fc*/
       && !*(unsigned char *)(*(unsigned int *)(v12 + 160) + 677) )
     {
       return 5; /*0x6fc812*/
@@ -378,7 +378,7 @@ LABEL_164:
     return 5; /*0x6fcaf7*/
   if ( !v8 ) /*0x6fcafc*/
     goto LABEL_231; /*0x6fcafc*/
-  if ( v32 && (*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 352))(v8) ) /*0x6fcb0b*/
+  if ( v32 && (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 352))(v8) ) /*0x6fcb0b*/
     return 5; /*0x6fcb21*/
   if ( *(unsigned char *)(*(unsigned int *)(v38 + 172) + 341) && !CaptureManagerClass::CanCapture(a0[175], v8) ) /*0x6fcb3b*/
     return 5; /*0x6fcb50*/
@@ -391,13 +391,13 @@ LABEL_164:
     return 5; /*0x6fcbaa*/
   if ( *(unsigned char *)(v33 + 343) && v8->attachedBomb ) /*0x6fcbb7*/
     return 5; /*0x6fcbca*/
-  if ( BYTE1(v8->barrelRecoil[4]) ) /*0x6fcbcd*/
+  if ( IDA_BYTE1(v8->barrelRecoil[4]) ) /*0x6fcbcd*/
     return 5; /*0x6fcbe3*/
   if ( *((unsigned char *)a0 + 140) == v8->onBridge ) /*0x6fcbf4*/
     goto LABEL_231; /*0x6fcbf4*/
   if ( (*(int (**)(unsigned int *))(*a0 + 444))(a0) /*0x6fcc4c*/
     && (*(unsigned int *)((*(int (**)(unsigned int *))(*a0 + 444))(a0) + 320) & 0x100) != 0
-    && !(*(unsigned __int8 (**)(unsigned int *))(*a0 + 84))(a0)
+    && !(*(uint8_t (**)(unsigned int *))(*a0 + 84))(a0)
     && (*(int (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 444))(v8)
     && (*(unsigned int *)((*(int (**)(TechnoClass *))(*(unsigned int *)v8->__pad_0 + 444))(v8) + 320) & 0x100) != 0 )
   {
@@ -417,11 +417,11 @@ LABEL_164:
   }
 LABEL_231:
   if ( *(unsigned char *)((*(int (**)(unsigned int *))(*a0 + 132))(a0) + 3479) /*0x6fccd5*/
-    && (*(unsigned __int8 (**)(unsigned int *))(*a0 + 896))(a0) )
+    && (*(uint8_t (**)(unsigned int *))(*a0 + 896))(a0) )
   {
     return 5; /*0x6fcce2*/
   }
-  if ( !(unsigned char)aP4 || (*(unsigned __int8 (**)(unsigned int *, TechnoClass *, int))(*a0 + 936))(a0, aP2, a4) ) /*0x6fcd04*/
+  if ( !(unsigned char)aP4 || (*(uint8_t (**)(unsigned int *, TechnoClass *, int))(*a0 + 936))(a0, aP2, a4) ) /*0x6fcd04*/
     return 0; /*0x6fcd20*/
   return 8; /*0x6fc0df*/
 

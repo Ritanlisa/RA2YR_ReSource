@@ -14,6 +14,6 @@ struct ToolTipManager_7 {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    DynamicVector * QueryInterface(char a2);  // 0x724F40
+    DynamicVector * QueryInterface(unsigned int * Block, char a2);  // 0x724F40
 };
 } // namespace gamemd

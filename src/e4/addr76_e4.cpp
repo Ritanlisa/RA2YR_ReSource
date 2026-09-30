@@ -123,9 +123,9 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   v35 = 0; /*0x764ba1*/
   *((unsigned int *)this + 1) = 0; /*0x764baa*/
   *(unsigned int *)this = &vt_ReferenceCounted; /*0x764bad*/
-  ComPtr::Constructor((unsigned int *)this + 2); /*0x764bb3*/
+  ((ComPtr *)((unsigned int *)this + 2))->Constructor(); /*0x764bb3*/
   *v4 = &vt_rc_ptr_WorldDominationTour_CampaignProperties; /*0x764bbf*/
-  ComPtr::Set(v4, *(unsigned int *)(a3 + 4)); /*0x764bcb*/
+  ((ComPtr *)(v4))->Set(*(unsigned int *)(a3 + 4)); /*0x764bcb*/
   Team_Create_767B00((unsigned char *)this + 16, *(unsigned int *)(a3 + 4) + 8); /*0x764bdb*/
   Team_Create_765C90(4, 0); /*0x764be9*/
   *((unsigned int *)this + 6) = &vt_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x764bf7*/
@@ -154,10 +154,10 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
         {
           if ( v8 >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 60) ) /*0x764c89*/
           {
-            ComPtr::Constructor(v26); /*0x764c97*/
+            ((ComPtr *)(v26))->Constructor(); /*0x764c97*/
             v10 = v35; /*0x764c9c*/
             v26[0] = &vt_rc_ptr_WDTTerritory; /*0x764ca3*/
-            LOBYTE(v10) = v35 | 1; /*0x764cab*/
+            IDA_LOBYTE(v10) = v35 | 1; /*0x764cab*/
             v9 = v26; /*0x764cad*/
             v35 = v10; /*0x764cb1*/
           }
@@ -165,13 +165,13 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
           {
             v9 = (unsigned int *)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 48) + 8 * v8); /*0x764c8e*/
           }
-          ComPtr::Constructor(v25); /*0x764cbc*/
+          ((ComPtr *)(v25))->Constructor(); /*0x764cbc*/
           v25[0] = &vt_rc_ptr_WDTTerritory; /*0x764cc1*/
-          ComPtr::Set(v25, v9[1]); /*0x764cd1*/
+          ((ComPtr *)(v25))->Set(v9[1]); /*0x764cd1*/
           if ( (v35 & 1) != 0 ) /*0x764cde*/
           {
-            v11 = v35; /*0x764ce0*/
-            LOBYTE(v11) = v35 & 0xFE; /*0x764ceb*/
+            v11 = (unsigned int)(v35);
+            IDA_LOBYTE(v11) = v35 & 0xFE; /*0x764ceb*/
             v26[0] = &vt_rc_ptr_WDTTerritory; /*0x764ced*/
             v35 = v11; /*0x764cf5*/
             ComPtr::Release(v26); /*0x764cfc*/
@@ -183,7 +183,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
             if ( *((unsigned int *)this + 10) < v12 /*0x764d3b*/
               || (*((unsigned char *)this + 37) || !v12)
               && (v13 = *((unsigned int *)this + 11), v13 > 0)
-              && (*(unsigned __int8 (**)(char *, int, unsigned int))(*((unsigned int *)this + 6) + 8))(
+              && (*(uint8_t (**)(char *, int, unsigned int))(*((unsigned int *)this + 6) + 8))(
                    (unsigned char *)this + 24,
                    v12 + v13,
                    0) )
@@ -191,9 +191,9 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
               v14 = *((unsigned int *)this + 10); /*0x764d42*/
               v22 = v27[1]; /*0x764d49*/
               *((unsigned int *)this + 10) = v14 + 1; /*0x764d4d*/
-              ComPtr::Set((unsigned int *)(*((unsigned int *)this + 7) + 8 * v14), v22); /*0x764d56*/
+              ((ComPtr *)((unsigned int *)(*((unsigned int *)this + 7) + 8 * v14)))->Set(v22); /*0x764d56*/
             }
-            v27[0] = &vt_rc_ptr_WorldDominationTour_Conflict; /*0x764d5f*/
+            v27[0] = (unsigned int)(&vt_rc_ptr_WorldDominationTour_Conflict);
             ComPtr::Release(v27); /*0x764d67*/
           }
           v25[0] = &vt_rc_ptr_WDTTerritory; /*0x764d70*/
@@ -205,19 +205,19 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       }
       while ( v15 ); /*0x764d8a*/
     }
-    v28[0] = &vt_rc_ptr_WorldDominationTour_State; /*0x764d94*/
+    v28[0] = (unsigned int)(&vt_rc_ptr_WorldDominationTour_State);
     ComPtr::Release(v28); /*0x764d9c*/
   }
   BufferIOFile::Constructor(v34, aWdthistIni_0); /*0x764daa*/
   v16 = 0; /*0x764daf*/
   if ( File::IsReady(v34, 0) )
   {
-    v29[1] = 0; /*0x764dc7*/
-    v29[2] = 0; /*0x764dcb*/
+    v29[1] = (void *)((unsigned int)(0));
+    v29[2] = (unsigned int)(0);
     GenericList::Constructor(v30); /*0x764dcf*/
     v30[0] = &vt_List_INIClass_INISection; /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/
-    LOBYTE(v31) = 0; /*0x764df2*/
+    IDA_LOBYTE(v31) = 0; /*0x764df2*/
     v32 = 0; /*0x764df7*/
     v33 = 0; /*0x764dfb*/
     v29[0] = &vt_INIClass; /*0x764dff*/
@@ -256,7 +256,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     }
     HashTable::DestroyHashTableINIClass(v29); /*0x764f05*/
   }
-  v34[0] = &off_7E1668; /*0x764f0e*/
+  v34[0] = (unsigned int)(&off_7E1668);
   BufferIOFileClass::Dtor(v34); /*0x764f16*/
   return this; /*0x764f1d*/
 
@@ -957,7 +957,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   v2 = a2; /*0x76b7b1*/
   if ( this == a2 ) /*0x76b7bc*/
     return this; /*0x76b7bc*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x76b7c4*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x76b7c4*/
   v4 = a2[2]; /*0x76b7c7*/
   *((unsigned int *)this + 2) = v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/
@@ -966,7 +966,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
     *((unsigned char *)this + 13) = 0; /*0x76b85c*/
     return this; /*0x76b860*/
   }
-  v5 = __2_YAPAXI_Z(8 * v4 + 4); /*0x76b7dd*/
+  v5 = RA2_OPNEW(8 * v4 + 4); /*0x76b7dd*/
   if ( v5 ) /*0x76b7e7*/
   {
     *v5 = v4; /*0x76b7e9*/
@@ -1860,14 +1860,14 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   wchar_t *StringCSF; // [esp-8h] [ebp-10h]
   void *v14; // [esp+4h] [ebp-4h] BYREF
 
-  v5 = (*((int (**)(const char **, int))*(unsigned int **)this + 5))(this, a3); /*0x76732d*/
+  v5 = (*((int (**)(const char **, int))*(unsigned int *)this + 20))(this, a3); /*0x76732d*/
   v6 = FromStringInt((char **)&v14, v5); /*0x767336*/
   ConcatStringAlloc((char **)&a3, (unsigned int *)this + 4, v6); /*0x767343*/
   DeleteAndZero(&v14); /*0x76734c*/
   v7 = a4; /*0x767351*/
   if ( WideString::Length(a4) ) /*0x767357*/
   {
-    WideString::Assign((wchar_t **)&a4, (wchar_t *)MEMORY[0x8423D8]); /*0x76736a*/
+    WideString::Assign((wchar_t **)&a4, (wchar_t *)g_abs_8423D8); /*0x76736a*/
     v8 = String::GetOrEmpty((char **)&a3); /*0x76737a*/
     StringCSF = GetStringCSF((wchar_t *)v8, 0, g_Str_File_WDTGameOptions_cpp, 22); /*0x76738c*/
     v9 = ConcatWString((wchar_t **)&v14, v7, (const wchar_t **)&a4); /*0x767399*/
@@ -2879,9 +2879,9 @@ void E4Recv_76DFD0::sub_76DFD0()
           break; /*0x76e039*/
         ((void (*)(void ***))v3[2])(&v3); /*0x76e043*/
       }
-      while ( ((unsigned __int8 (*)(void ***))v3[1])(&v3) ); /*0x76e04e*/
+      while ( ((uint8_t (*)(void ***))v3[1])(&v3) ); /*0x76e04e*/
     }
-    if ( ((unsigned __int8 (*)(void ***))v3[1])(&v3) ) /*0x76e05d*/
+    if ( ((uint8_t (*)(void ***))v3[1])(&v3) ) /*0x76e05d*/
       nullsub_24(*(unsigned int *)(*((unsigned int *)v4 + 1) + 4 * v5)); /*0x76e072*/
   }
   DeleteAndZero(&v2); /*0x76e07b*/
@@ -2914,9 +2914,9 @@ unsigned int * E4Recv_76E090::sub_76E090()
           break; /*0x76e0f9*/
         ((void (*)(void ***))v5[2])(&v5); /*0x76e103*/
       }
-      while ( ((unsigned __int8 (*)(void ***))v5[1])(&v5) ); /*0x76e10e*/
+      while ( ((uint8_t (*)(void ***))v5[1])(&v5) ); /*0x76e10e*/
     }
-    if ( ((unsigned __int8 (*)(void ***))v5[1])(&v5) ) /*0x76e11d*/
+    if ( ((uint8_t (*)(void ***))v5[1])(&v5) ) /*0x76e11d*/
       nullsub_24(); /*0x76e132*/
   }
   DeleteAndZero((void **)&v3); /*0x76e13b*/

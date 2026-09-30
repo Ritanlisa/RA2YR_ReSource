@@ -75,14 +75,14 @@ struct IPXInterfaceClass {
     unsigned int u32_204;
 // --- flat members (END) ---
     AbstractClass * * Receive();
-    AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);
+    AbstractClass * * SendPacket(void * aP1, int a3, int a4, unsigned int fromlen);
     AbstractClass * * getSocketState(int a2, unsigned int * a3);
-    AbstractClass * * initSocket(void* aP1, Color * aP2, void *a1 = 0);
+    AbstractClass * * initSocket(void* aP1, void * aP2, void *a1 = 0);
     AnimClass * * AddRef(void *a1 = 0);
-    AnimClass * * Connect(const void * a1, unsigned int a3, UDPInterfaceClass * aP3);
+    AnimClass * * Connect(const void * a1, unsigned int a3, void * aP3);
     DynamicVector * closeSession(char a2);
     IPXInterfaceClass * QueryInterface(char a2);
-    char ReceivePacket(char * name, AnimClass * aP1);
+    char ReceivePacket(char * name, void * aP1);
     int COMStub_Ret1139(int a1);
     int COMStub_Return0();
     int COMStub_Return1();

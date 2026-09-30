@@ -16,6 +16,10 @@ struct Carryall {
     unsigned int q278;
     unsigned int q5A4;
     unsigned int Debug;
+    unsigned int __pad_115;
+    unsigned int __pad_26A;
+    unsigned int audioController4;
+    unsigned int audioController7;
 // --- flat members (END) ---
     FootClass * * MissionStateMachine();
 };

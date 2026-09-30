@@ -9,7 +9,7 @@ struct INoticeSink {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
 // --- flat members (END) ---
-    int Dispatch(int a1, void *a2 = 0);
+    int Dispatch(int a1);
 };
 
 } // namespace gamemd

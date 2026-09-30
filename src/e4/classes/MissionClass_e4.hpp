@@ -54,7 +54,7 @@ struct MissionClass {
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
     unsigned int health;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    unsigned int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int q077;  // 0x77

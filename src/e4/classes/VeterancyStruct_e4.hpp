@@ -4,9 +4,11 @@
 namespace gamemd {
 
 struct VeterancyStruct {
+    unsigned int IsElite;
+    unsigned int IsVeteran;
     void* vfptr;
-    BOOL IsElite(void *a1 = 0);
-    BOOL IsVeteran();
+    BOOLIsElite();
+    BOOLIsVeteran();
 };
 
 } // namespace gamemd

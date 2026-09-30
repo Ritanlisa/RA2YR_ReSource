@@ -21,6 +21,6 @@ struct E4Recv_6D1E30 {
     unsigned int q3500;  // 0x3500
     unsigned int q6408;  // 0x6408
 // --- flat members (END) ---
-    unsigned int * SmallFunc_6D1E30(AbstractClass * aP1);  // 0x6D1E30
+    unsigned int * SmallFunc_6D1E30(void * aP1);  // 0x6D1E30
 };
 } // namespace gamemd

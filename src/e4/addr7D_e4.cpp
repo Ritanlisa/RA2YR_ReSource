@@ -11650,12 +11650,12 @@ unsigned int * E4Recv_7D2E6E::sub_7D2E6E()
 
 // 0x7D2E7F
 namespace gamemd {
-ObjectClass * E4Recv_7D2E7F::sub_7D2E7F(char a2)
+ObjectClass * E4Recv_7D2E7F::sub_7D2E7F(void * Block, char a2)
 {
 
   Exception::Destructor(Block); /*0x7d2e82*/
-  if ( (a2 & 1) != 0 ) /*0x7d2e8c*/
-    __3_YAXPAX_Z(Block); /*0x7d2e8f*/
+  if ( (Block & 1) != 0 ) /*0x7d2e8c*/
+    RA2_OPDEL(Block); /*0x7d2e8f*/
   return (ObjectClass *)Block; /*0x7d2e97*/
 
 }
@@ -11671,7 +11671,7 @@ exception * E4Recv_7D2E9B::__0exception_QAE_ABQBD_Z(const char ** a2)
 
   *(unsigned int *)this = &vt_exception; /*0x7d2ea3*/
   v3 = strlen(*a2); /*0x7d2eab*/
-  v4 = (char *)__2_YAPAXI_Z(v3 + 1); /*0x7d2eb2*/
+  v4 = (char *)RA2_OPNEW(v3 + 1); /*0x7d2eb2*/
   *((unsigned int *)this + 1) = v4; /*0x7d2eb8*/
   if ( v4 ) /*0x7d2ebe*/
     strcpy(v4, *a2); /*0x7d2ec3*/
@@ -11696,7 +11696,7 @@ exception * E4Recv_7D2ED8::__0exception_QAE_ABV0__Z(const struct exception * a2)
   if ( v3 ) /*0x7d2eee*/
   {
     v4 = strlen(*((const char **)a2 + 1)); /*0x7d2ef3*/
-    v5 = (char *)__2_YAPAXI_Z(v4 + 1); /*0x7d2efa*/
+    v5 = (char *)RA2_OPNEW(v4 + 1); /*0x7d2efa*/
     *((unsigned int *)this + 1) = v5; /*0x7d2f00*/
     if ( v5 ) /*0x7d2f06*/
       strcpy(v5, *((const char **)a2 + 1)); /*0x7d2f0c*/
@@ -15158,12 +15158,12 @@ void  __noreturn COM_ThrowError(int a1, int a2, int a3)
 
 // 0x7DCDF2
 namespace gamemd {
-ObjectClass * E4Recv_7DCDF2::sub_7DCDF2(char a2)
+ObjectClass * E4Recv_7DCDF2::sub_7DCDF2(unsigned int * Block, char a2)
 {
 
   sub_7DCE3B(Block); /*0x7dcdf5*/
-  if ( (a2 & 1) != 0 ) /*0x7dcdff*/
-    __3_YAXPAX_Z(Block); /*0x7dce02*/
+  if ( (Block & 1) != 0 ) /*0x7dcdff*/
+    RA2_OPDEL(Block); /*0x7dce02*/
   return (ObjectClass *)Block; /*0x7dce0a*/
 
 }

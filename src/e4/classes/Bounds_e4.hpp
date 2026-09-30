@@ -9,7 +9,7 @@ struct Bounds {
 // --- flat members (BEGIN) ---
     char Bounds_field_00[4];  // 0x0
 // --- flat members (END) ---
-    unsigned int * Subtract(void* aP1, unsigned int * a2, void *a3 = 0);
+    unsigned int * Subtract(void * aP1, unsigned int * a2);
 };
 
 } // namespace gamemd

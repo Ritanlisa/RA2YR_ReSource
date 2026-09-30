@@ -100,11 +100,11 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
       {
         goto LABEL_20; /*0x4add1b*/
       }
-      if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)(v4 + 540)) ) /*0x4add27*/
+      if ( (uint8_t)House::IsHumanPlayer(*(#375 **)(v4 + 540)) ) /*0x4add27*/
         break; /*0x4add27*/
       if ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6 /*0x4addce*/
         && *(unsigned char *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 6119)
-        && (unsigned __int8)HouseClass::IsAlliedWith(*(void **)(v4 + 540), (IUnknown *)HouseClass_Player.field_0) )
+        && (uint8_t)HouseClass::IsAlliedWith(*(void **)(v4 + 540), (IUnknown *)HouseClass_Player.field_0) )
       {
         (*(void (**)(int, unsigned int, IUnknown *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v4 + 1160))( /*0x4adde4*/
           v4,
@@ -121,7 +121,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
       }
       else if ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6 /*0x4ade4c*/
              && *(unsigned char *)((*(int (**)(int))(*(unsigned int *)v4 + 132))(v4) + 1518)
-             && !(unsigned __int8)House::IsHumanPlayer(*(#375 **)(v4 + 540)) )
+             && !(uint8_t)House::IsHumanPlayer(*(#375 **)(v4 + 540)) )
       {
         (*(void (**)(int, unsigned int, unsigned int, int, int, unsigned int))(*(unsigned int *)v4 + 1160))( /*0x4ade68*/
           v4,
@@ -173,7 +173,7 @@ int Radar::IsRadarTargetEligible()
   if ( v1 >= 0xC ) /*0x5090f8*/
     return 0; /*0x50912a*/
   v2 = *(this + v1 + 132); /*0x5090ff*/
-  return *(unsigned int *)(v2 + 56) < MEMORY[0x8871E0]->InfantryVirus && *(unsigned int *)(v2 + 36) == -1; /*0x509126*/
+  return *(unsigned int *)(v2 + 56) < g_abs_8871E0->InfantryVirus && *(unsigned int *)(v2 + 36) == -1; /*0x509126*/
 
 }
 }
@@ -190,9 +190,9 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v11; // ecx
   int v12; // eax
   int v13; // ecx
-  __int64 v14; // rax
+  int64_t v14; // rax
   int v15; // edx
-  __int64 v16; // rax
+  int64_t v16; // rax
   int v17; // ebp
   int v18; // ecx
   int v19; // edi
@@ -207,8 +207,8 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int *v28; // ecx
   int v29; // edx
   int v30; // ecx
-  __int64 v31; // rax
-  __int64 v32; // rax
+  int64_t v31; // rax
+  int64_t v32; // rax
   int v33; // ebp
   int v34; // edi
   int v35; // ecx
@@ -227,10 +227,10 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   IUnknown *v48; // eax
   int v49; // ebx
   int v50; // ecx
-  __int16 v51; // di
+  int16_t v51; // di
   int v52; // eax
-  __int64 v53; // rax
-  __int64 v54; // rax
+  int64_t v53; // rax
+  int64_t v54; // rax
   int v55; // edi
   int v56; // esi
   int v57; // edx
@@ -249,8 +249,8 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v70; // edx
   int v71; // eax
   IUnknown *v72; // ebp
-  __int64 v73; // rax
-  __int64 v74; // rax
+  int64_t v73; // rax
+  int64_t v74; // rax
   int v75; // ebx
   int v76; // esi
   int v77; // edx
@@ -298,7 +298,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   v9 = SLOWORD(aP5->field_0); /*0x5824c6*/
   aP5a = (IUnknown *)SHIWORD(aP5->field_0); /*0x5824cd*/
   v112 = 0; /*0x5824d4*/
-  LOBYTE(v113) = 0; /*0x5824dc*/
+  IDA_LOBYTE(v113) = 0; /*0x5824dc*/
   v10 = aP4->field_0; /*0x5824e4*/
   v106 = aP4->field_4; /*0x5824e6*/
   v11 = aP4->field_8; /*0x5824ea*/
@@ -310,15 +310,15 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   v99 = v10; /*0x58250c*/
   v111 = v12 + v106 - 1; /*0x582518*/
   v102 = (unsigned int *)*(this + (unsigned int)aP2 + 32); /*0x582527*/
-  v13 = LOBYTE(aP1->field_8); /*0x58252d*/
+  v13 = IDA_LOBYTE(aP1->field_8); /*0x58252d*/
   while ( v9 >= v10 ) /*0x582538*/
   {
-    v14 = LOBYTE(v7->field_8) - v13; /*0x582541*/
-    if ( (int)((HIDWORD(v14) ^ v14) - HIDWORD(v14)) >= 2 ) /*0x582549*/
+    v14 = IDA_LOBYTE(v7->field_8) - v13; /*0x582541*/
+    if ( (int)((IDA_HIDWORD(v14) ^ v14) - IDA_HIDWORD(v14)) >= 2 ) /*0x582549*/
       break; /*0x582549*/
     *((unsigned short *)&v7->field_0 + (unsigned int)aP2) = (unsigned short)aP3; /*0x582556*/
-    v13 = LOBYTE(v7->field_8); /*0x58255a*/
-    v15 = *(__int16 *)&v7[-1].field_1602A[2]; /*0x58255d*/
+    v13 = IDA_LOBYTE(v7->field_8); /*0x58255a*/
+    v15 = *(int16_t *)&v7[-1].field_1602A[2]; /*0x58255d*/
     v7 = (IUnknown *)((char *)v7 - 10); /*0x582565*/
     --v9; /*0x582568*/
     if ( v15 != v98 ) /*0x58256b*/
@@ -326,24 +326,24 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
     v10 = v99; /*0x582532*/
   }
   v96 = v9; /*0x582571*/
-  v89 = *((__int16 *)&v7->field_0 + (unsigned int)aP2); /*0x58257b*/
+  v89 = *((int16_t *)&v7->field_0 + (unsigned int)aP2); /*0x58257b*/
   if ( v89 > 0 ) /*0x58257f*/
   {
-    v16 = LOBYTE(v7->field_8) - v13; /*0x58258c*/
-    if ( (int)((HIDWORD(v16) ^ v16) - HIDWORD(v16)) < 2 && v89 != -1 ) /*0x58259f*/
+    v16 = IDA_LOBYTE(v7->field_8) - v13; /*0x58258c*/
+    if ( (int)((IDA_HIDWORD(v16) ^ v16) - IDA_HIDWORD(v16)) < 2 && v89 != -1 ) /*0x58259f*/
     {
-      HIWORD(v101) = (unsigned short)aP5a; /*0x5825b1*/
-      LOWORD(v101) = v9; /*0x5825bd*/
+      IDA_HIWORD(v101) = (unsigned short)aP5a; /*0x5825b1*/
+      IDA_LOWORD(v101) = v9; /*0x5825bd*/
       if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&v101, (TechnoClass *)1) ) /*0x5825c2*/
       {
-        HIWORD(v101) = (unsigned short)aP5a; /*0x5825de*/
-        LOWORD(v101) = v9 + 1; /*0x5825ea*/
+        IDA_HIWORD(v101) = (unsigned short)aP5a; /*0x5825de*/
+        IDA_LOWORD(v101) = v9 + 1; /*0x5825ea*/
         if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&v101, (TechnoClass *)1) ) /*0x5825ef*/
         {
-          v17 = (unsigned __int16)aP3 | (v89 << 16); /*0x582612*/
-          LOBYTE(v113) = 0; /*0x58261a*/
-          v18 = *(unsigned int *)(*v102 + 24 * ((unsigned __int8)aP3 & 0xF | (16 * (v89 & 0xF))) + 16); /*0x58262a*/
-          v19 = *v102 + 24 * ((unsigned __int8)aP3 & 0xF | (16 * (v89 & 0xF))); /*0x58262e*/
+          v17 = (uint16_t)aP3 | (v89 << 16); /*0x582612*/
+          IDA_LOBYTE(v113) = 0; /*0x58261a*/
+          v18 = *(unsigned int *)(*v102 + 24 * ((uint8_t)aP3 & 0xF | (16 * (v89 & 0xF))) + 16); /*0x58262a*/
+          v19 = *v102 + 24 * ((uint8_t)aP3 & 0xF | (16 * (v89 & 0xF))); /*0x58262e*/
           v20 = *(unsigned int **)(v19 + 4); /*0x582631*/
           v21 = v18 - 1; /*0x582635*/
           if ( v18 - 1 < 0 ) /*0x58263a*/
@@ -353,7 +353,7 @@ LABEL_14:
             if ( v18 < v22 /*0x58266a*/
               || (*(unsigned char *)(v19 + 13) || !v22)
               && (v23 = *(unsigned int *)(v19 + 20), v23 > 0)
-              && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v19 + 8))(v19, v22 + v23, 0) )
+              && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v19 + 8))(v19, v22 + v23, 0) )
             {
               v24 = *(unsigned int *)(v19 + 16); /*0x582671*/
               v25 = v24 + 1; /*0x582674*/
@@ -383,40 +383,40 @@ LABEL_14:
       }
     }
   }
-  v30 = LOBYTE(v6->field_8); /*0x5826a9*/
+  v30 = IDA_LOBYTE(v6->field_8); /*0x5826a9*/
   if ( SHIWORD(v6->field_4) == v98 ) /*0x5826ae*/
   {
     do /*0x5826f5*/
     {
       if ( v94 > v100 ) /*0x5826ba*/
         break; /*0x5826ba*/
-      v31 = LOBYTE(v8->field_8) - v30; /*0x5826c3*/
-      if ( (int)((HIDWORD(v31) ^ v31) - HIDWORD(v31)) >= 2 ) /*0x5826cb*/
+      v31 = IDA_LOBYTE(v8->field_8) - v30; /*0x5826c3*/
+      if ( (int)((IDA_HIDWORD(v31) ^ v31) - IDA_HIDWORD(v31)) >= 2 ) /*0x5826cb*/
         break; /*0x5826cb*/
       *((unsigned short *)&v8->field_0 + (unsigned int)aP2) = (unsigned short)aP3; /*0x5826da*/
-      v30 = LOBYTE(v8->field_8); /*0x5826e0*/
+      v30 = IDA_LOBYTE(v8->field_8); /*0x5826e0*/
       v8 = (IUnknown *)((char *)v8 + 10); /*0x5826e7*/
       ++v94; /*0x5826eb*/
     }
     while ( SHIWORD(v8->field_4) == v98 ); /*0x5826f5*/
   }
-  v90 = *((__int16 *)&v8->field_0 + (unsigned int)aP2); /*0x582701*/
+  v90 = *((int16_t *)&v8->field_0 + (unsigned int)aP2); /*0x582701*/
   if ( v90 > 0 ) /*0x582705*/
   {
-    v32 = LOBYTE(v8->field_8) - v30; /*0x582712*/
-    if ( (int)((HIDWORD(v32) ^ v32) - HIDWORD(v32)) < 2 && v90 != v97 ) /*0x58272a*/
+    v32 = IDA_LOBYTE(v8->field_8) - v30; /*0x582712*/
+    if ( (int)((IDA_HIDWORD(v32) ^ v32) - IDA_HIDWORD(v32)) < 2 && v90 != v97 ) /*0x58272a*/
     {
-      LOWORD(v101) = v94; /*0x582741*/
-      HIWORD(v101) = (unsigned short)aP5a; /*0x58274d*/
+      IDA_LOWORD(v101) = v94; /*0x582741*/
+      IDA_HIWORD(v101) = (unsigned short)aP5a; /*0x58274d*/
       if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&v101, (TechnoClass *)1) ) /*0x582752*/
       {
-        LOWORD(v101) = v94 - 1; /*0x582770*/
-        HIWORD(v101) = (unsigned short)aP5a; /*0x58277c*/
+        IDA_LOWORD(v101) = v94 - 1; /*0x582770*/
+        IDA_HIWORD(v101) = (unsigned short)aP5a; /*0x58277c*/
         if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&v101, (TechnoClass *)1) ) /*0x582781*/
         {
-          v33 = (unsigned __int16)aP3 | (v90 << 16); /*0x5827a8*/
-          LOBYTE(v113) = 0; /*0x5827b2*/
-          v34 = *v102 + 24 * ((unsigned __int8)aP3 & 0xF | (16 * (v90 & 0xF))); /*0x5827bc*/
+          v33 = (uint16_t)aP3 | (v90 << 16); /*0x5827a8*/
+          IDA_LOBYTE(v113) = 0; /*0x5827b2*/
+          v34 = *v102 + 24 * ((uint8_t)aP3 & 0xF | (16 * (v90 & 0xF))); /*0x5827bc*/
           v35 = *(unsigned int *)(v34 + 16); /*0x5827bf*/
           v36 = *(unsigned int **)(v34 + 4); /*0x5827c3*/
           v37 = v35 - 1; /*0x5827c6*/
@@ -427,7 +427,7 @@ LABEL_33:
             if ( v35 < v38 /*0x5827fb*/
               || (*(unsigned char *)(v34 + 13) || !v38)
               && (v39 = *(unsigned int *)(v34 + 20), v39 > 0)
-              && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v34 + 8))(v34, v39 + v38, 0) )
+              && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v34 + 8))(v34, v39 + v38, 0) )
             {
               v40 = *(unsigned int *)(v34 + 16); /*0x582802*/
               v41 = v40 + 1; /*0x582805*/
@@ -470,13 +470,13 @@ LABEL_33:
     return v110; /*0x582886*/
   do /*0x582aca*/
   {
-    v50 = *((__int16 *)&v47->field_0 + (unsigned int)aP2); /*0x582892*/
+    v50 = *((int16_t *)&v47->field_0 + (unsigned int)aP2); /*0x582892*/
     v91 = v50; /*0x582897*/
     if ( v49 == v9 ) /*0x58289b*/
     {
       v51 = v49; /*0x5828a5*/
-      HIWORD(v103) = (unsigned short)aP5a; /*0x5828a7*/
-      LOWORD(v103) = v49 + 1; /*0x5828b3*/
+      IDA_HIWORD(v103) = (unsigned short)aP5a; /*0x5828a7*/
+      IDA_LOWORD(v103) = v49 + 1; /*0x5828b3*/
       v95 = v103; /*0x5828c0*/
       v52 = (int)&v47->field_8 + 10 * v109 + 2; /*0x5828c4*/
     }
@@ -485,37 +485,37 @@ LABEL_33:
       v51 = v49; /*0x5828ce*/
       if ( v49 >= v94 ) /*0x5828d2*/
       {
-        LOWORD(v105) = v49 - 1; /*0x582902*/
-        HIWORD(v105) = (unsigned short)aP5a; /*0x582907*/
+        IDA_LOWORD(v105) = v49 - 1; /*0x582902*/
+        IDA_HIWORD(v105) = (unsigned short)aP5a; /*0x582907*/
         v95 = v105; /*0x582914*/
         v52 = (int)v47 + v101 - 10; /*0x582918*/
       }
       else
       {
-        LOWORD(v104) = v49; /*0x5828dc*/
-        HIWORD(v104) = (unsigned short)aP5a; /*0x5828e1*/
+        IDA_LOWORD(v104) = v49; /*0x5828dc*/
+        IDA_HIWORD(v104) = (unsigned short)aP5a; /*0x5828e1*/
         v95 = v104; /*0x5828ee*/
         v52 = (int)v47 + v101; /*0x5828f2*/
       }
     }
     if ( v50 || (int)aP5a <= v106 || v49 < v99 || v49 > v100 ) /*0x582939*/
     {
-      if ( v50 != (unsigned __int16)aP3 && v50 != v97 ) /*0x5829ad*/
+      if ( v50 != (uint16_t)aP3 && v50 != v97 ) /*0x5829ad*/
       {
         if ( v50 ) /*0x5829b5*/
         {
-          v54 = *(unsigned __int8 *)(v52 + 8) - LOBYTE(v47->field_8); /*0x5829c9*/
-          if ( (int)((HIDWORD(v54) ^ v54) - HIDWORD(v54)) < 2 /*0x5829e2*/
+          v54 = *(uint8_t *)(v52 + 8) - IDA_LOBYTE(v47->field_8); /*0x5829c9*/
+          if ( (int)((IDA_HIDWORD(v54) ^ v54) - IDA_HIDWORD(v54)) < 2 /*0x5829e2*/
             && LayerClass::IsWithinUsableArea(this, (IUnknown *)&v95, (TechnoClass *)1) )
           {
-            HIWORD(v108) = (unsigned short)aP5a - 1; /*0x5829fd*/
-            LOWORD(v108) = v51; /*0x582a07*/
+            IDA_HIWORD(v108) = (unsigned short)aP5a - 1; /*0x5829fd*/
+            IDA_LOWORD(v108) = v51; /*0x582a07*/
             if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&v108, (TechnoClass *)1) ) /*0x582a0c*/
             {
-              v55 = (unsigned __int16)aP3 | (v91 << 16); /*0x582a26*/
-              if ( v49 < v99 || (LOBYTE(v113) = 0, v49 > v100) ) /*0x582a37*/
-                LOBYTE(v113) = 1; /*0x582a39*/
-              v56 = *v102 + 24 * ((unsigned __int8)aP3 & 0xF | (16 * (v91 & 0xF))); /*0x582a52*/
+              v55 = (uint16_t)aP3 | (v91 << 16); /*0x582a26*/
+              if ( v49 < v99 || (IDA_LOBYTE(v113) = 0, v49 > v100) ) /*0x582a37*/
+                IDA_LOBYTE(v113) = 1; /*0x582a39*/
+              v56 = *v102 + 24 * ((uint8_t)aP3 & 0xF | (16 * (v91 & 0xF))); /*0x582a52*/
               v57 = *(unsigned int *)(v56 + 16); /*0x582a55*/
               v58 = *(unsigned int **)(v56 + 4); /*0x582a59*/
               v59 = v57 - 1; /*0x582a5c*/
@@ -526,7 +526,7 @@ LABEL_65:
                 if ( v57 < v60 /*0x582a8f*/
                   || (*(unsigned char *)(v56 + 13) || !v60)
                   && (v61 = *(unsigned int *)(v56 + 20), v61 > 0)
-                  && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v56 + 8))(v56, v61 + v60, 0) )
+                  && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v56 + 8))(v56, v61 + v60, 0) )
                 {
                   v62 = *(unsigned int *)(v56 + 16); /*0x582a96*/
                   v63 = v62 + 1; /*0x582a99*/
@@ -557,11 +557,11 @@ LABEL_65:
     }
     else if ( SHIWORD(v47->field_4) == v98 ) /*0x582943*/
     {
-      v53 = *(unsigned __int8 *)(v52 + 8) - LOBYTE(v47->field_8); /*0x582957*/
-      if ( (int)((HIDWORD(v53) ^ v53) - HIDWORD(v53)) < 2 ) /*0x58295f*/
+      v53 = *(uint8_t *)(v52 + 8) - IDA_LOBYTE(v47->field_8); /*0x582957*/
+      if ( (int)((IDA_HIDWORD(v53) ^ v53) - IDA_HIDWORD(v53)) < 2 ) /*0x58295f*/
       {
-        LOWORD(v107) = v51; /*0x58297f*/
-        HIWORD(v107) = (unsigned short)aP5a - 1; /*0x582984*/
+        IDA_LOWORD(v107) = v51; /*0x58297f*/
+        IDA_HIWORD(v107) = (unsigned short)aP5a - 1; /*0x582984*/
         Radar::ProcessSubzone(this, v47, aP2, aP3, aP4, (IUnknown *)&v107); /*0x582989*/
         goto LABEL_73; /*0x58298e*/
       }
@@ -577,12 +577,12 @@ LABEL_73:
     v68 = aP1a; /*0x582ad8*/
     do /*0x582ae6*/
     {
-      v69 = *((__int16 *)&v68->field_0 + (unsigned int)aP2); /*0x582ae6*/
+      v69 = *((int16_t *)&v68->field_0 + (unsigned int)aP2); /*0x582ae6*/
       v92 = v69; /*0x582aea*/
       if ( v9 == v96 ) /*0x582aee*/
       {
-        LOWORD(v108) = v9 + 1; /*0x582af9*/
-        HIWORD(v108) = (unsigned short)aP5a; /*0x582b08*/
+        IDA_LOWORD(v108) = v9 + 1; /*0x582af9*/
+        IDA_HIWORD(v108) = (unsigned short)aP5a; /*0x582b08*/
         v70 = v108; /*0x582b0d*/
         v71 = (int)&v68->field_8 - v101 + 2; /*0x582b11*/
       }
@@ -591,15 +591,15 @@ LABEL_73:
         if ( v9 < v94 ) /*0x582b1a*/
         {
           v72 = aP5a; /*0x582b20*/
-          LOWORD(v107) = v9; /*0x582b29*/
+          IDA_LOWORD(v107) = v9; /*0x582b29*/
           v71 = (int)v68 - v101; /*0x582b2e*/
-          HIWORD(v107) = (unsigned short)aP5a; /*0x582b30*/
+          IDA_HIWORD(v107) = (unsigned short)aP5a; /*0x582b30*/
           v95 = v107; /*0x582b39*/
           goto LABEL_82; /*0x582b3d*/
         }
         v71 = (int)v68 - 10 * v109 - 10; /*0x582b4d*/
-        LOWORD(v106) = v9 - 1; /*0x582b52*/
-        HIWORD(v106) = (unsigned short)aP5a; /*0x582b5f*/
+        IDA_LOWORD(v106) = v9 - 1; /*0x582b52*/
+        IDA_HIWORD(v106) = (unsigned short)aP5a; /*0x582b5f*/
         v70 = v106; /*0x582b64*/
       }
       v72 = aP5a; /*0x582b68*/
@@ -607,22 +607,22 @@ LABEL_73:
 LABEL_82:
       if ( v69 || (int)v72 >= v111 || v9 < v99 || v9 > v100 ) /*0x582b87*/
       {
-        if ( v69 != (unsigned __int16)aP3 && v69 != v97 ) /*0x582bfa*/
+        if ( v69 != (uint16_t)aP3 && v69 != v97 ) /*0x582bfa*/
         {
           if ( v69 ) /*0x582c02*/
           {
-            v74 = LOBYTE(aP1a->field_8) - *(unsigned __int8 *)(v71 + 8); /*0x582c18*/
-            if ( (int)((HIDWORD(v74) ^ v74) - HIDWORD(v74)) < 2 /*0x582c33*/
+            v74 = IDA_LOBYTE(aP1a->field_8) - *(uint8_t *)(v71 + 8); /*0x582c18*/
+            if ( (int)((IDA_HIDWORD(v74) ^ v74) - IDA_HIDWORD(v74)) < 2 /*0x582c33*/
               && LayerClass::IsWithinUsableArea(this, (IUnknown *)&v95, (TechnoClass *)1) )
             {
-              LOWORD(v104) = v9; /*0x582c4a*/
-              HIWORD(v104) = (unsigned short)v72 + 1; /*0x582c4f*/
+              IDA_LOWORD(v104) = v9; /*0x582c4a*/
+              IDA_HIWORD(v104) = (unsigned short)v72 + 1; /*0x582c4f*/
               if ( LayerClass::IsWithinUsableArea(this, (IUnknown *)&v104, (TechnoClass *)1) ) /*0x582c54*/
               {
-                v75 = (unsigned __int16)aP3 | (v92 << 16); /*0x582c6e*/
-                if ( v9 < v99 || (LOBYTE(v113) = 0, v9 > v100) ) /*0x582c7f*/
-                  LOBYTE(v113) = 1; /*0x582c81*/
-                v76 = *v102 + 24 * ((unsigned __int8)aP3 & 0xF | (16 * (v92 & 0xF))); /*0x582c9c*/
+                v75 = (uint16_t)aP3 | (v92 << 16); /*0x582c6e*/
+                if ( v9 < v99 || (IDA_LOBYTE(v113) = 0, v9 > v100) ) /*0x582c7f*/
+                  IDA_LOBYTE(v113) = 1; /*0x582c81*/
+                v76 = *v102 + 24 * ((uint8_t)aP3 & 0xF | (16 * (v92 & 0xF))); /*0x582c9c*/
                 v77 = *(unsigned int *)(v76 + 16); /*0x582c9f*/
                 v78 = *(unsigned int **)(v76 + 4); /*0x582ca3*/
                 v79 = v77 - 1; /*0x582ca6*/
@@ -633,7 +633,7 @@ LABEL_102:
                   if ( v77 < v80 /*0x582cd9*/
                     || (*(unsigned char *)(v76 + 13) || !v80)
                     && (v81 = *(unsigned int *)(v76 + 20), v81 > 0)
-                    && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v76 + 8))(v76, v81 + v80, 0) )
+                    && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v76 + 8))(v76, v81 + v80, 0) )
                   {
                     v82 = *(unsigned int *)(v76 + 16); /*0x582ce0*/
                     v83 = v82 + 1; /*0x582ce3*/
@@ -666,11 +666,11 @@ LABEL_102:
         v68 = aP1a; /*0x582d0e*/
       }
       else if ( SHIWORD(v68->field_4) == v98 /*0x582ba7*/
-             && (v73 = LOBYTE(v68->field_8) - *(unsigned __int8 *)(v71 + 8),
-                 (int)((HIDWORD(v73) ^ v73) - HIDWORD(v73)) < 2) )
+             && (v73 = IDA_LOBYTE(v68->field_8) - *(uint8_t *)(v71 + 8),
+                 (int)((IDA_HIDWORD(v73) ^ v73) - IDA_HIDWORD(v73)) < 2) )
       {
-        LOWORD(v105) = v9; /*0x582bc3*/
-        HIWORD(v105) = (unsigned short)v72 + 1; /*0x582bc8*/
+        IDA_LOWORD(v105) = v9; /*0x582bc3*/
+        IDA_HIWORD(v105) = (unsigned short)v72 + 1; /*0x582bc8*/
         Radar::ProcessSubzone(this, v68, aP2, aP3, aP4, (IUnknown *)&v105); /*0x582bcd*/
       }
       else
@@ -703,7 +703,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
   IUnknown *v11; // eax
   IUnknown *v12; // esi
   int v13; // edi
-  __int16 v14; // bp
+  int16_t v14; // bp
   IUnknown *v15; // edx
   int v16; // eax
   unsigned short *v17; // ecx
@@ -730,7 +730,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
   int v38; // ecx
   int v39; // edi
   int v40; // ecx
-  __int16 v41; // ax
+  int16_t v41; // ax
   bool v42; // zf
   int v43; // esi
   int v44; // ecx
@@ -770,9 +770,9 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
   int v78; // ecx
   char *v79; // edx
   int v80; // esi
-  __int16 *v81; // eax
+  int16_t *v81; // eax
   int v82; // edi
-  __int16 v83; // bp
+  int16_t v83; // bp
   int v84; // ecx
   IUnknown *aP3; // [esp+20h] [ebp-94h]
   IUnknown *aP3a; // [esp+20h] [ebp-94h]
@@ -797,8 +797,8 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
   CCINIClass *v105; // [esp+3Ch] [ebp-78h]
   int v106; // [esp+40h] [ebp-74h]
   int v107; // [esp+44h] [ebp-70h]
-  __int16 v108; // [esp+48h] [ebp-6Ch] BYREF
-  __int16 v109; // [esp+4Ah] [ebp-6Ah]
+  int16_t v108; // [esp+48h] [ebp-6Ch] BYREF
+  int16_t v109; // [esp+4Ah] [ebp-6Ah]
   void **v110; // [esp+4Ch] [ebp-68h] BYREF
   IUnknown *v111; // [esp+50h] [ebp-64h]
   IUnknown *v112; // [esp+54h] [ebp-60h]
@@ -870,8 +870,8 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
             goto LABEL_23; /*0x584644*/
           do /*0x584723*/
           {
-            LOWORD(v119) = (unsigned short)v12; /*0x584656*/
-            HIWORD(v119) = (unsigned short)v89; /*0x58465b*/
+            IDA_LOWORD(v119) = (unsigned short)v12; /*0x584656*/
+            IDA_HIWORD(v119) = (unsigned short)v89; /*0x58465b*/
             v13 = *(unsigned int *)&v2->__pad_68[8] + 10 * CellToTileIndexMap(&v2->field_0, (IUnknown *)&v119); /*0x58466f*/
             v14 = *(unsigned short *)(v13 + 2 * aP2); /*0x584672*/
             if ( v14 ) /*0x584679*/
@@ -896,7 +896,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
                   goto LABEL_20; /*0x5846a5*/
                 if ( (v113 || !v112) /*0x5846c8*/
                   && v115 > 0
-                  && ((unsigned __int8 (*)(void ***, char *, unsigned int))v110[2])(&v110, (char *)v112 + v115, 0) )
+                  && ((uint8_t (*)(void ***, char *, unsigned int))v110[2])(&v110, (char *)v112 + v115, 0) )
                 {
                   v15 = v114; /*0x5846cf*/
 LABEL_20:
@@ -933,7 +933,7 @@ LABEL_23:
         v93 = &v2->__pad_8C[24 * v3 + 4]; /*0x584760*/
         while ( 1 ) /*0x584776*/
         {
-          v19 = *((unsigned __int16 *)&v111->field_0 + (unsigned int)v18); /*0x584776*/
+          v19 = *((uint16_t *)&v111->field_0 + (unsigned int)v18); /*0x584776*/
           v20 = (unsigned int *)(*(unsigned int *)v93 + 36 * v19); /*0x584782*/
           v98 = v20; /*0x584785*/
           v21 = v20[4] - 1; /*0x58478c*/
@@ -1011,7 +1011,7 @@ LABEL_73:
             && (v49 = SHIWORD(v45->field_4), v49 >= (int)v10)
             && v49 < (int)&v10->__pad_0[v107] )
           {
-            if ( LOBYTE(v45->field_8) ) /*0x584b20*/
+            if ( IDA_LOBYTE(v45->field_8) ) /*0x584b20*/
             {
               RadarClass::RenderBlips(&v2->field_0, v45, aP2); /*0x584b2e*/
               v9 = v106; /*0x584b33*/
@@ -1037,16 +1037,16 @@ LABEL_73:
           do /*0x584c6a*/
           {
             v51 = *v96; /*0x584b86*/
-            v52 = (unsigned __int16)*((unsigned int *)v96 - 1); /*0x584b95*/
-            v53 = (unsigned __int16)HIWORD(*((unsigned int *)v96 - 1)); /*0x584b9b*/
+            v52 = (uint16_t)*((unsigned int *)v96 - 1); /*0x584b95*/
+            v53 = (uint16_t)IDA_HIWORD(*((unsigned int *)v96 - 1)); /*0x584b9b*/
             v54 = *((unsigned int *)v103 + 1); /*0x584ba1*/
-            LOBYTE(v132) = *v96; /*0x584ba4*/
+            IDA_LOBYTE(v132) = *v96; /*0x584ba4*/
             v55 = *(unsigned int *)(v54 + 36 * v52 + 8); /*0x584bae*/
             v56 = v54 + 36 * v52; /*0x584bb2*/
             if ( *(unsigned int *)(v56 + 16) < v55 /*0x584bd8*/
               || (*(unsigned char *)(v56 + 13) || !v55)
               && (v57 = *(unsigned int *)(v56 + 20), v57 > 0)
-              && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v56 + 8))(v56, v57 + v55, 0) )
+              && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v56 + 8))(v56, v57 + v55, 0) )
             {
               v58 = *(unsigned int *)(v56 + 16); /*0x584bdf*/
               v59 = *(unsigned int *)(v56 + 4); /*0x584be2*/
@@ -1055,14 +1055,14 @@ LABEL_73:
               *(unsigned int *)(v59 + 8 * v58) = v53; /*0x584bf2*/
               *(unsigned int *)(v59 + 8 * v58 + 4) = v60; /*0x584bf5*/
             }
-            LOBYTE(v133) = v51; /*0x584c01*/
+            IDA_LOBYTE(v133) = v51; /*0x584c01*/
             v61 = *((unsigned int *)v103 + 1); /*0x584c08*/
             v62 = *(unsigned int *)(v61 + 36 * v53 + 8); /*0x584c0b*/
             v63 = v61 + 36 * v53; /*0x584c0f*/
             if ( *(unsigned int *)(v63 + 16) < v62 /*0x584c35*/
               || (*(unsigned char *)(v63 + 13) || !v62)
               && (v64 = *(unsigned int *)(v63 + 20), v64 > 0)
-              && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v63 + 8))(v63, v64 + v62, 0) )
+              && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v63 + 8))(v63, v64 + v62, 0) )
             {
               v65 = *(unsigned int *)(v63 + 16); /*0x584c3c*/
               v66 = *(unsigned int *)(v63 + 4); /*0x584c3f*/
@@ -1086,7 +1086,7 @@ LABEL_73:
       v110 = &vt_VectorClass_unsigned_short_7E3824; /*0x584c93*/
       if ( v111 && v113 ) /*0x584ca3*/
       {
-        __3_YAXPAX_Z(v111); /*0x584ca6*/
+        RA2_OPDEL(v111); /*0x584ca6*/
         v111 = 0; /*0x584cae*/
       }
       v113 = 0; /*0x584cb6*/
@@ -1112,11 +1112,11 @@ LABEL_73:
             {
               do /*0x584e14*/
               {
-                v108 = (__int16)v74; /*0x584d2c*/
-                v109 = (__int16)v71; /*0x584d31*/
+                v108 = (int16_t)v74; /*0x584d2c*/
+                v109 = (int16_t)v71; /*0x584d31*/
                 if ( LayerClass::IsWithinUsableArea(v2, (IUnknown *)&v108, (TechnoClass *)1) ) /*0x584d36*/
                 {
-                  v75 = (__int16)v74 + (__int16)v71 * (v2->field_F8 + *(unsigned int *)&v2->__pad_EC[8] + 1); /*0x584d5c*/
+                  v75 = (int16_t)v74 + (int16_t)v71 * (v2->field_F8 + *(unsigned int *)&v2->__pad_EC[8] + 1); /*0x584d5c*/
                   if ( v75 >= 0 ) /*0x584d5e*/
                   {
                     v78 = *(unsigned int *)&v2->__pad_68[4]; /*0x584dc6*/
@@ -1129,7 +1129,7 @@ LABEL_73:
                   }
                   v79 = &v2->__pad_8C[4]; /*0x584dd6*/
                   v80 = 2; /*0x584ddc*/
-                  v81 = (__int16 *)(*(unsigned int *)&v2->__pad_68[8] + 10 * v75); /*0x584de1*/
+                  v81 = (int16_t *)(*(unsigned int *)&v2->__pad_68[8] + 10 * v75); /*0x584de1*/
                   do /*0x584dfc*/
                   {
                     v82 = *(unsigned int *)v79; /*0x584de7*/
@@ -1206,18 +1206,18 @@ LABEL_72:
         {
           v33 = 0; /*0x5848c8*/
         }
-        v99 = *(unsigned __int8 *)(*(unsigned int *)v2->__pad_68 + 4 * v33); /*0x5848e3*/
+        v99 = *(uint8_t *)(*(unsigned int *)v2->__pad_68 + 4 * v33); /*0x5848e3*/
         if ( v99 != 7 && !*((unsigned short *)&v91->field_0 + aP2) )
         {
-          v108 = (__int16)v29; /*0x58491b*/
-          v109 = (__int16)v28; /*0x584920*/
+          v108 = (int16_t)v29; /*0x58491b*/
+          v109 = (int16_t)v28; /*0x584920*/
           Radar::ProcessSubzone(v2, v91, (IUnknown *)aP2, aP3a, (IUnknown *)&v104, (IUnknown *)&v108); /*0x584925*/
           VectorClass::ConstructSubzone(&v123, 0, 0); /*0x584932*/
           v123 = &vt_DynamicVectorClass_SubzoneConnectionStruct; /*0x58493b*/
           v128 = 10; /*0x584943*/
           v127 = 0; /*0x58494e*/
           VectorClass::CleanupSubzone((int)&v123); /*0x584955*/
-          LOWORD(v129) = 0; /*0x58495b*/
+          IDA_LOWORD(v129) = 0; /*0x58495b*/
           v130 = 0; /*0x584963*/
           v131 = 0; /*0x58496a*/
           v35 = &v2->__pad_8C[24 * aP2]; /*0x584971*/
@@ -1225,7 +1225,7 @@ LABEL_72:
           if ( *(unsigned int *)&v2->__pad_8C[24 * aP2 + 16] < v36 /*0x58499a*/
             || (v2->__pad_8C[24 * aP2 + 13] || !v36)
             && (v37 = *(unsigned int *)&v2->__pad_A0[24 * aP2], v37 > 0)
-            && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)v103 + 8))(v103, v37 + v36, 0) )
+            && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)v103 + 8))(v103, v37 + v36, 0) )
           {
             v38 = *(unsigned int *)&v2->__pad_8C[24 * aP2 + 16]; /*0x5849a5*/
             *(unsigned int *)&v2->__pad_8C[24 * aP2 + 16] = v38 + 1; /*0x5849ae*/
@@ -1237,19 +1237,19 @@ LABEL_72:
             v35 = &v2->__pad_8C[24 * aP2]; /*0x5849e3*/
           }
           v123 = &vt_VectorClass_SubzoneConnectionStruct; /*0x5849eb*/
-          if ( Block && BYTE1(v126) ) /*0x5849fd*/
+          if ( Block && IDA_BYTE1(v126) ) /*0x5849fd*/
           {
-            __3_YAXPAX_Z(Block); /*0x584a00*/
+            RA2_OPDEL(Block); /*0x584a00*/
             Block = 0; /*0x584a08*/
           }
           v40 = v94 + *((unsigned int *)v35 + 1); /*0x584a1b*/
-          BYTE1(v126) = 0; /*0x584a20*/
+          IDA_BYTE1(v126) = 0; /*0x584a20*/
           v125 = 0; /*0x584a25*/
           v41 = aP2 == 2 ? 0 : *((unsigned short *)&v91->field_0 + aP2 + 1);
           *(unsigned short *)(v40 + 24) = v41; /*0x584a3c*/
           *(unsigned int *)(v40 + 28) = v99; /*0x584a44*/
           *(unsigned int *)(v40 + 20) = 16; /*0x584a47*/
-          *(unsigned int *)(v40 + 32) = (__int16)v29 / 4 + 130 * ((__int16)v28 / 4) + 131; /*0x584a78*/
+          *(unsigned int *)(v40 + 32) = (int16_t)v29 / 4 + 130 * ((int16_t)v28 / 4) + 131; /*0x584a78*/
           v42 = v94 == -36; /*0x584a80*/
           aP3a = (IUnknown *)((char *)aP3a + 1); /*0x584a83*/
           v94 += 36; /*0x584a87*/
@@ -1278,7 +1278,7 @@ LABEL_72:
     MapClass::AllocArrays(&stru_87C374.__pad_14B0[4244]); /*0x584d8b*/
     v110 = &vt_VectorClass_unsigned_short_7E3824; /*0x584d94*/
     if ( v111 && v113 ) /*0x584daa*/
-      __3_YAXPAX_Z(v111); /*0x584db1*/
+      RA2_OPDEL(v111); /*0x584db1*/
   }
 
 }
@@ -1299,12 +1299,12 @@ void * Radar::CopyDataArray(int * a2)
 
   if ( this != a2 ) /*0x58abdc*/
   {
-    (*(void (**)(int *))(*(unsigned int **)this + 12))(this); /*0x58abe0*/
+    (*(void (**)(int *))(*(unsigned int *)this + 12))(this); /*0x58abe0*/
     v3 = a2[2]; /*0x58abe3*/
     *((char *)this + 2) = v3; /*0x58abea*/
     if ( v3 ) /*0x58abed*/
     {
-      v4 = (char *)__2_YAPAXI_Z(8 * v3); /*0x58abf7*/
+      v4 = (char *)RA2_OPNEW(8 * v3); /*0x58abf7*/
       if ( v4 ) /*0x58ac01*/
       {
         v5 = v4; /*0x58ac06*/
@@ -1373,7 +1373,7 @@ MapClass * * Radar::RenderMinimap()
 
   int v2; // ebx
   int v3; // ecx
-  __int16 *v4; // eax
+  int16_t *v4; // eax
   int *v5; // eax
   int v6; // ecx
   int v7; // ebp
@@ -1475,20 +1475,20 @@ MapClass * * Radar::RenderMinimap()
   *(unsigned int *)&v96[28] = *(unsigned int *)(v2 + 12); /*0x656ef9*/
   if ( v3 != 1 || (v86 = 1, *((unsigned int *)this + 1323) != 1) ) /*0x656f0b*/
     v86 = 0; /*0x656f0d*/
-  v91 = *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8532] + *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8540] / 2; /*0x656f28*/
-  v92 = (ConvertClass *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8536] /*0x656f3e*/
-                       + *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8544] / 2);
-  v4 = (__int16 *)Tactical::PixelToCell( /*0x656f4e*/
-                    *(int *)&MEMORY[0x87F8E4].__pad_5568[9432],
+  v91 = *(unsigned int *)&g_abs_87F8E4 + *(unsigned int *)&g_abs_87F8E4 / 2; /*0x656f28*/
+  v92 = (ConvertClass *)(*(unsigned int *)&g_abs_87F8E4 /*0x656f3e*/
+                       + *(unsigned int *)&g_abs_87F8E4 / 2);
+  v4 = (int16_t *)Tactical::PixelToCell( /*0x656f4e*/
+                    *(int *)&g_abs_87F8E4,
                     (AbstractClass *)v96,
                     (IUnknown *)&v91);
-  v5 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], v4); /*0x656f59*/
+  v5 = (int *)CellCoord::To_CellObj(&g_abs_87F7E8, v4); /*0x656f59*/
   v6 = *((unsigned int *)this + 1316); /*0x656f61*/
   v91 = v5[9]; /*0x656f67*/
   v7 = SHIWORD(v91); /*0x656f71*/
-  v8 = (__int16)v91; /*0x656f76*/
+  v8 = (int16_t)v91; /*0x656f76*/
   v9 = (int *)((char *)this + 5276); /*0x656f7b*/
-  v10 = (__int16)v91 + v6 - SHIWORD(v91); /*0x656f81*/
+  v10 = (int16_t)v91 + v6 - SHIWORD(v91); /*0x656f81*/
   v91 = *((int *)this + 1319); /*0x656f83*/
   v88 = v10; /*0x656f87*/
   *(unsigned int *)v96 = v8; /*0x656f8b*/
@@ -1506,16 +1506,16 @@ MapClass * * Radar::RenderMinimap()
   *((unsigned int *)this + 1336) = *(unsigned int *)v96; /*0x65700a*/
   *((unsigned int *)this + 1337) = 1; /*0x65700d*/
   *((unsigned int *)this + 1338) = 1; /*0x657010*/
-  *(unsigned int *)v96 = 2 * *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8540]; /*0x65701c*/
+  *(unsigned int *)v96 = 2 * *(unsigned int *)&g_abs_87F8E4; /*0x65701c*/
   v15 = Math::RoundToInt(v13); /*0x65702c*/
   v16 = 30.0 / *(float *)((char *)this + 5256); /*0x657037*/
   *((unsigned int *)this + 1337) = v15; /*0x65703d*/
-  *(unsigned int *)v96 = 2 * *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8544]; /*0x65704c*/
+  *(unsigned int *)v96 = 2 * *(unsigned int *)&g_abs_87F8E4; /*0x65704c*/
   *(float *)&v91 = v16; /*0x657050*/
   *((unsigned int *)this + 1338) = Math::RoundToInt(v13); /*0x657061*/
   v88 = Math::RoundToInt(v13); /*0x657074*/
-  *(unsigned int *)v96 = 2 * *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8544]; /*0x657082*/
-  v17 = Math::RoundToInt((double)(2 * *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[8544]) / *(float *)&v91 * 0.5); /*0x657094*/
+  *(unsigned int *)v96 = 2 * *(unsigned int *)&g_abs_87F8E4; /*0x657082*/
+  v17 = Math::RoundToInt((double)(2 * *(unsigned int *)&g_abs_87F8E4) / *(float *)&v91 * 0.5); /*0x657094*/
   *((unsigned int *)this + 1335) -= v88; /*0x6570a2*/
   *((unsigned int *)this + 1336) -= v17; /*0x6570aa*/
   v18 = *((unsigned int *)this + 1335); /*0x6570ad*/
@@ -1717,13 +1717,13 @@ MapClass * * Radar::RenderMinimap()
         *(unsigned int *)(v2 + 12) = *((unsigned int *)this + 1322); /*0x6575af*/
         *(unsigned int *)v96 = *((unsigned int *)this + 1145); /*0x6575ba*/
         *(unsigned int *)&v96[4] = *((unsigned int *)this + 1147); /*0x6575d7*/
-        v51 = (int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9396] + 120))( /*0x6575e2*/
-                       *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9396],
+        v51 = (int *)(*(int (**)(unsigned int, int *))(**(unsigned int **)&g_abs_87F8E4 + 120))( /*0x6575e2*/
+                       *(unsigned int *)&g_abs_87F8E4,
                        &v88);
         DrawToSurfaceSHP( /*0x6575fc*/
-          *(int *)&MEMORY[0x87F8E4].__pad_5568[9396],
+          *(int *)&g_abs_87F8E4,
           v50,
-          (int)MEMORY[0xB04A38],
+          (int)g_abs_B04A38,
           0x20u,
           (int *)v96,
           v51,
@@ -1748,17 +1748,17 @@ MapClass * * Radar::RenderMinimap()
         v55 = *((unsigned int *)this + 1159); /*0x65763d*/
         *(unsigned int *)&v96[8] = v52; /*0x657643*/
         *(unsigned int *)&v96[12] = v54; /*0x657647*/
-        (*(void (**)(unsigned int, int, int, unsigned char *, unsigned int, int))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9396] /*0x65764f*/
+        (*(void (**)(unsigned int, int, int, unsigned char *, unsigned int, int))(**(unsigned int **)&g_abs_87F8E4 /*0x65764f*/
                                                                        + 8))(
-          *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9396],
+          *(unsigned int *)&g_abs_87F8E4,
           v2,
           v55,
           v96,
           0,
           1);
       }
-      (*(void (**)(unsigned int, int, unsigned int))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9396] + 88))( /*0x657668*/
-        *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9396],
+      (*(void (**)(unsigned int, int, unsigned int))(**(unsigned int **)&g_abs_87F8E4 + 88))( /*0x657668*/
+        *(unsigned int *)&g_abs_87F8E4,
         (char *)this + 5340,
         *((unsigned int *)this + 1154));
       v56 = *v9; /*0x65766b*/
@@ -1770,8 +1770,8 @@ MapClass * * Radar::RenderMinimap()
       v92 = (ConvertClass *)(v57 - 1); /*0x657682*/
       v93 = v58 + 2; /*0x657693*/
       v94 = v59 + 2; /*0x657697*/
-      (*(void (**)(unsigned int, int *, int))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[9396] + 88))( /*0x6576a2*/
-        *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9396],
+      (*(void (**)(unsigned int, int *, int))(**(unsigned int **)&g_abs_87F8E4 + 88))( /*0x6576a2*/
+        *(unsigned int *)&g_abs_87F8E4,
         &v91,
         v60);
     }
@@ -1885,7 +1885,7 @@ LABEL_99:
     v81 = (*(int (**)(unsigned int))(**(unsigned int **)v96 + 128))(*(unsigned int *)v96); /*0x657896*/
     memset(*(void **)((char *)this + 4724), 0, v81 * (*(int (**)(int))(*(unsigned int *)v80 + 124))(v80) / 8 + 1); /*0x6578b7*/
   }
-  LOBYTE(v82) = v86; /*0x6578c0*/
+  IDA_LOBYTE(v82) = v86; /*0x6578c0*/
   if ( !v86 ) /*0x6578c6*/
   {
     v83 = *(unsigned int *)&v96[20]; /*0x6578cc*/
@@ -1915,7 +1915,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
   CellStruct *v11; // edi
   IUnknown *v12; // eax
   unsigned short *v13; // eax
-  __int16 *v14; // ebp
+  int16_t *v14; // ebp
   IUnknown *v15; // eax
   unsigned short *v16; // eax
   char *v17; // eax
@@ -1950,7 +1950,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     else
     {
       v6 = aP0; /*0x69264d*/
-      v7 = FindRadarClosestEnemy((__int16 *)aP0, 0); /*0x692655*/
+      v7 = FindRadarClosestEnemy((int16_t *)aP0, 0); /*0x692655*/
       return (*(int (**)(int, MouseClass *, int, unsigned int))(*(unsigned int *)v7 + 112))(v7, v6, aP3_4, 0); /*0x692666*/
     }
   }
@@ -1970,7 +1970,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
       v9 = 0; /*0x6926d9*/
     }
   }
-  v14 = (__int16 *)aP0; /*0x6926db*/
+  v14 = (int16_t *)aP0; /*0x6926db*/
   if ( !v8 /*0x692725*/
     || (*(int (**)(MouseClass *))(v8->field_0 + 44))(v8) != 6
     || v8->__pad_1D4[582]
@@ -1983,7 +1983,7 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     if ( v9 ) /*0x692734*/
     {
       if ( v8 /*0x692766*/
-        && (*(unsigned __int8 (**)(MouseClass *))(v8->field_0 + 312))(v8)
+        && (*(uint8_t (**)(MouseClass *))(v8->field_0 + 312))(v8)
         && ((*(int (**)(MouseClass *))(v8->field_0 + 44))(v8) != 6 || !v8->__pad_1D4[1299])
         && (!v11 || !v11[1].__pad_FC[16]) )
       {
@@ -2005,8 +2005,8 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     if ( !v8 /*0x6927fb*/
       || !(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8)
       || (v18 = (#375 *)(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8),
-          !(unsigned __int8)House::IsHumanPlayer(v18))
-      || (v30 = (IUnknown *)10, !(*(unsigned __int8 (**)(MouseClass *))(v8->field_0 + 148))(v8)) )
+          !(uint8_t)House::IsHumanPlayer(v18))
+      || (v30 = (IUnknown *)10, !(*(uint8_t (**)(MouseClass *))(v8->field_0 + 148))(v8)) )
     {
       v30 = (IUnknown *)15; /*0x69280d*/
     }
@@ -2019,13 +2019,13 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
       if ( (*(int (**)(MouseClass *))(v8->field_0 + 60))(v8) ) /*0x69282e*/
       {
         v19 = (#375 *)(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8); /*0x692839*/
-        if ( (unsigned __int8)House::IsHumanPlayer(v19) ) /*0x69283e*/
+        if ( (uint8_t)House::IsHumanPlayer(v19) ) /*0x69283e*/
         {
           if ( (*(int (**)(MouseClass *))(v8->field_0 + 44))(v8) == 6 ) /*0x692851*/
           {
-            if ( (*(unsigned __int8 (**)(MouseClass *))(v8->field_0 + 312))(v8) ) /*0x692857*/
+            if ( (*(uint8_t (**)(MouseClass *))(v8->field_0 + 312))(v8) ) /*0x692857*/
             {
-              if ( !(*(unsigned __int8 (**)(MouseClass *))(v8->field_0 + 128))(v8) ) /*0x692865*/
+              if ( !(*(uint8_t (**)(MouseClass *))(v8->field_0 + 128))(v8) ) /*0x692865*/
               {
                 v20 = *(unsigned int *)&v8->__pad_1D4[844]; /*0x69286f*/
                 if ( *(unsigned char *)(v20 + 5450) ) /*0x692875*/
@@ -2096,12 +2096,12 @@ LABEL_65:
   if ( v8
     && (*(int (**)(MouseClass *))(v8->field_0 + 60))(v8)
     && (v24 = (#375 *)(*(int (**)(MouseClass *))(v8->field_0 + 60))(v8),
-        (unsigned __int8)House::IsHumanPlayer(v24))
-    && (*(unsigned __int8 (**)(MouseClass *))(v8->field_0 + 152))(v8) )
+        (uint8_t)House::IsHumanPlayer(v24))
+    && (*(uint8_t (**)(MouseClass *))(v8->field_0 + 152))(v8) )
   {
     if ( (*(int (**)(MouseClass *))(v8->field_0 + 44))(v8) == 6 )
     {
-      v30 = (IUnknown *)((*(unsigned __int8 (**)(MouseClass *))(v8->field_0 + 128))(v8) != 0 ? 14 : 12);
+      v30 = (IUnknown *)((*(uint8_t (**)(MouseClass *))(v8->field_0 + 128))(v8) != 0 ? 14 : 12);
       goto LABEL_81; /*0x692a24*/
     }
   }
@@ -2124,7 +2124,7 @@ LABEL_65:
         {
           v26 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], v14); /*0x692adc*/
           v30 = (IUnknown *)12; /*0x692af4*/
-          if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)&HouseClass_Array->__pad_0[4 * v26[20]]) ) /*0x692aed*/
+          if ( (uint8_t)House::IsHumanPlayer(*(#375 **)&HouseClass_Array->__pad_0[4 * v26[20]]) ) /*0x692aed*/
             goto LABEL_81; /*0x692afc*/
         }
       }
@@ -2134,7 +2134,7 @@ LABEL_65:
 LABEL_81:
   if ( *(unsigned int *)&stru_87C374.__pad_14B0[12668] != -1 ) /*0x692b0e*/
   {
-    v27 = (IUnknown *)(*(int (**)(unsigned int, __int16 *, MouseClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_5568[20608] /*0x692b1d*/
+    v27 = (IUnknown *)(*(int (**)(unsigned int, int16_t *, MouseClass *))(**(unsigned int **)(*(unsigned int *)&HouseClass_Player.__pad_5568[20608] /*0x692b1d*/
                                                                                            + 4
                                                                                            * *(unsigned int *)&stru_87C374.__pad_14B0[12668])
                                                                              + 108))(

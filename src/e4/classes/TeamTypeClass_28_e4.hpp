@@ -13,15 +13,15 @@ struct TeamTypeClass_28 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
 // --- flat members (END) ---
-    char Release(int a2,  int * a3);    // 0x6F22F0
-    char SetCapacity(int a2,  int * a3);    // 0x6F24B0
-    void ClearBuffer(void *a1 = 0);  // 0x6F21B0
-    unsigned int * Seek(unsigned int * a2, int a3);    // 0x6F2210
+    char Release(int a2, int * a3);  // 0x6F22F0
+    char SetCapacity(int a2, int * a3);  // 0x6F24B0
+    void ClearBuffer();  // 0x6F21B0
+    unsigned int * Seek(unsigned int * a2, int a3);  // 0x6F2210
     char AddRef(int a2);  // 0x6F2290
-    void ddtor(void *a1 = 0);  // 0x6F2400
-    int Read(unsigned int * a2, void *a1 = 0);  // 0x6F2440
+    void ddtor(void ** Block, char a2);  // 0x6F2400
+    int Read(unsigned int * a2);  // 0x6F2440
     int FindItem(unsigned int * a2);  // 0x6F2640
-    VectorClass_flat * QueryInterface(char a2);  // 0x6F2680
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);  // 0x6F2680
     DynamicVector * Constructor(char a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x6F2720
     unsigned int PointerToIndex(int a2);  // 0x6F21F0
     unsigned int Write(int a2);  // 0x6F2490

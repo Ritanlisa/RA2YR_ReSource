@@ -23,20 +23,20 @@ namespace gamemd {
 INIClass * * UnitTypeClass::ReadINIEntry()
 {
 
-  int v1; // ebp
+  char * v1;
   int i; // edi
   unsigned int *v3; // esi
   int v4; // eax
   int v5; // ebx
   int v7; // [esp+10h] [ebp-98h]
-  __int16 v8[2]; // [esp+14h] [ebp-94h] BYREF
+  int16_t v8[2]; // [esp+14h] [ebp-94h] BYREF
   char *v9; // [esp+18h] [ebp-90h]
   char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
-  v1 = 0; /*0x6b4dde*/
-  v9 = this; /*0x6b4de3*/
-  INIClass::ClearSection((int)this, (int)MEMORY[0x81732C], 0); /*0x6b4de7*/
+  v1 = (int)((char *)(0));
+  v9 = (char *)(this);
+  INIClass::ClearSection((int)this, (int)g_abs_81732C, 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/
   {
@@ -44,14 +44,14 @@ INIClass * * UnitTypeClass::ReadINIEntry()
     {
       v8[0] = i; /*0x6b4df6*/
       v8[1] = v1; /*0x6b4e01*/
-      v3 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v8); /*0x6b4e0b*/
+      v3 = CellCoord::To_CellObj(&g_abs_87F7E8, v8); /*0x6b4e0b*/
       v4 = v3[18]; /*0x6b4e0d*/
       if ( v4 != -1 && !*((unsigned char *)v3 + 287) ) /*0x6b4e15*/
       {
-        v5 = *((unsigned int *)MEMORY[0xA8EC1C] + v4); /*0x6b4e29*/
-        sprintf(Buffer, MEMORY[0x817F6C], v7); /*0x6b4e37*/
-        sprintf(Source, MEMORY[0x83FFFC], (const char *)(v5 + 36), i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
-        LOBYTE(v4) = INIClass::SetString(v9, (unsigned __int8 *)MEMORY[0x81732C], Buffer, Source); /*0x6b4e71*/
+        v5 = *((unsigned int *)g_abs_A8EC1C + v4); /*0x6b4e29*/
+        sprintf(Buffer, g_abs_817F6C, v7); /*0x6b4e37*/
+        sprintf(Source, g_abs_83FFFC, (const char *)(v5 + 36), i, v1, *((uint8_t *)v3 + 287)); /*0x6b4e55*/
+        IDA_LOBYTE(v4) = INIClass::SetString(v9, (uint8_t *)g_abs_81732C, Buffer, Source); /*0x6b4e71*/
         ++v7; /*0x6b4e76*/
       }
     }
@@ -116,7 +116,7 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
   if ( (int)g_CrateCount < dword_A83CE8 /*0x747226*/
     || (byte_A83CED || !dword_A83CE8)
     && dword_A83CF4 > 0
-    && (v4 = ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))UnitTypeClass_Array->field_8)(
+    && (v4 = ((uint8_t (*)(DynamicVector **, int, unsigned int))UnitTypeClass_Array->field_8)(
                &UnitTypeClass_Array,
                dword_A83CE8 + dword_A83CF4,
                0) == 0,
@@ -176,7 +176,7 @@ void UnitTypeClass::UnitTypeClass_CreateUnit(void * a2)
     v3 = 60; /*0x7475ac*/
     v2 = 60; /*0x7475b6*/
   }
-  *a2 = v3; /*0x7475c2*/
+  *(unsigned int *)(a2) = (void *)(v3);
   a2[1] = v3; /*0x7475c4*/
   a2[2] = v2; /*0x7475c7*/
   return a2; /*0x7475cd*/
@@ -185,7 +185,7 @@ void UnitTypeClass::UnitTypeClass_CreateUnit(void * a2)
 }
 // 0x747560
 namespace gamemd {
-void UnitTypeClass::UnitTypeClass_ConstructUnit()
+void UnitTypeClass::UnitTypeClass_ConstructUnit( int * a2)
 {
 
   int v2; // eax
@@ -563,7 +563,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
 }
 }
 // 0x74B960
-VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate()
+VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate(ObjectClass * Source)
 {
 
   int v2; // esi
@@ -575,7 +575,7 @@ VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate()
   if ( *(int *)&HouseClass_Player.__pad_5568[22660] <= 0 ) /*0x74b991*/
   {
 LABEL_6:
-    v3 = (unsigned int *)__2_YAPAXI_Z(0x308u); /*0x74b9b6*/
+    v3 = (unsigned int *)RA2_OPNEW(0x308u); /*0x74b9b6*/
     if ( v3 ) /*0x74b9c5*/
       return (VoxelAnimTypeClass *)VoxelAnimTypeClass::Constructor(v3, Source); /*0x74b9d1*/
     return 0; /*0x74b9c5*/
@@ -589,7 +589,7 @@ LABEL_6:
 
 }
 // 0x747590
-int *  UnitTypeClass::GetDimensions()
+int *  UnitTypeClass::GetDimensions( int * a2)
 {
 
   int v2; // eax
@@ -609,7 +609,7 @@ int *  UnitTypeClass::GetDimensions()
 
 }
 // 0x7475D0
-unsigned int *  UnitTypeClass::GetDefaultDimensions()
+unsigned int *  UnitTypeClass::GetDefaultDimensions(unsigned int * a1)
 {
 
   int v1; // esi
@@ -648,7 +648,7 @@ unsigned int * UnitTypeClass::ClampToGroundHeight(unsigned int * a1, int * a2)
 int UnitTypeClass::GetGameplayValue()
 {
 
-  return MEMORY[0x8871E0][1].?; /*0x747f2b*/
+  return g_abs_8871E0[1].?; /*0x747f2b*/
 
 }
 // 0x747F30
@@ -680,23 +680,23 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
 
   BuildingTypeClass::ProcessPower(this, a2); /*0x747f79*/
   Power::TimerProcess(*((unsigned int *)this + 895)); /*0x747f87*/
-  LOBYTE(v3) = *((unsigned char *)this + 3596); /*0x747f8c*/
+  IDA_LOBYTE(v3) = *((unsigned char *)this + 3596); /*0x747f8c*/
   Power::FlagProcess(a2, v3); /*0x747f95*/
-  LOBYTE(v4) = *((unsigned char *)this + 3597); /*0x747f9a*/
+  IDA_LOBYTE(v4) = *((unsigned char *)this + 3597); /*0x747f9a*/
   v5 = Power::FlagProcess(a2, v4); /*0x747fa3*/
-  LOBYTE(v5) = *((unsigned char *)this + 3598); /*0x747fa8*/
+  IDA_LOBYTE(v5) = *((unsigned char *)this + 3598); /*0x747fa8*/
   Power::FlagProcess(a2, v5); /*0x747fb1*/
-  LOBYTE(v6) = *((unsigned char *)this + 3599); /*0x747fb6*/
+  IDA_LOBYTE(v6) = *((unsigned char *)this + 3599); /*0x747fb6*/
   Power::FlagProcess(a2, v6); /*0x747fbf*/
-  LOBYTE(v7) = *((unsigned char *)this + 3600); /*0x747fc4*/
+  IDA_LOBYTE(v7) = *((unsigned char *)this + 3600); /*0x747fc4*/
   v8 = Power::FlagProcess(a2, v7); /*0x747fcd*/
-  LOBYTE(v8) = *((unsigned char *)this + 3601); /*0x747fd2*/
+  IDA_LOBYTE(v8) = *((unsigned char *)this + 3601); /*0x747fd2*/
   Power::FlagProcess(a2, v8); /*0x747fdb*/
-  LOBYTE(v9) = *((unsigned char *)this + 3604); /*0x747fe0*/
+  IDA_LOBYTE(v9) = *((unsigned char *)this + 3604); /*0x747fe0*/
   Power::FlagProcess(a2, v9); /*0x747fe9*/
-  LOBYTE(v10) = *((unsigned char *)this + 3603); /*0x747fee*/
+  IDA_LOBYTE(v10) = *((unsigned char *)this + 3603); /*0x747fee*/
   v11 = Power::FlagProcess(a2, v10); /*0x747ff7*/
-  LOBYTE(v11) = *((unsigned char *)this + 3605); /*0x747ffc*/
+  IDA_LOBYTE(v11) = *((unsigned char *)this + 3605); /*0x747ffc*/
   return Power::FlagProcess(a2, v11); /*0x74800a*/
 
 }
@@ -766,7 +766,7 @@ int UnitTypeClass::GetAuxField()
 
 }
 // 0x748190
-UnitTypeClass * UnitTypeClass::ddtor(char a2)
+UnitTypeClass * UnitTypeClass::ddtor(void ** Block, char a2)
 {
 
   int v3; // eax
@@ -789,8 +789,8 @@ UnitTypeClass * UnitTypeClass::ddtor(char a2)
     while ( v3 < g_CrateCount ); /*0x7481fd*/
   }
   TechnoTypeClass::DTOR((int)Block); /*0x748201*/
-  if ( (a2 & 1) != 0 ) /*0x74820b*/
-    __3_YAXPAX_Z(Block); /*0x74820e*/
+  if ( (Block & 1) != 0 ) /*0x74820b*/
+    RA2_OPDEL(Block); /*0x74820e*/
   return (UnitTypeClass *)Block; /*0x748218*/
 
 }

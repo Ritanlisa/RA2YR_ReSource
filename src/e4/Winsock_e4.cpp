@@ -41,7 +41,7 @@ char Winsock::VerifyCRC(int a1)
       ComputeHash(&a1, *v4 & (0xFFFFFFFF >> (32 - 8 * v6))); /*0x7b20b5*/
     if ( a1 == *(unsigned int *)(v1 + 28) ) /*0x7b20c5*/
       return 1; /*0x7b20ca*/
-    Debug::Log(); /*0x7b20d2*/
+    this->Debug::Log(); /*0x7b20d2*/
   }
   return 0; /*0x7b20c9*/
 

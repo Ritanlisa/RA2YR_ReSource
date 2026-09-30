@@ -51,6 +51,8 @@
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x5A1350
 namespace gamemd {
@@ -256,8 +258,8 @@ int ProcessRandomMapCellAdjacency()
   int64_t v15; // [esp+Ch] [ebp-10h]
   int64_t v16; // [esp+14h] [ebp-8h]
 
-  LayerClass::CellIteratorReset(&dword_87F7E8); /*0x5a19e9*/
-  result = LayerClass::CellIteratorNext(&dword_87F7E8); /*0x5a19f3*/
+  ((LayerClass *)(&dword_87F7E8))->CellIteratorReset(); /*0x5a19e9*/
+  result = ((LayerClass *)(&dword_87F7E8))->CellIteratorNext(); /*0x5a19f3*/
   for ( i = result; result; i = result )
   {
     NeighbourContent = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 5u)));
@@ -381,7 +383,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     if ( v4 ) /*0x5a1cc5*/
     {
       TileNode::Cleanup(*((unsigned int **)g_RandomMap_TerrainState + i)); /*0x5a1cc9*/
-      __3_YAXPAX_Z(v4); /*0x5a1ccf*/
+      RA2_OPDEL(v4); /*0x5a1ccf*/
     }
   }
   g_MapTileArrayEnd = 0; /*0x5a1ce5*/
@@ -392,7 +394,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     do /*0x5a1d4f*/
     {
       v16 = *(unsigned int *)((char *)g_MapTileArray + v5); /*0x5a1d08*/
-      v7 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v16); /*0x5a1d11*/
+      v7 = (int *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v16); /*0x5a1d11*/
       if ( *(unsigned int *)((char *)g_MapTileArray + v5 + 56) == -1 /*0x5a1d3b*/
         && (*(unsigned short *)((char *)g_MapTileArray + v5) || *(unsigned short *)((char *)g_MapTileArray + v5 + 2))
         && (Cell::IsGroundTypeRange(v7) || Cell::IsShore(v7)) )
@@ -427,7 +429,7 @@ int E4Recv_5A1C70::sub_5A1C70()
       result = (int)g_MapTileArray + v13; /*0x5a1dd0*/
       if ( *(unsigned int *)((char *)g_MapTileArray + v13 + 56) == -1 && (*(unsigned short *)result || *(unsigned short *)(result + 2)) ) /*0x5a1de2*/
       {
-        v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)((char *)g_MapTileArray + v13)); /*0x5a1def*/
+        v15 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)((char *)g_MapTileArray + v13)); /*0x5a1def*/
         result = RandomMap::GenerateTerrain((int)v15); /*0x5a1df6*/
         if ( result ) /*0x5a1dfd*/
           *(unsigned char *)(result + 26) = 0; /*0x5a1dff*/
@@ -1374,7 +1376,7 @@ int E4Recv_5A6BA0::sub_5A6BA0()
   int v6; // ebx
   int v7; // esi
   void *v8; // eax
-  __int16 v10[2]; // [esp+10h] [ebp-8h] BYREF
+  int16_t v10[2]; // [esp+10h] [ebp-8h] BYREF
   int v11; // [esp+14h] [ebp-4h]
 
   v1 = *((unsigned short *)this + 1); /*0x5a6ba3*/
@@ -1399,7 +1401,7 @@ LABEL_6:
   {
     v10[0] = v4; /*0x5a6bd2*/
     v10[1] = v7; /*0x5a6bd7*/
-    v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v10); /*0x5a6bdc*/
+    v8 = CellCoord::To_CellObj(&g_abs_87F7E8, v10); /*0x5a6bdc*/
     if ( CellLand::IsBuildable((int)v8) ) /*0x5a6be3*/
       return 0; /*0x5a6bfa*/
     if ( ++v7 >= v6 ) /*0x5a6bef*/
@@ -4290,7 +4292,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   *(float *)((char *)this + 44) = v13 + v22; /*0x5af6dc*/
   sub_5AF120((float *)this, v20, v24); /*0x5af6df*/
   aP1 = -v21; /*0x5af6f0*/
-  sub_5AF000((float *)this, (ObjectClass *)LODWORD(aP1), (ObjectClass *)LODWORD(aP2)); /*0x5af6f5*/
+  sub_5AF000((float *)this, (ObjectClass *)IDA_LODWORD(aP1), (ObjectClass *)IDA_LODWORD(aP2)); /*0x5af6f5*/
   Matrix2D::Rotate((float *)this, a4); /*0x5af701*/
 
 }
@@ -4756,12 +4758,12 @@ char E4Recv_5AE500::sub_5AE500(const char ** a2)
 
   const char **v3; // eax
 
-  LOBYTE(v3) = String::NotEquals(a2, 0); /*0x5ae50c*/
+  IDA_LOBYTE(v3) = String::NotEquals(a2, 0); /*0x5ae50c*/
   if ( (unsigned char)v3 ) /*0x5ae513*/
   {
     v3 = sub_5CF840((unsigned int *)this + 20, a2); /*0x5ae519*/
     if ( v3 ) /*0x5ae520*/
-      LOBYTE(v3) = nullsub_24(v3); /*0x5ae524*/
+      IDA_LOBYTE(v3) = nullsub_24(v3); /*0x5ae524*/
   }
   return (char)v3; /*0x5ae529*/
 

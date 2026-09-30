@@ -17,6 +17,7 @@
 #include "e4/classes/AbstractType_e4.hpp"
 #include "e4/classes/MPBattleClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x786EF0
 namespace gamemd {
@@ -196,8 +197,8 @@ int sub_786390(void * a1)
     return 1; /*0x78639f*/
   byte_B77E75 = 1; /*0x7863ad*/
   LoadNetworkShareStrings(); /*0x7863b4*/
-    Game::ResetFlags();
-    Network::InitPlayerSlots();
+    this->Game::ResetFlags();
+    this->Network::InitPlayerSlots();
   *(unsigned int *)Data = 0; /*0x7863c8*/
   if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x7863d2*/
   {

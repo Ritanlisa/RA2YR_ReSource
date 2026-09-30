@@ -122,31 +122,31 @@ void AudioController::GetVolume()
 
   void *v0; // esi
 
-  if ( MEMORY[0xB0FCCE] ) /*0x72d17a*/
+  if ( g_abs_B0FCCE ) /*0x72d17a*/
   {
-    if ( MEMORY[0xB0FCCD] ) /*0x72d182*/
+    if ( g_abs_B0FCCD ) /*0x72d182*/
     {
-      v0 = MEMORY[0xB0FAB8]; /*0x72d185*/
-      if ( MEMORY[0xB0FAB8] ) /*0x72d18d*/
+      v0 = g_abs_B0FAB8; /*0x72d185*/
+      if ( g_abs_B0FAB8 ) /*0x72d18d*/
       {
-        FileTreeNode::Destroy(MEMORY[0xB0FAB8]); /*0x72d191*/
-        __3_YAXPAX_Z(v0); /*0x72d197*/
+        FileTreeNode::Destroy(g_abs_B0FAB8); /*0x72d191*/
+        RA2_OPDEL(v0); /*0x72d197*/
       }
-      MEMORY[0xB0FCCD] = 0; /*0x72d19f*/
+      g_abs_B0FCCD = 0; /*0x72d19f*/
     }
-    MEMORY[0xB0FAB8] = 0; /*0x72d1ab*/
-    if ( MEMORY[0xB0FCD0] ) /*0x72d1b3*/
+    g_abs_B0FAB8 = 0; /*0x72d1ab*/
+    if ( g_abs_B0FCD0 ) /*0x72d1b3*/
     {
-      __3_YAXPAX_Z(MEMORY[0xB0FCD0]); /*0x72d1b6*/
-      MEMORY[0xB0FCD0] = 0; /*0x72d1be*/
+      RA2_OPDEL(g_abs_B0FCD0); /*0x72d1b6*/
+      g_abs_B0FCD0 = 0; /*0x72d1be*/
     }
-    if ( MEMORY[0xB0FCD4] ) /*0x72d1cc*/
+    if ( g_abs_B0FCD4 ) /*0x72d1cc*/
     {
-      (**(void (***)(int, int))MEMORY[0xB0FCD4])(MEMORY[0xB0FCD4], 1); /*0x72d1d2*/
-      MEMORY[0xB0FCD4] = 0; /*0x72d1d4*/
+      (**(void (***)(int, int))g_abs_B0FCD4)(g_abs_B0FCD4, 1); /*0x72d1d2*/
+      g_abs_B0FCD4 = 0; /*0x72d1d4*/
     }
   }
-  MEMORY[0xB0FCCE] = 0; /*0x72d1da*/
+  g_abs_B0FCCE = 0; /*0x72d1da*/
 
 }
 } // namespace gamemd

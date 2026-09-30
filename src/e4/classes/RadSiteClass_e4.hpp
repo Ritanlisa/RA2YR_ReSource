@@ -51,8 +51,8 @@ struct RadSiteClass {
     void* RadTimeLeft;  // 0x70
     unsigned int IntensitySteps;
 // --- flat members (END) ---
-    int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);
+    int SaveLoad_Prefix(void * aP0, int aP1);
+    int SaveLoad_Prefix_0(void * aP0, int * a1, int aP2);
     int StubReturn116();
     int StubReturn69();
     int ddtor(int a1, unsigned int * a2);

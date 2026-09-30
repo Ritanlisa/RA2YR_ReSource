@@ -28,7 +28,7 @@ int Control::DispatchClick(ControlClass * aP1)
 } // namespace gamemd
 // 0x60B950
 namespace gamemd {
-int Control::RepositionControlsDialog()
+int Control::RepositionControlsDialog(HWND hWnd)
 {
 
   HWND Parent; // esi
@@ -59,9 +59,9 @@ int Control::RepositionControlsDialog()
   v3 = v18.top - Rect.top; /*0x60b9ab*/
   nWidth = v18.right - v18.left; /*0x60b9ad*/
   v14 = Parent; /*0x60b9b3*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60b9b7*/
+  if ( !g_abs_AC1B04 ) /*0x60b9b7*/
     goto LABEL_5; /*0x60b9b7*/
-  v4 = (unsigned int *)*((unsigned int *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v14) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60b9d8*/
+  v4 = (unsigned int *)*((unsigned int *)g_abs_AC1B00 + (g_abs_AC1B18(&v14) & ((1 << g_abs_AC1B0C) - 1))); /*0x60b9d8*/
   if ( !v4 ) /*0x60b9dd*/
     goto LABEL_5; /*0x60b9dd*/
   while ( (HWND)*v4 != v14 ) /*0x60b9e5*/
@@ -141,7 +141,7 @@ LABEL_5:
     if ( v5 == (void *)188 ) /*0x60bc40*/
     {
 LABEL_75:
-      result = SessionClass::GetGameSpeed(MEMORY[0xA8B238]); /*0x60bce4*/
+      result = SessionClass::GetGameSpeed(g_abs_A8B238); /*0x60bce4*/
       if ( result ) /*0x60bcf0*/
         return result; /*0x60bcf0*/
       ++v3; /*0x60bcf6*/
@@ -162,7 +162,7 @@ LABEL_75:
 LABEL_74:
       if ( v5 == (void *)189 || v5 == (void *)258 || v5 == (void *)3014 || v5 == (void *)261 || v5 == (void *)107 ) /*0x60bcda*/
         goto LABEL_75; /*0x60bcda*/
-      result = SessionClass::GetGameSpeed(MEMORY[0xA8B238]); /*0x60bd1c*/
+      result = SessionClass::GetGameSpeed(g_abs_A8B238); /*0x60bd1c*/
       if ( result ) /*0x60bd23*/
         return result; /*0x60bd23*/
       v3 += 7; /*0x60bd2d*/
@@ -264,7 +264,7 @@ LABEL_167:
         return result; /*0x60beee*/
       }
       result = 32; /*0x60befa*/
-      if ( MEMORY[0x8A00A4] < 800 ) /*0x60bf01*/
+      if ( g_abs_8A00A4 < 800 ) /*0x60bf01*/
         return result; /*0x60bf01*/
       v3 -= 50; /*0x60bf20*/
       goto LABEL_170; /*0x60bf22*/
@@ -332,9 +332,9 @@ int Control::CheckControlTypeDialog()
   void *v5; // [esp+4h] [ebp-4h] BYREF
 
   v5 = this; /*0x60c549*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60c54d*/
+  if ( !g_abs_AC1B04 ) /*0x60c54d*/
     return 0; /*0x60c54d*/
-  v1 = (unsigned int *)*((unsigned int *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v5) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60c570*/
+  v1 = (unsigned int *)*((unsigned int *)g_abs_AC1B00 + (g_abs_AC1B18(&v5) & ((1 << g_abs_AC1B0C) - 1))); /*0x60c570*/
   if ( !v1 ) /*0x60c575*/
     return 0; /*0x60c575*/
   while ( (void *)*v1 != v5 ) /*0x60c57d*/

@@ -34,13 +34,13 @@ struct RadarHashVector {
     unsigned int m_C;
 // --- flat members (END) ---
     AbstractClass * * ComputeHashIndex(int a2, char * a3);
-    VectorClass_flat * QueryInterface(char a2);
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
     char * Destructor(char a2);
     int FindItemIndex(unsigned int * a2);
-    int Read(unsigned int * a2, void *a1 = 0);
-    unsigned int * Construct(MapClass * aP1, MapClass * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    int Read(unsigned int * a2);
+    unsigned int * Construct(void * aP1, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
     unsigned int Write(int a2);
-    void ddtor(void *a1 = 0);
+    void ddtor();
 };
 
 } // namespace gamemd

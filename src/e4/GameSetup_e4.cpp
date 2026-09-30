@@ -28,9 +28,9 @@ int GameSetup::LookupDialogHash()
   void *v4; // [esp+0h] [ebp-4h] BYREF
 
   v4 = this; /*0x60d326*/
-  if ( !MEMORY[0xAC1B04] ) /*0x60d32c*/
+  if ( !g_abs_AC1B04 ) /*0x60d32c*/
     return 0; /*0x60d32c*/
-  v1 = (unsigned int *)*((unsigned int *)MEMORY[0xAC1B00] + (MEMORY[0xAC1B18](&v4) & ((1 << MEMORY[0xAC1B0C]) - 1))); /*0x60d34d*/
+  v1 = (unsigned int *)*((unsigned int *)g_abs_AC1B00 + (g_abs_AC1B18(&v4) & ((1 << g_abs_AC1B0C) - 1))); /*0x60d34d*/
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
   while ( (void *)*v1 != v4 ) /*0x60d35a*/
@@ -58,7 +58,7 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   INIClass *v7; // edx
   INIClass *v8; // eax
   int v9; // ebp
-  int v10; // ebx
+  char * v10;
   int result; // eax
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
@@ -77,22 +77,22 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
     (INIClass *)&stru_830620.__pad_579C[29360],
     *((unsigned int *)this + 4),
     0);
-  LOBYTE(v4) = *((unsigned char *)this + 20); /*0x698fff*/
+  IDA_LOBYTE(v4) = *((unsigned char *)this + 20); /*0x698fff*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[29164], v4); /*0x69900b*/
-  LOBYTE(v5) = *((unsigned char *)this + 21); /*0x699010*/
+  IDA_LOBYTE(v5) = *((unsigned char *)this + 21); /*0x699010*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[29144], v5); /*0x69901c*/
-  LOBYTE(v6) = *((unsigned char *)this + 22); /*0x699021*/
+  IDA_LOBYTE(v6) = *((unsigned char *)this + 22); /*0x699021*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[29128], v6); /*0x69902d*/
-  LOBYTE(v7) = *((unsigned char *)this + 23); /*0x699032*/
+  IDA_LOBYTE(v7) = *((unsigned char *)this + 23); /*0x699032*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[37372], v7); /*0x69903e*/
-  LOBYTE(v8) = *((unsigned char *)this + 24); /*0x699043*/
+  IDA_LOBYTE(v8) = *((unsigned char *)this + 24); /*0x699043*/
   INIClass::SetBool(aP1->__pad_0, (INIClass *)Block, &stru_830620.__pad_579C[37356], v8); /*0x69904f*/
   v9 = 1; /*0x699054*/
   v10 = (char *)this + 44; /*0x699059*/
   do /*0x69908e*/
   {
     sprintf(Buffer, &stru_830620.__pad_579C[37344], v9); /*0x699067*/
-    LOBYTE(result) = GameSetup::FormatToString( /*0x699082*/
+    IDA_LOBYTE(result) = GameSetup::FormatToString( /*0x699082*/
                        aP1->__pad_0,
                        Block,
                        Buffer,

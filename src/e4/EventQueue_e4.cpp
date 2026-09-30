@@ -11,18 +11,18 @@
 
 // 0x54F000
 namespace gamemd {
-void EventQueue::Process(void* bink_player)
+void EventQueue::Process()
 {
 
   int v2; // eax
 
-  if ( (*(bink_player + 198) + 1) % 256 != *(bink_player + 197) ) /*0x54f01e*/
+  if ( (*(this + 198) + 1) % 256 != *(this + 197) ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
-  v2 = *(bink_player + 197); /*0x54f025*/
-  if ( v2 == *(bink_player + 198) ) /*0x54f033*/
+  v2 = *(this + 197); /*0x54f025*/
+  if ( v2 == *(this + 198) ) /*0x54f033*/
     return 0; /*0x54f035*/
   else
-    return *((unsigned short *)bink_player + v2 + 138); /*0x54f03a*/
+    return *((unsigned short *)this + v2 + 138); /*0x54f03a*/
 
 }
 } // namespace gamemd
@@ -34,13 +34,13 @@ void EventQueue::Read()
   int v2; // eax
   int v3; // ecx
   int v4; // edi
-  __int16 result; // ax
+  int16_t result; // ax
   int v6; // edx
-  unsigned __int16 v7; // cx
+  uint16_t v7; // cx
   int v8; // ebx
-  unsigned __int16 v9; // dx
+  uint16_t v9; // dx
   int v10; // ecx
-  __int16 v11; // dx
+  int16_t v11; // dx
 
   do /*0x54f086*/
   {
@@ -51,10 +51,10 @@ void EventQueue::Read()
   while ( v2 == *((unsigned int *)this + 198) || !*((unsigned short *)this + v2 + 138) ); /*0x54f086*/
   do /*0x54f0b3*/
   {
-    if ( !(unsigned __int8)EventQueue::CheckPosition(this) ) /*0x54f093*/
+    if ( !(uint8_t)EventQueue::CheckPosition(this) ) /*0x54f093*/
       MessageLoop(); /*0x54f09c*/
   }
-  while ( *((unsigned int *)this + 197) == *((unsigned int *)this + 198) || !(unsigned __int16)EventQueue::Check(this) ); /*0x54f0b3*/
+  while ( *((unsigned int *)this + 197) == *((unsigned int *)this + 198) || !(uint16_t)EventQueue::Check(this) ); /*0x54f0b3*/
   v3 = *((unsigned int *)this + 197); /*0x54f0bd*/
   v4 = *((unsigned int *)this + 198); /*0x54f0c3*/
   result = 0; /*0x54f0c9*/
@@ -63,7 +63,7 @@ void EventQueue::Read()
     result = *((unsigned short *)this + v3 + 138); /*0x54f0cf*/
     *((unsigned int *)this + 197) = (v3 + 1) % 256; /*0x54f0e8*/
   }
-  if ( (unsigned __int8)result == 1 || (unsigned __int8)result == 4 || (unsigned __int8)result == 2 ) /*0x54f106*/
+  if ( (uint8_t)result == 1 || (uint8_t)result == 4 || (uint8_t)result == 2 ) /*0x54f106*/
   {
     v6 = *((unsigned int *)this + 197); /*0x54f108*/
     v7 = 0; /*0x54f10e*/
@@ -74,7 +74,7 @@ void EventQueue::Read()
     }
     v8 = *((unsigned int *)this + 197); /*0x54f134*/
     v9 = 0; /*0x54f140*/
-    *this = v7; /*0x54f144*/
+    *(unsigned int *)this = v7; /*0x54f144*/
     if ( v8 != v4 ) /*0x54f146*/
     {
       v9 = *((unsigned short *)this + v8 + 138); /*0x54f148*/
@@ -84,7 +84,7 @@ void EventQueue::Read()
     *((unsigned int *)this + 1) = v9; /*0x54f171*/
     *((unsigned int *)this + 4) = v9; /*0x54f174*/
   }
-  else if ( (unsigned __int8)result == 10 ) /*0x54f17e*/
+  else if ( (uint8_t)result == 10 ) /*0x54f17e*/
   {
     v10 = *((unsigned int *)this + 197); /*0x54f180*/
     v11 = 0; /*0x54f186*/

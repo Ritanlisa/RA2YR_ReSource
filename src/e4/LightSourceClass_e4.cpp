@@ -15,76 +15,76 @@
 
 // 0x554760
 namespace gamemd {
-void LightSourceClass::Construct(void* a1, void* a2, void* a3, void* a4, int a5, int a6, int a7)
+void LightSourceClass::Construct( int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
   int v10; // eax
 
-  AbstractClass::Constructor((int)a1); /*0x554763*/
-  *(a1 + 10) = a7; /*0x554774*/
-  *(a1 + 9) = a6; /*0x554777*/
-  *(a1 + 11) = a8; /*0x55477e*/
-  *(a1 + 12) = a9; /*0x554788*/
-  *(a1 + 13) = 2; /*0x55478f*/
-  *(a1 + 14) = a2; /*0x554796*/
-  *((unsigned char *)a1 + 72) = 0; /*0x55479c*/
-  *a1 = &LightSourceClass::`vftable'; /*0x5547a0*/
-  *(a1 + 15) = a3; /*0x5547a6*/
-  *(a1 + 17) = a5; /*0x5547ad*/
-  *(a1 + 1) = &LightSourceClass::`vftable'; /*0x5547b0*/
-  *(a1 + 16) = a4; /*0x5547b7*/
-  *(a1 + 2) = &LightSourceClass::`vftable'; /*0x5547ba*/
-  *(a1 + 3) = &LightSourceClass::`vftable'; /*0x5547c1*/
-  if ( MEMORY[0xABCA20] < MEMORY[0xABCA18] /*0x5547fd*/
-    || (MEMORY[0xABCA1D] || !MEMORY[0xABCA18])
-    && MEMORY[0xABCA24] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xABCA10] + 8))(
-         &MEMORY[0xABCA10],
-         MEMORY[0xABCA18] + MEMORY[0xABCA24],
+  AbstractClass::Constructor((int)this); /*0x554763*/
+  *(this + 10) = a7; /*0x554774*/
+  *(this + 9) = a6; /*0x554777*/
+  *(this + 11) = a8; /*0x55477e*/
+  *(this + 12) = a9; /*0x554788*/
+  *(this + 13) = 2; /*0x55478f*/
+  *(this + 14) = a2; /*0x554796*/
+  *((unsigned char *)this + 72) = 0; /*0x55479c*/
+  *this = &LightSourceClass::`vftable'; /*0x5547a0*/
+  *(this + 15) = a3; /*0x5547a6*/
+  *(this + 17) = a5; /*0x5547ad*/
+  *(this + 1) = &LightSourceClass::`vftable'; /*0x5547b0*/
+  *(this + 16) = a4; /*0x5547b7*/
+  *(this + 2) = &LightSourceClass::`vftable'; /*0x5547ba*/
+  *(this + 3) = &LightSourceClass::`vftable'; /*0x5547c1*/
+  if ( g_abs_ABCA20 < g_abs_ABCA18 /*0x5547fd*/
+    || (g_abs_ABCA1D || !g_abs_ABCA18)
+    && g_abs_ABCA24 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_ABCA10 + 8))(
+         &g_abs_ABCA10,
+         g_abs_ABCA18 + g_abs_ABCA24,
          0) )
   {
-    v10 = MEMORY[0xABCA20]++; /*0x55480a*/
-    *((unsigned int *)MEMORY[0xABCA14] + v10) = a1; /*0x554819*/
+    v10 = g_abs_ABCA20++; /*0x55480a*/
+    *((unsigned int *)g_abs_ABCA14 + v10) = this; /*0x554819*/
   }
-  return a1; /*0x55481e*/
+  return this; /*0x55481e*/
 
 }
 } // namespace gamemd
 // 0x554830
 namespace gamemd {
-void LightSourceClass::Constructor(void* a1, void* a2, void* a3, void* a4, int a5, int a6, int a7)
+void LightSourceClass::Constructor()
 {
 
   int v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((#373 *)a1); /*0x554833*/
-  *(unsigned int *)(a1 + 36) = 0; /*0x55483d*/
-  *(unsigned int *)(a1 + 40) = 0; /*0x554840*/
-  *(unsigned int *)(a1 + 44) = 0; /*0x554843*/
-  *(unsigned int *)(a1 + 48) = 0; /*0x554846*/
-  *(unsigned int *)(a1 + 56) = MEMORY[0xABCA00]; /*0x55484f*/
-  *(unsigned int *)(a1 + 60) = MEMORY[0xABCA04]; /*0x554857*/
-  v2 = MEMORY[0xABCA08]; /*0x55485a*/
-  *(unsigned int *)(a1 + 68) = 0; /*0x554860*/
-  *(unsigned char *)(a1 + 72) = 0; /*0x554863*/
-  *(unsigned int *)(a1 + 64) = v2; /*0x554866*/
-  *(unsigned int *)a1 = &LightSourceClass::`vftable'; /*0x554869*/
-  *(unsigned int *)(a1 + 4) = &LightSourceClass::`vftable'; /*0x55486f*/
-  *(unsigned int *)(a1 + 8) = &LightSourceClass::`vftable'; /*0x554876*/
-  *(unsigned int *)(a1 + 12) = &LightSourceClass::`vftable'; /*0x55487d*/
-  if ( MEMORY[0xABCA20] < MEMORY[0xABCA18] /*0x5548b6*/
-    || (MEMORY[0xABCA1D] || !MEMORY[0xABCA18])
-    && MEMORY[0xABCA24] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xABCA10] + 8))(
-         &MEMORY[0xABCA10],
-         MEMORY[0xABCA18] + MEMORY[0xABCA24],
+  AbstractClass::Constructor((#373 *)this); /*0x554833*/
+  *(unsigned int *)(this + 36) = 0; /*0x55483d*/
+  *(unsigned int *)(this + 40) = 0; /*0x554840*/
+  *(unsigned int *)(this + 44) = 0; /*0x554843*/
+  *(unsigned int *)(this + 48) = 0; /*0x554846*/
+  *(unsigned int *)(this + 56) = g_abs_ABCA00; /*0x55484f*/
+  *(unsigned int *)(this + 60) = g_abs_ABCA04; /*0x554857*/
+  v2 = g_abs_ABCA08; /*0x55485a*/
+  *(unsigned int *)(this + 68) = 0; /*0x554860*/
+  *(unsigned char *)(this + 72) = 0; /*0x554863*/
+  *(unsigned int *)(this + 64) = v2; /*0x554866*/
+  *(unsigned int *)this = &LightSourceClass::`vftable'; /*0x554869*/
+  *(unsigned int *)(this + 4) = &LightSourceClass::`vftable'; /*0x55486f*/
+  *(unsigned int *)(this + 8) = &LightSourceClass::`vftable'; /*0x554876*/
+  *(unsigned int *)(this + 12) = &LightSourceClass::`vftable'; /*0x55487d*/
+  if ( g_abs_ABCA20 < g_abs_ABCA18 /*0x5548b6*/
+    || (g_abs_ABCA1D || !g_abs_ABCA18)
+    && g_abs_ABCA24 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_ABCA10 + 8))(
+         &g_abs_ABCA10,
+         g_abs_ABCA18 + g_abs_ABCA24,
          0) )
   {
-    v3 = MEMORY[0xABCA20]++; /*0x5548c3*/
-    *((unsigned int *)MEMORY[0xABCA14] + v3) = a1; /*0x5548d2*/
+    v3 = g_abs_ABCA20++; /*0x5548c3*/
+    *((unsigned int *)g_abs_ABCA14 + v3) = this; /*0x5548d2*/
   }
-  return a1; /*0x5548d7*/
+  return this; /*0x5548d7*/
 
 }
 } // namespace gamemd
@@ -170,7 +170,7 @@ int LightSourceClass::StubReturn54()
 } // namespace gamemd
 // 0x555150
 namespace gamemd {
-LightSourceClass * LightSourceClass::CopyTo(char a2)
+LightSourceClass * LightSourceClass::CopyTo(void ** Block, char a2)
 {
 
   int v3; // eax
@@ -198,8 +198,8 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
     TacticalClass::ScrollView(Block, 0); /*0x5551ce*/
   }
   AbstractClass::DTOR(Block); /*0x5551d5*/
-  if ( (a2 & 1) != 0 ) /*0x5551df*/
-    __3_YAXPAX_Z(Block); /*0x5551e2*/
+  if ( (Block & 1) != 0 ) /*0x5551df*/
+    RA2_OPDEL(Block); /*0x5551e2*/
   return (LightSourceClass *)Block; /*0x5551ec*/
 
 }

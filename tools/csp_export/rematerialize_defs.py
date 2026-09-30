@@ -107,12 +107,13 @@ def scale_body(body, factor, elem):
         r'\*\s*\(\s*this\s*\+\s*(\d+)\s*\)',
         lambda m: '*((%s *)this + %d)' % (elem, int(m.group(1))),
         body)
-    # `*this + N` (typed-this vtable slot walk, elements of fn-ptr = 4N
-    # bytes) -> `*(unsigned int **)this + N` (compilable, element-arith
-    # preserved for the extractor to scale).
+    # `*this + N` (typed-this vtable slot walk): pointer-this means N
+    # ELEMENTS (4N bytes); int-this means N BYTES. Bake the scale at
+    # rewrite time into the single-star byte-walk form
+    # `*(unsigned int *)this + <bytes>` -- extractor-native unscaled.
     body = re.sub(
         r'\*\s*this\s*\+\s*(\d+)\b',
-        lambda m: '*(unsigned int **)this + %d' % int(m.group(1)),
+        lambda m: '*(unsigned int *)this + %d' % (int(m.group(1)) * factor),
         body)
     # bare `(this + N)` (cast-outside forms keep their own scale; `*this`
     # handled above)

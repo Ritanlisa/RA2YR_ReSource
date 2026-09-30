@@ -31,7 +31,7 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
   v11 = a2 + nIDDlgItem; /*0x5ebedd*/
   if ( ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x5ebee1*/
   {
-        if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() )
+        if ( !this->Network::IsMultiplayerActive() || this->Network::IsLobbyFeature() )
       v10 = 6; /*0x5ebeff*/
     else
       v10 = 2; /*0x5ebef5*/

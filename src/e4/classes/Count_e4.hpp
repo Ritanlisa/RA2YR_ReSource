@@ -15,11 +15,11 @@ struct Count {
     unsigned int u32_8;
 // --- flat members (END) ---
     AbstractClass * * DecrementRefCountsAudio();
-    unsigned int* ddtor(void *a1 = 0);
-    int Get(void *a1 = 0, void *a2 = 0);
-    int GetCountQueue(void *a1 = 0);
+    unsigned int* ddtor();
+    int Get();
+    int GetCountQueue();
     int SetupAllCountriesLobby();
-    unsigned int * Release(void *a1 = 0);
+    unsigned int * Release();
 };
 
 } // namespace gamemd

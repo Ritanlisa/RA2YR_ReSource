@@ -267,11 +267,11 @@ struct VoxelAnimTypeClass {
     int GetObjectSize();
     int GetTypeIdentifier();
     int PowerDrainUpdate(int * a2);
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1);
-    int SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
+    int SaveLoad_Prefix(void * aP0, int aP1);
+    int SaveLoad_Prefix_0(void * aP0, void * aP1, int aP2);
     int StubReturnFalse(int a1);
-    long long GetData(ObjectTypeClass * aP1, int a3);
-    unsigned int * Constructor(ObjectClass * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    long long GetData(void * aP1, int a3);
+    unsigned int * Constructor(void * aP1, void *a2 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);
 };
 
 } // namespace gamemd

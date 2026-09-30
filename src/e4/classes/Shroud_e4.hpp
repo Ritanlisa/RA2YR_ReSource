@@ -49,7 +49,7 @@ struct Shroud {
     unsigned int __pad_14A8;
     unsigned int __pad_C0;
 // --- flat members (END) ---
-    RadarClass * * ProcessCellVisibility(MouseClass * aP1);
+    RadarClass * * ProcessCellVisibility(void * aP1);
 };
 
 } // namespace gamemd

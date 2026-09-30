@@ -50,8 +50,8 @@ void DialogControl::Constructor()
 
   memset(this, 0, 0x200u); /*0x62334d*/
   *((unsigned int *)this + 26) = 11; /*0x62334f*/
-  *((unsigned int *)this + 25) = MEMORY[0x87F7E8][29498]; /*0x62335d*/
-  v2 = (unsigned int *)__2_YAPAXI_Z(4); /*0x623360*/
+  *((unsigned int *)this + 25) = g_abs_87F7E8[29498]; /*0x62335d*/
+  v2 = (unsigned int *)RA2_OPNEW(4); /*0x623360*/
   if ( v2 ) /*0x62336c*/
     v3 = unknown_libname_74(v2); /*0x623370*/
   else

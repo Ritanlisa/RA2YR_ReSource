@@ -144,7 +144,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v19);
   }
   v20 = (unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green));
-  v35 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))));
+  v35 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))));
   v36 = (unsigned int)((int *)((unsigned int)((int *)(-2))));
   v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
@@ -156,7 +156,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v39 = (int *)(*v23);
   v40 = (int *)(v23[1]);
   v41 = (int *)(v23[2]);
-  v42 = v23[3]; /*0x704d06*/
+  v42 = (int *)(v23[3]);
   (*(void (**)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704d11*/
   v35 = -2; /*0x704d1d*/
   v36 = -2; /*0x704d21*/
@@ -949,25 +949,25 @@ int E4Recv_7011A0::sub_7011A0()
   double v14; // [esp+1Ch] [ebp-14h]
   unsigned char v15[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  if ( (*(unsigned __int8 (**)(int *))(*(unsigned int **)this + 84))(this) ) /*0x7011a9*/
+  if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 84))(this) ) /*0x7011a9*/
     return 0; /*0x7011b1*/
-  v3 = MEMORY[0x8871E0][1].?[11]; /*0x7011bd*/
+  v3 = g_abs_8871E0[1].?[11]; /*0x7011bd*/
   if ( !v3 ) /*0x7011c5*/
     return 0; /*0x7011c8*/
-  v4 = MEMORY[0x8871E0][1].?[0]; /*0x7011d5*/
+  v4 = g_abs_8871E0[1].?[0]; /*0x7011d5*/
   v5 = *this; /*0x7011db*/
-  LODWORD(v14) = MEMORY[0x8871E0][1].?[13]; /*0x7011dd*/
-  HIDWORD(v14) = v4; /*0x7011e5*/
+  IDA_LODWORD(v14) = g_abs_8871E0[1].?[13]; /*0x7011dd*/
+  IDA_HIDWORD(v14) = v4; /*0x7011e5*/
   v6 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v5 + 72))(this, v15); /*0x7011ec*/
-  LOWORD(v12) = *v6 / 256; /*0x7011ff*/
-  HIWORD(v12) = v6[1] / 256; /*0x701218*/
+  IDA_LOWORD(v12) = *v6 / 256; /*0x7011ff*/
+  IDA_HIWORD(v12) = v6[1] / 256; /*0x701218*/
   v13 = v12; /*0x701225*/
-  v7 = (char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v13); /*0x701234*/
-  v8 = ScenarioClass::CalcMinShroudLevel(&MEMORY[0x87F7E8]); /*0x701236*/
+  v7 = (char *)CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v13); /*0x701234*/
+  v8 = ScenarioClass::CalcMinShroudLevel(&g_abs_87F7E8); /*0x701236*/
   v9 = (double)((v7[283] - v8) / v3) * v14; /*0x701259*/
-  if ( v9 >= *(double *)&MEMORY[0x8871E0][1].?[1] ) /*0x70126c*/
-    v9 = *(double *)&MEMORY[0x8871E0][1].?[1]; /*0x701270*/
-  v10 = MEMORY[0xB0EB34] * v7[283]; /*0x70127d*/
+  if ( v9 >= *(double *)&g_abs_8871E0[1].?[1] ) /*0x70126c*/
+    v9 = *(double *)&g_abs_8871E0[1].?[1]; /*0x701270*/
+  v10 = g_abs_B0EB34 * v7[283]; /*0x70127d*/
   v11 = Math::RoundToInt(v9); /*0x70127f*/
   Math::Sqrt((double)(v10 * v10 + (v11 << 8) * (v11 << 8))); /*0x7012a1*/
   return Math::RoundToInt(v9); /*0x7011b0*/
@@ -1003,7 +1003,7 @@ int E4Recv_70F740::sub_70F740(int a2)
   int v4; // [esp+4h] [ebp-8h]
 
   v2 = (unsigned int *)this + 96; /*0x70f74c*/
-  *v2 = MEMORY[0xA8ED84]; /*0x70f752*/
+  *v2 = g_abs_A8ED84; /*0x70f752*/
   v2[1] = v4; /*0x70f758*/
   v2[2] = a2; /*0x70f75b*/
   return v4; /*0x70f75e*/

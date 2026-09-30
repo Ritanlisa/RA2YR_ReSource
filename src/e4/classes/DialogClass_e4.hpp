@@ -23,10 +23,11 @@ struct DialogClass {
     unsigned int q208;  // 0x208
     void* q304;  // 0x304
     unsigned int q520;  // 0x520
+    unsigned int RegisterWinClasses;
 // --- flat members (END) ---
-    ATOM RegisterWinClasses();
-    int GetFlag(void *a1 = 0);
-    int Reposition(SkirmishDialog * aP0, LPARAM a2);
+    ATOMRegisterWinClasses();
+    int GetFlag();
+    int Reposition(int hWnd, int a2);
 };
 
 } // namespace gamemd

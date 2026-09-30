@@ -11,6 +11,7 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/ComStreamClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Commands_e4.hpp"
 
 // 0x76F000
 namespace gamemd {

@@ -230,7 +230,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             2 * (*(unsigned int *)(*(unsigned int *)(a1 + 1892) + 4 * v38) & 0xFFFFFFF)) )
     {
       v26 = (gamemd::DSurface *)(v38);
-      result = (unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((int)((gamemd::DSurface *)(-1))))))));
+      result = (unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((int)((gamemd::DSurface *)(-1))))))))));
       *(unsigned int *)(a1 + 384) = v38; /*0x7c0a6e*/
       v28 = 5; /*0x7c0a76*/
       if ( v39 ) /*0x7c0a7b*/
@@ -325,7 +325,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             result = -6,
             v36) )
       {
-        result = (unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v33))));
+        result = (unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v33))))));
       }
       goto LABEL_82; /*0x7c0bc4*/
     }
@@ -538,7 +538,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     }
     v7[940] = v15; /*0x7c299b*/
   }
-  AbstractClass::finalizeDestruction(v7); /*0x7c29a4*/
+  ((AbstractClass *)(v7))->finalizeDestruction(); /*0x7c29a4*/
   if ( (v7[117] & 1) == 0 ) /*0x7c29b0*/
   {
     v17 = *((unsigned int *)v7 + 33); /*0x7c29b2*/
@@ -902,16 +902,16 @@ void SeekAudioStream(int a1, DSurface * aP1, DSurface * aP2, int a4, unsigned in
 {
   signed int v5; // edi
   int result; // eax
-  signed int v7; // esi
+  DSurface * v7;
   int v8; // edi
   int v9; // ebx
 
-  v5 = *(unsigned int *)(a1 + 16); /*0x7c34b3*/
+  v5 = (int)(*(unsigned int *)(a1 + 16));
   result = -1; /*0x7c34b6*/
-  if ( aP1 >= v5 ) /*0x7c34bb*/
+  if ( aP1 >= (gamemd::DSurface *)(v5) ) /*0x7c34bb*/
     return -23; /*0x7c34bb*/
   v7 = aP2; /*0x7c34c1*/
-  if ( aP2 >= v5 ) /*0x7c34c7*/
+  if ( aP2 >= (gamemd::DSurface *)(v5) ) /*0x7c34c7*/
     return -23; /*0x7c34c7*/
   if ( aP1 >= aP2 ) /*0x7c34cf*/
     return -23; /*0x7c34cf*/
@@ -12165,7 +12165,7 @@ ObjectClass * E4Recv_7C8AB7::___Gtype_info_UAEPAXI_Z(char a2)
 
   __1type_info_UAE_XZ(this); /*0x7c8aba*/
   if ( (a2 & 1) != 0 ) /*0x7c8ac4*/
-    __3_YAXPAX_Z(this); /*0x7c8ac7*/
+    RA2_OPDEL(this); /*0x7c8ac7*/
   return (ObjectClass *)this; /*0x7c8acf*/
 
 }
@@ -13079,7 +13079,7 @@ ObjectClass * ObjectClass::sub_7CA993(void * Block, char a2)
 
   j_Exception_Destructor(Block); /*0x7ca996*/
   if ( (a2 & 1) != 0 ) /*0x7ca9a0*/
-    __3_YAXPAX_Z(Block); /*0x7ca9a3*/
+    RA2_OPDEL(Block); /*0x7ca9a3*/
   return (ObjectClass *)Block; /*0x7ca9ab*/
 
 }
@@ -13116,7 +13116,7 @@ ObjectClass * ObjectClass::sub_7CA9E4(void * Block, char a2)
 
   j_Exception_Destructor_2(Block); /*0x7ca9e7*/
   if ( (a2 & 1) != 0 ) /*0x7ca9f1*/
-    __3_YAXPAX_Z(Block); /*0x7ca9f4*/
+    RA2_OPDEL(Block); /*0x7ca9f4*/
   return (ObjectClass *)Block; /*0x7ca9fc*/
 
 }
@@ -13224,7 +13224,7 @@ ObjectClass * ObjectClass::sub_7CAC13(void * Block, char a2)
 
   j_Exception_Destructor_3(Block); /*0x7cac16*/
   if ( (a2 & 1) != 0 ) /*0x7cac20*/
-    __3_YAXPAX_Z(Block); /*0x7cac23*/
+    RA2_OPDEL(Block); /*0x7cac23*/
   return (ObjectClass *)Block; /*0x7cac2b*/
 
 }

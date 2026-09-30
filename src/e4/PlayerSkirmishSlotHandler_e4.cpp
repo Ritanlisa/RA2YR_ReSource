@@ -24,12 +24,12 @@ void sub_5DAF30()
   v5 = 0; /*0x5daf4b*/
   v3[0] = 22; /*0x5daf56*/
   strcpy((char *)&v3[1], unk_A8B380); /*0x5daf6d*/
-  Player::BuildListString((Player *)&v3[11] + 3); /*0x5daf7a*/
+  ((Player *)((Player *)&v3[11] + 3))->BuildListString(); /*0x5daf7a*/
   v1 = dword_A8DA84; /*0x5daf7f*/
   for ( i = 1; i < v1; ++i ) /*0x5daf8c*/
   {
     Network::SendMessage(&unk_A8E9C0.Socket, (int)v3, 455, 1, ((unsigned int *)(dword_A8DA78))[i] + 40, 0, 0); /*0x5dafb0*/
-        Event::Dispatch();
+        this->Event::Dispatch();
   }
 }
 } // namespace gamemd

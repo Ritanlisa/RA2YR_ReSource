@@ -22,7 +22,7 @@ struct CommandClass {
     unsigned char u8_241;
     unsigned int __tail_0;
 // --- flat members (END) ---
-    int AddAction(ToolTipManager * aP1);
+    int AddAction(void * aP1);
     int BuildBar();
 };
 

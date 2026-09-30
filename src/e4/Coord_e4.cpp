@@ -37,8 +37,8 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   int v23; // edx
 
   (*(void (**)(VectorClass *, VectorClass *))(*(unsigned int *)aP1->vtable0 + 760))(aP1, aP3); /*0x4138d4*/
-  if ( (__int16)aP2 >= 0 ) /*0x4138e1*/
-    v4 = (__int16)aP2; /*0x4138e7*/
+  if ( (int16_t)aP2 >= 0 ) /*0x4138e1*/
+    v4 = (int16_t)aP2; /*0x4138e7*/
   else
     v4 = 0; /*0x4138e3*/
   if ( SHIWORD(aP2) >= 0 ) /*0x4138f2*/
@@ -46,22 +46,22 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   else
     v5 = 0; /*0x4138f4*/
   v6 = 19; /*0x41390d*/
-  if ( v4 / (*(unsigned int *)&MEMORY[0x87F8E4].field_2D[3] / 20) <= 19 ) /*0x413921*/
-    v6 = v4 / (*(unsigned int *)&MEMORY[0x87F8E4].field_2D[3] / 20); /*0x413923*/
-  v7 = *(unsigned int *)&MEMORY[0x87F8E4].__pad_31[3] / 20; /*0x41393e*/
-  v8 = v5 / (*(unsigned int *)&MEMORY[0x87F8E4].__pad_31[3] / 20); /*0x413941*/
+  if ( v4 / (*(unsigned int *)&g_abs_87F8E4 / 20) <= 19 ) /*0x413921*/
+    v6 = v4 / (*(unsigned int *)&g_abs_87F8E4 / 20); /*0x413923*/
+  v7 = *(unsigned int *)&g_abs_87F8E4 / 20; /*0x41393e*/
+  v8 = v5 / (*(unsigned int *)&g_abs_87F8E4 / 20); /*0x413941*/
   if ( v8 > 19 ) /*0x413946*/
     v8 = 19; /*0x413948*/
   v9 = v6 + 20 * v8; /*0x413957*/
-  if ( (__int16)aP3 >= 0 ) /*0x41395a*/
-    v10 = (__int16)aP3; /*0x413960*/
+  if ( (int16_t)aP3 >= 0 ) /*0x41395a*/
+    v10 = (int16_t)aP3; /*0x413960*/
   else
     v10 = 0; /*0x41395c*/
   if ( SHIWORD(aP3) >= 0 ) /*0x41396b*/
     v11 = SHIWORD(aP3); /*0x413971*/
   else
     v11 = 0; /*0x41396d*/
-  v12 = v10 / (*(unsigned int *)&MEMORY[0x87F8E4].field_2D[3] / 20); /*0x413975*/
+  v12 = v10 / (*(unsigned int *)&g_abs_87F8E4 / 20); /*0x413975*/
   v13 = 19; /*0x413977*/
   if ( v12 <= 19 ) /*0x41397f*/
     v13 = v12; /*0x413981*/
@@ -108,15 +108,15 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
 }
 // 0x413A30
 namespace gamemd {
-unsigned int * Coord::ToCell(IUnknown * v3)
+unsigned int * Coord::ToCell(IUnknown * aP1)
 {
 
-  int v3; // [esp+0h] [ebp-4h]
+  int aP1; // [esp+0h] [ebp-4h]
 
-  LOWORD(v3) = *this / 256; /*0x413a3f*/
-  HIWORD(v3) = *((unsigned int *)this + 1) / 256; /*0x413a53*/
-  v3->field_0 = v3; /*0x413a60*/
-  return &v3->field_0; /*0x413a63*/
+  IDA_LOWORD(aP1) = *this / 256; /*0x413a3f*/
+  IDA_HIWORD(aP1) = *((unsigned int *)this + 1) / 256; /*0x413a53*/
+  aP1->field_0 = aP1; /*0x413a60*/
+  return &aP1->field_0; /*0x413a63*/
 
 }
 }
@@ -197,8 +197,8 @@ void * Coord::To_Cell(IUnknown * aP1)
     if ( v4 ) /*0x565771*/
       return v4; /*0x565774*/
   }
-  LOWORD(aP1a) = aP1->field_0 / 256; /*0x56577a*/
-  HIWORD(aP1a) = v2; /*0x56577f*/
+  IDA_LOWORD(aP1a) = aP1->field_0 / 256; /*0x56577a*/
+  IDA_HIWORD(aP1a) = v2; /*0x56577f*/
   g_Map_GlobalCellIndex = (IUnknown *)aP1a; /*0x565789*/
   return g_CellClassArray; /*0x565773*/
 
@@ -250,7 +250,7 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
 }
 // 0x6D2140
 namespace gamemd {
-AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
+AbstractClass * * Coord::To_Screen(unsigned int * a2, int * a3)
 {
 
   int v4; // edi
@@ -260,22 +260,22 @@ AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
   int v8; // esi
   int v10; // [esp+14h] [ebp-4h]
 
-  v10 = a1[1]; /*0x6d214f*/
-  v4 = (-60 * v10 / 2 + 60 * *a1 / 2) / 256; /*0x6d21c8*/
-  v5 = (30 * v10 / 2 + 30 * *a1 / 2) / 256; /*0x6d21cb*/
-  v6 = Math::RoundToInt((double)(int)a1[2] * MEMORY[0xB0CD48] + (double)(a1[2] >= 728) + 0.5); /*0x6d21f2*/
-  *aP2 = v4; /*0x6d21fd*/
-  aP2[1] = v5 - v6; /*0x6d21ff*/
-  v7 = *aP2 - *((unsigned int *)this + 44); /*0x6d2213*/
-  v8 = aP2[1] - *((unsigned int *)this + 45); /*0x6d2215*/
-  *aP2 = v7; /*0x6d2217*/
-  aP2[1] = v8; /*0x6d221b*/
+  v10 = a2[1]; /*0x6d214f*/
+  v4 = (-60 * v10 / 2 + 60 * *a2 / 2) / 256; /*0x6d21c8*/
+  v5 = (30 * v10 / 2 + 30 * *a2 / 2) / 256; /*0x6d21cb*/
+  v6 = Math::RoundToInt((double)(int)a2[2] * g_abs_B0CD48 + (double)(a2[2] >= 728) + 0.5); /*0x6d21f2*/
+  *a3 = v4; /*0x6d21fd*/
+  a3[1] = v5 - v6; /*0x6d21ff*/
+  v7 = *a3 - *((unsigned int *)this + 44); /*0x6d2213*/
+  v8 = a3[1] - *((unsigned int *)this + 45); /*0x6d2215*/
+  *a3 = v7; /*0x6d2217*/
+  a3[1] = v8; /*0x6d221b*/
   if ( v7 < -360 ) /*0x6d222a*/
     return 0; /*0x6d222c*/
-  if ( v7 > MEMORY[0xB0CE30] + 360 ) /*0x6d2242*/
+  if ( v7 > g_abs_B0CE30 + 360 ) /*0x6d2242*/
     return 0; /*0x6d2244*/
   if ( v8 >= -180 ) /*0x6d2251*/
-    return v8 <= MEMORY[0xB0CE34] + 180; /*0x6d2269*/
+    return v8 <= g_abs_B0CE34 + 180; /*0x6d2269*/
   return 0; /*0x6d2220*/
 
 }
@@ -333,7 +333,7 @@ namespace gamemd {
 long long Coord::ScaleToScreenY()
 {
 
-  return Math::RoundToInt(((double)(int)this - 0.5) * MEMORY[0xB0CDD8]); /*0x6d213b*/
+  return Math::RoundToInt(((double)(int)this - 0.5) * g_abs_B0CDD8); /*0x6d213b*/
 
 }
 } // namespace gamemd

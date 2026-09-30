@@ -26,7 +26,7 @@ int InfantryClass::ScanTarget(int * a1)
 {
 
   int v2; // edi
-  __int16 *PlacementCellsAlt; // eax
+  int16_t *PlacementCellsAlt; // eax
   void *v4; // eax
   int v5; // edx
   int v6; // eax
@@ -50,8 +50,8 @@ int InfantryClass::ScanTarget(int * a1)
     && !(*(int (**)(int *))(*a1 + 456))(a1) )
   {
     v2 = *a1; /*0x4d4de8*/
-    PlacementCellsAlt = (__int16 *)MapClass::FindPlacementCellsAlt((char *)a1, (IUnknown *)&v17, (IUnknown *)a1); /*0x4d4df4*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], PlacementCellsAlt); /*0x4d4dff*/
+    PlacementCellsAlt = (int16_t *)MapClass::FindPlacementCellsAlt((char *)a1, (IUnknown *)&v17, (IUnknown *)a1); /*0x4d4df4*/
+    v4 = CellCoord::To_CellObj(&g_abs_87F7E8, PlacementCellsAlt); /*0x4d4dff*/
     (*(void (**)(int *, void *, int))(v2 + 1152))(a1, v4, 1); /*0x4d4e07*/
   }
   if ( *((unsigned char *)a1 + 1678) ) /*0x4d4e0d*/
@@ -73,7 +73,7 @@ int InfantryClass::ScanTarget(int * a1)
     (*(void (**)(int *, unsigned int, int))(*a1 + 1156))(a1, 0, 1); /*0x4d4e7a*/
   MissionControl = MissionClass::GetMissionControl(a1); /*0x4d4e82*/
   v8 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d4e95*/
-  v9 = v8 + Random::Range(&MEMORY[0xA8B230]->random[1], 0, (IUnknown *)2); /*0x4d4eb3*/
+  v9 = v8 + Random::Range(&g_abs_A8B230->random[1], 0, (IUnknown *)2); /*0x4d4eb3*/
   if ( !a1[173]
     || (!a1
      || (*(int (**)(int *))(*a1 + 44))(a1) != 15
@@ -124,22 +124,22 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         v2 = *a1,
         v14[1] = a1[40],
         v14[2] = a1[41],
-        !(*((unsigned __int8 (**)(#375 **, unsigned int *, unsigned int))v2 + 231))(a1, v14, 0)) )
+        !(*((uint8_t (**)(#375 **, unsigned int *, unsigned int))v2 + 231))(a1, v14, 0)) )
   {
-    if ( (unsigned __int8)House::IsCurrentPlayer(a1[135]) || MEMORY[0xA8B238][0] ) /*0x4d5504*/
+    if ( (uint8_t)House::IsCurrentPlayer(a1[135]) || g_abs_A8B238[0] ) /*0x4d5504*/
     {
       (*((void (**)(#375 **))*a1 + 286))(a1); /*0x4d557c*/
     }
     else
     {
-      v12 = MEMORY[0x8B3D88]; /*0x4d5510*/
+      v12 = g_abs_8B3D88; /*0x4d5510*/
       v12 = *HouseClass::GetCurrentOption(HouseClass_Player, &v13); /*0x4d5529*/
-      if ( v12 != MEMORY[0x8B3D88] ) /*0x4d552d*/
+      if ( v12 != g_abs_8B3D88 ) /*0x4d552d*/
       {
         if ( a1[182] ) /*0x4d553d*/
           ((void (*)(void))FactoryClass::ResetProductionTimers)(); /*0x4d5547*/
         v7 = *a1; /*0x4d554c*/
-        v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x4d555a*/
+        v8 = CellCoord::To_CellObj(&g_abs_87F7E8, (int16_t *)&v12); /*0x4d555a*/
         (*((void (**)(#375 **, void *, int))v7 + 288))(a1, v8, 1); /*0x4d5562*/
         (*((void (**)(#375 **, int, int))*a1 + 122))(a1, 2, 1); /*0x4d5570*/
       }
@@ -159,7 +159,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
 LABEL_14:
     (*((void (**)(#375 **, #375 *, int))*a1 + 288))(a1, a1[173], 1); /*0x4d547c*/
     (*((void (**)(#375 **, int, unsigned int))*a1 + 122))(a1, 8, 0); /*0x4d5497*/
-    if ( !(*((unsigned __int8 (**)(#375 **))*a1 + 128))(a1) ) /*0x4d54a9*/
+    if ( !(*((uint8_t (**)(#375 **))*a1 + 128))(a1) ) /*0x4d54a9*/
       goto LABEL_25; /*0x4d54a9*/
     goto LABEL_12; /*0x4d54a9*/
   }
@@ -177,19 +177,19 @@ LABEL_14:
   }
   (*((void (**)(#375 **, #375 *, int))*a1 + 288))(a1, a1[173], 1); /*0x4d5437*/
   (*((void (**)(#375 **, int, unsigned int))*a1 + 122))(a1, 17, 0); /*0x4d5445*/
-  if ( (*((unsigned __int8 (**)(#375 **))*a1 + 128))(a1) ) /*0x4d544f*/
+  if ( (*((uint8_t (**)(#375 **))*a1 + 128))(a1) ) /*0x4d544f*/
 LABEL_12:
     (*((void (**)(#375 **))*a1 + 123))(a1); /*0x4d545d*/
 LABEL_25:
   MissionControl = MissionClass::GetMissionControl(a1); /*0x4d5582*/
   v10 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d55a7*/
-  return v10 + Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, 2); /*0x4d55b0*/
+  return v10 + Random::Range((unsigned int *)g_abs_A8B230 + 134, 0, 2); /*0x4d55b0*/
 
 }
 }
 // 0x517D90
 namespace gamemd {
-void* InfantryClass::Destruct()
+void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 {
 
   AbstractClass *edi1; // edi
@@ -243,7 +243,7 @@ void* InfantryClass::Destruct()
       TechnoClass::CleanupDirection(a1); /*0x517e6c*/
     }
   }
-  LOBYTE(edx0) = 1; /*0x517e71*/
+  IDA_LOBYTE(edx0) = 1; /*0x517e71*/
   AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, edx0); /*0x517e75*/
   a2[0] = (int)a1; /*0x517e89*/
   v8 = (*(int (**)(char *, int *))(*(unsigned int *)&HouseClass_Player.__pad_74[40] + 16))( /*0x517e8d*/

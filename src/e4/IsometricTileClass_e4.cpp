@@ -31,7 +31,7 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
   if ( *(int *)&stru_87C374.__pad_14B0[7996] < *(int *)&stru_87C374.__pad_14B0[7988] /*0x543855*/
     || (stru_87C374.__pad_14B0[7993] || !*(unsigned int *)&stru_87C374.__pad_14B0[7988])
     && *(int *)&stru_87C374.__pad_14B0[8000] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_87C374.__pad_14B0[7980] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_87C374.__pad_14B0[7980] + 8))(
          &stru_87C374.__pad_14B0[7980],
          *(unsigned int *)&stru_87C374.__pad_14B0[7988] + *(unsigned int *)&stru_87C374.__pad_14B0[8000],
          0) )

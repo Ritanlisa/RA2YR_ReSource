@@ -9,11 +9,13 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x7BCB50
 namespace gamemd {
 void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned short a4)
 {
+    unsigned int v3 = 0;  /* G37 hoist */
 
   signed int v5; // ebx
   char *result; // eax
@@ -37,27 +39,27 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
   int v25; // ebx
   signed int v26; // edx
   char *v27; // eax
-  unsigned __int16 *v28; // edi
+  uint16_t *v28; // edi
   unsigned int v29; // edx
   unsigned int v30; // ebx
-  unsigned __int16 *v31; // edx
+  uint16_t *v31; // edx
   int v32; // eax
-  unsigned __int16 *v33; // ecx
+  uint16_t *v33; // ecx
   unsigned int v34; // ebx
   int v35; // ecx
-  __int64 v36; // rax
-  unsigned __int16 *v37; // edx
+  int64_t v36; // rax
+  uint16_t *v37; // edx
   int v38; // ebx
   int v39; // eax
-  unsigned __int16 *v40; // ebx
+  uint16_t *v40; // ebx
   int v41; // edx
   unsigned int v42; // esi
   bool v43; // zf
   int v44; // eax
-  __int64 v45; // rax
-  unsigned __int16 *v46; // edx
+  int64_t v45; // rax
+  uint16_t *v46; // edx
   int v47; // ebx
-  unsigned __int16 *v48; // eax
+  uint16_t *v48; // eax
   unsigned int v49; // esi
   int v50; // ecx
   int v51; // ecx
@@ -163,7 +165,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     v26 = v24 + 2 * (unsigned int)aP2 * v25; /*0x7bcd19*/
     *((unsigned int *)this + 4) = v26; /*0x7bcd1c*/
     v27 = (char *)aP2 + v24 / 2 / v25; /*0x7bcd1f*/
-    v28 = (unsigned __int16 *)*((unsigned int *)this + 6); /*0x7bcd21*/
+    v28 = (uint16_t *)*((unsigned int *)this + 6); /*0x7bcd21*/
     v29 = (unsigned int)v28 + v26; /*0x7bcd24*/
     v58 = v27; /*0x7bcd26*/
     if ( v29 < (unsigned int)v28 ) /*0x7bcd2c*/
@@ -178,8 +180,8 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
       if ( (int)v58 >= v44 ) /*0x7bce26*/
       {
         v45 = 2 * *((unsigned int *)this + 10) * v44 - v24; /*0x7bce34*/
-        LODWORD(v45) = v45 - HIDWORD(v45); /*0x7bce35*/
-        v46 = (unsigned __int16 *)((char *)v28 + v24); /*0x7bce37*/
+        IDA_LODWORD(v45) = v45 - IDA_HIDWORD(v45); /*0x7bce35*/
+        v46 = (uint16_t *)((char *)v28 + v24); /*0x7bce37*/
         v47 = (int)v45 >> 1; /*0x7bce3c*/
         if ( (((unsigned char)v28 + (unsigned char)v24) & 2) != 0 && v47 ) /*0x7bce45*/
         {
@@ -194,9 +196,9 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
         }
         if ( (v47 & 1) != 0 && v48 ) /*0x7bce80*/
           *v48 = a4; /*0x7bce82*/
-        v37 = (unsigned __int16 *)*((unsigned int *)this + 6); /*0x7bce8b*/
+        v37 = (uint16_t *)*((unsigned int *)this + 6); /*0x7bce8b*/
         v38 = *((unsigned int *)this + 4) / 2; /*0x7bce90*/
-        if ( ((unsigned __int8)v37 & 2) != 0 && v38 ) /*0x7bce99*/
+        if ( ((uint8_t)v37 & 2) != 0 && v38 ) /*0x7bce99*/
         {
           *v37++ = a4; /*0x7bce9b*/
           --v38; /*0x7bcea1*/
@@ -218,7 +220,7 @@ LABEL_55:
         }
         return result; /*0x7bced8*/
       }
-      v37 = (unsigned __int16 *)((char *)v28 + v24); /*0x7bcee2*/
+      v37 = (uint16_t *)((char *)v28 + v24); /*0x7bcee2*/
       v38 = (int)(v30 - v24) / 2; /*0x7bcee7*/
       if ( (((unsigned char)v28 + (unsigned char)v24) & 2) != 0 && v38 ) /*0x7bcef0*/
         goto LABEL_60; /*0x7bcef0*/
@@ -228,9 +230,9 @@ LABEL_55:
       if ( (int)v27 >= 0 ) /*0x7bcd50*/
       {
         v39 = v24 - v30; /*0x7bcdd7*/
-        v40 = (unsigned __int16 *)v29; /*0x7bcdd9*/
+        v40 = (uint16_t *)v29; /*0x7bcdd9*/
         v41 = v39 / 2; /*0x7bcde0*/
-        if ( ((unsigned __int8)v40 & 2) != 0 && v41 ) /*0x7bcde9*/
+        if ( ((uint8_t)v40 & 2) != 0 && v41 ) /*0x7bcde9*/
         {
           *v40++ = a4; /*0x7bcdeb*/
           --v41; /*0x7bcdf1*/
@@ -248,28 +250,28 @@ LABEL_55:
       v31 = v28; /*0x7bcd59*/
       v32 = v24 / 2; /*0x7bcd5b*/
       aP2a = v24 / 2; /*0x7bcd60*/
-      if ( ((unsigned __int8)v28 & 2) != 0 && v32 ) /*0x7bcd68*/
+      if ( ((uint8_t)v28 & 2) != 0 && v32 ) /*0x7bcd68*/
       {
         *v28 = a4; /*0x7bcd6a*/
         v31 = v28 + 1; /*0x7bcd6d*/
-        LOBYTE(aP2a) = --v32; /*0x7bcd71*/
+        IDA_LOBYTE(aP2a) = --v32; /*0x7bcd71*/
       }
       v33 = 0; /*0x7bcd77*/
       v34 = v32 >> 1; /*0x7bcd7c*/
       if ( v32 >> 1 ) /*0x7bcd7c*/
       {
         memset32(v31, 65537 * a4, v34); /*0x7bcd93*/
-        LOBYTE(v32) = aP2a; /*0x7bcd95*/
+        IDA_LOBYTE(v32) = aP2a; /*0x7bcd95*/
         v33 = &v31[2 * v34]; /*0x7bcd99*/
       }
       if ( (v32 & 1) != 0 && v33 ) /*0x7bcda2*/
         *v33 = a4; /*0x7bcda4*/
       v35 = *((unsigned int *)this + 4); /*0x7bcdaa*/
       v36 = 2 * *((unsigned int *)this + 10) * *((unsigned int *)this + 11) - v35; /*0x7bcdb5*/
-      LODWORD(v36) = v36 - HIDWORD(v36); /*0x7bcdb6*/
-      v37 = (unsigned __int16 *)(v35 + *((unsigned int *)this + 6)); /*0x7bcdbd*/
+      IDA_LODWORD(v36) = v36 - IDA_HIDWORD(v36); /*0x7bcdb6*/
+      v37 = (uint16_t *)(v35 + *((unsigned int *)this + 6)); /*0x7bcdbd*/
       v38 = (int)v36 >> 1; /*0x7bcdbf*/
-      if ( ((unsigned __int8)v37 & 2) != 0 && v38 ) /*0x7bcdcc*/
+      if ( ((uint8_t)v37 & 2) != 0 && v38 ) /*0x7bcdcc*/
       {
 LABEL_60:
         *v37++ = a4; /*0x7bcef2*/
@@ -324,8 +326,8 @@ int Buffer::AllocateCodecFrameBuffers()
   if ( v28 != 1212371789 ) /*0x7c1762*/
     return -4; /*0x7c1770*/
   v3 = (unsigned int *)((char *)this + 1852); /*0x7c1775*/
-  v4 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c179e*/
-  LOBYTE(v4) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c179f*/
+  v4 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((IDA_HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c179e*/
+  IDA_LOBYTE(v4) = (IDA_HIBYTE(v29) + 1) & 0xFE; /*0x7c179f*/
   if ( (*(int (__cdecl **)(int, int, int, unsigned int))((char *)this + 64))(this, 5, (char *)this + 1852, v4) ) /*0x7c17a6*/
     return -4; /*0x7c17bc*/
   v5 = *v3; /*0x7c17bd*/
@@ -342,8 +344,8 @@ int Buffer::AllocateCodecFrameBuffers()
     return -2; /*0x7c1820*/
   if ( v28 != 1413698381 ) /*0x7c1829*/
     return -4; /*0x7c1837*/
-  v8 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c185f*/
-  LOBYTE(v8) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c1860*/
+  v8 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((IDA_HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c185f*/
+  IDA_LOBYTE(v8) = (IDA_HIBYTE(v29) + 1) & 0xFE; /*0x7c1860*/
   if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))((char *)this + 64))(this, 5, *((unsigned int *)this + 465), v8) ) /*0x7c186d*/
     return -4; /*0x7c187a*/
 LABEL_16:
@@ -413,7 +415,7 @@ LABEL_16:
 } // namespace gamemd
 // 0x43AD00
 namespace gamemd {
-void Buffer::Init()
+void Buffer::Init( int a2, AbstractClass * aP2)
 {
 
   *this = a2; /*0x43ad0d*/
@@ -421,7 +423,7 @@ void Buffer::Init()
   *((unsigned char *)this + 8) = 0; /*0x43ad12*/
   if ( !a2 && (int)aP2 > 0 ) /*0x43ad1a*/
   {
-    *this = __2_YAPAXI_Z((size_t)aP2); /*0x43ad25*/
+    *this = RA2_OPNEW((size_t)aP2); /*0x43ad25*/
     *((unsigned char *)this + 8) = 1; /*0x43ad27*/
   }
   return this; /*0x43ad2d*/
@@ -430,22 +432,22 @@ void Buffer::Init()
 } // namespace gamemd
 // 0x488030
 namespace gamemd {
-DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
+DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
+  unsigned char (*)[4] v3;
 
-  v3 = (void *)*(Block + 1); /*0x488033*/
-  *Block = &vt_VectorClass_ObjectClass; /*0x488036*/
+  v3 = (unsigned int)((void *)*(Block + 1));
+  *Block = (unsigned int)(&vt_VectorClass_ObjectClass);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x488040*/
   {
-    __3_YAXPAX_Z(v3); /*0x488048*/
+    RA2_OPDEL(v3); /*0x488048*/
     *(Block + 1) = 0; /*0x488050*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x48805b*/
-  *(Block + 2) = 0; /*0x488061*/
-  if ( (a2 & 1) != 0 ) /*0x488068*/
-    __3_YAXPAX_Z(Block); /*0x48806b*/
+  *(unsigned int *)(((unsigned int)(Block)+ 2)) = 0; /*0x488061*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x488068*/
+    RA2_OPDEL(Block); /*0x48806b*/
   return (DynamicVector *)Block; /*0x488075*/
 
 }
@@ -482,17 +484,17 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   unsigned char *v16; // [esp+28h] [ebp+8h]
 
   v4 = (AbstractClass *)*((unsigned int *)this + 2); /*0x6c89e9*/
-  if ( (unsigned int)&v4->__pad_0[12] > *((unsigned int *)this + 1) + *this ) /*0x6c89f9*/
+  if ( (unsigned int)&v4-((unsigned int *)(>__pad_0))[12] > *((unsigned int *)this + 1) + *this ) /*0x6c89f9*/
     return 0; /*0x6c89f9*/
   v15 = (AbstractClass *)*((unsigned int *)this + 2); /*0x6c89fd*/
-  *((unsigned int *)this + 2) = &v4->__pad_0[12]; /*0x6c8a01*/
+  *((unsigned int *)this + 2) = &v4-((unsigned int *)(>__pad_0))[12]; /*0x6c8a01*/
   if ( !v4 ) /*0x6c8a04*/
     return 0; /*0x6c8a06*/
   *(unsigned short *)v4->__pad_0 = *(unsigned short *)a3; /*0x6c8a19*/
-  *(unsigned short *)&v4->__pad_0[2] = *(unsigned short *)(a3 + 4); /*0x6c8a20*/
-  *(unsigned short *)&v4->__pad_0[4] = *(unsigned short *)(a3 + 16); /*0x6c8a28*/
-  *(unsigned short *)&v4->__pad_0[6] = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
-  *(unsigned int *)&v4->__pad_0[8] = *((unsigned int *)this + 2); /*0x6c8a3f*/
+  *(unsigned short *)&v4-((unsigned int *)(>__pad_0))[2] = *(unsigned short *)(a3 + 4); /*0x6c8a20*/
+  *(unsigned short *)&v4-((unsigned int *)(>__pad_0))[4] = *(unsigned short *)(a3 + 16); /*0x6c8a28*/
+  *(unsigned short *)&v4-((unsigned int *)(>__pad_0))[6] = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
+  *(unsigned int *)&v4-((unsigned int *)(>__pad_0))[8] = *((unsigned int *)this + 2); /*0x6c8a3f*/
   v7 = CellStruct::Copy((int *)(a3 + 8), (IUnknown *)&v14); /*0x6c8a42*/
   v8 = aP1; /*0x6c8a49*/
   v16 = (unsigned char *)(*(int (**)(AbstractClass *, unsigned int, unsigned int))(*(unsigned int *)aP1->__pad_0 + 92))( /*0x6c8a61*/
@@ -505,14 +507,14 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   {
     while ( 1 ) /*0x6c8a8a*/
     {
-      v10 = Map_Append(v16, (int)&MEMORY[0xB077F8].__pad_14B0[12584], *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
-      v11 = (char *)*((unsigned int *)this + 2); /*0x6c8a8f*/
+      v10 = (unsigned int)(Map_Append(v16, (int)&g_abs_B077F8, *(unsigned int *)(a3 + 16)));
+      v11 = (unsigned int)((char *)*((unsigned int *)this + 2));
       if ( (unsigned int)&v11[v10] > *((unsigned int *)this + 1) + *this || (*((unsigned int *)this + 2) = &v11[v10], !v11) ) /*0x6c8aa4*/
       {
         (*(void (**)(AbstractClass *))(*(unsigned int *)v8->__pad_0 + 96))(v8); /*0x6c8ae6*/
         return 0; /*0x6c8af2*/
       }
-      qmemcpy(v11, &MEMORY[0xB077F8].__pad_14B0[12584], v10); /*0x6c8ab0*/
+      qmemcpy(v11, &g_abs_B077F8, v10); /*0x6c8ab0*/
       v13 = *(unsigned int *)aP1->__pad_0; /*0x6c8ac2*/
       v12 = ++v14; /*0x6c8ac1*/
       v16 += (*(int (**)(AbstractClass *))(v13 + 116))(aP1); /*0x6c8ad6*/

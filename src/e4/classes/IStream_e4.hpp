@@ -11,7 +11,7 @@ struct IStream {
     void* IStream_field_00;  // 0x4
     unsigned int __pad_0;
 // --- flat members (END) ---
-    int Read(IStream * pstm, void * pv, ULONG cb);
+    int Read(void * pstm, void * pv, int cb);
 };
 
 } // namespace gamemd

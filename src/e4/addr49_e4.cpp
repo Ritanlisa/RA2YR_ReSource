@@ -230,21 +230,21 @@ int E4Recv_490400::sub_490400()
 
   *(unsigned int *)this = &vt_ConvertClass; /*0x490404*/
   COMClass::RegisterAll((unsigned int *)this); /*0x49040a*/
-  __3_YAXPAX_Z(*(void **)((char *)this + 368)); /*0x490416*/
+  RA2_OPDEL(*(void **)((char *)this + 368)); /*0x490416*/
   v2 = *(void **)((char *)this + 376); /*0x49041b*/
   *((unsigned int *)this + 92) = 0; /*0x490421*/
-  __3_YAXPAX_Z(v2); /*0x49042c*/
+  RA2_OPDEL(v2); /*0x49042c*/
   *((unsigned int *)this + 94) = 0; /*0x490434*/
   v4 = this; /*0x49044d*/
-  result = (*(int (**)(int *, int *))(MEMORY[0x89ECF8] + 16))(&MEMORY[0x89ECF8], &v4); /*0x490451*/
-  if ( result != -1 && result < MEMORY[0x89ED08] && result < --MEMORY[0x89ED08] ) /*0x49046d*/
+  result = (*(int (**)(int *, int *))(g_abs_89ECF8 + 16))(&g_abs_89ECF8, &v4); /*0x490451*/
+  if ( result != -1 && result < g_abs_89ED08 && result < --g_abs_89ED08 ) /*0x49046d*/
   {
     do /*0x490485*/
     {
       ++result; /*0x490475*/
-      *((unsigned int *)MEMORY[0x89ECFC] + result - 1) = *((unsigned int *)MEMORY[0x89ECFC] + result); /*0x490479*/
+      *((unsigned int *)g_abs_89ECFC + result - 1) = *((unsigned int *)g_abs_89ECFC + result); /*0x490479*/
     }
-    while ( result < MEMORY[0x89ED08] ); /*0x490485*/
+    while ( result < g_abs_89ED08 ); /*0x490485*/
   }
   return result; /*0x490457*/
 
@@ -260,8 +260,8 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
   unsigned int v15; // edx
   int v17; // eax
   int v18; // edi
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // ebp
 
   result = a5; /*0x491b41*/
@@ -285,8 +285,8 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
     v14 = &a2[v17]; /*0x491b84*/
     v18 = a4 - v17; /*0x491b86*/
     result = a7 + 2 * v17; /*0x491b88*/
-    if ( (unsigned int)result >= *((unsigned int *)MEMORY[0x887644] + 7) ) /*0x491b91*/
-      result -= *((unsigned int *)MEMORY[0x887644] + 8); /*0x491b93*/
+    if ( (unsigned int)result >= *((unsigned int *)g_abs_887644 + 7) ) /*0x491b91*/
+      result -= *((unsigned int *)g_abs_887644 + 8); /*0x491b93*/
     v15 = result; /*0x491b96*/
   }
   while ( v18 > 0 ) /*0x491ba0*/
@@ -296,7 +296,7 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
     {
       v15 += 2; /*0x491bcf*/
       v21 = a6 - *a11++; /*0x491bd2*/
-      if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x491bdd*/
+      if ( v21 < *(uint16_t *)(v15 - 2) ) /*0x491bdd*/
         *v14 = *(unsigned char *)(v19 + *((unsigned int *)this + 1)); /*0x491bf2*/
       ++v14; /*0x491bf4*/
       --v18; /*0x491bf5*/
@@ -309,9 +309,9 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
       v15 += 2 * v20; /*0x491bc1*/
       a11 += v20; /*0x491bc4*/
     }
-    result = (int)MEMORY[0x887644]; /*0x491bf6*/
-    if ( v15 >= *((unsigned int *)MEMORY[0x887644] + 7) ) /*0x491bfe*/
-      v15 -= *((unsigned int *)MEMORY[0x887644] + 8); /*0x491c00*/
+    result = (int)g_abs_887644; /*0x491bf6*/
+    if ( v15 >= *((unsigned int *)g_abs_887644 + 7) ) /*0x491bfe*/
+      v15 -= *((unsigned int *)g_abs_887644 + 8); /*0x491c00*/
   }
   return result; /*0x491c07*/
 
@@ -329,15 +329,15 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
   unsigned int v16; // edx
   int v18; // eax
   int v19; // edi
-  unsigned __int8 v20; // al
+  uint8_t v20; // al
   int v21; // ebp
-  unsigned __int8 v24; // [esp+20h] [ebp+Ch]
-  unsigned __int8 v25; // [esp+20h] [ebp+Ch]
+  uint8_t v24; // [esp+20h] [ebp+Ch]
+  uint8_t v25; // [esp+20h] [ebp+Ch]
   char *a10a; // [esp+3Ch] [ebp+28h]
 
   v12 = (char *)**((unsigned int **)this + 1); /*0x491c65*/
   result = a5; /*0x491c67*/
-  v14 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x491c6b*/
+  v14 = *(TacticalMap **)&g_abs_87F8E4; /*0x491c6b*/
   v15 = a1; /*0x491c77*/
   a10a = v12; /*0x491c7b*/
   v16 = a7; /*0x491c82*/
@@ -359,8 +359,8 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
     v15 = &a1[v18]; /*0x491ca4*/
     v19 = a4 - v18; /*0x491ca6*/
     result = a7 + 2 * v18; /*0x491ca8*/
-    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x491cae*/
-      result -= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32); /*0x491cb0*/
+    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x491cae*/
+      result -= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32); /*0x491cb0*/
     v16 = result; /*0x491cb3*/
   }
   while ( v19 > 0 ) /*0x491cbd*/
@@ -372,12 +372,12 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
       v16 += 2; /*0x491cf5*/
       v21 = a6 - *a10; /*0x491cfb*/
       result = (int)++a10; /*0x491d03*/
-      if ( v21 < *(unsigned __int16 *)(v16 - 2) ) /*0x491d0a*/
+      if ( v21 < *(uint16_t *)(v16 - 2) ) /*0x491d0a*/
       {
         result = *((unsigned int *)this + 2); /*0x491d22*/
-        *v15 = *(unsigned char *)((unsigned __int8)a10a[v24] + result); /*0x491d28*/
+        *v15 = *(unsigned char *)((uint8_t)a10a[v24] + result); /*0x491d28*/
       }
-      v14 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x491d2a*/
+      v14 = *(TacticalMap **)&g_abs_87F8E4; /*0x491d2a*/
       ++v15; /*0x491d30*/
       --v19; /*0x491d31*/
     }
@@ -404,7 +404,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
 
   int v11; // eax
   unsigned int v12; // edx
-  unsigned __int8 *v14; // esi
+  uint8_t *v14; // esi
   TacticalMap *v15; // ecx
   int v18; // eax
   RLEBlitTransRemapDestZRead_E *v19; // ebx
@@ -441,7 +441,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
     {
       v12 += 2; /*0x491e19*/
       v11 = a6 - *a10++; /*0x491e1c*/
-      if ( v11 >= *(unsigned __int16 *)(v12 - 2) ) /*0x491e27*/
+      if ( v11 >= *(uint16_t *)(v12 - 2) ) /*0x491e27*/
       {
         ++v14; /*0x491e3e*/
         v19 = (RLEBlitTransRemapDestZRead_E *)((char *)v19 - 1); /*0x491e3f*/
@@ -451,18 +451,18 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
         v11 = *v14; /*0x491e2f*/
         v19 = (RLEBlitTransRemapDestZRead_E *)((char *)v19 - 1); /*0x491e31*/
         ++v14; /*0x491e35*/
-        LOBYTE(v11) = *(unsigned char *)(*((unsigned int *)this + 1) + v11); /*0x491e36*/
+        IDA_LOBYTE(v11) = *(unsigned char *)(*((unsigned int *)this + 1) + v11); /*0x491e36*/
         *(v14 - 1) = v11; /*0x491e39*/
       }
       v15 = *(TacticalMap **)&stru_87C374.__pad_579C[23348]; /*0x491e40*/
     }
     else
     {
-      LOBYTE(v11) = *a2++; /*0x491df6*/
-      v19 = (RLEBlitTransRemapDestZRead_E *)((char *)v19 - (unsigned __int8)v11); /*0x491e06*/
-      v14 += (unsigned __int8)v11; /*0x491e08*/
-      a10 += (unsigned __int8)v11; /*0x491e0a*/
-      v12 += 2 * (unsigned __int8)v11; /*0x491e0c*/
+      IDA_LOBYTE(v11) = *a2++; /*0x491df6*/
+      v19 = (RLEBlitTransRemapDestZRead_E *)((char *)v19 - (uint8_t)v11); /*0x491e06*/
+      v14 += (uint8_t)v11; /*0x491e08*/
+      a10 += (uint8_t)v11; /*0x491e0a*/
+      v12 += 2 * (uint8_t)v11; /*0x491e0c*/
     }
     if ( v12 >= v15->TacticalMap_field_1C ) /*0x491e49*/
       v12 -= v15->TacticalMap_field_20; /*0x491e4b*/
@@ -481,8 +481,8 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
   unsigned int v15; // edx
   int v17; // eax
   int v18; // edi
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // ebp
 
   result = a5; /*0x491ea1*/
@@ -506,8 +506,8 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
     v14 = v17 + arg0; /*0x491ee4*/
     v18 = a4 - v17; /*0x491ee6*/
     result = a7 + 2 * v17; /*0x491ee8*/
-    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x491ef1*/
-      result -= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32); /*0x491ef3*/
+    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x491ef1*/
+      result -= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32); /*0x491ef3*/
     v15 = result; /*0x491ef6*/
   }
   while ( v18 > 0 ) /*0x491f00*/
@@ -519,8 +519,8 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
       v21 = a6 - *a10++; /*0x491f32*/
       ++v14; /*0x491f56*/
       --v18; /*0x491f57*/
-      if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x491f41*/
-        *(unsigned char *)(v14 - 1) = *(unsigned char *)(*(unsigned __int8 *)(v19 + *((unsigned int *)this + 1)) + *((unsigned int *)this + 2)); /*0x491f69*/
+      if ( v21 < *(uint16_t *)(v15 - 2) ) /*0x491f41*/
+        *(unsigned char *)(v14 - 1) = *(unsigned char *)(*(uint8_t *)(v19 + *((unsigned int *)this + 1)) + *((unsigned int *)this + 2)); /*0x491f69*/
     }
     else
     {
@@ -530,9 +530,9 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
       a10 += v20; /*0x491f21*/
       v15 += 2 * v20; /*0x491f23*/
     }
-    result = *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x491f70*/
-    if ( v15 >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x491f78*/
-      v15 -= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32); /*0x491f7a*/
+    result = *(unsigned int *)&g_abs_87F8E4; /*0x491f70*/
+    if ( v15 >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x491f78*/
+      v15 -= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32); /*0x491f7a*/
   }
   return result; /*0x491f81*/
 
@@ -549,8 +549,8 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
   TacticalMap *v15; // ecx
   int v18; // edx
   RLEBlitTransXlatZReadWrite_E *v19; // ebx
-  unsigned __int8 v20; // dl
-  unsigned __int8 v21; // dl
+  uint8_t v20; // dl
+  uint8_t v21; // dl
 
   v11 = a5; /*0x491fd1*/
   result = a6; /*0x491fd5*/
@@ -583,7 +583,7 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
     if ( v20 ) /*0x492039*/
     {
       ++v14; /*0x492078*/
-      if ( arg10 - *a10 < (unsigned __int16)*result ) /*0x492068*/
+      if ( arg10 - *a10 < (uint16_t)*result ) /*0x492068*/
       {
         *(unsigned char *)(v14 - 1) = *(unsigned char *)(*((unsigned int *)this + 1) + v20); /*0x49207f*/
         *result = arg10 - *a10; /*0x49208c*/
@@ -613,21 +613,21 @@ namespace gamemd {
 unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   int v13; // ecx
   int v14; // esi
   int v17; // ecx
   int v18; // ebx
-  unsigned __int8 v19; // cl
-  unsigned __int8 v20; // cl
+  uint8_t v19; // cl
+  uint8_t v20; // cl
   int v21; // ecx
   char *v22; // edi
-  __int16 v23; // cx
-  unsigned __int8 *a2a; // [esp+1Ch] [ebp+8h]
-  unsigned __int8 v26; // [esp+20h] [ebp+Ch]
+  int16_t v23; // cx
+  uint8_t *a2a; // [esp+1Ch] [ebp+8h]
+  uint8_t v26; // [esp+20h] [ebp+Ch]
 
   result = a6; /*0x492110*/
-  a2a = (unsigned __int8 *)**((unsigned int **)this + 1); /*0x492114*/
+  a2a = (uint8_t *)**((unsigned int **)this + 1); /*0x492114*/
   v13 = a5; /*0x492118*/
   v14 = arg0; /*0x49211d*/
   if ( a5 <= 0 ) /*0x492128*/
@@ -648,8 +648,8 @@ unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4,
     v14 = v17 + arg0; /*0x492147*/
     v18 = a4 - v17; /*0x492149*/
     result = &a6[v17]; /*0x49214b*/
-    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x492157*/
-      result = (unsigned __int16 *)((char *)result - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x492159*/
+    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x492157*/
+      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32)); /*0x492159*/
   }
   while ( v18 > 0 ) /*0x492164*/
   {
@@ -684,8 +684,8 @@ unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4,
       a10 += v20; /*0x492190*/
       result += v20; /*0x492192*/
     }
-    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4921f3*/
-      result = (unsigned __int16 *)((char *)result - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x4921f5*/
+    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x4921f3*/
+      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32)); /*0x4921f5*/
   }
   return result; /*0x492200*/
 
@@ -697,15 +697,15 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
 {
 
   int v11; // edx
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   unsigned char *v14; // esi
   TacticalMap *v15; // ecx
   int v18; // edx
   RLEBlitTransRemapDestZReadWrite_E *v19; // ebx
-  unsigned __int8 v21; // dl
+  uint8_t v21; // dl
   int v22; // edx
   char *v23; // edi
-  __int16 v24; // cx
+  int16_t v24; // cx
 
   v11 = a5; /*0x492251*/
   result = a6; /*0x492255*/
@@ -730,7 +730,7 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
     v19 = (RLEBlitTransRemapDestZReadWrite_E *)((char *)aP3 - v18); /*0x492296*/
     result = &a6[v18]; /*0x492298*/
     if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x4922a0*/
-      result = (unsigned __int16 *)((char *)result - *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 32)); /*0x4922a2*/
+      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 32)); /*0x4922a2*/
   }
   while ( (int)v19 > 0 ) /*0x4922ad*/
   {
@@ -748,7 +748,7 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
       else
       {
         ++result; /*0x4922ef*/
-        *v14 = *(unsigned char *)(*((unsigned int *)this + 1) + (unsigned __int8)*v14); /*0x4922f8*/
+        *v14 = *(unsigned char *)(*((unsigned int *)this + 1) + (uint8_t)*v14); /*0x4922f8*/
         v24 = *v23; /*0x4922fe*/
         a10 = v23 + 1; /*0x492304*/
         *(result - 1) = arg10 - v24; /*0x492305*/
@@ -766,7 +766,7 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
       result += v21; /*0x4922cf*/
     }
     if ( (unsigned int)result >= v15->TacticalMap_field_1C ) /*0x49231c*/
-      result = (unsigned __int16 *)((char *)result - v15->TacticalMap_field_20); /*0x49231e*/
+      result = (uint16_t *)((char *)result - v15->TacticalMap_field_20); /*0x49231e*/
   }
   return result; /*0x492325*/
 
@@ -778,14 +778,14 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
 {
 
   int v11; // edx
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   unsigned char *v14; // esi
   TacticalMap *v15; // ecx
   int v18; // edx
   RLEBlitTransRemapXlatZReadWrite_E *v19; // ebx
-  unsigned __int8 v20; // dl
-  unsigned __int8 v21; // dl
-  __int16 v22; // dx
+  uint8_t v20; // dl
+  uint8_t v21; // dl
+  int16_t v22; // dx
 
   v11 = a5; /*0x492371*/
   result = a6; /*0x492375*/
@@ -810,7 +810,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
     v19 = (RLEBlitTransRemapXlatZReadWrite_E *)((char *)aP3 - v18); /*0x4923b6*/
     result = &a6[v18]; /*0x4923b8*/
     if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x4923c0*/
-      result = (unsigned __int16 *)((char *)result - *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 32)); /*0x4923c2*/
+      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 32)); /*0x4923c2*/
   }
   while ( (int)v19 > 0 ) /*0x4923cd*/
   {
@@ -827,7 +827,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
       else
       {
         ++result; /*0x492420*/
-        *v14++ = *(unsigned char *)(*(unsigned __int8 *)(v20 + *((unsigned int *)this + 1)) + *((unsigned int *)this + 2)); /*0x49243a*/
+        *v14++ = *(unsigned char *)(*(uint8_t *)(v20 + *((unsigned int *)this + 1)) + *((unsigned int *)this + 2)); /*0x49243a*/
         v22 = *a10++; /*0x492441*/
         *(result - 1) = arg10 - v22; /*0x492448*/
         v15 = *(TacticalMap **)&stru_87C374.__pad_579C[23348]; /*0x49244c*/
@@ -843,7 +843,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
       result += v21; /*0x4923fb*/
     }
     if ( (unsigned int)result >= v15->TacticalMap_field_1C ) /*0x492464*/
-      result = (unsigned __int16 *)((char *)result - v15->TacticalMap_field_20); /*0x492466*/
+      result = (uint16_t *)((char *)result - v15->TacticalMap_field_20); /*0x492466*/
   }
   return result; /*0x492471*/
 
@@ -851,21 +851,21 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
 }
 // 0x496310
 namespace gamemd {
-int E4Recv_496310::sub_496310(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
+int E4Recv_496310::sub_496310()
 {
 
   int v1; // esi
   int result; // eax
   int v3; // edx
-  unsigned __int8 *v4; // edi
+  uint8_t *v4; // edi
   int v7; // ebx
-  unsigned __int8 v8; // al
+  uint8_t v8; // al
   int v9; // eax
   int v10; // ecx
   int v11; // [esp+10h] [ebp+4h]
-  unsigned __int8 *v12; // [esp+14h] [ebp+8h]
+  uint8_t *v12; // [esp+14h] [ebp+8h]
   int v13; // [esp+18h] [ebp+Ch]
-  unsigned __int8 v14; // [esp+18h] [ebp+Ch]
+  uint8_t v14; // [esp+18h] [ebp+Ch]
   int v15; // [esp+1Ch] [ebp+10h]
 
   result = v15; /*0x496310*/
@@ -895,21 +895,21 @@ int E4Recv_496310::sub_496310(void * a1, void * a2, void * a3, void * a4, void *
     v14 = v8; /*0x496355*/
     if ( v8 ) /*0x496359*/
     {
-      v9 = *((unsigned int *)a1 + 1); /*0x496376*/
-      LOWORD(v1) = *((unsigned short *)a1 + 4); /*0x496379*/
+      v9 = *((unsigned int *)this + 1); /*0x496376*/
+      IDA_LOWORD(v1) = *((unsigned short *)this + 4); /*0x496379*/
       v3 += 2; /*0x496383*/
-      v10 = *(unsigned __int16 *)(v9 + 2 * v14); /*0x496386*/
-      LOWORD(v9) = *(unsigned short *)(v3 - 2) >> 2; /*0x49638e*/
+      v10 = *(uint16_t *)(v9 + 2 * v14); /*0x496386*/
+      IDA_LOWORD(v9) = *(unsigned short *)(v3 - 2) >> 2; /*0x49638e*/
       result = 3 * (v1 & v9); /*0x49639a*/
       --v7; /*0x49639f*/
-      *(unsigned short *)(v3 - 2) = result + (v1 & ((unsigned __int16)v10 >> 2)); /*0x4963a0*/
+      *(unsigned short *)(v3 - 2) = result + (v1 & ((uint16_t)v10 >> 2)); /*0x4963a0*/
     }
     else
     {
-      LOBYTE(result) = *v4++; /*0x49635b*/
-      result = (unsigned __int8)result; /*0x496366*/
-      v7 -= (unsigned __int8)result; /*0x49636b*/
-      v3 += 2 * (unsigned __int8)result; /*0x49636d*/
+      IDA_LOBYTE(result) = *v4++; /*0x49635b*/
+      result = (uint8_t)result; /*0x496366*/
+      v7 -= (uint8_t)result; /*0x49636b*/
+      v3 += 2 * (uint8_t)result; /*0x49636d*/
     }
   }
   return result; /*0x4963a9*/
@@ -918,22 +918,22 @@ int E4Recv_496310::sub_496310(void * a1, void * a2, void * a3, void * a4, void *
 }
 // 0x4964D0
 namespace gamemd {
-int E4Recv_4964D0::sub_4964D0(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
+int E4Recv_4964D0::sub_4964D0()
 {
 
   int v1; // esi
   int result; // eax
   int v3; // edx
-  unsigned __int8 *v4; // edi
+  uint8_t *v4; // edi
   int v7; // ebx
-  unsigned __int8 v8; // al
+  uint8_t v8; // al
   int v9; // eax
   int v10; // eax
-  __int16 v11; // cx
+  int16_t v11; // cx
   int v12; // [esp+10h] [ebp+4h]
-  unsigned __int8 *v13; // [esp+14h] [ebp+8h]
+  uint8_t *v13; // [esp+14h] [ebp+8h]
   int v14; // [esp+18h] [ebp+Ch]
-  unsigned __int8 v15; // [esp+18h] [ebp+Ch]
+  uint8_t v15; // [esp+18h] [ebp+Ch]
   int v16; // [esp+1Ch] [ebp+10h]
 
   result = v16; /*0x4964d0*/
@@ -963,23 +963,23 @@ int E4Recv_4964D0::sub_4964D0(void * a1, void * a2, void * a3, void * a4, void *
     v15 = v8; /*0x496515*/
     if ( v8 ) /*0x496519*/
     {
-      v9 = *((unsigned int *)a1 + 1); /*0x496536*/
-      LOWORD(v1) = *((unsigned short *)a1 + 4); /*0x496539*/
+      v9 = *((unsigned int *)this + 1); /*0x496536*/
+      IDA_LOWORD(v1) = *((unsigned short *)this + 4); /*0x496539*/
       v3 += 2; /*0x496543*/
-      LOWORD(v9) = *(unsigned short *)(v9 + 2 * v15) >> 2; /*0x49654a*/
+      IDA_LOWORD(v9) = *(unsigned short *)(v9 + 2 * v15) >> 2; /*0x49654a*/
       v10 = v1 & v9; /*0x49654e*/
       v11 = 3 * v10; /*0x496550*/
-      LOWORD(v10) = *(unsigned short *)(v3 - 2) >> 2; /*0x496557*/
+      IDA_LOWORD(v10) = *(unsigned short *)(v3 - 2) >> 2; /*0x496557*/
       result = v1 & v10; /*0x49655b*/
       --v7; /*0x49655f*/
       *(unsigned short *)(v3 - 2) = result + v11; /*0x496560*/
     }
     else
     {
-      LOBYTE(result) = *v4++; /*0x49651b*/
-      result = (unsigned __int8)result; /*0x496526*/
-      v7 -= (unsigned __int8)result; /*0x49652b*/
-      v3 += 2 * (unsigned __int8)result; /*0x49652d*/
+      IDA_LOBYTE(result) = *v4++; /*0x49651b*/
+      result = (uint8_t)result; /*0x496526*/
+      v7 -= (uint8_t)result; /*0x49652b*/
+      v3 += 2 * (uint8_t)result; /*0x49652d*/
     }
   }
   return result; /*0x496569*/
@@ -988,7 +988,7 @@ int E4Recv_4964D0::sub_4964D0(void * a1, void * a2, void * a3, void * a4, void *
 }
 // 0x4965B0
 namespace gamemd {
-int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10, void * a2, void * a3)
+int E4Recv_4965B0::sub_4965B0( unsigned short * a1, RLEBlitTransXlatZRead * aP2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
 
   int result; // eax
@@ -997,63 +997,63 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
   char v16; // bl
   int v17; // eax
   int v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // esi
 
-  result = a2; /*0x4965b1*/
-  v12 = a2; /*0x4965b5*/
-  v15 = a2; /*0x4965c9*/
-  if ( a2 <= 0 ) /*0x4965cf*/
+  result = a10; /*0x4965b1*/
+  v12 = a10; /*0x4965b5*/
+  v15 = a10; /*0x4965c9*/
+  if ( a10 <= 0 ) /*0x4965cf*/
   {
-    v18 = a2; /*0x496608*/
+    v18 = a10; /*0x496608*/
   }
   else
   {
     do /*0x4965e6*/
     {
-      v16 = a2->__pad_0[0]; /*0x4965d1*/
-      a2 = (RLEBlitTransXlatZRead *)((char *)a2 + 1); /*0x4965d4*/
+      v16 = a10->__pad_0[0]; /*0x4965d1*/
+      a10 = (RLEBlitTransXlatZRead *)((char *)a10 + 1); /*0x4965d4*/
       if ( v16 ) /*0x4965d7*/
       {
         --result; /*0x4965e3*/
       }
       else
       {
-        result -= (unsigned __int8)a2->__pad_0[0]; /*0x4965de*/
-        a2 = (RLEBlitTransXlatZRead *)((char *)a2 + 1); /*0x4965e0*/
+        result -= (uint8_t)a10->__pad_0[0]; /*0x4965de*/
+        a10 = (RLEBlitTransXlatZRead *)((char *)a10 + 1); /*0x4965e0*/
       }
     }
     while ( result > 0 ); /*0x4965e6*/
     v17 = -result; /*0x4965ec*/
-    v18 = a2 - v17; /*0x4965ee*/
-    v15 = &a2[v17]; /*0x4965f0*/
-    result = a2 + 2 * v17; /*0x4965f3*/
+    v18 = a10 - v17; /*0x4965ee*/
+    v15 = &a10[v17]; /*0x4965f0*/
+    result = a10 + 2 * v17; /*0x4965f3*/
     if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x4965ff*/
       result -= *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 32); /*0x496601*/
     v12 = result; /*0x496604*/
   }
   while ( v18 > 0 ) /*0x49660e*/
   {
-    v19 = a2->__pad_0[0]; /*0x496610*/
-    a2 = (RLEBlitTransXlatZRead *)((char *)a2 + 1); /*0x496613*/
+    v19 = a10->__pad_0[0]; /*0x496610*/
+    a10 = (RLEBlitTransXlatZRead *)((char *)a10 + 1); /*0x496613*/
     if ( v19 ) /*0x49661a*/
     {
       v12 += 2; /*0x496641*/
-      v21 = a2 - *a2++; /*0x496644*/
-      if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x49664f*/
-        *v15 = *(unsigned short *)(*(a2 + 1) + 2 * v19); /*0x496665*/
+      v21 = a10 - *a10++; /*0x496644*/
+      if ( v21 < *(uint16_t *)(v12 - 2) ) /*0x49664f*/
+        *v15 = *(unsigned short *)(*(a10 + 1) + 2 * v19); /*0x496665*/
       ++v15; /*0x496668*/
       --v18; /*0x49666b*/
     }
     else
     {
-      v20 = a2->__pad_0[0]; /*0x49661c*/
-      a2 = (RLEBlitTransXlatZRead *)((char *)a2 + 1); /*0x49661f*/
+      v20 = a10->__pad_0[0]; /*0x49661c*/
+      a10 = (RLEBlitTransXlatZRead *)((char *)a10 + 1); /*0x49661f*/
       v18 -= v20; /*0x49662d*/
       v15 += v20; /*0x496632*/
       v12 += 2 * v20; /*0x496634*/
-      a2 += v20; /*0x496636*/
+      a10 += v20; /*0x496636*/
     }
     result = *(unsigned int *)&stru_87C374.__pad_579C[23348]; /*0x49666c*/
     if ( v12 >= *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x496674*/
@@ -1073,14 +1073,14 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
   unsigned int v15; // edx
   int v17; // eax
   int v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // esi
-  unsigned __int8 *a2a; // [esp+1Ch] [ebp+8h]
+  uint8_t *a2a; // [esp+1Ch] [ebp+8h]
 
   result = a5; /*0x4966e7*/
   v14 = arg0; /*0x4966f2*/
-  a2a = (unsigned __int8 *)**((unsigned int **)this + 1); /*0x4966f6*/
+  a2a = (uint8_t *)**((unsigned int **)this + 1); /*0x4966f6*/
   v15 = a7; /*0x4966fa*/
   if ( a5 <= 0 ) /*0x496700*/
   {
@@ -1100,8 +1100,8 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
     v18 = a4 - v17; /*0x49671f*/
     v14 = arg0 + 2 * v17; /*0x496721*/
     result = a7 + 2 * v17; /*0x496724*/
-    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x49672a*/
-      result -= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32); /*0x49672c*/
+    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x49672a*/
+      result -= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32); /*0x49672c*/
     v15 = result; /*0x49672f*/
   }
   while ( v18 > 0 ) /*0x496739*/
@@ -1113,7 +1113,7 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
       v21 = a6 - *a10++; /*0x496773*/
       v14 += 2; /*0x496794*/
       --v18; /*0x496797*/
-      if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x496782*/
+      if ( v21 < *(uint16_t *)(v15 - 2) ) /*0x496782*/
         *(unsigned short *)(v14 - 2) = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * a2a[v19]); /*0x4967aa*/
     }
     else
@@ -1124,9 +1124,9 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
       v14 += 2 * v20; /*0x496763*/
       v15 += 2 * v20; /*0x496765*/
     }
-    result = *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x4967b4*/
-    if ( v15 >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x4967bc*/
-      v15 -= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32); /*0x4967be*/
+    result = *(unsigned int *)&g_abs_87F8E4; /*0x4967b4*/
+    if ( v15 >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x4967bc*/
+      v15 -= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32); /*0x4967be*/
   }
   return result; /*0x4967c9*/
 
@@ -1142,8 +1142,8 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
   unsigned int v14; // esi
   int v17; // eax
   RLEBlitTransLucent75ZRead_G *v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496931*/
@@ -1180,7 +1180,7 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
       v21 = a6 - *a10++; /*0x4969c8*/
       v12 += 2; /*0x4969e7*/
       v18 = (RLEBlitTransLucent75ZRead_G *)((char *)v18 - 1); /*0x496a0a*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x4969d7*/
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x4969d7*/
         *(unsigned short *)(v12 - 2) = 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496a0b*/
                             + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * v19) >> 2));
     }
@@ -1210,8 +1210,8 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
   unsigned short *v14; // esi
   int v17; // eax
   RLEBlitTransLucent50ZRead_G *v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496a81*/
@@ -1247,7 +1247,7 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v12 += 2; /*0x496b15*/
       v21 = a6 - *a10++; /*0x496b18*/
       v18 = (RLEBlitTransLucent50ZRead_G *)((char *)v18 - 1); /*0x496b51*/
-      if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x496b27*/
+      if ( v21 < *(uint16_t *)(v12 - 2) ) /*0x496b27*/
         *v14 = (*(unsigned short *)((unsigned int *)this + 2) & (*v14 >> 1)) /*0x496b52*/
              + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * v19) >> 1));
       ++v14; /*0x496b59*/
@@ -1278,8 +1278,8 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   unsigned int v14; // esi
   int v17; // eax
   RLEBlitTransLucent25ZRead_G *v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496bc1*/
@@ -1316,7 +1316,7 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
       v21 = a6 - *a10++; /*0x496c58*/
       v12 += 2; /*0x496c77*/
       v18 = (RLEBlitTransLucent25ZRead_G *)((char *)v18 - 1); /*0x496c9a*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x496c67*/
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496c67*/
         *(unsigned short *)(v12 - 2) = (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496c9b*/
                             + 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * v19) >> 2));
     }
@@ -1346,8 +1346,8 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
   unsigned int v14; // esi
   int v17; // eax
   RLEBlitTransLucent75ZReadWarp_G *v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496d11*/
@@ -1384,7 +1384,7 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
       v21 = a6 - *a10++; /*0x496da8*/
       v12 += 2; /*0x496dc7*/
       v18 = (RLEBlitTransLucent75ZReadWarp_G *)((char *)v18 - 1); /*0x496def*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x496db7*/
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496db7*/
         *(unsigned short *)(v12 - 2) = 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x496df0*/
                             + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * v19) >> 2));
     }
@@ -1414,8 +1414,8 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
   unsigned int v14; // esi
   int v17; // eax
   RLEBlitTransLucent50ZReadWarp_G *v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496e61*/
@@ -1451,7 +1451,7 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v14 += 2; /*0x496ef5*/
       v21 = a6 - *a10++; /*0x496ef8*/
       v18 = (RLEBlitTransLucent50ZReadWarp_G *)((char *)v18 - 1); /*0x496f36*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x496f07*/
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496f07*/
         *v12 = (*(unsigned short *)((unsigned int *)this + 2) & (v12[arg20] >> 1)) /*0x496f37*/
              + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * v19) >> 1));
       ++v12; /*0x496f3e*/
@@ -1482,8 +1482,8 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   unsigned int v14; // esi
   int v17; // eax
   RLEBlitTransLucent25ZReadWarp_G *v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496fb1*/
@@ -1520,7 +1520,7 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
       v21 = a6 - *a10++; /*0x497048*/
       v12 += 2; /*0x497067*/
       v18 = (RLEBlitTransLucent25ZReadWarp_G *)((char *)v18 - 1); /*0x49708f*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x497057*/
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x497057*/
         *(unsigned short *)(v12 - 2) = (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x497090*/
                             + 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * v19) >> 2));
     }
@@ -1550,8 +1550,8 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
   int v13; // esi
   int v17; // edx
   RLEBlitTransXlatZReadWrite_G *v18; // ebp
-  unsigned __int8 v19; // dl
-  unsigned __int8 v20; // dl
+  uint8_t v19; // dl
+  uint8_t v20; // dl
 
   v11 = a5; /*0x497101*/
   result = a6; /*0x497105*/
@@ -1583,7 +1583,7 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
     if ( v19 ) /*0x497169*/
     {
       v13 += 2; /*0x4971a9*/
-      if ( arg10 - *a10 < (unsigned __int16)*result ) /*0x497199*/
+      if ( arg10 - *a10 < (uint16_t)*result ) /*0x497199*/
       {
         *(unsigned short *)(v13 - 2) = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * v19); /*0x4971b7*/
         *result = arg10 - *a10; /*0x4971c1*/
@@ -1612,22 +1612,22 @@ namespace gamemd {
 unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
 
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   int v13; // ecx
   int v14; // esi
   int v17; // ecx
   int v18; // ebx
-  unsigned __int8 v19; // cl
-  unsigned __int8 v20; // cl
+  uint8_t v19; // cl
+  uint8_t v20; // cl
   int v21; // ecx
   int v22; // ecx
   char *v23; // edi
-  __int16 v24; // cx
-  unsigned __int8 *a2a; // [esp+1Ch] [ebp+8h]
-  unsigned __int8 v27; // [esp+20h] [ebp+Ch]
+  int16_t v24; // cx
+  uint8_t *a2a; // [esp+1Ch] [ebp+8h]
+  uint8_t v27; // [esp+20h] [ebp+Ch]
 
   result = a6; /*0x497240*/
-  a2a = (unsigned __int8 *)**((unsigned int **)this + 1); /*0x497244*/
+  a2a = (uint8_t *)**((unsigned int **)this + 1); /*0x497244*/
   v13 = a5; /*0x497248*/
   v14 = arg0; /*0x49724d*/
   if ( a5 <= 0 ) /*0x497258*/
@@ -1648,8 +1648,8 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
     v18 = a4 - v17; /*0x497277*/
     v14 = arg0 + 2 * v17; /*0x497279*/
     result = &a6[v17]; /*0x49727c*/
-    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x497288*/
-      result = (unsigned __int16 *)((char *)result - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x49728a*/
+    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x497288*/
+      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32)); /*0x49728a*/
   }
   while ( v18 > 0 ) /*0x497295*/
   {
@@ -1683,10 +1683,10 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
       a10 += v20; /*0x4972bf*/
       v21 = 2 * v20; /*0x4972c1*/
       v14 += v21; /*0x4972c4*/
-      result = (unsigned __int16 *)((char *)result + v21); /*0x4972c6*/
+      result = (uint16_t *)((char *)result + v21); /*0x4972c6*/
     }
-    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 28) ) /*0x49732c*/
-      result = (unsigned __int16 *)((char *)result - *(unsigned int *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10232] + 32)); /*0x49732e*/
+    if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 28) ) /*0x49732c*/
+      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&g_abs_87F8E4 + 32)); /*0x49732e*/
   }
   return result; /*0x497339*/
 
@@ -1699,11 +1699,11 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
 
   RLEBlitTransDarkenZReadWrite_G *v11; // edx
   RLEBlitTransDarkenZReadWrite_G *v13; // esi
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   int v17; // edx
   int v18; // ebp
-  unsigned __int8 v20; // dl
-  __int16 v21; // dx
+  uint8_t v20; // dl
+  int16_t v21; // dx
 
   v11 = aP4; /*0x497391*/
   v13 = (RLEBlitTransDarkenZReadWrite_G *)a1; /*0x49739c*/
@@ -1727,7 +1727,7 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
     v13 = (RLEBlitTransDarkenZReadWrite_G *)&a1[v17]; /*0x4973d0*/
     result = &a6[v17]; /*0x4973d3*/
     if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x4973df*/
-      result = (unsigned __int16 *)((char *)result - *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 32)); /*0x4973e1*/
+      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 32)); /*0x4973e1*/
   }
   while ( v18 > 0 ) /*0x4973ec*/
   {
@@ -1742,7 +1742,7 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
       else
       {
         ++result; /*0x497437*/
-        LOWORD(v13->vfptr) = *(unsigned short *)((unsigned int *)this + 1) & (LOWORD(v13->vfptr) >> 1); /*0x49743a*/
+        IDA_LOWORD(v13->vfptr) = *(unsigned short *)((unsigned int *)this + 1) & (IDA_LOWORD(v13->vfptr) >> 1); /*0x49743a*/
         v21 = *a10++; /*0x49743d*/
         *(result - 1) = arg10 - v21; /*0x497444*/
         --v18; /*0x497448*/
@@ -1758,7 +1758,7 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
       result += v20; /*0x49740f*/
     }
     if ( (unsigned int)result >= *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 28) ) /*0x49745c*/
-      result = (unsigned __int16 *)((char *)result - *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 32)); /*0x49745e*/
+      result = (uint16_t *)((char *)result - *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 32)); /*0x49745e*/
   }
   return result; /*0x497465*/
 
@@ -1854,7 +1854,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   int v5; // esi
   int v6; // eax
   char v7; // al
-  unsigned __int8 v8; // al
+  uint8_t v8; // al
   char v9; // al
   char v10; // al
   char *v11; // edi
@@ -1863,7 +1863,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   int v14; // esi
   int v15; // eax
   char v16; // al
-  unsigned __int8 v17; // al
+  uint8_t v17; // al
   char v18; // al
   int Int_Overwrite; // eax
   int v20; // esi
@@ -1894,28 +1894,28 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
         break; /*0x49c109*/
       if ( isalnum(*v4) )
       {
-        MEMORY[0x89ED18][v3] = *v4; /*0x49c177*/
+        g_abs_89ED18[v3] = *v4; /*0x49c177*/
       }
       else
       {
-        MEMORY[0x89ED18][v3] = 61; /*0x49c11b*/
+        g_abs_89ED18[v3] = 61; /*0x49c11b*/
         v5 = v3 + 1; /*0x49c122*/
         v6 = *v4 >> 4; /*0x49c126*/
         if ( (unsigned int)v6 >= 0x10 )
           v7 = 0; /*0x49c13d*/
         else
           v7 = v6 >= 10 ? v6 + 55 : v6 + 48;
-        MEMORY[0x89ED18][v5] = v7; /*0x49c13f*/
+        g_abs_89ED18[v5] = v7; /*0x49c13f*/
         v3 = v5 + 1; /*0x49c147*/
         v8 = *v4 & 0xF; /*0x49c148*/
         if ( v8 > 0xFu )
         {
-          MEMORY[0x89ED18][v3] = 0; /*0x49c16d*/
+          g_abs_89ED18[v3] = 0; /*0x49c16d*/
         }
         else
         {
           v9 = (*v4 & 0xFu) >= 0xA ? v8 + 55 : v8 + 48;
-          MEMORY[0x89ED18][v3] = v9; /*0x49c159*/
+          g_abs_89ED18[v3] = v9; /*0x49c159*/
         }
       }
       v10 = v4[1]; /*0x49c17d*/
@@ -1924,8 +1924,8 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
     }
     while ( v10 );
   }
-  MEMORY[0x89ED18][v3] = 0; /*0x49c194*/
-  strcpy(v28, MEMORY[0x89ED18]); /*0x49c1ae*/
+  g_abs_89ED18[v3] = 0; /*0x49c194*/
+  strcpy(v28, g_abs_89ED18); /*0x49c1ae*/
   v11 = (unsigned char *)this + 28; /*0x49c1b7*/
   v12 = 0; /*0x49c1b9*/
   for ( i = *v2; i; ++v11 )
@@ -1934,36 +1934,36 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
       break; /*0x49c1cb*/
     if ( isalnum(i) )
     {
-      MEMORY[0x89ED18][v12] = *v11; /*0x49c239*/
+      g_abs_89ED18[v12] = *v11; /*0x49c239*/
     }
     else
     {
-      MEMORY[0x89ED18][v12] = 61; /*0x49c1dd*/
+      g_abs_89ED18[v12] = 61; /*0x49c1dd*/
       v14 = v12 + 1; /*0x49c1e4*/
       v15 = *v11 >> 4; /*0x49c1e8*/
       if ( (unsigned int)v15 >= 0x10 )
         v16 = 0; /*0x49c1ff*/
       else
         v16 = v15 >= 10 ? v15 + 55 : v15 + 48;
-      MEMORY[0x89ED18][v14] = v16; /*0x49c201*/
+      g_abs_89ED18[v14] = v16; /*0x49c201*/
       v12 = v14 + 1; /*0x49c209*/
       v17 = *v11 & 0xF; /*0x49c20a*/
       if ( v17 > 0xFu )
       {
-        MEMORY[0x89ED18][v12] = 0; /*0x49c22f*/
+        g_abs_89ED18[v12] = 0; /*0x49c22f*/
       }
       else
       {
         v18 = (*v11 & 0xFu) >= 0xA ? v17 + 55 : v17 + 48;
-        MEMORY[0x89ED18][v12] = v18; /*0x49c21b*/
+        g_abs_89ED18[v12] = v18; /*0x49c21b*/
       }
     }
     i = v11[1]; /*0x49c23f*/
     ++v12; /*0x49c242*/
   }
-  MEMORY[0x89ED18][v12] = 0; /*0x49c256*/
-  strcat(v28, MEMORY[0x89ED18]); /*0x49c278*/
-  CCFileClass::Construct(v29, MEMORY[0x81F0F8]); /*0x49c28d*/
+  g_abs_89ED18[v12] = 0; /*0x49c256*/
+  strcat(v28, g_abs_89ED18); /*0x49c278*/
+  CCFileClass::Construct(v29, g_abs_81F0F8); /*0x49c28d*/
   v24[1] = 0; /*0x49c298*/
   v24[2] = 0; /*0x49c29c*/
   INISectionList::Constructor(v25); /*0x49c2a0*/
@@ -1986,47 +1986,47 @@ LABEL_44:
   INIClass::ReadInt_Overwrite(v28, unk_81F194, 0); /*0x49c2ff*/
   *((unsigned int *)this + 17) = INIClass::ReadInt_Overwrite(v28, unk_81F184, -1); /*0x49c329*/
   *((unsigned int *)this + 5) = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
-                            (unsigned __int8 ***)v24,
-                            (unsigned __int8 *)v28,
-                            (unsigned __int8 *)unk_81F17C,
+                            (uint8_t ***)v24,
+                            (uint8_t *)v28,
+                            (uint8_t *)unk_81F17C,
                             -2);
   *((unsigned int *)this + 6) = INIClass::ReadInt_Overwrite(v28, unk_81F174, -2); /*0x49c349*/
   *((unsigned int *)this + 12) = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
-                             (unsigned __int8 ***)v24,
-                             (unsigned __int8 *)v28,
-                             (unsigned __int8 *)unk_81F16C,
+                             (uint8_t ***)v24,
+                             (uint8_t *)v28,
+                             (uint8_t *)unk_81F16C,
                              -2);
   *((unsigned int *)this + 13) = INIClass::ReadInt_Overwrite(v28, unk_81F164, -2); /*0x49c388*/
   *((unsigned int *)this + 18) = INIClass::ReadInt_Overwrite(v28, unk_81F15C, 0); /*0x49c390*/
   *((unsigned int *)this + 19) = INIClass::ReadInt_Overwrite(v28, unk_81F154, 0); /*0x49c3b6*/
-  *((unsigned int *)this + 20) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F14C], 0); /*0x49c3cd*/
-  *((unsigned int *)this + 21) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F144], 0); /*0x49c3d5*/
-  *((unsigned int *)this + 22) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F13C], 0); /*0x49c3fb*/
-  *((unsigned int *)this + 23) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F134], 0); /*0x49c412*/
-  *((unsigned int *)this + 24) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F12C], 0); /*0x49c41a*/
-  *((unsigned int *)this + 25) = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F124], 0); /*0x49c440*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite(v28, MEMORY[0x81F11C], 0); /*0x49c443*/
+  *((unsigned int *)this + 20) = INIClass::ReadInt_Overwrite(v28, g_abs_81F14C, 0); /*0x49c3cd*/
+  *((unsigned int *)this + 21) = INIClass::ReadInt_Overwrite(v28, g_abs_81F144, 0); /*0x49c3d5*/
+  *((unsigned int *)this + 22) = INIClass::ReadInt_Overwrite(v28, g_abs_81F13C, 0); /*0x49c3fb*/
+  *((unsigned int *)this + 23) = INIClass::ReadInt_Overwrite(v28, g_abs_81F134, 0); /*0x49c412*/
+  *((unsigned int *)this + 24) = INIClass::ReadInt_Overwrite(v28, g_abs_81F12C, 0); /*0x49c41a*/
+  *((unsigned int *)this + 25) = INIClass::ReadInt_Overwrite(v28, g_abs_81F124, 0); /*0x49c440*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite(v28, g_abs_81F11C, 0); /*0x49c443*/
   v20 = *((unsigned int *)this + 17); /*0x49c448*/
   *((unsigned int *)this + 26) = Int_Overwrite; /*0x49c44b*/
-  if ( !MEMORY[0x89F578] ) /*0x49c455*/
-    CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49c45c*/
-  if ( v20 < 0 || v20 >= MEMORY[0x89F574] ) /*0x49c46f*/
+  if ( !g_abs_89F578 ) /*0x49c455*/
+    CampaignClass::LoadFromINI((int)&g_abs_89F518); /*0x49c45c*/
+  if ( v20 < 0 || v20 >= g_abs_89F574 ) /*0x49c46f*/
   {
     *((unsigned int *)this + 16) = 0; /*0x49c550*/
     goto LABEL_44; /*0x49c550*/
   }
-  v21 = MEMORY[0x89F570] + 76 * v20; /*0x49c486*/
+  v21 = g_abs_89F570 + 76 * v20; /*0x49c486*/
   *((unsigned int *)this + 16) = *(char *)(v21 + 8); /*0x49c489*/
-  *((unsigned int *)this + 15) = __2_YAPAXI_Z(4 * *(char *)(v21 + 8)); /*0x49c499*/
+  *((unsigned int *)this + 15) = RA2_OPNEW(4 * *(char *)(v21 + 8)); /*0x49c499*/
   for ( j = 0; j < *((unsigned int *)this + 16); ++j ) /*0x49c4a6*/
   {
-    sprintf(Buffer, MEMORY[0x81F114], j + 1); /*0x49c4b9*/
-    *(unsigned int *)(*((unsigned int *)this + 15) + 4 * j) = __2_YAPAXI_Z(0x104u); /*0x49c4ce*/
+    sprintf(Buffer, g_abs_81F114, j + 1); /*0x49c4b9*/
+    *(unsigned int *)(*((unsigned int *)this + 15) + 4 * j) = RA2_OPNEW(0x104u); /*0x49c4ce*/
     INIClass::GetString( /*0x49c4f3*/
-      (unsigned __int8 ***)v24,
-      (unsigned __int8 *)v28,
-      (unsigned __int8 *)Buffer,
-      MEMORY[0x81F108],
+      (uint8_t ***)v24,
+      (uint8_t *)v28,
+      (uint8_t *)Buffer,
+      g_abs_81F108,
       *(char **)(*((unsigned int *)this + 15) + 4 * j),
       260);
   }
@@ -2068,11 +2068,11 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
   char v32; // bl
   int v33; // [esp+14h] [ebp+4h]
 
-  if ( !MEMORY[0x89F578] ) /*0x49ccfd*/
-    CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49cd04*/
-  if ( a2 >= 0 && a2 < MEMORY[0x89F574] ) /*0x49cd1d*/
+  if ( !g_abs_89F578 ) /*0x49ccfd*/
+    CampaignClass::LoadFromINI((int)&g_abs_89F518); /*0x49cd04*/
+  if ( a2 >= 0 && a2 < g_abs_89F574 ) /*0x49cd1d*/
   {
-    v12 = MEMORY[0x89F570]; /*0x49cd23*/
+    v12 = g_abs_89F570; /*0x49cd23*/
     *((unsigned int *)this + 14) = -1; /*0x49cd30*/
     *((unsigned int *)this + 18) = 0; /*0x49cd3a*/
     *((unsigned int *)this + 19) = 0; /*0x49cd3d*/
@@ -2088,8 +2088,8 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
     {
       if ( Block ) /*0x49cd6a*/
       {
-        if ( HIBYTE(a6) ) /*0x49cd72*/
-          __3_YAXPAX_Z(Block); /*0x49cd75*/
+        if ( IDA_HIBYTE(a6) ) /*0x49cd72*/
+          RA2_OPDEL(Block); /*0x49cd75*/
       }
       return 0; /*0x49cd83*/
     }
@@ -2101,20 +2101,20 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
       for ( i = 0; i < *((unsigned int *)this + 16); ++i ) /*0x49cd9b*/
       {
         if ( *(unsigned int *)(*((unsigned int *)this + 15) + 4 * i) ) /*0x49cda0*/
-          __3_YAXPAX_Z(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x49cda8*/
+          RA2_OPDEL(*(void **)(*((unsigned int *)this + 15) + 4 * i)); /*0x49cda8*/
       }
-      __3_YAXPAX_Z(*(void **)((char *)this + 60)); /*0x49cdbe*/
+      RA2_OPDEL(*(void **)((char *)this + 60)); /*0x49cdbe*/
     }
     *((unsigned int *)this + 15) = 0; /*0x49cdc8*/
     *((unsigned int *)this + 16) = 0; /*0x49cdcb*/
     v16 = 0; /*0x49cdde*/
-    *((unsigned int *)this + 15) = __2_YAPAXI_Z(4 * a7); /*0x49cde2*/
+    *((unsigned int *)this + 15) = RA2_OPNEW(4 * a7); /*0x49cde2*/
     if ( a7 > 0 ) /*0x49cde5*/
     {
       v17 = 0; /*0x49cde7*/
       do /*0x49ce2e*/
       {
-        *(unsigned int *)(*((unsigned int *)this + 15) + 4 * v16) = __2_YAPAXI_Z(0x104u); /*0x49cdff*/
+        *(unsigned int *)(*((unsigned int *)this + 15) + 4 * v16) = RA2_OPNEW(0x104u); /*0x49cdff*/
         strncpy( /*0x49ce20*/
           *(char **)(*((unsigned int *)this + 15) + 4 * v16),
           (const char *)(*(unsigned int *)(v33 + 12) + 260 * (v17 + *((unsigned int *)Block + v16))),
@@ -2129,7 +2129,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
     *((unsigned int *)this + 14) = 0; /*0x49ce39*/
     if ( a10 ) /*0x49ce40*/
     {
-      v19 = MEMORY[0x89F118]; /*0x49ce48*/
+      v19 = g_abs_89F118; /*0x49ce48*/
       if ( *a10 ) /*0x49ce46*/
       {
         do /*0x49cf05*/
@@ -2202,7 +2202,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
         while ( v24 ); /*0x49cf05*/
       }
       *v19 = 0; /*0x49cf0b*/
-      strcpy((char *)this, MEMORY[0x89F118]); /*0x49cf27*/
+      strcpy((char *)this, g_abs_89F118); /*0x49cf27*/
     }
     else
     {
@@ -2211,7 +2211,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
     v25 = a9; /*0x49cf36*/
     if ( a9 ) /*0x49cf3c*/
     {
-      v26 = MEMORY[0x89F118]; /*0x49cf44*/
+      v26 = g_abs_89F118; /*0x49cf44*/
       if ( *a9 ) /*0x49cf42*/
       {
         do /*0x49d001*/
@@ -2284,7 +2284,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
         while ( v31 ); /*0x49d001*/
       }
       *v26 = 0; /*0x49d007*/
-      strcpy((char *)((char *)this + 28), MEMORY[0x89F118]); /*0x49d026*/
+      strcpy((char *)((char *)this + 28), g_abs_89F118); /*0x49d026*/
     }
     else
     {
@@ -2293,8 +2293,8 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
     Debug::Log(); /*0x49d03e*/
   }
   v32 = *((unsigned char *)this + 108); /*0x49d04c*/
-  if ( Block && HIBYTE(a6) ) /*0x49d059*/
-    __3_YAXPAX_Z(Block); /*0x49d05c*/
+  if ( Block && IDA_HIBYTE(a6) ) /*0x49d059*/
+    RA2_OPDEL(Block); /*0x49d05c*/
   return v32; /*0x49cd7d*/
 
 }
@@ -2321,7 +2321,7 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   MultiplayerGameMode aP1a; // [esp+Ch] [ebp-148h] BYREF
   unsigned char v18[12]; // [esp+64h] [ebp-F0h] BYREF
   int v19; // [esp+70h] [ebp-E4h]
-  unsigned __int8 **v20[3]; // [esp+78h] [ebp-DCh] BYREF
+  uint8_t **v20[3]; // [esp+78h] [ebp-DCh] BYREF
   unsigned int v21[7]; // [esp+84h] [ebp-D0h] BYREF
   unsigned int v22[6]; // [esp+A0h] [ebp-B4h] BYREF
   char v23; // [esp+B8h] [ebp-9Ch]
@@ -2334,14 +2334,14 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   v3 = (unsigned char *)this + 28; /*0x49d3a8*/
   if ( !*((unsigned char *)this + 28) ) /*0x49d3a5*/
     return 0; /*0x49d3ad*/
-  CCFileClass::Construct(&aP1a, MEMORY[0x81F0F8]); /*0x49d3bc*/
+  CCFileClass::Construct(&aP1a, g_abs_81F0F8); /*0x49d3bc*/
   v20[1] = 0; /*0x49d3c8*/
   v20[2] = 0; /*0x49d3cc*/
   INISectionList::Constructor(v21); /*0x49d3d3*/
   Node::Init(v22); /*0x49d3df*/
   v22[5] = 0; /*0x49d3f2*/
   v23 = 0; /*0x49d3f9*/
-  v20[0] = (unsigned __int8 **)&CCINIClass_Vtable; /*0x49d400*/
+  v20[0] = (uint8_t **)&CCINIClass_Vtable; /*0x49d400*/
   if ( !CCINIClass::Load(v20, &aP1a, 0, 0) ) /*0x49d40b*/
   {
     CCFileClass::Reset(&aP1a); /*0x49d418*/
@@ -2364,20 +2364,20 @@ LABEL_5:
         break; /*0x49d472*/
       if ( isalnum(*v2) )
       {
-        MEMORY[0x89ED18][v5] = *v2; /*0x49d4c3*/
+        g_abs_89ED18[v5] = *v2; /*0x49d4c3*/
       }
       else
       {
-        MEMORY[0x89ED18][v5] = 61; /*0x49d484*/
+        g_abs_89ED18[v5] = 61; /*0x49d484*/
         v6 = v5 + 1; /*0x49d48b*/
         v7 = *v2 >> 4; /*0x49d48f*/
         if ( (unsigned int)v7 >= 0x10 )
           v8 = 0; /*0x49d4a6*/
         else
           v8 = v7 >= 10 ? v7 + 55 : v7 + 48;
-        MEMORY[0x89ED18][v6] = v8; /*0x49d4a8*/
+        g_abs_89ED18[v6] = v8; /*0x49d4a8*/
         v5 = v6 + 1; /*0x49d4b3*/
-        MEMORY[0x89ED18][v5] = EncodeDigitHex(*v2 & 0xF); /*0x49d4b9*/
+        g_abs_89ED18[v5] = EncodeDigitHex(*v2 & 0xF); /*0x49d4b9*/
       }
       v9 = v2[1]; /*0x49d4c9*/
       ++v5; /*0x49d4cc*/
@@ -2385,8 +2385,8 @@ LABEL_5:
     }
     while ( v9 );
   }
-  MEMORY[0x89ED18][v5] = 0; /*0x49d4dc*/
-  strcpy(v25.__pad_0, MEMORY[0x89ED18]); /*0x49d4f8*/
+  g_abs_89ED18[v5] = 0; /*0x49d4dc*/
+  strcpy(v25.__pad_0, g_abs_89ED18); /*0x49d4f8*/
   v10 = v3; /*0x49d501*/
   v11 = 0; /*0x49d503*/
   for ( i = *v3; i; ++v10 )
@@ -2395,30 +2395,30 @@ LABEL_5:
       break; /*0x49d511*/
     if ( isalnum(i) )
     {
-      MEMORY[0x89ED18][v11] = *v10; /*0x49d562*/
+      g_abs_89ED18[v11] = *v10; /*0x49d562*/
     }
     else
     {
-      MEMORY[0x89ED18][v11] = 61; /*0x49d523*/
+      g_abs_89ED18[v11] = 61; /*0x49d523*/
       v13 = v11 + 1; /*0x49d52a*/
       v14 = *v10 >> 4; /*0x49d52e*/
       if ( (unsigned int)v14 >= 0x10 )
         v15 = 0; /*0x49d545*/
       else
         v15 = v14 >= 10 ? v14 + 55 : v14 + 48;
-      MEMORY[0x89ED18][v13] = v15; /*0x49d547*/
+      g_abs_89ED18[v13] = v15; /*0x49d547*/
       v11 = v13 + 1; /*0x49d552*/
-      MEMORY[0x89ED18][v11] = EncodeDigitHex(*v10 & 0xF); /*0x49d558*/
+      g_abs_89ED18[v11] = EncodeDigitHex(*v10 & 0xF); /*0x49d558*/
     }
     i = v10[1]; /*0x49d568*/
     ++v11; /*0x49d56b*/
   }
-  MEMORY[0x89ED18][v11] = 0; /*0x49d57b*/
-  strcat(v25.__pad_0, MEMORY[0x89ED18]); /*0x49d59f*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite((int)v20, (unsigned __int8 *)&v25, &unk_81F19C, 0); /*0x49d5bd*/
-  sprintf(Buffer, (const char *const)&MEMORY[0x81F108].headNode[2], Int_Overwrite + 1); /*0x49d5d1*/
-  INIClass::GetString(v20, &v25, (unsigned __int8 *)Buffer, &MEMORY[0x81F108], (INIClass *)aP1, 260); /*0x49d602*/
-  if ( strcmp((const char *)aP1, MEMORY[0x81F108].__pad_0) ) /*0x49d614*/
+  g_abs_89ED18[v11] = 0; /*0x49d57b*/
+  strcat(v25.__pad_0, g_abs_89ED18); /*0x49d59f*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite((int)v20, (uint8_t *)&v25, &unk_81F19C, 0); /*0x49d5bd*/
+  sprintf(Buffer, (const char *const)&g_abs_81F108, Int_Overwrite + 1); /*0x49d5d1*/
+  INIClass::GetString(v20, &v25, (uint8_t *)Buffer, &g_abs_81F108, (INIClass *)aP1, 260); /*0x49d602*/
+  if ( strcmp((const char *)aP1, g_abs_81F108) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   HashTable::DestroyHashTableINIClass((void **)v20); /*0x49d644*/
   *(unsigned int *)aP1a.__pad_0 = &vt_CCFileClass; /*0x49d64d*/
@@ -2444,7 +2444,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   int v9; // esi
   int v10; // eax
   char v11; // al
-  unsigned __int8 v12; // al
+  uint8_t v12; // al
   char v13; // al
   char v14; // al
   char *v15; // ebp
@@ -2453,7 +2453,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   int v18; // esi
   int v19; // eax
   char v20; // al
-  unsigned __int8 v21; // al
+  uint8_t v21; // al
   char v22; // al
   int v23; // [esp+Ch] [ebp-1ACh]
   int v24; // [esp+14h] [ebp-1A4h]
@@ -2463,12 +2463,12 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   if ( !*((unsigned char *)this + 108) ) /*0x49d68b*/
     return 0; /*0x49d68b*/
   v3 = *((unsigned int *)this + 17); /*0x49d6a3*/
-  if ( !MEMORY[0x89F578] ) /*0x49d6a8*/
-    CampaignClass::LoadFromINI((int)&MEMORY[0x89F518]); /*0x49d6af*/
+  if ( !g_abs_89F578 ) /*0x49d6a8*/
+    CampaignClass::LoadFromINI((int)&g_abs_89F518); /*0x49d6af*/
   v4 = 0; /*0x49d6b4*/
-  if ( v3 < 0 || v3 >= MEMORY[0x89F574] ) /*0x49d6c0*/
+  if ( v3 < 0 || v3 >= g_abs_89F574 ) /*0x49d6c0*/
     return 0; /*0x49d694*/
-  v24 = MEMORY[0x89F570] + 76 * v3; /*0x49d6d8*/
+  v24 = g_abs_89F570 + 76 * v3; /*0x49d6d8*/
   sprintf( /*0x49d70c*/
     Buffer,
     stru_81F218,
@@ -2518,28 +2518,28 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
         break; /*0x49d7f9*/
       if ( isalnum(*v8) )
       {
-        MEMORY[0x89ED18][v7] = *v8; /*0x49d866*/
+        g_abs_89ED18[v7] = *v8; /*0x49d866*/
       }
       else
       {
-        MEMORY[0x89ED18][v7] = 61; /*0x49d80b*/
+        g_abs_89ED18[v7] = 61; /*0x49d80b*/
         v9 = v7 + 1; /*0x49d811*/
         v10 = *v8 >> 4; /*0x49d815*/
         if ( (unsigned int)v10 >= 0x10 )
           v11 = 0; /*0x49d82c*/
         else
           v11 = v10 >= 10 ? v10 + 55 : v10 + 48;
-        MEMORY[0x89ED18][v9] = v11; /*0x49d82e*/
+        g_abs_89ED18[v9] = v11; /*0x49d82e*/
         v7 = v9 + 1; /*0x49d836*/
         v12 = *v8 & 0xF; /*0x49d837*/
         if ( v12 > 0xFu )
         {
-          MEMORY[0x89ED18][v7] = 0; /*0x49d85c*/
+          g_abs_89ED18[v7] = 0; /*0x49d85c*/
         }
         else
         {
           v13 = (*v8 & 0xFu) >= 0xA ? v12 + 55 : v12 + 48;
-          MEMORY[0x89ED18][v7] = v13; /*0x49d848*/
+          g_abs_89ED18[v7] = v13; /*0x49d848*/
         }
       }
       v14 = v8[1]; /*0x49d86c*/
@@ -2548,10 +2548,10 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
     }
     while ( v14 );
   }
-  MEMORY[0x89ED18][v7] = 0; /*0x49d883*/
-  strcat(Buffer, MEMORY[0x89ED18]); /*0x49d8a5*/
+  g_abs_89ED18[v7] = 0; /*0x49d883*/
+  strcat(Buffer, g_abs_89ED18); /*0x49d8a5*/
   v15 = (unsigned char *)this + 28; /*0x49d8b0*/
-  strcat(Buffer, MEMORY[0x817F70]); /*0x49d8d4*/
+  strcat(Buffer, g_abs_817F70); /*0x49d8d4*/
   v16 = *v15; /*0x49d8d6*/
   for ( i = 0; v16; ++v15 )
   {
@@ -2559,35 +2559,35 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
       break; /*0x49d8f0*/
     if ( isalnum(v16) )
     {
-      MEMORY[0x89ED18][i] = *v15; /*0x49d964*/
+      g_abs_89ED18[i] = *v15; /*0x49d964*/
     }
     else
     {
-      MEMORY[0x89ED18][i] = 61; /*0x49d906*/
+      g_abs_89ED18[i] = 61; /*0x49d906*/
       v18 = i + 1; /*0x49d90c*/
       v19 = *v15 >> 4; /*0x49d911*/
       if ( (unsigned int)v19 >= 0x10 )
         v20 = 0; /*0x49d928*/
       else
         v20 = v19 >= 10 ? v19 + 55 : v19 + 48;
-      MEMORY[0x89ED18][v18] = v20; /*0x49d92a*/
+      g_abs_89ED18[v18] = v20; /*0x49d92a*/
       i = v18 + 1; /*0x49d933*/
       v21 = *v15 & 0xF; /*0x49d934*/
       if ( v21 > 0xFu )
       {
-        MEMORY[0x89ED18][i] = 0; /*0x49d959*/
+        g_abs_89ED18[i] = 0; /*0x49d959*/
       }
       else
       {
         v22 = (*v15 & 0xFu) >= 0xA ? v21 + 55 : v21 + 48;
-        MEMORY[0x89ED18][i] = v22; /*0x49d945*/
+        g_abs_89ED18[i] = v22; /*0x49d945*/
       }
     }
     v16 = v15[1]; /*0x49d96a*/
     ++i; /*0x49d96d*/
   }
-  MEMORY[0x89ED18][i] = 0; /*0x49d981*/
-  strcat(Buffer, MEMORY[0x89ED18]); /*0x49d9a3*/
+  g_abs_89ED18[i] = 0; /*0x49d981*/
+  strcat(Buffer, g_abs_89ED18); /*0x49d9a3*/
   Debug::Log(); /*0x49d9b6*/
   Network::SendOptionsGame(Buffer); /*0x49d9c2*/
   Debug::Log(); /*0x49d9cc*/
@@ -2597,7 +2597,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
 }
 // 0x49E7C0
 namespace gamemd {
-AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
+AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char * Block, char a2)
 {
 
   int v3; // eax
@@ -2612,7 +2612,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
   ObjectClass *v13; // eax
   char *v14; // [esp+Ch] [ebp-4h]
 
-  if ( (a2 & 2) != 0 ) /*0x49e7cc*/
+  if ( (Block & 2) != 0 ) /*0x49e7cc*/
   {
     v3 = *((unsigned int *)Block - 1); /*0x49e7d2*/
     v4 = Block - 4; /*0x49e7d5*/
@@ -2632,7 +2632,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
         *((unsigned int *)v7 - 1) = &vt_VectorClass_DynamicVectorClass_char; /*0x49e80b*/
         if ( v9 && v7[9] ) /*0x49e812*/
         {
-          __3_YAXPAX_Z(v9); /*0x49e818*/
+          RA2_OPDEL(v9); /*0x49e818*/
           *(unsigned int *)v7 = 0; /*0x49e820*/
         }
         v7[9] = 0; /*0x49e822*/
@@ -2641,7 +2641,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
         *((unsigned int *)v7 - 7) = &vt_VectorClass_DynamicVectorClass_char; /*0x49e82b*/
         if ( v10 && *(v7 - 15) ) /*0x49e832*/
         {
-          __3_YAXPAX_Z(v10); /*0x49e838*/
+          RA2_OPDEL(v10); /*0x49e838*/
           *((unsigned int *)v7 - 6) = 0; /*0x49e840*/
         }
         --v8; /*0x49e843*/
@@ -2651,8 +2651,8 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
       while ( v8 ); /*0x49e84a*/
       v4 = v14; /*0x49e84c*/
     }
-    if ( (a2 & 1) != 0 ) /*0x49e856*/
-      __3_YAXPAX_Z(v4); /*0x49e859*/
+    if ( (Block & 1) != 0 ) /*0x49e856*/
+      RA2_OPDEL(v4); /*0x49e859*/
     return v4; /*0x49e861*/
   }
   else
@@ -2663,7 +2663,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
     *((unsigned int *)Block + 10) = &vt_VectorClass_DynamicVectorClass_char; /*0x49e886*/
     if ( v12 && *(Block + 53) ) /*0x49e88b*/
     {
-      __3_YAXPAX_Z(v12); /*0x49e891*/
+      RA2_OPDEL(v12); /*0x49e891*/
       *((unsigned int *)Block + 11) = 0; /*0x49e899*/
     }
     *(Block + 53) = 0; /*0x49e89c*/
@@ -2672,13 +2672,13 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
     *((unsigned int *)Block + 4) = &vt_VectorClass_DynamicVectorClass_char; /*0x49e8a5*/
     if ( v13 && *(Block + 29) ) /*0x49e8ac*/
     {
-      __3_YAXPAX_Z(v13); /*0x49e8b2*/
+      RA2_OPDEL(v13); /*0x49e8b2*/
       *((unsigned int *)Block + 5) = 0; /*0x49e8ba*/
     }
     *(Block + 29) = 0; /*0x49e8c1*/
     *((unsigned int *)Block + 6) = 0; /*0x49e8c6*/
-    if ( (a2 & 1) != 0 ) /*0x49e8c9*/
-      __3_YAXPAX_Z(Block); /*0x49e8cc*/
+    if ( (Block & 1) != 0 ) /*0x49e8c9*/
+      RA2_OPDEL(Block); /*0x49e8cc*/
     return Block; /*0x49e8d4*/
   }
 
@@ -2752,7 +2752,7 @@ char E4Recv_4912B0::sub_4912B0(int a2, unsigned char * a3, int a4, int a5, int a
   while ( --v10 ) /*0x4912d7*/
   {
     ++v11; /*0x4912da*/
-    LOBYTE(v13) = *a3++; /*0x4912dd*/
+    IDA_LOBYTE(v13) = *a3++; /*0x4912dd*/
     if ( (unsigned char)v13 ) /*0x4912e2*/
       *v11 = *(unsigned short *)(v9 + 2 * v13); /*0x4912e8*/
   }
@@ -2835,7 +2835,7 @@ char E4Recv_491670::sub_491670(unsigned char * a1, char * a2, int a4, int a5, in
       result = *a2++; /*0x491685*/
       if ( result ) /*0x49168a*/
       {
-        result = *(unsigned char *)(*((unsigned int *)this + 1) + (unsigned __int8)*a1); /*0x491693*/
+        result = *(unsigned char *)(*((unsigned int *)this + 1) + (uint8_t)*a1); /*0x491693*/
         *a1 = result; /*0x491696*/
       }
       ++a1; /*0x491698*/
@@ -2910,7 +2910,7 @@ namespace gamemd {
 unsigned char E4Recv_491740::sub_491740(unsigned char * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  unsigned __int8 result; // al
+  uint8_t result; // al
   int v12; // edi
 
   result = a4; /*0x491740*/
@@ -2922,7 +2922,7 @@ unsigned char E4Recv_491740::sub_491740(unsigned char * a1, unsigned char * a2, 
       result = *a2++; /*0x491756*/
       if ( result ) /*0x49175f*/
       {
-        result = *(unsigned char *)(*(unsigned __int8 *)(*((unsigned int *)this + 1) + result) + *((unsigned int *)this + 2)); /*0x491776*/
+        result = *(unsigned char *)(*(uint8_t *)(*((unsigned int *)this + 1) + result) + *((unsigned int *)this + 2)); /*0x491776*/
         *a1 = result; /*0x491779*/
       }
       ++a1; /*0x49177b*/
@@ -3000,8 +3000,8 @@ int E4Recv_491820::sub_491820(int a2, unsigned char * a3, int a4, int a5, int a6
   int result; // eax
   int v13; // esi
   int v16; // edi
-  unsigned __int8 v17; // al
-  unsigned __int8 v18; // [esp+18h] [ebp+Ch]
+  uint8_t v17; // al
+  uint8_t v18; // [esp+18h] [ebp+Ch]
 
   result = a5; /*0x491820*/
   v13 = a2; /*0x49182a*/
@@ -3036,10 +3036,10 @@ int E4Recv_491820::sub_491820(int a2, unsigned char * a3, int a4, int a5, int a6
     }
     else
     {
-      LOBYTE(result) = *a3++; /*0x491869*/
-      result = (unsigned __int8)result; /*0x491874*/
-      v16 -= (unsigned __int8)result; /*0x491879*/
-      v13 += (unsigned __int8)result; /*0x49187b*/
+      IDA_LOBYTE(result) = *a3++; /*0x491869*/
+      result = (uint8_t)result; /*0x491874*/
+      v16 -= (uint8_t)result; /*0x491879*/
+      v13 += (uint8_t)result; /*0x49187b*/
     }
   }
   return result; /*0x491898*/
@@ -3077,7 +3077,7 @@ char E4Recv_4918E0::sub_4918E0(int arg0, unsigned char * a2, int a4, int a5, int
   int v14; // ecx
   int v15; // eax
   int v17; // edi
-  unsigned __int8 v18; // al
+  uint8_t v18; // al
 
   v13 = arg0; /*0x4918e9*/
   v14 = **((unsigned int **)this + 1); /*0x4918f1*/
@@ -3107,14 +3107,14 @@ char E4Recv_4918E0::sub_4918E0(int arg0, unsigned char * a2, int a4, int a5, int
     {
       ++v13; /*0x491950*/
       --v17; /*0x491951*/
-      LOBYTE(v15) = *(unsigned char *)(*(unsigned __int8 *)(v18 + v14) + *((unsigned int *)this + 2)); /*0x491958*/
+      IDA_LOBYTE(v15) = *(unsigned char *)(*(uint8_t *)(v18 + v14) + *((unsigned int *)this + 2)); /*0x491958*/
       *(unsigned char *)(v13 - 1) = v15; /*0x49195b*/
     }
     else
     {
-      LOBYTE(v15) = *a2++; /*0x49192f*/
-      v17 -= (unsigned __int8)v15; /*0x49193f*/
-      v13 += (unsigned __int8)v15; /*0x491941*/
+      IDA_LOBYTE(v15) = *a2++; /*0x49192f*/
+      v17 -= (uint8_t)v15; /*0x49193f*/
+      v13 += (uint8_t)v15; /*0x491941*/
     }
   }
   return v15; /*0x491962*/
@@ -3150,7 +3150,7 @@ int E4Recv_4919B0::sub_4919B0(unsigned char * a1, unsigned char * a2, int a4, in
 {
 
   int result; // eax
-  unsigned __int8 *v13; // esi
+  uint8_t *v13; // esi
   int v16; // edi
   int v18; // ecx
 
@@ -3185,10 +3185,10 @@ int E4Recv_4919B0::sub_4919B0(unsigned char * a1, unsigned char * a2, int a4, in
     }
     else
     {
-      LOBYTE(result) = *a2++; /*0x4919f5*/
-      result = (unsigned __int8)result; /*0x491a00*/
-      v16 -= (unsigned __int8)result; /*0x491a05*/
-      v13 += (unsigned __int8)result; /*0x491a07*/
+      IDA_LOBYTE(result) = *a2++; /*0x4919f5*/
+      result = (uint8_t)result; /*0x491a00*/
+      v16 -= (uint8_t)result; /*0x491a05*/
+      v13 += (uint8_t)result; /*0x491a07*/
     }
   }
   return result; /*0x491a1e*/
@@ -3226,7 +3226,7 @@ char E4Recv_491A70::sub_491A70(int arg0, unsigned char * a2, int a4, int a5, int
   int v11; // eax
   int v13; // esi
   int v16; // edi
-  unsigned __int8 v17; // al
+  uint8_t v17; // al
 
   v11 = a5; /*0x491a70*/
   v13 = arg0; /*0x491a7a*/
@@ -3255,14 +3255,14 @@ char E4Recv_491A70::sub_491A70(int arg0, unsigned char * a2, int a4, int a5, int
     {
       ++v13; /*0x491adf*/
       --v16; /*0x491ae0*/
-      LOBYTE(v11) = *(unsigned char *)(*(unsigned __int8 *)(*((unsigned int *)this + 1) + v17) + *((unsigned int *)this + 2)); /*0x491ae7*/
+      IDA_LOBYTE(v11) = *(unsigned char *)(*(uint8_t *)(*((unsigned int *)this + 1) + v17) + *((unsigned int *)this + 2)); /*0x491ae7*/
       *(unsigned char *)(v13 - 1) = v11; /*0x491aea*/
     }
     else
     {
-      LOBYTE(v11) = *a2++; /*0x491aba*/
-      v16 -= (unsigned __int8)v11; /*0x491aca*/
-      v13 += (unsigned __int8)v11; /*0x491acc*/
+      IDA_LOBYTE(v11) = *a2++; /*0x491aba*/
+      v16 -= (uint8_t)v11; /*0x491aca*/
+      v13 += (uint8_t)v11; /*0x491acc*/
     }
   }
   return v11; /*0x491af2*/
@@ -3473,7 +3473,7 @@ void E4Recv_4924C0::sub_4924C0(int a2, unsigned char * a3, int a4, int a5, int a
 {
 
   int v9; // esi
-  unsigned __int8 v12; // [esp+14h] [ebp+Ch]
+  uint8_t v12; // [esp+14h] [ebp+Ch]
 
   v9 = a4; /*0x4924c1*/
   if ( a4 > 0 ) /*0x4924ca*/
@@ -3554,20 +3554,20 @@ char E4Recv_492590::sub_492590(unsigned short * a1, unsigned char * a2, int a4, 
 {
 
   int v9; // edi
-  __int16 v10; // ax
+  int16_t v10; // ax
   int v13; // ebp
 
   v9 = **((unsigned int **)this + 1); /*0x492594*/
-  LOBYTE(v10) = a4; /*0x492596*/
+  IDA_LOBYTE(v10) = a4; /*0x492596*/
   if ( a4 > 0 ) /*0x49259c*/
   {
     v13 = a4; /*0x4925a9*/
     do /*0x4925d2*/
     {
-      LOBYTE(v10) = *a2++; /*0x4925ab*/
+      IDA_LOBYTE(v10) = *a2++; /*0x4925ab*/
       if ( (unsigned char)v10 ) /*0x4925b4*/
       {
-        v10 = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * *(unsigned __int8 *)((unsigned __int8)v10 + v9)); /*0x4925c7*/
+        v10 = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * *(uint8_t *)((uint8_t)v10 + v9)); /*0x4925c7*/
         *a1 = v10; /*0x4925cb*/
       }
       ++a1; /*0x4925ce*/
@@ -3642,16 +3642,16 @@ namespace gamemd {
 char E4Recv_492670::sub_492670(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  __int16 v9; // ax
+  int16_t v9; // ax
   int v12; // edi
 
-  LOBYTE(v9) = a4; /*0x492670*/
+  IDA_LOBYTE(v9) = a4; /*0x492670*/
   if ( a4 > 0 ) /*0x492676*/
   {
     v12 = a4; /*0x492682*/
     do /*0x49269c*/
     {
-      LOBYTE(v9) = *a3++; /*0x492684*/
+      IDA_LOBYTE(v9) = *a3++; /*0x492684*/
       if ( (unsigned char)v9 ) /*0x492689*/
       {
         v9 = *((unsigned short *)this + 2) & (*a2 >> 1); /*0x492691*/
@@ -3669,12 +3669,12 @@ char E4Recv_492670::sub_492670(unsigned short * a2, unsigned char * a3, int a4, 
 
 // 0x4926B0
 namespace gamemd {
-int E4Recv_4926B0::sub_4926B0(int v9, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_4926B0::sub_4926B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
   return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4926da*/
            this,
-           v9,
+           a2,
            a3,
            a4,
            a5,
@@ -3828,14 +3828,14 @@ unsigned int E4Recv_492830::sub_492830(unsigned short * a2, unsigned char * a3, 
   int v14; // [esp+10h] [ebp-4h]
 
   v14 = *((unsigned int *)this + 1); /*0x49284b*/
-  v11 = *(unsigned __int16 *)((char *)this + 8); /*0x492854*/
+  v11 = *(uint16_t *)((char *)this + 8); /*0x492854*/
   do /*0x49287f*/
   {
-    result = (unsigned __int8)*a3; /*0x49285c*/
+    result = (uint8_t)*a3; /*0x49285c*/
     if ( *a3 ) /*0x49285c*/
     {
-      LOWORD(result) = *(unsigned short *)(v14 + 2 * result); /*0x492862*/
-      result = (v11 & ((unsigned __int16)*a2 >> 1)) + (v11 & (result >> 1)); /*0x492873*/
+      IDA_LOWORD(result) = *(unsigned short *)(v14 + 2 * result); /*0x492862*/
+      result = (v11 & ((uint16_t)*a2 >> 1)) + (v11 & (result >> 1)); /*0x492873*/
       *a2 = result; /*0x492875*/
     }
     ++a3; /*0x492878*/
@@ -3849,12 +3849,12 @@ unsigned int E4Recv_492830::sub_492830(unsigned short * a2, unsigned char * a3, 
 
 // 0x492890
 namespace gamemd {
-int E4Recv_492890::sub_492890(int result, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492890::sub_492890(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
   return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4928ba*/
            this,
-           result,
+           a2,
            a3,
            a4,
            a5,
@@ -3909,20 +3909,20 @@ namespace gamemd {
 char E4Recv_492920::sub_492920(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
 
-  __int16 v9; // ax
+  int16_t v9; // ax
   int v12; // ebx
 
-  LOBYTE(v9) = a4; /*0x492920*/
+  IDA_LOBYTE(v9) = a4; /*0x492920*/
   if ( a4 > 0 ) /*0x492926*/
   {
     v12 = a4; /*0x492934*/
     do /*0x492971*/
     {
-      LOBYTE(v9) = *a3++; /*0x492936*/
+      IDA_LOBYTE(v9) = *a3++; /*0x492936*/
       if ( (unsigned char)v9 ) /*0x49293f*/
       {
         v9 = (*((unsigned short *)this + 4) & (*a2 >> 2)) /*0x492968*/
-           + 3 * (*((unsigned short *)this + 4) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)v9) >> 2));
+           + 3 * (*((unsigned short *)this + 4) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)v9) >> 2));
         *a2 = v9; /*0x49296a*/
       }
       ++a2; /*0x49296d*/
@@ -3937,12 +3937,12 @@ char E4Recv_492920::sub_492920(unsigned short * a2, unsigned char * a3, int a4, 
 
 // 0x492980
 namespace gamemd {
-int E4Recv_492980::sub_492980(int v9, int a3, int a4, int a5, int a6, int a7, int a8)
+int E4Recv_492980::sub_492980(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
 
   return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x4929aa*/
            this,
-           v9,
+           a2,
            a3,
            a4,
            a5,
@@ -3997,28 +3997,28 @@ namespace gamemd {
 unsigned short * E4Recv_492A10::sub_492A10(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   int v12; // ebp
   TacticalMap *v13; // edx
-  unsigned __int16 v14; // bx
+  uint16_t v14; // bx
 
   result = a5; /*0x492a14*/
   if ( a4 > 0 ) /*0x492a1a*/
   {
     v12 = a4; /*0x492a28*/
-    v13 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492a2a*/
+    v13 = *(TacticalMap **)&g_abs_87F8E4; /*0x492a2a*/
     do /*0x492a61*/
     {
       v14 = *result++; /*0x492a32*/
       if ( argC < v14 ) /*0x492a3c*/
       {
         *a1 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * *a2); /*0x492a49*/
-        v13 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492a4c*/
+        v13 = *(TacticalMap **)&g_abs_87F8E4; /*0x492a4c*/
       }
       ++a2; /*0x492a55*/
       ++a1; /*0x492a56*/
       if ( (unsigned int)result >= v13->TacticalMap_field_1C ) /*0x492a5b*/
-        result = (unsigned __int16 *)((char *)result - v13->TacticalMap_field_20); /*0x492a5d*/
+        result = (uint16_t *)((char *)result - v13->TacticalMap_field_20); /*0x492a5d*/
       --v12; /*0x492a60*/
     }
     while ( v12 ); /*0x492a61*/
@@ -4090,28 +4090,28 @@ namespace gamemd {
 unsigned short * E4Recv_492B00::sub_492B00(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
 {
 
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   unsigned int *v11; // esi
   int v13; // ebp
-  unsigned __int16 v14; // dx
+  uint16_t v14; // dx
 
   result = a6; /*0x492b04*/
   if ( a4 > 0 ) /*0x492b0a*/
   {
-    v11 = MEMORY[0x887644]; /*0x492b13*/
+    v11 = g_abs_887644; /*0x492b13*/
     v13 = a4; /*0x492b1e*/
     do /*0x492b61*/
     {
       v14 = *result++; /*0x492b22*/
       if ( a5 < v14 && *a3 ) /*0x492b32*/
       {
-        *a2 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a3); /*0x492b49*/
-        v11 = MEMORY[0x887644]; /*0x492b4c*/
+        *a2 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a3); /*0x492b49*/
+        v11 = g_abs_887644; /*0x492b4c*/
       }
       ++a3; /*0x492b55*/
       ++a2; /*0x492b56*/
       if ( (unsigned int)result >= v11[7] ) /*0x492b5b*/
-        result = (unsigned __int16 *)((char *)result - v11[8]); /*0x492b5d*/
+        result = (uint16_t *)((char *)result - v11[8]); /*0x492b5d*/
       --v13; /*0x492b60*/
     }
     while ( v13 ); /*0x492b61*/
@@ -4183,31 +4183,31 @@ namespace gamemd {
 unsigned short * E4Recv_492C00::sub_492C00(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   TacticalMap *v13; // edi
-  unsigned __int16 v14; // cx
+  uint16_t v14; // cx
   int v15; // [esp+4h] [ebp-4h]
-  unsigned __int16 *a5a; // [esp+1Ch] [ebp+14h]
+  uint16_t *a5a; // [esp+1Ch] [ebp+14h]
 
   result = a5; /*0x492c04*/
   v15 = **((unsigned int **)this + 1); /*0x492c0d*/
   if ( a4 > 0 ) /*0x492c17*/
   {
-    v13 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492c24*/
-    a5a = (unsigned __int16 *)a4; /*0x492c2a*/
+    v13 = *(TacticalMap **)&g_abs_87F8E4; /*0x492c24*/
+    a5a = (uint16_t *)a4; /*0x492c2a*/
     do /*0x492c82*/
     {
       v14 = *result++; /*0x492c34*/
       if ( argC < v14 && *a2 ) /*0x492c42*/
       {
-        *a1 = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * *(unsigned __int8 *)((unsigned __int8)*a2 + v15)); /*0x492c62*/
-        v13 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492c65*/
+        *a1 = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * *(uint8_t *)((uint8_t)*a2 + v15)); /*0x492c62*/
+        v13 = *(TacticalMap **)&g_abs_87F8E4; /*0x492c65*/
       }
       ++a2; /*0x492c6e*/
       ++a1; /*0x492c6f*/
       if ( (unsigned int)result >= v13->TacticalMap_field_1C ) /*0x492c74*/
-        result = (unsigned __int16 *)((char *)result - v13->TacticalMap_field_20); /*0x492c76*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x492c7e*/
+        result = (uint16_t *)((char *)result - v13->TacticalMap_field_20); /*0x492c76*/
+      a5a = (uint16_t *)((char *)a5a - 1); /*0x492c7e*/
     }
     while ( a5a ); /*0x492c82*/
   }
@@ -4278,15 +4278,15 @@ namespace gamemd {
 unsigned short * E4Recv_492D20::sub_492D20(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   TacticalMap *v10; // esi
   int v12; // ebx
-  unsigned __int16 v14; // bp
+  uint16_t v14; // bp
 
   result = a5; /*0x492d24*/
   if ( a4 > 0 ) /*0x492d2a*/
   {
-    v10 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492d2f*/
+    v10 = *(TacticalMap **)&g_abs_87F8E4; /*0x492d2f*/
     v12 = a4; /*0x492d3a*/
     do /*0x492d75*/
     {
@@ -4294,12 +4294,12 @@ unsigned short * E4Recv_492D20::sub_492D20(unsigned short * a1, unsigned char * 
       if ( argC < v14 && *a2 ) /*0x492d4e*/
       {
         *a1 = *(unsigned short *)((unsigned int *)this + 1) & (*a1 >> 1); /*0x492d5d*/
-        v10 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492d60*/
+        v10 = *(TacticalMap **)&g_abs_87F8E4; /*0x492d60*/
       }
       ++a2; /*0x492d69*/
       ++a1; /*0x492d6a*/
       if ( (unsigned int)result >= v10->TacticalMap_field_1C ) /*0x492d6f*/
-        result = (unsigned __int16 *)((char *)result - v10->TacticalMap_field_20); /*0x492d71*/
+        result = (uint16_t *)((char *)result - v10->TacticalMap_field_20); /*0x492d71*/
       --v12; /*0x492d74*/
     }
     while ( v12 ); /*0x492d75*/
@@ -4373,29 +4373,29 @@ int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, i
 
   int result; // eax
   TacticalMap *v12; // esi
-  unsigned __int16 v14; // ax
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
+  uint16_t v14; // ax
+  uint16_t *a5a; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x492e10*/
   if ( a4 > 0 ) /*0x492e1a*/
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492e23*/
-    a5a = (unsigned __int16 *)a4; /*0x492e2e*/
+    v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x492e23*/
+    a5a = (uint16_t *)a4; /*0x492e2e*/
     do /*0x492e95*/
     {
       v14 = *a5++; /*0x492e38*/
       if ( argC < v14 && *a2 ) /*0x492e46*/
       {
         *a1 = 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*a1 >> 2)) /*0x492e75*/
-            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a2) >> 2));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492e78*/
+            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a2) >> 2));
+        v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x492e78*/
       }
       ++a2; /*0x492e81*/
       ++a1; /*0x492e82*/
       if ( (unsigned int)a5 >= v12->TacticalMap_field_1C ) /*0x492e87*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12->TacticalMap_field_20); /*0x492e89*/
+        a5 = (uint16_t *)((char *)a5 - v12->TacticalMap_field_20); /*0x492e89*/
       result = (int)a5a - 1; /*0x492e90*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x492e91*/
+      a5a = (uint16_t *)((char *)a5a - 1); /*0x492e91*/
     }
     while ( a5a ); /*0x492e95*/
   }
@@ -4466,30 +4466,30 @@ namespace gamemd {
 unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   TacticalMap *v12; // edi
-  unsigned __int16 v13; // dx
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
+  uint16_t v13; // dx
+  uint16_t *a5a; // [esp+14h] [ebp+14h]
 
   result = a5; /*0x492f34*/
   if ( a4 > 0 ) /*0x492f3a*/
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492f48*/
-    a5a = (unsigned __int16 *)a4; /*0x492f4e*/
+    v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x492f48*/
+    a5a = (uint16_t *)a4; /*0x492f4e*/
     do /*0x492fb1*/
     {
       v13 = *result++; /*0x492f58*/
       if ( argC < v13 && *a2 ) /*0x492f66*/
       {
         *a1 = (*(unsigned short *)((unsigned int *)this + 2) & (*a1 >> 1)) /*0x492f91*/
-            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a2) >> 1));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x492f94*/
+            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a2) >> 1));
+        v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x492f94*/
       }
       ++a2; /*0x492f9d*/
       ++a1; /*0x492f9e*/
       if ( (unsigned int)result >= v12->TacticalMap_field_1C ) /*0x492fa3*/
-        result = (unsigned __int16 *)((char *)result - v12->TacticalMap_field_20); /*0x492fa5*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x492fad*/
+        result = (uint16_t *)((char *)result - v12->TacticalMap_field_20); /*0x492fa5*/
+      a5a = (uint16_t *)((char *)a5a - 1); /*0x492fad*/
     }
     while ( a5a ); /*0x492fb1*/
   }
@@ -4562,29 +4562,29 @@ int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, i
 
   int result; // eax
   TacticalMap *v12; // esi
-  unsigned __int16 v14; // ax
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
+  uint16_t v14; // ax
+  uint16_t *a5a; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x493050*/
   if ( a4 > 0 ) /*0x49305a*/
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493063*/
-    a5a = (unsigned __int16 *)a4; /*0x49306e*/
+    v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x493063*/
+    a5a = (uint16_t *)a4; /*0x49306e*/
     do /*0x4930d5*/
     {
       v14 = *a5++; /*0x493078*/
       if ( argC < v14 && *a2 ) /*0x493086*/
       {
         *a1 = (*(unsigned short *)((unsigned int *)this + 2) & (*a1 >> 2)) /*0x4930b5*/
-            + 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a2) >> 2));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x4930b8*/
+            + 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a2) >> 2));
+        v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x4930b8*/
       }
       ++a2; /*0x4930c1*/
       ++a1; /*0x4930c2*/
       if ( (unsigned int)a5 >= v12->TacticalMap_field_1C ) /*0x4930c7*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12->TacticalMap_field_20); /*0x4930c9*/
+        a5 = (uint16_t *)((char *)a5 - v12->TacticalMap_field_20); /*0x4930c9*/
       result = (int)a5a - 1; /*0x4930d0*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x4930d1*/
+      a5a = (uint16_t *)((char *)a5a - 1); /*0x4930d1*/
     }
     while ( a5a ); /*0x4930d5*/
   }
@@ -4657,29 +4657,29 @@ int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, i
 
   int result; // eax
   TacticalMap *v12; // esi
-  unsigned __int16 v14; // ax
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
+  uint16_t v14; // ax
+  uint16_t *a5a; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x493170*/
   if ( a4 > 0 ) /*0x49317a*/
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493187*/
-    a5a = (unsigned __int16 *)a4; /*0x493192*/
+    v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x493187*/
+    a5a = (uint16_t *)a4; /*0x493192*/
     do /*0x4931fe*/
     {
       v14 = *a5++; /*0x49319c*/
       if ( argC < v14 && *a2 ) /*0x4931aa*/
       {
         *a1 = 3 * (*(unsigned short *)((unsigned int *)this + 2) & (a1[a9] >> 2)) /*0x4931de*/
-            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a2) >> 2));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x4931e1*/
+            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a2) >> 2));
+        v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x4931e1*/
       }
       ++a2; /*0x4931ea*/
       ++a1; /*0x4931eb*/
       if ( (unsigned int)a5 >= v12->TacticalMap_field_1C ) /*0x4931f0*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12->TacticalMap_field_20); /*0x4931f2*/
+        a5 = (uint16_t *)((char *)a5 - v12->TacticalMap_field_20); /*0x4931f2*/
       result = (int)a5a - 1; /*0x4931f9*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x4931fa*/
+      a5a = (uint16_t *)((char *)a5a - 1); /*0x4931fa*/
     }
     while ( a5a ); /*0x4931fe*/
   }
@@ -4753,30 +4753,30 @@ namespace gamemd {
 unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
 
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   TacticalMap *v12; // edi
-  unsigned __int16 v13; // dx
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
+  uint16_t v13; // dx
+  uint16_t *a5a; // [esp+14h] [ebp+14h]
 
   result = a5; /*0x4932a4*/
   if ( a4 > 0 ) /*0x4932aa*/
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x4932bc*/
-    a5a = (unsigned __int16 *)a4; /*0x4932c2*/
+    v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x4932bc*/
+    a5a = (uint16_t *)a4; /*0x4932c2*/
     do /*0x49332a*/
     {
       v13 = *result++; /*0x4932cc*/
       if ( argC < v13 && *a2 ) /*0x4932da*/
       {
         *a1 = (*(unsigned short *)((unsigned int *)this + 2) & (a1[a9] >> 1)) /*0x49330a*/
-            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a2) >> 1));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49330d*/
+            + (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a2) >> 1));
+        v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x49330d*/
       }
       ++a2; /*0x493316*/
       ++a1; /*0x493317*/
       if ( (unsigned int)result >= v12->TacticalMap_field_1C ) /*0x49331c*/
-        result = (unsigned __int16 *)((char *)result - v12->TacticalMap_field_20); /*0x49331e*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x493326*/
+        result = (uint16_t *)((char *)result - v12->TacticalMap_field_20); /*0x49331e*/
+      a5a = (uint16_t *)((char *)a5a - 1); /*0x493326*/
     }
     while ( a5a ); /*0x49332a*/
   }
@@ -4852,29 +4852,29 @@ int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, i
 
   int result; // eax
   TacticalMap *v12; // esi
-  unsigned __int16 v14; // ax
-  unsigned __int16 *a5a; // [esp+14h] [ebp+14h]
+  uint16_t v14; // ax
+  uint16_t *a5a; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x4933d0*/
   if ( a4 > 0 ) /*0x4933da*/
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x4933e7*/
-    a5a = (unsigned __int16 *)a4; /*0x4933f2*/
+    v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x4933e7*/
+    a5a = (uint16_t *)a4; /*0x4933f2*/
     do /*0x49345e*/
     {
       v14 = *a5++; /*0x4933fc*/
       if ( argC < v14 && *a2 ) /*0x49340a*/
       {
         *a1 = (*(unsigned short *)((unsigned int *)this + 2) & (a1[a9] >> 2)) /*0x49343e*/
-            + 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a2) >> 2));
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493441*/
+            + 3 * (*(unsigned short *)((unsigned int *)this + 2) & (*(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a2) >> 2));
+        v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x493441*/
       }
       ++a2; /*0x49344a*/
       ++a1; /*0x49344b*/
       if ( (unsigned int)a5 >= v12->TacticalMap_field_1C ) /*0x493450*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12->TacticalMap_field_20); /*0x493452*/
+        a5 = (uint16_t *)((char *)a5 - v12->TacticalMap_field_20); /*0x493452*/
       result = (int)a5a - 1; /*0x493459*/
-      a5a = (unsigned __int16 *)((char *)a5a - 1); /*0x49345a*/
+      a5a = (uint16_t *)((char *)a5a - 1); /*0x49345a*/
     }
     while ( a5a ); /*0x49345e*/
   }
@@ -4955,15 +4955,15 @@ unsigned short * E4Recv_493500::sub_493500(unsigned short * a1, unsigned char * 
   result = a5; /*0x493500*/
   if ( a4 > 0 ) /*0x49350d*/
   {
-    v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49351a*/
+    v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x49351a*/
     a5a = (unsigned short *)a4; /*0x493520*/
     do /*0x493566*/
     {
-      if ( argC < (unsigned __int16)*result ) /*0x49352f*/
+      if ( argC < (uint16_t)*result ) /*0x49352f*/
       {
         *a1 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * *a2); /*0x49353c*/
-        *result = (unsigned __int8)argC; /*0x493543*/
-        v12 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493546*/
+        *result = (uint8_t)argC; /*0x493543*/
+        v12 = *(TacticalMap **)&g_abs_87F8E4; /*0x493546*/
       }
       ++result; /*0x49354f*/
       ++a2; /*0x493552*/
@@ -5048,15 +5048,15 @@ unsigned short * E4Recv_493600::sub_493600(unsigned short * a2, unsigned char * 
   result = a6; /*0x493604*/
   if ( a4 > 0 ) /*0x49360a*/
   {
-    v10 = MEMORY[0x887644]; /*0x493613*/
+    v10 = g_abs_887644; /*0x493613*/
     v13 = a4; /*0x49361e*/
     do /*0x493670*/
     {
-      if ( a5 < (unsigned __int16)*result && *a3 ) /*0x493633*/
+      if ( a5 < (uint16_t)*result && *a3 ) /*0x493633*/
       {
-        *a2 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * (unsigned __int8)*a3); /*0x49364a*/
+        *a2 = *(unsigned short *)(*((unsigned int *)this + 1) + 2 * (uint8_t)*a3); /*0x49364a*/
         *result = a5; /*0x49364d*/
-        v10 = MEMORY[0x887644]; /*0x493650*/
+        v10 = g_abs_887644; /*0x493650*/
       }
       ++result; /*0x493659*/
       ++a3; /*0x49365c*/
@@ -5143,15 +5143,15 @@ unsigned short * E4Recv_493710::sub_493710(unsigned short * a1, unsigned char * 
   v10 = **((unsigned int **)this + 1); /*0x493722*/
   if ( a4 > 0 ) /*0x493724*/
   {
-    v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x49372d*/
+    v11 = *(TacticalMap **)&g_abs_87F8E4; /*0x49372d*/
     a5a = (unsigned short *)a4; /*0x493738*/
     do /*0x493793*/
     {
-      if ( argC < (unsigned __int16)*result && *a2 ) /*0x49374d*/
+      if ( argC < (uint16_t)*result && *a2 ) /*0x49374d*/
       {
-        *a1 = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * *(unsigned __int8 *)((unsigned __int8)*a2 + v10)); /*0x49376d*/
+        *a1 = *(unsigned short *)(*((unsigned int *)this + 2) + 2 * *(uint8_t *)((uint8_t)*a2 + v10)); /*0x49376d*/
         *result = argC; /*0x493770*/
-        v11 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493773*/
+        v11 = *(TacticalMap **)&g_abs_87F8E4; /*0x493773*/
       }
       ++result; /*0x49377c*/
       ++a2; /*0x49377f*/
@@ -5239,15 +5239,15 @@ unsigned short * E4Recv_493830::sub_493830(unsigned short * a1, unsigned char * 
   result = a5; /*0x493834*/
   if ( a4 > 0 ) /*0x49383a*/
   {
-    v10 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493843*/
+    v10 = *(TacticalMap **)&g_abs_87F8E4; /*0x493843*/
     a5a = (unsigned short *)a4; /*0x49384e*/
     do /*0x493894*/
     {
-      if ( argC < (unsigned __int16)*result && *a2 ) /*0x49385f*/
+      if ( argC < (uint16_t)*result && *a2 ) /*0x49385f*/
       {
         *a1 = *(unsigned short *)((unsigned int *)this + 1) & (*a1 >> 1); /*0x49386e*/
         *result = argC; /*0x493871*/
-        v10 = *(TacticalMap **)&MEMORY[0x87F8E4].__pad_5568[10232]; /*0x493874*/
+        v10 = *(TacticalMap **)&g_abs_87F8E4; /*0x493874*/
       }
       ++result; /*0x49387d*/
       ++a2; /*0x493880*/
@@ -5354,8 +5354,8 @@ unsigned short * E4Recv_4963F0::sub_4963F0(unsigned short * a1, unsigned char * 
   unsigned short *result; // eax
   int v15; // edx
   int v16; // edi
-  unsigned __int8 v17; // dl
-  unsigned __int8 v18; // dl
+  uint8_t v17; // dl
+  uint8_t v18; // dl
 
   v11 = a5; /*0x4963f0*/
   result = a1; /*0x496400*/
@@ -5496,7 +5496,7 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
   unsigned short *v14; // esi
   int v17; // eax
   RLEBlitTransDarkenZRead_G *v18; // ebx
-  unsigned __int8 v20; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496821*/
@@ -5530,7 +5530,7 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
     {
       v12 += 2; /*0x4968ad*/
       v21 = a6 - *a10++; /*0x4968b0*/
-      if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x4968bb*/
+      if ( v21 < *(uint16_t *)(v12 - 2) ) /*0x4968bb*/
         *v14 = *(unsigned short *)((unsigned int *)this + 1) & (*v14 >> 1); /*0x4968cb*/
       v18 = (RLEBlitTransDarkenZRead_G *)((char *)v18 - 1); /*0x4968ce*/
       ++v14; /*0x4968cf*/
@@ -5779,7 +5779,7 @@ BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499ca9*/
   if ( (a2 & 1) != 0 ) /*0x499caf*/
-    __3_YAXPAX_Z(this); /*0x499cb2*/
+    RA2_OPDEL(this); /*0x499cb2*/
   return (BlitTransXlat *)this; /*0x499cbc*/
 
 }
@@ -5792,7 +5792,7 @@ std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499d49*/
   if ( (a2 & 1) != 0 ) /*0x499d4f*/
-    __3_YAXPAX_Z(this); /*0x499d52*/
+    RA2_OPDEL(this); /*0x499d52*/
   return this; /*0x499d5c*/
 
 }
@@ -5805,7 +5805,7 @@ std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499d69*/
   if ( (a2 & 1) != 0 ) /*0x499d6f*/
-    __3_YAXPAX_Z(this); /*0x499d72*/
+    RA2_OPDEL(this); /*0x499d72*/
   return this; /*0x499d7c*/
 
 }
@@ -5818,7 +5818,7 @@ RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499d89*/
   if ( (a2 & 1) != 0 ) /*0x499d8f*/
-    __3_YAXPAX_Z(this); /*0x499d92*/
+    RA2_OPDEL(this); /*0x499d92*/
   return (RLEBlitTransXlat *)this; /*0x499d9c*/
 
 }
@@ -5831,7 +5831,7 @@ std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499dc9*/
   if ( (a2 & 1) != 0 ) /*0x499dcf*/
-    __3_YAXPAX_Z(this); /*0x499dd2*/
+    RA2_OPDEL(this); /*0x499dd2*/
   return this; /*0x499ddc*/
 
 }
@@ -5844,7 +5844,7 @@ std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499de9*/
   if ( (a2 & 1) != 0 ) /*0x499def*/
-    __3_YAXPAX_Z(this); /*0x499df2*/
+    RA2_OPDEL(this); /*0x499df2*/
   return this; /*0x499dfc*/
 
 }
@@ -5857,7 +5857,7 @@ std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499e09*/
   if ( (a2 & 1) != 0 ) /*0x499e0f*/
-    __3_YAXPAX_Z(this); /*0x499e12*/
+    RA2_OPDEL(this); /*0x499e12*/
   return this; /*0x499e1c*/
 
 }
@@ -5870,7 +5870,7 @@ RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499e29*/
   if ( (a2 & 1) != 0 ) /*0x499e2f*/
-    __3_YAXPAX_Z(this); /*0x499e32*/
+    RA2_OPDEL(this); /*0x499e32*/
   return (RLEBlitTransXlatZRead *)this; /*0x499e3c*/
 
 }
@@ -5883,7 +5883,7 @@ std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499e49*/
   if ( (a2 & 1) != 0 ) /*0x499e4f*/
-    __3_YAXPAX_Z(this); /*0x499e52*/
+    RA2_OPDEL(this); /*0x499e52*/
   return this; /*0x499e5c*/
 
 }
@@ -5896,7 +5896,7 @@ std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499e69*/
   if ( (a2 & 1) != 0 ) /*0x499e6f*/
-    __3_YAXPAX_Z(this); /*0x499e72*/
+    RA2_OPDEL(this); /*0x499e72*/
   return this; /*0x499e7c*/
 
 }
@@ -5909,7 +5909,7 @@ std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499e89*/
   if ( (a2 & 1) != 0 ) /*0x499e8f*/
-    __3_YAXPAX_Z(this); /*0x499e92*/
+    RA2_OPDEL(this); /*0x499e92*/
   return this; /*0x499e9c*/
 
 }
@@ -5922,7 +5922,7 @@ std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499ea9*/
   if ( (a2 & 1) != 0 ) /*0x499eaf*/
-    __3_YAXPAX_Z(this); /*0x499eb2*/
+    RA2_OPDEL(this); /*0x499eb2*/
   return this; /*0x499ebc*/
 
 }
@@ -5935,7 +5935,7 @@ std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499ec9*/
   if ( (a2 & 1) != 0 ) /*0x499ecf*/
-    __3_YAXPAX_Z(this); /*0x499ed2*/
+    RA2_OPDEL(this); /*0x499ed2*/
   return this; /*0x499edc*/
 
 }
@@ -5948,7 +5948,7 @@ std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499ee9*/
   if ( (a2 & 1) != 0 ) /*0x499eef*/
-    __3_YAXPAX_Z(this); /*0x499ef2*/
+    RA2_OPDEL(this); /*0x499ef2*/
   return this; /*0x499efc*/
 
 }
@@ -5961,7 +5961,7 @@ std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x499f09*/
   if ( (a2 & 1) != 0 ) /*0x499f0f*/
-    __3_YAXPAX_Z(this); /*0x499f12*/
+    RA2_OPDEL(this); /*0x499f12*/
   return this; /*0x499f1c*/
 
 }
@@ -5974,7 +5974,7 @@ BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499f29*/
   if ( (a2 & 1) != 0 ) /*0x499f2f*/
-    __3_YAXPAX_Z(this); /*0x499f32*/
+    RA2_OPDEL(this); /*0x499f32*/
   return (BlitPlainXlat *)this; /*0x499f3c*/
 
 }
@@ -5987,7 +5987,7 @@ std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499f49*/
   if ( (a2 & 1) != 0 ) /*0x499f4f*/
-    __3_YAXPAX_Z(this); /*0x499f52*/
+    RA2_OPDEL(this); /*0x499f52*/
   return this; /*0x499f5c*/
 
 }
@@ -6000,7 +6000,7 @@ BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499f69*/
   if ( (a2 & 1) != 0 ) /*0x499f6f*/
-    __3_YAXPAX_Z(this); /*0x499f72*/
+    RA2_OPDEL(this); /*0x499f72*/
   return (BlitTransDarken *)this; /*0x499f7c*/
 
 }
@@ -6013,7 +6013,7 @@ BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499f89*/
   if ( (a2 & 1) != 0 ) /*0x499f8f*/
-    __3_YAXPAX_Z(this); /*0x499f92*/
+    RA2_OPDEL(this); /*0x499f92*/
   return (BlitTransLucent75 *)this; /*0x499f9c*/
 
 }
@@ -6026,7 +6026,7 @@ BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499fa9*/
   if ( (a2 & 1) != 0 ) /*0x499faf*/
-    __3_YAXPAX_Z(this); /*0x499fb2*/
+    RA2_OPDEL(this); /*0x499fb2*/
   return (BlitTransLucent50 *)this; /*0x499fbc*/
 
 }
@@ -6039,7 +6039,7 @@ BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499fc9*/
   if ( (a2 & 1) != 0 ) /*0x499fcf*/
-    __3_YAXPAX_Z(this); /*0x499fd2*/
+    RA2_OPDEL(this); /*0x499fd2*/
   return (BlitTransLucent25 *)this; /*0x499fdc*/
 
 }
@@ -6052,7 +6052,7 @@ std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x499fe9*/
   if ( (a2 & 1) != 0 ) /*0x499fef*/
-    __3_YAXPAX_Z(this); /*0x499ff2*/
+    RA2_OPDEL(this); /*0x499ff2*/
   return this; /*0x499ffc*/
 
 }
@@ -6065,7 +6065,7 @@ BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a009*/
   if ( (a2 & 1) != 0 ) /*0x49a00f*/
-    __3_YAXPAX_Z(this); /*0x49a012*/
+    RA2_OPDEL(this); /*0x49a012*/
   return (BlitTransXlatZRead *)this; /*0x49a01c*/
 
 }
@@ -6078,7 +6078,7 @@ std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a029*/
   if ( (a2 & 1) != 0 ) /*0x49a02f*/
-    __3_YAXPAX_Z(this); /*0x49a032*/
+    RA2_OPDEL(this); /*0x49a032*/
   return this; /*0x49a03c*/
 
 }
@@ -6091,7 +6091,7 @@ std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a049*/
   if ( (a2 & 1) != 0 ) /*0x49a04f*/
-    __3_YAXPAX_Z(this); /*0x49a052*/
+    RA2_OPDEL(this); /*0x49a052*/
   return this; /*0x49a05c*/
 
 }
@@ -6104,7 +6104,7 @@ std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a069*/
   if ( (a2 & 1) != 0 ) /*0x49a06f*/
-    __3_YAXPAX_Z(this); /*0x49a072*/
+    RA2_OPDEL(this); /*0x49a072*/
   return this; /*0x49a07c*/
 
 }
@@ -6117,7 +6117,7 @@ std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a089*/
   if ( (a2 & 1) != 0 ) /*0x49a08f*/
-    __3_YAXPAX_Z(this); /*0x49a092*/
+    RA2_OPDEL(this); /*0x49a092*/
   return this; /*0x49a09c*/
 
 }
@@ -6130,7 +6130,7 @@ std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a0a9*/
   if ( (a2 & 1) != 0 ) /*0x49a0af*/
-    __3_YAXPAX_Z(this); /*0x49a0b2*/
+    RA2_OPDEL(this); /*0x49a0b2*/
   return this; /*0x49a0bc*/
 
 }
@@ -6143,7 +6143,7 @@ std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a0c9*/
   if ( (a2 & 1) != 0 ) /*0x49a0cf*/
-    __3_YAXPAX_Z(this); /*0x49a0d2*/
+    RA2_OPDEL(this); /*0x49a0d2*/
   return this; /*0x49a0dc*/
 
 }
@@ -6156,7 +6156,7 @@ std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a0e9*/
   if ( (a2 & 1) != 0 ) /*0x49a0ef*/
-    __3_YAXPAX_Z(this); /*0x49a0f2*/
+    RA2_OPDEL(this); /*0x49a0f2*/
   return this; /*0x49a0fc*/
 
 }
@@ -6169,7 +6169,7 @@ std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a109*/
   if ( (a2 & 1) != 0 ) /*0x49a10f*/
-    __3_YAXPAX_Z(this); /*0x49a112*/
+    RA2_OPDEL(this); /*0x49a112*/
   return this; /*0x49a11c*/
 
 }
@@ -6182,7 +6182,7 @@ std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a129*/
   if ( (a2 & 1) != 0 ) /*0x49a12f*/
-    __3_YAXPAX_Z(this); /*0x49a132*/
+    RA2_OPDEL(this); /*0x49a132*/
   return this; /*0x49a13c*/
 
 }
@@ -6195,7 +6195,7 @@ BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a149*/
   if ( (a2 & 1) != 0 ) /*0x49a14f*/
-    __3_YAXPAX_Z(this); /*0x49a152*/
+    RA2_OPDEL(this); /*0x49a152*/
   return (BlitTransXlatZReadWrite *)this; /*0x49a15c*/
 
 }
@@ -6208,7 +6208,7 @@ std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a169*/
   if ( (a2 & 1) != 0 ) /*0x49a16f*/
-    __3_YAXPAX_Z(this); /*0x49a172*/
+    RA2_OPDEL(this); /*0x49a172*/
   return this; /*0x49a17c*/
 
 }
@@ -6221,7 +6221,7 @@ std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 
   *(unsigned int *)this = &vt_Blitter; /*0x49a189*/
   if ( (a2 & 1) != 0 ) /*0x49a18f*/
-    __3_YAXPAX_Z(this); /*0x49a192*/
+    RA2_OPDEL(this); /*0x49a192*/
   return this; /*0x49a19c*/
 
 }
@@ -6234,7 +6234,7 @@ std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a7c9*/
   if ( (a2 & 1) != 0 ) /*0x49a7cf*/
-    __3_YAXPAX_Z(this); /*0x49a7d2*/
+    RA2_OPDEL(this); /*0x49a7d2*/
   return this; /*0x49a7dc*/
 
 }
@@ -6247,7 +6247,7 @@ std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a7e9*/
   if ( (a2 & 1) != 0 ) /*0x49a7ef*/
-    __3_YAXPAX_Z(this); /*0x49a7f2*/
+    RA2_OPDEL(this); /*0x49a7f2*/
   return this; /*0x49a7fc*/
 
 }
@@ -6260,7 +6260,7 @@ std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a809*/
   if ( (a2 & 1) != 0 ) /*0x49a80f*/
-    __3_YAXPAX_Z(this); /*0x49a812*/
+    RA2_OPDEL(this); /*0x49a812*/
   return this; /*0x49a81c*/
 
 }
@@ -6273,7 +6273,7 @@ RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a829*/
   if ( (a2 & 1) != 0 ) /*0x49a82f*/
-    __3_YAXPAX_Z(this); /*0x49a832*/
+    RA2_OPDEL(this); /*0x49a832*/
   return (RLEBlitTransXlatZRead *)this; /*0x49a83c*/
 
 }
@@ -6286,7 +6286,7 @@ std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a849*/
   if ( (a2 & 1) != 0 ) /*0x49a84f*/
-    __3_YAXPAX_Z(this); /*0x49a852*/
+    RA2_OPDEL(this); /*0x49a852*/
   return this; /*0x49a85c*/
 
 }
@@ -6299,7 +6299,7 @@ std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a869*/
   if ( (a2 & 1) != 0 ) /*0x49a86f*/
-    __3_YAXPAX_Z(this); /*0x49a872*/
+    RA2_OPDEL(this); /*0x49a872*/
   return this; /*0x49a87c*/
 
 }
@@ -6312,7 +6312,7 @@ std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a889*/
   if ( (a2 & 1) != 0 ) /*0x49a88f*/
-    __3_YAXPAX_Z(this); /*0x49a892*/
+    RA2_OPDEL(this); /*0x49a892*/
   return this; /*0x49a89c*/
 
 }
@@ -6325,7 +6325,7 @@ std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a8a9*/
   if ( (a2 & 1) != 0 ) /*0x49a8af*/
-    __3_YAXPAX_Z(this); /*0x49a8b2*/
+    RA2_OPDEL(this); /*0x49a8b2*/
   return this; /*0x49a8bc*/
 
 }
@@ -6338,7 +6338,7 @@ std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a8c9*/
   if ( (a2 & 1) != 0 ) /*0x49a8cf*/
-    __3_YAXPAX_Z(this); /*0x49a8d2*/
+    RA2_OPDEL(this); /*0x49a8d2*/
   return this; /*0x49a8dc*/
 
 }
@@ -6351,7 +6351,7 @@ std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a8e9*/
   if ( (a2 & 1) != 0 ) /*0x49a8ef*/
-    __3_YAXPAX_Z(this); /*0x49a8f2*/
+    RA2_OPDEL(this); /*0x49a8f2*/
   return this; /*0x49a8fc*/
 
 }
@@ -6364,7 +6364,7 @@ std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a909*/
   if ( (a2 & 1) != 0 ) /*0x49a90f*/
-    __3_YAXPAX_Z(this); /*0x49a912*/
+    RA2_OPDEL(this); /*0x49a912*/
   return this; /*0x49a91c*/
 
 }
@@ -6377,7 +6377,7 @@ std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a929*/
   if ( (a2 & 1) != 0 ) /*0x49a92f*/
-    __3_YAXPAX_Z(this); /*0x49a932*/
+    RA2_OPDEL(this); /*0x49a932*/
   return this; /*0x49a93c*/
 
 }
@@ -6390,7 +6390,7 @@ std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a949*/
   if ( (a2 & 1) != 0 ) /*0x49a94f*/
-    __3_YAXPAX_Z(this); /*0x49a952*/
+    RA2_OPDEL(this); /*0x49a952*/
   return this; /*0x49a95c*/
 
 }
@@ -6403,7 +6403,7 @@ std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a969*/
   if ( (a2 & 1) != 0 ) /*0x49a96f*/
-    __3_YAXPAX_Z(this); /*0x49a972*/
+    RA2_OPDEL(this); /*0x49a972*/
   return this; /*0x49a97c*/
 
 }
@@ -6416,7 +6416,7 @@ std::locale::facet * E4Recv_49A980::___Gfacet_locale_std__UAEPAXI_Z_69(char a2)
 
   *(unsigned int *)this = &vt_RLEBlitter; /*0x49a989*/
   if ( (a2 & 1) != 0 ) /*0x49a98f*/
-    __3_YAXPAX_Z(this); /*0x49a992*/
+    RA2_OPDEL(this); /*0x49a992*/
   return this; /*0x49a99c*/
 
 }

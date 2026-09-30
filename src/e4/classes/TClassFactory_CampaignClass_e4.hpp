@@ -18,7 +18,7 @@ struct TClassFactory_CampaignClass {
 // --- flat members (END) ---
     int GetClassName();
     int GetSize();
-    int ddtor(void *a1 = 0);
+    int ddtor();
 };
 
 } // namespace gamemd

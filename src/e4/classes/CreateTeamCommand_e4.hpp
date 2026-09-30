@@ -67,12 +67,12 @@ struct CreateTeamCommand {
     unsigned int * performAction_148();  // 0x537350
     unsigned int * performAction_153();  // 0x537440
     unsigned int * performAction_158();  // 0x537530
-    char performAction_241(int a2,  unsigned int * a3);    // 0x5386A0
-    rc_ptr_base * performAction_243(char a2);  // 0x538A20
-    char performAction_245(char a2,  int a3);    // 0x6A6A00
-    void performAction_246(void *a1 = 0);  // 0x731060
+    char performAction_241(int a2, unsigned int * a3);  // 0x5386A0
+    rc_ptr_base * performAction_243(void * Block, char a2);  // 0x538A20
+    char performAction_245(char a2, int a3);  // 0x6A6A00
+    void performAction_246();  // 0x731060
     unsigned int * Construct(int a2, void *a1 = 0, void *a3 = 0, void *a4 = 0, void *a5 = 0);  // 0x535C00
-    ObjectClass * AddRef(void *a1 = 0);  // 0x535C20
+    ObjectClass * AddRef();  // 0x535C20
     CreateTeamCommand * performAction_0(char a2);  // 0x535CD0
     CommandClass * performAction_1(char a2);  // 0x535D00
     SelectTeamCommand * performAction_22(char a2);  // 0x536090
@@ -80,36 +80,36 @@ struct CreateTeamCommand {
     CenterTeamCommand * performAction_24(char a2);  // 0x536270
     TauntCommandClass * performAction_25(char a2);  // 0x536580
     void* performAction_214(char a2);  // 0x5381A0
-    void* performAction_215(char a2);  // 0x5381C0
-    void* performAction_219(char a2);  // 0x538240
-    void* performAction_220(char a2);  // 0x538260
-    void* performAction_221(char a2);  // 0x538280
-    void* performAction_223(char a2);  // 0x5382C0
-    ScreenCaptureCommandClass * performAction_235(char a2);  // 0x538440
-    PageUserCommandClass * performAction_236(char a2);  // 0x538460
-    CursorPositionCommandClass * performAction_237(char a2);  // 0x538480
-    DeleteCommandClass * performAction_238(char a2);  // 0x5384A0
+    void* performAction_215(unsigned int * Block, char a2);  // 0x5381C0
+    void* performAction_219(unsigned int * Block, char a2);  // 0x538240
+    void* performAction_220(unsigned int * Block, char a2);  // 0x538260
+    void* performAction_221(unsigned int * Block, char a2);  // 0x538280
+    void* performAction_223(unsigned int * Block, char a2);  // 0x5382C0
+    ScreenCaptureCommandClass * performAction_235(unsigned int * Block, char a2);  // 0x538440
+    PageUserCommandClass * performAction_236(unsigned int * Block, char a2);  // 0x538460
+    CursorPositionCommandClass * performAction_237(unsigned int * Block, char a2);  // 0x538480
+    DeleteCommandClass * performAction_238(unsigned int * Block, char a2);  // 0x5384A0
     void performAction_239();  // 0x5384C0
     int performAction_242(unsigned int * a2);  // 0x538750
-    DynamicVector * performAction_244(char a2);  // 0x538AE0
-    unsigned int * performAction_216(char a2);  // 0x5381E0
-    unsigned int * performAction_217(char a2);  // 0x538200
-    unsigned int * performAction_218(char a2);  // 0x538220
-    unsigned int * performAction_222(char a2);  // 0x5382A0
-    unsigned int * performAction_224(char a2);  // 0x5382E0
-    unsigned int * performAction_225(char a2);  // 0x538300
-    unsigned int * performAction_226(char a2);  // 0x538320
-    unsigned int * performAction_227(char a2);  // 0x538340
-    unsigned int * performAction_228(char a2);  // 0x538360
-    unsigned int * performAction_229(char a2);  // 0x538380
-    unsigned int * performAction_230(char a2);  // 0x5383A0
-    unsigned int * performAction_231(char a2);  // 0x5383C0
-    unsigned int * performAction_232(char a2);  // 0x5383E0
-    unsigned int * performAction_233(char a2);  // 0x538400
-    unsigned int * performAction_234(char a2);  // 0x538420
-    wchar_t * Release(void *a1 = 0);  // 0x535C40
-    wchar_t * ddtor(void *a1 = 0);  // 0x535C70
-    wchar_t * Read(void *a1 = 0, void *a2 = 0);  // 0x535C90
+    DynamicVector * performAction_244(unsigned int * Block, char a2);  // 0x538AE0
+    unsigned int * performAction_216(unsigned int * Block, char a2);  // 0x5381E0
+    unsigned int * performAction_217(unsigned int * Block, char a2);  // 0x538200
+    unsigned int * performAction_218(unsigned int * Block, char a2);  // 0x538220
+    unsigned int * performAction_222(unsigned int * Block, char a2);  // 0x5382A0
+    unsigned int * performAction_224(unsigned int * Block, char a2);  // 0x5382E0
+    unsigned int * performAction_225(unsigned int * Block, char a2);  // 0x538300
+    unsigned int * performAction_226(unsigned int * Block, char a2);  // 0x538320
+    unsigned int * performAction_227(unsigned int * Block, char a2);  // 0x538340
+    unsigned int * performAction_228(unsigned int * Block, char a2);  // 0x538360
+    unsigned int * performAction_229(unsigned int * Block, char a2);  // 0x538380
+    unsigned int * performAction_230(unsigned int * Block, char a2);  // 0x5383A0
+    unsigned int * performAction_231(unsigned int * Block, char a2);  // 0x5383C0
+    unsigned int * performAction_232(unsigned int * Block, char a2);  // 0x5383E0
+    unsigned int * performAction_233(unsigned int * Block, char a2);  // 0x538400
+    unsigned int * performAction_234(unsigned int * Block, char a2);  // 0x538420
+    wchar_t * Release();  // 0x535C40
+    wchar_t * ddtor();  // 0x535C70
+    wchar_t * Read();  // 0x535C90
     void Undo(int a2);  // 0x535CC0
     char * performAction_2();  // 0x535D20
     wchar_t * performAction_3();  // 0x535D30
@@ -137,7 +137,7 @@ struct CreateTeamCommand {
     wchar_t * performAction_32();  // 0x5366B0
     wchar_t * performAction_33();  // 0x5366D0
     wchar_t * performAction_34();  // 0x5366F0
-    BOOL performAction_35();  // 0x536710
+    BOOLperformAction_35();  // 0x536710
     unsigned int performAction_37();  // 0x536740
     int performAction_38();  // 0x536750
     wchar_t * performAction_40();  // 0x536780

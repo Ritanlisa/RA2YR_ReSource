@@ -36,23 +36,23 @@ void TemporalClass::Constructor()
   int v3; // eax
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
-  v2 = MEMORY[0xA8ED84]; /*0x71a458*/
+  v2 = g_abs_A8ED84; /*0x71a458*/
   *((unsigned int *)this + 13) = 0; /*0x71a45d*/
   *((unsigned int *)this + 11) = v2; /*0x71a464*/
   *(unsigned int *)this = &TemporalClass::`vftable'; /*0x71a467*/
   *((unsigned int *)this + 1) = &TemporalClass::`vftable'; /*0x71a46d*/
   *((unsigned int *)this + 2) = &TemporalClass::`vftable'; /*0x71a474*/
   *((unsigned int *)this + 3) = &vt_TemporalClass; /*0x71a47b*/
-  if ( MEMORY[0xB0EC70] < MEMORY[0xB0EC68] /*0x71a4b7*/
-    || (MEMORY[0xB0EC6D] || !MEMORY[0xB0EC68])
-    && MEMORY[0xB0EC74] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0EC60] + 8))(
-         &MEMORY[0xB0EC60],
-         MEMORY[0xB0EC68] + MEMORY[0xB0EC74],
+  if ( g_abs_B0EC70 < g_abs_B0EC68 /*0x71a4b7*/
+    || (g_abs_B0EC6D || !g_abs_B0EC68)
+    && g_abs_B0EC74 > 0
+    && (*(uint8_t (**)(int *, int, unsigned int))(g_abs_B0EC60 + 8))(
+         &g_abs_B0EC60,
+         g_abs_B0EC68 + g_abs_B0EC74,
          0) )
   {
-    v3 = MEMORY[0xB0EC70]++; /*0x71a4c4*/
-    *((unsigned int *)MEMORY[0xB0EC64] + v3) = this; /*0x71a4d3*/
+    v3 = g_abs_B0EC70++; /*0x71a4c4*/
+    *((unsigned int *)g_abs_B0EC64 + v3) = this; /*0x71a4d3*/
   }
   return this; /*0x71a4d8*/
 
@@ -67,7 +67,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   int v3; // eax
   int v5; // [esp+Ch] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x71a4e7*/
   *((unsigned int *)this + 11) = *(unsigned int *)&HouseClass_Player.__pad_5568[23248]; /*0x71a4fb*/
   *((unsigned int *)this + 13) = 0; /*0x71a4fe*/
   *this = &TemporalClass::`vftable'; /*0x71a501*/
@@ -84,7 +84,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   if ( *(int *)&stru_B05488.__pad_579C[16460] < *(int *)&stru_B05488.__pad_579C[16452] /*0x71a569*/
     || (stru_B05488.__pad_579C[16457] || !*(unsigned int *)&stru_B05488.__pad_579C[16452])
     && *(int *)&stru_B05488.__pad_579C[16464] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[16444] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[16444] + 8))(
          &stru_B05488.__pad_579C[16444],
          *(unsigned int *)&stru_B05488.__pad_579C[16452] + *(unsigned int *)&stru_B05488.__pad_579C[16464],
          0) )
@@ -151,7 +151,7 @@ void ** TemporalClass::ProcessTimeWarp()
   unsigned char v44[12]; // [esp+38h] [ebp-Ch] BYREF
 
   v2 = (unsigned int *)*((char *)this + 10); /*0x71a76b*/
-  if ( v2 && (int *)v2[158] == this && *((char *)this + 16) )
+  if ( v2 && (int *)v2[158] == (int *)(this) && *((char *)this + 16) )
   {
     v2[158] = 0; /*0x71a77f*/
     *(unsigned char *)(*((char *)this + 10) + 624) = 0; /*0x71a78a*/
@@ -177,7 +177,7 @@ void ** TemporalClass::ProcessTimeWarp()
     v41 = v9 - v7; /*0x71a7ef*/
     v42 = v11; /*0x71a7f3*/
     v12 = Math::Sqrt((double)v8 * (double)v8 + (double)v11 * (double)v11 + (double)(v9 - v7) * (double)(v9 - v7)); /*0x71a81f*/
-    if ( (int)Math::RoundToInt(v12) > MEMORY[0x8871E0]->? << 8 )
+    if ( (int)Math::RoundToInt(v12) > g_abs_8871E0->? << 8 )
     {
       return (void **)FactoryClass::CompleteItem(this); /*0x71a841*/
     }
@@ -201,14 +201,14 @@ LABEL_10:
       {
         if ( *((char *)this + 10) ) /*0x71a895*/
         {
-          result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x71a8c2*/
+          result = (void **)RA2_OPNEW(0x1C8u); /*0x71a8c2*/
           if ( result ) /*0x71a8cc*/
           {
             v22 = (int *)(*((char *)this + 10) + 156); /*0x71a8d2*/
             v40 = *v22; /*0x71a8e3*/
             v41 = v22[1]; /*0x71a8ea*/
             v42 = v22[2]; /*0x71a8f6*/
-            result = AnimClass::ctor(result, (void *)MEMORY[0x8871E0]->?[1], &v40, 0, 1, (void *)0x600, 0, 0); /*0x71a909*/
+            result = AnimClass::ctor(result, (void *)g_abs_8871E0->?[1], &v40, 0, 1, (void *)0x600, 0, 0); /*0x71a909*/
           }
         }
         else
@@ -243,7 +243,7 @@ LABEL_10:
             {
               if ( (*(int (**)(unsigned int))(*v27 + 1032))(*((char *)this + 10)) > 0 ) /*0x71a9a2*/
                 BuildingClass::AnimateUnloadUnits(v27, 0); /*0x71a9a7*/
-              if ( !MEMORY[0xA8E7AC] && v27[70] ) /*0x71a9b4*/
+              if ( !g_abs_A8E7AC && v27[70] ) /*0x71a9b4*/
               {
                 do /*0x71a9d6*/
                 {
@@ -315,7 +315,7 @@ LABEL_10:
 
 // 0x71AB10
 namespace gamemd {
-void TemporalClass::GetWarpPerStep()
+void TemporalClass::GetWarpPerStep( int a2)
 {
 
   int WarpPerStep; // ebx
@@ -339,7 +339,7 @@ void TemporalClass::GetWarpPerStep()
 
 // 0x71B1B0
 namespace gamemd {
-void * TemporalClass::ProcessEvent(char a2)
+void * TemporalClass::ProcessEvent(unsigned int * Block, char a2)
 {
 
   int v3; // eax
@@ -350,19 +350,19 @@ void * TemporalClass::ProcessEvent(char a2)
   *(Block + 2) = &TemporalClass::`vftable'; /*0x71b1ca*/
   *(Block + 3) = &vt_TemporalClass; /*0x71b1d1*/
   v5 = Block; /*0x71b1df*/
-  v3 = (*(int (**)(int *, unsigned int **))(MEMORY[0xB0EC60] + 16))(&MEMORY[0xB0EC60], &v5); /*0x71b1e3*/
-  if ( v3 != -1 && v3 < MEMORY[0xB0EC70] && v3 < --MEMORY[0xB0EC70] ) /*0x71b1fe*/
+  v3 = (*(int (**)(int *, unsigned int **))(g_abs_B0EC60 + 16))(&g_abs_B0EC60, &v5); /*0x71b1e3*/
+  if ( v3 != -1 && v3 < g_abs_B0EC70 && v3 < --g_abs_B0EC70 ) /*0x71b1fe*/
   {
     do /*0x71b216*/
     {
       ++v3; /*0x71b206*/
-      *((unsigned int *)MEMORY[0xB0EC64] + v3 - 1) = *((unsigned int *)MEMORY[0xB0EC64] + v3); /*0x71b20a*/
+      *((unsigned int *)g_abs_B0EC64 + v3 - 1) = *((unsigned int *)g_abs_B0EC64 + v3); /*0x71b20a*/
     }
-    while ( v3 < MEMORY[0xB0EC70] ); /*0x71b216*/
+    while ( v3 < g_abs_B0EC70 ); /*0x71b216*/
   }
   AbstractClass::DTOR(Block); /*0x71b21a*/
-  if ( (a2 & 1) != 0 ) /*0x71b224*/
-    __3_YAXPAX_Z(Block); /*0x71b227*/
+  if ( (Block & 1) != 0 ) /*0x71b224*/
+    RA2_OPDEL(Block); /*0x71b227*/
   return (TemporalClass *)Block; /*0x71b231*/
 
 }
@@ -458,7 +458,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
     return 0; /*0x71ae5e*/
   if ( !*(unsigned char *)((*(int (**)(unsigned int *))(*a1 + 132))(a1) + 3386) ) /*0x71ae71*/
     return 0; /*0x71ae7c*/
-  if ( (*(unsigned __int8 (**)(unsigned int *))(*a1 + 352))(a1) ) /*0x71ae89*/
+  if ( (*(uint8_t (**)(unsigned int *))(*a1 + 352))(a1) ) /*0x71ae89*/
     return 0; /*0x71ae94*/
   if ( (*(int (**)(unsigned int *))(*a1 + 44))(a1) == 1 ) /*0x71aea7*/
   {
@@ -473,7 +473,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
           v5[0] = a1[39]; /*0x71aedc*/
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
-          v4 = Coord::To_Cell(&MEMORY[0x87F7E8], v5); /*0x71aef8*/
+          v4 = Coord::To_Cell(&g_abs_87F7E8, v5); /*0x71aef8*/
           if ( Cell::IsBridge(v4) == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/
         }

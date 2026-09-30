@@ -49,7 +49,7 @@ void * Multiplayer::FindStartPositions()
   unsigned int i; // esi
   int v12; // edi
   IUnknown *v13; // eax
-  __int16 v14; // si
+  int16_t v14; // si
   IUnknown *v15; // eax
   WinModemClass *v16; // eax
   IUnknown *v17; // edx
@@ -125,7 +125,7 @@ void * Multiplayer::FindStartPositions()
       goto LABEL_22; /*0x688481*/
     if ( !v28 && v27 || v4 <= 0 ) /*0x688491*/
       goto LABEL_24; /*0x688491*/
-    if ( ((unsigned __int8 (*)(void ***, int, unsigned int))v25[2])(&v25, v4 + v27, 0) ) /*0x6884a0*/
+    if ( ((uint8_t (*)(void ***, int, unsigned int))v25[2])(&v25, v4 + v27, 0) ) /*0x6884a0*/
     {
 LABEL_22:
       v13 = v29; /*0x6884ab*/
@@ -151,12 +151,12 @@ LABEL_24:
                 (unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 536),
                 0,
                 (IUnknown *)(*(unsigned int *)&stru_87C374.__pad_14B0[8436] - 10));
-        LOWORD(v22) = *(unsigned short *)&stru_87C374.__pad_14B0[8424] /*0x688573*/
+        IDA_LOWORD(v22) = *(unsigned short *)&stru_87C374.__pad_14B0[8424] /*0x688573*/
                     + Random::Range(
                         (unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[8060] + 536),
                         (IUnknown *)0xA,
                         (IUnknown *)(*(unsigned int *)&stru_87C374.__pad_14B0[8432] - 10));
-        HIWORD(v22) = v14 + *(unsigned short *)&stru_87C374.__pad_14B0[8428] + 10; /*0x688588*/
+        IDA_HIWORD(v22) = v14 + *(unsigned short *)&stru_87C374.__pad_14B0[8428] + 10; /*0x688588*/
         v19 = v22; /*0x688594*/
         v23 = 0; /*0x6885ab*/
         v19 = *LayerClass::Pathfinding_Find( /*0x6885c3*/
@@ -182,7 +182,7 @@ LABEL_24:
           if ( (int)v29 < v27 /*0x688603*/
             || (v28 || !v27)
             && v30 > 0
-            && ((unsigned __int8 (*)(void ***, int, unsigned int))v25[2])(&v25, v30 + v27, 0) )
+            && ((uint8_t (*)(void ***, int, unsigned int))v25[2])(&v25, v30 + v27, 0) )
           {
             v15 = v29; /*0x688612*/
             v29 = (IUnknown *)((char *)v29 + 1); /*0x688615*/
@@ -208,7 +208,7 @@ LABEL_24:
   v2[1].vtable0 = v29; /*0x688688*/
   v2[1].Items = v17; /*0x68868d*/
   if ( v16 && v28 ) /*0x688698*/
-    __3_YAXPAX_Z(v16); /*0x68869b*/
+    RA2_OPDEL(v16); /*0x68869b*/
   return v2; /*0x6886a5*/
 
 }
@@ -225,7 +225,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 
   if ( this == (unsigned int *)aP1 ) /*0x68c2bb*/
     return this; /*0x68c2bb*/
-  (*(void (**)(unsigned int *))(*(unsigned int **)this + 12))(this); /*0x68c2bf*/
+  (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x68c2bf*/
   v3 = *(unsigned int *)&aP1->__pad_0[8]; /*0x68c2c2*/
   *((unsigned int *)this + 2) = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
@@ -234,7 +234,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
     *((unsigned char *)this + 13) = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
+  v4 = RA2_OPNEW(4 * v3); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   *((unsigned int *)this + 1) = v4; /*0x68c2eb*/
@@ -271,13 +271,13 @@ void Multiplayer::ShowProgress(int a2)
   int v11; // [esp+14h] [ebp-1D0h]
   double v12; // [esp+14h] [ebp-1D0h]
   int v13[113]; // [esp+1Ch] [ebp-1C8h] BYREF
-  __int16 v14; // [esp+1E0h] [ebp-4h]
+  int16_t v14; // [esp+1E0h] [ebp-4h]
   char v15; // [esp+1E2h] [ebp-2h]
 
-  if ( !MEMORY[0xA8ED6B] ) /*0x69aea1*/
+  if ( !g_abs_A8ED6B ) /*0x69aea1*/
   {
     v11 = a2; /*0x69aeb4*/
-    if ( *((unsigned char *)MEMORY[0xA8B230] + 13501) ) /*0x69aeb8*/
+    if ( *((unsigned char *)g_abs_A8B230 + 13501) ) /*0x69aeb8*/
       v11 = a2 / 2; /*0x69aec7*/
     v12 = (double)v11; /*0x69aed6*/
     if ( Progress::GetWeighted(0) * 100.0 < v12 ) /*0x69aef1*/
@@ -293,10 +293,10 @@ void Multiplayer::ShowProgress(int a2)
           v13[0] = 108; /*0x69b0a2*/
           v7 = Progress::GetWeighted(0); /*0x69b0aa*/
           *(int *)((char *)&v13[6] + 1) = Math::RoundToInt(v7 * 100.0); /*0x69b0c0*/
-          LOBYTE(v13[6]) = MEMORY[0xA8DB30]; /*0x69b0d5*/
+          IDA_LOBYTE(v13[6]) = g_abs_A8DB30; /*0x69b0d5*/
           Stream::WriteBlock(v13, 250, 0); /*0x69b0d9*/
-          Stream::ReadPacket(&MEMORY[0xA8EA70]); /*0x69b0e3*/
-          while ( Count::GetCountQueue(&MEMORY[0xA8EA70]) > 5 ) /*0x69b0f5*/
+          Stream::ReadPacket(&g_abs_A8EA70); /*0x69b0e3*/
+          while ( Count::GetCountQueue(&g_abs_A8EA70) > 5 ) /*0x69b0f5*/
           {
             v8 = 240; /*0x69b101*/
             if ( Ticks != -1 ) /*0x69b107*/
@@ -309,8 +309,8 @@ void Multiplayer::ShowProgress(int a2)
             if ( v8 <= 0 ) /*0x69b11e*/
               break; /*0x69b11e*/
             Sleep(0x14u); /*0x69b122*/
-            EventQueue::Process(MEMORY[0x87F770]); /*0x69b12a*/
-            Stream::ReadPacket(&MEMORY[0xA8EA70]); /*0x69b134*/
+            EventQueue::Process(g_abs_87F770); /*0x69b12a*/
+            Stream::ReadPacket(&g_abs_A8EA70); /*0x69b134*/
           }
           break; /*0x69b146*/
         case 3: /*0x69af3e*/
@@ -321,13 +321,13 @@ void Multiplayer::ShowProgress(int a2)
           v13[0] = 15; /*0x69af5c*/
           v3 = Progress::GetWeighted(0); /*0x69af64*/
           *(int *)((char *)&v13[11] + 3) = Math::RoundToInt(v3 * 100.0); /*0x69af7a*/
-          strcpy((char *)&v13[1], ToWideStringChar(*(char **)MEMORY[0xA8DA78])); /*0x69af9e*/
+          strcpy((char *)&v13[1], ToWideStringChar(*(char **)g_abs_A8DA78)); /*0x69af9e*/
           if ( (double)*(int *)((char *)&v13[11] + 3) >= 99.95 ) /*0x69afb6*/
           {
-            for ( i = 1; i < MEMORY[0xA8DA84]; ++i ) /*0x69afdf*/
+            for ( i = 1; i < g_abs_A8DA84; ++i ) /*0x69afdf*/
             {
-              Debug::Log(MEMORY[0x83F674]); /*0x69afe6*/
-              Network::SendToPlayer((int)v13, 51, 1, *(wchar_t **)(MEMORY[0xA8DA78] + 4 * i)); /*0x69b006*/
+              Debug::Log(g_abs_83F674); /*0x69afe6*/
+              Network::SendToPlayer((int)v13, 51, 1, *(wchar_t **)(g_abs_A8DA78 + 4 * i)); /*0x69b006*/
             }
           }
           else
@@ -335,7 +335,7 @@ void Multiplayer::ShowProgress(int a2)
             Network::SendMessage(v13, 51, 0, 0, 0, 0); /*0x69afcc*/
           }
           Event::Dispatch(); /*0x69b015*/
-          while ( Network::GetQueueCount(&MEMORY[0xA8E9C0]) > 5 ) /*0x69b027*/
+          while ( Network::GetQueueCount(&g_abs_A8E9C0) > 5 ) /*0x69b027*/
           {
             v5 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/

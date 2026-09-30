@@ -31,7 +31,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 
   if ( !a2 ) /*0x4a076a*/
     return -2147467261; /*0x4a076d*/
-  v3 = __2_YAPAXI_Z(0x24u); /*0x4a077d*/
+  v3 = RA2_OPNEW(0x24u); /*0x4a077d*/
   if ( !v3 ) /*0x4a0784*/
     return -2147024882; /*0x4a0864*/
   v3[2] = 0; /*0x4a0798*/
@@ -46,7 +46,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
     v3[3] = v4; /*0x4a07ba*/
     if ( v4 ) /*0x4a07bd*/
     {
-      v5 = __2_YAPAXI_Z(8 * v4); /*0x4a07c7*/
+      v5 = RA2_OPNEW(8 * v4); /*0x4a07c7*/
       v3[2] = v5; /*0x4a07d1*/
       if ( v5 ) /*0x4a07d4*/
       {
@@ -126,7 +126,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4a12ae*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4a12ae*/
     *((unsigned char *)this + 12) = 1; /*0x4a12b6*/
     if ( v4 ) /*0x4a12ba*/
     {
@@ -139,7 +139,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
           ++i; /*0x4a12de*/
         if ( *((unsigned char *)this + 13) ) /*0x4a12eb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4a12f6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4a12f6*/
           *((unsigned int *)this + 1) = 0; /*0x4a12fe*/
         }
       }
@@ -174,7 +174,7 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, i
 
   if ( !a2 || !a3 ) /*0x4a0648*/
     return -2147467261; /*0x4a06ec*/
-  v9 = AbstractClass::updateAITimer(MEMORY[0xA8B230]); /*0x4a0661*/
+  v9 = AbstractClass::updateAITimer(g_abs_A8B230); /*0x4a0661*/
   if ( (**a2)(a2, a1 + 4, &v8) < 0 ) /*0x4a0671*/
     return -2147220990; /*0x4a0675*/
   v4 = *(unsigned int *)(a1 + 36); /*0x4a0681*/
@@ -184,7 +184,7 @@ int ConnectionPointClass::Unadvise(int a1, int (__stdcall ***a2)(unsigned int, i
       return -2147220991; /*0x4a0697*/
     v5 = *(unsigned int *)(a1 + 48); /*0x4a0699*/
     if ( v5 <= 0 /*0x4a06a9*/
-      || !(*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)(a1 + 28) + 8))(a1 + 28, v4 + v5, 0) )
+      || !(*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(a1 + 28) + 8))(a1 + 28, v4 + v5, 0) )
     {
       return -2147220991; /*0x4a06de*/
     }
@@ -313,7 +313,7 @@ unsigned int ConnectionPointClass_9::Unadvise(int a2)
 
 // 0x4A14F0
 namespace gamemd {
-VectorClass_flat * ConnectionPointClass_9::QueryInterface(char a2)
+VectorClass_flat * ConnectionPointClass_9::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
@@ -322,13 +322,13 @@ VectorClass_flat * ConnectionPointClass_9::QueryInterface(char a2)
   *Block = &vt_VectorClass_IConnectionPoint; /*0x4a14f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a1500*/
   {
-    __3_YAXPAX_Z(v3); /*0x4a1508*/
+    RA2_OPDEL(v3); /*0x4a1508*/
     *(Block + 1) = 0; /*0x4a1510*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x4a151b*/
   *(Block + 2) = 0; /*0x4a1521*/
-  if ( (a2 & 1) != 0 ) /*0x4a1528*/
-    __3_YAXPAX_Z(Block); /*0x4a152b*/
+  if ( (Block & 1) != 0 ) /*0x4a1528*/
+    RA2_OPDEL(Block); /*0x4a152b*/
   return (VectorClass *)Block; /*0x4a1535*/
 
 }

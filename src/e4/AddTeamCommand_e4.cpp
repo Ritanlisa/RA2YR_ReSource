@@ -9,7 +9,7 @@
 
 // 0x5360B0
 namespace gamemd {
-void AddTeamCommand::Construct()
+void AddTeamCommand::Construct( int a2)
 {
 
   *(this + 1) = a2; /*0x5360b6*/
@@ -39,10 +39,10 @@ void AddTeamCommand::Release()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *((unsigned int *)this + 1); /*0x5360f5*/
-  StringCSF = GetStringCSF(MEMORY[0x827148], 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
-  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536110*/
-  return &MEMORY[0xA8F654]; /*0x53611d*/
+  v3 = (const wchar_t *)(*((unsigned int *)this + 1));
+  StringCSF = GetStringCSF(g_abs_827148, 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
+  swprintf(&g_abs_A8F654, (const size_t)StringCSF, v3); /*0x536110*/
+  return &g_abs_A8F654; /*0x53611d*/
 
 }
 } // namespace gamemd
@@ -51,7 +51,7 @@ namespace gamemd {
 void AddTeamCommand::ddtor()
 {
 
-  return GetStringCSF(MEMORY[0x826FA4], 0, g_Str_File_Init_CPP, 6328); /*0x536136*/
+  return GetStringCSF(g_abs_826FA4, 0, g_Str_File_Init_CPP, 6328); /*0x536136*/
 
 }
 } // namespace gamemd

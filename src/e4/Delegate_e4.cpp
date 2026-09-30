@@ -94,7 +94,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
 } // namespace gamemd
 // 0x631D10
 namespace gamemd {
-void Delegate::Dispatch()
+void Delegate::Dispatch( Pipe * aP1, Pipe * aP2)
 {
 
   Pipe *v3; // ecx
@@ -132,19 +132,19 @@ void Delegate::Set(AbstractTypeClass * aP1)
   {
     if ( aP1 ) /*0x6c989f*/
     {
-      v3 = *(Straw **)&aP1->__pad_0[8]; /*0x6c98a1*/
+      v3 = *(Straw **)&aP1-((unsigned int *)(>__pad_0))[8]; /*0x6c98a1*/
       if ( v3 ) /*0x6c98a6*/
       {
         (*(void (**)(Straw *, unsigned int))(*(unsigned int *)v3->__pad_0 + 4))(v3, 0); /*0x6c98ac*/
-        *(unsigned int *)&aP1->__pad_0[8] = 0; /*0x6c98af*/
+        *(unsigned int *)&aP1-((unsigned int *)(>__pad_0))[8] = 0; /*0x6c98af*/
       }
     }
     v4 = (AbstractTypeClass *)*((unsigned int *)this + 1); /*0x6c98b6*/
     if ( v4 ) /*0x6c98bb*/
-      *(unsigned int *)&v4->__pad_0[8] = 0; /*0x6c98bd*/
+      *(unsigned int *)&v4-((unsigned int *)(>__pad_0))[8] = 0; /*0x6c98bd*/
     *((unsigned int *)this + 1) = aP1; /*0x6c98c6*/
     if ( aP1 ) /*0x6c98c9*/
-      *(unsigned int *)&aP1->__pad_0[8] = this; /*0x6c98cb*/
+      *(unsigned int *)&aP1-((unsigned int *)(>__pad_0))[8] = this; /*0x6c98cb*/
   }
 
 }
@@ -188,7 +188,7 @@ int Delegate::ProcessBitmapAndDispatch()
       pad_14 = (Pipe *)this->__pad_14; /*0x42df54*/
       v5 = (Pipe *)EncodeBitmapRGB((Pipe *)&this->field_18, (int)v3, this->__pad_14, 4); /*0x42df5d*/
     }
-    v2 = Delegate::Dispatch(this, pad_14, v5); /*0x42df7b*/
+    v2 = (gamemd::Pipe *)(Delegate::Dispatch(this, pad_14, v5));
     this->field_10 = 0; /*0x42df7d*/
   }
   return (int)&v2->__pad_0[GameClass::GetRelatedObject(this)]; /*0x42df8d*/
@@ -210,7 +210,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
 
   result = 0; /*0x4a2786*/
   v10 = 0; /*0x4a278c*/
-  if ( *(unsigned int *)&this->__pad_0[12] ) /*0x4a2789*/
+  if ( *(unsigned int *)&this-((unsigned int *)(>__pad_0))[12] ) /*0x4a2789*/
   {
     v5 = a1; /*0x4a2794*/
     if ( a1 ) /*0x4a279a*/
@@ -225,19 +225,19 @@ int Delegate::StreamToBuffer(char * a1, int a3)
           {
             if ( (int)v7 >= (int)v6 ) /*0x4a27ad*/
               v7 = (Straw *)v6; /*0x4a27af*/
-            memcpy(v5, (const void *)(*(unsigned int *)&this->__pad_0[12] + *(unsigned int *)&this->__pad_14[4]), (size_t)v7); /*0x4a27bc*/
+            memcpy(v5, (const void *)(*(unsigned int *)&this-((unsigned int *)(>__pad_0))[12] + *(unsigned int *)&this->__pad_14[4]), (size_t)v7); /*0x4a27bc*/
             v8 = this->field_1C - (unsigned int)v7; /*0x4a27cf*/
             v6 = (ModemGame *)((char *)v6 - (int)v7); /*0x4a27d4*/
-            *(unsigned int *)&this->__pad_14[4] += v7; /*0x4a27d6*/
+            *(unsigned int *)&this-((unsigned int *)(>__pad_14))[4] += v7; /*0x4a27d6*/
             v10 = (ModemGame *)((char *)v10 + (unsigned int)v7); /*0x4a27d9*/
             this->field_1C = v8; /*0x4a27dd*/
             v5 = &v5[(unsigned int)v7]; /*0x4a27e0*/
           }
           if ( !v6 ) /*0x4a27e4*/
             break; /*0x4a27e4*/
-          v9 = Delegate::Invoke(this, *(unsigned int *)&this->__pad_0[12], (Straw *)this->field_10); /*0x4a27f0*/
+          v9 = Delegate::Invoke(this, *(unsigned int *)&this-((unsigned int *)(>__pad_0))[12], (Straw *)this->field_10); /*0x4a27f0*/
           this->field_1C = v9; /*0x4a27f7*/
-          *(unsigned int *)&this->__pad_14[4] = 0; /*0x4a27fa*/
+          *(unsigned int *)&this-((unsigned int *)(>__pad_14))[4] = 0; /*0x4a27fa*/
           if ( !v9 ) /*0x4a2801*/
             break; /*0x4a2801*/
         }
@@ -252,7 +252,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
 } // namespace gamemd
 // 0x52AE20
 namespace gamemd {
-GenericNode * Delegate::Constructor_GenericNode(char a2)
+GenericNode * Delegate::Constructor_GenericNode(GenericNode ** Block, char a2)
 {
 
   GenericNode *v3; // ecx
@@ -267,15 +267,15 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
       v4 = *(Block + 2); /*0x52ae36*/
       if ( v4 ) /*0x52ae3b*/
       {
-        v4->Previous = v3; /*0x52ae3d*/
+        v4->Previous = (unsigned int)(v3);
         *(unsigned int *)(*(Block + 1))[1].__pad_0 = *(Block + 2); /*0x52ae46*/
         *(Block + 2) = 0; /*0x52ae49*/
         *(Block + 1) = 0; /*0x52ae4c*/
       }
     }
   }
-  if ( (a2 & 1) != 0 ) /*0x52ae54*/
-    __3_YAXPAX_Z(Block); /*0x52ae57*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x52ae54*/
+    RA2_OPDEL(Block); /*0x52ae57*/
   return (GenericNode *)Block; /*0x52ae61*/
 
 }
@@ -285,10 +285,10 @@ namespace gamemd {
 int * Delegate::ClearVectorAndStraw(char a2)
 {
 
-  Vector::Clear((int)&this->__pad_0[12]); /*0x52ae76*/
+  Vector::Clear((int)&this-((unsigned int *)(>__pad_0))[12]); /*0x52ae76*/
   Straw::Dtor((int *)this->__pad_0); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
-    __3_YAXPAX_Z(this); /*0x52ae8a*/
+    RA2_OPDEL(this); /*0x52ae8a*/
   return (int *)this->__pad_0; /*0x52ae94*/
 
 }
@@ -300,7 +300,7 @@ int * Delegate::DestroyStraw(char a2)
 
   Straw::Dtor((int *)this); /*0x52aea3*/
   if ( (a2 & 1) != 0 ) /*0x52aead*/
-    __3_YAXPAX_Z(this); /*0x52aeb0*/
+    RA2_OPDEL(this); /*0x52aeb0*/
   return (int *)this; /*0x52aeba*/
 
 }
@@ -312,7 +312,7 @@ int * Delegate::DestroyPipe(char a2)
 
   Pipe::Dtor((int *)this->__pad_0); /*0x52aee3*/
   if ( (a2 & 1) != 0 ) /*0x52aeed*/
-    __3_YAXPAX_Z(this); /*0x52aef0*/
+    RA2_OPDEL(this); /*0x52aef0*/
   return (int *)this->__pad_0; /*0x52aefa*/
 
 }

@@ -23,6 +23,6 @@ struct E4Recv_766EE0 {
     unsigned int q5684;  // 0x5684
 // --- flat members (END) ---
     int Vf8(int,  ...);    // G6 vtable slot dispatch
-    char System_Init_766EE0(DynamicVector * aP1);  // 0x766EE0
+    char System_Init_766EE0(void * aP1);  // 0x766EE0
 };
 } // namespace gamemd

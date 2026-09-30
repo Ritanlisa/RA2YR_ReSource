@@ -24,12 +24,12 @@ int Socket::ConfigureBuffers(AnimClass * aP1)
   v2 = aP1; /*0x7b2631*/
   if ( aP1 == (AnimClass *)-1 ) /*0x7b2638*/
     v2 = (AnimClass *)*((unsigned int *)this + 64539); /*0x7b263a*/
-  if ( setsockopt((SOCKET)v2, 0xFFFF, 4098, MEMORY[0x84DDA0], 4) == -1 ) /*0x7b265a*/
+  if ( setsockopt((SOCKET)v2, 0xFFFF, 4098, g_abs_84DDA0, 4) == -1 ) /*0x7b265a*/
     WSAGetLastError(); /*0x7b265c*/
-  Debug::Log(); /*0x7b2667*/
+  this->Debug::Log(); /*0x7b2667*/
   if ( setsockopt((SOCKET)v2, 0xFFFF, 4097, stru_84DD9C, 4) == -1 ) /*0x7b2699*/
     WSAGetLastError(); /*0x7b269b*/
-  Debug::Log(); /*0x7b26a6*/
+  this->Debug::Log(); /*0x7b26a6*/
   return 1; /*0x7b26b0*/
 
 }

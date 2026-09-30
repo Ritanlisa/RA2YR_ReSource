@@ -217,10 +217,9 @@ struct WaveClass {
     unsigned int u32_1FD;
     unsigned int uniqueId7;
     unsigned int WaveClass_field_128;
-    unsigned int Dtor;
 // --- flat members (END) ---
     WaveClass * ddtor(char a2);
-    char DamageArea(ObjectClass * aP1);
+    char DamageArea(void * aP1);
     int CheckStateFlag();
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
@@ -229,6 +228,7 @@ struct WaveClass {
     int ProcessWaveTick(int * a1, int * a2, int a3);
     int StubReturnFalse();
      double Destroy(...);  // C2597 interim stub
+     double Dtor(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

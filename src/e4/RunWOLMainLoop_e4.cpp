@@ -22,6 +22,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x77E110
 namespace gamemd {
@@ -38,7 +39,7 @@ Coord * * sub_77E110()
   Dialog::RefreshDialogsGame(0); /*0x77e141*/
   if ( stru_B76900.? ) /*0x77e153*/
   {
-    if ( !Theme::IsPlaying((Theme *)&unk_A83D10) ) /*0x77e15a*/
+    if ( !((Theme *)((Theme *)&unk_A83D10))->IsPlaying() ) /*0x77e15a*/
       goto LABEL_5; /*0x77e15a*/
     v2 = dword_A83D14; /*0x77e17d*/
     if ( dword_A83D14 == -1 ) /*0x77e186*/
@@ -146,7 +147,7 @@ void sub_785EA0()
       if ( !stru_B77D80.HashTable_field_0x48 ) /*0x78604b*/
         CloseDialog(v13, 0); /*0x786051*/
     }
-    Current = (HANDLE *)((HWND)this->Dialog::GetCurrent());
+    Current = (HANDLE *)((HWND)((Dialog *)0)->GetCurrent());
     result = (HANDLE *)((int)GetDlgItem(Current, 1344));
     if ( result ) /*0x786069*/
       return (int, unsigned int a2)SetFocus((HWND)result); /*0x78606c*/

@@ -53,7 +53,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2); /*0x5d55c7*/
+      v6 = (unsigned int *)(RA2_OPNEW(8 * a2));
       if ( v6 ) /*0x5d55d1*/
       {
         v7 = v6; /*0x5d55d6*/
@@ -99,7 +99,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
       }
       if ( *((unsigned char *)this + 13) ) /*0x5d564a*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5653*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5d5653*/
         *((unsigned int *)this + 1) = 0; /*0x5d565b*/
       }
     }
@@ -119,18 +119,18 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 }
 }
 // 0x5D3450
-MSFont * MSFont::QueryInterface(char a2)
+MSFont * MSFont::QueryInterface(void * Block, char a2)
 {
 
   MSFont::Constructor_MSFont(Block); /*0x5d3453*/
-  if ( (a2 & 1) != 0 ) /*0x5d345d*/
-    __3_YAXPAX_Z(Block); /*0x5d3460*/
+  if ( (Block & 1) != 0 ) /*0x5d345d*/
+    RA2_OPDEL(Block); /*0x5d3460*/
   return (MSFont *)Block; /*0x5d346a*/
 
 }
 // 0x5D5080
 namespace gamemd {
-void MSFont_18::ClearBuffer(void *a1 = 0)
+void MSFont_18::ClearBuffer()
 {
 
   void *v2; // eax
@@ -139,7 +139,7 @@ void MSFont_18::ClearBuffer(void *a1 = 0)
   *((unsigned int *)this + 4) = 0; /*0x5d5089*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5d5090*/
   {
-    __3_YAXPAX_Z(v2); /*0x5d5096*/
+    RA2_OPDEL(v2); /*0x5d5096*/
     *((unsigned int *)this + 1) = 0; /*0x5d509e*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d50a1*/
@@ -173,7 +173,7 @@ int MSFont_18::GetSize(int a2)
 
 // 0x5D50E0
 namespace gamemd {
-void MSFont_18::Destroy(void *a1 = 0)
+void MSFont_18::Destroy()
 {
 
   void *v2; // eax
@@ -182,7 +182,7 @@ void MSFont_18::Destroy(void *a1 = 0)
   *((unsigned int *)this + 4) = 0; /*0x5d50e9*/
   if ( v2 && *((unsigned char *)this + 13) ) /*0x5d50f0*/
   {
-    __3_YAXPAX_Z(v2); /*0x5d50f6*/
+    RA2_OPDEL(v2); /*0x5d50f6*/
     *((unsigned int *)this + 1) = 0; /*0x5d50fe*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d5101*/
@@ -250,7 +250,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d51ac*/
       v4 = a3; /*0x5d51c2*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d51be*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d51be*/
     *((unsigned char *)this + 12) = 1; /*0x5d51c6*/
     if ( v4 ) /*0x5d51ca*/
     {
@@ -263,7 +263,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
           ++i; /*0x5d51ee*/
         if ( *((unsigned char *)this + 13) ) /*0x5d51fb*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5206*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x5d5206*/
           *((unsigned int *)this + 1) = 0; /*0x5d520e*/
         }
       }
@@ -288,12 +288,12 @@ char MSFont_18::Release(int a2, unsigned int * a3)
 
 // 0x5D5240
 namespace gamemd {
-void MSFont_18::ddtor(void *a1 = 0)
+void MSFont_18::ddtor()
 {
 
   if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x5d524d*/
   {
-    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x5d5253*/
+    RA2_OPDEL(*(void **)((char *)this + 4)); /*0x5d5253*/
     *((unsigned int *)this + 1) = 0; /*0x5d525b*/
   }
   *((unsigned char *)this + 13) = 0; /*0x5d525e*/
@@ -356,7 +356,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d52e8*/
       v4 = a3; /*0x5d52fe*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x5d52fa*/
+      v4 = RA2_OPNEW(4 * a2); /*0x5d52fa*/
     *((unsigned char *)this + 12) = 1; /*0x5d5302*/
     if ( !v4 ) /*0x5d5306*/
       return 0; /*0x5d537a*/
@@ -369,7 +369,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
         ++i; /*0x5d5321*/
       if ( *((unsigned char *)this + 13) ) /*0x5d532e*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x5d5339*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x5d5339*/
         *((unsigned int *)this + 1) = 0; /*0x5d5341*/
       }
     }
@@ -435,22 +435,22 @@ int MSFont_18::FindPair8(unsigned int * a2)
 }
 // 0x5D56E0
 namespace gamemd {
-VectorClass_flat * MSFont_18::QueryInterface(char a2)
+VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d56e3*/
-  *Block = &vt_VectorClass_HWND; /*0x5d56e6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_HWND);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d56f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d56f8*/
+    RA2_OPDEL(v3); /*0x5d56f8*/
     *(Block + 1) = 0; /*0x5d5700*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d570b*/
   *(Block + 2) = 0; /*0x5d5711*/
-  if ( (a2 & 1) != 0 ) /*0x5d5718*/
-    __3_YAXPAX_Z(Block); /*0x5d571b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5d5718*/
+    RA2_OPDEL(Block); /*0x5d571b*/
   return (VectorClass *)Block; /*0x5d5725*/
 
 }
@@ -458,22 +458,22 @@ VectorClass_flat * MSFont_18::QueryInterface(char a2)
 
 // 0x5D5730
 namespace gamemd {
-DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
+DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d5733*/
-  *Block = &vt_VectorClass_HWND; /*0x5d5736*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_HWND);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d5740*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d5748*/
+    RA2_OPDEL(v3); /*0x5d5748*/
     *(Block + 1) = 0; /*0x5d5750*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d575b*/
   *(Block + 2) = 0; /*0x5d5761*/
-  if ( (a2 & 1) != 0 ) /*0x5d5768*/
-    __3_YAXPAX_Z(Block); /*0x5d576b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5d5768*/
+    RA2_OPDEL(Block); /*0x5d576b*/
   return (DynamicVector *)Block; /*0x5d5775*/
 
 }
@@ -481,22 +481,22 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
 
 // 0x5D57D0
 namespace gamemd {
-DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(char a2)
+DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned int * Block, char a2)
 {
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d57d3*/
-  *Block = &vt_VectorClass_AcceleratorTracker; /*0x5d57d6*/
+  v3 = (void *)((unsigned int)((void *)*(Block + 1)));
+  *Block = (unsigned int)(&vt_VectorClass_AcceleratorTracker);
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d57e0*/
   {
-    __3_YAXPAX_Z(v3); /*0x5d57e8*/
+    RA2_OPDEL(v3); /*0x5d57e8*/
     *(Block + 1) = 0; /*0x5d57f0*/
   }
   *((unsigned char *)Block + 13) = 0; /*0x5d57fb*/
   *(Block + 2) = 0; /*0x5d5801*/
-  if ( (a2 & 1) != 0 ) /*0x5d5808*/
-    __3_YAXPAX_Z(Block); /*0x5d580b*/
+  if ( ((unsigned int)(Block)& 1) != 0 ) /*0x5d5808*/
+    RA2_OPDEL(Block); /*0x5d580b*/
   return (DynamicVector *)Block; /*0x5d5815*/
 
 }

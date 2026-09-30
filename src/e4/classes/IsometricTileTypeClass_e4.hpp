@@ -41,7 +41,6 @@ struct IsometricTileTypeClass {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
-    unsigned int CleanupMembers;
     unsigned int IsometricTileTypeClass_field_0x04;
     unsigned int IsometricTileTypeClass_field_0x08;
     unsigned int IsometricTileTypeClass_field_0x0C;
@@ -80,10 +79,11 @@ struct IsometricTileTypeClass {
     int GetTileIndex(int a2, int a3, void *a1 = 0);
     int GetTypeIdentifier();
     int ProcessPower(int * a2, void *a1 = 0);
-    int SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2);
+    int SaveToINI(void * aP0, void * aP1, int aP2);
     unsigned int * Constructor_0(int a2, int a3, void *a1 = 0);
     unsigned int PointerToIndex(int a2);
     void ClearBuffer(void *a1 = 0);
+    static double CleanupMembers(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

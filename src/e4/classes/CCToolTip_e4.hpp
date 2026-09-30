@@ -15,7 +15,7 @@ struct CCToolTip {
     unsigned char q014;  // 0x14
     unsigned int __pad_0;
 // --- flat members (END) ---
-    CCToolTip * QueryInterface(char a2);
+    CCToolTip * QueryInterface(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

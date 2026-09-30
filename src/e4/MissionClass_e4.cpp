@@ -32,81 +32,81 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
 
   INIClass::ResetSection(a2); /*0x5b376a*/
   if ( *this == -1 ) /*0x5b3774*/
-    v3 = MEMORY[0x817474]; /*0x5b3776*/
+    v3 = g_abs_817474; /*0x5b3776*/
   else
     v3 = off_816CAC[*this]; /*0x5b377d*/
-  if ( !INIClass::BinarySearchSection((int)a2, (unsigned __int8 *)v3) ) /*0x5b3787*/
+  if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)v3) ) /*0x5b3787*/
     return 0; /*0x5b3906*/
   if ( *this == -1 ) /*0x5b379e*/
-    v4 = MEMORY[0x817474]; /*0x5b37a0*/
+    v4 = g_abs_817474; /*0x5b37a0*/
   else
     v4 = off_816CAC[*this]; /*0x5b37a7*/
   *((unsigned char *)this + 4) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
                            (int)a2,
-                           (unsigned __int8 *)v4,
-                           (unsigned __int8 *)MEMORY[0x82C2B8],
+                           (uint8_t *)v4,
+                           (uint8_t *)g_abs_82C2B8,
                            *((unsigned char *)this + 4));
   if ( *this == -1 ) /*0x5b37c7*/
-    v5 = MEMORY[0x817474]; /*0x5b37c9*/
+    v5 = g_abs_817474; /*0x5b37c9*/
   else
     v5 = off_816CAC[*this]; /*0x5b37d0*/
   *((unsigned char *)this + 5) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
                            (int)a2,
-                           (unsigned __int8 *)v5,
-                           (unsigned __int8 *)MEMORY[0x82C2B0],
+                           (uint8_t *)v5,
+                           (uint8_t *)g_abs_82C2B0,
                            *((unsigned char *)this + 5));
   if ( *this == -1 ) /*0x5b37f0*/
-    v6 = MEMORY[0x817474]; /*0x5b37f2*/
+    v6 = g_abs_817474; /*0x5b37f2*/
   else
     v6 = off_816CAC[*this]; /*0x5b37f9*/
   *((unsigned char *)this + 6) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
                            (int)a2,
-                           (unsigned __int8 *)v6,
-                           (unsigned __int8 *)MEMORY[0x82C2A4],
+                           (uint8_t *)v6,
+                           (uint8_t *)g_abs_82C2A4,
                            *((unsigned char *)this + 6));
   if ( *this == -1 ) /*0x5b3819*/
-    v7 = MEMORY[0x817474]; /*0x5b381b*/
+    v7 = g_abs_817474; /*0x5b381b*/
   else
     v7 = off_816CAC[*this]; /*0x5b3822*/
   *((unsigned char *)this + 7) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
                            (int)a2,
-                           (unsigned __int8 *)v7,
-                           (unsigned __int8 *)MEMORY[0x82C298],
+                           (uint8_t *)v7,
+                           (uint8_t *)g_abs_82C298,
                            *((unsigned char *)this + 7));
   if ( *this == -1 ) /*0x5b3842*/
-    v8 = MEMORY[0x817474]; /*0x5b3844*/
+    v8 = g_abs_817474; /*0x5b3844*/
   else
     v8 = off_816CAC[*this]; /*0x5b384b*/
   *((unsigned char *)this + 8) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                            (int)a2,
-                           (unsigned __int8 *)v8,
-                           (unsigned __int8 *)MEMORY[0x82C28C],
+                           (uint8_t *)v8,
+                           (uint8_t *)g_abs_82C28C,
                            *((unsigned char *)this + 8));
   if ( *this == -1 ) /*0x5b386b*/
-    v9 = MEMORY[0x817474]; /*0x5b386d*/
+    v9 = g_abs_817474; /*0x5b386d*/
   else
     v9 = off_816CAC[*this]; /*0x5b3874*/
   *((unsigned char *)this + 9) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
                            (int)a2,
-                           (unsigned __int8 *)v9,
-                           (unsigned __int8 *)stru_82C284,
+                           (uint8_t *)v9,
+                           (uint8_t *)stru_82C284,
                            *((unsigned char *)this + 9));
   if ( *this == -1 ) /*0x5b3894*/
-    v10 = MEMORY[0x817474]; /*0x5b3896*/
+    v10 = g_abs_817474; /*0x5b3896*/
   else
     v10 = off_816CAC[*this]; /*0x5b389d*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x5b38b4*/
                        (int)a2,
-                       (unsigned __int8 *)v10,
-                       (unsigned __int8 *)MEMORY[0x8185A4],
+                       (uint8_t *)v10,
+                       (uint8_t *)g_abs_8185A4,
                        *((double *)this + 2));
-  v12 = *this; /*0x5b38b9*/
+  v12 = (char *)(*this);
   *((double *)this + 2) = Double_Overwrite; /*0x5b38bb*/
   if ( v12 == -1 ) /*0x5b38c1*/
-    v13 = MEMORY[0x817474]; /*0x5b38c3*/
+    v13 = g_abs_817474; /*0x5b38c3*/
   else
     v13 = off_816CAC[v12]; /*0x5b38ca*/
-  v14 = INIClass::ReadDouble_Overwrite((int)a2, (unsigned __int8 *)v13, (unsigned __int8 *)aAarate, 0.0); /*0x5b38dd*/
+  v14 = INIClass::ReadDouble_Overwrite((int)a2, (uint8_t *)v13, (uint8_t *)aAarate, 0.0); /*0x5b38dd*/
   *((double *)this + 3) = v14; /*0x5b38e2*/
   if ( v14 == 0.0 ) /*0x5b38f0*/
   {
@@ -114,7 +114,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     *((char *)this + 6) = *((char *)this + 4); /*0x5b38f8*/
     *((char *)this + 7) = v15; /*0x5b38fb*/
   }
-  return 1; /*0x5b38fe*/
+  return (gamemd::AbstractClass **)(1);
 
 }
 } // namespace ra2
@@ -126,7 +126,7 @@ int MissionClass::vt_entry_1FC()
 
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x41bf30*/
+  IDA_LOBYTE(result) = 0; /*0x41bf30*/
   return result; /*0x41bf32*/
 
 }

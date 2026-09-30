@@ -75,12 +75,12 @@ struct TriggerTypeClass {
     TEventClass* FirstEvent;  // 0xAC
     TActionClass* FirstAction;  // 0xB0
 // --- flat members (END) ---
-    TechnoClass * * ReadINI(unsigned int * a0, TechnoClass * aP1, TechnoClass * aP2, int a4, TechnoClass * aP4);
+    TechnoClass * * ReadINI(unsigned int * a0, void * aP1, void * aP2, int a4, void * aP4);
     int GetClassIdentifier(int a1, unsigned int * a2);
     int GetObjectSize();
     int GetTypeIdentifier();
-    int LoadTypeData(AbstractTypeClass * aP0, int aP1);
-    int Write(TechnoTypeClass * aP0, int * a1, int aP2);
+    int LoadTypeData(void * aP0, int aP1);
+    int Write(void * aP0, int * a1, int aP2);
     static double GetFlags(...);  // C2597 interim stub
 };
 

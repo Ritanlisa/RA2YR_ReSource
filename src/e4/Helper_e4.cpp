@@ -74,7 +74,7 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   v10[0] = 0; /*0x437253*/
   v10[1] = 0; /*0x43725b*/
   v10[2] = v9; /*0x437263*/
-  LOBYTE(v6) = XSurface::BlitPart((int *)&v11, v10, a1, (void **)a2, 0, 1); /*0x437270*/
+  IDA_LOBYTE(v6) = XSurface::BlitPart((int *)&v11, v10, a1, (void **)a2, 0, 1); /*0x437270*/
   Vector::Clear((int)v16); /*0x437272*/
   return v6; /*0x4371e7*/
 

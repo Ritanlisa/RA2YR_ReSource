@@ -19,7 +19,7 @@ struct SmudgeTypeVector {
     unsigned int m_8;
     unsigned int m_C;
 // --- flat members (END) ---
-    VectorClass_flat * QueryInterface(char a2);
+    VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
 };
 
 } // namespace gamemd

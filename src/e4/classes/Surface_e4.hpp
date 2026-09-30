@@ -16,19 +16,19 @@ struct Surface {
 // --- flat members (END) ---
     AbstractClass * * LoadToSurfaceSHP(char * Source);
     LPDIRECTDRAW CreateSurfacePalette();
-    TechnoClass * * BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6);
+    TechnoClass * * BlitTechnoTo(short * a1, void * aP2, void * aP3, void * aP4, void * aP5, void * aP6);
     char StubReturnFalse();
     int AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
-    int BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * aP3);
+    int BlitTransparent(int * a0, void * aP1, int a3, void * aP3);
     int CommitSurfaceBuffersAudio();
     int GetHeight();
     int GetWidth();
     int IsLocked();
     int PixelToIndex(unsigned int * a2);
     int RenderRadar();
-    int TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5);
-    unsigned int * Construct(ObjectClass * aP1, IUnknown * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
-    unsigned int * CopyRect(ObjectClass * aP1);
+    int TileBlit(void * aP0, void * aP1, int a3, int a4, int a5);
+    unsigned int * Construct(void * aP1, void * aP2, void *a3 = 0, void *a4 = 0, void *a5 = 0);
+    unsigned int * CopyRect(void * aP1);
     unsigned int * GetRect(unsigned int * a2);
     void RenderToSurfaceVoxel(unsigned int * a2, int * a3);
 };
