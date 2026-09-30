@@ -472,6 +472,8 @@ void sub_568140(int * a1, int a2)
 namespace gamemd {
 BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
 {
+
+  int *v2; // esi
   char *v3; // edi
   int v4; // eax
   int v5; // esi
@@ -482,72 +484,76 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   char *v10; // edi
   char *v11; // edi
   int v12; // esi
-  char v15[4]; // [esp+Ch] [ebp-30h] BYREF
+  int v15; // [esp+Ch] [ebp-30h] BYREF
   int Src; // [esp+10h] [ebp-2Ch] BYREF
-  Pipe v17; // [esp+14h] [ebp-28h] BYREF
+  int v17[10]; // [esp+14h] [ebp-28h] BYREF
   int v18; // [esp+40h] [ebp+4h]
 
+  v2 = this; /*0x56af45*/
   v3 = 0; /*0x56af47*/
-  LCWPipe::Constructor((LCWPipe *)&v17, 0, 0x2000); /*0x56af57*/
-  Pipe::SetDelegate(&v17, a2); /*0x56af65*/
+  LCWPipe::Constructor(v17, 0, 0x2000); /*0x56af57*/
+  Pipe::SetDelegate(v17, a2); /*0x56af65*/
   v4 = 0; /*0x56af70*/
   v18 = 0; /*0x56af74*/
-  if ( this->u32_4.lastLayer > 0 ) /*0x56af78*/
+  if ( v2[80] > 0 ) /*0x56af78*/
   {
     do /*0x56b08b*/
     {
-      v5 = *(unsigned int *)(*(unsigned int *)&this->u32_4.isAliveFlag + 4 * v4); /*0x56af88*/
+      v5 = *(unsigned int *)(v2[79] + 4 * v4); /*0x56af88*/
       if ( v4 ) /*0x56af8b*/
       {
         if ( v5 ) /*0x56af93*/
         {
           v6 = *(unsigned int *)(v5 + 36); /*0x56af99*/
           Src = v6; /*0x56afa0*/
-                    v7 = *((unsigned int *)this + 244);
-          Src = IDA_SHIWORD(v6) + (int16_t)v6; /*0x56afb7*/
+          v7 = *((char *)this + 61); /*0x56afa9*/
+          Src = SHIWORD(v6) + (__int16)v6; /*0x56afb7*/
           if ( Src > v7 /*0x56afea*/
-            && (int16_t)v6 - IDA_SHIWORD(v6) < v7
-            && IDA_SHIWORD(v6) - (int16_t)v6 < v7
-            && Src <= v7 + 2 * this->M248 )
+            && (__int16)v6 - SHIWORD(v6) < v7
+            && SHIWORD(v6) - (__int16)v6 < v7
+            && Src <= v7 + 2 * *((char *)this + 62) )
           {
             Src = v6; /*0x56aff7*/
-            if ( v6 != *(unsigned int *)&g_MissionQueueFrame.waypoints[2134] /*0x56b028*/
-              && (int *)v5 != &g_MissionQueueFrame.briefing[130]
+            if ( v6 != g_MapSeedState /*0x56b028*/
+              && (unsigned int *)v5 != g_CellClassArray
               && (*(unsigned int *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
             {
               Src = v6; /*0x56b035*/
-              v8 = &v3[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)&Src, 4)]; /*0x56b045*/
-              v9 = &v8[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)(v5 + 56), 4)]; /*0x56b059*/
-              v10 = &v9[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)(v5 + 282), 1)]; /*0x56b06d*/
-              v3 = &v10[(unsigned int)LCW::Compress((LCWPipe *)&v17, (char *)(v5 + 283), 1)]; /*0x56b074*/
+              v8 = &v3[(unsigned int)LCW::Compress((int)v17, (char *)&Src, 4)]; /*0x56b045*/
+              v9 = &v8[(unsigned int)LCW::Compress((int)v17, (char *)(v5 + 56), 4)]; /*0x56b059*/
+              v10 = &v9[(unsigned int)LCW::Compress((int)v17, (char *)(v5 + 282), 1)]; /*0x56b06d*/
+              v3 = &v10[(unsigned int)LCW::Compress((int)v17, (char *)(v5 + 283), 1)]; /*0x56b074*/
             }
           }
         }
       }
+      v2 = this; /*0x56b076*/
       v4 = v18 + 1; /*0x56b07e*/
       v18 = v4; /*0x56b085*/
     }
-    while ( v4 < this->M320 ); /*0x56b08b*/
+    while ( v4 < *((char *)this + 80) ); /*0x56b08b*/
   }
-  *(unsigned int *)v15 = *(unsigned int *)&g_MissionQueueFrame.waypoints[2134]; /*0x56b0a4*/
-  v11 = &v3[(unsigned int)LCW::Compress((LCWPipe *)&v17, v15, 4)]; /*0x56b0ad*/
+  v15 = g_MapSeedState; /*0x56b0a4*/
+  v11 = &v3[(unsigned int)LCW::Compress((int)v17, (char *)&v15, 4)]; /*0x56b0ad*/
   v12 = 100; /*0x56b0af*/
   do /*0x56b0c7*/
   {
-    v11 = &v11[(unsigned int)LCW::Compress((LCWPipe *)&v17, v15, 4)]; /*0x56b0c4*/
+    v11 = &v11[(unsigned int)LCW::Compress((int)v17, (char *)&v15, 4)]; /*0x56b0c4*/
     --v12; /*0x56b0c6*/
   }
   while ( v12 ); /*0x56b0c7*/
-  (*(void (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17); /*0x56b0d1*/
-  LCWPipe::Dtor((LCWPipe *)&v17); /*0x56b0d8*/
+  (*(void (**)(int *))(v17[0] + 4))(v17); /*0x56b0d1*/
+  LCWPipe::Dtor(v17); /*0x56b0d8*/
   return v11; /*0x56b0df*/
+
 }
 }
 // 0x56B250
 namespace gamemd {
 BombClass * * E4Recv_56B250::sub_56B250(int a2)
 {
-  ObjectClass *v2; // esi
+
+  int *v2; // esi
   int v3; // edi
   int v4; // eax
   int v5; // esi
@@ -560,56 +566,59 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   int v12; // esi
   int Src; // [esp+Ch] [ebp-30h] BYREF
   int v16; // [esp+10h] [ebp-2Ch] BYREF
-  Pipe v17; // [esp+14h] [ebp-28h] BYREF
+  int v17[10]; // [esp+14h] [ebp-28h] BYREF
   int v18; // [esp+40h] [ebp+4h]
 
-  LZOPipe::Constructor((LZOPipe *)&v17, 0, 0x2000); /*0x56b266*/
-  Pipe::SetDelegate(&v17, a2); /*0x56b274*/
+  v2 = this; /*0x56b255*/
+  LZOPipe::Constructor(v17, 0, 0x2000); /*0x56b266*/
+  Pipe::SetDelegate(v17, a2); /*0x56b274*/
   v3 = 0; /*0x56b27f*/
   v4 = 0; /*0x56b281*/
   v18 = 0; /*0x56b285*/
-  if ( this->vtable2.lastLayer > 0 ) /*0x56b289*/
+  if ( v2[80] > 0 ) /*0x56b289*/
   {
     do /*0x56b39c*/
     {
-      v5 = *(unsigned int *)(*(unsigned int *)&this->vtable2.isAliveFlag + 4 * v4); /*0x56b299*/
+      v5 = *(unsigned int *)(v2[79] + 4 * v4); /*0x56b299*/
       if ( v4 ) /*0x56b29c*/
       {
         if ( v5 ) /*0x56b2a4*/
         {
           v6 = *(unsigned int *)(v5 + 36); /*0x56b2aa*/
           Src = v6; /*0x56b2b1*/
-                    v7 = *((unsigned int *)this + 244);
-          Src = IDA_SHIWORD(v6) + (int16_t)v6; /*0x56b2c8*/
+          v7 = *((char *)this + 61); /*0x56b2ba*/
+          Src = SHIWORD(v6) + (__int16)v6; /*0x56b2c8*/
           if ( Src > v7 /*0x56b2fb*/
-            && (int16_t)v6 - IDA_SHIWORD(v6) < v7
-            && IDA_SHIWORD(v6) - (int16_t)v6 < v7
-            && Src <= v7 + 2 * this->u32_F8 )
+            && (__int16)v6 - SHIWORD(v6) < v7
+            && SHIWORD(v6) - (__int16)v6 < v7
+            && Src <= v7 + 2 * *((char *)this + 62) )
           {
             Src = v6; /*0x56b308*/
-            if ( v6 != *(unsigned int *)&g_MissionQueueFrame.waypoints[2134] /*0x56b339*/
-              && (int *)v5 != &g_MissionQueueFrame.briefing[130]
+            if ( v6 != g_MapSeedState /*0x56b339*/
+              && (unsigned int *)v5 != g_CellClassArray
               && (*(unsigned int *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
             {
               Src = v6; /*0x56b346*/
-              v8 = Compression::Read((int *)v17.__pad_0, (int)&Src, 4) + v3; /*0x56b356*/
-              v9 = Compression::Read((int *)v17.__pad_0, v5 + 56, 4) + v8; /*0x56b36a*/
-              v10 = Compression::Read((int *)v17.__pad_0, v5 + 282, 1) + v9; /*0x56b37e*/
-              v3 = Compression::Read((int *)v17.__pad_0, v5 + 283, 1) + v10; /*0x56b385*/
+              v8 = Compression::Read((int)v17, (int)&Src, 4) + v3; /*0x56b356*/
+              v9 = Compression::Read((int)v17, v5 + 56, 4) + v8; /*0x56b36a*/
+              v10 = Compression::Read((int)v17, v5 + 282, 1) + v9; /*0x56b37e*/
+              v3 = Compression::Read((int)v17, v5 + 283, 1) + v10; /*0x56b385*/
             }
           }
         }
       }
+      v2 = this; /*0x56b387*/
       v4 = v18 + 1; /*0x56b38f*/
       v18 = v4; /*0x56b396*/
     }
-    while ( v4 < this->customSound_controller ); /*0x56b39c*/
+    while ( v4 < *((char *)this + 80) ); /*0x56b39c*/
   }
-  v16 = *(unsigned int *)&g_MissionQueueFrame.waypoints[2134]; /*0x56b3b5*/
-  v11 = Compression::Read((int *)v17.__pad_0, (int)&v16, 4) + v3; /*0x56b3c6*/
-  v12 = (*(int (**)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17); /*0x56b3cf*/
-  LZOPipe::Destructor((LZOPipe *)&v17); /*0x56b3d1*/
+  v16 = g_MapSeedState; /*0x56b3b5*/
+  v11 = Compression::Read((int)v17, (int)&v16, 4) + v3; /*0x56b3c6*/
+  v12 = (*(int (**)(int *))(v17[0] + 4))(v17); /*0x56b3cf*/
+  LZOPipe::Destructor(v17); /*0x56b3d1*/
   return v12 + v11; /*0x56b3d9*/
+
 }
 }
 // 0x561350
@@ -806,13 +815,14 @@ int unknown_libname_22()
 namespace gamemd {
 unsigned int * E4Recv_5654E0::sub_5654E0(unsigned int * a2, int * a3)
 {
+
   int v3; // ebx
   int v4; // esi
   int v5; // ecx
   int v6; // ecx
   int v7; // esi
 
-    v3 = *((unsigned int *)this + 244);
+  v3 = *((unsigned int *)this + 61); /*0x5654e5*/
   v4 = a3[1]; /*0x5654ec*/
   v5 = *a3; /*0x5654f5*/
   if ( (v3 & 1) != 0 ) /*0x5654f7*/
@@ -823,6 +833,7 @@ unsigned int * E4Recv_5654E0::sub_5654E0(unsigned int * a2, int * a3)
   *a2 = v3 / 2 + (v6 >> 1); /*0x565514*/
   a2[1] = v7; /*0x565516*/
   return a2; /*0x565513*/
+
 }
 } // namespace gamemd
 
@@ -830,14 +841,15 @@ unsigned int * E4Recv_5654E0::sub_5654E0(unsigned int * a2, int * a3)
 namespace gamemd {
 unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
 {
+
   int v3; // ebx
   int v4; // esi
   int v5; // ecx
   int v6; // ecx
-  int16_t v7; // si
-  int16_t *v9; // [esp+14h] [ebp+8h]
+  __int16 v7; // si
+  int v9; // [esp+14h] [ebp+8h]
 
-    v3 = *((unsigned int *)this + 244);
+  v3 = *((unsigned int *)this + 61); /*0x565615*/
   v4 = a3[1]; /*0x56561c*/
   v5 = *a3; /*0x565627*/
   if ( (v3 & 1) != 0 ) /*0x565629*/
@@ -845,9 +857,11 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
   else
     v6 = v5 - v4; /*0x565630*/
   v7 = *a3 + v4 - v3; /*0x565639*/
-  IDA_LOWORD(v9) = v3 / 2 + (v6 >> 1); /*0x565645*/
-  IDA_HIWORD(v9) = v7; /*0x56564a*/
-  *v9 = v9; /*0x565655*/
+  LOWORD(v9) = v3 / 2 + (v6 >> 1); /*0x565645*/
+  HIWORD(v9) = v7; /*0x56564a*/
+  *a2 = v9; /*0x565655*/
+  return a2; /*0x565653*/
+
 }
 } // namespace gamemd
 
@@ -855,6 +869,7 @@ unsigned int * E4Recv_565610::sub_565610(unsigned int * a2, short * a3)
 namespace gamemd {
 int E4Recv_56AE40::sub_56AE40(int v9)
 {
+
   int v3; // edi
   int i; // ebx
   int v5; // eax
@@ -865,40 +880,41 @@ int E4Recv_56AE40::sub_56AE40(int v9)
   int k; // ebx
   int v11; // eax
   char *v12; // eax
-  Pipe v14[2]; // [esp+Ch] [ebp-28h] BYREF
+  int v14[10]; // [esp+Ch] [ebp-28h] BYREF
 
   v3 = 0; /*0x56ae48*/
-  LCWPipe::Constructor((LCWPipe *)v14, 0, 0x2000); /*0x56ae54*/
+  LCWPipe::Constructor(v14, 0, 0x2000); /*0x56ae54*/
   Pipe::SetDelegate(v14, v9); /*0x56ae62*/
-    for ( i = 0; i < *((unsigned int *)this + 320); ++i )
+  for ( i = 0; i < *((unsigned int *)this + 80); ++i ) /*0x56ae71*/
   {
-        v5 = *(unsigned int *)(*((unsigned int *)this + 316) + 4 * i);
+    v5 = *(unsigned int *)(*((unsigned int *)this + 79) + 4 * i); /*0x56ae7b*/
     if ( v5 ) /*0x56ae80*/
-      v6 = LCW::Compress((LCWPipe *)v14, (char *)(v5 + 56), 2); /*0x56ae86*/
+      v6 = LCW::Compress((int)v14, (char *)(v5 + 56), 2); /*0x56ae86*/
     else
-      v6 = LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[144], 2); /*0x56ae91*/
+      v6 = LCW::Compress((int)v14, stru_ABDC88, 2); /*0x56ae91*/
     v3 += (int)v6; /*0x56ae96*/
   }
-    for ( j = 0; j < *((unsigned int *)this + 320); ++j )
+  for ( j = 0; j < *((unsigned int *)this + 80); ++j ) /*0x56aead*/
   {
-        v8 = *(unsigned int *)(*((unsigned int *)this + 316) + 4 * j);
+    v8 = *(unsigned int *)(*((unsigned int *)this + 79) + 4 * j); /*0x56aeb7*/
     if ( v8 ) /*0x56aebc*/
-      v9 = LCW::Compress((LCWPipe *)v14, (char *)(v8 + 282), 1); /*0x56aec4*/
+      v9 = LCW::Compress((int)v14, (char *)(v8 + 282), 1); /*0x56aec4*/
     else
-      v9 = LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[200] + 2, 1); /*0x56aecf*/
+      v9 = LCW::Compress((int)v14, (char *)&stru_ABDD6A, 1); /*0x56aecf*/
     v3 += (int)v9; /*0x56aed4*/
   }
-    for ( k = 0; k < *((unsigned int *)this + 320); ++k )
+  for ( k = 0; k < *((unsigned int *)this + 80); ++k ) /*0x56aeeb*/
   {
-        v11 = *(unsigned int *)(*((unsigned int *)this + 316) + 4 * k);
+    v11 = *(unsigned int *)(*((unsigned int *)this + 79) + 4 * k); /*0x56aef5*/
     if ( v11 ) /*0x56aefa*/
-      v12 = LCW::Compress((LCWPipe *)v14, (char *)(v11 + 283), 1); /*0x56af02*/
+      v12 = LCW::Compress((int)v14, (char *)(v11 + 283), 1); /*0x56af02*/
     else
-      v12 = LCW::Compress((LCWPipe *)v14, (char *)&g_MissionQueueFrame.briefing[200] + 3, 1); /*0x56af0d*/
+      v12 = LCW::Compress((int)v14, MEMORY[0xABDD6B], 1); /*0x56af0d*/
     v3 += (int)v12; /*0x56af12*/
   }
-  LCWPipe::Dtor((LCWPipe *)v14); /*0x56af23*/
+  LCWPipe::Dtor(v14); /*0x56af23*/
   return v3; /*0x56af2a*/
+
 }
 } // namespace gamemd
 
@@ -906,6 +922,7 @@ int E4Recv_56AE40::sub_56AE40(int v9)
 namespace gamemd {
 int E4Recv_56B0F0::sub_56B0F0(int * a2)
 {
+
   int v2; // ebx
   int v3; // eax
   int *v4; // esi
@@ -919,45 +936,48 @@ int E4Recv_56B0F0::sub_56B0F0(int * a2)
   int v12; // ebx
   int v13; // edx
   int i; // [esp+20h] [ebp-Ch]
+  unsigned int *v16; // [esp+24h] [ebp-8h]
   int v17; // [esp+28h] [ebp-4h] BYREF
 
   v2 = 0; /*0x56b0fa*/
   v3 = 0; /*0x56b0fc*/
-  a2 = a2; /*0x56b0ff*/
-    for ( i = 0; v3 < v16[80]; i = v3 )
+  v4 = a2; /*0x56b0ff*/
+  v16 = this; /*0x56b105*/
+  for ( i = 0; v3 < v16[80]; i = v3 ) /*0x56b10d*/
   {
-        v5 = *(unsigned int *)(*((unsigned int *)this + 316) + 4 * v3);
+    v5 = *(unsigned int *)(*((unsigned int *)this + 79) + 4 * v3); /*0x56b11d*/
     if ( v3 ) /*0x56b120*/
     {
       if ( v5 ) /*0x56b128*/
       {
         v6 = *(unsigned int *)(v5 + 36); /*0x56b12e*/
-                v7 = *((unsigned int *)this + 244);
-        IDA_HIWORD(a2) = IDA_HIWORD(v6); /*0x56b137*/
-        v8 = (int16_t)v6; /*0x56b13b*/
-        v9 = IDA_SHIWORD(v6); /*0x56b13e*/
-        a2 = (int *)(IDA_SHIWORD(a2) + v8); /*0x56b148*/
-                if ( (int)a2 > v7 && v8 - v9 < v7 && v9 - v8 < v7 && (int)a2 <= v7 + 2 * v16[62] )
+        v7 = *((unsigned int *)this + 61); /*0x56b131*/
+        HIWORD(a2) = HIWORD(v6); /*0x56b137*/
+        v8 = (__int16)v6; /*0x56b13b*/
+        v9 = SHIWORD(v6); /*0x56b13e*/
+        a2 = (int *)(SHIWORD(a2) + v8); /*0x56b148*/
+        if ( (int)a2 > v7 && v8 - v9 < v7 && v9 - v8 < v7 && (int)a2 <= v7 + 2 * v16[62] ) /*0x56b17b*/
         {
           a2 = *(int **)(v5 + 36); /*0x56b18b*/
-          if ( a2 != *(int **)&g_MissionQueueFrame.waypoints[2134] /*0x56b1bd*/
-            && (int *)v5 != &g_MissionQueueFrame.briefing[130]
+          if ( a2 != (int *)g_MapSeedState /*0x56b1bd*/
+            && (unsigned int *)v5 != g_CellClassArray
             && (*(unsigned int *)(v5 + 56) != 0xFFFF || *(char *)(v5 + 283) > 0) )
           {
-            v10 = (*(int (**)(int *, int **, int))(*a2 + 16))(a2, &a2, 4) + v2; /*0x56b1d8*/
-            v11 = (*(int (**)(int *, int, int))(*a2 + 16))(a2, v5 + 56, 4) + v10; /*0x56b1e3*/
-            v12 = (*(int (**)(int *, int, int))(*a2 + 16))(a2, v5 + 282, 1) + v11; /*0x56b1fc*/
-            v2 = (*(int (**)(int *, int, int))(*a2 + 16))(a2, v5 + 283, 1) + v12; /*0x56b201*/
+            v10 = (*(int (**)(int *, int **, int))(*v4 + 16))(v4, &a2, 4) + v2; /*0x56b1d8*/
+            v11 = (*(int (**)(int *, int, int))(*v4 + 16))(v4, v5 + 56, 4) + v10; /*0x56b1e3*/
+            v12 = (*(int (**)(int *, int, int))(*v4 + 16))(v4, v5 + 282, 1) + v11; /*0x56b1fc*/
+            v2 = (*(int (**)(int *, int, int))(*v4 + 16))(v4, v5 + 283, 1) + v12; /*0x56b201*/
           }
         }
       }
     }
-    this = this; /*0x56b203*/
+    this = v16; /*0x56b203*/
     v3 = i + 1; /*0x56b20b*/
   }
-  v13 = *a2; /*0x56b225*/
-  v17 = *(unsigned int *)&g_MissionQueueFrame.waypoints[2134]; /*0x56b227*/
-  return v2 + (*(int (**)(int *, int *, int))(v13 + 16))(a2, &v17, 4); /*0x56b239*/
+  v13 = *v4; /*0x56b225*/
+  v17 = g_MapSeedState; /*0x56b227*/
+  return v2 + (*(int (**)(int *, int *, int))(v13 + 16))(v4, &v17, 4); /*0x56b239*/
+
 }
 } // namespace gamemd
 

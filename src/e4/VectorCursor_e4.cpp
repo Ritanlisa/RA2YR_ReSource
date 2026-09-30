@@ -15,36 +15,43 @@
 namespace gamemd {
 unsigned int * VectorCursor::Release()
 {
-    ++*((unsigned int *)this + 8);
+
+  ++*((unsigned int *)this + 2); /*0x76f182*/
   return this; /*0x76f185*/
+
 }
 } // namespace gamemd
 // 0x76F190
 namespace gamemd {
 unsigned int * VectorCursor::ddtor()
 {
-    --*((unsigned int *)this + 8);
+
+  --*((unsigned int *)this + 2); /*0x76f192*/
   return this; /*0x76f195*/
+
 }
 } // namespace gamemd
 // 0x4F42D0
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
 {
-    *((unsigned int *)this + 12) = 2;
+
+  *((unsigned int *)this + 3) = 2; /*0x4f42d0*/
+
 }
 }
 // 0x4F4BB0
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
 {
+
   int v3; // eax
   int v4; // edx
   int v5; // eax
 
-  if ( ((uint8_t)dword_A8ED84 & 1) == 0 ) /*0x4f4bb7*/
+  if ( ((unsigned __int8)MEMORY[0xA8ED84] & 1) == 0 ) /*0x4f4bb7*/
   {
-        v3 = *((unsigned int *)this + 4);
+    v3 = *((char *)this + 1); /*0x4f4bb9*/
     if ( v3 >= 0 ) /*0x4f4bbe*/
     {
       if ( v3 <= 0 ) /*0x4f4bc5*/
@@ -55,26 +62,29 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
     {
       v4 = -1; /*0x4f4bc0*/
     }
-        *((unsigned int *)this + 4) = v4 - v3;
-  LABEL_7:
-        v5 = *((unsigned int *)this + 8);
+    *((char *)this + 1) = v4 - v3; /*0x4f4bce*/
+LABEL_7:
+    v5 = *((char *)this + 2); /*0x4f4bd1*/
     if ( v5 >= 0 ) /*0x4f4bd6*/
     {
       if ( v5 > 0 ) /*0x4f4be3*/
-                *((unsigned int *)this + 8) = 1 - v5;
+        *((char *)this + 2) = 1 - v5; /*0x4f4bec*/
     }
     else
     {
-            *((unsigned int *)this + 8) = -1 - v5;
+      *((char *)this + 2) = -1 - v5; /*0x4f4bdd*/
     }
   }
+
 }
 }
 // 0x4F42A0
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
 {
-  dword_A8EF54 = 0; /*0x4f42a0*/
+
+  MEMORY[0xA8EF54] = 0; /*0x4f42a0*/
+
 }
 } // namespace gamemd
 
@@ -82,6 +92,8 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Add()
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Get()
 {
-  dword_A8EF54 = 0; /*0x4f42e0*/
+
+  MEMORY[0xA8EF54] = 0; /*0x4f42e0*/
+
 }
 } // namespace gamemd

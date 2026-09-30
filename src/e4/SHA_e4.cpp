@@ -11,7 +11,8 @@
 namespace gamemd {
 int SHA1::ComputeThunk(ObjectClass * aP1)
 {
-// 0x69d9e0
-  return SHA1::Compute((SHA1 *)&this->SHA1_field_0x0C, aP1); /*0x69e9ed*/
+
+  return SHA1::Compute((Pipe *)((unsigned int *)this + 3), aP1); /*0x69e9ed*/
+
 }
 } // namespace gamemd

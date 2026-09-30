@@ -13,16 +13,18 @@
 namespace gamemd {
 StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 {
+
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((gamemd::StaticButtonClass *)((void *)this->q00C)));
-  *(unsigned int *)this->__pad_0 = (void*)&StaticButtonClass_vftable; /*0x6c6886*/
+  v3 = (void *)*(Block + 12); /*0x6c6883*/
+  *Block = &vt_StaticButtonClass; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
-    RA2_OPDEL(v3); /*0x6c6891*/
-    Vector::Clear((int)(Block + 9));
-  GadgetClass::Dtor(); /*0x6c68a3*/
+    __3_YAXPAX_Z(v3); /*0x6c6891*/
+  Vector::Clear((int)(Block + 9)); /*0x6c689c*/
+  GadgetClass::Dtor(Block); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
-    RA2_OPDEL(); /*0x6c68b0*/
-  return this; /*0x6c68ba*/
+    __3_YAXPAX_Z(Block); /*0x6c68b0*/
+  return (StaticButtonClass *)Block; /*0x6c68ba*/
+
 }
 } // namespace gamemd

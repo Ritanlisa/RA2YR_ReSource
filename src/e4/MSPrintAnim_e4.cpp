@@ -11,13 +11,11 @@
 namespace gamemd {
 wchar_t MSPrintAnim::GetCharAt(size_t a2)
 {
-  int result; // eax
 
-  result = wcslen(*(const wchar_t **)this->__pad_0); /*0x7b7116*/
-  if ( a2 >= result ) /*0x7b7124*/
-    IDA_LOWORD(result) = 0; /*0x7b7130*/
+  if ( a2 >= wcslen(*this) ) /*0x7b7124*/
+    return 0; /*0x7b7130*/
   else
-    IDA_LOWORD(result) = *(unsigned short *)(*(unsigned int *)this->__pad_0 + 2 * a2); /*0x7b7129*/
-  return result; /*0x7b7128*/
+    return (*this)[a2]; /*0x7b7129*/
+
 }
 } // namespace gamemd

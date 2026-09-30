@@ -15,79 +15,84 @@
 namespace gamemd {
 void * WonlineStringDialogControl_12::Constructor_WonlineStringDialogControl(char a2)
 {
-  *(unsigned int *)&this->q000 = (int)&WonlineStringDialogControl_vftable; /*0x7ac636*/
-  DeleteAndZero((ObjectClass *)&this->q00C); /*0x7ac63c*/
-  *(unsigned int *)&this->q000 = (int)&off_7F7624; /*0x7ac643*/
-  OwnerDrawControl::InitVtable(); /*0x7ac649*/
+
+  Block->vfptr = &vt_WonlineStringDialogControl; /*0x7ac636*/
+  DeleteAndZero((void **)Block + 3); /*0x7ac63c*/
+  Block->vfptr = &off_7F7624; /*0x7ac643*/
+  OwnerDrawControl::InitVtable(Block); /*0x7ac649*/
   if ( (a2 & 1) != 0 ) /*0x7ac653*/
-    RA2_OPDEL(); /*0x7ac656*/
-  return (void **)this; /*0x7ac660*/
+    __3_YAXPAX_Z(Block); /*0x7ac656*/
+  return (CreateGameDialogControl *)Block; /*0x7ac660*/
+
 }
 }
 // 0x7AD690
 namespace gamemd {
 int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, char ** a3)
 {
-  char ***v3; // esi
-  int result; // eax
-  char **v5; // eax
-  BOOL v6; // ebp
-  char **v7; // eax
-  char **v8; // eax
-  char *v9; // esi
-  unsigned int *v10; // [esp+1Ch] [ebp+Ch]
 
-  v3 = (char ***)((unsigned int)((char ***)&off_7F7638));
-  if ( !v10 ) /*0x7ad69f*/
+  _UNKNOWN **v3; // esi
+  int result; // eax
+  unsigned int *v5; // eax
+  BOOL v6; // ebp
+  int (*v7)(char *, unsigned int *, char **, void *); // eax
+  void *v8; // eax
+  char *v9; // esi
+
+  v3 = &off_7F7638; /*0x7ad69a*/
+  if ( !a3 ) /*0x7ad69f*/
     return -2147467261; /*0x7ad6aa*/
-  *v10 = 0; /*0x7ad6b1*/
-  if ( !*a3 && !a3[1] && a3[2] == (char *)192 && a3[3] == (char *)1174405120 ) /*0x7ad6d3*/
+  *a3 = 0; /*0x7ad6b1*/
+  if ( !*a2 && !a2[1] && a2[2] == 192 && a2[3] == 1174405120 ) /*0x7ad6d3*/
   {
-    (*(void (__stdcall **)(unsigned int *))(*a2 + 4))(a2); /*0x7ad6e6*/
-    *v10 = a2; /*0x7ad6e9*/
+    (*(void (**)(char *))(*(unsigned int *)a1 + 4))(a1); /*0x7ad6e6*/
+    *a3 = a1; /*0x7ad6e9*/
     return 0; /*0x7ad6f1*/
   }
   while ( 1 ) /*0x7ad6fd*/
   {
     v5 = *v3; /*0x7ad6fd*/
     v6 = *v3 == 0; /*0x7ad706*/
-    if ( !*v3 || *v5 == *a3 && v5[1] == a3[1] && v5[2] == a3[2] && v5[3] == a3[3] ) /*0x7ad730*/
+    if ( !*v3 || *v5 == *a2 && v5[1] == a2[1] && v5[2] == a2[2] && v5[3] == a2[3] ) /*0x7ad730*/
       break; /*0x7ad730*/
-  LABEL_17:
+LABEL_17:
     v8 = v3[5]; /*0x7ad753*/
     v3 += 3; /*0x7ad756*/
     if ( !v8 ) /*0x7ad75b*/
       return -2147467262; /*0x7ad75d*/
   }
-  v7 = v3[2]; /*0x7ad732*/
-  if ( v7 != (char **)1 ) /*0x7ad738*/
+  v7 = (int (*)(char *, unsigned int *, char **, void *))v3[2]; /*0x7ad732*/
+  if ( v7 != (int (*)(char *, unsigned int *, char **, void *))1 ) /*0x7ad738*/
   {
-    result = v7(a2, a3, v10, v3[1]); /*0x7ad745*/
+    result = v7(a1, a2, a3, v3[1]); /*0x7ad745*/
     if ( !result || !v6 && result < 0 ) /*0x7ad751*/
       return result; /*0x7ad751*/
     goto LABEL_17; /*0x7ad751*/
   }
-  v9 = (char *)((unsigned int)((char *)((unsigned int)((char *)v3[1] + (unsigned int)a2))));
-  (*(void (__stdcall **)(char *))(*(unsigned int *)v9 + 4))(v9); /*0x7ad775*/
-  *v10 = v9; /*0x7ad778*/
+  v9 = (char *)v3[1] + (unsigned int)a1; /*0x7ad770*/
+  (*(void (**)(char *))(*(unsigned int *)v9 + 4))(v9); /*0x7ad775*/
+  *a3 = v9; /*0x7ad778*/
   return 0; /*0x7ad6a1*/
+
 }
 }
 // 0x7AC970
 namespace gamemd {
 void WonlineStringDialogControl_12::ClearBuffer(void *a1 = 0)
 {
+
   void *v2; // eax
 
-  v2 = *(void **)&this->q004; /*0x7ac976*/
-    *((unsigned int *)this + 64) = 0;
-    if ( v2 && *((unsigned char *)this + 52) )
+  v2 = *(void **)((char *)this + 4); /*0x7ac976*/
+  *((unsigned int *)this + 4) = 0; /*0x7ac979*/
+  if ( v2 && *((unsigned char *)this + 13) ) /*0x7ac980*/
   {
-    RA2_OPDEL(v2); /*0x7ac986*/
-        *((unsigned int *)this + 16) = 0;
+    __3_YAXPAX_Z(v2); /*0x7ac986*/
+    *((unsigned int *)this + 1) = 0; /*0x7ac98e*/
   }
-    *((unsigned char *)this + 52) = 0;
-    *((unsigned int *)this + 32) = 0;
+  *((unsigned char *)this + 13) = 0; /*0x7ac991*/
+  *((unsigned int *)this + 2) = 0; /*0x7ac994*/
+
 }
 } // namespace gamemd
 
@@ -95,10 +100,12 @@ void WonlineStringDialogControl_12::ClearBuffer(void *a1 = 0)
 namespace gamemd {
 unsigned int WonlineStringDialogControl_12::PointerToIndex(int a2)
 {
-    if ( *((unsigned char *)this + 48) )
-        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
+
+  if ( *((unsigned char *)this + 12) ) /*0x7ac9a0*/
+    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x7ac9b5*/
   else
     return 0; /*0x7ac9a7*/
+
 }
 } // namespace gamemd
 
@@ -106,7 +113,9 @@ unsigned int WonlineStringDialogControl_12::PointerToIndex(int a2)
 namespace gamemd {
 int WonlineStringDialogControl_12::Seek(int a2, void *a1 = 0)
 {
-    return *(unsigned int *)(*((unsigned int *)this + 4) + 4 * a2);
+
+  return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * a2); /*0x7ac9ca*/
+
 }
 } // namespace gamemd
 
@@ -114,28 +123,30 @@ int WonlineStringDialogControl_12::Seek(int a2, void *a1 = 0)
 namespace gamemd {
 char WonlineStringDialogControl_12::AddRef(int a2)
 {
-  int m_8; // esi
+
+  int v2; // esi
   int v3; // edx
   unsigned int *v4; // eax
   int v5; // ecx
 
-    v2 = *((unsigned int *)this + 8);
-  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x7ad09d*/
+  v2 = *((char *)this + 2); /*0x7ad092*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x7ad09d*/
   {
     v3 = 0; /*0x7ad09f*/
-    if ( m_8 <= 0 ) /*0x7ad0a3*/
+    if ( v2 <= 0 ) /*0x7ad0a3*/
       return 1; /*0x7ad0c3*/
-        v4 = (unsigned int *)*((unsigned int *)this + 4);
+    v4 = (unsigned int *)*((char *)this + 1); /*0x7ad0a5*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x7ad0ab*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x7ad0b4*/
     {
       ++v3; /*0x7ad0b6*/
       ++v4; /*0x7ad0b7*/
-      if ( v3 >= m_8 ) /*0x7ad0bc*/
+      if ( v3 >= v2 ) /*0x7ad0bc*/
         return 1; /*0x7ad0bc*/
     }
   }
   return 0; /*0x7ad0be*/
+
 }
 } // namespace gamemd
 
@@ -143,36 +154,37 @@ char WonlineStringDialogControl_12::AddRef(int a2)
 namespace gamemd {
 char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
 {
+
   unsigned int *v4; // edi
-  int m_8; // ecx
+  int v6; // ecx
   int i; // eax
 
   if ( a2 ) /*0x7ad0dc*/
   {
-        *((unsigned char *)this + 12) = 0;
+    *((unsigned char *)this + 12) = 0; /*0x7ad0e6*/
     if ( a3 ) /*0x7ad0ec*/
       v4 = a3; /*0x7ad102*/
     else
-      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x7ad0fe*/
-        *((unsigned char *)this + 12) = 1;
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x7ad0fe*/
+    *((unsigned char *)this + 12) = 1; /*0x7ad106*/
     if ( v4 ) /*0x7ad10a*/
     {
-            if ( *((unsigned int *)this + 1) )
+      if ( *((unsigned int *)this + 1) ) /*0x7ad115*/
       {
-                v6 = *((unsigned int *)this + 2);
-        if ( a2 < m_8 ) /*0x7ad121*/
-          m_8 = a2; /*0x7ad123*/
-                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
+        v6 = *((unsigned int *)this + 2); /*0x7ad11c*/
+        if ( a2 < v6 ) /*0x7ad121*/
+          v6 = a2; /*0x7ad123*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) ) /*0x7ad129*/
           ++i; /*0x7ad12e*/
-                if ( *((unsigned char *)this + 13) )
+        if ( *((unsigned char *)this + 13) ) /*0x7ad13b*/
         {
-          RA2_OPDEL(*(void **)&this->q004); /*0x7ad146*/
-                    *((unsigned int *)this + 1) = 0;
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x7ad146*/
+          *((unsigned int *)this + 1) = 0; /*0x7ad14e*/
         }
       }
-            *((unsigned int *)this + 1) = v4;
-            *((unsigned int *)this + 2) = a2;
-            *((unsigned char *)this + 13) = a3 == 0;
+      *((unsigned int *)this + 1) = v4; /*0x7ad157*/
+      *((unsigned int *)this + 2) = a2; /*0x7ad15f*/
+      *((unsigned char *)this + 13) = a3 == 0; /*0x7ad162*/
       return 1; /*0x7ad168*/
     }
     else
@@ -182,9 +194,10 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
   }
   else
   {
-        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x7ad172*/
     return 1; /*0x7ad178*/
   }
+
 }
 } // namespace gamemd
 
@@ -192,13 +205,15 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void WonlineStringDialogControl_12::ddtor(void *a1 = 0)
 {
-    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
+
+  if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x7ad18d*/
   {
-    RA2_OPDEL(*(void **)&this->q004); /*0x7ad193*/
-        *((unsigned int *)this + 16) = 0;
+    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x7ad193*/
+    *((unsigned int *)this + 1) = 0; /*0x7ad19b*/
   }
-    *((unsigned char *)this + 52) = 0;
-    *((unsigned int *)this + 32) = 0;
+  *((unsigned char *)this + 13) = 0; /*0x7ad19e*/
+  *((unsigned int *)this + 2) = 0; /*0x7ad1a1*/
+
 }
 } // namespace gamemd
 
@@ -206,22 +221,24 @@ void WonlineStringDialogControl_12::ddtor(void *a1 = 0)
 namespace gamemd {
 int WonlineStringDialogControl_12::Read(int a2, void *a1 = 0)
 {
+
   int result; // eax
-  int m_8; // edx
+  int v3; // edx
   unsigned int *i; // ecx
 
-    if ( !*((unsigned char *)this + 48) )
+  if ( !*((unsigned char *)this + 12) ) /*0x7ad1b0*/
     return 0; /*0x7ad1b8*/
-    v3 = *((unsigned int *)this + 32);
+  v3 = *((unsigned int *)this + 2); /*0x7ad1be*/
   result = 0; /*0x7ad1c1*/
-  if ( m_8 <= 0 ) /*0x7ad1c5*/
+  if ( v3 <= 0 ) /*0x7ad1c5*/
     return -1; /*0x7ad1dc*/
-  for ( i = *(unsigned int **)&this->q004; *i != *a2; ++i ) /*0x7ad1cb*/
+  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x7ad1cb*/
   {
-    if ( ++result >= m_8 ) /*0x7ad1da*/
+    if ( ++result >= v3 ) /*0x7ad1da*/
       return -1; /*0x7ad1da*/
   }
   return result; /*0x7ad1ba*/
+
 }
 } // namespace gamemd
 
@@ -229,10 +246,12 @@ int WonlineStringDialogControl_12::Read(int a2, void *a1 = 0)
 namespace gamemd {
 unsigned int WonlineStringDialogControl_12::Write(int a2)
 {
-    if ( *((unsigned char *)this + 48) )
-        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
+
+  if ( *((unsigned char *)this + 12) ) /*0x7ad1f0*/
+    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x7ad205*/
   else
     return 0; /*0x7ad1f7*/
+
 }
 } // namespace gamemd
 
@@ -240,46 +259,48 @@ unsigned int WonlineStringDialogControl_12::Write(int a2)
 namespace gamemd {
 char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
 {
+
   unsigned int *v4; // edi
-  int m_8; // ecx
+  int v5; // ecx
   int i; // eax
   int v7; // eax
 
   if ( a2 ) /*0x7ad21c*/
   {
-        *((unsigned char *)this + 12) = 0;
+    *((unsigned char *)this + 12) = 0; /*0x7ad222*/
     if ( a3 ) /*0x7ad228*/
       v4 = a3; /*0x7ad23e*/
     else
-      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x7ad23a*/
-        *((unsigned char *)this + 12) = 1;
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x7ad23a*/
+    *((unsigned char *)this + 12) = 1; /*0x7ad242*/
     if ( !v4 ) /*0x7ad246*/
       return 0; /*0x7ad2ba*/
-        if ( *((unsigned int *)this + 1) )
+    if ( *((unsigned int *)this + 1) ) /*0x7ad248*/
     {
-            v5 = *((unsigned int *)this + 2);
-      if ( a2 < m_8 ) /*0x7ad254*/
-        m_8 = a2; /*0x7ad256*/
-            for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
+      v5 = *((unsigned int *)this + 2); /*0x7ad24f*/
+      if ( a2 < v5 ) /*0x7ad254*/
+        v5 = a2; /*0x7ad256*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) ) /*0x7ad25c*/
         ++i; /*0x7ad261*/
-            if ( *((unsigned char *)this + 13) )
+      if ( *((unsigned char *)this + 13) ) /*0x7ad26e*/
       {
-        RA2_OPDEL(*(void **)&this->q004); /*0x7ad279*/
-                *((unsigned int *)this + 1) = 0;
+        __3_YAXPAX_Z(*((void **)this + 1)); /*0x7ad279*/
+        *((unsigned int *)this + 1) = 0; /*0x7ad281*/
       }
     }
-        *((unsigned int *)this + 1) = v4;
-        *((unsigned int *)this + 2) = a2;
-        *((unsigned char *)this + 13) = a3 == 0;
+    *((unsigned int *)this + 1) = v4; /*0x7ad28a*/
+    *((unsigned int *)this + 2) = a2; /*0x7ad292*/
+    *((unsigned char *)this + 13) = a3 == 0; /*0x7ad295*/
   }
   else
   {
-        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x7ad29e*/
   }
-    v7 = *((unsigned int *)this + 2);
-    if ( v7 < *((unsigned int *)this + 4) )
-        *((unsigned int *)this + 4) = v7;
+  v7 = *((unsigned int *)this + 2); /*0x7ad2a1*/
+  if ( v7 < *((unsigned int *)this + 4) ) /*0x7ad2a9*/
+    *((unsigned int *)this + 4) = v7; /*0x7ad2ab*/
   return 1; /*0x7ad2ae*/
+
 }
 } // namespace gamemd
 
@@ -287,40 +308,44 @@ char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
 namespace gamemd {
 int WonlineStringDialogControl_12::FindItem(unsigned int * a2)
 {
-  int m_10; // edx
+
+  int v2; // edx
   int result; // eax
   unsigned int *i; // ecx
 
-    v2 = *((unsigned int *)this + 16);
+  v2 = *((char *)this + 4); /*0x7ad2c0*/
   result = 0; /*0x7ad2c3*/
-  if ( m_10 <= 0 ) /*0x7ad2c8*/
+  if ( v2 <= 0 ) /*0x7ad2c8*/
     return -1; /*0x7ad2df*/
-    for ( i = (unsigned int *)*((unsigned int *)this + 4); *i != *a2; ++i )
+  for ( i = (unsigned int *)*((char *)this + 1); *i != *a2; ++i ) /*0x7ad2ce*/
   {
-    if ( ++result >= m_10 ) /*0x7ad2dd*/
+    if ( ++result >= v2 ) /*0x7ad2dd*/
       return -1; /*0x7ad2dd*/
   }
   return result; /*0x7ad2e2*/
+
 }
 }
 // 0x7AD370
 namespace gamemd {
 VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(char a2)
 {
+
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad376*/
-    if ( v3 && *((unsigned char *)Block + 13) )
+  v3 = (void *)*(Block + 1); /*0x7ad373*/
+  *Block = &vt_VectorClass_tConnInfoStruct; /*0x7ad376*/
+  if ( v3 && *((unsigned char *)Block + 13) ) /*0x7ad380*/
   {
-    RA2_OPDEL(v3); /*0x7ad388*/
-        *(Block + 1) = 0;
+    __3_YAXPAX_Z(v3); /*0x7ad388*/
+    *(Block + 1) = 0; /*0x7ad390*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-    *(Block + 2) = 0;
+  *((unsigned char *)Block + 13) = 0; /*0x7ad39b*/
+  *(Block + 2) = 0; /*0x7ad3a1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
-    RA2_OPDEL(); /*0x7ad3ab*/
-  return this; /*0x7ad3b5*/
+    __3_YAXPAX_Z(Block); /*0x7ad3ab*/
+  return (VectorClass *)Block; /*0x7ad3b5*/
+
 }
 } // namespace gamemd
 
@@ -328,20 +353,22 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(char a2)
 namespace gamemd {
 DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfoStruct___(char a2)
 {
+
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad3c6*/
-    if ( v3 && *((unsigned char *)Block + 13) )
+  v3 = (void *)*(Block + 1); /*0x7ad3c3*/
+  *Block = &vt_VectorClass_tConnInfoStruct; /*0x7ad3c6*/
+  if ( v3 && *((unsigned char *)Block + 13) ) /*0x7ad3d0*/
   {
-    RA2_OPDEL(v3); /*0x7ad3d8*/
-        *(Block + 1) = 0;
+    __3_YAXPAX_Z(v3); /*0x7ad3d8*/
+    *(Block + 1) = 0; /*0x7ad3e0*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-    *(Block + 2) = 0;
+  *((unsigned char *)Block + 13) = 0; /*0x7ad3eb*/
+  *(Block + 2) = 0; /*0x7ad3f1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
-    RA2_OPDEL(); /*0x7ad3fb*/
-  return this; /*0x7ad405*/
+    __3_YAXPAX_Z(Block); /*0x7ad3fb*/
+  return (DynamicVector *)Block; /*0x7ad405*/
+
 }
 } // namespace gamemd
 
@@ -349,11 +376,13 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
 namespace gamemd {
 int WonlineStringDialogControl_28::ddtor(int a1)
 {
+
   HWND Current; // eax
 
-    Current = Dialog::GetCurrent();
+  Current = Dialog::GetCurrent(); /*0x7ad449*/
   SendMessageA(Current, 0x5F4u, 0, 0); /*0x7ad44f*/
   return 0; /*0x7ad457*/
+
 }
 } // namespace gamemd
 
@@ -361,12 +390,13 @@ int WonlineStringDialogControl_28::ddtor(int a1)
 namespace gamemd {
 int WonlineStringDialogControl_28::Read(int a1, LPARAM lParam)
 {
-  HWND Current; // eax
-  LPARAM lParama; // [esp+8h] [ebp+8h]
 
-    Current = Dialog::GetCurrent();
-  SendMessageA(Current, 0x5F5u, 0, lParama); /*0x7ad472*/
+  HWND Current; // eax
+
+  Current = Dialog::GetCurrent(); /*0x7ad46c*/
+  SendMessageA(Current, 0x5F5u, 0, lParam); /*0x7ad472*/
   return 0; /*0x7ad47a*/
+
 }
 } // namespace gamemd
 
@@ -374,35 +404,36 @@ int WonlineStringDialogControl_28::Read(int a1, LPARAM lParam)
 namespace gamemd {
 int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int a3, int a4, int a5)
 {
+
   HWND Current; // eax
   wchar_t *v6; // eax
   wchar_t *StringCSF; // eax
   HWND v8; // eax
   HWND DlgItem; // eax
   wchar_t Buffer[200]; // [esp+8h] [ebp-190h] BYREF
-  int v12; // [esp+1ACh] [ebp+14h]
 
   Buffer[0] = 0; /*0x7ad49d*/
-    Current = Dialog::GetCurrent();
-  SendDlgItemMessageA(Current, 1478, 0x402u, 100 * a3 / a4, 0); /*0x7ad4bd*/
-  if ( v12 <= 0 ) /*0x7ad4cc*/
+  Current = Dialog::GetCurrent(); /*0x7ad4b7*/
+  SendDlgItemMessageA(Current, 1478, 0x402u, 100 * (int)Format / a3, 0); /*0x7ad4bd*/
+  if ( a5 <= 0 ) /*0x7ad4cc*/
   {
-    StringCSF = GetStringCSF(aTxtBytesWoTime, 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
-    swprintf(Buffer, (const size_t)StringCSF, (const wchar_t *const)a3, a4); /*0x7ad515*/
+    StringCSF = GetStringCSF(MEMORY[0x84D730], 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
+    swprintf(Buffer, (const size_t)StringCSF, Format, a3); /*0x7ad515*/
   }
   else
   {
-    v6 = (wchar_t *)(GetStringCSF(aTxtBytesWTime, 0, g_Str_File_wonline_cpp, 5167));
-    swprintf(Buffer, (const size_t)v6, (const wchar_t *const)a3, a4, v12); /*0x7ad4ed*/
+    v6 = GetStringCSF(aTxtBytesWTime, 0, g_Str_File_wonline_cpp, 5167); /*0x7ad4e2*/
+    swprintf(Buffer, (const size_t)v6, Format, a3, a5); /*0x7ad4ed*/
   }
   if ( time(0) != dword_B77EA8 ) /*0x7ad52d*/
   {
-        v8 = Dialog::GetCurrent();
+    v8 = Dialog::GetCurrent(); /*0x7ad538*/
     DlgItem = GetDlgItem(v8, 1480); /*0x7ad53e*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad551*/
     dword_B77EA8 = time(0); /*0x7ad561*/
   }
   return 0; /*0x7ad52f*/
+
 }
 } // namespace gamemd
 
@@ -410,28 +441,29 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
 namespace gamemd {
 int WonlineStringDialogControl_28::Draw(int a1, int a2)
 {
+
   HWND Current; // eax
   HWND DlgItem; // eax
   wchar_t *v5; // [esp-4h] [ebp-194h]
   wchar_t *StringCSF; // [esp-4h] [ebp-194h]
   wchar_t Buffer[200]; // [esp+0h] [ebp-190h] BYREF
-  int v8; // [esp+198h] [ebp+8h]
 
   Buffer[0] = 0; /*0x7ad58d*/
-  if ( v8 == 2 ) /*0x7ad597*/
+  if ( a2 == 2 ) /*0x7ad597*/
   {
-    StringCSF = (wchar_t *)(GetStringCSF(aTxtConnecting, 0, g_Str_File_wonline_cpp, 5191));
+    StringCSF = GetStringCSF(aTxtConnecting, 0, g_Str_File_wonline_cpp, 5191); /*0x7ad5d6*/
     swprintf(Buffer, (const size_t)StringCSF, *(const wchar_t *const *)Buffer); /*0x7ad5d8*/
   }
-  else if ( v8 == 4 ) /*0x7ad59c*/
+  else if ( a2 == 4 ) /*0x7ad59c*/
   {
-    v5 = (wchar_t *)(GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195));
+    v5 = GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195); /*0x7ad5b4*/
     swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
   }
-    Current = Dialog::GetCurrent();
+  Current = Dialog::GetCurrent(); /*0x7ad5e5*/
   DlgItem = GetDlgItem(Current, 1480); /*0x7ad5eb*/
   SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad5fe*/
   return 0; /*0x7ad606*/
+
 }
 } // namespace gamemd
 
@@ -439,7 +471,9 @@ int WonlineStringDialogControl_28::Draw(int a1, int a2)
 namespace gamemd {
 int WonlineStringDialogControl_28::StubReturnFalse(int a1)
 {
+
   return 0; /*0x7ad612*/
+
 }
 } // namespace gamemd
 
@@ -447,9 +481,9 @@ int WonlineStringDialogControl_28::StubReturnFalse(int a1)
 namespace gamemd {
 LONG WonlineStringDialogControl_28::AddRef(int a1)
 {
-  int v2; // [esp+4h] [ebp+4h]
 
-  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x7ad62e*/
+  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x7ad62e*/
+
 }
 } // namespace gamemd
 
@@ -457,18 +491,19 @@ LONG WonlineStringDialogControl_28::AddRef(int a1)
 namespace gamemd {
 LONG WonlineStringDialogControl_28::Release(char * Block)
 {
-  LONG v1; // ebx
-  char *Block; // [esp+14h] [ebp+4h]
 
-  v1 = (unsigned int)(InterlockedDecrement((volatile LONG *)Block + 1));
+  LONG v1; // ebx
+
+  v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
   if ( !v1 && Block ) /*0x7ad65c*/
   {
-    *(unsigned int *)Block = (void*)&ATL_CComObject_CDownloadEventSink_vftable; /*0x7ad663*/
+    *(unsigned int *)Block = &vt_ATL_CComObject_CDownloadEventSink; /*0x7ad663*/
     *((unsigned int *)Block + 1) = 1; /*0x7ad669*/
     InterlockedDecrement(&Addend); /*0x7ad66f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/
-    RA2_OPDEL(Block); /*0x7ad67c*/
+    __3_YAXPAX_Z(Block); /*0x7ad67c*/
   }
   return v1; /*0x7ad684*/
+
 }
 } // namespace gamemd

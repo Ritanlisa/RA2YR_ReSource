@@ -10,18 +10,20 @@
 namespace gamemd {
 BOOL E4Recv_63DB20::sub_63DB20(unsigned int * a2)
 {
-  void * v2;
-  void *vtable1; // edx
+
+  int v2; // eax
+  int v3; // edx
   BOOL result; // eax
 
   result = 0; /*0x63db54*/
-    if ( *a2 >= *this && *a2 < *this + *((unsigned int *)this + 8) )
+  if ( *a2 >= *this && *a2 < *this + *((unsigned int *)this + 2) ) /*0x63db36*/
   {
-    v2 = (void *)((int)((void *)(a2[1])));
-    vtable1 = (void *)(this->M4);
-        if ( v2 >= v3 && v2 < v3 + *((unsigned int *)this + 12) )
+    v2 = a2[1]; /*0x63db38*/
+    v3 = *((unsigned int *)this + 1); /*0x63db3b*/
+    if ( v2 >= v3 && v2 < v3 + *((unsigned int *)this + 3) ) /*0x63db49*/
       return 1; /*0x63db2b*/
   }
   return result; /*0x63db50*/
+
 }
 } // namespace gamemd

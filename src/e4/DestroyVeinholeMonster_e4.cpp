@@ -11,11 +11,13 @@
 namespace gamemd {
 void E4Recv_74F620::sub_74F620()
 {
+
   int i; // eax
 
-    for ( i = 0; i <= *(unsigned int *)this; *(unsigned int *)(*((unsigned int *)this + 2) + 4 * i - 4) = 0 )
+  for ( i = 0; i <= *(unsigned int *)this; *(unsigned int *)(*((unsigned int *)this + 2) + 4 * i - 4) = 0 ) /*0x74f626*/
     ++i; /*0x74f62b*/
-  __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(); /*0x74f639*/
+  __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(this); /*0x74f639*/
+
 }
 } // namespace gamemd
 
@@ -23,25 +25,27 @@ void E4Recv_74F620::sub_74F620()
 namespace gamemd {
 char E4Recv_74F6F0::DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1)
 {
-  int uniqueId; // edx
-  DynamicVector * v3;
+
+  int v2; // edx
+  DynamicVector *v3; // eax
   int v4; // edx
 
-  uniqueId = (int)(this->?);
+  v2 = *((unsigned int *)this + 4); /*0x74f6f0*/
   v3 = aP1; /*0x74f6f3*/
-  if ( aP1 >= (gamemd::DynamicVector *)(uniqueId) ) /*0x74f6f9*/
+  if ( (int)aP1 >= v2 ) /*0x74f6f9*/
     return 0; /*0x74f71c*/
-  v4 = uniqueId - 1; /*0x74f6fb*/
-    *((unsigned int *)this + 16) = v4;
-  if ( aP1 < (gamemd::DynamicVector *)(v4) ) /*0x74f701*/
+  v4 = v2 - 1; /*0x74f6fb*/
+  *((unsigned int *)this + 4) = v4; /*0x74f6fe*/
+  if ( (int)aP1 < v4 ) /*0x74f701*/
   {
     do /*0x74f714*/
     {
-      ++v3; /*0x74f707*/
-      *((unsigned int *)this->? + v3 - 1) = *((unsigned int *)this->? + v3); /*0x74f70b*/
+      v3 = (DynamicVector *)((char *)v3 + 1); /*0x74f707*/
+      *(unsigned int *)(*((unsigned int *)this + 1) + 4 * (unsigned int)v3 - 4) = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * (unsigned int)v3); /*0x74f70b*/
     }
-    while ( v3 < this->? ); /*0x74f714*/
+    while ( (int)v3 < *((unsigned int *)this + 4) ); /*0x74f714*/
   }
   return 1; /*0x74f719*/
+
 }
 } // namespace gamemd

@@ -10,11 +10,13 @@
 namespace gamemd {
 int Super::GetDefaultTimer()
 {
+
   int result; // eax
 
-    result = *((unsigned int *)this + 36);
+  result = *((unsigned int *)this + 9); /*0x6cc260*/
   if ( result == -1 ) /*0x6cc266*/
-        return *(unsigned int *)(*((unsigned int *)this + 40) + 176);
+    return *(unsigned int *)(*((unsigned int *)this + 10) + 176); /*0x6cc26b*/
   return result; /*0x6cc271*/
+
 }
 }

@@ -14,16 +14,22 @@ namespace gamemd {
 void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)
 {
 
-  aP5 = (gamemd::ObjectClass *)((unsigned char)(aP5));
-  arg8 = (unsigned char)(arg8);
-  this->q008 = (unsigned char)(arg0);
-  this->u32_C = (unsigned char)(arg8);
-  this->q004 = (unsigned char)(0);
-  this->q010 = (unsigned char)(aP5);
-  String::AssignFromPtr((char **)&this->u32_14, (const char **)&a4); /*0x76784d*/
-  String::AssignFromPtr((char **)&this->q018, (const char **)&a2); /*0x76785a*/
+  ObjectClass *v6; // edx
+  ObjectClass *v8; // ecx
+
+  v6 = aP5; /*0x767824*/
+  v8 = (ObjectClass *)arg8; /*0x76782b*/
+  *((unsigned int *)this + 2) = arg0; /*0x76782f*/
+  *((unsigned int *)this + 3) = v8; /*0x767836*/
+  this->GameOption_WorldDominationTour_field_0x04 = 0; /*0x76783d*/
+  *(unsigned int *)this->__pad_0 = &WorldDominationTour::GameOption::`vftable'; /*0x767844*/
+  *((unsigned int *)this + 4) = v6; /*0x76784a*/
+  String::AssignFromPtr((char **)this + 5, (const char **)&a4); /*0x76784d*/
+  String::AssignFromPtr((char **)this + 6, (const char **)&a2); /*0x76785a*/
+  *(unsigned int *)this->__pad_0 = &WorldDominationTour::FlagGameOption::`vftable'; /*0x767863*/
   DeleteAndZero(&a2); /*0x767869*/
   DeleteAndZero(&a4); /*0x767872*/
   return this; /*0x767879*/
+
 }
 } // namespace gamemd

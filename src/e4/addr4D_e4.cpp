@@ -237,60 +237,62 @@ void sub_4D2F00(int a1, int a2, int * a3)
 namespace gamemd {
 int E4Recv_4DB8A0::sub_4DB8A0()
 {
+
   int v2; // ebx
-  int InstanceCOM; // eax
+  int v3; // eax
   int v4; // eax
   LPVOID v5; // esi
-  int result; // eax
+  LPVOID result; // eax
   LPVOID ppv; // [esp+20h] [ebp-8h] BYREF
   int v8; // [esp+24h] [ebp-4h] BYREF
 
-    v2 = *((unsigned int *)this + 1652);
+  v2 = *((unsigned int *)this + 413); /*0x4db8a7*/
   if ( v2 ) /*0x4db8af*/
-        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v2 + 4))(*((unsigned int *)this + 1652));
+    (*(void (**)(unsigned int))(*(unsigned int *)v2 + 4))(*((unsigned int *)this + 413)); /*0x4db8b4*/
   ppv = 0; /*0x4db8c4*/
-  InstanceCOM = CreateInstanceCOM((ObjectClass *)&ppv, (IID *)&g_CLSID_DriveLocomotion, 0, 7u); /*0x4db8cc*/
-  if ( InstanceCOM < 0 && InstanceCOM != -2147467262 ) /*0x4db8da*/
-    WinAPI::Wrapper(InstanceCOM); /*0x4db8dd*/
+  v3 = CreateInstanceCOM(&ppv, (IID *)&g_CLSID_DriveLocomotion, 0, 7u); /*0x4db8cc*/
+  if ( v3 < 0 && v3 != -2147467262 ) /*0x4db8da*/
+    WinAPI::Wrapper(v3); /*0x4db8dd*/
   if ( !ppv ) /*0x4db8e8*/
     WinAPI::Wrapper(-2147467261); /*0x4db8ef*/
-  (*(void (__stdcall **)(LPVOID, TechnoClass *))(*(unsigned int *)ppv + 12))(ppv, this); /*0x4db8fc*/
+  (*(void (**)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 12))(ppv, this); /*0x4db8fc*/
   v8 = 0; /*0x4db903*/
   if ( !ppv ) /*0x4db90d*/
     goto LABEL_13; /*0x4db90d*/
-  v4 = StreamClass::Set((StreamClass *)&v8, &ppv); /*0x4db918*/
+  v4 = StreamClass::Set(&v8, &ppv); /*0x4db918*/
   if ( v4 < 0 && v4 != -2147467262 ) /*0x4db926*/
     WinAPI::Wrapper(v4); /*0x4db929*/
   if ( !v8 ) /*0x4db934*/
-  LABEL_13:
+LABEL_13:
     WinAPI::Wrapper(-2147467261); /*0x4db93b*/
-  (*(void (__stdcall **)(int, int))(*(unsigned int *)v8 + 12))(v8, v2); /*0x4db949*/
-    v5 = (LPVOID)*((unsigned int *)this + 1652);
-  result = (int)ppv; /*0x4db952*/
+  (*(void (**)(int, int))(*(unsigned int *)v8 + 12))(v8, v2); /*0x4db949*/
+  v5 = (LPVOID)*((unsigned int *)this + 413); /*0x4db94c*/
+  result = ppv; /*0x4db952*/
   if ( v5 != ppv ) /*0x4db958*/
   {
-    this->M1652 = (unsigned int)(ppv);
+    *((unsigned int *)this + 413) = ppv; /*0x4db95c*/
     if ( result ) /*0x4db962*/
     {
-      (*(void (__stdcall **)(int))(*(unsigned int *)result + 4))(result); /*0x4db967*/
-      result = (int)ppv; /*0x4db96a*/
+      (*(void (**)(LPVOID))(*(unsigned int *)result + 4))(result); /*0x4db967*/
+      result = ppv; /*0x4db96a*/
     }
     if ( v5 ) /*0x4db970*/
     {
-      (*(void (__stdcall **)(LPVOID))(*(unsigned int *)v5 + 8))(v5); /*0x4db975*/
-      result = (int)ppv; /*0x4db978*/
+      (*(void (**)(LPVOID))(*(unsigned int *)v5 + 8))(v5); /*0x4db975*/
+      result = ppv; /*0x4db978*/
     }
   }
   if ( v8 ) /*0x4db983*/
   {
-    (*(void (__stdcall **)(int))(*(unsigned int *)v8 + 8))(v8); /*0x4db988*/
-    result = (int)ppv; /*0x4db98b*/
+    (*(void (**)(int))(*(unsigned int *)v8 + 8))(v8); /*0x4db988*/
+    result = ppv; /*0x4db98b*/
   }
   if ( result ) /*0x4db991*/
-    result = (*(int (__stdcall **)(int))(*(unsigned int *)result + 8))(result); /*0x4db996*/
+    result = (LPVOID)(*(int (**)(LPVOID))(*(unsigned int *)result + 8))(result); /*0x4db996*/
   if ( v2 ) /*0x4db99b*/
-    return (*(int (__stdcall **)(int))(*(unsigned int *)v2 + 8))(v2); /*0x4db9a0*/
+    return (LPVOID)(*(int (**)(int))(*(unsigned int *)v2 + 8))(v2); /*0x4db9a0*/
   return result; /*0x4db9a3*/
+
 }
 }
 // 0x4D0540
@@ -667,24 +669,25 @@ void sub_4D31A0()
 namespace gamemd {
 unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
 {
+
   int v2; // ebx
   unsigned short *v3; // eax
-  Cell *v4; // eax
+  unsigned int *v4; // eax
   unsigned int *v5; // eax
   unsigned int *v6; // esi
   int v7; // ebp
   int v9; // [esp+10h] [ebp-Ch]
-  int16_t v10[2]; // [esp+14h] [ebp-8h] BYREF
+  int v10; // [esp+14h] [ebp-8h] BYREF
   char v11[4]; // [esp+18h] [ebp-4h] BYREF
 
   v2 = 0; /*0x4d4fc9*/
   while ( 1 ) /*0x4d4fd4*/
   {
-    v3 = (unsigned short *)(*((int (**)(ObjectClass *, char *))this->AbstractClass + 110))(this, v11); /*0x4d4fd4*/
-    IDA_LOWORD(v9) = IDA_LOWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]) + *v3; /*0x4d4ff8*/
-    IDA_HIWORD(v9) = v3[1] + IDA_HIWORD(g_DDrawSurfaceManager.scenario[(v2 & 7) + 82]); /*0x4d4ffe*/
-    *(unsigned int *)v10 = v9; /*0x4d500c*/
-    v4 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v10); /*0x4d5010*/
+    v3 = (unsigned short *)(*(int (**)(void *, char *))(*(unsigned int *)this + 440))(this, v11); /*0x4d4fd4*/
+    LOWORD(v9) = LOWORD(MEMORY[0x89F688][v2 & 7]) + *v3; /*0x4d4ff8*/
+    HIWORD(v9) = v3[1] + HIWORD(MEMORY[0x89F688][v2 & 7]); /*0x4d4ffe*/
+    v10 = v9; /*0x4d500c*/
+    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v10); /*0x4d5010*/
     v5 = Cell::IsBridge(v4); /*0x4d5017*/
     v6 = v5; /*0x4d501c*/
     if ( v5 ) /*0x4d5020*/
@@ -692,7 +695,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
       if ( *(unsigned char *)(v5[328] + 5493) ) /*0x4d5028*/
       {
         v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x4d5039*/
-                if ( v7 == (*(int (**)(void *))(*(unsigned int *)this + 60))(this) )
+        if ( v7 == (*(int (**)(void *))(*(unsigned int *)this + 60))(this) ) /*0x4d5044*/
           break; /*0x4d5044*/
       }
     }
@@ -700,6 +703,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
       return 0; /*0x4d5059*/
   }
   return v6; /*0x4d5050*/
+
 }
 } // namespace gamemd
 
@@ -716,25 +720,27 @@ unsigned int * globalHelper_0DA020(unsigned int * a0, AbstractClass * aP1)
 namespace gamemd {
 void E4Recv_4DF280::sub_4DF280()
 {
+
   int v2; // ecx
   unsigned int *v3; // eax
   int v4; // [esp+4h] [ebp-14h]
-  int16_t v4[2]; // [esp+8h] [ebp-10h] BYREF
+  int v5; // [esp+8h] [ebp-10h] BYREF
   unsigned char v6[12]; // [esp+Ch] [ebp-Ch] BYREF
 
-    v2 = *((unsigned int *)this + 1484);
+  v2 = *((unsigned int *)this + 371); /*0x4df286*/
   if ( v2 ) /*0x4df28e*/
   {
     v3 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v2 + 72))(v2, v6); /*0x4df297*/
-    IDA_LOWORD(v4) = *v3 / 256; /*0x4df2aa*/
-    IDA_HIWORD(v4) = v3[1] / 256; /*0x4df2c3*/
-    *(unsigned int *)v4 = v4; /*0x4df2d1*/
-        *((unsigned int *)this + 1480) = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5);
+    LOWORD(v4) = *v3 / 256; /*0x4df2aa*/
+    HIWORD(v4) = v3[1] / 256; /*0x4df2c3*/
+    v5 = v4; /*0x4df2d1*/
+    *((unsigned int *)this + 370) = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v5); /*0x4df2da*/
   }
   else
   {
-        *((unsigned int *)this + 1480) = 0;
+    *((unsigned int *)this + 370) = 0; /*0x4df2ef*/
   }
-    *((unsigned int *)this + 1484) = 0;
+  *((unsigned int *)this + 371) = 0; /*0x4df2e0*/
+
 }
 } // namespace gamemd

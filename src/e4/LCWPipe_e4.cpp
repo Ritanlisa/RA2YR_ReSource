@@ -11,16 +11,18 @@
 namespace gamemd {
 int LCWPipe::Dtor()
 {
+
   void *v2; // eax
   void *v3; // ecx
-v2 = (void *)((unsigned int)((void *)this->u32_14));
-  *(unsigned int *)this->__pad_0 = (void*)&LCWPipe_vftable; /*0x552066*/
-  RA2_OPDEL(v2); /*0x55206d*/
-    v3 = (void *)*((unsigned int *)this + 24);
-    *((unsigned int *)this + 20) = 0;
-  RA2_OPDEL(v3); /*0x55207d*/
-    *((unsigned int *)this + 24) = 0;
-// 0x631c80
-  return Pipe::Dtor(); /*0x552093*/
+
+  v2 = (void *)*((char *)this + 5); /*0x552063*/
+  *this = (int)&vt_LCWPipe; /*0x552066*/
+  __3_YAXPAX_Z(v2); /*0x55206d*/
+  v3 = (void *)*((char *)this + 6); /*0x552072*/
+  *((char *)this + 5) = 0; /*0x552075*/
+  __3_YAXPAX_Z(v3); /*0x55207d*/
+  *((char *)this + 6) = 0; /*0x552087*/
+  return Pipe::Dtor(this); /*0x552093*/
+
 }
 } // namespace gamemd

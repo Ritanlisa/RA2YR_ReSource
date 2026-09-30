@@ -109,34 +109,38 @@ bool sub_5C0980()
 namespace gamemd {
 char * E4Recv_724000::sub_724000(int a2)
 {
+
   char *v3; // ecx
   int v4; // edx
 
-  v3 = (char *)(&this->u32_8D0);
-  this->M4 = (unsigned int)(0);
-  this->M8 = (unsigned int)(a2);
-    *((unsigned int *)this + 48) = 0;
-    *((unsigned int *)this + 138) = 1000;
-  this->M560 = (char *)(10000);
+  v3 = (unsigned char *)this + 564; /*0x72400a*/
+  *((unsigned int *)this + 1) = 0; /*0x724010*/
+  *((unsigned int *)this + 2) = a2; /*0x724013*/
+  *((unsigned char *)this + 12) = 0; /*0x724016*/
+  *((unsigned int *)this + 138) = 1000; /*0x724019*/
+  *((unsigned int *)this + 140) = 10000; /*0x724023*/
   *((unsigned int *)v3 + 1) = 0; /*0x72402d*/
   *((unsigned int *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
   v3[13] = 0; /*0x724037*/
+  *(unsigned int *)v3 = &vt_DynamicVectorClass_ToolTip_const; /*0x72403a*/
   *((unsigned int *)v3 + 5) = 10; /*0x724040*/
   *((unsigned int *)v3 + 4) = 0; /*0x724047*/
-    *((unsigned int *)this + 147) = 0;
-    *((unsigned int *)this + 148) = 0;
-    *((unsigned int *)this + 149) = 0;
-    *((unsigned int *)this + 2400) = 0;
-    *((unsigned int *)this + 151) = 0;
+  *((unsigned int *)this + 147) = 0; /*0x72404a*/
+  *((unsigned int *)this + 148) = 0; /*0x724050*/
+  *((unsigned int *)this + 149) = 0; /*0x724056*/
+  *((unsigned char *)this + 600) = 0; /*0x72405c*/
+  *((unsigned int *)this + 151) = 0; /*0x724062*/
   v4 = *(unsigned int *)v3; /*0x724068*/
+  *(unsigned int *)this = &vt_ToolTipManager; /*0x72406a*/
   (*(void (**)(char *))(v4 + 12))(v3); /*0x724070*/
-  RA2_OPDEL(this->M588); /*0x72407a*/
-    *((unsigned int *)this + 147) = 0;
-    *((unsigned int *)this + 148) = 0;
-    *((unsigned int *)this + 149) = 0;
-    *((unsigned int *)this + 2400) = 0;
-    *((unsigned int *)this + 151) = 0;
+  __3_YAXPAX_Z(*((void **)this + 147)); /*0x72407a*/
+  *((unsigned int *)this + 147) = 0; /*0x724082*/
+  *((unsigned int *)this + 148) = 0; /*0x724088*/
+  *((unsigned int *)this + 149) = 0; /*0x72408e*/
+  *((unsigned char *)this + 600) = 0; /*0x724094*/
+  *((unsigned int *)this + 151) = 0; /*0x72409a*/
   return this; /*0x7240a2*/
+
 }
 } // namespace gamemd

@@ -38,27 +38,28 @@
 namespace gamemd {
 unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
 {
+
   unsigned int *v4; // eax
   int v5; // ecx
-  int *v6; // eax
+  unsigned int *v6; // eax
   unsigned int *v7; // edx
   unsigned int *v8; // eax
   int v9; // ecx
-  void *v10; // eax
+  unsigned int *v10; // eax
 
-    *((unsigned int *)this + 4) = 0;
-    *((unsigned int *)this + 8) = a2;
-    *((unsigned char *)this + 12) = 1;
-    *((unsigned char *)this + 13) = 0;
-    *this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass;
+  *((unsigned int *)this + 1) = 0; /*0x4e0a0a*/
+  *((unsigned int *)this + 2) = a2; /*0x4e0a11*/
+  *((unsigned char *)this + 12) = 1; /*0x4e0a14*/
+  *((unsigned char *)this + 13) = 0; /*0x4e0a18*/
+  *this = &vt_VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
-    if ( a2 ) /*(int *)(0x4e0a2a)*/
+    if ( a3 ) /*0x4e0a2a*/
     {
-      *(int *)(a2) = a2; /*0x4e0a2f*/
+      *a3 = a2; /*0x4e0a2f*/
       if ( a2 - 1 >= 0 ) /*0x4e0a36*/
       {
-        v4 = (unsigned int *)(a2 + 2);
+        v4 = a3 + 2; /*0x4e0a38*/
         v5 = a2; /*0x4e0a3b*/
         do /*0x4e0a46*/
         {
@@ -68,18 +69,18 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
         }
         while ( v5 ); /*0x4e0a46*/
       }
-            *((unsigned int *)this + 4) = a3 + 1;
+      *((unsigned int *)this + 1) = a3 + 1; /*0x4e0a48*/
     }
     else
     {
-      v6 = (int *)((unsigned int *)((int *)RA2_OPNEW(8 * a2 + 4)));
+      v6 = __2_YAPAXI_Z(8 * a2 + 4); /*0x4e0a55*/
       if ( v6 ) /*0x4e0a5f*/
       {
-        *v6 = (int)((unsigned int *)(a2));
-        v7 = (unsigned int *)(v6 + 1);
+        *v6 = a2; /*0x4e0a64*/
+        v7 = v6 + 1; /*0x4e0a68*/
         if ( a2 - 1 >= 0 ) /*0x4e0a6b*/
         {
-          v8 = (unsigned int *)(v6 + 2);
+          v8 = v6 + 2; /*0x4e0a6d*/
           v9 = a2; /*0x4e0a70*/
           do /*0x4e0a7b*/
           {
@@ -95,14 +96,15 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
       {
         v10 = 0; /*0x4e0a81*/
       }
-            *((unsigned int *)this + 4) = v10;
-            *((unsigned char *)this + 13) = 1;
+      *((unsigned int *)this + 1) = v10; /*0x4e0a83*/
+      *((unsigned char *)this + 13) = 1; /*0x4e0a86*/
     }
   }
-    *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass;
-    *((unsigned int *)this + 20) = 10;
-    *((unsigned int *)this + 16) = 0;
-    return this;
+  *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/
+  *((unsigned int *)this + 5) = 10; /*0x4e0a90*/
+  *((unsigned int *)this + 4) = 0; /*0x4e0a97*/
+  return this; /*0x4e0aa0*/
+
 }
 }
 // 0x4E1FE0
@@ -1923,36 +1925,37 @@ void unknown_libname_18()
 namespace gamemd {
 AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
 {
+
   unsigned int *v4; // edi
   int v6; // ecx
   int i; // eax
 
   if ( a2 ) /*0x4e924c*/
   {
-        *((unsigned char *)this + 12) = 0;
+    *((unsigned char *)this + 12) = 0; /*0x4e9256*/
     if ( a3 ) /*0x4e925c*/
       v4 = a3; /*0x4e9272*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e926e*/
-        *((unsigned char *)this + 12) = 1;
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e926e*/
+    *((unsigned char *)this + 12) = 1; /*0x4e9276*/
     if ( v4 ) /*0x4e927a*/
     {
-            if ( *((unsigned int *)this + 1) )
+      if ( *((unsigned int *)this + 1) ) /*0x4e9285*/
       {
-                v6 = *((unsigned int *)this + 2);
+        v6 = *((unsigned int *)this + 2); /*0x4e928c*/
         if ( a2 < v6 ) /*0x4e9291*/
           v6 = a2; /*0x4e9293*/
-                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) ) /*0x4e9299*/
           ++i; /*0x4e929e*/
-                if ( *((unsigned char *)this + 13) )
+        if ( *((unsigned char *)this + 13) ) /*0x4e92ab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4e92b6*/
-                    *((unsigned int *)this + 1) = 0;
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e92b6*/
+          *((unsigned int *)this + 1) = 0; /*0x4e92be*/
         }
       }
-            *((unsigned int *)this + 1) = v4;
-            *((unsigned int *)this + 2) = a2;
-            *((unsigned char *)this + 13) = a3 == 0;
+      *((unsigned int *)this + 1) = v4; /*0x4e92c7*/
+      *((unsigned int *)this + 2) = a2; /*0x4e92cf*/
+      *((unsigned char *)this + 13) = a3 == 0; /*0x4e92d2*/
       return 1; /*0x4e92d8*/
     }
     else
@@ -1962,45 +1965,47 @@ AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
   }
   else
   {
-        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e92e2*/
     return 1; /*0x4e92e8*/
   }
+
 }
 }
 // 0x4E9E20
 namespace gamemd {
 AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
+
   unsigned int *v4; // edi
-  int m_8; // ecx
+  int v6; // ecx
   int i; // eax
 
   if ( a2 ) /*0x4e9e2c*/
   {
-        *((unsigned char *)this + 12) = 0;
+    *((unsigned char *)this + 12) = 0; /*0x4e9e36*/
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
-      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4e9e4e*/
-        *((unsigned char *)this + 12) = 1;
+      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
+    *((unsigned char *)this + 12) = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {
-            if ( *((unsigned int *)this + 1) )
+      if ( *((unsigned int *)this + 1) ) /*0x4e9e65*/
       {
-                v6 = *((unsigned int *)this + 2);
-        if ( a2 < m_8 ) /*0x4e9e71*/
-          m_8 = a2; /*0x4e9e73*/
-                for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) )
+        v6 = *((unsigned int *)this + 2); /*0x4e9e6c*/
+        if ( a2 < v6 ) /*0x4e9e71*/
+          v6 = a2; /*0x4e9e73*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) ) /*0x4e9e79*/
           ++i; /*0x4e9e7e*/
-                if ( *((unsigned char *)this + 13) )
+        if ( *((unsigned char *)this + 13) ) /*0x4e9e8b*/
         {
-          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4e9e96*/
-                    *((unsigned int *)this + 1) = 0;
+          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9e96*/
+          *((unsigned int *)this + 1) = 0; /*0x4e9e9e*/
         }
       }
-            *((unsigned int *)this + 1) = v4;
-            *((unsigned int *)this + 2) = a2;
-            *((unsigned char *)this + 13) = a3 == 0;
+      *((unsigned int *)this + 1) = v4; /*0x4e9ea7*/
+      *((unsigned int *)this + 2) = a2; /*0x4e9eaf*/
+      *((unsigned char *)this + 13) = a3 == 0; /*0x4e9eb2*/
       return 1; /*0x4e9eb8*/
     }
     else
@@ -2010,22 +2015,25 @@ AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int
   }
   else
   {
-        (*(void (**)(void *))(*(unsigned int *)this + 12))(this);
+    (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4e9ec2*/
     return 1; /*0x4e9ec8*/
   }
+
 }
 }
 // 0x4E9ED0
 namespace gamemd {
 void _VectorClass_PAVParticleClass::ParticleSystemClass__vt_03_()
 {
-    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
+
+  if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4e9edd*/
   {
-    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4e9ee3*/
-        *((unsigned int *)this + 16) = 0;
+    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4e9ee3*/
+    *((unsigned int *)this + 1) = 0; /*0x4e9eeb*/
   }
-    *((unsigned char *)this + 52) = 0;
-    *((unsigned int *)this + 32) = 0;
+  *((unsigned char *)this + 13) = 0; /*0x4e9eee*/
+  *((unsigned int *)this + 2) = 0; /*0x4e9ef1*/
+
 }
 }
 // 0x4E0C30
@@ -2040,19 +2048,22 @@ void nullsub_138()
 namespace gamemd {
 unsigned int * FoggedObjectClass_42::loc_4E0D30(char a2)
 {
-    void *v3;
-    v3 = (void *)this->Items;
-    *(void**)this = &vt_VectorClass_FootClass;
-    if ( v3 && this->IsAllocated )
+
+  void *v3; // eax
+
+  v3 = (void *)*(Block + 1); /*0x4e0ce3*/
+  *Block = &vt_VectorClass_FootClass; /*0x4e0ce6*/
+  if ( v3 && *((unsigned char *)Block + 13) ) /*0x4e0cf0*/
   {
-    RA2_OPDEL(v3);
-    *(unsigned int *)&this->Items = 0;
+    __3_YAXPAX_Z(v3); /*0x4e0cf8*/
+    *(Block + 1) = 0; /*0x4e0d00*/
   }
-    this->IsAllocated = 0;
-    this->Capacity = 0;
-    if ( (a2 & 1) != 0 )
-    RA2_OPDEL();
-    return this;
+  *((unsigned char *)Block + 13) = 0; /*0x4e0d0b*/
+  *(Block + 2) = 0; /*0x4e0d11*/
+  if ( (a2 & 1) != 0 ) /*0x4e0d18*/
+    __3_YAXPAX_Z(Block); /*0x4e0d1b*/
+  return (VectorClass *)Block; /*0x4e0d25*/
+
 }
 } // namespace gamemd
 
@@ -2358,33 +2369,43 @@ int sub_4E24E0()
 namespace gamemd {
 int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass * aP4, int aP5)
 {
+
   int v7; // ecx
   int v8; // eax
 
-  ControlClass::Construct(aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
-    v7 = *((unsigned int *)this + 192);
-  *(unsigned int *)this->__pad_0 = (void*)&GaugeClass_vftable; /*0x4e2a83*/
+  ControlClass::Construct( /*0x4e2a74*/
+    (unsigned int *)this,
+    aP1,
+    (ControlClass *)aP2,
+    (ControlClass *)aP3,
+    aP4,
+    (ControlClass *)aP5,
+    7,
+    (ControlClass *)1);
+  v7 = *((unsigned int *)this + 12); /*0x4e2a79*/
+  *(unsigned int *)this = &vt_GaugeClass; /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
-        *((unsigned int *)this + 192) = 255;
-    VectorClass_ptr_ConvertClass::MarkDirty(); /*0x4e2a90*/
+    *((unsigned int *)this + 12) = 255; /*0x4e2a8d*/
+    VectorClass_ptr_ConvertClass::MarkDirty((unsigned char *)this); /*0x4e2a90*/
   }
   v8 = 0; /*0x4e2a99*/
-    if ( *((int *)this + 192) < 0 )
-        v8 = *((unsigned int *)this + 192);
-    if ( v8 != *((unsigned int *)this + 208) )
+  if ( *((int *)this + 12) < 0 ) /*0x4e2a9d*/
+    v8 = *((unsigned int *)this + 12); /*0x4e2a9f*/
+  if ( v8 != *((unsigned int *)this + 13) ) /*0x4e2aa4*/
   {
-        *((unsigned int *)this + 208) = v8;
-        (*(void (**)(int))(*(unsigned int *)this + 72))(this);
+    *((unsigned int *)this + 13) = v8; /*0x4e2aa6*/
+    (*(void (**)(int))(*(unsigned int *)this + 72))(this); /*0x4e2aad*/
   }
-    *((unsigned char *)this + 180) = 1;
-    *((unsigned char *)this + 184) = (int)aP4 > aP5;
-    *((unsigned char *)this + 176) = 1;
-    *((unsigned int *)this + 224) = 0;
-    *((unsigned int *)this + 240) = 0;
-    *((unsigned int *)this + 256) = 0;
-    *(unsigned int *)this = &vt_TriColorGaugeClass;
-    return this;
+  *((unsigned char *)this + 45) = 1; /*0x4e2ab2*/
+  *((unsigned char *)this + 46) = (int)aP4 > aP5; /*0x4e2ab9*/
+  *((unsigned char *)this + 44) = 1; /*0x4e2abc*/
+  *((unsigned int *)this + 14) = 0; /*0x4e2ac0*/
+  *((unsigned int *)this + 15) = 0; /*0x4e2ac7*/
+  *((unsigned int *)this + 16) = 0; /*0x4e2ace*/
+  *(unsigned int *)this = &vt_TriColorGaugeClass; /*0x4e2ad5*/
+  return this; /*0x4e2add*/
+
 }
 } // namespace gamemd
 
@@ -2860,14 +2881,16 @@ LRESULT GetComboBoxSelectedRaw2(HWND hDlg, int nIDDlgItem, WPARAM wParam)
 namespace gamemd {
 int E4Recv_4E6070::sub_4E6070()
 {
-    *((unsigned int *)this + 416) = 0;
-    *((unsigned int *)this + 432) = 0;
+
+  *((unsigned int *)this + 26) = 0; /*0x4e6087*/
+  *((unsigned int *)this + 27) = 0; /*0x4e608a*/
   Debug::Log(); /*0x4e608d*/
-  memset(0xFFu, 0x18u); /*0x4e609f*/
-    *((unsigned short *)this + 96) = -1;
-    *(unsigned int *)((char *)this + 16 * (*((unsigned int *)this + 416))++) = 2;
+  memset((void *)this, 0xFFu, 0x18u); /*0x4e609f*/
+  *((unsigned short *)this + 12) = -1; /*0x4e60a9*/
+  *(unsigned int *)((char *)this + 4 * (*((unsigned int *)this + 26))++) = 2; /*0x4e60cc*/
   Debug::Log(); /*0x4e60d6*/
-  return (int)this; /*0x4e612c*/
+  return this; /*0x4e612c*/
+
 }
 } // namespace gamemd
 
@@ -4852,13 +4875,15 @@ char sub_4E8220()
 namespace gamemd {
 void HouseClass::vt_03_()
 {
-    if ( *((unsigned int *)this + 16) && *((unsigned char *)this + 52) )
+
+  if ( *((unsigned int *)this + 1) && *((unsigned char *)this + 13) ) /*0x4e92fd*/
   {
-    RA2_OPDEL(this->vtable2); /*0x4e9303*/
-        *((unsigned int *)this + 16) = 0;
+    __3_YAXPAX_Z(*(void **)((char *)this + 4)); /*0x4e9303*/
+    *((unsigned int *)this + 1) = 0; /*0x4e930b*/
   }
-    *((unsigned char *)this + 52) = 0;
-    *((unsigned int *)this + 32) = 0;
+  *((unsigned char *)this + 13) = 0; /*0x4e930e*/
+  *((unsigned int *)this + 2) = 0; /*0x4e9311*/
+
 }
 } // namespace gamemd
 
@@ -4866,22 +4891,24 @@ void HouseClass::vt_03_()
 namespace gamemd {
 int HouseClass::vt_04_(int * a2)
 {
+
   int result; // eax
   int v3; // edx
   unsigned int *i; // ecx
 
-    if ( !*((unsigned char *)this + 48) )
+  if ( !*((unsigned char *)this + 12) ) /*0x4e9320*/
     return 0; /*0x4e9328*/
-    v3 = *((unsigned int *)this + 32);
+  v3 = *((unsigned int *)this + 2); /*0x4e932e*/
   result = 0; /*0x4e9331*/
   if ( v3 <= 0 ) /*0x4e9335*/
     return -1; /*0x4e934c*/
-  for ( i = this->vtable2; *i != *a2; ++i ) /*0x4e933b*/
+  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x4e933b*/
   {
     if ( ++result >= v3 ) /*0x4e934a*/
       return -1; /*0x4e934a*/
   }
   return result; /*0x4e932a*/
+
 }
 } // namespace gamemd
 
@@ -4889,10 +4916,12 @@ int HouseClass::vt_04_(int * a2)
 namespace gamemd {
 unsigned int HouseClass::vt_05_(int a2)
 {
-    if ( *((unsigned char *)this + 48) )
-        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
+
+  if ( *((unsigned char *)this + 12) ) /*0x4e9360*/
+    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x4e9375*/
   else
     return 0; /*0x4e9367*/
+
 }
 } // namespace gamemd
 
@@ -4900,22 +4929,24 @@ unsigned int HouseClass::vt_05_(int a2)
 namespace gamemd {
 int ParticleSystemClass::vt_04_(int * a2)
 {
+
   int result; // eax
-  int m_8; // edx
+  int v3; // edx
   unsigned int *i; // ecx
 
-    if ( !*((unsigned char *)this + 48) )
+  if ( !*((unsigned char *)this + 12) ) /*0x4e9f00*/
     return 0; /*0x4e9f08*/
-    v3 = *((unsigned int *)this + 32);
+  v3 = *((unsigned int *)this + 2); /*0x4e9f0e*/
   result = 0; /*0x4e9f11*/
-  if ( m_8 <= 0 ) /*0x4e9f15*/
+  if ( v3 <= 0 ) /*0x4e9f15*/
     return -1; /*0x4e9f2c*/
-  for ( i = *(unsigned int **)&this->vtable2; *i != *a2; ++i ) /*0x4e9f1b*/
+  for ( i = *(unsigned int **)((char *)this + 4); *i != *a2; ++i ) /*0x4e9f1b*/
   {
-    if ( ++result >= m_8 ) /*0x4e9f2a*/
+    if ( ++result >= v3 ) /*0x4e9f2a*/
       return -1; /*0x4e9f2a*/
   }
   return result; /*0x4e9f0a*/
+
 }
 } // namespace gamemd
 
@@ -4923,10 +4954,12 @@ int ParticleSystemClass::vt_04_(int * a2)
 namespace gamemd {
 unsigned int ParticleSystemClass::vt_05_(int a2)
 {
-    if ( *((unsigned char *)this + 48) )
-        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
+
+  if ( *((unsigned char *)this + 12) ) /*0x4e9f40*/
+    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x4e9f55*/
   else
     return 0; /*0x4e9f47*/
+
 }
 } // namespace gamemd
 
@@ -4934,20 +4967,22 @@ unsigned int ParticleSystemClass::vt_05_(int a2)
 namespace gamemd {
 VectorClass_flat * HouseClass::vt_00_(char a2)
 {
+
   void *v3; // eax
 
-    v3 = (void *)*(Block + 1);
-  *this = (void*)&VectorClass_TagClass___vftable; /*0x4ef4e6*/
-    if ( v3 && *((unsigned char *)Block + 13) )
+  v3 = (void *)*(Block + 1); /*0x4ef4e3*/
+  *Block = &vt_VectorClass_TagClass; /*0x4ef4e6*/
+  if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef4f0*/
   {
-    RA2_OPDEL(v3); /*0x4ef4f8*/
-        *(Block + 1) = 0;
+    __3_YAXPAX_Z(v3); /*0x4ef4f8*/
+    *(Block + 1) = 0; /*0x4ef500*/
   }
-    *((unsigned char *)Block + 13) = 0;
-    *(Block + 2) = 0;
+  *((unsigned char *)Block + 13) = 0; /*0x4ef50b*/
+  *(Block + 2) = 0; /*0x4ef511*/
   if ( (a2 & 1) != 0 ) /*0x4ef518*/
-    RA2_OPDEL(); /*0x4ef51b*/
-  return this; /*0x4ef525*/
+    __3_YAXPAX_Z(Block); /*0x4ef51b*/
+  return (VectorClass *)Block; /*0x4ef525*/
+
 }
 } // namespace gamemd
 
@@ -4955,19 +4990,21 @@ VectorClass_flat * HouseClass::vt_00_(char a2)
 namespace gamemd {
 VectorClass_flat * ParticleSystemClass::vt_00_(char a2)
 {
+
   void *v3; // eax
 
-    v3 = (void *)*(Block + 1);
-    *Block = &vt_VectorClass_ParticleClass;
-    if ( v3 && *((unsigned char *)Block + 13) )
+  v3 = (void *)*(Block + 1); /*0x4ef803*/
+  *Block = &vt_VectorClass_ParticleClass; /*0x4ef806*/
+  if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ef810*/
   {
-    RA2_OPDEL(v3); /*0x4ef818*/
-        *(Block + 1) = 0;
+    __3_YAXPAX_Z(v3); /*0x4ef818*/
+    *(Block + 1) = 0; /*0x4ef820*/
   }
-    *((unsigned char *)Block + 13) = 0;
-    *(Block + 2) = 0;
+  *((unsigned char *)Block + 13) = 0; /*0x4ef82b*/
+  *(Block + 2) = 0; /*0x4ef831*/
   if ( (a2 & 1) != 0 ) /*0x4ef838*/
-    RA2_OPDEL(); /*0x4ef83b*/
-  return this; /*0x4ef845*/
+    __3_YAXPAX_Z(Block); /*0x4ef83b*/
+  return (VectorClass *)Block; /*0x4ef845*/
+
 }
 } // namespace gamemd

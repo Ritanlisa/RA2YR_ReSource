@@ -10,7 +10,9 @@
 namespace gamemd {
 BOOL VeterancyStruct::IsVeteran()
 {
-  return *(float *)this >= 1.0 && *(float *)this < 2.0; /*0x74ffb3*/
+
+  return *this >= 1.0 && *this < 2.0; /*0x74ffb3*/
+
 }
 } // namespace gamemd
 
@@ -18,6 +20,8 @@ BOOL VeterancyStruct::IsVeteran()
 namespace gamemd {
 bool VeterancyStruct::IsElite()
 {
-  return *(float *)this >= 2.0; /*0x750024*/
+
+  return *this >= 2.0; /*0x750024*/
+
 }
 } // namespace gamemd

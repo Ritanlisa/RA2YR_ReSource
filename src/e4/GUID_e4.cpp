@@ -12,23 +12,24 @@
 namespace gamemd {
 bool __fastcall GUID::Compare(const GUID& a, const GUID& b)
 {
+
   unsigned short *v4; // edi
   int v5; // ecx
   unsigned short *v6; // esi
   bool v7; // zf
-  unsigned short * v8;
+  int v8; // ecx
   unsigned short *v9; // edi
   unsigned short *v10; // esi
   bool v11; // zf
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/
-        return *((unsigned int *)this + 1) == *(unsigned int *)(a2 + 4) && *(unsigned short *)this == *(unsigned short *)a2;
-    if ( (*this || *((unsigned int *)this + 4) || *((unsigned int *)this + 8) || *((unsigned int *)this + 12))
-    && (*(unsigned char *)a2 || a2->vtable2 || a2->vtable3 || a2->vtable4) )
+    return *((unsigned int *)a + 1) == *(unsigned int *)(b + 4) && *(unsigned short *)a == *(unsigned short *)b; /*0x53ef1b*/
+  if ( (*a || *(a + 1) || *(a + 2) || *(a + 3)) /*0x53eed8*/
+    && (*(unsigned char *)b || *(unsigned char *)(b + 1) || *(unsigned char *)(b + 2) || *(unsigned char *)(b + 3)) )
   {
-    v8 = (int)((unsigned short *)(3));
-    v9 = (unsigned short *)(a2 + 4); /*0x53eefd*/
-    v10 = &this->u32_10; /*0x53ef00*/
+    v8 = 3; /*0x53eef8*/
+    v9 = (unsigned short *)(b + 4); /*0x53eefd*/
+    v10 = a + 4; /*0x53ef00*/
     v11 = 1; /*0x53ef03*/
     do /*0x53ef05*/
     {
@@ -38,11 +39,11 @@ bool __fastcall GUID::Compare(const GUID& a, const GUID& b)
       --v8; /*0x53ef05*/
     }
     while ( v11 ); /*0x53ef05*/
-    return v11 && *(unsigned int *)this == *(unsigned int *)a2; /*0x53ef11*/
+    return v11 && *(unsigned int *)a == *(unsigned int *)b; /*0x53ef11*/
   }
-  v4 = (unsigned short *)(a2 + 4); /*0x53eedf*/
+  v4 = (unsigned short *)(b + 4); /*0x53eedf*/
   v5 = 3; /*0x53eee2*/
-  v6 = &this->u32_10; /*0x53eee7*/
+  v6 = a + 4; /*0x53eee7*/
   v7 = 1; /*0x53eeea*/
   do /*0x53eeec*/
   {
@@ -53,5 +54,6 @@ bool __fastcall GUID::Compare(const GUID& a, const GUID& b)
   }
   while ( v7 ); /*0x53eeec*/
   return v7; /*0x53ee9f*/
+
 }
 } // namespace gamemd

@@ -12,11 +12,13 @@
 namespace gamemd {
 long long Display::CalculateDefaultSize()
 {
-  int64_t result; // rax
 
-  result = Math::RoundToInt((double)(4 * dword_ABFDD0) + 0.5); /*0x5d5a3b*/
-  dword_ABFDC4 = result; /*0x5d5a40*/
+  __int64 result; // rax
+
+  result = Math::RoundToInt((double)(4 * MEMORY[0xABFDD0]) + 0.5); /*0x5d5a3b*/
+  MEMORY[0xABFDC4] = result; /*0x5d5a40*/
   return result; /*0x5d5a46*/
+
 }
 } // namespace gamemd
 
@@ -24,21 +26,23 @@ long long Display::CalculateDefaultSize()
 namespace gamemd {
 int Display::GetViewport(void* a1, void* a2, void* a3)
 {
+
   int *result; // eax
   int v2; // ecx
   int v3; // edx
   int v4; // esi
 
-  result = (int *)this; /*0x72ad29*/
+  result = a1; /*0x72ad29*/
   v2 = 0; /*0x72ad44*/
-  if ( !byte_A8EB7C && !byte_A8ED6B ) /*0x72ad5e*/
+  if ( !MEMORY[0xA8EB7C] && !MEMORY[0xA8ED6B] ) /*0x72ad5e*/
     v2 = 168; /*0x72ad60*/
-  v3 = dword_886FB8 - 168; /*0x72ad67*/
-  v4 = dword_886FBC - 32; /*0x72ad6d*/
+  v3 = MEMORY[0x886FB8] - 168; /*0x72ad67*/
+  v4 = MEMORY[0x886FBC] - 32; /*0x72ad6d*/
   *result = v2; /*0x72ad70*/
   result[1] = 0; /*0x72ad72*/
   result[2] = v3; /*0x72ad76*/
   result[3] = v4; /*0x72ad79*/
   return result; /*0x72ad75*/
+
 }
 } // namespace gamemd

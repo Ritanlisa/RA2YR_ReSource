@@ -10,6 +10,7 @@
 namespace gamemd {
 int Compare::Field96(const void * a1, const void * a2)
 {
+
   int v2; // eax
   int v3; // ecx
 
@@ -19,5 +20,6 @@ int Compare::Field96(const void * a1, const void * a2)
     return 0; /*0x46dca6*/
   else
     return v2 <= v3 ? 1 : -1;
+
 }
 } // namespace gamemd

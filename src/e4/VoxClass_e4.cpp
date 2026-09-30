@@ -16,29 +16,27 @@
 namespace gamemd {
 void VoxClass::FindAndPlay(int a2, int a3)
 {
-  int v2; // edx
-  int v4; // ebx
-  int v5; // esi
-  int result; // eax
 
-  v4 = v2; /*0x752704*/
+  int v5; // esi
+
   if ( a3 ) /*0x752708*/
   {
     v5 = 0; /*0x752710*/
-    if ( g_InfantrySelectState <= 0 ) /*0x752714*/
+    if ( *(int *)&stru_B1D188.__pad_2B8[112] <= 0 ) /*0x752714*/
     {
-      return UpdateThemeManager(-1, v4, a3); /*0x752736*/
+LABEL_5:
+      UpdateThemeManager(-1, a3, a3); /*0x752736*/
     }
     else
     {
-      while ( _strcmpi((char *)a3, *((char **)g_InfantryRenderPool + v5)) ) /*0x75272a*/
+      while ( _strcmpi(a3, *(const void **)(*(unsigned int *)&stru_B1D188.__pad_2B8[100] + 4 * v5)) ) /*0x75272a*/
       {
-        if ( ++v5 >= g_InfantrySelectState ) /*0x752734*/
-          return UpdateThemeManager(-1, v4, a3); /*0x752734*/
+        if ( ++v5 >= *(int *)&stru_B1D188.__pad_2B8[112] ) /*0x752734*/
+          goto LABEL_5; /*0x752734*/
       }
-      return UpdateThemeManager(v5, v4, a3); /*0x752754*/
+      UpdateThemeManager(v5, a3, a3); /*0x752754*/
     }
   }
-  return result; /*0x752746*/
+
 }
 } // namespace gamemd

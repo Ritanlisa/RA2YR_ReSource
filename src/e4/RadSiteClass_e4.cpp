@@ -16,50 +16,54 @@
 namespace gamemd {
 RadSiteClass::RadSiteClass()
 {
-  int v2; // edx
-  RadSiteClass * v3;
 
-  AbstractClass::Constructor(); /*0x65b1e3*/
-    *((unsigned int *)this + 36) = 0;
-    *((unsigned int *)this + 40) = MEMORY[0xA8ED84];
-    *((unsigned int *)this + 48) = 0;
-  v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b1f9*/
-    *((unsigned int *)this + 60) = 0;
-    *((unsigned int *)this + 52) = v2;
-    *((unsigned short *)this + 32) = 0;
-    *((unsigned short *)this + 33) = 0;
-    *((unsigned int *)this + 68) = 0;
-    *((unsigned int *)this + 72) = 0;
-    *((unsigned int *)this + 76) = 0;
-    *((unsigned int *)this + 80) = 0;
-    *((unsigned int *)this + 84) = 0;
-    *((unsigned int *)this + 100) = 0;
-    *((unsigned int *)this + 104) = 0;
-    *((unsigned int *)this + 108) = 0;
-    *((unsigned int *)this + 112) = 0;
-    *this = &RadSiteClass::`vftable';
-    *((unsigned int *)this + 4) = &RadSiteClass::`vftable';
-    *((unsigned int *)this + 8) = &RadSiteClass::`vftable';
-    *((unsigned int *)this + 12) = &RadSiteClass::`vftable';
-  if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
-    || (byte_B04BDD || !dword_B04BD8)
-    && dword_B04BE4 > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(RadSiteClass_Array + 8))(
-         &RadSiteClass_Array,
-         dword_B04BD8 + dword_B04BE4,
+  #72 *v2; // edx
+  int v3; // eax
+
+  AbstractClass::Constructor((int)this); /*0x65b1e3*/
+  *((unsigned int *)this + 9) = 0; /*0x65b1ea*/
+  *((unsigned int *)this + 10) = MEMORY[0xA8ED84]; /*0x65b1f3*/
+  *((unsigned int *)this + 12) = 0; /*0x65b1f6*/
+  v2 = MEMORY[0xA8ED84]; /*0x65b1f9*/
+  *((unsigned int *)this + 15) = 0; /*0x65b1ff*/
+  *((unsigned int *)this + 13) = v2; /*0x65b202*/
+  *((unsigned short *)this + 32) = 0; /*0x65b205*/
+  *((unsigned short *)this + 33) = 0; /*0x65b209*/
+  *((unsigned int *)this + 17) = 0; /*0x65b20d*/
+  *((unsigned int *)this + 18) = 0; /*0x65b210*/
+  *((unsigned int *)this + 19) = 0; /*0x65b213*/
+  *((unsigned int *)this + 20) = 0; /*0x65b216*/
+  *((unsigned int *)this + 21) = 0; /*0x65b219*/
+  *((unsigned int *)this + 25) = 0; /*0x65b21c*/
+  *((unsigned int *)this + 26) = 0; /*0x65b21f*/
+  *((unsigned int *)this + 27) = 0; /*0x65b222*/
+  *((unsigned int *)this + 28) = 0; /*0x65b225*/
+  *this = &RadSiteClass::`vftable'; /*0x65b228*/
+  *((unsigned int *)this + 1) = &RadSiteClass::`vftable'; /*0x65b22e*/
+  *((unsigned int *)this + 2) = &RadSiteClass::`vftable'; /*0x65b235*/
+  *((unsigned int *)this + 3) = &RadSiteClass::`vftable'; /*0x65b23c*/
+  if ( MEMORY[0xB04BE0] < MEMORY[0xB04BD8] /*0x65b277*/
+    || (MEMORY[0xB04BDD] || !MEMORY[0xB04BD8])
+    && MEMORY[0xB04BE4] > 0
+    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB04BD0] + 8))(
+         &MEMORY[0xB04BD0],
+         MEMORY[0xB04BD8] + MEMORY[0xB04BE4],
          0) )
   {
-    v3 = (unsigned int)(dword_B04BE0++);
-    *((unsigned int *)dword_B04BD4 + v3) = this; /*0x65b293*/
+    v3 = MEMORY[0xB04BE0]++; /*0x65b284*/
+    *((unsigned int *)MEMORY[0xB04BD4] + v3) = this; /*0x65b293*/
   }
-    return this;
+  return this; /*0x65b298*/
+
 }
 }
 // 0x65B3A0
 namespace gamemd {
 int RadSiteClass::StubReturn116()
 {
+
   return 116; /*0x65b3a5*/
+
 }
 } // namespace gamemd
 
@@ -67,7 +71,9 @@ int RadSiteClass::StubReturn116()
 namespace gamemd {
 int RadSiteClass::StubReturn69()
 {
+
   return 69; /*0x65b3c5*/
+
 }
 } // namespace gamemd
 
@@ -75,28 +81,30 @@ int RadSiteClass::StubReturn69()
 namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 {
-  int Prefix_0; // edi
-  int v3; // edx
 
-  Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x65b3e1*/
-  if ( Prefix_0 >= 0 ) /*0x65b3e5*/
+  AbstractClass *Prefix_0; // edi
+  IUnknown *v3; // edx
+
+  Prefix_0 = (AbstractClass *)AbstractClass::SaveLoad_Prefix_0(aP0, (AbstractClass *)aP1); /*0x65b3e1*/
+  if ( (int)Prefix_0 >= 0 ) /*0x65b3e5*/
   {
     if ( aP0 ) /*0x65b3e9*/
     {
-      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x65b3f2*/
-      v3 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b3f7*/
-      aP0-((unsigned int *)(>RadLevelTimer))[2] = 0; /*0x65b3fd*/
-      aP0-((unsigned int *)(>RadLevelTimer))[0] = v3; /*0x65b404*/
-      aP0-((unsigned int *)(>RadLightTimer))[0] = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x65b40c*/
-      aP0-((unsigned int *)(>RadLightTimer))[2] = 0; /*0x65b40f*/
-      aP0->AbstractClass = (void*)&RadSiteClass_vftable; /*0x65b416*/
-      *(void **)&aP0->vtable2 = (void*)&RadSiteClass_vftable; /*0x65b41c*/
-      *(void **)&aP0->vtable3 = (void*)&RadSiteClass_vftable; /*0x65b423*/
-      *(void **)&aP0->vtable4 = (void*)&RadSiteClass_vftable; /*0x65b42a*/
+      AbstractClass::InitVtables(aP0, (IUnknown *)&aP1); /*0x65b3f2*/
+      v3 = *(IUnknown **)&HouseClass_Player.__pad_5568[23248]; /*0x65b3f7*/
+      *(unsigned int *)&aP0[1].__pad_0[12] = 0; /*0x65b3fd*/
+      *(unsigned int *)&aP0[1].__pad_0[4] = v3; /*0x65b404*/
+      aP0[1].uniqueId = *(unsigned int *)&HouseClass_Player.__pad_5568[23248]; /*0x65b40c*/
+      aP0[1].nextArrayIndex = 0; /*0x65b40f*/
+      *(unsigned int *)aP0->__pad_0 = &RadSiteClass::`vftable'; /*0x65b416*/
+      *(unsigned int *)&aP0->__pad_0[4] = &RadSiteClass::`vftable'; /*0x65b41c*/
+      *(unsigned int *)&aP0->__pad_0[8] = &RadSiteClass::`vftable'; /*0x65b423*/
+      *(unsigned int *)&aP0->__pad_0[12] = &vt_RadSiteClass; /*0x65b42a*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->LightSource); /*0x65b43a*/
+    ObjectPtr::RegisterForTracking((SwizzleManagerClass *)&stru_B05488.__pad_579C[5356], (MouseClass *)&aP0[1]); /*0x65b43a*/
   }
-  return Prefix_0; /*0x65b441*/
+  return (int)Prefix_0->__pad_0; /*0x65b441*/
+
 }
 } // namespace gamemd
 
@@ -104,8 +112,9 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// 0x410320
-  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x65b464*/
+
+  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x65b464*/
+
 }
 } // namespace gamemd
 
@@ -113,12 +122,14 @@ int RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 int RadSiteClass::ddtor(int a1, unsigned int * a2)
 {
+
   if ( !a2 ) /*0x65b476*/
     return -2147467261; /*0x65b478*/
   *a2 = 1090836288; /*0x65b486*/
   a2[1] = 299095303; /*0x65b48e*/
   a2[2] = -1610598260; /*0x65b497*/
-  a2[3] = unk_7E98CC; /*0x65b4a0*/
+  a2[3] = 1153315785; /*0x65b4a0*/
   return 0; /*0x65b47d*/
+
 }
 } // namespace gamemd

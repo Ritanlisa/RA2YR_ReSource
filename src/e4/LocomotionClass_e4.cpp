@@ -21,202 +21,219 @@
 namespace gamemd {
 int LocomotionClass::Initialize()
 {
-  int v2; // ecx
+
+  wchar_t *v2; // ecx
   int v3; // ecx
 
-  LocomotionClass::Init(); /*0x4af543*/
-    *((unsigned int *)this + 112) = 0;
-    *((unsigned int *)this + 128) = 0;
-  v2 = *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4af553*/
-    *((unsigned int *)this + 176) = 0;
-  this->u32_24 = (unsigned int)(v2);
-    *((unsigned int *)this + 192) = 0;
-  this->u32_34 = (unsigned int)(g_DDraw_ClipRect);
-  this->u32_38 = (unsigned int)(qword_8A0794);
-  this->u32_10 = (unsigned int)(g_DDraw_ClipRect);
-  this->Dirty = (unsigned int)(qword_8A0794);
-  v3 = (unsigned int)(IDA_HIDWORD(qword_8A0794));
-  this->u8_14 = (unsigned int)(0);
-  this->u32_4C = (unsigned int)(0);
-  this->u32_48 = (unsigned int)(v3);
-  this->__pad_015 = (unsigned int)(0);
-  this->u32_58 = (unsigned int)(-1);
-  this->u32_5C = (unsigned int)(-1);
-  this->u32_60 = (unsigned int)(0);
-    *((unsigned char *)this + 388) = 0;
-    *((unsigned char *)this + 392) = 0;
-    *((unsigned char *)this + 396) = 0;
-    *((unsigned char *)this + 400) = 0;
-    *((unsigned char *)this + 404) = 1;
-    *((unsigned int *)this + 416) = 0;
-  *(unsigned int *)this->ILocomotion = (void*)&DriveLocomotionClass_vftable; /*0x4af5c2*/
-  *(unsigned int *)&this-((unsigned int *)(>ILocomotion))[4] = (void*)&DriveLocomotionClass_vftable; /*0x4af5c8*/
-    *((unsigned int *)this + 96) = &off_7E7E8C;
-  return (int)this->ILocomotion; /*0x4af5d8*/
+  LocomotionClass::Init((unsigned int *)this); /*0x4af543*/
+  *((unsigned int *)this + 7) = 0; /*0x4af54d*/
+  *((unsigned int *)this + 8) = 0; /*0x4af550*/
+  v2 = MEMORY[0xA8ED84]; /*0x4af553*/
+  *((unsigned int *)this + 11) = 0; /*0x4af559*/
+  *((unsigned int *)this + 9) = v2; /*0x4af55c*/
+  *((unsigned int *)this + 12) = 0; /*0x4af55f*/
+  *((unsigned int *)this + 13) = MEMORY[0x8A0790]; /*0x4af568*/
+  *((unsigned long long *)this + 7) = MEMORY[0x8A0794]; /*0x4af570*/
+  *((unsigned int *)this + 16) = MEMORY[0x8A0790]; /*0x4af585*/
+  *((unsigned int *)this + 17) = MEMORY[0x8A0794]; /*0x4af58e*/
+  v3 = HIDWORD(MEMORY[0x8A0794]); /*0x4af591*/
+  *((unsigned int *)this + 20) = 0; /*0x4af597*/
+  *((unsigned int *)this + 19) = 0; /*0x4af59a*/
+  *((unsigned int *)this + 18) = v3; /*0x4af59d*/
+  *((unsigned int *)this + 21) = 0; /*0x4af5a3*/
+  *((unsigned int *)this + 22) = -1; /*0x4af5a6*/
+  *((unsigned int *)this + 23) = -1; /*0x4af5a9*/
+  *((unsigned char *)this + 96) = 0; /*0x4af5ac*/
+  *((unsigned char *)this + 97) = 0; /*0x4af5af*/
+  *((unsigned char *)this + 98) = 0; /*0x4af5b2*/
+  *((unsigned char *)this + 99) = 0; /*0x4af5b5*/
+  *((unsigned char *)this + 100) = 0; /*0x4af5b8*/
+  *((unsigned char *)this + 101) = 1; /*0x4af5bb*/
+  *((unsigned int *)this + 26) = 0; /*0x4af5bf*/
+  *(unsigned int *)this = &DriveLocomotionClass::`vftable'; /*0x4af5c2*/
+  *((unsigned int *)this + 1) = &vt_DriveLocomotionClass; /*0x4af5c8*/
+  *((unsigned int *)this + 6) = &off_7E7E8C; /*0x4af5cf*/
+  return this; /*0x4af5d8*/
+
 }
 } // namespace gamemd
 // 0x4C54A0
 namespace gamemd {
 void * LocomotionClass::UpdateAll()
 {
+
   wchar_t *result; // eax
   int i; // esi
-  unsigned int *v3; // ecx
+  unsigned int *v2; // ecx
 
-  result = (wchar_t *)dword_8A3880; /*0x4c54a0*/
-  for ( i = dword_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
+  result = (wchar_t *)MEMORY[0x8A3880]; /*0x4c54a0*/
+  for ( i = MEMORY[0x8A3880] - 1; i >= 0; --i ) /*0x4c54ab*/
   {
-    v3 = (unsigned int *)*((unsigned int *)dword_8A3874 + i); /*0x4c54b3*/
-    result = *(wchar_t **)&(unsigned int *)((char *)&stru_A8EB00 + 416); /*0x4c54be*/
-    if ( *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) >= v3[11] + v3[12] ) /*0x4c54c5*/
+    v2 = (unsigned int *)*((unsigned int *)MEMORY[0x8A3874] + i); /*0x4c54b3*/
+    result = MEMORY[0xA8ED84]; /*0x4c54be*/
+    if ( (int)MEMORY[0xA8ED84] >= v2[11] + v2[12] ) /*0x4c54c5*/
     {
-      if ( v3 ) /*0x4c54c9*/
-        result = (wchar_t *)(*(int (**)(unsigned int *, int))(*v3 + 32))(v3, 1); /*0x4c54cf*/
+      if ( v2 ) /*0x4c54c9*/
+        result = (wchar_t *)(*(int (**)(unsigned int *, int))(*v2 + 32))(v2, 1); /*0x4c54cf*/
     }
   }
   return result; /*0x4c54d5*/
+
 }
 } // namespace gamemd
 // 0x4CFA70
 namespace gamemd {
 int LocomotionClass::CheckBridgeBlock()
 {
-  int vtable1; // eax
-  FootClass *LinkedTo; // edi
-  Cell *v4; // eax
+
+  int v2; // eax
+  unsigned int *v3; // edi
+  unsigned int *v4; // eax
   unsigned int *v5; // eax
 
-    if ( (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 48) + 388))(*((unsigned int *)this + 48)) == 7
-    || (IDA_LOBYTE(vtable1) = BuildingClass::GetType_Thunk(&this->LinkedTo->TechnoClass), !(unsigned char)vtable1) )
+  if ( (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 388))(*((unsigned int *)this + 3)) == 7 /*0x4cfa8e*/
+    || (LOBYTE(v2) = BuildingClass::GetType_Thunk(), !(unsigned char)v2) )
   {
-        v2 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 48) + 44))(*((unsigned int *)this + 48));
-    if ( vtable1 == 2 /*0x4cfacc*/
-      && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1].?, *(unsigned char *)(vtable1 + 3597))
-      && (v4 = (Cell *)(*((int (**)(FootClass *))LinkedTo->TechnoClass + 111))(this->LinkedTo),
+    v2 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 12) + 44))(*((unsigned int *)this + 3)); /*0x4cfa95*/
+    if ( v2 == 2 /*0x4cfacc*/
+      && (v3 = *(unsigned int **)((char *)this + 12), v2 = v3[433], *(unsigned char *)(v2 + 3597))
+      && (v4 = (unsigned int *)(*(int (**)(unsigned int))(*v3 + 444))(*((unsigned int *)this + 3)),
           v5 = Cell::IsBridge(v4),
-          IDA_LOBYTE(vtable1) = Array::Contains((Array *)this->LinkedTo, (int)v5),
-          !(unsigned char)vtable1) )
+          LOBYTE(v2) = Array::Contains(*(int **)((char *)this + 12), (int)v5),
+          !(unsigned char)v2) )
     {
-      IDA_LOBYTE(vtable1) = (*((char (**)(FootClass *, unsigned int, int))LinkedTo->TechnoClass + 289))(LinkedTo, 0, 1); /*0x4cfad6*/
+      LOBYTE(v2) = (*(int (**)(unsigned int *, unsigned int, int))(*v3 + 1156))(v3, 0, 1); /*0x4cfad6*/
     }
     else
     {
-            *((unsigned char *)this + 320) = 0;
-            *((unsigned char *)this + 324) = 1;
-            *((unsigned char *)this + 328) = 0;
-            *((unsigned int *)this + 224) = 0;
+      *((unsigned char *)this + 80) = 0; /*0x4cfadf*/
+      *((unsigned char *)this + 81) = 1; /*0x4cfae3*/
+      *((unsigned char *)this + 82) = 0; /*0x4cfae7*/
+      *((unsigned int *)this + 14) = 0; /*0x4cfaeb*/
     }
   }
-  return vtable1; /*0x4cfadc*/
+  return v2; /*0x4cfadc*/
+
 }
 } // namespace gamemd
 // 0x4DC760
 namespace gamemd {
 int LocomotionClass::GetSpeedMultiplier()
 {
-  void * v1;
-v1 = (void *)(this->q5D4);
-  if ( v1 && v1->q024->q0F2 ) /*0x4dc76d*/
+
+  int v1; // eax
+
+  v1 = *((unsigned int *)this + 373); /*0x4dc760*/
+  if ( v1 && *(unsigned char *)(*(unsigned int *)(v1 + 36) + 242) ) /*0x4dc76d*/
     return 1.0; /*0x4dc777*/
   else
-        return *(double *)((char *)this + 5312);
+    return *(double *)((char *)this + 1328); /*0x4dc77e*/
+
 }
 } // namespace gamemd
 // 0x513C20
 namespace gamemd {
 int LocomotionClass::ProcessData()
 {
-  LocomotionClass::Init(); /*0x513c24*/
-    *((unsigned int *)this + 96) = MEMORY[0xA8F180];
-    *((unsigned int *)this + 112) = MEMORY[0xA8F184];
-    *((unsigned int *)this + 128) = MEMORY[0xA8F188];
-    *((unsigned int *)this + 144) = MEMORY[0xA8F180];
-    *((unsigned int *)this + 160) = MEMORY[0xA8F184];
-    *((unsigned int *)this + 176) = MEMORY[0xA8F188];
-  FrameSnapshot::InitMax((FrameSnapshot *)this + 6, 0); /*0x513c67*/
-    *((unsigned int *)this + 288) = 0;
-    *((unsigned int *)this + 320) = 0;
-    *((unsigned int *)this + 352) = 0;
-    *((unsigned int *)this + 384) = 0;
-    *((unsigned int *)this + 304) = 0;
-    *((unsigned int *)this + 336) = 0;
-    *((unsigned int *)this + 368) = 1072693248;
-    *((unsigned int *)this + 400) = 0;
-    *((unsigned char *)this + 416) = 0;
-    *((unsigned int *)this + 432) = 0;
-    *((unsigned char *)this + 448) = 0;
-  *(unsigned int *)this->ILocomotion = (void*)&HoverLocomotionClass_vftable; /*0x513c91*/
-  *(unsigned int *)&this-((unsigned int *)(>ILocomotion))[4] = (void*)&HoverLocomotionClass_vftable; /*0x513c97*/
-  return (int)this->ILocomotion; /*0x513ca0*/
+
+  LocomotionClass::Init((unsigned int *)this); /*0x513c24*/
+  *((unsigned int *)this + 6) = MEMORY[0xA8F180]; /*0x513c34*/
+  *((unsigned int *)this + 7) = MEMORY[0xA8F184]; /*0x513c3d*/
+  *((unsigned int *)this + 8) = MEMORY[0xA8F188]; /*0x513c49*/
+  *((unsigned int *)this + 9) = MEMORY[0xA8F180]; /*0x513c51*/
+  *((unsigned int *)this + 10) = MEMORY[0xA8F184]; /*0x513c59*/
+  *((unsigned int *)this + 11) = MEMORY[0xA8F188]; /*0x513c64*/
+  FrameSnapshot::InitMax((unsigned short *)((char *)this + 48), 0); /*0x513c67*/
+  *((unsigned int *)this + 18) = 0; /*0x513c6c*/
+  *((unsigned int *)this + 20) = 0; /*0x513c6f*/
+  *((unsigned int *)this + 22) = 0; /*0x513c72*/
+  *((unsigned int *)this + 24) = 0; /*0x513c75*/
+  *((unsigned int *)this + 19) = 0; /*0x513c78*/
+  *((unsigned int *)this + 21) = 0; /*0x513c7b*/
+  *((unsigned int *)this + 23) = 1072693248; /*0x513c7e*/
+  *((unsigned int *)this + 25) = 0; /*0x513c85*/
+  *((unsigned char *)this + 104) = 0; /*0x513c88*/
+  *((unsigned int *)this + 27) = 0; /*0x513c8b*/
+  *((unsigned char *)this + 112) = 0; /*0x513c8e*/
+  *(unsigned int *)this = &HoverLocomotionClass::`vftable'; /*0x513c91*/
+  *((unsigned int *)this + 1) = &vt_HoverLocomotionClass; /*0x513c97*/
+  return this; /*0x513ca0*/
+
 }
 } // namespace gamemd
 // 0x54AC40
 namespace gamemd {
 int LocomotionClass::Update(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0)
 {
+
   int v2; // ecx
   int v4; // [esp+Ch] [ebp-4h] BYREF
 
-  LocomotionClass::Init(); /*0x54ac46*/
-  this-((unsigned int *)(>DestinationCoords))[0] = dword_ABC5A8; /*0x54ac59*/
-  this-((unsigned int *)(>DestinationCoords))[1] = dword_ABC5AC; /*0x54ac61*/
+  LocomotionClass::Init((unsigned int *)this); /*0x54ac46*/
+  *((unsigned int *)this + 16) = dword_ABC5A8; /*0x54ac59*/
+  *((unsigned int *)this + 17) = dword_ABC5AC; /*0x54ac61*/
   v2 = dword_ABC5B0; /*0x54ac64*/
-    *((unsigned char *)this + 304) = 0;
-    *((unsigned int *)this + 320) = 0;
-  this-((unsigned int *)(>DestinationCoords))[2] = v2; /*0x54ac70*/
-  FrameSnapshot::InitMax( /*0x54ac82*/
-    (FrameSnapshot *)&this-((unsigned int *)(>__pad_50))[4],
-    *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
-    *((unsigned int *)this + 448) = 0;
-  *(unsigned int *)&this-((unsigned int *)(>__pad_74))[4] = 0; /*0x54ac8a*/
-    *((unsigned int *)this + 544) = 0;
-    *((unsigned int *)this + 464) = 0;
-  *(unsigned int *)&this-((unsigned int *)(>__pad_74))[8] = 0; /*0x54ac96*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_74))[12] = 0; /*0x54ac99*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_89))[3] = 0; /*0x54ac9f*/
-  this-((unsigned int *)(>__pad_89))[7] = 0; /*0x54aca5*/
-    *((unsigned char *)this + 580) = 0;
-    *((unsigned int *)this + 592) = 0;
-    *(unsigned int *)this = &JumpjetLocomotionClass::`vftable';
-    *((unsigned int *)this + 16) = &JumpjetLocomotionClass::`vftable';
-    *((unsigned int *)this + 96) = &vt_JumpjetLocomotionClass;
-  IDA_LOWORD(v4) = 0x4000; /*0x54acd7*/
-  FacingClass::Update(&this-((unsigned int *)(>__pad_50))[4], &v4); /*0x54acdc*/
-  IDA_LOWORD(v4) = 0x4000; /*0x54ace8*/
-  FacingClass::Set_SyncLog(&this-((unsigned int *)(>__pad_50))[4], &v4); /*0x54aced*/
-    return this;
+  *((unsigned char *)this + 76) = 0; /*0x54ac6a*/
+  *((unsigned int *)this + 20) = 0; /*0x54ac6d*/
+  *((unsigned int *)this + 18) = v2; /*0x54ac70*/
+  FrameSnapshot::InitMax((unsigned short *)((char *)this + 84), MEMORY[0x8871E0]->?[8]); /*0x54ac82*/
+  *((unsigned int *)this + 28) = 0; /*0x54ac87*/
+  *((unsigned int *)this + 30) = 0; /*0x54ac8a*/
+  *((unsigned int *)this + 34) = 0; /*0x54ac8d*/
+  *((unsigned int *)this + 29) = 0; /*0x54ac93*/
+  *((unsigned int *)this + 31) = 0; /*0x54ac96*/
+  *((unsigned int *)this + 32) = 0; /*0x54ac99*/
+  *((unsigned int *)this + 35) = 0; /*0x54ac9f*/
+  *((unsigned char *)this + 144) = 0; /*0x54aca5*/
+  *((unsigned char *)this + 145) = 0; /*0x54acab*/
+  *((unsigned int *)this + 37) = 0; /*0x54acb5*/
+  *(unsigned int *)this = &JumpjetLocomotionClass::`vftable'; /*0x54acc3*/
+  *((unsigned int *)this + 1) = &JumpjetLocomotionClass::`vftable'; /*0x54acc9*/
+  *((unsigned int *)this + 6) = &vt_JumpjetLocomotionClass; /*0x54acd0*/
+  LOWORD(v4) = 0x4000; /*0x54acd7*/
+  FacingClass::Update((char *)((char *)this + 84), &v4); /*0x54acdc*/
+  LOWORD(v4) = 0x4000; /*0x54ace8*/
+  FacingClass::Set_SyncLog((char *)((char *)this + 84), &v4); /*0x54aced*/
+  return this; /*0x54acf4*/
+
 }
 } // namespace gamemd
 // 0x55A6C0
 namespace gamemd {
 int LocomotionClass::Init(void *a1 = 0, void *a2 = 0, void *a3 = 0, void *a4 = 0)
 {
-  this->Owner = (unsigned int)((gamemd::FootClass *)((unsigned int *)(0)));
-  this->LinkedTo = (gamemd::FootClass *)((unsigned int *)(0));
-  this->Powered = (unsigned int *)(1);
-  this->Dirty = (unsigned int *)(1);
-  this->RefCount = (unsigned int *)(0);
-  *(unsigned int *)this->ILocomotion = (void*)&LocomotionClass_vftable; /*0x55a6d5*/
-  *(unsigned int *)&this-((unsigned int *)(>ILocomotion))[4] = (void*)&LocomotionClass_vftable; /*0x55a6db*/
-  return this->ILocomotion; /*0x55a6e2*/
+
+  *((unsigned int *)this + 2) = 0; /*0x55a6c6*/
+  *((unsigned int *)this + 3) = 0; /*0x55a6c9*/
+  *((unsigned char *)this + 16) = 1; /*0x55a6cc*/
+  *((unsigned char *)this + 17) = 1; /*0x55a6cf*/
+  *((unsigned int *)this + 5) = 0; /*0x55a6d2*/
+  *this = &LocomotionClass::`vftable'; /*0x55a6d5*/
+  *((unsigned int *)this + 1) = &vt_LocomotionClass; /*0x55a6db*/
+  return this; /*0x55a6e2*/
+
 }
 } // namespace gamemd
 // 0x55A6F0
 namespace gamemd {
 void LocomotionClass::Construct()
 {
-  *(unsigned int *)this->ILocomotion = (void*)&LocomotionClass_vftable; /*0x55a6f0*/
-  *(unsigned int *)&this-((unsigned int *)(>ILocomotion))[4] = (void*)&LocomotionClass_vftable; /*0x55a6f6*/
-    *((unsigned int *)this + 12) = 0;
+
+  *this = &LocomotionClass::`vftable'; /*0x55a6f0*/
+  *((unsigned int *)this + 1) = &vt_LocomotionClass; /*0x55a6f6*/
+  *((unsigned int *)this + 3) = 0; /*0x55a6fd*/
+
 }
 } // namespace gamemd
 // 0x5172F0
 namespace gamemd {
 LocomotionClass * LocomotionClass::ProcessMove(char a2)
 {
-  LocomotionClass::Construct(); /*0x5172f3*/
+
+  LocomotionClass::Construct(Block); /*0x5172f3*/
   if ( (a2 & 1) != 0 ) /*0x5172fd*/
-    RA2_OPDEL(); /*0x517300*/
-  return this->ILocomotion; /*0x51730a*/
+    __3_YAXPAX_Z(Block); /*0x517300*/
+  return (LocomotionClass *)Block; /*0x51730a*/
+
 }
 } // namespace gamemd

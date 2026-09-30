@@ -10,21 +10,23 @@
 namespace gamemd {
 unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
 {
-  this->Items = (unsigned int)(0);
-  this->Capacity = (unsigned int)(a2);
-  this->IsInitialized = (unsigned int)(1);
-  this->IsAllocated = (unsigned int)(0);
-  this->vtable0 = (unsigned int)((void*)&VectorClass_HouseClass___vftable);
+
+  *((unsigned int *)this + 1) = 0; /*0x69d87b*/
+  *((unsigned int *)this + 2) = a2; /*0x69d87e*/
+  *((unsigned char *)this + 12) = 1; /*0x69d881*/
+  *((unsigned char *)this + 13) = 0; /*0x69d885*/
+  *this = &vt_VectorClass_HouseClass; /*0x69d888*/
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/
     {
-      this->Items = (unsigned int)((void *)a3);
-      return &this->vtable0; /*0x69d89e*/
+      *((unsigned int *)this + 1) = a3; /*0x69d898*/
+      return this; /*0x69d89e*/
     }
-    this->Items = (unsigned int)((void *)RA2_OPNEW(4 * a2));
-        *((unsigned char *)this + 13) = 1;
+    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x69d8ad*/
+    *((unsigned char *)this + 13) = 1; /*0x69d8b0*/
   }
-  return &this->vtable0; /*0x69d89d*/
+  return this; /*0x69d89d*/
+
 }
 } // namespace gamemd

@@ -2512,24 +2512,29 @@ Coord * * WOL_HandleLogout()
 namespace gamemd {
 int E4Recv_786DC0::sub_786DC0()
 {
+
   int v2; // esi
   char *v3; // eax
-  char *v5; // [esp+0h] [ebp-18h]
-  char *v6; // [esp+10h] [ebp-8h] BYREF
-  char *v7; // [esp+14h] [ebp-4h] BYREF
+  void *v5; // [esp+0h] [ebp-18h]
+  void *v6; // [esp+10h] [ebp-8h] BYREF
+  const char *v7; // [esp+14h] [ebp-4h] BYREF
 
-  DeleteAndZero::Alt2((DeleteAndZero *)&g_WebBrowserConfig); /*0x786dcd*/
+  DeleteAndZero::Alt2((void **)&g_WebBrowserConfig); /*0x786dcd*/
   v2 = 1; /*0x786dd2*/
   while ( 1 ) /*0x786de5*/
   {
-    if ( !(*(int (__stdcall **)(LPVOID, int, char **, char **))(*(unsigned int *)ppv + 144))(ppv, v2, &v6, &v7) ) /*0x786dea*/
+    if ( !(*(int (**)(LPVOID, int, void **, const char **))(*(unsigned int *)MEMORY[0xAC116C] + 144))( /*0x786dea*/
+            MEMORY[0xAC116C],
+            v2,
+            &v6,
+            &v7) )
     {
       if ( v6 ) /*0x786dfa*/
       {
-        if ( strlen(v6) ) /*0x786dfe*/
+        if ( strlen((const char *)v6) ) /*0x786dfe*/
         {
           v5 = v6; /*0x786e08*/
-          v3 = String::GetOrEmpty_Alt((String *)this); /*0x786e0b*/
+          v3 = String::GetOrEmpty_Alt(this); /*0x786e0b*/
           if ( !_strcmpi(v3, v5) ) /*0x786e11*/
             break; /*0x786e11*/
         }
@@ -2537,14 +2542,15 @@ int E4Recv_786DC0::sub_786DC0()
     }
     if ( ++v2 > 32 ) /*0x786e21*/
     {
-      DeleteAndZero::Alt2((DeleteAndZero *)&g_WindowManager.__pad_EC[684]); /*0x786e28*/
+      DeleteAndZero::Alt2((void **)&g_WebBrowser); /*0x786e28*/
       return 0; /*0x786e35*/
     }
   }
-  String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], v6); /*0x786e40*/
-  String::Assign_Alt((String *)&g_WebBrowserConfig, v7); /*0x786e4f*/
-  IDA_LOBYTE(dword_84A238) = 0; /*0x786e54*/
+  String::Assign_Alt((void **)&g_WebBrowser, (const char *)v6); /*0x786e40*/
+  String::Assign_Alt((void **)&g_WebBrowserConfig, v7); /*0x786e4f*/
+  LOBYTE(dword_84A238) = 0; /*0x786e54*/
   return 1; /*0x786e2f*/
+
 }
 }
 // 0x787010
@@ -5886,34 +5892,36 @@ void WOL_DisplayRankingsThunk()
 namespace gamemd {
 int E4Recv_786E70::sub_786E70()
 {
-  void *vtable0; // ecx
+
+  int v2; // ecx
   int v3; // edi
   int i; // esi
   char *v5; // eax
   char *v6; // eax
 
-  if ( !String::Length((String *)this) ) /*0x786e75*/
+  if ( !String::Length(this) ) /*0x786e75*/
     return -1; /*0x786e75*/
-  vtable0 = g_WOL_UserList.AbstractClass; /*0x786e7e*/
+  v2 = g_WOL_UserList; /*0x786e7e*/
   v3 = 1; /*0x786e84*/
-  if ( (int)g_WOL_UserList.AbstractClass <= 1 ) /*0x786e8b*/
+  if ( g_WOL_UserList <= 1 ) /*0x786e8b*/
     return -1; /*0x786ed8*/
   for ( i = 248; ; i += 248 ) /*0x786e8d*/
   {
     v5 = 0; /*0x786e92*/
-    if ( i >= 0 && v3 < (int)vtable0 ) /*0x786e9a*/
-      v5 = (char *)g_WOL_UserList.? + i; /*0x786ea1*/
+    if ( i >= 0 && v3 < v2 ) /*0x786e9a*/
+      v5 = (char *)dword_B778E0 + i; /*0x786ea1*/
     v6 = strchr(v5 + 24, 58); /*0x786ea9*/
     if ( v6 ) /*0x786eb3*/
     {
-      if ( *v6 && (uint8_t)String::Equals_Alt((String *)this, v6 + 1) ) /*0x786ebe*/
+      if ( *v6 && String::Equals_Alt(this, v6 + 1) ) /*0x786ebe*/
         break; /*0x786ebe*/
     }
-    vtable0 = g_WOL_UserList.AbstractClass; /*0x786ec7*/
-    if ( ++v3 >= (int)g_WOL_UserList.AbstractClass ) /*0x786ed6*/
+    v2 = g_WOL_UserList; /*0x786ec7*/
+    if ( ++v3 >= g_WOL_UserList ) /*0x786ed6*/
       return -1; /*0x786ed6*/
   }
   return v3; /*0x786ed8*/
+
 }
 } // namespace gamemd
 

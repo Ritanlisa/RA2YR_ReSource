@@ -88,26 +88,34 @@ AbstractClass * * UnholyAlliance_GetResult()
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
-    *Block = &vt_UnholyAlliance;
-  MultiplayerGameMode::Dtor(); /*0x5cb549*/
+
+  *Block = &vt_UnholyAlliance; /*0x5cb543*/
+  MultiplayerGameMode::Dtor(Block); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
-    RA2_OPDEL(); /*0x5cb556*/
-    return (UnholyAlliance *)Block;
+    __3_YAXPAX_Z(Block); /*0x5cb556*/
+  return (UnholyAlliance *)Block; /*0x5cb560*/
+
 }
 // 0x5CB3F0
 char UnholyAlliance::Read()
 {
-  stru_A8B250.__pad_0[8] = 1; /*0x5cb3f2*/
+
+  MEMORY[0xA8B258] = 1; /*0x5cb3f2*/
   return 1; /*0x5cb3f7*/
+
 }
 // 0x5CB400
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
-  return stru_A8B250.__pad_0[8] && (uint8_t)ScenarioClass::MissionStubReturnZero2((int *)&aP0->m_Enabled); /*0x5cb41c*/
+
+  return HouseClass_Player.__pad_5568[8100] && ScenarioClass::MissionStubReturnZero2(aP0); /*0x5cb41c*/
+
 }
 // 0x5CB430
 char UnholyAlliance::Seek()
 {
-  stru_A8B250.__pad_0[8] = 1; /*0x5cb432*/
+
+  MEMORY[0xA8B258] = 1; /*0x5cb432*/
   return 1; /*0x5cb437*/
+
 }

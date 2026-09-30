@@ -13,16 +13,17 @@
 namespace gamemd {
 int NetworkAddress::Assign(void* a1, void* a2)
 {
-  unsigned int *result; // eax
-  char *m_Port; // ecx
 
-  result = &this->m_IP; /*0x53ece4*/
-    v5 = (char *)this + 4;
-  *(unsigned int *)m_Port = *(unsigned int *)aP2; /*0x53ecec*/
-  *((unsigned short *)m_Port + 2) = aP2->u32_4; /*0x53ecf4*/
+  unsigned int *result; // eax
+  int *v5; // ecx
+
+  result = a2; /*0x53ece4*/
+  v5 = a2 + 1; /*0x53ece9*/
+  *v5 = aP2->field_0; /*0x53ecec*/
+  *((unsigned short *)v5 + 2) = aP2->field_4; /*0x53ecf4*/
   if ( dword_828140 == 1 ) /*0x53ed01*/
   {
-    *result = *a1; /*0x53ed09*/
+    *result = *a2; /*0x53ed09*/
   }
   else
   {
@@ -30,5 +31,6 @@ int NetworkAddress::Assign(void* a1, void* a2)
     *(unsigned short *)result = a4; /*0x53ed19*/
   }
   return result; /*0x53ecf3*/
+
 }
 } // namespace gamemd

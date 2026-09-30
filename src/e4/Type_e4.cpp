@@ -10,29 +10,35 @@
 namespace gamemd {
 int Type::CheckAmbiguity(int a2, char a3)
 {
+
   int v3; // edx
   int v4; // esi
   int v5; // edi
-  int result; // eax
+  int v6; // eax
   int v7; // esi
+  bool result; // al
 
-  v3 = *(int16_t *)(a2 + 38); /*0x57854a*/
+  v3 = *(__int16 *)(a2 + 38); /*0x57854a*/
   v4 = 0; /*0x57854f*/
-  v5 = *(int16_t *)(a2 + 36); /*0x578552*/
+  v5 = *(__int16 *)(a2 + 36); /*0x578552*/
   if ( a3 ) /*0x578558*/
   {
     v4 = *(char *)(a2 + 283); /*0x578560*/
     if ( *(unsigned char *)(a2 + 284) ) /*0x57855a*/
     {
-            if ( v3 + v5 < v4 + *((unsigned int *)this + 244) + 2 * *((unsigned int *)this + 256) + 4 )
+      if ( v3 + v5 < v4 + *((unsigned int *)this + 61) + 2 * *((unsigned int *)this + 64) + 4 ) /*0x578582*/
         ++v4; /*0x578584*/
     }
   }
-    v6 = *((unsigned int *)this + 244);
-  IDA_LOBYTE(result) = v3 + v5 > v4 + result + 2 * this->u32_100 /*0x5785e9*/
-                && v3 + v5 <= v4 + result + 2 * (this->u32_100 + this->u32_108) + 2
-                && (v7 = this->u32_FC, v5 - v3 < 2 * (v7 + this->u32_104) - result)
-                && (result -= 2 * v7, v3 - v5 < result);
+  v6 = *((unsigned int *)this + 61); /*0x57858b*/
+  result = 0; /*0x5785e9*/
+  if ( v3 + v5 > v4 + v6 + 2 * *((unsigned int *)this + 64) && v3 + v5 <= v4 + v6 + 2 * (*((unsigned int *)this + 64) + *((unsigned int *)this + 66)) + 2 ) /*0x5785b6*/
+  {
+    v7 = *((unsigned int *)this + 63); /*0x5785b8*/
+    if ( v5 - v3 < 2 * (v7 + *((unsigned int *)this + 65)) - v6 && v3 - v5 < v6 - 2 * v7 ) /*0x5785db*/
+      return 1; /*0x57859b*/
+  }
   return result; /*0x5785dd*/
+
 }
 } // namespace gamemd

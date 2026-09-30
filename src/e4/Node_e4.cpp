@@ -10,11 +10,13 @@
 namespace gamemd {
 unsigned int * Node_flat::Init()
 {
-  *(unsigned int *)this->__pad_0 = 0; /*0x49ea14*/
-    *((unsigned int *)this + 4) = 0;
-    *((unsigned int *)this + 8) = 0;
-    *((unsigned char *)this + 12) = 0;
-    *((unsigned int *)this + 16) = 0;
+
+  *this = 0; /*0x49ea14*/
+  *((unsigned int *)this + 1) = 0; /*0x49ea16*/
+  *((unsigned int *)this + 2) = 0; /*0x49ea19*/
+  *((unsigned char *)this + 12) = 0; /*0x49ea1c*/
+  *((unsigned int *)this + 4) = 0; /*0x49ea1f*/
   return this; /*0x49ea22*/
+
 }
 } // namespace gamemd

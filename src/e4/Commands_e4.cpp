@@ -18,42 +18,52 @@
 namespace gamemd {
 int32_t Commands::AddRef()
 {
-  return (char *)(aMultiplayerdeb);
+
+  return aMultiplayerdeb; /*0x537a55*/
+
 }
 } // namespace gamemd
 // 0x537A60
 namespace gamemd {
 int32_t Commands::ddtor()
 {
-  return (const wchar_t *)(g_INI_Key_De);
+
+  return g_INI_Key_De; /*0x537a65*/
+
 }
 } // namespace gamemd
 // 0x537A70
 namespace gamemd {
 int32_t Commands::Release()
 {
-  return (char **)(&off_8278C0);
+
+  return &off_8278C0; /*0x537a75*/
+
 }
 } // namespace gamemd
 // 0x537A80
 namespace gamemd {
 void ** Commands::StubReturn8550640()
 {
+
   return &off_8278F0; /*0x537a85*/
+
 }
 } // namespace gamemd
 // 0x537A90
 namespace gamemd {
 int32_t Commands::Execute()
 {
+
   char result; // al
 
-  result = byte_A8B8B4; /*0x537a90*/
-  if ( byte_A8B8B4 ) /*0x537a97*/
+  result = MEMORY[0xA8B8B4]; /*0x537a90*/
+  if ( MEMORY[0xA8B8B4] ) /*0x537a97*/
   {
-    result = byte_A8B8B5 == 0; /*0x537aa0*/
-    byte_A8B8B5 = byte_A8B8B5 == 0; /*0x537aa3*/
+    result = MEMORY[0xA8B8B5] == 0; /*0x537aa0*/
+    MEMORY[0xA8B8B5] = MEMORY[0xA8B8B5] == 0; /*0x537aa3*/
   }
   return result; /*0x537aa8*/
+
 }
 } // namespace gamemd

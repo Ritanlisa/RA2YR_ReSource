@@ -11,32 +11,35 @@
 namespace gamemd {
 float Float::Accumulate(float value, int index)
 {
-  *((float *)this + index) = value + *((float *)this + index); /*0x6c969b*/
-  return index; /*0x6c969e*/
+
+  double v3; // st7
+
+  v3 = value + *(this + index); /*0x6c9698*/
+  *(this + index) = v3; /*0x6c969b*/
+  return v3; /*0x6c969e*/
+
 }
 } // namespace gamemd
 // 0x6C96B0
 namespace gamemd {
 float Float::SubtractClamped(float a, float b, float min)
 {
-  int16_t v3; // fps
-  double v4; // st7
-  bool v5; // c0
-  char v6; // c2
-  bool v7; // c3
-  int result; // eax
-  double v9; // st6
 
-  v4 = *((float *)this + aP2); /*0x6c96b4*/
-  v5 = v4 < (double)(aP1); /*0x6c96b7*/
-  v6 = 0; /*0x6c96b7*/
-  v7 = v4 == (double)(aP1); /*0x6c96b7*/
-  IDA_LOWORD(result) = v3; /*0x6c96bb*/
-  if ( v4 >= (double)(aP1) ) /*0x6c96c0*/
-    v9 = *((float *)this + aP2) - aP1; /*0x6c96d7*/
+  double result; // st7
+  double v4; // st6
+
+  if ( *(a + (unsigned int)min) >= (double)*(float *)&b ) /*0x6c96c0*/
+  {
+    result = *(float *)&b; /*0x6c96d0*/
+    v4 = *(a + (unsigned int)min) - *(float *)&b; /*0x6c96d7*/
+  }
   else
-    v9 = *((float *)this + aP2) - *((float *)this + aP2); /*0x6c96c8*/
-  *((float *)this + aP2) = v9; /*0x6c96ca*/
+  {
+    result = *(a + (unsigned int)min); /*0x6c96c2*/
+    v4 = result - result; /*0x6c96c8*/
+  }
+  *(a + (unsigned int)min) = v4; /*0x6c96ca*/
   return result; /*0x6c96cd*/
+
 }
 } // namespace gamemd

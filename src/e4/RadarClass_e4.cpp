@@ -24,53 +24,53 @@
 namespace gamemd {
 CampaignClass * RadarClass::Destruct()
 {
-  MapClass **p_RadarClass_field_0x1488; // esi
+
+  char *v2; // esi
   int v3; // ebp
   void *v4; // eax
-  CampaignClass *RadarClass_field_0x1260; // eax
-  CampaignClass *RadarClass_field_0x1228; // eax
-  int result; // eax
+  void *v5; // eax
+  void *v6; // eax
 
-  this->RadarClass_field_0x0 = (unsigned int)((gamemd::MapClass **)((void*)&RadarClass_vftable));
-  AudioFileClass::Release((AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
-  TacticalClass::FreeResources(); /*0x652c19*/
-    v2 = (char *)((char *)this + 5256);
+  *this = &vt_RadarClass; /*0x652c0c*/
+  AudioFileClass::Release((unsigned int *)this + 1328); /*0x652c12*/
+  TacticalClass::FreeResources(this); /*0x652c19*/
+  v2 = (char *)((unsigned int *)this + 1314); /*0x652c1e*/
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
-    v4 = *(p_RadarClass_field_0x1488 - 5); /*0x652c2b*/
-    p_RadarClass_field_0x1488 -= 6; /*0x652c2e*/
-    *p_RadarClass_field_0x1488 = (MapClass *)(void*)&VectorClass_Point2D_vftable; /*0x652c33*/
-    if ( v4 && *((unsigned char *)p_RadarClass_field_0x1488 + 13) ) /*0x652c3b*/
+    v4 = (void *)*((unsigned int *)v2 - 5); /*0x652c2b*/
+    v2 -= 24; /*0x652c2e*/
+    *(unsigned int *)v2 = &vt_VectorClass_Point2D; /*0x652c33*/
+    if ( v4 && v2[13] ) /*0x652c3b*/
     {
-      RA2_OPDEL(v4); /*0x652c41*/
-      p_RadarClass_field_0x1488[1] = 0; /*0x652c49*/
+      __3_YAXPAX_Z(v4); /*0x652c41*/
+      *((unsigned int *)v2 + 1) = 0; /*0x652c49*/
     }
     --v3; /*0x652c4c*/
-    *((unsigned char *)p_RadarClass_field_0x1488 + 13) = 0; /*0x652c4d*/
-    p_RadarClass_field_0x1488[2] = 0; /*0x652c50*/
+    v2[13] = 0; /*0x652c4d*/
+    *((unsigned int *)v2 + 2) = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-    v5 = (void *)*((unsigned int *)this + 4704);
-    *((unsigned int *)this + 4700) = &vt_VectorClass_Point2D;
-    if ( v5 && *((unsigned char *)this + 4713) )
+  v5 = (void *)*((unsigned int *)this + 1176); /*0x652c55*/
+  *((unsigned int *)this + 1175) = &vt_VectorClass_Point2D; /*0x652c5b*/
+  if ( v5 && *((unsigned char *)this + 4713) ) /*0x652c69*/
   {
-    RA2_OPDEL(RadarClass_field_0x1260); /*0x652c72*/
-        *((unsigned int *)this + 4704) = 0;
+    __3_YAXPAX_Z(v5); /*0x652c72*/
+    *((unsigned int *)this + 1176) = 0; /*0x652c7a*/
   }
-  this-((unsigned int *)(>__pad_1264))[5] = (gamemd::CampaignClass *)(0);
-    *((unsigned int *)this + 4708) = 0;
-    v6 = (void *)*((unsigned int *)this + 4648);
-    *((unsigned int *)this + 4644) = &vt_VectorClass_Cell;
-    if ( v6 && *((unsigned char *)this + 4657) )
+  *((unsigned char *)this + 4713) = 0; /*0x652c80*/
+  *((unsigned int *)this + 1177) = 0; /*0x652c86*/
+  v6 = (void *)*((unsigned int *)this + 1162); /*0x652c8c*/
+  *((unsigned int *)this + 1161) = &vt_VectorClass_Cell; /*0x652c92*/
+  if ( v6 && *((unsigned char *)this + 4657) ) /*0x652ca0*/
   {
-    RA2_OPDEL(RadarClass_field_0x1228); /*0x652ca9*/
-        *((unsigned int *)this + 4648) = 0;
+    __3_YAXPAX_Z(v6); /*0x652ca9*/
+    *((unsigned int *)this + 1162) = 0; /*0x652cb1*/
   }
-  this-((unsigned int *)(>__pad_122C))[5] = (gamemd::CampaignClass **)(0);
-    *((unsigned int *)this + 4652) = 0;
-  this->MapClass::Destruct(); /*0x652cc5*/
-  return result; /*0x652cca*/
+  *((unsigned char *)this + 4657) = 0; /*0x652cb9*/
+  *((unsigned int *)this + 1163) = 0; /*0x652cbf*/
+  return MapClass::Destruct(this); /*0x652cca*/
+
 }
 }
 // 0x654650
@@ -164,6 +164,7 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
 namespace gamemd {
 int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
 {
+
   int v7; // edx
   bool v9; // al
   int v10; // eax
@@ -186,7 +187,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   bool v27; // al
   int v28; // eax
   int v29; // ecx
-  int v30; // esi
+  IUnknown *v30; // esi
   int v31; // eax
   char v32; // [esp+13h] [ebp-9h]
   int v33; // [esp+14h] [ebp-8h]
@@ -194,10 +195,10 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   char v35; // [esp+20h] [ebp+4h]
   bool v36; // [esp+24h] [ebp+8h]
   char v37; // [esp+28h] [ebp+Ch]
-  char v38; // [esp+2Ch] [ebp+10h]
+  char aP3a; // [esp+2Ch] [ebp+10h]
 
   v33 = TechnoTypeClass::GetByTypeAndIndex(a1, a2); /*0x6a8444*/
-  v7 = TechnoTypeClass::GetByTypeAndIndex(a3, aP3); /*0x6a844d*/
+  v7 = TechnoTypeClass::GetByTypeAndIndex(a3, (int)aP3); /*0x6a844d*/
   v34 = v7; /*0x6a8451*/
   if ( !a3 ) /*0x6a8455*/
     return 1; /*0x6a8460*/
@@ -209,8 +210,8 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   {
     if ( v9 ) /*0x6a849f*/
     {
-      v10 = *((unsigned int *)dword_A8E334 + a2); /*(unsigned int)(0x6a84ab)*/
-      v11 = *((unsigned int *)(unsigned int)(dword_A8E334)+ aP3); /*0x6a84ae*/
+      v10 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[20608] + 4 * a2); /*0x6a84ab*/
+      v11 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[20608] + 4 * (unsigned int)aP3); /*0x6a84ae*/
       v12 = *(unsigned int *)(v10 + 176); /*0x6a84b1*/
       v13 = *(unsigned int *)(v11 + 176); /*0x6a84b7*/
       if ( v12 < v13 ) /*0x6a84bf*/
@@ -225,12 +226,12 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   }
   if ( v9 ) /*0x6a84e8*/
   {
-  LABEL_25:
+LABEL_25:
     v16 = v33; /*0x6a8536*/
     goto LABEL_26; /*0x6a8536*/
   }
   v16 = v33; /*0x6a84ef*/
-  v17 = *(unsigned int *)(*((unsigned int *)dword_A83D4C + 13) + 188); /*0x6a84fc*/
+  v17 = *(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 52) + 188); /*0x6a84fc*/
   v18 = v17 == *(unsigned int *)(v33 + 1744); /*0x6a850a*/
   v19 = v17 == *(unsigned int *)(v7 + 1744); /*0x6a850f*/
   if ( v18 ) /*0x6a8514*/
@@ -242,7 +243,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   {
     return 0; /*0x6a8533*/
   }
-  LABEL_26:
+LABEL_26:
   if ( a1 == 40 || a1 == 3 ) /*0x6a8542*/
   {
     v20 = 1; /*0x6a8564*/
@@ -261,18 +262,18 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   v37 = 0; /*0x6a854a*/
   if ( !v20 ) /*0x6a854e*/
   {
-  LABEL_34:
+LABEL_34:
     v22 = 0; /*0x6a8572*/
     goto LABEL_35; /*0x6a8572*/
   }
-  LABEL_30:
+LABEL_30:
   if ( !*(unsigned char *)(v16 + 3278) ) /*0x6a8558*/
     goto LABEL_34; /*0x6a8558*/
   v22 = 1; /*0x6a855a*/
-  LABEL_35:
+LABEL_35:
   v32 = v22; /*0x6a8574*/
-  if ( v21 || (v38 = 1, v22) ) /*0x6a8583*/
-    v38 = 0; /*0x6a8585*/
+  if ( v21 || (aP3a = 1, v22) ) /*0x6a8583*/
+    aP3a = 0; /*0x6a8585*/
   if ( a3 == 40 || a3 == 3 ) /*0x6a8592*/
   {
     v23 = 1; /*0x6a85b4*/
@@ -292,16 +293,16 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
     v25 = (unsigned int *)v34; /*0x6a85be*/
     goto LABEL_47; /*0x6a85be*/
   }
-  LABEL_42:
+LABEL_42:
   v25 = (unsigned int *)v34; /*0x6a859c*/
   if ( !*(unsigned char *)(v34 + 3278) ) /*0x6a85a8*/
   {
-  LABEL_47:
+LABEL_47:
     v26 = 0; /*0x6a85c2*/
     goto LABEL_48; /*0x6a85c2*/
   }
   v26 = 1; /*0x6a85aa*/
-  LABEL_48:
+LABEL_48:
   v27 = !v24 && !v26; /*0x6a85d0*/
   if ( v35 ) /*0x6a85d8*/
   {
@@ -309,7 +310,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
       return 1; /*0x6a85f3*/
     goto LABEL_74; /*0x6a85e4*/
   }
-  if ( v38 ) /*0x6a85fc*/
+  if ( aP3a ) /*0x6a85fc*/
   {
     if ( v36 ) /*0x6a8604*/
       return 0; /*0x6a860f*/
@@ -336,33 +337,36 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   }
   if ( v26 ) /*0x6a8618*/
     return 1; /*0x6a8623*/
-  LABEL_74:
+LABEL_74:
   v28 = *(unsigned int *)(v16 + 1588); /*0x6a8682*/
   v29 = v25[397]; /*0x6a8688*/
   if ( v28 < v29 ) /*0x6a8690*/
     return 1; /*0x6a869b*/
   if ( v28 > v29 ) /*0x6a869e*/
     return 0; /*0x6a86a9*/
-  v30 = (*(int (**)(int, void *))(*(unsigned int *)v16 + 132))(v16, dword_A83D4C); /*0x6a86bf*/
-  v31 = (*(int (**)(unsigned int *, void *))(*v25 + 132))(v25, dword_A83D4C); /*0x6a86c9*/
-  if ( v30 < v31 ) /*0x6a86d1*/
+  v30 = (IUnknown *)(*(int (**)(int, int))(*(unsigned int *)v16 + 132))(v16, HouseClass_Player.field_0); /*0x6a86bf*/
+  v31 = (*(int (**)(unsigned int *, int))(*v25 + 132))(v25, HouseClass_Player.field_0); /*0x6a86c9*/
+  if ( (int)v30 < v31 ) /*0x6a86d1*/
     return 1; /*0x6a86dc*/
-  if ( v30 > v31 ) /*0x6a86df*/
+  if ( (int)v30 > v31 ) /*0x6a86df*/
     return 0; /*0x6a86ea*/
   v14 = *(const wchar_t **)(v16 + 96); /*0x6a86ed*/
   v15 = (const wchar_t *)v25[24]; /*0x6a86f0*/
   return wcscmp(v14, v15) <= 0; /*0x6a8457*/
+
 }
 }
 // 0x4F4220
 namespace gamemd {
 unsigned int * RadarClass::initRadarSurface()
 {
-  this->RadarClass_field_0x4 = (unsigned int)(0);
-  this->RadarClass_field_0x8 = (unsigned int)(0);
-    *((unsigned int *)this + 12) = 2;
-  this->RadarClass_field_0x0 = &off_7EA6FC; /*0x4f4231*/
-  return &this->RadarClass_field_0x0; /*0x4f4237*/
+
+  *((unsigned int *)this + 1) = 0; /*0x4f4224*/
+  *((unsigned int *)this + 2) = 0; /*0x4f4227*/
+  *((unsigned int *)this + 3) = 2; /*0x4f422a*/
+  *this = &off_7EA6FC; /*0x4f4231*/
+  return this; /*0x4f4237*/
+
 }
 } // namespace gamemd
 
@@ -370,17 +374,19 @@ unsigned int * RadarClass::initRadarSurface()
 namespace gamemd {
 void RadarClass::Destru_vt50()
 {
-  if ( byte_B048F9 ) /*0x652d9a*/
+
+  if ( MEMORY[0xB048F9] ) /*0x652d9a*/
   {
-    RA2_OPDEL(dword_B048E0); /*0x652da2*/
-    byte_B048F9 = 0; /*0x652daa*/
+    __3_YAXPAX_Z(dword_B048E0); /*0x652da2*/
+    MEMORY[0xB048F9] = 0; /*0x652daa*/
   }
   dword_B048E0 = 0; /*0x652db5*/
-  if ( byte_B048F8 ) /*0x652dbd*/
+  if ( stru_B048F8 ) /*0x652dbd*/
   {
-    RA2_OPDEL(dword_B048AC); /*0x652dc6*/
-    byte_B048F8 = 0; /*0x652dce*/
+    __3_YAXPAX_Z(dword_B048AC); /*0x652dc6*/
+    stru_B048F8 = 0; /*0x652dce*/
   }
   dword_B048AC = 0; /*0x652dd4*/
+
 }
 } // namespace gamemd

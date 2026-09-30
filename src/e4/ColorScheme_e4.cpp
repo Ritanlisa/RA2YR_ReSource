@@ -10,32 +10,30 @@
 namespace gamemd {
 int ColorScheme::Destructor()
 {
+
   void (***v2)(unsigned int, int); // ecx
   int result; // eax
-  ColorScheme *v4; // [esp+4h] [ebp-4h] BYREF
+  int v4; // [esp+4h] [ebp-4h] BYREF
 
-    if ( *((unsigned int *)this + 3088) )
-    free((void *)this-((unsigned int *)(>data))[193]); /*0x68c8df*/
-  v2 = (void (***)(unsigned int, int))this->u32_30C; /*0x68c8e7*/
-  this-((unsigned int *)(>data))[193] = 0; /*0x68c8ed*/
+  if ( *((unsigned int *)this + 193) ) /*0x68c8d4*/
+    free(*(void **)((char *)this + 772)); /*0x68c8df*/
+  v2 = *(void (****)(unsigned int, int))((char *)this + 780); /*0x68c8e7*/
+  *((unsigned int *)this + 193) = 0; /*0x68c8ed*/
   if ( v2 ) /*0x68c8f9*/
     (**v2)(v2, 1); /*0x68c8ff*/
-  this-((unsigned int *)(>data))[195] = 0; /*0x68c905*/
+  *((unsigned int *)this + 195) = 0; /*0x68c905*/
   v4 = this; /*0x68c91b*/
-  result = (*(int (**)(_VectorClass_PAVColorScheme *, ColorScheme **))(*(unsigned int *)stru_B054D0.__pad_0 + 16))( /*0x68c91f*/
-             &stru_B054D0,
-             &v4);
-  if ( result != -1 && result < *(int *)stru_B054D0.__tail_10 ) /*0x68c930*/
+  result = (*(int (**)(int *, int *))(MEMORY[0xB054D0] + 16))(&MEMORY[0xB054D0], &v4); /*0x68c91f*/
+  if ( result != -1 && result < MEMORY[0xB054E0] && result < --MEMORY[0xB054E0] ) /*0x68c93b*/
   {
-    --*(unsigned int *)stru_B054D0.__tail_10; /*0x68c935*/
-    for ( ; /*0x68c93b*/
-          result < *(int *)stru_B054D0.__tail_10;
-          *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * result - 4) = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3]
-                                                                                   + 4 * result) )
+    do /*0x68c953*/
     {
       ++result; /*0x68c943*/
+      *((unsigned int *)MEMORY[0xB054D4] + result - 1) = *((unsigned int *)MEMORY[0xB054D4] + result); /*0x68c947*/
     }
+    while ( result < MEMORY[0xB054E0] ); /*0x68c953*/
   }
   return result; /*0x68c925*/
+
 }
 }

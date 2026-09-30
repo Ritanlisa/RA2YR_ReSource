@@ -38,40 +38,43 @@ int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
 namespace gamemd {
 unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
-  uint8_t v3; // bl
-  char v4; // al
-  uint8_t vtable0; // bl
-  unsigned int result; // eax
 
-    v3 = *((unsigned int *)this + 4);
-    *((unsigned int *)this + 8) += a2 * (a3[2] - *((unsigned int *)this + 8)) / 256;
+  unsigned __int8 v3; // bl
+  unsigned __int8 v4; // al
+  unsigned __int8 v5; // bl
+  unsigned __int8 result; // al
+
+  v3 = *((unsigned char *)this + 1); /*0x517394*/
+  *((unsigned char *)this + 2) += a2 * (a3[2] - *((unsigned char *)this + 2)) / 256; /*0x517397*/
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
-  vtable0 = (uint8_t)this->AbstractClass; /*0x5173ba*/
-    *((unsigned int *)this + 4) = v4;
-  result = a2 * (*a3 - vtable0) / 256; /*0x5173db*/
-  IDA_LOBYTE(result) = vtable0 + result; /*0x5173de*/
-  IDA_LOBYTE(this->AbstractClass) = result; /*0x5173e1*/
+  v5 = *this; /*0x5173ba*/
+  *((unsigned char *)this + 1) = v4; /*0x5173bc*/
+  result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
+  *this = result; /*0x5173e1*/
   return result; /*0x5173cb*/
+
 }
 }
 // 0x5173F0
 namespace gamemd {
 int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 {
+
   int v2; // esi
   int v3; // edx
   int v4; // eax
 
-  v2 = IDA_LOBYTE(this->AbstractClass) - *a2; /*0x517400*/
+  v2 = *this - *a2; /*0x517400*/
   if ( v2 < 0 ) /*0x517402*/
-    v2 = *a2 - IDA_LOBYTE(this->AbstractClass); /*0x517404*/
-    v3 = *((unsigned int *)this + 4) - a2[1];
+    v2 = *a2 - *this; /*0x517404*/
+  v3 = *((unsigned char *)this + 1) - a2[1]; /*0x517410*/
   if ( v3 < 0 ) /*0x517412*/
-        v3 = a2[1] - *((unsigned int *)this + 4);
-    v4 = *((unsigned int *)this + 8) - a2[2];
+    v3 = a2[1] - *((unsigned char *)this + 1); /*0x517414*/
+  v4 = *((unsigned char *)this + 2) - a2[2]; /*0x517422*/
   if ( v4 < 0 ) /*0x517424*/
-        v4 = a2[2] - *((unsigned int *)this + 8);
+    v4 = a2[2] - *((unsigned char *)this + 2); /*0x517426*/
   return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
+
 }
 }
 // 0x51FEF0
@@ -616,9 +619,11 @@ int sub_513C00()
 namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
-  *(unsigned int *)this->LocomotionClass = (void*)&HoverLocomotionClass_vftable; /*0x513d00*/
-  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&HoverLocomotionClass_vftable; /*0x513d06*/
-  LocomotionClass::Construct(); /*0x513d0d*/
+
+  *this = &HoverLocomotionClass::`vftable'; /*0x513d00*/
+  *((unsigned int *)this + 1) = &vt_HoverLocomotionClass; /*0x513d06*/
+  LocomotionClass::Construct(this); /*0x513d0d*/
+
 }
 } // namespace gamemd
 
@@ -626,34 +631,35 @@ void E4Recv_513D00::sub_513D00()
 namespace gamemd {
 int E4Recv_517110::sub_517110()
 {
+
   int v2; // edi
   int v3; // ebx
   unsigned short *v4; // eax
   bool v5; // bl
-  void *vtable3; // ecx
+  int v6; // ecx
   int result; // eax
   unsigned char v8[4]; // [esp+8h] [ebp-4h] BYREF
 
   v5 = 1; /*0x51717d*/
-    if ( *((unsigned int *)this + 144) != *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[1684]
-    || this->owningHouseIndex != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1440)
-    || this->fallRate != *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 1444) )
+  if ( *((unsigned int *)this + 9) != *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[1684] /*0x517138*/
+    || *((unsigned int *)this + 10) != *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[1688]
+    || *((unsigned int *)this + 11) != *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[1692] )
   {
-        v2 = *((unsigned int *)this + 144) / 256;
-        v3 = *((unsigned int *)this + 160) / 256;
-    v4 = (unsigned short *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this->? + 440))(this->?, v8); /*0x517167*/
+    v2 = *((unsigned int *)this + 9) / 256; /*0x517161*/
+    v3 = *((unsigned int *)this + 10) / 256; /*0x517164*/
+    v4 = (unsigned short *)(*(int (**)(unsigned int, unsigned char *))(**(unsigned int **)((char *)this + 12) + 440))(*((unsigned int *)this + 3), v8); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  vtable3 = (void *)(this->M12);
-  this-((unsigned int *)(>ambientSoundController))[3] = 0; /*0x517182*/
-  this-((unsigned int *)(>ambientSoundController))[4] = 1072693248; /*0x517189*/
-  (*(void (**)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
-  result = MovementAI::StepFootClass((MovementAI *)this, 0); /*0x5171a3*/
+  v6 = *((unsigned int *)this + 3); /*0x51717f*/
+  *((unsigned int *)this + 18) = 0; /*0x517182*/
+  *((unsigned int *)this + 19) = 1072693248; /*0x517189*/
+  (*(void (**)(int, unsigned int, int))(*(unsigned int *)v6 + 1348))(v6, 0, 1072693248); /*0x517199*/
+  result = MovementAI::StepFootClass((int *)this, 0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
-// 0x514f70
-    return MovementAI::MainFootClass(1); /*0x5171b0*/
+    return MovementAI::MainFootClass((int *)this, 1); /*0x5171b0*/
   return result; /*0x5171b5*/
+
 }
 } // namespace gamemd
 
@@ -672,7 +678,8 @@ char sub_517340()
 namespace gamemd {
 char E4Recv_5176D0::sub_5176D0(BYTE Data)
 {
-  void *v4; // ecx
+
+  int v4; // ecx
   char v5; // [esp+13h] [ebp-119h]
   HKEY phkResult; // [esp+14h] [ebp-118h] BYREF
   BYTE v7[4]; // [esp+18h] [ebp-114h] BYREF
@@ -683,7 +690,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   CHAR SubKey[128]; // [esp+2Ch] [ebp-100h] BYREF
   CHAR v13[128]; // [esp+ACh] [ebp-80h] BYREF
 
-  strcpy(SubKey, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5176ff*/
+  strcpy(SubKey, MEMORY[0x8254E4]); /*0x5176ff*/
   v5 = 0; /*0x51770a*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0xF003Fu, &phkResult) /*0x51774a*/
     && RegCreateKeyExA(HKEY_LOCAL_MACHINE, SubKey, 0, 0, 0, 0xF003Fu, 0, &phkResult, &dwDisposition) )
@@ -693,21 +700,22 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
-    *((unsigned int *)this + 16) = 0;
-  strcpy(v13, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5177c0*/
+  *((unsigned char *)this + 4) = 0; /*0x51779f*/
+  strcpy(v13, MEMORY[0x8254E4]); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
   {
     *(unsigned int *)v7 = 0; /*0x5177e9*/
     if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
-      v4 = (void *)((unsigned int)(*(void **)v7));
-            *((unsigned int *)this + 16) = 1;
-      this->AbstractClass = v4; /*0x517821*/
+      v4 = *(unsigned int *)v7; /*0x517819*/
+      *((unsigned char *)this + 4) = 1; /*0x51781d*/
+      *(unsigned int *)this = v4; /*0x517821*/
     }
     RegCloseKey(hKey); /*0x517829*/
   }
   return v5; /*0x517754*/
+
 }
 } // namespace gamemd
 

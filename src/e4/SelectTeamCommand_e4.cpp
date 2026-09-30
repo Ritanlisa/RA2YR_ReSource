@@ -11,36 +11,44 @@
 namespace gamemd {
 void SelectTeamCommand::Construct()
 {
-  this->SelectTeamCommand_field_00 = (unsigned int *)(a2);
-  *(unsigned int *)this->CommandClass = (void*)&SelectTeamCommandClass_vftable; /*0x535fc9*/
-  return this->CommandClass; /*0x535fcf*/
+
+  *(this + 1) = a2; /*0x535fc6*/
+  *this = &vt_SelectTeamCommandClass; /*0x535fc9*/
+  return this; /*0x535fcf*/
+
 }
 } // namespace gamemd
 // 0x535FE0
 namespace gamemd {
 void SelectTeamCommand::AddRef()
 {
-  sprintf(&(unsigned int *)((char *)&stru_A8EB00 + 2512), "TeamSelect_%d", *(unsigned int *)&this-((unsigned int *)(>m_1))[3]); /*0x535fee*/
-  return &(unsigned int *)((char *)&stru_A8EB00 + 2512); /*0x535ffb*/
+
+  sprintf(&HouseClass_Player.__pad_5568[25344], &stru_8270D8, (INIClass *)*((unsigned int *)this + 1)); /*0x535fee*/
+  return (ObjectClass *)&HouseClass_Player.__pad_5568[25344]; /*0x535ffb*/
+
 }
 } // namespace gamemd
 // 0x536000
 namespace gamemd {
 void SelectTeamCommand::Release()
 {
+
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = *(const wchar_t **)&this-((unsigned int *)(>m_1))[3]; /*0x536005*/
-  StringCSF = GetStringCSF(aTxtSelectTeam, 0, g_Str_File_Init_CPP, 6292); /*0x536015*/
-  swprintf((wchar_t *const)&(unsigned int *)((char *)&stru_A8EB00 + 2672), (const size_t)StringCSF, v3); /*0x536020*/
-  return (wchar_t *)&(unsigned int *)((char *)&stru_A8EB00 + 2672); /*0x53602d*/
+  v3 = *((unsigned int *)this + 1); /*0x536005*/
+  StringCSF = GetStringCSF(MEMORY[0x8270E8], 0, g_Str_File_Init_CPP, 6292); /*0x536015*/
+  swprintf(&MEMORY[0xA8F654], (const size_t)StringCSF, v3); /*0x536020*/
+  return &MEMORY[0xA8F654]; /*0x53602d*/
+
 }
 } // namespace gamemd
 // 0x536030
 namespace gamemd {
 void SelectTeamCommand::ddtor()
 {
-  return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6294); /*0x536046*/
+
+  return GetStringCSF(MEMORY[0x826FA4], 0, g_Str_File_Init_CPP, 6294); /*0x536046*/
+
 }
 } // namespace gamemd

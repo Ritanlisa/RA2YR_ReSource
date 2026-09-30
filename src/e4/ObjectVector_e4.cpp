@@ -11,21 +11,23 @@
 namespace gamemd {
 int ObjectVector::Construct(void* a1, void* a2, void* a3)
 {
-    *((unsigned int *)this + 4) = 0;
-    *((unsigned int *)this + 8) = aP1;
-    *((unsigned char *)this + 12) = 1;
-    *((unsigned char *)this + 13) = 0;
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_ObjectClass___vftable; /*0x4d0458*/
-  if ( aP1 ) /*0x4d045e*/
+
+  *(a1 + 1) = 0; /*0x4d044b*/
+  *(a1 + 2) = a2; /*0x4d044e*/
+  *((unsigned char *)a1 + 12) = 1; /*0x4d0451*/
+  *((unsigned char *)a1 + 13) = 0; /*0x4d0455*/
+  *a1 = &vt_VectorClass_ObjectClass; /*0x4d0458*/
+  if ( a2 ) /*0x4d045e*/
   {
-    if ( aP2 ) /*0x4d0466*/
+    if ( a3 ) /*0x4d0466*/
     {
-            *((unsigned int *)this + 4) = aP2;
-      return this; /*0x4d046e*/
+      *(a1 + 1) = a3; /*0x4d0468*/
+      return a1; /*0x4d046e*/
     }
-    this->ObjectVector_field_0x04 = RA2_OPNEW(4 * aP1); /*0x4d047d*/
-        *((unsigned char *)this + 13) = 1;
+    *(a1 + 1) = __2_YAPAXI_Z(4 * (unsigned int)a2); /*0x4d047d*/
+    *((unsigned char *)a1 + 13) = 1; /*0x4d0480*/
   }
-  return this; /*0x4d046d*/
+  return a1; /*0x4d046d*/
+
 }
 } // namespace gamemd

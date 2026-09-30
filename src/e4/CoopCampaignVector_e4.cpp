@@ -13,51 +13,57 @@
 namespace gamemd {
 unsigned int CoopCampaignVector::Write(int a2)
 {
-    if ( *((unsigned char *)this + 48) )
-        return (unsigned int)(a2 - *((unsigned int *)this + 16)) >> 2;
+
+  if ( *((unsigned char *)this + 12) ) /*0x5c5750*/
+    return (unsigned int)(a2 - *((unsigned int *)this + 1)) >> 2; /*0x5c5765*/
   else
     return 0; /*0x5c5757*/
+
 }
 } // namespace gamemd
 // 0x5C5940
 namespace gamemd {
 VectorClass_flat * CoopCampaignVector::QueryInterface(char a2)
 {
+
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this-((unsigned int *)(>m_1))[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
-    if ( v3 && *((unsigned char *)Block + 13) )
+  v3 = (void *)*(Block + 1); /*0x5c5943*/
+  *Block = &vt_VectorClass_CoopCampaignClass; /*0x5c5946*/
+  if ( v3 && *((unsigned char *)Block + 13) ) /*0x5c5950*/
   {
-    RA2_OPDEL(v3); /*0x5c5958*/
-        *(Block + 1) = 0;
+    __3_YAXPAX_Z(v3); /*0x5c5958*/
+    *(Block + 1) = 0; /*0x5c5960*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-    *(Block + 2) = 0;
+  *((unsigned char *)Block + 13) = 0; /*0x5c596b*/
+  *(Block + 2) = 0; /*0x5c5971*/
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
-    RA2_OPDEL(); /*0x5c597b*/
-  return this; /*0x5c5985*/
+    __3_YAXPAX_Z(Block); /*0x5c597b*/
+  return (VectorClass *)Block; /*0x5c5985*/
+
 }
 } // namespace gamemd
 // 0x5C5A80
 namespace gamemd {
 void CoopCampaignVector::Construct(void* a1)
 {
-  this->CoopCampaignVector_field_0x04 = (unsigned int)(0);
-  this->CoopCampaignVector_field_0x08 = (unsigned int)(aP1);
-    *((unsigned char *)this + 12) = 1;
-    *((unsigned char *)this + 13) = 0;
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5a98*/
+
+  *(a1 + 1) = 0; /*0x5c5a8b*/
+  *(a1 + 2) = aP1; /*0x5c5a8e*/
+  *((unsigned char *)a1 + 12) = 1; /*0x5c5a91*/
+  *((unsigned char *)a1 + 13) = 0; /*0x5c5a95*/
+  *a1 = &vt_VectorClass_CoopCampaignClass; /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/
     {
-      this->CoopCampaignVector_field_0x04 = (unsigned int *)(aP2);
-      return (unsigned int *)(this->__pad_0);
+      *(a1 + 1) = aP2; /*0x5c5aa8*/
+      return a1; /*0x5c5aae*/
     }
-    this->CoopCampaignVector_field_0x04 = RA2_OPNEW(4 * aP1); /*0x5c5abd*/
-        *((unsigned char *)this + 13) = 1;
+    *(a1 + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x5c5abd*/
+    *((unsigned char *)a1 + 13) = 1; /*0x5c5ac0*/
   }
-  return (unsigned int *)(this->__pad_0);
+  return a1; /*0x5c5aad*/
+
 }
 } // namespace gamemd

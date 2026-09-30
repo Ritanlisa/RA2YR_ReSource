@@ -10,7 +10,9 @@
 namespace gamemd {
 void Byte::Zero(void* ptr, int32_t count)
 {
-  IDA_LOBYTE(this->Byte_field_00) = 0; /*0x4f4c22*/
-  return this; /*0x4f4c25*/
+
+  *ptr = 0; /*0x4f4c22*/
+  return ptr; /*0x4f4c25*/
+
 }
 } // namespace gamemd

@@ -12,44 +12,55 @@
 namespace gamemd {
 int EMPulseClass::StubReturn52()
 {
+
   return 52; /*0x4c5aa5*/
+
 }
 } // namespace gamemd
 // 0x4C5AB0
 namespace gamemd {
 int EMPulseClass::StubReturn55()
 {
+
   return 55; /*0x4c5ab5*/
+
 }
 } // namespace gamemd
 // 0x4C5AC0
 namespace gamemd {
 EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
 {
-  int v3; // eax
-  unsigned int v5;
 
-  *(unsigned int *)a3->__pad_0 = (void*)&EMPulseClass_vftable; /*0x4c5ac4*/
-  a3->EMPulseClass_field_0x04 = (int)&EMPulseClass_vftable; /*0x4c5aca*/
-  a3->EMPulseClass_field_0x08 = (int)&EMPulseClass_vftable; /*0x4c5ad1*/
-  a3->EMPulseClass_field_0x0C = (int)&EMPulseClass_vftable; /*0x4c5ad8*/
-  if ( byte_A8E9A0 ) /*0x4c5ae6*/
-    EMPulseClass::IterateCellsInRadius(a3); /*0x4c5ae8*/
-  AbstractClass::AnnounceExpiredPointer((void **)a3, 1); /*0x4c5af1*/
-  v5 = a3; /*0x4c5b06*/
-  v3 = (*(int (**)(int *, EMPulseClass **))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
-  if ( v3 != -1 && v3 < dword_8A3880 && v3 < --dword_8A3880 ) /*0x4c5b25*/
+  int v4; // eax
+  AbstractClass *v6; // [esp+4h] [ebp-4h] BYREF
+
+  *(unsigned int *)a3->__pad_0 = &EMPulseClass::`vftable'; /*0x4c5ac4*/
+  *(unsigned int *)&a3->__pad_0[4] = &EMPulseClass::`vftable'; /*0x4c5aca*/
+  *(unsigned int *)&a3->__pad_0[8] = &EMPulseClass::`vftable'; /*0x4c5ad1*/
+  *(unsigned int *)&a3->__pad_0[12] = &vt_EMPulseClass; /*0x4c5ad8*/
+  if ( HouseClass_Player.__pad_5568[22252] ) /*0x4c5ae6*/
+    EMPulseClass::IterateCellsInRadius((int)a3); /*0x4c5ae8*/
+  LOBYTE(a3) = 1; /*0x4c5aed*/
+  AbstractClass::AnnounceExpiredPointer(a3, a3); /*0x4c5af1*/
+  v6 = a3; /*0x4c5b06*/
+  v4 = (*(int (**)(char *, AbstractClass **))(*(unsigned int *)&stru_89E138.__pad_566C[204] + 16))( /*0x4c5b0a*/
+         &stru_89E138.__pad_566C[204],
+         &v6);
+  if ( v4 != -1 && v4 < *(int *)&stru_89E138.__pad_566C[220] ) /*0x4c5b1a*/
   {
-    do /*0x4c5b3d*/
+    --*(unsigned int *)&stru_89E138.__pad_566C[220]; /*0x4c5b1f*/
+    for ( ; /*0x4c5b25*/
+          v4 < *(int *)&stru_89E138.__pad_566C[220];
+          *(unsigned int *)(*(unsigned int *)&stru_89E138.__pad_566C[208] + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&stru_89E138.__pad_566C[208]
+                                                                                        + 4 * v4) )
     {
-      ++v3; /*0x4c5b2d*/
-      *((unsigned int *)dword_8A3874 + v3 - 1) = *((unsigned int *)dword_8A3874 + v3); /*0x4c5b31*/
+      ++v4; /*0x4c5b2d*/
     }
-    while ( v3 < dword_8A3880 ); /*0x4c5b3d*/
   }
-  AbstractClass::DTOR((AbstractClass *)a3); /*0x4c5b41*/
+  AbstractClass::DTOR(a3); /*0x4c5b41*/
   if ( (a3 & 1) != 0 ) /*0x4c5b4b*/
-    RA2_OPDEL(a3); /*0x4c5b4e*/
-  return (void **)a3; /*0x4c5b58*/
+    __3_YAXPAX_Z(a3); /*0x4c5b4e*/
+  return (EMPulseClass *)a3; /*0x4c5b58*/
+
 }
 } // namespace gamemd

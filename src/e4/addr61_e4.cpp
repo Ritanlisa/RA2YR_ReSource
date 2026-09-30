@@ -1120,16 +1120,18 @@ int sub_6107A0()
 namespace gamemd {
 unsigned int * E4Recv_6107E0::sub_6107E0()
 {
-    *this = 0;
-    *((unsigned int *)this + 4) = 0;
-    *((unsigned int *)this + 8) = 0;
-    *((unsigned int *)this + 12) = 0;
-    *((unsigned int *)this + 16) = 0;
-    *((unsigned short *)this + 10) = 0;
-    *((unsigned int *)this + 276) = 0;
-    *((unsigned int *)this + 280) = 0;
-    *((unsigned int *)this + 284) = 0;
-    return this;
+
+  *this = 0; /*0x6107e4*/
+  *((unsigned int *)this + 1) = 0; /*0x6107e6*/
+  *((unsigned int *)this + 2) = 0; /*0x6107e9*/
+  *((unsigned int *)this + 3) = 0; /*0x6107ec*/
+  *((unsigned int *)this + 4) = 0; /*0x6107ef*/
+  *((unsigned short *)this + 10) = 0; /*0x6107f2*/
+  *((unsigned int *)this + 69) = 0; /*0x6107f6*/
+  *((unsigned int *)this + 70) = 0; /*0x6107fc*/
+  *((unsigned int *)this + 71) = 0; /*0x610802*/
+  return this; /*0x610808*/
+
 }
 } // namespace gamemd
 

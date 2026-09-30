@@ -11,15 +11,16 @@
 namespace gamemd {
 int Progress::GetAverage()
 {
+
   int v1; // edx
   double v2; // st7
   double *v3; // eax
 
-    v1 = *((char *)this + 388);
+  v1 = *((char *)this + 97); /*0x6433d1*/
   v2 = 0.0; /*0x6433d5*/
   if ( v1 > 0 ) /*0x6433e1*/
   {
-    v3 = (double *)&this->m_Index; /*0x6433e3*/
+    v3 = (double *)((char *)this + 8); /*0x6433e3*/
     do /*0x6433ec*/
     {
       v2 = v2 + *v3++; /*0x6433e6*/
@@ -27,16 +28,19 @@ int Progress::GetAverage()
     }
     while ( v1 ); /*0x6433ec*/
   }
-    return v2 / (double)*((char *)this + 388) / *(double *)((char *)this + 288);
+  return v2 / (double)*((char *)this + 97) / *(double *)((char *)this + 72); /*0x6433f6*/
+
 }
 } // namespace gamemd
 // 0x643E90
 namespace gamemd {
 int Progress::GetWeighted(int a2)
 {
-    if ( a2 < *((char *)this + 97) )
-    return *(double *)(&(unsigned int)(this->m_Index)* a2 + 8) / *(double *)(&this->u32_1C2); /*0x643ea6*/
+
+  if ( a2 < *((char *)this + 97) ) /*0x643e9a*/
+    return *(double *)&this->__pad_0[8 * a2 + 8] / *(double *)&this->field_48; /*0x643ea6*/
   else
-    return *(double *)(&this->u32_1C2); /*0x643e9c*/
+    return *(double *)&this->field_48; /*0x643e9c*/
+
 }
 } // namespace gamemd

@@ -11,180 +11,182 @@
 namespace gamemd {
 int LightConvertClass::SelectRLEBlitter(int a1)
 {
-    if ( !*((unsigned int *)this + 8) )
-        ConvertClass::InitTables((int)this);
-  if ( ((unsigned int)(aP1)& 0x10) != 0 ) /*0x490e65*/
+
+  if ( !*((unsigned int *)this + 2) ) /*0x490e53*/
+    ConvertClass::InitTables((int)this); /*0x490e5a*/
+  if ( ((unsigned __int8)a1 & 0x10) != 0 ) /*0x490e65*/
   {
-    if ( ((unsigned int)(aP1)& 0x4000) != 0 ) /*0x490e6a*/
+    if ( (BYTE1(a1) & 0x40) != 0 ) /*0x490e6a*/
     {
-      if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490e6f*/
-                return *((unsigned int *)this + 348);
+      if ( (BYTE1(a1) & 8) != 0 ) /*0x490e6f*/
+        return *((unsigned int *)this + 87); /*0x490e71*/
       else
-                return *((unsigned int *)this + 272);
+        return *((unsigned int *)this + 68); /*0x490e7b*/
     }
-    else if ( ((unsigned int)(aP1)& dword_81DC28) != 0 ) /*0x490e8b*/
+    else if ( ((unsigned int)a1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490e8b*/
     {
-      if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490e90*/
-                return *((unsigned int *)this + 316);
+      if ( (BYTE1(a1) & 8) != 0 ) /*0x490e90*/
+        return *((unsigned int *)this + 79); /*0x490e92*/
       else
-                return *((unsigned int *)this + 236);
+        return *((unsigned int *)this + 59); /*0x490e9c*/
     }
-    else if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490ea9*/
+    else if ( (BYTE1(a1) & 8) != 0 ) /*0x490ea9*/
     {
-            return *((unsigned int *)this + 296);
+      return *((unsigned int *)this + 74); /*0x490eab*/
     }
     else
     {
-            return *((unsigned int *)this + 216);
+      return *((unsigned int *)this + 54); /*0x490eb5*/
     }
   }
-  switch ( (unsigned int)(aP1)& 6 ) /*0x490ec7*/
+  switch ( (unsigned __int8)a1 & 6 ) /*0x490ec7*/
   {
     case 2: /*0x490ec7*/
-      if ( ((unsigned int)(aP1)& 0x4000) != 0 ) /*0x491082*/
+      if ( (BYTE1(a1) & 0x40) != 0 ) /*0x491082*/
       {
-        if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x491087*/
-                    return *((unsigned int *)this + 360);
+        if ( (BYTE1(a1) & 8) != 0 ) /*0x491087*/
+          return *((unsigned int *)this + 90); /*0x491089*/
         else
-                    return *((unsigned int *)this + 288);
+          return *((unsigned int *)this + 72); /*0x491093*/
       }
-      else if ( ((unsigned int)(aP1)& dword_81DC28) != 0 ) /*0x4910a3*/
+      else if ( ((unsigned int)a1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x4910a3*/
       {
-        if ( ((unsigned int)(aP1)& 8) != 0 ) /*0x4910a7*/
+        if ( ((unsigned __int8)a1 & 8) != 0 ) /*0x4910a7*/
         {
-          if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x4910ac*/
-                        return *((unsigned int *)this + 340);
+          if ( (BYTE1(a1) & 8) != 0 ) /*0x4910ac*/
+            return *((unsigned int *)this + 85); /*0x4910ae*/
           else
-                        return *((unsigned int *)this + 264);
+            return *((unsigned int *)this + 66); /*0x4910b8*/
         }
-        else if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x4910c5*/
+        else if ( (BYTE1(a1) & 8) != 0 ) /*0x4910c5*/
         {
-                    return *((unsigned int *)this + 328);
+          return *((unsigned int *)this + 82); /*0x4910c7*/
         }
         else
         {
-                    return *((unsigned int *)this + 252);
+          return *((unsigned int *)this + 63); /*0x4910d1*/
         }
       }
-      else if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x4910de*/
+      else if ( (BYTE1(a1) & 8) != 0 ) /*0x4910de*/
       {
-                return *((unsigned int *)this + 308);
+        return *((unsigned int *)this + 77); /*0x4910e0*/
       }
       else
       {
-                return *((unsigned int *)this + 228);
+        return *((unsigned int *)this + 57); /*0x4910ea*/
       }
     case 4: /*0x490ec7*/
-      if ( ((unsigned int)(aP1)& 0x4000) != 0 ) /*0x49100d*/
+      if ( (BYTE1(a1) & 0x40) != 0 ) /*0x49100d*/
       {
-        if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x491012*/
-                    return *((unsigned int *)this + 356);
+        if ( (BYTE1(a1) & 8) != 0 ) /*0x491012*/
+          return *((unsigned int *)this + 89); /*0x491014*/
         else
-                    return *((unsigned int *)this + 284);
+          return *((unsigned int *)this + 71); /*0x49101e*/
       }
-      else if ( ((unsigned int)(aP1)& dword_81DC28) != 0 ) /*0x49102e*/
+      else if ( ((unsigned int)a1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x49102e*/
       {
-        if ( ((unsigned int)(aP1)& 8) != 0 ) /*0x491032*/
+        if ( ((unsigned __int8)a1 & 8) != 0 ) /*0x491032*/
         {
-          if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x491037*/
-                        return *((unsigned int *)this + 336);
+          if ( (BYTE1(a1) & 8) != 0 ) /*0x491037*/
+            return *((unsigned int *)this + 84); /*0x491039*/
           else
-                        return *((unsigned int *)this + 260);
+            return *((unsigned int *)this + 65); /*0x491043*/
         }
-        else if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x491050*/
+        else if ( (BYTE1(a1) & 8) != 0 ) /*0x491050*/
         {
-                    return *((unsigned int *)this + 324);
+          return *((unsigned int *)this + 81); /*0x491052*/
         }
         else
         {
-                    return *((unsigned int *)this + 248);
+          return *((unsigned int *)this + 62); /*0x49105c*/
         }
       }
-      else if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x491069*/
+      else if ( (BYTE1(a1) & 8) != 0 ) /*0x491069*/
       {
-                return *((unsigned int *)this + 304);
+        return *((unsigned int *)this + 76); /*0x49106b*/
       }
       else
       {
-                return *((unsigned int *)this + 224);
+        return *((unsigned int *)this + 56); /*0x491075*/
       }
     case 6: /*0x490ec7*/
-      if ( ((unsigned int)(aP1)& 0x4000) != 0 ) /*0x490f98*/
+      if ( (BYTE1(a1) & 0x40) != 0 ) /*0x490f98*/
       {
-        if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490f9d*/
-                    return *((unsigned int *)this + 352);
+        if ( (BYTE1(a1) & 8) != 0 ) /*0x490f9d*/
+          return *((unsigned int *)this + 88); /*0x490f9f*/
         else
-                    return *((unsigned int *)this + 280);
+          return *((unsigned int *)this + 70); /*0x490fa9*/
       }
-      else if ( ((unsigned int)(aP1)& dword_81DC28) != 0 ) /*0x490fb9*/
+      else if ( ((unsigned int)a1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490fb9*/
       {
-        if ( ((unsigned int)(aP1)& 8) != 0 ) /*0x490fbd*/
+        if ( ((unsigned __int8)a1 & 8) != 0 ) /*0x490fbd*/
         {
-          if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490fc2*/
-                        return *((unsigned int *)this + 332);
+          if ( (BYTE1(a1) & 8) != 0 ) /*0x490fc2*/
+            return *((unsigned int *)this + 83); /*0x490fc4*/
           else
-                        return *((unsigned int *)this + 256);
+            return *((unsigned int *)this + 64); /*0x490fce*/
         }
-        else if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490fdb*/
+        else if ( (BYTE1(a1) & 8) != 0 ) /*0x490fdb*/
         {
-                    return *((unsigned int *)this + 320);
+          return *((unsigned int *)this + 80); /*0x490fdd*/
         }
         else
         {
-                    return *((unsigned int *)this + 244);
+          return *((unsigned int *)this + 61); /*0x490fe7*/
         }
       }
-      else if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490ff4*/
+      else if ( (BYTE1(a1) & 8) != 0 ) /*0x490ff4*/
       {
-                return *((unsigned int *)this + 300);
+        return *((unsigned int *)this + 75); /*0x490ff6*/
       }
       else
       {
-                return *((unsigned int *)this + 220);
+        return *((unsigned int *)this + 55); /*0x491000*/
       }
     default:
-      if ( ((unsigned int)(aP1)& 1) != 0 ) /*0x490ee1*/
+      if ( ((unsigned __int8)a1 & 1) != 0 ) /*0x490ee1*/
       {
-        if ( ((unsigned int)(aP1)& 0x4000) != 0 ) /*0x490ee6*/
-                    return *((unsigned int *)this + 276);
-        if ( ((unsigned int)(aP1)& dword_81DC28) != 0 ) /*0x490ef8*/
-                    return *((unsigned int *)this + 240);
-                return *((unsigned int *)this + 212);
+        if ( (BYTE1(a1) & 0x40) != 0 ) /*0x490ee6*/
+          return *((unsigned int *)this + 69); /*0x490ee8*/
+        if ( ((unsigned int)a1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490ef8*/
+          return *((unsigned int *)this + 60); /*0x490efa*/
+        return *((unsigned int *)this + 53); /*0x490eef*/
       }
-      if ( ((unsigned int)(aP1)& 0x20) != 0 ) /*0x490f10*/
+      if ( ((unsigned __int8)a1 & 0x20) != 0 ) /*0x490f10*/
       {
-        if ( ((unsigned int)(aP1)& 0x4000) != 0 ) /*0x490f15*/
+        if ( (BYTE1(a1) & 0x40) != 0 ) /*0x490f15*/
         {
-          if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490f1a*/
-                        return *((unsigned int *)this + 344);
-                    return *((unsigned int *)this + 268);
+          if ( (BYTE1(a1) & 8) != 0 ) /*0x490f1a*/
+            return *((unsigned int *)this + 86); /*0x490f23*/
+          return *((unsigned int *)this + 67); /*0x490f58*/
         }
-        if ( ((unsigned int)(aP1)& dword_81DC28) != 0 ) /*0x490f2c*/
+        if ( ((unsigned int)a1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490f2c*/
         {
-          if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490f31*/
-                        return *((unsigned int *)this + 312);
-                    return *((unsigned int *)this + 232);
+          if ( (BYTE1(a1) & 8) != 0 ) /*0x490f31*/
+            return *((unsigned int *)this + 78); /*0x490f3a*/
+          return *((unsigned int *)this + 58); /*0x490f79*/
         }
       }
       else
       {
-        if ( ((unsigned int)(aP1)& 0x4000) != 0 ) /*0x490f40*/
+        if ( (BYTE1(a1) & 0x40) != 0 ) /*0x490f40*/
         {
-          if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490f45*/
-                        return *((unsigned int *)this + 344);
-                    if ( (BYTE1(aP1) & 8) != 0 )
+          if ( (BYTE1(a1) & 8) != 0 ) /*0x490f45*/
+            return *((unsigned int *)this + 86); /*0x490f4e*/
+          return *((unsigned int *)this + 67); /*0x490f45*/
         }
-        if ( ((unsigned int)(aP1)& dword_81DC28) != 0 ) /*0x490f61*/
+        if ( ((unsigned int)a1 & g_INI_Key_Clear.headNode[2]) != 0 ) /*0x490f61*/
         {
-          if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490f66*/
-                        return *((unsigned int *)this + 312);
-                    if ( (BYTE1(aP1) & 8) != 0 )
+          if ( (BYTE1(a1) & 8) != 0 ) /*0x490f66*/
+            return *((unsigned int *)this + 78); /*0x490f6f*/
+          return *((unsigned int *)this + 58); /*0x490f66*/
         }
       }
-      if ( ((unsigned int)(aP1)& 0x800) != 0 ) /*0x490f7f*/
-                return *((unsigned int *)this + 292);
+      if ( (BYTE1(a1) & 8) != 0 ) /*0x490f7f*/
+        return *((unsigned int *)this + 73); /*0x490f81*/
       else
-                return *((unsigned int *)this + 208);
+        return *((unsigned int *)this + 52); /*0x490f8b*/
   }
+
 }
 } // namespace gamemd

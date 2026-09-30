@@ -16,67 +16,72 @@
 namespace gamemd {
 int BitTextClass::ParseFontData(char * Source)
 {
-  void * v3;
+
+  struct tagRECT *v3; // ebp
   unsigned int *Font; // eax
-v3 = (void *)((unsigned int)((tagRECT *)((unsigned int)((struct tagRECT *)(&this->m_CharWidth8)))));
-  *(unsigned int *)this = (void*)&BitFont_vftable; /*0x433895*/
-    *((unsigned int *)this + 16) = 0;
-    *((unsigned short *)this + 144) = 0x7FFF;
-    *((unsigned short *)this + 152) = 13653;
-    *((unsigned int *)this + 160) = 64;
-    *((unsigned char *)this + 256) = 1;
-    *((unsigned char *)this + 260) = 1;
-    *((unsigned int *)this + 96) = 1;
-    *((unsigned int *)this + 112) = 1;
-    *((unsigned int *)this + 128) = 0;
-    *((unsigned int *)this + 48) = 0;
-    *((unsigned int *)this + 32) = 0;
-  SetRect((LPRECT)(&this->m_CharWidth8), 0, 0, 0, 0); /*0x4338c6*/
-    *((unsigned int *)this + 176) = 1;
+
+  v3 = (struct tagRECT *)((char *)this + 48); /*0x43388a*/
+  *(unsigned int *)this = &vt_BitFont; /*0x433895*/
+  *((unsigned int *)this + 1) = 0; /*0x43389b*/
+  *((unsigned short *)this + 18) = 0x7FFF; /*0x43389e*/
+  *((unsigned short *)this + 19) = 13653; /*0x4338a4*/
+  *((unsigned int *)this + 10) = 64; /*0x4338aa*/
+  *((unsigned char *)this + 64) = 1; /*0x4338b1*/
+  *((unsigned char *)this + 65) = 1; /*0x4338b4*/
+  *((unsigned int *)this + 6) = 1; /*0x4338b7*/
+  *((unsigned int *)this + 7) = 1; /*0x4338ba*/
+  *((unsigned int *)this + 8) = 0; /*0x4338bd*/
+  *((unsigned int *)this + 3) = 0; /*0x4338c0*/
+  *((unsigned int *)this + 2) = 0; /*0x4338c3*/
+  SetRect((LPRECT)((char *)this + 48), 0, 0, 0, 0); /*0x4338c6*/
+  *((unsigned int *)this + 11) = 1; /*0x4338d0*/
   Font = File::LoadFont(Source); /*0x4338d3*/
-    *((unsigned int *)this + 16) = Font;
+  *((unsigned int *)this + 1) = Font; /*0x4338da*/
   if ( Font ) /*0x4338dd*/
   {
-        *((unsigned int *)this + 96) = Font[1];
-        *((unsigned int *)this + 112) = Font[3];
-    sub_434700(); /*0x4338ed*/
+    *((unsigned int *)this + 6) = Font[1]; /*0x4338e2*/
+    *((unsigned int *)this + 7) = Font[3]; /*0x4338ea*/
+    sub_434700((unsigned int *)this); /*0x4338ed*/
   }
   else
   {
-        *((unsigned int *)this + 16) = 0;
-        *((unsigned short *)this + 144) = 0x7FFF;
-        *((unsigned short *)this + 152) = 13653;
-        *((unsigned int *)this + 160) = 64;
-        *((unsigned char *)this + 256) = 1;
-        *((unsigned char *)this + 260) = 1;
-        *((unsigned int *)this + 96) = 1;
-        *((unsigned int *)this + 112) = 1;
-        *((unsigned int *)this + 128) = 0;
-        *((unsigned int *)this + 48) = 0;
-        *((unsigned int *)this + 32) = 0;
+    *((unsigned int *)this + 1) = 0; /*0x433900*/
+    *((unsigned short *)this + 18) = 0x7FFF; /*0x433903*/
+    *((unsigned short *)this + 19) = 13653; /*0x433909*/
+    *((unsigned int *)this + 10) = 64; /*0x43390f*/
+    *((unsigned char *)this + 64) = 1; /*0x433916*/
+    *((unsigned char *)this + 65) = 1; /*0x433919*/
+    *((unsigned int *)this + 6) = 1; /*0x43391c*/
+    *((unsigned int *)this + 7) = 1; /*0x43391f*/
+    *((unsigned int *)this + 8) = 0; /*0x433922*/
+    *((unsigned int *)this + 3) = 0; /*0x433925*/
+    *((unsigned int *)this + 2) = 0; /*0x433928*/
     SetRect(v3, 0, 0, 0, 0); /*0x43392b*/
-        *((unsigned int *)this + 176) = 1;
+    *((unsigned int *)this + 11) = 1; /*0x433931*/
   }
-  return (int)(this);
+  return this; /*0x4338f4*/
+
 }
 } // namespace gamemd
 // 0x434AD0
 namespace gamemd {
 void BitTextClass::LoadFont()
 {
-  void * v2;
 
-  this->m_FontBitmap = (int)((void*)&BitText_vftable);
-  v2 = RA2_OPNEW(0x44u); /*0x434adb*/
+  int v2; // eax
+
+  *this = &BitText::`vftable'; /*0x434ad5*/
+  v2 = __2_YAPAXI_Z(68); /*0x434adb*/
   if ( v2 ) /*0x434ae5*/
   {
-    g_FogOfWarState = (int)((Text *)BitTextClass::ParseFontData(v2, aGameFnt));
-    return &this->m_FontBitmap; /*0x434af8*/
+    MEMORY[0x87F7E8][29498] = BitTextClass::ParseFontData(v2, aGameFnt); /*0x434af3*/
+    return this; /*0x434af8*/
   }
   else
   {
-    g_FogOfWarState = 0; /*0x434afe*/
-    return &this->m_FontBitmap; /*0x434afc*/
+    MEMORY[0x87F7E8][29498] = 0; /*0x434afe*/
+    return this; /*0x434afc*/
   }
+
 }
 } // namespace gamemd

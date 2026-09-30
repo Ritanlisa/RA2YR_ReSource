@@ -24,297 +24,336 @@
 namespace gamemd {
 int Trigger::EnableOnce(AbstractClass * aP1)
 {
-  int result; // eax
 
-    result = *((unsigned int *)this + 288);
-  if ( !(unsigned char)result ) /*0x554a65*/
+  char result; // al
+
+  result = *((unsigned char *)this + 72); /*0x554a60*/
+  if ( !result ) /*0x554a65*/
   {
-        *((unsigned int *)this + 288) = 1;
-// 0x554af0
-    return TacticalClass::ScrollView(aP1); /*0x554a70*/
+    *((unsigned char *)this + 72) = 1; /*0x554a6b*/
+    return TacticalClass::ScrollView(this, aP1); /*0x554a70*/
   }
   return result; /*0x554a75*/
+
 }
 }
 // 0x5CBD20
 namespace gamemd {
 MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7)
 {
+
   int FileClassToBuffer; // eax
   int v10; // edx
 
-    *((unsigned int *)this + 2) = a4;
-    *((unsigned int *)this + 1) = aP2;
-  this-((unsigned int *)(>__pad_8))[4] = 1; /*0x5cbd35*/
-    *((unsigned int *)this + 4) = Timer::GetTicks();
-    *((unsigned int *)this + 6) = 0;
-  *(unsigned int *)&this-((unsigned int *)(>__pad_18))[8] = a5; /*0x5cbd52*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_30))[8] = a7; /*0x5cbd58*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_18))[12] = a6; /*0x5cbd5f*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_18))[16] = 0; /*0x5cbd62*/
-  this-((unsigned int *)(>__pad_30))[4] = 0; /*0x5cbd65*/
-  this-((unsigned int *)(>__pad_30))[12] = 0; /*0x5cbd68*/
-  *(unsigned int *)this->__pad_0 = (void*)&MSShapeAnim_vftable; /*0x5cbd6a*/
-  FileClassToBuffer = LoadFileClassToBuffer(aP1, (bool *)&this-((unsigned int *)(>__pad_30))[12]); /*0x5cbd70*/
-    *((unsigned int *)this + 7) = FileClassToBuffer;
-    *((unsigned int *)this + 11) = 0;
-  v10 = *(int16_t *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_30))[20] = aP7; /*0x5cbd84*/
-    *((unsigned int *)this + 12) = v10;
-  *(unsigned int *)&this-((unsigned int *)(>__pad_30))[16] = 0; /*0x5cbd8a*/
-  *(unsigned int *)this->__pad_0 = (void*)&MSFadeAnim_vftable; /*0x5cbd8d*/
+  *((unsigned int *)this + 2) = a4; /*0x5cbd2c*/
+  *((unsigned int *)this + 1) = aP2; /*0x5cbd32*/
+  *((unsigned char *)this + 12) = 1; /*0x5cbd35*/
+  *((unsigned int *)this + 4) = Timer::GetTicks(); /*0x5cbd48*/
+  *((unsigned int *)this + 6) = 0; /*0x5cbd4f*/
+  *((unsigned int *)this + 8) = a5; /*0x5cbd52*/
+  *((unsigned int *)this + 14) = a7; /*0x5cbd58*/
+  *((unsigned int *)this + 9) = a6; /*0x5cbd5f*/
+  *((unsigned int *)this + 10) = 0; /*0x5cbd62*/
+  *((unsigned char *)this + 52) = 0; /*0x5cbd65*/
+  *((unsigned char *)this + 60) = 0; /*0x5cbd68*/
+  *(unsigned int *)this = &vt_MSShapeAnim; /*0x5cbd6a*/
+  FileClassToBuffer = LoadFileClassToBuffer((char **)aP1, (bool *)this + 60); /*0x5cbd70*/
+  *((unsigned int *)this + 7) = FileClassToBuffer; /*0x5cbd75*/
+  *((unsigned int *)this + 11) = 0; /*0x5cbd78*/
+  v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
+  *((unsigned int *)this + 17) = aP7; /*0x5cbd84*/
+  *((unsigned int *)this + 12) = v10; /*0x5cbd87*/
+  *((unsigned int *)this + 16) = 0; /*0x5cbd8a*/
+  *(unsigned int *)this = &vt_MSFadeAnim; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
+
 }
 }
 // 0x76D4D0
 namespace gamemd {
 void Trigger::ProcessMapEvents(int *a1, int * a2, int a3, int a4, char a5, char a6)
 {
-    unsigned int v5 = 0;  /* G37 hoist */
-    void *(__thiscall Trigger::* )(MSShapeAnim *,MSShapeAnim *,int,int,int,int,MSShapeAnim *) v5 = 0;
-    void *(__thiscall Trigger::* )(MSShapeAnim *,MSShapeAnim *,int,int,int,int,MSShapeAnim *) v5 = 0;
-  void *(__thiscall Trigger::* )(MSShapeAnim *,MSShapeAnim *,int,int,int,int,MSShapeAnim *) v5;
-  int v6; // eax
-  unsigned int *v7; // eax
-  int (***v8)(unsigned int, int); // eax
-  int v9; // ecx
-  unsigned int v10; // edi
+
+  ObjectClass *v5; // ebx
+  int v8; // eax
+  unsigned int *v9; // eax
+  MSShapeAnim *v10; // eax
+  int v11; // ecx
+  unsigned int v12; // edi
   int CellType; // ebp
-  int v12; // edi
-  bool v13; // ecx
-  int v14; // ecx
-  int v15; // edi
-  int v16; // ebp
-  int v17; // eax
-  unsigned int *v18; // edi
-  unsigned int * v19;
-  void (***v20)(unsigned int, int); // ecx
-  void **v21; // [esp+10h] [ebp-13Ch] BYREF
-  int v22; // [esp+14h] [ebp-138h]
-  int v23; // [esp+18h] [ebp-134h]
-  void **v24; // [esp+1Ch] [ebp-130h] BYREF
-  int v25; // [esp+20h] [ebp-12Ch]
-  int v26; // [esp+24h] [ebp-128h]
-  void **v27; // [esp+28h] [ebp-124h] BYREF
-  void ***v28; // [esp+2Ch] [ebp-120h]
-  int v29; // [esp+30h] [ebp-11Ch]
-  void *v30; // [esp+34h] [ebp-118h] BYREF
-  void **v31; // [esp+38h] [ebp-114h] BYREF
-  void ***v32; // [esp+3Ch] [ebp-110h]
-  int v33; // [esp+40h] [ebp-10Ch]
-  void **v34; // [esp+44h] [ebp-108h] BYREF
+  int v14; // edi
+  BOOL ecx13; // ecx
+  int v16; // ecx
+  MSShapeAnim *v15; // edi
+  int ebp18; // ebp
+  void *v19; // eax
+  MSShapeAnim *v17; // eax
+  void *v21; // eax
+  MSShapeAnim *v18; // edi
+  int v23; // eax
+  void (***v24)(unsigned int, int); // ecx
+  int v25; // [esp+0h] [ebp-14Ch]
+  int *v26; // [esp+4h] [ebp-148h]
+  int v27; // [esp+8h] [ebp-144h]
+  void **v28; // [esp+10h] [ebp-13Ch] BYREF
+  int v29; // [esp+14h] [ebp-138h]
+  int v30; // [esp+18h] [ebp-134h]
+  void **v31; // [esp+1Ch] [ebp-130h] BYREF
+  int v32; // [esp+20h] [ebp-12Ch]
+  int var128; // [esp+24h] [ebp-128h]
+  void **v34; // [esp+28h] [ebp-124h] BYREF
+  void ***v35; // [esp+2Ch] [ebp-120h]
+  int v36; // [esp+30h] [ebp-11Ch]
+  int v37; // [esp+34h] [ebp-118h] BYREF
+  void **v38; // [esp+38h] [ebp-114h] BYREF
+  void ***var110; // [esp+3Ch] [ebp-110h]
+  ObjectClass *v33; // [esp+40h] [ebp-10Ch]
+  void **v41; // [esp+44h] [ebp-108h] BYREF
   void *Block; // [esp+48h] [ebp-104h]
-  int v36; // [esp+4Ch] [ebp-100h]
-  int v37; // [esp+50h] [ebp-FCh]
-  int v38; // [esp+54h] [ebp-F8h]
-  int v39; // [esp+58h] [ebp-F4h]
-  void **v40; // [esp+5Ch] [ebp-F0h] BYREF
-  void *v41; // [esp+60h] [ebp-ECh]
-  int v42; // [esp+64h] [ebp-E8h]
-  char v43; // [esp+69h] [ebp-E3h]
-  int v44; // [esp+6Ch] [ebp-E0h]
-  int v45; // [esp+70h] [ebp-DCh]
-  unsigned int v46[22]; // [esp+74h] [ebp-D8h] BYREF
-  unsigned char v47[12]; // [esp+CCh] [ebp-80h] BYREF
-  int v48; // [esp+D8h] [ebp-74h]
-  unsigned int v49[22]; // [esp+E0h] [ebp-6Ch] BYREF
-  unsigned char v50[12]; // [esp+138h] [ebp-14h] BYREF
-  int v51; // [esp+144h] [ebp-8h]
+  int v43; // [esp+4Ch] [ebp-100h]
+  int v44; // [esp+50h] [ebp-FCh]
+  int v45; // [esp+54h] [ebp-F8h]
+  ObjectClass *v39; // [esp+58h] [ebp-F4h]
+  void **v47; // [esp+5Ch] [ebp-F0h] BYREF
+  void *v48; // [esp+60h] [ebp-ECh]
+  int v49; // [esp+64h] [ebp-E8h]
+  char v50; // [esp+69h] [ebp-E3h]
+  MSShapeAnim *v51; // [esp+6Ch] [ebp-E0h]
+  int v52; // [esp+70h] [ebp-DCh]
+  unsigned int v53[22]; // [esp+74h] [ebp-D8h] BYREF
+  unsigned char v54[12]; // [esp+CCh] [ebp-80h] BYREF
+  int v55; // [esp+D8h] [ebp-74h]
+  unsigned int v56[22]; // [esp+E0h] [ebp-6Ch] BYREF
+  unsigned char v57[12]; // [esp+138h] [ebp-14h] BYREF
+  int v58; // [esp+144h] [ebp-8h]
 
   v5 = 0; /*0x76d4da*/
-    v8 = Count::Get((unsigned int *)((char *)this + 4448));
-  VectorCursor::Construct(&v21, v6 + 44, 0); /*0x76d4f0*/
-  while ( ((uint8_t (__thiscall *)(void ***))v21[1])(&v21) ) /*0x76d4fd*/
+  v8 = Count::Get((unsigned int *)(this + 1112)); /*0x76d4e3*/
+  VectorCursor::Construct(&v28, v8 + 44, 0); /*0x76d4f0*/
+  while ( ((unsigned __int8 (*)(void ***))v28[1])(&v28) ) /*0x76d4fd*/
   {
-    v7 = (unsigned int *)FileClass::SetState(*(unsigned int *)(v22 + 4) + 8 * v23); /*0x76d512*/
-    v8 = (int (***)(unsigned int, int))WDTObject::GetAndClearFlag(v7); /*0x76d519*/
-    if ( v8 ) /*0x76d520*/
-      Session::RemoveTeam(v8); /*0x76d525*/
-    ((void (__thiscall *)(void ***))v21[2])(&v21); /*0x76d532*/
+    v9 = (unsigned int *)FileClass::SetState((unsigned int *)(*(unsigned int *)(v29 + 4) + 8 * v30)); /*0x76d512*/
+    v10 = (MSShapeAnim *)WDTObject::GetAndClearFlag(v9); /*0x76d519*/
+    if ( v10 ) /*0x76d520*/
+      Session::RemoveTeam((unsigned int *)this, v10); /*0x76d525*/
+    ((void (*)(void ***))v28[2])(&v28); /*0x76d532*/
   }
-  Trigger::checkCondition(0, 0); /*0x76d54c*/
-  v45 = 10; /*0x76d565*/
-  v44 = 0; /*0x76d569*/
-  Trigger::checkCondition(0, 0); /*0x76d56d*/
-    v11 = *((unsigned int *)this + 4464);
-  v39 = 10; /*0x76d585*/
-  v38 = 0; /*0x76d589*/
-  VectorCursor::Construct(&v24, v9 + 44, 0); /*0x76d58d*/
-  while ( ((uint8_t (__thiscall *)(void ***))v24[1])(&v24) )
+  v26 = a2; /*0x76d544*/
+  v25 = a3; /*0x76d545*/
+  Trigger::checkCondition(&v47, 0, 0); /*0x76d54c*/
+  v47 = &vt_DynamicVectorClass_MSAnim; /*0x76d561*/
+  v52 = 10; /*0x76d565*/
+  v51 = 0; /*0x76d569*/
+  Trigger::checkCondition(&v41, 0, 0); /*0x76d56d*/
+  v11 = *(unsigned int *)(this + 1116); /*0x76d572*/
+  v41 = &vt_DynamicVectorClass_MSAnim; /*0x76d57c*/
+  v39 = (ObjectClass *)10; /*0x76d585*/
+  v45 = 0; /*0x76d589*/
+  VectorCursor::Construct(&v31, v11 + 44, 0); /*0x76d58d*/
+  while ( ((unsigned __int8 (*)(void ***))v31[1])(&v31) )
   {
-    v10 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v25 + 4) + 8 * v26 + 4) + 8); /*0x76d5bc*/
-    CellType = WDTClass::GetCellType(*(unsigned int **)(&this->u32_1D04), v10); /*0x76d5cd*/
-    v12 = WDTClass::GetCellType(*(unsigned int **)(a2 + 4), v10); /*0x76d5d7*/
-    if ( v12 != CellType ) /*0x76d5db*/
+    v12 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(v32 + 4) + 8 * var128 + 4) + 8); /*0x76d5bc*/
+    CellType = WDTClass::GetCellType(*(unsigned int **)(this + 1164), v12); /*0x76d5cd*/
+    v14 = WDTClass::GetCellType(*(unsigned int **)(a4 + 4), v12); /*0x76d5d7*/
+    if ( v14 != CellType ) /*0x76d5db*/
     {
-      DDraw::HandleSuspend(); /*0x76d5df*/
-      while ( EventQueue::Process(g_BinkMoviePlayer) ) /*0x76d5ea*/
+      DDraw::HandleSuspend((unsigned int *)this); /*0x76d5df*/
+      while ( EventQueue::Process(*(unsigned int **)&stru_87C374.__pad_14B0[8012]) ) /*0x76d5ea*/
       {
-        if ( EventQueue::Read(g_BinkMoviePlayer) == 27 ) /*0x76d603*/
-                    *((unsigned char *)this + 4368) = 1;
+        if ( EventQueue::Read(*(unsigned int **)&stru_87C374.__pad_14B0[8012]) == 27 ) /*0x76d603*/
+          *(unsigned char *)(this + 1092) = 1; /*0x76d605*/
       }
-            ecx13 = !*((unsigned char *)this + 4368) || a6;
-      Map_Process_76FD40(v12, this, v13); /*0x76d64f*/
+      ecx13 = !*(unsigned char *)(this + 1092) || a6; /*0x76d635*/
+      Map_Process_76FD40(v14, (ObjectClass *)this, ecx13, v25, v26, v27); /*0x76d64f*/
     }
-    if ( a3 && v12 == 1 )
+    if ( a5 && v14 == 1 )
     {
-      v14 = *(unsigned int *)(*(unsigned int *)(v25 + 4) + 8 * v26 + 4); /*0x76d67a*/
-            v15 = (MSShapeAnim *)(*(unsigned int *)(v16 + 16) + *(unsigned int *)(*((unsigned int *)this + 4464) + 68));
-            ebp18 = *(unsigned int *)(*((unsigned int *)this + 4464) + 72) + *(unsigned int *)(v16 + 20);
-            if ( *((unsigned int *)this + 4544) )
+      v16 = *(unsigned int *)(*(unsigned int *)(v32 + 4) + 8 * var128 + 4); /*0x76d67a*/
+      v15 = (MSShapeAnim *)(*(unsigned int *)(v16 + 16) + *(unsigned int *)(*(unsigned int *)(this + 1116) + 68)); /*0x76d695*/
+      ebp18 = *(unsigned int *)(*(unsigned int *)(this + 1116) + 72) + *(unsigned int *)(v16 + 20); /*0x76d69a*/
+      if ( *(unsigned int *)(this + 1136) ) /*0x76d68f*/
       {
-                CCFileClass::Construct2(v53, *(char ***)((char *)this + 4544));
-        if ( CCFileClass::Open(v46, 0) ) /*0x76d6b3*/
+        CCFileClass::Construct2(v53, *(char ***)(this + 1136)); /*0x76d6a9*/
+        if ( CCFileClass::Open(v53, 0) ) /*0x76d6b3*/
         {
-          if ( operator new(0x48u) ) /*0x76d6be*/
-            v5 = Trigger::initTrigger(this->ptr_470, v15, v16, this->u32_46C, 3, 512, &this->u32_84); /*0x76d6ec*/
-          if ( v44 < v42 /*0x76d71b*/
-            || (v43 || !v42)
-            && v45 > 0
-            && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v40[2])(&v40, v45 + v42, 0) )
+          v19 = (void *)__2_YAPAXI_Z(0x48u); /*0x76d6be*/
+          if ( v19 ) /*0x76d6c8*/
+            v5 = (ObjectClass *)Trigger::initTrigger( /*0x76d6ec*/
+                                  v19,
+                                  *(MSShapeAnim **)(this + 1136),
+                                  v15,
+                                  ebp18,
+                                  *(unsigned int *)(this + 1132),
+                                  3,
+                                  512,
+                                  (MSShapeAnim *)(this + 24));
+          if ( (int)v51 < v49 /*0x76d71b*/
+            || (v50 || !v49)
+            && v52 > 0
+            && ((unsigned __int8 (*)(void ***, int, unsigned int))v47[2])(&v47, v52 + v49, 0) )
           {
-            v17 = v44++; /*0x76d726*/
-            *((unsigned int *)v41 + v17) = v5; /*0x76d731*/
+            v17 = v51; /*0x76d726*/
+            v51 = (MSShapeAnim *)((char *)v51 + 1); /*0x76d729*/
+            *((unsigned int *)v48 + (unsigned int)v17) = v5; /*0x76d731*/
           }
           v5 = 0; /*0x76d734*/
         }
-        v48 = 0; /*0x76d745*/
-        Vector::Clear((int)v47); /*0x76d74c*/
-        v46[0] = (unsigned int)&off_7E1668; /*0x76d755*/
-        BufferIOFileClass::Dtor(v46); /*0x76d75d*/
+        v53[0] = &vt_CCFileClass; /*0x76d73d*/
+        v55 = 0; /*0x76d745*/
+        Vector::Clear((int)v54); /*0x76d74c*/
+        v53[0] = &off_7E1668; /*0x76d755*/
+        BufferIOFileClass::Dtor(v53); /*0x76d75d*/
       }
-            CCFileClass::Construct2(v56, *(char ***)((char *)this + 4560));
-      if ( CCFileClass::Open(v49, 0) )
+      CCFileClass::Construct2(v56, *(char ***)(this + 1140)); /*0x76d770*/
+      if ( CCFileClass::Open(v56, 0) )
       {
-        v18 = operator new(0x40u)
-            ? (unsigned int *)MSShapeAnim::Constructor(
-                          this->u32_474,
-                          v15,
-                          v16,
-                          this->u32_46C,
-                          5,
-                          1,
-                          512)
+        v21 = (void *)__2_YAPAXI_Z(0x40u); /*0x76d78c*/
+        v18 = v21
+            ? (MSShapeAnim *)MSShapeAnim::Constructor(
+                               v21,
+                               *(MSShapeAnim **)(this + 1140),
+                               v15,
+                               ebp18,
+                               *(MSShapeAnim **)(this + 1132),
+                               5,
+                               (MSShapeAnim *)1,
+                               (MSShapeAnim *)0x200)
             : 0;
-                MSAnim::SetField(v18, *((unsigned int *)this + 4576) - 1);
-        MSAnim::GetField(0); /*0x76d7d0*/
+        MSAnim::SetField(v18, *(unsigned int *)(this + 1144) - 1); /*0x76d7c8*/
+        MSAnim::GetField(v18, 0); /*0x76d7d0*/
         TerritoryUpdateDisplayWOL(v18, 0); /*0x76d7d8*/
-        Trigger::executeActions(v18); /*0x76d7f0*/
-        if ( v38 < v36 /*0x76d821*/
-          || (IDA_BYTE1(v37) || !v36)
-          && v39 > 0
-          && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v34[2])(&v34, v39 + v36, 0) )
+        Trigger::executeActions(*(unsigned int **)(*(unsigned int *)(v32 + 4) + 8 * var128 + 4), (int)v18); /*0x76d7f0*/
+        if ( v45 < v43 /*0x76d821*/
+          || (BYTE1(v44) || !v43)
+          && (int)v39 > 0
+          && ((unsigned __int8 (*)(void ***, char *, unsigned int))v41[2])(&v41, &v39->__pad_0[v43], 0) )
         {
-          v19 = (unsigned int)((unsigned int)(v38)++);
-          *((unsigned int *)(unsigned int)(Block)+ v19) = v18; /*0x76d837*/
+          v23 = v45++; /*0x76d82c*/
+          *((unsigned int *)Block + v23) = v18; /*0x76d837*/
         }
       }
-      v51 = 0; /*0x76d84c*/
-      Vector::Clear((int)v50); /*0x76d853*/
-      BufferIOFileClass::Destruct(v49); /*0x76d85f*/
+      v56[0] = &vt_CCFileClass; /*0x76d841*/
+      v58 = 0; /*0x76d84c*/
+      Vector::Clear((int)v57); /*0x76d853*/
+      BufferIOFileClass::Destruct(v56); /*0x76d85f*/
     }
-    ((void (__thiscall *)(void ***))v24[2])(&v24); /*0x76d86c*/
+    ((void (*)(void ***))v31[2])(&v31); /*0x76d86c*/
   }
-  v28 = &v40; /*0x76d88b*/
-  v29 = 0; /*0x76d897*/
-  v32 = &v34; /*0x76d89f*/
+  v35 = &v47; /*0x76d88b*/
+  v36 = 0; /*0x76d897*/
+  v34 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d89b*/
+  var110 = &v41; /*0x76d89f*/
   v33 = 0; /*0x76d8a3*/
-  if ( (uint8_t)CampaignProperties_WorldDominationTour_22_::AddRef(&v31) ) /*0x76d8ab*/
+  v38 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76d8a7*/
+  if ( CampaignProperties_WorldDominationTour_22::AddRef(&v38) ) /*0x76d8ab*/
   {
     do /*0x76da41*/
     {
-      DDraw::HandleSuspend(); /*0x76d8c0*/
-      while ( EventQueue::Process(g_BinkMoviePlayer) ) /*0x76d8cb*/
+      DDraw::HandleSuspend((unsigned int *)this); /*0x76d8c0*/
+      while ( EventQueue::Process(*(unsigned int **)&stru_87C374.__pad_14B0[8012]) ) /*0x76d8cb*/
       {
-        if ( EventQueue::Read(g_BinkMoviePlayer) == 27 ) /*0x76d8e4*/
-                    *((unsigned char *)this + 4368) = 1;
+        if ( EventQueue::Read(*(unsigned int **)&stru_87C374.__pad_14B0[8012]) == 27 ) /*0x76d8e4*/
+          *(unsigned char *)(this + 1092) = 1; /*0x76d8e6*/
       }
-      if ( ((uint8_t (__thiscall *)(void ***))v27[1])(&v27) ) /*0x76d905*/
+      if ( ((unsigned __int8 (*)(void ***))v34[1])(&v34) ) /*0x76d905*/
       {
-                if ( *((unsigned char *)this + 4368) )
+        if ( *(unsigned char *)(this + 1092) ) /*0x76d910*/
         {
-          v20 = (void (***)(unsigned int, int))v28[1][v29]; /*0x76d925*/
-          if ( v20 ) /*0x76d92a*/
-            (**v20)(v20, 1); /*0x76d934*/
+          v24 = (void (***)(unsigned int, int))v35[1][v36]; /*0x76d925*/
+          if ( v24 ) /*0x76d92a*/
+            (**v24)(v24, 1); /*0x76d934*/
         }
         else
         {
-          String::Assign((char **)&v30, aTargetzoom); /*0x76d944*/
-          if ( String::NotEquals((const char **)&v30, 0) ) /*0x76d94e*/
+          String::Assign((char **)&v37, aTargetzoom); /*0x76d944*/
+          if ( String::NotEquals((const char **)&v37, 0) ) /*0x76d94e*/
           {
-            Trigger::processTrigger(&this->u32_1250, 0); /*0x76d963*/
-            while ( ((uint8_t (__thiscall *)(void ***))v21[1])(&v21) ) /*0x76d970*/
+            Trigger::processTrigger(&v28, this + 1172, 0); /*0x76d963*/
+            while ( ((unsigned __int8 (*)(void ***))v28[1])(&v28) ) /*0x76d970*/
             {
-              if ( !String::Compare((const char **)&v30, *(const char ***)(*(unsigned int *)(v22 + 4) + 4 * v23)) ) /*0x76d98a*/
+              if ( !String::Compare((const char **)&v37, *(const char ***)(*(unsigned int *)(v29 + 4) + 4 * v30)) ) /*0x76d98a*/
                 break; /*0x76d991*/
-              ((void (__thiscall *)(void ***))v21[2])(&v21); /*0x76d99b*/
+              ((void (*)(void ***))v28[2])(&v28); /*0x76d99b*/
             }
-            if ( ((uint8_t (__thiscall *)(void ***))v21[1])(&v21) ) /*0x76d9b5*/
-              nullsub_24(*(unsigned int *)(*(unsigned int *)(v22 + 4) + 4 * v23)); /*0x76d9ca*/
+            if ( ((unsigned __int8 (*)(void ***))v28[1])(&v28) ) /*0x76d9b5*/
+              nullsub_24(); /*0x76d9ca*/
+            v28 = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76d9cf*/
           }
-          DeleteAndZero(&v30); /*0x76d9d7*/
-          PriorityQueue::Add((int)v28[1][v29]); /*0x76d9ed*/
-          MSEngine::ProcessEvents((char)v28[1][v29], 300000); /*0x76da08*/
+          DeleteAndZero((int)&v37); /*0x76d9d7*/
+          PriorityQueue::Add((Selection_WorldDominationTour *)this, (MSAnim *)v35[1][v36]); /*0x76d9ed*/
+          MSEngine::ProcessEvents((unsigned int *)this, (MSVQAnim *)v35[1][v36], 300000); /*0x76da08*/
         }
-        ((void (__thiscall *)(void ***))v27[2])(&v27); /*0x76da15*/
+        ((void (*)(void ***))v34[2])(&v34); /*0x76da15*/
       }
-      PriorityQueue::Add((int)v32[1][v33]); /*0x76da29*/
-      ((void (__thiscall *)(void ***))v31[2])(&v31); /*0x76da36*/
+      PriorityQueue::Add((Selection_WorldDominationTour *)this, (MSAnim *)var110[1][(unsigned int)v33]); /*0x76da29*/
+      ((void (*)(void ***))v38[2])(&v38); /*0x76da36*/
     }
-    while ( ((uint8_t (__thiscall *)(void ***))v31[1])(&v31) ); /*0x76da41*/
+    while ( ((unsigned __int8 (*)(void ***))v38[1])(&v38) ); /*0x76da41*/
   }
-    ComPtr::Set((rc_ptr_base *)((char *)this + 4640), *(unsigned int *)(a4 + 4));
-  if ( Block && IDA_BYTE1(v37) ) /*0x76da8b*/
+  ComPtr::Set((rc_ptr_base *)(this + 1160), *(unsigned int *)(a4 + 4)); /*0x76da5d*/
+  v38 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76da66*/
+  v34 = &vt_VectorCursor_MSAnim_DynamicVectorClass_MSAnim; /*0x76da6a*/
+  v31 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Territory_DynamicVectorClass_rc_ptr_WorldDominationTour_Territory; /*0x76da76*/
+  v41 = &vt_VectorClass_MSAnim; /*0x76da7e*/
+  if ( Block && BYTE1(v44) ) /*0x76da8b*/
   {
-    RA2_OPDEL(Block); /*0x76da8e*/
+    __3_YAXPAX_Z(Block); /*0x76da8e*/
     Block = 0; /*0x76da96*/
   }
-  v36 = 0; /*0x76daa2*/
-  IDA_BYTE1(v37) = 0; /*0x76daa9*/
-  if ( v41 ) /*0x76daaf*/
+  v47 = &vt_VectorClass_MSAnim; /*0x76da9e*/
+  v43 = 0; /*0x76daa2*/
+  BYTE1(v44) = 0; /*0x76daa9*/
+  if ( v48 ) /*0x76daaf*/
   {
-    if ( v43 ) /*0x76dab7*/
-      RA2_OPDEL(v41); /*0x76daba*/
+    if ( v50 ) /*0x76dab7*/
+      __3_YAXPAX_Z(v48); /*0x76daba*/
   }
+
 }
 }
 // 0x76F090
 namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
-  this->Trigger_field_0x4 = (unsigned int *)((MSAnim *)a2);
-    *((unsigned int *)this + 8) = a3;
-  *(unsigned int *)this->__pad_0 = (void*)&VectorCursor_MSSfxEntry___DynamicVectorClass_MSSfxEntry___vftable; /*0x76f0a0*/
+
+  *((unsigned int *)this + 1) = a2; /*0x76f09a*/
+  *((unsigned int *)this + 2) = a3; /*0x76f09d*/
+  *this = &vt_VectorCursor_MSSfxEntry_DynamicVectorClass_MSSfxEntry; /*0x76f0a0*/
   return this; /*0x76f0a6*/
+
 }
 }
 // 0x76F1C0
 namespace gamemd {
 unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 {
-  this->Trigger_field_0x4 = (unsigned int)(0);
-    *((unsigned int *)this + 8) = aP1;
-    *((unsigned char *)this + 12) = 1;
-    *((unsigned char *)this + 13) = 0;
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_MSAnim___vftable; /*0x76f1d8*/
+
+  *((unsigned int *)this + 1) = 0; /*0x76f1cb*/
+  *((unsigned int *)this + 2) = aP1; /*0x76f1ce*/
+  *((unsigned char *)this + 12) = 1; /*0x76f1d1*/
+  *((unsigned char *)this + 13) = 0; /*0x76f1d5*/
+  *this = &vt_VectorClass_MSAnim; /*0x76f1d8*/
   if ( aP1 ) /*0x76f1de*/
   {
     if ( aP2 ) /*0x76f1e6*/
     {
-      this->Trigger_field_0x4 = (unsigned int *)((MSAnim *)aP2);
+      *((unsigned int *)this + 1) = aP2; /*0x76f1e8*/
       return this; /*0x76f1ee*/
     }
-    this->Trigger_field_0x4 = (MSAnim *)RA2_OPNEW(4 * aP1); /*0x76f1fd*/
-        *((unsigned char *)this + 13) = 1;
+    *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x76f1fd*/
+    *((unsigned char *)this + 13) = 1; /*0x76f200*/
   }
-  return (unsigned int *)(this->__pad_0);
+  return this; /*0x76f1ed*/
+
 }
 }
 // 0x76FF20
 namespace gamemd {
 int Trigger::executeActions(int a2)
 {
-  this->Trigger_field_0x2C = (unsigned int)((void *)a2);
+
+  *((unsigned int *)this + 11) = a2; /*0x76ff24*/
   return a2; /*0x76ff27*/
+
 }
 }

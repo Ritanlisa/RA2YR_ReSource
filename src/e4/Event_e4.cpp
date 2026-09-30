@@ -31,59 +31,62 @@
 namespace gamemd {
 int Event::Dispatch(void* a1, void* a2, void* a3)
 {
-  int result; // eax
-  unsigned char v1[4]; // [esp+10h] [ebp-100h] BYREF
-  unsigned int v2[6]; // [esp+14h] [ebp-FCh] BYREF
-  unsigned char v3[228]; // [esp+2Ch] [ebp-E4h]
+
+  int v0; // eax
+  unsigned char v2[4]; // [esp+10h] [ebp-100h] BYREF
+  unsigned int v3[6]; // [esp+14h] [ebp-FCh] BYREF
+  unsigned char v4[228]; // [esp+2Ch] [ebp-E4h]
 
   UpdateAudioVideo(); /*0x48d08c*/
-  if ( g_AsyncIOState > 0 && *(unsigned int *)AsyncIO_Instance ) /*0x48d09f*/
-    (*(void (**)(unsigned int))(**(unsigned int **)AsyncIO_Instance + 8))(*(unsigned int *)AsyncIO_Instance); /*0x48d0a7*/
-  result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0aa*/
-  if ( ((unsigned int *)(dword_A8B238))[0] == 3 || ((unsigned int *)(dword_A8B238))[0] == 4 ) /*0x48d0b7*/
+  if ( dword_A8ED54[187269] > 0 && *(unsigned int *)dword_A8ED54[187266] ) /*0x48d09f*/
+    (*(void (**)(unsigned int))(**(unsigned int **)dword_A8ED54[187266] + 8))(*(unsigned int *)dword_A8ED54[187266]); /*0x48d0a7*/
+  v0 = MEMORY[0x87F7E8][536212]; /*0x48d0aa*/
+  if ( MEMORY[0x87F7E8][536212] == 3 || MEMORY[0x87F7E8][536212] == 4 ) /*0x48d0b7*/
   {
-        Network::Dispatch();
-    result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d0be*/
+    Network::Dispatch(); /*0x48d0b9*/
+    v0 = MEMORY[0x87F7E8][536212]; /*0x48d0be*/
   }
-  if ( result == 1 ) /*0x48d0c6*/
+  if ( v0 == 1 ) /*0x48d0c6*/
   {
-    if ( (dword_A8DAB8 & 1) == 0 ) /*0x48d0da*/
-      return result; /*0x48d0da*/
+    if ( (MEMORY[0x87F7E8][538804] & 1) == 0 ) /*0x48d0da*/
+      return v0; /*0x48d0da*/
     goto LABEL_11; /*0x48d0da*/
   }
-  if ( result == 2 ) /*0x48d0cb*/
+  if ( v0 == 2 ) /*0x48d0cb*/
   {
-  LABEL_11:
-    Stream::ReadPacket((int)&unk_A8EA70); /*0x48d0e0*/
-    if ( ((unsigned int *)(dword_A8B230))[13720] && ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ) /*0x48d10f*/
+LABEL_11:
+    Stream::ReadPacket((int)&MEMORY[0x87F7E8][539810]); /*0x48d0e0*/
+    if ( *(unsigned char *)(MEMORY[0x87F7E8][536210] + 13720) /*0x48d10f*/
+      && ObjectTypeClass::CreateInstance((int)&MEMORY[0x87F7E8][539810], (int)v3, (int)v2) > 0 )
     {
       do /*0x48d15f*/
       {
-        if ( v2[0] == 108 && v3[0] != dword_A8DB30 ) /*0x48d129*/
-          Network::UpdateLatencyDisplay((int)dword_AC4F58, 1, (double)*(int *)&v3[1], NAN); /*0x48d144*/
+        if ( v3[0] == 108 && v4[0] != MEMORY[0x87F7E8][538834] ) /*0x48d129*/
+          Network::UpdateLatencyDisplay((int)&dword_A8ED54[55425], 1, (double)*(int *)&v4[1], NAN); /*0x48d144*/
       }
-      while ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ); /*0x48d15f*/
+      while ( ObjectTypeClass::CreateInstance((int)&MEMORY[0x87F7E8][539810], (int)v3, (int)v2) > 0 ); /*0x48d15f*/
     }
-    result = ((unsigned int *)(dword_A8B238))[0]; /*0x48d161*/
+    v0 = MEMORY[0x87F7E8][536212]; /*0x48d161*/
   }
-  if ( result == 4 ) /*0x48d169*/
+  if ( v0 == 4 ) /*0x48d169*/
   {
-    IDA_LOBYTE(result) = byte_B77DC2; /*0x48d16b*/
-    if ( !byte_B77DC2 ) /*0x48d172*/
+    LOBYTE(v0) = BYTE2(dword_A8ED54[238619]); /*0x48d16b*/
+    if ( !BYTE2(dword_A8ED54[238619]) ) /*0x48d172*/
     {
-      result = time(0); /*0x48d176*/
-      if ( result != dword_89E9B0 ) /*0x48d186*/
+      v0 = time(0); /*0x48d176*/
+      if ( v0 != MEMORY[0x87F7E8][31858] ) /*0x48d186*/
       {
-        if ( ppv && !dword_B77DCC ) /*0x48d199*/
-          (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 12))(ppv); /*0x48d19e*/
-        if ( g_UIPointerTable ) /*0x48d1a8*/
-          (*(void (__stdcall **)(LPVOID))(*(unsigned int *)g_UIPointerTable + 28))(g_UIPointerTable); /*0x48d1ad*/
-        result = time(0); /*0x48d1b2*/
-        dword_89E9B0 = result; /*0x48d1ba*/
+        if ( dword_A8ED54[51462] && !dword_A8ED54[238622] ) /*0x48d199*/
+          (*(void (**)(int))(*(unsigned int *)dword_A8ED54[51462] + 12))(dword_A8ED54[51462]); /*0x48d19e*/
+        if ( dword_A8ED54[51463] ) /*0x48d1a8*/
+          (*(void (**)(int))(*(unsigned int *)dword_A8ED54[51463] + 28))(dword_A8ED54[51463]); /*0x48d1ad*/
+        v0 = time(0); /*0x48d1b2*/
+        MEMORY[0x87F7E8][31858] = v0; /*0x48d1ba*/
       }
     }
   }
-  return result; /*0x48d1bf*/
+  return v0; /*0x48d1bf*/
+
 }
 }
 // 0x5E2FA0
@@ -419,73 +422,74 @@ int sub_7C5FFF()
 // 0x48D1D0
 char Event_Dispatch::Return0()
 {
+
   Event::Dispatch(); /*0x48d1d0*/
   return 0; /*0x48d1d7*/
+
 }
 // 0x601360
 namespace gamemd {
 bool Event::IsValidActionType()
 {
-  int result; // eax
 
-  IDA_LOBYTE(result) = this == (Event *)268 /*0x6015d5*/
-                || this == (Event *)148
-                || this == (Event *)182
-                || this == (Event *)163
-                || this == (Event *)115
-                || this == (Event *)216
-                || this == (Event *)3003
-                || this == (Event *)245
-                || this == (Event *)261
-                || this == (Event *)226
-                || this == (Event *)213
-                || this == (Event *)693
-                || this == (Event *)183
-                || this == (Event *)692
-                || this == (Event *)257
-                || this == (Event *)297
-                || this == (Event *)3015
-                || this == (Event *)3014
-                || this == (Event *)215
-                || this == (Event *)264
-                || this == (Event *)188
-                || this == (Event *)189
-                || this == (Event *)187
-                || this == (Event *)181
-                || this == (Event *)3002
-                || this == (Event *)255
-                || this == (Event *)234
-                || this == (Event *)107
-                || this == (Event *)256
-                || this == (Event *)258
-                || this == (Event *)184
-                || this == (Event *)214
-                || this == (Event *)259
-                || this == (Event *)287
-                || this == (Event *)293
-                || this == (Event *)277
-                || this == (Event *)290
-                || this == (Event *)274
-                || this == (Event *)231
-                || this == (Event *)278
-                || this == (Event *)194
-                || this == (Event *)201
-                || this == (Event *)285
-                || this == (Event *)284
-                || this == (Event *)275
-                || this == (Event *)254
-                || this == (Event *)265
-                || this == (Event *)271
-                || this == (Event *)279
-                || this == (Event *)276
-                || this == (Event *)195
-                || this == (Event *)292
-                || this == (Event *)230
-                || this == (Event *)243
-                || this == (Event *)244
-                || this == (Event *)700
-                || this == (Event *)283
-                || this == (Event *)270;
-  return result; /*0x6015d4*/
+  return this == (void *)268 /*0x6015d4*/
+      || this == (void *)148
+      || this == (void *)182
+      || this == (void *)163
+      || this == (void *)115
+      || this == (void *)216
+      || this == (void *)3003
+      || this == (void *)245
+      || this == (void *)261
+      || this == (void *)226
+      || this == (void *)213
+      || this == (void *)693
+      || this == (void *)183
+      || this == (void *)692
+      || this == (void *)257
+      || this == (void *)297
+      || this == (void *)3015
+      || this == (void *)3014
+      || this == (void *)215
+      || this == (void *)264
+      || this == (void *)188
+      || this == (void *)189
+      || this == (void *)187
+      || this == (void *)181
+      || this == (void *)3002
+      || this == (void *)255
+      || this == (void *)234
+      || this == (void *)107
+      || this == (void *)256
+      || this == (void *)258
+      || this == (void *)184
+      || this == (void *)214
+      || this == (void *)259
+      || this == (void *)287
+      || this == (void *)293
+      || this == (void *)277
+      || this == (void *)290
+      || this == (void *)274
+      || this == (void *)231
+      || this == (void *)278
+      || this == (void *)194
+      || this == (void *)201
+      || this == (void *)285
+      || this == (void *)284
+      || this == (void *)275
+      || this == (void *)254
+      || this == (void *)265
+      || this == (void *)271
+      || this == (void *)279
+      || this == (void *)276
+      || this == (void *)195
+      || this == (void *)292
+      || this == (void *)230
+      || this == (void *)243
+      || this == (void *)244
+      || this == (void *)700
+      || this == (void *)283
+      || this == (void *)270;
+
 }
 } // namespace gamemd

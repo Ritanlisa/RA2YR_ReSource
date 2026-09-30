@@ -11,12 +11,14 @@
 namespace gamemd {
 unsigned int * CoordStruct::Set2(void* aP1,  AbstractClass * aP2)
 {
+
   int v4; // edx
 
-  v4 = *aP1 << 8; /*0x642756*/
-  this->Y = (aP1[1] << 8) + 128; /*0x642759*/
-  this->Z = aP2; /*0x642766*/
-    *this = v4 + 128;
-    return this;
+  v4 = SLOWORD(aP1->field_0) << 8; /*0x642756*/
+  *((unsigned int *)this + 1) = (SHIWORD(aP1->field_0) << 8) + 128; /*0x642759*/
+  *((unsigned int *)this + 2) = aP2; /*0x642766*/
+  *this = v4 + 128; /*0x642769*/
+  return this; /*0x64276b*/
+
 }
 }

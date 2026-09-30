@@ -11,9 +11,11 @@
 namespace gamemd {
 void * WOL::QueryInterface(char a2)
 {
-  SelectionInitializeWOL(); /*0x76efe3*/
+
+  SelectionInitializeWOL(this); /*0x76efe3*/
   if ( (a2 & 1) != 0 ) /*0x76efed*/
-    RA2_OPDEL(); /*0x76eff0*/
+    __3_YAXPAX_Z(this); /*0x76eff0*/
   return this; /*0x76effa*/
+
 }
 } // namespace gamemd

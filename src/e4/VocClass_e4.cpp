@@ -13,85 +13,89 @@
 namespace gamemd {
 int VocClass::Release()
 {
-  Voice *v1; // ebp
-  VocClass **pVoiceChannel; // ecx
-  int result; // eax
-  int v5; // ebx
-  RefCount **v6; // edi
 
-    if ( (*((unsigned char *)this + 96) & 1) == 0 )
+  int v2; // ecx
+  int result; // eax
+  int v4; // ebx
+  unsigned int **v5; // edi
+
+  if ( (*((unsigned char *)this + 24) & 1) == 0 ) /*0x4052f7*/
   {
-        v2 = *((unsigned int *)this + 704);
-    if ( pVoiceChannel && this == pVoiceChannel[48] ) /*0x405311*/
+    v2 = *((unsigned int *)this + 44); /*0x4052fd*/
+    if ( v2 && this == *(unsigned int *)(v2 + 192) ) /*0x405311*/
     {
-            if ( (*((unsigned char *)this + 96) & 2) != 0 )
-        Voice::Stop(v1); /*0x405319*/
-            AudioStream::ReleaseChannel(*(unsigned int **)((char *)this + 704));
-            *(unsigned int *)(*((unsigned int *)this + 704) + 192) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 704) + 188) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 704) + 180) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 704) + 184) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 704) + 144) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 704) + 152) = 0;
-            *(unsigned int *)(*((unsigned int *)this + 704) + 156) = 0;
-            *((unsigned int *)this + 704) = 0;
+      if ( (*((unsigned char *)this + 24) & 2) != 0 ) /*0x405317*/
+        Voice::Stop(v2); /*0x405319*/
+      AudioStream::ReleaseChannel(*(unsigned int **)((char *)this + 176)); /*0x405324*/
+      *(unsigned int *)(*((unsigned int *)this + 44) + 192) = 0; /*0x40532f*/
+      *(unsigned int *)(*((unsigned int *)this + 44) + 188) = 0; /*0x40533b*/
+      *(unsigned int *)(*((unsigned int *)this + 44) + 180) = 0; /*0x405347*/
+      *(unsigned int *)(*((unsigned int *)this + 44) + 184) = 0; /*0x405353*/
+      *(unsigned int *)(*((unsigned int *)this + 44) + 144) = 0; /*0x40535f*/
+      *(unsigned int *)(*((unsigned int *)this + 44) + 152) = 0; /*0x40536b*/
+      *(unsigned int *)(*((unsigned int *)this + 44) + 156) = 0; /*0x405377*/
+      *((unsigned int *)this + 44) = 0; /*0x40537d*/
     }
-        result = *((unsigned int *)this + 672);
-    v5 = 0; /*0x405389*/
+    result = *((unsigned int *)this + 42); /*0x405383*/
+    v4 = 0; /*0x405389*/
     if ( result > 0 ) /*0x40538d*/
     {
-            v5 = (unsigned int **)((char *)this + 160);
+      v5 = (unsigned int **)((char *)this + 40); /*0x405390*/
       do /*0x4053a8*/
       {
-        RefCount::Decrement(*v6); /*0x405395*/
-        *v6 = 0; /*0x40539a*/
-                result = *((unsigned int *)this + 672);
-        ++v5; /*0x4053a2*/
-        ++v6; /*0x4053a3*/
+        RefCount::Decrement(*v5); /*0x405395*/
+        *v5 = 0; /*0x40539a*/
+        result = *((unsigned int *)this + 42); /*0x40539c*/
+        ++v4; /*0x4053a2*/
+        ++v5; /*0x4053a3*/
       }
-      while ( v5 < result ); /*0x4053a8*/
+      while ( v4 < result ); /*0x4053a8*/
     }
-        *((unsigned int *)this + 672) = 0;
-        *((unsigned int *)this + 112) = 4;
-        *((unsigned int *)this + 1248) = 0;
-        *((unsigned int *)this + 2528) = 0;
-        *((unsigned int *)this + 96) |= 1u;
+    *((unsigned int *)this + 42) = 0; /*0x4053ab*/
+    *((unsigned int *)this + 7) = 4; /*0x4053b1*/
+    *((unsigned int *)this + 78) = 0; /*0x4053b8*/
+    *((unsigned int *)this + 158) = 0; /*0x4053be*/
+    *((unsigned int *)this + 6) |= 1u; /*0x4053ca*/
   }
   return result; /*0x4053cf*/
+
 }
 } // namespace gamemd
 // 0x751590
 namespace gamemd {
 char * VocClass::GetSampleNameByIndex(int a1)
 {
+
   char *v1; // ecx
 
-  if ( a1 < 0 || a1 >= g_VocPlayState ) /*0x75159a*/
-    return g_Str__none_; /*0x7515b5*/
-  v1 = (char *)**((unsigned int **)g_VocAudioConfig + a1); /*0x7515a4*/
+  if ( a1 < 0 || a1 >= MEMORY[0xB1D388] ) /*0x75159a*/
+    return MEMORY[0x817474]; /*0x7515b5*/
+  v1 = (char *)**((unsigned int **)MEMORY[0xB1D37C] + a1); /*0x7515a4*/
   if ( v1 ) /*0x7515a8*/
-// 0x405170
     return VocClass::GetSampleName(v1); /*0x7515aa*/
   else
-    return g_Str_Invalid_Voc; /*0x7515af*/
+    return MEMORY[0x846574]; /*0x7515af*/
+
 }
 } // namespace gamemd
 // 0x753250
 namespace gamemd {
 int VocClass::FindByName()
 {
+
   int v3; // esi
 
   if ( !this ) /*0x753255*/
     return -1; /*0x753257*/
   v3 = 0; /*0x753262*/
-  if ( g_InfantrySelectState <= 0 ) /*0x753266*/
+  if ( *(int *)&stru_B1D188.__pad_2B8[112] <= 0 ) /*0x753266*/
     return -1; /*0x753288*/
-  while ( _strcmpi((char *)this, *((char **)g_InfantryRenderPool + v3)) ) /*0x75327c*/
+  while ( _strcmpi(this, *(const void **)(*(unsigned int *)&stru_B1D188.__pad_2B8[100] + 4 * v3)) ) /*0x75327c*/
   {
-    if ( ++v3 >= g_InfantrySelectState ) /*0x753286*/
+    if ( ++v3 >= *(int *)&stru_B1D188.__pad_2B8[112] ) /*0x753286*/
       return -1; /*0x753286*/
   }
   return v3; /*0x75325a*/
+
 }
 } // namespace gamemd

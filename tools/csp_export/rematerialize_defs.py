@@ -80,11 +80,22 @@ def cache_params(sig_head):
 
 
 def this_scale(sig_head):
-    """(factor, elem_type) from the cache signature's first param type."""
+    """(factor, elem_type) from the cache signature's first param type —
+    mirrors the verifier's own `_this_mult` (byte=1, word=2, else=4), with
+    one addition proven by 0x4C4AF0 (`Remove(int this)`, events 4/13/8):
+    an INT-typed this (address held by value) means `this + N` is RAW BYTE
+    arithmetic regardless of the read/write cast."""
     m = re.search(r'\(([^)]*)\)', sig_head)
     first = (m.group(1).split(',')[0] if m else '').strip()
-    if re.search(r'_BYTE|unsigned\s+char|char\s*\*', first):
+    m2 = re.search(r'([A-Za-z_][\w ]*?)\s*\*?\s*([A-Za-z_]\w*)\s*$', first)
+    ptype = (m2.group(1).strip() if m2 else first)
+    if not ptype.endswith('*') and re.match(
+            r'^(int|unsigned int|long|unsigned long|__int32)$', ptype):
+        return 1, 'char'
+    if re.search(r'_BYTE|\bchar\b|__int8|uint8_t', ptype):
         return 1, 'unsigned char'
+    if re.search(r'_WORD|__int16|uint16_t|\bshort\b', ptype):
+        return 2, 'unsigned short'
     return 4, 'unsigned int'
 
 
@@ -161,15 +172,22 @@ for p in files:
     i = 0
     while i < len(lines):
         hm = DEF_HEAD.search(lines[i])
-        if not hm or '{' not in lines[i]:
+        if not hm:
+            i += 1
+            continue
+        # opening brace: same line (gap2 style) or the next line (e4 style)
+        bi = i if '{' in lines[i] else (
+            i + 1 if i + 1 < len(lines) and lines[i + 1].lstrip().startswith('{')
+            else -1)
+        if bi < 0:
             i += 1
             continue
         d = 0
-        j = i
+        j = bi
         closed = False
         while j < len(lines) and j < i + 4000:
             d += lines[j].count('{') - lines[j].count('}')
-            if j > i and d <= 0:
+            if j > bi and d <= 0:
                 closed = True
                 break
             j += 1
@@ -216,16 +234,12 @@ for p in files:
                             factor, elem = this_scale(sig_head)
                             body = scale_body(body, factor, elem)
                     body = normalize_double_cast(body)
-                    # re-indent: normalize trailing spaces, keep cache indents
-                    new_block = [lines[i]] + body.split('\n')
-                    # ensure the closing brace line
-                    if new_block[-1].strip():
-                        new_block.append('}')
-                    else:
-                        new_block[-1] = '}'
                     for k2 in range(i, j + 1):
                         out[k2] = None
-                    out[i] = '\n'.join([lines[i]] + body.split('\n')) + '\n}'
+                    if bi == i:   # gap2 style: `Cls::Mth(...) {`
+                        out[i] = '\n'.join([lines[i]] + body.split('\n')) + '\n}'
+                    else:         # e4 style: brace on its own next line
+                        out[i] = lines[i] + '\n{\n' + body + '\n}'
                     touched = True
                     stats['remat' if damaged else 'remat-all'] += 1
         i = j + 1

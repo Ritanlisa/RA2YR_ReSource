@@ -512,9 +512,10 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
 namespace gamemd {
 char E4Recv_6F03F0::sub_6F03F0()
 {
+
   int *v1; // esi
 
-  v1 = (int *)this-((unsigned int *)(>customSound_controller))[1]; /*0x6f03f2*/
+  v1 = *((unsigned int *)this + 21); /*0x6f03f2*/
   if ( !v1 ) /*0x6f03f9*/
     return 0; /*0x6f0423*/
   while ( *(int *)((*(int (**)(int *))(*v1 + 132))(v1) + 1668) > 0 && v1[191] <= 0 ) /*0x6f0417*/
@@ -524,6 +525,7 @@ char E4Recv_6F03F0::sub_6F03F0()
       return 0; /*0x6f0421*/
   }
   return 1; /*0x6f0425*/
+
 }
 } // namespace gamemd
 

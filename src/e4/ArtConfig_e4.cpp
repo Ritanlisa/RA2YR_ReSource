@@ -22,36 +22,37 @@
 namespace gamemd {
 int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)
 {
-  char **v5; // ebp
+
+  ObjectClass *v5; // ebp
   int v6; // ebx
   int v7; // edi
   void *v8; // eax
-  void *v9; // eax
+  MSShapeAnim *v9; // eax
   unsigned int v11[22]; // [esp+10h] [ebp-6Ch] BYREF
   unsigned char v12[12]; // [esp+68h] [ebp-14h] BYREF
   int v13; // [esp+74h] [ebp-8h]
 
-  v5 = (char **)(&this->u32_C2); /*0x76fc68*/
-    v6 = *(unsigned int *)aP3->__pad_4 + *((unsigned int *)this + 112);
-    v7 = aP3->field_0 + *((unsigned int *)this + 96);
-    CCFileClass::Construct2(v11, (char **)((char *)this + 128));
+  v5 = (ObjectClass *)((char *)this + 32); /*0x76fc68*/
+  v6 = *(unsigned int *)aP3->__pad_4 + *((unsigned int *)this + 7); /*0x76fc6b*/
+  v7 = aP3->field_0 + *((unsigned int *)this + 6); /*0x76fc72*/
+  CCFileClass::Construct2(v11, (char **)((char *)this + 32)); /*0x76fc74*/
   if ( CCFileClass::Open(v11, 0) ) /*0x76fc7f*/
   {
-    v8 = (void *)((unsigned int)(RA2_OPNEW(0x4Cu)));
+    v8 = (void *)__2_YAPAXI_Z(0x4Cu); /*0x76fc8a*/
     if ( v8 ) /*0x76fc94*/
-      v9 = MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)((unsigned int)(aP1)+ 6), 1, 0, 0); /*0x76fcb6*/
+      v9 = (MSShapeAnim *)MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (MSShapeAnim *)&aP1->__pad_4[20], 1, 0, 0); /*0x76fcb6*/
     else
       v9 = 0; /*0x76fcbd*/
-        *((unsigned int *)this + 160) = v9;
-    (*(void (**)(void *, unsigned int))(v9->q004)(v9, 0); /*0x76fcc8*/
-    PriorityQueue::Add(aP1, this->u32_28); /*0x76fcd6*/
+    *((unsigned int *)this + 10) = v9; /*0x76fcbf*/
+    (*(void (**)(MSShapeAnim *, unsigned int))(*(unsigned int *)v9->__pad_0 + 4))(v9, 0); /*0x76fcc8*/
+    PriorityQueue::Add(aP1, *(MSAnim **)((char *)this + 40)); /*0x76fcd6*/
   }
-  v11[0] = (unsigned int)((void*)&CCFileClass_vftable);
-  v13 = (unsigned int)(0);
+  v11[0] = &vt_CCFileClass; /*0x76fcdf*/
+  v13 = 0; /*0x76fce7*/
   Vector::Clear((int)v12); /*0x76fcef*/
-  v11[0] = (unsigned int)&off_7E1668; /*0x76fcf8*/
-// 0x431b80
+  v11[0] = &off_7E1668; /*0x76fcf8*/
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
+
 }
 } // namespace gamemd
 // 0x76F910

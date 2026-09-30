@@ -10,9 +10,11 @@
 namespace gamemd {
 unsigned int MovieClass::ComputeTime()
 {
+
   unsigned int v1; // edi
 
-    v1 = *((unsigned int *)this + 480);
-    return 60 * (*(int (__cdecl **)(int))((char *)this + 320))(this) / v1 + *((unsigned int *)this + 1312);
+  v1 = *((unsigned int *)this + 30); /*0x7c3995*/
+  return 60 * (*(int (__cdecl **)(int))((char *)this + 80))(this) / v1 + *((unsigned int *)this + 82); /*0x7c39ab*/
+
 }
 } // namespace gamemd

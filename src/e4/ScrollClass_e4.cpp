@@ -19,29 +19,33 @@
 namespace gamemd {
 int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 {
-  TacticalClass::ProcessView((TacticalClass *)this); /*0x6922e3*/
-    return BlowStraw_29::Seek(this, a1, aP2);
+
+  TacticalClass::ProcessView(this); /*0x6922e3*/
+  return BlowStraw_29::Seek(this, a1, aP2); /*0x6922f9*/
+
 }
 } // namespace gamemd
 // 0x6938F0
 namespace gamemd {
 void ScrollClass::Read(int32_t* x, int32_t* y)
 {
+
   char *v3; // esi
   int v4; // edi
 
-  v3 = (char *)(&this->u32_14FB0);
+  v3 = x + 21484; /*0x6938f5*/
   v4 = 4; /*0x6938fb*/
   do /*0x693916*/
   {
     v3 -= 3988; /*0x693905*/
-    Array::ForEachReverse((int)v3, 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x693910*/
+    Array::ForEachReverse((int)v3, 52, 75, (int (*)(int))nullsub_56); /*0x693910*/
     --v4; /*0x693915*/
   }
   while ( v4 ); /*0x693916*/
-  RadarClass::Destruct(); /*0x69391a*/
-  if ( (a2 & 1) != 0 ) /*0x693924*/
-    RA2_OPDEL(); /*0x693927*/
-  return this; /*0x69392f*/
+  RadarClass::Destruct(x); /*0x69391a*/
+  if ( (y & 1) != 0 ) /*0x693924*/
+    __3_YAXPAX_Z(x); /*0x693927*/
+  return (ScrollClass *)x; /*0x69392f*/
+
 }
 } // namespace gamemd

@@ -3756,9 +3756,15 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
 // 0x60C4A0
 int SkirmishDialog::ResizeDialogAndEnum()
 {
-  MoveWindow(hWndParent, 0, 0, g_DisplayWidth, *(&g_DisplayWidth + 1), 0); /*0x60c4ba*/
-  dword_AC48A8 = (int)hWndParent; /*0x60c4c0*/
-  return EnumChildWindows(hWndParent, (WNDENUMPROC)RepositionDialogControls, lParam); /*0x60c4d3*/
+
+  LPARAM v1; // edx
+  LPARAM v3; // edi
+
+  v3 = v1; /*0x60c4b7*/
+  MoveWindow((HWND)this, 0, 0, MEMORY[0x8A00A4], *(&MEMORY[0x8A00A4] + 1), 0); /*0x60c4ba*/
+  MEMORY[0xAC48A8] = (int)this; /*0x60c4c0*/
+  return EnumChildWindows((HWND)this, (WNDENUMPROC)RepositionDialogControls, v3); /*0x60c4d3*/
+
 }
 // 0x60F4B0
 namespace gamemd {
@@ -4036,7 +4042,9 @@ int unknown_libname_26()
 namespace gamemd {
 ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
-    return *(ObjectClass **)this;
+
+  return *(ObjectClass **)this; /*0x600662*/
+
 }
 } // namespace gamemd
 
@@ -4176,14 +4184,16 @@ bool sub_60AA60(HWND hWnd, LPARAM a2)
 namespace gamemd {
 BOOL E4Recv_60B740::sub_60B740()
 {
+
   HWND Parent; // eax
   struct tagRECT v4; // [esp+8h] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
 
-  Parent = GetParent((HWND)this); /*0x60b748*/
+  Parent = GetParent(hWnd); /*0x60b748*/
   GetWindowRect(Parent, &Rect); /*0x60b75a*/
-  GetWindowRect(&v4); /*0x60b762*/
-  return MoveWindow(v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
+  GetWindowRect(hWnd, &v4); /*0x60b762*/
+  return MoveWindow(hWnd, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
+
 }
 } // namespace gamemd
 

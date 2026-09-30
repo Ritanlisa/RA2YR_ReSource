@@ -2466,10 +2466,11 @@ bool sub_5746C0(int a1, int a2)
 namespace gamemd {
 int E4Recv_578B70::sub_578B70(short * a2)
 {
+
   int v2; // edx
   int v3; // esi
-  int16_t v4; // ax
-  int16_t v5; // bp
+  __int16 v4; // ax
+  __int16 v5; // bp
   int v6; // edx
   int v7; // ecx
   int v8; // ebx
@@ -2479,23 +2480,24 @@ int E4Recv_578B70::sub_578B70(short * a2)
   unsigned int v12; // ecx
   int v13; // eax
 
-    v2 = *((unsigned int *)this + 256);
-    v3 = *((unsigned int *)this + 252);
-    v4 = v2 + *((unsigned int *)this + 244) - v3;
+  v2 = *((unsigned int *)this + 64); /*0x578b77*/
+  v3 = *((unsigned int *)this + 63); /*0x578b80*/
+  v4 = v2 + *((unsigned int *)this + 61) - v3; /*0x578b89*/
   v5 = v2 + v3 + 1; /*0x578b8b*/
-    v6 = *((unsigned int *)this + 260);
-    v7 = *((unsigned int *)this + 264);
+  v6 = *((unsigned int *)this + 65); /*0x578b8f*/
+  v7 = *((unsigned int *)this + 66); /*0x578b95*/
   v8 = *a2; /*0x578bac*/
   v9 = a2[1]; /*0x578baf*/
   v10 = (v8 + v4 - ((2 * v6 - 1) % 3 != 0) - v5 - v9) / ((2 * v6 - 1) / 3); /*0x578bf4*/
   v11 = v9 - ((2 * v7 - 1) % 3 != 0) - v4 - v5; /*0x578c0d*/
-  v12 = (uint64_t)(1431655766LL * (2 * v7 - 1)) >> 32; /*0x578c16*/
+  v12 = (unsigned __int64)(1431655766LL * (2 * v7 - 1)) >> 32; /*0x578c16*/
   v13 = (v8 + v11) / (int)((v12 >> 31) + v12); /*0x578c24*/
   if ( v10 == 3 ) /*0x578c28*/
     v10 = 2; /*0x578c2a*/
   if ( v13 == 3 ) /*0x578c32*/
     v13 = 2; /*0x578c34*/
   return v13 + v10 + 2 * v13 + 1; /*0x578c3c*/
+
 }
 } // namespace gamemd
 
@@ -2503,22 +2505,24 @@ int E4Recv_578B70::sub_578B70(short * a2)
 namespace gamemd {
 unsigned int * E4Recv_578C50::sub_578C50(unsigned int * v9, int a3)
 {
+
   int v3; // esi
   int v4; // eax
   int v5; // edi
   int v6; // edx
-  int16_t v8; // [esp+12h] [ebp-Eh]
+  __int16 v8; // [esp+12h] [ebp-Eh]
   int v9; // [esp+28h] [ebp+8h]
 
-    v3 = ((2 * *((unsigned int *)this + 260) - 1) % 3 != 0) + (2 * *((unsigned int *)this + 260) - 1) / 3 * ((a3 - 1) % 3);
-    v4 = *((unsigned int *)this + 256);
-    v5 = ((2 * *((unsigned int *)this + 264) - 1) % 3 != 0) + (a3 - 1) / 3 * ((2 * *((unsigned int *)this + 264) - 1) / 3);
-    v6 = *((unsigned int *)this + 252);
-    v8 = v4 + *((unsigned int *)this + 244) - v6;
-  IDA_LOWORD(v9) = v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2; /*0x578d34*/
-  IDA_HIWORD(v9) = (v5 - v3) / 2 + v8; /*0x578d3f*/
+  v3 = ((2 * *((unsigned int *)this + 65) - 1) % 3 != 0) + (2 * *((unsigned int *)this + 65) - 1) / 3 * ((a3 - 1) % 3); /*0x578ca4*/
+  v4 = *((unsigned int *)this + 64); /*0x578ccc*/
+  v5 = ((2 * *((unsigned int *)this + 66) - 1) % 3 != 0) + (a3 - 1) / 3 * ((2 * *((unsigned int *)this + 66) - 1) / 3); /*0x578cd8*/
+  v6 = *((unsigned int *)this + 63); /*0x578cda*/
+  v8 = v4 + *((unsigned int *)this + 61) - v6; /*0x578cf0*/
+  LOWORD(v9) = v4 + v6 + 1 + (v3 + (v5 & 1) + v5 + (v3 & 1)) / 2; /*0x578d34*/
+  HIWORD(v9) = (v5 - v3) / 2 + v8; /*0x578d3f*/
   *v9 = v9; /*0x578d4b*/
   return v9; /*0x578d48*/
+
 }
 } // namespace gamemd
 

@@ -13,10 +13,12 @@
 namespace gamemd {
 MultiplayerManBattle * MultiplayerManBattle::QueryInterface(char a2)
 {
-  this->MultiplayerManBattle_field_00 = (unsigned int)((gamemd::MultiplayerManBattle *)((int)&MultiplayerManBattle_vftable));
-  MultiplayerGameMode::Dtor(); /*0x5c61a9*/
+
+  *Block = &vt_MultiplayerManBattle; /*0x5c61a3*/
+  MultiplayerGameMode::Dtor(Block); /*0x5c61a9*/
   if ( (a2 & 1) != 0 ) /*0x5c61b3*/
-    RA2_OPDEL(); /*0x5c61b6*/
-    return (MultiplayerManBattle *)Block;
+    __3_YAXPAX_Z(Block); /*0x5c61b6*/
+  return (MultiplayerManBattle *)Block; /*0x5c61c0*/
+
 }
 } // namespace gamemd

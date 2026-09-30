@@ -142,13 +142,18 @@ _BARE_THIS_PLUS = re.compile(r'(?<!\*\))\bthis\s*\+\s*(\d+)\b')
 
 
 def this_elem_of(pseudo):
-    """'unsigned char' when the cache signature's this is byte-typed,
-    else 'unsigned int' (dword default)."""
+    """element type for bare `this + N` scaling: byte for `_BYTE *` /
+    `char *` / INT-typed this (address-by-value), dword otherwise."""
     if not pseudo:
         return 'unsigned int'
     head = pseudo.split('{', 1)[0]
     m = re.search(r'\(([^)]*)\)', head)
     first = (m.group(1).split(',')[0] if m else '').strip()
+    m2 = re.search(r'([A-Za-z_][\w ]*?)\s*\*?\s*([A-Za-z_]\w*)\s*$', first)
+    ptype = (m2.group(1).strip() if m2 else first)
+    if not ptype.endswith('*') and re.match(
+            r'^(int|unsigned int|long|unsigned long|__int32)$', ptype):
+        return 'char'
     if re.search(r'_BYTE|unsigned\s+char|char\s*\*', first):
         return 'unsigned char'
     return 'unsigned int'

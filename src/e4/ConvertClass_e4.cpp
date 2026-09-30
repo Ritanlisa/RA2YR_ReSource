@@ -15,224 +15,227 @@
 namespace gamemd {
 unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass * aP3, ObjectClass * aP4, ConvertClass * aP5)
 {
+
+  int v7; // eax
   int v8; // edi
   bool v9; // cc
-  CampaignClass *v10; // eax
+  unsigned char *v10; // eax
   int v11; // eax
-  int16_t v12; // cx
+  __int16 v12; // cx
   int v13; // eax
-  CampaignClass *v14; // eax
-  CampaignClass *v15; // edi
+  unsigned char *v14; // eax
+  unsigned char *v15; // edi
   int v16; // eax
   unsigned char *v17; // edi
   int i; // ebp
   int j; // ebp
   int v20; // eax
-  uint8_t v21; // cl
+  unsigned __int8 v21; // cl
   int v22; // eax
   int v23; // ecx
-  CampaignClass *v24; // eax
+  int v24; // eax
   int v25; // edi
   int v26; // eax
-  int v28; // [esp+Ch] [ebp-14h] BYREF
-  Color v29; // [esp+10h] [ebp-10h] BYREF
-  int v30; // [esp+14h] [ebp-Ch]
-  int v31; // [esp+1Ah] [ebp-6h]
+  unsigned char v28[4]; // [esp+Ch] [ebp-14h] BYREF
+  __int16 v29; // [esp+10h] [ebp-10h] BYREF
+  char v30; // [esp+12h] [ebp-Eh]
+  int v31; // [esp+14h] [ebp-Ch]
+  int v32; // [esp+1Ah] [ebp-6h]
 
-    *((unsigned int *)this + 4) = (*(int (**)(int))(*(unsigned int *)a4 + 112))(a4);
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[2] = 0; /*0x48e756*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[6] = 0; /*0x48e759*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[10] = 0; /*0x48e75c*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[14] = 0; /*0x48e75f*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[18] = 0; /*0x48e762*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[22] = 0; /*0x48e765*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[26] = 0; /*0x48e768*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[30] = 0; /*0x48e76b*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[34] = 0; /*0x48e76e*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[38] = 0; /*0x48e771*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[42] = 0; /*0x48e774*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[46] = 0; /*0x48e777*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[50] = 0; /*0x48e77a*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[54] = 0; /*0x48e77d*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[58] = 0; /*0x48e780*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[62] = 0; /*0x48e783*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[66] = 0; /*0x48e786*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[70] = 0; /*0x48e789*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[74] = 0; /*0x48e78c*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[78] = 0; /*0x48e78f*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[82] = 0; /*0x48e792*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[86] = 0; /*0x48e795*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[90] = 0; /*0x48e798*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[94] = 0; /*0x48e79b*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[98] = 0; /*0x48e79e*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[102] = 0; /*0x48e7a1*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[106] = 0; /*0x48e7a4*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[110] = 0; /*0x48e7a7*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[114] = 0; /*0x48e7aa*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[118] = 0; /*0x48e7ad*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[122] = 0; /*0x48e7b0*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[126] = 0; /*0x48e7b6*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[130] = 0; /*0x48e7bc*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[134] = 0; /*0x48e7c2*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[138] = 0; /*0x48e7c8*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[142] = 0; /*0x48e7ce*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[146] = 0; /*0x48e7d4*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[150] = 0; /*0x48e7da*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[154] = 0; /*0x48e7e0*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[158] = 0; /*0x48e7e6*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[162] = 0; /*0x48e7ec*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[166] = 0; /*0x48e7f2*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[170] = 0; /*0x48e7f8*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[174] = 0; /*0x48e7fe*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[178] = 0; /*0x48e804*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[182] = 0; /*0x48e80a*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[186] = 0; /*0x48e810*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[190] = 0; /*0x48e816*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[194] = 0; /*0x48e81c*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[198] = 0; /*0x48e822*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[202] = 0; /*0x48e828*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[206] = 0; /*0x48e82e*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[210] = 0; /*0x48e834*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[214] = 0; /*0x48e83a*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[218] = 0; /*0x48e840*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[222] = 0; /*0x48e846*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[226] = 0; /*0x48e84c*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[230] = 0; /*0x48e852*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[234] = 0; /*0x48e858*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[238] = 0; /*0x48e85e*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[242] = 0; /*0x48e864*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[246] = 0; /*0x48e86a*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[250] = 0; /*0x48e870*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[254] = 0; /*0x48e876*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[258] = 0; /*0x48e87c*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[262] = 0; /*0x48e882*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[266] = 0; /*0x48e888*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[270] = 0; /*0x48e88e*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[274] = 0; /*0x48e894*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[278] = 0; /*0x48e89a*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[282] = 0; /*0x48e8a0*/
-  aP4 = aP4; /*0x48e8a6*/
+  *((char *)this + 1) = (*(int (**)(int))(*(unsigned int *)aP3 + 112))(aP3); /*0x48e753*/
+  *((char *)this + 2) = 0; /*0x48e756*/
+  *((char *)this + 3) = 0; /*0x48e759*/
+  *((char *)this + 4) = 0; /*0x48e75c*/
+  *((char *)this + 5) = 0; /*0x48e75f*/
+  *((char *)this + 6) = 0; /*0x48e762*/
+  *((char *)this + 7) = 0; /*0x48e765*/
+  *((char *)this + 8) = 0; /*0x48e768*/
+  *((char *)this + 9) = 0; /*0x48e76b*/
+  *((char *)this + 10) = 0; /*0x48e76e*/
+  *((char *)this + 11) = 0; /*0x48e771*/
+  *((char *)this + 12) = 0; /*0x48e774*/
+  *((char *)this + 13) = 0; /*0x48e777*/
+  *((char *)this + 14) = 0; /*0x48e77a*/
+  *((char *)this + 15) = 0; /*0x48e77d*/
+  *((char *)this + 16) = 0; /*0x48e780*/
+  *((char *)this + 17) = 0; /*0x48e783*/
+  *((char *)this + 18) = 0; /*0x48e786*/
+  *((char *)this + 19) = 0; /*0x48e789*/
+  *((char *)this + 20) = 0; /*0x48e78c*/
+  *((char *)this + 21) = 0; /*0x48e78f*/
+  *((char *)this + 22) = 0; /*0x48e792*/
+  *((char *)this + 23) = 0; /*0x48e795*/
+  *((char *)this + 24) = 0; /*0x48e798*/
+  *((char *)this + 25) = 0; /*0x48e79b*/
+  *((char *)this + 26) = 0; /*0x48e79e*/
+  *((char *)this + 27) = 0; /*0x48e7a1*/
+  *((char *)this + 28) = 0; /*0x48e7a4*/
+  *((char *)this + 29) = 0; /*0x48e7a7*/
+  *((char *)this + 30) = 0; /*0x48e7aa*/
+  *((char *)this + 31) = 0; /*0x48e7ad*/
+  *((char *)this + 32) = 0; /*0x48e7b0*/
+  *((char *)this + 33) = 0; /*0x48e7b6*/
+  *((char *)this + 34) = 0; /*0x48e7bc*/
+  *((char *)this + 35) = 0; /*0x48e7c2*/
+  *((char *)this + 36) = 0; /*0x48e7c8*/
+  *((char *)this + 37) = 0; /*0x48e7ce*/
+  *((char *)this + 38) = 0; /*0x48e7d4*/
+  *((char *)this + 39) = 0; /*0x48e7da*/
+  *((char *)this + 40) = 0; /*0x48e7e0*/
+  *((char *)this + 41) = 0; /*0x48e7e6*/
+  *((char *)this + 42) = 0; /*0x48e7ec*/
+  *((char *)this + 43) = 0; /*0x48e7f2*/
+  *((char *)this + 44) = 0; /*0x48e7f8*/
+  *((char *)this + 45) = 0; /*0x48e7fe*/
+  *((char *)this + 46) = 0; /*0x48e804*/
+  *((char *)this + 47) = 0; /*0x48e80a*/
+  *((char *)this + 48) = 0; /*0x48e810*/
+  *((char *)this + 49) = 0; /*0x48e816*/
+  *((char *)this + 50) = 0; /*0x48e81c*/
+  *((char *)this + 51) = 0; /*0x48e822*/
+  *((char *)this + 52) = 0; /*0x48e828*/
+  *((char *)this + 53) = 0; /*0x48e82e*/
+  *((char *)this + 54) = 0; /*0x48e834*/
+  *((char *)this + 55) = 0; /*0x48e83a*/
+  *((char *)this + 56) = 0; /*0x48e840*/
+  *((char *)this + 57) = 0; /*0x48e846*/
+  *((char *)this + 58) = 0; /*0x48e84c*/
+  *((char *)this + 59) = 0; /*0x48e852*/
+  *((char *)this + 60) = 0; /*0x48e858*/
+  *((char *)this + 61) = 0; /*0x48e85e*/
+  *((char *)this + 62) = 0; /*0x48e864*/
+  *((char *)this + 63) = 0; /*0x48e86a*/
+  *((char *)this + 64) = 0; /*0x48e870*/
+  *((char *)this + 65) = 0; /*0x48e876*/
+  *((char *)this + 66) = 0; /*0x48e87c*/
+  *((char *)this + 67) = 0; /*0x48e882*/
+  *((char *)this + 68) = 0; /*0x48e888*/
+  *((char *)this + 69) = 0; /*0x48e88e*/
+  *((char *)this + 70) = 0; /*0x48e894*/
+  *((char *)this + 71) = 0; /*0x48e89a*/
+  *((char *)this + 72) = 0; /*0x48e8a0*/
+  v7 = aP4; /*0x48e8a6*/
   v8 = 1; /*0x48e8aa*/
-  v9 = aP4 < (gamemd::ObjectClass *)(1); /*0x48e8af*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[286] = 0; /*0x48e8b1*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[290] = 0; /*0x48e8b7*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[294] = 0; /*0x48e8bd*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[298] = 0; /*0x48e8c3*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[302] = 0; /*0x48e8c9*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[306] = 0; /*0x48e8cf*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[310] = 0; /*0x48e8d5*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[314] = 0; /*0x48e8db*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[318] = 0; /*0x48e8e1*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[322] = 0; /*0x48e8e7*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[326] = 0; /*0x48e8ed*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[330] = 0; /*0x48e8f3*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[334] = 0; /*0x48e8f9*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[338] = 0; /*0x48e8ff*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[342] = 0; /*0x48e905*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[346] = 0; /*0x48e90b*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[350] = 0; /*0x48e911*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[354] = 0; /*0x48e917*/
-  *(unsigned int *)&this-((unsigned int *)(>__pad_6))[358] = aP4; /*0x48e91d*/
-    *((unsigned int *)this + 368) = 0;
-    *((unsigned int *)this + 372) = 0;
-    *((unsigned int *)this + 376) = 0;
-    *((unsigned int *)this + 380) = 0;
-  *(unsigned int *)this->__pad_0 = (void*)&ConvertClass_vftable; /*0x48e93b*/
+  v9 = aP4 < 1; /*0x48e8af*/
+  *((char *)this + 73) = 0; /*0x48e8b1*/
+  *((char *)this + 74) = 0; /*0x48e8b7*/
+  *((char *)this + 75) = 0; /*0x48e8bd*/
+  *((char *)this + 76) = 0; /*0x48e8c3*/
+  *((char *)this + 77) = 0; /*0x48e8c9*/
+  *((char *)this + 78) = 0; /*0x48e8cf*/
+  *((char *)this + 79) = 0; /*0x48e8d5*/
+  *((char *)this + 80) = 0; /*0x48e8db*/
+  *((char *)this + 81) = 0; /*0x48e8e1*/
+  *((char *)this + 82) = 0; /*0x48e8e7*/
+  *((char *)this + 83) = 0; /*0x48e8ed*/
+  *((char *)this + 84) = 0; /*0x48e8f3*/
+  *((char *)this + 85) = 0; /*0x48e8f9*/
+  *((char *)this + 86) = 0; /*0x48e8ff*/
+  *((char *)this + 87) = 0; /*0x48e905*/
+  *((char *)this + 88) = 0; /*0x48e90b*/
+  *((char *)this + 89) = 0; /*0x48e911*/
+  *((char *)this + 90) = 0; /*0x48e917*/
+  *((char *)this + 91) = v7; /*0x48e91d*/
+  *((char *)this + 92) = 0; /*0x48e923*/
+  *((char *)this + 93) = 0; /*0x48e929*/
+  *((char *)this + 94) = 0; /*0x48e92f*/
+  *((char *)this + 95) = 0; /*0x48e935*/
+  *this = (int)&ConvertClass::`vftable'; /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
-    *(unsigned int *)&this-((unsigned int *)(>__pad_6))[358] = 1; /*0x48e943*/
-  if ( *(unsigned int *)&this-((unsigned int *)(>ConvertClass_field_0x2))[2] == 1 ) /*0x48e94f*/
+    *((char *)this + 91) = 1; /*0x48e943*/
+  if ( *((char *)this + 1) == 1 ) /*0x48e94f*/
   {
-    v10 = (gamemd::CampaignClass *)((unsigned int)((CampaignClass *)RA2_OPNEW(0x100u)));
-    this->ConvertClass_field_0x178 = (unsigned int)(v10);
-    IDA_LOBYTE(v10->AbstractClass) = 0; /*0x48e968*/
+    v10 = (unsigned char *)__2_YAPAXI_Z(256); /*0x48e95a*/
+    *((char *)this + 94) = (int)v10; /*0x48e95f*/
+    *v10 = 0; /*0x48e968*/
     do /*0x48e9df*/
     {
-      v11 = ComputeColorSaturation(aP1 + 2 * (v8 % 256) + v8 % 256, aP1 + 2 * (v8 % 256), (int)&aP4); /*0x48e98b*/
+      v11 = ComputeColorSaturation((unsigned int)&aP1[2 * (v8 % 256) + v8 % 256], (int)&aP1[2 * (v8 % 256)], (int)&aP4); /*0x48e98b*/
       v12 = *(unsigned short *)v11; /*0x48e990*/
-      IDA_LOBYTE(v11) = *(unsigned char *)(v11 + 2); /*0x48e993*/
-      IDA_LOWORD(v29.Color_field_00) = v12; /*0x48e996*/
-      IDA_BYTE2(v29.Color_field_00) = (uint8_t)v11 >> 1; /*0x48e9a5*/
-      v13 = Color::ConvertToRGB(&v29, (int)&v28); /*0x48e9ae*/
-      IDA_LOWORD(aP3) = *(unsigned short *)v13; /*0x48e9b6*/
-      IDA_BYTE2(aP3) = *(unsigned char *)(v13 + 2); /*0x48e9c5*/
-            *(unsigned char *)(*((unsigned int *)this + 376) + v8 - 1) = Palette::FindClosestColor(a2, (int)&a4);
+      LOBYTE(v11) = *(unsigned char *)(v11 + 2); /*0x48e993*/
+      v29 = v12; /*0x48e996*/
+      v30 = (unsigned __int8)v11 >> 1; /*0x48e9a5*/
+      v13 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)v28); /*0x48e9ae*/
+      LOWORD(aP3) = *(unsigned short *)v13; /*0x48e9b6*/
+      BYTE2(aP3) = *(unsigned char *)(v13 + 2); /*0x48e9c5*/
+      ++v8; /*0x48e9d4*/
+      *(unsigned char *)(*((char *)this + 94) + v8 - 1) = Palette::FindClosestColor(aP1, (int)&aP3); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
-    v14 = (CampaignClass *)RA2_OPNEW(*(unsigned int *)&this->q16C << 8); /*0x48e9eb*/
-        *((unsigned int *)this + 368) = (int)v14;
+    v14 = (unsigned char *)__2_YAPAXI_Z(*((char *)this + 91) << 8); /*0x48e9eb*/
+    *((char *)this + 92) = (int)v14; /*0x48e9f0*/
     v15 = v14; /*0x48e9f6*/
-        v16 = *((unsigned int *)this + 364);
-        *((unsigned int *)this + 372) = (int)&v15[256 * ((v16 - 1) >> 1)];
+    v16 = *((char *)this + 91); /*0x48e9f8*/
+    *((char *)this + 93) = (int)&v15[256 * ((v16 - 1) >> 1)]; /*0x48ea10*/
     if ( v16 == 1 ) /*0x48ea16*/
     {
-      IDA_LOBYTE(v15->AbstractClass) = 0; /*0x48ea18*/
-      v17 = (char *)&v15->AbstractClass + 1; /*0x48ea1a*/
+      *v15 = 0; /*0x48ea18*/
+      v17 = v15 + 1; /*0x48ea1a*/
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
-        *v17++ = Palette::FindClosestColor((char *)a3, aP1 + 2 * (i % 256) + i % 256); /*0x48ea40*/
+        *v17++ = Palette::FindClosestColor(a3, (int)&aP1[2 * (i % 256) + i % 256]); /*0x48ea40*/
     }
     else
     {
-      v30 = 0; /*0x48ea53*/
+      v31 = 0; /*0x48ea53*/
       if ( v16 - 1 >= 0 ) /*0x48ea57*/
       {
         do /*0x48eb0a*/
         {
-          IDA_LOBYTE(v15->AbstractClass) = 0; /*0x48ea5d*/
-          v15 = (CampaignClass *)((char *)v15 + 1); /*0x48ea5f*/
+          *v15++ = 0; /*0x48ea5d*/
           for ( j = 1; j < 256; ++j ) /*0x48ea60*/
           {
-            v20 = ComputeColorSaturation(aP1 + 2 * (j % 256) + j % 256, aP1, (int)&aP4); /*0x48ea85*/
+            v20 = ComputeColorSaturation((unsigned int)&aP1[2 * (j % 256) + j % 256], (int)aP1, (int)&aP4); /*0x48ea85*/
             v21 = *(unsigned char *)(v20 + 2); /*0x48ea8f*/
-            IDA_LOWORD(v29.Color_field_00) = *(unsigned short *)v20; /*0x48ea92*/
-            IDA_LOBYTE(v31) = v21; /*0x48ea97*/
-            IDA_BYTE2(v29.Color_field_00) = v21; /*0x48eaa4*/
-                        v30 = 2 * v31 * v21 / (*((unsigned int *)this + 364) - 1);
-            v22 = Color::ConvertToRGB(&v29, (int)&v28); /*0x48eac6*/
-            IDA_LOWORD(aP3) = *(unsigned short *)v22; /*0x48eace*/
-            IDA_BYTE2(aP3) = *(unsigned char *)(v22 + 2); /*0x48eadf*/
-            IDA_LOBYTE(v15->AbstractClass) = Palette::FindClosestColor((char *)a3, (int)&aP3); /*0x48eae8*/
-            v15 = (CampaignClass *)((char *)v15 + 1); /*0x48eaea*/
+            v29 = *(unsigned short *)v20; /*0x48ea92*/
+            LOBYTE(v32) = v21; /*0x48ea97*/
+            v30 = v21; /*0x48eaa4*/
+            v30 = 2 * v31 * v21 / (*((char *)this + 91) - 1); /*0x48eac2*/
+            v22 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)v28); /*0x48eac6*/
+            LOWORD(aP3) = *(unsigned short *)v22; /*0x48eace*/
+            BYTE2(aP3) = *(unsigned char *)(v22 + 2); /*0x48eadf*/
+            *v15++ = Palette::FindClosestColor(a3, (int)&aP3); /*0x48eae8*/
           }
-                    v23 = *((unsigned int *)this + 364) - 1;
-          ++v30; /*0x48eb06*/
+          v23 = *((char *)this + 91) - 1; /*0x48eb03*/
+          ++v31; /*0x48eb06*/
         }
-        while ( v30 <= v23 ); /*0x48eb0a*/
+        while ( v31 <= v23 ); /*0x48eb0a*/
       }
     }
   }
   else
   {
-    v24 = (CampaignClass *)RA2_OPNEW(*(unsigned int *)&this->q16C << 9); /*0x48eb1c*/
-        v25 = *((unsigned int *)this + 364);
-        *((unsigned int *)this + 368) = v24;
-        *((unsigned int *)this + 372) = v24 + ((v25 - 1) >> 1 << 9);
+    v24 = __2_YAPAXI_Z(*((char *)this + 91) << 9); /*0x48eb1c*/
+    v25 = *((char *)this + 91); /*0x48eb21*/
+    *((char *)this + 92) = v24; /*0x48eb2a*/
+    *((char *)this + 93) = v24 + ((v25 - 1) >> 1 << 9); /*0x48eb3a*/
     if ( !aP5 ) /*0x48eb46*/
-      DSurface::BlitStretch((int)v24, v25, aP1); /*0x48eb51*/
-        *((unsigned int *)this + 384) = LOWORD(MEMORY[0x87F7E8][34176]);
-        *((unsigned int *)this + 388) = HIWORD(MEMORY[0x87F7E8][34176]);
+      DSurface::BlitStretch(v24, v25, (int)aP1); /*0x48eb51*/
+    *((char *)this + 96) = LOWORD(MEMORY[0x87F7E8][34176]); /*0x48eb60*/
+    *((char *)this + 97) = HIWORD(MEMORY[0x87F7E8][34176]); /*0x48eb6d*/
   }
   if ( !aP5 ) /*0x48eb7a*/
-    ConvertClass::InitTables(); /*0x48eb7e*/
-  if ( dword_89ED08 < dword_89ED00 /*0x48ebb7*/
-    || (byte_89ED05 || !dword_89ED00)
-    && dword_89ED0C > 0
-    && (*(uint8_t (**)(int *, int, unsigned int))(dword_89ECF8 + 8))(
-         &dword_89ECF8,
-         dword_89ED0C + dword_89ED00,
+    ConvertClass::InitTables((int)this); /*0x48eb7e*/
+  if ( MEMORY[0x87F7E8][32072] < MEMORY[0x87F7E8][32070] /*0x48ebb7*/
+    || (BYTE1(MEMORY[0x87F7E8][32071]) || !MEMORY[0x87F7E8][32070])
+    && MEMORY[0x87F7E8][32073] > 0
+    && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][32068] + 8))(
+         &MEMORY[0x87F7E8][32068],
+         MEMORY[0x87F7E8][32073] + MEMORY[0x87F7E8][32070],
          0) )
   {
-    v26 = dword_89ED08++; /*0x48ebc4*/
-    *((unsigned int *)dword_89ECFC + v26) = this; /*0x48ebd3*/
+    v26 = MEMORY[0x87F7E8][32072]++; /*0x48ebc4*/
+    *(unsigned int *)(MEMORY[0x87F7E8][32069] + 4 * v26) = this; /*0x48ebd3*/
   }
   return this; /*0x48ebd8*/
+
 }
 } // namespace gamemd
 // 0x491430
 namespace gamemd {
 int ConvertClass::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-    return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
-                                                                                              + 4))(
+
+  return (*(int (**)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))( /*0x49145a*/
            this,
            a2,
            a3,
@@ -242,5 +245,6 @@ int ConvertClass::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
            a7,
            a8,
            0);
+
 }
 } // namespace gamemd

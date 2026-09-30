@@ -1060,17 +1060,18 @@ int sub_410CC0()
 namespace gamemd {
 int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
 {
+
   unsigned short *v8; // edi
-  int16_t *v9; // esi
+  __int16 *v9; // esi
   int v10; // eax
   int v11; // edx
   int v12; // eax
   int v13; // ecx
-  int16_t v14; // dx
+  __int16 v14; // dx
   int v16; // [esp+14h] [ebp+4h]
 
   v8 = (unsigned short *)(*(int (**)(int, int, int))(*(unsigned int *)a2 + 92))(a2, a3, a4); /*0x410de2*/
-  v9 = (int16_t *)(this->? + this->?); /*0x410de9*/
+  v9 = (__int16 *)(*((unsigned int *)this + 4) + *((unsigned int *)this + 6)); /*0x410de9*/
   v10 = (*(int (**)(int))(*(unsigned int *)a2 + 116))(a2); /*0x410deb*/
   v11 = a5; /*0x410df1*/
   v12 = v10 / 2 - a5; /*0x410df7*/
@@ -1086,8 +1087,8 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
         {
           v14 = *v9++; /*0x410e0f*/
           *v8++ = v14; /*0x410e15*/
-                    if ( (unsigned int)v9 >= *((unsigned int *)this + 28) )
-                        v9 = (__int16 *)((char *)v9 - *((unsigned int *)this + 32));
+          if ( (unsigned int)v9 >= *((unsigned int *)this + 7) ) /*0x410e20*/
+            v9 = (__int16 *)((char *)v9 - *((unsigned int *)this + 8)); /*0x410e22*/
           --v13; /*0x410e25*/
         }
         while ( v13 ); /*0x410e26*/
@@ -1099,6 +1100,7 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
     while ( v16 ); /*0x410e38*/
   }
   return (*(int (**)(int))(*(unsigned int *)a2 + 96))(a2); /*0x410e42*/
+
 }
 } // namespace gamemd
 
@@ -1175,6 +1177,7 @@ int sub_412600()
 namespace gamemd {
 int E4Recv_412610::sub_412610()
 {
+
   char *v1; // edi
   int v2; // esi
   char v3; // al
@@ -1195,6 +1198,7 @@ int E4Recv_412610::sub_412610()
       v2 = v4 + v3 - 48; /*0x41263b*/
   }
   return v2; /*0x412657*/
+
 }
 } // namespace gamemd
 
@@ -1907,10 +1911,12 @@ void sub_41D2C0()
 namespace gamemd {
 char E4Recv_41DD10::sub_41DD10()
 {
-    *((unsigned int *)this + 256) = MEMORY[0xA8ED84];
-    *((unsigned char *)this + 240) = 0;
-    *((unsigned char *)this + 244) = 0;
+
+  *((unsigned int *)this + 16) = MEMORY[0xA8ED84]; /*0x41dd15*/
+  *((unsigned char *)this + 60) = 0; /*0x41dd1a*/
+  *((unsigned char *)this + 61) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/
+
 }
 } // namespace gamemd
 
@@ -2055,8 +2061,10 @@ int sub_41E330()
 namespace gamemd {
 int E4Recv_41FD30::sub_41FD30(int a2)
 {
-    *((unsigned int *)this + 216) = a2;
+
+  *((unsigned int *)this + 54) = a2; /*0x41fd34*/
   return a2; /*0x41fd3a*/
+
 }
 } // namespace gamemd
 
@@ -2064,8 +2072,10 @@ int E4Recv_41FD30::sub_41FD30(int a2)
 namespace gamemd {
 int E4Recv_41FD40::sub_41FD40(int a2)
 {
-    *((unsigned int *)this + 220) = a2;
+
+  *((unsigned int *)this + 55) = a2; /*0x41fd44*/
   return a2; /*0x41fd4a*/
+
 }
 } // namespace gamemd
 
@@ -2073,8 +2083,10 @@ int E4Recv_41FD40::sub_41FD40(int a2)
 namespace gamemd {
 int E4Recv_41FD50::sub_41FD50(int a2)
 {
-    *((unsigned int *)this + 224) = a2;
+
+  *((unsigned int *)this + 56) = a2; /*0x41fd54*/
   return a2; /*0x41fd5a*/
+
 }
 } // namespace gamemd
 

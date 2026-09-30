@@ -65,17 +65,21 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
 // 0x74EEE0
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-// 0x410320
-  return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x74eef4*/
+
+  return AbstractClass::SaveLoad_Prefix((ObjectTypeClass *)aP0, (ObjectTypeClass *)a1, (ObjectTypeClass *)aP2); /*0x74eef4*/
+
 }
 // 0x74EF00
 int VeinholeMonsterClass::CheckStatus()
 {
-  return g_RulesClass_Instance->DropZoneAnim; /*0x74ef0b*/
+
+  return MEMORY[0x8871E0]->?; /*0x74ef0b*/
+
 }
 // 0x74F2D0
 int VeinholeMonsterClass::ddtor(int a1, unsigned int * a2)
 {
+
   if ( !a2 ) /*0x74f2d6*/
     return -2147467261; /*0x74f2d8*/
   *a2 = 1368576106; /*0x74f2e6*/
@@ -83,22 +87,29 @@ int VeinholeMonsterClass::ddtor(int a1, unsigned int * a2)
   a2[2] = 1610615737; /*0x74f2f7*/
   a2[3] = -318126072; /*0x74f300*/
   return 0; /*0x74f2dd*/
+
 }
 // 0x74F310
 int VeinholeMonsterClass::StubReturn63()
 {
+
   return 63; /*0x74f315*/
+
 }
 // 0x74F320
 int VeinholeMonsterClass::StubReturn264()
 {
+
   return 264; /*0x74f325*/
+
 }
 // 0x74F340
 VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(char a2)
 {
-  DestroyVeinholeMonster(); /*0x74f343*/
+
+  DestroyVeinholeMonster(Block); /*0x74f343*/
   if ( (a2 & 1) != 0 ) /*0x74f34d*/
-    RA2_OPDEL(); /*0x74f350*/
-  return (void **)this; /*0x74f35a*/
+    __3_YAXPAX_Z(Block); /*0x74f350*/
+  return (VeinholeMonsterClass *)Block; /*0x74f35a*/
+
 }

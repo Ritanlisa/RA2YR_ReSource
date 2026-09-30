@@ -15,110 +15,107 @@
 namespace gamemd {
 AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
 {
-  unsigned int v3;
-  unsigned int v4;
-  unsigned int v5;
-  unsigned int v6;
-  unsigned int v7;
-  unsigned int v8;
-  unsigned int v9;
-  unsigned int v10;
-  void *vtable0; // eax
-  unsigned int v13;
-  int abstractFlags; // ecx
 
-  INIClass::ResetSection((INIClass *)a2); /*0x5b376a*/
-    if ( *this == -1 )
-    v3 = g_Str__none_; /*0x5b3776*/
+  char *v3; // eax
+  char *v4; // eax
+  char *v5; // eax
+  char *v6; // eax
+  char *v7; // eax
+  char *v8; // eax
+  char *v9; // eax
+  char *v10; // eax
+  double Double_Overwrite; // st7
+  int v12; // eax
+  char *v13; // eax
+  double v14; // st7
+  int v15; // ecx
+
+  INIClass::ResetSection(a2); /*0x5b376a*/
+  if ( *this == -1 ) /*0x5b3774*/
+    v3 = MEMORY[0x817474]; /*0x5b3776*/
   else
-        v3 = off_816CAC[*this];
-  if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)v3) ) /*0x5b3787*/
+    v3 = off_816CAC[*this]; /*0x5b377d*/
+  if ( !INIClass::BinarySearchSection((int)a2, (unsigned __int8 *)v3) ) /*0x5b3787*/
     return 0; /*0x5b3906*/
-    if ( *this == -1 )
-    v4 = g_Str__none_; /*0x5b37a0*/
+  if ( *this == -1 ) /*0x5b379e*/
+    v4 = MEMORY[0x817474]; /*0x5b37a0*/
   else
-        v4 = off_816CAC[*this];
-    *((unsigned char *)this + 4) = INIClass::ReadBool_Overwrite(
-                      a2,
-                      (uint8_t *)v4,
-                      (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 8),
-                      (char)this->vtable2);
-    if ( *this == -1 )
-    v5 = g_Str__none_; /*0x5b37c9*/
+    v4 = off_816CAC[*this]; /*0x5b37a7*/
+  *((unsigned char *)this + 4) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
+                           (int)a2,
+                           (unsigned __int8 *)v4,
+                           (unsigned __int8 *)MEMORY[0x82C2B8],
+                           *((unsigned char *)this + 4));
+  if ( *this == -1 ) /*0x5b37c7*/
+    v5 = MEMORY[0x817474]; /*0x5b37c9*/
   else
-        v5 = off_816CAC[*this];
-    *((unsigned char *)this + 5) = INIClass::ReadBool_Overwrite(
-                     a2,
-                     (uint8_t *)v5,
-                     (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 6),
-                     IDA_BYTE1(this->vtable2));
-    if ( *this == -1 )
-    v6 = g_Str__none_; /*0x5b37f2*/
+    v5 = off_816CAC[*this]; /*0x5b37d0*/
+  *((unsigned char *)this + 5) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
+                           (int)a2,
+                           (unsigned __int8 *)v5,
+                           (unsigned __int8 *)MEMORY[0x82C2B0],
+                           *((unsigned char *)this + 5));
+  if ( *this == -1 ) /*0x5b37f0*/
+    v6 = MEMORY[0x817474]; /*0x5b37f2*/
   else
-        v6 = off_816CAC[*this];
-    *((unsigned char *)this + 6) = INIClass::ReadBool_Overwrite(
-                     a2,
-                     (uint8_t *)v6,
-                     (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 3),
-                     IDA_BYTE2(this->vtable2));
-    if ( *this == -1 )
-    v7 = g_Str__none_; /*0x5b381b*/
+    v6 = off_816CAC[*this]; /*0x5b37f9*/
+  *((unsigned char *)this + 6) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
+                           (int)a2,
+                           (unsigned __int8 *)v6,
+                           (unsigned __int8 *)MEMORY[0x82C2A4],
+                           *((unsigned char *)this + 6));
+  if ( *this == -1 ) /*0x5b3819*/
+    v7 = MEMORY[0x817474]; /*0x5b381b*/
   else
-        v7 = off_816CAC[*this];
-    *((unsigned char *)this + 7) = INIClass::ReadBool_Overwrite(
-                      a2,
-                      (uint8_t *)v7,
-                      (uint8_t *)stru_82BA00.?,
-                      IDA_HIBYTE(this->vtable2));
-    if ( *this == -1 )
-    v8 = g_Str__none_; /*0x5b3844*/
+    v7 = off_816CAC[*this]; /*0x5b3822*/
+  *((unsigned char *)this + 7) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
+                           (int)a2,
+                           (unsigned __int8 *)v7,
+                           (unsigned __int8 *)MEMORY[0x82C298],
+                           *((unsigned char *)this + 7));
+  if ( *this == -1 ) /*0x5b3842*/
+    v8 = MEMORY[0x817474]; /*0x5b3844*/
   else
-        v8 = off_816CAC[*this];
-    *((unsigned char *)this + 8) = INIClass::ReadBool_Overwrite(
-                      a2,
-                      (uint8_t *)v8,
-                      (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 30),
-                      (char)this->vtable3);
-    if ( *this == -1 )
-    v9 = g_Str__none_; /*0x5b386d*/
+    v8 = off_816CAC[*this]; /*0x5b384b*/
+  *((unsigned char *)this + 8) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
+                           (int)a2,
+                           (unsigned __int8 *)v8,
+                           (unsigned __int8 *)MEMORY[0x82C28C],
+                           *((unsigned char *)this + 8));
+  if ( *this == -1 ) /*0x5b386b*/
+    v9 = MEMORY[0x817474]; /*0x5b386d*/
   else
-        v9 = off_816CAC[*this];
-    *((unsigned char *)this + 9) = INIClass::ReadBool_Overwrite(
-                     a2,
-                     (uint8_t *)v9,
-                     (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 28),
-                     IDA_BYTE1(this->vtable3));
-    if ( *this == -1 )
-    v10 = g_Str__none_; /*0x5b3896*/
+    v9 = off_816CAC[*this]; /*0x5b3874*/
+  *((unsigned char *)this + 9) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
+                           (int)a2,
+                           (unsigned __int8 *)v9,
+                           (unsigned __int8 *)stru_82C284,
+                           *((unsigned char *)this + 9));
+  if ( *this == -1 ) /*0x5b3894*/
+    v10 = MEMORY[0x817474]; /*0x5b3896*/
   else
-        v10 = off_816CAC[*this];
-  INIClass::ReadDouble_Overwrite( /*0x5b38b4*/
-    (double *)a2,
-    (uint8_t *)v10,
-    (uint8_t *)g_INI_Key_Rate,
-    *(double *)&this->?);
-  vtable0 = (char *)(this->ObjectClass);
-  __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
-    *((double *)this + 2) = Double_Overwrite;
-  if ( vtable0 == (void *)-1 ) /*0x5b38c1*/
-    v13 = g_Str__none_; /*0x5b38c3*/
+    v10 = off_816CAC[*this]; /*0x5b389d*/
+  Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x5b38b4*/
+                       (int)a2,
+                       (unsigned __int8 *)v10,
+                       (unsigned __int8 *)MEMORY[0x8185A4],
+                       *((double *)this + 2));
+  v12 = *this; /*0x5b38b9*/
+  *((double *)this + 2) = Double_Overwrite; /*0x5b38bb*/
+  if ( v12 == -1 ) /*0x5b38c1*/
+    v13 = MEMORY[0x817474]; /*0x5b38c3*/
   else
-    v13 = off_816CAC[(unsigned int)vtable0]; /*0x5b38ca*/
-  INIClass::ReadDouble_Overwrite((double *)a2, (uint8_t *)v13, (uint8_t *)&(unsigned int *)((char *)&stru_82BA00 + 26), 0.0); /*0x5b38dd*/
-  __asm { fst qword ptr [esi+18h] } /*0x5b38e2*/
-    *((double *)this + 3) = v14;
-  __asm /*0x5b38e5*/
+    v13 = off_816CAC[v12]; /*0x5b38ca*/
+  v14 = INIClass::ReadDouble_Overwrite((int)a2, (unsigned __int8 *)v13, (unsigned __int8 *)aAarate, 0.0); /*0x5b38dd*/
+  *((double *)this + 3) = v14; /*0x5b38e2*/
+  if ( v14 == 0.0 ) /*0x5b38f0*/
   {
-    fcomp ds:dbl_7E2800
-    fnstsw ax
+    v15 = *((char *)this + 5); /*0x5b38f5*/
+    *((char *)this + 6) = *((char *)this + 4); /*0x5b38f8*/
+    *((char *)this + 7) = v15; /*0x5b38fb*/
   }
-  if ( (_AX & 0x4000) != 0 ) /*0x5b38f0*/
-  {
-    abstractFlags = (gamemd::AbstractClass **)(this->?);
-        *((unsigned int *)this + 24) = *((unsigned int *)this + 16);
-        *((unsigned int *)this + 28) = v15;
-  }
-  return (gamemd::AbstractClass **)(1);
+  return 1; /*0x5b38fe*/
+
 }
 } // namespace ra2
 
@@ -126,10 +123,12 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
 namespace gamemd {
 int MissionClass::vt_entry_1FC()
 {
+
   int result; // eax
 
-  IDA_LOBYTE(result) = 0; /*0x41bf30*/
+  LOBYTE(result) = 0; /*0x41bf30*/
   return result; /*0x41bf32*/
+
 }
 } // namespace gamemd
 
@@ -137,7 +136,9 @@ int MissionClass::vt_entry_1FC()
 namespace gamemd {
 int MissionClass::Return450A()
 {
+
   return 450; /*0x5b2e15*/
+
 }
 } // namespace gamemd
 
@@ -145,7 +146,9 @@ int MissionClass::Return450A()
 namespace gamemd {
 int MissionClass::Return450B()
 {
+
   return 450; /*0x5b2e25*/
+
 }
 } // namespace gamemd
 
@@ -153,7 +156,9 @@ int MissionClass::Return450B()
 namespace gamemd {
 int MissionClass::Return450C()
 {
+
   return 450; /*0x5b2e35*/
+
 }
 } // namespace gamemd
 
@@ -161,7 +166,9 @@ int MissionClass::Return450C()
 namespace gamemd {
 int MissionClass::Return450D()
 {
+
   return 450; /*0x5b2ed5*/
+
 }
 } // namespace gamemd
 
@@ -169,7 +176,9 @@ int MissionClass::Return450D()
 namespace gamemd {
 int MissionClass::Return450E()
 {
+
   return 450; /*0x5b2ee5*/
+
 }
 } // namespace gamemd
 
@@ -177,7 +186,9 @@ int MissionClass::Return450E()
 namespace gamemd {
 int MissionClass::Return450G()
 {
+
   return 450; /*0x5b2f15*/
+
 }
 } // namespace gamemd
 
@@ -185,7 +196,9 @@ int MissionClass::Return450G()
 namespace gamemd {
 int MissionClass::Return450H()
 {
+
   return 450; /*0x5b2f25*/
+
 }
 } // namespace gamemd
 
@@ -193,7 +206,9 @@ int MissionClass::Return450H()
 namespace gamemd {
 int MissionClass::Return450I()
 {
+
   return 450; /*0x5b2f45*/
+
 }
 } // namespace gamemd
 
@@ -201,7 +216,9 @@ int MissionClass::Return450I()
 namespace gamemd {
 int MissionClass::Return450J()
 {
+
   return 450; /*0x5b2f55*/
+
 }
 } // namespace gamemd
 
@@ -209,7 +226,9 @@ int MissionClass::Return450J()
 namespace gamemd {
 int MissionClass::Return450K()
 {
+
   return 450; /*0x5b2f85*/
+
 }
 } // namespace gamemd
 
@@ -217,7 +236,9 @@ int MissionClass::Return450K()
 namespace gamemd {
 int MissionClass::Return450L()
 {
+
   return 450; /*0x5b2f95*/
+
 }
 } // namespace gamemd
 
@@ -225,7 +246,9 @@ int MissionClass::Return450L()
 namespace gamemd {
 int MissionClass::Return450F()
 {
+
   return 450; /*0x5b2fa5*/
+
 }
 } // namespace gamemd
 
@@ -233,7 +256,9 @@ int MissionClass::Return450F()
 namespace gamemd {
 int MissionClass::Return450M()
 {
+
   return 450; /*0x5b2fb5*/
+
 }
 } // namespace gamemd
 
@@ -241,7 +266,9 @@ int MissionClass::Return450M()
 namespace gamemd {
 int MissionClass::Return450N()
 {
+
   return 450; /*0x5b2fc5*/
+
 }
 } // namespace gamemd
 
@@ -249,6 +276,8 @@ int MissionClass::Return450N()
 namespace gamemd {
 int MissionClass::HasValidTarget()
 {
-    return *((unsigned int *)this + 44) != -1;
+
+  return *((unsigned int *)this + 44) != -1; /*0x5b3a1e*/
+
 }
 } // namespace gamemd

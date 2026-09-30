@@ -11,6 +11,7 @@
 namespace gamemd {
 int BuildingAnim::GetType()
 {
+
   int v0; // eax
 
   v0 = FindBuildingAnimByName(off_822724, 1); /*0x4e12db*/
@@ -18,5 +19,6 @@ int BuildingAnim::GetType()
     return *(unsigned int *)v0; /*0x4e12e4*/
   else
     return 0; /*0x4e12e7*/
+
 }
 } // namespace gamemd

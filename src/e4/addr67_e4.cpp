@@ -305,14 +305,16 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
 // 0x674500
 int RulesClass::sub_674500()
 {
+
   int result; // eax
   RulesClass *v2; // [esp+Ch] [ebp+4h]
 
-  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674515*/
-  INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674527*/
-  result = INIClass::ReadDifficultyModifiers((INIClass *)v2); /*0x674539*/
-  IDA_LOBYTE(result) = 1; /*0x67453f*/
+  INIClass::ReadDifficultyModifiers(v2); /*0x674515*/
+  INIClass::ReadDifficultyModifiers(v2); /*0x674527*/
+  result = INIClass::ReadDifficultyModifiers(v2); /*0x674539*/
+  LOBYTE(result) = 1; /*0x67453f*/
   return result; /*0x67453e*/
+
 }
 // 0x679EC0
 namespace gamemd {

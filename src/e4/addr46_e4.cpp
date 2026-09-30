@@ -32,7 +32,9 @@
 namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
-  this->m_0 = (int)&CampaignScoreClass_vftable; /*0x46d350*/
+
+  *this = &vt_CampaignScoreClass; /*0x46d350*/
+
 }
 } // namespace gamemd
 
@@ -479,7 +481,9 @@ void sub_46DE20(HWND hDlg, int nCmdShow)
 namespace gamemd {
 void ObjectClass::nullsub_7()
 {
+
   ; /*0x465cb0*/
+
 }
 } // namespace gamemd
 
@@ -487,7 +491,9 @@ void ObjectClass::nullsub_7()
 namespace gamemd {
 Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 {
-  return (gamemd::Iostream_init *)(this);
+
+  return this; /*0x465d82*/
+
 }
 } // namespace gamemd
 
@@ -1100,7 +1106,9 @@ void sub_46D480(void * a1, void * a2)
 namespace gamemd {
 char E4Recv_46D490::sub_46D490()
 {
-  return *((unsigned char *)&g_GameModeOptionState + (unsigned int)this); /*0x46d496*/
+
+  return *((unsigned char *)&MEMORY[0x89E000] + (unsigned int)this); /*0x46d496*/
+
 }
 } // namespace gamemd
 

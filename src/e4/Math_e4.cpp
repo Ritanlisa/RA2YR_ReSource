@@ -32,8 +32,9 @@ int Math_InitDegToRad(void * a1, void * a2)
 namespace gamemd {
 void Math::Hypotenuse2D()
 {
-// 0x4cac40
-  return Math::Sqrt(*(double *)this * *(double *)this + (unsigned int)(this->q008)* this->q008); /*0x41c36e*/
+
+  Math::Sqrt(*this * *this + *((unsigned int *)this + 1) * *((unsigned int *)this + 1)); /*0x41c369*/
+
 }
 }
 // 0x4CAC40
@@ -112,14 +113,14 @@ void Math_ArcTan2(void * a1)
 namespace gamemd {
 int Math::Sin(double a1)
 {
-  int v1; // eax
-  int result; // eax
 
-  IDA_LOWORD(v1) = Math::RoundToInt(a1 * 651.8986469044033); /*0x4cad5a*/
-  result = v1 & 0x80000FFF; /*0x4cad5f*/
-  if ( result < 0 )
-    return (((unsigned short)result - 1) | 0xFFFFF000) + 1 + ((int)((((unsigned short)result - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
-  return result; /*0x4cad7b*/
+  signed int v1; // eax
+
+  v1 = Math::RoundToInt(a1 * 651.8986469044033) & 0x80000FFF; /*0x4cad5f*/
+  if ( v1 < 0 )
+    v1 = (((unsigned short)v1 - 1) | 0xFFFFF000) + 1 + ((int)((((unsigned short)v1 - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
+  return MEMORY[0x85D0A4][v1]; /*0x4cad7b*/
+
 }
 }
 // 0x4CAE30
@@ -178,6 +179,8 @@ void Math_CalcAngle(void * a1, void * a2)
 namespace gamemd {
 void Math::BuildRotationMatrix(int a1, float a2, void* a3, void* a4, void* a5, void* a6)
 {
+
+  double v3; // kr00_8
   double v5; // st7
   double v7; // st6
   double v8; // st6
@@ -189,53 +192,58 @@ void Math::BuildRotationMatrix(int a1, float a2, void* a3, void* a4, void* a5, v
   double v14; // st7
   float v16; // [esp+10h] [ebp+8h]
 
-  a3 = (void *)(a3);
-  v16 = (void *)(Math::ArcTan2(a3));
-  v5 = (void *)(Math::SinCos(a3));
+  v3 = a3; /*0x5ae762*/
+  v16 = Math::ArcTan2(a3); /*0x5ae76f*/
+  v5 = Math::SinCos(v3); /*0x5ae775*/
   v7 = *a2 * *a2; /*0x5ae787*/
-  *(unsigned int *)this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
+  *a1 = (1.0 - v7) * v16 + v7; /*0x5ae797*/
   v8 = 1.0 - v16; /*0x5ae7a1*/
-    *((unsigned int *)this + 4) = *a2 * a2[1] * v8 - v5 * a2[2];
+  *(a1 + 1) = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
   v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/
   v10 = v5 * a2[1]; /*0x5ae7bf*/
-    *((unsigned int *)this + 12) = 0.0;
-    *((unsigned int *)this + 8) = v9 + v10;
-    *((unsigned int *)this + 16) = *a2 * a2[1] * v8 + v5 * a2[2];
+  *(a1 + 3) = 0.0; /*0x5ae7c2*/
+  *(a1 + 2) = v9 + v10; /*0x5ae7c7*/
+  *(a1 + 4) = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
   v11 = a2[1] * a2[1]; /*0x5ae7e0*/
-    *((unsigned int *)this + 20) = (1.0 - v11) * v16 + v11;
+  *(a1 + 5) = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
   v12 = a2[2] * a2[1] * v8; /*0x5ae7fb*/
   v13 = v5 * *a2; /*0x5ae7ff*/
-    *((unsigned int *)this + 28) = 0.0;
-    *((unsigned int *)this + 24) = v12 - v13;
-    *((unsigned int *)this + 32) = a2[2] * *a2 * v8 - v5 * a2[1];
-    *((unsigned int *)this + 36) = a2[2] * a2[1] * v8 + v5 * *a2;
+  *(a1 + 7) = 0.0; /*0x5ae801*/
+  *(a1 + 6) = v12 - v13; /*0x5ae806*/
+  *(a1 + 8) = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
+  *(a1 + 9) = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
   v14 = a2[2] * a2[2]; /*0x5ae835*/
-    *((unsigned int *)this + 44) = 0.0;
-    *((unsigned int *)this + 40) = (1.0 - v14) * v16 + v14;
-  return this; /*0x5ae851*/
+  *(a1 + 11) = 0.0; /*0x5ae83f*/
+  *(a1 + 10) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
+  return a1; /*0x5ae851*/
+
 }
 }
 // 0x5F6560
 namespace gamemd {
 int Math::DistSq2D(TechnoClass * aP1)
 {
+
   int *v2; // edx
   int v3; // eax
   int v4; // ecx
   unsigned char v6[8]; // [esp+4h] [ebp-Ch] BYREF
   int v7; // [esp+Ch] [ebp-4h]
 
-    v2 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this + 72))(this, v6);
+  v2 = (int *)(*(int (**)(void *, unsigned char *))(*(unsigned int *)this + 72))(this, v6); /*0x5f656e*/
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/
-  return (v3 - *aP1) * (v3 - *aP1) + (v4 - aP1[1]) * (v4 - aP1[1]); /*0x5f658b*/
+  return (v3 - *(unsigned int *)aP1->__pad_0) * (v3 - *(unsigned int *)aP1->__pad_0) /*0x5f658b*/
+       + (v4 - *(unsigned int *)&aP1->__pad_0[4]) * (v4 - *(unsigned int *)&aP1->__pad_0[4]);
+
 }
 }
 // 0x646590
 namespace gamemd {
 unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, float a4)
 {
+
   double v6; // st7
   double v7; // st6
   double v8; // st7
@@ -276,10 +284,10 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
     v15 = 4; /*0x6466e3*/
     do /*0x6466fd*/
     {
-      v16 = *(float *)((char *)(unsigned int)(v14)+ (char *)a3 - (char *)a2) * v13; /*0x6466eb*/
+      v16 = *(float *)((char *)v14 + (char *)a3 - (char *)a2) * v13; /*0x6466eb*/
       v17 = *v14++ * v25; /*0x6466ef*/
       --v15; /*0x6466f6*/
-      *(float *)((char *)(unsigned int)(v14)+ (char *)&v27 - (char *)a2 - 4) = v16 + v17; /*0x6466f9*/
+      *(float *)((char *)v14 + (char *)&v27 - (char *)a2 - 4) = v16 + v17; /*0x6466f9*/
     }
     while ( v15 ); /*0x6466fd*/
   }
@@ -301,10 +309,10 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
     v10 = 4; /*0x646689*/
     do /*0x6466a3*/
     {
-      v11 = *(float *)((char *)(unsigned int)(v9)+ (char *)a3 - (char *)a2) * v8; /*0x646691*/
+      v11 = *(float *)((char *)v9 + (char *)a3 - (char *)a2) * v8; /*0x646691*/
       v12 = *v9++ * v24; /*0x646695*/
       --v10; /*0x64669c*/
-      *(float *)((char *)(unsigned int)(v9)+ (char *)&v27 - (char *)a2 - 4) = v11 + v12; /*0x64669f*/
+      *(float *)((char *)v9 + (char *)&v27 - (char *)a2 - 4) = v11 + v12; /*0x64669f*/
     }
     while ( v10 ); /*0x6466a3*/
   }
@@ -316,6 +324,7 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
   a1[2] = v19; /*0x64671a*/
   a1[3] = v20; /*0x64671d*/
   return a1; /*0x646722*/
+
 }
 }
 // 0x7C5F00
@@ -335,7 +344,9 @@ void Math_RoundToInt(void * a1)
 namespace gamemd {
 void Math::InitArcTan()
 {
-  dbl_89E230 = Math::ArcTan((double)dword_89E278 * 0.00390625); /*0x473667*/
+
+  MEMORY[0x89E230] = Math::ArcTan((double)MEMORY[0x89E278] * 0.00390625); /*0x473667*/
+
 }
 } // namespace gamemd
 
@@ -343,10 +354,9 @@ void Math::InitArcTan()
 namespace gamemd {
 double Math::ArcTan2_Table(double a1)
 {
-  int v1; // eax
 
-  IDA_LOWORD(v1) = Math::RoundToInt((a1 + 1.0) * -2048.0); /*0x4cadc0*/
-  return 4 * v1; /*0x4cadd7*/
+  return 1.570796326794897 - *((float *)&MEMORY[0x859094] - Math::RoundToInt((a1 + 1.0) * -2048.0)); /*0x4cadd7*/
+
 }
 } // namespace gamemd
 
@@ -354,22 +364,21 @@ double Math::ArcTan2_Table(double a1)
 namespace gamemd {
 double Math::ArcTan(double a1)
 {
-  int v2; // eax
-  int16_t v3; // fps
-  bool v4; // c0
-  char v5; // c2
-  bool v6; // c3
-  int result; // eax
-  float v8; // [esp+4h] [ebp+4h]
 
-  v8 = a1; /*0x4cade4*/
-  IDA_LOWORD(v2) = Math::RoundToInt(a1 / flt_8650B8); /*0x4cadee*/
-  result = abs32(v2); /*0x4cadf6*/
-  v4 = v8 < 0.0; /*0x4cae12*/
-  v5 = 0; /*0x4cae12*/
-  v6 = v8 == 0.0; /*0x4cae12*/
-  IDA_LOWORD(result) = v3; /*0x4cae18*/
+  int v2; // eax
+  double result; // st7
+  float v4; // [esp+4h] [ebp+4h]
+
+  v4 = a1; /*0x4cade4*/
+  v2 = abs32(Math::RoundToInt(a1 / flt_8650B8)); /*0x4cadf6*/
+  if ( v2 >= 4097 ) /*0x4cadfd*/
+    result = 1.5707964; /*0x4cae08*/
+  else
+    result = MEMORY[0x8610B4][v2]; /*0x4cadff*/
+  if ( v4 < 0.0 ) /*0x4cae1d*/
+    return -result; /*0x4cae1f*/
   return result; /*0x4cae21*/
+
 }
 } // namespace gamemd
 
@@ -377,9 +386,11 @@ double Math::ArcTan(double a1)
 namespace gamemd {
 IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 {
-  IDA_LOWORD(aP2) = *(unsigned short *)this->__pad_0 - *aP2; /*0x5b295a*/
-  *aP1 = aP2; /*0x5b2967*/
-  return aP1; /*0x5b2969*/
+
+  LOWORD(aP2) = *this - LOWORD(aP2->field_0); /*0x5b295a*/
+  *(unsigned int *)aP1->vtable0 = aP2; /*0x5b2967*/
+  return (IUnknown *)aP1; /*0x5b2969*/
+
 }
 } // namespace gamemd
 
@@ -387,7 +398,9 @@ IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 namespace gamemd {
 bool Math::Abs16Cmp(IUnknown * aP1, IUnknown * aP2)
 {
-  return abs16(*aP2) >= (int)abs16(*(unsigned short *)this->__pad_0 - *aP1); /*0x5b29b3*/
+
+  return abs16(aP2->field_0) >= (int)abs16(*this - LOWORD(aP1->field_0)); /*0x5b29b3*/
+
 }
 } // namespace gamemd
 

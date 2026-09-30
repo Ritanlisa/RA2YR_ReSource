@@ -83,36 +83,48 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
 // 0x4886B0
 int CheckListClass::COMStub()
 {
-    return *((unsigned int *)this + 68);
+
+  return *((unsigned int *)this + 17); /*0x4886b3*/
+
 }
 // 0x557E10
 int CheckListClass::ddtor(int a2)
 {
-    if ( *((unsigned char *)this + 336) )
+
+  if ( *((unsigned char *)this + 84) ) /*0x557e18*/
   {
-        (*(void (**)(int, int))(*((unsigned int *)this + 1120) + 12))((char *)this + 1120, a2);
-        (*(void (**)(int, int))(*((unsigned int *)this + 736) + 12))((char *)this + 736, a2);
-        (*(void (**)(int, int))(*((unsigned int *)this + 352) + 12))((char *)this + 352, a2);
+    (*(void (**)(int, int))(*((unsigned int *)this + 70) + 12))((char *)this + 280, a2); /*0x557e2c*/
+    (*(void (**)(int, int))(*((unsigned int *)this + 46) + 12))((char *)this + 184, a2); /*0x557e3c*/
+    (*(void (**)(int, int))(*((unsigned int *)this + 22) + 12))((char *)this + 88, a2); /*0x557e46*/
   }
-  return LinkedList::InsertAfter(a2); /*0x557e51*/
+  return LinkedList::InsertAfter((unsigned int *)this, a2); /*0x557e51*/
+
 }
 // 0x48E650
 void CheckListClass::StubReturnFalse(int a1, int a2, int a3)
 {
+
   ; /*0x48e650*/
+
 }
 // 0x4AEBA0
 int CheckListClass::COMStub_Return0()
 {
+
   return 0; /*0x4aeba2*/
+
 }
 // 0x4E1510
 void CheckListClass::StubReturnVoid()
 {
+
   ; /*0x4e1510*/
+
 }
 // 0x4E1520
 void CheckListClass::StubReturn()
 {
+
   ; /*0x4e1520*/
+
 }

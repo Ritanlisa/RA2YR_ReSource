@@ -33411,7 +33411,7 @@ void ZoneConnectionVector::Destruct()
 // 0x5175D0 numeric-name legalized
 // 0x55CBF0 numeric-name legalized
 // 0x543780 constructor placeholder
-IsometricTileClass::IsometricTileClass() {}
+IsometricTileClass::IsometricTileClass(IsometricTileClass * this, IsometricTileClass * aP1, IsometricTileClass * aP2) {}
 // 0x4A7A30 constructor placeholder
 DiskLaserClass::DiskLaserClass() {}
 // 0x43A350 constructor placeholder

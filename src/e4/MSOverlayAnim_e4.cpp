@@ -10,26 +10,30 @@
 namespace gamemd {
 void MSOverlayAnim::StubReturnFalse(int a1)
 {
+
   ; /*0x5ceb50*/
+
 }
 } // namespace gamemd
 // 0x5CEB80
 namespace gamemd {
 MSShapeAnim * MSOverlayAnim::QueryInterface(char a2)
 {
+
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)this->u32_1C));
-  *(unsigned int *)this->__pad_0 = (void*)&MSShapeAnim_vftable; /*0x5ceb86*/
-    if ( v3 && *((unsigned char *)Block + 60) )
+  v3 = (void *)*(Block + 7); /*0x5ceb83*/
+  *Block = &vt_MSShapeAnim; /*0x5ceb86*/
+  if ( v3 && *((unsigned char *)Block + 60) ) /*0x5ceb90*/
   {
-    RA2_OPDEL(v3); /*0x5ceb98*/
-        *(Block + 7) = 0;
-        *((unsigned char *)Block + 60) = 0;
+    __3_YAXPAX_Z(v3); /*0x5ceb98*/
+    *(Block + 7) = 0; /*0x5ceba0*/
+    *((unsigned char *)Block + 60) = 0; /*0x5ceba7*/
   }
-  *(unsigned int *)this->__pad_0 = (void*)&MSAnim_vftable; /*0x5cebaf*/
+  *Block = &vt_MSAnim; /*0x5cebaf*/
   if ( (a2 & 1) != 0 ) /*0x5cebb7*/
-    RA2_OPDEL(); /*0x5cebba*/
-  return this; /*0x5cebc4*/
+    __3_YAXPAX_Z(Block); /*0x5cebba*/
+  return (MSShapeAnim *)Block; /*0x5cebc4*/
+
 }
 } // namespace gamemd

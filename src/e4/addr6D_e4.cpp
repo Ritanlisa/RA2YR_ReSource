@@ -193,25 +193,26 @@ int sub_6D0FB0(int a1, int a2, int a3)
 namespace gamemd {
 char E4Recv_6D1570::sub_6D1570()
 {
+
   char result; // al
-  int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
+  unsigned int v2[6]; // [esp+4h] [ebp-1Ch] BYREF
   char v3; // [esp+1Ch] [ebp-4h]
 
-    result = (*(int (**)(void *, unsigned int *))(*(unsigned int *)this + 48))(this, MEMORY[0xB0CC40]);
-  if ( &stru_B0CC40 ) /*0x6d1584*/
+  result = (*(int (**)(void *, unsigned int *))(*(unsigned int *)this + 48))(this, MEMORY[0xB0CC40]); /*0x6d157a*/
+  if ( MEMORY[0xB0CC40] ) /*0x6d1584*/
   {
-    v2[2] = stru_B0CC40.Height; /*0x6d1597*/
-    v2[1] = stru_B0CC40.Width; /*0x6d15a1*/
-    v2[4] = stru_B0CC40.ID; /*0x6d15ab*/
+    v2[2] = MEMORY[0xB0CC50]; /*0x6d1597*/
+    v2[1] = MEMORY[0xB0CC4C]; /*0x6d15a1*/
+    v2[4] = MEMORY[0xB0CC58]; /*0x6d15ab*/
     v3 = 0; /*0x6d15b6*/
-    v2[0] = dword_B0CC64; /*0x6d15bb*/
-    v2[5] = (int)g_Str_Tip_ThumbClosed; /*0x6d15bf*/
-    v2[3] = *(unsigned int *)&stru_B0CC40.Visible; /*0x6d15c7*/
-    HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], dword_B0CC64); /*0x6d15cb*/
-// 0x724580
-    return CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)v2); /*0x6d15db*/
+    v2[0] = MEMORY[0xB0CC64]; /*0x6d15bb*/
+    v2[5] = MEMORY[0x842838]; /*0x6d15bf*/
+    v2[3] = MEMORY[0xB0CC54]; /*0x6d15c7*/
+    HashTable::Remove((int *)MEMORY[0x887368], MEMORY[0xB0CC64]); /*0x6d15cb*/
+    return CommandClass::AddAction(MEMORY[0x887368], (int)v2); /*0x6d15db*/
   }
   return result; /*0x6d15e0*/
+
 }
 } // namespace gamemd
 
@@ -459,12 +460,14 @@ void sub_6D1BF0()
 namespace gamemd {
 void E4Recv_6D1E80::sub_6D1E80()
 {
-  *(unsigned int *)this->__pad_0 = (void*)&Tactical_vftable; /*0x6d1e80*/
-  *(unsigned int *)&this-((unsigned int *)(>Tactical_field_0x2))[2] = (void*)&Tactical_vftable; /*0x6d1e86*/
-  this-((unsigned int *)(>Tactical_field_0x8))[0] = (int)&Tactical_vftable; /*0x6d1e8d*/
-  this-((unsigned int *)(>Tactical_field_0xC))[0] = (int)&Tactical_vftable; /*0x6d1e94*/
-  g_TacticalClass_Instance = 0; /*0x6d1e9b*/
-    AbstractClass::DTOR(this);
+
+  *this = &Tactical::`vftable'; /*0x6d1e80*/
+  *((unsigned int *)this + 1) = &Tactical::`vftable'; /*0x6d1e86*/
+  *((unsigned int *)this + 2) = &Tactical::`vftable'; /*0x6d1e8d*/
+  *((unsigned int *)this + 3) = &vt_Tactical; /*0x6d1e94*/
+  MEMORY[0x887324] = 0; /*0x6d1e9b*/
+  AbstractClass::DTOR(this); /*0x6d1ea5*/
+
 }
 } // namespace gamemd
 
@@ -491,8 +494,10 @@ void nullsub_238(int a1, int a2)
 namespace gamemd {
 void E4Recv_6D4E00::sub_6D4E00()
 {
-  this-((unsigned int *)(>location))[2] = -1; /*0x6d4e00*/
-    *((unsigned short *)this + 144) = 0;
+
+  *((unsigned int *)this + 41) = -1; /*0x6d4e00*/
+  *((unsigned short *)this + 18) = 0; /*0x6d4e0a*/
+
 }
 } // namespace gamemd
 

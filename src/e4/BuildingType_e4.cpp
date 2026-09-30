@@ -26,34 +26,36 @@
 namespace gamemd {
 int BuildingType::FindDefault(void* a1)
 {
+
   int result; // eax
 
   result = 0; /*0x4e3560*/
-  if ( this == (BuildingType *)-2 ) /*0x4e3565*/
-    return HashTable::Find(&g_DialogHashTable, off_844AE8, 0); /*0x4e3573*/
-  if ( !this ) /*0x4e357b*/
-    return HashTable::Find(&g_DialogHashTable, off_844AF0, 0); /*0x4e358a*/
-  if ( this == (BuildingType *)1 ) /*0x4e3593*/
-    return HashTable::Find(&g_DialogHashTable, off_844AF4, 0); /*0x4e35a3*/
-  if ( this == (BuildingType *)2 ) /*0x4e35ac*/
-    return HashTable::Find(&g_DialogHashTable, off_844AF8, 0); /*0x4e35bb*/
-  if ( this == (BuildingType *)3 ) /*0x4e35c4*/
-    return HashTable::Find(&g_DialogHashTable, off_844AFC, 0); /*0x4e35d4*/
-  if ( this == (BuildingType *)4 ) /*0x4e35dd*/
-    return HashTable::Find(&g_DialogHashTable, off_844B00, 0); /*0x4e35ed*/
-  if ( this == (BuildingType *)5 ) /*0x4e35f6*/
-    return HashTable::Find(&g_DialogHashTable, off_844B04, 0); /*0x4e3605*/
-  if ( this == (BuildingType *)6 ) /*0x4e360e*/
-    return HashTable::Find(&g_DialogHashTable, off_844B08, 0); /*0x4e361e*/
-  if ( this == (BuildingType *)7 ) /*0x4e3627*/
-    return HashTable::Find(&g_DialogHashTable, off_844B0C, 0); /*0x4e3637*/
-  if ( this == (BuildingType *)8 ) /*0x4e3640*/
-    return HashTable::Find(&g_DialogHashTable, off_844B10, 0); /*0x4e364f*/
-  if ( this == (BuildingType *)-3 ) /*0x4e3658*/
-    return HashTable::Find(&g_DialogHashTable, off_844AEC, 0); /*0x4e3668*/
-  if ( this == (BuildingType *)9 ) /*0x4e3671*/
-    return HashTable::Find(&g_DialogHashTable, off_844B14, 0); /*0x4e3681*/
+  if ( a1 == (void *)-2 ) /*0x4e3565*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60716], 0); /*0x4e3573*/
+  if ( !a1 ) /*0x4e357b*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60724], 0); /*0x4e358a*/
+  if ( a1 == (void *)1 ) /*0x4e3593*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60728], 0); /*0x4e35a3*/
+  if ( a1 == (void *)2 ) /*0x4e35ac*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60732], 0); /*0x4e35bb*/
+  if ( a1 == (void *)3 ) /*0x4e35c4*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60736], 0); /*0x4e35d4*/
+  if ( a1 == (void *)4 ) /*0x4e35dd*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60740], 0); /*0x4e35ed*/
+  if ( a1 == (void *)5 ) /*0x4e35f6*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60744], 0); /*0x4e3605*/
+  if ( a1 == (void *)6 ) /*0x4e360e*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60748], 0); /*0x4e361e*/
+  if ( a1 == (void *)7 ) /*0x4e3627*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60752], 0); /*0x4e3637*/
+  if ( a1 == (void *)8 ) /*0x4e3640*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60756], 0); /*0x4e364f*/
+  if ( a1 == (void *)-3 ) /*0x4e3658*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60720], 0); /*0x4e3668*/
+  if ( a1 == (void *)9 ) /*0x4e3671*/
+    return HashTable::Find(&g_MatrixTransformState + 5774, *(const char **)&stru_830620.__pad_579C[60760], 0); /*0x4e3681*/
   return result; /*0x4e3578*/
+
 }
 } // namespace gamemd
 
@@ -61,45 +63,47 @@ int BuildingType::FindDefault(void* a1)
 namespace gamemd {
 int BuildingType::FindOwnerHouse(void* a1)
 {
+
   int v1; // eax
 
-  if ( this == (BuildingType *)4475 ) /*0x510ed6*/
+  if ( a1 == (void *)4475 ) /*0x510ed6*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 0); /*0x510eda*/
+    v1 = BuildingType::Init(0); /*0x510eda*/
   }
-  else if ( this == (BuildingType *)4476 ) /*0x510ee2*/
+  else if ( a1 == (void *)4476 ) /*0x510ee2*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 1u); /*0x510ee6*/
+    v1 = BuildingType::Init(1); /*0x510ee6*/
   }
-  else if ( this == (BuildingType *)4477 ) /*0x510eee*/
+  else if ( a1 == (void *)4477 ) /*0x510eee*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 2u); /*0x510ef2*/
+    v1 = BuildingType::Init(2); /*0x510ef2*/
   }
-  else if ( this == (BuildingType *)4478 ) /*0x510efa*/
+  else if ( a1 == (void *)4478 ) /*0x510efa*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 3u); /*0x510efe*/
+    v1 = BuildingType::Init(3); /*0x510efe*/
   }
-  else if ( this == (BuildingType *)4479 ) /*0x510f06*/
+  else if ( a1 == (void *)4479 ) /*0x510f06*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 4u); /*0x510f0a*/
+    v1 = BuildingType::Init(4); /*0x510f0a*/
   }
-  else if ( this == (BuildingType *)4480 ) /*0x510f12*/
+  else if ( a1 == (void *)4480 ) /*0x510f12*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 5u); /*0x510f16*/
+    v1 = BuildingType::Init(5); /*0x510f16*/
   }
-  else if ( this == (BuildingType *)4481 ) /*0x510f1e*/
+  else if ( a1 == (void *)4481 ) /*0x510f1e*/
   {
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 6u); /*0x510f22*/
+    v1 = BuildingType::Init(6); /*0x510f22*/
   }
   else
   {
-    if ( this != (BuildingType *)4482 ) /*0x510f2a*/
+    if ( a1 != (void *)4482 ) /*0x510f2a*/
       return 0; /*0x510f2a*/
-    v1 = BuildingType::Init((BuildingType *)dword_A8B230, 7u); /*0x510f34*/
+    v1 = BuildingType::Init(7); /*0x510f34*/
   }
-  if ( v1 >= 0 && v1 < dword_A80238 ) /*0x510f43*/
-    return *(&dword_A8022C->vtable0 + v1); /*0x510f4e*/
+  if ( v1 >= 0 && v1 < HouseClass_Count ) /*0x510f43*/
+    return *((unsigned int *)HouseClass_Array + v1); /*0x510f4e*/
   return 0; /*0x510f4e*/
+
 }
 } // namespace gamemd
 
@@ -107,17 +111,16 @@ int BuildingType::FindOwnerHouse(void* a1)
 namespace gamemd {
 int BuildingType::IsSpecialType(void* a1)
 {
-  int result; // eax
 
-  IDA_LOBYTE(result) = this == (BuildingType *)4475 /*0x510fa3*/
-                || this == (BuildingType *)4476
-                || this == (BuildingType *)4477
-                || this == (BuildingType *)4478
-                || this == (BuildingType *)4479
-                || this == (BuildingType *)4480
-                || this == (BuildingType *)4481
-                || this == (BuildingType *)4482;
-  return result; /*0x510fa2*/
+  return a1 == (void *)4475 /*0x510fa2*/
+      || a1 == (void *)4476
+      || a1 == (void *)4477
+      || a1 == (void *)4478
+      || a1 == (void *)4479
+      || a1 == (void *)4480
+      || a1 == (void *)4481
+      || a1 == (void *)4482;
+
 }
 } // namespace gamemd
 
@@ -125,9 +128,11 @@ int BuildingType::IsSpecialType(void* a1)
 namespace gamemd {
 int BuildingType::Init(void* a1)
 {
-  if ( a2 >= 0x10 ) /*0x68c036*/
+
+  if ( a1 >= 0x10 ) /*0x68c036*/
     return -1; /*0x68c047*/
   else
-    return *((unsigned int *)this + a2 + 1120); /*0x68c03d*/
+    return *(this + a1 + 1120); /*0x68c03d*/
+
 }
 } // namespace gamemd

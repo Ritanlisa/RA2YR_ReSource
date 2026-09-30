@@ -399,6 +399,7 @@ void WOL_RequestMatch(void * a1)
 namespace gamemd {
 void E4Recv_7A0DD0::sub_7A0DD0()
 {
+
   int v2; // ebp
   char **v3; // edi
   HWND GameUI; // eax
@@ -406,18 +407,19 @@ void E4Recv_7A0DD0::sub_7A0DD0()
   if ( this ) /*0x7a0dd8*/
   {
     v2 = 0; /*0x7a0dda*/
-    v3 = (char **)dword_A8DA90; /*0x7a0ddc*/
-    while ( !*v3 || strcmp(ToWideStringChar(*v3), (const char *)&this->occupant) ) /*0x7a0e1a*/
+    v3 = (char **)&MEMORY[0xA8DA90]; /*0x7a0ddc*/
+    while ( !*v3 || strcmp(ToWideStringChar(*v3), (unsigned char *)this + 36) ) /*0x7a0e1a*/
     {
       ++v3; /*0x7a0e1c*/
       ++v2; /*0x7a0e1f*/
-      if ( (int)v3 >= (int)&dword_A8DAB0 ) /*0x7a0e26*/
+      if ( (int)v3 >= (int)&MEMORY[0xA8DAB0] ) /*0x7a0e26*/
         return; /*0x7a0e26*/
     }
-        GameUI = (HWND)Dialog::FindGameUI();
+    GameUI = (HWND)Dialog::FindGameUI(); /*0x7a0e2d*/
     if ( GameUI ) /*0x7a0e34*/
       UpdateLobbyGraphicsWOL(GameUI, v2, -1); /*0x7a0e3c*/
   }
+
 }
 }
 // 0x7A1060
@@ -1012,34 +1014,36 @@ AbstractClass * * WOL_MatchGame()
 namespace gamemd {
 Coord * * E4Recv_7A2830::sub_7A2830()
 {
+
   int result; // eax
   int v2; // ebp
-  int v3; // ebx
+  signed int v3; // ebx
   char *v4; // eax
   unsigned int v6[27]; // [esp+14h] [ebp-6Ch] BYREF
 
-  result = g_WOL_UserList.owningHouseIndex; /*0x7a2833*/
+  result = g_WOL_State; /*0x7a2833*/
   v2 = 0; /*0x7a283a*/
   v3 = 0; /*0x7a283c*/
   v6[0] = 0; /*0x7a2846*/
-  if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x7a284a*/
+  if ( (int)g_WOL_State > 0 ) /*0x7a284a*/
   {
     while ( 1 ) /*0x7a284c*/
     {
       if ( v2 >= 0 && v3 < result ) /*0x7a2852*/
-        qmemcpy(v6, (char *)g_WOL_UserList.nextObject + v2, sizeof(v6)); /*0x7a2865*/
-      v4 = String::GetOrEmpty_Alt((String *)this); /*0x7a2870*/
-      if ( !_strcmpi(v4, (char *)&v6[9]) ) /*0x7a2876*/
+        qmemcpy(v6, (char *)g_WOL_ConnectionFlags + v2, sizeof(v6)); /*0x7a2865*/
+      v4 = String::GetOrEmpty_Alt(this); /*0x7a2870*/
+      if ( !_strcmpi(v4, &v6[9]) ) /*0x7a2876*/
         break; /*0x7a2876*/
-      result = g_WOL_UserList.owningHouseIndex; /*0x7a2882*/
+      result = g_WOL_State; /*0x7a2882*/
       ++v3; /*0x7a2887*/
       v2 += 108; /*0x7a2888*/
-      if ( v3 >= g_WOL_UserList.owningHouseIndex ) /*0x7a288d*/
+      if ( v3 >= (int)g_WOL_State ) /*0x7a288d*/
         return result; /*0x7a288d*/
     }
-    return (*(int (__stdcall **)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 84))(ppv, v6); /*0x7a28a4*/
+    return (*(int (**)(LPVOID, unsigned int *))(*(unsigned int *)MEMORY[0xAC116C] + 84))(MEMORY[0xAC116C], v6); /*0x7a28a4*/
   }
   return result; /*0x7a288f*/
+
 }
 }
 // 0x7A29E0
@@ -1356,38 +1360,36 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
 namespace gamemd {
 AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
 {
+
   int result; // eax
-  int referenceCount; // ecx
+  int v4; // ecx
   unsigned int *v5; // eax
   unsigned int v6[4]; // [esp+Ch] [ebp-20h] BYREF
   unsigned char v7[16]; // [esp+1Ch] [ebp-10h] BYREF
 
-  result = (int)DSurface_Alternate; /*0x7af640*/
-  if ( DSurface_Alternate ) /*0x7af64d*/
+  result = MEMORY[0x887310]; /*0x7af640*/
+  if ( MEMORY[0x887310] ) /*0x7af64d*/
   {
-        v4 = *((unsigned int *)this + 28);
-    if ( referenceCount ) /*0x7af654*/
+    v4 = *((unsigned int *)this + 7); /*0x7af64f*/
+    if ( v4 ) /*0x7af654*/
     {
-      v5 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)referenceCount + 120))(referenceCount, v7); /*0x7af65d*/
+      v5 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)v4 + 120))(v4, v7); /*0x7af65d*/
       v6[0] = *v5; /*0x7af664*/
       v6[1] = v5[1]; /*0x7af66b*/
       v6[2] = v5[2]; /*0x7af672*/
       v6[3] = v5[3]; /*0x7af67f*/
-      (*((void (**)(DSurface *, unsigned int *, unsigned int))DSurface_Alternate->DSurface_field_0x0 + 5))( /*0x7af68a*/
-        DSurface_Alternate,
-        v6,
-        0);
-      return (*((int (**)(DSurface *, unsigned int *, int, unsigned int *, unsigned int, int))DSurface_Alternate->DSurface_field_0x0 /*0x7af6a7*/
-              + 2))(
-               DSurface_Alternate,
+      (*(void (**)(int, unsigned int *, unsigned int))(*(unsigned int *)MEMORY[0x887310] + 20))(MEMORY[0x887310], v6, 0); /*0x7af68a*/
+      return (*(int (**)(int, unsigned int *, unsigned int, unsigned int *, unsigned int, int))(*(unsigned int *)MEMORY[0x887310] + 8))( /*0x7af6a7*/
+               MEMORY[0x887310],
                v6,
-               this->?,
+               *((unsigned int *)this + 7),
                v6,
                0,
                1);
     }
   }
   return result; /*0x7af6aa*/
+
 }
 }
 // 0x7AF6C0
@@ -1803,44 +1805,49 @@ int sub_7A0D10()
 namespace gamemd {
 void INIClass::SetGameOptionsPing()
 {
+
+  int v1; // edx
+  int v2; // ebp
   int i; // edi
   char *v5; // ecx
   HWND GameUI; // ecx
 
+  v2 = v1; /*0x7a0ea3*/
   Debug::Log(); /*0x7a0eaf*/
   for ( i = 0; i < 8; ++i ) /*0x7a0eb7*/
   {
-    v5 = (char *)*(&dword_A8DA90 + i); /*0x7a0eb9*/
+    v5 = (char *)*(&MEMORY[0xA8DA90] + i); /*0x7a0eb9*/
     if ( v5 ) /*0x7a0ec2*/
     {
-      if ( !strcmp(ToWideStringChar(v5), a1) ) /*0x7a0ed1*/
+      if ( !strcmp(ToWideStringChar(v5), this->__pad_0) ) /*0x7a0ed1*/
       {
-        dword_B76440[i] = a2; /*0x7a0ef8*/
+        dword_B76440[i] = v2; /*0x7a0ef8*/
         GameUI = (HWND)Dialog::FindGameUI(); /*0x7a0f04*/
         if ( GameUI ) /*0x7a0f08*/
         {
-          if ( a2 >= 0 ) /*0x7a0f0c*/
+          if ( v2 >= 0 ) /*0x7a0f0c*/
           {
-            if ( a2 >= 300 ) /*0x7a0f18*/
+            if ( v2 >= 300 ) /*0x7a0f18*/
             {
-              if ( a2 >= 500 ) /*0x7a0f24*/
-                UpdateLobbyGraphicsWOL(GameUI, 2); /*0x7a0f2e*/
+              if ( v2 >= 500 ) /*0x7a0f24*/
+                UpdateLobbyGraphicsWOL(GameUI, i, 2); /*0x7a0f2e*/
               else
-                UpdateLobbyGraphicsWOL(GameUI, 1); /*0x7a0f28*/
+                UpdateLobbyGraphicsWOL(GameUI, i, 1); /*0x7a0f28*/
             }
             else
             {
-              UpdateLobbyGraphicsWOL(GameUI, 0); /*0x7a0f1c*/
+              UpdateLobbyGraphicsWOL(GameUI, i, 0); /*0x7a0f1c*/
             }
           }
           else
           {
-            UpdateLobbyGraphicsWOL(GameUI, -1); /*0x7a0f10*/
+            UpdateLobbyGraphicsWOL(GameUI, i, -1); /*0x7a0f10*/
           }
         }
       }
     }
   }
+
 }
 } // namespace gamemd
 
@@ -1971,7 +1978,9 @@ void nullsub_265()
 namespace gamemd {
 void E4Recv_7ACBD0::__Release__NonReentrantLock_details_Concurrency__QAEXXZ_1()
 {
+
   *(unsigned int *)this = 0; /*0x7acbd0*/
+
 }
 } // namespace gamemd
 

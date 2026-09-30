@@ -30,37 +30,30 @@
 namespace gamemd {
 int Factory::GetLinkedIndex(DynamicVector * aP1)
 {
-  int result; // eax
-  void *v3; // edx
-  char **v4; // esi
+
+  char result; // al
+  int v3; // edx
+  int v4; // eax
+  char **v5; // esi
   char **i; // ecx
 
-  if ( aP1 == (gamemd::DynamicVector *)(-1) ) /*0x663d68*/
+  if ( aP1 == (DynamicVector *)-1 ) /*0x663d68*/
+    return -1; /*0x663d6a*/
+  v3 = *((char *)this + 4); /*0x663d70*/
+  v4 = 0; /*0x663d73*/
+  if ( v3 <= 0 ) /*0x663d79*/
+    return -1; /*0x663d79*/
+  v5 = (char **)*((char *)this + 1); /*0x663d7b*/
+  for ( i = v5; aP1 != (DynamicVector *)**i; ++i ) /*0x663d7e*/
   {
-    IDA_LOBYTE(result) = -1; /*0x663d6a*/
+    if ( ++v4 >= v3 ) /*0x663d8f*/
+      return -1; /*0x663d96*/
   }
-  else
-  {
-    v3 = (void *)(this->field_10);
-    result = 0; /*0x663d73*/
-    if ( (int)v3 <= 0 ) /*0x663d79*/
-      goto LABEL_9; /*(gamemd::DynamicVector *)(0x663d79)*/
-    v4 = (char **)this-(gamemd::DynamicVector *)((gamemd::DynamicVector *))(>field_4); /*0x663d7b*/
-    for ( i = v4; aP1 != **i; ++i ) /*0x663d7e*/
-    {
-      if ( ++result >= (int)v3 ) /*0x663d8f*/
-      {
-        IDA_LOBYTE(result) = -1; /*0x663d93*/
-        return result; /*0x663d96*/
-      }
-    }
-    result = (int)v4[result]; /*0x663d99*/
-    IDA_LOBYTE(result) = *(unsigned char *)(result + 40); /*0x663d9c*/
-    if ( !(unsigned char)result ) /*0x663da1*/
-  LABEL_9:
-      IDA_LOBYTE(result) = -1; /*0x663da3*/
-  }
+  result = v5[v4][40]; /*0x663d9c*/
+  if ( !result ) /*0x663da1*/
+    return -1; /*0x663da3*/
   return result; /*0x663d6c*/
+
 }
 }
 // 0x718B70
@@ -395,21 +388,23 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
 namespace gamemd {
 int Factory::FindExitCellByName()
 {
+
   int v2; // esi
 
-  if ( !_strcmpi(this->__pad_0, g_Str__none_) ) /*0x523c9a*/
+  if ( !_strcmpi(this, &stru_817460.sectionHead[1]) ) /*0x523c9a*/
     return -1; /*0x523c9a*/
-  if ( !_strcmpi(this->__pad_0, g_Str_none) ) /*0x523cac*/
+  if ( !_strcmpi(this, g_Str_none) ) /*0x523cac*/
     return -1; /*0x523cac*/
   v2 = 0; /*0x523cbd*/
-  if ( dword_A8E358 <= 0 ) /*0x523cc1*/
+  if ( *(int *)&HouseClass_Player.__pad_5568[20644] <= 0 ) /*0x523cc1*/
     return -1; /*0x523ce6*/
-  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E34C + v2) + 36), this->__pad_0) ) /*0x523cda*/
+  while ( _strcmpi((const void *)(*(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[20632] + 4 * v2) + 36), this) ) /*0x523cda*/
   {
-    if ( ++v2 >= dword_A8E358 ) /*0x523ce4*/
+    if ( ++v2 >= *(int *)&HouseClass_Player.__pad_5568[20644] ) /*0x523ce4*/
       return -1; /*0x523ce4*/
   }
   return v2; /*0x523ce6*/
+
 }
 } // namespace gamemd
 
@@ -417,6 +412,8 @@ int Factory::FindExitCellByName()
 namespace gamemd {
 int Factory::IdleHandler()
 {
+
   return System_Handle(77, 0); /*0x731cde*/
+
 }
 } // namespace gamemd

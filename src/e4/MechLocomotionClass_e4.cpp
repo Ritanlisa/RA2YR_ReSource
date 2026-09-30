@@ -10,47 +10,57 @@
 namespace gamemd {
 int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
+
   if ( !a2 ) /*0x5b1966*/
     return -2147467261; /*0x5b1968*/
-  *(IID *)a2 = g_CLSID_TunnelLocomotion; /*0x5b1976*/
-  a2[3] = unk_7E9AAC; /*0x5b1990*/
+  *a2 = 1439777208; /*0x5b1976*/
+  a2[1] = 298965908; /*0x5b197e*/
+  a2[2] = 1610651820; /*0x5b1987*/
+  a2[3] = -1252326136; /*0x5b1990*/
   return 0; /*0x5b196d*/
+
 }
 } // namespace gamemd
 // 0x5B19A0
 namespace gamemd {
 int MechLocomotionClass::BeginMove(int * a1, int * a2)
 {
+
   int result; // eax
 
-  result = (int)(SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2));
+  result = SwizzleManager::SaveLoad(a1, a2); /*0x5b19ab*/
   if ( result >= 0 ) /*0x5b19b2*/
   {
     if ( a1 ) /*0x5b19b6*/
     {
-      *(unsigned int *)a1->LocomotionClass = (void*)&MechLocomotionClass_vftable; /*0x5b19b8*/
-      *(unsigned int *)&a1->LocomotionClass[4] = (void*)&MechLocomotionClass_vftable; /*0x5b19be*/
+      *a1 = (int)&MechLocomotionClass::`vftable'; /*0x5b19b8*/
+      a1[1] = (int)&vt_MechLocomotionClass; /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/
+
 }
 } // namespace gamemd
 // 0x5B1B40
 namespace gamemd {
 int MechLocomotionClass::StubReturn52()
 {
+
   return 52; /*0x5b1b45*/
+
 }
 } // namespace gamemd
 // 0x5B1B50
 namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
-  *(unsigned int *)this->LocomotionClass = (void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
-  *(unsigned int *)&this-((unsigned int *)(>LocomotionClass))[4] = (void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
-  LocomotionClass::Construct(); /*0x5b1b60*/
+
+  *Block = &MechLocomotionClass::`vftable'; /*0x5b1b53*/
+  *(Block + 1) = &vt_MechLocomotionClass; /*0x5b1b59*/
+  LocomotionClass::Construct(Block); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
-    RA2_OPDEL(); /*0x5b1b6d*/
-    return (MechLocomotionClass *)Block;
+    __3_YAXPAX_Z(Block); /*0x5b1b6d*/
+  return (MechLocomotionClass *)Block; /*0x5b1b77*/
+
 }
 } // namespace gamemd

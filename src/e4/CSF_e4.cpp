@@ -10,6 +10,8 @@
 namespace gamemd {
 wchar_t * CSF::GetTeamString()
 {
-  return GetStringCSF(g_Str_TXT_TEAM, 0, g_Str_File_Init_CPP, 6363); /*0x536226*/
+
+  return GetStringCSF(MEMORY[0x826FA4], 0, g_Str_File_Init_CPP, 6363); /*0x536226*/
+
 }
 } // namespace gamemd

@@ -10,14 +10,18 @@
 namespace gamemd {
 void Function::Function_643E80(void * a2)
 {
-    *((unsigned int *)this + 4) = a2;
+
+  *((unsigned int *)this + 1) = a2; /*0x643e84*/
   return a2; /*0x643e87*/
+
 }
 }
 // 0x645D00
 namespace gamemd {
 int Function::645D00(int a2)
 {
-  return &this->q004 * a2; /*0x645d07*/
+
+  return (unsigned char *)this + 4 * a2; /*0x645d07*/
+
 }
 } // namespace gamemd

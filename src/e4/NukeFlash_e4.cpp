@@ -10,7 +10,9 @@
 namespace gamemd {
 BOOL NukeFlash::IsActive()
 {
-  return NukeFlash_Status == 1; /*0x53a11e*/
+
+  return unk_A9FABC == 1; /*0x53a11e*/
+
 }
 } // namespace gamemd
 
@@ -18,6 +20,8 @@ BOOL NukeFlash::IsActive()
 namespace gamemd {
 BOOL NukeFlash::ProcessEffect()
 {
-  return NukeFlash_Status == 2; /*0x53a12e*/
+
+  return unk_A9FABC == 2; /*0x53a12e*/
+
 }
 } // namespace gamemd

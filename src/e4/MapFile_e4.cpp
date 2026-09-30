@@ -12,61 +12,64 @@
 namespace gamemd {
 DynamicVector * MapFile::QueryInterface(char a2)
 {
+
   int v3; // eax
   int v4; // ecx
   void *v5; // ebx
-  ObjectClass *v6; // esi
+  void **v6; // esi
   int v7; // ecx
   int v8; // ebp
 
-    v3 = *(Block + 1);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_Wstring_vftable; /*0x69d526*/
-    if ( v3 && *((unsigned char *)Block + 13) )
+  v3 = *(Block + 1); /*0x69d523*/
+  *Block = &vt_VectorClass_Wstring; /*0x69d526*/
+  if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d530*/
   {
     v4 = *(unsigned int *)(v3 - 4); /*0x69d53b*/
     v5 = (void *)(v3 - 4); /*0x69d53f*/
-    v6 = (ObjectClass *)(v3 + 4 * v4); /*0x69d543*/
+    v6 = (void **)(v3 + 4 * v4); /*0x69d543*/
     v7 = v4 - 1; /*0x69d546*/
     if ( v7 >= 0 ) /*0x69d547*/
     {
       v8 = v7 + 1; /*0x69d54a*/
       do /*0x69d558*/
       {
-        v6 = (ObjectClass *)((char *)v6 - 4); /*0x69d54d*/
-        DeleteAndZero(v6); /*0x69d552*/
+        DeleteAndZero(--v6); /*0x69d552*/
         --v8; /*0x69d557*/
       }
       while ( v8 ); /*0x69d558*/
     }
-    RA2_OPDEL(v5); /*0x69d55c*/
-        *(Block + 1) = 0;
+    __3_YAXPAX_Z(v5); /*0x69d55c*/
+    *(Block + 1) = 0; /*0x69d566*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-    *(Block + 2) = 0;
+  *((unsigned char *)Block + 13) = 0; /*0x69d571*/
+  *(Block + 2) = 0; /*0x69d577*/
   if ( (a2 & 1) != 0 ) /*0x69d57e*/
-    RA2_OPDEL(); /*0x69d581*/
-  return this; /*0x69d58b*/
+    __3_YAXPAX_Z(Block); /*0x69d581*/
+  return (DynamicVector *)Block; /*0x69d58b*/
+
 }
 } // namespace gamemd
 // 0x69D770
 namespace gamemd {
 void MapFile::Constructor(int a1, void* a2, void* a3, void* a4, void* a5, void* a6)
 {
-  this->MapFile_field_0x04 = (unsigned int)(0);
-  this->MapFile_field_0x08 = (unsigned int)(a2);
-    *((unsigned char *)this + 12) = 1;
-    *((unsigned char *)this + 13) = 0;
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_enum_DiskID_vftable; /*0x69d788*/
+
+  *(a1 + 1) = 0; /*0x69d77b*/
+  *(a1 + 2) = a2; /*0x69d77e*/
+  *((unsigned char *)a1 + 12) = 1; /*0x69d781*/
+  *((unsigned char *)a1 + 13) = 0; /*0x69d785*/
+  *a1 = &vt_VectorClass_enum_DiskID; /*0x69d788*/
   if ( a2 ) /*0x69d78e*/
   {
     if ( a3 ) /*0x69d796*/
     {
-      this->MapFile_field_0x04 = (unsigned int *)(a3);
-      return (unsigned int *)(this->__pad_0);
+      *(a1 + 1) = a3; /*0x69d798*/
+      return a1; /*0x69d79e*/
     }
-    this->MapFile_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
-        *((unsigned char *)this + 13) = 1;
+    *(a1 + 1) = __2_YAPAXI_Z(4 * a2); /*0x69d7ad*/
+    *((unsigned char *)a1 + 13) = 1; /*0x69d7b0*/
   }
-  return (unsigned int *)(this->__pad_0);
+  return a1; /*0x69d79d*/
+
 }
 } // namespace gamemd

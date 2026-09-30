@@ -10,7 +10,9 @@
 namespace gamemd {
 void * Transform::Copy(const void * a2)
 {
-  qmemcpy(a2, 0x30u); /*0x5ae61f*/
+
+  qmemcpy(this, a2, 0x30u); /*0x5ae61f*/
   return this; /*0x5ae621*/
+
 }
 } // namespace gamemd

@@ -11,22 +11,21 @@
 namespace gamemd {
 int Window::IsVisible()
 {
-  int result; // eax
 
-  IDA_LOBYTE(result) = this->u32_18 && this->u32_19; /*0x4a511e*/
-  return result; /*0x4a5120*/
+  return *((unsigned char *)this + 24) && *((unsigned char *)this + 25); /*0x4a5120*/
+
 }
 } // namespace gamemd
 // 0x776D80
 namespace gamemd {
 char Window::ClampToScreen(int * a1)
 {
+
   char v1; // bl
   int v2; // eax
   int v3; // ecx
   int v4; // eax
   int v5; // ecx
-  int result; // eax
 
   v1 = 0; /*0x776d86*/
   v2 = *a1; /*0x776d89*/
@@ -51,18 +50,11 @@ char Window::ClampToScreen(int * a1)
     a1[2] = GetSystemMetrics(16); /*0x776dd9*/
     v1 = 1; /*0x776ddc*/
   }
-  result = GetSystemMetrics(17); /*0x776de0*/
-  if ( a1[3] <= result ) /*0x776de5*/
-  {
-    IDA_LOBYTE(result) = v1; /*0x776e08*/
-  }
-  else
-  {
-    a1[1] += GetSystemMetrics(17) - a1[3]; /*0x776df7*/
-    result = GetSystemMetrics(17); /*0x776dfa*/
-    a1[3] = result; /*0x776dfc*/
-    IDA_LOBYTE(result) = 1; /*0x776dff*/
-  }
-  return result; /*0x776e01*/
+  if ( a1[3] <= GetSystemMetrics(17) ) /*0x776de5*/
+    return v1; /*0x776e08*/
+  a1[1] += GetSystemMetrics(17) - a1[3]; /*0x776df7*/
+  a1[3] = GetSystemMetrics(17); /*0x776dfc*/
+  return 1; /*0x776e01*/
+
 }
 } // namespace gamemd

@@ -10,6 +10,7 @@
 namespace gamemd {
 int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5)
 {
+
   signed int v7; // edx
   unsigned int v8; // eax
   const void *v9; // esi
@@ -83,7 +84,7 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
           *(unsigned int *)(a1 + 152) -= v13; /*0x409f45*/
           continue; /*0x409f4d*/
         }
-  LABEL_25:
+LABEL_25:
         if ( a5 ) /*0x409fa8*/
           *a5 = v20; /*0x409fae*/
         if ( a3 ) /*0x409fb6*/
@@ -110,6 +111,7 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
         continue;
     }
   }
+
 }
 } // namespace ra2
 
@@ -117,34 +119,34 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
 namespace gamemd {
 void AudioController::GetVolume()
 {
-  void *v1; // esi
 
-  if ( g_BuildingLoadQueue_Array.__pad_F70[1310] ) /*0x72d17a*/
+  void *v0; // esi
+
+  if ( MEMORY[0xB0FCCE] ) /*0x72d17a*/
   {
-    if ( g_BuildingLoadQueue_Array.__pad_F70[1309] ) /*0x72d182*/
+    if ( MEMORY[0xB0FCCD] ) /*0x72d182*/
     {
-      v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[776]; /*0x72d185*/
-      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[776] ) /*0x72d18d*/
+      v0 = MEMORY[0xB0FAB8]; /*0x72d185*/
+      if ( MEMORY[0xB0FAB8] ) /*0x72d18d*/
       {
-        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[776]); /*0x72d191*/
-        RA2_OPDEL(v1); /*0x72d197*/
+        FileTreeNode::Destroy(MEMORY[0xB0FAB8]); /*0x72d191*/
+        __3_YAXPAX_Z(v0); /*0x72d197*/
       }
-      g_BuildingLoadQueue_Array.__pad_F70[1309] = 0; /*0x72d19f*/
+      MEMORY[0xB0FCCD] = 0; /*0x72d19f*/
     }
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[776] = 0; /*0x72d1ab*/
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1312] ) /*0x72d1b3*/
+    MEMORY[0xB0FAB8] = 0; /*0x72d1ab*/
+    if ( MEMORY[0xB0FCD0] ) /*0x72d1b3*/
     {
-      RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1312]); /*0x72d1b6*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1312] = 0; /*0x72d1be*/
+      __3_YAXPAX_Z(MEMORY[0xB0FCD0]); /*0x72d1b6*/
+      MEMORY[0xB0FCD0] = 0; /*0x72d1be*/
     }
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1316] ) /*0x72d1cc*/
+    if ( MEMORY[0xB0FCD4] ) /*0x72d1cc*/
     {
-      (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1316])( /*0x72d1d2*/
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1316],
-        1);
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1316] = 0; /*0x72d1d4*/
+      (**(void (***)(int, int))MEMORY[0xB0FCD4])(MEMORY[0xB0FCD4], 1); /*0x72d1d2*/
+      MEMORY[0xB0FCD4] = 0; /*0x72d1d4*/
     }
   }
-  g_BuildingLoadQueue_Array.__pad_F70[1310] = 0; /*0x72d1da*/
+  MEMORY[0xB0FCCE] = 0; /*0x72d1da*/
+
 }
 } // namespace gamemd

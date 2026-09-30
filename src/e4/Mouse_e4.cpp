@@ -25,204 +25,188 @@
 namespace gamemd {
 int Mouse::SetBounds(void* aP1)
 {
+
   int result; // eax
-  int16_t v4; // cx
+  __int16 v4; // cx
+  Tactical *v5; // esi
   bool v6; // zf
   int v7; // eax
-  int16_t v8; // cx
-  unsigned short v9[4]; // [esp+8h] [ebp-8h] BYREF
+  __int16 v8; // cx
+  __int16 v9; // [esp+8h] [ebp-8h] BYREF
+  __int16 v10; // [esp+Ah] [ebp-6h]
 
-    result = *((unsigned int *)this + 17904);
+  result = *((unsigned int *)this + 1119); /*0x4a8bf7*/
   if ( result ) /*0x4a8bff*/
   {
-        v4 = *((unsigned short *)this + 17880) + *((unsigned short *)this + 17896);
-        v9 = *((unsigned short *)this + 17872) + *((unsigned short *)this + 17888);
-    v9[1] = v4; /*0x4a8c24*/
-    result = MapClass::SetCellFlagsAlongPath((MapClass *)this, v9, 0); /*0x4a8c38*/
+    v4 = *((unsigned short *)this + 2235) + *((unsigned short *)this + 2237); /*0x4a8c16*/
+    v9 = *((unsigned short *)this + 2234) + *((unsigned short *)this + 2236); /*0x4a8c1f*/
+    v10 = v4; /*0x4a8c24*/
+    LOBYTE(result) = MapClass::SetCellFlagsAlongPath((__int16 **)this, (IUnknown *)&v9, 0); /*0x4a8c38*/
   }
-  aP1 = aP1; /*0x4a8c3d*/
+  v5 = (Tactical *)aP1; /*0x4a8c3d*/
   v6 = aP1 == 0; /*0x4a8c47*/
-    *((unsigned int *)this + 17888) = *(unsigned int *)&MEMORY[0x89F690].__pad_BC0[424];
+  *((unsigned int *)this + 1118) = *(unsigned int *)&MEMORY[0x89F690].__pad_BC0[424]; /*0x4a8c49*/
   if ( v6 ) /*0x4a8c4f*/
   {
-        *((unsigned int *)this + 17904) = 0;
+    *((unsigned int *)this + 1119) = 0; /*0x4a8d1f*/
   }
   else
   {
-    if ( (byte_8A0618 & 1) == 0 ) /*0x4a8c5c*/
+    if ( (MEMORY[0x89F690].__pad_DFC[396] & 1) == 0 ) /*0x4a8c5c*/
     {
-      byte_8A0618 |= 1u; /*0x4a8c68*/
+      MEMORY[0x89F690].__pad_DFC[396] |= 1u; /*0x4a8c68*/
       atexit(nullsub_10); /*0x4a8c6e*/
     }
-    qmemcpy(&stru_8A0390.onBridge, aP1, 0x1E0u); /*0x4a8c85*/
-        *((unsigned int *)this + 17904) = &MEMORY[0x89F690].__pad_BC0[460];
-    v7 = *CoordList::GetBounds(&aP1, (int16_t *)&stru_8A0390.onBridge); /*0x4a8c9e*/
-    v9[0] = v7 - 1; /*0x4a8ca6*/
-    v9[1] = IDA_HIWORD(v7) - 1; /*0x4a8cab*/
-    IDA_LOWORD(aP1) = (int16_t)(1 - v7) / 2; /*0x4a8cc4*/
-    IDA_HIWORD(aP1) = (int16_t)(1 - IDA_HIWORD(v7)) / 2; /*0x4a8cd1*/
-    v8 = (int16_t)aP1; /*0x4a8cd6*/
-        *((unsigned int *)this + 17888) = aP1;
-        LOWORD(v7) = *((unsigned short *)this + 17896) + *((unsigned short *)this + 17880);
-        LOWORD(aP1) = v8 + *((unsigned short *)this + 17872);
-    IDA_HIWORD(aP1) = v7; /*0x4a8cfd*/
-// 0x4a95a0
-    return MapClass::SetCellFlagsAlongPath(&aP1, (unsigned short *)1); /*0x4a8d11*/
+    qmemcpy(&MEMORY[0x89F690].__pad_BC0[460], v5, 0x1E0u); /*0x4a8c85*/
+    *((unsigned int *)this + 1119) = &MEMORY[0x89F690].__pad_BC0[460]; /*0x4a8c8f*/
+    v7 = *CoordList::GetBounds(&aP1, (__int16 *)&MEMORY[0x89F690].__pad_BC0[460]); /*0x4a8c9e*/
+    v9 = v7 - 1; /*0x4a8ca6*/
+    v10 = HIWORD(v7) - 1; /*0x4a8cab*/
+    LOWORD(aP1) = (__int16)(1 - v7) / 2; /*0x4a8cc4*/
+    HIWORD(aP1) = (__int16)(1 - HIWORD(v7)) / 2; /*0x4a8cd1*/
+    v8 = (__int16)aP1; /*0x4a8cd6*/
+    *((unsigned int *)this + 1118) = aP1; /*0x4a8cda*/
+    LOWORD(v7) = *((unsigned short *)this + 2237) + *((unsigned short *)this + 2235); /*0x4a8cee*/
+    LOWORD(aP1) = v8 + *((unsigned short *)this + 2234); /*0x4a8cf8*/
+    HIWORD(aP1) = v7; /*0x4a8cfd*/
+    LOBYTE(result) = MapClass::SetCellFlagsAlongPath((__int16 **)this, (IUnknown *)&aP1, (unsigned short *)1); /*0x4a8d11*/
   }
   return result; /*0x4a8d17*/
+
 }
 }
 // 0x5BDC80
 namespace gamemd {
 int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
 {
-  ObjectClass * result;
-  ObjectClass * v5;
-  int v6; // edi
-  int Ticks; // eax
-  int v8; // ecx
+
+  char v4; // bl
+  MPCooperative *v6; // edi
+  CoordStruct *Ticks; // eax
+  int Y_low; // ecx
   int v9; // eax
   int v10; // ebx
-  int v11; // edi
+  int X_high; // edi
   int v12; // esi
+  int v13; // [esp+10h] [ebp-Ch] BYREF
+  CoordStruct *v14; // [esp+14h] [ebp-8h]
 
-  result = (gamemd::ObjectClass *)((int)(aP1));
-  if ( dword_82D034[7 * aP1] == -1 ) /*0x5bdca6*/
+  if ( MEMORY[0x82D034][7 * (unsigned int)aP1] == -1 ) /*0x5bdca6*/
   {
-    v5 = 0; /*0x5bdca8*/
-    aP2 = 0; /*0x5bdcaa*/
+    v4 = 0; /*0x5bdca8*/
+    LOBYTE(aP2) = 0; /*0x5bdcaa*/
   }
   else
   {
-    v5 = (gamemd::ObjectClass *)((char)(aP2));
+    v4 = (char)aP2; /*0x5bdcb0*/
   }
-  if ( byte_ABF2DD && (!dword_ABF294 || aP1 == (gamemd::ObjectClass *)(this->u32_5560) && v5 == (gamemd::ObjectClass *)(this->u32_555C)) ) /*0x5bdcd6*/
+  if ( *((unsigned char *)&g_MatrixTransformState + 1229) /*0x5bdcd6*/
+    && (!*(&g_MatrixTransformState + 289) || aP1 == *(ObjectClass **)((char *)this + 21856) && v4 == *((unsigned char *)this + 21852)) )
   {
-    IDA_LOBYTE(result) = 0; /*0x5bdcda*/
+    return 0; /*0x5bdcda*/
   }
-  else
-  {
-    byte_ABF2DD = 1; /*0x5bdce4*/
-    v6 = dword_82D030[7 * aP1]; /*0x5bdceb*/
-      Ticks = (CoordStruct *)Timer::GetTicks();
-    v8 = 0; /*0x5bdcfb*/
-    dword_ABF2A0 = Ticks; /*0x5bdcfd*/
-    v8 = v8; /*0x5bdd02*/
-    v6 = v6; /*0x5bdd08*/
-      *((unsigned int *)this + 87456) = 0;
-    if ( !v5 || (v9 = ((unsigned int *)(dword_82D034))[7 * aP1], v9 == -1) ) /*0x5bdd1e*/
-      v9 = dword_82D028[7 * aP1]; /*0x5bdd20*/
-    v10 = dword_82D03C[7 * aP1]; /*0x5bdd22*/
-    v11 = 0; /*0x5bdd25*/
-    if ( v10 == 12345 ) /*0x5bdd31*/
-      v11 = *((int16_t *)dword_ABF294 + 1) / 2; /*0x5bdd42*/
-    if ( v10 == 54321 ) /*0x5bdd50*/
-      v11 = *((int16_t *)dword_ABF294 + 1); /*0x5bdd52*/
-    v12 = unk_82D040[7 * aP1]; /*0x5bdd56*/
-    if ( v12 == 12345 ) /*0x5bdd5f*/
-      v8 = *((int16_t *)dword_ABF294 + 2) / 2; /*0x5bdd6a*/
-    if ( v12 == 54321 ) /*0x5bdd72*/
-      v8 = *((int16_t *)dword_ABF294 + 2); /*0x5bdd74*/
-    v8 = v8; /*0x5bdd7c*/
-    v11 = v11; /*0x5bdd87*/
-    (*(void (**)(int, int *, void *, int))(*(unsigned int *)dword_887640 + 4))( /*0x5bdd93*/
-      dword_887640,
-      &v11,
-      dword_ABF294,
-      v9);
-    result = (gamemd::ObjectClass *)((unsigned int)(aP1));
-    this->u32_5560 = (unsigned int)(aP1);
-    this->u32_555C = (unsigned int)(aP2);
-    IDA_LOBYTE(result) = 1; /*0x5bddad*/
-  }
-  return result; /*0x5bdcd8*/
+  *((unsigned char *)&g_MatrixTransformState + 1229) = 1; /*0x5bdce4*/
+  v6 = (MPCooperative *)MEMORY[0x82D030][7 * (unsigned int)aP1]; /*0x5bdceb*/
+  Ticks = (CoordStruct *)Timer::GetTicks(); /*0x5bdcf2*/
+  Y_low = 0; /*0x5bdcfb*/
+  *(&g_MatrixTransformState + 292) = Ticks; /*0x5bdcfd*/
+  *(&g_MatrixTransformState + 293) = v14; /*0x5bdd02*/
+  *(&g_MatrixTransformState + 294) = (CoordStruct *)v6; /*0x5bdd08*/
+  *((unsigned int *)this + 5466) = 0; /*0x5bdd0e*/
+  if ( !v4 || (v9 = MEMORY[0x82D034][7 * (unsigned int)aP1], v9 == -1) ) /*0x5bdd1e*/
+    v9 = MEMORY[0x82D028][7 * (unsigned int)aP1]; /*0x5bdd20*/
+  v10 = MEMORY[0x82D03C][7 * (unsigned int)aP1]; /*0x5bdd22*/
+  X_high = 0; /*0x5bdd25*/
+  if ( v10 == 12345 ) /*0x5bdd31*/
+    X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X) / 2; /*0x5bdd42*/
+  if ( v10 == 54321 ) /*0x5bdd50*/
+    X_high = SHIWORD((*(&g_MatrixTransformState + 289))->X); /*0x5bdd52*/
+  v12 = MEMORY[0x82D040][7 * (unsigned int)aP1]; /*0x5bdd56*/
+  if ( v12 == 12345 ) /*0x5bdd5f*/
+    Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y) / 2; /*0x5bdd6a*/
+  if ( v12 == 54321 ) /*0x5bdd72*/
+    Y_low = SLOWORD((*(&g_MatrixTransformState + 289))->Y); /*0x5bdd74*/
+  v14 = (CoordStruct *)Y_low; /*0x5bdd7c*/
+  v13 = X_high; /*0x5bdd87*/
+  (*(void (**)(unsigned int, int *, unsigned int, int))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[10228] + 4))( /*0x5bdd93*/
+    *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10228],
+    &v13,
+    *(&g_MatrixTransformState + 289),
+    v9);
+  *((unsigned int *)this + 5464) = aP1; /*0x5bdd9f*/
+  *((unsigned char *)this + 21852) = (unsigned char)aP2; /*0x5bdda5*/
+  return 1; /*0x5bdcd8*/
+
 }
 }
 // 0x6938C0
 namespace gamemd {
 HWND Mouse::ReleaseCapture(void *a1 = 0)
 {
-  int result; // eax
 
-    DisplayClass::ExitMode();
-    *((unsigned int *)this + 87400) = 0;
-  result = (int)GetCapture(); /*0x6938cf*/
-  if ( (HWND)result == (HWND)(g_hWnd) ) /*0x6938de*/
-    return ReleaseCapture(); /*0x6938e0*/
+  HWND result; // eax
+
+  DisplayClass::ExitMode(); /*0x6938c3*/
+  *((unsigned char *)this + 21850) = 0; /*0x6938c8*/
+  result = GetCapture(); /*0x6938cf*/
+  if ( result == g_hWnd ) /*0x6938de*/
+    return (HWND)ReleaseCapture(); /*0x6938e0*/
   return result; /*0x6938db*/
+
 }
 }
 // 0x7B93F0
 namespace gamemd {
 AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
 {
-  MixFileClass *v5; // ecx
-  int v6; // ebx
-  WWMouseClass * v7;
-  WWMouseClass * v8;
-  int v9; // edi
-  int SubFile; // eax
-  int v11; // eax
-  unsigned int *v12; // [esp-2Ch] [ebp-78h]
-  WWMouseClass * v13;
-  int v14; // [esp+8h] [ebp-44h]
-  int v15; // [esp+Ch] [ebp-40h] BYREF
-  int v16; // [esp+10h] [ebp-3Ch]
-  int v17; // [esp+14h] [ebp-38h]
-  WWMouseClass * v18;
-  unsigned char v19[16]; // [esp+1Ch] [ebp-30h] BYREF
-  int v20[5]; // [esp+2Ch] [ebp-20h] BYREF
-  int v21[3]; // [esp+40h] [ebp-Ch] BYREF
 
-  v13 = (gamemd::WWMouseClass *)((int)this);
-  v5 = *(MixFileClass **)&this-((unsigned int *)(>m_1))[3]; /*0x7b93f9*/
-  if ( v5 && aP1 && *(unsigned int *)&stru_87F5F0.__pad_58[128] ) /*0x7b9418*/
+  char **v5; // ecx
+  int v6; // ebx
+  int v7; // ebp
+  int SubFile; // eax
+  IUnknown *v9; // ecx
+  unsigned char v11[16]; // [esp+1Ch] [ebp-30h] BYREF
+  int (**v12)(void *, char); // [esp+2Ch] [ebp-20h]
+  int v13; // [esp+30h] [ebp-1Ch]
+  int v14; // [esp+34h] [ebp-18h]
+  int v15; // [esp+38h] [ebp-14h]
+  int v16; // [esp+3Ch] [ebp-10h]
+  unsigned int v17[3]; // [esp+40h] [ebp-Ch] BYREF
+
+  v5 = (char **)*((unsigned int *)this + 1); /*0x7b93f9*/
+  if ( v5 && aP1 && MEMORY[0x87F6C8] ) /*0x7b9418*/
   {
-    v6 = (int)(this->q050);
-    v7 = (gamemd::WWMouseClass *)((int)((gamemd::WWMouseClass *)(this->q054)));
-    v8 = (gamemd::WWMouseClass *)((unsigned int)(aP2)+ this->q048);
-    v9 = (int)(a4 + this->q04C);
-    SubFile = (int)(MixFileClass::GetSubFile(v5, *(unsigned int *)&this-((unsigned int *)(>__pad_5))[3]));
-    v20[1] = (int)(v6);
-    v20[2] = (int)(v7);
-    v20[3] = 0; /*0x7b9458*/
-    v20[4] = 1; /*0x7b9468*/
-    Buffer::Init((Buffer *)v21, SubFile, v7 * v6); /*0x7b9470*/
-    v20[0] = (int)&BSurface_Vtable; /*0x7b947d*/
-        if ( aP1 != (IUnknown *)*((unsigned int *)this + 36) )
+    v6 = *((unsigned int *)this + 20); /*0x7b942e*/
+    v7 = *((unsigned int *)this + 21); /*0x7b9431*/
+    SubFile = MixFileClass::GetSubFile(v5, *((unsigned int *)this + 2)); /*0x7b9440*/
+    v13 = v6; /*0x7b9447*/
+    v14 = v7; /*0x7b9454*/
+    v15 = 0; /*0x7b9458*/
+    v16 = 1; /*0x7b9468*/
+    Buffer::Init(v17, SubFile, (AbstractClass *)(v7 * v6)); /*0x7b9470*/
+    v9 = aP1; /*0x7b9479*/
+    v12 = &BSurface_Vtable; /*0x7b947d*/
+    if ( aP1 != (IUnknown *)*((unsigned int *)this + 9) ) /*0x7b9488*/
     {
-      v15 = (int)(0);
-      v16 = (int)(0);
-      v12 = (unsigned int *)((unsigned int)(v13)+ 44); /*0x7b94a6*/
-      v13 = v8; /*0x7b94b8*/
-      v14 = v9; /*0x7b94bc*/
-      v17 = v6; /*0x7b94c0*/
-      v18 = v7; /*0x7b94c4*/
+      (*(void (**)(IUnknown *, unsigned char *))(aP1->field_0 + 120))(aP1, v11); /*0x7b94f6*/
+      v9 = aP1; /*0x7b9508*/
     }
-    else
-    {
-      v15 = (int)(0);
-      v16 = (int)(0);
-      v11 = (int)(*aP1);
-      v13 = (gamemd::WWMouseClass *)((int)(v8));
-      v14 = v9; /*0x7b94ea*/
-      v17 = v6; /*0x7b94ee*/
-      v18 = v7; /*0x7b94f2*/
-      v12 = (unsigned int *)(*(int (**)(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
-    }
-    BlitterDrawSHP(aP1, *(int *)&stru_87F5F0.__pad_58[128], v20, &v15, &v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
-    Vector::Clear((int)v21); /*0x7b951f*/
+    BlitterDrawSHP(v9); /*0x7b9516*/
+    Vector::Clear((int)v17); /*0x7b951f*/
   }
+
 }
 }
 // 0x53EC90
 namespace gamemd {
 SHORT Mouse::GetKeyState()
 {
-  if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec97*/
-    return word_AA0168[(uint8_t)this]; /*0x53eca7*/
+
+  if ( unk_AA0444 ) /*0x53ec97*/
+    return unk_AA0168[vKey]; /*0x53eca7*/
   else
-    return GetAsyncKeyState(); /*0x53ec9a*/
+    return GetAsyncKeyState(vKey); /*0x53ec9a*/
+
 }
 } // namespace gamemd
 
@@ -230,13 +214,14 @@ SHORT Mouse::GetKeyState()
 namespace gamemd {
 BOOL Mouse::IsButtonDown(unsigned char a1)
 {
-  uint8_t v1; // si
+
+  unsigned __int16 v1; // si
 
   v1 = a1; /*0x54f5c5*/
   if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 ) /*0x54f5e2*/
     v1 = 2 - (a1 != 1); /*0x54f5eb*/
-// 0x53ec90
-  return Mouse::GetKeyState(v1) != 0; /*0x54f600*/
+  return (unsigned __int16)Mouse::GetKeyState(v1) != 0; /*0x54f600*/
+
 }
 } // namespace gamemd
 
@@ -244,15 +229,17 @@ BOOL Mouse::IsButtonDown(unsigned char a1)
 namespace gamemd {
 HWND Mouse::HideWindow()
 {
+
   HWND result; // eax
 
-  result = (HWND)(dword_ABF240);
-  byte_ABF239 = 0; /*0x5bc409*/
-  if ( dword_ABF240 ) /*0x5bc40f*/
+  result = MEMORY[0xABF240]; /*0x5bc400*/
+  MEMORY[0xABF239] = 0; /*0x5bc409*/
+  if ( MEMORY[0xABF240] ) /*0x5bc40f*/
   {
-    byte_ABF23A = 0; /*0x5bc413*/
-    return (HWND)ShowWindow(dword_ABF240, 0); /*0x5bc419*/
+    MEMORY[0xABF23A] = 0; /*0x5bc413*/
+    return (HWND)ShowWindow(MEMORY[0xABF240], 0); /*0x5bc419*/
   }
   return result; /*0x5bc41f*/
+
 }
 } // namespace gamemd

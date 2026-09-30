@@ -10,49 +10,57 @@
 namespace gamemd {
 int DialogControl::Hide()
 {
+
   int v1; // eax
 
-  v1 = *(unsigned int *)this->__pad_0; /*0x4e1450*/
-    *((unsigned int *)this + 120) = 0;
-    *((unsigned int *)this + 112) = 1;
+  v1 = *(unsigned int *)this; /*0x4e1450*/
+  *((unsigned char *)this + 30) = 0; /*0x4e1452*/
+  *((unsigned char *)this + 28) = 1; /*0x4e1456*/
   return (*(int (**)(void))(v1 + 84))();
+
 }
 } // namespace gamemd
 // 0x4E1460
 namespace gamemd {
 void DialogControl::Show()
 {
-    *((unsigned int *)this + 120) = 1;
-    *((unsigned int *)this + 112) = 1;
-  return (*(int (**)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this);
+
+  *((unsigned char *)this + 30) = 1; /*0x4e1462*/
+  *((unsigned char *)this + 28) = 1; /*0x4e1465*/
+  return (*(int (**)(unsigned char *))(*(unsigned int *)this + 84))(this);
+
 }
 } // namespace gamemd
 // 0x4E1470
 namespace gamemd {
 int DialogControl::IsHidden()
 {
-    return *((unsigned int *)this + 120) == 0;
+
+  return *((unsigned char *)this + 30) == 0; /*0x4e147a*/
+
 }
 } // namespace gamemd
 // 0x623340
 namespace gamemd {
 void DialogControl::Constructor()
 {
+
   unsigned int *v2; // eax
   unsigned int *v3; // eax
 
-  memset(0, 0x200u); /*0x62334d*/
-    *((unsigned int *)this + 104) = 11;
-    *((unsigned int *)this + 100) = MEMORY[0x87F7E8][29498];
-  v2 = (unsigned int *)RA2_OPNEW(4u); /*0x623360*/
+  memset(this, 0, 0x200u); /*0x62334d*/
+  *((unsigned int *)this + 26) = 11; /*0x62334f*/
+  *((unsigned int *)this + 25) = MEMORY[0x87F7E8][29498]; /*0x62335d*/
+  v2 = (unsigned int *)__2_YAPAXI_Z(4); /*0x623360*/
   if ( v2 ) /*0x62336c*/
     v3 = unknown_libname_74(v2); /*0x623370*/
   else
     v3 = 0; /*0x623377*/
-    *((unsigned int *)this + 60) = v3;
-    *((unsigned int *)this + 64) = 0;
-    *((unsigned int *)this + 92) = 0;
-    *((unsigned int *)this + 144) = -1;
+  *((unsigned int *)this + 15) = v3; /*0x623379*/
+  *((unsigned int *)this + 16) = 0; /*0x62337c*/
+  *((unsigned int *)this + 23) = 0; /*0x62337f*/
+  *((unsigned int *)this + 36) = -1; /*0x623382*/
   return this; /*0x62338e*/
+
 }
 } // namespace gamemd
