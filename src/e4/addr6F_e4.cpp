@@ -194,7 +194,7 @@ v3 = (int)((void ***)(0));
         {
           v51 = 1; /*0x6f0c86*/
           v67 = 0; /*0x6f0c8b*/
-          ((void (__thiscall *)(void ***))v62[3])(&v62); /*0x6f0c93*/
+          ((void (*)(void ***))v62[3])(&v62); /*0x6f0c93*/
         }
   LABEL_33: v53[0] = (unsigned int)(v19);
         v53[1] = (unsigned int)(v20);
@@ -233,7 +233,7 @@ v3 = (int)((void ***)(0));
           goto LABEL_49; /*0x6f0d38*/
         if ( (v59 || !v58) && v61 > 0 ) /*0x6f0d4c*/
         {
-          if ( !((uint8_t (__thiscall *)(void ***, int, unsigned int))v56[2])(&v56, v61 + v58, 0) ) /*0x6f0d60*/
+          if ( !((uint8_t (*)(void ***, int, unsigned int))v56[2])(&v56, v61 + v58, 0) ) /*0x6f0d60*/
           {
   LABEL_50:
             v27 = v58; /*0x6f0d74*/
@@ -251,7 +251,7 @@ v3 = (int)((void ***)(0));
         && (v60 < v27
          || (v59 || !v27)
          && v61 > 0
-         && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v56[2])(&v56, v61 + v27, 0)) )
+         && ((uint8_t (*)(void ***, int, unsigned int))v56[2])(&v56, v61 + v27, 0)) )
       {
         v30 = v60++; /*0x6f0db4*/
         *((unsigned int *)Block + v30) = v29; /*0x6f0dbf*/
@@ -900,14 +900,14 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
   v25 = v14; /*0x6f5fca*/
   lpVtbl = g_TacticalClass_Instance->__tail_0; /*0x6f5fd1*/
   if ( v15 <= (int)(v22) ) /*0x6f5fd3*/
-    ((void (__stdcall *)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(v21, a1, a3, 0, v19, v20); /*0x6f5fe3*/
+    ((void (*)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(v21, a1, a3, 0, v19, v20); /*0x6f5fe3*/
   else
-    ((void (__stdcall *)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(a1, v21, a3, 0, v19, v20); /*0x6f5fdb*/
+    ((void (*)(unsigned int *, unsigned int *, int, unsigned int, int, int))lpVtbl[3].QueryInterface)(a1, v21, a3, 0, v19, v20); /*0x6f5fdb*/
   v17 = g_TacticalClass_Instance->__tail_0; /*0x6f5ff8*/
   if ( a2[2] <= v26[1] ) /*0x6f5ffa*/
-    return ((int (__stdcall *)(int *, int *))v17[3].QueryInterface)(&v25, a2); /*0x6f6015*/
+    return ((int (*)(int *, int *))v17[3].QueryInterface)(&v25, a2); /*0x6f6015*/
   else
-    return ((int (__stdcall *)(int *, int *))v17[3].QueryInterface)(a2, &v25); /*0x6f6002*/
+    return ((int (*)(int *, int *))v17[3].QueryInterface)(a2, &v25); /*0x6f6002*/
 }
 } // namespace gamemd
 
@@ -933,9 +933,9 @@ int sub_6F6030(int * a1, unsigned int * a2, int a3)
   v11[2] = v8 / 4; /*0x6f6091*/
   lpVtbl = g_TacticalClass_Instance->__tail_0; /*0x6f6095*/
   if ( v6 <= v8 / 4 ) /*0x6f6098*/
-    return ((int (__stdcall *)(unsigned int *, int *, int, unsigned int))lpVtbl[3].QueryInterface)(v11, a1, a3, 0); /*0x6f60b3*/
+    return ((int (*)(unsigned int *, int *, int, unsigned int))lpVtbl[3].QueryInterface)(v11, a1, a3, 0); /*0x6f60b3*/
   else
-    return ((int (__stdcall *)(int *, unsigned int *, int, unsigned int))lpVtbl[3].QueryInterface)(a1, v11, a3, 0); /*0x6f60a0*/
+    return ((int (*)(int *, unsigned int *, int, unsigned int))lpVtbl[3].QueryInterface)(a1, v11, a3, 0); /*0x6f60a0*/
 }
 } // namespace gamemd
 

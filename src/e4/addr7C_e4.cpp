@@ -228,7 +228,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   if ( !(unsigned short)v23 || (*(unsigned char *)(a1 + 1814) & 3) == 0 ) /*0x7c0a18*/
   {
   LABEL_51:
-    if ( !(*(int (__cdecl **)(int, int, unsigned int, int))(a1 + 64))( /*0x7c0a55*/
+    if ( !(*(int (**)(int, int, unsigned int, int))(a1 + 64))( /*0x7c0a55*/
             a1,
             7,
             0,
@@ -322,7 +322,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
         && ((v44 & 0x10) == 0 || (*(unsigned char *)(a1 + 234) & 0x10) == 0)
         && (v33 = FillAudioStreamBuffer(a1, v44 | 6), v33 != -1)
         || !v34
-        || (v36 = (*(int (__cdecl **)(int, int, unsigned int, int))(a1 + 64))(
+        || (v36 = (*(int (**)(int, int, unsigned int, int))(a1 + 64))(
                     a1,
                     8,
                     0,
@@ -335,7 +335,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
       goto LABEL_82; /*0x7c0bc4*/
     }
   }
-  if ( !(*(int (__cdecl **)(int, int, unsigned int, int))(a1 + 64))(a1, 7, 0, 2 * (*(unsigned int *)(v31 + 4 * v42) & 0xFFFFFFF)) ) /*0x7c0c05*/
+  if ( !(*(int (**)(int, int, unsigned int, int))(a1 + 64))(a1, 7, 0, 2 * (*(unsigned int *)(v31 + 4 * v42) & 0xFFFFFFF)) ) /*0x7c0c05*/
     goto LABEL_75; /*0x7c0c05*/
   result = -6; /*0x7c0c0b*/
   LABEL_82:
@@ -381,14 +381,14 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     return -15; /*0x7c25cd*/
   if ( !a1[14] ) /*0x7c25d0*/
     return -16; /*0x7c25e3*/
-  v5 = (int (__cdecl *)(unsigned int, int, unsigned int, int))a1[1]; /*0x7c25e6*/
+  v5 = (int (*)(unsigned int, int, unsigned int, int))a1[1]; /*0x7c25e6*/
   if ( v5 ) /*0x7c25f6*/
   {
     v8 = v5(0, 2, 0, 2012); /*0x7c261a*/
     v7 = (unsigned short *)v8; /*0x7c261c*/
     if ( v8 ) /*0x7c2623*/
     {
-      ((void (__cdecl *)(int, int, int, int))a1[1])(v8, 4, v8, 2012); /*0x7c2632*/
+      ((void (*)(int, int, int, int))a1[1])(v8, 4, v8, 2012); /*0x7c2632*/
       goto LABEL_12; /*0x7c2632*/
     }
     return -8; /*0x7c2b4c*/
@@ -407,21 +407,21 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     *((unsigned int *)v7 + 17) = AllocCallback::Dispatch; /*0x7c265d*/
   if ( !*v9 ) /*0x7c2664*/
     *v9 = sub_7BF240; /*0x7c266a*/
-  if ( ((int (__cdecl *)(unsigned short *, int, const char *, unsigned int))*v9)(v7, 3, v25, 0) ) /*0x7c267b*/
+  if ( ((int (*)(unsigned short *, int, const char *, unsigned int))*v9)(v7, 3, v25, 0) ) /*0x7c267b*/
   {
-    (*((void (__cdecl **)(unsigned short *, int, unsigned short *, int))v7 + 17))(v7, 5, v7, 2012); /*0x7c268e*/
-    (*((void (__cdecl **)(unsigned short *, int, unsigned short *, unsigned int))v7 + 17))(v7, 3, v7, 0); /*0x7c2697*/
+    (*((void (**)(unsigned short *, int, unsigned short *, int))v7 + 17))(v7, 5, v7, 2012); /*0x7c268e*/
+    (*((void (**)(unsigned short *, int, unsigned short *, unsigned int))v7 + 17))(v7, 3, v7, 0); /*0x7c2697*/
     return -3; /*0x7c26a9*/
   }
   v10 = strlen(v25) - 31; /*0x7c26b6*/
   if ( v10 < 0 ) /*0x7c26b9*/
     v10 = 0; /*0x7c26bb*/
   strcpy((char *)v7 + 200, &v25[v10]); /*0x7c26e0*/
-  if ( ((int (__cdecl *)(unsigned short *, int, unsigned int *, int))*v9)(v7, 5, &v27, 8) ) /*0x7c26f1*/
+  if ( ((int (*)(unsigned short *, int, unsigned int *, int))*v9)(v7, 5, &v27, 8) ) /*0x7c26f1*/
     goto LABEL_21; /*0x7c26f9*/
   if ( v27 != 1297239878 || !v28 ) /*0x7c2721*/
     goto LABEL_26; /*0x7c2721*/
-  if ( ((int (__cdecl *)(unsigned short *, int, unsigned int *, int))*v9)(v7, 5, &v27, 4) ) /*0x7c272d*/
+  if ( ((int (*)(unsigned short *, int, unsigned int *, int))*v9)(v7, 5, &v27, 4) ) /*0x7c272d*/
   {
   LABEL_21:
     DSurface::Flip((int)v7); /*0x7c26fb*/
@@ -441,7 +441,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
       {
         while ( 1 ) /*0x7c2772*/
         {
-          if ( ((int (__cdecl *)(unsigned short *, int, unsigned int *, int))*v9)(v7, 5, &v27, 8) ) /*0x7c277c*/
+          if ( ((int (*)(unsigned short *, int, unsigned int *, int))*v9)(v7, 5, &v27, 8) ) /*0x7c277c*/
             goto LABEL_113; /*0x7c2784*/
           v11 = (((v28 << 16) | v28 & 0xFF00) << 8) | ((IDA_HIWORD(v28) | v28 & 0xFF0000) >> 8); /*0x7c27b4*/
           v28 = v11; /*0x7c27bb*/
@@ -484,7 +484,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
       if ( v11 != 42 ) /*0x7c2806*/
         goto LABEL_26; /*0x7c2806*/
       v12 = v7 + 116; /*0x7c280c*/
-      if ( ((int (__cdecl *)(unsigned short *, int, unsigned short *, int))*v9)(v7, 5, v7 + 116, 42) ) /*0x7c2817*/
+      if ( ((int (*)(unsigned short *, int, unsigned short *, int))*v9)(v7, 5, v7 + 116, 42) ) /*0x7c2817*/
         goto LABEL_113; /*0x7c281f*/
       *v7 = *v12; /*0x7c2828*/
       *((unsigned int *)v7 + 4) = (uint16_t)v7[118]; /*0x7c282f*/
@@ -510,7 +510,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     else
     {
   LABEL_56:
-      if ( ((int (__cdecl *)(unsigned short *, int, int, unsigned int))*v9)(v7, 7, 1, (v11 + 1) & 0xFFFFFFFE) ) /*0x7c28f2*/
+      if ( ((int (*)(unsigned short *, int, int, unsigned int))*v9)(v7, 7, 1, (v11 + 1) & 0xFFFFFFFE) ) /*0x7c28f2*/
       {
         DSurface::Flip((int)v7); /*0x7c29e4*/
         return -6; /*0x7c29f5*/
@@ -582,7 +582,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
   }
   else if ( *((unsigned int *)v7 + 22) ) /*0x7c2a7e*/
   {
-    (*((void (__cdecl **)(unsigned short *, int, unsigned int, unsigned int))v7 + 22))(v7, 1, 0, 0); /*0x7c2a8c*/
+    (*((void (**)(unsigned short *, int, unsigned int, unsigned int))v7 + 22))(v7, 1, 0, 0); /*0x7c2a8c*/
   }
   v20 = *((unsigned int *)v7 + 33); /*0x7c2a92*/
   if ( (v20 & 0x20) == 0 ) /*0x7c2a97*/
@@ -592,10 +592,10 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
   }
   if ( (v20 & 0x100) != 0 && v7[906] )
   {
-    if ( ((int (__cdecl *)(unsigned short *, int, const char **, unsigned int))*v9)(v7, 9, &v25, 0) ) /*0x7c2abe*/
+    if ( ((int (*)(unsigned short *, int, const char **, unsigned int))*v9)(v7, 9, &v25, 0) ) /*0x7c2abe*/
       v25 = 0; /*0x7c2ac8*/
     *((unsigned int *)v7 + 446) = Audio_Render_7C3860(v7, v25); /*0x7c2adf*/
-    (*((void (__cdecl **)(unsigned short *, int, int *, unsigned int))v7 + 17))(v7, 6, &v26, 0); /*0x7c2aeb*/
+    (*((void (**)(unsigned short *, int, int *, unsigned int))v7 + 17))(v7, 6, &v26, 0); /*0x7c2aeb*/
     v21 = (const char *)v26; /*0x7c2aee*/
     if ( v26 < 0 )
     {
@@ -606,11 +606,11 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
       *((unsigned int *)v7 + 446) = v21; /*0x7c2b13*/
     if ( *((int *)v7 + 446) > 0 ) /*0x7c2b21*/
     {
-      v22 = (*((int (__cdecl **)(unsigned short *, int, unsigned int, unsigned int))v7 + 17))(v7, 2, 0, *((unsigned int *)v7 + 446)); /*0x7c2b29*/
+      v22 = (*((int (**)(unsigned short *, int, unsigned int, unsigned int))v7 + 17))(v7, 2, 0, *((unsigned int *)v7 + 446)); /*0x7c2b29*/
       *((unsigned int *)v7 + 445) = v22; /*0x7c2b2f*/
       if ( !v22 ) /*0x7c2b37*/
         goto LABEL_99; /*0x7c2b37*/
-      (*((void (__cdecl **)(unsigned short *, int, unsigned int, unsigned int))v7 + 17))(v7, 4, *((unsigned int *)v7 + 445), *((unsigned int *)v7 + 446)); /*0x7c2b60*/
+      (*((void (**)(unsigned short *, int, unsigned int, unsigned int))v7 + 17))(v7, 4, *((unsigned int *)v7 + 445), *((unsigned int *)v7 + 446)); /*0x7c2b60*/
       v23 = *((unsigned int *)v7 + 446); /*0x7c2b69*/
       v24 = *((unsigned int *)v7 + 12); /*0x7c2b6f*/
       *((unsigned int *)v7 + 85) |= 4u; /*0x7c2b7a*/
@@ -692,7 +692,7 @@ void AudioStream_Process(int a1, int a2, char a3)
     IDA_LOBYTE(v6) = v6 | 8; /*0x7c2d83*/
     *(unsigned int *)(a1 + 336) = v6; /*0x7c2d85*/
   }
-  v7 = *(int (__cdecl **)(int))(a1 + 84); /*0x7c2d8b*/
+  v7 = *(int (**)(int))(a1 + 84); /*0x7c2d8b*/
   if ( v7 ) /*0x7c2d90*/
     v8 = v7(a1); /*0x7c2d93*/
   else
@@ -9610,7 +9610,7 @@ int AudioStream_CalcOffset(int a1, int a2)
   int result; // eax
 
   *(unsigned int *)(a1 + 328) = 0; /*0x7c3917*/
-  v3 = a2 - (unsigned int)(60 * (*(int (__cdecl **)(int))(a1 + 80))(a1)) / *(unsigned int *)(a1 + 120); /*0x7c3935*/
+  v3 = a2 - (unsigned int)(60 * (*(int (**)(int))(a1 + 80))(a1)) / *(unsigned int *)(a1 + 120); /*0x7c3935*/
   result = *(unsigned int *)(a1 + 328); /*0x7c3937*/
   *(unsigned int *)(a1 + 328) = v3 - result; /*0x7c393f*/
   return result; /*0x7c3945*/
@@ -13954,7 +13954,7 @@ int _local_unwind2(int a1, int a2)
     if ( !*(unsigned int *)(v3 + 4 * v5 + 4) ) /*0x7cc15d*/
     {
       _NLG_Notify(257); /*0x7cc16d*/
-      (*(void (__cdecl **)(struct _EXCEPTION_REGISTRATION_RECORD *, int (__cdecl *)(int, int, int, int)))(v3 + 4 * v5 + 8))( /*0x7cc172*/
+      (*(void (**)(struct _EXCEPTION_REGISTRATION_RECORD *, int (*)(int, int, int, int)))(v3 + 4 * v5 + 8))( /*0x7cc172*/
         ExceptionList,
         v7);
     }
@@ -13972,7 +13972,7 @@ int _abnormal_termination()
 
   result = 0; /*0x7cc186*/
   ExceptionList = NtCurrentTeb()->NtTib.ExceptionList; /*0x7cc188*/
-  if ( (int (__cdecl *)(int, int, int, unsigned int *))ExceptionList->Handler == _unwind_handler ) /*0x7cc196*/
+  if ( (int (*)(int, int, int, unsigned int *))ExceptionList->Handler == _unwind_handler ) /*0x7cc196*/
     return ExceptionList[1].Next == (struct _EXCEPTION_REGISTRATION_RECORD *)*((unsigned int *)ExceptionList[1].Handler + 3); /*0x7cc1a3*/
   return result; /*0x7cc1a8*/
 }

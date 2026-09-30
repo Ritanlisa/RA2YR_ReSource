@@ -225,13 +225,13 @@ int Trigger_AllocateLog(int a1)
         *(unsigned char *)(v15 + 32) = *(unsigned char *)(*(unsigned int *)(v28 + 540) + 48);
         if ( !*(unsigned int *)(v28 + 1652) )
           WinAPI::Wrapper(-2147467261);
-        *(unsigned short *)(v15 + 96) = (*(int (__stdcall **)(unsigned int))(**(unsigned int **)(v28 + 1652) + 188))(*(unsigned int *)(v28 + 1652));
+        *(unsigned short *)(v15 + 96) = (*(int (**)(unsigned int))(**(unsigned int **)(v28 + 1652) + 188))(*(unsigned int *)(v28 + 1652));
         if ( !*(unsigned int *)(v28 + 1652) )
           WinAPI::Wrapper(-2147467261);
-        *(unsigned short *)(v15 + 98) = (*(int (__stdcall **)(unsigned int))(**(unsigned int **)(v28 + 1652) + 192))(*(unsigned int *)(v28 + 1652));
+        *(unsigned short *)(v15 + 98) = (*(int (**)(unsigned int))(**(unsigned int **)(v28 + 1652) + 192))(*(unsigned int *)(v28 + 1652));
         if ( !*(unsigned int *)(v28 + 1652) )
           WinAPI::Wrapper(-2147467261);
-        *(unsigned int *)(v15 + 92) = (*(int (__stdcall **)(unsigned int))(**(unsigned int **)(v28 + 1652) + 196))(*(unsigned int *)(v28 + 1652));
+        *(unsigned int *)(v15 + 92) = (*(int (**)(unsigned int))(**(unsigned int **)(v28 + 1652) + 196))(*(unsigned int *)(v28 + 1652));
         *(unsigned char *)(v15 + 31) = 0;
         strncpy((char *)(v15 + 8), (const char *)(*(unsigned int *)(v28 + 1732) + 36), 0x17u);
         v31 = *(int16_t **)(v28 + 1444);
@@ -417,7 +417,7 @@ int Trigger_AllocateLog(int a1)
         {
           unsigned int * v64 = *(unsigned int **)(*(unsigned int *)((v61 - 3)) + 4 * v63);
           if ( (*(int (**)(unsigned int *))(*v64 + 44))(v64) != 4
-            || (*(int (__stdcall **)(unsigned int *))(v64[1] + 16))(v64 + 1) != -2 )
+            || (*(int (**)(unsigned int *))(v64[1] + 16))(v64 + 1) != -2 )
           {
             int v65 = v64[39];
             int v66 = v64[40];
@@ -464,7 +464,7 @@ int Trigger_AllocateLog(int a1)
     {
       unsigned int * v72 = (unsigned int *)*((unsigned int *)DataGlobal_87F77C + v71);
       if ( (*(int (**)(unsigned int *))(*v72 + 44))(v72) != 4
-        || (*(int (__stdcall **)(unsigned int *))(v72[1] + 16))(v72 + 1) != -2 )
+        || (*(int (**)(unsigned int *))(v72[1] + 16))(v72 + 1) != -2 )
       {
         int v73 = v72[39];
         int v74 = v72[40];
@@ -769,7 +769,7 @@ void sub_6586D0()
   Dialog *Dialog; // esi
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
-  Dialog = (Dialog *)CreateDialog(0x73u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Diplomacy::DlgProc, 0); /*0x6586e9*/
+  Dialog = (Dialog *)CreateDialog(0x73u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Diplomacy::DlgProc, 0); /*0x6586e9*/
   *((unsigned int *)((char *)&stru_A8EB00 + 440)) = 1; /*0x6586eb*/
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x6586f2*/
   if ( Dialog ) /*0x6586f9*/
@@ -1737,7 +1737,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         v5->vt_slot_1152(v20, 1); /*0x65e22d*/
         if ( !v5[413] ) /*0x65e23d*/
           WinAPI::Wrapper(-2147467261); /*0x65e260*/
-        (*(void (__stdcall **)(unsigned int, int, int, unsigned int))(*(unsigned int *)v5[413] + 68))( /*0x65e27b*/
+        (*(void (**)(unsigned int, int, int, unsigned int))(*(unsigned int *)v5[413] + 68))( /*0x65e27b*/
           v5[413],
           ((int16_t)v49 << 8) + 128,
           (IDA_SHIWORD(v49) << 8) + 128,
@@ -1817,7 +1817,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
         (*(void (**)(unsigned int *, unsigned int, int))(*v5 + 1348))(v5, 0, 1072693248); /*0x65e3a8*/
         if ( !v5[413] ) /*0x65e3b8*/
           WinAPI::Wrapper(-2147467261); /*0x65e3db*/
-        (*(void (__stdcall **)(unsigned int, int, int, unsigned int))(*(unsigned int *)v5[413] + 68))( /*0x65e3f6*/
+        (*(void (**)(unsigned int, int, int, unsigned int))(*(unsigned int *)v5[413] + 68))( /*0x65e3f6*/
           v5[413],
           ((int16_t)v49 << 8) + 128,
           (IDA_SHIWORD(v49) << 8) + 128,
@@ -2344,7 +2344,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
       v50 = 0; /*0x65f01d*/
       if ( v9[413] ) /*0x65f025*/
       {
-        Checked = (int (__stdcall ***)(unsigned int, void *, int *))Stream::GetChecked(v9 + 413); /*0x65f02d*/
+        Checked = (int (***)(unsigned int, void *, int *))Stream::GetChecked(v9 + 413); /*0x65f02d*/
         v26 = (**Checked)(Checked, &unk_819088, v67); /*0x65f041*/
         if ( v26 >= 0 ) /*0x65f045*/
         {
@@ -2366,12 +2366,12 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
         WinAPI::Wrapper(v28); /*0x65f0a3*/
       if ( !ppv ) /*0x65f0ae*/
         WinAPI::Wrapper(-2147467261); /*0x65f0b5*/
-      (*(void (__stdcall **)(LPVOID, LPVOID *))(ppv->vtable4)(ppv, v9); /*0x65f0c2*/
+      (*(void (**)(LPVOID, LPVOID *))(ppv->vtable4)(ppv, v9); /*0x65f0c2*/
       v29 = 0; /*0x65f0c5*/
       i = 0; /*0x65f0cb*/
       if ( ppv ) /*0x65f0d1*/
       {
-        v30 = (int (__stdcall ***)(unsigned int, void *, int *))Stream::GetChecked(&ppv); /*0x65f0d7*/
+        v30 = (int (***)(unsigned int, void *, int *))Stream::GetChecked(&ppv); /*0x65f0d7*/
         v31 = (**v30)(v30, &unk_819088, &v57); /*0x65f0eb*/
         if ( v31 >= 0 ) /*0x65f0ef*/
         {
@@ -2396,33 +2396,33 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
         v50 = v29; /*0x65f135*/
         if ( v29 ) /*0x65f139*/
         {
-          (*(void (__stdcall **)(int))(*(unsigned int *)v29 + 4))(v29); /*0x65f13e*/
+          (*(void (**)(int))(*(unsigned int *)v29 + 4))(v29); /*0x65f13e*/
           v33 = v50; /*0x65f141*/
           v29 = i; /*0x65f145*/
         }
         if ( v50 ) /*0x65f14b*/
         {
-          (*(void (__stdcall **)(int))(*(unsigned int *)v50 + 8))(v50); /*0x65f150*/
+          (*(void (**)(int))(*(unsigned int *)v50 + 8))(v50); /*0x65f150*/
           v33 = v50; /*0x65f153*/
           v29 = i; /*0x65f157*/
         }
       }
       if ( v29 ) /*0x65f15d*/
       {
-        (*(void (__stdcall **)(int))(*(unsigned int *)v29 + 8))(v29); /*0x65f162*/
+        (*(void (**)(int))(*(unsigned int *)v29 + 8))(v29); /*0x65f162*/
         v33 = v50; /*0x65f165*/
       }
       if ( v33 ) /*0x65f16b*/
       {
-        (*(void (__stdcall **)(int, LPVOID))(*(unsigned int *)v33 + 12))(v33, *v24); /*0x65f174*/
+        (*(void (**)(int, LPVOID))(*(unsigned int *)v33 + 12))(v33, *v24); /*0x65f174*/
         v35 = *v24; /*0x65f177*/
         if ( *v24 != ppv ) /*0x65f180*/
         {
           *v24 = ppv; /*0x65f182*/
           if ( ppv ) /*0x65f18b*/
-            (*(void (__stdcall **)(LPVOID))(ppv->vtable2)(ppv); /*0x65f190*/
+            (*(void (**)(LPVOID))(ppv->vtable2)(ppv); /*0x65f190*/
           if ( v35 ) /*0x65f195*/
-            (*(void (__stdcall **)(LPVOID))(*(unsigned int *)v35 + 8))(v35); /*0x65f19a*/
+            (*(void (**)(LPVOID))(*(unsigned int *)v35 + 8))(v35); /*0x65f19a*/
         }
       }
       v9[162] = (LPVOID)v52; /*0x65f1a7*/
@@ -2430,7 +2430,7 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
       v9[164] = v54; /*0x65f1b8*/
       if ( !v9[413] ) /*0x65f1bb*/
         WinAPI::Wrapper(-2147467261); /*0x65f1d6*/
-      (*(void (__stdcall **)(LPVOID, int, int, void *))(*(unsigned int *)v9[413] + 68))(v9[413], v52, v53, v54); /*0x65f1f1*/
+      (*(void (**)(LPVOID, int, int, void *))(*(unsigned int *)v9[413] + 68))(v9[413], v52, v53, v54); /*0x65f1f1*/
       *((unsigned char *)v9 + 625) = 1; /*0x65f1f4*/
       v58 = v58; /*0x65f201*/
       v58 = v9; /*0x65f205*/
@@ -2444,9 +2444,9 @@ void* ExecuteScriptTypeClassActions(unsigned int * ecx0, int a2)
         v9[12] = 0; /*0x65f22a*/
       }
       if ( ppv ) /*0x65f236*/
-        (*(void (__stdcall **)(LPVOID))(ppv->vtable3)(ppv); /*0x65f23b*/
+        (*(void (**)(LPVOID))(ppv->vtable3)(ppv); /*0x65f23b*/
       if ( v50 ) /*0x65f244*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v50 + 8))(v50); /*0x65f249*/
+        (*(void (**)(int))(*(unsigned int *)v50 + 8))(v50); /*0x65f249*/
     }
     else
     {

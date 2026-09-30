@@ -218,7 +218,7 @@ int CellClass::Draw(int a1, int a2, void * a3) const
   }
   v6 = this->attached1; /*0x48e5d5*/
   if ( v6 ) /*0x48e5da*/
-    (*(void (__thiscall **)(int, int, unsigned int *, ControlClass *))(*(unsigned int *)v6 + 76))(v6, a2, a3, this); /*0x48e5e1*/
+    (*(void (**)(int, int, unsigned int *, ControlClass *))(*(unsigned int *)v6 + 76))(v6, a2, a3, this); /*0x48e5e1*/
 // 0x4e1530
   return COMObject::ActivateThunk((GadgetClass *)this, a2, (int)a3, 0); /*0x48e5ef*/
 }
@@ -309,7 +309,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v5 = this->u32_E4; /*0x47e8b8*/
   if ( content ) /*0x47e8c4*/
   {
-    if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 && v5 ) /*0x47e8d9*/
+    if ( (*(int (**)(unsigned int *))(*content + 44))(content) == 6 && v5 ) /*0x47e8d9*/
     {
       for ( i = v5->Wobbles; i; i = *(unsigned int *)(i + 48) ) /*0x47e8e0*/
         v5 = i; /*0x47e8e2*/
@@ -347,15 +347,15 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
           !Game::Stub3((int)&v15))
       || ((unsigned int *)(dword_A8B238))[0] )
     {
-      (*(void (__thiscall **)(unsigned int *, void *))(*content + 408))(content, dword_A83D4C); /*0x47e9dc*/
+      (*(void (**)(unsigned int *, void *))(*content + 408))(content, dword_A83D4C); /*0x47e9dc*/
     }
-    v3 = (*(int (__thiscall **)(unsigned int *))(*content + 44))(content); /*0x47e9e7*/
+    v3 = (*(int (**)(unsigned int *))(*content + 44))(content); /*0x47e9e7*/
     if ( v3 != 15 ) /*0x47e9ee*/
     {
-      IDA_LOBYTE(v3) = (*(int (__thiscall **)(unsigned int *))(*content + 192))(content); /*0x47e9f9*/
+      IDA_LOBYTE(v3) = (*(int (**)(unsigned int *))(*content + 192))(content); /*0x47e9f9*/
       if ( (unsigned char)v3 ) /*0x47ea01*/
       {
-        if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
+        if ( (*(int (**)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
         {
           v9 = *(int16_t *)(&this->vtable46); /*0x47ea10*/
           v10 = *(int16_t *)(&this->vtable48); /*0x47ea14*/
@@ -371,7 +371,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v16 = (int)(content[40]);
           v17 = (int)(content[41]);
         }
-        IDA_LOBYTE(v3) = (*(int (__thiscall **)(unsigned int *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
+        IDA_LOBYTE(v3) = (*(int (**)(unsigned int *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
       }
     }
   }
@@ -420,10 +420,10 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     goto LABEL_14; /*0x47eaed*/
   }
   LABEL_15:
-  if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) != 15 /*0x47eb0b*/
-    && (*(uint8_t (__thiscall **)(unsigned int *))(*content + 192))(content) )
+  if ( (*(int (**)(unsigned int *))(*content + 44))(content) != 15 /*0x47eb0b*/
+    && (*(uint8_t (**)(unsigned int *))(*content + 192))(content) )
   {
-    if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
+    if ( (*(int (**)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
     {
       v6 = *(int16_t *)(this + 36); /*0x47eb21*/
       v7 = *(int16_t *)(this + 38); /*0x47eb25*/
@@ -439,7 +439,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
       v10 = (int)(content[40]);
       v11 = (int)(content[41]);
     }
-    (*(void (__thiscall **)(unsigned int *, int *))(v8 + 244))(content, &v9); /*0x47eb54*/
+    (*(void (**)(unsigned int *, int *))(v8 + 244))(content, &v9); /*0x47eb54*/
   }
 }
 ObjectClass* CellClass::GetSomeObject(const CoordStruct& coords, bool alt) const

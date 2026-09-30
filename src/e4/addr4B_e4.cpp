@@ -124,12 +124,12 @@ void JumpjetLocomotionClass_Process(int a1)
             return 0; /*0x4b08ce*/
         }
         if ( (*((int (**)(FootClass *))v1->?->TechnoClass + 97))(v1->?) == 5 /*0x4b08fd*/
-          && !(*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
+          && !(*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
           || (*((int (**)(FootClass *))v1->?->TechnoClass + 97))(v1->?) == 16 )
         {
           goto LABEL_39; /*0x4b08fd*/
         }
-        if ( !(*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1) ) /*0x4b0906*/
+        if ( !(*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1) ) /*0x4b0906*/
         {
           v23 = v1->?; /*0x4b0911*/
           if ( v23->pathDirections[0] == -1 ) /*0x4b091b*/
@@ -154,7 +154,7 @@ void JumpjetLocomotionClass_Process(int a1)
                                   v24,
                                   &v30,
                                   v1->?);
-                (*(void (__stdcall **)(DriveLocomotionClass *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v1->LocomotionClass /*0x4b09a3*/
+                (*(void (**)(DriveLocomotionClass *, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v1->LocomotionClass /*0x4b09a3*/
                                                                                       + 68))(
                   v1,
                   *v25,
@@ -168,7 +168,7 @@ void JumpjetLocomotionClass_Process(int a1)
         v26 = v1->?; /*0x4b09ab*/
         if ( v26->? /*0x4b09e2*/
           && (*((int (**)(FootClass *))v26->TechnoClass + 97))(v26) != 7
-          && (*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
+          && (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
           && !(*((uint8_t (**)(FootClass *, int *))v1->?->TechnoClass + 179))(
                 v1->?,
                 &v1->SlopeTimer[3]) )
@@ -221,7 +221,7 @@ void JumpjetLocomotionClass_Process(int a1)
   if ( JumpjetLocomotion::ProcessCollision((int)&((unsigned int *)(v1))[-1].Piggybackee, 0) || !v1->?->? ) /*0x4b0586*/
     return 0; /*0x4b058c*/
   if ( v1->MovementSpeed[1] == -1 /*0x4b05c4*/
-    && ((*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
+    && ((*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1)
      || v1->?->pathDirections[0] != -1)
     && ((*((int (**)(FootClass *))v1->?->TechnoClass + 11))(v1->?) != 1 || !IDA_BYTE1(v1->?[1].?)) )
   {
@@ -243,7 +243,7 @@ void JumpjetLocomotionClass_Process(int a1)
           v9 = v7[1]; /*0x4b0615*/
           v10 = v7[2]; /*0x4b0618*/
           if ( v8 != v1->SlopeTimer[3] || v9 != v1->Dest[0] || v10 != v1->Dest[1] ) /*0x4b0625*/
-            (*(void (__stdcall **)(DriveLocomotionClass *, int, int, int))(*(unsigned int *)v1->LocomotionClass + 68))( /*0x4b0638*/
+            (*(void (**)(DriveLocomotionClass *, int, int, int))(*(unsigned int *)v1->LocomotionClass + 68))( /*0x4b0638*/
               v1,
               v8,
               v9,
@@ -262,7 +262,7 @@ void JumpjetLocomotionClass_Process(int a1)
       return 0; /*0x4b0ac5*/
   }
   LABEL_39:
-  if ( (*(uint8_t (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))(v1) ) /*0x4b078f*/
+  if ( (*(uint8_t (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 128))(v1) ) /*0x4b078f*/
   {
     if ( !(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % 10) ) /*0x4b07a8*/
     {
@@ -301,7 +301,7 @@ void JumpjetLocomotionClass_Process(int a1)
     if ( v21->pathDirections[0] == -1 && *(double *)v21->currentSpeed_percentage > 0.0 ) /*0x4b087a*/
       (*((void (**)(FootClass *, unsigned int, unsigned int))v21->TechnoClass + 337))(v21, 0, 0); /*0x4b0880*/
   }
-  return (*(char (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1); /*0x4b06cb*/
+  return (*(char (**)(DriveLocomotionClass *))(*(unsigned int *)v1->LocomotionClass + 16))(v1); /*0x4b06cb*/
 }
 }
 // 0x4B69E0

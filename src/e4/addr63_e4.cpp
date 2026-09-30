@@ -178,7 +178,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   unsigned char v73[2048]; // [esp+E4h] [ebp-800h] BYREF
   void *retaddr; // [esp+8E4h] [ebp+0h] BYREF
 
-  if ( !(*(uint8_t (__stdcall **)(unsigned int))(a1->u32_14)(0) ) /*0x630328*/
+  if ( !(*(uint8_t (**)(unsigned int))(a1->u32_14)(0) ) /*0x630328*/
     return 0; /*0x63033b*/
   (*(void (**)(int, int))(a1->__pad_070)(a1, 1); /*0x630344*/
   (*(void (**)(int, unsigned char *, int))(a1->q024)(a1, v66, 128); /*0x630355*/
@@ -3156,12 +3156,12 @@ int ParticleSystemClass__vt_06_(int * a1, int * a2, int a3)
   {
     v4 = *a2; /*0x6300b1*/
     a3 = a1->a3; /*0x6300bd*/
-    result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(a2, &a3, 4, 0); /*0x6300c1*/
+    result = (*(int (**)(int *, int *, int, unsigned int))(v4 + 16))(a2, &a3, 4, 0); /*0x6300c1*/
     if ( result >= 0 ) /*0x6300c6*/
     {
       for ( i = 0; i < a3; ++i ) /*0x6300d0*/
       {
-        result = (*(int (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->TargetCoords[0] + 4 * i, 4, 0); /*0x6300e3*/
+        result = (*(int (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->TargetCoords[0] + 4 * i, 4, 0); /*0x6300e3*/
         if ( result < 0 ) /*0x6300e8*/
           break; /*0x6300e8*/
       }

@@ -80,7 +80,7 @@ void sub_7A19E0()
     if ( v14[6] ) /*0x7a1b15*/
     {
       v13 = -1; /*0x7a1b27*/
-      (*(void (__stdcall **)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v14[6], &v13); /*0x7a1b34*/
+      (*(void (**)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v14[6], &v13); /*0x7a1b34*/
       if ( v13 != -1 ) /*0x7a1b3e*/
       {
         v11 = (wchar_t *)((void *)v13);

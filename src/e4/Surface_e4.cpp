@@ -314,7 +314,7 @@ void sub_626C60()
       {
         v9 = v8 + 1; /*0x626d2f*/
         *v8 = 31; /*0x626d37*/
-        Array::ForEach((int)(v8 + 1), 24, 31, (int (__thiscall *)(int))FileSystem::readFile); /*0x626d3d*/
+        Array::ForEach((int)(v8 + 1), 24, 31, (int (*)(int))FileSystem::readFile); /*0x626d3d*/
       }
       else
       {
@@ -1847,22 +1847,22 @@ LABEL_57:
   *((unsigned int *)this + 85) |= 1u; /*0x7bd90f*/
   v21 = 0; /*0x7bd91b*/
   *((unsigned int *)this + 474) = (*(unsigned int *)((char *)this + 266) + 16) & 0xFFFFFFFC; /*0x7bd927*/
-  v22 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v49); /*0x7bd92d*/
+  v22 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v49); /*0x7bd92d*/
   *((unsigned int *)this + 444) = v22; /*0x7bd935*/
   if ( !v22 ) /*0x7bd93b*/
     goto LABEL_103; /*0x7bd93b*/
-  (*((void (__cdecl **)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v22, *((unsigned int *)this + 477)); /*0x7bd95c*/
+  (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v22, *((unsigned int *)this + 477)); /*0x7bd95c*/
   *((unsigned int *)this + 12) += *((unsigned int *)this + 477); /*0x7bd96d*/
   v56 = 0; /*0x7bd978*/
   if ( *((int *)this + 35) > 0 ) /*0x7bd97c*/
   {
     while ( 1 ) /*0x7bd991*/
     {
-      v23 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 474) + 24); /*0x7bd991*/
+      v23 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 474) + 24); /*0x7bd991*/
       v24 = (unsigned int *)v23; /*0x7bd994*/
       if ( !v23 ) /*0x7bd99b*/
         goto LABEL_103; /*0x7bd99b*/
-      (*((void (__cdecl **)(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v23, *((unsigned int *)this + 474) + 24); /*0x7bd9af*/
+      (*((void (**)(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v23, *((unsigned int *)this + 474) + 24); /*0x7bd9af*/
       *((unsigned int *)this + 12) += *((unsigned int *)this + 474) + 24; /*0x7bd9c4*/
       memset(v24, 0, 0x18u); /*0x7bd9cc*/
       *v24 = v24 + 6; /*0x7bd9d6*/
@@ -1917,7 +1917,7 @@ LABEL_57:
   LOBYTE(v30) = v30 & 0xFC; /*0x7bdab1*/
   *((unsigned int *)this + 85) |= 2u; /*0x7bdab6*/
   *((unsigned int *)this + 475) = v30; /*0x7bdabc*/
-  v31 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v50); /*0x7bdac2*/
+  v31 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v50); /*0x7bdac2*/
   *((unsigned int *)this + 442) = v31; /*0x7bdaca*/
   if ( !v31 ) /*0x7bdad0*/
   {
@@ -1925,21 +1925,21 @@ LABEL_103:
     DSurface::CommitBuffers((DSurface *)this); /*0x7bdf14*/
     return -8; /*0x7bdf27*/
   }
-  (*((void (__cdecl **)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v31, *((unsigned int *)this + 478)); /*0x7bdaf1*/
+  (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v31, *((unsigned int *)this + 478)); /*0x7bdaf1*/
   *((unsigned int *)this + 12) += *((unsigned int *)this + 478); /*0x7bdb02*/
   v57 = 0; /*0x7bdb0d*/
   if ( *((int *)this + 34) > 0 ) /*0x7bdb11*/
   {
     while ( 1 ) /*0x7bdb30*/
     {
-      v32 = (unsigned int *)(*((int (__cdecl **)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))( /*0x7bdb30*/
+      v32 = (unsigned int *)(*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))( /*0x7bdb30*/
                         this,
                         2,
                         0,
                         *((unsigned int *)this + 476) + *((unsigned int *)this + 475) + 44);
       if ( !v32 ) /*0x7bdb37*/
         goto LABEL_103; /*0x7bdb37*/
-      (*((void (__cdecl **)(BSurface *, int, unsigned int *, int))(unsigned int *)this + 17))( /*0x7bdb52*/
+      (*((void (**)(BSurface *, int, unsigned int *, int))(unsigned int *)this + 17))( /*0x7bdb52*/
         this,
         4,
         v32,
@@ -2023,47 +2023,47 @@ LABEL_103:
       }
       else
       {
-        v42 = (*((int (__cdecl **)(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 38)); /*0x7bdcf5*/
+        v42 = (*((int (**)(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 38)); /*0x7bdcf5*/
         *((unsigned int *)this + 483) = v42; /*0x7bdcfb*/
         if ( !v42 ) /*0x7bdd03*/
           goto LABEL_103; /*0x7bdd03*/
-        (*((void (__cdecl **)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v42, *((unsigned int *)this + 38)); /*0x7bdd24*/
+        (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v42, *((unsigned int *)this + 38)); /*0x7bdd24*/
         *((unsigned int *)this + 12) += *((unsigned int *)this + 38); /*0x7bdd35*/
       }
       v51 = *((unsigned int *)this + 38) / *((unsigned int *)this + 39); /*0x7bdd4d*/
       *((unsigned int *)this + 487) = v51; /*0x7bdd53*/
-      v43 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v51); /*0x7bdd59*/
+      v43 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v51); /*0x7bdd59*/
       *((unsigned int *)this + 485) = v43; /*0x7bdd5f*/
       if ( !v43 ) /*0x7bdd67*/
         goto LABEL_103; /*0x7bdd67*/
-      (*((void (__cdecl **)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v43, *((unsigned int *)this + 487)); /*0x7bdd88*/
+      (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v43, *((unsigned int *)this + 487)); /*0x7bdd88*/
       *((unsigned int *)this + 12) += *((unsigned int *)this + 487); /*0x7bdd96*/
       memset(*((void **)this + 485), 0, *((unsigned int *)this + 487)); /*0x7bddac*/
-      v44 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 2 * *((unsigned int *)this + 487)); /*0x7bddc3*/
+      v44 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 2 * *((unsigned int *)this + 487)); /*0x7bddc3*/
       *((unsigned int *)this + 486) = v44; /*0x7bddc9*/
       if ( !v44 ) /*0x7bddd1*/
         goto LABEL_103; /*0x7bddd1*/
-      (*((void (__cdecl **)(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v44, 2 * *((unsigned int *)this + 487)); /*0x7bddf4*/
+      (*((void (**)(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v44, 2 * *((unsigned int *)this + 487)); /*0x7bddf4*/
       *((unsigned int *)this + 12) += 2 * *((unsigned int *)this + 487); /*0x7bde04*/
       memset(*((void **)this + 486), 0, 2 * *((unsigned int *)this + 487)); /*0x7bde1c*/
       v48 = 2 * (*((unsigned int *)this + 499) / (unsigned int)*((uint8_t *)this + 244)) + 100; /*0x7bde3b*/
       *((unsigned int *)this + 493) = v48; /*0x7bde41*/
-      v45 = (*((int (__cdecl **)(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, v48); /*0x7bde47*/
+      v45 = (*((int (**)(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, v48); /*0x7bde47*/
       *((unsigned int *)this + 490) = v45; /*0x7bde4d*/
       if ( !v45 ) /*0x7bde55*/
         goto LABEL_103; /*0x7bde55*/
-      (*((void (__cdecl **)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v45, *((unsigned int *)this + 493)); /*0x7bde76*/
+      (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v45, *((unsigned int *)this + 493)); /*0x7bde76*/
       *((unsigned int *)this + 12) += *((unsigned int *)this + 493); /*0x7bde84*/
-      v46 = (*((int (__cdecl **)(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 39)); /*0x7bde93*/
+      v46 = (*((int (**)(BSurface *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, *((unsigned int *)this + 39)); /*0x7bde93*/
       *((unsigned int *)this + 494) = v46; /*0x7bde99*/
       if ( !v46 ) /*0x7bdea1*/
         goto LABEL_103; /*0x7bdea1*/
-      (*((void (__cdecl **)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v46, *((unsigned int *)this + 39)); /*0x7bdec2*/
+      (*((void (**)(BSurface *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v46, *((unsigned int *)this + 39)); /*0x7bdec2*/
       memset(*((void **)this + 494), 0, *((unsigned int *)this + 39)); /*0x7bded8*/
       *((unsigned int *)this + 12) += *((unsigned int *)this + 39); /*0x7bdeef*/
     }
   }
-  v47 = (*((int (__cdecl **)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))( /*0x7bdf04*/
+  v47 = (*((int (**)(BSurface *, int, unsigned int, int))(unsigned int *)this + 17))( /*0x7bdf04*/
           this,
           2,
           0,
@@ -2071,7 +2071,7 @@ LABEL_103:
   *((unsigned int *)this + 473) = v47; /*0x7bdf0a*/
   if ( !v47 ) /*0x7bdf12*/
     goto LABEL_103; /*0x7bdf12*/
-  (*((void (__cdecl **)(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v47, 4 * *((uint16_t *)this + 118)); /*0x7bdf4d*/
+  (*((void (**)(BSurface *, int, int, int))(unsigned int *)this + 17))(this, 4, v47, 4 * *((uint16_t *)this + 118)); /*0x7bdf4d*/
   *((unsigned int *)this + 12) += 4 * *((uint16_t *)this + 118); /*0x7bdf65*/
   return -1; /*0x7bd6a3*/
 

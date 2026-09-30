@@ -2932,7 +2932,7 @@ int sub_753B10()
   v1 = 64; /*0x753b17*/
   do /*0x753b32*/
   {
-    result = Array::ForEach((int)v0, 12, 8, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_8); /*0x753b26*/
+    result = Array::ForEach((int)v0, 12, 8, (int (*)(int))__0Iostream_init_QAE_XZ_8); /*0x753b26*/
     v0 += 136; /*0x753b2b*/
     --v1; /*0x753b31*/
   }
@@ -2953,7 +2953,7 @@ int sub_753B40()
   v1 = 64; /*0x753b47*/
   do /*0x753b5f*/
   {
-    result = Array::ForEach((int)v0, 12, 4, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_8); /*0x753b56*/
+    result = Array::ForEach((int)v0, 12, 4, (int (*)(int))__0Iostream_init_QAE_XZ_8); /*0x753b56*/
     v0 += 72; /*0x753b5b*/
     --v1; /*0x753b5e*/
   }

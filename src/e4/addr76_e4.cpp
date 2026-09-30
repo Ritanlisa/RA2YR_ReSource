@@ -680,7 +680,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   v4 = (int *)RA2_OPNEW(0x1E0u); /*0x769640*/
   v5 = v4; /*0x769645*/
   if ( v4 ) /*0x76964c*/
-    Array::ForEach(v4, 16, 30, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_9); /*0x769657*/
+    Array::ForEach(v4, 16, 30, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769657*/
   else
     v5 = 0; /*0x76965e*/
   *(unsigned int *)&v51.m_1[3] = v5; /*0x769665*/
@@ -692,7 +692,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   v6 = (int *)RA2_OPNEW(0x168u); /*0x769687*/
   v7 = v6; /*0x76968c*/
   if ( v6 ) /*0x769693*/
-    Array::ForEach(v6, 12, 30, (int (__thiscall *)(int))unknown_libname_37); /*0x76969e*/
+    Array::ForEach(v6, 12, 30, (int (*)(int))unknown_libname_37); /*0x76969e*/
   else
     v7 = 0; /*0x7696a5*/
   Block = v7; /*0x7696ab*/
@@ -740,7 +740,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
           v12 = (int *)RA2_OPNEW(12 * v11); /*0x769773*/
           v13 = v12; /*0x769778*/
           if ( v12 ) /*0x76977f*/
-            Array::ForEach(v12, 12, abstractFlags + 1, (int (__thiscall *)(int))unknown_libname_37); /*0x76978a*/
+            Array::ForEach(v12, 12, abstractFlags + 1, (int (*)(int))unknown_libname_37); /*0x76978a*/
           else
             v13 = 0; /*0x769791*/
           IDA_LOBYTE(v54) = 1; /*0x769795*/
@@ -790,7 +790,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
             v21 = (int *)RA2_OPNEW(16 * v11); /*0x76984e*/
             v22 = v21; /*0x769853*/
             if ( v21 ) /*0x76985a*/
-              Array::ForEach(v21, 16, v11, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_9); /*0x769865*/
+              Array::ForEach(v21, 16, v11, (int (*)(int))__0Iostream_init_QAE_XZ_9); /*0x769865*/
             else
               v22 = 0; /*0x76986c*/
             IDA_LOBYTE(v51.m_C) = 1; /*0x769870*/

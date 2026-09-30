@@ -210,7 +210,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2)
                 if ( v51 < v48 /*0x74355f*/
                   || (v50 || !v48)
                   && v52 > 0
-                  && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v46[2])(&v46, v52 + v48, 0) )
+                  && ((uint8_t (*)(void ***, int, unsigned int))v46[2])(&v46, v52 + v48, 0) )
                 {
                   v33 = v51++; /*0x74356a*/
                   *((unsigned int *)Block + v33) = v32; /*0x743575*/

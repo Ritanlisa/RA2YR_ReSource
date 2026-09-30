@@ -4073,7 +4073,7 @@ int sub_6006B0()
   dword_AC1B50 = 1 << (v1 - 1); /*0x60070b*/
   dword_AC1B48 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x600723*/
   memset(dword_AC1B48, 0, 4 * dword_AC1B50); /*0x600729*/
-  dword_AC1B60 = (int (__thiscall *)(unsigned int))ReadPointerFromECX; /*0x600730*/
+  dword_AC1B60 = (int (*)(unsigned int))ReadPointerFromECX; /*0x600730*/
   return atexit(sub_600750); /*0x600742*/
 }
 } // namespace gamemd
@@ -4103,7 +4103,7 @@ int sub_600880()
   dword_AC18C8 = 1 << (v1 - 1); /*0x6008db*/
   g_DialogPool = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x6008f3*/
   memset(g_DialogPool, 0, 4 * dword_AC18C8); /*0x6008f9*/
-  dword_AC18D8 = (int (__thiscall *)(unsigned int))ReadPointerFromECX; /*0x600900*/
+  dword_AC18D8 = (int (*)(unsigned int))ReadPointerFromECX; /*0x600900*/
   return atexit(sub_600920); /*0x600912*/
 }
 } // namespace gamemd
@@ -4133,7 +4133,7 @@ int sub_600A50()
   dword_AC1B08 = 1 << (v1 - 1); /*0x600aab*/
   dword_AC1B00 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x600ac3*/
   memset(dword_AC1B00, 0, 4 * dword_AC1B08); /*0x600ac9*/
-  dword_AC1B18 = (int (__thiscall *)(unsigned int))ReadPointerFromECX; /*0x600ad0*/
+  dword_AC1B18 = (int (*)(unsigned int))ReadPointerFromECX; /*0x600ad0*/
   return atexit(sub_600AF0); /*0x600ae2*/
 }
 } // namespace gamemd

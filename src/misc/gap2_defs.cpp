@@ -182,13 +182,13 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       int v31 = this->m_State;
       this->q028 = g_ScoreDisplayState2;
       this->q0B0 = g_ScoreDisplayState3;
-      (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)v31 + 1152))(v31, 0, 1);
+      (*(void (**)(int, unsigned int, int))(*(unsigned int *)v31 + 1152))(v31, 0, 1);
       int v32 = this->m_State;
       this->MovementAI_field_14 = 0;
       *(&this->q0048) = 0;
       *(&this->u32_81) = 0;
       *(&this->q0049) = 0;
-      (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v32 + 1348))(v32, 0, 0);
+      (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v32 + 1348))(v32, 0, 0);
       *(unsigned int *)this->m_State->vt_slot_1152(this->m_State, 0, 1);
       return 7;
     }
@@ -199,7 +199,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       v99 = v8[39];
       v100 = v8[40];
       int v101 = v8[41];
-      (*(void (__thiscall **)(unsigned int *, int *))(*v8 + 244))(v8, &v99);
+      (*(void (**)(unsigned int *, int *))(*v8 + 244))(v8, &v99);
       v97 = *((unsigned int *)g_PathClass_State + v95);
       v96 = v97->u32_28;
       int v9 = IDA_SHIWORD(v96) << 8;
@@ -262,7 +262,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
     MovementAI::StepFootClass(this, 0);
     return 0;
   }
-  unsigned short * v33 = (unsigned short *)(*(int (__thiscall **)(int *, int *))(*v5 + 440))(v5, &v97);
+  unsigned short * v33 = (unsigned short *)(*(int (**)(int *, int *))(*v5 + 440))(v5, &v97);
   int v34 = v96 & 7;
   v35 = v33[1] + IDA_HIWORD(Direction_X_Offsets[v34]);
   *v3 = ((int16_t)(IDA_LOWORD(Direction_X_Offsets[v34]) + *v33) << 8) + 128;
@@ -325,7 +325,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
   LandHeight = ObjectClass::GetLandHeight(v44);
   int v91 = v96;
   void * v46 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v95);
-  v96 = (*(int (__thiscall **)(unsigned int, void *, int, int, unsigned int, int))(v45 + 428))(
+  v96 = (*(int (**)(unsigned int, void *, int, int, unsigned int, int))(v45 + 428))(
           this->m_State,
           v46,
           v91,
@@ -342,7 +342,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       if ( !v65[144] || v65[129] || v65[141] )
         return 7;
       if ( v65[981] )
-        (*(void (__thiscall **)(unsigned char *, int *))(*(unsigned int *)v65 + 240))(v65, this + 9);
+        (*(void (**)(unsigned char *, int *))(*(unsigned int *)v65 + 240))(v65, this + 9);
       qmemcpy((void *)(this->m_State + 1504), (const void *)(this->m_State + 1508), 0x5Cu);
       *(unsigned int *)(this->m_State + 1596) = -1;
       IDA_LOWORD(v97) = this->q024 / 256;
@@ -361,7 +361,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
         *(&this->q0048) = 0;
         *(&this->u32_81) = 0;
         *(&this->q0049) = 0;
-        (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v48 + 1348))(v48, 0, 0);
+        (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v48 + 1348))(v48, 0, 0);
         if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
         {
           *(unsigned int *)this->m_State->vt_slot_244(this->m_State, this + 9);
@@ -388,7 +388,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
         int v51 = this->m_State;
         *(&this->u32_81) = 0;
         *(&this->q0049) = 0;
-        (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v51 + 1348))(v51, 0, 0);
+        (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v51 + 1348))(v51, 0, 0);
         if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
         {
           *(unsigned int *)this->m_State->vt_slot_244(this->m_State, v3);
@@ -407,7 +407,7 @@ namespace gamemd { int MovementAI::MainFootClass(int a1) {
       *(&this->q0048) = 0;
       *(&this->u32_81) = 0;
       *(&this->q0049) = 0;
-      (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v78 + 1348))(v78, 0, 0);
+      (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v78 + 1348))(v78, 0, 0);
       if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
       {
         *(unsigned int *)this->m_State->vt_slot_244(this->m_State, this + 9);
@@ -471,7 +471,7 @@ LABEL_97:
       *(&this->q0048) = 0;
       *(&this->u32_81) = 0;
       *(&this->q0049) = 0;
-      (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v52 + 1348))(v52, 0, 0);
+      (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v52 + 1348))(v52, 0, 0);
       if ( *v3 == g_ScoreDisplayState1 && this->q028 == g_ScoreDisplayState2 )
         goto LABEL_61;
       goto LABEL_62;
@@ -487,7 +487,7 @@ LABEL_97:
         *(&this->q0048) = 0;
         *(&this->u32_81) = 0;
         *(&this->q0049) = 0;
-        (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v67 + 1348))(v67, 0, 0);
+        (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v67 + 1348))(v67, 0, 0);
         if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
         {
           *(unsigned int *)this->m_State->vt_slot_244(this->m_State, this + 9);
@@ -523,7 +523,7 @@ LABEL_97:
         int v73 = *v72;
         unsigned int * v74 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v95);
         int v75 = Object::FindObjectCell(v74, &v102, 0);
-        (*(void (__thiscall **)(unsigned int, int, int, unsigned int))(v73 + 500))(this->m_State, 1, v75, 0);
+        (*(void (**)(unsigned int, int, int, unsigned int))(v73 + 500))(this->m_State, 1, v75, 0);
         return v96;
       }
       if ( *((unsigned int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v95) + 17) != -1
@@ -533,7 +533,7 @@ LABEL_97:
       {
         int v76 = *(unsigned int *)this->m_State;
         void * v77 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v95);
-        (*(void (__thiscall **)(unsigned int, int, void *, unsigned int))(v76 + 500))(this->m_State, 1, v77, 0);
+        (*(void (**)(unsigned int, int, void *, unsigned int))(v76 + 500))(this->m_State, 1, v77, 0);
         return v96;
       }
       return v96;
@@ -591,7 +591,7 @@ LABEL_97:
         *(&this->q0048) = 0;
         *(&this->u32_81) = 0;
         *(&this->q0049) = 0;
-        (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v64 + 1348))(v64, 0, 0);
+        (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v64 + 1348))(v64, 0, 0);
         if ( *v3 == g_ScoreDisplayState1 && this->q028 == g_ScoreDisplayState2 )
         {
 LABEL_61:
@@ -614,7 +614,7 @@ LABEL_62:
       int v54 = this->m_State;
       *(&this->u32_81) = 0;
       *(&this->q0049) = 0;
-      (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v54 + 1348))(v54, 0, 0);
+      (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)v54 + 1348))(v54, 0, 0);
       if ( *v3 != g_ScoreDisplayState1 || this->q028 != g_ScoreDisplayState2 || this->q0B0 != g_ScoreDisplayState3 )
       {
         *(unsigned int *)this->m_State->vt_slot_244(this->m_State, this + 9);
@@ -1919,16 +1919,16 @@ int MovementAI::MarkOccupiedPathCell() {
   int v12; // [esp+1Ch] [ebp-10h]
   unsigned char v13[12]; // [esp+20h] [ebp-Ch] BYREF
 
-  if ( !(*(uint8_t (__stdcall **)(int *))(this->m_Target[1] + 16))(&this->m_Target[1]) ) /*0x5163bd*/
+  if ( !(*(uint8_t (**)(int *))(this->m_Target[1] + 16))(&this->m_Target[1]) ) /*0x5163bd*/
     return 0; /*0x5163bd*/
   m_State = this->m_State; /*0x5163c8*/
   if ( this->u32_5EC == -1 ) /*0x5163d2*/
     return 0; /*0x5163d2*/
   v4 = this->u32_5B0; /*0x5163d8*/
-  if ( v4 && (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 1 /*0x516405*/
-    || (v5 = *(unsigned int *)(this->m_State + 1444)) != 0 && (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 44))(v5) == 15 )
+  if ( v4 && (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 1 /*0x516405*/
+    || (v5 = *(unsigned int *)(this->m_State + 1444)) != 0 && (*(int (**)(int))(*(unsigned int *)v5 + 44))(v5) == 15 )
   {
-    v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)this->m_State + 72))(this->m_State, v13); /*0x516415*/
+    v6 = (unsigned int *)(*(int (**)(int, unsigned char *))(*(unsigned int *)this->m_State + 72))(this->m_State, v13); /*0x516415*/
     v11 = v6[1] - this->u32_1C; /*0x516436*/
     v12 = v6[2] - this->u32_8; /*0x51643a*/
     Math::Sqrt( /*0x516463*/
@@ -1944,7 +1944,7 @@ int MovementAI::MarkOccupiedPathCell() {
     }
   }
   v10 = (unsigned int *)this->m_State; /*0x516496*/
-  if ( !v10[173] || !(*(uint8_t (__thiscall **)(unsigned int *, unsigned int))(this->u32_3B8)(v10, v10[173]) ) /*0x5164a6*/
+  if ( !v10[173] || !(*(uint8_t (**)(unsigned int *, unsigned int))(this->u32_3B8)(v10, v10[173]) ) /*0x5164a6*/
     return 0; /*0x5164c4*/
   *(unsigned int *)(this->m_State + 1504) = -1; /*0x5164b4*/
   return 1; /*0x516484*/
@@ -2029,10 +2029,10 @@ int MovementAI::StepFootClass(int a1) {
   {
     v6 = *p_MovementAI_field_18 / 256; /*0x516535*/
     v7 = this->u32_1C / 256; /*0x516538*/
-    result = (*(int (__thiscall **)(unsigned int *, int *))(this->u32_1C4)(m_State, &v62); /*0x51653b*/
+    result = (*(int (**)(unsigned int *, int *))(this->u32_1C4)(m_State, &v62); /*0x51653b*/
     if ( *(unsigned short *)result == (unsigned short)v6 && *(unsigned short *)(result + 2) == (unsigned short)v7 ) /*0x51654a*/
     {
-      v8 = *(unsigned int *)((*(int (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)this->m_State + 76))( /*0x516569*/
+      v8 = *(unsigned int *)((*(int (**)(int, int *, unsigned int))(*(unsigned int *)this->m_State + 76))( /*0x516569*/
                          this->m_State,
                          &v65,
                          0)
@@ -2041,8 +2041,8 @@ int MovementAI::StepFootClass(int a1) {
       result = (IDA_HIDWORD(v8) ^ v8) - IDA_HIDWORD(v8); /*0x51656c*/
       if ( result < 2 * *(unsigned int *)&stru_A8EB00.?[1500] ) /*0x516573*/
       {
-        (*(void (__stdcall **)(int *))(this->m_Target[1] + 72))(&this->m_Target[1]); /*0x51657c*/
-        return (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166e4*/
+        (*(void (**)(int *))(this->m_Target[1] + 72))(&this->m_Target[1]); /*0x51657c*/
+        return (*(int (**)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166e4*/
       }
     }
   }
@@ -2057,10 +2057,10 @@ int MovementAI::StepFootClass(int a1) {
   }
   v9 = *p_MovementAI_field_18 / 256; /*0x5165dd*/
   v10 = this->u32_1C / 256; /*0x5165e0*/
-  v11 = (unsigned short *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)this->m_State + 440))(this->m_State, &v62); /*0x5165e3*/
+  v11 = (unsigned short *)(*(int (**)(int, int *))(*(unsigned int *)this->m_State + 440))(this->m_State, &v62); /*0x5165e3*/
   if ( *v11 == (unsigned short)v9 && v11[1] == (unsigned short)v10 ) /*0x5165f2*/
   {
-    v12 = *(unsigned int *)((*(int (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)this->m_State + 76))( /*0x516611*/
+    v12 = *(unsigned int *)((*(int (**)(int, int *, unsigned int))(*(unsigned int *)this->m_State + 76))( /*0x516611*/
                         this->m_State,
                         &v65,
                         0)
@@ -2094,7 +2094,7 @@ int MovementAI::StepFootClass(int a1) {
     *v33 = v29; /*0x5168fa*/
     v33[1] = v32; /*0x5168fc*/
     v33[2] = v31; /*0x516904*/
-    v34 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)this->m_State + 72))(this->m_State, v68); /*0x51690c*/
+    v34 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)this->m_State + 72))(this->m_State, v68); /*0x51690c*/
     v35 = *(unsigned int *)(this->m_State + 1504) & 7; /*0x516939*/
     IDA_LOWORD(v60) = *v34 / 256 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v35 + 82]); /*0x516955*/
     IDA_HIWORD(v60) = v34[1] / 256 + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v35 + 82]); /*0x516961*/
@@ -2102,7 +2102,7 @@ int MovementAI::StepFootClass(int a1) {
     if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&v60, 1) ) /*0x516974*/
     {
       v36 = (ObjectClass *)this->m_State; /*0x516981*/
-      vtable0 = (int (__thiscall **)(ObjectClass *, void *, int, int, unsigned int, int))v36->AbstractClass; /*0x51698a*/
+      vtable0 = (int (**)(ObjectClass *, void *, int, int, unsigned int, int))v36->AbstractClass; /*0x51698a*/
       LandHeight = ObjectClass::GetLandHeight(v36); /*0x516994*/
       v55 = *(unsigned int *)(this->m_State + 1504); /*0x5169a4*/
       v38 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&v60); /*0x5169a6*/
@@ -2128,7 +2128,7 @@ int MovementAI::StepFootClass(int a1) {
         {
           if ( (uint8_t)Object::IsAlliedWithObjectHouse(*(Object **)(this->m_State + 540), ClosestObjectCell) ) /*0x516a58*/
           {
-            v44 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)this->m_State + 72))(this->m_State, v68); /*0x516a6f*/
+            v44 = (unsigned int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)this->m_State + 72))(this->m_State, v68); /*0x516a6f*/
             v45 = this->u32_1C; /*0x516a76*/
             v46 = *v44 - *p_MovementAI_field_18; /*0x516a79*/
             v47 = v44[1]; /*0x516a7b*/
@@ -2153,8 +2153,8 @@ int MovementAI::StepFootClass(int a1) {
                 v67 = v51[2]; /*0x516b30*/
                 if ( Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v65)->landType != 10 ) /*0x516b46*/
                 {
-                  (*(void (__stdcall **)(int *))(this->m_Target[1] + 72))(&this->m_Target[1]); /*0x516b4f*/
-                  return (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))( /*0x516b6a*/
+                  (*(void (**)(int *))(this->m_Target[1] + 72))(&this->m_Target[1]); /*0x516b4f*/
+                  return (*(int (**)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))( /*0x516b6a*/
                            this->m_State,
                            0,
                            1);
@@ -2189,13 +2189,13 @@ int MovementAI::StepFootClass(int a1) {
     *v19 = v15; /*0x5166b5*/
     v19[1] = v66; /*0x5166b7*/
     v19[2] = v17; /*0x5166ba*/
-    if ( !(*(uint8_t (__thiscall **)(int, int *))(*(unsigned int *)this->m_State + 716))( /*0x5166c2*/
+    if ( !(*(uint8_t (**)(int, int *))(*(unsigned int *)this->m_State + 716))( /*0x5166c2*/
             this->m_State,
             &this->MovementAI_field_18) )
-      return (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166ca*/
+      return (*(int (**)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5166ca*/
     if ( (uint8_t)FootClass::ClearSomeVector2((FootClass *)this->m_State) ) /*0x5166ea*/
       goto LABEL_28; /*0x5166ea*/
-    v20 = (unsigned int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)this->m_State + 72))(this->m_State, &v65); /*0x516701*/
+    v20 = (unsigned int *)(*(int (**)(int, int *))(*(unsigned int *)this->m_State + 72))(this->m_State, &v65); /*0x516701*/
     v21 = Coord::Subtract( /*0x516721*/
             (Coord *)v68,
             *v20 - *p_MovementAI_field_18,
@@ -2210,10 +2210,10 @@ int MovementAI::StepFootClass(int a1) {
     IDA_LOWORD(v24) = Math::RoundToInt(v16); /*0x51676a*/
     if ( v24 >= *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 5912) ) /*0x51677b*/
       goto LABEL_28; /*0x51677b*/
-    if ( (*(int (__thiscall **)(int))(*(unsigned int *)this->m_State + 388))(this->m_State) == 2 /*0x51679b*/
-      || (*(int (__thiscall **)(int))(*(unsigned int *)this->m_State + 388))(this->m_State) == 11 )
+    if ( (*(int (**)(int))(*(unsigned int *)this->m_State + 388))(this->m_State) == 2 /*0x51679b*/
+      || (*(int (**)(int))(*(unsigned int *)this->m_State + 388))(this->m_State) == 11 )
     {
-      (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5167a6*/
+      (*(void (**)(int, unsigned int, int))(*(unsigned int *)this->m_State + 1152))(this->m_State, 0, 1); /*0x5167a6*/
       result = this->m_State; /*0x5167ac*/
       if ( !this->u32_9C ) /*0x5167b7*/
         return result; /*0x5167b7*/
@@ -2225,7 +2225,7 @@ int MovementAI::StepFootClass(int a1) {
       v26 = v25[403]; /*0x5167c2*/
       if ( v26 <= 0 ) /*0x5167ca*/
       {
-        (*(void (__thiscall **)(unsigned int *, unsigned int, int))(this->u32_48C)(v25, 0, 1); /*0x5167db*/
+        (*(void (**)(unsigned int *, unsigned int, int))(this->u32_48C)(v25, 0, 1); /*0x5167db*/
         result = this->m_State; /*0x5167e1*/
         if ( !this->u32_9C ) /*0x5167ec*/
           return result; /*0x5167ec*/
@@ -2238,18 +2238,18 @@ int MovementAI::StepFootClass(int a1) {
         v25[403] = v26 - 1; /*0x5167cd*/
       }
     }
-    if ( !(*(uint8_t (__stdcall **)(int *))(this->m_Target[1] + 16))(&this->m_Target[1]) ) /*0x516829*/
+    if ( !(*(uint8_t (**)(int *))(this->m_Target[1] + 16))(&this->m_Target[1]) ) /*0x516829*/
     {
       v27 = (unsigned int *)this->m_State; /*0x516830*/
       if ( v27[173] ) /*0x516833*/
       {
-        if ( !(*(uint8_t (__thiscall **)(unsigned int *, unsigned int))(this->u32_3B8)(v27, v27[173]) ) /*0x516840*/
+        if ( !(*(uint8_t (**)(unsigned int *, unsigned int))(this->u32_3B8)(v27, v27[173]) ) /*0x516840*/
         {
           *(unsigned char *)(this->m_State + 1672) = 1; /*0x51684d*/
           v28 = *(TeamClass **)(this->m_State + 1492); /*0x516857*/
           if ( v28 ) /*0x51685f*/
             TeamClass::WakeUpAllMembers(v28); /*0x516861*/
-          (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)this->m_State + 968))(this->m_State, 0); /*0x51686d*/
+          (*(void (**)(int, unsigned int))(*(unsigned int *)this->m_State + 968))(this->m_State, 0); /*0x51686d*/
         }
       }
     }
@@ -2257,12 +2257,12 @@ int MovementAI::StepFootClass(int a1) {
       || this->u32_28 != *(unsigned int *)&stru_A8EB00.?[1440]
       || this->u32_2C != *(unsigned int *)&stru_A8EB00.?[1444] )
     {
-      (*(void (__thiscall **)(int, char *))(*(unsigned int *)this->m_State + 244))(this->m_State, (char *)&this->m_State6); /*0x5168a1*/
+      (*(void (**)(int, char *))(*(unsigned int *)this->m_State + 244))(this->m_State, (char *)&this->m_State6); /*0x5168a1*/
       this->u32_24 = *(unsigned int *)&stru_A8EB00.?[1436]; /*0x5168ad*/
       this->u32_28 = *(unsigned int *)&stru_A8EB00.?[1440]; /*0x5168b5*/
       this->u32_2C = *(unsigned int *)&stru_A8EB00.?[1444]; /*0x5168bd*/
     }
-    return (*(int (__stdcall **)(int *))(this->m_Target[1] + 72))(&this->m_Target[1]); /*0x5168c3*/
+    return (*(int (**)(int *))(this->m_Target[1] + 72))(&this->m_Target[1]); /*0x5168c3*/
   }
   return result; /*0x5166dd*/
 }
@@ -2717,7 +2717,7 @@ int RulesClass::LoadSpecialWeapons() {
     result = g_WarheadTypePool; /*0x669193*/
     for ( i = 0; i < g_WarheadTypePool; ++i ) /*0x66919d*/
     {
-      (*(void (__thiscall **)(unsigned int, uint8_t ***))(**((unsigned int **)dword_8874C4 + i) + 100))( /*0x6691aa*/
+      (*(void (**)(unsigned int, uint8_t ***))(**((unsigned int **)dword_8874C4 + i) + 100))( /*0x6691aa*/
         *((unsigned int *)dword_8874C4 + i),
         v19);
       result = g_WarheadTypePool; /*0x6691ad*/
@@ -6798,7 +6798,7 @@ int RulesClass::ReadSideData() {
       v4 = TechnoClass::Create(Destination); /*0x672799*/
     else
       v4 = 0; /*0x6727a0*/
-    (*(void (__thiscall **)(unsigned int *, INIClass *))(*v4 + 100))(v4, v7); /*0x6727a7*/
+    (*(void (**)(unsigned int *, INIClass *))(*v4 + 100))(v4, v7); /*0x6727a7*/
   }
   return KeyCount > 0; /*0x6727b1*/
 }
@@ -8000,147 +8000,147 @@ int RulesClass::SaveLoad_Prefix(void* a1) {
   int result; // eax
 
   a1 = a1; /*0x674732*/
-  (*(void (__stdcall **)(int *, RulesClass *, int, unsigned int))(*a1 + 16))(a1, this, 6336, 0); /*0x674744*/
+  (*(void (**)(int *, RulesClass *, int, unsigned int))(*a1 + 16))(a1, this, 6336, 0); /*0x674744*/
   v4 = *a1; /*0x67474d*/
   a1 = *(int **)&this->__pad_C3C[1384]; /*0x674759*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v4 + 16))(a1, &a1, 4, 0); /*0x67475d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v4 + 16))(a1, &a1, 4, 0); /*0x67475d*/
   for ( i = 0; i < (int)a1; ++i ) /*0x674768*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1372] + 4 * i, 4, 0); /*0x67477b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1372] + 4 * i, 4, 0); /*0x67477b*/
   v6 = *a1; /*0x67478d*/
   a1 = *(int **)&this->__pad_C3C[1412]; /*0x674799*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v6 + 16))(a1, &a1, 4, 0); /*0x67479d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v6 + 16))(a1, &a1, 4, 0); /*0x67479d*/
   for ( j = 0; j < (int)a1; ++j ) /*0x6747a8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1400] + 4 * j, 4, 0); /*0x6747bb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1400] + 4 * j, 4, 0); /*0x6747bb*/
   v8 = *a1; /*0x6747cd*/
   a1 = *(int **)&this->__pad_C3C[1440]; /*0x6747d9*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v8 + 16))(a1, &a1, 4, 0); /*0x6747dd*/
+  (*(void (**)(int *, int **, int, unsigned int))(v8 + 16))(a1, &a1, 4, 0); /*0x6747dd*/
   for ( k = 0; k < (int)a1; ++k ) /*0x6747e8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1428] + 4 * k, 4, 0); /*0x6747fb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1428] + 4 * k, 4, 0); /*0x6747fb*/
   v10 = *a1; /*0x67480d*/
   a1 = *(int **)&this->__pad_C3C[1468]; /*0x674819*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v10 + 16))(a1, &a1, 4, 0); /*0x67481d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v10 + 16))(a1, &a1, 4, 0); /*0x67481d*/
   for ( m = 0; m < (int)a1; ++m ) /*0x674828*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1456] + 4 * m, 4, 0); /*0x67483b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1456] + 4 * m, 4, 0); /*0x67483b*/
   v12 = *a1; /*0x67484d*/
   a1 = *(int **)&this->__pad_C3C[1496]; /*0x674859*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v12 + 16))(a1, &a1, 4, 0); /*0x67485d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v12 + 16))(a1, &a1, 4, 0); /*0x67485d*/
   for ( n = 0; n < (int)a1; ++n ) /*0x674868*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1484] + 4 * n, 4, 0); /*0x67487b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1484] + 4 * n, 4, 0); /*0x67487b*/
   v14 = *a1; /*0x67488d*/
   a1 = *(int **)&this->__pad_C3C[1524]; /*0x674899*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v14 + 16))(a1, &a1, 4, 0); /*0x67489d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v14 + 16))(a1, &a1, 4, 0); /*0x67489d*/
   for ( ii = 0; ii < (int)a1; ++ii ) /*0x6748a8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1512] + 4 * ii, 4, 0); /*0x6748bb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1512] + 4 * ii, 4, 0); /*0x6748bb*/
   v16 = *a1; /*0x6748cd*/
   a1 = *(int **)&this->__pad_C3C[1552]; /*0x6748d9*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v16 + 16))(a1, &a1, 4, 0); /*0x6748dd*/
+  (*(void (**)(int *, int **, int, unsigned int))(v16 + 16))(a1, &a1, 4, 0); /*0x6748dd*/
   for ( jj = 0; jj < (int)a1; ++jj ) /*0x6748e8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1540] + 4 * jj, 4, 0); /*0x6748fb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1540] + 4 * jj, 4, 0); /*0x6748fb*/
   v18 = *a1; /*0x67490d*/
   a1 = *(int **)&this->__pad_C3C[1580]; /*0x674919*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v18 + 16))(a1, &a1, 4, 0); /*0x67491d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v18 + 16))(a1, &a1, 4, 0); /*0x67491d*/
   for ( kk = 0; kk < (int)a1; ++kk ) /*0x674928*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1568] + 4 * kk, 4, 0); /*0x67493b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1568] + 4 * kk, 4, 0); /*0x67493b*/
   v20 = *a1; /*0x67494d*/
   a1 = *(int **)&this->__pad_C3C[1608]; /*0x674959*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v20 + 16))(a1, &a1, 4, 0); /*0x67495d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v20 + 16))(a1, &a1, 4, 0); /*0x67495d*/
   for ( mm = 0; mm < (int)a1; ++mm ) /*0x674968*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1596] + 4 * mm, 4, 0); /*0x67497b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1596] + 4 * mm, 4, 0); /*0x67497b*/
   v22 = *a1; /*0x67498d*/
   a1 = *(int **)&this->__pad_C3C[1636]; /*0x674999*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v22 + 16))(a1, &a1, 4, 0); /*0x67499d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v22 + 16))(a1, &a1, 4, 0); /*0x67499d*/
   for ( nn = 0; nn < (int)a1; ++nn ) /*0x6749a8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1624] + 4 * nn, 4, 0); /*0x6749bb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1624] + 4 * nn, 4, 0); /*0x6749bb*/
   v24 = *a1; /*0x6749cd*/
   a1 = *(int **)&this->__pad_C3C[1664]; /*0x6749d9*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v24 + 16))(a1, &a1, 4, 0); /*0x6749dd*/
+  (*(void (**)(int *, int **, int, unsigned int))(v24 + 16))(a1, &a1, 4, 0); /*0x6749dd*/
   for ( i1 = 0; i1 < (int)a1; ++i1 ) /*0x6749e8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1652] + 4 * i1, 4, 0); /*0x6749fb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1652] + 4 * i1, 4, 0); /*0x6749fb*/
   v26 = *a1; /*0x674a0d*/
   a1 = *(int **)&this->__pad_C3C[1692]; /*0x674a19*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v26 + 16))(a1, &a1, 4, 0); /*0x674a1d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v26 + 16))(a1, &a1, 4, 0); /*0x674a1d*/
   for ( i2 = 0; i2 < (int)a1; ++i2 ) /*0x674a28*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1680] + 4 * i2, 4, 0); /*0x674a3b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1680] + 4 * i2, 4, 0); /*0x674a3b*/
   v28 = *a1; /*0x674a4d*/
   a1 = *(int **)&this->__pad_C3C[1720]; /*0x674a59*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v28 + 16))(a1, &a1, 4, 0); /*0x674a5d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v28 + 16))(a1, &a1, 4, 0); /*0x674a5d*/
   for ( i3 = 0; i3 < (int)a1; ++i3 ) /*0x674a68*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1708] + 4 * i3, 4, 0); /*0x674a7b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1708] + 4 * i3, 4, 0); /*0x674a7b*/
   v30 = *a1; /*0x674a8d*/
   a1 = *(int **)&this->__pad_C3C[1988]; /*0x674a99*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v30 + 16))(a1, &a1, 4, 0); /*0x674a9d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v30 + 16))(a1, &a1, 4, 0); /*0x674a9d*/
   for ( i4 = 0; i4 < (int)a1; ++i4 ) /*0x674aa8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1976] + 4 * i4, 4, 0); /*0x674abb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1976] + 4 * i4, 4, 0); /*0x674abb*/
   v32 = *a1; /*0x674acd*/
   a1 = *(int **)&this->__pad_C3C[1324]; /*0x674ad9*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v32 + 16))(a1, &a1, 4, 0); /*0x674add*/
+  (*(void (**)(int *, int **, int, unsigned int))(v32 + 16))(a1, &a1, 4, 0); /*0x674add*/
   for ( i5 = 0; i5 < (int)a1; ++i5 ) /*0x674ae8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1312] + 4 * i5, 4, 0); /*0x674afb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1312] + 4 * i5, 4, 0); /*0x674afb*/
   v34 = *a1; /*0x674b0d*/
   a1 = (int *)this->PowerEmergency[0]; /*0x674b19*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v34 + 16))(a1, &a1, 4, 0); /*0x674b1d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v34 + 16))(a1, &a1, 4, 0); /*0x674b1d*/
   for ( i6 = 0; i6 < (int)a1; ++i6 ) /*0x674b28*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, this->AttackInterval[1] + 4 * i6, 4, 0); /*0x674b3b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, this->AttackInterval[1] + 4 * i6, 4, 0); /*0x674b3b*/
   v36 = *a1; /*0x674b4d*/
   a1 = *(int **)&this->__pad_C3C[340]; /*0x674b59*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v36 + 16))(a1, &a1, 4, 0); /*0x674b5d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v36 + 16))(a1, &a1, 4, 0); /*0x674b5d*/
   for ( i7 = 0; i7 < (int)a1; ++i7 ) /*0x674b68*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[328] + 4 * i7, 4, 0); /*0x674b7b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[328] + 4 * i7, 4, 0); /*0x674b7b*/
   v38 = *a1; /*0x674b8d*/
   a1 = *(int **)&this->__pad_C3C[368]; /*0x674b99*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v38 + 16))(a1, &a1, 4, 0); /*0x674b9d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v38 + 16))(a1, &a1, 4, 0); /*0x674b9d*/
   for ( i8 = 0; i8 < (int)a1; ++i8 ) /*0x674ba8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[356] + 4 * i8, 4, 0); /*0x674bbb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[356] + 4 * i8, 4, 0); /*0x674bbb*/
   v40 = *a1; /*0x674bcd*/
   a1 = *(int **)&this->__pad_C3C[396]; /*0x674bd9*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v40 + 16))(a1, &a1, 4, 0); /*0x674bdd*/
+  (*(void (**)(int *, int **, int, unsigned int))(v40 + 16))(a1, &a1, 4, 0); /*0x674bdd*/
   for ( i9 = 0; i9 < (int)a1; ++i9 ) /*0x674be8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[384] + 4 * i9, 4, 0); /*0x674bfb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[384] + 4 * i9, 4, 0); /*0x674bfb*/
   v42 = *a1; /*0x674c0d*/
   a1 = *(int **)&this->__pad_C3C[700]; /*0x674c19*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v42 + 16))(a1, &a1, 4, 0); /*0x674c1d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v42 + 16))(a1, &a1, 4, 0); /*0x674c1d*/
   for ( i10 = 0; i10 < (int)a1; ++i10 ) /*0x674c28*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[688] + 4 * i10, 4, 0); /*0x674c3b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[688] + 4 * i10, 4, 0); /*0x674c3b*/
   v44 = *a1; /*0x674c4d*/
   a1 = *(int **)&this->__pad_C3C[728]; /*0x674c59*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v44 + 16))(a1, &a1, 4, 0); /*0x674c5d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v44 + 16))(a1, &a1, 4, 0); /*0x674c5d*/
   for ( i11 = 0; i11 < (int)a1; ++i11 ) /*0x674c68*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[716] + 4 * i11, 4, 0); /*0x674c7b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[716] + 4 * i11, 4, 0); /*0x674c7b*/
   v46 = *a1; /*0x674c8d*/
   a1 = *(int **)&this->__pad_C3C[756]; /*0x674c99*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v46 + 16))(a1, &a1, 4, 0); /*0x674c9d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v46 + 16))(a1, &a1, 4, 0); /*0x674c9d*/
   for ( i12 = 0; i12 < (int)a1; ++i12 ) /*0x674ca8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[744] + 4 * i12, 4, 0); /*0x674cbb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[744] + 4 * i12, 4, 0); /*0x674cbb*/
   v48 = *a1; /*0x674ccd*/
   a1 = *(int **)&this->__pad_C3C[484]; /*0x674cd9*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v48 + 16))(a1, &a1, 4, 0); /*0x674cdd*/
+  (*(void (**)(int *, int **, int, unsigned int))(v48 + 16))(a1, &a1, 4, 0); /*0x674cdd*/
   for ( i13 = 0; i13 < (int)a1; ++i13 ) /*0x674ce8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[472] + 4 * i13, 4, 0); /*0x674cfb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[472] + 4 * i13, 4, 0); /*0x674cfb*/
   v50 = *a1; /*0x674d0d*/
   a1 = *(int **)&this->__pad_C3C[664]; /*0x674d19*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v50 + 16))(a1, &a1, 4, 0); /*0x674d1d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v50 + 16))(a1, &a1, 4, 0); /*0x674d1d*/
   for ( i14 = 0; i14 < (int)a1; ++i14 ) /*0x674d28*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[652] + 4 * i14, 4, 0); /*0x674d3b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[652] + 4 * i14, 4, 0); /*0x674d3b*/
   v52 = *a1; /*0x674d4d*/
   a1 = *(int **)&this->__pad_C3C[512]; /*0x674d59*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v52 + 16))(a1, &a1, 4, 0); /*0x674d5d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v52 + 16))(a1, &a1, 4, 0); /*0x674d5d*/
   for ( i15 = 0; i15 < (int)a1; ++i15 ) /*0x674d68*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[500] + 4 * i15, 4, 0); /*0x674d7b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[500] + 4 * i15, 4, 0); /*0x674d7b*/
   v54 = *a1; /*0x674d8d*/
   a1 = *(int **)&this->__pad_C3C[424]; /*0x674d99*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v54 + 16))(a1, &a1, 4, 0); /*0x674d9d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v54 + 16))(a1, &a1, 4, 0); /*0x674d9d*/
   for ( i16 = 0; i16 < (int)a1; ++i16 ) /*0x674da8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[412] + 4 * i16, 4, 0); /*0x674dbb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[412] + 4 * i16, 4, 0); /*0x674dbb*/
   v56 = *a1; /*0x674dcd*/
   a1 = *(int **)&this->__pad_C3C[1892]; /*0x674dd9*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v56 + 16))(a1, &a1, 4, 0); /*0x674ddd*/
+  (*(void (**)(int *, int **, int, unsigned int))(v56 + 16))(a1, &a1, 4, 0); /*0x674ddd*/
   for ( i17 = 0; i17 < (int)a1; ++i17 ) /*0x674de8*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1880] + 4 * i17, 4, 0); /*0x674dfb*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1880] + 4 * i17, 4, 0); /*0x674dfb*/
   v58 = *a1; /*0x674e0d*/
   a1 = *(int **)&this->__pad_C3C[1920]; /*0x674e19*/
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(v58 + 16))(a1, &a1, 4, 0); /*0x674e1d*/
+  (*(void (**)(int *, int **, int, unsigned int))(v58 + 16))(a1, &a1, 4, 0); /*0x674e1d*/
   for ( i18 = 0; i18 < (int)a1; ++i18 ) /*0x674e28*/
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1908] + 4 * i18, 4, 0); /*0x674e3b*/
+    (*(void (**)(int *, int, int, unsigned int))(*a1 + 16))(a1, *(unsigned int *)&this->__pad_C3C[1908] + 4 * i18, 4, 0); /*0x674e3b*/
   DynamicVector::Read((DynamicVector *)&this->__pad_C3C[528], a1); /*0x674e4e*/
   DynamicVector::Read((DynamicVector *)&this->__pad_C3C[556], a1); /*0x674e5a*/
   DynamicVector::Read((DynamicVector *)&this->__pad_C3C[584], a1); /*0x674e66*/
@@ -8413,7 +8413,7 @@ int SuperClass::SetFieldX() {
 
   result = (int)this->SuperClass_field_0x0; /*0x6ce270*/
   if ( this->SuperClass_field_0x0 ) /*0x6ce270*/
-    return (*(int (__stdcall **)(int))(*(unsigned int *)result + 4))(result); /*0x6ce279*/
+    return (*(int (**)(int))(*(unsigned int *)result + 4))(result); /*0x6ce279*/
   return result; /*0x6ce27c*/
 }
 }

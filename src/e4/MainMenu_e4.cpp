@@ -36,7 +36,7 @@ long MainMenu_Screen(void * a1, void * a2)
 
   dwNewLong = 18; /*0x531cc7*/
   SetSoundWarning(-1); /*0x531ccf*/
-  v2 = (HWND)CreateDialog(0xE2u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))MainMenu::DlgProc, 0); /*0x531ce5*/
+  v2 = (HWND)CreateDialog(0xE2u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))MainMenu::DlgProc, 0); /*0x531ce5*/
   v2 = v2; /*0x531ce9*/
   if ( v2 ) /*0x531ced*/
   {

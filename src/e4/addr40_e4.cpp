@@ -1518,11 +1518,11 @@ int sub_407040(int a1)
       result = dword_87E8A0; /*0x40a951*/
       if ( dword_87E8A0 ) /*0x40a958*/
       {
-        result = (*(int (__stdcall **)(int, int *))(*(unsigned int *)dword_87E8A0 + 36))(dword_87E8A0, &v2); /*0x40a962*/
+        result = (*(int (**)(int, int *))(*(unsigned int *)dword_87E8A0 + 36))(dword_87E8A0, &v2); /*0x40a962*/
         if ( (v2 & 2) != 0 ) /*0x40a96a*/
-          result = (*(int (__stdcall **)(int))(*(unsigned int *)dword_87E8A0 + 80))(dword_87E8A0); /*0x40a974*/
+          result = (*(int (**)(int))(*(unsigned int *)dword_87E8A0 + 80))(dword_87E8A0); /*0x40a974*/
         if ( (v2 & 1) == 0 ) /*0x40a97c*/
-          return (*(int (__stdcall **)(int, unsigned int, unsigned int, int))(*(unsigned int *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a98c*/
+          return (*(int (**)(int, unsigned int, unsigned int, int))(*(unsigned int *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a98c*/
       }
     }
   }
@@ -2366,14 +2366,14 @@ void AudioStreamThreadProc(unsigned int * lpThreadParameter)
           if ( (*(unsigned char *)(i + 164) & 1) != 0 ) /*0x40962d*/
           {
             v7 = *(unsigned int *)(*(unsigned int *)(i + 344) + 100); /*0x409639*/
-            if ( v7 && !(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)v7 + 36))(v7, v20) && (v20[0] & 1) != 0 ) /*0x409660*/
+            if ( v7 && !(*(int (**)(int, unsigned char *))(*(unsigned int *)v7 + 36))(v7, v20) && (v20[0] & 1) != 0 ) /*0x409660*/
             {
               *(unsigned long long *)(*(unsigned int *)(i + 344) + 24) = IDA___PAIR64__(v4, v3) - *(unsigned long long *)(*(unsigned int *)(i + 344) + 16); /*0x40967a*/
               v8 = *(unsigned int *)(i + 344); /*0x409680*/
               *(unsigned int *)(v8 + 16) = v3; /*0x409686*/
               *(unsigned int *)(v8 + 20) = v4; /*0x409689*/
               v9 = *(unsigned int *)(i + 344); /*0x40968c*/
-              (*(void (__stdcall **)(unsigned int, unsigned int *, int))(**(unsigned int **)(v9 + 100) + 16))( /*0x4096a1*/
+              (*(void (**)(unsigned int, unsigned int *, int))(**(unsigned int **)(v9 + 100) + 16))( /*0x4096a1*/
                 *(unsigned int *)(v9 + 100),
                 &v21,
                 v9 + 52);
@@ -2401,7 +2401,7 @@ void AudioStreamThreadProc(unsigned int * lpThreadParameter)
                   v16 = *(unsigned int *)(v9 + 8) == v13; /*0x409709*/
                   *(unsigned int *)(v9 + 8) = v15; /*0x40970b*/
                   if ( v15 < 0 || v16 || !v14 ) /*0x409712*/
-                    (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v9 + 100) + 72))(*(unsigned int *)(v9 + 100)); /*0x40971a*/
+                    (*(void (**)(unsigned int))(**(unsigned int **)(v9 + 100) + 72))(*(unsigned int *)(v9 + 100)); /*0x40971a*/
                 }
               }
               ++*(unsigned int *)(v9 + 208); /*0x409724*/
@@ -2411,7 +2411,7 @@ void AudioStreamThreadProc(unsigned int * lpThreadParameter)
             {
               v17 = *(unsigned int *)(*(unsigned int *)(i + 344) + 100); /*0x409736*/
               if ( v17 ) /*0x40973b*/
-                (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v17 + 72))(*(unsigned int *)(*(unsigned int *)(i + 344) + 100)); /*0x409740*/
+                (*(void (**)(unsigned int))(*(unsigned int *)v17 + 72))(*(unsigned int *)(*(unsigned int *)(i + 344) + 100)); /*0x409740*/
               v18 = *(void (**)(int))(i + 356); /*0x409743*/
               if ( v18 ) /*0x40974b*/
                 v18(i); /*0x40974f*/
@@ -2515,7 +2515,7 @@ void ProcessAudioStream(int * a1, int a2)
         v23 = (int)a1[14]; /*0x4098d1*/
       if ( v28 ) /*0x4098d9*/
       {
-        (*(void (__stdcall **)(int, char *, int, int, int))(**(unsigned int **)&a1[25] + 76))( /*0x4098f5*/
+        (*(void (**)(int, char *, int, int, int))(**(unsigned int **)&a1[25] + 76))( /*0x4098f5*/
           *(unsigned int *)&a1[25],
           v27,
           v26,
@@ -2525,7 +2525,7 @@ void ProcessAudioStream(int * a1, int a2)
       }
       v3 = (int)a1[12]; /*0x4098fc*/
       v4 = 3; /*0x409918*/
-      if ( (*(int (__stdcall **)(int, int, int, char **, int *, int *, int *, unsigned int))(**(unsigned int **)&a1[25] + 44))( /*0x409925*/
+      if ( (*(int (**)(int, int, int, char **, int *, int *, int *, unsigned int))(**(unsigned int **)&a1[25] + 44))( /*0x409925*/
              *(unsigned int *)&a1[25],
              v3,
              v23,
@@ -2644,13 +2644,13 @@ void ProcessAudioStream(int * a1, int a2)
         goto LABEL_45; /*0x409bca*/
       a2 = v20; /*0x409bcc*/
     }
-    while ( !(*(int (__stdcall **)(int))(**(unsigned int **)&a1[25] + 80))(*(unsigned int *)&a1[25]) ) /*0x409934*/
+    while ( !(*(int (**)(int))(**(unsigned int **)&a1[25] + 80))(*(unsigned int *)&a1[25]) ) /*0x409934*/
     {
       a1[11] = 0; /*0x409945*/
       a1[2] = 0; /*0x409948*/
       a1[15] = (AudioBuffer)(4 * *(unsigned int *)&a1[27]); /*0x409951*/
-      (*(void (__stdcall **)(int, unsigned int))(**(unsigned int **)&a1[25] + 52))(*(unsigned int *)&a1[25], 0); /*0x40995b*/
-      (*(void (__stdcall **)(int, unsigned int *, AudioBuffer *))(**(unsigned int **)&a1[25] + 16))( /*0x40996d*/
+      (*(void (**)(int, unsigned int))(**(unsigned int **)&a1[25] + 52))(*(unsigned int *)&a1[25], 0); /*0x40995b*/
+      (*(void (**)(int, unsigned int *, AudioBuffer *))(**(unsigned int **)&a1[25] + 16))( /*0x40996d*/
         *(unsigned int *)&a1[25],
         &v32,
         a1 + 13);
@@ -2659,7 +2659,7 @@ void ProcessAudioStream(int * a1, int a2)
       a1[5] = (AudioBuffer)v5; /*0x409984*/
       v6 = (int)a1[25]; /*0x40998a*/
       a1[16] = a1[26]; /*0x409991*/
-      (*(void (__stdcall **)(int, AudioBuffer *, AudioBuffer *))(*(unsigned int *)v6 + 16))(v6, a1 + 12, a1 + 13); /*0x409998*/
+      (*(void (**)(int, AudioBuffer *, AudioBuffer *))(*(unsigned int *)v6 + 16))(v6, a1 + 12, a1 + 13); /*0x409998*/
       a1[14] = (AudioBuffer)(*(unsigned int *)&a1[26] - *(unsigned int *)&a1[12]); /*0x4099a2*/
       a1[52] = 0; /*0x4099a7*/
       a1[54] = a1[3]; /*0x4099b0*/
@@ -2668,7 +2668,7 @@ void ProcessAudioStream(int * a1, int a2)
       Debug::Log(); /*0x4099c9*/
       if ( !v4-- ) /*0x4099d1*/
         break; /*0x4099d6*/
-      if ( !(*(int (__stdcall **)(int, int, int, char **, int *, int *, int *, unsigned int))(**(unsigned int **)&a1[25] + 44))( /*0x4099fe*/
+      if ( !(*(int (**)(int, int, int, char **, int *, int *, int *, unsigned int))(**(unsigned int **)&a1[25] + 44))( /*0x4099fe*/
               *(unsigned int *)&a1[25],
               v3,
               v23,
@@ -2683,7 +2683,7 @@ void ProcessAudioStream(int * a1, int a2)
   }
   if ( v28 ) /*0x409c0f*/
   LABEL_47:
-    (*(void (__stdcall **)(int, char *, int, int, int))(**(unsigned int **)&a1[25] + 76))( /*0x409c11*/
+    (*(void (**)(int, char *, int, int, int))(**(unsigned int **)&a1[25] + 76))( /*0x409c11*/
       *(unsigned int *)&a1[25],
       v27,
       v26,
@@ -2777,9 +2777,9 @@ int DirectSound_CreateBuffer(int a1, int a2, short a3)
     v8 = a2; /*0x40a802*/
     v6 = a1 * v7; /*0x40a80a*/
     v9 = 0; /*0x40a80e*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)dword_87E8A0 + 72))(dword_87E8A0); /*0x40a818*/
-    (*(void (__stdcall **)(int, unsigned short *))(*(unsigned int *)dword_87E8A0 + 56))(dword_87E8A0, v4); /*0x40a828*/
-    return (*(int (__stdcall **)(int, unsigned int, unsigned int, int))(*(unsigned int *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a839*/
+    (*(void (**)(int))(*(unsigned int *)dword_87E8A0 + 72))(dword_87E8A0); /*0x40a818*/
+    (*(void (**)(int, unsigned short *))(*(unsigned int *)dword_87E8A0 + 56))(dword_87E8A0, v4); /*0x40a828*/
+    return (*(int (**)(int, unsigned int, unsigned int, int))(*(unsigned int *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a839*/
   }
   return result; /*0x40a83d*/
 }
@@ -2806,7 +2806,7 @@ void sub_40A850()
   {
     if ( Enabled ) /*0x40a86a*/
     {
-      (*(void (__stdcall **)(unsigned int))(**(unsigned int **)&stru_87E790.__pad_D8[56] + 72))(*(unsigned int *)&stru_87E790.__pad_D8[56]); /*0x40a873*/
+      (*(void (**)(unsigned int))(**(unsigned int **)&stru_87E790.__pad_D8[56] + 72))(*(unsigned int *)&stru_87E790.__pad_D8[56]); /*0x40a873*/
       v3 = Enabled[40]; /*0x40a878*/
       v4 = *((unsigned int *)Enabled + 19); /*0x40a87c*/
       v5 = Enabled[42]; /*0x40a87f*/
@@ -2817,10 +2817,10 @@ void sub_40A850()
       v11 = 0; /*0x40a8bb*/
       v8 = v4 * (uint16_t)(v3 * v5); /*0x40a8cc*/
       v10 = 8 * v5; /*0x40a8d5*/
-      (*(void (__stdcall **)(unsigned int, unsigned short *))(**(unsigned int **)&stru_87E790.__pad_D8[56] + 56))( /*0x40a8e2*/
+      (*(void (**)(unsigned int, unsigned short *))(**(unsigned int **)&stru_87E790.__pad_D8[56] + 56))( /*0x40a8e2*/
         *(unsigned int *)&stru_87E790.__pad_D8[56],
         v6);
-      return (*(int (__stdcall **)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)&stru_87E790.__pad_D8[56] + 48))( /*0x40a8f3*/
+      return (*(int (**)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)&stru_87E790.__pad_D8[56] + 48))( /*0x40a8f3*/
                *(unsigned int *)&stru_87E790.__pad_D8[56],
                0,
                0,
@@ -2852,7 +2852,7 @@ void sub_40A940()
 
   result = *(unsigned int *)&stru_87E790.__pad_D8[56]; /*0x40a940*/
   if ( *(unsigned int *)&stru_87E790.__pad_D8[56] ) /*0x40a947*/
-    return (*(int (__stdcall **)(unsigned int))(**(unsigned int **)&stru_87E790.__pad_D8[56] + 72))(*(unsigned int *)&stru_87E790.__pad_D8[56]); /*0x40a94c*/
+    return (*(int (**)(unsigned int))(**(unsigned int **)&stru_87E790.__pad_D8[56] + 72))(*(unsigned int *)&stru_87E790.__pad_D8[56]); /*0x40a94c*/
   return result; /*0x40a94f*/
 }
 }
@@ -2861,7 +2861,7 @@ namespace gamemd {
 void sub_40D220()
 {
   if ( dword_87F7B8 ) /*0x40d227*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)dword_87F7B8 + 8))(dword_87F7B8); /*0x40d22c*/
+    (*(void (**)(int))(*(unsigned int *)dword_87F7B8 + 8))(dword_87F7B8); /*0x40d22c*/
 }
 }
 // 0x40D330

@@ -37,8 +37,8 @@ Coord * * sub_77E110()
 
   if ( ppv ) /*0x77e117*/
   {
-    (*(void (__stdcall **)(LPVOID, unsigned int))(*(unsigned int *)ppv + 124))(ppv, *(unsigned int *)g_WOL_BuddyList.__pad_C); /*0x77e123*/
-    (*(void (__stdcall **)(LPVOID, int, void *))(*(unsigned int *)ppv + 104))(ppv, dword_B779F0, stru_B7622C.?); /*0x77e13c*/
+    (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 124))(ppv, *(unsigned int *)g_WOL_BuddyList.__pad_C); /*0x77e123*/
+    (*(void (**)(LPVOID, int, void *))(*(unsigned int *)ppv + 104))(ppv, dword_B779F0, stru_B7622C.?); /*0x77e13c*/
   }
   Dialog::RefreshDialogsGame(0); /*0x77e141*/
   if ( stru_B76900.? ) /*0x77e153*/
@@ -120,7 +120,7 @@ void sub_785EA0()
       ResetEvent(*v6++); /*0x785f63*/
     while ( (int)v6 < (int)g_WOL_RequestObject ); /*0x785f6e*/
     Game::ProcessIdle(v7); /*0x785f70*/
-    if ( !(*(int (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 52))(ppv) ) /*0x785f7d*/
+    if ( !(*(int (**)(LPVOID))(*(unsigned int *)ppv + 52))(ppv) ) /*0x785f7d*/
     {
       StringCSF = (wchar_t *)(GetStringCSF(aTxtWolLoggingO, 0, g_Str_File_wonline_cpp, 9527));
       WideString::Assign((wchar_t **)&v15, StringCSF); /*0x785fa4*/
@@ -184,7 +184,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
     v3 = *(unsigned int *)g_UIPointerTable; /*0x798e3f*/
     v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
     v4 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x798e4f*/
-    (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v3 + 20))( /*0x798e67*/
+    (*(void (**)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v3 + 20))( /*0x798e67*/
       g_UIPointerTable,
       stru_B76188.__pad_20,
       g_WOL_GameConfig,
@@ -196,7 +196,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
     v5 = *(unsigned int *)g_UIPointerTable; /*0x798e7c*/
     v10 = g_NetworkRematchState & 0xFFFF00; /*0x798e7e*/
     v6 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x798e84*/
-    (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v5 + 56))( /*0x798e9c*/
+    (*(void (**)(LPVOID, char *, int, char *, int))(v5 + 56))( /*0x798e9c*/
       g_UIPointerTable,
       stru_B76188.__pad_20,
       g_WOL_GameConfig,
@@ -210,7 +210,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
     v12.Flag_field_0x08 = (int)&off_7F7624; /*0x798ece*/
     RunDialog( /*0x798ed2*/
       0x10Eu,
-      (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))GameModeDlgProcMultiplayer,
+      (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))GameModeDlgProcMultiplayer,
       (LPARAM)&v12.Flag_field_0x08);
     RunWOLMainLoop_Read_Read_72C830(v11); /*0x798ed7*/
     v7 = dword_A8B244 != 0; /*0x798eed*/
@@ -221,7 +221,7 @@ Coord * * RunWOLMainLoop_Read(void * a1, void * a2)
   {
     SimpleDialogControl::Constructor((SimpleDialogControl *)&v13); /*0x798f04*/
     v13 = (OwnerDrawControl)&off_7F7624; /*0x798f1d*/
-    RunDialog(0x11Cu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Setup2DlgProcMultiplayer, (LPARAM)&v13); /*0x798f21*/
+    RunDialog(0x11Cu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Setup2DlgProcMultiplayer, (LPARAM)&v13); /*0x798f21*/
     RunWOLMainLoop_Read_Read_72C830(v11); /*0x798f26*/
     v7 = dword_A8B244 != 0; /*0x798f3b*/
     v13 = (OwnerDrawControl)&off_7F7624; /*0x798f3d*/
@@ -342,7 +342,7 @@ int sub_799D30()
         v6 = *(unsigned int *)g_UIPointerTable; /*0x799dea*/
         v11 = g_NetworkRematchState & 0xFFFF00; /*0x799df4*/
         v7 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x799dfa*/
-        (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v6 + 20))( /*0x799e12*/
+        (*(void (**)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v6 + 20))( /*0x799e12*/
           g_UIPointerTable,
           stru_B76188.__pad_20,
           g_WOL_GameConfig,
@@ -354,7 +354,7 @@ int sub_799D30()
         v8 = *(unsigned int *)g_UIPointerTable; /*0x799e27*/
         v12 = g_NetworkRematchState & 0xFFFF00; /*0x799e29*/
         v9 = String::GetOrEmpty((String *)&g_WindowManager.__pad_EC[684]); /*0x799e2f*/
-        (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v8 + 56))( /*0x799e47*/
+        (*(void (**)(LPVOID, char *, int, char *, int))(v8 + 56))( /*0x799e47*/
           g_UIPointerTable,
           stru_B76188.__pad_20,
           g_WOL_GameConfig,
@@ -366,7 +366,7 @@ int sub_799D30()
       v13.DeleteAndZero_field_0x04 = (int)&off_7F7624; /*0x799e6c*/
       RunDialog( /*0x799e70*/
         0x114u,
-        (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))MainLobbyDlgProcWOL,
+        (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))MainLobbyDlgProcWOL,
         (LPARAM)&v13.DeleteAndZero_field_0x04);
       System_Init_72CA10(v1); /*0x799e75*/
       v10 = dword_A8B244 != 0; /*0x799e8b*/
@@ -392,7 +392,7 @@ void sub_7A2970()
     {
       SimpleDialogControl::Constructor(v0); /*0x7a299e*/
       v0[0] = (unsigned int)&off_7F7624; /*0x7a29b2*/
-      RunDialog(0x122u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))BuddyDlgProcWOL, (LPARAM)v0); /*0x7a29ba*/
+      RunDialog(0x122u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))BuddyDlgProcWOL, (LPARAM)v0); /*0x7a29ba*/
       v0[0] = (unsigned int)&off_7F7624; /*0x7a29c3*/
       OwnerDrawControl::InitVtable(v0); /*0x7a29cb*/
     }

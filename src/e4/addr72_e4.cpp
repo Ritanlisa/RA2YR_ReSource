@@ -186,7 +186,7 @@ AbstractClass * * sub_725C70()
           ++v3; /*0x725ccd*/
         }
       }
-      result = (*(int (__stdcall **)(unsigned int *))(*v8 + 8))(v8); /*0x725ce8*/
+      result = (*(int (**)(unsigned int *))(*v8 + 8))(v8); /*0x725ce8*/
       if ( result ) /*0x725ced*/
       {
         v4 = __RTtypeid(v8); /*0x725cf8*/

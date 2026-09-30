@@ -3811,19 +3811,19 @@ _crt_signal_t signal(int Signal, _crt_signal_t Function)
     switch ( Signal ) /*0x7d492f*/
     {
       case 2: /*0x7d492f*/
-        v5 = (void (__cdecl *)(int))dword_B782DC; /*0x7d4991*/
+        v5 = (void (*)(int))dword_B782DC; /*0x7d4991*/
         dword_B782DC = (int)Function; /*0x7d4997*/
         break;
       case 15: /*0x7d492f*/
-        v5 = (void (__cdecl *)(int))dword_B782E8; /*0x7d4983*/
+        v5 = (void (*)(int))dword_B782E8; /*0x7d4983*/
         dword_B782E8 = (int)Function; /*0x7d4989*/
         break;
       case 21: /*0x7d492f*/
-        v5 = (void (__cdecl *)(int))dword_B782E0; /*0x7d4975*/
+        v5 = (void (*)(int))dword_B782E0; /*0x7d4975*/
         dword_B782E0 = (int)Function; /*0x7d497b*/
         break;
       default:
-        v5 = (void (__cdecl *)(int))dword_B782E4; /*0x7d493e*/
+        v5 = (void (*)(int))dword_B782E4; /*0x7d493e*/
         dword_B782E4 = (int)Function; /*0x7d4944*/
         break;
     }
@@ -3848,7 +3848,7 @@ _crt_signal_t signal(int Signal, _crt_signal_t Function)
   v4 = siglookup(Signal, v2[20]); /*0x7d48bd*/
   if ( !v4 ) /*0x7d48c6*/
     goto LABEL_28; /*0x7d48c6*/
-  v5 = *(void (__cdecl **)(int))(v4 + 8); /*0x7d48cc*/
+  v5 = *(void (**)(int))(v4 + 8); /*0x7d48cc*/
   do /*0x7d48f2*/
   {
     if ( *(unsigned int *)(v4 + 4) != Signal ) /*0x7d48d2*/
@@ -3876,7 +3876,7 @@ void raise(int Signal)
   switch ( Signal ) /*0x7d4a22*/
   {
     case 2: /*0x7d4a22*/
-      v2 = (void (__cdecl *)(unsigned int))dword_B782DC; /*0x7d4a8b*/
+      v2 = (void (*)(unsigned int))dword_B782DC; /*0x7d4a8b*/
       v3 = &dword_B782DC; /*0x7d4a91*/
       break;
     case 4: /*0x7d4a22*/
@@ -3884,18 +3884,18 @@ void raise(int Signal)
     case 11: /*0x7d4a22*/
       v4 = _getptd(); /*0x7d4a73*/
       v3 = (int *)(siglookup(Signal, v4[20]) + 8); /*0x7d4a83*/
-      v2 = (void (__cdecl *)(unsigned int))*v3; /*0x7d4a87*/
+      v2 = (void (*)(unsigned int))*v3; /*0x7d4a87*/
       goto LABEL_15; /*0x7d4a89*/
     case 15: /*0x7d4a22*/
-      v2 = (void (__cdecl *)(unsigned int))dword_B782E8; /*0x7d4a61*/
+      v2 = (void (*)(unsigned int))dword_B782E8; /*0x7d4a61*/
       v3 = &dword_B782E8; /*0x7d4a67*/
       break;
     case 21: /*0x7d4a22*/
-      v2 = (void (__cdecl *)(unsigned int))dword_B782E0; /*0x7d4a54*/
+      v2 = (void (*)(unsigned int))dword_B782E0; /*0x7d4a54*/
       v3 = &dword_B782E0; /*0x7d4a5a*/
       break;
     case 22: /*0x7d4a22*/
-      v2 = (void (__cdecl *)(unsigned int))dword_B782E4; /*0x7d4a47*/
+      v2 = (void (*)(unsigned int))dword_B782E4; /*0x7d4a47*/
       v3 = &dword_B782E4; /*0x7d4a4d*/
       break;
     default:
@@ -3905,7 +3905,7 @@ void raise(int Signal)
   _lock(1); /*0x7d4a9f*/
   v4 = (unsigned int *)Signal; /*0x7d4aa4*/
   LABEL_15:
-  if ( v2 != (void (__cdecl *)(unsigned int))1 ) /*0x7d4aab*/
+  if ( v2 != (void (*)(unsigned int))1 ) /*0x7d4aab*/
   {
     if ( !v2 ) /*0x7d4ac7*/
     {
@@ -5279,9 +5279,9 @@ void __get_qualified_locale(char * a0, CCINIClass * aP1, int a3)
   if ( !dword_B78564 ) /*0x7d6d35*/
   {
     if ( IsThisWindowsNT() ) /*0x7d6d37*/
-      dword_B78564 = (int (__stdcall *)(unsigned int, unsigned int, unsigned int, unsigned int))GetLocaleInfoA; /*0x7d6d45*/
+      dword_B78564 = (int (*)(unsigned int, unsigned int, unsigned int, unsigned int))GetLocaleInfoA; /*0x7d6d45*/
     else
-      dword_B78564 = (int (__stdcall *)(unsigned int, unsigned int, unsigned int, unsigned int))crtGetLocaleInfoA_16; /*0x7d6d4c*/
+      dword_B78564 = (int (*)(unsigned int, unsigned int, unsigned int, unsigned int))crtGetLocaleInfoA_16; /*0x7d6d4c*/
   }
   if ( !a0 ) /*0x7d6d5c*/
     goto LABEL_20; /*0x7d6d5c*/
@@ -8172,11 +8172,11 @@ void __crtMessageBoxA(int a1, int a2, int a3)
     v5 = LibraryA; /*0x7daeb7*/
     if ( !LibraryA ) /*0x7daebb*/
       return 0; /*0x7daebb*/
-    dword_B78580 = (int (__stdcall *)(unsigned int, unsigned int, unsigned int, unsigned int))GetProcAddress(LibraryA, "MessageBoxA"); /*0x7daecd*/
+    dword_B78580 = (int (*)(unsigned int, unsigned int, unsigned int, unsigned int))GetProcAddress(LibraryA, "MessageBoxA"); /*0x7daecd*/
     if ( !dword_B78580 ) /*0x7daed2*/
       return 0; /*0x7daf24*/
     dword_B78584 = GetProcAddress(v5, "GetActiveWindow"); /*0x7daee2*/
-    dword_B78588 = (int (__stdcall *)(unsigned int))GetProcAddress(v5, "GetLastActivePopup"); /*0x7daee9*/
+    dword_B78588 = (int (*)(unsigned int))GetProcAddress(v5, "GetLastActivePopup"); /*0x7daee9*/
   }
   if ( dword_B78584 ) /*0x7daef5*/
   {
@@ -9507,7 +9507,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
   VariantInit(&pvarg); /*0x7dca12*/
   v49 = -1; /*0x7dca1d*/
   memset(v43, 0, sizeof(v43)); /*0x7dca32*/
-  v39 = (*(int (__stdcall **)(int, int, void *, unsigned int, int, unsigned char **, VARIANTARG *, unsigned int *, int *))(*(unsigned int *)a1 + 24))(
+  v39 = (*(int (**)(int, int, void *, unsigned int, int, unsigned char **, VARIANTARG *, unsigned int *, int *))(*(unsigned int *)a1 + 24))(
           a1,
           a2,
           &unk_B785A0,
@@ -9571,7 +9571,7 @@ void HandleErrorCOM(int a1, int a2, int a3, VARTYPE vt, ICreateErrorInfo * pperr
   if ( v39 != -2147352567 ) /*0x7dca74*/
     return v39; /*0x7dcbae*/
   if ( v43[6] ) /*0x7dca7d*/
-    ((void (__stdcall *)(unsigned int *))v43[6])(v43); /*0x7dca83*/
+    ((void (*)(unsigned int *))v43[6])(v43); /*0x7dca83*/
   pperrinfo = 0; /*0x7dca89*/
   if ( CreateErrorInfo(&pperrinfo) >= 0 ) /*0x7dca95*/
   {
@@ -12221,20 +12221,20 @@ bool ctrlevent_capture_4(DWORD CtrlType)
   _lock(1); /*0x7d49b5*/
   if ( CtrlType ) /*0x7d49c0*/
   {
-    v1 = (void (__cdecl *)(int))dword_B782E0; /*0x7d49d1*/
+    v1 = (void (*)(int))dword_B782E0; /*0x7d49d1*/
     v2 = &dword_B782E0; /*0x7d49d7*/
     v5 = 21; /*0x7d49dc*/
   }
   else
   {
-    v1 = (void (__cdecl *)(int))dword_B782DC; /*0x7d49c2*/
+    v1 = (void (*)(int))dword_B782DC; /*0x7d49c2*/
     v2 = &dword_B782DC; /*0x7d49c8*/
     v5 = 2; /*0x7d49cd*/
   }
   v3 = v5; /*0x7d49e0*/
   if ( v1 ) /*0x7d49e1*/
   {
-    if ( v1 == (void (__cdecl *)(int))1 ) /*0x7d49f0*/
+    if ( v1 == (void (*)(int))1 ) /*0x7d49f0*/
     {
       _unlock(1); /*0x7d4a02*/
     }
@@ -12518,17 +12518,17 @@ LONG _XcptFilter(ObjectClass * aP0, struct _EXCEPTION_POINTERS * ExceptionInfo)
   v3 = (int *)xcptlookup(aP0, v2[20]); /*0x7d5903*/
   if ( !v3 ) /*0x7d590c*/
     return UnhandledExceptionFilter(ExceptionInfo); /*0x7d590c*/
-  v4 = (void (__cdecl *)(int))v3[2]; /*0x7d5912*/
+  v4 = (void (*)(int))v3[2]; /*0x7d5912*/
   if ( !v4 ) /*0x7d591a*/
     return UnhandledExceptionFilter(ExceptionInfo); /*0x7d5a24*/
-  if ( v4 == (void (__cdecl *)(int))5 ) /*0x7d5923*/
+  if ( v4 == (void (*)(int))5 ) /*0x7d5923*/
   {
     v3[2] = 0; /*0x7d5925*/
     return 1; /*0x7d592b*/
   }
   else
   {
-    if ( v4 != (void (__cdecl *)(int))1 ) /*0x7d5934*/
+    if ( v4 != (void (*)(int))1 ) /*0x7d5934*/
     {
       v11 = v2[21]; /*0x7d593d*/
       v2[21] = ExceptionInfo; /*0x7d5943*/

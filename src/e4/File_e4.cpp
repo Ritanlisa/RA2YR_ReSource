@@ -891,62 +891,62 @@ int File::ParseAudioFileRIFF()
   int v51; // [esp+48h] [ebp-8h] BYREF
   unsigned int v52; // [esp+4Ch] [ebp-4h]
 
-  if ( (*((int (__cdecl **)(File *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v51, 8) ) /*0x7c12c3*/
+  if ( (*((int (**)(File *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v51, 8) ) /*0x7c12c3*/
     return -2; /*0x7c12d9*/
   if ( v51 != 1212368461 ) /*0x7c12e2*/
     return -4; /*0x7c12f0*/
   v3 = (unsigned int *)this + 38; /*0x7c12f5*/
   v4 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c131e*/
   LOBYTE(v4) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c131f*/
-  if ( (*((int (__cdecl **)(File *, int, File *, unsigned int))(unsigned int *)this + 16))(this, 5, (unsigned int *)this + 38, v4) ) /*0x7c1326*/
+  if ( (*((int (**)(File *, int, File *, unsigned int))(unsigned int *)this + 16))(this, 5, (unsigned int *)this + 38, v4) ) /*0x7c1326*/
     return -4; /*0x7c133c*/
   v5 = *(unsigned int *)v3->__pad_0; /*0x7c133d*/
   if ( *(unsigned int *)v3->__pad_0 ) /*0x7c133d*/
   {
     v6 = 24 * v5; /*0x7c134c*/
-    v7 = (*((int (__cdecl **)(File *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 24 * v5); /*0x7c1354*/
+    v7 = (*((int (**)(File *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 24 * v5); /*0x7c1354*/
     *((unsigned int *)this + 460) = v7; /*0x7c135c*/
     if ( !v7 ) /*0x7c1362*/
       return -8; /*0x7c1370*/
-    (*((void (__cdecl **)(File *, int, int, int))(unsigned int *)this + 17))(this, 4, v7, v6); /*0x7c1376*/
+    (*((void (**)(File *, int, int, int))(unsigned int *)this + 17))(this, 4, v7, v6); /*0x7c1376*/
     *((unsigned int *)this + 12) += v6; /*0x7c1388*/
-    if ( (*((int (__cdecl **)(File *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v51, 8) ) /*0x7c138b*/
+    if ( (*((int (**)(File *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v51, 8) ) /*0x7c138b*/
       return -2; /*0x7c13a1*/
     if ( v51 != 1145259597 ) /*0x7c13aa*/
       return -4; /*0x7c13b8*/
     v8 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c13e0*/
     LOBYTE(v8) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c13e1*/
-    if ( (*((int (__cdecl **)(File *, int, unsigned int, unsigned int))(unsigned int *)this + 16))(this, 5, *((unsigned int *)this + 460), v8) ) /*0x7c13ee*/
+    if ( (*((int (**)(File *, int, unsigned int, unsigned int))(unsigned int *)this + 16))(this, 5, *((unsigned int *)this + 460), v8) ) /*0x7c13ee*/
       return -4; /*0x7c1404*/
   }
   v9 = *((unsigned int *)this + 457); /*0x7c1405*/
   if ( v9 ) /*0x7c140d*/
   {
     v10 = 16 * v9; /*0x7c1413*/
-    v11 = (*((int (__cdecl **)(File *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v10); /*0x7c141b*/
+    v11 = (*((int (**)(File *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, v10); /*0x7c141b*/
     *((unsigned int *)this + 461) = v11; /*0x7c1423*/
     if ( !v11 ) /*0x7c1429*/
       return -8; /*0x7c1437*/
-    (*((void (__cdecl **)(File *, int, int, int))(unsigned int *)this + 17))(this, 4, v11, v10); /*0x7c143d*/
+    (*((void (**)(File *, int, int, int))(unsigned int *)this + 17))(this, 4, v11, v10); /*0x7c143d*/
     *((unsigned int *)this + 12) += v10; /*0x7c144f*/
-    if ( (*((int (__cdecl **)(File *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v51, 8) ) /*0x7c1452*/
+    if ( (*((int (**)(File *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v51, 8) ) /*0x7c1452*/
       return -2; /*0x7c1468*/
     if ( v51 != 1413695053 ) /*0x7c1471*/
       return -4; /*0x7c147f*/
     v12 = ((((v52 << 16) | v52 & 0xFF00) << 8) | ((HIWORD(v52) | v52 & 0xFF0000) >> 8)) + 1; /*0x7c14a7*/
     LOBYTE(v12) = (HIBYTE(v52) + 1) & 0xFE; /*0x7c14a8*/
-    if ( (*((int (__cdecl **)(File *, int, unsigned int, unsigned int))(unsigned int *)this + 16))(this, 5, *((unsigned int *)this + 461), v12) ) /*0x7c14b5*/
+    if ( (*((int (**)(File *, int, unsigned int, unsigned int))(unsigned int *)this + 16))(this, 5, *((unsigned int *)this + 461), v12) ) /*0x7c14b5*/
       return -4; /*0x7c14cb*/
   }
   v13 = *((unsigned int *)this + 457); /*0x7c14cc*/
   v50 = v13; /*0x7c14d4*/
   if ( !v13 ) /*0x7c14d8*/
     return -1; /*0x7c1728*/
-  v14 = (*((int (__cdecl **)(File *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, 12 * v13); /*0x7c14e9*/
+  v14 = (*((int (**)(File *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, 12 * v13); /*0x7c14e9*/
   *((unsigned int *)this + 462) = v14; /*0x7c14f1*/
   if ( !v14 ) /*0x7c14f7*/
     return -8; /*0x7c14f7*/
-  (*((void (__cdecl **)(File *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v14, 12 * v13); /*0x7c150b*/
+  (*((void (**)(File *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v14, 12 * v13); /*0x7c150b*/
   *((unsigned int *)this + 12) += 12 * v13; /*0x7c1518*/
   v46 = 0; /*0x7c151b*/
   v15 = 0; /*0x7c1525*/
@@ -1031,20 +1031,20 @@ LABEL_53:
   v27 = 12 * v19; /*0x7c1654*/
   *(unsigned int *)(v38 + v44) = v19; /*0x7c165c*/
   *(unsigned int *)(v38 + v44 + 4) = 0; /*0x7c1660*/
-  v28 = (*((int (__cdecl **)(File *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 12 * v19); /*0x7c1668*/
+  v28 = (*((int (**)(File *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 12 * v19); /*0x7c1668*/
   v29 = v28; /*0x7c166b*/
   if ( v28 ) /*0x7c1672*/
   {
-    (*((void (__cdecl **)(File *, int, int, int))(unsigned int *)this + 17))(this, 4, v28, v27); /*0x7c167d*/
+    (*((void (**)(File *, int, int, int))(unsigned int *)this + 17))(this, 4, v28, v27); /*0x7c167d*/
     *((unsigned int *)this + 12) += v27; /*0x7c1697*/
     v30 = v37 * ((v45 + 1) & 0xFFFFFFFE); /*0x7c169a*/
     v31 = (int *)(v38 + v44 + 8); /*0x7c16a0*/
     *v31 = v29; /*0x7c16a9*/
-    v32 = (*((int (__cdecl **)(File *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, v30); /*0x7c16ac*/
+    v32 = (*((int (**)(File *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, v30); /*0x7c16ac*/
     v33 = v32; /*0x7c16af*/
     if ( v32 ) /*0x7c16b6*/
     {
-      (*((void (__cdecl **)(File *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v32, v30); /*0x7c16c1*/
+      (*((void (**)(File *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v32, v30); /*0x7c16c1*/
       *((unsigned int *)this + 12) += v30; /*0x7c16cc*/
       v34 = v37; /*0x7c16cf*/
       if ( v37 > 0 ) /*0x7c16d5*/

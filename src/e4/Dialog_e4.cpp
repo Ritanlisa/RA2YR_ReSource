@@ -1793,7 +1793,7 @@ AbstractClass * * Dialog_TabControlPaint()
         if ( !v8 ) /*0x613879*/
           goto LABEL_16; /*0x613879*/
       }
-      v9 = (LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))(v8 + 4); /*0x613881*/
+      v9 = (LRESULT (**)(HWND, UINT, WPARAM, LPARAM))(v8 + 4); /*0x613881*/
       if ( v9 ) /*0x613886*/
         v4 = *v9; /*0x613888*/
     }

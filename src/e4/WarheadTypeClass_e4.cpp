@@ -628,23 +628,23 @@ void WarheadTypeClass_SaveLoad_Prefix_0(WarheadTypeClass *aP0)
   {
     v7 = *a2; /*0x75e2e4*/
     WarheadTypeClass_field_0x114 = (int *)aP0->WarheadTypeClass_field_0x114; /*0x75e2f1*/
-    (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &WarheadTypeClass_field_0x114, 4, 0, v5); /*0x75e2f5*/
+    (*(void (**)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &WarheadTypeClass_field_0x114, 4, 0, v5); /*0x75e2f5*/
     for ( i = 0; i < a4; ++i ) /*0x75e300*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->WarheadTypeClass_field_0x108 + 4 * i, 4, 0); /*0x75e313*/
+      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->WarheadTypeClass_field_0x108 + 4 * i, 4, 0); /*0x75e313*/
     v9 = *a2; /*0x75e323*/
     a4 = aP0->unused_1CC[0]; /*0x75e32f*/
-    (*(void (__stdcall **)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x75e333*/
+    (*(void (**)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x75e333*/
     for ( j = 0; j < a4; ++j ) /*0x75e33e*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))( /*0x75e351*/
+      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))( /*0x75e351*/
         a2,
         aP0->WarheadTypeClass_field_0x190[0] + 4 * j,
         4,
         0);
     v11 = *a2; /*0x75e361*/
     a4 = *(unsigned int *)&aP0->__pad_1B0[8]; /*0x75e36d*/
-    (*(void (__stdcall **)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x75e371*/
+    (*(void (**)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x75e371*/
     for ( k = 0; k < (int)WarheadTypeClass_field_0x114; ++k ) /*0x75e37c*/
-      (*(void (__stdcall **)(int *, char *, int, unsigned int))(*a2 + 16))( /*0x75e38f*/
+      (*(void (**)(int *, char *, int, unsigned int))(*a2 + 16))( /*0x75e38f*/
         a2,
         (char *)&aP0->WarheadTypeClass_field_0x1AC->AbstractClass + 4 * k,
         4,

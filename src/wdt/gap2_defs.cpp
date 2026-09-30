@@ -44,7 +44,7 @@ int State::SetIfChanged(int a1) {
   {
     v3 = *(unsigned int *)this->__pad_0; /*0x4f3a9b*/
     IDA_LOBYTE(this->AIPlayers) = a1; /*0x4f3a9e*/
-    return (*(int (__stdcall **)(int))(v3 + 16))(a1); /*0x4f3aa1*/
+    return (*(int (**)(int))(v3 + 16))(a1); /*0x4f3aa1*/
   }
   return result; /*0x4f3aa4*/
 }

@@ -750,7 +750,7 @@ LABEL_158:
         v131 = 0;
       LinkedList_flat::PushFront(v262, (IUnknown *)v131);
       stru_830620[72011] = v106;
-      int v132 = (*(int (__stdcall **)(int))(*(unsigned int *)(v105 + 36) + 24))(v105 + 36);
+      int v132 = (*(int (**)(int))(*(unsigned int *)(v105 + 36) + 24))(v105 + 36);
       char * v133 = (char *)operator new(0x10u);
       if ( v133 )
         char * v134 = NetMessage::Pack4(v133, (RandomStruct *)&stru_830620[72008], v132);
@@ -1148,7 +1148,7 @@ LABEL_334:
       {
   int v287[15]; // [esp+15Ch] [ebp-825Ch] BYREF
         v287[0] = 316;
-        if ( (*(int (__stdcall **)(unsigned int, int *, unsigned int))(**(unsigned int **)&g_CellDirectionOffsets[2564] + 44))(
+        if ( (*(int (**)(unsigned int, int *, unsigned int))(**(unsigned int **)&g_CellDirectionOffsets[2564] + 44))(
                *(unsigned int *)&g_CellDirectionOffsets[2564],
                v287,
                0) )
@@ -1188,14 +1188,14 @@ LABEL_343:
   {
     X = (*(&g_MatrixTransformState + 2264))->X;
     if ( v266 )
-      (*(void (__stdcall **)(unsigned int, char *, CCINIClass *, char *, unsigned int))(X + 12))(
+      (*(void (**)(unsigned int, char *, CCINIClass *, char *, unsigned int))(X + 12))(
         *(&g_MatrixTransformState + 2264),
         &byte_B77CE8,
         dword_B75F5C,
         vfptr,
         *(unsigned int *)&g_OverlayTypeConfig[17816]);
     else
-      (*(void (__stdcall **)(unsigned int, char *, CCINIClass *, char *, unsigned int))(X + 12))(
+      (*(void (**)(unsigned int, char *, CCINIClass *, char *, unsigned int))(X + 12))(
         *(&g_MatrixTransformState + 2264),
         byte_B77930,
         dword_B76184,
@@ -1442,7 +1442,7 @@ void DlgProcScoreScreen()
     v17 = GetStringCSF(v15, 0, aDRa2mdpostStls, 139); /*0x6c927b*/
     v18 = GetDlgItem(hWnd, 1779); /*0x6c927d*/
     v33 = (LPARAM)String; /*0x6c927f*/
-    v19 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x6c9280*/
+    v19 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x6c9280*/
     SendMessageA(v18, 0x4B2u, 0, v33); /*0x6c928e*/
     v20 = GetDlgItem(hWnd, 1780); /*0x6c9296*/
     SendMessageA(v20, 0x4B2u, 0, (LPARAM)v17); /*0x6c92a1*/
@@ -1469,7 +1469,7 @@ void DlgProcScoreScreen()
         Formata = (wchar_t *)++v23; /*0x6c930a*/
       }
       while ( v23 < v21 ); /*0x6c930e*/
-      v19 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x6c9310*/
+      v19 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x6c9310*/
     }
     v29 = GetDlgItem(hWnd, 1835); /*0x6c931c*/
     PostMessageA(v29, 0x4D7u, 0, (LPARAM)hWnd); /*0x6c9327*/

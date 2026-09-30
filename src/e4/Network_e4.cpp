@@ -3066,7 +3066,7 @@ AbstractClass * * Network_ModemConnectionDialog()
 
   dwNewLong = -1; /*0x5ef4f7*/
   v53 = -1; /*0x5ef4fb*/
-  Dialog = (HWND)CreateDialog(0xECu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_5EFF00, 0); /*0x5ef504*/
+  Dialog = (HWND)CreateDialog(0xECu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_5EFF00, 0); /*0x5ef504*/
   hWnd = Dialog; /*0x5ef508*/
   if ( !Dialog ) /*0x5ef50c*/
     return 0; /*0x5efed7*/
@@ -3083,8 +3083,8 @@ AbstractClass * * Network_ModemConnectionDialog()
   {
     v4 = dwNewLong; /*0x5ef585*/
   }
-  v5 = (void (__stdcall *)(HWND))UpdateWindow; /*0x5ef589*/
-  v6 = (void (__stdcall *)(HWND, int))ShowWindow; /*0x5ef590*/
+  v5 = (void (*)(HWND))UpdateWindow; /*0x5ef589*/
+  v6 = (void (*)(HWND, int))ShowWindow; /*0x5ef590*/
   v52 = v1; /*0x5ef596*/
   v7 = 0; /*0x5ef597*/
   while ( 2 ) /*0x5ef5af*/
@@ -3443,8 +3443,8 @@ AbstractClass * * Network_ModemConnectionDialog()
     if ( v53 == -1 ) /*0x5efeba*/
     {
       Dialog = hWnd; /*0x5ef59b*/
-      v6 = (void (__stdcall *)(HWND, int))ShowWindow; /*0x5ef59f*/
-      v5 = (void (__stdcall *)(HWND))UpdateWindow; /*0x5ef5a5*/
+      v6 = (void (*)(HWND, int))ShowWindow; /*0x5ef59f*/
+      v5 = (void (*)(HWND))UpdateWindow; /*0x5ef5a5*/
       v7 = 0; /*0x5ef5ab*/
       continue; /*0x5ef5ab*/
     }
@@ -4597,7 +4597,7 @@ AbstractClass * * int sub_79C3A0()
     *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x79c4c3*/
     memset(v7, 0, sizeof(v7)); /*0x79c4d3*/
     strcpy(&v7[36], String::GetOrEmpty((String *)&g_WindowManager.__pad_14[16])); /*0x79c500*/
-    return (*(int (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v7); /*0x79c512*/
+    return (*(int (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v7); /*0x79c512*/
   }
   return result; /*0x79c518*/
 }
@@ -4695,7 +4695,7 @@ void sub_7A2730()
 
   result = (int)ppv; /*0x7a2730*/
   if ( ppv ) /*0x7a2737*/
-    return (*(int (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, aG); /*0x7a2741*/
+    return (*(int (**)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, aG); /*0x7a2741*/
   return result; /*0x7a2744*/
 }
 }

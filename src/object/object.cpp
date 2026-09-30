@@ -49,7 +49,7 @@ bool ObjectClass::Remove()
   IDA_LOBYTE(result) = this->isSelected; /*0x5f44a4*/
   if ( (unsigned char)result ) /*0x5f44ac*/
   {
-    v3 = ((int (__thiscall *)(ObjectClass **, void **))ObjectClass_CurrentObjects->parent_gap[4])( /*0x5f44c2*/
+    v3 = ((int (*)(ObjectClass **, void **))ObjectClass_CurrentObjects->parent_gap[4])( /*0x5f44c2*/
            &ObjectClass_CurrentObjects,
            &this);
     if ( v3 != -1 && v3 < (int)g_SelectionManager ) /*0x5f44d2*/
@@ -80,13 +80,13 @@ AbstractClass * * ObjectClass::Destroy()
   if ( this && (this->? & 1) != 0 ) /*0x5f6607*/
     TechnoClass::CleanupAll((TechnoClass *)this, 0); /*0x5f660d*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x5f6616*/
-  (*((void (__thiscall **)(ObjectClass *))this->AbstractClass + 53))(this); /*0x5f661f*/
+  (*((void (**)(ObjectClass *))this->AbstractClass + 53))(this); /*0x5f661f*/
   this->isAliveFlag = 0; /*0x5f6625*/
   result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
   if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x5f6666*/
     || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
     && g_BuildingLoadQueue_Array.UnitExitSound > 0
-    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
+    && (result = (*(int (**)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
                    &g_BuildingLoadQueue_Array.ToTile,
                    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),

@@ -450,7 +450,7 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
   }
   if ( !(*((uint8_t (**)(AbstractClass *))a3->vtable0 + 21))(a3) ) /*0x41aa9a*/
   {
-    if ( (*((int (__stdcall **)(void **))a3->vtable1 + 3))(&a3->vtable1) != 6 /*0x41aada*/
+    if ( (*((int (**)(void **))a3->vtable1 + 3))(&a3->vtable1) != 6 /*0x41aada*/
       || (*((int (**)(FootClass *))a1->vtable0 + 97))(a1) != 7 && a1->queuedMission != 7 )
     {
       goto LABEL_35; /*0x41aada*/
@@ -529,12 +529,12 @@ void* AircraftClass_AssignDestination_SyncLog(void * a1, void * a2, void * a3, v
             {
               if ( !a1->locomotor[0] ) /*0x41ad33*/
                 WinAPI::Wrapper(-2147467261); /*0x41ad42*/
-              if ( !(*(uint8_t (__stdcall **)(int))(*(unsigned int *)a1->locomotor[0] + 96))(a1->locomotor[0]) /*0x41ad5d*/
+              if ( !(*(uint8_t (**)(int))(*(unsigned int *)a1->locomotor[0] + 96))(a1->locomotor[0]) /*0x41ad5d*/
                 && !this->HouseClass::IonSensitivesShouldBeOffline() )
               {
                 if ( !a1->locomotor[0] ) /*0x41ad66*/
                   WinAPI::Wrapper(-2147467261); /*0x41ad75*/
-                (*(void (__stdcall **)(int))(*(unsigned int *)a1->locomotor[0] + 88))(a1->locomotor[0]); /*0x41ad83*/
+                (*(void (**)(int))(*(unsigned int *)a1->locomotor[0] + 88))(a1->locomotor[0]); /*0x41ad83*/
               }
               if ( (int *)Team::GetMember((Team *)a1, 0) == v14 /*0x41ad9e*/
                 && ClosestPlacementCell != (int *)Team::GetMember((Team *)a1, 0) )

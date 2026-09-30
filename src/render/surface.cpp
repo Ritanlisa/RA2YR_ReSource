@@ -339,9 +339,9 @@ bool DSurface::BlitPart(
   unsigned char v11[28]; // [esp+Ch] [ebp-20h] BYREF
   unsigned char v12[4]; // [esp+28h] [ebp-4h] BYREF
 
-  DSurface_field_0x0 = (int (__thiscall **)(DSurface *, int))this->DSurface_field_0x0; /*0x4bb098*/
-  v8 = (*(int (__thiscall **)(int, unsigned char *, int, int, int))(*(unsigned int *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
-  v9 = (*((int (__thiscall **)(DSurface *, unsigned char *, int, int, int))this->DSurface_field_0x0 + 30))( /*0x4bb0b9*/
+  DSurface_field_0x0 = (int (**)(DSurface *, int))this->DSurface_field_0x0; /*0x4bb098*/
+  v8 = (*(int (**)(int, unsigned char *, int, int, int))(*(unsigned int *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
+  v9 = (*((int (**)(DSurface *, unsigned char *, int, int, int))this->DSurface_field_0x0 + 30))( /*0x4bb0b9*/
          this,
          v12,
          a5,
@@ -753,11 +753,11 @@ bool DSurface::Blit(
     return 0; /*0x4bb14e*/
   v10 = (void **)a4; /*0x4bb154*/
   v42 = 0; /*0x4bb15b*/
-  if ( !(*(uint8_t (__thiscall **)(unsigned int *))(*a4 + 132))(a4) /*0x4bb19d*/
-    || (*(uint8_t (__thiscall **)(unsigned int *))(*a4 + 108))(a4) == 1
+  if ( !(*(uint8_t (**)(unsigned int *))(*a4 + 132))(a4) /*0x4bb19d*/
+    || (*(uint8_t (**)(unsigned int *))(*a4 + 108))(a4) == 1
     || (unsigned char)a7 == 1
-    || (v11 = (*(int (__thiscall **)(unsigned int *))(*a4 + 112))(a4),
-        v12 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this) == v11,
+    || (v11 = (*(int (**)(unsigned int *))(*a4 + 112))(a4),
+        v12 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 28))(this) == v11,
         v10 = (void **)a4,
         !v12) )
   {
@@ -770,7 +770,7 @@ bool DSurface::Blit(
   if ( !v42 /*0x4bb1f8*/
     && v13 == 1
     && (!IDA_BYTE1(this->DSurface_field_0x18)
-     || (*((uint8_t (__thiscall **)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
+     || (*((uint8_t (**)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
     && a6[2] == a3[2]
     && a6[3] == a3[3] )
   {
@@ -779,10 +779,10 @@ bool DSurface::Blit(
   if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bb20f*/
     return 0; /*0x4bb20f*/
   v14 = this->DSurface_field_0x1C[0]; /*0x4bb215*/
-  if ( v14 && (*(int (__stdcall **)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb227*/
+  if ( v14 && (*(int (**)(int))(*(unsigned int *)v14 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4bb227*/
   {
-    if ( (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4bb240*/
-      || (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
+    if ( (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4bb240*/
+      || (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
     {
       return 0; /*0x4bb245*/
     }
@@ -791,9 +791,9 @@ bool DSurface::Blit(
     {
       DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb256*/
       this->DSurface_field_0xC = 0; /*0x4bb25d*/
-      (*((void (__thiscall **)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb264*/
+      (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb264*/
       ++this->DSurface_field_0xC; /*0x4bb26d*/
-      (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb273*/
+      (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb273*/
       this->DSurface_field_0xC = DSurface_field_0xC; /*0x4bb27a*/
     }
   }
@@ -814,7 +814,7 @@ bool DSurface::Blit(
   v23 = a6[3]; /*0x4bb2cc*/
   v58 = v21; /*0x4bb2cf*/
   v57 = v22; /*0x4bb2d3*/
-  v24 = (int (__thiscall **)(void **, unsigned int *))*v10; /*0x4bb2d7*/
+  v24 = (int (**)(void **, unsigned int *))*v10; /*0x4bb2d7*/
   v59 = v23; /*0x4bb2dd*/
   v25 = (Rect *)v24[30](v10, v53); /*0x4bb2e4*/
   Y = 0; /*0x4bb2eb*/
@@ -867,7 +867,7 @@ bool DSurface::Blit(
   v61 = Y; /*0x4bb40c*/
   v60 = X; /*0x4bb414*/
   v62 = Width; /*0x4bb418*/
-  v33 = (int (__thiscall **)(DSurface *, int *))v48->DSurface_field_0x0; /*0x4bb41c*/
+  v33 = (int (**)(DSurface *, int *))v48->DSurface_field_0x0; /*0x4bb41c*/
   v63 = v28; /*0x4bb426*/
   v34 = (int *)v33[30](v48, v68); /*0x4bb439*/
   Rect::Set(&v43, 0, 0, 0, 0); /*0x4bb43b*/
@@ -926,7 +926,7 @@ bool DSurface::Blit(
     v43.Y = v61 + v57; /*0x4bb588*/
     v43.Height = v57 + v61 + v59; /*0x4bb5a0*/
     v43.Width = v56 + v60 + v58; /*0x4bb5a4*/
-    return (*(int (__stdcall **)(int, unsigned int *, unsigned int, Rect *, int, unsigned int))(*(unsigned int *)v48->DSurface_field_0x1C[0] + 20))( /*0x4bb5d5*/
+    return (*(int (**)(int, unsigned int *, unsigned int, Rect *, int, unsigned int))(*(unsigned int *)v48->DSurface_field_0x1C[0] + 20))( /*0x4bb5d5*/
              v48->DSurface_field_0x1C[0],
              v53,
              a4[7],
@@ -994,8 +994,8 @@ bool DSurface::FillRectEx(
   if ( this->DSurface_field_0x1C[0] && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
   {
     if ( !IDA_LOBYTE(stru_820320.Start) /*0x4bb675*/
-      || (*((uint8_t (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 27))(this)
-      || (*(int (__stdcall **)(int, int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 52))(
+      || (*((uint8_t (**)(DSurface *))this->DSurface_field_0x0 + 27))(this)
+      || (*(int (**)(int, int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 52))(
            this->DSurface_field_0x1C[0],
            1) )
     {
@@ -1005,23 +1005,23 @@ bool DSurface::FillRectEx(
     if ( g_DDraw_Initialized || stru_A8EB00.?[412] ) /*0x4bb690*/
     {
       v5 = this->DSurface_field_0x1C[0]; /*0x4bb696*/
-      if ( !v5 || (*(int (__stdcall **)(int))(*(unsigned int *)v5 + 96))(this->DSurface_field_0x1C[0]) != -2005532222 ) /*0x4bb6a8*/
+      if ( !v5 || (*(int (**)(int))(*(unsigned int *)v5 + 96))(this->DSurface_field_0x1C[0]) != -2005532222 ) /*0x4bb6a8*/
         goto LABEL_15; /*0x4bb6a8*/
-      if ( !(*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4bb6c1*/
-        && !(*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
+      if ( !(*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4bb6c1*/
+        && !(*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
       {
         DSurface_field_0xC = this->DSurface_field_0xC; /*0x4bb6cc*/
         if ( (int)DSurface_field_0xC > 0 ) /*0x4bb6d1*/
         {
           DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4bb6d3*/
           this->DSurface_field_0xC = 0; /*0x4bb6db*/
-          (*((void (__thiscall **)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb6de*/
+          (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bb6de*/
           ++this->DSurface_field_0xC; /*0x4bb6e7*/
-          (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb6ec*/
+          (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bb6ec*/
           this->DSurface_field_0xC = DSurface_field_0xC; /*0x4bb6ef*/
         }
   LABEL_15:
-        v8 = (int *)(*((int (__thiscall **)(DSurface *, char *))this->DSurface_field_0x0 + 30))(this, v32); /*0x4bb6f2*/
+        v8 = (int *)(*((int (**)(DSurface *, char *))this->DSurface_field_0x0 + 30))(this, v32); /*0x4bb6f2*/
         v9 = ClipRectIntersection(v31, (int *)a2, v8, 0, 0); /*0x4bb710*/
         v30[0] = *v9; /*0x4bb719*/
         v30[1] = v9[1]; /*0x4bb722*/
@@ -1058,7 +1058,7 @@ bool DSurface::FillRectEx(
           memset(v33, 0, sizeof(v33)); /*0x4bb7ba*/
           v33[20] = a4; /*0x4bb7c8*/
           v33[0] = 100; /*0x4bb7da*/
-          return (*(int (__stdcall **)(int, unsigned int *, unsigned int, unsigned int, int, unsigned int *))(*(unsigned int *)v23 + 20))( /*0x4bb7f9*/
+          return (*(int (**)(int, unsigned int *, unsigned int, unsigned int, int, unsigned int *))(*(unsigned int *)v23 + 20))( /*0x4bb7f9*/
                    v23,
                    v29,
                    0,
@@ -1081,7 +1081,7 @@ int DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
   int result; // eax
   unsigned char v6[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v4 = (*((int (__thiscall **)(DSurface *, unsigned char *))this->DSurface_field_0x0 + 30))(this, v6); /*0x4bb609*/
+  v4 = (*((int (**)(DSurface *, unsigned char *))this->DSurface_field_0x0 + 30))(this, v6); /*0x4bb609*/
   IDA_LOBYTE(result) = DSurface::FillRectEx(this, v4, fill_rect, color); /*0x4bb60f*/
   return result; /*0x4bb614*/
 }
@@ -1135,7 +1135,7 @@ bool DSurface::FillRectWithFlags(
     return 0; /*0x4bb847*/
   if ( (int)this->DSurface_field_0x8 <= 0 || (int)this->DSurface_field_0xC <= 0 ) /*0x4bb863*/
     return 0; /*0x4bb865*/
-  v8 = (int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v6 + 120))(v6, v38); /*0x4bb87a*/
+  v8 = (int *)(*(int (**)(int, unsigned int *))(*(unsigned int *)v6 + 120))(v6, v38); /*0x4bb87a*/
   v9 = ClipRectIntersection(v42, v8, (int *)this, 0, 0); /*0x4bb888*/
   v39[0] = *v9; /*0x4bb891*/
   v39[1] = v9[1]; /*0x4bb898*/
@@ -1150,7 +1150,7 @@ bool DSurface::FillRectWithFlags(
   v30 = v12; /*0x4bb908*/
   v34 = 0xFFu >> g_BitMask_Red << g_BitShift_Blue; /*0x4bb917*/
   v13 = CellStruct::Copy((CellStruct *)v39, v38); /*0x4bb91b*/
-  v35 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v6 + 92))(v6, *v13, v13[1]); /*0x4bb938*/
+  v35 = (*(int (**)(int, unsigned int, unsigned int))(*(unsigned int *)v6 + 92))(v6, *v13, v13[1]); /*0x4bb938*/
   if ( !v35 ) /*0x4bb93c*/
     return 0; /*0x4bb93e*/
   v14 = (int)a4; /*0x4bb94a*/
@@ -1170,7 +1170,7 @@ bool DSurface::FillRectWithFlags(
   for ( i = v19; (int)thisa < v41; thisa = (DSurface *)((char *)thisa + 1) ) /*0x4bb9da*/
   {
     v29 = 0; /*0x4bb9ed*/
-    v20 = (unsigned int)thisa * ((*(int (__thiscall **)(int))(*(unsigned int *)v32 + 116))(v32) / 2); /*0x4bb9fa*/
+    v20 = (unsigned int)thisa * ((*(int (**)(int))(*(unsigned int *)v32 + 116))(v32) / 2); /*0x4bb9fa*/
     if ( v40 > 0 ) /*0x4bba01*/
     {
       v11 = (uint16_t)v11; /*0x4bba0f*/
@@ -1198,7 +1198,7 @@ bool DSurface::FillRectWithFlags(
       v16 = v45; /*0x4bbac9*/
     }
   }
-  (*(void (__thiscall **)(int))(*(unsigned int *)v32 + 96))(v32); /*0x4bbae8*/
+  (*(void (**)(int))(*(unsigned int *)v32 + 96))(v32); /*0x4bbae8*/
   return 1; /*0x4bb849*/
 }
 // IDA: 0x4BAD80 -- DSurface::Lock (315B)
@@ -1222,10 +1222,10 @@ void* DSurface::Lock(int x, int y)
   if ( !g_DDraw_Initialized && !stru_A8EB00.?[412] ) /*0x4bad99*/
     return 0; /*0x4bad99*/
   v4 = this->DSurface_field_0x1C[0]; /*0x4bad9f*/
-  if ( v4 && (*(int (__stdcall **)(int))(*(unsigned int *)v4 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4badb1*/
+  if ( v4 && (*(int (**)(int))(*(unsigned int *)v4 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 ) /*0x4badb1*/
   {
-    if ( (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4badca*/
-      || (*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
+    if ( (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0]) /*0x4badca*/
+      || (*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
     {
       return 0; /*0x4badcf*/
     }
@@ -1234,9 +1234,9 @@ void* DSurface::Lock(int x, int y)
     {
       DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4baddc*/
       this->DSurface_field_0xC = 0; /*0x4bade0*/
-      (*((void (__thiscall **)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bade7*/
+      (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4bade7*/
       ++this->DSurface_field_0xC; /*0x4badf0*/
-      (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4badf5*/
+      (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4badf5*/
       this->DSurface_field_0xC = DSurface_field_0xC; /*0x4badf8*/
     }
   }
@@ -1246,15 +1246,15 @@ void* DSurface::Lock(int x, int y)
     {
   LABEL_14:
       ++this->DSurface_field_0xC; /*0x4bae7c*/
-      v9 = y * (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4bae90*/
+      v9 = y * (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4bae90*/
       return (char *)this->DSurface_field_0x14 /*0x4baeac*/
-           + x * (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this)
+           + x * (*((int (**)(DSurface *))this->DSurface_field_0x0 + 28))(this)
            + v9;
     }
     memset(v11, 0, sizeof(v11)); /*0x4bae2d*/
     v7 = this->DSurface_field_0x1C[0]; /*0x4bae2f*/
     v11[0] = 108; /*0x4bae38*/
-    if ( !(*(int (__stdcall **)(int, unsigned int, unsigned int *, int, unsigned int))(*(unsigned int *)v7 + 100))(v7, 0, v11, 1, 0) ) /*0x4bae46*/
+    if ( !(*(int (**)(int, unsigned int, unsigned int *, int, unsigned int))(*(unsigned int *)v7 + 100))(v7, 0, v11, 1, 0) ) /*0x4bae46*/
     {
       qmemcpy(this->DSurface_field_0x20, v11, 0x6Cu); /*0x4bae59*/
       DSurface_field_0x20 = this->DSurface_field_0x20; /*0x4bae5b*/
@@ -1283,18 +1283,18 @@ int DSurface::Unlock()
     v2 = this->DSurface_field_0x1C[0]; /*0x4baf56*/
     if ( v2 ) /*0x4baf5b*/
     {
-      if ( (*(int (__stdcall **)(int))(*(unsigned int *)v2 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 /*0x4baf7d*/
-        && !(*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0])
-        && !(*(int (__stdcall **)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
+      if ( (*(int (**)(int))(*(unsigned int *)v2 + 96))(this->DSurface_field_0x1C[0]) == -2005532222 /*0x4baf7d*/
+        && !(*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 108))(this->DSurface_field_0x1C[0])
+        && !(*(int (**)(int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 96))(this->DSurface_field_0x1C[0]) )
       {
         DSurface_field_0xC = this->DSurface_field_0xC; /*0x4baf84*/
         if ( (int)DSurface_field_0xC > 0 ) /*0x4baf89*/
         {
           DSurface_field_0x0 = this->DSurface_field_0x0; /*0x4baf8b*/
           this->DSurface_field_0xC = 0; /*0x4baf93*/
-          (*((void (__thiscall **)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4baf96*/
+          (*((void (**)(DSurface *, unsigned int, unsigned int))DSurface_field_0x0 + 23))(this, 0, 0); /*0x4baf96*/
           ++this->DSurface_field_0xC; /*0x4baf9f*/
-          (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bafa4*/
+          (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bafa4*/
           this->DSurface_field_0xC = DSurface_field_0xC; /*0x4bafa7*/
         }
       }
@@ -1310,7 +1310,7 @@ int DSurface::Unlock()
     this->DSurface_field_0xC = (void *)--result; /*0x4bafb4*/
     if ( !result ) /*0x4bafb7*/
     {
-      result = (*(int (__stdcall **)(int, void *))(*(unsigned int *)this->DSurface_field_0x1C[0] + 128))( /*0x4bafc3*/
+      result = (*(int (**)(int, void *))(*(unsigned int *)this->DSurface_field_0x1C[0] + 128))( /*0x4bafc3*/
                  this->DSurface_field_0x1C[0],
                  this->DSurface_field_0x14);
       this->DSurface_field_0x14 = 0; /*0x4bafc9*/
@@ -1332,13 +1332,13 @@ int DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
     memset(v6, 0, sizeof(v6)); /*0x4baed9*/
     v5 = this->DSurface_field_0x1C[0]; /*0x4baedb*/
     v6[0] = 108; /*0x4baee6*/
-    result = (*(int (__stdcall **)(int, unsigned int, unsigned int *, unsigned int, unsigned int))(*(unsigned int *)v5 + 100))(v5, 0, v6, 0, 0); /*0x4baef4*/
+    result = (*(int (**)(int, unsigned int, unsigned int *, unsigned int, unsigned int))(*(unsigned int *)v5 + 100))(v5, 0, v6, 0, 0); /*0x4baef4*/
     if ( result ) /*0x4baefa*/
     {
       IDA_LOBYTE(result) = 0; /*0x4baefc*/
       return result; /*0x4baf02*/
     }
-    result = (*(int (__stdcall **)(int, unsigned int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 128))( /*0x4baf10*/
+    result = (*(int (**)(int, unsigned int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 128))( /*0x4baf10*/
                this->DSurface_field_0x1C[0],
                v6[9]);
   }
@@ -1348,7 +1348,7 @@ int DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 // 0x4baf20
 BOOL __thiscall DSurface::CheckBltStatus(unsigned int **this)
 {
-  return (*(int (__stdcall **)(int, int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 52))( /*0x4baf30*/
+  return (*(int (**)(int, int))(*(unsigned int *)this->DSurface_field_0x1C[0] + 52))( /*0x4baf30*/
            this->DSurface_field_0x1C[0],
            1) == 0;
 }
@@ -1374,8 +1374,8 @@ void* BSurface::Lock(int x, int y)
   v4 = *(unsigned int *)this->XSurface; /*0x4115f8*/
   ++this->?; /*0x4115fb*/
   Buffer = (char *)this->Buffer; /*0x4115fe*/
-  v6 = x * (*(int (__thiscall **)(BSurface *))(v4 + 112))(this); /*0x411608*/
-  return &Buffer[v6 + y * (*(int (__thiscall **)(BSurface *))(*(unsigned int *)this->XSurface + 116))(this)]; /*0x41161b*/
+  v6 = x * (*(int (**)(BSurface *))(v4 + 112))(this); /*0x411608*/
+  return &Buffer[v6 + y * (*(int (**)(BSurface *))(*(unsigned int *)this->XSurface + 116))(this)]; /*0x41161b*/
 }
 void Surface::DrawSHP(
     ConvertClass* palette,
@@ -1493,15 +1493,15 @@ int XSurface::SetPixel(const Point2D& point, uint32_t color)
   int result; // eax
   int16_t *v5; // edi
 
-  result = (*(int (__thiscall **)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)this->Surface + 92))(this, *point, point[1]); /*0x7baec3*/
+  result = (*(int (**)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)this->Surface + 92))(this, *point, point[1]); /*0x7baec3*/
   v5 = (int16_t *)result; /*0x7baec6*/
   if ( result ) /*0x7baeca*/
   {
-    if ( (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 2 ) /*0x7baed6*/
+    if ( (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 2 ) /*0x7baed6*/
       *v5 = color; /*0x7baedf*/
     else
       *(unsigned char *)v5 = color; /*0x7baef2*/
-    result = (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7baee4*/
+    result = (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7baee4*/
     IDA_LOBYTE(result) = 1; /*0x7baee8*/
   }
   else
@@ -1517,17 +1517,17 @@ int XSurface::GetPixel(const Point2D& point)
   unsigned short *v4; // edi
 
   v3 = 0; /*0x7bae74*/
-  v4 = (unsigned short *)(*(int (__thiscall **)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)this->Surface + 92))(this, *point, point[1]); /*0x7bae79*/
+  v4 = (unsigned short *)(*(int (**)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)this->Surface + 92))(this, *point, point[1]); /*0x7bae79*/
   if ( v4 ) /*0x7bae7d*/
   {
-    if ( (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 2 ) /*0x7bae89*/
+    if ( (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 2 ) /*0x7bae89*/
     {
       IDA_LOWORD(v3) = *v4; /*0x7bae8d*/
-      (*(void (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7bae92*/
+      (*(void (**)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7bae92*/
       return v3; /*0x7bae9a*/
     }
     v3 = *(uint8_t *)v4; /*0x7baea1*/
-    (*(void (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7baea5*/
+    (*(void (**)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7baea5*/
   }
   return v3; /*0x7bae95*/
 }
@@ -1544,14 +1544,14 @@ int XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStru
     && *point < *clip_rect + clip_rect[2]
     && (v6 = point[1], v7 = clip_rect[1], v6 >= v7)
     && (result = v7 + clip_rect[3], v6 < result)
-    && (result = (*(int (__thiscall **)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)this->Surface + 92))(this, *point, point[1]),
+    && (result = (*(int (**)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)this->Surface + 92))(this, *point, point[1]),
         (v8 = (int16_t *)result) != 0) )
   {
-    if ( (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 2 ) /*0x7bafdf*/
+    if ( (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 2 ) /*0x7bafdf*/
       *v8 = color; /*0x7bafe8*/
     else
       *(unsigned char *)v8 = color; /*0x7baffb*/
-    result = (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7bafed*/
+    result = (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7bafed*/
     IDA_LOBYTE(result) = 1; /*0x7baff1*/
   }
   else
@@ -1575,20 +1575,20 @@ int XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip
     v6 = clip_rect[1]; /*0x7baf35*/
     if ( v5 >= v6 && v5 < v6 + clip_rect[3] ) /*0x7baf43*/
     {
-      v7 = (unsigned short *)(*(int (__thiscall **)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)this->Surface + 92))( /*0x7baf50*/
+      v7 = (unsigned short *)(*(int (**)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)this->Surface + 92))( /*0x7baf50*/
                       this,
                       *point,
                       point[1]);
       if ( v7 ) /*0x7baf54*/
       {
-        if ( (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 2 ) /*0x7baf60*/
+        if ( (*(int (**)(XSurface *))(*(unsigned int *)this->Surface + 112))(this) == 2 ) /*0x7baf60*/
         {
           IDA_LOWORD(v4) = *v7; /*0x7baf64*/
-          (*(void (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7baf69*/
+          (*(void (**)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7baf69*/
           return v4; /*0x7baf71*/
         }
         v4 = *(uint8_t *)v7; /*0x7baf78*/
-        (*(void (__thiscall **)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7baf7c*/
+        (*(void (**)(XSurface *))(*(unsigned int *)this->Surface + 96))(this); /*0x7baf7c*/
       }
     }
   }
@@ -1601,7 +1601,7 @@ int XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
   int result; // eax
   unsigned char v7[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v5 = (*(int (__thiscall **)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v7); /*0x7ba5fe*/
+  v5 = (*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v7); /*0x7ba5fe*/
   IDA_LOBYTE(result) = XSurface::DrawLineEx(this, v5, start, end, color); /*0x7ba604*/
   return result; /*0x7ba609*/
 }
@@ -1615,9 +1615,9 @@ int XSurface::Fill(uint32_t color)
   unsigned char v8[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
   v3 = *(unsigned int *)this->Surface; /*0x7bbabf*/
-  v4 = (*(int (__thiscall **)(XSurface *, unsigned char *, int))(*(unsigned int *)this->Surface + 120))(this, v7, color); /*0x7bbac5*/
-  v5 = (*(int (__thiscall **)(XSurface *, unsigned char *, int))(*(unsigned int *)this->Surface + 120))(this, v8, v4); /*0x7bbad2*/
-  return (*(int (__thiscall **)(XSurface *, int))(v3 + 16))(this, v5); /*0x7bbadb*/
+  v4 = (*(int (**)(XSurface *, unsigned char *, int))(*(unsigned int *)this->Surface + 120))(this, v7, color); /*0x7bbac5*/
+  v5 = (*(int (**)(XSurface *, unsigned char *, int))(*(unsigned int *)this->Surface + 120))(this, v8, v4); /*0x7bbad2*/
+  return (*(int (**)(XSurface *, int))(v3 + 16))(this, v5); /*0x7bbadb*/
 }
 // 0x7badc0
 bool XSurface::DrawRectEx(
@@ -1642,25 +1642,25 @@ bool XSurface::DrawRectEx(
   v12 = v9[0]; /*0x7badfb*/
   v9[1] = v5; /*0x7bae08*/
   v10[1] = v5; /*0x7bae0c*/
-  (*(void (__thiscall **)(XSurface *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae17*/
+  (*(void (**)(XSurface *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae17*/
     this,
     a2,
     v9,
     v10,
     a4);
-  (*(void (__thiscall **)(XSurface *, int, unsigned int *, int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae2a*/
+  (*(void (**)(XSurface *, int, unsigned int *, int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae2a*/
     this,
     a2,
     v9,
     &v12,
     a4);
-  (*(void (__thiscall **)(XSurface *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae3d*/
+  (*(void (**)(XSurface *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae3d*/
     this,
     a2,
     v10,
     v11,
     a4);
-  (*(void (__thiscall **)(XSurface *, int, int *, unsigned int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae50*/
+  (*(void (**)(XSurface *, int, int *, unsigned int *, int))(*(unsigned int *)this->Surface + 44))( /*0x7bae50*/
     this,
     a2,
     &v12,
@@ -1677,7 +1677,7 @@ int XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
   int result; // eax
   unsigned char v6[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v4 = (*(int (__thiscall **)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v6); /*0x7bada9*/
+  v4 = (*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v6); /*0x7bada9*/
   IDA_LOBYTE(result) = XSurface::DrawRectEx(this, v4, draw_rect, color); /*0x7badaf*/
   return result; /*0x7badb4*/
 }
@@ -1688,7 +1688,7 @@ int XSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
   int result; // eax
   unsigned char v6[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v4 = (int *)(*(int (__thiscall **)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v6); /*0x7bb032*/
+  v4 = (int *)(*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v6); /*0x7bb032*/
   IDA_LOBYTE(result) = XSurface::FillRectEx(this, fill_rect, v4, color); /*0x7bb03d*/
   return result; /*0x7bb042*/
 }
@@ -1759,7 +1759,7 @@ bool XSurface::FillRectEx(
     return 0; /*0x7bb066*/
   if ( a3[3] <= 0 ) /*0x7bb071*/
     return 0; /*0x7bb071*/
-  v6 = (int *)(*(int (__thiscall **)(XSurface *, int *))(*(unsigned int *)this->Surface + 120))(this, v45); /*0x7bb07f*/
+  v6 = (int *)(*(int (**)(XSurface *, int *))(*(unsigned int *)this->Surface + 120))(this, v45); /*0x7bb07f*/
   v7 = ClipRectIntersection(&v50, a2, v6, 0, 0); /*0x7bb08f*/
   v46[0] = *v7; /*0x7bb096*/
   v46[1] = v7[1]; /*0x7bb09c*/
@@ -1789,13 +1789,13 @@ bool XSurface::FillRectEx(
   if ( v16 <= 0 ) /*0x7bb11f*/
     return 0; /*0x7bb11f*/
   v56 = (unsigned int *)v16; /*0x7bb125*/
-  v58 = (int *)(*(int (__thiscall **)(XSurface *))(*(unsigned int *)v4->Surface + 116))(v4); /*0x7bb132*/
+  v58 = (int *)(*(int (**)(XSurface *))(*(unsigned int *)v4->Surface + 116))(v4); /*0x7bb132*/
   v17 = CellStruct::Copy((CellStruct *)v47, &v51); /*0x7bb139*/
-  v18 = (*(int (__thiscall **)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)v4->Surface + 92))(v4, *v17, v17[1]); /*0x7bb154*/
+  v18 = (*(int (**)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)v4->Surface + 92))(v4, *v17, v17[1]); /*0x7bb154*/
   v53 = (char *)v18; /*0x7bb158*/
   if ( !v18 ) /*0x7bb15b*/
     return 0; /*0x7bb333*/
-  if ( (*(int (__thiscall **)(XSurface *))(*(unsigned int *)v4->Surface + 112))(v4) == 1 ) /*0x7bb16b*/
+  if ( (*(int (**)(XSurface *))(*(unsigned int *)v4->Surface + 112))(v4) == 1 ) /*0x7bb16b*/
   {
     v57 = 0; /*0x7bb170*/
     if ( v49 > 0 ) /*0x7bb179*/
@@ -1815,7 +1815,7 @@ bool XSurface::FillRectEx(
       }
       while ( (int)v57 < v49 ); /*0x7bb1b2*/
   LABEL_9:
-      (*(void (__thiscall **)(XSurface *))(*(unsigned int *)v55->Surface + 96))(v55); /*0x7bb1b4*/
+      (*(void (**)(XSurface *))(*(unsigned int *)v55->Surface + 96))(v55); /*0x7bb1b4*/
       return 1; /*0x7bb1c6*/
     }
   }
@@ -1910,7 +1910,7 @@ bool XSurface::FillRectEx(
     while ( !v40 ); /*0x7bb31a*/
     v4 = v55; /*0x7bb31c*/
   }
-  (*(void (__thiscall **)(XSurface *))(*(unsigned int *)v4->Surface + 96))(v4); /*0x7bb21e*/
+  (*(void (**)(XSurface *))(*(unsigned int *)v4->Surface + 96))(v4); /*0x7bb21e*/
   return 1; /*0x7bb1c0*/
 }
 // Forward-declare BlitterCopySimpleSHP (defined in shp rendering module)
@@ -1939,7 +1939,7 @@ int XSurface::BlitWhole(Surface* src, bool option1, bool option2)
   int v18; // [esp+24h] [ebp-18h]
   unsigned char v20[16]; // [esp+2Ch] [ebp-10h] BYREF
 
-  v5 = (int *)(*(int (__thiscall **)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v20); /*0x7bbb01*/
+  v5 = (int *)(*(int (**)(XSurface *, unsigned char *))(*(unsigned int *)this->Surface + 120))(this, v20); /*0x7bbb01*/
   v16 = *v5; /*0x7bbb0a*/
   v17 = v5[1]; /*0x7bbb13*/
   v18 = v5[2]; /*0x7bbb1c*/
@@ -1957,7 +1957,7 @@ int XSurface::BlitWhole(Surface* src, bool option1, bool option2)
   v9 = v9; /*0x7bbb56*/
   v12 = 0; /*0x7bbb6d*/
   v13 = 0; /*0x7bbb71*/
-  return (*(int (__thiscall **)(XSurface *, int *, int *, int *, int, int))(v10 + 8))(this, &v16, src, &v12, option1, option2); /*0x7bbb78*/
+  return (*(int (**)(XSurface *, int *, int *, int *, int, int))(v10 + 8))(this, &v16, src, &v12, option1, option2); /*0x7bbb78*/
 }
 // 0x4bf750
 bool DSurface::DrawGradientLine(
@@ -2026,7 +2026,7 @@ bool DSurface::DrawGradientLine(
   int v75; // [esp+64h] [ebp+Ch]
 
   v8 = this; /*0x4bf755*/
-  v9 = (int *)(*((int (__thiscall **)(DSurface *, unsigned char *))this->DSurface_field_0x0 + 30))(this, v68); /*0x4bf766*/
+  v9 = (int *)(*((int (**)(DSurface *, unsigned char *))this->DSurface_field_0x0 + 30))(this, v68); /*0x4bf766*/
   v10 = ClipRectIntersection(v69, (int *)a2, v9, 0, 0); /*0x4bf776*/
   v64 = *v10; /*0x4bf77d*/
   v65 = v10[1]; /*0x4bf784*/
@@ -2049,9 +2049,9 @@ bool DSurface::DrawGradientLine(
       v61 = v63; /*0x4bf7f6*/
       v63 = v14; /*0x4bf7fa*/
     }
-    if ( (*((int (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 28))(v8) == 2 ) /*0x4bf809*/
+    if ( (*((int (**)(DSurface *))v8->DSurface_field_0x0 + 28))(v8) == 2 ) /*0x4bf809*/
     {
-      v15 = (unsigned short *)(*((int (__thiscall **)(DSurface *, int, int))v8->DSurface_field_0x0 + 23))(v8, v60, v61); /*0x4bf821*/
+      v15 = (unsigned short *)(*((int (**)(DSurface *, int, int))v8->DSurface_field_0x0 + 23))(v8, v60, v61); /*0x4bf821*/
       v70 = v15; /*0x4bf825*/
       if ( v15 ) /*0x4bf829*/
       {
@@ -2091,15 +2091,15 @@ bool DSurface::DrawGradientLine(
             while ( v71 <= v62 - v60 ); /*0x4bf874*/
           }
   LABEL_17:
-          (*((void (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 24))(v8); /*0x4bf942*/
+          (*((void (**)(DSurface *))v8->DSurface_field_0x0 + 24))(v8); /*0x4bf942*/
           return 1; /*0x4bf953*/
         }
         if ( v60 == v62 ) /*0x4bf960*/
         {
           if ( v61 <= v63 ) /*0x4bf968*/
-            v24 = (*((int (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bf97b*/
+            v24 = (*((int (**)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bf97b*/
           else
-            v24 = -(*((int (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bf972*/
+            v24 = -(*((int (**)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bf972*/
           v72 = (unsigned int *)v24; /*0x4bf982*/
           v25 = abs32(v63 - v61); /*0x4bf98f*/
           if ( v25 < 0 ) /*0x4bf991*/
@@ -2140,7 +2140,7 @@ bool DSurface::DrawGradientLine(
         v34 = v63 - v61; /*0x4bfaa1*/
         v35 = v62 - v60; /*0x4bfaa6*/
         v58 = v62 - v60; /*0x4bfaaa*/
-        v36 = (*((int (__thiscall **)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bfaae*/
+        v36 = (*((int (**)(DSurface *))v8->DSurface_field_0x0 + 29))(v8); /*0x4bfaae*/
         v73 = v36; /*0x4bfab3*/
         if ( v34 < 0 ) /*0x4bfab7*/
           v73 = -v36; /*0x4bfabb*/
@@ -2190,7 +2190,7 @@ bool DSurface::DrawGradientLine(
             v39 += v75; /*0x4bfbd7*/
             if ( ++v38 > v58 ) /*0x4bfbdc*/
             {
-              (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bfbeb*/
+              (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4bfbeb*/
               return 1; /*0x4bfbf7*/
             }
           }
@@ -2321,9 +2321,9 @@ bool DSurface::DrawStippledRect(
   int v73; // [esp+58h] [ebp+10h]
   int v74; // [esp+58h] [ebp+10h]
 
-  if ( (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this) != 2 ) /*0x4c0e45*/
+  if ( (*((int (**)(DSurface *))this->DSurface_field_0x0 + 28))(this) != 2 ) /*0x4c0e45*/
     return 0; /*0x4c0e45*/
-  v6 = (int *)(*((int (__thiscall **)(DSurface *, unsigned int *))this->DSurface_field_0x0 + 30))(this, v62); /*0x4c0e55*/
+  v6 = (int *)(*((int (**)(DSurface *, unsigned int *))this->DSurface_field_0x0 + 30))(this, v62); /*0x4c0e55*/
   v67 = *v6; /*0x4c0e5a*/
   v68 = v6[1]; /*0x4c0e61*/
   v69 = v6[2]; /*0x4c0e68*/
@@ -2360,7 +2360,7 @@ bool DSurface::DrawStippledRect(
   v71 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x4c0f10*/
   if ( v64 > v66 ) /*0x4c0f14*/
     v71 = -*(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x4c0f18*/
-  v72 = (int16_t *)(*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v63, v64); /*0x4c0f2c*/
+  v72 = (int16_t *)(*((int (**)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v63, v64); /*0x4c0f2c*/
   if ( !v72 ) /*0x4c0f30*/
     return 0; /*0x4c1428*/
   if ( a5 ) /*0x4c0f45*/
@@ -2397,9 +2397,9 @@ bool DSurface::DrawStippledRect(
     else if ( v63 == v65 ) /*0x4c0fcf*/
     {
       if ( v64 <= v66 ) /*0x4c0fd7*/
-        v17 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fef*/
+        v17 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fef*/
       else
-        v17 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fe3*/
+        v17 = -(*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0fe3*/
       v18 = abs32(v66 - v64); /*0x4c0ffe*/
       if ( v18 >= 0 ) /*0x4c1000*/
       {
@@ -2433,7 +2433,7 @@ bool DSurface::DrawStippledRect(
     {
       v22 = v65 - v63; /*0x4c1063*/
       v23 = v66 - v64; /*0x4c1067*/
-      v24 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1069*/
+      v24 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1069*/
       v73 = v24; /*0x4c106e*/
       if ( v23 < 0 ) /*0x4c1072*/
         v73 = -v24; /*0x4c1076*/
@@ -2555,9 +2555,9 @@ bool DSurface::DrawStippledRect(
   else if ( v63 == v65 ) /*0x4c123e*/
   {
     if ( v64 <= v66 ) /*0x4c1246*/
-      v38 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c125e*/
+      v38 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c125e*/
     else
-      v38 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1252*/
+      v38 = -(*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c1252*/
     v39 = abs32(v66 - v64); /*0x4c126d*/
     if ( v39 >= 0 ) /*0x4c126f*/
     {
@@ -2591,7 +2591,7 @@ bool DSurface::DrawStippledRect(
   {
     v43 = v65 - v63; /*0x4c12cf*/
     v44 = v66 - v64; /*0x4c12d5*/
-    v45 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c12d9*/
+    v45 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c12d9*/
     v46 = v45; /*0x4c12dc*/
     v59 = v45; /*0x4c12e0*/
     if ( v44 < 0 ) /*0x4c12e4*/
@@ -2681,7 +2681,7 @@ bool DSurface::DrawStippledRect(
       }
     }
   }
-  (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4c1386*/
+  (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4c1386*/
   return 1; /*0x4c0fba*/
 }
 // ============================================================
@@ -2790,7 +2790,7 @@ bool DSurface::DrawDashedLineStipple(
   v76 = 1; /*0x4c0768*/
   v9 = *a3; /*0x4c0770*/
   v10 = a3[1]; /*0x4c0772*/
-  if ( (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this) != 2 ) /*0x4c077d*/
+  if ( (*((int (**)(DSurface *))this->DSurface_field_0x0 + 28))(this) != 2 ) /*0x4c077d*/
     return 0; /*0x4c0788*/
   if ( v7 > v9 ) /*0x4c078d*/
   {
@@ -2815,7 +2815,7 @@ bool DSurface::DrawDashedLineStipple(
   v87 = *(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x4c0801*/
   if ( v8 > v10 ) /*0x4c0805*/
     v87 = -*(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 40); /*0x4c080b*/
-  v88 = (int *)(*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v7, v8); /*0x4c081c*/
+  v88 = (int *)(*((int (**)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v7, v8); /*0x4c081c*/
   if ( v88 )
   {
     if ( a7 )
@@ -2861,9 +2861,9 @@ bool DSurface::DrawDashedLineStipple(
       if ( v7 == v9 )
       {
         if ( v8 <= v10 ) /*0x4c08cb*/
-          v24 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c08dd*/
+          v24 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c08dd*/
         else
-          v24 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c08d4*/
+          v24 = -(*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c08d4*/
         v25 = abs32(v10 - v8); /*0x4c08e6*/
         if ( v25 >= 0 )
         {
@@ -2903,7 +2903,7 @@ bool DSurface::DrawDashedLineStipple(
       }
       v31 = v9 - v7; /*0x4c096f*/
       v32 = v10 - v8; /*0x4c0971*/
-      v33 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0975*/
+      v33 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0975*/
       v79 = v33; /*0x4c097a*/
       if ( v32 < 0 ) /*0x4c097e*/
         v79 = -v33; /*0x4c0982*/
@@ -3048,9 +3048,9 @@ bool DSurface::DrawDashedLineStipple(
       if ( v7 == v9 )
       {
         if ( v8 <= v10 ) /*0x4c0bbe*/
-          v54 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0bd0*/
+          v54 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0bd0*/
         else
-          v54 = -(*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0bc7*/
+          v54 = -(*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0bc7*/
         v55 = abs32(v10 - v8); /*0x4c0bd9*/
         if ( v55 >= 0 )
         {
@@ -3090,7 +3090,7 @@ bool DSurface::DrawDashedLineStipple(
       }
       v61 = v9 - v7; /*0x4c0c62*/
       v62 = v10 - v8; /*0x4c0c64*/
-      v63 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0c68*/
+      v63 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4c0c68*/
       v80 = v63; /*0x4c0c6d*/
       if ( v62 < 0 ) /*0x4c0c71*/
         v80 = -v63; /*0x4c0c75*/
@@ -3192,7 +3192,7 @@ bool DSurface::DrawDashedLineStipple(
       }
     }
   LABEL_155:
-    (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4c0e17*/
+    (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4c0e17*/
   }
   return a6; /*0x4c077f*/
 }
@@ -3311,7 +3311,7 @@ bool DSurface::DrawLineZBuf(
   int v109; // [esp+98h] [ebp+18h]
   int v110; // [esp+98h] [ebp+18h]
 
-  DSurface_field_0x0 = (int (__stdcall **)(unsigned int *))this->DSurface_field_0x0; /*0x4bfd33*/
+  DSurface_field_0x0 = (int (**)(unsigned int *))this->DSurface_field_0x0; /*0x4bfd33*/
   v88[0] = this; /*0x4bfd3e*/
   v11 = (int *)DSurface_field_0x0[30](&v88[1]); /*0x4bfd42*/
   v12 = ClipRectIntersection(&v87, (int *)a3, v11, 0, 0); /*0x4bfd57*/
@@ -3470,8 +3470,8 @@ bool DSurface::DrawLineZBuf(
   v34 = v23 - v33; /*0x4bffcb*/
   LABEL_17:
   v35 = v88[0]; /*0x4bffdf*/
-  (*(void (__thiscall **)(unsigned int))(*(unsigned int *)v88[0] + 112))(v88[0]); /*0x4bffe7*/
-  result = (*(int (__thiscall **)(int, int, int))(*(unsigned int *)v35 + 92))(v35, v89, v90); /*0x4bfff8*/
+  (*(void (**)(unsigned int))(*(unsigned int *)v88[0] + 112))(v88[0]); /*0x4bffe7*/
+  result = (*(int (**)(int, int, int))(*(unsigned int *)v35 + 92))(v35, v89, v90); /*0x4bfff8*/
   v36 = result; /*0x4c0001*/
   v105 = result; /*0x4c0005*/
   if ( !g_ZBufferDescriptor ) /*0x4c000c*/
@@ -3502,7 +3502,7 @@ bool DSurface::DrawLineZBuf(
   IDA_LODWORD(v87) = IDA_BYTE2(v88[1]); /*0x4c00fd*/
   v99 = v91[0] - v89; /*0x4c010b*/
   v43 = (int)v97 - v34; /*0x4c011a*/
-  v44 = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)v88[0] + 116))(v88[0]); /*0x4c011c*/
+  v44 = (*(int (**)(unsigned int))(*(unsigned int *)v88[0] + 116))(v88[0]); /*0x4c011c*/
   v81 = v44; /*0x4c0121*/
   if ( v42 < 0 ) /*0x4c0125*/
   {
@@ -3754,7 +3754,7 @@ bool DSurface::DrawLineZBuf(
       while ( v88[1] ); /*0x4c0358*/
     }
   }
-  result = (*(int (__thiscall **)(unsigned int))(*(unsigned int *)v88[0] + 96))(v88[0]); /*0x4c0364*/
+  result = (*(int (**)(unsigned int))(*(unsigned int *)v88[0] + 96))(v88[0]); /*0x4c0364*/
   IDA_LOBYTE(result) = 1; /*0x4c036a*/
   return result; /*0x4c0367*/
 }
@@ -3879,7 +3879,7 @@ bool DSurface::DrawLineModulated(
   int v116; // [esp+9Ch] [ebp+18h]
   unsigned short *SamplePosition; // [esp+9Ch] [ebp+18h]
 
-  DSurface_field_0x0 = (int (__stdcall **)(unsigned int *))this->DSurface_field_0x0; /*0x4bbca3*/
+  DSurface_field_0x0 = (int (**)(unsigned int *))this->DSurface_field_0x0; /*0x4bbca3*/
   v95[0] = this; /*0x4bbcae*/
   v11 = (int *)DSurface_field_0x0[30](&v95[1]); /*0x4bbcb2*/
   v12 = ClipRectIntersection(&v93, (int *)a3, v11, 0, 0); /*0x4bbcc2*/
@@ -4002,8 +4002,8 @@ bool DSurface::DrawLineModulated(
           v110 = v18 - v32; /*0x4bbeff*/
       }
       v33 = v95[0]; /*0x4bbf11*/
-      (*(void (__thiscall **)(unsigned int))(*(unsigned int *)v95[0] + 112))(v95[0]); /*0x4bbf19*/
-      v34 = (*(int (__thiscall **)(int, int, int))(*(unsigned int *)v33 + 92))(v33, v96, v97); /*0x4bbf33*/
+      (*(void (**)(unsigned int))(*(unsigned int *)v95[0] + 112))(v95[0]); /*0x4bbf19*/
+      v34 = (*(int (**)(int, int, int))(*(unsigned int *)v33 + 92))(v33, v96, v97); /*0x4bbf33*/
       v104 = v34; /*0x4bbf37*/
       if ( g_ZBufferDescriptor ) /*0x4bbf3b*/
       {
@@ -4021,7 +4021,7 @@ bool DSurface::DrawLineModulated(
           v39 = v98[0] - v96; /*0x4bbfba*/
           v89 = v98[0] - v96; /*0x4bbfc0*/
           v40 = (int)v106 - v37; /*0x4bbfc4*/
-          v41 = (*(int (__thiscall **)(int))(*(unsigned int *)v33 + 116))(v33); /*0x4bbfc6*/
+          v41 = (*(int (**)(int))(*(unsigned int *)v33 + 116))(v33); /*0x4bbfc6*/
           v87 = v41; /*0x4bbfcb*/
           if ( v38 < 0 ) /*0x4bbfcf*/
           {
@@ -4203,7 +4203,7 @@ bool DSurface::DrawLineModulated(
           if ( v39 <= 0 ) /*0x4bc2ba*/
           {
   LABEL_50:
-            (*(void (__thiscall **)(unsigned int))(*(unsigned int *)v95[0] + 96))(v95[0]); /*0x4bc284*/
+            (*(void (**)(unsigned int))(*(unsigned int *)v95[0] + 96))(v95[0]); /*0x4bc284*/
             return 1; /*0x4bc296*/
           }
           v60 = g_ZBufferDescriptor; /*0x4bc2c0*/
@@ -4418,7 +4418,7 @@ bool DSurface::DrawLineZBufColored(
   v89 = v15; /*0x4bdf7f*/
   if ( v12 < 8 && v14 < 8 && v15 < 8 ) /*0x4bdf8d*/
     return 0; /*0x4bdf8d*/
-  v16 = (int *)(*((int (__thiscall **)(DSurface *, unsigned int *))this->DSurface_field_0x0 + 30))(this, &v94[1]); /*0x4bdf9c*/
+  v16 = (int *)(*((int (**)(DSurface *, unsigned int *))this->DSurface_field_0x0 + 30))(this, &v94[1]); /*0x4bdf9c*/
   v17 = ClipRectIntersection(&v93[4], (int *)a2, v16, 0, 0); /*0x4bdfaf*/
   v18 = *v17; /*0x4bdfb6*/
   v98 = *v17; /*0x4bdfb8*/
@@ -4568,8 +4568,8 @@ bool DSurface::DrawLineZBufColored(
     else
       v109 = v27 - v37; /*0x4be235*/
   }
-  (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 28))(this); /*0x4be24f*/
-  v38 = (*((int (__thiscall **)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v95, v96); /*0x4be269*/
+  (*((void (**)(DSurface *))this->DSurface_field_0x0 + 28))(this); /*0x4be24f*/
+  v38 = (*((int (**)(DSurface *, int, int))this->DSurface_field_0x0 + 23))(this, v95, v96); /*0x4be269*/
   v108 = (uint8_t *)v38; /*0x4be26d*/
   if ( !g_ZBufferDescriptor ) /*0x4be274*/
     return 0; /*0x4be274*/
@@ -4588,7 +4588,7 @@ bool DSurface::DrawLineZBufColored(
   v86 = v97[0] - v95; /*0x4be305*/
   v43 = v97[1] - v96; /*0x4be310*/
   v44 = a7 - v109; /*0x4be31a*/
-  v45 = (*((int (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4be31c*/
+  v45 = (*((int (**)(DSurface *))this->DSurface_field_0x0 + 29))(this); /*0x4be31c*/
   v80 = v45; /*0x4be321*/
   if ( v43 < 0 ) /*0x4be325*/
   {
@@ -4834,7 +4834,7 @@ bool DSurface::DrawLineZBufColored(
       while ( !v56 ); /*0x4be58d*/
     }
   }
-  (*((void (__thiscall **)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4be599*/
+  (*((void (**)(DSurface *))this->DSurface_field_0x0 + 24))(this); /*0x4be599*/
   return 1; /*0x4be59c*/
 }
 // ============================================================

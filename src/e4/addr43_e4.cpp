@@ -312,7 +312,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
       if ( (unsigned char)aP5 ) /*0x4375fe*/
         aP6->Blit(v62, aP2, v34, 0, 0, 0, 1000); /*0x437616*/
       else
-        (*(void (__stdcall **)(int, int *, int, unsigned int, unsigned int, unsigned int, int, unsigned int))(v35 + 4))( /*0x437636*/
+        (*(void (**)(int, int *, int, unsigned int, unsigned int, unsigned int, int, unsigned int))(v35 + 4))( /*0x437636*/
           v62,
           aP2,
           v34,
@@ -384,7 +384,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
             {
               aP6 = (int *)*aP6; /*0x43779a*/
               v50 = v63; /*0x43779e*/
-              ((void (__thiscall *)(int *, int, char *, int, int, unsigned int, unsigned int, int, int))aP6[4])( /*0x4377b6*/
+              ((void (*)(int *, int, char *, int, int, unsigned int, unsigned int, int, int))aP6[4])( /*0x4377b6*/
                 aP6,
                 v43,
                 v48,
@@ -452,7 +452,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
           {
             aP6 = (int *)*aP6; /*0x4378a1*/
             v57 = v63; /*0x4378a5*/
-            ((void (__thiscall *)(int *, int, int *, int, int, unsigned int, unsigned int, int, int, int))aP6[2])( /*0x4378c1*/
+            ((void (*)(int *, int, int *, int, int, unsigned int, unsigned int, int, int, int))aP6[2])( /*0x4378c1*/
               aP6,
               v43,
               aP2,

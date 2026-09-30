@@ -588,7 +588,7 @@ LABEL_63:
       desiredFacing = (ObjectClass *)IDA_LODWORD(desiredFacing_4);
       FacingClass::Update((FacingClass *)(v85 + 904), (DirStruct *)&desiredFacing);
 LABEL_111:
-      if ( !(*(uint8_t (__stdcall **)(int))(*(unsigned int *)a1 + 128))(a1) )
+      if ( !(*(uint8_t (**)(int))(*(unsigned int *)a1 + 128))(a1) )
         goto LABEL_119;
       v94 = *(IUnknown **)(a1 + 48);
       int v95 = *(unsigned int *)(a1 + 56);
@@ -684,7 +684,7 @@ LABEL_119:
         if ( *(int *)(*(unsigned int *)(a1 + 8) + 108) <= 0 )
           TechnoClass::CalculateDamage(a1 - 4);
       }
-      return (*(char (__stdcall **)(int))(*(unsigned int *)a1 + 16))(a1);
+      return (*(char (**)(int))(*(unsigned int *)a1 + 16))(a1);
     case 5:
       unsigned int * v86 = (unsigned int *)(a1 - 4);
       if ( BulletClass::ComputeImpactTrajectory(a1 - 4, v4) )

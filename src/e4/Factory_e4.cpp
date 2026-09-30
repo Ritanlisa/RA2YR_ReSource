@@ -149,11 +149,11 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
     v75 = (int *)(v9[39]);
     v76 = (int *)(v9[40]);
     v77 = (int *)(v9[41]);
-    (*(void (__stdcall **)(int *))(*v9 + 244))(&v75); /*0x718bcf*/
+    (*(void (**)(int *))(*v9 + 244))(&v75); /*0x718bcf*/
   }
   else
   {
-    (*(void (__stdcall **)(unsigned int *))(*(unsigned int *)v6[3] + 244))(v6 + 10); /*0x718ba5*/
+    (*(void (**)(unsigned int *))(*(unsigned int *)v6[3] + 244))(v6 + 10); /*0x718ba5*/
   }
   v73[0] = (unsigned int)((void *)(*(unsigned int *)aP0->__pad_0));
   v11 = (void *)((int)((void *)(*(unsigned int *)aP0->__pad_0)));
@@ -210,7 +210,7 @@ void* Factory_CalculateExitCell(Factory *aP0, void * a1, void * a2, void * a3, v
             v17 = *(unsigned int *)aP0->__pad_0; /*0x718d78*/
             v18 = **(unsigned int **)v71; /*0x718d86*/
             v70 = (int)aP0->field_4 / 256; /*0x718d8b*/
-            if ( *(unsigned int *)(*(int (__stdcall **)(unsigned int *))(v18 + 440))(v73) == IDA___PAIR32__(v70, v17 / 256) ) /*0x718da1*/
+            if ( *(unsigned int *)(*(int (**)(unsigned int *))(v18 + 440))(v73) == IDA___PAIR32__(v70, v17 / 256) ) /*0x718da1*/
               IDA_LOBYTE(a5) = 1; /*0x718dae*/
           }
         }

@@ -4102,12 +4102,12 @@ int DSurface::LockAndPrepareRect()
 
   if ( (*((unsigned char *)this + 1980) & 0x40) != 0 ) /*0x7bd21a*/
   {
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[44])(this, 7, 0, 0); /*0x7bd223*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[44])(this, 7, 0, 0); /*0x7bd223*/
     v2 = *((unsigned int *)this + 495); /*0x7bd226*/
     LOBYTE(v2) = v2 & 0xBF; /*0x7bd22f*/
     *((unsigned int *)this + 495) = v2; /*0x7bd231*/
   }
-  (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[44])(this, 3, 0, 0); /*0x7bd23e*/
+  (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[44])(this, 3, 0, 0); /*0x7bd23e*/
   result = *((unsigned int *)this + 495); /*0x7bd241*/
   if ( (result & 0x80000000) == 1 ) /*0x7bd255*/
   {
@@ -4172,59 +4172,59 @@ int DSurface::CommitBuffers()
   v2 = *((unsigned int *)this + 445); /*0x7bdf86*/
   if ( v2 ) /*0x7bdf8e*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v2, *((unsigned int *)this + 446)); /*0x7bdf9b*/
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 445), 0); /*0x7bdfaa*/
+    (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v2, *((unsigned int *)this + 446)); /*0x7bdf9b*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 445), 0); /*0x7bdfaa*/
   }
   v3 = *((unsigned int *)this + 473); /*0x7bdfb0*/
   if ( v3 ) /*0x7bdfb8*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7bdfcb*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7bdfcb*/
       this,
       5,
       v3,
       4 * *(uint16_t *)&this->__pad_2C[192]);
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 473), 0); /*0x7bdfda*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 473), 0); /*0x7bdfda*/
   }
   if ( !*(unsigned int *)&this->__pad_2C[104] ) /*0x7bdfe0*/
   {
     v4 = *((unsigned int *)this + 483); /*0x7bdfea*/
     if ( v4 ) /*0x7bdff2*/
     {
-      (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])( /*0x7bdfff*/
+      (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])( /*0x7bdfff*/
         this,
         5,
         v4,
         *(unsigned int *)&this->__pad_2C[108]);
-      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 483), 0); /*0x7be00e*/
+      (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 483), 0); /*0x7be00e*/
     }
   }
   v5 = *((unsigned int *)this + 485); /*0x7be014*/
   if ( v5 ) /*0x7be01c*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v5, *((unsigned int *)this + 487)); /*0x7be029*/
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 485), 0); /*0x7be038*/
+    (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v5, *((unsigned int *)this + 487)); /*0x7be029*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 485), 0); /*0x7be038*/
   }
   v6 = *((unsigned int *)this + 486); /*0x7be03e*/
   if ( v6 ) /*0x7be046*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v6, 2 * *((unsigned int *)this + 487)); /*0x7be055*/
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 486), 0); /*0x7be064*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v6, 2 * *((unsigned int *)this + 487)); /*0x7be055*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 486), 0); /*0x7be064*/
   }
   v7 = *((unsigned int *)this + 490); /*0x7be06a*/
   if ( v7 ) /*0x7be072*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v7, *((unsigned int *)this + 493)); /*0x7be07f*/
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 490), 0); /*0x7be08e*/
+    (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v7, *((unsigned int *)this + 493)); /*0x7be07f*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 490), 0); /*0x7be08e*/
   }
   v8 = *((unsigned int *)this + 494); /*0x7be094*/
   if ( v8 ) /*0x7be09c*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])( /*0x7be0a9*/
+    (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])( /*0x7be0a9*/
       this,
       5,
       v8,
       *(unsigned int *)&this->__pad_2C[112]);
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 494), 0); /*0x7be0b8*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 494), 0); /*0x7be0b8*/
   }
   v9 = 0; /*0x7be0c6*/
   for ( i = *((unsigned int *)this + 441); v9 < *(unsigned int *)&this->__pad_2C[92]; i = v11 ) /*0x7be0d1*/
@@ -4236,8 +4236,8 @@ int DSurface::CommitBuffers()
     v13 = *((unsigned int *)this + 476) + 4; /*0x7be0ed*/
     *((unsigned int *)this + 476) = v13; /*0x7be0f1*/
     *((unsigned int *)this + 475) = v12; /*0x7be0f7*/
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, i, v12 + v13 + 44); /*0x7be106*/
-    (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 3, i, 0); /*0x7be10f*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, i, v12 + v13 + 44); /*0x7be106*/
+    (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 3, i, 0); /*0x7be10f*/
     ++v9; /*0x7be11b*/
   }
   if ( (this->__pad_11F[53] & 2) != 0 ) /*0x7be129*/
@@ -4245,8 +4245,8 @@ int DSurface::CommitBuffers()
     v14 = *((unsigned int *)this + 442); /*0x7be12b*/
     if ( v14 ) /*0x7be133*/
     {
-      (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v14, *((unsigned int *)this + 478)); /*0x7be140*/
-      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 442), 0); /*0x7be14f*/
+      (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v14, *((unsigned int *)this + 478)); /*0x7be140*/
+      (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 442), 0); /*0x7be14f*/
       *((unsigned int *)this + 442) = 0; /*0x7be155*/
     }
   }
@@ -4258,8 +4258,8 @@ int DSurface::CommitBuffers()
     v17 = *(unsigned int *)(v15 + 4); /*0x7be17b*/
     v18 = *((unsigned int *)this + 474) + 4; /*0x7be17e*/
     *((unsigned int *)this + 474) = v18; /*0x7be183*/
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v15, v18 + 24); /*0x7be191*/
-    (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 3, v15, 0); /*0x7be19a*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v15, v18 + 24); /*0x7be191*/
+    (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 3, v15, 0); /*0x7be19a*/
     ++j; /*0x7be1a6*/
   }
   if ( (this->__pad_11F[53] & 1) != 0 ) /*0x7be1b4*/
@@ -4267,30 +4267,30 @@ int DSurface::CommitBuffers()
     v19 = *((unsigned int *)this + 444); /*0x7be1b6*/
     if ( v19 ) /*0x7be1be*/
     {
-      (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v19, *((unsigned int *)this + 477)); /*0x7be1cb*/
-      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 444), 0); /*0x7be1da*/
+      (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 5, v19, *((unsigned int *)this + 477)); /*0x7be1cb*/
+      (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 444), 0); /*0x7be1da*/
       *((unsigned int *)this + 444) = 0; /*0x7be1e0*/
     }
   }
   v20 = *((unsigned int *)this + 472); /*0x7be1ea*/
   if ( v20 ) /*0x7be1f2*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7be204*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7be204*/
       this,
       5,
       v20,
       2 * *((uint16_t *)this + 940));
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 472), 0); /*0x7be213*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 472), 0); /*0x7be213*/
   }
   v21 = *((unsigned int *)this + 469); /*0x7be219*/
   if ( v21 ) /*0x7be221*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7be236*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7be236*/
       this,
       5,
       v21,
       6 * *((uint16_t *)this + 934));
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 469), 0); /*0x7be245*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 469), 0); /*0x7be245*/
   }
   v22 = *((unsigned int *)this + 463); /*0x7be24b*/
   v47 = v22; /*0x7be253*/
@@ -4308,17 +4308,17 @@ int DSurface::CommitBuffers()
       v27 = *v25; /*0x7be27c*/
       if ( *v25 ) /*0x7be27c*/
       {
-        (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])( /*0x7be29d*/
+        (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])( /*0x7be29d*/
           this,
           5,
           v27,
           v26 * ((*(unsigned int *)(*((unsigned int *)this + 465) + v41 + 4) + 1) & 0xFFFFFFFE));
-        (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 3, v27, 0); /*0x7be2a6*/
+        (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 3, v27, 0); /*0x7be2a6*/
       }
       if ( v25 ) /*0x7be2ae*/
       {
-        (*(void (__cdecl **)(DSurface *, int, int *, int))&this->__pad_2C[24])(this, 5, v25, 12 * v26); /*0x7be2bb*/
-        (*(void (__cdecl **)(DSurface *, int, int *, unsigned int))&this->__pad_2C[24])(this, 3, v25, 0); /*0x7be2c4*/
+        (*(void (**)(DSurface *, int, int *, int))&this->__pad_2C[24])(this, 5, v25, 12 * v26); /*0x7be2bb*/
+        (*(void (**)(DSurface *, int, int *, unsigned int))&this->__pad_2C[24])(this, 3, v25, 0); /*0x7be2c4*/
       }
       v23 = v43 + 12; /*0x7be2d6*/
       v28 = v45 == 1; /*0x7be2dc*/
@@ -4332,14 +4332,14 @@ int DSurface::CommitBuffers()
   v29 = *((unsigned int *)this + 466); /*0x7be2ef*/
   if ( v29 ) /*0x7be2f7*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v29, 12 * v22); /*0x7be304*/
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 466), 0); /*0x7be313*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v29, 12 * v22); /*0x7be304*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 466), 0); /*0x7be313*/
   }
   v30 = *((unsigned int *)this + 465); /*0x7be319*/
   if ( v30 ) /*0x7be321*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v30, 16 * v22); /*0x7be32b*/
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 465), 0); /*0x7be33a*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v30, 16 * v22); /*0x7be32b*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 465), 0); /*0x7be33a*/
   }
   v31 = *((unsigned int *)this + 457); /*0x7be340*/
   v48 = v31; /*0x7be348*/
@@ -4357,17 +4357,17 @@ int DSurface::CommitBuffers()
       v36 = *v34; /*0x7be371*/
       if ( *v34 ) /*0x7be371*/
       {
-        (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])( /*0x7be392*/
+        (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])( /*0x7be392*/
           this,
           5,
           v36,
           v35 * ((*(unsigned int *)(*((unsigned int *)this + 461) + v42 + 8) + 1) & 0xFFFFFFFE));
-        (*(void (__cdecl **)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 3, v36, 0); /*0x7be39b*/
+        (*(void (**)(DSurface *, int, int, unsigned int))&this->__pad_2C[24])(this, 3, v36, 0); /*0x7be39b*/
       }
       if ( v34 ) /*0x7be3a3*/
       {
-        (*(void (__cdecl **)(DSurface *, int, int *, int))&this->__pad_2C[24])(this, 5, v34, 12 * v35); /*0x7be3b0*/
-        (*(void (__cdecl **)(DSurface *, int, int *, unsigned int))&this->__pad_2C[24])(this, 3, v34, 0); /*0x7be3b9*/
+        (*(void (**)(DSurface *, int, int *, int))&this->__pad_2C[24])(this, 5, v34, 12 * v35); /*0x7be3b0*/
+        (*(void (**)(DSurface *, int, int *, unsigned int))&this->__pad_2C[24])(this, 3, v34, 0); /*0x7be3b9*/
       }
       v32 = v46 + 12; /*0x7be3cb*/
       v28 = v44 == 1; /*0x7be3d1*/
@@ -4381,30 +4381,30 @@ int DSurface::CommitBuffers()
   v37 = *((unsigned int *)this + 462); /*0x7be3e4*/
   if ( v37 ) /*0x7be3ec*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v37, 12 * v31); /*0x7be3f9*/
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 462), 0); /*0x7be408*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v37, 12 * v31); /*0x7be3f9*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 462), 0); /*0x7be408*/
   }
   v38 = *((unsigned int *)this + 461); /*0x7be40e*/
   if ( v38 ) /*0x7be416*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v38, 16 * v31); /*0x7be420*/
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 461), 0); /*0x7be42f*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v38, 16 * v31); /*0x7be420*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 461), 0); /*0x7be42f*/
   }
   v39 = *((unsigned int *)this + 460); /*0x7be435*/
   if ( v39 ) /*0x7be440*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v39, 24 * *((unsigned int *)this + 456)); /*0x7be453*/
-    (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 460), 0); /*0x7be462*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])(this, 5, v39, 24 * *((unsigned int *)this + 456)); /*0x7be453*/
+    (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])(this, 3, *((unsigned int *)this + 460), 0); /*0x7be462*/
   }
   result = *((unsigned int *)this + 455); /*0x7be468*/
   if ( result ) /*0x7be470*/
   {
-    (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7be483*/
+    (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7be483*/
       this,
       5,
       result,
       4 * *((uint16_t *)this + 906));
-    return (*(int (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])( /*0x7be492*/
+    return (*(int (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])( /*0x7be492*/
              this,
              3,
              *((unsigned int *)this + 455),
@@ -4433,12 +4433,12 @@ int DSurface::Flip()
     v2 = *(unsigned int *)&this->__pad_11F[57]; /*0x7c2c9e*/
     if ( v2 ) /*0x7c2ca6*/
     {
-      (*(void (__cdecl **)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7c2cba*/
+      (*(void (**)(DSurface *, int, int, int))&this->__pad_2C[24])( /*0x7c2cba*/
         this,
         5,
         v2,
         *(unsigned int *)&this->__pad_11F[61] * *(unsigned int *)&this->__pad_11F[65]);
-      (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])( /*0x7c2cc9*/
+      (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[24])( /*0x7c2cc9*/
         this,
         3,
         *(unsigned int *)&this->__pad_11F[57],
@@ -4446,9 +4446,9 @@ int DSurface::Flip()
     }
   }
   DSurface::CommitBuffers(this); /*0x7c2cd1*/
-  (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[20])(this, 4, 0, 0); /*0x7c2cdd*/
-  (*(void (__cdecl **)(DSurface *, int, DSurface *, int))&this->__pad_2C[24])(this, 5, this, 2012); /*0x7c2ce9*/
-  return (*(int (__cdecl **)(DSurface *, int, DSurface *, unsigned int))&this->__pad_2C[24])(this, 3, this, 0); /*0x7c2cf8*/
+  (*(void (**)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[20])(this, 4, 0, 0); /*0x7c2cdd*/
+  (*(void (**)(DSurface *, int, DSurface *, int))&this->__pad_2C[24])(this, 5, this, 2012); /*0x7c2ce9*/
+  return (*(int (**)(DSurface *, int, DSurface *, unsigned int))&this->__pad_2C[24])(this, 3, this, 0); /*0x7c2cf8*/
 
 }
 // 0x4BA480

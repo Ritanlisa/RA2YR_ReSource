@@ -2018,7 +2018,7 @@ AbstractClass * * Game_Frame_Check()
         v3 = *(unsigned int *)&dword_A8B238; /*0x55d0cb*/
         if ( dword_A8B23C && (*(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4) ) /*0x55d0dd*/
         {
-          (*(void (__stdcall **)(int))(dword_A8B23C->vtable0 + 160))(v2); /*0x55d0e2*/
+          (*(void (**)(int))(dword_A8B23C->vtable0 + 160))(v2); /*0x55d0e2*/
           IDA_LOBYTE(v2) = byte_A83D49; /*0x55d0e8*/
           v3 = *(unsigned int *)&dword_A8B238; /*0x55d0ed*/
         }
@@ -4647,12 +4647,12 @@ int IPersistStream_Load(int * a1, int * a2, int a3)
   v5 = *a2; /*0x55aa78*/
   v8 = a2; /*0x55aa83*/
   a2 = (int *)a1; /*0x55aa84*/
-  result = (*(int (__stdcall **)(int *, int **, int, unsigned int))(v5 + 16))(v8, &a2, 4, 0); /*0x55aa88*/
+  result = (*(int (**)(int *, int **, int, unsigned int))(v5 + 16))(v8, &a2, 4, 0); /*0x55aa88*/
   if ( result >= 0 ) /*0x55aa8d*/
   {
     v6 = *v3; /*0x55aa92*/
     v7 = (*(int (**)(LocomotionClass *, unsigned int))(*(unsigned int *)a1->ILocomotion + 36))(a1, 0); /*0x55aa98*/
-    result = (*(int (__stdcall **)(int *, LocomotionClass *, int))(v6 + 16))(v3, a1, v7); /*0x55aa9e*/
+    result = (*(int (**)(int *, LocomotionClass *, int))(v6 + 16))(v3, a1, v7); /*0x55aa9e*/
     if ( result >= 0 ) /*0x55aaa4*/
     {
       if ( a3 ) /*0x55aaac*/

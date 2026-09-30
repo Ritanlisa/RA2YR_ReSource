@@ -81,7 +81,7 @@ int InGameUI_Open()
   {
     if ( dword_A8B238 != 4 ) /*0x4f10fb*/
     {
-      v1 = (HWND)CreateDialog(0xBBAu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Options::DlgProc, 0); /*0x4f1127*/
+      v1 = (HWND)CreateDialog(0xBBAu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Options::DlgProc, 0); /*0x4f1127*/
       goto LABEL_10; /*0x4f1127*/
     }
     if ( dword_A8B538 ) /*0x4f110b*/
@@ -89,7 +89,7 @@ int InGameUI_Open()
     else
       v0 = 255; /*0x4f1114*/
   }
-  v1 = (HWND)CreateDialog(v0, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Options::DlgProc, 0); /*0x4f1135*/
+  v1 = (HWND)CreateDialog(v0, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))Options::DlgProc, 0); /*0x4f1135*/
   LABEL_10:
   v2 = v1; /*0x4f113a*/
   if ( v1 ) /*0x4f113e*/
@@ -121,7 +121,7 @@ long sub_4F1840()
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = 0; /*0x4f184e*/
-  Dialog = (HWND)CreateDialog(0xB6u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_4F18B0, 0); /*0x4f185b*/
+  Dialog = (HWND)CreateDialog(0xB6u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_4F18B0, 0); /*0x4f185b*/
   if ( Dialog ) /*0x4f185f*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4f1869*/

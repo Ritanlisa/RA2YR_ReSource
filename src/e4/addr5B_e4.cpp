@@ -486,9 +486,9 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
 namespace gamemd {
 AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
 {
-  int (__cdecl *)(...) v1;
-  int (__cdecl *)(...) v2;
-  int (__cdecl *)(...) v3;
+  int (*)(...) v1;
+  int (*)(...) v2;
+  int (*)(...) v3;
   int v5; // edx
   int v6; // eax
   int v7; // edx

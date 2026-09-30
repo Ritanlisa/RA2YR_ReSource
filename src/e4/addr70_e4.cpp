@@ -478,7 +478,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   v26 = 0; /*0x70719c*/
   if ( ((unsigned int)(v24)& 8) != 0 ) /*0x7071a1*/
   {
-    v27 = (gamemd::BuildingClass *)((int)((gamemd::BuildingClass *)((*(int (__stdcall **)(int *))(a1[1] + 16))(a1 + 1))));
+    v27 = (gamemd::BuildingClass *)((int)((gamemd::BuildingClass *)((*(int (**)(int *))(a1[1] + 16))(a1 + 1))));
     IDA_LOWORD(v28) = Math::RoundToInt(*((float *)a1 + 147)); /*0x7071b5*/
     v29 = v27 + v28; /*0x7071ba*/
     v20 = (unsigned int *)a6; /*0x7071bc*/
@@ -613,7 +613,7 @@ AbstractClass * * __usercall SelectTargetByWeight(unsigned int * a1, int a2)
             if ( v37 < v35 /*0x709696*/
               || (v36 || !v35)
               && v38 > 0
-              && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v33[2])(&v33, v38 + v35, 0) )
+              && ((uint8_t (*)(void ***, int, unsigned int))v33[2])(&v33, v38 + v35, 0) )
             {
               v17 = v37++; /*0x7096a1*/
               *((unsigned int *)v34 + v17) = v15; /*0x7096ac*/

@@ -63,7 +63,7 @@ void sub_4C1440()
 
   memset(v2, 0, sizeof(v2)); /*0x4c1452*/
   v2[0] = 316; /*0x4c145d*/
-  result = (*(int (__stdcall **)(int, unsigned int *, unsigned int))(*(unsigned int *)dword_8A0E00 + 44))(dword_8A0E00, v2, 0); /*0x4c146b*/
+  result = (*(int (**)(int, unsigned int *, unsigned int))(*(unsigned int *)dword_8A0E00 + 44))(dword_8A0E00, v2, 0); /*0x4c146b*/
   if ( !result ) /*0x4c1471*/
   {
     if ( (v2[1] & 1) != 0 ) /*0x4c1478*/
@@ -107,7 +107,7 @@ void sub_4C14D0()
   memset(v3, 0, sizeof(v3)); /*0x4c14f5*/
   v2[0] = 252; /*0x4c14fc*/
   v3[0] = 252; /*0x4c1500*/
-  result = (*(int (__stdcall **)(unsigned int, unsigned int *, unsigned int *))(*(unsigned int *)g_DrawColorState + 12))( /*0x4c1517*/
+  result = (*(int (**)(unsigned int, unsigned int *, unsigned int *))(*(unsigned int *)g_DrawColorState + 12))( /*0x4c1517*/
              g_DrawColorState,
              v2,
              v3);
@@ -197,12 +197,12 @@ void sub_4C1600()
              (LPVOID *)&dword_8A0E00);
   if ( !result ) /*0x4c161c*/
   {
-    result = (**(int (__stdcall ***)(int, void *, int *))dword_8A0E00)(dword_8A0E00, &unk_7F8070, &dword_8A0DF4); /*0x4c1630*/
+    result = (**(int (***)(int, void *, int *))dword_8A0E00)(dword_8A0E00, &unk_7F8070, &dword_8A0DF4); /*0x4c1630*/
     if ( !result ) /*0x4c1634*/
     {
       memset(v2, 0, sizeof(v2)); /*0x4c1644*/
       v2[0] = 316; /*0x4c164b*/
-      if ( !(*(int (__stdcall **)(int, unsigned int *, unsigned int))(*(unsigned int *)dword_8A0E00 + 44))(dword_8A0E00, v2, 0) /*0x4c1687*/
+      if ( !(*(int (**)(int, unsigned int *, unsigned int))(*(unsigned int *)dword_8A0E00 + 44))(dword_8A0E00, v2, 0) /*0x4c1687*/
         && (v2[1] & 1) != 0
         && (v2[14] & 0x400) != 0
         && (v2[33] & 0x2000) != 0
@@ -252,7 +252,7 @@ void InitializeRadialGradientTexture()
 
   AudioStream_field_0x1C = DSurface_Composite->AudioStream_field_0x1C; /*0x4c16b4*/
   v22 = AudioStream_field_0x1C; /*0x4c16cb*/
-  result = (*(int (__stdcall **)(int, void *, unsigned int *, int64_t *))(*(unsigned int *)dword_8A0DF4 + 32))( /*0x4c16cf*/
+  result = (*(int (**)(int, void *, unsigned int *, int64_t *))(*(unsigned int *)dword_8A0DF4 + 32))( /*0x4c16cf*/
              dword_8A0DF4,
              &unk_7F80B0,
              AudioStream_field_0x1C,
@@ -261,13 +261,13 @@ void InitializeRadialGradientTexture()
   {
     if ( sub_4C14D0(v17) ) /*0x4c16dc*/
       return -1; /*0x4c16ef*/
-    result = (*(int (__stdcall **)(int, char *, unsigned int))(*(unsigned int *)dword_8A0DF4 + 24))( /*0x4c16fe*/
+    result = (*(int (**)(int, char *, unsigned int))(*(unsigned int *)dword_8A0DF4 + 24))( /*0x4c16fe*/
                dword_8A0DF4,
                (char *)&g_DrawColorState + 4,
                0);
     if ( !result ) /*0x4c1703*/
     {
-      result = (*(int (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)g_DrawColorState + 24))( /*0x4c1718*/
+      result = (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)g_DrawColorState + 24))( /*0x4c1718*/
                  g_DrawColorState,
                  IDA_HIDWORD(g_DrawColorState));
       if ( !result ) /*0x4c171d*/
@@ -275,7 +275,7 @@ void InitializeRadialGradientTexture()
         memset(v25, 0, sizeof(v25)); /*0x4c172e*/
         v4 = *AudioStream_field_0x1C; /*0x4c1730*/
         v25[0] = 108; /*0x4c1738*/
-        result = (*(int (__stdcall **)(unsigned int *, unsigned int *))(v4 + 88))(AudioStream_field_0x1C, v25); /*0x4c1740*/
+        result = (*(int (**)(unsigned int *, unsigned int *))(v4 + 88))(AudioStream_field_0x1C, v25); /*0x4c1740*/
         if ( !result ) /*0x4c1745*/
         {
           memset(v24, 0, sizeof(v24)); /*0x4c175a*/
@@ -292,12 +292,12 @@ void InitializeRadialGradientTexture()
           v24[0] = 44; /*0x4c178d*/
           v24[10] = 1065353216; /*0x4c1795*/
           __asm { fstp [esp+0C4h+var_78] } /*0x4c179e*/
-          result = (*(int (__stdcall **)(unsigned int, unsigned int *))(*(unsigned int *)IDA_HIDWORD(g_DrawColorState) + 68))( /*0x4c17a5*/
+          result = (*(int (**)(unsigned int, unsigned int *))(*(unsigned int *)IDA_HIDWORD(g_DrawColorState) + 68))( /*0x4c17a5*/
                      IDA_HIDWORD(g_DrawColorState),
                      v24);
           if ( !result ) /*0x4c17aa*/
           {
-            result = (*(int (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)g_DrawColorState + 52))( /*0x4c17bf*/
+            result = (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)g_DrawColorState + 52))( /*0x4c17bf*/
                        g_DrawColorState,
                        IDA_HIDWORD(g_DrawColorState));
             if ( !result ) /*0x4c17c4*/
@@ -355,7 +355,7 @@ void InitializeRadialGradientTexture()
                     return 3; /*0x4c18f5*/
                   memset(v25, 0, sizeof(v25)); /*0x4c1911*/
                   v25[0] = 108; /*0x4c1919*/
-                  result = (*(int (__stdcall **)(unsigned int *, unsigned int *))(*v22 + 88))(v22, v25); /*0x4c1923*/
+                  result = (*(int (**)(unsigned int *, unsigned int *))(*v22 + 88))(v22, v25); /*0x4c1923*/
                   if ( !result ) /*0x4c1928*/
                   {
                     v13 = (gamemd::ObjectClass *)((unsigned int)((ObjectClass *)RA2_OPNEW(0x78u)));
@@ -962,7 +962,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     v8 = ComPtr::ReleaseAndSet(&v55, v6); /*0x4cefe0*/
     if ( v8 < 0 && v8 != -2147467262 ) /*0x4cefee*/
       WinAPI::Wrapper(v8); /*0x4ceff1*/
-    if ( v55 && (*v6)[173] && (*v6)[191] && (*(int (__stdcall **)(int))(v55->q018)(v55) ) /*0x4cf017*/
+    if ( v55 && (*v6)[173] && (*v6)[191] && (*(int (**)(int))(v55->q018)(v55) ) /*0x4cf017*/
       a3 = 0; /*0x4cf01e*/
   }
   if ( *v6 && (*(int (**)(int *))(**v6 + 44))(*v6) == 2 )
@@ -1027,7 +1027,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   Vector::TwoDMagnitudeMath((int *)&a4); /*0x4cf17f*/
   v23 = (int)v22; /*0x4cf184*/
   v56 = v22; /*0x4cf18c*/
-  if ( !v55 || !(*(int (__stdcall **)(int))(v55->q020)(v55) ) /*0x4cf197*/
+  if ( !v55 || !(*(int (**)(int))(v55->q020)(v55) ) /*0x4cf197*/
   {
     v24 = IDA_LODWORD(a4); /*0x4cf1a2*/
     a5 = a5; /*0x4cf1a6*/
@@ -1039,7 +1039,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     v28 = *(unsigned int *)Cell::GetHeight(&v58, v27, (int *)&a4); /*0x4cf1d5*/
     if ( !v55 ) /*0x4cf1dd*/
       goto LABEL_32; /*0x4cf1dd*/
-    if ( !(*(int (__stdcall **)(int))(v55->q018)(v55) ) /*0x4cf1e2*/
+    if ( !(*(int (**)(int))(v55->q018)(v55) ) /*0x4cf1e2*/
       goto LABEL_32; /*0x4cf1e2*/
     v29 = (int *)(*(int (**)(int *, int *))(**v6 + 72))(*v6, v63); /*0x4cf1f2*/
     v30 = *v29; /*0x4cf1f5*/
@@ -1067,7 +1067,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   }
   if ( v23 >= 256 || !a3 || *(unsigned char *)((*(int (**)(int *))(**v6 + 132))(*v6) + 3367) ) /*0x4cf2bc*/
   {
-    if ( !v55 || !(*(int (__stdcall **)(int))(v55->q020)(v55) ) /*0x4cf363*/
+    if ( !v55 || !(*(int (**)(int))(v55->q020)(v55) ) /*0x4cf363*/
     {
       v38 = (*(int (**)(int *, unsigned int *))(**v6 + 72))(*v6, v64); /*0x4cf373*/
       v58 = *(float *)v38; /*0x4cf37f*/
@@ -1090,9 +1090,9 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
       FacingClass::Update((char *)*v6 + 928, v37); /*0x4cf3c2*/
       goto LABEL_52; /*0x4cf3cb*/
     }
-    if ( !(*(int (__stdcall **)(int))(v55->q018)(v55) ) /*0x4cf2e7*/
+    if ( !(*(int (**)(int))(v55->q018)(v55) ) /*0x4cf2e7*/
     {
-      if ( !v55 || !(*(int (__stdcall **)(int))(v55->q020)(v55) ) /*0x4cf2f9*/
+      if ( !v55 || !(*(int (**)(int))(v55->q020)(v55) ) /*0x4cf2f9*/
         goto LABEL_43; /*0x4cf2fe*/
     }
     else
@@ -1100,8 +1100,8 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   LABEL_44:
       IDA_LOWORD(a4) = 0; /*0x4cf320*/
       if ( !v55 /*0x4cf34a*/
-        || (IDA_LOWORD(a4) = (*(uint16_t (__stdcall **)(int))(v55->u32_10)(v55) << 13, !v55)
-        || !(*(int (__stdcall **)(int))(v55->q020)(v55) )
+        || (IDA_LOWORD(a4) = (*(uint16_t (**)(int))(v55->u32_10)(v55) << 13, !v55)
+        || !(*(int (**)(int))(v55->q020)(v55) )
       {
         FacingClass::Update((char *)*v6 + 928, &a4); /*0x4cf356*/
       }
@@ -1194,7 +1194,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     }
   }
   if ( v55 ) /*0x4cf5f8*/
-    (*(void (__stdcall **)(int))(v55->q008)(v55); /*0x4cf5fd*/
+    (*(void (**)(int))(v55->q008)(v55); /*0x4cf5fd*/
   return v23; /*0x4cf600*/
 }
 }

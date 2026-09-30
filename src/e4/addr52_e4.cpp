@@ -968,7 +968,7 @@ LABEL_3:
                                                  0);
   else
     *(unsigned int *)&stru_87C374[13124] = 0;
-  Array::ForEach((AbstractClass *)a0, 3, (IUnknown *)0x100, (int (__thiscall *)(int))Struct::Zero3);
+  Array::ForEach((AbstractClass *)a0, 3, (IUnknown *)0x100, (int (*)(int))Struct::Zero3);
   IDA_LOBYTE(edx30) = 0;
   v27 = (AbstractClass *)SearchMIXFile(&g_Str_File_MOUSE_SHA[84], edx30);
   memcpy(a0, v27, sizeof(a0));
@@ -2044,7 +2044,7 @@ LABEL_40:
           *(unsigned int *)&HouseClass_Player[47708] = 0;
           Dialog = (HWND)CreateDialog(
                            0x94u,
-                           (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))CampaignSelect::DlgProc,
+                           (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))CampaignSelect::DlgProc,
                            0);
           j = (int)Dialog;
           if ( Dialog )

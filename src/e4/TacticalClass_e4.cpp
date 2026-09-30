@@ -512,7 +512,7 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
 
   if ( !byte_8A0DF0 /*0x4f45d8*/
     || !dword_8A0E08
-    || (*(int (__stdcall **)(unsigned int))(*(unsigned int *)g_DrawColorState + 40))(g_DrawColorState) )
+    || (*(int (**)(unsigned int))(*(unsigned int *)g_DrawColorState + 40))(g_DrawColorState) )
   {
     goto LABEL_13; /*0x4f45dd*/
   }
@@ -544,7 +544,7 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
       }
     }
   }
-  (*(void (__stdcall **)(unsigned int))(*(unsigned int *)g_DrawColorState + 44))(g_DrawColorState); /*0x4f4743*/
+  (*(void (**)(unsigned int))(*(unsigned int *)g_DrawColorState + 44))(g_DrawColorState); /*0x4f4743*/
   LABEL_13:
   result = byte_A9FA94; /*0x4f474e*/
   if ( !byte_A9FA94 ) /*0x4f4755*/

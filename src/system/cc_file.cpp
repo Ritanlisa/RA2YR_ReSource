@@ -36,7 +36,7 @@ int CCFileClass::Open(const char* pFileName)
   }
   else
   {
-    result = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 24))(this); /*0x473c69*/
+    result = (*(int (**)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 24))(this); /*0x473c69*/
     if ( (unsigned char)result ) /*0x473c6e*/
     {
       this->u32_68 = 1; /*0x473c70*/
@@ -44,7 +44,7 @@ int CCFileClass::Open(const char* pFileName)
     }
     else
     {
-      v4 = (const char *)(*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 4))(this); /*0x473c84*/
+      v4 = (const char *)(*(int (**)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 4))(this); /*0x473c84*/
       if ( LookupFileInfoCache(v4, 0, 0, 0, 0) ) /*0x473c8b*/
       {
         this->u32_68 = 1; /*0x473c94*/
@@ -77,12 +77,12 @@ void* CCFileClass::ReadEntireFile()
   size_t v3; // ebx
 
   v2 = 0; /*0x4a3895*/
-  if ( (*(uint8_t (__thiscall **)(CCFileClass *, unsigned int))(*(unsigned int *)this->CDFileClass + 20))(this, 0) ) /*0x4a389a*/
+  if ( (*(uint8_t (**)(CCFileClass *, unsigned int))(*(unsigned int *)this->CDFileClass + 20))(this, 0) ) /*0x4a389a*/
   {
-    v3 = (unsigned int)((*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 44))(this));
+    v3 = (unsigned int)((*(int (**)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 44))(this));
     v2 = (unsigned int)((void *)RA2_OPNEW(v3));
     if ( v2 ) /*0x4a38b7*/
-      (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(unsigned int *)this->CDFileClass + 36))(this, v2, v3); /*0x4a38bf*/
+      (*(void (**)(CCFileClass *, void *, size_t))(*(unsigned int *)this->CDFileClass + 36))(this, v2, v3); /*0x4a38bf*/
   }
   return v2; /*0x4a38c4*/
 }

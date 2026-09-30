@@ -1475,10 +1475,10 @@ int sub_7BD470(int a1)
   {
     if ( v7 == 1 ) /*0x7bd588*/
     {
-      (*(void (__cdecl **)(int, int, unsigned int, int))(a1 + 88))(a1, 5, *(unsigned int *)(a1 + 1976), v2); /*0x7bd594*/
+      (*(void (**)(int, int, unsigned int, int))(a1 + 88))(a1, 5, *(unsigned int *)(a1 + 1976), v2); /*0x7bd594*/
       return v2; /*0x7bd5a0*/
     }
-    (*(void (__cdecl **)(int, int, int, int))(a1 + 88))(a1, 5, v5 + *(unsigned int *)(a1 + 1932), v2); /*0x7bd5ad*/
+    (*(void (**)(int, int, int, int))(a1 + 88))(a1, 5, v5 + *(unsigned int *)(a1 + 1932), v2); /*0x7bd5ad*/
   }
   return v2; /*0x7bd487*/
 }
@@ -1621,7 +1621,7 @@ int AudioStream_FillBuffer(int a1, int a2)
           {
             if ( v9 >= *(unsigned int *)(a1 + 16) - 1 ) /*0x7bf552*/
             {
-              if ( (*(int (__cdecl **)(int, int, int *, unsigned int))(a1 + 64))(a1, 9, &v23, 0) ) /*0x7bf579*/
+              if ( (*(int (**)(int, int, int *, unsigned int))(a1 + 64))(a1, 9, &v23, 0) ) /*0x7bf579*/
                 break; /*0x7bf581*/
               v10 = *(unsigned int *)(a1 + 300); /*0x7bf583*/
               v3 += v23 - 2 * (*(unsigned int *)(v22 + 4 * v10) & 0xFFFFFFF); /*0x7bf59e*/
@@ -1651,7 +1651,7 @@ int AudioStream_FillBuffer(int a1, int a2)
           goto LABEL_40; /*0x7bf60e*/
         if ( v6 >= *(unsigned int *)(a1 + 16) - 1 ) /*0x7bf61a*/
         {
-          if ( (*(int (__cdecl **)(int, int, int *, unsigned int))(a1 + 64))(a1, 9, &v23, 0) ) /*0x7bf636*/
+          if ( (*(int (**)(int, int, int *, unsigned int))(a1 + 64))(a1, 9, &v23, 0) ) /*0x7bf636*/
             goto LABEL_39; /*0x7bf63e*/
           v6 = v20; /*0x7bf644*/
           v12 = v23 - v7; /*0x7bf648*/
@@ -1662,10 +1662,10 @@ int AudioStream_FillBuffer(int a1, int a2)
         }
         if ( v12 <= 0 ) /*0x7bf64c*/
           goto LABEL_40; /*0x7bf64c*/
-        v13 = *(int (__cdecl **)(int, int, int, int))(a1 + 64); /*0x7bf64e*/
+        v13 = *(int (**)(int, int, int, int))(a1 + 64); /*0x7bf64e*/
         if ( v13 != sub_7BF3A0 ) /*0x7bf656*/
           v13(a1, 7, 0, v7); /*0x7bf65e*/
-        if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))( /*0x7bf676*/
+        if ( (*(int (**)(int, int, int, int))(a1 + 64))( /*0x7bf676*/
                a1,
                5,
                *(unsigned int *)(a1 + 1780) + *(unsigned int *)(a1 + 1796),
@@ -3633,7 +3633,7 @@ char sub_7BE940(int a1, int * a2)
   v5 = (unsigned int *)a2[1]; /*0x7be954*/
   v5 = v5; /*0x7be959*/
   if ( (v4 & 2) == 0 /*0x7be982*/
-    && ((v6 = *(int (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 72)) != 0 && (v4 = v6(a1, 6, 0, 0)) != 0
+    && ((v6 = *(int (**)(int, int, unsigned int, unsigned int))(a1 + 72)) != 0 && (v4 = v6(a1, 6, 0, 0)) != 0
      || (v4 = *(unsigned int *)(a1 + 424)) != 0) )
   {
     v7 = *(unsigned int *)(a1 + 1732); /*0x7be988*/
@@ -3654,15 +3654,15 @@ char sub_7BE940(int a1, int * a2)
     {
       IDA_LOBYTE(v11) = v11 & 0xF7; /*0x7be9d6*/
       v5[3] = v11; /*0x7be9d8*/
-      (*(void (__cdecl **)(int, int, int, unsigned int))(a1 + 72))(a1, 3, v12, v5[5]); /*0x7be9e3*/
+      (*(void (**)(int, int, int, unsigned int))(a1 + 72))(a1, 3, v12, v5[5]); /*0x7be9e3*/
       v8 = v8; /*0x7be9e6*/
       v7 = v7; /*0x7be9ea*/
     }
     v14 = *(unsigned int *)(a1 + 428); /*0x7be9ff*/
     if ( (a2[5] & 0x20) != 0 ) /*0x7bea05*/
-      (*(void (__cdecl **)(int, int, int, int, int, int))(a1 + 1928))(v12, v10, v9, v7, v8, v14); /*0x7bea0f*/
+      (*(void (**)(int, int, int, int, int, int))(a1 + 1928))(v12, v10, v9, v7, v8, v14); /*0x7bea0f*/
     else
-      (*(void (__cdecl **)(int, int, int, int, int, int))(a1 + 1924))(v12, v10, v9, v7, v8, v14); /*0x7bea07*/
+      (*(void (**)(int, int, int, int, int, int))(a1 + 1924))(v12, v10, v9, v7, v8, v14); /*0x7bea07*/
     v4 = *(unsigned int *)(a1 + 72); /*0x7bea15*/
     if ( v4 ) /*0x7bea1e*/
       IDA_LOBYTE(v4) = v4(a1, 7, 0, 0); /*0x7bea27*/
@@ -3710,7 +3710,7 @@ int E4Recv_7BF0B0::sub_7BF0B0()
   {
     if ( (v2[5] & 4) != 0 ) /*0x7bf0cd*/
     {
-      v3 = (void (__cdecl *)(TechnoClass *, int, int, int))this->ambientSoundController[3]; /*0x7bf0cf*/
+      v3 = (void (*)(TechnoClass *, int, int, int))this->ambientSoundController[3]; /*0x7bf0cf*/
       if ( v3 ) /*0x7bf0d4*/
         v3(this, 2, v2[2], v2[10]); /*0x7bf0dd*/
     }
@@ -3721,14 +3721,14 @@ int E4Recv_7BF0B0::sub_7BF0B0()
       {
         LOBYTE(v4) = v4 & 0xFE; /*0x7bf0e9*/
         this->ironTintTimer[2] = v4; /*0x7bf0eb*/
-        v5 = (void (__cdecl *)(TechnoClass *, int, char *, int))this->ambientSoundController[3]; /*0x7bf0f1*/
+        v5 = (void (*)(TechnoClass *, int, char *, int))this->ambientSoundController[3]; /*0x7bf0f1*/
         if ( v5 ) /*0x7bf0f6*/
           v5(this, 2, this->__pad_1C4, this->airstrikeTintTimer[2]); /*0x7bf109*/
       }
     }
   }
   sub_7BE940((int)this, v2); /*0x7bf112*/
-  v6 = (int (__cdecl *)(TechnoClass *, int))this->ambientSoundController[4]; /*0x7bf117*/
+  v6 = (int (*)(TechnoClass *, int))this->ambientSoundController[4]; /*0x7bf117*/
   if ( v6 && v6(this, v2[7]) ) /*0x7bf123*/
     return -2; /*0x7bf12d*/
   else
@@ -3777,7 +3777,7 @@ int E4Recv_7BF190::sub_7BF190()
   {
     if ( (v2[5] & 4) != 0 ) /*0x7bf1ad*/
     {
-      v3 = (void (__cdecl *)(TechnoClass *, int, unsigned int, unsigned int))this->ambientSoundController[3]; /*0x7bf1af*/
+      v3 = (void (*)(TechnoClass *, int, unsigned int, unsigned int))this->ambientSoundController[3]; /*0x7bf1af*/
       if ( v3 ) /*0x7bf1b4*/
         v3(this, 2, v2[2], v2[10]); /*0x7bf1bd*/
     }
@@ -3788,13 +3788,13 @@ int E4Recv_7BF190::sub_7BF190()
       {
         LOBYTE(v4) = v4 & 0xFE; /*0x7bf1c9*/
         this->ironTintTimer[2] = v4; /*0x7bf1cb*/
-        v5 = (void (__cdecl *)(TechnoClass *, int, char *, int))this->ambientSoundController[3]; /*0x7bf1d1*/
+        v5 = (void (*)(TechnoClass *, int, char *, int))this->ambientSoundController[3]; /*0x7bf1d1*/
         if ( v5 ) /*0x7bf1d6*/
           v5(this, 2, this->__pad_1C4, this->airstrikeTintTimer[2]); /*0x7bf1e9*/
       }
     }
   }
-  v6 = (int (__cdecl *)(TechnoClass *, unsigned int))this->ambientSoundController[4]; /*0x7bf1ee*/
+  v6 = (int (*)(TechnoClass *, unsigned int))this->ambientSoundController[4]; /*0x7bf1ee*/
   if ( v6 && v6(this, v2[7]) ) /*0x7bf1fa*/
     return -2; /*0x7bf204*/
   else

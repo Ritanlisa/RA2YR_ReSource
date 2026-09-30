@@ -963,7 +963,7 @@ int sub_7C1E10(int a1, int a2)
     v3 = a2; /*0x7c1e74*/
     *(unsigned int *)(a1 + 380) = v8; /*0x7c1e78*/
   }
-  if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))( /*0x7c1e93*/
+  if ( (*(int (**)(int, int, int, unsigned int))(a1 + 64))( /*0x7c1e93*/
          a1,
          5,
          *(unsigned int *)(a1 + 376) + *v4,
@@ -1050,7 +1050,7 @@ int sub_7C1F30(int a1, int a2)
     else
       v3[4] = *(unsigned int *)(a1 + 1896) - *(unsigned int *)(a1 + 380); /*0x7c1fec*/
   }
-  if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, *(unsigned int *)(a1 + 376) + *v3 + v3[4], v5) ) /*0x7c200c*/
+  if ( (*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 5, *(unsigned int *)(a1 + 376) + *v3 + v3[4], v5) ) /*0x7c200c*/
     return -4; /*0x7c2022*/
   v11 = *(unsigned int *)(a1 + 372); /*0x7c202d*/
   v12 = a2 + *(unsigned int *)(a1 + 376); /*0x7c2033*/
@@ -1099,7 +1099,7 @@ int sub_7C2250(int a1, int a2)
   v3 = (a2 + 1) & 0xFFFFFFFE; /*0x7c225f*/
   if ( (*(unsigned char *)(a1 + 132) & 1) != 0 && *(unsigned int *)(a1 + 1932) ) /*0x7c226a*/
   {
-    if ( (*(int (__cdecl **)(int, int, uint16_t *, int))(a1 + 64))(a1, 5, &v12, 4) ) /*0x7c2282*/
+    if ( (*(int (**)(int, int, uint16_t *, int))(a1 + 64))(a1, 5, &v12, 4) ) /*0x7c2282*/
       return -4; /*0x7c2295*/
     v5 = *(unsigned int *)(a1 + 1972); /*0x7c229a*/
     v6 = v3 - 4; /*0x7c22a2*/
@@ -1107,13 +1107,13 @@ int sub_7C2250(int a1, int a2)
     {
       if ( v12 == v13 ) /*0x7c237c*/
       {
-        if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 64))(a1, 5, *(unsigned int *)(a1 + 1960), v6) ) /*0x7c2389*/
+        if ( (*(int (**)(int, int, unsigned int, unsigned int))(a1 + 64))(a1, 5, *(unsigned int *)(a1 + 1960), v6) ) /*0x7c2389*/
           return -4; /*0x7c239c*/
       }
       else
       {
         v10 = (unsigned short *)(v5 + *(unsigned int *)(a1 + 1960) - v6); /*0x7c23a6*/
-        if ( (*(int (__cdecl **)(int, int, unsigned short *, unsigned int))(a1 + 64))(a1, 5, v10, v6) ) /*0x7c23ac*/
+        if ( (*(int (**)(int, int, unsigned short *, unsigned int))(a1 + 64))(a1, 5, v10, v6) ) /*0x7c23ac*/
           return -4; /*0x7c23bf*/
         Audio_Helper_7C7F20(v12, v10, *(unsigned char **)(a1 + 1960), v12); /*0x7c23d3*/
       }
@@ -1124,13 +1124,13 @@ int sub_7C2250(int a1, int a2)
     {
       if ( v12 == v13 ) /*0x7c22c6*/
       {
-        if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 64))(a1, 5, *(unsigned int *)(a1 + 1932), v6) ) /*0x7c22d3*/
+        if ( (*(int (**)(int, int, unsigned int, unsigned int))(a1 + 64))(a1, 5, *(unsigned int *)(a1 + 1932), v6) ) /*0x7c22d3*/
           return -4; /*0x7c22e6*/
       }
       else
       {
         v7 = (unsigned short *)(*(unsigned int *)(a1 + 1932) + *(unsigned int *)(a1 + 152) - v6); /*0x7c22f6*/
-        if ( (*(int (__cdecl **)(int, int, unsigned short *, unsigned int))(a1 + 64))(a1, 5, v7, v6) ) /*0x7c22fc*/
+        if ( (*(int (**)(int, int, unsigned short *, unsigned int))(a1 + 64))(a1, 5, v7, v6) ) /*0x7c22fc*/
           return -4; /*0x7c230f*/
         Audio_Helper_7C7F20(*(unsigned int *)(a1 + 1932), v7, *(unsigned char **)(a1 + 1932), v12); /*0x7c2323*/
       }
@@ -1151,7 +1151,7 @@ int sub_7C2250(int a1, int a2)
   }
   else
   {
-    v11 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, (a2 + 1) & 0xFFFFFFFE) != 0); /*0x7c2401*/
+    v11 = -((*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, (a2 + 1) & 0xFFFFFFFE) != 0); /*0x7c2401*/
     IDA_LOBYTE(v11) = v11 & 0xFB; /*0x7c2404*/
     return v11 - 1; /*0x7c2407*/
   }
@@ -1428,7 +1428,7 @@ int sub_7BE830(int a1, int a2)
         do /*0x7be89e*/
         {
           if ( v8[1] == a2 ) /*0x7be881*/
-            (*(void (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 72))(a1, v4, *(v8 - 1), *v8); /*0x7be88c*/
+            (*(void (**)(int, int, unsigned int, unsigned int))(a1 + 72))(a1, v4, *(v8 - 1), *v8); /*0x7be88c*/
           v8 += 3; /*0x7be896*/
           --v19; /*0x7be89a*/
         }
@@ -1460,7 +1460,7 @@ int sub_7BE830(int a1, int a2)
         do /*0x7be91a*/
         {
           if ( v16[1] == a2 ) /*0x7be8fd*/
-            (*(void (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 72))(a1, v12, *(v16 - 1), *v16); /*0x7be908*/
+            (*(void (**)(int, int, unsigned int, unsigned int))(a1 + 72))(a1, v12, *(v16 - 1), *v16); /*0x7be908*/
           v16 += 3; /*0x7be912*/
           --v22; /*0x7be916*/
         }
@@ -1657,7 +1657,7 @@ int Audio_Process_7C0530(int a1, int edx0, int a3)
   }
   if ( v4 < 0 ) /*0x7c0611*/
     return v16; /*0x7c0611*/
-  if ( (*(int (__cdecl **)(int, int, unsigned int, int))(a1 + 64))( /*0x7c0629*/
+  if ( (*(int (**)(int, int, unsigned int, int))(a1 + 64))( /*0x7c0629*/
          a1,
          7,
          0,
@@ -2303,7 +2303,7 @@ AbstractClass * * sub_6C6DE0()
     }
     if ( g_UIPointerTable ) /*0x6c6ef2*/
     {
-      (*(void (__stdcall **)(LPVOID, int *, int, unsigned char *, unsigned int))(*(unsigned int *)g_UIPointerTable + 12))( /*0x6c6f09*/
+      (*(void (**)(LPVOID, int *, int, unsigned char *, unsigned int))(*(unsigned int *)g_UIPointerTable + 12))( /*0x6c6f09*/
         g_UIPointerTable,
         &g_WOL_UserList.customSound_controller[2],
         dword_B76184,
@@ -2346,7 +2346,7 @@ int sub_7C2410(int a1, int a2)
     if ( v6 <= v5 || *(unsigned int *)(a1 + 1936) ) /*0x7c2455*/
     {
       v11 = v5 + *(unsigned int *)(a1 + 1960) - v3; /*0x7c2521*/
-      if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v11, v3) ) /*0x7c2527*/
+      if ( (*(int (**)(int, int, int, int))(a1 + 64))(a1, 5, v11, v3) ) /*0x7c2527*/
       {
         return -4; /*0x7c2534*/
       }
@@ -2366,7 +2366,7 @@ int sub_7C2410(int a1, int a2)
     else
     {
       v7 = v4 + *(unsigned int *)(a1 + 152) - v3; /*0x7c246c*/
-      if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v7, v3) ) /*0x7c2472*/
+      if ( (*(int (**)(int, int, int, int))(a1 + 64))(a1, 5, v7, v3) ) /*0x7c2472*/
       {
         return -4; /*0x7c247f*/
       }
@@ -2395,7 +2395,7 @@ int sub_7C2410(int a1, int a2)
   }
   else
   {
-    v12 = -((*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 7, 1, v3) != 0); /*0x7c257b*/
+    v12 = -((*(int (**)(int, int, int, int))(a1 + 64))(a1, 7, 1, v3) != 0); /*0x7c257b*/
     IDA_LOBYTE(v12) = v12 & 0xFB; /*0x7c257e*/
     return v12 - 1; /*0x7c2582*/
   }
@@ -2864,7 +2864,7 @@ int sub_7C1130(int a1, int a2)
 {
   int v2; // eax
 
-  v2 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, a1 + 274, (a2 + 1) & 0xFFFFFFFE) != 0); /*0x7c1147*/
+  v2 = -((*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 5, a1 + 274, (a2 + 1) & 0xFFFFFFFE) != 0); /*0x7c1147*/
   IDA_LOBYTE(v2) = v2 & 0xFD; /*0x7c1149*/
   return v2 - 1; /*0x7c114c*/
 }
@@ -2879,10 +2879,10 @@ int sub_7C1D40(int a1, int a2)
   v2 = *(unsigned int *)(a1 + 1892); /*0x7c1d40*/
   if ( v2 ) /*0x7c1d48*/
   {
-    if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v2, (a2 + 1) & 0xFFFFFFFE) ) /*0x7c1d53*/
+    if ( (*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v2, (a2 + 1) & 0xFFFFFFFE) ) /*0x7c1d53*/
       return -4; /*0x7c1d62*/
   }
-  else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, (a2 + 1) & 0xFFFFFFFE) ) /*0x7c1d6d*/
+  else if ( (*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, (a2 + 1) & 0xFFFFFFFE) ) /*0x7c1d6d*/
   {
     return -6; /*0x7c1d7c*/
   }
@@ -2904,7 +2904,7 @@ int sub_7C1D90(int a1, int a2)
   IDA_LOBYTE(v3) = (a2 + 1) & 0xFE; /*0x7c1daa*/
   v5 = *(unsigned int *)(a1 + 1896) - v3; /*0x7c1daf*/
   v6 = v5 + *v4; /*0x7c1db1*/
-  if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) ) /*0x7c1db8*/
+  if ( (*(int (**)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) ) /*0x7c1db8*/
     return -4; /*0x7c1dc5*/
   *(unsigned int *)(a1 + 372) = 0; /*0x7c1dcd*/
   v4[3] = 10; /*0x7c1dd7*/
@@ -2935,7 +2935,7 @@ int sub_7C20B0(int a1, int a2)
   IDA_LOBYTE(v3) = (a2 + 1) & 0xFE; /*0x7c20c9*/
   v5 = *(unsigned int *)(a1 + 1904) - v3; /*0x7c20cf*/
   v6 = v5 + *(unsigned int *)(v4 + 8); /*0x7c20d2*/
-  if ( (*(int (__cdecl **)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) ) /*0x7c20d8*/
+  if ( (*(int (**)(int, int, int, int))(a1 + 64))(a1, 5, v6, v3) ) /*0x7c20d8*/
     return -4; /*0x7c20e5*/
   v8 = *(unsigned int *)(v4 + 20) | 8; /*0x7c20f4*/
   *(unsigned int *)(v4 + 36) = v5; /*0x7c20f7*/
@@ -2977,7 +2977,7 @@ int sub_7C2180(int a1, unsigned int a2)
   {
     if ( v4 <= *(unsigned int *)(a1 + 1972) || *(unsigned int *)(a1 + 1936) ) /*0x7c21b0*/
     {
-      if ( (*(int (__cdecl **)(int, int, unsigned int, unsigned int))(a1 + 64))(a1, 5, *(unsigned int *)(a1 + 1960), v4) ) /*0x7c2219*/
+      if ( (*(int (**)(int, int, unsigned int, unsigned int))(a1 + 64))(a1, 5, *(unsigned int *)(a1 + 1960), v4) ) /*0x7c2219*/
       {
         return -4; /*0x7c2224*/
       }
@@ -2987,7 +2987,7 @@ int sub_7C2180(int a1, unsigned int a2)
         return -1; /*0x7c2232*/
       }
     }
-    else if ( (*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v5, v4) ) /*0x7c21bf*/
+    else if ( (*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 5, v5, v4) ) /*0x7c21bf*/
     {
       return -4; /*0x7c21ca*/
     }
@@ -3006,7 +3006,7 @@ int sub_7C2180(int a1, unsigned int a2)
   }
   else
   {
-    v8 = -((*(int (__cdecl **)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, v4) != 0); /*0x7c2245*/
+    v8 = -((*(int (**)(int, int, int, unsigned int))(a1 + 64))(a1, 7, 1, v4) != 0); /*0x7c2245*/
     IDA_LOBYTE(v8) = v8 & 0xFB; /*0x7c2248*/
     return v8 - 1; /*0x7c224b*/
   }

@@ -1878,13 +1878,13 @@ int Render_Get(ScoreScreen * aP0)
   else
     v11 = (double)v12 / (double)(v2 + v1); /*0x68ee48*/
   Debug::Log(); /*0x68ee65*/
-  (*(void (__stdcall **)(char *))(*((unsigned int *)aP0 + 9) + 24))((char *)aP0 + 36); /*0x68ee82*/
+  (*(void (**)(char *))(*((unsigned int *)aP0 + 9) + 24))((char *)aP0 + 36); /*0x68ee82*/
   Debug::Log(); /*0x68ee8b*/
   othera = (void *)(*((unsigned int *)aP0 + 184) + *((unsigned int *)aP0 + 119)); /*0x68eea3*/
   if ( (int)othera <= 0 ) /*0x68eea7*/
     otherb = 0.0; /*0x68eec1*/
   else
-    otherb = (double)(*(int (__stdcall **)(char *))(*((unsigned int *)aP0 + 9) + 24))((char *)aP0 + 36) /*0x68eebb*/
+    otherb = (double)(*(int (**)(char *))(*((unsigned int *)aP0 + 9) + 24))((char *)aP0 + 36) /*0x68eebb*/
            / (double)(int)othera;
   Debug::Log(); /*0x68eed8*/
   v9 = Math::RoundToInt((otherb + v11) * 0.5 * 100.0); /*0x68eef8*/

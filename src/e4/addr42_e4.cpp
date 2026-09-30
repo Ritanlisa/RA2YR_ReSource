@@ -997,7 +997,7 @@ AbstractClass * * sub_4267F0()
     (*(void (**)(unsigned int *, unsigned int **))(*v3[33] + 36))(v3[33], v3 + 515); /*0x4268e8*/
     if ( !sub_426990((ObjectClass *)v3) ) /*0x4268ed*/
     {
-      ((void (__thiscall *)(unsigned int **))(*v3)[2])(v3); /*0x4268fb*/
+      ((void (*)(unsigned int **))(*v3)[2])(v3); /*0x4268fb*/
       return 0; /*0x426903*/
     }
     v10 = RA2_OPNEW(0x20u); /*0x42690b*/
@@ -1574,7 +1574,7 @@ void sub_42B080(short * a1, int a2)
           {
             if ( !*(unsigned int *)(v7 + 1652) ) /*0x42b140*/
               WinAPI::Wrapper(-2147467261); /*0x42b14f*/
-            if ( (*(uint8_t (__stdcall **)(unsigned int, int, int, int))(**(unsigned int **)(v7 + 1652) + 160))( /*0x42b172*/
+            if ( (*(uint8_t (**)(unsigned int, int, int, int))(**(unsigned int **)(v7 + 1652) + 160))( /*0x42b172*/
                    *(unsigned int *)(v7 + 1652),
                    v13,
                    v14,

@@ -1039,7 +1039,7 @@ int AudioStream::SetFlag4C()
 
   int result; // eax
 
-  ((void (__cdecl *)(AudioStream *, int, unsigned int, unsigned int))this->AudioStream_field_0x58)(this, 4, 0, 0); /*0x7bd27a*/
+  ((void (*)(AudioStream *, int, unsigned int, unsigned int))this->AudioStream_field_0x58)(this, 4, 0, 0); /*0x7bd27a*/
   result = *((unsigned int *)this + 495); /*0x7bd27d*/
   LOBYTE(result) = result | 0x40; /*0x7bd286*/
   *((unsigned int *)this + 495) = result; /*0x7bd288*/
@@ -1257,7 +1257,7 @@ int AudioStream::ProcessStream()
             v3[8] = *(unsigned int *)(v2 + 40); /*0x7becfe*/
             v3[1] = v24; /*0x7bed01*/
           }
-          v25 = *(void (__cdecl **)(int, int, unsigned int, unsigned int))(v1 + 72); /*0x7bed04*/
+          v25 = *(void (**)(int, int, unsigned int, unsigned int))(v1 + 72); /*0x7bed04*/
           if ( v25 ) /*0x7bed09*/
           {
             if ( (*(unsigned int *)(v2 + 20) & 0x100) != 0 ) /*0x7bed11*/
@@ -1269,7 +1269,7 @@ int AudioStream::ProcessStream()
             }
             if ( (*(unsigned int *)(v2 + 20) & 0x200) != 0 ) /*0x7bed35*/
             {
-              (*(void (__cdecl **)(int, int, unsigned int, unsigned int))(v1 + 72))( /*0x7bed45*/
+              (*(void (**)(int, int, unsigned int, unsigned int))(v1 + 72))( /*0x7bed45*/
                 v1,
                 5,
                 *(unsigned int *)(v2 + 28),
@@ -1286,7 +1286,7 @@ int AudioStream::ProcessStream()
               *(unsigned int *)(v2 + 20) = v28; /*0x7bed6c*/
             }
           }
-          v29 = *(int (__cdecl **)(unsigned int, unsigned int))(v1 + 76); /*0x7bed6f*/
+          v29 = *(int (**)(unsigned int, unsigned int))(v1 + 76); /*0x7bed6f*/
           if ( v29 && v29(0, *(unsigned int *)(v2 + 28)) ) /*0x7bed7c*/
             return -2; /*0x7bedd6*/
           v30 = *(unsigned int *)(v2 + 20); /*0x7bed85*/
@@ -1366,7 +1366,7 @@ namespace gamemd {
 unsigned int AudioStream::GetPosition()
 {
 
-  return (unsigned int)(60 * ((int (__cdecl *)(AudioStream *))this->AudioStream_field_0x50)(this)) /*0x7c3982*/
+  return (unsigned int)(60 * ((int (*)(AudioStream *))this->AudioStream_field_0x50)(this)) /*0x7c3982*/
        / *(unsigned int *)&this->__pad_5C[28]
        + *(unsigned int *)&this->__pad_D8[112];
 

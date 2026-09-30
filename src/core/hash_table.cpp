@@ -32,14 +32,14 @@ int Hash::InsertOrdered(void* table, const void* entry)
 {
   int result; // eax
 
-  result = (*(int (__thiscall **)(GScreenClass *, int))(table->vfptr[0] + 44))(table, entry); /*0x4f4418*/
+  result = (*(int (**)(GScreenClass *, int))(table->vfptr[0] + 44))(table, entry); /*0x4f4418*/
   if ( (unsigned char)result ) /*0x4f441d*/
   {
     IDA_LOBYTE(result) = 0; /*0x4f441f*/
   }
   else if ( *(unsigned int *)&stru_A8EB00.?[880] ) /*0x4f442c*/
   {
-    result = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)entry + 16))(entry, *(unsigned int *)&stru_A8EB00.?[880]); /*0x4f4433*/
+    result = (*(int (**)(int, unsigned int))(*(unsigned int *)entry + 16))(entry, *(unsigned int *)&stru_A8EB00.?[880]); /*0x4f4433*/
     IDA_LOBYTE(result) = 1; /*0x4f4436*/
   }
   else

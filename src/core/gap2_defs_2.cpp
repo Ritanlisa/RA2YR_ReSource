@@ -183,7 +183,7 @@ int COMObject::ActivateThunk(int a1, int a2, int a3) {
     return 0; /*0x4e154a*/
   v4 = *(unsigned int *)this->__pad_0; /*0x4e1538*/
   this->q01C = 1; /*0x4e153b*/
-  (*(void (__stdcall **)(int))(v4 + 120))(a1); /*0x4e153f*/
+  (*(void (**)(int))(v4 + 120))(a1); /*0x4e153f*/
   return 1; /*0x4e1547*/
 }
 }
@@ -307,9 +307,9 @@ void* COMObject::SwapReference(int a2) {
   {
     *(unsigned int *)this->__pad_0 = a2; /*0x5233b0*/
     if ( a2 ) /*0x5233b2*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)a2 + 4))(a2); /*0x5233b7*/
+      (*(void (**)(int))(*(unsigned int *)a2 + 4))(a2); /*0x5233b7*/
     if ( v3 ) /*0x5233bc*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)v3 + 8))(v3); /*0x5233c1*/
+      (*(void (**)(int))(*(unsigned int *)v3 + 8))(v3); /*0x5233c1*/
   }
   return (int *)this->__pad_0; /*0x5233c6*/
 }
@@ -525,7 +525,7 @@ int ComPtr::ReleaseSimple() {
 
   result = *(unsigned int *)this->__pad_0; /*0x67fdd0*/
   if ( *(unsigned int *)this->__pad_0 ) /*0x67fdd0*/
-    return (*(int (__stdcall **)(int))(result->q008)(result); /*0x67fdd9*/
+    return (*(int (**)(int))(result->q008)(result); /*0x67fdd9*/
   return result; /*0x67fddc*/
 }
 }
@@ -1045,7 +1045,7 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
   DeleteAndZero v13; // [esp+8h] [ebp-90h] BYREF
   DeleteAndZero v14[11]; // [esp+14h] [ebp-84h] BYREF
 
-  v5 = ((int (__thiscall *)(unsigned int))this->m_10)(*(unsigned int *)(a2 + 4)); /*0x766ab0*/
+  v5 = ((int (*)(unsigned int))this->m_10)(*(unsigned int *)(a2 + 4)); /*0x766ab0*/
   FromStringInt((char **)&Format, v5); /*0x766ab9*/
   v6 = String::GetOrEmpty_Alt((String *)&this->m_14); /*0x766acb*/
   StringCSF = GetStringCSF((wchar_t *)v6, 0, aDRa2mdpostWdtg, 161); /*0x766ad4*/

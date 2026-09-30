@@ -404,7 +404,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
       if ( !v5 ) /*0x612aa2*/
         goto LABEL_10; /*0x612aa2*/
     }
-    v7 = (LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))(v5 + 4); /*0x612aaa*/
+    v7 = (LRESULT (**)(HWND, UINT, WPARAM, LPARAM))(v5 + 4); /*0x612aaa*/
     if ( v7 ) /*0x612aaf*/
       v4 = *v7; /*0x612ab1*/
   }
@@ -676,7 +676,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
       if ( !v6 ) /*0x61ed10*/
         return CallWindowProcA(v5, v7, v4, wParam, lParam); /*0x61ed10*/
     }
-    v8 = (LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))(v6 + 4); /*0x61ed18*/
+    v8 = (LRESULT (**)(HWND, UINT, WPARAM, LPARAM))(v6 + 4); /*0x61ed18*/
     if ( v8 ) /*0x61ed1d*/
       v5 = *v8; /*0x61ed1f*/
   }

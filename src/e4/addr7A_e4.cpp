@@ -383,7 +383,7 @@ void WOL_RequestMatch(void * a1)
   String::Append2((String *)v31, (char **)&v31[8]); /*0x7a0c80*/
   v26 = *(unsigned int *)ppv; /*0x7a0c8e*/
   v27 = ((String *)((String *)v31))->GetOrEmpty(); /*0x7a0c90*/
-  (*(void (__stdcall **)(LPVOID, unsigned char *, char *))(v26 + 48))(ppv, &v31[60], v27); /*0x7a0ca2*/
+  (*(void (**)(LPVOID, unsigned char *, char *))(v26 + 48))(ppv, &v31[60], v27); /*0x7a0ca2*/
   g_WOL_GameListState = 0; /*0x7a0ca5*/
   g_WOL_IdleHandler = 4; /*0x7a0cac*/
   g_WOL_GameProcessState = 180; /*0x7a0cb6*/
@@ -527,7 +527,7 @@ Coord * * WOL_ProcessPingRequests()
         Debug::Log(); /*0x7a11b1*/
         v9 = *(unsigned int *)g_UIPointerTable; /*0x7a11c3*/
         v10 = ntoainet((struct in_addr)S_addr); /*0x7a11cc*/
-        if ( !(*(int (__stdcall **)(LPVOID, char *, int, int *))(v9 + 24))(g_UIPointerTable, v10, 1000, &v14) /*0x7a11e5*/
+        if ( !(*(int (**)(LPVOID, char *, int, int *))(v9 + 24))(g_UIPointerTable, v10, 1000, &v14) /*0x7a11e5*/
           && v14 >= 0 )
         {
           StringVector::Insert( /*0x7a11f8*/
@@ -662,7 +662,7 @@ Coord * * UpdateWOLLobbyPings()
         }
         if ( !v1 /*0x7a1522*/
           || (v20 = -1,
-              (*(void (__stdcall **)(LPVOID, int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v1, &v20),
+              (*(void (**)(LPVOID, int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v1, &v20),
               v20 == -1) )
         {
   LABEL_27:
@@ -712,7 +712,7 @@ Coord * * UpdateWOLLobbyPings()
       {
         v15 = *(unsigned int *)ppv; /*0x7a165d*/
         v16 = String::GetOrEmpty((String *)&v19.m_3[1]); /*0x7a1663*/
-        (*(void (__stdcall **)(LPVOID, int *, char *))(v15 + 48))(ppv, &g_WebBrowserConfig.occupant, v16); /*0x7a1675*/
+        (*(void (**)(LPVOID, int *, char *))(v15 + 48))(ppv, &g_WebBrowserConfig.occupant, v16); /*0x7a1675*/
         String::GetOrEmpty((String *)&v19.m_3[1]); /*0x7a167c*/
         Debug::Log(); /*0x7a1687*/
       }
@@ -770,7 +770,7 @@ ObjectClass * * HandleWOLMatchMessage()
   {
     v7 = GetStringCSF(g_Str_WOL_MatchFailExit, 0, g_Str_File_wonline_cpp, 28695); /*0x7a17e4*/
     Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)v7); /*0x7a17ef*/
-    (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x7a17ff*/
+    (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x7a17ff*/
     v8 = GetStringCSF(g_Str_WOL_MatchFailExit, 0, g_Str_File_wonline_cpp, 28698); /*0x7a181a*/
     ShowDialogConfirm(v8, 0, (int)GameLoop::Thunk, 0); /*0x7a1823*/
     SetEvent(Handles); /*0x7a182f*/
@@ -936,7 +936,7 @@ AbstractClass * * WOL_MatchGame()
     while ( (int)v15 < (int)g_WOL_RequestObject ); /*0x7a1e69*/
     *(unsigned int *)&v28[8] = 41; /*0x7a1e73*/
     Debug::Log(); /*0x7a1e7b*/
-    if ( (*(int (__stdcall **)(LPVOID, unsigned int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, *(unsigned int *)&v28[8], 0) ) /*0x7a1e91*/
+    if ( (*(int (**)(LPVOID, unsigned int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, *(unsigned int *)&v28[8], 0) ) /*0x7a1e91*/
     {
       SetEvent(Handles); /*0x7a1f54*/
   LABEL_28:
@@ -1133,7 +1133,7 @@ void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
     memset(&v22[8], 0, 0x6Cu); /*0x7a2ba1*/
     v9 = String::GetOrEmpty_Alt((String *)&stru_B76AC4); /*0x7a2ba8*/
     strncpy(&v22[44], v9, 9u); /*0x7a2bb3*/
-    (*(void (__stdcall **)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 224))(ppv, &v22[8]); /*0x7a2bc8*/
+    (*(void (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 224))(ppv, &v22[8]); /*0x7a2bc8*/
     if ( !(uint8_t)MapSeed::CheckName((MapSeed *)&stru_B76AC4) ) /*0x7a2bda*/
     {
   LABEL_52:
@@ -1242,7 +1242,7 @@ void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
       *(unsigned int *)g_WOL_BuddyList.__pad_20 = time(0); /*0x7a2deb*/
       memset(&v22[116], 0, 0x6Cu); /*0x7a2dfe*/
       strcpy(&v22[152], String::GetOrEmpty((String *)&g_WindowManager.__pad_14[16])); /*0x7a2e31*/
-      (*(void (__stdcall **)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 96))(ppv, &v22[116]); /*0x7a2e43*/
+      (*(void (**)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 96))(ppv, &v22[116]); /*0x7a2e43*/
     }
     goto LABEL_51; /*0x7a2e43*/
   }
@@ -1316,7 +1316,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       sprintf(v22, "%s/%s", (const char *)(v4 + 81), (const char *)(v4 + 337)); /*0x7a4cef*/
       sprintf(v23, "%s\\%s", (const char *)(v4 + 468), (const char *)(v4 + 337)); /*0x7a4d09*/
       CreateDirectoryA((LPCSTR)(v4 + 468), 0); /*0x7a4d14*/
-      (*(void (__stdcall **)(LPVOID, int, int, int, char *, char *, char *))(*(unsigned int *)dword_AC1174 + 12))( /*0x7a4d49*/
+      (*(void (**)(LPVOID, int, int, int, char *, char *, char *))(*(unsigned int *)dword_AC1174 + 12))( /*0x7a4d49*/
         dword_AC1174,
         v4 + 16,
         v4 + 370,
@@ -1331,7 +1331,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
       WideString::Assign((wchar_t **)&v18, String); /*0x7a4d86*/
       SimpleDialogControl::Constructor(v20); /*0x7a4d8f*/
       v20[0] = (unsigned int)&off_7F7624; /*0x7a4da0*/
-      v12 = (HWND)CreateDialog(0xD3u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_78DA30, 0); /*0x7a4dad*/
+      v12 = (HWND)CreateDialog(0xD3u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_78DA30, 0); /*0x7a4dad*/
       v13 = GetDlgItem(v12, 1479); /*0x7a4dbf*/
       v14 = WideString::GetOrEmpty_Alt((wchar_t **)&v18); /*0x7a4dc1*/
       SendMessageA(v13, 0x4B2u, 0, (LPARAM)v14); /*0x7a4dcf*/
@@ -1563,7 +1563,7 @@ AbstractClass * * sub_7AF970()
     CCFileClass::Destruct(&v12); /*0x7afa5e*/
   }
   v11 = v8; /*0x7afa76*/
-  RunDialog(0x125u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)&v6); /*0x7afa7a*/
+  RunDialog(0x125u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)&v6); /*0x7afa7a*/
   v4 = v7; /*0x7afa7f*/
   v6 = (OwnerDrawControl)(void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7afa83*/
   if ( v8 ) /*0x7afa91*/
@@ -1636,7 +1636,7 @@ int StartWDTCampaign()
   {
     v9 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x7afcab*/
     if ( v9 ) /*0x7afcb5*/
-      v22 = (void (__stdcall ***)(int))MixFileClass::FromFile(v9, g_Str_File_WDT_MIX, (int)dword_886980); /*0x7afcc8*/
+      v22 = (void (***)(int))MixFileClass::FromFile(v9, g_Str_File_WDT_MIX, (int)dword_886980); /*0x7afcc8*/
     else
       v22 = 0; /*0x7afcce*/
   }
@@ -1695,7 +1695,7 @@ int StartWDTCampaign()
       case 1:
         Screen::Capture(1, 0, v14, (int)&rc_ptr_WorldDominationTour_Campaign_vftable); /*0x7afdf9*/
         Team_Start_7B0490(v26); /*0x7afe05*/
-        RunDialog(0x125u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)v26); /*0x7afe1c*/
+        RunDialog(0x125u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WorldDominationFactionDlgProc, (LPARAM)v26); /*0x7afe1c*/
         v17 = v26[3]; /*0x7afe21*/
         Team_Start_7AF500(v26); /*0x7afe2f*/
         dword_B77F94 = (char *)v17; /*0x7afe34*/
@@ -1746,7 +1746,7 @@ int StartWDTCampaign()
   LABEL_40:
         v6 = *(void (****)(unsigned int, int))v19.__pad_0; /*0x7afff4*/
   LABEL_41:
-        ((void (__thiscall *)(void (__stdcall ***)(int), int))**v22)(v22, 1); /*0x7afff8*/
+        ((void (*)(void (***)(int), int))**v22)(v22, 1); /*0x7afff8*/
         (**v6)(v6, 1); /*0x7b0009*/
         if ( v21 ) /*0x7b0011*/
           (*(void (**)(unsigned int *, int))*v21)(v21, 1); /*0x7b0017*/
@@ -1797,7 +1797,7 @@ int sub_7A0D10()
         Debug::Log(); /*0x7a0d81*/
         v8 = *(unsigned int *)g_UIPointerTable; /*0x7a0d9c*/
         v5 = ntoainet((struct in_addr)S_addr); /*0x7a0da0*/
-        result = (*(int (__stdcall **)(LPVOID, char *, int, int *))(v8 + 24))(g_UIPointerTable, v5, 1000, &v7); /*0x7a0db1*/
+        result = (*(int (**)(LPVOID, char *, int, int *))(v8 + 24))(g_UIPointerTable, v5, 1000, &v7); /*0x7a0db1*/
         ++v2; /*0x7a0db4*/
         v1 += 108; /*0x7a0db5*/
       }
@@ -1875,10 +1875,10 @@ INT_PTR sub_7A2110(HWND hWnd, UINT a2, WPARAM a3, char * a4)
             SetEvent(Handles); /*0x7a2224*/
             break;
           case 0x708u: /*0x7a21ce*/
-            (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 44))(ppv, aStart443900100_0); /*0x7a21fc*/
+            (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 44))(ppv, aStart443900100_0); /*0x7a21fc*/
             return 0; /*0x7a2201*/
           case 0x709u: /*0x7a21ce*/
-            (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 44))(ppv, aStart443900100); /*0x7a21e7*/
+            (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 44))(ppv, aStart443900100); /*0x7a21e7*/
             return 0; /*0x7a21ec*/
         }
         break;

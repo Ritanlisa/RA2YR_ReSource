@@ -54,7 +54,7 @@ HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
   }
   if ( !*ppv ) /*0x4102e1*/
     return -2147467262; /*0x4102e6*/
-  (*((void (__stdcall **)(AbstractClass *))thisa->vtable0 + 1))(thisa); /*0x4102f2*/
+  (*((void (**)(AbstractClass *))thisa->vtable0 + 1))(thisa); /*0x4102f2*/
   return 0; /*0x41026e*/
 }
 // IDA: 0x410300 -- vtable[0][1] (COMStub_AddRef)
@@ -118,7 +118,7 @@ CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
   CoordStruct *out; // [esp+14h] [ebp+4h]
 
-  v1 = (gamemd::CoordStruct *)((int *)(*((int (__thiscall **)(AbstractClass *, unsigned char *))out->vtable0 + 18))(out, v3));
+  v1 = (gamemd::CoordStruct *)((int *)(*((int (**)(AbstractClass *, unsigned char *))out->vtable0 + 18))(out, v3));
   out->X = (T)((gamemd::CoordStruct *)(*v1));
   out->Y = (T)((gamemd::CoordStruct *)(v1[1]));
   out->Z = (T)((gamemd::CoordStruct *)(v1[2]));

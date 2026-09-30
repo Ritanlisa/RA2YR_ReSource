@@ -431,7 +431,7 @@ char sub_5FBEF0()
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
   dwNewLong = -1; /*0x5fbefe*/
-  Dialog = (HWND)CreateDialog(0xA3u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))HotkeyOptions::DlgProc, 0); /*0x5fbf0b*/
+  Dialog = (HWND)CreateDialog(0xA3u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))HotkeyOptions::DlgProc, 0); /*0x5fbf0b*/
   if ( Dialog ) /*0x5fbf0f*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x5fbf19*/
@@ -538,7 +538,7 @@ AbstractClass * * sub_5FDDF0()
       {
         if ( *(unsigned char *)(v1 + 286) >= 0x30u /*0x5fde76*/
           && (v12 < v2
-           || (v11 || !v2) && v3 > 0 && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v7[2])(&v7, v3 + v2, 0)) )
+           || (v11 || !v2) && v3 > 0 && ((uint8_t (*)(void ***, int, unsigned int))v7[2])(&v7, v3 + v2, 0)) )
         {
           v4 = v12++; /*0x5fde81*/
           *((unsigned int *)Block + v4) = v1; /*0x5fde8c*/

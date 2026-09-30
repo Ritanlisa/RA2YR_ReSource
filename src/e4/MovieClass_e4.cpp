@@ -14,7 +14,7 @@ unsigned int MovieClass::ComputeTime()
   unsigned int v1; // edi
 
   v1 = *((unsigned int *)this + 30); /*0x7c3995*/
-  return 60 * (*((int (__cdecl **)(MovieClass *))(unsigned int *)this + 20))(this) / v1 + *((unsigned int *)this + 82); /*0x7c39ab*/
+  return 60 * (*((int (**)(MovieClass *))(unsigned int *)this + 20))(this) / v1 + *((unsigned int *)this + 82); /*0x7c39ab*/
 
 }
 } // namespace gamemd

@@ -661,19 +661,19 @@ void HouseTypeClass_SaveLoad_Prefix_0(HouseTypeClass *aP0)
   {
     v7 = *a2; /*0x5124a4*/
     a3 = (int *)aP0->veteranAircraft[0]; /*0x5124b1*/
-    (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5); /*0x5124b5*/
+    (*(void (**)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5); /*0x5124b5*/
     for ( i = 0; i < a4; ++i ) /*0x5124c0*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->veteranInfantryCount + 4 * i, 4, 0); /*0x5124d3*/
+      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->veteranInfantryCount + 4 * i, 4, 0); /*0x5124d3*/
     v9 = *a2; /*0x5124e3*/
     a4 = *(unsigned int *)&aP0->__pad_16D[11]; /*0x5124ef*/
-    (*(void (__stdcall **)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x5124f3*/
+    (*(void (**)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x5124f3*/
     for ( j = 0; j < a4; ++j ) /*0x5124fe*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, *(unsigned int *)&aP0->smartAi + 4 * j, 4, 0); /*0x512511*/
+      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, *(unsigned int *)&aP0->smartAi + 4 * j, 4, 0); /*0x512511*/
     v11 = *a2; /*0x512521*/
     a4 = *(unsigned int *)&aP0->__pad_16D[39]; /*0x51252d*/
-    (*(void (__stdcall **)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x512531*/
+    (*(void (**)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x512531*/
     for ( k = 0; k < (int)a3; ++k ) /*0x51253c*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, *(unsigned int *)&aP0->__pad_16D[27] + 4 * k, 4, 0); /*0x51254f*/
+      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, *(unsigned int *)&aP0->__pad_16D[27] + 4 * k, 4, 0); /*0x51254f*/
     return 0; /*0x512559*/
   }
   return result; /*0x51255c*/

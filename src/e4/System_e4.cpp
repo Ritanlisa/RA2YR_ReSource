@@ -362,14 +362,14 @@ void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, i
   v5 = (*v4)(a1, &unk_7F7CD0, &v8); /*0x7a2ec7*/
   if ( v5 >= 0 ) /*0x7a2ecb*/
   {
-    v5 = (*(int (__stdcall **)(int, int, int *))(*(unsigned int *)v8 + 16))(v8, a3, &v7); /*0x7a2ee1*/
+    v5 = (*(int (**)(int, int, int *))(*(unsigned int *)v8 + 16))(v8, a3, &v7); /*0x7a2ee1*/
     if ( v5 >= 0 ) /*0x7a2ee5*/
-      v5 = (*(int (__stdcall **)(int, int, int))(*(unsigned int *)v7 + 20))(v7, a2, a4); /*0x7a2efb*/
+      v5 = (*(int (**)(int, int, int))(*(unsigned int *)v7 + 20))(v7, a2, a4); /*0x7a2efb*/
   }
   if ( v7 ) /*0x7a2f03*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x7a2f08*/
+    (*(void (**)(int))(*(unsigned int *)v7 + 8))(v7); /*0x7a2f08*/
   if ( v8 ) /*0x7a2f11*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)v8 + 8))(v8); /*0x7a2f16*/
+    (*(void (**)(int))(*(unsigned int *)v8 + 8))(v8); /*0x7a2f16*/
   return v5; /*0x7a2f1b*/
 }
 }
@@ -607,7 +607,7 @@ int System_Init_7A2F30(int a1, int a2, ObjectClass * aP2)
   {
     do /*0x7a2fac*/
     {
-      (*(void (__stdcall **)(int))(v4 + 32))(1); /*0x7a2f9c*/
+      (*(void (**)(int))(v4 + 32))(1); /*0x7a2f9c*/
       if ( *(unsigned int *)a1 == 100 ) /*0x7a2fa2*/
         v4 += 28; /*0x7a2fa4*/
       else

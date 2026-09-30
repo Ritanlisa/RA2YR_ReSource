@@ -683,7 +683,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
         goto LABEL_31; /*0x6b3190*/
       if ( !v104 && v22 || v106 <= 0 ) /*0x6b31a7*/
         continue; /*0x6b31a7*/
-      if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v101[2])(&v101, v106 + v22, 0) ) /*0x6b31b5*/
+      if ( ((uint8_t (*)(void ***, int, unsigned int))v101[2])(&v101, v106 + v22, 0) ) /*0x6b31b5*/
       {
   LABEL_31:
         v24 = v105++; /*0x6b31c0*/
@@ -1573,7 +1573,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
         if ( i < v32 /*0x6b5a9f*/
           || (v33 || !v32)
           && v35 > 0
-          && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v30[2])(&v30, v35 + v32, 0) )
+          && ((uint8_t (*)(void ***, int, unsigned int))v30[2])(&v30, v35 + v32, 0) )
         {
           v8 = i++; /*0x6b5aaa*/
           *((unsigned int *)v31 + v8) = v7; /*0x6b5ab5*/
@@ -1603,7 +1603,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
         goto LABEL_33; /*0x6b5b65*/
       if ( !IDA_BYTE1(v27) && v12 || v9 <= 0 ) /*0x6b5b73*/
         goto LABEL_35; /*0x6b5b73*/
-      if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v24[2])(&v24, v9 + v12, 0) ) /*0x6b5b81*/
+      if ( ((uint8_t (*)(void ***, int, unsigned int))v24[2])(&v24, v9 + v12, 0) ) /*0x6b5b81*/
         goto LABEL_33; /*0x6b5b86*/
   LABEL_34:
       v12 = v26; /*0x6b5b9a*/
@@ -1622,7 +1622,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
     {
       if ( !IDA_BYTE1(v27) && v12 || v9 <= 0 ) /*0x6b5b3e*/
         goto LABEL_35; /*0x6b5b3e*/
-      if ( !((uint8_t (__thiscall *)(void ***, int, unsigned int))v24[2])(&v24, v9 + v12, 0) ) /*0x6b5b51*/
+      if ( !((uint8_t (*)(void ***, int, unsigned int))v24[2])(&v24, v9 + v12, 0) ) /*0x6b5b51*/
         goto LABEL_34; /*0x6b5b51*/
     }
   LABEL_33:
@@ -1731,7 +1731,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
         if ( i < v33 /*0x6b5d8f*/
           || (v34 || !v33)
           && v36 > 0
-          && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v31[2])(&v31, v36 + v33, 0) )
+          && ((uint8_t (*)(void ***, int, unsigned int))v31[2])(&v31, v36 + v33, 0) )
         {
           v9 = i++; /*0x6b5d9a*/
           *((unsigned int *)v32 + v9) = v8; /*0x6b5da5*/
@@ -1761,7 +1761,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
         goto LABEL_33; /*0x6b5e55*/
       if ( !IDA_BYTE1(v28) && v13 || v10 <= 0 ) /*0x6b5e63*/
         goto LABEL_35; /*0x6b5e63*/
-      if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v25[2])(&v25, v10 + v13, 0) ) /*0x6b5e71*/
+      if ( ((uint8_t (*)(void ***, int, unsigned int))v25[2])(&v25, v10 + v13, 0) ) /*0x6b5e71*/
         goto LABEL_33; /*0x6b5e76*/
   LABEL_34:
       v13 = v27; /*0x6b5e8a*/
@@ -1780,7 +1780,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
     {
       if ( !IDA_BYTE1(v28) && v13 || v10 <= 0 ) /*0x6b5e2e*/
         goto LABEL_35; /*0x6b5e2e*/
-      if ( !((uint8_t (__thiscall *)(void ***, int, unsigned int))v25[2])(&v25, v10 + v13, 0) ) /*0x6b5e41*/
+      if ( !((uint8_t (*)(void ***, int, unsigned int))v25[2])(&v25, v10 + v13, 0) ) /*0x6b5e41*/
         goto LABEL_34; /*0x6b5e41*/
     }
   LABEL_33:
@@ -1844,7 +1844,7 @@ void sub_6B6230()
   v0 = 214; /*0x6b6270*/
   if ( byte_A8E9A0 ) /*0x6b6275*/
     v0 = 184; /*0x6b6277*/
-  Dialog = (HWND)CreateDialog(v0, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))AudioSettings::DlgProc, 0); /*0x6b6281*/
+  Dialog = (HWND)CreateDialog(v0, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))AudioSettings::DlgProc, 0); /*0x6b6281*/
   if ( Dialog ) /*0x6b6285*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x6b628f*/
@@ -1926,7 +1926,7 @@ int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned cha
   int v64; // [esp+60h] [ebp+Ch]
   int v65; // [esp+60h] [ebp+Ch]
 
-  v59 = (*(int (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)a1 + 92))(0, 0); /*0x6b8f27*/
+  v59 = (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)a1 + 92))(0, 0); /*0x6b8f27*/
   v42 = 0; /*0x6b8f3a*/
   v6 = a5; /*0x6b8f3e*/
   v44 = 0; /*0x6b8f41*/
@@ -2959,7 +2959,7 @@ LABEL_2:
       break;
     if ( !ppv[0] )
       WinAPI::Wrapper(-2147467261);
-    (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv[0] + 8))(ppv[0]);
+    (*(void (**)(LPVOID))(*(unsigned int *)ppv[0] + 8))(ppv[0]);
     ppv[0] = 0;
     COM_SafeRelease((int *)ppv);
     v22 += 2;
@@ -4309,7 +4309,7 @@ void WinMain_Setup()
   }
   if ( g_TacticalClass_Instance ) /*0x6bea07*/
   {
-    ((void (__thiscall *)(LPPERSISTSTREAM, int))g_TacticalClass_Instance->__tail_0[1].QueryInterface)( /*0x6bea0d*/
+    ((void (*)(LPPERSISTSTREAM, int))g_TacticalClass_Instance->__tail_0[1].QueryInterface)( /*0x6bea0d*/
       g_TacticalClass_Instance,
       1);
     g_TacticalClass_Instance = 0; /*0x6bea10*/

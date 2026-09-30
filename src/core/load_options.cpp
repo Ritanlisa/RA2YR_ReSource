@@ -103,7 +103,7 @@ LoadOptions::LoadOptions() {
   this->extension = &(void*)(void*)&LoadOptionsClass_vftable; /*0x558770*/
   *(unsigned int *)&((unsigned char *)(this) + 0x4)[4] = &off_829EA0; /*0x558776*/
   this->max_entries = 2048; /*0x55877d*/
-  (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x558784*/
+  (*(void (**)(char *))(v3 + 12))(p_is_active); /*0x558784*/
   return &this->extension; /*0x558789*/
 }
 LoadOptions::~LoadOptions() {
@@ -123,7 +123,7 @@ void LoadOptions::Cleanup() {
     RA2_OPDEL(*(void **)(*(unsigned int *)&((unsigned char *)(this) + 0x22)[2] + 4 * v2)); /*0x5587ad*/
   v3 = *(unsigned int *)&this->is_active; /*0x5587bd*/
   p_is_active = &this->is_active; /*0x5587c0*/
-  (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
+  (*(void (**)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
   result = *((unsigned int *)p_is_active + 1); /*0x5587c8*/
   *(unsigned int *)p_is_active = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x5587cb*/
   if ( result && p_is_active[13] ) /*0x5587d5*/
@@ -196,7 +196,7 @@ bool LoadOptions::Check() {
   {
     while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
          || !_strcmpi(FindFileData.cFileName, MultiByteStr)
-         || (*((uint8_t (__thiscall **)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
+         || (*((uint8_t (**)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
               this,
               v7,
               &FindFileData) != 1
@@ -250,7 +250,7 @@ bool LoadOptions::Check() {
       {
         while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
              || !_strcmpi(FindFileData.cFileName, MultiByteStr)
-             || (*((uint8_t (__thiscall **)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
+             || (*((uint8_t (**)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
                   this,
                   v7,
                   &FindFileData) != 1
@@ -431,7 +431,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAVFileEntryClass *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x55a292*/
+    (*(void (**)(_VectorClass_PAVFileEntryClass *))(*(unsigned int *)((unsigned char *)(this) + 0x0) + 12))(this); /*0x55a292*/
     return 1; /*0x55a298*/
   }
 }

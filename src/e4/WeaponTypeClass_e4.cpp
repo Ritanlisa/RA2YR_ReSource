@@ -361,10 +361,10 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
       DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v5->Anim, 0, 0); /*0x772d2b*/
       v5-((unsigned int *)(>Anim))[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x772d30*/
     }
-    (*(void (__stdcall **)(int *, WeaponTypeClass **, int, unsigned int, int))(*v7 + 12))(v7, &aP0, 4, 0, v4); /*0x772d42*/
+    (*(void (**)(int *, WeaponTypeClass **, int, unsigned int, int))(*v7 + 12))(v7, &aP0, 4, 0, v4); /*0x772d42*/
     for ( i = 0; i < (int)a2; ++i ) /*0x772d4d*/
     {
-      (*(void (__stdcall **)(int *, int *, int, unsigned int))(*v7 + 12))(v7, &a3, 4, 0); /*0x772d5b*/
+      (*(void (**)(int *, int *, int, unsigned int))(*v7 + 12))(v7, &a3, 4, 0); /*0x772d5b*/
       DynamicVector::Add_Alt4((DynamicVector *)v5->Anim, &a3); /*0x772d69*/
     }
     if ( Report ) /*0x772d77*/
@@ -372,18 +372,18 @@ v5 = (gamemd::WeaponTypeClass *)((int *)(aP0));
       DynamicVectorClass::Construct((DynamicVectorClass *)Report, 0, 0); /*0x772d7f*/
       *Report = (int)&TypeList_int_vftable; /*0x772d84*/
     }
-    (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v7 + 12))(v7, &a2, 4, 0); /*0x772d97*/
+    (*(void (**)(int *, int **, int, unsigned int))(*v7 + 12))(v7, &a2, 4, 0); /*0x772d97*/
     for ( j = 0; j < (int)a2; ++j ) /*0x772da2*/
     {
-      (*(void (__stdcall **)(int *, int *, int, unsigned int))(*v7 + 12))(v7, &a3, 4, 0); /*0x772db0*/
+      (*(void (**)(int *, int *, int, unsigned int))(*v7 + 12))(v7, &a3, 4, 0); /*0x772db0*/
       DynamicVector::Add_Alt((DynamicVector *)Report, &a3); /*0x772dba*/
     }
     if ( v5 != (WeaponTypeClass *)-216 ) /*0x772dce*/
       TypeList::Construct((TypeList *)v5->DownReport); /*0x772dd2*/
-    (*(void (__stdcall **)(int *, int **, int))(*v7 + 12))(v7, &a2, 4); /*0x772de3*/
+    (*(void (**)(int *, int **, int))(*v7 + 12))(v7, &a2, 4); /*0x772de3*/
     for ( k = 0; k < (int)aP0; ++k ) /*0x772dee*/
     {
-      (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v7 + 12))(v7, &a2, 4, 0); /*0x772dfc*/
+      (*(void (**)(int *, int **, int, unsigned int))(*v7 + 12))(v7, &a2, 4, 0); /*0x772dfc*/
       DynamicVector::Add_Alt((DynamicVector *)v5->DownReport, &a2); /*0x772e06*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v5->Warhead); /*0x772e1e*/
@@ -417,19 +417,19 @@ void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a
   {
     v7 = *a2; /*0x772ed4*/
     a3 = (int *)a1->Anim[4]; /*0x772ee1*/
-    (*(void (__stdcall **)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5); /*0x772ee5*/
+    (*(void (**)(int *, int **, int, unsigned int, int))(v7 + 16))(a2, &a3, 4, 0, v5); /*0x772ee5*/
     for ( i = 0; i < a4; ++i ) /*0x772ef0*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->Anim[1] + 4 * i, 4, 0); /*0x772f03*/
+      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->Anim[1] + 4 * i, 4, 0); /*0x772f03*/
     v9 = *a2; /*0x772f13*/
     a4 = a1->Report[4]; /*0x772f1f*/
-    (*(void (__stdcall **)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x772f23*/
+    (*(void (**)(int *, int *, int, unsigned int))(v9 + 16))(a2, &a4, 4, 0); /*0x772f23*/
     for ( j = 0; j < a4; ++j ) /*0x772f2e*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->Report[1] + 4 * j, 4, 0); /*0x772f41*/
+      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->Report[1] + 4 * j, 4, 0); /*0x772f41*/
     v11 = *a2; /*0x772f51*/
     a4 = a1->DownReport[4]; /*0x772f5d*/
-    (*(void (__stdcall **)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x772f61*/
+    (*(void (**)(int *, int *, int))(v11 + 16))(a2, &a4, 4); /*0x772f61*/
     for ( k = 0; k < (int)a3; ++k ) /*0x772f6c*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->DownReport[1] + 4 * k, 4, 0); /*0x772f7f*/
+      (*(void (**)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1->DownReport[1] + 4 * k, 4, 0); /*0x772f7f*/
     return 0; /*0x772f89*/
   }
   return result; /*0x772f8c*/

@@ -261,7 +261,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
   v37 = 20000; /*0x59448d*/
   *((unsigned int *)dword_ABED10 + 20 * v7 + 15) = v6; /*0x594498*/
   if ( v36 < v34 /*0x5944c7*/
-    || (v35 || !v34) && v37 > 0 && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v32[2])(&v32, v37 + v34, 0) )
+    || (v35 || !v34) && v37 > 0 && ((uint8_t (*)(void ***, int, unsigned int))v32[2])(&v32, v37 + v34, 0) )
   {
     v8 = v36++; /*0x5944d6*/
     *((unsigned int *)Block + v8) = *(unsigned int *)(a1 + 36); /*0x5944e0*/
@@ -329,7 +329,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
             if ( v36 < v34 /*0x594698*/
               || (v35 || !v34)
               && v37 > 0
-              && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v32[2])(&v32, v37 + v34, 0) )
+              && ((uint8_t (*)(void ***, int, unsigned int))v32[2])(&v32, v37 + v34, 0) )
             {
               v25 = v36++; /*0x5946a7*/
               *((unsigned int *)Block + v25) = *(unsigned int *)v23; /*0x5946b0*/
@@ -987,7 +987,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       if ( v47 < v45 /*0x59aa69*/
         || (v46 || !v45)
         && v48 > 0
-        && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v43[2])(&v43, v48 + v45, 0) )
+        && ((uint8_t (*)(void ***, int, unsigned int))v43[2])(&v43, v48 + v45, 0) )
       {
         v11 = v47++; /*0x59aa74*/
         *((unsigned int *)v44 + v11) = v5; /*0x59aa7f*/
@@ -995,7 +995,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       if ( i < v39 /*0x59aaaf*/
         || (IDA_BYTE1(v40) || !v39)
         && v42 > 0
-        && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v37[2])(&v37, v42 + v39, 0) )
+        && ((uint8_t (*)(void ***, int, unsigned int))v37[2])(&v37, v42 + v39, 0) )
       {
         v12 = i++; /*0x59aaba*/
         *((unsigned int *)Block + v12) = v9; /*0x59aac5*/

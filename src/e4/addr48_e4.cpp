@@ -294,7 +294,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
                 if ( (int)v121 < v126
                   || (IDA_BYTE1(v127) || !v126)
                   && var94 > 0
-                  && ((uint8_t (__thiscall *)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
+                  && ((uint8_t (*)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
                 {
                   v19 = (IUnknown *)((int *)((IUnknown *)(v121)));
                   v121 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1))))))))))))));
@@ -446,7 +446,7 @@ LABEL_67:
         if ( (int)v121 < v126
           || (IDA_BYTE1(v127) || !v126)
           && var94 > 0
-          && ((uint8_t (__thiscall *)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
+          && ((uint8_t (*)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
         {
     unsigned int v145 = 0;  /* G37 hoist */
     unsigned int v145 = 0;  /* G37 hoist */
@@ -541,8 +541,8 @@ LABEL_82:
     while ( v54 < (int)v121 );
   }
   int v55 = v126;
-  ((void (__thiscall *)(IUnknown **))v117->field_C)(&v117);
-  ((void (__thiscall *)(IUnknown **, int, unsigned int))v117->field_8)(&v117, v55, 0);
+  ((void (*)(IUnknown **))v117->field_C)(&v117);
+  ((void (*)(IUnknown **, int, unsigned int))v117->field_8)(&v117, v55, 0);
   if ( v114 )
   {
     v117 = (IUnknown *)&vt_VectorClass_DamageGroup;
@@ -740,7 +740,7 @@ LABEL_189:
                     }
                   }
                   Coord::To_Screen(*(unsigned int **)&stru_87C374[44976], aP2, (IUnknown *)v122);
-                  ((void (__stdcall *)(int, int, int, int, char))Cell::CreateCrater)(
+                  ((void (*)(int, int, int, int, char))Cell::CreateCrater)(
                     v122[0] - 96,
                     v122[1] - 96,
                     192,
@@ -816,7 +816,7 @@ LABEL_163:
                 }
               }
               Coord::To_Screen(*(unsigned int **)&stru_87C374[44976], aP2, (IUnknown *)&v141);
-              ((void (__stdcall *)(int, int, int, int, char))Cell::CreateCrater)(
+              ((void (*)(int, int, int, int, char))Cell::CreateCrater)(
                 IDA_LODWORD(v141) - 128,
                 IDA_HIDWORD(v141) - 128,
                 256,

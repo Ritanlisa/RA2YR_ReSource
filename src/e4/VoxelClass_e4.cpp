@@ -111,7 +111,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   }
   if ( !*((unsigned int *)a1 + 413) ) /*0x73c679*/
     WinAPI::Wrapper(-2147467261); /*0x73c688*/
-  if ( (*(uint8_t (__stdcall **)(unsigned int))(**((unsigned int **)a1 + 413) + 16))(*((unsigned int *)a1 + 413)) /*0x73c6a3*/
+  if ( (*(uint8_t (**)(unsigned int))(**((unsigned int **)a1 + 413) + 16))(*((unsigned int *)a1 + 413)) /*0x73c6a3*/
     || (v18 = *((unsigned int *, void * a1)a1 + 433), *(unsigned int *)(v18 + 664)) )
   {
     v18 = *((unsigned int *)a1 + 433); /*0x73c702*/
@@ -186,7 +186,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       v66 = -1; /*0x73c84e*/
       if ( !v28 ) /*0x73c858*/
         WinAPI::Wrapper(-2147467261); /*0x73c85f*/
-      v29 = (const void *)(*(int (__stdcall **)(unsigned int, unsigned char *, int *))(**((unsigned int **)a1 + 413) + 36))( /*0x73c87a*/
+      v29 = (const void *)(*(int (**)(unsigned int, unsigned char *, int *))(**((unsigned int **)a1 + 413) + 36))( /*0x73c87a*/
                             *((unsigned int *)a1 + 413),
                             v73,
                             &v66);

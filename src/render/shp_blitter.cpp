@@ -70,8 +70,8 @@ bool SHPBlitterCopy(
     // --- 2. Resolve blitter function pointers ---
     // vtable layout varies based on the blitter type
     // We use a simple struct with direct vtable offsets
-    using BlitFn = void (__stdcall *)(int, int*, int, int, int, int, int, int);
-    using BlitFnTint = void (__stdcall *)(int, int*, int, int, int, int, int);
+    using BlitFn = void (*)(int, int*, int, int, int, int, int, int);
+    using BlitFnTint = void (*)(int, int*, int, int, int, int, int);
 
     BlitFn blit_row = nullptr;
     BlitFnTint blit_row_tint = nullptr;

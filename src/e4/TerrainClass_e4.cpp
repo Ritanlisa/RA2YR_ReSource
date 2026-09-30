@@ -149,7 +149,7 @@ LABEL_162:
       int v81 = ObjectClass::FindOwner(a5, *(AnimClass **)((unsigned int)(a1)+ 144));
       if ( !v81 )
         return 0;
-      (*(void (__stdcall **)(int))(*(unsigned int *)(v81 + 36) + 56))(v81 + 36);
+      (*(void (**)(int))(*(unsigned int *)(v81 + 36) + 56))(v81 + 36);
       return 1;
     case 7:
       int v78 = *(unsigned int *)((unsigned int)(a1)+ 48);
@@ -923,7 +923,7 @@ LABEL_60:
                                                                                     + 13477) == 0;
       return 1;
     case 0x62:
-      Array::ForEach(aP0, 4, (IUnknown *)0x64, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2);
+      Array::ForEach(aP0, 4, (IUnknown *)0x64, (int (*)(int))__0Iostream_init_QAE_XZ_2);
       int v65 = 0;
       int v66 = 0;
       v67 = aP0;

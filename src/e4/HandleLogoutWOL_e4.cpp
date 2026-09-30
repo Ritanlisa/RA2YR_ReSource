@@ -24,9 +24,9 @@ int sub_7AC500(int a1)
     {
       v3 = *(unsigned int *)(v2 + 16); /*0x7ac520*/
       if ( v3 ) /*0x7ac525*/
-        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(v2 + 16)); /*0x7ac52a*/
+        (*(void (**)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(v2 + 16)); /*0x7ac52a*/
       *(unsigned int *)(v2 + 16) = 0; /*0x7ac52f*/
-      (*(void (__stdcall **)(unsigned int))(v2 + 32))(0); /*0x7ac536*/
+      (*(void (**)(unsigned int))(v2 + 32))(0); /*0x7ac536*/
       if ( *(unsigned int *)a1 == 100 ) /*0x7ac53c*/
         v2 += 28; /*0x7ac53e*/
       else
@@ -42,7 +42,7 @@ int sub_7AC500(int a1)
   {
     do /*0x7ac583*/
     {
-      ((void (__stdcall *)(unsigned int))*v4)(v4[1]); /*0x7ac571*/
+      ((void (*)(unsigned int))*v4)(v4[1]); /*0x7ac571*/
       v5 = (unsigned int *)v4[2]; /*0x7ac573*/
       RA2_OPDEL(v4); /*0x7ac577*/
       v4 = v5; /*0x7ac57f*/

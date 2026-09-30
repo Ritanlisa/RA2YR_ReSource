@@ -669,8 +669,8 @@ void DumpNetworkStats() {
           Scenario::ClearScreen(); /*0x69bb01*/
           dword_B07784 = (int)g_CurrentFrame + 3; /*0x69bb0f*/
         }
-        if ( !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 28))(g_WWMouseClass_Instance) ) /*0x69bb1d*/
-          (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 24))(g_WWMouseClass_Instance); /*0x69bb2c*/
+        if ( !(*(uint8_t (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 28))(g_WWMouseClass_Instance) ) /*0x69bb1d*/
+          (*(void (**)(int))(*(unsigned int *)g_WWMouseClass_Instance + 24))(g_WWMouseClass_Instance); /*0x69bb2c*/
         return EndBufferMixer((int *)g_MixerState, 0x4000); /*0x69bb3a*/
       }
     }
@@ -845,7 +845,7 @@ void NetworkShutdownInterface() {
 
     IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x5da72b*/
     if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5da732*/
-      result = (***(int (__thiscall ****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5da738*/
+      result = (***(int (****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5da738*/
     *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5da73a*/
     return result; /*0x5da740*/
   }

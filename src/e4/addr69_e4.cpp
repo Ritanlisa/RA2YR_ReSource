@@ -1265,7 +1265,7 @@ void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   {
     if ( IDA_HIWORD(a3) != 1 ) /*0x695998*/
       return 0; /*0x695998*/
-    v11 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x69599e*/
+    v11 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x69599e*/
     wParamb = SendMessageA(a4, 0x147u, 0, 0); /*0x6959b9*/
     if ( SendMessageA(a4, 0x150u, wParamb, 0) == 4 ) /*0x6959c2*/
     {
@@ -1300,7 +1300,7 @@ void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   }
   if ( IDA_HIWORD(a3) != 1 ) /*0x69593a*/
     return 0; /*0x69593a*/
-  v11 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x695940*/
+  v11 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x695940*/
   wParama = SendMessageA(a4, 0x147u, 0, 0); /*0x69595b*/
   if ( SendMessageA(a4, 0x150u, wParama, 0) != 3 ) /*0x695964*/
     goto LABEL_34; /*0x695964*/

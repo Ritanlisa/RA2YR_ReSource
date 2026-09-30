@@ -1269,7 +1269,7 @@ LABEL_223:
                   v124 = 400;
                   v125 = 540;
                   var6A0 = 4;
-                  ((void (__thiscall *)(CCINIClass **, IPXManagerClass **, unsigned int))v84->sectionHead[1])(
+                  ((void (*)(CCINIClass **, IPXManagerClass **, unsigned int))v84->sectionHead[1])(
                     var6E4,
                     &v121,
                     0);
@@ -1348,7 +1348,7 @@ LABEL_148:
                     v75 = *var6E4;
                     v160[2] = 35;
                     v160[3] = 3;
-                    ((void (__thiscall *)(CCINIClass **, unsigned int *, int))v75->sectionHead[1])(
+                    ((void (*)(CCINIClass **, unsigned int *, int))v75->sectionHead[1])(
                       var6E4,
                       v160,
                       (255 >> stru_89E138[11420] << stru_89E138[11416])
@@ -1757,7 +1757,7 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
   v6 = a2; /*0x64a0cc*/
   v7 = 0; /*0x64a0d5*/
   v41 = 0; /*0x64a0e0*/
-  v8 = (*(int (__stdcall **)(int))(*(unsigned int *)a1 + 24))(a3); /*0x64a0e7*/
+  v8 = (*(int (**)(int))(*(unsigned int *)a1 + 24))(a3); /*0x64a0e7*/
   if ( byte_A8DBA0 ) /*0x64a0f0*/
   {
     v9 = *(unsigned char *)v6; /*0x64a0f6*/
@@ -2001,7 +2001,7 @@ int Network_ProcessMessage(int a1, int a2)
     v5 = CharToWideString((unsigned char *)(a1 + 4)); /*0x64a678*/
     v6 = (wchar_t *)(a1 + 25); /*0x64a67f*/
     v7 = Math::RoundToInt(*(double *)&dword_8871E0[1].__pad_A0 * 900.0); /*0x64a68e*/
-    if ( !((int (__stdcall *)(wchar_t *, int, wchar_t *, int))ScrollingText::AddLine)( /*0x64a6a1*/
+    if ( !((int (*)(wchar_t *, int, wchar_t *, int))ScrollingText::AddLine)( /*0x64a6a1*/
             (wchar_t *)v5,
             *(uint8_t *)(a1 + 24),
             (wchar_t *)(a1 + 25),
@@ -2934,7 +2934,7 @@ void Network_ProcessMapEvent(int a1, int a2)
               && (v81 < v79
                || (v80 || !v79)
                && v82 > 0
-               && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v77[2])(&v77, v82 + v79, 0)) )
+               && ((uint8_t (*)(void ***, int, unsigned int))v77[2])(&v77, v82 + v79, 0)) )
             {
               v9 = v81++; /*0x64cece*/
               *((unsigned int *)Block + v9) = v7; /*0x64ced9*/
@@ -3017,7 +3017,7 @@ void Network_ProcessMapEvent(int a1, int a2)
               if ( v81 < v79 /*0x64d117*/
                 || (v80 || !v79)
                 && v82 > 0
-                && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v77[2])(&v77, v82 + v79, 0) )
+                && ((uint8_t (*)(void ***, int, unsigned int))v77[2])(&v77, v82 + v79, 0) )
               {
                 v25 = v81++; /*0x64d126*/
                 *((unsigned int *)Block + v25) = *v24; /*0x64d12f*/
@@ -3025,7 +3025,7 @@ void Network_ProcessMapEvent(int a1, int a2)
               if ( v104 < v102 /*0x64d171*/
                 || (IDA_BYTE1(v103) || !v102)
                 && v105 > 0
-                && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v100[2])(&v100, v105 + v102, 0) )
+                && ((uint8_t (*)(void ***, int, unsigned int))v100[2])(&v100, v105 + v102, 0) )
               {
                 v26 = v104++; /*0x64d186*/
                 *((unsigned int *)v101 + v26) = v73; /*0x64d194*/
@@ -3033,7 +3033,7 @@ void Network_ProcessMapEvent(int a1, int a2)
               if ( j < v96 /*0x64d1c4*/
                 || (IDA_BYTE1(v97) || !v96)
                 && v99 > 0
-                && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v94[2])(&v94, v99 + v96, 0) )
+                && ((uint8_t (*)(void ***, int, unsigned int))v94[2])(&v94, v99 + v96, 0) )
               {
                 v27 = j++; /*0x64d1cf*/
                 *((unsigned char *)v95 + v27) = 0; /*0x64d1da*/
@@ -3410,7 +3410,7 @@ void ComputeNetworkFrameCRC()
       {
         v21 = *(unsigned int **)(*(v18 - 3) + 4 * v19); /*0x64dcfd*/
         if ( (*(int (**)(unsigned int *))(*v21 + 44))(v21) != 4 /*0x64dd19*/
-          || (*(int (__stdcall **)(unsigned int *))(v21[1] + 16))(v21 + 1) != -2 )
+          || (*(int (**)(unsigned int *))(v21[1] + 16))(v21 + 1) != -2 )
         {
           v22 = v21[39]; /*0x64dd23*/
           v23 = v21[40]; /*0x64dd25*/
@@ -3432,7 +3432,7 @@ void ComputeNetworkFrameCRC()
   {
     v27 = (unsigned int *)*((unsigned int *)dword_87F77C + k); /*0x64ddad*/
     if ( (*(int (**)(unsigned int *))(*v27 + 44))(v27) != 4 /*0x64ddc9*/
-      || (*(int (__stdcall **)(unsigned int *))(v27[1] + 16))(v27 + 1) != -2 )
+      || (*(int (**)(unsigned int *))(v27[1] + 16))(v27 + 1) != -2 )
     {
       v28 = v27[39]; /*0x64ddd3*/
       v29 = v27[40]; /*0x64ddd5*/

@@ -90,27 +90,27 @@ void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
   }
   v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
-  v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x68268c*/
+  v6 = (*(int (**)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x68268c*/
   if ( v6 >= 0 ) /*0x6826ad*/
   {
     if ( !v9 ) /*0x6826d4*/
       WinAPI::Wrapper(-2147467261); /*0x6826db*/
     v7 = wcslen(WideCharStr); /*0x6826f0*/
-    v6 = (*(int (__stdcall **)(int, WCHAR *, size_t, unsigned int))(*(unsigned int *)v9 + 16))(v9, WideCharStr, 2 * v7 + 2, 0); /*0x682706*/
+    v6 = (*(int (**)(int, WCHAR *, size_t, unsigned int))(*(unsigned int *)v9 + 16))(v9, WideCharStr, 2 * v7 + 2, 0); /*0x682706*/
     if ( v6 >= 0 ) /*0x68270f*/
     {
       if ( !v9 ) /*0x682729*/
         WinAPI::Wrapper(-2147467261); /*0x682730*/
-      v6 = (*(int (__stdcall **)(int, unsigned int))(*(unsigned int *)v9 + 32))(v9, 0); /*0x682741*/
+      v6 = (*(int (**)(int, unsigned int))(*(unsigned int *)v9 + 32))(v9, 0); /*0x682741*/
       if ( v6 >= 0 ) /*0x682749*/
       {
         if ( v9 ) /*0x682763*/
-          (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x682768*/
+          (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x682768*/
       }
       else if ( v9 ) /*0x68274d*/
       {
   LABEL_18:
-        (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x68274f*/
+        (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x68274f*/
         return v6; /*0x68275e*/
       }
     }
@@ -142,13 +142,13 @@ void COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
   MultiByteToWideChar(0, 0, lpMultiByteStr, -1, WideCharStr, 128); /*0x68289f*/
   v3 = *a1; /*0x6828b3*/
   v7 = 0; /*0x6828bb*/
-  if ( (*(int (__stdcall **)(int *, void *, int, int *))(v3 + 16))(a1, &unk_7F7D10, 18, &v7) >= 0 ) /*0x6828c8*/
+  if ( (*(int (**)(int *, void *, int, int *))(v3 + 16))(a1, &unk_7F7D10, 18, &v7) >= 0 ) /*0x6828c8*/
     goto LABEL_7; /*0x6828c8*/
   if ( v7 ) /*0x6828d0*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x6828d5*/
+    (*(void (**)(int))(*(unsigned int *)v7 + 8))(v7); /*0x6828d5*/
   v4 = *a1; /*0x6828d8*/
   v7 = 0; /*0x6828ee*/
-  v5 = (*(int (__stdcall **)(int *, void *, unsigned int, unsigned int, int, int *))(v4 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v7); /*0x6828f9*/
+  v5 = (*(int (**)(int *, void *, unsigned int, unsigned int, int, int *))(v4 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v7); /*0x6828f9*/
   if ( v5 >= 0 ) /*0x6828fd*/
   {
   LABEL_7:
@@ -158,11 +158,11 @@ void COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
     v9[0] = 31; /*0x68293e*/
     if ( !v7 ) /*0x682945*/
       WinAPI::Wrapper(-2147467261); /*0x68294c*/
-    v5 = (*(int (__stdcall **)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v7 + 16))(v7, 1, v8, v9, 2); /*0x682969*/
+    v5 = (*(int (**)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v7 + 16))(v7, 1, v8, v9, 2); /*0x682969*/
     if ( v5 >= 0 ) /*0x682971*/
     {
       if ( v7 ) /*0x68298b*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x682990*/
+        (*(void (**)(int))(*(unsigned int *)v7 + 8))(v7); /*0x682990*/
     }
     else if ( v7 ) /*0x682975*/
     {
@@ -172,7 +172,7 @@ void COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
   else if ( v7 ) /*0x682905*/
   {
   LABEL_6:
-    (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x68290b*/
+    (*(void (**)(int))(*(unsigned int *)v7 + 8))(v7); /*0x68290b*/
     return v5; /*0x68291a*/
   }
   return v5; /*0x682913*/
@@ -202,26 +202,26 @@ v8 = (int)((unsigned int *)(0));
   }
   v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
-  v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v8); /*0x682ab6*/
+  v6 = (*(int (**)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v8); /*0x682ab6*/
   if ( v6 >= 0 ) /*0x682ad4*/
   {
     if ( !v8 ) /*0x682af6*/
       WinAPI::Wrapper(-2147467261); /*0x682afd*/
-    v6 = (*(int (__stdcall **)(int, char *, int, unsigned int))(*(unsigned int *)v8 + 16))(v8, &a3, 4, 0); /*0x682b15*/
+    v6 = (*(int (**)(int, char *, int, unsigned int))(*(unsigned int *)v8 + 16))(v8, &a3, 4, 0); /*0x682b15*/
     if ( v6 >= 0 ) /*0x682b1d*/
     {
       if ( !v8 ) /*0x682b32*/
         WinAPI::Wrapper(-2147467261); /*0x682b39*/
-      v6 = (*(int (__stdcall **)(int, unsigned int))(*(unsigned int *)v8 + 32))(v8, 0); /*0x682b4a*/
+      v6 = (*(int (**)(int, unsigned int))(*(unsigned int *)v8 + 32))(v8, 0); /*0x682b4a*/
       if ( v6 >= 0 ) /*0x682b52*/
       {
         if ( v8 ) /*0x682b67*/
-          (*(void (__stdcall **)(int))(*(unsigned int *)v8 + 8))(v8); /*0x682b6c*/
+          (*(void (**)(int))(*(unsigned int *)v8 + 8))(v8); /*0x682b6c*/
       }
       else if ( v8 ) /*0x682b56*/
       {
   LABEL_18:
-        (*(void (__stdcall **)(int))(*(unsigned int *)v8 + 8))(v8); /*0x682b58*/
+        (*(void (**)(int))(*(unsigned int *)v8 + 8))(v8); /*0x682b58*/
         return v6; /*0x682b62*/
       }
     }
@@ -249,13 +249,13 @@ void COM_PropertyBag_Read(int * a1, int a2, int a3)
   int v9; // [esp+40h] [ebp-8h]
 
   v6 = 0; /*0x682b8c*/
-  if ( (*(int (__stdcall **)(int *, void *, int, int *))(*a1 + 16))(a1, &unk_7F7D10, 18, &v6) >= 0 ) /*0x682ba4*/
+  if ( (*(int (**)(int *, void *, int, int *))(*a1 + 16))(a1, &unk_7F7D10, 18, &v6) >= 0 ) /*0x682ba4*/
     goto LABEL_7; /*0x682ba4*/
   if ( v6 ) /*0x682bac*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 8))(v6); /*0x682bb1*/
+    (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x682bb1*/
   v3 = *a1; /*0x682bb4*/
   v6 = 0; /*0x682bca*/
-  v4 = (*(int (__stdcall **)(int *, void *, unsigned int, unsigned int, int, int *))(v3 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v6); /*0x682bd5*/
+  v4 = (*(int (**)(int *, void *, unsigned int, unsigned int, int, int *))(v3 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v6); /*0x682bd5*/
   if ( v4 >= 0 ) /*0x682bd9*/
   {
   LABEL_7:
@@ -265,11 +265,11 @@ void COM_PropertyBag_Read(int * a1, int a2, int a3)
     v9 = a3; /*0x682c13*/
     if ( !v6 ) /*0x682c17*/
       WinAPI::Wrapper(-2147467261); /*0x682c1e*/
-    v4 = (*(int (__stdcall **)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v6 + 16))(v6, 1, v7, v8, 2); /*0x682c3b*/
+    v4 = (*(int (**)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v6 + 16))(v6, 1, v7, v8, 2); /*0x682c3b*/
     if ( v4 >= 0 ) /*0x682c43*/
     {
       if ( v6 ) /*0x682c5a*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 8))(v6); /*0x682c5f*/
+        (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x682c5f*/
     }
     else if ( v6 ) /*0x682c47*/
     {
@@ -279,7 +279,7 @@ void COM_PropertyBag_Read(int * a1, int a2, int a3)
   else if ( v6 ) /*0x682be1*/
   {
   LABEL_6:
-    (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 8))(v6); /*0x682be3*/
+    (*(void (**)(int))(*(unsigned int *)v6 + 8))(v6); /*0x682be3*/
     return v4; /*0x682bef*/
   }
   return v4; /*0x682beb*/
@@ -313,7 +313,7 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
   }
   v6 = (void **)((&off_83D65C)[2 * v4]);
   LABEL_5:
-  v7 = (*(int (__stdcall **)(int, void **, unsigned int, int, unsigned int, unsigned int **))(*(unsigned int *)a1 + 16))( /*0x682ca7*/
+  v7 = (*(int (**)(int, void **, unsigned int, int, unsigned int, unsigned int **))(*(unsigned int *)a1 + 16))( /*0x682ca7*/
          a1,
          v6,
          0,
@@ -324,11 +324,11 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
   {
     if ( !a3 ) /*0x682ce3*/
       WinAPI::Wrapper(-2147467261); /*0x682cea*/
-    v7 = (*(int (__stdcall **)(unsigned int *, unsigned int *, int, unsigned int))(*a3 + 12))(a3, v3, 8, 0); /*0x682cfe*/
+    v7 = (*(int (**)(unsigned int *, unsigned int *, int, unsigned int))(*a3 + 12))(a3, v3, 8, 0); /*0x682cfe*/
     if ( v7 >= 0 ) /*0x682d06*/
     {
       if ( a3 ) /*0x682d1b*/
-        (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x682d20*/
+        (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x682d20*/
     }
     else if ( a3 ) /*0x682d0a*/
     {
@@ -338,7 +338,7 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
   else if ( a3 ) /*0x682cc9*/
   {
   LABEL_7:
-    (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x682ccb*/
+    (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x682ccb*/
     return v7; /*0x682cd5*/
   }
   return v7; /*0x682cd3*/
@@ -368,26 +368,26 @@ v8 = (int)((unsigned int *)(0));
   }
   v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
-  v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v8); /*0x682e36*/
+  v6 = (*(int (**)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v8); /*0x682e36*/
   if ( v6 >= 0 ) /*0x682e54*/
   {
     if ( !v8 ) /*0x682e76*/
       WinAPI::Wrapper(-2147467261); /*0x682e7d*/
-    v6 = (*(int (__stdcall **)(int, int, int, unsigned int))(*(unsigned int *)v8 + 16))(v8, a3, 8, 0); /*0x682e95*/
+    v6 = (*(int (**)(int, int, int, unsigned int))(*(unsigned int *)v8 + 16))(v8, a3, 8, 0); /*0x682e95*/
     if ( v6 >= 0 ) /*0x682e9d*/
     {
       if ( !v8 ) /*0x682eb2*/
         WinAPI::Wrapper(-2147467261); /*0x682eb9*/
-      v6 = (*(int (__stdcall **)(int, unsigned int))(*(unsigned int *)v8 + 32))(v8, 0); /*0x682eca*/
+      v6 = (*(int (**)(int, unsigned int))(*(unsigned int *)v8 + 32))(v8, 0); /*0x682eca*/
       if ( v6 >= 0 ) /*0x682ed2*/
       {
         if ( v8 ) /*0x682ee7*/
-          (*(void (__stdcall **)(int))(*(unsigned int *)v8 + 8))(v8); /*0x682eec*/
+          (*(void (**)(int))(*(unsigned int *)v8 + 8))(v8); /*0x682eec*/
       }
       else if ( v8 ) /*0x682ed6*/
       {
   LABEL_18:
-        (*(void (__stdcall **)(int))(*(unsigned int *)v8 + 8))(v8); /*0x682ed8*/
+        (*(void (**)(int))(*(unsigned int *)v8 + 8))(v8); /*0x682ed8*/
         return v6; /*0x682ee2*/
       }
     }
@@ -417,13 +417,13 @@ void COM_SetBufferParams(int * a1, int a2, int * a3)
   int v11; // [esp+44h] [ebp-4h]
 
   v7 = 0; /*0x682f0c*/
-  if ( (*(int (__stdcall **)(int *, void *, int, int *))(*a1 + 16))(a1, &unk_7F7D10, 18, &v7) >= 0 ) /*0x682f24*/
+  if ( (*(int (**)(int *, void *, int, int *))(*a1 + 16))(a1, &unk_7F7D10, 18, &v7) >= 0 ) /*0x682f24*/
     goto LABEL_7; /*0x682f24*/
   if ( v7 ) /*0x682f2c*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x682f31*/
+    (*(void (**)(int))(*(unsigned int *)v7 + 8))(v7); /*0x682f31*/
   v3 = *a1; /*0x682f34*/
   v7 = 0; /*0x682f4a*/
-  v4 = (*(int (__stdcall **)(int *, void *, unsigned int, unsigned int, int, int *))(v3 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v7); /*0x682f55*/
+  v4 = (*(int (**)(int *, void *, unsigned int, unsigned int, int, int *))(v3 + 12))(a1, &unk_7F7D10, 0, 0, 4114, &v7); /*0x682f55*/
   if ( v4 >= 0 ) /*0x682f59*/
   {
   LABEL_7:
@@ -435,11 +435,11 @@ void COM_SetBufferParams(int * a1, int a2, int * a3)
     v11 = v6; /*0x682fa0*/
     if ( !v7 ) /*0x682fa4*/
       WinAPI::Wrapper(-2147467261); /*0x682fab*/
-    v4 = (*(int (__stdcall **)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v7 + 16))(v7, 1, v8, v9, 2); /*0x682fc8*/
+    v4 = (*(int (**)(int, int, unsigned int *, int16_t *, int))(*(unsigned int *)v7 + 16))(v7, 1, v8, v9, 2); /*0x682fc8*/
     if ( v4 >= 0 ) /*0x682fd0*/
     {
       if ( v7 ) /*0x682fe7*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x682fec*/
+        (*(void (**)(int))(*(unsigned int *)v7 + 8))(v7); /*0x682fec*/
     }
     else if ( v7 ) /*0x682fd4*/
     {
@@ -449,7 +449,7 @@ void COM_SetBufferParams(int * a1, int a2, int * a3)
   else if ( v7 ) /*0x682f61*/
   {
   LABEL_6:
-    (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x682f67*/
+    (*(void (**)(int))(*(unsigned int *)v7 + 8))(v7); /*0x682f67*/
     return v4; /*0x682f73*/
   }
   return v4; /*0x682f6f*/
@@ -751,7 +751,7 @@ void PostLoadInitScenario()
       if ( (int)FootClass_Array.? < (int)FootClass_Array.? /*0x684e13*/
         || (IDA_BYTE1(FootClass_Array.?) || !FootClass_Array.?)
         && *((unsigned int *)((char *)&FootClass_Array + 0)) > 0
-        && ((uint8_t (__thiscall *)(ParticleSystemClass **, char *, unsigned int))FootClass_Array.?->?)(
+        && ((uint8_t (*)(ParticleSystemClass **, char *, unsigned int))FootClass_Array.?->?)(
              &FootClass_Array.?,
              (char *)FootClass_Array.? + *((unsigned int *)((char *)&FootClass_Array + 0)),
              0) )
@@ -806,13 +806,13 @@ void PostLoadInitScenario()
       v23 = (HouseClass *)*((unsigned int *)stru_A80220.? + v22); /*0x684f23*/
       if ( v23 ) /*0x684f28*/
       {
-        v24 = (*(int (__stdcall **)(int *))(v23->arrayIndex + 24))(&v23->arrayIndex); /*0x684f34*/
+        v24 = (*(int (**)(int *))(v23->arrayIndex + 24))(&v23->arrayIndex); /*0x684f34*/
         v25 = *(unsigned int *)g_BuildingLoadQueue_Array.?[2]; /*0x684f3b*/
         if ( v24 > *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.?[2] + 184) ) /*0x684f43*/
         {
           do /*0x684f69*/
           {
-            if ( (*(int (__stdcall **)(int *))(v23->arrayIndex + 28))(&v23->arrayIndex) <= 0 ) /*0x684f4d*/
+            if ( (*(int (**)(int *))(v23->arrayIndex + 28))(&v23->arrayIndex) <= 0 ) /*0x684f4d*/
               break; /*0x684f4d*/
             HouseClass::GiveTiberium_Storage(v23, 1.0, 0); /*0x684f58*/
             v26 = *(unsigned int *)(v25 + 184); /*0x684f5d*/
@@ -928,7 +928,7 @@ void ScenarioClass_Reset()
   LightningStorm::End(); /*0x68523c*/
   for ( i = g_AbstractTypePool - 1; i >= 0; --i ) /*0x68524c*/
   {
-    if ( (*(int (__stdcall **)(int))(*(unsigned int *)(*((unsigned int *)dword_A8E96C + i) + 4) + 12))(*((unsigned int *)dword_A8E96C + i) + 4) == 18 /*0x68526c*/
+    if ( (*(int (**)(int))(*(unsigned int *)(*((unsigned int *)dword_A8E96C + i) + 4) + 12))(*((unsigned int *)dword_A8E96C + i) + 4) == 18 /*0x68526c*/
       && i < g_AbstractTypePool )
     {
       v1 = i; /*0x68526f*/
@@ -993,7 +993,7 @@ void ScenarioClass_Reset()
     ++v6; /*0x685386*/
   }
   if ( g_TacticalClass_Instance ) /*0x685398*/
-    ((void (__thiscall *)(LPPERSISTSTREAM, int))g_TacticalClass_Instance->lpVtbl[1].QueryInterface)( /*0x68539e*/
+    ((void (*)(LPPERSISTSTREAM, int))g_TacticalClass_Instance->lpVtbl[1].QueryInterface)( /*0x68539e*/
       g_TacticalClass_Instance,
       1);
   v9 = operator new(0xE18u); /*0x6853a6*/
@@ -1008,7 +1008,7 @@ void ScenarioClass_Reset()
   {
     if ( (*(int (**)(unsigned int))(**(unsigned int **)dword_A8E364 + 44))(*(unsigned int *)dword_A8E364) == 8 ) /*0x6853e7*/
     {
-      (*(void (__stdcall **)(unsigned int))(**(unsigned int **)dword_A8E364 + 8))(*(unsigned int *)dword_A8E364); /*0x6853f3*/
+      (*(void (**)(unsigned int))(**(unsigned int **)dword_A8E364 + 8))(*(unsigned int *)dword_A8E364); /*0x6853f3*/
     }
     else if ( *(unsigned int *)dword_A8E364 ) /*0x6853fe*/
     {
@@ -1601,7 +1601,7 @@ void GenerateScenarioUnits()
           goto LABEL_31; /*0x68890c*/
         if ( !v70 && v16 || v72 <= 0 ) /*0x688920*/
           goto LABEL_33; /*0x688920*/
-        if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v67[2])(&v67, v72 + v16, 0) ) /*0x688931*/
+        if ( ((uint8_t (*)(void ***, int, unsigned int))v67[2])(&v67, v72 + v16, 0) ) /*0x688931*/
         {
   LABEL_31:
           v21 = v71++; /*0x68893c*/
@@ -1628,7 +1628,7 @@ void GenerateScenarioUnits()
                 goto LABEL_45; /*0x68899f*/
               if ( !IDA_BYTE1(v76) && v22 || v78 <= 0 ) /*0x6889b3*/
                 goto LABEL_47; /*0x6889b3*/
-              if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v73[2])(&v73, v78 + v22, 0) ) /*0x6889c2*/
+              if ( ((uint8_t (*)(void ***, int, unsigned int))v73[2])(&v73, v78 + v22, 0) ) /*0x6889c2*/
               {
   LABEL_45:
                 v24 = v77++; /*0x6889cd*/
@@ -1784,7 +1784,7 @@ void GenerateScenarioUnits()
               if ( v64 < v62 /*0x688d44*/
                 || (v63 || !v62)
                 && v65 > 0
-                && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v60[2])(&v60, v65 + v62, 0) )
+                && ((uint8_t (*)(void ***, int, unsigned int))v60[2])(&v60, v65 + v62, 0) )
               {
                 v53 = v64++; /*0x688d4f*/
                 *((unsigned int *)Block + v53) = v51; /*0x688d5a*/
@@ -2194,30 +2194,30 @@ int COM_Property_ReadScenario(int a1, int a2, unsigned int * a3)
   v3 = a3; /*0x682579*/
   a3 = 0; /*0x682581*/
   *v3 = 0; /*0x68258a*/
-  v4 = (*(int (__stdcall **)(int, void *, int, unsigned int **))(*(unsigned int *)a1 + 16))(a1, &unk_7F7D10, 18, &a3); /*0x68259d*/
+  v4 = (*(int (**)(int, void *, int, unsigned int **))(*(unsigned int *)a1 + 16))(a1, &unk_7F7D10, 18, &a3); /*0x68259d*/
   if ( v4 >= 0 ) /*0x6825a1*/
   {
     v6[0] = 1; /*0x6825c9*/
     v6[1] = a2; /*0x6825d1*/
     if ( !a3 ) /*0x6825d5*/
       WinAPI::Wrapper(-2147467261); /*0x6825dc*/
-    v4 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *, unsigned short *))(*a3 + 12))(a3, 1, v6, v7); /*0x6825f7*/
+    v4 = (*(int (**)(unsigned int *, int, unsigned int *, unsigned short *))(*a3 + 12))(a3, 1, v6, v7); /*0x6825f7*/
     if ( v4 >= 0 ) /*0x6825fb*/
     {
       if ( v7[0] == 3 ) /*0x68261b*/
         *v3 = v8; /*0x682621*/
       if ( a3 ) /*0x682629*/
-        (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x68262e*/
+        (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x68262e*/
     }
     else if ( a3 ) /*0x682603*/
     {
-      (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x682608*/
+      (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x682608*/
       return v4; /*0x682612*/
     }
   }
   else if ( a3 ) /*0x6825a9*/
   {
-    (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x6825b2*/
+    (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x6825b2*/
     return v4; /*0x6825bc*/
   }
   return v4; /*0x6825b7*/
@@ -2240,14 +2240,14 @@ int COM_ReadBuffer(int a1, int a2, unsigned int * a3)
   a3 = 0; /*0x682d41*/
   *v3 = 0; /*0x682d4a*/
   v3[1] = 0; /*0x682d50*/
-  v4 = (*(int (__stdcall **)(int, void *, int, unsigned int **))(*(unsigned int *)a1 + 16))(a1, &unk_7F7D10, 18, &a3); /*0x682d64*/
+  v4 = (*(int (**)(int, void *, int, unsigned int **))(*(unsigned int *)a1 + 16))(a1, &unk_7F7D10, 18, &a3); /*0x682d64*/
   if ( v4 >= 0 ) /*0x682d68*/
   {
     v7[0] = 1; /*0x682d90*/
     v7[1] = a2; /*0x682d98*/
     if ( !a3 ) /*0x682d9c*/
       WinAPI::Wrapper(-2147467261); /*0x682da3*/
-    v4 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *, unsigned short *))(*a3 + 12))(a3, 1, v7, v8); /*0x682dbe*/
+    v4 = (*(int (**)(unsigned int *, int, unsigned int *, unsigned short *))(*a3 + 12))(a3, 1, v7, v8); /*0x682dbe*/
     if ( v4 >= 0 ) /*0x682dc2*/
     {
       if ( v8[0] == 64 ) /*0x682de2*/
@@ -2257,17 +2257,17 @@ int COM_ReadBuffer(int a1, int a2, unsigned int * a3)
         v3[1] = v6; /*0x682dee*/
       }
       if ( a3 ) /*0x682df7*/
-        (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x682dfc*/
+        (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x682dfc*/
     }
     else if ( a3 ) /*0x682dca*/
     {
-      (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x682dcf*/
+      (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x682dcf*/
       return v4; /*0x682dd9*/
     }
   }
   else if ( a3 ) /*0x682d70*/
   {
-    (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x682d79*/
+    (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x682d79*/
     return v4; /*0x682d83*/
   }
   return v4; /*0x682d7e*/

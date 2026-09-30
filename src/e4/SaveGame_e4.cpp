@@ -658,7 +658,7 @@ HRESULT SaveGame_Start(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x67fe1e*/
         pPStm = 0; /*0x67fe21*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67fe39*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67fe39*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -706,7 +706,7 @@ HRESULT SaveGame_Start_67FE70(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x67fe9e*/
         pPStm = 0; /*0x67fea1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67feb9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67feb9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -754,7 +754,7 @@ HRESULT SaveGame_Start_67FEF0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x67ff1e*/
         pPStm = 0; /*0x67ff21*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67ff39*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67ff39*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -802,7 +802,7 @@ HRESULT SaveGame_Start_67FF70(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x67ff9e*/
         pPStm = 0; /*0x67ffa1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67ffb9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x67ffb9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -850,7 +850,7 @@ HRESULT SaveGame_Start_67FFF0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68001e*/
         pPStm = 0; /*0x680021*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680039*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680039*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -898,7 +898,7 @@ HRESULT SaveGame_Start_680070(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68009e*/
         pPStm = 0; /*0x6800a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6800b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6800b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -946,7 +946,7 @@ HRESULT SaveGame_Start_6800F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68011e*/
         pPStm = 0; /*0x680121*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680139*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680139*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -994,7 +994,7 @@ HRESULT SaveGame_Start_680170(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68019e*/
         pPStm = 0; /*0x6801a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6801b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6801b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1042,7 +1042,7 @@ HRESULT SaveGame_Start_6801F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68021e*/
         pPStm = 0; /*0x680221*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680239*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680239*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1090,7 +1090,7 @@ HRESULT SaveGame_Start_680270(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68029e*/
         pPStm = 0; /*0x6802a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6802b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6802b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1138,7 +1138,7 @@ HRESULT SaveGame_Start_6802F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68031e*/
         pPStm = 0; /*0x680321*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680339*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680339*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1186,7 +1186,7 @@ HRESULT SaveGame_Start_680370(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68039e*/
         pPStm = 0; /*0x6803a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6803b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6803b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1234,7 +1234,7 @@ HRESULT SaveGame_Start_6803F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68041e*/
         pPStm = 0; /*0x680421*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680439*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680439*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1282,7 +1282,7 @@ HRESULT SaveGame_Start_680470(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68049e*/
         pPStm = 0; /*0x6804a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6804b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6804b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1330,7 +1330,7 @@ HRESULT SaveGame_Start_6804F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68051e*/
         pPStm = 0; /*0x680521*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680539*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680539*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1378,7 +1378,7 @@ HRESULT SaveGame_Start_680570(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68059e*/
         pPStm = 0; /*0x6805a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6805b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6805b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1426,7 +1426,7 @@ HRESULT SaveGame_Start_6805F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68061e*/
         pPStm = 0; /*0x680621*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680639*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680639*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1474,7 +1474,7 @@ HRESULT SaveGame_Start_680670(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68069e*/
         pPStm = 0; /*0x6806a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6806b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6806b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1522,7 +1522,7 @@ HRESULT SaveGame_Start_6806F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68071e*/
         pPStm = 0; /*0x680721*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680739*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680739*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1570,7 +1570,7 @@ HRESULT SaveGame_Start_680770(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68079e*/
         pPStm = 0; /*0x6807a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6807b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6807b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1618,7 +1618,7 @@ HRESULT SaveGame_Start_6807F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68081e*/
         pPStm = 0; /*0x680821*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680839*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680839*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1666,7 +1666,7 @@ HRESULT SaveGame_Start_680870(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68089e*/
         pPStm = 0; /*0x6808a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6808b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6808b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1714,7 +1714,7 @@ HRESULT SaveGame_Start_6808F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68091e*/
         pPStm = 0; /*0x680921*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680939*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680939*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1762,7 +1762,7 @@ HRESULT SaveGame_Start_680970(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x68099e*/
         pPStm = 0; /*0x6809a1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6809b9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x6809b9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1810,7 +1810,7 @@ HRESULT SaveGame_Start_6809F0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680a1e*/
         pPStm = 0; /*0x680a21*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680a39*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680a39*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1858,7 +1858,7 @@ HRESULT SaveGame_Start_680A70(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680a9e*/
         pPStm = 0; /*0x680aa1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680ab9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680ab9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1906,7 +1906,7 @@ HRESULT SaveGame_Start_680AF0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680b1e*/
         pPStm = 0; /*0x680b21*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680b39*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680b39*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -1954,7 +1954,7 @@ HRESULT SaveGame_Start_680B70(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680b9e*/
         pPStm = 0; /*0x680ba1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680bb9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680bb9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -2002,7 +2002,7 @@ HRESULT SaveGame_Start_680BF0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680c1e*/
         pPStm = 0; /*0x680c21*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680c39*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680c39*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -2050,7 +2050,7 @@ HRESULT SaveGame_Start_680C70(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680c9e*/
         pPStm = 0; /*0x680ca1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680cb9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680cb9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -2098,7 +2098,7 @@ HRESULT SaveGame_Start_680CF0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680d1e*/
         pPStm = 0; /*0x680d21*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680d39*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680d39*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -2146,7 +2146,7 @@ HRESULT SaveGame_Start_680D70(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680d9e*/
         pPStm = 0; /*0x680da1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680db9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680db9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -2194,7 +2194,7 @@ HRESULT SaveGame_Start_680DF0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680e1e*/
         pPStm = 0; /*0x680e21*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680e39*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680e39*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -2242,7 +2242,7 @@ HRESULT SaveGame_Start_680E70(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680e9e*/
         pPStm = 0; /*0x680ea1*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680eb9*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680eb9*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);
@@ -2290,7 +2290,7 @@ HRESULT SaveGame_Start_680EF0(LPSTREAM pStm, int a2)
       {
         v7 = *(unsigned int *)(a2 + 4); /*0x680f1e*/
         pPStm = 0; /*0x680f21*/
-        result = (***(int (__stdcall ****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680f39*/
+        result = (***(int (****)(unsigned int, void *, LPPERSISTSTREAM *))(v7 + 4 * v6))( /*0x680f39*/
                    *(unsigned int *)(v7 + 4 * v6),
                    &IID_IPersistStream,
                    &pPStm);

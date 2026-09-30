@@ -70,7 +70,7 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   if ( ppstgOpen->lpVtbl->CreateStream(ppstgOpen, (const OLECHAR *)&off_83D5A8, 4114, 0, 0, (IStream **)&v10) < 0 ) /*0x67d08d*/
   {
     if ( v10 ) /*0x67d095*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d09a*/
+      (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d09a*/
     if ( ppstgOpen ) /*0x67d0a3*/
     {
   LABEL_9:
@@ -84,18 +84,18 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   if ( CoCreateInstance(&stru_7E9540, 0, 7u, &riid, &ppv) >= 0 ) /*0x67d0e5*/
   {
     if ( OleRun((LPUNKNOWN)ppv) >= 0 ) /*0x67d0f4*/
-      (**(void (__stdcall ***)(LPVOID, IID *, int *))ppv)(ppv, &stru_83D598, &v9); /*0x67d107*/
-    (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 8))(ppv); /*0x67d110*/
+      (**(void (***)(LPVOID, IID *, int *))ppv)(ppv, &stru_83D598, &v9); /*0x67d107*/
+    (*(void (**)(LPVOID))(*(unsigned int *)ppv + 8))(ppv); /*0x67d110*/
   }
   if ( !v9 ) /*0x67d119*/
     WinAPI::Wrapper(-2147467261); /*0x67d120*/
-  if ( (*(int (__stdcall **)(int, int))(*(unsigned int *)v9 + 12))(v9, v10) < 0 ) /*0x67d136*/
+  if ( (*(int (**)(int, int))(*(unsigned int *)v9 + 12))(v9, v10) < 0 ) /*0x67d136*/
   {
         this->Debug::Log();
     if ( v9 ) /*0x67d14b*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d150*/
+      (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d150*/
     if ( v10 ) /*0x67d159*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d15e*/
+      (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d15e*/
     if ( ppstgOpen ) /*0x67d167*/
       ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d16c*/
     return 0; /*0x67d17b*/
@@ -110,21 +110,21 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   v7 = ((SaveGame *)(pStm))->Start(); /*0x67d1b4*/
   if ( !v9 ) /*0x67d1bc*/
     WinAPI::Wrapper(-2147467261); /*0x67d1c3*/
-  if ( (*(int (__stdcall **)(int, unsigned int))(*(unsigned int *)v9 + 16))(v9, 0) < 0 ) /*0x67d1d5*/
+  if ( (*(int (**)(int, unsigned int))(*(unsigned int *)v9 + 16))(v9, 0) < 0 ) /*0x67d1d5*/
   {
     if ( pStm ) /*0x67d1dd*/
       pStm->lpVtbl->Release(pStm); /*0x67d1e2*/
     if ( v9 ) /*0x67d1eb*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d1f0*/
+      (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d1f0*/
     if ( v10 ) /*0x67d1f9*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d1fe*/
+      (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d1fe*/
     if ( ppstgOpen ) /*0x67d207*/
       goto LABEL_9; /*0x67d207*/
     return 0; /*0x67d207*/
   }
   if ( !v10 ) /*0x67d228*/
     WinAPI::Wrapper(-2147467261); /*0x67d22f*/
-  (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d23b*/
+  (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d23b*/
   v10 = 0; /*0x67d23e*/
   if ( !ppstgOpen ) /*0x67d248*/
     WinAPI::Wrapper(-2147467261); /*0x67d24f*/
@@ -133,9 +133,9 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
     if ( pStm ) /*0x67d269*/
       pStm->lpVtbl->Release(pStm); /*0x67d26e*/
     if ( v9 ) /*0x67d277*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d27c*/
+      (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d27c*/
     if ( v10 ) /*0x67d285*/
-      (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d28a*/
+      (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d28a*/
     if ( ppstgOpen ) /*0x67d293*/
       ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d298*/
     return 0; /*0x67d2a7*/
@@ -144,9 +144,9 @@ void SaveScenarioClassGame_AdjustMPSaveFileName(LPCCH lpMultiByteStr, wchar_t * 
   if ( pStm ) /*0x67d2bf*/
     pStm->lpVtbl->Release(pStm); /*0x67d2c4*/
   if ( v9 ) /*0x67d2cd*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d2d2*/
+    (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x67d2d2*/
   if ( v10 ) /*0x67d2db*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d2e0*/
+    (*(void (**)(int))(*(unsigned int *)v10 + 8))(v10); /*0x67d2e0*/
   if ( ppstgOpen ) /*0x67d2e9*/
     ppstgOpen->lpVtbl->Release(ppstgOpen); /*0x67d2ee*/
   return v7; /*0x67cf57*/

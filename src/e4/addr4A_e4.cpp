@@ -492,14 +492,14 @@ void CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
     if ( !v11 ) /*0x4a2c21*/
       WinAPI::Wrapper(-2147467261); /*0x4a2c28*/
     v12 = v6 + 9; /*0x4a2c34*/
-    result = (*(int (__stdcall **)(unsigned int, unsigned int *, int, int *))(*(unsigned int *)v6[2] + 12))(v6[2], v6 + 9, 8, &a1); /*0x4a2c3e*/
+    result = (*(int (**)(unsigned int, unsigned int *, int, int *))(*(unsigned int *)v6[2] + 12))(v6[2], v6 + 9, 8, &a1); /*0x4a2c3e*/
     if ( result < 0 ) /*0x4a2c43*/
       return result; /*0x4a2c43*/
     if ( a1 != 8 ) /*0x4a2c4a*/
       return -2147467259; /*0x4a2c4a*/
     if ( !v6[2] ) /*0x4a2c50*/
       WinAPI::Wrapper(-2147467261); /*0x4a2c5c*/
-    result = (*(int (__stdcall **)(unsigned int, unsigned int, int, int *))(*(unsigned int *)v6[2] + 12))(v6[2], v6[7], *v12, &a1); /*0x4a2c73*/
+    result = (*(int (**)(unsigned int, unsigned int, int, int *))(*(unsigned int *)v6[2] + 12))(v6[2], v6[7], *v12, &a1); /*0x4a2c73*/
     if ( result < 0 ) /*0x4a2c78*/
       return result; /*0x4a2c78*/
     v13 = *v12; /*0x4a2c7a*/
@@ -3483,7 +3483,7 @@ int sub_4A44F0()
   result = g_lpDirectDraw7; /*0x4a44f0*/
   if ( g_lpDirectDraw7 ) /*0x4a44fd*/
   {
-    v3 = ((int (__stdcall *)(LPDIRECTDRAW, int))g_lpDirectDraw7->lpVtbl->RestoreDisplayMode)(g_lpDirectDraw7, v1); /*0x4a4507*/
+    v3 = ((int (*)(LPDIRECTDRAW, int))g_lpDirectDraw7->lpVtbl->RestoreDisplayMode)(g_lpDirectDraw7, v1); /*0x4a4507*/
     if ( v3 ) /*0x4a4512*/
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a451c*/
@@ -3498,7 +3498,7 @@ int sub_4A44F0()
     }
     *(unsigned long long *)&g_DisplayWidth = 0; /*0x4a4551*/
     g_DisplayBPP = 0; /*0x4a455d*/
-    result = (LPDIRECTDRAW)((int (__cdecl *)(LPDIRECTDRAW))g_lpDirectDraw7->lpVtbl->Release)(g_lpDirectDraw7); /*0x4a4566*/
+    result = (LPDIRECTDRAW)((int (*)(LPDIRECTDRAW))g_lpDirectDraw7->lpVtbl->Release)(g_lpDirectDraw7); /*0x4a4566*/
     if ( result ) /*0x4a456b*/
     {
       if ( g_DDraw_ErrorCallback ) /*0x4a4575*/

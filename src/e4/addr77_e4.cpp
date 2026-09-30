@@ -2375,7 +2375,7 @@ int sub_77D840()
   int GameUI; // eax
   char (*v2)(); // edx
 
-  Dialog = (HWND)CreateDialog(0xCFu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))OnlineLobbyDlgProcWOL, 0); /*0x77d858*/
+  Dialog = (HWND)CreateDialog(0xCFu, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))OnlineLobbyDlgProcWOL, 0); /*0x77d858*/
   byte_A8ED9C = 1; /*0x77d85a*/
   Timer::PumpMessages((HWND *)dword_87F770); /*0x77d861*/
   ShowWindow(Dialog, 1); /*0x77d869*/
@@ -2589,7 +2589,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
         g_WOL_IdleHandler = 9; /*0x77eb2a*/
         g_WOL_GameProcessState = 90; /*0x77eb34*/
         g_WOL_GameListPool = time(0); /*0x77eb43*/
-        (*(void (__stdcall **)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 72))(ppv, v18); /*0x77eb54*/
+        (*(void (**)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 72))(ppv, v18); /*0x77eb54*/
         byte_B77DEC = 1; /*0x77eb59*/
         if ( v18 ) /*0x77eb60*/
         {
@@ -2753,7 +2753,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
 
   v3 = a2; /*0x77ef99*/
   Debug::Log(); /*0x77efaa*/
-  if ( (*(int (__stdcall **)(LPVOID, int, int))(*(unsigned int *)ppv + 24))(ppv, a1, v3) ) /*0x77efbc*/
+  if ( (*(int (**)(LPVOID, int, int))(*(unsigned int *)ppv + 24))(ppv, a1, v3) ) /*0x77efbc*/
     return 0; /*0x77efc4*/
   v5 = dword_B76520; /*0x77efcb*/
   v6 = dword_B76520; /*0x77efd0*/
@@ -2942,7 +2942,7 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
       ResetEvent(*v6++); /*0x77f359*/
     while ( (int)v6 < (int)g_WOL_RequestObject ); /*0x77f364*/
     Debug::Log(); /*0x77f375*/
-    if ( (*(int (__stdcall **)(LPVOID, int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, v3, a2) ) /*0x77f387*/
+    if ( (*(int (**)(LPVOID, int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, v3, a2) ) /*0x77f387*/
     {
       SetEvent(Handles); /*0x77f4fd*/
       return 0; /*0x77f503*/
@@ -3038,7 +3038,7 @@ char sub_77F520(char a1)
       ResetEvent(*v2++); /*0x77f54f*/
     while ( (int)v2 < (int)g_WOL_RequestObject ); /*0x77f55a*/
     Debug::Log(); /*0x77f565*/
-    if ( (*(int (__stdcall **)(LPVOID, unsigned int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, 0, 0) ) /*0x77f579*/
+    if ( (*(int (**)(LPVOID, unsigned int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, 0, 0) ) /*0x77f579*/
     {
       SetEvent(Handles); /*0x77f6eb*/
       return 0; /*0x77f6f1*/
@@ -3132,7 +3132,7 @@ char sub_77F710(unsigned char a1, char a2)
       ResetEvent(*v4++); /*0x77f743*/
     while ( (int)v4 < (int)g_WOL_RequestObject ); /*0x77f74e*/
     Debug::Log(); /*0x77f760*/
-    if ( (*(int (__stdcall **)(LPVOID, int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, 41, a1) ) /*0x77f773*/
+    if ( (*(int (**)(LPVOID, int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, 41, a1) ) /*0x77f773*/
     {
       SetEvent(Handles); /*0x77f8e4*/
       return 0; /*0x77f8ea*/
@@ -4118,9 +4118,9 @@ unsigned int * sub_773450(int a1, int a2)
     if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)v4 + 2) >= 0 ) /*0x7734c6*/
     {
       Debug::Log(); /*0x7734cd*/
-      (*(void (__stdcall **)(unsigned int, unsigned int *))(*(unsigned int *)*v6 + 20))(*v6, v4); /*0x7734db*/
-      (*(void (__stdcall **)(unsigned int, int, int))(*(unsigned int *)*v6 + 12))(*v6, a1, a2); /*0x7734e5*/
-      (*(void (__stdcall **)(unsigned int, int))(*(unsigned int *)*v6 + 60))(*v6, 1); /*0x7734ef*/
+      (*(void (**)(unsigned int, unsigned int *))(*(unsigned int *)*v6 + 20))(*v6, v4); /*0x7734db*/
+      (*(void (**)(unsigned int, int, int))(*(unsigned int *)*v6 + 12))(*v6, a1, a2); /*0x7734e5*/
+      (*(void (**)(unsigned int, int))(*(unsigned int *)*v6 + 60))(*v6, 1); /*0x7734ef*/
     }
     return v4; /*0x7734f2*/
   }
@@ -5661,7 +5661,7 @@ int sub_77BA40()
   dword_B768C8 = 1 << (v1 - 1); /*0x77ba9b*/
   g_WOL_ListParser = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x77bab3*/
   memset(g_WOL_ListParser, 0, 4 * dword_B768C8); /*0x77bab9*/
-  dword_B768D8 = (int (__thiscall *)(unsigned int))String::ComputeHash; /*0x77bac0*/
+  dword_B768D8 = (int (*)(unsigned int))String::ComputeHash; /*0x77bac0*/
   return atexit(sub_77BAE0); /*0x77bad2*/
 }
 } // namespace gamemd
@@ -5692,7 +5692,7 @@ int sub_77BC10()
   dword_B73B00 = 1 << (v1 - 1); /*0x77bc6b*/
   dword_B73AF8 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x77bc83*/
   memset(dword_B73AF8, 0, 4 * dword_B73B00); /*0x77bc89*/
-  dword_B73B10 = (int (__thiscall *)(unsigned int))String::ComputeHash; /*0x77bc90*/
+  dword_B73B10 = (int (*)(unsigned int))String::ComputeHash; /*0x77bc90*/
   return atexit(sub_77BCB0); /*0x77bca2*/
 }
 } // namespace gamemd
@@ -5723,7 +5723,7 @@ int sub_77BDE0()
   dword_B77D88 = 1 << (v1 - 1); /*0x77be3b*/
   stru_B77D80 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x77be53*/
   memset(stru_B77D80, 0, 4 * dword_B77D88); /*0x77be59*/
-  dword_B77D98 = (int (__thiscall *)(unsigned int))String::ComputeHash; /*0x77be60*/
+  dword_B77D98 = (int (*)(unsigned int))String::ComputeHash; /*0x77be60*/
   return atexit(sub_77BE80); /*0x77be72*/
 }
 } // namespace gamemd
@@ -5753,7 +5753,7 @@ int sub_77BFB0()
   dword_B76648 = 1 << (v1 - 1); /*0x77c00b*/
   dword_B76640 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x77c023*/
   memset(dword_B76640, 0, 4 * dword_B76648); /*0x77c029*/
-  dword_B76658 = (int (__thiscall *)(unsigned int))String::ComputeHash; /*0x77c030*/
+  dword_B76658 = (int (*)(unsigned int))String::ComputeHash; /*0x77c030*/
   return atexit(sub_77C050); /*0x77c042*/
 }
 } // namespace gamemd
@@ -5783,7 +5783,7 @@ int sub_77C180()
   dword_B76688 = 1 << (v1 - 1); /*0x77c1db*/
   dword_B76680 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x77c1f3*/
   memset(dword_B76680, 0, 4 * dword_B76688); /*0x77c1f9*/
-  dword_B76698 = (int (__thiscall *)(unsigned int))String::ComputeHash; /*0x77c200*/
+  dword_B76698 = (int (*)(unsigned int))String::ComputeHash; /*0x77c200*/
   return atexit(sub_77C220); /*0x77c212*/
 }
 } // namespace gamemd
@@ -5837,7 +5837,7 @@ int sub_77C3B0()
   dword_B76538 = 1 << (v1 - 1); /*0x77c40b*/
   g_WOL_ConnectionPool = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x77c423*/
   memset(g_WOL_ConnectionPool, 0, 4 * dword_B76538); /*0x77c429*/
-  dword_B76548 = (int (__thiscall *)(unsigned int))String::ComputeHash; /*0x77c430*/
+  dword_B76548 = (int (*)(unsigned int))String::ComputeHash; /*0x77c430*/
   return atexit(sub_77C450); /*0x77c442*/
 }
 } // namespace gamemd
@@ -6189,7 +6189,7 @@ int sub_77CA60()
   dword_B76998 = 1 << (v1 - 1); /*0x77cabb*/
   dword_B76990 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x77cad3*/
   memset(dword_B76990, 0, 4 * dword_B76998); /*0x77cad9*/
-  dword_B769A8 = (int (__thiscall *)(unsigned int))String::ComputeHash; /*0x77cae0*/
+  dword_B769A8 = (int (*)(unsigned int))String::ComputeHash; /*0x77cae0*/
   return atexit(sub_77CB00); /*0x77caf2*/
 }
 } // namespace gamemd
@@ -6219,7 +6219,7 @@ int sub_77CC30()
   dword_B76610 = 1 << (v1 - 1); /*0x77cc8b*/
   dword_B76608 = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x77cca3*/
   memset(dword_B76608, 0, 4 * dword_B76610); /*0x77cca9*/
-  dword_B76620 = (int (__thiscall *)(unsigned int))String::ComputeHash; /*0x77ccb0*/
+  dword_B76620 = (int (*)(unsigned int))String::ComputeHash; /*0x77ccb0*/
   return atexit(sub_77CCD0); /*0x77ccc2*/
 }
 } // namespace gamemd

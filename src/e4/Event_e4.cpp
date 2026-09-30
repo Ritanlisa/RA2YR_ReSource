@@ -280,7 +280,7 @@ int sub_7A0F40()
       {
         if ( v2 >= 0 && v1 < (int)dword_B77900 ) /*0x7a0f96*/
           qmemcpy(v11, (char *)dword_B77908 + v2, sizeof(v11)); /*0x7a0faa*/
-        (*(void (__stdcall **)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v11[6], &v9); /*0x7a0fbe*/
+        (*(void (**)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v11[6], &v9); /*0x7a0fbe*/
         sprintf(Buffer, ",%s,%d", (const char *)&v11[9], v9); /*0x7a0fd8*/
         v3 = strlen(Buffer) + 1; /*0x7a0ffd*/
         v4 = &Source[strlen(Source)]; /*0x7a1006*/
@@ -329,11 +329,11 @@ void sub_786270()
   }
   dword_B77E50 = Data[0]; /*0x786328*/
   if ( ppv ) /*0x78632e*/
-    (*(void (__stdcall **)(LPVOID, unsigned int))(*(unsigned int *)ppv + 140))(ppv, *(unsigned int *)Data); /*0x786334*/
+    (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 140))(ppv, *(unsigned int *)Data); /*0x786334*/
   if ( !g_UIPointerTable ) /*0x786341*/
     return 0; /*0x78637d*/
     ((Debug *)0)->Log();
-  (*(void (__stdcall **)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
+  (*(void (**)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
     g_UIPointerTable,
     &g_WindowManager.__pad_70[28],
     stru_B76AC4.ambientSoundController[3],

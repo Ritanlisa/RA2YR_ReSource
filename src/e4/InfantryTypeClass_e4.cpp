@@ -642,12 +642,12 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
       DynamicVectorClass::Construct((DynamicVectorClass *)v5->VoiceComment, 0, 0); /*0x5249c7*/
       v5->VoiceComment[0] = (int)&TypeList_int_vftable; /*0x5249cc*/
     }
-    (*(void (__stdcall **)(int, InfantryTypeClass **, int, unsigned int, int))(*(unsigned int *)v7 + 12))(v7, &aP0, 4, 0, v4); /*0x5249de*/
+    (*(void (**)(int, InfantryTypeClass **, int, unsigned int, int))(*(unsigned int *)v7 + 12))(v7, &aP0, 4, 0, v4); /*0x5249de*/
     if ( a2 > 0 ) /*0x5249e7*/
     {
       do /*0x524a09*/
       {
-        (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a3, 4, 0); /*0x5249f5*/
+        (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a3, 4, 0); /*0x5249f5*/
         DynamicVector::Add_Alt((DynamicVector *)v5->VoiceComment, &a3); /*0x5249ff*/
         ++v6; /*0x524a04*/
       }
@@ -658,10 +658,10 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
       DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v5->DeadBodies, 0, 0); /*0x524a1b*/
       v5->DeadBodies[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524a20*/
     }
-    (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a2, 4, 0); /*0x524a33*/
+    (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a2, 4, 0); /*0x524a33*/
     for ( i = 0; i < a2; ++i ) /*0x524a3e*/
     {
-      (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a3, 4, 0); /*0x524a4c*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a3, 4, 0); /*0x524a4c*/
       DynamicVector::Add_Alt4((DynamicVector *)v5->DeadBodies, &a3); /*0x524a56*/
     }
     for ( j = 0; j < v5->DeadBodies[4]; ++j ) /*0x524a6c*/
@@ -671,17 +671,17 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData(InfantryTypeClass *aP0)
       DynamicVectorClass::AnimTypeConstructor((DynamicVectorClass *)v5->DeathAnims, 0, 0); /*0x524a9d*/
       v5->DeathAnims[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x524aa2*/
     }
-    (*(void (__stdcall **)(int, int *, int))(*(unsigned int *)v7 + 12))(v7, &a2, 4); /*0x524ab5*/
+    (*(void (**)(int, int *, int))(*(unsigned int *)v7 + 12))(v7, &a2, 4); /*0x524ab5*/
     for ( k = 0; k < (int)aP0; ++k ) /*0x524ac0*/
     {
-      (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a2, 4, 0); /*0x524ace*/
+      (*(void (**)(int, int *, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, &a2, 4, 0); /*0x524ace*/
       DynamicVector::Add_Alt4((DynamicVector *)v5->DeathAnims, &a2); /*0x524ad8*/
     }
     for ( m = 0; m < v5->DeathAnims[4]; ++m ) /*0x524aef*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v5->DeathAnims[1] + 4 * m)); /*0x524b00*/
     v13 = RA2_OPNEW(0x5E8u); /*0x524b15*/
     v5->Sequence[0] = v13; /*0x524b1d*/
-    (*(void (__stdcall **)(int, int, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, v13, 1512, 0); /*0x524b2e*/
+    (*(void (**)(int, int, int, unsigned int))(*(unsigned int *)v7 + 12))(v7, v13, 1512, 0); /*0x524b2e*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5->OccupyWeapon); /*0x524b3d*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v5->EliteOccupyWeapon); /*0x524b4e*/
     return v14; /*0x524b53*/
@@ -711,20 +711,20 @@ TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix(InfantryTypeClass *aP0)
   {
     v8 = *a2; /*0x524b87*/
     a3 = (int *)aP0->VoiceComment[4]; /*0x524b94*/
-    (*(void (__stdcall **)(unsigned int *, int **, int, unsigned int, int))(v8 + 16))(a2, &a3, 4, 0, v5); /*0x524b98*/
+    (*(void (**)(unsigned int *, int **, int, unsigned int, int))(v8 + 16))(a2, &a3, 4, 0, v5); /*0x524b98*/
     for ( i = 0; i < a4; ++i ) /*0x524ba3*/
-      (*(void (__stdcall **)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->VoiceComment[1] + 4 * i, 4, 0); /*0x524bb6*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->VoiceComment[1] + 4 * i, 4, 0); /*0x524bb6*/
     v10 = *a2; /*0x524bc6*/
     a4 = aP0->DeadBodies[4]; /*0x524bd2*/
-    (*(void (__stdcall **)(unsigned int *, int *, int, unsigned int))(v10 + 16))(a2, &a4, 4, 0); /*0x524bd6*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v10 + 16))(a2, &a4, 4, 0); /*0x524bd6*/
     for ( j = 0; j < a4; ++j ) /*0x524be1*/
-      (*(void (__stdcall **)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->DeadBodies[1] + 4 * j, 4, 0); /*0x524bf4*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->DeadBodies[1] + 4 * j, 4, 0); /*0x524bf4*/
     v12 = *a2; /*0x524c04*/
     a4 = aP0->DeathAnims[4]; /*0x524c10*/
-    (*(void (__stdcall **)(unsigned int *, int *, int, unsigned int))(v12 + 16))(a2, &a4, 4, 0); /*0x524c14*/
+    (*(void (**)(unsigned int *, int *, int, unsigned int))(v12 + 16))(a2, &a4, 4, 0); /*0x524c14*/
     for ( k = 0; k < a4; ++k ) /*0x524c1f*/
-      (*(void (__stdcall **)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->DeathAnims[1] + 4 * k, 4, 0); /*0x524c32*/
-    (*(void (__stdcall **)(unsigned int *, int, int))(*a2 + 16))(a2, aP0->Sequence[0], 1512); /*0x524c4d*/
+      (*(void (**)(unsigned int *, int, int, unsigned int))(*a2 + 16))(a2, aP0->DeathAnims[1] + 4 * k, 4, 0); /*0x524c32*/
+    (*(void (**)(unsigned int *, int, int))(*a2 + 16))(a2, aP0->Sequence[0], 1512); /*0x524c4d*/
     return v7; /*0x524c52*/
   }
   return result; /*0x524c51*/

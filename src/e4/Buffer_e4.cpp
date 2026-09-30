@@ -326,43 +326,43 @@ int Buffer::AllocateCodecFrameBuffers()
   int v28; // [esp+28h] [ebp-8h] BYREF
   unsigned int v29; // [esp+2Ch] [ebp-4h]
 
-  if ( (*((int (__cdecl **)(Buffer *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v28, 8) ) /*0x7c1743*/
+  if ( (*((int (**)(Buffer *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v28, 8) ) /*0x7c1743*/
     return -2; /*0x7c1759*/
   if ( v28 != 1212371789 ) /*0x7c1762*/
     return -4; /*0x7c1770*/
   v3 = (unsigned int *)((char *)this + 1852); /*0x7c1775*/
   v4 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c179e*/
   LOBYTE(v4) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c179f*/
-  if ( (*((int (__cdecl **)(Buffer *, int, char *, unsigned int))(unsigned int *)this + 16))(this, 5, (char *)this + 1852, v4) ) /*0x7c17a6*/
+  if ( (*((int (**)(Buffer *, int, char *, unsigned int))(unsigned int *)this + 16))(this, 5, (char *)this + 1852, v4) ) /*0x7c17a6*/
     return -4; /*0x7c17bc*/
   v5 = *v3; /*0x7c17bd*/
   if ( !*v3 ) /*0x7c17bd*/
     goto LABEL_16; /*0x7c17bd*/
   v6 = 16 * v5; /*0x7c17cc*/
-  v7 = (*((int (__cdecl **)(Buffer *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, 16 * v5); /*0x7c17d3*/
+  v7 = (*((int (**)(Buffer *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, 16 * v5); /*0x7c17d3*/
   *((unsigned int *)this + 465) = v7; /*0x7c17db*/
   if ( !v7 ) /*0x7c17e1*/
     return -8; /*0x7c17ef*/
-  (*((void (__cdecl **)(Buffer *, int, int, int))(unsigned int *)this + 17))(this, 4, v7, v6); /*0x7c17f5*/
+  (*((void (**)(Buffer *, int, int, int))(unsigned int *)this + 17))(this, 4, v7, v6); /*0x7c17f5*/
   *((unsigned int *)this + 12) += v6; /*0x7c17ff*/
-  if ( (*((int (__cdecl **)(Buffer *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v28, 8) ) /*0x7c180a*/
+  if ( (*((int (**)(Buffer *, int, int *, int))(unsigned int *)this + 16))(this, 5, &v28, 8) ) /*0x7c180a*/
     return -2; /*0x7c1820*/
   if ( v28 != 1413698381 ) /*0x7c1829*/
     return -4; /*0x7c1837*/
   v8 = ((((v29 << 16) | v29 & 0xFF00) << 8) | ((HIWORD(v29) | v29 & 0xFF0000) >> 8)) + 1; /*0x7c185f*/
   LOBYTE(v8) = (HIBYTE(v29) + 1) & 0xFE; /*0x7c1860*/
-  if ( (*((int (__cdecl **)(Buffer *, int, unsigned int, unsigned int))(unsigned int *)this + 16))(this, 5, *((unsigned int *)this + 465), v8) ) /*0x7c186d*/
+  if ( (*((int (**)(Buffer *, int, unsigned int, unsigned int))(unsigned int *)this + 16))(this, 5, *((unsigned int *)this + 465), v8) ) /*0x7c186d*/
     return -4; /*0x7c187a*/
 LABEL_16:
   v9 = *v3; /*0x7c1884*/
   v27 = v9; /*0x7c1888*/
   if ( !v9 ) /*0x7c188c*/
     return -1; /*0x7c19de*/
-  v10 = (*((int (__cdecl **)(Buffer *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, 12 * v9); /*0x7c189d*/
+  v10 = (*((int (**)(Buffer *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, 12 * v9); /*0x7c189d*/
   *((unsigned int *)this + 466) = v10; /*0x7c18a5*/
   if ( v10 ) /*0x7c18ab*/
   {
-    (*((void (__cdecl **)(Buffer *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v10, 12 * v9); /*0x7c18bf*/
+    (*((void (**)(Buffer *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v10, 12 * v9); /*0x7c18bf*/
     *((unsigned int *)this + 12) += 12 * v9; /*0x7c18cc*/
     v24 = 0; /*0x7c18cf*/
     v11 = 0; /*0x7c18d9*/
@@ -378,20 +378,20 @@ LABEL_16:
       {
         *(unsigned int *)(v11 + v13) = v12; /*0x7c1911*/
         *(unsigned int *)(v11 + v13 + 4) = 0; /*0x7c191d*/
-        v14 = (*((int (__cdecl **)(Buffer *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 12 * v12); /*0x7c1925*/
+        v14 = (*((int (**)(Buffer *, int, unsigned int, int))(unsigned int *)this + 17))(this, 2, 0, 12 * v12); /*0x7c1925*/
         v15 = v14; /*0x7c1928*/
         if ( !v14 ) /*0x7c192f*/
           return -8; /*0x7c192f*/
-        (*((void (__cdecl **)(Buffer *, int, int, int))(unsigned int *)this + 17))(this, 4, v14, 12 * v12); /*0x7c193a*/
+        (*((void (**)(Buffer *, int, int, int))(unsigned int *)this + 17))(this, 4, v14, 12 * v12); /*0x7c193a*/
         *((unsigned int *)this + 12) += 12 * v12; /*0x7c194d*/
         v16 = v12 * ((v23 + 1) & 0xFFFFFFFE); /*0x7c1957*/
         v26 = (int *)(v22 + v25 + 8); /*0x7c1964*/
         *v26 = v15; /*0x7c1968*/
-        v17 = (*((int (__cdecl **)(Buffer *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, v16); /*0x7c196a*/
+        v17 = (*((int (**)(Buffer *, int, unsigned int, unsigned int))(unsigned int *)this + 17))(this, 2, 0, v16); /*0x7c196a*/
         v18 = v17; /*0x7c196d*/
         if ( !v17 ) /*0x7c1974*/
           return -8; /*0x7c1974*/
-        (*((void (__cdecl **)(Buffer *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v17, v16); /*0x7c197f*/
+        (*((void (**)(Buffer *, int, int, unsigned int))(unsigned int *)this + 17))(this, 4, v17, v16); /*0x7c197f*/
         *((unsigned int *)this + 12) += v16; /*0x7c198c*/
         v19 = 0; /*0x7c1991*/
         do /*0x7c19b1*/

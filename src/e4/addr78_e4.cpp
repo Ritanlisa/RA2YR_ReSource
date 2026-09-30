@@ -480,7 +480,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     && g_WOL_HashTable->HashTable_field_0x04
     && (v6 = *(unsigned int *)(*(unsigned int *)v5->__pad_0
                        + 4
-                       * (((int (__thiscall *)(String *))g_WOL_HashTable->HashTable_field_0x18)(&v23)
+                       * (((int (*)(String *))g_WOL_HashTable->HashTable_field_0x18)(&v23)
                         & ((1 << v5->HashTable_field_0x0C) - 1)))) != 0 )
   {
     while ( !(uint8_t)String::Compare((String *)v6, (const char **)&v23) ) /*0x780b24*/
@@ -985,7 +985,7 @@ AbstractClass * * __usercall GameListRenderWOL(CampaignScore * a1)
         }
         while ( v13 < v7 ); /*0x78169e*/
       }
-      v33 = (int (__cdecl *)(const void *, const void *))sub_7813B0; /*0x7816a0*/
+      v33 = (int (*)(const void *, const void *))sub_7813B0; /*0x7816a0*/
       goto LABEL_28; /*0x7816a5*/
     }
   }
@@ -1011,7 +1011,7 @@ AbstractClass * * __usercall GameListRenderWOL(CampaignScore * a1)
     }
     while ( v8 < v7 ); /*0x7815f8*/
   }
-  v33 = (int (__cdecl *)(const void *, const void *))sub_781380; /*0x7815fa*/
+  v33 = (int (*)(const void *, const void *))sub_781380; /*0x7815fa*/
   LABEL_28:
   v10 = v48; /*0x7815ff*/
   qsort(v48, v7, 8u, v33); /*0x781607*/
@@ -1758,7 +1758,7 @@ void InsertBuddyList(char * a1, char a2)
             {
               v37 = *(unsigned int *)(*(unsigned int *)v36->__pad_0 /*0x7829a6*/
                               + 4
-                              * (((int (__thiscall *)(unsigned char *))g_WOL_HashTable->HashTable_field_0x18)(v47)
+                              * (((int (*)(unsigned char *))g_WOL_HashTable->HashTable_field_0x18)(v47)
                                & ((1 << v36->HashTable_field_0x0C) - 1)));
               if ( v37 ) /*0x7829ab*/
               {
@@ -1804,7 +1804,7 @@ void InsertBuddyList(char * a1, char a2)
               {
                 v41 = *(unsigned int *)(*(unsigned int *)v40->__pad_0 /*0x782a9c*/
                                 + 4
-                                * (((int (__thiscall *)(unsigned char *))g_WOL_HashTable->HashTable_field_0x18)(v47)
+                                * (((int (*)(unsigned char *))g_WOL_HashTable->HashTable_field_0x18)(v47)
                                  & ((1 << v40->HashTable_field_0x0C) - 1)));
                 if ( v41 ) /*0x782aa1*/
                 {
@@ -2460,54 +2460,54 @@ Coord * * WOL_HandleLogout()
     WinMainSetup_Setup_5DB6F0_Setup(); /*0x7860ca*/
     if ( ppv ) /*0x7860d6*/
     {
-      v3 = *(int (__stdcall ***)(LPVOID, void *, int *))ppv; /*0x7860d8*/
+      v3 = *(int (***)(LPVOID, void *, int *))ppv; /*0x7860d8*/
       v4 = dword_B77E54; /*0x7860da*/
       v12 = 0; /*0x7860e4*/
       v11 = 0; /*0x7860ef*/
       if ( (*v3)(ppv, &unk_7F7CD0, &v12) >= 0 /*0x78610f*/
-        && (*(int (__stdcall **)(int, void *, int *))(*(unsigned int *)v12 + 16))(v12, &unk_7F7550, &v11) >= 0 )
+        && (*(int (**)(int, void *, int *))(*(unsigned int *)v12 + 16))(v12, &unk_7F7550, &v11) >= 0 )
       {
-        (*(void (__stdcall **)(int, int))(*(unsigned int *)v11 + 24))(v11, v4); /*0x786119*/
+        (*(void (**)(int, int))(*(unsigned int *)v11 + 24))(v11, v4); /*0x786119*/
       }
       if ( v11 ) /*0x786122*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v11 + 8))(v11); /*0x786127*/
+        (*(void (**)(int))(*(unsigned int *)v11 + 8))(v11); /*0x786127*/
       if ( v12 ) /*0x786130*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v12 + 8))(v12); /*0x786135*/
-      (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 8))(ppv); /*0x786140*/
+        (*(void (**)(int))(*(unsigned int *)v12 + 8))(v12); /*0x786135*/
+      (*(void (**)(LPVOID))(*(unsigned int *)ppv + 8))(ppv); /*0x786140*/
     }
     if ( g_UIPointerTable ) /*0x78614a*/
     {
-      v5 = *(int (__stdcall ***)(LPVOID, void *, int *))g_UIPointerTable; /*0x78614c*/
+      v5 = *(int (***)(LPVOID, void *, int *))g_UIPointerTable; /*0x78614c*/
       v6 = dword_B77E58; /*0x78614e*/
       v11 = 0; /*0x786158*/
       v12 = 0; /*0x786163*/
       if ( (*v5)(g_UIPointerTable, &unk_7F7CD0, &v11) >= 0 /*0x786183*/
-        && (*(int (__stdcall **)(int, void *, int *))(*(unsigned int *)v11 + 16))(v11, &unk_7F7590, &v12) >= 0 )
+        && (*(int (**)(int, void *, int *))(*(unsigned int *)v11 + 16))(v11, &unk_7F7590, &v12) >= 0 )
       {
-        (*(void (__stdcall **)(int, int))(*(unsigned int *)v12 + 24))(v12, v6); /*0x78618d*/
+        (*(void (**)(int, int))(*(unsigned int *)v12 + 24))(v12, v6); /*0x78618d*/
       }
       if ( v12 ) /*0x786196*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v12 + 8))(v12); /*0x78619b*/
+        (*(void (**)(int))(*(unsigned int *)v12 + 8))(v12); /*0x78619b*/
       if ( v11 ) /*0x7861a4*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v11 + 8))(v11); /*0x7861a9*/
-      (*(void (__stdcall **)(LPVOID))(*(unsigned int *)g_UIPointerTable + 8))(g_UIPointerTable); /*0x7861b4*/
+        (*(void (**)(int))(*(unsigned int *)v11 + 8))(v11); /*0x7861a9*/
+      (*(void (**)(LPVOID))(*(unsigned int *)g_UIPointerTable + 8))(g_UIPointerTable); /*0x7861b4*/
     }
     if ( dword_AC1174 ) /*0x7861be*/
     {
-      v7 = *(int (__stdcall ***)(LPVOID, void *, int *))dword_AC1174; /*0x7861c0*/
+      v7 = *(int (***)(LPVOID, void *, int *))dword_AC1174; /*0x7861c0*/
       v8 = dword_B77E5C; /*0x7861c2*/
       v11 = 0; /*0x7861cc*/
       v12 = 0; /*0x7861d7*/
       if ( (*v7)(dword_AC1174, &unk_7F7CD0, &v11) >= 0 /*0x7861f7*/
-        && (*(int (__stdcall **)(int, void *, int *))(*(unsigned int *)v11 + 16))(v11, &unk_7F7570, &v12) >= 0 )
+        && (*(int (**)(int, void *, int *))(*(unsigned int *)v11 + 16))(v11, &unk_7F7570, &v12) >= 0 )
       {
-        (*(void (__stdcall **)(int, int))(*(unsigned int *)v12 + 24))(v12, v8); /*0x786201*/
+        (*(void (**)(int, int))(*(unsigned int *)v12 + 24))(v12, v8); /*0x786201*/
       }
       if ( v12 ) /*0x78620a*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v12 + 8))(v12); /*0x78620f*/
+        (*(void (**)(int))(*(unsigned int *)v12 + 8))(v12); /*0x78620f*/
       if ( v11 ) /*0x786218*/
-        (*(void (__stdcall **)(int))(*(unsigned int *)v11 + 8))(v11); /*0x78621d*/
-      (*(void (__stdcall **)(LPVOID))(*(unsigned int *)dword_AC1174 + 8))(dword_AC1174); /*0x786228*/
+        (*(void (**)(int))(*(unsigned int *)v11 + 8))(v11); /*0x78621d*/
+      (*(void (**)(LPVOID))(*(unsigned int *)dword_AC1174 + 8))(dword_AC1174); /*0x786228*/
     }
     ppv = 0; /*0x786232*/
     g_UIPointerTable = 0; /*0x786238*/
@@ -2652,7 +2652,7 @@ void WOL_LoginFlow()
       v6 = 1; /*0x78712f*/
       while ( 1 ) /*0x787142*/
       {
-        if ( !(*(int (__stdcall **)(LPVOID, int, Flag *, int *))(*(unsigned int *)ppv + 144))( /*0x787147*/
+        if ( !(*(int (**)(LPVOID, int, Flag *, int *))(*(unsigned int *)ppv + 144))( /*0x787147*/
                 ppv,
                 v6,
                 &v41,
@@ -2786,7 +2786,7 @@ void WOL_LoginFlow()
   Screen::Capture(1, 0, (int)&off_7F7624, 0); /*0x78740a*/
   Dialog = (Dialog *)CreateDialog( /*0x787420*/
                        v15,
-                       (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))OptionsDlgProcWOL,
+                       (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))OptionsDlgProcWOL,
                        (LPARAM)&v43.Flag_field_0x08);
   Dialog::Show(Dialog); /*0x787424*/
   if ( !String::Length((String *)&g_WindowManager.__pad_EC[684]) || String::Length((String *)&g_WebBrowserConfig) ) /*0x78743c*/
@@ -2925,7 +2925,7 @@ void WOL_LoginFlow()
     SimpleDialogControl::Constructor((SimpleDialogControl *)&v39); /*0x787692*/
     *(unsigned int *)v39.__pad_0 = &off_7F7624; /*0x787697*/
     LoginFlowWOL_Load(); /*0x78769b*/
-    RunDialog(0x112u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_79AE00, (LPARAM)&v39); /*0x7876af*/
+    RunDialog(0x112u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_79AE00, (LPARAM)&v39); /*0x7876af*/
     LoginFlowWOL_Destroy(v37); /*0x7876b4*/
     *(unsigned int *)v39.__pad_0 = &off_7F7624; /*0x7876bd*/
     OwnerDrawControl::InitVtable((OwnerDrawControl *)&v39); /*0x7876c1*/
@@ -3072,7 +3072,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
   g_NetworkLobbyState = 0; /*0x78797d*/
   if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8B244 == 3 ) /*0x78798c*/
   {
-    (*(void (__stdcall **)(LPVOID, int))(*(unsigned int *)ppv + 180))(ppv, dword_A8B3AC); /*0x78799d*/
+    (*(void (**)(LPVOID, int))(*(unsigned int *)ppv + 180))(ppv, dword_A8B3AC); /*0x78799d*/
     if ( !byte_B77E10 ) /*0x7879aa*/
       InitVersionStringsWOL((ObjectClass *)v63.StringVector_field_0x0C); /*0x7879ac*/
   }
@@ -3088,7 +3088,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
     {
       Screen::Capture(1, 0, 0, 0); /*0x7879f4*/
       Network_Load_72CD60(); /*0x7879f9*/
-      hWnd = (HWND)CreateDialog(0x113u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WOLobby::DlgProc, 0); /*0x787a13*/
+      hWnd = (HWND)CreateDialog(0x113u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WOLobby::DlgProc, 0); /*0x787a13*/
       if ( String::Length((String *)&g_WindowManager.Array_field_0x38) ) /*0x787a15*/
       {
         v11 = String::Length((String *)&g_WindowManager.Array_field_0x38); /*0x787a27*/
@@ -3121,7 +3121,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
     }
     dword_B77DE0 = 1; /*0x787b3f*/
     ++dword_B77DDC; /*0x787b49*/
-    (*(void (__stdcall **)(LPVOID, unsigned int))(*(unsigned int *)ppv + 176))(ppv, 0); /*0x787b53*/
+    (*(void (**)(LPVOID, unsigned int))(*(unsigned int *)ppv + 176))(ppv, 0); /*0x787b53*/
     for ( m = 0; m < *(int *)g_WindowManager.__pad_0; ++m ) /*0x787b62*/
       Object::DtorWithDelete((Object *)(*(unsigned int *)g_WindowManager.__pad_8 + 4 * m), 0); /*0x787b6e*/
     v19 = 0; /*0x787b82*/
@@ -3130,7 +3130,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
     *(unsigned int *)&stru_B76900.needsRedraw = 0; /*0x787bab*/
     HashTable::CleanupAndResize((HashTable *)&stru_B76900.isAliveFlag); /*0x787bb1*/
     HashTable::Rebuild((HashTable *)&stru_B765EC.?); /*0x787bbb*/
-    (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 220))(ppv); /*0x787bc8*/
+    (*(void (**)(LPVOID))(*(unsigned int *)ppv + 220))(ppv); /*0x787bc8*/
     if ( dword_A8B244 != 3 && dword_A8B244 != 1 && dword_A8B244 != 2 ) /*0x787be0*/
       RefreshChannelListWOL((ObjectClass *)v63.StringVector_field_0x0C); /*0x787be2*/
     RefreshGameListWOL((ObjectClass *)v63.StringVector_field_0x0C); /*0x787be7*/
@@ -3150,7 +3150,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
       *(unsigned int *)v63.__pad_0 = g_Str_Trace_Requesting_channel_list_type____d__ping_; /*0x787c6b*/
       *(unsigned int *)&v66.u32_2D = 0; /*0x787c70*/
       Debug::Log(); /*0x787c78*/
-      if ( (*(int (__stdcall **)(LPVOID, unsigned int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, *(unsigned int *)&v66.q4, 0) ) /*0x787c8f*/
+      if ( (*(int (**)(LPVOID, unsigned int, unsigned int))(*(unsigned int *)ppv + 24))(ppv, *(unsigned int *)&v66.q4, 0) ) /*0x787c8f*/
       {
         SetEvent(Handles); /*0x787d0d*/
       }
@@ -3184,7 +3184,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
               Game::ProcessIdle(v46); /*0x787f82*/
               hWnd = 0; /*0x787f8c*/
               if ( ppv ) /*0x787f90*/
-                (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x787f95*/
+                (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x787f95*/
             }
             else
             {
@@ -3279,7 +3279,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
                     goto LABEL_88; /*0x787f56*/
                   case 7u: /*0x787f4c*/
                     v65 = 1; /*0x788155*/
-                    (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x788160*/
+                    (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x788160*/
                     byte_B77DEC = 0; /*0x788163*/
                     word_B77AD0 = 0; /*0x78816a*/
                     goto LABEL_88; /*0x788173*/
@@ -3602,7 +3602,7 @@ int sub_788710(int a1, char a2)
   if ( dword_B77DD0 ) /*0x78871e*/
   {
     Debug::Log(); /*0x788734*/
-    (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x788744*/
+    (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x788744*/
     StringCSF = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x788758*/
     WideString::Assign((wchar_t **)&v10, StringCSF); /*0x788762*/
     ShowUIMessage(a1, (wchar_t **)&v10, a2); /*0x78876e*/
@@ -3654,7 +3654,7 @@ Coord * * WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
     if ( !dword_B77DD0 ) /*0x788887*/
       goto LABEL_14; /*0x788887*/
     Debug::Log(); /*0x78889d*/
-    (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x7888ad*/
+    (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x7888ad*/
     String = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x7888c1*/
     WideString::Assign((wchar_t **)&v12, String); /*0x7888cb*/
     ShowUIMessage(64, (wchar_t **)&v12, 1); /*0x7888db*/
@@ -3692,7 +3692,7 @@ Coord * * WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
       ShowUIMessage(2, (wchar_t **)&v12, 0); /*0x7889d4*/
       DeleteAndZero::Alt(&v12); /*0x7889dd*/
       Debug::Log(); /*0x7889e8*/
-      v11 = (*(int (__stdcall **)(LPVOID, int))(*(unsigned int *)ppv + 32))(ppv, a1); /*0x788a00*/
+      v11 = (*(int (**)(LPVOID, int))(*(unsigned int *)ppv + 32))(ppv, a1); /*0x788a00*/
       DeleteAndZero::Alt(&a3); /*0x788a02*/
       return v11; /*0x788a07*/
     }
@@ -3824,7 +3824,7 @@ Coord * * CreateAccountWOL()
   ShowUIMessage(128, (wchar_t **)&v50, 0); /*0x788bb9*/
   DeleteAndZero::Alt(&v50); /*0x788bc2*/
   Debug::Log(); /*0x788bcc*/
-  (*(void (__stdcall **)(LPVOID, int, int, char *, char *, int))(*(unsigned int *)ppv + 16))( /*0x788bf4*/
+  (*(void (**)(LPVOID, int, int, char *, char *, int))(*(unsigned int *)ppv + 16))( /*0x788bf4*/
     ppv,
     g_NetworkRematchState,
     65537,
@@ -3955,7 +3955,7 @@ Coord * * CreateAccountWOL()
       }
       dword_B77E64 = 0; /*0x788ec6*/
       dword_B77E60 = -1; /*0x788ed5*/
-      if ( (*(int (__stdcall **)(LPVOID, int, void *, int, unsigned char *))(*(unsigned int *)g_UIPointerTable + 40))( /*0x788ee5*/
+      if ( (*(int (**)(LPVOID, int, void *, int, unsigned char *))(*(unsigned int *)g_UIPointerTable + 40))( /*0x788ee5*/
              g_UIPointerTable,
              dword_B73A1C + 1,
              g_WindowManager.Array_field_0x10,
@@ -4052,7 +4052,7 @@ Coord * * CreateAccountWOL()
             v21 = GetStringCSF((wchar_t *)aTxtPasswordToo, 0, g_Str_File_wonline_cpp, 11078); /*0x7892fc*/
             goto LABEL_26; /*0x7892fc*/
           }
-          if ( (*(int (__stdcall **)(LPVOID, unsigned char *, unsigned char *, unsigned char *, char *, WPARAM, int))(*(unsigned int *)g_UIPointerTable /*0x789330*/
+          if ( (*(int (**)(LPVOID, unsigned char *, unsigned char *, unsigned char *, char *, WPARAM, int))(*(unsigned int *)g_UIPointerTable /*0x789330*/
                                                                                             + 36))(
                  g_UIPointerTable,
                  &v56[68],
@@ -4134,7 +4134,7 @@ Coord * * WOL_FindChannel(const char * a1, int a2, unsigned char a3, int a4)
   {
     v9 = 0; /*0x789522*/
     v10 = 0; /*0x789526*/
-    if ( !(*(int (__stdcall **)(LPVOID, int, const char **, int *))(*(unsigned int *)ppv + 144))(ppv, v5, &v9, &v10) /*0x789549*/
+    if ( !(*(int (**)(LPVOID, int, const char **, int *))(*(unsigned int *)ppv + 144))(ppv, v5, &v9, &v10) /*0x789549*/
       && v9
       && !strcmp(v9, a1) )
     {
@@ -4147,8 +4147,8 @@ Coord * * WOL_FindChannel(const char * a1, int a2, unsigned char a3, int a4)
   if ( v5 ) /*0x78957c*/
   {
   LABEL_20:
-    (*(void (__stdcall **)(LPVOID, int, const char *, int, unsigned int))(*(unsigned int *)ppv + 148))(ppv, v6, a1, v11, a3); /*0x7895f0*/
-    (*(void (__stdcall **)(LPVOID, int, int))(*(unsigned int *)ppv + 200))(ppv, v6, a4); /*0x78961e*/
+    (*(void (**)(LPVOID, int, const char *, int, unsigned int))(*(unsigned int *)ppv + 148))(ppv, v6, a1, v11, a3); /*0x7895f0*/
+    (*(void (**)(LPVOID, int, int))(*(unsigned int *)ppv + 200))(ppv, v6, a4); /*0x78961e*/
     return v6; /*0x78961e*/
   }
   LABEL_8:
@@ -4157,7 +4157,7 @@ Coord * * WOL_FindChannel(const char * a1, int a2, unsigned char a3, int a4)
   {
     v9 = 0; /*0x789591*/
     v10 = 0; /*0x789595*/
-    if ( (*(int (__stdcall **)(LPVOID, int, const char **, int *))(*(unsigned int *)ppv + 144))(ppv, v6, &v9, &v10) /*0x7895b0*/
+    if ( (*(int (**)(LPVOID, int, const char **, int *))(*(unsigned int *)ppv + 144))(ppv, v6, &v9, &v10) /*0x7895b0*/
       || !v9
       || !strlen(v9) )
     {
@@ -4379,7 +4379,7 @@ void ValidateJoinWOL()
       v18[0] = (OwnerDrawControl)(void*)&WonlineStringDialogControl_vftable; /*0x789aa5*/
       if ( RunDialog( /*0x789ab1*/
              0xE1u,
-             (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WOLGameClass::ParseChatMessage,
+             (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WOLGameClass::ParseChatMessage,
              (LPARAM)v18) == 2 )
       {
         v18[0] = (OwnerDrawControl)(void*)&WonlineStringDialogControl_vftable; /*0x789ab7*/
@@ -4476,7 +4476,7 @@ void CreateGameWOL()
   else
   {
     Screen::Capture(1, 0, v3, 1); /*0x789bf0*/
-    if ( RunDialog(0xC3u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WOLLogin::DlgProc, (LPARAM)&v45) == 2 ) /*0x789c0c*/
+    if ( RunDialog(0xC3u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WOLLogin::DlgProc, (LPARAM)&v45) == 2 ) /*0x789c0c*/
     {
       *(unsigned int *)v45.__pad_0 = (void*)&WonlineStringDialogControl_vftable; /*0x789c12*/
       DeleteAndZero((ObjectClass *)&v45.ComPtr_field_0x0C); /*0x789c1a*/
@@ -4487,7 +4487,7 @@ void CreateGameWOL()
     String::Reassign(&v43, (const char **)&v45.ComPtr_field_0x0C); /*0x789c47*/
     String::Replace(&v43, asc_830A14, asc_818D7C); /*0x789c5a*/
   }
-  (*(void (__stdcall **)(LPVOID, int, int))(*(unsigned int *)ppv + 36))(ppv, v2, a2); /*0x789c67*/
+  (*(void (**)(LPVOID, int, int))(*(unsigned int *)ppv + 36))(ppv, v2, a2); /*0x789c67*/
   memset(v48, 0, sizeof(v48)); /*0x789c7b*/
   sprintf((char *const)&v48[13], "%s's_game", *(const char **)&g_WindowManager.__pad_EC[684]); /*0x789c8b*/
   v48[0] = 41; /*0x789c9b*/
@@ -4541,7 +4541,7 @@ void CreateGameWOL()
   if ( stru_B77D80.HashTable_field_0x50 ) /*0x789dda*/
   {
     Debug::Log(); /*0x789df0*/
-    (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x789e00*/
+    (*(void (**)(LPVOID))(*(unsigned int *)ppv + 36))(ppv); /*0x789e00*/
     StringCSF = GetStringCSF(g_Str_WOL_LeavingChannel, 0, g_Str_File_wonline_cpp, 10704); /*0x789e14*/
     WideString::Assign((wchar_t **)&v46.DeleteAndZero_field_0x04, StringCSF); /*0x789e1e*/
     ShowUIMessage(192, (wchar_t **)&v46.DeleteAndZero_field_0x04, 0); /*0x789e2e*/
@@ -4629,7 +4629,7 @@ void CreateGameWOL()
   NetworkShare::GetField(0); /*0x78a09a*/
   v16 = WideString::GetOrEmpty((wchar_t **)&v44.DeleteAndZero_field_0x08); /*0x78a0a3*/
   wcscpy((wchar_t *)&stru_A8D600.Network_field_0x10, v16); /*0x78a0ae*/
-  v17 = (*(int (__cdecl **)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 28))(ppv, v48); /*0x78a0c3*/
+  v17 = (*(int (**)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 28))(ppv, v48); /*0x78a0c3*/
   if ( v17 == -2147221000 ) /*0x78a0cb*/
   {
     v18 = GetStringCSF(aTxtBadChankey, 0, g_Str_File_wonline_cpp, 11789); /*0x78a0e4*/
@@ -4745,7 +4745,7 @@ void CreateGameWOL()
     }
     Screen::Capture(1, 0, (uint8_t)v30, (int)v37); /*0x78a3ad*/
     LoadingScreen::Init(); /*0x78a3b2*/
-    Dialog = (HWND)CreateDialog(0xC2u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))WOLobby::SetupDlgProc, 0); /*0x78a3ce*/
+    Dialog = (HWND)CreateDialog(0xC2u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))WOLobby::SetupDlgProc, 0); /*0x78a3ce*/
     (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 39))(dword_A8B23C); /*0x78a3d2*/
     (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 8))(dword_A8B23C); /*0x78a3e0*/
     (*((void (**)(ObjectClass *))dword_A8B23C->AbstractClass + 6))(dword_A8B23C); /*0x78a3eb*/
@@ -4835,7 +4835,7 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
       v42 = 0; /*0x78d986*/
       memset(v45, 0, sizeof(v45)); /*0x78d98b*/
       strcpy(&v45[36], lParam); /*0x78d9b1*/
-      (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v45); /*0x78d9c3*/
+      (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v45); /*0x78d9c3*/
     }
     v35 = GetDlgItem(hDlg, 1480); /*0x78d9cc*/
     if ( v35 ) /*0x78d9d0*/
@@ -4894,7 +4894,7 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
       strcpy(&v45[36], (const char *)v44); /*0x78d7c2*/
       if ( strlen(&v45[36]) ) /*0x78d7d4*/
       {
-        (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v45); /*0x78d7ee*/
+        (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v45); /*0x78d7ee*/
         return 0; /*0x78d7fd*/
       }
       String = GetStringCSF((wchar_t *)g_Str_TXT_NAME_ERROR, 0, g_Str_File_wonline_cpp, 14080); /*0x78d811*/
@@ -4915,7 +4915,7 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
         {
           v26 = *(unsigned int *)ppv; /*0x78d6fb*/
           v27 = WideString::GetOrEmpty((wchar_t **)&v39); /*0x78d701*/
-          (*(void (__stdcall **)(LPVOID, char *, wchar_t *))(v26 + 248))(ppv, v45, v27); /*0x78d715*/
+          (*(void (**)(LPVOID, char *, wchar_t *))(v26 + 248))(ppv, v45, v27); /*0x78d715*/
         }
         else
         {
@@ -4943,7 +4943,7 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
           v42 = 0; /*0x78d3e6*/
           memset(v45, 0, sizeof(v45)); /*0x78d3eb*/
           strcpy(&v45[36], lParam); /*0x78d411*/
-          (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v45); /*0x78d423*/
+          (*(void (**)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v45); /*0x78d423*/
         }
       }
       v14 = GetDlgItem(hDlg, 1480); /*0x78d42c*/
@@ -4974,7 +4974,7 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
   LABEL_44:
         v20 = *(unsigned int *)ppv; /*0x78d568*/
         v21 = WideString::GetOrEmpty((wchar_t **)&v40); /*0x78d573*/
-        (*(void (__stdcall **)(LPVOID, LPARAM *, wchar_t *))(v20 + 248))(ppv, v44, v21); /*0x78d585*/
+        (*(void (**)(LPVOID, LPARAM *, wchar_t *))(v20 + 248))(ppv, v44, v21); /*0x78d585*/
         v22 = WideString::GetOrEmpty((wchar_t **)&v40); /*0x78d58f*/
         Dialog::ShowStatusText((LPARAM)Math::InitDegToRad, (size_t)g_Str_Fmt_Hs_S_Bracket, dword_B73E40, v22); /*0x78d5a7*/
   LABEL_50:
@@ -5045,7 +5045,7 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
     {
       memset(v44, 0, sizeof(v44)); /*0x78d2f7*/
       strcpy((char *)&v44[9], String::GetOrEmpty((char **)&v40)); /*0x78d320*/
-      (*(void (__stdcall **)(LPVOID, LPARAM *))(*(unsigned int *)ppv + 96))(ppv, v44); /*0x78d332*/
+      (*(void (**)(LPVOID, LPARAM *))(*(unsigned int *)ppv + 96))(ppv, v44); /*0x78d332*/
     }
     v12 = GetDlgItem(hDlg, 1480); /*0x78d33b*/
     if ( v12 ) /*0x78d33f*/
@@ -5079,7 +5079,7 @@ Coord * * sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
         case 0x111u: /*0x78daca*/
           if ( (uint16_t)a3 != 2 ) /*0x78db34*/
             return 0; /*0x78db3c*/
-          (*(void (__stdcall **)(LPVOID))(*(unsigned int *)dword_AC1174 + 16))(dword_AC1174); /*0x78db47*/
+          (*(void (**)(LPVOID))(*(unsigned int *)dword_AC1174 + 16))(dword_AC1174); /*0x78db47*/
           break;
         case 0x5F4u: /*0x78daca*/
           CloseDialog(hWnd, 1); /*0x78db1a*/
@@ -5087,7 +5087,7 @@ Coord * * sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
         case 0x5F5u: /*0x78daca*/
           v5 = (wchar_t *)GetStringCSF(aTxtDownloadFai, (int)g_Str_File_wonline_cpp, 14681); /*0x78daf8*/
           ShowDialogConfirm(v5, 0, (int)GameLoop::Thunk, 0); /*0x78db01*/
-          (*(void (__stdcall **)(LPVOID))(*(unsigned int *)dword_AC1174 + 16))(dword_AC1174); /*0x78db0e*/
+          (*(void (**)(LPVOID))(*(unsigned int *)dword_AC1174 + 16))(dword_AC1174); /*0x78db0e*/
           break;
         default:
           return 0; /*0x78dadd*/

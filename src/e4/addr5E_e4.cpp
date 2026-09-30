@@ -2351,7 +2351,7 @@ void ProcessComboBoxAddString(HWND hWnd, int a2)
   wchar_t lParam[1024]; // [esp+20h] [ebp-C00h] BYREF
   uint8_t v23[1024]; // [esp+820h] [ebp-400h] BYREF
 
-  v2 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x5e6239*/
+  v2 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x5e6239*/
   v5 = SendMessageA(hWnd, 0x18Bu, 0, 0); /*0x5e6250*/
   DeleteAndZero_field_0x08 = v5; /*0x5e6256*/
   unknown_libname_74(&v19); /*0x5e625a*/
@@ -2391,7 +2391,7 @@ void ProcessComboBoxAddString(HWND hWnd, int a2)
   LABEL_14:
           if ( ++v7 >= DeleteAndZero_field_0x08 ) /*0x5e632a*/
             break; /*0x5e632a*/
-          v2 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x5e6288*/
+          v2 = (void (*)(HWND, UINT, WPARAM, LPARAM))SendMessageA; /*0x5e6288*/
         }
       }
     }

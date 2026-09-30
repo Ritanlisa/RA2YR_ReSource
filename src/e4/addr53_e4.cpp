@@ -1775,7 +1775,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   if ( DSurface_Composite && DSurface_Tile && *(unsigned char *)(DSurface_Composite + 25) != *(unsigned char *)(DSurface_Tile + 25) ) /*0x53424c*/
   {
     if ( DSurface_Composite ) /*0x534256*/
-      (**(void (__stdcall ***)(int))DSurface_Composite)(1); /*0x53425c*/
+      (**(void (***)(int))DSurface_Composite)(1); /*0x53425c*/
     if ( DSurface_Tile ) /*0x534266*/
       (**(void (***)(int, int))DSurface_Tile)(DSurface_Tile, 1); /*0x53426c*/
     Debug::Log(aMovingTilesurf); /*0x534273*/

@@ -68,7 +68,7 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
         if ( !v6 ) /*0x614a00*/
           goto LABEL_8; /*0x614a00*/
       }
-      v7 = (LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))(v6 + 4); /*0x614a08*/
+      v7 = (LRESULT (**)(HWND, UINT, WPARAM, LPARAM))(v6 + 4); /*0x614a08*/
       if ( v7 ) /*0x614a0d*/
         v4 = *v7; /*0x614a0f*/
     }

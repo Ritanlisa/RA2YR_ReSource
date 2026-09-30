@@ -346,28 +346,28 @@ void sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
   }
   v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
-  v6 = (*(int (__stdcall **)(int, void **, unsigned int, int, unsigned int, int *))(*(unsigned int *)a1 + 16))(a1, v5, 0, 16, 0, &v9); /*0x68218a*/
+  v6 = (*(int (**)(int, void **, unsigned int, int, unsigned int, int *))(*(unsigned int *)a1 + 16))(a1, v5, 0, 16, 0, &v9); /*0x68218a*/
   if ( v6 >= 0 ) /*0x6821a7*/
   {
     for ( i = WideCharStr; ; ++i ) /*0x6821ce*/
     {
       if ( !v9 ) /*0x6821d8*/
         WinAPI::Wrapper(-2147467261); /*0x6821df*/
-      v6 = (*(int (__stdcall **)(int, WCHAR *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, i, 2, 0); /*0x6821f3*/
+      v6 = (*(int (**)(int, WCHAR *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, i, 2, 0); /*0x6821f3*/
       if ( v6 < 0 ) /*0x6821f7*/
         break; /*0x6821f7*/
       if ( !*i ) /*0x6821fd*/
       {
         WideCharToMultiByte(0, 0, WideCharStr, -1, lpMultiByteStr, 127, 0, 0); /*0x682216*/
         if ( v9 ) /*0x682222*/
-          (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x682227*/
+          (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x682227*/
         return v6; /*0x682227*/
       }
     }
   }
   if ( !v9 ) /*0x6821af*/
     return v6; /*0x68222a*/
-  (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x6821b4*/
+  (*(void (**)(int))(*(unsigned int *)v9 + 8))(v9); /*0x6821b4*/
   return v6; /*0x6821b9*/
 }
 }
@@ -420,7 +420,7 @@ AbstractClass * * sub_68C050()
             goto LABEL_15; /*0x68c109*/
           v2 = v18; /*0x68c0b8*/
         }
-        if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v13[2])(&v13, v2 + v4, 0) ) /*0x68c0df*/
+        if ( ((uint8_t (*)(void ***, int, unsigned int))v13[2])(&v13, v2 + v4, 0) ) /*0x68c0df*/
         {
   LABEL_12:
           v5 = v17++; /*0x68c0e6*/
@@ -1293,7 +1293,7 @@ void sub_682240(int a1, int a2, unsigned short * a3)
   }
   v6 = (&off_83D65C)[2 * v4]; /*0x6822a0*/
   LABEL_5:
-  v7 = (*(int (__stdcall **)(int, void **, unsigned int, int, unsigned int, unsigned short **))(*(unsigned int *)a1 + 16))( /*0x68226f*/
+  v7 = (*(int (**)(int, void **, unsigned int, int, unsigned int, unsigned short **))(*(unsigned int *)a1 + 16))( /*0x68226f*/
          a1,
          v6,
          0,
@@ -1306,13 +1306,13 @@ void sub_682240(int a1, int a2, unsigned short * a3)
     {
       if ( !a3 ) /*0x6822af*/
         WinAPI::Wrapper(-2147467261); /*0x6822b6*/
-      v7 = (*(int (__stdcall **)(unsigned short *, unsigned short *, int, unsigned int))(*(unsigned int *)a3 + 12))(a3, v3, 2, 0); /*0x6822ca*/
+      v7 = (*(int (**)(unsigned short *, unsigned short *, int, unsigned int))(*(unsigned int *)a3 + 12))(a3, v3, 2, 0); /*0x6822ca*/
       if ( v7 < 0 ) /*0x6822ce*/
         break; /*0x6822ce*/
       if ( !*v3 ) /*0x6822d4*/
       {
         if ( a3 ) /*0x6822e1*/
-          (*(void (__stdcall **)(unsigned short *))(*(unsigned int *)a3 + 8))(a3); /*0x6822e6*/
+          (*(void (**)(unsigned short *))(*(unsigned int *)a3 + 8))(a3); /*0x6822e6*/
         return v7; /*0x6822e6*/
       }
       ++v3; /*0x6822d6*/
@@ -1320,7 +1320,7 @@ void sub_682240(int a1, int a2, unsigned short * a3)
   }
   if ( !a3 ) /*0x682291*/
     return v7; /*0x6822e9*/
-  (*(void (__stdcall **)(unsigned short *))(*(unsigned int *)a3 + 8))(a3); /*0x682296*/
+  (*(void (**)(unsigned short *))(*(unsigned int *)a3 + 8))(a3); /*0x682296*/
   return v7; /*0x68229b*/
 }
 }
@@ -1351,7 +1351,7 @@ void sub_6824B0(int a1, int a2, unsigned int * a3)
   }
   v6 = (&off_83D65C)[2 * v4]; /*0x682511*/
   LABEL_5:
-  v7 = (*(int (__stdcall **)(int, void **, unsigned int, int, unsigned int, unsigned int **))(*(unsigned int *)a1 + 16))( /*0x6824e0*/
+  v7 = (*(int (**)(int, void **, unsigned int, int, unsigned int, unsigned int **))(*(unsigned int *)a1 + 16))( /*0x6824e0*/
          a1,
          v6,
          0,
@@ -1362,11 +1362,11 @@ void sub_6824B0(int a1, int a2, unsigned int * a3)
   {
     if ( !a3 ) /*0x68251c*/
       WinAPI::Wrapper(-2147467261); /*0x682523*/
-    v7 = (*(int (__stdcall **)(unsigned int *, unsigned int *, int, unsigned int))(*a3 + 12))(a3, v3, 4, 0); /*0x682537*/
+    v7 = (*(int (**)(unsigned int *, unsigned int *, int, unsigned int))(*a3 + 12))(a3, v3, 4, 0); /*0x682537*/
     if ( v7 >= 0 ) /*0x68253f*/
     {
       if ( a3 ) /*0x682554*/
-        (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x682559*/
+        (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x682559*/
     }
     else if ( a3 ) /*0x682543*/
     {
@@ -1376,7 +1376,7 @@ void sub_6824B0(int a1, int a2, unsigned int * a3)
   else if ( a3 ) /*0x682502*/
   {
   LABEL_7:
-    (*(void (__stdcall **)(unsigned int *))(*a3 + 8))(a3); /*0x682504*/
+    (*(void (**)(unsigned int *))(*a3 + 8))(a3); /*0x682504*/
     return v7; /*0x68250e*/
   }
   return v7; /*0x68250c*/
@@ -2191,14 +2191,14 @@ int sub_6822F0(int a1, int a2, LPSTR lpMultiByteStr)
   v3 = lpMultiByteStr; /*0x6822f9*/
   lpMultiByteStr = 0; /*0x682301*/
   *v3 = 0; /*0x68230a*/
-  v4 = (*(int (__stdcall **)(int, void *, int, LPSTR *))(*(unsigned int *)a1 + 16))(a1, &unk_7F7D10, 18, &lpMultiByteStr); /*0x68231a*/
+  v4 = (*(int (**)(int, void *, int, LPSTR *))(*(unsigned int *)a1 + 16))(a1, &unk_7F7D10, 18, &lpMultiByteStr); /*0x68231a*/
   if ( v4 >= 0 ) /*0x68231e*/
   {
     v6[0] = 1; /*0x682346*/
     v6[1] = a2; /*0x68234e*/
     if ( !lpMultiByteStr ) /*0x682352*/
       WinAPI::Wrapper(-2147467261); /*0x682359*/
-    v4 = (*(int (__stdcall **)(LPSTR, int, unsigned int *, unsigned short *))(*(unsigned int *)lpMultiByteStr + 12))( /*0x682374*/
+    v4 = (*(int (**)(LPSTR, int, unsigned int *, unsigned short *))(*(unsigned int *)lpMultiByteStr + 12))( /*0x682374*/
            lpMultiByteStr,
            1,
            v6,
@@ -2208,17 +2208,17 @@ int sub_6822F0(int a1, int a2, LPSTR lpMultiByteStr)
       if ( v7[0] == 31 ) /*0x682398*/
         WideCharToMultiByte(0, 0, lpWideCharStr, -1, v3, 128, 0, 0); /*0x6823af*/
       if ( lpMultiByteStr ) /*0x6823bb*/
-        (*(void (__stdcall **)(LPSTR))(*(unsigned int *)lpMultiByteStr + 8))(lpMultiByteStr); /*0x6823c0*/
+        (*(void (**)(LPSTR))(*(unsigned int *)lpMultiByteStr + 8))(lpMultiByteStr); /*0x6823c0*/
     }
     else if ( lpMultiByteStr ) /*0x682380*/
     {
-      (*(void (__stdcall **)(LPSTR))(*(unsigned int *)lpMultiByteStr + 8))(lpMultiByteStr); /*0x682385*/
+      (*(void (**)(LPSTR))(*(unsigned int *)lpMultiByteStr + 8))(lpMultiByteStr); /*0x682385*/
       return v4; /*0x68238f*/
     }
   }
   else if ( lpMultiByteStr ) /*0x682326*/
   {
-    (*(void (__stdcall **)(LPSTR))(*(unsigned int *)lpMultiByteStr + 8))(lpMultiByteStr); /*0x68232f*/
+    (*(void (**)(LPSTR))(*(unsigned int *)lpMultiByteStr + 8))(lpMultiByteStr); /*0x68232f*/
     return v4; /*0x682339*/
   }
   return v4; /*0x682334*/
@@ -2238,30 +2238,30 @@ int sub_6823D0(int a1, int a2, wchar_t * Destination)
   v3 = Destination; /*0x6823d9*/
   Destination = 0; /*0x6823e1*/
   *v3 = 0; /*0x6823ea*/
-  v4 = (*(int (__stdcall **)(int, void *, int, wchar_t **))(*(unsigned int *)a1 + 16))(a1, &unk_7F7D10, 18, &Destination); /*0x6823fc*/
+  v4 = (*(int (**)(int, void *, int, wchar_t **))(*(unsigned int *)a1 + 16))(a1, &unk_7F7D10, 18, &Destination); /*0x6823fc*/
   if ( v4 >= 0 ) /*0x682400*/
   {
     v6[0] = 1; /*0x682428*/
     v6[1] = a2; /*0x682430*/
     if ( !Destination ) /*0x682434*/
       WinAPI::Wrapper(-2147467261); /*0x68243b*/
-    v4 = (*(int (__stdcall **)(wchar_t *, int, unsigned int *, unsigned short *))(*(unsigned int *)Destination + 12))(Destination, 1, v6, v7); /*0x682456*/
+    v4 = (*(int (**)(wchar_t *, int, unsigned int *, unsigned short *))(*(unsigned int *)Destination + 12))(Destination, 1, v6, v7); /*0x682456*/
     if ( v4 >= 0 ) /*0x68245a*/
     {
       if ( v7[0] == 31 ) /*0x68247a*/
         wcsncpy(v3, Source, 0x80u); /*0x682487*/
       if ( Destination ) /*0x682495*/
-        (*(void (__stdcall **)(wchar_t *))(*(unsigned int *)Destination + 8))(Destination); /*0x68249a*/
+        (*(void (**)(wchar_t *))(*(unsigned int *)Destination + 8))(Destination); /*0x68249a*/
     }
     else if ( Destination ) /*0x682462*/
     {
-      (*(void (__stdcall **)(wchar_t *))(*(unsigned int *)Destination + 8))(Destination); /*0x682467*/
+      (*(void (**)(wchar_t *))(*(unsigned int *)Destination + 8))(Destination); /*0x682467*/
       return v4; /*0x682471*/
     }
   }
   else if ( Destination ) /*0x682408*/
   {
-    (*(void (__stdcall **)(wchar_t *))(*(unsigned int *)Destination + 8))(Destination); /*0x682411*/
+    (*(void (**)(wchar_t *))(*(unsigned int *)Destination + 8))(Destination); /*0x682411*/
     return v4; /*0x68241b*/
   }
   return v4; /*0x682416*/

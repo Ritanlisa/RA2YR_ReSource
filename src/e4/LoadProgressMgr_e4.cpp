@@ -19,7 +19,7 @@ void sub_72B460()
   }
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[976] ) /*0x72b483*/
   {
-    (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[976])( /*0x72b489*/
+    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[976])( /*0x72b489*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[976],
       1);
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[976] = 0; /*0x72b48b*/
@@ -31,7 +31,7 @@ void sub_72B460()
   }
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[984] ) /*0x72b4b1*/
   {
-    (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[984])( /*0x72b4b7*/
+    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[984])( /*0x72b4b7*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[984],
       1);
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[984] = 0; /*0x72b4b9*/
@@ -43,7 +43,7 @@ void sub_72B460()
   }
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992] ) /*0x72b4df*/
   {
-    (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[992])( /*0x72b4e5*/
+    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[992])( /*0x72b4e5*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992],
       1);
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[992] = 0; /*0x72b4e7*/
@@ -57,7 +57,7 @@ void sub_72B870()
 {
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1008] ) /*0x72b87b*/
   {
-    (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1008])( /*0x72b881*/
+    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1008])( /*0x72b881*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1008],
       1);
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1008] = 0; /*0x72b883*/
@@ -74,7 +74,7 @@ void sub_72B870()
   }
   if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1000] ) /*0x72b8c1*/
   {
-    (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1000])( /*0x72b8c7*/
+    (***(void (****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1000])( /*0x72b8c7*/
       *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1000],
       1);
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1000] = 0; /*0x72b8c9*/

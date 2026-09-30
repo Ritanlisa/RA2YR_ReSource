@@ -58,8 +58,8 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
           v6 = *((unsigned int *)g_BuildingClass_InstanceCount + v5); /*0x50afad*/
           if ( !*(unsigned char *)(v6 + 129) && *(unsigned char *)(v6 + 144) ) /*0x50afbe*/
           {
-            v20 = (*(int (__stdcall **)(int))(*(unsigned int *)(*(unsigned int *)(v6 + 540) + 4) + 16))(*(unsigned int *)(v6 + 540) + 4); /*0x50afe3*/
-            if ( v20 == (*(int (__stdcall **)(int))(ownerHouse->vtable2 + 16))((unsigned int)(ownerHouse)+ 4) ) /*0x50aff0*/
+            v20 = (*(int (**)(int))(*(unsigned int *)(*(unsigned int *)(v6 + 540) + 4) + 16))(*(unsigned int *)(v6 + 540) + 4); /*0x50afe3*/
+            if ( v20 == (*(int (**)(int))(ownerHouse->vtable2 + 16))((unsigned int)(ownerHouse)+ 4) ) /*0x50aff0*/
             {
               v7 = (int *)(v6 + 1516); /*0x50aff2*/
               v8 = 3; /*0x50aff8*/

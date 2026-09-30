@@ -477,10 +477,10 @@ int sub_721040(int a1)
   int v5; // [esp+20h] [ebp-4h] BYREF
 
   v1 = a1; /*0x721042*/
-  v2 = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a1 + 12))(a1, &a1, 4, 0); /*0x721056*/
+  v2 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)a1 + 12))(a1, &a1, 4, 0); /*0x721056*/
   if ( v2 >= 0 ) /*0x72105a*/
   {
-    v2 = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v1 + 12))(v1, &v5, 4, 0); /*0x72106f*/
+    v2 = (*(int (**)(int, int *, int, unsigned int))(*(unsigned int *)v1 + 12))(v1, &v5, 4, 0); /*0x72106f*/
     if ( v2 >= 0 ) /*0x721073*/
     {
       if ( byte_A8EBA5 ) /*0x721080*/

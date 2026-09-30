@@ -48,7 +48,7 @@ void TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, voi
         if ( !*(unsigned char *)((unsigned int)(a1)+ 1737) || *(unsigned int *)((unsigned int)(a1)+ 280) )
     {
       v7 = *ProgressTimer::GetValue((ProgressTimer *)a1->secondaryFacing, &a5); /*0x41aa2e*/
-      if ( (*(int (__stdcall **)(char *))(*((unsigned int *)a1 + 432) + 28))((char *)a1 + 1728) /*0x41aa6a*/
+      if ( (*(int (**)(char *))(*((unsigned int *)a1 + 432) + 28))((char *)a1 + 1728) /*0x41aa6a*/
         || abs16(v7 - *(unsigned short *)ObjectClass::CalcTargetFacing((ObjectClass *)a1, (int *)&a5, (int)a3)) <= 0x800u )
       {
         return 0; /*0x41aa77*/
@@ -1344,7 +1344,7 @@ LABEL_10:
   if ( !ecx0[413] )
     WinAPI::Wrapper(-2147467261);
   const void *v15; // eax
-  v15 = (const void *)(*(int (__stdcall **)(unsigned int, float *, TechnoClass **))(*(unsigned int *)ecx0[413] + 36))(
+  v15 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsigned int *)ecx0[413] + 36))(
                         ecx0[413],
                         v145,
                         &aP3);
@@ -1429,7 +1429,7 @@ LABEL_10:
       v118 = v24;
       TechnoClass::CalcFacingFromMatrix((IUnknown *)v142);
       float aP1 = -(v118 - v24);
-      ((void (__thiscall *)(float *, float))Matrix3D::RotateZ)(v142, aP1);
+      ((void (*)(float *, float))Matrix3D::RotateZ)(v142, aP1);
       aP1a = (double)*(int *)((*(int (**)(unsigned int *, unsigned int))(*ecx0 + 1016))(ecx0, 0) + 12) * unk_B1D008;
       aP1b = (double)*(int *)((*(int (**)(unsigned int *, unsigned int, unsigned int, unsigned int))(*ecx0 + 1016))(
                                 ecx0,
@@ -1541,7 +1541,7 @@ LABEL_56:
                           & 0x1F)
                          - 8);
     aP1e = v123 - (double)(int)v116 * -0.1963495408493621;
-    ((void (__thiscall *)(float *, float))Matrix2D::Rotate)(v142, aP1e);
+    ((void (*)(float *, float))Matrix2D::Rotate)(v142, aP1e);
     *(float *)&v118 = -v142[3];
     v137 = v142[7];
     qmemcpy(v145, v142, sizeof(v145));
@@ -1556,7 +1556,7 @@ LABEL_56:
                           & 0x1F)
                          - 8);
     aP1f = -((double)(int)v116 * -0.1963495408493621);
-    ((void (__thiscall *)(float *, float))Matrix3D::RotateZ)(v145, aP1f);
+    ((void (*)(float *, float))Matrix3D::RotateZ)(v145, aP1f);
     Matrix3x3::Multiply(v145, &v136);
     float * v34 = (float *)AudioConfig::InitDefault(v148);
     qmemcpy(v144, MultiplyMatrix3x4((ObjectClass *)v147, v34, v142), sizeof(v144));
@@ -1825,13 +1825,13 @@ LABEL_102:
       aP3 = (TechnoClass *)(32 * v140);
       if ( !ecx0[413] )
         WinAPI::Wrapper(-2147467261);
-      int v66 = (*(int (__stdcall **)(unsigned int, double *))(*(unsigned int *)ecx0[413] + 48))(ecx0[413], &v123);
+      int v66 = (*(int (**)(unsigned int, double *))(*(unsigned int *)ecx0[413] + 48))(ecx0[413], &v123);
       aP3 = (TechnoClass *)(((uint8_t)*(unsigned int *)(v66 + 4) - 16) & 0x1F | (unsigned int)aP3);
     }
     if ( !ecx0[413] )
       WinAPI::Wrapper(-2147467261);
   const void *v67; // eax
-    v67 = (const void *)(*(int (__stdcall **)(unsigned int, float *, TechnoClass **))(*(unsigned int *)ecx0[413] + 40))(
+    v67 = (const void *)(*(int (**)(unsigned int, float *, TechnoClass **))(*(unsigned int *)ecx0[413] + 40))(
                           ecx0[413],
                           v147,
                           &aP3);
@@ -1846,7 +1846,7 @@ LABEL_102:
       Coord::To_Screen(*(unsigned int **)&stru_87C374[44976], a1, (IUnknown *)&v118);
       if ( !ecx0[413] )
         WinAPI::Wrapper(-2147467261);
-      int * v68 = (int *)(*(int (__stdcall **)(unsigned int, double *))(*(unsigned int *)ecx0[413] + 48))(ecx0[413], &v123);
+      int * v68 = (int *)(*(int (**)(unsigned int, double *))(*(unsigned int *)ecx0[413] + 48))(ecx0[413], &v123);
       int v69 = *v68;
       int v70 = v68[1];
       IDA_LODWORD(v118) += v69;
@@ -1898,9 +1898,9 @@ LABEL_102:
       if ( !ecx0[413] )
         WinAPI::Wrapper(-2147467261);
       int v81 = ecx0[413];
-      int v82 = (*(int (__stdcall **)(int))(*(unsigned int *)v81 + 48))(v81);
+      int v82 = (*(int (**)(int))(*(unsigned int *)v81 + 48))(v81);
   int v94; // [esp+F0h] [ebp-1CCh]
-      v94 = *(unsigned int *)(*(int (__stdcall **)(int, int *, unsigned int))(*(unsigned int *)v81 + 48))(
+      v94 = *(unsigned int *)(*(int (**)(int, int *, unsigned int))(*(unsigned int *)v81 + 48))(
                          v81,
                          &v133,
                          *(unsigned int *)(v82 + 4));
@@ -1928,9 +1928,9 @@ LABEL_102:
       if ( !ecx0[413] )
         WinAPI::Wrapper(-2147467261);
       int v78 = ecx0[413];
-      int v79 = (*(int (__stdcall **)(int))(*(unsigned int *)v78 + 48))(v78);
+      int v79 = (*(int (**)(int))(*(unsigned int *)v78 + 48))(v78);
   int v93; // [esp+F0h] [ebp-1CCh]
-      v93 = *(unsigned int *)(*(int (__stdcall **)(int, int *, int))(*(unsigned int *)v78 + 48))(
+      v93 = *(unsigned int *)(*(int (**)(int, int *, int))(*(unsigned int *)v78 + 48))(
                          v78,
                          &v133,
                          *(unsigned int *)(v79 + 4) + 1);

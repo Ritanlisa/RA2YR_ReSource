@@ -57,9 +57,9 @@ int WTFMode::ResetUnitFlags() {
     {
       do /*0x41dbc8*/
       {
-        (*(void (__thiscall **)(unsigned int *, int, unsigned int))(*v4 + 488))(v4, 4, 0); /*0x41db9c*/
-        (*(void (__thiscall **)(unsigned int *, unsigned int))(*v4 + 968))(v4, 0); /*0x41dba7*/
-        IDA_LOBYTE(v1) = (*(int (__thiscall **)(unsigned int *, unsigned int, int))(*v4 + 1152))(v4, 0, 1); /*0x41dbb4*/
+        (*(void (**)(unsigned int *, int, unsigned int))(*v4 + 488))(v4, 4, 0); /*0x41db9c*/
+        (*(void (**)(unsigned int *, unsigned int))(*v4 + 968))(v4, 0); /*0x41dba7*/
+        IDA_LOBYTE(v1) = (*(int (**)(unsigned int *, unsigned int, int))(*v4 + 1152))(v4, 0, 1); /*0x41dbb4*/
         v4 = (unsigned int *)v4[374]; /*0x41dbba*/
         ++v5; /*0x41dbc0*/
       }
@@ -69,7 +69,7 @@ int WTFMode::ResetUnitFlags() {
     this->u8_3D = 0; /*0x41dbcd*/
     if ( v6 ) /*0x41dbd2*/
     {
-      v1 = (WTFMode *)(*(int (__thiscall **)(unsigned int *))(*v6 + 44))(v6); /*0x41dbd8*/
+      v1 = (WTFMode *)(*(int (**)(unsigned int *))(*v6 + 44))(v6); /*0x41dbd8*/
       if ( v1 == (WTFMode *)6 && (WTFMode *)v6[165] == this ) /*0x41dbe6*/
       {
         IDA_LOBYTE(v1) = dword_889FC8; /*0x41dbe8*/
@@ -90,7 +90,7 @@ int WTFMode::ResetUnitFlags() {
         }
         v6[165] = v7; /*0x41dc10*/
         if ( !v7 && byte_A8E9A0 ) /*0x41dc1e*/
-          IDA_LOBYTE(v1) = (*(int (__thiscall **)(unsigned int *, int))(*v6 + 292))(v6, 2); /*0x41dc26*/
+          IDA_LOBYTE(v1) = (*(int (**)(unsigned int *, int))(*v6 + 292))(v6, 2); /*0x41dc26*/
         if ( (WTFMode *)v6[165] == this ) /*0x41dc32*/
           v6[165] = 0; /*0x41dc34*/
       }
@@ -110,7 +110,7 @@ void* WTFMode::FindObjectByType(int a1) {
   v2 = (unsigned int *)(a1 ? this->q0E8 : this->q0E4);
   if ( !v2 ) /*0x47ec62*/
     return 0; /*0x47ec77*/
-  while ( (*(int (__thiscall **)(unsigned int *))(*v2 + 44))(v2) != 15 ) /*0x47ec6e*/
+  while ( (*(int (**)(unsigned int *))(*v2 + 44))(v2) != 15 ) /*0x47ec6e*/
   {
     v2 = (unsigned int *)v2[12]; /*0x47ec70*/
     if ( !v2 ) /*0x47ec75*/
@@ -189,7 +189,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAU_DDSURFACEDESC *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4d3e*/
+    (*(void (**)(_DynamicVectorClass_PAU_DDSURFACEDESC *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a4d3e*/
   }
   v7 = this->m_8; /*0x4a4d41*/
   if ( v7 < this->m_10 ) /*0x4a4d49*/
@@ -312,7 +312,7 @@ int Stream::WriteBlock(int a1, int a2, int a3) {
 
   if ( !*(this + 15) ) /*0x5f1bf3*/
     return 0; /*0x5f1bfa*/
-  result = (*(int (__thiscall **)(unsigned int, int, int, int, unsigned int))(*(unsigned int *)*(this + 14) + 8))( /*0x5f1c16*/
+  result = (*(int (**)(unsigned int, int, int, int, unsigned int))(*(unsigned int *)*(this + 14) + 8))( /*0x5f1c16*/
              *(this + 14),
              a1,
              a2,
@@ -349,7 +349,7 @@ int Stream::ReadPacket() {
      + this->u32_58;
   this->u32_58 = v3; /*0x5f1c9c*/
   if ( v3 < 0xB ) /*0x5f1c9f*/
-    return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1c9f*/
+    return (*(int (**)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1c9f*/
   v4 = 0; /*0x5f1cb4*/
   if ( (int)(v3 - 2) < 0 ) /*0x5f1cb8*/
     goto LABEL_11; /*0x5f1cb8*/
@@ -365,7 +365,7 @@ int Stream::ReadPacket() {
     memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v4), 1u); /*0x5f1cd1*/
     v6 = this->u32_38; /*0x5f1ce0*/
     this->u32_58 = 1; /*0x5f1ce3*/
-    return (*(int (__thiscall **)(int))(v6->abstractFlags)(v6); /*0x5f1cef*/
+    return (*(int (**)(int))(v6->abstractFlags)(v6); /*0x5f1cef*/
   }
   else if ( v3 - v4 >= 6 ) /*0x5f1d05*/
   {
@@ -384,18 +384,18 @@ int Stream::ReadPacket() {
             memcpy(v5, &v5[v4], v3 - v4); /*0x5f1dcc*/
             this->u32_58 -= v4; /*0x5f1dd9*/
           }
-          return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1cb0*/
+          return (*(int (**)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1cb0*/
         }
         if ( Audio_Read(v7 + 6, v11) == *(unsigned int *)&v5[v11 + 6 + v4] ) /*0x5f1e06*/
         {
-          if ( !(*(int (__thiscall **)(unsigned int, int, int))(**(unsigned int **)(&this->PacketsReceived6) + 12))( /*0x5f1e58*/
+          if ( !(*(int (**)(unsigned int, int, int))(**(unsigned int **)(&this->PacketsReceived6) + 12))( /*0x5f1e58*/
                   this->u32_38,
                   this->PacketsReceived + v4 + 6,
                   v11) )
             ++this->u32_6C; /*0x5f1e5f*/
           memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v16), this->u32_58 - v16); /*0x5f1e74*/
           this->u32_58 -= v16; /*0x5f1e81*/
-          return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1e8b*/
+          return (*(int (**)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1e8b*/
         }
         else
         {
@@ -405,7 +405,7 @@ int Stream::ReadPacket() {
           memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v14), this->u32_58 - v14); /*0x5f1e2a*/
           v15 = this->u32_38; /*0x5f1e32*/
           this->u32_58 -= v14; /*0x5f1e3a*/
-          return (*(int (__thiscall **)(int))(v15->abstractFlags)(v15); /*0x5f1e3f*/
+          return (*(int (**)(int))(v15->abstractFlags)(v15); /*0x5f1e3f*/
         }
       }
       else
@@ -415,7 +415,7 @@ int Stream::ReadPacket() {
         memcpy(*(void **)(&this->Active0), (const void *)(this->PacketsReceived + v12), this->u32_58 - v12); /*0x5f1d95*/
         v13 = this->u32_38; /*0x5f1d9d*/
         this->u32_58 -= v12; /*0x5f1da5*/
-        return (*(int (__thiscall **)(int))(v13->abstractFlags)(v13); /*0x5f1daa*/
+        return (*(int (**)(int))(v13->abstractFlags)(v13); /*0x5f1daa*/
       }
     }
     else
@@ -424,14 +424,14 @@ int Stream::ReadPacket() {
       memcpy(v5, &v5[v8], v3 - v8); /*0x5f1d46*/
       v9 = this->u32_38; /*0x5f1d4e*/
       this->u32_58 -= v8; /*0x5f1d56*/
-      return (*(int (__thiscall **)(int))(v9->abstractFlags)(v9); /*0x5f1d5b*/
+      return (*(int (**)(int))(v9->abstractFlags)(v9); /*0x5f1d5b*/
     }
   }
   else
   {
     memcpy(v5, &v5[v4], v3 - v4); /*0x5f1d0d*/
     this->u32_58 -= v4; /*0x5f1d1a*/
-    return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1d24*/
+    return (*(int (**)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1d24*/
   }
 }
 }
@@ -443,7 +443,7 @@ int Stream::ReadOLEObjects() {
   int v4; // [esp+10h] [ebp-8h] BYREF
   LPVOID ppvObj; // [esp+14h] [ebp-4h] BYREF
 
-  result = ((int (__stdcall *)(Stream *, int *, int, unsigned int))this->m_Stream->m_Size)(this, &v4, 4, 0); /*0x67c6a4*/
+  result = ((int (*)(Stream *, int *, int, unsigned int))this->m_Stream->m_Size)(this, &v4, 4, 0); /*0x67c6a4*/
   if ( result >= 0 ) /*0x67c6a9*/
   {
     v3 = 0; /*0x67c6af*/
@@ -473,14 +473,14 @@ void* StreamWrapper::QueryInterface(int a2) {
   void (__thiscall ***v4)(unsigned int, int); // ecx
   void (__thiscall ***v5)(unsigned int, int); // ecx
 
-  v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
+  v3 = (void (***)(unsigned int, int))*((unsigned int *)this + 4); /*0x7b0443*/
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&WorldDominationTour_FactionSelectDialogControl_vftable; /*0x7b0446*/
   if ( v3 ) /*0x7b044e*/
     (**v3)(v3, 1); /*0x7b0454*/
-  v4 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/
+  v4 = (void (***)(unsigned int, int))*((unsigned int *)this + 5); /*0x7b0456*/
   if ( v4 ) /*0x7b045b*/
     (**v4)(v4, 1); /*0x7b0461*/
-  v5 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)this + 6); /*0x7b0463*/
+  v5 = (void (***)(unsigned int, int))*((unsigned int *)this + 6); /*0x7b0463*/
   if ( v5 ) /*0x7b0468*/
     (**v5)(v5, 1); /*0x7b046e*/
   OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x7b0472*/
@@ -495,7 +495,7 @@ int Stream::GetField() {
   int (__thiscall ***v1)(unsigned int, int); // ecx
   int result; // eax
 
-  v1 = (int (__thiscall ***)(unsigned int, int))this->u32_14; /*0x7bcae0*/
+  v1 = (int (***)(unsigned int, int))this->u32_14; /*0x7bcae0*/
   if ( v1 ) /*0x7bcae5*/
     return (**v1)(v1, 1); /*0x7bcaeb*/
   return result; /*0x7bcaed*/

@@ -80,7 +80,7 @@ int sub_4116A0(unsigned int a1)
   v7 = *(unsigned int *)(v1 + 156) * *(unsigned int *)(v3 + 148); /*0x41171a*/
   v18 = *(unsigned int *)(v1 + 56); /*0x411723*/
   v16 = *(unsigned int *)(v3 + 152); /*0x411727*/
-  if ( v6 && !(*(int (__stdcall **)(int, unsigned int *, unsigned char *))(*(unsigned int *)v6 + 16))(v6, &a1, v19) ) /*0x41173a*/
+  if ( v6 && !(*(int (**)(int, unsigned int *, unsigned char *))(*(unsigned int *)v6 + 16))(v6, &a1, v19) ) /*0x41173a*/
   {
     if ( v16 ) /*0x411747*/
     {
@@ -180,8 +180,8 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
           if ( dword_887804[47 * dwUser[2].LockCount] ) /*0x4118c5*/
           {
             EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x4118de*/
-            (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v7 + 140) + 72))(*(unsigned int *)(v7 + 140)); /*0x4118ed*/
-            (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v7 + 140) + 8))(*(unsigned int *)(v7 + 140)); /*0x4118f9*/
+            (*(void (**)(unsigned int))(**(unsigned int **)(v7 + 140) + 72))(*(unsigned int *)(v7 + 140)); /*0x4118ed*/
+            (*(void (**)(unsigned int))(**(unsigned int **)(v7 + 140) + 8))(*(unsigned int *)(v7 + 140)); /*0x4118f9*/
             *(unsigned int *)(v7 + 140) = 0; /*0x411901*/
             *(unsigned int *)(v7 + 64) = 0; /*0x411907*/
             *(unsigned int *)(v7 + 68) = 0; /*0x41190a*/
@@ -217,7 +217,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       {
         v11 = *(unsigned int *)(v9 + 140); /*0x4119d0*/
         if ( v11 ) /*0x4119d8*/
-          (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v11 + 72))(*(unsigned int *)(v9 + 140)); /*0x4119dd*/
+          (*(void (**)(unsigned int))(*(unsigned int *)v11 + 72))(*(unsigned int *)(v9 + 140)); /*0x4119dd*/
       }
       *(unsigned int *)(v9 + 40) |= 1u; /*0x4119e7*/
       LeaveCriticalSection(v10); /*0x4119ea*/
@@ -228,8 +228,8 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       if ( dword_887804[47 * dwUser[2].LockCount] ) /*0x411aa4*/
       {
         EnterCriticalSection((LPCRITICAL_SECTION)(188 * dwUser[2].LockCount + 8943640)); /*0x411abd*/
-        (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v15 + 140) + 72))(*(unsigned int *)(v15 + 140)); /*0x411acc*/
-        (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v15 + 140) + 8))(*(unsigned int *)(v15 + 140)); /*0x411ad8*/
+        (*(void (**)(unsigned int))(**(unsigned int **)(v15 + 140) + 72))(*(unsigned int *)(v15 + 140)); /*0x411acc*/
+        (*(void (**)(unsigned int))(**(unsigned int **)(v15 + 140) + 8))(*(unsigned int *)(v15 + 140)); /*0x411ad8*/
         *(unsigned int *)(v15 + 140) = 0; /*0x411ae0*/
         *(unsigned int *)(v15 + 64) = 0; /*0x411ae6*/
         *(unsigned int *)(v15 + 68) = 0; /*0x411ae9*/
@@ -245,7 +245,7 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
       if ( byte_887778[188 * v12] && dword_887804[47 * v12] ) /*0x411a1b*/
       {
         EnterCriticalSection((LPCRITICAL_SECTION)(188 * v12 + 8943640)); /*0x411a2a*/
-        if ( (*(int (__stdcall **)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v13 + 140) + 48))( /*0x411a3d*/
+        if ( (*(int (**)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v13 + 140) + 48))( /*0x411a3d*/
                *(unsigned int *)(v13 + 140),
                0,
                0,
@@ -334,8 +334,8 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   v5[10] = *((unsigned char *)aP1 + 2); /*0x411c5a*/
   v5[11] = *((unsigned char *)aP1 + 3); /*0x411c60*/
   *((unsigned int *)v5 + 9) = *((unsigned int *)aP1 + 1); /*0x411c66*/
-  dword_88776C = (int (__cdecl *)(unsigned int))*((unsigned int *)aP1 + 2); /*0x411c6c*/
-  dword_887770 = (int (__cdecl *)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3); /*0x411c75*/
+  dword_88776C = (int (*)(unsigned int))*((unsigned int *)aP1 + 2); /*0x411c6c*/
+  dword_887770 = (int (*)(unsigned int, unsigned int))*((unsigned int *)aP1 + 3); /*0x411c75*/
     ((Debug *)0)->Log();
   if ( timeBeginPeriod(0x10u) == 97 ) /*0x411c90*/
     return -13; /*0x411cd5*/
@@ -378,8 +378,8 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     v7 = (int **)(v3 + 140); /*0x411eab*/
     if ( v6 ) /*0x411eb3*/
     {
-      (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v6 + 72))(*(unsigned int *)(v3 + 140)); /*0x411eb8*/
-      (*(void (__stdcall **)(int *))(**v7 + 8))(*v7); /*0x411ec0*/
+      (*(void (**)(unsigned int))(*(unsigned int *)v6 + 72))(*(unsigned int *)(v3 + 140)); /*0x411eb8*/
+      (*(void (**)(int *))(**v7 + 8))(*v7); /*0x411ec0*/
       *v7 = 0; /*0x411ec3*/
     }
     *(unsigned int *)(v3 + 144) = 2 * (int)lpCriticalSection[6].OwningThread; /*0x411ed8*/
@@ -421,14 +421,14 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
       *(unsigned int *)(v3 + 68) = 0; /*0x411f96*/
       *(unsigned int *)(v3 + 156) = 0; /*0x411f99*/
       *(unsigned int *)(v3 + 148) = 0; /*0x411f9f*/
-      (*(void (__stdcall **)(int *, unsigned int))(*v13 + 52))(v13, 0); /*0x411fa9*/
+      (*(void (**)(int *, unsigned int))(*v13 + 52))(v13, 0); /*0x411fa9*/
       v14 = Math::RoundToInt(*(float *)&flt_A8EB9C * 255.0); /*0x411fb8*/
       v15 = *v7; /*0x411fbd*/
       *(unsigned int *)(v3 + 4) = v14; /*0x411fc1*/
       v16 = *v15; /*0x411fca*/
       v17 = sub_40A900((uint8_t)v14); /*0x411fcc*/
-      (*(void (__stdcall **)(int *, int))(v16 + 60))(*v7, v17); /*0x411fd5*/
-      v18 = (*(int (__stdcall **)(int *, unsigned int, unsigned int, int))(**v7 + 48))(*v7, 0, 0, 1); /*0x411fe8*/
+      (*(void (**)(int *, int))(v16 + 60))(*v7, v17); /*0x411fd5*/
+      v18 = (*(int (**)(int *, unsigned int, unsigned int, int))(**v7 + 48))(*v7, 0, 0, 1); /*0x411fe8*/
       LeaveCriticalSection(lpCriticalSectiona); /*0x411feb*/
       v19 = -(v18 != 0); /*0x411ff6*/
       IDA_LOBYTE(v19) = v19 & 0xF4; /*0x411ff9*/
@@ -440,7 +440,7 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
   if ( !byte_887778[188 * LockCount] || !dword_887804[47 * LockCount] ) /*0x411e1e*/
     return -13; /*0x411e26*/
   EnterCriticalSection((LPCRITICAL_SECTION)(188 * LockCount + 8943640)); /*0x411e33*/
-  if ( (*(int (__stdcall **)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v3 + 140) + 48))( /*0x411e48*/
+  if ( (*(int (**)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v3 + 140) + 48))( /*0x411e48*/
          *(unsigned int *)(v3 + 140),
          0,
          0,
@@ -522,7 +522,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
         *(unsigned int *)(v5 + 4) = v7; /*0x41208f*/
         v8 = *v6; /*0x412092*/
         v9 = sub_40A900((uint8_t)v7); /*0x41209a*/
-        (*(void (__stdcall **)(unsigned int, int))(v8 + 60))(*(unsigned int *)(v5 + 140), v9); /*0x4120a7*/
+        (*(void (**)(unsigned int, int))(v8 + 60))(*(unsigned int *)(v5 + 140), v9); /*0x4120a7*/
       }
     }
   }
@@ -542,7 +542,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
   if ( v13 ) /*0x4120ff*/
   {
     v37 = *((unsigned int *)&unk_887814 + 47 * *(unsigned int *)(v3 + 52)); /*0x41210d*/
-    if ( !(*(int (__stdcall **)(int, int, unsigned int, char **, unsigned int *, char **, unsigned int *, unsigned int))(*(unsigned int *)v13 + 44))( /*0x412134*/
+    if ( !(*(int (**)(int, int, unsigned int, char **, unsigned int *, char **, unsigned int *, unsigned int))(*(unsigned int *)v13 + 44))( /*0x412134*/
             v13,
             v37,
             *(unsigned int *)(v3 + 156),
@@ -576,7 +576,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
           v26 = v22; /*0x412195*/
   LABEL_18:
           qmemcpy(v24, v25, v26 & 3); /*0x4121aa*/
-          (*(void (__stdcall **)(unsigned int, char *, unsigned int, char *, unsigned int))(**(unsigned int **)(v14 + 140) + 76))( /*0x4121cc*/
+          (*(void (**)(unsigned int, char *, unsigned int, char *, unsigned int))(**(unsigned int **)(v14 + 140) + 76))( /*0x4121cc*/
             *(unsigned int *)(v14 + 140),
             a2,
             a1,
@@ -648,7 +648,7 @@ void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR d
   v9 = *(unsigned int *)(v6 + 140); /*0x4123f7*/
   if ( !v9 /*0x412424*/
     || *(unsigned int *)(v6 + 96) != uTimerID
-    || ((*(void (__stdcall **)(int, unsigned char *))(*(unsigned int *)v9 + 36))(v9, v15), (v15[0] & 5) == 0) )
+    || ((*(void (**)(int, unsigned char *))(*(unsigned int *)v9 + 36))(v9, v15), (v15[0] & 5) == 0) )
   {
     LeaveCriticalSection((LPCRITICAL_SECTION)(v6 + 160)); /*0x412529*/
   LABEL_21:
@@ -656,16 +656,16 @@ void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR d
     return; /*0x412530*/
   }
   v10 = 0; /*0x41243d*/
-  if ( (*(int (__stdcall **)(unsigned int, unsigned int *, unsigned char *))(**(unsigned int **)(v6 + 140) + 16))( /*0x412447*/
+  if ( (*(int (**)(unsigned int, unsigned int *, unsigned char *))(**(unsigned int **)(v6 + 140) + 16))( /*0x412447*/
          *(unsigned int *)(v6 + 140),
          &v16,
          v18) == -2005401450 )
   {
-    (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v6 + 140) + 80))(*(unsigned int *)(v6 + 140)); /*0x412452*/
-    (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v6 + 140) + 72))(*(unsigned int *)(v6 + 140)); /*0x41245e*/
+    (*(void (**)(unsigned int))(**(unsigned int **)(v6 + 140) + 80))(*(unsigned int *)(v6 + 140)); /*0x412452*/
+    (*(void (**)(unsigned int))(**(unsigned int **)(v6 + 140) + 72))(*(unsigned int *)(v6 + 140)); /*0x41245e*/
     v10 = 1; /*0x412467*/
     v14 = 1; /*0x41246d*/
-    (*(void (__stdcall **)(unsigned int, unsigned int))(**(unsigned int **)(v6 + 140) + 52))(*(unsigned int *)(v6 + 140), 0); /*0x412472*/
+    (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)(v6 + 140) + 52))(*(unsigned int *)(v6 + 140), 0); /*0x412472*/
     *(unsigned int *)(v6 + 152) = 0; /*0x412475*/
     *(unsigned int *)(v6 + 156) = 0; /*0x41247b*/
   }
@@ -683,7 +683,7 @@ void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR d
     if ( *(unsigned int *)(v6 + 4 * v13 + 72) ) /*0x4124e1*/
       *(unsigned int *)(v6 + 68) = v13; /*0x4124ec*/
     if ( v14 == 1 ) /*0x4124f4*/
-      (*(void (__stdcall **)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v6 + 140) + 48))( /*0x412505*/
+      (*(void (**)(unsigned int, unsigned int, unsigned int, int))(**(unsigned int **)(v6 + 140) + 48))( /*0x412505*/
         *(unsigned int *)(v6 + 140),
         0,
         0,

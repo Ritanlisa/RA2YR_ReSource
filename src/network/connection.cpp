@@ -148,7 +148,7 @@ bool IPXConnClass::closeConnection(void * a1, void * a2)
 // 0x53f5d0
 bool IPXConnClass::send(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
-  return (*(int (__stdcall **)(int, int, int, unsigned int, int, unsigned int))(((unsigned int)(this->PacketsSent0))))( /*0x53f5ec*/
+  return (*(int (**)(int, int, int, unsigned int, int, unsigned int))(((unsigned int)(this->PacketsSent0))))( /*0x53f5ec*/
            a2,
            a3,
            (int)&this->q130,
@@ -243,7 +243,7 @@ bool IPXConnClass::receive(void * a1, void * a2, void * a3, void * a4, void * a5
     goto LABEL_26; /*0x53f7b9*/
   LABEL_27:
   if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x53f7f9*/
-    (*(void (__thiscall **)(unsigned int, int, int, NetworkID *, int, int, unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag /*0x53f812*/
+    (*(void (**)(unsigned int, int, int, NetworkID *, int, int, unsigned int, int))(**(unsigned int **)&stru_887598.isAliveFlag /*0x53f812*/
                                                                                  + 12))(
       *(unsigned int *)&stru_887598.isAliveFlag,
       v10,
@@ -305,19 +305,19 @@ void IPXManagerClass::processPacket()
     Network_Helper(); /*0x540a04*/
     ((unsigned char *)(this) + 0x014) = 0; /*0x540a09*/
   }
-  v3 = (void (__thiscall ***)(unsigned int, int))((unsigned char *)(this) + 0x048); /*0x540a0c*/
+  v3 = (void (***)(unsigned int, int))((unsigned char *)(this) + 0x048); /*0x540a0c*/
   if ( v3 ) /*0x540a11*/
   {
     (**v3)(v3, 1); /*0x540a17*/
     ((unsigned char *)(this) + 0x048) = 0; /*0x540a19*/
   }
-  v4 = (void (__thiscall ***)(unsigned int, int))this->q04C; /*0x540a1c*/
+  v4 = (void (***)(unsigned int, int))this->q04C; /*0x540a1c*/
   if ( v4 ) /*0x540a21*/
   {
     (**v4)(v4, 1); /*0x540a27*/
     this->q04C = 0; /*0x540a29*/
   }
-  v5 = (void (__thiscall ***)(unsigned int, int))this->q050; /*0x540a2c*/
+  v5 = (void (***)(unsigned int, int))this->q050; /*0x540a2c*/
   if ( v5 ) /*0x540a31*/
   {
     (**v5)(v5, 1); /*0x540a37*/
@@ -336,7 +336,7 @@ void IPXManagerClass::processPacket()
     do /*0x540a60*/
     {
       if ( *v8 ) /*0x540a49*/
-        (**(void (__thiscall ***)(unsigned int, int))*v8)(*v8, 1); /*0x540a53*/
+        (**(void (***)(unsigned int, int))*v8)(*v8, 1); /*0x540a53*/
       *v8 = 0; /*0x540a55*/
       result = this->q044; /*0x540a57*/
       ++v7; /*0x540a5a*/
@@ -419,13 +419,13 @@ void IPXManagerClass::release()
     return 0; /*0x5414e1*/
   if ( a5 != -1 ) /*0x5414ee*/
   {
-    v13 = (*(int (__thiscall **)(IPXManagerClass *, int))(this->Socket + 24))(this, a5); /*0x54159b*/
+    v13 = (*(int (**)(IPXManagerClass *, int))(this->Socket + 24))(this, a5); /*0x54159b*/
     if ( v13 != -1 ) /*0x5415a1*/
     {
       v14 = (unsigned int *)*((unsigned int *)this + v13 + 10); /*0x5415a3*/
       if ( *(unsigned int *)(v14[1] + 40) != *(unsigned int *)(v14[1] + 4) ) /*0x5415b2*/
       {
-        (*(void (__thiscall **)(unsigned int *, int, int, int, unsigned int))(*v14 + 8))(v14, a2, a3, a4, 0); /*0x5415c7*/
+        (*(void (**)(unsigned int *, int, int, int, unsigned int))(*v14 + 8))(v14, a2, a3, a4, 0); /*0x5415c7*/
         return 1; /*0x5415d3*/
       }
     }
@@ -435,7 +435,7 @@ void IPXManagerClass::release()
   {
     v7 = (unsigned int *)this->u32_50; /*0x541506*/
     if ( *(unsigned int *)(v7[1] + 40) < *(unsigned int *)(v7[1] + 4) ) /*0x541514*/
-      return (*(int (__thiscall **)(unsigned int *, int, int, int, int))(*v7 + 8))(v7, a2, a3, a4, 255); /*0x541537*/
+      return (*(int (**)(unsigned int *, int, int, int, int))(*v7 + 8))(v7, a2, a3, a4, 255); /*0x541537*/
     goto LABEL_20; /*0x541514*/
   }
   v9 = 0; /*0x54153a*/
@@ -460,7 +460,7 @@ void IPXManagerClass::release()
     v12 = &this->Active; /*0x541568*/
     do /*0x541588*/
     {
-      (*(void (__thiscall **)(int, int, int, int, unsigned int))(*(unsigned int *)v12->Socket + 8))(v12->Socket, a2, a3, a4, 0); /*0x54157c*/
+      (*(void (**)(int, int, int, int, unsigned int))(*(unsigned int *)v12->Socket + 8))(v12->Socket, a2, a3, a4, 0); /*0x54157c*/
       ++v11; /*0x541582*/
       v12 = (IPXManagerClass *)((char *)v12 + 4); /*0x541583*/
     }

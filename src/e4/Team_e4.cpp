@@ -105,7 +105,7 @@ void Team_Start(void * a1, void * a2, void * a3, void * a4)
     Frame::Present((int)g_DSurface_Hidden, a3, yBottom, a4, 0, v14, v16, v18); /*0x5611f7*/
     (*(void (**)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x561204*/
     Screen::Capture(1, 0, a3, yBottom); /*0x56120b*/
-    Dialog = (Dialog *)CreateDialog(0xD9u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
+    Dialog = (Dialog *)CreateDialog(0xD9u, (INT_PTR (*)(HWND, UINT, WPARAM, LPARAM))sub_561350, 0); /*0x561221*/
     if ( !Dialog ) /*0x561225*/
       goto LABEL_13; /*0x561225*/
     v12 = a3; /*0x56122f*/

@@ -1263,7 +1263,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
     MessageListClass::AddMessage(unk_A8BC60, 0, 0, String, *(unsigned int *)(v4->q034 + 192), 16454, v5, 0); /*0x5da845*/
     MapClass::MarkForRedraw(&dword_87F7E8, 0); /*0x5da851*/
   }
-  ((void (__stdcall *)(int))Network::sendData)(v2); /*0x5da85d*/
+  ((void (*)(int))Network::sendData)(v2); /*0x5da85d*/
   if ( a2 ) /*0x5da864*/
   {
     if ( dword_A8ED84 ) /*0x5da871*/
@@ -1321,7 +1321,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
                 Network::FormatAddress((uint16_t *)&qword_A8DBA4, 0); /*0x5daa0b*/
                 Debug::Log(); /*0x5daa16*/
                 Debug::Log(); /*0x5daa2d*/
-                ((void (__stdcall *)(int *))Network::SetPlayerCoords)(&qword_A8DBA4); /*0x5daa3f*/
+                ((void (*)(int *))Network::SetPlayerCoords)(&qword_A8DBA4); /*0x5daa3f*/
                 v9 = v22; /*0x5daa44*/
               }
               wcscpy(word_A8E258, (const wchar_t *)(v9 + 90154)); /*0x5daa53*/
@@ -1342,7 +1342,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
     {
       if ( byte_A8DBA0 ) /*0x5da928*/
       {
-        ((void (__stdcall *)(int))NetworkManager::RemovePlayer)(v2); /*0x5da934*/
+        ((void (*)(int))NetworkManager::RemovePlayer)(v2); /*0x5da934*/
         goto LABEL_21; /*0x5da934*/
       }
     }
@@ -1387,7 +1387,7 @@ void HandleNetworkPlayerDisconnect(wchar_t * a1, int a2)
     if ( dword_A8B238[0] == 4 ) /*0x5dab4a*/
     {
       if ( byte_A8DBA0 ) /*0x5dab53*/
-        ((void (__stdcall *)(int))NetworkManager::RemovePlayer)(v2); /*0x5dab5b*/
+        ((void (*)(int))NetworkManager::RemovePlayer)(v2); /*0x5dab5b*/
     }
   }
   LABEL_54:
