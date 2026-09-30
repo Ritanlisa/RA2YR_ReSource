@@ -184,7 +184,7 @@ void* WWMouseClass::captureMouse()
         }
         X = (unsigned int)(v16.X);
         Y = (unsigned int)(v16.Y);
-        Width = v16.Width; /*0x7b9b98*/
+        Width = (unsigned int)(v16.Width);
         Height = v16.Height; /*0x7b9b9c*/
         v17[0] = v16.X; /*0x7b9ba0*/
         *(unsigned int *)this->__pad_48 = v16.X; /*0x7b9ba4*/
@@ -300,8 +300,8 @@ unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
   void *WWMouseClass_field_0x20; // ecx
 
   WWMouseClass_field_0x1C = (void *)((unsigned int)(this->WWMouseClass_field_0x1C));
-  WWMouseClass_field_0x20 = (unsigned int)(this->WWMouseClass_field_0x20);
-  *a2 = WWMouseClass_field_0x1C; /*0x7ba36a*/
+  WWMouseClass_field_0x20 = (void *)((unsigned int)(this->WWMouseClass_field_0x20));
+  *a2 = (unsigned int)(WWMouseClass_field_0x1C);
   a2[1] = WWMouseClass_field_0x20; /*0x7ba36c*/
   return a2; /*0x7ba36f*/
 

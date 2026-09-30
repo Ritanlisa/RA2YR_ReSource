@@ -54,6 +54,11 @@
 #include "e4/classes/E4Recv_724200_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/FileStraw_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
+#include "e4/classes/MultiplayerConfig_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
 
 // 0x5D0190
 namespace gamemd {

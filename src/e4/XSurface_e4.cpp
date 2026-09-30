@@ -388,7 +388,7 @@ XSurface * * XSurface::FillRectEx(unsigned int * a2, int * a3, int a4)
 {
 
   XSurface *v4; // edi
-  int v5; // eax
+  int * v5;
   int *v6; // eax
   int *v7; // eax
   int v8; // ecx
@@ -446,7 +446,7 @@ XSurface * * XSurface::FillRectEx(unsigned int * a2, int * a3, int a4)
 
   v4 = (gamemd::XSurface *)((int *)(this));
   v5 = (int *)(a3[2]);
-  v55 = this; /*0x7bb061*/
+  v55 = (int *)(this);
   if ( v5 <= 0 ) /*0x7bb066*/
     return 0; /*0x7bb066*/
   if ( a3[3] <= 0 ) /*0x7bb071*/

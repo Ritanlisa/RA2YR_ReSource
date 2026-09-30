@@ -41,6 +41,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/ButtonClass_e4.hpp"
+#include "e4/classes/ShapeButton_e4.hpp"
 
 // 0x4C9C50
 namespace gamemd {
@@ -308,7 +310,7 @@ int SidebarClass::Redraw(char a2)
   uint8_t v17; // [esp+Ch] [ebp-24h]
   unsigned int v19;
   int v20; // [esp+18h] [ebp-18h] BYREF
-  int v21; // [esp+1Ch] [ebp-14h]
+  void * v21;
   int v22[4]; // [esp+20h] [ebp-10h] BYREF
   char v23; // [esp+34h] [ebp+4h]
 
@@ -351,11 +353,11 @@ int SidebarClass::Redraw(char a2)
         0,
         0,
         0);
-      v4 = (int)((void *)(g_SidebarBounds));
-      v5 = dword_B0B46C; /*0x6a6d4d*/
+      v4 = (void *)((int)((void *)(g_SidebarBounds)));
+      v5 = (void *)(dword_B0B46C);
       for ( i = 0; ; ++i ) /*0x6a6d53*/
       {
-        v7 = 26; /*0x6a6d63*/
+        v7 = (int)(26);
         if ( ((unsigned int *)(dword_A8B230))[374].NeedsSaveOrLink ) /*0x6a6d5b*/
           v7 = 18; /*0x6a6d6a*/
         if ( i >= (g_DSurface_ViewBounds - g_SidebarBounds - v7 + g_DSurface_SidebarBounds - 7) / 50 ) /*0x6a6d9c*/
@@ -379,10 +381,10 @@ int SidebarClass::Redraw(char a2)
           0,
           0,
           0);
-        v5 = (unsigned int)((void *)(dword_B0B46C));
-        v4 += *((int16_t *)dword_B0B46C + 2); /*0x6a6de3*/
+        v5 = (void *)((unsigned int)((void *)(dword_B0B46C)));
+        (unsigned int)(v4)+= *((int16_t *)dword_B0B46C + 2); /*0x6a6de3*/
       }
-      v20 = 0; /*0x6a6e1c*/
+      v20 = (int)(0);
       v21 = v4; /*0x6a6e20*/
       DrawToSurfaceSHP( /*0x6a6e24*/
         (int)DSurface_Sidebar,
@@ -401,7 +403,7 @@ int SidebarClass::Redraw(char a2)
         0,
         0,
         0);
-      v21 = v4 + *((int16_t *)dword_B0B470 + 2); /*0x6a6e48*/
+      v21 = (int)(v4 + *((int16_t *)dword_B0B470 + 2));
       v20 = 0; /*0x6a6e6b*/
       DrawToSurfaceSHP( /*0x6a6e6f*/
         (int)DSurface_Sidebar,

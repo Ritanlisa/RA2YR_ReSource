@@ -26,6 +26,7 @@
 #include "e4/classes/LoadGame_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/LinkClass_e4.hpp"
 
 // 0x4791F0
 namespace gamemd {
@@ -265,7 +266,7 @@ namespace gamemd {
 LinkClass * * LinkedList_flat::InsertAfter(int a2)
 {
 
-  LinkClass *v3; // eax
+  LinkedList_flat * v3;
 
   (*(void (**)(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566a5*/
   v3 = *(LinkClass **)(a2 + 4); /*0x5566ac*/

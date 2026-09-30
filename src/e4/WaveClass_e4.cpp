@@ -29,6 +29,8 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
 #include "e4/classes/RadSiteClass_e4.hpp"
+#include "e4/classes/FrameSnapshot_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x75F650
 namespace gamemd {

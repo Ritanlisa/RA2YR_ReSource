@@ -30,6 +30,9 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/Mixer_e4.hpp"
+#include "e4/classes/AudioFileClass_e4.hpp"
+#include "e4/classes/PingPongBuffer_e4.hpp"
+#include "e4/classes/StructTable_e4.hpp"
 
 // 0x4228E0
 namespace gamemd {
@@ -83,7 +86,7 @@ void AnimClass::Destruct( void * a2)
     {
       v13[0] = (gamemd::CellClass *)(a2->AnimClass_field_0x9C);
       v13[1] = (gamemd::CellClass *)(*(unsigned int *)a2->__pad_A0);
-      v13[2] = a2->AnimClass_field_0xA4; /*0x422998*/
+      v13[2] = (gamemd::CellClass *)(a2->AnimClass_field_0xA4);
       v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13); /*0x4229a1*/
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
@@ -156,7 +159,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 {
 
   IUnknown *AnimClass_field_0xB4; // edi
-  CellStruct *AnimClass_field_0xC0; // ebx
+  IUnknown * AnimClass_field_0xC0;
   IUnknown *AnimClass_field_0xBC; // eax
   int v7; // edi
   int v8; // ecx
@@ -269,8 +272,8 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     && (uint8_t)ObjectClass::StepCleanup((ObjectClass *)this, &g_INI_Key_Civilian.__pad_16D[31]) )
   {
     AnimClass_field_0xB4 = (IUnknown *)(this->AnimClass_field_0xB4);
-    AnimClass_field_0xC0 = (IUnknown *)(this->AnimClass_field_0xC0);
-    AnimClass_field_0xBC = this->AnimClass_field_0xBC; /*0x422cea*/
+    AnimClass_field_0xC0 = (unsigned int)((IUnknown *)(this->AnimClass_field_0xC0));
+    AnimClass_field_0xBC = (IUnknown *)(this->AnimClass_field_0xBC);
     if ( AnimClass_field_0xB4 != (IUnknown *)-1 ) /*0x422cf3*/
     {
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (int)AnimClass_field_0xB4 >= (int)AnimClass_field_0xBC ) /*0x422cff*/
@@ -285,7 +288,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
        - (unsigned int)AnimClass_field_0xBC;
     v8 = (int)((unsigned int)AnimClass_field_0xC0 * (*((int (**)(AnimClass *))this->AnimClass_field_0x0 + 123))(this));
     v9 = (int)(v7 + 8);
-    v10 = *a2 + 2 * (v7 + 8); /*0x422d30*/
+    v10 = (int)(*a2 + 2 * (v7 + 8));
     *(unsigned int *)v101 = *a2 - 2 * (v7 + 8); /*0x422d3c*/
     v106 = v10; /*0x422d40*/
     v11 = a2[1]; /*0x422d47*/

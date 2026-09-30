@@ -24,6 +24,8 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/PingPongBuffer_e4.hpp"
 
 // 0x62CEC0
 namespace gamemd {

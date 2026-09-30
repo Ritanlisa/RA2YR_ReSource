@@ -14,6 +14,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Conflict_WorldDominationTour_12_e4.hpp"
 #include "e4/classes/ConnectionPointClass_e4.hpp"
+#include "e4/classes/PacketQueue_e4.hpp"
 
 // 0x48B750
 namespace gamemd {
@@ -413,7 +414,7 @@ int ConnectionClass::serviceSendQueue()
 
   v2 = (int)(0);
   v21 = (int)(0);
-  PlayerIndex = this->PlayerIndex; /*0x48c3f3*/
+  PlayerIndex = (int)(this->PlayerIndex);
   if ( *(int *)(PlayerIndex + 40) > 0 ) /*0x48c3fb*/
   {
     do /*0x48c45f*/

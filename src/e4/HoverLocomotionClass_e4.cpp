@@ -18,6 +18,8 @@
 #include "e4/classes/HotkeyOptions_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/SortedArray_e4.hpp"
+#include "e4/classes/SwizzleManager_e4.hpp"
+#include "e4/classes/FrameSnapshot_e4.hpp"
 
 // 0x517070
 namespace gamemd {

@@ -17,7 +17,7 @@ MultiplayerManBattle * MultiplayerManBattle::QueryInterface(unsigned int * Block
 {
 
   Block->MultiplayerManBattle_field_00 = (int)&MultiplayerManBattle::`vftable'; /*0x5c61a3*/
-  MultiplayerGameMode::Dtor((MultiplayerGameMode *)Block); /*0x5c61a9*/
+  ((MultiplayerGameMode *)((MultiplayerGameMode *)Block))->Dtor(); /*0x5c61a9*/
   if ( (a2 & 1) != 0 ) /*0x5c61b3*/
     __3_YAXPAX_Z(Block); /*0x5c61b6*/
   return &Block->MultiplayerManBattle_field_00; /*0x5c61c0*/

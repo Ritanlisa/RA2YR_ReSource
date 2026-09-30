@@ -56,6 +56,8 @@
 #include "e4/classes/NetworkLobby_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
+#include "e4/classes/TileNode_e4.hpp"
 
 // 0x5A1350
 namespace gamemd {

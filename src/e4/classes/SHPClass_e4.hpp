@@ -1,0 +1,10 @@
+// GENERATED minimal flat class (fix_c2039_methods)
+#pragma once
+
+namespace gamemd {
+
+struct SHPClass {
+    int SHPClass:: Load(char * Source, char * a3, int a4);
+};
+
+} // namespace gamemd

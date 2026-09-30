@@ -18,6 +18,7 @@
 #include "e4/classes/ThemeManager_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
+#include "e4/classes/AudioSample_e4.hpp"
 
 // 0x720B20
 namespace gamemd {
@@ -98,8 +99,8 @@ int Theme::Stop(ObjectClass * aP1)
         }
         else
         {
-LABEL_14: result = (int)(Debug::Log());
-          v6 = (Audio *)*((unsigned int *)this + 11); /*0x720f3c*/
+LABEL_14: result = (int)(this->Debug::Log());
+          v6 = (int)((Audio *)*((unsigned int *)this + 11));
           if ( v6 ) /*0x720f44*/
             result = Audio::Release(v6); /*0x720f46*/
         }

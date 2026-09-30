@@ -11,6 +11,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5E8DC0
 namespace gamemd {

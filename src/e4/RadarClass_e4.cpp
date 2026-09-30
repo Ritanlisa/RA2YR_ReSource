@@ -21,6 +21,7 @@
 #include "e4/classes/RadarHashVector_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/AudioFileClass_e4.hpp"
 
 // 0x652C00
 namespace gamemd {

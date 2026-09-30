@@ -26,6 +26,10 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Mixer_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/AudioFrame_e4.hpp"
+#include "e4/classes/AudioTimer_e4.hpp"
+#include "e4/classes/MovieContext_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x49CAF0
 namespace gamemd {
@@ -92,7 +96,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
       }
       while ( v9 < *(char *)(v5 + 8) ); /*0x49cc26*/
     }
-    v3 = (int)(aP1);
+    v3 = (gamemd::CCINIClass *)((int)(aP1));
     *((unsigned int *)this + 16) = *(char *)(v5 + 8); /*0x49cc32*/
     *((unsigned int *)this + 14) = 0; /*0x49cc35*/
   }
@@ -110,7 +114,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
     ((CampaignClass *)(this))->LoadFromINI(); /*0x49e3ba*/
   if ( aP1 < 0 || aP1 >= *((unsigned int *)this + 23) ) /*0x49e3ca*/
   {
-    *(_DWORD *)aP2 = 0; /*0x49e3e9*/
+    *(unsigned int *)aP2 = 0; /*0x49e3e9*/
     return 0; /*0x49e3ef*/
   }
   else

@@ -18,6 +18,7 @@
 #include "e4/classes/InfantryClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Flag_e4.hpp"
 
 // 0x773600
 namespace gamemd {
@@ -123,7 +124,7 @@ int WebBrowser::ShowDialog()
     {
       v7 = (unsigned int)(v5 + 2);
       v5[1] = (unsigned int)(1);
-      v5[2] = 0; /*0x773f7d*/
+      v5[2] = (unsigned int)(0);
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
       *v5 = &WebBrowser::`vftable'; /*0x773f95*/
@@ -451,20 +452,20 @@ int WebBrowser::GoBack()
   wchar_t *Source; // [esp+9Ch] [ebp+8h]
   wchar_t *v7; // [esp+A0h] [ebp+Ch]
 
-  wcstombs((char *)&v4[0].Flag_field_0x08, Source, 0x40u); /*0x773d55*/
+  wcstombs((char *)&((unsigned int *)(v4))[0].Flag_field_0x08, Source, 0x40u); /*0x773d55*/
   wcstombs(v5, v7, 0x40u); /*0x773d69*/
-  String::Assign(&v2, (const char *)&v4[0].Flag_field_0x08); /*0x773d7a*/
+  ((String *)(&v2))->Assign((const char *)&((unsigned int *)(v4))[0].Flag_field_0x08); /*0x773d7a*/
   this->Debug::Log(); /*0x773d8e*/
   LoadPlayerProfile(&((unsigned int *)(v2.m_3))[1], (const char **)&v2); /*0x773d9e*/
-  *(unsigned int *)v4[0].__pad_0 = 0; /*0x773da9*/
+  *(unsigned int *)((unsigned int *)(v4))[0].__pad_0 = 0; /*0x773da9*/
   LOBYTE(v4[0].Flag_field_0x04) = 0; /*0x773dad*/
   ReadRegistryOptionsWOL((ObjectClass *)v4); /*0x773db1*/
   if ( (uint8_t)Flag::IsNot2(v4) ) /*0x773dba*/
   {
-    FindChannelWOL((const char *)&v4[0].Flag_field_0x08, (int)v5, 1u, *(unsigned int *)(v3 + 16)); /*0x773dd5*/
+    FindChannelWOL((const char *)&((unsigned int *)(v4))[0].Flag_field_0x08, (int)v5, 1u, *(unsigned int *)(v3 + 16)); /*0x773dd5*/
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x773ddf*/
   }
-  String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&v4[0].Flag_field_0x08); /*0x773dee*/
+  String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&((unsigned int *)(v4))[0].Flag_field_0x08); /*0x773dee*/
   String::Assign_Alt((String *)&g_WebBrowserConfig, v5); /*0x773dfd*/
   *(unsigned int *)&v2.m_3[1] = &rc_ptr<PlayerProfile>::`vftable'; /*0x773e06*/
   ComPtr::Release((ComPtr *)&v2.m_3[1]); /*0x773e0e*/

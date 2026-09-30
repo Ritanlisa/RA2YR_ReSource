@@ -14,6 +14,8 @@
 #include "e4/classes/Multiplayer_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/FacingClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x520AE0
 namespace gamemd {

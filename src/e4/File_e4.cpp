@@ -20,6 +20,7 @@
 #include "e4/classes/FileSystem_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Matrix_e4.hpp"
 
 // 0x431F10
 namespace gamemd {

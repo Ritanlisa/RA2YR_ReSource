@@ -25,6 +25,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/MessageListClass_e4.hpp"
 
 // 0x53AE00
 namespace gamemd {

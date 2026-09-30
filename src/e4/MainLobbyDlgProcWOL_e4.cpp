@@ -12,6 +12,11 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/MainMenu_e4.hpp"
+#include "e4/classes/MSVQAnim_e4.hpp"
+#include "e4/classes/MovieContext_e4.hpp"
+#include "e4/classes/SafeDelete_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/Main_e4.hpp"
 
 // 0x624020
 namespace gamemd {

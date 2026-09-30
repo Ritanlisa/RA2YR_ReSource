@@ -22,6 +22,7 @@
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
 
 // 0x477900
 namespace gamemd {
@@ -145,8 +146,8 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   {
     (*(void (**)(_DynamicVectorClass_VRGBClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4785c6*/
   }
-  v15 = (int)((gamemd::AbstractClass **)(this->m_8));
-  if ( v15 < this->m_10 ) /*0x4785d1*/
+  v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(this->m_8)));
+  if ( v15 < (gamemd::AbstractClass **)(this->m_10) ) /*0x4785d1*/
     this->m_10 = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
 
@@ -597,27 +598,27 @@ int ParticleTypeClass::ProcessPower(int * a2)
   int v7; // ecx
 
   AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6454e9*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2DC[0]); /*0x6454f7*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2E0[0]); /*0x645505*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2E8[0]); /*0x645513*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2EC[0]); /*0x645521*/
-  Power::TimerProcess(this->ParticleTypeClass_field_0x2F0[0]); /*0x64552f*/
+  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2DC))[0]); /*0x6454f7*/
+  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2E0))[0]); /*0x645505*/
+  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2E8))[0]); /*0x645513*/
+  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2EC))[0]); /*0x645521*/
+  Power::TimerProcess(this-((unsigned int *)(>ParticleTypeClass_field_0x2F0))[0]); /*0x64552f*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F4); /*0x64553d*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x2F8); /*0x64554b*/
   Checksummer::Add_float((Checksummer *)a2, *(unsigned int *)this->__pad_2FC); /*0x645559*/
   Checksummer::Add_float((Checksummer *)a2, this->ParticleTypeClass_field_0x300); /*0x645567*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x304); /*0x645575*/
-  LOBYTE(v3) = this->__pad_308[0]; /*0x64557a*/
+  LOBYTE(v3) = this-((unsigned int *)(>__pad_308))[0]; /*0x64557a*/
   Power::FlagProcess((Power *)a2, v3); /*0x645583*/
-  LOBYTE(v4) = this->__pad_308[1]; /*0x645588*/
+  LOBYTE(v4) = this-((unsigned int *)(>__pad_308))[1]; /*0x645588*/
   v5 = Power::FinalizeDrain((Power *)a2, v4); /*0x645591*/
-  LOBYTE(v5) = this->__pad_308[2]; /*0x645596*/
+  LOBYTE(v5) = this-((unsigned int *)(>__pad_308))[2]; /*0x645596*/
   Power::FinalizeDrain((Power *)a2, v5); /*0x64559f*/
-  LOBYTE(v6) = this->__pad_308[3]; /*0x6455a4*/
+  LOBYTE(v6) = this-((unsigned int *)(>__pad_308))[3]; /*0x6455a4*/
   Power::FinalizeDrain((Power *)a2, v6); /*0x6455ad*/
-  Power::TimerProcess((uint8_t)this->__pad_308[5]); /*0x6455bd*/
-  Power::TimerProcess((uint8_t)this->__pad_308[6]); /*0x6455cd*/
-  LOBYTE(v7) = this->__pad_308[7]; /*0x6455d2*/
+  Power::TimerProcess((uint8_t)this-((unsigned int *)(>__pad_308))[5]); /*0x6455bd*/
+  Power::TimerProcess((uint8_t)this-((unsigned int *)(>__pad_308))[6]); /*0x6455cd*/
+  LOBYTE(v7) = this-((unsigned int *)(>__pad_308))[7]; /*0x6455d2*/
   Power::FlagProcess((Power *)a2, v7); /*0x6455db*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x310); /*0x6455e9*/
   Power::TimerProcess(this->ParticleTypeClass_field_0x314); /*0x6455f7*/

@@ -20,6 +20,11 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Factory_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/DynamicVectorArray_e4.hpp"
+#include "e4/classes/FileExtension_e4.hpp"
+#include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/Flag_e4.hpp"
+#include "e4/classes/StringVector_e4.hpp"
 
 // 0x626DA0
 namespace gamemd {

@@ -78,7 +78,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &g_INI_DefaultBuffer,
     Destination,
     64);
-  v3 = (int)(((BuildingTypeClass *)(Destination))->FindOrCreateEx());
+  v3 = (gamemd::ParticleTypeClass **)((int)(((BuildingTypeClass *)(Destination))->FindOrCreateEx()));
   v4 = _ESI->__pad_298[0]; /*0x64431d*/
   _ESI->ParticleSystemTypeClass_field_0x294 = (IUnknown *)v3; /*0x644323*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x644332*/

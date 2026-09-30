@@ -21,6 +21,7 @@
 #include "e4/classes/MissionClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x416D50
 namespace gamemd {

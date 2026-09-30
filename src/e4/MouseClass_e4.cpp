@@ -20,6 +20,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/AssetClass_e4.hpp"
 
 // 0x6D1770
 namespace gamemd {

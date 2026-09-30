@@ -19,6 +19,8 @@
 #include "e4/classes/CommandClass_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/E4Recv_438A60_e4.hpp"
+#include "e4/classes/CountdownTimer_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4385D0
 namespace gamemd {
@@ -36,7 +38,7 @@ int BombClass::AbstractClass()
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
-  AudioController::Init((AudioController *)&this->audioController[3]); /*0x438605*/
+  AudioController::Init((AudioController *)&this-((unsigned int *)(>audioController))[3]); /*0x438605*/
   *(unsigned int *)&this->__pad_48[8] = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 524); /*0x438615*/
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (byte_89C675 || !dword_89C670)
@@ -46,7 +48,7 @@ int BombClass::AbstractClass()
          dword_89C670 + dword_89C67C,
          0) )
   {
-    v2 = dword_89C678++; /*0x438657*/
+    v2 = (unsigned int)(dword_89C678++);
     *((unsigned int *)dword_89C66C + v2) = this; /*0x438666*/
   }
   return (int)this; /*0x43866b*/

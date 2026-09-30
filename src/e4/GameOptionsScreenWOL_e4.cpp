@@ -14,6 +14,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Mission_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
+#include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x798340
 namespace gamemd {

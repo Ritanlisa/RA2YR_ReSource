@@ -18,6 +18,7 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/PingPongBuffer_e4.hpp"
 
 // 0x5FF850
 namespace gamemd {
@@ -95,7 +96,7 @@ Coord * * BuildingLight::CalculateShading()
         v7 = ((unsigned int *)(byte_83358C))[v6]; /*0x5ff8ff*/
         v52[1] = (BYTE)(v47[1] - 64);
         v39 = (BYTE)(g_DSurface_Hidden_2);
-        v52[2] = 255; /*0x5ff916*/
+        v52[2] = (BYTE)(255);
         v52[3] = 127; /*0x5ff91e*/
         v53[2] = *(unsigned int *)DSurface_ViewBounds.__pad_8; /*0x5ff925*/
         if ( v7 < 64 ) /*0x5ff92c*/

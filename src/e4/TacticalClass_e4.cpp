@@ -51,7 +51,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   uint8_t v12; // cl
   char v13; // al
   TacticalClass *v14; // ecx
-  int v15; // [esp+10h] [ebp-18h]
+  int * v15;
   int v16; // [esp+14h] [ebp-14h]
   int v17; // [esp+18h] [ebp-10h] BYREF
   int v18; // [esp+1Ch] [ebp-Ch]
@@ -267,7 +267,7 @@ void* TacticalClass::ProcessScroll(int * a2)
   {
     v12 = (void *)(DSurface_ViewBounds.field_4);
     v11 = (void *)(DSurface_ViewBounds.field_0);
-    v4 = *a2; /*0x4ac3d4*/
+    v4 = (void *)(*a2);
     v5 = (void *)a2[1]; /*0x4ac3d6*/
     if ( *a2 < 0 ) /*0x4ac3db*/
       v4 = 0; /*0x4ac3dd*/

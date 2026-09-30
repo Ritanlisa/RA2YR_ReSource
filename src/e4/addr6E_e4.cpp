@@ -61,6 +61,8 @@
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/ActionQueue_e4.hpp"
+#include "e4/classes/Property_e4.hpp"
 
 // 0x6E0250
 namespace gamemd {
@@ -600,7 +602,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   }
   owner = (gamemd::HouseClass *)((int)(i->owner));
   v8 = (int)(0);
-  lastBuiltInfantryType = owner->lastBuiltInfantryType; /*0x6efcf0*/
+  lastBuiltInfantryType = (int)(owner->lastBuiltInfantryType);
   if ( lastBuiltInfantryType <= 0 ) /*0x6efcf8*/
     goto LABEL_16; /*0x6efcf8*/
   for ( j = owner->supersCount; *(unsigned int *)(*(unsigned int *)(*(unsigned int *)j + 40) + 180) != 1; j += 4 ) /*0x6efd00*/

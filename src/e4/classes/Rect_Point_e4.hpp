@@ -1,0 +1,10 @@
+// GENERATED minimal flat class (fix_c2039_methods)
+#pragma once
+
+namespace gamemd {
+
+struct Rect_Point {
+    int Rect_Point:: Set(int a2, int a3);
+};
+
+} // namespace gamemd

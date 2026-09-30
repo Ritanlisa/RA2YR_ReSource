@@ -11,6 +11,7 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/MixFile_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/AudioFile_e4.hpp"
 
 // 0x406060
 namespace gamemd {

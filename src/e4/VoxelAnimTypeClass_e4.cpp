@@ -27,6 +27,7 @@
 #include "e4/classes/VoxelAnim_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
+#include "e4/classes/Mixer_e4.hpp"
 
 // 0x74AD80
 namespace gamemd {
@@ -253,7 +254,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::LoadFromINI(uint8_t *** a2)
   }
   else
   {
-    v22 = v46; /*0x74b220*/
+    v22 = (unsigned int)(v46);
   }
   *(unsigned int *)(v4 + 724) = v22; /*0x74b224*/
   *(unsigned int *)(v4 + 728) = INIClass::ReadInt_Overwrite( /*0x74b248*/

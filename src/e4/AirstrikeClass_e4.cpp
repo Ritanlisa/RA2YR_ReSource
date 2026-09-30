@@ -25,6 +25,7 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/WTFMode_e4.hpp"
 
 // 0x41D860
 namespace gamemd {
@@ -278,7 +279,7 @@ namespace gamemd {
 AbstractClass * * AirstrikeClass::UpdateAll()
 {
 
-  unsigned int * v1;
+  unsigned int v1;
   int v2; // esi
   int v3; // ecx
   int v4; // edx

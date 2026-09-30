@@ -14,6 +14,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/GameSetup_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/Flag_e4.hpp"
 
 // 0x5D4B20
 namespace gamemd {
@@ -22,8 +23,8 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
 
   wchar_t *v6; // ebp
   signed int v7; // eax
-  CampaignScore * v8;
-  int v9; // ebx
+  unsigned int v8;
+  CampaignScore * v9;
   wchar_t *v10; // esi
   wchar_t *v11; // edx
 
@@ -36,8 +37,8 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
     v8 = v7; /*0x5d4b4b*/
   if ( a5 ) /*0x5d4b53*/
   {
-    v9 = v8; /*0x5d4b79*/
-    if ( v8 >= a3 ) /*0x5d4b7b*/
+    v9 = (int)(v8);
+    if ( v8 >= (gamemd::CampaignScore *)(a3) ) /*0x5d4b7b*/
     {
       v11 = (wchar_t *)(&aP1[v8 - 1]);
       while ( !*v11 || *v11 > 0x20u ) /*0x5d4b8d*/
@@ -53,14 +54,14 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
   else
   {
     v9 = a3; /*0x5d4b57*/
-    if ( a3 <= v8 ) /*0x5d4b59*/
+    if ( a3 <= (int)(v8) ) /*0x5d4b59*/
     {
       v10 = (wchar_t *)(&aP1[a3 - 1]);
       while ( !*v10 || *v10 > 0x20u ) /*0x5d4b6b*/
       {
         ++v9; /*0x5d4b6d*/
         ++v10; /*0x5d4b6e*/
-        if ( v9 > v8 ) /*0x5d4b73*/
+        if ( v9 > (int)(v8) ) /*0x5d4b73*/
           goto LABEL_17; /*0x5d4b73*/
       }
       goto LABEL_18; /*0x5d4b6b*/
@@ -176,12 +177,12 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
   }
   if ( !v5 ) /*0x7b7581*/
   {
-    v3 = (const wchar_t *)((void **)this);
-LABEL_33: v16 = (void **)(&g_TypeClass_DefaultString);
+    v3 = (void **)((const wchar_t *)((void **)this));
+LABEL_33: v16 = (const wchar_t *)((void **)(&g_TypeClass_DefaultString));
     goto LABEL_35; /*0x7b758c*/
   }
-  v3 = (gamemd::AbstractClass **)((void **)this);
-  v16 = (gamemd::AbstractClass **)(v5);
+  v3 = (void **)((gamemd::AbstractClass **)((void **)this));
+  v16 = (const wchar_t *)((gamemd::AbstractClass **)(v5));
 LABEL_35:
   if ( *v3 ) /*0x7b7594*/
     __3_YAXPAX_Z(*v3); /*0x7b759b*/
@@ -243,12 +244,12 @@ int WideString::Trim(wchar_t * Source)
   if ( Source ) /*0x727d66*/
   {
     v2 = (gamemd::WideString *)(*(unsigned short *)Source);
-    v3 = Source; /*0x727d6b*/
+    v3 = (gamemd::WideString *)(Source);
     if ( *(unsigned short *)Source ) /*0x727d68*/
     {
       do /*0x727d82*/
       {
-        if ( v2 > 0x20u ) /*0x727d76*/
+        if ( v2 > (gamemd::WideString *)(0x20u) ) /*0x727d76*/
           break; /*0x727d76*/
         v2 = *(unsigned short *)&v3[2]; /*0x727d78*/
         v3 += 2; /*0x727d7c*/
@@ -361,7 +362,7 @@ int WideString::Reassign_Alt(const wchar_t ** a2)
   v3 = (wchar_t *)(*(const wchar_t **)this);
   if ( (*(unsigned int *)this || *a2) && (!v3 || !*a2 || wcscmp(v3, *a2)) ) /*0x7b68ff*/
   {
-    v4 = (unsigned int)((wchar_t *)*a2);
+    v4 = (wchar_t *)((unsigned int)((wchar_t *)*a2));
     if ( !*a2 ) /*0x7b690b*/
       v4 = &g_TypeClass_DefaultString; /*0x7b6911*/
     if ( *(unsigned int *)this ) /*0x7b6916*/
@@ -393,7 +394,7 @@ wchar_t ** WideString::Append2(CampaignScore * aP1)
 
   if ( aP1 ) /*0x7b6aeb*/
   {
-    v3 = (unsigned int)(*(wchar_t **)this);
+    v3 = (wchar_t *)((unsigned int)(*(wchar_t **)this));
     v4 = (unsigned int)(wcslen(aP1) + 1);
     if ( v3 ) /*0x7b6afe*/
       v4 += wcslen(v3); /*0x7b6b09*/
@@ -425,7 +426,7 @@ wchar_t ** WideString::Append(CampaignScore * aP1)
   v2 = (wchar_t *)*aP1; /*0x7b6b67*/
   if ( *aP1 || (v2 = &g_TypeClass_DefaultString) != 0 ) /*0x7b6b76*/
   {
-    v4 = (unsigned int)(*(wchar_t **)this);
+    v4 = (wchar_t *)((unsigned int)(*(wchar_t **)this));
     v5 = (unsigned int)(wcslen(v2) + 1);
     if ( v4 ) /*0x7b6b89*/
       v5 += wcslen(v4); /*0x7b6b94*/

@@ -37,6 +37,7 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/E4Recv_7B2E50_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/NetworkID_e4.hpp"
 
 // 0x792CF0
 namespace gamemd {

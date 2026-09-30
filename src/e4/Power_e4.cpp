@@ -12,6 +12,8 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/Checksum_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
 
 // 0x43A5D0
 namespace gamemd {

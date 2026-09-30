@@ -30,6 +30,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/TypeClass_e4.hpp"
 
 // 0x41EC90
 namespace gamemd {

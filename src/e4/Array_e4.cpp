@@ -18,14 +18,14 @@ int Array::GetClamped(CheckListClass * aP1)
 {
 
   int result; // eax
-  unsigned int v3;
-  int v4; // eax
+  CheckListClass * v3;
+  CheckListClass * v4;
 
   result = *((unsigned int *)this + 17); /*0x557ac0*/
   if ( result ) /*0x557ac5*/
   {
-    v3 = (gamemd::CheckListClass *)((int)(aP1));
-    v4 = (gamemd::CheckListClass *)(result - 1);
+    v3 = (unsigned int)((gamemd::CheckListClass *)((int)(aP1)));
+    v4 = (int)((gamemd::CheckListClass *)(result - 1));
     if ( aP1 >= (gamemd::CheckListClass *)(v4) ) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
     return *(unsigned int *)(*((unsigned int *)this + 14) + 4 * v3); /*0x557ad8*/
@@ -113,7 +113,7 @@ int Array::ContainsValue( IUnknown * aP1)
   int v4; // edx
   int *Array_field_0xE4; // ecx
 
-  Array_field_0xE8 = this->Array_field_0xE8; /*0x65adf1*/
+  Array_field_0xE8 = (void *)(this->Array_field_0xE8);
   v4 = 0; /*0x65adf7*/
   if ( (int)Array_field_0xE8 <= 0 ) /*0x65adfc*/
   {
@@ -195,7 +195,7 @@ namespace gamemd {
 int Array::GetElement( CampaignScore * aP1)
 {
 
-  if ( aP1 < 0 || aP1 >= (int)this->Array_field_0x38 ) /*0x76398b*/
+  if ( aP1 < 0 || aP1 >= (gamemd::CampaignScore *)((int))this->Array_field_0x38 ) /*0x76398b*/
     return 0; /*0x763999*/
   else
     return (int)this->Array_field_0x2C + 12 * aP1; /*0x763993*/
@@ -402,7 +402,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 
   int v2; // ecx
   int v3; // edx
-  unsigned int * v4;
+  unsigned int v4;
   int v5; // eax
 
   if ( aP0 ) /*0x55b887*/
@@ -425,7 +425,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
               for ( dword_8B40D8 = v2; v5 < dword_8B40D8; ++v5 ) /*0x55b8bc*/
               {
                 ((unsigned int *)(v4))[v5] = (unsigned int *)(v4[v5 + 1]);
-                v2 = dword_8B40D8; /*0x55b8c5*/
+                v2 = (unsigned int *)(dword_8B40D8);
                 v4 = dword_8B40CC; /*0x55b8cb*/
               }
             }

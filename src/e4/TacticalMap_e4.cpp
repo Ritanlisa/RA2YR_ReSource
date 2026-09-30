@@ -29,6 +29,7 @@
 #include "e4/classes/Matrix3x4_e4.hpp"
 #include "e4/classes/PsyDom_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
 
 // 0x484680
 namespace gamemd {

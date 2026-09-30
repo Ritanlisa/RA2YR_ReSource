@@ -31,6 +31,8 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/UnitTypeVector_e4.hpp"
+#include "e4/classes/WDTClass_e4.hpp"
+#include "e4/classes/WDTObject_e4.hpp"
 
 // 0x554A60
 namespace gamemd {

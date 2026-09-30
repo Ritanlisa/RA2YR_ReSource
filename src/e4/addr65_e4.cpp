@@ -49,6 +49,7 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x650A90
 namespace gamemd {

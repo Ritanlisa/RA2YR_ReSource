@@ -50,6 +50,9 @@
 #include "e4/classes/Color_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
 #include "e4/classes/Window_e4.hpp"
+#include "e4/classes/Lightning_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
+#include "e4/classes/TimerPool_e4.hpp"
 
 // 0x4C1440
 namespace gamemd {

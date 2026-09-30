@@ -14,6 +14,8 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
+#include "e4/classes/AudioFileClass_e4.hpp"
+#include "e4/classes/Mixer_e4.hpp"
 
 // 0x4F4780
 namespace gamemd {
@@ -24,7 +26,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
   int result; // eax
   int v11; // edi
   LONG v12; // eax
-  int v13; // edx
+  unsigned int v13;
   LONG v14; // edi
   int v15; // edi
   int v16; // eax
@@ -62,7 +64,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
   LONG v48; // [esp+66h] [ebp-18h]
   void * v49;
   struct tagRECT Rect; // [esp+6Eh] [ebp-10h] BYREF
-  int v51; // [esp+8Eh] [ebp+10h]
+  void * v51;
 
   if ( !a5 ) /*0x4f4790*/
   {
@@ -130,14 +132,14 @@ LABEL_18:
               else
                 v18 = (*(int (**)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48d6*/
             }
-            v13 = dword_87F7F0; /*0x4f48e5*/
+            v13 = (unsigned int)(dword_87F7F0);
             v19 = v18 + v45; /*0x4f48eb*/
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
           v20 = (void *)((LONG)(*(unsigned int *)(a8)));
-          v21 = (int)(a8[1]);
-          v22 = a8[2]; /*0x4f48fe*/
+          v21 = (LONG)((int)(a8[1]));
+          v22 = (void *)(a8[2]);
           Rect.right = a8[3]; /*0x4f4904*/
           v49 = v20; /*0x4f4910*/
           Rect.left = v21; /*0x4f4914*/
@@ -148,7 +150,7 @@ LABEL_18:
           {
             v51 = (int)((LPPERSISTSTREAM)((*(int (**)(int))(*(unsigned int *)a1 + 124))(a1)));
             v23 = (void *)((*(int (**)(int))(*(unsigned int *)a1 + 128))(a1));
-            v24 = (double)v51; /*0x4f494f*/
+            v24 = (void *)((double)v51);
             v25 = g_TacticalClass_Instance; /*0x4f4953*/
             *(unsigned int *)v38 = v23; /*0x4f4959*/
             v42 = v24 / *(double *)&((unsigned int *)(g_TacticalClass_Instance))[48].__tail_0; /*0x4f4965*/

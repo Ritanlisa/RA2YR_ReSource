@@ -24,6 +24,7 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WalkLocomotion_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
 
 // 0x474810
 namespace gamemd {
@@ -86,8 +87,8 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
   {
     (*(void (**)(_DynamicVectorClass_PBVAnimTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x52538e*/
   }
-  v7 = (int)((gamemd::AbstractClass **)(this->m_8));
-  if ( v7 < this->m_10 ) /*0x525399*/
+  v7 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(this->m_8)));
+  if ( v7 < (gamemd::AbstractClass **)(this->m_10) ) /*0x525399*/
     this->m_10 = v7; /*0x52539b*/
   return 1; /*0x52539e*/
 

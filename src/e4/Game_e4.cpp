@@ -28,6 +28,7 @@
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/E4Recv_5E93F0_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/BuildingLightQueue_e4.hpp"
 
 // 0x430980
 namespace gamemd {
@@ -87,7 +88,7 @@ int Game::SendCampaignOptions()
 
   v13 = 50; /*0x46d4bc*/
   strcpy(v14, unk_A8B380); /*0x46d4cd*/
-  result = Settings::CheckString(); /*0x46d4d6*/
+  result = this->Settings::CheckString(); /*0x46d4d6*/
   if ( (unsigned char)result )
   {
     Debug::Log(aSendingCampaig); /*0x46d4e8*/

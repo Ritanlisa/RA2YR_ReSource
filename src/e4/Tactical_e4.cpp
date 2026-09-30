@@ -38,6 +38,7 @@
 #include "e4/classes/LoadScreen_e4.hpp"
 #include "e4/classes/PsyDom_e4.hpp"
 #include "e4/classes/CommandClass_e4.hpp"
+#include "e4/classes/VectorClassUInt_e4.hpp"
 
 // 0x42A6D0
 namespace gamemd {
@@ -105,7 +106,7 @@ void * Tactical::ConstructTacticalSurface()
   {
     v4[3] = (unsigned int)(0);
     v4[4] = (unsigned int)(-1);
-    *v4 = 0; /*0x42a75e*/
+    *v4 = (unsigned int)(0);
     v4[1] = 0x10000; /*0x42a760*/
     v6 = __2_YAPAXI_Z(0x40004u); /*0x42a767*/
     v7 = v5[1]; /*0x42a76c*/
@@ -132,7 +133,7 @@ void * Tactical::ConstructTacticalSurface()
   {
     v9[3] = (unsigned int)(0);
     v9[4] = (unsigned int)(-1);
-    *v9 = 0; /*0x42a7b0*/
+    *v9 = (unsigned int)(0);
     v9[1] = 10000; /*0x42a7b2*/
     v11 = __2_YAPAXI_Z(0x9C44u); /*0x42a7b9*/
     v12 = v10[1]; /*0x42a7be*/
@@ -238,9 +239,9 @@ void * Tactical::CreateTacticalLightSurface(int * a2, int * a1, IUnknown * aP2, 
   int64_t v15; // [esp-8h] [ebp-1Ch]
   int v16; // [esp+10h] [ebp-4h] BYREF
 
-  v7 = (unsigned int *)(a1);
+  v7 = (int *)((unsigned int *)(a1));
   v8 = (unsigned int *)(a3);
-  v9 = (int *)aP5; /*0x48405a*/
+  v9 = (unsigned int *)((int *)aP5);
   v11 = aP2; /*0x484063*/
   v12 = (int *)a4; /*0x484067*/
   *a1 = 0x10000; /*0x48406b*/

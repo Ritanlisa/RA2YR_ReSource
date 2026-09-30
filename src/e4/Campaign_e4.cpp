@@ -22,11 +22,13 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/CampaignProperties_WorldDominationTour_22_e4.hpp"
 #include "e4/classes/Carryall_e4.hpp"
+#include "e4/classes/Conflict_e4.hpp"
 
 // 0x765840
 namespace gamemd {
 int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
 {
+    unsigned int v5 = 0;  /* G37 hoist */
     unsigned int v5 = 0;  /* G37 hoist */
     unsigned int v5 = 0;  /* G37 hoist */
 

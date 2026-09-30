@@ -13,6 +13,9 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/FrameSnapshot_e4.hpp"
+#include "e4/classes/IPersistStream_e4.hpp"
+#include "e4/classes/IStream_e4.hpp"
 
 // 0x4391C0
 namespace gamemd {

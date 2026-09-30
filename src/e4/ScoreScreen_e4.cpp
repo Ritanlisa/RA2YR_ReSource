@@ -21,6 +21,8 @@
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/E4Recv_4AF2A0_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x690A10
 namespace gamemd {
@@ -57,7 +59,7 @@ void ScoreScreen::LoadScoreFont( ScoreFontClass * aP1)
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x690aae*/
   }
   this->ScoreScreen_field_0x04 = (unsigned int)(11);
-  this->ScoreScreen_field_0x14 = aP1; /*0x690abe*/
+  this->ScoreScreen_field_0x14 = (unsigned int)(aP1);
   this->ScoreScreen_field_0x08 = 21; /*0x690ac1*/
   return this->__pad_0; /*0x690aca*/
 
@@ -99,7 +101,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
   }
   this->ScoreScreen_field_0x04 = (unsigned int *)(20);
   this->ScoreScreen_field_0x14 = (unsigned int *)(a2);
-  this->ScoreScreen_field_0x08 = 35; /*0x690b91*/
+  this->ScoreScreen_field_0x08 = (unsigned int *)(35);
   return this->__pad_0; /*0x690b9a*/
 
 }
@@ -110,7 +112,7 @@ void ScoreScreen::Constructor( ScoreAnimClass * aP1, int a3, int a4)
 {
 
   this->ScoreScreen_field_0x08 = (unsigned int)(a3);
-  this->ScoreScreen_field_0x04 = aP1; /*0x690f41*/
+  this->ScoreScreen_field_0x04 = (unsigned int)(aP1);
   this->ScoreScreen_field_0x0C = this->Timer::GetTicks(); /*0x690f4d*/
   this->ScoreScreen_field_0x14 = 0; /*0x690f50*/
   this->ScoreScreen_field_0x18 = a4; /*0x690f57*/
@@ -131,7 +133,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   int v11; // esi
   int v12; // edx
   char *v13; // ebx
-  int v14; // ecx
+  ScoreScreen * v14;
   ScoreScreen *v15; // esi
   int v16; // eax
   int v17; // eax
@@ -175,8 +177,8 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
       *((unsigned int *)this + 236) = v25.DeleteAndZero_field_0x08; /*0x771390*/
       *((unsigned int *)this + 237) = a6; /*0x771393*/
     }
-    v14 = (gamemd::ScoreScreen *)(*((unsigned int *)this + 242));
-    v15 = (unsigned int *)this + 24; /*0x7713a2*/
+    v14 = (int)((gamemd::ScoreScreen *)(*((unsigned int *)this + 242)));
+    v15 = (gamemd::ScoreScreen *)((unsigned int *)this + 24);
     if ( *((unsigned int *)this + 244) < v14 /*0x7713c7*/
       || (*((unsigned char *)this + 973) || !v14)
       && (v16 = *((unsigned int *)this + 245), v16 > 0)

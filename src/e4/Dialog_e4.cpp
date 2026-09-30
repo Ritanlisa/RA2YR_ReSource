@@ -292,7 +292,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   char Source[240]; // [esp+34h] [ebp-F0h] BYREF
 
   v5 = (char)((HWND)(1));
-  v6 = (HWND)(3);
+  v6 = (int)((HWND)(3));
   this->Debug::Log(); /*0x5f2968*/
   if ( a4 == 1 ) /*0x5f2979*/
     StringCSF = GetStringCSF((wchar_t *)aTxtModemConner, 0, g_Str_File_NullMgr_CPP, 1409); /*0x5f298c*/

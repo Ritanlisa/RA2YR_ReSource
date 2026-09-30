@@ -78,7 +78,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
 
   int v3; // eax
   int v4; // eax
-  NeuronClass *v6; // [esp+4h] [ebp-4h] BYREF
+  unsigned (unsigned int)(int)* v6;
 
   *(unsigned int *)Block->__pad_0 = &NeuronClass::`vftable'; /*0x43a9cd*/
   Block->NeuronClass_field_0x04 = (int)&NeuronClass::`vftable'; /*0x43a9d3*/
@@ -99,7 +99,7 @@ void * NeuronClass::Reset(unsigned int * Block, char a2)
       ++v3; /*0x43aa16*/
     }
   }
-  v6 = Block; /*0x43aa38*/
+  v6 = (unsigned int)(Block);
   v4 = (*(int (**)(char *, NeuronClass **))(*(unsigned int *)&(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2) + 16))( /*0x43aa3c*/
          &(unsigned int *)((char *)&g_BuildingLoadQueue_Array + 2),
          &v6);
@@ -124,7 +124,7 @@ namespace gamemd {
 int NeuronClass_25::Update( int a2)
 {
 
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x43ab2a*/
+  return *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * a2); /*0x43ab2a*/
 
 }
 } // namespace gamemd
@@ -145,7 +145,7 @@ char NeuronClass_25::AddRef(int a2)
     v3 = 0; /*0x43ab3f*/
     if ( m_8 <= 0 ) /*0x43ab43*/
       return 1; /*0x43ab63*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x43ab45*/
+    v4 = *(unsigned int **)&this-((unsigned int *)(>m_1))[3]; /*0x43ab45*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x43ab4b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x43ab54*/
     {
@@ -179,12 +179,12 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
     LOBYTE(this->m_C) = 1; /*0x43aba6*/
     if ( v4 ) /*0x43abaa*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x43abb5*/
+      if ( *(unsigned int *)&this-((unsigned int *)(>m_1))[3] ) /*0x43abb5*/
       {
         m_8 = this->m_8; /*0x43abbc*/
         if ( a2 < m_8 ) /*0x43abc1*/
           m_8 = a2; /*0x43abc3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x43abc9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 4 * i - 4) ) /*0x43abc9*/
           ++i; /*0x43abce*/
         if ( BYTE1(this->m_C) ) /*0x43abdb*/
         {

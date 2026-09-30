@@ -14,6 +14,7 @@
 #include "e4/classes/MSEngine_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5CED10
 namespace gamemd {

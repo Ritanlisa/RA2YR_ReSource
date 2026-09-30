@@ -24,6 +24,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/TauntCommandClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/TypeClass_e4.hpp"
 
 // 0x4C4EF0
 namespace gamemd {

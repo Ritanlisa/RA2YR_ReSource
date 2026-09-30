@@ -28,6 +28,8 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
+#include "e4/classes/Hash_e4.hpp"
 
 // 0x5E84D0
 namespace gamemd {
@@ -46,7 +48,7 @@ char * GameConfig::ComputeCRC()
   int *v10; // [esp+10h] [ebp-104h]
   unsigned char v11[256]; // [esp+14h] [ebp-100h] BYREF
 
-  v0 = (unsigned int)((int *)(0));
+  v0 = (int *)((unsigned int)((int *)(0)));
   qmemcpy(v11, &unk_ABE050, sizeof(v11)); /*0x5e84ea*/
   v1 = &dword_ABE010; /*0x5e84ec*/
   v10 = &dword_ABE010; /*0x5e84fd*/
@@ -54,7 +56,7 @@ char * GameConfig::ComputeCRC()
   memset(&unk_ABE050, 0, 0x100u); /*0x5e8506*/
   do /*0x5e854a*/
   {
-    v3 = v0 >> 31; /*0x5e850a*/
+    v3 = (unsigned int)(v0)>> 31; /*0x5e850a*/
     if ( v2 < 4 ) /*0x5e8510*/
     {
       v5 = 0; /*0x5e8526*/

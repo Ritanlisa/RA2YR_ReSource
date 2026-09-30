@@ -18,11 +18,14 @@
 #include "e4/classes/ToolTipManager_e4.hpp"
 #include "e4/classes/Commands_e4.hpp"
 #include "e4/classes/E4Recv_77A9F0_e4.hpp"
+#include "e4/classes/PushCommandClass_e4.hpp"
+#include "e4/classes/Flag_e4.hpp"
 
 // 0x7A3D90
 namespace gamemd {
 int ComStreamClass::Write(void * a1, void * a2, void * a3)
 {
+    unsigned int v5 = 0;  /* G37 hoist */
     unsigned int v5 = 0;  /* G37 hoist */
     unsigned int v5 = 0;  /* G37 hoist */
 
@@ -62,7 +65,7 @@ int ComStreamClass::Write(void * a1, void * a2, void * a3)
     SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x7a3e31*/
   }
   v21 = (unsigned int)(1);
-  v20 = 0; /*0x7a3e40*/
+  v20 = (unsigned int)(0);
   v5 = (HWND)Dialog::FindByHandle((Dialog *)0x10F); /*0x7a3e4a*/
   if ( v5 /*0x7a3e7a*/
     || (v5 = (HWND)Dialog::FindByHandle((Dialog *)0x11D), v20 = v5 != 0, v5)
@@ -150,7 +153,7 @@ int ComStreamClass::Release()
   LONG v1; // ebx
   char *Block; // [esp+14h] [ebp+4h]
 
-  v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ac834*/
+  v1 = (unsigned int)(InterlockedDecrement((volatile LONG *)Block + 1));
   if ( !v1 && Block ) /*0x7ac83c*/
   {
     *(unsigned int *)Block = &off_7F766C; /*0x7ac843*/
@@ -167,6 +170,7 @@ int ComStreamClass::Release()
 namespace gamemd {
 int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
 {
+    unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
     unsigned int v6 = 0;  /* G37 hoist */
 
@@ -192,7 +196,7 @@ int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
   while ( 1 ) /*0x7ac8dd*/
   {
     v5 = *v3; /*0x7ac8dd*/
-    v6 = *v3 == 0; /*0x7ac8e6*/
+    v6 = *v3 == 0; /*(char *)(0x7ac8e6)*/
     if ( !*v3 || *v5 == *(unsigned int *)(a3) && v5[1] == a3[1] && v5[2] == a3[2] && v5[3] == a3[3] ) /*0x7ac910*/
       break; /*0x7ac910*/
 LABEL_17:
@@ -225,7 +229,7 @@ AbstractClass * * ComStreamClass::readData()
   unsigned int *v3; // ebp
   int v4; // edi
   void *v5; // edi
-  unsigned int v6; // edx
+  void * v6;
   int *v7; // edi
   int v8; // ebp
   int v9; // esi
@@ -287,7 +291,7 @@ void ComStreamClass::flushStream()
   int *v3; // ebp
   int ComStreamClass_field_0x0C; // edi
   void *v5; // edi
-  unsigned int v6; // edx
+  void * v6;
   int *v7; // edi
   unsigned int v8; // ebp
   int v9; // esi
@@ -301,7 +305,7 @@ void ComStreamClass::flushStream()
   {
     v3 = (int *)((unsigned int)(*(int **)this->__pad_0));
     ComStreamClass_field_0x0C = (unsigned int)(this->ComStreamClass_field_0x0C);
-    v13 = *(int **)this->__pad_0; /*0x7aef76*/
+    v13 = (unsigned int)(*(int **)this->__pad_0);
     this->ComStreamClass_field_0x08 = ComStreamClass_field_0x08 >> 1; /*0x7aef7c*/
     this->ComStreamClass_field_0x0C = ComStreamClass_field_0x0C - 1; /*0x7aef84*/
     v5 = (void *)__2_YAPAXI_Z(4 * (ComStreamClass_field_0x08 >> 1)); /*0x7aef8f*/

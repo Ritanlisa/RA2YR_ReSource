@@ -95,6 +95,8 @@
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/DDraw_e4.hpp"
 #include "e4/classes/WebBrowser_e4.hpp"
+#include "e4/classes/MultiplayerConfig_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {

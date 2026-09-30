@@ -81,7 +81,7 @@ LABEL_13:
     v11 = Element[1] / 256; /*0x5021f2*/
     if ( (uint16_t)(v10 / 256) == (unsigned short)v3 && (unsigned short)v11 == v18 ) /*0x5021ff*/
     {
-      result = (char)((gamemd::WaypointPathClass **)(v16));
+      result = (gamemd::WaypointPathClass **)((char)((gamemd::WaypointPathClass **)(v16)));
       if ( v16 != this-((unsigned int *)(>padding_18))[113] ) /*0x50220f*/
         return result; /*0x50227c*/
     }

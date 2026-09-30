@@ -76,7 +76,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   }
   v12 = (unsigned char *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v25));
   v28 = (unsigned char *)(v12);
-  v27 = CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v26); /*0x4cc229*/
+  v27 = (unsigned char *)(CellCoord::To_CellObj(&dword_87F7E8, (int16_t *)&v26));
   v13 = v12; /*0x4cc22f*/
   v24 = 0; /*0x4cc231*/
   if ( v7 <= 0 ) /*0x4cc235*/

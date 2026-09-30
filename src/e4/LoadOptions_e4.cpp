@@ -17,6 +17,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/E4Recv_6810C0_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/GameState_e4.hpp"
+#include "e4/classes/WTFMode_e4.hpp"
 
 // 0x559D60
 namespace gamemd {

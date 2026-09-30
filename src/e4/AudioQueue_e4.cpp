@@ -21,6 +21,7 @@
 #include "e4/classes/Socket_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/DListNode_e4.hpp"
 
 // 0x402AF0
 namespace gamemd {

@@ -24,6 +24,8 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/E4Recv_524EC0_e4.hpp"
+#include "e4/classes/AnimTypeVector_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x5236A0
 namespace gamemd {

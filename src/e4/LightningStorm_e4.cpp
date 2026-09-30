@@ -21,6 +21,7 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/LightSourceClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x539EB0
 namespace gamemd {

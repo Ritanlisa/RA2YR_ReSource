@@ -179,7 +179,7 @@ LABEL_10:
   if ( result ) /*0x72071b*/
   {
     Enabled = (unsigned int)(this->Audio::GetEnabled());
-    result = (unsigned int)(AudioStream::Constructor(Enabled, 0x4E20u));
+    result = (void *)((unsigned int)(AudioStream::Constructor(Enabled, 0x4E20u)));
     *((unsigned int *)this + 11) = result; /*0x720732*/
     if ( result ) /*0x720735*/
     {

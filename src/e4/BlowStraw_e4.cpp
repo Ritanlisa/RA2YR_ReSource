@@ -30,6 +30,10 @@
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
 #include "e4/classes/TEventClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/MessageListClass_e4.hpp"
+#include "e4/classes/PushCommandClass_e4.hpp"
+#include "e4/classes/CountdownTimer_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
 
 // 0x6D0680
 namespace gamemd {

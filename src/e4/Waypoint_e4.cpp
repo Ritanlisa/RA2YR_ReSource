@@ -22,10 +22,10 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   unsigned int *v6; // ecx
   int v7; // edi
   unsigned int *Element; // esi
-  signed int v10; // [esp+10h] [ebp-4h]
+  char * v10;
 
-  v2 = (int)((char *)(0));
-  v10 = (char *)(0);
+  v2 = (char *)((int)((char *)(0)));
+  v10 = (int)((char *)(0));
   for ( i = (unsigned char *)this + 528; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
@@ -37,13 +37,13 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
         v5 = 0; /*0x5023e2*/
       *(unsigned int *)i = v5; /*0x5023e4*/
     }
-    v6 = *(unsigned int **)i; /*0x5023e6*/
+    v6 = (int)(*(unsigned int **)i);
     v7 = 0; /*0x5023e8*/
     if ( *(int *)(*(unsigned int *)i + 56) > 0 ) /*0x5023ef*/
       break; /*0x5023ef*/
 LABEL_12:
     v10 = ++v2; /*0x502437*/
-    if ( v2 >= 12 ) /*0x50243b*/
+    if ( v2 >= (char *)(12) ) /*0x50243b*/
       return 0; /*0x50244c*/
   }
   while ( 1 ) /*0x5023f7*/
@@ -54,7 +54,7 @@ LABEL_12:
     v6 = *(unsigned int **)i; /*0x502424*/
     if ( ++v7 >= *(unsigned int *)(*(unsigned int *)i + 56) ) /*0x50242a*/
     {
-      v2 = v10; /*0x50242c*/
+      v2 = (char *)(v10);
       goto LABEL_12; /*0x50242c*/
     }
   }
@@ -90,9 +90,9 @@ int Waypoint::FindCell(unsigned int * a2)
   void *v6; // [esp+10h] [ebp-8h]
   Waypoint *v7; // [esp+14h] [ebp-4h]
 
-  v3 = (int)((void *)(0));
-  v7 = (void *)(this);
-  v6 = this->field_38; /*0x763a64*/
+  v3 = (void *)((int)((void *)(0)));
+  v7 = (gamemd::Waypoint *)((void *)(this));
+  v6 = (void *)(this->field_38);
   if ( (int)v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
   for ( i = *(unsigned int **)&this-((unsigned int *)(>__pad_0))[44]; /*0x763a6e*/

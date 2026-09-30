@@ -17,6 +17,8 @@
 #include "e4/classes/DamageArea_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Pipe_e4.hpp"
+#include "e4/classes/Straw_e4.hpp"
 
 // 0x42DDB0
 namespace gamemd {
@@ -32,7 +34,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   int v10; // eax
   uint8_t *pad_14; // [esp+8h] [ebp-Ch]
   int v13; // [esp+Ch] [ebp-8h]
-  int Size; // [esp+10h] [ebp-4h]
+  unsigned char * Size;
   int Srca; // [esp+18h] [ebp+4h]
 
   v3 = Src; /*0x42ddb4*/
@@ -43,28 +45,28 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   {
     v5 = (int)((unsigned char *)(4));
     pad_14 = (unsigned char *)((uint8_t *)this->__pad_14);
-    v6 = &this->field_18; /*0x42de04*/
+    v6 = (unsigned char *)(&this->field_18);
     Srca = 3; /*0x42de07*/
   }
   else
   {
     v5 = (int)((unsigned char *)(3));
     pad_14 = (unsigned char *)((uint8_t *)&this->field_18);
-    v6 = this->__pad_14; /*0x42ddeb*/
+    v6 = (unsigned char *)(this->__pad_14);
     Srca = 4; /*0x42ddee*/
   }
   v7 = this->field_10; /*0x42de0f*/
   if ( v7 > 0 ) /*0x42de14*/
   {
-    Size = a3; /*0x42de24*/
-    if ( a3 >= v5 - v7 ) /*0x42de28*/
+    Size = (int)(a3);
+    if ( a3 >= (int)(v5) - v7 ) /*0x42de28*/
       Size = v5 - v7; /*0x42de2a*/
     memcpy(&pad_14[this->field_10], v3, Size); /*0x42de3e*/
     v8 = Size + this->field_10; /*0x42de4e*/
     v3 += Size; /*0x42de55*/
     this->field_10 = v8; /*0x42de59*/
     a3 -= Size; /*0x42de5c*/
-    if ( v8 == v5 ) /*0x42de60*/
+    if ( v8 == (int)(v5) ) /*0x42de60*/
     {
       if ( this->field_C ) /*0x42de62*/
         v9 = DecodeBitmapRGB(pad_14, v5, v6, Srca); /*0x42de88*/
@@ -74,7 +76,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
       this->field_10 = 0; /*0x42de9a*/
     }
   }
-  for ( ; a3 >= v5; a3 -= v5 ) /*0x42dea5*/
+  for ( ; a3 >= (int)(v5); a3 -= v5 ) /*0x42dea5*/
   {
     if ( this->field_C ) /*0x42dea7*/
       v10 = DecodeBitmapRGB((uint8_t *)v3, v5, v6, Srca); /*0x42dec9*/

@@ -57,7 +57,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
       {
         v3[3] = (unsigned int)(0);
         v3[1] = (unsigned int)(v1 + 16);
-        v3[2] = v1 + 16; /*0x4654b6*/
+        v3[2] = (unsigned int)(v1 + 16);
         *v3 = &XSurface_Vtable; /*0x4654b9*/
         v3[4] = 1; /*0x4654bf*/
         Buffer::Init(v3 + 5, 0, (v1 + 16) * (v1 + 16)); /*0x4654c6*/

@@ -30,6 +30,8 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/GameConfig_e4.hpp"
+#include "e4/classes/GameResult_e4.hpp"
+#include "e4/classes/Tooltip_e4.hpp"
 
 // 0x6863E0
 namespace gamemd {

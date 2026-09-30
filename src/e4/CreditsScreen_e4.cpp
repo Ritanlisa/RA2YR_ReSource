@@ -34,7 +34,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
   const char *v10; // eax
-  const const char * v11;
+  const unsigned int v11;
   const char *v12; // [esp-8h] [ebp-29Ch]
   char v13; // [esp+Fh] [ebp-285h] BYREF
   int v14; // [esp+10h] [ebp-284h] BYREF
@@ -43,7 +43,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char v17[128]; // [esp+194h] [ebp-100h] BYREF
   char Destination[128]; // [esp+214h] [ebp-80h] BYREF
 
-  result = (int)((gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4)));
+  result = (gamemd::INIClass **)((int)((gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4))));
   if ( result ) /*0x531a2f*/
     return result; /*0x531a2f*/
   WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/

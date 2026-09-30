@@ -13,6 +13,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/AudioSample_e4.hpp"
 
 // 0x4080F0
 namespace gamemd {

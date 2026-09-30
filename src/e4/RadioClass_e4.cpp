@@ -12,6 +12,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Radar_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x65A750
 namespace gamemd {
@@ -90,7 +91,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
 {
 
   ObjectClass * v3;
-  int v4;
+  ObjectClass * v4;
   int result; // eax
   ObjectClass * v6;
   int v7; // esi
@@ -98,11 +99,11 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
   int v9; // esi
 
   v3 = (gamemd::ObjectClass *)((int)(aP1));
-  v4 = aP2; /*0x65ab87*/
+  v4 = (int)(aP2);
   result = BuildingClass::SaveLoad_Register((ObjectClass *)this); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {
-    v6 = (int)(v3 + 224);
+    v6 = (gamemd::ObjectClass *)((int)(v3 + 224));
     if ( v3 != (gamemd::ObjectClass *)(-224) ) /*0x65aba2*/
     {
       *(unsigned int *)(v3 + 228) = 0; /*0x65aba4*/

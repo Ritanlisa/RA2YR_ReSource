@@ -15,6 +15,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/NullModemClass_e4.hpp"
 #include "e4/classes/UDPInterfaceClass_e4.hpp"
+#include "e4/classes/BTree_e4.hpp"
+#include "e4/classes/BufferIO_e4.hpp"
 
 // 0x4325C0
 namespace gamemd {

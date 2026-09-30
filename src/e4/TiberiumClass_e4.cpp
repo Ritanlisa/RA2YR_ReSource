@@ -21,6 +21,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/DynamicVectorClass_flat_e4.hpp"
+#include "e4/classes/AnimTypeVector_e4.hpp"
 
 // 0x5A0160
 namespace gamemd {

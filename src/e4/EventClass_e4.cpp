@@ -276,7 +276,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
   {
     v5 = (int)((unsigned int *)(*((unsigned int *)&this->EventClass_field_0x28 + result) + 76));
     *v5 = (int)(*aP2);
-    v5[1] = aP2[1]; /*0x5422ab*/
+    v5[1] = (int)(aP2[1]);
     result = aP2[2]; /*0x5422ae*/
     v5[2] = result; /*0x5422b1*/
   }
@@ -323,12 +323,12 @@ LABEL_19:
   }
   if ( a3 ) /*0x54f2a2*/
     v5 |= 0x800u; /*0x54f2a4*/
-  v6 = *(unsigned int *)&this->__pad_58[704]; /*0x54f2aa*/
+  v6 = *(unsigned int *)&this-((unsigned int *)(>__pad_58))[704]; /*0x54f2aa*/
   result = (v6 + 1) % 256; /*0x54f2c0*/
-  if ( result != *(unsigned int *)&this->__pad_58[700] ) /*0x54f2c7*/
+  if ( result != *(unsigned int *)&this-((unsigned int *)(>__pad_58))[700] ) /*0x54f2c7*/
   {
     *(unsigned short *)&this->__pad_58[2 * v6 + 188] = v5; /*0x54f2c9*/
-    *(unsigned int *)&this->__pad_58[704] = result; /*0x54f2d1*/
+    *(unsigned int *)&this-((unsigned int *)(>__pad_58))[704] = result; /*0x54f2d1*/
     goto LABEL_19; /*0x54f2d1*/
   }
   LOBYTE(result) = 0; /*0x54f2e1*/

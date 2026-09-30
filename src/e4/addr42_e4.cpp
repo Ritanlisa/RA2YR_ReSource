@@ -49,6 +49,7 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
 
 // 0x420140
 namespace gamemd {
@@ -162,7 +163,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   uint8_t v35; // cl
   char v36; // cl
   int * v37;
-  int v38; // [esp+8h] [ebp-C8h]
+  int * v38;
   int v39; // [esp+8h] [ebp-C8h]
   int * v40;
   int * v41;

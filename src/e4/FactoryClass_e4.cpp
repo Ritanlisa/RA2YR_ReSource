@@ -141,7 +141,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 
   int v5; // ecx
   int v6; // eax
-  int v7;
+  char * v7;
   int v8; // eax
   int v9; // eax
   int v10; // edx
@@ -199,7 +199,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   else
   {
     v5 = (int)(*((unsigned int *)this + 18));
-    v6 = *((unsigned int *)this + 20); /*0x4c9cf6*/
+    v6 = (int)(*((unsigned int *)this + 20));
     v7 = (char *)this + 64; /*0x4c9cf9*/
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)

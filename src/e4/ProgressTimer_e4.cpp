@@ -23,7 +23,7 @@ void* ProgressTimer::GetValue(IUnknown * aP1)
   int16_t v10; // cx
   int v12; // [esp+Ch] [ebp-4h]
 
-  ProgressTimer_field_0x14 = (int16_t)this->ProgressTimer_field_0x14; /*0x4c93d2*/
+  ProgressTimer_field_0x14 = (void *)((int16_t)this->ProgressTimer_field_0x14);
   if ( ProgressTimer_field_0x14 <= 0 ) /*0x4c93db*/
     goto LABEL_14; /*0x4c93db*/
   ProgressTimer_field_0x8 = this->ProgressTimer_field_0x8; /*0x4c93dd*/
@@ -36,8 +36,8 @@ void* ProgressTimer::GetValue(IUnknown * aP1)
   }
   if ( ProgressTimer_field_0x10 ) /*0x4c93fa*/
   {
-    v5 = (int16_t)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this->__pad_0[4]); /*0x4c9406*/
-    v6 = (int16_t)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this->__pad_0[4]); /*0x4c940b*/
+    v5 = (int16_t)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this-((unsigned int *)(>__pad_0))[4]); /*0x4c9406*/
+    v6 = (int16_t)(*(unsigned short *)this->__pad_0 - *(unsigned short *)&this-((unsigned int *)(>__pad_0))[4]); /*0x4c940b*/
     v7 = (int)((HIDWORD(v6) ^ v6) - HIDWORD(v6)) / ProgressTimer_field_0x14; /*0x4c9411*/
     v12 = *(unsigned int *)this->__pad_0; /*0x4c9415*/
     if ( (int16_t)v7 <= 0 ) /*0x4c941c*/
@@ -46,7 +46,7 @@ LABEL_12:
       *(unsigned int *)aP1 = v12; /*0x4c9445*/
       return aP1; /*0x4c9453*/
     }
-    v8 = this->ProgressTimer_field_0x10; /*0x4c941e*/
+    v8 = (void *)(this->ProgressTimer_field_0x10);
     v9 = this->ProgressTimer_field_0x8; /*0x4c9421*/
     if ( v9 != (void *)-1 ) /*0x4c9427*/
     {
@@ -63,7 +63,7 @@ LABEL_11:
     goto LABEL_12; /*0x4c9440*/
   }
 LABEL_14:
-  *aP1 = *(unsigned int *)this->__pad_0; /*0x4c945a*/
+  *(_DWORD *)aP1 = *(unsigned int *)this->__pad_0; /*0x4c945a*/
   return aP1; /*0x4c944d*/
 
 }

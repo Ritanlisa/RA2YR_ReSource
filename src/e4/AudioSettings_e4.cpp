@@ -97,7 +97,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   int v46; // [esp+24h] [ebp-CCh]
   wchar_t lParam[100]; // [esp+28h] [ebp-C8h] BYREF
 
-  result = (int)((gamemd::AbstractClass **)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd)));
+  result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd))));
   if ( result ) /*0x6b6333*/
     return result; /*0x6b6333*/
   if ( a2 != 273 ) /*0x6b633f*/

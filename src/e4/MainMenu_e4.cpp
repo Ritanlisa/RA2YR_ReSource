@@ -16,6 +16,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Menu_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x531CC0
 namespace gamemd {

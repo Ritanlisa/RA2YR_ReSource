@@ -19,6 +19,9 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/CComObject_CChatEventSink___ATL_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/FileStraw_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
+#include "e4/classes/Pipe_e4.hpp"
 
 // 0x41F2E0
 namespace gamemd {
@@ -233,7 +236,7 @@ CCINIClass::CCINIClass()
   }
   v6 = (unsigned int)(sectionHead[1]);
   p_sectionCount[2] = (unsigned int)((int)sectionHead);
-  p_sectionCount[1] = v6; /*0x535b8c*/
+  p_sectionCount[1] = (unsigned int)(v6);
   v7 = sectionHead[1]; /*0x535b8f*/
   if ( v7 ) /*0x535b94*/
     *(unsigned int *)(v7 + 8) = p_sectionCount; /*0x535b96*/

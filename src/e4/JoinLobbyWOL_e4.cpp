@@ -12,6 +12,7 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/Isometric_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x72BE80
 namespace gamemd {

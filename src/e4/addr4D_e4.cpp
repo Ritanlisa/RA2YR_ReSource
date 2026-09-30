@@ -247,7 +247,7 @@ int E4Recv_4DB8A0::sub_4DB8A0()
   LPVOID ppv; // [esp+20h] [ebp-8h] BYREF
   int v8; // [esp+24h] [ebp-4h] BYREF
 
-  v2 = *((unsigned int *)this + 413); /*0x4db8a7*/
+  v2 = (LPVOID)(*((unsigned int *)this + 413));
   if ( v2 ) /*0x4db8af*/
     (*(void (**)(unsigned int))(*(unsigned int *)v2 + 4))(*((unsigned int *)this + 413)); /*0x4db8b4*/
   ppv = (unsigned int)(0);

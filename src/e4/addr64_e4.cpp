@@ -53,6 +53,10 @@
 #include "e4/classes/E4Recv_6BEC50_e4.hpp"
 #include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
+#include "e4/classes/InputManager_ProcessEvents_e4.hpp"
+#include "e4/classes/Int4_e4.hpp"
+#include "e4/classes/Multiplay_e4.hpp"
+#include "e4/classes/SyncDelayClass_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {
@@ -72,7 +76,7 @@ void * E4Recv_645B60::sub_645B60()
   char ** v2;
   char **v3; // esi
 
-  v2 = (int)((char **)(0));
+  v2 = (char **)((int)((char **)(0)));
   v3 = (char **)(off_7F0248);
   while ( _strcmpi((char *)this, *v3) ) /*0x645b7a*/
   {
@@ -124,7 +128,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   vtable2 = this->?; /*0x645d7d*/
   vtable3 = this->?; /*0x645d88*/
   v3 = sub_6460C0(v29, a2); /*0x645d8e*/
-  v4 = QuaternionMathMultiply((float *)v30[0].__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
+  v4 = QuaternionMathMultiply((float *)((unsigned int *)(v30))[0].__pad_0, (float *)&vtable0, v3); /*0x645d9c*/
   v5 = *(float *)&this->?; /*0x645da3*/
   v6 = *((unsigned int *)v4 + 1); /*0x645da6*/
   v25 = *(unsigned int *)v4; /*0x645da9*/

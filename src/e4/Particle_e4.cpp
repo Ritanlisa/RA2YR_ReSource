@@ -26,7 +26,7 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
   *((unsigned char *)this + 301) = *(unsigned char *)(aP1 + 758); /*0x466513*/
   if ( *(unsigned char *)(aP1 + 681) && aP3 ) /*0x466525*/
   {
-    result = (char)(*(unsigned int *)(*(unsigned int *)(aP3 + 540) + 90196));
+    result = (gamemd::AbstractClass *)((char)(*(unsigned int *)(*(unsigned int *)(aP3 + 540) + 90196)));
     *((char *)this + 69) = result; /*0x466533*/
   }
   else

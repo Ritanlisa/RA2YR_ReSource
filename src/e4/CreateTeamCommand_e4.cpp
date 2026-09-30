@@ -34,6 +34,7 @@
 #include "e4/classes/E4Recv_6C1850_e4.hpp"
 #include "e4/classes/E4Recv_6C2D50_e4.hpp"
 #include "e4/classes/E4Recv_6C34D0_e4.hpp"
+#include "e4/classes/E4Recv_6C2450_e4.hpp"
 
 // 0x535CF0
 namespace gamemd {

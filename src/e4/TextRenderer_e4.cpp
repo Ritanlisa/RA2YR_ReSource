@@ -24,6 +24,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/E4Recv_4AF2A0_e4.hpp"
 #include "e4/classes/MSEngine_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
 
 // 0x4A60D0
 namespace gamemd {
@@ -257,7 +258,7 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
   v14 = *(unsigned int *)(a2) + 4; /*0x642fd5*/
   *(unsigned int *)(a2) = v14; /*0x642fdb*/
   if ( a3 > (void *)(1) ) /*0x642fe3*/
-    *(unsigned int *)(a2) = a3 * v14; /*0x642fe8*/
+    *(unsigned int *)(a2) = (unsigned int)(a3)* v14; /*0x642fe8*/
   return result; /*0x642fdf*/
 
 }

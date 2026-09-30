@@ -14,6 +14,10 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/FileTreeNode_e4.hpp"
+#include "e4/classes/FileTree_e4.hpp"
+#include "e4/classes/PtrVector_e4.hpp"
+#include "e4/classes/Tree_e4.hpp"
 
 // 0x6BB8E0
 namespace gamemd {

@@ -22,6 +22,7 @@
 #include "e4/classes/LightningStorm_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/Type_e4.hpp"
+#include "e4/classes/LCWStraw_e4.hpp"
 
 // 0x568300
 namespace gamemd {
@@ -35,7 +36,7 @@ int LayerClass::CoordinatesLegal( IUnknown * aP1)
 
   v2 = (int)(*((unsigned int *)this + 61));
   v3 = (int)(*aP1);
-  result = aP1[1]; /*0x56830f*/
+  result = (int)(aP1[1]);
   v5 = result + v3; /*0x568313*/
   LOBYTE(result) = result + v3 > v2 /*0x56833f*/
                 && v3 - result < v2
@@ -141,7 +142,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
 
   v17 = (gamemd::MapClass *)((IUnknown *)((MapClass *)aP0));
   v18 = (IUnknown *)(*aP3);
-  v19 = (Type *)aP3[1]; /*0x56dc36*/
+  v19 = (IUnknown *)((Type *)aP3[1]);
   v81 = aP0; /*0x56dc49*/
   v78 = 0; /*0x56dc4d*/
   v86 = v18; /*0x56dc51*/
@@ -203,8 +204,7 @@ int LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2,
         }
         g_MissionQueueFrame.briefing[139] = (int)(v88);
         v30 = (int)((Cell *)&g_MissionQueueFrame.briefing[130]);
-LABEL_23:
-        v99[1] = v27; /*0x56dd91*/
+LABEL_23: v99[1] = (int)(v27);
         v99[0] = (int16_t)(v86 + v26); /*0x56dd9f*/
         v99[2] = aP8; /*0x56ddad*/
         v99[3] = aP9; /*0x56ddb9*/
@@ -262,8 +262,7 @@ LABEL_36:
         }
         g_MissionQueueFrame.briefing[139] = (int)(v90);
         v39 = (int)((Cell *)&g_MissionQueueFrame.briefing[130]);
-LABEL_44:
-        v98[1] = v36; /*0x56dfa7*/
+LABEL_44: v98[1] = (int)(v36);
         v98[3] = aP9; /*0x56dfbe*/
         v98[0] = (int16_t)(v86 + v26); /*0x56dfc8*/
         v98[2] = aP8; /*0x56dfcf*/
@@ -473,9 +472,9 @@ LABEL_125:
     && aP14[1] == *(unsigned short *)&g_MissionQueueFrame.waypoints[2136] )
   {
     if ( v81 ) /*0x56e6b0*/
-      *(_DWORD *)aP2 = v105[*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v81]; /*0x56e6c6*/
+      *(unsigned int *)aP2 = v105[*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v81]; /*0x56e6c6*/
     else
-      *(_DWORD *)aP2 = v106[*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v82]; /*0x56e6e5*/
+      *(unsigned int *)aP2 = v106[*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) % (int)v82]; /*0x56e6e5*/
     return aP2; /*0x56e6b4*/
   }
   else

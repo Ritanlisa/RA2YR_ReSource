@@ -13,6 +13,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/CursorPositionCommandClass_e4.hpp"
 
 // 0x7BF740
 namespace gamemd {

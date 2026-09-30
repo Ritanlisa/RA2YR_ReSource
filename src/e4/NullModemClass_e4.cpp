@@ -17,6 +17,8 @@
 #include "e4/classes/ParasiteClass_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/SerialPort_e4.hpp"
+#include "e4/classes/FileFind_e4.hpp"
 
 // 0x5F1950
 namespace gamemd {

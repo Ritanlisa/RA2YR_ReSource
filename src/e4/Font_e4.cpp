@@ -24,6 +24,10 @@
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Color_e4.hpp"
+#include "e4/classes/BufferIO_e4.hpp"
+#include "e4/classes/Field_e4.hpp"
+#include "e4/classes/FontClass_e4.hpp"
+#include "e4/classes/FontRenderer_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {
@@ -142,7 +146,7 @@ LABEL_4:
               v18 = (gamemd::AbstractClass *)((int)(aP5 - v11));
             }
           }
-          xLeft = (int)(aP1a + v18);
+          xLeft = (gamemd::AbstractClass *)((int)(aP1a + v18));
           if ( v12 >= (unsigned short *)(aP2) ) /*0x434da1*/
             goto LABEL_20; /*0x434da1*/
           v19 = aP8; /*0x434da7*/
@@ -238,7 +242,7 @@ LABEL_26:
               v29 = (gamemd::AbstractClass *)((int)(aP5 - v11));
             }
           }
-          xLeft = (int)(aP1a + v29);
+          xLeft = (gamemd::AbstractClass *)((int)(aP1a + v29));
           if ( v12 >= (unsigned short *)(aP2) ) /*0x434fb3*/
             goto LABEL_50; /*0x434fb3*/
           v30 = aP8; /*0x434fb9*/
@@ -328,7 +332,7 @@ LABEL_59:
           v38 = (gamemd::AbstractClass *)((int)(aP5 - v11));
         }
       }
-      xLeft = (int)(aP1a + v38);
+      xLeft = (gamemd::AbstractClass *)((int)(aP1a + v38));
       if ( v12 < (unsigned short *)(aP2) ) /*0x43519e*/
       {
         v39 = (gamemd::AbstractClass *)((int)(aP8));

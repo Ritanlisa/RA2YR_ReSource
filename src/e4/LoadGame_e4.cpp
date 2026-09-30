@@ -29,6 +29,9 @@
 #include "e4/classes/E4Recv_65FB80_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/AudioSample_e4.hpp"
+#include "e4/classes/DListNode_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x660840
 namespace gamemd {
@@ -455,7 +458,7 @@ int LoadGame::LoadPointArray(int a2)
       }
       v8 = (unsigned int)(p_LoadGame_field_0x0C[4]);
       v9 = (unsigned int)(p_LoadGame_field_0x0C[1]);
-      p_LoadGame_field_0x0C[4] = v8 + 1; /*0x54e860*/
+      p_LoadGame_field_0x0C[4] = (unsigned int)(v8 + 1);
       *(unsigned int *)(v9 + 4 * v8) = v4; /*0x54e863*/
       ++v13; /*0x54e871*/
     }

@@ -32,6 +32,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/E4Recv_634B20_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x4D9E70
 namespace gamemd {
@@ -168,9 +169,9 @@ int TeamClass::DeployUnit(int a2, int a3)
     {
       if ( *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - v6 >= ParasiteClass_field_34 ) /*0x62a2b8*/
       {
-LABEL_12: v9 = (int *)((unsigned int *)(Object::CalculateObjectPlacementPosition((Object *)this, v18)));
+LABEL_12: v9 = (unsigned int)((int *)((unsigned int *)(Object::CalculateObjectPlacementPosition((Object *)this, v18))));
         v17[0] = (unsigned int *)(*v9);
-        v10 = v9[1]; /*0x62a307*/
+        v10 = (unsigned int *)(v9[1]);
         v17[1] = v10; /*0x62a30a*/
         v11 = v9[2]; /*0x62a30e*/
         ++dword_A8E7AC; /*0x62a311*/
@@ -290,7 +291,7 @@ AbstractClass * * TeamClass::DestroyAllMembers(unsigned int * Block, TechnoClass
   if ( uniqueId <= 0 ) /*0x6340c0*/
     goto LABEL_7; /*0x6340c0*/
   vtable1 = (unsigned int ***)Block->?; /*0x6340c2*/
-  v6 = vtable1; /*0x6340c9*/
+  v6 = vtable1; /*(unsigned int *)(0x6340c9)*/
   while ( **(unsigned int *)(v6) != aP1 ) /*0x6340d0*/
   {
     ++v3; /*0x6340d2*/

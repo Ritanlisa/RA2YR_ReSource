@@ -37,6 +37,9 @@
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/WWMouseClass_e4.hpp"
 #include "e4/classes/E4Recv_7B9530_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/Flag_e4.hpp"
+#include "e4/classes/Performance_e4.hpp"
 
 // 0x7A0430
 namespace gamemd {

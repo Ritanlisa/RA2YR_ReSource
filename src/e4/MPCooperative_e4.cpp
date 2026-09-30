@@ -32,6 +32,7 @@
 #include "e4/classes/GameLoop_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/MSVQAnim_e4.hpp"
+#include "e4/classes/INISectionList_e4.hpp"
 
 // 0x49B660
 namespace gamemd {

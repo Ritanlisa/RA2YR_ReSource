@@ -25,11 +25,14 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/DynamicArray_e4.hpp"
 
 // 0x610570
 namespace gamemd {
 AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
 {
+    unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */
     unsigned int v11 = 0;  /* G37 hoist */

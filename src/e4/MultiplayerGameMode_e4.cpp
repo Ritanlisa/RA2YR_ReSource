@@ -16,6 +16,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/MultiplayerManBattle_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x5D89F0
 namespace gamemd {

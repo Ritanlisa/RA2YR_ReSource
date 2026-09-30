@@ -54,7 +54,7 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   int v8; // [esp+4h] [ebp-1Ch]
   float v9; // [esp+8h] [ebp-18h] BYREF
   float v10; // [esp+Ch] [ebp-14h]
-  int v11; // [esp+10h] [ebp-10h]
+  unsigned int * v11;
   float v12[3]; // [esp+14h] [ebp-Ch] BYREF
   int v13; // [esp+28h] [ebp+8h]
 
@@ -63,14 +63,14 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   {
     *aP1 = (unsigned int *)(dword_B0CE08);
     aP1[1] = (unsigned int *)(dword_B0CE0C);
-    aP1[2] = dword_B0CE10; /*0x6d2415*/
+    aP1[2] = (unsigned int *)(dword_B0CE10);
     return aP1; /*0x6d23f7*/
   }
   else
   {
     v9 = (unsigned int *)((float)v13);
-    v11 = (unsigned int *)(0);
-    v10 = (float)v8; /*0x6d23ac*/
+    v11 = (int)((unsigned int *)(0));
+    v10 = (unsigned int *)((float)v8);
     v4 = TransformMatrix3x4Point(v12, (unsigned int *)this + 889, &v9); /*0x6d23b0*/
     v9 = *v4; /*0x6d23b7*/
     v10 = v4[1]; /*0x6d23c2*/

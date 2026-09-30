@@ -33,6 +33,8 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x5E3850
 namespace gamemd {
@@ -84,6 +86,7 @@ v2 = (LPVOID)(ppv);
 // 0x78F7F0
 int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
+    unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v14 = 0;  /* G37 hoist */
     unsigned int v28 = 0;  /* G37 hoist */
     unsigned int v26 = 0;  /* G37 hoist */

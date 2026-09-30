@@ -186,7 +186,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
   unsigned int *v10; // edx
 
   v2 = (gamemd::AbstractTypeClass *)((int)(a0));
-  v3 = (int)(aP1);
+  v3 = (gamemd::AbstractTypeClass *)((int)(aP1));
   result = AbstractClass::SaveLoad_Prefix_0(a0, aP1); /*0x6a478d*/
   if ( result >= 0 ) /*0x6a4796*/
   {

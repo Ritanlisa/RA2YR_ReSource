@@ -41,6 +41,7 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/MessageListClass_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {

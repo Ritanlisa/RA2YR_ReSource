@@ -16,6 +16,7 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/ScoreScreen_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x52FEC0
 namespace gamemd {
@@ -61,6 +62,7 @@ v4 = (int)((unsigned int *)(a2));
 // 0x68F060
 int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
 {
+    unsigned int v19 = 0;  /* G37 hoist */
     unsigned int v19 = 0;  /* G37 hoist */
     unsigned int v19 = 0;  /* G37 hoist */
 

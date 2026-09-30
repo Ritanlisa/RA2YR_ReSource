@@ -30,6 +30,8 @@
 #include "e4/classes/GameSettings_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/IsRandMap_e4.hpp"
+#include "e4/classes/PreviewClass_e4.hpp"
 
 // 0x5D1D80
 namespace gamemd {
@@ -112,7 +114,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
       v17 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
       {
-        if ( v17 != -1 ) /*0x5e7793*/
+        if ( v17 != (void **)(-1) ) /*0x5e7793*/
         {
           result = this->Timer::GetTicks() - v17; /*0x5e779e*/
           if ( result >= (void **)(1800) ) /*0x5e77a4*/
@@ -128,7 +130,7 @@ v1 = (gamemd::Skirmish *)(g_UIControlState);
         {
           result = (void **)(v17);
           v11 = 1800; /*0x5e77de*/
-          if ( v17 != -1 ) /*0x5e77e4*/
+          if ( v17 != (void **)(-1) ) /*0x5e77e4*/
           {
             result = this->Timer::GetTicks() - v17; /*0x5e77ef*/
             if ( result >= (void **)(1800) ) /*0x5e77f5*/

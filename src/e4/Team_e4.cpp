@@ -60,6 +60,9 @@
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/BuildingLoadQueue_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/ScoreText_e4.hpp"
 
 // 0x561180
 namespace gamemd {
@@ -325,7 +328,7 @@ Game * * E4Recv_634B20::sub_634B20()
   unsigned int v17[3]; // [esp+24h] [ebp-7Ch] BYREF
   unsigned short v18[56]; // [esp+30h] [ebp-70h] BYREF
 
-  v2 = (int)((gamemd::ObjectClass *)(0));
+  v2 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(0)));
   nextObject = (gamemd::ObjectClass *)(this->nextObject);
   if ( (int)nextObject > 0 ) /*0x634b37*/
   {
@@ -344,7 +347,7 @@ Game * * E4Recv_634B20::sub_634B20()
       for ( i = 0; v5 < uniqueId; i = v5 ) /*0x634b94*/
       {
         v6 = (unsigned int *)*((unsigned int *)this->? + v5); /*0x634b99*/
-        if ( v6[2] == v2 ) /*0x634b9f*/
+        if ( v6[2] == (unsigned int)(v2) ) /*0x634b9f*/
         {
           v7 = *v6; /*0x634ba1*/
           (*(int (**)(unsigned int))(*(unsigned int *)*v6 + 136))(*v6); /*0x634ba7*/
@@ -357,7 +360,7 @@ Game * * E4Recv_634B20::sub_634B20()
       }
       ++v2; /*0x634bf4*/
     }
-    while ( v2 < (int)nextObject ); /*0x634bf7*/
+    while ( v2 < (gamemd::ObjectClass *)((int))nextObject ); /*0x634bf7*/
   }
   if ( (int)this->lineTrailer > 0 ) /*0x634c05*/
   {

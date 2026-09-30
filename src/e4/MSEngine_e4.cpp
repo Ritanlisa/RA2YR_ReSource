@@ -13,6 +13,7 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
 
 // 0x5ACD30
 namespace gamemd {

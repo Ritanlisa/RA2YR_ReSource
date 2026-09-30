@@ -51,6 +51,11 @@
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/E4Recv_635560_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Char_e4.hpp"
+#include "e4/classes/FontRenderer_e4.hpp"
+#include "e4/classes/Property_e4.hpp"
+#include "e4/classes/TextGroup_e4.hpp"
+#include "e4/classes/Text_e4.hpp"
 
 // 0x620050
 namespace gamemd {
@@ -711,7 +716,7 @@ double sub_621150(int a1)
 namespace gamemd {
 void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9)
 {
-  unsigned int * v9;
+  unsigned int v9;
   unsigned int * v12;
   int v13; // esi
   int v14; // eax

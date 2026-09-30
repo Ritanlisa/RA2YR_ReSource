@@ -22,6 +22,9 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/KeyboardConfig_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/FacingClass_e4.hpp"
+#include "e4/classes/Targeting_e4.hpp"
 
 // 0x4B0AD0
 namespace gamemd {
@@ -473,7 +476,7 @@ void* JumpjetLocomotion::Land()
   }
   v47 = (char)((gamemd::CellClass *)(1));
   v23 = (gamemd::CellClass *)((int *)(*(unsigned int *)this->__pad_C + 156));
-  v54 = *v23; /*0x54cdd3*/
+  v54 = (gamemd::CellClass *)(*v23);
   v55 = v23[1]; /*0x54cddf*/
   v56 = v23[2]; /*0x54cde6*/
   v24 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v54); /*0x54cdf4*/
@@ -681,7 +684,7 @@ void* JumpjetLocomotion::UpdateFacing()
   {
     v4 = *(float *)&this->__pad_C[36] + *(double *)&this->__pad_5C[20]; /*0x54d148*/
     *(double *)&this->__pad_5C[20] = v4; /*0x54d14b*/
-    v61 = (double)*(int *)&this->__pad_C[20]; /*0x54d151*/
+    v61 = (double)*(int *)&this-((unsigned int *)(>__pad_C))[20]; /*0x54d151*/
     if ( v4 >= v61 ) /*0x54d15e*/
       v4 = v61; /*0x54d162*/
     *(double *)&this->__pad_5C[20] = v4; /*0x54d166*/
@@ -689,7 +692,7 @@ void* JumpjetLocomotion::UpdateFacing()
   if ( *(double *)this->__pad_78 < *(double *)&this->__pad_5C[20] ) /*0x54d174*/
   {
     v5 = *(double *)&this->__pad_5C[20] - *(float *)&this->__pad_C[36] * 1.5; /*0x54d17f*/
-    *(double *)&this->__pad_5C[20] = v5; /*0x54d188*/
+    *(double *)&this-((unsigned int *)(>__pad_5C))[20] = v5; /*0x54d188*/
     if ( v7 | v8 ) /*0x54d18d*/
       v5 = 0.0; /*0x54d194*/
     *(double *)&this->__pad_5C[20] = v5; /*0x54d19a*/
@@ -704,7 +707,7 @@ void* JumpjetLocomotion::UpdateFacing()
   v12 = (unsigned short *)(*(int (**)(unsigned int, double *))(**(unsigned int **)this->__pad_C + 440))( /*0x54d1e0*/
                    *(unsigned int *)this->__pad_C,
                    &v61);
-  if ( *v12 != (unsigned short)v10 || (v56 = 1, v12[1] != (unsigned short)v11) ) /*0x54d1f4*/
+  if ( *v12 != (unsigned short)v10 || (v56 = 1, ((unsigned int *)(v12))[1] != (unsigned short)v11) ) /*0x54d1f4*/
     v56 = 0; /*0x54d1f6*/
   v13 = *(unsigned int *)&this->__pad_48[8]; /*0x54d1fb*/
   if ( (v13 == 2 || v13 == 3) && !this->__pad_C[48] ) /*0x54d208*/

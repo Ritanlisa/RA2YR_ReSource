@@ -299,7 +299,7 @@ namespace gamemd {
 unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 {
   unsigned int result; // eax
-  const int * v4;
+  const unsigned int v4;
 
   result = a3; /*0x510e10*/
   if ( a3 < 16 ) /*0x510e19*/

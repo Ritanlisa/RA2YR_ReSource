@@ -28,6 +28,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/InfantryClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/IStream_e4.hpp"
 
 // 0x483610
 namespace gamemd {
@@ -214,7 +215,7 @@ LABEL_52:
       v31 = (InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v7); /*0x4d81af*/
       Type = (gamemd::FootClass *)(InfantryClass::GetType(v31));
       aP2 = (gamemd::FootClass *)(*(int16_t **)(Type + 40));
-      v33 = (InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP2); /*0x4d81ce*/
+      v33 = (gamemd::FootClass *)((InfantryClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP2));
       v34 = *(unsigned int *)(InfantryClass::GetType(v33) + 44) - 4; /*0x4d81e0*/
       aP3 = *(int16_t **)(Type + 40); /*0x4d81e3*/
       v35 = v34 & 7; /*0x4d81e7*/
@@ -343,7 +344,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
 {
 
   int v3; // eax
-  IStream *v4; // ebp
+  unsigned int v4;
   int result; // eax
   FootClass * v6;
   int v7; // ecx
@@ -363,7 +364,7 @@ int ObjectClass::LoadFromStream_Common(FootClass * aP0, LPSTREAM pStm)
   int v21; // [esp+5Ch] [ebp+4h]
   int v22; // [esp+5Ch] [ebp+4h]
 
-  v3 = *(unsigned int *)(aP0 + 1652); /*0x4db3cb*/
+  v3 = (gamemd::IStream *)(*(unsigned int *)(aP0 + 1652));
   if ( v3 ) /*0x4db3d3*/
     (*(void (**)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(aP0 + 1652)); /*0x4db3d8*/
   v4 = pStm; /*0x4db3db*/
@@ -393,7 +394,7 @@ LABEL_16:
                    0);
         if ( result >= 0 ) /*0x4db4b3*/
         {
-          v12 = (int)(aP0 + 1452);
+          v12 = (gamemd::FootClass *)((int)(aP0 + 1452));
           if ( aP0 != (gamemd::FootClass *)(-1452) ) /*0x4db4c1*/
           {
             AbstractClassVector::Construct((unsigned int *)(aP0 + 1452), 0, 0); /*0x4db4c7*/

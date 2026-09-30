@@ -850,8 +850,8 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   }
   if ( a2 ) /*0x74bde6*/
   {
-    vtable0 = (unsigned int)((char *)this->AbstractClass);
-    v6 = (*((int (**)(void **, unsigned int, unsigned int))this->? + 2))(&this->?, (a2 + 7) >> 3, 0); /*0x74bdf9*/
+    vtable0 = (char *)((unsigned int)((char *)this->AbstractClass));
+    v6 = (unsigned int)((*((int (**)(void **, unsigned int, unsigned int))this->? + 2))(&this->?, (a2 + 7) >> 3, 0));
     this->AbstractClass = (void *)a2; /*0x74be01*/
     v12 = v6; /*0x74be03*/
     if ( v6 && (unsigned int)vtable0 < a2 ) /*0x74be0b*/

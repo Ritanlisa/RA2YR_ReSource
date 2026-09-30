@@ -42,6 +42,7 @@
 #include "e4/classes/Multiplayer_e4.hpp"
 #include "e4/classes/TriggerActionQueue_e4.hpp"
 #include "e4/classes/TypeList_flat_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x58BB30
 namespace gamemd {

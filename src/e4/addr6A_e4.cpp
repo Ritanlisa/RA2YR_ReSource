@@ -42,6 +42,8 @@
 #include "e4/classes/E4Recv_690400_e4.hpp"
 #include "e4/classes/VoxClass_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/Hash_e4.hpp"
+#include "e4/classes/TabCameoListClass_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {
@@ -214,7 +216,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     v6 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8aaa*/
     if ( dword_A83D4C == (unsigned int)((Object *))HouseClass_Observer ) /*0x6a8aac*/
     {
-      v7 = (int)((gamemd::ObjectClass *)(v6));
+      v7 = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(v6)));
       v8 = (gamemd::ObjectClass *)(this);
       if ( this-((unsigned int *)(>ambientSoundController))[2] + v7 / 2 >= dword_884CF8 ) /*0x6a8ac4*/
         return 0; /*0x6a8acf*/

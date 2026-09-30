@@ -18,6 +18,7 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
 
 // 0x420DA0
 namespace gamemd {

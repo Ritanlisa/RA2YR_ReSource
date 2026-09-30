@@ -15,6 +15,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/SlaveControlVector_e4.hpp"
 
 // 0x522D00
 namespace gamemd {
@@ -75,7 +76,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   int v14; // eax
   int v15; // eax
   int v16; // edx
-  int v17; // eax
+  SlaveManagerClass * v17;
   int v19; // [esp+10h] [ebp-8h]
   int i; // [esp+1Ch] [ebp+4h]
 
@@ -165,7 +166,7 @@ namespace gamemd {
 void SlaveManagerClass::Constructor()
 {
 
-  int v2; // eax
+  SlaveManagerClass * v2;
   int v4; // [esp+8h] [ebp-8h]
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6af366*/

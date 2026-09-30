@@ -135,7 +135,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   int v11; // edi
   int v12; // eax
   unsigned int *v13; // edi
-  int v14; // eax
+  ObjectClass ** v14;
   int v15; // [esp+10h] [ebp-8h]
 
   v3 = *((unsigned int *)this + 1); /*0x5388a9*/
@@ -149,7 +149,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   }
   v4 = (int)(*((unsigned int *)this + 1));
   v5 = (int)(*(unsigned int **)this);
-  v15 = *aP1; /*0x5388e4*/
+  v15 = (int)(*aP1);
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
   while ( 1 ) /*0x5388f1*/
@@ -181,7 +181,7 @@ LABEL_9:
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
   v13 = (unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this));
-  v14 = (gamemd::ObjectClass **)(*((unsigned int *)this + 1) - 1);
+  v14 = (int)((gamemd::ObjectClass **)(*((unsigned int *)this + 1) - 1));
   *((unsigned int *)this + 1) = v14; /*0x53895c*/
   v13[2 * v14] = 0; /*0x53895f*/
   v13[2 * v14 + 1] = 0; /*0x538962*/

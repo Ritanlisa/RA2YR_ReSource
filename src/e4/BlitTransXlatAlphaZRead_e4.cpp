@@ -98,7 +98,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
   v17 = (uint16_t *)result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
-    v13 = (unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor));
+    v13 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)));
     v16 = (uint16_t *)a4; /*0x494bb1*/
     do /*0x494c31*/
     {
@@ -106,7 +106,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
         *a2 = (gamemd::Stream *)(*(unsigned short *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 2 * ((uint8_t)*a3 | v17[*a7])));
-        v13 = g_ZBufferDescriptor; /*0x494bfc*/
+        v13 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a2; /*0x494c06*/
       ++a3; /*0x494c0a*/
@@ -142,7 +142,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
   v18 = (uint16_t *)result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
-    v14 = (unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor));
+    v14 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)));
     v17 = (uint16_t *)a4; /*0x494c91*/
     do /*0x494d16*/
     {
@@ -150,7 +150,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
         *a2 = (gamemd::Stream *)(a10 | *(unsigned short *)(*(unsigned int *)&this-((unsigned int *)(>m_1))[3] + 2 * ((uint8_t)*a3 | v18[*a7])));
-        v14 = g_ZBufferDescriptor; /*0x494ce1*/
+        v14 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a2; /*0x494ceb*/
       ++a3; /*0x494cef*/

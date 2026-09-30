@@ -53,7 +53,7 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
     a3 = (int)(v12 + v10);
     a2 = (int)(v11 + v27);
     v15 = (int)(v13 + v11);
-    Draw_field_00 = this->Draw_field_00; /*0x7bb97b*/
+    Draw_field_00 = (int)(this->Draw_field_00);
     v29[1] = v12 + v10; /*0x7bb97d*/
     v29[0] = v15; /*0x7bb985*/
     (*(void (**)(Draw *, int *, unsigned int *, int *, int))(Draw_field_00 + 44))(this, &a5, v29, &a2, a9); /*0x7bb99b*/

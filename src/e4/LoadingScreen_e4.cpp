@@ -15,6 +15,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x642B60
 namespace gamemd {
@@ -170,20 +171,20 @@ void * * LoadingScreen::LoadSHPs()
   if ( *((unsigned int *)dword_A8B230 + 3374) == 2 ) /*0x72fa21*/
   {
     dword_B0FA68 = (unsigned int)((char *)(LoadFileSHP(off_844D48, (bool *)&byte_B0FCA5)));
-    dword_B0FAC8 = (char *)(LoadFileSHP(off_844D3C, (bool *)&byte_B0FCA1));
-    SHP = LoadFileSHP(off_844D40, (bool *)&byte_B0FCA0); /*0x72fa53*/
+    dword_B0FAC8 = (unsigned int)((char *)(LoadFileSHP(off_844D3C, (bool *)&byte_B0FCA1)));
+    SHP = (char *)(LoadFileSHP(off_844D40, (bool *)&byte_B0FCA0));
     v1 = off_844D44[0]; /*0x72fa58*/
   }
   else
   {
     dword_B0FA68 = (unsigned int)((char *)(LoadFileSHP(off_844D14, (bool *)&byte_B0FCA5)));
-    dword_B0FAC8 = (char *)(LoadFileSHP(off_844D04, (bool *)&byte_B0FCA1));
-    SHP = LoadFileSHP(off_844D00, (bool *)&byte_B0FCA0); /*0x72fa9a*/
+    dword_B0FAC8 = (unsigned int)((char *)(LoadFileSHP(off_844D04, (bool *)&byte_B0FCA1)));
+    SHP = (char *)(LoadFileSHP(off_844D00, (bool *)&byte_B0FCA0));
     v1 = off_844D08; /*0x72fa9f*/
   }
   dword_B0FAD4 = (unsigned int)((void **)(SHP));
-  dword_B0FA50 = (void **)(LoadFileSHP(v1, (bool *)&byte_B0FCA2));
-  dword_B0F9EC = LoadFileSHP(off_844CFC, (bool *)&byte_B0FC9F); /*0x72fad4*/
+  dword_B0FA50 = (unsigned int)((void **)(LoadFileSHP(v1, (bool *)&byte_B0FCA2)));
+  dword_B0F9EC = (void **)(LoadFileSHP(off_844CFC, (bool *)&byte_B0FC9F));
   dword_B0FB08 = LoadFileSHP(off_844D0C, (bool *)&byte_B0FCA3); /*0x72fae9*/
   dword_B0F9E0 = LoadFileSHP(off_844D10, (bool *)&byte_B0FCA4); /*0x72fafe*/
   dword_B0FA70 = LoadFileSHP(off_844D18, (bool *)&byte_B0FCA6); /*0x72fb13*/

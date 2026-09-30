@@ -21,7 +21,7 @@ ControlClass GadgetClass::Construct( int a2, int a3, int a4, int a5, int a6, cha
 
   result = (gamemd::ControlClass)(this->__pad_0);
   this->Height = (gamemd::ControlClass)(a3);
-  this->Width = a2; /*0x4e1302*/
+  this->Width = (gamemd::ControlClass)(a2);
   this->ID = a5; /*0x4e1309*/
   *(unsigned int *)this->Visible = a4; /*0x4e1312*/
   this->X = 0; /*0x4e1319*/

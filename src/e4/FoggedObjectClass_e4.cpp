@@ -51,8 +51,8 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
 
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x4d0989*/
   this->LastSight = (int *)(a3);
-  this->House = (int *)(0);
-  this->Cell[0] = a4; /*0x4d09a4*/
+  this->House = (unsigned int)((int *)(0));
+  this->Cell[0] = (int *)(a4);
   *((unsigned int *)this + 12) = 20; /*0x4d09a7*/
   *((unsigned int *)this + 13) = *a2; /*0x4d09b4*/
   *((unsigned int *)this + 14) = a2[1]; /*0x4d09b9*/
@@ -177,7 +177,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   int v13; // edx
   int v14; // eax
   int v15; // edi
-  int v16; // ebp
+  AbstractClass * v16;
   unsigned int *v17; // ebx
   signed int i; // eax
   unsigned int *v19; // ecx
@@ -190,7 +190,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x4d0c49*/
   this->LastSight = (unsigned int)(-1);
   this->House = (unsigned int)(0);
-  this->Cell[0] = 0; /*0x4d0c64*/
+  this->Cell[0] = (unsigned int)(0);
   *((unsigned int *)this + 12) = 29; /*0x4d0c67*/
   level = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1)->level; /*0x4d0c73*/
   *((unsigned int *)this + 21) = a3; /*0x4d0c85*/
@@ -251,7 +251,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     goto LABEL_15; /*0x4d0e1a*/
   if ( dword_8B3CC8 ) /*0x4d0e22*/
   {
-    v16 = (gamemd::AbstractClass *)(dword_8B3CC8);
+    v16 = (int)((gamemd::AbstractClass *)(dword_8B3CC8));
     if ( dword_8B3CC8 < 0 ) /*0x4d0e2f*/
       return (int)this; /*0x4d0e2f*/
   }

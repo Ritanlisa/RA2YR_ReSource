@@ -25,6 +25,7 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"
+#include "e4/classes/Targeting_e4.hpp"
 
 // 0x533D20
 namespace gamemd {

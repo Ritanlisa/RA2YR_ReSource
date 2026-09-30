@@ -31,8 +31,8 @@ int Stream::FlushAndReset()
   int Stream_field_0C; // edi
 
   v1 = (gamemd::Stream *)((int)(this));
-  m_Stream = (int)(this->m_Stream);
-  Stream_field_08 = this->Stream_field_08; /*0x439116*/
+  m_Stream = (gamemd::StreamClass *)((int)(this->m_Stream));
+  Stream_field_08 = (int)(this->Stream_field_08);
   *((unsigned int *)this + 12) = 45; /*0x439119*/
   ((void (*)(void))m_Stream->m_Size)(); /*0x439120*/
   ((void (*)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_08, 0); /*0x43912a*/

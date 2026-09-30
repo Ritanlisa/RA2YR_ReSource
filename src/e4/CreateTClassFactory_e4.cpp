@@ -677,7 +677,7 @@ int E4Recv_6C25D0::CreateTClassFactory_TaskForceClass(void * a1, void * a2, void
     *v4 = a2; /*0x6c2616*/
   if ( !*v4 ) /*0x6c2618*/
     return -2147467262; /*0x6c2620*/
-  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c262c*/
+  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c262c*/
   return 0; /*0x6c25de*/
 
 }
@@ -685,7 +685,7 @@ int E4Recv_6C25D0::CreateTClassFactory_TaskForceClass(void * a1, void * a2, void
 
 // 0x6C2750
 namespace gamemd {
-int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass()
+int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass(void * a1, void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -697,7 +697,7 @@ int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass()
     *v4 = a2; /*0x6c2796*/
   if ( !*v4 ) /*0x6c2798*/
     return -2147467262; /*0x6c27a0*/
-  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c27ac*/
+  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c27ac*/
   return 0; /*0x6c275e*/
 
 }
@@ -705,7 +705,7 @@ int E4Recv_6C2750::CreateTClassFactory_UnitTypeClass()
 
 // 0x6C28D0
 namespace gamemd {
-int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass()
+int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass(void * a1, void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -717,7 +717,7 @@ int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass()
     *v4 = a2; /*0x6c2916*/
   if ( !*v4 ) /*0x6c2918*/
     return -2147467262; /*0x6c2920*/
-  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c292c*/
+  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c292c*/
   return 0; /*0x6c28de*/
 
 }
@@ -725,7 +725,7 @@ int E4Recv_6C28D0::CreateTClassFactory_BuildingTypeClass()
 
 // 0x6C2A50
 namespace gamemd {
-int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass()
+int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass(void * a1, void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -737,7 +737,7 @@ int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass()
     *v4 = a2; /*0x6c2a96*/
   if ( !*v4 ) /*0x6c2a98*/
     return -2147467262; /*0x6c2aa0*/
-  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2aac*/
+  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2aac*/
   return 0; /*0x6c2a5e*/
 
 }
@@ -745,7 +745,7 @@ int E4Recv_6C2A50::CreateTClassFactory_AircraftTypeClass()
 
 // 0x6C2BD0
 namespace gamemd {
-int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass()
+int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass(void * a1, void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -757,7 +757,7 @@ int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass()
     *v4 = a2; /*0x6c2c16*/
   if ( !*v4 ) /*0x6c2c18*/
     return -2147467262; /*0x6c2c20*/
-  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2c2c*/
+  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2c2c*/
   return 0; /*0x6c2bde*/
 
 }
@@ -765,7 +765,7 @@ int E4Recv_6C2BD0::CreateTClassFactory_InfantryTypeClass()
 
 // 0x6C2D50
 namespace gamemd {
-int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass()
+int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass(void * a1, void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -777,7 +777,7 @@ int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass()
     *v4 = a2; /*0x6c2d96*/
   if ( !*v4 ) /*0x6c2d98*/
     return -2147467262; /*0x6c2da0*/
-  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2dac*/
+  (*(void (**, unsigned int a3, unsigned int a2)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2dac*/
   return 0; /*0x6c2d5e*/
 
 }
@@ -785,7 +785,7 @@ int E4Recv_6C2D50::CreateTClassFactory_BulletTypeClass()
 
 // 0x6C2ED0
 namespace gamemd {
-int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass()
+int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass(void * a1, void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]
@@ -797,7 +797,7 @@ int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass()
     *v4 = a2; /*0x6c2f16*/
   if ( !*v4 ) /*0x6c2f18*/
     return -2147467262; /*0x6c2f20*/
-  (*(void (**)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2f2c*/
+  (*(void (**, unsigned int a3)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c2f2c*/
   return 0; /*0x6c2ede*/
 
 }
@@ -805,7 +805,7 @@ int E4Recv_6C2ED0::CreateTClassFactory_IsometricTileTypeClass()
 
 // 0x6C3050
 namespace gamemd {
-int E4Recv_6C3050::CreateTClassFactory_OverlayTypeClass()
+int E4Recv_6C3050::CreateTClassFactory_OverlayTypeClass(void * a1, void * a2, void * a3)
 {
 
   const void **v4; // [esp+10h] [ebp+Ch]

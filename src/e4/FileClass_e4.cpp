@@ -15,6 +15,7 @@
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Flag_e4.hpp"
 
 // 0x473AE0
 namespace gamemd {
@@ -221,7 +222,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
   int v9; // edi
   DWORD v10; // eax
   void *Handle; // edi
-  int result; // eax
+  void * result;
   DWORD v13; // eax
   int v14; // edi
   DWORD v15; // eax
@@ -291,9 +292,8 @@ LABEL_20: Handle = (void *)(this->Handle);
           if ( v13 != -1 ) /*0x65cfd9*/
           {
 LABEL_26: Handle = (void *)(this->Handle);
-            result = (void *)(v13 - (unsigned int)Handle);
-LABEL_27:
-            v16 = this->FileName; /*0x65cff6*/
+            result = (int)((void *)(v13 - (unsigned int)Handle));
+LABEL_27: v16 = (void *)(this->FileName);
             if ( result > (int)v16 ) /*0x65cffb*/
             {
               v17 = (LONG)Handle + (unsigned int)v16; /*0x65cfff*/

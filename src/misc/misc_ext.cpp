@@ -1,5 +1,6 @@
 #include "misc_ext.hpp"
 #include "e4/e4_globals_decls.hpp"
+#include "e4/classes/AnimFile_e4.hpp"
 
 namespace gamemd
 {
@@ -9,14 +10,14 @@ void AITriggerTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x41e506*/
     return -2147467261; /*0x41e508*/
-  *(unsigned int *)(a2) = -1173801692; /*0x41e516*/
+  *(unsigned int *, unsigned int a2)(a2) = -1173801692; /*0x41e516*/
   a2[1] = 298994932; /*0x41e51e*/
   a2[2] = 268445372; /*0x41e527*/
   a2[3] = unk_7E996C; /*0x41e530*/
   return 0; /*0x41e50d*/
 }
 // 0x41e540
-void AITriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
+void AITriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1, void * a1, void * a2, void * a3)
 {
   int result; // eax
 
@@ -33,13 +34,13 @@ void AITriggerTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&this->q0144); /*0x41e58b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&this->q0145); /*0x41e59c*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&this->q0146); /*0x41e5ad*/
+    ObjectPtr::RegisterForTracking((int, unsigned int a2, unsigned int a3)&SwizzleManagerClass_Instance, (int *)&this->q0146); /*0x41e5ad*/
     return 0; /*0x41e5b2*/
   }
   return result; /*0x41e5b4*/
 }
 // 0x41e5c0
-void AITriggerTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2)
+void AITriggerTypeClass::SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2, void * a2, void * a3)
 {
   int result; // eax
 

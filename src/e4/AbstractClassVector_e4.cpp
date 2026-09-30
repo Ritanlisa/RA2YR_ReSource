@@ -49,7 +49,7 @@ namespace gamemd {
 int AbstractClassVector::Construct( IUnknown * aP1, IUnknown * aP2)
 {
 
-  this->AbstractClassVector_field_0x04 = 0; /*0x4e0e8b*/
+  this->AbstractClassVector_field_0x04 = (unsigned char)(0);
   this->AbstractClassVector_field_0x08 = aP1; /*0x4e0e8e*/
   LOBYTE(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0e91*/
   BYTE1(this->AbstractClassVector_field_0x0C) = 0; /*0x4e0e95*/
@@ -58,7 +58,7 @@ int AbstractClassVector::Construct( IUnknown * aP1, IUnknown * aP2)
   {
     if ( aP2 ) /*0x4e0ea6*/
     {
-      this->AbstractClassVector_field_0x04 = aP2; /*0x4e0ea8*/
+      this->AbstractClassVector_field_0x04 = (unsigned char)(aP2);
       return this->__pad_0; /*0x4e0eae*/
     }
     this->AbstractClassVector_field_0x04 = __2_YAPAXI_Z(4 * aP1); /*0x4e0ebd*/

@@ -54,6 +54,9 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/Rect_Point_e4.hpp"
+#include "e4/classes/ResultNode_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x6C6F50
 namespace gamemd {

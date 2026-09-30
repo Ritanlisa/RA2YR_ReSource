@@ -11,6 +11,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/Camera_e4.hpp"
+#include "e4/classes/ToolTipClass_e4.hpp"
 
 // 0x7784A0
 namespace gamemd {

@@ -23,6 +23,8 @@
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/E4Recv_5E93F0_e4.hpp"
+#include "e4/classes/ChatEvent_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x7937B0
 namespace gamemd {
@@ -106,12 +108,12 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
     {
       if ( v11 < v10 ) /*0x7938cb*/
       {
-        v13 = (int)((char *)(*v12));
-        v14 = (char *)(v12 + 1);
-        v15 = (unsigned char *)this + 8 * v9; /*0x7938d6*/
+        v13 = (char *)((int)((char *)(*v12)));
+        v14 = (int *)((char *)(v12 + 1));
+        v15 = (char *)((unsigned char *)this + 8 * v9);
         do /*0x793906*/
         {
-          v16 = *v14; /*0x7938d9*/
+          v16 = (unsigned int)(*v14);
           *(unsigned int *)v15 = v13; /*0x7938db*/
           *((unsigned int *)v15 + 1) = v16; /*0x7938e4*/
           this->Debug::Log(); /*0x7938e7*/
@@ -535,7 +537,7 @@ Coord * * CComObject_CChatEventSink___ATL::DispatchStub_23(int a1, int a2, int a
     {
       ++v21; /*0x7a7be3*/
       String::Assign((String *)&((unsigned int *)(v19.m_3))[1], (const char *)(v20 + 36)); /*0x7a7be7*/
-      String::ToLower((String *)&((unsigned int *)(v19.m_3))[1]); /*0x7a7bf0*/
+      ((String *)((String *)&((unsigned int *)(v19.m_3))[1]))->ToLower(); /*0x7a7bf0*/
       v8 = 0; /*0x7a7bf5*/
       if ( owningHouseIndex <= 0 ) /*0x7a7bf9*/
         break; /*0x7a7bf9*/

@@ -57,7 +57,7 @@ void* CellStruct::Sub(void* aP1,  void* aP2)
   unsigned short *v6; // [esp+8h] [ebp+8h]
 
   v3 = (unsigned int)(this->field_0);
-  v4 = HIWORD(this->field_0) - aP2[1]; /*0x588c6e*/
+  v4 = (unsigned int)(HIWORD(this->field_0) - aP2[1]);
   LOWORD(v6) = v3 - *(unsigned int *)(aP2); /*0x588c76*/
   HIWORD(v6) = v4; /*0x588c7b*/
   *(unsigned int *)(aP1) = v6; /*0x588c84*/

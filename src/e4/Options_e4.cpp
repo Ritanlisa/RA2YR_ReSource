@@ -32,6 +32,9 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/ParasiteClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/OptionQueue_e4.hpp"
+#include "e4/classes/SaveLoadDialog_e4.hpp"
 
 // 0x4F11B0
 namespace gamemd {
@@ -177,7 +180,7 @@ LABEL_39:
         }
         if ( v10 ) /*0x4f13bf*/
           return 0; /*0x4f13bf*/
-        if ( ((unsigned int *)(dword_A8B238))[0] && dword_A8B238[0] != 5 ) /*0x4f13d1*/
+        if ( ((unsigned int *)(dword_A8B238))[0] && ((unsigned int *)(dword_A8B238))[0] != 5 ) /*0x4f13d1*/
         {
           v15 = EventClass::AddEvent(v29, *((unsigned int *)dword_A83D4C + 12), 0x1Du); /*0x4f13e5*/
           ((void (*)(char *))OptionQueue::PushEntry)(v15); /*0x4f13f0*/
@@ -460,15 +463,15 @@ namespace gamemd {
 void Options::EnsureCapacity()
 {
 
-  int v2; // eax
+  void * v2;
   int v3; // ecx
   int v5; // ebx
   void *v6; // eax
   void *v7; // esi
   void *v8; // [esp+8h] [ebp-4h]
 
-  v2 = (void *)(*(unsigned int *)this->__pad_0);
-  v3 = (int)this->field_4; /*0x6248a8*/
+  v2 = (int)((void *)(*(unsigned int *)this->__pad_0));
+  v3 = (unsigned int)((int)this->field_4);
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
   v5 = v3 / 2; /*0x6248bf*/

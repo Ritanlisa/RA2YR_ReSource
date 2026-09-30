@@ -27,6 +27,7 @@
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/InfantryTypeVector_e4.hpp"
 #include "e4/classes/UnitTypeVector_e4.hpp"
+#include "e4/classes/AircraftTypeVector_e4.hpp"
 
 // 0x4F6540
 namespace gamemd {
@@ -314,8 +315,8 @@ LABEL_11:
   this->SidebarImage = (SHPStruct *)v6; /*0x511608*/
   if ( dword_A83CA8 <= 0 ) /*0x511615*/
   {
-LABEL_16: this->Type = (int)((BuildingTypeClass *)-1);
-    return this; /*0x511633*/
+LABEL_16: this->Type = (gamemd::BuildingTypeClass *)((int)((BuildingTypeClass *)-1));
+    return (int)(this);
   }
   else
   {
@@ -327,8 +328,8 @@ LABEL_16: this->Type = (int)((BuildingTypeClass *)-1);
       if ( (int)v3 >= dword_A83CA8 ) /*0x511627*/
         goto LABEL_16; /*0x511627*/
     }
-    this->Type = (int)(v3);
-    return this; /*0x511640*/
+    this->Type = (gamemd::BuildingTypeClass *)((int)(v3));
+    return (int)(this);
   }
 
 }

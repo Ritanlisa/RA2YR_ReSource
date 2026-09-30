@@ -17,6 +17,7 @@
 #include "e4/classes/ArtConfig_e4.hpp"
 #include "e4/classes/AudioMixer_e4.hpp"
 #include "e4/classes/Mixer_e4.hpp"
+#include "e4/classes/AudioTimer_e4.hpp"
 
 // 0x5BF450
 namespace gamemd {
@@ -29,7 +30,7 @@ void AsyncIO::Shutdown()
   char result; // al
 
   v1 = (int)((unsigned int *)(0));
-  for ( i = AsyncIO_Instance; v1 < g_AsyncIOState; ++v1 ) /*0x5bf462*/
+  for ( i = AsyncIO_Instance; v1 < (unsigned int *)(g_AsyncIOState); ++v1 ) /*0x5bf462*/
   {
     v3 = (void (***)(unsigned int, int))((unsigned int *)(i))[v1]; /*0x5bf464*/
     if ( v3 ) /*0x5bf469*/

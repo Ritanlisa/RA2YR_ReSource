@@ -87,7 +87,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   unsigned int *v2; // ecx
   unsigned int *v3; // esi
   int v4; // esi
-  unsigned int * v5;
+  unsigned int v5;
   unsigned int *v6; // ecx
   int v7; // eax
   int v8; // eax

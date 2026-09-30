@@ -64,6 +64,8 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/NetworkEventQueueClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x539760
 namespace gamemd {

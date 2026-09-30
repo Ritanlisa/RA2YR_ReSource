@@ -16,6 +16,7 @@
 #include "e4/classes/RefCount_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/FrameSnapshot_e4.hpp"
 
 // 0x4AF540
 namespace gamemd {

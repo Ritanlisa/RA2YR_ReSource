@@ -32,6 +32,11 @@
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/E4Recv_5CF830_e4.hpp"
+#include "e4/classes/FileStraw_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
+#include "e4/classes/MSChoiceClass_e4.hpp"
+#include "e4/classes/PaletteManager_e4.hpp"
+#include "e4/classes/StringTable_e4.hpp"
 
 // 0x540DC0
 namespace gamemd {
@@ -90,7 +95,7 @@ int SessionClass::initInternet()
   {
     v4 = (unsigned int *)((char *)(dword_A8DA78));
     v5 = (char *)(this-((unsigned int *)(>unknown_14))[0]);
-    v6 = CharToWideString(aMulticast); /*0x540ea4*/
+    v6 = (char *)(CharToWideString(aMulticast));
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
                     v3,
                     v5,

@@ -26,6 +26,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/UDPInterfaceClass_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/NetworkID_e4.hpp"
+#include "e4/classes/PacketQueue_e4.hpp"
 
 // 0x540110
 namespace gamemd {

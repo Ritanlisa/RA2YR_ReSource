@@ -74,6 +74,9 @@
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/E4Recv_7AF3D0_e4.hpp"
 #include "e4/classes/Techno_e4.hpp"
+#include "e4/classes/AudioSource_e4.hpp"
+#include "e4/classes/Conflict_e4.hpp"
+#include "e4/classes/WDTClass_e4.hpp"
 
 // 0x7636F0
 namespace gamemd {

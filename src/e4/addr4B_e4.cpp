@@ -31,6 +31,7 @@
 #include "e4/classes/E4Recv_4AF2A0_e4.hpp"
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/Coord2D_e4.hpp"
 
 // 0x4B0500
 namespace gamemd {

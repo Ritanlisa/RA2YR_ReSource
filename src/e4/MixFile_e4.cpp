@@ -22,6 +22,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/BTree_e4.hpp"
 
 // 0x530460
 namespace gamemd {
@@ -80,7 +81,7 @@ AbstractClass * * MixFile::LoadSide()
   int v1; // esi
   unsigned int v2; // ebx
   unsigned int YRCD; // eax
-  unsigned int v5; // esi
+  unsigned int * v5;
   unsigned int *v6; // eax
   char v7; // bl
   MixFileClass *v8; // eax

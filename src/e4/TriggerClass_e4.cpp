@@ -25,6 +25,8 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/Session_e4.hpp"
+#include "e4/classes/ObjectPtr_e4.hpp"
+#include "e4/classes/TriggerTypeClass_e4.hpp"
 
 // 0x610950
 namespace gamemd {
@@ -54,7 +56,7 @@ char TriggerClass::FindByEventType(char a1)
     {
       v4 = (unsigned int)(HIDWORD(dword_AC1CB8));
       v3 = (unsigned int)(DWORD2(dword_AC1CB8));
-      v2[1] = DWORD2(dword_AC1CB8); /*0x6109a1*/
+      v2[1] = (unsigned int)(DWORD2(dword_AC1CB8));
       v2[2] = v4; /*0x6109a9*/
       v2[3] = 0; /*0x6109b1*/
       *v2 = &XSurface_Vtable; /*0x6109b4*/

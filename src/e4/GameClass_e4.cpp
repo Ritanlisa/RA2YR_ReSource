@@ -32,6 +32,9 @@
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/Delegate_e4.hpp"
+#include "e4/classes/BigInt_e4.hpp"
+#include "e4/classes/IsRandMap_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
 
 // 0x437FD0
 namespace gamemd {
@@ -100,6 +103,7 @@ unsigned int * GameClass::updateUI(int a2, int a3)
 namespace gamemd {
 int GameClass::loadScenarioFiles(ObjectClass * aP1)
 {
+    unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
 

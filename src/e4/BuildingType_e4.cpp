@@ -21,6 +21,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/classes/UnitTypeClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x4E3560
 namespace gamemd {

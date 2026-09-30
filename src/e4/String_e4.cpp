@@ -264,7 +264,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   char *v28; // [esp+24h] [ebp+8h]
 
   v3 = (void **)((const char *)((void **)this));
-  v4 = (const char *)(0);
+  v4 = (char *)((const char *)(0));
   v5 = *(const char **)this->__pad_0; /*0x7b57ae*/
   if ( !*(unsigned int *)this->__pad_0 ) /*0x7b57ae*/
     v5 = &g_INI_DefaultBuffer; /*0x7b57b4*/
@@ -351,7 +351,7 @@ LABEL_33: v20 = (const char *)(&g_INI_DefaultBuffer);
     goto LABEL_35; /*0x7b59ba*/
   }
   v3 = (void **)((gamemd::AbstractClass **)((void **)this));
-  v20 = (gamemd::AbstractClass **)(v4);
+  v20 = (const char *)((gamemd::AbstractClass **)(v4));
 LABEL_35:
   if ( *v3 ) /*0x7b59c2*/
     __3_YAXPAX_Z(*v3); /*0x7b59c9*/
@@ -419,8 +419,8 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
     ++v4; /*0x7b5fad*/
   }
   v10 = (char *)((const char *)((char *)(v4 - 1)));
-  v11 = (unsigned int)((const char *)(v21 + *(unsigned int *)this->__pad_0));
-  Stra = v10; /*0x7b5fbf*/
+  v11 = (const char *)((unsigned int)((const char *)(v21 + *(unsigned int *)this->__pad_0)));
+  Stra = (unsigned int)(v10);
   if ( *aP3 ) /*0x7b5fc3*/
     __3_YAXPAX_Z(*aP3); /*0x7b5fca*/
   *(unsigned int *)aP3 = (const char *)(0);

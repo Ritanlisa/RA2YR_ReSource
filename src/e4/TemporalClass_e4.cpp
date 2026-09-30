@@ -31,6 +31,8 @@
 #include "e4/classes/SuperClass_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Conditions_e4.hpp"
+#include "e4/classes/MessageListClass_e4.hpp"
 
 // 0x71A450
 namespace gamemd {

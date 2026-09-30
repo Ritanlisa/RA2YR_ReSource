@@ -26,11 +26,14 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/TubeClass_e4.hpp"
+#include "e4/classes/Checksummer_e4.hpp"
+#include "e4/classes/GenericList_e4.hpp"
 
 // 0x526810
 namespace gamemd {
 ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
 {
+    unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
     unsigned int v13 = 0;  /* G37 hoist */
 
@@ -42,7 +45,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   size_t v8; // eax
   unsigned int *v9; // ecx
   ObjectClass ** v10;
-  int v11; // ebp
+  ObjectClass ** v11;
   ObjectClass ** v12;
   int v13; // edx
   unsigned int v15[3]; // [esp+Ch] [ebp-Ch] BYREF
@@ -84,25 +87,25 @@ LABEL_9:
     *((unsigned int *)this + 14) = 0; /*0x5268d0*/
     *((unsigned char *)this + 52) = 1; /*0x5268d3*/
   }
-  v10 = (int)((gamemd::ObjectClass **)(*((unsigned int *)this + 11)));
-  v11 = (gamemd::ObjectClass **)(*((unsigned int *)this + 10));
+  v10 = (gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(*((unsigned int *)this + 11))));
+  v11 = (int)((gamemd::ObjectClass **)(*((unsigned int *)this + 10)));
   if ( v10 <= 0 ) /*0x5268df*/
     return unk_B7882C; /*0x5268df*/
   while ( 1 ) /*0x5268ec*/
   {
-    v12 = (int)((gamemd::ObjectClass **)(*(unsigned int *)(v11 + 8 * (v10 / 2))));
-    v13 = (gamemd::ObjectClass **)(v11 + 8 * (v10 / 2));
-    if ( v12 <= v16 ) /*0x5268f6*/
+    v12 = (int)((gamemd::ObjectClass **)(*(unsigned int *)(v11 + 8 * ((unsigned int)(v10)/ 2))));
+    v13 = (gamemd::ObjectClass **)(v11 + 8 * ((unsigned int)(v10)/ 2));
+    if ( v12 <= (gamemd::ObjectClass **)(v16) ) /*0x5268f6*/
       break; /*0x5268f6*/
-    v10 /= 2; /*0x5268f8*/
+    (unsigned int)(v10)/= 2; /*0x5268f8*/
 LABEL_19:
     if ( v10 <= 0 ) /*0x52690a*/
       return unk_B7882C; /*0x52690a*/
   }
-  if ( v12 != v16 ) /*0x5268fc*/
+  if ( v12 != (gamemd::ObjectClass **)(v16) ) /*0x5268fc*/
   {
     v11 = v13 + 8; /*0x5268fe*/
-    v10 += -1 - v10 / 2; /*0x526906*/
+    v10 += -1 - (unsigned int)(v10)/ 2; /*0x526906*/
     goto LABEL_19; /*0x526906*/
   }
   if ( v13 ) /*0x52691f*/
@@ -146,7 +149,7 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1)
       return 0; /*0x5269cb*/
     *((unsigned int *)v2 + 4) = v5; /*0x5269cd*/
   }
-  v6 = (int)((gamemd::INIClass *)(*((unsigned int *)v2 + 1)));
+  v6 = (gamemd::INIClass *)((int)((gamemd::INIClass *)(*((unsigned int *)v2 + 1))));
   aP1 = (gamemd::INIClass *)((uint8_t *)v3);
   if ( v6 ) /*0x5269d9*/
   {
@@ -163,7 +166,7 @@ LABEL_12:
     }
   }
   v9 = (int *)((gamemd::VoxelStruct **)((int *)&unk_B7882C));
-LABEL_14: v10 = (gamemd::VoxelStruct **)(*v9);
+LABEL_14: v10 = (int)((gamemd::VoxelStruct **)(*v9));
   if ( v10 ) /*0x526a0a*/
     return *(unsigned int *)(v10 + 48); /*0x526a14*/
   return 0; /*0x526a0f*/
@@ -229,7 +232,7 @@ LABEL_29: v23 = (char *)(aP3);
     goto LABEL_36; /*0x528b90*/
   }
   this->unknown38 = (unsigned int)((char *)(v21));
-LABEL_24: aP1 = (char *)(v19);
+LABEL_24: aP1 = (gamemd::INIClass *)((char *)(v19));
   if ( (uint8_t)HashTable::BinarySearch((int *)&this->__pad_20[8], (int *)&aP1) ) /*0x528b4f*/
     v22 = (int *)(this->unknown38 + 4); /*0x528b5b*/
   else
@@ -349,7 +352,7 @@ INIClass::INIClass()
   }
   v6 = (unsigned int)(sectionHead[1]);
   result[9] = (unsigned int)(sectionHead);
-  result[8] = v6; /*0x535afc*/
+  result[8] = (unsigned int)(v6);
   v7 = sectionHead[1]; /*0x535aff*/
   if ( v7 ) /*0x535b04*/
     *(unsigned int *)(v7 + 8) = v3; /*0x535b06*/

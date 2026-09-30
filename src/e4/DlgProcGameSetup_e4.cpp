@@ -11,6 +11,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/FileTreeNode_e4.hpp"
 
 // 0x72B8E0
 namespace gamemd {

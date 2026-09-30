@@ -17,6 +17,7 @@
 #include "e4/classes/E4Recv_7AECD0_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
+#include "e4/classes/ActionQueue_e4.hpp"
 
 // 0x53B080
 namespace gamemd {

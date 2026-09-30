@@ -10,6 +10,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/VQAClass_e4.hpp"
 
 // 0x53AB70
 namespace gamemd {

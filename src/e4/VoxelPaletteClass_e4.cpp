@@ -14,6 +14,7 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/VoxelPalette_e4.hpp"
 
 // 0x758A30
 namespace gamemd {

@@ -60,6 +60,8 @@
 #include "e4/classes/InfantryTypeVector_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/UnitTypeVector_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
+#include "e4/classes/PriorityQueue_e4.hpp"
 
 // 0x4F10E0
 namespace gamemd {
@@ -149,7 +151,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   HWND v7; // esi
   int v8; // edi
   wchar_t *v9; // eax
-  HouseClass * v10;
+  unsigned int v10;
   int v11; // edx
   wchar_t *v12; // eax
   unsigned int *WindowLongA; // eax

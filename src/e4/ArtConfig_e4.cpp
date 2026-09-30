@@ -21,6 +21,7 @@
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/InfantryTypeVector_e4.hpp"
 #include "e4/classes/UnitTypeVector_e4.hpp"
+#include "e4/classes/PriorityQueue_e4.hpp"
 
 // 0x76FC50
 namespace gamemd {

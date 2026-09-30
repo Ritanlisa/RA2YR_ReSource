@@ -26,6 +26,10 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/GameOption_e4.hpp"
 #include "e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/BufferIO_e4.hpp"
+#include "e4/classes/FontClass_e4.hpp"
+#include "e4/classes/IPersistStream_e4.hpp"
+#include "e4/classes/AudioFileClass_e4.hpp"
 
 // 0x4D3590
 namespace gamemd {

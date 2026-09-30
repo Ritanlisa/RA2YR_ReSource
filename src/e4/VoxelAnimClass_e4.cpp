@@ -24,6 +24,7 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/E4Recv_4AF2A0_e4.hpp"
+#include "e4/classes/AudioFileClass_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {

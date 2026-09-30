@@ -317,7 +317,7 @@ AbstractClass * * SlaveManager_InitGrid()
     {
       while ( 1 ) /*0x6b2b77*/
       {
-        v38 = 0; /*0x6b2b77*/
+        v38 = (int *)(0);
         *(unsigned int *)v32 = 0; /*0x6b2b7b*/
         v30 = (char *)g_SlaveManagerPool + 8 * v8 + 8 * v7 * result; /*0x6b2b82*/
         v30[4] = 0; /*0x6b2b86*/
@@ -375,7 +375,7 @@ AbstractClass * * SlaveManager_InitGrid()
             if ( !(uint8_t)MapSeed::IsCellInBounds(&v40) /*0x6b2d4e*/
               || v20[17] != -1
               || v20[57]
-              || (v40.MapSeed_field_0x04 = v20[9], Tactical::GetCellData((Tactical *)&v40.MapSeed_field_0x04)[69])
+              || (v40.MapSeed_field_0x04 = v20[9], ((Tactical *)((Tactical *)&v40.MapSeed_field_0x04))->GetCellData()[69])
               || (v21 = v20[14], v21 < *(int *)&(unsigned int *)((char *)&stru_A8EB00 + 340))
               && v21 != 0xFFFF
               && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 328) + 4 * v21) + 736) )
@@ -415,9 +415,9 @@ AbstractClass * * SlaveManager_InitGrid()
             && IDA_SHIWORD(v40.MapSeed_field_0x10) - v26 < v17
             && v27 <= g_MissionQueueFrame.localVariables[161] )
           {
-            v37[0] = -1; /*0x6b2e70*/
+            v37[0] = (unsigned char)(-1);
             v37[1] = 0; /*0x6b2e77*/
-            v40.MapSeed_field_0x08 = *CellStruct::Add( /*0x6b2e89*/
+            v40.MapSeed_field_0x08 = *(unsigned int *)(CellStruct)::Add( /*0x6b2e89*/
                                         (CellStruct *)&v40.MapSeed_field_0x10,
                                         &v40.MapSeed_field_0x0C,
                                         v37);

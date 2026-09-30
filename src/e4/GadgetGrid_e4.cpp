@@ -80,13 +80,13 @@ int GadgetGrid::RemoveItem(int a2)
   int result; // eax
   int v11; // ecx
   int v12; // ecx
-  int16_t v13; // [esp+Ah] [ebp-6h]
+  GadgetGrid * v13;
   char v14[4]; // [esp+Ch] [ebp-4h] BYREF
 
-  v3 = (int)((gamemd::GadgetGrid *)(*(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 756))(a2, v14)));
-  v13 = (gamemd::GadgetGrid *)(HIWORD(v3));
+  v3 = (gamemd::GadgetGrid *)((int)((gamemd::GadgetGrid *)(*(unsigned int *)(*(int (**)(int, char *))(*(unsigned int *)a2 + 756))(a2, v14))));
+  v13 = (int16_t)((gamemd::GadgetGrid *)(HIWORD(v3)));
   (*(void (**)(int, int))(*(unsigned int *)a2 + 760))(a2, dword_887850); /*0x4135fb*/
-  if ( (v3 & 0x8000u) == 0 ) /*0x413604*/
+  if ( ((unsigned int)(v3)& 0x8000u) == 0 ) /*0x413604*/
     v3 = (int16_t)v3; /*0x41360a*/
   else
     v3 = 0; /*0x413606*/

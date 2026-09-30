@@ -180,7 +180,7 @@ void * Buffer::FillCircularBufferScroll2(int a2, MouseClass * aP2, unsigned shor
     if ( aP2 >= 0 ) /*0x7bcd46*/
     {
       v44 = *((unsigned int *)this + 11); /*0x7bce1d*/
-      if ( v58 >= v44 ) /*0x7bce26*/
+      if ( v58 >= (gamemd::MouseClass *)(v44) ) /*0x7bce26*/
       {
         v45 = 2 * *((unsigned int *)this + 10) * v44 - Buffer_field_10; /*0x7bce34*/
         LODWORD(v45) = v45 - HIDWORD(v45); /*0x7bce35*/

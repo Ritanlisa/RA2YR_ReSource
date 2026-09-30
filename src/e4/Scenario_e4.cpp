@@ -36,6 +36,7 @@
 #include "e4/classes/BuildingLightClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x44F820
 namespace gamemd {
@@ -44,7 +45,7 @@ int Scenario::ReadTeams()
 
   INIClass *v1; // esi
   INIClass * result;
-  int v3; // ecx
+  INIClass * v3;
   uint8_t *StringByIndex; // eax
   char *v5; // eax
   int v6; // eax
@@ -72,7 +73,7 @@ int Scenario::ReadTeams()
   int v28; // eax
   int v29; // esi
   TeamClass *v30; // eax
-  int v31; // eax
+  void * v31;
   int v32; // edi
   int v33; // eax
   int v34; // edi
@@ -112,7 +113,7 @@ int Scenario::ReadTeams()
   int v68; // [esp+28h] [ebp-BCh]
   int v69; // [esp+2Ch] [ebp-B8h]
   int v70; // [esp+30h] [ebp-B4h]
-  int v71; // [esp+34h] [ebp-B0h]
+  INIClass * v71;
   unsigned int v73[3]; // [esp+3Ch] [ebp-A8h] BYREF
   unsigned int v74[3]; // [esp+48h] [ebp-9Ch] BYREF
   unsigned int v75[3]; // [esp+54h] [ebp-90h] BYREF
@@ -169,7 +170,7 @@ int Scenario::ReadTeams()
               v67 = (int *)(atoi(v15));
               v16 = strtok(0, Str); /*0x44f9bf*/
               v58 = (int *)(0);
-              v17 = strtok(0, Str); /*0x44f9c6*/
+              v17 = (unsigned int)(strtok(0, Str));
               if ( v17 ) /*0x44f9d0*/
                 v58 = atoi(v17) != 0; /*0x44f9dd*/
               v57 = 0; /*0x44f9e9*/
@@ -194,7 +195,7 @@ int Scenario::ReadTeams()
               {
                 v24 = strtok(0, Str); /*0x44fa92*/
                 if ( v24 ) /*0x44fa9c*/
-                  *v22 = ((BuildingTypeClass *)((BuildingTypeClass *)v24))->FindIndexByName(); /*0x44faa5*/
+                  *(unsigned int *)(v22) = ((BuildingTypeClass *)((BuildingTypeClass *)v24))->FindIndexByName(); /*0x44faa5*/
                 ++v22; /*0x44faa7*/
                 --v23; /*0x44faaa*/
               }
@@ -216,7 +217,7 @@ int Scenario::ReadTeams()
                   v30 = (TeamClass *)((ObjectTypeClass *)((ObjectTypeClass *)v16))->FindByName(); /*0x44fb33*/
                   if ( v30 ) /*0x44fb3a*/
                   {
-                    v31 = ((TeamClass *)(v30))->FindOrCreate(); /*0x44fb3e*/
+                    v31 = (int)(((TeamClass *)(v30))->FindOrCreate());
                     if ( v31 ) /*0x44fb45*/
                       ObjectClass::SetReference((ObjectClass *)v29, v31); /*0x44fb4a*/
                   }
@@ -340,14 +341,14 @@ int Scenario::ReadTeams()
           }
         }
       }
-      result = (int)((gamemd::INIClass *)(v71));
-      v3 = (gamemd::INIClass *)(++v68);
+      result = (gamemd::INIClass *)((int)((gamemd::INIClass *)(v71)));
+      v3 = (int)((gamemd::INIClass *)(++v68));
       if ( v68 >= v71 ) /*0x44fe41*/
         break; /*0x44fe41*/
       v1 = this; /*0x44f866*/
     }
   }
-  return result; /*0x44fe4a*/
+  return (int)(result);
 
 }
 }
@@ -378,10 +379,10 @@ int Scenario::CopyLocalScenarioData()
     else
       abstractFlags -= *(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 416) - (unsigned int)vtable3; /*0x4c61d7*/
   }
-  this->Scenario_field_0x38 = abstractFlags; /*0x4c61dd*/
+  this->Scenario_field_0x38 = (unsigned char)(abstractFlags);
   result = *(unsigned int *)&dword_A83D4C->__pad_140[68]; /*0x4c61e6*/
   *(unsigned int *)this->__pad_3C = result; /*0x4c61ec*/
-  *(unsigned short *)&this->__pad_3C[4] = dword_A8B230[381].vtable3; /*0x4c61fc*/
+  *(unsigned short *)&this-((unsigned int *)(>__pad_3C))[4] = dword_A8B230[381].vtable3; /*0x4c61fc*/
   return result; /*0x4c6200*/
 
 }
@@ -409,15 +410,15 @@ int Scenario::ProcessSidebarUnits()
     v3 = *(Scenario ***)(*(unsigned int *)&(unsigned int *)((char *)&stru_A8EB00 + 152) + 4 * result); /*0x50d631*/
     if ( v3[135] == this ) /*0x50d63a*/
     {
-      v4 = *(unsigned int *)(*(int (**)(Scenario **, char *))&(*v3)->__pad_9C[284])(v3, v12); /*0x50d64d*/
+      v4 = *(unsigned int *)(*(int (**)(Scenario **, char *))&(*v3)-((unsigned int *)(>__pad_9C))[284])(v3, v12); /*0x50d64d*/
       v5 = (*(int (**)(Scenario **))(*v3)->__pad_84)(v3); /*0x50d659*/
       v6 = (int *)__2_YAPAXI_Z(8u); /*0x50d660*/
       *v6 = v5; /*0x50d665*/
       v6[1] = v4; /*0x50d66d*/
-      v7 = *(unsigned int *)&this->__pad_9C[216]; /*0x50d670*/
-      if ( *(unsigned int *)&this->__pad_9C[224] < v7 /*0x50d695*/
-        || (this->__pad_9C[221] || !v7)
-        && (v8 = *(unsigned int *)&this->__pad_9C[228], v8 > 0)
+      v7 = *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[216]; /*0x50d670*/
+      if ( *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[224] < v7 /*0x50d695*/
+        || (this-((unsigned int *)(>__pad_9C))[221] || !v7)
+        && (v8 = *(unsigned int *)&this-((unsigned int *)(>__pad_9C))[228], v8 > 0)
         && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&this->__pad_9C[208] + 8))(
              &this->__pad_9C[208],
              v7 + v8,

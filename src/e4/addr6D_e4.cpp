@@ -35,6 +35,8 @@
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/CommandClass_e4.hpp"
 #include "e4/classes/Isometric_e4.hpp"
+#include "e4/classes/Rect_Point_e4.hpp"
+#include "e4/classes/ShapeButton_e4.hpp"
 
 // 0x6D1130
 namespace gamemd {

@@ -31,6 +31,7 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Animation_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Property_e4.hpp"
 
 // 0x4FCDC0
 namespace gamemd {
@@ -281,12 +282,12 @@ namespace gamemd {
 unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
 {
 
-  unsigned int * result;
+  unsigned int result;
   int v5; // esi
   unsigned int v6;
   int v7; // eax
   unsigned int * v8;
-  int v9; // eax
+  unsigned int * v9;
   char *v10; // edx
   unsigned int *v11; // ecx
 
@@ -316,7 +317,7 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
       }
       else
       {
-        result = dword_A8B21C; /*0x6ac63e*/
+        result = (unsigned int *)(dword_A8B21C);
         while ( a2 != *(unsigned int *)(result) ) /*0x6ac645*/
         {
           ++v5; /*0x6ac647*/
@@ -328,7 +329,7 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
     }
     else
     {
-      result = dword_A83CE4; /*0x6ac621*/
+      result = (unsigned int *)(dword_A83CE4);
       while ( a2 != *(unsigned int *)(result) ) /*0x6ac628*/
       {
         ++v5; /*0x6ac62a*/
@@ -369,8 +370,8 @@ LABEL_13: v5 = (int)((unsigned int *)(0));
     v7 = 1; /*0x6ac6b1*/
   }
   v8 = (int)((unsigned int *)(997 * v7));
-  v9 = (unsigned int *)(0);
-  v10 = (char *)this + 4 * v8 + 5444; /*0x6ac6e8*/
+  v9 = (int)((unsigned int *)(0));
+  v10 = (unsigned int *)((char *)this + 4 * v8 + 5444);
   v11 = v10 + 88; /*0x6ac6ef*/
   while ( *v11 != v5 ) /*0x6ac6f4*/
   {

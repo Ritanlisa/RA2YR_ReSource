@@ -21,6 +21,9 @@
 #include "e4/classes/AudioMixer_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/DListNode_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
+#include "e4/classes/Socket_e4.hpp"
 
 // 0x401910
 namespace gamemd {
@@ -152,13 +155,13 @@ int AudioStream::SetupPlayback()
 
   char *v1; // edx
   int v2; // eax
-  int v3; // esi
+  char * v3;
   int AudioStream_field_0x24; // edi
   char *v6; // edx
 
   v1 = (unsigned int)((char *)this-((unsigned int *)(>AudioStream_field_0xA8))[0]);
   v2 = (unsigned int)(0);
-  v3 = 0; /*0x404709*/
+  v3 = (unsigned int)(0);
   this->AudioStream_field_0x1E0 = v1; /*0x40470e*/
   if ( !v1 || (this-((unsigned int *)(>AudioStream_field_0x18))[0] & 0x20) != 0 ) /*0x40471a*/
     return 0; /*0x40471a*/

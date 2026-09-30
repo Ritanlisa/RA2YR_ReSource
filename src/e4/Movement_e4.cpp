@@ -45,7 +45,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
   int v34; // eax
   int v35; // eax
   unsigned int *v36; // eax
-  unsigned int v37; // ecx
+  void * v37;
   unsigned int v38; // edx
   int *v39; // eax
   int v40; // eax
@@ -252,7 +252,7 @@ void Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnkno
           *(unsigned int *)a2->__pad_0 + v33,
           a2->Vector3_field_0x04 + HIDWORD(v92),
           a2->Vector3_field_0x08 + v35);
-  v37 = (void *)(v36[1]);
+  v37 = (unsigned int)((void *)(v36[1]));
   v38 = v36[2]; /*0x5b23b5*/
   *(unsigned int *)a2->__pad_0 = *v36; /*0x5b23b8*/
   a2->Vector3_field_0x04 = v37; /*0x5b23be*/

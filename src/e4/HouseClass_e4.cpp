@@ -18,6 +18,7 @@
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Function_e4.hpp"
 
 // 0x43B5E0
 namespace gamemd {

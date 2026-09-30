@@ -20,6 +20,7 @@
 #include "e4/classes/Commands_e4.hpp"
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
 #include "e4/classes/TEventClass_e4.hpp"
+#include "e4/classes/PushCommandClass_e4.hpp"
 
 // 0x6D1200
 namespace gamemd {
@@ -160,8 +161,8 @@ int CommandClass::BuildBar()
       CommandClass::AddAction(*(int **)&stru_88732C.__pad_1C[32], (int)&v37); /*0x6d1403*/
     }
   }
-  v27 = (unsigned int)((gamemd::ShapeButtonClass *)(((unsigned int *)(g_ObjectTrackingPool))[dword_B0CB68]));
-  if ( v27 > 0x18 ) /*0x6d1419*/
+  v27 = (gamemd::ShapeButtonClass *)((unsigned int)((gamemd::ShapeButtonClass *)(((unsigned int *)(g_ObjectTrackingPool))[dword_B0CB68])));
+  if ( v27 > (gamemd::ShapeButtonClass *)(0x18) ) /*0x6d1419*/
     v28 = 0; /*0x6d142e*/
   else
     v28 = &stru_B0C1C0 + 8 * v27; /*0x6d1426*/
@@ -206,7 +207,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
   int v15; // ecx
 
   v2 = (gamemd::ToolTipManager *)(aP1);
-  v4 = (char *)this + 147; /*0x72458c*/
+  v4 = (gamemd::ToolTipManager *)((char *)this + 147);
   aP1 = *(unsigned int *)aP1; /*0x724592*/
   if ( *((char *)this + 148) ) /*0x724596*/
   {

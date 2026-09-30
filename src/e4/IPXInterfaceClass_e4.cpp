@@ -26,6 +26,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Color_e4.hpp"
+#include "e4/classes/NetworkID_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x7B0D90
 namespace gamemd {
@@ -157,7 +159,7 @@ LABEL_6:
           v7 = (Network *)**((unsigned int **)this + 9); /*0x7b1447*/
           to.sa_family = 6; /*0x7b1449*/
           *(unsigned short *)&to.sa_data[10] = htons(v25); /*0x7b1453*/
-          if ( v7->__pad_14[0] ) /*0x7b1458*/
+          if ( v7-((unsigned int *)(>__pad_14))[0] ) /*0x7b1458*/
           {
             *(unsigned int *)to.sa_data = *((unsigned int *)this + 64703); /*0x7b146b*/
             *(unsigned int *)&to.sa_data[4] = *((unsigned int *)this + 64704); /*0x7b1471*/
@@ -170,7 +172,7 @@ LABEL_6:
             *(unsigned int *)&to.sa_data[4] = v27; /*0x7b14a2*/
             *(unsigned short *)&to.sa_data[8] = v28; /*0x7b14a6*/
           }
-          if ( sendto(*((unsigned int *)this + 64539), &v7->__pad_14[8], (int)v7->Network_field_0x10 + 4, 0, &to, 14) == -1 /*0x7b14da*/
+          if ( sendto(*((unsigned int *)this + 64539), &v7-((unsigned int *)(>__pad_14))[8], (int)v7->Network_field_0x10 + 4, 0, &to, 14) == -1 /*0x7b14da*/
             && WSAGetLastError() != 10035 )
           {
             break; /*0x7b14da*/
@@ -187,13 +189,13 @@ LABEL_6:
               ++v10; /*0x7b14f6*/
             }
           }
-          if ( v7->__pad_14[2] ) /*0x7b1505*/
+          if ( v7-((unsigned int *)(>__pad_14))[2] ) /*0x7b1505*/
           {
             __3_YAXPAX_Z(v7); /*0x7b150d*/
           }
           else
           {
-            v7->__pad_14[1] = 0; /*0x7b1517*/
+            v7-((unsigned int *)(>__pad_14))[1] = 0; /*0x7b1517*/
             --*((unsigned int *)this + 64536); /*0x7b1522*/
           }
           if ( !*((unsigned int *)this + 12) ) /*0x7b1528*/
@@ -266,7 +268,7 @@ LABEL_6:
     {
       v23 = (unsigned int)(p_LocalNetwork[4]);
       v24 = (unsigned int)(p_LocalNetwork[1]);
-      p_LocalNetwork[4] = v23 + 1; /*0x7b170e*/
+      p_LocalNetwork[4] = (unsigned int)(v23 + 1);
       *(unsigned int *)(v24 + 4 * v23) = v18; /*0x7b1711*/
     }
     return 0; /*0x7b1711*/

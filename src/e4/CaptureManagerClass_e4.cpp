@@ -23,6 +23,7 @@
 #include "e4/classes/Campaign_WorldDominationTour_24_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x4717D0
 namespace gamemd {
@@ -270,7 +271,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
   unsigned int *v18; // ebp
   int v19; // ecx
   int v20; // eax
-  int v21; // ebx
+  void * v21;
   int v22; // edi
   int *v23; // eax
   int v24; // ecx
@@ -300,7 +301,7 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
     v7 = (*(int (**)(unsigned int *))(*v5 + 60))(v5); /*0x471da4*/
     v8 = *v5; /*0x471daa*/
     v9 = v7; /*0x471dac*/
-    v10 = (*(int (**)(unsigned int, int))(**(unsigned int **)((unsigned int)(a1)+ 72) + 60))(*(unsigned int *)(a1 + 72), 1); /*0x471db2*/
+    v10 = (*(int (**)(unsigned int, int))(**(unsigned int **)((unsigned int)(a1)+ 72) + 60))(*(unsigned int *)((unsigned int)(a1)+ 72), 1); /*0x471db2*/
     result = (*(int (**)(unsigned int *, int))(v8 + 980))(v5, v10); /*0x471db8*/
     if ( result )
     {
@@ -344,8 +345,8 @@ void CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3)
       CaptureManagerClass::DecideUnitFate((CaptureManagerClass *)a1, (int)v5); /*0x471eae*/
       if ( (*(int (**)(int))(*(unsigned int *)a3 + 44))(a3) == 6 ) /*0x471ec1*/
       {
-        v21 = a3; /*0x471ecb*/
-        v22 = dword_89E178 * *(unsigned int *)(*(unsigned int *)(a3 + 1312) + 3828); /*0x471ed8*/
+        v21 = (int)(a3);
+        v22 = dword_89E178 * *(unsigned int *)(*(unsigned int *)((unsigned int)(a3)+ 1312) + 3828); /*0x471ed8*/
       }
       else
       {

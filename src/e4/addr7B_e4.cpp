@@ -585,7 +585,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   const char *v17; // esi
   size_t v18; // ecx
   unsigned char *v19; // eax
-  signed int v20; // [esp+14h] [ebp+4h]
+  void * v20;
 
   v5 = a2; /*0x7b60ec*/
   if ( this->AbstractClass ) /*0x7b60ea*/
@@ -602,7 +602,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
     ++v5; /*0x7b613e*/
   }
   vtable0 = (unsigned char *)((const char *)(this->AbstractClass));
-  v20 = (void *)(v5);
+  v20 = (int)((void *)(v5));
   if ( *((unsigned char *)this->AbstractClass + v5) == 13 && vtable0[v5 + 1] == 10 ) /*0x7b6152*/
     v20 = v5 + 1; /*0x7b6155*/
   v10 = &vtable0[a2]; /*0x7b615d*/
@@ -776,7 +776,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   void *vtable0; // eax
   void *v8; // eax
   unsigned short *v9; // eax
-  int v10; // esi
+  void * v10;
   const wchar_t *v11; // esi
   int v12; // eax
   unsigned short *v13; // eax
@@ -787,9 +787,9 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   const wchar_t *v18; // esi
   int v19; // eax
   unsigned short *v20; // eax
-  int v21; // [esp+10h] [ebp+4h]
+  void * v21;
 
-  v5 = (int)((void *)(a2));
+  v5 = (void *)((int)((void *)(a2)));
   vtable0 = (void *)(this->AbstractClass);
   if ( this->AbstractClass ) /*0x7b7c0b*/
     vtable0 = (void *)wcslen((const wchar_t *)this->AbstractClass); /*0x7b7c12*/
@@ -800,15 +800,15 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     v8 = (void *)(this->AbstractClass);
     if ( this->AbstractClass ) /*0x7b7c27*/
       v8 = (void *)wcslen((const wchar_t *)this->AbstractClass); /*0x7b7c2e*/
-    if ( v5 >= (int)v8 || strchr(String2, *((uint16_t *)this->AbstractClass + v5)) ) /*0x7b7c48*/
+    if ( v5 >= (void *)((int))v8 || strchr(String2, *((uint16_t *)(unsigned int)(this-)>AbstractClass + v5)) ) /*0x7b7c48*/
       break; /*0x7b7c48*/
     ++v5; /*0x7b7c54*/
   }
   v9 = (unsigned short *)(this->AbstractClass);
-  v21 = v5; /*0x7b7c59*/
-  if ( *((unsigned short *)this->AbstractClass + v5) == 13 ) /*0x7b7c62*/
+  v21 = (int)(v5);
+  if ( *((unsigned short *)(unsigned int)(this->AbstractClass)+ v5) == 13 ) /*0x7b7c62*/
   {
-    v10 = v5 + 1; /*0x7b7c64*/
+    v10 = (int)(v5 + 1);
     if ( v9[v10] == 10 ) /*0x7b7c6a*/
       v21 = v10; /*0x7b7c6c*/
   }

@@ -18,7 +18,7 @@ unsigned short * RLEBlitTransZRemapXlatAlpha_ushort::AddRef(int arg0, unsigned c
   uint16_t *result; // eax
   int v14; // edx
   RLEBlitTransZRemapXlatAlpha_ushort * v15;
-  int v17; // edx
+  RLEBlitTransZRemapXlatAlpha_ushort * v17;
   int v18; // ebx
   uint8_t v19; // dl
   uint8_t v20; // dl

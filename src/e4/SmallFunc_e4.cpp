@@ -36,6 +36,9 @@
 #include "e4/classes/SlaveManagerClass_e4.hpp"
 #include "e4/classes/SortedArray_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Cliff_e4.hpp"
+#include "e4/classes/Property_e4.hpp"
+#include "e4/classes/Skirmish_e4.hpp"
 
 // 0x6F19B0
 namespace gamemd {

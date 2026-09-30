@@ -21,6 +21,7 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
+#include "e4/classes/MPCombatTeam_e4.hpp"
 
 // 0x5CA680
 namespace gamemd {
@@ -266,7 +267,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   {
     MultiplayerSiege_field_10 = (unsigned int)(a1->MultiplayerSiege_field_10);
     MultiplayerSiege_field_04 = (unsigned int)(a1->MultiplayerSiege_field_04);
-    a1->MultiplayerSiege_field_10 = MultiplayerSiege_field_10 + 1; /*0x5caa06*/
+    a1->MultiplayerSiege_field_10 = (unsigned int)(MultiplayerSiege_field_10 + 1);
     *(unsigned int *)(MultiplayerSiege_field_04 + 4 * MultiplayerSiege_field_10) = v2; /*0x5caa09*/
   }
   v7 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa0e*/
@@ -285,7 +286,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   {
     v11 = (unsigned int)(a1->MultiplayerSiege_field_10);
     v12 = (unsigned int)(a1->MultiplayerSiege_field_04);
-    a1->MultiplayerSiege_field_10 = v11 + 1; /*0x5caa5c*/
+    a1->MultiplayerSiege_field_10 = (unsigned int)(v11 + 1);
     *(unsigned int *)(v12 + 4 * v11) = v8; /*0x5caa5f*/
   }
   v13 = (MPCombatTeam *)__2_YAPAXI_Z(0xCu); /*0x5caa64*/
@@ -305,7 +306,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   {
     v16 = (unsigned int)(a1->MultiplayerSiege_field_10);
     v17 = (unsigned int)(a1->MultiplayerSiege_field_04);
-    a1->MultiplayerSiege_field_10 = v16 + 1; /*0x5caab2*/
+    a1->MultiplayerSiege_field_10 = (unsigned int)(v16 + 1);
     *(unsigned int *)(v17 + 4 * v16) = v14; /*0x5caab5*/
   }
   return v16; /*0x5caab8*/

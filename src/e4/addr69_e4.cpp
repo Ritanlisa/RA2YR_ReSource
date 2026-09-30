@@ -69,6 +69,10 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/Hash_e4.hpp"
+#include "e4/classes/NetworkID_e4.hpp"
+#include "e4/classes/ProgressAnim_e4.hpp"
+#include "e4/classes/SHPClass_e4.hpp"
 
 // 0x690400
 namespace gamemd {

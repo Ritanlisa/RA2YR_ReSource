@@ -54,7 +54,7 @@ int FoggedObject::DrawVector_Constructor( IUnknown * aP1, IUnknown * aP2)
       }
       v4 = (AbstractClass *)v8; /*0x4d2e2f*/
     }
-    this->FoggedObject_field_0x4 = v4; /*0x4d2e31*/
+    this->FoggedObject_field_0x4 = (unsigned char)(v4);
     *((unsigned char *)this + 13) = 1; /*0x4d2e34*/
     return this->__pad_0; /*0x4d2e34*/
   }
@@ -73,7 +73,7 @@ int FoggedObject::DrawVector_Constructor( IUnknown * aP1, IUnknown * aP2)
     }
     while ( v6 ); /*0x4d2df4*/
   }
-  this->FoggedObject_field_0x4 = (AbstractClass *)aP2; /*0x4d2df6*/
+  this->FoggedObject_field_0x4 = (unsigned char)((AbstractClass *)aP2);
   return this->__pad_0; /*0x4d2dfb*/
 
 }

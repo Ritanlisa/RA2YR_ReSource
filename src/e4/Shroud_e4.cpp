@@ -13,6 +13,7 @@
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/ShroudClass_e4.hpp"
 
 // 0x654490
 namespace gamemd {

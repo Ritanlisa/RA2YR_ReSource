@@ -73,6 +73,12 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
 #include "e4/classes/Struct_e4.hpp"
+#include "e4/classes/AudioIndex_e4.hpp"
+#include "e4/classes/AudioList_e4.hpp"
+#include "e4/classes/AudioNode_e4.hpp"
+#include "e4/classes/DListNode_e4.hpp"
+#include "e4/classes/IDXContainer_e4.hpp"
+#include "e4/classes/Queue_e4.hpp"
 
 // 0x4011C0
 namespace gamemd {

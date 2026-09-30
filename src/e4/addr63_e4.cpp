@@ -110,6 +110,8 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/BuildingLoadQueue_e4.hpp"
+#include "e4/classes/PhoneEditor_e4.hpp"
 
 // 0x630310
 namespace gamemd {
@@ -835,7 +837,7 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   unsigned int v22[4]; // [esp+54h] [ebp-10h] BYREF
 
   Viewport = (int *)(Display::GetViewport(v16));
-  v21[0] = *Viewport; /*0x635574*/
+  v21[0] = (int *)(*Viewport);
   v21[1] = Viewport[1]; /*0x63557b*/
   v21[2] = Viewport[2]; /*0x635582*/
   v4 = Viewport[3]; /*0x635586*/
@@ -910,7 +912,7 @@ int E4Recv_635680::sub_635680(int a2)
   int v21[4]; // [esp+60h] [ebp-10h] BYREF
 
   Viewport = (int *)(Display::GetViewport(&v16));
-  v20[0] = *Viewport; /*0x635694*/
+  v20[0] = (int *)(*Viewport);
   v20[1] = Viewport[1]; /*0x63569b*/
   v20[2] = Viewport[2]; /*0x6356a2*/
   v20[3] = Viewport[3]; /*0x6356b0*/
@@ -976,7 +978,7 @@ int E4Recv_636F00::sub_636F00(int a2, int a3)
   unsigned char *v11; // esi
 
   vtable2 = (void *)(this->?);
-  vtable0 = this->AbstractClass; /*0x636f08*/
+  vtable0 = (void *)(this->AbstractClass);
   v5 = vtable2[a3]; /*0x636f0b*/
   v6 = 0; /*0x636f0e*/
   v7 = *(unsigned int *)(v5 + 16); /*0x636f11*/

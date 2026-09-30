@@ -38,7 +38,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1)
   }
   InfantryTypeVector_field_0x10 = (unsigned int)(this->InfantryTypeVector_field_0x10);
   InfantryTypeVector_field_0x04 = (unsigned int)(this->InfantryTypeVector_field_0x04);
-  this->InfantryTypeVector_field_0x10 = InfantryTypeVector_field_0x10 + 1; /*0x512f5e*/
+  this->InfantryTypeVector_field_0x10 = (unsigned int)(InfantryTypeVector_field_0x10 + 1);
   *(unsigned int *)(InfantryTypeVector_field_0x04 + 4 * InfantryTypeVector_field_0x10) = *aP1; /*0x512f68*/
   return 1; /*0x512f51*/
 

@@ -26,6 +26,7 @@
 #include "e4/classes/E4Recv_4AF2A0_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/NetworkGameSetup_e4.hpp"
+#include "e4/classes/CoordList_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {
@@ -173,7 +174,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
 
   MixFileClass *v5; // ecx
   int v6; // ebx
-  int v7; // ebp
+  WWMouseClass * v7;
   WWMouseClass * v8;
   int v9; // edi
   int SubFile; // eax
@@ -189,13 +190,13 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   int v20[5]; // [esp+2Ch] [ebp-20h] BYREF
   int v21[3]; // [esp+40h] [ebp-Ch] BYREF
 
-  v13 = (int)this; /*0x7b93f5*/
+  v13 = (gamemd::WWMouseClass *)((int)this);
   v5 = *(MixFileClass **)&this-((unsigned int *)(>m_1))[3]; /*0x7b93f9*/
   if ( v5 && aP1 && *(unsigned int *)&stru_87F5F0.__pad_58[128] ) /*0x7b9418*/
   {
     v6 = (int)(*((unsigned int *)this + 20));
-    v7 = (gamemd::WWMouseClass *)(*((unsigned int *)this + 21));
-    v8 = (unsigned int)(aP2)+ *((unsigned int *)this + 18); /*0x7b9438*/
+    v7 = (int)((gamemd::WWMouseClass *)(*((unsigned int *)this + 21)));
+    v8 = (gamemd::WWMouseClass *)((unsigned int)(aP2)+ *((unsigned int *)this + 18));
     v9 = a4 + *((unsigned int *)this + 19); /*0x7b943e*/
     SubFile = MixFileClass::GetSubFile(v5, *(unsigned int *)&this-((unsigned int *)(>__pad_5))[3]); /*0x7b9440*/
     v20[1] = v6; /*0x7b9447*/
@@ -204,11 +205,11 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     v20[4] = 1; /*0x7b9468*/
     Buffer::Init((Buffer *)v21, SubFile, v7 * v6); /*0x7b9470*/
     v20[0] = (int)&BSurface_Vtable; /*0x7b947d*/
-    if ( aP1 == *(int **)(v13 + 36) ) /*0x7b9488*/
+    if ( aP1 == *(int **)((unsigned int)(v13)+ 36) ) /*0x7b9488*/
     {
       v15 = (int)(0);
       v16 = 0; /*0x7b949d*/
-      v12 = (unsigned int *)(v13 + 44); /*0x7b94a6*/
+      v12 = (unsigned int *)((unsigned int)(v13)+ 44); /*0x7b94a6*/
       v13 = v8; /*0x7b94b8*/
       v14 = v9; /*0x7b94bc*/
       v17 = v6; /*0x7b94c0*/
@@ -218,7 +219,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     {
       v15 = (int)(0);
       v16 = (int)(0);
-      v11 = *aP1; /*0x7b94e3*/
+      v11 = (int)(*aP1);
       v13 = v8; /*0x7b94e6*/
       v14 = v9; /*0x7b94ea*/
       v17 = v6; /*0x7b94ee*/

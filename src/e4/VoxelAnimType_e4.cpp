@@ -22,6 +22,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/VoxelAnimTypeClass_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/Matrix_e4.hpp"
+#include "e4/classes/VoxelSection_e4.hpp"
 
 // 0x5F7A90
 namespace gamemd {

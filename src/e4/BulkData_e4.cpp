@@ -15,6 +15,8 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/DiskSpace_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x697AD0
 namespace gamemd {

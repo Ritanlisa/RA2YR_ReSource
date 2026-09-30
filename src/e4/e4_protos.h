@@ -555,7 +555,7 @@ extern void * globalHelper_028F70(AbstractClass * Source, int a2);
 extern void * globalHelper_04BB20(ObjectClass * Source, int a2);
 extern void * sub_4E3690(HWND hDlg, int a2);
 extern void ** ParseStringCommaInts(char * String, int * a2, int * a3, int * a4, int * a5, int * a6, void ** a7);
-extern void AddMessageListPlayerMessage(CellStruct * a1, int a2);
+extern void AddMessageListPlayerMessage(void** a1, int a2);
 extern void Audio_Process_7C19F0(int a1, DSurface * aP1, unsigned int * a2, unsigned int * a3);
 extern void BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2);
 extern void CellChainReact();

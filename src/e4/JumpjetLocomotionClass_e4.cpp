@@ -33,6 +33,12 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/KeyboardConfig_e4.hpp"
 #include "e4/classes/Isometric_e4.hpp"
+#include "e4/classes/Coord3D_e4.hpp"
+#include "e4/classes/Float4_e4.hpp"
+#include "e4/classes/Matrix3x3_e4.hpp"
+#include "e4/classes/Triple_e4.hpp"
+#include "e4/classes/Vector3_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
 
 // 0x439B00
 namespace gamemd {
@@ -54,7 +60,7 @@ void* JumpjetLocomotionClass::Update2(void * a1, void * a2)
   int v14; // eax
   int *v15; // eax
   int v16; // eax
-  int v17; // eax
+  unsigned int * v17;
   Cell *v18; // edi
   double v19; // st7
   unsigned int *v20; // eax
@@ -259,7 +265,7 @@ LABEL_35:
   *(float *)&v53 = -v24; /*0x439df2*/
   Triple::Set(v72, SLODWORD(v25), v53, *((unsigned int *)v5 + 2)); /*0x439df6*/
   v26 = Matrix3x3::TransformPoint(v86, (float *)v72, (float *)v62); /*0x439e0c*/
-  v72[0] = *(Triple *)v26; /*0x439e17*/
+  ((unsigned int *)(v72))[0] = *(Triple *)v26; /*0x439e17*/
   v72[1] = *(Triple *)(v26 + 4); /*0x439e1e*/
   *(float *)&v58 = *(double *)v85; /*0x439e2a*/
   v73 = *(float *)(v26 + 8); /*0x439e2d*/

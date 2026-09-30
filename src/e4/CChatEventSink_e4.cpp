@@ -15,6 +15,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/DeleteAndZero_e4.hpp"
 
 // 0x7AA870
 namespace gamemd {

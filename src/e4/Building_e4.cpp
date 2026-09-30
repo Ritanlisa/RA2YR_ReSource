@@ -20,6 +20,7 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/Random_e4.hpp"
 
 // 0x425D10
 namespace gamemd {
@@ -178,11 +179,11 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       v38[1] = v19 + HIWORD(v39); /*0x425f2d*/
       if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f3b*/
       {
-        v23 = (v21 << 8) + 128; /*0x425f4a*/
+        v23 = (gamemd::AnimClass **)((v21 << 8) + 128);
         v24 = v22; /*0x425f50*/
         goto LABEL_41; /*0x425f53*/
       }
-      v38[0] = v21; /*0x425f5d*/
+      v38[0] = (unsigned int)(v21);
       v38[1] = HIWORD(v39); /*0x425f62*/
       if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f78*/
       {
@@ -191,7 +192,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
         aP1[2] = 0; /*0x425fa7*/
         return aP1; /*0x425fb0*/
       }
-      v38[1] = v22; /*0x425fb8*/
+      v38[1] = (unsigned int)(v22);
       v38[0] = v39; /*0x425fbd*/
       if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425fd3*/
       {
@@ -213,7 +214,7 @@ LABEL_39: *aP1 = (gamemd::AnimClass **)(Map_InvalidCoord_X);
   v27 = 0; /*0x426034*/
   while ( 1 ) /*0x426046*/
   {
-    v28 = ((v27 + v26) % 8) & 7; /*0x426046*/
+    v28 = (gamemd::AnimClass **)(((v27 + v26) % 8) & 7);
     v29 = v39 + LOWORD(g_DDrawSurfaceManager.scenario[v28 + 82]); /*0x426058*/
     LOWORD(v28) = HIWORD(v39) + HIWORD(g_DDrawSurfaceManager.scenario[v28 + 82]); /*0x426061*/
     v38[0] = v29; /*0x426066*/
@@ -227,7 +228,7 @@ LABEL_39: *aP1 = (gamemd::AnimClass **)(Map_InvalidCoord_X);
   v24 = (int)((gamemd::AnimClass **)(v34[1]));
   v23 = (v34[0] << 8) + 128; /*0x4260c5*/
 LABEL_41:
-  *(_DWORD *)aP1 = v23; /*0x4260cb*/
+  *(unsigned (unsigned int)(int)*)aP1 = v23; /*0x4260cb*/
   aP1[1] = (v24 << 8) + 128; /*0x4260dd*/
   aP1[2] = 0; /*0x4260e0*/
   return aP1; /*0x425faa*/
@@ -257,8 +258,7 @@ int Building::GetRenderType()
 
   unsigned char *Building_field_0xA0; // ecx
   int result; // eax
-
-  Building_field_0xA0 = this->Building_field_0xA0; /*0x772a90*/
+Building_field_0xA0 = (unsigned char *)(this->Building_field_0xA0);
   result = 0; /*0x772a96*/
   if ( Building_field_0xA0[676] ) /*0x772a98*/
     result = 4; /*0x772aa2*/
