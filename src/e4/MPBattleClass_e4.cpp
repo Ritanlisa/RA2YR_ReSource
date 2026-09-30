@@ -42,7 +42,7 @@ unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * 
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  this->vfptr = &vt_MultiplayerBattle; /*0x5c0df8*/
+  this->vfptr = (unsigned int)(&vt_MultiplayerBattle);
   return &this->vfptr; /*0x5c0e00*/
 
 }
@@ -60,7 +60,7 @@ unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll 
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  this->vfptr = &vt_FreeForAll; /*0x5c5d08*/
+  this->vfptr = (unsigned int)(&vt_FreeForAll);
   return &this->vfptr; /*0x5c5d10*/
 
 }
@@ -78,7 +78,7 @@ unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerM
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = &vt_MultiplayerManBattle; /*0x5c6178*/
+  *this = (unsigned int *)(&vt_MultiplayerManBattle);
   return this; /*0x5c6180*/
 
 }
@@ -96,7 +96,7 @@ unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = &vt_Megawealth; /*0x5c9408*/
+  *this = (unsigned int *)(&vt_Megawealth);
   return this; /*0x5c9410*/
 
 }
@@ -114,7 +114,7 @@ unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege
     (MultiplayerGameMode *)aP4,
     (MultiplayerGameMode *)aP5,
     (MultiplayerGameMode *)aP6);
-  *this = &vt_MultiplayerSiege; /*0x5ca658*/
+  *this = (unsigned int *)(&vt_MultiplayerSiege);
   return this; /*0x5ca660*/
 
 }

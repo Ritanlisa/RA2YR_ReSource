@@ -35,7 +35,7 @@ int Mission::ExecuteTechnoMissionAction()
   int result; // eax
   int *v16; // ebp
   int v17; // ecx
-  __int16 v18; // [esp+14h] [ebp-1Ch] BYREF
+  int16_t v18; // [esp+14h] [ebp-1Ch] BYREF
   unsigned int v19[3]; // [esp+18h] [ebp-18h] BYREF
   char v20; // [esp+24h] [ebp-Ch] BYREF
 
@@ -54,7 +54,7 @@ int Mission::ExecuteTechnoMissionAction()
           break; /*0x520bdf*/
         if ( *(int *)(v3 + 3680) > 0 ) /*0x520bed*/
         {
-          v4 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x520bf9*/
+          v4 = (int)((void **)__2_YAPAXI_Z(0x1C8u));
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
           v5 = (unsigned int)Random::State((unsigned int *)MEMORY[0xA8B230] + 134) % *(unsigned int *)(*((unsigned int *)this + 432) + 3680); /*0x520c2d*/
@@ -72,7 +72,7 @@ int Mission::ExecuteTechnoMissionAction()
                           + 4
                           * ((unsigned int)Random::State((unsigned int *)MEMORY[0xA8B230] + 134)
                            % MEMORY[0x8871E0]->BuildingGarrisonedSound[1]));
-            v8 = *this; /*0x520c94*/
+            v8 = (int)(*this);
             v6 = &v20; /*0x520c96*/
 LABEL_19:
             v9 = (int *)(*(int (**)(unsigned int *, char *))(v8 + 72))(this, v6); /*0x520c9a*/
@@ -121,7 +121,7 @@ LABEL_20:
         }
         if ( !*((unsigned int *)this + 413) ) /*0x520d1b*/
           WinAPI::Wrapper(-2147467261); /*0x520d2a*/
-        if ( (*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) /*0x520d50*/
+        if ( (*(uint8_t (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) /*0x520d50*/
           && *((double *)this + 175) > 0.1 )
         {
           if ( *((unsigned char *)this + 1755) ) /*0x520d52*/
@@ -136,7 +136,7 @@ LABEL_20:
             goto LABEL_44; /*0x520d98*/
           if ( !*((unsigned int *)this + 413) ) /*0x520da2*/
             WinAPI::Wrapper(-2147467261); /*0x520db1*/
-          if ( !(*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x520dbf*/
+          if ( !(*(uint8_t (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x520dbf*/
           {
             if ( *((unsigned char *)this + 1755) ) /*0x520dc6*/
               (*(void (**)(unsigned int *, int, int, unsigned int))(*(unsigned int *)this + 5472))(this, 41, 1, 0); /*0x520dda*/
@@ -222,7 +222,7 @@ char Mission::ProcessUnitMissionAI()
   int v17; // eax
   int v19; // [esp+4Ch] [ebp-30h]
   int v20; // [esp+58h] [ebp-24h]
-  __int16 v21; // [esp+5Ch] [ebp-20h] BYREF
+  int16_t v21; // [esp+5Ch] [ebp-20h] BYREF
   int v22; // [esp+60h] [ebp-1Ch] BYREF
   int v23; // [esp+64h] [ebp-18h] BYREF
   int v24; // [esp+68h] [ebp-14h] BYREF
@@ -232,9 +232,9 @@ char Mission::ProcessUnitMissionAI()
   {
     if ( !*((unsigned int *)this + 413) ) /*0x520f55*/
       WinAPI::Wrapper(-2147467261); /*0x520f64*/
-    if ( !(*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x520f72*/
+    if ( !(*(uint8_t (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) ) /*0x520f72*/
     {
-      v2 = *((unsigned int *)this + 361); /*0x520f79*/
+      v2 = (int)(*((unsigned int *)this + 361));
       v3 = *this; /*0x520f7f*/
       if ( v2 ) /*0x520f86*/
       {
@@ -250,7 +250,7 @@ char Mission::ProcessUnitMissionAI()
   v4 = *((unsigned int *)this + 361); /*0x520faf*/
   if ( v4 ) /*0x520fb7*/
   {
-    v5 = (unsigned int *)(*(int (**)(int, unsigned char *, unsigned int *))(*(unsigned int *)v4 + 76))(v4, v25, this); /*0x520fc5*/
+    v5 = (int)((unsigned int *)(*(int (**)(int, unsigned char *, unsigned int *))(*(unsigned int *)v4 + 76))(v4, v25, this));
     LOWORD(v22) = *v5 / 256; /*0x520fd8*/
     HIWORD(v22) = v5[1] / 256; /*0x520fec*/
     LOBYTE(v5) = *((unsigned char *)this + 1756); /*0x520ff1*/
@@ -262,14 +262,14 @@ char Mission::ProcessUnitMissionAI()
     {
       if ( !*((unsigned int *)this + 413) ) /*0x521028*/
         WinAPI::Wrapper(-2147467261); /*0x521037*/
-      if ( !(*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) /*0x521050*/
+      if ( !(*(uint8_t (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 16))(*((unsigned int *)this + 413)) /*0x521050*/
         && !*((unsigned char *)this + 1048) )
       {
         if ( *((unsigned int *)this + 361) ) /*0x52105e*/
         {
           if ( *((unsigned char *)this + 981) ) /*0x52106c*/
           {
-            v8 = (unsigned int *)(*(int (**)(unsigned int *))(*(unsigned int *)this + 304))(this); /*0x521086*/
+            v8 = (int)((unsigned int *)(*(int (**)(unsigned int *))(*(unsigned int *)this + 304))(this));
             LOWORD(v20) = *v8 / 256; /*0x521099*/
             HIWORD(v20) = v8[1] / 256; /*0x5210af*/
             v9 = *this; /*0x5210b8*/
@@ -280,8 +280,8 @@ char Mission::ProcessUnitMissionAI()
             v11 = (*(int (**)(unsigned int *, unsigned int, int, int))(*(unsigned int *)this + 752))(this, 0, v10, v19); /*0x5210e9*/
             if ( !MapSeed::CheckTileMatch( /*0x521133*/
                     &MEMORY[0x87F7E8],
-                    (__int16 *)&v24,
-                    (__int16 *)&v23,
+                    (int16_t *)&v24,
+                    (int16_t *)&v23,
                     *(unsigned int *)(*((unsigned int *)this + 432) + 1460),
                     v11,
                     (char)v25,
@@ -298,7 +298,7 @@ char Mission::ProcessUnitMissionAI()
   }
   if ( !*((unsigned int *)this + 413) ) /*0x521144*/
     WinAPI::Wrapper(-2147467261); /*0x521153*/
-  if ( (*(unsigned __int8 (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 168))(*((unsigned int *)this + 413)) ) /*0x521161*/
+  if ( (*(uint8_t (**)(unsigned int))(*(unsigned int *)*((unsigned int *)this + 413) + 168))(*((unsigned int *)this + 413)) ) /*0x521161*/
   {
     if ( !*(unsigned char *)(*((unsigned int *)this + 432) + 3476) ) /*0x521175*/
       goto LABEL_55; /*0x521175*/

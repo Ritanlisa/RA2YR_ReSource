@@ -52,7 +52,7 @@ CaptureManagerClass::CaptureManagerClass(int a2, int a3, char a4)
   if ( MEMORY[0x89E100] < MEMORY[0x89E0F8] /*0x471868*/
     || (MEMORY[0x89E0FD] || !MEMORY[0x89E0F8])
     && MEMORY[0x89E104] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0x89E0F0] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0x89E0F0] + 8))(
          &MEMORY[0x89E0F0],
          MEMORY[0x89E0F8] + MEMORY[0x89E104],
          0) )
@@ -199,7 +199,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
       *((unsigned int *)this + 19) = v2; /*0x471a78*/
     }
   }
-  return v2; /*0x471a77*/
+  return (gamemd::ScenarioClass **)(v2);
 
 }
 } // namespace ra2
@@ -316,7 +316,7 @@ void CaptureManagerClass::CaptureUnit(int a2)
       if ( *((unsigned int *)this + 13) < (int)v14 /*0x471e18*/
         || (*((unsigned char *)this + 49) || !v14)
         && (v15 = *((unsigned int *)this + 14), v15 > 0)
-        && (*(unsigned __int8 (**)(int, char *, unsigned int))(*((unsigned int *)this + 9) + 8))(
+        && (*(uint8_t (**)(int, char *, unsigned int))(*((unsigned int *)this + 9) + 8))(
              (char *)this + 36,
              (char *)v14 + v15,
              0) )

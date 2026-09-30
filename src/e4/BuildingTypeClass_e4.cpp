@@ -261,14 +261,14 @@ int BuildingTypeClass::ConstructFull(char * Source)
   if ( g_TriggerClassCount < dword_A83C70 /*0x45e32b*/
     || (byte_A83C75 || !dword_A83C70)
     && dword_A83C7C > 0
-    && (v5 = (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_A83C68 + 8))(
+    && (v5 = (*(uint8_t (**)(int *, int, unsigned int))(dword_A83C68 + 8))(
                &dword_A83C68,
                dword_A83C7C + dword_A83C70,
                0) == 0,
         v4 = g_TriggerClassCount,
         !v5) )
   {
-    g_TriggerClassCount = v4 + 1; /*0x45e330*/
+    g_TriggerClassCount = (unsigned int)(v4 + 1);
     *((unsigned int *)g_TriggerTypeCount + v4) = this; /*0x45e33a*/
     v4 = g_TriggerClassCount; /*0x45e33d*/
   }
@@ -280,8 +280,8 @@ LABEL_11:
   }
   else
   {
-    v7 = g_TriggerTypeCount; /*0x45e348*/
-    while ( *v7 != this ) /*0x45e350*/
+    v7 = (unsigned int *)(g_TriggerTypeCount);
+    while ( *(unsigned int)(v7) != this ) /*0x45e350*/
     {
       ++v6; /*0x45e352*/
       ++v7; /*0x45e353*/
@@ -428,18 +428,18 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   *(unsigned int *)a1->__pad_0 = &BuildingTypeClass::`vftable'; /*0x45e58d*/
   *(unsigned int *)&a1->__pad_0[4] = &BuildingTypeClass::`vftable'; /*0x45e595*/
   *(unsigned int *)&a1->__pad_0[8] = &BuildingTypeClass::`vftable'; /*0x45e59c*/
-  *(unsigned int *)&a1->__pad_0[12] = &vt_BuildingTypeClass; /*0x45e5a3*/
+  *(unsigned int *)&a1-((unsigned int *)(>__pad_0))[12] = &vt_BuildingTypeClass; /*0x45e5a3*/
   if ( nextArrayIndex && a1[99].abstractFlags ) /*0x45e5ac*/
   {
     __3_YAXPAX_Z((void *)a1[99].abstractFlags); /*0x45e5b7*/
     a1[99].abstractFlags = 0; /*0x45e5bf*/
     LOBYTE(a1[99].nextArrayIndex) = 0; /*0x45e5c5*/
   }
-  if ( a1[150].__pad_0[4] && *(unsigned int *)a1[150].__pad_0 ) /*0x45e5d3*/
+  if ( a1[((unsigned int *)(150].__pad_0))[4] && *(unsigned int *)a1[150].__pad_0 ) /*0x45e5d3*/
   {
     __3_YAXPAX_Z(*(void **)a1[150].__pad_0); /*0x45e5de*/
     *(unsigned int *)a1[150].__pad_0 = 0; /*0x45e5e6*/
-    a1[150].__pad_0[4] = 0; /*0x45e5ec*/
+    a1[((unsigned int *)(150].__pad_0))[4] = 0; /*0x45e5ec*/
   }
   if ( LOBYTE(a1[148].nextArrayIndex) && a1[148].abstractFlags ) /*0x45e5fa*/
   {
@@ -453,7 +453,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     a1[148].referenceCount = 0; /*0x45e634*/
     LOBYTE(a1[148].NeedsSaveOrLink) = 0; /*0x45e63a*/
   }
-  if ( a1[149].__pad_0[4] && *(unsigned int *)a1[149].__pad_0 ) /*0x45e648*/
+  if ( a1[((unsigned int *)(149].__pad_0))[4] && *(unsigned int *)a1[149].__pad_0 ) /*0x45e648*/
   {
     __3_YAXPAX_Z(*(void **)a1[149].__pad_0); /*0x45e653*/
     *(unsigned int *)a1[149].__pad_0 = 0; /*0x45e65b*/
@@ -559,7 +559,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
         v5 = v4[5].ChargerBarrels[6]; /*0x45eaa5*/
         if ( v5 ) /*0x45eaad*/
         {
-          v6 = *(__int16 *)(v5 + 6); /*0x45eab3*/
+          v6 = *(int16_t *)(v5 + 6); /*0x45eab3*/
           v7 = 1; /*0x45eab9*/
           if ( v6 ) /*0x45eabe*/
             v7 = 75 / v6; /*0x45eac6*/
@@ -2049,7 +2049,7 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   IUnknown *v6; // eax
 
   if ( (*(int (__fastcall **)(void *))(*(unsigned int *)this + 456))(this) < 0 /*0x746030*/
-    || !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)aP1, (__int16 *)aP2, 0, 0, 0, 0) )
+    || !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (int16_t *)aP1, (int16_t *)aP2, 0, 0, 0, 0) )
   {
     return 1; /*0x746030*/
   }
@@ -2067,8 +2067,8 @@ int BuildingTypeClass::IsPlacementValid(IUnknown * aP1, IUnknown * aP2)
   {
     return 1; /*0x7460f7*/
   }
-  v6 = (IUnknown *)(*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)aP2) + 80) >> 8); /*0x7460cd*/
-  LOBYTE(v6) = (unsigned __int8)v6 & 1; /*0x7460d0*/
+  v6 = (IUnknown *)(*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)aP2) + 80) >> 8); /*0x7460cd*/
+  LOBYTE(v6) = (uint8_t)v6 & 1; /*0x7460d0*/
   return Pathfinding::CalcDistance((int)MEMORY[0x87E8B8], aP1, aP2, (TechnoClass *)this, 0, v6, 0) > 15; /*0x746052*/
 
 }

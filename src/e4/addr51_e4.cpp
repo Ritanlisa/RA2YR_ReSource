@@ -39,10 +39,10 @@ namespace gamemd {
 unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
 
-  unsigned __int8 v3; // bl
-  unsigned __int8 v4; // al
-  unsigned __int8 v5; // bl
-  unsigned __int8 result; // al
+  uint8_t v3; // bl
+  uint8_t v4; // al
+  uint8_t v5; // bl
+  uint8_t result; // al
 
   v3 = *((unsigned char *)this + 1); /*0x517394*/
   *((unsigned char *)this + 2) += a2 * (a3[2] - *((unsigned char *)this + 2)) / 256; /*0x517397*/
@@ -50,7 +50,7 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   v5 = *this; /*0x5173ba*/
   *((unsigned char *)this + 1) = v4; /*0x5173bc*/
   result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
-  *this = result; /*0x5173e1*/
+  *(_DWORD *)this = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 
 }
@@ -298,7 +298,7 @@ namespace gamemd {
 unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 {
   unsigned int result; // eax
-  const int * v4;
+  const unsigned int v4;
 
   result = a3; /*0x510e10*/
   if ( a3 < 16 ) /*0x510e19*/

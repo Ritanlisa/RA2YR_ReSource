@@ -142,14 +142,14 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
     *((unsigned int *)this + 10) = -1; /*0x432795*/
   }
   *((unsigned int *)this + 12) = 0; /*0x43279c*/
-  if ( Audio::IsSoundEnabled() ) /*0x43279f*/
+  if ( this->Audio::IsSoundEnabled() ) /*0x43279f*/
   {
-    v5 = Audio::GetDirectSound(); /*0x4327a8*/
+    v5 = this->Audio::GetDirectSound(); /*0x4327a8*/
     BinkSetSoundSystem(BinkOpenDirectSound, v5); /*0x4327b4*/
   }
   v6 = (char *)FullPath; /*0x4327ba*/
-  v7 = RawFileClass::Construct(FullPath); /*0x4327c3*/
-  v8 = (*(unsigned __int8 (**)(int, unsigned int))(*(unsigned int *)v7 + 20))(v7, 0) == 1; /*0x4327d6*/
+  v7 = ((RawFileClass *)(FullPath))->Construct(); /*0x4327c3*/
+  v8 = (*(uint8_t (**)(int, unsigned int))(*(unsigned int *)v7 + 20))(v7, 0) == 1; /*0x4327d6*/
   RawFileClass::Dtor(v32); /*0x4327d9*/
   if ( v8 ) /*0x4327e0*/
   {
@@ -160,9 +160,9 @@ LABEL_14:
   }
   lDistanceToMove[0] = 0; /*0x4327f8*/
   FullPath = 0; /*0x4327fc*/
-  if ( (unsigned __int8)LookupFileInfoCache(&FullPath, lDistanceToMove, 0) == 1 ) /*0x43280a*/
+  if ( (uint8_t)LookupFileInfoCache(&FullPath, lDistanceToMove, 0) == 1 ) /*0x43280a*/
   {
-    FileA = CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0); /*0x432824*/
+    FileA = (unsigned int)(CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0));
     *((unsigned int *)this + 10) = FileA; /*0x43282d*/
     if ( FileA != (HANDLE)-1 ) /*0x432830*/
     {

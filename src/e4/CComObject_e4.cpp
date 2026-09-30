@@ -71,7 +71,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
     v19 = 0; /*0x793803*/
     if ( v4 - 1 > 0 ) /*0x79380d*/
     {
-      v5 = &v26[1]; /*0x79380f*/
+      v5 = (int *)(&v26[1]);
       do /*0x793865*/
       {
         v6 = *v5; /*0x793813*/
@@ -90,10 +90,10 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
       while ( v19 < MEMORY[0xA8DA84] - 1 ); /*0x793865*/
     }
   }
-  Debug::Log(); /*0x793897*/
+  this->Debug::Log(); /*0x793897*/
   v9 = 0; /*0x79389c*/
   v20 = 0; /*0x7938a3*/
-  Debug::Log(); /*0x7938a7*/
+  this->Debug::Log(); /*0x7938a7*/
   v10 = MEMORY[0xA8DA84]; /*0x7938ac*/
   if ( MEMORY[0xA8DA84] > 0 ) /*0x7938b6*/
   {
@@ -105,7 +105,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
     {
       if ( v11 < v10 ) /*0x7938cb*/
       {
-        v13 = *v12; /*0x7938d1*/
+        v13 = (char *)(*v12);
         v14 = v12 + 1; /*0x7938d3*/
         v15 = (unsigned char *)this + 8 * v9; /*0x7938d6*/
         do /*0x793906*/
@@ -113,7 +113,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
           v16 = *v14; /*0x7938d9*/
           *(unsigned int *)v15 = v13; /*0x7938db*/
           *((unsigned int *)v15 + 1) = v16; /*0x7938e4*/
-          Debug::Log(); /*0x7938e7*/
+          this->Debug::Log(); /*0x7938e7*/
           v10 = MEMORY[0xA8DA84]; /*0x7938f0*/
           v17 = v20 + 1; /*0x7938f8*/
           v15 += 8; /*0x7938f9*/
@@ -325,7 +325,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
   {
     if ( a2 == -2147221387 ) /*0x7a52b2*/
     {
-      StringCSF = GetStringCSF((wchar_t *)MEMORY[0x84AC78], 0, g_Str_File_wonline_cpp, 5758); /*0x7a5383*/
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)MEMORY[0x84AC78], 0, g_Str_File_wonline_cpp, 5758));
     }
     else
     {
@@ -353,7 +353,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
   {
     if ( a2 == -2147221384 ) /*0x7a538c*/
     {
-      v4 = GetStringCSF(MEMORY[0x84AC2C], 0, g_Str_File_wonline_cpp, 5773); /*0x7a53d6*/
+      v4 = (wchar_t *)(GetStringCSF(MEMORY[0x84AC2C], 0, g_Str_File_wonline_cpp, 5773));
       wcscpy(&word_B77AD0, v4); /*0x7a53e1*/
       SetEvent(Handles); /*0x7a53ef*/
       return 0; /*0x7a53fa*/
@@ -366,8 +366,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
   }
   if ( a2 ) /*0x7a53ff*/
   {
-LABEL_19:
-    StringCSF = GetStringCSF(g_Str_TXT_CANT_CONNECT, 0, g_Str_File_wonline_cpp, 5779); /*0x7a5401*/
+LABEL_19: StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANT_CONNECT, 0, g_Str_File_wonline_cpp, 5779));
 LABEL_20:
     wcscpy(&word_B77AD0, StringCSF); /*0x7a5417*/
     SetEvent(Handles); /*0x7a542c*/
@@ -405,7 +404,7 @@ LABEL_20:
   byte_B77DC2 = 0; /*0x7a559d*/
   g_WOL_ChannelState = 0; /*0x7a55a4*/
   SetEvent(dword_B7368C); /*0x7a55ae*/
-  QueryNATPortWOL((unsigned __int16 *)MEMORY[0xA8DBC0]); /*0x7a55b9*/
+  QueryNATPortWOL((uint16_t *)MEMORY[0xA8DBC0]); /*0x7a55b9*/
   return 0; /*0x7a5308*/
 
 }
@@ -595,7 +594,7 @@ LABEL_16:
     *(unsigned int *)dword_B77788 = time(0); /*0x7a7dbc*/
     Debug::Log(); /*0x7a7dc1*/
     if ( a3 ) /*0x7a7dd2*/
-      dword_B77DD4 = (unsigned __int8)*(unsigned int *)(a3 + 32); /*0x7a7ddd*/
+      dword_B77DD4 = (uint8_t)*(unsigned int *)(a3 + 32); /*0x7a7ddd*/
     byte_B77E26 = 0; /*0x7a7dea*/
     byte_B77E27 = 1; /*0x7a7df1*/
     Network::SyncPlayerList(); /*0x7a7df8*/

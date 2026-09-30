@@ -94,10 +94,10 @@ LABEL_44:
         if ( v27 ) /*0x71ec51*/
           return 0; /*0x71ec51*/
       }
-      return 1; /*0x71ec60*/
+      return (gamemd::DynamicVector *)(1);
     case 14: /*0x71e964*/
       if ( *((unsigned int *)MEMORY[0xA8B230] + 1146) == -1 ) /*0x71ebf6*/
-        return 0; /*0x71ebf6*/
+        return (gamemd::DynamicVector *)(0);
       v24 = *((unsigned int *)MEMORY[0xA8B230] + 1146); /*0x71ebfc*/
       v25 = *((unsigned int *)MEMORY[0xA8B230] + 1148); /*0x71ec02*/
       if ( v24 == -1 ) /*0x71ec0b*/
@@ -164,7 +164,7 @@ LABEL_8:
         if ( --v16 < 0 ) /*0x71ea22*/
           return 0; /*0x71ea2d*/
       }
-      return 1; /*0x71ea1b*/
+      return (gamemd::DynamicVector *)(1);
     case 61: /*0x71e964*/
       v18 = -1; /*0x71ea36*/
       v19 = MEMORY[0xA8EB10] - 1; /*0x71ea39*/
@@ -183,7 +183,7 @@ LABEL_8:
           goto LABEL_22; /*0x71ea8e*/
         }
       }
-      v18 = v19; /*0x71ea90*/
+      v18 = (gamemd::DynamicVector *)(v19);
 LABEL_22:
       if ( v18 >= MEMORY[0xA8EB10] || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/
@@ -315,7 +315,7 @@ LABEL_22:
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v55, *((unsigned int *)this + 13)); /*0x71eddb*/
+            WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)MEMORY[0xA8B230], v55, *((unsigned int *)this + 13)));
             v32 = *WorldCoords; /*0x71ede0*/
             v33 = WorldCoords[1]; /*0x71ede6*/
             v34 = WorldCoords[2]; /*0x71edeb*/

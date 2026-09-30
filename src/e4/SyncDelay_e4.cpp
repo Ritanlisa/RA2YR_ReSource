@@ -49,7 +49,7 @@ void SyncDelay::Start()
   v1 = MEMORY[0x887350]; /*0x55e171*/
   if ( MEMORY[0x887348] != -1 ) /*0x55e179*/
   {
-    Ticks = Timer::GetTicks(); /*0x55e180*/
+    Ticks = this->Timer::GetTicks(); /*0x55e180*/
     v0 = MEMORY[0x887348]; /*0x55e185*/
     v3 = Ticks - MEMORY[0x887348]; /*0x55e18b*/
     if ( v3 >= v1 ) /*0x55e18f*/
@@ -72,7 +72,7 @@ void SyncDelay::Start()
       }
       if ( !v4 ) /*0x55e1ed*/
         goto LABEL_38; /*0x55e1ed*/
-      Event::Dispatch(); /*0x55e1f3*/
+      this->Event::Dispatch(); /*0x55e1f3*/
       if ( !MEMORY[0xA8EDA0] && MEMORY[0xA8ED80] == 1 ) /*0x55e20b*/
         break; /*0x55e20b*/
 LABEL_23:
@@ -120,7 +120,7 @@ LABEL_19:
   }
   if ( v10 ) /*0x55e2d6*/
   {
-    DDraw::WaitForIdle(); /*0x55e2d8*/
+    this->DDraw::WaitForIdle(); /*0x55e2d8*/
     while ( 1 ) /*0x55e317*/
     {
       while ( 1 ) /*0x55e2e3*/
@@ -129,7 +129,7 @@ LABEL_19:
         v13 = MEMORY[0x887350]; /*0x55e2e9*/
         if ( MEMORY[0x887348] != -1 ) /*0x55e2f1*/
         {
-          v14 = Timer::GetTicks(); /*0x55e2f8*/
+          v14 = this->Timer::GetTicks(); /*0x55e2f8*/
           v12 = MEMORY[0x887348]; /*0x55e2fd*/
           v15 = v14 - MEMORY[0x887348]; /*0x55e303*/
           if ( v15 >= v13 ) /*0x55e307*/
@@ -157,7 +157,7 @@ LABEL_38:
   if ( (byte_ABCD94 & 1) == 0 ) /*0x55e343*/
   {
     byte_ABCD94 |= 1u; /*0x55e34f*/
-    dword_ABCD88 = Timer::GetTicks(); /*0x55e35a*/
+    dword_ABCD88 = this->Timer::GetTicks(); /*0x55e35a*/
     dword_ABCD90 = 0; /*0x55e35f*/
     atexit(nullsub_23); /*0x55e36a*/
   }
@@ -170,14 +170,13 @@ LABEL_43:
       return result; /*0x55e399*/
     goto LABEL_44; /*0x55e399*/
   }
-  result = Timer::GetTicks() - dword_ABCD88; /*0x55e38b*/
+  result = this->Timer::GetTicks() - dword_ABCD88; /*0x55e38b*/
   if ( result < v19 ) /*0x55e393*/
   {
     v19 -= result; /*0x55e395*/
     goto LABEL_43; /*0x55e395*/
   }
-LABEL_44:
-  v20 = dword_ABCD40 + g_FrameCounter_Total; /*0x55e39b*/
+LABEL_44: v20 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total);
   v21 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total) <= 0x7FFFFFFF; /*0x55e3af*/
   dword_ABCD44 = (wchar_t *)dword_ABCD40; /*0x55e3b5*/
   dword_ABCD40 = 0; /*0x55e3ba*/

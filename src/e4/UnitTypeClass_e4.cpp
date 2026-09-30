@@ -29,12 +29,12 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   int v4; // eax
   int v5; // ebx
   int v7; // [esp+10h] [ebp-98h]
-  __int16 v8[2]; // [esp+14h] [ebp-94h] BYREF
+  int16_t v8[2]; // [esp+14h] [ebp-94h] BYREF
   char *v9; // [esp+18h] [ebp-90h]
   char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
-  v1 = 0; /*0x6b4dde*/
+  v1 = (char *)(0);
   v9 = this; /*0x6b4de3*/
   INIClass::ClearSection((int)this, (int)MEMORY[0x81732C], 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
@@ -50,8 +50,8 @@ INIClass * * UnitTypeClass::ReadINIEntry()
       {
         v5 = *((unsigned int *)MEMORY[0xA8EC1C] + v4); /*0x6b4e29*/
         sprintf(Buffer, MEMORY[0x817F6C], v7); /*0x6b4e37*/
-        sprintf(Source, MEMORY[0x83FFFC], (const char *)(v5 + 36), i, v1, *((unsigned __int8 *)v3 + 287)); /*0x6b4e55*/
-        LOBYTE(v4) = INIClass::SetString(v9, (unsigned __int8 *)MEMORY[0x81732C], Buffer, Source); /*0x6b4e71*/
+        sprintf(Source, MEMORY[0x83FFFC], (const char *)(v5 + 36), i, v1, *((uint8_t *)v3 + 287)); /*0x6b4e55*/
+        LOBYTE(v4) = INIClass::SetString(v9, (uint8_t *)MEMORY[0x81732C], Buffer, Source); /*0x6b4e71*/
         ++v7; /*0x6b4e76*/
       }
     }

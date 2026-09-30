@@ -45,7 +45,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   int v9; // ecx
   int v10; // ebp
   int v11; // eax
-  unsigned __int8 v12; // cl
+  uint8_t v12; // cl
   char v13; // al
   int *v14; // ecx
   int v15; // [esp+10h] [ebp-18h]
@@ -54,7 +54,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   int v18; // [esp+1Ch] [ebp-Ch]
   int v19; // [esp+20h] [ebp-8h] BYREF
 
-  v4 = *(unsigned char **)&MEMORY[0xA83D84]->__pad_0[4 * *((unsigned int *)this + 17)]; /*0x47f52c*/
+  v4 = (int *)(*(unsigned char **)&MEMORY[0xA83D84]->__pad_0[4 * *((unsigned int *)this + 17)]);
   v15 = 15 * *((char *)this + 283); /*0x47f534*/
   v16 = (*(int (**)(unsigned char *))(*(unsigned int *)v4 + 156))(v4); /*0x47f544*/
   v5 = BuildingClass::CalcDrawPos(this, (IUnknown *)&v19); /*0x47f54b*/
@@ -88,7 +88,7 @@ LABEL_9:
       *(int *)&MEMORY[0x87F8E4].__pad_5568[9416],
       *((unsigned int *)this + 13),
       v16,
-      (unsigned __int8)aP1 + *(__int16 *)(v16 + 6) / 2,
+      (uint8_t)aP1 + *(int16_t *)(v16 + 6) / 2,
       &v17,
       v8,
       17921,
@@ -269,7 +269,7 @@ void* TacticalClass::ProcessScroll(int * a2)
       LOBYTE(v3) = TacticalClass::UpdateScrollMaxBounds(&v10); /*0x4ac429*/
     }
   }
-  return v3; /*0x4ac42e*/
+  return (void *)(v3);
 
 }
 }
@@ -433,11 +433,7 @@ void TacticalClass::InterpolateView()
       {
         while ( 1 ) /*0x4ae384*/
         {
-          v9 = Coord::Subtract( /*0x4ae384*/
-                 v28,
-                 v1 - *(unsigned int *)(*((unsigned int *)MEMORY[0xA8ECBC] + v8) + 156),
-                 v2 - *(unsigned int *)(*((unsigned int *)MEMORY[0xA8ECBC] + v8) + 160),
-                 v3 - *(unsigned int *)(*((unsigned int *)MEMORY[0xA8ECBC] + v8) + 164));
+          v9 = (int *)(Coord::Subtract( /*0x4ae384*/ v28, v1 - *(unsigned int *)(*((unsigned int *)MEMORY[0xA8ECBC] + v8) + 156), v2 - *(unsigned int *)(*((unsigned int *)MEMORY[0xA8ECBC] + v8) + 160), v3 - *(unsigned int *)(*((unsigned int *)MEMORY[0xA8ECBC] + v8) + 164)));
           v27[0] = *v9; /*0x4ae38b*/
           v27[1] = v9[1]; /*0x4ae396*/
           v27[2] = v9[2]; /*0x4ae39d*/

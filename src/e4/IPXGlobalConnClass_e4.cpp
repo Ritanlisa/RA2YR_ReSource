@@ -26,7 +26,7 @@ namespace gamemd {
 void IPXGlobalConnClass::ReceivePacket(int a2)
 {
 
-  int v2; // esi
+  IPXGlobalConnClass * v2;
   unsigned int *v3; // ecx
   int i; // ebp
   int TileType; // edi
@@ -37,35 +37,35 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
   int v10; // ecx
   unsigned int *v11; // edx
 
-  v2 = this; /*0x540113*/
-  Debug::Log(); /*0x540132*/
+  v2 = (int)(this);
+  this->Debug::Log(); /*0x540132*/
   v3 = *(unsigned int **)(v2 + 4); /*0x540137*/
   for ( i = 0; i < v3[14]; ++i ) /*0x540144*/
   {
     TileType = Terrain::GetTileType(v3, i); /*0x540158*/
-    Debug::Log(); /*0x54015a*/
+    this->Debug::Log(); /*0x54015a*/
     if ( TileType ) /*0x540164*/
     {
-      Debug::Log(); /*0x540170*/
+      this->Debug::Log(); /*0x540170*/
       v6 = MEMORY[0x887338]; /*0x540175*/
       v7 = MEMORY[0x887340]; /*0x540186*/
       if ( MEMORY[0x887338] != -1 ) /*0x540188*/
       {
-        Ticks = Timer::GetTicks(); /*0x54019a*/
+        Ticks = this->Timer::GetTicks(); /*0x54019a*/
         v6 = MEMORY[0x887338]; /*0x54019c*/
         v7 += Ticks - MEMORY[0x887338]; /*0x5401a3*/
       }
       if ( a2 + *(unsigned int *)(TileType + 4) >= v7 ) /*0x5401b0*/
       {
         if ( v6 != -1 ) /*0x54023d*/
-          Timer::GetTicks(); /*0x540244*/
-        Debug::Log(); /*0x54026f*/
+          this->Timer::GetTicks(); /*0x540244*/
+        this->Debug::Log(); /*0x54026f*/
       }
       else
       {
         if ( v6 != -1 ) /*0x5401b9*/
-          Timer::GetTicks(); /*0x5401c0*/
-        Debug::Log(); /*0x5401eb*/
+          this->Timer::GetTicks(); /*0x5401c0*/
+        this->Debug::Log(); /*0x5401eb*/
         v9 = 0; /*0x5401fa*/
         v10 = *((unsigned int *)this + 53); /*0x5401ff*/
         if ( v10 > 0 ) /*0x540207*/
@@ -83,11 +83,11 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
 LABEL_14:
         PacketQueue::ReleaseEntry(*(unsigned int **)((char *)this + 4), 0, 0, i--, 0, 0); /*0x540226*/
       }
-      v2 = this; /*0x540277*/
+      v2 = (int)(this);
     }
     v3 = *(unsigned int **)(v2 + 4); /*0x54027b*/
   }
-  Debug::Log(); /*0x540296*/
+  this->Debug::Log(); /*0x540296*/
 
 }
 } // namespace gamemd
@@ -111,7 +111,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   IPXManagerClass v20; // [esp+28h] [ebp-Ch] BYREF
   int v21; // [esp+30h] [ebp-4h]
 
-  v7 = this; /*0x5403f4*/
+  v7 = (unsigned char *)(this);
   aP1_4 = this; /*0x5403fc*/
   Waypoint::InitInvalid(&v18); /*0x540400*/
   v18.Socket = *a3; /*0x540413*/
@@ -194,7 +194,7 @@ LABEL_13:
       v13,
       v12);
   }
-  return 1; /*0x5405f5*/
+  return (gamemd::HashTable_flat **)(1);
 
 }
 } // namespace gamemd
@@ -341,7 +341,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(unsigned int * Block, ch
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 52); /*0x540673*/
+  v3 = (unsigned int)((void *)*(Block + 52));
   *Block = &vt_IPXGlobalConnClass; /*0x540679*/
   if ( v3 ) /*0x540681*/
   {
@@ -353,7 +353,7 @@ IPXGlobalConnClass * IPXGlobalConnClass::QueryInterface(unsigned int * Block, ch
     __3_YAXPAX_Z((void *)*(Block + 51)); /*0x5406a1*/
     *(Block + 51) = 0; /*0x5406a9*/
   }
-  *Block = &vt_IPXConnClass; /*0x5406b5*/
+  *Block = (unsigned int)(&vt_IPXConnClass);
   ConnectionClass::dtor(Block); /*0x5406bb*/
   if ( (a2 & 1) != 0 ) /*0x5406c5*/
     __3_YAXPAX_Z(Block); /*0x5406c8*/

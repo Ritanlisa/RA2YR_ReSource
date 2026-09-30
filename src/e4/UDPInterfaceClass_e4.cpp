@@ -777,7 +777,7 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
 {
 
   if ( a3 && Network::IsBroadcastAddr(a3) ) /*0x7b36ce*/
-    return (*(__int16 (**)(void *, WinsockInterfaceClass *, unsigned int, WinsockInterfaceClass *))(*(unsigned int *)this + 16))( /*0x7b36ea*/
+    return (*(int16_t (**)(void *, WinsockInterfaceClass *, unsigned int, WinsockInterfaceClass *))(*(unsigned int *)this + 16))( /*0x7b36ea*/
              this,
              aP1,
              arg4,

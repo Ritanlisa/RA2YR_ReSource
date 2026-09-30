@@ -601,7 +601,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
       break; /*0x7b6132*/
     ++v5; /*0x7b613e*/
   }
-  v9 = *this; /*0x7b6141*/
+  v9 = (const char *)(*this);
   v20 = v5; /*0x7b6143*/
   if ( (*this)[v5] == 13 && v9[v5 + 1] == 10 ) /*0x7b6152*/
     v20 = v5 + 1; /*0x7b6155*/
@@ -789,7 +789,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   unsigned short *v20; // eax
   int v21; // [esp+10h] [ebp+4h]
 
-  v5 = a2; /*0x7b7c09*/
+  v5 = (const wchar_t *)(a2);
   v6 = *this; /*0x7b7c0b*/
   if ( *this ) /*0x7b7c0b*/
     v6 = (const wchar_t *)wcslen(*this); /*0x7b7c12*/
@@ -797,14 +797,14 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     return -1; /*0x7b7c20*/
   while ( 1 ) /*0x7b7c27*/
   {
-    v8 = *this; /*0x7b7c27*/
+    v8 = (const wchar_t *)(*this);
     if ( *this ) /*0x7b7c27*/
       v8 = (const wchar_t *)wcslen(*this); /*0x7b7c2e*/
     if ( v5 >= (int)v8 || strchr(String2, (*this)[v5]) ) /*0x7b7c48*/
       break; /*0x7b7c48*/
     ++v5; /*0x7b7c54*/
   }
-  v9 = *this; /*0x7b7c57*/
+  v9 = (const wchar_t *)(*this);
   v21 = v5; /*0x7b7c59*/
   if ( (*this)[v5] == 13 ) /*0x7b7c62*/
   {
@@ -882,7 +882,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
   unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b954c*/
-    Debug::Log(); /*0x7b955d*/
+    this->Debug::Log(); /*0x7b955d*/
   if ( BSurface::CreateTripleBuffer(this) && *((unsigned int *)this + 9) ) /*0x7b9574*/
   {
     v2 = 0; /*0x7b9585*/
@@ -892,8 +892,8 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
     if ( *((unsigned int *)this + 1) ) /*0x7b957f*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b95a8*/
-        Debug::Log(); /*0x7b95b9*/
-      FoundationSize = Building::GetFoundationSize(v21, *((unsigned int *)this + 2)); /*0x7b95cd*/
+        this->Debug::Log(); /*0x7b95b9*/
+      FoundationSize = ((Building *)(v21))->GetFoundationSize(*((unsigned int *)this + 2)); /*0x7b95cd*/
       v7 = *FoundationSize; /*0x7b95d2*/
       v8 = *((unsigned int *)this + 5); /*0x7b95d4*/
       v9 = FoundationSize[1]; /*0x7b95d7*/
@@ -906,7 +906,7 @@ AbstractClass * * E4Recv_7B9530::sub_7B9530()
       ReleaseMutex(hMutex); /*0x7b95fc*/
       v5 = v20; /*0x7b9602*/
     }
-    v12 = v2 + *((unsigned int *)this + 11); /*0x7b960c*/
+    v12 = (unsigned int)(v2 + *((unsigned int *)this + 11));
     *((unsigned int *)this + 18) = v2; /*0x7b9610*/
     v18[0] = v12; /*0x7b9616*/
     v13 = *(ObjectClass **)((char *)this + 48); /*0x7b961a*/

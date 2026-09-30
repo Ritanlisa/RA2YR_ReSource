@@ -51,7 +51,7 @@ int E4Recv_431BC0::sub_431BC0(int a2, size_t a3)
 
   if ( *((unsigned int *)this + 12) ) /*0x431bc8*/
     return !a2 && !a3; /*0x431bdb*/
-  if ( (*(unsigned __int8 (**)(size_t *, unsigned int))(*(unsigned int *)this + 80))(this, 0) ) /*0x431bef*/
+  if ( (*(uint8_t (**)(size_t *, unsigned int))(*(unsigned int *)this + 80))(this, 0) ) /*0x431bef*/
     *((unsigned int *)this + 18) = (*(int (**)(size_t *))(*(unsigned int *)this + 176))(this); /*0x431bfd*/
   else
     *((unsigned int *)this + 18) = 0; /*0x431c02*/
@@ -97,12 +97,12 @@ LABEL_14:
   *((unsigned int *)this + 20) = 0; /*0x431c8b*/
   if ( v6 ) /*0x431c8e*/
   {
-    v7 = 0; /*0x431c97*/
+    v7 = (size_t)(0);
     v11 = 0; /*0x431c9b*/
     v10 = v6; /*0x431c9f*/
     if ( v6 > (int)*((unsigned int *)this + 13) ) /*0x431ca3*/
       v10 = *((unsigned int *)this + 13); /*0x431ca5*/
-    v8 = (*(unsigned __int8 (**)(size_t *))(*(unsigned int *)this + 96))(this) == 0; /*0x431cb0*/
+    v8 = (*(uint8_t (**)(size_t *))(*(unsigned int *)this + 96))(this) == 0; /*0x431cb0*/
     v9 = *this; /*0x431cb2*/
     if ( v8 ) /*0x431cb6*/
     {
@@ -586,7 +586,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v51 = (char)(0);
   v69 = (char)(0);
   v59 = (char)(aP2[1]);
-  v46 = 0; /*0x437a6d*/
+  v46 = (char)(0);
   v47 = 0; /*0x437a74*/
   v60 = aP2[2]; /*0x437a78*/
   v61 = aP2[3]; /*0x437a8d*/
@@ -2437,7 +2437,7 @@ int E4Recv_43EE50::sub_43EE50()
   int result; // eax
   int v5; // [esp+8h] [ebp-4h] BYREF
 
-  if ( !(*(unsigned __int8 (**)(unsigned int *))(*(unsigned int *)this + 4080))(this) || !*((unsigned int *)this + 352) ) /*0x43ee63*/
+  if ( !(*(uint8_t (**)(unsigned int *))(*(unsigned int *)this + 4080))(this) || !*((unsigned int *)this + 352) ) /*0x43ee63*/
     return 0; /*0x43eea7*/
   Value = ProgressTimer::GetValue((unsigned short *)this + 452, &v5); /*0x43ee76*/
   v3 = *((unsigned int *)this + 352); /*0x43ee7d*/

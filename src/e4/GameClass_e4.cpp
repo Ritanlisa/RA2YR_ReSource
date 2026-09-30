@@ -55,7 +55,7 @@ void GameClass::processFrame( int a2, int a3)
   result = (unsigned int *)*((unsigned int *)this + 3); /*0x4381d3*/
   if ( !result ) /*0x4381d8*/
   {
-    v5 = __2_YAPAXI_Z(4u); /*0x4381dc*/
+    v5 = (unsigned int)(__2_YAPAXI_Z(4u));
     if ( v5 ) /*0x4381e6*/
       result = sub_437F50(v5); /*0x4381ea*/
     else
@@ -81,7 +81,7 @@ unsigned int * GameClass::updateUI(int a2, int a3)
   result = (unsigned int *)*((unsigned int *)this + 3); /*0x438303*/
   if ( !result ) /*0x438308*/
   {
-    v5 = __2_YAPAXI_Z(4u); /*0x43830c*/
+    v5 = (unsigned int)(__2_YAPAXI_Z(4u));
     if ( v5 ) /*0x438316*/
       result = sub_437F50(v5); /*0x43831a*/
     else
@@ -177,15 +177,15 @@ int GameClass::FrameLoop(int a2)
   DWORD Ticks; // [esp+10h] [ebp-18h]
   int v10; // [esp+18h] [ebp-10h]
 
-  Ticks = Timer::GetTicks(); /*0x5d2428*/
+  Ticks = this->Timer::GetTicks(); /*0x5d2428*/
   v10 = 1; /*0x5d242c*/
   do /*0x5d2511*/
   {
     do /*0x5d24dc*/
     {
-      Event::Dispatch(); /*0x5d2437*/
+      this->Event::Dispatch(); /*0x5d2437*/
       (*(void (**)(int *))(*(unsigned int *)this + 8))(this); /*0x5d2440*/
-      DDraw::WaitForIdle(); /*0x5d2443*/
+      this->DDraw::WaitForIdle(); /*0x5d2443*/
       DSurface::RenderToSurface(this, *(ObjectClass **)&MEMORY[0x87F8E4].__pad_5568[9408]); /*0x5d2451*/
       GameClass::loadScenarioFiles(this, *(ObjectClass **)&MEMORY[0x87F8E4].__pad_5568[9408]); /*0x5d245f*/
       MessageLoop(); /*0x5d2464*/
@@ -193,7 +193,7 @@ int GameClass::FrameLoop(int a2)
       {
         if ( Ticks != -1 ) /*0x5d2478*/
         {
-          v3 = Timer::GetTicks() - Ticks; /*0x5d2487*/
+          v3 = this->Timer::GetTicks() - Ticks; /*0x5d2487*/
           if ( v3 >= v10 ) /*0x5d248d*/
             v4 = 0; /*0x5d2493*/
           else
@@ -201,20 +201,20 @@ int GameClass::FrameLoop(int a2)
           v10 = v4; /*0x5d2495*/
         }
         DDraw::HandleSuspend(this); /*0x5d249f*/
-        Ticks = Timer::GetTicks(); /*0x5d24b3*/
+        Ticks = this->Timer::GetTicks(); /*0x5d24b3*/
       }
       Sleep(0); /*0x5d24b9*/
       v5 = v10; /*0x5d24bf*/
       if ( Ticks != -1 ) /*0x5d24c5*/
       {
-        v6 = Timer::GetTicks() - Ticks; /*0x5d24d0*/
+        v6 = this->Timer::GetTicks() - Ticks; /*0x5d24d0*/
         if ( v6 >= v10 ) /*0x5d24d6*/
           break; /*0x5d24d6*/
         v5 = v10 - v6; /*0x5d24d8*/
       }
     }
     while ( v5 > 0 ); /*0x5d24dc*/
-    Ticks = Timer::GetTicks(); /*0x5d24e2*/
+    Ticks = this->Timer::GetTicks(); /*0x5d24e2*/
     result = a2 - 1; /*0x5d2504*/
     v7 = a2 == 1; /*0x5d2504*/
     v10 = 1; /*0x5d2509*/
@@ -248,7 +248,7 @@ int GameClass::FindOpenSlot()
     }
     else
     {
-      if ( !*(unsigned char *)(v4 + 380) && Network::IsMultiplayerActive() ) /*0x5d63a8*/
+      if ( !*(unsigned char *)(v4 + 380) && this->Network::IsMultiplayerActive() ) /*0x5d63a8*/
         goto LABEL_8; /*0x5d63af*/
       v5 = GameClass::initPlayerData((unsigned char *)this + 48); /*0x5d63b7*/
     }

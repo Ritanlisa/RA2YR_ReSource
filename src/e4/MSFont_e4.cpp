@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/MSEngine_e4.hpp"
 
 // 0x5D55A0
 namespace gamemd {
@@ -438,9 +439,9 @@ namespace gamemd {
 VectorClass_flat * MSFont_18::QueryInterface(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
+  unsigned char (*)[4] v3;
 
-  v3 = (void *)*(Block + 1); /*0x5d56e3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_HWND; /*0x5d56e6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d56f0*/
   {
@@ -461,9 +462,9 @@ namespace gamemd {
 DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
+  unsigned char (*)[4] v3;
 
-  v3 = (void *)*(Block + 1); /*0x5d5733*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_HWND; /*0x5d5736*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d5740*/
   {
@@ -484,9 +485,9 @@ namespace gamemd {
 DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(unsigned int * Block, char a2)
 {
 
-  void *v3; // eax
+  unsigned char (*)[4] v3;
 
-  v3 = (void *)*(Block + 1); /*0x5d57d3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_AcceleratorTracker; /*0x5d57d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d57e0*/
   {

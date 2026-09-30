@@ -39,12 +39,12 @@ void WaypointPathClass::Init()
   if ( dword_B72618 < dword_B72610 /*0x7637ac*/
     || (byte_B72615 || !dword_B72610)
     && dword_B7261C > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_B72608 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_B72608 + 8))(
          &dword_B72608,
          dword_B72610 + dword_B7261C,
          0) )
   {
-    v2 = dword_B72618++; /*0x7637b9*/
+    v2 = (unsigned int)(dword_B72618++);
     *((unsigned int *)dword_B7260C + v2) = this; /*0x7637c8*/
   }
   return this; /*0x7637cd*/

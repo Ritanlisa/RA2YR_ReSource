@@ -191,7 +191,7 @@ LABEL_36:
               if ( *(unsigned int *)(v1 + 1684) < v21 /*0x4540d8*/
                 || (*(unsigned char *)(v1 + 1681) || !v21)
                 && (v22 = *(unsigned int *)(v1 + 1688), v22 > 0)
-                && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)(v1 + 1668) + 8))(
+                && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(v1 + 1668) + 8))(
                      v1 + 1668,
                      v21 + v22,
                      0) )
@@ -219,7 +219,7 @@ LABEL_36:
           if ( *(unsigned int *)(v1 + 1660) < v14 /*0x454029*/
             || (*(unsigned char *)(v1 + 1657) || !v14)
             && (v15 = *(unsigned int *)(v1 + 1664), v15 > 0)
-            && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)(v1 + 1644) + 8))(
+            && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)(v1 + 1644) + 8))(
                  v1 + 1644,
                  v14 + v15,
                  0) )
@@ -251,7 +251,7 @@ int BuildingClass::AssignDestination_SyncLog()
 
   if ( *((unsigned int *)this + 43) != 19 ) /*0x455d5a*/
   {
-    if ( (*(unsigned __int8 (**)(#377 *))(*(unsigned int *)this + 644))(this) /*0x455d73*/
+    if ( (*(uint8_t (**)(#377 *))(*(unsigned int *)this + 644))(this) /*0x455d73*/
       || *(unsigned char *)(*((unsigned int *)this + 328) + 5817) )
     {
       TechnoClass::SetFocus(this, aP1); /*0x455d80*/

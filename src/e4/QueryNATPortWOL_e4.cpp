@@ -26,7 +26,7 @@ unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
     *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x7aed0d*/
     *((unsigned char *)this + 13) = 1; /*0x7aed10*/
   }
-  return this; /*0x7aecfd*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd

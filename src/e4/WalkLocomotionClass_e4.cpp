@@ -31,11 +31,11 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   int v5; // esi
   unsigned int *v6; // edi
   int v7; // ecx
-  __int64 v8; // kr00_8
+  int64_t v8; // kr00_8
   unsigned int *v9; // eax
   int v11; // [esp-4h] [ebp-20h]
   unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
-  __int64 v13; // [esp+14h] [ebp-8h]
+  int64_t v13; // [esp+14h] [ebp-8h]
 
   *(unsigned int *)(a1 + 84) = a2; /*0x6a0323*/
   *(unsigned int *)(a1 + 88) = 0; /*0x6a0326*/
@@ -58,7 +58,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( __PAIR64__(a4, a3) != __PAIR64__(MEMORY[0xB077FC], v4) /*0x6a03be*/
       || (LOBYTE(v4) = BYTE4(MEMORY[0xB077FC]), HIDWORD(a4) != HIDWORD(MEMORY[0xB077FC])) )
     {
-      v8 = v13; /*0x6a03c4*/
+      v8 = (unsigned int *)(v13);
       *(unsigned char *)(v5 + 99) = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)(a1 + 64) = v8; /*0x6a03d0*/
@@ -136,14 +136,14 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
       if ( v10 ) /*0x6a3fbb*/
       {
         v11 = 4 * v10; /*0x6a3fc1*/
-        v12 = dword_7F296C[v11]; /*0x6a3fc4*/
+        v12 = ((unsigned int *)(dword_7F296C))[v11]; /*0x6a3fc4*/
         if ( v12 > -1 ) /*0x6a3fd3*/
         {
-          v13 = (int *)(dword_7F2960[v11] + 12 * v12); /*0x6a3fdc*/
+          v13 = (int *)(((unsigned int *)(dword_7F2960))[v11] + 12 * v12); /*0x6a3fdc*/
           a1 = v13[2]; /*0x6a3fe2*/
           if ( *(unsigned int *)(v4 + 88) < v12 ) /*0x6a3feb*/
           {
-            v14 = v13[1]; /*0x6a3ff3*/
+            v14 = (int *)(v13[1]);
             v20[0] = *v13; /*0x6a3ff6*/
             v20[1] = v14; /*0x6a3fff*/
             v15 = WalkLocomotion::TransformCoords((unsigned int *)(v4 - 4), v21, v20, &a1); /*0x6a4011*/
@@ -153,8 +153,8 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
             v21[0] = *v18; /*0x6a4025*/
             v21[1] = v18[1]; /*0x6a402c*/
             v22 = v18[2]; /*0x6a4033*/
-            if ( (unsigned __int16)(v16 / 256) == (unsigned __int16)(a2 / 256) /*0x6a409b*/
-              && (unsigned __int16)(v17 / 256) == (unsigned __int16)(a3 / 256)
+            if ( (uint16_t)(v16 / 256) == (uint16_t)(a2 / 256) /*0x6a409b*/
+              && (uint16_t)(v17 / 256) == (uint16_t)(a3 / 256)
               && (int)abs32(v22 - a4) <= MEMORY[0xB07838] )
             {
               return 1; /*0x6a40a5*/
@@ -164,8 +164,8 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
       }
     }
   }
-  return (unsigned __int16)(v23 / 256) == (unsigned __int16)(a2 / 256) /*0x6a411e*/
-      && (unsigned __int16)(v24 / 256) == (unsigned __int16)(a3 / 256)
+  return (uint16_t)(v23 / 256) == (uint16_t)(a2 / 256) /*0x6a411e*/
+      && (uint16_t)(v24 / 256) == (uint16_t)(a3 / 256)
       && (int)abs32(v25 - a4) <= MEMORY[0xB07838];
 
 }

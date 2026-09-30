@@ -28,6 +28,7 @@
 namespace gamemd {
 char TriggerClass::FindByEventType(char a1)
 {
+    unsigned int v8 = 0;  /* G37 hoist */
 
   unsigned int *v2; // esi
   int v3; // eax
@@ -37,7 +38,7 @@ char TriggerClass::FindByEventType(char a1)
   size_t v7; // eax
   __int128 v8; // [esp+28h] [ebp-20h] BYREF
   unsigned int v9[2]; // [esp+38h] [ebp-10h] BYREF
-  __int64 v10; // [esp+40h] [ebp-8h]
+  int64_t v10; // [esp+40h] [ebp-8h]
 
   if ( !MEMORY[0xAC1DCC] ) /*0x61095d*/
     return 0; /*0x61095f*/
@@ -49,7 +50,7 @@ char TriggerClass::FindByEventType(char a1)
     v2 = __2_YAPAXI_Z(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
-      v4 = HIDWORD(MEMORY[0xAC1CB8]); /*0x61099b*/
+      v4 = (unsigned int)(HIDWORD(MEMORY[0xAC1CB8]));
       v3 = DWORD2(MEMORY[0xAC1CB8]); /*0x61099b*/
       v2[1] = DWORD2(MEMORY[0xAC1CB8]); /*0x6109a1*/
       v2[2] = v4; /*0x6109a9*/
@@ -81,7 +82,7 @@ char TriggerClass::FindByEventType(char a1)
   if ( MEMORY[0xAC48B0] == -1 ) /*0x610a40*/
     v6 = -1; /*0x610a42*/
   else
-    v6 = ((int)(unsigned __int8)MEMORY[0xAC48B0] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x610a8d*/
+    v6 = ((int)(uint8_t)MEMORY[0xAC48B0] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]) /*0x610a8d*/
        | (BYTE1(MEMORY[0xAC48B0]) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
        | (BYTE2(MEMORY[0xAC48B0]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);
   (*(void (**)(int, unsigned int, unsigned int))(*(unsigned int *)MEMORY[0x887308] + 92))(MEMORY[0x887308], 0, 0); /*0x610a9d*/

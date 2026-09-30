@@ -453,7 +453,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(unsigned int * Bl
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x488033*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_ObjectClass; /*0x488036*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x488040*/
   {
@@ -500,17 +500,17 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   unsigned char *v16; // [esp+28h] [ebp+8h]
 
   v4 = (AbstractClass *)*((unsigned int *)this + 2); /*0x6c89e9*/
-  if ( (unsigned int)&v4->__pad_0[12] > *((unsigned int *)this + 1) + *this ) /*0x6c89f9*/
+  if ( (unsigned int)&v4-((unsigned int *)(>__pad_0))[12] > *((unsigned int *)this + 1) + *this ) /*0x6c89f9*/
     return 0; /*0x6c89f9*/
   v15 = (AbstractClass *)*((unsigned int *)this + 2); /*0x6c89fd*/
-  *((unsigned int *)this + 2) = &v4->__pad_0[12]; /*0x6c8a01*/
+  *((unsigned int *)this + 2) = &v4-((unsigned int *)(>__pad_0))[12]; /*0x6c8a01*/
   if ( !v4 ) /*0x6c8a04*/
     return 0; /*0x6c8a06*/
   *(unsigned short *)v4->__pad_0 = *(unsigned short *)a3; /*0x6c8a19*/
-  *(unsigned short *)&v4->__pad_0[2] = *(unsigned short *)(a3 + 4); /*0x6c8a20*/
-  *(unsigned short *)&v4->__pad_0[4] = *(unsigned short *)(a3 + 16); /*0x6c8a28*/
-  *(unsigned short *)&v4->__pad_0[6] = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
-  *(unsigned int *)&v4->__pad_0[8] = *((unsigned int *)this + 2); /*0x6c8a3f*/
+  *(unsigned short *)&v4-((unsigned int *)(>__pad_0))[2] = *(unsigned short *)(a3 + 4); /*0x6c8a20*/
+  *(unsigned short *)&v4-((unsigned int *)(>__pad_0))[4] = *(unsigned short *)(a3 + 16); /*0x6c8a28*/
+  *(unsigned short *)&v4-((unsigned int *)(>__pad_0))[6] = *(unsigned short *)(a3 + 20); /*0x6c8a34*/
+  *(unsigned int *)&v4-((unsigned int *)(>__pad_0))[8] = *((unsigned int *)this + 2); /*0x6c8a3f*/
   v7 = CellStruct::Copy((int *)(a3 + 8), (IUnknown *)&v14); /*0x6c8a42*/
   v8 = aP1; /*0x6c8a49*/
   v16 = (unsigned char *)(*(int (**)(AbstractClass *, unsigned int, unsigned int))(*(unsigned int *)aP1->__pad_0 + 92))( /*0x6c8a61*/

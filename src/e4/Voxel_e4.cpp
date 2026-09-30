@@ -27,7 +27,7 @@ int Voxel::BuildIndexTable()
   int v1; // ebx
   int v3; // edx
   int v4; // edi
-  __int16 v5; // bx
+  int16_t v5; // bx
   int v6; // eax
   int v7; // esi
   int v8; // edx
@@ -38,7 +38,7 @@ int Voxel::BuildIndexTable()
   char v14; // [esp+10h] [ebp-10h]
   int v15; // [esp+14h] [ebp-Ch]
   int i; // [esp+18h] [ebp-8h]
-  __int16 j; // [esp+1Ch] [ebp-4h]
+  int16_t j; // [esp+1Ch] [ebp-4h]
 
   v1 = 0; /*0x748229*/
   if ( unk_B1D14C ) /*0x748230*/
@@ -84,10 +84,10 @@ int Voxel::BuildIndexTable()
     {
       v6 = 0; /*0x7482ee*/
       v7 = v3 << v13; /*0x7482f3*/
-      v8 = (unsigned __int16)(32 * (v5 | v3)); /*0x7482f5*/
+      v8 = (uint16_t)(32 * (v5 | v3)); /*0x7482f5*/
       do /*0x748320*/
       {
-        v9 = v8 | (unsigned __int16)v6; /*0x748311*/
+        v9 = v8 | (uint16_t)v6; /*0x748311*/
         v10 = v7 | v4 | (v6++ << v14); /*0x748315*/
         *((unsigned short *)unk_B1D14C + v9) = v10; /*0x74831b*/
       }
@@ -155,7 +155,7 @@ AbstractClass * Voxel::RenderFrame()
     v6 = MEMORY[0xB2D820]; /*0x75459b*/
     do /*0x7545a8*/
     {
-      *v4 = v5; /*0x75459d*/
+      *v4 = (unsigned int)(v5);
       v5 += 136; /*0x75459f*/
       ++v4; /*0x7545a4*/
       --v6; /*0x7545a7*/
@@ -3114,7 +3114,7 @@ int Voxel::freeSectionMemory(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x763346*/
       return 0; /*0x763346*/
     v4 = *((unsigned int *)this + 5); /*0x763348*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x763358*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x763358*/
       return 0; /*0x76335f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x763365*/

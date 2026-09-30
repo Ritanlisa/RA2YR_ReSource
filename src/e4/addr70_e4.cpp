@@ -64,8 +64,8 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   int v32; // [esp+38h] [ebp-74h]
   int v33[2]; // [esp+3Ch] [ebp-70h] BYREF
   int v34[2]; // [esp+44h] [ebp-68h] BYREF
-  int * v35;
-  unsigned int v36;
+  unsigned int v35;
+  int * v36;
   unsigned int v37[2]; // [esp+54h] [ebp-58h] BYREF
   int v38[4]; // [esp+5Ch] [ebp-50h] BYREF
   int * v39;
@@ -146,8 +146,8 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v19);
   }
   v20 = (int *)((unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)));
-  v35 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))))))))))))))))));
-  v36 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))));
+  v35 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2)))))))))))))))))))));
+  v36 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(-2))))))))));
   v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
   v43 = (int *)(*v22);
@@ -239,9 +239,9 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   int v38; // [esp+58h] [ebp-48h] BYREF
   int v39; // [esp+5Ch] [ebp-44h]
   int v40; // [esp+60h] [ebp-40h]
-  void * v41;
-  void * v42;
-  unsigned int v43;
+  unsigned int v41;
+  unsigned int v42;
+  void * v43;
   int v44[4]; // [esp+70h] [ebp-30h] BYREF
   unsigned int v45[4]; // [esp+80h] [ebp-20h] BYREF
   unsigned int v46[4]; // [esp+90h] [ebp-10h] BYREF
@@ -951,7 +951,7 @@ int E4Recv_7011A0::sub_7011A0()
   double v14; // [esp+1Ch] [ebp-14h]
   unsigned char v15[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  if ( (*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 84))(this) ) /*0x7011a9*/
+  if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 84))(this) ) /*0x7011a9*/
     return 0; /*0x7011b1*/
   v3 = MEMORY[0x8871E0][1].?[11]; /*0x7011bd*/
   if ( !v3 ) /*0x7011c5*/
@@ -964,7 +964,7 @@ int E4Recv_7011A0::sub_7011A0()
   LOWORD(v12) = *v6 / 256; /*0x7011ff*/
   HIWORD(v12) = v6[1] / 256; /*0x701218*/
   v13 = v12; /*0x701225*/
-  v7 = (char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v13); /*0x701234*/
+  v7 = (char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v13); /*0x701234*/
   v8 = ScenarioClass::CalcMinShroudLevel(&MEMORY[0x87F7E8]); /*0x701236*/
   v9 = (double)((v7[283] - v8) / v3) * v14; /*0x701259*/
   if ( v9 >= *(double *)&MEMORY[0x8871E0][1].?[1] ) /*0x70126c*/

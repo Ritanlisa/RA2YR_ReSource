@@ -98,7 +98,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   char *v2; // edi
   int KeyCount; // ebp
   int v5; // esi
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int v7; // esi
   int v8; // eax
   char *v9; // ebp
@@ -113,16 +113,16 @@ void * ThemeClass::InitializeThemes(char * a2)
   int v18; // [esp+14h] [ebp-24h]
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
-  v2 = a2; /*0x720597*/
-  KeyCount = INIClass::GetKeyCount(a2, (unsigned __int8 *)g_INI_Key_Themes); /*0x7205a9*/
+  v2 = (int)(a2);
+  KeyCount = INIClass::GetKeyCount(a2, (uint8_t *)g_INI_Key_Themes); /*0x7205a9*/
   v5 = 0; /*0x7205ab*/
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2, (unsigned __int8 *)g_INI_Key_Themes, v5); /*0x7205d1*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v2, (uint8_t *)g_INI_Key_Themes, v5); /*0x7205d1*/
     if ( INIClass::GetString( /*0x7205de*/
-           (unsigned __int8 ***)v2,
-           (unsigned __int8 **)g_INI_Key_Themes,
+           (uint8_t ***)v2,
+           (uint8_t **)g_INI_Key_Themes,
            StringByIndex,
            (char *)&MEMORY[0x87F7E8][10719],
            Destination,
@@ -163,7 +163,7 @@ LABEL_10:
         if ( *((unsigned int *)this + 9) < v10 /*0x7206d1*/
           || (*((unsigned char *)this + 33) || !v10)
           && (v11 = *((unsigned int *)this + 10), v11 > 0)
-          && (*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 5) + 8))((char *)this + 20, v10 + v11, 0) )
+          && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 5) + 8))((char *)this + 20, v10 + v11, 0) )
         {
           v12 = *((unsigned int *)this + 9); /*0x7206d8*/
           v13 = *((unsigned int *)this + 6); /*0x7206db*/
@@ -175,17 +175,17 @@ LABEL_10:
       {
         v9 = *(char **)(*((unsigned int *)this + 6) + 4 * v7); /*0x7206ec*/
       }
-      ThemeClass::ReadThemeEntry((int)v9, (unsigned __int8 ***)a2); /*0x7206f6*/
+      ThemeClass::ReadThemeEntry((int)v9, (uint8_t ***)a2); /*0x7206f6*/
       v5 = i; /*0x7206fb*/
       KeyCount = v18; /*0x7206ff*/
       v2 = a2; /*0x720703*/
     }
     ++v5; /*0x720707*/
   }
-  result = Audio::GetEnabled(); /*0x720714*/
+  result = this->Audio::GetEnabled(); /*0x720714*/
   if ( result ) /*0x72071b*/
   {
-    Enabled = Audio::GetEnabled(); /*0x720724*/
+    Enabled = (unsigned int)(this->Audio::GetEnabled());
     result = AudioStream::Constructor(Enabled, 0x4E20u); /*0x72072b*/
     *((unsigned int *)this + 11) = result; /*0x720732*/
     if ( result ) /*0x720735*/

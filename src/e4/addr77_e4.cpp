@@ -137,7 +137,7 @@ HKEY E4Recv_7741C0::FindRegistrySubKey()
   {
     return 0; /*0x7742cf*/
   }
-  p_uniqueId = &cbMaxSubKeyLen->uniqueId; /*0x77421f*/
+  p_uniqueId = (int *)(&cbMaxSubKeyLen->uniqueId);
   v5 = (CCINIClass *)__2_YAPAXI_Z((size_t)&cbMaxSubKeyLen->uniqueId); /*0x77422c*/
   lpClass = (LPSTR)__2_YAPAXI_Z(cbMaxClassLen + 1); /*0x774235*/
   ebp2 = 0; /*0x774240*/

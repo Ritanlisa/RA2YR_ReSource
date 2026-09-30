@@ -66,7 +66,7 @@ AbstractClass * DSurface::Construct( IUnknown * aP1, DSurface * aP2, ObjectClass
   ObjectClass *v7; // edi
   IUnknown *v8; // eax
 
-  v6 = (unsigned char *)this + 28; /*0x4ba5b0*/
+  v6 = (char *)((unsigned char *)this + 28);
   *((unsigned int *)this + 1) = aP1; /*0x4ba5b5*/
   *((unsigned int *)this + 2) = aP2; /*0x4ba5b8*/
   *((unsigned int *)this + 3) = 0; /*0x4ba5bb*/
@@ -105,7 +105,7 @@ AbstractClass * DSurface::Construct( IUnknown * aP1, DSurface * aP2, ObjectClass
       *((unsigned char *)this + 25) = (*(unsigned int *)v8->__pad_68 & 0x4000) != 0; /*0x4ba695*/
     }
   }
-  return this; /*0x4ba69a*/
+  return (gamemd::AbstractClass *)(this);
 
 }
 } // namespace gamemd
@@ -177,13 +177,13 @@ AbstractClass * * DSurface::CreatePrimary()
   int v28; // [esp+20h] [ebp-8h] BYREF
   int v29; // [esp+24h] [ebp-4h] BYREF
 
-  Debug::Log(); /*0x4ba780*/
-  v1 = DDraw::CheckCapabilities(); /*0x4ba78d*/
+  this->Debug::Log(); /*0x4ba780*/
+  v1 = this->DDraw::CheckCapabilities(); /*0x4ba78d*/
   BYTE2(MEMORY[0x87F7E8][34177]) = (v1 & 0x40) != 0; /*0x4ba79b*/
-  Debug::Log(); /*0x4ba7b4*/
+  this->Debug::Log(); /*0x4ba7b4*/
   if ( (v1 & 0x10) == 0 ) /*0x4ba7bf*/
     g_DDraw_UseHWBlit = 0; /*0x4ba7c1*/
-  Debug::Log(); /*0x4ba7e3*/
+  this->Debug::Log(); /*0x4ba7e3*/
   v2 = __2_YAPAXI_Z(36); /*0x4ba7ea*/
   v3 = v2; /*0x4ba7ef*/
   if ( v2 ) /*0x4ba7f8*/
@@ -215,7 +215,7 @@ AbstractClass * * DSurface::CreatePrimary()
     *(unsigned int *)(*(unsigned int *)(v5 + 32) + 4) |= 0x20u; /*0x4ba879*/
     *(unsigned int *)(*(unsigned int *)(v5 + 32) + 20) = this != 0; /*0x4ba87f*/
   }
-  Debug::Log(); /*0x4ba887*/
+  this->Debug::Log(); /*0x4ba887*/
   v6 = (unsigned int *)(v5 + 28); /*0x4ba897*/
   v7 = (*(int (**)(unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)MEMORY[0x87F7E8][33323] + 24))( /*0x4ba8a1*/
          MEMORY[0x87F7E8][33323],
@@ -224,7 +224,7 @@ AbstractClass * * DSurface::CreatePrimary()
          0);
   if ( !v7 ) /*0x4ba8a8*/
   {
-    Debug::Log(); /*0x4ba8b3*/
+    this->Debug::Log(); /*0x4ba8b3*/
     if ( this ) /*0x4ba8bd*/
     {
       v8 = *v6; /*0x4ba8bf*/
@@ -242,7 +242,7 @@ AbstractClass * * DSurface::CreatePrimary()
     memset(*(void **)(v5 + 32), 0, 0x6Cu); /*0x4ba90b*/
     **(unsigned int **)(v5 + 32) = 108; /*0x4ba910*/
     if ( (*(int (**)(unsigned int, unsigned int))(*(unsigned int *)*v6 + 88))(*v6, *(unsigned int *)(v5 + 32)) ) /*0x4ba91f*/
-      Debug::Log(); /*0x4ba92b*/
+      this->Debug::Log(); /*0x4ba92b*/
     v11 = *(unsigned int **)(v5 + 32); /*0x4ba933*/
     *(unsigned int *)(v5 + 16) = (unsigned int)(v11[21] + 7) >> 3; /*0x4ba948*/
     v12 = (v11[26] & 0x4000) != 0; /*0x4ba951*/
@@ -561,8 +561,8 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   }
   v10 = (void **)a3; /*0x4bb154*/
   v42 = 0; /*0x4bb15b*/
-  if ( !(*(unsigned __int8 (**)(unsigned int *))(*a3 + 132))(a3) /*0x4bb19d*/
-    || (*(unsigned __int8 (**)(unsigned int *))(*a3 + 108))(a3) == 1
+  if ( !(*(uint8_t (**)(unsigned int *))(*a3 + 132))(a3) /*0x4bb19d*/
+    || (*(uint8_t (**)(unsigned int *))(*a3 + 108))(a3) == 1
     || (unsigned char)a7 == 1
     || (v11 = (*(int (**)(unsigned int *))(*a3 + 112))(a3),
         v12 = (*(int (**)(int *))(*(unsigned int *)this + 112))(this) == v11,
@@ -578,7 +578,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
   if ( !v42 /*0x4bb1f8*/
     && v13 == 1
     && (!*((unsigned char *)this + 25)
-     || (*((unsigned __int8 (**)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
+     || (*((uint8_t (**)(void **))*v10 + 33))(v10) == 1 && !*((unsigned char *)v10 + 25))
     && aP5->field_8 == (void *)a2[2]
     && aP5->field_C == (void *)a2[3] )
   {
@@ -772,7 +772,7 @@ void* DSurface::FillRectEx(int a2, int a3, int a4)
   if ( *((char *)this + 7) && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
   {
     if ( !g_DDraw_UseHWBlit /*0x4bb675*/
-      || (*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 108))(this)
+      || (*(uint8_t (**)(int *))(*(unsigned int *)this + 108))(this)
       || (*(int (**)(unsigned int, int))(*(unsigned int *)*((char *)this + 7) + 52))(*((char *)this + 7), 1) )
     {
       return XSurface::FillRectEx(a2, a3, a4); /*0x4bb81d*/
@@ -2426,7 +2426,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   int v15; // ecx
   int v16; // ecx
   int v17; // ebp
-  unsigned __int64 v18; // rax
+  uint64_t v18; // rax
   int v19; // ebx
   unsigned int v20; // esi
   int v21; // edi
@@ -2455,7 +2455,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   int v44; // ecx
   unsigned int *v45; // ebx
   int v46; // edx
-  __int16 v47; // ax
+  int16_t v47; // ax
   unsigned short *v48; // eax
   unsigned short *v49; // eax
   bool v50; // zf
@@ -2484,7 +2484,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   int v74; // [esp+34h] [ebp-54h]
   int v75; // [esp+38h] [ebp-50h]
   int v76; // [esp+3Ch] [ebp-4Ch]
-  unsigned __int64 v78; // [esp+44h] [ebp-44h]
+  uint64_t v78; // [esp+44h] [ebp-44h]
   int v79; // [esp+44h] [ebp-44h]
   int v80; // [esp+44h] [ebp-44h]
   double v81; // [esp+48h] [ebp-40h]
@@ -2493,8 +2493,8 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   int v84; // [esp+48h] [ebp-40h]
   int v85; // [esp+4Ch] [ebp-3Ch]
   unsigned int v86[5]; // [esp+54h] [ebp-34h] BYREF
-  unsigned __int64 v87; // [esp+68h] [ebp-20h]
-  unsigned __int64 v88; // [esp+70h] [ebp-18h]
+  uint64_t v87; // [esp+68h] [ebp-20h]
+  uint64_t v88; // [esp+70h] [ebp-18h]
   int v89; // [esp+78h] [ebp-10h] BYREF
   int v90; // [esp+7Ch] [ebp-Ch]
   int v91; // [esp+80h] [ebp-8h]
@@ -2545,7 +2545,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
   v22 = v19; /*0x4be04e*/
   v23 = HIDWORD(v87); /*0x4be050*/
   *(unsigned long long *)&v86[1] = v88; /*0x4be05c*/
-  if ( !(unsigned __int8)ClipLine(&v89) ) /*0x4be060*/
+  if ( !(uint8_t)ClipLine(&v89) ) /*0x4be060*/
     return 0; /*0x4be060*/
   v98 = v21; /*0x4be07b*/
   v97 = v17; /*0x4be082*/
@@ -2634,7 +2634,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
         do /*0x4be99b*/
         {
           HIWORD(v61) = 0; /*0x4be7f1*/
-          if ( (unsigned __int16)v99 < *v35 ) /*0x4be7fa*/
+          if ( (uint16_t)v99 < *v35 ) /*0x4be7fa*/
           {
             v58 = v84; /*0x4be89e*/
             LOWORD(v61) = *v37; /*0x4be7f6*/
@@ -2703,7 +2703,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
         do /*0x4be78f*/
         {
           HIWORD(v54) = 0; /*0x4be5e9*/
-          if ( (unsigned __int16)v99 < *v35 ) /*0x4be5f2*/
+          if ( (uint16_t)v99 < *v35 ) /*0x4be5f2*/
           {
             v52 = v83; /*0x4be696*/
             LOWORD(v54) = *v37; /*0x4be5ee*/
@@ -2772,7 +2772,7 @@ void* DSurface::DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4
       do /*0x4be58d*/
       {
         HIWORD(v46) = 0; /*0x4be3ec*/
-        if ( (unsigned __int16)v99 < *v35 ) /*0x4be3f5*/
+        if ( (uint16_t)v99 < *v35 ) /*0x4be3f5*/
         {
           LOWORD(v46) = *v37; /*0x4be3f1*/
           v47 = BlendColorPack((v75 * v46) >> 7, (v74 * v46) >> 7); /*0x4be490*/
@@ -2845,13 +2845,13 @@ void* DSurface::DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, i
   int v12; // ecx
   unsigned short *v13; // ebx
   int v15; // eax
-  unsigned __int8 v16; // dl
+  uint8_t v16; // dl
   double v17; // st7
   char v19; // c0
   int v21; // eax
   int v22; // eax
   int v24; // eax
-  unsigned __int8 v25; // dl
+  uint8_t v25; // dl
   double v26; // st7
   char v28; // c0
   bool v29; // zf
@@ -2861,13 +2861,13 @@ void* DSurface::DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, i
   int v33; // ebx
   int v34; // ebp
   int v36; // eax
-  unsigned __int8 v37; // dl
+  uint8_t v37; // dl
   double v38; // st7
   char v40; // c0
   int v41; // ebx
   int v43; // ebp
   int v44; // eax
-  unsigned __int8 v45; // dl
+  uint8_t v45; // dl
   double v46; // st7
   char v48; // c0
   int v50; // [esp+10h] [ebp-48h]
@@ -2887,10 +2887,10 @@ void* DSurface::DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, i
   int v64; // [esp+60h] [ebp+8h]
   int v65; // [esp+64h] [ebp+Ch]
   int v66; // [esp+64h] [ebp+Ch]
-  __int16 v67; // [esp+74h] [ebp+1Ch]
-  __int16 v68; // [esp+74h] [ebp+1Ch]
-  __int16 v69; // [esp+74h] [ebp+1Ch]
-  __int16 v70; // [esp+74h] [ebp+1Ch]
+  int16_t v67; // [esp+74h] [ebp+1Ch]
+  int16_t v68; // [esp+74h] [ebp+1Ch]
+  int16_t v69; // [esp+74h] [ebp+1Ch]
+  int16_t v70; // [esp+74h] [ebp+1Ch]
 
   v8 = this; /*0x4bf755*/
   v9 = (*(int (**)(void *, unsigned char *))(*(unsigned int *)this + 120))(this, v60); /*0x4bf766*/
@@ -2903,7 +2903,7 @@ void* DSurface::DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, i
   v53 = v57 + a3[1]; /*0x4bf7a7*/
   v55 = v57 + a4[1]; /*0x4bf7b8*/
   v54 = v56 + *a4; /*0x4bf7c9*/
-  if ( (unsigned __int8)ClipLine(&v56) ) /*0x4bf7cd*/
+  if ( (uint8_t)ClipLine(&v56) ) /*0x4bf7cd*/
   {
     v11 = v52; /*0x4bf7da*/
     if ( v52 > v54 ) /*0x4bf7e4*/
@@ -2927,8 +2927,8 @@ void* DSurface::DrawGradientLine(int a2, unsigned int * a3, unsigned int * a4, i
             v15 = Color::Lerp2(a5, a6, *a8); /*0x4bf874*/
             v67 = *(unsigned short *)v15; /*0x4bf87f*/
             v16 = *(unsigned char *)(v15 + 2) >> MEMORY[0x8A0DDC]; /*0x4bf895*/
-            LOWORD(v15) = (unsigned __int8)((unsigned __int8)HIBYTE(*(unsigned short *)v15) >> MEMORY[0x8A0DE4]); /*0x4bf8ab*/
-            *v13 = ((unsigned __int8)((unsigned __int8)v67 >> MEMORY[0x8A0DD4]) << MEMORY[0x8A0DD0]) /*0x4bf8cd*/
+            LOWORD(v15) = (uint8_t)((uint8_t)HIBYTE(*(unsigned short *)v15) >> MEMORY[0x8A0DE4]); /*0x4bf8ab*/
+            *v13 = ((uint8_t)((uint8_t)v67 >> MEMORY[0x8A0DD4]) << MEMORY[0x8A0DD0]) /*0x4bf8cd*/
                  | (v15 << MEMORY[0x8A0DE0])
                  | (v16 << MEMORY[0x8A0DD8]);
             v17 = *a7 + *a8; /*0x4bf8d2*/
@@ -2967,8 +2967,8 @@ LABEL_16:
             v24 = Color::Lerp2(a5, a6, *a8); /*0x4bf9b8*/
             v68 = *(unsigned short *)v24; /*0x4bf9c3*/
             v25 = *(unsigned char *)(v24 + 2) >> MEMORY[0x8A0DDC]; /*0x4bf9d9*/
-            LOWORD(v24) = (unsigned __int8)((unsigned __int8)HIBYTE(*(unsigned short *)v24) >> MEMORY[0x8A0DE4]); /*0x4bf9ef*/
-            *v61 = ((unsigned __int8)((unsigned __int8)v68 >> MEMORY[0x8A0DD4]) << MEMORY[0x8A0DD0]) /*0x4bfa15*/
+            LOWORD(v24) = (uint8_t)((uint8_t)HIBYTE(*(unsigned short *)v24) >> MEMORY[0x8A0DE4]); /*0x4bf9ef*/
+            *v61 = ((uint8_t)((uint8_t)v68 >> MEMORY[0x8A0DD4]) << MEMORY[0x8A0DD0]) /*0x4bfa15*/
                  | (v24 << MEMORY[0x8A0DE0])
                  | (v25 << MEMORY[0x8A0DD8]);
             v26 = *a7 + *a8; /*0x4bfa1a*/
@@ -3015,8 +3015,8 @@ LABEL_59:
             v36 = Color::Lerp2(a5, a6, *a8); /*0x4bfb06*/
             v69 = *(unsigned short *)v36; /*0x4bfb11*/
             v37 = *(unsigned char *)(v36 + 2) >> MEMORY[0x8A0DDC]; /*0x4bfb27*/
-            LOWORD(v36) = (unsigned __int8)((unsigned __int8)HIBYTE(*(unsigned short *)v36) >> MEMORY[0x8A0DE4]); /*0x4bfb3d*/
-            v61[v33] = ((unsigned __int8)((unsigned __int8)v69 >> MEMORY[0x8A0DD4]) << MEMORY[0x8A0DD0]) /*0x4bfb63*/
+            LOWORD(v36) = (uint8_t)((uint8_t)HIBYTE(*(unsigned short *)v36) >> MEMORY[0x8A0DE4]); /*0x4bfb3d*/
+            v61[v33] = ((uint8_t)((uint8_t)v69 >> MEMORY[0x8A0DD4]) << MEMORY[0x8A0DD0]) /*0x4bfb63*/
                      | (v36 << MEMORY[0x8A0DE0])
                      | (v37 << MEMORY[0x8A0DD8]);
             v38 = *a7 + *a8; /*0x4bfb69*/
@@ -3056,8 +3056,8 @@ LABEL_43:
           v44 = Color::Lerp2(a5, a6, *a8); /*0x4bfc27*/
           v70 = *(unsigned short *)v44; /*0x4bfc32*/
           v45 = *(unsigned char *)(v44 + 2) >> MEMORY[0x8A0DDC]; /*0x4bfc48*/
-          LOWORD(v44) = (unsigned __int8)((unsigned __int8)HIBYTE(*(unsigned short *)v44) >> MEMORY[0x8A0DE4]); /*0x4bfc5e*/
-          v61[v43] = ((unsigned __int8)((unsigned __int8)v70 >> MEMORY[0x8A0DD4]) << MEMORY[0x8A0DD0]) /*0x4bfc84*/
+          LOWORD(v44) = (uint8_t)((uint8_t)HIBYTE(*(unsigned short *)v44) >> MEMORY[0x8A0DE4]); /*0x4bfc5e*/
+          v61[v43] = ((uint8_t)((uint8_t)v70 >> MEMORY[0x8A0DD4]) << MEMORY[0x8A0DD0]) /*0x4bfc84*/
                    | (v44 << MEMORY[0x8A0DE0])
                    | (v45 << MEMORY[0x8A0DD8]);
           v46 = *a7 + *a8; /*0x4bfc8a*/
@@ -4126,7 +4126,7 @@ MouseClass * * DSurface::DrawStippledRect(unsigned int * a2, unsigned int * a3, 
   v8 = v67 + *a3; /*0x4c0e93*/
   v66 = v68 + a3[1]; /*0x4c0e95*/
   v65 = v8; /*0x4c0ea6*/
-  if ( !(unsigned __int8)ClipLine(&v67) ) /*0x4c0eaa*/
+  if ( !(uint8_t)ClipLine(&v67) ) /*0x4c0eaa*/
     return 0; /*0x4c0eaa*/
   v9 = v63; /*0x4c0eb7*/
   if ( v63 <= v65 ) /*0x4c0ec1*/

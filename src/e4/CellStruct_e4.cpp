@@ -52,11 +52,11 @@ namespace gamemd {
 void* CellStruct::Sub(void* aP1,  void* aP2)
 {
 
-  __int16 v3; // dx
-  __int16 v4; // cx
+  int16_t v3; // dx
+  int16_t v4; // cx
   IUnknown *aP2a; // [esp+8h] [ebp+8h]
 
-  v3 = *this; /*0x588c60*/
+  v3 = (short)(*this);
   v4 = *((unsigned short *)this + 1) - HIWORD(aP2->field_0); /*0x588c6e*/
   LOWORD(aP2a) = v3 - LOWORD(aP2->field_0); /*0x588c76*/
   HIWORD(aP2a) = v4; /*0x588c7b*/

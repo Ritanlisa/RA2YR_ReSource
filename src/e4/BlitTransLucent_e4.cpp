@@ -236,7 +236,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(unsigned int
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 2); /*0x49a348*/
+  v3 = (unsigned int)((void *)*(Block + 2));
   *Block = &vt_BlitTransLucent25Alpha_unsigned_short; /*0x49a34b*/
   FractalNoise::Release(v3); /*0x49a352*/
   *(Block + 2) = 0; /*0x49a35b*/
@@ -266,7 +266,7 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 2); /*0x49a728*/
+  v3 = (unsigned int)((void *)*(Block + 2));
   *Block = &vt_BlitTransLucent25AlphaZReadWrite_unsigned_short; /*0x49a72b*/
   FractalNoise::Release(v3); /*0x49a732*/
   *(Block + 2) = 0; /*0x49a73b*/

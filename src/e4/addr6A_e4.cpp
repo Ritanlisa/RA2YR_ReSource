@@ -578,16 +578,16 @@ int TechnoClass::ProcessDeployAction()
   IUnknown *v15; // eax
   int v16; // edx
   double v17; // st7
-  __int16 v18; // di
-  __int16 *v19; // eax
+  int16_t v18; // di
+  int16_t *v19; // eax
   IUnknown *v20; // eax
   int v21; // edx
   double v22; // st7
   double v23; // st7
-  __int16 v24; // cx
+  int16_t v24; // cx
   int v25; // eax
   SlaveManagerClass *v27; // [esp+2Ch] [ebp-28h] BYREF
-  __int16 v28[2]; // [esp+30h] [ebp-24h] BYREF
+  int16_t v28[2]; // [esp+30h] [ebp-24h] BYREF
   int v29; // [esp+34h] [ebp-20h] BYREF
   int v30; // [esp+38h] [ebp-1Ch] BYREF
   int v31; // [esp+3Ch] [ebp-18h] BYREF
@@ -645,7 +645,7 @@ int TechnoClass::ProcessDeployAction()
         else
         {
           v6 = *(unsigned int *)(*((unsigned int *)this + 9))->__pad_0; /*0x6afe87*/
-          v7 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v27); /*0x6afe8e*/
+          v7 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v27); /*0x6afe8e*/
           (*(void (**)(unsigned int, void *, int))(v6 + 1152))(*((unsigned int *)this + 9), v7, 1); /*0x6afe97*/
           LOBYTE(v2) = (*(int (**)(unsigned int, int, unsigned int))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 488))( /*0x6afea6*/
                          *((unsigned int *)this + 9),
@@ -774,7 +774,7 @@ int TechnoClass::ProcessDeployAction()
           v29 = SLOWORD(v15->field_0); /*0x6b011b*/
           v17 = Math::Sqrt((double)v29 * (double)v29 + (double)v16 * (double)v16); /*0x6b0134*/
           v18 = Math::RoundToInt(v17); /*0x6b0144*/
-          v19 = (__int16 *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 440))( /*0x6b014d*/
+          v19 = (int16_t *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 440))( /*0x6b014d*/
                              *((unsigned int *)this + 9),
                              v33);
           v20 = CellStruct::Sub(v19, (IUnknown *)&v32, (IUnknown *)&v27); /*0x6b015f*/
@@ -806,7 +806,7 @@ int TechnoClass::ProcessDeployAction()
       v2 = (SlaveManagerClass *)(*(int (**)(unsigned int))(*(unsigned int *)(*((unsigned int *)this + 9))->__pad_0 + 44))(*((unsigned int *)this + 9)); /*0x6b0214*/
       if ( v2 == (SlaveManagerClass *)1 ) /*0x6b021a*/
       {
-        LOBYTE(v2) = (unsigned __int8)Event_Process_6B0490(this); /*0x6b021e*/
+        LOBYTE(v2) = (uint8_t)Event_Process_6B0490(this); /*0x6b021e*/
 LABEL_53:
         *((unsigned int *)this + 23) = (TechnoClass *)1; /*0x6b0223*/
         *((unsigned int *)this + 24) = (TechnoClass *)0x7FFFFFFF; /*0x6b022a*/

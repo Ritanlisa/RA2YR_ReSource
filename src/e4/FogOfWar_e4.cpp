@@ -20,6 +20,7 @@
 namespace gamemd {
 MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
 {
+    unsigned int v13 = 0;  /* G37 hoist */
 
   IUnknown *result; // eax
   int v5; // ecx
@@ -32,7 +33,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   int v12; // ebx
   #375 **v13; // ebp
   #375 *v14; // eax
-  unsigned __int16 v15; // ax
+  uint16_t v15; // ax
   RadarClass *v16; // ebx
   int v17; // ebx
   #375 *v18; // edx
@@ -62,7 +63,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   char aP1b; // [esp+44h] [ebp+4h]
   RadarClass *aP1c; // [esp+44h] [ebp+4h]
 
-  result = HouseClass_Player; /*0x655c50*/
+  result = (IUnknown *)(HouseClass_Player);
   if ( !HouseClass_Player ) /*0x655c62*/
     return (int)result; /*0x655c62*/
   result = (IUnknown *)(*(int (**)(unsigned int, char *))(**(unsigned int **)((char *)this + 4636) + 120))( /*0x655c75*/
@@ -82,8 +83,8 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   if ( (int)v6 >= (int)result ) /*0x655cb2*/
     return (int)result; /*0x655cb2*/
   v8 = (double)(int)aP1a / *(float *)((char *)this + 5256) - (double)*((int *)this + 1316); /*0x655cc2*/
-  v37[0] = ((__int16)Math::RoundToInt(v8) << 8) + 128; /*0x655d1b*/
-  v37[1] = ((__int16)Math::RoundToInt(v8) << 8) + 128; /*0x655d2b*/
+  v37[0] = ((int16_t)Math::RoundToInt(v8) << 8) + 128; /*0x655d1b*/
+  v37[1] = ((int16_t)Math::RoundToInt(v8) << 8) + 128; /*0x655d2b*/
   GroundHeight = 0; /*0x655d2f*/
   GroundHeight = (IUnknown *)Cell::GetGroundHeight(v37); /*0x655d38*/
   if ( !g_hWnd || (aP1b = 1, !Cell::IsPassable(v37)) ) /*0x655d4f*/
@@ -91,7 +92,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   if ( !g_hWnd || (v34 = 1, !FogOfWar_Get(v37)) ) /*0x655d74*/
     v34 = 0; /*0x655d82*/
   v35 = 0; /*0x655d8a*/
-  v9 = **(unsigned int **)((char *)this + 4696) + 24 * (unsigned __int8)(aP1->field_0 - 5 * (int)aP1->field_4); /*0x655da7*/
+  v9 = **(unsigned int **)((char *)this + 4696) + 24 * (uint8_t)(aP1->field_0 - 5 * (int)aP1->field_4); /*0x655da7*/
   v10 = *(IUnknown **)(v9 + 16); /*0x655daa*/
   v11 = *(unsigned int *)(v9 + 4); /*0x655dae*/
   v36 = v10; /*0x655db3*/
@@ -103,7 +104,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
     v13 = *(#375 ***)(v12 - 4); /*0x655dc4*/
     if ( *(unsigned int *)v12 != aP1->field_0 || *(void **)(v12 + 4) != aP1->field_4 ) /*0x655dd7*/
       goto LABEL_25; /*0x655dd7*/
-    if ( (!aP1b || (unsigned __int8)House::IsHumanPlayer(v13[135])) /*0x655e10*/
+    if ( (!aP1b || (uint8_t)House::IsHumanPlayer(v13[135])) /*0x655e10*/
       && (!*(unsigned char *)((*((int (**)(#375 **))*v13 + 33))(v13) + 559)
        || Object::IsAlliedWithObjectHouse(HouseClass_Player, (IUnknown *)v13)) )
     {
@@ -135,9 +136,9 @@ LABEL_26:
       (*(void (**)(unsigned int, RadarClass *, unsigned int))(**(unsigned int **)((char *)this + 4636) + 36))( /*0x655f40*/
         *((unsigned int *)this + 1159),
         aP1,
-        ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]) >> 1) >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656])
-      | ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]) >> 1) >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
-      | ((unsigned int)((unsigned __int8)((unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]) >> 1) >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]));
+        ((unsigned int)((uint8_t)((uint8_t)(v15 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]) >> 1) >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656])
+      | ((unsigned int)((uint8_t)((uint8_t)(v15 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]) >> 1) >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
+      | ((unsigned int)((uint8_t)((uint8_t)(v15 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]) >> 1) >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]));
     }
     else if ( aP1b ) /*0x65605e*/
     {
@@ -155,15 +156,15 @@ LABEL_26:
   }
   v16 = (RadarClass *)v13[135]; /*0x655f50*/
   aP1c = v16; /*0x655f5b*/
-  if ( (*((unsigned __int8 (**)(#375 **))*v13 + 49))(v13) ) /*0x655f5f*/
+  if ( (*((uint8_t (**)(#375 **))*v13 + 49))(v13) ) /*0x655f5f*/
   {
     aP1c = (RadarClass *)(*((int (**)(#375 **, unsigned int))*v13 + 52))(v13, 0); /*0x655f76*/
     v16 = aP1c; /*0x655f7a*/
   }
   if ( v16 ) /*0x655f7e*/
-    v17 = ((unsigned __int8)aP1c[1].__pad_16BB[2946] >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x655fd2*/
-        | ((unsigned __int8)aP1c[1].__pad_16BB[2947] >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
-        | ((unsigned __int8)v16[1].__pad_16BB[2948] >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]);
+    v17 = ((uint8_t)aP1c[1].__pad_16BB[2946] >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x655fd2*/
+        | ((uint8_t)aP1c[1].__pad_16BB[2947] >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
+        | ((uint8_t)v16[1].__pad_16BB[2948] >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]);
   else
     v17 = *(unsigned int *)(FindBuildingAnimByName(&stru_830620.__pad_579C[4368], 1) + 816); /*0x655fe5*/
   v18 = v13[93]; /*0x655feb*/

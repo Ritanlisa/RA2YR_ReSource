@@ -45,7 +45,7 @@ int IPXManagerClass::send(int a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = *((char *)this + 17); /*0x541040*/
+  v2 = (unsigned int *)(*((char *)this + 17));
   result = 0; /*0x541043*/
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
@@ -131,7 +131,7 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * a4)
     v6 = this->connTable[this->curConnIndex]; /*0x54162b*/
     v7 = (*(int (**)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3); /*0x541631*/
     v8 = *((unsigned int *)this + 21); /*0x541634*/
-    v9 = this->connTable[v8++]; /*0x541637*/
+    v9 = this-((unsigned int *)(>connTable))[v8++]; /*0x541637*/
     v10 = *(unsigned int *)(v9 + 100); /*0x54163c*/
     v11 = *((unsigned int *)this + 17); /*0x54163f*/
     *((unsigned int *)this + 21) = v8; /*0x541644*/

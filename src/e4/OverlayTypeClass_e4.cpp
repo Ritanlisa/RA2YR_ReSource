@@ -582,7 +582,7 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   int v7; // eax
   char v8; // cl
   int PixelData; // ecx
-  __int16 v11; // [esp+4h] [ebp-4h]
+  int16_t v11; // [esp+4h] [ebp-4h]
 
   v4 = (char **)(*(int (**)(int *))(*(unsigned int *)this + 156))(this); /*0x5fed06*/
   if ( v4 || (v5 = *((char *)this + 167)) != 0 && (v4 = (char **)(*(int (**)(int))(*(unsigned int *)v5 + 156))(v5)) != 0 ) /*0x5fed28*/

@@ -156,21 +156,32 @@ void AnimClass::Destruct( void * a2)
 namespace gamemd {
 void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 {
+    unsigned int v93 = 0;  /* G37 hoist */
+    unsigned int v92 = 0;  /* G37 hoist */
+    unsigned int v91 = 0;  /* G37 hoist */
+    unsigned int v90 = 0;  /* G37 hoist */
+    unsigned int v62 = 0;  /* G37 hoist */
+    unsigned int v44 = 0;  /* G37 hoist */
+    unsigned int v32 = 0;  /* G37 hoist */
+    unsigned int v25 = 0;  /* G37 hoist */
+    unsigned int v21 = 0;  /* G37 hoist */
+    unsigned int v20 = 0;  /* G37 hoist */
+    unsigned int v19 = 0;  /* G37 hoist */
 
   int v4; // edi
   int v5; // ebx
   int v6; // eax
   int v7; // edi
   int v8; // ecx
-  __int16 v9; // bx
+  int16_t v9; // bx
   ConvertClass *v10; // eax
   int v11; // ebp
   int v12; // eax
   int v13; // ebp
   int v14; // eax
-  unsigned __int8 v15; // di
+  uint8_t v15; // di
   IUnknown *v16; // eax
-  __int16 v17; // ax
+  int16_t v17; // ax
   int v18; // edi
   CoordStruct *v19; // ebx
   CoordStruct *v20; // eax
@@ -184,7 +195,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   int Y; // eax
   char v29; // al
   unsigned int *v30; // eax
-  __int16 *v31; // edi
+  int16_t *v31; // edi
   CoordStruct *v32; // ecx
   unsigned int *v33; // eax
   int v34; // eax
@@ -237,8 +248,8 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   int v81; // [esp-20h] [ebp-130h]
   BuildingTypeClass *v82; // [esp-18h] [ebp-128h]
   BuildingTypeClass *v83; // [esp-18h] [ebp-128h]
-  unsigned __int8 v84; // [esp+13h] [ebp-FDh]
-  unsigned __int8 v85; // [esp+13h] [ebp-FDh]
+  uint8_t v84; // [esp+13h] [ebp-FDh]
+  uint8_t v85; // [esp+13h] [ebp-FDh]
   char v86; // [esp+13h] [ebp-FDh]
   int v87; // [esp+14h] [ebp-FCh]
   int v88; // [esp+14h] [ebp-FCh]
@@ -249,10 +260,10 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   CoordStruct *v93; // [esp+14h] [ebp-FCh]
   IUnknown *v94; // [esp+14h] [ebp-FCh]
   int v95; // [esp+14h] [ebp-FCh]
-  unsigned __int8 v96; // [esp+1Ah] [ebp-F6h]
-  unsigned __int8 v97; // [esp+1Ah] [ebp-F6h]
-  unsigned __int8 v98; // [esp+1Bh] [ebp-F5h]
-  unsigned __int8 v99; // [esp+1Bh] [ebp-F5h]
+  uint8_t v96; // [esp+1Ah] [ebp-F6h]
+  uint8_t v97; // [esp+1Ah] [ebp-F6h]
+  uint8_t v98; // [esp+1Bh] [ebp-F5h]
+  uint8_t v99; // [esp+1Bh] [ebp-F5h]
   CoordStruct *aP2; // [esp+1Ch] [ebp-F4h] BYREF
   IUnknown *aP0; // [esp+20h] [ebp-F0h] BYREF
   ConvertClass *v102; // [esp+24h] [ebp-ECh]
@@ -268,7 +279,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 
   if ( stru_89E138.__pad_14B0[6152] /*0x422ccb*/
     && *(unsigned int *)&stru_87C374.__pad_579C[23348]
-    && (unsigned __int8)ObjectClass::StepCleanup(this, aRing1) )
+    && (uint8_t)ObjectClass::StepCleanup(this, aRing1) )
   {
     v4 = *((unsigned int *)this + 45); /*0x422cd8*/
     v5 = *((unsigned int *)this + 48); /*0x422ce4*/
@@ -286,7 +297,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v10 = (ConvertClass *)(*(unsigned int *)a2->__pad_0 + 2 * (v7 + 8)); /*0x422d30*/
     aP0 = (IUnknown *)(*(unsigned int *)a2->__pad_0 - 2 * (v7 + 8)); /*0x422d3c*/
     aP10 = v10; /*0x422d40*/
-    v11 = *(unsigned int *)&a2->field_2[2]; /*0x422d47*/
+    v11 = *(unsigned int *)&a2-((unsigned int *)(>field_2))[2]; /*0x422d47*/
     v107 = v7 + 8 + v11; /*0x422d4d*/
     v102 = (ConvertClass *)(v11 - (v7 + 8)); /*0x422d51*/
     aP4 = (CoordStruct *)((v8 - v7) << 8); /*0x422d5e*/
@@ -332,16 +343,16 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v16 = (IUnknown *)(*(int (**)(unsigned int *))(*(unsigned int *)this + 1856))(this); /*0x422e2d*/
     v17 = *(unsigned short *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 4) /*0x422e87*/
         + *(unsigned short *)(*(unsigned int *)&stru_87C374.__pad_579C[23348] + 36)
-        - *(unsigned short *)&a2->field_2[2]
+        - *(unsigned short *)&a2-((unsigned int *)(>field_2))[2]
         - *(unsigned short *)&stru_87C374.__pad_579C[21652]
         + *((unsigned int *)this + 64)
         + *(unsigned int *)(*((unsigned int *)this + 50) + 836)
         - ZCoordToScreenY(v16)
         - 2;
-    *(float *)&aP4 = (double)(unsigned __int16)(v17 + v9) * 0.000015259022; /*0x422eab*/
-    *(float *)&v103 = (double)(unsigned __int16)(v17 - v9) * 0.000015259022; /*0x422eb9*/
-    ColorStruct::SetRGB(&aP1, (unsigned __int8)aP2, v13, v15); /*0x422ebd*/
-    ColorStruct::SetRGB(&v111, (unsigned __int8)aP2, v13, v15); /*0x422ecc*/
+    *(float *)&aP4 = (double)(uint16_t)(v17 + v9) * 0.000015259022; /*0x422eab*/
+    *(float *)&v103 = (double)(uint16_t)(v17 - v9) * 0.000015259022; /*0x422eb9*/
+    ColorStruct::SetRGB(&aP1, (uint8_t)aP2, v13, v15); /*0x422ebd*/
+    ColorStruct::SetRGB(&v111, (uint8_t)aP2, v13, v15); /*0x422ecc*/
     *(float *)&v88 = (float)(int)v102; /*0x422ede*/
     v18 = v88; /*0x422ee6*/
     *(float *)&aP2 = (float)(int)aP0; /*0x422eef*/
@@ -466,7 +477,7 @@ LABEL_47:
     if ( BYTE1(v25[71].Z) ) /*0x42314f*/
       goto LABEL_78; /*0x423157*/
     v26 = (IUnknown *)(*(int (**)(unsigned int *, int *))(*(unsigned int *)this + 688))(this, &v108); /*0x423166*/
-    v27 = (ConvertClass *)*((__int16 *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], v26) + 134); /*0x423177*/
+    v27 = (ConvertClass *)*((int16_t *)Coord::To_Cell(&stru_87C374.__pad_14B0[8132], v26) + 134); /*0x423177*/
     goto LABEL_77; /*0x42317e*/
   }
   if ( *((unsigned char *)this + 406) ) /*0x4231f3*/
@@ -475,7 +486,7 @@ LABEL_47:
     LOWORD(v91) = *v30 / 256; /*0x423220*/
     HIWORD(v91) = v30[1] / 256; /*0x423238*/
     aP2 = v91; /*0x423241*/
-    v31 = (__int16 *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP2); /*0x423250*/
+    v31 = (int16_t *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP2); /*0x423250*/
     if ( !*((unsigned int *)v31 + 13) ) /*0x423252*/
       TacticalClass::SetView((int)v31, 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
     v32 = (CoordStruct *)*((unsigned int *)this + 50); /*0x42327b*/
@@ -500,7 +511,7 @@ LABEL_47:
       LOWORD(v92) = *v33 / 256; /*0x42331d*/
       HIWORD(v92) = v33[1] / 256; /*0x423336*/
       aP2 = v92; /*0x423343*/
-      v27 = (ConvertClass *)*((__int16 *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP2) + 133); /*0x42334d*/
+      v27 = (ConvertClass *)*((int16_t *)CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP2) + 133); /*0x42334d*/
 LABEL_77:
       aP10 = v27; /*0x423354*/
     }
@@ -572,7 +583,7 @@ LABEL_78:
     {
       v50 = v96; /*0x4234a7*/
     }
-    LOWORD(v49) = (unsigned __int8)v50 >> 1; /*0x4234b2*/
+    LOWORD(v49) = (uint8_t)v50 >> 1; /*0x4234b2*/
     LOWORD(v48) = v98; /*0x4234b4*/
     v48 *= 32; /*0x4234ba*/
     v51 = v48 | v49; /*0x4234bd*/
@@ -582,11 +593,11 @@ LABEL_78:
 LABEL_89:
     LOWORD(v49) = v98; /*0x4234d2*/
     LOWORD(v48) = v84; /*0x4234d8*/
-    LOWORD(v50) = (unsigned __int8)v50 >> 1; /*0x4234e0*/
+    LOWORD(v50) = (uint8_t)v50 >> 1; /*0x4234e0*/
     v41 |= v48 | (32 * ((32 * v49) | v50)); /*0x4234ee*/
     aP2 = (CoordStruct *)v41; /*0x4234f0*/
   }
-  if ( !(*(unsigned __int8 (**)(CoordStruct *))(v93->X + 352))(v93) || v93[37].Z != 1 ) /*0x423513*/
+  if ( !(*(uint8_t (**)(CoordStruct *))(v93->X + 352))(v93) || v93[37].Z != 1 ) /*0x423513*/
     goto LABEL_99; /*0x423513*/
   v52 = *(unsigned int *)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 6320); /*0x42351f*/
   v53 = *(unsigned int *)&stru_87C374.__pad_579C[22224] + 2 * v52; /*0x423525*/
@@ -615,7 +626,7 @@ LABEL_89:
   {
     v57 = v85; /*0x423586*/
   }
-  LOWORD(v56) = (unsigned __int8)v57 >> 1; /*0x423591*/
+  LOWORD(v56) = (uint8_t)v57 >> 1; /*0x423591*/
   LOWORD(v55) = v99; /*0x423593*/
   v55 *= 32; /*0x423599*/
   v59 = v55 | v56; /*0x42359c*/
@@ -625,7 +636,7 @@ LABEL_89:
 LABEL_98:
   LOWORD(v56) = v99; /*0x4235b1*/
   LOWORD(v55) = v97; /*0x4235b7*/
-  LOWORD(v57) = (unsigned __int8)v57 >> 1; /*0x4235bf*/
+  LOWORD(v57) = (uint8_t)v57 >> 1; /*0x4235bf*/
   v41 |= v55 | (32 * ((32 * v56) | v57)); /*0x4235cd*/
   aP2 = (CoordStruct *)v41; /*0x4235cf*/
 LABEL_99:
@@ -633,7 +644,7 @@ LABEL_99:
   LOWORD(v94) = *v60 / 256; /*0x4235ef*/
   HIWORD(v94) = v60[1] / 256; /*0x423608*/
   aP0 = v94; /*0x423615*/
-  v61 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP0); /*0x42361a*/
+  v61 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP0); /*0x42361a*/
   if ( CellClass::QuickPassable(v61) ) /*0x423621*/
   {
     *(float *)&v41 = 0.0; /*0x42362a*/
@@ -742,7 +753,7 @@ LABEL_99:
       0);
     if ( *(unsigned char *)(*((unsigned int *)this + 50) + 882) ) /*0x423832*/
     {
-      v78 = *(__int16 *)v103->__pad_6; /*0x423845*/
+      v78 = *(int16_t *)v103->__pad_6; /*0x423845*/
       v79 = (IUnknown *)(*(int (**)(unsigned int *))(*(unsigned int *)this + 1856))(this); /*0x423857*/
       v81 = -2 - ZCoordToScreenY(v79); /*0x423875*/
       DrawToSurfaceSHP( /*0x42389e*/

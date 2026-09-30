@@ -55,7 +55,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   a1[1] = &TagClass::`vftable'; /*0x6e4f6f*/
   a1[2] = &TagClass::`vftable'; /*0x6e4f76*/
   a1[3] = &vt_TagClass; /*0x6e4f7d*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, a2); /*0x6e4f84*/
+  ((AbstractClass *)((AbstractClass *)a1))->AnnounceExpiredPointer(a2); /*0x6e4f84*/
   if ( HouseClass_Player.__pad_5568[22252] ) /*0x6e4f90*/
   {
     if ( HouseClass_Player.__pad_5568[23208] ) /*0x6e4f9d*/
@@ -165,7 +165,7 @@ LABEL_22:
         goto LABEL_43; /*0x6e50df*/
       if ( !stru_B05488.__pad_579C[19073] && eax37 || *(int *)&stru_B05488.__pad_579C[19080] <= 0 ) /*0x6e50f7*/
         goto LABEL_45; /*0x6e50f7*/
-      if ( (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19060] + 8))( /*0x6e5109*/
+      if ( (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19060] + 8))( /*0x6e5109*/
              &stru_B05488.__pad_579C[19060],
              eax37 + *(unsigned int *)&stru_B05488.__pad_579C[19080],
              0) )
@@ -180,7 +180,7 @@ LABEL_45:
     }
     while ( v15 ); /*0x6e50d9*/
   }
-  v23[0] = a1; /*0x6e5134*/
+  v23[0] = (unsigned int)(a1);
   v19 = (*(int (**)(char *, unsigned int *))(*(unsigned int *)&stru_B05488.__pad_579C[19020] + 16))( /*0x6e5147*/
           &stru_B05488.__pad_579C[19020],
           v23);
@@ -195,7 +195,7 @@ LABEL_45:
       ++v19; /*0x6e516a*/
     }
   }
-  v23[0] = a1; /*0x6e518c*/
+  v23[0] = (unsigned int)(a1);
   v20 = (*(int (**)(char *, unsigned int *))(*(unsigned int *)&stru_B05488.__pad_579C[19172] + 16))( /*0x6e5190*/
           &stru_B05488.__pad_579C[19172],
           v23);
@@ -210,7 +210,7 @@ LABEL_45:
       ++v20; /*0x6e51b3*/
     }
   }
-  v23[0] = a1; /*0x6e51d5*/
+  v23[0] = (unsigned int)(a1);
   v21 = (*(int (**)(char *, unsigned int *))(*(unsigned int *)&stru_B05488.__pad_579C[15100] + 16))( /*0x6e51d9*/
           &stru_B05488.__pad_579C[15100],
           v23);
@@ -226,7 +226,7 @@ LABEL_45:
     }
   }
   LOBYTE(v22) = 1; /*0x6e520e*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)a1, v22); /*0x6e5212*/
+  ((AbstractClass *)((AbstractClass *)a1))->AnnounceExpiredPointer(v22); /*0x6e5212*/
   AbstractClass::DTOR(a1); /*0x6e5219*/
 
 }

@@ -90,7 +90,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   v14 = 0; /*0x4cfed7*/
   if ( !MEMORY[0xA8B238][0] /*0x4cfeef*/
     || (v2 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 540), *(unsigned int *)(v2 + 22016) == -1)
-    || (v22 = 1, (unsigned __int8)House::IsCurrentPlayer((#375 *)v2)) )
+    || (v22 = 1, (uint8_t)House::IsCurrentPlayer((#375 *)v2)) )
   {
     v22 = 0; /*0x4cfefd*/
   }
@@ -105,7 +105,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
                                                                                     + 22016)] )
         continue; /*0x4cff5e*/
     }
-    else if ( (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(*(unsigned int *)(a1 + 8) + 540), *(#375 **)(v4 + 540)) ) /*0x4cff32*/
+    else if ( (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(*(unsigned int *)(a1 + 8) + 540), *(#375 **)(v4 + 540)) ) /*0x4cff32*/
     {
       continue; /*0x4cff39*/
     }
@@ -119,7 +119,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
        || !*(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3598)) )
     {
       if ( MEMORY[0xA8B238][0] /*0x4d003d*/
-        && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(*(unsigned int *)(a1 + 8) + 540))
+        && (uint8_t)House::IsCurrentPlayer(*(#375 **)(*(unsigned int *)(a1 + 8) + 540))
         && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(v4 + 540) + 52) + 422)
         && ((*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 1
          || (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6
@@ -129,7 +129,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         if ( v14 >= v12 /*0x4d0069*/
           && (!v13 && v12
            || v15 <= 0
-           || !((unsigned __int8 (*)(void ***, int, unsigned int))v10[2])(&v10, v15 + v12, 0)) )
+           || !((uint8_t (*)(void ***, int, unsigned int))v10[2])(&v10, v15 + v12, 0)) )
         {
           continue; /*0x4d006e*/
         }
@@ -141,7 +141,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         if ( v20 >= v18 /*0x4d00ab*/
           && (!v19 && v18
            || v21 <= 0
-           || !((unsigned __int8 (*)(void ***, int, unsigned int))v16[2])(&v16, v21 + v18, 0)) )
+           || !((uint8_t (*)(void ***, int, unsigned int))v16[2])(&v16, v21 + v18, 0)) )
         {
           continue; /*0x4d00b0*/
         }

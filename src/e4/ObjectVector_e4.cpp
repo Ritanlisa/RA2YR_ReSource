@@ -27,7 +27,7 @@ int ObjectVector::Construct( IUnknown * aP1, IUnknown * aP2)
     *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * (unsigned int)aP1); /*0x4d047d*/
     *((unsigned char *)this + 13) = 1; /*0x4d0480*/
   }
-  return this; /*0x4d046d*/
+  return (int)(this);
 
 }
 } // namespace gamemd

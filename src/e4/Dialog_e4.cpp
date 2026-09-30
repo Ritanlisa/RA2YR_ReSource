@@ -50,6 +50,8 @@ void Dialog::MapDialogResource()
 namespace gamemd {
 int Dialog::InitializeGameSettings()
 {
+    unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v8 = 0;  /* G37 hoist */
 
   HWND DlgItem; // eax
   HWND v3; // eax
@@ -276,7 +278,7 @@ int Dialog::RunModemDialing(int a2, int a3, char a4)
   int MessageBox; // eax
   int v11; // ebp
   int v12; // ecx
-  __int16 Buffer; // [esp+2Ch] [ebp-F8h] BYREF
+  int16_t Buffer; // [esp+2Ch] [ebp-F8h] BYREF
   char v15; // [esp+2Eh] [ebp-F6h]
   int hWnd; // [esp+30h] [ebp-F4h]
   char Source[240]; // [esp+34h] [ebp-F0h] BYREF

@@ -45,7 +45,7 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   int v10; // eax
   char v11; // [esp+Fh] [ebp-5h]
 
-  v3 = this; /*0x41ec9b*/
+  v3 = (unsigned int *)(this);
   v4 = 0; /*0x41ec9d*/
   v11 = 0; /*0x41eca5*/
   if ( HouseClass_Count <= 0 ) /*0x41ecaa*/
@@ -129,7 +129,7 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
   bool result; // al
   char v9; // [esp+7h] [ebp-1h]
 
-  v9 = 0; /*0x41ee9a*/
+  v9 = (gamemd::DynamicVector **)(0);
   if ( !a2 ) /*0x41ee9f*/
     return v9; /*0x41efcb*/
   v4 = *((unsigned int *)this + 54); /*0x41eea6*/
@@ -183,7 +183,7 @@ LABEL_8:
     default:
       return v9;
   }
-  return result; /*0x41ef58*/
+  return (gamemd::DynamicVector **)(result);
 
 }
 } // namespace gamemd
@@ -354,7 +354,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   int v37; // eax
   int v38; // esi
   char v40[4]; // [esp+10h] [ebp-270h] BYREF
-  __int64 v41; // [esp+14h] [ebp-26Ch] BYREF
+  int64_t v41; // [esp+14h] [ebp-26Ch] BYREF
   char v42[23]; // [esp+1Ch] [ebp-264h] BYREF
   char v43; // [esp+33h] [ebp-24Dh]
   char v44[24]; // [esp+34h] [ebp-24Ch] BYREF
@@ -365,8 +365,8 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   INIClass::ResetSection(a2); /*0x41f595*/
   if ( !INIClass::GetString( /*0x41f5b9*/
           a2,
-          (unsigned __int8 *)aAitriggertypes,
-          (unsigned __int8 *)((char *)this + 36),
+          (uint8_t *)aAitriggertypes,
+          (uint8_t *)((char *)this + 36),
           &MEMORY[0x889F64],
           String,
           512) )
@@ -386,7 +386,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
     return 0; /*0x41f620*/
   strncpy(v42, v4, 0x18u); /*0x41f62e*/
   v43 = 0; /*0x41f63a*/
-  String::Trim(v42); /*0x41f63e*/
+  ((String *)(v42))->Trim(); /*0x41f63e*/
   *((unsigned int *)this + 55) = 0; /*0x41f643*/
   if ( _strcmpi(v42, off_818114) ) /*0x41f655*/
     *((unsigned int *)this + 55) = TeamTypeClass::FindByName(v42); /*0x41f66a*/
@@ -395,7 +395,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
     return 0; /*0x41f680*/
   strncpy(v42, v5, 0x18u); /*0x41f68e*/
   v43 = 0; /*0x41f69a*/
-  String::Trim(v42); /*0x41f69e*/
+  ((String *)(v42))->Trim(); /*0x41f69e*/
   *((unsigned int *)this + 40) = 0; /*0x41f6a3*/
   *((unsigned int *)this + 42) = -1; /*0x41f6a9*/
   if ( _strcmpi(v42, off_818118) ) /*0x41f6bf*/
@@ -424,7 +424,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
     return 0; /*0x41f75a*/
   strncpy(v42, v8, 0x18u); /*0x41f768*/
   v43 = 0; /*0x41f774*/
-  String::Trim(v42); /*0x41f778*/
+  ((String *)(v42))->Trim(); /*0x41f778*/
   v9 = 0; /*0x41f781*/
   ExitCellByName = Factory::FindExitCellByName(v42); /*0x41f783*/
   if ( ExitCellByName != -1 ) /*0x41f78b*/
@@ -435,7 +435,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   Index = BuildingTypeClass::FindIndex(v42); /*0x41f79c*/
   if ( Index != -1 ) /*0x41f7a4*/
   {
-    v12 = g_UnitTypeCount2; /*0x41f7a6*/
+    v12 = (unsigned int *)(g_UnitTypeCount2);
 LABEL_25:
     v9 = v12[Index]; /*0x41f7db*/
     goto LABEL_26; /*0x41f7db*/
@@ -449,7 +449,7 @@ LABEL_25:
   Index = BuildingTypeClass::FindIndexByName(v42); /*0x41f7cb*/
   if ( Index != -1 ) /*0x41f7d3*/
   {
-    v12 = g_TriggerTypeCount; /*0x41f7d5*/
+    v12 = (unsigned int *)(g_TriggerTypeCount);
     goto LABEL_25; /*0x41f7d5*/
   }
 LABEL_26:
@@ -527,7 +527,7 @@ LABEL_26:
   {
     strncpy(v44, v30, 0x18u); /*0x41f9a8*/
     v44[23] = 0; /*0x41f9b4*/
-    String::Trim(v44); /*0x41f9b8*/
+    ((String *)(v44))->Trim(); /*0x41f9b8*/
     *((unsigned int *)this + 56) = 0; /*0x41f9bd*/
     if ( _strcmpi(v44, off_818114) ) /*0x41f9cf*/
       *((unsigned int *)this + 56) = TeamTypeClass::FindByName(v44); /*0x41f9e4*/

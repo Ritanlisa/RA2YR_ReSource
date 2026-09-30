@@ -31,6 +31,8 @@
 namespace gamemd {
 int FactoryClass::UpdateProduction()
 {
+    unsigned int v7 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
     unsigned int v9 = 0;  /* G37 hoist */
 
   int Speed; // eax
@@ -140,7 +142,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 
   int v5; // ecx
   int v6; // eax
-  int v7; // esi
+  char * v7;
   int v8; // eax
   int v9; // eax
   int v10; // edx
@@ -167,7 +169,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
     *((unsigned int *)this + 13) = 0; /*0x4c9d92*/
     *((unsigned int *)this + 9) = 0; /*0x4c9d95*/
     *((unsigned int *)this + 22) = (*(int (**)(int, #375 *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
-    if ( !(unsigned __int8)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
+    if ( !(uint8_t)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
     {
       v12 = *((unsigned int *)this + 22); /*0x4c9db1*/
       if ( v12 ) /*0x4c9db6*/
@@ -191,19 +193,19 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   else if ( *((unsigned int *)this + 20) >= MEMORY[0x8871E0]->BaseUnderAttackSound /*0x4c9cea*/
          || HouseClass::ShouldDisableCameo(*(unsigned int **)((char *)this + 108), a2) )
   {
-    if ( (unsigned __int8)House::IsHumanPlayer(a3) ) /*0x4c9d3f*/
+    if ( (uint8_t)House::IsHumanPlayer(a3) ) /*0x4c9d3f*/
       PlayVocClass(MEMORY[0x8871E0]->?[3], 0x2000, 1.0, 0); /*0x4c9d5f*/
     return 0; /*0x4c9d65*/
   }
   else
   {
-    v5 = *((unsigned int *)this + 18); /*0x4c9cf3*/
+    v5 = (int)(*((unsigned int *)this + 18));
     v6 = *((unsigned int *)this + 20); /*0x4c9cf6*/
     v7 = (char *)this + 64; /*0x4c9cf9*/
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))(v7, v5 + v8, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7 + 8))(v7, v5 + v8, 0) )
     {
       v9 = *(unsigned int *)(v7 + 16); /*0x4c9d22*/
       v10 = *(unsigned int *)(v7 + 4); /*0x4c9d25*/

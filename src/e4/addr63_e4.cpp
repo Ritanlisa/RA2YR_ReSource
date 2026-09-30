@@ -831,7 +831,7 @@ AbstractClass * * E4Recv_635560::sub_635560(int a2)
   unsigned int v21[4]; // [esp+44h] [ebp-20h] BYREF
   unsigned int v22[4]; // [esp+54h] [ebp-10h] BYREF
 
-  Viewport = Display::GetViewport(v16); /*0x63556d*/
+  Viewport = (int *)(Display::GetViewport(v16));
   v21[0] = *Viewport; /*0x635574*/
   v21[1] = Viewport[1]; /*0x63557b*/
   v21[2] = Viewport[2]; /*0x635582*/
@@ -906,7 +906,7 @@ int E4Recv_635680::sub_635680(int a2)
   unsigned int v20[4]; // [esp+50h] [ebp-20h] BYREF
   int v21[4]; // [esp+60h] [ebp-10h] BYREF
 
-  Viewport = Display::GetViewport(&v16); /*0x63568d*/
+  Viewport = (int *)(Display::GetViewport(&v16));
   v20[0] = *Viewport; /*0x635694*/
   v20[1] = Viewport[1]; /*0x63569b*/
   v20[2] = Viewport[2]; /*0x6356a2*/

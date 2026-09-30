@@ -29,7 +29,7 @@ int Stream::FlushAndReset()
   int v4; // eax
   int v5; // edi
 
-  v1 = this; /*0x439111*/
+  v1 = (int)(this);
   v2 = *this; /*0x439114*/
   v3 = *((unsigned int *)this + 2); /*0x439116*/
   *((unsigned int *)this + 12) = 45; /*0x439119*/

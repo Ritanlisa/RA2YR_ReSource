@@ -230,7 +230,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   char *v27; // [esp+18h] [ebp-4h]
   char *v28; // [esp+24h] [ebp+8h]
 
-  v3 = (void **)this; /*0x7b57a6*/
+  v3 = (const char *)((void **)this);
   v4 = 0; /*0x7b57a8*/
   v5 = *this; /*0x7b57ae*/
   if ( !*this ) /*0x7b57ae*/
@@ -239,7 +239,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
     goto LABEL_33; /*0x7b57bc*/
   while ( *v5 ) /*0x7b57c6*/
   {
-    v6 = strstr(v5, SubStr); /*0x7b57d2*/
+    v6 = (char *)(strstr(v5, SubStr));
     v27 = v6; /*0x7b57da*/
     if ( !v6 ) /*0x7b57e0*/
     {
@@ -318,7 +318,7 @@ LABEL_33:
     v20 = &MEMORY[0x889F64]; /*0x7b59b5*/
     goto LABEL_35; /*0x7b59ba*/
   }
-  v3 = (void **)this; /*0x7b59bc*/
+  v3 = (gamemd::AbstractClass **)((void **)this);
   v20 = v4; /*0x7b59c0*/
 LABEL_35:
   if ( *v3 ) /*0x7b59c2*/

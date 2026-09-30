@@ -160,7 +160,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   int v20; // [esp+Ch] [ebp-34h]
   int v21; // [esp+18h] [ebp-28h]
   int v22[7]; // [esp+20h] [ebp-20h] BYREF
-  __int16 v23; // [esp+3Eh] [ebp-2h]
+  int16_t v23; // [esp+3Eh] [ebp-2h]
   int v24; // [esp+44h] [ebp+4h]
 
   if ( a2 == -1 && aP2 == (ProgressScreenClass *)-1 ) /*0x642c9a*/
@@ -180,7 +180,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
         Default = (*(int (**)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
-    Instance = TextRenderer::GetInstance(); /*0x642d10*/
+    Instance = (gamemd::AbstractClass *)(TextRenderer::GetInstance());
     v10 = v22; /*0x642d14*/
     v24 = 15; /*0x642d18*/
     do /*0x642d3d*/
@@ -211,7 +211,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
     *((unsigned int *)this + 26) = a2; /*0x642dc4*/
     *((unsigned int *)this + 27) = aP2; /*0x642dc7*/
   }
-  *(unsigned int *)&this->__pad_4C[4] = aP3; /*0x642dd6*/
+  *(unsigned int *)&this-((unsigned int *)(>__pad_4C))[4] = aP3; /*0x642dd6*/
   *((unsigned char *)this + 112) = (unsigned char)aP4; /*0x642dd9*/
   *((unsigned char *)this + 113) = a6; /*0x642ddc*/
   return a6; /*0x642ddf*/
@@ -237,14 +237,14 @@ void * TextRenderer::MeasureBuilding2()
   int v12; // [esp+10h] [ebp-34h]
   CampaignScore *v16; // [esp+1Ch] [ebp-28h]
   unsigned int v14[7]; // [esp+24h] [ebp-20h] BYREF
-  __int16 v15; // [esp+42h] [ebp-2h]
+  int16_t v15; // [esp+42h] [ebp-2h]
   unsigned int *arg0; // [esp+48h] [ebp+4h]
   int *v17; // [esp+4Ch] [ebp+8h]
   int v18; // [esp+50h] [ebp+Ch]
   char v19; // [esp+54h] [ebp+10h]
   int v20; // [esp+54h] [ebp+10h]
 
-  FoundationSize = Building::GetFoundationSize(v14, 0); /*0x642f01*/
+  FoundationSize = ((Building *)(v14))->GetFoundationSize(0); /*0x642f01*/
   v2 = 0; /*0x642f08*/
   v3 = 0; /*0x642f0e*/
   v16 = (CampaignScore *)FoundationSize[2]; /*0x642f1a*/
@@ -259,7 +259,7 @@ void * TextRenderer::MeasureBuilding2()
       v3 = (*(int (**)(int))(*(unsigned int *)v5 + 128))(v5); /*0x642f50*/
     }
   }
-  Instance = TextRenderer::GetInstance(); /*0x642f5c*/
+  Instance = (gamemd::AbstractClass *)(TextRenderer::GetInstance());
   v10 = (CampaignScore *)v14; /*0x642f5e*/
   v20 = 15; /*0x642f62*/
   do /*0x642f86*/

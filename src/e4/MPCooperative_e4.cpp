@@ -130,7 +130,7 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
       if ( !*(unsigned char *)(a2 + 13) && v12 ) /*0x49bdf1*/
         continue; /*0x49bdf1*/
       v13 = *(unsigned int *)(a2 + 20); /*0x49bdf3*/
-      if ( v13 <= 0 || !(*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)a2 + 8))(a2, v12 + v13, 0) ) /*0x49be03*/
+      if ( v13 <= 0 || !(*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)a2 + 8))(a2, v12 + v13, 0) ) /*0x49be03*/
         continue; /*0x49be03*/
     }
     v14 = *(unsigned int *)(a2 + 16); /*0x49be0a*/
@@ -173,7 +173,7 @@ int MPCooperative::WriteCoopSaveINI()
   int v24; // [esp+134h] [ebp-6Ch]
   char v25[100]; // [esp+13Ch] [ebp-64h] BYREF
 
-  v1 = this; /*0x49be49*/
+  v1 = (char *)(this);
   if ( !*this ) /*0x49be4d*/
     return 1; /*0x49be4d*/
   v2 = (unsigned char *)this + 28; /*0x49be58*/
@@ -247,7 +247,7 @@ int MPCooperative::WriteCoopSaveINI()
     i = v8[1]; /*0x49bfc2*/
     ++v9; /*0x49bfc5*/
   }
-  MEMORY[0x89ED18][v9] = 0; /*0x49bfd5*/
+  MEMORY[0x89ED18][v9] = (unsigned int)(0);
   strcat(v25, MEMORY[0x89ED18]); /*0x49bff9*/
   CCFileClass::Construct3((int)v19); /*0x49c006*/
   (*(void (**)(unsigned int *, char *))(v19[0] + 8))(v19, MEMORY[0x81F0F8]); /*0x49c018*/
@@ -322,7 +322,7 @@ int MPCooperative::ReadCoopSaveINI()
   char v22; // [esp+B8h] [ebp-7Ch]
   char v23[100]; // [esp+D0h] [ebp-64h] BYREF
 
-  v1 = this; /*0x49d129*/
+  v1 = (char *)(this);
   if ( !*this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
   v2 = (unsigned char *)this + 28; /*0x49d137*/
@@ -408,7 +408,7 @@ int MPCooperative::ReadCoopSaveINI()
   }
   MEMORY[0x89ED18][v10] = 0; /*0x49d30c*/
   strcat(v23, MEMORY[0x89ED18]); /*0x49d331*/
-  v15 = INIClass::BinarySearchSection((int)v19, (unsigned __int8 *)v23) != 0; /*0x49d354*/
+  v15 = INIClass::BinarySearchSection((int)v19, (uint8_t *)v23) != 0; /*0x49d354*/
   HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/
   v16[0] = &vt_CCFileClass; /*0x49d360*/
   v18 = 0; /*0x49d368*/
@@ -2412,7 +2412,7 @@ AbstractClass * * MPCooperative::ProcessChat()
       else
       {
         v14 = GetStringCSF(aTxtSaveCampAva, 0, g_Str_File_MPCoop_cpp, 1920); /*0x5c429f*/
-        LOBYTE(v2) = (unsigned __int8)Dialog::ShowMessage(-1, (size_t)v14); /*0x5c42a7*/
+        LOBYTE(v2) = (uint8_t)Dialog::ShowMessage(-1, (size_t)v14); /*0x5c42a7*/
       }
     }
   }

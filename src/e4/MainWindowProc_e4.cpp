@@ -114,7 +114,7 @@ char * E4Recv_724000::sub_724000(int a2)
   char *v3; // ecx
   int v4; // edx
 
-  v3 = (unsigned char *)this + 564; /*0x72400a*/
+  v3 = (char *)((unsigned char *)this + 564);
   *((unsigned int *)this + 1) = 0; /*0x724010*/
   *((unsigned int *)this + 2) = a2; /*0x724013*/
   *((unsigned char *)this + 12) = 0; /*0x724016*/

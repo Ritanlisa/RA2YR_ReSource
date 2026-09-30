@@ -27,7 +27,7 @@ unsigned int * AudioQueue::CreateNode()
 
   unsigned int *v2; // esi
 
-  v2 = __2_YAPAXI_Z(0x60u); /*0x402afc*/
+  v2 = (unsigned int)(__2_YAPAXI_Z(0x60u));
   memset(v2, 0, 0x60u); /*0x402b07*/
   DListNode::InitEmpty(v2); /*0x402b0e*/
   v2[4] = 0; /*0x402b13*/
@@ -438,7 +438,7 @@ int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * a5, unsi
 {
 
   int v8; // eax
-  unsigned int * a5;
+  unsigned int a5;
   int v10; // ecx
   int v11; // edx
   int v12; // ecx
@@ -511,7 +511,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
     if ( *((unsigned int *)this + 18) < v10 /*0x7b2444*/
       || (*((unsigned char *)this + 69) || !v10)
       && (v11 = *((unsigned int *)this + 19), v11 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v10 + v11, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v10 + v11, 0) )
     {
       v12 = *((unsigned int *)this + 18); /*0x7b244b*/
       v13 = *((unsigned int *)this + 15); /*0x7b244e*/
@@ -526,7 +526,7 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
     if ( *((unsigned int *)this + 12) < v15 /*0x7b248a*/
       || (*((unsigned char *)this + 45) || !v15)
       && (v16 = *((unsigned int *)this + 13), v16 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 8) + 8))((char *)this + 32, v15 + v16, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 8) + 8))((char *)this + 32, v15 + v16, 0) )
     {
       v17 = *((unsigned int *)this + 12); /*0x7b2491*/
       v18 = *((unsigned int *)this + 9); /*0x7b2494*/
@@ -582,7 +582,7 @@ int * AudioQueue::IteratorNext()
 
   int *v2; // ecx
 
-  v2 = *this; /*0x4035d3*/
+  v2 = (int *)(*this);
   if ( v2 ) /*0x4035d7*/
     *this = (int *)AudioQueue::GetNextAlt(v2); /*0x4035de*/
   return *this; /*0x4035e2*/

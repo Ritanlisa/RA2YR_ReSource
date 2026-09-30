@@ -23,10 +23,10 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
 
   int v1; // esi
   wchar_t *StringCSF; // eax
-  HWND MessageBox; // edi
+  void * MessageBox;
   char Saved; // bl
 
-  v1 = (*(int (**)(int))(*(unsigned int *)MEMORY[0x887640] + 40))(MEMORY[0x887640]); /*0x559d81*/
+  v1 = (HWND)((*(int (**)(int))(*(unsigned int *)MEMORY[0x887640] + 40))(MEMORY[0x887640]));
   StringCSF = GetStringCSF(aTxtLoading, 0, MEMORY[0x829F5C], 1052); /*0x559d83*/
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
   (*(void (**)(int))(*(unsigned int *)MEMORY[0x887640] + 12))(MEMORY[0x887640]); /*0x559d9b*/

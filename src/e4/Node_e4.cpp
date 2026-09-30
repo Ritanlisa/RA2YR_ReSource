@@ -11,7 +11,7 @@ namespace gamemd {
 unsigned int * Node_flat::Init()
 {
 
-  *this = 0; /*0x49ea14*/
+  *(_DWORD *)this = (unsigned int *)(0);
   *((unsigned int *)this + 1) = 0; /*0x49ea16*/
   *((unsigned int *)this + 2) = 0; /*0x49ea19*/
   *((unsigned char *)this + 12) = 0; /*0x49ea1c*/

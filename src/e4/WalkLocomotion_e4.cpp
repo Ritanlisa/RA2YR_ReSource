@@ -67,8 +67,8 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
         if ( v5 ) /*0x6a01fc*/
         {
           v7 = 4 * v5; /*0x6a0202*/
-          v8 = dword_7F2960[v7]; /*0x6a0205*/
-          v5 = dword_7F296C[v7]; /*0x6a020b*/
+          v8 = ((unsigned int *)(dword_7F2960))[v7]; /*0x6a0205*/
+          v5 = ((unsigned int *)(dword_7F296C))[v7]; /*0x6a020b*/
           if ( v5 > -1 ) /*0x6a0214*/
           {
             v9 = (unsigned int *)(v8 + 12 * v5); /*0x6a021d*/
@@ -96,7 +96,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
                 LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x6a028f*/
                                *((unsigned int *)this + 3),
                                aP1);
-                return v5; /*0x6a029c*/
+                return (gamemd::AbstractClass **)(v5);
               }
               if ( v6 == 1 || v6 == 3 ) /*0x6a02a7*/
               {
@@ -127,7 +127,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
                      v3);
     }
   }
-  return v5; /*0x6a0295*/
+  return (gamemd::AbstractClass **)(v5);
 
 }
 }

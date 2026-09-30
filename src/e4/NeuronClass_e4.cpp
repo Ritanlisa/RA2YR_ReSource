@@ -27,6 +27,7 @@
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/NullModemClass_e4.hpp"
+#include "e4/classes/NukeFlash_e4.hpp"
 
 // 0x43A350
 NeuronClass::NeuronClass()
@@ -47,7 +48,7 @@ NeuronClass::NeuronClass()
   if ( MEMORY[0xB0F5E8] < MEMORY[0xB0F5E0] /*0x43a3c5*/
     || (MEMORY[0xB0F5E5] || !MEMORY[0xB0F5E0])
     && MEMORY[0xB0F5EC] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F5D8] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xB0F5D8] + 8))(
          &MEMORY[0xB0F5D8],
          MEMORY[0xB0F5E0] + MEMORY[0xB0F5EC],
          0) )
@@ -58,7 +59,7 @@ NeuronClass::NeuronClass()
   if ( MEMORY[0xB0F680] < MEMORY[0xB0F678] /*0x43a41b*/
     || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
     && MEMORY[0xB0F684] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F670] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xB0F670] + 8))(
          &MEMORY[0xB0F670],
          MEMORY[0xB0F678] + MEMORY[0xB0F684],
          0) )

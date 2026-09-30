@@ -79,7 +79,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   int v19; // [esp+10h] [ebp-8h]
   TechnoClass *aP1a; // [esp+1Ch] [ebp+4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6af1a8*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6af1a8*/
   SlaveControlVector::Constructor((unsigned int *)((char *)this + 56), 0, 0); /*0x6af1b6*/
   *((unsigned int *)this + 14) = &vt_DynamicVectorClass_SlaveManagerClass_SlaveControl; /*0x6af1c3*/
   *((unsigned int *)this + 19) = 10; /*0x6af1c9*/
@@ -100,7 +100,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
     v7 = __2_YAPAXI_Z(0x14u); /*0x6af223*/
     if ( v7 ) /*0x6af22d*/
     {
-      v8 = *(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]; /*0x6af22f*/
+      v8 = (unsigned int)(*(IUnknown **)&MEMORY[0xA8D63C].__pad_14B0[664]);
       *(unsigned int *)(v7 + 16) = 0; /*0x6af235*/
       *(unsigned int *)(v7 + 8) = v8; /*0x6af238*/
       v9 = (int *)v7; /*0x6af23b*/
@@ -129,7 +129,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
         continue; /*0x6af2a1*/
       v14 = *((unsigned int *)this + 19); /*0x6af2a3*/
       if ( v14 <= 0 /*0x6af2b2*/
-        || !(*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v13 + v14, 0) )
+        || !(*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v13 + v14, 0) )
       {
         continue; /*0x6af2b2*/
       }
@@ -147,7 +147,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
   if ( *(int *)&MEMORY[0xB077F8].__pad_14B0[10584] < *(int *)&MEMORY[0xB077F8].__pad_14B0[10576] /*0x6af32e*/
     || (MEMORY[0xB077F8].__pad_14B0[10581] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10576])
     && *(int *)&MEMORY[0xB077F8].__pad_14B0[10588] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10568] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10568] + 8))(
          &MEMORY[0xB077F8].__pad_14B0[10568],
          *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10576] + *(unsigned int *)&MEMORY[0xB077F8].__pad_14B0[10588],
          0) )
@@ -168,7 +168,7 @@ void SlaveManagerClass::Constructor()
   int v2; // eax
   int v4; // [esp+8h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6af366*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6af366*/
   *((unsigned int *)this + 15) = 0; /*0x6af371*/
   *((unsigned int *)this + 16) = 0; /*0x6af374*/
   *((unsigned char *)this + 68) = 1; /*0x6af377*/
@@ -195,7 +195,7 @@ void SlaveManagerClass::Constructor()
   if ( MEMORY[0xB0B600] < MEMORY[0xB0B5F8] /*0x6af40c*/
     || (MEMORY[0xB0B5FD] || !MEMORY[0xB0B5F8])
     && MEMORY[0xB0B604] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0B5F0] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xB0B5F0] + 8))(
          &MEMORY[0xB0B5F0],
          MEMORY[0xB0B5F8] + MEMORY[0xB0B604],
          0) )

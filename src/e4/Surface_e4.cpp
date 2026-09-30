@@ -1080,8 +1080,8 @@ LABEL_43:
 TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass * aP3, TechnoClass * aP4, AbstractClass * aP5, TechnoClass * aP6)
 {
 
-  unsigned __int16 v8; // bp
-  unsigned __int16 v9; // bx
+  uint16_t v8; // bp
+  uint16_t v9; // bx
   int v11; // edx
   unsigned int v12; // ebx
   unsigned int *v13; // eax
@@ -1094,7 +1094,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   int v20; // ebp
   int v21; // ecx
   int v22; // ebp
-  unsigned __int16 v23; // ax
+  uint16_t v23; // ax
   int v24; // eax
   int eax24a; // eax
   AbstractClass *v25; // [esp-1Ch] [ebp-7Ch]
@@ -1113,13 +1113,13 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   int v39; // [esp+4Ch] [ebp-14h]
   int v40; // [esp+50h] [ebp-10h]
   unsigned int v41[3]; // [esp+54h] [ebp-Ch] BYREF
-  __int16 *a1b; // [esp+64h] [ebp+4h]
+  int16_t *a1b; // [esp+64h] [ebp+4h]
   int a1a; // [esp+64h] [ebp+4h]
   int *aP4a; // [esp+70h] [ebp+10h]
 
   v8 = a1[3]; /*0x70748e*/
   v9 = a1[2]; /*0x707492*/
-  a1b = (__int16 *)*((unsigned int *)a1 + 2); /*0x7074a2*/
+  a1b = (int16_t *)*((unsigned int *)a1 + 2); /*0x7074a2*/
   Surface::Construct(&v36, (ObjectClass *)v9, (IUnknown *)v8); /*0x7074a6*/
   v39 = 0; /*0x7074b8*/
   v36 = &XSurface_Vtable; /*0x7074c0*/
@@ -1143,10 +1143,10 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   {
     eax8 = (TechnoClass *)(*(unsigned int *)aP2->__pad_0 + *a1); /*0x70756b*/
     v15 = (TechnoClass *)(*(unsigned int *)&aP2->__pad_0[4] + a1[1]); /*0x707571*/
-    v17 = (unsigned __int16)a1[3]; /*0x707575*/
-    ecx8 = (unsigned __int16)a1[2]; /*0x70757b*/
+    v17 = (uint16_t)a1[3]; /*0x707575*/
+    ecx8 = (uint16_t)a1[2]; /*0x70757b*/
     v32 = v15; /*0x70757f*/
-    v34 = (unsigned __int16)v17; /*0x707585*/
+    v34 = (uint16_t)v17; /*0x707585*/
     if ( *(int *)&MEMORY[0xB077F8].__pad_579C[65588] > 0 && *(int *)&MEMORY[0xB077F8].__pad_579C[65592] > 0 ) /*0x707597*/
     {
       if ( ecx8 <= 0 || v17 <= 0 ) /*0x7075a7*/
@@ -1208,7 +1208,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
     v35[1] = v22 + a1[1]; /*0x7076ce*/
     v35[2] = v23; /*0x7076d2*/
     v24 = *(unsigned int *)this; /*0x7076e3*/
-    v35[3] = (unsigned __int16)a1[3]; /*0x7076e5*/
+    v35[3] = (uint16_t)a1[3]; /*0x7076e5*/
     v25 = (AbstractClass *)(*(int (**)(unsigned char *))(v24 + 752))(this); /*0x707703*/
     eax24a = (*(int (**)(unsigned char *))(*(unsigned int *)this + 748))(this); /*0x707706*/
     BlitterRLEBlitSHP( /*0x707736*/

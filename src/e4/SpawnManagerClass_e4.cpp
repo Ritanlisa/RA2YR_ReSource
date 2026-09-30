@@ -120,7 +120,7 @@ void* SpawnManagerClass::Constructor()
   int v2; // eax
   int v4; // [esp+10h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6b6ea8*/
   SpawnControlVector::Constructor((unsigned int *)((char *)this + 56), 0, 0); /*0x6b6eb6*/
   *((unsigned int *)this + 14) = &vt_DynamicVectorClass_SpawnManagerClass_SpawnControl; /*0x6b6ebb*/
   *((unsigned int *)this + 19) = 10; /*0x6b6ec1*/
@@ -148,7 +148,7 @@ void* SpawnManagerClass::Constructor()
   if ( MEMORY[0xB0B890] < MEMORY[0xB0B888] /*0x6b6f69*/
     || (MEMORY[0xB0B88D] || !MEMORY[0xB0B888])
     && MEMORY[0xB0B894] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0B880] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xB0B880] + 8))(
          &MEMORY[0xB0B880],
          MEMORY[0xB0B888] + MEMORY[0xB0B894],
          0) )

@@ -91,11 +91,11 @@ void HouseClass::ResetObjectOrders(char a1, int a2)
       {
         goto LABEL_16; /*0x4adf28*/
       }
-      if ( (unsigned __int8)House::IsHumanPlayer(*(#375 **)(v4 + 540)) ) /*0x4adf34*/
+      if ( (uint8_t)House::IsHumanPlayer(*(#375 **)(v4 + 540)) ) /*0x4adf34*/
         break; /*0x4adf34*/
       if ( (*(int (**)(int))(*(unsigned int *)v4 + 44))(v4) == 6 /*0x4adfa5*/
         && *((unsigned char *)MEMORY[0x8871E0] + 6119)
-        && (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(v4 + 540), HouseClass_Player) )
+        && (uint8_t)HouseClass::IsAlliedWith(*(#375 **)(v4 + 540), HouseClass_Player) )
       {
         (*(void (**)(int, unsigned int, int, unsigned int, unsigned int))(*(unsigned int *)v4 + 1164))(v4, 0, a2, 0, 0); /*0x4adfb9*/
       }
@@ -136,14 +136,14 @@ int HouseClass::RevealShroudForAllies(char a1, int a2)
       && ((unsigned char)v4[5] & 1) != 0
       && ((*((int (**)(unsigned int))*v4 + 11))(*(unsigned int *)(MEMORY[0x8A0394] + 4 * i)) != 6 || !a1) )
     {
-      if ( (unsigned __int8)House::IsHumanPlayer(v4[135]) ) /*0x4ae033*/
+      if ( (uint8_t)House::IsHumanPlayer(v4[135]) ) /*0x4ae033*/
       {
         if ( *((unsigned char *)v4 + 1051) ) /*0x4ae03c*/
           (*((void (**)(#375 **, unsigned int, int))*v4 + 72))(v4, 0, a2); /*0x4ae04d*/
       }
       else if ( (*((int (**)(#375 **))*v4 + 11))(v4) == 6 /*0x4ae07d*/
              && HIBYTE(MEMORY[0x8871E0][1].?[2])
-             && (unsigned __int8)HouseClass::IsAlliedWith(v4[135], HouseClass_Player) )
+             && (uint8_t)HouseClass::IsAlliedWith(v4[135], HouseClass_Player) )
       {
         (*((void (**)(#375 **, int, unsigned int))*v4 + 72))(v4, a2, 0); /*0x4ae08d*/
       }

@@ -155,7 +155,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   HIWORD(v41) = a5 / 256; /*0x4cc3a0*/
   v44 = a1; /*0x4cc3a9*/
   v43 = v41; /*0x4cc3ad*/
-  v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v43); /*0x4cc3b6*/
+  v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v43); /*0x4cc3b6*/
   v42 = v10; /*0x4cc3bc*/
   if ( *(unsigned char *)(a7 + 662) ) /*0x4cc3c0*/
   {
@@ -177,7 +177,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
       && a1[283] <= v8[283]
       && (!LOBYTE(MEMORY[0x8871E0][1].?[3])
        || (v15 = *(#375 **)&HouseClass_Array->__pad_0[4 * v10[20]]) == 0
-       || !(unsigned __int8)HouseClass::IsAlliedWith(v15, other)) )
+       || !(uint8_t)HouseClass::IsAlliedWith(v15, other)) )
     {
 LABEL_16:
       v16 = (unsigned int *)(*(int (**)(unsigned int *, int *))(*v10 + 72))(v10, &v45); /*0x4cc489*/
@@ -213,7 +213,7 @@ LABEL_16:
         if ( v31 > v30 ) /*0x4cc562*/
         {
 LABEL_22:
-          v33 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v43); /*0x4cc574*/
+          v33 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v43); /*0x4cc574*/
           if ( *(unsigned char *)(a7 + 662) ) /*0x4cc589*/
           {
             v34 = Cell::GetSlopeIndex(a3); /*0x4cc59e*/
@@ -233,7 +233,7 @@ LABEL_22:
               if ( !LOBYTE(MEMORY[0x8871E0][1].?[3]) ) /*0x4cc627*/
                 return v42; /*0x4cc627*/
               v39 = *(#375 **)&HouseClass_Array->__pad_0[4 * v33[20]]; /*0x4cc639*/
-              if ( !v39 || !(unsigned __int8)HouseClass::IsAlliedWith(v39, other) ) /*0x4cc645*/
+              if ( !v39 || !(uint8_t)HouseClass::IsAlliedWith(v39, other) ) /*0x4cc645*/
                 return v42; /*0x4cc64c*/
             }
           }

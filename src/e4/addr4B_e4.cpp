@@ -385,7 +385,7 @@ LABEL_12:
   v8 = a2; /*0x4b6b42*/
   if ( a2 < v7 ) /*0x4b6b44*/
   {
-    v9 = this + a2 + 5; /*0x4b6b46*/
+    v9 = (int *)(this + a2 + 5);
     do /*0x4b6b57*/
     {
       ++v8; /*0x4b6b4b*/

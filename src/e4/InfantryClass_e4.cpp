@@ -124,9 +124,9 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         v2 = *a1,
         v14[1] = a1[40],
         v14[2] = a1[41],
-        !(*((unsigned __int8 (**)(#375 **, unsigned int *, unsigned int))v2 + 231))(a1, v14, 0)) )
+        !(*((uint8_t (**)(#375 **, unsigned int *, unsigned int))v2 + 231))(a1, v14, 0)) )
   {
-    if ( (unsigned __int8)House::IsCurrentPlayer(a1[135]) || MEMORY[0xA8B238][0] ) /*0x4d5504*/
+    if ( (uint8_t)House::IsCurrentPlayer(a1[135]) || MEMORY[0xA8B238][0] ) /*0x4d5504*/
     {
       (*((void (**)(#375 **))*a1 + 286))(a1); /*0x4d557c*/
     }
@@ -139,7 +139,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
         if ( a1[182] ) /*0x4d553d*/
           ((void (*)(void))FactoryClass::ResetProductionTimers)(); /*0x4d5547*/
         v7 = *a1; /*0x4d554c*/
-        v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x4d555a*/
+        v8 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v12); /*0x4d555a*/
         (*((void (**)(#375 **, void *, int))v7 + 288))(a1, v8, 1); /*0x4d5562*/
         (*((void (**)(#375 **, int, int))*a1 + 122))(a1, 2, 1); /*0x4d5570*/
       }
@@ -159,7 +159,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
 LABEL_14:
     (*((void (**)(#375 **, #375 *, int))*a1 + 288))(a1, a1[173], 1); /*0x4d547c*/
     (*((void (**)(#375 **, int, unsigned int))*a1 + 122))(a1, 8, 0); /*0x4d5497*/
-    if ( !(*((unsigned __int8 (**)(#375 **))*a1 + 128))(a1) ) /*0x4d54a9*/
+    if ( !(*((uint8_t (**)(#375 **))*a1 + 128))(a1) ) /*0x4d54a9*/
       goto LABEL_25; /*0x4d54a9*/
     goto LABEL_12; /*0x4d54a9*/
   }
@@ -177,7 +177,7 @@ LABEL_14:
   }
   (*((void (**)(#375 **, #375 *, int))*a1 + 288))(a1, a1[173], 1); /*0x4d5437*/
   (*((void (**)(#375 **, int, unsigned int))*a1 + 122))(a1, 17, 0); /*0x4d5445*/
-  if ( (*((unsigned __int8 (**)(#375 **))*a1 + 128))(a1) ) /*0x4d544f*/
+  if ( (*((uint8_t (**)(#375 **))*a1 + 128))(a1) ) /*0x4d544f*/
 LABEL_12:
     (*((void (**)(#375 **))*a1 + 123))(a1); /*0x4d545d*/
 LABEL_25:

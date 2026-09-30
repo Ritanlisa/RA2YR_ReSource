@@ -361,7 +361,7 @@ int E4Recv_5A1C70::sub_5A1C70()
   int v16; // [esp+8h] [ebp-8h] BYREF
   unsigned int *v17; // [esp+Ch] [ebp-4h]
 
-  v17 = this; /*0x5a1c7c*/
+  v17 = (unsigned int *)(this);
   if ( g_MapTileArray ) /*0x5a1c80*/
   {
     v1 = unk_89C2DC * unk_89C2DC; /*0x5a1c88*/
@@ -395,7 +395,7 @@ int E4Recv_5A1C70::sub_5A1C70()
     do /*0x5a1d4f*/
     {
       v16 = *(unsigned int *)((char *)g_MapTileArray + v5); /*0x5a1d08*/
-      v7 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v16); /*0x5a1d11*/
+      v7 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v16); /*0x5a1d11*/
       if ( *(unsigned int *)((char *)g_MapTileArray + v5 + 56) == -1 /*0x5a1d3b*/
         && (*(unsigned short *)((char *)g_MapTileArray + v5) || *(unsigned short *)((char *)g_MapTileArray + v5 + 2))
         && (Cell::IsGroundTypeRange(v7) || Cell::IsShore(v7)) )
@@ -430,7 +430,7 @@ int E4Recv_5A1C70::sub_5A1C70()
       result = (int)g_MapTileArray + v13; /*0x5a1dd0*/
       if ( *(unsigned int *)((char *)g_MapTileArray + v13 + 56) == -1 && (*(unsigned short *)result || *(unsigned short *)(result + 2)) ) /*0x5a1de2*/
       {
-        v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)((char *)g_MapTileArray + v13)); /*0x5a1def*/
+        v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)((char *)g_MapTileArray + v13)); /*0x5a1def*/
         result = RandomMap::GenerateTerrain((int)v15); /*0x5a1df6*/
         if ( result ) /*0x5a1dfd*/
           *(unsigned char *)(result + 26) = 0; /*0x5a1dff*/

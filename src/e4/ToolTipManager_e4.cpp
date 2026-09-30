@@ -62,7 +62,7 @@ DynamicVector * ToolTipManager_7::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x724f43*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_ToolTip_const; /*0x724f46*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x724f50*/
   {

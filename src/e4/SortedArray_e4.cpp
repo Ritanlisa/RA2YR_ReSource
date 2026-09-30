@@ -165,7 +165,7 @@ LABEL_9:
   }
   if ( v6 != v15 ) /*0x538907*/
   {
-    v5 = v7 + 8; /*0x538909*/
+    v5 = (unsigned int *)(v7 + 8);
     v4 += -1 - v4 / 2; /*0x538911*/
     goto LABEL_9; /*0x538911*/
   }
@@ -180,7 +180,7 @@ LABEL_9:
     v12 = *(unsigned int *)this + 8 * i++; /*0x538940*/
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
-  v13 = *(ObjectClass **)this; /*0x538957*/
+  v13 = (gamemd::ObjectClass **)(*(ObjectClass **)this);
   v14 = *((unsigned int *)this + 1) - 1; /*0x538959*/
   *((unsigned int *)this + 1) = v14; /*0x53895c*/
   *(unsigned int *)&v13->__pad_0[8 * v14] = 0; /*0x53895f*/
@@ -233,7 +233,7 @@ LABEL_12:
   }
   if ( v9 != v7 ) /*0x5389ee*/
   {
-    v8 = v10 + 8; /*0x5389f0*/
+    v8 = (unsigned int *)(v10 + 8);
     v6 += -1 - v6 / 2; /*0x5389f8*/
     goto LABEL_12; /*0x5389f8*/
   }

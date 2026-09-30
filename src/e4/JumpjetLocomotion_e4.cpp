@@ -61,8 +61,8 @@ AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
         if ( v5 ) /*0x4b0b2c*/
         {
           v7 = 4 * v5; /*0x4b0b32*/
-          v8 = dword_7E7A28[v7]; /*0x4b0b35*/
-          v5 = dword_7E7A34[v7]; /*0x4b0b3b*/
+          v8 = ((unsigned int *)(dword_7E7A28))[v7]; /*0x4b0b35*/
+          v5 = ((unsigned int *)(dword_7E7A34))[v7]; /*0x4b0b3b*/
           if ( v5 > -1 ) /*0x4b0b44*/
           {
             v9 = (unsigned int *)(v8 + 12 * v5); /*0x4b0b4d*/
@@ -90,7 +90,7 @@ AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
                 LOBYTE(v5) = (*(char (**)(unsigned int, IUnknown *))(**(unsigned int **)((char *)this + 12) + 244))( /*0x4b0bbf*/
                                *((unsigned int *)this + 3),
                                aP1);
-                return v5; /*0x4b0bcc*/
+                return (gamemd::AbstractClass *)(v5);
               }
               if ( v6 == 1 || v6 == 3 ) /*0x4b0bd7*/
               {
@@ -121,7 +121,7 @@ AbstractClass * JumpjetLocomotion::MoveTo( IUnknown * aP1, int aP3)
                      v3);
     }
   }
-  return v5; /*0x4b0bc5*/
+  return (gamemd::AbstractClass *)(v5);
 
 }
 }

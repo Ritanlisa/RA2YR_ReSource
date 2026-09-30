@@ -22,6 +22,7 @@
 namespace gamemd {
 int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
+    unsigned int v10 = 0;  /* G37 hoist */
 
   CCINIClass *v2; // edi
   int result; // eax
@@ -103,7 +104,7 @@ LABEL_13:
         }
         v13 = *(unsigned int *)&MEMORY[0xA8B204]->__pad_0[4 * v12]; /*0x41f43f*/
         if ( v13 ) /*0x41f444*/
-          *(unsigned char *)(v13 + 164) = INIClass::ReadBool_Overwrite((int)a1, (unsigned __int8 *)aAitriggertypes_0, v11, 0) /*0x41f46c*/
+          *(unsigned char *)(v13 + 164) = INIClass::ReadBool_Overwrite((int)a1, (uint8_t *)aAitriggertypes_0, v11, 0) /*0x41f46c*/
                                || MEMORY[0xA8B238];
       }
 LABEL_28:
@@ -202,7 +203,7 @@ CCINIClass::CCINIClass()
   int v6; // edi
   int v7; // edi
 
-  result = this; /*0x535b30*/
+  result = (unsigned int *)(this);
   v2 = (unsigned int *)this + 4; /*0x535b36*/
   v3 = (unsigned int *)this + 7; /*0x535b39*/
   result[1] = 0; /*0x535b3c*/
@@ -229,7 +230,7 @@ CCINIClass::CCINIClass()
       }
     }
   }
-  v6 = v2[1]; /*0x535b86*/
+  v6 = (unsigned int)(v2[1]);
   v3[2] = v2; /*0x535b89*/
   v3[1] = v6; /*0x535b8c*/
   v7 = v2[1]; /*0x535b8f*/
@@ -256,7 +257,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
 
   CCINIClass *KeyCount; // ebx
   CCINIClass *i; // edi
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   AITriggerTypeClass *result; // eax
   int j; // edi
   unsigned int *v9; // ecx
@@ -268,9 +269,9 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   KeyCount = (CCINIClass *)INIClass::GetKeyCount(a1, (INIClass *)aAitriggertypes); /*0x41f4a6*/
   for ( i = 0; (int)i < (int)KeyCount; i = (CCINIClass *)((char *)i + 1) ) /*0x41f4ac*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, i); /*0x41f4b8*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (CCINIClass *)aAitriggertypes, i); /*0x41f4b8*/
     INIClass::GetString( /*0x41f4d2*/
-      (unsigned __int8 ***)a1,
+      (uint8_t ***)a1,
       (INIClass *)aAitriggertypes,
       StringByIndex,
       (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],

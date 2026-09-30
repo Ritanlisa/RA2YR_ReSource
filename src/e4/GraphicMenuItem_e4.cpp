@@ -14,7 +14,7 @@ void GraphicMenuItem::Dtor()
 
   void **v1; // esi
 
-  v1 = *((unsigned int *)this + 3); /*0x4f3a71*/
+  v1 = (void **)(*((unsigned int *)this + 3));
   *this = &vt_GraphicMenuItem; /*0x4f3a76*/
   if ( v1 ) /*0x4f3a7c*/
   {

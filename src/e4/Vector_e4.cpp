@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/VectorClass_e_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4C1B50
 namespace gamemd {
@@ -146,7 +147,7 @@ void Vector::ReallocDynamic(int a2)
   int i; // ecx
   int v5; // eax
   unsigned int *v6; // edx
-  int v7; // eax
+  char * v7;
 
   if ( a2 < 0 ) /*0x4d2e4c*/
     return 0; /*0x4d2e4c*/
@@ -210,8 +211,7 @@ char Vector::Grow()
   int v4; // esi
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
-
-  v2 = *this; /*0x7aeec4*/
+v2 = (int)(*this);
   if ( *this < *((char *)this + 1) ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
   v4 = 2 * v2; /*0x7aeed4*/

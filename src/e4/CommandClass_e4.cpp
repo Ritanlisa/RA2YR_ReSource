@@ -236,7 +236,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
     if ( *((unsigned int *)this + 145) < v9 /*0x724641*/
       || (*((unsigned char *)this + 577) || !v9)
       && (v10 = *((unsigned int *)this + 146), v10 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 141) + 8))((char *)this + 564, v9 + v10, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 141) + 8))((char *)this + 564, v9 + v10, 0) )
     {
       v11 = *((unsigned int *)this + 145); /*0x72464c*/
       v12 = *((unsigned int *)this + 142); /*0x72464f*/

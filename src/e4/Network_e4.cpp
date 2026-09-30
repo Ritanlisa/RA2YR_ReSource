@@ -1360,8 +1360,8 @@ void * Network::ReceiveLoop()
   const char *v9; // eax
   int v10; // edi
   char *v11; // eax
-  __int16 v12; // ax
-  __int16 v13; // bp
+  int16_t v12; // ax
+  int16_t v13; // bp
   int v14; // edx
   unsigned int *v15; // ecx
   unsigned int *v16; // eax
@@ -1373,7 +1373,7 @@ void * Network::ReceiveLoop()
   int v22; // ecx
   unsigned int *v23; // edx
   unsigned short *v24; // ecx
-  unsigned __int8 v25; // cl
+  uint8_t v25; // cl
   int v26; // ebp
   TechnoTypeClass *v29; // edi
   char LinkedIndex; // al
@@ -1396,10 +1396,10 @@ void * Network::ReceiveLoop()
   IUnknown *aP1; // [esp+34h] [ebp-4B8h] BYREF
   DynamicVector aP2; // [esp+38h] [ebp-4B4h] BYREF
   int var488; // [esp+64h] [ebp-488h]
-  __int16 v48; // [esp+68h] [ebp-484h]
+  int16_t v48; // [esp+68h] [ebp-484h]
   unsigned int v49[32]; // [esp+6Ch] [ebp-480h] BYREF
-  __int16 v50; // [esp+ECh] [ebp-400h] BYREF
-  unsigned __int8 v51[12]; // [esp+EEh] [ebp-3FEh]
+  int16_t v50; // [esp+ECh] [ebp-400h] BYREF
+  uint8_t v51[12]; // [esp+EEh] [ebp-3FEh]
   char v52; // [esp+FAh] [ebp-3F2h]
   char v53; // [esp+FCh] [ebp-3F0h]
 
@@ -1412,7 +1412,7 @@ void * Network::ReceiveLoop()
       *(unsigned int *)aP2.__pad_14 = 1024; /*0x541864*/
       *(unsigned int *)&aP2.__pad_14[4] = 128; /*0x54186c*/
       aP1 = 0; /*0x541874*/
-      v2 = (*(int (**)(unsigned int, __int16 *, char *, unsigned int *, char *, IUnknown **))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[10204] /*0x541889*/
+      v2 = (*(int (**)(unsigned int, int16_t *, char *, unsigned int *, char *, IUnknown **))(**(unsigned int **)&MEMORY[0x87F8E4].__pad_5568[10204] /*0x541889*/
                                                                                            + 8))(
              *(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[10204],
              &v50,
@@ -1431,9 +1431,9 @@ void * Network::ReceiveLoop()
       aP2.field_8 = v49[2]; /*0x5418bb*/
       if ( v50 == *(unsigned short *)(v4 + 36) ) /*0x5418cb*/
       {
-        if ( Network_Recv((int)&v50, (int)&v50, v2, (int)v49, (__int16)aP1) ) /*0x5418ee*/
+        if ( Network_Recv((int)&v50, (int)&v50, v2, (int)v49, (int16_t)aP1) ) /*0x5418ee*/
           goto LABEL_87; /*0x5418f5*/
-        if ( (*(int (**)(unsigned int, __int16 *, unsigned int, DynamicVector *, IUnknown *))(*(unsigned int *)*((unsigned int *)this + 18) /*0x541913*/
+        if ( (*(int (**)(unsigned int, int16_t *, unsigned int, DynamicVector *, IUnknown *))(*(unsigned int *)*((unsigned int *)this + 18) /*0x541913*/
                                                                                                  + 48))(
                *((unsigned int *)this + 18),
                &v50,
@@ -1478,14 +1478,14 @@ LABEL_14:
                         || *(unsigned short *)(*(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_430[12] + 4 * v10) + 40) != (unsigned short)aP1 )
                       {
                         Debug::Log(); /*0x541a7d*/
-                        v12 = (__int16)aP1; /*0x541a82*/
+                        v12 = (int16_t)aP1; /*0x541a82*/
                         v13 = *(unsigned short *)&MEMORY[0xA8D63C].__pad_BC0[2 * v10 + 182]; /*0x541a86*/
                         *(unsigned short *)&MEMORY[0xA8D63C].__pad_BC0[2 * v10 + 182] = (unsigned short)aP1; /*0x541a91*/
                         Network::reconnect( /*0x541aab*/
                           (int *)&g_NetworkEventQueue,
                           *(DynamicVector **)(*(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_430[12] + 4 * v10) + 111),
                           v12);
-                        (*(void (**)(unsigned int, DynamicVector *, __int16))(*(unsigned int *)*((unsigned int *)this + 18) + 64))( /*0x541abb*/
+                        (*(void (**)(unsigned int, DynamicVector *, int16_t))(*(unsigned int *)*((unsigned int *)this + 18) + 64))( /*0x541abb*/
                           *((unsigned int *)this + 18),
                           &aP2,
                           v13);
@@ -1535,7 +1535,7 @@ LABEL_14:
                           v21[1] = *(unsigned int *)&aP2.field_1[3]; /*0x541bb7*/
                           v21[2] = aP2.field_8; /*0x541bbe*/
                           Network::SetPort((unsigned short *)(*(this + ebp27 + 10) + 76), (IPXManagerClass *)aP1); /*0x541bcd*/
-                          Network::FormatAddress((unsigned __int16 *)(*(this + ebp27 + 10) + 76), 0); /*0x541bdb*/
+                          Network::FormatAddress((uint16_t *)(*(this + ebp27 + 10) + 76), 0); /*0x541bdb*/
                           Debug::Log(); /*0x541be7*/
 LABEL_33:
                           v2 = *(unsigned int *)aP2.__pad_C; /*0x541bef*/
@@ -1551,8 +1551,8 @@ LABEL_33:
                                      (int)&MEMORY[0xA8B238],
                                      *(#375 **)&HouseClass_Array->__pad_0[4 * *(unsigned int *)(v22 + 111)]) )
                               {
-                                Network::FormatAddress((unsigned __int16 *)&aP2, 0); /*0x541c49*/
-                                Network::FormatAddress((unsigned __int16 *)(*((unsigned int *)this + 20) + 76), 0); /*0x541c57*/
+                                Network::FormatAddress((uint16_t *)&aP2, 0); /*0x541c49*/
+                                Network::FormatAddress((uint16_t *)(*((unsigned int *)this + 20) + 76), 0); /*0x541c57*/
                                 Debug::Log(); /*0x541c69*/
                                 v23 = (unsigned int *)(*((unsigned int *)this + 20) + 76); /*0x541c75*/
                                 *v23 = *(unsigned int *)aP2.__pad_0; /*0x541c7b*/
@@ -1604,7 +1604,7 @@ LABEL_33:
       if ( v50 == v24[18] ) /*0x541d0b*/
       {
         if ( !MEMORY[0xA8D63C].__pad_524[64] /*0x541d2c*/
-          || (*(int (**)(unsigned short *, __int16 *, unsigned int, DynamicVector *, unsigned int))(*(unsigned int *)v24 + 48))(
+          || (*(int (**)(unsigned short *, int16_t *, unsigned int, DynamicVector *, unsigned int))(*(unsigned int *)v24 + 48))(
                v24,
                &v50,
                v2,
@@ -1618,23 +1618,23 @@ LABEL_91:
         Debug::Log(); /*0x54218f*/
         goto LABEL_92; /*0x54218f*/
       }
-      if ( v50 != *((unsigned short *)this + 16) || Network_Recv((int)&v50, (int)&v50, v2, (int)v49, (__int16)aP1) ) /*0x541d63*/
+      if ( v50 != *((unsigned short *)this + 16) || Network_Recv((int)&v50, (int)&v50, v2, (int)v49, (int16_t)aP1) ) /*0x541d63*/
         goto LABEL_87; /*0x541d6a*/
       v25 = v51[0]; /*0x541d75*/
       if ( MEMORY[0xA8D63C].__pad_524[64] && v51[1] == 0xFF ) /*0x541d87*/
       {
         if ( v51[0] == 2 ) /*0x541d90*/
         {
-          (*(void (**)(unsigned int, __int16 *, unsigned int))(*(unsigned int *)*((unsigned int *)this + 20) + 12))( /*0x541da0*/
+          (*(void (**)(unsigned int, int16_t *, unsigned int))(*(unsigned int *)*((unsigned int *)this + 20) + 12))( /*0x541da0*/
             *((unsigned int *)this + 20),
             &v50,
             v2);
         }
         else if ( (int)*((unsigned int *)this + 17) > 0 ) /*0x541dad*/
         {
-          Network::FormatAddress((unsigned __int16 *)&aP2, 0); /*0x541e46*/
+          Network::FormatAddress((uint16_t *)&aP2, 0); /*0x541e46*/
           Debug::Log(); /*0x541e59*/
-          if ( !(*(int (**)(unsigned int, __int16 *, unsigned int))(*(unsigned int *)*((unsigned int *)this + 10) + 12))( /*0x541e6f*/
+          if ( !(*(int (**)(unsigned int, int16_t *, unsigned int))(*(unsigned int *)*((unsigned int *)this + 10) + 12))( /*0x541e6f*/
                   *((unsigned int *)this + 10),
                   &v50,
                   v2) )
@@ -1708,7 +1708,7 @@ LABEL_59:
       if ( !GUID::Compare((char *)(*(unsigned int *)v29->vtable0 + 76), (int)&aP2) ) /*0x541edd*/
         break; /*0x541edd*/
 LABEL_72:
-      if ( !(*(int (**)(unsigned int, __int16 *, unsigned int))(*(unsigned int *)*(this + v26 + 10) + 12))( /*0x541f9b*/
+      if ( !(*(int (**)(unsigned int, int16_t *, unsigned int))(*(unsigned int *)*(this + v26 + 10) + 12))( /*0x541f9b*/
               *(this + v26 + 10),
               &v50,
               v2) )
@@ -1737,8 +1737,8 @@ LABEL_75:
                                                                                 + 4 * i)
                                                                     + 111)]) )
               {
-                Network::FormatAddress((unsigned __int16 *)&aP2, 0); /*0x542051*/
-                Network::FormatAddress((unsigned __int16 *)(*((unsigned int *)this + 20) + 76), 0); /*0x54205f*/
+                Network::FormatAddress((uint16_t *)&aP2, 0); /*0x542051*/
+                Network::FormatAddress((uint16_t *)(*((unsigned int *)this + 20) + 76), 0); /*0x54205f*/
                 Debug::Log(); /*0x542071*/
                 v33 = (unsigned int *)(*(unsigned int *)(*(unsigned int *)&MEMORY[0xA8D63C].__pad_430[12] + 4 * i) + 40); /*0x542085*/
                 *v33 = *(unsigned int *)aP2.__pad_0; /*0x542088*/

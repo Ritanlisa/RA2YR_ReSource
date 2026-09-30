@@ -77,7 +77,7 @@ int FileSystem::ProcessNextFileExtension()
       {
         v3 = 0; /*0x626df8*/
       }
-      v0[1] = v3; /*0x626dfc*/
+      v0[1] = (unsigned int)(v3);
       if ( __2_YAPAXI_Z(0x18u) ) /*0x626dff*/
         v4 = FileExtension::Constructor(0, 0); /*0x626e0f*/
       else

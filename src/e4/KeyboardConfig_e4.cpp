@@ -56,9 +56,9 @@ int KeyboardConfig::LoadINI()
     MEMORY[0x87F688] = 0; /*0x533d8b*/
     MEMORY[0x87F68C] = 0; /*0x533d91*/
     MEMORY[0x87F690] = 0; /*0x533d97*/
-    for ( i = 0; i < INIClass::GetKeyCount((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
+    for ( i = 0; i < (int)(INIClass)::GetKeyCount((char *)v8, (uint8_t *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
     {
-      StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
+      StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (uint8_t *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
       v2 = 0; /*0x533dd1*/
       Int_Overwrite = INIClass::ReadInt_Overwrite(g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
       if ( MEMORY[0x87F668] > 0 ) /*0x533dde*/
@@ -78,7 +78,7 @@ int KeyboardConfig::LoadINI()
             goto LABEL_13; /*0x533e4f*/
           if ( !MEMORY[0x87F688] ) /*0x533e53*/
             v4 = 10; /*0x533e55*/
-          if ( (unsigned __int8)KeyboardConfig::ReleaseBuffer(v4) ) /*0x533e60*/
+          if ( (uint8_t)KeyboardConfig::ReleaseBuffer(v4) ) /*0x533e60*/
           {
 LABEL_13:
             *((unsigned int *)MEMORY[0x87F680] + 2 * MEMORY[0x87F684]) = Int_Overwrite; /*0x533e74*/
@@ -91,22 +91,22 @@ LABEL_13:
 LABEL_14:
       ++i; /*0x533e98*/
     }
-    v10[0] = &vt_CCFileClass; /*0x533ec0*/
+    v10[0] = (unsigned int)(&vt_CCFileClass);
     v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
     v10[0] = &off_7E1668; /*0x533ed8*/
-    BufferIOFileClass::Dtor(v10); /*0x533ee0*/
+    ((BufferIOFileClass *)(v10))->Dtor(); /*0x533ee0*/
     HashTable::DestroyHashTableINIClass(v8); /*0x533ee9*/
     return 1; /*0x533eee*/
   }
   else
   {
-    Debug::Log(); /*0x533efe*/
+    this->Debug::Log(); /*0x533efe*/
     v10[0] = &vt_CCFileClass; /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
     v10[0] = &off_7E1668; /*0x533f25*/
-    BufferIOFileClass::Dtor(v10); /*0x533f2d*/
+    ((BufferIOFileClass *)(v10))->Dtor(); /*0x533f2d*/
     HashTable::DestroyHashTableINIClass(v8); /*0x533f36*/
     return 0; /*0x533f3b*/
   }

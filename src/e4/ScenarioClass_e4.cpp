@@ -59,7 +59,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
     v2 = 0; /*0x58bb52*/
     if ( *((int *)MEMORY[0xA8B230] + 1103) > 0 ) /*0x58bb5c*/
     {
-      v3 = 1104; /*0x58bb60*/
+      v3 = (int *)(1104);
       v4 = &dword_ABE328 - 1104; /*0x58bb6a*/
       v5 = 1136; /*0x58bb71*/
       while ( 1 ) /*0x58bb8b*/
@@ -74,7 +74,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
           v6 = v4[v3]; /*0x58bb95*/
           v7 = v4[v3 + 1]; /*0x58bb98*/
         }
-        v1[v3] = v6; /*0x58bba2*/
+        v1[v3] = (int *)(v6);
         ++v2; /*0x58bbab*/
         ++v5; /*0x58bbac*/
         *(unsigned int *)((char *)MEMORY[0xA8B230] + v3 * 4 + 4) = v7; /*0x58bbaf*/
@@ -92,7 +92,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
     result = (void *)dword_ABECD0; /*0x58bc0a*/
     *((unsigned int *)MEMORY[0xA8B230] + 1102) = dword_ABECD0; /*0x58bc0f*/
   }
-  return result; /*0x58bc16*/
+  return (gamemd::ScenarioClass **)(result);
 
 }
 }
@@ -298,7 +298,7 @@ int ScenarioClass::AssignStartPositions(char a1)
       }
     }
   }
-  v5 = &vt_VectorClass_Cell; /*0x5d6c45*/
+  v5 = (void **)(&vt_VectorClass_Cell);
   if ( Block && v7 ) /*0x5d6c58*/
     __3_YAXPAX_Z(Block); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
@@ -322,9 +322,9 @@ TimerStruct * * ScenarioClass::Constructor()
   unsigned char *v11; // edi
 
   SeedInitRNG((unsigned int *)((char *)this + 536), 0); /*0x6832cf*/
-  *((unsigned int *)this + 389) = Timer::GetTicks(); /*0x6832e5*/
+  *((unsigned int *)this + 389) = this->Timer::GetTicks(); /*0x6832e5*/
   *((unsigned int *)this + 391) = 0; /*0x6832eb*/
-  *((unsigned int *)this + 392) = Timer::GetTicks(); /*0x6832f6*/
+  *((unsigned int *)this + 392) = this->Timer::GetTicks(); /*0x6832f6*/
   *((unsigned int *)this + 394) = 0; /*0x6832fc*/
   v2 = MEMORY[0xA8ED84]; /*0x683302*/
   *((unsigned int *)this + 1148) = 0; /*0x683307*/
@@ -479,7 +479,7 @@ LABEL_13:
   }
 LABEL_14:
   v8 = ++MEMORY[0xA8DAB4]; /*0x683bce*/
-  if ( !(unsigned __int8)CD::`vftable'(dword_81C1D0) ) /*0x683bf6*/
+  if ( !(uint8_t)CD::`vftable'(dword_81C1D0) ) /*0x683bf6*/
   {
 LABEL_21:
     if ( MEMORY[0xA8B238][0] == 4 ) /*0x683d3c*/
@@ -502,15 +502,15 @@ LABEL_21:
   if ( CCINIClass::Load(v16, (int)v22, 1, 0) ) /*0x683c67*/
   {
     Bool = (Movie *)INIClass::GetBool( /*0x683c85*/
-                      (unsigned __int8 ***)v16,
-                      (unsigned __int8 *)MEMORY[0x82BF9C],
-                      (unsigned __int8 *)g_INI_Key_Intro,
+                      (uint8_t ***)v16,
+                      (uint8_t *)MEMORY[0x82BF9C],
+                      (uint8_t *)g_INI_Key_Intro,
                       -1);
     if ( Bool != (Movie *)-1 /*0x683ca5*/
       || (Bool = (Movie *)INIClass::GetBool(
-                            (unsigned __int8 ***)v16,
-                            (unsigned __int8 *)MEMORY[0x82BF9C],
-                            (unsigned __int8 *)MEMORY[0x83D8A8],
+                            (uint8_t ***)v16,
+                            (uint8_t *)MEMORY[0x82BF9C],
+                            (uint8_t *)MEMORY[0x83D8A8],
                             -1),
           Bool != (Movie *)-1) )
     {

@@ -71,7 +71,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   while ( 1 ) /*0x419bea*/
   {
     v10 = (void **)*((unsigned int *)MEMORY[0x8B3DC4] + v9); /*0x419bea*/
-    if ( v10 && (!v16 || *((unsigned int *)this + 361) != v10) && (a3 || v10 != this) && !*((unsigned char *)v10 + 129) && *((unsigned char *)v10 + 116) ) /*0x419c1d*/
+    if ( v10 && (!v16 || *((unsigned int *)this + 361) != (unsigned int)(v10)) && (a3 || v10 != this) && !*((unsigned char *)v10 + 129) && *((unsigned char *)v10 + 116) ) /*0x419c1d*/
     {
       v11 = (unsigned short *)(*((int (**)(void **, unsigned int *))*v10 + 110))(v10, v15); /*0x419c2d*/
       if ( *v11 == *a2 && v11[1] == a2[1] ) /*0x419c44*/
@@ -224,7 +224,7 @@ LABEL_24:
         goto LABEL_25; /*0x481755*/
       v11 = v21; /*0x48170d*/
     }
-    if ( ((unsigned __int8 (*)(void ***, int, unsigned int))v15[2])(&v15, v11 + v10, 0) ) /*0x481733*/
+    if ( ((uint8_t (*)(void ***, int, unsigned int))v15[2])(&v15, v11 + v10, 0) ) /*0x481733*/
     {
 LABEL_22:
       v12 = v20++; /*0x48173a*/
@@ -256,7 +256,7 @@ LABEL_25:
     }
     while ( v9 < v20 ); /*0x4817e0*/
   }
-  v15 = &vt_VectorClass_ObjectClass; /*0x4817e9*/
+  v15 = (void **)(&vt_VectorClass_ObjectClass);
   if ( Block ) /*0x4817f4*/
   {
     if ( v19 ) /*0x4817fc*/
@@ -271,7 +271,7 @@ int Cell::GetNeighbourContent( unsigned int a2)
 {
 
   void *result; // eax
-  __int16 v3; // ax
+  int16_t v3; // ax
   int v4; // [esp+0h] [ebp-4h]
 
   result = this; /*0x481815*/
@@ -281,7 +281,7 @@ int Cell::GetNeighbourContent( unsigned int a2)
     v3 = HIWORD(v4) + HIWORD(MEMORY[0x89F688][a2 & 7]); /*0x481839*/
     LOWORD(a2) = v4 + LOWORD(MEMORY[0x89F688][a2 & 7]); /*0x481841*/
     HIWORD(a2) = v3; /*0x48184a*/
-    return CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2); /*0x48185d*/
+    return CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&a2); /*0x48185d*/
   }
   return result; /*0x481863*/
 
@@ -714,7 +714,7 @@ Coord * * Cell::IsValidDestination(short * a2)
   v14 = v17; /*0x4dcf69*/
   v10 = (*(int (**)(unsigned char *))(v9 + 188))(this); /*0x4dcf6f*/
   v11 = (*(int (**)(unsigned char *, int))(*(unsigned int *)this + 132))(this, v10); /*0x4dcf7a*/
-  if ( !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (__int16 *)&v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
+  if ( !MapSeed::CheckTileMatch(&MEMORY[0x87F7E8], (int16_t *)&v14, a2, *(unsigned int *)(v11 + 1460), 0, 0, 0) ) /*0x4dcf92*/
     return 0; /*0x4dcf92*/
   v12 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], a2); /*0x4dcfa1*/
   return v12[59] == 5 /*0x4dcfc7*/

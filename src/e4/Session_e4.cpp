@@ -90,7 +90,7 @@ int Session::PrepareGame(HWND hWnd)
   int v16; // [esp+10h] [ebp-1F8h]
   int v17[9]; // [esp+1Ch] [ebp-1ECh] BYREF
   char Str[452]; // [esp+40h] [ebp-1C8h] BYREF
-  __int16 v19; // [esp+204h] [ebp-4h]
+  int16_t v19; // [esp+204h] [ebp-4h]
   char v20; // [esp+206h] [ebp-2h]
 
   v1 = (ObjectClass *)MEMORY[0xAC1154]; /*0x5e74e9*/
@@ -108,21 +108,21 @@ int Session::PrepareGame(HWND hWnd)
              &MEMORY[0xA8B8E0],
              MEMORY[0xA8BB04],
              &MEMORY[0xA8BAE2],
-             (unsigned __int8)MEMORY[0xA8BB08],
+             (uint8_t)MEMORY[0xA8BB08],
              0) )
       {
         goto LABEL_42; /*0x5e7753*/
       }
       memset(Str, 0, 250); /*0x5e7764*/
       *(unsigned int *)Str = 119; /*0x5e776c*/
-      result = Timer::GetTicks(); /*0x5e7774*/
+      result = this->Timer::GetTicks(); /*0x5e7774*/
       v9 = 1800; /*0x5e7779*/
       v16 = result; /*0x5e777e*/
       while ( 1 ) /*0x5e778f*/
       {
         if ( v16 != -1 ) /*0x5e7793*/
         {
-          result = Timer::GetTicks() - v16; /*0x5e779e*/
+          result = this->Timer::GetTicks() - v16; /*0x5e779e*/
           if ( result >= 1800 ) /*0x5e77a4*/
             return result; /*0x5e77a4*/
           v9 = 1800 - result; /*0x5e77aa*/
@@ -136,26 +136,26 @@ int Session::PrepareGame(HWND hWnd)
           v11 = 1800; /*0x5e77de*/
           if ( v16 != -1 ) /*0x5e77e4*/
           {
-            result = Timer::GetTicks() - v16; /*0x5e77ef*/
+            result = this->Timer::GetTicks() - v16; /*0x5e77ef*/
             if ( result >= 1800 ) /*0x5e77f5*/
               break; /*0x5e77f5*/
             v11 = 1800 - result; /*0x5e77f7*/
           }
           if ( !v11 ) /*0x5e77fb*/
             break; /*0x5e77fb*/
-          Event::Dispatch(); /*0x5e77fd*/
+          this->Event::Dispatch(); /*0x5e77fd*/
         }
         if ( v10 ) /*0x5e7812*/
           return result; /*0x5e7812*/
         v9 = 1800; /*0x5e778b*/
       }
     case 3: /*0x5e7521*/
-      if ( Dialog::GetCurrentType() != 189 /*0x5e7550*/
+      if ( this->Dialog::GetCurrentType() != 189 /*0x5e7550*/
         || FindAndValidateMap(
              &MEMORY[0xA8B8E0],
              MEMORY[0xA8BB04],
              &MEMORY[0xA8BAE2],
-             (unsigned __int8)MEMORY[0xA8BB08],
+             (uint8_t)MEMORY[0xA8BB08],
              0) )
       {
         goto LABEL_42; /*0x5e7557*/
@@ -174,12 +174,12 @@ int Session::PrepareGame(HWND hWnd)
              &MEMORY[0xA8B8E0],
              MEMORY[0xA8BB04],
              &MEMORY[0xA8BAE2],
-             (unsigned __int8)MEMORY[0xA8BB08],
+             (uint8_t)MEMORY[0xA8BB08],
              0) )
       {
         strcpy(Str, &MEMORY[0xA8B8E0]); /*0x5e765a*/
         _strupr(Str); /*0x5e7668*/
-        Debug::Log(); /*0x5e7677*/
+        this->Debug::Log(); /*0x5e7677*/
         if ( !(unsigned char)MEMORY[0xA8BB08] && strstr(Str, MEMORY[0x831A88]) && strstr(Str, MEMORY[0x831A80]) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
         RawFileClass::Construct(v17, (int)&MEMORY[0xA8B8E0]); /*0x5e76c1*/
@@ -217,7 +217,7 @@ LABEL_44:
       *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
       Vector::Clear((int)&Str[88]); /*0x5e7876*/
       *(unsigned int *)Str = &off_7E1668; /*0x5e787f*/
-      result = BufferIOFileClass::Dtor(Str); /*0x5e7887*/
+      result = ((BufferIOFileClass *)(Str))->Dtor(); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
       {
         result = (int)__2_YAPAXI_Z(4u); /*0x5e7892*/

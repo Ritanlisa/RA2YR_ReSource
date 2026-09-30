@@ -416,7 +416,7 @@ int CChatEventSink::GrowBuffer()
   const void *v7; // esi
   int v8; // [esp+8h] [ebp-4h]
 
-  v2 = *this; /*0x7ad935*/
+  v2 = (int)(*this);
   v3 = *((char *)this + 1); /*0x7ad938*/
   if ( 3 * v2 > v3 ) /*0x7ad940*/
     return 0; /*0x7ad943*/
@@ -448,7 +448,7 @@ int CChatEventSink::ProcessChatEvent()
   const void *v6; // esi
   int v7; // [esp+4h] [ebp-4h]
 
-  v2 = *this; /*0x7aed44*/
+  v2 = (int)(*this);
   if ( *this < *((char *)this + 1) ) /*0x7aed4b*/
     return 0; /*0x7aed4d*/
   v4 = 2 * v2; /*0x7aed53*/
@@ -536,7 +536,7 @@ void CChatEventSink::EnsureCapacity(int a2)
       v8 = 10; /*0x7aee36*/
     if ( v8 < v7 ) /*0x7aee3d*/
     {
-      v9 = __2_YAPAXI_Z(4 * v8); /*0x7aee47*/
+      v9 = (unsigned int)(__2_YAPAXI_Z(4 * v8));
       v10 = (const void *)*((unsigned int *)this + 2); /*0x7aee4c*/
       v11 = v9; /*0x7aee54*/
       if ( v10 ) /*0x7aee58*/

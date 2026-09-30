@@ -22,11 +22,11 @@ void AsyncIO::Shutdown()
 {
 
   int v0; // esi
-  unsigned int *i; // eax
+  unsigned int i;
   void (***v2)(unsigned int, int); // ecx
   char result; // al
 
-  v0 = 0; /*0x5bf459*/
+  v0 = (unsigned int *)(0);
   for ( i = AsyncIO_Instance; v0 < g_AsyncIOState; ++v0 ) /*0x5bf462*/
   {
     v2 = (void (***)(unsigned int, int))i[v0]; /*0x5bf464*/

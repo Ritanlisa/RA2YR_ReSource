@@ -87,12 +87,12 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   if ( g_TimerPool < dword_ABC880 /*0x54ff85*/
     || (byte_ABC885 || !dword_ABC880)
     && dword_ABC88C > 0
-    && ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))dword_ABC878->field_8)(
+    && ((uint8_t (*)(DynamicVector **, int, unsigned int))dword_ABC878->field_8)(
          &dword_ABC878,
          dword_ABC880 + dword_ABC88C,
          0) )
   {
-    v20 = g_TimerPool++; /*0x54ff92*/
+    v20 = (unsigned int)(g_TimerPool++);
     *((unsigned int *)dword_ABC87C + v20) = this; /*0x54ffa1*/
   }
   return this; /*0x54ffa6*/

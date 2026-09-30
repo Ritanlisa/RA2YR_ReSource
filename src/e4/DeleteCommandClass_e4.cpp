@@ -33,7 +33,7 @@ unsigned int * DeleteCommandClass::Constructor()
 char * DeleteCommandClass::AddRef()
 {
 
-  return aDelete; /*0x537f25*/
+  return (char *)(aDelete);
 
 }
 // 0x537F30
@@ -314,7 +314,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(unsigned int * Block, c
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x53c783*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_AnimClass_const; /*0x53c786*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x53c790*/
   {
@@ -337,7 +337,7 @@ int DeleteCommandClass_28::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x53c7d3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_AnimClass_const; /*0x53c7d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x53c7e0*/
   {

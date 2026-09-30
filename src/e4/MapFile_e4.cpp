@@ -20,7 +20,7 @@ DynamicVector * MapFile::QueryInterface(unsigned int * Block, char a2)
   int v7; // ecx
   int v8; // ebp
 
-  v3 = *(Block + 1); /*0x69d523*/
+  v3 = (unsigned int)(*(Block + 1));
   *Block = &vt_VectorClass_Wstring; /*0x69d526*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x69d530*/
   {

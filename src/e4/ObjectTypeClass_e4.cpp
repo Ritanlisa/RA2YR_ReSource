@@ -250,7 +250,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   if ( (int)*(&g_MatrixTransformState + 2438) < (int)*(&g_MatrixTransformState + 2436) /*0x5f72ee*/
     || (*((unsigned char *)&(&g_MatrixTransformState)[203] + 5) || !*(&g_MatrixTransformState + 2436))
     && (int)*(&g_MatrixTransformState + 2439) > 0
-    && ((unsigned __int8 (*)(CoordStruct **, char *, unsigned int))(*(&g_MatrixTransformState + 2434))->Z)(
+    && ((uint8_t (*)(CoordStruct **, char *, unsigned int))(*(&g_MatrixTransformState + 2434))->Z)(
          &g_MatrixTransformState + 2434,
          (char *)*(&g_MatrixTransformState + 2436) + (unsigned int)*(&g_MatrixTransformState + 2439),
          0) )
@@ -259,7 +259,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
     *(&g_MatrixTransformState + 2438) = (CoordStruct *)((char *)*(&g_MatrixTransformState + 2438) + 1); /*0x5f72fe*/
     *(&(*(&g_MatrixTransformState + 2435))->X + v7) = this; /*0x5f730a*/
   }
-  return this; /*0x5f730f*/
+  return (int)(this);
 
 }
 } // namespace gamemd
@@ -549,7 +549,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   char v8; // dl
   int v9; // eax
   int result; // eax
-  __int16 v11; // cx
+  int16_t v11; // cx
   char Destination[24]; // [esp+8h] [ebp-220h] BYREF
   char v13; // [esp+20h] [ebp-208h]
   char Source; // [esp+24h] [ebp-204h] BYREF
@@ -638,8 +638,8 @@ LABEL_41:
   {
     v11 = *(unsigned short *)(result + 2); /*0x5f9296*/
     LOWORD(result) = *(unsigned short *)(result + 4); /*0x5f929a*/
-    if ( v11 <= (__int16)result ) /*0x5f92a1*/
-      result = (__int16)result; /*0x5f92a8*/
+    if ( v11 <= (int16_t)result ) /*0x5f92a1*/
+      result = (int16_t)result; /*0x5f92a8*/
     else
       result = v11; /*0x5f92a3*/
     if ( result <= 8 ) /*0x5f92ae*/
@@ -693,25 +693,25 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
     return 0; /*0x5f969e*/
   strcpy((char *)v34.headNode, (unsigned char *)this + 504); /*0x5f931c*/
   INIClass::GetString( /*0x5f933b*/
-    (unsigned __int8 ***)aP1,
+    (uint8_t ***)aP1,
     (INIClass *)((unsigned char *)this + 36),
-    (unsigned __int8 *)&g_INI_Key_Image,
+    (uint8_t *)&g_INI_Key_Image,
     (INIClass *)v34.headNode,
     (INIClass *)((unsigned char *)this + 504),
     25);
   *(unsigned int *)v34.__pad_0 = strcpy((char *)v34.headNode, (unsigned char *)this + 531); /*0x5f9366*/
   INIClass::GetString( /*0x5f9386*/
-    (unsigned __int8 ***)aP1,
+    (uint8_t ***)aP1,
     (INIClass *)((unsigned char *)this + 36),
-    (unsigned __int8 *)&stru_830620.__pad_14B0[4400],
+    (uint8_t *)&stru_830620.__pad_14B0[4400],
     (INIClass *)v34.headNode,
     (INIClass *)((unsigned char *)this + 531),
     25);
   v3 = *((unsigned int *)this + 124); /*0x5f938b*/
   if ( INIClass::GetString( /*0x5f93a8*/
-         (unsigned __int8 ***)aP1,
+         (uint8_t ***)aP1,
          (INIClass *)((unsigned char *)this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_14B0[4388],
+         (uint8_t *)&stru_830620.__pad_14B0[4388],
          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
          (INIClass *)v34.__pad_20,
          128) )
@@ -723,9 +723,9 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   *((unsigned int *)this + 124) = v3; /*0x5f93d5*/
   v5 = *((unsigned int *)this + 125); /*0x5f93db*/
   if ( !INIClass::GetString( /*0x5f93f9*/
-          (unsigned __int8 ***)aP1,
+          (uint8_t ***)aP1,
           (INIClass *)((unsigned char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_14B0[4372],
+          (uint8_t *)&stru_830620.__pad_14B0[4372],
           (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
           (INIClass *)v34.__pad_20,
           128)
@@ -737,80 +737,80 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   *((unsigned int *)this + 125) = v6; /*0x5f9403*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x5f9412*/
                      (int)aP1,
-                     (unsigned __int8 *)this + 36,
+                     (uint8_t *)this + 36,
                      (CCINIClass *)&stru_830620.__pad_14B0[4360],
                      v7);
   v27 = *((unsigned char *)this + 558); /*0x5f941f*/
   *((unsigned char *)this + 557) = Bool_Overwrite; /*0x5f9426*/
   *((unsigned char *)this + 558) = INIClass::ReadBool_Overwrite( /*0x5f9431*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4348],
                     v27);
   v9 = INIClass::ReadBool_Overwrite( /*0x5f9446*/
          (int)aP1,
-         (unsigned __int8 *)this + 36,
+         (uint8_t *)this + 36,
          (CCINIClass *)&stru_830620.__pad_14B0[4336],
          *((unsigned char *)this + 488));
   v10 = *((unsigned char *)this + 529); /*0x5f944b*/
   *((unsigned char *)this + 488) = v9; /*0x5f9451*/
   v11 = INIClass::ReadBool_Overwrite( /*0x5f9460*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4316],
           v10);
   v28 = *((unsigned char *)this + 559); /*0x5f946d*/
   *((unsigned char *)this + 529) = v11; /*0x5f9474*/
   *((unsigned char *)this + 559) = INIClass::ReadBool_Overwrite( /*0x5f947f*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4300],
                     v28);
   v12 = INIClass::ReadBool_Overwrite( /*0x5f9494*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4288],
           *((unsigned char *)this + 560));
   v13 = *((unsigned char *)this + 561); /*0x5f9499*/
   *((unsigned char *)this + 560) = v12; /*0x5f949f*/
   v14 = INIClass::ReadBool_Overwrite( /*0x5f94ae*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4276],
           v13);
   v29 = (CCINIClass *)*((unsigned int *)this + 39); /*0x5f94bb*/
   *((unsigned char *)this + 561) = v14; /*0x5f94c2*/
   *((unsigned int *)this + 39) = ArmorType::FindIndex( /*0x5f94cd*/
-                             (unsigned __int8 ***)aP1,
+                             (uint8_t ***)aP1,
                              (CCINIClass *)((unsigned char *)this + 36),
-                             (unsigned __int8 *)&g_INI_Key_Speed.headNode[1],
+                             (uint8_t *)&g_INI_Key_Speed.headNode[1],
                              (int)v29);
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x5f94e2*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4264],
                     *((INIClass **)this + 40));
   v16 = *((unsigned char *)this + 563); /*0x5f94e7*/
   *((unsigned int *)this + 40) = Int_Overwrite; /*0x5f94ed*/
   v17 = INIClass::ReadBool_Overwrite( /*0x5f94fc*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4256],
           v16);
   v30 = *((unsigned char *)this + 562); /*0x5f9509*/
   *((unsigned char *)this + 563) = v17; /*0x5f9510*/
   *((unsigned char *)this + 562) = INIClass::ReadBool_Overwrite( /*0x5f951b*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4240],
                     v30);
   *((unsigned char *)this + 568) = INIClass::ReadBool_Overwrite( /*0x5f9549*/
                     (int)aP1,
-                    (unsigned __int8 *)this + 36,
+                    (uint8_t *)this + 36,
                     (CCINIClass *)&stru_830620.__pad_14B0[4220],
                     *((unsigned char *)this + 568));
   Coord = INIClass::GetCoord( /*0x5f954f*/
-            (unsigned __int8 ***)aP1,
+            (uint8_t ***)aP1,
             &v34,
             (INIClass *)((unsigned char *)this + 36),
             (Color *)&stru_830620.__pad_14B0[4208],
@@ -820,18 +820,18 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   *((unsigned char *)this + 154) = *(unsigned char *)(Coord + 2); /*0x5f956c*/
   v20 = INIClass::ReadBool_Overwrite( /*0x5f956f*/
           (int)aP1,
-          (unsigned __int8 *)this + 36,
+          (uint8_t *)this + 36,
           (CCINIClass *)&stru_830620.__pad_14B0[4188],
           v19);
   v31 = *((unsigned char *)this + 570); /*0x5f9580*/
   *((unsigned char *)this + 569) = v20; /*0x5f958c*/
   *((unsigned char *)this + 570) = INIClass::ReadBool_Overwrite( /*0x5f959d*/
                     (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-                    (unsigned __int8 *)this + 504,
+                    (uint8_t *)this + 504,
                     (CCINIClass *)&stru_830620.__pad_14B0[4172],
                     v31);
   v21 = INIClass::GetCoord( /*0x5f95b4*/
-          (unsigned __int8 ***)&MEMORY[0x87F8E4].__pad_5568[9012],
+          (uint8_t ***)&MEMORY[0x87F8E4].__pad_5568[9012],
           &v34,
           (INIClass *)((unsigned char *)this + 504),
           (Color *)&stru_830620.__pad_14B0[4156],
@@ -841,26 +841,26 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   *((unsigned char *)this + 573) = *(unsigned char *)(v21 + 2); /*0x5f95d4*/
   v22 = INIClass::ReadInt_Overwrite( /*0x5f95d7*/
           (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-          (unsigned __int8 *)this + 504,
+          (uint8_t *)this + 504,
           (CCINIClass *)&stru_830620.__pad_14B0[4132],
           (INIClass *)v32);
   v23 = *((unsigned char *)this + 556); /*0x5f95dc*/
   *((unsigned int *)this + 144) = v22; /*0x5f95e2*/
   v24 = INIClass::ReadBool_Overwrite( /*0x5f95f4*/
           (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-          (unsigned __int8 *)this + 504,
+          (uint8_t *)this + 504,
           &unk_818658,
           v23);
   v33 = *((unsigned char *)this + 567); /*0x5f9604*/
   *((unsigned char *)this + 556) = v24; /*0x5f960b*/
   *((unsigned char *)this + 567) = INIClass::ReadBool_Overwrite( /*0x5f9616*/
                     (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-                    (unsigned __int8 *)this + 504,
+                    (uint8_t *)this + 504,
                     &unk_81864C,
                     v33);
   v25 = INIClass::ReadBool_Overwrite( /*0x5f962e*/
           (int)&MEMORY[0x87F8E4].__pad_5568[9012],
-          (unsigned __int8 *)this + 504,
+          (uint8_t *)this + 504,
           (CCINIClass *)&stru_830620.__pad_14B0[4124],
           *((unsigned char *)this + 566));
   *((unsigned char *)this + 566) = v25; /*0x5f9634*/

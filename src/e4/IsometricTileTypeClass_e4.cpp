@@ -93,7 +93,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     TerrainClass::InitTheatre(a1); /*0x549d56*/
     return 0; /*0x549d5b*/
   }
-  return result; /*0x549d5d*/
+  return (gamemd::AbstractClass **)(result);
 
 }
 } // namespace gamemd
@@ -289,7 +289,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(unsigned int * Block, char a
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x54a763*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_unsigned_short; /*0x54a766*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x54a770*/
   {
@@ -324,7 +324,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
     *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x54a88d*/
     *((unsigned char *)this + 13) = 1; /*0x54a890*/
   }
-  return this; /*0x54a87d*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd

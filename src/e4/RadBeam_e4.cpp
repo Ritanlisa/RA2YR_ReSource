@@ -23,7 +23,7 @@ void * RadBeam::Create()
   if ( MEMORY[0xB04A70] < MEMORY[0xB04A68] /*0x65916a*/
     || (MEMORY[0xB04A6D] || !MEMORY[0xB04A68])
     && unk_B04A74 > 0
-    && ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))MEMORY[0xB04A60]->field_8)(
+    && ((uint8_t (*)(DynamicVector **, int, unsigned int))MEMORY[0xB04A60]->field_8)(
          &MEMORY[0xB04A60],
          MEMORY[0xB04A68] + unk_B04A74,
          0) )
@@ -31,7 +31,7 @@ void * RadBeam::Create()
     v4 = MEMORY[0xB04A70]++; /*0x659177*/
     *(unsigned int *)&MEMORY[0xB04A64]->__pad_0[4 * v4] = inited; /*0x659186*/
   }
-  inited[3] = (double)(this != (rc_ptr_base *)1 ? 20 : 10);
+  inited[3] = (double)(this != (gamemd::RadBeam *)((rc_ptr_base *))1 ? 20 : 10);
   return inited; /*0x6591a1*/
 
 }

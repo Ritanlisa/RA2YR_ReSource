@@ -141,7 +141,7 @@ int WinsockInterface::Init()
     else
     {
       Debug::Log(); /*0x7b1eb9*/
-      if ( (unsigned __int8)*v5 != 1 || (((unsigned __int16)*v5 ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
+      if ( (uint8_t)*v5 != 1 || (((uint16_t)*v5 ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
       {
         Debug::Log(); /*0x7b1fad*/
         __3_YAXPAX_Z(v5); /*0x7b1fb3*/

@@ -174,10 +174,10 @@ LABEL_12:
         v17[2] = v11; /*0x62a31d*/
         if ( v17[0] == MEMORY[0xAC4948] && v10 == MEMORY[0xAC494C] && v11 == MEMORY[0xAC4950] /*0x62a364*/
           || (Value = ProgressTimer::GetValue((unsigned short *)(*((unsigned int *)this + 10) + 904), &a2),
-              !(*(unsigned __int8 (**)(unsigned int, unsigned int *, unsigned int))(**(unsigned int **)((char *)this + 36) + 216))(
+              !(*(uint8_t (**)(unsigned int, unsigned int *, unsigned int))(**(unsigned int **)((char *)this + 36) + 216))(
                  *((unsigned int *)this + 9),
                  v17,
-                 (unsigned __int8)((unsigned int)((*Value >> 7) + 1) >> 1))) )
+                 (uint8_t)((unsigned int)((*Value >> 7) + 1) >> 1))) )
         {
           --MEMORY[0xA8E7AC]; /*0x62a462*/
           *(unsigned int *)(*((unsigned int *)this + 9) + 108) = 0; /*0x62a46a*/
@@ -188,7 +188,7 @@ LABEL_12:
         {
           --MEMORY[0xA8E7AC]; /*0x62a379*/
           v13 = *((unsigned int *)this + 9); /*0x62a37f*/
-          if ( *(unsigned char *)(v13 + 1074) && (unsigned __int8)House::IsHumanPlayer(*(#375 **)(v13 + 540)) ) /*0x62a390*/
+          if ( *(unsigned char *)(v13 + 1074) && (uint8_t)House::IsHumanPlayer(*(#375 **)(v13 + 540)) ) /*0x62a390*/
           {
             *(unsigned char *)(*((unsigned int *)this + 9) + 1074) = 0; /*0x62a39c*/
             (*(void (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 332))(*((unsigned int *)this + 9)); /*0x62a3a7*/
@@ -197,7 +197,7 @@ LABEL_12:
           v15 = *(unsigned int *)(v14 + 1076); /*0x62a3b0*/
           if ( v15 ) /*0x62a3b8*/
             TeamClass::AddMember(v15, v14, 0); /*0x62a3bc*/
-          if ( !(*(unsigned __int8 (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 1196))(*((unsigned int *)this + 9)) ) /*0x62a3c6*/
+          if ( !(*(uint8_t (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 1196))(*((unsigned int *)this + 9)) ) /*0x62a3c6*/
           {
             TechnoClass::SetFocus(*(unsigned int **)((char *)this + 36), 0); /*0x62a3d4*/
             (*(void (**)(unsigned int, unsigned int))(**(unsigned int **)((char *)this + 36) + 968))(*((unsigned int *)this + 9), 0); /*0x62a3df*/
@@ -225,7 +225,7 @@ LABEL_12:
       }
       v7 -= (int)MEMORY[0xA8ED84] - v6; /*0x62a2ba*/
     }
-    if ( v7 > 0 && !(*(unsigned __int8 (**)(int))(*(unsigned int *)v5 + 352))(v5) ) /*0x62a2c2*/
+    if ( v7 > 0 && !(*(uint8_t (**)(int))(*(unsigned int *)v5 + 352))(v5) ) /*0x62a2c2*/
     {
       *(unsigned int *)(*((unsigned int *)this + 10) + 1684) = 0; /*0x62a2cf*/
       v8 = *((unsigned int *)this + 9); /*0x62a2d5*/
@@ -408,13 +408,13 @@ int TeamClass::FindByMemberType(int a2)
   int v13; // esi
   int v14; // ecx
   int v15; // eax
-  unsigned __int8 v16; // dl
+  uint8_t v16; // dl
   int v17; // ecx
   int v18; // esi
   int v19; // eax
   int v20; // [esp+10h] [ebp-10h]
   int *v21; // [esp+14h] [ebp-Ch] BYREF
-  unsigned __int8 v22[8]; // [esp+18h] [ebp-8h] BYREF
+  uint8_t v22[8]; // [esp+18h] [ebp-8h] BYREF
 
   v20 = *(unsigned int *)(*((char *)this + 9) + 4 * a2); /*0x635a53*/
   result = *(unsigned int *)(v20 + 116); /*0x635a57*/
@@ -445,12 +445,12 @@ int TeamClass::FindByMemberType(int a2)
           {
             v12 = v5[135]; /*0x635acb*/
             v13 = *(unsigned int *)(v12 + 48); /*0x635acd*/
-            if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v12) && HouseClass_Player ) /*0x635ae0*/
+            if ( (uint8_t)House::IsHumanPlayer((#375 *)v12) && HouseClass_Player ) /*0x635ae0*/
               v13 = *((unsigned int *)HouseClass_Player + 12); /*0x635ae2*/
             v14 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * v13] + 22265; /*0x635af4*/
             *(unsigned short *)v22 = *(unsigned short *)v14; /*0x635afd*/
             v22[2] = *(unsigned char *)(v14 + 2); /*0x635b09*/
-            Color::Lerp(v22, 0x50u, (unsigned __int8 *)&byte_A83CD9); /*0x635b0d*/
+            Color::Lerp(v22, 0x50u, (uint8_t *)&byte_A83CD9); /*0x635b0d*/
             v15 = (v22[1] >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0]) | (v22[2] >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]); /*0x635b45*/
             v16 = v22[0]; /*0x635b47*/
             goto LABEL_19; /*0x635b4b*/
@@ -464,7 +464,7 @@ int TeamClass::FindByMemberType(int a2)
         return -1; /*0x635b52*/
       v17 = v5[135]; /*0x635b61*/
       v18 = *(unsigned int *)(v17 + 48); /*0x635b67*/
-      if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v17) ) /*0x635b6a*/
+      if ( (uint8_t)House::IsHumanPlayer((#375 *)v17) ) /*0x635b6a*/
       {
         if ( HouseClass_Player ) /*0x635b7a*/
           v18 = *((unsigned int *)HouseClass_Player + 12); /*0x635b7c*/
@@ -472,7 +472,7 @@ int TeamClass::FindByMemberType(int a2)
       v19 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * v18] + 22265; /*0x635b8f*/
       *(unsigned short *)v22 = *(unsigned short *)v19; /*0x635b97*/
       v22[2] = *(unsigned char *)(v19 + 2); /*0x635ba3*/
-      Color::Lerp(v22, 0x64u, (unsigned __int8 *)&byte_A80220); /*0x635ba7*/
+      Color::Lerp(v22, 0x64u, (uint8_t *)&byte_A80220); /*0x635ba7*/
       v15 = (v22[1] >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0]) | (v22[2] >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]); /*0x635bdf*/
       v16 = v22[0]; /*0x635be1*/
 LABEL_19:

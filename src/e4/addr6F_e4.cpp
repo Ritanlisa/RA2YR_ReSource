@@ -516,7 +516,7 @@ char E4Recv_6F03F0::sub_6F03F0()
 
   int *v1; // esi
 
-  v1 = *((unsigned int *)this + 21); /*0x6f03f2*/
+  v1 = (int *)(*((unsigned int *)this + 21));
   if ( !v1 ) /*0x6f03f9*/
     return 0; /*0x6f0423*/
   while ( *(int *)((*(int (**)(int *))(*v1 + 132))(v1) + 1668) > 0 && v1[191] <= 0 ) /*0x6f0417*/

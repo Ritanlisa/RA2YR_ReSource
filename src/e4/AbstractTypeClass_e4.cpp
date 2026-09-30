@@ -25,7 +25,7 @@ int AbstractTypeClass::Constructor( AbstractClass * aP1)
   char Destination[48]; // [esp+20h] [ebp-34h] BYREF
   char v8; // [esp+50h] [ebp-4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x410809*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x410809*/
   v3 = (RandomStruct *)((char *)this + 36); /*0x410812*/
   *((unsigned char *)this + 36) = 0; /*0x410817*/
   *((unsigned char *)this + 61) = 0; /*0x41081a*/
@@ -59,7 +59,7 @@ LABEL_8:
     *((unsigned char *)this + 60) = Destination[24]; /*0x4108b7*/
   }
 LABEL_9:
-  if ( this == -36 ) /*0x4108ba*/
+  if ( this == (gamemd::AbstractTypeClass *)(-36) ) /*0x4108ba*/
   {
     Destination[0] = 0; /*0x4108bc*/
   }
@@ -77,7 +77,7 @@ LABEL_9:
   if ( *(int *)&HouseClass_Player.__pad_5568[22212] < *(int *)&HouseClass_Player.__pad_5568[22204] /*0x410929*/
     || (HouseClass_Player.__pad_5568[22209] || !*(unsigned int *)&HouseClass_Player.__pad_5568[22204])
     && *(int *)&HouseClass_Player.__pad_5568[22216] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22196] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22196] + 8))(
          &HouseClass_Player.__pad_5568[22196],
          *(unsigned int *)&HouseClass_Player.__pad_5568[22204] + *(unsigned int *)&HouseClass_Player.__pad_5568[22216],
          0) )
@@ -85,7 +85,7 @@ LABEL_9:
     v4 = (*(unsigned int *)&HouseClass_Player.__pad_5568[22212])++; /*0x410936*/
     *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[22200] + 4 * v4) = this; /*0x410945*/
   }
-  return this; /*0x410948*/
+  return (int)(this);
 
 }
 } // namespace gamemd
@@ -97,7 +97,7 @@ int AbstractTypeClass::Dtor()
   int v2; // eax
   unsigned int *v4; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
+  *this = (unsigned int *)(&AbstractTypeClass::`vftable');
   *((unsigned int *)this + 1) = &AbstractTypeClass::`vftable'; /*0x4109d3*/
   *((unsigned int *)this + 2) = &AbstractTypeClass::`vftable'; /*0x4109da*/
   *((unsigned int *)this + 3) = &vt_AbstractTypeClass; /*0x4109e1*/

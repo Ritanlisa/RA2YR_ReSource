@@ -50,7 +50,7 @@ int MoveFeedback::ProcessCommand()
     v4 = 0; /*0x732802*/
     if ( Height ) /*0x732809*/
     {
-      LOBYTE(Height) = (unsigned __int8)EventClass::resetEvent((unsigned int *)Height, 0, 0); /*0x73280f*/
+      LOBYTE(Height) = (uint8_t)EventClass::resetEvent((unsigned int *)Height, 0, 0); /*0x73280f*/
       *v3 = &vt_DynamicVectorClass_TechnoClass; /*0x732814*/
       v3[5] = 10; /*0x73281a*/
       v3[4] = 0; /*0x732821*/
@@ -197,7 +197,7 @@ DynamicVector * MoveFeedback::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x40bcb3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_TechnoClass; /*0x40bcb6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40bcc0*/
   {
@@ -320,7 +320,7 @@ void MoveFeedback::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x40c163*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_CommandClass_const; /*0x40c166*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x40c170*/
   {

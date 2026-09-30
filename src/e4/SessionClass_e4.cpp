@@ -29,6 +29,7 @@
 #include "e4/classes/Session_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
 #include "e4/classes/Selection_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
 
 // 0x540DC0
 namespace gamemd {
@@ -85,7 +86,7 @@ int SessionClass::initInternet()
   v3 = __2_YAPAXI_Z(0xB8u); /*0x540e89*/
   if ( v3 ) /*0x540e90*/
   {
-    v4 = MEMORY[0xA8DA78]; /*0x540e93*/
+    v4 = (char *)(MEMORY[0xA8DA78]);
     v5 = *((unsigned int *)this + 5); /*0x540e9a*/
     v6 = CharToWideString(aMulticast); /*0x540ea4*/
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
@@ -234,7 +235,7 @@ LABEL_14:
     DeleteAndZero(&v14); /*0x5ae089*/
     goto LABEL_14; /*0x5ae089*/
   }
-  v12 = (ObjectClass *)String::GetOrEmpty_Alt((char **)&v11->__pad_0[4]); /*0x5ae09b*/
+  v12 = (gamemd::MixFileClass *)((ObjectClass *)String::GetOrEmpty_Alt((char **)&v11->__pad_0[4]));
   ScenarioClass::SetFileName(aP1->__pad_0, v12); /*0x5ae0a7*/
   *(unsigned short *)&aP1[79].onBridge = Network_Load(v6, v11); /*0x5ae0b8*/
   DeleteAndZero(&v13); /*0x5ae0bf*/
@@ -298,7 +299,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
   ObjectClass *v48; // [esp+2Ch] [ebp-B0h] BYREF
   ObjectClass v49; // [esp+30h] [ebp-ACh] BYREF
 
-  v2 = this; /*0x5ceef8*/
+  v2 = (char *)(this);
   v47 = this; /*0x5cef00*/
   CCFileClass::Construct3((int)&v49.ambientSoundController[1]); /*0x5cef04*/
   v3 = 0; /*0x5cef09*/
@@ -339,7 +340,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
     if ( *((unsigned int *)v2 + 4) < v9 /*0x5cf038*/
       || (v2[13] || !v9)
       && (v10 = *((unsigned int *)v2 + 5), v10 > 0)
-      && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)v2 + 8))(v2, v9 + v10, 0) )
+      && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)v2 + 8))(v2, v9 + v10, 0) )
     {
       v11 = *((unsigned int *)v2 + 4); /*0x5cf03f*/
       v12 = *((unsigned int *)v2 + 1); /*0x5cf042*/
@@ -427,7 +428,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
             continue; /*0x5cf33e*/
           v31 = *((unsigned int *)v47 + 16); /*0x5cf340*/
           if ( v31 <= 0 /*0x5cf350*/
-            || !(*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)v30 + 8))(v47 + 44, v29 + v31, 0) )
+            || !(*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)v30 + 8))(v47 + 44, v29 + v31, 0) )
           {
             continue; /*0x5cf350*/
           }
@@ -486,7 +487,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
                   if ( *((unsigned int *)v2 + 21) < v39 /*0x5cf556*/
                     || (v2[81] || !v39)
                     && (v40 = *((unsigned int *)v2 + 22), v40 > 0)
-                    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*((unsigned int *)v2 + 17) + 8))(
+                    && (*(uint8_t (**)(char *, int, unsigned int))(*((unsigned int *)v2 + 17) + 8))(
                          v2 + 68,
                          v39 + v40,
                          0) )

@@ -61,7 +61,7 @@ unsigned int * AnimTypeClass::Construct2(char * Source)
   if ( MEMORY[0xA8B210] < MEMORY[0xA8B208] /*0x41e452*/
     || (MEMORY[0xA8B20D] || !MEMORY[0xA8B208])
     && MEMORY[0xA8B214] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8B200] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xA8B200] + 8))(
          &MEMORY[0xA8B200],
          MEMORY[0xA8B208] + MEMORY[0xA8B214],
          0) )
@@ -69,7 +69,7 @@ unsigned int * AnimTypeClass::Construct2(char * Source)
     v3 = MEMORY[0xA8B210]++; /*0x41e45f*/
     *((unsigned int *)MEMORY[0xA8B204] + v3) = this; /*0x41e46e*/
   }
-  return this; /*0x41e473*/
+  return (unsigned int *)(this);
 
 }
 }
@@ -165,7 +165,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
   *((unsigned int *)this + 1) = &AnimTypeClass::`vftable'; /*0x427737*/
   *((unsigned int *)this + 2) = &AnimTypeClass::`vftable'; /*0x42773d*/
   *((unsigned int *)this + 3) = &vt_AnimTypeClass; /*0x427744*/
-  AbstractClass::GenerateUniqueID((int)((unsigned int *)this + 1)); /*0x42774b*/
+  ((AbstractClass *)((int)((unsigned int *)this + 1)))->GenerateUniqueID(); /*0x42774b*/
   *((unsigned char *)this + 564) = 1; /*0x427750*/
   *((unsigned char *)this + 559) = 1; /*0x427757*/
   *((unsigned char *)this + 560) = 0; /*0x42775e*/
@@ -176,7 +176,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
   if ( *(int *)&MEMORY[0x89F690].__pad_579C[62260] < *(int *)&MEMORY[0x89F690].__pad_579C[62252] /*0x4277b0*/
     || (MEMORY[0x89F690].__pad_579C[62257] || !*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62252])
     && *(int *)&MEMORY[0x89F690].__pad_579C[62264] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62244] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[62244] + 8))(
          &MEMORY[0x89F690].__pad_579C[62244],
          *(unsigned int *)&MEMORY[0x89F690].__pad_579C[62252] + *(unsigned int *)&MEMORY[0x89F690].__pad_579C[62264],
          0) )
@@ -187,7 +187,7 @@ AnimTypeClass * AnimTypeClass::Construct(AbstractClass * aP1)
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x427803*/
     || (MEMORY[0xB077F8].__pad_579C[9961] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956])
     && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
          &MEMORY[0xB077F8].__pad_579C[9948],
          *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9968],
          0) )
@@ -269,7 +269,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     *((unsigned char *)this + 676) = 1; /*0x427c22*/
     if ( !v7 ) /*0x427c2b*/
     {
-      v8 = *(__int16 *)(v6 + 6); /*0x427c2d*/
+      v8 = *(int16_t *)(v6 + 6); /*0x427c2d*/
       v9 = *((unsigned char *)this + 882); /*0x427c31*/
       *((unsigned int *)this + 176) = v8; /*0x427c37*/
       if ( v9 ) /*0x427c3f*/
@@ -277,7 +277,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     }
     if ( !*((unsigned int *)this + 175) ) /*0x427c4c*/
       *((unsigned int *)this + 175) = *((unsigned int *)this + 176); /*0x427c5c*/
-    *((unsigned int *)this + 166) = *(__int16 *)(v6 + 6) / 2; /*0x427c6b*/
+    *((unsigned int *)this + 166) = *(int16_t *)(v6 + 6) / 2; /*0x427c6b*/
     *((unsigned int *)this + 167) = -1; /*0x427c74*/
     *((unsigned int *)this + 168) = -1; /*0x427c7a*/
     LOBYTE(v3) = -1; /*0x427c71*/

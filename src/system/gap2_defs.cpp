@@ -745,7 +745,7 @@ int FileClass::BufferedReader( BufferIOFileClass * aP1, DWORD nNumberOfBytesToRe
   int v16; // [esp+14h] [ebp-4h]
 
   v16 = 0; /*0x4322ab*/
-  if ( !(*(unsigned __int8 (**)(int))(*(unsigned int *)this + 24))(this) /*0x4322bc*/
+  if ( !(*(uint8_t (**)(int))(*(unsigned int *)this + 24))(this) /*0x4322bc*/
     && (*(int (**)(int, int))(*(unsigned int *)this + 28))(this, 1) )
   {
     *((unsigned int *)this + 20) = FileClass::Seek((int *)this, 0, 1u); /*0x4322cd*/
@@ -1025,7 +1025,7 @@ int TacticalClass::initTacticalMap(int * a2, int * a3) {
     if ( v3 ) /*0x45f1eb*/
     {
       *a2 = v3; /*0x45f218*/
-      *a3 = *(__int16 *)(v3 + 6) / 2; /*0x45f227*/
+      *a3 = *(int16_t *)(v3 + 6) / 2; /*0x45f227*/
     }
     else
     {
@@ -1033,7 +1033,7 @@ int TacticalClass::initTacticalMap(int * a2, int * a3) {
       *a2 = v4; /*0x45f1f7*/
       if ( v4 ) /*0x45f1f9*/
       {
-        v5 = *(__int16 *)(v4 + 6) / 2; /*0x45f202*/
+        v5 = *(int16_t *)(v4 + 6) / 2; /*0x45f202*/
         if ( v5 > 3 ) /*0x45f207*/
         {
           *a3 = v5 + 3; /*0x45f211*/
@@ -1273,7 +1273,7 @@ int FileClass::Load(CDFileClass * aP1) {
   int v12; // [esp+18h] [ebp-4h] BYREF
 
   (*(void (**)(int *))(*(unsigned int *)this + 52))(this); /*0x473d1a*/
-  if ( ((unsigned __int8)aP1 & 2) != 0 || File::IsReady(this, 0) ) /*0x473d2d*/
+  if ( ((uint8_t)aP1 & 2) != 0 || File::IsReady(this, 0) ) /*0x473d2d*/
     return FileClass::OpenFileBufferIO(this, aP1); /*0x473e40*/
   v3 = *this; /*0x473d44*/
   v11 = 0; /*0x473d4d*/
@@ -7174,7 +7174,7 @@ LABEL_26:
       goto LABEL_30; /*0x4a8384*/
     }
   }
-  while ( (*(unsigned __int8 (**)(void *, int))(*(unsigned int *)this + 4))(this, v2) ); /*0x4a8371*/
+  while ( (*(uint8_t (**)(void *, int))(*(unsigned int *)this + 4))(this, v2) ); /*0x4a8371*/
   return 0; /*0x4a83a3*/
 
 }
@@ -7730,7 +7730,7 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
   int v12; // edi
   int v13; // edx
   char *v14; // edi
-  unsigned __int16 v15; // bp
+  uint16_t v15; // bp
   char v16; // al
   int v17; // eax
   int v18; // eax
@@ -7750,8 +7750,8 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
   int v32; // eax
   int v33; // ebx
   int v34; // edx
-  __int16 v35; // ax
-  __int16 v36; // ax
+  int16_t v35; // ax
+  int16_t v36; // ax
   int v37; // eax
   char *v38; // ecx
   int v39; // ebp
@@ -7772,7 +7772,7 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
   void *v54; // [esp+10h] [ebp-10h]
   int v55; // [esp+14h] [ebp-Ch] BYREF
   MouseClass *v56; // [esp+18h] [ebp-8h]
-  __int16 v57; // [esp+1Ch] [ebp-4h]
+  int16_t v57; // [esp+1Ch] [ebp-4h]
 
   HIWORD(v6) = HIWORD(aP1); /*0x4aae94*/
   v56 = 0; /*0x4aaea1*/
@@ -7792,7 +7792,7 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
   else if ( LOWORD(aP1->field_0) != *(unsigned short *)&MEMORY[0x89F690].__pad_BC0[424] /*0x4aafe0*/
          || HIWORD(aP1->field_0) != *(unsigned short *)&MEMORY[0x89F690].__pad_BC0[426] )
   {
-    v56 = (MouseClass *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)aP1); /*0x4aaff1*/
+    v56 = (MouseClass *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)aP1); /*0x4aaff1*/
   }
   if ( *((unsigned char *)this + 4531)
     && *((unsigned int *)this + 1135)
@@ -7804,7 +7804,7 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
     *v10 = (SLOWORD(aP1->field_0) << 8) + 128; /*0x4aaf4b*/
     v10[1] = v11 + 128; /*0x4aaf53*/
     v10[2] = 0; /*0x4aaf5b*/
-    v12 = (*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)aP1) + 80) & 0x100) != 0
+    v12 = (*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)aP1) + 80) & 0x100) != 0
         ? *(unsigned int *)&MEMORY[0x89F690].__pad_DFC[676]
         : 0;
     *(unsigned int *)(*((unsigned int *)this + 1135) + 8) = Cell::GetGroundHeight(*((unsigned int **)this + 1135)) + v12; /*0x4aaf94*/
@@ -7840,9 +7840,9 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
   if ( !*((unsigned char *)this + 4556) && !*((unsigned char *)this + 4557) && !*((unsigned char *)this + 4558) ) /*0x4ab02b*/
   {
     v15 = *(unsigned short *)(*(unsigned int *)MEMORY[0x87F6C8]->__pad_174 + 2); /*0x4ab03d*/
-    LOBYTE(aP3) = (unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4ab05c*/
-    BYTE1(aP3) = (unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4ab074*/
-    v16 = (unsigned __int8)(v15 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4ab088*/
+    LOBYTE(aP3) = (uint8_t)(v15 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4ab05c*/
+    BYTE1(aP3) = (uint8_t)(v15 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4ab074*/
+    v16 = (uint8_t)(v15 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4ab088*/
     *(unsigned short *)v14 = aP3; /*0x4ab08c*/
     *((unsigned char *)this + 4558) = v16; /*0x4ab08f*/
   }
@@ -7865,11 +7865,11 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
         v23 = &MEMORY[0x87F8E4].__pad_5568[3 * v22 + 820]; /*0x4ab0ed*/
         v21 += 2; /*0x4ab0f4*/
         LOWORD(aP3) = *(unsigned short *)v23; /*0x4ab0fa*/
-        LOWORD(v6) = (unsigned __int8)(BYTE1(aP3) >> MEMORY[0x89F690].__pad_14B0[676]); /*0x4ab114*/
-        LOWORD(v22) = (unsigned __int8)((unsigned __int8)v23[2] >> MEMORY[0x89F690].__pad_14B0[668]); /*0x4ab128*/
+        LOWORD(v6) = (uint8_t)(BYTE1(aP3) >> MEMORY[0x89F690].__pad_14B0[676]); /*0x4ab114*/
+        LOWORD(v22) = (uint8_t)((uint8_t)v23[2] >> MEMORY[0x89F690].__pad_14B0[668]); /*0x4ab128*/
         v24 = v22 << MEMORY[0x89F690].__pad_14B0[664]; /*0x4ab12c*/
         v25 = v24 | ((unsigned int)v6 << MEMORY[0x89F690].__pad_14B0[672]); /*0x4ab134*/
-        LOWORD(v24) = (unsigned __int8)((unsigned __int8)aP3 >> MEMORY[0x89F690].__pad_14B0[660]); /*0x4ab142*/
+        LOWORD(v24) = (uint8_t)((uint8_t)aP3 >> MEMORY[0x89F690].__pad_14B0[660]); /*0x4ab142*/
         v6 = (IUnknown *)((v24 << MEMORY[0x89F690].__pad_14B0[656]) | v25); /*0x4ab148*/
         ++v20; /*0x4ab14a*/
         *(unsigned short *)(v21 - 2) = (unsigned short)v6; /*0x4ab14b*/
@@ -7899,11 +7899,11 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
         v31 = &MEMORY[0x87F8E4].__pad_5568[3 * v30 + 820]; /*0x4ab1da*/
         v29 += 2; /*0x4ab1e1*/
         v57 = *(unsigned short *)v31; /*0x4ab1e7*/
-        LOWORD(v6) = (unsigned __int8)(HIBYTE(v57) >> MEMORY[0x89F690].__pad_14B0[676]); /*0x4ab201*/
-        LOWORD(v30) = (unsigned __int8)((unsigned __int8)v31[2] >> MEMORY[0x89F690].__pad_14B0[668]); /*0x4ab215*/
+        LOWORD(v6) = (uint8_t)(HIBYTE(v57) >> MEMORY[0x89F690].__pad_14B0[676]); /*0x4ab201*/
+        LOWORD(v30) = (uint8_t)((uint8_t)v31[2] >> MEMORY[0x89F690].__pad_14B0[668]); /*0x4ab215*/
         v32 = v30 << MEMORY[0x89F690].__pad_14B0[664]; /*0x4ab219*/
         v33 = v32 | ((unsigned int)v6 << MEMORY[0x89F690].__pad_14B0[672]); /*0x4ab221*/
-        LOWORD(v32) = (unsigned __int8)((unsigned __int8)v57 >> MEMORY[0x89F690].__pad_14B0[660]); /*0x4ab22f*/
+        LOWORD(v32) = (uint8_t)((uint8_t)v57 >> MEMORY[0x89F690].__pad_14B0[660]); /*0x4ab22f*/
         v6 = (IUnknown *)((v32 << MEMORY[0x89F690].__pad_14B0[656]) | v33); /*0x4ab235*/
         ++v28; /*0x4ab237*/
         *(unsigned short *)(v29 - 2) = (unsigned short)v6; /*0x4ab238*/
@@ -7911,13 +7911,13 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
       while ( v28 < 8 ); /*0x4ab23f*/
       break; /*0x4ab23f*/
     default:
-      LOWORD(v17) = (unsigned __int8)((unsigned __int8)*((unsigned char *)this + 4557) >> MEMORY[0x89F690].__pad_14B0[676]); /*0x4ab261*/
-      LOWORD(v13) = (unsigned __int8)((unsigned __int8)*((unsigned char *)this + 4558) >> MEMORY[0x89F690].__pad_14B0[668]); /*0x4ab279*/
+      LOWORD(v17) = (uint8_t)((uint8_t)*((unsigned char *)this + 4557) >> MEMORY[0x89F690].__pad_14B0[676]); /*0x4ab261*/
+      LOWORD(v13) = (uint8_t)((uint8_t)*((unsigned char *)this + 4558) >> MEMORY[0x89F690].__pad_14B0[668]); /*0x4ab279*/
       v34 = v13 << MEMORY[0x89F690].__pad_14B0[664]; /*0x4ab27d*/
       v35 = v34 | (v17 << MEMORY[0x89F690].__pad_14B0[672]); /*0x4ab285*/
-      LOBYTE(v34) = (unsigned __int8)*v14 >> MEMORY[0x89F690].__pad_14B0[660]; /*0x4ab289*/
+      LOBYTE(v34) = (uint8_t)*v14 >> MEMORY[0x89F690].__pad_14B0[660]; /*0x4ab289*/
       v43 = 0; /*0x4ab291*/
-      LOWORD(v34) = (unsigned __int8)v34; /*0x4ab293*/
+      LOWORD(v34) = (uint8_t)v34; /*0x4ab293*/
       v36 = (v34 << MEMORY[0x89F690].__pad_14B0[656]) | v35; /*0x4ab29f*/
       v42 = *(unsigned int *)MEMORY[0x87F6C8]->__pad_174; /*0x4ab2a1*/
       *(unsigned short *)(v42 + 2) = v36; /*0x4ab2a7*/
@@ -7927,11 +7927,11 @@ int TacticalClass::HandlePlayerAction(MouseClass * aP1, MouseClass * aP2, void *
         v37 = v43 % 256; /*0x4ab2c8*/
         v38 = &MEMORY[0x87F8E4].__pad_5568[3 * (v43 % 256) + 820]; /*0x4ab2c9*/
         v39 += 2; /*0x4ab2d0*/
-        LOWORD(v42) = (unsigned __int8)((unsigned __int8)HIBYTE(*(unsigned short *)v38) >> MEMORY[0x89F690].__pad_14B0[676]); /*0x4ab2f0*/
-        LOWORD(v37) = (unsigned __int8)((unsigned __int8)v38[2] >> MEMORY[0x89F690].__pad_14B0[668]); /*0x4ab304*/
+        LOWORD(v42) = (uint8_t)((uint8_t)HIBYTE(*(unsigned short *)v38) >> MEMORY[0x89F690].__pad_14B0[676]); /*0x4ab2f0*/
+        LOWORD(v37) = (uint8_t)((uint8_t)v38[2] >> MEMORY[0x89F690].__pad_14B0[668]); /*0x4ab304*/
         v40 = v37 << MEMORY[0x89F690].__pad_14B0[664]; /*0x4ab308*/
         v41 = v40 | (v42 << MEMORY[0x89F690].__pad_14B0[672]); /*0x4ab310*/
-        LOWORD(v40) = (unsigned __int8)((unsigned __int8)*(unsigned short *)v38 >> MEMORY[0x89F690].__pad_14B0[660]); /*0x4ab31e*/
+        LOWORD(v40) = (uint8_t)((uint8_t)*(unsigned short *)v38 >> MEMORY[0x89F690].__pad_14B0[660]); /*0x4ab31e*/
         v42 = (v40 << MEMORY[0x89F690].__pad_14B0[656]) | v41; /*0x4ab324*/
         ++v43; /*0x4ab326*/
         *(unsigned short *)(v39 - 2) = v42; /*0x4ab327*/
@@ -8059,7 +8059,7 @@ LABEL_73:
           || *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[476] != 1
           || !**(unsigned int **)&MEMORY[0xA8D63C].__pad_14B0[464]
           || (*(unsigned char *)(**(unsigned int **)&MEMORY[0xA8D63C].__pad_14B0[464] + 20) & 1) == 0
-          || !(*(unsigned __int8 (**)(unsigned int, MouseClass *))(***(unsigned int ***)&MEMORY[0xA8D63C].__pad_14B0[464]
+          || !(*(uint8_t (**)(unsigned int, MouseClass *))(***(unsigned int ***)&MEMORY[0xA8D63C].__pad_14B0[464]
                                                                       + 940))(
                 **(unsigned int **)&MEMORY[0xA8D63C].__pad_14B0[464],
                 v56) )
@@ -8390,7 +8390,7 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
          (int)aP1,
          &v47,
          (INIClass *)&MEMORY[0x81FFE4].headNode[2],
-         (unsigned __int8 *)g_INI_Key_Size,
+         (uint8_t *)g_INI_Key_Size,
          (MouseClass *)&v47.needsSave_flag);
   *(unsigned int *)&v47.__pad_41[3] = *v3; /*0x4acece*/
   *(unsigned int *)v47.__pad_48 = v3[1]; /*0x4aced8*/
@@ -8402,13 +8402,13 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
   (*(void (**)(int *, char *, int, unsigned int, int))(*(unsigned int *)this + 112))(this, &v47.__pad_41[3], 1, 0, 1); /*0x4acf0d*/
   Int_Overwrite = (char *)INIClass::ReadInt_Overwrite( /*0x4acf28*/
                             (int)aP1,
-                            (unsigned __int8 *)&MEMORY[0x81FFE4].headNode[2],
+                            (uint8_t *)&MEMORY[0x81FFE4].headNode[2],
                             &aLevel,
                             0);
   sectionCount = *(unsigned int *)&MEMORY[0xA8D63C].__pad_579C[58072]; /*0x4acf47*/
   aP2 = 0; /*0x4acf4b*/
   INIClass::GetString( /*0x4acf4f*/
-    (unsigned __int8 ***)aP1,
+    (uint8_t ***)aP1,
     (INIClass *)&MEMORY[0x81FFE4].headNode[2],
     aFill,
     &g_INI_Key_Clear,
@@ -8429,9 +8429,9 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
     BYTE2(i[1].health) = 0; /*0x4acfc7*/
   }
   MEMORY[0xA8B230]->theater = ScenarioClass::ReadAndParseString( /*0x4acff0*/
-                                (unsigned __int8 ***)aP1,
+                                (uint8_t ***)aP1,
                                 (INIClass *)&MEMORY[0x81FFE4].headNode[2],
-                                (unsigned __int8 *)&unk_818658,
+                                (uint8_t *)&unk_818658,
                                 0);
   (*(void (**)(int *, int))(*(unsigned int *)this + 24))(this, MEMORY[0xA8B230]->theater); /*0x4ad007*/
   Multiplayer::ShowProgress(&MEMORY[0xA8B238], 63); /*0x4ad011*/
@@ -8450,7 +8450,7 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
   LoadFactoryClassTheaterSHP(MEMORY[0xA8B230]->theater); /*0x4ad0a3*/
   Multiplayer::ShowProgress(&MEMORY[0xA8B238], 65); /*0x4ad0af*/
   Event::Dispatch(); /*0x4ad0b4*/
-  ScenarioClass::ReadWaypoints((__int16 *)MEMORY[0xA8B230], aP1); /*0x4ad0c0*/
+  ScenarioClass::ReadWaypoints((int16_t *)MEMORY[0xA8B230], aP1); /*0x4ad0c0*/
   if ( !ScenarioClass::Is_Waypoint_Valid((char *)MEMORY[0xA8B230], MEMORY[0xA8B230]->altHomeCell) ) /*0x4ad0d2*/
   {
     altHomeCell = MEMORY[0xA8B230]->altHomeCell; /*0x4ad0f2*/
@@ -8469,7 +8469,7 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
   *(int *)((char *)MEMORY[0xA8B230]->view1 + 2) = *(int *)((char *)MEMORY[0xA8B230]->view2 + 2); /*0x4ad171*/
   *(int *)((char *)&MEMORY[0xA8B230]->localVariables[1024] + 2) = *(int *)((char *)MEMORY[0xA8B230]->view1 + 2); /*0x4ad183*/
   v47.INIClass_field_2C = (SHIWORD(Int_Overwrite) << 8) + 128; /*0x4ad19c*/
-  *(unsigned int *)&v47.__pad_20[8] = ((__int16)v13 << 8) + 128; /*0x4ad1a6*/
+  *(unsigned int *)&v47.__pad_20[8] = ((int16_t)v13 << 8) + 128; /*0x4ad1a6*/
   v47.unknown30 = 0; /*0x4ad1aa*/
   Tactical::SetTacticalPosition(*(int *)&MEMORY[0x87F8E4].__pad_5568[9432], (IUnknown *)&v47.__pad_20[8]); /*0x4ad1ae*/
   KeyCount = INIClass::GetKeyCount(aP1->__pad_0, &MEMORY[0x81FFE4]); /*0x4ad1c1*/
@@ -8477,9 +8477,9 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
   {
     StringByIndex = (CCINIClass *)INIClass::GetStringByIndex(aP1->__pad_0, (CCINIClass *)&MEMORY[0x81FFE4], aP2); /*0x4ad1ec*/
     if ( INIClass::GetString( /*0x4ad1fc*/
-           (unsigned __int8 ***)aP1,
+           (uint8_t ***)aP1,
            &MEMORY[0x81FFE4],
-           (unsigned __int8 *)StringByIndex,
+           (uint8_t *)StringByIndex,
            (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
            Source,
            128) )
@@ -8506,20 +8506,20 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
     v16 = Int_Overwrite; /*0x4ad28b*/
     if ( Int_Overwrite ) /*0x4ad291*/
     {
-      if ( !*((unsigned int *)CellCoord::To_CellObj(this, (__int16 *)&sectionCount) + 15) ) /*0x4ad2a3*/
+      if ( !*((unsigned int *)CellCoord::To_CellObj(this, (int16_t *)&sectionCount) + 15) ) /*0x4ad2a3*/
       {
         v17 = (IUnknown *)TeamClass::FindOrCreate(v16); /*0x4ad2aa*/
         v18 = v17; /*0x4ad2af*/
         if ( v17 ) /*0x4ad2b3*/
         {
           ScenarioClass::checkMissionObjectives(v17, sectionCount); /*0x4ad2bc*/
-          v19 = CellCoord::To_CellObj(this, (__int16 *)&sectionCount); /*0x4ad2c9*/
+          v19 = CellCoord::To_CellObj(this, (int16_t *)&sectionCount); /*0x4ad2c9*/
           ObjectClass::SetTriggerTarget(v19, (int)v18); /*0x4ad2d0*/
           v20 = *((char *)this + 1113); /*0x4ad2d5*/
           if ( *((char *)this + 1115) < v20 /*0x4ad303*/
             || (*((unsigned char *)this + 4457) || !v20)
             && (v21 = *((char *)this + 1116), v21 > 0)
-            && (*(unsigned __int8 (**)(int *, int, unsigned int))(*((char *)this + 1111) + 8))((char *)this + 1111, v21 + v20, 0) )
+            && (*(uint8_t (**)(int *, int, unsigned int))(*((char *)this + 1111) + 8))((char *)this + 1111, v21 + v20, 0) )
           {
             v22 = *((char *)this + 1115); /*0x4ad30a*/
             v23 = *((char *)this + 1112); /*0x4ad30d*/
@@ -8658,7 +8658,7 @@ void ScenarioClass::LoadMapData(CCINIClass * aP1) {
           (int)aP1,
           &v47,
           (INIClass *)&MEMORY[0x81FFE4].headNode[2],
-          (unsigned __int8 *)g_INI_Key_LocalSize,
+          (uint8_t *)g_INI_Key_LocalSize,
           (MouseClass *)(*(unsigned int *)&v47.__pad_20[4] + 236));
   v36->field_0 = *v37; /*0x4ad784*/
   v36->field_4 = (void *)v37[1]; /*0x4ad789*/
@@ -21953,7 +21953,7 @@ int RadarClass::drawRadarEvents(unsigned int * a2) {
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x58af96*/
       return 0; /*0x58af96*/
     v4 = *((unsigned int *)this + 5); /*0x58af98*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x58afa8*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x58afa8*/
       return 0; /*0x58afaf*/
   }
   v6 = *((unsigned int *)this + 4); /*0x58afb5*/
@@ -24992,13 +24992,13 @@ int RadarClass::Destru_vt53() {
   MEMORY[0xB04A1C] = *((unsigned int *)this + 1148); /*0x652f55*/
   dword_B048E0 = LoadFileSHP(MEMORY[0x8391F4], (bool *)&MEMORY[0xB048F9]); /*0x652f70*/
   dword_B048AC = LoadFileSHP(MEMORY[0x8391F8], (bool *)&stru_B048F8); /*0x652f80*/
-  MEMORY[0xB04A08] = *((__int16 *)dword_B048E0 + 1); /*0x652f89*/
-  MEMORY[0xB04A0C] = *((__int16 *)dword_B048E0 + 2); /*0x652f93*/
-  dword_B048D0 = *((__int16 *)dword_B048AC + 1); /*0x652fa3*/
-  v4 = *((__int16 *)dword_B048AC + 2); /*0x652fab*/
+  MEMORY[0xB04A08] = *((int16_t *)dword_B048E0 + 1); /*0x652f89*/
+  MEMORY[0xB04A0C] = *((int16_t *)dword_B048E0 + 2); /*0x652f93*/
+  dword_B048D0 = *((int16_t *)dword_B048AC + 1); /*0x652fa3*/
+  v4 = *((int16_t *)dword_B048AC + 2); /*0x652fab*/
   MEMORY[0xB04A38] = (int)MEMORY[0xB0FA68]; /*0x652fb5*/
   dword_B048D4 = v4; /*0x652fc1*/
-  result = (unsigned __int8)MEMORY[0xB0FA1C] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]; /*0x653001*/
+  result = (uint8_t)MEMORY[0xB0FA1C] >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0]; /*0x653001*/
   *((unsigned int *)this + 1154) = result /*0x653005*/
                  | (BYTE1(MEMORY[0xB0FA1C]) >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
                  | (BYTE2(MEMORY[0xB0FA1C]) >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]);

@@ -500,7 +500,7 @@ VectorClass_flat * TypeList_TechnoType::Add(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x478683*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_TechnoTypeClass; /*0x478686*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x478690*/
   {
@@ -525,7 +525,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
   int v5; // ecx
   int v6; // eax
 
-  if ( this == a2 ) /*0x47872a*/
+  if ( this == (gamemd::TypeList_flat *)(a2) ) /*0x47872a*/
     return this; /*0x47872a*/
   (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x47872e*/
   v3 = a2[2]; /*0x478731*/
@@ -536,7 +536,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
     *((unsigned char *)this + 13) = 0; /*0x478781*/
     return this; /*0x478785*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x478743*/
+  v4 = (unsigned int *)(__2_YAPAXI_Z(4 * v3));
   *((unsigned int *)this + 1) = v4; /*0x47874b*/
   if ( !v4 ) /*0x478750*/
     return this; /*0x478750*/
@@ -573,7 +573,7 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
     *((unsigned int *)this + 1) = __2_YAPAXI_Z(4 * a2); /*0x4787cd*/
     *((unsigned char *)this + 13) = 1; /*0x4787d0*/
   }
-  return this; /*0x4787bd*/
+  return (unsigned int *)(this);
 
 }
 // 0x5128A0
@@ -626,7 +626,7 @@ TypeList_flat * TypeList_Infantry::Add(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5129f3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_InfantryTypeClass_const; /*0x5129f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x512a00*/
   {
@@ -2115,7 +2115,7 @@ char TypeList_flat::PushBack(VectorClass_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x717ce6*/
       return 0; /*0x717ce6*/
     v4 = *((unsigned int *)this + 5); /*0x717ce8*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x717cf8*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x717cf8*/
       return 0; /*0x717cff*/
   }
   v6 = *((unsigned int *)this + 4); /*0x717d05*/

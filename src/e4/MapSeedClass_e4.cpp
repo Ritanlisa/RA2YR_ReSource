@@ -33,8 +33,8 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   int v6; // ebx
   int v7; // eax
   unsigned int v8; // eax
-  __int16 v9; // ax
-  __int16 uniqueId; // cx
+  int16_t v9; // ax
+  int16_t uniqueId; // cx
   int i; // esi
   unsigned int v12; // eax
   int v13; // ebx
@@ -43,7 +43,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   int uniqueId_high; // ebx
   VectorClass *NeighbourContent; // esi
   unsigned int v18; // eax
-  __int16 a1[4]; // [esp+10h] [ebp-118h] BYREF
+  int16_t a1[4]; // [esp+10h] [ebp-118h] BYREF
   char v21; // [esp+1Ah] [ebp-10Eh]
   char v22; // [esp+1Bh] [ebp-10Dh]
   ObjectClass v23; // [esp+1Ch] [ebp-10Ch] BYREF
@@ -82,16 +82,16 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
                                          2);
         v7 = *globalHelper_0A7070( /*0x5a5bf0*/
                 (MapSeedClass *)&v23.objectTypeFlags,
-                (__int16 *)&v23.__pad_0[12],
+                (int16_t *)&v23.__pad_0[12],
                 (MapSeedClass *)v23.ambientSoundController,
                 2);
         v23.uniqueId = v7; /*0x5a5bf7*/
         if ( v7 /*0x5a5c28*/
           && (*(unsigned short *)&v23.__pad_0[4] || *(unsigned short *)&v23.__pad_0[6])
-          && (__int16)v7 - *(__int16 *)&v23.__pad_0[4] >= 6 )
+          && (int16_t)v7 - *(int16_t *)&v23.__pad_0[4] >= 6 )
         {
-          v23.customSound = *(__int16 *)&v23.__pad_0[14]; /*0x5a5c3b*/
-          v23.customSound_controller[4] = *(__int16 *)&v23.__pad_0[12] - 4; /*0x5a5c4c*/
+          v23.customSound = *(int16_t *)&v23.__pad_0[14]; /*0x5a5c3b*/
+          v23.customSound_controller[4] = *(int16_t *)&v23.__pad_0[12] - 4; /*0x5a5c4c*/
           *(unsigned int *)&v23.bombVisible = 4; /*0x5a5c53*/
           v23.health = 3; /*0x5a5c5e*/
           if ( !IsAreaClearMap((MapClass *)&v23.customSound_controller[4], 0, 0) ) /*0x5a5c65*/
@@ -99,7 +99,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
           do /*0x5a5c92*/
           {
             *(unsigned long long *)a1 = (unsigned int)Random::State(&g_Randomizer); /*0x5a5c78*/
-            v8 = Math::RoundToInt((double)*(__int64 *)a1 * 4.656612874161595e-10); /*0x5a5c8a*/
+            v8 = Math::RoundToInt((double)*(int64_t *)a1 * 4.656612874161595e-10); /*0x5a5c8a*/
           }
           while ( v8 > 1 ); /*0x5a5c92*/
           if ( v8 ) /*0x5a5c96*/
@@ -124,7 +124,7 @@ LABEL_11:
           }
           v9 = *(unsigned short *)&v23.__pad_0[12]; /*0x5a5cde*/
           uniqueId = v23.uniqueId; /*0x5a5ce2*/
-          for ( i = 0; i < SLOWORD(v23.uniqueId) - *(__int16 *)&v23.__pad_0[12] - 1; ++i ) /*0x5a5cf3*/
+          for ( i = 0; i < SLOWORD(v23.uniqueId) - *(int16_t *)&v23.__pad_0[12] - 1; ++i ) /*0x5a5cf3*/
           {
             LOWORD(v23.NeedsSaveOrLink) = i + 1; /*0x5a5cfa*/
             LOWORD(v23.nextArrayIndex) = v9 + i + 1; /*0x5a5d0a*/
@@ -143,7 +143,7 @@ LABEL_11:
           do /*0x5a5da0*/
           {
             *(unsigned long long *)&v23.estimatedHealth = (unsigned int)Random::State(&g_Randomizer); /*0x5a5d7d*/
-            v12 = Math::RoundToInt((double)*(__int64 *)&v23.estimatedHealth * 4.656612874161595e-10); /*0x5a5d98*/
+            v12 = Math::RoundToInt((double)*(int64_t *)&v23.estimatedHealth * 4.656612874161595e-10); /*0x5a5d98*/
           }
           while ( v12 > 1 ); /*0x5a5da0*/
           if ( v12 ) /*0x5a5da4*/
@@ -187,7 +187,7 @@ LABEL_18:
       v23.uniqueId = v5; /*0x5a5e6a*/
       if ( v5 /*0x5a5ea1*/
         && ((LOWORD(v5) = *(unsigned short *)&v23.__pad_0[6], *(unsigned short *)&v23.__pad_0[4]) || *(unsigned short *)&v23.__pad_0[6])
-        && (LOWORD(v5) = *(unsigned short *)&v23.__pad_0[6], SHIWORD(v5) - *(__int16 *)&v23.__pad_0[6] >= 6) )
+        && (LOWORD(v5) = *(unsigned short *)&v23.__pad_0[6], SHIWORD(v5) - *(int16_t *)&v23.__pad_0[6] >= 6) )
       {
         LOWORD(v5) = a1[1]; /*0x5a5ea7*/
         v22 = 0; /*0x5a5eac*/
@@ -201,7 +201,7 @@ LABEL_18:
             if ( v22 ) /*0x5a5ed1*/
             {
               v27[0] = a1[0]; /*0x5a607e*/
-              v27[1] = (__int16)v5; /*0x5a6085*/
+              v27[1] = (int16_t)v5; /*0x5a6085*/
               v27[2] = 3; /*0x5a609b*/
               v27[3] = 1; /*0x5a60a2*/
               if ( IsAreaClearMap((MapClass *)v27, 0, 0) ) /*0x5a60a9*/
@@ -296,7 +296,7 @@ LABEL_18:
                   *(unsigned int *)v23.__pad_0 = v23.NeedsSaveOrLink; /*0x5a6386*/
                   NeighbourContent = (VectorClass *)CellCoord::To_CellObj( /*0x5a638f*/
                                                       &stru_87C374.__pad_14B0[8132],
-                                                      (__int16 *)v23.__pad_0);
+                                                      (int16_t *)v23.__pad_0);
                   if ( Value::InRange((int *)NeighbourContent) && Value::InRange((int *)NeighbourContent) ) /*0x5a639e*/
                   {
                     do /*0x5a63c4*/
@@ -316,16 +316,16 @@ LABEL_18:
             v30[2] = 3; /*0x5a5ee7*/
             *(unsigned int *)&v23.isAliveFlag = 3; /*0x5a5eee*/
             v23.parachute = (void *)a1[0]; /*0x5a5f0a*/
-            *(unsigned int *)&v23.onBridge = (__int16)v5; /*0x5a5f11*/
+            *(unsigned int *)&v23.onBridge = (int16_t)v5; /*0x5a5f11*/
             v30[0] = a1[0]; /*0x5a5f18*/
-            v30[1] = (__int16)v5 - 3; /*0x5a5f1f*/
+            v30[1] = (int16_t)v5 - 3; /*0x5a5f1f*/
             v30[3] = 4; /*0x5a5f26*/
-            if ( SHIWORD(v23.uniqueId) - (__int16)v5 < 2 ) /*0x5a5f2d*/
+            if ( SHIWORD(v23.uniqueId) - (int16_t)v5 < 2 ) /*0x5a5f2d*/
               goto LABEL_73; /*0x5a5f2d*/
             if ( !v14 ) /*0x5a5f35*/
               goto LABEL_79; /*0x5a5f35*/
             v28[0] = a1[0]; /*0x5a5f3b*/
-            v28[1] = (__int16)v5 - 3; /*0x5a5f42*/
+            v28[1] = (int16_t)v5 - 3; /*0x5a5f42*/
             v28[2] = 3; /*0x5a5f53*/
             v28[3] = 4; /*0x5a5f5e*/
             if ( !IsAreaClearMap((MapClass *)v28, 0, 0) ) /*0x5a5f65*/
@@ -333,7 +333,7 @@ LABEL_18:
             do /*0x5a5f96*/
             {
               *(unsigned long long *)v23.customSound_controller = (unsigned int)Random::State(&g_Randomizer); /*0x5a5f7c*/
-              v15 = Math::RoundToInt((double)*(__int64 *)v23.customSound_controller * 4.656612874161595e-10); /*0x5a5f8e*/
+              v15 = Math::RoundToInt((double)*(int64_t *)v23.customSound_controller * 4.656612874161595e-10); /*0x5a5f8e*/
             }
             while ( v15 > 1 ); /*0x5a5f96*/
             if ( v15 ) /*0x5a5f9a*/
@@ -385,7 +385,7 @@ LABEL_38:
         do /*0x5a648f*/
         {
           *(unsigned long long *)&v23.customSound_controller[4] = (unsigned int)Random::State(&g_Randomizer); /*0x5a6472*/
-          v18 = Math::RoundToInt((double)*(__int64 *)&v23.customSound_controller[4] * 4.656612874161595e-10); /*0x5a6487*/
+          v18 = Math::RoundToInt((double)*(int64_t *)&v23.customSound_controller[4] * 4.656612874161595e-10); /*0x5a6487*/
         }
         while ( v18 > 1 ); /*0x5a648f*/
         if ( v18 ) /*0x5a6493*/

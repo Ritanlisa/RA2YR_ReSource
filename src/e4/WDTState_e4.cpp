@@ -37,7 +37,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         v9 = a2; /*0x76bae1*/
         do /*0x76baf5*/
         {
-          ComPtr::Constructor(v8); /*0x76bae6*/
+          ((ComPtr *)(v8))->Constructor(); /*0x76bae6*/
           *v8 = &vt_rc_ptr_WDTTerritory; /*0x76baeb*/
           v8 += 2; /*0x76baf1*/
           --v9; /*0x76baf4*/
@@ -80,7 +80,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
       if ( a2 >= *((unsigned int *)this + 2) ) /*0x76bb11*/
         v3 = *((unsigned int *)this + 2); /*0x76bb13*/
       for ( i = 0; i < v3; ++i ) /*0x76bb19*/
-        ComPtr::Set(&v6[2 * i], *(unsigned int *)(*((unsigned int *)this + 1) + 8 * i + 4)); /*0x76bb26*/
+        ((ComPtr *)(&v6[2 * i]))->Set(*(unsigned int *)(*((unsigned int *)this + 1) + 8 * i + 4)); /*0x76bb26*/
       if ( *((unsigned char *)this + 13) ) /*0x76bb30*/
       {
         v11 = (void (***)(unsigned int, int))*((unsigned int *)this + 1); /*0x76bb37*/
@@ -169,7 +169,7 @@ DynamicVector * WDTState_4::QueryInterface(unsigned int * Block, char a2)
 
   void (***v3)(unsigned int, int); // ecx
 
-  v3 = (void (***)(unsigned int, int))*(Block + 1); /*0x76bc13*/
+  v3 = (unsigned int)((void (***)(unsigned int, int))*(Block + 1));
   *Block = &vt_VectorClass_rc_ptr_WDTTerritory; /*0x76bc16*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x76bc20*/
   {

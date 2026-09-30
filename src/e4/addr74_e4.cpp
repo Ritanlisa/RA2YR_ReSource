@@ -732,7 +732,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   int v6; // ecx
   int v7; // eax
 
-  v3 = (char *)((unsigned int *)this + 3); /*0x74bbff*/
+  v3 = (unsigned int)((char *)((unsigned int *)this + 3));
   *((unsigned int *)this + 4) = 0; /*0x74bc04*/
   *((unsigned int *)this + 5) = 0; /*0x74bc07*/
   *((unsigned char *)this + 24) = 1; /*0x74bc0a*/
@@ -751,10 +751,10 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     *((unsigned int *)v3 + 1) = 0; /*0x74bc7f*/
     v3[13] = 0; /*0x74bc82*/
 LABEL_8:
-    *this = *(unsigned int *)a2; /*0x74bc85*/
+    *(_DWORD *)this = *(unsigned int *)a2; /*0x74bc85*/
     return this; /*0x74bc8d*/
   }
-  v5 = __2_YAPAXI_Z(v4); /*0x74bc3e*/
+  v5 = (unsigned int)(__2_YAPAXI_Z(v4));
   *((unsigned int *)v3 + 1) = v5; /*0x74bc48*/
   if ( !v5 ) /*0x74bc4b*/
     goto LABEL_8; /*0x74bc4b*/
@@ -769,7 +769,7 @@ LABEL_8:
     ++v7; /*0x74bc69*/
   }
   while ( v7 < *((unsigned int *)v3 + 2) ); /*0x74bc6c*/
-  *this = *(unsigned int *)a2; /*0x74bc74*/
+  *(_DWORD *)this = *(unsigned int *)a2; /*0x74bc74*/
   return this; /*0x74bc78*/
 
 }
@@ -788,7 +788,7 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
   v3 = *((unsigned int *)this + 2); /*0x74bca6*/
   if ( v3 != -1 ) /*0x74bcac*/
   {
-    SetBitfieldBit(*((unsigned int *)this + 4), v3, *((unsigned __int8 *)this + 4)); /*0x74bcb7*/
+    SetBitfieldBit(*((unsigned int *)this + 4), v3, *((uint8_t *)this + 4)); /*0x74bcb7*/
     *((unsigned int *)this + 2) = -1; /*0x74bcbc*/
   }
   *((unsigned char *)this + 4) = *(unsigned char *)(a2 + 4); /*0x74bcd0*/
@@ -803,10 +803,10 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
     *((unsigned int *)this + 4) = 0; /*0x74bd2c*/
     *((unsigned char *)this + 25) = 0; /*0x74bd33*/
 LABEL_10:
-    *this = *(unsigned int *)a2; /*0x74bd37*/
+    *(_DWORD *)this = *(unsigned int *)a2; /*0x74bd37*/
     return this; /*0x74bd39*/
   }
-  v5 = __2_YAPAXI_Z(v4); /*0x74bcef*/
+  v5 = (unsigned int)(__2_YAPAXI_Z(v4));
   *((unsigned int *)this + 4) = v5; /*0x74bcf7*/
   if ( !v5 ) /*0x74bcfc*/
     goto LABEL_10; /*0x74bcfc*/
@@ -821,7 +821,7 @@ LABEL_10:
     ++v7; /*0x74bd1a*/
   }
   while ( v7 < *((unsigned int *)this + 5) ); /*0x74bd1d*/
-  *this = *(unsigned int *)a2; /*0x74bd23*/
+  *(_DWORD *)this = *(unsigned int *)a2; /*0x74bd23*/
   return this; /*0x74bd25*/
 
 }
@@ -833,7 +833,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
 
   int v3; // edx
   unsigned int v5; // edi
-  unsigned __int8 v6; // al
+  uint8_t v6; // al
   int v7; // edx
   int v8; // ebp
   int v10; // edx
@@ -843,14 +843,14 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   v3 = *((char *)this + 2); /*0x74bdc8*/
   if ( v3 != -1 ) /*0x74bdcd*/
   {
-    SetBitfieldBit(*((char *)this + 4), v3, *((unsigned __int8 *)this + 4)); /*0x74bdd8*/
+    SetBitfieldBit(*((char *)this + 4), v3, *((uint8_t *)this + 4)); /*0x74bdd8*/
     *((char *)this + 2) = -1; /*0x74bddd*/
   }
   if ( a2 ) /*0x74bde6*/
   {
-    v5 = *this; /*0x74bdeb*/
+    v5 = (unsigned int)(*this);
     v6 = (*(int (**)(unsigned int *, unsigned int, unsigned int))(*((char *)this + 3) + 8))((char *)this + 3, (a2 + 7) >> 3, 0); /*0x74bdf9*/
-    *this = a2; /*0x74be01*/
+    *(_DWORD *)this = a2; /*0x74be01*/
     v12 = v6; /*0x74be03*/
     if ( v6 && v5 < a2 ) /*0x74be0b*/
     {
@@ -865,7 +865,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
           if ( v8 != v7 ) /*0x74be22*/
           {
             if ( v7 != -1 ) /*0x74be27*/
-              SetBitfieldBit(*((char *)this + 4), v7, *((unsigned __int8 *)this + 4)); /*0x74be32*/
+              SetBitfieldBit(*((char *)this + 4), v7, *((uint8_t *)this + 4)); /*0x74be32*/
             if ( v8 != -1 ) /*0x74be3a*/
               *((unsigned char *)this + 4) = BitArray::TestBit(*((char *)this + 4), v8); /*0x74be46*/
             *((char *)this + 2) = v8; /*0x74be49*/
@@ -883,11 +883,11 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
     v10 = *((char *)this + 2); /*0x74be60*/
     if ( v10 != -1 ) /*0x74be65*/
     {
-      SetBitfieldBit(*((char *)this + 4), v10, *((unsigned __int8 *)this + 4)); /*0x74be70*/
+      SetBitfieldBit(*((char *)this + 4), v10, *((uint8_t *)this + 4)); /*0x74be70*/
       *((char *)this + 2) = -1; /*0x74be75*/
     }
     v11 = *((char *)this + 3); /*0x74be78*/
-    *this = 0; /*0x74be7e*/
+    *(_DWORD *)this = 0; /*0x74be7e*/
     (*(void (**)(unsigned int *))(v11 + 12))((char *)this + 3); /*0x74be84*/
     return 1; /*0x74be89*/
   }

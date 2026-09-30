@@ -29,7 +29,7 @@ int MapSeed::ValidateName(int a2)
   if ( a2 ) /*0x597736*/
     return (*(int (**)(int, char *))(*(unsigned int *)this + 8))(a2, (unsigned char *)this + 120); /*0x597740*/
   else
-    return (unsigned __int8)ShowSaveLoadDialog((unsigned char *)this + 120) != 0; /*0x597752*/
+    return (uint8_t)ShowSaveLoadDialog((unsigned char *)this + 120) != 0; /*0x597752*/
 
 }
 } // namespace gamemd

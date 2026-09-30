@@ -38,7 +38,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5b95*/
   *((unsigned int *)this + 2) = &TagTypeClass::`vftable'; /*0x6e5b9c*/
   *((unsigned int *)this + 3) = &vt_TagTypeClass; /*0x6e5ba3*/
-  if ( this == (char *)-36 ) /*0x6e5baa*/
+  if ( this == (gamemd::TagTypeClass *)((char *))-36 ) /*0x6e5baa*/
   {
     Destination[0] = 0; /*0x6e5bac*/
   }
@@ -47,7 +47,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
     strncpy(Destination, (unsigned char *)this + 36, 0x30u); /*0x6e5bba*/
     v7 = 0; /*0x6e5bc2*/
   }
-  if ( Destination != (unsigned char *)this + 100 ) /*0x6e5bd0*/
+  if ( Destination != (char [48])((unsigned char *))this + 100 ) /*0x6e5bd0*/
   {
     qmemcpy((unsigned char *)this + 100, Destination, 0x30u); /*0x6e5bdc*/
     *((unsigned char *)this + 148) = v7; /*0x6e5bde*/
@@ -56,7 +56,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[6140] < *(int *)&MEMORY[0xB077F8].__pad_579C[6132] /*0x6e5c1e*/
     || (MEMORY[0xB077F8].__pad_579C[6137] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6132])
     && *(int *)&MEMORY[0xB077F8].__pad_579C[6144] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6124] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6124] + 8))(
          &MEMORY[0xB077F8].__pad_579C[6124],
          *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6132] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[6144],
          0) )
@@ -67,7 +67,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x6e5c71*/
     || (MEMORY[0xB077F8].__pad_579C[9961] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956])
     && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
          &MEMORY[0xB077F8].__pad_579C[9948],
          *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9968],
          0) )
@@ -75,7 +75,7 @@ AbstractTypeClass * TagTypeClass::Construct(ObjectClass * aP1)
     v4 = (*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x6e5c7e*/
     *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v4) = this; /*0x6e5c8d*/
   }
-  return this; /*0x6e5c92*/
+  return (gamemd::AbstractTypeClass *)(this);
 
 }
 }
@@ -91,7 +91,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   unsigned int *v6; // ecx
   int v7; // eax
   int v8; // eax
-  int v10; // [esp+Ch] [ebp-4h] BYREF
+  TagTypeClass * v10;
 
   *(unsigned int *)this = &TagTypeClass::`vftable'; /*0x6e5ca7*/
   *((unsigned int *)this + 1) = &TagTypeClass::`vftable'; /*0x6e5cad*/
@@ -119,7 +119,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
     do /*0x6e5d2e*/
     {
       v6 = (unsigned int *)v5[v4]; /*0x6e5d0c*/
-      if ( v6[9] == this ) /*0x6e5d12*/
+      if ( v6[9] == (unsigned int)(this) ) /*0x6e5d12*/
       {
         if ( v6 ) /*0x6e5d16*/
         {
@@ -132,7 +132,7 @@ AbstractClass * * TagTypeClass::CleanupMembers()
     }
     while ( v4 < MEMORY[0xB0E730] ); /*0x6e5d2e*/
   }
-  v10 = this; /*0x6e5d40*/
+  v10 = (int)(this);
   v7 = (*(int (**)(int *, int *))(MEMORY[0xB0F670] + 16))(&MEMORY[0xB0F670], &v10); /*0x6e5d44*/
   if ( v7 != -1 && v7 < MEMORY[0xB0F680] && v7 < --MEMORY[0xB0F680] ) /*0x6e5d5f*/
   {
@@ -189,8 +189,8 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
   INIClass::ResetSection(a2); /*0x6e6093*/
   if ( !INIClass::GetString( /*0x6e60b4*/
           a2,
-          (unsigned __int8 *)MEMORY[0x842C3C],
-          (unsigned __int8 *)((char *)this + 36),
+          (uint8_t *)MEMORY[0x842C3C],
+          (uint8_t *)((char *)this + 36),
           &MEMORY[0x889F64],
           String,
           128) )

@@ -70,7 +70,7 @@ SmudgeTypeClass::SmudgeTypeClass(char * Source)
   if ( MEMORY[0xA8EC28] < MEMORY[0xA8EC20] /*0x6b5322*/
     || (MEMORY[0xA8EC25] || !MEMORY[0xA8EC20])
     && MEMORY[0xA8EC2C] > 0
-    && (v4 = (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8EC18] + 8))(
+    && (v4 = (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xA8EC18] + 8))(
                &MEMORY[0xA8EC18],
                MEMORY[0xA8EC20] + MEMORY[0xA8EC2C],
                0) == 0,
@@ -106,6 +106,7 @@ LABEL_11:
 // 0x6B55F0
 void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6)
 {
+    unsigned int v7 = 0;  /* G37 hoist */
 
   int v7; // ebx
   int v8; // edx
@@ -129,7 +130,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
       v13 += 60 * (a4 / v9 - a4 % v9) / 2; /*0x6b5661*/
     }
     v10 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], a6); /*0x6b5674*/
-    v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
+    v12 = *((int16_t *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP(MEMORY[0x887314], v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }

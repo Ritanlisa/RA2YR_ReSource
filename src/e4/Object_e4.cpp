@@ -184,14 +184,14 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
   int v3; // esi
   int v4; // edi
   int *v5; // ecx
-  __int16 v6; // ax
-  __int16 v7; // cx
+  int16_t v6; // ax
+  int16_t v7; // cx
   int v8; // edi
   int v9; // eax
   int v10; // ebp
   int v11; // ecx
   unsigned int v12; // eax
-  unsigned int *v13; // eax
+  unsigned int v13;
   unsigned int *i; // esi
   int *v15; // eax
   int v16; // eax
@@ -207,8 +207,8 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
   int v27[3]; // [esp+3Ch] [ebp-24h] BYREF
   char v28[12]; // [esp+48h] [ebp-18h] BYREF
   int v29[3]; // [esp+54h] [ebp-Ch] BYREF
-  __int16 v30; // [esp+64h] [ebp+4h]
-  __int16 v31; // [esp+66h] [ebp+6h]
+  int16_t v30; // [esp+64h] [ebp+4h]
+  int16_t v31; // [esp+66h] [ebp+6h]
 
   v21 = 0; /*0x56c238*/
   v22 = 0; /*0x56c23e*/
@@ -230,14 +230,14 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     dword_ABD454 = -1; /*0x56c326*/
     atexit(nullsub_167); /*0x56c32b*/
   }
-  v5 = &dword_ABD434; /*0x56c333*/
+  v5 = (int *)(&dword_ABD434);
   v24 = &dword_ABD434; /*0x56c338*/
   while ( 1 ) /*0x56c343*/
   {
     v6 = *(unsigned short *)v5; /*0x56c343*/
     v7 = v4 + *((unsigned short *)v5 + 1); /*0x56c351*/
     LOWORD(v23) = v3 + v6; /*0x56c354*/
-    v8 = (__int16)(v3 + v6); /*0x56c359*/
+    v8 = (int16_t)(v3 + v6); /*0x56c359*/
     v9 = *((unsigned int *)this + 61); /*0x56c35c*/
     HIWORD(v23) = v7; /*0x56c362*/
     v10 = v7; /*0x56c367*/
@@ -247,7 +247,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
       v12 = v8 + (v10 << 9); /*0x56c3a7*/
       if ( v12 >= 0x40000 || (v13 = *(unsigned int **)(*((unsigned int *)this + 79) + 4 * v12)) == 0 ) /*0x56c3c1*/
       {
-        g_Map_GlobalCellIndex = v23; /*0x56c3c7*/
+        g_Map_GlobalCellIndex = (unsigned int *)(v23);
         v13 = g_CellClassArray; /*0x56c3cc*/
       }
       for ( i = (unsigned int *)v13[57]; i; i = (unsigned int *)i[12] ) /*0x56c3d1*/
@@ -256,7 +256,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
         {
           if ( (*(int (**)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
           {
-            v17 = (unsigned int *)(*(int (**)(unsigned int *, char *))(*i + 72))(i, v28); /*0x56c457*/
+            v17 = (int *)((unsigned int *)(*(int (**)(unsigned int *, char *))(*i + 72))(i, v28));
             v18 = Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18[1]; /*0x56c485*/
@@ -399,11 +399,11 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
   *((unsigned int *)this + 2) = &OverlayClass::`vftable'; /*0x5fc39f*/
   *((unsigned int *)this + 1) = &OverlayClass::`vftable'; /*0x5fc3a6*/
   *((unsigned int *)this + 3) = &vt_OverlayClass; /*0x5fc3ac*/
-  AbstractClass::GenerateUniqueID((int)(unsigned int *)this + 4); /*0x5fc3b3*/
+  ((AbstractClass *)((int)(unsigned int *)this + 4))->GenerateUniqueID(); /*0x5fc3b3*/
   if ( *(int *)&HouseClass_Player.__pad_5568[22956] < *(int *)&HouseClass_Player.__pad_5568[22948] /*0x5fc3ef*/
     || (HouseClass_Player.__pad_5568[22953] || !*(unsigned int *)&HouseClass_Player.__pad_5568[22948])
     && *(int *)&HouseClass_Player.__pad_5568[22960] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22940] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&HouseClass_Player.__pad_5568[22940] + 8))(
          &HouseClass_Player.__pad_5568[22940],
          *(unsigned int *)&HouseClass_Player.__pad_5568[22948] + *(unsigned int *)&HouseClass_Player.__pad_5568[22960],
          0) )
@@ -417,12 +417,12 @@ int Object::SpawnAtCell( IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3
     v7 = SHIWORD(aP2->field_0); /*0x5fc444*/
     LOWORD(aP1) = ((SLOWORD(aP2->field_0) << 8) + 128) / 256; /*0x5fc469*/
     HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
-    v8 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP1); /*0x5fc497*/
+    v8 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP1); /*0x5fc497*/
     if ( !CellClass::FindInfantry(v8, 0) ) /*0x5fc4a0*/
       ObjectClass::Deploy((#374 *)this); /*0x5fc4b1*/
     *(unsigned int *)&stru_830620.__pad_14B0[6380] = -1; /*0x5fc4b6*/
   }
-  return (OverlayClass *)this; /*0x5fc4c2*/
+  return (int)((OverlayClass *)this);
 
 }
 }
@@ -453,9 +453,9 @@ void* Object::HandleAction(int * a2, int * a3)
   int v23; // ecx
   int v24; // eax
   unsigned int *v25; // eax
-  __int16 *v26; // eax
+  int16_t *v26; // eax
   int v27; // [esp-18h] [ebp-40h]
-  __int16 *v28; // [esp-4h] [ebp-2Ch]
+  int16_t *v28; // [esp-4h] [ebp-2Ch]
   int v29; // [esp+10h] [ebp-18h]
   int v30; // [esp+14h] [ebp-14h] BYREF
   int v31; // [esp+18h] [ebp-10h]
@@ -554,7 +554,7 @@ LABEL_20:
     v33 = *((unsigned int *)this + 40); /*0x5fdb32*/
     v34 = *((unsigned int *)this + 41); /*0x5fdb41*/
     v20 = (char *)MEMORY[0xB054D4] + 4 * *((unsigned int *)HouseClass_Player + 22549); /*0x5fdb60*/
-    v27 = *((__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v32) + 134); /*0x5fdb7c*/
+    v27 = *((int16_t *)Coord::To_Cell(&MEMORY[0x87F7E8], &v32) + 134); /*0x5fdb7c*/
     DrawToSurfaceSHP( /*0x5fdb9a*/
       MEMORY[0x887314],
       *(unsigned int *)(*(unsigned int *)v20 + 780),
@@ -580,7 +580,7 @@ LABEL_20:
     v34 = *((unsigned int *)this + 41); /*0x5fdba9*/
     LOWORD(a2) = v21 / 256; /*0x5fdbb9*/
     HIWORD(a2) = v22 / 256; /*0x5fdbd1*/
-    if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&a2) ) /*0x5fdbe3*/
+    if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (int16_t *)&a2) ) /*0x5fdbe3*/
     {
       v23 = *((unsigned int *)this + 41); /*0x5fdbee*/
       v24 = *((unsigned int *)this + 40); /*0x5fdbf1*/
@@ -591,17 +591,17 @@ LABEL_20:
     }
     else
     {
-      v26 = (__int16 *)Tactical::PixelToCell((int)MEMORY[0x887324], &a2, &v30); /*0x5fdc21*/
+      v26 = (int16_t *)Tactical::PixelToCell((int)MEMORY[0x887324], &a2, &v30); /*0x5fdc21*/
       if ( LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], v26) ) /*0x5fdc2c*/
       {
-        v28 = (__int16 *)Tactical::PixelToCell((int)MEMORY[0x887324], &a2, &v30); /*0x5fdc4a*/
+        v28 = (int16_t *)Tactical::PixelToCell((int)MEMORY[0x887324], &a2, &v30); /*0x5fdc4a*/
         v25 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], v28); /*0x5fdc4b*/
       }
       else
       {
         LOWORD(a2) = 1; /*0x5fdc58*/
         HIWORD(a2) = MEMORY[0x87F8DC]; /*0x5fdc5f*/
-        v25 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2); /*0x5fdc6a*/
+        v25 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&a2); /*0x5fdc6a*/
       }
     }
     DrawToSurfaceSHP( /*0x5fdcaa*/
@@ -615,7 +615,7 @@ LABEL_20:
       0,
       -2 - v29,
       0,
-      *((__int16 *)v25 + 134),
+      *((int16_t *)v25 + 134),
       0,
       0,
       0,
@@ -714,7 +714,7 @@ LABEL_39:
     v5[2] = MEMORY[0xAC4950]; /*0x62af3c*/
     return result; /*0x62af3c*/
   }
-  if ( !(unsigned __int8)ParasiteClass::CanExistOnVictimCell(this) ) /*0x62ac5a*/
+  if ( !(uint8_t)ParasiteClass::CanExistOnVictimCell(this) ) /*0x62ac5a*/
   {
     v12 = ((unsigned int)((*ProgressTimer::GetValue((unsigned short *)(*((unsigned int *)this + 10) + 904), &v26) >> 12) + 1) >> 1) & 7; /*0x62ad3a*/
     v13 = (unsigned int *)(*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 40) + 444))(*((unsigned int *)this + 10)); /*0x62ad43*/

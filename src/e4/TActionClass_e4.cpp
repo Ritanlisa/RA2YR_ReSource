@@ -578,10 +578,10 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   v14 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v15, *((char *)this + 17)); /*0x6e23b1*/
   aP2.Z = 0; /*0x6e23b5*/
   aP2.Y = (SHIWORD(v14) << 8) + 128; /*0x6e23d6*/
-  aP2.X = ((__int16)v14 << 8) + 128; /*0x6e23e0*/
+  aP2.X = ((int16_t)v14 << 8) + 128; /*0x6e23e0*/
   aP2.Z = Cell::GetGroundHeight(&aP2); /*0x6e23e9*/
-  if ( (*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14) + 80) & 0x100) != 0 /*0x6e241f*/
-    || (*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14) + 80) & 0x400) != 0 )
+  if ( (*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v14) + 80) & 0x100) != 0 /*0x6e241f*/
+    || (*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v14) + 80) & 0x400) != 0 )
   {
     aP2.Z += *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[5952]; /*0x6e242d*/
   }

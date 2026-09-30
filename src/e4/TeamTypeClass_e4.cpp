@@ -42,6 +42,8 @@
 namespace gamemd {
 int TeamTypeClass::Construct()
 {
+    unsigned int v4 = 0;  /* G37 hoist */
+    unsigned int v2 = 0;  /* G37 hoist */
 
   #72 *v2; // eax
   int v3; // eax
@@ -81,7 +83,7 @@ int TeamTypeClass::Construct()
   if ( MEMORY[0xA83E40] < MEMORY[0xA83E38] /*0x4c996d*/
     || (MEMORY[0xA83E3D] || !MEMORY[0xA83E38])
     && MEMORY[0xA83E44] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA83E30] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xA83E30] + 8))(
          &MEMORY[0xA83E30],
          MEMORY[0xA83E38] + MEMORY[0xA83E44],
          0) )
@@ -98,7 +100,7 @@ int TeamTypeClass::Construct()
   if ( MEMORY[0xB0F730] < MEMORY[0xB0F728] /*0x4c99dc*/
     || (MEMORY[0xB0F72D] || !MEMORY[0xB0F728])
     && MEMORY[0xB0F734] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F720] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xB0F720] + 8))(
          &MEMORY[0xB0F720],
          MEMORY[0xB0F728] + MEMORY[0xB0F734],
          0) )
@@ -106,7 +108,7 @@ int TeamTypeClass::Construct()
     v5 = MEMORY[0xB0F730]++; /*0x4c99e9*/
     *((unsigned int *)MEMORY[0xB0F724] + v5) = this; /*0x4c99f8*/
   }
-  return this; /*0x4c99fd*/
+  return (int)(this);
 
 }
 }

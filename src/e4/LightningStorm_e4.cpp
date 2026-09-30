@@ -28,7 +28,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
 {
 
   int result; // eax
-  __int16 v7; // si
+  int16_t v7; // si
   int v8; // esi
   int v9; // ecx
   int v10; // esi
@@ -38,7 +38,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   result = a3; /*0x539eb1*/
   if ( a3 == unk_A9F9F8 ) /*0x539ec3*/
   {
-    for ( ; !LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (__int16 *)&a3); a3 = v12 ) /*0x539edd*/
+    for ( ; !LayerClass::CoordinatesLegal(&MEMORY[0x87F7E8], (int16_t *)&a3); a3 = v12 ) /*0x539edd*/
     {
       v7 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, MEMORY[0x87F918]); /*0x539f04*/
       LOWORD(v12) = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, MEMORY[0x87F914]); /*0x539f1e*/
@@ -66,7 +66,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       for ( unk_A9FAB4 = 1; v8 < HouseClass_Count; ++v8 ) /*0x539fb0*/
       {
         if ( !unk_A9FACC /*0x539fc5*/
-          || !(unsigned __int8)HouseClass::IsAlliedWith(unk_A9FACC, *(#375 **)&HouseClass_Array->__pad_0[4 * v8]) )
+          || !(uint8_t)HouseClass::IsAlliedWith(unk_A9FACC, *(#375 **)&HouseClass_Array->__pad_0[4 * v8]) )
         {
           v9 = *(unsigned int *)&HouseClass_Array->__pad_0[4 * v8]; /*0x539fd3*/
           if ( !*(unsigned char *)(v9 + 501) && !MEMORY[0xA8B538] ) /*0x539fe7*/
@@ -116,12 +116,12 @@ void LightningStorm::Strike(IUnknown * aP0)
   AnimClass *v8; // eax
   CoordStruct aP2; // [esp+4h] [ebp-Ch] BYREF
 
-  v1 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (__int16 *)&aP0); /*0x53a159*/
+  v1 = CellCoord::To_CellObj(&stru_87C374.__pad_14B0[8132], (int16_t *)&aP0); /*0x53a159*/
   v2 = (*(int (**)(unsigned int))(***(unsigned int ***)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 732) + 156))(**(unsigned int **)(*(unsigned int *)&stru_87C374.__pad_579C[22224] + 732)); /*0x53a165*/
   v3 = ((v1[80] & 0x100) != 0 ? unk_A9FA84 : 0)
-     + Coord::ScaleToScreenY((void *)(*(__int16 *)(v2 + 4) / 2))
+     + Coord::ScaleToScreenY((void *)(*(int16_t *)(v2 + 4) / 2))
      + unk_A9FA90 * *((char *)v1 + 283);
-  result = ((__int16)aP0 << 8) + 128; /*0x53a1bb*/
+  result = ((int16_t)aP0 << 8) + 128; /*0x53a1bb*/
   aP2.X = result; /*0x53a1c8*/
   aP2.Y = (SHIWORD(aP0) << 8) + 128; /*0x53a1cc*/
   aP2.Z = v3; /*0x53a1d0*/
@@ -139,7 +139,7 @@ void LightningStorm::Strike(IUnknown * aP0)
     if ( dword_A9FA70 < dword_A9FA68 /*0x53a278*/
       || (unk_A9FA6D || !dword_A9FA68)
       && dword_A9FA74 > 0
-      && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(dword_A9FA60 + 8))(
+      && (*(uint8_t (**)(unsigned int *, int, unsigned int))(dword_A9FA60 + 8))(
            &dword_A9FA60,
            dword_A9FA68 + dword_A9FA74,
            0) )
@@ -219,7 +219,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   if ( unk_A9FA28 < unk_A9FA20 /*0x53a3c8*/
     || (unk_A9FA25 || !unk_A9FA20)
     && unk_A9FA2C > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(unk_A9FA18 + 8))(&unk_A9FA18, unk_A9FA2C + unk_A9FA20, 0) )
+    && (*(uint8_t (**)(int *, int, unsigned int))(unk_A9FA18 + 8))(&unk_A9FA18, unk_A9FA2C + unk_A9FA20, 0) )
   {
     v10 = unk_A9FA28++; /*0x53a3d5*/
     *((unsigned int *)unk_A9FA1C + v10) = v9; /*0x53a3e4*/
@@ -227,7 +227,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v27 = v3[9]; /*0x53a40f*/
   v28 = *((char *)v3 + 283); /*0x53a413*/
   v11 = (void **)(v28 * unk_A9FA90 + ((v3[80] & 0x100) != 0 ? unk_A9FA84 : 0));
-  v31 = ((__int16)v27 << 8) + 128; /*0x53a43d*/
+  v31 = ((int16_t)v27 << 8) + 128; /*0x53a43d*/
   v32 = (SHIWORD(v27) << 8) + 128; /*0x53a441*/
   v33 = v11; /*0x53a445*/
   if ( v31 != unk_A9FA30 || __PAIR64__((unsigned int)v11, (SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
@@ -299,7 +299,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
             if ( v11 ) /*0x53a648*/
             {
               v23 = Random::Range((unsigned int *)MEMORY[0xA8B230] + 134, 0, MEMORY[0x8871E0]->ExecutePlanSound - 1); /*0x53a665*/
-              LOBYTE(v11) = (unsigned __int8)AnimClass::ctor( /*0x53a68b*/
+              LOBYTE(v11) = (uint8_t)AnimClass::ctor( /*0x53a68b*/
                                                v22,
                                                *(void **)(MEMORY[0x8871E0]->DefaultChronoSound + 4 * v23),
                                                &v31,

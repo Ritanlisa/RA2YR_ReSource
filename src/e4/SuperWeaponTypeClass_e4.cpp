@@ -165,10 +165,7 @@ LABEL_17:
   {
     v27 = 0x7FFFFFFF; /*0x4f6706*/
   }
-LABEL_28:
-  v28 = HouseClass::FirstBuildableFromArray( /*0x4f670b*/
-          this,
-          (AbstractClass *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2360));
+LABEL_28: v28 = (unsigned int *)(HouseClass::FirstBuildableFromArray( /*0x4f670b*/ this, (AbstractClass *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2360)));
   v29 = (AbstractClass *)(*(int (**)(unsigned int *, unsigned int *))(*v28 + 132))(v28, this); /*0x4f6728*/
   if ( !v34 && v35 ) /*0x4f6738*/
   {
@@ -178,9 +175,7 @@ LABEL_28:
       return 1; /*0x4f6761*/
     return v32 && v11 >= (int)&v29->__pad_0[v27]; /*0x4f6772*/
   }
-  v30 = HouseClass::FirstBuildableFromArray( /*0x4f678f*/
-          this,
-          (AbstractClass *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2276));
+  v30 = (unsigned int *)(HouseClass::FirstBuildableFromArray( /*0x4f678f*/ this, (AbstractClass *)(*(unsigned int *)&MEMORY[0x87F8E4].__pad_5568[9108] + 2276)));
   v31 = (*(int (**)(unsigned int *, unsigned int *))(*v30 + 132))(v30, this); /*0x4f6799*/
   if ( v34 && !v35 ) /*0x4f67ad*/
   {
@@ -201,7 +196,7 @@ LABEL_28:
   }
   else if ( v32 && v11 > v31 ) /*0x4f6811*/
   {
-    return 1; /*0x4f6811*/
+    return (gamemd::AbstractClass **)(1);
   }
   return 0; /*0x4f65ea*/
 
@@ -286,14 +281,14 @@ int SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   if ( g_SuperWeaponTypeArray < dword_A83CA0 /*0x5115d6*/
     || (byte_A83CA5 || !dword_A83CA0)
     && dword_A83CAC > 0
-    && (v5 = ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))dword_A83C98->field_8)(
+    && (v5 = ((uint8_t (*)(DynamicVector **, int, unsigned int))dword_A83C98->field_8)(
                &dword_A83C98,
                dword_A83CA0 + dword_A83CAC,
                0) == 0,
         v4 = g_SuperWeaponTypeArray,
         !v5) )
   {
-    g_SuperWeaponTypeArray = v4 + 1; /*0x5115db*/
+    g_SuperWeaponTypeArray = (unsigned int)(v4 + 1);
     *((unsigned int *)g_SuperWeaponTypeCount + v4) = this; /*0x5115e5*/
     v4 = g_SuperWeaponTypeArray; /*0x5115e8*/
   }
@@ -389,7 +384,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   if ( INIClass::GetString( /*0x6cea6d*/
          aP1,
          (INIClass *)((char *)this + 36),
-         (unsigned __int8 *)&stru_817244.sectionHead[2],
+         (uint8_t *)&stru_817244.sectionHead[2],
          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
          &v40,
          128) )
@@ -405,51 +400,51 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   SWProperties = SuperWeaponTypeClass::loadSWProperties( /*0x6cea9b*/
                    aP1,
                    (CCINIClass *)((char *)this + 36),
-                   (unsigned __int8 *)&stru_817244.INIClass_field_2C,
+                   (uint8_t *)&stru_817244.INIClass_field_2C,
                    v5);
   aP3_4 = *((unsigned char *)this + 230); /*0x6ceaa8*/
   *((unsigned int *)this + 47) = SWProperties; /*0x6ceaaf*/
   *((unsigned char *)this + 230) = INIClass::ReadBool_Overwrite( /*0x6ceaba*/
                              (int)aP1,
-                             (unsigned __int8 *)((char *)this + 36),
+                             (uint8_t *)((char *)this + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[51536],
                              aP3_4);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6ceacf*/
                      (int)aP1,
-                     (unsigned __int8 *)((char *)this + 36),
+                     (uint8_t *)((char *)this + 36),
                      (CCINIClass *)&stru_830620.__pad_579C[51512],
                      *((unsigned char *)this + 231));
   aP3 = *(INIClass **)((char *)this + 232); /*0x6cead4*/
   *((unsigned char *)this + 231) = Bool_Overwrite; /*0x6ceada*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x6ceae9*/
                     (int)aP1,
-                    (unsigned __int8 *)((char *)this + 36),
+                    (uint8_t *)((char *)this + 36),
                     (CCINIClass *)&stru_830620.__pad_579C[51488],
                     aP3);
   aP3_4a = *((unsigned char *)this + 236); /*0x6ceaf6*/
   *((unsigned int *)this + 58) = Int_Overwrite; /*0x6ceafd*/
   *((unsigned char *)this + 236) = INIClass::ReadBool_Overwrite( /*0x6ceb08*/
                              (int)aP1,
-                             (unsigned __int8 *)((char *)this + 36),
+                             (uint8_t *)((char *)this + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[51472],
                              aP3_4a);
   v10 = INIClass::ReadBool_Overwrite( /*0x6ceb1d*/
           (int)aP1,
-          (unsigned __int8 *)((char *)this + 36),
+          (uint8_t *)((char *)this + 36),
           (CCINIClass *)&stru_830620.__pad_579C[51460],
           *((unsigned char *)this + 237));
   v11 = *((unsigned char *)this + 238); /*0x6ceb22*/
   *((unsigned char *)this + 237) = v10; /*0x6ceb28*/
   v12 = INIClass::ReadBool_Overwrite( /*0x6ceb37*/
           (int)aP1,
-          (unsigned __int8 *)((char *)this + 36),
+          (uint8_t *)((char *)this + 36),
           (CCINIClass *)&stru_830620.__pad_579C[51448],
           v11);
   aP3_4b = *((unsigned char *)this + 244); /*0x6ceb44*/
   *((unsigned char *)this + 238) = v12; /*0x6ceb4b*/
   v13 = INIClass::ReadBool_Overwrite( /*0x6ceb51*/
           (int)aP1,
-          (unsigned __int8 *)((char *)this + 36),
+          (uint8_t *)((char *)this + 36),
           (CCINIClass *)&stru_830620.__pad_579C[51436],
           aP3_4b);
   v14 = *((unsigned int *)this + 48); /*0x6ceb56*/
@@ -457,7 +452,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   if ( !INIClass::GetString( /*0x6ceb94*/
           aP1,
           (INIClass *)((char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[51420],
+          (uint8_t *)&stru_830620.__pad_579C[51420],
           (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
           &v40,
           128)
@@ -483,19 +478,19 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x6cebf4*/
                        (int)aP1,
                        (INIClass *)((char *)this + 36),
-                       (unsigned __int8 *)&stru_830620.__pad_579C[51412],
+                       (uint8_t *)&stru_830620.__pad_579C[51412],
                        (INIClass *)LODWORD(v18));
   v20 = *(CCINIClass **)((char *)this + 252); /*0x6cebf9*/
   *(float *)((char *)this + 248) = Double_Overwrite; /*0x6cec01*/
   *((unsigned int *)this + 63) = INIClass::ReadInt_Overwrite( /*0x6cec13*/
                               (int)aP1,
-                              (unsigned __int8 *)((char *)this + 36),
+                              (uint8_t *)((char *)this + 36),
                               (CCINIClass *)&stru_830620.__pad_579C[51396],
                               (INIClass *)v20);
   INIClass::GetString( /*0x6cec2d*/
     aP1,
     (INIClass *)((char *)this + 36),
-    (unsigned __int8 *)g_INI_Key_Type,
+    (uint8_t *)g_INI_Key_Type,
     (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
     (INIClass *)&aP4.__pad_20[8],
     40);
@@ -517,7 +512,7 @@ LABEL_18:
   INIClass::GetString( /*0x6cec84*/
     aP1,
     (INIClass *)((char *)this + 36),
-    (unsigned __int8 *)&stru_830620.__pad_579C[51380],
+    (uint8_t *)&stru_830620.__pad_579C[51380],
     (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
     &aP4,
     40);
@@ -540,7 +535,7 @@ LABEL_25:
   if ( INIClass::GetString( /*0x6ced0f*/
          aP1,
          (INIClass *)((char *)this + 36),
-         (unsigned __int8 *)&stru_830620.__pad_579C[51368],
+         (uint8_t *)&stru_830620.__pad_579C[51368],
          (INIClass *)&MEMORY[0x87F8E4].__pad_5568[20760],
          &v40,
          128) )
@@ -555,20 +550,20 @@ LABEL_25:
   *((unsigned int *)this + 50) = v24; /*0x6ced2e*/
   v26 = INIClass::ReadBool_Overwrite( /*0x6ced3d*/
           (int)aP1,
-          (unsigned __int8 *)((char *)this + 36),
+          (uint8_t *)((char *)this + 36),
           (CCINIClass *)&stru_830620.__pad_579C[51352],
           v25);
   aP3_4c = *((unsigned char *)this + 245); /*0x6ced4a*/
   *((unsigned char *)this + 229) = v26; /*0x6ced51*/
   *((unsigned char *)this + 245) = INIClass::ReadBool_Overwrite( /*0x6ced68*/
                              (int)aP1,
-                             (unsigned __int8 *)((char *)this + 36),
+                             (uint8_t *)((char *)this + 36),
                              (CCINIClass *)&stru_830620.__pad_579C[51336],
                              aP3_4c);
   v27 = INIClass::ReadDouble_Overwrite( /*0x6ced6e*/
           (int)aP1,
           (INIClass *)((char *)this + 36),
-          (unsigned __int8 *)&stru_830620.__pad_579C[51320],
+          (uint8_t *)&stru_830620.__pad_579C[51320],
           0);
   if ( v27 != 0.0 ) /*0x6ced7e*/
     *((unsigned int *)this + 44) = Math::RoundToInt(v27 * 900.0); /*0x6ced8b*/
@@ -576,7 +571,7 @@ LABEL_25:
   INIClass::GetString( /*0x6cedb1*/
     aP1,
     (INIClass *)((char *)this + 36),
-    (unsigned __int8 *)&stru_830620.__pad_579C[51304],
+    (uint8_t *)&stru_830620.__pad_579C[51304],
     (INIClass *)((char *)this + 204),
     Source,
     256);
@@ -587,7 +582,7 @@ LABEL_25:
   }
   else
   {
-    Destination[0] = (unsigned __int8)Source; /*0x6cedc1*/
+    Destination[0] = (uint8_t)Source; /*0x6cedc1*/
   }
   if ( Destination != (char *)v28 ) /*0x6cede9*/
   {

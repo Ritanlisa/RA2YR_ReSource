@@ -19,6 +19,7 @@
 #include "e4/classes/Sidebar_e4.hpp"
 #include "e4/classes/FileSystem_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x431F10
 namespace gamemd {
@@ -79,7 +80,7 @@ AbstractClass * File::LoadFont(char * Source)
     v6 = v5; /*0x4339b7*/
     if ( v5 ) /*0x4339bb*/
     {
-      if ( !(*(unsigned __int8 (**)(unsigned int *, unsigned int))(*v5 + 20))(v5, 0) /*0x4339f0*/
+      if ( !(*(uint8_t (**)(unsigned int *, unsigned int))(*v5 + 20))(v5, 0) /*0x4339f0*/
         || !(*(int (**)(unsigned int *, int))(*v6 + 28))(v6, 1)
         || (v3 = __2_YAPAXI_Z(0x24u)) == 0 )
       {
@@ -351,7 +352,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   int v15; // [esp+8h] [ebp-8h]
   ObjectClass *aP1a; // [esp+14h] [ebp+4h]
 
-  v3 = *(unsigned short *)aP1->__pad_0; /*0x625b02*/
+  v3 = (gamemd::File **)(*(unsigned short *)aP1->__pad_0);
   *this = *(unsigned short *)aP1->__pad_0; /*0x625b05*/
   *this = ntohs(v3); /*0x625b11*/
   v4 = *(unsigned short *)&aP1->__pad_0[2]; /*0x625b17*/
@@ -365,7 +366,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
     return this; /*0x625bf4*/
   while ( 1 ) /*0x625b50*/
   {
-    v7 = __2_YAPAXI_Z(0x10u); /*0x625b50*/
+    v7 = (gamemd::File **)(__2_YAPAXI_Z(0x10u));
     v8 = *(unsigned int *)v5; /*0x625b55*/
     v9 = (ObjectClass *)v7; /*0x625b57*/
     v10 = v5 + 8; /*0x625b5c*/
@@ -425,7 +426,7 @@ AbstractClass * * File::ParseCSFString(char * Source)
   size_t v7; // eax
   int v8; // eax
   wchar_t *v9; // ecx
-  __int16 v10; // dx
+  int16_t v10; // dx
   int v11; // esi
   wchar_t *v12; // ecx
   unsigned short *v13; // edi
@@ -460,7 +461,7 @@ LABEL_42:
     v21 = 0; /*0x734a06*/
     while ( v18 == 1279413280 ) /*0x734a12*/
     {
-      CCFileClass::Read(v23, &v20, 4); /*0x734a23*/
+      ((CCFileClass *)(v23))->Read(&v20, 4); /*0x734a23*/
       CCFileClass::Read(v23, &Size, 4); /*0x734a33*/
       v2 = Size; /*0x734a38*/
       if ( Size ) /*0x734a3e*/
@@ -468,9 +469,9 @@ LABEL_42:
         CCFileClass::Read(v23, unk_B1BF38, Size); /*0x734a4a*/
         v2 = Size; /*0x734a4f*/
       }
-      v3 = (char *)dword_B1CF74; /*0x734a53*/
+      v3 = (unsigned char *)((char *)dword_B1CF74);
       unk_B1BF38[v2] = 0; /*0x734a59*/
-      strcpy(&v3[v1], unk_B1BF38); /*0x734a7b*/
+      strcpy(&(int)(v3[v1]), unk_B1BF38); /*0x734a7b*/
       if ( (int)Size > unk_B1CF58 ) /*0x734a90*/
         unk_B1CF58 = Size; /*0x734a92*/
       v4 = v19; /*0x734a9d*/

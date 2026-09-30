@@ -33,7 +33,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
   const char *v10; // eax
-  const char *v11; // eax
+  const unsigned int v11;
   const char *v12; // [esp-8h] [ebp-29Ch]
   char v13; // [esp+Fh] [ebp-285h] BYREF
   int v14; // [esp+10h] [ebp-284h] BYREF
@@ -42,14 +42,14 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char v17[128]; // [esp+194h] [ebp-100h] BYREF
   char Destination[128]; // [esp+214h] [ebp-80h] BYREF
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x531a28*/
+  result = (gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4));
   if ( result ) /*0x531a2f*/
     return result; /*0x531a2f*/
   WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/
   if ( a2 == 273 ) /*0x531a44*/
   {
-    if ( (unsigned short)a3 && (unsigned __int16)a3 <= 2u ) /*0x531c19*/
-      *WindowLongA = (unsigned __int16)a3; /*0x531c1b*/
+    if ( (unsigned short)a3 && (uint16_t)a3 <= 2u ) /*0x531c19*/
+      *WindowLongA = (uint16_t)a3; /*0x531c1b*/
     return 0; /*0x531c1b*/
   }
   if ( a2 != 1175 ) /*0x531a50*/
@@ -65,8 +65,8 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531adc*/
   v16[0] = 0; /*0x531aea*/
   Time::FormatDate(v16); /*0x531af2*/
-  v12 = (const char *)String::CopyConstant(Destination); /*0x531b10*/
-  v10 = (const char *)String::FormatDword(v17); /*0x531b1d*/
+  v12 = (const char *)((String *)(Destination))->CopyConstant(); /*0x531b10*/
+  v10 = (const char *)((String *)(v17))->FormatDword(); /*0x531b1d*/
   sprintf(Buffer, MEMORY[0x826920], v10, v12, v16); /*0x531b2d*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531b42*/
   v14 = 5; /*0x531b51*/

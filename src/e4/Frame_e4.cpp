@@ -31,7 +31,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
   int v17; // edi
   int v18; // eax
   int v19; // ecx
-  int v20; // ebp
+  void * v20;
   int v21; // edi
   int v22; // ebx
   int v23; // eax
@@ -61,7 +61,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
   int v47; // [esp+62h] [ebp-1Ch]
   int v48; // [esp+66h] [ebp-18h]
   int v49; // [esp+6Ah] [ebp-14h]
-  unsigned __int64 Rect; // [esp+6Eh] [ebp-10h] BYREF
+  uint64_t Rect; // [esp+6Eh] [ebp-10h] BYREF
   int Rect_8; // [esp+76h] [ebp-8h]
   int v52; // [esp+8Eh] [ebp+10h]
 
@@ -73,7 +73,7 @@ TechnoTypeClass * Frame::Present(void * a1, void * a2, void * a3, void * a4, voi
     v41 = v9[2]; /*0x4f47b6*/
     LODWORD(v42) = v9[3]; /*0x4f47bd*/
   }
-  result = ((int (*)(int, unsigned __int64 *))GetClientRect)(dword_A8ED54[233983], &Rect); /*0x4f47cc*/
+  result = ((int (*)(int, uint64_t *))GetClientRect)(dword_A8ED54[233983], &Rect); /*0x4f47cc*/
   if ( result ) /*0x4f47d4*/
   {
     *(unsigned long long *)&v38[4] = Rect; /*0x4f47e2*/
@@ -136,7 +136,7 @@ LABEL_18:
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = *a8; /*0x4f48f9*/
+          v20 = (int)(*(unsigned int *)(a8));
           v21 = a8[1]; /*0x4f48fb*/
           v22 = a8[2]; /*0x4f48fe*/
           Rect_8 = a8[3]; /*0x4f4904*/
@@ -178,7 +178,7 @@ LABEL_18:
             goto LABEL_51; /*0x4f49ff*/
           if ( MEMORY[0x87F7E8][7904] ) /*0x4f4a09*/
           {
-            if ( (unsigned __int8)Frame::Init() ) /*0x4f4a0b*/
+            if ( (uint8_t)Frame::Init() ) /*0x4f4a0b*/
             {
               v13 = MEMORY[0x87F7E8][2]; /*0x4f4a14*/
               v30 = 1; /*0x4f4a1a*/

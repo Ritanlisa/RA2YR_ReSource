@@ -64,8 +64,8 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
       for ( i = 0; i < *((unsigned int *)this + 16); ++i ) /*0x49cb72*/
       {
         v8 = *(CCINIClass **)((char *)this + 60); /*0x49cb74*/
-        if ( *(unsigned int *)&v8->__pad_0[4 * i] ) /*0x49cb77*/
-          __3_YAXPAX_Z(*(void **)&v8->__pad_0[4 * i]); /*0x49cb7f*/
+        if ( *(unsigned int *)&v8-((unsigned int *)(>__pad_0))[4 * i] ) /*0x49cb77*/
+          __3_YAXPAX_Z(*(void **)&v8-((unsigned int *)(>__pad_0))[4 * i]); /*0x49cb7f*/
       }
       __3_YAXPAX_Z(*(void **)((char *)this + 60)); /*0x49cb93*/
     }
@@ -159,7 +159,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
           v15 = (unsigned char)a2 == 1 && HouseClass_Player.__pad_5568[22752] == 1; /*0x5befba*/
           if ( stru_89E138.__pad_14B0[6150] == 1 && v15 ) /*0x5befcb*/
           {
-            fallRate = v12->fallRate; /*0x5befd7*/
+            fallRate = (int)(v12->fallRate);
             if ( fallRate < *(int *)&stru_87C374.__pad_579C[21672] /*0x5befec*/
               && (int)v12->nextObject < *(int *)&stru_87C374.__pad_579C[21676] )
             {
@@ -169,7 +169,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
               v12->attachedTag = 0; /*0x5bf008*/
               v12->ambientSoundController[1] = v17; /*0x5bf00b*/
               v12->attachedBomb = (void *)((*(unsigned int *)&stru_87C374.__pad_579C[21676] - v17) / 2); /*0x5bf01d*/
-              Debug::Log(); /*0x5bf02b*/
+              this->Debug::Log(); /*0x5bf02b*/
             }
           }
           (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374.__pad_579C[23344] + 12))(*(unsigned int *)&stru_87C374.__pad_579C[23344]); /*0x5bf03b*/
@@ -184,8 +184,8 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
           if ( !*((unsigned char *)&g_MatrixTransformState + 1356) ) /*0x5bf067*/
           {
             AudioFrame::CounterInc(); /*0x5bf069*/
-            AudioQueue::IncrementPriority(); /*0x5bf06e*/
-            AudioQueue::ReleaseBuffers(); /*0x5bf073*/
+            this->AudioQueue::IncrementPriority(); /*0x5bf06e*/
+            this->AudioQueue::ReleaseBuffers(); /*0x5bf073*/
             RequestBufferMixer(*(unsigned int **)&stru_87C374.__pad_14B0[3892], 0x2000); /*0x5bf083*/
             RequestBufferMixer(*(unsigned int **)&stru_87C374.__pad_14B0[3884], 0x2000); /*0x5bf093*/
             *((unsigned char *)&g_MatrixTransformState + 1356) = 1; /*0x5bf098*/
@@ -230,7 +230,7 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
     }
     else
     {
-      Debug::Log(); /*0x5bedad*/
+      this->Debug::Log(); /*0x5bedad*/
       (*(void (**)(unsigned int))(**(unsigned int **)&stru_87C374.__pad_579C[23344] + 12))(*(unsigned int *)&stru_87C374.__pad_579C[23344]); /*0x5bedbd*/
       if ( (unsigned char)aP2 ) /*0x5bedc7*/
       {
@@ -246,8 +246,8 @@ int Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char
       if ( !*((unsigned char *)&g_MatrixTransformState + 1356) ) /*0x5bee06*/
       {
         AudioFrame::CounterInc(); /*0x5bee08*/
-        AudioQueue::IncrementPriority(); /*0x5bee0d*/
-        AudioQueue::ReleaseBuffers(); /*0x5bee12*/
+        this->AudioQueue::IncrementPriority(); /*0x5bee0d*/
+        this->AudioQueue::ReleaseBuffers(); /*0x5bee12*/
         RequestBufferMixer(*(unsigned int **)&stru_87C374.__pad_14B0[3892], 0x2000); /*0x5bee22*/
         RequestBufferMixer(*(unsigned int **)&stru_87C374.__pad_14B0[3884], 0x2000); /*0x5bee32*/
         *((unsigned char *)&g_MatrixTransformState + 1356) = 1; /*0x5bee37*/

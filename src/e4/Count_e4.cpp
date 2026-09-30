@@ -18,7 +18,7 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   int result; // eax
   int v3; // edx
 
-  v1 = *((unsigned int *)this + 7) - 1; /*0x408e73*/
+  v1 = (int)(*((unsigned int *)this + 7) - 1);
   *((unsigned int *)this + 7) = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
     *((unsigned int *)this + 7) = 0; /*0x408e7b*/
@@ -27,10 +27,10 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   *(unsigned int *)(*(unsigned int *)this + 608) = v3; /*0x408e8d*/
   if ( v3 < 0 ) /*0x408e93*/
   {
-    result = *this; /*0x408e95*/
+    result = (int)(*this);
     *(unsigned int *)(*(unsigned int *)this + 608) = 0; /*0x408e97*/
   }
-  return result; /*0x408ea1*/
+  return (gamemd::AbstractClass **)(result);
 
 }
 } // namespace gamemd
@@ -65,7 +65,7 @@ int Count::SetupAllCountriesLobby()
       v6 = -2; /*0x46f71c*/
       if ( MEMORY[0xA8B23C] && (MEMORY[0xA8B238] == 3 || MEMORY[0xA8B238] == 4) ) /*0x46f730*/
         v6 = (*(int (**)(int))(*(unsigned int *)MEMORY[0xA8B23C] + 40))(MEMORY[0xA8B23C]); /*0x46f737*/
-      if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f73b*/
+      if ( (uint8_t)Player::IsObserver(v5) ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
       }
@@ -90,12 +90,12 @@ int Count::SetupAllCountriesLobby()
         PlayerSide = SessionClass::GetPlayerSide((int)v5); /*0x46f786*/
       }
       if ( MEMORY[0xA8B23C] /*0x46f795*/
-        && !(*(unsigned __int8 (**)(int, int))(*(unsigned int *)MEMORY[0xA8B23C] + 28))(
+        && !(*(uint8_t (**)(int, int))(*(unsigned int *)MEMORY[0xA8B23C] + 28))(
               MEMORY[0xA8B23C],
               PlayerSide) )
       {
         PlayerSide = v6; /*0x46f79e*/
-        if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f7a0*/
+        if ( (uint8_t)Player::IsObserver(v5) ) /*0x46f7a0*/
         {
           *(v8 - 2557) = v6; /*0x46f7ad*/
         }

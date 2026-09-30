@@ -311,7 +311,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   if ( *(int *)&MEMORY[0xA8D63C].__pad_14B0[412] < *(int *)&MEMORY[0xA8D63C].__pad_14B0[404] /*0x6f31b6*/
     || (MEMORY[0xA8D63C].__pad_14B0[409] || !*(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[404])
     && *(int *)&MEMORY[0xA8D63C].__pad_14B0[416] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[396] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[396] + 8))(
          &MEMORY[0xA8D63C].__pad_14B0[396],
          *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[416] + *(unsigned int *)&MEMORY[0xA8D63C].__pad_14B0[404],
          0) )
@@ -322,7 +322,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[10052] < *(int *)&MEMORY[0xB077F8].__pad_579C[10044] /*0x6f3209*/
     || (MEMORY[0xB077F8].__pad_579C[10049] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[10044])
     && *(int *)&MEMORY[0xB077F8].__pad_579C[10056] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[10036] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[10036] + 8))(
          &MEMORY[0xB077F8].__pad_579C[10036],
          *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[10056] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[10044],
          0) )
@@ -758,7 +758,7 @@ Coord * * TechnoClass::RegisterKill()
           VeterancyStruct::Accumulate((float *)(*(unsigned int *)(v28 + 724) + 336), v21, v25); /*0x702f96*/
         }
       }
-      else if ( (*(unsigned __int8 (**)(int))(*(unsigned int *)v28 + 1024))(v28)
+      else if ( (*(uint8_t (**)(int))(*(unsigned int *)v28 + 1024))(v28)
              && (*(int (**)(int))(*(unsigned int *)v28 + 44))(v28) == 6 )
       {
         v15 = (*(int (**)(int))(*(unsigned int *)v28 + 44))(v28); /*0x702fb6*/
@@ -2008,24 +2008,24 @@ char TechnoClass::ScanAdjacentCells()
   int v16; // [esp+20h] [ebp-4h] BYREF
 
   v12 = *(unsigned int *)(*(int (**)(unsigned char *, int *))(*(unsigned int *)this + 440))(this, &v16); /*0x703ce4*/
-  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v12); /*0x703ced*/
+  v2 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v12); /*0x703ced*/
   if ( !v2 || *((unsigned char *)this + 140) ) /*0x703cf7*/
     return 0; /*0x703cf7*/
   LOWORD(v13) = v12 + MEMORY[0x89F698]; /*0x703d1c*/
   HIWORD(v13) = HIWORD(v12) + HIWORD(MEMORY[0x89F698]); /*0x703d21*/
   v14 = v13; /*0x703d2e*/
-  v3 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v14); /*0x703d4f*/
+  v3 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v14); /*0x703d4f*/
   HIWORD(v13) = HIWORD(v12) + HIWORD(MEMORY[0x89F688][0]); /*0x703d57*/
   LOWORD(v13) = v12 + LOWORD(MEMORY[0x89F688][0]); /*0x703d5c*/
   v15 = v13; /*0x703d69*/
-  v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v15); /*0x703d88*/
+  v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v15); /*0x703d88*/
   HIWORD(v13) = HIWORD(v12) + HIWORD(MEMORY[0x89F690]); /*0x703d91*/
   LOWORD(v13) = v12 + MEMORY[0x89F690]; /*0x703d96*/
   v16 = v13; /*0x703da9*/
-  v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v16); /*0x703dbc*/
+  v5 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v16); /*0x703dbc*/
   LOWORD(v13) = v12 + MEMORY[0x89F6A0]; /*0x703dcb*/
   HIWORD(v13) = HIWORD(v12) + HIWORD(MEMORY[0x89F6A0]); /*0x703dd4*/
-  v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v13); /*0x703de7*/
+  v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v13); /*0x703de7*/
   if ( (v2[80] & 0x400) != 0 ) /*0x703df5*/
     return 1; /*0x703df5*/
   if ( v3 ) /*0x703df9*/

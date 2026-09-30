@@ -38,7 +38,7 @@ void BSurface::Construct( int a2, int a3, int a4, int a5)
   v7 = a4; /*0x410ce9*/
   v8 = a5; /*0x410cef*/
   *((unsigned int *)this + 11) = a5; /*0x410cf3*/
-  *this = v6; /*0x410cf8*/
+  *(_DWORD *)this = v6; /*0x410cf8*/
   v9 = a3; /*0x410cfa*/
   *((unsigned int *)this + 10) = v7; /*0x410cfe*/
   *((unsigned int *)this + 1) = v9; /*0x410d01*/
@@ -115,8 +115,8 @@ void BSurface::CreateTripleBuffer()
     return 0; /*0x7b8e70*/
   v2 = *((unsigned int *)this + 17); /*0x7b8c6f*/
   if ( v2 /*0x7b8c9a*/
-    && (*(__int16 *)(*((unsigned int *)this + 1) + 2) > (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2)
-     || *(__int16 *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 68) + 128))(*((unsigned int *)this + 17))) )
+    && (*(int16_t *)(*((unsigned int *)this + 1) + 2) > (*(int (**)(int))(*(unsigned int *)v2 + 124))(v2)
+     || *(int16_t *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 68) + 128))(*((unsigned int *)this + 17))) )
   {
     v3 = *(void (****)(unsigned int, int))((char *)this + 68); /*0x7b8c9c*/
     if ( v3 ) /*0x7b8ca1*/
@@ -125,8 +125,8 @@ void BSurface::CreateTripleBuffer()
   }
   v4 = *((unsigned int *)this + 22); /*0x7b8cac*/
   if ( v4 /*0x7b8cd7*/
-    && (*(__int16 *)(*((unsigned int *)this + 1) + 2) > (*(int (**)(int))(*(unsigned int *)v4 + 124))(v4)
-     || *(__int16 *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 88) + 128))(*((unsigned int *)this + 22))) )
+    && (*(int16_t *)(*((unsigned int *)this + 1) + 2) > (*(int (**)(int))(*(unsigned int *)v4 + 124))(v4)
+     || *(int16_t *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 88) + 128))(*((unsigned int *)this + 22))) )
   {
     v5 = *(void (****)(unsigned int, int))((char *)this + 88); /*0x7b8cd9*/
     if ( v5 ) /*0x7b8cde*/
@@ -135,8 +135,8 @@ void BSurface::CreateTripleBuffer()
   }
   v6 = *((unsigned int *)this + 27); /*0x7b8ce9*/
   if ( v6 /*0x7b8d14*/
-    && (*(__int16 *)(*((unsigned int *)this + 1) + 2) > (*(int (**)(int))(*(unsigned int *)v6 + 124))(v6)
-     || *(__int16 *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 108) + 128))(*((unsigned int *)this + 27))) )
+    && (*(int16_t *)(*((unsigned int *)this + 1) + 2) > (*(int (**)(int))(*(unsigned int *)v6 + 124))(v6)
+     || *(int16_t *)(*((unsigned int *)this + 1) + 4) > (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 108) + 128))(*((unsigned int *)this + 27))) )
   {
     v7 = *(void (****)(unsigned int, int))((char *)this + 108); /*0x7b8d16*/
     if ( v7 ) /*0x7b8d1b*/
@@ -151,8 +151,8 @@ void BSurface::CreateTripleBuffer()
       if ( v8 ) /*0x7b8d46*/
       {
         v9 = *((unsigned int *)this + 1); /*0x7b8d4b*/
-        v10 = *(__int16 *)(v9 + 4); /*0x7b8d50*/
-        v11 = *(__int16 *)(v9 + 2); /*0x7b8d54*/
+        v10 = *(int16_t *)(v9 + 4); /*0x7b8d50*/
+        v11 = *(int16_t *)(v9 + 2); /*0x7b8d54*/
         v12 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 112))(*((unsigned int *)this + 9)); /*0x7b8d58*/
         v8[4] = v12; /*0x7b8d5b*/
         v8[1] = v11; /*0x7b8d6a*/
@@ -174,8 +174,8 @@ void BSurface::CreateTripleBuffer()
       if ( v13 ) /*0x7b8da4*/
       {
         v14 = *((unsigned int *)this + 1); /*0x7b8da6*/
-        v15 = *(__int16 *)(v14 + 4); /*0x7b8dac*/
-        v16 = *(__int16 *)(v14 + 2); /*0x7b8db0*/
+        v15 = *(int16_t *)(v14 + 4); /*0x7b8dac*/
+        v16 = *(int16_t *)(v14 + 2); /*0x7b8db0*/
         v17 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 112))(*((unsigned int *)this + 9)); /*0x7b8db6*/
         v13[4] = v17; /*0x7b8db9*/
         v13[1] = v16; /*0x7b8dc8*/
@@ -197,8 +197,8 @@ void BSurface::CreateTripleBuffer()
       if ( v18 ) /*0x7b8e02*/
       {
         v19 = *((unsigned int *)this + 1); /*0x7b8e07*/
-        v20 = *(__int16 *)(v19 + 4); /*0x7b8e0c*/
-        v21 = *(__int16 *)(v19 + 2); /*0x7b8e10*/
+        v20 = *(int16_t *)(v19 + 4); /*0x7b8e0c*/
+        v21 = *(int16_t *)(v19 + 2); /*0x7b8e10*/
         v22 = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 112))(*((unsigned int *)this + 9)); /*0x7b8e14*/
         v18[4] = v22; /*0x7b8e17*/
         v18[1] = v21; /*0x7b8e26*/
@@ -243,7 +243,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int a4, int a5)
   v7 = a4; /*0x7bc979*/
   v8 = a5; /*0x7bc97f*/
   *((unsigned int *)this + 11) = a5; /*0x7bc983*/
-  *this = v6; /*0x7bc988*/
+  *(_DWORD *)this = v6; /*0x7bc988*/
   v9 = a3; /*0x7bc98a*/
   *((unsigned int *)this + 10) = v7; /*0x7bc98e*/
   *((unsigned int *)this + 1) = v9; /*0x7bc991*/

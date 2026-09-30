@@ -75,7 +75,7 @@ void SuperClass::Constructor()
 
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6caec3*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x6caec3*/
   *((unsigned int *)this + 9) = -1; /*0x6caecd*/
   *((unsigned int *)this + 10) = 0; /*0x6caed0*/
   *((unsigned int *)this + 11) = 0; /*0x6caed3*/
@@ -102,12 +102,12 @@ void SuperClass::Constructor()
   if ( dword_A83CC8 < dword_A83CC0 /*0x6caf64*/
     || (byte_A83CC5 || !dword_A83CC0)
     && dword_A83CCC > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(dword_A83CB8 + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(dword_A83CB8 + 8))(
          &dword_A83CB8,
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
-    v2 = dword_A83CC8++; /*0x6caf71*/
+    v2 = (unsigned int)(dword_A83CC8++);
     *((unsigned int *)dword_A83CBC + v2) = this; /*0x6caf80*/
   }
   return this; /*0x6caf85*/
@@ -327,7 +327,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       && (MEMORY[0xA83D60] < MEMORY[0xA83D58]
        || (MEMORY[0xA83D5D] || !MEMORY[0xA83D58])
        && MEMORY[0xA83D64] > 0
-       && ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))MEMORY[0xA83D50]->field_8)(
+       && ((uint8_t (*)(DynamicVector **, int, unsigned int))MEMORY[0xA83D50]->field_8)(
             &MEMORY[0xA83D50],
             MEMORY[0xA83D58] + MEMORY[0xA83D64],
             0)) )

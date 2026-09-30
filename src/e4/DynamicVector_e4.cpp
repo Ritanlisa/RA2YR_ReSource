@@ -186,7 +186,7 @@ int DynamicVector::GetOrGrow(DynamicVector * aP1)
   v3 = *((unsigned int *)this + 2); /*0x49fae9*/
   if ( (int)aP1 < v3 ) /*0x49faee*/
     return *(unsigned int *)(*((unsigned int *)this + 1) + 4 * (unsigned int)aP1); /*0x49fb26*/
-  if ( (*(unsigned __int8 (**)(unsigned int *, char *, unsigned int))(*(unsigned int *)this + 32))(this, (char *)&aP1->field_8 + 2, 0) ) /*0x49fafa*/
+  if ( (*(uint8_t (**)(unsigned int *, char *, unsigned int))(*(unsigned int *)this + 32))(this, (char *)&aP1->field_8 + 2, 0) ) /*0x49fafa*/
   {
     for ( i = v3; i < *((unsigned int *)this + 2); *(unsigned int *)(*((unsigned int *)this + 1) + 4 * i - 4) = 0 ) /*0x49fb08*/
       ++i; /*0x49fb0d*/
@@ -241,7 +241,7 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x538796*/
       return 0; /*0x538796*/
     v4 = *((unsigned int *)this + 5); /*0x538798*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x5387a8*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x5387a8*/
       return 0; /*0x5387af*/
   }
   v6 = *((unsigned int *)this + 4); /*0x5387b5*/
@@ -500,7 +500,7 @@ char DynamicVector::Add(DynamicVector * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x6c6416*/
       return 0; /*0x6c6416*/
     v4 = *((unsigned int *)this + 5); /*0x6c6418*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x6c6428*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x6c6428*/
       return 0; /*0x6c642f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x6c6435*/

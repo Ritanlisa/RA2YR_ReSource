@@ -34,7 +34,7 @@ int LoadGame::LoadTriggerEvents()
 
   int v1; // edx
   int v2; // edi
-  unsigned int *v4; // ecx
+  unsigned int v4;
   void *v5; // esi
   int v6; // eax
   int v7; // eax
@@ -48,13 +48,13 @@ int LoadGame::LoadTriggerEvents()
   v2 = g_TriggerEventState - 1; /*0x66084d*/
   if ( g_TriggerEventState - 1 >= 0 ) /*0x660856*/
   {
-    v4 = g_TriggerPool; /*0x660858*/
+    v4 = (unsigned int *)(g_TriggerPool);
     do /*0x6608cb*/
     {
       v5 = (void *)v4[v2]; /*0x66085e*/
       if ( v5 ) /*0x660863*/
       {
-        v12 = v4[v2]; /*0x660875*/
+        v12 = (unsigned int *)(v4[v2]);
         v6 = (*(int (**)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v12); /*0x660879*/
         if ( v6 != -1 ) /*0x66087f*/
           LoadGame::RemoveItem(&dword_B04DA8, v6); /*0x660887*/
@@ -68,7 +68,7 @@ int LoadGame::LoadTriggerEvents()
         v7 = v2; /*0x6608a6*/
         for ( g_TriggerEventState = v1; v7 < g_TriggerEventState; ++v7 ) /*0x6608b0*/
         {
-          v4[v7] = v4[v7 + 1]; /*0x6608b6*/
+          v4[v7] = (unsigned int *)(v4[v7 + 1]);
           v1 = g_TriggerEventState; /*0x6608b9*/
           v4 = g_TriggerPool; /*0x6608bf*/
         }
@@ -97,11 +97,11 @@ int LoadGame::LoadTriggerEvents()
       if ( (*(int (**)(void *, unsigned int *, int, unsigned int))(*(unsigned int *)this + 12))(this, v11, 64, 0) < 0 ) /*0x660929*/
         break; /*0x660929*/
       if ( ++v9 >= v13 ) /*0x660932*/
-        return (*(int (**)(void *, __int16 *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
+        return (*(int (**)(void *, int16_t *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
     }
     return 0; /*0x660929*/
   }
-  return (*(int (**)(void *, __int16 *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
+  return (*(int (**)(void *, int16_t *, int, unsigned int))(*(unsigned int *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
 
 }
     return 0; /*0x6608e8*/

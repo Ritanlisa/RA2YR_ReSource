@@ -69,7 +69,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
       {
-        v9 = a3 + 2; /*0x478548*/
+        v9 = (unsigned char *)(a3 + 2);
         v10 = a2; /*0x47854b*/
         do /*0x478558*/
         {
@@ -89,7 +89,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x478525*/
         {
-          v7 = v6 + 2; /*0x478527*/
+          v7 = (unsigned char *)(v6 + 2);
           v8 = a2; /*0x47852a*/
           do /*0x478537*/
           {
@@ -145,7 +145,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   {
     (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x4785c6*/
   }
-  v15 = *((unsigned int *)this + 2); /*0x4785c9*/
+  v15 = (gamemd::AbstractClass **)(*((unsigned int *)this + 2));
   if ( v15 < *((unsigned int *)this + 4) ) /*0x4785d1*/
     *((unsigned int *)this + 4) = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
@@ -167,7 +167,7 @@ void ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   int v10; // edx
   int v11; // edi
 
-  if ( this == a2 ) /*0x4788ec*/
+  if ( this == (gamemd::ParticleTypeClass *)(a2) ) /*0x4788ec*/
     return this; /*0x4788ec*/
   (*(void (**)(unsigned int *))(*(unsigned int *)this + 48))(this); /*0x4788f4*/
   v3 = a2[2]; /*0x4788f7*/
@@ -183,7 +183,7 @@ void ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   {
     if ( v3 - 1 >= 0 ) /*0x478918*/
     {
-      v5 = v4 + 2; /*0x47891a*/
+      v5 = (unsigned char *)(v4 + 2);
       v6 = v3; /*0x47891d*/
       do /*0x47892a*/
       {
@@ -772,7 +772,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
       {
         if ( a2 - 1 >= 0 ) /*0x645acd*/
         {
-          v7 = v6 + 2; /*0x645acf*/
+          v7 = (unsigned char *)(v6 + 2);
           v8 = a2; /*0x645ad2*/
           do /*0x645adf*/
           {
@@ -793,7 +793,7 @@ unsigned int * ParticleTypeClass::Constructor(int a2, int a3)
       *((unsigned char *)this + 13) = 1; /*0x645ae8*/
     }
   }
-  *this = &vt_DynamicVectorClass_RGBClass; /*0x645aec*/
+  *this = (unsigned int *)(&vt_DynamicVectorClass_RGBClass);
   *((unsigned int *)this + 5) = 10; /*0x645af2*/
   *((unsigned int *)this + 4) = 0; /*0x645af9*/
   return this; /*0x645afe*/
@@ -820,7 +820,7 @@ TypeList_flat * ParticleTypeClass::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x477ac3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_RGBClass; /*0x477ac6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477ad0*/
   {

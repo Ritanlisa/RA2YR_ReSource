@@ -100,7 +100,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2,  unsigned int * a3)
       *((unsigned char *)this + 13) = 1; /*0x4e0a86*/
     }
   }
-  *this = &vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass; /*0x4e0a8a*/
+  *this = (unsigned int *)(&vt_DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass);
   *((unsigned int *)this + 5) = 10; /*0x4e0a90*/
   *((unsigned int *)this + 4) = 0; /*0x4e0a97*/
   return this; /*0x4e0aa0*/

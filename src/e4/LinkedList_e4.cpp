@@ -30,10 +30,12 @@
 namespace gamemd {
 AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
 {
+    unsigned int v5 = 0;  /* G37 hoist */
+    unsigned int v4 = 0;  /* G37 hoist */
 
   CD *v4; // ecx
   CD *v5; // esi
-  IUnknown *v6; // eax
+  unsigned int v6;
   unsigned int *v8; // eax
   unsigned int *v9; // eax
   INIClass *v10; // edi
@@ -60,8 +62,8 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   Debug::Log(); /*0x479208*/
   if ( *(unsigned int *)&v5[1] == -1 ) /*0x479216*/
   {
-    v6 = dword_A83D14; /*0x479218*/
-    if ( dword_A83D14 == (IUnknown *)-1 ) /*0x479220*/
+    v6 = (IUnknown *)(dword_A83D14);
+    if ( dword_A83D14 == (unsigned int)((IUnknown *))-1 ) /*0x479220*/
       v6 = dword_A83D18; /*0x479222*/
     v5[1] = (CD)v6; /*0x479227*/
   }
@@ -141,7 +143,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
     v9 = 0; /*0x4793bf*/
   *(unsigned int *)&stru_87C374.__pad_579C[13092] = v9; /*0x4793c1*/
   Debug::Log(); /*0x4793cf*/
-  v10 = (INIClass *)&aP0->__pad_0[1]; /*0x4793d4*/
+  v10 = (INIClass *)&aP0-((unsigned int *)(>__pad_0))[1]; /*0x4793d4*/
   sprintf(Buffer.__pad_0, (ObjectClass *)&stru_81C2C4.owningHouseIndex, (INIClass *)&aP0->__pad_0[1]); /*0x4793e7*/
   Debug::Log(); /*0x4793f6*/
   v11 = (unsigned int *)__2_YAPAXI_Z(0x28u); /*0x4793fd*/

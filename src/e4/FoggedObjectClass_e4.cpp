@@ -49,7 +49,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   int v27; // [esp+44h] [ebp+4h]
   int v28; // [esp+48h] [ebp+8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4d0989*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x4d0989*/
   *((unsigned int *)this + 9) = a3; /*0x4d099e*/
   *((unsigned int *)this + 10) = 0; /*0x4d09a1*/
   *((unsigned int *)this + 11) = a4; /*0x4d09a4*/
@@ -132,7 +132,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
   if ( MEMORY[0x8B3D20] < MEMORY[0x8B3D18] /*0x4d0b6f*/
     || (MEMORY[0x8B3D1D] || !MEMORY[0x8B3D18])
     && MEMORY[0x8B3D24] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0x8B3D10] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0x8B3D10] + 8))(
          &MEMORY[0x8B3D10],
          MEMORY[0x8B3D24] + MEMORY[0x8B3D18],
          0) )
@@ -140,9 +140,9 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
     v19 = MEMORY[0x8B3D20]++; /*0x4d0b7c*/
     *((unsigned int *)MEMORY[0x8B3D14] + v19) = this; /*0x4d0b8b*/
   }
-  v20 = (__int16)(*((unsigned int *)this + 13) / 256); /*0x4d0bb4*/
+  v20 = (int16_t)(*((unsigned int *)this + 13) / 256); /*0x4d0bb4*/
   v21 = MEMORY[0x8B3CC8]; /*0x4d0bcd*/
-  v22 = 74 * ((__int16)(*((unsigned int *)this + 14) / 256) - ((v20 + (__int16)(*((unsigned int *)this + 14) / 256)) << 9) - v20) /*0x4d0bd6*/
+  v22 = 74 * ((int16_t)(*((unsigned int *)this + 14) / 256) - ((v20 + (int16_t)(*((unsigned int *)this + 14) / 256)) << 9) - v20) /*0x4d0bd6*/
       - *((unsigned int *)this + 12)
       + 0x7FFFFFFF;
   if ( (int)(MEMORY[0x8B3CC4] + 1) <= MEMORY[0x8B3CC8] ) /*0x4d0bdf*/
@@ -157,7 +157,7 @@ LABEL_27:
     MEMORY[0x8B3CCC] = 0; /*0x4d0c1c*/
     ++MEMORY[0x8B3CC4]; /*0x4d0c23*/
   }
-  return this; /*0x4d0c2a*/
+  return (int)(this);
 
 }
 } // namespace gamemd
@@ -187,7 +187,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   int v24; // [esp+20h] [ebp-14h]
   IUnknown *v25; // [esp+30h] [ebp-4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4d0c49*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x4d0c49*/
   *((unsigned int *)this + 9) = -1; /*0x4d0c5a*/
   *((unsigned int *)this + 10) = 0; /*0x4d0c61*/
   *((unsigned int *)this + 11) = 0; /*0x4d0c64*/
@@ -233,7 +233,7 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
   if ( *(int *)&MEMORY[0x89F690].__pad_579C[61172] < *(int *)&MEMORY[0x89F690].__pad_579C[61164] /*0x4d0dab*/
     || (MEMORY[0x89F690].__pad_579C[61169] || !*(unsigned int *)&MEMORY[0x89F690].__pad_579C[61164])
     && *(int *)&MEMORY[0x89F690].__pad_579C[61176] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[61156] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[61156] + 8))(
          &MEMORY[0x89F690].__pad_579C[61156],
          *(unsigned int *)&MEMORY[0x89F690].__pad_579C[61164] + *(unsigned int *)&MEMORY[0x89F690].__pad_579C[61176],
          0) )
@@ -242,9 +242,9 @@ AbstractClass * FoggedObjectClass::InitTerrainFog( IUnknown * aP1, int a3, int a
     *(unsigned int *)(*(unsigned int *)&MEMORY[0x89F690].__pad_579C[61160] + 4 * v14) = this; /*0x4d0dc7*/
   }
   v15 = 74 /*0x4d0e11*/
-      * ((__int16)(*((unsigned int *)this + 14) / 256)
-       - (((__int16)(*((unsigned int *)this + 13) / 256) + (__int16)(*((unsigned int *)this + 14) / 256)) << 9)
-       - (__int16)(*((unsigned int *)this + 13) / 256))
+      * ((int16_t)(*((unsigned int *)this + 14) / 256)
+       - (((int16_t)(*((unsigned int *)this + 13) / 256) + (int16_t)(*((unsigned int *)this + 14) / 256)) << 9)
+       - (int16_t)(*((unsigned int *)this + 13) / 256))
       - *((unsigned int *)this + 12)
       + 0x7FFFFFFF;
   if ( *(unsigned int *)&MEMORY[0x89F690].__pad_579C[61080] + 1 <= *(int *)&MEMORY[0x89F690].__pad_579C[61084] ) /*0x4d0e1a*/
@@ -376,7 +376,7 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   if ( *(int *)&stru_89E138.__pad_579C[66636] < *(int *)&stru_89E138.__pad_579C[66628] /*0x4d101a*/
     || (stru_89E138.__pad_579C[66633] || !*(unsigned int *)&stru_89E138.__pad_579C[66628])
     && *(int *)&stru_89E138.__pad_579C[66640] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_89E138.__pad_579C[66620] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_89E138.__pad_579C[66620] + 8))(
          &stru_89E138.__pad_579C[66620],
          *(unsigned int *)&stru_89E138.__pad_579C[66628] + *(unsigned int *)&stru_89E138.__pad_579C[66640],
          0) )
@@ -386,9 +386,9 @@ AbstractClass * FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObject
   }
   v10 = *(unsigned int *)&stru_89E138.__pad_579C[66548]; /*0x4d107c*/
   v11 = 74 /*0x4d1081*/
-      * ((__int16)(*((unsigned int *)this + 14) / 256)
-       - (((__int16)(*((unsigned int *)this + 13) / 256) + (__int16)(*((unsigned int *)this + 14) / 256)) << 9)
-       - (__int16)(*((unsigned int *)this + 13) / 256))
+      * ((int16_t)(*((unsigned int *)this + 14) / 256)
+       - (((int16_t)(*((unsigned int *)this + 13) / 256) + (int16_t)(*((unsigned int *)this + 14) / 256)) << 9)
+       - (int16_t)(*((unsigned int *)this + 13) / 256))
       - *((unsigned int *)this + 12)
       + 0x7FFFFFFF;
   if ( *(unsigned int *)&stru_89E138.__pad_579C[66544] + 1 <= *(int *)&stru_89E138.__pad_579C[66548] ) /*0x4d108a*/
@@ -416,7 +416,7 @@ LABEL_11:
   if ( *((unsigned int *)this + 27) < v16 /*0x4d113e*/
     || (*((unsigned char *)this + 105) || !v16)
     && (v17 = *((unsigned int *)this + 28), v17 > 0)
-    && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v7->vtable0 + 8))((char *)this + 92, v16 + v17, 0) )
+    && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7->vtable0 + 8))((char *)this + 92, v16 + v17, 0) )
   {
     v18 = *((unsigned int *)this + 27); /*0x4d1145*/
     *((unsigned int *)this + 27) = v18 + 1; /*0x4d114b*/
@@ -503,7 +503,7 @@ LABEL_41:
     if ( v35 < v37 /*0x4d12cb*/
       || (*((unsigned char *)this + 105) || !v37)
       && (v38 = *((unsigned int *)this + 28), v38 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v7->vtable0 + 8))((char *)this + 92, v37 + v38, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v7->vtable0 + 8))((char *)this + 92, v37 + v38, 0) )
     {
       v39 = *((unsigned int *)this + 27); /*0x4d12d2*/
       *((unsigned int *)this + 27) = v39 + 1; /*0x4d12dc*/

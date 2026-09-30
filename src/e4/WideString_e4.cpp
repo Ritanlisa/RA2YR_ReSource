@@ -9,6 +9,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/WebBrowser_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x5D4B20
 namespace gamemd {
@@ -176,7 +178,7 @@ LABEL_33:
     v16 = (CampaignScore *)&MEMORY[0x87F8E4].__pad_5568[10472]; /*0x7b7587*/
     goto LABEL_35; /*0x7b758c*/
   }
-  v3 = (GameSetup *)this; /*0x7b758e*/
+  v3 = (gamemd::AbstractClass **)((GameSetup *)this);
   v16 = (CampaignScore *)v5; /*0x7b7592*/
 LABEL_35:
   if ( *(unsigned int *)v3->__pad_0 ) /*0x7b7594*/
@@ -309,7 +311,7 @@ int WideString::AssignFromPtr( const wchar_t ** a2)
   *this = 0; /*0x7b6728*/
   if ( *a2 ) /*0x7b672e*/
   {
-    v3 = wcslen(*a2); /*0x7b6735*/
+    v3 = (int)(wcslen(*a2));
     v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x7b673f*/
     *this = v4; /*0x7b6744*/
     wcscpy(v4, *a2); /*0x7b674a*/
@@ -357,7 +359,7 @@ int WideString::Reassign_Alt(const wchar_t ** a2)
   v3 = (const wchar_t *)*this; /*0x7b68e8*/
   if ( (*this || *a2) && (!v3 || !*a2 || wcscmp(v3, *a2)) ) /*0x7b68ff*/
   {
-    v4 = (wchar_t *)*a2; /*0x7b690b*/
+    v4 = (int)((wchar_t *)*a2);
     if ( !*a2 ) /*0x7b690b*/
       v4 = &MEMORY[0x887734]; /*0x7b6911*/
     if ( *this ) /*0x7b6916*/
@@ -389,7 +391,7 @@ wchar_t ** WideString::Append2(CampaignScore * aP1)
 
   if ( aP1 ) /*0x7b6aeb*/
   {
-    v3 = (CampaignScore *)*this; /*0x7b6aed*/
+    v3 = (wchar_t **)((CampaignScore *)*this);
     v4 = wcslen((const wchar_t *)aP1) + 1; /*0x7b6afb*/
     if ( v3 ) /*0x7b6afe*/
       v4 += wcslen((const wchar_t *)v3); /*0x7b6b09*/
@@ -422,7 +424,7 @@ wchar_t ** WideString::Append(CampaignScore * aP1)
   if ( *(unsigned int *)aP1->__pad_0 /*0x7b6b76*/
     || (v2 = (const wchar_t *)&MEMORY[0x87F8E4].__pad_5568[10472], &MEMORY[0x87F8E4] != (MouseClass *)-32336) )
   {
-    v4 = (CampaignScore *)*this; /*0x7b6b78*/
+    v4 = (wchar_t **)((CampaignScore *)*this);
     v5 = wcslen(v2) + 1; /*0x7b6b86*/
     if ( v4 ) /*0x7b6b89*/
       v5 += wcslen((const wchar_t *)v4); /*0x7b6b94*/

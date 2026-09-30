@@ -130,7 +130,7 @@ int Array::Zero()
   result = 0; /*0x7490d6*/
   if ( (int)*((unsigned int *)this + 512) > 0 ) /*0x7490da*/
   {
-    v2 = this; /*0x7490dd*/
+    v2 = (unsigned int *)(this);
     do /*0x7490f1*/
     {
       *v2 = 0; /*0x7490df*/
@@ -153,7 +153,7 @@ void Array::ByteSwap()
 
   if ( *((unsigned int *)this + 513) && (v2 = 0, (int)*((unsigned int *)this + 512) > 0) ) /*0x749169*/
   {
-    v3 = this; /*0x74916c*/
+    v3 = (gamemd::u_long *)(this);
     do /*0x749184*/
     {
       *v3 = ntohl(*v3); /*0x749176*/
@@ -243,7 +243,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
     *((char *)this + 2) = v16; /*0x7ad82c*/
     *((char *)this + 1) = v7; /*0x7ad82f*/
   }
-  v10 = *this; /*0x7ad832*/
+  v10 = (int)(*this);
   if ( *this >= *((char *)this + 1) ) /*0x7ad839*/
   {
     v11 = 2 * v10; /*0x7ad83b*/

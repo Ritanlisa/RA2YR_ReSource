@@ -29,14 +29,14 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
   int TileIndexMapClass; // eax
   int v7; // eax
   int v8; // [esp+14h] [ebp-20h] BYREF
-  __int16 v9[2]; // [esp+18h] [ebp-1Ch] BYREF
-  __int16 v10[2]; // [esp+1Ch] [ebp-18h] BYREF
+  int16_t v9[2]; // [esp+18h] [ebp-1Ch] BYREF
+  int16_t v10[2]; // [esp+1Ch] [ebp-18h] BYREF
   unsigned char v11[4]; // [esp+20h] [ebp-14h] BYREF
   int v12; // [esp+24h] [ebp-10h] BYREF
   int v13; // [esp+28h] [ebp-Ch] BYREF
   int v14; // [esp+2Ch] [ebp-8h]
   int v15; // [esp+30h] [ebp-4h]
-  unsigned __int16 v16; // [esp+3Ah] [ebp+6h]
+  uint16_t v16; // [esp+3Ah] [ebp+6h]
 
   switch ( a1[5] ) /*0x728c17*/
   {
@@ -68,12 +68,12 @@ LABEL_11:
         v8 = *(unsigned int *)(*(int (**)(unsigned int, unsigned char *))(*(unsigned int *)a1[2] + 440))(a1[2], v11); /*0x728c9e*/
         v9[0] = 0; /*0x728cc4*/
         v9[1] = 0; /*0x728cc9*/
-        TileIndexMapClass = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (__int16 *)&v8, 0, 0); /*0x728cce*/
+        TileIndexMapClass = MapClass::GetTileIndex(&MEMORY[0x87F7E8], (int16_t *)&v8, 0, 0); /*0x728cce*/
         v7 = *LayerClass::Pathfinding_Find( /*0x728cea*/
                 &MEMORY[0x87F7E8],
                 (int)&v12,
                 &v12,
-                (__int16 *)&v8,
+                (int16_t *)&v8,
                 1,
                 TileIndexMapClass,
                 0,
@@ -98,7 +98,7 @@ LABEL_11:
                   &MEMORY[0x87F7E8],
                   (int)v10,
                   &v13,
-                  (__int16 *)&v8,
+                  (int16_t *)&v8,
                   1,
                   -1,
                   0,
@@ -131,8 +131,8 @@ LABEL_11:
         else
         {
 LABEL_8:
-          *v2 = ((__int16)v7 << 8) + 128; /*0x728dbf*/
-          a1[7] = ((__int16)v16 << 8) + 128; /*0x728dc1*/
+          *v2 = ((int16_t)v7 << 8) + 128; /*0x728dbf*/
+          a1[7] = ((int16_t)v16 << 8) + 128; /*0x728dc1*/
           a1[8] = 0; /*0x728dc4*/
         }
       }

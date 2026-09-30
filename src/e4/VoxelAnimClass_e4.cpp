@@ -45,7 +45,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
   float v14; // [esp+8h] [ebp-4h]
   float v15; // [esp+8h] [ebp-4h]
 
-  v0 = 0; /*0x4caf23*/
+  v0 = (unsigned int *)(0);
   v1 = &unk_86D0BC; /*0x4caf25*/
   v2 = 0x2000; /*0x4caf2a*/
   do /*0x4cb050*/
@@ -64,7 +64,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
       v6 = (LODWORD(v12) >> 23) - 127; /*0x4caf7e*/
       if ( (v6 & 1) != 0 ) /*0x4caf83*/
         v5 |= (unsigned int)&unk_800000; /*0x4caf85*/
-      v4 = COERCE_FLOAT(((((__int16)v6 >> 1) + 127) << 23) + dword_8650BC[v5 >> 10]); /*0x4cafa7*/
+      v4 = COERCE_FLOAT(((((int16_t)v6 >> 1) + 127) << 23) + dword_8650BC[v5 >> 10]); /*0x4cafa7*/
     }
     v13 = v4; /*0x4cafab*/
     *(v1 - 0x2000) = (unsigned int)&unk_7FFFFF & LODWORD(v13); /*0x4cafc7*/
@@ -82,7 +82,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
       v10 = (LODWORD(v14) >> 23) - 127; /*0x4cb00e*/
       if ( (v10 & 1) != 0 ) /*0x4cb013*/
         v9 |= (unsigned int)&unk_800000; /*0x4cb015*/
-      v8 = COERCE_FLOAT(((((__int16)v10 >> 1) + 127) << 23) + dword_8650BC[v9 >> 10]); /*0x4cb037*/
+      v8 = COERCE_FLOAT(((((int16_t)v10 >> 1) + 127) << 23) + dword_8650BC[v9 >> 10]); /*0x4cb037*/
     }
     v15 = v8; /*0x4cb03b*/
     ++v1; /*0x4cb043*/
@@ -163,7 +163,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   int v9; // edi
   int v10; // ecx
   int v11; // eax
-  __int16 *v12; // eax
+  int16_t *v12; // eax
   int v13; // ecx
   int v14; // eax
   unsigned int *v15; // esi
@@ -259,7 +259,7 @@ LABEL_6:
         v25 = *((char *)this + 39); /*0x749e17*/
         v27 = v10; /*0x749e1f*/
         v26 = v11; /*0x749e29*/
-        v12 = (__int16 *)Coord::To_Cell(&MEMORY[0x87F7E8], &v25); /*0x749e2d*/
+        v12 = (int16_t *)Coord::To_Cell(&MEMORY[0x87F7E8], &v25); /*0x749e2d*/
         v13 = *((char *)this + 67); /*0x749e32*/
         v14 = v12[133]; /*0x749e38*/
         if ( v13 ) /*0x749e41*/
@@ -275,7 +275,7 @@ LABEL_6:
           v15 = (unsigned int *)MEMORY[0x87F6B4]; /*0x749e72*/
           v14 = 1000; /*0x749e78*/
         }
-        v25 = v29 + v34; /*0x749e8b*/
+        v25 = (int)(v29 + v34);
         v24 = v14; /*0x749e97*/
         v16 = *this; /*0x749e98*/
         v26 = v28 + v35; /*0x749ea0*/

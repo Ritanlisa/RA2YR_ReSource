@@ -19,6 +19,7 @@
 namespace gamemd {
 RadSiteClass::RadSiteClass()
 {
+    unsigned int v2 = 0;  /* G37 hoist */
 
   #72 *v2; // edx
   int v3; // eax
@@ -48,7 +49,7 @@ RadSiteClass::RadSiteClass()
   if ( MEMORY[0xB04BE0] < MEMORY[0xB04BD8] /*0x65b277*/
     || (MEMORY[0xB04BDD] || !MEMORY[0xB04BD8])
     && MEMORY[0xB04BE4] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB04BD0] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xB04BD0] + 8))(
          &MEMORY[0xB04BD0],
          MEMORY[0xB04BD8] + MEMORY[0xB04BE4],
          0) )

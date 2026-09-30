@@ -69,7 +69,7 @@ AbstractClass * FootClass::Destruct()
   if ( *((unsigned short *)this + 690) != *(unsigned short *)&MEMORY[0x89F690].__pad_579C[61276] /*0x4d3653*/
     || *((unsigned short *)this + 691) != *(unsigned short *)&MEMORY[0x89F690].__pad_579C[61278] )
   {
-    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)this + 690); /*0x4d365b*/
+    v6 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)this + 690); /*0x4d365b*/
     if ( (void *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
@@ -174,11 +174,11 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
   int v31; // [esp+70h] [ebp-Ch] BYREF
   int v32; // [esp+78h] [ebp-4h]
 
-  v6 = ppv; /*0x710006*/
+  v6 = (int *)(ppv);
   v30 = a1; /*0x71000d*/
   if ( ppv )
   {
-    v7 = (unsigned int *)ppv[180]; /*0x710017*/
+    v7 = (unsigned int *)((unsigned int *)(ppv))[180]; /*0x710017*/
     if ( v7 ) /*0x71001f*/
       TaskManager::Update(v7); /*0x710021*/
     v8 = (unsigned int *)v6[421]; /*0x710026*/
@@ -196,11 +196,11 @@ AbstractClass * FootClass::FootClass_ImbueLocomotor(void * a1, void * a2, void *
     if ( *(unsigned char *)((*(int (**)(unsigned int *))(*v6 + 132))(v6) + 1516)
       && v27
       && !v6[172]
-      && (*(unsigned __int8 (**)(int))(*(unsigned int *)v27 + 28))(v27) )
+      && (*(uint8_t (**)(int))(*(unsigned int *)v27 + 28))(v27) )
     {
       if ( !v27 ) /*0x7100d6*/
         WinAPI::Wrapper(-2147467261); /*0x7100dd*/
-      v12 = (*(unsigned __int8 (**)(int))(*(unsigned int *)v27 + 20))(v27) == 0; /*0x7100ec*/
+      v12 = (*(uint8_t (**)(int))(*(unsigned int *)v27 + 20))(v27) == 0; /*0x7100ec*/
       v13 = *v10; /*0x7100ee*/
       if ( v12 ) /*0x7100f0*/
       {

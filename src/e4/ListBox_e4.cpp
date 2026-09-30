@@ -31,7 +31,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   LONG v15; // ebx
   size_t v16; // esi
   char *v17; // ebp
-  unsigned __int16 v18; // ax
+  uint16_t v18; // ax
   HWND v19; // eax
   HWND v20; // esi
   HWND v21; // eax
@@ -96,7 +96,7 @@ LABEL_8:
     if ( !v7 ) /*0x614245*/
       return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614245*/
   }
-  v8 = v7 + 1; /*0x61424d*/
+  v8 = (unsigned int *)(v7 + 1);
   if ( v7 == (HWND *)-4 ) /*0x614252*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614285*/
   if ( GetFocus() == hWnd && !v8[61] ) /*0x614297*/

@@ -152,7 +152,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   unsigned int v26;
   uint8_t *v27; // esi
   char *v28; // ebp
-  unsigned int v29;
+  int * v29;
   int * v30;
   uint8_t v31; // cl
   char v32; // cl
@@ -163,7 +163,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int * v37;
   int v38; // [esp+8h] [ebp-C8h]
   int v39; // [esp+8h] [ebp-C8h]
-  int * v40;
+  unsigned int v40;
   int * v41;
   int * v42;
   int * v43;
@@ -314,7 +314,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             v28 = (char *)((int)(v49));
             v38 = (unsigned int)(v37 - v41);
-            v29 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40)))))))))))))));
+            v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))))))))))))));
             do /*0x4212ad*/
             {
               if ( v29 < (int *)((int))(v42) ) /*0x421239*/
@@ -3995,7 +3995,7 @@ char E4Recv_42D830::sub_42D830(unsigned int * a2)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x42d846*/
       return 0; /*0x42d846*/
     v4 = *((unsigned int *)this + 5); /*0x42d848*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x42d858*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x42d858*/
       return 0; /*0x42d85f*/
   }
   v6 = *((unsigned int *)this + 4); /*0x42d865*/

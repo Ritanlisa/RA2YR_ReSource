@@ -61,7 +61,7 @@ BulletClass::BulletClass()
   if ( MEMORY[0xA8ED50] < MEMORY[0xA8ED48] /*0x46649b*/
     || (MEMORY[0xA8ED4D] || !MEMORY[0xA8ED48])
     && MEMORY[0xA8ED54] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8ED40] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xA8ED40] + 8))(
          &MEMORY[0xA8ED40],
          MEMORY[0xA8ED48] + MEMORY[0xA8ED54],
          0) )
@@ -77,6 +77,7 @@ BulletClass::BulletClass()
 namespace gamemd {
 BulletClass * * BulletClass::Dtor()
 {
+    unsigned int v5 = 0;  /* G37 hoist */
 
   int v2; // eax
   int v3; // eax

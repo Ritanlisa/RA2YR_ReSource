@@ -20,7 +20,7 @@ void LightSourceClass::Construct( int a2, int a3, int a4, int a5, int a6, int a7
 
   int v10; // eax
 
-  AbstractClass::Constructor((int)this); /*0x554763*/
+  ((AbstractClass *)((int)this))->Constructor(); /*0x554763*/
   *((unsigned int *)this + 10) = a7; /*0x554774*/
   *((unsigned int *)this + 9) = a6; /*0x554777*/
   *((unsigned int *)this + 11) = a8; /*0x55477e*/
@@ -38,7 +38,7 @@ void LightSourceClass::Construct( int a2, int a3, int a4, int a5, int a6, int a7
   if ( MEMORY[0xABCA20] < MEMORY[0xABCA18] /*0x5547fd*/
     || (MEMORY[0xABCA1D] || !MEMORY[0xABCA18])
     && MEMORY[0xABCA24] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xABCA10] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xABCA10] + 8))(
          &MEMORY[0xABCA10],
          MEMORY[0xABCA18] + MEMORY[0xABCA24],
          0) )
@@ -58,7 +58,7 @@ void LightSourceClass::Constructor()
   int v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((#373 *)this); /*0x554833*/
+  ((AbstractClass *)((#373 *)this))->Constructor(); /*0x554833*/
   *((unsigned int *)this + 9) = 0; /*0x55483d*/
   *((unsigned int *)this + 10) = 0; /*0x554840*/
   *((unsigned int *)this + 11) = 0; /*0x554843*/
@@ -76,7 +76,7 @@ void LightSourceClass::Constructor()
   if ( MEMORY[0xABCA20] < MEMORY[0xABCA18] /*0x5548b6*/
     || (MEMORY[0xABCA1D] || !MEMORY[0xABCA18])
     && MEMORY[0xABCA24] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xABCA10] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xABCA10] + 8))(
          &MEMORY[0xABCA10],
          MEMORY[0xABCA18] + MEMORY[0xABCA24],
          0) )

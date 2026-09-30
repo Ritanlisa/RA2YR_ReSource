@@ -466,7 +466,7 @@ int AudioStream::ReadSamples(const void * a2)
   unsigned int v16[27]; // [esp+30h] [ebp-D0h] BYREF
   unsigned int v17[25]; // [esp+9Ch] [ebp-64h] BYREF
 
-  v2 = this; /*0x4a33a7*/
+  v2 = (unsigned int *)(this);
   v3 = *((unsigned int *)this + 28); /*0x4a33ac*/
   if ( !v3 ) /*0x4a33b7*/
     return -1; /*0x4a33b7*/
@@ -552,7 +552,7 @@ int AudioStream::ReadSamples(const void * a2)
                 }
                 while ( v7 < v13 ); /*0x4a353c*/
               }
-              v2 = this; /*0x4a356f*/
+              v2 = (unsigned int *)(this);
             }
           }
         }
@@ -605,7 +605,7 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   TacticalClass *v38; // edx
   int v39; // ecx
   int v40; // esi
-  unsigned __int16 v41; // ax
+  uint16_t v41; // ax
   unsigned short *v42; // eax
   int v43; // eax
   unsigned short *v44; // eax
@@ -613,12 +613,12 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
   int v47; // eax
   TacticalClass *v48; // edx
   int v49; // esi
-  unsigned __int16 v50; // ax
+  uint16_t v50; // ax
   unsigned short *v51; // ecx
   unsigned short *v52; // ecx
   int v53; // edx
   int v54; // esi
-  unsigned __int16 v55; // ax
+  uint16_t v55; // ax
   unsigned int v56; // ecx
   unsigned int v57; // edi
   int v58; // esi
@@ -794,15 +794,15 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
         v73[0] = 0; /*0x4bf3e0*/
         do /*0x4bf620*/
         {
-          v54 = (unsigned __int16)*v32; /*0x4bf3f1*/
-          if ( (unsigned __int16)v100 < *SamplePosition && *v32 ) /*0x4bf3ec*/
+          v54 = (uint16_t)*v32; /*0x4bf3f1*/
+          if ( (uint16_t)v100 < *SamplePosition && *v32 ) /*0x4bf3ec*/
           {
             v55 = *(unsigned short *)(v53 + v99); /*0x4bf409*/
-            LOBYTE(v76) = (unsigned __int8)(v55 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bf428*/
-            BYTE1(v76) = (unsigned __int8)(v55 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bf439*/
-            BYTE2(v76) = (unsigned __int8)(v55 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bf456*/
+            LOBYTE(v76) = (uint8_t)(v55 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bf428*/
+            BYTE1(v76) = (uint8_t)(v55 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bf439*/
+            BYTE2(v76) = (uint8_t)(v55 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bf456*/
             v53 = v73[0]; /*0x4bf4e1*/
-            *(unsigned short *)(v73[0] + v99) = ((v54 * (v68 + ((v33 * (unsigned __int8)v76) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4bf4e5*/
+            *(unsigned short *)(v73[0] + v99) = ((v54 * (v68 + ((v33 * (uint8_t)v76) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4bf4e5*/
                                      | ((v54 * (v67 + ((v33 * BYTE1(v76)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672])
                                      | ((v54 * (v66 + ((v33 * BYTE2(v76)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664]);
           }
@@ -874,15 +874,15 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
         v48 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf17a*/
         do /*0x4bf39a*/
         {
-          v49 = (unsigned __int16)*v32; /*0x4bf18d*/
-          if ( (unsigned __int16)v100 < *SamplePosition && *v32 ) /*0x4bf188*/
+          v49 = (uint16_t)*v32; /*0x4bf18d*/
+          if ( (uint16_t)v100 < *SamplePosition && *v32 ) /*0x4bf188*/
           {
             v50 = *(unsigned short *)(v99 + 2 * v47); /*0x4bf1ac*/
-            LOBYTE(v74) = (unsigned __int8)(v50 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bf1c4*/
-            BYTE1(v74) = (unsigned __int8)(v50 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bf1e5*/
-            BYTE2(v74) = (unsigned __int8)(v50 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bf1f1*/
+            LOBYTE(v74) = (uint8_t)(v50 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bf1c4*/
+            BYTE1(v74) = (uint8_t)(v50 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bf1e5*/
+            BYTE2(v74) = (uint8_t)(v50 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bf1f1*/
             v47 = v73[0]; /*0x4bf27c*/
-            *(unsigned short *)(v99 + 2 * v73[0]) = ((v49 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4bf280*/
+            *(unsigned short *)(v99 + 2 * v73[0]) = ((v49 * (v68 + ((v33 * (uint8_t)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4bf280*/
                                          | ((v49 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
                                          | ((v49 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672]);
             v48 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4bf284*/
@@ -949,15 +949,15 @@ MouseClass * * AudioStream::DrawWaveform(IUnknown * aP1, IUnknown * aP2, IUnknow
       v73[0] = v37; /*0x4beeef*/
       while ( 1 ) /*0x4bef00*/
       {
-        v40 = (unsigned __int16)*v32; /*0x4bef00*/
-        if ( (unsigned __int16)v100 < *SamplePosition && *v32 ) /*0x4beefb*/
+        v40 = (uint16_t)*v32; /*0x4bef00*/
+        if ( (uint16_t)v100 < *SamplePosition && *v32 ) /*0x4beefb*/
         {
           v41 = *(unsigned short *)(v39 + v99); /*0x4bef18*/
-          LOBYTE(v74) = (unsigned __int8)(v41 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bef37*/
-          BYTE1(v74) = (unsigned __int8)(v41 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bef58*/
-          BYTE2(v74) = (unsigned __int8)(v41 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bef68*/
+          LOBYTE(v74) = (uint8_t)(v41 >> MEMORY[0x89F690].__pad_14B0[656]) << MEMORY[0x89F690].__pad_14B0[660]; /*0x4bef37*/
+          BYTE1(v74) = (uint8_t)(v41 >> MEMORY[0x89F690].__pad_14B0[672]) << MEMORY[0x89F690].__pad_14B0[676]; /*0x4bef58*/
+          BYTE2(v74) = (uint8_t)(v41 >> MEMORY[0x89F690].__pad_14B0[664]) << MEMORY[0x89F690].__pad_14B0[668]; /*0x4bef68*/
           v39 = v71; /*0x4befe7*/
-          *(unsigned short *)(v71 + v99) = ((v40 * (v68 + ((v33 * (unsigned __int8)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4beff4*/
+          *(unsigned short *)(v71 + v99) = ((v40 * (v68 + ((v33 * (uint8_t)v74) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[660] << MEMORY[0x89F690].__pad_14B0[656]) /*0x4beff4*/
                                 | ((v40 * (v66 + ((v33 * BYTE2(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[668] << MEMORY[0x89F690].__pad_14B0[664])
                                 | ((v40 * (v67 + ((v33 * BYTE1(v74)) >> 8))) >> 7 >> MEMORY[0x89F690].__pad_14B0[676] << MEMORY[0x89F690].__pad_14B0[672]);
           v38 = (TacticalClass *)MEMORY[0x87E8A4]; /*0x4beff8*/

@@ -24,11 +24,11 @@ void TextBuffer::Init()
   unsigned int *v4; // eax
   int v5; // esi
 
-  v1 = 0; /*0x5bcc93*/
+  v1 = (unsigned int *)(0);
   v2 = (unsigned char *)this + 2000; /*0x5bcc95*/
   do /*0x5bccbe*/
   {
-    v3 = this + v1; /*0x5bcc9b*/
+    v3 = (unsigned char *)(this + v1);
     v4 = v2; /*0x5bcc9e*/
     v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/

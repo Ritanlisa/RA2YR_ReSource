@@ -33,7 +33,7 @@ void * WarheadTypeClass::loadWarheadINI(uint8_t * a2, uint8_t * a3, int a4)
   int Int_Overwrite; // eax
   int result; // eax
 
-  Int_Overwrite = INIClass::ReadInt_Overwrite((int)this, a2, a3, -1); /*0x47481c*/
+  Int_Overwrite = (void *)(INIClass::ReadInt_Overwrite((int)this, a2, a3, -1));
   if ( Int_Overwrite == -1 ) /*0x474824*/
     return a4; /*0x474826*/
   if ( Int_Overwrite >= 100 ) /*0x474830*/
@@ -86,7 +86,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
   {
     (*(void (**)(void *))(*(unsigned int *)this + 12))(this); /*0x52538e*/
   }
-  v7 = *((unsigned int *)this + 2); /*0x525391*/
+  v7 = (gamemd::AbstractClass **)(*((unsigned int *)this + 2));
   if ( v7 < *((unsigned int *)this + 4) ) /*0x525399*/
     *((unsigned int *)this + 4) = v7; /*0x52539b*/
   return 1; /*0x52539e*/
@@ -232,7 +232,7 @@ void * WarheadTypeClass::ReadParticleSystems(unsigned int * Block, char a2)
   int v8; // edx
   int v9; // ecx
 
-  *Block = &vt_GenericList; /*0x52afc6*/
+  *Block = (unsigned int)(&vt_GenericList);
   while ( 1 ) /*0x52afcc*/
   {
     v3 = *(Block + 2); /*0x52afcc*/

@@ -36,7 +36,7 @@ int NetworkGameSetup::ReadRulesUnknown()
     MEMORY[0xA8B278] = (LPARAM)result; /*0x5b9775*/
     *((unsigned char *)this + 9) = 1; /*0x5b977a*/
   }
-  return result; /*0x5b977e*/
+  return (int)(result);
 
 }
 } // namespace gamemd
@@ -44,6 +44,7 @@ int NetworkGameSetup::ReadRulesUnknown()
 namespace gamemd {
 void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
+    unsigned int v6 = 0;  /* G37 hoist */
     double (__cdecl *)(...) v6 = 0;
     double (__cdecl *)(...) v6 = 0;
     double (__cdecl *)(...) v6 = 0;

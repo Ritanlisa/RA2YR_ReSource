@@ -31,7 +31,7 @@ void ParasiteClass::Constructor()
   wchar_t *v2; // ecx
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x629213*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x629213*/
   *((unsigned int *)this + 11) = MEMORY[0xA8ED84]; /*0x62921f*/
   *((unsigned int *)this + 13) = 0; /*0x629222*/
   v2 = MEMORY[0xA8ED84]; /*0x629225*/
@@ -44,7 +44,7 @@ void ParasiteClass::Constructor()
   if ( MEMORY[0xAC4920] < MEMORY[0xAC4918] /*0x62927e*/
     || (MEMORY[0xAC491D] || !MEMORY[0xAC4918])
     && MEMORY[0xAC4924] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xAC4910] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xAC4910] + 8))(
          &MEMORY[0xAC4910],
          MEMORY[0xAC4918] + MEMORY[0xAC4924],
          0) )
@@ -229,7 +229,7 @@ void ParasiteClass::DeploySquad()
                 if ( MEMORY[0xB0F5C8] < MEMORY[0xB0F5C0] /*0x629953*/
                   || (MEMORY[0xB0F5C5] || !MEMORY[0xB0F5C0])
                   && MEMORY[0xB0F5CC] > 0
-                  && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F5B8] + 8))(
+                  && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xB0F5B8] + 8))(
                        &MEMORY[0xB0F5B8],
                        MEMORY[0xB0F5CC] + MEMORY[0xB0F5C0],
                        0) )
@@ -275,7 +275,7 @@ LABEL_20:
       case 4: /*0x6298bc*/
         *(unsigned int *)(*((unsigned int *)this + 10) + 808) = 0; /*0x629a59*/
         v17 = *((unsigned int *)MEMORY[0x8871E0] + 756); /*0x629a67*/
-        v41 = -((double)(*(__int16 *)ProgressTimer::GetValue((unsigned short *)(*((unsigned int *)this + 10) + 904), &v45) - 0x3FFF) /*0x629a91*/
+        v41 = -((double)(*(int16_t *)ProgressTimer::GetValue((unsigned short *)(*((unsigned int *)this + 10) + 904), &v45) - 0x3FFF) /*0x629a91*/
               * -0.00009587672516830327);
         v49 = Math::ArcTan2(v41); /*0x629aa4*/
         v48 = Math::SinCos(v41); /*0x629aaf*/
@@ -423,7 +423,7 @@ LABEL_47:
                   BuildingClass::AimTurret(v34, *(unsigned char **)((char *)this + 40)); /*0x629dc4*/
                   v34[53] = (*(int (**)(unsigned int))(**(unsigned int **)((char *)this + 36) + 484))(*((unsigned int *)this + 9)); /*0x629dd6*/
                   if ( v36 ) /*0x629ddc*/
-                    v34[63] = *(__int16 *)(v36 + 266); /*0x629de5*/
+                    v34[63] = *(int16_t *)(v36 + 266); /*0x629de5*/
                 }
               }
             }

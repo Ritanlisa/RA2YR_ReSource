@@ -31,7 +31,7 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
       StopThemeClass(1); /*0x7718be*/
       (*(void (**)(unsigned int *))(v3[240] + 12))(v3 + 240); /*0x7718cf*/
     }
-    Ticks = Timer::GetTicks(); /*0x7718d6*/
+    Ticks = (DWORD *)(this->Timer::GetTicks());
     v4 = v3 + 235; /*0x7718e1*/
     *v4 = Ticks; /*0x7718e7*/
     v4[1] = v6; /*0x7718e9*/
@@ -113,7 +113,7 @@ namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_WorldDominationTour_Voices_Anim; /*0x771a33*/
+  *Block = (unsigned int)(&vt_WorldDominationTour_Voices_Anim);
   VtableStub::5CB6C0(Block); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     __3_YAXPAX_Z(Block); /*0x771a46*/

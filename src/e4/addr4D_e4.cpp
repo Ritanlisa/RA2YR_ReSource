@@ -687,7 +687,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
     LOWORD(v9) = LOWORD(MEMORY[0x89F688][v2 & 7]) + *v3; /*0x4d4ff8*/
     HIWORD(v9) = v3[1] + HIWORD(MEMORY[0x89F688][v2 & 7]); /*0x4d4ffe*/
     v10 = v9; /*0x4d500c*/
-    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v10); /*0x4d5010*/
+    v4 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v10); /*0x4d5010*/
     v5 = Cell::IsBridge(v4); /*0x4d5017*/
     v6 = v5; /*0x4d501c*/
     if ( v5 ) /*0x4d5020*/

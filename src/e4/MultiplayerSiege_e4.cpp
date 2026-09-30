@@ -18,6 +18,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x5CA680
 namespace gamemd {
@@ -164,7 +165,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   }
   if ( v3 >= MEMORY[0xA8DA84] ) /*0x5ca84c*/
   {
-    v5 = Block; /*0x5ca84e*/
+    v5 = (void **)(Block);
     v14 = &vt_VectorClass_Cell; /*0x5ca852*/
     if ( !Block || !v16 ) /*0x5ca868*/
       return 0; /*0x5ca868*/
@@ -173,7 +174,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   v6 = *(unsigned int *)(*(unsigned int *)(MEMORY[0xA8DA78] + 4 * v3) + 111); /*0x5ca876*/
   if ( v6 < 0 || v6 >= HouseClass_Count ) /*0x5ca887*/
   {
-    v5 = Block; /*0x5ca980*/
+    v5 = (void **)(Block);
     v14 = &vt_VectorClass_Cell; /*0x5ca984*/
     if ( !Block || !v16 ) /*0x5ca996*/
       return 0; /*0x5ca996*/
@@ -184,7 +185,7 @@ LABEL_26:
   v7 = *(unsigned int **)&HouseClass_Array->__pad_0[4 * v6]; /*0x5ca893*/
   if ( *(unsigned char *)(v7[13] + 422) ) /*0x5ca899*/
   {
-    v5 = Block; /*0x5ca8a3*/
+    v5 = (void **)(Block);
     v14 = &vt_VectorClass_Cell; /*0x5ca8a7*/
     if ( !Block || !v16 ) /*0x5ca8bd*/
       return 0; /*0x5ca8bd*/
@@ -209,7 +210,7 @@ LABEL_26:
       HouseClass::SetMapSeed(v10, *v11); /*0x5ca944*/
     }
   }
-  v14 = &vt_VectorClass_Cell; /*0x5ca957*/
+  v14 = (gamemd::AbstractClass **)(&vt_VectorClass_Cell);
   if ( Block && v16 ) /*0x5ca969*/
     __3_YAXPAX_Z(Block); /*0x5ca96c*/
   return 1; /*0x5ca974*/
@@ -313,7 +314,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   int *v8; // esi
   int v9; // ebx
   unsigned int *StartCoords; // eax
-  __int16 *CurrentOption; // eax
+  int16_t *CurrentOption; // eax
   unsigned int v12[3]; // [esp+14h] [ebp-Ch] BYREF
 
   v2 = 0; /*0x5caad2*/
@@ -348,9 +349,9 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
     return 0; /*0x5cab69*/
   v9 = *v7; /*0x5cab6b*/
   StartCoords = HouseClass::GetStartCoords(ppv, v12); /*0x5cab76*/
-  if ( (*(unsigned __int8 (**)(int *, unsigned int *, unsigned int))(v9 + 216))(v8, StartCoords, 0) ) /*0x5cab7e*/
+  if ( (*(uint8_t (**)(int *, unsigned int *, unsigned int))(v9 + 216))(v8, StartCoords, 0) ) /*0x5cab7e*/
     return 1; /*0x5cab7e*/
-  CurrentOption = (__int16 *)HouseClass::GetCurrentOption(ppv, &a2); /*0x5cab91*/
+  CurrentOption = (int16_t *)HouseClass::GetCurrentOption(ppv, &a2); /*0x5cab91*/
   if ( FindInfantryDeployPosition(v8, CurrentOption, 1) ) /*0x5cab9a*/
     return 1; /*0x5cabbb*/
   (*(void (**)(int *, int))(*v8 + 32))(v8, 1); /*0x5caba9*/
@@ -362,8 +363,7 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
 namespace gamemd {
 MultiplayerSiege * MultiplayerSiege::QueryInterface(unsigned int * Block, char a2)
 {
-
-  *Block = &vt_MultiplayerSiege; /*0x5cabd3*/
+*Block = (unsigned int)(&vt_MultiplayerSiege);
   MultiplayerGameMode::Dtor(Block); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
     __3_YAXPAX_Z(Block); /*0x5cabe6*/

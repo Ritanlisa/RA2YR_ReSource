@@ -59,7 +59,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   }
   if ( v5 == 1 ) /*0x6d06ac*/
   {
-    v6 = *this; /*0x6d06ae*/
+    v6 = (int)(*this);
     *((unsigned char *)this + 21829) = 1; /*0x6d06b4*/
     (*(void (**)(int *, unsigned int))(v6 + 56))(this, 0); /*0x6d06ba*/
   }

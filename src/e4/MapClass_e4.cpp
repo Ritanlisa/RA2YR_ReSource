@@ -4187,20 +4187,20 @@ unsigned int * MapClass::FindPlacementCellsAlt(IUnknown * aP1, IUnknown * aP2)
   aP2 = 0; /*0x703663*/
   aP1->field_0 = *LayerClass::Pathfinding_Find( /*0x7036aa*/
                     &MEMORY[0x87F7E8],
-                    (unsigned __int8)*((unsigned char *)this + 140),
+                    (uint8_t)*((unsigned char *)this + 140),
                     &v12,
-                    (__int16 *)&v11,
+                    (int16_t *)&v11,
                     v4,
                     TileIndex,
                     (int)v7,
-                    (unsigned __int8)*((unsigned char *)this + 140),
+                    (uint8_t)*((unsigned char *)this + 140),
                     1,
                     1,
                     0,
                     0,
                     0,
                     1,
-                    (__int16 *)&aP2,
+                    (int16_t *)&aP2,
                     0,
                     0);
   return &aP1->field_0; /*0x7036a7*/
@@ -4293,19 +4293,19 @@ int MapClass::ProcessVisibilityFlags()
   int k; // ebp
   int m; // edi
   unsigned int *v8; // eax
-  __int16 v10; // [esp+10h] [ebp-8h] BYREF
-  __int16 v11; // [esp+12h] [ebp-6h]
-  __int16 v12[2]; // [esp+14h] [ebp-4h] BYREF
+  int16_t v10; // [esp+10h] [ebp-8h] BYREF
+  int16_t v11; // [esp+12h] [ebp-6h]
+  int16_t v12[2]; // [esp+14h] [ebp-4h] BYREF
 
   for ( i = 0; i < 512; ++i ) /*0x4acac9*/
   {
     for ( j = 0; (int)j < 512; j = (MouseClass *)((char *)j + 1) ) /*0x4acad0*/
     {
-      v10 = (__int16)j; /*0x4acad9*/
+      v10 = (int16_t)j; /*0x4acad9*/
       v11 = i; /*0x4acade*/
       if ( LayerClass::CoordinatesLegal(this, (IUnknown *)&v10) ) /*0x4acae3*/
       {
-        v12[0] = (__int16)j; /*0x4acaf0*/
+        v12[0] = (int16_t)j; /*0x4acaf0*/
         v12[1] = i; /*0x4acaf8*/
         v4 = CellCoord::To_CellObj(this, v12); /*0x4acafd*/
         v5 = v4[75]; /*0x4acb02*/

@@ -265,7 +265,7 @@ VectorClass_flat * Dial8Class_48::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a8033*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_DiskLaserClass; /*0x4a8036*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a8040*/
   {
@@ -288,7 +288,7 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(unsigne
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a8083*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_DiskLaserClass; /*0x4a8086*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a8090*/
   {

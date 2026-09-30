@@ -73,7 +73,7 @@ void* JumpjetLocomotionClass::Update2()
   int v32; // ecx
   int v33; // edx
   float v34; // ecx
-  int v35; // eax
+  void * v35;
   float *v36; // eax
   double v37; // st7
   float *v38; // eax
@@ -117,7 +117,7 @@ void* JumpjetLocomotionClass::Update2()
   float v76[12]; // [esp+E8h] [ebp-60h] BYREF
   char v77[48]; // [esp+118h] [ebp-30h] BYREF
 
-  v1 = (float *)this; /*0x439b09*/
+  v1 = (char *)((float *)this);
   v60 = this; /*0x439b0b*/
   v2 = *((double *)this + 2); /*0x439b17*/
   v3 = (float *)((unsigned char *)this + 24); /*0x439b1a*/
@@ -140,14 +140,14 @@ void* JumpjetLocomotionClass::Update2()
   v68 = v10; /*0x439b62*/
   if ( v2 > 0.0 ) /*0x439b71*/
   {
-    v11 = JumpjetLocomotionClass::ComputeVectorLengthMetric_0(v4); /*0x439b75*/
+    v11 = (double)(JumpjetLocomotionClass::ComputeVectorLengthMetric_0(v4));
     if ( v11 > v58 ) /*0x439b83*/
     {
       v51 = v11 / v11; /*0x439b8c*/
       Coord::Scale((float *)v4, v51); /*0x439b8f*/
     }
   }
-  v46 = Math::RoundToInt(v3[2]); /*0x439ba4*/
+  v46 = (unsigned int *)(Math::RoundToInt(v3[2]));
   v41 = Math::RoundToInt(v3[1]); /*0x439bad*/
   v12 = Math::RoundToInt(*v3); /*0x439bae*/
   Coord3D::Set(v70, v12, v41, v46); /*0x439bb8*/
@@ -156,7 +156,7 @@ void* JumpjetLocomotionClass::Update2()
   v42 = Math::RoundToInt(v3[1]); /*0x439bd9*/
   v13 = Math::RoundToInt(*v3); /*0x439bda*/
   Coord3D::Set(v69, v13, v42, v47); /*0x439be4*/
-  GroundHeight = Cell::GetGroundHeight(v69); /*0x439bfe*/
+  GroundHeight = ((Cell *)(v69))->GetGroundHeight(); /*0x439bfe*/
   v61 = unk_89C76C + GroundHeight; /*0x439c09*/
   v14 = Coord::To_Cell(&MEMORY[0x87F7E8], v69); /*0x439c17*/
   v54 = 0; /*0x439c19*/
@@ -195,7 +195,7 @@ void* JumpjetLocomotionClass::Update2()
       {
         if ( *(unsigned char *)(v16[328] + 5823) ) /*0x439ce2*/
           v52 = v16[390] < 8; /*0x439cf5*/
-        if ( (*(unsigned __int8 (**)(unsigned int *))(*v16 + 128))(v16) ) /*0x439cfe*/
+        if ( (*(uint8_t (**)(unsigned int *))(*v16 + 128))(v16) ) /*0x439cfe*/
           v52 = 0; /*0x439d08*/
       }
     }
@@ -233,7 +233,7 @@ LABEL_30:
 LABEL_32:
   v3[2] = (float)(v61 - 20); /*0x439d5d*/
 LABEL_35:
-  Byte284 = CellClass::GetByte284(v69); /*0x439d91*/
+  Byte284 = ((CellClass *)(v69))->GetByte284(); /*0x439d91*/
   qmemcpy(v75, CopyAudioData(v77, Byte284), sizeof(v75)); /*0x439dc4*/
   v19 = InvertMatrix3x3Signs(v76, v75); /*0x439dcd*/
   v20 = *((float *)v4 + 1); /*0x439dd2*/
@@ -274,7 +274,7 @@ LABEL_35:
   if ( *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], v69) + 283) - v29 >= 2 /*0x439fb1*/
     && (v68 < -0.0002 && v24[8] > (double)v65 || v68 >= -0.0003 && v68 + v65 + 1.0 < v24[8]) )
   {
-    v30 = v64; /*0x439fbb*/
+    v30 = (int)(v64);
     v31 = v65; /*0x439fbf*/
     *v3 = v63; /*0x439fc3*/
     v3[1] = v30; /*0x439fc6*/
@@ -300,7 +300,7 @@ LABEL_35:
       *((float *)v4 + 2) = v37 * *((float *)v4 + 2); /*0x43a05a*/
     }
   }
-  v1 = (float *)v60; /*0x43a05d*/
+  v1 = (void *)((float *)v60);
   v17 = 1; /*0x43a061*/
 LABEL_43:
   v38 = QuaternionMathMultiply(v73, v1 + 12, v1 + 16); /*0x43a066*/
@@ -344,8 +344,8 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
   int v17; // esi
   int v18; // eax
   int v19; // [esp+10h] [ebp-10h]
-  __int16 v20; // [esp+14h] [ebp-Ch] BYREF
-  __int16 v21; // [esp+16h] [ebp-Ah]
+  int16_t v20; // [esp+14h] [ebp-Ch] BYREF
+  int16_t v21; // [esp+16h] [ebp-Ah]
   int v22; // [esp+18h] [ebp-8h]
 
   v2 = a2; /*0x4848b4*/
@@ -354,9 +354,9 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
   v6 = *((unsigned short *)this + 19); /*0x4848cf*/
   v22 = v4; /*0x4848d3*/
   v7 = v6 - SHIWORD(v4); /*0x4848de*/
-  v8 = v5 - (__int16)v4; /*0x4848e6*/
-  v9 = v5 == (__int16)v4; /*0x4848ec*/
-  result = dword_81CD5C[v5 + 3 * v7 - (__int16)v4]; /*0x4848ee*/
+  v8 = v5 - (int16_t)v4; /*0x4848e6*/
+  v9 = v5 == (int16_t)v4; /*0x4848ec*/
+  result = dword_81CD5C[v5 + 3 * v7 - (int16_t)v4]; /*0x4848ee*/
   v19 = result; /*0x4848f5*/
   if ( !v9 && v7 ) /*0x484901*/
   {
@@ -365,7 +365,7 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
       LOWORD(a2) = v4 + v8; /*0x484916*/
       HIWORD(a2) = HIWORD(v22); /*0x48491b*/
       v11 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], v2) + 283) + 2; /*0x484944*/
-      LOBYTE(a2) = *((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2) + 283) >= v11; /*0x484959*/
+      LOBYTE(a2) = *((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&a2) + 283) >= v11; /*0x484959*/
       v20 = v4; /*0x484960*/
       v21 = HIWORD(v22) + v7; /*0x484965*/
       v12 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], v2) + 283) + 2; /*0x48498e*/
@@ -378,7 +378,7 @@ void* JumpjetLocomotionClass::AdjustClimbFacing( unsigned int * a2)
       LOWORD(a2) = v4 + v7; /*0x4849ab*/
       HIWORD(a2) = HIWORD(v22); /*0x4849b0*/
       v16 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], v2) + 283) + 2; /*0x4849d3*/
-      LOBYTE(a2) = *((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a2) + 283) >= v16; /*0x4849ee*/
+      LOBYTE(a2) = *((char *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&a2) + 283) >= v16; /*0x4849ee*/
       v20 = v4; /*0x4849f5*/
       v21 = HIWORD(v22) + v8; /*0x4849fa*/
       v17 = *((char *)Coord::To_Cell(&MEMORY[0x87F7E8], v2) + 283) + 2; /*0x484a23*/

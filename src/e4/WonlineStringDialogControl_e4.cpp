@@ -31,7 +31,7 @@ namespace gamemd {
 int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, char ** a3)
 {
 
-  _UNKNOWN **v3; // esi
+  void **v3; // esi
   int result; // eax
   unsigned int *v5; // eax
   BOOL v6; // ebp
@@ -51,7 +51,7 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
   }
   while ( 1 ) /*0x7ad6fd*/
   {
-    v5 = *v3; /*0x7ad6fd*/
+    v5 = (unsigned int *)(*v3);
     v6 = *v3 == 0; /*0x7ad706*/
     if ( !*v3 || *v5 == *a2 && v5[1] == a2[1] && v5[2] == a2[2] && v5[3] == a2[3] ) /*0x7ad730*/
       break; /*0x7ad730*/
@@ -333,7 +333,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(unsigned int * 
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x7ad373*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_tConnInfoStruct; /*0x7ad376*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x7ad380*/
   {
@@ -356,7 +356,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x7ad3c3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_tConnInfoStruct; /*0x7ad3c6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x7ad3d0*/
   {
@@ -413,21 +413,21 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   wchar_t Buffer[200]; // [esp+8h] [ebp-190h] BYREF
 
   Buffer[0] = 0; /*0x7ad49d*/
-  Current = Dialog::GetCurrent(); /*0x7ad4b7*/
+  Current = this->Dialog::GetCurrent(); /*0x7ad4b7*/
   SendDlgItemMessageA(Current, 1478, 0x402u, 100 * (int)Format / a3, 0); /*0x7ad4bd*/
   if ( a5 <= 0 ) /*0x7ad4cc*/
   {
-    StringCSF = GetStringCSF(MEMORY[0x84D730], 0, g_Str_File_wonline_cpp, 5172); /*0x7ad50a*/
+    StringCSF = (wchar_t *)(GetStringCSF(MEMORY[0x84D730], 0, g_Str_File_wonline_cpp, 5172));
     swprintf(Buffer, (const size_t)StringCSF, Format, a3); /*0x7ad515*/
   }
   else
   {
-    v6 = GetStringCSF(aTxtBytesWTime, 0, g_Str_File_wonline_cpp, 5167); /*0x7ad4e2*/
+    v6 = (wchar_t *)(GetStringCSF(aTxtBytesWTime, 0, g_Str_File_wonline_cpp, 5167));
     swprintf(Buffer, (const size_t)v6, Format, a3, a5); /*0x7ad4ed*/
   }
   if ( time(0) != dword_B77EA8 ) /*0x7ad52d*/
   {
-    v8 = Dialog::GetCurrent(); /*0x7ad538*/
+    v8 = this->Dialog::GetCurrent(); /*0x7ad538*/
     DlgItem = GetDlgItem(v8, 1480); /*0x7ad53e*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad551*/
     dword_B77EA8 = time(0); /*0x7ad561*/
@@ -451,15 +451,15 @@ int WonlineStringDialogControl_28::Draw(int a1, int a2)
   Buffer[0] = 0; /*0x7ad58d*/
   if ( a2 == 2 ) /*0x7ad597*/
   {
-    StringCSF = GetStringCSF(aTxtConnecting, 0, g_Str_File_wonline_cpp, 5191); /*0x7ad5d6*/
+    StringCSF = (wchar_t *)(GetStringCSF(aTxtConnecting, 0, g_Str_File_wonline_cpp, 5191));
     swprintf(Buffer, (const size_t)StringCSF, *(const wchar_t *const *)Buffer); /*0x7ad5d8*/
   }
   else if ( a2 == 4 ) /*0x7ad59c*/
   {
-    v5 = GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195); /*0x7ad5b4*/
+    v5 = (wchar_t *)(GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195));
     swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
   }
-  Current = Dialog::GetCurrent(); /*0x7ad5e5*/
+  Current = this->Dialog::GetCurrent(); /*0x7ad5e5*/
   DlgItem = GetDlgItem(Current, 1480); /*0x7ad5eb*/
   SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)Buffer); /*0x7ad5fe*/
   return 0; /*0x7ad606*/

@@ -15,6 +15,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x40FFFF
 namespace gamemd {

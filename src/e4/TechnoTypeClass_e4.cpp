@@ -55,7 +55,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
       result = 0; /*0x48dd0d*/
       break; /*0x48dd0d*/
   }
-  return result; /*0x48dcef*/
+  return (gamemd::AbstractClass **)(result);
 
 }
 } // namespace gamemd
@@ -180,7 +180,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
         v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036],
         v4) )
   {
-    *(unsigned int *)&HouseClass_Player.__pad_5568[23036] = &v3->__pad_0[1]; /*0x6f085c*/
+    *(unsigned int *)&HouseClass_Player.__pad_5568[23036] = &v3-((unsigned int *)(>__pad_0))[1]; /*0x6f085c*/
     *(unsigned int *)(*(unsigned int *)&HouseClass_Player.__pad_5568[23024] + 4 * (unsigned int)v3) = this; /*0x6f0868*/
     v3 = *(TeamTypeClass **)&HouseClass_Player.__pad_5568[23036]; /*0x6f086b*/
   }
@@ -205,7 +205,7 @@ LABEL_11:
   if ( *(int *)&stru_B05488.__pad_579C[19036] < *(int *)&stru_B05488.__pad_579C[19028] /*0x6f08c5*/
     || (stru_B05488.__pad_579C[19033] || !*(unsigned int *)&stru_B05488.__pad_579C[19028])
     && *(int *)&stru_B05488.__pad_579C[19040] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19020] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&stru_B05488.__pad_579C[19020] + 8))(
          &stru_B05488.__pad_579C[19020],
          *(unsigned int *)&stru_B05488.__pad_579C[19028] + *(unsigned int *)&stru_B05488.__pad_579C[19040],
          0) )
@@ -213,7 +213,7 @@ LABEL_11:
     v7 = (*(unsigned int *)&stru_B05488.__pad_579C[19036])++; /*0x6f08d2*/
     *(unsigned int *)(*(unsigned int *)&stru_B05488.__pad_579C[19024] + 4 * v7) = this; /*0x6f08e1*/
   }
-  return this; /*0x6f08e6*/
+  return (unsigned int *)(this);
 
 }
 } // namespace gamemd
@@ -737,7 +737,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   if ( MEMORY[0xB0F680] < MEMORY[0xB0F678] /*0x7117c3*/
     || (MEMORY[0xB0F67D] || !MEMORY[0xB0F678])
     && MEMORY[0xB0F684] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0F670] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xB0F670] + 8))(
          &MEMORY[0xB0F670],
          MEMORY[0xB0F684] + MEMORY[0xB0F678],
          0) )
@@ -748,7 +748,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   if ( MEMORY[0xA8EB10] < MEMORY[0xA8EB08] /*0x711816*/
     || (MEMORY[0xA8EB0D] || !MEMORY[0xA8EB08])
     && MEMORY[0xA8EB14] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8EB00] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xA8EB00] + 8))(
          &MEMORY[0xA8EB00],
          MEMORY[0xA8EB14] + MEMORY[0xA8EB08],
          0) )

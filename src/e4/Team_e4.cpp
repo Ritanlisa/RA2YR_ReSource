@@ -385,12 +385,12 @@ void ** E4Recv_637640::sub_637640()
   int v1; // eax
   int v2; // eax
   int v3; // eax
-  _UNKNOWN **result; // eax
-  _UNKNOWN **v5; // [esp+Ch] [ebp-4h] BYREF
-  _UNKNOWN *retaddr; // [esp+10h] [ebp+0h] BYREF
+  void **result; // eax
+  void **v5; // [esp+Ch] [ebp-4h] BYREF
+  void *retaddr; // [esp+10h] [ebp+0h] BYREF
 
-  v5 = this; /*0x637647*/
-  v1 = (*(int (**)(int *, _UNKNOWN ***))(MEMORY[0xAC4C98] + 16))(&MEMORY[0xAC4C98], &v5); /*0x637655*/
+  v5 = (void **)(this);
+  v1 = (*(int (**)(int *, void ***))(MEMORY[0xAC4C98] + 16))(&MEMORY[0xAC4C98], &v5); /*0x637655*/
   if ( v1 != -1 && v1 < MEMORY[0xAC4CA8] && v1 < --MEMORY[0xAC4CA8] ) /*0x637670*/
   {
     do /*0x637688*/
@@ -400,7 +400,7 @@ void ** E4Recv_637640::sub_637640()
     }
     while ( v1 < MEMORY[0xAC4CA8] ); /*0x637688*/
   }
-  v2 = (*(int (**)(int *, _UNKNOWN **))(MEMORY[0xAC4B30] + 16))(&MEMORY[0xAC4B30], &retaddr); /*0x63769a*/
+  v2 = (*(int (**)(int *, void **))(MEMORY[0xAC4B30] + 16))(&MEMORY[0xAC4B30], &retaddr); /*0x63769a*/
   if ( v2 != -1 && v2 < MEMORY[0xAC4B40] && v2 < --MEMORY[0xAC4B40] ) /*0x6376b5*/
   {
     do /*0x6376cd*/
@@ -422,11 +422,11 @@ void ** E4Recv_637640::sub_637640()
     while ( v3 < MEMORY[0xAC4C28] ); /*0x637712*/
   }
   result = v5; /*0x637714*/
-  if ( (_UNKNOWN **)MEMORY[0xAC4CCC] == v5 ) /*0x637722*/
+  if ( (void **)MEMORY[0xAC4CCC] == v5 ) /*0x637722*/
     MEMORY[0xAC4CCC] = 0; /*0x637724*/
-  if ( (_UNKNOWN **)MEMORY[0xAC4C38] == v5 ) /*0x637730*/
+  if ( (void **)MEMORY[0xAC4C38] == v5 ) /*0x637730*/
     MEMORY[0xAC4C38] = 0; /*0x637732*/
-  if ( (_UNKNOWN **)MEMORY[0xAC4BF0] == v5 ) /*0x63773e*/
+  if ( (void **)MEMORY[0xAC4BF0] == v5 ) /*0x63773e*/
     MEMORY[0xAC4BF0] = 0; /*0x637740*/
   return result; /*0x637747*/
 

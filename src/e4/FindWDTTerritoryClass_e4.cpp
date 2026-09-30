@@ -19,7 +19,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   char *v6; // [esp+8h] [ebp-8h]
   int v7; // [esp+Ch] [ebp-4h]
 
-  v6 = (unsigned char *)this + 24; /*0x765387*/
+  v6 = (void **)((unsigned char *)this + 24);
   v7 = 0; /*0x76538f*/
   v5 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x765397*/
   if ( Campaign_WorldDominationTour_24::AddRef(&v5) ) /*0x76539f*/
@@ -30,9 +30,9 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
         break; /*0x7653c6*/
       ((void (*)(void ***))v5[2])(&v5); /*0x7653d0*/
     }
-    while ( ((unsigned __int8 (*)(void ***))v5[1])(&v5) ); /*0x7653db*/
+    while ( ((uint8_t (*)(void ***))v5[1])(&v5) ); /*0x7653db*/
   }
-  v4 = v7; /*0x7653ea*/
+  v4 = (unsigned int)(v7);
   a2[1] = v6; /*0x7653ef*/
   a2[2] = v4; /*0x7653f2*/
   *a2 = &vt_VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict; /*0x7653f5*/

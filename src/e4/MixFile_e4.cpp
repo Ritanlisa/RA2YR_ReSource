@@ -103,13 +103,13 @@ MixFileClass * * MixFile::LoadAll()
   int v73[9]; // [esp+A8h] [ebp-128h] BYREF
   char Buffer[260]; // [esp+CCh] [ebp-104h] BYREF
 
-  v0 = CCFileClass::Construct(v69, aConqmdMix); /*0x530473*/
+  v0 = (unsigned int)(((CCFileClass *)(v69))->Construct(aConqmdMix));
   v1 = (*(int (**)(unsigned int *, unsigned int))(*v0 + 20))(v0, 0); /*0x53048b*/
   v69[0] = &CCFileClass::`vftable'; /*0x53048d*/
   v71 = 0; /*0x530491*/
   Vector::Clear((int)v70); /*0x530495*/
   v69[0] = &off_7E1668; /*0x5304a3*/
-  BufferIOFileClass::Dtor(v69); /*0x5304a7*/
+  ((BufferIOFileClass *)(v69))->Dtor(); /*0x5304a7*/
   if ( v1 ) /*0x5304ae*/
   {
     v2 = (unsigned int *)__2_YAPAXI_Z(40); /*0x5304b2*/
@@ -118,7 +118,7 @@ MixFileClass * * MixFile::LoadAll()
     else
       MEMORY[0x87F7E8][5524] = 0; /*0x5304d6*/
   }
-  Debug::Log_0(); /*0x5304e1*/
+  this->Debug::Log_0(); /*0x5304e1*/
   if ( !MEMORY[0x87F7E8][5524] ) /*0x5304f0*/
     return 0; /*0x5304fe*/
   if ( MEMORY[0x87F7E8][5516] ) /*0x530507*/
@@ -153,13 +153,13 @@ MixFileClass * * MixFile::LoadAll()
     MEMORY[0x87F7E8][5519] = MixFileClass::FromFile(v9, aIsogenMix, (int)&MEMORY[0x87F7E8][7270]); /*0x5305ea*/
   else
     MEMORY[0x87F7E8][5519] = 0; /*0x5305f1*/
-  v10 = CCFileClass::Construct(v69, aConquerMix); /*0x530600*/
+  v10 = ((CCFileClass *)(v69))->Construct(aConquerMix); /*0x530600*/
   v11 = (*(int (**)(unsigned int *, unsigned int))(*v10 + 20))(v10, 0); /*0x530611*/
   v69[0] = &CCFileClass::`vftable'; /*0x530613*/
   v71 = 0; /*0x530617*/
   Vector::Clear((int)v70); /*0x53061b*/
   v69[0] = &off_7E1668; /*0x530624*/
-  BufferIOFileClass::Dtor(v69); /*0x530628*/
+  ((BufferIOFileClass *)(v69))->Dtor(); /*0x530628*/
   if ( v11 ) /*0x53062f*/
   {
     v12 = (unsigned int *)__2_YAPAXI_Z(40); /*0x530633*/
@@ -168,7 +168,7 @@ MixFileClass * * MixFile::LoadAll()
     else
       MEMORY[0x87F7E8][5525] = 0; /*0x530657*/
   }
-  Debug::Log_0(); /*0x530662*/
+  this->Debug::Log_0(); /*0x530662*/
   if ( !MEMORY[0x87F7E8][5525] ) /*0x530671*/
     return 0; /*0x53067f*/
   v13 = CCFileClass::Construct(v69, aCameomdMix); /*0x530689*/
@@ -177,7 +177,7 @@ MixFileClass * * MixFile::LoadAll()
   v71 = 0; /*0x5306a0*/
   Vector::Clear((int)v70); /*0x5306a4*/
   v69[0] = &off_7E1668; /*0x5306ad*/
-  BufferIOFileClass::Dtor(v69); /*0x5306b1*/
+  ((BufferIOFileClass *)(v69))->Dtor(); /*0x5306b1*/
   if ( v14 ) /*0x5306b8*/
   {
     v15 = (unsigned int *)__2_YAPAXI_Z(40); /*0x5306bc*/
@@ -186,7 +186,7 @@ MixFileClass * * MixFile::LoadAll()
     else
       MEMORY[0x87F7E8][5526] = 0; /*0x5306e0*/
   }
-  Debug::Log_0(); /*0x5306eb*/
+  this->Debug::Log_0(); /*0x5306eb*/
   if ( !MEMORY[0x87F7E8][5526] ) /*0x5306fa*/
     return 0; /*0x530708*/
   v16 = CCFileClass::Construct(v69, aCameoMix); /*0x530712*/
@@ -232,7 +232,7 @@ MixFileClass * * MixFile::LoadAll()
             if ( MEMORY[0x87F7E8][5492] < MEMORY[0x87F7E8][5490] /*0x5308b2*/
               || (BYTE1(MEMORY[0x87F7E8][5491]) || !MEMORY[0x87F7E8][5490])
               && MEMORY[0x87F7E8][5493] > 0
-              && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5488] + 8))(
+              && (*(uint8_t (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5488] + 8))(
                    &MEMORY[0x87F7E8][5488],
                    MEMORY[0x87F7E8][5493] + MEMORY[0x87F7E8][5490],
                    0) )
@@ -268,7 +268,7 @@ LABEL_60:
             if ( MEMORY[0x87F7E8][5492] < MEMORY[0x87F7E8][5490] /*0x5309f1*/
               || (BYTE1(MEMORY[0x87F7E8][5491]) || !MEMORY[0x87F7E8][5490])
               && MEMORY[0x87F7E8][5493] > 0
-              && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5488] + 8))(
+              && (*(uint8_t (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5488] + 8))(
                    &MEMORY[0x87F7E8][5488],
                    MEMORY[0x87F7E8][5493] + MEMORY[0x87F7E8][5490],
                    0) )
@@ -434,7 +434,7 @@ LABEL_100:
             if ( MEMORY[0x87F7E8][5506] < MEMORY[0x87F7E8][5504] /*0x53100c*/
               || (BYTE1(MEMORY[0x87F7E8][5505]) || !MEMORY[0x87F7E8][5504])
               && MEMORY[0x87F7E8][5507] > 0
-              && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5502] + 8))(
+              && (*(uint8_t (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5502] + 8))(
                    &MEMORY[0x87F7E8][5502],
                    MEMORY[0x87F7E8][5504] + MEMORY[0x87F7E8][5507],
                    0) )
@@ -467,7 +467,7 @@ LABEL_100:
             if ( MEMORY[0x87F7E8][5506] < MEMORY[0x87F7E8][5504] /*0x531137*/
               || (BYTE1(MEMORY[0x87F7E8][5505]) || !MEMORY[0x87F7E8][5504])
               && MEMORY[0x87F7E8][5507] > 0
-              && (*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5502] + 8))(
+              && (*(uint8_t (**)(unsigned int *, int, unsigned int))(MEMORY[0x87F7E8][5502] + 8))(
                    &MEMORY[0x87F7E8][5502],
                    MEMORY[0x87F7E8][5504] + MEMORY[0x87F7E8][5507],
                    0) )

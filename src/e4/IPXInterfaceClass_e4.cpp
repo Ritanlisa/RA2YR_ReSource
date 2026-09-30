@@ -111,6 +111,8 @@ int IPXInterfaceClass::initSocket( IUnknown * aP1, Color * aP2)
 namespace gamemd {
 AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen)
 {
+    unsigned int v2 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
 
   CCINIClass *v7; // esi
   int v8; // eax
@@ -133,14 +135,14 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   u_short v25; // [esp-4h] [ebp-30h]
   int v26; // [esp+10h] [ebp-1Ch]
   int v27; // [esp+14h] [ebp-18h] BYREF
-  __int16 v28; // [esp+18h] [ebp-14h]
+  int16_t v28; // [esp+18h] [ebp-14h]
   struct sockaddr to; // [esp+1Ch] [ebp-10h] BYREF
 
   if ( a3 != 1139 ) /*0x7b13e2*/
     return 1; /*0x7b13f0*/
-  if ( (unsigned __int16)fromlen != 1 ) /*0x7b13ff*/
+  if ( (uint16_t)fromlen != 1 ) /*0x7b13ff*/
   {
-    if ( (unsigned __int16)fromlen == 2 ) /*0x7b1406*/
+    if ( (uint16_t)fromlen == 2 ) /*0x7b1406*/
     {
       if ( HIWORD(fromlen) ) /*0x7b140c*/
       {
@@ -228,7 +230,7 @@ LABEL_6:
   v28 = *(unsigned short *)&to.sa_data[8]; /*0x7b15e6*/
   if ( *(unsigned int *)to.sa_data == *((unsigned int *)this + 64703) ) /*0x7b15ef*/
   {
-    v13 = 3; /*0x7b15f1*/
+    v13 = (gamemd::u_short *)(3);
     v14 = (unsigned int *)this + 129411; /*0x7b15f6*/
     v15 = &v27; /*0x7b15fc*/
     v16 = 1; /*0x7b1600*/
@@ -252,7 +254,7 @@ LABEL_6:
   v18->sectionHead[0] = v26 - 4; /*0x7b1646*/
   v18->sectionCount = *((unsigned int *)this + 64541); /*0x7b1651*/
   qmemcpy(v18->__pad_20, (unsigned int *)this + 129084, v26 - 4); /*0x7b1657*/
-  if ( (*(unsigned __int8 (**)(u_short *, CCINIClass *))(*(unsigned int *)this + 88))(this, v18) ) /*0x7b1665*/
+  if ( (*(uint8_t (**)(u_short *, CCINIClass *))(*(unsigned int *)this + 88))(this, v18) ) /*0x7b1665*/
   {
     NetworkID::Assign(v18, (IPXManagerClass *)&a3, (int)&v27, 0); /*0x7b16d0*/
     v19 = *((unsigned int *)this + 4); /*0x7b16d5*/
@@ -261,7 +263,7 @@ LABEL_6:
     if ( v20 < v19 /*0x7b16fe*/
       || (*((unsigned char *)v21 + 13) || !v19)
       && (v22 = *((unsigned int *)v21 + 5), v22 > 0)
-      && (*(unsigned __int8 (**)(u_short *, int, unsigned int))(*(unsigned int *)v21 + 8))(v21, v19 + v22, 0) )
+      && (*(uint8_t (**)(u_short *, int, unsigned int))(*(unsigned int *)v21 + 8))(v21, v19 + v22, 0) )
     {
       v23 = *((unsigned int *)v21 + 4); /*0x7b1705*/
       v24 = (ObjectClass *)*((unsigned int *)v21 + 1); /*0x7b1708*/
@@ -373,7 +375,7 @@ int IPXInterfaceClass::AddRef()
   result = *((unsigned int *)this + 64540); /*0x7b1b9e*/
   if ( result != -1 ) /*0x7b1ba7*/
   {
-    result = closesocket(*((unsigned int *)this + 64540)); /*0x7b1baa*/
+    result = (int)(closesocket(*((unsigned int *)this + 64540)));
     *((unsigned int *)this + 64540) = -1; /*0x7b1baf*/
   }
   return result; /*0x7b1bb9*/
@@ -384,6 +386,7 @@ int IPXInterfaceClass::AddRef()
 namespace gamemd {
 AbstractClass * * IPXInterfaceClass::Receive()
 {
+    unsigned int v5 = 0;  /* G37 hoist */
 
   u_int v2; // eax
   int v4; // eax
@@ -516,7 +519,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
     if ( *((unsigned int *)this + 18) < v6 /*0x7b254d*/
       || (*((unsigned char *)this + 69) || !v6)
       && (v7 = *((unsigned int *)this + 19), v7 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v6 + v7, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 14) + 8))((char *)this + 56, v6 + v7, 0) )
     {
       v8 = *((unsigned int *)this + 18); /*0x7b2554*/
       v9 = *((unsigned int *)this + 15); /*0x7b2557*/
@@ -531,7 +534,7 @@ AnimClass * * IPXInterfaceClass::Connect(const void * a1, unsigned int a3, UDPIn
     if ( *((unsigned int *)this + 12) < v11 /*0x7b2593*/
       || (*((unsigned char *)this + 45) || !v11)
       && (v12 = *((unsigned int *)this + 13), v12 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 8) + 8))((char *)this + 32, v11 + v12, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 8) + 8))((char *)this + 32, v11 + v12, 0) )
     {
       v13 = *((unsigned int *)this + 12); /*0x7b259a*/
       v14 = *((unsigned int *)this + 9); /*0x7b259d*/

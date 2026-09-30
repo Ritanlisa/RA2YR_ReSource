@@ -82,7 +82,7 @@ AbstractClass * * HashTable_flat::Grow2()
     memset(v5, 0, v6); /*0x625004*/
     if ( v2 > 0 ) /*0x62500f*/
     {
-      v7 = v3; /*0x625011*/
+      v7 = (int *)(v3);
       v8 = v2; /*0x625013*/
       do /*0x62504d*/
       {
@@ -208,7 +208,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         __3_YAXPAX_Z(v14); /*0x6251df*/
       }
     }
-    return 1; /*0x6251ea*/
+    return (gamemd::AbstractClass **)(1);
   }
   else
   {
@@ -271,7 +271,7 @@ LABEL_23:
         __3_YAXPAX_Z(v25); /*0x6252d9*/
       }
     }
-    return v34; /*0x6252e1*/
+    return (gamemd::AbstractClass **)(v34);
   }
 
 }
@@ -863,7 +863,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         __3_YAXPAX_Z(v14); /*0x6badab*/
       }
     }
-    return 1; /*0x6badb6*/
+    return (gamemd::AbstractClass **)(1);
   }
   else
   {
@@ -911,7 +911,7 @@ LABEL_24:
             {
               do /*0x6baec9*/
               {
-                v33 = ((int (*)(ObjectClass *))*((unsigned int *)this + 6))(v32) & ((1 << *((unsigned int *)this + 3)) - 1); /*0x6baeac*/
+                v33 = (unsigned int)(((int (*)(ObjectClass *))*((unsigned int *)this + 6))(v32) & ((1 << *((unsigned int *)this + 3)) - 1));
                 v34 = *(unsigned int *)(*(unsigned int *)this + 16 * v33); /*0x6baeb1*/
                 *(unsigned int *)(*(unsigned int *)this + 16 * v33) = v32; /*0x6baeb7*/
                 v35 = (ObjectClass *)v32[4].customSound_controller[2]; /*0x6baeb9*/
@@ -929,7 +929,7 @@ LABEL_24:
         __3_YAXPAX_Z(v27); /*0x6baed6*/
       }
     }
-    return aP1a; /*0x6baede*/
+    return (gamemd::AbstractClass **)(aP1a);
   }
 
 }
@@ -1022,7 +1022,7 @@ ObjectClass * * HashTable_flat::Remove(int a2)
   void *Block; // [esp+8h] [ebp-Ch] BYREF
   int v23; // [esp+Ch] [ebp-8h] BYREF
 
-  v3 = (char *)this + 147; /*0x72473d*/
+  v3 = (unsigned int *)((char *)this + 147);
   if ( !*((char *)this + 148) ) /*0x724745*/
     return; /*0x724745*/
   v4 = (unsigned int *)*((char *)this + 151); /*0x72474b*/

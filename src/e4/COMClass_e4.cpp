@@ -65,7 +65,7 @@ namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption; /*0x7669f9*/
+  *Block = (unsigned int)(&vt_VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption);
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     __3_YAXPAX_Z(Block); /*0x766a02*/
   return (VectorCursor *)Block; /*0x766a0c*/

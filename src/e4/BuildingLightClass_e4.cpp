@@ -79,7 +79,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
       {
         HIWORD(v18) = v6 + HIWORD(v25); /*0x436c6c*/
         v23 = v18; /*0x436c7b*/
-        v7 = (TechnoClass *)*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23) + 57); /*0x436c84*/
+        v7 = (TechnoClass *)*((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v23) + 57); /*0x436c84*/
         if ( v7 ) /*0x436c8c*/
         {
           while ( 1 ) /*0x436c98*/

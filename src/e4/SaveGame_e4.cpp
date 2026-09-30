@@ -99,7 +99,7 @@ int SaveGame::SaveTriggerEvents()
   int v4; // edi
   int v5; // [esp+20h] [ebp-4h] BYREF
 
-  v2 = *this; /*0x6607e0*/
+  v2 = (int)(*this);
   v5 = g_TriggerEventState; /*0x6607e6*/
   if ( (*(int (**)(int *, int *, int, unsigned int))(v2 + 16))(this, &v5, 4, 0) < 0 ) /*0x6607ef*/
     return 0; /*0x6607f6*/
@@ -113,11 +113,11 @@ int SaveGame::SaveTriggerEvents()
               0) >= 0 )
     {
       if ( ++v4 >= v5 ) /*0x660820*/
-        return (*(int (**)(int *, __int16 *, int, unsigned int))(*(unsigned int *)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x660820*/
+        return (*(int (**)(int *, int16_t *, int, unsigned int))(*(unsigned int *)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x660820*/
     }
     return 0; /*0x660817*/
   }
-  return (*(int (**)(int *, __int16 *, int, unsigned int))(*(unsigned int *)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x6607f1*/
+  return (*(int (**)(int *, int16_t *, int, unsigned int))(*(unsigned int *)this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x6607f1*/
 
 }
 }

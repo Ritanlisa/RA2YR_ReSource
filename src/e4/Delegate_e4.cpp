@@ -132,19 +132,19 @@ void Delegate::Set(AbstractTypeClass * aP1)
   {
     if ( aP1 ) /*0x6c989f*/
     {
-      v3 = *(Straw **)&aP1->__pad_0[8]; /*0x6c98a1*/
+      v3 = *(Straw **)&aP1-((unsigned int *)(>__pad_0))[8]; /*0x6c98a1*/
       if ( v3 ) /*0x6c98a6*/
       {
         (*(void (**)(Straw *, unsigned int))(*(unsigned int *)v3->__pad_0 + 4))(v3, 0); /*0x6c98ac*/
-        *(unsigned int *)&aP1->__pad_0[8] = 0; /*0x6c98af*/
+        *(unsigned int *)&aP1-((unsigned int *)(>__pad_0))[8] = 0; /*0x6c98af*/
       }
     }
-    v4 = (AbstractTypeClass *)*((unsigned int *)this + 1); /*0x6c98b6*/
+    v4 = (unsigned int)((AbstractTypeClass *)*((unsigned int *)this + 1));
     if ( v4 ) /*0x6c98bb*/
-      *(unsigned int *)&v4->__pad_0[8] = 0; /*0x6c98bd*/
+      *(unsigned int *)&v4-((unsigned int *)(>__pad_0))[8] = 0; /*0x6c98bd*/
     *((unsigned int *)this + 1) = aP1; /*0x6c98c6*/
     if ( aP1 ) /*0x6c98c9*/
-      *(unsigned int *)&aP1->__pad_0[8] = this; /*0x6c98cb*/
+      *(unsigned int *)&aP1-((unsigned int *)(>__pad_0))[8] = this; /*0x6c98cb*/
   }
 
 }
@@ -188,7 +188,7 @@ int Delegate::ProcessBitmapAndDispatch()
       pad_14 = (Pipe *)this->__pad_14; /*0x42df54*/
       v5 = (Pipe *)EncodeBitmapRGB((Pipe *)&this->field_18, (int)v3, this->__pad_14, 4); /*0x42df5d*/
     }
-    v2 = Delegate::Dispatch(this, pad_14, v5); /*0x42df7b*/
+    v2 = (gamemd::Pipe *)(Delegate::Dispatch(this, pad_14, v5));
     this->field_10 = 0; /*0x42df7d*/
   }
   return (int)&v2->__pad_0[GameClass::GetRelatedObject(this)]; /*0x42df8d*/
@@ -267,7 +267,7 @@ GenericNode * Delegate::Constructor_GenericNode(GenericNode ** Block, char a2)
       v4 = *(Block + 2); /*0x52ae36*/
       if ( v4 ) /*0x52ae3b*/
       {
-        v4->Previous = v3; /*0x52ae3d*/
+        v4->Previous = (unsigned int)(v3);
         *(unsigned int *)(*(Block + 1))[1].__pad_0 = *(Block + 2); /*0x52ae46*/
         *(Block + 2) = 0; /*0x52ae49*/
         *(Block + 1) = 0; /*0x52ae4c*/

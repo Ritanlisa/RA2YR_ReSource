@@ -64,7 +64,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
 
   for ( i = (unsigned int *)*((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 57); i; i = (unsigned int *)i[12] ) /*0x7187bf*/
   {
-    if ( (*(unsigned __int8 (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
+    if ( (*(uint8_t (**)(unsigned int *))(*i + 352))(i) ) /*0x7187c5*/
     {
       v23 = *(unsigned int *)((*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)) + 160); /*0x7187e7*/
       (*(void (**)(unsigned int, int *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))(**((unsigned int *)this + 3) + 364))( /*0x718804*/
@@ -92,29 +92,29 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     if ( *(unsigned char *)((*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)) + 1040) ) /*0x718887*/
     {
       v7 = (*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)); /*0x718896*/
-      v6 = (unsigned __int8)HouseClass::GainedPoweredCenter(v7) != 0; /*0x7188af*/
+      v6 = (uint8_t)((HouseClass *)(v7))->GainedPoweredCenter() != 0; /*0x7188af*/
     }
   }
   LOWORD(v23) = a2 / 256; /*0x7188c1*/
   HIWORD(v23) = a3 / 256; /*0x7188da*/
-  if ( *((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23) + 59) != 2 /*0x718962*/
+  if ( *((unsigned int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v23) + 59) != 2 /*0x718962*/
     || v6
     || *(unsigned char *)((*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)) + 3278)
     || (*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 44))(*((unsigned int *)this + 3)) == 15
     || (*((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 80) & 0x100) != 0
     || *((unsigned int *)Coord::To_Cell(&MEMORY[0x87F7E8], &a2) + 59) == 1 )
   {
-    v13 = *((unsigned int *)this + 3); /*0x718a01*/
+    v13 = (int *)(*((unsigned int *)this + 3));
     LOWORD(v23) = a2 / 256; /*0x718a14*/
     HIWORD(v23) = a3 / 256; /*0x718a2f*/
     v14 = *v13; /*0x718a3c*/
-    v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23); /*0x718a46*/
+    v15 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v23); /*0x718a46*/
     if ( (*(int (**)(unsigned int, void *, int, int, unsigned int, int))(v14 + 428))(*((unsigned int *)this + 3), v15, -1, -1, 0, 1) == 7 /*0x718a60*/
       || (LOBYTE(v12) = v22) != 0 )
     {
       LOWORD(v23) = a2 / 256; /*0x718a80*/
       HIWORD(v23) = a3 / 256; /*0x718a95*/
-      v16 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&v23); /*0x718aa2*/
+      v16 = (int *)CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&v23); /*0x718aa2*/
       if ( !Cell::IsGroundTypeRange(v16) || (*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 44))(*((unsigned int *)this + 3)) == 15 ) /*0x718abd*/
       {
         v19 = (*(int (**)(unsigned int))(**((unsigned int *)this + 3) + 132))(*((unsigned int *)this + 3)); /*0x718b23*/

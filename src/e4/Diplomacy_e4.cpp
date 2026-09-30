@@ -52,7 +52,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   int v31; // [esp+14h] [ebp-10h]
   int v32; // [esp+18h] [ebp-Ch]
   int v33; // [esp+1Ch] [ebp-8h]
-  unsigned __int8 IsAlliedWith; // [esp+20h] [ebp-4h]
+  uint8_t IsAlliedWith; // [esp+20h] [ebp-4h]
   #375 *hDlga; // [esp+28h] [ebp+4h]
   HWND hDlgb; // [esp+28h] [ebp+4h]
   HWND hDlgc; // [esp+28h] [ebp+4h]
@@ -60,7 +60,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   char v39; // [esp+30h] [ebp+Ch]
   char v40; // [esp+34h] [ebp+10h]
 
-  result = BaseDialogProc(hDlg, a2, a3, (unsigned int)a4); /*0x657dbd*/
+  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
   if ( result ) /*0x657dc4*/
     return result; /*0x657dc4*/
   if ( a2 != 273 ) /*0x657dd1*/
@@ -114,10 +114,10 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
             HouseClass::IsAlliedWith(hDlga, HouseClass_Player); /*0x657f3c*/
             globalHelper_003DD0(v9); /*0x657f45*/
             v40 = 1; /*0x657f4f*/
-            if ( MEMORY[0xA8B538] || !(unsigned __int8)House::IsCurrentPlayer(hDlga) ) /*0x657f5c*/
+            if ( MEMORY[0xA8B538] || !(uint8_t)House::IsCurrentPlayer(hDlga) ) /*0x657f5c*/
               EnableWindow(v9, 0); /*0x657f68*/
           }
-          if ( (unsigned __int8)House::IsCurrentPlayer(hDlga) ) /*0x657f79*/
+          if ( (uint8_t)House::IsCurrentPlayer(hDlga) ) /*0x657f79*/
           {
             if ( MEMORY[0xA8B538] ) /*0x657f97*/
             {
@@ -126,7 +126,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
             }
             else
             {
-              SendMessageA(hWnd, 0xF1u, *((unsigned __int8 *)&MEMORY[0xA8D108] + v31), 0); /*0x657fb0*/
+              SendMessageA(hWnd, 0xF1u, *((uint8_t *)&MEMORY[0xA8D108] + v31), 0); /*0x657fb0*/
             }
             v39 = 1; /*0x657fb6*/
           }
@@ -175,7 +175,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           ShowWindow(v17, 5); /*0x6580d4*/
           if ( MEMORY[0xA8B238][0] == 3 ) /*0x6580de*/
           {
-            SendMessageA(v17, 0xF1u, (unsigned __int8)MEMORY[0xA8D110], 0); /*0x6580ef*/
+            SendMessageA(v17, 0xF1u, (uint8_t)MEMORY[0xA8D110], 0); /*0x6580ef*/
           }
           else if ( MEMORY[0xA8B238][0] == 4 ) /*0x6580f4*/
           {

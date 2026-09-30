@@ -38,9 +38,9 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * a2, int a3)
   {
     v3 = 0; /*0x44f739*/
   }
-  if ( (__int16)v6 - MEMORY[0x87F90C] > MEMORY[0x87F914] / 2 ) /*0x44f751*/
+  if ( (int16_t)v6 - MEMORY[0x87F90C] > MEMORY[0x87F914] / 2 ) /*0x44f751*/
     v3 = -v3; /*0x44f753*/
-  if ( (__int16)v7 - MEMORY[0x87F910] > MEMORY[0x87F918] / 2 ) /*0x44f76b*/
+  if ( (int16_t)v7 - MEMORY[0x87F910] > MEMORY[0x87F918] / 2 ) /*0x44f76b*/
     v4 = -v4; /*0x44f76d*/
   LOWORD(v10) = v6 + v3; /*0x44f77f*/
   HIWORD(v10) = v7 + v4; /*0x44f784*/

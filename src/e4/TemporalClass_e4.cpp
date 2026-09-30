@@ -36,7 +36,7 @@ void TemporalClass::Constructor()
   wchar_t *v2; // eax
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
+  ((AbstractClass *)((AbstractClass *)this))->Constructor(); /*0x71a453*/
   v2 = MEMORY[0xA8ED84]; /*0x71a458*/
   *((unsigned int *)this + 13) = 0; /*0x71a45d*/
   *((unsigned int *)this + 11) = v2; /*0x71a464*/
@@ -47,7 +47,7 @@ void TemporalClass::Constructor()
   if ( MEMORY[0xB0EC70] < MEMORY[0xB0EC68] /*0x71a4b7*/
     || (MEMORY[0xB0EC6D] || !MEMORY[0xB0EC68])
     && MEMORY[0xB0EC74] > 0
-    && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xB0EC60] + 8))(
+    && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xB0EC60] + 8))(
          &MEMORY[0xB0EC60],
          MEMORY[0xB0EC68] + MEMORY[0xB0EC74],
          0) )

@@ -126,7 +126,7 @@ namespace gamemd {
 int BombClass::InitPool()
 {
 
-  unk_89C66C = 0; /*0x438557*/
+  unk_89C66C = (unsigned char *)(0);
   dword_89C670 = 0; /*0x43855c*/
   unk_89C674 = 1; /*0x438561*/
   unk_89C675 = 0; /*0x438568*/

@@ -48,7 +48,7 @@ int ConnectionClass::allocPacketSlot( const void * a2, signed int a3, const void
   if ( v8 == -1 ) /*0x48b793*/
   {
 LABEL_9:
-    Debug::Log(); /*0x48b795*/
+    this->Debug::Log(); /*0x48b795*/
     return 0; /*0x48b7a7*/
   }
   v12 = 24 * v8; /*0x48b7ae*/
@@ -95,7 +95,7 @@ int ConnectionClass::initQueue( unsigned int a2)
   {
     v3 = a2 - *((char *)this + 7) + *((char *)this + 5); /*0x48ba2c*/
     *((char *)this + 5) = v3; /*0x48ba2e*/
-    v4 = ((unsigned __int8)v3 > 0x7Fu) + (v3 >> 8); /*0x48ba46*/
+    v4 = ((uint8_t)v3 > 0x7Fu) + (v3 >> 8); /*0x48ba46*/
   }
   else
   {
@@ -197,7 +197,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
   int v22; // eax
   int v23; // eax
   int v24; // eax
-  __int16 v25; // [esp+10h] [ebp-10h] BYREF
+  int16_t v25; // [esp+10h] [ebp-10h] BYREF
   char v26; // [esp+12h] [ebp-Eh]
   unsigned char v27[13]; // [esp+13h] [ebp-Dh]
 
@@ -225,7 +225,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
         }
         else
         {
-          Debug::Log(); /*0x48c12d*/
+          this->Debug::Log(); /*0x48c12d*/
           ++*((unsigned int *)this + 5); /*0x48c139*/
           return 0; /*0x48c13f*/
         }
@@ -233,7 +233,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
       else
       {
         ++*((unsigned int *)this + 5); /*0x48c0f4*/
-        Debug::Log(); /*0x48c0f7*/
+        this->Debug::Log(); /*0x48c0f7*/
         return 0; /*0x48c0ff*/
       }
     }
@@ -251,10 +251,10 @@ LABEL_40:
           v27[0] = *(unsigned char *)(a2 + 3); /*0x48c2aa*/
         else
           v27[0] = 0; /*0x48c2b0*/
-        Debug::Log(); /*0x48c2c6*/
+        this->Debug::Log(); /*0x48c2c6*/
         v24 = MEMORY[0xA8EA0C]; /*0x48c2cb*/
         LOBYTE(v24) = this == (unsigned int *)MEMORY[0xA8EA0C]; /*0x48c2d7*/
-        (*(void (**)(unsigned int *, __int16 *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this + 144))( /*0x48c2ea*/
+        (*(void (**)(unsigned int *, int16_t *, int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)this + 144))( /*0x48c2ea*/
           this,
           &v25,
           14,
@@ -315,10 +315,10 @@ LABEL_40:
         goto LABEL_40; /*0x48c257*/
       }
     }
-    Debug::Log(); /*0x48c301*/
+    this->Debug::Log(); /*0x48c301*/
     return 0; /*0x48c309*/
   }
-  Debug::Log(); /*0x48c079*/
+  this->Debug::Log(); /*0x48c079*/
   v6 = (unsigned int *)*((unsigned int *)this + 1); /*0x48c07e*/
   v7 = 0; /*0x48c084*/
   if ( (int)v6[10] > 0 ) /*0x48c08b*/
@@ -506,7 +506,7 @@ int ConnectionClass::serviceSendQueue()
   while ( v7 < v22 ); /*0x48c552*/
   if ( !v21 ) /*0x48c55e*/
     return 1; /*0x48c57a*/
-  Debug::Log(); /*0x48c565*/
+  this->Debug::Log(); /*0x48c565*/
   return 0; /*0x48c56f*/
 
 }

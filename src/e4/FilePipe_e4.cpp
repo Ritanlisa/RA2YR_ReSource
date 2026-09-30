@@ -35,7 +35,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
     {
       if ( a2 - 1 >= 0 ) /*0x478396*/
       {
-        v9 = a3 + 2; /*0x478398*/
+        v9 = (unsigned char *)(a3 + 2);
         v10 = a2; /*0x47839b*/
         do /*0x4783a8*/
         {
@@ -55,7 +55,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x478375*/
         {
-          v7 = v6 + 2; /*0x478377*/
+          v7 = (unsigned char *)(v6 + 2);
           v8 = a2; /*0x47837a*/
           do /*0x478387*/
           {
@@ -176,7 +176,7 @@ TypeList_flat * FilePipe_30::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x477a73*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_TechnoTypeClass; /*0x477a76*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x477a80*/
   {
@@ -360,7 +360,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4786d3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_RGBClass; /*0x4786d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4786e0*/
   {
@@ -592,7 +592,7 @@ DynamicVector * FilePipe_30::Destructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4ba163*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_TechnoTypeClass; /*0x4ba166*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ba170*/
   {
@@ -615,7 +615,7 @@ DynamicVector * FilePipe_30::Destructor_0(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4ba203*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &off_7E8500; /*0x4ba206*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ba210*/
   {
@@ -638,7 +638,7 @@ DynamicVector * FilePipe_30::Destructor_1(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4ba2a3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_CrossDissolveEffect; /*0x4ba2a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4ba2b0*/
   {

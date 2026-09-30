@@ -28,12 +28,13 @@
 namespace gamemd {
 void NetworkClass::ExecutePlanningModeCmd()
 {
+    unsigned int v3 = 0;  /* G37 hoist */
 
   char v1; // al
   wchar_t *StringCSF; // eax
   wchar_t *v3; // eax
 
-  v1 = *this; /*0x639fd0*/
+  v1 = (char)(*this);
   if ( *this == 9 ) /*0x639fd4*/
   {
     if ( !MEMORY[0xAC4C08] ) /*0x639fdd*/
@@ -71,13 +72,13 @@ AbstractClass * * NetworkClass::RecordEvent()
 {
 
   unsigned char *WaypointCoords; // eax
-  int result; // eax
+  int (__thiscall NetworkClass::* )(void) result;
   char *v3; // edi
   unsigned char v4[8]; // [esp+8h] [ebp-78h] BYREF
   char v5[108]; // [esp+10h] [ebp-70h] BYREF
-  __int16 v6; // [esp+7Ch] [ebp-4h]
+  int16_t v6; // [esp+7Ch] [ebp-4h]
   char v7; // [esp+7Eh] [ebp-2h]
-  unsigned __int8 v8; // [esp+84h] [ebp+4h]
+  uint8_t v8; // [esp+84h] [ebp+4h]
 
   WaypointCoords = ScriptAction::GetWaypointCoords(v4, (IUnknown *)this); /*0x6ffe0a*/
   EventClass::Add( /*0x6ffe34*/
@@ -88,7 +89,7 @@ AbstractClass * * NetworkClass::RecordEvent()
     WaypointCoords[4]);
   if ( FactoryClass::GetFlag() ) /*0x6ffe39*/
   {
-    result = NetworkClass::ExecutePlanningModeCmd(v5); /*0x6ffe46*/
+    result = (int)(NetworkClass::ExecutePlanningModeCmd(v5));
     LOBYTE(result) = 0; /*0x6ffe4b*/
   }
   else
@@ -119,7 +120,7 @@ AnimClass * * NetworkClass::UnregisterAsync()
   SOCKET v3; // eax
   SOCKET result; // eax
 
-  v2 = g_hWnd; /*0x7b1c53*/
+  v2 = (HWND)(g_hWnd);
   v3 = *((unsigned int *)this + 64539); /*0x7b1c59*/
   if ( v3 != -1 && g_hWnd ) /*0x7b1c66*/
   {

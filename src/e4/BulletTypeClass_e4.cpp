@@ -54,7 +54,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
       v3 = (unsigned int *)__2_YAPAXI_Z(32); /*0x46549a*/
       if ( v3 ) /*0x4654a1*/
       {
-        v3[3] = 0; /*0x4654a6*/
+        v3[3] = (unsigned int)(0);
         v3[1] = v1 + 16; /*0x4654ab*/
         v3[2] = v1 + 16; /*0x4654b6*/
         *v3 = &XSurface_Vtable; /*0x4654b9*/
@@ -75,9 +75,9 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
     v6 = *(unsigned int *)(MEMORY[0x87F7E8][528673] + 4 * i); /*0x4654f7*/
     Destination[0] = 0; /*0x465500*/
     INIClass::GetString( /*0x46550e*/
-      (unsigned __int8 ***)MEMORY[0x87F7E8][7704],
-      (unsigned __int8 *)(v6 + 36),
-      (unsigned __int8 *)aTotile,
+      (uint8_t ***)MEMORY[0x87F7E8][7704],
+      (uint8_t *)(v6 + 36),
+      (uint8_t *)aTotile,
       0,
       Destination,
       60);
@@ -86,7 +86,7 @@ BuildingTypeClass * * BulletTypeClass::ReadArmor()
       *(unsigned int *)(v6 + 3672) = *(unsigned int *)(MEMORY[0x87F7E8][539985] + 4 * v7); /*0x465531*/
     result = MEMORY[0x87F7E8][528676]; /*0x465537*/
   }
-  return result; /*0x465541*/
+  return (gamemd::BuildingTypeClass **)(result);
 
 }
 } // namespace gamemd
@@ -107,9 +107,9 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
     v2 = *((unsigned int *)g_TriggerTypeCount + i); /*0x465cdc*/
     Destination[0] = 0; /*0x465cef*/
     INIClass::GetString( /*0x465cf5*/
-      (unsigned __int8 ***)MEMORY[0x887048],
-      (unsigned __int8 *)(v2 + 36),
-      (unsigned __int8 *)aTotile,
+      (uint8_t ***)MEMORY[0x887048],
+      (uint8_t *)(v2 + 36),
+      (uint8_t *)aTotile,
       0,
       Destination,
       60);
@@ -118,7 +118,7 @@ BuildingTypeClass * * BulletTypeClass::ReadTrailerAnim()
       *(unsigned int *)(v2 + 3672) = *((unsigned int *)MEMORY[0xA8ED2C] + v3); /*0x465d18*/
     result = g_TriggerClassCount; /*0x465d1e*/
   }
-  return result; /*0x465d29*/
+  return (gamemd::BuildingTypeClass **)(result);
 
 }
 } // namespace gamemd
@@ -178,7 +178,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   *((unsigned int *)this + 1) = &BulletTypeClass::`vftable'; /*0x46bcec*/
   *((unsigned int *)this + 2) = &BulletTypeClass::`vftable'; /*0x46bcf2*/
   *((unsigned int *)this + 3) = &vt_BulletTypeClass; /*0x46bcf9*/
-  AbstractClass::GenerateUniqueID((int)((unsigned char *)this + 4)); /*0x46bd00*/
+  ((AbstractClass *)((int)((unsigned char *)this + 4)))->GenerateUniqueID(); /*0x46bd00*/
   *((unsigned char *)this + 564) = 1; /*0x46bd05*/
   *((unsigned char *)this + 559) = 1; /*0x46bd0c*/
   *((unsigned char *)this + 560) = 0; /*0x46bd13*/
@@ -189,19 +189,19 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   if ( (int)g_BulletTypeInitState < dword_A83C88 /*0x46bd65*/
     || (byte_A83C8D || !dword_A83C88)
     && dword_A83C94 > 0
-    && ((unsigned __int8 (*)(DynamicVector **, int, unsigned int))BulletTypeClass_Array->field_8)(
+    && ((uint8_t (*)(DynamicVector **, int, unsigned int))BulletTypeClass_Array->field_8)(
          &BulletTypeClass_Array,
          dword_A83C88 + dword_A83C94,
          0) )
   {
-    v3 = g_BulletTypeInitState; /*0x46bd72*/
+    v3 = (int)(g_BulletTypeInitState);
     g_BulletTypeInitState = (BulletTypeClass *)((char *)g_BulletTypeInitState + 1); /*0x46bd75*/
     *(unsigned int *)&dword_A83C84->__pad_0[4 * (unsigned int)v3] = this; /*0x46bd81*/
   }
   if ( *(int *)&MEMORY[0xB077F8].__pad_579C[9964] < *(int *)&MEMORY[0xB077F8].__pad_579C[9956] /*0x46bdb8*/
     || (MEMORY[0xB077F8].__pad_579C[9961] || !*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956])
     && *(int *)&MEMORY[0xB077F8].__pad_579C[9968] > 0
-    && (*(unsigned __int8 (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
+    && (*(uint8_t (**)(char *, int, unsigned int))(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9948] + 8))(
          &MEMORY[0xB077F8].__pad_579C[9948],
          *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9956] + *(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9968],
          0) )
@@ -209,7 +209,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
     v4 = (*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9964])++; /*0x46bdc5*/
     *(unsigned int *)(*(unsigned int *)&MEMORY[0xB077F8].__pad_579C[9952] + 4 * v4) = this; /*0x46bdd4*/
   }
-  return this; /*0x46bdd9*/
+  return (unsigned char *)(this);
 
 }
 } // namespace gamemd

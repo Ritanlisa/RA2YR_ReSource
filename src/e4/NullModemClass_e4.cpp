@@ -140,7 +140,7 @@ void * NullModemClass::QueryInterface(void *** Block, char a2)
 
   void **v3; // edi
 
-  v3 = *(Block + 13); /*0x5f3654*/
+  v3 = (void **)(*(Block + 13));
   *Block = &vt_NullModemClass; /*0x5f3657*/
   if ( v3 ) /*0x5f365f*/
   {
@@ -164,8 +164,7 @@ void * NullModemClass::QueryInterface(void *** Block, char a2)
     (**(void (***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f36c3*/
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
-LABEL_10:
-  *Block = &vt_ConnManClass; /*0x5f36cf*/
+LABEL_10: *Block = (void **)(&vt_ConnManClass);
   if ( (a2 & 1) != 0 ) /*0x5f36db*/
     __3_YAXPAX_Z(Block); /*0x5f36de*/
   return (NullModemClass *)Block; /*0x5f36e8*/

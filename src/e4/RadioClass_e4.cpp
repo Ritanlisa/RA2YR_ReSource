@@ -100,7 +100,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
   result = BuildingClass::SaveLoad_Register((#374 *)this); /*0x65ab8d*/
   if ( result >= 0 ) /*0x65ab94*/
   {
-    p_attachedTag = &v3[1].attachedTag; /*0x65ab9a*/
+    p_attachedTag = (void **)(&v3[1].attachedTag);
     if ( v3 != (ObjectClass *)-224 ) /*0x65aba2*/
     {
       v3[1].attachedBomb = 0; /*0x65aba4*/

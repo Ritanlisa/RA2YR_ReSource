@@ -62,7 +62,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(uns
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d2ca3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_MSAnim; /*0x5d2ca6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d2cb0*/
   {

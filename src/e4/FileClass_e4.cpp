@@ -26,7 +26,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 
   if ( *((unsigned int *)this + 22) ) /*0x473ae3*/
   {
-    v4 = *this; /*0x473aeb*/
+    v4 = (int)(*this);
     v5 = (*(int (**)(unsigned int *))(*(unsigned int *)this + 16))(this); /*0x473aed*/
     (*(void (**)(unsigned int *, int, unsigned int, int))(v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
@@ -56,11 +56,11 @@ const char* FileClass::Open(int a2)
 
   if ( !*((char *)this + 6) ) /*0x65cbf4*/
     return 0; /*0x65cbff*/
-  if ( (*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65cc06*/
+  if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65cc06*/
     return 1; /*0x65cc0b*/
   if ( !a2 ) /*0x65cc17*/
   {
-    FileA = CreateFileA((LPCSTR)*((char *)this + 6), 0x80000000, 1u, 0, 3u, 0x80u, 0); /*0x65cc59*/
+    FileA = (int)(CreateFileA((LPCSTR)*((char *)this + 6), 0x80000000, 1u, 0, 3u, 0x80u, 0));
     *((char *)this + 5) = (int)FileA; /*0x65cc62*/
     if ( FileA == (HANDLE)-1 ) /*0x65cc65*/
       return 0; /*0x65cc6b*/
@@ -71,7 +71,7 @@ const char* FileClass::Open(int a2)
     goto LABEL_12; /*0x65cc7e*/
   }
   FileClass::Open2(1); /*0x65cc1d*/
-  if ( (*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65cc26*/
+  if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65cc26*/
   {
     if ( CloseHandle((HANDLE)*((char *)this + 5)) ) /*0x65cc31*/
     {
@@ -79,7 +79,7 @@ LABEL_13:
       *((char *)this + 5) = -1; /*0x65cc8d*/
       return 1; /*0x65cc8d*/
     }
-    v4 = *this; /*0x65cc3e*/
+    v4 = (int)(*this);
     v7 = *((char *)this + 6); /*0x65cc40*/
 LABEL_12:
     LastError = GetLastError(); /*0x65cc7f*/
@@ -142,7 +142,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   v4 = 0; /*0x65cce7*/
   NumberOfBytesRead = 0; /*0x65cce9*/
   v14 = 0; /*0x65cced*/
-  if ( !(*(unsigned __int8 (**)(unsigned int *))(*(unsigned int *)this + 96))(this) ) /*0x65ccf3*/
+  if ( !(*(uint8_t (**)(unsigned int *))(*(unsigned int *)this + 96))(this) ) /*0x65ccf3*/
   {
     result = (*(int (**)(unsigned int *, int))(*(unsigned int *)this + 112))(this, 1); /*0x65cd00*/
     if ( !result ) /*0x65cd05*/
@@ -248,7 +248,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
         v7 = v4; /*0x65cf39*/
       v6 = *((char *)this + 3) + v7; /*0x65cf3b*/
     }
-    if ( (*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65cf48*/
+    if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65cf48*/
     {
       if ( v5 ) /*0x65cf6b*/
       {
@@ -273,7 +273,7 @@ LABEL_20:
         result = v8 - v11; /*0x65cfab*/
         if ( result >= 0 ) /*0x65cfad*/
           goto LABEL_27; /*0x65cfad*/
-        if ( (*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65cfb3*/
+        if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65cfb3*/
         {
           v13 = SetFilePointer((HANDLE)*((char *)this + 5), v11, 0, 0); /*0x65cfd4*/
           if ( v13 != -1 ) /*0x65cfd9*/
@@ -286,12 +286,12 @@ LABEL_27:
             if ( result > v16 ) /*0x65cffb*/
             {
               v17 = v16 + v11; /*0x65cfff*/
-              if ( (*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65d003*/
+              if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65d003*/
               {
                 v18 = SetFilePointer((HANDLE)*((char *)this + 5), v17, 0, 0); /*0x65d030*/
                 if ( v18 == -1 ) /*0x65d035*/
                 {
-                  v19 = *this; /*0x65d03a*/
+                  v19 = (int)(*this);
                   v26 = *((char *)this + 6); /*0x65d03c*/
                   LastError = GetLastError(); /*0x65d03f*/
                   (*(void (**)(int *, DWORD, unsigned int, int))(v19 + 64))(this, LastError, 0, v26); /*0x65d048*/
@@ -307,7 +307,7 @@ LABEL_27:
             }
             return result; /*0x65d024*/
           }
-          v14 = *this; /*0x65cfde*/
+          v14 = (int)(*this);
           v25 = *((char *)this + 6); /*0x65cfe0*/
           v15 = GetLastError(); /*0x65cfe3*/
           (*(void (**)(int *, DWORD, unsigned int, int))(v14 + 64))(this, v15, 0, v25); /*0x65cfec*/
@@ -319,7 +319,7 @@ LABEL_27:
         v13 = 0; /*0x65cfef*/
         goto LABEL_26; /*0x65cfef*/
       }
-      v9 = *this; /*0x65cf95*/
+      v9 = (int)(*this);
       v24 = *((char *)this + 6); /*0x65cf97*/
       v10 = GetLastError(); /*0x65cf9a*/
       (*(void (**)(int *, DWORD, unsigned int, int))(v9 + 64))(this, v10, 0, v24); /*0x65cfa3*/
@@ -332,7 +332,7 @@ LABEL_27:
     goto LABEL_20; /*0x65cfa6*/
   }
   v21 = dwMoveMethod; /*0x65d059*/
-  if ( (*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65d05f*/
+  if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65d05f*/
   {
     if ( dwMoveMethod ) /*0x65d081*/
     {
@@ -352,7 +352,7 @@ LABEL_27:
     result = SetFilePointer((HANDLE)*((char *)this + 5), lDistanceToMove, 0, v21); /*0x65d0a5*/
     if ( result == -1 ) /*0x65d0ae*/
     {
-      v22 = *this; /*0x65d0b3*/
+      v22 = (int)(*this);
       v27 = *((char *)this + 6); /*0x65d0b5*/
       v23 = GetLastError(); /*0x65d0b8*/
       (*(void (**)(int *, DWORD, unsigned int, int))(v22 + 64))(this, v23, 0, v27); /*0x65d0c1*/

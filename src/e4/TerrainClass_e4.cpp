@@ -1297,25 +1297,25 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * a1, AbstractClas
   IUnknown *v5; // ebx
   IUnknown *i; // esi
   int v7; // ecx
-  __int16 v8; // ax
+  int16_t v8; // ax
   unsigned char *v9; // eax
   unsigned int *v10; // eax
   int v11; // edi
   char v14[12]; // [esp+8h] [ebp-Ch] BYREF
 
   v3 = (IUnknown *)a1; /*0x71d008*/
-  if ( !(unsigned __int8)ObjectClass::Deploy((#374 *)this) ) /*0x71d012*/
+  if ( !(uint8_t)ObjectClass::Deploy((#374 *)this) ) /*0x71d012*/
     return 0; /*0x71d13e*/
   v4 = (IUnknown *)(v3->field_0 / 256); /*0x71d03e*/
   v5 = (IUnknown *)(v3->field_4 / 256); /*0x71d041*/
   for ( i = 0; (int)i < 8; i = (IUnknown *)((char *)i + 1) ) /*0x71d044*/
   {
-    v7 = (unsigned __int8)i & 7; /*0x71d048*/
+    v7 = (uint8_t)i & 7; /*0x71d048*/
     v8 = *((unsigned short *)&MEMORY[0x89F68A] + 2 * v7); /*0x71d05d*/
     LOWORD(aP2) = (unsigned short)v4 + *((unsigned short *)&MEMORY[0x89F688].field_0 + 2 * v7); /*0x71d061*/
     HIWORD(aP2) = (unsigned short)v5 + v8; /*0x71d06d*/
     a1 = aP2->__pad_0; /*0x71d076*/
-    v9 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (__int16 *)&a1); /*0x71d080*/
+    v9 = CellCoord::To_CellObj(&MEMORY[0x87F7E8], (int16_t *)&a1); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
   v10 = (unsigned int *)(*(int (**)(char *))(*(unsigned int *)this + 172))(v14); /*0x71d0ab*/

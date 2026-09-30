@@ -38,7 +38,7 @@ CampaignClass * RadarClass::Destruct()
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
-    v4 = (void *)*((unsigned int *)v2 - 5); /*0x652c2b*/
+    v4 = (unsigned int)((void *)*((unsigned int *)v2 - 5));
     v2 -= 24; /*0x652c2e*/
     *(unsigned int *)v2 = &vt_VectorClass_Point2D; /*0x652c33*/
     if ( v4 && v2[13] ) /*0x652c3b*/
@@ -69,7 +69,7 @@ CampaignClass * RadarClass::Destruct()
   }
   *((unsigned char *)this + 4657) = 0; /*0x652cb9*/
   *((unsigned int *)this + 1163) = 0; /*0x652cbf*/
-  return MapClass::Destruct(this); /*0x652cca*/
+  return ((MapClass *)(this))->Destruct(); /*0x652cca*/
 
 }
 }

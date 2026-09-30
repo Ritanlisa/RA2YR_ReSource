@@ -245,7 +245,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   v7 = *ScenarioClass::Get_Waypoint_Location((char *)MEMORY[0xA8B230], &v7, *((char *)this + 17)); /*0x6e339b*/
   GroundHeight = 0; /*0x6e339f*/
   v9 = (SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
-  v8 = ((__int16)v7 << 8) + 128; /*0x6e33ca*/
+  v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
   v5 = __2_YAPAXI_Z(0x14u); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
@@ -576,14 +576,14 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   int DefaultTimer; // [esp+18h] [ebp-10h]
   char v20[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v3 = (TechnoClass *)*((char *)this + 21); /*0x6efc76*/
+  v3 = (int *)((TechnoClass *)*((char *)this + 21));
   v4 = -1; /*0x6efc79*/
   v17 = this; /*0x6efc7f*/
   for ( i = v3; v3; v3 = *(TechnoClass **)&v3[1].missionQueued ) /*0x6efc85*/
   {
     v6 = *(unsigned int *)((*(int (**)(TechnoClass *))(*(unsigned int *)v3->__pad_0 + 132))(v3) + 1532); /*0x6efc91*/
     if ( TechnoClass::IsDeployed((int)v3) /*0x6efcba*/
-      && (BYTE1(v3[1].firepowerMultiplier[1])
+      && (BYTE1(v3[((unsigned int *)(1].firepowerMultiplier))[1])
        || (*(int (**)(TechnoClass *))(*(unsigned int *)v3->__pad_0 + 44))(v3) == 2)
       && v6 > v4 )
     {
@@ -596,7 +596,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
     *((unsigned char *)v17 + 128) = 1; /*0x6efcd5*/
     return; /*0x6efce0*/
   }
-  focus = i->focus; /*0x6efce3*/
+  focus = (unsigned int *)(i->focus);
   v8 = 0; /*0x6efce9*/
   v9 = focus[153]; /*0x6efcf0*/
   if ( v9 <= 0 ) /*0x6efcf8*/
@@ -754,8 +754,8 @@ char E4Recv_6E0790::sub_6E0790(int a2, int a3, int a4, int a5)
   int *WorldCoords; // eax
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v5 = MEMORY[0x8871E0]->?[5]; /*0x6e07a3*/
-  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e07b5*/
+  v5 = (int *)(MEMORY[0x8871E0]->?[5]);
+  WorldCoords = Cell::GetWorldCoords((int16_t *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e07b5*/
   CreateSmokeEffectAt(50, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e07d6*/
   return 1; /*0x6e07dd*/
 
@@ -772,7 +772,7 @@ char E4Recv_6E07F0::sub_6E07F0(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = MEMORY[0x8871E0]->?[5]; /*0x6e0803*/
-  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e0815*/
+  WorldCoords = Cell::GetWorldCoords((int16_t *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e0815*/
   CreateSmokeEffectAt(100, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0836*/
   return 1; /*0x6e083d*/
 
@@ -789,7 +789,7 @@ char E4Recv_6E0850::sub_6E0850(int a2, int a3, int a4, int a5)
   unsigned int v8[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v5 = MEMORY[0x8871E0]->?[5]; /*0x6e0863*/
-  WorldCoords = Cell::GetWorldCoords((__int16 *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e0875*/
+  WorldCoords = Cell::GetWorldCoords((int16_t *)MEMORY[0xA8B230], v8, *((char *)this + 36)); /*0x6e0875*/
   CreateSmokeEffectAt(300, v5, *WorldCoords, WorldCoords[1], WorldCoords[2], 0, 0); /*0x6e0896*/
   return 1; /*0x6e089d*/
 

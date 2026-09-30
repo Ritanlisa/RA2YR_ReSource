@@ -136,7 +136,7 @@ void TacticalMap::Redraw()
   *((unsigned int *)this + 3) = 0; /*0x4f44a8*/
   LOBYTE(v6) = v3 != 0; /*0x4f44b7*/
   v7 = v3 == 2; /*0x4f44be*/
-  if ( !(unsigned __int8)UI_Helper() ) /*0x4f44c2*/
+  if ( !(uint8_t)UI_Helper() ) /*0x4f44c2*/
   {
     TacticalMap::Render((int)MEMORY[0x887324], MEMORY[0x88731C], v6, 0); /*0x4f44df*/
     TacticalMap::Render((int)MEMORY[0x887324], MEMORY[0x88731C], v6, 1); /*0x4f44f4*/
@@ -504,7 +504,7 @@ AbstractClass * * TacticalMap::TacticalMap_Render( int a2)
   int *v54; // edi
   unsigned int *v55; // eax
   int v56; // ecx
-  __int64 v57; // rax
+  int64_t v57; // rax
   int v58; // esi
   int v59; // eax
   int v60; // esi

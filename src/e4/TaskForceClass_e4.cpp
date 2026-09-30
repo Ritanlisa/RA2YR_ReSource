@@ -39,17 +39,17 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   unsigned char v10[64]; // [esp+4h] [ebp-40h] BYREF
 
   v9 = Buffer; /*0x4c4f09*/
-  *this = 0; /*0x4c4f0a*/
+  *(_DWORD *)this = 0; /*0x4c4f0a*/
   *((unsigned int *)this + 1) = 0; /*0x4c4f10*/
   sscanf(v9, MEMORY[0x82085C], &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/
   ExitCellByName = Factory::FindExitCellByName(v10); /*0x4c4f29*/
   if ( ExitCellByName == -1 ) /*0x4c4f31*/
   {
-    Index = BuildingTypeClass::FindIndex(v10); /*0x4c4f4c*/
+    Index = ((BuildingTypeClass *)(v10))->FindIndex(); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
+      v8 = (unsigned int *)(TypeClass::FindByName(v10));
       if ( v8 != -1 ) /*0x4c4f77*/
         *((unsigned int *)this + 1) = *((unsigned int *)MEMORY[0xA8B21C] + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/
@@ -297,18 +297,18 @@ char TaskForceClass::GetUnitType(char * a2)
     sprintf(Buffer, MEMORY[0x817F6C], v3); /*0x6e853a*/
     if ( v3 >= *((unsigned int *)this + 39) ) /*0x6e854a*/
     {
-      INIClass::ClearSection((int)a2, (char *)this + 36, (unsigned __int8 *)Buffer); /*0x6e8571*/
+      INIClass::ClearSection((int)a2, (char *)this + 36, (uint8_t *)Buffer); /*0x6e8571*/
     }
     else
     {
-      v5 = TaskForceClass::Check(v4); /*0x6e854e*/
-      INIClass::SetString(a2, (unsigned __int8 *)((char *)this + 36), Buffer, v5); /*0x6e855f*/
+      v5 = (char *)(TaskForceClass::Check(v4));
+      INIClass::SetString(a2, (uint8_t *)((char *)this + 36), Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
     v4 += 2; /*0x6e8577*/
   }
   while ( v3 < 6 ); /*0x6e857d*/
-  INIClass::SetInt(a2, (unsigned __int8 *)((char *)this + 36), MEMORY[0x842DC4], *((unsigned int *)this + 38), 0); /*0x6e8593*/
+  INIClass::SetInt(a2, (uint8_t *)((char *)this + 36), MEMORY[0x842DC4], *((unsigned int *)this + 38), 0); /*0x6e8593*/
   return 1; /*0x6e859a*/
 
 }

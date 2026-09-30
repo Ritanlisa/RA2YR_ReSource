@@ -429,7 +429,7 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(unsigned int * Block, 
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x6cf853*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_SwizzlePointerClass; /*0x6cf856*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6cf860*/
   {
@@ -452,7 +452,7 @@ DynamicVector * SwizzleManagerClass_19::Constructor_VectorClass_SwizzlePointerCl
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x6cf8a3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_SwizzlePointerClass; /*0x6cf8a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x6cf8b0*/
   {

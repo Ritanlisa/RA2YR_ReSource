@@ -29,7 +29,7 @@ unsigned int * WWMouseClass::initSurface()
   unsigned int v8[4]; // [esp+4h] [ebp-20h] BYREF
   unsigned int v9[4]; // [esp+14h] [ebp-10h] BYREF
 
-  result = this; /*0x7b9040*/
+  result = (unsigned int *)(this);
   if ( (int)*((unsigned int *)this + 20) > 0 && (int)*((unsigned int *)this + 21) > 0 ) /*0x7b9052*/
   {
     v2 = *((unsigned int *)this + 9); /*0x7b9054*/
@@ -79,13 +79,13 @@ int WWMouseClass::hideCursor()
   unsigned int v10[4]; // [esp+18h] [ebp-10h] BYREF
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b994f*/
-    Debug::Log(); /*0x7b9960*/
+    this->Debug::Log(); /*0x7b9960*/
   if ( !*((unsigned int *)this + 3) ) /*0x7b9968*/
   {
-    if ( (*(unsigned __int8 (**)(unsigned int *))(*(unsigned int *)this + 112))(this) ) /*0x7b9977*/
+    if ( (*(uint8_t (**)(unsigned int *))(*(unsigned int *)this + 112))(this) ) /*0x7b9977*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9994*/
-        Debug::Log(); /*0x7b99a5*/
+        this->Debug::Log(); /*0x7b99a5*/
       if ( (int)*((unsigned int *)this + 20) > 0 && (int)*((unsigned int *)this + 21) > 0 ) /*0x7b99ba*/
       {
         v2 = *((unsigned int *)this + 9); /*0x7b99bc*/
@@ -155,24 +155,24 @@ void* WWMouseClass::captureMouse()
   unsigned int v20[4]; // [esp+14h] [ebp-20h] BYREF
   unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
 
-  if ( this && !(*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 28))(this) ) /*0x7b9a70*/
+  if ( this && !(*(uint8_t (**)(int *))(*(unsigned int *)this + 28))(this) ) /*0x7b9a70*/
   {
-    Debug::Log(); /*0x7b9a82*/
+    this->Debug::Log(); /*0x7b9a82*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9aa3*/
-      Debug::Log(); /*0x7b9ab4*/
+      this->Debug::Log(); /*0x7b9ab4*/
     v2 = *this; /*0x7b9abc*/
     *((unsigned char *)this + 16) = 1; /*0x7b9ac0*/
-    if ( !(*(unsigned __int8 (**)(int *))(v2 + 8))(this) ) /*0x7b9ac4*/
+    if ( !(*(uint8_t (**)(int *))(v2 + 8))(this) ) /*0x7b9ac4*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9ae7*/
-        Debug::Log(); /*0x7b9af8*/
+        this->Debug::Log(); /*0x7b9af8*/
       if ( BSurface::CreateTripleBuffer((int)this) && *((char *)this + 9) ) /*0x7b9b0f*/
       {
         Rect::Set(&v16, 0, 0, 0, 0); /*0x7b9b26*/
         if ( *((char *)this + 1) ) /*0x7b9b2b*/
         {
           UI_Helper_7BA2C0(); /*0x7b9b32*/
-          FoundationSize = Building::GetFoundationSize(v21, *((char *)this + 2)); /*0x7b9b43*/
+          FoundationSize = ((Building *)(v21))->GetFoundationSize(*((char *)this + 2)); /*0x7b9b43*/
           v16 = *FoundationSize; /*0x7b9b4c*/
           v17 = FoundationSize[1]; /*0x7b9b53*/
           v18 = FoundationSize[2]; /*0x7b9b5a*/
@@ -234,17 +234,17 @@ void WWMouseClass::releaseMouse()
   unsigned int v9[4]; // [esp+4h] [ebp-20h] BYREF
   unsigned int v10[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( this && (*(unsigned __int8 (**)(unsigned char *))(*(unsigned int *)this + 28))(this) ) /*0x7b9c40*/
+  if ( this && (*(uint8_t (**)(unsigned char *))(*(unsigned int *)this + 28))(this) ) /*0x7b9c40*/
   {
-    Debug::Log(); /*0x7b9c51*/
+    this->Debug::Log(); /*0x7b9c51*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9c72*/
-      Debug::Log(); /*0x7b9c83*/
+      this->Debug::Log(); /*0x7b9c83*/
     v2 = *(unsigned int *)this; /*0x7b9c8b*/
     *((unsigned char *)this + 16) = 0; /*0x7b9c8f*/
-    if ( !(*(unsigned __int8 (**)(unsigned char *))(v2 + 8))(this) ) /*0x7b9c93*/
+    if ( !(*(uint8_t (**)(unsigned char *))(v2 + 8))(this) ) /*0x7b9c93*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9cb0*/
-        Debug::Log(); /*0x7b9cc1*/
+        this->Debug::Log(); /*0x7b9cc1*/
       if ( *((int *)this + 20) > 0 && *((int *)this + 21) > 0 ) /*0x7b9cd6*/
       {
         v3 = *((unsigned int *)this + 9); /*0x7b9cd8*/
@@ -332,7 +332,7 @@ namespace gamemd {
 MouseClass * WWMouseClass::updateHotspot(unsigned int * Block, char a2)
 {
 
-  *Block = &vt_Mouse; /*0x7ba309*/
+  *Block = (unsigned int)(&vt_Mouse);
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
     __3_YAXPAX_Z(Block); /*0x7ba312*/
   return (MouseClass *)Block; /*0x7ba31c*/

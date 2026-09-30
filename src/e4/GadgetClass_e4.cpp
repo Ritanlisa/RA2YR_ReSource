@@ -19,7 +19,7 @@ ControlClass GadgetClass::Construct( int a2, int a3, int a4, int a5, int a6, cha
 
   unsigned int *result; // eax
 
-  result = this; /*0x4e12f4*/
+  result = (gamemd::ControlClass)(this);
   *((unsigned int *)this + 4) = a3; /*0x4e12fb*/
   *((unsigned int *)this + 3) = a2; /*0x4e1302*/
   *((unsigned int *)this + 6) = a5; /*0x4e1309*/
@@ -59,9 +59,9 @@ ControlClass GadgetClass::Dtor()
     MEMORY[0x8B3E88] = 0; /*0x4e13bc*/
   if ( this == (unsigned int *)MEMORY[0x8B3E8C] ) /*0x4e13cb*/
     MEMORY[0x8B3E8C] = 0; /*0x4e13cd*/
-  if ( this == (unsigned int *)v1 ) /*0x4e13d5*/
+  if ( this == (gamemd::GadgetClass *)((unsigned int *))v1 ) /*0x4e13d5*/
     MEMORY[0x8B3E90] = 0; /*0x4e13d7*/
-  return LinkClass::Destruct();
+  return this->LinkClass::Destruct();
 
 }
 }
@@ -151,7 +151,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
         if ( !v4 ) /*0x60ab12*/
           goto LABEL_7; /*0x60ab12*/
       }
-      v3 = v4 + 1; /*0x60ab1a*/
+      v3 = (unsigned int *)(v4 + 1);
       v15 = v4 + 1; /*0x60ab1d*/
     }
   }
@@ -170,7 +170,7 @@ LABEL_7:
       if ( !v5 ) /*0x60ab66*/
         goto LABEL_12; /*0x60ab66*/
     }
-    v9 = v5 + 1; /*0x60acaf*/
+    v9 = (unsigned int *)(v5 + 1);
     if ( v9 ) /*0x60acb4*/
       v6 = v9[27]; /*0x60acba*/
     else
@@ -297,7 +297,7 @@ AbstractClass * * GadgetClass::SetTooltip(void * String)
   {
     if ( *(unsigned short *)String ) /*0x623583*/
     {
-      v3 = wcslen(String); /*0x62358a*/
+      v3 = (unsigned int)(wcslen(String));
       v4 = (void *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
       *((unsigned int *)this + 10) = v4; /*0x62359b*/
       wcscpy((#72 *)v4, String); /*0x62359e*/

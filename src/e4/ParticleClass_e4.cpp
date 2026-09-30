@@ -46,7 +46,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   int v17; // esi
   int v18; // ecx
   int v19; // eax
-  __int16 v20; // dx
+  int16_t v20; // dx
   char v21; // al
   double v22; // st7
   int v23; // esi
@@ -83,7 +83,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
             v13 = a3[1]; /*0x62d08c*/
             if ( v12 >= v13 && v12 < v13 + a3[3] ) /*0x62d09e*/
             {
-              v14 = *(unsigned __int16 *)StreamClass::ReadAndSeek( /*0x62d0b6*/
+              v14 = *(uint16_t *)StreamClass::ReadAndSeek( /*0x62d0b6*/
                                            (int)MEMORY[0x87E8A4],
                                            v27,
                                            v12 - *((unsigned int *)MEMORY[0x87E8A4] + 1));
@@ -92,10 +92,10 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                 v15 = v28 - *((unsigned int *)MEMORY[0x887644] + 1); /*0x62d0d4*/
                 v26[0] = v27; /*0x62d0d9*/
                 v16 = ZCoordToScreenY(*((unsigned int *)this + 41)); /*0x62d0e8*/
-                v17 = (unsigned __int16)(*((unsigned short *)MEMORY[0x887644] + 2) + *((unsigned short *)MEMORY[0x887644] + 18) - v28) /*0x62d10f*/
+                v17 = (uint16_t)(*((unsigned short *)MEMORY[0x887644] + 2) + *((unsigned short *)MEMORY[0x887644] + 18) - v28) /*0x62d10f*/
                     - v16
                     - 50;
-                if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int)MEMORY[0x887644], v26[0], v15) ) /*0x62d11e*/
+                if ( v17 < *(uint16_t *)Audio::GetSamplePosition((int)MEMORY[0x887644], v26[0], v15) ) /*0x62d11e*/
                 {
                   v18 = *((unsigned int *)this + 45); /*0x62d124*/
                   if ( v18 ) /*0x62d12c*/
@@ -119,9 +119,9 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                   (*(void (**)(int, int *, int))(*(unsigned int *)MEMORY[0x887314] + 36))( /*0x62d288*/
                     MEMORY[0x887314],
                     &v27,
-                    (unsigned __int16)(v23 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0])
-                  | (unsigned __int16)(v24 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
-                  | (unsigned __int16)(v25 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
+                    (uint16_t)(v23 >> MEMORY[0x8A0DD4] << MEMORY[0x8A0DD0])
+                  | (uint16_t)(v24 >> MEMORY[0x8A0DE4] << MEMORY[0x8A0DE0])
+                  | (uint16_t)(v25 >> MEMORY[0x8A0DDC] << MEMORY[0x8A0DD8]));
                 }
               }
             }

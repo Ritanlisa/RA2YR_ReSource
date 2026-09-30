@@ -21,7 +21,7 @@ int Mixer::ReleaseChannel()
   int *v3; // edi
   int v4; // eax
 
-  result = MEMORY[0x87E2A0]; /*0x406060*/
+  result = (int *)(MEMORY[0x87E2A0]);
   if ( !MEMORY[0x87E2A0] ) /*0x40606e*/
     goto LABEL_14; /*0x40606e*/
   if ( *((unsigned int *)this + 3) != &MEMORY[0x87E294] ) /*0x406077*/
@@ -30,7 +30,7 @@ int Mixer::ReleaseChannel()
   if ( !*this ) /*0x406079*/
     goto LABEL_14; /*0x40607d*/
   result = v3[9]; /*0x40607f*/
-  if ( *((unsigned int *)this + 2) == (int *)result && *((unsigned int *)this + 1) == (int *)v3[78] ) /*0x406094*/
+  if ( *((unsigned int *)this + 2) == (unsigned int)((int *))result && *((unsigned int *)this + 1) == (int *)v3[78] ) /*0x406094*/
   {
     if ( (*(unsigned char *)(result + 16) & 1) == 0 || *(unsigned int *)(result + 76) ) /*0x40609c*/
       goto LABEL_14; /*0x40609f*/
@@ -42,7 +42,7 @@ int Mixer::ReleaseChannel()
         AudioFile::GetCallback(v3[44]); /*0x4060bb*/
         v3[6] |= 0x60u; /*0x4060c6*/
         result = AudioStream::Stop(v3[44]); /*0x4060cf*/
-        *this = 0; /*0x4060d4*/
+        *(_DWORD *)this = 0; /*0x4060d4*/
         *((unsigned int *)this + 2) = 0; /*0x4060d6*/
         return result; /*0x4060dc*/
       }
@@ -51,7 +51,7 @@ int Mixer::ReleaseChannel()
       v3[6] = result; /*0x4060e2*/
     }
   }
-  *this = 0; /*0x4060e5*/
+  *(_DWORD *)this = 0; /*0x4060e5*/
 LABEL_14:
   *((unsigned int *)this + 2) = 0; /*0x4060e7*/
   return result; /*0x4060d9*/

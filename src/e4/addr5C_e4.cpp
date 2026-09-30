@@ -253,7 +253,7 @@ BOOL E4Recv_5C60D0::ShowConfirmDialog(unsigned short * lParam)
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
   int v6; // [esp+0h] [ebp-8h]
 
-  StringCSF = GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108); /*0x5c60fa*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108));
   v3 = GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
   return Dialog::ShowMessageBox((int)lParam, v3, (Movie *)StringCSF, 0, 0, v6) == 0; /*0x5c6116*/
 

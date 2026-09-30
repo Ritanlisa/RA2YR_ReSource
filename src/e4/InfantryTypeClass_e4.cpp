@@ -179,6 +179,8 @@ unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 namespace gamemd {
 int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v10 = 0;  /* G37 hoist */
 
   int v4; // eax
   InfantryClass *v5; // esi
@@ -197,7 +199,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
     v5 = (InfantryClass *)InfantryClass::Construct(v4, this, ppv); /*0x523b68*/
     if ( v5 ) /*0x523b6c*/
     {
-      v6 = a2[1] << 8; /*0x523b85*/
+      v6 = (unsigned int *)(a2[1] << 8);
       v12[0] = (*a2 << 8) + 128; /*0x523b93*/
       v12[1] = v6 + 128; /*0x523b9b*/
       v12[2] = 0; /*0x523bb1*/

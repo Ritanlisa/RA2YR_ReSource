@@ -87,7 +87,7 @@ LABEL_8:
     *((unsigned char *)Block + 81) = *((unsigned char *)Block + 81) == 0; /*0x5500df*/
   if ( (int)*Block >= (int)*(Block + 19) && Block ) /*0x5500ed*/
   {
-    v8[0] = Block; /*0x5500fe*/
+    v8[0] = (unsigned int)(Block);
     v7 = (*(int (**)(int *, unsigned int *))(dword_ABC878 + 16))(&dword_ABC878, v8); /*0x550102*/
     if ( v7 != -1 && v7 < g_TimerPool && v7 < --g_TimerPool ) /*0x55011d*/
     {

@@ -33,7 +33,7 @@ HWND E4Recv_696AE0::sub_696AE0()
       v5 = (char *)((char *)this + 8); /*0x696b21*/
       SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)v5); /*0x696b30*/
       SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&MEMORY[0x889F64]); /*0x696b3f*/
-      String::Trim(v5); /*0x696b43*/
+      ((String *)(v5))->Trim(); /*0x696b43*/
       result = 0; /*0x696b4d*/
       if ( strlen(v5) ) /*0x696b4f*/
       {
@@ -50,7 +50,7 @@ HWND E4Recv_696AE0::sub_696AE0()
           if ( MEMORY[0xA8DB5C] < MEMORY[0xA8DB54] /*0x696bf1*/
             || (MEMORY[0xA8DB59] || !MEMORY[0xA8DB54])
             && MEMORY[0xA8DB60] > 0
-            && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0xA8DB4C] + 8))(
+            && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0xA8DB4C] + 8))(
                  &MEMORY[0xA8DB4C],
                  MEMORY[0xA8DB54] + MEMORY[0xA8DB60],
                  0) )

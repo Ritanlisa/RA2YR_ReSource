@@ -11,6 +11,8 @@
 #include "e4/classes/AudioController_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4325C0
 namespace gamemd {
@@ -28,7 +30,7 @@ AudioController * * CCFileClass::Close()
   {
     if ( *((unsigned int *)this + 20) ) /*0x4325d6*/
     {
-      v3 = *(unsigned int *)this; /*0x4325dd*/
+      v3 = (gamemd::AudioController **)(*(unsigned int *)this);
       *((unsigned char *)this + 41) = 0; /*0x4325e1*/
       result = (*(int (**)(unsigned char *))(v3 + 52))(this); /*0x4325e5*/
       *((unsigned char *)this + 41) = 1; /*0x4325e8*/
@@ -36,7 +38,7 @@ AudioController * * CCFileClass::Close()
       *((unsigned char *)this + 37) = 0; /*0x4325f0*/
       return result; /*0x4325f5*/
     }
-    result = FileClass::CloseHandle(this); /*0x4325f8*/
+    result = (gamemd::AudioController **)(FileClass::CloseHandle(this));
     *((unsigned char *)this + 38) = 0; /*0x4325fd*/
   }
   *((unsigned char *)this + 37) = 0; /*0x432601*/
@@ -72,9 +74,9 @@ void CCFileClass::GetFileSize()
   result = *((char *)this + 4); /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(unsigned __int8 (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65d0e0*/
+    if ( (*(uint8_t (**)(int *))(*(unsigned int *)this + 24))(this) ) /*0x65d0e0*/
     {
-      FileSize = GetFileSize((HANDLE)*((char *)this + 5), 0); /*0x65d0f2*/
+      FileSize = (int)(GetFileSize((HANDLE)*((char *)this + 5), 0));
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
         v4 = *this; /*0x65d0fd*/

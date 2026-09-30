@@ -20,7 +20,7 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
 {
 
   char v2; // al
-  __int64 result; // rax
+  int64_t result; // rax
   int v5; // ecx
   double v6; // st7
 
@@ -202,15 +202,15 @@ AbstractClass * Isometric::InitTables( IUnknown * aP1)
   result = Math::RoundToInt((double)(MEMORY[0x89E7C0] * *((char *)this + 283)) + 0.5); /*0x47bab0*/
   if ( *((unsigned char *)this + 284) ) /*0x47bab5*/
   {
-    v5 = 40 * (*(unsigned __int8 *)((char *)this + 284) - 1); /*0x47baec*/
-    v6 = (double)(unsigned __int8)aP1->field_4 * *(double *)(v5 + 8505608) * MEMORY[0x89E740] /*0x47bb17*/
-       + (double)(unsigned __int8)aP1->field_0 * *(double *)(v5 + 8505600) * MEMORY[0x89E740]
+    v5 = 40 * (*(uint8_t *)((char *)this + 284) - 1); /*0x47baec*/
+    v6 = (double)(uint8_t)aP1->field_4 * *(double *)(v5 + 8505608) * MEMORY[0x89E740] /*0x47bb17*/
+       + (double)(uint8_t)aP1->field_0 * *(double *)(v5 + 8505600) * MEMORY[0x89E740]
        + *(double *)(v5 + 8505616)
        + *(double *)(v5 + 8505632);
     if ( v6 < 0.0 ) /*0x47bb28*/
       v6 = 0.0; /*0x47bb2c*/
-    if ( v6 > *(double *)&MEMORY[0x81C918][5 * *(unsigned __int8 *)((char *)this + 284) - 5] ) /*0x47bb3d*/
-      v6 = *(double *)&MEMORY[0x81C918][5 * *(unsigned __int8 *)((char *)this + 284) - 5]; /*0x47bb41*/
+    if ( v6 > *(double *)&MEMORY[0x81C918][5 * *(uint8_t *)((char *)this + 284) - 5] ) /*0x47bb3d*/
+      v6 = *(double *)&MEMORY[0x81C918][5 * *(uint8_t *)((char *)this + 284) - 5]; /*0x47bb41*/
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }
   return result; /*0x47bb54*/

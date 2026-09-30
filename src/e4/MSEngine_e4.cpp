@@ -18,6 +18,9 @@
 namespace gamemd {
 AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
+    unsigned int v9 = 0;  /* G37 hoist */
+    unsigned int v12 = 0;  /* G37 hoist */
+    unsigned int v11 = 0;  /* G37 hoist */
 
   int v3; // ebx
   char *v5; // ebp
@@ -99,6 +102,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
 namespace gamemd {
 AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 {
+    unsigned int v8 = 0;  /* G37 hoist */
 
   int v3; // ebx
   char *v5; // ebp
@@ -223,7 +227,7 @@ CampaignClass * MSEngine::Construct()
   char *v2; // ecx
   int v3; // edx
 
-  v2 = (char *)((unsigned int *)this + 2); /*0x5d1aa5*/
+  v2 = (unsigned int)((char *)((unsigned int *)this + 2));
   *((unsigned int *)v2 + 1) = 0; /*0x5d1ab2*/
   *((unsigned int *)v2 + 2) = 0; /*0x5d1ab5*/
   v2[12] = 1; /*0x5d1ab8*/
@@ -521,7 +525,7 @@ VectorClass_flat * MSEngine::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5ad4d3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_TRect_int; /*0x5ad4d6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad4e0*/
   {
@@ -544,7 +548,7 @@ CampaignClass * MSEngine::Constructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5ad523*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_TRect_int; /*0x5ad526*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5ad530*/
   {

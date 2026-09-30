@@ -619,7 +619,7 @@ VectorClass_flat * BlowPipe_23::Destructor(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ed93*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_PlanningNodeClass; /*0x63ed96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63eda0*/
   {
@@ -642,7 +642,7 @@ DynamicVector * BlowPipe_31::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ede3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_PlanningNodeClass; /*0x63ede6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63edf0*/
   {
@@ -665,7 +665,7 @@ VectorClass_flat * BlowPipe_23::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ee33*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_EventClass; /*0x63ee36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ee40*/
   {
@@ -688,7 +688,7 @@ DynamicVector * BlowPipe_23::Destructor_0(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ee83*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_EventClass; /*0x63ee86*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ee90*/
   {
@@ -711,7 +711,7 @@ DynamicVector * BlowPipe_23::Destructor_1(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x63ef23*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_PlanningTokenClass; /*0x63ef26*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x63ef30*/
   {

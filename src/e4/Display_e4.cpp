@@ -32,7 +32,7 @@ int Display::GetViewport()
   int v3; // edx
   int v4; // esi
 
-  result = this; /*0x72ad29*/
+  result = (int *)(this);
   v2 = 0; /*0x72ad44*/
   if ( !MEMORY[0xA8EB7C] && !MEMORY[0xA8ED6B] ) /*0x72ad5e*/
     v2 = 168; /*0x72ad60*/

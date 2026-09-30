@@ -68,7 +68,7 @@ int Lobby::InvalidatePlayerSlots(HWND hDlg)
     }
     else
     {
-      result = FillLobbyPlayerSlot(hDlg, v3); /*0x4e5df6*/
+      result = (int)(FillLobbyPlayerSlot(hDlg, v3));
     }
   }
   return result; /*0x4e5e0e*/
@@ -118,18 +118,18 @@ void Lobby::UpdatePlayerLabels()
   int v36; // [esp+4h] [ebp-10h]
   int v37; // [esp+8h] [ebp-Ch]
   void *v38; // [esp+Ch] [ebp-8h] BYREF
-  HWND hDlg; // [esp+10h] [ebp-4h]
+  Lobby * hDlg;
 
-  hDlg = this; /*0x5eb063*/
+  hDlg = (HWND)(this);
   if ( MEMORY[0xA8B23C] /*0x5eb07a*/
-    && !(*(unsigned __int8 (**)(int))(*(unsigned int *)MEMORY[0xA8B23C] + 64))(MEMORY[0xA8B23C])
-    || (v33 = 1, Network::IsMultiplayerActive()) )
+    && !(*(uint8_t (**)(int))(*(unsigned int *)MEMORY[0xA8B23C] + 64))(MEMORY[0xA8B23C])
+    || (v33 = 1, this->Network::IsMultiplayerActive()) )
   {
     v33 = 0; /*0x5eb088*/
   }
   if ( MEMORY[0xA8B238][0] == 4 ) /*0x5eb09d*/
   {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5eb0a8*/
+    if ( !this->Network::IsMultiplayerActive() || this->Network::IsLobbyFeature() ) /*0x5eb0a8*/
       v1 = 6; /*0x5eb0b8*/
     else
       v1 = 2; /*0x5eb0b1*/
@@ -145,7 +145,7 @@ void Lobby::UpdatePlayerLabels()
     goto LABEL_25; /*0x5eb0d7*/
   if ( MEMORY[0xA8B238][0] == 4 ) /*0x5eb0df*/
   {
-    if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5eb0ea*/
+    if ( !this->Network::IsMultiplayerActive() || this->Network::IsLobbyFeature() ) /*0x5eb0ea*/
       v2 = 6; /*0x5eb0fa*/
     else
       v2 = 2; /*0x5eb0f3*/
@@ -189,11 +189,11 @@ LABEL_26:
         }
         if ( MEMORY[0xA8B238][0] == 4 ) /*0x5eb185*/
         {
-          if ( Network::IsLobbyFeature() ) /*0x5eb187*/
+          if ( this->Network::IsLobbyFeature() ) /*0x5eb187*/
           {
             PlayerCount &= ~1u; /*0x5eb190*/
           }
-          else if ( Network::IsMultiplayerActive() ) /*0x5eb195*/
+          else if ( this->Network::IsMultiplayerActive() ) /*0x5eb195*/
           {
             PlayerCount = 2; /*0x5eb19e*/
           }
@@ -326,7 +326,7 @@ LABEL_79:
             }
             if ( MEMORY[0xA8B238][0] == 4 ) /*0x5eb48c*/
             {
-              if ( Network::IsLobbyFeature() ) /*0x5eb48e*/
+              if ( this->Network::IsLobbyFeature() ) /*0x5eb48e*/
               {
                 v17 &= ~1u; /*0x5eb497*/
               }

@@ -129,9 +129,9 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   int v10; // eax
   int v11; // esi
   int v12; // edx
-  int v13; // ebx
+  char * v13;
   int v14; // ecx
-  int v15; // esi
+  char * v15;
   int v16; // eax
   int v17; // eax
   int v18; // ebp
@@ -168,18 +168,18 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
   v13 = 48 * a3 + (char *)this + 148 * a2; /*0x771352*/
   if ( Map_Remove(*(unsigned int *)this, v13 + 8, v24) )
   {
-    if ( !(unsigned __int8)Audio::IsPlaying() ) /*0x77136a*/
+    if ( !(uint8_t)this->Audio::IsPlaying() ) /*0x77136a*/
     {
-      *((unsigned int *)this + 235) = Timer::GetTicks(); /*0x771386*/
+      *((unsigned int *)this + 235) = this->Timer::GetTicks(); /*0x771386*/
       *(void **)((char *)this + 944) = v24[2]; /*0x771390*/
       *((unsigned int *)this + 237) = a6; /*0x771393*/
     }
-    v14 = *((unsigned int *)this + 242); /*0x771396*/
+    v14 = (int)(*((unsigned int *)this + 242));
     v15 = (char *)this + 960; /*0x7713a2*/
     if ( *((unsigned int *)this + 244) < v14 /*0x7713c7*/
       || (*((unsigned char *)this + 973) || !v14)
       && (v16 = *((unsigned int *)this + 245), v16 > 0)
-      && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))((char *)this + 960, v14 + v16, 0) )
+      && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))((char *)this + 960, v14 + v16, 0) )
     {
       v17 = *((unsigned int *)this + 244); /*0x7713ce*/
       *((unsigned int *)this + 244) = v17 + 1; /*0x7713d9*/
@@ -201,7 +201,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
           if ( *((unsigned int *)this + 244) < v21 /*0x771469*/
             || (*((unsigned char *)this + 973) || !v21)
             && (v22 = *((unsigned int *)this + 245), v22 > 0)
-            && (*(unsigned __int8 (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))((char *)this + 960, v21 + v22, 0) )
+            && (*(uint8_t (**)(int, int, unsigned int))(*(unsigned int *)v15 + 8))((char *)this + 960, v21 + v22, 0) )
           {
             v23 = *((unsigned int *)this + 244); /*0x771470*/
             *((unsigned int *)this + 244) = v23 + 1; /*0x77147b*/
@@ -223,7 +223,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
 {
   int *v8; // esi
   int v9; // ebp
-  void * v10;
+  int v10;
   int v11; // ebx
   int v12; // ebp
   int *Viewport; // eax

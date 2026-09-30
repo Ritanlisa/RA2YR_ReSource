@@ -982,7 +982,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(unsigned int * Bl
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d1713*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_Point2D; /*0x5d1716*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d1720*/
   {
@@ -1005,7 +1005,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(unsigned in
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d17b3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_MSTextEntry; /*0x5d17b6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d17c0*/
   {
@@ -1028,7 +1028,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(unsigned i
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d1853*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_MapSelection; /*0x5d1856*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d1860*/
   {
@@ -1051,7 +1051,7 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(unsigned in
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d18a3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_MapStage; /*0x5d18a6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d18b0*/
   {
@@ -1074,7 +1074,7 @@ DynamicVector * MSPCXAnim_26::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d18f3*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_MapStage; /*0x5d18f6*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d1900*/
   {
@@ -1097,7 +1097,7 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(unsigned int * Block, char a2)
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d1943*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_MSAnimEntry; /*0x5d1946*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d1950*/
   {
@@ -1120,7 +1120,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(unsigned in
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d1993*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_MSAnimEntry; /*0x5d1996*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d19a0*/
   {
@@ -1143,7 +1143,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(unsigned int
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x5d1a33*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_MSSfxEntry; /*0x5d1a36*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x5d1a40*/
   {

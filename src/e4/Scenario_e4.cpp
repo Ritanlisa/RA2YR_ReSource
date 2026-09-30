@@ -42,7 +42,7 @@ int Scenario::ReadTeams()
   CCINIClass *v1; // esi
   int result; // eax
   CCINIClass *v3; // ecx
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   char *v5; // eax
   int v6; // eax
   CCINIClass *v7; // eax
@@ -116,7 +116,7 @@ int Scenario::ReadTeams()
   int v76; // [esp+60h] [ebp-84h] BYREF
   INIClass String[2]; // [esp+64h] [ebp-80h] BYREF
 
-  v1 = this; /*0x44f827*/
+  v1 = (int)(this);
   INIClass::ResetSection(this); /*0x44f82d*/
   memset(v73, 255, sizeof(v73)); /*0x44f83b*/
   result = INIClass::GetKeyCount(v1->__pad_0, (INIClass *)aStructures); /*0x44f84a*/
@@ -127,10 +127,10 @@ int Scenario::ReadTeams()
   {
     while ( 1 ) /*0x44f874*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v1->__pad_0, (CCINIClass *)aStructures, v3); /*0x44f874*/
-      INIClass::GetString((unsigned __int8 ***)v1, (INIClass *)aStructures, StringByIndex, 0, String, 128); /*0x44f88f*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v1->__pad_0, (CCINIClass *)aStructures, v3); /*0x44f874*/
+      INIClass::GetString((uint8_t ***)v1, (INIClass *)aStructures, StringByIndex, 0, String, 128); /*0x44f88f*/
       v5 = strtok(String[0].__pad_0, MEMORY[0x817F70].__pad_0); /*0x44f89e*/
-      v6 = HouseClass::FindByName(v5); /*0x44f8a8*/
+      v6 = ((HouseClass *)(v5))->FindByName(); /*0x44f8a8*/
       if ( v6 != -1 ) /*0x44f8b0*/
       {
         v7 = *(CCINIClass **)&HouseClass_Array->__pad_0[4 * v6]; /*0x44f8bc*/
@@ -140,7 +140,7 @@ int Scenario::ReadTeams()
           if ( !MEMORY[0xA8B238] || v7 != (CCINIClass *)HouseClass_Player ) /*0x44f8db*/
           {
             v8 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x44f8e8*/
-            IndexByName = (CCINIClass *)BuildingTypeClass::FindIndexByName(v8); /*0x44f8fa*/
+            IndexByName = (CCINIClass *)((BuildingTypeClass *)(v8))->FindIndexByName(); /*0x44f8fa*/
             if ( IndexByName != (CCINIClass *)-1 ) /*0x44f8fe*/
             {
               v9 = strtok(0, MEMORY[0x817F70].__pad_0); /*0x44f90b*/
@@ -213,10 +213,10 @@ int Scenario::ReadTeams()
                                        (AbstractClass *)v65);
                 if ( v29 ) /*0x44fb2b*/
                 {
-                  v30 = (void *)ObjectTypeClass::FindByName(v16); /*0x44fb33*/
+                  v30 = (void *)((ObjectTypeClass *)(v16))->FindByName(); /*0x44fb33*/
                   if ( v30 ) /*0x44fb3a*/
                   {
-                    v31 = TeamClass::FindOrCreate(v30); /*0x44fb3e*/
+                    v31 = ((TeamClass *)(v30))->FindOrCreate(); /*0x44fb3e*/
                     if ( v31 ) /*0x44fb45*/
                       ObjectClass::SetReference(v29, v31); /*0x44fb4a*/
                   }
@@ -236,11 +236,11 @@ int Scenario::ReadTeams()
                   v74[2] = 0; /*0x44fbbf*/
                   v29->estimatedHealth = health; /*0x44fbcf*/
                   v36 = *(unsigned int *)v29->__pad_0; /*0x44fbd5*/
-                  v64 = (CCINIClass *)(((__int16)v59 << 8) + 128); /*0x44fbd7*/
+                  v64 = (CCINIClass *)(((int16_t)v59 << 8) + 128); /*0x44fbd7*/
                   v74[0] = v64; /*0x44fbdb*/
                   v60 = (CCINIClass *)((SHIWORD(v59) << 8) + 128); /*0x44fbe5*/
                   v74[1] = v60; /*0x44fbe9*/
-                  if ( (*(unsigned __int8 (**)(TechnoClass *, unsigned int *, int))(v36 + 216))(v29, v74, v67) ) /*0x44fbf9*/
+                  if ( (*(uint8_t (**)(TechnoClass *, unsigned int *, int))(v36 + 216))(v29, v74, v67) ) /*0x44fbf9*/
                   {
                     v37 = (unsigned int *)v29[1].radioLinks[0]; /*0x44fc07*/
                     if ( v37 ) /*0x44fc0f*/
@@ -279,7 +279,7 @@ int Scenario::ReadTeams()
                           LOBYTE(v39) = *(unsigned char *)(v43 + 3278); /*0x44fcec*/
                           HouseClass::UpdateProduction((int)v29->focus, v44, v39, 0); /*0x44fcfc*/
                         }
-                        if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v29->focus) ) /*0x44fd07*/
+                        if ( (uint8_t)House::IsHumanPlayer((#375 *)v29->focus) ) /*0x44fd07*/
                           VoxClass::FindAndPlay(aEvaBuildingonl, -1, -1); /*0x44fd1a*/
                       }
                     }
@@ -316,8 +316,8 @@ int Scenario::ReadTeams()
                       }
                       while ( v47 ); /*0x44fdc3*/
                     }
-                    if ( (*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)v29->__pad_0 + 1020))(v29) /*0x44fde1*/
-                      && (*(unsigned __int8 (**)(TechnoClass *))(*(unsigned int *)v29->__pad_0 + 1020))(v29)
+                    if ( (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v29->__pad_0 + 1020))(v29) /*0x44fde1*/
+                      && (*(uint8_t (**)(TechnoClass *))(*(unsigned int *)v29->__pad_0 + 1020))(v29)
                       && v29[1].customSound_controller[4] )
                     {
                       Value = ProgressTimer::GetValue(&v29->target_laser_timer[2], (IUnknown *)&v76); /*0x44fdf6*/
@@ -418,7 +418,7 @@ int Scenario::ProcessSidebarUnits()
       if ( *((unsigned int *)this + 95) < v7 /*0x50d695*/
         || (*((unsigned char *)this + 377) || !v7)
         && (v8 = *((unsigned int *)this + 96), v8 > 0)
-        && (*(unsigned __int8 (**)(int, int, unsigned int))(*((unsigned int *)this + 91) + 8))((char *)this + 364, v7 + v8, 0) )
+        && (*(uint8_t (**)(int, int, unsigned int))(*((unsigned int *)this + 91) + 8))((char *)this + 364, v7 + v8, 0) )
       {
         v9 = *((unsigned int *)this + 95); /*0x50d69c*/
         v10 = *((unsigned int *)this + 92); /*0x50d69f*/
@@ -931,7 +931,7 @@ int Scenario::LoadOrReloadOptions(IUnknown * aP1)
   if ( aP1 ) /*0x597a16*/
     return (*(char (**)(unsigned int *, IUnknown *))(*(unsigned int *)this + 16))(this, aP1); /*0x597a1b*/
   else
-    return (unsigned __int8)LoadOptions::Run(this) != 0; /*0x597a28*/
+    return (uint8_t)LoadOptions::Run(this) != 0; /*0x597a28*/
 
 }
 }

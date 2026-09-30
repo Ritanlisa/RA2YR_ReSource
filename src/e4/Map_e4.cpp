@@ -292,23 +292,23 @@ int E4Recv_5ADD10::Map_Delete()
   MSEngine::Construct(v8); /*0x5add1e*/
   Map_Delete_5CEDD0(v9); /*0x5add27*/
   unknown_libname_73(v10); /*0x5add33*/
-  v10[1] = Timer::GetTicks(); /*0x5add48*/
+  v10[1] = this->Timer::GetTicks(); /*0x5add48*/
   v10[3] = 0; /*0x5add50*/
   v8[0] = &vt_MapSelect; /*0x5add5b*/
-  v3 = ScenarioClass::Load(v8, (ObjectClass *)this) == 0; /*0x5add71*/
+  v3 = ((ScenarioClass *)(v8))->Load((ObjectClass *)this) == 0; /*0x5add71*/
   DeleteAndZero((int)v10); /*0x5add74*/
   MSEngine::Destructor((int)v9); /*0x5add7d*/
   MSEngine::Destruct(v8); /*0x5add86*/
   if ( v3 )
   {
-    StringCSF = GetStringCSF(g_Str_TXT_OK, 0, &stru_82C090.onBridge, 134); /*0x5addba*/
+    StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, &stru_82C090.onBridge, 134));
     v4 = GetStringCSF((wchar_t *)&stru_82C090.spawnStatus, 0, &stru_82C090.onBridge, 134); /*0x5addc5*/
     Dialog::ShowMessageBox((int)v4, StringCSF, 0, 0, 0, v7); /*0x5addcf*/
     return 0; /*0x5addd4*/
   }
   else
   {
-    Debug::Log(); /*0x5addf6*/
+    this->Debug::Log(); /*0x5addf6*/
     return strlen((const char *)((char *)this + 4700)) != 0 ? (char *)this + 4700 : 0;
   }
 
@@ -505,12 +505,12 @@ void sub_55CF10()
         {
           NetworkEventQueueClass::WaitForResponse((NetworkEventQueueClass *)&stru_B052C0.__pad_0[16]); /*0x55cf53*/
           v2 = 480; /*0x55cf61*/
-                    Ticks = this->Timer::GetTicks();
+                    Ticks = ((Timer *)0)->GetTicks();
           while ( 1 ) /*0x55cf74*/
           {
             if ( Ticks != (Network *)-1 ) /*0x55cf79*/
             {
-                            v2 = this->Timer::GetTicks() - Ticks;
+                            v2 = ((Timer *)0)->GetTicks() - Ticks;
               if ( v3 >= 480 ) /*0x55cf8a*/
                 break; /*0x55cf8a*/
               v2 = 480 - v3; /*0x55cf8c*/

@@ -20,7 +20,7 @@ namespace gamemd {
 unsigned int * TabClass::initStripClass()
 {
 
-  *this = 0; /*0x4a2354*/
+  *(_DWORD *)this = (unsigned int *)(0);
   *((unsigned int *)this + 1) = 0; /*0x4a2356*/
   *((unsigned char *)this + 8) = 0; /*0x4a2359*/
   *((unsigned char *)this + 9) = 0; /*0x4a235c*/

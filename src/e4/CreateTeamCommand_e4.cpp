@@ -54,8 +54,8 @@ unsigned int * CreateTeamCommand::performAction_148()
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)MEMORY[0xA8B230] + 6728) << 8) + 128; /*0x537378*/
-  v4[0] = (*((__int16 *)MEMORY[0xA8B230] + 6727) << 8) + 128; /*0x53737d*/
+  v1 = (*((int16_t *)MEMORY[0xA8B230] + 6728) << 8) + 128; /*0x537378*/
+  v4[0] = (*((int16_t *)MEMORY[0xA8B230] + 6727) << 8) + 128; /*0x53737d*/
   v4[1] = v1; /*0x537386*/
   GroundHeight = 0; /*0x53738a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53739d*/
@@ -81,8 +81,8 @@ unsigned int * CreateTeamCommand::performAction_153()
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)MEMORY[0xA8B230] + 6730) << 8) + 128; /*0x537468*/
-  v4[0] = (*((__int16 *)MEMORY[0xA8B230] + 6729) << 8) + 128; /*0x53746d*/
+  v1 = (*((int16_t *)MEMORY[0xA8B230] + 6730) << 8) + 128; /*0x537468*/
+  v4[0] = (*((int16_t *)MEMORY[0xA8B230] + 6729) << 8) + 128; /*0x53746d*/
   v4[1] = v1; /*0x537476*/
   GroundHeight = 0; /*0x53747a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53748d*/
@@ -108,8 +108,8 @@ unsigned int * CreateTeamCommand::performAction_158()
   int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((__int16 *)MEMORY[0xA8B230] + 6732) << 8) + 128; /*0x537558*/
-  v4[0] = (*((__int16 *)MEMORY[0xA8B230] + 6731) << 8) + 128; /*0x53755d*/
+  v1 = (*((int16_t *)MEMORY[0xA8B230] + 6732) << 8) + 128; /*0x537558*/
+  v4[0] = (*((int16_t *)MEMORY[0xA8B230] + 6731) << 8) + 128; /*0x53755d*/
   v4[1] = v1; /*0x537566*/
   GroundHeight = 0; /*0x53756a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53757d*/

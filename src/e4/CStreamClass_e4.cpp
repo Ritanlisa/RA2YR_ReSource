@@ -422,7 +422,7 @@ VectorClass_flat * CStreamClass_16::QueryInterface(unsigned int * Block, char a2
 
   void *v3; // eax
 
-  v3 = (void *)*(Block + 1); /*0x4a4d93*/
+  v3 = (unsigned int)((void *)*(Block + 1));
   *Block = &vt_VectorClass_DDSURFACEDESC; /*0x4a4d96*/
   if ( v3 && *((unsigned char *)Block + 13) ) /*0x4a4da0*/
   {

@@ -52,7 +52,7 @@ AbstractClass * HouseTypeClass::Dtor()
   void *v3; // eax
   void *v4; // eax
   void *v5; // eax
-  int v7; // [esp+8h] [ebp-4h] BYREF
+  HouseTypeClass * v7;
 
   *(unsigned int *)this = &HouseTypeClass::`vftable'; /*0x5116a7*/
   *((unsigned int *)this + 1) = &HouseTypeClass::`vftable'; /*0x5116ad*/
@@ -70,7 +70,7 @@ AbstractClass * HouseTypeClass::Dtor()
     }
     while ( v2 < g_SuperWeaponTypeArray ); /*0x51170e*/
   }
-  v3 = *(void **)((char *)this + 392); /*0x511710*/
+  v3 = (unsigned int)(*(void **)((char *)this + 392));
   *((unsigned int *)this + 97) = &vt_VectorClass_AircraftTypeClass_const; /*0x51171a*/
   if ( v3 && *((unsigned char *)this + 401) ) /*0x511726*/
   {
@@ -1590,7 +1590,7 @@ char HouseTypeClass::readPowerPlants(TypeList_flat * aP1)
     if ( !*((unsigned char *)this + 13) && v3 ) /*0x5136d6*/
       return 0; /*0x5136d6*/
     v4 = *((unsigned int *)this + 5); /*0x5136d8*/
-    if ( v4 <= 0 || !(*(unsigned __int8 (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x5136e8*/
+    if ( v4 <= 0 || !(*(uint8_t (**)(unsigned int *, int, unsigned int))(*(unsigned int *)this + 32))(this, v3 + v4, 0) ) /*0x5136e8*/
       return 0; /*0x5136ef*/
   }
   v6 = *((unsigned int *)this + 4); /*0x5136f5*/

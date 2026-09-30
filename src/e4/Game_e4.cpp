@@ -37,7 +37,7 @@ void Game::initScenario()
 
   if ( *((unsigned int *)this + 24) ) /*0x430983*/
   {
-    v2 = this; /*0x43098d*/
+    v2 = (void **)(this);
     v3 = 8; /*0x43098f*/
     do /*0x4309b5*/
     {
@@ -116,7 +116,7 @@ int Game::SendCampaignOptions()
         *(unsigned int *)&v14[4 * i + 44],
         *(unsigned int *)&v14[4 * i + 76],
         *(unsigned int *)&v14[4 * i + 108]);
-      v8 = MEMORY[0xA8B2BC][i]; /*0x46d588*/
+      v8 = (int)(MEMORY[0xA8B2BC][i]);
       v9 = MEMORY[0xA8B27C][i]; /*0x46d58f*/
       *(unsigned int *)&v14[4 * i + 140] = MEMORY[0xA8B29C][i]; /*0x46d596*/
       v10 = MEMORY[0xA8B2DC][i]; /*0x46d59d*/
@@ -1231,7 +1231,7 @@ LABEL_39:
                         if ( dword_8B41B8 < unk_8B41B0 /*0x67fc3f*/
                           || (unk_8B41B5 || !unk_8B41B0)
                           && unk_8B41BC > 0
-                          && (*(unsigned __int8 (**)(int *, int, unsigned int))(unk_8B41A8 + 8))(
+                          && (*(uint8_t (**)(int *, int, unsigned int))(unk_8B41A8 + 8))(
                                &unk_8B41A8,
                                unk_8B41B0 + unk_8B41BC,
                                0) )
@@ -1255,7 +1255,7 @@ LABEL_39:
                     if ( MEMORY[0x8B40D8] < MEMORY[0x8B40D0] /*0x67fb7d*/
                       || (MEMORY[0x8B40D5] || !MEMORY[0x8B40D0])
                       && MEMORY[0x8B40DC] > 0
-                      && (*(unsigned __int8 (**)(int *, int, unsigned int))(MEMORY[0x8B40C8] + 8))(
+                      && (*(uint8_t (**)(int *, int, unsigned int))(MEMORY[0x8B40C8] + 8))(
                            &MEMORY[0x8B40C8],
                            MEMORY[0x8B40D0] + MEMORY[0x8B40DC],
                            0) )
@@ -1280,7 +1280,7 @@ LABEL_39:
               if ( (int)MEMORY[0xA8ECC8] < MEMORY[0xA8ECC0] /*0x67fa99*/
                 || (MEMORY[0xA8ECC5] || !MEMORY[0xA8ECC0])
                 && MEMORY[0xA8ECCC] > 0
-                && (*(unsigned __int8 (**)(ObjectClass **, int, unsigned int))&MEMORY[0xA8ECB8]->__pad_0[8])(
+                && (*(uint8_t (**)(ObjectClass **, int, unsigned int))&MEMORY[0xA8ECB8]->__pad_0[8])(
                      &MEMORY[0xA8ECB8],
                      MEMORY[0xA8ECC0] + MEMORY[0xA8ECCC],
                      0) )

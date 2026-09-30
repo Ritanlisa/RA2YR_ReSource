@@ -2123,7 +2123,7 @@ BOOL E4Recv_7325C0::sub_7325C0()
 
   return (*(int (**)(void *))(*(unsigned int *)this + 44))(this) != 6 /*0x7325f4*/
       && *(unsigned char *)((*(int (**)(void *))(*(unsigned int *)this + 132))(this) + 3516)
-      && (*(unsigned __int8 (**)(void *))(*(unsigned int *)this + 316))(this);
+      && (*(uint8_t (**)(void *))(*(unsigned int *)this + 316))(this);
 
 }
 } // namespace gamemd
