@@ -2087,7 +2087,7 @@ int E4Recv_5B4350::sub_5B4350()
 
 // 0x5B43E0
 namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_7()
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_7()
 {
   return 1; /*0x5b43e2*/
 }

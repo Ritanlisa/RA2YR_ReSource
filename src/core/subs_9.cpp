@@ -1509,7 +1509,7 @@ int ReturnZero7539B0()
 // IDA: void __cdecl sub_753A30()
 //   Vector::Clear((int)&dword_B2D93C);
 //   dword_B2D928 = (int)&Surface_Vtable;
-void ClearVector()
+void DynamicVector::ClearVector()
 {
 }
 

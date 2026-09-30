@@ -143,7 +143,7 @@ public:
     // wrapper: delegates to sub_752CB0 at 0x752CB0
     static int32_t FindIndex(const char* pName);
 
-    static void Play(const char* pName, int32_t unk1 = -1, int32_t unk2 = -1);
+     void Play(const char* pName, int32_t unk1 = -1, int32_t unk2 = -1);
     // IDA 0x752480
     // wrapper: delegates to UpdateThemeManager at 0x752480
     static void PlayIndex(int32_t index, int32_t unk1 = -1, int32_t unk2 = -1);

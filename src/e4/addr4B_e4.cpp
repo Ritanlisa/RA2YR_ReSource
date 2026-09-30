@@ -1124,7 +1124,7 @@ int sub_4B6990()
 
 // 0x4B69D0
 namespace gamemd {
-void nullsub_126()
+void ObjectClass::nullsub_126()
 {
   ; /*0x4b69d0*/
 }

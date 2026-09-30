@@ -52,7 +52,7 @@
 
 // 0x6406E0
 namespace gamemd {
-void unknown_libname_27()
+void ObjectClass::unknown_libname_27()
 {
   this->AbstractClass = 0; /*0x6406e2*/
   return &this->AbstractClass; /*0x6406e8*/

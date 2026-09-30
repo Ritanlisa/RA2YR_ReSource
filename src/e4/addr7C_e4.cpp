@@ -5211,21 +5211,21 @@ void time(__time32_t *const Time)
 }
 // 0x7CA9AF
 namespace gamemd {
-void j_Exception_Destructor()
+void ObjectClass::j_Exception_Destructor()
 {
   Exception::Destructor(); /*0x7ca9af*/
 }
 }
 // 0x7CAA00
 namespace gamemd {
-void j_Exception_Destructor_2()
+void ObjectClass::j_Exception_Destructor_2()
 {
   Exception::Destructor(); /*0x7caa00*/
 }
 }
 // 0x7CAC2F
 namespace gamemd {
-void j_Exception_Destructor_3()
+void ObjectClass::j_Exception_Destructor_3()
 {
   Exception::Destructor(); /*0x7cac2f*/
 }
@@ -13046,7 +13046,7 @@ __non_rtti_object * E4Recv_7CA971::__0__non_rtti_object_QAE_PBD_Z(char * a2)
 
 // 0x7CA993
 namespace gamemd {
-ObjectClass * sub_7CA993(void * Block, char a2)
+ObjectClass * ObjectClass::sub_7CA993(void * Block, char a2)
 {
   j_Exception_Destructor(Block); /*0x7ca996*/
   if ( (a2 & 1) != 0 ) /*0x7ca9a0*/
@@ -13077,7 +13077,7 @@ exception * E4Recv_7CA9CC::sub_7CA9CC(struct exception * a1)
 
 // 0x7CA9E4
 namespace gamemd {
-ObjectClass * sub_7CA9E4(void * Block, char a2)
+ObjectClass * ObjectClass::sub_7CA9E4(void * Block, char a2)
 {
   j_Exception_Destructor_2(Block); /*0x7ca9e7*/
   if ( (a2 & 1) != 0 ) /*0x7ca9f1*/
@@ -13183,7 +13183,7 @@ unsigned char * __RTDynamicCast(IUnknown * aP0, int arg4, struct TypeDescriptor 
 
 // 0x7CAC13
 namespace gamemd {
-ObjectClass * sub_7CAC13(void * Block, char a2)
+ObjectClass * ObjectClass::sub_7CAC13(void * Block, char a2)
 {
   j_Exception_Destructor_3(Block); /*0x7cac16*/
   if ( (a2 & 1) != 0 ) /*0x7cac20*/

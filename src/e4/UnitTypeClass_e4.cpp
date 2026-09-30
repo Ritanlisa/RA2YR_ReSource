@@ -158,7 +158,7 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
 }
 // 0x7474B0
 namespace gamemd {
-void UnitTypeClass_CreateUnit(void * a1, void * a2)
+void UnitTypeClass::UnitTypeClass_CreateUnit(void * a2)
 {
   int *v4; // eax
   int *v5; // esi
@@ -184,8 +184,8 @@ void UnitTypeClass_CreateUnit(void * a1, void * a2)
   IDA_BYTE1(v7) = 0; /*0x7474fe*/
   v13[2] = 0; /*0x747503*/
   v9 = v7 | v8; /*0x74750b*/
-  v10 = (a1[(unsigned int)(1])<< 8) + 128; /*0x747527*/
-  v13[0] = (*(void *)(((unsigned int)(void)*))(a1) << 8) + 128; /*0x74752e*/
+  v10 = (this[(unsigned int)(1])<< 8) + 128; /*0x747527*/
+  v13[0] = (*(void *)(((unsigned int)(void)*))(this) << 8) + 128; /*0x74752e*/
   v11 = *v5; /*0x747532*/
   v13[1] = v10; /*0x747534*/
   return v5->COMStub_54(v13, (uint8_t)(((v9 >> 7) + 1) >> 1)); /*0x74754d*/
@@ -193,7 +193,7 @@ void UnitTypeClass_CreateUnit(void * a1, void * a2)
 }
 // 0x747560
 namespace gamemd {
-void UnitTypeClass_ConstructUnit()
+void UnitTypeClass::UnitTypeClass_ConstructUnit()
 {
   int *v3; // eax
 

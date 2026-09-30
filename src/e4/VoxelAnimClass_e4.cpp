@@ -328,7 +328,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
 }
 // 0x749F30
 namespace gamemd {
-void VoxelAnimClass_Update(VoxelAnimClass *aP0)
+void VoxelAnimClass::VoxelAnimClass_Update()
 {
   VoxelAnimClass *v1; // ebx
   unsigned int *VoxelAnimClass_field_0x104; // eax
@@ -440,12 +440,12 @@ void VoxelAnimClass_Update(VoxelAnimClass *aP0)
   int v109; // [esp+70h] [ebp-Ch]
   int v110; // [esp+78h] [ebp-4h]
 
-  v1 = (unsigned int *)(aP0);
-  VoxelAnimClass_field_0x104 = aP0->VoxelAnimClass_field_0x104; /*0x749f38*/
-  smudgeTypeIndex = aP0; /*0x749f3f*/
+  v1 = (unsigned int *)(this);
+  VoxelAnimClass_field_0x104 = this->VoxelAnimClass_field_0x104; /*0x749f38*/
+  smudgeTypeIndex = this; /*0x749f3f*/
   if ( VoxelAnimClass_field_0x104[183] != -1 ) /*0x749f4a*/
   {
-    v3 = (unsigned int *)(*((int (**)(VoxelAnimClass *, int *))aP0->VoxelAnimClass_field_0x0 + 18))(aP0, &v101); /*0x749f5b*/
+    v3 = (unsigned int *)(*((int (**)(VoxelAnimClass *, int *))this->VoxelAnimClass_field_0x0 + 18))(this, &v101); /*0x749f5b*/
     StartAudioController(v3, (int **)&v1->VoxelAnimClass_field_0x114); /*0x749f62*/
   }
   if ( v1-((unsigned int *)(>__pad_110))[0] ) /*0x749f67*/

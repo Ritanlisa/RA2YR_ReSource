@@ -1018,7 +1018,7 @@ bool E4Recv_4528A0::sub_4528A0(int a2)
 
 // 0x454CE0
 namespace gamemd {
-void nullsub_5()
+void ObjectClass::nullsub_5()
 {
   ; /*0x454ce0*/
 }

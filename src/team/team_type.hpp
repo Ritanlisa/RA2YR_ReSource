@@ -55,7 +55,7 @@ public:
     void DestroyAllInstances();                              // 0x6F0A70
     void FlashAllInstances();                                // 0x6F1F30
     TeamClass* FindFirstInstance();                          // 0x6F1F70
-    static TeamTypeClass* FindByName(const char*);           // 0x6F0FC0
+     TeamTypeClass* FindByName(const char*);           // 0x6F0FC0
     int GetAuxField() const;                                 // 0x6F20C0
     int GetClassIdentifier();                                // 0x6F1C40
     int GetGroup() const;                                    // 0x6F1870

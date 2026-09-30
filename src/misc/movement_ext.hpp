@@ -63,7 +63,7 @@ public:
     // IDA 0x5B2970
     static float CalcVelocity(float speed, int32_t dir);  // 0x5B20F0
     // IDA 0x5B2970 area
-    static bool Check(FootClass* foot, const CoordStruct& dest);  // 0x5B2930
+     bool Check(FootClass* foot, const CoordStruct& dest);  // 0x5B2930
     // IDA 0x5B2970 area
     // design: static function, no direct binary match in IDA
     static void sub_5B2970();

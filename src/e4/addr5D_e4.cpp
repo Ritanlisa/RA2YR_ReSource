@@ -121,7 +121,7 @@ char ** E4Recv_5D0240::sub_5D0240(char ** a2, char a3)
 }
 // 0x5D0580
 namespace gamemd {
-void j_DeleteAndZero()
+void ObjectClass::j_DeleteAndZero()
 {
   DeleteAndZero(); /*0x5d0580*/
 }
@@ -2113,7 +2113,7 @@ void Network_SendPlayerOptions(unsigned int * a1, int a2)
 }
 // 0x5D0590
 namespace gamemd {
-void nullsub_24()
+void ObjectClass::nullsub_24()
 {
   int result; // eax
 

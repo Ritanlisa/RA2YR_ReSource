@@ -116,7 +116,7 @@ int Gap2Recv_402F60::ProcessAudioMixerFrame() {
 }
 // 0x403A80
 namespace gamemd { 
-int DumpAudioDeviceDebug(void* a1, char* a2, int a3) {
+int ObjectClass::DumpAudioDeviceDebug(char* a2, int a3) {
   void (__thiscall *v4)(char *); // edi
   int Next; // esi
   int v6; // ebp
@@ -1099,7 +1099,7 @@ int Gap2Recv_41AF80::SaveAircraftToINI() {
 }
 // 0x41C250
 namespace gamemd { 
-int CreateInstanceCOM(void* ppv, void* rclsid, int pUnkOuter, int dwClsContext) {
+int ObjectClass::CreateInstanceCOM(void* ppv, void* rclsid, int pUnkOuter, int dwClsContext) {
   int result; // eax
   HRESULT v6; // esi
 
@@ -3449,12 +3449,12 @@ char Gap2Recv_459CA0::ProcessDataCellClass() {
 }
 // 0x45A160
 namespace gamemd {
-int Release2COM(IUnknown** a1)
+int ObjectClass::Release2COM()
 {
   int result; // eax
 
-  result = (int)a1->AbstractClass; /*0x45a160*/
-  if ( a1->AbstractClass ) /*0x45a160*/
+  result = (int)this->AbstractClass; /*0x45a160*/
+  if ( this->AbstractClass ) /*0x45a160*/
     return (*(int (__stdcall **)(int))(*(unsigned int *)result + 8))(result); /*0x45a169*/
   return result; /*0x45a16c*/
 }
@@ -4045,7 +4045,7 @@ int Gap2Recv_486E30::Helper_486E30() {
 }
 // 0x48DEB0
 namespace gamemd {
-int COMStub_48DEB0(const char* a1)
+int ObjectClass::COMStub_48DEB0(const char* a1)
 {
   int v1; // eax
 
@@ -4668,7 +4668,7 @@ int Gap2Recv_4C54E0::ApplyEMPPulseEffect(int a2) {
 }
 // 0x4CB760
 namespace gamemd { 
-char* TerrainInitMap(char* Destination, char* Source, int a3) {
+char* ObjectClass::TerrainInitMap(char* Destination, char* Source, int a3) {
   char *v4; // eax
   unsigned int v5; // edx
   char *v6; // edi
@@ -4688,7 +4688,7 @@ char* TerrainInitMap(char* Destination, char* Source, int a3) {
 }
 // 0x4CB7C0
 namespace gamemd { 
-char* BuildResultPacket(char* Destination, char* Source, char* a3) {
+char* ObjectClass::BuildResultPacket(char* Destination, char* Source, char* a3) {
   unsigned int v4; // kr04_4
   char *v5; // eax
   uint16_t v6; // cx
@@ -4923,12 +4923,12 @@ int Gap2Recv_4CE4B0::ProcessDataHelper(void* a2, int a3) {
 }
 // 0x4D0430
 namespace gamemd {
-int Release3COM(IUnknown** a1)
+int ObjectClass::Release3COM()
 {
   int result; // eax
 
-  result = (int)a1->AbstractClass; /*0x4d0430*/
-  if ( a1->AbstractClass ) /*0x4d0430*/
+  result = (int)this->AbstractClass; /*0x4d0430*/
+  if ( this->AbstractClass ) /*0x4d0430*/
     return (*(int (__stdcall **)(int))(*(unsigned int *)result + 8))(result); /*0x4d0439*/
   return result; /*0x4d043c*/
 }
@@ -5113,7 +5113,7 @@ int Gap2Recv_4E3320::GetResourceIDHardcodedCSF() {
 }
 // 0x4E37D0
 namespace gamemd { 
-int GetResourceID2CSF(int rtti) {
+int ObjectClass::GetResourceID2CSF(int rtti) {
   if ( !rtti ) /*0x4e37d4*/
     return 1697; /*0x4e37d6*/
   if ( rtti == (ObjectClass *)1 ) /*0x4e37df*/
@@ -5133,7 +5133,7 @@ int GetResourceID2CSF(int rtti) {
 }
 // 0x4E41D0
 namespace gamemd { 
-int GetResourceIDCSF(int rtti) {
+int ObjectClass::GetResourceIDCSF(int rtti) {
   if ( !rtti ) /*0x4e41d4*/
     return 1698; /*0x4e41d6*/
   if ( rtti == (ObjectClass *)1 ) /*0x4e41df*/
@@ -5153,7 +5153,7 @@ int GetResourceIDCSF(int rtti) {
 }
 // 0x4E4E60
 namespace gamemd { 
-int GetResourceID3CSF(int rtti) {
+int ObjectClass::GetResourceID3CSF(int rtti) {
   if ( !rtti ) /*0x4e4e64*/
     return 1699; /*0x4e4e66*/
   if ( rtti == (ObjectClass *)1 ) /*0x4e4e6f*/
@@ -5173,7 +5173,7 @@ int GetResourceID3CSF(int rtti) {
 }
 // 0x4E5940
 namespace gamemd { 
-int GetResourceID4CSF(int rtti) {
+int ObjectClass::GetResourceID4CSF(int rtti) {
   if ( !rtti ) /*0x4e5944*/
     return 1901; /*0x4e5946*/
   if ( rtti == (ObjectClass *)1 ) /*0x4e594f*/
@@ -7095,7 +7095,7 @@ int Gap2Recv_53B780::ApplyChronoScreenColorShift() {
 }
 // 0x53E4F0
 namespace gamemd { 
-bool WinMain_Helper_53E4F0(char* FileName) {
+bool ObjectClass::WinMain_Helper_53E4F0(char* FileName) {
   if ( !dword_AA0448 || dword_AA0468 ) /*0x53e503*/
     return 0; /*0x53e54b*/
   EnterCriticalSection(&unk_AA0418); /*0x53e50a*/
@@ -7108,7 +7108,7 @@ bool WinMain_Helper_53E4F0(char* FileName) {
 }
 // 0x53E550
 namespace gamemd { 
-bool WinMain_Write(char* FileName) {
+bool ObjectClass::WinMain_Write(char* FileName) {
   signed int SampleSize; // eax
 
   if ( !dword_AA0448 || dword_AA0468 ) /*0x53e567*/
@@ -9454,7 +9454,7 @@ int Gap2Recv_582D30::SmallFunc_582D30(int a2) {
 }
 // 0x583C60
 namespace gamemd { 
-int CollectMatchingTileCells(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+int ObjectClass::CollectMatchingTileCells(int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
   int result; // eax
   int v10; // esi
   int16_t v11; // dx
@@ -9515,8 +9515,8 @@ int CollectMatchingTileCells(void* a1, int a2, int a3, int a4, int a5, int a6, i
       {
         while ( 1 ) /*0x583cab*/
         {
-          v11 = a1[1] + v10; /*0x583cab*/
-          IDA_LOWORD(v43) = *a1 + result; /*0x583caf*/
+          v11 = this[1] + v10; /*0x583cab*/
+          IDA_LOWORD(v43) = *this + result; /*0x583caf*/
           IDA_HIWORD(v43) = v11; /*0x583cbb*/
           *(unsigned int *)v38 = v43; /*0x583cce*/
           if ( MapClass::GetTileIndex(v41, v38, a4, 0) == a5 ) /*0x583cde*/
@@ -9572,8 +9572,8 @@ int CollectMatchingTileCells(void* a1, int a2, int a3, int a4, int a5, int a6, i
           {
             v18 = (TileVector *)a6; /*0x583d9d*/
           }
-          v23 = *a1 - v40; /*0x583dc7*/
-          IDA_HIWORD(v44) = a1[1] + v10; /*0x583dd1*/
+          v23 = *this - v40; /*0x583dc7*/
+          IDA_HIWORD(v44) = this[1] + v10; /*0x583dd1*/
           IDA_LOWORD(v44) = v23; /*0x583dda*/
           *(unsigned int *)v38 = v44; /*0x583de9*/
           if ( MapClass::GetTileIndex(v41, v38, a4, 0) == a5 ) /*0x583df9*/
@@ -9632,8 +9632,8 @@ int CollectMatchingTileCells(void* a1, int a2, int a3, int a4, int a5, int a6, i
             v34 = v42[0]; /*0x583ecb*/
             if ( v10 != *(unsigned int *)v42 ) /*0x583ed1*/
             {
-              v35 = a1[1] + v40; /*0x583eee*/
-              IDA_LOWORD(v45) = *a1 + v10; /*0x583ef7*/
+              v35 = this[1] + v40; /*0x583eee*/
+              IDA_LOWORD(v45) = *this + v10; /*0x583ef7*/
               IDA_HIWORD(v45) = v35; /*0x583efc*/
               *(unsigned int *)v38 = v45; /*0x583f0a*/
               if ( MapClass::GetTileIndex(v41, v38, a4, 0) == a5 ) /*0x583f1a*/
@@ -9646,7 +9646,7 @@ int CollectMatchingTileCells(void* a1, int a2, int a3, int a4, int a5, int a6, i
                   TileVector::PushBack(v18, v38); /*0x583f5d*/
               }
               v36 = CellStruct::Set((CellStruct *)&v48, v10, v34); /*0x583f68*/
-              *(unsigned int *)v38 = *CellStruct::Add((CellStruct *)a1, &v49, v36); /*0x583f91*/
+              *(unsigned int *)v38 = *CellStruct::Add((CellStruct *)this, &v49, v36); /*0x583f91*/
               if ( MapClass::GetTileIndex(v41, v38, a4, 0) == a5 ) /*0x583fa1*/
               {
                 v37 = Rect::Set(&v53, v38[0], v38[1], a7, a8); /*0x583fc6*/
@@ -13727,7 +13727,7 @@ void Gap2Recv_5B6EB0::UI_Setup(void* Format, unsigned int a3, int a4) {
 }
 // 0x5C1300
 namespace gamemd { 
-int ReadMPMapsINI(char* Source) {
+int ObjectClass::ReadMPMapsINI(char* Source) {
   int Int_Overwrite; // edi
   int i; // esi
   INIClass v4; // [esp+4h] [ebp-CCh] BYREF
@@ -23963,7 +23963,7 @@ void* Gap2Recv_69D870::ParseAndApplyAlliances_Parse(int a2, int a3) {
 }
 // 0x69E430
 namespace gamemd { 
-int LoadSHPFile(int lpBuffer, char* Source) {
+int ObjectClass::LoadSHPFile(int lpBuffer, char* Source) {
   char *v3; // eax
   CCFileClass v5; // [esp+8h] [ebp-6Ch] BYREF
   int v6[3]; // [esp+60h] [ebp-14h] BYREF
@@ -27522,7 +27522,7 @@ char Gap2Recv_6F25E0::Team_Helper_6F25E0(void* a2) {
 }
 // 0x6F26E0
 namespace gamemd { 
-char* Team_Helper_6F26E0(char* Block, char a2) {
+char* ObjectClass::Team_Helper_6F26E0(char* Block, char a2) {
   char *v2; // esi
 
   v2 = Block; /*0x6f26e1*/
@@ -27736,7 +27736,7 @@ int Gap2Recv_6FD800::SpreadRadiationAreaEffect(short a2) {
 }
 // 0x706BD0
 namespace gamemd { 
-int QueueTechnoVoiceLine(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11) {
+int ObjectClass::QueueTechnoVoiceLine(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11) {
   int result; // eax
   int v14; // ebx
   size_t v15; // ecx
@@ -27769,13 +27769,13 @@ int QueueTechnoVoiceLine(void* a1, int a2, int a3, int a4, int a5, int a6, int a
   if ( result ) /*0x706be5*/
     return result; /*0x706be5*/
   result = (*(int (**)(TechnoClass *))(this->vtable0 + 132))(this); /*0x706bed*/
-  if ( *(unsigned char *)(result + 3480) || **a1 ) /*0x706c07*/
+  if ( *(unsigned char *)(result + 3480) || **this ) /*0x706c07*/
     return result; /*0x706c0a*/
   v14 = a3; /*0x706c10*/
   if ( a3 == -1 ) /*0x706c1b*/
   {
   LABEL_21:
-    result = (int)RenderTechnoOverlaySHP(this, v39, (int)a1, a7, a6, (unsigned int *)a5, a2, 8193, v14 != -1, a9, a10, a11); /*0x706ced*/
+    result = (int)RenderTechnoOverlaySHP(this, v39, (int)this, a7, a6, (unsigned int *)a5, a2, 8193, v14 != -1, a9, a10, a11); /*0x706ced*/
     qmemcpy(v38, (const void *)result, sizeof(v38)); /*0x706d3a*/
     if ( v14 == -1 ) /*0x706d3c*/
       return result; /*0x706d3c*/
@@ -27794,7 +27794,7 @@ int QueueTechnoVoiceLine(void* a1, int a2, int a3, int a4, int a5, int a6, int a
       v32 = *(unsigned int *)(a4 + 4) + 1; /*0x706e12*/
       *(unsigned char *)(a4 + 12) = 0; /*0x706e13*/
       *(unsigned int *)(a4 + 4) = v32; /*0x706e17*/
-      return QueueTechnoVoiceLine(v31, a1, a2, v14, a4, a5, a6, a7, 0, 0, 0, 0); /*0x706ebf*/
+      return QueueTechnoVoiceLine(v31, this, a2, v14, a4, a5, a6, a7, 0, 0, 0, 0); /*0x706ebf*/
     }
     if ( v24 ) /*0x706d76*/
     {
@@ -27852,7 +27852,7 @@ int QueueTechnoVoiceLine(void* a1, int a2, int a3, int a4, int a5, int a6, int a
       *(unsigned char *)(a4 + 12) = 0; /*0x706e93*/
       *(unsigned int *)(a4 + 4) = v35; /*0x706e97*/
     }
-    return QueueTechnoVoiceLine(v31, a1, a2, v14, a4, a5, a6, a7, 0, 0, 0, 0); /*0x706e97*/
+    return QueueTechnoVoiceLine(v31, this, a2, v14, a4, a5, a6, a7, 0, 0, 0, 0); /*0x706e97*/
   }
   if ( !a4 || *(unsigned char *)((*(int (**)(TechnoClass *))(this->vtable0 + 132))(this) + 3519) ) /*0x706c33*/
   {
@@ -27898,7 +27898,7 @@ int QueueTechnoVoiceLine(void* a1, int a2, int a3, int a4, int a5, int a6, int a
 }
 // 0x707280
 namespace gamemd { 
-void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4, void* a5, int a6, int a7, int a8, int a9, int a10, int a11) {
+void* ObjectClass::RenderTechnoOverlaySHP(int a2, int a3, int a4, void* a5, int a6, int a7, int a8, int a9, int a10, int a11) {
   float *v13; // eax
   int (**vtable0)(ObjectClass *); // edx
   float *v15; // eax
@@ -27963,8 +27963,8 @@ void* RenderTechnoOverlaySHP(void* a1, int a2, int a3, int a4, void* a5, int a6,
   }
   if ( *(unsigned char *)((*((int (**)(ObjectClass *))this->AbstractClass + 33))(this) + 3500) ) /*0x707441*/
     dword_B43180 = 1; /*0x70744b*/
-  qmemcpy(a1, v26, 0x18u); /*0x707467*/
-  return a1; /*0x707469*/
+  qmemcpy(this, v26, 0x18u); /*0x707467*/
+  return this; /*0x707469*/
 }
 }
 // 0x7087C0
@@ -34001,11 +34001,11 @@ void* Gap2Recv_778710::LoadAccountInfoWOL() {
 }
 // 0x779690
 namespace gamemd { 
-void* LoadAccountInfoWOL_Load(void* a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, void* a13, void* a14) {
+void* ReferenceCounted::LoadAccountInfoWOL_Load(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, void* a13, void* a14) {
   this->ptr_4 = 0; /*0x779695*/
   this->ptr_8 = 0; /*0x779698*/
   *(unsigned int *)this = &(void*)(void*)&ReferenceCounted_vftable; /*0x7796a3*/
-  String::AssignFromPtr((char **)&this->u32_C, a1); /*0x7796a9*/
+  String::AssignFromPtr((char **)&this->u32_C, this); /*0x7796a9*/
   this->ptr_4 = a2; /*0x7796ba*/
   this->q018 = a4; /*0x7796c1*/
   this->u32_14 = a3; /*0x7796c8*/

@@ -1921,7 +1921,7 @@ void unknown_libname_18()
 }
 // 0x4E9240
 namespace gamemd {
-AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3)
+AbstractClass * * VectorClass::HouseClass__vt_02_(int a2, unsigned int * a3)
 {
   unsigned int *v4; // edi
   int v6; // ecx
@@ -1969,7 +1969,7 @@ AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3)
 }
 // 0x4E9E20
 namespace gamemd {
-AbstractClass * * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
+AbstractClass * * _VectorClass_PAVParticleClass::ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
   unsigned int *v4; // edi
   int m_8; // ecx
@@ -2017,7 +2017,7 @@ AbstractClass * * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 }
 // 0x4E9ED0
 namespace gamemd {
-void ParticleSystemClass__vt_03_()
+void _VectorClass_PAVParticleClass::ParticleSystemClass__vt_03_()
 {
   if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4e9edd*/
   {

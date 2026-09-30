@@ -1280,7 +1280,7 @@ int E4Recv_557380::sub_557380(int a2)
 }
 // 0x557B10
 namespace gamemd {
-ControlClass * * CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
+ControlClass * * ListClass::CheckListClass__vt_19_(char a2, int a3, unsigned int * a4)
 {
   char result; // al
   int v6; // edi

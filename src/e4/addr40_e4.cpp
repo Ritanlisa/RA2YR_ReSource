@@ -3037,7 +3037,7 @@ int sub_4011B0(unsigned int * a1, int a2)
 
 // 0x401580
 namespace gamemd {
-void sub_401580(void ** Block)
+void ObjectClass::sub_401580(void ** Block)
 {
   void (***v2)(unsigned int, int); // ecx
   void (***v3)(unsigned int, int); // ecx
@@ -3135,7 +3135,7 @@ int * sub_4019E0(int a1, int a2, int a3, int a4)
 
 // 0x401B00
 namespace gamemd {
-void sub_401B00(int * Block)
+void ObjectClass::sub_401B00(int * Block)
 {
   Queue *v2; // ecx
   Queue *v3; // esi
@@ -3185,7 +3185,7 @@ void sub_401B00(int * Block)
 
 // 0x401FB0
 namespace gamemd {
-void sub_401FB0(unsigned int* a1)
+void ObjectClass::sub_401FB0(unsigned int* a1)
 {
   return (int)a1->?; /*0x401fb3*/
 }
@@ -3193,7 +3193,7 @@ void sub_401FB0(unsigned int* a1)
 
 // 0x401FC0
 namespace gamemd {
-int sub_401FC0(int * Block)
+int ObjectClass::sub_401FC0(int * Block)
 {
   LinkedList *i; // esi
   ObjectClass *v4; // [esp+0h] [ebp-Ch]
@@ -3215,21 +3215,21 @@ int sub_401FC0(int * Block)
 
 // 0x402020
 namespace gamemd {
-void sub_402020(unsigned int* a1)
+void ObjectClass::sub_402020(unsigned int* a1)
 {
   return a1->?; /*0x402023*/
 }
 }
 // 0x402430
 namespace gamemd {
-void sub_402430(unsigned int* a1)
+void ObjectClass::sub_402430(unsigned int* a1)
 {
   return a1->location[2] & 8; /*0x402439*/
 }
 }
 // 0x402440
 namespace gamemd {
-void * sub_402440(int a1, int a2)
+void * ObjectClass::sub_402440(int a1, int a2)
 {
   int v1; // edx
   int v2; // ecx
@@ -3432,14 +3432,14 @@ int sub_4036F0(int a1, int a2)
 
 // 0x403810
 namespace gamemd {
-void sub_403810(int (**a1)(void))
+void ObjectClass::sub_403810(int (**a1)(void))
 {
   return (*((int (**)(void))this + 67))();
 }
 }
 // 0x4038E0
 namespace gamemd {
-void sub_4038E0(unsigned long long* a1, unsigned long long a2)
+void ObjectClass::sub_4038E0(unsigned long long* a1, unsigned long long a2)
 {
   return (uint64_t)(a2 - *(unsigned long long *)&a1->owningHouseIndex) >= *(unsigned long long *)&a1->AbstractClass; /*0x403903*/
 }
@@ -3775,7 +3775,7 @@ int E4Recv_405430::sub_405430()
 
 // 0x405490
 namespace gamemd {
-int sub_405490()
+int ObjectClass::sub_405490()
 {
   return this->u32_158; /*0x405496*/
 }
@@ -4418,7 +4418,7 @@ int EndBufferMixer(VolumeStruct* volume, int scaledVolume)
 
 // 0x407160
 namespace gamemd {
-int sub_407160(VolumeStruct* volume)
+int ObjectClass::sub_407160(VolumeStruct* volume)
 {
   int result; // eax
 
@@ -4847,7 +4847,7 @@ int sub_408410()
 
 // 0x408460
 namespace gamemd {
-unsigned int * sub_408460(size_t Size)
+unsigned int * ObjectClass::sub_408460(size_t Size)
 {
   DListNode *v2; // esi
   int v3; // eax
@@ -5545,7 +5545,7 @@ int unknown_libname_2()
 
 // 0x40B010
 namespace gamemd {
-void ** sub_40B010(void ** Block, char a2)
+void ** ObjectClass::sub_40B010(void ** Block, char a2)
 {
   int v3; // eax
   char *v4; // ebp
@@ -6187,7 +6187,7 @@ void nullsub_56()
 
 // 0x40D300
 namespace gamemd {
-void nullsub_57()
+void ObjectClass::nullsub_57()
 {
   ; /*0x40d300*/
 }
@@ -7028,7 +7028,7 @@ GenericNode * GenericNode::sub_40E390(char a2)
 }
 // 0x40E4A0
 namespace gamemd {
-ObjectClass * sub_40E4A0(void ** Block, char a2)
+ObjectClass * ObjectClass::sub_40E4A0(void ** Block, char a2)
 {
   HashTable::DestroyHashTableINIClass((INIClass *)Block); /*0x40e4a3*/
   if ( (a2 & 1) != 0 ) /*0x40e4ad*/

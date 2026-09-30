@@ -189,7 +189,7 @@ public:
     void CellIteratorReset();
     CellClass* CellIteratorNext();
 
-    static DamageAreaResult DamageArea(const CoordStruct& coords, int damage, TechnoClass* source, WarheadTypeClass* wh, bool affects_tiberium, HouseClass* source_house);
+     DamageAreaResult DamageArea(const CoordStruct& coords, int damage, TechnoClass* source, WarheadTypeClass* wh, bool affects_tiberium, HouseClass* source_house);
     // unmatched: no callgraph reference and no git history record
     static AnimTypeClass* SelectDamageAnimation(int damage, WarheadTypeClass* wh, LandType land_type, const CoordStruct& coords);
     // unmatched: no callgraph reference and no git history record

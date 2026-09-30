@@ -440,7 +440,7 @@ int sub_710AD0()
 
 // 0x7179C0
 namespace gamemd {
-void nullsub_86()
+void ObjectClass::nullsub_86()
 {
   ; /*0x7179c0*/
 }

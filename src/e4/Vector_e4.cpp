@@ -11,12 +11,12 @@
 
 // 0x4C1B50
 namespace gamemd {
-void Math_Vector2D_Magnitude(Vector *aP0)
+void Vector::Math_Vector2D_Magnitude()
 {
   double result; // st7
 
-  result = (double)aP0->Vector_field_0x4; /*0x4c1b50*/
-  Math::Sqrt((double)*(int *)aP0->__pad_0 * (double)*(int *)aP0->__pad_0 + result * result); /*0x4c1b69*/
+  result = (double)this->Vector_field_0x4; /*0x4c1b50*/
+  Math::Sqrt((double)*(int *)this->__pad_0 * (double)*(int *)this->__pad_0 + result * result); /*0x4c1b69*/
   Math::RoundToInt(result); /*0x4c1b71*/
   return result; /*0x4c1b6e*/
 }

@@ -72,7 +72,7 @@ public:
 
     // unmatched: no callgraph reference and no git history record
     static bool IsBuildCat5(AbstractType abstractID, int idx);
-    static TechnoTypeClass* GetTechnoType(AbstractType abstractID, int idx);
+     TechnoTypeClass* GetTechnoType(AbstractType abstractID, int idx);
 
     ObjectTypeClass() = default;
     ObjectTypeClass(const char* pID) noexcept;  // 0x5F7320 (as Construct)

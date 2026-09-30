@@ -8917,19 +8917,19 @@ void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_Ce
 
 // 0x4E0990
 namespace gamemd {
-void VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize(VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass *aP0)
+void _VectorClass_V_DistributionObject_PAVCellClass_DiscreteDistributionClass_VCellClass::VectorClass_DistributionObject_ptr_CellClass___DiscreteDistributionClass_CellClass_GetSize()
 {
   int result; // eax
   int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !IDA_LOBYTE(aP0->m_C) ) /*0x4e0990*/
+  if ( !IDA_LOBYTE(this->m_C) ) /*0x4e0990*/
     return 0; /*0x4e099e*/
-  m_8 = aP0->m_8; /*0x4e09a4*/
+  m_8 = this->m_8; /*0x4e09a4*/
   result = 0; /*0x4e09a7*/
   if ( m_8 <= 0 ) /*0x4e09ab*/
     return -1; /*0x4e09cc*/
-  for ( i = *(unsigned int **)&aP0->m_1[3]; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x4e09b1*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x4e09b1*/
   {
     if ( ++result >= m_8 ) /*0x4e09ca*/
       return -1; /*0x4e09ca*/

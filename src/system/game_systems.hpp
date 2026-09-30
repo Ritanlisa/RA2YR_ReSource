@@ -60,9 +60,9 @@ public:
     // IDA 0x48B2A0 area
     static bool CheckDuplicate(const char* name);  // 0x5E9560
     // IDA 0x48B2A0 area
-    static int32_t GetField(const char* name);  // 0x69ACC0
+     int32_t GetField(const char* name);  // 0x69ACC0
     // IDA 0x48B2A0 area
-    static void SetDescriptionWStr(const wchar_t* desc);  // 0x69ACD0
+     void SetDescriptionWStr(const wchar_t* desc);  // 0x69ACD0
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static const wchar_t* GetDescription();
@@ -86,7 +86,7 @@ class GameSettings
 {
 public:
     // IDA 0x5FB050
-    static void Read();  // 0x5FA620
+     void Read();  // 0x5FA620
     // IDA 0x5FB050 area
     // design: static function, no direct binary match in IDA
     static void sub_5FB050();
@@ -127,9 +127,9 @@ class SyncDelay
 {
 public:
     // IDA 0x48B2A0 area
-    static void Start(int32_t frames);  // 0x55E160
+     void Start(int32_t frames);  // 0x55E160
     // IDA 0x48B2A0 area
-    static bool Check();  // 0x55F6C0
+     bool Check();  // 0x55F6C0
 
     static int32_t  s_DelayFrames;  // 0x00
     static int32_t  s_CurrentFrame; // 0x04

@@ -2743,7 +2743,7 @@ void * MapClass::ClearShroud(HouseClass * v3)
 } // namespace gamemd
 // 0x578390
 namespace gamemd {
-void MapClass_IsRectInBounds()
+void MapClass::MapClass_IsRectInBounds()
 {
   char v3; // bl
   unsigned short *v4; // esi

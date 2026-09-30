@@ -2765,7 +2765,7 @@ char sub_4C9160()
 
 // 0x4C91B0
 namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_5()
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_5()
 {
   return 1; /*0x4c91b2*/
 }

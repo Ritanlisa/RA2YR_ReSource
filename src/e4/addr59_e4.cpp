@@ -1234,7 +1234,7 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
 
 // 0x597D40
 namespace gamemd {
-int j_Options_GetValue(const char ** dwNewLong)
+int j_Options::j_Options_GetValue(const char ** dwNewLong)
 {
   return Options::PrepareSaveLoadDlg((Options *)dwNewLong);
 }

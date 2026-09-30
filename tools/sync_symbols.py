@@ -390,15 +390,21 @@ def sync_functions_json(cpp_entries, json_data, json_index, dry_run=False):
         if normalize_name(cpp_name) == normalize_name(json_name):
             continue
 
-        if not dry_run:
-            json_entry['name'] = cpp_name
-            # Keep _by_name consistent: drop old name→addr, add new name→addr.
-            old_bucket = by_name.get(json_name)
-            if isinstance(old_bucket, dict):
-                old_bucket.get('symbols', {}).pop(orig_key, None)
-                if not old_bucket.get('symbols'):
-                    by_name.pop(json_name, None)
-            by_name.setdefault(cpp_name, {'symbols': {}})['symbols'][orig_key] = 'function'
+            if not dry_run:
+                json_entry['name'] = cpp_name
+                # Keep _by_name consistent: drop old name→addr, add new name→addr.
+                old_bucket = by_name.get(json_name)
+                if isinstance(old_bucket, dict):
+                    old_bucket.get('symbols', {}).pop(orig_key, None)
+                    if not old_bucket.get('symbols'):
+                        by_name.pop(json_name, None)
+                # legacy entries store name→addr as a plain string; normalize
+                # to the dict bucket form before appending (G38: A1 renames
+                # hit legacy string buckets and crashed the pre-build step)
+                cur = by_name.get(cpp_name)
+                if isinstance(cur, str):
+                    by_name[cpp_name] = {'symbols': {cur: 'function'}}
+                by_name.setdefault(cpp_name, {'symbols': {}})['symbols'][orig_key] = 'function'
 
         changes.append({
             'addr': addr,

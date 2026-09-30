@@ -94,7 +94,7 @@ class Voice
 {
 public:
     // IDA 0x407150 area
-    static void Stop(int32_t channel);  // 0x4025B0
+     void Stop(int32_t channel);  // 0x4025B0
     // IDA 0x407150 area
     static void DetachChannel(AudioController* ctrl);  // 0x404140
 
@@ -109,7 +109,7 @@ class Mixer
 {
 public:
     // IDA 0x407150 area
-    static void ReleaseChannel(int32_t channel);  // 0x406060
+     void ReleaseChannel(int32_t channel);  // 0x406060
     // IDA 0x407150 area
     static void RequestAllBuffers();  // 0x4083D0
 
@@ -168,11 +168,11 @@ class Theme
 {
 public:
     // IDA 0x48B2A0 area
-    static void QueueSong(int32_t index);  // 0x720B20
+     void QueueSong(int32_t index);  // 0x720B20
     // IDA 0x48B2A0 area
-    static void Stop();  // 0x720EA0
+     void Stop();  // 0x720EA0
     // IDA 0x48B2A0 area
-    static bool IsPlaying();  // 0x720FD0
+     bool IsPlaying();  // 0x720FD0
 
     static int32_t  s_CurrentTheme;  // 0x00
     static bool     s_IsPlaying;     // 0x04
@@ -186,9 +186,9 @@ class ThemeManager
 {
 public:
     // IDA 0x48B2A0 area
-    static void ProcessCallback();  // 0x4080F0
+     void ProcessCallback();  // 0x4080F0
     // IDA 0x48B2A0 area
-    static void Cleanup();  // 0x720770
+     void Cleanup();  // 0x720770
 
     static int32_t  s_CallbackState; // 0x00
 };

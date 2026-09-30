@@ -487,7 +487,7 @@ void InitGlobal()
 // IDA: 0x403D50  proposal: InitDegToRad
 // IDA: void sub_403D50()
 //   dbl_87E260 = 0.0174532925199433 * 45.0;
-void InitDegToRad()
+void Math::InitDegToRad()
 {
 }
 

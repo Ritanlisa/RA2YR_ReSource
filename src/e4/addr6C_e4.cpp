@@ -2530,7 +2530,7 @@ unsigned int * E4Recv_6C9AC0::sub_6C9AC0()
 
 // 0x6C9F00
 namespace gamemd {
-void nullsub_40()
+void ObjectClass::nullsub_40()
 {
   ; /*0x6c9f00*/
 }
@@ -2780,7 +2780,7 @@ int sub_6CAE00()
 
 // 0x6CC070
 namespace gamemd {
-void nullsub_231()
+void ObjectClass::nullsub_231()
 {
   ; /*0x6cc070*/
 }

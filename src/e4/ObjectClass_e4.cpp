@@ -744,7 +744,7 @@ void* * ObjectClass::FindPlacementCell(FootClass * aP0, int aP1, IUnknown ** a2,
 
 // 0x4DE620
 namespace gamemd {
-void ObjectClass_IsHeightAboveThreshold_0()
+void ObjectClass::ObjectClass_IsHeightAboveThreshold_0()
 {
   return ObjectClass::IsHeightAboveThreshold();
 }
@@ -878,14 +878,14 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
 
 // 0x5228B0
 namespace gamemd {
-void ObjectClass_GetTypeVt40_0()
+void ObjectClass::ObjectClass_GetTypeVt40_0()
 {
   return TechnoClass::GetTypeVt40();
 }
 }
 // 0x5228C0
 namespace gamemd {
-void ObjectClass_GetTypeVt41_0()
+void ObjectClass::ObjectClass_GetTypeVt41_0()
 {
   return ObjectClass::GetTypeVt41();
 }
@@ -2080,14 +2080,14 @@ void* ObjectClass::FindPlacementPosition(int a2, int a3, int a4, int a5)
 
 // 0x746CB0
 namespace gamemd {
-void ObjectClass_GetTypeVt40_2()
+void ObjectClass::ObjectClass_GetTypeVt40_2()
 {
   return TechnoClass::GetTypeVt40();
 }
 }
 // 0x746CC0
 namespace gamemd {
-void ObjectClass_GetTypeVt41_2()
+void ObjectClass::ObjectClass_GetTypeVt41_2()
 {
   return ObjectClass::GetTypeVt41();
 }

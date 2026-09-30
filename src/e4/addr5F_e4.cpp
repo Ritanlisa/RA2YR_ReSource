@@ -1063,7 +1063,7 @@ int E4Recv_5F1F20::sub_5F1F20()
 
 // 0x5F3340
 namespace gamemd {
-void nullsub_28()
+void ObjectClass::nullsub_28()
 {
   int result; // eax
 
@@ -1582,7 +1582,7 @@ int sub_5FA2C0()
 
 // 0x5FA430
 namespace gamemd {
-void nullsub_29()
+void ObjectClass::nullsub_29()
 {
   ; /*0x5fa430*/
 }

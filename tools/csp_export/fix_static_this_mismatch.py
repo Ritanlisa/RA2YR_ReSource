@@ -17,7 +17,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-E4C = ROOT / 'src' / 'e4' / 'classes'
+HDRS = list((ROOT / "src").rglob("*.hpp")) + list((ROOT / "src").rglob("*.h"))
 APPLY = '--apply' in sys.argv
 LOG = next((a for a in sys.argv[1:] if not a.startswith('--')), None)
 if not LOG:
@@ -33,8 +33,9 @@ pairs = set(ERR.findall(TXT))
 print('C2671 (cls, mth) pairs:', len(pairs))
 
 n = 0
-for p in sorted(E4C.glob('*_e4.hpp')):
-    if p.name.startswith('_'):
+for p in HDRS:
+    s2 = str(p).replace(chr(92), '/').lower()
+    if '/_generated/' in s2 or '/decompile-results/' in s2:
         continue
     txt = p.read_text(encoding='utf-8', errors='replace')
     orig = txt

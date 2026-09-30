@@ -1466,7 +1466,7 @@ void sub_685120()
 }
 // 0x698CB0
 namespace gamemd {
-CellStruct * * Game_DumpMultiplayerGameInfo()
+CellStruct * * Game::Game_DumpMultiplayerGameInfo()
 {
   int v2; // eax
   FILE *v3; // esi

@@ -10,7 +10,7 @@
 
 namespace gamemd {
 namespace Math {
-int RoundToInt(double value) {
+int unknown::RoundToInt(double value) {
     return (int)(value >= 0.0 ? value + 0.5 : value - 0.5);
 }
 }

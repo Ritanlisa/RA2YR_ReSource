@@ -40,7 +40,7 @@
 
 // 0x472A80
 namespace gamemd {
-void CaptureManagerClass__vt_03_()
+void _DynamicVectorClass_PAUControlNode::CaptureManagerClass__vt_03_()
 {
   void *v2; // eax
 
@@ -57,7 +57,7 @@ void CaptureManagerClass__vt_03_()
 }
 // 0x472AD0
 namespace gamemd {
-void CaptureManagerClass__vt_06_(int a2)
+void _VectorClass_PAUControlNode::CaptureManagerClass__vt_06_(int a2)
 {
   return *(unsigned int *, unsigned int a4)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x472ada*/
 }

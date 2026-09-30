@@ -3336,7 +3336,7 @@ HRSRC FindResource(unsigned short a1, const CHAR * a2)
 
 // 0x4A3BF0
 namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_3()
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_3()
 {
   return 1; /*0x4a3bf2*/
 }

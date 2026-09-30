@@ -13,9 +13,9 @@
 
 // 0x643E70
 namespace gamemd {
-void VtableStub_643E70(VtableStub *aP0)
+void VtableStub::VtableStub_643E70()
 {
-  *(&aP0->q0085) = 0; /*0x643e70*/
+  *(&this->q0085) = 0; /*0x643e70*/
 }
 }
 // 0x65D690

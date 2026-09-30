@@ -440,7 +440,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
 } // namespace gamemd
 // 0x6D3D10
 namespace gamemd {
-AbstractClass * * TacticalMap_Render()
+AbstractClass * * TacticalMap::TacticalMap_Render()
 {
 // (no pseudocode — ASM-only function)
 } // namespace gamemd

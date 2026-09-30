@@ -243,7 +243,7 @@ public:
     void ddtor();  // 0x537A60
     int32_t Release();  // 0x537A70
     static void BuildBar();
-    static void AddAction(CommandClass* cmd);
+     void AddAction(CommandClass* cmd);
 
     int32_t     m_RefCount;     // 0x00
     static DynamicVectorClass<CommandClass*>* Array; // data: 0x87F658

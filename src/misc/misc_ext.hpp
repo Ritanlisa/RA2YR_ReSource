@@ -30,7 +30,7 @@ public:
     // design: static function, no direct binary match in IDA
     static void sub_452820();
     // IDA 0x452820 area
-    static void ApplyDamage(ObjectClass* target, int32_t damage, HouseClass* owner);  // 0x4690B0
+     void ApplyDamage(ObjectClass* target, int32_t damage, HouseClass* owner);  // 0x4690B0
     // IDA 0x452820 area
     // design: static function, no direct binary match in IDA
     static bool IsLocomotor();
@@ -163,7 +163,7 @@ class Explosion
 {
 public:
     // IDA 0x48B2A0 area
-    static void RemoveItem(int32_t index);  // 0x53DDA0
+     void RemoveItem(int32_t index);  // 0x53DDA0
 
     int32_t     Explosion_field_00;       // 0x00
 };
@@ -216,7 +216,7 @@ class Isometric
 {
 public:
     // IDA 0x48B2A0 area
-    static void InitTables();  // 0x47B3A0
+     void InitTables();  // 0x47B3A0
 
     static int32_t  s_IsoX[512];    // 0x00
     static int32_t  s_IsoY[512];    // 0x800
@@ -230,7 +230,7 @@ class Shroud
 {
 public:
     // IDA 0x48B2A0 area
-    static void ProcessCellVisibility();  // 0x654490
+     void ProcessCellVisibility();  // 0x654490
 
     static uint8_t* s_ShroudMap;    // 0x00
 };
@@ -244,7 +244,7 @@ class GUIDUtil
 {
 public:
     // IDA 0x48B2A0 area
-    static bool Compare(const ::GUID& a, const ::GUID& b);
+     bool Compare(const ::GUID& a, const ::GUID& b);
 
     int32_t     GUIDUtil_field_00;       // 0x00
 };
@@ -287,7 +287,7 @@ class AnimSystem
 {
 public:
     // IDA 0x48B2A0 area
-    static void Init();  // 0x75A790
+     void Init();  // 0x75A790
 
     static int32_t  s_AnimationCount;   // 0x00
 };
@@ -352,11 +352,11 @@ class Matrix3x4
 {
 public:
     // IDA 0x5AE860
-    static void Identity(float* m);  // 0x5AE860
+     void Identity(float* m);  // 0x5AE860
     // IDA 0x5AE860 area
-    static void Translate(float* m, float x, float y, float z);  // 0x5AE980
+     void Translate(float* m, float x, float y, float z);  // 0x5AE980
     // IDA 0x5AE860 area
-    static CellStruct TransformCell(const float* m, const CellStruct& cell);  // 0x6D2360
+     CellStruct TransformCell(const float* m, const CellStruct& cell);  // 0x6D2360
 
     float       m_Data[12];     // 0x00 (3 rows × 4 columns)
 };

@@ -95,7 +95,7 @@ struct Math {
     static double Cos(...);  // C2597/C2039 interim stub
     static double ArcTan(...);  // interim stub
     static double Dist2D(...);  // interim stub
-    static double DistSq2D(...);  // interim stub
+     double DistSq2D(...);  // interim stub
     static double Hypotenuse2D(...);  // interim stub
     static double Sin(...);  // interim stub
 };

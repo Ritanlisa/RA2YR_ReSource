@@ -726,7 +726,7 @@ int E4Recv_655890::sub_655890()
 }
 // 0x658640
 namespace gamemd {
-void DrawPowerBarForPlayers(HWND hDlg)
+void ObjectClass::DrawPowerBarForPlayers(HWND hDlg)
 {
   int v1; // edi
   int v2; // esi

@@ -177,7 +177,7 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
 }
 // 0x5C17B0
 namespace gamemd {
-CampaignClass * * MPCooperative___vt07(int a2)
+CampaignClass * * MPCooperative::MPCooperative___vt07(int a2)
 {
   CampaignClass ** v3;
   int v4; // edx

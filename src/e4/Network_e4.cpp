@@ -3345,38 +3345,38 @@ AbstractClass * * Network_ModemConnectionDialog()
 }
 // 0x630B90
 namespace gamemd {
-void Network_resetConnectionState(Network *aP0)
+void Network::Network_resetConnectionState()
 {
   HWND Dialog; // eax
   TechnoTypeClass *v3; // ecx
   int v5; // [esp+0h] [ebp-4h]
 
   Dialog = (HWND)CreateDialog(0xEEu, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))PhoneEditorDialogProc, 0); /*0x630b9f*/
-  aP0->Network_field_0x0 = (int)Dialog; /*0x630ba6*/
+  this->Network_field_0x0 = (int)Dialog; /*0x630ba6*/
   if ( Dialog ) /*0x630ba8*/
   {
-    IDA_LOBYTE(aP0->Network_field_0x8) = 0; /*0x630bae*/
-    aP0->Network_field_0x4 = (void *)-1; /*0x630bb2*/
-    SetWindowLongA(Dialog, 8, (LONG)aP0); /*0x630bb9*/
+    IDA_LOBYTE(this->Network_field_0x8) = 0; /*0x630bae*/
+    this->Network_field_0x4 = (void *)-1; /*0x630bb2*/
+    SetWindowLongA(Dialog, 8, (LONG)this); /*0x630bb9*/
     PhoneEditor::PopulateList(); /*0x630bc1*/
-    Dialog::Show((Dialog *)aP0->Network_field_0x0); /*0x630bc8*/
-    while ( (int)aP0->Network_field_0x4 < 0 ) /*0x630bd2*/
+    Dialog::Show((Dialog *)this->Network_field_0x0); /*0x630bc8*/
+    while ( (int)this->Network_field_0x4 < 0 ) /*0x630bd2*/
     {
       if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x630bdb*/
         break; /*0x630bdb*/
       IDA_LOBYTE(v3) = 0; /*0x630bdd*/
       ScreenSaver::Process(v3, v5); /*0x630bdf*/
     }
-    Dialog::Destroy((Dialog *)aP0->Network_field_0x0); /*0x630bed*/
-    if ( IDA_LOBYTE(aP0->Network_field_0x8) == 1 ) /*0x630bf6*/
+    Dialog::Destroy((Dialog *)this->Network_field_0x0); /*0x630bed*/
+    if ( IDA_LOBYTE(this->Network_field_0x8) == 1 ) /*0x630bf6*/
       SaveConfigWOL((ObjectClass *)&dword_A8B238); /*0x630bfd*/
   }
-  return aP0->Network_field_0x4 == (void *)1; /*0x630c05*/
+  return this->Network_field_0x4 == (void *)1; /*0x630c05*/
 }
 }
 // 0x643C50
 namespace gamemd {
-void Network_UpdateLatencyDisplay(Network *aP0)
+void Network::Network_UpdateLatencyDisplay()
 {
   double v5; // st7
   int v6; // ecx
@@ -3393,10 +3393,10 @@ void Network_UpdateLatencyDisplay(Network *aP0)
   unsigned int v17[2]; // [esp+8h] [ebp-8h] BYREF
 
   v5 = 0.0; /*0x643c5c*/
-  v6 = aP0->q184; /*0x643c62*/
+  v6 = this->q184; /*0x643c62*/
   if ( v6 > 0 ) /*0x643c6c*/
   {
-    v7 = (double *)(aP0 + 8); /*0x643c6e*/
+    v7 = (double *)(this + 8); /*0x643c6e*/
     do /*0x643c77*/
     {
       v5 = v5 + *v7++; /*0x643c71*/
@@ -3405,21 +3405,21 @@ void Network_UpdateLatencyDisplay(Network *aP0)
     while ( v6 ); /*0x643c77*/
   }
   v8 = Math::RoundToInt(v5); /*0x643c90*/
-  v9 = *(double *)(aP0 + 8 * a2 + 8); /*0x643c94*/
-  v10 = *(double *)(aP0 + 72) * 0.01 * a3; /*0x643ca1*/
-  *(double *)(aP0 + 8 * a2 + 8) = v10; /*0x643ca4*/
-  if ( v10 > *(double *)(aP0 + 72) ) /*0x643cb0*/
+  v9 = *(double *)(this + 8 * a2 + 8); /*0x643c94*/
+  v10 = *(double *)(this + 72) * 0.01 * a3; /*0x643ca1*/
+  *(double *)(this + 8 * a2 + 8) = v10; /*0x643ca4*/
+  if ( v10 > *(double *)(this + 72) ) /*0x643cb0*/
   {
-    *(unsigned int *)(aP0 + 8 * a2 + 8) = *(unsigned int *)(aP0 + 72); /*0x643cb5*/
-    *(unsigned int *)(aP0 + 8 * a2 + 12) = *(unsigned int *)(aP0 + 76); /*0x643cbc*/
+    *(unsigned int *)(this + 8 * a2 + 8) = *(unsigned int *)(this + 72); /*0x643cb5*/
+    *(unsigned int *)(this + 8 * a2 + 12) = *(unsigned int *)(this + 76); /*0x643cbc*/
   }
-  if ( v9 != *(double *)(aP0 + 8 * a2 + 8) ) /*0x643cc9*/
+  if ( v9 != *(double *)(this + 8 * a2 + 8) ) /*0x643cc9*/
   {
-    v11 = *(char *)(aP0 + 97); /*0x643ccf*/
+    v11 = *(char *)(this + 97); /*0x643ccf*/
     v12 = 0.0; /*0x643cd3*/
     if ( v11 > 0 ) /*0x643cdf*/
     {
-      v13 = (double *)(aP0 + 8); /*0x643ce1*/
+      v13 = (double *)(this + 8); /*0x643ce1*/
       do /*0x643cea*/
       {
         v12 = v12 + *v13++; /*0x643ce4*/
@@ -3429,11 +3429,11 @@ void Network_UpdateLatencyDisplay(Network *aP0)
     }
     v17[0] = v8; /*0x643cf0*/
     v14 = Math::RoundToInt(v12); /*0x643cff*/
-    v15 = *(void (****)(unsigned int, int, unsigned int *))(aP0 + 4); /*0x643d04*/
+    v15 = *(void (****)(unsigned int, int, unsigned int *))(this + 4); /*0x643d04*/
     v17[1] = v14; /*0x643d07*/
-    if ( v15 && *(unsigned char *)(aP0 + 96) ) /*0x643d11*/
+    if ( v15 && *(unsigned char *)(this + 96) ) /*0x643d11*/
       (**v15)(v15, 4526, v17); /*0x643d24*/
-    v16 = *(HWND *)(aP0 + 100); /*0x643d26*/
+    v16 = *(HWND *)(this + 100); /*0x643d26*/
     if ( v16 ) /*0x643d2b*/
       SendMessageA(v16, 0xFu, 0, 0); /*0x643d34*/
     else

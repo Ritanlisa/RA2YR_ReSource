@@ -107,7 +107,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
 }
 // 0x44B760
 namespace gamemd {
-int AbstractClass_COMStub_133()
+int AbstractClass::AbstractClass_COMStub_133()
 {
   MissionClass *v2; // [esp+4h] [ebp+4h]
 
@@ -117,7 +117,7 @@ int AbstractClass_COMStub_133()
 
 // 0x44B770
 namespace gamemd {
-int AbstractClass_COMStub_137()
+int AbstractClass::AbstractClass_COMStub_137()
 {
   MissionClass *v2; // [esp+4h] [ebp+4h]
 

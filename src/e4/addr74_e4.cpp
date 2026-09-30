@@ -1229,7 +1229,7 @@ AbstractClass * * E4Recv_74FAE0::sub_74FAE0()
 }
 // 0x74FF30
 namespace gamemd {
-void unknown_libname_35()
+void ObjectClass::unknown_libname_35()
 {
   this->AbstractClass = 0; /*0x74ff32*/
   return &this->AbstractClass; /*0x74ff38*/
@@ -1453,7 +1453,7 @@ int sub_748380(unsigned short * a1, int a2)
 
 // 0x749010
 namespace gamemd {
-void nullsub_143()
+void ObjectClass::nullsub_143()
 {
   ; /*0x749010*/
 }
@@ -2074,7 +2074,7 @@ char * sub_74FDC0()
 
 // 0x74FF40
 namespace gamemd {
-void nullsub_69()
+void ObjectClass::nullsub_69()
 {
   ; /*0x74ff40*/
 }

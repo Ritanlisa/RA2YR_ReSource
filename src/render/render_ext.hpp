@@ -78,9 +78,9 @@ class DDraw
 {
 public:
     // IDA 0x48B2A0 area
-    static void ReleaseSurfaces();  // 0x4A3370
+     void ReleaseSurfaces();  // 0x4A3370
     // IDA 0x48B2A0 area
-    static bool Init(HWND hWnd);  // 0x4A3640
+     bool Init(HWND hWnd);  // 0x4A3640
     // IDA 0x48B2A0 area
     static void LogError(HRESULT hr);  // 0x4A3DD0
     // IDA 0x48B2A0 area
@@ -98,7 +98,7 @@ public:
     static void SetDisplayMode(int32_t w, int32_t h, int32_t bpp);
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
-    static void Shutdown();
+     void Shutdown();
 
     static IDirectDraw7* s_DD;          // 0x00
     static IDirectDrawSurface7* s_Primary; // 0x04
@@ -244,11 +244,11 @@ class FogOfWar
 {
 public:
     // IDA 0x48B2A0 area
-    static void RevealArea(const CellStruct& cell, int32_t radius, HouseClass* house);  // 0x655C50
+     void RevealArea(const CellStruct& cell, int32_t radius, HouseClass* house);  // 0x655C50
     // IDA 0x48B2A0 area
     static void RenderCell(const CellStruct& cell);  // 0x656150
     // IDA 0x48B2A0 area
-    static void RevealCell(const CellStruct& cell, HouseClass* house);  // 0x6562D0
+     void RevealCell(const CellStruct& cell, HouseClass* house);  // 0x6562D0
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static bool IsCellRevealed(const CellStruct& cell, HouseClass* house);
@@ -266,9 +266,9 @@ class Frame
 {
 public:
     // IDA 0x48B2A0 area
-    static void Present();  // 0x4F4780
+     void Present();  // 0x4F4780
     // IDA 0x48B2A0 area
-    static void Init();  // 0x724C00
+     void Init();  // 0x724C00
 
     static int32_t  s_FrameCount;   // 0x00
     static bool     s_VSync;        // 0x04
@@ -315,7 +315,7 @@ class Bounds
 {
 public:
     // IDA 0x48B2A0 area
-    static RectangleStruct Subtract(const RectangleStruct& a, const RectangleStruct& b);  // 0x487EE0
+     RectangleStruct Subtract(const RectangleStruct& a, const RectangleStruct& b);  // 0x487EE0
 
     int32_t     Bounds_field_00;       // 0x00
 };
@@ -328,7 +328,7 @@ class Transform
 {
 public:
     // IDA 0x48B2A0 area
-    static void Copy(float dst[16], const float src[16]);  // 0x5AE610
+     void Copy(float dst[16], const float src[16]);  // 0x5AE610
 
     int32_t     Transform_field_00;       // 0x00
 };

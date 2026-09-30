@@ -260,23 +260,23 @@ int MPCooperative::WriteCoopSaveINI()
 }
 // 0x49CC50
 namespace gamemd {
-void MPCooperative_validateMove(MPCooperative *aP0, void * a1, void * a2, void * a3)
+void MPCooperative::MPCooperative_validateMove(void * a1, void * a2, void * a3)
 {
   void * MPCooperative_field_0x48;
 
-  if ( a2 < 0 || a2 >= (void *)((int))aP0->MPCooperative_field_0x40 ) /*0x49cc5f*/
+  if ( a2 < 0 || a2 >= (void *)((int))this->MPCooperative_field_0x40 ) /*0x49cc5f*/
     return 0; /*0x49ccde*/
-  MPCooperative_field_0x48 = (char *)aP0->MPCooperative_field_0x48; /*0x49cc66*/
-  aP0->MPCooperative_field_0x38 = (void *)a2; /*0x49cc69*/
-  aP0->MPCooperative_field_0x48 = &MPCooperative_field_0x48[a20]; /*0x49cc75*/
-  aP0->MPCooperative_field_0x4C = (char *)aP0->MPCooperative_field_0x4C + a48; /*0x49cc81*/
-  aP0->MPCooperative_field_0x50 = (MultiplayerGameMode *)((char *)aP0->MPCooperative_field_0x50 + a24); /*0x49cc90*/
-  aP0->MPCooperative_field_0x54 = (char *)aP0->MPCooperative_field_0x54 + a52; /*0x49cc9c*/
-  aP0->MPCooperative_field_0x58 = (char *)aP0->MPCooperative_field_0x58 + a16; /*0x49ccab*/
-  aP0->MPCooperative_field_0x5C = (char *)aP0->MPCooperative_field_0x5C + a44; /*0x49ccb7*/
-  aP0->MPCooperative_field_0x60 = (char *)aP0->MPCooperative_field_0x60 + a28; /*0x49ccc6*/
-  aP0->MPCooperative_field_0x64 = (char *)aP0->MPCooperative_field_0x64 + a56; /*0x49ccd2*/
-  aP0->MPCooperative_field_0x68 = (void *)a3; /*0x49ccd5*/
+  MPCooperative_field_0x48 = (char *)this->MPCooperative_field_0x48; /*0x49cc66*/
+  this->MPCooperative_field_0x38 = (void *)a2; /*0x49cc69*/
+  this->MPCooperative_field_0x48 = &MPCooperative_field_0x48[a20]; /*0x49cc75*/
+  this->MPCooperative_field_0x4C = (char *)this->MPCooperative_field_0x4C + a48; /*0x49cc81*/
+  this->MPCooperative_field_0x50 = (MultiplayerGameMode *)((char *)this->MPCooperative_field_0x50 + a24); /*0x49cc90*/
+  this->MPCooperative_field_0x54 = (char *)this->MPCooperative_field_0x54 + a52; /*0x49cc9c*/
+  this->MPCooperative_field_0x58 = (char *)this->MPCooperative_field_0x58 + a16; /*0x49ccab*/
+  this->MPCooperative_field_0x5C = (char *)this->MPCooperative_field_0x5C + a44; /*0x49ccb7*/
+  this->MPCooperative_field_0x60 = (char *)this->MPCooperative_field_0x60 + a28; /*0x49ccc6*/
+  this->MPCooperative_field_0x64 = (char *)this->MPCooperative_field_0x64 + a56; /*0x49ccd2*/
+  this->MPCooperative_field_0x68 = (void *)a3; /*0x49ccd5*/
   return 1; /*0x49ccdb*/
 }
 }

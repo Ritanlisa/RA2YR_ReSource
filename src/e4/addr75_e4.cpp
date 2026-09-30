@@ -2796,7 +2796,7 @@ void ____F_m_badAllocExceptionPtr___ExceptionPtr__0V__shared_ptr___ExceptionPtr_
 
 // 0x7532BE
 namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_21()
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_21()
 {
   return 1; /*0x7532c0*/
 }
@@ -2804,7 +2804,7 @@ char _do_always_noconv_codecvt_base_std__MBE_NXZ_21()
 
 // 0x7533A0
 namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_22()
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_22()
 {
   return 1; /*0x7533a2*/
 }

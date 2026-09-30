@@ -83,7 +83,7 @@ public:
     // IDA 0x434AD0
     void ParseFontData(void* mem);  // 0x433880
     // IDA 0x434AD0 area
-    static void* LoadFont(void* mem);  // 0x434AD0
+     void* LoadFont(void* mem);  // 0x434AD0
 
     void*       m_FontBitmap;   // 0x00
     int32_t     m_CharWidth;    // 0x04
@@ -142,7 +142,7 @@ class CreditsScreen
 {
 public:
     // IDA 0x48B2A0 area
-    static void Init();  // 0x4A3C00
+     void Init();  // 0x4A3C00
     // IDA 0x48B2A0 area
     static int32_t DlgProc(HWND hDlg, UINT msg, WPARAM wParam, LPARAM lParam);  // 0x531A00
 
@@ -170,7 +170,7 @@ class CampaignScreen
 {
 public:
     // IDA 0x48B2A0 area
-    static void Init();  // 0x470D30
+     void Init();  // 0x470D30
 
     static int32_t  s_MissionIndex; // 0x00
 };
@@ -216,7 +216,7 @@ class KeyboardConfig
 {
 public:
     static void LoadINI();  // 0x533D20
-    static void ReleaseBuffer();  // 0x538B80
+     void ReleaseBuffer();  // 0x538B80
 
     static int32_t  s_KeyMap[256];  // 0x00
 };
@@ -263,7 +263,7 @@ class Input
 {
 public:
     // IDA 0x48B2A0 area
-    static int32_t OffsetToDirection(int32_t dx, int32_t dy);  // 0x4810A0
+     int32_t OffsetToDirection(int32_t dx, int32_t dy);  // 0x4810A0
 
     int32_t     Input_field_00;       // 0x00
 };

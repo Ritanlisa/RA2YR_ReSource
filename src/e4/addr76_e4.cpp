@@ -1292,7 +1292,7 @@ unsigned int * E4Recv_763700::sub_763700(unsigned int * a2)
 
 // 0x763720
 namespace gamemd {
-void nullsub_84()
+void ObjectClass::nullsub_84()
 {
   ; /*0x763720*/
 }

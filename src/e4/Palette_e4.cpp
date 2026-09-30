@@ -20,7 +20,7 @@
 
 // 0x4355B0
 namespace gamemd {
-unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
+unsigned char * Palette::Palette_6BitTo16Bit(char a2, char a3, char a4)
 {
   this->m_Colors[0] = a2; /*0x4355ba*/
   this->m_Colors[1] = a3; /*0x4355c0*/

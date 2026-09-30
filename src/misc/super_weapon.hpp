@@ -53,7 +53,7 @@ public:
     void loadSWProperties(CCINIClass* ini);                                           // 0x474EE0
     static SuperWeaponTypeClass* FindOrCreate(const char* name);                       // 0x475540
     // returns type index: -1 = not found, -2 = "<none>" (binary returns v4[46], an int)
-    static int FindByName(const char* name);                                            // 0x5117D0
+     int FindByName(const char* name);                                            // 0x5117D0
     bool IsAvailable() const;                                                         // 0x4F6540
     void Construct(const char* pID);  // 0x5113F0
 
@@ -207,7 +207,7 @@ public:
     static DynamicVectorClass<AnimClass*> CloudsManifesting; // data: 0xA8E7F4
     static DynamicVectorClass<AnimClass*> BoltsPresent;      // data: 0xA8E80C
 
-    static void Start(int32_t duration, int32_t deferment, const CellStruct& cell, HouseClass* pOwner); // 0x539EB0
+     void Start(int32_t duration, int32_t deferment, const CellStruct& cell, HouseClass* pOwner); // 0x539EB0
     static void RequestStop();
     static bool HasDeferment();
     static void Strike(const CellStruct& cell);                              // 0x53A140
@@ -226,7 +226,7 @@ public:
     static HouseClass*             Owner;    // data: 0xA8E830
     static AnimClass*              Anim;     // data: 0xA8E834
 
-    static void Start(HouseClass* pOwner, const CellStruct& coords);
+     void Start(HouseClass* pOwner, const CellStruct& coords);
     // wrapper: delegates to start at 0x7CD80F
     static void updateLogic();
     static void Fire();                                               // 0x53B080
@@ -245,7 +245,7 @@ public:
     static int32_t Status;   // data: 0xA8E838
     static int32_t Duration; // data: 0xA8E83C
 
-    static void Start(int32_t duration);
+     void Start(int32_t duration);
     // wrapper: delegates to ChronoScreenEffect::DecrementCounter at 0x753580
     static void updateLogic();
     static bool Active();

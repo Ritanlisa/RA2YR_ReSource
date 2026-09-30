@@ -2846,7 +2846,7 @@ int sub_726C60()
 
 // 0x726FCE
 namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_20()
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_20()
 {
   return 1; /*0x726fd0*/
 }

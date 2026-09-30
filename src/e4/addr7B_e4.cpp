@@ -556,7 +556,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
 }
 // 0x7B4620
 namespace gamemd {
-void unknown_libname_73()
+void ObjectClass::unknown_libname_73()
 {
   *this = 0; /*0x7b4622*/
   return this; /*0x7b4628*/
@@ -753,7 +753,7 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
 }
 // 0x7B66C0
 namespace gamemd {
-void unknown_libname_74()
+void ObjectClass::unknown_libname_74()
 {
   *this = 0; /*0x7b66c2*/
   return this; /*0x7b66c8*/
@@ -1359,7 +1359,7 @@ void ClipLine(IUnknown * aP0, int * a1, int * a2)
 }
 // 0x7BC580
 namespace gamemd {
-AbstractClass * * sub_7BC580()
+AbstractClass * * ObjectClass::sub_7BC580()
 {
   int v3; // edx
   void *vtable1; // [esp+8h] [ebp-4h]
@@ -1870,7 +1870,7 @@ rc_ptr * FindWDTTerritoryClass(rc_ptr_base * a1, int a2)
 
 // 0x7B0430
 namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_23()
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_23()
 {
   return 1; /*0x7b0432*/
 }

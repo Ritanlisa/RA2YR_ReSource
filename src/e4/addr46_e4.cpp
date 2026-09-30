@@ -477,7 +477,7 @@ void sub_46DE20(HWND hDlg, int nCmdShow)
 }
 // 0x465CB0
 namespace gamemd {
-void nullsub_7()
+void ObjectClass::nullsub_7()
 {
   ; /*0x465cb0*/
 }

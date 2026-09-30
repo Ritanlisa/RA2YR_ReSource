@@ -1134,7 +1134,7 @@ char E4Recv_6E5290::sub_6E5290()
 
 // 0x6E57DE
 namespace gamemd {
-char _do_always_noconv_codecvt_base_std__MBE_NXZ_18()
+char ObjectClass::_do_always_noconv_codecvt_base_std__MBE_NXZ_18()
 {
   return 1; /*0x6e57e0*/
 }

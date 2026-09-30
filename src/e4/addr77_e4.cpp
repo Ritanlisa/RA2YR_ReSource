@@ -66,20 +66,20 @@
 
 // 0x770E70
 namespace gamemd {
-void sub_770E70(char *a1, ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
+void ObjectClass::sub_770E70(ObjectClass * aP1, ObjectClass * aP2, ObjectClass aP3)
 {
   unsigned int v5;
   char *v6; // [esp+10h] [ebp-4h] BYREF
 
   String::Assign((String *)&v6, off_83E188); /*0x770e80*/
   v5 = aP3; /*0x770e85*/
-  INIClass::ReadTokenizedPair((INIClass *)a1, aP1, aP2, aP3, 0, &v6); /*0x770e9d*/
+  INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, aP3, 0, &v6); /*0x770e9d*/
   DeleteAndZero((ObjectClass *)&v6); /*0x770ea6*/
   String::Assign((String *)&aP3, g_INI_Key_Lose); /*0x770eb4*/
-  INIClass::ReadTokenizedPair((INIClass *)a1, aP1, aP2, v5, 1, (char **)&aP3); /*0x770ec5*/
+  INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, v5, 1, (char **)&aP3); /*0x770ec5*/
   DeleteAndZero((ObjectClass *)&aP3); /*0x770ece*/
   String::Assign((String *)&aP3, aDraw); /*0x770edc*/
-  INIClass::ReadTokenizedPair((INIClass *)a1, aP1, aP2, v5, 2, (char **)&aP3); /*0x770eed*/
+  INIClass::ReadTokenizedPair((INIClass *)this, aP1, aP2, v5, 2, (char **)&aP3); /*0x770eed*/
   DeleteAndZero((ObjectClass *)&aP3); /*0x770ef6*/
 }
 }
@@ -4159,7 +4159,7 @@ bool sub_773970(BYTE * Type, DWORD cbData)
 
 // 0x773AD0
 namespace gamemd {
-int WebBrowser___vt03()
+int WebBrowser::WebBrowser___vt03()
 {
   HWND v1; // eax
   int v3; // [esp+4h] [ebp+4h]
@@ -4319,7 +4319,7 @@ int sub_776210()
 
 // 0x776670
 namespace gamemd {
-char sub_776670(LPARAM lParam)
+char ObjectClass::sub_776670(LPARAM lParam)
 {
   int v2; // edx
   HCURSOR CursorA; // eax
@@ -4769,7 +4769,7 @@ void nullsub_262()
 
 // 0x777F90
 namespace gamemd {
-LONG sub_777F90(HWND hWnd)
+LONG ObjectClass::sub_777F90(HWND hWnd)
 {
   LONG result; // eax
   WCHAR *v3; // esi
@@ -6497,7 +6497,7 @@ int E4Recv_77D240::sub_77D240()
 
 // 0x77D350
 namespace gamemd {
-bool sub_77D350(ObjectClass * String1)
+bool ObjectClass::sub_77D350(ObjectClass * String1)
 {
   wchar_t *StringCSF; // eax
   size_t v3; // eax
@@ -6513,7 +6513,7 @@ bool sub_77D350(ObjectClass * String1)
 
 // 0x77D3A0
 namespace gamemd {
-bool sub_77D3A0(ObjectClass * String1)
+bool ObjectClass::sub_77D3A0(ObjectClass * String1)
 {
   wchar_t *StringCSF; // eax
   size_t v3; // eax

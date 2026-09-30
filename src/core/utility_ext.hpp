@@ -79,7 +79,7 @@ class LoadGame
 {
 public:
     // IDA 0x67E730
-    static bool Start(const char* filename);  // 0x67E730
+     bool Start(const char* filename);  // 0x67E730
     // IDA 0x4136C0
     static void LoadIteratedData();  // 0x4136C0
     // IDA 0x413800
@@ -95,7 +95,7 @@ public:
     // IDA 0x660840
     static void LoadTriggerEvents();  // 0x660840
     // IDA 0x660F10
-    static void RemoveItem();  // 0x660F10
+     void RemoveItem();  // 0x660F10
     // IDA 0x69B5B0
     static void LoadBlock300();  // 0x69B5B0
     // IDA 0x751710
@@ -256,7 +256,7 @@ public:
     // IDA 0x48B2A0 area
     static void SetupAllCountriesLobby();  // 0x46F6D0
     // IDA 0x48B2A0 area
-    static int32_t GetCountQueue();  // 0x5F1EA0
+     int32_t GetCountQueue();  // 0x5F1EA0
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static void IncrementRefCount();
@@ -317,7 +317,7 @@ public:
     // IDA 0x40BCB0 area
     static HRESULT GetClassID(const GUID& riid, GUID* pClassID);  // 0x43A500
     // IDA 0x40B960 area
-    static int32_t AddRef(void* obj);  // 0x55A950
+     int32_t AddRef(void* obj);  // 0x55A950
     // IDA 0x40BE50 area
     static int32_t ReleaseRef(void* obj);  // 0x55A970
 
@@ -401,14 +401,14 @@ class EventQueue
 {
 public:
     // IDA 0x54F000
-    static void Process(void* bink_player);  // 0x54F000
+     void Process(void* bink_player);  // 0x54F000
     // IDA 0x54F000 area
-    static void Read();  // 0x54F050
+     void Read();  // 0x54F050
     // IDA 0x54F000 area
-    static bool Check();  // 0x54F650
+     bool Check();  // 0x54F650
     // IDA 0x54F000 area
     // design: static function, no direct binary match in IDA
-    static void Clear();
+     void Clear();
 
     static int32_t  s_EventCount;   // 0x00
     static void*    s_Queue;        // 0x04
@@ -457,11 +457,11 @@ class Player
 {
 public:
     // IDA 0x48B2A0 area
-    static HouseClass* FindByName(const char* name);  // 0x5E8BF0
+     HouseClass* FindByName(const char* name);  // 0x5E8BF0
     // IDA 0x48B2A0 area
-    static void BuildListString();  // 0x5E8DC0
+     void BuildListString();  // 0x5E8DC0
     // IDA 0x48B2A0 area
-    static bool IsObserver(HouseClass* house);  // 0x5E9440
+     bool IsObserver(HouseClass* house);  // 0x5E9440
     // IDA 0x48B2A0 area
     // design: static function, no direct binary match in IDA
     static int32_t GetCount();
@@ -513,7 +513,7 @@ public:
     // IDA 0x4D9C00 area
     static float Accumulate(float* dest, float value);  // 0x6C9690
     // IDA 0x4D9C00 area
-    static float SubtractClamped(float a, float b, float min);  // 0x6C96B0
+     float SubtractClamped(float a, float b, float min);  // 0x6C96B0
 
     int32_t     Float_field_00;       // 0x00
 };
@@ -565,7 +565,7 @@ class Process
 {
 public:
     // IDA 0x54F000 area
-    static void WaitForExit();  // 0x664610
+     void WaitForExit();  // 0x664610
 
     int32_t     Process_field_00;       // 0x00
 };

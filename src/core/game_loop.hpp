@@ -25,7 +25,7 @@ void AudioVideoUpdate();
 // CSP: WTFMode matched via T1
 class WTFMode {
 bool Init(int* mode);  // 0x69BAB0
-    static bool Shutdown(int* mode);  // 0x69BB40
+     bool Shutdown(int* mode);  // 0x69BB40
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ResetUnitFlags();  // 0x41DB40
     void* FindObjectByType(int a1);  // 0x47EC40
@@ -35,7 +35,7 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
 // IDA 0x532100 -- ScreenSaver
 class ScreenSaver {
 public:
-    static void Process(bool enable);  // 0x532100
+     void Process(bool enable);  // 0x532100
 };
 
 } // namespace gamemd

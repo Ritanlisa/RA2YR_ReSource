@@ -111,9 +111,9 @@ class AsyncIO
 {
 public:
     // IDA 0x48B2A0 area
-    static void Shutdown();  // 0x5BF450
+     void Shutdown();  // 0x5BF450
     // IDA 0x48B2A0 area
-    static int32_t Read(const char* filename, void* buffer, int32_t size);  // 0x5BF500
+     int32_t Read(const char* filename, void* buffer, int32_t size);  // 0x5BF500
     // IDA 0x48B2A0 area
     static void WaitCompletion();  // 0x774BC0
 
@@ -155,7 +155,7 @@ class Block
 {
 public:
     // IDA 0x48B2A0 area
-    static void Copy(void* dst, const void* src, int32_t size);  // 0x6260D0
+     void Copy(void* dst, const void* src, int32_t size);  // 0x6260D0
 
     int32_t     Block_field_00;       // 0x00
 };
@@ -168,7 +168,7 @@ class Byte
 {
 public:
     // IDA 0x48B2A0 area
-    static void Zero(void* ptr, int32_t count);  // 0x4F4C20
+     void Zero(void* ptr, int32_t count);  // 0x4F4C20
 
     int32_t     Byte_field_00;       // 0x00
 };
@@ -181,7 +181,7 @@ class TextBuffer
 {
 public:
     // IDA 0x5BCC90
-    static void Init(int32_t buffer);  // 0x5BCC90
+     void Init(int32_t buffer);  // 0x5BCC90
 
     static char*    s_Buffer;       // 0x00
     static int32_t  s_BufferSize;   // 0x04

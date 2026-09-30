@@ -436,7 +436,7 @@ unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * a
 }
 // 0x424CE0
 namespace gamemd {
-void* ProductionCompletionCallback()
+void* ObjectClass::ProductionCompletionCallback()
 {
   unsigned int *v2; // eax
   int v3; // eax
@@ -531,7 +531,7 @@ void* ProductionCompletionCallback()
 }
 // 0x424F00
 namespace gamemd {
-AbstractClass * * CreateUnitOnCompletion()
+AbstractClass * * ObjectClass::CreateUnitOnCompletion()
 {
   unsigned int *v2; // eax
   int *v3; // eax
@@ -2769,7 +2769,7 @@ Iostream_init::Iostream_init()
 
 // 0x420130
 namespace gamemd {
-void nullsub_53()
+void ObjectClass::nullsub_53()
 {
   ; /*0x420130*/
 }
